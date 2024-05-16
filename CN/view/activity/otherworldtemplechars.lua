@@ -1,107 +1,100 @@
-﻿local var_0_0 = class("OtherWorldTempleChars")
-local var_0_1 = "other_world_temple_char"
+slot0 = class("OtherWorldTempleChars")
+slot1 = "other_world_temple_char"
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._event = arg_1_2
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._tf = slot1
+	slot0._event = slot2
 
-	onButton(arg_1_0._event, findTF(arg_1_0._tf, "ad/btnClose"), function()
-		arg_1_0:setActive(false)
+	onButton(slot0._event, findTF(slot0._tf, "ad/btnClose"), function ()
+		uv0:setActive(false)
 	end, SFX_CANCEL)
-	onButton(arg_1_0._event, findTF(arg_1_0._tf, "ad/clickClose"), function()
-		arg_1_0:setActive(false)
+	onButton(slot0._event, findTF(slot0._tf, "ad/clickClose"), function ()
+		uv0:setActive(false)
 	end, SFX_CANCEL)
 
-	arg_1_0._charTpl = findTF(arg_1_0._tf, "ad/chars/content/charTpl")
+	slot0._charTpl = findTF(slot0._tf, "ad/chars/content/charTpl")
 
-	setText(findTF(arg_1_0._charTpl, "got/img/text"), i18n("word_got"))
-	setActive(arg_1_0._charTpl, false)
+	setText(findTF(slot0._charTpl, "got/img/text"), i18n("word_got"))
+	setActive(slot0._charTpl, false)
 
-	arg_1_0._charItems = {}
-	arg_1_0._charContent = findTF(arg_1_0._tf, "ad/chars/content")
+	slot0._charItems = {}
+	slot0._charContent = findTF(slot0._tf, "ad/chars/content")
 end
 
-function var_0_0.setData(arg_4_0, arg_4_1)
-	arg_4_0.charIds = arg_4_1
+function slot0.setData(slot0, slot1)
+	slot0.charIds = slot1
 end
 
-function var_0_0.updateActivityPool(arg_5_0, arg_5_1)
-	arg_5_0.activityPools = arg_5_1
+function slot0.updateActivityPool(slot0, slot1)
+	slot0.activityPools = slot1
 end
 
-function var_0_0.updateSelect(arg_6_0)
-	arg_6_0:updateItemsCount(#arg_6_0.charIds)
+function slot0.updateSelect(slot0)
+	slot0:updateItemsCount(#slot0.charIds)
 
-	for iter_6_0 = 1, #arg_6_0._charItems do
-		local var_6_0 = arg_6_0._charItems[iter_6_0]
+	for slot4 = 1, #slot0._charItems do
+		setActive(slot0._charItems[slot4], false)
 
-		setActive(var_6_0, false)
-
-		if iter_6_0 <= #arg_6_0.charIds then
-			setActive(var_6_0, true)
-			arg_6_0:setItemData(var_6_0, arg_6_0.charIds[iter_6_0])
+		if slot4 <= #slot0.charIds then
+			setActive(slot5, true)
+			slot0:setItemData(slot5, slot0.charIds[slot4])
 		end
 	end
 
-	setText(findTF(arg_6_0._tf, "ad/title/text"), i18n(var_0_1))
+	setText(findTF(slot0._tf, "ad/title/text"), i18n(uv0))
 end
 
-function var_0_0.setItemData(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = pg.guardian_template[arg_7_2]
-	local var_7_1 = arg_7_0.activityPools[var_7_0.guardian_gain_pool]
-	local var_7_2 = ""
-	local var_7_3 = var_7_1:getGuardianGot(arg_7_2)
+function slot0.setItemData(slot0, slot1, slot2)
+	slot3 = pg.guardian_template[slot2]
+	slot5 = ""
+	slot6 = slot0.activityPools[slot3.guardian_gain_pool]:getGuardianGot(slot2)
 
-	if var_7_0.type == 1 then
-		var_7_2 = string.gsub(var_7_0.guardian_gain_desc, "$1", math.min(var_7_1:getFetchCount(), var_7_0.guardian_gain[2]))
-	elseif var_7_0.type == 2 then
-		if var_7_3 then
-			var_7_2 = var_7_0.guardian_gain_desc
-		else
-			var_7_2 = "???"
-		end
+	if slot3.type == 1 then
+		slot5 = string.gsub(slot3.guardian_gain_desc, "$1", math.min(slot4:getFetchCount(), slot3.guardian_gain[2]))
+	elseif slot3.type == 2 then
+		slot5 = (not slot6 or slot3.guardian_gain_desc) and "???"
 	end
 
-	if var_7_0.type == 2 then
-		setText(findTF(arg_7_1, "desc/text"), var_7_3 and var_7_0.guardian_desc or "???")
-		setText(findTF(arg_7_1, "name/text"), var_7_3 and var_7_0.guardian_name or "???")
+	if slot3.type == 2 then
+		setText(findTF(slot1, "desc/text"), slot6 and slot3.guardian_desc or "???")
+		setText(findTF(slot1, "name/text"), slot6 and slot3.guardian_name or "???")
 	else
-		setText(findTF(arg_7_1, "name/text"), var_7_0.guardian_name)
-		setText(findTF(arg_7_1, "desc/text"), var_7_0.guardian_desc)
+		setText(findTF(slot1, "name/text"), slot3.guardian_name)
+		setText(findTF(slot1, "desc/text"), slot3.guardian_desc)
 	end
 
 	if PLATFORM_CODE ~= PLATFORM_CH then
-		GetComponent(findTF(arg_7_1, "name/text"), typeof(Text)).fontSize = 30
-		GetComponent(findTF(arg_7_1, "desc/text"), typeof(Text)).fontSize = 24
+		GetComponent(findTF(slot1, "name/text"), typeof(Text)).fontSize = 30
+		GetComponent(findTF(slot1, "desc/text"), typeof(Text)).fontSize = 24
 	end
 
-	if var_7_0.type == 2 then
-		setActive(findTF(arg_7_1, "icon/mask/img"), var_7_3)
+	if slot3.type == 2 then
+		setActive(findTF(slot1, "icon/mask/img"), slot6)
 	end
 
-	LoadImageSpriteAsync("shipyardicon/" .. var_7_0.guardian_painting, findTF(arg_7_1, "icon/mask/img"), true)
-	setText(findTF(arg_7_1, "tip/text"), var_7_2)
-	setActive(findTF(arg_7_1, "icon/lock"), not var_7_3)
-	setActive(findTF(arg_7_1, "got"), var_7_3)
+	LoadImageSpriteAsync("shipyardicon/" .. slot3.guardian_painting, findTF(slot1, "icon/mask/img"), true)
+	setText(findTF(slot1, "tip/text"), slot5)
+	setActive(findTF(slot1, "icon/lock"), not slot6)
+	setActive(findTF(slot1, "got"), slot6)
 end
 
-function var_0_0.updateItemsCount(arg_8_0, arg_8_1)
-	local var_8_0 = 0
+function slot0.updateItemsCount(slot0, slot1)
+	slot2 = 0
 
-	if arg_8_1 > #arg_8_0._charItems then
-		var_8_0 = arg_8_1 - #arg_8_0._charItems
+	if slot1 > #slot0._charItems then
+		slot2 = slot1 - #slot0._charItems
 	end
 
-	for iter_8_0 = 1, var_8_0 do
-		local var_8_1 = tf(instantiate(arg_8_0._charTpl))
+	for slot6 = 1, slot2 do
+		slot7 = tf(instantiate(slot0._charTpl))
 
-		SetParent(var_8_1, arg_8_0._charContent)
-		table.insert(arg_8_0._charItems, var_8_1)
+		SetParent(slot7, slot0._charContent)
+		table.insert(slot0._charItems, slot7)
 	end
 end
 
-function var_0_0.setActive(arg_9_0, arg_9_1)
-	setActive(arg_9_0._tf, arg_9_1)
+function slot0.setActive(slot0, slot1)
+	setActive(slot0._tf, slot1)
 end
 
-return var_0_0
+return slot0

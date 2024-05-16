@@ -1,24 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 67040,
-				emitter = "BattleBulletEmitter"
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -166,5 +146,25 @@
 	id = 11420,
 	picture = "0",
 	castCV = "skill",
-	desc = "BIG SEVEN-樱"
+	desc = "BIG SEVEN-樱",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 67040,
+				emitter = "BattleBulletEmitter"
+			}
+		}
+	}
 }

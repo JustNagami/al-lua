@@ -1,29 +1,30 @@
-﻿local var_0_0 = class("TechnologyCatchup", import(".BaseVO"))
+slot0 = class("TechnologyCatchup", import(".BaseVO"))
+slot0.STATE_UNSELECT = 1
+slot0.STATE_CATCHUPING = 2
+slot0.STATE_FINISHED_ALL = 3
 
-var_0_0.STATE_UNSELECT = 1
-var_0_0.STATE_CATCHUPING = 2
-var_0_0.STATE_FINISHED_ALL = 3
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.version
+	slot0.configId = slot0.id
+	slot0.ssrNum = slot1.number or 0
+	slot0.urNums = slot1.dr_numbers or {}
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.version
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.ssrNum = arg_1_1.number or 0
-	arg_1_0.urNums = arg_1_1.dr_numbers or {}
+	slot0:bulidTargetNums()
 
-	arg_1_0:bulidTargetNums()
+	slot0.state = uv0.STATE_UNSELECT
 
-	arg_1_0.state = var_0_0.STATE_UNSELECT
-
-	arg_1_0:updateState()
+	slot0:updateState()
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.technology_catchup_template
 end
 
-function var_0_0.isUr(arg_3_0, arg_3_1)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0:getConfig("ur_char")) do
-		if arg_3_1 == iter_3_1 then
+function slot0.isUr(slot0, slot1)
+	slot5 = "ur_char"
+
+	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
+		if slot1 == slot6 then
 			return true
 		end
 	end
@@ -31,90 +32,95 @@ function var_0_0.isUr(arg_3_0, arg_3_1)
 	return false
 end
 
-function var_0_0.bulidTargetNums(arg_4_0)
-	arg_4_0.targetNums = {}
+function slot0.bulidTargetNums(slot0)
+	slot0.targetNums = {}
+	slot4 = "char_choice"
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0:getConfig("char_choice")) do
-		if arg_4_0:isUr(iter_4_1) then
-			for iter_4_2, iter_4_3 in pairs(arg_4_0.urNums) do
-				if iter_4_3.id == iter_4_1 then
-					arg_4_0.targetNums[iter_4_1] = iter_4_3.number or 0
+	for slot4, slot5 in ipairs(slot0:getConfig(slot4)) do
+		if slot0:isUr(slot5) then
+			for slot9, slot10 in pairs(slot0.urNums) do
+				if slot10.id == slot5 then
+					slot0.targetNums[slot5] = slot10.number or 0
 				end
 			end
 		else
-			arg_4_0.targetNums[iter_4_1] = arg_4_0.ssrNum
+			slot0.targetNums[slot5] = slot0.ssrNum
 		end
 
-		if not arg_4_0.targetNums[iter_4_1] then
-			arg_4_0.targetNums[iter_4_1] = 0
+		if not slot0.targetNums[slot5] then
+			slot0.targetNums[slot5] = 0
 		end
 	end
 end
 
-function var_0_0.getTargetNum(arg_5_0, arg_5_1)
-	return arg_5_0.targetNums[arg_5_1]
+function slot0.getTargetNum(slot0, slot1)
+	return slot0.targetNums[slot1]
 end
 
-function var_0_0.addTargetNum(arg_6_0, arg_6_1, arg_6_2)
-	if arg_6_0:isUr(arg_6_1) then
-		arg_6_0.targetNums[arg_6_1] = arg_6_0.targetNums[arg_6_1] + arg_6_2
+function slot0.addTargetNum(slot0, slot1, slot2)
+	if slot0:isUr(slot1) then
+		slot0.targetNums[slot1] = slot0.targetNums[slot1] + slot2
 	else
-		for iter_6_0, iter_6_1 in ipairs(arg_6_0:getConfig("char_choice")) do
-			if not arg_6_0:isUr(iter_6_1) then
-				arg_6_0.targetNums[iter_6_1] = arg_6_0.targetNums[iter_6_1] + arg_6_2
+		slot6 = "char_choice"
+
+		for slot6, slot7 in ipairs(slot0:getConfig(slot6)) do
+			if not slot0:isUr(slot7) then
+				slot0.targetNums[slot7] = slot0.targetNums[slot7] + slot2
 			end
 		end
 	end
 
-	arg_6_0:updateState()
+	slot0:updateState()
 end
 
-function var_0_0.isFinish(arg_7_0, arg_7_1)
-	if arg_7_0:isUr(arg_7_1) then
-		return arg_7_0.targetNums[arg_7_1] >= arg_7_0:getConfig("obtain_max_per_ur")
+function slot0.isFinish(slot0, slot1)
+	if slot0:isUr(slot1) then
+		return slot0:getConfig("obtain_max_per_ur") <= slot0.targetNums[slot1]
 	else
-		return arg_7_0.targetNums[arg_7_1] >= arg_7_0:getConfig("obtain_max")
+		return slot0:getConfig("obtain_max") <= slot0.targetNums[slot1]
 	end
 end
 
-function var_0_0.isFinishSSR(arg_8_0)
-	local var_8_0 = true
+function slot0.isFinishSSR(slot0)
+	slot1 = true
+	slot5 = "char_choice"
 
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0:getConfig("char_choice")) do
-		if not arg_8_0:isUr(iter_8_1) and not arg_8_0:isFinish(iter_8_1) then
-			var_8_0 = false
+	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
+		if not slot0:isUr(slot6) and not slot0:isFinish(slot6) then
+			slot1 = false
 		end
 	end
 
-	return var_8_0
+	return slot1
 end
 
-function var_0_0.isFinishAll(arg_9_0)
-	local var_9_0 = true
+function slot0.isFinishAll(slot0)
+	slot1 = true
+	slot5 = "char_choice"
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0:getConfig("char_choice")) do
-		if not arg_9_0:isFinish(iter_9_1) then
-			var_9_0 = false
+	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
+		if not slot0:isFinish(slot6) then
+			slot1 = false
 		end
 	end
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.updateState(arg_10_0)
-	local var_10_0 = getProxy(TechnologyProxy).curCatchupGroupID
+function slot0.updateState(slot0)
+	slot1 = getProxy(TechnologyProxy).curCatchupGroupID
 
-	if arg_10_0:isFinishAll() then
-		arg_10_0.state = var_0_0.STATE_FINISHED_ALL
-	elseif arg_10_0.targetNums[var_10_0] then
-		arg_10_0.state = var_0_0.STATE_CATCHUPING
+	if slot0:isFinishAll() then
+		slot0.state = uv0.STATE_FINISHED_ALL
+	elseif slot0.targetNums[slot1] then
+		slot0.state = uv0.STATE_CATCHUPING
 	else
-		arg_10_0.state = var_0_0.STATE_UNSELECT
+		slot0.state = uv0.STATE_UNSELECT
 	end
 end
 
-function var_0_0.getState(arg_11_0)
-	return arg_11_0.state
+function slot0.getState(slot0)
+	return slot0.state
 end
 
-return var_0_0
+return slot0

@@ -1,341 +1,293 @@
-﻿local var_0_0 = {}
-local var_0_1
-local var_0_2
-local var_0_3
-local var_0_4
-local var_0_5
+slot1, slot2, slot3, slot4, slot5 = nil
 
-local function var_0_6(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0:Find("base")
-
-	if IsNil(var_1_0) then
+function slot1(slot0, slot1)
+	if IsNil(slot0:Find("base")) then
 		return
 	end
 
-	local var_1_1 = arg_1_1.name
-	local var_1_2 = arg_1_1.value
+	slot3 = slot1.name
+	slot4 = slot1.value
 
-	setActive(var_1_0, var_1_2)
+	setActive(slot2, slot4)
 
-	if not var_1_2 then
+	if not slot4 then
 		return
 	end
 
-	setText(var_1_0:Find("name"), var_1_1)
+	setText(slot2:Find("name"), slot3)
 	Canvas.ForceUpdateCanvases()
 
-	if not IsNil(var_1_0:Find("value")) then
-		setActive(var_1_0:Find("value"), var_1_2)
-		changeToScrollText(var_1_0:Find("value/Text"), var_1_2)
+	if not IsNil(slot2:Find("value")) then
+		setActive(slot2:Find("value"), slot4)
+		changeToScrollText(slot2:Find("value/Text"), slot4)
 	end
 
-	if not IsNil(var_1_0:Find("effect")) then
-		setActive(var_1_0:Find("effect"), false)
+	if not IsNil(slot2:Find("effect")) then
+		setActive(slot2:Find("effect"), false)
 	end
 
-	setActive(var_1_0:Find("value/up"), arg_1_1.compare and arg_1_1.compare > 0)
-	setActive(var_1_0:Find("value/down"), arg_1_1.compare and arg_1_1.compare < 0)
-	triggerToggle(var_1_0, arg_1_1.lock_open)
+	setActive(slot2:Find("value/up"), slot1.compare and slot1.compare > 0)
+	setActive(slot2:Find("value/down"), slot1.compare and slot1.compare < 0)
+	triggerToggle(slot2, slot1.lock_open)
 
-	if not arg_1_1.lock_open and arg_1_1.sub and #arg_1_1.sub > 0 then
-		GetComponent(var_1_0, typeof(Toggle)).enabled = true
+	if not slot1.lock_open and slot1.sub and #slot1.sub > 0 then
+		GetComponent(slot2, typeof(Toggle)).enabled = true
 	else
-		setActive(var_1_0:Find("name/close"), false)
-		setActive(var_1_0:Find("name/open"), false)
+		setActive(slot2:Find("name/close"), false)
+		setActive(slot2:Find("name/open"), false)
 
-		GetComponent(var_1_0, typeof(Toggle)).enabled = false
+		GetComponent(slot2, typeof(Toggle)).enabled = false
 	end
 end
 
-local function var_0_7(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0:Find("desc")
-
-	if IsNil(var_2_0) then
+function slot3(slot0, slot1)
+	if IsNil(slot0:Find("desc")) then
 		return
 	end
 
-	setActive(var_2_0, arg_2_1.desc)
+	setActive(slot2, slot1.desc)
 
-	if not arg_2_1.desc then
+	if not slot1.desc then
 		return
 	end
 
-	setText(var_2_0:Find("Text"), arg_2_1.desc)
+	setText(slot2:Find("Text"), slot1.desc)
 end
 
-local function var_0_8(arg_3_0, arg_3_1)
-	var_0_6(arg_3_0, arg_3_1)
-	var_0_7(arg_3_0, arg_3_1)
+function slot2(slot0, slot1)
+	uv0(slot0, slot1)
+	uv1(slot0, slot1)
 end
 
-local function var_0_9(arg_4_0, arg_4_1, arg_4_2)
-	removeAllChildren(arg_4_0)
-	var_0_5(arg_4_0, arg_4_1, arg_4_2)
+function slot4(slot0, slot1, slot2)
+	removeAllChildren(slot0)
+	uv0(slot0, slot1, slot2)
 end
 
-function var_0_5(arg_5_0, arg_5_1, arg_5_2)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_2) do
-		local var_5_0 = cloneTplTo(arg_5_1, arg_5_0)
-
-		var_0_8(var_5_0, iter_5_1)
+function slot5(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs(slot2) do
+		uv0(cloneTplTo(slot1, slot0), slot7)
 	end
 end
 
-function updateSpWeaponInfo(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0:Find("attr_tpl")
+function updateSpWeaponInfo(slot0, slot1, slot2)
+	uv0(slot0:Find("attrs"), slot0:Find("attr_tpl"), slot1.attrs)
 
-	var_0_9(arg_6_0:Find("attrs"), var_6_0, arg_6_1.attrs)
+	slot4 = {}
 
-	local var_6_1 = {}
-
-	if arg_6_2[1].skillId > 0 then
-		local var_6_2 = getSkillDesc(arg_6_2[1].skillId, arg_6_2[1].lv)
-
-		if not arg_6_2[1].unlock then
-			var_6_2 = setColorStr(i18n("spweapon_tip_skill_locked") .. var_6_2, "#a2a2a2")
+	if slot2[1].skillId > 0 then
+		if not slot2[1].unlock then
+			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(slot2[1].skillId, slot2[1].lv), "#a2a2a2")
 		end
 
-		table.insert(var_6_1, {
+		table.insert(slot4, {
 			name = i18n("spweapon_attr_effect"),
-			value = setColorStr(getSkillName(arg_6_2[1].skillId), arg_6_2[1].unlock and "#FFDE00FF" or "#A2A2A2"),
-			desc = var_6_2
+			value = setColorStr(getSkillName(slot2[1].skillId), slot2[1].unlock and "#FFDE00FF" or "#A2A2A2"),
+			desc = slot5
 		})
 	end
 
-	if arg_6_2[2].skillId > 0 then
-		local var_6_3 = getSkillDesc(arg_6_2[2].skillId, arg_6_2[2].lv)
-
-		if not arg_6_2[2].unlock then
-			var_6_3 = setColorStr(i18n("spweapon_tip_skill_locked") .. var_6_3, "#a2a2a2")
+	if slot2[2].skillId > 0 then
+		if not slot2[2].unlock then
+			slot5 = setColorStr(i18n("spweapon_tip_skill_locked") .. getSkillDesc(slot2[2].skillId, slot2[2].lv), "#a2a2a2")
 		end
 
-		table.insert(var_6_1, {
+		table.insert(slot4, {
 			name = i18n("spweapon_attr_skillupgrade"),
-			value = setColorStr(getSkillName(arg_6_2[2].skillId), arg_6_2[2].unlock and "#FFDE00FF" or "#A2A2A2"),
-			desc = var_6_3
+			value = setColorStr(getSkillName(slot2[2].skillId), slot2[2].unlock and "#FFDE00FF" or "#A2A2A2"),
+			desc = slot5
 		})
 	end
 
-	var_0_5(arg_6_0:Find("attrs"), var_6_0, var_6_1)
+	uv1(slot0:Find("attrs"), slot3, slot4)
 
-	local var_6_4 = cloneTplTo(var_6_0, arg_6_0:Find("part"))
+	slot5 = cloneTplTo(slot3, slot0:Find("part"))
 
-	var_6_4:SetSiblingIndex(0)
-	var_0_8(var_6_4, {
+	slot5:SetSiblingIndex(0)
+	uv2(slot5, {
 		value = "",
 		name = i18n("equip_info_23")
 	})
 
-	local var_6_5 = arg_6_0:Find("part/value")
-	local var_6_6 = var_6_5:Find("label")
-	local var_6_7 = {}
-	local var_6_8 = {}
+	slot7 = slot0:Find("part/value"):Find("label")
 
-	if #arg_6_1.part[1] == 0 and #arg_6_1.part[2] == 0 then
-		setmetatable(var_6_7, {
-			__index = function(arg_7_0, arg_7_1)
+	if #slot1.part[1] == 0 and #slot1.part[2] == 0 then
+		setmetatable({}, {
+			__index = function (slot0, slot1)
 				return true
 			end
 		})
-		setmetatable(var_6_8, {
-			__index = function(arg_8_0, arg_8_1)
+		setmetatable({}, {
+			__index = function (slot0, slot1)
 				return true
 			end
 		})
 	else
-		for iter_6_0, iter_6_1 in ipairs(arg_6_1.part[1]) do
-			var_6_7[iter_6_1] = true
+		for slot13, slot14 in ipairs(slot1.part[1]) do
+			slot8[slot14] = true
 		end
 
-		for iter_6_2, iter_6_3 in ipairs(arg_6_1.part[2]) do
-			var_6_8[iter_6_3] = true
+		for slot13, slot14 in ipairs(slot1.part[2]) do
+			slot9[slot14] = true
 		end
 	end
 
-	local var_6_9 = ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), var_6_7, var_6_8)
+	UIItemList.StaticAlign(slot6, slot7, #ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), slot8, slot9), function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-	UIItemList.StaticAlign(var_6_5, var_6_6, #var_6_9, function(arg_9_0, arg_9_1, arg_9_2)
-		arg_9_1 = arg_9_1 + 1
-
-		if arg_9_0 == UIItemList.EventUpdate then
-			local var_9_0 = var_6_9[arg_9_1]
-
-			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(var_9_0), arg_9_2)
-			setActive(arg_9_2:Find("main"), var_6_7[var_9_0] and not var_6_8[var_9_0])
-			setActive(arg_9_2:Find("sub"), var_6_8[var_9_0] and not var_6_7[var_9_0])
-			setImageAlpha(arg_9_2, not var_6_7[var_9_0] and not var_6_8[var_9_0] and 0.3 or 1)
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot3), slot2)
+			setActive(slot2:Find("main"), uv1[slot3] and not uv2[slot3])
+			setActive(slot2:Find("sub"), uv2[slot3] and not uv1[slot3])
+			setImageAlpha(slot2, not uv1[slot3] and not uv2[slot3] and 0.3 or 1)
 		end
 	end)
-	setActive(var_6_0, false)
+	setActive(slot3, false)
 end
 
-function var_0_0.AlignAttrs(arg_10_0, arg_10_1)
-	for iter_10_0 = 1, #arg_10_0 do
-		if not arg_10_1[iter_10_0] or arg_10_0[iter_10_0].type ~= arg_10_1[iter_10_0].type then
-			local var_10_0 = false
-
-			for iter_10_1 = iter_10_0 + 1, #arg_10_1 do
-				if arg_10_1[iter_10_0].type == arg_10_1[iter_10_1].type then
-					local var_10_1 = table.remove(arg_10_1, iter_10_1)
-
-					table.insert(arg_10_1, iter_10_0, var_10_1)
-
-					var_10_0 = true
-
-					break
-				end
-			end
-
-			if not var_10_0 then
-				table.insert(arg_10_1, iter_10_0, {
-					type = arg_10_0[iter_10_0].type
-				})
-
-				arg_10_1[iter_10_0].empty = true
-			end
-		end
-	end
-
-	for iter_10_2 = #arg_10_0 + 1, #arg_10_1 do
-		table.insert(arg_10_0, {
-			type = arg_10_1[iter_10_2].type
-		})
-
-		arg_10_0[iter_10_2].empty = true
-	end
-end
-
-function var_0_0.CompareInfo(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.empty and 0 or arg_11_0.configAttr + arg_11_0.baseAttr
-
-	arg_11_1.compare = (arg_11_1.empty and 0 or arg_11_1.configAttr + arg_11_1.baseAttr) - var_11_0
-end
-
-function var_0_0.InsertAttrsCompare(arg_12_0, arg_12_1)
-	var_0_0.AlignAttrs(arg_12_0, arg_12_1)
-
-	for iter_12_0 = 1, #arg_12_0 do
-		var_0_0.CompareInfo(arg_12_0[iter_12_0], arg_12_1[iter_12_0])
-	end
-end
-
-local function var_0_10(arg_13_0)
-	local var_13_0 = arg_13_0:GetConfigAttributes()
-	local var_13_1 = arg_13_0:GetBaseAttributes()
+function slot6(slot0)
+	slot1 = slot0:GetConfigAttributes()
+	slot2 = slot0:GetBaseAttributes()
 
 	return {
 		{
-			type = arg_13_0:getConfig("attribute_1"),
-			configAttr = var_13_0[1],
-			baseAttr = var_13_1[1]
+			type = slot0:getConfig("attribute_1"),
+			configAttr = slot1[1],
+			baseAttr = slot2[1]
 		},
 		{
-			type = arg_13_0:getConfig("attribute_2"),
-			configAttr = var_13_0[2],
-			baseAttr = var_13_1[2]
+			type = slot0:getConfig("attribute_2"),
+			configAttr = slot1[2],
+			baseAttr = slot2[2]
 		}
 	}
 end
 
-local function var_0_11(arg_14_0, arg_14_1)
-	local var_14_0 = {
+function slot7(slot0, slot1)
+	slot2 = {
 		attrs = {}
 	}
 
-	for iter_14_0 = 1, #arg_14_0 do
-		local var_14_1 = arg_14_0[iter_14_0]
-		local var_14_2 = AttributeType.Type2Name(var_14_1.type)
-		local var_14_3
+	for slot6 = 1, #slot0 do
+		slot7 = slot0[slot6]
+		slot8 = AttributeType.Type2Name(slot7.type)
+		slot9 = nil
 
-		if not var_14_1.empty then
-			var_14_3 = var_14_1.configAttr .. " + " .. var_14_1.baseAttr
-
-			if not arg_14_1:IsReal() then
-				var_14_3 = var_14_3 .. "~" .. arg_14_1:GetAttributesRange()[iter_14_0]
+		if not slot7.empty then
+			if not slot1:IsReal() then
+				slot9 = slot7.configAttr .. " + " .. slot7.baseAttr .. "~" .. slot1:GetAttributesRange()[slot6]
 			end
 		else
-			var_14_3 = 0
+			slot9 = 0
 		end
 
-		table.insert(var_14_0.attrs, {
-			name = var_14_2,
-			value = var_14_3,
-			compare = var_14_1.compare
+		table.insert(slot2.attrs, {
+			name = slot8,
+			value = slot9,
+			compare = slot7.compare
 		})
 	end
 
-	local var_14_4 = arg_14_1:GetWearableShipTypes()
-
-	var_14_0.part = {
-		var_14_4,
-		var_14_4
+	slot3 = slot1:GetWearableShipTypes()
+	slot2.part = {
+		slot3,
+		slot3
 	}
 
-	return var_14_0
+	return slot2
 end
 
-function var_0_0.TransformNormalInfo(arg_15_0)
-	local var_15_0 = var_0_10(arg_15_0)
+return {
+	AlignAttrs = function (slot0, slot1)
+		for slot5 = 1, #slot0 do
+			if not slot1[slot5] or slot0[slot5].type ~= slot1[slot5].type then
+				slot6 = false
 
-	return var_0_11(var_15_0, arg_15_0)
-end
+				for slot10 = slot5 + 1, #slot1 do
+					if slot1[slot5].type == slot1[slot10].type then
+						table.insert(slot1, slot5, table.remove(slot1, slot10))
 
-function var_0_0.CompareNormalInfo(arg_16_0, arg_16_1)
-	local var_16_0 = var_0_10(arg_16_0)
-	local var_16_1 = var_0_10(arg_16_1)
+						slot6 = true
 
-	var_0_0.InsertAttrsCompare(var_16_0, var_16_1)
+						break
+					end
+				end
 
-	return var_0_11(var_16_0, arg_16_0), var_0_11(var_16_1, arg_16_1)
-end
+				if not slot6 then
+					table.insert(slot1, slot5, {
+						type = slot0[slot5].type
+					})
 
-function var_0_0.TransformCompositeInfo(arg_17_0)
-	local var_17_0 = {}
-	local var_17_1 = {
-		arg_17_0:getConfig("attribute_1"),
-		arg_17_0:getConfig("attribute_2")
-	}
-	local var_17_2 = arg_17_0:GetConfigAttributes()
-	local var_17_3 = arg_17_0:GetAttributesRange()
-
-	for iter_17_0 = 1, 2 do
-		local var_17_4 = AttributeType.Type2Name(var_17_1[iter_17_0])
-		local var_17_5 = var_17_2[iter_17_0] .. " + 0~" .. var_17_3[iter_17_0]
-
-		table.insert(var_17_0, {
-			name = var_17_4,
-			value = var_17_5
-		})
-	end
-
-	return var_17_0
-end
-
-function var_0_0.TransformUpgradeInfo(arg_18_0, arg_18_1)
-	local var_18_0 = {}
-	local var_18_1 = {
-		arg_18_0:getConfig("attribute_1"),
-		arg_18_0:getConfig("attribute_2")
-	}
-	local var_18_2 = arg_18_0:GetConfigAttributes()
-	local var_18_3 = arg_18_1:GetConfigAttributes()
-	local var_18_4 = arg_18_0:GetBaseAttributes()
-
-	for iter_18_0 = 1, 2 do
-		local var_18_5 = AttributeType.Type2Name(var_18_1[iter_18_0])
-		local var_18_6 = var_18_3[iter_18_0] .. " + " .. var_18_4[iter_18_0]
-
-		if var_18_2[iter_18_0] ~= var_18_3[iter_18_0] then
-			var_18_6 = var_18_2[iter_18_0] .. "   >   " .. var_18_6
+					slot1[slot5].empty = true
+				end
+			end
 		end
 
-		table.insert(var_18_0, {
-			name = var_18_5,
-			value = var_18_6
-		})
+		for slot5 = #slot0 + 1, #slot1 do
+			table.insert(slot0, {
+				type = slot1[slot5].type
+			})
+
+			slot0[slot5].empty = true
+		end
+	end,
+	CompareInfo = function (slot0, slot1)
+		slot1.compare = (slot1.empty and 0 or slot1.configAttr + slot1.baseAttr) - (slot0.empty and 0 or slot0.configAttr + slot0.baseAttr)
+	end,
+	InsertAttrsCompare = function (slot0, slot1)
+		uv0.AlignAttrs(slot0, slot1)
+
+		for slot5 = 1, #slot0 do
+			uv0.CompareInfo(slot0[slot5], slot1[slot5])
+		end
+	end,
+	TransformNormalInfo = function (slot0)
+		return uv1(uv0(slot0), slot0)
+	end,
+	CompareNormalInfo = function (slot0, slot1)
+		slot2 = uv0(slot0)
+		slot3 = uv0(slot1)
+
+		uv1.InsertAttrsCompare(slot2, slot3)
+
+		return uv2(slot2, slot0), uv2(slot3, slot1)
+	end,
+	TransformCompositeInfo = function (slot0)
+		slot1 = {}
+
+		for slot8 = 1, 2 do
+			table.insert(slot1, {
+				name = AttributeType.Type2Name(({
+					slot0:getConfig("attribute_1"),
+					slot0:getConfig("attribute_2")
+				})[slot8]),
+				value = slot0:GetConfigAttributes()[slot8] .. " + 0~" .. slot0:GetAttributesRange()[slot8]
+			})
+		end
+
+		return slot1
+	end,
+	TransformUpgradeInfo = function (slot0, slot1)
+		slot2 = {}
+		slot4 = slot0:GetConfigAttributes()
+		slot5 = slot1:GetConfigAttributes()
+
+		for slot10 = 1, 2 do
+			slot11 = AttributeType.Type2Name(({
+				slot0:getConfig("attribute_1"),
+				slot0:getConfig("attribute_2")
+			})[slot10])
+
+			if slot4[slot10] ~= slot5[slot10] then
+				slot12 = slot4[slot10] .. "   >   " .. (slot5[slot10] .. " + " .. slot0:GetBaseAttributes()[slot10])
+			end
+
+			table.insert(slot2, {
+				name = slot11,
+				value = slot12
+			})
+		end
+
+		return slot2
 	end
-
-	return var_18_0
-end
-
-return var_0_0
+}

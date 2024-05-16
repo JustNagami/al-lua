@@ -1,13 +1,13 @@
-﻿local var_0_0 = class("PlayerVitaeEducateAddCard", import(".PlayerVitaeEducateBaseCard"))
+slot0 = class("PlayerVitaeEducateAddCard", import(".PlayerVitaeEducateBaseCard"))
 
-function var_0_0.Flush(arg_1_0)
-	onButton(arg_1_0, arg_1_0._tf, function()
-		arg_1_0:emit(PlayerVitaeMediator.ON_SEL_EDUCATE_CHAR)
+function slot0.Flush(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:emit(PlayerVitaeMediator.ON_SEL_EDUCATE_CHAR)
 	end, SFX_PANEL)
 end
 
-function var_0_0.Clear(arg_3_0)
-	removeOnButton(arg_3_0._tf)
+function slot0.Clear(slot0)
+	removeOnButton(slot0._tf)
 end
 
-return var_0_0
+return slot0

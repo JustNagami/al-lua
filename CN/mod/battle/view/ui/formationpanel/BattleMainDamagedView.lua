@@ -1,47 +1,43 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot0.Battle.BattleMainDamagedView = class("BattleMainDamagedView")
+slot2 = class("BattleMainDamagedView")
+slot0.Battle.BattleMainDamagedView = slot2
+slot2.__name = "BattleMainDamagedView"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
+function slot2.Ctor(slot0, slot1)
+	slot0._go = slot1
 
-var_0_0.Battle.BattleMainDamagedView = class("BattleMainDamagedView")
-
-local var_0_2 = class("BattleMainDamagedView")
-
-var_0_0.Battle.BattleMainDamagedView = var_0_2
-var_0_2.__name = "BattleMainDamagedView"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_2.Init(arg_2_0)
-	arg_2_0._tf = arg_2_0._go.transform
-	arg_2_0._bleedView = findTF(arg_2_0._tf, "mainUnitDamaged")
-	arg_2_0._bleedAnimation = arg_2_0._bleedView:GetComponent(typeof(Animator))
+function slot2.Init(slot0)
+	slot0._tf = slot0._go.transform
+	slot0._bleedView = findTF(slot0._tf, "mainUnitDamaged")
+	slot0._bleedAnimation = slot0._bleedView:GetComponent(typeof(Animator))
 
-	arg_2_0._bleedView:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_3_0)
-		setActive(arg_2_0._bleedView, false)
+	slot0._bleedView:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
+		setActive(uv0._bleedView, false)
 
-		arg_2_0._isPlaying = false
+		uv0._isPlaying = false
 	end)
-	setActive(arg_2_0._bleedView, false)
+	setActive(slot0._bleedView, false)
 
-	arg_2_0._isPlaying = false
+	slot0._isPlaying = false
 end
 
-function var_0_2.Play(arg_4_0)
-	if not arg_4_0._isPlaying then
-		setActive(arg_4_0._bleedView, true)
+function slot2.Play(slot0)
+	if not slot0._isPlaying then
+		setActive(slot0._bleedView, true)
 	end
 
-	arg_4_0._isPlaying = true
+	slot0._isPlaying = true
 end
 
-function var_0_2.Dispose(arg_5_0)
-	arg_5_0._bleedView = nil
-	arg_5_0._bleedAnimation = nil
-	arg_5_0._tf = nil
-	arg_5_0._go = nil
+function slot2.Dispose(slot0)
+	slot0._bleedView = nil
+	slot0._bleedAnimation = nil
+	slot0._tf = nil
+	slot0._go = nil
 end

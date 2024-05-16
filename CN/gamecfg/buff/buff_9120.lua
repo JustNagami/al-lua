@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "埃吉尔模拟战斗用全弹技能",
+	stack = 1,
+	id = 9120,
+	icon = 9120,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -39,26 +60,5 @@
 				skill_id = 19434
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "埃吉尔模拟战斗用全弹技能",
-	stack = 1,
-	id = 9120,
-	icon = 9120,
-	last_effect = ""
+	}
 }

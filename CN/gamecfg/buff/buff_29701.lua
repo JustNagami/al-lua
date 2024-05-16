@@ -1,4 +1,15 @@
-﻿return {
+return {
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发专属弹幕-阿布鲁齐公爵I",
+	stack = 1,
+	id = 29701,
+	icon = 29700,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,16 +35,5 @@
 				countType = 29700
 			}
 		}
-	},
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发专属弹幕-阿布鲁齐公爵I",
-	stack = 1,
-	id = 29701,
-	icon = 29700,
-	last_effect = ""
+	}
 }

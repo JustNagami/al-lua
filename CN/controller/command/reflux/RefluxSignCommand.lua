@@ -1,25 +1,22 @@
-﻿local var_0_0 = class("RefluxSignCommand", pm.SimpleCommand)
+slot0 = class("RefluxSignCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0)
+function slot0.execute(slot0)
 	pg.ConnectionMgr.GetInstance():Send(11753, {
 		type = 0
-	}, 11754, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(RefluxProxy)
+	}, 11754, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(RefluxProxy)
 
-			var_2_0:setSignLastTimestamp()
-			var_2_0:addSignCount()
-
-			local var_2_1 = PlayerConst.addTranDrop(arg_2_0.award_list)
-
+			slot1:setSignLastTimestamp()
+			slot1:addSignCount()
 			pg.m02:sendNotification(GAME.REFLUX_SIGN_DONE, {
-				awards = var_2_1
+				awards = PlayerConst.addTranDrop(slot0.award_list)
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Sign Error:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Sign Error:" .. slot0.result)
 			getProxy(RefluxProxy):setAutoActionForbidden(true)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

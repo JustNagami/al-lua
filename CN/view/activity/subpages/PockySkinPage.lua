@@ -1,102 +1,95 @@
-﻿local var_0_0 = class("PockySkinPage", import("view.base.BaseActivityPage"))
+slot0 = class("PockySkinPage", import("view.base.BaseActivityPage"))
 
-function var_0_0.GetCurrentDay()
-	local var_1_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return pg.TimeMgr.GetInstance():STimeDescS(var_1_0, "*t").yday
+function slot0.GetCurrentDay()
+	return pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t").yday
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.bg = arg_2_0:findTF("AD")
-	arg_2_0.leftStage = arg_2_0.bg:Find("left")
-	arg_2_0.rightStage = arg_2_0.bg:Find("right")
-	arg_2_0.taskDesc = arg_2_0.leftStage:Find("task")
-	arg_2_0.signDesc = arg_2_0.leftStage:Find("signin")
-	arg_2_0.spine = nil
-	arg_2_0.spineLRQ = GetSpineRequestPackage.New("beierfasite_4", function(arg_3_0)
-		SetParent(arg_3_0, arg_2_0.leftStage:Find("ship"))
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.leftStage = slot0.bg:Find("left")
+	slot0.rightStage = slot0.bg:Find("right")
+	slot0.taskDesc = slot0.leftStage:Find("task")
+	slot0.signDesc = slot0.leftStage:Find("signin")
+	slot0.spine = nil
+	slot0.spineLRQ = GetSpineRequestPackage.New("beierfasite_4", function (slot0)
+		SetParent(slot0, uv0.leftStage:Find("ship"))
 
-		arg_2_0.spine = arg_3_0
-		arg_2_0.spine.transform.localScale = Vector3.one
+		uv0.spine = slot0
+		uv0.spine.transform.localScale = Vector3.one
 
-		arg_2_0:SetAction("stand")
+		uv0:SetAction("stand")
 
-		arg_2_0.spineLRQ = nil
+		uv0.spineLRQ = nil
 	end):Start()
-
-	local var_2_0 = getProxy(PlayerProxy):getRawData().id
-
-	arg_2_0.startDay = PlayerPrefs.GetInt("PockySkinSignDay" .. (var_2_0 or "-1"), 0)
-	arg_2_0.usmLRQ = nil
+	slot0.startDay = PlayerPrefs.GetInt("PockySkinSignDay" .. (getProxy(PlayerProxy):getRawData().id or "-1"), 0)
+	slot0.usmLRQ = nil
 end
 
-function var_0_0.OnDataSetting(arg_4_0)
-	local var_4_0 = getProxy(ActivityProxy)
-	local var_4_1 = arg_4_0.activity:getConfig("config_client").linkids
-	local var_4_2 = false
+function slot0.OnDataSetting(slot0)
+	slot1 = getProxy(ActivityProxy)
+	slot2 = slot0.activity:getConfig("config_client").linkids
+	slot0.ActSignIn = slot0.activity
+	slot0.taskProxy = getProxy(TaskProxy)
 
-	arg_4_0.ActSignIn = arg_4_0.activity
-	arg_4_0.taskProxy = getProxy(TaskProxy)
-
-	if arg_4_0.ActSignIn then
-		arg_4_0.nday = 0
-		arg_4_0.taskGroup = arg_4_0.ActSignIn:getConfig("config_data")
-		var_4_2 = var_4_2 or updateActivityTaskStatus(arg_4_0.ActSignIn)
+	if slot0.ActSignIn then
+		slot0.nday = 0
+		slot0.taskGroup = slot0.ActSignIn:getConfig("config_data")
+		slot3 = false or updateActivityTaskStatus(slot0.ActSignIn)
 	end
 
-	arg_4_0.ActPT = var_4_0:getActivityById(var_4_1[1])
+	slot0.ActPT = slot1:getActivityById(slot2[1])
 
-	if arg_4_0.ActPT then
-		if arg_4_0.ptData then
-			arg_4_0.ptData:Update(arg_4_0.ActPT)
+	if slot0.ActPT then
+		if slot0.ptData then
+			slot0.ptData:Update(slot0.ActPT)
 		else
-			arg_4_0.ptData = ActivityPtData.New(arg_4_0.ActPT)
+			slot0.ptData = ActivityPtData.New(slot0.ActPT)
 		end
 	end
 
-	arg_4_0.ActTaskList = var_4_0:getActivityById(var_4_1[2])
+	slot0.ActTaskList = slot1:getActivityById(slot2[2])
 
-	if arg_4_0.ActTaskList then
-		arg_4_0.nday2 = 0
-		arg_4_0.taskGroup2 = arg_4_0.ActTaskList:getConfig("config_data")
-		var_4_2 = var_4_2 or updateActivityTaskStatus(arg_4_0.ActTaskList)
+	if slot0.ActTaskList then
+		slot0.nday2 = 0
+		slot0.taskGroup2 = slot0.ActTaskList:getConfig("config_data")
+		slot3 = slot3 or updateActivityTaskStatus(slot0.ActTaskList)
 	end
 
-	arg_4_0.ActFinal = var_4_0:getActivityById(var_4_1[3])
+	slot0.ActFinal = slot1:getActivityById(slot2[3])
 
-	if arg_4_0.ActFinal then
-		arg_4_0.nday3 = 0
-		arg_4_0.taskGroup3 = arg_4_0.ActFinal:getConfig("config_data")
-		var_4_2 = var_4_2 or updateActivityTaskStatus(arg_4_0.ActFinal)
+	if slot0.ActFinal then
+		slot0.nday3 = 0
+		slot0.taskGroup3 = slot0.ActFinal:getConfig("config_data")
+		slot3 = slot3 or updateActivityTaskStatus(slot0.ActFinal)
 	end
 
-	return var_4_2
+	return slot3
 end
 
-function var_0_0.OnFirstFlush(arg_5_0)
-	onButton(arg_5_0, arg_5_0.rightStage:Find("display_btn"), function()
-		arg_5_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
-			type = arg_5_0.ptData.type,
-			dropList = arg_5_0.ptData.dropList,
-			targets = arg_5_0.ptData.targets,
-			level = arg_5_0.ptData.level,
-			count = arg_5_0.ptData.count,
-			resId = arg_5_0.ptData.resId
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.rightStage:Find("display_btn"), function ()
+		uv0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
+			type = uv0.ptData.type,
+			dropList = uv0.ptData.dropList,
+			targets = uv0.ptData.targets,
+			level = uv0.ptData.level,
+			count = uv0.ptData.count,
+			resId = uv0.ptData.resId
 		})
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.rightStage:Find("battle_btn"), function()
-		arg_5_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+	onButton(slot0, slot0.rightStage:Find("battle_btn"), function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.rightStage:Find("get_btn"), function()
-		local var_8_0, var_8_1 = arg_5_0.ptData:GetResProgress()
+	onButton(slot0, slot0.rightStage:Find("get_btn"), function ()
+		slot0, slot1 = uv0.ptData:GetResProgress()
 
-		arg_5_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = arg_5_0.ptData:GetId(),
-			arg1 = var_8_1
+			activity_id = uv0.ptData:GetId(),
+			arg1 = slot1
 		})
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.bg:Find("help"), function()
+	onButton(slot0, slot0.bg:Find("help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.pocky_help.tip
@@ -104,239 +97,202 @@ function var_0_0.OnFirstFlush(arg_5_0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.SetAction(arg_10_0, arg_10_1)
-	if not arg_10_0.spine then
+function slot0.SetAction(slot0, slot1)
+	if not slot0.spine then
 		return
 	end
 
-	local var_10_0 = arg_10_0.spine:GetComponent("SpineAnimUI")
-
-	if var_10_0 then
-		var_10_0:SetAction(arg_10_1, 0)
+	if slot0.spine:GetComponent("SpineAnimUI") then
+		slot2:SetAction(slot1, 0)
 	end
 end
 
-function var_0_0.OnUpdateFlush(arg_11_0)
-	arg_11_0:UpdateTaskList()
-	arg_11_0:UpdatePTList()
+function slot0.OnUpdateFlush(slot0)
+	slot0:UpdateTaskList()
+	slot0:UpdatePTList()
 
-	local var_11_0 = arg_11_0.startDay < arg_11_0.GetCurrentDay()
-	local var_11_1 = "ui"
-	local var_11_2 = var_11_0 and "juu_factory_rest" or "juu_factory"
+	slot2 = "ui"
+	slot3 = slot0.startDay < slot0.GetCurrentDay() and "juu_factory_rest" or "juu_factory"
 
-	if arg_11_0.usmLRQ and arg_11_0.usmLRQ.name ~= var_11_2 then
-		arg_11_0.usmLRQ:Stop()
+	if slot0.usmLRQ and slot0.usmLRQ.name ~= slot3 then
+		slot0.usmLRQ:Stop()
 
-		arg_11_0.usmLRQ = nil
+		slot0.usmLRQ = nil
 	end
 
-	if arg_11_0.usmName ~= var_11_2 then
-		arg_11_0.usmLRQ = LoadPrefabRequestPackage.New(var_11_1 .. "/" .. var_11_2, var_11_2, function(arg_12_0)
-			if not IsNil(arg_11_0.usm) then
-				Destroy(arg_11_0.usm)
+	if slot0.usmName ~= slot3 then
+		slot0.usmLRQ = LoadPrefabRequestPackage.New(slot2 .. "/" .. slot3, slot3, function (slot0)
+			if not IsNil(uv0.usm) then
+				Destroy(uv0.usm)
 			end
 
-			arg_11_0.usm = arg_12_0
+			uv0.usm = slot0
 
-			setParent(arg_12_0, arg_11_0.bg:Find("usm"))
+			setParent(slot0, uv0.bg:Find("usm"))
 		end):Start()
-		arg_11_0.usmName = var_11_2
+		slot0.usmName = slot3
 	end
 end
 
-function var_0_0.UpdateTaskList(arg_13_0)
-	arg_13_0.nday = arg_13_0.ActSignIn.data3 or 0
-	arg_13_0.nday2 = arg_13_0.ActTaskList.data3 or 0
-	arg_13_0.nday3 = arg_13_0.ActFinal.data3 or 0
+function slot0.UpdateTaskList(slot0)
+	slot0.nday = slot0.ActSignIn.data3 or 0
+	slot0.nday2 = slot0.ActTaskList.data3 or 0
+	slot0.nday3 = slot0.ActFinal.data3 or 0
 
-	local var_13_0 = arg_13_0.ActSignIn:getConfig("config_client").story
-
-	if checkExist(var_13_0, {
-		arg_13_0.nday
+	if checkExist(slot0.ActSignIn:getConfig("config_client").story, {
+		slot0.nday
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_13_0[arg_13_0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(slot1[slot0.nday][1])
 	end
 
-	local var_13_1 = arg_13_0.leftStage:Find("go_btn")
-	local var_13_2 = arg_13_0.leftStage:Find("get_btn")
-	local var_13_3 = arg_13_0.leftStage:Find("sign_btn")
-	local var_13_4 = arg_13_0.leftStage:Find("got_btn")
-	local var_13_5 = arg_13_0.leftStage:Find("award")
-	local var_13_6 = arg_13_0.leftStage:Find("slider")
-	local var_13_7 = getProxy(TaskProxy)
-	local var_13_8 = arg_13_0.taskGroup[arg_13_0.nday][1]
-	local var_13_9 = arg_13_0.taskGroup2[arg_13_0.nday2][1]
-	local var_13_10 = arg_13_0.taskGroup3[arg_13_0.nday3][1]
-	local var_13_11 = var_13_7:getTaskVO(var_13_8)
-	local var_13_12 = var_13_7:getTaskVO(var_13_9)
-	local var_13_13 = var_13_7:getTaskVO(var_13_10)
-	local var_13_14 = var_13_11:getTaskStatus()
-	local var_13_15 = var_13_12:getTaskStatus()
-	local var_13_16 = var_13_13:getTaskStatus()
+	slot2 = slot0.leftStage:Find("go_btn")
+	slot3 = slot0.leftStage:Find("get_btn")
+	slot4 = slot0.leftStage:Find("sign_btn")
+	slot5 = slot0.leftStage:Find("got_btn")
+	slot6 = slot0.leftStage:Find("award")
+	slot7 = slot0.leftStage:Find("slider")
+	slot8 = getProxy(TaskProxy)
+	slot16 = slot8:getTaskVO(slot0.taskGroup2[slot0.nday2][1]):getTaskStatus()
+	slot17 = slot8:getTaskVO(slot0.taskGroup3[slot0.nday3][1]):getTaskStatus()
 
-	if not arg_13_0.startTaskid then
-		arg_13_0.startTaskid = var_13_8
-		arg_13_0.startStatus = var_13_14
+	if not slot0.startTaskid then
+		slot0.startTaskid = slot9
+		slot0.startStatus = slot8:getTaskVO(slot0.taskGroup[slot0.nday][1]):getTaskStatus()
 	end
 
-	local var_13_17 = false
+	slot18 = false
 
-	if arg_13_0.startTaskid ~= var_13_8 then
-		arg_13_0.startTaskid = var_13_8
-		arg_13_0.startStatus = var_13_14
-		var_13_17 = true
-	elseif arg_13_0.startStatus ~= var_13_14 then
-		arg_13_0.startStatus = var_13_14
-		var_13_17 = true
+	if slot0.startTaskid ~= slot9 then
+		slot0.startTaskid = slot9
+		slot0.startStatus = slot15
+		slot18 = true
+	elseif slot0.startStatus ~= slot15 then
+		slot0.startStatus = slot15
+		slot18 = true
 	end
 
-	local var_13_18 = arg_13_0.GetCurrentDay()
+	slot19 = slot0.GetCurrentDay()
 
-	if var_13_17 and var_13_18 > arg_13_0.startDay then
-		arg_13_0.startDay = var_13_18
+	if slot18 and slot0.startDay < slot19 then
+		slot0.startDay = slot19
 
-		local var_13_19 = getProxy(PlayerProxy):getRawData().id
-
-		PlayerPrefs.SetInt("PockySkinSignDay" .. (var_13_19 or "-1"), arg_13_0.startDay)
+		PlayerPrefs.SetInt("PockySkinSignDay" .. (getProxy(PlayerProxy):getRawData().id or "-1"), slot0.startDay)
 	end
 
-	if var_13_16 == 2 then
-		setActive(var_13_5, false)
-		setActive(var_13_6, false)
-		setActive(arg_13_0.taskDesc, false)
-		setActive(arg_13_0.signDesc, true)
-		setText(arg_13_0.signDesc:Find("title"), i18n("pocky_jiujiu"))
-		setText(arg_13_0.signDesc:Find("desc"), i18n("pocky_jiujiu_desc"))
-		setActive(var_13_1, false)
-		setActive(var_13_3, true)
-		setActive(var_13_2, false)
-		setActive(var_13_4, false)
-		onButton(arg_13_0, var_13_3, function()
-			local var_14_0 = arg_13_0.GetCurrentDay()
+	if slot17 == 2 then
+		setActive(slot6, false)
+		setActive(slot7, false)
+		setActive(slot0.taskDesc, false)
+		setActive(slot0.signDesc, true)
+		setText(slot0.signDesc:Find("title"), i18n("pocky_jiujiu"))
+		setText(slot0.signDesc:Find("desc"), i18n("pocky_jiujiu_desc"))
+		setActive(slot2, false)
+		setActive(slot4, true)
+		setActive(slot3, false)
+		setActive(slot5, false)
+		onButton(slot0, slot4, function ()
+			if uv0.startDay < uv0.GetCurrentDay() then
+				uv0.startDay = slot0
 
-			if var_14_0 > arg_13_0.startDay then
-				arg_13_0.startDay = var_14_0
-
-				local var_14_1 = getProxy(PlayerProxy):getRawData().id
-
-				PlayerPrefs.SetInt("PockySkinSignDay" .. (var_14_1 or "-1"), arg_13_0.startDay)
-				arg_13_0:OnUpdateFlush()
+				PlayerPrefs.SetInt("PockySkinSignDay" .. (getProxy(PlayerProxy):getRawData().id or "-1"), uv0.startDay)
+				uv0:OnUpdateFlush()
 			end
 		end, SFX_PANEL)
-		removeOnButton(var_13_4)
+		removeOnButton(slot5)
 
 		return
 	end
 
-	local var_13_20
-	local var_13_21
-	local var_13_22
+	slot20, slot21, slot22 = nil
 
-	if arg_13_0.ptData.level >= #arg_13_0.ptData.targets and arg_13_0.nday >= #arg_13_0.taskGroup and var_13_14 == 2 and arg_13_0.nday2 >= #arg_13_0.taskGroup2 and var_13_15 == 2 then
-		setActive(var_13_3, false)
+	if slot0.ptData.level >= #slot0.ptData.targets and slot0.nday >= #slot0.taskGroup and slot15 == 2 and slot0.nday2 >= #slot0.taskGroup2 and slot16 == 2 then
+		setActive(slot4, false)
 
-		var_13_20 = var_13_2
-		var_13_21 = var_13_13
-	elseif arg_13_0.nday <= arg_13_0.nday2 and var_13_14 ~= 2 then
-		setActive(var_13_2, false)
+		slot20 = slot3
+		slot21 = slot14
+	elseif slot0.nday <= slot0.nday2 and slot15 ~= 2 then
+		setActive(slot3, false)
 
-		var_13_20 = var_13_3
-		var_13_21 = var_13_11
+		slot20 = slot4
+		slot21 = slot12
 	else
-		setActive(var_13_3, false)
+		setActive(slot4, false)
 
-		var_13_20 = var_13_2
-		var_13_21 = var_13_12
+		slot20 = slot3
+		slot21 = slot13
 	end
 
-	local var_13_23 = var_13_21:getConfig("award_display")[1]
-	local var_13_24 = {
-		type = var_13_23[1],
-		id = var_13_23[2],
-		count = var_13_23[3]
-	}
+	slot23 = slot21:getConfig("award_display")[1]
 
-	setActive(var_13_5, true)
-	updateDrop(var_13_5, var_13_24)
-	onButton(arg_13_0, var_13_5, function()
-		arg_13_0:emit(BaseUI.ON_DROP, var_13_24)
+	setActive(slot6, true)
+	updateDrop(slot6, {
+		type = slot23[1],
+		id = slot23[2],
+		count = slot23[3]
+	})
+	onButton(slot0, slot6, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-	setActive(var_13_6, true)
-	setActive(arg_13_0.taskDesc, true)
-	setActive(arg_13_0.signDesc, false)
-
-	local var_13_25 = var_13_21:getProgress()
-	local var_13_26 = var_13_21:getConfig("target_num")
-
-	setText(arg_13_0.taskDesc:Find("title"), var_13_21:getConfig("name"))
-	setText(arg_13_0.taskDesc:Find("desc"), var_13_21:getConfig("desc"))
-	setSlider(var_13_6, 0, var_13_26, var_13_25)
-
-	local var_13_27 = var_13_21:getTaskStatus()
-
-	setActive(var_13_1, var_13_27 == 0)
-	setActive(var_13_20, var_13_27 == 1)
-	setActive(var_13_4, var_13_27 == 2)
-	onButton(arg_13_0, var_13_1, function()
-		arg_13_0:emit(ActivityMediator.ON_TASK_GO, var_13_21)
+	setActive(slot7, true)
+	setActive(slot0.taskDesc, true)
+	setActive(slot0.signDesc, false)
+	setText(slot0.taskDesc:Find("title"), slot21:getConfig("name"))
+	setText(slot0.taskDesc:Find("desc"), slot21:getConfig("desc"))
+	setSlider(slot7, 0, slot21:getConfig("target_num"), slot21:getProgress())
+	setActive(slot2, slot21:getTaskStatus() == 0)
+	setActive(slot20, slot27 == 1)
+	setActive(slot5, slot27 == 2)
+	onButton(slot0, slot2, function ()
+		uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
 	end, SFX_PANEL)
-	onButton(arg_13_0, var_13_20, function()
-		arg_13_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_13_21)
+	onButton(slot0, slot20, function ()
+		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdatePTList(arg_18_0)
-	if not arg_18_0.ptData then
+function slot0.UpdatePTList(slot0)
+	if not slot0.ptData then
 		return
 	end
 
-	local var_18_0 = arg_18_0.ptData:getTargetLevel()
-	local var_18_1 = arg_18_0.ActPT:getConfig("config_client").story
-
-	if checkExist(var_18_1, {
-		var_18_0
+	if checkExist(slot0.ActPT:getConfig("config_client").story, {
+		slot0.ptData:getTargetLevel()
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_18_1[var_18_0][1])
+		pg.NewStoryMgr.GetInstance():Play(slot2[slot1][1])
 	end
 
-	local var_18_2, var_18_3 = arg_18_0.ptData:GetResProgress()
-	local var_18_4 = arg_18_0.ptData:GetTotalResRequire()
-	local var_18_5 = arg_18_0.rightStage:Find("slider")
+	slot3, slot4 = slot0.ptData:GetResProgress()
+	slot5 = slot0.ptData:GetTotalResRequire()
 
-	setSlider(var_18_5, 0, 1, math.min(var_18_2, var_18_3) / var_18_4)
+	setSlider(slot0.rightStage:Find("slider"), 0, 1, math.min(slot3, slot4) / slot5)
+	setSlider(slot0.rightStage:Find("slider_total"), 0, 1, slot0.ptData:GetUnlockedMaxResRequire() / slot5)
 
-	local var_18_6 = arg_18_0.ptData:GetUnlockedMaxResRequire()
-	local var_18_7 = arg_18_0.rightStage:Find("slider_total")
+	slot9 = slot0.ptData:CanGetAward()
+	slot10 = slot0.ptData:CanGetNextAward()
 
-	setSlider(var_18_7, 0, 1, var_18_6 / var_18_4)
-
-	local var_18_8 = arg_18_0.ptData:CanGetAward()
-	local var_18_9 = arg_18_0.ptData:CanGetNextAward()
-	local var_18_10 = arg_18_0.ptData:CanGetMorePt()
-
-	setActive(arg_18_0.rightStage:Find("battle_btn"), var_18_10 and not var_18_8 and var_18_9)
-	setActive(arg_18_0.rightStage:Find("get_btn"), var_18_8)
-	setActive(arg_18_0.rightStage:Find("got_btn"), not var_18_9)
+	setActive(slot0.rightStage:Find("battle_btn"), slot0.ptData:CanGetMorePt() and not slot9 and slot10)
+	setActive(slot0.rightStage:Find("get_btn"), slot9)
+	setActive(slot0.rightStage:Find("got_btn"), not slot10)
 end
 
-function var_0_0.OnDestroy(arg_19_0)
-	if arg_19_0.spineLRQ then
-		arg_19_0.spineLRQ:Stop()
+function slot0.OnDestroy(slot0)
+	if slot0.spineLRQ then
+		slot0.spineLRQ:Stop()
 
-		arg_19_0.spineLRQ = nil
+		slot0.spineLRQ = nil
 	end
 
-	if arg_19_0.spine then
-		arg_19_0.spine.transform.localScale = Vector3.one
+	if slot0.spine then
+		slot0.spine.transform.localScale = Vector3.one
 
-		pg.PoolMgr.GetInstance():ReturnSpineChar("beierfasite_4", arg_19_0.spine)
+		pg.PoolMgr.GetInstance():ReturnSpineChar("beierfasite_4", slot0.spine)
 
-		arg_19_0.spine = nil
+		slot0.spine = nil
 	end
 end
 
-return var_0_0
+return slot0

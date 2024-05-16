@@ -1,10 +1,10 @@
-﻿local var_0_0 = class("GatewayInfo")
+slot0 = class("GatewayInfo")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	arg_1_0.host = arg_1_1
-	arg_1_0.port = arg_1_2
-	arg_1_0.proxyHost = arg_1_3
-	arg_1_0.proxyPort = arg_1_4
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	slot0.host = slot1
+	slot0.port = slot2
+	slot0.proxyHost = slot3
+	slot0.proxyPort = slot4
 end
 
-return var_0_0
+return slot0

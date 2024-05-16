@@ -1,84 +1,73 @@
-﻿local var_0_0 = class("OutPostPtPage", import(".MaoziPtPage"))
+slot0 = class("OutPostPtPage", import(".MaoziPtPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.getBtn1 = arg_1_0:findTF("AD/switcher/phase2/get_btn")
+	slot0.getBtn1 = slot0:findTF("AD/switcher/phase2/get_btn")
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	var_0_0.super.OnFirstFlush(arg_2_0)
-	setActive(arg_2_0.displayBtn, true)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	setActive(slot0.displayBtn, true)
 
-	local var_2_0 = arg_2_0.displayBtn:Find("Image1")
-	local var_2_1 = arg_2_0.displayBtn:Find("Image2")
-	local var_2_2, var_2_3 = arg_2_0:GetActTask()
-	local var_2_4 = var_2_2 and var_2_2:isReceive() and var_2_3
+	slot3, slot4 = slot0:GetActTask()
+	slot5 = slot3 and slot3:isReceive() and slot4
 
-	setActive(var_2_0, not var_2_4)
-	setActive(var_2_1, var_2_4)
+	setActive(slot0.displayBtn:Find("Image1"), not slot5)
+	setActive(slot0.displayBtn:Find("Image2"), slot5)
 
-	if var_2_2 and not var_2_2:isReceive() then
-		blinkAni(go(var_2_0), 0.8, -1, 0.3)
+	if slot3 and not slot3:isReceive() then
+		blinkAni(go(slot1), 0.8, -1, 0.3)
 	else
-		LeanTween.cancel(go(var_2_0))
+		LeanTween.cancel(go(slot1))
 	end
 
-	onButton(arg_2_0, arg_2_0.displayBtn, function()
-		if var_2_2 and var_2_2:isReceive() and not var_2_4 then
+	onButton(slot0, slot0.displayBtn, function ()
+		if uv0 and uv0:isReceive() and not uv1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("undermist_tip"))
 
 			return
 		end
 
-		if var_2_2 and not var_2_4 then
-			arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+		if uv0 and not uv1 then
+			uv2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 				page = "activity",
-				targetId = var_2_2.id
+				targetId = uv0.id
 			})
 		end
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.getBtn1, function()
-		triggerButton(arg_2_0.getBtn)
+	onButton(slot0, slot0.getBtn1, function ()
+		triggerButton(uv0.getBtn)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_5_0)
-	var_0_0.super.OnUpdateFlush(arg_5_0)
-
-	local var_5_0 = arg_5_0.ptData:CanGetAward()
-
-	setActive(arg_5_0.getBtn1, var_5_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
+	setActive(slot0.getBtn1, slot0.ptData:CanGetAward())
 end
 
-function var_0_0.GetActTask(arg_6_0)
-	local var_6_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.OUTPOST_TASK)
-
-	if not var_6_0 or var_6_0:isEnd() then
+function slot0.GetActTask(slot0)
+	if not getProxy(ActivityProxy):getActivityById(ActivityConst.OUTPOST_TASK) or slot1:isEnd() then
 		return
 	end
 
-	local var_6_1 = _.flatten(var_6_0:getConfig("config_data"))
-	local var_6_2 = getProxy(TaskProxy)
-	local var_6_3
-	local var_6_4 = false
+	slot3 = getProxy(TaskProxy)
+	slot4 = nil
+	slot5 = false
 
-	for iter_6_0 = #var_6_1, 1, -1 do
-		local var_6_5 = var_6_1[iter_6_0]
-		local var_6_6 = var_6_2:getTaskById(var_6_5) or var_6_2:getFinishTaskById(var_6_5)
+	for slot9 = #_.flatten(slot1:getConfig("config_data")), 1, -1 do
+		if slot3:getTaskById(slot2[slot9]) or slot3:getFinishTaskById(slot10) then
+			slot4 = slot11
 
-		if var_6_6 then
-			var_6_3 = var_6_6
-
-			if iter_6_0 == #var_6_1 then
-				var_6_4 = true
+			if slot9 == #slot2 then
+				slot5 = true
 			end
 
 			break
 		end
 	end
 
-	return var_6_3, var_6_4
+	return slot4, slot5
 end
 
-return var_0_0
+return slot0

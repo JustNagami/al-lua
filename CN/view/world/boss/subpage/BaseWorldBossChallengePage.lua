@@ -1,11 +1,9 @@
-﻿local var_0_0 = class("BaseWorldBossChallengePage", import("view.base.BaseSubView"))
-
-var_0_0.Listeners = {
+slot0 = class("BaseWorldBossChallengePage", import("view.base.BaseSubView"))
+slot0.Listeners = {
 	onRankListUpdated = "OnRankListUpdated",
 	onCacheBossUpdated = "OnCacheBossUpdated"
 }
-
-local var_0_1 = {
+slot1 = {
 	[970701] = {
 		411,
 		777
@@ -42,426 +40,391 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	for iter_1_0, iter_1_1 in pairs(var_0_0.Listeners) do
-		arg_1_0[iter_1_0] = function(...)
-			var_0_0[iter_1_1](arg_1_0, ...)
+function slot0.Setup(slot0, slot1)
+	for slot5, slot6 in pairs(uv0.Listeners) do
+		slot0[slot5] = function (...)
+			uv0[uv1](uv2, ...)
 		end
 	end
 
-	arg_1_0.proxy = arg_1_1
+	slot0.proxy = slot1
 end
 
-function var_0_0.OnLoaded(arg_3_0)
-	arg_3_0.rankPage = WorldBossRankPage.New(arg_3_0._tf.parent.parent, arg_3_0.event)
+function slot0.OnLoaded(slot0)
+	slot0.rankPage = WorldBossRankPage.New(slot0._tf.parent.parent, slot0.event)
 
-	arg_3_0:AddListeners(arg_3_0.proxy)
+	slot0:AddListeners(slot0.proxy)
 end
 
-function var_0_0.OnInit(arg_4_0)
-	arg_4_0:UpdateEmptyCard()
+function slot0.OnInit(slot0)
+	slot0:UpdateEmptyCard()
 
-	arg_4_0.scrollRect = WorldBossItemList.New(arg_4_0:findTF("list_panel/mask/bg/container"), arg_4_0:findTF("list_panel/mask/tpl"))
+	slot0.scrollRect = WorldBossItemList.New(slot0:findTF("list_panel/mask/bg/container"), slot0:findTF("list_panel/mask/tpl"))
 
-	arg_4_0.scrollRect:Make(function(arg_5_0, arg_5_1)
-		arg_4_0:OnInitCard(arg_5_0, arg_5_1)
-	end, function(arg_6_0, arg_6_1)
-		arg_4_0:OnPreviewCard(arg_6_0, arg_6_1)
-	end, function(arg_7_0, arg_7_1)
-		arg_4_0:OnSelectCard(arg_7_0, arg_7_1)
+	slot0.scrollRect:Make(function (slot0, slot1)
+		uv0:OnInitCard(slot0, slot1)
+	end, function (slot0, slot1)
+		uv0:OnPreviewCard(slot0, slot1)
+	end, function (slot0, slot1)
+		uv0:OnSelectCard(slot0, slot1)
 	end)
 
-	arg_4_0.hpSlider = arg_4_0:findTF("main/hp/slider"):GetComponent(typeof(Slider))
-	arg_4_0.levelTxt = arg_4_0:findTF("main/hp/level/Text"):GetComponent(typeof(Text))
-	arg_4_0.hpTxt = arg_4_0:findTF("main/hp/Text"):GetComponent(typeof(Text))
-	arg_4_0.expiredTimeTxt = arg_4_0:findTF("main/time/Text"):GetComponent(typeof(Text))
-	arg_4_0.mainPanel = arg_4_0:findTF("main")
-	arg_4_0.painting = arg_4_0:findTF("paint")
+	slot0.hpSlider = slot0:findTF("main/hp/slider"):GetComponent(typeof(Slider))
+	slot0.levelTxt = slot0:findTF("main/hp/level/Text"):GetComponent(typeof(Text))
+	slot0.hpTxt = slot0:findTF("main/hp/Text"):GetComponent(typeof(Text))
+	slot0.expiredTimeTxt = slot0:findTF("main/time/Text"):GetComponent(typeof(Text))
+	slot0.mainPanel = slot0:findTF("main")
+	slot0.painting = slot0:findTF("paint")
 
-	setActive(arg_4_0.painting, false)
-	setActive(arg_4_0.mainPanel, false)
+	setActive(slot0.painting, false)
+	setActive(slot0.mainPanel, false)
 
-	arg_4_0.rankBtn = arg_4_0.mainPanel:Find("rank_btn")
-	arg_4_0.startBtn = arg_4_0.mainPanel:Find("start_btn")
-	arg_4_0.refreshBtn = arg_4_0:findTF("list_panel/frame/filter/refresh_btn")
-	arg_4_0.refreshBtnGray = arg_4_0:findTF("list_panel/frame/filter/refresh_btn_gray")
-	arg_4_0.cdTime = 0
+	slot0.rankBtn = slot0.mainPanel:Find("rank_btn")
+	slot0.startBtn = slot0.mainPanel:Find("start_btn")
+	slot0.refreshBtn = slot0:findTF("list_panel/frame/filter/refresh_btn")
+	slot0.refreshBtnGray = slot0:findTF("list_panel/frame/filter/refresh_btn_gray")
+	slot0.cdTime = 0
 
-	onButton(arg_4_0, arg_4_0.refreshBtn, function()
-		if arg_4_0.cdTime <= pg.TimeMgr.GetInstance():GetServerTime() then
-			arg_4_0.worldBossId = nil
+	onButton(slot0, slot0.refreshBtn, function ()
+		if uv0.cdTime <= pg.TimeMgr.GetInstance():GetServerTime() then
+			uv0.worldBossId = nil
 
-			arg_4_0:emit(WorldBossMediator.UPDATE_CACHE_BOSS_HP, function()
-				arg_4_0:OnCacheBossUpdated()
+			uv0:emit(WorldBossMediator.UPDATE_CACHE_BOSS_HP, function ()
+				uv0:OnCacheBossUpdated()
 			end)
 			assert(pg.gameset.world_boss_resfresh, "gameset >>>>>>>>>>world_boss_resfresh")
 
-			local var_8_0 = pg.gameset.world_boss_resfresh.key_value
+			slot0 = pg.gameset.world_boss_resfresh.key_value
+			uv0.cdTime = pg.TimeMgr.GetInstance():GetServerTime() + slot0
 
-			arg_4_0.cdTime = pg.TimeMgr.GetInstance():GetServerTime() + var_8_0
-
-			arg_4_0:RotateRefreshBtn(var_8_0)
+			uv0:RotateRefreshBtn(slot0)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_not_refresh_frequently"))
 		end
 	end, SFX_PANEL)
-	onButton(arg_4_0, arg_4_0.refreshBtnGray, function()
+	onButton(slot0, slot0.refreshBtnGray, function ()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_not_refresh_frequently"))
 	end, SFX_PANEL)
 
-	arg_4_0.filterToggle = arg_4_0:findTF("list_panel/frame/filter/toggles")
-	arg_4_0.filterFlags = {
+	slot0.filterToggle = slot0:findTF("list_panel/frame/filter/toggles")
+	slot0.filterFlags = {
 		WorldBoss.BOSS_TYPE_WORLD,
 		WorldBoss.BOSS_TYPE_FRIEND,
 		WorldBoss.BOSS_TYPE_GUILD
 	}
 
-	onToggle(arg_4_0, arg_4_0:findTF("list_panel/frame/filter/toggles/friend"), function(arg_11_0)
-		arg_4_0.filterFlags[2] = arg_11_0 and WorldBoss.BOSS_TYPE_FRIEND or -1
+	onToggle(slot0, slot0:findTF("list_panel/frame/filter/toggles/friend"), function (slot0)
+		uv0.filterFlags[2] = slot0 and WorldBoss.BOSS_TYPE_FRIEND or -1
 
-		arg_4_0:CheckToggle()
-		arg_4_0:UpdateNonProcessList()
+		uv0:CheckToggle()
+		uv0:UpdateNonProcessList()
 	end, SFX_PANEL)
-	GetComponent(arg_4_0:findTF("list_panel/frame/filter/toggles/friend/unsel"), typeof(Image)):SetNativeSize()
-	GetComponent(arg_4_0:findTF("list_panel/frame/filter/toggles/friend/sel"), typeof(Image)):SetNativeSize()
-	GetComponent(arg_4_0:findTF("list_panel/frame/filter/toggles/guild/sel"), typeof(Image)):SetNativeSize()
-	GetComponent(arg_4_0:findTF("list_panel/frame/filter/toggles/guild/unsel"), typeof(Image)):SetNativeSize()
-	onToggle(arg_4_0, arg_4_0:findTF("list_panel/frame/filter/toggles/guild"), function(arg_12_0)
-		arg_4_0.filterFlags[3] = arg_12_0 and WorldBoss.BOSS_TYPE_GUILD or -1
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/unsel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/friend/sel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/sel"), typeof(Image)):SetNativeSize()
+	GetComponent(slot0:findTF("list_panel/frame/filter/toggles/guild/unsel"), typeof(Image)):SetNativeSize()
+	onToggle(slot0, slot0:findTF("list_panel/frame/filter/toggles/guild"), function (slot0)
+		uv0.filterFlags[3] = slot0 and WorldBoss.BOSS_TYPE_GUILD or -1
 
-		arg_4_0:CheckToggle()
-		arg_4_0:UpdateNonProcessList()
+		uv0:CheckToggle()
+		uv0:UpdateNonProcessList()
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateEmptyCard(arg_13_0)
-	local var_13_0 = arg_13_0:findTF("list_panel/mask/tpl")
-	local var_13_1 = WorldBossConst.GetCurrBossGroup()
-	local var_13_2 = var_13_0:Find("empty"):GetComponent(typeof(Image))
+function slot0.UpdateEmptyCard(slot0)
+	slot3 = slot0:findTF("list_panel/mask/tpl"):Find("empty"):GetComponent(typeof(Image))
+	slot3.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. WorldBossConst.GetCurrBossGroup(), "item_04")
 
-	var_13_2.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. var_13_1, "item_04")
-
-	var_13_2:SetNativeSize()
+	slot3:SetNativeSize()
 end
 
-function var_0_0.CheckToggle(arg_14_0)
-	if _.all(arg_14_0.filterFlags, function(arg_15_0)
-		return arg_15_0 == -1
+function slot0.CheckToggle(slot0)
+	if _.all(slot0.filterFlags, function (slot0)
+		return slot0 == -1
 	end) then
-		triggerToggle(arg_14_0:findTF("list_panel/frame/filter/toggles/friend"), true)
-		triggerToggle(arg_14_0:findTF("list_panel/frame/filter/toggles/guild"), true)
+		triggerToggle(slot0:findTF("list_panel/frame/filter/toggles/friend"), true)
+		triggerToggle(slot0:findTF("list_panel/frame/filter/toggles/guild"), true)
 	end
 end
 
-function var_0_0.GetResSuffix(arg_16_0)
+function slot0.GetResSuffix(slot0)
 	return ""
 end
 
-function var_0_0.UpdatePainting(arg_17_0, arg_17_1)
-	if arg_17_0.groupId ~= arg_17_1 then
-		arg_17_0.groupId = arg_17_1
+function slot0.UpdatePainting(slot0, slot1)
+	if slot0.groupId ~= slot1 then
+		slot0.groupId = slot1
+		slot2 = slot0:findTF("main/label"):GetComponent(typeof(Image))
+		slot2.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. slot1, "title" .. slot0:GetResSuffix())
 
-		local var_17_0 = arg_17_0:findTF("main/label"):GetComponent(typeof(Image))
+		slot2:SetNativeSize()
+		setMetaPaintingPrefabAsync(slot0.painting, slot0.groupId, "lihuisha")
 
-		var_17_0.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg_17_1, "title" .. arg_17_0:GetResSuffix())
-
-		var_17_0:SetNativeSize()
-		setMetaPaintingPrefabAsync(arg_17_0.painting, arg_17_0.groupId, "lihuisha")
-
-		local var_17_1 = WorldBossConst.MetaId2BossId(arg_17_0.groupId)
-		local var_17_2 = pg.world_joint_boss_template[var_17_1].p_offset_other or var_0_1[arg_17_0.groupId]
-
-		if var_17_2 then
-			setAnchoredPosition(arg_17_0.painting, {
-				x = var_17_2[1],
-				y = var_17_2[2]
+		if pg.world_joint_boss_template[WorldBossConst.MetaId2BossId(slot0.groupId)].p_offset_other or uv0[slot0.groupId] then
+			setAnchoredPosition(slot0.painting, {
+				x = slot4[1],
+				y = slot4[2]
 			})
 
-			local var_17_3 = var_17_2[3] or 1
-			local var_17_4 = var_17_2[4] or 1
-
-			arg_17_0.painting.localScale = Vector3(var_17_3, var_17_4, 1)
+			slot0.painting.localScale = Vector3(slot4[3] or 1, slot4[4] or 1, 1)
 		end
 	end
 end
 
-function var_0_0.RotateRefreshBtn(arg_18_0, arg_18_1)
-	LeanTween.rotate(rtf(arg_18_0.refreshBtn), -360, 0.5):setOnComplete(System.Action(function()
-		arg_18_0.refreshBtn.localEulerAngles = Vector3(0, 0, 0)
+function slot0.RotateRefreshBtn(slot0, slot1)
+	LeanTween.rotate(rtf(slot0.refreshBtn), -360, 0.5):setOnComplete(System.Action(function ()
+		uv0.refreshBtn.localEulerAngles = Vector3(0, 0, 0)
 
-		setActive(arg_18_0.refreshBtnGray, false)
-		setActive(arg_18_0.refreshBtnGray, true)
+		setActive(uv0.refreshBtnGray, false)
+		setActive(uv0.refreshBtnGray, true)
 	end))
 
-	if arg_18_0.refreshtimer then
-		arg_18_0.refreshtimer:Stop()
+	if slot0.refreshtimer then
+		slot0.refreshtimer:Stop()
 
-		arg_18_0.refreshtimer = nil
+		slot0.refreshtimer = nil
 	end
 
-	arg_18_0.refreshtimer = Timer.New(function()
-		setActive(arg_18_0.refreshBtnGray, true)
-		setActive(arg_18_0.refreshBtnGray, false)
-	end, arg_18_1, 1)
+	slot0.refreshtimer = Timer.New(function ()
+		setActive(uv0.refreshBtnGray, true)
+		setActive(uv0.refreshBtnGray, false)
+	end, slot1, 1)
 
-	arg_18_0.refreshtimer:Start()
+	slot0.refreshtimer:Start()
 end
 
-function var_0_0.AddListeners(arg_21_0, arg_21_1)
-	arg_21_1:AddListener(WorldBossProxy.EventRankListUpdated, arg_21_0.onRankListUpdated)
-	arg_21_1:AddListener(WorldBossProxy.EventCacheBossListUpdated, arg_21_0.onCacheBossUpdated)
+function slot0.AddListeners(slot0, slot1)
+	slot1:AddListener(WorldBossProxy.EventRankListUpdated, slot0.onRankListUpdated)
+	slot1:AddListener(WorldBossProxy.EventCacheBossListUpdated, slot0.onCacheBossUpdated)
 end
 
-function var_0_0.RemoveListeners(arg_22_0, arg_22_1)
-	arg_22_1:RemoveListener(WorldBossProxy.EventRankListUpdated, arg_22_0.onRankListUpdated)
-	arg_22_1:RemoveListener(WorldBossProxy.EventCacheBossListUpdated, arg_22_0.onCacheBossUpdated)
+function slot0.RemoveListeners(slot0, slot1)
+	slot1:RemoveListener(WorldBossProxy.EventRankListUpdated, slot0.onRankListUpdated)
+	slot1:RemoveListener(WorldBossProxy.EventCacheBossListUpdated, slot0.onCacheBossUpdated)
 end
 
-function var_0_0.OnCacheBossUpdated(arg_23_0)
-	arg_23_0:UpdateNonProcessList()
+function slot0.OnCacheBossUpdated(slot0)
+	slot0:UpdateNonProcessList()
 end
 
-function var_0_0.OnRankListUpdated(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
-	if arg_24_0.boss and arg_24_0.boss.id == arg_24_3 and arg_24_0.rankPage:GetLoaded() and arg_24_0.rankPage:isActive() then
-		arg_24_0.rankPage:ExecuteAction("Update", arg_24_0.proxy, arg_24_0.boss.id)
+function slot0.OnRankListUpdated(slot0, slot1, slot2, slot3)
+	if slot0.boss and slot0.boss.id == slot3 and slot0.rankPage:GetLoaded() and slot0.rankPage:isActive() then
+		slot0.rankPage:ExecuteAction("Update", slot0.proxy, slot0.boss.id)
 	end
 end
 
-function var_0_0.Update(arg_25_0)
-	arg_25_0:emit(WorldBossMediator.UPDATE_CACHE_BOSS_HP, function()
-		arg_25_0:UpdateNonProcessList()
-		arg_25_0:Show()
+function slot0.Update(slot0)
+	slot0:emit(WorldBossMediator.UPDATE_CACHE_BOSS_HP, function ()
+		uv0:UpdateNonProcessList()
+		uv0:Show()
 	end)
 end
 
-function var_0_0.UpdateNonProcessList(arg_27_0)
-	local var_27_0 = arg_27_0.proxy:GetCacheBossList()
+function slot0.UpdateNonProcessList(slot0)
+	slot0.displays = {}
 
-	local function var_27_1(arg_28_0)
-		local var_28_0 = _.select(arg_27_0.filterFlags, function(arg_29_0)
-			return arg_29_0 >= 0
-		end)
-
-		return _.any(var_28_0, function(arg_30_0)
-			return arg_28_0:GetType() == arg_30_0
-		end)
-	end
-
-	arg_27_0.displays = {}
-
-	for iter_27_0, iter_27_1 in ipairs(var_27_0) do
-		if not iter_27_1:isDeath() and not iter_27_1:IsExpired() and var_27_1(iter_27_1) and not iter_27_1:IsFullPeople() and arg_27_0:OnFilterBoss(iter_27_1) then
-			table.insert(arg_27_0.displays, iter_27_1)
+	for slot7, slot8 in ipairs(slot0.proxy:GetCacheBossList()) do
+		if not slot8:isDeath() and not slot8:IsExpired() and function (slot0)
+			return _.any(_.select(uv0.filterFlags, function (slot0)
+				return slot0 >= 0
+			end), function (slot0)
+				return uv0:GetType() == slot0
+			end)
+		end(slot8) and not slot8:IsFullPeople() and slot0:OnFilterBoss(slot8) then
+			table.insert(slot0.displays, slot8)
 		end
 	end
 
-	table.sort(arg_27_0.displays, function(arg_31_0, arg_31_1)
-		return arg_31_0:GetJoinTime() > arg_31_1:GetJoinTime()
+	table.sort(slot0.displays, function (slot0, slot1)
+		return slot1:GetJoinTime() < slot0:GetJoinTime()
 	end)
 
-	local var_27_2 = 1
+	slot4 = 1
 
-	for iter_27_2, iter_27_3 in ipairs(arg_27_0.displays) do
-		if iter_27_3.id == arg_27_0.contextData.worldBossId or iter_27_3.id == arg_27_0.worldBossId then
-			var_27_2 = iter_27_2
+	for slot8, slot9 in ipairs(slot0.displays) do
+		if slot9.id == slot0.contextData.worldBossId or slot9.id == slot0.worldBossId then
+			slot4 = slot8
 
 			break
 		end
 	end
 
-	arg_27_0.contextData.worldBossId = nil
+	slot0.contextData.worldBossId = nil
 	WorldBossScene.inOtherBossBattle = nil
 
-	arg_27_0.scrollRect:Align(#arg_27_0.displays, var_27_2)
-	setActive(arg_27_0.filterToggle, true)
-	setActive(arg_27_0.refreshBtn, true)
+	slot0.scrollRect:Align(#slot0.displays, slot4)
+	setActive(slot0.filterToggle, true)
+	setActive(slot0.refreshBtn, true)
 end
 
-function var_0_0.OnFilterBoss(arg_32_0, arg_32_1)
+function slot0.OnFilterBoss(slot0, slot1)
 	return true
 end
 
-function var_0_0.OnInitCard(arg_33_0, arg_33_1, arg_33_2)
-	local var_33_0 = arg_33_0.displays[arg_33_2 + 1]
-	local var_33_1 = false
-	local var_33_2 = arg_33_1:Find("tags")
+function slot0.OnInitCard(slot0, slot1, slot2)
+	slot4 = false
+	slot5 = slot1:Find("tags")
 
-	removeOnButton(arg_33_1)
-	setText(arg_33_1:Find("tags/friend/Text"), "")
-	setText(arg_33_1:Find("tags/guild/Text"), "")
+	removeOnButton(slot1)
+	setText(slot1:Find("tags/friend/Text"), "")
+	setText(slot1:Find("tags/guild/Text"), "")
 
-	if var_33_0 then
-		var_33_1 = var_33_0:isDeath()
+	if slot0.displays[slot2 + 1] then
+		slot4 = slot3:isDeath()
 
-		local var_33_3 = var_33_0:GetType()
+		setActive(slot1:Find("tags/friend"), slot3:GetType() == WorldBoss.BOSS_TYPE_FRIEND)
+		setActive(slot1:Find("tags/guild"), slot6 == WorldBoss.BOSS_TYPE_GUILD)
+		setActive(slot1:Find("tags/world"), slot6 == WorldBoss.BOSS_TYPE_WORLD)
 
-		setActive(arg_33_1:Find("tags/friend"), var_33_3 == WorldBoss.BOSS_TYPE_FRIEND)
-		setActive(arg_33_1:Find("tags/guild"), var_33_3 == WorldBoss.BOSS_TYPE_GUILD)
-		setActive(arg_33_1:Find("tags/world"), var_33_3 == WorldBoss.BOSS_TYPE_WORLD)
+		slot5.anchoredPosition = Vector3(0, 14, 0)
 
-		var_33_2.anchoredPosition = Vector3(0, 14, 0)
-
-		setText(arg_33_1:Find("tags/friend/Text"), var_33_0:GetRoleName())
-		setText(arg_33_1:Find("tags/guild/Text"), var_33_0:GetRoleName())
-		onButton(arg_33_0, arg_33_1, function()
-			arg_33_0.scrollRect:SliceTo(arg_33_1)
+		setText(slot1:Find("tags/friend/Text"), slot3:GetRoleName())
+		setText(slot1:Find("tags/guild/Text"), slot3:GetRoleName())
+		onButton(slot0, slot1, function ()
+			uv0.scrollRect:SliceTo(uv1)
 		end, SFX_PANEL)
-		arg_33_0:UpdateCardStyle(arg_33_1, var_33_0.config.meta_id)
+		slot0:UpdateCardStyle(slot1, slot3.config.meta_id)
 	end
 
-	setActive(arg_33_1:Find("complete"), var_33_0 and var_33_1)
-	setActive(arg_33_1:Find("raiding"), var_33_0 and not var_33_1)
-	setActive(arg_33_1:Find("empty"), not var_33_0)
-	setActive(var_33_2, var_33_0)
-	setActive(arg_33_1:Find("tags/friend/Text"), false)
-	setActive(arg_33_1:Find("tags/guild/Text"), false)
+	setActive(slot1:Find("complete"), slot3 and slot4)
+	setActive(slot1:Find("raiding"), slot3 and not slot4)
+	setActive(slot1:Find("empty"), not slot3)
+	setActive(slot5, slot3)
+	setActive(slot1:Find("tags/friend/Text"), false)
+	setActive(slot1:Find("tags/guild/Text"), false)
 end
 
-function var_0_0.UpdateCardStyle(arg_35_0, arg_35_1, arg_35_2)
-	arg_35_1:Find("raiding"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg_35_2, "item_03")
+function slot0.UpdateCardStyle(slot0, slot1, slot2)
+	slot1:Find("raiding"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. slot2, "item_03")
+	slot3 = slot1:Find("empty"):GetComponent(typeof(Image))
+	slot3.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. slot2, "item_04")
 
-	local var_35_0 = arg_35_1:Find("empty"):GetComponent(typeof(Image))
+	slot3:SetNativeSize()
 
-	var_35_0.sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg_35_2, "item_04")
-
-	var_35_0:SetNativeSize()
-
-	arg_35_1:Find("selected/challenging"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. arg_35_2, "item_01" .. arg_35_0:GetResSuffix())
+	slot1:Find("selected/challenging"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("MetaWorldboss/" .. slot2, "item_01" .. slot0:GetResSuffix())
 end
 
-function var_0_0.OnPreviewCard(arg_36_0, arg_36_1, arg_36_2)
-	if arg_36_0.prevSelected and arg_36_0.prevSelected.boss then
-		arg_36_0.prevSelected.childTF:Find("tags").anchoredPosition = Vector3(0, 14, 0)
+function slot0.OnPreviewCard(slot0, slot1, slot2)
+	if slot0.prevSelected and slot0.prevSelected.boss then
+		slot0.prevSelected.childTF:Find("tags").anchoredPosition = Vector3(0, 14, 0)
 
-		setActive(arg_36_0.prevSelected.childTF:Find("tags/friend/Text"), false)
-		setActive(arg_36_0.prevSelected.childTF:Find("tags/guild/Text"), false)
-		setActive(arg_36_0.prevSelected.childTF:Find("selected"), false)
+		setActive(slot0.prevSelected.childTF:Find("tags/friend/Text"), false)
+		setActive(slot0.prevSelected.childTF:Find("tags/guild/Text"), false)
+		setActive(slot0.prevSelected.childTF:Find("selected"), false)
 	end
 
-	local var_36_0 = arg_36_0.displays[arg_36_2 + 1]
+	if slot0.displays[slot2 + 1] then
+		slot4 = slot3:isDeath()
 
-	if var_36_0 then
-		local var_36_1 = var_36_0:isDeath()
+		setActive(slot1:Find("selected/challenging"), not slot4)
+		setActive(slot1:Find("selected/finished"), slot4)
 
-		setActive(arg_36_1:Find("selected/challenging"), not var_36_1)
-		setActive(arg_36_1:Find("selected/finished"), var_36_1)
+		slot1:Find("tags").anchoredPosition = Vector3(-17, 41.69, 0)
 
-		arg_36_1:Find("tags").anchoredPosition = Vector3(-17, 41.69, 0)
-
-		setActive(arg_36_1:Find("tags/friend/Text"), true)
-		setActive(arg_36_1:Find("tags/guild/Text"), true)
-		arg_36_0:UpdateMainView(var_36_0)
+		setActive(slot1:Find("tags/friend/Text"), true)
+		setActive(slot1:Find("tags/guild/Text"), true)
+		slot0:UpdateMainView(slot3)
 	end
 
-	setActive(arg_36_1:Find("selected"), var_36_0)
+	setActive(slot1:Find("selected"), slot3)
 
-	arg_36_0.prevSelected = {
-		childTF = arg_36_1,
-		boss = var_36_0
+	slot0.prevSelected = {
+		childTF = slot1,
+		boss = slot3
 	}
 end
 
-function var_0_0.OnSelectCard(arg_37_0, arg_37_1, arg_37_2)
-	local var_37_0 = arg_37_0.displays[arg_37_2 + 1]
+function slot0.OnSelectCard(slot0, slot1, slot2)
+	slot0.boss = slot0.displays[slot2 + 1]
+	slot0.worldBossId = nil
 
-	arg_37_0.boss = var_37_0
-	arg_37_0.worldBossId = nil
+	if slot0.boss then
+		slot0.worldBossId = slot3.id
 
-	if arg_37_0.boss then
-		arg_37_0.worldBossId = var_37_0.id
-
-		arg_37_0:UpdateMainView(var_37_0)
+		slot0:UpdateMainView(slot3)
 	else
-		setActive(arg_37_0.mainPanel, false)
-		setActive(arg_37_0.painting, false)
+		setActive(slot0.mainPanel, false)
+		setActive(slot0.painting, false)
 	end
 end
 
-function var_0_0.UpdateMainView(arg_38_0, arg_38_1, arg_38_2)
-	setActive(arg_38_0.mainPanel, true)
-	setActive(arg_38_0.painting, true)
+function slot0.UpdateMainView(slot0, slot1, slot2)
+	setActive(slot0.mainPanel, true)
+	setActive(slot0.painting, true)
 
-	local var_38_0 = arg_38_0.proxy
-	local var_38_1 = arg_38_1:isDeath()
-	local var_38_2 = arg_38_1:GetLeftTime()
+	slot3 = slot0.proxy
 
-	onButton(arg_38_0, arg_38_0.rankBtn, function()
-		arg_38_0.rankPage:ExecuteAction("Update", arg_38_0.proxy, arg_38_1.id)
+	onButton(slot0, slot0.rankBtn, function ()
+		uv0.rankPage:ExecuteAction("Update", uv0.proxy, uv1.id)
 	end, SFX_PANEL)
 
-	local var_38_3 = arg_38_1:GetMaxHp()
+	slot0.hpSlider.value = 1
+	slot0.levelTxt.text = slot1:GetLevel()
+	slot0.hpTxt.text = "HP:" .. slot1:GetMaxHp()
 
-	arg_38_0.hpSlider.value = 1
-	arg_38_0.levelTxt.text = arg_38_1:GetLevel()
-	arg_38_0.hpTxt.text = "HP:" .. var_38_3
-
-	onButton(arg_38_0, arg_38_0.startBtn, function()
-		arg_38_0:emit(WorldBossMediator.ON_BATTLE, arg_38_1.id, true)
+	onButton(slot0, slot0.startBtn, function ()
+		uv0:emit(WorldBossMediator.ON_BATTLE, uv1.id, true)
 	end, SFX_PANEL)
-	setActive(arg_38_0.startBtn, not var_38_1 and var_38_2 > 0)
-	arg_38_0:removeBattleTimer()
+	setActive(slot0.startBtn, not slot1:isDeath() and slot1:GetLeftTime() > 0)
+	slot0:removeBattleTimer()
 
-	if not var_38_1 and not arg_38_2 then
-		arg_38_0:addBattleTimer(arg_38_1)
+	if not slot4 and not slot2 then
+		slot0:addBattleTimer(slot1)
 	end
 
-	arg_38_0:UpdatePainting(arg_38_1.config.meta_id)
+	slot0:UpdatePainting(slot1.config.meta_id)
 end
 
-function var_0_0.addBattleTimer(arg_41_0, arg_41_1)
-	local var_41_0 = arg_41_1:GetExpiredTime()
-
-	if var_41_0 - pg.TimeMgr.GetInstance():GetServerTime() >= 0 then
-		arg_41_0.timer = Timer.New(function()
-			if arg_41_0.exited then
-				arg_41_0:removeBattleTimer()
+function slot0.addBattleTimer(slot0, slot1)
+	if slot1:GetExpiredTime() - pg.TimeMgr.GetInstance():GetServerTime() >= 0 then
+		slot0.timer = Timer.New(function ()
+			if uv0.exited then
+				uv0:removeBattleTimer()
 
 				return
 			end
 
-			local var_42_0 = var_41_0 - pg.TimeMgr.GetInstance():GetServerTime()
+			if uv1 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+				uv0.expiredTimeTxt.text = i18n("world_word_expired")
 
-			if var_42_0 <= 0 then
-				arg_41_0.expiredTimeTxt.text = i18n("world_word_expired")
-
-				arg_41_0:removeBattleTimer()
-				arg_41_0:UpdateMainView(arg_41_1, true)
+				uv0:removeBattleTimer()
+				uv0:UpdateMainView(uv2, true)
 			else
-				arg_41_0.expiredTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_42_0)
+				uv0.expiredTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
 			end
 		end, 1, -1)
 
-		arg_41_0.timer:Start()
-		arg_41_0.timer.func()
+		slot0.timer:Start()
+		slot0.timer.func()
 	else
-		arg_41_0.expiredTimeTxt.text = i18n("world_word_expired")
+		slot0.expiredTimeTxt.text = i18n("world_word_expired")
 
-		arg_41_0:UpdateMainView(arg_41_1, true)
+		slot0:UpdateMainView(slot1, true)
 	end
 end
 
-function var_0_0.removeBattleTimer(arg_43_0)
-	if arg_43_0.timer then
-		arg_43_0.timer:Stop()
+function slot0.removeBattleTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_43_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.OnDestroy(arg_44_0)
-	retMetaPaintingPrefab(arg_44_0.painting, arg_44_0.groupId)
-	arg_44_0:RemoveListeners(arg_44_0.proxy)
-	arg_44_0:removeBattleTimer()
-	arg_44_0.scrollRect:Dispose()
-	arg_44_0.rankPage:Destroy()
+function slot0.OnDestroy(slot0)
+	retMetaPaintingPrefab(slot0.painting, slot0.groupId)
+	slot0:RemoveListeners(slot0.proxy)
+	slot0:removeBattleTimer()
+	slot0.scrollRect:Dispose()
+	slot0.rankPage:Destroy()
 
-	if arg_44_0.refreshtimer then
-		arg_44_0.refreshtimer:Stop()
+	if slot0.refreshtimer then
+		slot0.refreshtimer:Stop()
 
-		arg_44_0.refreshtimer = nil
+		slot0.refreshtimer = nil
 	end
 
-	arg_44_0.exited = true
+	slot0.exited = true
 end
 
-return var_0_0
+return slot0

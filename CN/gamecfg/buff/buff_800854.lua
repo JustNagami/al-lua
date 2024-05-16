@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 5,
+	id = 800854,
+	icon = 800854,
+	last_effect = "aierjiliya_buff",
 	effect_list = {
 		{
 			type = "BattleBuffAddTag",
@@ -59,25 +79,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 5,
-	id = 800854,
-	icon = 800854,
-	last_effect = "aierjiliya_buff"
+	}
 }

@@ -1,106 +1,94 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot1 = class("EventDispatcher")
+ys.EventDispatcher = slot1
+slot1.__name = "EventDispatcher"
+slot1.FUNC_NAME_REGISTER = "RegisterEventListener"
+slot1.FUNC_NAME_UNREGISTER = "UnregisterEventListener"
+slot1.FUNC_NAME_DISPATCH = "DispatchEvent"
 
-local var_0_0 = ys
-local var_0_1 = class("EventDispatcher")
-
-var_0_0.EventDispatcher = var_0_1
-var_0_1.__name = "EventDispatcher"
-var_0_1.FUNC_NAME_REGISTER = "RegisterEventListener"
-var_0_1.FUNC_NAME_UNREGISTER = "UnregisterEventListener"
-var_0_1.FUNC_NAME_DISPATCH = "DispatchEvent"
-
-function var_0_1.AttachEventDispatcher(arg_1_0)
-	var_0_1.New(arg_1_0)
+function slot1.AttachEventDispatcher(slot0)
+	uv0.New(slot0)
 end
 
-function var_0_1.DetachEventDispatcher(arg_2_0)
-	if arg_2_0._dispatcher_ == nil then
+function slot1.DetachEventDispatcher(slot0)
+	if slot0._dispatcher_ == nil then
 		return
 	end
 
-	arg_2_0._dispatcher_:_Destory_()
+	slot0._dispatcher_:_Destory_()
 
-	arg_2_0._dispatcher_ = nil
+	slot0._dispatcher_ = nil
 end
 
-function var_0_1.Ctor(arg_3_0, arg_3_1)
-	arg_3_0._target_ = arg_3_1
+function slot1.Ctor(slot0, slot1)
+	slot0._target_ = slot1
 
-	arg_3_0:_Init_()
+	slot0:_Init_()
 end
 
-function var_0_1._Init_(arg_4_0)
-	arg_4_0._listenerMap_ = {}
-	arg_4_0._target_[var_0_1.FUNC_NAME_REGISTER] = var_0_1._RegisterEventListener_
-	arg_4_0._target_[var_0_1.FUNC_NAME_UNREGISTER] = var_0_1._UnregisterEventListener_
-	arg_4_0._target_[var_0_1.FUNC_NAME_DISPATCH] = var_0_1._DispatchEvent_
-	arg_4_0._target_._dispatcher_ = arg_4_0
+function slot1._Init_(slot0)
+	slot0._listenerMap_ = {}
+	slot0._target_[uv0.FUNC_NAME_REGISTER] = uv0._RegisterEventListener_
+	slot0._target_[uv0.FUNC_NAME_UNREGISTER] = uv0._UnregisterEventListener_
+	slot0._target_[uv0.FUNC_NAME_DISPATCH] = uv0._DispatchEvent_
+	slot0._target_._dispatcher_ = slot0
 end
 
-function var_0_1._Destory_(arg_5_0)
-	arg_5_0._listenerMap_ = nil
-	arg_5_0._target_ = nil
+function slot1._Destory_(slot0)
+	slot0._listenerMap_ = nil
+	slot0._target_ = nil
 end
 
-function var_0_1._DispatchEvent_(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0._dispatcher_
+function slot1._DispatchEvent_(slot0, slot1)
+	slot2 = slot0._dispatcher_
+	slot1.Dispatcher = slot1.Dispatcher or slot2._target_
 
-	arg_6_1.Dispatcher = arg_6_1.Dispatcher or var_6_0._target_
-
-	local var_6_1 = arg_6_1.ID
-	local var_6_2 = var_6_0._listenerMap_[var_6_1]
-
-	if var_6_2 then
-		for iter_6_0, iter_6_1 in ipairs(var_6_2) do
-			iter_6_1:_Handle_(arg_6_1)
+	if slot2._listenerMap_[slot1.ID] then
+		for slot8, slot9 in ipairs(slot4) do
+			slot9:_Handle_(slot1)
 		end
 	end
 end
 
-function var_0_1._RegisterEventListener_(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	local var_7_0 = arg_7_0._dispatcher_
+function slot1._RegisterEventListener_(slot0, slot1, slot2, slot3)
+	assert(slot1._eventListener_ ~= nil, "EventDispatcher ERROR" .. slot1.__cname)
 
-	assert(arg_7_1._eventListener_ ~= nil, "EventDispatcher ERROR" .. arg_7_1.__cname)
-
-	if var_7_0._listenerMap_[arg_7_2] == nil then
-		var_7_0._listenerMap_[arg_7_2] = {}
+	if slot0._dispatcher_._listenerMap_[slot2] == nil then
+		slot4._listenerMap_[slot2] = {}
 	end
 
-	local var_7_1 = var_7_0._listenerMap_[arg_7_2]
+	slot5 = slot4._listenerMap_[slot2]
+	slot5[#slot5 + 1] = slot1._eventListener_
 
-	var_7_1[#var_7_1 + 1] = arg_7_1._eventListener_
-
-	arg_7_1._eventListener_:_AddRoute_(arg_7_2, arg_7_0, arg_7_3)
+	slot1._eventListener_:_AddRoute_(slot2, slot0, slot3)
 end
 
-function var_0_1._UnregisterEventListener_(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_0._dispatcher_
+function slot1._UnregisterEventListener_(slot0, slot1, slot2)
+	slot1 = slot1._eventListener_
 
-	arg_8_1 = arg_8_1._eventListener_
-
-	if var_8_0._listenerMap_[arg_8_2] == nil then
+	if slot0._dispatcher_._listenerMap_[slot2] == nil then
 		return
 	end
 
-	local var_8_1 = var_8_0._listenerMap_[arg_8_2]
+	slot8 = slot0
 
-	arg_8_1:_RemoveRoute_(arg_8_2, arg_8_0)
+	slot1:_RemoveRoute_(slot2, slot8)
 
-	for iter_8_0, iter_8_1 in ipairs(var_8_1) do
-		if iter_8_1 == arg_8_1 then
-			local var_8_2 = iter_8_0
+	for slot8, slot9 in ipairs(slot3._listenerMap_[slot2]) do
+		if slot9 == slot1 then
+			slot10 = slot8
 
-			for iter_8_2 = #var_8_1, 1, -1 do
-				var_8_1[iter_8_2] = nil
+			for slot15 = #slot4, 1, -1 do
+				slot4[slot15] = nil
 			end
 
-			var_8_1[#var_8_1] = nil
+			slot4[#slot4] = nil
 
 			break
 		end
 	end
 
-	if #var_8_1 == 0 then
-		var_8_0._listenerMap_[arg_8_2] = nil
+	if #slot4 == 0 then
+		slot3._listenerMap_[slot2] = nil
 	end
 end

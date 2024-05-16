@@ -1,20 +1,17 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.word_template_97 = {}
-
-local var_0_1 = var_0_0.word_template_97
+pg = pg or {}
+slot0 = pg
+slot0.word_template_97 = {}
+slot1 = slot0.word_template_97
 
 function temp()
-	var_0_1.薑 = {
-		春 = {
-			雲 = {
+	uv0["薑"] = {
+		["春"] = {
+			["雲"] = {
 				this = true
 			}
 		},
-		偉 = {
-			新 = {
+		["偉"] = {
+			["新"] = {
 				this = true
 			}
 		}
@@ -24,9 +21,9 @@ end
 temp()
 
 function temp()
-	var_0_1.將 = {
-		則 = {
-			民 = {
+	uv0["將"] = {
+		["則"] = {
+			["民"] = {
 				this = true
 			}
 		}
@@ -36,21 +33,21 @@ end
 temp()
 
 function temp()
-	var_0_1.僵 = {
-		賊 = {
+	uv0["僵"] = {
+		["賊"] = {
 			this = true,
-			民 = {
+			["民"] = {
 				this = true
 			}
 		},
-		贼 = {
+		["贼"] = {
 			this = true,
-			民 = {
+			["民"] = {
 				this = true
 			}
 		},
-		责 = {
-			岷 = {
+		["责"] = {
+			["岷"] = {
 				this = true
 			}
 		}
@@ -60,8 +57,8 @@ end
 temp()
 
 function temp()
-	var_0_1.講 = {
-		法 = {
+	uv0["講"] = {
+		["法"] = {
 			this = true
 		}
 	}
@@ -70,47 +67,47 @@ end
 temp()
 
 function temp()
-	var_0_1.蔣 = {
-		介 = {
-			石 = {
+	uv0["蔣"] = {
+		["介"] = {
+			["石"] = {
 				this = true
 			}
 		},
-		中 = {
-			正 = {
+		["中"] = {
+			["正"] = {
 				this = true
 			}
 		},
-		經 = {
-			國 = {
+		["經"] = {
+			["國"] = {
 				this = true
 			}
 		},
-		樹 = {
-			聲 = {
+		["樹"] = {
+			["聲"] = {
 				this = true
 			}
 		},
-		彥 = {
-			永 = {
+		["彥"] = {
+			["永"] = {
 				this = true,
-				上 = {
-					書 = {
+				["上"] = {
+					["書"] = {
 						this = true
 					}
 				}
 			},
-			勇 = {
+			["勇"] = {
 				this = true
 			}
 		},
-		正 = {
-			華 = {
+		["正"] = {
+			["華"] = {
 				this = true
 			}
 		},
-		培 = {
-			堃 = {
+		["培"] = {
+			["堃"] = {
 				this = true
 			}
 		}
@@ -120,13 +117,13 @@ end
 temp()
 
 function temp()
-	var_0_1.降 = {
-		低 = {
-			命 = {
-				中 = {
-					的 = {
-						圖 = {
-							騰 = {
+	uv0["降"] = {
+		["低"] = {
+			["命"] = {
+				["中"] = {
+					["的"] = {
+						["圖"] = {
+							["騰"] = {
 								this = true
 							}
 						}
@@ -134,28 +131,28 @@ function temp()
 				}
 			}
 		},
-		灾 = {
-			民 = {
+		["灾"] = {
+			["民"] = {
 				this = true
 			}
 		},
-		半 = {
-			旗 = {
+		["半"] = {
+			["旗"] = {
 				this = true
 			}
 		},
-		麻 = {
-			黄 = {
-				碱 = {
+		["麻"] = {
+			["黄"] = {
+				["碱"] = {
 					this = true
 				}
 			}
 		},
-		薪 = {
-			办 = {
+		["薪"] = {
+			["办"] = {
 				this = true
 			},
-			潮 = {
+			["潮"] = {
 				this = true
 			}
 		}
@@ -165,14 +162,14 @@ end
 temp()
 
 function temp()
-	var_0_1.醬 = {
-		猪 = {
-			媳 = {
+	uv0["醬"] = {
+		["猪"] = {
+			["媳"] = {
 				this = true
 			}
 		},
-		豬 = {
-			媳 = {
+		["豬"] = {
+			["媳"] = {
 				this = true
 			}
 		}
@@ -182,7 +179,7 @@ end
 temp()
 
 function temp()
-	var_0_1.撟 = {
+	uv0["撟"] = {
 		this = {
 			this = true
 		}
@@ -192,32 +189,32 @@ end
 temp()
 
 function temp()
-	var_0_1.狡 = {
-		猾 = {
-			的 = {
-				達 = {
-					夫 = {
+	uv0["狡"] = {
+		["猾"] = {
+			["的"] = {
+				["達"] = {
+					["夫"] = {
 						this = true
 					}
 				},
-				风 = {
-					水 = {
-						相 = {
-							师 = {
+				["风"] = {
+					["水"] = {
+						["相"] = {
+							["师"] = {
 								this = true,
 								["*"] = {
 									this = true
 								}
 							}
 						},
-						师 = {
+						["师"] = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		诈 = {
+		["诈"] = {
 			this = true
 		}
 	}
@@ -226,12 +223,12 @@ end
 temp()
 
 function temp()
-	var_0_1.矯 = {
-		健 = {
-			的 = {
-				馬 = {
-					努 = {
-						爾 = {
+	uv0["矯"] = {
+		["健"] = {
+			["的"] = {
+				["馬"] = {
+					["努"] = {
+						["爾"] = {
 							this = true
 						}
 					}

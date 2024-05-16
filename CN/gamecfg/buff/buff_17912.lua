@@ -1,5 +1,4 @@
-﻿return {
-	effect_list = {},
+return {
 	{},
 	{},
 	{},
@@ -17,5 +16,6 @@
 	id = 17242,
 	picture = "",
 	last_effect = "boyixi_guanghuan",
-	desc = ""
+	desc = "",
+	effect_list = {}
 }

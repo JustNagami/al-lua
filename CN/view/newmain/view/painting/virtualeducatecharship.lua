@@ -1,30 +1,30 @@
-﻿local var_0_0 = class("VirtualEducateCharShip", import("model.vo.Ship"))
+slot0 = class("VirtualEducateCharShip", import("model.vo.Ship"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.educateCharId = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.educateCharId = slot1
 
-	var_0_0.super.Ctor(arg_1_0, {
+	uv0.super.Ctor(slot0, {
 		id = 99999999,
 		configId = 999024
 	})
 
-	arg_1_0.templateConfig = pg.secretary_special_ship[arg_1_1]
+	slot0.templateConfig = pg.secretary_special_ship[slot1]
 end
 
-function var_0_0.getPainting(arg_2_0)
-	return arg_2_0.templateConfig.prefab or "tbniang"
+function slot0.getPainting(slot0)
+	return slot0.templateConfig.prefab or "tbniang"
 end
 
-function var_0_0.getName(arg_3_0)
-	return arg_3_0.templateConfig.name or ""
+function slot0.getName(slot0)
+	return slot0.templateConfig.name or ""
 end
 
-function var_0_0.getPrefab(arg_4_0)
-	return arg_4_0.templateConfig.head
+function slot0.getPrefab(slot0)
+	return slot0.templateConfig.head
 end
 
-function var_0_0.GetRecordPosKey(arg_5_0)
-	return arg_5_0.educateCharId .. "" .. arg_5_0.id
+function slot0.GetRecordPosKey(slot0)
+	return slot0.educateCharId .. "" .. slot0.id
 end
 
-return var_0_0
+return slot0

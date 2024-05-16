@@ -1,8 +1,8 @@
-﻿local var_0_0 = class("GongHaiPtPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("GongHaiPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
-	setText(arg_1_0:findTF("title", arg_1_0.bg), i18n("pt_count_tip"))
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	setText(slot0:findTF("title", slot0.bg), i18n("pt_count_tip"))
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_ins_ship_group_template = {
 	[30701] = {
 		ship_group = 30701,
@@ -368,7 +368,7 @@ pg.activity_ins_ship_group_template = {
 	[10601] = {
 		ship_group = 10601,
 		name = "L.I.",
-		sculpture = "changdao"
+		sculpture = "changdao_4"
 	},
 	[10706] = {
 		ship_group = 10706,
@@ -1688,7 +1688,7 @@ pg.activity_ins_ship_group_template = {
 	[40207] = {
 		ship_group = 40207,
 		name = "Emden ",
-		sculpture = "aimudeng"
+		sculpture = "aimudeng_4"
 	},
 	[40404] = {
 		ship_group = 40404,

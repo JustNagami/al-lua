@@ -1,23 +1,23 @@
-﻿local var_0_0 = class("SendCmdCommand", pm.SimpleCommand)
+slot0 = class("SendCmdCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	assert(var_1_0.cmd, "cmd should exist")
+	assert(slot2.cmd, "cmd should exist")
 
-	local var_1_1 = var_1_0.cmd
-	local var_1_2 = var_1_0.arg1
+	slot3 = slot2.cmd
+	slot4 = slot2.arg1
 
 	pg.ConnectionMgr.GetInstance():Send(11100, {
-		cmd = var_1_0.cmd,
-		arg1 = var_1_0.arg1,
-		arg2 = var_1_0.arg2,
-		arg3 = var_1_0.arg3,
-		arg4 = var_1_0.arg4
-	}, 11101, function(arg_2_0)
-		print("response: " .. arg_2_0.msg)
-		arg_1_0:sendNotification(GAME.SEND_CMD_DONE, arg_2_0.msg)
+		cmd = slot2.cmd,
+		arg1 = slot2.arg1,
+		arg2 = slot2.arg2,
+		arg3 = slot2.arg3,
+		arg4 = slot2.arg4
+	}, 11101, function (slot0)
+		print("response: " .. slot0.msg)
+		uv0:sendNotification(GAME.SEND_CMD_DONE, slot0.msg)
 	end)
 end
 
-return var_0_0
+return slot0

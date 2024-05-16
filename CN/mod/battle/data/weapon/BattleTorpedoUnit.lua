@@ -1,29 +1,26 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleTorpedoUnit = class("BattleTorpedoUnit", slot0.Battle.BattleWeaponUnit)
+slot0.Battle.BattleTorpedoUnit.__name = "BattleTorpedoUnit"
+slot1 = slot0.Battle.BattleTorpedoUnit
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleTorpedoUnit = class("BattleTorpedoUnit", var_0_0.Battle.BattleWeaponUnit)
-var_0_0.Battle.BattleTorpedoUnit.__name = "BattleTorpedoUnit"
-
-local var_0_1 = var_0_0.Battle.BattleTorpedoUnit
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_0.Battle.BattleTorpedoUnit.super.Ctor(arg_1_0)
+function slot1.Ctor(slot0)
+	uv0.Battle.BattleTorpedoUnit.super.Ctor(slot0)
 end
 
-function var_0_1.TriggerBuffOnFire(arg_2_0)
-	arg_2_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_FIRE, {
-		equipIndex = arg_2_0._equipmentIndex
+function slot1.TriggerBuffOnFire(slot0)
+	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_FIRE, {
+		equipIndex = slot0._equipmentIndex
 	})
 end
 
-function var_0_1.TriggerBuffWhenSpawn(arg_3_0, arg_3_1)
-	local var_3_0 = {
-		_bullet = arg_3_1,
-		equipIndex = arg_3_0._equipmentIndex,
-		bulletTag = arg_3_1:GetExtraTag()
+function slot1.TriggerBuffWhenSpawn(slot0, slot1)
+	slot2 = {
+		_bullet = slot1,
+		equipIndex = slot0._equipmentIndex,
+		bulletTag = slot1:GetExtraTag()
 	}
 
-	arg_3_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BULLET_CREATE, var_3_0)
-	arg_3_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_BULLET_CREATE, var_3_0)
+	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BULLET_CREATE, slot2)
+	slot0._host:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_TORPEDO_BULLET_CREATE, slot2)
 end

@@ -1,27 +1,25 @@
-﻿local var_0_0 = class("MetaCharacterRepairMediator", import("...base.ContextMediator"))
+slot0 = class("MetaCharacterRepairMediator", import("...base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	return
+function slot0.register(slot0)
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.REPAIR_META_CHARACTER_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_3_0 == GAME.REPAIR_META_CHARACTER_DONE then
-		arg_3_0.viewComponent:checkSpecialEffect()
-		arg_3_0.viewComponent:updateData()
-		arg_3_0.viewComponent:doRepairProgressPanelAni()
-		arg_3_0.viewComponent:updateAttrItem(arg_3_0.viewComponent.attrTFList[arg_3_0.viewComponent.curAttrName], arg_3_0.viewComponent.curAttrName)
-		arg_3_0.viewComponent:updateRepairBtn()
-		arg_3_0.viewComponent:updateDetailPanel()
+	if slot1:getName() == GAME.REPAIR_META_CHARACTER_DONE then
+		slot0.viewComponent:checkSpecialEffect()
+		slot0.viewComponent:updateData()
+		slot0.viewComponent:doRepairProgressPanelAni()
+		slot0.viewComponent:updateAttrItem(slot0.viewComponent.attrTFList[slot0.viewComponent.curAttrName], slot0.viewComponent.curAttrName)
+		slot0.viewComponent:updateRepairBtn()
+		slot0.viewComponent:updateDetailPanel()
 	end
 end
 
-return var_0_0
+return slot0

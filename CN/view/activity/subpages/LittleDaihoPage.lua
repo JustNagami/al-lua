@@ -1,70 +1,64 @@
-﻿local var_0_0 = class("LittleDaihoPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("LittleDaihoPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.helpBtn = arg_1_0.bg:Find("help_btn")
-
-	local var_1_0 = arg_1_0.bg:Find("step_content")
-
-	arg_1_0.itemList = UIItemList.New(var_1_0, var_1_0:Find("tpl"))
+	slot0.helpBtn = slot0.bg:Find("help_btn")
+	slot1 = slot0.bg:Find("step_content")
+	slot0.itemList = UIItemList.New(slot1, slot1:Find("tpl"))
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	var_0_0.super.OnFirstFlush(arg_2_0)
-	onButton(arg_2_0, arg_2_0.getBtn, function()
-		if arg_2_0.inLT then
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	onButton(slot0, slot0.getBtn, function ()
+		if uv0.inLT then
 			return
 		end
 
-		local var_3_0 = {}
-		local var_3_1 = arg_2_0.ptData:GetAward()
-		local var_3_2 = getProxy(PlayerProxy):getRawData()
-		local var_3_3 = pg.gameset.urpt_chapter_max.description[1]
-		local var_3_4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_3_3)
-		local var_3_5, var_3_6 = Task.StaticJudgeOverflow(var_3_2.gold, var_3_2.oil, var_3_4, true, true, {
+		slot0 = {}
+		slot1 = uv0.ptData:GetAward()
+		slot3 = getProxy(PlayerProxy):getRawData()
+		slot6, slot7 = Task.StaticJudgeOverflow(slot3.gold, slot3.oil, LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]), true, true, {
 			{
-				var_3_1.type,
-				var_3_1.id,
-				var_3_1.count
+				slot1.type,
+				slot1.id,
+				slot1.count
 			}
 		})
 
-		if var_3_5 then
-			table.insert(var_3_0, function(arg_4_0)
+		if slot6 then
+			table.insert(slot0, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = var_3_6,
-					onYes = arg_4_0
+					items = uv0,
+					onYes = slot0
 				})
 			end)
 		end
 
-		table.insert(var_3_0, function(arg_5_0)
-			arg_2_0.inLT = true
+		table.insert(slot0, function (slot0)
+			uv0.inLT = true
+			slot1 = cloneTplTo(uv0.itemList.container:Find("tpl"), uv0.itemList.container)
 
-			local var_5_0 = cloneTplTo(arg_2_0.itemList.container:Find("tpl"), arg_2_0.itemList.container)
-
-			setLocalScale(var_5_0, Vector2.zero)
-			LeanTween.scale(var_5_0, Vector3.one, 0.6):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(arg_5_0))
+			setLocalScale(slot1, Vector2.zero)
+			LeanTween.scale(slot1, Vector3.one, 0.6):setEase(LeanTweenType.easeInBack):setOnComplete(System.Action(slot0))
 		end)
-		table.insert(var_3_0, function(arg_6_0)
-			LeanTween.delayedCall(0.2, System.Action(arg_6_0))
+		table.insert(slot0, function (slot0)
+			LeanTween.delayedCall(0.2, System.Action(slot0))
 		end)
-		seriesAsync(var_3_0, function()
-			arg_2_0.inLT = false
+		seriesAsync(slot0, function ()
+			uv0.inLT = false
+			slot0, slot1 = uv0.ptData:GetResProgress()
 
-			local var_7_0, var_7_1 = arg_2_0.ptData:GetResProgress()
-
-			arg_2_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg_2_0.ptData:GetId(),
-				arg1 = var_7_1
+				activity_id = uv0.ptData:GetId(),
+				arg1 = slot1
 			})
 		end)
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("littleTaihou_npc")
@@ -72,13 +66,13 @@ function var_0_0.OnFirstFlush(arg_2_0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	var_0_0.super.OnUpdateFlush(arg_9_0)
-	arg_9_0.itemList:align(arg_9_0.ptData:GetLevel())
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
+	slot0.itemList:align(slot0.ptData:GetLevel())
 
-	local var_9_0, var_9_1, var_9_2 = arg_9_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
 
-	setText(arg_9_0.progress, (var_9_2 >= 1 and setColorStr(var_9_0, "#9F413AFF") or var_9_0) .. "/" .. var_9_1)
+	setText(slot0.progress, (slot3 >= 1 and setColorStr(slot1, "#9F413AFF") or slot1) .. "/" .. slot2)
 end
 
-return var_0_0
+return slot0

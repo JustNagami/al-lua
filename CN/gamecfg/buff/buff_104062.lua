@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 8,
+	name = "MeltyWorld",
+	init_effect = "",
+	color = "red",
+	desc = "MeltyWorld",
+	stack = 1,
+	id = 104061,
+	icon = 104060,
+	last_effect = "",
 	blink = {
 		1,
 		0,
@@ -23,24 +42,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 8,
-	name = "MeltyWorld",
-	init_effect = "",
-	color = "red",
-	desc = "MeltyWorld",
-	stack = 1,
-	id = 104061,
-	icon = 104060,
-	last_effect = ""
+	}
 }

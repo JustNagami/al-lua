@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "出击时，队伍中每有一个白鹰联邦重巡、战列角色，自身炮击、防空、机动属性上升$1，最多3层",
+	name = "Big Mamie",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "出击时，队伍中每有一个白鹰联邦重巡、战列角色，自身炮击、防空、机动属性上升$1，最多3层",
+	stack = 1,
+	id = 11550,
+	icon = 11550,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -39,26 +60,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "出击时，队伍中每有一个白鹰联邦重巡、战列角色，自身炮击、防空、机动属性上升$1，最多3层",
-	name = "Big Mamie",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "出击时，队伍中每有一个白鹰联邦重巡、战列角色，自身炮击、防空、机动属性上升$1，最多3层",
-	stack = 1,
-	id = 11550,
-	icon = 11550,
-	last_effect = ""
+	}
 }

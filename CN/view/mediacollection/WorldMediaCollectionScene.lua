@@ -1,147 +1,127 @@
-﻿local var_0_0 = class("WorldMediaCollectionScene", require("view.base.BaseUI"))
+slot0 = class("WorldMediaCollectionScene", require("view.base.BaseUI"))
+slot0.PAGE_MEMORTY = 1
+slot0.PAGE_FILE = 2
+slot0.PAGE_RECORD = 3
 
-var_0_0.PAGE_MEMORTY = 1
-var_0_0.PAGE_FILE = 2
-var_0_0.PAGE_RECORD = 3
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "WorldMediaCollectionUI"
 end
 
-function var_0_0.getBGM(arg_2_0)
-	local var_2_0 = arg_2_0.contextData.revertBgm
+function slot0.getBGM(slot0)
+	slot0.contextData.revertBgm = nil
 
-	arg_2_0.contextData.revertBgm = nil
-
-	if var_2_0 then
-		return var_2_0
+	if slot0.contextData.revertBgm then
+		return slot1
 	else
-		return var_0_0.super.getBGM(arg_2_0)
+		return uv0.super.getBGM(slot0)
 	end
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.top = arg_3_0._tf:Find("Top")
-	arg_3_0.viewContainer = arg_3_0._tf:Find("Main")
-	arg_3_0.subViews = {}
+function slot0.init(slot0)
+	slot0.top = slot0._tf:Find("Top")
+	slot0.viewContainer = slot0._tf:Find("Main")
+	slot0.subViews = {}
 end
 
-local var_0_1 = {
+slot1 = {
 	import(".WorldMediaCollectionMemoryLayer"),
 	import(".WorldMediaCollectionRecordLayer"),
 	import(".WorldMediaCollectionFileLayer")
 }
 
-function var_0_0.GetCurrentPage(arg_4_0)
-	return arg_4_0.contextData.page and arg_4_0.subViews[arg_4_0.contextData.page]
+function slot0.GetCurrentPage(slot0)
+	return slot0.contextData.page and slot0.subViews[slot0.contextData.page]
 end
 
-function var_0_0.didEnter(arg_5_0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0.top, {
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, {
 		groupName = LayerWeightConst.GROUP_COLLECTION
 	})
-	onButton(arg_5_0, arg_5_0.top:Find("blur_panel/adapt/top/option"), function()
-		arg_5_0:quickExitFunc()
+	onButton(slot0, slot0.top:Find("blur_panel/adapt/top/option"), function ()
+		uv0:quickExitFunc()
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.top:Find("blur_panel/adapt/top/back_btn"), function()
-		arg_5_0:Backward()
+	onButton(slot0, slot0.top:Find("blur_panel/adapt/top/back_btn"), function ()
+		uv0:Backward()
 	end, SFX_UI_CANCEL)
 
-	local var_5_0 = arg_5_0.contextData.page or var_0_0.PAGE_MEMORTY
+	slot0.contextData.page = nil
 
-	arg_5_0.contextData.page = nil
-
-	arg_5_0:EnterPage(var_5_0)
-	arg_5_0:UpdateView()
+	slot0:EnterPage(slot0.contextData.page or uv0.PAGE_MEMORTY)
+	slot0:UpdateView()
 end
 
-function var_0_0.EnterPage(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1 == arg_8_0.contextData.page
-	local var_8_1 = arg_8_0.subViews[arg_8_1]
+function slot0.EnterPage(slot0, slot1)
+	slot2 = slot1 == slot0.contextData.page
 
-	if not var_8_1 then
-		local var_8_2 = var_0_1[arg_8_1]
-
-		if not var_8_2 then
+	if not slot0.subViews[slot1] then
+		if not uv0[slot1] then
 			return
 		end
 
-		arg_8_0.contextData[var_8_2] = arg_8_0.contextData[var_8_2] or {}
-		var_8_1 = var_8_2.New(arg_8_0, arg_8_0.viewContainer, arg_8_0.event, arg_8_0.contextData)
+		slot0.contextData[slot4] = slot0.contextData[slot4] or {}
 
-		var_8_1:Load()
+		slot4.New(slot0, slot0.viewContainer, slot0.event, slot0.contextData):Load()
 	end
 
-	if arg_8_0.contextData.page and arg_8_0.subViews[arg_8_0.contextData.page] and not var_8_0 then
-		arg_8_0.subViews[arg_8_0.contextData.page].buffer:OnDeselected()
+	if slot0.contextData.page and slot0.subViews[slot0.contextData.page] and not slot2 then
+		slot0.subViews[slot0.contextData.page].buffer:OnDeselected()
 	end
 
-	arg_8_0.contextData.page = arg_8_1
-	arg_8_0.subViews[arg_8_1] = var_8_1
+	slot0.contextData.page = slot1
+	slot0.subViews[slot1] = slot3
 
-	if not var_8_0 then
-		var_8_1.buffer:OnSelected()
+	if not slot2 then
+		slot3.buffer:OnSelected()
 	else
-		var_8_1.buffer:OnReselected()
+		slot3.buffer:OnReselected()
 	end
 end
 
-function var_0_0.Backward(arg_9_0)
-	local var_9_0 = arg_9_0.subViews[arg_9_0.contextData.page]
-	local var_9_1 = var_9_0 and var_9_0:OnBackward()
-
-	if var_9_1 then
-		return var_9_1
+function slot0.Backward(slot0)
+	if slot0.subViews[slot0.contextData.page] and slot1:OnBackward() then
+		return slot2
 	end
 
-	arg_9_0:closeView()
+	slot0:closeView()
 end
 
-function var_0_0.onBackPressed(arg_10_0)
-	arg_10_0:Backward()
+function slot0.onBackPressed(slot0)
+	slot0:Backward()
 end
 
-function var_0_0.Add2LayerContainer(arg_11_0, arg_11_1)
-	setParent(arg_11_1, arg_11_0.viewContainer)
+function slot0.Add2LayerContainer(slot0, slot1)
+	setParent(slot1, slot0.viewContainer)
 end
 
-function var_0_0.Add2TopContainer(arg_12_0, arg_12_1)
-	setParent(arg_12_1, arg_12_0.top)
+function slot0.Add2TopContainer(slot0, slot1)
+	setParent(slot1, slot0.top)
 end
 
-function var_0_0.WorldRecordLock()
-	local function var_13_0()
-		local var_14_0 = getProxy(PlayerProxy):getRawData().level
-
-		return pg.SystemOpenMgr.GetInstance():isOpenSystem(var_14_0, "WorldMediaCollectionRecordMediator")
-	end
-
-	return LOCK_WORLD_COLLECTION or not var_13_0()
+function slot0.WorldRecordLock()
+	return LOCK_WORLD_COLLECTION or not function ()
+		return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "WorldMediaCollectionRecordMediator")
+	end()
 end
 
-function var_0_0.UpdateView(arg_15_0)
-	local var_15_0 = arg_15_0.subViews[arg_15_0.contextData.page]
-
-	if not var_15_0 then
+function slot0.UpdateView(slot0)
+	if not slot0.subViews[slot0.contextData.page] then
 		return
 	end
 
-	var_15_0.buffer:UpdateView()
+	slot1.buffer:UpdateView()
 end
 
-function var_0_0.willExit(arg_16_0)
-	local var_16_0 = arg_16_0:GetCurrentPage()
-
-	if var_16_0 then
-		var_16_0.buffer:Hide()
+function slot0.willExit(slot0)
+	if slot0:GetCurrentPage() then
+		slot1.buffer:Hide()
 	end
 
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.subViews) do
-		iter_16_1:Destroy()
+	for slot5, slot6 in pairs(slot0.subViews) do
+		slot6:Destroy()
 	end
 
-	table.clear(arg_16_0.subViews)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_16_0.top, arg_16_0._tf)
+	table.clear(slot0.subViews)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
 end
 
-return var_0_0
+return slot0

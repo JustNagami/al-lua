@@ -1,111 +1,94 @@
-﻿local var_0_0 = class("SkinTemplatePage", import("view.base.BaseActivityPage"))
+slot0 = class("SkinTemplatePage", import("view.base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.dayTF = arg_1_0:findTF("day", arg_1_0.bg)
-	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
-	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.bg)
-	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0.item)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.dayTF = slot0:findTF("day", slot0.bg)
+	slot0.item = slot0:findTF("item", slot0.bg)
+	slot0.items = slot0:findTF("items", slot0.bg)
+	slot0.uilist = UIItemList.New(slot0.items, slot0.item)
 
-	setActive(arg_1_0.item, false)
+	setActive(slot0.item, false)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	arg_2_0.nday = 0
-	arg_2_0.taskProxy = getProxy(TaskProxy)
-	arg_2_0.taskGroup = arg_2_0.activity:getConfig("config_data")
+function slot0.OnDataSetting(slot0)
+	slot0.nday = 0
+	slot0.taskProxy = getProxy(TaskProxy)
+	slot0.taskGroup = slot0.activity:getConfig("config_data")
 
-	return updateActivityTaskStatus(arg_2_0.activity)
+	return updateActivityTaskStatus(slot0.activity)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	arg_3_0.uilist:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventUpdate then
-			arg_3_0:UpdateTask(arg_4_1, arg_4_2)
+function slot0.OnFirstFlush(slot0)
+	slot0.uilist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:UpdateTask(slot1, slot2)
 		end
 	end)
 end
 
-function var_0_0.UpdateTask(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_1 + 1
-	local var_5_1 = arg_5_0:findTF("item", arg_5_2)
-	local var_5_2 = arg_5_0.taskGroup[arg_5_0.nday][var_5_0]
-	local var_5_3 = arg_5_0.taskProxy:getTaskById(var_5_2) or arg_5_0.taskProxy:getFinishTaskById(var_5_2)
+function slot0.UpdateTask(slot0, slot1, slot2)
+	slot4 = slot0:findTF("item", slot2)
+	slot6 = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][slot1 + 1]) or slot0.taskProxy:getFinishTaskById(slot5)
 
-	assert(var_5_3, "without this task by id: " .. var_5_2)
-
-	local var_5_4 = Drop.Create(var_5_3:getConfig("award_display")[1])
-
-	updateDrop(var_5_1, var_5_4)
-	onButton(arg_5_0, var_5_1, function()
-		arg_5_0:emit(BaseUI.ON_DROP, var_5_4)
+	assert(slot6, "without this task by id: " .. slot5)
+	updateDrop(slot4, Drop.Create(slot6:getConfig("award_display")[1]))
+	onButton(slot0, slot4, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
 
-	local var_5_5 = var_5_3:getProgress()
-	local var_5_6 = var_5_3:getConfig("target_num")
+	slot8 = slot6:getProgress()
+	slot9 = slot6:getConfig("target_num")
 
-	setText(arg_5_0:findTF("description", arg_5_2), var_5_3:getConfig("desc"))
+	setText(slot0:findTF("description", slot2), slot6:getConfig("desc"))
 
-	local var_5_7, var_5_8 = arg_5_0:GetProgressColor()
-	local var_5_9
+	slot10, slot11 = slot0:GetProgressColor()
 
-	var_5_9 = var_5_7 and setColorStr(var_5_5, var_5_7) or var_5_5
+	setText(slot0:findTF("progressText", slot2), (slot10 and setColorStr(slot8, slot10) or slot8) .. (slot11 and setColorStr("/" .. slot9, slot11) or "/" .. slot9))
+	setSlider(slot0:findTF("progress", slot2), 0, slot9, slot8)
 
-	local var_5_10
+	slot13 = slot0:findTF("get_btn", slot2)
 
-	var_5_10 = var_5_8 and setColorStr("/" .. var_5_6, var_5_8) or "/" .. var_5_6
-
-	setText(arg_5_0:findTF("progressText", arg_5_2), var_5_9 .. var_5_10)
-	setSlider(arg_5_0:findTF("progress", arg_5_2), 0, var_5_6, var_5_5)
-
-	local var_5_11 = arg_5_0:findTF("go_btn", arg_5_2)
-	local var_5_12 = arg_5_0:findTF("get_btn", arg_5_2)
-	local var_5_13 = arg_5_0:findTF("got_btn", arg_5_2)
-	local var_5_14 = var_5_3:getTaskStatus()
-
-	setActive(var_5_11, var_5_14 == 0)
-	setActive(var_5_12, var_5_14 == 1)
-	setActive(var_5_13, var_5_14 == 2)
-	onButton(arg_5_0, var_5_11, function()
-		arg_5_0:emit(ActivityMediator.ON_TASK_GO, var_5_3)
+	setActive(slot0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
+	setActive(slot13, slot15 == 1)
+	setActive(slot0:findTF("got_btn", slot2), slot15 == 2)
+	onButton(slot0, slot12, function ()
+		uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
 	end, SFX_PANEL)
-	onButton(arg_5_0, var_5_12, function()
-		arg_5_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_5_3)
+	onButton(slot0, slot13, function ()
+		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	arg_9_0.nday = arg_9_0.activity.data3
+function slot0.OnUpdateFlush(slot0)
+	slot0.nday = slot0.activity.data3
 
-	arg_9_0:PlayStory()
+	slot0:PlayStory()
 
-	if arg_9_0.dayTF then
-		setText(arg_9_0.dayTF, tostring(arg_9_0.nday))
+	if slot0.dayTF then
+		setText(slot0.dayTF, tostring(slot0.nday))
 	end
 
-	arg_9_0.uilist:align(#arg_9_0.taskGroup[arg_9_0.nday])
+	slot0.uilist:align(#slot0.taskGroup[slot0.nday])
 end
 
-function var_0_0.PlayStory(arg_10_0)
-	local var_10_0 = arg_10_0.activity:getConfig("config_client").story
-
-	if checkExist(var_10_0, {
-		arg_10_0.nday
+function slot0.PlayStory(slot0)
+	if checkExist(slot0.activity:getConfig("config_client").story, {
+		slot0.nday
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_10_0[arg_10_0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(slot1[slot0.nday][1])
 	end
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	eachChild(arg_11_0.items, function(arg_12_0)
-		Destroy(arg_12_0)
+function slot0.OnDestroy(slot0)
+	eachChild(slot0.items, function (slot0)
+		Destroy(slot0)
 	end)
 end
 
-function var_0_0.GetProgressColor(arg_13_0)
+function slot0.GetProgressColor(slot0)
 	return nil
 end
 
-return var_0_0
+return slot0

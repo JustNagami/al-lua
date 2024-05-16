@@ -1,64 +1,56 @@
-﻿local var_0_0 = class("ArchivesWorldBossAwardCard")
+slot0 = class("ArchivesWorldBossAwardCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_1.transform
-	arg_1_0.itemTF = arg_1_0._tf:Find("item")
-	arg_1_0.itemMaskTF = arg_1_0._tf:Find("item/mask")
-	arg_1_0.itemMaskGotTF = arg_1_0._tf:Find("item/mask/Got")
-	arg_1_0.itemMaskLockTF = arg_1_0._tf:Find("item/mask/Lock")
-	arg_1_0.pointText = arg_1_0._tf:Find("point/text")
-	arg_1_0.lockTr = arg_1_0._tf:Find("lock"):GetComponent(typeof(Text))
-	arg_1_0.gotTr = arg_1_0._tf:Find("got"):GetComponent(typeof(Text))
-	arg_1_0.getTr = arg_1_0._tf:Find("get"):GetComponent(typeof(Text))
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.itemTF = slot0._tf:Find("item")
+	slot0.itemMaskTF = slot0._tf:Find("item/mask")
+	slot0.itemMaskGotTF = slot0._tf:Find("item/mask/Got")
+	slot0.itemMaskLockTF = slot0._tf:Find("item/mask/Lock")
+	slot0.pointText = slot0._tf:Find("point/text")
+	slot0.lockTr = slot0._tf:Find("lock"):GetComponent(typeof(Text))
+	slot0.gotTr = slot0._tf:Find("got"):GetComponent(typeof(Text))
+	slot0.getTr = slot0._tf:Find("get"):GetComponent(typeof(Text))
 
-	setText(arg_1_0._tf:Find("point/label"), i18n("meta_pt_point"))
+	setText(slot0._tf:Find("point/label"), i18n("meta_pt_point"))
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_1.itemInfo
-	local var_2_1 = arg_2_1.target
-	local var_2_2 = arg_2_1.level
-	local var_2_3 = arg_2_1.count
-	local var_2_4 = arg_2_1.unlockPTNum
-
-	arg_2_0.dropInfo = {
-		type = var_2_0[1],
-		id = var_2_0[2],
-		count = var_2_0[3]
+function slot0.Update(slot0, slot1, slot2)
+	slot3 = slot1.itemInfo
+	slot6 = slot1.count
+	slot7 = slot1.unlockPTNum
+	slot0.dropInfo = {
+		type = slot3[1],
+		id = slot3[2],
+		count = slot3[3]
 	}
 
-	updateDrop(arg_2_0.itemTF, arg_2_0.dropInfo, {
+	updateDrop(slot0.itemTF, slot0.dropInfo, {
 		hideName = true
 	})
-	setText(arg_2_0.pointText, var_2_1)
+	setText(slot0.pointText, slot1.target)
 
-	arg_2_0.lockTr.text = ""
-	arg_2_0.getTr.text = ""
-	arg_2_0.gotTr.text = ""
+	slot0.lockTr.text = ""
+	slot0.getTr.text = ""
+	slot0.gotTr.text = ""
+	slot8 = 0
 
-	local var_2_5 = 0
-
-	if arg_2_2 < var_2_2 + 1 then
-		var_2_5 = 1
-		arg_2_0.gotTr.text = i18n("meta_award_got")
-	elseif var_2_3 < var_2_1 then
-		var_2_5 = 2
-
-		local var_2_6 = math.floor(var_2_1 / var_2_4 * 100) .. "%"
-
-		arg_2_0.lockTr.text = "T-" .. arg_2_2 .. " " .. var_2_6
+	if slot2 < slot1.level + 1 then
+		slot8 = 1
+		slot0.gotTr.text = i18n("meta_award_got")
+	elseif slot6 < slot4 then
+		slot8 = 2
+		slot0.lockTr.text = "T-" .. slot2 .. " " .. (math.floor(slot4 / slot7 * 100) .. "%")
 	else
-		arg_2_0.getTr.text = i18n("meta_award_get")
+		slot0.getTr.text = i18n("meta_award_get")
 	end
 
-	setActive(arg_2_0.itemMaskTF, var_2_5 ~= 0)
-	setActive(arg_2_0.itemMaskGotTF, var_2_5 == 1)
-	setActive(arg_2_0.itemMaskLockTF, var_2_5 == 2)
+	setActive(slot0.itemMaskTF, slot8 ~= 0)
+	setActive(slot0.itemMaskGotTF, slot8 == 1)
+	setActive(slot0.itemMaskLockTF, slot8 == 2)
 end
 
-function var_0_0.Dispose(arg_3_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

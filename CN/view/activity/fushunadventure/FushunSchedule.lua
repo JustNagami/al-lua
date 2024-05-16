@@ -1,40 +1,40 @@
-﻿local var_0_0 = class("FushunSchedule")
+slot0 = class("FushunSchedule")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.time = 0
-	arg_1_0.schedules = {}
+function slot0.Ctor(slot0)
+	slot0.time = 0
+	slot0.schedules = {}
 end
 
-function var_0_0.Update(arg_2_0)
-	for iter_2_0 = #arg_2_0.schedules, 1, -1 do
-		local var_2_0 = arg_2_0.schedules[iter_2_0]
+function slot0.Update(slot0)
+	for slot4 = #slot0.schedules, 1, -1 do
+		slot5 = slot0.schedules[slot4]
 
-		if arg_2_0.time - var_2_0.nowtime >= var_2_0.targetTime then
-			var_2_0.callback()
+		if slot5.targetTime <= slot0.time - slot5.nowtime then
+			slot5.callback()
 
-			var_2_0.count = var_2_0.count - 1
-			var_2_0.nowtime = arg_2_0.time
+			slot5.count = slot5.count - 1
+			slot5.nowtime = slot0.time
 
-			if var_2_0.count == 0 then
-				table.remove(arg_2_0.schedules, iter_2_0)
+			if slot5.count == 0 then
+				table.remove(slot0.schedules, slot4)
 			end
 		end
 	end
 
-	arg_2_0.time = arg_2_0.time + Time.deltaTime
+	slot0.time = slot0.time + Time.deltaTime
 end
 
-function var_0_0.AddSchedule(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	table.insert(arg_3_0.schedules, {
-		targetTime = arg_3_1,
-		count = arg_3_2,
-		callback = arg_3_3,
-		nowtime = arg_3_0.time
+function slot0.AddSchedule(slot0, slot1, slot2, slot3)
+	table.insert(slot0.schedules, {
+		targetTime = slot1,
+		count = slot2,
+		callback = slot3,
+		nowtime = slot0.time
 	})
 end
 
-function var_0_0.Dispose(arg_4_0)
-	arg_4_0.schedules = nil
+function slot0.Dispose(slot0)
+	slot0.schedules = nil
 end
 
-return var_0_0
+return slot0

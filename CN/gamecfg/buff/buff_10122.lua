@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onShieldBroken"
-			},
-			arg_list = {
-				skill_id = 10121,
-				shieldBuffID = 10121
-			}
-		}
-	},
+return {
 	{
 		time = 5
 	},
@@ -49,5 +37,17 @@
 	stack = 1,
 	id = 10122,
 	icon = 10122,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onShieldBroken"
+			},
+			arg_list = {
+				skill_id = 10121,
+				shieldBuffID = 10121
+			}
+		}
+	}
 }

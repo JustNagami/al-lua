@@ -1,50 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_1_T_20",
-				number = 0.045
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_2_T_20",
-				number = 0.045
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_1_T_21",
-				number = 0.045
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_2_T_21",
-				number = 0.045
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -753,5 +707,51 @@
 	stack = 1,
 	id = 12322,
 	icon = 12322,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_1_T_20",
+				number = 0.045
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_2_T_20",
+				number = 0.045
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_1_T_21",
+				number = 0.045
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_2_T_21",
+				number = 0.045
+			}
+		}
+	}
 }

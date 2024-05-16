@@ -1,27 +1,26 @@
-﻿local var_0_0 = class("Fushun3GameConst")
-
-var_0_0.mini_game_leave = "mini_game_leave"
-var_0_0.mini_game_pause = "mini_game_pause"
-var_0_0.game_time = 999999999
-var_0_0.level_time = 30
-var_0_0.game_scale = 3
-var_0_0.game_scale_v3 = Vector3(var_0_0.game_scale, var_0_0.game_scale, var_0_0.game_scale)
-var_0_0.char_init_pos = Vector2(300, 450)
-var_0_0.attack_cd = 0.45
-var_0_0.damage_cd = 1
-var_0_0.move_speed = 8
-var_0_0.move_speed_shoose = 9
-var_0_0.attack_time = 0.3
-var_0_0.power_time = 2.5
-var_0_0.power_max_num = 8000
-var_0_0.power_sub_time = 1400
-var_0_0.platform_distance = 2500
-var_0_0.platform_remove = 1500
-var_0_0.heart_num = 4
-var_0_0.day_type = 1
-var_0_0.sunset_type = 2
-var_0_0.night_type = 3
-var_0_0.time_data = {
+slot0 = class("Fushun3GameConst")
+slot0.mini_game_leave = "mini_game_leave"
+slot0.mini_game_pause = "mini_game_pause"
+slot0.game_time = 999999999
+slot0.level_time = 30
+slot0.game_scale = 3
+slot0.game_scale_v3 = Vector3(slot0.game_scale, slot0.game_scale, slot0.game_scale)
+slot0.char_init_pos = Vector2(300, 450)
+slot0.attack_cd = 0.45
+slot0.damage_cd = 1
+slot0.move_speed = 8
+slot0.move_speed_shoose = 9
+slot0.attack_time = 0.3
+slot0.power_time = 2.5
+slot0.power_max_num = 8000
+slot0.power_sub_time = 1400
+slot0.platform_distance = 2500
+slot0.platform_remove = 1500
+slot0.heart_num = 4
+slot0.day_type = 1
+slot0.sunset_type = 2
+slot0.night_type = 3
+slot0.time_data = {
 	{
 		tf = "day1",
 		name = "day",
@@ -50,7 +49,7 @@ var_0_0.time_data = {
 		change_anim = "sunsetToNight"
 	}
 }
-var_0_0.platform_data = {
+slot0.platform_data = {
 	{
 		name = "Roof1",
 		distance = 256,
@@ -150,88 +149,88 @@ var_0_0.platform_data = {
 		diff = 50
 	}
 }
-var_0_0.item_type_score = 1
-var_0_0.item_type_buff = 2
-var_0_0.item_type_damage = 3
-var_0_0.create_time = {
+slot0.item_type_score = 1
+slot0.item_type_buff = 2
+slot0.item_type_damage = 3
+slot0.create_time = {
 	3,
 	5
 }
-var_0_0.item_h = 94
-var_0_0.item_v = 94
-var_0_0.item_data = {
+slot0.item_h = 94
+slot0.item_v = 94
+slot0.item_data = {
 	{
 		score = 50,
 		effect = "EF_fr_Get_Score_Item",
 		name = "Score_A",
 		id = 1,
-		type = var_0_0.item_type_score
+		type = slot0.item_type_score
 	},
 	{
 		score = 300,
 		effect = "EF_fr_Item",
 		name = "Score_A2",
 		id = 2,
-		type = var_0_0.item_type_score
+		type = slot0.item_type_score
 	},
 	{
 		buff_id = 1,
 		effect = "EF_fr_Item",
 		name = "Score_B",
 		id = 3,
-		type = var_0_0.item_type_buff
+		type = slot0.item_type_buff
 	},
 	{
 		buff_id = 2,
 		effect = "EF_fr_Item",
 		name = "Score_C",
 		id = 4,
-		type = var_0_0.item_type_buff
+		type = slot0.item_type_buff
 	},
 	{
 		buff_id = 3,
 		effect = "EF_fr_Item",
 		name = "Score_D",
 		id = 5,
-		type = var_0_0.item_type_buff
+		type = slot0.item_type_buff
 	},
 	{
 		buff_id = 4,
 		effect = "EF_fr_Item",
 		name = "Score_F",
 		id = 6,
-		type = var_0_0.item_type_buff
+		type = slot0.item_type_buff
 	},
 	{
 		speed = 2500,
 		effect = "EF_fr_Item",
 		name = "rocket",
 		id = 7,
-		type = var_0_0.item_type_damage
+		type = slot0.item_type_damage
 	},
 	{
 		speed = 2500,
 		effect = "EF_fr_Item",
 		name = "tamachan",
 		id = 8,
-		type = var_0_0.item_type_damage
+		type = slot0.item_type_damage
 	},
 	{
 		speed = 2500,
 		effect = "EF_fr_Item",
 		name = "sushi",
 		id = 9,
-		type = var_0_0.item_type_damage
+		type = slot0.item_type_damage
 	},
 	{
 		buff_id = 5,
 		effect = "EF_fr_Item",
 		name = "Score_G",
 		id = 10,
-		type = var_0_0.item_type_buff
+		type = slot0.item_type_buff
 	}
 }
-var_0_0.item_map = {
+slot0.item_map = {
 	{
 		id = 1,
 		list = {
@@ -1100,13 +1099,13 @@ var_0_0.item_map = {
 		}
 	}
 }
-var_0_0.item_map_ids = {
+slot0.item_map_ids = {
 	4,
 	5,
 	6,
 	21
 }
-var_0_0.item_instance_data = {
+slot0.item_instance_data = {
 	{
 		id = 1,
 		map = 1,
@@ -1213,9 +1212,9 @@ var_0_0.item_instance_data = {
 		weight = 1000
 	}
 }
-var_0_0.follow_bound_mid = 300
-var_0_0.follow_spring = 0.05
-var_0_0.backgroud_data = {
+slot0.follow_bound_mid = 300
+slot0.follow_spring = 0.05
+slot0.backgroud_data = {
 	{
 		rate = 0.05,
 		name = "bgBottom"
@@ -1233,285 +1232,285 @@ var_0_0.backgroud_data = {
 		name = "bgTop"
 	}
 }
-var_0_0.buff_weapon = 1
-var_0_0.buff_speed = 2
-var_0_0.buff_power_speed = 3
-var_0_0.buff_catch = 4
-var_0_0.buff_shield = 5
-var_0_0.buff_data = {
+slot0.buff_weapon = 1
+slot0.buff_speed = 2
+slot0.buff_power_speed = 3
+slot0.buff_catch = 4
+slot0.buff_shield = 5
+slot0.buff_data = {
 	{
 		id = 1,
-		buff = var_0_0.buff_weapon
+		buff = slot0.buff_weapon
 	},
 	{
 		id = 2,
-		buff = var_0_0.buff_speed
+		buff = slot0.buff_speed
 	},
 	{
 		id = 3,
 		lock_item = true,
-		buff = var_0_0.buff_power_speed
+		buff = slot0.buff_power_speed
 	},
 	{
 		id = 4,
-		buff = var_0_0.buff_catch
+		buff = slot0.buff_catch
 	},
 	{
 		id = 5,
-		buff = var_0_0.buff_shield
+		buff = slot0.buff_shield
 	}
 }
-var_0_0.BG_TYPE_LOOP = 1
-var_0_0.BG_TYPE_MID = 2
-var_0_0.BG_TYPE_TOP = 3
-var_0_0.BG_TYPE_FIRE = 4
-var_0_0.BG_TYPE_PETAL = 5
-var_0_0.bg_data = {
+slot0.BG_TYPE_LOOP = 1
+slot0.BG_TYPE_MID = 2
+slot0.BG_TYPE_TOP = 3
+slot0.BG_TYPE_FIRE = 4
+slot0.BG_TYPE_PETAL = 5
+slot0.bg_data = {
 	{
 		id = 1,
 		name = "line",
 		bound = Vector2(640, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_LOOP
+		type = slot0.BG_TYPE_LOOP
 	},
 	{
 		id = 2,
 		name = "bg",
 		bound = Vector2(672, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_LOOP
+		type = slot0.BG_TYPE_LOOP
 	},
 	{
 		id = 3,
 		name = "bg_A",
 		bound = Vector2(200, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 4,
 		name = "bg_B",
 		bound = Vector2(200, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 5,
 		name = "bg_C",
 		bound = Vector2(100, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 6,
 		name = "bg_D",
 		bound = Vector2(100, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 7,
 		name = "bg_E",
 		bound = Vector2(100, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 8,
 		name = "bg_F",
 		bound = Vector2(100, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 9,
 		name = "bg_G",
 		bound = Vector2(0, 420),
 		pos = Vector2(0, 500),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 10,
 		name = "bg_H",
 		bound = Vector2(0, 420),
 		pos = Vector2(0, 500),
-		type = var_0_0.BG_TYPE_MID
+		type = slot0.BG_TYPE_MID
 	},
 	{
 		id = 11,
 		name = "BLD_Anshan",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 12,
 		name = "BLD_Niku",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 13,
 		name = "BLD_Shiratsuyu",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 14,
 		name = "BLD_Laffey_Ayanami",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 15,
 		name = "BLD_PingHai_NingHai",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 16,
 		name = "BLD_TaiYuan_ChangChun",
 		bound = Vector2(400, 420),
 		pos = Vector2(0, -90),
-		type = var_0_0.BG_TYPE_TOP
+		type = slot0.BG_TYPE_TOP
 	},
 	{
 		id = 17,
 		name = "Anchor",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 18,
 		name = "LRG_B",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 19,
 		name = "LRG_P",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 20,
 		name = "LRG_Y",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 21,
 		name = "Manjuu_L",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 22,
 		name = "Manjuu_S",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 23,
 		name = "Materials",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 24,
 		name = "MID_B",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 25,
 		name = "MID_P",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 26,
 		name = "MID_Y",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 27,
 		name = "Ofunya",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 28,
 		name = "SML_B",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 29,
 		name = "SML_P",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 30,
 		name = "SML_Y",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 31,
 		name = "U_chan",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_FIRE
+		type = slot0.BG_TYPE_FIRE
 	},
 	{
 		id = 32,
 		name = "Petal_A",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_PETAL
+		type = slot0.BG_TYPE_PETAL
 	},
 	{
 		id = 33,
 		name = "Petal_B",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_PETAL
+		type = slot0.BG_TYPE_PETAL
 	},
 	{
 		id = 34,
 		name = "Petal_C",
 		bound = Vector2(20, 0),
 		pos = Vector2(0, 650),
-		type = var_0_0.BG_TYPE_PETAL
+		type = slot0.BG_TYPE_PETAL
 	}
 }
-var_0_0.loop_bg = {
+slot0.loop_bg = {
 	1,
 	2
 }
-var_0_0.loop_nums = 3
-var_0_0.top_bg = {
+slot0.loop_nums = 3
+slot0.top_bg = {
 	11,
 	12,
 	13,
@@ -1519,7 +1518,7 @@ var_0_0.top_bg = {
 	15,
 	16
 }
-var_0_0.mid_bg = {
+slot0.mid_bg = {
 	{
 		num = 1,
 		ids = {
@@ -1558,8 +1557,8 @@ var_0_0.mid_bg = {
 		}
 	}
 }
-var_0_0.mid_bg_inst_posX = 2500
-var_0_0.fire_group = {
+slot0.mid_bg_inst_posX = 2500
+slot0.fire_group = {
 	{
 		17
 	},
@@ -1606,41 +1605,41 @@ var_0_0.fire_group = {
 		31
 	}
 }
-var_0_0.fire_time = {
+slot0.fire_time = {
 	0.1,
 	1
 }
-var_0_0.fire_remove = 2
-var_0_0.petal_ids = {
+slot0.fire_remove = 2
+slot0.petal_ids = {
 	32,
 	33,
 	34
 }
-var_0_0.petal_count_max = 30
-var_0_0.peta_remove_time = {
+slot0.petal_count_max = 30
+slot0.peta_remove_time = {
 	7,
 	15
 }
-var_0_0.petal_speed = {
+slot0.petal_speed = {
 	-100,
 	-50
 }
-var_0_0.petal_speed_offset = 25
-var_0_0.petal_remove_y = 200
-var_0_0.bg_remove_posX = -500
-var_0_0.top_bg_inst_posX = 2500
-var_0_0.monster_speed = {
+slot0.petal_speed_offset = 25
+slot0.petal_remove_y = 200
+slot0.bg_remove_posX = -500
+slot0.top_bg_inst_posX = 2500
+slot0.monster_speed = {
 	2,
 	5
 }
-var_0_0.monster_score = 500
-var_0_0.monster_data = {
+slot0.monster_score = 500
+slot0.monster_data = {
 	{
 		id = 1,
 		name = "monster"
 	}
 }
-var_0_0.effect_data = {
+slot0.effect_data = {
 	{
 		name = "EF_bk_Attack",
 		parent = true,
@@ -1761,27 +1760,24 @@ var_0_0.effect_data = {
 	}
 }
 
-function var_0_0.CheckBoxCollider(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	local var_1_0 = arg_1_0.x
-	local var_1_1 = arg_1_0.y
-	local var_1_2 = arg_1_2.x
-	local var_1_3 = arg_1_2.y
-	local var_1_4 = arg_1_1.x
-	local var_1_5 = arg_1_1.y
-	local var_1_6 = arg_1_3.x
-	local var_1_7 = arg_1_3.y
+function slot0.CheckBoxCollider(slot0, slot1, slot2, slot3)
+	slot5 = slot0.y
+	slot6 = slot2.x
+	slot7 = slot2.y
+	slot9 = slot1.y
+	slot11 = slot3.y
 
-	if var_1_4 <= var_1_0 and var_1_0 >= var_1_4 + var_1_6 then
+	if slot1.x <= slot0.x and slot4 >= slot8 + slot3.x then
 		return false
-	elseif var_1_0 <= var_1_4 and var_1_4 >= var_1_0 + var_1_2 then
+	elseif slot4 <= slot8 and slot8 >= slot4 + slot6 then
 		return false
-	elseif var_1_5 <= var_1_1 and var_1_1 >= var_1_5 + var_1_7 then
+	elseif slot9 <= slot5 and slot5 >= slot9 + slot11 then
 		return false
-	elseif var_1_1 <= var_1_5 and var_1_5 >= var_1_1 + var_1_3 then
+	elseif slot5 <= slot9 and slot9 >= slot5 + slot7 then
 		return false
 	else
 		return true
 	end
 end
 
-return var_0_0
+return slot0

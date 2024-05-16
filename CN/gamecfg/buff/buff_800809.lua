@@ -1,25 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeforeFatalDamage"
-			},
-			arg_list = {
-				skill_id = 800809,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onBeforeFatalDamage"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -40,5 +19,26 @@
 	stack = 1,
 	id = 800809,
 	icon = 800800,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeforeFatalDamage"
+			},
+			arg_list = {
+				skill_id = 800809,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onBeforeFatalDamage"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	}
 }

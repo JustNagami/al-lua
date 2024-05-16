@@ -1,59 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffFixVelocity",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				add = 0,
-				mul = -1500
-			}
-		},
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "Flasher_debuff"
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 17429,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 17419,
-				rant = 5000,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				buff_id_list = {
-					17428
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -632,5 +577,60 @@
 	stack = 1,
 	id = 17418,
 	icon = 17410,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffFixVelocity",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				add = 0,
+				mul = -1500
+			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "Flasher_debuff"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 17429,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 17419,
+				rant = 5000,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id_list = {
+					17428
+				}
+			}
+		}
+	}
 }

@@ -1,33 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 5021
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 5020,
-				shipType = 6,
-				target = "TargetPlayerByType"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 5020,
-				shipType = 7,
-				target = "TargetPlayerByType"
-			}
-		}
-	},
+return {
 	{
 		desc = "在队伍中(存活)时降低轻母、航母受到的伤害5.0%，同技能效果不叠加",
 		addition = {
@@ -98,5 +69,34 @@
 	stack = 1,
 	id = 5021,
 	icon = 5020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 5021
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 5020,
+				shipType = 6,
+				target = "TargetPlayerByType"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 5020,
+				shipType = 7,
+				target = "TargetPlayerByType"
+			}
+		}
+	}
 }

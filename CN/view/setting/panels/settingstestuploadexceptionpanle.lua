@@ -1,27 +1,26 @@
-﻿local var_0_0 = class("SettingsTestUploadExceptionPanle", import(".SettingsBasePanel"))
+slot0 = class("SettingsTestUploadExceptionPanle", import(".SettingsBasePanel"))
 
-function var_0_0.GetUIName(arg_1_0)
+function slot0.GetUIName(slot0)
 	return "SettingsServiceCH"
 end
 
-function var_0_0.GetTitle(arg_2_0)
+function slot0.GetTitle(slot0)
 	return "测试异常上传"
 end
 
-function var_0_0.GetTitleEn(arg_3_0)
+function slot0.GetTitleEn(slot0)
 	return "/ Service"
 end
 
-function var_0_0.OnInit(arg_4_0)
-	arg_4_0.serviceBtn = findTF(arg_4_0._tf, "delete")
+function slot0.OnInit(slot0)
+	slot0.serviceBtn = findTF(slot0._tf, "delete")
 
-	onButton(arg_4_0, arg_4_0.serviceBtn, function()
-		local var_5_0 = ___inexistence____[0]
+	onButton(slot0, slot0.serviceBtn, function ()
+		slot0 = ___inexistence____[0]
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdate(arg_6_0)
-	return
+function slot0.OnUpdate(slot0)
 end
 
-return var_0_0
+return slot0

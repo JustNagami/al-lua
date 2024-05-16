@@ -1,11 +1,10 @@
-﻿local var_0_0 = class("CardPuzzleGift", BaseVO)
-
-var_0_0.TYPE = {
+slot0 = class("CardPuzzleGift", BaseVO)
+slot0.TYPE = {
 	GLOBAL = 1,
 	USABLE = 3,
 	BATTLE = 2
 }
-var_0_0.EFFECT_TYPE = {
+slot0.EFFECT_TYPE = {
 	COIN_BONUS = 5,
 	GLOBAL_ATTRIBUTE_BONUS = 1,
 	ROGUE_DROP_BONUS = 3,
@@ -13,83 +12,75 @@ var_0_0.EFFECT_TYPE = {
 	BATTLE_BUFF = 2
 }
 
-function var_0_0.CreateByNetData(arg_1_0)
-	local var_1_0 = {}
+function slot0.CreateByNetData(slot0)
+	slot1 = {}
 
-	for iter_1_0 = 1, arg_1_0.num do
-		table.insert(var_1_0, var_0_0.New({
-			configId = arg_1_0.id
+	for slot5 = 1, slot0.num do
+		table.insert(slot1, uv0.New({
+			configId = slot0.id
 		}))
 	end
 
-	return var_1_0
+	return slot1
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.puzzle_relics_template
 end
 
-function var_0_0.GetIconPath(arg_3_0)
-	return "roguegifts/" .. arg_3_0:getConfig("icon")
+function slot0.GetIconPath(slot0)
+	return "roguegifts/" .. slot0:getConfig("icon")
 end
 
-function var_0_0.GetConfigId(arg_4_0)
-	return arg_4_0.configId
+function slot0.GetConfigId(slot0)
+	return slot0.configId
 end
 
-function var_0_0.GetName(arg_5_0)
-	return arg_5_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetType(arg_6_0)
-	return arg_6_0:getConfig("type")
+function slot0.GetType(slot0)
+	return slot0:getConfig("type")
 end
 
-function var_0_0.GetDesc(arg_7_0)
-	return arg_7_0:getConfig("desc")
+function slot0.GetDesc(slot0)
+	return slot0:getConfig("desc")
 end
 
-function var_0_0.GetRarity(arg_8_0)
-	return arg_8_0:getConfig("rarity")
+function slot0.GetRarity(slot0)
+	return slot0:getConfig("rarity")
 end
 
-function var_0_0.GetEffects(arg_9_0)
-	local var_9_0 = arg_9_0:getConfig("arg_list")
+function slot0.GetEffects(slot0)
+	return _.map(slot0:getConfig("arg_list"), function (slot0)
+		slot1 = pg.puzzle_relics_effect[slot0]
 
-	return _.map(var_9_0, function(arg_10_0)
-		local var_10_0 = pg.puzzle_relics_effect[arg_10_0]
+		assert(slot1)
 
-		assert(var_10_0)
-
-		return var_10_0
+		return slot1
 	end)
 end
 
-function var_0_0.GetAttributeBonus(arg_11_0, arg_11_1)
-	local var_11_0 = {}
-
-	if arg_11_0:GetType() ~= var_0_0.TYPE.GLOBAL then
-		return var_11_0
+function slot0.GetAttributeBonus(slot0, slot1)
+	if slot0:GetType() ~= uv0.TYPE.GLOBAL then
+		return {}
 	end
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0:GetEffects()) do
-		if iter_11_1.type == var_0_0.EFFECT_TYPE.GLOBAL_ATTRIBUTE_BONUS then
-			for iter_11_2, iter_11_3 in ipairs(iter_11_1.arg_list) do
-				local var_11_1 = iter_11_3[1]
-				local var_11_2 = iter_11_3[2]
-				local var_11_3 = iter_11_3[3]
-
-				if table.contains(var_11_1, arg_11_1:getShipType()) then
-					table.insert(var_11_0, {
-						type = CardPuzzleShip.PROPERTIES[var_11_2],
-						value = var_11_3
+	for slot6, slot7 in ipairs(slot0:GetEffects()) do
+		if slot7.type == uv0.EFFECT_TYPE.GLOBAL_ATTRIBUTE_BONUS then
+			for slot11, slot12 in ipairs(slot7.arg_list) do
+				if table.contains(slot12[1], slot1:getShipType()) then
+					table.insert(slot2, {
+						type = CardPuzzleShip.PROPERTIES[slot12[2]],
+						value = slot12[3]
 					})
 				end
 			end
 		end
 	end
 
-	return var_11_0
+	return slot2
 end
 
-return var_0_0
+return slot0

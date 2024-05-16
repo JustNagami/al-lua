@@ -1,58 +1,54 @@
-﻿local var_0_0 = class("TaskPtAwardWindow", import("..activity.Panels.PtAwardWindow"))
+slot0 = class("TaskPtAwardWindow", import("..activity.Panels.PtAwardWindow"))
 
-function var_0_0.UpdateList(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	assert(#arg_1_1 == #arg_1_2)
-	arg_1_0.UIlist:make(function(arg_2_0, arg_2_1, arg_2_2)
-		if arg_2_0 == UIItemList.EventUpdate then
-			local var_2_0 = arg_1_1[arg_2_1 + 1]
+function slot0.UpdateList(slot0, slot1, slot2, slot3)
+	assert(#slot1 == #slot2)
+	slot0.UIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			arg_1_0:UpdateDrop(arg_2_2:Find("award"), var_2_0[1])
-			arg_1_0:UpdateDrop(arg_2_2:Find("award1"), var_2_0[2])
+			uv1:UpdateDrop(slot2:Find("award"), slot3[1])
+			uv1:UpdateDrop(slot2:Find("award1"), slot3[2])
+			setText(slot2:Find("title/Text"), "PHASE " .. slot1 + 1)
+			setText(slot2:Find("target/Text"), uv2[slot1 + 1])
+			setText(slot2:Find("target/title"), uv1.resTitle)
+			setActive(slot2:Find("award/mask"), slot1 + 1 <= uv3)
+			setActive(slot2:Find("award1/mask"), slot1 + 1 <= uv3)
 
-			local var_2_1 = arg_1_2[arg_2_1 + 1]
-
-			setText(arg_2_2:Find("title/Text"), "PHASE " .. arg_2_1 + 1)
-			setText(arg_2_2:Find("target/Text"), var_2_1)
-			setText(arg_2_2:Find("target/title"), arg_1_0.resTitle)
-			setActive(arg_2_2:Find("award/mask"), arg_2_1 + 1 <= arg_1_3)
-			setActive(arg_2_2:Find("award1/mask"), arg_2_1 + 1 <= arg_1_3)
-
-			if arg_2_2:Find("target/icon") then
-				if arg_1_0.resIcon == "" then
-					arg_1_0.resIcon = nil
+			if slot2:Find("target/icon") then
+				if uv1.resIcon == "" then
+					uv1.resIcon = nil
 				end
 
-				if arg_1_0.resIcon then
-					LoadImageSpriteAsync(arg_1_0.resIcon, arg_2_2:Find("target/icon"), false)
+				if uv1.resIcon then
+					LoadImageSpriteAsync(uv1.resIcon, slot2:Find("target/icon"), false)
 				end
 
-				setActive(arg_2_2:Find("target/icon"), arg_1_0.resIcon)
-				setActive(arg_2_2:Find("target/mark"), arg_1_0.resIcon)
+				setActive(slot2:Find("target/icon"), uv1.resIcon)
+				setActive(slot2:Find("target/mark"), uv1.resIcon)
 			end
 		end
 	end)
-	arg_1_0.UIlist:align(#arg_1_1)
+	slot0.UIlist:align(#slot1)
 end
 
-function var_0_0.UpdateDrop(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_2 then
-		setActive(arg_3_1, true)
-
-		local var_3_0 = {
-			type = arg_3_2[1],
-			id = arg_3_2[2],
-			count = arg_3_2[3]
-		}
-
-		updateDrop(arg_3_1, var_3_0, {
+function slot0.UpdateDrop(slot0, slot1, slot2)
+	if slot2 then
+		setActive(slot1, true)
+		updateDrop(slot1, {
+			type = slot2[1],
+			id = slot2[2],
+			count = slot2[3]
+		}, {
 			hideName = true
 		})
-		onButton(arg_3_0.binder, arg_3_1, function()
-			arg_3_0.binder:emit(BaseUI.ON_DROP, var_3_0)
+		onButton(slot0.binder, slot1, function ()
+			uv0.binder:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
-	else
-		setActive(arg_3_1, false)
+
+		return
 	end
+
+	setActive(slot1, false)
 end
 
-return var_0_0
+return slot0

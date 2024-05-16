@@ -1,48 +1,47 @@
-﻿local var_0_0 = class("ChargeJPUserAgreeLayer", import("...base.BaseUI"))
+slot0 = class("ChargeJPUserAgreeLayer", import("...base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ChargeJPUserAgreeUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
-	arg_2_0:initUIText()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
+	slot0:initUIText()
 end
 
-function var_0_0.didEnter(arg_3_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
-	setText(arg_3_0.scrollText, arg_3_0.contentStr or "")
-	scrollTo(arg_3_0.scrollRect, 0, 1)
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	setText(slot0.scrollText, slot0.contentStr or "")
+	scrollTo(slot0.scrollRect, 0, 1)
 end
 
-function var_0_0.willExit(arg_4_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-function var_0_0.initData(arg_5_0)
-	arg_5_0.contentStr = arg_5_0.contextData.contentStr
+function slot0.initData(slot0)
+	slot0.contentStr = slot0.contextData.contentStr
 end
 
-function var_0_0.initUIText(arg_6_0)
-	return
+function slot0.initUIText(slot0)
 end
 
-function var_0_0.findUI(arg_7_0)
-	arg_7_0.bg = arg_7_0:findTF("bg")
-	arg_7_0.closeBtn = arg_7_0:findTF("window/top/btnBack")
-	arg_7_0.scrollRect = arg_7_0:findTF("container/scrollrect")
-	arg_7_0.scrollText = arg_7_0:findTF("content/Text", arg_7_0.scrollRect)
+function slot0.findUI(slot0)
+	slot0.bg = slot0:findTF("bg")
+	slot0.closeBtn = slot0:findTF("window/top/btnBack")
+	slot0.scrollRect = slot0:findTF("container/scrollrect")
+	slot0.scrollText = slot0:findTF("content/Text", slot0.scrollRect)
 end
 
-function var_0_0.addListener(arg_8_0)
-	onButton(arg_8_0, arg_8_0.bg, function()
-		arg_8_0:closeView()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.bg, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_8_0, arg_8_0.closeBtn, function()
-		arg_8_0:closeView()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
 end
 
-return var_0_0
+return slot0

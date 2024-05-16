@@ -1,145 +1,134 @@
-﻿local var_0_0 = class("ChapterMissileExplodeAction")
+slot0 = class("ChapterMissileExplodeAction")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.actType = arg_1_1.act_type
-	arg_1_0.line = {
-		row = arg_1_1.ai_pos.row,
-		column = arg_1_1.ai_pos.column
+function slot0.Ctor(slot0, slot1)
+	slot0.actType = slot1.act_type
+	slot0.line = {
+		row = slot1.ai_pos.row,
+		column = slot1.ai_pos.column
 	}
-	arg_1_0.shipUpdate = _.map(arg_1_1.ship_update, function(arg_2_0)
+	slot0.shipUpdate = _.map(slot1.ship_update, function (slot0)
 		return {
-			id = arg_2_0.id,
-			hpRant = arg_2_0.hp_rant
+			id = slot0.id,
+			hpRant = slot0.hp_rant
 		}
 	end)
-	arg_1_0.cellFlagUpdates = _.map(arg_1_1.cell_flag_list, function(arg_3_0)
+	slot0.cellFlagUpdates = _.map(slot1.cell_flag_list, function (slot0)
 		return {
-			row = arg_3_0.pos.row,
-			column = arg_3_0.pos.column,
-			flag_list = _.map(arg_3_0.flag_list, function(arg_4_0)
-				return arg_4_0
+			row = slot0.pos.row,
+			column = slot0.pos.column,
+			flag_list = _.map(slot0.flag_list, function (slot0)
+				return slot0
 			end)
 		}
 	end)
-	arg_1_0.cellUpdates = _.map(arg_1_1.map_update, function(arg_5_0)
-		if arg_5_0.item_type ~= ChapterConst.AttachNone and arg_5_0.item_type ~= ChapterConst.AttachBorn and arg_5_0.item_type ~= ChapterConst.AttachBorn_Sub and (arg_5_0.item_type ~= ChapterConst.AttachStory or arg_5_0.item_data ~= ChapterConst.StoryTrigger) then
-			return arg_5_0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(arg_5_0) or ChapterCell.New(arg_5_0)
+	slot0.cellUpdates = _.map(slot1.map_update, function (slot0)
+		if slot0.item_type ~= ChapterConst.AttachNone and slot0.item_type ~= ChapterConst.AttachBorn and slot0.item_type ~= ChapterConst.AttachBorn_Sub and (slot0.item_type ~= ChapterConst.AttachStory or slot0.item_data ~= ChapterConst.StoryTrigger) then
+			return slot0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(slot0) or ChapterCell.New(slot0)
 		end
 	end)
 end
 
-function var_0_0.SetTargetLine(arg_6_0, arg_6_1)
-	arg_6_0.targetLine = arg_6_1
-	arg_6_0.flagStrategy = true
+function slot0.SetTargetLine(slot0, slot1)
+	slot0.targetLine = slot1
+	slot0.flagStrategy = true
 end
 
-function var_0_0.applyTo(arg_7_0, arg_7_1, arg_7_2)
-	if not arg_7_2 then
-		local var_7_0 = 0
-		local var_7_1 = 0
+function slot0.applyTo(slot0, slot1, slot2)
+	if not slot2 then
+		slot4 = 0
 
-		if #arg_7_0.cellFlagUpdates > 0 then
-			_.each(arg_7_0.cellFlagUpdates, function(arg_8_0)
-				local var_8_0 = arg_7_1:getChapterCell(arg_8_0.row, arg_8_0.column)
-
-				if var_8_0 then
-					var_8_0:updateFlagList(arg_8_0)
+		if #slot0.cellFlagUpdates > 0 then
+			_.each(slot0.cellFlagUpdates, function (slot0)
+				if uv0:getChapterCell(slot0.row, slot0.column) then
+					slot1:updateFlagList(slot0)
 				else
-					var_8_0 = ChapterCell.New(arg_8_0)
+					slot1 = ChapterCell.New(slot0)
 				end
 
-				arg_7_1:updateChapterCell(var_8_0)
+				uv0:updateChapterCell(slot1)
 			end)
 
-			var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyCellFlag)
+			slot3 = bit.bor(0, ChapterConst.DirtyCellFlag)
 		end
 
-		if #arg_7_0.cellUpdates > 0 then
-			_.each(arg_7_0.cellUpdates, function(arg_9_0)
-				if isa(arg_9_0, ChapterChampionPackage) then
-					local var_9_0 = arg_7_1:mergeChampion(arg_9_0) and ChapterConst.DirtyChampionPosition or ChapterConst.DirtyChampion
-
-					var_7_0 = bit.bor(var_7_0, var_9_0)
+		if #slot0.cellUpdates > 0 then
+			_.each(slot0.cellUpdates, function (slot0)
+				if isa(slot0, ChapterChampionPackage) then
+					uv1 = bit.bor(uv1, uv0:mergeChampion(slot0) and ChapterConst.DirtyChampionPosition or ChapterConst.DirtyChampion)
 				else
-					arg_7_1:mergeChapterCell(arg_9_0)
+					uv0:mergeChapterCell(slot0)
 
-					var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyAttachment)
+					uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 				end
 			end)
 
-			var_7_1 = bit.bor(var_7_1, ChapterConst.DirtyAutoAction)
+			slot4 = bit.bor(slot4, ChapterConst.DirtyAutoAction)
 		end
 
-		if #arg_7_0.shipUpdate > 0 then
-			_.each(arg_7_0.shipUpdate, function(arg_10_0)
-				arg_7_1:updateFleetShipHp(arg_10_0.id, arg_10_0.hpRant)
+		if #slot0.shipUpdate > 0 then
+			_.each(slot0.shipUpdate, function (slot0)
+				uv0:updateFleetShipHp(slot0.id, slot0.hpRant)
 			end)
 
-			var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyFleet)
+			slot3 = bit.bor(slot3, ChapterConst.DirtyFleet)
 		end
 
-		return true, var_7_0, var_7_1
+		return true, slot3, slot4
 	end
 
 	return true
 end
 
-function var_0_0.PlayAIAction(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	local var_11_0
+function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
+	slot4 = nil
 
-	if arg_11_0.targetLine then
-		var_11_0 = {
-			arg_11_0.targetLine
+	if slot0.targetLine then
+		slot4 = {
+			slot0.targetLine
 		}
 	else
-		local function var_11_1(arg_12_0)
-			local var_12_0 = arg_11_1:GetRawChapterCell(arg_12_0.row, arg_12_0.column)
-
-			return var_12_0 and table.contains(var_12_0:GetFlagList(), ChapterConst.FlagMissleAiming) and not table.contains(arg_12_0.flag_list, ChapterConst.FlagMissleAiming)
+		function slot5(slot0)
+			return uv0:GetRawChapterCell(slot0.row, slot0.column) and table.contains(slot1:GetFlagList(), ChapterConst.FlagMissleAiming) and not table.contains(slot0.flag_list, ChapterConst.FlagMissleAiming)
 		end
 
-		var_11_0 = _.filter(arg_11_0.cellFlagUpdates, function(arg_13_0)
-			return var_11_1(arg_13_0)
+		slot4 = _.filter(slot0.cellFlagUpdates, function (slot0)
+			return uv0(slot0)
 		end)
 	end
 
 	seriesAsync({
-		function(arg_14_0)
-			if not arg_11_0.flagStrategy then
-				return arg_14_0()
+		function (slot0)
+			if not uv0.flagStrategy then
+				return slot0()
 			end
 
-			arg_11_2.viewComponent:doPlayAnim("MissileStrikeBar", function(arg_15_0)
-				setActive(arg_15_0, false)
-				arg_14_0()
+			uv1.viewComponent:doPlayAnim("MissileStrikeBar", function (slot0)
+				setActive(slot0, false)
+				uv0()
 			end)
 		end,
-		function(arg_16_0)
-			table.ParallelIpairsAsync(var_11_0, function(arg_17_0, arg_17_1, arg_17_2)
-				arg_11_2.viewComponent.grid:PlayMissileExplodAnim(arg_17_1, arg_17_2)
-			end, arg_16_0)
+		function (slot0)
+			table.ParallelIpairsAsync(uv0, function (slot0, slot1, slot2)
+				uv0.viewComponent.grid:PlayMissileExplodAnim(slot1, slot2)
+			end, slot0)
 		end,
-		function(arg_18_0)
-			table.ParallelIpairsAsync(arg_11_0.cellUpdates, function(arg_19_0, arg_19_1, arg_19_2)
-				if ChapterConst.IsBossCell(arg_19_1) then
-					arg_11_2.viewComponent.grid:PlayShellFx(arg_19_1)
-					arg_19_2()
+		function (slot0)
+			table.ParallelIpairsAsync(uv0.cellUpdates, function (slot0, slot1, slot2)
+				if ChapterConst.IsBossCell(slot1) then
+					uv0.viewComponent.grid:PlayShellFx(slot1)
+					slot2()
 				else
-					local var_19_0 = arg_11_1:GetRawChapterCell(arg_19_1.row, arg_19_1.column)
-					local var_19_1 = var_19_0 and var_19_0.data or 0
-					local var_19_2 = "-" .. (arg_19_1.data - var_19_1) / 100 .. "%"
-
-					arg_11_2.viewComponent:strikeEnemy(arg_19_1, var_19_2, arg_19_2)
+					uv0.viewComponent:strikeEnemy(slot1, "-" .. (slot1.data - (uv1:GetRawChapterCell(slot1.row, slot1.column) and slot3.data or 0)) / 100 .. "%", slot2)
 				end
-			end, arg_18_0)
+			end, slot0)
 		end,
-		function(arg_20_0)
-			arg_11_2.viewComponent.levelStageView:SwitchBottomStagePanel(false)
-			arg_11_2.viewComponent.grid:HideMissileAimingMark()
-			arg_20_0()
+		function (slot0)
+			uv0.viewComponent.levelStageView:SwitchBottomStagePanel(false)
+			uv0.viewComponent.grid:HideMissileAimingMark()
+			slot0()
 		end,
-		arg_11_3
+		slot3
 	})
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "robot",
+	init_effect = "",
+	time = 10,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14721,
+	icon = 14720,
+	last_effect = "robot_yglh",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -21,26 +42,5 @@
 				skill_id = 14722
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "robot",
-	init_effect = "",
-	time = 10,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14721,
-	icon = 14720,
-	last_effect = "robot_yglh"
+	}
 }

@@ -1,15 +1,13 @@
-﻿local var_0_0 = class("GuildEventStartCommand", pm.SimpleCommand)
+slot0 = class("GuildEventStartCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(GuildProxy)
-
-	if var_1_0:getData() then
+function slot0.execute(slot0, slot1)
+	if getProxy(GuildProxy):getData() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_boss_appear"))
 
-		var_1_0.eventTip = true
+		slot2.eventTip = true
 
-		arg_1_0:sendNotification(GAME.BOSS_EVENT_START_DONE)
+		slot0:sendNotification(GAME.BOSS_EVENT_START_DONE)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,129 +1,114 @@
-﻿local var_0_0 = class("LevelCellView")
+slot0 = class("LevelCellView")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.go = nil
-	arg_1_0.tf = nil
-	arg_1_0.orderTable = {}
+function slot0.Ctor(slot0)
+	slot0.go = nil
+	slot0.tf = nil
+	slot0.orderTable = {}
 end
 
-function var_0_0.SetActive(arg_2_0, arg_2_1)
-	setActive(arg_2_0.go, arg_2_1)
+function slot0.SetActive(slot0, slot1)
+	setActive(slot0.go, slot1)
 end
 
-function var_0_0.GetOrder(arg_3_0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityNone
 end
 
-function var_0_0.SetLoader(arg_4_0, arg_4_1)
-	assert(not arg_4_0.loader, "repeatly Set loader")
+function slot0.SetLoader(slot0, slot1)
+	assert(not slot0.loader, "repeatly Set loader")
 
-	arg_4_0.loader = arg_4_1
+	slot0.loader = slot1
 end
 
-function var_0_0.GetLoader(arg_5_0)
-	arg_5_0.loader = arg_5_0.loader or AutoLoader.New()
+function slot0.GetLoader(slot0)
+	slot0.loader = slot0.loader or AutoLoader.New()
 
-	return arg_5_0.loader
+	return slot0.loader
 end
 
-function var_0_0.ClearLoader(arg_6_0)
-	if arg_6_0.loader then
-		arg_6_0.loader:Clear()
+function slot0.ClearLoader(slot0)
+	if slot0.loader then
+		slot0.loader:Clear()
 	end
 end
 
-function var_0_0.GetLine(arg_7_0)
-	return arg_7_0.line
+function slot0.GetLine(slot0)
+	return slot0.line
 end
 
-function var_0_0.SetLine(arg_8_0, arg_8_1)
-	arg_8_0.line = {
-		row = arg_8_1.row,
-		column = arg_8_1.column
+function slot0.SetLine(slot0, slot1)
+	slot0.line = {
+		row = slot1.row,
+		column = slot1.column
 	}
 end
 
-function var_0_0.OverrideCanvas(arg_9_0)
-	pg.ViewUtils.SetLayer(tf(arg_9_0.go), Layer.UI)
+function slot0.OverrideCanvas(slot0)
+	pg.ViewUtils.SetLayer(tf(slot0.go), Layer.UI)
 
-	arg_9_0.canvas = GetOrAddComponent(arg_9_0.go, typeof(Canvas))
-	arg_9_0.canvas.overrideSorting = true
+	slot0.canvas = GetOrAddComponent(slot0.go, typeof(Canvas))
+	slot0.canvas.overrideSorting = true
 end
 
-function var_0_0.ResetCanvasOrder(arg_10_0)
-	if not arg_10_0.canvas then
+function slot0.ResetCanvasOrder(slot0)
+	if not slot0.canvas then
 		return
 	end
 
-	local var_10_0 = arg_10_0.line.row * ChapterConst.PriorityPerRow + arg_10_0:GetOrder()
-
-	pg.ViewUtils.SetSortingOrder(arg_10_0.tf, var_10_0)
+	pg.ViewUtils.SetSortingOrder(slot0.tf, slot0.line.row * ChapterConst.PriorityPerRow + slot0:GetOrder())
 end
 
-function var_0_0.GetCurrentOrder(arg_11_0)
-	return arg_11_0.line.row * ChapterConst.PriorityPerRow + arg_11_0:GetOrder()
+function slot0.GetCurrentOrder(slot0)
+	return slot0.line.row * ChapterConst.PriorityPerRow + slot0:GetOrder()
 end
 
-function var_0_0.AddCanvasOrder(arg_12_0, arg_12_1, arg_12_2)
-	arg_12_1 = tf(arg_12_1)
-
-	local var_12_0 = arg_12_1:GetComponents(typeof(Renderer))
-
-	for iter_12_0 = 0, var_12_0.Length - 1 do
-		var_12_0[iter_12_0].sortingOrder = (arg_12_0.orderTable[var_12_0[iter_12_0]] or 0) + arg_12_2
+function slot0.AddCanvasOrder(slot0, slot1, slot2)
+	for slot7 = 0, tf(slot1):GetComponents(typeof(Renderer)).Length - 1 do
+		slot3[slot7].sortingOrder = (slot0.orderTable[slot3[slot7]] or 0) + slot2
 	end
 
-	local var_12_1 = arg_12_1:GetComponent(typeof(Canvas))
-
-	if var_12_1 then
-		var_12_1.sortingOrder = (arg_12_0.orderTable[var_12_1] or 0) + arg_12_2
+	if slot1:GetComponent(typeof(Canvas)) then
+		slot4.sortingOrder = (slot0.orderTable[slot4] or 0) + slot2
 	end
 
-	for iter_12_1 = 0, arg_12_1.childCount - 1 do
-		arg_12_0:AddCanvasOrder(arg_12_1:GetChild(iter_12_1), arg_12_2)
+	for slot8 = 0, slot1.childCount - 1 do
+		slot0:AddCanvasOrder(slot1:GetChild(slot8), slot2)
 	end
 end
 
-function var_0_0.RecordCanvasOrder(arg_13_0, arg_13_1)
-	arg_13_1 = tf(arg_13_1)
-
-	local var_13_0 = arg_13_1:GetComponents(typeof(Renderer))
-
-	for iter_13_0 = 0, var_13_0.Length - 1 do
-		local var_13_1 = var_13_0[iter_13_0]
-
-		arg_13_0.orderTable[var_13_0[iter_13_0]] = var_13_0[iter_13_0].sortingOrder
+function slot0.RecordCanvasOrder(slot0, slot1)
+	for slot6 = 0, tf(slot1):GetComponents(typeof(Renderer)).Length - 1 do
+		slot7 = slot2[slot6]
+		slot0.orderTable[slot2[slot6]] = slot2[slot6].sortingOrder
 	end
 
-	local var_13_2 = arg_13_1:GetComponent(typeof(Canvas))
-
-	if var_13_2 then
-		arg_13_0.orderTable[var_13_2] = var_13_2.sortingOrder
+	if slot1:GetComponent(typeof(Canvas)) then
+		slot0.orderTable[slot3] = slot3.sortingOrder
 	end
 
-	for iter_13_1 = 0, arg_13_1.childCount - 1 do
-		arg_13_0:RecordCanvasOrder(arg_13_1:GetChild(iter_13_1))
+	for slot7 = 0, slot1.childCount - 1 do
+		slot0:RecordCanvasOrder(slot1:GetChild(slot7))
 	end
 end
 
-function var_0_0.RefreshLinePosition(arg_14_0, arg_14_1, arg_14_2)
-	if arg_14_2 then
-		arg_14_0:SetLine(arg_14_2)
-		arg_14_0:ResetCanvasOrder()
+function slot0.RefreshLinePosition(slot0, slot1, slot2)
+	if slot2 then
+		slot0:SetLine(slot2)
+		slot0:ResetCanvasOrder()
 	end
 
-	arg_14_0.tf.anchoredPosition = arg_14_1.theme:GetLinePosition(arg_14_0.line.row, arg_14_0.line.column)
+	slot0.tf.anchoredPosition = slot1.theme:GetLinePosition(slot0.line.row, slot0.line.column)
 end
 
-function var_0_0.Clear(arg_15_0)
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.orderTable) do
-		if not IsNil(iter_15_0) then
-			iter_15_0.sortingOrder = iter_15_1
+function slot0.Clear(slot0)
+	for slot4, slot5 in pairs(slot0.orderTable) do
+		if not IsNil(slot4) then
+			slot4.sortingOrder = slot5
 		end
 	end
 
-	table.clear(arg_15_0.orderTable)
-	arg_15_0:ClearLoader()
+	table.clear(slot0.orderTable)
+	slot0:ClearLoader()
 end
 
-return var_0_0
+return slot0

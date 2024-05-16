@@ -1,11 +1,7 @@
-﻿local var_0_0 = class("NewDuelResultGradePage", import("..NewBattleResultGradePage"))
+slot0 = class("NewDuelResultGradePage", import("..NewBattleResultGradePage"))
 
-function var_0_0.UpdateChapterName(arg_1_0)
-	local var_1_0 = arg_1_0.contextData
-	local var_1_1 = getProxy(MilitaryExerciseProxy):getPreRivalById(var_1_0.rivalId or 0)
-	local var_1_2 = var_1_1 and var_1_1.name or ""
-
-	setText(arg_1_0.gradeChapterName, var_1_2)
+function slot0.UpdateChapterName(slot0)
+	setText(slot0.gradeChapterName, getProxy(MilitaryExerciseProxy):getPreRivalById(slot0.contextData.rivalId or 0) and slot2.name or "")
 end
 
-return var_0_0
+return slot0

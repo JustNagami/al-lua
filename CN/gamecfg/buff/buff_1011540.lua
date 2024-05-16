@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "最后的炮火",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1011540,
+	icon = 11540,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -26,26 +47,5 @@
 				time = 20
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "最后的炮火",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1011540,
-	icon = 11540,
-	last_effect = ""
+	}
 }

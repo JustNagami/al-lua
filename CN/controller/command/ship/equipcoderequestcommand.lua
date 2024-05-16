@@ -1,43 +1,37 @@
-﻿local var_0_0 = class("EquipCodeRequestCommand", pm.SimpleCommand)
+slot0 = class("EquipCodeRequestCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipGroupId
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(17601, {
-		shipgroup = var_1_1
-	}, 17602, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(CollectionProxy)
-			local var_2_1 = var_2_0:getShipGroup(var_1_1)
-			local var_2_2 = {}
+		shipgroup = slot1:getBody().shipGroupId
+	}, 17602, function (slot0)
+		if slot0.result == 0 then
+			slot2 = getProxy(CollectionProxy):getShipGroup(uv0)
+			slot3 = {}
 
-			for iter_2_0, iter_2_1 in ipairs({
-				arg_2_0.infos,
-				arg_2_0.recent_infos
+			for slot7, slot8 in ipairs({
+				slot0.infos,
+				slot0.recent_infos
 			}) do
-				for iter_2_2, iter_2_3 in ipairs(iter_2_1) do
-					local var_2_3 = EquipCode.New(setmetatable({
-						new = iter_2_0 - 1,
-						shipGroupId = var_1_1
+				for slot12, slot13 in ipairs(slot8) do
+					if EquipCode.New(setmetatable({
+						new = slot7 - 1,
+						shipGroupId = uv0
 					}, {
-						__index = iter_2_3
-					}))
-
-					if var_2_3:IsValid() then
-						table.insert(var_2_2, var_2_3)
+						__index = slot13
+					})):IsValid() then
+						table.insert(slot3, slot14)
 					end
 				end
 			end
 
-			var_2_1:setEquipCodes(var_2_2)
-			var_2_0:updateShipGroup(var_2_1)
-			existCall(var_1_0.callback)
+			slot2:setEquipCodes(slot3)
+			slot1:updateShipGroup(slot2)
+			existCall(uv1.callback)
 			pg.m02:sendNotification(GAME.EQUIP_CODE_REQUEST_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Request equip code data failed:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Request equip code data failed:" .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

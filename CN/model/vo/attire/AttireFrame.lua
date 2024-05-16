@@ -1,112 +1,96 @@
-﻿local var_0_0 = class("AttireFrame", import("..BaseVO"))
+slot0 = class("AttireFrame", import("..BaseVO"))
+slot0.STATE_LOCK = 1
+slot0.STATE_UNLOCKABLE = 2
+slot0.STATE_UNLOCK = 3
 
-var_0_0.STATE_LOCK = 1
-var_0_0.STATE_UNLOCKABLE = 2
-var_0_0.STATE_UNLOCK = 3
-
-function var_0_0.attireFrameRes(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	local var_1_0 = arg_1_0.attireInfo[arg_1_2]
-
-	if arg_1_1 then
-		local var_1_1 = getProxy(PlayerProxy):getRawData()
-
-		arg_1_3 = arg_1_3 and (not HXSet.isHxPropose() or var_1_1:GetProposeShipId() == var_1_1.character)
-	else
-		arg_1_3 = arg_1_3 and not HXSet.isHxPropose()
-	end
-
-	if arg_1_2 == AttireConst.TYPE_ICON_FRAME and var_1_0 == 0 and arg_1_3 then
-		local var_1_2 = pg.ship_data_template[arg_1_0.icon]
-
-		if var_1_2 and ShipGroup.IsMetaGroup(var_1_2.group_type) then
+function slot0.attireFrameRes(slot0, slot1, slot2, slot3)
+	if slot2 == AttireConst.TYPE_ICON_FRAME and slot0.attireInfo[slot2] == 0 and (slot1 and slot3 and (not HXSet.isHxPropose() or slot5:GetProposeShipId() == slot5.character) or slot3 and not HXSet.isHxPropose()) then
+		if pg.ship_data_template[slot0.icon] and ShipGroup.IsMetaGroup(slot5.group_type) then
 			return "meta_propose"
 		else
 			return "propose"
 		end
-	elseif arg_1_2 == AttireConst.TYPE_CHAT_FRAME then
-		return arg_1_1 and var_1_0 .. "_self" or var_1_0 .. "_other"
+	elseif slot2 == AttireConst.TYPE_CHAT_FRAME then
+		return slot1 and slot4 .. "_self" or slot4 .. "_other"
 	else
-		return var_1_0
+		return slot4
 	end
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.id
-	arg_2_0.configId = arg_2_0.id
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
 
-	arg_2_0:updateData(arg_2_1)
+	slot0:updateData(slot1)
 end
 
-function var_0_0.isNew(arg_3_0)
-	return arg_3_0.new == true
+function slot0.isNew(slot0)
+	return slot0.new == true
 end
 
-function var_0_0.clearNew(arg_4_0)
-	arg_4_0.new = nil
+function slot0.clearNew(slot0)
+	slot0.new = nil
 end
 
-function var_0_0.updateData(arg_5_0, arg_5_1)
-	arg_5_0.endTime = arg_5_1.end_time or arg_5_1.time or -1
-	arg_5_0.new = arg_5_1.isNew
+function slot0.updateData(slot0, slot1)
+	slot0.endTime = slot1.end_time or slot1.time or -1
+	slot0.new = slot1.isNew
 end
 
-function var_0_0.getState(arg_6_0)
-	local var_6_0 = var_0_0.STATE_LOCK
-	local var_6_1 = arg_6_0:isOwned()
+function slot0.getState(slot0)
+	slot1 = uv0.STATE_LOCK
 
-	if var_6_1 then
-		var_6_0 = var_0_0.STATE_UNLOCK
-	elseif not var_6_1 and arg_6_0:canUnlock() then
-		var_6_0 = var_0_0.STATE_UNLOCKABLE
+	if slot0:isOwned() then
+		slot1 = uv0.STATE_UNLOCK
+	elseif not slot2 and slot0:canUnlock() then
+		slot1 = uv0.STATE_UNLOCKABLE
 	end
 
-	return var_6_0
+	return slot1
 end
 
-function var_0_0.canUnlock(arg_7_0)
+function slot0.canUnlock(slot0)
 	return false
 end
 
-function var_0_0.isOwned(arg_8_0)
-	return arg_8_0.endTime >= 0 and not arg_8_0:isExpired()
+function slot0.isOwned(slot0)
+	return slot0.endTime >= 0 and not slot0:isExpired()
 end
 
-function var_0_0.isExpired(arg_9_0)
-	local var_9_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return arg_9_0:expiredType() and var_9_0 >= arg_9_0:getExpiredTime()
+function slot0.isExpired(slot0)
+	return slot0:expiredType() and slot0:getExpiredTime() <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.getExpiredTime(arg_10_0)
-	if arg_10_0:expiredType() then
-		return arg_10_0.endTime
+function slot0.getExpiredTime(slot0)
+	if slot0:expiredType() then
+		return slot0.endTime
 	end
 
 	assert(false)
 end
 
-function var_0_0.updateEndTime(arg_11_0, arg_11_1)
-	arg_11_0.endTime = arg_11_1
+function slot0.updateEndTime(slot0, slot1)
+	slot0.endTime = slot1
 end
 
-function var_0_0.expiredType(arg_12_0)
-	return arg_12_0:getConfig("time_limit_type") == 1
+function slot0.expiredType(slot0)
+	return slot0:getConfig("time_limit_type") == 1
 end
 
-function var_0_0.getTimerKey(arg_13_0)
-	return arg_13_0:getType() .. "_" .. arg_13_0.id
+function slot0.getTimerKey(slot0)
+	return slot0:getType() .. "_" .. slot0.id
 end
 
-function var_0_0.getType(arg_14_0)
+function slot0.getType(slot0)
 	assert(false)
 end
 
-function var_0_0.bindConfigTable(arg_15_0)
+function slot0.bindConfigTable(slot0)
 	assert(false)
 end
 
-function var_0_0.getDropType(arg_16_0)
+function slot0.getDropType(slot0)
 	assert(false)
 end
 
-return var_0_0
+return slot0

@@ -1,24 +1,21 @@
-﻿local var_0_0 = class("ConfirmSecondaryPasswordCommand", pm.SimpleCommand)
+slot0 = class("ConfirmSecondaryPasswordCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
+function slot0.execute(slot0, slot1)
 	pg.UIMgr.GetInstance():LoadingOn()
 	pg.ConnectionMgr.GetInstance():Send(11609, {
-		password = var_1_0.pwd
-	}, 11610, function(arg_2_0)
+		password = slot1:getBody().pwd
+	}, 11610, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(SecondaryPWDProxy):getRawData()
-
-			var_2_0.state = 2
-			var_2_0.fail_cd = nil
-			var_2_0.fail_count = 0
+		if slot0.result == 0 then
+			slot2 = getProxy(SecondaryPWDProxy):getRawData()
+			slot2.state = 2
+			slot2.fail_cd = nil
+			slot2.fail_count = 0
 		end
 
-		arg_1_0:sendNotification(GAME.CONFIRM_PASSWORD_DONE, arg_2_0)
+		uv0:sendNotification(GAME.CONFIRM_PASSWORD_DONE, slot0)
 	end)
 end
 
-return var_0_0
+return slot0

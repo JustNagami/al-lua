@@ -1,96 +1,87 @@
-﻿local var_0_0 = class("VotePreRaceRankPage", import("....base.BaseSubView"))
+slot0 = class("VotePreRaceRankPage", import("....base.BaseSubView"))
+slot0.RANK_DISPLAY_COUNT = 15
 
-var_0_0.RANK_DISPLAY_COUNT = 15
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "PreRaceRank"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.uiitemlist = UIItemList.New(arg_2_0:findTF("content"), arg_2_0:findTF("content/tpl"))
-	arg_2_0.prevBtn = arg_2_0:findTF("prev")
-	arg_2_0.nextBtn = arg_2_0:findTF("next")
-	arg_2_0.tip = arg_2_0:findTF("tip")
-	arg_2_0.title1 = arg_2_0:findTF("stages/title1")
-	arg_2_0.title2 = arg_2_0:findTF("stages/title2")
-	arg_2_0.rankTitle = arg_2_0:findTF("titles/rank_title")
+function slot0.OnInit(slot0)
+	slot0.uiitemlist = UIItemList.New(slot0:findTF("content"), slot0:findTF("content/tpl"))
+	slot0.prevBtn = slot0:findTF("prev")
+	slot0.nextBtn = slot0:findTF("next")
+	slot0.tip = slot0:findTF("tip")
+	slot0.title1 = slot0:findTF("stages/title1")
+	slot0.title2 = slot0:findTF("stages/title2")
+	slot0.rankTitle = slot0:findTF("titles/rank_title")
 
-	onButton(arg_2_0, arg_2_0.nextBtn, function()
-		local var_3_0 = arg_2_0.page + 1
-
-		if var_3_0 > arg_2_0.maxPage then
-			var_3_0 = 1
+	onButton(slot0, slot0.nextBtn, function ()
+		if uv0.maxPage < uv0.page + 1 then
+			slot0 = 1
 		end
 
-		arg_2_0.page = var_3_0
+		uv0.page = slot0
 
-		arg_2_0:initRank(arg_2_0.page)
+		uv0:initRank(uv0.page)
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.prevBtn, function()
-		local var_4_0 = arg_2_0.page - 1
-
-		if var_4_0 <= 0 then
-			var_4_0 = arg_2_0.maxPage
+	onButton(slot0, slot0.prevBtn, function ()
+		if uv0.page - 1 <= 0 then
+			slot0 = uv0.maxPage
 		end
 
-		arg_2_0.page = var_4_0
+		uv0.page = slot0
 
-		arg_2_0:initRank(arg_2_0.page)
+		uv0:initRank(uv0.page)
 	end, SFX_PANEL)
-	setText(arg_2_0:findTF("titles/rank_title"), i18n("vote_label_rank"))
-	setText(arg_2_0:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
+	setText(slot0:findTF("titles/rank_title"), i18n("vote_label_rank"))
+	setText(slot0:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
 end
 
-function var_0_0.initRank(arg_5_0, arg_5_1)
-	local var_5_0 = (arg_5_1 - 1) * var_0_0.RANK_DISPLAY_COUNT
-	local var_5_1 = arg_5_0.voteShips
+function slot0.initRank(slot0, slot1)
+	slot2 = (slot1 - 1) * uv0.RANK_DISPLAY_COUNT
+	slot3 = slot0.voteShips
 
-	arg_5_0.uiitemlist:make(function(arg_6_0, arg_6_1, arg_6_2)
-		if arg_6_0 == UIItemList.EventUpdate then
-			local var_6_0 = var_5_0 + arg_6_1 + 1
-			local var_6_1 = var_5_1[var_6_0]
-
-			if var_6_1 then
-				arg_5_0:UpdateShipInfo(arg_6_2, var_6_1:getShipName(), var_6_0)
+	slot0.uiitemlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			if uv1[uv0 + slot1 + 1] then
+				uv2:UpdateShipInfo(slot2, slot4:getShipName(), slot3)
 			end
 
-			setActive(arg_6_2, var_6_1)
+			setActive(slot2, slot4)
 		end
 	end)
-	arg_5_0.uiitemlist:align(var_0_0.RANK_DISPLAY_COUNT)
-	arg_5_0:UpdateTitle()
+	slot0.uiitemlist:align(uv0.RANK_DISPLAY_COUNT)
+	slot0:UpdateTitle()
 end
 
-function var_0_0.UpdateShipInfo(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	local var_7_0 = arg_7_0.voteGroup:GetRiseColor(arg_7_3)
+function slot0.UpdateShipInfo(slot0, slot1, slot2, slot3)
+	slot5 = slot0.voteGroup:GetRiseColor(slot3)
 
-	setText(arg_7_1:Find("Text"), setColorStr(shortenString(arg_7_2, 9), var_7_0))
-	setText(arg_7_1:Find("number"), setColorStr(arg_7_3, var_7_0))
+	setText(slot1:Find("Text"), setColorStr(shortenString(slot2, 9), slot5))
+	setText(slot1:Find("number"), setColorStr(slot3, slot5))
 end
 
-function var_0_0.UpdateTitle(arg_8_0)
-	local var_8_0 = arg_8_0.voteGroup:getConfig("next_round_number")
+function slot0.UpdateTitle(slot0)
+	slot2 = slot0.voteGroup:getConfig("next_round_number")
 
-	setActive(arg_8_0.rankTitle, true)
+	setActive(slot0.rankTitle, true)
 end
 
-function var_0_0.Update(arg_9_0, arg_9_1)
-	arg_9_0.voteGroup = arg_9_1
-	arg_9_0.voteShips = arg_9_1:getList()
-	arg_9_0.page = 1
-	arg_9_0.maxPage = math.ceil(#arg_9_0.voteShips / var_0_0.RANK_DISPLAY_COUNT)
-	arg_9_0.phase = arg_9_1:GetStage()
+function slot0.Update(slot0, slot1)
+	slot0.voteGroup = slot1
+	slot0.voteShips = slot1:getList()
+	slot0.page = 1
+	slot0.maxPage = math.ceil(#slot0.voteShips / uv0.RANK_DISPLAY_COUNT)
+	slot0.phase = slot1:GetStage()
 
-	setActive(arg_9_0.title1, arg_9_0.phase == VoteGroup.VOTE_STAGE)
-	setActive(arg_9_0.title2, arg_9_0.phase ~= VoteGroup.VOTE_STAGE)
-	setActive(arg_9_0.tip, arg_9_0.phase == VoteGroup.VOTE_STAGE)
-	arg_9_0:UpdateTitle()
-	arg_9_0:initRank(arg_9_0.page)
-	arg_9_0:Show()
+	setActive(slot0.title1, slot0.phase == VoteGroup.VOTE_STAGE)
+	setActive(slot0.title2, slot0.phase ~= VoteGroup.VOTE_STAGE)
+	setActive(slot0.tip, slot0.phase == VoteGroup.VOTE_STAGE)
+	slot0:UpdateTitle()
+	slot0:initRank(slot0.page)
+	slot0:Show()
 end
 
-function var_0_0.OnDestroy(arg_10_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

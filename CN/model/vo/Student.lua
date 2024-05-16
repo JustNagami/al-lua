@@ -1,76 +1,73 @@
-﻿local var_0_0 = class("Student", import(".BaseVO"))
+slot0 = class("Student", import(".BaseVO"))
+slot0.WAIT = 1
+slot0.ATTEND = 2
+slot0.CANCEL_TYPE_AUTO = 0
+slot0.CANCEL_TYPE_MANUAL = 1
+slot0.CANCEL_TYPE_QUICKLY = 2
 
-var_0_0.WAIT = 1
-var_0_0.ATTEND = 2
-var_0_0.CANCEL_TYPE_AUTO = 0
-var_0_0.CANCEL_TYPE_MANUAL = 1
-var_0_0.CANCEL_TYPE_QUICKLY = 2
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id or arg_1_1.room_id
-	arg_1_0.skillId = arg_1_1.skill_pos
-	arg_1_0.skillIdIndex = nil
-	arg_1_0.lessonId = arg_1_1.lessonId
-	arg_1_0.shipId = arg_1_1.ship_id
-	arg_1_0.finishTime = arg_1_1.finish_time
-	arg_1_0.startTime = arg_1_1.start_time
-	arg_1_0.time = arg_1_1.time
-	arg_1_0.exp = arg_1_1.exp
-	arg_1_0.state = arg_1_1.state or var_0_0.ATTEND
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id or slot1.room_id
+	slot0.skillId = slot1.skill_pos
+	slot0.skillIdIndex = nil
+	slot0.lessonId = slot1.lessonId
+	slot0.shipId = slot1.ship_id
+	slot0.finishTime = slot1.finish_time
+	slot0.startTime = slot1.start_time
+	slot0.time = slot1.time
+	slot0.exp = slot1.exp
+	slot0.state = slot1.state or uv0.ATTEND
 end
 
-function var_0_0.updateSkillId(arg_2_0, arg_2_1)
-	arg_2_0.skillId = arg_2_1
+function slot0.updateSkillId(slot0, slot1)
+	slot0.skillId = slot1
 end
 
-function var_0_0.setSkillIndex(arg_3_0, arg_3_1)
-	arg_3_0.skillIdIndex = arg_3_1
+function slot0.setSkillIndex(slot0, slot1)
+	slot0.skillIdIndex = slot1
 end
 
-function var_0_0.getSkillId(arg_4_0, arg_4_1)
-	if arg_4_0.skillId then
-		return arg_4_0.skillId
+function slot0.getSkillId(slot0, slot1)
+	if slot0.skillId then
+		return slot0.skillId
 	else
-		return arg_4_1:getSkillList()[arg_4_0.skillIdIndex]
+		return slot1:getSkillList()[slot0.skillIdIndex]
 	end
 end
 
-function var_0_0.setLesson(arg_5_0, arg_5_1)
-	arg_5_0.lessonId = arg_5_1
+function slot0.setLesson(slot0, slot1)
+	slot0.lessonId = slot1
 end
 
-function var_0_0.setFinishTime(arg_6_0, arg_6_1)
-	arg_6_0.finishTime = arg_6_1
+function slot0.setFinishTime(slot0, slot1)
+	slot0.finishTime = slot1
 end
 
-function var_0_0.setTime(arg_7_0, arg_7_1)
-	arg_7_0.time = arg_7_1
+function slot0.setTime(slot0, slot1)
+	slot0.time = slot1
 end
 
-function var_0_0.getTime(arg_8_0)
-	return arg_8_0.time or arg_8_0.finishTime - arg_8_0.startTime
+function slot0.getTime(slot0)
+	return slot0.time or slot0.finishTime - slot0.startTime
 end
 
-function var_0_0.getFinishTime(arg_9_0)
-	return arg_9_0.finishTime
+function slot0.getFinishTime(slot0)
+	return slot0.finishTime
 end
 
-function var_0_0.getState(arg_10_0)
-	return arg_10_0.state
+function slot0.getState(slot0)
+	return slot0.state
 end
 
-function var_0_0.getSkillDesc(arg_11_0, arg_11_1, arg_11_2)
-	return (getSkillDescLearn(arg_11_0, arg_11_1, arg_11_2))
+function slot0.getSkillDesc(slot0, slot1, slot2)
+	return getSkillDescLearn(slot0, slot1, slot2)
 end
 
-function var_0_0.getSkillName(arg_12_0)
-	local var_12_0 = getProxy(BayProxy):getShipById(arg_12_0.shipId)
-
-	return getSkillName(arg_12_0:getSkillId(var_12_0))
+function slot0.getSkillName(slot0)
+	return getSkillName(slot0:getSkillId(getProxy(BayProxy):getShipById(slot0.shipId)))
 end
 
-function var_0_0.getShipVO(arg_13_0)
-	return (getProxy(BayProxy):getShipById(arg_13_0.shipId))
+function slot0.getShipVO(slot0)
+	return getProxy(BayProxy):getShipById(slot0.shipId)
 end
 
-return var_0_0
+return slot0

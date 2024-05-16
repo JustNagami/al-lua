@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "北风2",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 19180,
+	icon = 19180,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -34,26 +55,5 @@
 				countType = 19180
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "北风2",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 19180,
-	icon = 19180,
-	last_effect = ""
+	}
 }

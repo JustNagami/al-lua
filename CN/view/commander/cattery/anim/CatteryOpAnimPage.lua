@@ -1,93 +1,87 @@
-﻿local var_0_0 = class("CatteryOpAnimPage", import("....base.BaseSubView"))
+slot0 = class("CatteryOpAnimPage", import("....base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CatteryOPAnimUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.homeExpAnim = CatteryAddHomeExpAnim.New(arg_2_0:findTF("bg/single"))
-	arg_2_0.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(arg_2_0:findTF("bg/both"))
+function slot0.OnLoaded(slot0)
+	slot0.homeExpAnim = CatteryAddHomeExpAnim.New(slot0:findTF("bg/single"))
+	slot0.homeAndCommanderAnim = CattertAddHomeExpAndCommanderExpAnim.New(slot0:findTF("bg/both"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	return
+function slot0.OnInit(slot0)
 end
 
-function var_0_0.AddPlan(arg_4_0, arg_4_1)
-	arg_4_0:RemoveTimer()
-	arg_4_0:Show()
+function slot0.AddPlan(slot0, slot1)
+	slot0:RemoveTimer()
+	slot0:Show()
 
-	local var_4_0, var_4_1, var_4_2, var_4_3 = arg_4_0:ParseData(arg_4_1)
-	local var_4_4
+	slot2, slot3, slot4, slot5 = slot0:ParseData(slot1)
+	slot6 = nil
+	slot6 = (#slot2 <= 0 or slot0.homeAndCommanderAnim) and slot0.homeExpAnim
 
-	if #var_4_0 > 0 then
-		var_4_4 = arg_4_0.homeAndCommanderAnim
-	else
-		var_4_4 = arg_4_0.homeExpAnim
-	end
+	if slot0.player then
+		slot0.player:Clear()
 
-	if arg_4_0.player then
-		arg_4_0.player:Clear()
-
-		if arg_4_0.player ~= var_4_4 then
-			arg_4_0.player:Hide()
+		if slot0.player ~= slot6 then
+			slot0.player:Hide()
 		end
 	end
 
-	arg_4_0.doAnim = true
+	slot0.doAnim = true
 
-	var_4_4:Action(var_4_0, var_4_1, var_4_2, var_4_3, function()
-		arg_4_0.doAnim = false
+	slot6:Action(slot2, slot3, slot4, slot5, function ()
+		uv0.doAnim = false
 
-		if arg_4_0.exited then
+		if uv0.exited then
 			return
 		end
 
-		arg_4_0.timer = Timer.New(function()
-			var_4_4:Hide()
-			arg_4_0:Hide()
+		uv0.timer = Timer.New(function ()
+			uv0:Hide()
+			uv1:Hide()
 		end, 0.5, 1)
 
-		arg_4_0.timer:Start()
+		uv0.timer:Start()
 	end)
 
-	arg_4_0.player = var_4_4
+	slot0.player = slot6
 end
 
-function var_0_0.ParseData(arg_7_0, arg_7_1)
-	local var_7_0 = false
-	local var_7_1 = false
+function slot0.ParseData(slot0, slot1)
+	slot2 = false
+	slot3 = false
 
-	for iter_7_0, iter_7_1 in ipairs(arg_7_1.awards) do
-		if iter_7_1.id == Item.COMMANDER_QUICKLY_TOOL_ID then
-			var_7_0 = true
+	for slot7, slot8 in ipairs(slot1.awards) do
+		if slot8.id == Item.COMMANDER_QUICKLY_TOOL_ID then
+			slot2 = true
 		end
 
-		if iter_7_1.id == PlayerConst.ResDormMoney then
-			var_7_1 = true
+		if slot8.id == PlayerConst.ResDormMoney then
+			slot3 = true
 		end
 	end
 
-	return arg_7_1.commanderExps, arg_7_1.homeExp, var_7_0, var_7_1
+	return slot1.commanderExps, slot1.homeExp, slot2, slot3
 end
 
-function var_0_0.RemoveTimer(arg_8_0)
-	if arg_8_0.timer then
-		arg_8_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_8_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.OnDestroy(arg_9_0)
-	arg_9_0:RemoveTimer()
+function slot0.OnDestroy(slot0)
+	slot0:RemoveTimer()
 
-	arg_9_0.doAnim = nil
+	slot0.doAnim = nil
 
-	arg_9_0.homeExpAnim:Dispose()
-	arg_9_0.homeAndCommanderAnim:Dispose()
+	slot0.homeExpAnim:Dispose()
+	slot0.homeAndCommanderAnim:Dispose()
 
-	arg_9_0.exited = true
+	slot0.exited = true
 end
 
-return var_0_0
+return slot0

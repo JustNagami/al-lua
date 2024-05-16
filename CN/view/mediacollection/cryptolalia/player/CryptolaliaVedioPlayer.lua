@@ -1,257 +1,247 @@
-﻿local var_0_0 = class("CryptolaliaVedioPlayer")
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5 = 5
+slot0 = class("CryptolaliaVedioPlayer")
+slot1 = 1
+slot2 = 2
+slot3 = 3
+slot4 = 4
+slot5 = 5
 
-local function var_0_6(arg_1_0)
-	return PathMgr.getAssetBundle("originsource/cipher/" .. arg_1_0 .. ".txt")
+function slot6(slot0)
+	return PathMgr.getAssetBundle("originsource/cipher/" .. slot0 .. ".txt")
 end
 
-local function var_0_7(arg_2_0)
-	return PathMgr.getAssetBundle("originsource/cipher/" .. arg_2_0 .. ".cpk")
+function slot7(slot0)
+	return PathMgr.getAssetBundle("originsource/cipher/" .. slot0 .. ".cpk")
 end
 
-function var_0_0.Ctor(arg_3_0, arg_3_1)
-	pg.DelegateInfo.New(arg_3_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_3_0.root = arg_3_1
-	arg_3_0.state = var_0_1
+	slot0.root = slot1
+	slot0.state = uv0
 
-	if not arg_3_0.handle then
-		arg_3_0.handle = UpdateBeat:CreateListener(arg_3_0.Update, arg_3_0)
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	arg_3_0.text = nil
-	arg_3_0.subtile = nil
-	arg_3_0.player = nil
+	slot0.text = nil
+	slot0.subtile = nil
+	slot0.player = nil
 
-	UpdateBeat:AddListener(arg_3_0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 end
 
-function var_0_0.Play(arg_4_0, arg_4_1, arg_4_2)
-	if not arg_4_0:CheckCpkAndSubtitle(arg_4_1, next) then
+function slot0.Play(slot0, slot1, slot2)
+	if not slot0:CheckCpkAndSubtitle(slot1, next) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("资源不存在"))
 
 		return
 	end
 
-	arg_4_0.onExit = arg_4_2
+	slot0.onExit = slot2
 
 	seriesAsync({
-		function(arg_5_0)
-			arg_4_0:DownloadCpkAndSubtitle(arg_4_1, arg_5_0)
+		function (slot0)
+			uv0:DownloadCpkAndSubtitle(uv1, slot0)
 		end,
-		function(arg_6_0)
-			arg_4_0:LoadVedioPlayer(arg_4_1, arg_6_0)
+		function (slot0)
+			uv0:LoadVedioPlayer(uv1, slot0)
 		end
-	}, function()
-		arg_4_0:RegisterEvent()
+	}, function ()
+		uv0:RegisterEvent()
 	end)
 end
 
-function var_0_0.RegisterEvent(arg_8_0)
-	onButton(arg_8_0, arg_8_0.playBtn, function()
-		if not arg_8_0.player then
+function slot0.RegisterEvent(slot0)
+	onButton(slot0, slot0.playBtn, function ()
+		if not uv0.player then
 			return
 		end
 
-		arg_8_0:_Play()
+		uv0:_Play()
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.backBtn, function()
-		if not arg_8_0.player then
+	onButton(slot0, slot0.backBtn, function ()
+		if not uv0.player then
 			return
 		end
 
-		if arg_8_0.onExit then
-			arg_8_0.onExit()
+		if uv0.onExit then
+			uv0.onExit()
 		end
 
-		arg_8_0:Stop()
+		uv0:Stop()
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0._go, function()
-		arg_8_0:Pause()
+	onButton(slot0, slot0._go, function ()
+		uv0:Pause()
 	end, SFX_PANEL)
 end
 
-function var_0_0._Play(arg_12_0)
-	if arg_12_0.state == var_0_3 then
-		arg_12_0.player:Pause(false)
-	elseif arg_12_0.state == var_0_4 then
-		arg_12_0.subtile = Clone(arg_12_0.subtileBackUp)
+function slot0._Play(slot0)
+	if slot0.state == uv0 then
+		slot0.player:Pause(false)
+	elseif slot0.state == uv1 then
+		slot0.subtile = Clone(slot0.subtileBackUp)
 
-		arg_12_0.player.player:SetSeekPosition(0)
-		arg_12_0.player.player:Start()
+		slot0.player.player:SetSeekPosition(0)
+		slot0.player.player:Start()
 	else
-		arg_12_0.subtile = Clone(arg_12_0.subtileBackUp)
+		slot0.subtile = Clone(slot0.subtileBackUp)
 
-		arg_12_0.player:PlayCpk()
+		slot0.player:PlayCpk()
 	end
 
-	setActive(arg_12_0.playBtn, false)
-	setActive(arg_12_0.backBtn, false)
+	setActive(slot0.playBtn, false)
+	setActive(slot0.backBtn, false)
 
-	arg_12_0.state = var_0_2
+	slot0.state = uv2
 end
 
-function var_0_0.Pause(arg_13_0)
-	if arg_13_0.state ~= var_0_2 then
+function slot0.Pause(slot0)
+	if slot0.state ~= uv0 then
 		return
 	end
 
-	arg_13_0.state = var_0_3
+	slot0.state = uv1
 
-	setActive(arg_13_0.playBtn, true)
-	arg_13_0.player:Pause(true)
-	setActive(arg_13_0.backBtn, true)
+	setActive(slot0.playBtn, true)
+	slot0.player:Pause(true)
+	setActive(slot0.backBtn, true)
 end
 
-function var_0_0.Stop(arg_14_0)
-	arg_14_0:Dispose()
+function slot0.Stop(slot0)
+	slot0:Dispose()
 
-	arg_14_0.state = var_0_5
+	slot0.state = uv0
 end
 
-function var_0_0.CheckCpkAndSubtitle(arg_15_0, arg_15_1, arg_15_2)
-	return PathMgr.FileExists(var_0_7(arg_15_1)) and PathMgr.FileExists(var_0_6(arg_15_1))
+function slot0.CheckCpkAndSubtitle(slot0, slot1, slot2)
+	return PathMgr.FileExists(uv0(slot1)) and PathMgr.FileExists(uv1(slot1))
 end
 
-function var_0_0.DownloadCpkAndSubtitle(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_2()
+function slot0.DownloadCpkAndSubtitle(slot0, slot1, slot2)
+	slot2()
 end
 
-local function var_0_8(arg_17_0)
-	local var_17_0 = var_0_6(arg_17_0)
-	local var_17_1 = PathMgr.ReadAllLines(var_17_0)
-	local var_17_2 = {}
+function slot8(slot0)
+	slot3 = {}
 
-	for iter_17_0 = 1, var_17_1.Length do
-		local var_17_3 = var_17_1[iter_17_0 - 1]
-		local var_17_4 = string.match(var_17_3, "#%d+#%d+$")
-		local var_17_5 = string.split(var_17_4, "#")
-		local var_17_6 = var_17_5[2]
-		local var_17_7 = var_17_5[3]
-		local var_17_8 = string.gsub(var_17_3, var_17_4, "")
+	for slot7 = 1, PathMgr.ReadAllLines(uv0(slot0)).Length do
+		slot8 = slot2[slot7 - 1]
+		slot9 = string.match(slot8, "#%d+#%d+$")
+		slot10 = string.split(slot9, "#")
 
-		table.insert(var_17_2, {
-			startTime = tonumber(var_17_6),
-			endTime = tonumber(var_17_7),
-			content = var_17_8
+		table.insert(slot3, {
+			startTime = tonumber(slot10[2]),
+			endTime = tonumber(slot10[3]),
+			content = string.gsub(slot8, slot9, "")
 		})
 	end
 
-	return var_17_2
+	return slot3
 end
 
-function var_0_0.LoadVedioPlayer(arg_18_0, arg_18_1, arg_18_2)
-	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. arg_18_1, arg_18_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_19_0)
-		local var_19_0 = Object.Instantiate(arg_19_0, arg_18_0.root)
+function slot0.LoadVedioPlayer(slot0, slot1, slot2)
+	ResourceMgr.Inst:getAssetAsync("Cryptolalia/" .. slot1, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		slot1 = Object.Instantiate(slot0, uv0.root)
+		uv0.text = slot1.transform:Find("Text"):GetComponent(typeof(Text))
+		uv0.subtileBackUp = uv1(uv2)
+		uv0.player = slot1.transform:Find("cpk"):GetComponent(typeof(CriManaCpkUI))
+		uv0.playBtn = slot1.transform:Find("play")
+		uv0.backBtn = slot1.transform:Find("back")
+		uv0._go = slot1
 
-		arg_18_0.text = var_19_0.transform:Find("Text"):GetComponent(typeof(Text))
-		arg_18_0.subtileBackUp = var_0_8(arg_18_1)
-		arg_18_0.player = var_19_0.transform:Find("cpk"):GetComponent(typeof(CriManaCpkUI))
-		arg_18_0.playBtn = var_19_0.transform:Find("play")
-		arg_18_0.backBtn = var_19_0.transform:Find("back")
-		arg_18_0._go = var_19_0
-
-		arg_18_0:_Play()
-		arg_18_2()
+		uv0:_Play()
+		uv3()
 	end), true, true)
 end
 
-function var_0_0.OnPlayEnd(arg_20_0)
-	arg_20_0.player.player.frameInfo.frameNo = 0
-	arg_20_0.state = var_0_4
+function slot0.OnPlayEnd(slot0)
+	slot0.player.player.frameInfo.frameNo = 0
+	slot0.state = uv0
 
-	setActive(arg_20_0.playBtn, true)
-	setActive(arg_20_0.backBtn, true)
+	setActive(slot0.playBtn, true)
+	setActive(slot0.backBtn, true)
 end
 
-local function var_0_9(arg_21_0)
-	if not arg_21_0.frameInfo then
+function slot9(slot0)
+	if not slot0.frameInfo then
 		return 0
 	end
 
-	local var_21_0 = arg_21_0.frameInfo
+	slot1 = slot0.frameInfo
 
-	return var_21_0.frameNo / var_21_0.framerateN / var_21_0.framerateD * 1000000
+	return slot1.frameNo / slot1.framerateN / slot1.framerateD * 1000000
 end
 
-local function var_0_10(arg_22_0, arg_22_1)
-	if not arg_22_0 or #arg_22_0 <= 0 then
+function slot10(slot0, slot1)
+	if not slot0 or #slot0 <= 0 then
 		return ""
 	end
 
-	local var_22_0 = arg_22_0[1]
+	if slot0[1].startTime <= slot1 and slot1 <= slot2.endTime then
+		table.remove(slot0, 1)
 
-	if arg_22_1 >= var_22_0.startTime and arg_22_1 <= var_22_0.endTime then
-		table.remove(arg_22_0, 1)
-
-		return var_22_0.content, var_22_0.endTime
-	elseif arg_22_1 > var_22_0.startTime and arg_22_1 > var_22_0.endTime then
-		table.remove(arg_22_0, 1)
+		return slot2.content, slot2.endTime
+	elseif slot2.startTime < slot1 and slot2.endTime < slot1 then
+		table.remove(slot0, 1)
 	end
 
 	return ""
 end
 
-function var_0_0.Update(arg_23_0)
-	if arg_23_0.text == nil or arg_23_0.subtile == nil or arg_23_0.player == nil or arg_23_0.player.player.frameInfo == nil then
+function slot0.Update(slot0)
+	if slot0.text == nil or slot0.subtile == nil or slot0.player == nil or slot0.player.player.frameInfo == nil then
 		return
 	end
 
-	if arg_23_0.state == var_0_3 or arg_23_0.state == var_0_4 then
+	if slot0.state == uv0 or slot0.state == uv1 then
 		return
 	end
 
-	if arg_23_0.player.player.frameInfo.frameNo >= arg_23_0.player.player.movieInfo.totalFrames - 1 then
-		arg_23_0:OnPlayEnd()
+	if slot0.player.player.frameInfo.frameNo >= slot0.player.player.movieInfo.totalFrames - 1 then
+		slot0:OnPlayEnd()
 
 		return
 	end
 
-	local var_23_0 = var_0_9(arg_23_0.player.player)
-	local var_23_1, var_23_2 = var_0_10(arg_23_0.subtile, var_23_0)
+	slot2, slot0.hideTime = uv3(slot0.subtile, uv2(slot0.player.player))
 
-	if var_23_1 and var_23_1 ~= "" then
-		arg_23_0.hideTime = var_23_2
-		arg_23_0.text.text = var_23_1
+	if slot2 and slot2 ~= "" then
+		slot0.text.text = slot2
 
-		setActive(arg_23_0.text.gameObject, true)
-	elseif arg_23_0.hideTime and var_23_0 >= arg_23_0.hideTime then
-		arg_23_0.text.text = ""
-		arg_23_0.hideTime = nil
+		setActive(slot0.text.gameObject, true)
+	elseif slot0.hideTime and slot0.hideTime <= slot1 then
+		slot0.text.text = ""
+		slot0.hideTime = nil
 
-		setActive(arg_23_0.text.gameObject, false)
+		setActive(slot0.text.gameObject, false)
 	end
 end
 
-function var_0_0.Dispose(arg_24_0)
-	if arg_24_0.state == var_0_5 then
+function slot0.Dispose(slot0)
+	if slot0.state == uv0 then
 		return
 	end
 
-	pg.DelegateInfo.Dispose(arg_24_0)
+	pg.DelegateInfo.Dispose(slot0)
 
-	if arg_24_0.player then
-		arg_24_0.player:SetPlayEndHandler(nil)
-		arg_24_0.player.player:Stop()
+	if slot0.player then
+		slot0.player:SetPlayEndHandler(nil)
+		slot0.player.player:Stop()
 	end
 
-	if arg_24_0.player and not IsNil(arg_24_0.player.gameObject) then
-		Object.Destroy(arg_24_0.player.gameObject.transform.parent.gameObject)
+	if slot0.player and not IsNil(slot0.player.gameObject) then
+		Object.Destroy(slot0.player.gameObject.transform.parent.gameObject)
 	end
 
-	arg_24_0.onExit = nil
-	arg_24_0.text = nil
-	arg_24_0.subtile = nil
-	arg_24_0.player = nil
-	arg_24_0.hideTime = nil
+	slot0.onExit = nil
+	slot0.text = nil
+	slot0.subtile = nil
+	slot0.player = nil
+	slot0.hideTime = nil
 
-	if arg_24_0.handle then
-		UpdateBeat:RemoveListener(arg_24_0.handle)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 end
 
-return var_0_0
+return slot0

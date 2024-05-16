@@ -1,126 +1,114 @@
-﻿local var_0_0 = class("FeastDorm", import("model.vo.NewBackYard.Dorm"))
+slot0 = class("FeastDorm", import("model.vo.NewBackYard.Dorm"))
+slot0.OP_RANDOM_SHIPS = 0
+slot0.OP_ENTER = 1
+slot0.OP_MAKE_TICKET = 2
+slot0.OP_GIVE_TICKET = 3
+slot0.OP_GIVE_GIFT = 4
+slot0.OP_INTERACTION = 5
 
-var_0_0.OP_RANDOM_SHIPS = 0
-var_0_0.OP_ENTER = 1
-var_0_0.OP_MAKE_TICKET = 2
-var_0_0.OP_GIVE_TICKET = 3
-var_0_0.OP_GIVE_GIFT = 4
-var_0_0.OP_INTERACTION = 5
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+	slot0.refreshTime = slot2.refresh_time
+	slot0.invitedFeastShips = {}
 
-	arg_1_0.refreshTime = arg_1_2.refresh_time
-	arg_1_0.invitedFeastShips = {}
+	for slot6, slot7 in ipairs(slot2.special_roles) do
+		slot8 = InvitedFeastShip.New(slot7)
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_2.special_roles) do
-		local var_1_0 = InvitedFeastShip.New(iter_1_1)
+		slot8:SetInvitationState(slot7.state)
+		slot8:SetGiftState(slot7.gift)
 
-		var_1_0:SetInvitationState(iter_1_1.state)
-		var_1_0:SetGiftState(iter_1_1.gift)
-
-		arg_1_0.invitedFeastShips[iter_1_1.tid] = var_1_0
+		slot0.invitedFeastShips[slot7.tid] = slot8
 	end
 
-	arg_1_0.feastShips = {}
+	slot0.feastShips = {}
 
-	for iter_1_2, iter_1_3 in ipairs(arg_1_2.party_roles) do
-		local var_1_1 = FeastShip.New(iter_1_3)
-		local var_1_2 = arg_1_0.invitedFeastShips[iter_1_3.tid]
+	for slot6, slot7 in ipairs(slot2.party_roles) do
+		slot8 = FeastShip.New(slot7)
 
-		if var_1_2 then
-			var_1_1:SetSkinId(var_1_2:GetSkinId())
+		if slot0.invitedFeastShips[slot7.tid] then
+			slot8:SetSkinId(slot9:GetSkinId())
 		end
 
-		arg_1_0.feastShips[iter_1_3.tid] = var_1_1
+		slot0.feastShips[slot7.tid] = slot8
 	end
 end
 
-function var_0_0.GetInvitedFeastShips(arg_2_0)
-	return arg_2_0.invitedFeastShips
+function slot0.GetInvitedFeastShips(slot0)
+	return slot0.invitedFeastShips
 end
 
-function var_0_0.GetInvitedFeastShipList(arg_3_0)
-	local var_3_0 = arg_3_0:GetInvitedFeastShips()
-	local var_3_1 = {}
+function slot0.GetInvitedFeastShipList(slot0)
+	slot2 = {}
 
-	for iter_3_0, iter_3_1 in pairs(var_3_0) do
-		table.insert(var_3_1, iter_3_1)
+	for slot6, slot7 in pairs(slot0:GetInvitedFeastShips()) do
+		table.insert(slot2, slot7)
 	end
 
-	table.sort(var_3_1, function(arg_4_0, arg_4_1)
-		return arg_4_0.configId < arg_4_1.configId
+	table.sort(slot2, function (slot0, slot1)
+		return slot0.configId < slot1.configId
 	end)
 
-	return var_3_1
+	return slot2
 end
 
-function var_0_0.GetInvitedFeastShip(arg_5_0, arg_5_1)
-	return arg_5_0.invitedFeastShips[arg_5_1]
+function slot0.GetInvitedFeastShip(slot0, slot1)
+	return slot0.invitedFeastShips[slot1]
 end
 
-function var_0_0.GetFeastShipList(arg_6_0)
-	return arg_6_0.feastShips
+function slot0.GetFeastShipList(slot0)
+	return slot0.feastShips
 end
 
-function var_0_0.GetFeastShip(arg_7_0, arg_7_1)
-	return arg_7_0.feastShips[arg_7_1]
+function slot0.GetFeastShip(slot0, slot1)
+	return slot0.feastShips[slot1]
 end
 
-function var_0_0.RemoveShip(arg_8_0, arg_8_1)
-	arg_8_0.feastShips[arg_8_1] = nil
+function slot0.RemoveShip(slot0, slot1)
+	slot0.feastShips[slot1] = nil
 end
 
-function var_0_0.AddShip(arg_9_0, arg_9_1)
-	arg_9_0.feastShips[arg_9_1.tid] = arg_9_1
+function slot0.AddShip(slot0, slot1)
+	slot0.feastShips[slot1.tid] = slot1
 end
 
-function var_0_0.SetRefreshTime(arg_10_0, arg_10_1)
-	arg_10_0.refreshTime = arg_10_1
+function slot0.SetRefreshTime(slot0, slot1)
+	slot0.refreshTime = slot1
 end
 
-function var_0_0.ShouldRandomShips(arg_11_0)
-	local var_11_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return var_11_0 > arg_11_0.refreshTime and pg.TimeMgr.GetInstance():DiffDay(arg_11_0.refreshTime, var_11_0) > 0
+function slot0.ShouldRandomShips(slot0)
+	return slot0.refreshTime < pg.TimeMgr.GetInstance():GetServerTime() and pg.TimeMgr.GetInstance():DiffDay(slot0.refreshTime, slot1) > 0
 end
 
-function var_0_0.GetMapSize(arg_12_0)
-	local var_12_0 = 0
-	local var_12_1 = 0
-	local var_12_2 = BackYardConst.MAX_FEAST_MAP_SIZE
-	local var_12_3 = var_12_2.x
-	local var_12_4 = var_12_2.y
+function slot0.GetMapSize(slot0)
+	slot3 = BackYardConst.MAX_FEAST_MAP_SIZE
 
-	return Vector4(var_12_0, var_12_1, var_12_3, var_12_4)
+	return Vector4(0, 0, slot3.x, slot3.y)
 end
 
-function var_0_0.GetPutFurnitureList(arg_13_0, arg_13_1)
-	local var_13_0 = {}
-	local var_13_1 = require("GameCfg.backyardTheme.theme_feast")
-	local var_13_2 = FeastThemeTemplate.New({
+function slot0.GetPutFurnitureList(slot0, slot1)
+	slot2 = {}
+
+	for slot9, slot10 in pairs(FeastThemeTemplate.New({
 		id = -1,
-		furniture_put_list = var_13_1.furnitures or {}
-	}, 1, arg_13_0:GetMapSize())
-	local var_13_3 = var_13_2 and var_13_2:GetAllFurniture() or {}
-
-	for iter_13_0, iter_13_1 in pairs(var_13_3) do
-		table.insert(var_13_0, iter_13_1)
+		furniture_put_list = require("GameCfg.backyardTheme.theme_feast").furnitures or {}
+	}, 1, slot0:GetMapSize()) and slot4:GetAllFurniture() or {}) do
+		table.insert(slot2, slot10)
 	end
 
-	table.sort(var_13_0, BackyardThemeFurniture._LoadWeight)
+	table.sort(slot2, BackyardThemeFurniture._LoadWeight)
 
-	return var_13_0
+	return slot2
 end
 
-function var_0_0.GetPutShipList(arg_14_0, arg_14_1)
-	local var_14_0 = {}
+function slot0.GetPutShipList(slot0, slot1)
+	slot2 = {}
 
-	for iter_14_0, iter_14_1 in pairs(arg_14_0.feastShips) do
-		table.insert(var_14_0, iter_14_1)
+	for slot6, slot7 in pairs(slot0.feastShips) do
+		table.insert(slot2, slot7)
 	end
 
-	return var_14_0
+	return slot2
 end
 
-return var_0_0
+return slot0

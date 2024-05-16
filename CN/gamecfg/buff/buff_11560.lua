@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "更换主炮弹药种类",
+	name = "2700磅的正义",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "更换主炮弹药种类",
+	stack = 1,
+	id = 11560,
+	icon = 11560,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -34,26 +55,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "更换主炮弹药种类",
-	name = "2700磅的正义",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "更换主炮弹药种类",
-	stack = 1,
-	id = 11560,
-	icon = 11560,
-	last_effect = ""
+	}
 }

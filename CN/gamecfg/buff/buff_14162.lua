@@ -1,66 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 1000
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "igniteShorten",
-				number = 3
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				count = 1,
-				hpUpperBound = 0.6
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					14164
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				buff_id = 14164,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -640,5 +578,67 @@
 	stack = 1,
 	id = 14162,
 	icon = 14160,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 1000
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "igniteShorten",
+				number = 3
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				count = 1,
+				hpUpperBound = 0.6
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					14164
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 14164,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

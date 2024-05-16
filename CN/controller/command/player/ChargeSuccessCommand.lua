@@ -1,99 +1,87 @@
-﻿local var_0_0 = class("ChargeSuccessCommand", pm.SimpleCommand)
+slot0 = class("ChargeSuccessCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shopId
-	local var_1_2 = var_1_0.payId
-	local var_1_3 = var_1_0.gem
-	local var_1_4 = var_1_0.gem_free
-	local var_1_5 = Goods.Create({
-		shop_id = var_1_1
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.payId
+	slot6 = slot2.gem_free
+	slot7 = Goods.Create({
+		shop_id = slot2.shopId
 	}, Goods.TYPE_CHARGE)
-	local var_1_6 = getProxy(PlayerProxy)
-	local var_1_7 = var_1_6:getData()
 
-	if var_1_3 > 0 then
-		var_1_7:addResources({
-			gem = var_1_3
+	if slot2.gem > 0 then
+		getProxy(PlayerProxy):getData():addResources({
+			gem = slot5
 		})
 	end
 
-	if var_1_4 > 0 then
-		var_1_7:addResources({
-			freeGem = var_1_4
+	if slot6 > 0 then
+		slot9:addResources({
+			freeGem = slot6
 		})
 	end
 
-	if var_1_5:isMonthCard() then
-		local var_1_8 = var_1_7:getCardById(VipCard.MONTH)
-		local var_1_9 = GetZeroTime() + 2419200
+	if slot7:isMonthCard() then
+		slot11 = GetZeroTime() + 2419200
 
-		if var_1_8 and var_1_8.leftDate ~= 0 then
-			var_1_8.leftDate = var_1_8.leftDate + 2592000
+		if slot9:getCardById(VipCard.MONTH) and slot10.leftDate ~= 0 then
+			slot10.leftDate = slot10.leftDate + 2592000
 		else
-			var_1_8 = VipCard.New({
+			slot10 = VipCard.New({
 				data = 0,
 				type = VipCard.MONTH,
-				left_date = var_1_9
+				left_date = slot11
 			})
 		end
 
-		var_1_7:addVipCard(var_1_8)
+		slot9:addVipCard(slot10)
 	end
 
-	var_1_6:updatePlayer(var_1_7)
+	slot8:updatePlayer(slot9)
 
-	if var_1_5:isMonthCard() then
+	if slot7:isMonthCard() then
 		MonthCardOutDateTipPanel.SetMonthCardEndDateLocal()
 		MonthCardOutDateTipPanel.SetMonthCardTipDate(0)
 	end
 
-	local var_1_10 = getProxy(ShopsProxy)
-	local var_1_11 = var_1_10:getChargedList() or {}
-	local var_1_12 = false
+	slot11 = getProxy(ShopsProxy):getChargedList() or {}
+	slot12 = false
 
-	for iter_1_0, iter_1_1 in pairs(var_1_11) do
-		if iter_1_1.id == var_1_1 then
-			var_1_11[iter_1_0]:increaseBuyCount()
+	for slot16, slot17 in pairs(slot11) do
+		if slot17.id == slot3 then
+			slot11[slot16]:increaseBuyCount()
 
-			var_1_12 = true
+			slot12 = true
 
 			break
 		end
 	end
 
-	if not var_1_12 then
-		var_1_11[var_1_1] = Goods.Create({
+	if not slot12 then
+		slot11[slot3] = Goods.Create({
 			pay_count = 1,
-			shop_id = var_1_1
+			shop_id = slot3
 		}, Goods.TYPE_CHARGE)
 	end
 
-	var_1_10:setChargedList(var_1_11)
+	slot10:setChargedList(slot11)
 
-	local var_1_13 = var_1_10:getFirstChargeList() or {}
-
-	if _.is_empty(var_1_13) then
-		pg.TrackerMgr.GetInstance():Tracking(TRACKING_PURCHASE_FIRST, var_1_2)
+	if _.is_empty(slot10:getFirstChargeList() or {}) then
+		pg.TrackerMgr.GetInstance():Tracking(TRACKING_PURCHASE_FIRST, slot4)
 	end
 
-	if var_1_5:firstPayDouble() then
-		local var_1_14 = var_1_10:getFirstChargeList() or {}
-
-		if not table.contains(var_1_14, var_1_1) then
-			table.insert(var_1_14, var_1_1)
+	if slot7:firstPayDouble() then
+		if not table.contains(slot10:getFirstChargeList() or {}, slot3) then
+			table.insert(slot14, slot3)
 		end
 
-		var_1_10:setFirstChargeList(var_1_14)
+		slot10:setFirstChargeList(slot14)
 	end
 
-	local var_1_15 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHARGEAWARD)
-
-	if var_1_15 and var_1_15.data1 == 0 then
-		var_1_15.data1 = 1
+	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHARGEAWARD) and slot15.data1 == 0 then
+		slot15.data1 = 1
 	end
 
 	pg.TipsMgr.GetInstance():ShowTips(i18n("charge_success"))
 end
 
-return var_0_0
+return slot0

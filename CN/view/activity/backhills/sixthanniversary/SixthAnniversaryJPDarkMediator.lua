@@ -1,40 +1,36 @@
-﻿local var_0_0 = class("SixthAnniversaryJPDarkMediator", import("view.base.ContextMediator"))
+slot0 = class("SixthAnniversaryJPDarkMediator", import("view.base.ContextMediator"))
+slot0.GO_SCENE = "GO_SCENE"
+slot0.GO_SUBLAYER = "GO_SUBLAYER"
 
-var_0_0.GO_SCENE = "GO_SCENE"
-var_0_0.GO_SUBLAYER = "GO_SUBLAYER"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:BindEvent()
+function slot0.register(slot0)
+	slot0:BindEvent()
 end
 
-function var_0_0.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
-		arg_2_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
+function slot0.BindEvent(slot0)
+	slot0:bind(uv0.GO_SCENE, function (slot0, slot1, ...)
+		uv0:sendNotification(GAME.GO_SCENE, slot1, ...)
 	end)
-	arg_2_0:bind(var_0_0.GO_SUBLAYER, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_2_0:addSubLayers(arg_4_1, nil, arg_4_2)
+	slot0:bind(uv0.GO_SUBLAYER, function (slot0, slot1, slot2)
+		uv0:addSubLayers(slot1, nil, slot2)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.SUBMIT_TASK_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
-
-	if var_6_0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var_6_1.id == ActivityConst.MINIGAME_ZUMA then
-			arg_6_0.viewComponent:UpdateLevels()
-			arg_6_0.viewComponent:UpdateCount()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
+		if slot1:getBody().id == ActivityConst.MINIGAME_ZUMA then
+			slot0.viewComponent:UpdateLevels()
+			slot0.viewComponent:UpdateCount()
 		end
-	elseif var_6_0 == GAME.SUBMIT_TASK_DONE then
-		arg_6_0.viewComponent:UpdateTaskTip()
+	elseif slot2 == GAME.SUBMIT_TASK_DONE then
+		slot0.viewComponent:UpdateTaskTip()
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,48 +1,42 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.IOxyState = class("IOxyState")
+slot0.Battle.IOxyState.__name = "IOxyState"
+slot1 = slot0.Battle.IOxyState
 
-local var_0_0 = ys
-
-var_0_0.Battle.IOxyState = class("IOxyState")
-var_0_0.Battle.IOxyState.__name = "IOxyState"
-
-local var_0_1 = var_0_0.Battle.IOxyState
-
-function var_0_1.Ctor(arg_1_0)
-	return
+function slot1.Ctor(slot0)
 end
 
-function var_0_1.GetWeaponUseableList(arg_2_0)
+function slot1.GetWeaponUseableList(slot0)
 	return nil
 end
 
-function var_0_1.UpdateCldData(arg_3_0, arg_3_1, arg_3_2)
-	return
+function slot1.UpdateCldData(slot0, slot1, slot2)
 end
 
-function var_0_1.GetDiveState(arg_4_0)
+function slot1.GetDiveState(slot0)
 	return nil
 end
 
-function var_0_1.GetBubbleFlag(arg_5_0)
+function slot1.GetBubbleFlag(slot0)
 	return nil
 end
 
-function var_0_1.IsVisible(arg_6_0)
+function slot1.IsVisible(slot0)
 	return true
 end
 
-function var_0_1.DoUpdateOxy(arg_7_0)
-	return
+function slot1.DoUpdateOxy(slot0)
 end
 
-function var_0_1.GetBarVisible(arg_8_0)
+function slot1.GetBarVisible(slot0)
 	return nil
 end
 
-function var_0_1.RunMode(arg_9_0)
+function slot1.RunMode(slot0)
 	return nil
 end
 
-function var_0_1.UpdateDive(arg_10_0)
+function slot1.UpdateDive(slot0)
 	return nil
 end

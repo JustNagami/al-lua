@@ -1,74 +1,68 @@
-﻿local var_0_0 = class("VoteGroupRaceRankPage", import("....base.BaseSubView"))
+slot0 = class("VoteGroupRaceRankPage", import("....base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GroupRaceRank"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.cards = {}
-	arg_2_0.title1 = arg_2_0:findTF("stages/title1")
-	arg_2_0.title2 = arg_2_0:findTF("stages/title2")
-	arg_2_0.scrollRect = arg_2_0:findTF("scrollrect"):GetComponent("LScrollRect")
+function slot0.OnInit(slot0)
+	slot0.cards = {}
+	slot0.title1 = slot0:findTF("stages/title1")
+	slot0.title2 = slot0:findTF("stages/title2")
+	slot0.scrollRect = slot0:findTF("scrollrect"):GetComponent("LScrollRect")
 
-	function arg_2_0.scrollRect.onInitItem(arg_3_0)
-		arg_2_0:OnInitItem(arg_3_0)
+	function slot0.scrollRect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_2_0.scrollRect.onUpdateItem(arg_4_0, arg_4_1)
-		arg_2_0:OnUpdateItem(arg_4_0, arg_4_1)
+	function slot0.scrollRect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 
-	setText(arg_2_0:findTF("titles/rank_title"), i18n("vote_label_rank"))
-	setText(arg_2_0:findTF("titles/votes"), i18n("word_votes"))
-	setText(arg_2_0:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
+	setText(slot0:findTF("titles/rank_title"), i18n("vote_label_rank"))
+	setText(slot0:findTF("titles/votes"), i18n("word_votes"))
+	setText(slot0:findTF("tip"), i18n("vote_label_rank_fresh_time_tip"))
 end
 
-function var_0_0.Update(arg_5_0, arg_5_1)
-	arg_5_0.voteGroup = arg_5_1
-	arg_5_0.phase = arg_5_1:GetStage()
+function slot0.Update(slot0, slot1)
+	slot0.voteGroup = slot1
+	slot0.phase = slot1:GetStage()
 
-	setActive(arg_5_0.title1, arg_5_0.phase == VoteGroup.VOTE_STAGE)
-	setActive(arg_5_0.title2, arg_5_0.phase ~= VoteGroup.VOTE_STAGE)
-	setActive(arg_5_0:findTF("tip"), arg_5_0.phase == VoteGroup.VOTE_STAGE)
-	arg_5_0:UpdateList()
+	setActive(slot0.title1, slot0.phase == VoteGroup.VOTE_STAGE)
+	setActive(slot0.title2, slot0.phase ~= VoteGroup.VOTE_STAGE)
+	setActive(slot0:findTF("tip"), slot0.phase == VoteGroup.VOTE_STAGE)
+	slot0:UpdateList()
 end
 
-function var_0_0.UpdateList(arg_6_0)
-	arg_6_0.displays = arg_6_0.voteGroup:GetRankList()
+function slot0.UpdateList(slot0)
+	slot0.displays = slot0.voteGroup:GetRankList()
 
-	arg_6_0.scrollRect:SetTotalCount(#arg_6_0.displays)
+	slot0.scrollRect:SetTotalCount(#slot0.displays)
 end
 
-function var_0_0.OnInitItem(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_0:NewCard(arg_7_1)
-
-	arg_7_0.cards[arg_7_1] = var_7_0
+function slot0.OnInitItem(slot0, slot1)
+	slot0.cards[slot1] = slot0:NewCard(slot1)
 end
 
-function var_0_0.OnUpdateItem(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_0.cards[arg_8_2]
-	local var_8_1 = arg_8_0.displays[arg_8_1 + 1]
-	local var_8_2 = arg_8_0.voteGroup:GetVotes(var_8_1)
-	local var_8_3 = arg_8_1 + 1
-	local var_8_4 = arg_8_0.voteGroup:GetRiseColor(var_8_3)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	slot4 = slot0.displays[slot1 + 1]
+	slot6 = slot1 + 1
 
-	var_8_0.Update(var_8_1, var_8_3, var_8_2, var_8_4)
+	slot0.cards[slot2].Update(slot4, slot6, slot0.voteGroup:GetVotes(slot4), slot0.voteGroup:GetRiseColor(slot6))
 end
 
-function var_0_0.NewCard(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1.transform
+function slot0.NewCard(slot0, slot1)
+	slot2 = slot1.transform
 
 	return {
-		Update = function(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-			setText(var_9_0:Find("number"), setColorStr(arg_10_1, arg_10_3))
-			setText(var_9_0:Find("name"), setColorStr(shortenString(arg_10_0:getShipName(), 6), arg_10_3))
-			setText(var_9_0:Find("Text"), setColorStr(arg_10_2, arg_10_3))
+		Update = function (slot0, slot1, slot2, slot3)
+			setText(uv0:Find("number"), setColorStr(slot1, slot3))
+			setText(uv0:Find("name"), setColorStr(shortenString(slot0:getShipName(), 6), slot3))
+			setText(uv0:Find("Text"), setColorStr(slot2, slot3))
 		end
 	}
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

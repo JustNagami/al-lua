@@ -1,160 +1,151 @@
-﻿local var_0_0 = class("SelectTechnologyLayer", import("..base.BaseUI"))
+slot0 = class("SelectTechnologyLayer", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SelectTechnologyUI"
 end
 
-function var_0_0.ResUISettings(arg_2_0)
+function slot0.ResUISettings(slot0)
 	return true
 end
 
-function var_0_0.setPlayer(arg_3_0, arg_3_1)
-	arg_3_0.playerVO = arg_3_1
+function slot0.setPlayer(slot0, slot1)
+	slot0.playerVO = slot1
 end
 
-function var_0_0.init(arg_4_0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0._tf, {
+function slot0.init(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
 		weight = LayerWeightConst.LOWER_LAYER
 	})
 
-	arg_4_0.bg = arg_4_0:findTF("frame/bg")
-	arg_4_0.bluePrintBtn = arg_4_0:findTF("blueprint_btn", arg_4_0.bg)
-	arg_4_0.bluePrintBtnTip = arg_4_0.bluePrintBtn:Find("tip")
-	arg_4_0.technologyBtn = arg_4_0:findTF("technology_btn", arg_4_0.bg)
-	arg_4_0.technologyBtnTip = arg_4_0.technologyBtn:Find("tip")
-	arg_4_0.fleetBtn = arg_4_0:findTF("fleet_btn", arg_4_0.bg)
-	arg_4_0.fleetBtnTip = arg_4_0.fleetBtn:Find("tip")
-	arg_4_0.transformBtn = arg_4_0:findTF("transform_btn", arg_4_0.bg)
-	arg_4_0.transformBtnTip = arg_4_0.transformBtn:Find("tip")
+	slot0.bg = slot0:findTF("frame/bg")
+	slot0.bluePrintBtn = slot0:findTF("blueprint_btn", slot0.bg)
+	slot0.bluePrintBtnTip = slot0.bluePrintBtn:Find("tip")
+	slot0.technologyBtn = slot0:findTF("technology_btn", slot0.bg)
+	slot0.technologyBtnTip = slot0.technologyBtn:Find("tip")
+	slot0.fleetBtn = slot0:findTF("fleet_btn", slot0.bg)
+	slot0.fleetBtnTip = slot0.fleetBtn:Find("tip")
+	slot0.transformBtn = slot0:findTF("transform_btn", slot0.bg)
+	slot0.transformBtnTip = slot0.transformBtn:Find("tip")
 
-	setActive(arg_4_0.transformBtn, not LOCK_EQUIPMENT_TRANSFORM)
+	setActive(slot0.transformBtn, not LOCK_EQUIPMENT_TRANSFORM)
 
-	arg_4_0.metaBtn = arg_4_0:findTF("meta_btn", arg_4_0.bg)
-	arg_4_0.metaBtnTip = arg_4_0.metaBtn:Find("tip")
+	slot0.metaBtn = slot0:findTF("meta_btn", slot0.bg)
+	slot0.metaBtnTip = slot0.metaBtn:Find("tip")
 
-	setActive(arg_4_0.metaBtn, true)
+	setActive(slot0.metaBtn, true)
 
-	arg_4_0.helpBtn = arg_4_0:findTF("help_btn")
-	arg_4_0.lockedTpl = arg_4_0:findTF("lockedTpl")
-	arg_4_0.backBtn = arg_4_0:findTF("blur_panel/adapt/top/back")
+	slot0.helpBtn = slot0:findTF("help_btn")
+	slot0.lockedTpl = slot0:findTF("lockedTpl")
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back")
 
 	if not OPEN_TEC_TREE_SYSTEM then
-		setActive(arg_4_0.fleetBtn, false)
+		setActive(slot0.fleetBtn, false)
 	end
 end
 
-function var_0_0.didEnter(arg_5_0)
-	arg_5_0:checkSystemOpen("ShipBluePrintMediator", arg_5_0.bluePrintBtn)
-	arg_5_0:checkSystemOpen("TechnologyMediator", arg_5_0.technologyBtn)
-	arg_5_0:checkSystemOpen("EquipmentTransformTreeMediator", arg_5_0.transformBtn)
-	arg_5_0:checkSystemOpen("MetaCharacterMediator", arg_5_0.metaBtn)
-	onButton(arg_5_0, arg_5_0.fleetBtn, function()
-		arg_5_0:emit(TechnologyConst.OPEN_TECHNOLOGY_TREE_SCENE)
+function slot0.didEnter(slot0)
+	slot0:checkSystemOpen("ShipBluePrintMediator", slot0.bluePrintBtn)
+	slot0:checkSystemOpen("TechnologyMediator", slot0.technologyBtn)
+	slot0:checkSystemOpen("EquipmentTransformTreeMediator", slot0.transformBtn)
+	slot0:checkSystemOpen("MetaCharacterMediator", slot0.metaBtn)
+	onButton(slot0, slot0.fleetBtn, function ()
+		uv0:emit(TechnologyConst.OPEN_TECHNOLOGY_TREE_SCENE)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.bluePrintBtn, function()
-		arg_5_0:emit(SelectTechnologyMediator.ON_BLUEPRINT)
+	onButton(slot0, slot0.bluePrintBtn, function ()
+		uv0:emit(SelectTechnologyMediator.ON_BLUEPRINT)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.technologyBtn, function()
-		arg_5_0:emit(SelectTechnologyMediator.ON_TECHNOLOGY)
+	onButton(slot0, slot0.technologyBtn, function ()
+		uv0:emit(SelectTechnologyMediator.ON_TECHNOLOGY)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.transformBtn, function()
-		arg_5_0:emit(SelectTechnologyMediator.ON_TRANSFORM_EQUIPMENT)
+	onButton(slot0, slot0.transformBtn, function ()
+		uv0:emit(SelectTechnologyMediator.ON_TRANSFORM_EQUIPMENT)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.metaBtn, function()
-		if isActive(arg_5_0:findTF("word", arg_5_0.metaBtn)) then
-			arg_5_0:emit(SelectTechnologyMediator.ON_META)
+	onButton(slot0, slot0.metaBtn, function ()
+		if isActive(uv0:findTF("word", uv0.metaBtn)) then
+			uv0:emit(SelectTechnologyMediator.ON_META)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_sys_lock_tip"))
 		end
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.backBtn, function()
-		arg_5_0:emit(var_0_0.ON_BACK)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0.helpBtn, function()
-		local var_12_0 = pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_5_0.playerVO.level, "ShipBluePrintMediator") and "help_technolog" or "help_technolog0"
-
-		if pg.gametip[var_12_0] then
+	onButton(slot0, slot0.helpBtn, function ()
+		if pg.gametip[pg.SystemOpenMgr.GetInstance():isOpenSystem(uv0.playerVO.level, "ShipBluePrintMediator") and "help_technolog" or "help_technolog0"] then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
-				helps = pg.gametip[var_12_0].tip,
+				helps = pg.gametip[slot1].tip,
 				weight = LayerWeightConst.SECOND_LAYER
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.checkSystemOpen(arg_13_0, arg_13_1, arg_13_2)
-	if arg_13_1 == "MetaCharacterMediator" then
-		local var_13_0 = true
+function slot0.checkSystemOpen(slot0, slot1, slot2)
+	if slot1 == "MetaCharacterMediator" then
+		slot3 = true
 
-		setActive(arg_13_0:findTF("word", arg_13_2), var_13_0)
-		setGray(arg_13_2, not var_13_0)
+		setActive(slot0:findTF("word", slot2), slot3)
+		setGray(slot2, not slot3)
 
-		arg_13_2:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, var_13_0 and 1 or 0.7)
+		slot2:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, slot3 and 1 or 0.7)
 
-		local var_13_1 = arg_13_0:findTF("locked", arg_13_2)
-
-		if var_13_1 then
-			setActive(var_13_1, false)
+		if slot0:findTF("locked", slot2) then
+			setActive(slot4, false)
 		end
 
-		if not var_13_0 then
-			if IsNil(var_13_1) then
-				var_13_1 = cloneTplTo(arg_13_0.lockedTpl, arg_13_2)
-				var_13_1.localPosition = Vector3.zero
+		if not slot3 then
+			if IsNil(slot4) then
+				cloneTplTo(slot0.lockedTpl, slot2).localPosition = Vector3.zero
 			end
 
-			setActive(var_13_1, true)
+			setActive(slot4, true)
 		end
 
 		return
 	end
 
-	local var_13_2 = pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_13_0.playerVO.level, arg_13_1)
+	slot3 = pg.SystemOpenMgr.GetInstance():isOpenSystem(slot0.playerVO.level, slot1)
 
-	setActive(arg_13_0:findTF("word", arg_13_2), var_13_2)
-	setGray(arg_13_2, not var_13_2)
+	setActive(slot0:findTF("word", slot2), slot3)
+	setGray(slot2, not slot3)
 
-	arg_13_2:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, var_13_2 and 1 or 0.7)
+	slot2:GetComponent(typeof(Image)).color = Color.New(1, 1, 1, slot3 and 1 or 0.7)
 
-	local var_13_3 = arg_13_0:findTF("locked", arg_13_2)
-
-	if var_13_3 then
-		setActive(var_13_3, false)
+	if slot0:findTF("locked", slot2) then
+		setActive(slot4, false)
 	end
 
-	if not var_13_2 then
-		if IsNil(var_13_3) then
-			var_13_3 = cloneTplTo(arg_13_0.lockedTpl, arg_13_2)
-			var_13_3.localPosition = Vector3.zero
+	if not slot3 then
+		if IsNil(slot4) then
+			cloneTplTo(slot0.lockedTpl, slot2).localPosition = Vector3.zero
 		end
 
-		setActive(var_13_3, true)
+		setActive(slot4, true)
 	end
 end
 
-function var_0_0.notifyTechnology(arg_14_0, arg_14_1)
-	setActive(arg_14_0.technologyBtnTip, arg_14_1)
+function slot0.notifyTechnology(slot0, slot1)
+	setActive(slot0.technologyBtnTip, slot1)
 end
 
-function var_0_0.notifyBlueprint(arg_15_0, arg_15_1)
-	setActive(arg_15_0.bluePrintBtnTip, arg_15_1)
+function slot0.notifyBlueprint(slot0, slot1)
+	setActive(slot0.bluePrintBtnTip, slot1)
 end
 
-function var_0_0.notifyFleet(arg_16_0, arg_16_1)
-	setActive(arg_16_0.fleetBtnTip, arg_16_1)
+function slot0.notifyFleet(slot0, slot1)
+	setActive(slot0.fleetBtnTip, slot1)
 end
 
-function var_0_0.notifyTransform(arg_17_0, arg_17_1)
-	setActive(arg_17_0.transformBtnTip, arg_17_1)
+function slot0.notifyTransform(slot0, slot1)
+	setActive(slot0.transformBtnTip, slot1)
 end
 
-function var_0_0.notifyMeta(arg_18_0, arg_18_1)
-	setActive(arg_18_0.metaBtnTip, arg_18_1)
+function slot0.notifyMeta(slot0, slot1)
+	setActive(slot0.metaBtnTip, slot1)
 end
 
-function var_0_0.willExit(arg_19_0)
-	return
+function slot0.willExit(slot0)
 end
 
-return var_0_0
+return slot0

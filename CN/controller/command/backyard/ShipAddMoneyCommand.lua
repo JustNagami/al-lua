@@ -1,41 +1,38 @@
-﻿local var_0_0 = class("ShipAddMoneyCommand", pm.SimpleCommand)
+slot0 = class("ShipAddMoneyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(19013, {
-		id = var_1_0
-	}, 19014, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(BayProxy)
-			local var_2_1 = var_2_0:getShipById(var_1_0)
-			local var_2_2 = var_2_1.state_info_4
+		id = slot1:getBody()
+	}, 19014, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(BayProxy)
+			slot2 = slot1:getShipById(uv0)
+			slot3 = slot2.state_info_4
+			slot2.state_info_4 = 0
 
-			var_2_1.state_info_4 = 0
+			slot1:updateShip(slot2)
 
-			var_2_0:updateShip(var_2_1)
+			slot4 = getProxy(PlayerProxy)
+			slot5 = slot4:getData()
 
-			local var_2_3 = getProxy(PlayerProxy)
-			local var_2_4 = var_2_3:getData()
-
-			var_2_4:addResources({
-				dormMoney = var_2_2
+			slot5:addResources({
+				dormMoney = slot3
 			})
-			var_2_3:updatePlayer(var_2_4)
+			slot4:updatePlayer(slot5)
 
-			if var_2_2 == 0 then
+			if slot3 == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_getResource_emptry"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", var_2_1:getName(), var_2_2))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddMoney_ok", slot2:getName(), slot3))
 			end
 
-			arg_1_0:sendNotification(GAME.BACKYARD_ADD_MONEY_DONE, {
-				id = var_1_0
+			uv1:sendNotification(GAME.BACKYARD_ADD_MONEY_DONE, {
+				id = uv0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipAddMoney", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipAddMoney", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

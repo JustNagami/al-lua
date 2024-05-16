@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "龙凤2",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 12871,
+	icon = 12870,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -44,25 +64,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "龙凤2",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 12871,
-	icon = 12870,
-	last_effect = ""
+	}
 }

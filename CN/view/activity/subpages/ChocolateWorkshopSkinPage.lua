@@ -1,21 +1,20 @@
-﻿local var_0_0 = class("ChocolateWorkshopSkinPage", import(".TemplatePage.SkinTemplatePage"))
+slot0 = class("ChocolateWorkshopSkinPage", import(".TemplatePage.SkinTemplatePage"))
+slot0.FADE_TIME = 0.5
+slot0.SHOW_TIME = 2
+slot0.FADE_OUT_TIME = 0.5
 
-var_0_0.FADE_TIME = 0.5
-var_0_0.SHOW_TIME = 2
-var_0_0.FADE_OUT_TIME = 0.5
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+	slot0.finishContainer = slot0:findTF("FinishContainer", slot0.bg)
+	slot0.bubbleTF = slot0:findTF("Bubble", slot0.bg)
+	slot0.bubbleText = slot0:findTF("Text", slot0.bubbleTF)
+	slot0.bubbleCG = GetComponent(slot0.bubbleTF, "CanvasGroup")
+	slot0.sdContainer = slot0:findTF("SDcontainer", slot0.bg)
+	slot0.sdBtn = slot0:findTF("SDBtn", slot0.bg)
 
-	arg_1_0.finishContainer = arg_1_0:findTF("FinishContainer", arg_1_0.bg)
-	arg_1_0.bubbleTF = arg_1_0:findTF("Bubble", arg_1_0.bg)
-	arg_1_0.bubbleText = arg_1_0:findTF("Text", arg_1_0.bubbleTF)
-	arg_1_0.bubbleCG = GetComponent(arg_1_0.bubbleTF, "CanvasGroup")
-	arg_1_0.sdContainer = arg_1_0:findTF("SDcontainer", arg_1_0.bg)
-	arg_1_0.sdBtn = arg_1_0:findTF("SDBtn", arg_1_0.bg)
-
-	onButton(arg_1_0, arg_1_0.sdBtn, function()
-		local var_2_0 = {
+	onButton(slot0, slot0.sdBtn, function ()
+		if type({
 			{
 				{
 					2022,
@@ -40,38 +39,39 @@ function var_0_0.OnInit(arg_1_0)
 					59
 				}
 			}
-		}
-
-		if type(var_2_0) == "table" and pg.TimeMgr.GetInstance():inTime(var_2_0) then
-			setActive(arg_1_0.boxTF, true)
+		}) == "table" and pg.TimeMgr.GetInstance():inTime(slot0) then
+			setActive(uv0.boxTF, true)
 		end
 	end, SFX_PANEL)
 
-	arg_1_0.boxTF = arg_1_0:findTF("Box")
-	arg_1_0.boxBG = arg_1_0:findTF("BG", arg_1_0.boxTF)
-	arg_1_0.boxText = arg_1_0:findTF("Content/Text", arg_1_0.boxTF)
+	slot0.boxTF = slot0:findTF("Box")
+	slot0.boxBG = slot0:findTF("BG", slot0.boxTF)
+	slot0.boxText = slot0:findTF("Content/Text", slot0.boxTF)
 
-	setText(arg_1_0.boxText, i18n("valentinesday__shop_tip"))
+	setText(slot0.boxText, i18n("valentinesday__shop_tip"))
 
-	arg_1_0.confirmBtn = arg_1_0:findTF("Content/Confirm", arg_1_0.boxTF)
-	arg_1_0.cancelBtn = arg_1_0:findTF("Content/Cancel", arg_1_0.boxTF)
+	slot0.confirmBtn = slot0:findTF("Content/Confirm", slot0.boxTF)
+	slot0.cancelBtn = slot0:findTF("Content/Cancel", slot0.boxTF)
 
-	onButton(arg_1_0, arg_1_0.boxBG, function()
-		setActive(arg_1_0.boxTF, false)
+	onButton(slot0, slot0.boxBG, function ()
+		setActive(uv0.boxTF, false)
 	end, SFX_CANCEL)
-	onButton(arg_1_0, arg_1_0.cancelBtn, function()
-		setActive(arg_1_0.boxTF, false)
+	onButton(slot0, slot0.cancelBtn, function ()
+		setActive(uv0.boxTF, false)
 	end, SFX_CANCEL)
-	onButton(arg_1_0, arg_1_0.confirmBtn, function()
+
+	slot5 = SFX_PANEL
+
+	onButton(slot0, slot0.confirmBtn, function ()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
-		setActive(arg_1_0.boxTF, false)
-	end, SFX_PANEL)
+		setActive(uv0.boxTF, false)
+	end, slot5)
 
-	arg_1_0.sdNameList = {
+	slot0.sdNameList = {
 		"anshan_3",
 		"shiyu_4"
 	}
-	arg_1_0.bubbleTextTable = {
+	slot0.bubbleTextTable = {
 		anshan_3 = {
 			"valentinesday__txt1_tip",
 			"valentinesday__txt2_tip",
@@ -83,165 +83,141 @@ function var_0_0.OnInit(arg_1_0)
 			"valentinesday__txt6_tip"
 		}
 	}
-	arg_1_0.aniContainerTF = arg_1_0:findTF("AniContainer", arg_1_0.bg)
+	slot0.aniContainerTF = slot0:findTF("AniContainer", slot0.bg)
+	slot0.tplList = {}
 
-	local var_1_0 = GetComponent(arg_1_0._tf, "ItemList").prefabItem
-
-	arg_1_0.tplList = {}
-
-	for iter_1_0 = 0, var_1_0.Length - 1 do
-		table.insert(arg_1_0.tplList, var_1_0[iter_1_0])
+	for slot5 = 0, GetComponent(slot0._tf, "ItemList").prefabItem.Length - 1 do
+		table.insert(slot0.tplList, slot1[slot5])
 	end
 
-	arg_1_0.sdName = arg_1_0.sdNameList[math.random(#arg_1_0.sdNameList)]
-	arg_1_0.spine = nil
-	arg_1_0.spineLRQ = GetSpineRequestPackage.New(arg_1_0.sdName, function(arg_6_0)
-		SetParent(arg_6_0, arg_1_0.sdContainer)
+	slot0.sdName = slot0.sdNameList[math.random(#slot0.sdNameList)]
+	slot0.spine = nil
+	slot0.spineLRQ = GetSpineRequestPackage.New(slot0.sdName, function (slot0)
+		SetParent(slot0, uv0.sdContainer)
 
-		arg_1_0.spine = arg_6_0
-		arg_1_0.spine.transform.localScale = Vector3.one
+		uv0.spine = slot0
+		uv0.spine.transform.localScale = Vector3.one
 
-		local var_6_0 = arg_1_0.spine:GetComponent("SpineAnimUI")
-
-		if var_6_0 then
-			var_6_0:SetAction("stand2", 0)
+		if uv0.spine:GetComponent("SpineAnimUI") then
+			slot1:SetAction("stand2", 0)
 		end
 
-		arg_1_0.spineLRQ = nil
+		uv0.spineLRQ = nil
 	end):Start()
 end
 
-function var_0_0.OnFirstFlush(arg_7_0)
-	arg_7_0.uilist:make(function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_8_0 == UIItemList.EventUpdate then
-			local var_8_0 = arg_8_1 + 1
-			local var_8_1 = arg_7_0:findTF("item", arg_8_2)
-			local var_8_2 = arg_7_0.taskGroup[arg_7_0.nday][var_8_0]
-			local var_8_3 = arg_7_0.taskProxy:getTaskById(var_8_2) or arg_7_0.taskProxy:getFinishTaskById(var_8_2)
+function slot0.OnFirstFlush(slot0)
+	slot0.uilist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot4 = uv0:findTF("item", slot2)
+			slot6 = uv0.taskProxy:getTaskById(uv0.taskGroup[uv0.nday][slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot5)
 
-			assert(var_8_3, "without this task by id: " .. var_8_2)
+			assert(slot6, "without this task by id: " .. slot5)
 
-			local var_8_4 = var_8_3:getConfig("award_display")[1]
-			local var_8_5 = {
-				type = var_8_4[1],
-				id = var_8_4[2],
-				count = var_8_4[3]
-			}
+			slot7 = slot6:getConfig("award_display")[1]
 
-			updateDrop(var_8_1, var_8_5)
-			onButton(arg_7_0, var_8_1, function()
-				arg_7_0:emit(BaseUI.ON_DROP, var_8_5)
+			updateDrop(slot4, {
+				type = slot7[1],
+				id = slot7[2],
+				count = slot7[3]
+			})
+			onButton(uv0, slot4, function ()
+				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 
-			local var_8_6 = var_8_3:getProgress()
-			local var_8_7 = var_8_3:getConfig("target_num")
+			slot9 = slot6:getProgress()
+			slot10 = slot6:getConfig("target_num")
 
-			setText(arg_7_0:findTF("description", arg_8_2), var_8_3:getConfig("desc"))
-			setText(arg_7_0:findTF("progressText", arg_8_2), setColorStr(var_8_6, "#BBCF2EFF") .. "/" .. var_8_7)
-			setSlider(arg_7_0:findTF("progress", arg_8_2), 0, var_8_7, var_8_6)
+			setText(uv0:findTF("description", slot2), slot6:getConfig("desc"))
+			setText(uv0:findTF("progressText", slot2), setColorStr(slot9, "#BBCF2EFF") .. "/" .. slot10)
+			setSlider(uv0:findTF("progress", slot2), 0, slot10, slot9)
 
-			local var_8_8 = arg_7_0:findTF("go_btn", arg_8_2)
-			local var_8_9 = arg_7_0:findTF("get_btn", arg_8_2)
-			local var_8_10 = arg_7_0:findTF("got_btn", arg_8_2)
-			local var_8_11 = var_8_3:getTaskStatus()
+			slot12 = uv0:findTF("get_btn", slot2)
 
-			setActive(var_8_8, var_8_11 == 0)
-			setActive(var_8_9, var_8_11 == 1)
-			setActive(var_8_10, var_8_11 == 2)
-			onButton(arg_7_0, var_8_8, function()
-				arg_7_0:emit(ActivityMediator.ON_TASK_GO, var_8_3)
+			setActive(uv0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
+			setActive(slot12, slot14 == 1)
+			setActive(uv0:findTF("got_btn", slot2), slot14 == 2)
+			onButton(uv0, slot11, function ()
+				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
 			end, SFX_PANEL)
-			onButton(arg_7_0, var_8_9, function()
-				arg_7_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_8_3)
+			onButton(uv0, slot12, function ()
+				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
 			end, SFX_PANEL)
 		end
 	end)
 
-	arg_7_0.showBubbleTag = false
+	slot0.showBubbleTag = false
 end
 
-function var_0_0.OnUpdateFlush(arg_12_0)
-	var_0_0.super.OnUpdateFlush(arg_12_0)
-	setActive(arg_12_0.boxTF, false)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
+	setActive(slot0.boxTF, false)
 
-	for iter_12_0 = 1, arg_12_0.finishContainer.childCount do
-		local var_12_0 = arg_12_0.finishContainer:GetChild(iter_12_0 - 1)
-
-		setActive(var_12_0, iter_12_0 <= arg_12_0.nday)
+	for slot4 = 1, slot0.finishContainer.childCount do
+		setActive(slot0.finishContainer:GetChild(slot4 - 1), slot4 <= slot0.nday)
 	end
 
-	local var_12_1 = arg_12_0.taskGroup[arg_12_0.nday][1]
-	local var_12_2 = arg_12_0.taskProxy:getTaskVO(var_12_1):getTaskStatus()
+	if not slot0.showBubbleTag then
+		if slot0.taskProxy:getTaskVO(slot0.taskGroup[slot0.nday][1]):getTaskStatus() == 0 then
+			slot0:showBubble(i18n(slot0.bubbleTextTable[slot0.sdName][1]))
 
-	if not arg_12_0.showBubbleTag then
-		if var_12_2 == 0 then
-			arg_12_0:showBubble(i18n(arg_12_0.bubbleTextTable[arg_12_0.sdName][1]))
+			slot0.showBubbleTag = true
+		elseif slot3 == 1 then
+			slot0:showBubble(i18n(slot0.bubbleTextTable[slot0.sdName][2]))
 
-			arg_12_0.showBubbleTag = true
-		elseif var_12_2 == 1 then
-			arg_12_0:showBubble(i18n(arg_12_0.bubbleTextTable[arg_12_0.sdName][2]))
-
-			arg_12_0.showBubbleTag = true
+			slot0.showBubbleTag = true
 		end
 	end
 
-	eachChild(arg_12_0.aniContainerTF, function(arg_13_0)
-		Destroy(arg_13_0)
+	eachChild(slot0.aniContainerTF, function (slot0)
+		Destroy(slot0)
 	end)
 
-	if var_12_2 == 0 then
-		SetParent(Instantiate(arg_12_0.tplList[1]), arg_12_0.aniContainerTF, false)
+	if slot3 == 0 then
+		SetParent(Instantiate(slot0.tplList[1]), slot0.aniContainerTF, false)
 	else
-		SetParent(Instantiate(arg_12_0.tplList[2]), arg_12_0.aniContainerTF, false)
+		SetParent(Instantiate(slot0.tplList[2]), slot0.aniContainerTF, false)
 	end
 end
 
-function var_0_0.OnDestroy(arg_14_0)
-	var_0_0.super.OnDestroy(arg_14_0)
+function slot0.OnDestroy(slot0)
+	uv0.super.OnDestroy(slot0)
 
-	if arg_14_0.spineLRQ then
-		arg_14_0.spineLRQ:Stop()
+	if slot0.spineLRQ then
+		slot0.spineLRQ:Stop()
 
-		arg_14_0.spineLRQ = nil
+		slot0.spineLRQ = nil
 	end
 
-	if arg_14_0.spine then
-		arg_14_0.spine.transform.localScale = Vector3.one
+	if slot0.spine then
+		slot0.spine.transform.localScale = Vector3.one
 
-		pg.PoolMgr.GetInstance():ReturnSpineChar(arg_14_0.sdName, arg_14_0.spine)
+		pg.PoolMgr.GetInstance():ReturnSpineChar(slot0.sdName, slot0.spine)
 
-		arg_14_0.spine = nil
+		slot0.spine = nil
 	end
 end
 
-function var_0_0.showBubble(arg_15_0, arg_15_1)
-	local var_15_0
+function slot0.showBubble(slot0, slot1)
+	slot2 = nil
 
-	if not arg_15_1 then
-		var_15_0 = i18n(arg_15_0.bubbleTextList[math.random(#arg_15_0.bubbleTextList)])
-	else
-		var_15_0 = arg_15_1
-	end
+	setText(slot0.bubbleText, (slot1 or i18n(slot0.bubbleTextList[math.random(#slot0.bubbleTextList)])) and slot1)
 
-	setText(arg_15_0.bubbleText, var_15_0)
-
-	local function var_15_1(arg_16_0)
-		arg_15_0.bubbleCG.alpha = arg_16_0
-
-		setLocalScale(arg_15_0.bubbleTF, Vector3.one * arg_16_0)
-	end
-
-	local function var_15_2()
-		LeanTween.value(go(arg_15_0.bubbleTF), 1, 0, var_0_0.FADE_OUT_TIME):setOnUpdate(System.Action_float(var_15_1)):setOnComplete(System.Action(function()
-			setActive(arg_15_0.bubbleTF, false)
+	function slot4()
+		LeanTween.value(go(uv0.bubbleTF), 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
+			setActive(uv0.bubbleTF, false)
 		end))
 	end
 
-	LeanTween.cancel(go(arg_15_0.bubbleTF))
-	setActive(arg_15_0.bubbleTF, true)
-	LeanTween.value(go(arg_15_0.bubbleTF), 0, 1, var_0_0.FADE_TIME):setOnUpdate(System.Action_float(var_15_1)):setOnComplete(System.Action(function()
-		LeanTween.delayedCall(go(arg_15_0.bubbleTF), var_0_0.SHOW_TIME, System.Action(var_15_2))
+	LeanTween.cancel(go(slot0.bubbleTF))
+	setActive(slot0.bubbleTF, true)
+	LeanTween.value(go(slot0.bubbleTF), 0, 1, uv0.FADE_TIME):setOnUpdate(System.Action_float(function (slot0)
+		uv0.bubbleCG.alpha = slot0
+
+		setLocalScale(uv0.bubbleTF, Vector3.one * slot0)
+	end)):setOnComplete(System.Action(function ()
+		LeanTween.delayedCall(go(uv0.bubbleTF), uv1.SHOW_TIME, System.Action(uv2))
 	end))
 end
 
-return var_0_0
+return slot0

@@ -1,113 +1,108 @@
-﻿local var_0_0 = class("Context")
-
-var_0_0.TRANS_TYPE = {
+slot0 = class("Context")
+slot0.TRANS_TYPE = {
 	CROSS = 1,
 	ONE_BY_ONE = 2
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_1 = arg_1_1 or {}
-	arg_1_0.mediator = arg_1_1.mediator
-	arg_1_0.viewComponent = arg_1_1.viewComponent
-	arg_1_0.scene = arg_1_1.scene
-	arg_1_0.onRemoved = arg_1_1.onRemoved
-	arg_1_0.cleanStack = defaultValue(arg_1_1.cleanStack, false)
-	arg_1_0.data = arg_1_1.data or {}
-	arg_1_0.parent = arg_1_1.parent
-	arg_1_0.children = {}
-	arg_1_0.transType = defaultValue(arg_1_1.transType, var_0_0.TRANS_TYPE.CROSS)
+function slot0.Ctor(slot0, slot1)
+	slot1 = slot1 or {}
+	slot0.mediator = slot1.mediator
+	slot0.viewComponent = slot1.viewComponent
+	slot0.scene = slot1.scene
+	slot0.onRemoved = slot1.onRemoved
+	slot0.cleanStack = defaultValue(slot1.cleanStack, false)
+	slot0.data = slot1.data or {}
+	slot0.parent = slot1.parent
+	slot0.children = {}
+	slot0.transType = defaultValue(slot1.transType, uv0.TRANS_TYPE.CROSS)
 end
 
-function var_0_0.extendData(arg_2_0, arg_2_1)
-	if arg_2_1 == nil then
+function slot0.extendData(slot0, slot1)
+	if slot1 == nil then
 		return
 	end
 
-	assert(type(arg_2_1) == "table", "data object should be a table")
+	assert(type(slot1) == "table", "data object should be a table")
 
-	for iter_2_0, iter_2_1 in pairs(arg_2_1) do
-		arg_2_0.data[iter_2_0] = iter_2_1
+	for slot5, slot6 in pairs(slot1) do
+		slot0.data[slot5] = slot6
 	end
 end
 
-function var_0_0.addChild(arg_3_0, arg_3_1)
-	assert(isa(arg_3_1, Context), "should be an instance of Context")
-	assert(arg_3_1.parent == nil, "context already has parent")
+function slot0.addChild(slot0, slot1)
+	assert(isa(slot1, Context), "should be an instance of Context")
+	assert(slot1.parent == nil, "context already has parent")
 
-	arg_3_1.parent = arg_3_0
+	slot1.parent = slot0
 
-	table.insert(arg_3_0.children, arg_3_1)
+	table.insert(slot0.children, slot1)
 end
 
-function var_0_0.addChilds(arg_4_0, arg_4_1)
-	_.each(arg_4_1, function(arg_5_0)
-		arg_4_0:addChild(arg_5_0)
+function slot0.addChilds(slot0, slot1)
+	_.each(slot1, function (slot0)
+		uv0:addChild(slot0)
 	end)
 end
 
-function var_0_0.removeChild(arg_6_0, arg_6_1)
-	assert(isa(arg_6_1, Context), "should be an instance of Context")
+function slot0.removeChild(slot0, slot1)
+	slot5 = Context
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.children) do
-		if iter_6_1 == arg_6_1 then
-			return table.remove(arg_6_0.children, iter_6_0)
+	assert(isa(slot1, slot5), "should be an instance of Context")
+
+	for slot5, slot6 in ipairs(slot0.children) do
+		if slot6 == slot1 then
+			return table.remove(slot0.children, slot5)
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.retriveLastChild(arg_7_0)
-	for iter_7_0 = #arg_7_0.children, 1, -1 do
-		if not arg_7_0.children[iter_7_0].data.isSubView then
-			return arg_7_0.children[iter_7_0]:retriveLastChild()
+function slot0.retriveLastChild(slot0)
+	for slot4 = #slot0.children, 1, -1 do
+		if not slot0.children[slot4].data.isSubView then
+			return slot0.children[slot4]:retriveLastChild()
 		end
 	end
 
-	return arg_7_0
+	return slot0
 end
 
-function var_0_0.GetHierarchy(arg_8_0)
-	local var_8_0 = {
-		arg_8_0
+function slot0.GetHierarchy(slot0)
+	slot1 = {
+		slot0
 	}
-	local var_8_1 = {}
+	slot2 = {}
 
-	while #var_8_0 > 0 do
-		local var_8_2 = table.remove(var_8_0, 1)
-
-		for iter_8_0, iter_8_1 in ipairs(var_8_2.children) do
-			table.insert(var_8_0, iter_8_1)
+	while #slot1 > 0 do
+		for slot7, slot8 in ipairs(table.remove(slot1, 1).children) do
+			table.insert(slot1, slot8)
 		end
 
-		table.insert(var_8_1, var_8_2)
+		table.insert(slot2, slot3)
 	end
 
-	return var_8_1
+	return slot2
 end
 
-function var_0_0.getContextByMediator(arg_9_0, arg_9_1)
-	local function var_9_0(arg_10_0, arg_10_1)
-		if arg_10_0.mediator == arg_10_1 then
-			return arg_10_0
+function slot0.getContextByMediator(slot0, slot1)
+	return function (slot0, slot1)
+		if slot0.mediator == slot1 then
+			return slot0
 		end
 
-		for iter_10_0, iter_10_1 in ipairs(arg_10_0.children) do
-			local var_10_0 = var_9_0(iter_10_1, arg_10_1)
-
-			if var_10_0 ~= nil then
-				return var_10_0
+		for slot5, slot6 in ipairs(slot0.children) do
+			if uv0(slot6, slot1) ~= nil then
+				return slot7
 			end
 		end
 
 		return nil
-	end
-
-	return var_9_0(arg_9_0, arg_9_1)
+	end(slot0, slot1)
 end
 
-function var_0_0.onContextRemoved(arg_11_0)
-	return arg_11_0.onRemoved and arg_11_0.onRemoved()
+function slot0.onContextRemoved(slot0)
+	return slot0.onRemoved and slot0.onRemoved()
 end
 
-return var_0_0
+return slot0

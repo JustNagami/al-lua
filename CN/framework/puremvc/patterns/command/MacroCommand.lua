@@ -1,29 +1,27 @@
-﻿local var_0_0 = import("..observer.Notifier")
-local var_0_1 = class("MacroCommand", var_0_0)
+slot1 = class("MacroCommand", import("..observer.Notifier"))
 
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-	arg_1_0.subCommands = {}
+	slot0.subCommands = {}
 
-	arg_1_0:initializeMacroCommand()
+	slot0:initializeMacroCommand()
 end
 
-function var_0_1.initializeMacroCommand(arg_2_0)
-	return
+function slot1.initializeMacroCommand(slot0)
 end
 
-function var_0_1.addSubCommand(arg_3_0, arg_3_1)
-	table.insert(arg_3_0.subCommands, arg_3_1)
+function slot1.addSubCommand(slot0, slot1)
+	table.insert(slot0.subCommands, slot1)
 end
 
-function var_0_1.execute(arg_4_0, arg_4_1)
-	while #arg_4_0.subCommands > 0 do
-		local var_4_0 = table.remove(arg_4_0.subCommands, 1).New()
+function slot1.execute(slot0, slot1)
+	while #slot0.subCommands > 0 do
+		slot3 = table.remove(slot0.subCommands, 1).New()
 
-		var_4_0:initializeNotifier(arg_4_0.multitonKey)
-		var_4_0:execute(arg_4_1)
+		slot3:initializeNotifier(slot0.multitonKey)
+		slot3:execute(slot1)
 	end
 end
 
-return var_0_1
+return slot1

@@ -1,30 +1,27 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.word_template_122 = {}
-
-local var_0_1 = var_0_0.word_template_122
+pg = pg or {}
+slot0 = pg
+slot0.word_template_122 = {}
+slot1 = slot0.word_template_122
 
 function temp()
-	var_0_1.嚴 = {
-		家 = {
-			其 = {
+	uv0["嚴"] = {
+		["家"] = {
+			["其"] = {
 				this = true
 			},
-			祺 = {
+			["祺"] = {
 				this = true
 			}
 		},
-		禁 = {
-			砸 = {
-				鍋 = {
+		["禁"] = {
+			["砸"] = {
+				["鍋"] = {
 					this = true
 				}
 			}
 		},
-		雋 = {
-			琪 = {
+		["雋"] = {
+			["琪"] = {
 				this = true
 			}
 		}
@@ -34,13 +31,13 @@ end
 temp()
 
 function temp()
-	var_0_1.閻 = {
-		明 = {
-			複 = {
+	uv0["閻"] = {
+		["明"] = {
+			["複"] = {
 				this = true
 			}
 		},
-		王 = {
+		["王"] = {
 			this = true
 		}
 	}
@@ -49,24 +46,24 @@ end
 temp()
 
 function temp()
-	var_0_1.顔 = {
-		清 = {
-			標 = {
+	uv0["顔"] = {
+		["清"] = {
+			["標"] = {
 				this = true
 			}
 		},
-		慶 = {
-			章 = {
+		["慶"] = {
+			["章"] = {
 				this = true
 			}
 		},
-		射 = {
+		["射"] = {
 			this = true
 		},
-		騎 = {
-			美 = {
-				少 = {
-					女 = {
+		["騎"] = {
+			["美"] = {
+				["少"] = {
+					["女"] = {
 						this = true
 					}
 				}
@@ -78,7 +75,7 @@ end
 temp()
 
 function temp()
-	var_0_1.讞 = {
+	uv0["讞"] = {
 		this = {
 			this = true
 		}
@@ -88,31 +85,31 @@ end
 temp()
 
 function temp()
-	var_0_1.央 = {
-		視 = {
-			內 = {
-				部 = {
-					晚 = {
-						會 = {
+	uv0["央"] = {
+		["視"] = {
+			["內"] = {
+				["部"] = {
+					["晚"] = {
+						["會"] = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		视 = {
-			内 = {
-				部 = {
-					晚 = {
-						会 = {
+		["视"] = {
+			["内"] = {
+				["部"] = {
+					["晚"] = {
+						["会"] = {
 							this = true
 						}
 					}
 				}
 			},
-			老 = {
-				板 = {
-					娘 = {
+			["老"] = {
+				["板"] = {
+					["娘"] = {
 						this = true
 					}
 				}
@@ -124,20 +121,20 @@ end
 temp()
 
 function temp()
-	var_0_1.陽 = {
-		具 = {
+	uv0["陽"] = {
+		["具"] = {
 			this = true
 		},
-		痿 = {
+		["痿"] = {
 			this = true
 		},
-		物 = {
+		["物"] = {
 			this = true
 		},
-		精 = {
+		["精"] = {
 			this = true
 		},
-		萎 = {
+		["萎"] = {
 			this = true
 		}
 	}
@@ -146,54 +143,54 @@ end
 temp()
 
 function temp()
-	var_0_1.楊 = {
-		懷 = {
-			安 = {
+	uv0["楊"] = {
+		["懷"] = {
+			["安"] = {
 				this = true
 			}
 		},
-		建 = {
-			利 = {
+		["建"] = {
+			["利"] = {
 				this = true
 			}
 		},
-		巍 = {
+		["巍"] = {
 			this = true
 		},
-		月 = {
-			清 = {
+		["月"] = {
+			["清"] = {
 				this = true
 			}
 		},
-		周 = {
+		["周"] = {
 			this = true
 		},
-		思 = {
-			敏 = {
+		["思"] = {
+			["敏"] = {
 				this = true
 			}
 		},
-		崇 = {
+		["崇"] = {
 			this = true
 		},
-		健 = {
-			興 = {
+		["健"] = {
+			["興"] = {
 				this = true
 			}
 		},
-		潔 = {
-			篪 = {
+		["潔"] = {
+			["篪"] = {
 				this = true
 			}
 		},
-		晶 = {
+		["晶"] = {
 			this = true
 		},
-		濤 = {
+		["濤"] = {
 			this = true
 		},
-		白 = {
-			氷 = {
+		["白"] = {
+			["氷"] = {
 				this = true
 			}
 		}
@@ -203,7 +200,7 @@ end
 temp()
 
 function temp()
-	var_0_1.軺 = {
+	uv0["軺"] = {
 		this = {
 			this = true
 		}
@@ -213,40 +210,40 @@ end
 temp()
 
 function temp()
-	var_0_1.搖 = {
-		頭 = {
-			丸 = {
+	uv0["搖"] = {
+		["頭"] = {
+			["丸"] = {
 				this = true
 			},
-			糖 = {
+			["糖"] = {
 				this = true
 			}
 		},
-		擺 = {
-			機 = {
-				到 = {
-					丁 = {
-						泉 = {
-							網 = {
+		["擺"] = {
+			["機"] = {
+				["到"] = {
+					["丁"] = {
+						["泉"] = {
+							["網"] = {
 								this = true
 							}
 						}
 					}
 				},
-				丁 = {
-					泉 = {
-						網 = {
+				["丁"] = {
+					["泉"] = {
+						["網"] = {
 							this = true
 						}
 					}
 				},
-				網 = {
+				["網"] = {
 					this = true
 				}
 			}
 		},
-		头 = {
-			丸 = {
+		["头"] = {
+			["丸"] = {
 				this = true
 			}
 		}
@@ -256,13 +253,13 @@ end
 temp()
 
 function temp()
-	var_0_1.藥 = {
-		材 = {
-			商 = {
-				人 = {
-					蘇 = {
-						耐 = {
-							得 = {
+	uv0["藥"] = {
+		["材"] = {
+			["商"] = {
+				["人"] = {
+					["蘇"] = {
+						["耐"] = {
+							["得"] = {
 								this = true
 							}
 						}
@@ -270,7 +267,7 @@ function temp()
 				}
 			}
 		},
-		水 = {
+		["水"] = {
 			this = true
 		}
 	}

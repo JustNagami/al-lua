@@ -1,163 +1,152 @@
-﻿local var_0_0 = class("FriendProxy", import(".NetProxy"))
+slot0 = class("FriendProxy", import(".NetProxy"))
+slot0.FRIEND_ADDED = "FriendProxy friend added"
+slot0.FRIEND_REMOVED = "FriendProxy friend removed"
+slot0.FRIEND_NEW_MSG = "FriendProxy friend new msg"
+slot0.FRIEND_UPDATED = "FriendProxy friend updated"
+slot0.RELIEVE_BLACKLIST = "FriendProxy relieve blacklist"
+slot0.ADD_INTO_BLACKLIST = "FriendProxy add into blacklist"
+slot0.BLACK_LIST_UPDATED = "FriendProxy black list updated"
 
-var_0_0.FRIEND_ADDED = "FriendProxy friend added"
-var_0_0.FRIEND_REMOVED = "FriendProxy friend removed"
-var_0_0.FRIEND_NEW_MSG = "FriendProxy friend new msg"
-var_0_0.FRIEND_UPDATED = "FriendProxy friend updated"
-var_0_0.RELIEVE_BLACKLIST = "FriendProxy relieve blacklist"
-var_0_0.ADD_INTO_BLACKLIST = "FriendProxy add into blacklist"
-var_0_0.BLACK_LIST_UPDATED = "FriendProxy black list updated"
+function slot0.register(slot0)
+	slot0:on(50000, function (slot0)
+		uv0.data = {}
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:on(50000, function(arg_2_0)
-		arg_1_0.data = {}
-
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.friend_list) do
-			local var_2_0 = Friend.New(iter_2_1)
-
-			arg_1_0.data[var_2_0.id] = {
-				player = var_2_0,
+		for slot4, slot5 in ipairs(slot0.friend_list) do
+			slot6 = Friend.New(slot5)
+			uv0.data[slot6.id] = {
+				player = slot6,
 				cacheMsgs = {}
 			}
 		end
 	end)
-	arg_1_0:on(50008, function(arg_3_0)
-		local var_3_0 = Friend.New(arg_3_0.player)
-
-		if not arg_1_0.data[var_3_0.id] then
-			arg_1_0:addFriend(var_3_0)
+	slot0:on(50008, function (slot0)
+		if not uv0.data[Friend.New(slot0.player).id] then
+			uv0:addFriend(slot1)
 		else
-			arg_1_0:updateFriend(var_3_0)
+			uv0:updateFriend(slot1)
 		end
 	end)
-	arg_1_0:on(50013, function(arg_4_0)
-		arg_1_0:removeFriend(arg_4_0.id)
+	slot0:on(50013, function (slot0)
+		uv0:removeFriend(slot0.id)
 	end)
-	arg_1_0:on(50104, function(arg_5_0)
-		local var_5_0 = ChatMsg.New(ChatConst.ChannelFriend, {
-			player = Player.New(arg_5_0.msg.player),
-			content = arg_5_0.msg.content,
-			timestamp = arg_5_0.msg.timestamp
+	slot0:on(50104, function (slot0)
+		slot1 = ChatMsg.New(ChatConst.ChannelFriend, {
+			player = Player.New(slot0.msg.player),
+			content = slot0.msg.content,
+			timestamp = slot0.msg.timestamp
 		})
 
-		arg_1_0:addChatMsg(var_5_0.playerId, var_5_0)
+		uv0:addChatMsg(slot1.playerId, slot1)
 
-		local var_5_1 = arg_1_0:getFriend(var_5_0.playerId)
+		slot2 = uv0:getFriend(slot1.playerId)
 
-		var_5_1:increaseUnreadCount()
-		arg_1_0:updateFriend(var_5_1)
+		slot2:increaseUnreadCount()
+		uv0:updateFriend(slot2)
 	end)
 end
 
-function var_0_0.removeFriend(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.data[arg_6_1]
+function slot0.removeFriend(slot0, slot1)
+	if slot0.data[slot1] then
+		slot0.data[slot1] = nil
 
-	if var_6_0 then
-		arg_6_0.data[arg_6_1] = nil
-
-		arg_6_0:sendNotification(var_0_0.FRIEND_REMOVED, var_6_0.player)
+		slot0:sendNotification(uv0.FRIEND_REMOVED, slot2.player)
 	else
-		print("不存在的好友: " .. arg_6_1)
+		print("不存在的好友: " .. slot1)
 	end
 end
 
-function var_0_0.getAllFriends(arg_7_0)
-	local var_7_0 = {}
+function slot0.getAllFriends(slot0)
+	slot1 = {}
 
-	for iter_7_0, iter_7_1 in pairs(arg_7_0.data) do
-		table.insert(var_7_0, iter_7_1.player)
+	for slot5, slot6 in pairs(slot0.data) do
+		table.insert(slot1, slot6.player)
 	end
 
-	return Clone(var_7_0)
+	return Clone(slot1)
 end
 
-function var_0_0.getAllCacheMsg(arg_8_0)
-	local var_8_0 = {}
-
-	for iter_8_0, iter_8_1 in pairs(arg_8_0.data) do
-		var_8_0[iter_8_1.player.id] = iter_8_1.cacheMsgs
+function slot0.getAllCacheMsg(slot0)
+	for slot5, slot6 in pairs(slot0.data) do
+		-- Nothing
 	end
 
-	return Clone(var_8_0)
+	return Clone({
+		[slot6.player.id] = slot6.cacheMsgs
+	})
 end
 
-function var_0_0.getCacheMsgList(arg_9_0)
-	local var_9_0 = {}
+function slot0.getCacheMsgList(slot0)
+	slot1 = {}
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.data) do
-		underscore.each(iter_9_1.cacheMsgs, function(arg_10_0)
-			table.insert(var_9_0, arg_10_0)
+	for slot5, slot6 in pairs(slot0.data) do
+		underscore.each(slot6.cacheMsgs, function (slot0)
+			table.insert(uv0, slot0)
 		end)
 	end
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.getFriend(arg_11_0, arg_11_1)
-	if arg_11_0.data[arg_11_1] then
-		local var_11_0 = arg_11_0.data[arg_11_1]
+function slot0.getFriend(slot0, slot1)
+	if slot0.data[slot1] then
+		slot2 = slot0.data[slot1]
 
-		return var_11_0.player:clone(), var_11_0.cacheMsgs
+		return slot2.player:clone(), slot2.cacheMsgs
 	end
 end
 
-function var_0_0.addChatMsg(arg_12_0, arg_12_1, arg_12_2)
-	assert(isa(arg_12_2, ChatMsg), "should be an instance of ChatMsg")
+function slot0.addChatMsg(slot0, slot1, slot2)
+	assert(isa(slot2, ChatMsg), "should be an instance of ChatMsg")
 
-	if arg_12_0.data[arg_12_1] then
-		local var_12_0, var_12_1 = wordVer(arg_12_2.content, {
+	if slot0.data[slot1] then
+		slot3, slot4 = wordVer(slot2.content, {
 			isReplace = true
 		})
-		local var_12_2
 
-		string.gsub(var_12_1, ChatConst.EmojiCodeMatch, function(arg_13_0)
-			var_12_2 = tonumber(arg_13_0)
+		string.gsub(slot4, ChatConst.EmojiCodeMatch, function (slot0)
+			uv0 = tonumber(slot0)
 		end)
 
-		if var_12_2 then
-			local var_12_3 = pg.emoji_template[var_12_2]
-
-			if var_12_3 then
-				var_12_1 = var_12_3.desc
+		if nil then
+			if pg.emoji_template[slot5] then
+				slot4 = slot6.desc
 			else
-				var_12_2 = nil
+				slot5 = nil
 			end
 		end
 
-		arg_12_2.content = var_12_1
-		arg_12_2.emojiId = var_12_2
+		slot2.content = slot4
+		slot2.emojiId = slot5
 
-		local var_12_4 = arg_12_0.data[arg_12_1]
-
-		table.insert(var_12_4.cacheMsgs, arg_12_2)
-		arg_12_2:display("added")
-		arg_12_0:sendNotification(var_0_0.FRIEND_NEW_MSG, arg_12_2)
+		table.insert(slot0.data[slot1].cacheMsgs, slot2)
+		slot2:display("added")
+		slot0:sendNotification(uv0.FRIEND_NEW_MSG, slot2)
 	end
 end
 
-function var_0_0.addFriend(arg_14_0, arg_14_1)
-	assert(not arg_14_0.data[arg_14_1.id], "friend already eixst" .. arg_14_1.id)
-	arg_14_1:display("added")
+function slot0.addFriend(slot0, slot1)
+	assert(not slot0.data[slot1.id], "friend already eixst" .. slot1.id)
+	slot1:display("added")
 
-	arg_14_0.data[arg_14_1.id] = {
-		player = arg_14_1,
+	slot0.data[slot1.id] = {
+		player = slot1,
 		cacheMsgs = {}
 	}
 
-	arg_14_0:sendNotification(var_0_0.FRIEND_ADDED, arg_14_1:clone())
+	slot0:sendNotification(uv0.FRIEND_ADDED, slot1:clone())
 end
 
-function var_0_0.updateFriend(arg_15_0, arg_15_1)
-	assert(arg_15_0.data[arg_15_1.id], "friend should eixst" .. arg_15_1.id)
+function slot0.updateFriend(slot0, slot1)
+	assert(slot0.data[slot1.id], "friend should eixst" .. slot1.id)
 
-	arg_15_0.data[arg_15_1.id].player = arg_15_1
+	slot0.data[slot1.id].player = slot1
 
-	arg_15_0:sendNotification(var_0_0.FRIEND_UPDATED, arg_15_1:clone())
+	slot0:sendNotification(uv0.FRIEND_UPDATED, slot1:clone())
 end
 
-function var_0_0.isFriend(arg_16_0, arg_16_1)
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.data) do
-		if iter_16_0 == arg_16_1 then
+function slot0.isFriend(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot5 == slot1 then
 			return true
 		end
 	end
@@ -165,56 +154,54 @@ function var_0_0.isFriend(arg_16_0, arg_16_1)
 	return false
 end
 
-function var_0_0.getFriendCount(arg_17_0)
-	return table.getCount(arg_17_0.data or {})
+function slot0.getFriendCount(slot0)
+	return table.getCount(slot0.data or {})
 end
 
-function var_0_0.getNewMsgCount(arg_18_0)
-	local var_18_0 = 0
-
-	for iter_18_0, iter_18_1 in pairs(arg_18_0.data) do
-		if iter_18_1.player.unreadCount > 0 then
-			var_18_0 = var_18_0 + 1
+function slot0.getNewMsgCount(slot0)
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6.player.unreadCount > 0 then
+			slot1 = 0 + 1
 		end
 	end
 
-	return var_18_0
+	return slot1
 end
 
-function var_0_0.setBlackList(arg_19_0, arg_19_1)
-	arg_19_0.blackList = arg_19_1
+function slot0.setBlackList(slot0, slot1)
+	slot0.blackList = slot1
 
-	arg_19_0:sendNotification(var_0_0.BLACK_LIST_UPDATED, Clone(arg_19_1))
+	slot0:sendNotification(uv0.BLACK_LIST_UPDATED, Clone(slot1))
 end
 
-function var_0_0.getBlackList(arg_20_0)
-	return Clone(arg_20_0.blackList)
+function slot0.getBlackList(slot0)
+	return Clone(slot0.blackList)
 end
 
-function var_0_0.relieveBlackListById(arg_21_0, arg_21_1)
-	assert(arg_21_0.blackList[arg_21_1], "friend should eixst>>" .. arg_21_1)
+function slot0.relieveBlackListById(slot0, slot1)
+	assert(slot0.blackList[slot1], "friend should eixst>>" .. slot1)
 
-	arg_21_0.blackList[arg_21_1] = nil
+	slot0.blackList[slot1] = nil
 
-	arg_21_0:sendNotification(var_0_0.RELIEVE_BLACKLIST, arg_21_1)
+	slot0:sendNotification(uv0.RELIEVE_BLACKLIST, slot1)
 end
 
-function var_0_0.getBlackPlayerById(arg_22_0, arg_22_1)
-	return arg_22_0.blackList and Clone(arg_22_0.blackList[arg_22_1])
+function slot0.getBlackPlayerById(slot0, slot1)
+	return slot0.blackList and Clone(slot0.blackList[slot1])
 end
 
-function var_0_0.addIntoBlackList(arg_23_0, arg_23_1)
-	if arg_23_0.blackList then
-		arg_23_0.blackList[arg_23_1.id] = arg_23_1
+function slot0.addIntoBlackList(slot0, slot1)
+	if slot0.blackList then
+		slot0.blackList[slot1.id] = slot1
 
-		arg_23_0:sendNotification(var_0_0.ADD_INTO_BLACKLIST, Clone(arg_23_1))
+		slot0:sendNotification(uv0.ADD_INTO_BLACKLIST, Clone(slot1))
 	end
 end
 
-function var_0_0.isInBlackList(arg_24_0, arg_24_1)
-	if arg_24_0.blackList then
-		return arg_24_0.blackList[arg_24_1]
+function slot0.isInBlackList(slot0, slot1)
+	if slot0.blackList then
+		return slot0.blackList[slot1]
 	end
 end
 
-return var_0_0
+return slot0

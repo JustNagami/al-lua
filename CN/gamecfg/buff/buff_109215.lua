@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				tag = "darktorear"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -29,5 +18,16 @@
 	stack = 1,
 	id = 109210,
 	icon = 109210,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				tag = "darktorear"
+			}
+		}
+	}
 }

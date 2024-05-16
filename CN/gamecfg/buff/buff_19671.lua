@@ -1,49 +1,4 @@
-﻿return {
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			pop = {
-				painting = 1,
-				castCV = "skill",
-				displayID = 19673,
-				trigger = {
-					"onAttach"
-				},
-				aniEffect = {
-					effect = "jineng",
-					offset = {
-						0,
-						-2,
-						0
-					}
-				}
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 100
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "injureRatioByCannon",
-				number = -0.1
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -452,5 +407,50 @@
 	stack = 1,
 	id = 19671,
 	icon = 19670,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			pop = {
+				painting = 1,
+				castCV = "skill",
+				displayID = 19673,
+				trigger = {
+					"onAttach"
+				},
+				aniEffect = {
+					effect = "jineng",
+					offset = {
+						0,
+						-2,
+						0
+					}
+				}
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 100
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "injureRatioByCannon",
+				number = -0.1
+			}
+		}
+	}
 }

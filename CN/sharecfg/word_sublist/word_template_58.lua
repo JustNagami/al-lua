@@ -1,28 +1,25 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.word_template_58 = {}
-
-local var_0_1 = var_0_0.word_template_58
+pg = pg or {}
+slot0 = pg
+slot0.word_template_58 = {}
+slot1 = slot0.word_template_58
 
 function temp()
-	var_0_1.ㄝ = {
+	uv0["ㄝ"] = {
 		this = {
 			this = true
 		},
-		技 = {
-			師 = {
-				菔 = {
-					務 = {
+		["技"] = {
+			["師"] = {
+				["菔"] = {
+					["務"] = {
 						this = true
 					}
 				}
 			}
 		},
-		茼 = {
-			性 = {
-				噯 = {
+		["茼"] = {
+			["性"] = {
+				["噯"] = {
 					this = true
 				}
 			}
@@ -33,7 +30,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄞ = {
+	uv0["ㄞ"] = {
 		this = {
 			this = true
 		}
@@ -43,7 +40,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄟ = {
+	uv0["ㄟ"] = {
 		this = {
 			this = true
 		}
@@ -53,7 +50,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄠ = {
+	uv0["ㄠ"] = {
 		this = {
 			this = true
 		}
@@ -63,7 +60,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄡ = {
+	uv0["ㄡ"] = {
 		this = {
 			this = true
 		}
@@ -73,7 +70,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄢ = {
+	uv0["ㄢ"] = {
 		this = {
 			this = true
 		}
@@ -83,7 +80,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄣ = {
+	uv0["ㄣ"] = {
 		this = {
 			this = true
 		}
@@ -93,7 +90,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄤ = {
+	uv0["ㄤ"] = {
 		this = {
 			this = true
 		}
@@ -103,7 +100,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄥ = {
+	uv0["ㄥ"] = {
 		this = {
 			this = true
 		}
@@ -113,7 +110,7 @@ end
 temp()
 
 function temp()
-	var_0_1.ㄦ = {
+	uv0["ㄦ"] = {
 		this = {
 			this = true
 		}

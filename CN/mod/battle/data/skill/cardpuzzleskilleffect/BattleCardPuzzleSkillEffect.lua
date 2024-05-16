@@ -1,150 +1,134 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleFormulas
+slot2 = slot0.Battle.BattleUnitEvent
+slot0.Battle.BattleCardPuzzleSkillEffect = class("BattleCardPuzzleSkillEffect")
+slot0.Battle.BattleCardPuzzleSkillEffect.__name = "BattleCardPuzzleSkillEffect"
+slot3 = slot0.Battle.BattleCardPuzzleSkillEffect
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleFormulas
-local var_0_2 = var_0_0.Battle.BattleUnitEvent
-
-var_0_0.Battle.BattleCardPuzzleSkillEffect = class("BattleCardPuzzleSkillEffect")
-var_0_0.Battle.BattleCardPuzzleSkillEffect.__name = "BattleCardPuzzleSkillEffect"
-
-local var_0_3 = var_0_0.Battle.BattleCardPuzzleSkillEffect
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tempData = arg_1_1
-	arg_1_0._type = arg_1_0._tempData.type
-	arg_1_0._targetChoise = arg_1_0._tempData.target_choise
-	arg_1_0._delay = arg_1_0._tempData.arg_list.delay or 0
-	arg_1_0._timerList = {}
-	arg_1_0._timerIndex = 0
+function slot3.Ctor(slot0, slot1)
+	slot0._tempData = slot1
+	slot0._type = slot0._tempData.type
+	slot0._targetChoise = slot0._tempData.target_choise
+	slot0._delay = slot0._tempData.arg_list.delay or 0
+	slot0._timerList = {}
+	slot0._timerIndex = 0
 end
 
-function var_0_3.Execute(arg_2_0, arg_2_1)
-	arg_2_0._caster = var_0_0.Battle.BattleTargetChoise.TargetFleetIndex(nil, {
-		fleetPos = arg_2_0._tempData.caster
+function slot3.Execute(slot0, slot1)
+	slot0._caster = uv0.Battle.BattleTargetChoise.TargetFleetIndex(nil, {
+		fleetPos = slot0._tempData.caster
 	})[1]
 
-	if arg_2_0._delay > 0 then
-		local var_2_0
-		local var_2_1 = arg_2_0._timerIndex + 1
-
-		arg_2_0._timerIndex = var_2_1
-
-		local function var_2_2()
-			if arg_2_0._caster and arg_2_0._caster:IsAlive() then
-				arg_2_0:SkillEffectHandler()
+	if slot0._delay > 0 then
+		slot3 = nil
+		slot4 = slot0._timerIndex + 1
+		slot0._timerIndex = slot4
+		slot0._timerList[slot4] = pg.TimeMgr.GetInstance():AddBattleTimer("BattleSkill", -1, slot0._delay, function ()
+			if uv0._caster and uv0._caster:IsAlive() then
+				uv0:SkillEffectHandler()
 			end
 
-			pg.TimeMgr.GetInstance():RemoveBattleTimer(var_2_0)
+			pg.TimeMgr.GetInstance():RemoveBattleTimer(uv1)
 
-			arg_2_0._timerList[var_2_1] = nil
-		end
+			uv0._timerList[uv2] = nil
+		end, true)
 
-		var_2_0 = pg.TimeMgr.GetInstance():AddBattleTimer("BattleSkill", -1, arg_2_0._delay, var_2_2, true)
-		arg_2_0._timerList[var_2_1] = var_2_0
-	else
-		arg_2_0:SkillEffectHandler()
+		return
 	end
+
+	slot0:SkillEffectHandler()
 end
 
-function var_0_3.SkillEffectHandler(arg_4_0, arg_4_1)
-	return
+function slot3.SkillEffectHandler(slot0, slot1)
 end
 
-function var_0_3.AniEffect(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_2:GetPosition()
-	local var_5_1 = arg_5_1:GetPosition()
+function slot3.AniEffect(slot0, slot1, slot2)
+	slot3 = slot2:GetPosition()
+	slot4 = slot1:GetPosition()
 
-	if arg_5_0._casterAniEffect and arg_5_0._casterAniEffect ~= "" then
-		local var_5_2 = arg_5_0._casterAniEffect
-		local var_5_3
+	if slot0._casterAniEffect and slot0._casterAniEffect ~= "" then
+		slot6 = nil
 
-		if var_5_2.posFun then
-			function var_5_3(arg_6_0)
-				return var_5_2.posFun(var_5_1, var_5_0, arg_6_0)
+		if slot0._casterAniEffect.posFun then
+			function slot6(slot0)
+				return uv0.posFun(uv1, uv2, slot0)
 			end
 		end
 
-		local var_5_4 = {
-			effect = var_5_2.effect,
-			offset = var_5_2.offset,
-			posFun = var_5_3
-		}
-
-		arg_5_1:DispatchEvent(var_0_0.Event.New(var_0_2.ADD_EFFECT, var_5_4))
+		slot1:DispatchEvent(uv0.Event.New(uv1.ADD_EFFECT, {
+			effect = slot5.effect,
+			offset = slot5.offset,
+			posFun = slot6
+		}))
 	end
 
-	if arg_5_0._targetAniEffect and arg_5_0._targetAniEffect ~= "" then
-		local var_5_5 = arg_5_0._targetAniEffect
-		local var_5_6
+	if slot0._targetAniEffect and slot0._targetAniEffect ~= "" then
+		slot6 = nil
 
-		if var_5_5.posFun then
-			function var_5_6(arg_7_0)
-				return var_5_5.posFun(var_5_1, var_5_0, arg_7_0)
+		if slot0._targetAniEffect.posFun then
+			function slot6(slot0)
+				return uv0.posFun(uv1, uv2, slot0)
 			end
 		end
 
-		local var_5_7 = {
-			effect = var_5_5.effect,
-			offset = var_5_5.offset,
-			posFun = var_5_6
-		}
-
-		arg_5_2:DispatchEvent(var_0_0.Event.New(var_0_2.ADD_EFFECT, var_5_7))
+		slot2:DispatchEvent(uv0.Event.New(uv1.ADD_EFFECT, {
+			effect = slot5.effect,
+			offset = slot5.offset,
+			posFun = slot6
+		}))
 	end
 end
 
-function var_0_3.GetTarget(arg_8_0)
-	if not arg_8_0._targetChoise then
+function slot3.GetTarget(slot0)
+	if not slot0._targetChoise then
 		return {}
 	end
 
-	local var_8_0
-
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0._targetChoise) do
-		var_8_0 = var_0_0.Battle.BattleTargetChoise[iter_8_1](arg_8_0._caster, arg_8_0._tempData.arg_list, var_8_0)
+	for slot5, slot6 in ipairs(slot0._targetChoise) do
+		slot1 = uv0.Battle.BattleTargetChoise[slot6](slot0._caster, slot0._tempData.arg_list, nil)
 	end
 
-	return var_8_0
+	return slot1
 end
 
-function var_0_3.GetCardPuzzleComponent(arg_9_0)
-	return arg_9_0._card:GetClient()
+function slot3.GetCardPuzzleComponent(slot0)
+	return slot0._card:GetClient()
 end
 
-function var_0_3.GetFleetVO(arg_10_0)
-	return arg_10_0:GetCardPuzzleComponent():GetFleetVO()
+function slot3.GetFleetVO(slot0)
+	return slot0:GetCardPuzzleComponent():GetFleetVO()
 end
 
-function var_0_3.ConfigCard(arg_11_0, arg_11_1)
-	arg_11_0._card = arg_11_1
+function slot3.ConfigCard(slot0, slot1)
+	slot0._card = slot1
 end
 
-function var_0_3.SetQueue(arg_12_0, arg_12_1)
-	arg_12_0._queue = arg_12_1
+function slot3.SetQueue(slot0, slot1)
+	slot0._queue = slot1
 end
 
-function var_0_3.Finale(arg_13_0)
-	arg_13_0._queue:EffectFinale(arg_13_0)
+function slot3.Finale(slot0)
+	slot0._queue:EffectFinale(slot0)
 end
 
-function var_0_3.HoldForInput(arg_14_0)
+function slot3.HoldForInput(slot0)
 	return false
 end
 
-function var_0_3.MoveCardAfterCast(arg_15_0)
-	return var_0_0.Battle.BattleFleetCardPuzzleComponent.CARD_PILE_INDEX_DISCARD
+function slot3.MoveCardAfterCast(slot0)
+	return uv0.Battle.BattleFleetCardPuzzleComponent.CARD_PILE_INDEX_DISCARD
 end
 
-function var_0_3.Interrupt(arg_16_0)
-	return
+function slot3.Interrupt(slot0)
 end
 
-function var_0_3.Clear(arg_17_0)
-	for iter_17_0, iter_17_1 in pairs(arg_17_0._timerList) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_17_1)
+function slot3.Clear(slot0)
+	for slot4, slot5 in pairs(slot0._timerList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot5)
 
-		arg_17_0._timerList[iter_17_0] = nil
+		slot0._timerList[slot4] = nil
 	end
 
-	arg_17_0._commander = nil
+	slot0._commander = nil
 end

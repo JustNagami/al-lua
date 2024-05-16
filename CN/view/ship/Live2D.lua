@@ -1,120 +1,111 @@
-﻿local var_0_0 = class("Live2D")
-
-var_0_0.STATE_LOADING = 0
-var_0_0.STATE_INITED = 1
-var_0_0.STATE_DISPOSE = 2
-
-local var_0_1
-local var_0_2 = 5
-local var_0_3 = 3
-local var_0_4 = 0.3
-
-var_0_0.DRAG_TIME_ACTION = 1
-var_0_0.DRAG_CLICK_ACTION = 2
-var_0_0.DRAG_DOWN_ACTION = 3
-var_0_0.DRAG_RELATION_XY = 4
-var_0_0.DRAG_RELATION_IDLE = 5
-var_0_0.DRAG_CLICK_MANY = 6
-var_0_0.EVENT_ACTION_APPLY = "event action apply"
-var_0_0.EVENT_ACTION_ABLE = "event action able"
-var_0_0.EVENT_ADD_PARAMETER_COM = "event add parameter com "
-var_0_0.EVENT_REMOVE_PARAMETER_COM = "event remove parameter com "
-var_0_0.relation_type_drag_x = 101
-var_0_0.relation_type_drag_y = 102
-var_0_0.relation_type_action_index = 103
-
-local var_0_5 = {
+slot0 = class("Live2D")
+slot0.STATE_LOADING = 0
+slot0.STATE_INITED = 1
+slot0.STATE_DISPOSE = 2
+slot1 = nil
+slot2 = 5
+slot3 = 3
+slot4 = 0.3
+slot0.DRAG_TIME_ACTION = 1
+slot0.DRAG_CLICK_ACTION = 2
+slot0.DRAG_DOWN_ACTION = 3
+slot0.DRAG_RELATION_XY = 4
+slot0.DRAG_RELATION_IDLE = 5
+slot0.DRAG_CLICK_MANY = 6
+slot0.EVENT_ACTION_APPLY = "event action apply"
+slot0.EVENT_ACTION_ABLE = "event action able"
+slot0.EVENT_ADD_PARAMETER_COM = "event add parameter com "
+slot0.EVENT_REMOVE_PARAMETER_COM = "event remove parameter com "
+slot0.relation_type_drag_x = 101
+slot0.relation_type_drag_y = 102
+slot0.relation_type_action_index = 103
+slot5 = {
 	CubismParameterBlendMode.Override,
 	CubismParameterBlendMode.Additive,
 	CubismParameterBlendMode.Multiply
 }
 
-function var_0_0.GenerateData(arg_1_0)
-	local var_1_0 = {
-		SetData = function(arg_2_0, arg_2_1)
-			arg_2_0.ship = arg_2_1.ship
-			arg_2_0.parent = arg_2_1.parent
-			arg_2_0.scale = arg_2_1.scale
+function slot0.GenerateData(slot0)
+	slot1 = {
+		SetData = function (slot0, slot1)
+			slot0.ship = slot1.ship
+			slot0.parent = slot1.parent
+			slot0.scale = slot1.scale
+			slot2 = slot0:GetShipSkinConfig().live2d_offset
+			slot0.gyro = slot0:GetShipSkinConfig().gyro or 0
+			slot0.shipL2dId = slot0:GetShipSkinConfig().ship_l2d_id
+			slot0.skinId = slot0:GetShipSkinConfig().id
+			slot0.spineUseLive2d = false
 
-			local var_2_0 = arg_2_0:GetShipSkinConfig().live2d_offset
-
-			arg_2_0.gyro = arg_2_0:GetShipSkinConfig().gyro or 0
-			arg_2_0.shipL2dId = arg_2_0:GetShipSkinConfig().ship_l2d_id
-			arg_2_0.skinId = arg_2_0:GetShipSkinConfig().id
-			arg_2_0.spineUseLive2d = false
-
-			if arg_2_0.skinId then
-				arg_2_0.spineUseLive2d = pg.ship_skin_template[arg_2_0.skinId].spine_use_live2d == 1
+			if slot0.skinId then
+				slot0.spineUseLive2d = pg.ship_skin_template[slot0.skinId].spine_use_live2d == 1
 			end
 
-			arg_2_0.position = arg_2_1.position + BuildVector3(var_2_0)
-			arg_2_0.l2dDragRate = arg_2_0:GetShipSkinConfig().l2d_drag_rate
-			arg_2_0.loadPrefs = arg_2_1.loadPrefs
+			slot0.position = slot1.position + BuildVector3(slot2)
+			slot0.l2dDragRate = slot0:GetShipSkinConfig().l2d_drag_rate
+			slot0.loadPrefs = slot1.loadPrefs
 		end,
-		GetShipName = function(arg_3_0)
-			return arg_3_0.ship:getPainting()
+		GetShipName = function (slot0)
+			return slot0.ship:getPainting()
 		end,
-		GetShipSkinConfig = function(arg_4_0)
-			return arg_4_0.ship:GetSkinConfig()
+		GetShipSkinConfig = function (slot0)
+			return slot0.ship:GetSkinConfig()
 		end,
-		isEmpty = function(arg_5_0)
-			return arg_5_0.ship == nil
+		isEmpty = function (slot0)
+			return slot0.ship == nil
 		end,
-		Clear = function(arg_6_0)
-			arg_6_0.ship = nil
-			arg_6_0.parent = nil
-			arg_6_0.scale = nil
-			arg_6_0.position = nil
+		Clear = function (slot0)
+			slot0.ship = nil
+			slot0.parent = nil
+			slot0.scale = nil
+			slot0.position = nil
 		end
 	}
 
-	var_1_0:SetData(arg_1_0)
+	slot1:SetData(slot0)
 
-	return var_1_0
+	return slot1
 end
 
-local function var_0_6(arg_7_0)
-	local var_7_0 = arg_7_0.live2dData:GetShipSkinConfig()
-	local var_7_1 = var_7_0.lip_sync_gain
-	local var_7_2 = var_7_0.lip_smoothing
+function slot6(slot0)
+	slot1 = slot0.live2dData:GetShipSkinConfig()
+	slot3 = slot1.lip_smoothing
 
-	if var_7_1 and var_7_1 ~= 0 then
-		arg_7_0._go:GetComponent("CubismCriSrcMouthInput").Gain = var_7_1
+	if slot1.lip_sync_gain and slot2 ~= 0 then
+		slot0._go:GetComponent("CubismCriSrcMouthInput").Gain = slot2
 	end
 
-	if var_7_2 and var_7_2 ~= 0 then
-		arg_7_0._go:GetComponent("CubismCriSrcMouthInput").Smoothing = var_7_2
+	if slot3 and slot3 ~= 0 then
+		slot0._go:GetComponent("CubismCriSrcMouthInput").Smoothing = slot3
 	end
 end
 
-local function var_0_7(arg_8_0)
-	local var_8_0 = arg_8_0.live2dData:GetShipSkinConfig().l2d_para_range
-
-	if var_8_0 ~= nil and type(var_8_0) == "table" then
-		for iter_8_0, iter_8_1 in pairs(var_8_0) do
-			arg_8_0.liveCom:SetParaRange(iter_8_0, iter_8_1)
+function slot7(slot0)
+	if slot0.live2dData:GetShipSkinConfig().l2d_para_range ~= nil and type(slot2) == "table" then
+		for slot6, slot7 in pairs(slot2) do
+			slot0.liveCom:SetParaRange(slot6, slot7)
 		end
 	end
 end
 
-local function var_0_8(arg_9_0, arg_9_1)
-	if not arg_9_1 or arg_9_1 == "" then
+function slot8(slot0, slot1)
+	if not slot1 or slot1 == "" then
 		return false
 	end
 
-	if arg_9_0.enablePlayActions and #arg_9_0.enablePlayActions > 0 and not table.contains(arg_9_0.enablePlayActions, arg_9_1) then
-		warning(tostring(arg_9_1) .. "不在白名单中,不播放该动作")
-
-		return false
-	end
-
-	if arg_9_0.ignorePlayActions and #arg_9_0.ignorePlayActions > 0 and table.contains(arg_9_0.ignorePlayActions, arg_9_1) then
-		warning(tostring(arg_9_1) .. "在黑名单中，不播放该动作")
+	if slot0.enablePlayActions and #slot0.enablePlayActions > 0 and not table.contains(slot0.enablePlayActions, slot1) then
+		warning(tostring(slot1) .. "不在白名单中,不播放该动作")
 
 		return false
 	end
 
-	if arg_9_0._readlyToStop then
+	if slot0.ignorePlayActions and #slot0.ignorePlayActions > 0 and table.contains(slot0.ignorePlayActions, slot1) then
+		warning(tostring(slot1) .. "在黑名单中，不播放该动作")
+
+		return false
+	end
+
+	if slot0._readlyToStop then
 		print("l2d即将停止，不播放该动作")
 
 		return false
@@ -123,770 +114,736 @@ local function var_0_8(arg_9_0, arg_9_1)
 	return true
 end
 
-local function var_0_9(arg_10_0, arg_10_1, arg_10_2)
-	if not var_0_8(arg_10_0, arg_10_1) then
+function slot9(slot0, slot1, slot2)
+	if not uv0(slot0, slot1) then
 		return false
 	end
 
-	if arg_10_0.updateAtom then
-		arg_10_0:AtomSouceFresh()
+	if slot0.updateAtom then
+		slot0:AtomSouceFresh()
 	end
 
-	if arg_10_0.animationClipNames then
-		local var_10_0 = arg_10_0:checkActionExist(arg_10_1)
-
-		if (not var_10_0 or var_10_0 == false) and string.find(arg_10_1, "main_") then
-			arg_10_1 = "main_3"
-		end
+	if slot0.animationClipNames and (not slot0:checkActionExist(slot1) or slot3 == false) and string.find(slot1, "main_") then
+		slot1 = "main_3"
 	end
 
-	if not arg_10_0.isPlaying or arg_10_2 then
-		local var_10_1 = var_0_1.action2Id[arg_10_1]
+	if not slot0.isPlaying or slot2 then
+		if uv1.action2Id[slot1] then
+			slot0.playActionName = slot1
 
-		if var_10_1 then
-			arg_10_0.playActionName = arg_10_1
-
-			arg_10_0.liveCom:SetAction(var_10_1)
-			arg_10_0:live2dActionChange(true)
+			slot0.liveCom:SetAction(slot3)
+			slot0:live2dActionChange(true)
 
 			return true
 		else
-			print(tostring(arg_10_1) .. " action is not exist")
+			print(tostring(slot1) .. " action is not exist")
 		end
 	end
 
 	return false
 end
 
-function var_0_0.checkActionExist(arg_11_0, arg_11_1)
-	return (table.indexof(arg_11_0.animationClipNames, arg_11_1))
+function slot0.checkActionExist(slot0, slot1)
+	return table.indexof(slot0.animationClipNames, slot1)
 end
 
-local function var_0_10(arg_12_0, arg_12_1)
-	arg_12_0.liveCom:SetCenterPart("Drawables/TouchHead", Vector3.zero)
+function slot10(slot0, slot1)
+	slot0.liveCom:SetCenterPart("Drawables/TouchHead", Vector3.zero)
 
-	arg_12_0.liveCom.DampingTime = 0.3
+	slot0.liveCom.DampingTime = 0.3
 end
 
-local function var_0_11(arg_13_0, arg_13_1, arg_13_2)
-	if arg_13_1 == Live2D.EVENT_ACTION_APPLY then
-		local var_13_0 = arg_13_2.id
-		local var_13_1 = arg_13_2.action
-		local var_13_2 = arg_13_2.callback
-		local var_13_3 = arg_13_2.activeData
-		local var_13_4 = arg_13_2.focus
-		local var_13_5 = arg_13_2.react
+function slot11(slot0, slot1, slot2)
+	if slot1 == Live2D.EVENT_ACTION_APPLY then
+		slot3 = slot2.id
+		slot5 = slot2.callback
+		slot6 = slot2.activeData
+		slot7 = slot2.focus
+		slot8 = slot2.react
 
-		if not var_0_8(arg_13_0, var_13_1) then
+		if not uv0(slot0, slot2.action) then
 			return
 		end
 
-		arg_13_0:setReactPos(tobool(var_13_5))
+		slot0:setReactPos(tobool(slot8))
 
-		if var_13_1 then
-			var_0_9(arg_13_0, var_13_1, var_13_4 or false)
+		if slot4 then
+			uv1(slot0, slot4, slot7 or false)
 		end
 
-		arg_13_0:applyActiveData(arg_13_2, var_13_3)
+		slot0:applyActiveData(slot2, slot6)
 
-		if var_13_2 then
-			var_13_2()
+		if slot5 then
+			slot5()
 		end
-	elseif arg_13_1 == Live2D.EVENT_ACTION_ABLE then
-		if arg_13_0.ableFlag ~= arg_13_2.ableFlag then
-			arg_13_0.ableFlag = arg_13_2.ableFlag
+	elseif slot1 == Live2D.EVENT_ACTION_ABLE then
+		if slot0.ableFlag ~= slot2.ableFlag then
+			slot0.ableFlag = slot2.ableFlag
 
-			if arg_13_2.ableFlag then
-				arg_13_0.tempEnable = arg_13_0.enablePlayActions
-				arg_13_0.enablePlayActions = {
+			if slot2.ableFlag then
+				slot0.tempEnable = slot0.enablePlayActions
+				slot0.enablePlayActions = {
 					"none action apply"
 				}
 			else
-				arg_13_0.enablePlayActions = arg_13_0.tempEnable
+				slot0.enablePlayActions = slot0.tempEnable
 			end
 		else
 			print("able flag 相同，不执行操作")
 		end
 
-		if arg_13_2.callback then
-			arg_13_2.callback()
+		if slot2.callback then
+			slot2.callback()
 		end
-	elseif arg_13_1 == Live2D.EVENT_ADD_PARAMETER_COM then
-		arg_13_0.liveCom:AddParameterValue(arg_13_2.com, arg_13_2.start, var_0_5[arg_13_2.mode])
-	elseif arg_13_1 == Live2D.EVENT_REMOVE_PARAMETER_COM then
-		arg_13_0.liveCom:removeParameterValue(arg_13_2.com)
+	elseif slot1 == Live2D.EVENT_ADD_PARAMETER_COM then
+		slot0.liveCom:AddParameterValue(slot2.com, slot2.start, uv2[slot2.mode])
+	elseif slot1 == Live2D.EVENT_REMOVE_PARAMETER_COM then
+		slot0.liveCom:removeParameterValue(slot2.com)
 	end
 end
 
-local function var_0_12(arg_14_0)
-	if not arg_14_0._l2dCharEnable then
+function slot12(slot0)
+	if not slot0._l2dCharEnable then
 		return
 	end
 
-	if arg_14_0._readlyToStop then
+	if slot0._readlyToStop then
 		return
 	end
 
-	local var_14_0 = false
-	local var_14_1 = ReflectionHelp.RefGetField(typeof(Live2dChar), "reactPos", arg_14_0.liveCom)
+	slot1 = false
 
-	for iter_14_0 = 1, #arg_14_0.drags do
-		arg_14_0.drags[iter_14_0]:changeReactValue(var_14_1)
-		arg_14_0.drags[iter_14_0]:stepParameter()
+	for slot6 = 1, #slot0.drags do
+		slot0.drags[slot6]:changeReactValue(ReflectionHelp.RefGetField(typeof(Live2dChar), "reactPos", slot0.liveCom))
+		slot0.drags[slot6]:stepParameter()
 
-		if (arg_14_0.drags[iter_14_0]:getParameToTargetFlag() or arg_14_0.drags[iter_14_0]:getActive()) and arg_14_0.drags[iter_14_0]:getIgnoreReact() then
-			var_14_0 = true
+		if (slot0.drags[slot6]:getParameToTargetFlag() or slot0.drags[slot6]:getActive()) and slot0.drags[slot6]:getIgnoreReact() then
+			slot1 = true
 		end
 
-		local var_14_2 = arg_14_0.drags[iter_14_0]:getParameter()
-		local var_14_3 = arg_14_0.drags[iter_14_0]:getParameterUpdateFlag()
-
-		if var_14_2 and var_14_3 then
-			local var_14_4 = arg_14_0.drags[iter_14_0]:getParameterCom()
-
-			if var_14_4 then
-				arg_14_0.liveCom:ChangeParameterData(var_14_4, var_14_2)
-			end
+		if slot0.drags[slot6]:getParameter() and slot0.drags[slot6]:getParameterUpdateFlag() and slot0.drags[slot6]:getParameterCom() then
+			slot0.liveCom:ChangeParameterData(slot10, slot8)
 		end
 
-		local var_14_5 = arg_14_0.drags[iter_14_0]:getRelationParameterList()
-
-		for iter_14_1, iter_14_2 in ipairs(var_14_5) do
-			if iter_14_2.enable then
-				arg_14_0.liveCom:ChangeParameterData(iter_14_2.com, iter_14_2.value)
+		for slot14, slot15 in ipairs(slot0.drags[slot6]:getRelationParameterList()) do
+			if slot15.enable then
+				slot0.liveCom:ChangeParameterData(slot15.com, slot15.value)
 			end
 		end
 	end
 
-	if var_14_0 == arg_14_0.ignoreReact or not var_14_0 and (arg_14_0.mouseInputDown or arg_14_0.isPlaying) then
-		-- block empty
-	else
-		arg_14_0:setReactPos(var_14_0)
+	if slot1 ~= slot0.ignoreReact then
+		if not slot1 then
+			if not slot0.mouseInputDown then
+				if slot0.isPlaying then
+					-- Nothing
+				end
+			end
+		else
+			slot0:setReactPos(slot1)
+		end
 	end
 end
 
-local function var_0_13(arg_15_0)
-	arg_15_0.drags = {}
-	arg_15_0.dragParts = {}
+function slot13(slot0)
+	slot0.drags = {}
+	slot0.dragParts = {}
 
-	for iter_15_0 = 1, #var_0_1.assistantTouchParts do
-		table.insert(arg_15_0.dragParts, var_0_1.assistantTouchParts[iter_15_0])
+	for slot4 = 1, #uv0.assistantTouchParts do
+		table.insert(slot0.dragParts, uv0.assistantTouchParts[slot4])
 	end
 
-	arg_15_0._l2dCharEnable = true
-	arg_15_0._shopPreView = arg_15_0.live2dData.shopPreView
+	slot0._l2dCharEnable = true
+	slot0._shopPreView = slot0.live2dData.shopPreView
 
-	for iter_15_1, iter_15_2 in ipairs(arg_15_0.live2dData.shipL2dId) do
-		local var_15_0 = pg.ship_l2d[iter_15_2]
+	for slot4, slot5 in ipairs(slot0.live2dData.shipL2dId) do
+		if pg.ship_l2d[slot5] and slot0:getDragEnable(slot6) then
+			slot8 = Live2dDrag.New(slot6, slot0.live2dData)
 
-		if var_15_0 and arg_15_0:getDragEnable(var_15_0) then
-			local var_15_1 = Live2dDrag.New(var_15_0, arg_15_0.live2dData)
-			local var_15_2 = arg_15_0.liveCom:GetCubismParameter(var_15_0.parameter)
-
-			var_15_1:setParameterCom(var_15_2)
-			var_15_1:setEventCallback(function(arg_16_0, arg_16_1)
-				var_0_11(arg_15_0, arg_16_0, arg_16_1)
+			slot8:setParameterCom(slot0.liveCom:GetCubismParameter(slot6.parameter))
+			slot8:setEventCallback(function (slot0, slot1)
+				uv0(uv1, slot0, slot1)
 			end)
-			arg_15_0.liveCom:AddParameterValue(var_15_1.parameterName, var_15_1.startValue, var_0_5[var_15_0.mode])
+			slot0.liveCom:AddParameterValue(slot8.parameterName, slot8.startValue, uv2[slot6.mode])
 
-			if var_15_0.relation_parameter and var_15_0.relation_parameter.list then
-				local var_15_3 = var_15_0.relation_parameter.list
-
-				for iter_15_3, iter_15_4 in ipairs(var_15_3) do
-					local var_15_4 = arg_15_0.liveCom:GetCubismParameter(iter_15_4.name)
-
-					if var_15_4 then
-						var_15_1:addRelationComData(var_15_4, iter_15_4)
-
-						local var_15_5 = iter_15_4.mode or var_15_0.mode
-
-						arg_15_0.liveCom:AddParameterValue(iter_15_4.name, iter_15_4.start or var_15_1.startValue or 0, var_0_5[var_15_5])
+			if slot6.relation_parameter and slot6.relation_parameter.list then
+				for slot14, slot15 in ipairs(slot6.relation_parameter.list) do
+					if slot0.liveCom:GetCubismParameter(slot15.name) then
+						slot8:addRelationComData(slot16, slot15)
+						slot0.liveCom:AddParameterValue(slot15.name, slot15.start or slot8.startValue or 0, uv2[slot15.mode or slot6.mode])
 					end
 				end
 			end
 
-			table.insert(arg_15_0.drags, var_15_1)
+			table.insert(slot0.drags, slot8)
 
-			if not table.contains(arg_15_0.dragParts, var_15_1.drawAbleName) then
-				table.insert(arg_15_0.dragParts, var_15_1.drawAbleName)
+			if not table.contains(slot0.dragParts, slot8.drawAbleName) then
+				table.insert(slot0.dragParts, slot8.drawAbleName)
 			end
 		end
 	end
 
-	arg_15_0.liveCom:SetDragParts(arg_15_0.dragParts)
+	slot0.liveCom:SetDragParts(slot0.dragParts)
 
-	arg_15_0.eventTrigger = GetOrAddComponent(arg_15_0.liveCom.transform.parent, typeof(EventTriggerListener))
+	slot0.eventTrigger = GetOrAddComponent(slot0.liveCom.transform.parent, typeof(EventTriggerListener))
 
-	arg_15_0.eventTrigger:AddPointDownFunc(function()
-		if arg_15_0.useEventTriggerFlag then
-			arg_15_0:onPointDown()
+	slot0.eventTrigger:AddPointDownFunc(function ()
+		if uv0.useEventTriggerFlag then
+			uv0:onPointDown()
 		end
 	end)
-	arg_15_0.eventTrigger:AddPointUpFunc(function()
-		if arg_15_0.useEventTriggerFlag then
-			arg_15_0:onPointUp()
+	slot0.eventTrigger:AddPointUpFunc(function ()
+		if uv0.useEventTriggerFlag then
+			uv0:onPointUp()
 		end
 	end)
-	arg_15_0.liveCom:SetMouseInputActions(System.Action(function()
-		if not arg_15_0.useEventTriggerFlag then
-			arg_15_0:onPointDown()
+
+	function slot5()
+		if not uv0.useEventTriggerFlag then
+			uv0:onPointUp()
 		end
-	end), System.Action(function()
-		if not arg_15_0.useEventTriggerFlag then
-			arg_15_0:onPointUp()
-		end
-	end))
-
-	arg_15_0.paraRanges = ReflectionHelp.RefGetField(typeof(Live2dChar), "paraRanges", arg_15_0.liveCom)
-	arg_15_0.destinations = {}
-
-	local var_15_6 = ReflectionHelp.RefGetProperty(typeof(Live2dChar), "Destinations", arg_15_0.liveCom)
-
-	for iter_15_5 = 0, var_15_6.Length - 1 do
-		local var_15_7 = var_15_6[iter_15_5]
-
-		table.insert(arg_15_0.destinations, var_15_6[iter_15_5])
 	end
 
-	arg_15_0.timer = Timer.New(function()
-		var_0_12(arg_15_0)
+	slot0.liveCom:SetMouseInputActions(System.Action(function ()
+		if not uv0.useEventTriggerFlag then
+			uv0:onPointDown()
+		end
+	end), System.Action(slot5))
+
+	slot0.paraRanges = ReflectionHelp.RefGetField(typeof(Live2dChar), "paraRanges", slot0.liveCom)
+	slot0.destinations = {}
+
+	for slot5 = 0, ReflectionHelp.RefGetProperty(typeof(Live2dChar), "Destinations", slot0.liveCom).Length - 1 do
+		slot6 = slot1[slot5]
+
+		table.insert(slot0.destinations, slot1[slot5])
+	end
+
+	slot0.timer = Timer.New(function ()
+		uv0(uv1)
 	end, 0.03333333333333333, -1)
 
-	arg_15_0.timer:Start()
-	var_0_12(arg_15_0)
+	slot0.timer:Start()
+	uv3(slot0)
 end
 
-function var_0_0.onPointDown(arg_22_0)
-	if not arg_22_0._l2dCharEnable then
+function slot0.onPointDown(slot0)
+	if not slot0._l2dCharEnable then
 		return
 	end
 
-	arg_22_0.mouseInputDown = true
+	slot0.mouseInputDown = true
 
-	if #arg_22_0.drags > 0 and arg_22_0.liveCom:GetDragPart() > 0 then
-		local var_22_0 = arg_22_0.liveCom:GetDragPart()
-		local var_22_1 = arg_22_0.dragParts[var_22_0]
+	if #slot0.drags > 0 and slot0.liveCom:GetDragPart() > 0 then
+		slot1 = slot0.liveCom:GetDragPart()
 
-		if var_22_0 > 0 and var_22_1 then
-			for iter_22_0, iter_22_1 in ipairs(arg_22_0.drags) do
-				if iter_22_1.drawAbleName == var_22_1 then
-					iter_22_1:startDrag()
+		if slot1 > 0 and slot0.dragParts[slot1] then
+			for slot6, slot7 in ipairs(slot0.drags) do
+				if slot7.drawAbleName == slot2 then
+					slot7:startDrag()
 				end
 			end
 		end
 	end
 end
 
-function var_0_0.onPointUp(arg_23_0)
-	if not arg_23_0._l2dCharEnable then
+function slot0.onPointUp(slot0)
+	if not slot0._l2dCharEnable then
 		return
 	end
 
-	arg_23_0.mouseInputDown = false
+	slot0.mouseInputDown = false
 
-	if arg_23_0.drags and #arg_23_0.drags > 0 then
-		local var_23_0 = arg_23_0.liveCom:GetDragPart()
-
-		if var_23_0 > 0 then
-			local var_23_1 = arg_23_0.dragParts[var_23_0]
+	if slot0.drags and #slot0.drags > 0 then
+		if slot0.liveCom:GetDragPart() > 0 then
+			slot2 = slot0.dragParts[slot1]
 		end
 
-		for iter_23_0 = 1, #arg_23_0.drags do
-			arg_23_0.drags[iter_23_0]:stopDrag()
+		for slot5 = 1, #slot0.drags do
+			slot0.drags[slot5]:stopDrag()
 		end
 	end
 end
 
-function var_0_0.changeTriggerFlag(arg_24_0, arg_24_1)
-	arg_24_0.useEventTriggerFlag = arg_24_1
+function slot0.changeTriggerFlag(slot0, slot1)
+	slot0.useEventTriggerFlag = slot1
 end
 
-local function var_0_14(arg_25_0, arg_25_1)
-	arg_25_0._go = arg_25_1
-	arg_25_0._tf = tf(arg_25_1)
+function slot14(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
 
-	UIUtil.SetLayerRecursively(arg_25_0._go, LayerMask.NameToLayer("UI"))
-	arg_25_0._tf:SetParent(arg_25_0.live2dData.parent, true)
+	UIUtil.SetLayerRecursively(slot0._go, LayerMask.NameToLayer("UI"))
+	slot0._tf:SetParent(slot0.live2dData.parent, true)
 
-	arg_25_0._tf.localScale = arg_25_0.live2dData.scale
-	arg_25_0._tf.localPosition = arg_25_0.live2dData.position
-	arg_25_0.liveCom = arg_25_1:GetComponent(typeof(Live2dChar))
-	arg_25_0._animator = arg_25_1:GetComponent(typeof(Animator))
-	arg_25_0.animationClipNames = {}
+	slot0._tf.localScale = slot0.live2dData.scale
+	slot0._tf.localPosition = slot0.live2dData.position
+	slot0.liveCom = slot1:GetComponent(typeof(Live2dChar))
+	slot0._animator = slot1:GetComponent(typeof(Animator))
+	slot0.animationClipNames = {}
 
-	if arg_25_0._animator and arg_25_0._animator.runtimeAnimatorController then
-		local var_25_0 = arg_25_0._animator.runtimeAnimatorController.animationClips
-		local var_25_1 = var_25_0.Length
-
-		for iter_25_0 = 0, var_25_1 - 1 do
-			table.insert(arg_25_0.animationClipNames, var_25_0[iter_25_0].name)
+	if slot0._animator and slot0._animator.runtimeAnimatorController then
+		for slot7 = 0, slot0._animator.runtimeAnimatorController.animationClips.Length - 1 do
+			table.insert(slot0.animationClipNames, slot2[slot7].name)
 		end
 	end
 
-	local var_25_2 = var_0_1.action2Id.idle
+	slot0.liveCom:SetReactMotions(uv0.idleActions)
+	slot0.liveCom:SetAction(uv0.action2Id.idle)
 
-	arg_25_0.liveCom:SetReactMotions(var_0_1.idleActions)
-	arg_25_0.liveCom:SetAction(var_25_2)
+	function slot0.liveCom.FinishAction(slot0)
+		uv0:live2dActionChange(false)
 
-	function arg_25_0.liveCom.FinishAction(arg_26_0)
-		arg_25_0:live2dActionChange(false)
+		if uv0.finishActionCB then
+			uv0.finishActionCB()
 
-		if arg_25_0.finishActionCB then
-			arg_25_0.finishActionCB()
-
-			arg_25_0.finishActionCB = nil
+			uv0.finishActionCB = nil
 		end
 
-		arg_25_0.liveCom:SetAction(var_0_1.idleActions[math.ceil(math.random(#var_0_1.idleActions))])
+		uv0.liveCom:SetAction(uv1.idleActions[math.ceil(math.random(#uv1.idleActions))])
 	end
 
-	function arg_25_0.liveCom.EventAction(arg_27_0)
-		if arg_25_0.animEventCB then
-			arg_25_0.animEventCB(arg_27_0)
+	function slot0.liveCom.EventAction(slot0)
+		if uv0.animEventCB then
+			uv0.animEventCB(slot0)
 
-			arg_25_0.animEventCB = nil
+			uv0.animEventCB = nil
 		end
 	end
 
-	arg_25_0.liveCom:SetTouchParts(var_0_1.assistantTouchParts)
+	slot0.liveCom:SetTouchParts(uv0.assistantTouchParts)
 
-	if arg_25_0.live2dData and arg_25_0.live2dData.ship and arg_25_0.live2dData.ship.propose then
-		arg_25_0:changeParamaterValue("Paramring", 1)
+	if slot0.live2dData and slot0.live2dData.ship and slot0.live2dData.ship.propose then
+		slot0:changeParamaterValue("Paramring", 1)
 	else
-		arg_25_0:changeParamaterValue("Paramring", 0)
+		slot0:changeParamaterValue("Paramring", 0)
 	end
 
-	if arg_25_0.live2dData.l2dDragRate and #arg_25_0.live2dData.l2dDragRate > 0 then
-		arg_25_0.liveCom.DragRateX = arg_25_0.live2dData.l2dDragRate[1] * var_0_2
-		arg_25_0.liveCom.DragRateY = arg_25_0.live2dData.l2dDragRate[2] * var_0_3
-		arg_25_0.liveCom.DampingTime = arg_25_0.live2dData.l2dDragRate[3] * var_0_4
+	if slot0.live2dData.l2dDragRate and #slot0.live2dData.l2dDragRate > 0 then
+		slot0.liveCom.DragRateX = slot0.live2dData.l2dDragRate[1] * uv1
+		slot0.liveCom.DragRateY = slot0.live2dData.l2dDragRate[2] * uv2
+		slot0.liveCom.DampingTime = slot0.live2dData.l2dDragRate[3] * uv3
 	end
 
-	var_0_6(arg_25_0)
-	var_0_7(arg_25_0)
-	var_0_10(arg_25_0)
+	uv4(slot0)
+	uv5(slot0)
+	uv6(slot0)
 
-	if arg_25_0.live2dData.shipL2dId and #arg_25_0.live2dData.shipL2dId > 0 then
-		var_0_13(arg_25_0)
+	if slot0.live2dData.shipL2dId and #slot0.live2dData.shipL2dId > 0 then
+		uv7(slot0)
 	end
 
-	arg_25_0.state = var_0_0.STATE_INITED
+	slot0.state = uv8.STATE_INITED
 
-	if arg_25_0.delayChangeParamater and #arg_25_0.delayChangeParamater > 0 then
-		for iter_25_1 = 1, #arg_25_0.delayChangeParamater do
-			local var_25_3 = arg_25_0.delayChangeParamater[iter_25_1]
+	if slot0.delayChangeParamater and #slot0.delayChangeParamater > 0 then
+		for slot6 = 1, #slot0.delayChangeParamater do
+			slot7 = slot0.delayChangeParamater[slot6]
 
-			arg_25_0:changeParamaterValue(var_25_3[1], var_25_3[2])
+			slot0:changeParamaterValue(slot7[1], slot7[2])
 		end
 
-		arg_25_0.delayChangeParamater = nil
+		slot0.delayChangeParamater = nil
 	end
 
-	arg_25_0.enablePlayActions = {}
-	arg_25_0.ignorePlayActions = {}
+	slot0.enablePlayActions = {}
+	slot0.ignorePlayActions = {}
 
-	arg_25_0:changeIdleIndex(0)
-	arg_25_0:loadLive2dData()
+	slot0:changeIdleIndex(0)
+	slot0:loadLive2dData()
 end
 
-function var_0_0.Ctor(arg_28_0, arg_28_1, arg_28_2)
-	arg_28_0.state = var_0_0.STATE_LOADING
-	arg_28_0.live2dData = arg_28_1
-	var_0_1 = pg.AssistantInfo
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.state = uv0.STATE_LOADING
+	slot0.live2dData = slot1
+	uv1 = pg.AssistantInfo
 
-	assert(not arg_28_0.live2dData:isEmpty())
+	assert(not slot0.live2dData:isEmpty())
 
-	local var_28_0 = arg_28_0.live2dData:GetShipName()
+	slot0.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(slot0.live2dData:GetShipName(), function (slot0)
+		uv0(uv1, slot0)
 
-	local function var_28_1(arg_29_0)
-		var_0_14(arg_28_0, arg_29_0)
-
-		if arg_28_2 then
-			arg_28_2(arg_28_0)
+		if uv2 then
+			uv2(uv1)
 		end
-	end
-
-	arg_28_0.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(var_28_0, var_28_1)
-	Input.gyro.enabled = arg_28_0.live2dData.gyro == 1 and PlayerPrefs.GetInt(GYRO_ENABLE, 1) == 1
-	arg_28_0.useEventTriggerFlag = true
+	end)
+	Input.gyro.enabled = slot0.live2dData.gyro == 1 and PlayerPrefs.GetInt(GYRO_ENABLE, 1) == 1
+	slot0.useEventTriggerFlag = true
 end
 
-function var_0_0.SetVisible(arg_30_0, arg_30_1)
-	if not arg_30_0:IsLoaded() then
+function slot0.setStopCallback(slot0, slot1)
+	slot0._stopCallback = slot1
+end
+
+function slot0.SetVisible(slot0, slot1)
+	if not slot0:IsLoaded() then
 		return
 	end
 
 	Input.gyro.enabled = PlayerPrefs.GetInt(GYRO_ENABLE, 1) == 1
 
-	arg_30_0:setReactPos(true)
-	arg_30_0:Reset()
+	slot0:setReactPos(true)
+	slot0:Reset()
 
-	if arg_30_1 then
-		arg_30_0._readlyToStop = false
+	if slot1 then
+		slot0._readlyToStop = false
 
-		onDelayTick(function()
-			if not arg_30_0._readlyToStop then
-				arg_30_0:setReactPos(false)
+		onDelayTick(function ()
+			if not uv0._readlyToStop then
+				uv0:setReactPos(false)
 			end
 		end, 1)
 	else
-		var_0_9(arg_30_0, "idle", true)
+		uv0(slot0, "idle", true)
 
-		arg_30_0._readlyToStop = true
+		slot0._readlyToStop = true
 
-		onDelayTick(function()
-			if arg_30_0._readlyToStop then
-				arg_30_0._animator.speed = 0
+		onDelayTick(function ()
+			if uv0._readlyToStop then
+				uv0._animator.speed = 0
+
+				if uv0._stopCallback then
+					uv0._stopCallback()
+				end
 			end
 		end, 3)
 	end
 
-	if arg_30_1 then
-		arg_30_0:loadLive2dData()
+	if slot1 then
+		slot0:loadLive2dData()
 	else
-		arg_30_0:saveLive2dData()
+		slot0:saveLive2dData()
 	end
 
-	arg_30_0._animator.speed = 1
+	slot0._animator.speed = 1
 end
 
-function var_0_0.loadLive2dData(arg_33_0)
-	if not arg_33_0.live2dData.loadPrefs then
+function slot0.loadLive2dData(slot0)
+	if not slot0.live2dData.loadPrefs then
 		return
 	end
 
-	if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) ~= 1 and not arg_33_0.live2dData.spineUseLive2d then
-		if arg_33_0.drags then
-			for iter_33_0 = 1, #arg_33_0.drags do
-				arg_33_0.drags[iter_33_0]:clearData()
+	if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) ~= 1 and not slot0.live2dData.spineUseLive2d then
+		if slot0.drags then
+			for slot4 = 1, #slot0.drags do
+				slot0.drags[slot4]:clearData()
 			end
 		end
 
-		arg_33_0:changeIdleIndex(0)
-		arg_33_0._animator:Play("idle")
+		slot0:changeIdleIndex(0)
+		slot0._animator:Play("idle")
 
-		arg_33_0.saveActionAbleId = nil
+		slot0.saveActionAbleId = nil
 
-		var_0_12(arg_33_0)
+		uv0(slot0)
 
 		return
 	end
 
-	local var_33_0, var_33_1 = Live2dConst.GetL2dSaveData(arg_33_0.live2dData:GetShipSkinConfig().id, arg_33_0.live2dData.ship.id)
+	slot1, slot2 = Live2dConst.GetL2dSaveData(slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id)
 
-	if var_33_0 then
-		arg_33_0:changeIdleIndex(var_33_0)
+	if slot1 then
+		slot0:changeIdleIndex(slot1)
 
-		if var_33_0 == 0 then
-			arg_33_0._animator:Play("idle")
+		if slot1 == 0 then
+			slot0._animator:Play("idle")
 		else
-			arg_33_0._animator:Play("idle" .. var_33_0)
+			slot0._animator:Play("idle" .. slot1)
 		end
 	end
 
-	arg_33_0.saveActionAbleId = var_33_1
+	slot0.saveActionAbleId = slot2
 
-	if var_33_1 and var_33_1 > 0 then
-		if pg.ship_l2d[var_33_1] then
-			local var_33_2 = pg.ship_l2d[var_33_1].action_trigger_active
-
-			arg_33_0.enablePlayActions = var_33_2.enable
-			arg_33_0.ignorePlayActions = var_33_2.ignore
+	if slot2 and slot2 > 0 then
+		if pg.ship_l2d[slot2] then
+			slot3 = pg.ship_l2d[slot2].action_trigger_active
+			slot0.enablePlayActions = slot3.enable
+			slot0.ignorePlayActions = slot3.ignore
 		end
 	else
-		arg_33_0.enablePlayActions = {}
-		arg_33_0.ignorePlayActions = {}
+		slot0.enablePlayActions = {}
+		slot0.ignorePlayActions = {}
 	end
 
-	if arg_33_0.drags then
-		for iter_33_1 = 1, #arg_33_0.drags do
-			arg_33_0.drags[iter_33_1]:loadData()
+	if slot0.drags then
+		for slot6 = 1, #slot0.drags do
+			slot0.drags[slot6]:loadData()
 		end
 	end
 
-	var_0_12(arg_33_0)
+	uv0(slot0)
 end
 
-function var_0_0.saveLive2dData(arg_34_0)
-	if not arg_34_0.live2dData.loadPrefs then
+function slot0.saveLive2dData(slot0)
+	if not slot0.live2dData.loadPrefs then
 		return
 	end
 
-	if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) ~= 1 and not arg_34_0.live2dData.spineUseLive2d then
+	if PlayerPrefs.GetInt(LIVE2D_STATUS_SAVE, 1) ~= 1 and not slot0.live2dData.spineUseLive2d then
 		return
 	end
 
-	if arg_34_0.idleIndex then
-		Live2dConst.SaveL2dIdle(arg_34_0.live2dData:GetShipSkinConfig().id, arg_34_0.live2dData.ship.id, arg_34_0.idleIndex)
+	if slot0.idleIndex then
+		Live2dConst.SaveL2dIdle(slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id, slot0.idleIndex)
 	end
 
-	if arg_34_0.saveActionAbleId then
-		if arg_34_0.idleIndex == 0 then
-			Live2dConst.SaveL2dAction(arg_34_0.live2dData:GetShipSkinConfig().id, arg_34_0.live2dData.ship.id, 0)
+	if slot0.saveActionAbleId then
+		if slot0.idleIndex == 0 then
+			Live2dConst.SaveL2dAction(slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id, 0)
 		else
-			Live2dConst.SaveL2dAction(arg_34_0.live2dData:GetShipSkinConfig().id, arg_34_0.live2dData.ship.id, arg_34_0.saveActionAbleId)
+			Live2dConst.SaveL2dAction(slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id, slot0.saveActionAbleId)
 		end
 	end
 
-	if arg_34_0.drags then
-		for iter_34_0 = 1, #arg_34_0.drags do
-			arg_34_0.drags[iter_34_0]:saveData()
+	if slot0.drags then
+		for slot4 = 1, #slot0.drags do
+			slot0.drags[slot4]:saveData()
 		end
 	end
 end
 
-function var_0_0.enablePlayAction(arg_35_0, arg_35_1)
-	return var_0_8(arg_35_0, arg_35_1)
+function slot0.enablePlayAction(slot0, slot1)
+	return uv0(slot0, slot1)
 end
 
-function var_0_0.IgonreReactPos(arg_36_0, arg_36_1)
-	arg_36_0:setReactPos(arg_36_1)
+function slot0.IgonreReactPos(slot0, slot1)
+	slot0:setReactPos(slot1)
 end
 
-function var_0_0.setReactPos(arg_37_0, arg_37_1)
-	if arg_37_0.liveCom then
-		arg_37_0.ignoreReact = arg_37_1
+function slot0.setReactPos(slot0, slot1)
+	if slot0.liveCom then
+		slot0.ignoreReact = slot1
 
-		arg_37_0.liveCom:IgonreReactPos(arg_37_1)
+		slot0.liveCom:IgonreReactPos(slot1)
 
-		if arg_37_1 then
-			ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", arg_37_0.liveCom, false)
+		if slot1 then
+			ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", slot0.liveCom, false)
 		end
 
-		ReflectionHelp.RefSetField(typeof(Live2dChar), "reactPos", arg_37_0.liveCom, Vector3(0, 0, 0))
-		arg_37_0:updateDragsSateData()
+		ReflectionHelp.RefSetField(typeof(Live2dChar), "reactPos", slot0.liveCom, Vector3(0, 0, 0))
+		slot0:updateDragsSateData()
 	end
 end
 
-function var_0_0.l2dCharEnable(arg_38_0, arg_38_1)
-	arg_38_0._l2dCharEnable = arg_38_1
+function slot0.l2dCharEnable(slot0, slot1)
+	slot0._l2dCharEnable = slot1
 end
 
-function var_0_0.inShopPreView(arg_39_0, arg_39_1)
-	arg_39_0._shopPreView = arg_39_1
+function slot0.inShopPreView(slot0, slot1)
+	slot0._shopPreView = slot1
 end
 
-function var_0_0.getDragEnable(arg_40_0, arg_40_1)
-	if arg_40_0._shopPreView and arg_40_1.shop_action == 0 then
+function slot0.getDragEnable(slot0, slot1)
+	if slot0._shopPreView and slot1.shop_action == 0 then
 		return false
 	end
 
 	return true
 end
 
-function var_0_0.updateShip(arg_41_0, arg_41_1)
-	if arg_41_1 and arg_41_0.live2dData and arg_41_0.live2dData.ship then
-		arg_41_0.live2dData.ship = arg_41_1
+function slot0.updateShip(slot0, slot1)
+	if slot1 and slot0.live2dData and slot0.live2dData.ship then
+		slot0.live2dData.ship = slot1
 
-		if arg_41_0.live2dData and arg_41_0.live2dData.ship and arg_41_0.live2dData.ship.propose then
-			arg_41_0:changeParamaterValue("Paramring", 1)
+		if slot0.live2dData and slot0.live2dData.ship and slot0.live2dData.ship.propose then
+			slot0:changeParamaterValue("Paramring", 1)
 		else
-			arg_41_0:changeParamaterValue("Paramring", 0)
+			slot0:changeParamaterValue("Paramring", 0)
 		end
 	end
 end
 
-function var_0_0.IsLoaded(arg_42_0)
-	return arg_42_0.state == var_0_0.STATE_INITED
+function slot0.IsLoaded(slot0)
+	return slot0.state == uv0.STATE_INITED
 end
 
-function var_0_0.GetTouchPart(arg_43_0)
-	return arg_43_0.liveCom:GetTouchPart()
+function slot0.GetTouchPart(slot0)
+	return slot0.liveCom:GetTouchPart()
 end
 
-function var_0_0.TriggerAction(arg_44_0, arg_44_1, arg_44_2, arg_44_3, arg_44_4)
-	arg_44_0:CheckStopDrag()
+function slot0.TriggerAction(slot0, slot1, slot2, slot3, slot4)
+	slot0:CheckStopDrag()
 
-	arg_44_0.finishActionCB = arg_44_2
-	arg_44_0.animEventCB = arg_44_4
+	slot0.finishActionCB = slot2
+	slot0.animEventCB = slot4
 
-	if not var_0_9(arg_44_0, arg_44_1, arg_44_3) and arg_44_0.animEventCB then
-		arg_44_0.animEventCB(false)
+	if not uv0(slot0, slot1, slot3) and slot0.animEventCB then
+		slot0.animEventCB(false)
 	end
 end
 
-function var_0_0.Reset(arg_45_0)
-	arg_45_0:live2dActionChange(false)
+function slot0.Reset(slot0)
+	slot0:live2dActionChange(false)
 
-	arg_45_0.enablePlayActions = {}
-	arg_45_0.ignorePlayActions = {}
-	arg_45_0.ableFlag = nil
+	slot0.enablePlayActions = {}
+	slot0.ignorePlayActions = {}
+	slot0.ableFlag = nil
 end
 
-function var_0_0.applyActiveData(arg_46_0, arg_46_1, arg_46_2)
-	local var_46_0 = arg_46_2.enable
-	local var_46_1 = arg_46_2.ignore
-	local var_46_2 = arg_46_2.idle
-	local var_46_3 = arg_46_2.repeatFlag
+function slot0.applyActiveData(slot0, slot1, slot2)
+	slot4 = slot2.ignore
+	slot5 = slot2.idle
+	slot6 = slot2.repeatFlag
 
-	if var_46_0 and #var_46_0 >= 0 then
-		arg_46_0.enablePlayActions = var_46_0
+	if slot2.enable and #slot3 >= 0 then
+		slot0.enablePlayActions = slot3
 	end
 
-	if var_46_1 and #var_46_1 >= 0 then
-		arg_46_0.ignorePlayActions = var_46_1
+	if slot4 and #slot4 >= 0 then
+		slot0.ignorePlayActions = slot4
 	end
 
-	if var_46_2 ~= arg_46_0.indexIndex then
-		arg_46_0.saveActionAbleId = arg_46_1.id
+	if slot5 ~= slot0.indexIndex then
+		slot0.saveActionAbleId = slot1.id
 	end
 
-	if var_46_2 then
-		local var_46_4
+	if slot5 then
+		slot7 = nil
 
-		if type(var_46_2) == "number" and var_46_2 >= 0 then
-			var_46_4 = var_46_2
-		elseif type(var_46_2) == "table" then
-			local var_46_5 = {}
+		if type(slot5) == "number" and slot5 >= 0 then
+			slot7 = slot5
+		elseif type(slot5) == "table" then
+			slot8 = {}
 
-			for iter_46_0, iter_46_1 in ipairs(var_46_2) do
-				if iter_46_1 == arg_46_0.idleIndex then
-					if var_46_3 then
-						table.insert(var_46_5, iter_46_1)
+			for slot12, slot13 in ipairs(slot5) do
+				if slot13 == slot0.idleIndex then
+					if slot6 then
+						table.insert(slot8, slot13)
 					end
 				else
-					table.insert(var_46_5, iter_46_1)
+					table.insert(slot8, slot13)
 				end
 			end
 
-			var_46_4 = var_46_5[math.random(1, #var_46_5)]
+			slot7 = slot8[math.random(1, #slot8)]
 		end
 
-		if var_46_4 then
-			arg_46_0:changeIdleIndex(var_46_4)
+		if slot7 then
+			slot0:changeIdleIndex(slot7)
 		end
 
-		arg_46_0:saveLive2dData()
+		slot0:saveLive2dData()
 	end
 end
 
-function var_0_0.changeIdleIndex(arg_47_0, arg_47_1)
-	if arg_47_0.idleIndex ~= arg_47_1 then
-		arg_47_0._animator:SetInteger("idle", arg_47_1)
+function slot0.changeIdleIndex(slot0, slot1)
+	if slot0.idleIndex ~= slot1 then
+		slot0._animator:SetInteger("idle", slot1)
 	end
 
-	print("now idle index is " .. arg_47_1)
+	print("now idle index is " .. slot1)
 
-	arg_47_0.idleIndex = arg_47_1
+	slot0.idleIndex = slot1
 
-	arg_47_0:updateDragsSateData()
+	slot0:updateDragsSateData()
 end
 
-function var_0_0.live2dActionChange(arg_48_0, arg_48_1)
-	arg_48_0.isPlaying = arg_48_1
+function slot0.live2dActionChange(slot0, slot1)
+	slot0.isPlaying = slot1
 
-	arg_48_0:updateDragsSateData()
+	slot0:updateDragsSateData()
 end
 
-function var_0_0.updateDragsSateData(arg_49_0)
-	local var_49_0 = {
-		idleIndex = arg_49_0.idleIndex,
-		isPlaying = arg_49_0.isPlaying,
-		ignoreReact = arg_49_0.ignoreReact,
-		actionName = arg_49_0.playActionName
+function slot0.updateDragsSateData(slot0)
+	slot1 = {
+		idleIndex = slot0.idleIndex,
+		isPlaying = slot0.isPlaying,
+		ignoreReact = slot0.ignoreReact,
+		actionName = slot0.playActionName
 	}
 
-	if arg_49_0.drags then
-		for iter_49_0 = 1, #arg_49_0.drags do
-			arg_49_0.drags[iter_49_0]:updateStateData(var_49_0)
+	if slot0.drags then
+		for slot5 = 1, #slot0.drags do
+			slot0.drags[slot5]:updateStateData(slot1)
 		end
 	end
 end
 
-function var_0_0.CheckStopDrag(arg_50_0)
-	local var_50_0 = arg_50_0.live2dData:GetShipSkinConfig()
+function slot0.CheckStopDrag(slot0)
+	if slot0.live2dData:GetShipSkinConfig().l2d_ignore_drag and slot1.l2d_ignore_drag == 1 then
+		slot0.liveCom.ResponseClick = false
 
-	if var_50_0.l2d_ignore_drag and var_50_0.l2d_ignore_drag == 1 then
-		arg_50_0.liveCom.ResponseClick = false
-
-		ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", arg_50_0.liveCom, false)
+		ReflectionHelp.RefSetField(typeof(Live2dChar), "inDrag", slot0.liveCom, false)
 	end
 end
 
-function var_0_0.changeParamaterValue(arg_51_0, arg_51_1, arg_51_2)
-	if arg_51_0:IsLoaded() then
-		if not arg_51_1 or string.len(arg_51_1) == 0 then
+function slot0.changeParamaterValue(slot0, slot1, slot2)
+	if slot0:IsLoaded() then
+		if not slot1 or string.len(slot1) == 0 then
 			return
 		end
 
-		local var_51_0 = arg_51_0.liveCom:GetCubismParameter(arg_51_1)
-
-		if not var_51_0 then
+		if not slot0.liveCom:GetCubismParameter(slot1) then
 			return
 		end
 
-		arg_51_0.liveCom:AddParameterValue(var_51_0, arg_51_2, var_0_5[1])
+		slot0.liveCom:AddParameterValue(slot3, slot2, uv0[1])
 	else
-		if not arg_51_0.delayChangeParamater then
-			arg_51_0.delayChangeParamater = {}
+		if not slot0.delayChangeParamater then
+			slot0.delayChangeParamater = {}
 		end
 
-		table.insert(arg_51_0.delayChangeParamater, {
-			arg_51_1,
-			arg_51_2
+		table.insert(slot0.delayChangeParamater, {
+			slot1,
+			slot2
 		})
 	end
 end
 
-function var_0_0.Dispose(arg_52_0)
-	if arg_52_0.state == var_0_0.STATE_INITED then
-		Destroy(arg_52_0._go)
+function slot0.Dispose(slot0)
+	if slot0.state == uv0.STATE_INITED then
+		Destroy(slot0._go)
 
-		arg_52_0.liveCom.FinishAction = nil
-		arg_52_0.liveCom.EventAction = nil
+		slot0.liveCom.FinishAction = nil
+		slot0.liveCom.EventAction = nil
 	end
 
-	arg_52_0:saveLive2dData()
-	arg_52_0.liveCom:SetMouseInputActions(nil, nil)
+	slot0:saveLive2dData()
+	slot0.liveCom:SetMouseInputActions(nil, )
 
-	arg_52_0._readlyToStop = false
-	arg_52_0.state = var_0_0.STATE_DISPOSE
+	slot0._readlyToStop = false
+	slot0.state = uv0.STATE_DISPOSE
 
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg_52_0.live2dRequestId)
+	pg.Live2DMgr.GetInstance():StopLoadingLive2d(slot0.live2dRequestId)
 
-	arg_52_0.live2dRequestId = nil
+	slot0.live2dRequestId = nil
 
-	if arg_52_0.drags then
-		for iter_52_0 = 1, #arg_52_0.drags do
-			arg_52_0.drags[iter_52_0]:dispose()
+	if slot0.drags then
+		for slot4 = 1, #slot0.drags do
+			slot0.drags[slot4]:dispose()
 		end
 
-		arg_52_0.drags = {}
+		slot0.drags = {}
 	end
 
-	if arg_52_0.live2dData.gyro == 1 then
+	if slot0.live2dData.gyro == 1 then
 		Input.gyro.enabled = false
 	end
 
-	if arg_52_0.live2dData then
-		arg_52_0.live2dData:Clear()
+	if slot0.live2dData then
+		slot0.live2dData:Clear()
 
-		arg_52_0.live2dData = nil
+		slot0.live2dData = nil
 	end
 
-	arg_52_0:live2dActionChange(false)
+	slot0:live2dActionChange(false)
 
-	if arg_52_0.timer then
-		arg_52_0.timer:Stop()
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_52_0.timer = nil
-	end
-end
-
-function var_0_0.UpdateAtomSource(arg_53_0)
-	arg_53_0.updateAtom = true
-end
-
-function var_0_0.AtomSouceFresh(arg_54_0)
-	local var_54_0 = pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE)
-	local var_54_1 = arg_54_0._go:GetComponent("CubismCriSrcMouthInput")
-	local var_54_2 = ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", var_54_1)
-
-	var_54_0:AttachToAnalyzer(var_54_2)
-
-	if arg_54_0.updateAtom then
-		arg_54_0.updateAtom = false
+		slot0.timer = nil
 	end
 end
 
-return var_0_0
+function slot0.UpdateAtomSource(slot0)
+	slot0.updateAtom = true
+end
+
+function slot0.AtomSouceFresh(slot0)
+	pg.CriMgr.GetInstance():getAtomSource(pg.CriMgr.C_VOICE):AttachToAnalyzer(ReflectionHelp.RefGetField(typeof("Live2D.Cubism.Framework.MouthMovement.CubismCriSrcMouthInput"), "Analyzer", slot0._go:GetComponent("CubismCriSrcMouthInput")))
+
+	if slot0.updateAtom then
+		slot0.updateAtom = false
+	end
+end
+
+return slot0

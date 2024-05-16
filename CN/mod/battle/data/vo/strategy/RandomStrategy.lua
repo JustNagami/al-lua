@@ -1,103 +1,83 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleFormulas
+slot2 = slot0.Battle.BattleConfig
+slot0.Battle.RandomStrategy = class("RandomStrategy", slot0.Battle.BattleJoyStickBotBaseStrategy)
+slot3 = slot0.Battle.RandomStrategy
+slot3.__name = "RandomStrategy"
+slot3.STOP_DURATION_MAX = 20
+slot3.STOP_DURATION_MIN = 10
+slot3.MOVE_DURATION_MAX = 60
+slot3.MOVE_DURATION_MIN = 20
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleFormulas
-local var_0_2 = var_0_0.Battle.BattleConfig
+function slot3.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-var_0_0.Battle.RandomStrategy = class("RandomStrategy", var_0_0.Battle.BattleJoyStickBotBaseStrategy)
-
-local var_0_3 = var_0_0.Battle.RandomStrategy
-
-var_0_3.__name = "RandomStrategy"
-var_0_3.STOP_DURATION_MAX = 20
-var_0_3.STOP_DURATION_MIN = 10
-var_0_3.MOVE_DURATION_MAX = 60
-var_0_3.MOVE_DURATION_MIN = 20
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	var_0_3.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0._stopCount = 0
-	arg_1_0._moveCount = 0
-	arg_1_0._speed = Vector3.zero
-	arg_1_0._speedCross = Vector3.zero
+	slot0._stopCount = 0
+	slot0._moveCount = 0
+	slot0._speed = Vector3.zero
+	slot0._speedCross = Vector3.zero
 end
 
-function var_0_3.GetStrategyType(arg_2_0)
-	return var_0_0.Battle.BattleJoyStickAutoBot.RANDOM
+function slot3.GetStrategyType(slot0)
+	return uv0.Battle.BattleJoyStickAutoBot.RANDOM
 end
 
-function var_0_3.Input(arg_3_0, arg_3_1, arg_3_2)
-	var_0_3.super.Input(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0:shiftTick(0, 10)
+function slot3.Input(slot0, slot1, slot2)
+	uv0.super.Input(slot0, slot1, slot2)
+	slot0:shiftTick(0, 10)
 end
 
-local var_0_4 = Vector3.up
+slot4 = Vector3.up
 
-function var_0_3._moveTick(arg_4_0)
-	if arg_4_0._moveCount <= 0 then
-		arg_4_0:shiftTick(-1)
+function slot3._moveTick(slot0)
+	if slot0._moveCount <= 0 then
+		slot0:shiftTick(-1)
 	else
-		arg_4_0._moveCount = arg_4_0._moveCount - 1
-
-		local var_4_0 = arg_4_0._speed:Magnitude()
-
-		arg_4_0._speedCross = arg_4_0._speedCross:Copy(var_0_4):Cross2(arg_4_0._speed):Mul(arg_4_0._crossAcc / var_4_0)
-		arg_4_0._speed = arg_4_0._speed:Add(arg_4_0._speedCross)
-		arg_4_0._hrz = arg_4_0._speed.x
-		arg_4_0._vtc = arg_4_0._speed.z
+		slot0._moveCount = slot0._moveCount - 1
+		slot0._speedCross = slot0._speedCross:Copy(uv0):Cross2(slot0._speed):Mul(slot0._crossAcc / slot0._speed:Magnitude())
+		slot0._speed = slot0._speed:Add(slot0._speedCross)
+		slot0._hrz = slot0._speed.x
+		slot0._vtc = slot0._speed.z
 	end
 end
 
-function var_0_3._stopTick(arg_5_0)
-	if arg_5_0._stopCount <= 0 then
-		arg_5_0:shiftTick(0, 10)
+function slot3._stopTick(slot0)
+	if slot0._stopCount <= 0 then
+		slot0:shiftTick(0, 10)
 	else
-		arg_5_0._stopCount = arg_5_0._stopCount - 1
+		slot0._stopCount = slot0._stopCount - 1
 	end
 end
 
-function var_0_3.shiftTick(arg_6_0, arg_6_1, arg_6_2)
-	arg_6_0._stopWeight = arg_6_1 or arg_6_0._stopWeight
-	arg_6_0._moveWeight = arg_6_2 or arg_6_0._moveWeight
+function slot3.shiftTick(slot0, slot1, slot2)
+	slot0._stopWeight = slot1 or slot0._stopWeight
+	slot0._moveWeight = slot2 or slot0._moveWeight
 
-	if math.random(arg_6_0._stopWeight, arg_6_0._moveWeight) >= 0 then
-		arg_6_0._moveWeight = arg_6_0._moveWeight - 1
-		arg_6_0._moveCount = math.random(var_0_3.MOVE_DURATION_MIN, var_0_3.MOVE_DURATION_MAX)
-		arg_6_0._targetPoint = arg_6_0:generateTargetPoint()
-
-		local var_6_0 = arg_6_0._motionVO:GetPos()
-		local var_6_1, var_6_2 = arg_6_0.getDirection(var_6_0, arg_6_0._targetPoint)
-
-		arg_6_0._speed.x = var_6_1
-		arg_6_0._speed.z = var_6_2
-		arg_6_0._crossAcc = math.random(-100, 100) / 10000
-		arg_6_0.analysis = arg_6_0._moveTick
+	if math.random(slot0._stopWeight, slot0._moveWeight) >= 0 then
+		slot0._moveWeight = slot0._moveWeight - 1
+		slot0._moveCount = math.random(uv0.MOVE_DURATION_MIN, uv0.MOVE_DURATION_MAX)
+		slot0._targetPoint = slot0:generateTargetPoint()
+		slot0._speed.x, slot0._speed.z = slot0.getDirection(slot0._motionVO:GetPos(), slot0._targetPoint)
+		slot0._crossAcc = math.random(-100, 100) / 10000
+		slot0.analysis = slot0._moveTick
 	else
-		arg_6_0._stopCount = math.random(var_0_3.STOP_DURATION_MIN, var_0_3.STOP_DURATION_MAX)
-		arg_6_0.analysis = var_0_3._stopTick
-		arg_6_0._hrz = 0
-		arg_6_0._vtc = 0
+		slot0._stopCount = math.random(uv0.STOP_DURATION_MIN, uv0.STOP_DURATION_MAX)
+		slot0.analysis = uv0._stopTick
+		slot0._hrz = 0
+		slot0._vtc = 0
 	end
 end
 
-function var_0_3.generateTargetPoint(arg_7_0)
-	local var_7_0 = arg_7_0._fleetVO:GetLeaderPersonality()
-	local var_7_1 = var_7_0.front_rate
-	local var_7_2 = var_7_0.rear_rate
+function slot3.generateTargetPoint(slot0)
+	slot1 = slot0._fleetVO:GetLeaderPersonality()
 
-	if arg_7_0._fleetVO:GetIFF() == var_0_2.FRIENDLY_CODE then
-		var_7_1 = 1 - var_7_1
-		var_7_2 = 1 - var_7_2
+	if slot0._fleetVO:GetIFF() == uv0.FRIENDLY_CODE then
+		slot2 = 1 - slot1.front_rate
+		slot3 = 1 - slot1.rear_rate
 	end
 
-	local var_7_3 = arg_7_0._totalWidth * var_7_1 + arg_7_0._leftBound
-	local var_7_4 = arg_7_0._totalWidth * var_7_2 + arg_7_0._leftBound
-	local var_7_5 = arg_7_0._totalHeight * var_7_0.upper_rate + arg_7_0._lowerBound
-	local var_7_6 = arg_7_0._totalHeight * var_7_0.lower_rate + arg_7_0._lowerBound
-	local var_7_7
-	local var_7_8 = math.random(var_7_4, var_7_3)
-	local var_7_9 = math.random(var_7_6, var_7_5)
+	slot8 = nil
 
-	return (Vector3(var_7_8, 0, var_7_9))
+	return Vector3(math.random(slot0._totalWidth * slot3 + slot0._leftBound, slot0._totalWidth * slot2 + slot0._leftBound), 0, math.random(slot0._totalHeight * slot1.lower_rate + slot0._lowerBound, slot0._totalHeight * slot1.upper_rate + slot0._lowerBound))
 end

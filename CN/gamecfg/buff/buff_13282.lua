@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "监听器",
+	time = 20,
+	picture = "",
+	desc = "监听器",
+	stack = 1,
+	id = 13282,
+	icon = 13282,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -23,24 +42,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "监听器",
-	time = 20,
-	picture = "",
-	desc = "监听器",
-	stack = 1,
-	id = 13282,
-	icon = 13282,
-	last_effect = ""
+	}
 }

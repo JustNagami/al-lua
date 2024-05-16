@@ -1,33 +1,29 @@
-﻿local var_0_0 = class("MetaWorldbossBtn")
+slot0 = class("MetaWorldbossBtn")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.event = arg_1_2
-	arg_1_0.metaBtn = arg_1_1
-	arg_1_0.metaProgress = arg_1_1:Find("Text"):GetComponent(typeof(Text))
-	arg_1_0.metaTip = arg_1_1:Find("tip")
+	slot0.event = slot2
+	slot0.metaBtn = slot1
+	slot0.metaProgress = slot1:Find("Text"):GetComponent(typeof(Text))
+	slot0.metaTip = slot1:Find("tip")
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	onButton(arg_2_0, arg_2_0.metaBtn, function()
-		local var_3_0 = WorldBossConst.GetCurrBossGroup()
-
-		arg_2_0.event:emit(WorldBossMediator.GO_META, var_3_0)
+function slot0.Init(slot0)
+	onButton(slot0, slot0.metaBtn, function ()
+		uv0.event:emit(WorldBossMediator.GO_META, WorldBossConst.GetCurrBossGroup())
 	end, SFX_PANEL)
-	arg_2_0:Update()
+	slot0:Update()
 end
 
-function var_0_0.Update(arg_4_0)
-	local var_4_0 = WorldBossConst.GetCurrBossGroup()
-
-	setActive(arg_4_0.metaTip, MetaCharacterConst.isMetaSynRedTag(var_4_0))
+function slot0.Update(slot0)
+	setActive(slot0.metaTip, MetaCharacterConst.isMetaSynRedTag(WorldBossConst.GetCurrBossGroup()))
 end
 
-function var_0_0.Dispose(arg_5_0)
-	pg.DelegateInfo.Dispose(arg_5_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

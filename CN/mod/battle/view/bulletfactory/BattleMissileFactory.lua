@@ -1,49 +1,44 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = singletonClass("BattleMissileFactory", slot0.Battle.BattleBombBulletFactory)
+slot1.__name = "BattleMissileFactory"
+slot0.Battle.BattleMissileFactory = slot1
 
-local var_0_0 = ys
-local var_0_1 = singletonClass("BattleMissileFactory", var_0_0.Battle.BattleBombBulletFactory)
+function slot1.MakeModel(slot0, slot1, slot2)
+	slot3 = slot1:GetBulletData()
 
-var_0_1.__name = "BattleMissileFactory"
-var_0_0.Battle.BattleMissileFactory = var_0_1
-
-function var_0_1.MakeModel(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = arg_1_1:GetBulletData()
-	local var_1_1 = arg_1_0:GetBulletPool():InstFX(arg_1_1:GetModleID())
-
-	if var_1_1 then
-		arg_1_1:AddModel(var_1_1)
+	if slot0:GetBulletPool():InstFX(slot1:GetModleID()) then
+		slot1:AddModel(slot4)
 	else
-		arg_1_1:AddTempModel(arg_1_0:GetTempGOPool():GetObject())
+		slot1:AddTempModel(slot0:GetTempGOPool():GetObject())
 	end
 
-	arg_1_1:SetSpawn(arg_1_2)
-	arg_1_1:SetFXFunc(arg_1_0.onBulletHitFunc, arg_1_0.onBulletHitFunc)
-	arg_1_0:GetSceneMediator():AddBullet(arg_1_1)
+	slot1:SetSpawn(slot2)
+	slot1:SetFXFunc(slot0.onBulletHitFunc, slot0.onBulletHitFunc)
+	slot0:GetSceneMediator():AddBullet(slot1)
 end
 
-function var_0_1.CreateBulletAlert(arg_2_0)
-	local var_2_0 = arg_2_0:GetTemplate()
+function slot1.CreateBulletAlert(slot0)
+	slot1 = slot0:GetTemplate()
 
-	if arg_2_0:GetIFF() == var_0_1.GetDataProxy():GetFriendlyCode() then
+	if slot0:GetIFF() == uv0.GetDataProxy():GetFriendlyCode() then
 		return
 	end
 
-	if #var_2_0.alert_fx <= 0 then
+	if #slot1.alert_fx <= 0 then
 		return
 	end
 
-	local var_2_1 = var_2_0.hit_type.range
-	local var_2_2 = var_2_0.alert_fx
-	local var_2_3 = var_0_0.Battle.BattleFXPool.GetInstance():GetFX(var_2_2)
-	local var_2_4 = var_2_3.transform
-	local var_2_5 = 0
-	local var_2_6 = pg.effect_offset
+	slot2 = slot1.hit_type.range
+	slot3 = slot1.alert_fx
+	slot5 = uv1.Battle.BattleFXPool.GetInstance():GetFX(slot3).transform
+	slot6 = 0
 
-	if var_2_6[var_2_2] and var_2_6[var_2_2].y_scale == true then
-		var_2_5 = var_2_1
+	if pg.effect_offset[slot3] and slot7[slot3].y_scale == true then
+		slot6 = slot2
 	end
 
-	var_2_4.localScale = Vector3(var_2_1, var_2_5, var_2_1)
+	slot5.localScale = Vector3(slot2, slot6, slot2)
 
-	pg.EffectMgr.GetInstance():PlayBattleEffect(var_2_3, arg_2_0:GetExplodePostion())
+	pg.EffectMgr.GetInstance():PlayBattleEffect(slot4, slot0:GetExplodePostion())
 end

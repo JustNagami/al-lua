@@ -1,67 +1,51 @@
-﻿local var_0_0 = class("EquipmentItemTransformVer", import("view.equipment.EquipmentItem"))
+slot0 = class("EquipmentItemTransformVer", import("view.equipment.EquipmentItem"))
 
-function var_0_0.update(arg_1_0, arg_1_1)
-	setActive(arg_1_0.equiped, false)
-	setActive(arg_1_0.unloadBtn, not arg_1_1)
-	setActive(arg_1_0.bg, arg_1_1)
-	TweenItemAlphaAndWhite(arg_1_0.go)
+function slot0.update(slot0, slot1)
+	setActive(slot0.equiped, false)
+	setActive(slot0.unloadBtn, not slot1)
+	setActive(slot0.bg, slot1)
+	TweenItemAlphaAndWhite(slot0.go)
 
-	if not arg_1_1 then
+	if not slot1 then
 		return
 	end
 
-	arg_1_0.sourceVO = arg_1_1
+	slot0.sourceVO = slot1
 
-	updateDrop(arg_1_0.bg, arg_1_1)
+	updateDrop(slot0.bg, slot1)
 
-	local var_1_0 = arg_1_1.template
-	local var_1_1 = arg_1_0.bg
+	slot2 = slot1.template
+	slot3 = slot0.bg
 
-	if arg_1_1.type == DROP_TYPE_EQUIP then
-		local var_1_2 = findTF(var_1_1, "icon_bg/new")
+	if slot1.type == DROP_TYPE_EQUIP then
+		setActive(findTF(slot3, "icon_bg/new"), slot2.new ~= 0)
+		setActive(findTF(slot3, "equip_flag"), slot2.shipId)
 
-		setActive(var_1_2, var_1_0.new ~= 0)
-
-		local var_1_3 = findTF(var_1_1, "equip_flag")
-
-		setActive(var_1_3, var_1_0.shipId)
-
-		if var_1_0.shipId then
-			local var_1_4 = getProxy(BayProxy):getShipById(var_1_0.shipId)
-
-			setImageSprite(findTF(var_1_3, "Image"), LoadSprite("qicon/" .. var_1_4:getPainting()))
+		if slot2.shipId then
+			setImageSprite(findTF(slot5, "Image"), LoadSprite("qicon/" .. getProxy(BayProxy):getShipById(slot2.shipId):getPainting()))
 		end
 	end
 
-	findTF(var_1_1, "name"):GetComponent(typeof(Text)).text = shortenString(arg_1_1:getConfig("name"), 5)
+	findTF(slot3, "name"):GetComponent(typeof(Text)).text = shortenString(slot1:getConfig("name"), 5)
 
-	if not IsNil(arg_1_0.mask) then
-		setActive(arg_1_0.mask, var_1_0.mask)
+	if not IsNil(slot0.mask) then
+		setActive(slot0.mask, slot2.mask)
 	end
 
-	local var_1_5 = arg_1_0.bg:Find("frameMask")
+	setActive(slot0.bg:Find("frameMask"), false)
 
-	setActive(var_1_5, false)
+	if slot1.type == DROP_TYPE_ITEM and not IsNil(findTF(slot0.bg, "icon_bg/count")) then
+		slot9 = slot1.composeCfg.material_num <= slot2.count
 
-	if arg_1_1.type == DROP_TYPE_ITEM then
-		local var_1_6 = findTF(arg_1_0.bg, "icon_bg/count")
-
-		if not IsNil(var_1_6) then
-			local var_1_7 = var_1_0.count
-			local var_1_8 = arg_1_1.composeCfg.material_num
-			local var_1_9 = var_1_8 <= var_1_7
-			local var_1_10 = setColorStr(var_1_7 .. "/" .. var_1_8, var_1_9 and COLOR_WHITE or COLOR_RED)
-
-			setText(var_1_6, var_1_10)
-			setActive(var_1_5, not var_1_9)
-		end
+		setText(slot6, setColorStr(slot7 .. "/" .. slot8, slot9 and COLOR_WHITE or COLOR_RED))
+		setActive(slot5, not slot9)
 	end
 end
 
-function var_0_0.updateSelected(arg_2_0, arg_2_1)
-	arg_2_0.selected = arg_2_1
+function slot0.updateSelected(slot0, slot1)
+	slot0.selected = slot1
 
-	setActive(arg_2_0.selectedMask, arg_2_1)
+	setActive(slot0.selectedMask, slot1)
 end
 
-return var_0_0
+return slot0

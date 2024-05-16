@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				rant = 2000,
-				target = "TargetSelf",
-				skill_id = 17010,
-				time = 10
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -183,5 +169,19 @@
 	stack = 1,
 	id = 17010,
 	icon = 17010,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				rant = 2000,
+				target = "TargetSelf",
+				skill_id = 17010,
+				time = 10
+			}
+		}
+	}
 }

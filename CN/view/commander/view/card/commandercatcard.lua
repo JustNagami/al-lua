@@ -1,112 +1,107 @@
-﻿local var_0_0 = class("CommanderCatCard")
+slot0 = class("CommanderCatCard")
+slot0.MARK_TYPE_CIRCLE = 1
+slot0.MARK_TYPE_TICK = 2
 
-var_0_0.MARK_TYPE_CIRCLE = 1
-var_0_0.MARK_TYPE_TICK = 2
-
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = tf(arg_1_1)
-	arg_1_0.infoTF = arg_1_0._tf:Find("info")
-	arg_1_0.emptyTF = arg_1_0._tf:Find("empty")
-	arg_1_0.quitTF = arg_1_0._tf:Find("quit")
-	arg_1_0.scrollTxt = arg_1_0.infoTF:Find("name_bg/mask/Text"):GetComponent("ScrollText")
-	arg_1_0.levelTF = arg_1_0.infoTF:Find("level_bg/Text"):GetComponent(typeof(Text))
-	arg_1_0.iconTF = arg_1_0.infoTF:Find("icon")
-	arg_1_0.marks = {
-		arg_1_0.infoTF:Find("mark1"),
-		arg_1_0.infoTF:Find("mark2")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
+	slot0.infoTF = slot0._tf:Find("info")
+	slot0.emptyTF = slot0._tf:Find("empty")
+	slot0.quitTF = slot0._tf:Find("quit")
+	slot0.scrollTxt = slot0.infoTF:Find("name_bg/mask/Text"):GetComponent("ScrollText")
+	slot0.levelTF = slot0.infoTF:Find("level_bg/Text"):GetComponent(typeof(Text))
+	slot0.iconTF = slot0.infoTF:Find("icon")
+	slot6 = "mark2"
+	slot0.marks = {
+		slot0.infoTF:Find("mark1"),
+		slot0.infoTF:Find(slot6)
 	}
-	arg_1_0.expUp = arg_1_0._tf:Find("up")
-	arg_1_0.formationTF = arg_1_0.infoTF:Find("formation")
+	slot0.expUp = slot0._tf:Find("up")
+	slot0.formationTF = slot0.infoTF:Find("formation")
 
-	setActive(arg_1_0.formationTF, false)
+	setActive(slot0.formationTF, false)
 
-	arg_1_0.inbattleTF = arg_1_0.infoTF:Find("inbattle")
+	slot0.inbattleTF = slot0.infoTF:Find("inbattle")
 
-	setActive(arg_1_0.inbattleTF, false)
+	setActive(slot0.inbattleTF, false)
 
-	arg_1_0.tip = arg_1_0._tf:Find("tip")
+	slot0.tip = slot0._tf:Find("tip")
 
-	setActive(arg_1_0.tip, false)
+	setActive(slot0.tip, false)
 
-	arg_1_0.lockTr = arg_1_0._tf:Find("lock")
+	slot0.lockTr = slot0._tf:Find("lock")
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_0.marks) do
-		setActive(iter_1_1, false)
+	for slot6, slot7 in ipairs(slot0.marks) do
+		setActive(slot7, false)
 	end
 
-	arg_1_0.mark = arg_1_0.marks[arg_1_2] or arg_1_0.marks[1]
+	slot0.mark = slot0.marks[slot2] or slot0.marks[1]
 
-	setActive(arg_1_0.expUp, false)
+	setActive(slot0.expUp, false)
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	if not IsNil(arg_2_0.lockTr) then
-		setActive(arg_2_0.lockTr, false)
+function slot0.Update(slot0, slot1, slot2, slot3)
+	if not IsNil(slot0.lockTr) then
+		setActive(slot0.lockTr, false)
 	end
 
-	if arg_2_1 then
-		arg_2_0.commanderVO = arg_2_1
+	if slot1 then
+		slot0.commanderVO = slot1
 
-		if arg_2_1.id ~= 0 then
-			arg_2_0:UpdateCommander(arg_2_2, arg_2_3)
+		if slot1.id ~= 0 then
+			slot0:UpdateCommander(slot2, slot3)
 		end
 	end
 
-	setActive(arg_2_0.formationTF, arg_2_1 and arg_2_1.inFleet and not arg_2_1.inBattle)
-	setActive(arg_2_0.inbattleTF, arg_2_1 and arg_2_1.inBattle)
-	setActive(arg_2_0.infoTF, arg_2_1 and arg_2_1.id ~= 0)
-	setActive(arg_2_0.emptyTF, not arg_2_1)
-	setActive(arg_2_0.quitTF, arg_2_1 and arg_2_1.id == 0)
-	setActive(arg_2_0.tip, arg_2_1 and arg_2_1.id ~= 0 and arg_2_1:getTalentPoint() > 0 and not LOCK_COMMANDER_TALENT_TIP)
+	setActive(slot0.formationTF, slot1 and slot1.inFleet and not slot1.inBattle)
+	setActive(slot0.inbattleTF, slot1 and slot1.inBattle)
+	setActive(slot0.infoTF, slot1 and slot1.id ~= 0)
+	setActive(slot0.emptyTF, not slot1)
+	setActive(slot0.quitTF, slot1 and slot1.id == 0)
+	setActive(slot0.tip, slot1 and slot1.id ~= 0 and slot1:getTalentPoint() > 0 and not LOCK_COMMANDER_TALENT_TIP)
 end
 
-function var_0_0.UpdateCommander(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_0.commanderVO
+function slot0.UpdateCommander(slot0, slot1, slot2)
+	slot3 = slot0.commanderVO
+	slot0.levelTF.text = slot3.level
 
-	arg_3_0.levelTF.text = var_3_0.level
+	GetImageSpriteFromAtlasAsync("commandericon/" .. slot3:getPainting(), "", slot0.iconTF)
 
-	GetImageSpriteFromAtlasAsync("commandericon/" .. var_3_0:getPainting(), "", arg_3_0.iconTF)
-
-	if not IsNil(arg_3_0.lockTr) then
-		setActive(arg_3_0.lockTr, var_3_0:isLocked())
+	if not IsNil(slot0.lockTr) then
+		setActive(slot0.lockTr, slot3:isLocked())
 	end
 
-	arg_3_0:UpdateSelected(arg_3_1, arg_3_2)
+	slot0:UpdateSelected(slot1, slot2)
 end
 
-function var_0_0.UpdateSelected(arg_4_0, arg_4_1, arg_4_2)
-	if not arg_4_0.commanderVO then
-		setActive(arg_4_0.mark, false)
+function slot0.UpdateSelected(slot0, slot1, slot2)
+	if not slot0.commanderVO then
+		setActive(slot0.mark, false)
 
 		return
 	end
 
-	local var_4_0 = arg_4_1 or {}
-	local var_4_1 = table.contains(var_4_0, arg_4_0.commanderVO.id)
+	slot4 = table.contains(slot1 or {}, slot0.commanderVO.id)
 
-	setActive(arg_4_0.mark, var_4_1)
-	arg_4_0:UpdateCommanderName(var_4_1, arg_4_2)
+	setActive(slot0.mark, slot4)
+	slot0:UpdateCommanderName(slot4, slot2)
 end
 
-function var_0_0.UpdateCommanderName(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_0.commanderVO
-
-	if not var_5_0 or var_5_0.id == 0 then
-		arg_5_0.scrollTxt:SetText("")
+function slot0.UpdateCommanderName(slot0, slot1, slot2)
+	if not slot0.commanderVO or slot3.id == 0 then
+		slot0.scrollTxt:SetText("")
 
 		return
 	end
 
-	if arg_5_1 then
-		arg_5_0.scrollTxt:SetText(var_5_0:getName(arg_5_2))
+	if slot1 then
+		slot0.scrollTxt:SetText(slot3:getName(slot2))
 	else
-		arg_5_0.scrollTxt:SetText(CommanderCatUtil.ShortenString(var_5_0:getName(arg_5_2), 6))
+		slot0.scrollTxt:SetText(CommanderCatUtil.ShortenString(slot3:getName(slot2), 6))
 	end
 end
 
-function var_0_0.Dispose(arg_6_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

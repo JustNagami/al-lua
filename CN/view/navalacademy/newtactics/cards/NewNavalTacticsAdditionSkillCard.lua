@@ -1,37 +1,32 @@
-﻿local var_0_0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
+slot0 = class("NewNavalTacticsAdditionSkillCard", import(".NewNavalTacticsSkillCard"))
 
-function var_0_0.Update(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = arg_1_1.level
-	local var_1_1 = arg_1_1:GetNextLevelExp()
-	local var_1_2 = arg_1_1:GetExp()
-	local var_1_3 = arg_1_1:IsMaxLevel()
+function slot0.Update(slot0, slot1, slot2)
+	slot3 = slot1.level
+	slot4 = slot1:GetNextLevelExp()
+	slot5 = slot1:GetExp()
 
-	arg_1_1:AddExp(arg_1_2)
+	slot1:AddExp(slot2)
 
-	local var_1_4 = false
+	slot7 = false
 
-	if not var_1_3 and arg_1_1:IsMaxLevel() then
-		var_1_4 = true
+	if not slot1:IsMaxLevel() and slot1:IsMaxLevel() then
+		slot7 = true
 	end
 
-	local var_1_5 = arg_1_1:GetNextLevelExp()
-	local var_1_6 = arg_1_1:GetExp()
-	local var_1_7 = arg_1_1.level - var_1_0
-	local var_1_8 = var_1_7 > 0
+	slot8 = slot1:GetNextLevelExp()
+	slot9 = slot1:GetExp()
+	slot12 = slot1.level - slot3 > 0
+	slot1.level = slot3
 
-	arg_1_1.level = var_1_0
+	uv0.super.Update(slot0, slot1, slot11)
 
-	var_0_0.super.Update(arg_1_0, arg_1_1, var_1_7)
-
-	if var_1_4 then
-		local var_1_9 = var_1_1 - var_1_2
-
-		arg_1_0.nextTxt.text = var_1_2 .. "+<color=#A9F548FF>" .. var_1_9 .. "</color>/" .. var_1_1
-	elseif var_1_8 then
-		arg_1_0.nextTxt.text = "0+<color=#A9F548FF>" .. var_1_6 .. "</color>/" .. var_1_5
+	if slot7 then
+		slot0.nextTxt.text = slot5 .. "+<color=#A9F548FF>" .. slot4 - slot5 .. "</color>/" .. slot4
+	elseif slot12 then
+		slot0.nextTxt.text = "0+<color=#A9F548FF>" .. slot9 .. "</color>/" .. slot8
 	else
-		arg_1_0.nextTxt.text = var_1_2 .. "+<color=#A9F548FF>" .. arg_1_2 .. "</color>/" .. var_1_1
+		slot0.nextTxt.text = slot5 .. "+<color=#A9F548FF>" .. slot2 .. "</color>/" .. slot4
 	end
 end
 
-return var_0_0
+return slot0

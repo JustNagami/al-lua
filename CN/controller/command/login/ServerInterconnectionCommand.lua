@@ -1,65 +1,58 @@
-﻿local var_0_0 = class("ServerInterconnectionCommand", pm.SimpleCommand)
+slot0 = class("ServerInterconnectionCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.user
-	local var_1_2 = var_1_0.platform
-	local var_1_3 = getProxy(UserProxy)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot5 = getProxy(UserProxy)
 
-	var_1_3:SetDefaultGateway()
-	var_1_3:ActiveGatewaySwitcher()
+	slot5:SetDefaultGateway()
+	slot5:ActiveGatewaySwitcher()
 
-	local function var_1_4(arg_2_0)
-		NetConst.GATEWAY_HOST = arg_2_0.host
-		NetConst.GATEWAY_PORT = arg_2_0.port
-		NetConst.PROXY_GATEWAY_HOST = arg_2_0.proxyHost
-		NetConst.PROXY_GATEWAY_PORT = arg_2_0.proxyPort
+	function slot6(slot0)
+		NetConst.GATEWAY_HOST = slot0.host
+		NetConst.GATEWAY_PORT = slot0.port
+		NetConst.PROXY_GATEWAY_HOST = slot0.proxyHost
+		NetConst.PROXY_GATEWAY_PORT = slot0.proxyPort
 
 		originalPrint("switch to:", NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT)
 		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-			user = var_1_1
+			user = uv0
 		})
 	end
 
-	if var_1_3:ShouldSwitchGateway(var_1_2 or PLATFORM, var_1_1.arg2) then
-		local var_1_5 = var_1_2 or var_1_3:GetCacheGatewayFlag(var_1_1.arg2)
-		local var_1_6 = var_1_3:GetGateWayByPlatform(var_1_5)
-
-		if not var_1_6 then
-			arg_1_0:GetGateWayByServer(var_1_5, function(arg_3_0)
-				var_1_3:SetGatewayForPlatform(var_1_5, arg_3_0)
-				var_1_3:SetCacheGatewayFlag(var_1_5)
-				var_1_4(arg_3_0)
+	if slot5:ShouldSwitchGateway(slot2.platform or PLATFORM, slot2.user.arg2) then
+		if not slot5:GetGateWayByPlatform(slot4 or slot5:GetCacheGatewayFlag(slot3.arg2)) then
+			slot0:GetGateWayByServer(slot7, function (slot0)
+				uv0:SetGatewayForPlatform(uv1, slot0)
+				uv0:SetCacheGatewayFlag(uv1)
+				uv2(slot0)
 			end)
 		else
-			var_1_3:SetCacheGatewayFlag(var_1_5)
-			var_1_4(var_1_6)
+			slot5:SetCacheGatewayFlag(slot7)
+			slot6(slot8)
 		end
-	else
-		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-			user = var_1_1
-		})
+
+		return
 	end
+
+	pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+		user = slot3
+	})
 end
 
-function var_0_0.GetGateWayByServer(arg_4_0, arg_4_1, arg_4_2)
-	pg.ConnectionMgr.GetInstance():Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function()
+function slot0.GetGateWayByServer(slot0, slot1, slot2)
+	pg.ConnectionMgr.GetInstance():Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function ()
 		pg.ConnectionMgr.GetInstance():Send(10802, {
-			platform = arg_4_1,
+			platform = uv0,
 			state = NetConst.GatewayState
-		}, 10803, function(arg_6_0)
+		}, 10803, function (slot0)
 			pg.ConnectionMgr.GetInstance():Disconnect()
 
-			local var_6_0 = arg_6_0.gateway_ip
-			local var_6_1 = arg_6_0.gateway_port
-			local var_6_2 = System.String.IsNullOrEmpty(arg_6_0.proxy_ip)
-			local var_6_3 = var_6_2 and var_6_0 or arg_6_0.proxy_ip
-			local var_6_4 = var_6_2 and var_6_1 or arg_6_0.proxy_port
-			local var_6_5 = GatewayInfo.New(var_6_0, var_6_1, var_6_3, var_6_4)
+			slot1 = slot0.gateway_ip
+			slot2 = slot0.gateway_port
 
-			arg_4_2(var_6_5)
+			uv0(GatewayInfo.New(slot1, slot2, System.String.IsNullOrEmpty(slot0.proxy_ip) and slot1 or slot0.proxy_ip, slot3 and slot2 or slot0.proxy_port))
 		end)
 	end)
 end
 
-return var_0_0
+return slot0

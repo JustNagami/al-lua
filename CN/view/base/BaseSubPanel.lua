@@ -1,110 +1,101 @@
-﻿local var_0_0 = class("BaseSubPanel", import("view.base.BaseSubView"))
-local var_0_1 = import("view.util.FuncBuffer")
-local var_0_2 = import("view.util.AutoLoader")
+slot0 = class("BaseSubPanel", import("view.base.BaseSubView"))
+slot1 = import("view.util.FuncBuffer")
+slot2 = import("view.util.AutoLoader")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	assert(arg_1_1, "NIL Parent View")
+function slot0.Ctor(slot0, slot1)
+	assert(slot1, "NIL Parent View")
+	uv0.super.Ctor(slot0, slot1 and slot1._tf, slot1 and isa(slot1, BaseEventLogic) and slot1.event or nil, {})
 
-	local var_1_0 = arg_1_1 and arg_1_1._tf
-	local var_1_1 = arg_1_1 and isa(arg_1_1, BaseEventLogic) and arg_1_1.event or nil
-	local var_1_2 = {}
-
-	var_0_0.super.Ctor(arg_1_0, var_1_0, var_1_1, var_1_2)
-
-	arg_1_0.buffer = var_0_1.New()
-	arg_1_0.loader = var_0_2.New()
-	arg_1_0.viewParent = arg_1_1
+	slot0.buffer = uv1.New()
+	slot0.loader = uv2.New()
+	slot0.viewParent = slot1
 end
 
-function var_0_0.InvokeParent(arg_2_0, arg_2_1, ...)
-	if arg_2_0.viewParent then
-		arg_2_0.viewParent[arg_2_1](arg_2_0.viewParent, ...)
+function slot0.InvokeParent(slot0, slot1, ...)
+	if slot0.viewParent then
+		slot0.viewParent[slot1](slot0.viewParent, ...)
 	end
 end
 
-function var_0_0.Init(arg_3_0)
-	if arg_3_0._state ~= var_0_0.STATES.LOADED then
+function slot0.Init(slot0)
+	if slot0._state ~= uv0.STATES.LOADED then
 		return
 	end
 
-	arg_3_0._state = var_0_0.STATES.INITED
+	slot0._state = uv0.STATES.INITED
 
-	arg_3_0:OnInit()
-	arg_3_0:Show()
-	arg_3_0:HandleFuncQueue()
-	arg_3_0.buffer:SetNotifier(arg_3_0)
-	arg_3_0.buffer:ExcuteAll()
+	slot0:OnInit()
+	slot0:Show()
+	slot0:HandleFuncQueue()
+	slot0.buffer:SetNotifier(slot0)
+	slot0.buffer:ExcuteAll()
 end
 
-function var_0_0.Destroy(arg_4_0)
-	if arg_4_0._state == var_0_0.STATES.DESTROY then
+function slot0.Destroy(slot0)
+	if slot0._state == uv0.STATES.DESTROY then
 		return
 	end
 
-	if not arg_4_0:GetLoaded() then
-		arg_4_0._state = var_0_0.STATES.DESTROY
+	if not slot0:GetLoaded() then
+		slot0._state = uv0.STATES.DESTROY
 
 		return
 	end
 
-	arg_4_0._state = var_0_0.STATES.DESTROY
+	slot0._state = uv0.STATES.DESTROY
 
-	pg.DelegateInfo.Dispose(arg_4_0)
-	arg_4_0:Hide()
-	arg_4_0:OnDestroy()
-	arg_4_0.loader:Clear()
-	arg_4_0.buffer:Clear()
-	arg_4_0:disposeEvent()
-	arg_4_0:cleanManagedTween()
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Hide()
+	slot0:OnDestroy()
+	slot0.loader:Clear()
+	slot0.buffer:Clear()
+	slot0:disposeEvent()
+	slot0:cleanManagedTween()
 
-	arg_4_0._tf = nil
+	slot0._tf = nil
+	slot2 = slot0:getUIName()
 
-	local var_4_0 = PoolMgr.GetInstance()
-	local var_4_1 = arg_4_0:getUIName()
+	if slot0._go ~= nil and slot2 then
+		PoolMgr.GetInstance():ReturnUI(slot2, slot0._go)
 
-	if arg_4_0._go ~= nil and var_4_1 then
-		var_4_0:ReturnUI(var_4_1, arg_4_0._go)
-
-		arg_4_0._go = nil
+		slot0._go = nil
 	end
 end
 
-function var_0_0.Hide(arg_5_0)
-	arg_5_0:OnHide()
-	var_0_0.super.Hide(arg_5_0)
+function slot0.Hide(slot0)
+	slot0:OnHide()
+	uv0.super.Hide(slot0)
 end
 
-function var_0_0.RawHide(arg_6_0)
-	var_0_0.super.Hide(arg_6_0)
+function slot0.RawHide(slot0)
+	uv0.super.Hide(slot0)
 end
 
-function var_0_0.Show(arg_7_0)
-	var_0_0.super.Show(arg_7_0)
-	arg_7_0:OnShow()
+function slot0.Show(slot0)
+	uv0.super.Show(slot0)
+	slot0:OnShow()
 end
 
-function var_0_0.RawShow(arg_8_0)
-	var_0_0.super.Show(arg_8_0)
+function slot0.RawShow(slot0)
+	uv0.super.Show(slot0)
 end
 
-function var_0_0.IsShowing(arg_9_0)
-	return arg_9_0:GetLoaded() and isActive(arg_9_0._go)
+function slot0.IsShowing(slot0)
+	return slot0:GetLoaded() and isActive(slot0._go)
 end
 
-function var_0_0.IsHiding(arg_10_0)
-	return arg_10_0:GetLoaded() and not isActive(arg_10_0._go)
+function slot0.IsHiding(slot0)
+	return slot0:GetLoaded() and not isActive(slot0._go)
 end
 
-function var_0_0.SetParent(arg_11_0, arg_11_1, ...)
-	setParent(arg_11_0._tf, arg_11_1, ...)
+function slot0.SetParent(slot0, slot1, ...)
+	setParent(slot0._tf, slot1, ...)
 end
 
-function var_0_0.OnShow(arg_12_0)
-	return
+function slot0.OnShow(slot0)
 end
 
-function var_0_0.OnHide(arg_13_0)
-	return
+function slot0.OnHide(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 5,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 16122,
+	icon = 16122,
+	last_effect = "Darkness",
 	effect_list = {
 		{
 			type = "BattleBuffAddAttr",
@@ -66,24 +85,5 @@
 				number = 0.12
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 5,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 16122,
-	icon = 16122,
-	last_effect = "Darkness"
+	}
 }

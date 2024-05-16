@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("NetTerrainUpdate", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("NetTerrainUpdate", import("....BaseEntity"))
+slot0.Fields = {
 	row = "number",
 	terrain = "number",
 	terrainDir = "number",
@@ -8,29 +7,29 @@ var_0_0.Fields = {
 	terrainStrong = "number"
 }
 
-function var_0_0.DebugPrint(arg_1_0)
-	return "{" .. arg_1_0.row .. "," .. arg_1_0.column .. "} " .. arg_1_0.terrain
+function slot0.DebugPrint(slot0)
+	return "{" .. slot0.row .. "," .. slot0.column .. "} " .. slot0.terrain
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1)
-	arg_2_0.row = arg_2_1.pos.row
-	arg_2_0.column = arg_2_1.pos.column
-	arg_2_0.terrain = arg_2_1.type
+function slot0.Setup(slot0, slot1)
+	slot0.row = slot1.pos.row
+	slot0.column = slot1.pos.column
+	slot0.terrain = slot1.type
 
-	if arg_2_0.terrain == WorldMapCell.TerrainStream then
-		arg_2_0.terrainDir = WorldConst.ParseConfigDir(arg_2_1.dir.row - 1, arg_2_1.dir.column - 1)
-	elseif arg_2_0.terrain == WorldMapCell.TerrainWind then
-		arg_2_0.terrainDir = WorldConst.ParseConfigDir(arg_2_1.dir.row - 1, arg_2_1.dir.column - 1)
-		arg_2_0.terrainStrong = arg_2_1.distance
-	elseif arg_2_0.terrain == WorldMapCell.TerrainFog then
-		arg_2_0.terrainStrong = arg_2_1.distance
-	elseif arg_2_0.terrain == WorldMapCell.TerrainPoison then
-		arg_2_0.terrainStrong = arg_2_1.distance
+	if slot0.terrain == WorldMapCell.TerrainStream then
+		slot0.terrainDir = WorldConst.ParseConfigDir(slot1.dir.row - 1, slot1.dir.column - 1)
+	elseif slot0.terrain == WorldMapCell.TerrainWind then
+		slot0.terrainDir = WorldConst.ParseConfigDir(slot1.dir.row - 1, slot1.dir.column - 1)
+		slot0.terrainStrong = slot1.distance
+	elseif slot0.terrain == WorldMapCell.TerrainFog then
+		slot0.terrainStrong = slot1.distance
+	elseif slot0.terrain == WorldMapCell.TerrainPoison then
+		slot0.terrainStrong = slot1.distance
 	end
 end
 
-function var_0_0.GetTerrain(arg_3_0)
-	return arg_3_0.terrain
+function slot0.GetTerrain(slot0)
+	return slot0.terrain
 end
 
-return var_0_0
+return slot0

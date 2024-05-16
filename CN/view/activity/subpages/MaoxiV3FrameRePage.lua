@@ -1,1 +1,1 @@
-﻿return (class("MaoxiV3FrameRePage", import(".TemplatePage.NewFrameTemplatePage")))
+return class("MaoxiV3FrameRePage", import(".TemplatePage.NewFrameTemplatePage"))

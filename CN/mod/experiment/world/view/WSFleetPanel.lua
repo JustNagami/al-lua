@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSFleetPanel", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSFleetPanel", import("...BaseEntity"))
+slot0.Fields = {
 	map = "table",
 	onCancel = "function",
 	btnGo = "userdata",
@@ -20,341 +19,315 @@ var_0_0.Fields = {
 	selectIds = "table"
 }
 
-function var_0_0.Setup(arg_1_0)
-	pg.DelegateInfo.New(arg_1_0)
-	arg_1_0:Init()
+function slot0.Setup(slot0)
+	pg.DelegateInfo.New(slot0)
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_2_0)
-	pg.DelegateInfo.Dispose(arg_2_0)
-	arg_2_0:Clear()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Clear()
 end
 
-function var_0_0.Init(arg_3_0)
-	local var_3_0 = arg_3_0.transform
-
-	arg_3_0.rtShipTpl = var_3_0:Find("panel/shiptpl")
-	arg_3_0.rtEmptyTpl = var_3_0:Find("panel/emptytpl")
-	arg_3_0.rtFleets = {
+function slot0.Init(slot0)
+	slot1 = slot0.transform
+	slot0.rtShipTpl = slot1:Find("panel/shiptpl")
+	slot0.rtEmptyTpl = slot1:Find("panel/emptytpl")
+	slot5 = slot1.Find
+	slot0.rtFleets = {
 		[FleetType.Normal] = {
-			var_3_0:Find("panel/bg/content/fleet/1"),
-			var_3_0:Find("panel/bg/content/fleet/2"),
-			var_3_0:Find("panel/bg/content/fleet/3"),
-			var_3_0:Find("panel/bg/content/fleet/4")
+			slot1:Find("panel/bg/content/fleet/1"),
+			slot1:Find("panel/bg/content/fleet/2"),
+			slot1:Find("panel/bg/content/fleet/3"),
+			slot1:Find("panel/bg/content/fleet/4")
 		},
 		[FleetType.Submarine] = {
-			var_3_0:Find("panel/bg/content/sub/1")
+			slot5(slot1, "panel/bg/content/sub/1")
 		}
 	}
-	arg_3_0.rtLimit = var_3_0:Find("panel/limit")
-	arg_3_0.rtLimitElite = var_3_0:Find("panel/limit_elite")
-	arg_3_0.rtLimitTips = var_3_0:Find("panel/limit_tip")
-	arg_3_0.btnBack = var_3_0:Find("panel/btnBack")
-	arg_3_0.btnGo = var_3_0:Find("panel/start_button")
-	arg_3_0.toggleMask = var_3_0:Find("mask")
-	arg_3_0.toggleList = var_3_0:Find("mask/list")
-	arg_3_0.toggles = {}
+	slot0.rtLimit = slot1:Find("panel/limit")
+	slot0.rtLimitElite = slot1:Find("panel/limit_elite")
+	slot0.rtLimitTips = slot1:Find("panel/limit_tip")
+	slot0.btnBack = slot1:Find("panel/btnBack")
+	slot0.btnGo = slot1:Find("panel/start_button")
+	slot0.toggleMask = slot1:Find("mask")
+	slot0.toggleList = slot1:Find("mask/list")
+	slot0.toggles = {}
 
-	for iter_3_0 = 0, arg_3_0.toggleList.childCount - 1 do
-		table.insert(arg_3_0.toggles, arg_3_0.toggleList:Find("item" .. iter_3_0 + 1))
+	for slot5 = 0, slot0.toggleList.childCount - 1 do
+		table.insert(slot0.toggles, slot0.toggleList:Find("item" .. slot5 + 1))
 	end
 
-	setActive(arg_3_0.rtShipTpl, false)
-	setActive(arg_3_0.rtEmptyTpl, false)
-	setActive(arg_3_0.toggleMask, false)
+	setActive(slot0.rtShipTpl, false)
+	setActive(slot0.rtEmptyTpl, false)
+	setActive(slot0.toggleMask, false)
 end
 
-function var_0_0.UpdateMulti(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	arg_4_0.map = arg_4_1
-	arg_4_0.fleets = _(_.values(arg_4_2)):chain():filter(function(arg_5_0)
-		return arg_5_0:isRegularFleet()
-	end):sort(function(arg_6_0, arg_6_1)
-		return arg_6_0.id < arg_6_1.id
+function slot0.UpdateMulti(slot0, slot1, slot2, slot3)
+	slot0.map = slot1
+	slot0.fleets = _(_.values(slot2)):chain():filter(function (slot0)
+		return slot0:isRegularFleet()
+	end):sort(function (slot0, slot1)
+		return slot0.id < slot1.id
 	end):value()
-	arg_4_0.selectIds = {
+	slot0.selectIds = {
 		[FleetType.Normal] = {},
 		[FleetType.Submarine] = {}
 	}
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_3 or {}) do
-		local var_4_0 = arg_4_0:getFleetById(iter_4_1)
+	for slot7, slot8 in ipairs(slot3 or {}) do
+		if slot0:getFleetById(slot8) then
+			slot10 = slot9:getFleetType()
 
-		if var_4_0 then
-			local var_4_1 = var_4_0:getFleetType()
-			local var_4_2 = arg_4_0.selectIds[var_4_1]
-
-			if #var_4_2 < arg_4_0:getLimitNums(var_4_1) then
-				table.insert(var_4_2, iter_4_1)
+			if #slot0.selectIds[slot10] < slot0:getLimitNums(slot10) then
+				table.insert(slot11, slot8)
 			end
 		end
 	end
 
-	setActive(arg_4_0.rtLimitElite, false)
-	setActive(arg_4_0.rtLimitTips, false)
-	setActive(arg_4_0.rtLimit, true)
-	onButton(arg_4_0, arg_4_0.btnGo, function()
-		arg_4_0.onConfirm(arg_4_0:getSelectIds())
+	setActive(slot0.rtLimitElite, false)
+	setActive(slot0.rtLimitTips, false)
+	setActive(slot0.rtLimit, true)
+	onButton(slot0, slot0.btnGo, function ()
+		uv0.onConfirm(uv0:getSelectIds())
 	end, SFX_UI_WEIGHANCHOR_GO)
-	onButton(arg_4_0, arg_4_0.btnBack, function()
-		arg_4_0.onCancel()
+	onButton(slot0, slot0.btnBack, function ()
+		uv0.onCancel()
 	end, SFX_CANCEL)
-	onButton(arg_4_0, arg_4_0.transform, function()
-		arg_4_0.onCancel()
+	onButton(slot0, slot0.transform, function ()
+		uv0.onCancel()
 	end, SFX_CANCEL)
-	onButton(arg_4_0, arg_4_0.toggleMask, function()
-		arg_4_0:hideToggleMask()
+	onButton(slot0, slot0.toggleMask, function ()
+		uv0:hideToggleMask()
 	end, SFX_CANCEL)
-	arg_4_0:clearFleets()
-	arg_4_0:updateFleets()
-	arg_4_0:updateLimit()
+	slot0:clearFleets()
+	slot0:updateFleets()
+	slot0:updateLimit()
 end
 
-function var_0_0.getFleetById(arg_11_0, arg_11_1)
-	return _.detect(arg_11_0.fleets, function(arg_12_0)
-		return arg_12_0.id == arg_11_1
+function slot0.getFleetById(slot0, slot1)
+	return _.detect(slot0.fleets, function (slot0)
+		return slot0.id == uv0
 	end)
 end
 
-function var_0_0.getLimitNums(arg_13_0, arg_13_1)
-	local var_13_0 = 0
+function slot0.getLimitNums(slot0, slot1)
+	slot2 = 0
 
-	if arg_13_1 == FleetType.Normal then
-		var_13_0 = 4
-	elseif arg_13_1 == FleetType.Submarine then
-		var_13_0 = 1
+	if slot1 == FleetType.Normal then
+		slot2 = 4
+	elseif slot1 == FleetType.Submarine then
+		slot2 = 1
 	end
 
-	return var_13_0
+	return slot2
 end
 
-function var_0_0.getSelectIds(arg_14_0)
-	local var_14_0 = {}
+function slot0.getSelectIds(slot0)
+	slot1 = {}
 
-	for iter_14_0, iter_14_1 in pairs(arg_14_0.selectIds) do
-		for iter_14_2, iter_14_3 in ipairs(iter_14_1) do
-			if iter_14_3 > 0 then
-				table.insert(var_14_0, iter_14_3)
+	for slot5, slot6 in pairs(slot0.selectIds) do
+		for slot10, slot11 in ipairs(slot6) do
+			if slot11 > 0 then
+				table.insert(slot1, slot11)
 			end
 		end
 	end
 
-	_.sort(var_14_0, function(arg_15_0, arg_15_1)
-		return arg_15_0 < arg_15_1
+	_.sort(slot1, function (slot0, slot1)
+		return slot0 < slot1
 	end)
 
-	return var_14_0
+	return slot1
 end
 
-function var_0_0.updateFleets(arg_16_0)
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.rtFleets) do
-		for iter_16_2 = 1, #iter_16_1 do
-			arg_16_0:updateFleet(iter_16_0, iter_16_2)
+function slot0.updateFleets(slot0)
+	for slot4, slot5 in pairs(slot0.rtFleets) do
+		for slot9 = 1, #slot5 do
+			slot0:updateFleet(slot4, slot9)
 		end
 	end
 end
 
-function var_0_0.updateLimit(arg_17_0)
-	local var_17_0 = #_.filter(arg_17_0.selectIds[FleetType.Normal], function(arg_18_0)
-		return arg_18_0 > 0
-	end)
-	local var_17_1 = #_.filter(arg_17_0.selectIds[FleetType.Submarine], function(arg_19_0)
-		return arg_19_0 > 0
-	end)
-	local var_17_2 = arg_17_0:getLimitNums(FleetType.Normal)
-
-	setText(arg_17_0.rtLimit:Find("number"), string.format("%d/%d", var_17_0, var_17_2))
-
-	local var_17_3 = arg_17_0:getLimitNums(FleetType.Submarine)
-
-	setText(arg_17_0.rtLimit:Find("number_sub"), string.format("%d/%d", var_17_1, var_17_3))
+function slot0.updateLimit(slot0)
+	setText(slot0.rtLimit:Find("number"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Normal], function (slot0)
+		return slot0 > 0
+	end), slot0:getLimitNums(FleetType.Normal)))
+	setText(slot0.rtLimit:Find("number_sub"), string.format("%d/%d", #_.filter(slot0.selectIds[FleetType.Submarine], function (slot0)
+		return slot0 > 0
+	end), slot0:getLimitNums(FleetType.Submarine)))
 end
 
-function var_0_0.selectFleet(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
-	if fleetId ~= arg_20_3 then
-		local var_20_0 = arg_20_0.selectIds[arg_20_1]
+function slot0.selectFleet(slot0, slot1, slot2, slot3)
+	if fleetId ~= slot3 then
+		slot4 = slot0.selectIds[slot1]
 
-		if arg_20_3 > 0 and table.contains(var_20_0, arg_20_3) then
+		if slot3 > 0 and table.contains(slot4, slot3) then
 			return
 		end
 
-		if arg_20_1 == FleetType.Normal and arg_20_0:getLimitNums(arg_20_1) > 0 and arg_20_3 == 0 and #_.filter(var_20_0, function(arg_21_0)
-			return arg_21_0 > 0
+		if slot1 == FleetType.Normal and slot0:getLimitNums(slot1) > 0 and slot3 == 0 and #_.filter(slot4, function (slot0)
+			return slot0 > 0
 		end) == 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("level_fleet_lease_one_ship"))
 
 			return
 		end
 
-		local var_20_1 = arg_20_0:getFleetById(arg_20_3)
-
-		if var_20_1 then
-			if not var_20_1:isUnlock() then
+		if slot0:getFleetById(slot3) then
+			if not slot5:isUnlock() then
 				return
 			end
 
-			if var_20_1:isLegalToFight() ~= true then
+			if slot5:isLegalToFight() ~= true then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("level_fleet_not_enough"))
 
 				return
 			end
 		end
 
-		var_20_0[arg_20_2] = arg_20_3
+		slot4[slot2] = slot3
 
-		arg_20_0:updateFleet(arg_20_1, arg_20_2)
-		arg_20_0:updateLimit()
+		slot0:updateFleet(slot1, slot2)
+		slot0:updateLimit()
 	end
 end
 
-function var_0_0.updateFleet(arg_22_0, arg_22_1, arg_22_2)
-	local var_22_0 = arg_22_0.selectIds[arg_22_1][arg_22_2]
-	local var_22_1 = arg_22_0:getFleetById(var_22_0)
-	local var_22_2 = arg_22_2 <= arg_22_0:getLimitNums(arg_22_1)
-	local var_22_3 = arg_22_0.rtFleets[arg_22_1][arg_22_2]
-	local var_22_4 = var_22_3:Find("bg/name")
-	local var_22_5 = var_22_3:Find("main")
-	local var_22_6 = var_22_3:Find("vanguard")
-	local var_22_7 = var_22_3:Find("sub")
-	local var_22_8 = var_22_3:Find("btn_select")
-	local var_22_9 = var_22_3:Find("btn_recom")
-	local var_22_10 = var_22_3:Find("btn_clear")
-	local var_22_11 = var_22_3:Find("blank")
-	local var_22_12 = var_22_3:Find("selected")
+function slot0.updateFleet(slot0, slot1, slot2)
+	slot6 = slot2 <= slot0:getLimitNums(slot1)
+	slot7 = slot0.rtFleets[slot1][slot2]
+	slot10 = slot7:Find("vanguard")
+	slot11 = slot7:Find("sub")
 
-	setText(var_22_4, "")
-	setActive(var_22_12, false)
-	setActive(var_22_8, var_22_2)
-	setActive(var_22_10, var_22_2)
-	setActive(var_22_9, false)
-	setActive(var_22_11, not var_22_2)
+	setText(slot7:Find("bg/name"), "")
+	setActive(slot7:Find("selected"), false)
+	setActive(slot7:Find("btn_select"), slot6)
+	setActive(slot7:Find("btn_clear"), slot6)
+	setActive(slot7:Find("btn_recom"), false)
+	setActive(slot7:Find("blank"), not slot6)
 
-	if var_22_5 then
-		setActive(var_22_5, var_22_2 and var_22_1)
+	if slot7:Find("main") then
+		setActive(slot9, slot6 and slot0:getFleetById(slot0.selectIds[slot1][slot2]))
 	end
 
-	if var_22_6 then
-		setActive(var_22_6, var_22_2 and var_22_1)
+	if slot10 then
+		setActive(slot10, slot6 and slot5)
 	end
 
-	if var_22_7 then
-		setActive(var_22_7, var_22_2 and var_22_1)
+	if slot11 then
+		setActive(slot11, slot6 and slot5)
 	end
 
-	if var_22_2 then
-		if var_22_1 then
-			setText(var_22_4, var_22_1.name == "" and Fleet.DEFAULT_NAME[var_22_1.id] or var_22_1.name)
+	if slot6 then
+		if slot5 then
+			setText(slot8, slot5.name == "" and Fleet.DEFAULT_NAME[slot5.id] or slot5.name)
 
-			if arg_22_1 == FleetType.Submarine then
-				arg_22_0:updateShips(var_22_7, var_22_1.subShips)
+			if slot1 == FleetType.Submarine then
+				slot0:updateShips(slot11, slot5.subShips)
 			else
-				arg_22_0:updateShips(var_22_5, var_22_1.mainShips)
-				arg_22_0:updateShips(var_22_6, var_22_1.vanguardShips)
+				slot0:updateShips(slot9, slot5.mainShips)
+				slot0:updateShips(slot10, slot5.vanguardShips)
 			end
 		end
 
-		onButton(arg_22_0, var_22_8, function()
-			arg_22_0.toggleList.position = (var_22_8.position + var_22_10.position) / 2
-			arg_22_0.toggleList.anchoredPosition = arg_22_0.toggleList.anchoredPosition + Vector2(-arg_22_0.toggleList.rect.width / 2, -var_22_8.rect.height / 2)
+		onButton(slot0, slot12, function ()
+			uv0.toggleList.position = (uv1.position + uv2.position) / 2
+			uv0.toggleList.anchoredPosition = uv0.toggleList.anchoredPosition + Vector2(-uv0.toggleList.rect.width / 2, -uv1.rect.height / 2)
 
-			arg_22_0:showToggleMask(arg_22_1, function(arg_24_0)
-				arg_22_0:hideToggleMask()
-				arg_22_0:selectFleet(arg_22_1, arg_22_2, arg_24_0)
+			uv0:showToggleMask(uv3, function (slot0)
+				uv0:hideToggleMask()
+				uv0:selectFleet(uv1, uv2, slot0)
 			end)
 		end, SFX_UI_CLICK)
-		onButton(arg_22_0, var_22_10, function()
-			arg_22_0:selectFleet(arg_22_1, arg_22_2, 0)
+		onButton(slot0, slot14, function ()
+			uv0:selectFleet(uv1, uv2, 0)
 		end, SFX_UI_CLICK)
 	end
 end
 
-function var_0_0.updateShips(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = UIItemList.New(arg_26_1, arg_26_0.rtShipTpl)
+function slot0.updateShips(slot0, slot1, slot2)
+	slot3 = UIItemList.New(slot1, slot0.rtShipTpl)
 
-	var_26_0:make(function(arg_27_0, arg_27_1, arg_27_2)
-		if arg_27_0 == UIItemList.EventUpdate then
-			local var_27_0 = getProxy(BayProxy):getShipById(arg_26_2[arg_27_1 + 1])
+	slot3:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot4 = getProxy(BayProxy):getShipById(uv0[slot1 + 1])
 
-			updateShip(arg_27_2, var_27_0)
+			updateShip(slot2, slot4)
 
-			local var_27_1 = arg_27_2:Find("icon_bg/energy")
-			local var_27_2 = var_27_0:getEnergeConfig()
+			slot5 = slot2:Find("icon_bg/energy")
 
-			if var_27_2 and var_27_2.id <= 2 then
-				setActive(var_27_1, true)
-				GetImageSpriteFromAtlasAsync("energy", var_27_2.icon, var_27_1)
+			if slot4:getEnergeConfig() and slot6.id <= 2 then
+				setActive(slot5, true)
+				GetImageSpriteFromAtlasAsync("energy", slot6.icon, slot5)
 			else
-				setActive(var_27_1, false)
+				setActive(slot5, false)
 			end
 		end
 	end)
-	var_26_0:align(#arg_26_2)
+	slot3:align(#slot2)
 end
 
-function var_0_0.showToggleMask(arg_28_0, arg_28_1, arg_28_2)
-	setActive(arg_28_0.toggleMask, true)
+function slot0.showToggleMask(slot0, slot1, slot2)
+	setActive(slot0.toggleMask, true)
 
-	local var_28_0 = _.filter(arg_28_0.fleets, function(arg_29_0)
-		return arg_29_0:getFleetType() == arg_28_1
-	end)
+	for slot7, slot8 in ipairs(slot0.toggles) do
+		slot9 = _.filter(slot0.fleets, function (slot0)
+			return slot0:getFleetType() == uv0
+		end)[slot7]
 
-	for iter_28_0, iter_28_1 in ipairs(arg_28_0.toggles) do
-		local var_28_1 = var_28_0[iter_28_0]
+		setActive(slot8, slot9)
 
-		setActive(iter_28_1, var_28_1)
+		if slot9 then
+			slot10, slot11 = slot9:isUnlock()
 
-		if var_28_1 then
-			local var_28_2, var_28_3 = var_28_1:isUnlock()
-			local var_28_4 = iter_28_1:Find("lock")
+			setButtonEnabled(slot8, slot10)
+			setActive(slot8:Find("lock"), not slot10)
 
-			setButtonEnabled(iter_28_1, var_28_2)
-			setActive(var_28_4, not var_28_2)
+			if slot10 then
+				slot13 = table.contains(slot0.selectIds[slot1], slot9.id)
 
-			if var_28_2 then
-				local var_28_5 = table.contains(arg_28_0.selectIds[arg_28_1], var_28_1.id)
-
-				setActive(iter_28_1:Find("selected"), var_28_5)
-				setActive(iter_28_1:Find("text"), not var_28_5)
-				setActive(iter_28_1:Find("text_selected"), var_28_5)
-				onButton(arg_28_0, iter_28_1, function()
-					arg_28_2(var_28_1.id)
+				setActive(slot8:Find("selected"), slot13)
+				setActive(slot8:Find("text"), not slot13)
+				setActive(slot8:Find("text_selected"), slot13)
+				onButton(slot0, slot8, function ()
+					uv0(uv1.id)
 				end, SFX_UI_TAG)
 			else
-				onButton(arg_28_0, var_28_4, function()
-					pg.TipsMgr.GetInstance():ShowTips(var_28_3)
+				onButton(slot0, slot12, function ()
+					pg.TipsMgr.GetInstance():ShowTips(uv0)
 				end, SFX_UI_CLICK)
 			end
 		end
 	end
 end
 
-function var_0_0.hideToggleMask(arg_32_0)
-	setActive(arg_32_0.toggleMask, false)
+function slot0.hideToggleMask(slot0)
+	setActive(slot0.toggleMask, false)
 end
 
-function var_0_0.clearFleets(arg_33_0)
-	for iter_33_0, iter_33_1 in pairs(arg_33_0.rtFleets) do
-		_.each(iter_33_1, function(arg_34_0)
-			arg_33_0:clearFleet(arg_34_0)
+function slot0.clearFleets(slot0)
+	for slot4, slot5 in pairs(slot0.rtFleets) do
+		_.each(slot5, function (slot0)
+			uv0:clearFleet(slot0)
 		end)
 	end
 end
 
-function var_0_0.clearFleet(arg_35_0, arg_35_1)
-	local var_35_0 = arg_35_1:Find("main")
-	local var_35_1 = arg_35_1:Find("vanguard")
-	local var_35_2 = arg_35_1:Find("sub")
+function slot0.clearFleet(slot0, slot1)
+	slot3 = slot1:Find("vanguard")
+	slot4 = slot1:Find("sub")
 
-	if var_35_0 then
-		removeAllChildren(var_35_0)
+	if slot1:Find("main") then
+		removeAllChildren(slot2)
 	end
 
-	if var_35_1 then
-		removeAllChildren(var_35_1)
+	if slot3 then
+		removeAllChildren(slot3)
 	end
 
-	if var_35_2 then
-		removeAllChildren(var_35_2)
+	if slot4 then
+		removeAllChildren(slot4)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 10,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17415,
+	icon = 17410,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -30,24 +49,5 @@
 				buff_id = 17412
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 10,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17415,
-	icon = 17410,
-	last_effect = ""
+	}
 }

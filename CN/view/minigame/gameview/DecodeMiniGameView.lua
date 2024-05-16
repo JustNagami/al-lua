@@ -1,111 +1,87 @@
-﻿local var_0_0 = class("DecodeMiniGameView", import("..BaseMiniGameView"))
+slot0 = class("DecodeMiniGameView", import("..BaseMiniGameView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "DecodeGameUI"
 end
 
-function var_0_0.didEnter(arg_2_0)
-	arg_2_0.controller = DecodeGameController.New()
+function slot0.didEnter(slot0)
+	slot0.controller = DecodeGameController.New()
 
-	arg_2_0.controller.view:SetUI(arg_2_0._tf)
+	slot0.controller.view:SetUI(slot0._tf)
+	slot0.controller:SetCallback(function ()
+		uv0:emit(uv1.ON_BACK)
+	end, function (slot0)
+		if uv0:GetMGHubData().count > 0 then
+			uv0:StoreDataToServer(uv0.controller:GetSaveData())
 
-	local function var_2_0()
-		arg_2_0:emit(var_0_0.ON_BACK)
-	end
+			uv0.onGetAward = slot0
 
-	local function var_2_1(arg_4_0)
-		if arg_2_0:GetMGHubData().count > 0 then
-			local var_4_0 = arg_2_0.controller:GetSaveData()
-
-			arg_2_0:StoreDataToServer(var_4_0)
-
-			arg_2_0.onGetAward = arg_4_0
-
-			arg_2_0:SendSuccess(0)
+			uv0:SendSuccess(0)
 		end
-	end
-
-	local function var_2_2()
-		local var_5_0 = arg_2_0:GetMGHubData()
-
-		if var_5_0.ultimate == 0 then
+	end, function ()
+		if uv0:GetMGHubData().ultimate == 0 then
 			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-				hubid = var_5_0.id,
+				hubid = slot0.id,
 				cmd = MiniGameOPCommand.CMD_ULTIMATE,
 				args1 = {}
 			})
 		end
-	end
-
-	arg_2_0.controller:SetCallback(var_2_0, var_2_1, var_2_2)
-
-	local var_2_3 = arg_2_0:PackData()
-
-	arg_2_0.controller:SetUp(var_2_3)
+	end)
+	slot0.controller:SetUp(slot0:PackData())
 end
 
-function var_0_0.GetData(arg_6_0, arg_6_1)
-	local var_6_0 = PlayerPrefs.GetInt("DecodeGameMapId", 1)
-	local var_6_1 = arg_6_1:GetRuntimeData("elements")
+function slot0.GetData(slot0, slot1)
+	slot2 = PlayerPrefs.GetInt("DecodeGameMapId", 1)
 
-	local function var_6_2()
-		for iter_7_0 = 1, 60 do
-			if not table.contains(var_6_1, iter_7_0) then
-				table.insert(var_6_1, iter_7_0)
+	function slot4()
+		for slot3 = 1, 60 do
+			if not table.contains(uv0, slot3) then
+				table.insert(uv0, slot3)
 
 				break
 			end
 		end
 	end
 
-	local function var_6_3()
-		table.remove(var_6_1, 1)
+	function slot5()
+		table.remove(uv0, 1)
 	end
 
-	if #var_6_1 ~= arg_6_0.usedtime then
-		local var_6_4 = arg_6_0.usedtime - #var_6_1
-
-		for iter_6_0 = 1, var_6_4 do
-			var_6_2()
+	if #slot1:GetRuntimeData("elements") ~= slot0.usedtime then
+		for slot10 = 1, slot0.usedtime - #slot3 do
+			slot4()
 		end
 
-		local var_6_5 = #var_6_1 - arg_6_0.usedtime
-
-		for iter_6_1 = 1, var_6_5 do
-			var_6_3()
+		for slot11 = 1, #slot3 - slot0.usedtime do
+			slot5()
 		end
 	end
 
 	return {
-		mapId = var_6_0,
-		unlocks = var_6_1,
-		canUseCnt = arg_6_0.count,
+		mapId = slot2,
+		unlocks = slot3,
+		canUseCnt = slot0.count,
 		passwords = DecodeGameConst.MAPS_PASSWORD,
-		isFinished = arg_6_0.ultimate > 0
+		isFinished = slot0.ultimate > 0
 	}
 end
 
-function var_0_0.PackData(arg_9_0)
-	local var_9_0 = arg_9_0:GetMGHubData()
-	local var_9_1 = arg_9_0:GetMGData()
-
-	return var_0_0.GetData(var_9_0, var_9_1)
+function slot0.PackData(slot0)
+	return uv0.GetData(slot0:GetMGHubData(), slot0:GetMGData())
 end
 
-function var_0_0.OnGetAwardDone(arg_10_0, arg_10_1)
-	if arg_10_1.cmd == MiniGameOPCommand.CMD_COMPLETE and arg_10_0.onGetAward then
-		arg_10_0.onGetAward()
+function slot0.OnGetAwardDone(slot0, slot1)
+	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE and slot0.onGetAward then
+		slot0.onGetAward()
 
-		arg_10_0.onGetAward = nil
+		slot0.onGetAward = nil
 	end
 end
 
-function var_0_0.willExit(arg_11_0)
-	local var_11_0 = arg_11_0.controller.mapId or 1
-
-	PlayerPrefs.SetInt("DecodeGameMapId", var_11_0)
+function slot0.willExit(slot0)
+	PlayerPrefs.SetInt("DecodeGameMapId", slot0.controller.mapId or 1)
 	PlayerPrefs.Save()
-	arg_11_0.controller:Dispose()
+	slot0.controller:Dispose()
 end
 
-return var_0_0
+return slot0

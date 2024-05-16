@@ -1,22 +1,20 @@
-﻿local var_0_0 = class("AtelierRequestCommand", pm.SimpleCommand)
+slot0 = class("AtelierRequestCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.body
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(26051, {
-		act_id = var_1_0
-	}, 26052, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(ActivityProxy):getActivityById(var_1_0)
+		act_id = slot1.body
+	}, 26052, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(ActivityProxy):getActivityById(uv0)
 
-			var_2_0:InitItems(arg_2_0.items)
-			var_2_0:InitFormulaUseCounts(arg_2_0.recipes)
-			var_2_0:UpdateBuffSlots(arg_2_0.slots)
-			getProxy(ActivityProxy):updateActivity(var_2_0)
+			slot1:InitItems(slot0.items)
+			slot1:InitFormulaUseCounts(slot0.recipes)
+			slot1:UpdateBuffSlots(slot0.slots)
+			getProxy(ActivityProxy):updateActivity(slot1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

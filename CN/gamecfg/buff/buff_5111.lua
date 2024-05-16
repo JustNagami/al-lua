@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpperConsort",
-				"onLowerConsort"
-			},
-			arg_list = {
-				buff_id = 5110,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 5111,
 	icon = 5110,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpperConsort",
+				"onLowerConsort"
+			},
+			arg_list = {
+				buff_id = 5110,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

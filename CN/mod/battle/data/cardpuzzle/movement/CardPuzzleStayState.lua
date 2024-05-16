@@ -1,36 +1,30 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.CardPuzzleStayState = class("CardPuzzleStayState", slot0.Battle.CardPuzzleIMoveState)
+slot1 = slot0.Battle.CardPuzzleStayState
+slot1.__name = "CardPuzzleStayState"
+slot1.STAY_DURATION = 5000
 
-local var_0_0 = ys
-
-var_0_0.Battle.CardPuzzleStayState = class("CardPuzzleStayState", var_0_0.Battle.CardPuzzleIMoveState)
-
-local var_0_1 = var_0_0.Battle.CardPuzzleStayState
-
-var_0_1.__name = "CardPuzzleStayState"
-var_0_1.STAY_DURATION = 5000
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_1.AddMoveToState(arg_2_0, arg_2_1)
-	arg_2_1:OnMoveToState()
+function slot1.AddMoveToState(slot0, slot1)
+	slot1:OnMoveToState()
 end
 
-function var_0_1.AddRandomState(arg_3_0, arg_3_1)
-	arg_3_1:OnRandomState()
+function slot1.AddRandomState(slot0, slot1)
+	slot1:OnRandomState()
 end
 
-function var_0_1.AddStayState(arg_4_0, arg_4_1)
-	arg_4_1:OnStayState()
+function slot1.AddStayState(slot0, slot1)
+	slot1:OnStayState()
 end
 
-function var_0_1.IsFinish(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:GetStateChangeTimeStamp()
-
-	return arg_5_0._currentTime - var_5_0 > var_0_1.STAY_DURATION
+function slot1.IsFinish(slot0, slot1)
+	return uv0.STAY_DURATION < slot0._currentTime - slot1:GetStateChangeTimeStamp()
 end
 
-function var_0_1.NextState(arg_6_0)
-	return var_0_0.Battle.CardPuzzleMoveState.STATE_RANDOM
+function slot1.NextState(slot0)
+	return uv0.Battle.CardPuzzleMoveState.STATE_RANDOM
 end

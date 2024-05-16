@@ -1,17 +1,13 @@
-﻿local var_0_0 = class("RecordSkinAnimPreviwBtnUsageCommand", pm.SimpleCommand)
+slot0 = class("RecordSkinAnimPreviwBtnUsageCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().isOpen and 1 or 0
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(16203, {
-		flag = var_1_0
-	}, 16204, function(arg_2_0)
-		if arg_2_0.ret == 0 then
-			-- block empty
-		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+		flag = slot1:getBody().isOpen and 1 or 0
+	}, 16204, function (slot0)
+		if slot0.ret ~= 0 then
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

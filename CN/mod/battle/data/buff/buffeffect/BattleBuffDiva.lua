@@ -1,25 +1,21 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleBuffDiva", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffDiva = slot1
+slot1.__name = "BattleBuffDiva"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleBuffDiva", var_0_0.Battle.BattleBuffEffect)
-
-var_0_0.Battle.BattleBuffDiva = var_0_1
-var_0_1.__name = "BattleBuffDiva"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.onInitGame(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = var_0_0.Battle.BattleDataProxy.GetInstance():GetBGMList()
-	local var_2_1 = var_2_0[math.random(#var_2_0)]
+function slot1.onInitGame(slot0, slot1, slot2)
+	slot3 = uv0.Battle.BattleDataProxy.GetInstance():GetBGMList()
 
-	pg.BgmMgr.GetInstance():Push(BattleScene.__cname, var_2_1)
+	pg.BgmMgr.GetInstance():Push(BattleScene.__cname, slot3[math.random(#slot3)])
 end
 
-function var_0_1.onTrigger(arg_3_0)
-	local var_3_0 = var_0_0.Battle.BattleDataProxy.GetInstance():GetBGMList(true)
-	local var_3_1 = var_3_0[math.random(#var_3_0)]
+function slot1.onTrigger(slot0)
+	slot1 = uv0.Battle.BattleDataProxy.GetInstance():GetBGMList(true)
 
-	pg.BgmMgr.GetInstance():Push(BattleScene.__cname, var_3_1)
+	pg.BgmMgr.GetInstance():Push(BattleScene.__cname, slot1[math.random(#slot1)])
 end

@@ -1,26 +1,20 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleBuffAddAttrCommander", slot0.Battle.BattleBuffAddAttr)
+slot0.Battle.BattleBuffAddAttrCommander = slot1
+slot1.__name = "BattleBuffAddAttrCommander"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleBuffAddAttrCommander", var_0_0.Battle.BattleBuffAddAttr)
-
-var_0_0.Battle.BattleBuffAddAttrCommander = var_0_1
-var_0_1.__name = "BattleBuffAddAttrCommander"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.GetEffectType(arg_2_0)
-	return var_0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
+function slot1.GetEffectType(slot0)
+	return uv0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
 end
 
-function var_0_1.SetArgs(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0._group = arg_3_0._tempData.arg_list.group or arg_3_2:GetID()
-	arg_3_0._attr = arg_3_0._tempData.arg_list.convertAttr
-
-	local var_3_0 = arg_3_0._tempData.arg_list.ability
-	local var_3_1 = arg_3_0._tempData.arg_list.convertRate
-
-	arg_3_0._number = arg_3_0._commander:getAbilitys()[var_3_0].value * var_3_1
-	arg_3_0._numberBase = arg_3_0._number
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._group = slot0._tempData.arg_list.group or slot2:GetID()
+	slot0._attr = slot0._tempData.arg_list.convertAttr
+	slot0._number = slot0._commander:getAbilitys()[slot0._tempData.arg_list.ability].value * slot0._tempData.arg_list.convertRate
+	slot0._numberBase = slot0._number
 end

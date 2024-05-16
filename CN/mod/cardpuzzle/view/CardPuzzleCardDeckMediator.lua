@@ -1,41 +1,36 @@
-﻿local var_0_0 = class("CardPuzzleCardDeckMediator", ContextMediator)
+slot0 = class("CardPuzzleCardDeckMediator", ContextMediator)
+slot0.SHOW_CARD = "SHOW_CARD"
+slot0.CLOSE_LAYER = "CLOSE_LAYER"
 
-var_0_0.SHOW_CARD = "SHOW_CARD"
-var_0_0.CLOSE_LAYER = "CLOSE_LAYER"
-
-function var_0_0.register(arg_1_0)
-	local var_1_0 = arg_1_0.contextData.card
-	local var_1_1 = arg_1_0.contextData.hand
-
-	arg_1_0.viewComponent:SetCards(var_1_0, var_1_1)
-	arg_1_0:bind(var_0_0.SHOW_CARD, function(arg_2_0, arg_2_1)
-		arg_1_0:addSubLayers(Context.New({
+function slot0.register(slot0)
+	slot0.viewComponent:SetCards(slot0.contextData.card, slot0.contextData.hand)
+	slot0:bind(uv0.SHOW_CARD, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleCardDetailMediator,
 			viewComponent = CardPuzzleCardDetailLayer,
-			data = arg_2_1
+			data = slot1
 		}))
 	end)
-	arg_1_0:bind(var_0_0.CLOSE_LAYER, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.RESUME_BATTLE)
+	slot0:bind(uv0.CLOSE_LAYER, function (slot0, slot1)
+		uv0:sendNotification(GAME.RESUME_BATTLE)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-function var_0_0.onBackPressed(arg_6_0, arg_6_1)
-	arg_6_0:sendNotification(GAME.RESUME_BATTLE)
-	var_0_0.super.onBackPressed(arg_6_0, arg_6_1)
+function slot0.onBackPressed(slot0, slot1)
+	slot0:sendNotification(GAME.RESUME_BATTLE)
+	uv0.super.onBackPressed(slot0, slot1)
 end
 
-function var_0_0.remove(arg_7_0)
-	return
+function slot0.remove(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,259 +1,205 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleConfig
+slot3 = slot0.Battle.BattleEvent
+slot4 = class("BattleSkillCLSArea", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillCLSArea = slot4
+slot4.__name = "BattleSkillCLSArea"
+slot4.TYPE_BULLET = 1
+slot4.TYPE_AIRCRAFT = 2
+slot4.TYPE_MINION = 3
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = var_0_0.Battle.BattleEvent
-local var_0_4 = class("BattleSkillCLSArea", var_0_0.Battle.BattleSkillEffect)
+function slot4.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1, lv)
 
-var_0_0.Battle.BattleSkillCLSArea = var_0_4
-var_0_4.__name = "BattleSkillCLSArea"
-var_0_4.TYPE_BULLET = 1
-var_0_4.TYPE_AIRCRAFT = 2
-var_0_4.TYPE_MINION = 3
-
-function var_0_4.Ctor(arg_1_0, arg_1_1)
-	var_0_4.super.Ctor(arg_1_0, arg_1_1, lv)
-
-	arg_1_0._range = arg_1_0._tempData.arg_list.range
-	arg_1_0._width = arg_1_0._tempData.arg_list.width
-	arg_1_0._height = arg_1_0._tempData.arg_list.height
-	arg_1_0._minRange = arg_1_0._tempData.arg_list.minRange or 0
-	arg_1_0._angle = arg_1_0._tempData.arg_list.angle
-	arg_1_0._lifeTime = arg_1_0._tempData.arg_list.life_time
-	arg_1_0._fx = arg_1_0._tempData.arg_list.effect
-	arg_1_0._moveType = arg_1_0._tempData.arg_list.move_type
-	arg_1_0._speed = arg_1_0._tempData.arg_list.speed_x
-	arg_1_0._finaleFX = arg_1_0._tempData.arg_list.finale_effect
-	arg_1_0._delayCLS = arg_1_0._tempData.arg_list.cld_delay
-	arg_1_0._bulletType = arg_1_0._tempData.arg_list.bullet_type_list
-	arg_1_0._damageSrcUnitTag = arg_1_0._tempData.arg_list.damage_tag_list
-	arg_1_0._damageParamA = arg_1_0._tempData.arg_list.damage_param_a
-	arg_1_0._damageParamB = arg_1_0._tempData.arg_list.damage_param_b
-	arg_1_0._damageSFX = arg_1_0._tempData.arg_list.damage_sfx or ""
-	arg_1_0._damageBuffID = arg_1_0._tempData.arg_list.buff_id
-	arg_1_0._damageBuffLV = arg_1_0._tempData.arg_list.buff_lv
-	arg_1_0._damageDiveFilter = arg_1_0._tempData.arg_list.diveFilter or {
+	slot0._range = slot0._tempData.arg_list.range
+	slot0._width = slot0._tempData.arg_list.width
+	slot0._height = slot0._tempData.arg_list.height
+	slot0._minRange = slot0._tempData.arg_list.minRange or 0
+	slot0._angle = slot0._tempData.arg_list.angle
+	slot0._lifeTime = slot0._tempData.arg_list.life_time
+	slot0._fx = slot0._tempData.arg_list.effect
+	slot0._moveType = slot0._tempData.arg_list.move_type
+	slot0._speed = slot0._tempData.arg_list.speed_x
+	slot0._finaleFX = slot0._tempData.arg_list.finale_effect
+	slot0._delayCLS = slot0._tempData.arg_list.cld_delay
+	slot0._bulletType = slot0._tempData.arg_list.bullet_type_list
+	slot0._damageSrcUnitTag = slot0._tempData.arg_list.damage_tag_list
+	slot0._damageParamA = slot0._tempData.arg_list.damage_param_a
+	slot0._damageParamB = slot0._tempData.arg_list.damage_param_b
+	slot0._damageSFX = slot0._tempData.arg_list.damage_sfx or ""
+	slot0._damageBuffID = slot0._tempData.arg_list.buff_id
+	slot0._damageBuffLV = slot0._tempData.arg_list.buff_lv
+	slot0._damageDiveFilter = slot0._tempData.arg_list.diveFilter or {
 		2
 	}
-	arg_1_0._damageDiveDMGRate = arg_1_0._tempData.arg_list.diveDamageRate or {
+	slot0._damageDiveDMGRate = slot0._tempData.arg_list.diveDamageRate or {
 		1,
 		1
 	}
-	arg_1_0._delayCLSTimerList = {}
+	slot0._delayCLSTimerList = {}
 end
 
-function var_0_4.DoDataEffect(arg_2_0, arg_2_1)
-	arg_2_0:doCLS(arg_2_1)
+function slot4.DoDataEffect(slot0, slot1)
+	slot0:doCLS(slot1)
 end
 
-function var_0_4.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
-	arg_3_0:doCLS(arg_3_1)
+function slot4.DoDataEffectWithoutTarget(slot0, slot1)
+	slot0:doCLS(slot1)
 end
 
-function var_0_4.doCLS(arg_4_0, arg_4_1)
-	if arg_4_0._angle then
-		arg_4_0:cacheSectorData(arg_4_1)
+function slot4.doCLS(slot0, slot1)
+	if slot0._angle then
+		slot0:cacheSectorData(slot1)
 	end
 
-	local var_4_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	slot2 = uv0.Battle.BattleDataProxy.GetInstance()
+	slot0._cldArea = slot0:generateArea(slot1, uv1.AOEField.BULLET, function (slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			slot6 = slot5.UID
 
-	local function var_4_1(arg_5_0)
-		for iter_5_0, iter_5_1 in ipairs(arg_5_0) do
-			local var_5_0 = iter_5_1.UID
-			local var_5_1 = var_4_0:GetBulletList()[iter_5_1.UID]
-
-			if var_5_1:GetExist() and arg_4_0:checkBulletType(var_5_1) and not var_5_1:ImmuneCLS() and not var_5_1:ImmuneBombCLS() and not arg_4_0:isEnterBlind(var_5_1) and not arg_4_0:isOutOfAngle(var_5_1) then
-				if arg_4_0._delayCLS then
-					local var_5_2
-
-					local function var_5_3()
-						if var_5_1:GetExist() then
-							var_4_0:RemoveBulletUnit(var_5_0)
+			if uv0:GetBulletList()[slot5.UID]:GetExist() and uv1:checkBulletType(slot7) and not slot7:ImmuneCLS() and not slot7:ImmuneBombCLS() and not uv1:isEnterBlind(slot7) and not uv1:isOutOfAngle(slot7) then
+				if uv1._delayCLS then
+					slot8 = nil
+					uv1._delayCLSTimerList[pg.TimeMgr.GetInstance():AddBattleTimer("clsBullet", -1, uv1._delayCLS, function ()
+						if uv0:GetExist() then
+							uv1:RemoveBulletUnit(uv2)
 						end
 
-						pg.TimeMgr.GetInstance():RemoveBattleTimer(var_5_2)
+						pg.TimeMgr.GetInstance():RemoveBattleTimer(uv3)
 
-						arg_4_0._delayCLSTimerList[var_5_2] = nil
-					end
-
-					var_5_2 = pg.TimeMgr.GetInstance():AddBattleTimer("clsBullet", -1, arg_4_0._delayCLS, var_5_3, true)
-					arg_4_0._delayCLSTimerList[var_5_2] = true
+						uv4._delayCLSTimerList[uv3] = nil
+					end, true)] = true
 				else
-					var_4_0:RemoveBulletUnit(var_5_0)
+					uv0:RemoveBulletUnit(slot6)
 				end
 			end
 		end
-	end
+	end, function ()
+		for slot3, slot4 in pairs(uv0._delayCLSTimerList) do
+			slot3.func()
+			pg.TimeMgr.GetInstance():RemoveBattleTimer(slot3)
 
-	local function var_4_2()
-		for iter_7_0, iter_7_1 in pairs(arg_4_0._delayCLSTimerList) do
-			iter_7_0.func()
-			pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_7_0)
-
-			arg_4_0._delayCLSTimerList[iter_7_0] = nil
+			uv0._delayCLSTimerList[slot3] = nil
 		end
 
-		arg_4_0._delayCLSTimerList = {}
+		uv0._delayCLSTimerList = {}
 
-		if arg_4_0._finaleFX then
-			var_4_0:SpawnEffect(arg_4_0._finaleFX, arg_4_0._cldArea:GetPosition(), 1)
+		if uv0._finaleFX then
+			uv1:SpawnEffect(uv0._finaleFX, uv0._cldArea:GetPosition(), 1)
 		end
-	end
+	end, slot0._fx)
 
-	arg_4_0._cldArea = arg_4_0:generateArea(arg_4_1, var_0_1.AOEField.BULLET, var_4_1, var_4_2, arg_4_0._fx)
-
-	if arg_4_0._damageSrcUnitTag then
-		local var_4_3 = var_0_0.Battle.BattleTargetChoise.TargetAllHelp(arg_4_1)
-		local var_4_4 = var_0_0.Battle.BattleTargetChoise.TargetShipTag(arg_4_1, {
-			ship_tag_list = arg_4_0._damageSrcUnitTag
-		}, var_4_3)
-		local var_4_5 = #var_4_4
-
-		if var_4_5 <= 0 then
+	if slot0._damageSrcUnitTag then
+		if #uv0.Battle.BattleTargetChoise.TargetShipTag(slot1, {
+			ship_tag_list = slot0._damageSrcUnitTag
+		}, uv0.Battle.BattleTargetChoise.TargetAllHelp(slot1)) <= 0 then
 			return
 		end
 
-		local var_4_6 = 0
-
-		for iter_4_0, iter_4_1 in ipairs(var_4_4) do
-			var_4_6 = var_4_6 + iter_4_1:GetAttrByName("formulaLevel")
+		for slot11, slot12 in ipairs(slot5) do
+			slot7 = 0 + slot12:GetAttrByName("formulaLevel")
 		end
 
-		local var_4_7 = math.floor(var_4_6 / var_4_5)
-		local var_4_8 = arg_4_0._damageParamA + var_4_7 * arg_4_0._damageParamB
+		slot8 = slot0._damageParamA + math.floor(slot7 / slot6) * slot0._damageParamB
 
-		local function var_4_9(arg_8_0)
-			for iter_8_0, iter_8_1 in ipairs(arg_8_0) do
-				if iter_8_1.Active then
-					local var_8_0 = iter_8_1.UID
-					local var_8_1 = var_4_0:GetUnitList()[var_8_0]
-					local var_8_2 = var_8_1:GetCurrentOxyState()
-					local var_8_3 = math.floor(arg_4_0._damageDiveDMGRate[var_8_2] * var_4_8)
+		function slot11()
+		end
 
-					var_4_0:HandleDirectDamage(var_8_1, var_4_8)
-					var_0_0.Battle.PlayBattleSFX(arg_4_0._damageSFX)
+		slot0:generateArea(slot1, uv1.AOEField.SURFACE, function (slot0)
+			for slot4, slot5 in ipairs(slot0) do
+				if slot5.Active then
+					slot7 = uv0:GetUnitList()[slot5.UID]
+					slot9 = math.floor(uv1._damageDiveDMGRate[slot7:GetCurrentOxyState()] * uv2)
 
-					if arg_4_0._damageBuffID and var_8_1:IsAlive() then
-						local var_8_4 = var_0_0.Battle.BattleBuffUnit.New(arg_4_0._damageBuffID, nil, arg_4_1)
+					uv0:HandleDirectDamage(slot7, uv2)
+					uv3.Battle.PlayBattleSFX(uv1._damageSFX)
 
-						var_8_4:SetOrb(arg_4_1, arg_4_0._damageBuffLV or 1)
-						var_8_1:AddBuff(var_8_4)
+					if uv1._damageBuffID and slot7:IsAlive() then
+						slot10 = uv3.Battle.BattleBuffUnit.New(uv1._damageBuffID, nil, uv4)
+
+						slot10:SetOrb(uv4, uv1._damageBuffLV or 1)
+						slot7:AddBuff(slot10)
 					end
 				end
 			end
-		end
-
-		local function var_4_10()
-			return
-		end
-
-		local function var_4_11()
-			return
-		end
-
-		arg_4_0:generateArea(arg_4_1, var_0_1.AOEField.SURFACE, var_4_9, var_4_10):SetDiveFilter(arg_4_0._damageDiveFilter)
+		end, function ()
+		end):SetDiveFilter(slot0._damageDiveFilter)
 	end
 end
 
-function var_0_4.generateArea(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5)
-	local function var_11_0()
-		return
-	end
+function slot4.generateArea(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot9 = nil
 
-	local var_11_1 = var_0_0.Battle.BattleDataProxy.GetInstance()
-	local var_11_2 = arg_11_1:GetIFF()
-	local var_11_3
-
-	if arg_11_0._range then
-		var_11_3 = var_11_1:SpawnLastingColumnArea(arg_11_2, var_11_2, arg_11_1:GetPosition(), arg_11_0._range, arg_11_0._lifeTime, arg_11_3, var_11_0, false, arg_11_5, arg_11_4)
+	if slot0._range then
+		slot9 = uv0.Battle.BattleDataProxy.GetInstance():SpawnLastingColumnArea(slot2, slot1:GetIFF(), slot1:GetPosition(), slot0._range, slot0._lifeTime, slot3, function ()
+		end, false, slot5, slot4)
 	else
-		var_11_3 = var_11_1:SpawnLastingCubeArea(arg_11_2, var_11_2, arg_11_1:GetPosition(), arg_11_0._width, arg_11_0._height, arg_11_0._lifeTime, arg_11_3, var_11_0, false, arg_11_5, arg_11_4)
+		slot9 = slot7:SpawnLastingCubeArea(slot2, slot8, slot1:GetPosition(), slot0._width, slot0._height, slot0._lifeTime, slot3, slot6, false, slot5, slot4)
 
-		if var_11_2 == var_0_2.FRIENDLY_CODE then
-			var_11_3:SetAnchorPointAlignment(var_11_3.ALIGNMENT_LEFT)
-		elseif var_11_2 == var_0_2.FOE_CODE then
-			var_11_3:SetAnchorPointAlignment(var_11_3.ALIGNMENT_RIGHT)
+		if slot8 == uv1.FRIENDLY_CODE then
+			slot9:SetAnchorPointAlignment(slot9.ALIGNMENT_LEFT)
+		elseif slot8 == uv1.FOE_CODE then
+			slot9:SetAnchorPointAlignment(slot9.ALIGNMENT_RIGHT)
 		end
 	end
 
-	local var_11_4 = var_0_0.Battle.BattleAOEMobilizedComponent.New(var_11_3)
+	slot10 = uv0.Battle.BattleAOEMobilizedComponent.New(slot9)
 
-	var_11_4:SetReferenceUnit(arg_11_1)
-
-	local var_11_5 = arg_11_0._speed * var_11_2
-
-	var_11_4:ConfigData(arg_11_0._moveType, {
-		speedX = var_11_5
+	slot10:SetReferenceUnit(slot1)
+	slot10:ConfigData(slot0._moveType, {
+		speedX = slot0._speed * slot8
 	})
 
-	return var_11_3
+	return slot9
 end
 
-function var_0_4.cacheSectorData(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1:GetIFF()
-	local var_13_1 = arg_13_0._angle / 2
+function slot4.cacheSectorData(slot0, slot1)
+	slot0._upperEdge = math.deg2Rad * slot0._angle / 2
+	slot0._lowerEdge = -1 * slot0._upperEdge
 
-	arg_13_0._upperEdge = math.deg2Rad * var_13_1
-	arg_13_0._lowerEdge = -1 * arg_13_0._upperEdge
-
-	if var_13_0 == var_0_2.FRIENDLY_CODE then
-		arg_13_0._normalizeOffset = 0
-	elseif var_13_0 == var_0_2.FOE_CODE then
-		arg_13_0._normalizeOffset = math.pi
+	if slot1:GetIFF() == uv0.FRIENDLY_CODE then
+		slot0._normalizeOffset = 0
+	elseif slot2 == uv0.FOE_CODE then
+		slot0._normalizeOffset = math.pi
 	end
 
-	arg_13_0._wholeCircle = math.pi - arg_13_0._normalizeOffset
-	arg_13_0._negativeCircle = -math.pi - arg_13_0._normalizeOffset
-	arg_13_0._wholeCircleNormalizeOffset = arg_13_0._normalizeOffset - math.pi * 2
-	arg_13_0._negativeCircleNormalizeOffset = arg_13_0._normalizeOffset + math.pi * 2
+	slot0._wholeCircle = math.pi - slot0._normalizeOffset
+	slot0._negativeCircle = -math.pi - slot0._normalizeOffset
+	slot0._wholeCircleNormalizeOffset = slot0._normalizeOffset - math.pi * 2
+	slot0._negativeCircleNormalizeOffset = slot0._normalizeOffset + math.pi * 2
 end
 
-function var_0_4.isOutOfAngle(arg_14_0, arg_14_1)
-	if not arg_14_0._angle then
+function slot4.isOutOfAngle(slot0, slot1)
+	if not slot0._angle then
 		return false
 	end
 
-	local var_14_0 = arg_14_1:GetPosition()
-	local var_14_1 = arg_14_0._cldArea:GetPosition()
-	local var_14_2 = math.atan2(var_14_0.z - var_14_1.z, var_14_0.x - var_14_1.x)
+	slot2 = slot1:GetPosition()
+	slot3 = slot0._cldArea:GetPosition()
 
-	if var_14_2 > arg_14_0._wholeCircle then
-		var_14_2 = var_14_2 + arg_14_0._wholeCircleNormalizeOffset
-	elseif var_14_2 < arg_14_0._negativeCircle then
-		var_14_2 = var_14_2 + arg_14_0._negativeCircleNormalizeOffset
-	else
-		var_14_2 = var_14_2 + arg_14_0._normalizeOffset
-	end
-
-	if var_14_2 > arg_14_0._lowerEdge and var_14_2 < arg_14_0._upperEdge then
+	if slot0._lowerEdge < (slot0._wholeCircle < math.atan2(slot2.z - slot3.z, slot2.x - slot3.x) and slot4 + slot0._wholeCircleNormalizeOffset or slot4 < slot0._negativeCircle and slot4 + slot0._negativeCircleNormalizeOffset or slot4 + slot0._normalizeOffset) and slot4 < slot0._upperEdge then
 		return false
 	else
 		return true
 	end
 end
 
-function var_0_4.isEnterBlind(arg_15_0, arg_15_1)
-	if arg_15_0._minRange == 0 then
+function slot4.isEnterBlind(slot0, slot1)
+	if slot0._minRange == 0 then
 		return false
 	end
 
-	local var_15_0 = arg_15_1:GetPosition()
-	local var_15_1 = arg_15_0._cldArea:GetPosition()
-
-	return Vector3.BattleDistance(var_15_1, var_15_0) < arg_15_0._minRange
+	return Vector3.BattleDistance(slot0._cldArea:GetPosition(), slot1:GetPosition()) < slot0._minRange
 end
 
-function var_0_4.checkBulletType(arg_16_0, arg_16_1)
-	if not arg_16_0._bulletType then
+function slot4.checkBulletType(slot0, slot1)
+	if not slot0._bulletType then
+		return true
+	elseif table.contains(slot0._bulletType, slot1:GetType()) then
 		return true
 	else
-		local var_16_0 = arg_16_1:GetType()
-
-		if table.contains(arg_16_0._bulletType, var_16_0) then
-			return true
-		else
-			return false
-		end
+		return false
 	end
 end

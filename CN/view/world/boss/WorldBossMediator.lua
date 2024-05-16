@@ -1,159 +1,145 @@
-﻿local var_0_0 = class("WorldBossMediator", import("...base.ContextMediator"))
+slot0 = class("WorldBossMediator", import("...base.ContextMediator"))
+slot0.ON_BATTLE = "WorldBossMediator:ON_BATTLE"
+slot0.ON_RANK_LIST = "WorldBossMediator:ON_RANK_LIST"
+slot0.ON_FETCH_BOSS = "WorldBossMediator:ON_FETCH_BOSS"
+slot0.ON_SURPPORT = "WorldBossMediator:ON_SURPPORT"
+slot0.ON_SUBMIT_AWARD = "WorldBossMediator:ON_SUBMIT_AWARD"
+slot0.ON_SELF_BOSS_OVERTIME = "WorldBossMediator:ON_SELF_BOSS_OVERTIME"
+slot0.ON_ACTIVE_BOSS = "WorldBossMediator:ON_ACTIVE_BOSS"
+slot0.GET_RANK_CNT = "WorldBossMediator:GET_RANK_CNT"
+slot0.UPDATE_CACHE_BOSS_HP = "WorldBossMediator:UPDATE_CACHE_BOSS_HP"
+slot0.GO_META = "WorldBossMediator:GO_META"
+slot0.FETCH_RANK_FORMATION = "WorldBossMediator:FETCH_RANK_FORMATION"
+slot0.ON_SWITCH_ARCHIVES = "WorldBossMediator:ON_SWITCH_ARCHIVES"
+slot0.ON_ACTIVE_ARCHIVES_BOSS = "WorldBossMediator:ON_ACTIVE_ARCHIVES_BOSS"
+slot0.ON_ARCHIVES_BOSS_AUTO_BATTLE = "WorldBossMediator:ON_ARCHIVES_BOSS_AUTO_BATTLE"
+slot0.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE = "WorldBossMediator:ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE"
+slot0.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER = "WorldBossMediator:ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER"
 
-var_0_0.ON_BATTLE = "WorldBossMediator:ON_BATTLE"
-var_0_0.ON_RANK_LIST = "WorldBossMediator:ON_RANK_LIST"
-var_0_0.ON_FETCH_BOSS = "WorldBossMediator:ON_FETCH_BOSS"
-var_0_0.ON_SURPPORT = "WorldBossMediator:ON_SURPPORT"
-var_0_0.ON_SUBMIT_AWARD = "WorldBossMediator:ON_SUBMIT_AWARD"
-var_0_0.ON_SELF_BOSS_OVERTIME = "WorldBossMediator:ON_SELF_BOSS_OVERTIME"
-var_0_0.ON_ACTIVE_BOSS = "WorldBossMediator:ON_ACTIVE_BOSS"
-var_0_0.GET_RANK_CNT = "WorldBossMediator:GET_RANK_CNT"
-var_0_0.UPDATE_CACHE_BOSS_HP = "WorldBossMediator:UPDATE_CACHE_BOSS_HP"
-var_0_0.GO_META = "WorldBossMediator:GO_META"
-var_0_0.FETCH_RANK_FORMATION = "WorldBossMediator:FETCH_RANK_FORMATION"
-var_0_0.ON_SWITCH_ARCHIVES = "WorldBossMediator:ON_SWITCH_ARCHIVES"
-var_0_0.ON_ACTIVE_ARCHIVES_BOSS = "WorldBossMediator:ON_ACTIVE_ARCHIVES_BOSS"
-var_0_0.ON_ARCHIVES_BOSS_AUTO_BATTLE = "WorldBossMediator:ON_ARCHIVES_BOSS_AUTO_BATTLE"
-var_0_0.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE = "WorldBossMediator:ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE"
-var_0_0.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER = "WorldBossMediator:ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE, {
-			id = arg_2_1,
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE, {
+			id = slot1,
 			type = WorldBossConst.STOP_AUTO_BATTLE_MANUAL
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE, {
-			id = arg_3_1,
+	slot0:bind(uv0.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE, {
+			id = slot1,
 			type = WorldBossConst.STOP_AUTO_BATTLE_TIMEOVER
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_ARCHIVES_BOSS_AUTO_BATTLE, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_AUTO_BATTLE, {
-			id = arg_4_1
+	slot0:bind(uv0.ON_ARCHIVES_BOSS_AUTO_BATTLE, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_AUTO_BATTLE, {
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_ACTIVE_ARCHIVES_BOSS, function(arg_5_0)
-		local var_5_0 = nowWorld():GetBossProxy():GetArchivesId()
-
-		arg_1_0:sendNotification(GAME.WORLD_ACTIVE_WORLD_BOSS, {
-			id = var_5_0,
+	slot0:bind(uv0.ON_ACTIVE_ARCHIVES_BOSS, function (slot0)
+		uv0:sendNotification(GAME.WORLD_ACTIVE_WORLD_BOSS, {
+			id = nowWorld():GetBossProxy():GetArchivesId(),
 			type = WorldBossConst.BOSS_TYPE_ARCHIVES
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_ACTIVE_BOSS, function(arg_6_0, arg_6_1)
-		arg_1_0:sendNotification(GAME.WORLD_ACTIVE_WORLD_BOSS, {
-			id = arg_6_1,
+	slot0:bind(uv0.ON_ACTIVE_BOSS, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_ACTIVE_WORLD_BOSS, {
+			id = slot1,
 			type = WorldBossConst.BOSS_TYPE_CURR
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SWITCH_ARCHIVES, function(arg_7_0, arg_7_1)
-		arg_1_0:sendNotification(GAME.SWITCH_WORLD_BOSS_ARCHIVES, {
-			id = arg_7_1
+	slot0:bind(uv0.ON_SWITCH_ARCHIVES, function (slot0, slot1)
+		uv0:sendNotification(GAME.SWITCH_WORLD_BOSS_ARCHIVES, {
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.FETCH_RANK_FORMATION, function(arg_8_0, arg_8_1, arg_8_2)
-		arg_1_0:sendNotification(GAME.WORLD_BOSS_GET_FORMATION, {
-			bossId = arg_8_2,
-			userId = arg_8_1
+	slot0:bind(uv0.FETCH_RANK_FORMATION, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.WORLD_BOSS_GET_FORMATION, {
+			bossId = slot2,
+			userId = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.GO_META, function(arg_9_0, arg_9_1)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
+	slot0:bind(uv0.GO_META, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
 			autoOpenSyn = true,
-			autoOpenShipConfigID = arg_9_1 * 10 + 1
+			autoOpenShipConfigID = slot1 * 10 + 1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SELF_BOSS_OVERTIME, function(arg_10_0)
-		arg_1_0:sendNotification(GAME.WORLD_SELF_BOSS_OVERTIME)
+	slot0:bind(uv0.ON_SELF_BOSS_OVERTIME, function (slot0)
+		uv0:sendNotification(GAME.WORLD_SELF_BOSS_OVERTIME)
 	end)
-	arg_1_0:bind(var_0_0.ON_SUBMIT_AWARD, function(arg_11_0, arg_11_1)
-		arg_1_0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD, {
-			bossId = arg_11_1
+	slot0:bind(uv0.ON_SUBMIT_AWARD, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD, {
+			bossId = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SURPPORT, function(arg_12_0, arg_12_1)
-		if arg_12_1[3] == true then
-			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
+	slot0:bind(uv0.ON_SURPPORT, function (slot0, slot1)
+		if slot1[3] == true then
+			uv0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
 				type = WorldBoss.SUPPORT_TYPE_WORLD
 			})
 		end
 
-		if arg_12_1[1] == true then
-			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
+		if slot1[1] == true then
+			uv0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
 				type = WorldBoss.SUPPORT_TYPE_FRIEND
 			})
 		end
 
-		if arg_12_1[2] == true then
-			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
+		if slot1[2] == true then
+			uv0:sendNotification(GAME.WORLD_BOSS_SUPPORT, {
 				type = WorldBoss.SUPPORT_TYPE_GUILD
 			})
 		end
 	end)
-	arg_1_0:bind(var_0_0.ON_FETCH_BOSS, function(arg_13_0)
-		arg_1_0:updateBossProxy()
+	slot0:bind(uv0.ON_FETCH_BOSS, function (slot0)
+		uv0:updateBossProxy()
 	end)
-	arg_1_0:bind(var_0_0.ON_BATTLE, function(arg_14_0, arg_14_1, arg_14_2)
-		arg_1_0:sendNotification(GAME.WORLD_BOSS_START_BATTLE, {
-			bossId = arg_14_1,
-			isOther = arg_14_2
+	slot0:bind(uv0.ON_BATTLE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.WORLD_BOSS_START_BATTLE, {
+			bossId = slot1,
+			isOther = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_RANK_LIST, function(arg_15_0, arg_15_1)
-		arg_1_0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
-			bossId = arg_15_1
+	slot0:bind(uv0.ON_RANK_LIST, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
+			bossId = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.GET_RANK_CNT, function(arg_16_0, arg_16_1, arg_16_2)
-		local var_16_0 = arg_1_0.viewComponent.bossProxy:GetRank(arg_16_1)
-
-		if not var_16_0 then
-			arg_1_0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
-				bossId = arg_16_1,
-				callback = arg_16_2
+	slot0:bind(uv0.GET_RANK_CNT, function (slot0, slot1, slot2)
+		if not uv0.viewComponent.bossProxy:GetRank(slot1) then
+			uv0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
+				bossId = slot1,
+				callback = slot2
 			})
 		else
-			arg_16_2(#var_16_0)
+			slot2(#slot3)
 		end
 	end)
-	arg_1_0:bind(var_0_0.UPDATE_CACHE_BOSS_HP, function(arg_17_0, arg_17_1)
-		arg_1_0:sendNotification(GAME.GET_CACHE_BOSS_HP, {
-			callback = arg_17_1
+	slot0:bind(uv0.UPDATE_CACHE_BOSS_HP, function (slot0, slot1)
+		uv0:sendNotification(GAME.GET_CACHE_BOSS_HP, {
+			callback = slot1
 		})
 	end)
 end
 
-function var_0_0.updateBossProxy(arg_18_0)
-	local var_18_0 = nowWorld():GetBossProxy()
-	local var_18_1 = getProxy(MetaCharacterProxy)
+function slot0.updateBossProxy(slot0)
+	slot0.viewComponent:SetBossProxy(nowWorld():GetBossProxy(), getProxy(MetaCharacterProxy))
 
-	arg_18_0.viewComponent:SetBossProxy(var_18_0, var_18_1)
-
-	if not WorldBossScene.inOtherBossBattle and not arg_18_0.contextData.worldBossId and not var_18_0:ExistSelfBossAward() then
-		local var_18_2 = var_18_0:GetCanGetAwardBoss()
-
-		if var_18_2 then
-			arg_18_0.contextData.worldBossId = var_18_2.id
-		end
+	if not WorldBossScene.inOtherBossBattle and not slot0.contextData.worldBossId and not slot2:ExistSelfBossAward() and slot2:GetCanGetAwardBoss() then
+		slot0.contextData.worldBossId = slot4.id
 	end
 
-	if WorldBossScene.inOtherBossBattle or arg_18_0.contextData.worldBossId then
-		local var_18_3 = var_18_0:GetCacheBoss(arg_18_0.contextData.worldBossId)
-
-		if var_18_3 and not WorldBossConst._IsCurrBoss(var_18_3) then
-			arg_18_0.viewComponent:SwitchPage(WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
+	if WorldBossScene.inOtherBossBattle or slot0.contextData.worldBossId then
+		if slot2:GetCacheBoss(slot0.contextData.worldBossId) and not WorldBossConst._IsCurrBoss(slot4) then
+			slot0.viewComponent:SwitchPage(WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 		else
-			arg_18_0.viewComponent:SwitchPage(WorldBossScene.PAGE_CHALLENGE)
+			slot0.viewComponent:SwitchPage(WorldBossScene.PAGE_CHALLENGE)
 		end
 	else
-		arg_18_0.viewComponent:SwitchPage(WorldBossScene.PAGE_ENTRANCE)
+		slot0.viewComponent:SwitchPage(WorldBossScene.PAGE_ENTRANCE)
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_19_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.WORLD_GET_BOSS_DONE,
 		GAME.WORLD_BOSS_SUPPORT_DONE,
@@ -167,34 +153,33 @@ function var_0_0.listNotificationInterests(arg_19_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1:getName()
-	local var_20_1 = arg_20_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_20_0 == GAME.WORLD_GET_BOSS_DONE then
-		arg_20_0:updateBossProxy()
-	elseif var_20_0 == GAME.WORLD_BOSS_SUPPORT_DONE then
+	if slot1:getName() == GAME.WORLD_GET_BOSS_DONE then
+		slot0:updateBossProxy()
+	elseif slot2 == GAME.WORLD_BOSS_SUPPORT_DONE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_call_support_success"))
-	elseif var_20_0 == GAME.WORLD_BOSS_SUBMIT_AWARD_DONE then
-		arg_20_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_20_1.items)
-		arg_20_0.viewComponent:getAwardDone()
-	elseif var_20_0 == GAME.REMOVE_LAYERS then
-		if not var_20_1.onHome and var_20_1.context.mediator == WorldBossFormationMediator then
-			arg_20_0.viewComponent:OnRemoveLayers()
+	elseif slot2 == GAME.WORLD_BOSS_SUBMIT_AWARD_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.items)
+		slot0.viewComponent:getAwardDone()
+	elseif slot2 == GAME.REMOVE_LAYERS then
+		if not slot3.onHome and slot3.context.mediator == WorldBossFormationMediator then
+			slot0.viewComponent:OnRemoveLayers()
 		end
-	elseif var_20_0 == GAME.WORLD_BOSS_GET_FORMATION_DONE then
-		arg_20_0.viewComponent:OnShowFormationPreview(var_20_1.ships)
-	elseif var_20_0 == GAME.SWITCH_WORLD_BOSS_ARCHIVES_DONE then
-		arg_20_0.viewComponent:OnSwitchArchives()
+	elseif slot2 == GAME.WORLD_BOSS_GET_FORMATION_DONE then
+		slot0.viewComponent:OnShowFormationPreview(slot3.ships)
+	elseif slot2 == GAME.SWITCH_WORLD_BOSS_ARCHIVES_DONE then
+		slot0.viewComponent:OnSwitchArchives()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_switch_archives_success"))
-	elseif var_20_0 == GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE then
-		arg_20_0.viewComponent:OnAutoBattleResult(var_20_1)
-	elseif var_20_0 == GAME.WORLD_ARCHIVES_BOSS_AUTO_BATTLE_DONE then
-		arg_20_0.viewComponent:OnAutoBattleStart(var_20_1)
-	elseif var_20_0 == GAME.GET_META_PT_AWARD_DONE then
-		arg_20_0.viewComponent:OnGetMetaAwards()
-		arg_20_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_20_1.awards)
+	elseif slot2 == GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE then
+		slot0.viewComponent:OnAutoBattleResult(slot3)
+	elseif slot2 == GAME.WORLD_ARCHIVES_BOSS_AUTO_BATTLE_DONE then
+		slot0.viewComponent:OnAutoBattleStart(slot3)
+	elseif slot2 == GAME.GET_META_PT_AWARD_DONE then
+		slot0.viewComponent:OnGetMetaAwards()
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 	end
 end
 
-return var_0_0
+return slot0

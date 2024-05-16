@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("RecordShipEquipmentCommand", pm.SimpleCommand)
-local var_0_1 = {
+slot0 = class("RecordShipEquipmentCommand", pm.SimpleCommand)
+slot1 = {
 	"#FFFFFF",
 	"#60a9ff",
 	"#966af6",
@@ -7,120 +7,100 @@ local var_0_1 = {
 	"#EE799F"
 }
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipId
-	local var_1_2 = var_1_0.index
-	local var_1_3 = var_1_0.type
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.shipId
+	slot4 = slot2.index
 
-	if not var_1_3 then
+	if not slot2.type then
 		return
 	end
 
-	if not var_1_1 then
+	if not slot3 then
 		return
 	end
 
-	if not var_1_2 then
+	if not slot4 then
 		return
 	end
 
-	local var_1_4 = getProxy(PlayerProxy):getData()
-	local var_1_5 = getProxy(BayProxy)
-	local var_1_6 = var_1_5:getShipById(var_1_1)
+	slot6 = getProxy(PlayerProxy):getData()
+	slot8 = getProxy(BayProxy):getShipById(slot3)
 
-	var_1_6:getEquipmentRecord(var_1_4.id)
+	slot8:getEquipmentRecord(slot6.id)
 
-	local var_1_7 = Clone(var_1_6.equipments)
-	local var_1_8 = var_1_6:GetSpWeaponRecord(var_1_4.id)
+	slot9 = Clone(slot8.equipments)
+	slot10 = slot8:GetSpWeaponRecord(slot6.id)
 
-	if var_1_3 == 1 then
-		for iter_1_0, iter_1_1 in ipairs(var_1_7) do
-			var_1_6.equipmentRecords[var_1_2][iter_1_0] = iter_1_1 and iter_1_1.id or -1
+	if slot5 == 1 then
+		for slot14, slot15 in ipairs(slot9) do
+			slot8.equipmentRecords[slot4][slot14] = slot15 and slot15.id or -1
 		end
 
-		var_1_6:setEquipmentRecord(var_1_4.id, var_1_6.equipmentRecords)
+		slot8:setEquipmentRecord(slot6.id, slot8.equipmentRecords)
 
 		if not LOCK_SP_WEAPON then
-			var_1_8[var_1_2] = var_1_6:GetSpWeapon()
+			slot10[slot4] = slot8:GetSpWeapon()
 
-			var_1_6:SetSpWeaponRecord(var_1_4.id, var_1_8)
+			slot8:SetSpWeaponRecord(slot6.id, slot10)
 		end
 
-		var_1_5:updateShip(var_1_6)
-	elseif var_1_3 == 2 then
-		local var_1_9 = getProxy(EquipmentProxy)
-		local var_1_10 = Clone(var_1_6.equipmentRecords[var_1_2])
-		local var_1_11 = var_1_8[var_1_2]
+		slot7:updateShip(slot8)
+	elseif slot5 == 2 then
+		slot11 = getProxy(EquipmentProxy)
 
-		if #var_1_10 == 0 or _.all(var_1_10, function(arg_2_0)
-			return arg_2_0 == -1
-		end) and var_1_11 == nil then
+		if #Clone(slot8.equipmentRecords[slot4]) == 0 or _.all(slot12, function (slot0)
+			return slot0 == -1
+		end) and slot10[slot4] == nil then
 			return
 		end
 
-		local function var_1_12(arg_3_0, arg_3_1)
-			if var_1_7[arg_3_0] and var_1_7[arg_3_0].id == arg_3_1 then
-				return true
-			end
-
-			return false
-		end
-
-		local var_1_13 = {}
-
-		for iter_1_2, iter_1_3 in ipairs(var_1_10) do
-			if iter_1_3 ~= -1 then
-				local var_1_14 = var_1_9:getEquipmentById(iter_1_3)
-
-				if (not var_1_14 or var_1_14.count <= 0) and not var_1_12(iter_1_2, iter_1_3) then
-					local var_1_15 = Equipment.New({
-						id = iter_1_3
-					})
-
-					var_1_10[iter_1_2] = var_1_9:getSameTypeEquipmentId(var_1_15) or 0
-
-					local var_1_16 = var_0_1[var_1_15.config.rarity - 1]
-					local var_1_17 = string.format("<color=%s>%s+%s</color>", var_1_16, var_1_15.config.name, var_1_15.config.level - 1)
-
-					table.insert(var_1_13, var_1_17)
+		for slot19, slot20 in ipairs(slot12) do
+			if slot20 ~= -1 and (not slot11:getEquipmentById(slot20) or slot21.count <= 0) and not function (slot0, slot1)
+				if uv0[slot0] and uv0[slot0].id == slot1 then
+					return true
 				end
+
+				return false
+			end(slot19, slot20) then
+				slot12[slot19] = slot11:getSameTypeEquipmentId(Equipment.New({
+					id = slot20
+				})) or 0
+
+				table.insert({}, string.format("<color=%s>%s+%s</color>", uv0[slot22.config.rarity - 1], slot22.config.name, slot22.config.level - 1))
 			end
 		end
 
-		local var_1_18 = var_1_11
+		slot16 = slot13
 
-		if var_1_11 and (not var_1_11:IsReal() or var_1_11:GetShipId() ~= nil and var_1_11:GetShipId() ~= var_1_6.id) then
-			local var_1_19 = var_0_1[var_1_11:GetRarity()]
-			local var_1_20 = string.format("<color=%s>%s+%s</color>", var_1_19, var_1_11:GetName(), var_1_11:GetLevel() - 1)
+		if slot13 and (not slot13:IsReal() or slot13:GetShipId() ~= nil and slot13:GetShipId() ~= slot8.id) then
+			table.insert(slot15, string.format("<color=%s>%s+%s</color>", uv0[slot13:GetRarity()], slot13:GetName(), slot13:GetLevel() - 1))
 
-			table.insert(var_1_13, var_1_20)
-
-			var_1_18 = var_1_9:GetSameTypeSpWeapon(var_1_11)
+			slot16 = slot11:GetSameTypeSpWeapon(slot13)
 		end
 
-		local function var_1_21(arg_4_0)
-			local var_4_0 = {}
+		function slot17(slot0)
+			slot1 = {}
 
-			for iter_4_0, iter_4_1 in ipairs(arg_4_0) do
-				if not var_1_7[iter_4_0] or var_1_7[iter_4_0].id ~= iter_4_1 then
-					if iter_4_1 == 0 then
+			for slot5, slot6 in ipairs(slot0) do
+				if not uv0[slot5] or uv0[slot5].id ~= slot6 then
+					if slot6 == 0 then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_quick_change_noequip"))
-					elseif iter_4_1 == -1 and var_1_7[iter_4_0] then
-						table.insert(var_4_0, function(arg_5_0)
-							arg_1_0:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
-								shipId = var_1_1,
-								pos = iter_4_0,
-								callback = arg_5_0
+					elseif slot6 == -1 and uv0[slot5] then
+						table.insert(slot1, function (slot0)
+							uv0:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
+								shipId = uv1,
+								pos = uv2,
+								callback = slot0
 							})
 						end)
-					elseif iter_4_1 ~= -1 then
-						table.insert(var_4_0, function(arg_6_0)
-							arg_1_0:sendNotification(GAME.EQUIP_TO_SHIP, {
-								equipmentId = iter_4_1,
-								shipId = var_1_1,
-								pos = iter_4_0,
-								callback = arg_6_0
+					elseif slot6 ~= -1 then
+						table.insert(slot1, function (slot0)
+							uv0:sendNotification(GAME.EQUIP_TO_SHIP, {
+								equipmentId = uv1,
+								shipId = uv2,
+								pos = uv3,
+								callback = slot0
 							})
 						end)
 					end
@@ -128,64 +108,58 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 			end
 
 			if not LOCK_SP_WEAPON then
-				table.insert(var_4_0, function(arg_7_0)
-					local var_7_0 = var_1_6:GetSpWeapon()
+				table.insert(slot1, function (slot0)
+					slot1 = uv0:GetSpWeapon()
 
-					if var_1_11 then
-						if not var_1_18 then
+					if uv1 then
+						if not uv2 then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("ship_quick_change_noequip"))
 
 							return
-						elseif not var_7_0 or var_7_0:GetUID() ~= var_1_18:GetUID() then
-							arg_1_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-								spWeaponUid = var_1_18:GetUID(),
-								shipId = var_1_1,
-								callback = arg_7_0
+						elseif not slot1 or slot1:GetUID() ~= uv2:GetUID() then
+							uv3:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+								spWeaponUid = uv2:GetUID(),
+								shipId = uv4,
+								callback = slot0
 							})
 
 							return
 						end
-					elseif var_7_0 then
-						arg_1_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-							shipId = var_1_1,
-							callback = arg_7_0
+					elseif slot1 then
+						uv3:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+							shipId = uv4,
+							callback = slot0
 						})
 
 						return
 					end
 
-					arg_7_0()
+					slot0()
 				end)
 			end
 
-			seriesAsync(var_4_0)
+			seriesAsync(slot1)
 		end
 
-		if #var_1_13 > 0 then
-			local var_1_22 = ""
-
-			if #var_1_13 > 2 then
-				var_1_22 = table.concat(_.slice(var_1_13, 1, 2), "、") .. i18n("word_wait")
-			else
-				var_1_22 = table.concat(var_1_13, "、")
-			end
+		if #slot15 > 0 then
+			slot18 = ""
 
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("no_found_record_equipment", var_1_22),
-				onYes = function()
-					var_1_21(var_1_10)
+				content = i18n("no_found_record_equipment", #slot15 > 2 and table.concat(_.slice(slot15, 1, 2), "、") .. i18n("word_wait") or table.concat(slot15, "、")),
+				onYes = function ()
+					uv0(uv1)
 				end
 			})
 		else
-			var_1_21(var_1_10)
+			slot17(slot12)
 		end
 	end
 
-	arg_1_0:sendNotification(GAME.RECORD_SHIP_EQUIPMENT_DONE, {
-		shipId = var_1_1,
-		index = var_1_2,
-		type = var_1_3
+	slot0:sendNotification(GAME.RECORD_SHIP_EQUIPMENT_DONE, {
+		shipId = slot3,
+		index = slot4,
+		type = slot5
 	})
 end
 
-return var_0_0
+return slot0

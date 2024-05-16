@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				rant = 500,
-				target = "TargetSelf",
-				skill_id = 3001
-			}
-		}
-	},
+return {
 	{
 		desc = "空中支援后有5.0%概率使自己的下一轮空中支援立即冷却",
 		addition = {
@@ -212,5 +199,18 @@
 	stack = 1,
 	id = 3001,
 	icon = 3000,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				rant = 500,
+				target = "TargetSelf",
+				skill_id = 3001
+			}
+		}
+	}
 }

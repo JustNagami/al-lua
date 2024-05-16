@@ -1,131 +1,109 @@
-﻿local var_0_0 = class("Dorm3dFurnitureAcessesWindow", import("view.base.BaseUI"))
+slot0 = class("Dorm3dFurnitureAcessesWindow", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "Dorm3dFurnitureAcessesWindow"
 end
 
-function var_0_0.init(arg_2_0)
-	return
+function slot0.init(slot0)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf:Find("Mask"), function()
-		existCall(arg_3_0.contextData.onClose)
-		arg_3_0:closeView()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0._tf:Find("Mask"), function ()
+		existCall(uv0.contextData.onClose)
+		uv0:closeView()
 	end)
-	onButton(arg_3_0, arg_3_0._tf:Find("Window/Close"), function()
-		existCall(arg_3_0.contextData.onClose)
-		arg_3_0:closeView()
+	onButton(slot0, slot0._tf:Find("Window/Close"), function ()
+		existCall(uv0.contextData.onClose)
+		uv0:closeView()
 	end, SFX_CANCEL)
-	setText(arg_3_0._tf:Find("Window/Title"), arg_3_0.contextData.title)
-	setText(arg_3_0._tf:Find("Window/Acesses/Text"), i18n("dorm3d_furniture_window_acesses"))
-	arg_3_0:ShowSingleItemBox(arg_3_0.contextData)
-	arg_3_0:ShowCommonObtainWindow(arg_3_0.contextData)
+	setText(slot0._tf:Find("Window/Title"), slot0.contextData.title)
+	setText(slot0._tf:Find("Window/Acesses/Text"), i18n("dorm3d_furniture_window_acesses"))
+	slot0:ShowSingleItemBox(slot0.contextData)
+	slot0:ShowCommonObtainWindow(slot0.contextData)
 end
 
-function var_0_0.ShowSingleItemBox(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0._tf:Find("Window/Icon")
-
-	updateDrop(var_6_0, arg_6_1.drop)
-
-	local var_6_1 = arg_6_1.name or arg_6_1.drop.cfg.name or ""
-
-	setText(arg_6_0._tf:Find("Window/Name"), var_6_1)
-	setText(arg_6_0._tf:Find("Window/Count"), i18n("child_msg_owned", setColorStr(arg_6_1.drop.count, "#39bfff")))
-
-	local var_6_2 = arg_6_0._tf:Find("Window/Content")
-
-	setText(var_6_2, arg_6_1.drop.cfg.desc)
+function slot0.ShowSingleItemBox(slot0, slot1)
+	updateDrop(slot0._tf:Find("Window/Icon"), slot1.drop)
+	setText(slot0._tf:Find("Window/Name"), slot1.name or slot1.drop.cfg.name or "")
+	setText(slot0._tf:Find("Window/Count"), i18n("child_msg_owned", setColorStr(slot1.drop.count, "#39bfff")))
+	setText(slot0._tf:Find("Window/Content"), slot1.drop.cfg.desc)
 end
 
-function var_0_0.ShowCommonObtainWindow(arg_7_0, arg_7_1)
-	local var_7_0 = defaultValue(arg_7_1.showGOBtn, false)
+function slot0.ShowCommonObtainWindow(slot0, slot1)
+	slot2 = defaultValue(slot1.showGOBtn, false)
+	slot0.obtainSkipList = slot0.obtainSkipList or UIItemList.New(slot0._tf:Find("Window/List"), slot0._tf:Find("Window/List"):GetChild(0))
 
-	arg_7_0.obtainSkipList = arg_7_0.obtainSkipList or UIItemList.New(arg_7_0._tf:Find("Window/List"), arg_7_0._tf:Find("Window/List"):GetChild(0))
+	slot0.obtainSkipList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0.list[slot1 + 1]
+			slot5 = slot3[2]
+			slot6 = slot3[3]
 
-	arg_7_0.obtainSkipList:make(function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_8_0 == UIItemList.EventUpdate then
-			local var_8_0 = arg_7_1.list[arg_8_1 + 1]
-			local var_8_1 = var_8_0[1]
-			local var_8_2 = var_8_0[2]
-			local var_8_3 = var_8_0[3]
-			local var_8_4 = HXSet.hxLan(var_8_1)
+			slot2:Find("Mask/Text"):GetComponent("ScrollText"):SetText(HXSet.hxLan(slot3[1]))
+			setActive(slot2:Find("Button"), uv1 and slot5[1] ~= "" and slot5[1] ~= "COLLECTSHIP")
 
-			arg_8_2:Find("Mask/Text"):GetComponent("ScrollText"):SetText(var_8_4)
-			setActive(arg_8_2:Find("Button"), var_7_0 and var_8_2[1] ~= "" and var_8_2[1] ~= "COLLECTSHIP")
-
-			if var_8_2[1] ~= "" then
-				onButton(arg_7_0, arg_8_2:Find("Button"), function()
-					if var_8_3 and var_8_3 ~= 0 then
-						local var_9_0 = getProxy(ActivityProxy):getActivityById(var_8_3)
-
-						if not var_9_0 or var_9_0:isEnd() then
+			if slot5[1] ~= "" then
+				onButton(uv2, slot2:Find("Button"), function ()
+					if uv0 and uv0 ~= 0 then
+						if not getProxy(ActivityProxy):getActivityById(uv0) or slot0:isEnd() then
 							pg.TipsMgr.GetInstance():ShowTips(i18n("collection_way_is_unopen"))
 
 							return
 						end
-					elseif var_8_2[1] == "SHOP" and var_8_2[2].warp == NewShopsScene.TYPE_MILITARY_SHOP and not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "MilitaryExerciseMediator") then
+					elseif uv1[1] == "SHOP" and uv1[2].warp == NewShopsScene.TYPE_MILITARY_SHOP and not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "MilitaryExerciseMediator") then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("military_shop_no_open_tip"))
 
 						return
-					elseif var_8_2[1] == "LEVEL" and var_8_2[2] then
-						local var_9_1 = var_8_2[2].chapterid
-						local var_9_2 = getProxy(ChapterProxy)
-						local var_9_3 = var_9_2:getChapterById(var_9_1)
-
-						if var_9_3:isUnlock() then
-							local var_9_4 = var_9_2:getActiveChapter()
-
-							if var_9_4 and var_9_4.id ~= var_9_1 then
+					elseif uv1[1] == "LEVEL" and uv1[2] then
+						if getProxy(ChapterProxy):getChapterById(uv1[2].chapterid):isUnlock() then
+							if slot1:getActiveChapter() and slot3.id ~= slot0 then
 								pg.TipsMgr.GetInstance():ShowTips(i18n("collect_chapter_is_activation"))
 
 								return
 							else
-								local var_9_5 = {
-									mapIdx = var_9_3:getConfig("map")
-								}
-
-								if var_9_3.active then
-									var_9_5.chapterId = var_9_3.id
+								if slot2.active then
+									-- Nothing
 								else
-									var_9_5.openChapterId = var_9_1
+									slot4.openChapterId = slot0
 								end
 
-								pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_9_5)
+								pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+									mapIdx = slot2:getConfig("map"),
+									chapterId = slot2.id
+								})
 							end
 						else
 							pg.TipsMgr.GetInstance():ShowTips(i18n("acquisitionmode_is_not_open"))
 
 							return
 						end
-					elseif var_8_2[1] == "COLLECTSHIP" then
-						if arg_7_1.mediatorName == CollectionMediator.__cname then
+					elseif uv1[1] == "COLLECTSHIP" then
+						if uv2.mediatorName == CollectionMediator.__cname then
 							pg.m02:sendNotification(CollectionMediator.EVENT_OBTAIN_SKIP, {
 								toggle = 2,
-								displayGroupId = var_8_2[2].shipGroupId
+								displayGroupId = uv1[2].shipGroupId
 							})
 						else
 							pg.m02:sendNotification(GAME.GO_SCENE, SCENE.COLLECTSHIP, {
 								toggle = 2,
-								displayGroupId = var_8_2[2].shipGroupId
+								displayGroupId = uv1[2].shipGroupId
 							})
 						end
-					elseif var_8_2[1] == "SHOP" then
-						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[var_8_2[1]], var_8_2[2])
+					elseif uv1[1] == "SHOP" then
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv1[1]], uv1[2])
 					else
-						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[var_8_2[1]], var_8_2[2])
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv1[1]], uv1[2])
 					end
 
-					arg_7_0:closeView()
+					uv3:closeView()
 				end, SFX_PANEL)
 			end
 		end
 	end)
-	arg_7_0.obtainSkipList:align(#arg_7_1.list)
+	slot0.obtainSkipList:align(#slot1.list)
 end
 
-function var_0_0.willExit(arg_10_0)
-	return
+function slot0.willExit(slot0)
 end
 
-return var_0_0
+return slot0

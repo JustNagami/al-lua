@@ -1,25 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				emitter = "BattleBulletEmitter",
-				delay = 1,
-				weapon_id = 73022
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -41,5 +20,26 @@
 	painting = 1,
 	id = 23022,
 	picture = "0",
-	desc = "全弹发射"
+	desc = "全弹发射",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				emitter = "BattleBulletEmitter",
+				delay = 1,
+				weapon_id = 73022
+			}
+		}
+	}
 }

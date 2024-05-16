@@ -1,91 +1,80 @@
-﻿local var_0_0 = class("EducateCharGroup")
+slot0 = class("EducateCharGroup")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1
+	slot0.charIdList = {}
 
-	local var_1_0 = pg.secretary_special_ship.get_id_list_by_group[arg_1_1]
-
-	arg_1_0.charIdList = {}
-
-	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
-		if pg.secretary_special_ship[iter_1_1].secrerary_show == 1 then
-			table.insert(arg_1_0.charIdList, iter_1_1)
+	for slot6, slot7 in ipairs(pg.secretary_special_ship.get_id_list_by_group[slot1]) do
+		if pg.secretary_special_ship[slot7].secrerary_show == 1 then
+			table.insert(slot0.charIdList, slot7)
 		end
 	end
 end
 
-function var_0_0.GetSortWeight(arg_2_0)
-	local var_2_0 = arg_2_0:GetShowId()
-
-	return pg.secretary_special_ship[var_2_0].type
+function slot0.GetSortWeight(slot0)
+	return pg.secretary_special_ship[slot0:GetShowId()].type
 end
 
-function var_0_0.GetCharIdList(arg_3_0)
-	return arg_3_0.charIdList
+function slot0.GetCharIdList(slot0)
+	return slot0.charIdList
 end
 
-function var_0_0.GetTitle(arg_4_0)
-	local var_4_0 = arg_4_0:GetShowId()
-
-	if pg.secretary_special_ship[var_4_0].type == 1 then
+function slot0.GetTitle(slot0)
+	if pg.secretary_special_ship[slot0:GetShowId()].type == 1 then
 		return i18n("secretary_special_title_age")
 	else
 		return i18n("secretary_special_title_physiognomy")
 	end
 end
 
-function var_0_0.GetUnlockDesc(arg_5_0)
-	local var_5_0 = arg_5_0:GetShowId()
-
-	return pg.secretary_special_ship[var_5_0].unlock_desc
+function slot0.GetUnlockDesc(slot0)
+	return pg.secretary_special_ship[slot0:GetShowId()].unlock_desc
 end
 
-function var_0_0.GetSpriteName(arg_6_0)
-	local var_6_0 = arg_6_0:GetShowId()
-	local var_6_1 = pg.secretary_special_ship[var_6_0].type
-
-	return "label_" .. var_6_1
+function slot0.GetSpriteName(slot0)
+	return "label_" .. pg.secretary_special_ship[slot0:GetShowId()].type
 end
 
-function var_0_0.GetShowId(arg_7_0)
-	return (_.detect(arg_7_0.charIdList, function(arg_8_0)
-		return pg.secretary_special_ship[arg_8_0].type ~= 0
-	end))
-end
-
-function var_0_0.GetShowPainting(arg_9_0)
-	local var_9_0 = arg_9_0:GetShowId()
-
-	assert(var_9_0)
-
-	return pg.secretary_special_ship[var_9_0].prefab
-end
-
-function var_0_0.IsSelected(arg_10_0, arg_10_1)
-	return _.any(arg_10_0.charIdList, function(arg_11_0)
-		return arg_10_1 == arg_11_0
+function slot0.GetShowId(slot0)
+	return _.detect(slot0.charIdList, function (slot0)
+		return pg.secretary_special_ship[slot0].type ~= 0
 	end)
 end
 
-function var_0_0.IsLock(arg_12_0)
-	local var_12_0 = getProxy(EducateProxy):GetSecretaryIDs()
-	local var_12_1 = {}
+function slot0.GetShowPainting(slot0)
+	slot1 = slot0:GetShowId()
 
-	for iter_12_0, iter_12_1 in ipairs(var_12_0) do
-		var_12_1[iter_12_1] = true
+	assert(slot1)
+
+	return pg.secretary_special_ship[slot1].prefab
+end
+
+function slot0.IsSelected(slot0, slot1)
+	return _.any(slot0.charIdList, function (slot0)
+		return uv0 == slot0
+	end)
+end
+
+function slot0.IsLock(slot0)
+	slot2 = {
+		[slot7] = true
+	}
+
+	for slot6, slot7 in ipairs(getProxy(EducateProxy):GetSecretaryIDs()) do
+		-- Nothing
 	end
 
-	return _.all(arg_12_0.charIdList, function(arg_13_0)
-		return not var_12_1[arg_13_0]
+	return _.all(slot0.charIdList, function (slot0)
+		return not uv0[slot0]
 	end)
 end
 
-function var_0_0.ShouldTip(arg_14_0)
-	local var_14_0 = getProxy(SettingsProxy)
+function slot0.ShouldTip(slot0)
+	slot1 = getProxy(SettingsProxy)
 
-	return _.any(arg_14_0.charIdList, function(arg_15_0)
-		return var_14_0:_ShouldEducateCharTip(arg_15_0)
+	return _.any(slot0.charIdList, function (slot0)
+		return uv0:_ShouldEducateCharTip(slot0)
 	end)
 end
 
-return var_0_0
+return slot0

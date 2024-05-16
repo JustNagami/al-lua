@@ -1,112 +1,108 @@
-﻿local var_0_0 = import(".StaticCellView")
-local var_0_1 = import(".ChampionCellView")
-local var_0_2 = class("StaticChampionCellView", DecorateClass(var_0_0, var_0_1))
+slot2 = class("StaticChampionCellView", DecorateClass(import(".StaticCellView"), import(".ChampionCellView")))
 
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_1.Ctor(arg_1_0)
+function slot2.Ctor(slot0, slot1)
+	uv0.Ctor(slot0, slot1)
+	uv1.Ctor(slot0)
 end
 
-function var_0_2.GetOrder(arg_2_0)
+function slot2.GetOrder(slot0)
 	return ChapterConst.CellPriorityEnemy
 end
 
-function var_0_2.InitChampionCellTransform(arg_3_0)
-	var_0_1.InitChampionCellTransform(arg_3_0)
+function slot2.InitChampionCellTransform(slot0)
+	uv0.InitChampionCellTransform(slot0)
 
-	arg_3_0.textLV = arg_3_0.tf:Find("lv/Text")
-	arg_3_0.tfBossIcon = arg_3_0.tf:Find("titleContain/bg_boss")
-	arg_3_0.tfEffectFoundBoss = arg_3_0.tf:Find("effect_found_boss")
+	slot0.textLV = slot0.tf:Find("lv/Text")
+	slot0.tfBossIcon = slot0.tf:Find("titleContain/bg_boss")
+	slot0.tfEffectFoundBoss = slot0.tf:Find("effect_found_boss")
 end
 
-function var_0_2.Update(arg_4_0)
-	local var_4_0 = arg_4_0.info
-	local var_4_1 = arg_4_0.config
-	local var_4_2 = var_4_0.trait ~= ChapterConst.TraitLurk
+function slot2.Update(slot0)
+	slot2 = slot0.config
+	slot3 = slot0.info.trait ~= ChapterConst.TraitLurk
 
-	if ChapterConst.IsEnemyAttach(var_4_0.attachment) and var_4_0.flag == ChapterConst.CellFlagActive and arg_4_0.chapter:existFleet(FleetType.Transport, var_4_0.row, var_4_0.column) then
-		var_4_2 = false
+	if ChapterConst.IsEnemyAttach(slot1.attachment) and slot1.flag == ChapterConst.CellFlagActive and slot0.chapter:existFleet(FleetType.Transport, slot1.row, slot1.column) then
+		slot3 = false
 	end
 
-	if not IsNil(arg_4_0.go) then
-		setActive(arg_4_0.go, var_4_2)
+	if not IsNil(slot0.go) then
+		setActive(slot0.go, slot3)
 	end
 
-	if not var_4_2 then
+	if not slot3 then
 		return
 	end
 
-	if IsNil(arg_4_0.go) then
-		arg_4_0:GetLoader():GetPrefab("leveluiview/Tpl_StaticChampion", "Tpl_StaticChampion", function(arg_5_0)
-			arg_5_0.name = "enemy_" .. var_4_0.attachmentId
-			arg_4_0.go = arg_5_0
-			arg_4_0.tf = tf(arg_5_0)
+	if IsNil(slot0.go) then
+		slot0:GetLoader():GetPrefab("leveluiview/Tpl_StaticChampion", "Tpl_StaticChampion", function (slot0)
+			slot0.name = "enemy_" .. uv0.attachmentId
+			uv1.go = slot0
+			uv1.tf = tf(slot0)
 
-			setParent(arg_5_0, arg_4_0.parent)
-			arg_4_0:OverrideCanvas()
-			arg_4_0:ResetCanvasOrder()
-			setAnchoredPosition(arg_4_0.tf, Vector2.zero)
-			arg_4_0:InitChampionCellTransform()
-			var_0_2.StartEggCellView(arg_4_0, var_4_1)
-			SpineCellView.SetAction(arg_4_0, ChapterConst.ShipIdleAction)
-			var_0_1.LoadSpine(arg_4_0, var_4_1.icon, var_4_1.scale, var_4_1.effect_prefab)
-			arg_4_0:Update()
+			setParent(slot0, uv1.parent)
+			uv1:OverrideCanvas()
+			uv1:ResetCanvasOrder()
+			setAnchoredPosition(uv1.tf, Vector2.zero)
+			uv1:InitChampionCellTransform()
+			uv2.StartEggCellView(uv1, uv3)
+			SpineCellView.SetAction(uv1, ChapterConst.ShipIdleAction)
+			uv4.LoadSpine(uv1, uv3.icon, uv3.scale, uv3.effect_prefab)
+			uv1:Update()
 		end, "Main")
 
 		return
 	end
 
-	arg_4_0:UpdateChampionCell(arg_4_0.chapter, var_4_0)
+	slot0:UpdateChampionCell(slot0.chapter, slot1)
 end
 
-function var_0_2.UpdateChampionCell(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = arg_6_2.trait ~= ChapterConst.TraitLurk and arg_6_2.flag == ChapterConst.CellFlagActive and not arg_6_1:existFleet(FleetType.Transport, arg_6_2.row, arg_6_2.column)
-	local var_6_1 = arg_6_1:existEnemy(ChapterConst.SubjectChampion, arg_6_2.row, arg_6_2.column)
+function slot2.UpdateChampionCell(slot0, slot1, slot2, slot3)
+	slot4 = slot2.trait ~= ChapterConst.TraitLurk and slot2.flag == ChapterConst.CellFlagActive and not slot1:existFleet(FleetType.Transport, slot2.row, slot2.column)
 
-	setActive(arg_6_0.tfFighting, var_6_0 and var_6_1)
-	setActive(arg_6_0.tfDamageCount, var_6_0 and arg_6_2.data > 0)
+	setActive(slot0.tfFighting, slot4 and slot1:existEnemy(ChapterConst.SubjectChampion, slot2.row, slot2.column))
+	setActive(slot0.tfDamageCount, slot4 and slot2.data > 0)
 
-	local var_6_2 = arg_6_2.trait == ChapterConst.TraitVirgin
-	local var_6_3 = ChapterConst.IsBossCell(arg_6_2)
+	slot6 = slot2.trait == ChapterConst.TraitVirgin
+	slot7 = ChapterConst.IsBossCell(slot2)
 
-	setActive(arg_6_0.tfEffectFound, var_6_2 and not var_6_3)
-	setActive(arg_6_0.tfEffectFoundBoss, var_6_2 and var_6_3)
+	setActive(slot0.tfEffectFound, slot6 and not slot7)
+	setActive(slot0.tfEffectFoundBoss, slot6 and slot7)
 
-	if var_6_2 then
+	if slot6 then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 	end
 
-	arg_6_0.tfShadow.localEulerAngles = Vector3(arg_6_1.theme.angle, 0, 0)
+	slot0.tfShadow.localEulerAngles = Vector3(slot1.theme.angle, 0, 0)
 
-	if var_6_0 then
-		EnemyCellView.RefreshEnemyTplIcons(arg_6_0, arg_6_0.config, arg_6_1)
+	if slot4 then
+		EnemyCellView.RefreshEnemyTplIcons(slot0, slot0.config, slot1)
 	end
 
-	arg_6_0:SetActive(var_6_0)
-	existCall(arg_6_3)
+	slot0:SetActive(slot4)
+	existCall(slot3)
 end
 
-function var_0_2.StartEggCellView(arg_7_0, arg_7_1, arg_7_2)
-	if ChapterConst.EnemySize[arg_7_1.type] == 99 then
-		setActive(arg_7_0.tfBossIcon, true)
-		arg_7_0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_boss", arg_7_0.tfBossIcon)
-	elseif ChapterConst.EnemySize[arg_7_1.type] == 98 then
-		setActive(arg_7_0.tfBossIcon, true)
-		arg_7_0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_elite", arg_7_0.tfBossIcon)
+function slot2.StartEggCellView(slot0, slot1, slot2)
+	if ChapterConst.EnemySize[slot1.type] == 99 then
+		setActive(slot0.tfBossIcon, true)
+		slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_boss", slot0.tfBossIcon)
+	elseif ChapterConst.EnemySize[slot1.type] == 98 then
+		setActive(slot0.tfBossIcon, true)
+		slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", "enemy_elite", slot0.tfBossIcon)
 	else
-		setActive(arg_7_0.tfBossIcon, false)
+		setActive(slot0.tfBossIcon, false)
 	end
 
-	arg_7_0.tfBossIcon.localScale = Vector3(0.5, 0.5, 1)
-	arg_7_0.tfBossIcon.anchoredPosition = Vector2(61.1, -30.6)
+	slot0.tfBossIcon.localScale = Vector3(0.5, 0.5, 1)
+	slot0.tfBossIcon.anchoredPosition = Vector2(61.1, -30.6)
 
-	setText(arg_7_0.textLV, arg_7_1.level)
-	existCall(arg_7_2)
+	setText(slot0.textLV, slot1.level)
+	existCall(slot2)
 end
 
-function var_0_2.Clear(arg_8_0)
-	var_0_1.Clear(arg_8_0)
-	var_0_0.Clear(arg_8_0)
+function slot2.Clear(slot0)
+	uv0.Clear(slot0)
+	uv1.Clear(slot0)
 end
 
-return var_0_2
+return slot2

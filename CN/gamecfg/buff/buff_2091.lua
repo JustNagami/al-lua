@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 35,
-				skill_id = 2091
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔35秒，朝前方发射4发带小范围追踪效果的磁性鱼雷(威力依据技能等级)",
 		addition = {
@@ -212,5 +199,18 @@
 	stack = 1,
 	id = 2091,
 	icon = 2090,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 35,
+				skill_id = 2091
+			}
+		}
+	}
 }

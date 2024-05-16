@@ -1,46 +1,42 @@
-﻿local var_0_0 = class("MainReceiveBossRushAwardsSequence")
+slot0 = class("MainReceiveBossRushAwardsSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
+function slot0.Execute(slot0, slot1)
 	seriesAsync({
-		function(arg_2_0)
-			local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
-
-			if not var_2_0 or var_2_0:isEnd() or not var_2_0:HasAwards() then
-				arg_2_0()
+		function (slot0)
+			if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH) or slot1:isEnd() or not slot1:HasAwards() then
+				slot0()
 
 				return
 			end
 
 			seriesAsync({
-				function(arg_3_0)
+				function (slot0)
 					pg.m02:sendNotification(GAME.BOSSRUSH_SETTLE, {
-						actId = var_2_0.id,
-						callback = arg_3_0
+						actId = uv0.id,
+						callback = slot0
 					})
 				end,
-				function(arg_4_0, arg_4_1)
-					local var_4_0 = arg_4_1.awards
-
-					if #var_4_0 > 0 then
+				function (slot0, slot1)
+					if #slot1.awards > 0 then
 						LoadContextCommand.LoadLayerOnTopContext(Context.New({
 							mediator = AwardInfoMediator,
 							viewComponent = AwardInfoLayer,
 							data = {
-								items = var_4_0,
-								removeFunc = arg_4_0
+								items = slot2,
+								removeFunc = slot0
 							}
 						}))
 
 						return
 					end
 
-					arg_4_0()
+					slot0()
 				end,
-				arg_2_0
+				slot0
 			})
 		end,
-		arg_1_1
+		slot1
 	})
 end
 
-return var_0_0
+return slot0

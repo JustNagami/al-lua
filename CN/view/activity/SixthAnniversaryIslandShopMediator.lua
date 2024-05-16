@@ -1,52 +1,46 @@
-﻿local var_0_0 = class("SixthAnniversaryIslandShopMediator", import("..base.ContextMediator"))
+slot0 = class("SixthAnniversaryIslandShopMediator", import("..base.ContextMediator"))
+slot0.OPEN_GOODS_WINDOW = "SixthAnniversaryIslandShopMediator.OPEN_GOODS_WINDOW"
 
-var_0_0.OPEN_GOODS_WINDOW = "SixthAnniversaryIslandShopMediator.OPEN_GOODS_WINDOW"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0.viewComponent:setShop(arg_1_0.contextData.shop)
-	arg_1_0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
-	arg_1_0:bind(var_0_0.OPEN_GOODS_WINDOW, function(arg_2_0, arg_2_1)
-		arg_1_0:addSubLayers(Context.New({
+function slot0.register(slot0)
+	slot0.viewComponent:setShop(slot0.contextData.shop)
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
+	slot0:bind(uv0.OPEN_GOODS_WINDOW, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = SixthAnniversaryIslandShopWindowMediator,
 			viewComponent = SixthAnniversaryIslandShopWindowLayer,
 			data = {
-				activityId = arg_1_0.contextData.shop.activityId,
-				shop = arg_1_0.contextData.shop,
-				goods = arg_2_1
+				activityId = uv0.contextData.shop.activityId,
+				shop = uv0.contextData.shop,
+				goods = slot1
 			}
 		}))
 	end)
 end
 
-function var_0_0.initNotificationHandleDic(arg_3_0)
-	arg_3_0.handleDic = {
-		[GAME.ISLAND_SHOPPING_DONE] = function(arg_4_0, arg_4_1)
-			local var_4_0 = arg_4_1:getBody()
-			local var_4_1 = {}
+function slot0.initNotificationHandleDic(slot0)
+	slot0.handleDic = {
+		[GAME.ISLAND_SHOPPING_DONE] = function (slot0, slot1)
+			slot3 = {}
 
-			if #var_4_0.awards > 0 then
-				table.insert(var_4_1, function(arg_5_0)
-					arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_0.awards, arg_5_0)
+			if #slot1:getBody().awards > 0 then
+				table.insert(slot3, function (slot0)
+					uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, uv1.awards, slot0)
 				end)
 			end
 
-			seriesAsync(var_4_1, function()
-				arg_4_0.viewComponent:refreshGoodsCard(var_4_0.goodsId)
+			seriesAsync(slot3, function ()
+				uv0.viewComponent:refreshGoodsCard(uv1.goodsId)
 			end)
 		end,
-		[GAME.USE_ITEM_DONE] = function(arg_7_0, arg_7_1)
-			local var_7_0 = arg_7_1:getBody()
-
-			if #var_7_0 > 0 then
-				arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_7_0)
+		[GAME.USE_ITEM_DONE] = function (slot0, slot1)
+			if #slot1:getBody() > 0 then
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot2)
 			end
 		end,
-		[PlayerProxy.UPDATED] = function(arg_8_0, arg_8_1)
-			local var_8_0 = arg_8_1:getBody()
-
-			arg_8_0.viewComponent:setPlayer(var_8_0)
+		[PlayerProxy.UPDATED] = function (slot0, slot1)
+			slot0.viewComponent:setPlayer(slot1:getBody())
 		end
 	}
 end
 
-return var_0_0
+return slot0

@@ -1,35 +1,33 @@
-﻿local var_0_0 = class("ShipAddInimacyCommand", pm.SimpleCommand)
+slot0 = class("ShipAddInimacyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(19011, {
-		id = var_1_0
-	}, 19012, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(BayProxy)
-			local var_2_1 = var_2_0:getShipById(var_1_0)
-			local var_2_2 = var_2_1.state_info_3
+		id = slot1:getBody()
+	}, 19012, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(BayProxy)
+			slot2 = slot1:getShipById(uv0)
+			slot3 = slot2.state_info_3
 
-			var_2_1:addLikability(var_2_2)
+			slot2:addLikability(slot3)
 
-			var_2_1.state_info_3 = 0
+			slot2.state_info_3 = 0
 
-			var_2_0:updateShip(var_2_1)
+			slot1:updateShip(slot2)
 
-			if var_2_2 == 0 then
+			if slot3 == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_getResource_emptry"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", var_2_1:getName()))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", slot2:getName()))
 			end
 
-			arg_1_0:sendNotification(GAME.BACKYARD_ADD_INTIMACY_DONE, {
-				id = var_1_0
+			uv1:sendNotification(GAME.BACKYARD_ADD_INTIMACY_DONE, {
+				id = uv0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipAddInimacy", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipAddInimacy", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

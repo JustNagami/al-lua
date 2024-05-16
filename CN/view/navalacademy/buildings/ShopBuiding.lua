@@ -1,19 +1,19 @@
-﻿local var_0_0 = class("ShopBuiding", import(".NavalAcademyUpgradableBuilding"))
+slot0 = class("ShopBuiding", import(".NavalAcademyUpgradableBuilding"))
 
-function var_0_0.GetGameObjectName(arg_1_0)
+function slot0.GetGameObjectName(slot0)
 	return "shop"
 end
 
-function var_0_0.GetTitle(arg_2_0)
+function slot0.GetTitle(slot0)
 	return i18n("school_title_xiaomaibu")
 end
 
-function var_0_0.OnClick(arg_3_0)
-	arg_3_0:emit(NavalAcademyMediator.ON_OPEN_GOLDRESFIELD)
+function slot0.OnClick(slot0)
+	slot0:emit(NavalAcademyMediator.ON_OPEN_GOLDRESFIELD)
 end
 
-function var_0_0.GetResField(arg_4_0)
-	return arg_4_0.parent.goldResField
+function slot0.GetResField(slot0)
+	return slot0.parent.goldResField
 end
 
-return var_0_0
+return slot0

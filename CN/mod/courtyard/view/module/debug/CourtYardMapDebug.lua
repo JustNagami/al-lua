@@ -1,81 +1,70 @@
-﻿local var_0_0 = class("CourtYardMapDebug")
+slot0 = class("CourtYardMapDebug")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.map = arg_1_1
-	arg_1_0.mapGrids = {}
-	arg_1_0.r = arg_1_2 and arg_1_2.r or 0
-	arg_1_0.g = arg_1_2 and arg_1_2.g or 0
-	arg_1_0.b = arg_1_2 and arg_1_2.b or 0
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.map = slot1
+	slot0.mapGrids = {}
+	slot0.r = slot2 and slot2.r or 0
+	slot0.g = slot2 and slot2.g or 0
+	slot0.b = slot2 and slot2.b or 0
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.GetView(arg_2_0)
-	return arg_2_0.map:GetHost():GetBridge():GetView()
+function slot0.GetView(slot0)
+	return slot0.map:GetHost():GetBridge():GetView()
 end
 
-function var_0_0.Init(arg_3_0)
-	local var_3_0 = arg_3_0:GetView():GetRect():Find("grids")
-	local var_3_1 = arg_3_0.map.minSizeX
-	local var_3_2 = arg_3_0.map.minSizeY
-	local var_3_3 = arg_3_0.map.sizeX
-	local var_3_4 = arg_3_0.map.sizeY
+function slot0.Init(slot0)
+	slot1 = slot0:GetView():GetRect():Find("grids")
+	slot3 = slot0.map.minSizeY
+	slot5 = slot0.map.sizeY
 
-	for iter_3_0 = var_3_1, var_3_3 do
-		local var_3_5 = {}
+	for slot9 = slot0.map.minSizeX, slot0.map.sizeX do
+		for slot14 = slot3, slot5 do
+			slot15 = slot0:GetView().poolMgr:GetGridPool():Dequeue()
 
-		for iter_3_1 = var_3_2, var_3_4 do
-			local var_3_6 = arg_3_0:GetView().poolMgr:GetGridPool():Dequeue()
+			setParent(slot15, slot1)
 
-			setParent(var_3_6, var_3_0)
-
-			tf(var_3_6).localScale = Vector3.one
-			tf(var_3_6).localPosition = CourtYardCalcUtil.Map2Local(Vector2(iter_3_0, iter_3_1))
-			var_3_6:GetComponent(typeof(Image)).color = (iter_3_1 == var_3_4 or iter_3_0 == var_3_3) and Color.New(1, 1, 0, 0.5) or Color.New(0, 1, 0, 1)
-			var_3_5[iter_3_1] = var_3_6
+			tf(slot15).localScale = Vector3.one
+			tf(slot15).localPosition = CourtYardCalcUtil.Map2Local(Vector2(slot9, slot14))
+			slot15:GetComponent(typeof(Image)).color = (slot14 == slot5 or slot9 == slot4) and Color.New(1, 1, 0, 0.5) or Color.New(0, 1, 0, 1)
 		end
 
-		arg_3_0.mapGrids[iter_3_0] = var_3_5
+		slot0.mapGrids[slot9] = {
+			[slot14] = slot15
+		}
 	end
 
-	arg_3_0:Flush()
+	slot0:Flush()
 end
 
-function var_0_0.Flush(arg_4_0)
-	local var_4_0 = arg_4_0.map.sizeX
-	local var_4_1 = arg_4_0.map.sizeY
+function slot0.Flush(slot0)
+	slot1 = slot0.map.sizeX
+	slot2 = slot0.map.sizeY
 
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.mapGrids) do
-		for iter_4_2, iter_4_3 in pairs(iter_4_1) do
-			local var_4_2 = arg_4_0.map:IsEmptyPosition(Vector2(iter_4_0, iter_4_2))
-			local var_4_3 = iter_4_3:GetComponent(typeof(Image))
-			local var_4_4
-
-			if var_4_2 then
-				var_4_4 = (iter_4_2 == var_4_1 or iter_4_0 == var_4_0) and Color.New(1, 1, 0, 0.5) or Color.New(0, 1, 0, 1)
-			else
-				var_4_4 = Color.New(arg_4_0.r, arg_4_0.g, arg_4_0.b, var_4_3.color.a)
-			end
-
-			var_4_3.color = var_4_4
+	for slot6, slot7 in pairs(slot0.mapGrids) do
+		for slot11, slot12 in pairs(slot7) do
+			slot14 = slot12:GetComponent(typeof(Image))
+			slot15 = nil
+			slot14.color = slot0.map:IsEmptyPosition(Vector2(slot6, slot11)) and ((slot11 == slot2 or slot6 == slot1) and Color.New(1, 1, 0, 0.5) or Color.New(0, 1, 0, 1)) or Color.New(slot0.r, slot0.g, slot0.b, slot14.color.a)
 		end
 	end
 end
 
-function var_0_0.Clear(arg_5_0)
-	for iter_5_0, iter_5_1 in pairs(arg_5_0.mapGrids) do
-		for iter_5_2, iter_5_3 in pairs(iter_5_1) do
-			iter_5_3:GetComponent(typeof(Image)).color = Color.New(0, 1, 0, 1)
+function slot0.Clear(slot0)
+	for slot4, slot5 in pairs(slot0.mapGrids) do
+		for slot9, slot10 in pairs(slot5) do
+			slot10:GetComponent(typeof(Image)).color = Color.New(0, 1, 0, 1)
 
-			arg_5_0:GetView().poolMgr:GetGridPool():Enqueue(iter_5_3)
+			slot0:GetView().poolMgr:GetGridPool():Enqueue(slot10)
 		end
 	end
 
-	arg_5_0.mapGrids = {}
+	slot0.mapGrids = {}
 end
 
-function var_0_0.Dispose(arg_6_0)
-	arg_6_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

@@ -1,30 +1,26 @@
-﻿local var_0_0 = class("NewMeixiV4Mediator", import("view.base.ContextMediator"))
+slot0 = class("NewMeixiV4Mediator", import("view.base.ContextMediator"))
+slot0.ON_TASK_GO = "ON_TASK_GO"
+slot0.ON_TASK_SUBMIT = "ON_TASK_SUBMIT"
+slot0.GO_STORY = "GO_STORY"
 
-var_0_0.ON_TASK_GO = "ON_TASK_GO"
-var_0_0.ON_TASK_SUBMIT = "ON_TASK_SUBMIT"
-var_0_0.GO_STORY = "GO_STORY"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_TASK_GO, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg_2_1
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_TASK_GO, function (slot0, slot1)
+		uv0:sendNotification(GAME.TASK_GO, {
+			taskVO = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_3_1.id)
+	slot0:bind(uv0.ON_TASK_SUBMIT, function (slot0, slot1)
+		uv0:sendNotification(GAME.SUBMIT_TASK, slot1.id)
 	end)
-	arg_1_0:bind(var_0_0.GO_STORY, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
-			memoryGroup = arg_4_1
+	slot0:bind(uv0.GO_STORY, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
+			memoryGroup = slot1
 		})
 	end)
-
-	local var_1_0 = getProxy(PlayerProxy)
-
-	arg_1_0.viewComponent:setPlayer(var_1_0:getData())
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		PlayerProxy.UPDATED,
@@ -32,21 +28,18 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
-
-	if var_6_0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var_6_1.id == ActivityConst.NEWMEIXIV4_SKIRMISH_ID then
-			arg_6_0.viewComponent:onUpdateTask()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
+		if slot1:getBody().id == ActivityConst.NEWMEIXIV4_SKIRMISH_ID then
+			slot0.viewComponent:onUpdateTask()
 		end
-	elseif var_6_0 == PlayerProxy.UPDATED then
-		arg_6_0.viewComponent:onUpdateRes(var_6_1)
-	elseif var_6_0 == GAME.SUBMIT_TASK_DONE then
-		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1, function()
-			arg_6_0.viewComponent:onUpdateTask()
+	elseif slot2 == PlayerProxy.UPDATED then
+		slot0.viewComponent:onUpdateRes(slot3)
+	elseif slot2 == GAME.SUBMIT_TASK_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+			uv0.viewComponent:onUpdateTask()
 		end)
 	end
 end
 
-return var_0_0
+return slot0

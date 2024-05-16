@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "",
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 15035,
+	icon = 15030,
+	last_effect = "",
 	blink = {
 		1,
 		0,
@@ -28,25 +48,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "",
-	init_effect = "",
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 15035,
-	icon = 15030,
-	last_effect = ""
+	}
 }

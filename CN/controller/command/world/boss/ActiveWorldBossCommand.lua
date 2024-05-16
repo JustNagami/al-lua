@@ -1,42 +1,37 @@
-﻿local var_0_0 = class("ActiveWorldBossCommand", pm.SimpleCommand)
+slot0 = class("ActiveWorldBossCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.type
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.type
 
 	pg.ConnectionMgr.GetInstance():Send(34521, {
-		template_id = var_1_1
-	}, 34522, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = nowWorld():GetBossProxy()
+		template_id = slot2.id
+	}, 34522, function (slot0)
+		if slot0.result == 0 then
+			slot1 = nowWorld():GetBossProxy()
 
-			var_2_0:RemoveSelfBoss()
+			slot1:RemoveSelfBoss()
 
-			local var_2_1 = WorldBoss.New()
+			slot2 = WorldBoss.New()
 
-			var_2_1:Setup(arg_2_0.boss, getProxy(PlayerProxy):getData())
-			var_2_1:UpdateBossType(WorldBoss.BOSS_TYPE_SELF)
-			var_2_1:SetJoinTime(pg.TimeMgr.GetInstance():GetServerTime())
+			slot2:Setup(slot0.boss, getProxy(PlayerProxy):getData())
+			slot2:UpdateBossType(WorldBoss.BOSS_TYPE_SELF)
+			slot2:SetJoinTime(pg.TimeMgr.GetInstance():GetServerTime())
 
-			if var_2_0.isSetup then
-				var_2_0:ClearRank(var_2_1.id)
-				var_2_0:UpdateCacheBoss(var_2_1)
+			if slot1.isSetup then
+				slot1:ClearRank(slot2.id)
+				slot1:UpdateCacheBoss(slot2)
 
-				if var_1_2 == WorldBossConst.BOSS_TYPE_CURR then
-					local var_2_2 = WorldBossConst.GetCurrBossConsume()
-
-					var_2_0:ConsumeSummonPt(var_2_2)
-				elseif var_1_2 == WorldBossConst.BOSS_TYPE_ARCHIVES then
-					local var_2_3 = WorldBossConst.GetAchieveBossConsume()
-
-					var_2_0:ConsumeSummonPtOld(var_2_3)
+				if uv0 == WorldBossConst.BOSS_TYPE_CURR then
+					slot1:ConsumeSummonPt(WorldBossConst.GetCurrBossConsume())
+				elseif uv0 == WorldBossConst.BOSS_TYPE_ARCHIVES then
+					slot1:ConsumeSummonPtOld(WorldBossConst.GetAchieveBossConsume())
 				end
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

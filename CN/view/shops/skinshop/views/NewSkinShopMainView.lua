@@ -1,573 +1,522 @@
-﻿local var_0_0 = class("NewSkinShopMainView", import("view.base.BaseEventLogic"))
+slot0 = class("NewSkinShopMainView", import("view.base.BaseEventLogic"))
+slot0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW = "NewSkinShopMainView:EVT_SHOW_OR_HIDE_PURCHASE_VIEW"
+slot0.EVT_ON_PURCHASE = "NewSkinShopMainView:EVT_ON_PURCHASE"
+slot1 = 1
+slot2 = 2
+slot3 = 3
+slot4 = 1
+slot5 = 2
+slot6 = 3
+slot7 = 4
+slot8 = 5
+slot9 = 6
+slot10 = 7
+slot11 = 8
 
-var_0_0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW = "NewSkinShopMainView:EVT_SHOW_OR_HIDE_PURCHASE_VIEW"
-var_0_0.EVT_ON_PURCHASE = "NewSkinShopMainView:EVT_ON_PURCHASE"
-
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 1
-local var_0_5 = 2
-local var_0_6 = 3
-local var_0_7 = 4
-local var_0_8 = 5
-local var_0_9 = 6
-local var_0_10 = 7
-local var_0_11 = 8
-
-local function var_0_12(arg_1_0)
-	if not var_0_0.obtainBtnSpriteNames then
-		var_0_0.obtainBtnSpriteNames = {
-			[var_0_4] = "yigoumai_butten",
-			[var_0_5] = "goumai_butten",
-			[var_0_6] = "qianwanghuoqu_butten",
-			[var_0_7] = "item_buy",
-			[var_0_8] = "furniture_shop",
-			[var_0_9] = "tiyan_btn",
-			[var_0_10] = "item_buy",
-			[var_0_11] = "buy_with_gift"
+function slot12(slot0)
+	if not uv0.obtainBtnSpriteNames then
+		uv0.obtainBtnSpriteNames = {
+			[uv1] = "yigoumai_butten",
+			[uv2] = "goumai_butten",
+			[uv3] = "qianwanghuoqu_butten",
+			[uv4] = "item_buy",
+			[uv5] = "furniture_shop",
+			[uv6] = "tiyan_btn",
+			[uv7] = "item_buy",
+			[uv8] = "buy_with_gift"
 		}
 	end
 
-	return var_0_0.obtainBtnSpriteNames[arg_1_0]
+	return uv0.obtainBtnSpriteNames[slot0]
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
-	pg.DelegateInfo.New(arg_2_0)
-	var_0_0.super.Ctor(arg_2_0, arg_2_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
+	uv0.super.Ctor(slot0, slot2)
 
-	arg_2_0._go = arg_2_1.gameObject
-	arg_2_0._tf = arg_2_1
-	arg_2_0.overlay = arg_2_0._tf:Find("overlay")
-	arg_2_0.titleTr = arg_2_0._tf:Find("overlay/title")
-	arg_2_0.skinNameTxt = arg_2_0._tf:Find("overlay/title/skin_name"):GetComponent(typeof(Text))
-	arg_2_0.shipNameTxt = arg_2_0._tf:Find("overlay/title/name"):GetComponent(typeof(Text))
-	arg_2_0.timeLimitTr = arg_2_0._tf:Find("overlay/title/limit_time")
-	arg_2_0.timeLimitTxt = arg_2_0.timeLimitTr:Find("Text"):GetComponent(typeof(Text))
-	arg_2_0.rightTr = arg_2_0._tf:Find("overlay/right")
-	arg_2_0.uiTagList = UIItemList.New(arg_2_0._tf:Find("overlay/right/tags"), arg_2_0._tf:Find("overlay/right/tags/tpl"))
-	arg_2_0.charContainer = arg_2_0._tf:Find("overlay/right/char")
-	arg_2_0.furnitureContainer = arg_2_0._tf:Find("overlay/right/fur")
-	arg_2_0.charBg = arg_2_0._tf:Find("overlay/right/bg/char")
-	arg_2_0.furnitureBg = arg_2_0._tf:Find("overlay/right/bg/furn")
-	arg_2_0.switchPreviewBtn = arg_2_0._tf:Find("overlay/right/switch")
-	arg_2_0.obtainBtn = arg_2_0._tf:Find("overlay/right/price/btn")
-	arg_2_0.obtainBtnImg = arg_2_0.obtainBtn:GetComponent(typeof(Image))
-	arg_2_0.giftTag = arg_2_0.obtainBtn:Find("tag")
-	arg_2_0.giftItem = arg_2_0.obtainBtn:Find("item")
-	arg_2_0.giftText = arg_2_0._tf:Find("overlay/right/price/btn/Text"):GetComponent(typeof(Text))
-	arg_2_0.consumeTr = arg_2_0._tf:Find("overlay/right/price/consume")
-	arg_2_0.consumeRealPriceTxt = arg_2_0.consumeTr:Find("Text"):GetComponent(typeof(Text))
-	arg_2_0.consumePriceTxt = arg_2_0.consumeTr:Find("originalprice/Text"):GetComponent(typeof(Text))
-	arg_2_0.experienceTr = arg_2_0._tf:Find("overlay/right/price/timelimt")
-	arg_2_0.experienceTxt = arg_2_0.experienceTr:Find("consume/Text"):GetComponent(typeof(Text))
-	arg_2_0.dynamicToggle = arg_2_0._tf:Find("overlay/right/toggles/l2d_preview")
-	arg_2_0.showBgToggle = arg_2_0._tf:Find("overlay/right/toggles/hideObjToggle")
-	arg_2_0.dynamicResToggle = arg_2_0._tf:Find("overlay/right/toggles/l2d_res_state")
-	arg_2_0.dynamicResDownaload = arg_2_0._tf:Find("overlay/right/toggles/l2d_res_state/downloaded")
-	arg_2_0.dynamicResUnDownaload = arg_2_0._tf:Find("overlay/right/toggles/l2d_res_state/undownload")
-	arg_2_0.paintingTF = arg_2_0._tf:Find("painting/paint")
-	arg_2_0.live2dContainer = arg_2_0._tf:Find("painting/paint/live2d")
-	arg_2_0.spTF = arg_2_0._tf:Find("painting/paint/spinePainting")
-	arg_2_0.spBg = arg_2_0._tf:Find("painting/paintBg/spinePainting")
-	arg_2_0.bgsGo = arg_2_0._tf:Find("bgs").gameObject
-	arg_2_0.diffBg = arg_2_0._tf:Find("bgs/diffBg/bg")
-	arg_2_0.defaultBg = arg_2_0._tf:Find("bgs/default")
-	arg_2_0.downloads = {}
-	arg_2_0.obtainBtnSprites = {}
-	arg_2_0.isToggleDynamic = false
-	arg_2_0.isToggleShowBg = true
-	arg_2_0.isPreviewFurniture = false
-	arg_2_0.interactionPreview = BackYardInteractionPreview.New(arg_2_0.furnitureContainer, Vector3(0, 0, 0))
-	arg_2_0.voucherMsgBox = SkinVoucherMsgBox.New(pg.UIMgr.GetInstance().OverlayMain)
-	arg_2_0.purchaseView = NewSkinShopPurchaseView.New(arg_2_0._tf, arg_2_2)
+	slot0._go = slot1.gameObject
+	slot0._tf = slot1
+	slot0.overlay = slot0._tf:Find("overlay")
+	slot0.titleTr = slot0._tf:Find("overlay/title")
+	slot0.skinNameTxt = slot0._tf:Find("overlay/title/skin_name"):GetComponent(typeof(Text))
+	slot0.shipNameTxt = slot0._tf:Find("overlay/title/name"):GetComponent(typeof(Text))
+	slot0.timeLimitTr = slot0._tf:Find("overlay/title/limit_time")
+	slot0.timeLimitTxt = slot0.timeLimitTr:Find("Text"):GetComponent(typeof(Text))
+	slot0.rightTr = slot0._tf:Find("overlay/right")
+	slot0.uiTagList = UIItemList.New(slot0._tf:Find("overlay/right/tags"), slot0._tf:Find("overlay/right/tags/tpl"))
+	slot0.charContainer = slot0._tf:Find("overlay/right/char")
+	slot0.furnitureContainer = slot0._tf:Find("overlay/right/fur")
+	slot0.charBg = slot0._tf:Find("overlay/right/bg/char")
+	slot0.furnitureBg = slot0._tf:Find("overlay/right/bg/furn")
+	slot0.switchPreviewBtn = slot0._tf:Find("overlay/right/switch")
+	slot0.obtainBtn = slot0._tf:Find("overlay/right/price/btn")
+	slot0.obtainBtnImg = slot0.obtainBtn:GetComponent(typeof(Image))
+	slot0.giftTag = slot0.obtainBtn:Find("tag")
+	slot0.giftItem = slot0.obtainBtn:Find("item")
+	slot0.giftText = slot0._tf:Find("overlay/right/price/btn/Text"):GetComponent(typeof(Text))
+	slot0.consumeTr = slot0._tf:Find("overlay/right/price/consume")
+	slot0.consumeRealPriceTxt = slot0.consumeTr:Find("Text"):GetComponent(typeof(Text))
+	slot0.consumePriceTxt = slot0.consumeTr:Find("originalprice/Text"):GetComponent(typeof(Text))
+	slot0.experienceTr = slot0._tf:Find("overlay/right/price/timelimt")
+	slot0.experienceTxt = slot0.experienceTr:Find("consume/Text"):GetComponent(typeof(Text))
+	slot0.dynamicToggle = slot0._tf:Find("overlay/right/toggles/l2d_preview")
+	slot0.showBgToggle = slot0._tf:Find("overlay/right/toggles/hideObjToggle")
+	slot0.dynamicResToggle = slot0._tf:Find("overlay/right/toggles/l2d_res_state")
+	slot0.dynamicResDownaload = slot0._tf:Find("overlay/right/toggles/l2d_res_state/downloaded")
+	slot0.dynamicResUnDownaload = slot0._tf:Find("overlay/right/toggles/l2d_res_state/undownload")
+	slot0.paintingTF = slot0._tf:Find("painting/paint")
+	slot0.live2dContainer = slot0._tf:Find("painting/paint/live2d")
+	slot0.spTF = slot0._tf:Find("painting/paint/spinePainting")
+	slot0.spBg = slot0._tf:Find("painting/paintBg/spinePainting")
+	slot0.bgsGo = slot0._tf:Find("bgs").gameObject
+	slot0.diffBg = slot0._tf:Find("bgs/diffBg/bg")
+	slot0.defaultBg = slot0._tf:Find("bgs/default")
+	slot0.downloads = {}
+	slot0.obtainBtnSprites = {}
+	slot0.isToggleDynamic = false
+	slot0.isToggleShowBg = true
+	slot0.isPreviewFurniture = false
+	slot0.interactionPreview = BackYardInteractionPreview.New(slot0.furnitureContainer, Vector3(0, 0, 0))
+	slot0.voucherMsgBox = SkinVoucherMsgBox.New(pg.UIMgr.GetInstance().OverlayMain)
+	slot0.purchaseView = NewSkinShopPurchaseView.New(slot0._tf, slot2)
 
-	arg_2_0:RegisterEvent()
+	slot0:RegisterEvent()
 end
 
-function var_0_0.RegisterEvent(arg_3_0)
-	arg_3_0:bind(var_0_0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, function(arg_4_0, arg_4_1)
-		setAnchoredPosition(arg_3_0.paintingTF, {
-			x = arg_4_1 and -440 or -120
+function slot0.RegisterEvent(slot0)
+	slot0:bind(uv0.EVT_SHOW_OR_HIDE_PURCHASE_VIEW, function (slot0, slot1)
+		setAnchoredPosition(uv0.paintingTF, {
+			x = slot1 and -440 or -120
 		})
-		setActive(arg_3_0.overlay, not arg_4_1)
+		setActive(uv0.overlay, not slot1)
 	end)
-	arg_3_0:bind(var_0_0.EVT_ON_PURCHASE, function(arg_5_0, arg_5_1)
-		local var_5_0 = arg_3_0:GetObtainBtnState(arg_5_1)
-
-		arg_3_0:OnClickBtn(var_5_0, arg_5_1)
+	slot0:bind(uv0.EVT_ON_PURCHASE, function (slot0, slot1)
+		uv0:OnClickBtn(uv0:GetObtainBtnState(slot1), slot1)
 	end)
 end
 
-function var_0_0.Flush(arg_6_0, arg_6_1)
-	if not arg_6_1 then
-		arg_6_0:FlushStyle(true)
+function slot0.Flush(slot0, slot1)
+	if not slot1 then
+		slot0:FlushStyle(true)
 
 		return
 	end
 
-	arg_6_0:FlushStyle(false)
+	slot0:FlushStyle(false)
 
-	if not (arg_6_0.commodity and arg_6_0.commodity.id == arg_6_1.id) then
-		arg_6_0:FlushName(arg_6_1)
-		arg_6_0:FlushPreviewBtn(arg_6_1)
-		arg_6_0:FlushTimeline(arg_6_1)
-		arg_6_0:FlushTag(arg_6_1)
-		arg_6_0:SwitchPreview(arg_6_1, arg_6_0.isPreviewFurniture, false)
-		arg_6_0:FlushPaintingToggle(arg_6_1)
-		arg_6_0:FlushBG(arg_6_1)
-		arg_6_0:FlushPainting(arg_6_1)
+	if not (slot0.commodity and slot0.commodity.id == slot1.id) then
+		slot0:FlushName(slot1)
+		slot0:FlushPreviewBtn(slot1)
+		slot0:FlushTimeline(slot1)
+		slot0:FlushTag(slot1)
+		slot0:SwitchPreview(slot1, slot0.isPreviewFurniture, false)
+		slot0:FlushPaintingToggle(slot1)
+		slot0:FlushBG(slot1)
+		slot0:FlushPainting(slot1)
 	else
-		arg_6_0:FlushBG(arg_6_1)
-		arg_6_0:FlushPainting(arg_6_1)
+		slot0:FlushBG(slot1)
+		slot0:FlushPainting(slot1)
 	end
 
-	arg_6_0:FlushPrice(arg_6_1)
-	arg_6_0:FlushObtainBtn(arg_6_1)
+	slot0:FlushPrice(slot1)
+	slot0:FlushObtainBtn(slot1)
 
-	arg_6_0.commodity = arg_6_1
+	slot0.commodity = slot1
 end
 
-function var_0_0.FlushStyle(arg_7_0, arg_7_1)
-	setActive(arg_7_0.paintingTF.parent, not arg_7_1)
-	setActive(arg_7_0.defaultBg, arg_7_1)
-	setActive(arg_7_0.diffBg.parent, not arg_7_1)
-	setActive(arg_7_0.titleTr, not arg_7_1)
-	setActive(arg_7_0.rightTr, not arg_7_1)
+function slot0.FlushStyle(slot0, slot1)
+	setActive(slot0.paintingTF.parent, not slot1)
+	setActive(slot0.defaultBg, slot1)
+	setActive(slot0.diffBg.parent, not slot1)
+	setActive(slot0.titleTr, not slot1)
+	setActive(slot0.rightTr, not slot1)
 end
 
-function var_0_0.getUIName(arg_8_0)
+function slot0.getUIName(slot0)
 	return "NewSkinShopMainView"
 end
 
-function var_0_0.FlushBgWithAnim(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0._tf:GetComponent(typeof(CanvasGroup))
-
-	var_9_0.blocksRaycasts = false
+function slot0.FlushBgWithAnim(slot0, slot1)
+	slot0._tf:GetComponent(typeof(CanvasGroup)).blocksRaycasts = false
 
 	parallelAsync({
-		function(arg_10_0)
-			arg_9_0:DoSwitchBgAnim(1, 0.3, 0.8, LeanTweenType.linear, arg_10_0)
+		function (slot0)
+			uv0:DoSwitchBgAnim(1, 0.3, 0.8, LeanTweenType.linear, slot0)
 		end,
-		function(arg_11_0)
-			arg_9_0:FlushBG(arg_9_1, arg_11_0)
+		function (slot0)
+			uv0:FlushBG(uv1, slot0)
 		end
-	}, function()
-		arg_9_0:DoSwitchBgAnim(1, 1, 0.01, LeanTweenType.linear, function()
-			var_9_0.blocksRaycasts = true
+	}, function ()
+		uv0:DoSwitchBgAnim(1, 1, 0.01, LeanTweenType.linear, function ()
+			uv0.blocksRaycasts = true
 		end)
 	end)
 end
 
-function var_0_0.DoSwitchBgAnim(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4, arg_14_5)
-	arg_14_0:ClearSwitchBgAnim()
+function slot0.DoSwitchBgAnim(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0:ClearSwitchBgAnim()
 
-	local var_14_0 = GetOrAddComponent(arg_14_0.bgsGo, typeof(CanvasGroup))
+	GetOrAddComponent(slot0.bgsGo, typeof(CanvasGroup)).alpha = slot1
 
-	var_14_0.alpha = arg_14_1
-
-	LeanTween.value(arg_14_0.bgsGo, arg_14_1, arg_14_2, arg_14_3):setOnUpdate(System.Action_float(function(arg_15_0)
-		var_14_0.alpha = arg_15_0
-	end)):setEase(arg_14_4):setOnComplete(System.Action(arg_14_5))
+	LeanTween.value(slot0.bgsGo, slot1, slot2, slot3):setOnUpdate(System.Action_float(function (slot0)
+		uv0.alpha = slot0
+	end)):setEase(slot4):setOnComplete(System.Action(slot5))
 end
 
-function var_0_0.ClearSwitchBgAnim(arg_16_0)
-	if LeanTween.isTweening(arg_16_0.bgsGo) then
-		LeanTween.cancel(arg_16_0.bgsGo)
+function slot0.ClearSwitchBgAnim(slot0)
+	if LeanTween.isTweening(slot0.bgsGo) then
+		LeanTween.cancel(slot0.bgsGo)
 	end
 
-	GetOrAddComponent(arg_16_0.bgsGo, typeof(CanvasGroup)).alpha = 1
+	GetOrAddComponent(slot0.bgsGo, typeof(CanvasGroup)).alpha = 1
 end
 
-function var_0_0.FlushBG(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_1:getSkinId()
-	local var_17_1 = pg.ship_skin_template[var_17_0]
-	local var_17_2 = ShipGroup.getDefaultShipConfig(var_17_1.ship_group)
-	local var_17_3 = Ship.New({
+function slot0.FlushBG(slot0, slot1, slot2)
+	slot3 = slot1:getSkinId()
+	slot7 = Ship.New({
 		id = 999,
-		configId = var_17_2.id,
-		skin_id = var_17_0
-	})
-	local var_17_4 = var_17_3:getShipBgPrint(true)
-	local var_17_5 = pg.ship_skin_template[var_17_0].painting
+		configId = ShipGroup.getDefaultShipConfig(pg.ship_skin_template[slot3].ship_group).id,
+		skin_id = slot3
+	}):getShipBgPrint(true)
 
-	if (arg_17_0.isToggleShowBg or not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_17_5 .. "_n"))) and var_17_1.bg_sp ~= "" then
-		var_17_4 = var_17_1.bg_sp
+	if (slot0.isToggleShowBg or not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. pg.ship_skin_template[slot3].painting .. "_n"))) and slot4.bg_sp ~= "" then
+		slot7 = slot4.bg_sp
 	end
 
-	local var_17_6 = var_17_4 ~= var_17_3:rarity2bgPrintForGet()
-
-	if var_17_6 then
-		pg.DynamicBgMgr.GetInstance():LoadBg(arg_17_0, var_17_4, arg_17_0.diffBg.parent, arg_17_0.diffBg, function(arg_18_0)
-			if arg_17_2 then
-				arg_17_2()
+	if slot7 ~= slot6:rarity2bgPrintForGet() then
+		pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot7, slot0.diffBg.parent, slot0.diffBg, function (slot0)
+			if uv0 then
+				uv0()
 			end
-		end, function(arg_19_0)
-			if arg_17_2 then
-				arg_17_2()
+		end, function (slot0)
+			if uv0 then
+				uv0()
 			end
 		end)
 	else
-		pg.DynamicBgMgr.GetInstance():ClearBg(arg_17_0:getUIName())
+		pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
 
-		if arg_17_2 then
-			arg_17_2()
+		if slot2 then
+			slot2()
 		end
 	end
 
-	setActive(arg_17_0.diffBg, var_17_6)
-	setActive(arg_17_0.defaultBg, not var_17_6)
+	setActive(slot0.diffBg, slot9)
+	setActive(slot0.defaultBg, not slot9)
 end
 
-function var_0_0.FlushName(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1:getSkinId()
-	local var_20_1 = pg.ship_skin_template[var_20_0]
-
-	arg_20_0.skinNameTxt.text = SwitchSpecialChar(var_20_1.name, true)
-
-	local var_20_2 = ShipGroup.getDefaultShipConfig(var_20_1.ship_group)
-
-	arg_20_0.shipNameTxt.text = var_20_2.name
+function slot0.FlushName(slot0, slot1)
+	slot3 = pg.ship_skin_template[slot1:getSkinId()]
+	slot0.skinNameTxt.text = SwitchSpecialChar(slot3.name, true)
+	slot0.shipNameTxt.text = ShipGroup.getDefaultShipConfig(slot3.ship_group).name
 end
 
-function var_0_0.FlushPaintingToggle(arg_21_0, arg_21_1)
-	removeOnToggle(arg_21_0.dynamicToggle)
-	removeOnToggle(arg_21_0.showBgToggle)
+function slot0.FlushPaintingToggle(slot0, slot1)
+	removeOnToggle(slot0.dynamicToggle)
+	removeOnToggle(slot0.showBgToggle)
 
-	local var_21_0 = ShipSkin.New({
-		id = arg_21_1:getSkinId()
-	})
-	local var_21_1 = PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_21_0:getConfig("painting") .. "_n"))
+	if slot0.isToggleShowBg and not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. ShipSkin.New({
+		id = slot1:getSkinId()
+	}):getConfig("painting") .. "_n")) then
+		triggerToggle(slot0.showBgToggle, false)
 
-	if arg_21_0.isToggleShowBg and not var_21_1 then
-		triggerToggle(arg_21_0.showBgToggle, false)
+		slot0.isToggleShowBg = false
+	elseif slot3 then
+		triggerToggle(slot0.showBgToggle, true)
 
-		arg_21_0.isToggleShowBg = false
-	elseif var_21_1 then
-		triggerToggle(arg_21_0.showBgToggle, true)
-
-		arg_21_0.isToggleShowBg = true
+		slot0.isToggleShowBg = true
 	end
 
-	local var_21_2 = var_21_0:IsSpine() or var_21_0:IsLive2d()
+	slot4 = slot2:IsSpine() or slot2:IsLive2d()
 
 	if LOCK_SKIN_SHOP_ANIM_PREVIEW then
-		var_21_2 = false
+		slot4 = false
 	end
 
-	if var_21_2 and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
-		arg_21_0.isToggleDynamic = true
+	if slot4 and PlayerPrefs.GetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, 0) == 1 then
+		slot0.isToggleDynamic = true
 	end
 
-	if arg_21_0.isToggleDynamic and not var_21_2 then
-		triggerToggle(arg_21_0.dynamicToggle, false)
+	if slot0.isToggleDynamic and not slot4 then
+		triggerToggle(slot0.dynamicToggle, false)
 
-		arg_21_0.isToggleDynamic = false
-	elseif arg_21_0.isToggleDynamic and not arg_21_0.dynamicToggle:GetComponent(typeof(Toggle)).isOn then
-		triggerToggle(arg_21_0.dynamicToggle, true)
+		slot0.isToggleDynamic = false
+	elseif slot0.isToggleDynamic and not slot0.dynamicToggle:GetComponent(typeof(Toggle)).isOn then
+		triggerToggle(slot0.dynamicToggle, true)
 
-		arg_21_0.isToggleDynamic = true
+		slot0.isToggleDynamic = true
 	end
 
-	if var_21_1 then
-		onToggle(arg_21_0, arg_21_0.showBgToggle, function(arg_22_0)
-			arg_21_0.isToggleShowBg = arg_22_0
+	if slot3 then
+		onToggle(slot0, slot0.showBgToggle, function (slot0)
+			uv0.isToggleShowBg = slot0
 
-			arg_21_0:FlushPainting(arg_21_1)
-			arg_21_0:FlushBG(arg_21_1)
+			uv0:FlushPainting(uv1)
+			uv0:FlushBG(uv1)
 		end, SFX_PANEL)
 	end
 
-	if var_21_0:IsSpine() or var_21_0:IsLive2d() then
-		onToggle(arg_21_0, arg_21_0.dynamicToggle, function(arg_23_0)
-			arg_21_0.isToggleDynamic = arg_23_0
+	if slot2:IsSpine() or slot2:IsLive2d() then
+		onToggle(slot0, slot0.dynamicToggle, function (slot0)
+			uv0.isToggleDynamic = slot0
 
-			setActive(arg_21_0.dynamicResToggle, arg_23_0)
-			setActive(arg_21_0.showBgToggle, not arg_23_0 and var_21_1)
-			arg_21_0:FlushPainting(arg_21_1)
-			arg_21_0:FlushDynamicPaintingResState(arg_21_1)
-			arg_21_0:RecordFlag(arg_23_0)
+			setActive(uv0.dynamicResToggle, slot0)
+			setActive(uv0.showBgToggle, not slot0 and uv1)
+			uv0:FlushPainting(uv2)
+			uv0:FlushDynamicPaintingResState(uv2)
+			uv0:RecordFlag(slot0)
 		end, SFX_PANEL)
 	end
 
-	if arg_21_0.isToggleDynamic then
-		arg_21_0:FlushDynamicPaintingResState(arg_21_1)
+	if slot0.isToggleDynamic then
+		slot0:FlushDynamicPaintingResState(slot1)
 	end
 
-	setActive(arg_21_0.dynamicToggle, var_21_2)
-	setActive(arg_21_0.dynamicResToggle, arg_21_0.isToggleDynamic)
-	setActive(arg_21_0.showBgToggle, not arg_21_0.isToggleDynamic and var_21_1)
+	setActive(slot0.dynamicToggle, slot4)
+	setActive(slot0.dynamicResToggle, slot0.isToggleDynamic)
+	setActive(slot0.showBgToggle, not slot0.isToggleDynamic and slot3)
 end
 
-function var_0_0.RecordFlag(arg_24_0, arg_24_1)
-	local var_24_0 = getProxy(PlayerProxy):getRawData().id
-
-	PlayerPrefs.SetInt("skinShop#l2dPreViewToggle" .. var_24_0, arg_24_1 and 1 or 0)
+function slot0.RecordFlag(slot0, slot1)
+	PlayerPrefs.SetInt("skinShop#l2dPreViewToggle" .. getProxy(PlayerProxy):getRawData().id, slot1 and 1 or 0)
 	PlayerPrefs.Save()
-	arg_24_0:emit(NewSkinShopMediator.ON_RECORD_ANIM_PREVIEW_BTN, arg_24_1)
+	slot0:emit(NewSkinShopMediator.ON_RECORD_ANIM_PREVIEW_BTN, slot1)
 end
 
-function var_0_0.ExistL2dRes(arg_25_0, arg_25_1)
-	local var_25_0 = "live2d/" .. string.lower(arg_25_1)
-	local var_25_1 = HXSet.autoHxShiftPath(var_25_0, nil, true)
+function slot0.ExistL2dRes(slot0, slot1)
+	slot2 = HXSet.autoHxShiftPath("live2d/" .. string.lower(slot1), nil, true)
 
-	return PathMgr.FileExists(PathMgr.getAssetBundle(var_25_1)), var_25_1
+	return PathMgr.FileExists(PathMgr.getAssetBundle(slot2)), slot2
 end
 
-function var_0_0.ExistSpineRes(arg_26_0, arg_26_1)
-	local var_26_0 = "SpinePainting/" .. string.lower(arg_26_1)
-	local var_26_1 = HXSet.autoHxShiftPath(var_26_0, nil, true)
+function slot0.ExistSpineRes(slot0, slot1)
+	slot2 = HXSet.autoHxShiftPath("SpinePainting/" .. string.lower(slot1), nil, true)
 
-	return PathMgr.FileExists(PathMgr.getAssetBundle(var_26_1)), var_26_1
+	return PathMgr.FileExists(PathMgr.getAssetBundle(slot2)), slot2
 end
 
-function var_0_0.FlushDynamicPaintingResState(arg_27_0, arg_27_1)
-	if not arg_27_0.isToggleDynamic then
+function slot0.FlushDynamicPaintingResState(slot0, slot1)
+	if not slot0.isToggleDynamic then
 		return
 	end
 
-	local var_27_0 = arg_27_0:GetPaintingState(arg_27_1)
-	local var_27_1 = false
-	local var_27_2 = ""
-	local var_27_3 = pg.ship_skin_template[arg_27_1:getSkinId()].painting
+	slot3 = false
+	slot4 = ""
 
-	if var_0_2 == var_27_0 then
-		var_27_1, var_27_2 = arg_27_0:ExistL2dRes(var_27_3)
-	elseif var_0_3 == var_27_0 then
-		var_27_1, var_27_2 = arg_27_0:ExistSpineRes(var_27_3)
+	if uv0 == slot0:GetPaintingState(slot1) then
+		slot3, slot4 = slot0:ExistL2dRes(pg.ship_skin_template[slot1:getSkinId()].painting)
+	elseif uv1 == slot2 then
+		slot3, slot4 = slot0:ExistSpineRes(slot5)
 	end
 
-	setActive(arg_27_0.dynamicResDownaload, var_27_1)
-	setActive(arg_27_0.dynamicResUnDownaload, not var_27_1)
-	removeOnButton(arg_27_0.dynamicResUnDownaload)
+	setActive(slot0.dynamicResDownaload, slot3)
+	setActive(slot0.dynamicResUnDownaload, not slot3)
+	removeOnButton(slot0.dynamicResUnDownaload)
 
-	if not var_27_1 and var_27_2 ~= "" then
-		onButton(arg_27_0, arg_27_0.dynamicResUnDownaload, function()
-			arg_27_0:DownloadDynamicPainting(var_27_2, arg_27_1)
+	if not slot3 and slot4 ~= "" then
+		onButton(slot0, slot0.dynamicResUnDownaload, function ()
+			uv0:DownloadDynamicPainting(uv1, uv2)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.DownloadDynamicPainting(arg_29_0, arg_29_1, arg_29_2)
-	local var_29_0 = arg_29_2:getSkinId()
-
-	if arg_29_0.downloads[var_29_0] then
+function slot0.DownloadDynamicPainting(slot0, slot1, slot2)
+	if slot0.downloads[slot2:getSkinId()] then
 		return
 	end
 
-	local var_29_1 = SkinShopDownloadRequest.New()
+	slot4 = SkinShopDownloadRequest.New()
+	slot0.downloads[slot3] = slot4
 
-	arg_29_0.downloads[var_29_0] = var_29_1
-
-	var_29_1:Start(arg_29_1, function(arg_30_0)
-		if arg_30_0 and arg_29_0.paintingState and arg_29_0.paintingState.id == arg_29_2.id then
-			arg_29_0:FlushPainting(arg_29_2)
-			arg_29_0:FlushDynamicPaintingResState(arg_29_2)
+	slot4:Start(slot1, function (slot0)
+		if slot0 and uv0.paintingState and uv0.paintingState.id == uv1.id then
+			uv0:FlushPainting(uv1)
+			uv0:FlushDynamicPaintingResState(uv1)
 		end
 
-		var_29_1:Dispose()
+		uv2:Dispose()
 
-		arg_29_0.downloads[var_29_0] = nil
+		uv0.downloads[uv3] = nil
 	end)
 end
 
-function var_0_0.GetPaintingState(arg_31_0, arg_31_1)
-	local var_31_0 = ShipSkin.New({
-		id = arg_31_1:getSkinId()
-	})
-
-	if arg_31_0.isToggleDynamic and var_31_0:IsLive2d() then
-		return var_0_2
-	elseif arg_31_0.isToggleDynamic and var_31_0:IsSpine() then
-		if var_31_0:getConfig("spine_use_live2d") == 1 then
-			return var_0_2
+function slot0.GetPaintingState(slot0, slot1)
+	if slot0.isToggleDynamic and ShipSkin.New({
+		id = slot1:getSkinId()
+	}):IsLive2d() then
+		return uv0
+	elseif slot0.isToggleDynamic and slot2:IsSpine() then
+		if slot2:getConfig("spine_use_live2d") == 1 then
+			return uv0
 		end
 
-		return var_0_3
+		return uv1
 	else
-		return var_0_1
+		return uv2
 	end
 end
 
-function var_0_0.FlushPainting(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_0:GetPaintingState(arg_32_1)
-	local var_32_1 = pg.ship_skin_template[arg_32_1:getSkinId()].painting
+function slot0.FlushPainting(slot0, slot1)
+	slot3 = pg.ship_skin_template[slot1:getSkinId()].painting
 
-	if var_32_0 == var_0_2 and not arg_32_0:ExistL2dRes(var_32_1) or var_32_0 == var_0_3 and not arg_32_0:ExistSpineRes(var_32_1) then
-		var_32_0 = var_0_1
+	if slot0:GetPaintingState(slot1) == uv0 and not slot0:ExistL2dRes(slot3) or slot2 == uv1 and not slot0:ExistSpineRes(slot3) then
+		slot2 = uv2
 	end
 
-	if arg_32_0.paintingState and arg_32_0.paintingState.state == var_32_0 and arg_32_0.paintingState.id == arg_32_1.id and arg_32_0.paintingState.showBg == arg_32_0.isToggleShowBg and arg_32_0.paintingState.purchaseFlag == arg_32_1.buyCount then
+	if slot0.paintingState and slot0.paintingState.state == slot2 and slot0.paintingState.id == slot1.id and slot0.paintingState.showBg == slot0.isToggleShowBg and slot0.paintingState.purchaseFlag == slot1.buyCount then
 		return
 	end
 
-	arg_32_0:ClearPainting()
+	slot0:ClearPainting()
 
-	if var_32_0 == var_0_1 then
-		arg_32_0:LoadMeshPainting(arg_32_1, arg_32_0.isToggleShowBg)
-	elseif var_32_0 == var_0_2 then
-		arg_32_0:LoadL2dPainting(arg_32_1)
-	elseif var_32_0 == var_0_3 then
-		arg_32_0:LoadSpinePainting(arg_32_1)
+	if slot2 == uv2 then
+		slot0:LoadMeshPainting(slot1, slot0.isToggleShowBg)
+	elseif slot2 == uv0 then
+		slot0:LoadL2dPainting(slot1)
+	elseif slot2 == uv1 then
+		slot0:LoadSpinePainting(slot1)
 	end
 
-	arg_32_0.paintingState = {
-		state = var_32_0,
-		id = arg_32_1.id,
-		showBg = arg_32_0.isToggleShowBg,
-		purchaseFlag = arg_32_1.buyCount
+	slot0.paintingState = {
+		state = slot2,
+		id = slot1.id,
+		showBg = slot0.isToggleShowBg,
+		purchaseFlag = slot1.buyCount
 	}
 end
 
-function var_0_0.ClearPainting(arg_33_0)
-	local var_33_0 = arg_33_0.paintingState
-
-	if not var_33_0 then
+function slot0.ClearPainting(slot0)
+	if not slot0.paintingState then
 		return
 	end
 
-	if var_33_0.state == var_0_1 then
-		arg_33_0:ClearMeshPainting()
-	elseif var_33_0.state == var_0_2 then
-		arg_33_0:ClearL2dPainting()
-	elseif var_33_0.state == var_0_3 then
-		arg_33_0:ClearSpinePainting()
+	if slot1.state == uv0 then
+		slot0:ClearMeshPainting()
+	elseif slot1.state == uv1 then
+		slot0:ClearL2dPainting()
+	elseif slot1.state == uv2 then
+		slot0:ClearSpinePainting()
 	end
 
-	arg_33_0.paintingState = nil
+	slot0.paintingState = nil
 end
 
-function var_0_0.LoadMeshPainting(arg_34_0, arg_34_1, arg_34_2)
-	local var_34_0 = findTF(arg_34_0.paintingTF, "fitter")
-	local var_34_1 = GetOrAddComponent(var_34_0, "PaintingScaler")
+function slot0.LoadMeshPainting(slot0, slot1, slot2)
+	slot4 = GetOrAddComponent(findTF(slot0.paintingTF, "fitter"), "PaintingScaler")
+	slot4.FrameName = "chuanwu"
+	slot4.Tween = 1
+	slot6 = pg.ship_skin_template[slot1:getSkinId()].painting
 
-	var_34_1.FrameName = "chuanwu"
-	var_34_1.Tween = 1
-
-	local var_34_2 = pg.ship_skin_template[arg_34_1:getSkinId()].painting
-	local var_34_3 = var_34_2
-
-	if not arg_34_2 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_34_2 .. "_n")) then
-		var_34_2 = var_34_2 .. "_n"
+	if not slot2 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot5 .. "_n")) then
+		slot5 = slot5 .. "_n"
 	end
 
-	if not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. var_34_2)) then
+	if not PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot5)) then
 		return
 	end
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetPainting(var_34_2, true, function(arg_35_0)
+	PoolMgr.GetInstance():GetPainting(slot5, true, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
-		setParent(arg_35_0, var_34_0, false)
-		ShipExpressionHelper.SetExpression(var_34_0:GetChild(0), var_34_3)
+		setParent(slot0, uv0, false)
+		ShipExpressionHelper.SetExpression(uv0:GetChild(0), uv1)
 
-		arg_34_0.paintingName = var_34_2
+		uv2.paintingName = uv3
 
-		if arg_34_0.paintingState and arg_34_0.paintingState.id ~= arg_34_1.id then
-			arg_34_0:ClearMeshPainting()
+		if uv2.paintingState and uv2.paintingState.id ~= uv4.id then
+			uv2:ClearMeshPainting()
 		end
 
-		local var_35_0 = arg_35_0.transform:Find("shop_hx")
-
-		arg_34_0:CheckShowShopHx(var_35_0, arg_34_1)
+		uv2:CheckShowShopHx(slot0.transform:Find("shop_hx"), uv4)
 	end)
 end
 
-function var_0_0.ClearMeshPainting(arg_36_0)
-	local var_36_0 = arg_36_0.paintingTF:Find("fitter")
+function slot0.ClearMeshPainting(slot0)
+	slot1 = slot0.paintingTF:Find("fitter")
 
-	if arg_36_0.paintingName and var_36_0.childCount > 0 then
-		local var_36_1 = var_36_0:GetChild(0).gameObject
-		local var_36_2 = var_36_1.transform:Find("shop_hx")
+	if slot0.paintingName and slot1.childCount > 0 then
+		slot2 = slot1:GetChild(0).gameObject
 
-		arg_36_0:RevertShopHx(var_36_2)
-		PoolMgr.GetInstance():ReturnPainting(arg_36_0.paintingName, var_36_1)
+		slot0:RevertShopHx(slot2.transform:Find("shop_hx"))
+		PoolMgr.GetInstance():ReturnPainting(slot0.paintingName, slot2)
 	end
 
-	arg_36_0.paintingName = nil
+	slot0.paintingName = nil
 end
 
-function var_0_0.LoadL2dPainting(arg_37_0, arg_37_1)
-	local var_37_0 = arg_37_1:getSkinId()
-	local var_37_1 = pg.ship_skin_template[var_37_0].ship_group
-	local var_37_2 = ShipGroup.getDefaultShipConfig(var_37_1)
-	local var_37_3 = Live2D.GenerateData({
+function slot0.LoadL2dPainting(slot0, slot1)
+	slot2 = slot1:getSkinId()
+	slot5 = Live2D.GenerateData({
 		ship = Ship.New({
 			id = 999,
-			configId = var_37_2.id,
-			skin_id = var_37_0
+			configId = ShipGroup.getDefaultShipConfig(pg.ship_skin_template[slot2].ship_group).id,
+			skin_id = slot2
 		}),
 		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, -1),
-		parent = arg_37_0.live2dContainer
+		parent = slot0.live2dContainer
 	})
-
-	var_37_3.shopPreView = true
+	slot5.shopPreView = true
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	arg_37_0.live2dChar = Live2D.New(var_37_3, function(arg_38_0)
-		arg_38_0:IgonreReactPos(true)
-		arg_37_0:CheckShowShopHxForL2d(arg_38_0, arg_37_1)
+	slot0.live2dChar = Live2D.New(slot5, function (slot0)
+		slot0:IgonreReactPos(true)
+		uv0:CheckShowShopHxForL2d(slot0, uv1)
 
-		if arg_37_0.paintingState and arg_37_0.paintingState.id ~= arg_37_1.id then
-			arg_37_0:ClearL2dPainting()
+		if uv0.paintingState and uv0.paintingState.id ~= uv1.id then
+			uv0:ClearL2dPainting()
 		end
 
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
 
-function var_0_0.ClearL2dPainting(arg_39_0)
-	if arg_39_0.live2dChar then
-		arg_39_0:RevertShopHxForL2d(arg_39_0.live2dChar)
-		arg_39_0.live2dChar:Dispose()
+function slot0.ClearL2dPainting(slot0)
+	if slot0.live2dChar then
+		slot0:RevertShopHxForL2d(slot0.live2dChar)
+		slot0.live2dChar:Dispose()
 
-		arg_39_0.live2dChar = nil
+		slot0.live2dChar = nil
 	end
 end
 
-function var_0_0.LoadSpinePainting(arg_40_0, arg_40_1)
-	local var_40_0 = arg_40_1:getSkinId()
-	local var_40_1 = pg.ship_skin_template[var_40_0].ship_group
-	local var_40_2 = ShipGroup.getDefaultShipConfig(var_40_1)
-	local var_40_3 = SpinePainting.GenerateData({
+function slot0.LoadSpinePainting(slot0, slot1)
+	slot2 = slot1:getSkinId()
+
+	pg.UIMgr.GetInstance():LoadingOn()
+
+	slot0.spinePainting = SpinePainting.New(SpinePainting.GenerateData({
 		ship = Ship.New({
 			id = 999,
-			configId = var_40_2.id,
-			skin_id = var_40_0
+			configId = ShipGroup.getDefaultShipConfig(pg.ship_skin_template[slot2].ship_group).id,
+			skin_id = slot2
 		}),
 		position = Vector3(0, 0, 0),
-		parent = arg_40_0.spTF,
-		effectParent = arg_40_0.spBg
-	})
-
-	pg.UIMgr.GetInstance():LoadingOn()
-
-	arg_40_0.spinePainting = SpinePainting.New(var_40_3, function(arg_41_0)
-		if arg_40_0.paintingState and arg_40_0.paintingState.id ~= arg_40_1.id then
-			arg_40_0:ClearSpinePainting()
+		parent = slot0.spTF,
+		effectParent = slot0.spBg
+	}), function (slot0)
+		if uv0.paintingState and uv0.paintingState.id ~= uv1.id then
+			uv0:ClearSpinePainting()
 		end
 
-		local var_41_0 = arg_41_0._tf:Find("shop_hx")
-
-		arg_40_0:CheckShowShopHx(var_41_0, arg_40_1)
+		uv0:CheckShowShopHx(slot0._tf:Find("shop_hx"), uv1)
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
 
-function var_0_0.ClearSpinePainting(arg_42_0)
-	if arg_42_0.spinePainting and arg_42_0.spinePainting._tf then
-		local var_42_0 = arg_42_0.spinePainting._tf:Find("shop_hx")
+function slot0.ClearSpinePainting(slot0)
+	if slot0.spinePainting and slot0.spinePainting._tf then
+		slot1 = slot0.spinePainting._tf:Find("shop_hx")
 
-		arg_42_0:RevertShopHx(arg_42_0.shopHx)
-		arg_42_0.spinePainting:Dispose()
+		slot0:RevertShopHx(slot0.shopHx)
+		slot0.spinePainting:Dispose()
 
-		arg_42_0.spinePainting = nil
+		slot0.spinePainting = nil
 	end
 end
 
-function var_0_0.CheckShowShopHxForL2d(arg_43_0, arg_43_1, arg_43_2)
+function slot0.CheckShowShopHxForL2d(slot0, slot1, slot2)
 	if PLATFORM_CODE ~= PLATFORM_CH then
 		return
 	end
@@ -576,16 +525,14 @@ function var_0_0.CheckShowShopHxForL2d(arg_43_0, arg_43_1, arg_43_2)
 		return
 	end
 
-	local var_43_0 = arg_43_2.buyCount <= 0 and 1 or 0
-
-	arg_43_1:changeParamaterValue("shophx", var_43_0)
+	slot1:changeParamaterValue("shophx", slot2.buyCount <= 0 and 1 or 0)
 end
 
-function var_0_0.RevertShopHxForL2d(arg_44_0, arg_44_1)
-	arg_44_1:changeParamaterValue("shophx", 0)
+function slot0.RevertShopHxForL2d(slot0, slot1)
+	slot1:changeParamaterValue("shophx", 0)
 end
 
-function var_0_0.CheckShowShopHx(arg_45_0, arg_45_1, arg_45_2)
+function slot0.CheckShowShopHx(slot0, slot1, slot2)
 	if PLATFORM_CODE ~= PLATFORM_CH then
 		return
 	end
@@ -594,295 +541,252 @@ function var_0_0.CheckShowShopHx(arg_45_0, arg_45_1, arg_45_2)
 		return
 	end
 
-	if not IsNil(arg_45_1) and arg_45_2.buyCount <= 0 then
-		setActive(arg_45_1, true)
+	if not IsNil(slot1) and slot2.buyCount <= 0 then
+		setActive(slot1, true)
 	end
 end
 
-function var_0_0.RevertShopHx(arg_46_0, arg_46_1)
-	if not IsNil(arg_46_1) then
-		setActive(arg_46_1, false)
+function slot0.RevertShopHx(slot0, slot1)
+	if not IsNil(slot1) then
+		setActive(slot1, false)
 	end
 end
 
-function var_0_0.FlushPreviewBtn(arg_47_0, arg_47_1)
-	local var_47_0 = Goods.ExistFurniture(arg_47_1.id)
+function slot0.FlushPreviewBtn(slot0, slot1)
+	removeOnButton(slot0.switchPreviewBtn)
 
-	removeOnButton(arg_47_0.switchPreviewBtn)
-
-	if not var_47_0 and arg_47_0.isPreviewFurniture then
-		arg_47_0.isPreviewFurniture = false
+	if not Goods.ExistFurniture(slot1.id) and slot0.isPreviewFurniture then
+		slot0.isPreviewFurniture = false
 	end
 
-	setActive(arg_47_0.switchPreviewBtn, var_47_0)
+	setActive(slot0.switchPreviewBtn, slot2)
 
-	if var_47_0 then
-		onButton(arg_47_0, arg_47_0.switchPreviewBtn, function()
-			if arg_47_0:IsSwitchTweening() then
+	if slot2 then
+		onButton(slot0, slot0.switchPreviewBtn, function ()
+			if uv0:IsSwitchTweening() then
 				return
 			end
 
-			arg_47_0.isPreviewFurniture = not arg_47_0.isPreviewFurniture
+			uv0.isPreviewFurniture = not uv0.isPreviewFurniture
 
-			arg_47_0:SwitchPreview(arg_47_1, arg_47_0.isPreviewFurniture, true)
-			arg_47_0:FlushPrice(arg_47_1)
-			arg_47_0:FlushObtainBtn(arg_47_1)
+			uv0:SwitchPreview(uv1, uv0.isPreviewFurniture, true)
+			uv0:FlushPrice(uv1)
+			uv0:FlushObtainBtn(uv1)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.IsSwitchTweening(arg_49_0)
-	return LeanTween.isTweening(go(arg_49_0.furnitureBg)) or LeanTween.isTweening(go(arg_49_0.charBg))
+function slot0.IsSwitchTweening(slot0)
+	return LeanTween.isTweening(go(slot0.furnitureBg)) or LeanTween.isTweening(go(slot0.charBg))
 end
 
-function var_0_0.ClearSwitchTween(arg_50_0)
-	if arg_50_0:IsSwitchTweening() then
-		LeanTween.cancel(go(arg_50_0.furnitureBg))
-		LeanTween.cancel(go(arg_50_0.charBg))
+function slot0.ClearSwitchTween(slot0)
+	if slot0:IsSwitchTweening() then
+		LeanTween.cancel(go(slot0.furnitureBg))
+		LeanTween.cancel(go(slot0.charBg))
 	end
 end
 
-function var_0_0.StartSwitchAnim(arg_51_0, arg_51_1, arg_51_2, arg_51_3, arg_51_4)
-	arg_51_0:ClearSwitchTween()
+function slot0.StartSwitchAnim(slot0, slot1, slot2, slot3, slot4)
+	slot0:ClearSwitchTween()
 
-	local var_51_0 = arg_51_1:GetComponent(typeof(CanvasGroup))
-	local var_51_1 = arg_51_2:GetComponent(typeof(CanvasGroup))
-	local var_51_2 = var_51_0.alpha
-	local var_51_3 = var_51_1.alpha
-	local var_51_4 = arg_51_1.anchoredPosition3D
-	local var_51_5 = arg_51_2.anchoredPosition3D
+	slot7 = slot1:GetComponent(typeof(CanvasGroup)).alpha
+	slot8 = slot2:GetComponent(typeof(CanvasGroup)).alpha
 
-	LeanTween.moveLocal(go(arg_51_1), var_51_5, arg_51_3):setOnComplete(System.Action(function()
-		var_51_0.alpha = var_51_3
+	LeanTween.moveLocal(go(slot1), slot2.anchoredPosition3D, slot3):setOnComplete(System.Action(function ()
+		uv0.alpha = uv1
 	end))
-	LeanTween.moveLocal(go(arg_51_2), var_51_4, arg_51_3):setOnComplete(System.Action(function()
-		var_51_1.alpha = var_51_2
+	LeanTween.moveLocal(go(slot2), slot1.anchoredPosition3D, slot3):setOnComplete(System.Action(function ()
+		uv0.alpha = uv1
 
-		arg_51_4()
+		uv2()
 	end))
 end
 
-function var_0_0.SwitchPreview(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
-	local var_54_0 = arg_54_1:getSkinId()
-	local var_54_1 = arg_54_0.furnitureBg
-	local var_54_2 = arg_54_0.charBg
-
-	arg_54_0:StartSwitchAnim(var_54_1, var_54_2, arg_54_3 and 0.3 or 0, function()
-		setActive(arg_54_0.charContainer, not arg_54_2)
-		setActive(arg_54_0.furnitureContainer, arg_54_2)
+function slot0.SwitchPreview(slot0, slot1, slot2, slot3)
+	slot0:StartSwitchAnim(slot0.furnitureBg, slot0.charBg, slot3 and 0.3 or 0, function ()
+		setActive(uv0.charContainer, not uv1)
+		setActive(uv0.furnitureContainer, uv1)
 	end)
 
-	if not arg_54_2 then
-		var_54_1:SetAsFirstSibling()
-		var_54_2:SetSiblingIndex(2)
+	if not slot2 then
+		slot5:SetAsFirstSibling()
+		slot6:SetSiblingIndex(2)
 
-		local var_54_3 = pg.ship_skin_template[var_54_0]
+		slot7 = pg.ship_skin_template[slot1:getSkinId()]
 
-		arg_54_0:FlushChar(var_54_3.prefab, var_54_3.id)
+		slot0:FlushChar(slot7.prefab, slot7.id)
 	else
-		var_54_2:SetAsFirstSibling()
-		var_54_1:SetSiblingIndex(2)
-
-		local var_54_4 = Goods.Id2FurnitureId(arg_54_1.id)
-		local var_54_5 = Goods.GetFurnitureConfig(arg_54_1.id)
-
-		arg_54_0.interactionPreview:Flush(var_54_0, var_54_4, var_54_5.scale[2] or 1, var_54_5.position[2])
+		slot6:SetAsFirstSibling()
+		slot5:SetSiblingIndex(2)
+		slot0.interactionPreview:Flush(slot4, Goods.Id2FurnitureId(slot1.id), Goods.GetFurnitureConfig(slot1.id).scale[2] or 1, slot8.position[2])
 	end
 end
 
-function var_0_0.GetObtainBtnState(arg_56_0, arg_56_1)
-	if arg_56_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
-		return var_0_9
-	elseif arg_56_0.isPreviewFurniture then
-		if getProxy(DormProxy):getRawData():HasFurniture(Goods.Id2FurnitureId(arg_56_1.id)) then
-			return var_0_4
+function slot0.GetObtainBtnState(slot0, slot1)
+	if slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+		return uv0
+	elseif slot0.isPreviewFurniture then
+		if getProxy(DormProxy):getRawData():HasFurniture(Goods.Id2FurnitureId(slot1.id)) then
+			return uv1
 		else
-			return var_0_8
+			return uv2
 		end
-	elseif arg_56_1.type == Goods.TYPE_ACTIVITY or arg_56_1.type == Goods.TYPE_ACTIVITY_EXTRA then
-		return var_0_6
-	elseif arg_56_1.buyCount > 0 then
-		return var_0_4
-	elseif arg_56_1:isDisCount() and arg_56_1:IsItemDiscountType() then
-		return var_0_7
-	elseif arg_56_1:CanUseVoucherType() then
-		return var_0_10
-	elseif #arg_56_1:GetGiftList() > 0 then
-		return var_0_11
+	elseif slot1.type == Goods.TYPE_ACTIVITY or slot1.type == Goods.TYPE_ACTIVITY_EXTRA then
+		return uv3
+	elseif slot1.buyCount > 0 then
+		return uv1
+	elseif slot1:isDisCount() and slot1:IsItemDiscountType() then
+		return uv4
+	elseif slot1:CanUseVoucherType() then
+		return uv5
+	elseif #slot1:GetGiftList() > 0 then
+		return uv6
 	else
-		return var_0_5
+		return uv7
 	end
 end
 
-function var_0_0.FlushPrice(arg_57_0, arg_57_1)
-	local var_57_0 = arg_57_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit
-	local var_57_1 = arg_57_1.type == Goods.TYPE_ACTIVITY or arg_57_1.type == Goods.TYPE_ACTIVITY_EXTRA
+function slot0.FlushPrice(slot0, slot1)
+	slot3 = slot1.type == Goods.TYPE_ACTIVITY or slot1.type == Goods.TYPE_ACTIVITY_EXTRA
 
-	if var_57_0 then
-		arg_57_0:UpdateExperiencePrice(arg_57_1)
-	elseif arg_57_0.isPreviewFurniture then
-		arg_57_0:UpdateFurniturePrice(arg_57_1)
-	elseif var_57_1 then
-		-- block empty
-	else
-		arg_57_0:UpdateCommodityPrice(arg_57_1)
+	if slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+		slot0:UpdateExperiencePrice(slot1)
+	elseif slot0.isPreviewFurniture then
+		slot0:UpdateFurniturePrice(slot1)
+	elseif not slot3 then
+		slot0:UpdateCommodityPrice(slot1)
 	end
 
-	local var_57_2 = arg_57_1.type == Goods.TYPE_SKIN
-
-	setActive(arg_57_0.experienceTr, var_57_0 and not var_57_1)
-	setActive(arg_57_0.consumeTr, var_57_2 and not var_57_0 and not var_57_1)
+	setActive(slot0.experienceTr, slot2 and not slot3)
+	setActive(slot0.consumeTr, slot1.type == Goods.TYPE_SKIN and not slot2 and not slot3)
 end
 
-function var_0_0.UpdateExperiencePrice(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_1:getConfig("resource_num")
-	local var_58_1 = getProxy(PlayerProxy):getRawData():getSkinTicket()
-	local var_58_2 = (var_58_1 < var_58_0 and "<color=" .. COLOR_RED .. ">" or "") .. var_58_1 .. (var_58_1 < var_58_0 and "</color>" or "")
-
-	arg_58_0.experienceTxt.text = var_58_2 .. "/" .. var_58_0
+function slot0.UpdateExperiencePrice(slot0, slot1)
+	slot0.experienceTxt.text = (getProxy(PlayerProxy):getRawData():getSkinTicket() < slot1:getConfig("resource_num") and "<color=" .. COLOR_RED .. ">" or "") .. slot3 .. (slot3 < slot2 and "</color>" or "") .. "/" .. slot2
 end
 
-function var_0_0.UpdateCommodityPrice(arg_59_0, arg_59_1)
-	local var_59_0 = arg_59_1:GetPrice()
-	local var_59_1 = arg_59_1:getConfig("resource_num")
+function slot0.UpdateCommodityPrice(slot0, slot1)
+	slot2 = slot1:GetPrice()
+	slot3 = slot1:getConfig("resource_num")
+	slot0.consumeRealPriceTxt.text = slot2
+	slot0.consumePriceTxt.text = slot3
 
-	arg_59_0.consumeRealPriceTxt.text = var_59_0
-	arg_59_0.consumePriceTxt.text = var_59_1
-
-	setActive(tf(go(arg_59_0.consumePriceTxt)).parent, var_59_0 ~= var_59_1)
+	setActive(tf(go(slot0.consumePriceTxt)).parent, slot2 ~= slot3)
 end
 
-function var_0_0.UpdateFurniturePrice(arg_60_0, arg_60_1)
-	local var_60_0 = Goods.Id2FurnitureId(arg_60_1.id)
-	local var_60_1 = Furniture.New({
-		id = var_60_0
+function slot0.UpdateFurniturePrice(slot0, slot1)
+	slot3 = Furniture.New({
+		id = Goods.Id2FurnitureId(slot1.id)
 	})
-	local var_60_2 = var_60_1:getConfig("gem_price")
+	slot4 = slot3:getConfig("gem_price")
+	slot0.consumePriceTxt.text = slot4
+	slot5 = slot3:getPrice(PlayerConst.ResDiamond)
+	slot0.consumeRealPriceTxt.text = slot5
 
-	arg_60_0.consumePriceTxt.text = var_60_2
-
-	local var_60_3 = var_60_1:getPrice(PlayerConst.ResDiamond)
-
-	arg_60_0.consumeRealPriceTxt.text = var_60_3
-
-	setActive(tf(go(arg_60_0.consumePriceTxt)).parent, var_60_2 ~= var_60_3)
+	setActive(tf(go(slot0.consumePriceTxt)).parent, slot4 ~= slot5)
 end
 
-function var_0_0.FlushObtainBtn(arg_61_0, arg_61_1)
-	local var_61_0 = arg_61_0:GetObtainBtnState(arg_61_1)
-	local var_61_1 = arg_61_0.obtainBtnSprites[var_61_0]
-
-	if not var_61_1 then
-		var_61_1 = GetSpriteFromAtlas("ui/skinshopui_atlas", var_0_12(var_61_0))
-		arg_61_0.obtainBtnSprites[var_61_0] = var_61_1
+function slot0.FlushObtainBtn(slot0, slot1)
+	if not slot0.obtainBtnSprites[slot0:GetObtainBtnState(slot1)] then
+		slot0.obtainBtnSprites[slot2] = GetSpriteFromAtlas("ui/skinshopui_atlas", uv0(slot2))
 	end
 
-	arg_61_0.obtainBtnImg.sprite = var_61_1
+	slot0.obtainBtnImg.sprite = slot3
 
-	arg_61_0.obtainBtnImg:SetNativeSize()
-	setActive(arg_61_0.giftTag, var_61_0 == var_0_11)
-	setActive(arg_61_0.giftItem, var_61_0 == var_0_11)
+	slot0.obtainBtnImg:SetNativeSize()
+	setActive(slot0.giftTag, slot2 == uv1)
+	setActive(slot0.giftItem, slot2 == uv1)
 
-	if var_61_0 == var_0_11 then
-		arg_61_0:FlushGift(arg_61_1)
+	if slot2 == uv1 then
+		slot0:FlushGift(slot1)
 	else
-		arg_61_0.giftText.text = ""
+		slot0.giftText.text = ""
 	end
 
-	onButton(arg_61_0, arg_61_0.obtainBtn, function()
-		if var_61_0 == var_0_5 or var_61_0 == var_0_7 or var_61_0 == var_0_11 then
-			arg_61_0.purchaseView:ExecuteAction("Show", arg_61_1)
+	onButton(slot0, slot0.obtainBtn, function ()
+		if uv0 == uv1 or uv0 == uv2 or uv0 == uv3 then
+			uv4.purchaseView:ExecuteAction("Show", uv5)
 		else
-			arg_61_0:OnClickBtn(var_61_0, arg_61_1)
+			uv4:OnClickBtn(uv0, uv5)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnClickBtn(arg_63_0, arg_63_1, arg_63_2)
-	if arg_63_1 == var_0_5 or arg_63_1 == var_0_7 or arg_63_1 == var_0_11 then
-		arg_63_0:OnPurchase(arg_63_2)
-	elseif arg_63_1 == var_0_10 then
-		arg_63_0:OnItemPurchase(arg_63_2)
-	elseif arg_63_1 == var_0_6 then
-		arg_63_0:OnActivity(arg_63_2)
-	elseif arg_63_1 == var_0_8 then
-		arg_63_0:OnBackyard(arg_63_2)
-	elseif arg_63_1 == var_0_9 then
-		arg_63_0:OnExperience(arg_63_2)
+function slot0.OnClickBtn(slot0, slot1, slot2)
+	if slot1 == uv0 or slot1 == uv1 or slot1 == uv2 then
+		slot0:OnPurchase(slot2)
+	elseif slot1 == uv3 then
+		slot0:OnItemPurchase(slot2)
+	elseif slot1 == uv4 then
+		slot0:OnActivity(slot2)
+	elseif slot1 == uv5 then
+		slot0:OnBackyard(slot2)
+	elseif slot1 == uv6 then
+		slot0:OnExperience(slot2)
 	end
 end
 
-function var_0_0.FlushGift(arg_64_0, arg_64_1)
-	local var_64_0 = arg_64_1:GetGiftList()
-	local var_64_1 = var_64_0[1]
+function slot0.FlushGift(slot0, slot1)
+	slot2 = slot1:GetGiftList()
+	slot3 = slot2[1]
 
-	updateDrop(arg_64_0.giftItem, {
-		type = var_64_1.type,
-		id = var_64_1.id,
-		count = var_64_1.count
+	updateDrop(slot0.giftItem, {
+		type = slot3.type,
+		id = slot3.id,
+		count = slot3.count
 	})
 
-	local var_64_2 = #var_64_0 > 1 and "+" .. #var_64_0 - 1 .. "..." or ""
-
-	arg_64_0.giftText.text = var_64_2
+	slot0.giftText.text = #slot2 > 1 and "+" .. #slot2 - 1 .. "..." or ""
 end
 
-function var_0_0.OnItemPurchase(arg_65_0, arg_65_1)
-	if arg_65_1.type ~= Goods.TYPE_SKIN then
+function slot0.OnItemPurchase(slot0, slot1)
+	if slot1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	local var_65_0 = arg_65_1:GetVoucherIdList()
-
-	if #var_65_0 <= 0 then
+	if #slot1:GetVoucherIdList() <= 0 then
 		return
 	end
 
-	local var_65_1 = arg_65_1:getSkinId()
-	local var_65_2 = pg.ship_skin_template[var_65_1]
-	local var_65_3 = SwitchSpecialChar(var_65_2.name, true)
-
-	arg_65_0.voucherMsgBox:ExecuteAction("Show", {
-		itemList = var_65_0,
-		skinName = var_65_3,
-		price = arg_65_1:GetPrice(),
-		onYes = function(arg_66_0)
-			if arg_66_0 then
-				arg_65_0:emit(NewSkinShopMediator.ON_ITEM_PURCHASE, arg_66_0, arg_65_1.id)
+	slot0.voucherMsgBox:ExecuteAction("Show", {
+		itemList = slot2,
+		skinName = SwitchSpecialChar(pg.ship_skin_template[slot1:getSkinId()].name, true),
+		price = slot1:GetPrice(),
+		onYes = function (slot0)
+			if slot0 then
+				uv0:emit(NewSkinShopMediator.ON_ITEM_PURCHASE, slot0, uv1.id)
 			else
-				arg_65_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_65_1.id, 1)
+				uv0:emit(NewSkinShopMediator.ON_SHOPPING, uv1.id, 1)
 			end
 		end
 	})
 end
 
-function var_0_0.OnPurchase(arg_67_0, arg_67_1)
-	if arg_67_1.type ~= Goods.TYPE_SKIN then
+function slot0.OnPurchase(slot0, slot1)
+	if slot1.type ~= Goods.TYPE_SKIN then
 		return
 	end
 
-	if arg_67_1:isDisCount() and arg_67_1:IsItemDiscountType() then
-		arg_67_0:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, arg_67_1.id, 1)
+	if slot1:isDisCount() and slot1:IsItemDiscountType() then
+		slot0:emit(NewSkinShopMediator.ON_SHOPPING_BY_ACT, slot1.id, 1)
 	else
-		arg_67_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_67_1.id, 1)
+		slot0:emit(NewSkinShopMediator.ON_SHOPPING, slot1.id, 1)
 	end
 end
 
-function var_0_0.OnActivity(arg_68_0, arg_68_1)
-	local var_68_0 = arg_68_1:getConfig("time")
-	local var_68_1 = arg_68_1:getConfig("activity")
-	local var_68_2 = getProxy(ActivityProxy):getActivityById(var_68_1)
+function slot0.OnActivity(slot0, slot1)
+	slot3 = slot1:getConfig("activity")
+	slot4 = getProxy(ActivityProxy):getActivityById(slot3)
 
-	if var_68_1 == 0 and pg.TimeMgr.GetInstance():inTime(var_68_0) or var_68_2 and not var_68_2:isEnd() then
-		if arg_68_1.type == Goods.TYPE_ACTIVITY then
-			arg_68_0:emit(NewSkinShopMediator.GO_SHOPS_LAYER, arg_68_1:getConfig("activity"))
-		elseif arg_68_1.type == Goods.TYPE_ACTIVITY_EXTRA then
-			local var_68_3 = arg_68_1:getConfig("scene")
-
-			if var_68_3 and #var_68_3 > 0 then
-				arg_68_0:emit(NewSkinShopMediator.OPEN_SCENE, var_68_3)
+	if slot3 == 0 and pg.TimeMgr.GetInstance():inTime(slot1:getConfig("time")) or slot4 and not slot4:isEnd() then
+		if slot1.type == Goods.TYPE_ACTIVITY then
+			slot0:emit(NewSkinShopMediator.GO_SHOPS_LAYER, slot1:getConfig("activity"))
+		elseif slot1.type == Goods.TYPE_ACTIVITY_EXTRA then
+			if slot1:getConfig("scene") and #slot5 > 0 then
+				slot0:emit(NewSkinShopMediator.OPEN_SCENE, slot5)
 			else
-				arg_68_0:emit(NewSkinShopMediator.OPEN_ACTIVITY, var_68_1)
+				slot0:emit(NewSkinShopMediator.OPEN_ACTIVITY, slot3)
 			end
 		end
 	else
@@ -890,216 +794,199 @@ function var_0_0.OnActivity(arg_68_0, arg_68_1)
 	end
 end
 
-function var_0_0.OnBackyard(arg_69_0, arg_69_1)
+function slot0.OnBackyard(slot0, slot1)
 	if not pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "BackYardMediator") then
-		local var_69_0 = pg.open_systems_limited[1]
+		slot2 = pg.open_systems_limited[1]
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", var_69_0.name, var_69_0.level))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("no_open_system_tip", slot2.name, slot2.level))
 
 		return
 	end
 
-	arg_69_0:emit(NewSkinShopMediator.ON_BACKYARD_SHOP)
+	slot0:emit(NewSkinShopMediator.ON_BACKYARD_SHOP)
 end
 
-function var_0_0.OnExperience(arg_70_0, arg_70_1)
-	local var_70_0 = arg_70_1:getSkinId()
-	local var_70_1 = getProxy(ShipSkinProxy):getSkinById(var_70_0)
-
-	if var_70_1 and not var_70_1:isExpireType() then
+function slot0.OnExperience(slot0, slot1)
+	if getProxy(ShipSkinProxy):getSkinById(slot1:getSkinId()) and not slot3:isExpireType() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 
 		return
 	end
 
-	local var_70_2 = arg_70_1:getConfig("resource_num")
-	local var_70_3 = arg_70_1:getConfig("time_second") * var_70_2
-	local var_70_4, var_70_5, var_70_6, var_70_7 = pg.TimeMgr.GetInstance():parseTimeFrom(var_70_3)
-	local var_70_8 = pg.ship_skin_template[arg_70_1:getSkinId()].name
+	slot4 = slot1:getConfig("resource_num")
+	slot6, slot7, slot8, slot9 = pg.TimeMgr.GetInstance():parseTimeFrom(slot1:getConfig("time_second") * slot4)
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("exchange_limit_skin_tip", var_70_2, var_70_8, var_70_4, var_70_5),
-		onYes = function()
-			if getProxy(PlayerProxy):getRawData():getSkinTicket() < var_70_2 then
+		content = i18n("exchange_limit_skin_tip", slot4, pg.ship_skin_template[slot1:getSkinId()].name, slot6, slot7),
+		onYes = function ()
+			if getProxy(PlayerProxy):getRawData():getSkinTicket() < uv0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 				return
 			end
 
-			arg_70_0:emit(NewSkinShopMediator.ON_SHOPPING, arg_70_1.id, 1)
+			uv1:emit(NewSkinShopMediator.ON_SHOPPING, uv2.id, 1)
 		end
 	})
 end
 
-function var_0_0.FlushTag(arg_72_0, arg_72_1)
-	local var_72_0 = arg_72_1:getSkinId()
-	local var_72_1 = pg.ship_skin_template[var_72_0].tag
-
-	arg_72_0.uiTagList:make(function(arg_73_0, arg_73_1, arg_73_2)
-		if arg_73_0 == UIItemList.EventUpdate then
-			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(var_72_1[arg_73_1 + 1]), function(arg_74_0)
-				if arg_72_0.exited then
+function slot0.FlushTag(slot0, slot1)
+	slot0.uiTagList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			LoadSpriteAtlasAsync("SkinIcon", "type_" .. ShipSkin.Tag2Name(uv0[slot1 + 1]), function (slot0)
+				if uv0.exited then
 					return
 				end
 
-				local var_74_0 = arg_73_2:Find("icon"):GetComponent(typeof(Image))
+				slot1 = uv1:Find("icon"):GetComponent(typeof(Image))
+				slot1.sprite = slot0
 
-				var_74_0.sprite = arg_74_0
-
-				var_74_0:SetNativeSize()
+				slot1:SetNativeSize()
 			end)
 		end
 	end)
-	arg_72_0.uiTagList:align(#var_72_1)
+	slot0.uiTagList:align(#pg.ship_skin_template[slot1:getSkinId()].tag)
 end
 
-function var_0_0.FlushChar(arg_75_0, arg_75_1, arg_75_2)
-	if arg_75_0.prefabName and arg_75_0.prefabName == arg_75_1 then
+function slot0.FlushChar(slot0, slot1, slot2)
+	if slot0.prefabName and slot0.prefabName == slot1 then
 		return
 	end
 
-	arg_75_0:ReturnChar()
-	PoolMgr.GetInstance():GetSpineChar(arg_75_1, true, function(arg_76_0)
-		arg_75_0.spineChar = tf(arg_76_0)
-		arg_75_0.prefabName = arg_75_1
+	slot0:ReturnChar()
+	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
+		uv0.spineChar = tf(slot0)
+		uv0.prefabName = uv1
 
-		local var_76_0 = pg.skinshop_spine_scale[arg_75_2]
-
-		if var_76_0 then
-			arg_75_0.spineChar.localScale = Vector3(var_76_0.skinshop_scale, var_76_0.skinshop_scale, 1)
+		if pg.skinshop_spine_scale[uv2] then
+			uv0.spineChar.localScale = Vector3(slot1.skinshop_scale, slot1.skinshop_scale, 1)
 		else
-			arg_75_0.spineChar.localScale = Vector3(0.9, 0.9, 1)
+			uv0.spineChar.localScale = Vector3(0.9, 0.9, 1)
 		end
 
-		arg_75_0.spineChar.localPosition = Vector3(0, 0, 0)
+		uv0.spineChar.localPosition = Vector3(0, 0, 0)
 
-		pg.ViewUtils.SetLayer(arg_75_0.spineChar, Layer.UI)
-		setParent(arg_75_0.spineChar, arg_75_0.charContainer)
-		arg_76_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		pg.ViewUtils.SetLayer(uv0.spineChar, Layer.UI)
+		setParent(uv0.spineChar, uv0.charContainer)
+		slot0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
 	end)
 end
 
-function var_0_0.FlushTimeline(arg_77_0, arg_77_1)
-	local var_77_0 = arg_77_1:getSkinId()
-	local var_77_1 = false
-	local var_77_2
+function slot0.FlushTimeline(slot0, slot1)
+	slot2 = slot1:getSkinId()
+	slot3 = false
+	slot4 = nil
 
-	if arg_77_1:IsActivityExtra() and arg_77_1:ShowMaintenanceTime() then
-		local var_77_3, var_77_4 = arg_77_1:GetMaintenanceMonthAndDay()
+	if slot1:IsActivityExtra() and slot1:ShowMaintenanceTime() then
+		slot5, slot6 = slot1:GetMaintenanceMonthAndDay()
 
-		function var_77_2()
-			return i18n("limit_skin_time_before_maintenance", var_77_3, var_77_4)
+		function slot4()
+			return i18n("limit_skin_time_before_maintenance", uv0, uv1)
 		end
 
-		var_77_1 = true
-	elseif arg_77_1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
-		local var_77_5 = getProxy(ShipSkinProxy):getSkinById(var_77_0)
-
-		var_77_1 = var_77_5 and var_77_5:isExpireType() and not var_77_5:isExpired()
-
-		if var_77_1 then
-			function var_77_2()
-				return skinTimeStamp(var_77_5:getRemainTime())
+		slot3 = true
+	elseif slot1:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+		if getProxy(ShipSkinProxy):getSkinById(slot2) and slot5:isExpireType() and not slot5:isExpired() then
+			function slot4()
+				return skinTimeStamp(uv0:getRemainTime())
 			end
 		end
 	else
-		local var_77_6, var_77_7 = pg.TimeMgr.GetInstance():inTime(arg_77_1:getConfig("time"))
+		slot5, slot6 = pg.TimeMgr.GetInstance():inTime(slot1:getConfig("time"))
 
-		var_77_1 = var_77_7
+		if slot6 then
+			slot7 = pg.TimeMgr.GetInstance():Table2ServerTime(slot6)
 
-		if var_77_1 then
-			local var_77_8 = pg.TimeMgr.GetInstance():Table2ServerTime(var_77_7)
-
-			function var_77_2()
-				return skinCommdityTimeStamp(var_77_8)
+			function slot4()
+				return skinCommdityTimeStamp(uv0)
 			end
 		end
 	end
 
-	setActive(arg_77_0.timeLimitTr, var_77_1)
-	arg_77_0:ClearTimer()
+	setActive(slot0.timeLimitTr, slot3)
+	slot0:ClearTimer()
 
-	if var_77_1 then
-		arg_77_0:AddTimer(var_77_2)
+	if slot3 then
+		slot0:AddTimer(slot4)
 	end
 end
 
-function var_0_0.AddTimer(arg_81_0, arg_81_1)
-	arg_81_0.timer = Timer.New(function()
-		arg_81_0.timeLimitTxt.text = arg_81_1()
+function slot0.AddTimer(slot0, slot1)
+	slot0.timer = Timer.New(function ()
+		uv0.timeLimitTxt.text = uv1()
 	end, 1, -1)
 
-	arg_81_0.timer.func()
-	arg_81_0.timer:Start()
+	slot0.timer.func()
+	slot0.timer:Start()
 end
 
-function var_0_0.ClearTimer(arg_83_0)
-	if arg_83_0.timer then
-		arg_83_0.timer:Stop()
+function slot0.ClearTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_83_0.timer = nil
-	end
-end
-
-function var_0_0.ReturnChar(arg_84_0)
-	if not IsNil(arg_84_0.spineChar) then
-		arg_84_0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
-		PoolMgr.GetInstance():ReturnSpineChar(arg_84_0.prefabName, arg_84_0.spineChar.gameObject)
-
-		arg_84_0.spineChar = nil
-		arg_84_0.prefabName = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.ClosePurchaseView(arg_85_0)
-	if arg_85_0.purchaseView and arg_85_0.purchaseView:GetLoaded() then
-		arg_85_0.purchaseView:Hide()
+function slot0.ReturnChar(slot0)
+	if not IsNil(slot0.spineChar) then
+		slot0.spineChar.gameObject:GetComponent("SpineAnimUI"):SetActionCallBack(nil)
+		PoolMgr.GetInstance():ReturnSpineChar(slot0.prefabName, slot0.spineChar.gameObject)
+
+		slot0.spineChar = nil
+		slot0.prefabName = nil
 	end
 end
 
-function var_0_0.Dispose(arg_86_0)
-	arg_86_0.exited = true
-
-	pg.DelegateInfo.Dispose(arg_86_0)
-	arg_86_0:ClearSwitchBgAnim()
-	pg.DynamicBgMgr.GetInstance():ClearBg(arg_86_0:getUIName())
-
-	if arg_86_0.voucherMsgBox then
-		arg_86_0.voucherMsgBox:Destroy()
-
-		arg_86_0.voucherMsgBox = nil
+function slot0.ClosePurchaseView(slot0)
+	if slot0.purchaseView and slot0.purchaseView:GetLoaded() then
+		slot0.purchaseView:Hide()
 	end
-
-	if arg_86_0.purchaseView then
-		arg_86_0.purchaseView:Destroy()
-
-		arg_86_0.purchaseView = nil
-	end
-
-	for iter_86_0, iter_86_1 in pairs(arg_86_0.downloads) do
-		iter_86_1:Dispose()
-	end
-
-	arg_86_0.downloads = {}
-
-	arg_86_0:ClearPainting()
-
-	for iter_86_2, iter_86_3 in pairs(arg_86_0.obtainBtnSprites) do
-		arg_86_0.obtainBtnSprites[iter_86_3] = nil
-	end
-
-	arg_86_0.obtainBtnSprites = nil
-
-	if arg_86_0.interactionPreview then
-		arg_86_0.interactionPreview:Dispose()
-
-		arg_86_0.interactionPreview = nil
-	end
-
-	arg_86_0:ClearSwitchTween()
-	arg_86_0:disposeEvent()
-	arg_86_0:ClearTimer()
-	arg_86_0:ReturnChar()
 end
 
-return var_0_0
+function slot0.Dispose(slot0)
+	slot0.exited = true
+
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:ClearSwitchBgAnim()
+	pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
+
+	if slot0.voucherMsgBox then
+		slot0.voucherMsgBox:Destroy()
+
+		slot0.voucherMsgBox = nil
+	end
+
+	if slot0.purchaseView then
+		slot0.purchaseView:Destroy()
+
+		slot0.purchaseView = nil
+	end
+
+	for slot4, slot5 in pairs(slot0.downloads) do
+		slot5:Dispose()
+	end
+
+	slot0.downloads = {}
+
+	slot0:ClearPainting()
+
+	for slot4, slot5 in pairs(slot0.obtainBtnSprites) do
+		slot0.obtainBtnSprites[slot5] = nil
+	end
+
+	slot0.obtainBtnSprites = nil
+
+	if slot0.interactionPreview then
+		slot0.interactionPreview:Dispose()
+
+		slot0.interactionPreview = nil
+	end
+
+	slot0:ClearSwitchTween()
+	slot0:disposeEvent()
+	slot0:ClearTimer()
+	slot0:ReturnChar()
+end
+
+return slot0

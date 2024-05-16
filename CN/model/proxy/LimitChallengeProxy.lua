@@ -1,87 +1,78 @@
-﻿local var_0_0 = class("LimitChallengeProxy", import(".NetProxy"))
+slot0 = class("LimitChallengeProxy", import(".NetProxy"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:initData()
+function slot0.register(slot0)
+	slot0:initData()
 end
 
-function var_0_0.initData(arg_2_0)
-	arg_2_0.passTimeDict = {}
-	arg_2_0.awardedDict = {}
+function slot0.initData(slot0)
+	slot0.passTimeDict = {}
+	slot0.awardedDict = {}
 end
 
-function var_0_0.setTimeDataFromServer(arg_3_0, arg_3_1)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
-		local var_3_0 = iter_3_1.key
-		local var_3_1 = iter_3_1.value
+function slot0.setTimeDataFromServer(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1) do
+		slot7 = slot6.key
+		slot8 = slot6.value
 
-		print("------------------------------id, time", tostring(var_3_0), tostring(var_3_1))
+		print("------------------------------id, time", tostring(slot7), tostring(slot8))
 
-		arg_3_0.passTimeDict[var_3_0] = var_3_1
+		slot0.passTimeDict[slot7] = slot8
 	end
 end
 
-function var_0_0.setAwardedDataFromServer(arg_4_0, arg_4_1)
-	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
-		local var_4_0 = iter_4_1.key
-		local var_4_1 = iter_4_1.value > 0
+function slot0.setAwardedDataFromServer(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1) do
+		slot7 = slot6.key
+		slot8 = slot6.value > 0
 
-		print("------------------------------id, isGot", tostring(var_4_0), tostring(var_4_1))
+		print("------------------------------id, isGot", tostring(slot7), tostring(slot8))
 
-		arg_4_0.awardedDict[var_4_0] = var_4_1
+		slot0.awardedDict[slot7] = slot8
 	end
 end
 
-function var_0_0.setPassTime(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_0.passTimeDict[arg_5_1]
+function slot0.setPassTime(slot0, slot1, slot2)
+	if not slot0.passTimeDict[slot1] then
+		slot0.passTimeDict[slot1] = slot2
+	elseif slot2 < slot3 then
+		slot0.passTimeDict[slot1] = slot2
 
-	if not var_5_0 then
-		arg_5_0.passTimeDict[arg_5_1] = arg_5_2
-	elseif arg_5_2 < var_5_0 then
-		arg_5_0.passTimeDict[arg_5_1] = arg_5_2
-
-		arg_5_0:sendNotification(LimitChallengeConst.UPDATE_PASS_TIME)
+		slot0:sendNotification(LimitChallengeConst.UPDATE_PASS_TIME)
 	end
 end
 
-function var_0_0.setAwarded(arg_6_0, arg_6_1)
-	arg_6_0.awardedDict[arg_6_1] = true
+function slot0.setAwarded(slot0, slot1)
+	slot0.awardedDict[slot1] = true
 end
 
-function var_0_0.getPassTimeByChallengeID(arg_7_0, arg_7_1)
-	return arg_7_0.passTimeDict[arg_7_1]
+function slot0.getPassTimeByChallengeID(slot0, slot1)
+	return slot0.passTimeDict[slot1]
 end
 
-function var_0_0.getMissAwardChallengeIDLIst(arg_8_0)
-	local var_8_0 = {}
-	local var_8_1 = LimitChallengeConst.GetCurMonthConfig().stage
+function slot0.getMissAwardChallengeIDLIst(slot0)
+	slot1 = {}
 
-	for iter_8_0, iter_8_1 in ipairs(var_8_1) do
-		local var_8_2 = arg_8_0:getPassTimeByChallengeID(iter_8_1)
-		local var_8_3 = var_8_2 and var_8_2 > 0
-		local var_8_4 = arg_8_0:isAwardedByChallengeID(iter_8_1)
-
-		if var_8_3 and not var_8_4 then
-			table.insert(var_8_0, iter_8_1)
+	for slot7, slot8 in ipairs(LimitChallengeConst.GetCurMonthConfig().stage) do
+		if slot0:getPassTimeByChallengeID(slot8) and slot9 > 0 and not slot0:isAwardedByChallengeID(slot8) then
+			table.insert(slot1, slot8)
 		end
 	end
 
-	return var_8_0
+	return slot1
 end
 
-function var_0_0.isAwardedByChallengeID(arg_9_0, arg_9_1)
-	return arg_9_0.awardedDict[arg_9_1]
+function slot0.isAwardedByChallengeID(slot0, slot1)
+	return slot0.awardedDict[slot1]
 end
 
-function var_0_0.isLevelUnlock(arg_10_0, arg_10_1)
-	if arg_10_1 == 1 then
+function slot0.isLevelUnlock(slot0, slot1)
+	if slot1 == 1 then
 		return true
 	end
 
-	if arg_10_1 > 1 then
-		local var_10_0 = LimitChallengeConst.GetChallengeIDByLevel(arg_10_1 - 1)
-
-		return arg_10_0.awardedDict[var_10_0]
+	if slot1 > 1 then
+		return slot0.awardedDict[LimitChallengeConst.GetChallengeIDByLevel(slot1 - 1)]
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,33 +1,29 @@
-﻿local var_0_0 = class("ColoringMediator", import("..base.ContextMediator"))
+slot0 = class("ColoringMediator", import("..base.ContextMediator"))
+slot0.EVENT_GO_SCENE = "event go scene"
+slot0.EVENT_COLORING_CELL = "event coloring cell"
+slot0.EVENT_COLORING_CLEAR = "event coloring clear"
 
-var_0_0.EVENT_GO_SCENE = "event go scene"
-var_0_0.EVENT_COLORING_CELL = "event coloring cell"
-var_0_0.EVENT_COLORING_CLEAR = "event coloring clear"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.EVENT_GO_SCENE, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.GO_SCENE, arg_2_1, arg_2_2)
+function slot0.register(slot0)
+	slot0:bind(uv0.EVENT_GO_SCENE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.GO_SCENE, slot1, slot2)
 	end)
-	arg_1_0:bind(var_0_0.EVENT_COLORING_CELL, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.COLORING_CELL, arg_3_1)
+	slot0:bind(uv0.EVENT_COLORING_CELL, function (slot0, slot1)
+		uv0:sendNotification(GAME.COLORING_CELL, slot1)
 	end)
-	arg_1_0:bind(var_0_0.EVENT_COLORING_CLEAR, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.COLORING_CLEAR, arg_4_1)
+	slot0:bind(uv0.EVENT_COLORING_CLEAR, function (slot0, slot1)
+		uv0:sendNotification(GAME.COLORING_CLEAR, slot1)
 	end)
+	slot0.viewComponent:setActivity(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA))
 
-	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLORING_ALPHA)
+	slot3 = getProxy(ColoringProxy)
 
-	arg_1_0.viewComponent:setActivity(var_1_0)
-
-	local var_1_1 = getProxy(ColoringProxy)
-
-	arg_1_0.viewComponent:setColorItems(var_1_1:getColorItems())
-	arg_1_0.viewComponent:setColorGroups(var_1_1:getColorGroups())
-	arg_1_0.viewComponent:DidMediatorRegisterDone()
-	arg_1_0:tryColoringAchieve()
+	slot0.viewComponent:setColorItems(slot3:getColorItems())
+	slot0.viewComponent:setColorGroups(slot3:getColorGroups())
+	slot0.viewComponent:DidMediatorRegisterDone()
+	slot0:tryColoringAchieve()
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.COLORING_CELL_DONE,
 		GAME.COLORING_CLEAR_DONE,
@@ -35,37 +31,34 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == GAME.COLORING_CELL_DONE then
-		_.each(var_6_1.cells, function(arg_7_0)
-			arg_6_0.viewComponent:updateCell(arg_7_0.row, arg_7_0.column)
+	if slot1:getName() == GAME.COLORING_CELL_DONE then
+		_.each(slot3.cells, function (slot0)
+			uv0.viewComponent:updateCell(slot0.row, slot0.column)
 		end)
-		arg_6_0.viewComponent:updateSelectedColoring()
+		slot0.viewComponent:updateSelectedColoring()
 
-		if var_6_1.stateChange then
-			arg_6_0.viewComponent:updatePage()
-			arg_6_0:tryColoringAchieve()
+		if slot3.stateChange then
+			slot0.viewComponent:updatePage()
+			slot0:tryColoringAchieve()
 		end
-	elseif var_6_0 == GAME.COLORING_CLEAR_DONE then
-		arg_6_0.viewComponent:updateSelectedColoring()
-	elseif var_6_0 == GAME.COLORING_ACHIEVE_DONE then
-		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.drops, function()
-			arg_6_0.viewComponent:updatePage()
+	elseif slot2 == GAME.COLORING_CLEAR_DONE then
+		slot0.viewComponent:updateSelectedColoring()
+	elseif slot2 == GAME.COLORING_ACHIEVE_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.drops, function ()
+			uv0.viewComponent:updatePage()
 		end)
 	end
 end
 
-function var_0_0.tryColoringAchieve(arg_9_0)
-	local var_9_0 = getProxy(ColoringProxy):getColorGroups()
-
-	for iter_9_0, iter_9_1 in ipairs(var_9_0) do
-		if iter_9_1:getState() == ColorGroup.StateFinish and iter_9_1:getHasAward() then
-			arg_9_0:sendNotification(GAME.COLORING_ACHIEVE, {
-				activityId = arg_9_0.viewComponent.activity.id,
-				id = iter_9_1.id
+function slot0.tryColoringAchieve(slot0)
+	for slot6, slot7 in ipairs(getProxy(ColoringProxy):getColorGroups()) do
+		if slot7:getState() == ColorGroup.StateFinish and slot7:getHasAward() then
+			slot0:sendNotification(GAME.COLORING_ACHIEVE, {
+				activityId = slot0.viewComponent.activity.id,
+				id = slot7.id
 			})
 
 			break
@@ -73,4 +66,4 @@ function var_0_0.tryColoringAchieve(arg_9_0)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,39 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			id = 1,
-			type = "BattleBuffShieldWall",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				do_when_hit = "intercept",
-				effect = "shield02",
-				count = 10,
-				bulletType = 1,
-				cld_list = {
-					{
-						box = {
-							4,
-							6,
-							9
-						},
-						offset = {
-							0,
-							0,
-							0
-						}
-					}
-				},
-				centerPosFun = function(arg_1_0)
-					return Vector3(3, -1.8, 0.5)
-				end,
-				rotationFun = function(arg_2_0)
-					return Vector3(0, 192, 0)
-				end
-			}
-		}
-	},
+return {
 	{
 		time = 5
 	},
@@ -73,5 +38,40 @@
 	stack = 1,
 	id = 13922,
 	icon = 13922,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			id = 1,
+			type = "BattleBuffShieldWall",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				do_when_hit = "intercept",
+				effect = "shield02",
+				count = 10,
+				bulletType = 1,
+				cld_list = {
+					{
+						box = {
+							4,
+							6,
+							9
+						},
+						offset = {
+							0,
+							0,
+							0
+						}
+					}
+				},
+				centerPosFun = function (slot0)
+					return Vector3(3, -1.8, 0.5)
+				end,
+				rotationFun = function (slot0)
+					return Vector3(0, 192, 0)
+				end
+			}
+		}
+	}
 }

@@ -1,28 +1,27 @@
-﻿local var_0_0 = class("CardPuzzleRelicDetailLayer", BaseUI)
+slot0 = class("CardPuzzleRelicDetailLayer", BaseUI)
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CardTowerGiftDetailUI"
 end
 
-function var_0_0.init(arg_2_0)
-	return
+function slot0.init(slot0)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	onButton(arg_3_0, arg_3_0:findTF("BG"), function()
-		arg_3_0:closeView()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0:findTF("BG"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
 
-	local var_3_0 = arg_3_0.contextData.giftData
+	slot1 = slot0.contextData.giftData
 
-	setImageSprite(arg_3_0._tf:Find("Gift/Icon"), LoadSprite(var_3_0:GetIconPath(), ""))
-	setText(arg_3_0._tf:Find("Gift/Name"), var_3_0:GetName())
-	setText(arg_3_0._tf:Find("Gift/Desc"), var_3_0:GetDesc())
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, nil, {})
+	setImageSprite(slot0._tf:Find("Gift/Icon"), LoadSprite(slot1:GetIconPath(), ""))
+	setText(slot0._tf:Find("Gift/Name"), slot1:GetName())
+	setText(slot0._tf:Find("Gift/Desc"), slot1:GetDesc())
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, nil, {})
 end
 
-function var_0_0.willExit(arg_5_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_5_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

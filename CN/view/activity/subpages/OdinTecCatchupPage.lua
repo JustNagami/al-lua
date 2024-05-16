@@ -1,1 +1,1 @@
-﻿return (class("OdinTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return class("OdinTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage"))

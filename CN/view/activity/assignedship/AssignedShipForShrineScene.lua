@@ -1,7 +1,7 @@
-﻿local var_0_0 = class("AssignedShipForShrineScene", import(".BaseAssignedShipScene"))
+slot0 = class("AssignedShipForShrineScene", import(".BaseAssignedShipScene"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "AssignedShipUI3"
 end
 
-return var_0_0
+return slot0

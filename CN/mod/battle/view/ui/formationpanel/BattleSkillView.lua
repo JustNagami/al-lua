@@ -1,433 +1,360 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot0.Battle.BattleSkillView = class("BattleSkillView")
+slot2 = slot0.Battle.BattleSkillView
+slot2.__name = "BattleSkillView"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
+function slot2.Ctor(slot0, slot1)
+	uv0.EventListener.AttachEventListener(slot0)
 
-var_0_0.Battle.BattleSkillView = class("BattleSkillView")
+	slot0._mediator = slot1
+	slot0._ui = slot1._ui
 
-local var_0_2 = var_0_0.Battle.BattleSkillView
-
-var_0_2.__name = "BattleSkillView"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_0.EventListener.AttachEventListener(arg_1_0)
-
-	arg_1_0._mediator = arg_1_1
-	arg_1_0._ui = arg_1_1._ui
-
-	arg_1_0:InitBtns()
-	arg_1_0:EnableWeaponButton(false)
+	slot0:InitBtns()
+	slot0:EnableWeaponButton(false)
 end
 
-function var_0_2.EnableWeaponButton(arg_2_0, arg_2_1)
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0._skillBtnList) do
-		iter_2_1:Enabled(arg_2_1)
+function slot2.EnableWeaponButton(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._skillBtnList) do
+		slot6:Enabled(slot1)
 	end
 end
 
-function var_0_2.DisableWeapnButton(arg_3_0)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0._skillBtnList) do
-		iter_3_1:Disable()
+function slot2.DisableWeapnButton(slot0)
+	for slot4, slot5 in ipairs(slot0._skillBtnList) do
+		slot5:Disable()
 	end
 end
 
-function var_0_2.JamSkillButton(arg_4_0, arg_4_1)
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0._skillBtnList) do
-		iter_4_1:SetJam(arg_4_1)
+function slot2.JamSkillButton(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._skillBtnList) do
+		slot6:SetJam(slot1)
 	end
 end
 
-function var_0_2.ShiftSubmarineManualButton(arg_5_0, arg_5_1)
-	if arg_5_1 == var_0_0.Battle.OxyState.STATE_FREE_FLOAT then
-		arg_5_0._diveBtn:SetActive(true)
-		arg_5_0._floatBtn:SetActive(false)
-	elseif arg_5_1 == var_0_0.Battle.OxyState.STATE_FREE_DIVE then
-		arg_5_0._diveBtn:SetActive(false)
-		arg_5_0._floatBtn:SetActive(true)
+function slot2.ShiftSubmarineManualButton(slot0, slot1)
+	if slot1 == uv0.Battle.OxyState.STATE_FREE_FLOAT then
+		slot0._diveBtn:SetActive(true)
+		slot0._floatBtn:SetActive(false)
+	elseif slot1 == uv0.Battle.OxyState.STATE_FREE_DIVE then
+		slot0._diveBtn:SetActive(false)
+		slot0._floatBtn:SetActive(true)
 	end
 end
 
-function var_0_2.InitBtns(arg_6_0)
-	arg_6_0._skillBtnList = {}
-	arg_6_0._activeBtnList = {}
-	arg_6_0._delayAnimaList = {}
-	arg_6_0._fleetVO = arg_6_0._mediator._dataProxy:GetFleetByIFF(var_0_0.Battle.BattleConfig.FRIENDLY_CODE)
-	arg_6_0._buttonContainer = arg_6_0._ui:findTF("Weapon_button_container")
-	arg_6_0._buttonRes = arg_6_0._ui:findTF("Weapon_button_Resource")
+function slot2.InitBtns(slot0)
+	slot0._skillBtnList = {}
+	slot0._activeBtnList = {}
+	slot0._delayAnimaList = {}
+	slot0._fleetVO = slot0._mediator._dataProxy:GetFleetByIFF(uv0.Battle.BattleConfig.FRIENDLY_CODE)
+	slot0._buttonContainer = slot0._ui:findTF("Weapon_button_container")
+	slot0._buttonRes = slot0._ui:findTF("Weapon_button_Resource")
 
-	local function var_6_0()
+	function slot1()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_emptyBlock"))
 	end
 
-	local function var_6_1()
+	function slot2()
+	end
+
+	slot0._chargeBtn = slot0:generateCommonButton(1)
+
+	slot0._chargeBtn:ConfigCallback(function ()
+		if uv0._main_cannon_sound then
+			uv0._main_cannon_sound:Stop(true)
+		end
+
+		uv0._main_cannon_sound = pg.CriMgr.GetInstance():PlaySE_V3("battle-cannon-main-prepared")
+
+		uv0._fleetVO:CastChargeWeapon()
+	end, function ()
+		uv0._fleetVO:UnleashChrageWeapon()
+	end, function ()
+		if uv0._main_cannon_sound then
+			uv0._main_cannon_sound:Stop(true)
+		end
+
+		uv0._fleetVO:CancelChargeWeapon()
+	end, slot1)
+	slot0._chargeBtn:SetProgressInfo(slot0._fleetVO:GetChargeWeaponVO())
+
+	slot0._torpedoBtn = slot0:generateCommonButton(2)
+
+	slot0._torpedoBtn:ConfigCallback(function ()
+		uv0._fleetVO:CastTorpedo()
+	end, function ()
+		uv0._fleetVO:UnleashTorpedo()
+	end, function ()
+		uv0._fleetVO:CancelTorpedo()
+	end, slot1)
+	slot0._torpedoBtn:SetProgressInfo(slot0._fleetVO:GetTorpedoWeaponVO())
+
+	slot0._airStrikeBtn = slot0:generateCommonButton(3)
+
+	slot0._airStrikeBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:UnleashAllInStrike(true)
+	end, slot2, slot1)
+	slot0._airStrikeBtn:SetProgressInfo(slot0._fleetVO:GetAirAssistVO())
+
+	slot0._diveBtn = slot0:generateSubmarineFuncButton(5)
+
+	slot0._diveBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:ChangeSubmarineState(uv1.Battle.OxyState.STATE_FREE_DIVE, true)
+	end, slot2, slot1)
+	slot0._diveBtn:SetProgressInfo(slot0._fleetVO:GetSubFreeDiveVO())
+	slot0._diveBtn:SetActive(false)
+
+	slot0._floatBtn = slot0:generateSubmarineFuncButton(6)
+
+	slot0._floatBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:ChangeSubmarineState(uv1.Battle.OxyState.STATE_FREE_FLOAT, true)
+	end, slot2, slot1)
+	slot0._floatBtn:SetProgressInfo(slot0._fleetVO:GetSubFreeFloatVO())
+	slot0._floatBtn:SetActive(false)
+
+	slot0._boostBtn = slot0:generateSubmarineFuncButton(7)
+
+	slot0._boostBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:SubmarinBoost()
+	end, slot2, slot1)
+	slot0._boostBtn:SetProgressInfo(slot0._fleetVO:GetSubBoostVO())
+
+	slot0._specialBtn = slot0:generateSubmarineButton(9)
+
+	slot0._specialBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:UnleashSubmarineSpecial()
+	end, slot2, slot1)
+	slot0._specialBtn:SetProgressInfo(slot0._fleetVO:GetSubSpecialVO())
+
+	slot0._shiftBtn = slot0:generateSubmarineFuncButton(8)
+
+	slot0._shiftBtn:ConfigCallback(slot2, function ()
+		uv0._fleetVO:ShiftManualSub()
+	end, slot2, slot1)
+	slot0._shiftBtn:SetProgressInfo(slot0._fleetVO:GetSubShiftVO())
+
+	if slot0._fleetVO._submarineVO:GetUseable() and slot23:GetCount() > 0 then
+		slot0._subStriveBtn = slot0:generateSubmarineButton(4)
+
+		slot0:setSkillButtonPreferences(slot0._subStriveBtn:GetSkin(), 4)
+		slot0._subStriveBtn:ConfigCallback(slot2, function ()
+			uv0._mediator._dataProxy:SubmarineStrike(uv1.Battle.BattleConfig.FRIENDLY_CODE)
+		end, slot2, slot1)
+		slot0._subStriveBtn:SetProgressInfo(slot23)
+		table.insert(slot0._activeBtnList, slot0._subStriveBtn)
+	end
+
+	slot24 = uv0.Battle.BattleWeaponButton.New()
+	slot25 = cloneTplTo(slot0._progressSkin, slot0._buttonContainer)
+
+	slot0:setSkillButtonPreferences(slot25, 2)
+	slot24:ConfigSkin(slot25)
+	slot24:SwitchIcon(10)
+	slot24:SwitchIconEffect(2)
+	slot24:ConfigCallback(slot7, slot8, slot9, slot1)
+	table.insert(slot0._skillBtnList, slot24)
+	slot24:SetProgressInfo(slot10)
+	slot24:SetActive(false)
+	slot0._boostBtn:SetActive(false)
+	slot0._diveBtn:SetActive(false)
+	slot0._floatBtn:SetActive(false)
+	slot0._specialBtn:SetActive(false)
+	slot0._shiftBtn:SetActive(false)
+end
+
+function slot2.generateCommonButton(slot0, slot1)
+	slot2 = uv0.Battle.BattleWeaponButton.New()
+	slot0._progressSkin = slot0._progressSkin or slot0._ui:findTF("Weapon_button_progress")
+	slot3 = cloneTplTo(slot0._progressSkin, slot0._buttonContainer)
+	slot3.name = "Skill_" .. slot1
+
+	slot0:setSkillButtonPreferences(slot3, slot1)
+	slot2:ConfigSkin(slot3)
+	slot2:SwitchIcon(slot1)
+	slot2:SwitchIconEffect(slot1)
+	slot2:SetTextActive(true)
+	table.insert(slot0._skillBtnList, slot2)
+
+	return slot2
+end
+
+function slot2.generateSubmarineFuncButton(slot0, slot1)
+	slot2 = uv0.Battle.BattleSubmarineFuncButton.New()
+	slot0._progressSkin = slot0._progressSkin or slot0._ui:findTF("Weapon_button_progress")
+
+	slot2:ConfigSkin(cloneTplTo(slot0._progressSkin, slot0._buttonContainer))
+	slot2:SwitchIcon(slot1)
+	slot2:SetTextActive(false)
+	table.insert(slot0._skillBtnList, slot2)
+
+	return slot2
+end
+
+function slot2.generateSubmarineButton(slot0, slot1)
+	slot2 = uv0.Battle.BattleSubmarineButton.New()
+	slot0._disposableSkin = slot0._disposableSkin or slot0._ui:findTF("Weapon_button")
+
+	slot2:ConfigSkin(cloneTplTo(slot0._disposableSkin, slot0._buttonContainer))
+	slot2:SwitchIcon(slot1)
+	table.insert(slot0._skillBtnList, slot2)
+
+	return slot2
+end
+
+function slot2.CustomButton(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1) do
+		slot0._skillBtnList[slot6]:SetActive(false)
+	end
+end
+
+function slot2.NormalButton(slot0)
+	slot0._chargeBtn:SetActive(true)
+	slot0._torpedoBtn:SetActive(true)
+	slot0._airStrikeBtn:SetActive(true)
+	slot0._boostBtn:SetActive(false)
+	slot0._diveBtn:SetActive(false)
+	slot0._floatBtn:SetActive(false)
+	slot0._specialBtn:SetActive(false)
+	slot0._shiftBtn:SetActive(false)
+	table.insert(slot0._activeBtnList, slot0._chargeBtn)
+	table.insert(slot0._activeBtnList, slot0._torpedoBtn)
+	table.insert(slot0._activeBtnList, slot0._airStrikeBtn)
+	table.insert(slot0._delayAnimaList, slot0._chargeBtn)
+	table.insert(slot0._delayAnimaList, slot0._torpedoBtn)
+	table.insert(slot0._delayAnimaList, slot0._airStrikeBtn)
+
+	if slot0._subStriveBtn then
+		table.insert(slot0._delayAnimaList, slot0._subStriveBtn)
+	end
+end
+
+function slot2.SubmarineButton(slot0)
+	slot0._chargeBtn:SetActive(false)
+	slot0._torpedoBtn:SetActive(true)
+	slot0._airStrikeBtn:SetActive(false)
+	slot0._boostBtn:SetActive(true)
+	slot0._diveBtn:SetActive(true)
+	slot0._floatBtn:SetActive(true)
+	table.insert(slot0._activeBtnList, slot0._diveBtn)
+	table.insert(slot0._activeBtnList, slot0._torpedoBtn)
+	table.insert(slot0._activeBtnList, slot0._boostBtn)
+	table.insert(slot0._activeBtnList, slot0._floatBtn)
+	table.insert(slot0._delayAnimaList, slot0._floatBtn)
+	table.insert(slot0._delayAnimaList, slot0._torpedoBtn)
+	table.insert(slot0._delayAnimaList, slot0._boostBtn)
+
+	slot2 = slot0._torpedoBtn:GetSkin().transform
+	slot3 = uv0.SKILL_BUTTON_DEFAULT_PREFERENCE[2]
+	slot2.anchorMin = Vector2(slot3.x, slot3.y)
+	slot2.anchorMax = Vector2(slot3.x, slot3.y)
+end
+
+function slot2.SubRoutineButton(slot0)
+	slot0._chargeBtn:SetActive(false)
+	slot0._torpedoBtn:SetActive(true)
+	slot0._airStrikeBtn:SetActive(false)
+	slot0._boostBtn:SetActive(false)
+	slot0._diveBtn:SetActive(true)
+	slot0._floatBtn:SetActive(true)
+	slot0._specialBtn:SetActive(true)
+	slot0._shiftBtn:SetActive(true)
+	table.insert(slot0._activeBtnList, slot0._diveBtn)
+	table.insert(slot0._activeBtnList, slot0._torpedoBtn)
+	table.insert(slot0._activeBtnList, slot0._specialBtn)
+	table.insert(slot0._activeBtnList, slot0._floatBtn)
+	table.insert(slot0._activeBtnList, slot0._shiftBtn)
+	table.insert(slot0._delayAnimaList, slot0._floatBtn)
+	table.insert(slot0._delayAnimaList, slot0._torpedoBtn)
+	table.insert(slot0._delayAnimaList, slot0._shiftBtn)
+	table.insert(slot0._delayAnimaList, slot0._specialBtn)
+	slot0:setSkillButtonPreferences(slot0._diveBtn:GetSkin(), 1)
+	slot0:setSkillButtonPreferences(slot0._floatBtn:GetSkin(), 1)
+	slot0:setSkillButtonPreferences(slot0._torpedoBtn:GetSkin(), 2)
+	slot0:setSkillButtonPreferences(slot0._shiftBtn:GetSkin(), 3)
+	slot0:setSkillButtonPreferences(slot0._specialBtn:GetSkin(), 4)
+end
+
+function slot2.AirFightButton(slot0)
+	for slot5, slot6 in ipairs(slot0._skillBtnList) do
+		slot7 = table.indexof({
+			9
+		}, slot5)
+
+		slot6:SetActive(slot7)
+
+		if slot7 then
+			table.insert(slot0._activeBtnList, slot6)
+			slot0:setSkillButtonPreferences(slot6:GetSkin(), slot7)
+		end
+	end
+end
+
+function slot2.ButtonInitialAnima(slot0)
+	for slot4, slot5 in ipairs(slot0._delayAnimaList) do
+		slot5:InitialAnima(slot4 * 0.2)
+	end
+end
+
+function slot2.CardPuzzleButton(slot0)
+	slot0._chargeBtn:SetActive(false)
+	slot0._torpedoBtn:SetActive(false)
+	slot0._airStrikeBtn:SetActive(false)
+	slot0._boostBtn:SetActive(false)
+	slot0._diveBtn:SetActive(false)
+	slot0._floatBtn:SetActive(false)
+	slot0._specialBtn:SetActive(false)
+	slot0._shiftBtn:SetActive(false)
+end
+
+function slot2.HideSkillButton(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._activeBtnList) do
+		slot6:SetActive(not slot1)
+	end
+end
+
+function slot2.OnSkillCd(slot0, slot1)
+	slot2 = slot1.Data.skillID
+
+	if slot1.Data.coolDownTime < pg.TimeMgr.GetInstance():GetCombatTime() then
 		return
 	end
 
-	local function var_6_2()
-		if arg_6_0._main_cannon_sound then
-			arg_6_0._main_cannon_sound:Stop(true)
-		end
-
-		arg_6_0._main_cannon_sound = pg.CriMgr.GetInstance():PlaySE_V3("battle-cannon-main-prepared")
-
-		arg_6_0._fleetVO:CastChargeWeapon()
-	end
-
-	local function var_6_3()
-		arg_6_0._fleetVO:UnleashChrageWeapon()
-	end
-
-	local function var_6_4()
-		if arg_6_0._main_cannon_sound then
-			arg_6_0._main_cannon_sound:Stop(true)
-		end
-
-		arg_6_0._fleetVO:CancelChargeWeapon()
-	end
-
-	arg_6_0._chargeBtn = arg_6_0:generateCommonButton(1)
-
-	arg_6_0._chargeBtn:ConfigCallback(var_6_2, var_6_3, var_6_4, var_6_0)
-
-	local var_6_5 = arg_6_0._fleetVO:GetChargeWeaponVO()
-
-	arg_6_0._chargeBtn:SetProgressInfo(var_6_5)
-
-	local function var_6_6()
-		arg_6_0._fleetVO:CastTorpedo()
-	end
-
-	local function var_6_7()
-		arg_6_0._fleetVO:UnleashTorpedo()
-	end
-
-	local function var_6_8()
-		arg_6_0._fleetVO:CancelTorpedo()
-	end
-
-	arg_6_0._torpedoBtn = arg_6_0:generateCommonButton(2)
-
-	arg_6_0._torpedoBtn:ConfigCallback(var_6_6, var_6_7, var_6_8, var_6_0)
-
-	local var_6_9 = arg_6_0._fleetVO:GetTorpedoWeaponVO()
-
-	arg_6_0._torpedoBtn:SetProgressInfo(var_6_9)
-
-	local function var_6_10()
-		arg_6_0._fleetVO:UnleashAllInStrike(true)
-	end
-
-	arg_6_0._airStrikeBtn = arg_6_0:generateCommonButton(3)
-
-	arg_6_0._airStrikeBtn:ConfigCallback(var_6_1, var_6_10, var_6_1, var_6_0)
-
-	local var_6_11 = arg_6_0._fleetVO:GetAirAssistVO()
-
-	arg_6_0._airStrikeBtn:SetProgressInfo(var_6_11)
-
-	local function var_6_12()
-		arg_6_0._fleetVO:ChangeSubmarineState(var_0_0.Battle.OxyState.STATE_FREE_DIVE, true)
-	end
-
-	arg_6_0._diveBtn = arg_6_0:generateSubmarineFuncButton(5)
-
-	arg_6_0._diveBtn:ConfigCallback(var_6_1, var_6_12, var_6_1, var_6_0)
-
-	local var_6_13 = arg_6_0._fleetVO:GetSubFreeDiveVO()
-
-	arg_6_0._diveBtn:SetProgressInfo(var_6_13)
-	arg_6_0._diveBtn:SetActive(false)
-
-	local function var_6_14()
-		arg_6_0._fleetVO:ChangeSubmarineState(var_0_0.Battle.OxyState.STATE_FREE_FLOAT, true)
-	end
-
-	arg_6_0._floatBtn = arg_6_0:generateSubmarineFuncButton(6)
-
-	arg_6_0._floatBtn:ConfigCallback(var_6_1, var_6_14, var_6_1, var_6_0)
-
-	local var_6_15 = arg_6_0._fleetVO:GetSubFreeFloatVO()
-
-	arg_6_0._floatBtn:SetProgressInfo(var_6_15)
-	arg_6_0._floatBtn:SetActive(false)
-
-	local function var_6_16()
-		arg_6_0._fleetVO:SubmarinBoost()
-	end
-
-	arg_6_0._boostBtn = arg_6_0:generateSubmarineFuncButton(7)
-
-	arg_6_0._boostBtn:ConfigCallback(var_6_1, var_6_16, var_6_1, var_6_0)
-
-	local var_6_17 = arg_6_0._fleetVO:GetSubBoostVO()
-
-	arg_6_0._boostBtn:SetProgressInfo(var_6_17)
-
-	local function var_6_18()
-		arg_6_0._fleetVO:UnleashSubmarineSpecial()
-	end
-
-	arg_6_0._specialBtn = arg_6_0:generateSubmarineButton(9)
-
-	arg_6_0._specialBtn:ConfigCallback(var_6_1, var_6_18, var_6_1, var_6_0)
-
-	local var_6_19 = arg_6_0._fleetVO:GetSubSpecialVO()
-
-	arg_6_0._specialBtn:SetProgressInfo(var_6_19)
-
-	local function var_6_20()
-		arg_6_0._fleetVO:ShiftManualSub()
-	end
-
-	arg_6_0._shiftBtn = arg_6_0:generateSubmarineFuncButton(8)
-
-	arg_6_0._shiftBtn:ConfigCallback(var_6_1, var_6_20, var_6_1, var_6_0)
-
-	local var_6_21 = arg_6_0._fleetVO:GetSubShiftVO()
-
-	arg_6_0._shiftBtn:SetProgressInfo(var_6_21)
-
-	local var_6_22 = arg_6_0._fleetVO._submarineVO
-
-	if var_6_22:GetUseable() and var_6_22:GetCount() > 0 then
-		local function var_6_23()
-			arg_6_0._mediator._dataProxy:SubmarineStrike(var_0_0.Battle.BattleConfig.FRIENDLY_CODE)
-		end
-
-		arg_6_0._subStriveBtn = arg_6_0:generateSubmarineButton(4)
-
-		local var_6_24 = arg_6_0._subStriveBtn:GetSkin()
-
-		arg_6_0:setSkillButtonPreferences(var_6_24, 4)
-		arg_6_0._subStriveBtn:ConfigCallback(var_6_1, var_6_23, var_6_1, var_6_0)
-		arg_6_0._subStriveBtn:SetProgressInfo(var_6_22)
-		table.insert(arg_6_0._activeBtnList, arg_6_0._subStriveBtn)
-	end
-
-	local var_6_25 = var_0_0.Battle.BattleWeaponButton.New()
-	local var_6_26 = cloneTplTo(arg_6_0._progressSkin, arg_6_0._buttonContainer)
-
-	arg_6_0:setSkillButtonPreferences(var_6_26, 2)
-	var_6_25:ConfigSkin(var_6_26)
-	var_6_25:SwitchIcon(10)
-	var_6_25:SwitchIconEffect(2)
-	var_6_25:ConfigCallback(var_6_6, var_6_7, var_6_8, var_6_0)
-	table.insert(arg_6_0._skillBtnList, var_6_25)
-	var_6_25:SetProgressInfo(var_6_9)
-	var_6_25:SetActive(false)
-	arg_6_0._boostBtn:SetActive(false)
-	arg_6_0._diveBtn:SetActive(false)
-	arg_6_0._floatBtn:SetActive(false)
-	arg_6_0._specialBtn:SetActive(false)
-	arg_6_0._shiftBtn:SetActive(false)
+	slot0._skillCd[slot2] = slot3
 end
 
-function var_0_2.generateCommonButton(arg_22_0, arg_22_1)
-	local var_22_0 = var_0_0.Battle.BattleWeaponButton.New()
+function slot2.Dispose(slot0)
+	slot0._delayAnimaList = nil
+	slot0._activeBtnList = nil
 
-	arg_22_0._progressSkin = arg_22_0._progressSkin or arg_22_0._ui:findTF("Weapon_button_progress")
+	for slot4, slot5 in ipairs(slot0._skillBtnList) do
+		slot5:Dispose()
+	end
 
-	local var_22_1 = cloneTplTo(arg_22_0._progressSkin, arg_22_0._buttonContainer)
+	slot0._ui = nil
 
-	var_22_1.name = "Skill_" .. arg_22_1
+	if slot0._main_cannon_sound then
+		slot0._main_cannon_sound:Stop(true)
 
-	arg_22_0:setSkillButtonPreferences(var_22_1, arg_22_1)
-	var_22_0:ConfigSkin(var_22_1)
-	var_22_0:SwitchIcon(arg_22_1)
-	var_22_0:SwitchIconEffect(arg_22_1)
-	var_22_0:SetTextActive(true)
-	table.insert(arg_22_0._skillBtnList, var_22_0)
+		slot0._main_cannon_sound = nil
+	end
 
-	return var_22_0
+	uv0.EventListener.DetachEventListener(slot0)
 end
 
-function var_0_2.generateSubmarineFuncButton(arg_23_0, arg_23_1)
-	local var_23_0 = var_0_0.Battle.BattleSubmarineFuncButton.New()
-
-	arg_23_0._progressSkin = arg_23_0._progressSkin or arg_23_0._ui:findTF("Weapon_button_progress")
-
-	local var_23_1 = cloneTplTo(arg_23_0._progressSkin, arg_23_0._buttonContainer)
-
-	var_23_0:ConfigSkin(var_23_1)
-	var_23_0:SwitchIcon(arg_23_1)
-	var_23_0:SetTextActive(false)
-	table.insert(arg_23_0._skillBtnList, var_23_0)
-
-	return var_23_0
-end
-
-function var_0_2.generateSubmarineButton(arg_24_0, arg_24_1)
-	local var_24_0 = var_0_0.Battle.BattleSubmarineButton.New()
-
-	arg_24_0._disposableSkin = arg_24_0._disposableSkin or arg_24_0._ui:findTF("Weapon_button")
-
-	local var_24_1 = cloneTplTo(arg_24_0._disposableSkin, arg_24_0._buttonContainer)
-
-	var_24_0:ConfigSkin(var_24_1)
-	var_24_0:SwitchIcon(arg_24_1)
-	table.insert(arg_24_0._skillBtnList, var_24_0)
-
-	return var_24_0
-end
-
-function var_0_2.CustomButton(arg_25_0, arg_25_1)
-	for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
-		arg_25_0._skillBtnList[iter_25_1]:SetActive(false)
+function slot2.Update(slot0)
+	for slot4, slot5 in ipairs(slot0._skillBtnList) do
+		slot5:Update()
 	end
 end
 
-function var_0_2.NormalButton(arg_26_0)
-	arg_26_0._chargeBtn:SetActive(true)
-	arg_26_0._torpedoBtn:SetActive(true)
-	arg_26_0._airStrikeBtn:SetActive(true)
-	arg_26_0._boostBtn:SetActive(false)
-	arg_26_0._diveBtn:SetActive(false)
-	arg_26_0._floatBtn:SetActive(false)
-	arg_26_0._specialBtn:SetActive(false)
-	arg_26_0._shiftBtn:SetActive(false)
-	table.insert(arg_26_0._activeBtnList, arg_26_0._chargeBtn)
-	table.insert(arg_26_0._activeBtnList, arg_26_0._torpedoBtn)
-	table.insert(arg_26_0._activeBtnList, arg_26_0._airStrikeBtn)
-	table.insert(arg_26_0._delayAnimaList, arg_26_0._chargeBtn)
-	table.insert(arg_26_0._delayAnimaList, arg_26_0._torpedoBtn)
-	table.insert(arg_26_0._delayAnimaList, arg_26_0._airStrikeBtn)
-
-	if arg_26_0._subStriveBtn then
-		table.insert(arg_26_0._delayAnimaList, arg_26_0._subStriveBtn)
-	end
-end
-
-function var_0_2.SubmarineButton(arg_27_0)
-	arg_27_0._chargeBtn:SetActive(false)
-	arg_27_0._torpedoBtn:SetActive(true)
-	arg_27_0._airStrikeBtn:SetActive(false)
-	arg_27_0._boostBtn:SetActive(true)
-	arg_27_0._diveBtn:SetActive(true)
-	arg_27_0._floatBtn:SetActive(true)
-	table.insert(arg_27_0._activeBtnList, arg_27_0._diveBtn)
-	table.insert(arg_27_0._activeBtnList, arg_27_0._torpedoBtn)
-	table.insert(arg_27_0._activeBtnList, arg_27_0._boostBtn)
-	table.insert(arg_27_0._activeBtnList, arg_27_0._floatBtn)
-	table.insert(arg_27_0._delayAnimaList, arg_27_0._floatBtn)
-	table.insert(arg_27_0._delayAnimaList, arg_27_0._torpedoBtn)
-	table.insert(arg_27_0._delayAnimaList, arg_27_0._boostBtn)
-
-	local var_27_0 = arg_27_0._torpedoBtn:GetSkin().transform
-	local var_27_1 = var_0_1.SKILL_BUTTON_DEFAULT_PREFERENCE[2]
-
-	var_27_0.anchorMin = Vector2(var_27_1.x, var_27_1.y)
-	var_27_0.anchorMax = Vector2(var_27_1.x, var_27_1.y)
-end
-
-function var_0_2.SubRoutineButton(arg_28_0)
-	arg_28_0._chargeBtn:SetActive(false)
-	arg_28_0._torpedoBtn:SetActive(true)
-	arg_28_0._airStrikeBtn:SetActive(false)
-	arg_28_0._boostBtn:SetActive(false)
-	arg_28_0._diveBtn:SetActive(true)
-	arg_28_0._floatBtn:SetActive(true)
-	arg_28_0._specialBtn:SetActive(true)
-	arg_28_0._shiftBtn:SetActive(true)
-	table.insert(arg_28_0._activeBtnList, arg_28_0._diveBtn)
-	table.insert(arg_28_0._activeBtnList, arg_28_0._torpedoBtn)
-	table.insert(arg_28_0._activeBtnList, arg_28_0._specialBtn)
-	table.insert(arg_28_0._activeBtnList, arg_28_0._floatBtn)
-	table.insert(arg_28_0._activeBtnList, arg_28_0._shiftBtn)
-	table.insert(arg_28_0._delayAnimaList, arg_28_0._floatBtn)
-	table.insert(arg_28_0._delayAnimaList, arg_28_0._torpedoBtn)
-	table.insert(arg_28_0._delayAnimaList, arg_28_0._shiftBtn)
-	table.insert(arg_28_0._delayAnimaList, arg_28_0._specialBtn)
-	arg_28_0:setSkillButtonPreferences(arg_28_0._diveBtn:GetSkin(), 1)
-	arg_28_0:setSkillButtonPreferences(arg_28_0._floatBtn:GetSkin(), 1)
-	arg_28_0:setSkillButtonPreferences(arg_28_0._torpedoBtn:GetSkin(), 2)
-	arg_28_0:setSkillButtonPreferences(arg_28_0._shiftBtn:GetSkin(), 3)
-	arg_28_0:setSkillButtonPreferences(arg_28_0._specialBtn:GetSkin(), 4)
-end
-
-function var_0_2.AirFightButton(arg_29_0)
-	local var_29_0 = {
-		9
-	}
-
-	for iter_29_0, iter_29_1 in ipairs(arg_29_0._skillBtnList) do
-		local var_29_1 = table.indexof(var_29_0, iter_29_0)
-
-		iter_29_1:SetActive(var_29_1)
-
-		if var_29_1 then
-			table.insert(arg_29_0._activeBtnList, iter_29_1)
-			arg_29_0:setSkillButtonPreferences(iter_29_1:GetSkin(), var_29_1)
-		end
-	end
-end
-
-function var_0_2.ButtonInitialAnima(arg_30_0)
-	for iter_30_0, iter_30_1 in ipairs(arg_30_0._delayAnimaList) do
-		iter_30_1:InitialAnima(iter_30_0 * 0.2)
-	end
-end
-
-function var_0_2.CardPuzzleButton(arg_31_0)
-	arg_31_0._chargeBtn:SetActive(false)
-	arg_31_0._torpedoBtn:SetActive(false)
-	arg_31_0._airStrikeBtn:SetActive(false)
-	arg_31_0._boostBtn:SetActive(false)
-	arg_31_0._diveBtn:SetActive(false)
-	arg_31_0._floatBtn:SetActive(false)
-	arg_31_0._specialBtn:SetActive(false)
-	arg_31_0._shiftBtn:SetActive(false)
-end
-
-function var_0_2.HideSkillButton(arg_32_0, arg_32_1)
-	for iter_32_0, iter_32_1 in ipairs(arg_32_0._activeBtnList) do
-		iter_32_1:SetActive(not arg_32_1)
-	end
-end
-
-function var_0_2.OnSkillCd(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_1.Data.skillID
-	local var_33_1 = arg_33_1.Data.coolDownTime
-
-	if var_33_1 < pg.TimeMgr.GetInstance():GetCombatTime() then
-		return
-	end
-
-	arg_33_0._skillCd[var_33_0] = var_33_1
-end
-
-function var_0_2.Dispose(arg_34_0)
-	arg_34_0._delayAnimaList = nil
-	arg_34_0._activeBtnList = nil
-
-	for iter_34_0, iter_34_1 in ipairs(arg_34_0._skillBtnList) do
-		iter_34_1:Dispose()
-	end
-
-	arg_34_0._ui = nil
-
-	if arg_34_0._main_cannon_sound then
-		arg_34_0._main_cannon_sound:Stop(true)
-
-		arg_34_0._main_cannon_sound = nil
-	end
-
-	var_0_0.EventListener.DetachEventListener(arg_34_0)
-end
-
-function var_0_2.Update(arg_35_0)
-	for iter_35_0, iter_35_1 in ipairs(arg_35_0._skillBtnList) do
-		iter_35_1:Update()
-	end
-end
-
-function var_0_2.setSkillButtonPreferences(arg_36_0, arg_36_1, arg_36_2)
-	local var_36_0 = var_0_1.SKILL_BUTTON_DEFAULT_PREFERENCE[arg_36_2]
-	local var_36_1 = PlayerPrefs.GetFloat("skill_" .. arg_36_2 .. "_scale", var_36_0.scale)
-	local var_36_2 = PlayerPrefs.GetFloat("skill_" .. arg_36_2 .. "_anchorX", var_36_0.x)
-	local var_36_3 = PlayerPrefs.GetFloat("skill_" .. arg_36_2 .. "_anchorY", var_36_0.y)
-	local var_36_4 = arg_36_1.transform
-
-	var_36_4.localScale = Vector3(var_36_1, var_36_1, 0)
-	var_36_4.anchorMin = Vector2(var_36_2, var_36_3)
-	var_36_4.anchorMax = Vector2(var_36_2, var_36_3)
+function slot2.setSkillButtonPreferences(slot0, slot1, slot2)
+	slot3 = uv0.SKILL_BUTTON_DEFAULT_PREFERENCE[slot2]
+	slot4 = PlayerPrefs.GetFloat("skill_" .. slot2 .. "_scale", slot3.scale)
+	slot5 = PlayerPrefs.GetFloat("skill_" .. slot2 .. "_anchorX", slot3.x)
+	slot6 = PlayerPrefs.GetFloat("skill_" .. slot2 .. "_anchorY", slot3.y)
+	slot7 = slot1.transform
+	slot7.localScale = Vector3(slot4, slot4, 0)
+	slot7.anchorMin = Vector2(slot5, slot6)
+	slot7.anchorMax = Vector2(slot5, slot6)
 end

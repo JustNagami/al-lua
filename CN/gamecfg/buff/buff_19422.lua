@@ -1,39 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "damageRatioByAmmoType_3",
-				number = 0.045,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "ignite_accuracy",
-				number = -1,
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -342,5 +307,40 @@
 	stack = 1,
 	id = 19422,
 	icon = 19420,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "damageRatioByAmmoType_3",
+				number = 0.045,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "ignite_accuracy",
+				number = -1,
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

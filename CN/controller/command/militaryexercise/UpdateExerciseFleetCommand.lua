@@ -1,60 +1,54 @@
-﻿local var_0_0 = class("UpdateExerciseFleetCommand", pm.SimpleCommand)
+slot0 = class("UpdateExerciseFleetCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.fleet
-	local var_1_2 = var_1_1.vanguardShips
-	local var_1_3 = var_1_1.mainShips
-	local var_1_4 = var_1_0.callback
-	local var_1_5 = getProxy(MilitaryExerciseProxy):getExerciseFleet()
-	local var_1_6 = Clone(var_1_5)
-	local var_1_7 = getProxy(FleetProxy):getFleetById(1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.fleet
+	slot6 = slot2.callback
+	slot9 = Clone(getProxy(MilitaryExerciseProxy):getExerciseFleet())
+	slot11 = getProxy(FleetProxy):getFleetById(1)
 
-	if table.getCount(var_1_3) == 0 or table.getCount(var_1_2) == 0 then
-		var_1_2 = var_1_7.vanguardShips
-		var_1_3 = var_1_7.mainShips
-		arg_1_0.resetFleet = true
+	if table.getCount(slot3.mainShips) == 0 or table.getCount(slot3.vanguardShips) == 0 then
+		slot4 = slot11.vanguardShips
+		slot5 = slot11.mainShips
+		slot0.resetFleet = true
 	end
 
-	if table.getCount(var_1_2) > 3 or table.getCount(var_1_3) > 3 then
+	if table.getCount(slot4) > 3 or table.getCount(slot5) > 3 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(18008, {
-		vanguard_ship_id_list = var_1_2,
-		main_ship_id_list = var_1_3
-	}, 18009, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(MilitaryExerciseProxy)
-			local var_2_1 = {}
-
-			_.each(var_1_2, function(arg_3_0)
-				table.insert(var_2_1, arg_3_0)
+		vanguard_ship_id_list = slot4,
+		main_ship_id_list = slot5
+	}, 18009, function (slot0)
+		if slot0.result == 0 then
+			_.each(uv0, function (slot0)
+				table.insert(uv0, slot0)
 			end)
-			_.each(var_1_3, function(arg_4_0)
-				table.insert(var_2_1, arg_4_0)
+			_.each(uv1, function (slot0)
+				table.insert(uv0, slot0)
 			end)
-			var_1_5:updateShips(var_2_1)
-			var_2_0:updateExerciseFleet(var_1_5)
+			uv2:updateShips({})
+			getProxy(MilitaryExerciseProxy):updateExerciseFleet(uv2)
 
-			if arg_1_0.resetFleet then
-				arg_1_0.resetFleet = nil
+			if uv3.resetFleet then
+				uv3.resetFleet = nil
 
-				arg_1_0:sendNotification(GAME.EXERCISE_FLEET_RESET, var_1_5)
+				uv3:sendNotification(GAME.EXERCISE_FLEET_RESET, uv2)
 			end
 
-			arg_1_0:sendNotification(GAME.UPDATE_EXERCISE_FLEET_DONE, {
-				oldFleet = var_1_6,
-				newFleet = var_1_5
+			uv3:sendNotification(GAME.UPDATE_EXERCISE_FLEET_DONE, {
+				oldFleet = uv4,
+				newFleet = uv2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 
-		if var_1_4 then
-			var_1_4()
+		if uv5 then
+			uv5()
 		end
 	end)
 end
 
-return var_0_0
+return slot0

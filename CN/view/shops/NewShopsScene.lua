@@ -1,55 +1,53 @@
-﻿local var_0_0 = class("NewShopsScene", import("..base.BaseUI"))
-
-var_0_0.CATEGORY_ACTIVITY = 1
-var_0_0.CATEGORY_MONTH = 2
-var_0_0.CATEGORY_SUPPLY = 3
-var_0_0.TYPE_ACTIVITY = 1
-var_0_0.TYPE_SHOP_STREET = 2
-var_0_0.TYPE_MILITARY_SHOP = 3
-var_0_0.TYPE_QUOTA = 4
-var_0_0.TYPE_SHAM_SHOP = 5
-var_0_0.TYPE_FRAGMENT = 6
-var_0_0.TYPE_GUILD = 7
-var_0_0.TYPE_MEDAL = 8
-var_0_0.TYPE_META = 9
-var_0_0.TYPE_MINI_GAME = 10
-var_0_0.CATEGORY2NAME = {
-	[var_0_0.CATEGORY_ACTIVITY] = "activity",
-	[var_0_0.CATEGORY_MONTH] = "month",
-	[var_0_0.CATEGORY_SUPPLY] = "supply"
+slot0 = class("NewShopsScene", import("..base.BaseUI"))
+slot0.CATEGORY_ACTIVITY = 1
+slot0.CATEGORY_MONTH = 2
+slot0.CATEGORY_SUPPLY = 3
+slot0.TYPE_ACTIVITY = 1
+slot0.TYPE_SHOP_STREET = 2
+slot0.TYPE_MILITARY_SHOP = 3
+slot0.TYPE_QUOTA = 4
+slot0.TYPE_SHAM_SHOP = 5
+slot0.TYPE_FRAGMENT = 6
+slot0.TYPE_GUILD = 7
+slot0.TYPE_MEDAL = 8
+slot0.TYPE_META = 9
+slot0.TYPE_MINI_GAME = 10
+slot0.CATEGORY2NAME = {
+	[slot0.CATEGORY_ACTIVITY] = "activity",
+	[slot0.CATEGORY_MONTH] = "month",
+	[slot0.CATEGORY_SUPPLY] = "supply"
 }
-var_0_0.TYPE2NAME = {
-	[var_0_0.TYPE_ACTIVITY] = i18n("activity_shop_title"),
-	[var_0_0.TYPE_SHOP_STREET] = i18n("street_shop_title"),
-	[var_0_0.TYPE_MILITARY_SHOP] = i18n("military_shop_title"),
-	[var_0_0.TYPE_QUOTA] = i18n("quota_shop_title1"),
-	[var_0_0.TYPE_SHAM_SHOP] = i18n("sham_shop_title"),
-	[var_0_0.TYPE_FRAGMENT] = i18n("fragment_shop_title"),
-	[var_0_0.TYPE_GUILD] = i18n("guild_shop_title"),
-	[var_0_0.TYPE_MEDAL] = i18n("medal_shop_title"),
-	[var_0_0.TYPE_META] = i18n("meta_shop_title"),
-	[var_0_0.TYPE_MINI_GAME] = i18n("mini_game_shop_title")
+slot0.TYPE2NAME = {
+	[slot0.TYPE_ACTIVITY] = i18n("activity_shop_title"),
+	[slot0.TYPE_SHOP_STREET] = i18n("street_shop_title"),
+	[slot0.TYPE_MILITARY_SHOP] = i18n("military_shop_title"),
+	[slot0.TYPE_QUOTA] = i18n("quota_shop_title1"),
+	[slot0.TYPE_SHAM_SHOP] = i18n("sham_shop_title"),
+	[slot0.TYPE_FRAGMENT] = i18n("fragment_shop_title"),
+	[slot0.TYPE_GUILD] = i18n("guild_shop_title"),
+	[slot0.TYPE_MEDAL] = i18n("medal_shop_title"),
+	[slot0.TYPE_META] = i18n("meta_shop_title"),
+	[slot0.TYPE_MINI_GAME] = i18n("mini_game_shop_title")
 }
-
-local var_0_1 = {
-	[var_0_0.CATEGORY_ACTIVITY] = {
-		var_0_0.TYPE_ACTIVITY
+slot1 = {
+	[slot0.CATEGORY_ACTIVITY] = {
+		slot0.TYPE_ACTIVITY
 	},
-	[var_0_0.CATEGORY_MONTH] = {
-		var_0_0.TYPE_QUOTA,
-		var_0_0.TYPE_SHAM_SHOP,
-		var_0_0.TYPE_MEDAL,
-		var_0_0.TYPE_FRAGMENT
+	[slot0.CATEGORY_MONTH] = {
+		slot0.TYPE_QUOTA,
+		slot0.TYPE_SHAM_SHOP,
+		slot0.TYPE_MEDAL,
+		slot0.TYPE_FRAGMENT
 	},
-	[var_0_0.CATEGORY_SUPPLY] = {
-		var_0_0.TYPE_SHOP_STREET,
-		var_0_0.TYPE_MILITARY_SHOP,
-		var_0_0.TYPE_GUILD,
-		var_0_0.TYPE_META,
-		var_0_0.TYPE_MINI_GAME
+	[slot0.CATEGORY_SUPPLY] = {
+		slot0.TYPE_SHOP_STREET,
+		slot0.TYPE_MILITARY_SHOP,
+		slot0.TYPE_GUILD,
+		slot0.TYPE_META,
+		slot0.TYPE_MINI_GAME
 	}
 }
-local var_0_2 = {
+slot2 = {
 	"activity",
 	"shopstreet",
 	"supplies",
@@ -62,45 +60,43 @@ local var_0_2 = {
 	"minigame"
 }
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "NewShopsUI"
 end
 
-function var_0_0.SetPlayer(arg_2_0, arg_2_1)
-	arg_2_0.player = arg_2_1
+function slot0.SetPlayer(slot0, slot1)
+	slot0.player = slot1
 
-	if arg_2_0.page then
-		arg_2_0.page:SetPlayer(arg_2_1)
+	if slot0.page then
+		slot0.page:SetPlayer(slot1)
 	end
 end
 
-function var_0_0.SetShops(arg_3_0, arg_3_1)
-	arg_3_0.shops = arg_3_1
+function slot0.SetShops(slot0, slot1)
+	slot0.shops = slot1
 
-	arg_3_0:SortActivityShops()
+	slot0:SortActivityShops()
 end
 
-function var_0_0.SortActivityShops(arg_4_0)
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.shops) do
-		if iter_4_0 == var_0_0.TYPE_ACTIVITY then
-			table.sort(iter_4_1, function(arg_5_0, arg_5_1)
-				return arg_5_0:getStartTime() > arg_5_1:getStartTime()
+function slot0.SortActivityShops(slot0)
+	for slot4, slot5 in pairs(slot0.shops) do
+		if slot4 == uv0.TYPE_ACTIVITY then
+			table.sort(slot5, function (slot0, slot1)
+				return slot1:getStartTime() < slot0:getStartTime()
 			end)
 		end
 	end
 end
 
-function var_0_0.SetShop(arg_6_0, arg_6_1, arg_6_2)
-	if not arg_6_0.shops then
+function slot0.SetShop(slot0, slot1, slot2)
+	if not slot0.shops then
 		return
 	end
 
-	local var_6_0 = arg_6_0.shops[arg_6_1]
-
-	if var_6_0 then
-		for iter_6_0, iter_6_1 in ipairs(var_6_0) do
-			if iter_6_1:IsSameKind(arg_6_2) then
-				arg_6_0.shops[arg_6_1][iter_6_0] = arg_6_2
+	if slot0.shops[slot1] then
+		for slot7, slot8 in ipairs(slot3) do
+			if slot8:IsSameKind(slot2) then
+				slot0.shops[slot1][slot7] = slot2
 
 				break
 			end
@@ -108,449 +104,421 @@ function var_0_0.SetShop(arg_6_0, arg_6_1, arg_6_2)
 	end
 end
 
-function var_0_0.OnUpdateItems(arg_7_0, arg_7_1)
-	arg_7_0.items = arg_7_1
+function slot0.OnUpdateItems(slot0, slot1)
+	slot0.items = slot1
 
-	if arg_7_0.page then
-		arg_7_0.page:SetItems(arg_7_1)
+	if slot0.page then
+		slot0.page:SetItems(slot1)
 	end
 end
 
-function var_0_0.OnUpdateShop(arg_8_0, arg_8_1, arg_8_2)
-	arg_8_0:SetShop(arg_8_1, arg_8_2)
+function slot0.OnUpdateShop(slot0, slot1, slot2)
+	slot0:SetShop(slot1, slot2)
 
-	local var_8_0 = arg_8_0.pages[arg_8_1]
-
-	if arg_8_0.page == var_8_0 then
-		arg_8_0.page:ExecuteAction("UpdateShop", arg_8_2)
+	if slot0.page == slot0.pages[slot1] then
+		slot0.page:ExecuteAction("UpdateShop", slot2)
 	end
 end
 
-function var_0_0.OnUpdateCommodity(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	arg_9_0:SetShop(arg_9_1, arg_9_2)
+function slot0.OnUpdateCommodity(slot0, slot1, slot2, slot3)
+	slot0:SetShop(slot1, slot2)
 
-	local var_9_0 = arg_9_0.pages[arg_9_1]
-
-	if arg_9_0.page == var_9_0 then
-		arg_9_0.page:ExecuteAction("UpdateCommodity", arg_9_2, arg_9_3)
+	if slot0.page == slot0.pages[slot1] then
+		slot0.page:ExecuteAction("UpdateCommodity", slot2, slot3)
 	end
 end
 
-function var_0_0.init(arg_10_0)
-	arg_10_0.backBtn = arg_10_0:findTF("blur_panel/adapt/top/back_button")
-	arg_10_0.frame = arg_10_0:findTF("blur_panel")
-	arg_10_0.pageContainer = arg_10_0:findTF("frame/bg/pages")
-	arg_10_0.stamp = arg_10_0:findTF("stamp")
-	arg_10_0.switchBtn = arg_10_0:findTF("blur_panel/adapt/switch_btn")
-	arg_10_0.skinBtn = arg_10_0:findTF("blur_panel/adapt/skin_btn")
-
-	local var_10_0 = arg_10_0:findTF("frame/bg/pages/scrollrect"):GetComponent("LScrollRect")
-
-	arg_10_0.pages = {
-		[var_0_0.TYPE_ACTIVITY] = ActivityShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_SHOP_STREET] = StreetShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_MILITARY_SHOP] = MilitaryShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_GUILD] = GuildShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_SHAM_SHOP] = ShamShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_FRAGMENT] = FragmentShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_META] = MetaShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_MEDAL] = MedalShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_QUOTA] = QuotaShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0),
-		[var_0_0.TYPE_MINI_GAME] = MiniGameShopPage.New(arg_10_0.pageContainer, arg_10_0.event, arg_10_0.contextData, var_10_0)
+function slot0.init(slot0)
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_button")
+	slot0.frame = slot0:findTF("blur_panel")
+	slot0.pageContainer = slot0:findTF("frame/bg/pages")
+	slot0.stamp = slot0:findTF("stamp")
+	slot0.switchBtn = slot0:findTF("blur_panel/adapt/switch_btn")
+	slot0.skinBtn = slot0:findTF("blur_panel/adapt/skin_btn")
+	slot1 = slot0:findTF("frame/bg/pages/scrollrect"):GetComponent("LScrollRect")
+	slot0.pages = {
+		[uv0.TYPE_ACTIVITY] = ActivityShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_SHOP_STREET] = StreetShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_MILITARY_SHOP] = MilitaryShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_GUILD] = GuildShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_SHAM_SHOP] = ShamShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_FRAGMENT] = FragmentShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_META] = MetaShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_MEDAL] = MedalShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_QUOTA] = QuotaShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1),
+		[uv0.TYPE_MINI_GAME] = MiniGameShopPage.New(slot0.pageContainer, slot0.event, slot0.contextData, slot1)
 	}
-	arg_10_0.contextData.singleWindow = ShopSingleWindow.New(arg_10_0._tf, arg_10_0.event)
-	arg_10_0.contextData.multiWindow = ShopMultiWindow.New(arg_10_0._tf, arg_10_0.event)
-	arg_10_0.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(arg_10_0._tf, arg_10_0.event)
-	arg_10_0.contextData.paintingView = ShopPaintingView.New(arg_10_0:findTF("paint/paint"), arg_10_0:findTF("frame/chat"))
+	slot0.contextData.singleWindow = ShopSingleWindow.New(slot0._tf, slot0.event)
+	slot0.contextData.multiWindow = ShopMultiWindow.New(slot0._tf, slot0.event)
+	slot0.contextData.singleWindowForESkin = EquipmentSkinInfoUIForShopWindow.New(slot0._tf, slot0.event)
+	slot0.contextData.paintingView = ShopPaintingView.New(slot0:findTF("paint/paint"), slot0:findTF("frame/chat"))
 
-	arg_10_0.contextData.paintingView:setSecretaryPos(arg_10_0:findTF("paint/secretaryPos"))
+	slot0.contextData.paintingView:setSecretaryPos(slot0:findTF("paint/secretaryPos"))
 
-	arg_10_0.contextData.bgView = ShopBgView.New(arg_10_0:findTF("bg"))
-	arg_10_0.recorder = {
-		[var_0_0.CATEGORY_ACTIVITY] = false,
-		[var_0_0.CATEGORY_MONTH] = false,
-		[var_0_0.CATEGORY_SUPPLY] = false
+	slot0.contextData.bgView = ShopBgView.New(slot0:findTF("bg"))
+	slot0.recorder = {
+		[uv0.CATEGORY_ACTIVITY] = false,
+		[uv0.CATEGORY_MONTH] = false,
+		[uv0.CATEGORY_SUPPLY] = false
 	}
-	arg_10_0.frameTr = arg_10_0:findTF("frame")
-	arg_10_0.categoryUIList = UIItemList.New(arg_10_0:findTF("frame/bg/types"), arg_10_0:findTF("frame/bg/types/tpl"))
-	arg_10_0.shopUIList = UIItemList.New(arg_10_0:findTF("frame/bg/shops"), arg_10_0:findTF("frame/bg/shops/tpl"))
+	slot0.frameTr = slot0:findTF("frame")
+	slot0.categoryUIList = UIItemList.New(slot0:findTF("frame/bg/types"), slot0:findTF("frame/bg/types/tpl"))
+	slot0.shopUIList = UIItemList.New(slot0:findTF("frame/bg/shops"), slot0:findTF("frame/bg/shops/tpl"))
 end
 
-function var_0_0.didEnter(arg_11_0)
-	onButton(arg_11_0, arg_11_0.backBtn, function()
-		arg_11_0:closeView()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	setActive(arg_11_0.stamp, getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	setActive(slot0.stamp, getProxy(TaskProxy):mingshiTouchFlagEnabled())
 
 	if LOCK_CLICK_MINGSHI then
-		setActive(arg_11_0.stamp, false)
+		setActive(slot0.stamp, false)
 	end
 
-	onButton(arg_11_0, arg_11_0.stamp, function()
+	onButton(slot0, slot0.stamp, function ()
 		getProxy(TaskProxy):dealMingshiTouchFlag(4)
 	end, SFX_CONFIRM)
-	onButton(arg_11_0, arg_11_0.switchBtn, function()
-		local var_14_0 = ChargeScene.TYPE_DIAMOND
+	onButton(slot0, slot0.switchBtn, function ()
+		slot0 = ChargeScene.TYPE_DIAMOND
 
-		if arg_11_0.contextData ~= nil and arg_11_0.contextData.chargePage ~= nil then
-			var_14_0 = arg_11_0.contextData.chargePage
+		if uv0.contextData ~= nil and uv0.contextData.chargePage ~= nil then
+			slot0 = uv0.contextData.chargePage
 		end
 
-		arg_11_0:emit(NewShopsMediator.GO_MALL, var_14_0)
+		uv0:emit(NewShopsMediator.GO_MALL, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_11_0, arg_11_0.skinBtn, function()
-		arg_11_0:emit(NewShopsMediator.ON_SKIN_SHOP)
+	onButton(slot0, slot0.skinBtn, function ()
+		uv0:emit(NewShopsMediator.ON_SKIN_SHOP)
 	end, SFX_PANEL)
-	arg_11_0:InitEntrances()
-	arg_11_0:BlurView()
+	slot0:InitEntrances()
+	slot0:BlurView()
 
-	arg_11_0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg_11_0, arg_11_0.pageContainer, Vector2.New(-35, -90))
+	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, slot0.pageContainer, Vector2.New(-35, -90))
 end
 
-function var_0_0.InitEntrances(arg_16_0)
-	arg_16_0:InitCategory()
-	arg_16_0:ActiveDefaultCategory()
+function slot0.InitEntrances(slot0)
+	slot0:InitCategory()
+	slot0:ActiveDefaultCategory()
 
-	arg_16_0.shopType = nil
-	arg_16_0.shopIndex = nil
+	slot0.shopType = nil
+	slot0.shopIndex = nil
 end
 
-function var_0_0.InitCategory(arg_17_0)
-	arg_17_0.categoryTrs = {}
-
-	local var_17_0 = {
-		var_0_0.CATEGORY_MONTH,
-		var_0_0.CATEGORY_SUPPLY
+function slot0.InitCategory(slot0)
+	slot0.categoryTrs = {}
+	slot1 = {
+		uv0.CATEGORY_MONTH,
+		uv0.CATEGORY_SUPPLY
 	}
 
-	if #(arg_17_0.shops[var_0_0.TYPE_ACTIVITY] or {}) > 0 then
-		table.insert(var_17_0, var_0_0.CATEGORY_ACTIVITY)
+	if #(slot0.shops[uv0.TYPE_ACTIVITY] or {}) > 0 then
+		table.insert(slot1, uv0.CATEGORY_ACTIVITY)
 	end
 
-	arg_17_0.categoryUIList:make(function(arg_18_0, arg_18_1, arg_18_2)
-		if arg_18_0 == UIItemList.EventUpdate then
-			local var_18_0 = var_17_0[arg_18_1 + 1]
+	slot0.categoryUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			arg_17_0:UpdateCategory(arg_18_2, var_18_0, false)
+			uv1:UpdateCategory(slot2, slot3, false)
 
-			arg_17_0.categoryTrs[var_18_0] = arg_18_2
+			uv1.categoryTrs[slot3] = slot2
 		end
 	end)
-	arg_17_0.categoryUIList:align(#var_17_0)
+	slot0.categoryUIList:align(#slot1)
 end
 
-local function var_0_3(arg_19_0, arg_19_1)
-	local var_19_0 = var_0_0.CATEGORY2NAME[arg_19_1]
-	local var_19_1 = arg_19_0:Find("lock")
-	local var_19_2 = arg_19_0:Find("label")
-	local var_19_3 = arg_19_0:Find("selected/selected")
-	local var_19_4 = var_19_1:GetComponent(typeof(Image))
+function slot3(slot0, slot1)
+	slot2 = uv0.CATEGORY2NAME[slot1]
+	slot4 = slot0:Find("label")
+	slot5 = slot0:Find("selected/selected")
+	slot6 = slot0:Find("lock"):GetComponent(typeof(Image))
+	slot6.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", slot2 .. "_lock")
 
-	var_19_4.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", var_19_0 .. "_lock")
+	slot6:SetNativeSize()
 
-	var_19_4:SetNativeSize()
+	slot7 = slot4:GetComponent(typeof(Image))
+	slot7.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", slot2)
 
-	local var_19_5 = var_19_2:GetComponent(typeof(Image))
+	slot7:SetNativeSize()
 
-	var_19_5.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", var_19_0)
+	slot8 = slot4:Find("en"):GetComponent(typeof(Image))
+	slot8.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", slot2 .. "_label")
 
-	var_19_5:SetNativeSize()
+	slot8:SetNativeSize()
 
-	local var_19_6 = var_19_2:Find("en"):GetComponent(typeof(Image))
+	slot9 = slot5:GetComponent(typeof(Image))
+	slot9.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", slot2 .. "_selected")
 
-	var_19_6.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", var_19_0 .. "_label")
+	slot9:SetNativeSize()
 
-	var_19_6:SetNativeSize()
+	slot10 = slot5.parent:Find("en"):GetComponent(typeof(Image))
+	slot10.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", slot2 .. "_label_selected")
 
-	local var_19_7 = var_19_3:GetComponent(typeof(Image))
-
-	var_19_7.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", var_19_0 .. "_selected")
-
-	var_19_7:SetNativeSize()
-
-	local var_19_8 = var_19_3.parent:Find("en"):GetComponent(typeof(Image))
-
-	var_19_8.sprite = GetSpriteFromAtlas("ui/ShopsUI_atlas", var_19_0 .. "_label_selected")
-
-	var_19_8:SetNativeSize()
+	slot10:SetNativeSize()
 end
 
-function var_0_0.UpdateCategory(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
-	local function var_20_0(arg_21_0, arg_21_1)
-		setActive(arg_21_0:Find("lock"), arg_20_3)
-		setActive(arg_21_0:Find("label"), not arg_20_3 and not arg_21_1)
-		setActive(arg_21_0:Find("selected"), not arg_20_3 and arg_21_1)
-	end
+function slot0.UpdateCategory(slot0, slot1, slot2, slot3)
+	setActive(slot1:Find("lock"), slot3)
+	setActive(slot1:Find("label"), not slot3)
+	setActive(slot1:Find("selected"), false)
+	uv0(slot1, slot2)
+	onToggle(slot0, slot1, function (slot0)
+		if slot0 then
+			uv0:InitShops(uv1)
 
-	var_0_3(arg_20_1, arg_20_2)
-	onToggle(arg_20_0, arg_20_1, function(arg_22_0)
-		var_20_0(arg_20_1, arg_22_0)
-		arg_20_0:InitShops(arg_20_2)
+			uv0.category = uv1
 
-		arg_20_0.category = arg_20_2
+			uv0:ActiveDefaultShop()
+		end
 
-		arg_20_0:ActiveDefaultShop()
+		setActive(uv2:Find("label"), not uv3 and not slot0)
+		setActive(uv2:Find("selected"), not uv3 and slot0)
 	end, SFX_PANEL)
-	var_20_0(arg_20_1, false)
-	setToggleEnabled(arg_20_1, not arg_20_3)
+	setToggleEnabled(slot1, not slot3)
 end
 
-function var_0_0.InitShops(arg_23_0, arg_23_1)
-	if arg_23_0.category and arg_23_0.category == arg_23_1 then
+function slot0.InitShops(slot0, slot1)
+	if slot0.category and slot0.category == slot1 then
 		return
 	end
 
-	local var_23_0 = var_0_1[arg_23_1]
-	local var_23_1 = {}
+	slot3 = {}
+	slot0.displayShops = {}
+	slot0.prevBtn = nil
 
-	arg_23_0.displayShops = {}
-	arg_23_0.prevBtn = nil
-
-	for iter_23_0, iter_23_1 in pairs(var_23_0) do
-		for iter_23_2, iter_23_3 in ipairs(arg_23_0.shops[iter_23_1] or {}) do
-			table.insert(var_23_1, {
-				type = iter_23_1,
-				index = iter_23_2
+	for slot7, slot8 in pairs(uv0[slot1]) do
+		for slot12, slot13 in ipairs(slot0.shops[slot8] or {}) do
+			table.insert(slot3, {
+				type = slot8,
+				index = slot12
 			})
 		end
 	end
 
-	arg_23_0.shopUIList:make(function(arg_24_0, arg_24_1, arg_24_2)
-		if arg_24_0 == UIItemList.EventUpdate then
-			local var_24_0 = var_23_1[arg_24_1 + 1]
+	slot0.shopUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			arg_23_0:UpdateShop(arg_24_2, var_24_0)
+			uv1:UpdateShop(slot2, slot3)
 
-			if not arg_23_0.displayShops[var_24_0.type] then
-				arg_23_0.displayShops[var_24_0.type] = {}
+			if not uv1.displayShops[slot3.type] then
+				uv1.displayShops[slot3.type] = {}
 			end
 
-			arg_23_0.displayShops[var_24_0.type][var_24_0.index] = arg_24_2
+			uv1.displayShops[slot3.type][slot3.index] = slot2
 		end
 	end)
-	arg_23_0.shopUIList:align(#var_23_1)
+	slot0.shopUIList:align(#slot3)
 end
 
-local function var_0_4(arg_25_0, arg_25_1)
-	local var_25_0 = var_0_0.TYPE2NAME[arg_25_1.type]
+function slot4(slot0, slot1)
+	slot2 = uv0.TYPE2NAME[slot1.type]
 
-	setText(arg_25_0:Find("selected/Text"), var_25_0)
-	setText(arg_25_0:Find("label"), var_25_0)
+	setText(slot0:Find("selected/Text"), slot2)
+	setText(slot0:Find("label"), slot2)
 end
 
-local function var_0_5(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = arg_26_1:Find("label")
-	local var_26_1 = arg_26_1:Find("selected")
-
-	onButton(arg_26_0, arg_26_1, function()
-		if arg_26_0.prevBtn == arg_26_1 then
+function slot5(slot0, slot1, slot2)
+	onButton(slot0, slot1, function ()
+		if uv0.prevBtn == uv1 then
 			return
 		end
 
-		if arg_26_2() then
-			if arg_26_0.prevBtn then
-				setActive(arg_26_0.prevBtn:Find("label"), true)
-				setActive(arg_26_0.prevBtn:Find("selected"), false)
+		if uv2() then
+			if uv0.prevBtn then
+				setActive(uv0.prevBtn:Find("label"), true)
+				setActive(uv0.prevBtn:Find("selected"), false)
 			end
 
-			setActive(var_26_0, false)
-			setActive(var_26_1, true)
+			setActive(uv3, false)
+			setActive(uv4, true)
 
-			arg_26_0.prevBtn = arg_26_1
+			uv0.prevBtn = uv1
 		end
 	end, SFX_PANEL)
-	setActive(var_26_0, true)
-	setActive(var_26_1, false)
+	setActive(slot1:Find("label"), true)
+	setActive(slot1:Find("selected"), false)
 end
 
-function var_0_0.UpdateShop(arg_28_0, arg_28_1, arg_28_2)
-	var_0_4(arg_28_1, arg_28_2)
+function slot0.UpdateShop(slot0, slot1, slot2)
+	uv0(slot1, slot2)
 
-	local var_28_0 = arg_28_1:Find("selected")
-	local var_28_1 = arg_28_1:Find("label")
+	slot3 = slot1:Find("selected")
+	slot4 = slot1:Find("label")
 
-	var_0_5(arg_28_0, arg_28_1, function()
-		local var_29_0 = arg_28_0.shops[arg_28_2.type][arg_28_2.index]
-		local var_29_1 = arg_28_0.pages[arg_28_2.type]
-		local var_29_2, var_29_3 = var_29_1:CanOpen(var_29_0, arg_28_0.player)
+	uv1(slot0, slot1, function ()
+		slot2, slot3 = uv0.pages[uv1.type]:CanOpen(uv0.shops[uv1.type][uv1.index], uv0.player)
 
-		if var_29_2 then
-			if arg_28_0.page and not arg_28_0.page:GetLoaded() then
+		if slot2 then
+			if uv0.page and not uv0.page:GetLoaded() then
 				return
 			end
 
-			if arg_28_0.page then
-				arg_28_0.page:Hide()
+			if uv0.page then
+				uv0.page:Hide()
 			end
 
-			arg_28_0.contextData.bgView:Init(var_29_1:GetBg(var_29_0))
-			var_29_1:ExecuteAction("SetUp", var_29_0, arg_28_0.player, arg_28_0.items)
+			uv0.contextData.bgView:Init(slot1:GetBg(slot0))
+			slot1:ExecuteAction("SetUp", slot0, uv0.player, uv0.items)
 
-			arg_28_0.page = var_29_1
-			arg_28_0.contextData.activeShop = arg_28_2.type
-			arg_28_0.recorder[arg_28_0.category] = arg_28_2
+			uv0.page = slot1
+			uv0.contextData.activeShop = uv1.type
+			uv0.recorder[uv0.category] = uv1
 
 			return true
 		else
-			pg.TipsMgr.GetInstance():ShowTips(var_29_3)
+			pg.TipsMgr.GetInstance():ShowTips(slot3)
 		end
 
 		return false
 	end)
 end
 
-function var_0_0.ActiveDefaultCategory(arg_30_0)
-	local var_30_0 = arg_30_0.contextData.warp or arg_30_0.contextData.activeShop or var_0_0.TYPE_ACTIVITY
-
-	if type(var_30_0) == "string" then
-		local var_30_1 = table.indexof(var_0_2, var_30_0)
-
-		var_30_0 = defaultValue(var_30_1, var_0_0.TYPE_ACTIVITY)
+function slot0.ActiveDefaultCategory(slot0)
+	if type(slot0.contextData.warp or slot0.contextData.activeShop or uv0.TYPE_ACTIVITY) == "string" then
+		slot1 = defaultValue(table.indexof(uv1, slot1), uv0.TYPE_ACTIVITY)
 	end
 
-	local var_30_2 = arg_30_0.contextData.index or 1
+	slot2 = slot0.contextData.index or 1
 
-	if var_30_0 == var_0_0.TYPE_ACTIVITY and arg_30_0.contextData.actId then
-		for iter_30_0, iter_30_1 in ipairs(arg_30_0.shops[var_30_0] or {}) do
-			if iter_30_1.activityId == arg_30_0.contextData.actId then
-				var_30_2 = iter_30_0
+	if slot1 == uv0.TYPE_ACTIVITY and slot0.contextData.actId then
+		for slot6, slot7 in ipairs(slot0.shops[slot1] or {}) do
+			if slot7.activityId == slot0.contextData.actId then
+				slot2 = slot6
 
 				break
 			end
 		end
-	elseif var_30_0 == var_0_0.TYPE_ACTIVITY and (not arg_30_0.shops[var_0_0.TYPE_ACTIVITY] or #(arg_30_0.shops[var_0_0.TYPE_ACTIVITY] or {}) <= 0) then
-		var_30_0 = var_0_0.TYPE_SHOP_STREET
-		var_30_2 = 1
+	elseif slot1 == uv0.TYPE_ACTIVITY and (not slot0.shops[uv0.TYPE_ACTIVITY] or #(slot0.shops[uv0.TYPE_ACTIVITY] or {}) <= 0) then
+		slot1 = uv0.TYPE_SHOP_STREET
+		slot2 = 1
 	end
 
-	local var_30_3
+	slot3 = nil
 
-	for iter_30_2, iter_30_3 in pairs(var_0_1) do
-		if table.contains(iter_30_3, var_30_0) then
-			var_30_3 = iter_30_2
+	for slot7, slot8 in pairs(uv2) do
+		if table.contains(slot8, slot1) then
+			slot3 = slot7
 
 			break
 		end
 	end
 
-	assert(var_30_3 and arg_30_0.categoryTrs[var_30_3])
+	assert(slot3 and slot0.categoryTrs[slot3])
 
-	arg_30_0.shopType = var_30_0
-	arg_30_0.shopIndex = var_30_2
+	slot0.shopType = slot1
+	slot0.shopIndex = slot2
 
-	triggerToggle(arg_30_0.categoryTrs[var_30_3], true)
+	triggerToggle(slot0.categoryTrs[slot3], true)
 end
 
-function var_0_0.ActiveDefaultShop(arg_31_0)
-	local var_31_0
-	local var_31_1
+function slot0.ActiveDefaultShop(slot0)
+	slot1, slot2 = nil
 
-	if arg_31_0.recorder[arg_31_0.category] then
-		local var_31_2 = arg_31_0.recorder[arg_31_0.category]
-
-		var_31_0, var_31_1 = var_31_2.type, var_31_2.index
+	if slot0.recorder[slot0.category] then
+		slot3 = slot0.recorder[slot0.category]
+		slot2 = slot3.index
+		slot1 = slot3.type
 	else
-		var_31_0, var_31_1 = arg_31_0.shopType, arg_31_0.shopIndex or 1
+		slot2 = slot0.shopIndex or 1
+		slot1 = slot0.shopType
 	end
 
-	local function var_31_3()
-		local var_32_0
-
-		for iter_32_0, iter_32_1 in pairs(arg_31_0.displayShops) do
-			for iter_32_2, iter_32_3 in pairs(iter_32_1) do
-				if arg_31_0.pages[iter_32_0]:CanOpen(nil, arg_31_0.player) then
-					var_32_0 = var_32_0 or iter_32_3
+	if not slot1 then
+		function ()
+			for slot4, slot5 in pairs(uv0.displayShops) do
+				for slot9, slot10 in pairs(slot5) do
+					if uv0.pages[slot4]:CanOpen(nil, uv0.player) then
+						slot0 = nil or slot10
+					end
 				end
 			end
-		end
 
-		if var_32_0 then
-			triggerButton(var_32_0)
-		end
-	end
-
-	if not var_31_0 then
-		var_31_3()
+			if slot0 then
+				triggerButton(slot0)
+			end
+		end()
 
 		return
 	end
 
-	local var_31_4, var_31_5 = arg_31_0.pages[var_31_0]:CanOpen(nil, arg_31_0.player)
+	slot4, slot5 = slot0.pages[slot1]:CanOpen(nil, slot0.player)
 
-	if var_31_4 and arg_31_0.displayShops[var_31_0] and arg_31_0.displayShops[var_31_0][var_31_1] then
-		triggerButton(arg_31_0.displayShops[var_31_0][var_31_1])
+	if slot4 and slot0.displayShops[slot1] and slot0.displayShops[slot1][slot2] then
+		triggerButton(slot0.displayShops[slot1][slot2])
 	else
-		if not var_31_4 then
-			pg.TipsMgr.GetInstance():ShowTips(var_31_5)
+		if not slot4 then
+			pg.TipsMgr.GetInstance():ShowTips(slot5)
 		end
 
-		var_31_3()
+		slot3()
 	end
 end
 
-function var_0_0.onBackPressed(arg_33_0)
-	if arg_33_0.contextData.singleWindow:GetLoaded() and arg_33_0.contextData.singleWindow:isShowing() then
-		arg_33_0.contextData.singleWindow:Close()
+function slot0.onBackPressed(slot0)
+	if slot0.contextData.singleWindow:GetLoaded() and slot0.contextData.singleWindow:isShowing() then
+		slot0.contextData.singleWindow:Close()
 
 		return
 	end
 
-	if arg_33_0.contextData.multiWindow:GetLoaded() and arg_33_0.contextData.multiWindow:isShowing() then
-		arg_33_0.contextData.multiWindow:Close()
+	if slot0.contextData.multiWindow:GetLoaded() and slot0.contextData.multiWindow:isShowing() then
+		slot0.contextData.multiWindow:Close()
 
 		return
 	end
 
-	if arg_33_0.contextData.singleWindowForESkin:GetLoaded() and arg_33_0.contextData.singleWindowForESkin:isShowing() then
-		arg_33_0.contextData.singleWindowForESkin:Hide()
+	if slot0.contextData.singleWindowForESkin:GetLoaded() and slot0.contextData.singleWindowForESkin:isShowing() then
+		slot0.contextData.singleWindowForESkin:Hide()
 
 		return
 	end
 
-	var_0_0.super.onBackPressed(arg_33_0)
+	uv0.super.onBackPressed(slot0)
 end
 
-function var_0_0.BlurView(arg_34_0)
-	local var_34_0 = arg_34_0.frameTr:Find("bg/blur")
+function slot0.BlurView(slot0)
+	slot1 = slot0.frameTr:Find("bg/blur")
 
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_34_0.frameTr, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.frameTr, {
 		pbList = {
-			arg_34_0.frameTr:Find("bg"),
-			var_34_0
+			slot0.frameTr:Find("bg"),
+			slot1
 		}
 	})
-	var_34_0:SetAsFirstSibling()
+	slot1:SetAsFirstSibling()
 end
 
-function var_0_0.UnBlurView(arg_35_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_35_0.frameTr, arg_35_0._tf)
+function slot0.UnBlurView(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.frameTr, slot0._tf)
 end
 
-function var_0_0.willExit(arg_36_0)
-	if arg_36_0.bulinTip then
-		arg_36_0.bulinTip:Destroy()
+function slot0.willExit(slot0)
+	if slot0.bulinTip then
+		slot0.bulinTip:Destroy()
 
-		arg_36_0.bulinTip = nil
+		slot0.bulinTip = nil
 	end
 
-	for iter_36_0, iter_36_1 in pairs(arg_36_0.pages) do
-		iter_36_1:Destroy()
+	for slot4, slot5 in pairs(slot0.pages) do
+		slot5:Destroy()
 	end
 
-	arg_36_0:UnBlurView()
-	arg_36_0.contextData.singleWindow:Destroy()
-	arg_36_0.contextData.multiWindow:Destroy()
-	arg_36_0.contextData.singleWindowForESkin:Destroy()
-	arg_36_0.contextData.paintingView:Dispose()
-	arg_36_0.contextData.bgView:Dispose()
+	slot0:UnBlurView()
+	slot0.contextData.singleWindow:Destroy()
+	slot0.contextData.multiWindow:Destroy()
+	slot0.contextData.singleWindowForESkin:Destroy()
+	slot0.contextData.paintingView:Dispose()
+	slot0.contextData.bgView:Dispose()
 
-	arg_36_0.contextData.singleWindow = nil
-	arg_36_0.contextData.multiWindow = nil
-	arg_36_0.contextData.singleWindowForESkin = nil
-	arg_36_0.contextData.paintingView = nil
-	arg_36_0.contextData.bgView = nil
-	arg_36_0.pages = nil
-	arg_36_0.bulinTip = nil
+	slot0.contextData.singleWindow = nil
+	slot0.contextData.multiWindow = nil
+	slot0.contextData.singleWindowForESkin = nil
+	slot0.contextData.paintingView = nil
+	slot0.contextData.bgView = nil
+	slot0.pages = nil
+	slot0.bulinTip = nil
 end
 
-return var_0_0
+return slot0

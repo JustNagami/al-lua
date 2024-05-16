@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "爆发弹幕",
+	stack = 1,
+	id = 14030,
+	icon = 14030,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -46,26 +67,5 @@
 				countType = 14031
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "爆发弹幕",
-	stack = 1,
-	id = 14030,
-	icon = 14030,
-	last_effect = ""
+	}
 }

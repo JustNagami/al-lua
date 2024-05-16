@@ -1,22 +1,17 @@
-﻿local var_0_0 = class("FlushMiniGameShopCommand", pm.SimpleCommand)
+slot0 = class("FlushMiniGameShopCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1
-
-	var_1_1 = var_1_0 and var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(26154, {
 		type = 0
-	}, 26155, function(arg_2_0)
-		local var_2_0
+	}, 26155, function (slot0)
+		slot1 = nil
 
-		if arg_2_0.result == 0 then
-			-- block empty
-		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+		if slot0.result ~= 0 then
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

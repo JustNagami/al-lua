@@ -1,287 +1,267 @@
-﻿local var_0_0 = class("MainLive2dPainting", import(".MainBasePainting"))
+slot0 = class("MainLive2dPainting", import(".MainBasePainting"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0.live2dContainer = arg_1_1:Find("live2d")
-	arg_1_0.cg = arg_1_0.live2dContainer:GetComponent(typeof(CanvasGroup))
-	arg_1_0.currentWidth = Screen.width
-	arg_1_0.currentHeight = Screen.height
-	arg_1_0.isModifyOrder = false
-	arg_1_0.actionWaiting = false
-	arg_1_0.eventTrigger = GetOrAddComponent(arg_1_0.live2dContainer, typeof(EventTriggerListener))
+	slot0.live2dContainer = slot1:Find("live2d")
+	slot0.cg = slot0.live2dContainer:GetComponent(typeof(CanvasGroup))
+	slot0.currentWidth = Screen.width
+	slot0.currentHeight = Screen.height
+	slot0.isModifyOrder = false
+	slot0.actionWaiting = false
+	slot0.eventTrigger = GetOrAddComponent(slot0.live2dContainer, typeof(EventTriggerListener))
 
-	arg_1_0.eventTrigger:AddPointClickFunc(function()
-		arg_1_0:OnClick()
-		arg_1_0:TriggerPersonalTask(arg_1_0.ship.groupId)
+	slot0.eventTrigger:AddPointClickFunc(function ()
+		uv0:OnClick()
+		uv0:TriggerPersonalTask(uv0.ship.groupId)
 	end)
 end
 
-function var_0_0.GetHalfBodyOffsetY(arg_3_0)
-	local var_3_0 = arg_3_0.container.parent
-	local var_3_1 = var_3_0.rect.height * -0.5
-	local var_3_2 = var_3_0:InverseTransformPoint(arg_3_0.live2dContainer.position)
-	local var_3_3 = arg_3_0.live2dContainer.localScale
+function slot0.GetHalfBodyOffsetY(slot0)
+	slot1 = slot0.container.parent
 
-	return var_3_1 - (arg_3_0.live2dContainer.rect.height * -0.5 * var_3_3.y + var_3_2.y)
+	return slot1.rect.height * -0.5 - (slot0.live2dContainer.rect.height * -0.5 * slot0.live2dContainer.localScale.y + slot1:InverseTransformPoint(slot0.live2dContainer.position).y)
 end
 
-function var_0_0.OnLoad(arg_4_0, arg_4_1)
-	local var_4_0 = Live2D.GenerateData({
+function slot0.OnLoad(slot0, slot1)
+	slot0.cg.blocksRaycasts = true
+	slot0.live2dChar = Live2D.New(Live2D.GenerateData({
 		loadPrefs = true,
-		ship = arg_4_0.ship,
+		ship = slot0.ship,
 		scale = Vector3(52, 52, 52),
 		position = Vector3(0, 0, 100),
-		parent = arg_4_0.live2dContainer
-	})
-
-	arg_4_0.cg.blocksRaycasts = true
-	arg_4_0.live2dChar = Live2D.New(var_4_0, function(arg_5_0)
-		arg_4_0:AdJustOrderInLayer(arg_5_0)
-		arg_4_1()
+		parent = slot0.live2dContainer
+	}), function (slot0)
+		uv0:AdJustOrderInLayer(slot0)
+		uv1()
 	end)
-	arg_4_0.shipGroup = getProxy(CollectionProxy):getShipGroup(arg_4_0.ship.groupId)
 
-	arg_4_0:UpdateContainerPosition()
-	arg_4_0:AddScreenChangeTimer()
+	slot0.live2dChar:setStopCallback(function ()
+		uv0:SetContainerVisible(false)
+	end)
+	slot0:SetContainerVisible(true)
+
+	slot0.shipGroup = getProxy(CollectionProxy):getShipGroup(slot0.ship.groupId)
+
+	slot0:UpdateContainerPosition()
+	slot0:AddScreenChangeTimer()
 end
 
-function var_0_0.AdJustOrderInLayer(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.container:GetComponent(typeof(Canvas))
+function slot0.AdJustOrderInLayer(slot0, slot1)
+	if slot0.container:GetComponent(typeof(Canvas)) and slot2.overrideSorting and slot2.sortingOrder ~= 0 then
+		ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.CubismRenderController"), "SortingOrder", slot1._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController"), slot2.sortingOrder)
 
-	if var_6_0 and var_6_0.overrideSorting and var_6_0.sortingOrder ~= 0 then
-		local var_6_1 = arg_6_1._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-		local var_6_2 = var_6_0.sortingOrder
-		local var_6_3 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-
-		ReflectionHelp.RefSetProperty(var_6_3, "SortingOrder", var_6_1, var_6_2)
-
-		arg_6_0.isModifyOrder = true
+		slot0.isModifyOrder = true
 	end
 end
 
-function var_0_0.ResetOrderInLayer(arg_7_0)
-	if not arg_7_0.live2dChar then
+function slot0.ResetOrderInLayer(slot0)
+	if not slot0.live2dChar then
 		return
 	end
 
-	local var_7_0 = arg_7_0.live2dChar._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController")
-	local var_7_1 = typeof("Live2D.Cubism.Rendering.CubismRenderController")
-
-	ReflectionHelp.RefSetProperty(var_7_1, "SortingOrder", var_7_0, 0)
+	ReflectionHelp.RefSetProperty(typeof("Live2D.Cubism.Rendering.CubismRenderController"), "SortingOrder", slot0.live2dChar._go:GetComponent("Live2D.Cubism.Rendering.CubismRenderController"), 0)
 end
 
-function var_0_0.AddScreenChangeTimer(arg_8_0)
-	arg_8_0:RemoveScreenChangeTimer()
+function slot0.AddScreenChangeTimer(slot0)
+	slot0:RemoveScreenChangeTimer()
 
-	if not arg_8_0:IslimitYPos() then
+	if not slot0:IslimitYPos() then
 		return
 	end
 
-	arg_8_0.screenTimer = Timer.New(function()
-		if arg_8_0.currentWidth ~= Screen.width or arg_8_0.currentHeight ~= Screen.height then
-			arg_8_0.currentWidth = Screen.width
-			arg_8_0.currentHeight = Screen.height
+	slot0.screenTimer = Timer.New(function ()
+		if uv0.currentWidth ~= Screen.width or uv0.currentHeight ~= Screen.height then
+			uv0.currentWidth = Screen.width
+			uv0.currentHeight = Screen.height
 
-			arg_8_0:ResetContainerPosition()
-			arg_8_0:UpdateContainerPosition()
+			uv0:ResetContainerPosition()
+			uv0:UpdateContainerPosition()
 		end
 	end, 0.5, -1)
 
-	arg_8_0.screenTimer:Start()
+	slot0.screenTimer:Start()
 end
 
-function var_0_0.RemoveScreenChangeTimer(arg_10_0)
-	if arg_10_0.screenTimer then
-		arg_10_0.screenTimer:Stop()
+function slot0.RemoveScreenChangeTimer(slot0)
+	if slot0.screenTimer then
+		slot0.screenTimer:Stop()
 
-		arg_10_0.screenTimer = nil
+		slot0.screenTimer = nil
 	end
 end
 
-function var_0_0.UpdateContainerPosition(arg_11_0)
-	local var_11_0 = arg_11_0:IslimitYPos() and arg_11_0:GetHalfBodyOffsetY() or 0
-	local var_11_1 = arg_11_0.live2dContainer.localPosition
-
-	arg_11_0.live2dContainer.localPosition = Vector3(var_11_1.x, var_11_0, var_11_1.z)
+function slot0.UpdateContainerPosition(slot0)
+	slot2 = slot0.live2dContainer.localPosition
+	slot0.live2dContainer.localPosition = Vector3(slot2.x, slot0:IslimitYPos() and slot0:GetHalfBodyOffsetY() or 0, slot2.z)
 end
 
-function var_0_0.ResetContainerPosition(arg_12_0)
-	local var_12_0 = arg_12_0.live2dContainer.localPosition
-
-	arg_12_0.live2dContainer.localPosition = Vector3(var_12_0.x, 0, 0)
+function slot0.ResetContainerPosition(slot0)
+	slot0.live2dContainer.localPosition = Vector3(slot0.live2dContainer.localPosition.x, 0, 0)
 end
 
-function var_0_0.OnUnload(arg_13_0)
-	if arg_13_0.live2dChar then
-		arg_13_0:RemoveScreenChangeTimer()
-		arg_13_0:ResetContainerPosition()
+function slot0.OnUnload(slot0)
+	if slot0.live2dChar then
+		slot0:RemoveScreenChangeTimer()
+		slot0:ResetContainerPosition()
 
-		if arg_13_0.isModifyOrder then
-			arg_13_0.isModifyOrder = false
+		if slot0.isModifyOrder then
+			slot0.isModifyOrder = false
 
-			arg_13_0:ResetOrderInLayer()
+			slot0:ResetOrderInLayer()
 		end
 
-		arg_13_0.cg.blocksRaycasts = false
+		slot0.cg.blocksRaycasts = false
 
-		arg_13_0.live2dChar:Dispose()
+		slot0.live2dChar:Dispose()
 
-		arg_13_0.live2dChar = nil
+		slot0.live2dChar = nil
 	end
 end
 
-function var_0_0.OnClick(arg_14_0)
-	local var_14_0
+function slot0.OnClick(slot0)
+	slot1 = nil
 
-	if arg_14_0.live2dChar and arg_14_0.live2dChar.state == Live2D.STATE_INITED and not arg_14_0.live2dChar.ignoreReact then
+	if slot0.live2dChar and slot0.live2dChar.state == Live2D.STATE_INITED and not slot0.live2dChar.ignoreReact then
 		if not Input.mousePosition then
 			return
 		end
 
-		local var_14_1 = arg_14_0.live2dChar:GetTouchPart()
-
-		if var_14_1 > 0 then
-			local var_14_2 = arg_14_0:GetTouchEvent(var_14_1)
-
-			var_14_0 = var_14_2[math.ceil(math.random(#var_14_2))]
+		if slot0.live2dChar:GetTouchPart() > 0 then
+			slot4 = slot0:GetTouchEvent(slot3)
+			slot1 = slot4[math.ceil(math.random(#slot4))]
 		else
-			local var_14_3 = arg_14_0:GetIdleEvents()
-
-			var_14_0 = var_14_3[math.floor(math.Random(0, #var_14_3)) + 1]
+			slot4 = slot0:GetIdleEvents()
+			slot1 = slot4[math.floor(math.Random(0, #slot4)) + 1]
 		end
 	end
 
-	if var_14_0 then
-		arg_14_0:TriggerEvent(var_14_0)
+	if slot1 then
+		slot0:TriggerEvent(slot1)
 	end
 end
 
-function var_0_0._TriggerEvent(arg_15_0, arg_15_1)
-	if not arg_15_1 then
+function slot0._TriggerEvent(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	if arg_15_0.actionWaiting then
+	if slot0.actionWaiting then
 		return
 	end
 
-	local var_15_0 = arg_15_0:GetEventConfig(arg_15_1)
+	slot2 = slot0:GetEventConfig(slot1)
 
-	local function var_15_1(arg_16_0)
-		if arg_16_0 then
-			if var_15_0.dialog ~= "" then
-				arg_15_0:DisplayWord(var_15_0.dialog)
+	function slot3(slot0)
+		if slot0 then
+			if uv0.dialog ~= "" then
+				uv1:DisplayWord(uv0.dialog)
 			else
-				arg_15_0:TriggerNextEventAuto()
+				uv1:TriggerNextEventAuto()
 			end
 		end
 
-		arg_15_0.actionWaiting = false
+		uv1.actionWaiting = false
 	end
 
-	local var_15_2, var_15_3, var_15_4, var_15_5, var_15_6, var_15_7 = ShipWordHelper.GetCvDataForShip(arg_15_0.ship, var_15_0.dialog)
-	local var_15_8 = var_15_0.action
-	local var_15_9 = var_15_0.dialog
-	local var_15_10 = string.gsub(var_15_9, "main_", "main")
+	slot4, slot5, slot6, slot7, slot8, slot9 = ShipWordHelper.GetCvDataForShip(slot0.ship, slot2.dialog)
+	slot10 = slot2.action
+	slot11 = string.gsub(slot2.dialog, "main_", "main")
 
-	if arg_15_0.ship.propose and pg.character_voice[var_15_10] and arg_15_0.shipGroup and arg_15_0.shipGroup:VoiceReplayCodition(pg.character_voice[var_15_10]) and arg_15_0.live2dChar:checkActionExist(var_15_8 .. "_ex") then
-		var_15_8 = var_15_8 .. "_ex"
+	if slot0.ship.propose and pg.character_voice[slot11] and slot0.shipGroup and slot0.shipGroup:VoiceReplayCodition(pg.character_voice[slot11]) and slot0.live2dChar:checkActionExist(slot10 .. "_ex") then
+		slot10 = slot10 .. "_ex"
 	end
 
-	if not var_15_7 then
-		arg_15_0.actionWaiting = true
+	if not slot9 then
+		slot0.actionWaiting = true
 
-		arg_15_0.live2dChar:TriggerAction(var_15_8)
-		var_15_1(true)
+		slot0.live2dChar:TriggerAction(slot10)
+		slot3(true)
 	else
-		arg_15_0.actionWaiting = true
+		slot0.actionWaiting = true
 
-		if not var_15_4 or var_15_4 == nil or var_15_4 == "" or var_15_4 == "nil" then
-			arg_15_0.actionWaiting = false
+		if not slot6 or slot6 == nil or slot6 == "" or slot6 == "nil" then
+			slot0.actionWaiting = false
 
-			var_15_1(true)
+			slot3(true)
 		end
 
-		arg_15_0.live2dChar:TriggerAction(var_15_8, nil, nil, var_15_1)
+		slot0.live2dChar:TriggerAction(slot10, nil, , slot3)
 	end
 end
 
-function var_0_0.PlayCV(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4)
-	arg_17_0:RemoveSeTimer()
+function slot0.PlayCV(slot0, slot1, slot2, slot3, slot4)
+	slot0:RemoveSeTimer()
 
-	if arg_17_1 then
-		arg_17_0.seTimer = Timer.New(function()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. arg_17_1[1])
-		end, arg_17_1[2], 1)
+	if slot1 then
+		slot0.seTimer = Timer.New(function ()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv0[1])
+		end, slot1[2], 1)
 
-		arg_17_0.seTimer:Start()
+		slot0.seTimer:Start()
 	end
 
-	local var_17_0 = ShipWordHelper.RawGetCVKey(arg_17_0.ship.skinId)
-	local var_17_1 = pg.CriMgr.GetCVBankName(var_17_0)
-
-	arg_17_0.cvLoader:Load(var_17_1, arg_17_3, arg_17_2, arg_17_4)
+	slot0.cvLoader:Load(pg.CriMgr.GetCVBankName(ShipWordHelper.RawGetCVKey(slot0.ship.skinId)), slot3, slot2, slot4)
 end
 
-function var_0_0.RemoveSeTimer(arg_19_0)
-	if arg_19_0.seTimer then
-		arg_19_0.seTimer:Stop()
+function slot0.RemoveSeTimer(slot0)
+	if slot0.seTimer then
+		slot0.seTimer:Stop()
 
-		arg_19_0.seTimer = nil
+		slot0.seTimer = nil
 	end
 end
 
-function var_0_0.OnDisplayWorld(arg_20_0)
-	return
+function slot0.OnDisplayWorld(slot0)
 end
 
-function var_0_0.OnPuase(arg_21_0)
-	arg_21_0:RemoveScreenChangeTimer()
-	arg_21_0:ResetContainerPosition()
+function slot0.OnPuase(slot0)
+	slot0:RemoveScreenChangeTimer()
+	slot0:ResetContainerPosition()
 
-	arg_21_0.actionWaiting = false
+	slot0.actionWaiting = false
 
-	arg_21_0.live2dChar:SetVisible(false)
+	slot0.live2dChar:SetVisible(false)
 end
 
-function var_0_0.OnUpdateShip(arg_22_0, arg_22_1)
-	if arg_22_1 then
-		arg_22_0.live2dChar:updateShip(arg_22_1)
+function slot0.OnUpdateShip(slot0, slot1)
+	if slot1 then
+		slot0.live2dChar:updateShip(slot1)
 	end
 end
 
-function var_0_0.OnResume(arg_23_0)
-	arg_23_0:AddScreenChangeTimer()
-	arg_23_0:UpdateContainerPosition()
-	arg_23_0.live2dChar:SetVisible(true)
-	arg_23_0.live2dChar:UpdateAtomSource()
+function slot0.SetContainerVisible(slot0, slot1)
+	setActive(slot0.live2dContainer, slot1)
 end
 
-function var_0_0.Dispose(arg_24_0)
-	var_0_0.super.Dispose(arg_24_0)
-	arg_24_0:RemoveSeTimer()
-	arg_24_0:RemoveScreenChangeTimer()
+function slot0.OnResume(slot0)
+	slot0:SetContainerVisible(true)
+	slot0:AddScreenChangeTimer()
+	slot0:UpdateContainerPosition()
+	slot0.live2dChar:SetVisible(true)
+	slot0.live2dChar:UpdateAtomSource()
+end
 
-	if arg_24_0.eventTrigger then
-		ClearEventTrigger(arg_24_0.eventTrigger)
+function slot0.Dispose(slot0)
+	uv0.super.Dispose(slot0)
+	slot0:RemoveSeTimer()
+	slot0:RemoveScreenChangeTimer()
+
+	if slot0.eventTrigger then
+		ClearEventTrigger(slot0.eventTrigger)
 	end
 end
 
-function var_0_0.GetOffset(arg_25_0)
-	return arg_25_0.live2dContainer.localPosition.x
+function slot0.GetOffset(slot0)
+	return slot0.live2dContainer.localPosition.x
 end
 
-function var_0_0.GetCenterPos(arg_26_0)
-	local var_26_0 = arg_26_0.live2dContainer
-
-	return (arg_26_0.chatTf.parent:InverseTransformPoint(var_26_0.position))
+function slot0.GetCenterPos(slot0)
+	return slot0.chatTf.parent:InverseTransformPoint(slot0.live2dContainer.position)
 end
 
-function var_0_0.IslimitYPos(arg_27_0)
-	local var_27_0 = arg_27_0.ship:getPainting()
-
-	return var_27_0 == "biaoqiang" or var_27_0 == "z23" or var_27_0 == "lafei" or var_27_0 == "lingbo" or var_27_0 == "mingshi" or var_27_0 == "xuefeng"
+function slot0.IslimitYPos(slot0)
+	return slot0.ship:getPainting() == "biaoqiang" or slot1 == "z23" or slot1 == "lafei" or slot1 == "lingbo" or slot1 == "mingshi" or slot1 == "xuefeng"
 end
 
-return var_0_0
+return slot0

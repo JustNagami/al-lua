@@ -1,64 +1,62 @@
-﻿local var_0_0 = class("GetFeastDataCommand", pm.SimpleCommand)
+slot0 = class("GetFeastDataCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.callback
-	local var_1_2 = var_1_0.activityId
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(26156, {
-		act_id = var_1_2
-	}, 26157, function(arg_2_0)
-		if arg_2_0.ret == 0 then
-			local var_2_0 = FeastDorm.New({
+		act_id = slot2.activityId
+	}, 26157, function (slot0)
+		if slot0.ret == 0 then
+			slot1 = FeastDorm.New({
 				id = 4
-			}, arg_2_0)
+			}, slot0)
 
-			arg_1_0:FixStoryList(var_2_0)
-			getProxy(FeastProxy):SetData(var_2_0)
-			arg_1_0:sendNotification(GAME.GET_FEAST_DATA_DONE)
+			uv0:FixStoryList(slot1)
+			getProxy(FeastProxy):SetData(slot1)
+			uv0:sendNotification(GAME.GET_FEAST_DATA_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 
-		if var_1_1 then
-			var_1_1()
+		if uv1 then
+			uv1()
 		end
 	end)
 end
 
-function var_0_0.FixStoryList(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:GetInvitedFeastShips()
-	local var_3_1 = {}
+function slot0.FixStoryList(slot0, slot1)
+	slot3 = {}
 
-	for iter_3_0, iter_3_1 in pairs(var_3_0) do
-		if iter_3_1:GotTicket() then
-			table.insert(var_3_1, iter_3_1:GetInvitationStory())
+	for slot7, slot8 in pairs(slot1:GetInvitedFeastShips()) do
+		if slot8:GotTicket() then
+			table.insert(slot3, slot8:GetInvitationStory())
 		end
 
-		if iter_3_1:GotGift() then
-			table.insert(var_3_1, iter_3_1:GetGiftStory())
+		if slot8:GotGift() then
+			table.insert(slot3, slot8:GetGiftStory())
 		end
 	end
 
-	if #var_3_1 <= 0 then
+	if #slot3 <= 0 then
 		return
 	end
 
-	local var_3_2 = {}
+	slot4 = {}
 
-	for iter_3_2, iter_3_3 in pairs(var_3_1) do
-		if not pg.NewStoryMgr.GetInstance():IsPlayed(iter_3_3) then
-			table.insert(var_3_2, iter_3_3)
+	for slot8, slot9 in pairs(slot3) do
+		if not pg.NewStoryMgr.GetInstance():IsPlayed(slot9) then
+			table.insert(slot4, slot9)
 		end
 	end
 
-	if #var_3_2 > 0 then
-		for iter_3_4, iter_3_5 in ipairs(var_3_2) do
+	if #slot4 > 0 then
+		for slot8, slot9 in ipairs(slot4) do
 			pg.m02:sendNotification(GAME.STORY_UPDATE, {
-				storyId = iter_3_5
+				storyId = slot9
 			})
 		end
 	end
 end
 
-return var_0_0
+return slot0

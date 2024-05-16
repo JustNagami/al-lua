@@ -1,61 +1,58 @@
-﻿local var_0_0 = class("LaunchBallTaskMediator", import("..base.ContextMediator"))
+slot0 = class("LaunchBallTaskMediator", import("..base.ContextMediator"))
+slot0.SUBMIT_ALL = "SUBMIT_ALL"
 
-var_0_0.SUBMIT_ALL = "SUBMIT_ALL"
+function slot0.register(slot0)
+	slot0:bind(LaunchBallTaskMediator.SUBMIT_ALL, function (slot0, slot1)
+		uv0.submit = #slot1
+		uv0.awards = {}
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(LaunchBallTaskMediator.SUBMIT_ALL, function(arg_2_0, arg_2_1)
-		arg_1_0.submit = #arg_2_1
-		arg_1_0.awards = {}
-
-		for iter_2_0 = 1, #arg_2_1 do
-			arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_2_1[iter_2_0].id)
+		for slot5 = 1, #slot1 do
+			uv0:sendNotification(GAME.SUBMIT_TASK, slot1[slot5].id)
 		end
 	end)
 end
 
-function var_0_0.onUIAvalible(arg_3_0)
-	return
+function slot0.onUIAvalible(slot0)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SUBMIT_TASK_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		if #var_5_1.awards > 0 then
-			arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_5_1.awards)
+	if slot1:getName() == GAME.SUBMIT_AVATAR_TASK_DONE then
+		if #slot3.awards > 0 then
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 		end
 
-		if var_5_1.callback then
-			-- block empty
+		if slot3.callback then
+			-- Nothing
 		end
 
-		arg_5_0.viewComponent:updateTask(true)
-	elseif var_5_0 == GAME.SUBMIT_TASK_DONE then
-		if arg_5_0.submit and arg_5_0.submit > 0 then
-			for iter_5_0 = 1, #var_5_1 do
-				table.insert(arg_5_0.awards, var_5_1[iter_5_0])
+		slot0.viewComponent:updateTask(true)
+	elseif slot2 == GAME.SUBMIT_TASK_DONE then
+		if slot0.submit and slot0.submit > 0 then
+			for slot7 = 1, #slot3 do
+				table.insert(slot0.awards, slot3[slot7])
 			end
 
-			arg_5_0.submit = arg_5_0.submit - 1
+			slot0.submit = slot0.submit - 1
 
-			if arg_5_0.submit == 0 then
-				arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_5_0.awards, function()
-					arg_5_0.viewComponent:updateTasks()
+			if slot0.submit == 0 then
+				slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot0.awards, function ()
+					uv0.viewComponent:updateTasks()
 				end)
 			end
 		else
-			arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_5_1, function()
-				arg_5_0.viewComponent:updateTasks()
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+				uv0.viewComponent:updateTasks()
 			end)
 		end
 	end
 end
 
-return var_0_0
+return slot0

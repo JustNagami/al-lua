@@ -1,98 +1,88 @@
-﻿local var_0_0 = class("PublicGuild", import("..base.BaseGuild"))
-local var_0_1 = pg.guild_technology_template
+slot0 = class("PublicGuild", import("..base.BaseGuild"))
+slot1 = pg.guild_technology_template
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.technologyGroups = {}
-	arg_1_0.technologys = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.technologyGroups = {}
+	slot0.technologys = {}
 
-	for iter_1_0, iter_1_1 in pairs(var_0_1.get_id_list_by_group) do
-		local var_1_0 = GuildTechnologyGroup.New({
-			id = iter_1_0
+	for slot5, slot6 in pairs(uv0.get_id_list_by_group) do
+		slot7 = GuildTechnologyGroup.New({
+			id = slot5
 		})
-
-		arg_1_0.technologyGroups[iter_1_0] = var_1_0
-
-		local var_1_1 = PublicGuildTechnology.New(var_1_0)
-
-		arg_1_0.technologys[iter_1_0] = var_1_1
+		slot0.technologyGroups[slot5] = slot7
+		slot0.technologys[slot5] = PublicGuildTechnology.New(slot7)
 	end
 
-	for iter_1_2, iter_1_3 in ipairs(arg_1_1.technologys or {}) do
-		local var_1_2 = var_0_1[iter_1_3.id]
-
-		arg_1_0.technologyGroups[var_1_2.group]:update(iter_1_3)
+	for slot5, slot6 in ipairs(slot1.technologys or {}) do
+		slot0.technologyGroups[uv0[slot6.id].group]:update(slot6)
 	end
 
-	arg_1_0.maxDonateCntPreDay = pg.guildset.contribution_task_num.key_value
+	slot0.maxDonateCntPreDay = pg.guildset.contribution_task_num.key_value
 end
 
-function var_0_0.InitUser(arg_2_0, arg_2_1)
-	arg_2_0.donateCount = arg_2_1.donate_count
-	arg_2_0.donateTasks = {}
+function slot0.InitUser(slot0, slot1)
+	slot0.donateCount = slot1.donate_count
+	slot0.donateTasks = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1.donate_tasks or {}) do
-		local var_2_0 = GuildDonateTask.New({
-			id = iter_2_1
-		})
-
-		table.insert(arg_2_0.donateTasks, var_2_0)
+	for slot5, slot6 in ipairs(slot1.donate_tasks or {}) do
+		table.insert(slot0.donateTasks, GuildDonateTask.New({
+			id = slot6
+		}))
 	end
 
-	for iter_2_2, iter_2_3 in ipairs(arg_2_1.tech_id or {}) do
-		local var_2_1 = var_0_1[iter_2_3].group
-		local var_2_2 = arg_2_0.technologys[var_2_1]
-		local var_2_3 = arg_2_0.technologyGroups[var_2_1]
+	for slot5, slot6 in ipairs(slot1.tech_id or {}) do
+		slot7 = uv0[slot6].group
 
-		var_2_2:Update(iter_2_3, var_2_3)
+		slot0.technologys[slot7]:Update(slot6, slot0.technologyGroups[slot7])
 	end
 end
 
-function var_0_0.GetTechnologyGroups(arg_3_0)
-	return arg_3_0.technologyGroups
+function slot0.GetTechnologyGroups(slot0)
+	return slot0.technologyGroups
 end
 
-function var_0_0.GetDonateTasks(arg_4_0)
-	return arg_4_0.donateTasks
+function slot0.GetDonateTasks(slot0)
+	return slot0.donateTasks
 end
 
-function var_0_0.GetTechnologys(arg_5_0)
-	return arg_5_0.technologys
+function slot0.GetTechnologys(slot0)
+	return slot0.technologys
 end
 
-function var_0_0.GetTechnologyById(arg_6_0, arg_6_1)
-	return arg_6_0.technologys[arg_6_1]
+function slot0.GetTechnologyById(slot0, slot1)
+	return slot0.technologys[slot1]
 end
 
-function var_0_0.GetDonateCount(arg_7_0)
-	return arg_7_0.donateCount
+function slot0.GetDonateCount(slot0)
+	return slot0.donateCount
 end
 
-function var_0_0.GetDonateTaskById(arg_8_0, arg_8_1)
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.donateTasks) do
-		if iter_8_1.id == arg_8_1 then
-			return iter_8_1
+function slot0.GetDonateTaskById(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.donateTasks) do
+		if slot6.id == slot1 then
+			return slot6
 		end
 	end
 end
 
-function var_0_0.HasDonateCnt(arg_9_0)
-	return arg_9_0:GetRemainDonateCnt() > 0
+function slot0.HasDonateCnt(slot0)
+	return slot0:GetRemainDonateCnt() > 0
 end
 
-function var_0_0.UpdateDonateTasks(arg_10_0, arg_10_1)
-	arg_10_0.donateTasks = arg_10_1
+function slot0.UpdateDonateTasks(slot0, slot1)
+	slot0.donateTasks = slot1
 end
 
-function var_0_0.IncDonateCount(arg_11_0)
-	arg_11_0.donateCount = arg_11_0.donateCount + 1
+function slot0.IncDonateCount(slot0)
+	slot0.donateCount = slot0.donateCount + 1
 end
 
-function var_0_0.GetRemainDonateCnt(arg_12_0)
-	return arg_12_0.maxDonateCntPreDay - arg_12_0.donateCount
+function slot0.GetRemainDonateCnt(slot0)
+	return slot0.maxDonateCntPreDay - slot0.donateCount
 end
 
-function var_0_0.ResetDonateCnt(arg_13_0)
-	arg_13_0.donateCount = 0
+function slot0.ResetDonateCnt(slot0)
+	slot0.donateCount = 0
 end
 
-return var_0_0
+return slot0

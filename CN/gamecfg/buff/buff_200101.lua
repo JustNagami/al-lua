@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "勇者标枪永久盾牌",
 	time = 0,
@@ -36,10 +36,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_1_0)
+				centerPosFun = function (slot0)
 					return Vector3(3.5, -0.5, 0)
 				end,
-				rotationFun = function(arg_2_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 0, 0)
 				end
 			}

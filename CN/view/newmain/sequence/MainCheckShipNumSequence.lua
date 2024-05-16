@@ -1,36 +1,31 @@
-﻿local var_0_0 = class("MainCheckShipNumSequence")
+slot0 = class("MainCheckShipNumSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local function var_1_0(arg_2_0)
-		if arg_1_0:Check(arg_2_0) then
-			arg_1_1()
-		end
-	end
-
+function slot0.Execute(slot0, slot1)
 	pg.m02:sendNotification(GAME.GET_SHIP_CNT, {
-		callback = var_1_0
+		callback = function (slot0)
+			if uv0:Check(slot0) then
+				uv1()
+			end
+		end
 	})
 end
 
-function var_0_0.Check(arg_3_0, arg_3_1)
-	local var_3_0 = getProxy(BayProxy):getShipCount()
-	local var_3_1 = arg_3_1 <= var_3_0
-
-	if not var_3_1 then
-		originalPrint(arg_3_1, var_3_0)
-		arg_3_0:ShowTip()
+function slot0.Check(slot0, slot1)
+	if not (slot1 <= getProxy(BayProxy):getShipCount()) then
+		originalPrint(slot1, slot2)
+		slot0:ShowTip()
 	end
 
-	return var_3_1
+	return slot3
 end
 
-function var_0_0.ShowTip(arg_4_0)
+function slot0.ShowTip(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		modal = true,
 		hideNo = true,
 		hideClose = true,
 		content = i18n("dockyard_data_loss_detected"),
-		onYes = function()
+		onYes = function ()
 			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})
@@ -38,4 +33,4 @@ function var_0_0.ShowTip(arg_4_0)
 	})
 end
 
-return var_0_0
+return slot0

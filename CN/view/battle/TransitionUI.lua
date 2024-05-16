@@ -1,26 +1,20 @@
-﻿local var_0_0 = class("Transition", import("..base.BaseUI"))
+slot0 = class("Transition", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
-	local var_1_0 = arg_1_0.UIName
-
-	if not var_1_0 then
-		var_1_0 = arg_1_0.contextData.loadUI
-		arg_1_0.UIName = var_1_0
+function slot0.getUIName(slot0)
+	if not slot0.UIName then
+		slot0.UIName = slot0.contextData.loadUI
 	end
 
-	return var_1_0
+	return slot1
 end
 
-function var_0_0.init(arg_2_0)
-	return
+function slot0.init(slot0)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	return
+function slot0.didEnter(slot0)
 end
 
-function var_0_0.onBackPressed(arg_4_0)
-	return
+function slot0.onBackPressed(slot0)
 end
 
-return var_0_0
+return slot0

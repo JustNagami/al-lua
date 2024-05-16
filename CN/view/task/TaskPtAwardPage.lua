@@ -1,24 +1,24 @@
-﻿local var_0_0 = class("TaskPtAwardPage", import("..base.BaseSubView"))
+slot0 = class("TaskPtAwardPage", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ActivitybonusWindow"
 end
 
-function var_0_0.Display(arg_2_0, arg_2_1)
-	if not arg_2_0.window then
-		arg_2_0.window = TaskPtAwardWindow.New(arg_2_0._tf, arg_2_0)
+function slot0.Display(slot0, slot1)
+	if not slot0.window then
+		slot0.window = TaskPtAwardWindow.New(slot0._tf, slot0)
 	end
 
-	arg_2_0.window:Show(arg_2_1)
-	arg_2_0:Show()
+	slot0.window:Show(slot1)
+	slot0:Show()
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	if arg_3_0.window then
-		arg_3_0.window:Dispose()
+function slot0.OnDestroy(slot0)
+	if slot0.window then
+		slot0.window:Dispose()
 
-		arg_3_0.window = nil
+		slot0.window = nil
 	end
 end
 
-return var_0_0
+return slot0

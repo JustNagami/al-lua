@@ -1,4 +1,17 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发全弹发射-A级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发全弹发射-A级I",
+	stack = 1,
+	id = 21011,
+	icon = 20000,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,18 +37,5 @@
 				countType = 21010
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发全弹发射-A级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发全弹发射-A级I",
-	stack = 1,
-	id = 21011,
-	icon = 20000,
-	last_effect = ""
+	}
 }

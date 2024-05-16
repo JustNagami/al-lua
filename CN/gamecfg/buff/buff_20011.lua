@@ -1,4 +1,17 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发全弹发射-法拉格特级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发全弹发射-法拉格特级I",
+	stack = 1,
+	id = 20011,
+	icon = 20000,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,18 +37,5 @@
 				countType = 20010
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发全弹发射-法拉格特级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发全弹发射-法拉格特级I",
-	stack = 1,
-	id = 20011,
-	icon = 20000,
-	last_effect = ""
+	}
 }

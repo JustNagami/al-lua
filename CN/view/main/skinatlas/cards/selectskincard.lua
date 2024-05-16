@@ -1,22 +1,19 @@
-﻿local var_0_0 = class("SelectSkinCard", import(".SkinAtlasCard"))
+slot0 = class("SelectSkinCard", import(".SkinAtlasCard"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.ownTr = arg_1_0._tf:Find("own")
-	arg_1_0.timeLimitTr = arg_1_0._tf:Find("timelimit")
+	slot0.ownTr = slot0._tf:Find("own")
+	slot0.timeLimitTr = slot0._tf:Find("timelimit")
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-	var_0_0.super.Update(arg_2_0, arg_2_1, arg_2_2)
-
-	local var_2_0 = isActive(arg_2_0.usingTr) or isActive(arg_2_0.unavailableTr)
-
-	setAnchoredPosition(arg_2_0.timeLimitTr, {
-		y = var_2_0 and -40 or 0
+function slot0.Update(slot0, slot1, slot2, slot3, slot4)
+	uv0.super.Update(slot0, slot1, slot2)
+	setAnchoredPosition(slot0.timeLimitTr, {
+		y = (isActive(slot0.usingTr) or isActive(slot0.unavailableTr)) and -40 or 0
 	})
-	setActive(arg_2_0.timeLimitTr, arg_2_3)
-	setActive(arg_2_0.ownTr, arg_2_4)
+	setActive(slot0.timeLimitTr, slot3)
+	setActive(slot0.ownTr, slot4)
 end
 
-return var_0_0
+return slot0

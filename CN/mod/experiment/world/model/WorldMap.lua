@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WorldMap", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WorldMap", import("...BaseEntity"))
+slot0.Fields = {
 	config = "table",
 	cells = "table",
 	findex = "number",
@@ -26,749 +25,664 @@ var_0_0.Fields = {
 	active = "boolean",
 	right = "number"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdateAttachmentExist = "OnUpdateAttachmentExist"
 }
-var_0_0.EventUpdateActive = "WorldMap.EventUpdateActive"
-var_0_0.EventUpdateFIndex = "WorldMap.EventUpdateFIndex"
-var_0_0.EventUpdateMapBuff = "WorldMap.EventUpdateMapBuff"
-var_0_0.EventUpdateFleetFOV = "WorldMap.EventUpdateFleetFOV"
-var_0_0.EventUpdateMoveSpeed = "WorldMap.EventUpdateMoveSpeed"
+slot0.EventUpdateActive = "WorldMap.EventUpdateActive"
+slot0.EventUpdateFIndex = "WorldMap.EventUpdateFIndex"
+slot0.EventUpdateMapBuff = "WorldMap.EventUpdateMapBuff"
+slot0.EventUpdateFleetFOV = "WorldMap.EventUpdateFleetFOV"
+slot0.EventUpdateMoveSpeed = "WorldMap.EventUpdateMoveSpeed"
 
-function var_0_0.DebugPrint(arg_1_0)
-	return string.format("地图 [%s] [id: %s] [gid: %s] [危险度: %s] [是否压制：%s]", arg_1_0.config.name, arg_1_0.id, tostring(arg_1_0.gid), arg_1_0:GetDanger(), arg_1_0.isPressing)
+function slot0.DebugPrint(slot0)
+	return string.format("地图 [%s] [id: %s] [gid: %s] [危险度: %s] [是否压制：%s]", slot0.config.name, slot0.id, tostring(slot0.gid), slot0:GetDanger(), slot0.isPressing)
 end
 
-function var_0_0.Build(arg_2_0)
-	arg_2_0.cells = {}
-	arg_2_0.ports = {}
-	arg_2_0.phaseDisplayList = {}
+function slot0.Build(slot0)
+	slot0.cells = {}
+	slot0.ports = {}
+	slot0.phaseDisplayList = {}
 end
 
-function var_0_0.Dispose(arg_3_0)
-	arg_3_0:UnbindFleets()
-	arg_3_0:DisposeTheme()
-	arg_3_0:DisposeGrid()
-	arg_3_0:DisposePort()
-	arg_3_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:UnbindFleets()
+	slot0:DisposeTheme()
+	slot0:DisposeGrid()
+	slot0:DisposePort()
+	slot0:Clear()
 end
 
-function var_0_0.Setup(arg_4_0, arg_4_1)
-	arg_4_0.id = arg_4_1
+function slot0.Setup(slot0, slot1)
+	slot0.id = slot1
 
-	assert(pg.world_chapter_random[arg_4_0.id], "world_chapter_random not exist: " .. tostring(arg_4_0.id))
+	assert(pg.world_chapter_random[slot0.id], "world_chapter_random not exist: " .. tostring(slot0.id))
 
-	arg_4_0.config = setmetatable({}, {
-		__index = function(arg_5_0, arg_5_1)
-			return arg_4_0:GetConfig(arg_5_1)
+	slot0.config = setmetatable({}, {
+		__index = function (slot0, slot1)
+			return uv0:GetConfig(slot1)
 		end
 	})
 end
 
-function var_0_0.GetName(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1 and World.ReplacementMapType(arg_6_1, arg_6_0)
-
-	if var_6_0 == "sairen_chapter" or var_6_0 == "teasure_chapter" then
-		return arg_6_1:GetBaseMap():GetName() .. "-" .. arg_6_0.config.name
+function slot0.GetName(slot0, slot1)
+	if (slot1 and World.ReplacementMapType(slot1, slot0)) == "sairen_chapter" or slot2 == "teasure_chapter" then
+		return slot1:GetBaseMap():GetName() .. "-" .. slot0.config.name
 	else
-		return arg_6_0.config.name
+		return slot0.config.name
 	end
 end
 
-function var_0_0.GetConfig(arg_7_0, arg_7_1)
-	local var_7_0 = pg.world_chapter_random[arg_7_0.id]
-	local var_7_1 = pg.world_chapter_template[arg_7_0.gid]
-	local var_7_2 = var_7_0 and var_7_0[arg_7_1] or var_7_1 and var_7_1[arg_7_1] or nil
+function slot0.GetConfig(slot0, slot1)
+	slot3 = pg.world_chapter_template[slot0.gid]
+	slot4 = pg.world_chapter_random[slot0.id] and slot2[slot1] or slot3 and slot3[slot1] or nil
 
-	assert(var_7_2 ~= nil, "can not find " .. arg_7_1 .. " in WorldMap " .. arg_7_0.id)
+	assert(slot4 ~= nil, "can not find " .. slot1 .. " in WorldMap " .. slot0.id)
 
-	return var_7_2
+	return slot4
 end
 
-var_0_0.FactionSelf = 0
-var_0_0.FactionEnemy = 1
+slot0.FactionSelf = 0
+slot0.FactionEnemy = 1
 
-function var_0_0.UpdateGridId(arg_8_0, arg_8_1)
-	arg_8_0.gid = arg_8_1
+function slot0.UpdateGridId(slot0, slot1)
+	slot0.gid = slot1
+	slot6 = slot0.gid
+	slot5 = tostring(slot6)
 
-	assert(pg.world_chapter_template[arg_8_0.gid], "world_chapter_template not exist: " .. tostring(arg_8_0.gid))
-	arg_8_0:DisposeTheme()
-	arg_8_0:DisposeGrid()
-	arg_8_0:DisposePort()
+	assert(pg.world_chapter_template[slot0.gid], "world_chapter_template not exist: " .. slot5)
+	slot0:DisposeTheme()
+	slot0:DisposeGrid()
+	slot0:DisposePort()
 
-	arg_8_0.factionBuffs = {
-		[var_0_0.FactionSelf] = {},
-		[var_0_0.FactionEnemy] = {}
+	slot0.factionBuffs = {
+		[uv0.FactionSelf] = {},
+		[uv0.FactionEnemy] = {}
 	}
 
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.config.world_chapter_buff) do
-		local var_8_0, var_8_1, var_8_2 = unpack(iter_8_1)
+	for slot5, slot6 in ipairs(slot0.config.world_chapter_buff) do
+		slot7, slot8, slot9 = unpack(slot6)
 
-		arg_8_0:AddBuff(var_8_0, var_8_1, var_8_2)
+		slot0:AddBuff(slot7, slot8, slot9)
 	end
 
-	arg_8_0:SetupTheme()
-	arg_8_0:SetupGrid()
-	arg_8_0:SetupPort()
+	slot0:SetupTheme()
+	slot0:SetupGrid()
+	slot0:SetupPort()
 end
 
-function var_0_0.SetupTheme(arg_9_0)
-	local var_9_0 = WPool:Get(WorldMapTheme)
+function slot0.SetupTheme(slot0)
+	slot1 = WPool:Get(WorldMapTheme)
 
-	var_9_0:Setup(arg_9_0.config.theme)
+	slot1:Setup(slot0.config.theme)
 
-	arg_9_0.theme = var_9_0
+	slot0.theme = slot1
 end
 
-function var_0_0.DisposeTheme(arg_10_0)
-	if arg_10_0.theme then
-		WPool:Return(arg_10_0.theme)
+function slot0.DisposeTheme(slot0)
+	if slot0.theme then
+		WPool:Return(slot0.theme)
 
-		arg_10_0.theme = nil
+		slot0.theme = nil
 	end
 end
 
-function var_0_0.SetupGrid(arg_11_0, arg_11_1)
-	_.each(arg_11_0.config.grids, function(arg_12_0)
-		local var_12_0 = WPool:Get(WorldMapCell)
+function slot0.SetupGrid(slot0, slot1)
+	_.each(slot0.config.grids, function (slot0)
+		WPool:Get(WorldMapCell):Setup(slot0)
 
-		var_12_0:Setup(arg_12_0)
-
-		if arg_11_0:AlwaysInFOV() then
-			var_12_0.infov = bit.bor(var_12_0.infov, WorldConst.FOVMapSight)
+		if uv0:AlwaysInFOV() then
+			slot1.infov = bit.bor(slot1.infov, WorldConst.FOVMapSight)
 		end
 
-		local var_12_1 = WorldMapCell.GetName(var_12_0.row, var_12_0.column)
+		uv0.cells[WorldMapCell.GetName(slot1.row, slot1.column)] = slot1
 
-		arg_11_0.cells[var_12_1] = var_12_0
-
-		if not arg_11_1 then
-			var_12_0:AddListener(WorldMapCell.EventAddAttachment, arg_11_0.onUpdateAttachmentExist)
-			var_12_0:AddListener(WorldMapCell.EventRemoveAttachment, arg_11_0.onUpdateAttachmentExist)
+		if not uv1 then
+			slot1:AddListener(WorldMapCell.EventAddAttachment, uv0.onUpdateAttachmentExist)
+			slot1:AddListener(WorldMapCell.EventRemoveAttachment, uv0.onUpdateAttachmentExist)
 		end
 	end)
 
-	arg_11_0.left, arg_11_0.right = 999999, 0
-	arg_11_0.top, arg_11_0.bottom = 999999, 0
+	slot0.right = 0
+	slot0.left = 999999
+	slot0.bottom = 0
+	slot0.top = 999999
 
-	for iter_11_0 = 0, WorldConst.MaxRow do
-		local var_11_0
-		local var_11_1
-
-		for iter_11_1 = 0, WorldConst.MaxColumn do
-			local var_11_2 = arg_11_0:GetCell(iter_11_0, iter_11_1)
-
-			if var_11_2 then
-				if not var_11_0 then
-					var_11_0 = iter_11_1
-					var_11_2.dir = bit.bor(var_11_2.dir, bit.lshift(1, WorldConst.DirLeft))
+	for slot5 = 0, WorldConst.MaxRow do
+		for slot11 = 0, WorldConst.MaxColumn do
+			if slot0:GetCell(slot5, slot11) then
+				if not nil then
+					slot6 = slot11
+					slot12.dir = bit.bor(slot12.dir, bit.lshift(1, WorldConst.DirLeft))
 				end
 
-				var_11_1 = iter_11_1
+				slot7 = slot11
 			end
 		end
 
-		if var_11_1 then
-			local var_11_3 = arg_11_0:GetCell(iter_11_0, var_11_1)
-
-			var_11_3.dir = bit.bor(var_11_3.dir, bit.lshift(1, WorldConst.DirRight))
+		if slot7 then
+			slot8 = slot0:GetCell(slot5, slot7)
+			slot8.dir = bit.bor(slot8.dir, bit.lshift(1, WorldConst.DirRight))
 		end
 
-		if var_11_0 then
-			arg_11_0.left = math.min(arg_11_0.left, var_11_0)
+		if slot6 then
+			slot0.left = math.min(slot0.left, slot6)
 		end
 
-		if var_11_1 then
-			arg_11_0.right = math.max(arg_11_0.right, var_11_1)
+		if slot7 then
+			slot0.right = math.max(slot0.right, slot7)
 		end
 	end
 
-	for iter_11_2 = 0, WorldConst.MaxColumn do
-		local var_11_4
-		local var_11_5
-
-		for iter_11_3 = 0, WorldConst.MaxRow do
-			local var_11_6 = arg_11_0:GetCell(iter_11_3, iter_11_2)
-
-			if var_11_6 then
-				if not var_11_4 then
-					var_11_4 = iter_11_3
-					var_11_6.dir = bit.bor(var_11_6.dir, bit.lshift(1, WorldConst.DirUp))
+	for slot5 = 0, WorldConst.MaxColumn do
+		for slot11 = 0, WorldConst.MaxRow do
+			if slot0:GetCell(slot11, slot5) then
+				if not nil then
+					slot6 = slot11
+					slot12.dir = bit.bor(slot12.dir, bit.lshift(1, WorldConst.DirUp))
 				end
 
-				var_11_5 = iter_11_3
+				slot7 = slot11
 			end
 		end
 
-		if var_11_5 then
-			local var_11_7 = arg_11_0:GetCell(var_11_5, iter_11_2)
-
-			var_11_7.dir = bit.bor(var_11_7.dir, bit.lshift(1, WorldConst.DirDown))
+		if slot7 then
+			slot8 = slot0:GetCell(slot7, slot5)
+			slot8.dir = bit.bor(slot8.dir, bit.lshift(1, WorldConst.DirDown))
 		end
 
-		if var_11_4 then
-			arg_11_0.top = math.min(arg_11_0.top, var_11_4)
+		if slot6 then
+			slot0.top = math.min(slot0.top, slot6)
 		end
 
-		if var_11_5 then
-			arg_11_0.bottom = math.max(arg_11_0.bottom, var_11_5)
+		if slot7 then
+			slot0.bottom = math.max(slot0.bottom, slot7)
 		end
 	end
 end
 
-function var_0_0.DisposeGrid(arg_13_0, arg_13_1)
-	if not arg_13_1 then
-		for iter_13_0, iter_13_1 in pairs(arg_13_0.cells) do
-			iter_13_1:RemoveListener(WorldMapCell.EventAddAttachment, arg_13_0.onUpdateAttachmentExist)
-			iter_13_1:RemoveListener(WorldMapCell.EventRemoveAttachment, arg_13_0.onUpdateAttachmentExist)
+function slot0.DisposeGrid(slot0, slot1)
+	if not slot1 then
+		for slot5, slot6 in pairs(slot0.cells) do
+			slot6:RemoveListener(WorldMapCell.EventAddAttachment, slot0.onUpdateAttachmentExist)
+			slot6:RemoveListener(WorldMapCell.EventRemoveAttachment, slot0.onUpdateAttachmentExist)
 		end
 	end
 
-	WPool:ReturnMap(arg_13_0.cells)
+	WPool:ReturnMap(slot0.cells)
 
-	arg_13_0.cells = {}
-	arg_13_0.typeAttachments = {}
-	arg_13_0.left = nil
-	arg_13_0.top = nil
-	arg_13_0.right = nil
-	arg_13_0.bottom = nil
+	slot0.cells = {}
+	slot0.typeAttachments = {}
+	slot0.left = nil
+	slot0.top = nil
+	slot0.right = nil
+	slot0.bottom = nil
 end
 
-function var_0_0.SetupPort(arg_14_0)
-	if #arg_14_0.config.port_id > 0 then
-		local var_14_0 = WPool:Get(WorldMapPort)
+function slot0.SetupPort(slot0)
+	if #slot0.config.port_id > 0 then
+		WPool:Get(WorldMapPort):Setup(slot0.config.port_id[1])
 
-		var_14_0:Setup(arg_14_0.config.port_id[1])
+		slot2, slot3 = unpack(slot0.config.port_id[2])
 
-		local var_14_1, var_14_2 = unpack(arg_14_0.config.port_id[2])
-
-		for iter_14_0 = var_14_1 - 1, var_14_1 + 1 do
-			for iter_14_1 = var_14_2 - 1, var_14_2 + 1 do
-				if iter_14_0 ~= var_14_1 or iter_14_1 ~= var_14_2 then
-					local var_14_3 = arg_14_0:GetCell(iter_14_0, iter_14_1)
-
-					if var_14_3 then
-						var_14_3:AddAttachment(WorldMapAttachment.MakeFakePort(iter_14_0, iter_14_1, var_14_0.id))
-					end
+		for slot7 = slot2 - 1, slot2 + 1 do
+			for slot11 = slot3 - 1, slot3 + 1 do
+				if (slot7 ~= slot2 or slot11 ~= slot3) and slot0:GetCell(slot7, slot11) then
+					slot12:AddAttachment(WorldMapAttachment.MakeFakePort(slot7, slot11, slot1.id))
 				end
 			end
 		end
 
-		table.insert(arg_14_0.ports, var_14_0)
+		table.insert(slot0.ports, slot1)
 	end
 end
 
-function var_0_0.DisposePort(arg_15_0)
-	WPool:ReturnArray(arg_15_0.ports)
+function slot0.DisposePort(slot0)
+	WPool:ReturnArray(slot0.ports)
 
-	arg_15_0.ports = {}
+	slot0.ports = {}
 end
 
-function var_0_0.IsValid(arg_16_0)
-	return arg_16_0.valid
+function slot0.IsValid(slot0)
+	return slot0.valid
 end
 
-function var_0_0.SetValid(arg_17_0, arg_17_1)
-	arg_17_0.valid = arg_17_1
+function slot0.SetValid(slot0, slot1)
+	slot0.valid = slot1
 
-	if arg_17_1 and arg_17_0.fleets then
-		for iter_17_0, iter_17_1 in ipairs(arg_17_0:GetNormalFleets()) do
-			arg_17_0.centerCellFOV = {
-				row = iter_17_1.row,
-				column = iter_17_1.column
+	if slot1 and slot0.fleets then
+		for slot5, slot6 in ipairs(slot0:GetNormalFleets()) do
+			slot0.centerCellFOV = {
+				row = slot6.row,
+				column = slot6.column
 			}
 
-			if arg_17_0:GetFleetTerrain(iter_17_1) ~= WorldMapCell.TerrainFog then
-				WorldConst.RangeCheck(iter_17_1, arg_17_0:GetFOVRange(iter_17_1), function(arg_18_0, arg_18_1)
-					local var_18_0 = arg_17_0.cells[WorldMapCell.GetName(arg_18_0, arg_18_1)]
-
-					if var_18_0 then
-						var_18_0:ChangeInLight(true)
+			if slot0:GetFleetTerrain(slot6) ~= WorldMapCell.TerrainFog then
+				WorldConst.RangeCheck(slot6, slot0:GetFOVRange(slot6), function (slot0, slot1)
+					if uv0.cells[WorldMapCell.GetName(slot0, slot1)] then
+						slot2:ChangeInLight(true)
 					end
 				end)
-			elseif arg_17_0.findex == iter_17_0 then
-				local var_17_0 = {}
+			elseif slot0.findex == slot5 then
+				slot12 = slot6
 
-				WorldConst.RangeCheck(iter_17_1, arg_17_0:GetFOVRange(iter_17_1), function(arg_19_0, arg_19_1)
-					local var_19_0 = WorldMapCell.GetName(arg_19_0, arg_19_1)
-
-					if arg_17_0.cells[var_19_0] then
-						var_17_0[var_19_0] = true
+				WorldConst.RangeCheck(slot6, slot0:GetFOVRange(slot12), function (slot0, slot1)
+					if uv0.cells[WorldMapCell.GetName(slot0, slot1)] then
+						uv1[slot2] = true
 					end
 				end)
 
-				local var_17_1 = arg_17_0:IsFleetTerrainSairenFog(iter_17_1)
-
-				for iter_17_2, iter_17_3 in pairs(arg_17_0.cells) do
-					iter_17_3:UpdateFog(true, var_17_0[iter_17_2], var_17_1)
+				for slot12, slot13 in pairs(slot0.cells) do
+					slot13:UpdateFog(true, ({})[slot12], slot0:IsFleetTerrainSairenFog(slot6))
 				end
 			end
 		end
 	end
 end
 
-function var_0_0.IsMapOpen(arg_20_0)
-	return nowWorld():GetProgress() >= arg_20_0:GetOpenProgress()
+function slot0.IsMapOpen(slot0)
+	return slot0:GetOpenProgress() <= nowWorld():GetProgress()
 end
 
-function var_0_0.GetOpenProgress(arg_21_0)
-	local var_21_0 = nowWorld():GetRealm()
-
-	return var_21_0 > 0 and arg_21_0.config.open_stage[var_21_0] or 9999
+function slot0.GetOpenProgress(slot0)
+	return nowWorld():GetRealm() > 0 and slot0.config.open_stage[slot1] or 9999
 end
 
-function var_0_0.RemoveAllCellDiscovered(arg_22_0)
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.cells) do
-		iter_22_1:UpdateDiscovered(false)
+function slot0.RemoveAllCellDiscovered(slot0)
+	for slot4, slot5 in pairs(slot0.cells) do
+		slot5:UpdateDiscovered(false)
 	end
 end
 
-function var_0_0.GetDanger(arg_23_0)
-	return arg_23_0.config.hazard_level
+function slot0.GetDanger(slot0)
+	return slot0.config.hazard_level
 end
 
-function var_0_0.BindFleets(arg_24_0, arg_24_1)
-	arg_24_0.fleets = arg_24_1
+function slot0.BindFleets(slot0, slot1)
+	slot0.fleets = slot1
 end
 
-function var_0_0.UnbindFleets(arg_25_0)
-	arg_25_0.fleets = nil
+function slot0.UnbindFleets(slot0)
+	slot0.fleets = nil
 end
 
-function var_0_0.GetFleets(arg_26_0)
-	return _.rest(arg_26_0.fleets, 1)
+function slot0.GetFleets(slot0)
+	return _.rest(slot0.fleets, 1)
 end
 
-function var_0_0.GetFleet(arg_27_0, arg_27_1)
-	return arg_27_1 and _.detect(arg_27_0.fleets, function(arg_28_0)
-		return arg_28_0.id == arg_27_1
-	end) or arg_27_0.fleets[arg_27_0.findex]
+function slot0.GetFleet(slot0, slot1)
+	return slot1 and _.detect(slot0.fleets, function (slot0)
+		return slot0.id == uv0
+	end) or slot0.fleets[slot0.findex]
 end
 
-function var_0_0.GetNormalFleets(arg_29_0)
-	return _.filter(arg_29_0.fleets, function(arg_30_0)
-		return arg_30_0:GetFleetType() == FleetType.Normal
+function slot0.GetNormalFleets(slot0)
+	return _.filter(slot0.fleets, function (slot0)
+		return slot0:GetFleetType() == FleetType.Normal
 	end)
 end
 
-function var_0_0.GetSubmarineFleet(arg_31_0)
-	return _.detect(arg_31_0.fleets, function(arg_32_0)
-		return arg_32_0:GetFleetType() == FleetType.Submarine
+function slot0.GetSubmarineFleet(slot0)
+	return _.detect(slot0.fleets, function (slot0)
+		return slot0:GetFleetType() == FleetType.Submarine
 	end)
 end
 
-function var_0_0.FindFleet(arg_33_0, arg_33_1, arg_33_2)
-	return _.detect(arg_33_0.fleets, function(arg_34_0)
-		return arg_34_0.row == arg_33_1 and arg_34_0.column == arg_33_2
+function slot0.FindFleet(slot0, slot1, slot2)
+	return _.detect(slot0.fleets, function (slot0)
+		return slot0.row == uv0 and slot0.column == uv1
 	end)
 end
 
-function var_0_0.CheckFleetMovable(arg_35_0, arg_35_1)
-	return arg_35_0:GetCell(arg_35_1.row, arg_35_1.column):CanLeave()
+function slot0.CheckFleetMovable(slot0, slot1)
+	return slot0:GetCell(slot1.row, slot1.column):CanLeave()
 end
 
-function var_0_0.GetFleetTerrain(arg_36_0, arg_36_1)
-	return arg_36_0:GetCell(arg_36_1.row, arg_36_1.column):GetTerrain()
+function slot0.GetFleetTerrain(slot0, slot1)
+	return slot0:GetCell(slot1.row, slot1.column):GetTerrain()
 end
 
-function var_0_0.IsFleetTerrainSairenFog(arg_37_0, arg_37_1)
-	return arg_37_0:GetCell(arg_37_1.row, arg_37_1.column):IsTerrainSairenFog()
+function slot0.IsFleetTerrainSairenFog(slot0, slot1)
+	return slot0:GetCell(slot1.row, slot1.column):IsTerrainSairenFog()
 end
 
-function var_0_0.RemoveFleetsCarries(arg_38_0, arg_38_1)
-	arg_38_1 = arg_38_1 or arg_38_0.fleets
-
-	_.each(arg_38_1, function(arg_39_0)
-		arg_39_0:RemoveAllCarries()
+function slot0.RemoveFleetsCarries(slot0, slot1)
+	_.each(slot1 or slot0.fleets, function (slot0)
+		slot0:RemoveAllCarries()
 	end)
 end
 
-function var_0_0.UpdateFleetIndex(arg_40_0, arg_40_1)
-	if arg_40_0.findex ~= arg_40_1 then
-		arg_40_0:CheckSelectFleetUpdateFog(function()
-			arg_40_0.findex = arg_40_1
+function slot0.UpdateFleetIndex(slot0, slot1)
+	if slot0.findex ~= slot1 then
+		slot0:CheckSelectFleetUpdateFog(function ()
+			uv0.findex = uv1
 		end)
-		arg_40_0:DispatchEvent(var_0_0.EventUpdateFIndex)
+		slot0:DispatchEvent(uv0.EventUpdateFIndex)
 	end
 end
 
-function var_0_0.UpdateActive(arg_42_0, arg_42_1)
-	local var_42_0 = nowWorld():GetAtlas()
+function slot0.UpdateActive(slot0, slot1)
+	slot2 = nowWorld():GetAtlas()
 
-	if arg_42_0.active ~= arg_42_1 then
-		arg_42_0.active = arg_42_1
+	if slot0.active ~= slot1 then
+		slot0.active = slot1
 
-		if arg_42_1 then
-			arg_42_0:SetValid(false)
-			var_42_0:SetActiveMap(arg_42_0)
+		if slot1 then
+			slot0:SetValid(false)
+			slot2:SetActiveMap(slot0)
 
-			arg_42_0.isCost = true
+			slot0.isCost = true
 
-			var_42_0:UpdateCostMap(arg_42_0.id, arg_42_0.isCost)
-		elseif arg_42_0:NeedClear() then
-			arg_42_0:RemoveAllCellDiscovered()
+			slot2:UpdateCostMap(slot0.id, slot0.isCost)
+		elseif slot0:NeedClear() then
+			slot0:RemoveAllCellDiscovered()
 
-			arg_42_0.clearFlag = false
-			arg_42_0.isCost = false
+			slot0.clearFlag = false
+			slot0.isCost = false
 
-			var_42_0:UpdateCostMap(arg_42_0.id, arg_42_0.isCost)
+			slot2:UpdateCostMap(slot0.id, slot0.isCost)
 		end
 
-		arg_42_0:DispatchEvent(var_0_0.EventUpdateActive)
+		slot0:DispatchEvent(uv0.EventUpdateActive)
 	end
 end
 
-function var_0_0.InPort(arg_43_0, arg_43_1, arg_43_2)
-	local var_43_0 = arg_43_0:GetPort()
-
-	if not var_43_0 or arg_43_2 and var_43_0.config.port_camp ~= arg_43_2 then
+function slot0.InPort(slot0, slot1, slot2)
+	if not slot0:GetPort() or slot2 and slot3.config.port_camp ~= slot2 then
 		return false
 	end
 
-	local var_43_1 = arg_43_0:GetFleet(arg_43_1)
-
-	if var_43_1:GetFleetType() == FleetType.Submarine then
-		return var_43_0.id
-	else
-		local var_43_2 = arg_43_0:GetCell(var_43_1.row, var_43_1.column):GetAliveAttachment()
-
-		if var_43_2 and var_43_2.type == WorldMapAttachment.TypePort then
-			return var_43_2.id
-		end
+	if slot0:GetFleet(slot1):GetFleetType() == FleetType.Submarine then
+		return slot3.id
+	elseif slot0:GetCell(slot4.row, slot4.column):GetAliveAttachment() and slot6.type == WorldMapAttachment.TypePort then
+		return slot6.id
 	end
 
 	return false
 end
 
-function var_0_0.canExit(arg_44_0)
-	return arg_44_0.gid and pg.world_chapter_template_reset[arg_44_0.gid] ~= nil
+function slot0.canExit(slot0)
+	return slot0.gid and pg.world_chapter_template_reset[slot0.gid] ~= nil
 end
 
-function var_0_0.CheckAttachmentTransport(arg_45_0)
-	local var_45_0 = WorldConst.GetTransportBlockEvent()
-	local var_45_1 = arg_45_0:FindAttachments(WorldMapAttachment.TypeEvent)
-
-	for iter_45_0, iter_45_1 in ipairs(var_45_1) do
-		if iter_45_1:IsAlive() and var_45_0[iter_45_1.id] then
+function slot0.CheckAttachmentTransport(slot0)
+	for slot6, slot7 in ipairs(slot0:FindAttachments(WorldMapAttachment.TypeEvent)) do
+		if slot7:IsAlive() and WorldConst.GetTransportBlockEvent()[slot7.id] then
 			return "block"
 		end
 	end
 
-	local var_45_2 = WorldConst.GetTransportStoryEvent()
-
-	for iter_45_2, iter_45_3 in ipairs(var_45_1) do
-		if iter_45_3:IsAlive() and var_45_2[iter_45_3.id] then
+	for slot7, slot8 in ipairs(slot2) do
+		if slot8:IsAlive() and WorldConst.GetTransportStoryEvent()[slot8.id] then
 			return "story"
 		end
 	end
 end
 
-function var_0_0.GetPort(arg_46_0, arg_46_1)
-	return arg_46_1 and _.detect(arg_46_0.ports, function(arg_47_0)
-		return arg_47_0.id == arg_46_1
-	end) or arg_46_0.ports[1]
+function slot0.GetPort(slot0, slot1)
+	return slot1 and _.detect(slot0.ports, function (slot0)
+		return slot0.id == uv0
+	end) or slot0.ports[1]
 end
 
-function var_0_0.GetCell(arg_48_0, arg_48_1, arg_48_2)
-	local var_48_0 = WorldMapCell.GetName(arg_48_1, arg_48_2)
-
-	return arg_48_0.cells[var_48_0]
+function slot0.GetCell(slot0, slot1, slot2)
+	return slot0.cells[WorldMapCell.GetName(slot1, slot2)]
 end
 
-function var_0_0.CalcTransportPos(arg_49_0, arg_49_1, arg_49_2)
-	local var_49_0 = calcPositionAngle(arg_49_1.config.area_pos[1] - arg_49_2.config.area_pos[1], arg_49_1.config.area_pos[2] - arg_49_2.config.area_pos[2])
-	local var_49_1 = false
+function slot0.CalcTransportPos(slot0, slot1, slot2)
+	slot3 = calcPositionAngle(slot1.config.area_pos[1] - slot2.config.area_pos[1], slot1.config.area_pos[2] - slot2.config.area_pos[2])
+	slot4 = false
 
-	if not arg_49_0.gid then
-		var_49_1 = true
-		arg_49_0.gid = arg_49_0.config.template_id[1][1]
+	if not slot0.gid then
+		slot0.gid = slot0.config.template_id[1][1]
 
-		arg_49_0:SetupGrid(var_49_1)
+		slot0:SetupGrid(true)
 	end
 
-	local var_49_2 = {
-		row = (arg_49_0.top + arg_49_0.bottom) / 2,
-		column = (arg_49_0.left + arg_49_0.right) / 2
+	slot5 = {
+		row = (slot0.top + slot0.bottom) / 2,
+		column = (slot0.left + slot0.right) / 2
 	}
-	local var_49_3
-	local var_49_4 = 4294967295
-	local var_49_5
+	slot6 = nil
+	slot8 = nil
 
-	for iter_49_0 = arg_49_0.left + 1, arg_49_0.right - 1 do
-		local var_49_6 = math.abs(calcPositionAngle(iter_49_0 - var_49_2.column, var_49_2.row - arg_49_0.top) - var_49_0)
-
-		if var_49_6 < var_49_4 then
-			var_49_3 = {
-				row = arg_49_0.top,
-				column = iter_49_0
+	for slot12 = slot0.left + 1, slot0.right - 1 do
+		if math.abs(calcPositionAngle(slot12 - slot5.column, slot5.row - slot0.top) - slot3) < 4294967295.0 then
+			slot6 = {
+				row = slot0.top,
+				column = slot12
 			}
-			var_49_4 = var_49_6
+			slot7 = slot8
 		end
 
-		local var_49_7 = math.abs(calcPositionAngle(iter_49_0 - var_49_2.column, var_49_2.row - arg_49_0.bottom) - var_49_0)
-
-		if var_49_7 < var_49_4 then
-			var_49_3 = {
-				row = arg_49_0.bottom,
-				column = iter_49_0
+		if math.abs(calcPositionAngle(slot12 - slot5.column, slot5.row - slot0.bottom) - slot3) < slot7 then
+			slot6 = {
+				row = slot0.bottom,
+				column = slot12
 			}
-			var_49_4 = var_49_7
+			slot7 = slot8
 		end
 	end
 
-	for iter_49_1 = arg_49_0.top + 1, arg_49_0.bottom - 1 do
-		local var_49_8 = math.abs(calcPositionAngle(arg_49_0.left - var_49_2.column, var_49_2.row - iter_49_1) - var_49_0)
-
-		if var_49_8 < var_49_4 then
-			var_49_3 = {
-				row = iter_49_1,
-				column = arg_49_0.left
+	for slot12 = slot0.top + 1, slot0.bottom - 1 do
+		if math.abs(calcPositionAngle(slot0.left - slot5.column, slot5.row - slot12) - slot3) < slot7 then
+			slot6 = {
+				row = slot12,
+				column = slot0.left
 			}
-			var_49_4 = var_49_8
+			slot7 = slot8
 		end
 
-		local var_49_9 = math.abs(calcPositionAngle(arg_49_0.right - var_49_2.column, var_49_2.row - iter_49_1) - var_49_0)
-
-		if var_49_9 < var_49_4 then
-			var_49_3 = {
-				row = iter_49_1,
-				column = arg_49_0.right
+		if math.abs(calcPositionAngle(slot0.right - slot5.column, slot5.row - slot12) - slot3) < slot7 then
+			slot6 = {
+				row = slot12,
+				column = slot0.right
 			}
-			var_49_4 = var_49_9
+			slot7 = slot8
 		end
 	end
 
-	if var_49_1 then
-		arg_49_0:DisposeGrid(var_49_1)
+	if slot4 then
+		slot0:DisposeGrid(slot4)
 
-		arg_49_0.gid = nil
+		slot0.gid = nil
 	end
 
-	return var_49_3
+	return slot6
 end
 
-function var_0_0.AnyFleetInEdge(arg_50_0)
-	return arg_50_0.active and _.any(arg_50_0:GetNormalFleets(), function(arg_51_0)
-		return arg_51_0.row == arg_50_0.top or arg_51_0.row == arg_50_0.bottom or arg_51_0.column == arg_50_0.left or arg_51_0.column == arg_50_0.right
+function slot0.AnyFleetInEdge(slot0)
+	return slot0.active and _.any(slot0:GetNormalFleets(), function (slot0)
+		return slot0.row == uv0.top or slot0.row == uv0.bottom or slot0.column == uv0.left or slot0.column == uv0.right
 	end)
 end
 
-function var_0_0.CheckInteractive(arg_52_0, arg_52_1)
-	local var_52_0 = arg_52_0:FindAttachments(WorldMapAttachment.TypeEvent)
-
-	for iter_52_0, iter_52_1 in ipairs(var_52_0) do
-		if iter_52_1:RemainOpEffect() then
-			return iter_52_1
+function slot0.CheckInteractive(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0:FindAttachments(WorldMapAttachment.TypeEvent)) do
+		if slot7:RemainOpEffect() then
+			return slot7
 		end
 	end
 
-	for iter_52_2, iter_52_3 in ipairs(var_52_0) do
-		if iter_52_3:IsAlive() then
-			local var_52_1 = iter_52_3:GetEventEffect()
-
-			if var_52_1 and var_52_1.autoactivate > 0 then
-				return iter_52_3
-			end
+	for slot6, slot7 in ipairs(slot2) do
+		if slot7:IsAlive() and slot7:GetEventEffect() and slot8.autoactivate > 0 then
+			return slot7
 		end
 	end
 
-	arg_52_1 = arg_52_1 or arg_52_0:GetFleet()
+	slot1 = slot1 or slot0:GetFleet()
 
-	local var_52_2 = arg_52_0:GetCell(arg_52_1.row, arg_52_1.column)
-
-	if var_52_2.discovered then
-		local var_52_3 = var_52_2:GetAliveAttachments()
-
-		for iter_52_4, iter_52_5 in ipairs(var_52_3) do
-			if WorldMapAttachment.IsInteractiveType(iter_52_5.type) and not iter_52_5:IsTriggered() then
-				if iter_52_5:IsSign() then
+	if slot0:GetCell(slot1.row, slot1.column).discovered then
+		for slot8, slot9 in ipairs(slot3:GetAliveAttachments()) do
+			if WorldMapAttachment.IsInteractiveType(slot9.type) and not slot9:IsTriggered() then
+				if slot9:IsSign() then
 					return nil
-				elseif iter_52_5.type == WorldMapAttachment.TypeEvent then
-					local var_52_4 = iter_52_5:GetEventEffect()
-
-					if var_52_4 and (var_52_4.effective_num <= 1 or arg_52_0:CountEventEffectKeys(var_52_4) >= var_52_4.effective_num) then
-						return iter_52_5
+				elseif slot9.type == WorldMapAttachment.TypeEvent then
+					if slot9:GetEventEffect() and (slot10.effective_num <= 1 or slot10.effective_num <= slot0:CountEventEffectKeys(slot10)) then
+						return slot9
 					end
 				else
-					return iter_52_5
+					return slot9
 				end
 			end
 		end
 	end
 end
 
-function var_0_0.CheckDiscover(arg_53_0)
-	local var_53_0 = {}
-	local var_53_1 = arg_53_0.theme
+function slot0.CheckDiscover(slot0)
+	slot1 = {}
+	slot2 = slot0.theme
 
-	for iter_53_0, iter_53_1 in pairs(arg_53_0.cells) do
-		if not iter_53_1.discovered and iter_53_1:GetInFOV() then
-			table.insert(var_53_0, {
-				row = iter_53_1.row,
-				column = iter_53_1.column
+	for slot6, slot7 in pairs(slot0.cells) do
+		if not slot7.discovered and slot7:GetInFOV() then
+			table.insert(slot1, {
+				row = slot7.row,
+				column = slot7.column
 			})
 		end
 	end
 
-	return var_53_0
+	return slot1
 end
 
-function var_0_0.CheckDisplay(arg_54_0, arg_54_1)
-	if arg_54_1.type == WorldMapAttachment.TypeTrap then
+function slot0.CheckDisplay(slot0, slot1)
+	if slot1.type == WorldMapAttachment.TypeTrap then
 		return true
 	end
 
-	return arg_54_0:GetCell(arg_54_1.row, arg_54_1.column):GetDisplayAttachment() == arg_54_1
+	return slot0:GetCell(slot1.row, slot1.column):GetDisplayAttachment() == slot1
 end
 
-function var_0_0.GetFOVRange(arg_55_0, arg_55_1, arg_55_2, arg_55_3)
-	arg_55_2 = arg_55_2 or arg_55_1.row
-	arg_55_3 = arg_55_3 or arg_55_1.column
-
-	local var_55_0 = arg_55_0:GetCell(arg_55_2, arg_55_3)
-
-	return var_55_0:GetTerrain() == WorldMapCell.TerrainFog and var_55_0.terrainStrong or arg_55_1:GetFOVRange()
+function slot0.GetFOVRange(slot0, slot1, slot2, slot3)
+	return slot0:GetCell(slot2 or slot1.row, slot3 or slot1.column):GetTerrain() == WorldMapCell.TerrainFog and slot4.terrainStrong or slot1:GetFOVRange()
 end
 
-function var_0_0.UpdateVisionFlag(arg_56_0, arg_56_1)
-	arg_56_0.visionFlag = arg_56_1
+function slot0.UpdateVisionFlag(slot0, slot1)
+	slot0.visionFlag = slot1
 
-	arg_56_0:OrderAROpenFOV(arg_56_0.visionFlag)
+	slot0:OrderAROpenFOV(slot0.visionFlag)
 end
 
-function var_0_0.UpdatePressingMark(arg_57_0, arg_57_1)
-	if tobool(arg_57_0.isPressing) ~= tobool(arg_57_1) then
-		arg_57_0.isPressing = arg_57_1
+function slot0.UpdatePressingMark(slot0, slot1)
+	if tobool(slot0.isPressing) ~= tobool(slot1) then
+		slot0.isPressing = slot1
 
-		nowWorld():GetTaskProxy():doUpdateTaskByMap(arg_57_0.id, arg_57_1)
+		nowWorld():GetTaskProxy():doUpdateTaskByMap(slot0.id, slot1)
 	end
 end
 
-function var_0_0.ExistAny(arg_58_0, arg_58_1, arg_58_2)
-	return arg_58_0:GetCell(arg_58_1, arg_58_2):GetAliveAttachment() or arg_58_0:ExistFleet(arg_58_1, arg_58_2)
+function slot0.ExistAny(slot0, slot1, slot2)
+	return slot0:GetCell(slot1, slot2):GetAliveAttachment() or slot0:ExistFleet(slot1, slot2)
 end
 
-function var_0_0.ExistFleet(arg_59_0, arg_59_1, arg_59_2)
-	return tobool(arg_59_0:FindFleet(arg_59_1, arg_59_2))
+function slot0.ExistFleet(slot0, slot1, slot2)
+	return tobool(slot0:FindFleet(slot1, slot2))
 end
 
-function var_0_0.CalcFleetSpeed(arg_60_0, arg_60_1)
-	local var_60_0 = arg_60_1:GetSpeed()
-
-	if arg_60_0:GetCell(arg_60_1.row, arg_60_1.column):GetTerrain() == WorldMapCell.TerrainFog then
-		var_60_0 = math.min(var_60_0, 1)
+function slot0.CalcFleetSpeed(slot0, slot1)
+	if slot0:GetCell(slot1.row, slot1.column):GetTerrain() == WorldMapCell.TerrainFog then
+		slot2 = math.min(slot1:GetSpeed(), 1)
 	end
 
-	return var_60_0
+	return slot2
 end
 
-function var_0_0.FindPath(arg_61_0, arg_61_1, arg_61_2, arg_61_3)
-	local var_61_0 = var_0_0.pathFinder
-
-	if not var_61_0 then
-		var_61_0 = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
-		var_0_0.pathFinder = var_61_0
+function slot0.FindPath(slot0, slot1, slot2, slot3)
+	if not uv0.pathFinder then
+		uv0.pathFinder = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
 	end
 
-	local var_61_1 = {}
+	slot5 = {}
 
-	for iter_61_0 = 0, WorldConst.MaxRow - 1 do
-		if not var_61_1[iter_61_0] then
-			var_61_1[iter_61_0] = {}
+	for slot9 = 0, WorldConst.MaxRow - 1 do
+		if not slot5[slot9] then
+			slot5[slot9] = {}
 		end
 
-		for iter_61_1 = 0, WorldConst.MaxColumn - 1 do
-			local var_61_2 = PathFinding.PrioForbidden
+		for slot13 = 0, WorldConst.MaxColumn - 1 do
+			slot14 = PathFinding.PrioForbidden
 
-			if arg_61_0:IsWalkable(iter_61_0, iter_61_1) and (not arg_61_3 or arg_61_0:GetCell(iter_61_0, iter_61_1):GetInFOV()) then
-				var_61_2 = PathFinding.PrioNormal
+			if slot0:IsWalkable(slot9, slot13) and (not slot3 or slot0:GetCell(slot9, slot13):GetInFOV()) then
+				slot14 = PathFinding.PrioNormal
 
-				if iter_61_0 == arg_61_2.row and iter_61_1 == arg_61_2.column then
-					if not arg_61_0:IsStayPoint(iter_61_0, iter_61_1) then
-						var_61_2 = PathFinding.PrioObstacle
+				if slot9 == slot2.row and slot13 == slot2.column then
+					if not slot0:IsStayPoint(slot9, slot13) then
+						slot14 = PathFinding.PrioObstacle
 					end
-				elseif arg_61_0:IsObstacle(iter_61_0, iter_61_1) then
-					var_61_2 = PathFinding.PrioObstacle
+				elseif slot0:IsObstacle(slot9, slot13) then
+					slot14 = PathFinding.PrioObstacle
 				end
 			end
 
-			var_61_1[iter_61_0][iter_61_1] = var_61_2
+			slot5[slot9][slot13] = slot14
 		end
 	end
 
-	var_61_0.cells = var_61_1
+	slot4.cells = slot5
 
-	return var_61_0:Find(arg_61_1, arg_61_2)
+	return slot4:Find(slot1, slot2)
 end
 
-function var_0_0.FindAIPath(arg_62_0, arg_62_1, arg_62_2)
-	local var_62_0 = var_0_0.pathFinder
-
-	if not var_62_0 then
-		var_62_0 = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
-		var_0_0.pathFinder = var_62_0
+function slot0.FindAIPath(slot0, slot1, slot2)
+	if not uv0.pathFinder then
+		uv0.pathFinder = PathFinding.New({}, WorldConst.MaxRow, WorldConst.MaxColumn)
 	end
 
-	local var_62_1 = {}
+	slot4 = {}
 
-	for iter_62_0 = 0, WorldConst.MaxRow - 1 do
-		if not var_62_1[iter_62_0] then
-			var_62_1[iter_62_0] = {}
+	for slot8 = 0, WorldConst.MaxRow - 1 do
+		if not slot4[slot8] then
+			slot4[slot8] = {}
 		end
 
-		for iter_62_1 = 0, WorldConst.MaxColumn - 1 do
-			local var_62_2 = PathFinding.PrioForbidden
+		for slot12 = 0, WorldConst.MaxColumn - 1 do
+			slot13 = PathFinding.PrioForbidden
 
-			if arg_62_0:IsWalkable(iter_62_0, iter_62_1) then
-				var_62_2 = PathFinding.PrioNormal
+			if slot0:IsWalkable(slot8, slot12) then
+				slot13 = PathFinding.PrioNormal
 
-				if (iter_62_0 ~= arg_62_2.row or iter_62_1 ~= arg_62_2.column) and arg_62_0:ExistFleet(iter_62_0, iter_62_1) then
-					var_62_2 = PathFinding.PrioObstacle
+				if (slot8 ~= slot2.row or slot12 ~= slot2.column) and slot0:ExistFleet(slot8, slot12) then
+					slot13 = PathFinding.PrioObstacle
 				end
 			end
 
-			var_62_1[iter_62_0][iter_62_1] = var_62_2
+			slot4[slot8][slot12] = slot13
 		end
 	end
 
-	var_62_0.cells = var_62_1
+	slot3.cells = slot4
 
-	return var_62_0:Find(arg_62_1, arg_62_2)
+	return slot3:Find(slot1, slot2)
 end
 
-function var_0_0.GetMoveRange(arg_63_0, arg_63_1)
-	local var_63_0 = arg_63_1.row
-	local var_63_1 = arg_63_1.column
-	local var_63_2 = arg_63_0:CalcFleetSpeed(arg_63_1)
-	local var_63_3 = {}
+function slot0.GetMoveRange(slot0, slot1)
+	slot2 = slot1.row
+	slot3 = slot1.column
+	slot4 = slot0:CalcFleetSpeed(slot1)
+	slot5 = {}
 
-	for iter_63_0 = 0, WorldConst.MaxRow - 1 do
-		if not var_63_3[iter_63_0] then
-			var_63_3[iter_63_0] = {}
+	for slot9 = 0, WorldConst.MaxRow - 1 do
+		if not slot5[slot9] then
+			slot5[slot9] = {}
 		end
 
-		for iter_63_1 = 0, WorldConst.MaxColumn - 1 do
-			var_63_3[iter_63_0][iter_63_1] = arg_63_0:IsWalkable(iter_63_0, iter_63_1)
+		for slot13 = 0, WorldConst.MaxColumn - 1 do
+			slot5[slot9][slot13] = slot0:IsWalkable(slot9, slot13)
 		end
 	end
 
-	local var_63_4 = {}
-	local var_63_5 = {
+	slot6 = {}
+	slot7 = {
 		{
 			step = 0,
-			row = var_63_0,
-			column = var_63_1
+			row = slot2,
+			column = slot3
 		}
 	}
+	slot5[slot2][slot3] = false
 
-	var_63_3[var_63_0][var_63_1] = false
-
-	while #var_63_5 > 0 do
-		local var_63_6 = table.remove(var_63_5, 1)
-
-		table.insert(var_63_4, var_63_6)
-
-		local var_63_7 = {
+	while #slot7 > 0 do
+		table.insert(slot6, table.remove(slot7, 1))
+		_.each({
 			{
 				row = 1,
 				column = 0
@@ -785,65 +699,58 @@ function var_0_0.GetMoveRange(arg_63_0, arg_63_1)
 				row = 0,
 				column = -1
 			}
-		}
+		}, function (slot0)
+			slot0.row = uv0.row + slot0.row
+			slot0.column = uv0.column + slot0.column
+			slot0.step = uv0.step + 1
 
-		_.each(var_63_7, function(arg_64_0)
-			arg_64_0.row = var_63_6.row + arg_64_0.row
-			arg_64_0.column = var_63_6.column + arg_64_0.column
-			arg_64_0.step = var_63_6.step + 1
+			if slot0.row >= 0 and slot0.row < WorldConst.MaxRow and slot0.column >= 0 and slot0.column < WorldConst.MaxColumn and slot0.step <= uv1 and uv2[slot0.row][slot0.column] then
+				uv2[slot0.row][slot0.column] = false
 
-			if arg_64_0.row >= 0 and arg_64_0.row < WorldConst.MaxRow and arg_64_0.column >= 0 and arg_64_0.column < WorldConst.MaxColumn and arg_64_0.step <= var_63_2 and var_63_3[arg_64_0.row][arg_64_0.column] then
-				var_63_3[arg_64_0.row][arg_64_0.column] = false
-
-				if arg_63_0:IsObstacle(arg_64_0.row, arg_64_0.column) then
-					table.insert(var_63_4, arg_64_0)
+				if uv3:IsObstacle(slot0.row, slot0.column) then
+					table.insert(uv4, slot0)
 				else
-					table.insert(var_63_5, arg_64_0)
+					table.insert(uv5, slot0)
 				end
 			end
 		end)
 	end
 
-	var_63_4 = _.filter(var_63_4, function(arg_65_0)
-		return arg_63_0:IsStayPoint(arg_65_0.row, arg_65_0.column)
+	return _.filter(slot6, function (slot0)
+		return uv0:IsStayPoint(slot0.row, slot0.column)
 	end)
-
-	return var_63_4
 end
 
-function var_0_0.BuildLongMoveInfos(arg_66_0)
-	local var_66_0 = {}
+function slot0.BuildLongMoveInfos(slot0)
+	slot1 = {}
 
-	for iter_66_0 = 0, WorldConst.MaxRow - 1 do
-		var_66_0[iter_66_0] = var_66_0[iter_66_0] or {}
+	for slot5 = 0, WorldConst.MaxRow - 1 do
+		slot1[slot5] = slot1[slot5] or {}
 
-		for iter_66_1 = 0, WorldConst.MaxColumn - 1 do
-			if arg_66_0:IsWalkable(iter_66_0, iter_66_1) and arg_66_0:GetCell(iter_66_0, iter_66_1):GetInFOV() then
-				var_66_0[iter_66_0][iter_66_1] = {
+		for slot9 = 0, WorldConst.MaxColumn - 1 do
+			if slot0:IsWalkable(slot5, slot9) and slot0:GetCell(slot5, slot9):GetInFOV() then
+				slot1[slot5][slot9] = {
 					isMark = false,
 					isFinish = false,
-					row = iter_66_0,
-					column = iter_66_1,
+					row = slot5,
+					column = slot9,
 					dp = {},
 					last = {},
-					isStayPoint = arg_66_0:IsStayPoint(iter_66_0, iter_66_1),
-					isObstacle = arg_66_0:IsObstacle(iter_66_0, iter_66_1)
+					isStayPoint = slot0:IsStayPoint(slot5, slot9),
+					isObstacle = slot0:IsObstacle(slot5, slot9)
 				}
 			end
 		end
 	end
 
-	return var_66_0
+	return slot1
 end
 
-function var_0_0.GetLongMoveRange(arg_67_0, arg_67_1)
-	local var_67_0 = arg_67_1.row
-	local var_67_1 = arg_67_1.column
-	local var_67_2 = arg_67_0:CalcFleetSpeed(arg_67_1)
-	local var_67_3 = arg_67_0:BuildLongMoveInfos()
-	local var_67_4 = {}
-	local var_67_5 = {}
-	local var_67_6 = {
+function slot0.GetLongMoveRange(slot0, slot1)
+	slot4 = slot0:CalcFleetSpeed(slot1)
+	slot6 = {}
+	slot7 = {}
+	slot8 = {
 		{
 			row = 1,
 			column = 0
@@ -862,59 +769,54 @@ function var_0_0.GetLongMoveRange(arg_67_0, arg_67_1)
 		}
 	}
 
-	local function var_67_7(arg_68_0, arg_68_1, arg_68_2)
-		return arg_68_0 < arg_68_1 or arg_68_2 < arg_68_0
+	function slot9(slot0, slot1, slot2)
+		return slot0 < slot1 or slot2 < slot0
 	end
 
-	local function var_67_8(arg_69_0)
-		if not arg_69_0 then
+	slot11 = slot0:BuildLongMoveInfos()[slot1.row][slot1.column]
+	slot11.dp[0] = 0
+	slot11.isMark = true
+
+	function (slot0)
+		if not slot0 then
 			return
 		end
 
-		arg_69_0.isFinish = true
+		slot0.isFinish = true
 
-		table.insert(var_67_4, arg_69_0)
+		table.insert(uv0, slot0)
 
-		if arg_69_0.isStayPoint then
-			local var_69_0 = arg_69_0.dp
+		if slot0.isStayPoint then
+			slot1 = slot0.dp
 
-			for iter_69_0 = 1, var_67_2 do
-				if var_69_0[iter_69_0] and (not var_69_0[0] or var_69_0[0] > var_69_0[iter_69_0] + 1) then
-					var_69_0[0] = var_69_0[iter_69_0] + 1
-					arg_69_0.last[0] = arg_69_0.last[iter_69_0]
+			for slot5 = 1, uv1 do
+				if slot1[slot5] and (not slot1[0] or slot1[0] > slot1[slot5] + 1) then
+					slot1[0] = slot1[slot5] + 1
+					slot0.last[0] = slot0.last[slot5]
 				end
 			end
 		end
-	end
+	end(slot11)
 
-	local var_67_9 = var_67_3[var_67_0][var_67_1]
-
-	var_67_9.dp[0] = 0
-	var_67_9.isMark = true
-
-	var_67_8(var_67_9)
-
-	while var_67_9 do
-		_.each(var_67_6, function(arg_70_0)
-			if var_67_7(var_67_9.row + arg_70_0.row, 0, WorldConst.MaxRow - 1) or var_67_7(var_67_9.column + arg_70_0.column, 0, WorldConst.MaxColumn - 1) then
+	while slot11 do
+		_.each(slot8, function (slot0)
+			if uv0(uv1.row + slot0.row, 0, WorldConst.MaxRow - 1) or uv0(uv1.column + slot0.column, 0, WorldConst.MaxColumn - 1) then
 				return
 			end
 
-			local var_70_0 = var_67_3[var_67_9.row + arg_70_0.row][var_67_9.column + arg_70_0.column]
-
-			if var_70_0 and not var_70_0.isFinish then
-				for iter_70_0 = 1, var_67_2 do
-					if var_67_9.dp[iter_70_0 - 1] and (not var_70_0.dp[iter_70_0] or var_70_0.dp[iter_70_0] > var_67_9.dp[iter_70_0 - 1]) then
-						var_70_0.dp[iter_70_0] = var_67_9.dp[iter_70_0 - 1]
-						var_70_0.last[iter_70_0] = {
-							var_67_9,
-							iter_70_0 - 1
+			if uv2[uv1.row + slot0.row][uv1.column + slot0.column] and not slot1.isFinish then
+				for slot5 = 1, uv3 do
+					if uv1.dp[slot5 - 1] and (not slot1.dp[slot5] or uv1.dp[slot5 - 1] < slot1.dp[slot5]) then
+						slot1.dp[slot5] = uv1.dp[slot5 - 1]
+						slot1.last[slot5] = {
+							uv1,
+							slot5 - 1
 						}
 
-						if not var_70_0.isMark then
-							var_70_0.isMark = true
+						if not slot1.isMark then
+							slot1.isMark = true
 
-							table.insert(var_67_5, var_70_0)
+							table.insert(uv4, slot1)
 						end
 					end
 				end
@@ -922,70 +824,63 @@ function var_0_0.GetLongMoveRange(arg_67_0, arg_67_1)
 		end)
 
 		repeat
-			var_67_9 = table.remove(var_67_5, 1)
-
-			var_67_8(var_67_9)
-		until not var_67_9 or not var_67_9.isObstacle
+			slot10(table.remove(slot7, 1))
+		until slot11 and not slot11.isObstacle
 	end
 
-	local var_67_10 = {}
+	slot12 = {}
 
-	for iter_67_0, iter_67_1 in ipairs(var_67_4) do
-		if iter_67_1.dp[0] and iter_67_1.dp[0] > 0 then
-			table.insert(var_67_10, {
-				row = iter_67_1.row,
-				column = iter_67_1.column,
-				stay = iter_67_1.dp[0]
+	for slot16, slot17 in ipairs(slot6) do
+		if slot17.dp[0] and slot17.dp[0] > 0 then
+			table.insert(slot12, {
+				row = slot17.row,
+				column = slot17.column,
+				stay = slot17.dp[0]
 			})
 		end
 	end
 
-	return var_67_10, var_67_3
+	return slot12, slot5
 end
 
-function var_0_0.IsWalkable(arg_71_0, arg_71_1, arg_71_2)
-	local var_71_0 = arg_71_0:GetCell(arg_71_1, arg_71_2)
-
-	return var_71_0 and var_71_0.walkable and (var_71_0:CanLeave() or arg_71_0:IsStayPoint(arg_71_1, arg_71_2))
+function slot0.IsWalkable(slot0, slot1, slot2)
+	return slot0:GetCell(slot1, slot2) and slot3.walkable and (slot3:CanLeave() or slot0:IsStayPoint(slot1, slot2))
 end
 
-function var_0_0.IsStayPoint(arg_72_0, arg_72_1, arg_72_2)
-	return arg_72_0:GetCell(arg_72_1, arg_72_2):CanArrive() and not arg_72_0:ExistFleet(arg_72_1, arg_72_2)
+function slot0.IsStayPoint(slot0, slot1, slot2)
+	return slot0:GetCell(slot1, slot2):CanArrive() and not slot0:ExistFleet(slot1, slot2)
 end
 
-function var_0_0.IsObstacle(arg_73_0, arg_73_1, arg_73_2)
-	return not arg_73_0:GetCell(arg_73_1, arg_73_2):CanPass()
+function slot0.IsObstacle(slot0, slot1, slot2)
+	return not slot0:GetCell(slot1, slot2):CanPass()
 end
 
-function var_0_0.IsSign(arg_74_0, arg_74_1, arg_74_2)
-	return arg_74_0:GetCell(arg_74_1, arg_74_2):IsSign()
+function slot0.IsSign(slot0, slot1, slot2)
+	return slot0:GetCell(slot1, slot2):IsSign()
 end
 
-function var_0_0.FindNearestBlankPoint(arg_75_0, arg_75_1, arg_75_2)
-	local var_75_0 = {}
+function slot0.FindNearestBlankPoint(slot0, slot1, slot2)
+	slot3 = {}
 
-	for iter_75_0 = 0, WorldConst.MaxRow - 1 do
-		if not var_75_0[iter_75_0] then
-			var_75_0[iter_75_0] = {}
+	for slot7 = 0, WorldConst.MaxRow - 1 do
+		if not slot3[slot7] then
+			slot3[slot7] = {}
 		end
 
-		for iter_75_1 = 0, WorldConst.MaxColumn - 1 do
-			var_75_0[iter_75_0][iter_75_1] = arg_75_0:IsWalkable(iter_75_0, iter_75_1)
+		for slot11 = 0, WorldConst.MaxColumn - 1 do
+			slot3[slot7][slot11] = slot0:IsWalkable(slot7, slot11)
 		end
 	end
 
-	local var_75_1 = {
-		row = arg_75_1,
-		column = arg_75_2
+	slot4 = {
+		row = slot1,
+		column = slot2
 	}
-	local var_75_2 = {}
+	slot5 = {}
 
-	while #var_75_1 > 0 do
-		local var_75_3 = table.remove(var_75_1, 1)
-
-		table.insert(var_75_2, var_75_3)
-
-		local var_75_4 = {
+	while #slot4 > 0 do
+		table.insert(slot5, table.remove(slot4, 1))
+		_.each({
 			{
 				row = 1,
 				column = 0
@@ -1002,221 +897,196 @@ function var_0_0.FindNearestBlankPoint(arg_75_0, arg_75_1, arg_75_2)
 				row = 0,
 				column = -1
 			}
-		}
+		}, function (slot0)
+			slot0.row = uv0.row + slot0.row
+			slot0.column = uv0.column + slot0.column
 
-		_.each(var_75_4, function(arg_76_0)
-			arg_76_0.row = var_75_3.row + arg_76_0.row
-			arg_76_0.column = var_75_3.column + arg_76_0.column
-
-			if arg_76_0.row >= 0 and arg_76_0.row < WorldConst.MaxRow and arg_76_0.column >= 0 and arg_76_0.column < WorldConst.MaxColumn and not (_.any(var_75_1, function(arg_77_0)
-				return arg_77_0.row == arg_76_0.row and arg_77_0.column == arg_76_0.column
-			end) or _.any(var_75_2, function(arg_78_0)
-				return arg_78_0.row == arg_76_0.row and arg_78_0.column == arg_76_0.column
-			end)) and var_75_0[arg_76_0.row][arg_76_0.column] then
-				if arg_75_0:ExistAny(arg_76_0.row, arg_76_0.column) then
-					table.insert(var_75_1, arg_76_0)
+			if slot0.row >= 0 and slot0.row < WorldConst.MaxRow and slot0.column >= 0 and slot0.column < WorldConst.MaxColumn and not (_.any(uv1, function (slot0)
+				return slot0.row == uv0.row and slot0.column == uv0.column
+			end) or _.any(uv2, function (slot0)
+				return slot0.row == uv0.row and slot0.column == uv0.column
+			end)) and uv3[slot0.row][slot0.column] then
+				if uv4:ExistAny(slot0.row, slot0.column) then
+					table.insert(uv1, slot0)
 				else
-					return arg_76_0
+					return slot0
 				end
 			end
 		end)
 	end
 end
 
-function var_0_0.WriteBack(arg_79_0, arg_79_1, arg_79_2)
-	local var_79_0 = arg_79_0:GetFleet()
-	local var_79_1 = {}
+function slot0.WriteBack(slot0, slot1, slot2)
+	slot8 = true
 
-	for iter_79_0, iter_79_1 in ipairs(var_79_0:GetShips(true)) do
-		table.insert(var_79_1, iter_79_1)
+	for slot8, slot9 in ipairs(slot0:GetFleet():GetShips(slot8)) do
+		table.insert({}, slot9)
 	end
 
-	if arg_79_2.statistics.submarineAid then
-		local var_79_2 = arg_79_0:GetSubmarineFleet()
+	if slot2.statistics.submarineAid then
+		slot5 = slot0:GetSubmarineFleet()
 
-		assert(var_79_2, "submarine fleet not exist.")
+		assert(slot5, "submarine fleet not exist.")
 
-		local var_79_3 = var_79_2:GetTeamShips(TeamType.Submarine, true)
-
-		for iter_79_2, iter_79_3 in ipairs(var_79_3) do
-			table.insert(var_79_1, iter_79_3)
+		for slot10, slot11 in ipairs(slot5:GetTeamShips(TeamType.Submarine, true)) do
+			table.insert(slot4, slot11)
 		end
 
-		var_79_2:UseAmmo()
-		var_79_2:AddDefeatEnemies(arg_79_1)
+		slot5:UseAmmo()
+		slot5:AddDefeatEnemies(slot1)
 	end
 
-	var_79_0:AddDefeatEnemies(arg_79_1)
-	_.each(var_79_1, function(arg_80_0)
-		local var_80_0 = arg_79_2.statistics[arg_80_0.id]
-
-		if var_80_0 then
-			arg_80_0.hpRant = var_80_0.bp
+	slot3:AddDefeatEnemies(slot1)
+	_.each(slot4, function (slot0)
+		if uv0.statistics[slot0.id] then
+			slot0.hpRant = slot1.bp
 		end
 
-		if arg_80_0.hpRant <= 0 then
-			arg_80_0:Rebirth()
+		if slot0.hpRant <= 0 then
+			slot0:Rebirth()
 		end
 	end)
+	assert(slot0:GetCell(slot3.row, slot3.column):GetStageEnemy())
 
-	local var_79_4 = arg_79_0:GetCell(var_79_0.row, var_79_0.column):GetStageEnemy()
+	if slot1 then
+		slot6:UpdateFlag(1)
 
-	assert(var_79_4)
+		slot0.phaseDisplayList = table.mergeArray(slot0.phaseDisplayList, slot6:SetHP(0))
 
-	if arg_79_1 then
-		var_79_4:UpdateFlag(1)
+		_.each(slot0:GetFleets(), function (slot0)
+			uv0 = uv0 or slot0:HasDamageLevel()
 
-		arg_79_0.phaseDisplayList = table.mergeArray(arg_79_0.phaseDisplayList, var_79_4:SetHP(0))
-
-		local var_79_5 = false
-
-		_.each(arg_79_0:GetFleets(), function(arg_81_0)
-			var_79_5 = var_79_5 or arg_81_0:HasDamageLevel()
-
-			arg_81_0:ClearDamageLevel()
+			slot0:ClearDamageLevel()
 		end)
 
-		if var_79_5 then
-			table.insert(arg_79_0.phaseDisplayList, 1, {
+		if false then
+			table.insert(slot0.phaseDisplayList, 1, {
 				story = "W1500",
-				hp = var_79_4:GetMaxHP()
+				hp = slot6:GetMaxHP()
 			})
 		end
 	else
-		arg_79_0.isLoss = true
+		slot0.isLoss = true
 
-		var_79_0:IncDamageLevel(var_79_4)
-		var_79_4:UpdateData(var_79_4.data - 1)
+		slot3:IncDamageLevel(slot6)
+		slot6:UpdateData(slot6.data - 1)
 
-		arg_79_0.phaseDisplayList = table.mergeArray(arg_79_0.phaseDisplayList, var_79_4:SetHP(arg_79_2.statistics._maxBossHP))
+		slot0.phaseDisplayList = table.mergeArray(slot0.phaseDisplayList, slot6:SetHP(slot2.statistics._maxBossHP))
 
-		local var_79_6 = nowWorld()
-
-		if var_79_6.isAutoFight then
-			var_79_6:TriggerAutoFight(false)
+		if nowWorld().isAutoFight then
+			slot7:TriggerAutoFight(false)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("autofight_tip_bigworld_dead"))
 		end
 	end
 
-	_.each(arg_79_2.hpDropInfo, function(arg_82_0)
-		local var_82_0 = #arg_79_0.phaseDisplayList + 1
+	_.each(slot2.hpDropInfo, function (slot0)
+		slot1 = #uv0.phaseDisplayList + 1
 
-		for iter_82_0, iter_82_1 in ipairs(arg_79_0.phaseDisplayList) do
-			if iter_82_1.hp < arg_82_0.hp then
-				var_82_0 = iter_82_0
+		for slot5, slot6 in ipairs(uv0.phaseDisplayList) do
+			if slot6.hp < slot0.hp then
+				slot1 = slot5
 
 				break
 			end
 		end
 
-		arg_79_0:AddPhaseDisplay({
-			hp = arg_82_0.hp,
-			drops = PlayerConst.addTranDrop(arg_82_0.drop_info)
-		}, var_82_0)
+		uv0:AddPhaseDisplay({
+			hp = slot0.hp,
+			drops = PlayerConst.addTranDrop(slot0.drop_info)
+		}, slot1)
 	end)
 end
 
-function var_0_0.AddPhaseDisplay(arg_83_0, arg_83_1, arg_83_2)
-	if arg_83_2 then
-		table.insert(arg_83_0.phaseDisplayList, arg_83_2, arg_83_1)
+function slot0.AddPhaseDisplay(slot0, slot1, slot2)
+	if slot2 then
+		table.insert(slot0.phaseDisplayList, slot2, slot1)
 	else
-		table.insert(arg_83_0.phaseDisplayList, arg_83_1)
+		table.insert(slot0.phaseDisplayList, slot1)
 	end
 end
 
-function var_0_0.FindAttachments(arg_84_0, arg_84_1, arg_84_2)
-	local var_84_0 = {}
+function slot0.FindAttachments(slot0, slot1, slot2)
+	slot3 = {}
 
-	for iter_84_0, iter_84_1 in pairs(arg_84_0.typeAttachments) do
-		if not arg_84_1 or arg_84_1 == iter_84_0 then
-			for iter_84_2, iter_84_3 in ipairs(iter_84_1) do
-				if not arg_84_2 or iter_84_3.id == arg_84_2 then
-					table.insert(var_84_0, iter_84_3)
+	for slot7, slot8 in pairs(slot0.typeAttachments) do
+		if not slot1 or slot1 == slot7 then
+			for slot12, slot13 in ipairs(slot8) do
+				if not slot2 or slot13.id == slot2 then
+					table.insert(slot3, slot13)
 				end
 			end
 		end
 	end
 
-	return var_84_0
+	return slot3
 end
 
-function var_0_0.FindEnemys(arg_85_0)
-	local var_85_0 = {}
-
-	for iter_85_0, iter_85_1 in pairs(arg_85_0.typeAttachments) do
-		if WorldMapAttachment.IsEnemyType(iter_85_0) then
-			var_85_0 = table.mergeArray(var_85_0, iter_85_1)
+function slot0.FindEnemys(slot0)
+	for slot5, slot6 in pairs(slot0.typeAttachments) do
+		if WorldMapAttachment.IsEnemyType(slot5) then
+			slot1 = table.mergeArray({}, slot6)
 		end
 	end
 
-	return var_85_0
+	return slot1
 end
 
-function var_0_0.GetMapMinMax(arg_86_0)
-	local var_86_0 = Vector2(WorldConst.MaxColumn, WorldConst.MaxRow)
-	local var_86_1 = Vector2(-WorldConst.MaxColumn, -WorldConst.MaxRow)
+function slot0.GetMapMinMax(slot0)
+	slot1 = Vector2(WorldConst.MaxColumn, WorldConst.MaxRow)
+	slot2 = Vector2(-WorldConst.MaxColumn, -WorldConst.MaxRow)
 
-	for iter_86_0 = 0, WorldConst.MaxRow - 1 do
-		for iter_86_1 = 0, WorldConst.MaxColumn - 1 do
-			if arg_86_0:GetCell(iter_86_0, iter_86_1) then
-				var_86_0.x = math.min(var_86_0.x, iter_86_1)
-				var_86_0.y = math.min(var_86_0.y, iter_86_0)
-				var_86_1.x = math.max(var_86_1.x, iter_86_1)
-				var_86_1.y = math.max(var_86_1.y, iter_86_0)
+	for slot6 = 0, WorldConst.MaxRow - 1 do
+		for slot10 = 0, WorldConst.MaxColumn - 1 do
+			if slot0:GetCell(slot6, slot10) then
+				slot1.x = math.min(slot1.x, slot10)
+				slot1.y = math.min(slot1.y, slot6)
+				slot2.x = math.max(slot2.x, slot10)
+				slot2.y = math.max(slot2.y, slot6)
 			end
 		end
 	end
 
-	return var_86_0.y, var_86_1.y, var_86_0.x, var_86_1.x
+	return slot1.y, slot2.y, slot1.x, slot2.x
 end
 
-function var_0_0.GetMapSize(arg_87_0)
-	local var_87_0, var_87_1, var_87_2, var_87_3 = arg_87_0:GetMapMinMax()
+function slot0.GetMapSize(slot0)
+	slot1, slot2, slot3, slot4 = slot0:GetMapMinMax()
 
-	return var_87_1 - var_87_0 + 1, var_87_3 - var_87_2 + 1
+	return slot2 - slot1 + 1, slot4 - slot3 + 1
 end
 
-function var_0_0.CountEventEffectKeys(arg_88_0, arg_88_1)
-	local var_88_0 = 0
-
-	for iter_88_0, iter_88_1 in ipairs(arg_88_0:GetNormalFleets()) do
-		local var_88_1 = arg_88_0:GetCell(iter_88_1.row, iter_88_1.column):GetAliveAttachment()
-
-		if var_88_1 and var_88_1.type == WorldMapAttachment.TypeEvent and var_88_1:GetEventEffect() == arg_88_1 then
-			var_88_0 = var_88_0 + 1
+function slot0.CountEventEffectKeys(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0:GetNormalFleets()) do
+		if slot0:GetCell(slot7.row, slot7.column):GetAliveAttachment() and slot9.type == WorldMapAttachment.TypeEvent and slot9:GetEventEffect() == slot1 then
+			slot2 = 0 + 1
 		end
 	end
 
-	return var_88_0
+	return slot2
 end
 
-function var_0_0.EventEffectOpenFOV(arg_89_0, arg_89_1)
-	assert(arg_89_1.effect_type == WorldMapAttachment.EffectEventFOV)
+function slot0.EventEffectOpenFOV(slot0, slot1)
+	assert(slot1.effect_type == WorldMapAttachment.EffectEventFOV)
 
-	local var_89_0, var_89_1 = unpack(arg_89_1.effect_paramater)
-	local var_89_2 = var_89_1 >= 0
+	slot2, slot3 = unpack(slot1.effect_paramater)
+	slot3 = slot3 >= 0 and slot3 or math.abs(slot3) - 1
 
-	var_89_1 = var_89_2 and var_89_1 or math.abs(var_89_1) - 1
-
-	local var_89_3 = arg_89_0:FindAttachments(WorldMapAttachment.TypeEvent, var_89_0)
-
-	_.each(var_89_3, function(arg_90_0)
-		arg_89_0.centerCellFOV = {
-			row = arg_90_0.row,
-			column = arg_90_0.column
+	_.each(slot0:FindAttachments(WorldMapAttachment.TypeEvent, slot2), function (slot0)
+		uv0.centerCellFOV = {
+			row = slot0.row,
+			column = slot0.column
 		}
+		slot4 = WorldConst.MaxRow - 1
 
-		for iter_90_0 = math.max(arg_90_0.row - var_89_1, 0), math.min(arg_90_0.row + var_89_1, WorldConst.MaxRow - 1) do
-			for iter_90_1 = math.max(arg_90_0.column - var_89_1, 0), math.min(arg_90_0.column + var_89_1, WorldConst.MaxColumn - 1) do
-				if WorldConst.InFOVRange(arg_90_0.row, arg_90_0.column, iter_90_0, iter_90_1, var_89_1) then
-					local var_90_0 = arg_89_0:GetCell(iter_90_0, iter_90_1)
+		for slot4 = math.max(slot0.row - uv1, 0), math.min(slot0.row + uv1, slot4) do
+			slot8 = WorldConst.MaxColumn - 1
 
-					if var_90_0 then
-						if var_89_2 then
-							var_90_0:UpdateInFov(bit.bor(var_90_0.infov, WorldConst.FOVEventEffect))
-						else
-							var_90_0:UpdateInFov(bit.band(var_90_0.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
-						end
+			for slot8 = math.max(slot0.column - uv1, 0), math.min(slot0.column + uv1, slot8) do
+				if WorldConst.InFOVRange(slot0.row, slot0.column, slot4, slot8, uv1) and uv0:GetCell(slot4, slot8) then
+					if uv2 then
+						slot9:UpdateInFov(bit.bor(slot9.infov, WorldConst.FOVEventEffect))
+					else
+						slot9:UpdateInFov(bit.band(slot9.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
 					end
 				end
 			end
@@ -1224,758 +1094,681 @@ function var_0_0.EventEffectOpenFOV(arg_89_0, arg_89_1)
 	end)
 end
 
-function var_0_0.OrderAROpenFOV(arg_91_0, arg_91_1)
-	if arg_91_1 then
-		local var_91_0 = arg_91_0:GetFleet()
-
-		arg_91_0.centerCellFOV = {
-			row = var_91_0.row,
-			column = var_91_0.column
+function slot0.OrderAROpenFOV(slot0, slot1)
+	if slot1 then
+		slot2 = slot0:GetFleet()
+		slot0.centerCellFOV = {
+			row = slot2.row,
+			column = slot2.column
 		}
 	end
 
-	for iter_91_0, iter_91_1 in pairs(arg_91_0.cells) do
-		if arg_91_1 then
-			iter_91_1:UpdateInFov(bit.bor(iter_91_1.infov, WorldConst.FOVEventEffect))
+	for slot5, slot6 in pairs(slot0.cells) do
+		if slot1 then
+			slot6:UpdateInFov(bit.bor(slot6.infov, WorldConst.FOVEventEffect))
 		else
-			iter_91_1:UpdateInFov(bit.band(iter_91_1.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
+			slot6:UpdateInFov(bit.band(slot6.infov, WorldConst.Flag16Max - WorldConst.FOVEventEffect))
 		end
 	end
 end
 
-function var_0_0.GetMaxDistanceCell(arg_92_0, arg_92_1, arg_92_2)
-	local var_92_0
-	local var_92_1 = 0
-	local var_92_2 = {
+function slot0.GetMaxDistanceCell(slot0, slot1, slot2)
+	slot3 = nil
+
+	for slot9, slot10 in pairs({
 		{
-			row = arg_92_0.top,
-			column = arg_92_0.left
+			row = slot0.top,
+			column = slot0.left
 		},
 		{
-			row = arg_92_0.bottom,
-			column = arg_92_0.left
+			row = slot0.bottom,
+			column = slot0.left
 		},
 		{
-			row = arg_92_0.top,
-			column = arg_92_0.right
+			row = slot0.top,
+			column = slot0.right
 		},
 		{
-			row = arg_92_0.bottom,
-			column = arg_92_0.right
+			row = slot0.bottom,
+			column = slot0.right
 		}
-	}
-
-	for iter_92_0, iter_92_1 in pairs(var_92_2) do
-		local var_92_3 = (iter_92_1.row - arg_92_1) * (iter_92_1.row - arg_92_1) + (iter_92_1.column - arg_92_2) * (iter_92_1.column - arg_92_2)
-
-		if var_92_1 < var_92_3 then
-			var_92_0 = iter_92_1
-			var_92_1 = var_92_3
+	}) do
+		if 0 < (slot10.row - slot1) * (slot10.row - slot1) + (slot10.column - slot2) * (slot10.column - slot2) then
+			slot3 = slot10
+			slot4 = slot11
 		end
 	end
 
-	return var_92_0, math.sqrt(var_92_1)
+	return slot3, math.sqrt(slot4)
 end
 
-function var_0_0.GetCellsInFOV(arg_93_0)
-	local var_93_0 = {}
+function slot0.GetCellsInFOV(slot0)
+	slot1 = {}
 
-	for iter_93_0, iter_93_1 in pairs(arg_93_0.cells) do
-		if iter_93_1:GetInFOV() then
-			table.insert(var_93_0, iter_93_1)
+	for slot5, slot6 in pairs(slot0.cells) do
+		if slot6:GetInFOV() then
+			table.insert(slot1, slot6)
 		end
 	end
 
-	return var_93_0
+	return slot1
 end
 
-function var_0_0.AlwaysInFOV(arg_94_0)
-	return arg_94_0.config.map_sight == 1
+function slot0.AlwaysInFOV(slot0)
+	return slot0.config.map_sight == 1
 end
 
-function var_0_0.GetEventTipWord(arg_95_0)
-	local var_95_0 = arg_95_0:FindAttachments(WorldMapAttachment.TypeEvent)
-	local var_95_1 = ""
-	local var_95_2 = 0
+function slot0.GetEventTipWord(slot0)
+	slot2 = ""
 
-	for iter_95_0, iter_95_1 in ipairs(var_95_0) do
-		local var_95_3 = pg.world_event_desc[iter_95_1.id]
+	for slot7, slot8 in ipairs(slot0:FindAttachments(WorldMapAttachment.TypeEvent)) do
+		slot9 = pg.world_event_desc[slot8.id]
 
-		if iter_95_1:IsAlive() and var_95_3 and var_95_2 < var_95_3.hint_pri then
-			var_95_2 = var_95_3.hint_pri
-			var_95_1 = var_95_3.hint
+		if slot8:IsAlive() and slot9 and 0 < slot9.hint_pri then
+			slot3 = slot9.hint_pri
+			slot2 = slot9.hint
 		end
 	end
 
-	return var_95_1, var_95_2
+	return slot2, slot3
 end
 
-function var_0_0.GetEventPoisonRate(arg_96_0)
-	local var_96_0 = arg_96_0:FindAttachments(WorldMapAttachment.TypeEvent)
-	local var_96_1 = 0
-
-	for iter_96_0, iter_96_1 in ipairs(var_96_0) do
-		if iter_96_1:IsAlive() then
-			var_96_1 = var_96_1 + iter_96_1.config.infection_value
+function slot0.GetEventPoisonRate(slot0)
+	for slot6, slot7 in ipairs(slot0:FindAttachments(WorldMapAttachment.TypeEvent)) do
+		if slot7:IsAlive() then
+			slot2 = 0 + slot7.config.infection_value
 		end
 	end
 
-	return var_96_1, arg_96_0.config.is_sairen
+	return slot2, slot0.config.is_sairen
 end
 
-function var_0_0.GetPressingLevel(arg_97_0)
-	return arg_97_0.config.complete_effect
+function slot0.GetPressingLevel(slot0)
+	return slot0.config.complete_effect
 end
 
-function var_0_0.CheckMapPressing(arg_98_0)
-	return arg_98_0:GetPressingLevel() > 0 and not arg_98_0.isPressing and arg_98_0:GetEventPoisonRate() == 0
+function slot0.CheckMapPressing(slot0)
+	return slot0:GetPressingLevel() > 0 and not slot0.isPressing and slot0:GetEventPoisonRate() == 0
 end
 
-function var_0_0.CheckMapPressingDisplay(arg_99_0)
-	return arg_99_0:GetPressingLevel() > 1
+function slot0.CheckMapPressingDisplay(slot0)
+	return slot0:GetPressingLevel() > 1
 end
 
-function var_0_0.UpdateClearFlag(arg_100_0, arg_100_1)
-	arg_100_0.clearFlag = tobool(arg_100_1)
+function slot0.UpdateClearFlag(slot0, slot1)
+	slot0.clearFlag = tobool(slot1)
 end
 
-function var_0_0.IsUnlockFleetMode(arg_101_0)
-	if arg_101_0.config.move_switch == 1 then
+function slot0.IsUnlockFleetMode(slot0)
+	if slot0.config.move_switch == 1 then
 		return true
-	elseif arg_101_0.config.move_switch == 0 then
+	elseif slot0.config.move_switch == 0 then
 		return false
 	else
 		assert(false, "config error")
 	end
 end
 
-function var_0_0.CheckFleetSalvage(arg_102_0, arg_102_1)
-	local var_102_0 = underscore.detect(arg_102_0:GetFleets(), function(arg_103_0)
-		return arg_103_0:IsCatSalvage() and (arg_102_1 or arg_103_0:IsSalvageFinish() or arg_102_0.salvageAutoResult or arg_103_0.catSalvageFrom ~= arg_102_0.id)
-	end)
-
-	if var_102_0 then
-		return var_102_0.id
+function slot0.CheckFleetSalvage(slot0, slot1)
+	if underscore.detect(slot0:GetFleets(), function (slot0)
+		return slot0:IsCatSalvage() and (uv0 or slot0:IsSalvageFinish() or uv1.salvageAutoResult or slot0.catSalvageFrom ~= uv1.id)
+	end) then
+		return slot2.id
 	else
-		arg_102_0.salvageAutoResult = false
+		slot0.salvageAutoResult = false
 	end
 end
 
-function var_0_0.GetChapterAuraBuffs(arg_104_0)
-	local var_104_0 = {}
+function slot0.GetChapterAuraBuffs(slot0)
+	slot1 = {}
 
-	for iter_104_0, iter_104_1 in ipairs(arg_104_0.fleets) do
-		local var_104_1 = iter_104_1:getMapAura()
-
-		for iter_104_2, iter_104_3 in ipairs(var_104_1) do
-			table.insert(var_104_0, iter_104_3)
+	for slot5, slot6 in ipairs(slot0.fleets) do
+		for slot11, slot12 in ipairs(slot6:getMapAura()) do
+			table.insert(slot1, slot12)
 		end
 	end
 
-	return var_104_0
+	return slot1
 end
 
-function var_0_0.GetChapterAidBuffs(arg_105_0)
-	local var_105_0 = {}
+function slot0.GetChapterAidBuffs(slot0)
+	slot1 = {}
 
-	for iter_105_0, iter_105_1 in ipairs(arg_105_0.fleets) do
-		if iter_105_0 ~= arg_105_0.findex then
-			local var_105_1 = iter_105_1:getMapAid()
-
-			for iter_105_2, iter_105_3 in pairs(var_105_1) do
-				var_105_0[iter_105_2] = iter_105_3
+	for slot5, slot6 in ipairs(slot0.fleets) do
+		if slot5 ~= slot0.findex then
+			for slot11, slot12 in pairs(slot6:getMapAid()) do
+				slot1[slot11] = slot12
 			end
 		end
 	end
 
-	return var_105_0
+	return slot1
 end
 
-function var_0_0.getFleetBattleBuffs(arg_106_0, arg_106_1, arg_106_2)
-	local var_106_0 = {}
+function slot0.getFleetBattleBuffs(slot0, slot1, slot2)
+	slot3 = {}
 
-	underscore.each(arg_106_1:GetBuffList(), function(arg_107_0)
-		local var_107_0 = arg_107_0.config.lua_id
-
-		if var_107_0 ~= 0 then
-			table.insert(var_106_0, var_107_0)
+	underscore.each(slot1:GetBuffList(), function (slot0)
+		if slot0.config.lua_id ~= 0 then
+			table.insert(uv0, slot1)
 		end
 	end)
 
-	local var_106_1 = {}
+	slot4 = {}
 
-	if arg_106_2 and arg_106_1:IsCatSalvage() then
-		-- block empty
-	else
-		var_106_1 = arg_106_0:BuildBattleBuffList(arg_106_1)
+	if not slot2 or not slot1:IsCatSalvage() then
+		slot4 = slot0:BuildBattleBuffList(slot1)
 	end
 
-	return var_106_0, var_106_1
+	return slot3, slot4
 end
 
-function var_0_0.BuildBattleBuffList(arg_108_0, arg_108_1)
-	local var_108_0 = {}
-	local var_108_1, var_108_2 = arg_108_0:triggerSkill(arg_108_1, FleetSkill.TypeBattleBuff)
+function slot0.BuildBattleBuffList(slot0, slot1)
+	slot2 = {}
+	slot3, slot4 = slot0:triggerSkill(slot1, FleetSkill.TypeBattleBuff)
 
-	if var_108_1 and #var_108_1 > 0 then
-		local var_108_3 = {}
+	if slot3 and #slot3 > 0 then
+		slot5 = {}
 
-		for iter_108_0, iter_108_1 in ipairs(var_108_1) do
-			local var_108_4 = var_108_2[iter_108_0]
-			local var_108_5 = arg_108_1:findCommanderBySkillId(var_108_4.id)
+		for slot9, slot10 in ipairs(slot3) do
+			slot5[slot12] = slot5[slot1:findCommanderBySkillId(slot4[slot9].id)] or {}
 
-			var_108_3[var_108_5] = var_108_3[var_108_5] or {}
-
-			table.insert(var_108_3[var_108_5], iter_108_1)
+			table.insert(slot5[slot12], slot10)
 		end
 
-		for iter_108_2, iter_108_3 in pairs(var_108_3) do
-			table.insert(var_108_0, {
-				iter_108_2,
-				iter_108_3
+		for slot9, slot10 in pairs(slot5) do
+			table.insert(slot2, {
+				slot9,
+				slot10
 			})
 		end
 	end
 
-	local var_108_6 = arg_108_1:getCommanders()
+	for slot9, slot10 in pairs(slot1:getCommanders()) do
+		for slot15, slot16 in ipairs(slot10:getTalents()) do
+			if #slot16:getBuffsAddition() > 0 then
+				slot18 = nil
 
-	for iter_108_4, iter_108_5 in pairs(var_108_6) do
-		local var_108_7 = iter_108_5:getTalents()
-
-		for iter_108_6, iter_108_7 in ipairs(var_108_7) do
-			local var_108_8 = iter_108_7:getBuffsAddition()
-
-			if #var_108_8 > 0 then
-				local var_108_9
-
-				for iter_108_8, iter_108_9 in ipairs(var_108_0) do
-					if iter_108_9[1] == iter_108_5 then
-						var_108_9 = iter_108_9[2]
+				for slot22, slot23 in ipairs(slot2) do
+					if slot23[1] == slot10 then
+						slot18 = slot23[2]
 
 						break
 					end
 				end
 
-				if not var_108_9 then
-					var_108_9 = {}
-
-					table.insert(var_108_0, {
-						iter_108_5,
-						var_108_9
+				if not slot18 then
+					table.insert(slot2, {
+						slot10,
+						{}
 					})
 				end
 
-				for iter_108_10, iter_108_11 in ipairs(var_108_8) do
-					table.insert(var_108_9, iter_108_11)
+				for slot22, slot23 in ipairs(slot17) do
+					table.insert(slot18, slot23)
 				end
 			end
 		end
 	end
 
-	return var_108_0
+	return slot2
 end
 
-function var_0_0.CanLongMove(arg_109_0, arg_109_1)
-	return arg_109_0:IsUnlockFleetMode() and not arg_109_1:HasTrapBuff() and arg_109_0:GetFleetTerrain(arg_109_1) ~= WorldMapCell.TerrainFog
+function slot0.CanLongMove(slot0, slot1)
+	return slot0:IsUnlockFleetMode() and not slot1:HasTrapBuff() and slot0:GetFleetTerrain(slot1) ~= WorldMapCell.TerrainFog
 end
 
-function var_0_0.triggerSkill(arg_110_0, arg_110_1, arg_110_2)
-	local var_110_0 = _.filter(arg_110_1:findSkills(arg_110_2), function(arg_111_0)
-		local var_111_0 = arg_111_0:GetTriggers()
-
-		return _.any(var_111_0, function(arg_112_0)
-			return arg_112_0[1] == FleetSkill.TriggerInSubTeam and arg_112_0[2] == 1
-		end) == (arg_110_1:GetFleetType() == FleetType.Submarine) and _.all(arg_111_0:GetTriggers(), function(arg_113_0)
-			return arg_110_0:triggerCheck(arg_110_1, arg_111_0, arg_113_0)
+function slot0.triggerSkill(slot0, slot1, slot2)
+	slot3 = _.filter(slot1:findSkills(slot2), function (slot0)
+		return _.any(slot0:GetTriggers(), function (slot0)
+			return slot0[1] == FleetSkill.TriggerInSubTeam and slot0[2] == 1
+		end) == (uv0:GetFleetType() == FleetType.Submarine) and _.all(slot0:GetTriggers(), function (slot0)
+			return uv0:triggerCheck(uv1, uv2, slot0)
 		end)
 	end)
 
-	return _.reduce(var_110_0, nil, function(arg_114_0, arg_114_1)
-		local var_114_0 = arg_114_1:GetType()
-		local var_114_1 = arg_114_1:GetArgs()
+	return _.reduce(slot3, nil, function (slot0, slot1)
+		if slot1:GetType() == FleetSkill.TypeMoveSpeed or slot2 == FleetSkill.TypeHuntingLv or slot2 == FleetSkill.TypeTorpedoPowerUp then
+			return (slot0 or 0) + slot1:GetArgs()[1]
+		elseif slot2 == FleetSkill.TypeAmbushDodge or slot2 == FleetSkill.TypeAirStrikeDodge then
+			return math.max(slot0 or 0, slot3[1])
+		elseif slot2 == FleetSkill.TypeAttack or slot2 == FleetSkill.TypeStrategy then
+			slot0 = slot0 or {}
 
-		if var_114_0 == FleetSkill.TypeMoveSpeed or var_114_0 == FleetSkill.TypeHuntingLv or var_114_0 == FleetSkill.TypeTorpedoPowerUp then
-			return (arg_114_0 or 0) + var_114_1[1]
-		elseif var_114_0 == FleetSkill.TypeAmbushDodge or var_114_0 == FleetSkill.TypeAirStrikeDodge then
-			return math.max(arg_114_0 or 0, var_114_1[1])
-		elseif var_114_0 == FleetSkill.TypeAttack or var_114_0 == FleetSkill.TypeStrategy then
-			arg_114_0 = arg_114_0 or {}
+			table.insert(slot0, slot3)
 
-			table.insert(arg_114_0, var_114_1)
+			return slot0
+		elseif slot2 == FleetSkill.TypeBattleBuff then
+			slot0 = slot0 or {}
 
-			return arg_114_0
-		elseif var_114_0 == FleetSkill.TypeBattleBuff then
-			arg_114_0 = arg_114_0 or {}
+			table.insert(slot0, slot3[1])
 
-			table.insert(arg_114_0, var_114_1[1])
-
-			return arg_114_0
+			return slot0
 		end
-	end), var_110_0
+	end), slot3
 end
 
-function var_0_0.triggerCheck(arg_115_0, arg_115_1, arg_115_2, arg_115_3)
-	local var_115_0 = arg_115_3[1]
-
-	if var_115_0 == FleetSkill.TriggerDDHead then
-		local var_115_1 = arg_115_1:GetTeamShipVOs(TeamType.Vanguard, false)
-
-		return #var_115_1 > 0 and ShipType.IsTypeQuZhu(var_115_1[1]:getShipType())
-	elseif var_115_0 == FleetSkill.TriggerVanCount then
-		local var_115_2 = arg_115_1:GetTeamShipVOs(TeamType.Vanguard, false)
-
-		return #var_115_2 >= arg_115_3[2] and #var_115_2 <= arg_115_3[3]
-	elseif var_115_0 == FleetSkill.TriggerShipCount then
-		local var_115_3 = _.filter(arg_115_1:GetShipVOs(false), function(arg_116_0)
-			return table.contains(arg_115_3[2], arg_116_0:getShipType())
-		end)
-
-		return #var_115_3 >= arg_115_3[3] and #var_115_3 <= arg_115_3[4]
-	elseif var_115_0 == FleetSkill.TriggerAroundEnemy then
-		local var_115_4 = {
-			row = arg_115_1.row,
-			column = arg_115_1.column
+function slot0.triggerCheck(slot0, slot1, slot2, slot3)
+	if slot3[1] == FleetSkill.TriggerDDHead then
+		return #slot1:GetTeamShipVOs(TeamType.Vanguard, false) > 0 and ShipType.IsTypeQuZhu(slot5[1]:getShipType())
+	elseif slot4 == FleetSkill.TriggerVanCount then
+		return slot3[2] <= #slot1:GetTeamShipVOs(TeamType.Vanguard, false) and #slot5 <= slot3[3]
+	elseif slot4 == FleetSkill.TriggerShipCount then
+		return slot3[3] <= #_.filter(slot1:GetShipVOs(false), function (slot0)
+			return table.contains(uv0[2], slot0:getShipType())
+		end) and #slot5 <= slot3[4]
+	elseif slot4 == FleetSkill.TriggerAroundEnemy then
+		slot5 = {
+			row = slot1.row,
+			column = slot1.column
 		}
-		local var_115_5 = {}
-		local var_115_6 = arg_115_3[2]
+		slot6 = {}
+		slot7 = slot3[2]
 
-		for iter_115_0 = -var_115_6, var_115_6 do
-			local var_115_7 = var_115_6 - math.abs(iter_115_0)
+		for slot11 = -slot7, slot7 do
+			slot12 = slot7 - math.abs(slot11)
 
-			for iter_115_1 = -var_115_7, var_115_7 do
-				local var_115_8 = arg_115_0:GetCell(var_115_4.row + iter_115_0, var_115_4.column + iter_115_1)
-
-				table.insert(var_115_5, var_115_8)
+			for slot16 = -slot12, slot12 do
+				table.insert(slot6, slot0:GetCell(slot5.row + slot11, slot5.column + slot16))
 			end
 		end
 
-		return underscore.any(var_115_5, function(arg_117_0)
-			local var_117_0 = arg_117_0:ExistEnemy() and arg_117_0:GetStageEnemy().config.type or nil
+		return underscore.any(slot6, function (slot0)
+			slot1 = slot0:ExistEnemy() and slot0:GetStageEnemy().config.type or nil
 
-			return type(arg_115_3[3]) == "number" and arg_115_3[3] == var_117_0 or type(arg_115_3[3]) == "table" and table.contains(arg_115_3[3], var_117_0)
+			return type(uv0[3]) == "number" and uv0[3] == slot1 or type(uv0[3]) == "table" and table.contains(uv0[3], slot1)
 		end)
-	elseif var_115_0 == FleetSkill.TriggerNekoPos then
-		local var_115_9 = arg_115_1:findCommanderBySkillId(arg_115_2.id)
-
-		for iter_115_2, iter_115_3 in pairs(arg_115_1:getCommanders()) do
-			if var_115_9.id == iter_115_3.id and iter_115_2 == arg_115_3[2] then
+	elseif slot4 == FleetSkill.TriggerNekoPos then
+		for slot9, slot10 in pairs(slot1:getCommanders()) do
+			if slot1:findCommanderBySkillId(slot2.id).id == slot10.id and slot9 == slot3[2] then
 				return true
 			end
 		end
-	elseif var_115_0 == FleetSkill.TriggerAroundLand then
-		local var_115_10 = {
-			row = arg_115_1.row,
-			column = arg_115_1.column
+	elseif slot4 == FleetSkill.TriggerAroundLand then
+		slot5 = {
+			row = slot1.row,
+			column = slot1.column
 		}
-		local var_115_11 = arg_115_3[2]
+		slot6 = slot3[2]
 
-		for iter_115_4 = -var_115_11, var_115_11 do
-			local var_115_12 = var_115_11 - math.abs(iter_115_4)
+		for slot10 = -slot6, slot6 do
+			slot11 = slot6 - math.abs(slot10)
 
-			for iter_115_5 = -var_115_12, var_115_12 do
-				local var_115_13 = var_115_10.row + iter_115_4
-				local var_115_14 = var_115_10.column + iter_115_5
-
-				if arg_115_0:GetCell(var_115_13, var_115_14) and not arg_115_0:IsWalkable(var_115_13, var_115_14) then
+			for slot15 = -slot11, slot11 do
+				if slot0:GetCell(slot5.row + slot10, slot5.column + slot15) and not slot0:IsWalkable(slot16, slot17) then
 					return true
 				end
 			end
 		end
 
 		return false
-	elseif var_115_0 == FleetSkill.TriggerAroundCombatAlly then
-		local var_115_15 = {
-			row = arg_115_1.row,
-			column = arg_115_1.column
+	elseif slot4 == FleetSkill.TriggerAroundCombatAlly then
+		slot5 = {
+			row = slot1.row,
+			column = slot1.column
 		}
 
-		return _.any(arg_115_0.fleets, function(arg_118_0)
-			return arg_115_1.id ~= arg_118_0.id and arg_118_0:GetFleetType() == FleetType.Normal and arg_115_0:GetCell(arg_118_0.line.row, arg_118_0.line.column):ExistEnemy() and ManhattonDist(var_115_15, {
-				row = arg_118_0.line.row,
-				column = arg_118_0.line.column
-			}) <= arg_115_3[2]
+		return _.any(slot0.fleets, function (slot0)
+			return uv0.id ~= slot0.id and slot0:GetFleetType() == FleetType.Normal and uv1:GetCell(slot0.line.row, slot0.line.column):ExistEnemy() and ManhattonDist(uv2, {
+				row = slot0.line.row,
+				column = slot0.line.column
+			}) <= uv3[2]
 		end)
-	elseif var_115_0 == FleetSkill.TriggerInSubTeam then
+	elseif slot4 == FleetSkill.TriggerInSubTeam then
 		return true
 	else
-		assert(false, "invalid trigger type: " .. var_115_0)
+		assert(false, "invalid trigger type: " .. slot4)
 	end
 end
 
-function var_0_0.OnUpdateAttachmentExist(arg_119_0, arg_119_1, arg_119_2, arg_119_3)
-	local var_119_0 = arg_119_3.type
+function slot0.OnUpdateAttachmentExist(slot0, slot1, slot2, slot3)
+	slot0.typeAttachments[slot4] = slot0.typeAttachments[slot3.type] or {}
 
-	arg_119_0.typeAttachments[var_119_0] = arg_119_0.typeAttachments[var_119_0] or {}
-
-	if arg_119_1 == WorldMapCell.EventAddAttachment then
-		table.insert(arg_119_0.typeAttachments[var_119_0], arg_119_3)
-	elseif arg_119_1 == WorldMapCell.EventRemoveAttachment then
-		table.removebyvalue(arg_119_0.typeAttachments[var_119_0], arg_119_3)
+	if slot1 == WorldMapCell.EventAddAttachment then
+		table.insert(slot0.typeAttachments[slot4], slot3)
+	elseif slot1 == WorldMapCell.EventRemoveAttachment then
+		table.removebyvalue(slot0.typeAttachments[slot4], slot3)
 	end
 
-	local var_119_1 = arg_119_3:GetVisionRadius()
-
-	if var_119_1 > 0 then
-		local var_119_2 = 0
-
-		if arg_119_1 == WorldMapCell.EventAddAttachment then
-			var_119_2 = var_119_2 + 1
-		elseif arg_119_1 == WorldMapCell.EventRemoveAttachment then
-			var_119_2 = var_119_2 - 1
+	if slot3:GetVisionRadius() > 0 then
+		if slot1 == WorldMapCell.EventAddAttachment then
+			slot6 = 0 + 1
+		elseif slot1 == WorldMapCell.EventRemoveAttachment then
+			slot6 = slot6 - 1
 		else
-			assert(false, "listener event error: " .. arg_119_1)
+			assert(false, "listener event error: " .. slot1)
 		end
 
-		arg_119_0.centerCellFOV = {
-			row = arg_119_2.row,
-			column = arg_119_2.column
+		slot0.centerCellFOV = {
+			row = slot2.row,
+			column = slot2.column
 		}
 
-		for iter_119_0 = arg_119_2.row - var_119_1, arg_119_2.row + var_119_1 do
-			for iter_119_1 = arg_119_2.column - var_119_1, arg_119_2.column + var_119_1 do
-				local var_119_3 = arg_119_0:GetCell(iter_119_0, iter_119_1)
-
-				if var_119_3 and WorldConst.InFOVRange(arg_119_2.row, arg_119_2.column, var_119_3.row, var_119_3.column, var_119_1) then
-					var_119_3:ChangeInLight(var_119_2 > 0)
+		for slot10 = slot2.row - slot5, slot2.row + slot5 do
+			for slot14 = slot2.column - slot5, slot2.column + slot5 do
+				if slot0:GetCell(slot10, slot14) and WorldConst.InFOVRange(slot2.row, slot2.column, slot15.row, slot15.column, slot5) then
+					slot15:ChangeInLight(slot6 > 0)
 				end
 			end
 		end
 	end
 
-	local var_119_4 = arg_119_3:GetRadiationBuffs()
+	if #slot3:GetRadiationBuffs() > 0 then
+		for slot11, slot12 in ipairs(slot6) do
+			slot13, slot14, slot15 = unpack(slot12)
 
-	if #var_119_4 > 0 then
-		local var_119_5 = {}
+			if slot1 == WorldMapCell.EventAddAttachment then
+				slot0:AddBuff(slot13, slot14, slot15)
+			elseif slot1 == WorldMapCell.EventRemoveAttachment then
+				slot7[slot13] = true
 
-		for iter_119_2, iter_119_3 in ipairs(var_119_4) do
-			local var_119_6, var_119_7, var_119_8 = unpack(iter_119_3)
-
-			if arg_119_1 == WorldMapCell.EventAddAttachment then
-				var_119_5[var_119_6] = true
-
-				arg_119_0:AddBuff(var_119_6, var_119_7, var_119_8)
-			elseif arg_119_1 == WorldMapCell.EventRemoveAttachment then
-				var_119_5[var_119_6] = true
-
-				arg_119_0:RemoveBuff(var_119_6, var_119_7, var_119_8)
+				slot0:RemoveBuff(slot13, slot14, slot15)
 			end
 		end
 
-		for iter_119_4, iter_119_5 in pairs(var_119_5) do
-			if iter_119_5 then
-				arg_119_0:FlushFaction(iter_119_4)
+		for slot11, slot12 in pairs({
+			[slot13] = true
+		}) do
+			if slot12 then
+				slot0:FlushFaction(slot11)
 			end
 		end
 	end
 end
 
-function var_0_0.GetBGM(arg_120_0)
-	return arg_120_0.config.bgm
+function slot0.GetBGM(slot0)
+	return slot0.config.bgm
 end
 
-function var_0_0.NeedClear(arg_121_0)
-	local var_121_0, var_121_1 = arg_121_0:GetEventPoisonRate()
+function slot0.NeedClear(slot0)
+	slot1, slot2 = slot0:GetEventPoisonRate()
 
-	return var_121_1 > 0 and var_121_0 == 0 or arg_121_0.clearFlag or arg_121_0.config.is_clear > 0
+	return slot2 > 0 and slot1 == 0 or slot0.clearFlag or slot0.config.is_clear > 0
 end
 
-function var_0_0.GetBuff(arg_122_0, arg_122_1, arg_122_2)
-	if not arg_122_0.factionBuffs[arg_122_1][arg_122_2] then
-		arg_122_0.factionBuffs[arg_122_1][arg_122_2] = WorldBuff.New()
+function slot0.GetBuff(slot0, slot1, slot2)
+	if not slot0.factionBuffs[slot1][slot2] then
+		slot0.factionBuffs[slot1][slot2] = WorldBuff.New()
 
-		arg_122_0.factionBuffs[arg_122_1][arg_122_2]:Setup({
+		slot0.factionBuffs[slot1][slot2]:Setup({
 			floor = 0,
-			id = arg_122_2
+			id = slot2
 		})
 	end
 
-	return arg_122_0.factionBuffs[arg_122_1][arg_122_2]
+	return slot0.factionBuffs[slot1][slot2]
 end
 
-function var_0_0.AddBuff(arg_123_0, arg_123_1, arg_123_2, arg_123_3)
-	arg_123_0:GetBuff(arg_123_1, arg_123_2):AddFloor(arg_123_3)
+function slot0.AddBuff(slot0, slot1, slot2, slot3)
+	slot0:GetBuff(slot1, slot2):AddFloor(slot3)
 end
 
-function var_0_0.RemoveBuff(arg_124_0, arg_124_1, arg_124_2, arg_124_3)
-	local var_124_0 = arg_124_0:GetBuff(arg_124_1, arg_124_2)
-
-	if arg_124_3 then
-		var_124_0:AddFloor(arg_124_3 * -1)
+function slot0.RemoveBuff(slot0, slot1, slot2, slot3)
+	if slot3 then
+		slot0:GetBuff(slot1, slot2):AddFloor(slot3 * -1)
 	else
-		arg_124_0.factionBuffs[arg_124_1][arg_124_2] = nil
+		slot0.factionBuffs[slot1][slot2] = nil
 	end
 end
 
-function var_0_0.GetBuffList(arg_125_0, arg_125_1, arg_125_2)
-	if arg_125_1 == var_0_0.FactionSelf then
-		return underscore.filter(underscore.values(arg_125_0.factionBuffs[arg_125_1]), function(arg_126_0)
-			return arg_126_0:GetFloor() > 0
+function slot0.GetBuffList(slot0, slot1, slot2)
+	if slot1 == uv0.FactionSelf then
+		return underscore.filter(underscore.values(slot0.factionBuffs[slot1]), function (slot0)
+			return slot0:GetFloor() > 0
 		end)
-	elseif arg_125_1 == var_0_0.FactionEnemy then
-		if WorldMapAttachment.IsEnemyType(arg_125_2.type) or arg_125_2.type == WorldMapAttachment.TypeEvent and arg_125_2:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
-			return underscore.filter(underscore.values(arg_125_0.factionBuffs[arg_125_1]), function(arg_127_0)
-				return arg_127_0:GetFloor() > 0
+	elseif slot1 == uv0.FactionEnemy then
+		if WorldMapAttachment.IsEnemyType(slot2.type) or slot2.type == WorldMapAttachment.TypeEvent and slot2:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
+			return underscore.filter(underscore.values(slot0.factionBuffs[slot1]), function (slot0)
+				return slot0:GetFloor() > 0
 			end)
 		else
 			return {}
 		end
 	else
-		assert(false, string.format("faction error: $d", arg_125_1))
+		assert(false, string.format("faction error: $d", slot1))
 	end
 end
 
-function var_0_0.FlushFaction(arg_128_0, arg_128_1)
-	if arg_128_1 == var_0_0.FactionSelf then
-		underscore.each(arg_128_0:GetFleets(), function(arg_129_0)
-			arg_129_0:DispatchEvent(WorldMapFleet.EventUpdateBuff)
+function slot0.FlushFaction(slot0, slot1)
+	if slot1 == uv0.FactionSelf then
+		underscore.each(slot0:GetFleets(), function (slot0)
+			slot0:DispatchEvent(WorldMapFleet.EventUpdateBuff)
 		end)
-	elseif arg_128_1 == var_0_0.FactionEnemy then
-		local var_128_0 = {}
-
-		underscore.each(arg_128_0:FindEnemys(), function(arg_130_0)
-			var_128_0[WorldMapCell.GetName(arg_130_0.row, arg_130_0.column)] = true
-		end)
-		underscore.each(arg_128_0:FindAttachments(WorldMapAttachment.TypeEvent), function(arg_131_0)
-			if arg_131_0:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
-				var_128_0[WorldMapCell.GetName(arg_131_0.row, arg_131_0.column)] = true
-			end
-		end)
-
-		for iter_128_0 in pairs(var_128_0) do
-			arg_128_0.cells[iter_128_0]:DispatchEvent(var_0_0.EventUpdateMapBuff)
-		end
 	else
-		assert(false, string.format("faction error: $d", arg_128_1))
+		if slot1 == uv0.FactionEnemy then
+			underscore.each(slot0:FindEnemys(), function (slot0)
+				uv0[WorldMapCell.GetName(slot0.row, slot0.column)] = true
+			end)
+
+			slot6 = WorldMapAttachment.TypeEvent
+
+			underscore.each(slot0:FindAttachments(slot6), function (slot0)
+				if slot0:GetSpEventType() == WorldMapAttachment.SpEventEnemy then
+					uv0[WorldMapCell.GetName(slot0.row, slot0.column)] = true
+				end
+			end)
+
+			for slot6 in pairs({}) do
+				slot0.cells[slot6]:DispatchEvent(uv0.EventUpdateMapBuff)
+			end
+
+			return
+		end
+
+		assert(false, string.format("faction error: $d", slot1))
 	end
 end
 
-function var_0_0.GetBattleLuaBuffs(arg_132_0, arg_132_1, arg_132_2)
-	local var_132_0 = {}
-
-	underscore.each(arg_132_0:GetBuffList(arg_132_1, arg_132_2), function(arg_133_0)
-		if arg_133_0.config.lua_id > 0 then
-			table.insert(var_132_0, arg_133_0.config.lua_id)
+function slot0.GetBattleLuaBuffs(slot0, slot1, slot2)
+	underscore.each(slot0:GetBuffList(slot1, slot2), function (slot0)
+		if slot0.config.lua_id > 0 then
+			table.insert(uv0, slot0.config.lua_id)
 		end
 	end)
 
-	return var_132_0
+	return {}
 end
 
-function var_0_0.UpdateFleetLocation(arg_134_0, arg_134_1, arg_134_2, arg_134_3)
-	local var_134_0 = arg_134_0:GetFleet(arg_134_1)
+function slot0.UpdateFleetLocation(slot0, slot1, slot2, slot3)
+	slot4 = slot0:GetFleet(slot1)
 
-	assert(var_134_0, "without this fleet : " .. arg_134_1)
+	assert(slot4, "without this fleet : " .. slot1)
 
-	if var_134_0.row ~= arg_134_2 or var_134_0.column ~= arg_134_3 then
-		arg_134_0:CheckFleetUpdateFOV(var_134_0, function()
-			var_134_0.row = arg_134_2
-			var_134_0.column = arg_134_3
+	if slot4.row ~= slot2 or slot4.column ~= slot3 then
+		slot0:CheckFleetUpdateFOV(slot4, function ()
+			uv0.row = uv1
+			uv0.column = uv2
 		end)
-		var_134_0:DispatchEvent(WorldMapFleet.EventUpdateLocation)
+		slot4:DispatchEvent(WorldMapFleet.EventUpdateLocation)
 	end
 end
 
-function var_0_0.GetRangeDic(arg_136_0, arg_136_1)
-	local var_136_0 = {}
-
-	WorldConst.RangeCheck(arg_136_1, arg_136_0:GetFOVRange(arg_136_1), function(arg_137_0, arg_137_1)
-		local var_137_0 = WorldMapCell.GetName(arg_137_0, arg_137_1)
-
-		if arg_136_0.cells[var_137_0] then
-			var_136_0[var_137_0] = defaultValue(var_136_0[var_137_0], 0) + 1
+function slot0.GetRangeDic(slot0, slot1)
+	WorldConst.RangeCheck(slot1, slot0:GetFOVRange(slot1), function (slot0, slot1)
+		if uv0.cells[WorldMapCell.GetName(slot0, slot1)] then
+			uv1[slot2] = defaultValue(uv1[slot2], 0) + 1
 		end
 	end)
 
-	return var_136_0
+	return {}
 end
 
-function var_0_0.CheckFleetUpdateFOV(arg_138_0, arg_138_1, arg_138_2)
-	if not arg_138_0:IsValid() then
-		arg_138_2()
+function slot0.CheckFleetUpdateFOV(slot0, slot1, slot2)
+	if not slot0:IsValid() then
+		slot2()
 
 		return
 	end
 
-	local var_138_0 = arg_138_0:GetRangeDic(arg_138_1)
-	local var_138_1 = arg_138_0:GetFleetTerrain(arg_138_1) == WorldMapCell.TerrainFog
-	local var_138_2 = arg_138_0:IsFleetTerrainSairenFog(arg_138_1)
-	local var_138_3 = arg_138_0:CalcFleetSpeed(arg_138_1)
+	slot3 = slot0:GetRangeDic(slot1)
+	slot5 = slot0:IsFleetTerrainSairenFog(slot1)
+	slot6 = slot0:CalcFleetSpeed(slot1)
 
-	arg_138_2()
+	slot2()
 
-	local var_138_4 = arg_138_0:GetRangeDic(arg_138_1)
-	local var_138_5 = arg_138_0:GetFleetTerrain(arg_138_1) == WorldMapCell.TerrainFog
-	local var_138_6 = arg_138_0:IsFleetTerrainSairenFog(arg_138_1)
-	local var_138_7 = arg_138_0:CalcFleetSpeed(arg_138_1)
-
-	arg_138_0.centerCellFOV = {
-		row = arg_138_1.row,
-		column = arg_138_1.column
+	slot7 = slot0:GetRangeDic(slot1)
+	slot8 = slot0:GetFleetTerrain(slot1) == WorldMapCell.TerrainFog
+	slot9 = slot0:IsFleetTerrainSairenFog(slot1)
+	slot10 = slot0:CalcFleetSpeed(slot1)
+	slot0.centerCellFOV = {
+		row = slot1.row,
+		column = slot1.column
 	}
+	slot11 = false
+	slot12 = false
+	slot13 = {}
 
-	local var_138_8 = false
-	local var_138_9 = false
-	local var_138_10 = {}
-
-	if not var_138_1 then
-		for iter_138_0, iter_138_1 in pairs(var_138_0) do
-			var_138_10[iter_138_0] = defaultValue(var_138_10[iter_138_0], 0) - iter_138_1
+	if not (slot0:GetFleetTerrain(slot1) == WorldMapCell.TerrainFog) then
+		for slot17, slot18 in pairs(slot3) do
+			slot13[slot17] = defaultValue(slot13[slot17], 0) - slot18
 		end
 	end
 
-	if not var_138_5 then
-		for iter_138_2, iter_138_3 in pairs(var_138_4) do
-			var_138_10[iter_138_2] = defaultValue(var_138_10[iter_138_2], 0) + iter_138_3
+	if not slot8 then
+		for slot17, slot18 in pairs(slot7) do
+			slot13[slot17] = defaultValue(slot13[slot17], 0) + slot18
 		end
 	end
 
-	for iter_138_4, iter_138_5 in pairs(var_138_10) do
-		if iter_138_5 ~= 0 then
-			arg_138_0.cells[iter_138_4]:ChangeInLight(iter_138_5 > 0)
+	for slot17, slot18 in pairs(slot13) do
+		if slot18 ~= 0 then
+			slot0.cells[slot17]:ChangeInLight(slot18 > 0)
 
-			var_138_8 = true
+			slot11 = true
 		end
 	end
 
-	if arg_138_0:GetFleet() == arg_138_1 then
-		local var_138_11 = {}
+	if slot0:GetFleet() == slot1 then
+		slot13 = {}
 
-		if var_138_1 then
-			for iter_138_6, iter_138_7 in pairs(var_138_0) do
-				var_138_11[iter_138_6] = defaultValue(var_138_11[iter_138_6], 0) - iter_138_7
+		if slot4 then
+			for slot17, slot18 in pairs(slot3) do
+				slot13[slot17] = defaultValue(slot13[slot17], 0) - slot18
 			end
 		end
 
-		if var_138_5 then
-			for iter_138_8, iter_138_9 in pairs(var_138_4) do
-				var_138_11[iter_138_8] = defaultValue(var_138_11[iter_138_8], 0) + iter_138_9
+		if slot8 then
+			for slot17, slot18 in pairs(slot7) do
+				slot13[slot17] = defaultValue(slot13[slot17], 0) + slot18
 			end
 		end
 
-		if var_138_1 ~= var_138_5 or var_138_2 ~= var_138_6 then
-			for iter_138_10, iter_138_11 in pairs(arg_138_0.cells) do
-				local var_138_12
+		if slot4 ~= slot8 or slot5 ~= slot9 then
+			for slot17, slot18 in pairs(slot0.cells) do
+				slot19 = nil
 
-				if var_138_11[iter_138_10] and var_138_11[iter_138_10] ~= 0 then
-					var_138_12 = var_138_11[iter_138_10] > 0
+				if slot13[slot17] and slot13[slot17] ~= 0 then
+					slot19 = slot13[slot17] > 0
 				end
 
-				iter_138_11:UpdateFog(var_138_5, var_138_12, var_138_6)
+				slot18:UpdateFog(slot8, slot19, slot9)
 			end
 
-			var_138_8 = true
+			slot11 = true
 		else
-			for iter_138_12, iter_138_13 in pairs(var_138_11) do
-				if iter_138_13 ~= 0 then
-					arg_138_0.cells[iter_138_12]:UpdateFog(nil, iter_138_13 > 0, nil)
+			for slot17, slot18 in pairs(slot13) do
+				if slot18 ~= 0 then
+					slot0.cells[slot17]:UpdateFog(nil, slot18 > 0, nil)
 
-					var_138_8 = true
+					slot11 = true
 				end
 			end
 		end
 
-		if var_138_3 ~= var_138_7 then
-			var_138_9 = true
+		if slot6 ~= slot10 then
+			slot12 = true
 		end
 	end
 
-	if var_138_8 then
-		arg_138_0:DispatchEvent(var_0_0.EventUpdateFleetFOV)
+	if slot11 then
+		slot0:DispatchEvent(uv0.EventUpdateFleetFOV)
 	end
 
-	if var_138_9 then
-		arg_138_0:DispatchEvent(var_0_0.EventUpdateMoveSpeed)
+	if slot12 then
+		slot0:DispatchEvent(uv0.EventUpdateMoveSpeed)
 	end
 end
 
-function var_0_0.CheckSelectFleetUpdateFog(arg_139_0, arg_139_1)
-	if not arg_139_0:IsValid() then
-		arg_139_1()
+function slot0.CheckSelectFleetUpdateFog(slot0, slot1)
+	if not slot0:IsValid() then
+		slot1()
 
 		return
 	end
 
-	local var_139_0 = arg_139_0:GetFleet()
-	local var_139_1 = arg_139_0:GetRangeDic(var_139_0)
-	local var_139_2 = arg_139_0:GetFleetTerrain(var_139_0) == WorldMapCell.TerrainFog
-	local var_139_3 = arg_139_0:IsFleetTerrainSairenFog(var_139_0)
+	slot2 = slot0:GetFleet()
+	slot3 = slot0:GetRangeDic(slot2)
+	slot5 = slot0:IsFleetTerrainSairenFog(slot2)
 
-	arg_139_1()
+	slot1()
 
-	local var_139_4 = arg_139_0:GetFleet()
-	local var_139_5 = arg_139_0:GetRangeDic(var_139_4)
-	local var_139_6 = arg_139_0:GetFleetTerrain(var_139_4) == WorldMapCell.TerrainFog
-	local var_139_7 = arg_139_0:IsFleetTerrainSairenFog(var_139_4)
-
-	arg_139_0.centerCellFOV = {
-		row = var_139_4.row,
-		column = var_139_4.column
+	slot2 = slot0:GetFleet()
+	slot6 = slot0:GetRangeDic(slot2)
+	slot7 = slot0:GetFleetTerrain(slot2) == WorldMapCell.TerrainFog
+	slot8 = slot0:IsFleetTerrainSairenFog(slot2)
+	slot0.centerCellFOV = {
+		row = slot2.row,
+		column = slot2.column
 	}
+	slot9 = {}
 
-	local var_139_8 = {}
-
-	if var_139_2 then
-		for iter_139_0, iter_139_1 in pairs(var_139_1) do
-			var_139_8[iter_139_0] = defaultValue(var_139_8[iter_139_0], 0) - iter_139_1
+	if slot0:GetFleetTerrain(slot2) == WorldMapCell.TerrainFog then
+		for slot13, slot14 in pairs(slot3) do
+			slot9[slot13] = defaultValue(slot9[slot13], 0) - slot14
 		end
 	end
 
-	if var_139_6 then
-		for iter_139_2, iter_139_3 in pairs(var_139_5) do
-			var_139_8[iter_139_2] = defaultValue(var_139_8[iter_139_2], 0) + iter_139_3
+	if slot7 then
+		for slot13, slot14 in pairs(slot6) do
+			slot9[slot13] = defaultValue(slot9[slot13], 0) + slot14
 		end
 	end
 
-	if var_139_2 ~= var_139_6 or var_139_3 ~= var_139_7 then
-		for iter_139_4, iter_139_5 in pairs(arg_139_0.cells) do
-			local var_139_9
+	if slot4 ~= slot7 or slot5 ~= slot8 then
+		for slot13, slot14 in pairs(slot0.cells) do
+			slot15 = nil
 
-			if var_139_8[iter_139_4] and var_139_8[iter_139_4] ~= 0 then
-				var_139_9 = var_139_8[iter_139_4] > 0
+			if slot9[slot13] and slot9[slot13] ~= 0 then
+				slot15 = slot9[slot13] > 0
 			end
 
-			iter_139_5:UpdateFog(var_139_6, var_139_9, var_139_7)
+			slot14:UpdateFog(slot7, slot15, slot8)
 		end
 	else
-		for iter_139_6, iter_139_7 in pairs(var_139_8) do
-			if iter_139_7 ~= 0 then
-				arg_139_0.cells[iter_139_6]:UpdateFog(nil, iter_139_7 > 0, nil)
+		for slot13, slot14 in pairs(slot9) do
+			if slot14 ~= 0 then
+				slot0.cells[slot13]:UpdateFog(nil, slot14 > 0, nil)
 			end
 		end
 	end
 
-	arg_139_0:DispatchEvent(var_0_0.EventUpdateFleetFOV)
+	slot0:DispatchEvent(uv0.EventUpdateFleetFOV)
 end
 
-function var_0_0.CheckEventAutoTrigger(arg_140_0, arg_140_1)
-	if arg_140_1:GetSpEventType() == WorldMapAttachment.SpEventConsumeItem then
+function slot0.CheckEventAutoTrigger(slot0, slot1)
+	if slot1:GetSpEventType() == WorldMapAttachment.SpEventConsumeItem then
 		return getProxy(SettingsProxy):GetWorldFlag("consume_item")
 	end
 
-	local var_140_0 = arg_140_1:GetEventEffect()
+	if slot1:GetEventEffect() then
+		slot3 = slot0:GetFleet()
 
-	if var_140_0 then
-		local var_140_1 = arg_140_0:GetFleet()
-		local var_140_2 = var_140_0.effect_type
-
-		if var_140_2 == WorldMapAttachment.EffectEventConsumeCarry then
-			local var_140_3 = var_140_0.effect_paramater[1] or {}
-
-			return not underscore.any(var_140_3, function(arg_141_0)
-				return not var_140_1:ExistCarry(arg_141_0)
+		if slot2.effect_type == WorldMapAttachment.EffectEventConsumeCarry then
+			return not underscore.any(slot2.effect_paramater[1] or {}, function (slot0)
+				return not uv0:ExistCarry(slot0)
 			end)
-		elseif var_140_2 == WorldMapAttachment.EffectEventCatSalvage then
-			return var_140_1:GetDisplayCommander() and not var_140_1:IsCatSalvage()
+		elseif slot4 == WorldMapAttachment.EffectEventCatSalvage then
+			return slot3:GetDisplayCommander() and not slot3:IsCatSalvage()
 		end
 	end
 
 	return true
 end
 
-function var_0_0.CanAutoFight(arg_142_0)
-	if arg_142_0.config.is_auto > 0 then
-		for iter_142_0 = 1, arg_142_0.config.is_auto do
-			if not nowWorld():IsSystemOpen(WorldConst["SystemAutoFight_" .. iter_142_0]) then
+function slot0.CanAutoFight(slot0)
+	if slot0.config.is_auto > 0 then
+		for slot4 = 1, slot0.config.is_auto do
+			if not nowWorld():IsSystemOpen(WorldConst["SystemAutoFight_" .. slot4]) then
 				return false
 			end
 		end
@@ -1986,14 +1779,14 @@ function var_0_0.CanAutoFight(arg_142_0)
 	end
 end
 
-function var_0_0.CkeckTransport(arg_143_0)
-	assert(arg_143_0:IsValid(), "without map info")
+function slot0.CkeckTransport(slot0)
+	assert(slot0:IsValid(), "without map info")
 
-	if arg_143_0.config.is_transfer == 0 then
+	if slot0.config.is_transfer == 0 then
 		return false, i18n("world_transport_disable")
 	end
 
-	if arg_143_0:CheckAttachmentTransport() == "block" then
+	if slot0:CheckAttachmentTransport() == "block" then
 		return false, i18n("world_movelimit_event_text")
 	end
 
@@ -2004,4 +1797,4 @@ function var_0_0.CkeckTransport(arg_143_0)
 	return true
 end
 
-return var_0_0
+return slot0

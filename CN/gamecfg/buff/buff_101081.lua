@@ -1,25 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffFixAmmo",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				damage_rate = 1.05,
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -189,5 +168,26 @@
 	stack = 1,
 	id = 101081,
 	icon = 101081,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffFixAmmo",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				damage_rate = 1.05,
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

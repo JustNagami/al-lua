@@ -1,8 +1,8 @@
-﻿local var_0_0 = class("ArchivesWorldBossHelpPage", import(".WorldBossHelpPage"))
+slot0 = class("ArchivesWorldBossHelpPage", import(".WorldBossHelpPage"))
 
-function var_0_0.OnLoaded(arg_1_0)
-	var_0_0.super.OnLoaded(arg_1_0)
-	setActive(arg_1_0.worldBtn, false)
+function slot0.OnLoaded(slot0)
+	uv0.super.OnLoaded(slot0)
+	setActive(slot0.worldBtn, false)
 end
 
-return var_0_0
+return slot0

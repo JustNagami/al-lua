@@ -1,98 +1,89 @@
-﻿local var_0_0 = class("Shrine2022ShipWordView", import("...base.BaseSubView"))
+slot0 = class("Shrine2022ShipWordView", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "Shrine2022ShipWordUI"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:initUI()
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
-	arg_2_0:Show()
-	arg_2_0:playEnterAni(true)
+function slot0.OnInit(slot0)
+	slot0:initData()
+	slot0:initUI()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	slot0:Show()
+	slot0:playEnterAni(true)
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_3_0._tf)
-	arg_3_0:cleanManagedTween()
+function slot0.OnDestroy(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	slot0:cleanManagedTween()
 end
 
-function var_0_0.initData(arg_4_0)
-	arg_4_0.curSelectShip = arg_4_0.contextData.curSelectShip
+function slot0.initData(slot0)
+	slot0.curSelectShip = slot0.contextData.curSelectShip
 end
 
-function var_0_0.initUI(arg_5_0)
-	arg_5_0.bg = arg_5_0:findTF("BG")
-	arg_5_0.wordImg = arg_5_0:findTF("Word")
-	arg_5_0.cloud1 = arg_5_0:findTF("Cloud1")
-	arg_5_0.cloud2 = arg_5_0:findTF("Cloud2")
+function slot0.initUI(slot0)
+	slot0.bg = slot0:findTF("BG")
+	slot0.wordImg = slot0:findTF("Word")
+	slot0.cloud1 = slot0:findTF("Cloud1")
+	slot0.cloud2 = slot0:findTF("Cloud2")
+	slot1 = "shipword_" .. slot0.curSelectShip
 
-	local var_5_0 = "shipword_" .. arg_5_0.curSelectShip
-	local var_5_1 = "Shrine2022/" .. var_5_0
-
-	setImageSprite(arg_5_0.wordImg, LoadSprite(var_5_1, var_5_0), true)
-	onButton(arg_5_0, arg_5_0.bg, function()
-		arg_5_0:closeMySelf()
+	setImageSprite(slot0.wordImg, LoadSprite("Shrine2022/" .. slot1, slot1), true)
+	onButton(slot0, slot0.bg, function ()
+		uv0:closeMySelf()
 	end, SFX_PANEL)
 end
 
-function var_0_0.playEnterAni(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_1 and 1000 or 0
-	local var_7_1 = arg_7_1 and 0 or 1000
-	local var_7_2 = {
-		x = var_7_0,
-		y = rtf(arg_7_0.cloud1).anchoredPosition.y
+function slot0.playEnterAni(slot0, slot1, slot2)
+	slot4 = slot1 and 0 or 1000
+	slot5 = {
+		x = slot1 and 1000 or 0,
+		y = rtf(slot0.cloud1).anchoredPosition.y
 	}
-	local var_7_3 = arg_7_1 and -1000 or 0
-	local var_7_4 = arg_7_1 and 0 or -1000
-	local var_7_5 = {
-		x = var_7_3,
-		y = rtf(arg_7_0.cloud2).anchoredPosition.y
+	slot7 = slot1 and 0 or -1000
+	slot8 = {
+		x = slot1 and -1000 or 0,
+		y = rtf(slot0.cloud2).anchoredPosition.y
 	}
-	local var_7_6 = arg_7_1 and 0 or 1
-	local var_7_7 = arg_7_1 and 1 or 0
-	local var_7_8 = {
-		x = var_7_6,
-		y = var_7_6
+	slot9 = slot1 and 0 or 1
+	slot10 = slot1 and 1 or 0
+	slot11 = {
+		x = slot9,
+		y = slot9
 	}
-	local var_7_9 = 0.3
+	slot0.isPlaying = true
 
-	arg_7_0.isPlaying = true
+	slot0:managedTween(LeanTween.value, nil, go(slot0.cloud1), 0, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		slot3 = uv4 + (uv5 - uv4) * slot0
+		uv6.x = uv0 + (uv1 - uv0) * slot0
 
-	arg_7_0:managedTween(LeanTween.value, nil, go(arg_7_0.cloud1), 0, 1, var_7_9):setOnUpdate(System.Action_float(function(arg_8_0)
-		local var_8_0 = var_7_0 + (var_7_1 - var_7_0) * arg_8_0
-		local var_8_1 = var_7_3 + (var_7_4 - var_7_3) * arg_8_0
-		local var_8_2 = var_7_6 + (var_7_7 - var_7_6) * arg_8_0
+		setAnchoredPosition(uv7.cloud1, uv6)
 
-		var_7_2.x = var_8_0
+		uv8.x = uv2 + (uv3 - uv2) * slot0
 
-		setAnchoredPosition(arg_7_0.cloud1, var_7_2)
+		setAnchoredPosition(uv7.cloud2, uv8)
 
-		var_7_5.x = var_8_1
+		uv9.x = slot3
+		uv9.y = slot3
 
-		setAnchoredPosition(arg_7_0.cloud2, var_7_5)
+		setLocalScale(uv7.wordImg, uv9)
+	end)):setOnComplete(System.Action(function ()
+		uv0.isPlaying = false
 
-		var_7_8.x = var_8_2
-		var_7_8.y = var_8_2
-
-		setLocalScale(arg_7_0.wordImg, var_7_8)
-	end)):setOnComplete(System.Action(function()
-		arg_7_0.isPlaying = false
-
-		if arg_7_2 then
-			arg_7_2()
+		if uv1 then
+			uv1()
 		end
 	end))
 end
 
-function var_0_0.closeMySelf(arg_10_0)
-	if arg_10_0.isPlaying then
+function slot0.closeMySelf(slot0)
+	if slot0.isPlaying then
 		return
 	end
 
-	arg_10_0:playEnterAni(false, function()
-		arg_10_0:Destroy()
+	slot0:playEnterAni(false, function ()
+		uv0:Destroy()
 	end)
 end
 
-return var_0_0
+return slot0

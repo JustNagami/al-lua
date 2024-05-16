@@ -1,295 +1,297 @@
-﻿local var_0_0 = class("TowerClimbingView")
+slot0 = class("TowerClimbingView")
 
-local function var_0_1(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = GetOrAddComponent(arg_1_0, "EventTriggerListener")
+function slot1(slot0, slot1, slot2)
+	slot3 = GetOrAddComponent(slot0, "EventTriggerListener")
 
-	var_1_0:AddPointDownFunc(function(arg_2_0, arg_2_1)
-		if arg_1_1 then
-			arg_1_1()
+	slot3:AddPointDownFunc(function (slot0, slot1)
+		if uv0 then
+			uv0()
 		end
 	end)
-	var_1_0:AddPointUpFunc(function(arg_3_0, arg_3_1)
-		if arg_1_2 then
-			arg_1_2()
+	slot3:AddPointUpFunc(function (slot0, slot1)
+		if uv0 then
+			uv0()
 		end
 	end)
 end
 
-local function var_0_2(arg_4_0)
-	local var_4_0 = GetOrAddComponent(arg_4_0, "EventTriggerListener")
+function slot2(slot0)
+	slot1 = GetOrAddComponent(slot0, "EventTriggerListener")
 
-	var_4_0:RemovePointDownFunc()
-	var_4_0:RemovePointUpFunc()
+	slot1:RemovePointDownFunc()
+	slot1:RemovePointUpFunc()
 end
 
-function var_0_0.Ctor(arg_5_0, arg_5_1)
-	pg.DelegateInfo.New(arg_5_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_5_0.controller = arg_5_1
+	slot0.controller = slot1
 end
 
-function var_0_0.SetUI(arg_6_0, arg_6_1)
-	arg_6_0._go = arg_6_1
-	arg_6_0._tf = arg_6_1.transform
-	arg_6_0.overView = findTF(arg_6_0._tf, "overview")
-	arg_6_0.gameView = findTF(arg_6_0._tf, "AD")
-	arg_6_0.maps = {
-		findTF(arg_6_0._tf, "overview/maps/1"),
-		findTF(arg_6_0._tf, "overview/maps/2"),
-		findTF(arg_6_0._tf, "overview/maps/3")
+function slot0.SetUI(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.overView = findTF(slot0._tf, "overview")
+	slot0.gameView = findTF(slot0._tf, "AD")
+	slot0.maps = {
+		findTF(slot0._tf, "overview/maps/1"),
+		findTF(slot0._tf, "overview/maps/2"),
+		findTF(slot0._tf, "overview/maps/3")
 	}
-	arg_6_0.exitGameBtn = findTF(arg_6_0.gameView, "back")
-	arg_6_0.jumpBtn = findTF(arg_6_0.gameView, "prints/right_btn_layout/up")
-	arg_6_0.leftLayout = findTF(arg_6_0.gameView, "prints/left_btn_layout")
-	arg_6_0.moveBtn = findTF(arg_6_0.leftLayout, "move_btn")
-	arg_6_0.quitPanel = findTF(arg_6_0._tf, "quit_panel")
-	arg_6_0.quitPanelCancelBtn = arg_6_0.quitPanel:Find("frame/cancel")
-	arg_6_0.quitPanelCconfirmBtn = arg_6_0.quitPanel:Find("frame/confirm")
-	arg_6_0.resultPanel = findTF(arg_6_0._tf, "result_panel")
-	arg_6_0.resultPanelScoreTxt = arg_6_0.resultPanel:Find("frame/curr/Text"):GetComponent(typeof(Text))
-	arg_6_0.resultPanelHScoreTxt = arg_6_0.resultPanel:Find("frame/higtest/Text"):GetComponent(typeof(Text))
-	arg_6_0.resultPanelEndBtn = arg_6_0.resultPanel:Find("frame/cancel")
-	arg_6_0.helpBtn = arg_6_0._tf:Find("overview/logo/help")
-	arg_6_0.enterPanel = arg_6_0._tf:Find("enter_panel")
-	arg_6_0.enterPanelTxt = arg_6_0.enterPanel:Find("Text"):GetComponent(typeof(Text))
+	slot0.exitGameBtn = findTF(slot0.gameView, "back")
+	slot0.jumpBtn = findTF(slot0.gameView, "prints/right_btn_layout/up")
+	slot0.leftLayout = findTF(slot0.gameView, "prints/left_btn_layout")
+	slot0.moveBtn = findTF(slot0.leftLayout, "move_btn")
+	slot0.quitPanel = findTF(slot0._tf, "quit_panel")
+	slot0.quitPanelCancelBtn = slot0.quitPanel:Find("frame/cancel")
+	slot0.quitPanelCconfirmBtn = slot0.quitPanel:Find("frame/confirm")
+	slot0.resultPanel = findTF(slot0._tf, "result_panel")
+	slot0.resultPanelScoreTxt = slot0.resultPanel:Find("frame/curr/Text"):GetComponent(typeof(Text))
+	slot0.resultPanelHScoreTxt = slot0.resultPanel:Find("frame/higtest/Text"):GetComponent(typeof(Text))
+	slot0.resultPanelEndBtn = slot0.resultPanel:Find("frame/cancel")
+	slot0.helpBtn = slot0._tf:Find("overview/logo/help")
+	slot0.enterPanel = slot0._tf:Find("enter_panel")
+	slot0.enterPanelTxt = slot0.enterPanel:Find("Text"):GetComponent(typeof(Text))
 
-	arg_6_0:ResetParams()
+	slot0:ResetParams()
 end
 
-function var_0_0.OnEnter(arg_7_0, arg_7_1)
-	setActive(arg_7_0.overView, true)
-	setActive(arg_7_0.gameView, false)
-	onButton(arg_7_0, arg_7_0.helpBtn, function()
+function slot0.OnEnter(slot0, slot1)
+	setActive(slot0.overView, true)
+	setActive(slot0.gameView, false)
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.towerclimbing_gametip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg_7_0, arg_7_0.exitGameBtn, function()
-		arg_7_0:ShowQuitPanel()
-	end, SFX_PANEL)
 
-	for iter_7_0, iter_7_1 in ipairs(arg_7_0.maps) do
-		onButton(arg_7_0, iter_7_1, function()
-			arg_7_0.controller:StartGame(iter_7_0)
+	function slot5()
+		uv0:ShowQuitPanel()
+	end
+
+	slot6 = SFX_PANEL
+
+	onButton(slot0, slot0.exitGameBtn, slot5, slot6)
+
+	for slot5, slot6 in ipairs(slot0.maps) do
+		onButton(slot0, slot6, function ()
+			uv0.controller:StartGame(uv1)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.DoEnter(arg_11_0, arg_11_1)
-	setActive(arg_11_0.overView, false)
-	setActive(arg_11_0.gameView, true)
+function slot0.DoEnter(slot0, slot1)
+	setActive(slot0.overView, false)
+	setActive(slot0.gameView, true)
 
-	arg_11_0.inDownCnt = true
+	slot0.inDownCnt = true
 
-	arg_11_0:ActivePanel(arg_11_0.enterPanel, true)
+	slot0:ActivePanel(slot0.enterPanel, true)
 
-	local var_11_0 = 4
+	slot2 = 4
+	slot0.timer = Timer.New(function ()
+		uv0 = uv0 - 1
 
-	arg_11_0.timer = Timer.New(function()
-		var_11_0 = var_11_0 - 1
-
-		if var_11_0 == 3 then
+		if uv0 == 3 then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_STEP_PILE_COUNTDOWN)
 		end
 
-		arg_11_0.enterPanelTxt.text = var_11_0
+		uv1.enterPanelTxt.text = uv0
 
-		if var_11_0 == 0 then
-			arg_11_1()
-			arg_11_0:ActivePanel(arg_11_0.enterPanel, false)
-			arg_11_0.timer:Stop()
+		if uv0 == 0 then
+			uv2()
+			uv1:ActivePanel(uv1.enterPanel, false)
+			uv1.timer:Stop()
 
-			arg_11_0.timer = nil
-			arg_11_0.inDownCnt = nil
+			uv1.timer = nil
+			uv1.inDownCnt = nil
 		end
 	end, 1, -1)
 
-	arg_11_0.timer:Start()
-	arg_11_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.OnStartGame(arg_13_0)
-	var_0_1(arg_13_0.jumpBtn, function()
-		arg_13_0.controller:PlayerJump()
+function slot0.OnStartGame(slot0)
+	uv0(slot0.jumpBtn, function ()
+		uv0.controller:PlayerJump()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_PANEL)
 	end)
-	arg_13_0:OnSlip(arg_13_0.moveBtn, function()
-		arg_13_0.rightOffse = 0.06
-		arg_13_0.leftOffse = 0
-	end, function()
-		arg_13_0.rightOffse = 0
-		arg_13_0.leftOffse = -0.06
-	end, function()
-		arg_13_0.rightOffse = 0
-		arg_13_0.leftOffse = 0
-	end, function()
-		arg_13_0.rightOffse = 0
-		arg_13_0.leftOffse = 0
+	slot0:OnSlip(slot0.moveBtn, function ()
+		uv0.rightOffse = 0.06
+		uv0.leftOffse = 0
+	end, function ()
+		uv0.rightOffse = 0
+		uv0.leftOffse = -0.06
+	end, function ()
+		uv0.rightOffse = 0
+		uv0.leftOffse = 0
+	end, function ()
+		uv0.rightOffse = 0
+		uv0.leftOffse = 0
 	end)
 end
 
-function var_0_0.OnSlip(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5)
-	local var_19_0 = GetOrAddComponent(arg_19_1, "EventTriggerListener")
-	local var_19_1 = GameObject.Find("UICamera"):GetComponent("Camera"):WorldToScreenPoint(arg_19_0.leftLayout.position)
-	local var_19_2 = 0
-	local var_19_3 = 10
+function slot0.OnSlip(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = GetOrAddComponent(slot1, "EventTriggerListener")
+	slot8 = GameObject.Find("UICamera"):GetComponent("Camera"):WorldToScreenPoint(slot0.leftLayout.position)
+	slot9 = 0
+	slot10 = 10
 
-	local function var_19_4(arg_20_0, arg_20_1)
-		var_19_2 = arg_20_1.position.x - var_19_1.x
+	slot6:AddPointDownFunc(function (slot0, slot1)
+		uv0 = 0
 
-		if var_19_2 < -var_19_3 then
-			if arg_19_3 then
-				arg_19_3()
-			end
-		elseif var_19_2 > var_19_3 then
-			if arg_19_2 then
-				arg_19_2()
-			end
-		elseif arg_19_5 then
-			arg_19_5()
-		end
-	end
-
-	var_19_0:AddPointDownFunc(function(arg_21_0, arg_21_1)
-		var_19_2 = 0
-
-		var_19_4(arg_21_0, arg_21_1)
+		uv1(slot0, slot1)
 	end)
-	var_19_0:AddDragFunc(var_19_4)
-	var_19_0:AddPointUpFunc(function(arg_22_0, arg_22_1)
-		var_19_2 = 0
+	slot6:AddDragFunc(function (slot0, slot1)
+		uv0 = slot1.position.x - uv1.x
 
-		if arg_19_4 then
-			arg_19_4()
+		if uv0 < -uv2 then
+			if uv3 then
+				uv3()
+			end
+		elseif uv2 < uv0 then
+			if uv4 then
+				uv4()
+			end
+		elseif uv5 then
+			uv5()
+		end
+	end)
+	slot6:AddPointUpFunc(function (slot0, slot1)
+		uv0 = 0
+
+		if uv1 then
+			uv1()
 		end
 	end)
 end
 
-function var_0_0.ClearSlip(arg_23_0, arg_23_1)
-	local var_23_0 = GetOrAddComponent(arg_23_1, "EventTriggerListener")
+function slot0.ClearSlip(slot0, slot1)
+	slot2 = GetOrAddComponent(slot1, "EventTriggerListener")
 
-	var_23_0:RemovePointDownFunc()
-	var_23_0:RemovePointUpFunc()
-	var_23_0:RemoveDragFunc()
+	slot2:RemovePointDownFunc()
+	slot2:RemovePointUpFunc()
+	slot2:RemoveDragFunc()
 end
 
-function var_0_0.Update(arg_24_0)
-	arg_24_0:AddDebugInput()
+function slot0.Update(slot0)
+	slot0:AddDebugInput()
 
-	arg_24_0.hrzOffse = arg_24_0.leftOffse + arg_24_0.rightOffse
+	slot0.hrzOffse = slot0.leftOffse + slot0.rightOffse
 
-	arg_24_0.controller:OnStickChange(arg_24_0.hrzOffse)
+	slot0.controller:OnStickChange(slot0.hrzOffse)
 end
 
-function var_0_0.AddDebugInput(arg_25_0)
+function slot0.AddDebugInput(slot0)
 	if IsUnityEditor then
 		if Input.GetKeyDown(KeyCode.A) then
-			arg_25_0.leftOffse = -0.06
+			slot0.leftOffse = -0.06
 		end
 
 		if Input.GetKeyUp(KeyCode.A) then
-			arg_25_0.leftOffse = 0
+			slot0.leftOffse = 0
 		end
 
 		if Input.GetKeyDown(KeyCode.D) then
-			arg_25_0.rightOffse = 0.06
+			slot0.rightOffse = 0.06
 		end
 
 		if Input.GetKeyUp(KeyCode.D) then
-			arg_25_0.rightOffse = 0
+			slot0.rightOffse = 0
 		end
 
 		if Input.GetKeyDown(KeyCode.Space) then
-			arg_25_0.controller:PlayerJump()
+			slot0.controller:PlayerJump()
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_PANEL)
 		end
 	end
 end
 
-function var_0_0.OnCreateMap(arg_26_0, arg_26_1, arg_26_2)
-	arg_26_0.map = TowerClimbingMap.New(arg_26_0, arg_26_1)
+function slot0.OnCreateMap(slot0, slot1, slot2)
+	slot0.map = TowerClimbingMap.New(slot0, slot1)
 
-	arg_26_0.map:Init(arg_26_2)
+	slot0.map:Init(slot2)
 end
 
-function var_0_0.ResetParams(arg_27_0)
-	arg_27_0.leftOffse = 0
-	arg_27_0.rightOffse = 0
-	arg_27_0.hrzOffse = 0
+function slot0.ResetParams(slot0)
+	slot0.leftOffse = 0
+	slot0.rightOffse = 0
+	slot0.hrzOffse = 0
 end
 
-function var_0_0.OnEndGame(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
-	arg_28_0:ResetParams()
-	removeOnButton(arg_28_0.jumpBtn)
-	arg_28_0:ShowResultPanel(arg_28_1, arg_28_2, arg_28_3)
+function slot0.OnEndGame(slot0, slot1, slot2, slot3)
+	slot0:ResetParams()
+	removeOnButton(slot0.jumpBtn)
+	slot0:ShowResultPanel(slot1, slot2, slot3)
 end
 
-function var_0_0.OnExitGame(arg_29_0)
-	setActive(arg_29_0.overView, true)
-	setActive(arg_29_0.gameView, false)
+function slot0.OnExitGame(slot0)
+	setActive(slot0.overView, true)
+	setActive(slot0.gameView, false)
 
-	if arg_29_0.map then
-		arg_29_0.map:Dispose()
+	if slot0.map then
+		slot0.map:Dispose()
 	end
 end
 
-function var_0_0.ShowQuitPanel(arg_30_0)
-	arg_30_0:ActivePanel(arg_30_0.quitPanel, true)
-	onButton(arg_30_0, arg_30_0.quitPanelCconfirmBtn, function()
-		arg_30_0:ActivePanel(arg_30_0.quitPanel, false)
-		arg_30_0.controller:EndGame()
+function slot0.ShowQuitPanel(slot0)
+	slot0:ActivePanel(slot0.quitPanel, true)
+	onButton(slot0, slot0.quitPanelCconfirmBtn, function ()
+		uv0:ActivePanel(uv0.quitPanel, false)
+		uv0.controller:EndGame()
 	end, SFX_PANEL)
-	onButton(arg_30_0, arg_30_0.quitPanelCancelBtn, function()
-		arg_30_0:ActivePanel(arg_30_0.quitPanel, false)
+	onButton(slot0, slot0.quitPanelCancelBtn, function ()
+		uv0:ActivePanel(uv0.quitPanel, false)
 	end, SFX_PANEL)
 end
 
-function var_0_0.ShowResultPanel(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
-	arg_33_0:ActivePanel(arg_33_0.resultPanel, true)
+function slot0.ShowResultPanel(slot0, slot1, slot2, slot3)
+	slot0:ActivePanel(slot0.resultPanel, true)
 
-	arg_33_0.resultPanelScoreTxt.text = arg_33_1
+	slot0.resultPanelScoreTxt.text = slot1
 
-	if arg_33_0.highScores and arg_33_3 <= #arg_33_0.highScores then
-		arg_33_0.resultPanelHScoreTxt.text = arg_33_0.highScores[arg_33_3]
+	if slot0.highScores and slot3 <= #slot0.highScores then
+		slot0.resultPanelHScoreTxt.text = slot0.highScores[slot3]
 	else
-		arg_33_0.resultPanelHScoreTxt.text = arg_33_2
+		slot0.resultPanelHScoreTxt.text = slot2
 	end
 
-	onButton(arg_33_0, arg_33_0.resultPanelEndBtn, function()
-		arg_33_0:ActivePanel(arg_33_0.resultPanel, false)
-		arg_33_0.controller:ExitGame()
+	onButton(slot0, slot0.resultPanelEndBtn, function ()
+		uv0:ActivePanel(uv0.resultPanel, false)
+		uv0.controller:ExitGame()
 	end, SFX_PANEL)
 end
 
-function var_0_0.SetHighScore(arg_35_0, arg_35_1)
-	arg_35_0.highScores = arg_35_1
+function slot0.SetHighScore(slot0, slot1)
+	slot0.highScores = slot1
 end
 
-function var_0_0.ActivePanel(arg_36_0, arg_36_1, arg_36_2)
-	if arg_36_2 then
-		pg.UIMgr.GetInstance():BlurPanel(arg_36_1)
+function slot0.ActivePanel(slot0, slot1, slot2)
+	if slot2 then
+		pg.UIMgr.GetInstance():BlurPanel(slot1)
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg_36_1, arg_36_0._tf)
+		pg.UIMgr.GetInstance():UnblurPanel(slot1, slot0._tf)
 	end
 
-	setActive(arg_36_1, arg_36_2)
+	setActive(slot1, slot2)
 end
 
-function var_0_0.onBackPressed(arg_37_0)
-	if arg_37_0.inDownCnt then
+function slot0.onBackPressed(slot0)
+	if slot0.inDownCnt then
 		return true
 	end
 
-	if arg_37_0.controller.IsStarting then
-		arg_37_0:ShowQuitPanel()
+	if slot0.controller.IsStarting then
+		slot0:ShowQuitPanel()
 
 		return true
 	end
 
-	if isActive(arg_37_0.resultPanel) then
-		arg_37_0:ActivePanel(arg_37_0.resultPanel, false)
-		arg_37_0.controller:ExitGame()
+	if isActive(slot0.resultPanel) then
+		slot0:ActivePanel(slot0.resultPanel, false)
+		slot0.controller:ExitGame()
 
 		return true
 	end
@@ -297,20 +299,20 @@ function var_0_0.onBackPressed(arg_37_0)
 	return false
 end
 
-function var_0_0.Dispose(arg_38_0)
-	if arg_38_0.timer then
-		arg_38_0.timer:Stop()
+function slot0.Dispose(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_38_0.timer = nil
+		slot0.timer = nil
 	end
 
-	var_0_2(arg_38_0.jumpBtn)
-	arg_38_0:ClearSlip(arg_38_0.moveBtn)
-	pg.DelegateInfo.Dispose(arg_38_0)
+	uv0(slot0.jumpBtn)
+	slot0:ClearSlip(slot0.moveBtn)
+	pg.DelegateInfo.Dispose(slot0)
 
-	if arg_38_0.map then
-		arg_38_0.map:Dispose()
+	if slot0.map then
+		slot0.map:Dispose()
 	end
 end
 
-return var_0_0
+return slot0

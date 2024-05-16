@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WorldBoss", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WorldBoss", import("....BaseEntity"))
+slot0.Fields = {
 	config = "table",
 	configId = "number",
 	owner = "number",
@@ -15,227 +14,210 @@ var_0_0.Fields = {
 	id = "number",
 	killTime = "number"
 }
-var_0_0.SUPPORT_TYPE_FRIEND = 1
-var_0_0.SUPPORT_TYPE_GUILD = 2
-var_0_0.SUPPORT_TYPE_WORLD = 3
-var_0_0.BOSS_TYPE_FRIEND = 1
-var_0_0.BOSS_TYPE_GUILD = 2
-var_0_0.BOSS_TYPE_WORLD = 3
-var_0_0.BOSS_TYPE_SELF = 0
+slot0.SUPPORT_TYPE_FRIEND = 1
+slot0.SUPPORT_TYPE_GUILD = 2
+slot0.SUPPORT_TYPE_WORLD = 3
+slot0.BOSS_TYPE_FRIEND = 1
+slot0.BOSS_TYPE_GUILD = 2
+slot0.BOSS_TYPE_WORLD = 3
+slot0.BOSS_TYPE_SELF = 0
 
-function var_0_0.Setup(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_1.template_id
-	arg_1_0.hp = arg_1_1.hp
-	arg_1_0.level = arg_1_1.lv
-	arg_1_0.owner = arg_1_1.owner
-	arg_1_0.lastTime = arg_1_1.last_time
-	arg_1_0.killTime = arg_1_1.kill_time or 0
-	arg_1_0.player = arg_1_2
-	arg_1_0.joinTime = joinTime or 0
+function slot0.Setup(slot0, slot1, slot2)
+	slot0.id = slot1.id
+	slot0.configId = slot1.template_id
+	slot0.hp = slot1.hp
+	slot0.level = slot1.lv
+	slot0.owner = slot1.owner
+	slot0.lastTime = slot1.last_time
+	slot0.killTime = slot1.kill_time or 0
+	slot0.player = slot2
+	slot0.joinTime = joinTime or 0
 
-	local var_1_0 = pg.world_joint_boss_template[arg_1_0.configId]
-
-	if var_1_0 then
-		local var_1_1 = var_1_0.boss_level_id + (arg_1_0.level - 1)
-		local var_1_2 = pg.world_boss_level[var_1_1]
-
-		arg_1_0.config = setmetatable({}, {
-			__index = function(arg_2_0, arg_2_1)
-				return var_1_0[arg_2_1] or var_1_2[arg_2_1]
+	if pg.world_joint_boss_template[slot0.configId] then
+		slot5 = pg.world_boss_level[slot3.boss_level_id + slot0.level - 1]
+		slot0.config = setmetatable({}, {
+			__index = function (slot0, slot1)
+				return uv0[slot1] or uv1[slot1]
 			end
 		})
 	end
 
-	arg_1_0.fightCount = arg_1_1.fight_count or 0
-	arg_1_0.rankCount = arg_1_1.rank_count or 0
-	arg_1_0.type = arg_1_0:SetBossType()
+	slot0.fightCount = slot1.fight_count or 0
+	slot0.rankCount = slot1.rank_count or 0
+	slot0.type = slot0:SetBossType()
 end
 
-function var_0_0.GetConfigID(arg_3_0)
-	return arg_3_0.configId
+function slot0.GetConfigID(slot0)
+	return slot0.configId
 end
 
-function var_0_0.SetJoinTime(arg_4_0, arg_4_1)
-	arg_4_0.joinTime = arg_4_1
+function slot0.SetJoinTime(slot0, slot1)
+	slot0.joinTime = slot1
 end
 
-function var_0_0.GetJoinTime(arg_5_0)
-	return arg_5_0.joinTime
+function slot0.GetJoinTime(slot0)
+	return slot0.joinTime
 end
 
-function var_0_0.GetMetaId(arg_6_0)
-	return arg_6_0.config.meta_id
+function slot0.GetMetaId(slot0)
+	return slot0.config.meta_id
 end
 
-function var_0_0.IncreaseFightCnt(arg_7_0)
-	arg_7_0.fightCount = arg_7_0.fightCount + 1
+function slot0.IncreaseFightCnt(slot0)
+	slot0.fightCount = slot0.fightCount + 1
 end
 
-function var_0_0.GetSelfFightCnt(arg_8_0)
-	return arg_8_0.fightCount
+function slot0.GetSelfFightCnt(slot0)
+	return slot0.fightCount
 end
 
-function var_0_0.GetOilConsume(arg_9_0)
-	if not arg_9_0:IsSelf() then
+function slot0.GetOilConsume(slot0)
+	if not slot0:IsSelf() then
 		return 0
 	end
 
-	local var_9_0 = arg_9_0.fightCount + 1
-
-	return WorldBossConst.GetBossOilConsume(var_9_0)
+	return WorldBossConst.GetBossOilConsume(slot0.fightCount + 1)
 end
 
-function var_0_0.SetRankCnt(arg_10_0, arg_10_1)
-	arg_10_0.rankCount = arg_10_1
+function slot0.SetRankCnt(slot0, slot1)
+	slot0.rankCount = slot1
 end
 
-function var_0_0.GetRankCnt(arg_11_0)
-	return arg_11_0.rankCount
+function slot0.GetRankCnt(slot0)
+	return slot0.rankCount
 end
 
-function var_0_0.GetPlayer(arg_12_0)
-	return arg_12_0.player
+function slot0.GetPlayer(slot0)
+	return slot0.player
 end
 
-function var_0_0.IsFullPeople(arg_13_0)
-	return arg_13_0:GetRankCnt() >= pg.gameset.joint_boss_fighter_max.key_value
+function slot0.IsFullPeople(slot0)
+	return pg.gameset.joint_boss_fighter_max.key_value <= slot0:GetRankCnt()
 end
 
-function var_0_0.UpdateBossType(arg_14_0, arg_14_1)
-	if not arg_14_0:IsSelf() then
-		arg_14_0.type = arg_14_1
+function slot0.UpdateBossType(slot0, slot1)
+	if not slot0:IsSelf() then
+		slot0.type = slot1
 	end
 end
 
-function var_0_0.GetWaitForResultTime(arg_15_0)
-	return arg_15_0.killTime
+function slot0.GetWaitForResultTime(slot0)
+	return slot0.killTime
 end
 
-function var_0_0.ShouldWaitForResult(arg_16_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() < arg_16_0.killTime
+function slot0.ShouldWaitForResult(slot0)
+	return pg.TimeMgr.GetInstance():GetServerTime() < slot0.killTime
 end
 
-function var_0_0.GetRoleName(arg_17_0)
-	if arg_17_0.player then
-		return arg_17_0.player.name
+function slot0.GetRoleName(slot0)
+	if slot0.player then
+		return slot0.player.name
 	else
 		return ""
 	end
 end
 
-function var_0_0.isSameLevel(arg_18_0, arg_18_1)
-	return arg_18_0.level == arg_18_1.level
+function slot0.isSameLevel(slot0, slot1)
+	return slot0.level == slot1.level
 end
 
-function var_0_0.SetBossType(arg_19_0)
-	local var_19_0 = getProxy(PlayerProxy):getRawData()
-	local var_19_1 = getProxy(FriendProxy)
-	local var_19_2 = getProxy(GuildProxy):getRawData()
+function slot0.SetBossType(slot0)
+	slot2 = getProxy(FriendProxy)
+	slot3 = getProxy(GuildProxy):getRawData()
 
-	if arg_19_0.owner == var_19_0.id then
-		return var_0_0.BOSS_TYPE_SELF
+	if slot0.owner == getProxy(PlayerProxy):getRawData().id then
+		return uv0.BOSS_TYPE_SELF
 	else
-		if var_19_2 and var_19_2:getMemberById(arg_19_0.owner) then
-			return var_0_0.BOSS_TYPE_GUILD
+		if slot3 and slot3:getMemberById(slot0.owner) then
+			return uv0.BOSS_TYPE_GUILD
 		end
 
-		if var_19_1:getFriend(arg_19_0.owner) then
-			return var_0_0.BOSS_TYPE_FRIEND
+		if slot2:getFriend(slot0.owner) then
+			return uv0.BOSS_TYPE_FRIEND
 		end
 	end
 
-	return var_0_0.BOSS_TYPE_WORLD
+	return uv0.BOSS_TYPE_WORLD
 end
 
-function var_0_0.IsSelf(arg_20_0)
-	return arg_20_0.type == var_0_0.BOSS_TYPE_SELF
+function slot0.IsSelf(slot0)
+	return slot0.type == uv0.BOSS_TYPE_SELF
 end
 
-function var_0_0.GetType(arg_21_0)
-	return arg_21_0.type
+function slot0.GetType(slot0)
+	return slot0.type
 end
 
-function var_0_0.GetStageID(arg_22_0)
-	return arg_22_0.config.expedition_id
+function slot0.GetStageID(slot0)
+	return slot0.config.expedition_id
 end
 
-function var_0_0.UpdateHp(arg_23_0, arg_23_1)
-	arg_23_0.hp = arg_23_1
+function slot0.UpdateHp(slot0, slot1)
+	slot0.hp = slot1
 end
 
-function var_0_0.GetHP(arg_24_0)
-	return arg_24_0.hp
+function slot0.GetHP(slot0)
+	return slot0.hp
 end
 
-function var_0_0.Active(arg_25_0)
-	return arg_25_0.id > 0
+function slot0.Active(slot0)
+	return slot0.id > 0
 end
 
-function var_0_0.isDeath(arg_26_0)
-	return arg_26_0.hp <= 0
+function slot0.isDeath(slot0)
+	return slot0.hp <= 0
 end
 
-function var_0_0.UpdateKillTime(arg_27_0)
-	local var_27_0 = nowWorld():GetBossProxy():GetRank(arg_27_0.id)
-
-	if var_27_0 and #var_27_0 > 1 then
-		local var_27_1 = pg.gameset.world_boss_rank_wait_time.key_value
-
-		arg_27_0.killTime = pg.TimeMgr.GetInstance():GetServerTime() + var_27_1
+function slot0.UpdateKillTime(slot0)
+	if nowWorld():GetBossProxy():GetRank(slot0.id) and #slot2 > 1 then
+		slot0.killTime = pg.TimeMgr.GetInstance():GetServerTime() + pg.gameset.world_boss_rank_wait_time.key_value
 	end
 end
 
-function var_0_0.GetAwards(arg_28_0)
-	if arg_28_0:IsSelf() then
-		return arg_28_0.config.drop_show_self
+function slot0.GetAwards(slot0)
+	if slot0:IsSelf() then
+		return slot0.config.drop_show_self
 	else
-		return arg_28_0.config.drop_show_other
+		return slot0.config.drop_show_other
 	end
 end
 
-function var_0_0.GetLeftTime(arg_29_0)
-	local var_29_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return arg_29_0.lastTime - var_29_0
+function slot0.GetLeftTime(slot0)
+	return slot0.lastTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.GetMaxHp(arg_30_0)
-	return arg_30_0.config.hp
+function slot0.GetMaxHp(slot0)
+	return slot0.config.hp
 end
 
-function var_0_0.IsFullHp(arg_31_0)
-	return arg_31_0.hp >= arg_31_0:GetMaxHp()
+function slot0.IsFullHp(slot0)
+	return slot0:GetMaxHp() <= slot0.hp
 end
 
-function var_0_0.GetName(arg_32_0)
-	return arg_32_0.config.name
+function slot0.GetName(slot0)
+	return slot0.config.name
 end
 
-function var_0_0.GetLevel(arg_33_0)
-	return arg_33_0.level
+function slot0.GetLevel(slot0)
+	return slot0.level
 end
 
-function var_0_0.GetExpiredTime(arg_34_0)
-	return arg_34_0.lastTime
+function slot0.GetExpiredTime(slot0)
+	return slot0.lastTime
 end
 
-function var_0_0.IsExpired(arg_35_0)
-	return arg_35_0:GetLeftTime() <= 0
+function slot0.IsExpired(slot0)
+	return slot0:GetLeftTime() <= 0
 end
 
-function var_0_0.BuildTipText(arg_36_0)
-	local var_36_0 = arg_36_0:GetRoleName()
-	local var_36_1 = arg_36_0.config.name
-	local var_36_2 = arg_36_0.level
-
-	if arg_36_0.type == var_0_0.BOSS_TYPE_FRIEND then
-		return i18n("world_joint_call_friend_support_txt", var_36_0, var_36_1, var_36_2)
-	elseif arg_36_0.type == var_0_0.BOSS_TYPE_GUILD then
-		return i18n("world_joint_call_guild_support_txt", var_36_0, var_36_1, var_36_2)
+function slot0.BuildTipText(slot0)
+	if slot0.type == uv0.BOSS_TYPE_FRIEND then
+		return i18n("world_joint_call_friend_support_txt", slot0:GetRoleName(), slot0.config.name, slot0.level)
+	elseif slot0.type == uv0.BOSS_TYPE_GUILD then
+		return i18n("world_joint_call_guild_support_txt", slot1, slot2, slot3)
 	else
-		return i18n("world_joint_call_world_support_txt", var_36_0, var_36_1, var_36_2)
+		return i18n("world_joint_call_world_support_txt", slot1, slot2, slot3)
 	end
 end
 
-return var_0_0
+return slot0

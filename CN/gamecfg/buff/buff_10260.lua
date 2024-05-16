@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				rant = 2000,
-				target = "TargetSelf",
-				skill_id = 10260,
-				time = 10
-			}
-		}
-	},
+return {
 	{
 		desc = "开火时，有20%概率触发，自身炮击提升20.0%，持续8秒",
 		addition = {
@@ -83,5 +69,19 @@
 	stack = 1,
 	id = 10260,
 	icon = 10260,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				rant = 2000,
+				target = "TargetSelf",
+				skill_id = 10260,
+				time = 10
+			}
+		}
+	}
 }

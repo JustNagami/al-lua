@@ -1,34 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.02
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				buff_id = 103111
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -276,5 +246,35 @@
 	id = 103110,
 	picture = "0",
 	castCV = "skill",
-	desc = "耐久回复"
+	desc = "耐久回复",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.02
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				buff_id = 103111
+			}
+		}
+	}
 }

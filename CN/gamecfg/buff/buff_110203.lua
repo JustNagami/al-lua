@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "yuuyakiSP"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -31,5 +19,17 @@
 	stack = 1,
 	id = 110203,
 	icon = 110200,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "yuuyakiSP"
+			}
+		}
+	}
 }

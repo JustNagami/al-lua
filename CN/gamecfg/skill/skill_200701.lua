@@ -1,22 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			target_choise = "TargetNil",
-			type = "BattleSkillSummon",
-			arg_list = {
-				delay = 0,
-				spawnData = {
-					monsterTemplateID = 296215,
-					corrdinate = {
-						-12,
-						0,
-						65
-					},
-					buffList = {}
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -845,5 +827,23 @@
 	id = 200701,
 	name = "黑基洛夫BOSS战 召唤-闪流",
 	cd = 0,
-	painting = 0
+	painting = 0,
+	effect_list = {
+		{
+			target_choise = "TargetNil",
+			type = "BattleSkillSummon",
+			arg_list = {
+				delay = 0,
+				spawnData = {
+					monsterTemplateID = 296215,
+					corrdinate = {
+						-12,
+						0,
+						65
+					},
+					buffList = {}
+				}
+			}
+		}
+	}
 }

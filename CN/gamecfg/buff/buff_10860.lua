@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10861,
-				target = "TargetSelf",
-				time = 20
-			}
-		}
-	},
+return {
 	{
 		desc = "强袭模式·EX"
 	},
@@ -52,5 +39,18 @@
 	stack = 1,
 	id = 10860,
 	icon = 10860,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10861,
+				target = "TargetSelf",
+				time = 20
+			}
+		}
+	}
 }

@@ -1,16 +1,15 @@
-﻿local var_0_0 = class("CommanderConst")
-
-var_0_0.TALENT_POINT_LEVEL = 5
-var_0_0.TALENT_POINT = 1
-var_0_0.TALENT_ADDITION_NUMBER = 1
-var_0_0.TALENT_ADDITION_RATIO = 2
-var_0_0.TALENT_ADDITION_BUFF = 3
-var_0_0.MAX_TELENT_COUNT = 5
-var_0_0.RESET_TALENT_WAIT_TIME = 86401
-var_0_0.PLAY_MAX_COUNT = 10
-var_0_0.MAX_FORMATION_POS = 2
-var_0_0.MAX_ABILITY = 255
-var_0_0.PROPERTIES = {
+slot0 = class("CommanderConst")
+slot0.TALENT_POINT_LEVEL = 5
+slot0.TALENT_POINT = 1
+slot0.TALENT_ADDITION_NUMBER = 1
+slot0.TALENT_ADDITION_RATIO = 2
+slot0.TALENT_ADDITION_BUFF = 3
+slot0.MAX_TELENT_COUNT = 5
+slot0.RESET_TALENT_WAIT_TIME = 86401
+slot0.PLAY_MAX_COUNT = 10
+slot0.MAX_FORMATION_POS = 2
+slot0.MAX_ABILITY = 255
+slot0.PROPERTIES = {
 	AttributeType.Durability,
 	AttributeType.Cannon,
 	AttributeType.Torpedo,
@@ -24,36 +23,30 @@ var_0_0.PROPERTIES = {
 	AttributeType.Luck,
 	AttributeType.AntiSub
 }
-var_0_0.DESTROY_ATTR_ID = 202
+slot0.DESTROY_ATTR_ID = 202
 
-local var_0_1 = pg.gameset.commander_get_cost.description
+function slot0.getBoxComsume(slot0)
+	slot1 = nil
 
-function var_0_0.getBoxComsume(arg_1_0)
-	local var_1_0
-
-	for iter_1_0, iter_1_1 in ipairs(var_0_1) do
-		if arg_1_0 < iter_1_1[3] then
-			var_1_0 = iter_1_1[1]
+	for slot5, slot6 in ipairs(uv0) do
+		if slot0 < slot6[3] then
+			slot1 = slot6[1]
 
 			break
 		end
 	end
 
-	var_1_0 = var_1_0 or var_0_1[#var_0_1][1]
-
-	local var_1_1 = getProxy(GuildProxy):GetAdditionGuild()
-
-	if var_1_1 then
-		var_1_0 = var_1_0 - var_1_1:getCatBoxGoldAddition()
+	if getProxy(GuildProxy):GetAdditionGuild() then
+		slot1 = (slot1 or uv0[#uv0][1]) - slot2:getCatBoxGoldAddition()
 	end
 
-	return math.max(var_1_0, 0)
+	return math.max(slot1, 0)
 end
 
-var_0_0.MAX_GETBOX_CNT = 0
+slot0.MAX_GETBOX_CNT = 0
 
-for iter_0_0, iter_0_1 in ipairs(var_0_1) do
-	var_0_0.MAX_GETBOX_CNT = var_0_0.MAX_GETBOX_CNT + iter_0_1[3]
+for slot5, slot6 in ipairs(pg.gameset.commander_get_cost.description) do
+	slot0.MAX_GETBOX_CNT = slot0.MAX_GETBOX_CNT + slot6[3]
 end
 
-return var_0_0
+return slot0

@@ -1,15 +1,13 @@
-﻿local var_0_0 = class("NewGuildResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
+slot0 = class("NewGuildResultStatisticsPage", import("..NewBattleResultStatisticsPage"))
 
-function var_0_0.UpdateGrade(arg_1_0)
-	local var_1_0 = "battlescore/grade_label_clear"
-
-	LoadImageSpriteAsync(var_1_0, arg_1_0.gradeTxt, false)
-	setActive(arg_1_0.gradeIcon, false)
+function slot0.UpdateGrade(slot0)
+	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, false)
+	setActive(slot0.gradeIcon, false)
 end
 
-function var_0_0.UpdatePainting(arg_2_0, arg_2_1)
-	arg_2_0:UpdatePaintingPosition()
-	arg_2_0:UpdateMvpPainting(arg_2_1)
+function slot0.UpdatePainting(slot0, slot1)
+	slot0:UpdatePaintingPosition()
+	slot0:UpdateMvpPainting(slot1)
 end
 
-return var_0_0
+return slot0

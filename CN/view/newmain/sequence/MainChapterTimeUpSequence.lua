@@ -1,24 +1,21 @@
-﻿local var_0_0 = class("MainChapterTimeUpSequence")
+slot0 = class("MainChapterTimeUpSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(ChapterProxy)
+function slot0.Execute(slot0, slot1)
+	slot2 = getProxy(ChapterProxy)
 
-	var_1_0:checkRemasterInfomation()
+	slot2:checkRemasterInfomation()
 
-	local var_1_1 = var_1_0:getActiveChapter()
-	local var_1_2 = var_1_1 and var_1_0:getMapById(var_1_1:getConfig("map"))
-
-	if var_1_1 and (not var_1_1:inWartime() or not var_1_2:isRemaster() and not var_1_1:inActTime()) then
-		ChapterOpCommand.PrepareChapterRetreat(function()
+	if slot3 and (not slot3:inWartime() or not (slot2:getActiveChapter() and slot2:getMapById(slot3:getConfig("map"))):isRemaster() and not slot3:inActTime()) then
+		ChapterOpCommand.PrepareChapterRetreat(function ()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_chapter_timeout"))
 
-			if arg_1_1 then
-				arg_1_1()
+			if uv0 then
+				uv0()
 			end
 		end)
-	elseif arg_1_1 then
-		arg_1_1()
+	elseif slot1 then
+		slot1()
 	end
 end
 
-return var_0_0
+return slot0

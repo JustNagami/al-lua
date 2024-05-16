@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetHelpLeastHPRatio",
-			targetAniEffect = "",
-			arg_list = {
-				number = 10
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -30,5 +19,16 @@
 	id = 11,
 	picture = "0",
 	aniEffect = "",
-	desc = "维修Lv2"
+	desc = "维修Lv2",
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetHelpLeastHPRatio",
+			targetAniEffect = "",
+			arg_list = {
+				number = 10
+			}
+		}
+	}
 }

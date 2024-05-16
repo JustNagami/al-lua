@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 0.25,
-				target = "TargetSelf",
-				skill_id = 15912,
-				quota = 1
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -33,5 +19,19 @@
 	stack = 1,
 	id = 15913,
 	icon = 15913,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 0.25,
+				target = "TargetSelf",
+				skill_id = 15912,
+				quota = 1
+			}
+		}
+	}
 }

@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1021
-			}
-		}
-	},
+return {
 	{
 		desc = "提高舰队中全员5.0%航空属性，同类指挥技能无法同时生效",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 1021,
 	icon = 1020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1021
+			}
+		}
+	}
 }

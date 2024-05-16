@@ -1,43 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "antiAirPower",
-				number = -150
-			}
-		},
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "enemyantiAirPowerDownTag"
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSink"
-			},
-			arg_list = {
-				skill_id = 16211,
-				target = "TargetSelf",
-				deathCause = {
-					1,
-					3,
-					4,
-					5
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -456,5 +417,44 @@
 	stack = 1,
 	id = 16211,
 	icon = 16100,
-	last_effect = "yuekecheng_huabanhuanrao"
+	last_effect = "yuekecheng_huabanhuanrao",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "antiAirPower",
+				number = -150
+			}
+		},
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "enemyantiAirPowerDownTag"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSink"
+			},
+			arg_list = {
+				skill_id = 16211,
+				target = "TargetSelf",
+				deathCause = {
+					1,
+					3,
+					4,
+					5
+				}
+			}
+		}
+	}
 }

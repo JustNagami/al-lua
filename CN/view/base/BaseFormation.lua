@@ -1,447 +1,413 @@
-﻿local var_0_0 = class("BaseFormation")
+slot0 = class("BaseFormation")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	arg_1_0._mainTf = arg_1_1
-	arg_1_0._heroContainer = arg_1_2
-	arg_1_0._heroInfoTpl = arg_1_3
-	arg_1_0._gridTFs = arg_1_4
-	arg_1_0._widthRate = rtf(arg_1_0._mainTf).rect.width / UnityEngine.Screen.width
-	arg_1_0._heightRate = rtf(arg_1_0._mainTf).rect.height / UnityEngine.Screen.height
-	arg_1_0._halfWidth = rtf(arg_1_0._mainTf).rect.width / 2
-	arg_1_0._halfHeight = rtf(arg_1_0._mainTf).rect.height / 2
-	arg_1_0._offset = arg_1_0._heroContainer.localPosition
-	arg_1_0._eventTriggers = {}
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	slot0._mainTf = slot1
+	slot0._heroContainer = slot2
+	slot0._heroInfoTpl = slot3
+	slot0._gridTFs = slot4
+	slot0._widthRate = rtf(slot0._mainTf).rect.width / UnityEngine.Screen.width
+	slot0._heightRate = rtf(slot0._mainTf).rect.height / UnityEngine.Screen.height
+	slot0._halfWidth = rtf(slot0._mainTf).rect.width / 2
+	slot0._halfHeight = rtf(slot0._mainTf).rect.height / 2
+	slot0._offset = slot0._heroContainer.localPosition
+	slot0._eventTriggers = {}
 
-	pg.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(slot0)
 end
 
-function var_0_0.SetFleetVO(arg_2_0, arg_2_1)
-	arg_2_0._currentFleetVO = arg_2_1
+function slot0.SetFleetVO(slot0, slot1)
+	slot0._currentFleetVO = slot1
 end
 
-function var_0_0.SetShipVOs(arg_3_0, arg_3_1)
-	arg_3_0._shipVOs = arg_3_1
+function slot0.SetShipVOs(slot0, slot1)
+	slot0._shipVOs = slot1
 end
 
-function var_0_0.DisableTip(arg_4_0)
-	arg_4_0._disableTip = true
+function slot0.DisableTip(slot0)
+	slot0._disableTip = true
 end
 
-function var_0_0.ForceDropChar(arg_5_0)
-	if arg_5_0._currentDragDelegate then
-		arg_5_0._forceDropCharacter = true
+function slot0.ForceDropChar(slot0)
+	if slot0._currentDragDelegate then
+		slot0._forceDropCharacter = true
 
-		LuaHelper.triggerEndDrag(arg_5_0._currentDragDelegate)
+		LuaHelper.triggerEndDrag(slot0._currentDragDelegate)
 	end
 end
 
-function var_0_0.AddHeroInfoModify(arg_6_0, arg_6_1)
-	arg_6_0._heroInfoModifyCb = arg_6_1
+function slot0.AddHeroInfoModify(slot0, slot1)
+	slot0._heroInfoModifyCb = slot1
 end
 
-function var_0_0.AddLongPress(arg_7_0, arg_7_1)
-	arg_7_0._longPressCb = arg_7_1
+function slot0.AddLongPress(slot0, slot1)
+	slot0._longPressCb = slot1
 end
 
-function var_0_0.AddClick(arg_8_0, arg_8_1)
-	arg_8_0._click = arg_8_1
+function slot0.AddClick(slot0, slot1)
+	slot0._click = slot1
 end
 
-function var_0_0.AddBeginDrag(arg_9_0, arg_9_1)
-	arg_9_0._beginDrag = arg_9_1
+function slot0.AddBeginDrag(slot0, slot1)
+	slot0._beginDrag = slot1
 end
 
-function var_0_0.AddEndDrag(arg_10_0, arg_10_1)
-	arg_10_0._endDrag = arg_10_1
+function slot0.AddEndDrag(slot0, slot1)
+	slot0._endDrag = slot1
 end
 
-function var_0_0.AddCheckBeginDrag(arg_11_0, arg_11_1)
-	arg_11_0._checkBeginDrag = arg_11_1
+function slot0.AddCheckBeginDrag(slot0, slot1)
+	slot0._checkBeginDrag = slot1
 end
 
-function var_0_0.AddShiftOnly(arg_12_0, arg_12_1)
-	arg_12_0._shiftOnly = arg_12_1
+function slot0.AddShiftOnly(slot0, slot1)
+	slot0._shiftOnly = slot1
 end
 
-function var_0_0.AddRemoveShip(arg_13_0, arg_13_1)
-	arg_13_0._removeShip = arg_13_1
+function slot0.AddRemoveShip(slot0, slot1)
+	slot0._removeShip = slot1
 end
 
-function var_0_0.AddCheckRemove(arg_14_0, arg_14_1)
-	arg_14_0._checkRemove = arg_14_1
+function slot0.AddCheckRemove(slot0, slot1)
+	slot0._checkRemove = slot1
 end
 
-function var_0_0.AddCheckSwitch(arg_15_0, arg_15_1)
-	arg_15_0._checkSwitch = arg_15_1
+function slot0.AddCheckSwitch(slot0, slot1)
+	slot0._checkSwitch = slot1
 end
 
-function var_0_0.AddSwitchToDisplayMode(arg_16_0, arg_16_1)
-	arg_16_0._switchToDisplayModeHandler = arg_16_1
+function slot0.AddSwitchToDisplayMode(slot0, slot1)
+	slot0._switchToDisplayModeHandler = slot1
 end
 
-function var_0_0.AddSwitchToShiftMode(arg_17_0, arg_17_1)
-	arg_17_0._switchToShiftModeHandler = arg_17_1
+function slot0.AddSwitchToShiftMode(slot0, slot1)
+	slot0._switchToShiftModeHandler = slot1
 end
 
-function var_0_0.AddSwitchToPreviewMode(arg_18_0, arg_18_1)
-	arg_18_0._swtichToPreviewModeHandler = arg_18_1
+function slot0.AddSwitchToPreviewMode(slot0, slot1)
+	slot0._swtichToPreviewModeHandler = slot1
 end
 
-function var_0_0.AddGridTipClick(arg_19_0, arg_19_1)
-	arg_19_0._gridTipClick = arg_19_1
+function slot0.AddGridTipClick(slot0, slot1)
+	slot0._gridTipClick = slot1
 end
 
-function var_0_0.AddLoadComplete(arg_20_0, arg_20_1)
-	arg_20_0._loadComplete = arg_20_1
+function slot0.AddLoadComplete(slot0, slot1)
+	slot0._loadComplete = slot1
 end
 
-function var_0_0.GenCharInfo(arg_21_0, arg_21_1, arg_21_2)
+function slot0.GenCharInfo(slot0, slot1, slot2)
 	return {
-		heroInfoTF = arg_21_1,
-		spineRole = arg_21_2
+		heroInfoTF = slot1,
+		spineRole = slot2
 	}
 end
 
-function var_0_0.ClearHeroContainer(arg_22_0)
-	if arg_22_0._characterList then
-		arg_22_0:RecycleCharacterList(arg_22_0._currentFleetVO:getTeamByName(TeamType.Main), arg_22_0._characterList[TeamType.Main])
-		arg_22_0:RecycleCharacterList(arg_22_0._currentFleetVO:getTeamByName(TeamType.Vanguard), arg_22_0._characterList[TeamType.Vanguard])
-		arg_22_0:RecycleCharacterList(arg_22_0._currentFleetVO:getTeamByName(TeamType.Submarine), arg_22_0._characterList[TeamType.Submarine])
+function slot0.ClearHeroContainer(slot0)
+	if slot0._characterList then
+		slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Main), slot0._characterList[TeamType.Main])
+		slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Vanguard), slot0._characterList[TeamType.Vanguard])
+		slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Submarine), slot0._characterList[TeamType.Submarine])
 	end
 
-	removeAllChildren(arg_22_0._heroContainer)
+	removeAllChildren(slot0._heroContainer)
 end
 
-function var_0_0.LoadAllCharacter(arg_23_0)
-	arg_23_0:ClearHeroContainer()
+function slot0.LoadAllCharacter(slot0)
+	slot0:ClearHeroContainer()
 
-	arg_23_0._characterList = {
+	slot0._characterList = {
 		[TeamType.Vanguard] = {},
 		[TeamType.Main] = {},
 		[TeamType.Submarine] = {}
 	}
 
-	local function var_23_0(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
-		if arg_23_0._exited then
+	function slot1(slot0, slot1, slot2, slot3)
+		if uv0._exited then
 			return
 		end
 
-		local var_24_0 = arg_23_0._shipVOs[arg_24_1]
-		local var_24_1 = tf(Instantiate(arg_23_0._heroInfoTpl))
+		slot5 = tf(Instantiate(uv0._heroInfoTpl))
 
-		var_24_1:SetParent(arg_23_0._heroContainer, false)
-		SetActive(var_24_1, true)
-		arg_24_0:SetParent(var_24_1)
-		arg_24_0:SetRaycastTarget(false)
-		arg_24_0:SetLocalScale(Vector3(0.8, 0.8, 1))
-		arg_24_0:SetLayer(Layer.UI)
-		arg_24_0.modelRoot.transform:SetAsFirstSibling()
+		slot5:SetParent(uv0._heroContainer, false)
+		SetActive(slot5, true)
+		slot0:SetParent(slot5)
+		slot0:SetRaycastTarget(false)
+		slot0:SetLocalScale(Vector3(0.8, 0.8, 1))
+		slot0:SetLayer(Layer.UI)
+		slot0.modelRoot.transform:SetAsFirstSibling()
 
-		if arg_23_0._heroInfoModifyCb ~= nil then
-			arg_23_0._heroInfoModifyCb(var_24_1, var_24_0, arg_24_0)
+		if uv0._heroInfoModifyCb ~= nil then
+			uv0._heroInfoModifyCb(slot5, uv0._shipVOs[slot1], slot0)
 		end
 
-		local var_24_2 = arg_23_0:GenCharInfo(var_24_1, arg_24_0)
-		local var_24_3 = arg_23_0._characterList[arg_24_2]
+		slot6 = uv0:GenCharInfo(slot5, slot0)
+		uv0._characterList[slot2][slot3] = slot6
+		slot8, slot9, slot10 = slot0:CreateInterface()
+		uv0._eventTriggers[slot10] = true
 
-		var_24_3[arg_24_3] = var_24_2
+		pg.DelegateInfo.Add(uv0, slot9.onLongPressed)
 
-		local var_24_4, var_24_5, var_24_6 = arg_24_0:CreateInterface()
+		slot9.longPressThreshold = 1
 
-		arg_23_0._eventTriggers[var_24_6] = true
-
-		pg.DelegateInfo.Add(arg_23_0, var_24_5.onLongPressed)
-
-		var_24_5.longPressThreshold = 1
-
-		var_24_5.onLongPressed:RemoveAllListeners()
-		var_24_5.onLongPressed:AddListener(function()
-			if arg_23_0._longPressCb ~= nil then
-				arg_23_0._longPressCb(var_24_1, var_24_0, arg_23_0._currentFleetVO, arg_24_2)
+		slot9.onLongPressed:RemoveAllListeners()
+		slot9.onLongPressed:AddListener(function ()
+			if uv0._longPressCb ~= nil then
+				uv0._longPressCb(uv1, uv2, uv0._currentFleetVO, uv3)
 			end
 		end)
-		pg.DelegateInfo.Add(arg_23_0, var_24_4.onModelClick)
-		var_24_4.onModelClick:AddListener(function()
-			if arg_23_0._click ~= nil then
-				arg_23_0._click(var_24_0, arg_24_2, arg_23_0._currentFleetVO)
+		pg.DelegateInfo.Add(uv0, slot8.onModelClick)
+		slot8.onModelClick:AddListener(function ()
+			if uv0._click ~= nil then
+				uv0._click(uv1, uv2, uv0._currentFleetVO)
 			end
 		end)
-		var_24_6:AddBeginDragFunc(function()
-			if arg_23_0._modelDrag then
+		slot10:AddBeginDragFunc(function ()
+			if uv0._modelDrag then
 				return
 			end
 
-			if arg_23_0._checkBeginDrag and not arg_23_0._checkBeginDrag(var_24_0, arg_24_2, arg_23_0._currentFleetVO) then
+			if uv0._checkBeginDrag and not uv0._checkBeginDrag(uv1, uv2, uv0._currentFleetVO) then
 				return
 			end
 
-			arg_23_0._modelDrag = arg_24_0.modelRoot
-			arg_23_0._currentDragDelegate = var_24_6
+			uv0._modelDrag = uv3.modelRoot
+			uv0._currentDragDelegate = uv4
 
-			LeanTween.cancel(arg_24_0.modelRoot)
-			var_24_1:SetAsLastSibling()
-			arg_23_0:SwitchToShiftMode(var_24_1, arg_24_2)
-			arg_24_0:SetAction("tuozhuai")
+			LeanTween.cancel(uv3.modelRoot)
+			uv5:SetAsLastSibling()
+			uv0:SwitchToShiftMode(uv5, uv2)
+			uv3:SetAction("tuozhuai")
 
-			if arg_23_0._beginDrag then
-				arg_23_0._beginDrag(var_24_1)
+			if uv0._beginDrag then
+				uv0._beginDrag(uv5)
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_DRAG)
 		end)
-		var_24_6:AddDragFunc(function(arg_28_0, arg_28_1)
-			if arg_23_0._modelDrag ~= arg_24_0.modelRoot then
+		slot10:AddDragFunc(function (slot0, slot1)
+			if uv0._modelDrag ~= uv1.modelRoot then
 				return
 			end
 
-			var_24_1.localPosition = Vector3(arg_28_1.position.x * arg_23_0._widthRate - arg_23_0._halfWidth - arg_23_0._offset.x, arg_28_1.position.y * arg_23_0._heightRate - arg_23_0._halfHeight - arg_23_0._offset.y, -22)
+			uv2.localPosition = Vector3(slot1.position.x * uv0._widthRate - uv0._halfWidth - uv0._offset.x, slot1.position.y * uv0._heightRate - uv0._halfHeight - uv0._offset.y, -22)
 		end)
-		var_24_6:AddDragEndFunc(function(arg_29_0, arg_29_1)
-			if arg_23_0._modelDrag ~= arg_24_0.modelRoot then
+		slot10:AddDragEndFunc(function (slot0, slot1)
+			if uv0._modelDrag ~= uv1.modelRoot then
 				return
 			end
 
-			arg_23_0._modelDrag = false
+			uv0._modelDrag = false
+			uv0._forceDropCharacter = nil
+			uv0._currentDragDelegate = nil
 
-			local var_29_0 = arg_23_0._forceDropCharacter
+			uv1:SetAction("stand")
 
-			arg_23_0._forceDropCharacter = nil
-			arg_23_0._currentDragDelegate = nil
+			if uv0._forceDropCharacter then
+				function ()
+					uv0:SwitchToDisplayMode()
+					uv0:SortSiblingIndex()
 
-			arg_24_0:SetAction("stand")
-
-			local function var_29_1()
-				arg_23_0:SwitchToDisplayMode()
-				arg_23_0:SortSiblingIndex()
-
-				if arg_23_0._shiftOnly ~= nil then
-					arg_23_0._shiftOnly(arg_23_0._currentFleetVO)
-				end
-			end
-
-			if var_29_0 then
-				var_29_1()
-
-				return
-			end
-
-			local function var_29_2()
-				for iter_31_0, iter_31_1 in ipairs(var_24_3) do
-					if iter_31_1.heroInfoTF == var_24_1 then
-						iter_31_1.spineRole:Dispose()
-						var_24_1.gameObject:Destroy()
-						table.remove(var_24_3, iter_31_0)
-
-						break
+					if uv0._shiftOnly ~= nil then
+						uv0._shiftOnly(uv0._currentFleetVO)
 					end
-				end
+				end()
 
-				arg_23_0:SwitchToDisplayMode()
-				arg_23_0:SortSiblingIndex()
-
-				if arg_23_0._removeShip ~= nil then
-					arg_23_0._removeShip(var_24_0, arg_23_0._currentFleetVO)
-				end
+				return
 			end
 
-			local var_29_3, var_29_4 = arg_23_0:GetShipPos(arg_23_0._currentFleetVO, var_24_0)
+			slot5, slot6 = uv0:GetShipPos(uv0._currentFleetVO, uv4)
 
-			if arg_29_1.position.x < UnityEngine.Screen.width * 0.15 or arg_29_1.position.x > UnityEngine.Screen.width * 0.87 or arg_29_1.position.y < UnityEngine.Screen.height * 0.18 or arg_29_1.position.y > UnityEngine.Screen.height * 0.7 then
-				if arg_23_0._checkRemove ~= nil then
-					arg_23_0._checkRemove(var_29_1, var_29_2, var_24_0, arg_23_0._currentFleetVO, var_29_4)
+			if slot1.position.x < UnityEngine.Screen.width * 0.15 or slot1.position.x > UnityEngine.Screen.width * 0.87 or slot1.position.y < UnityEngine.Screen.height * 0.18 or slot1.position.y > UnityEngine.Screen.height * 0.7 then
+				if uv0._checkRemove ~= nil then
+					uv0._checkRemove(slot3, function ()
+						for slot3, slot4 in ipairs(uv0) do
+							if slot4.heroInfoTF == uv1 then
+								slot4.spineRole:Dispose()
+								uv1.gameObject:Destroy()
+								table.remove(uv0, slot3)
+
+								break
+							end
+						end
+
+						uv2:SwitchToDisplayMode()
+						uv2:SortSiblingIndex()
+
+						if uv2._removeShip ~= nil then
+							uv2._removeShip(uv3, uv2._currentFleetVO)
+						end
+					end, uv4, uv0._currentFleetVO, slot6)
 				end
 			else
-				var_29_1()
+				slot3()
 			end
 
-			if arg_23_0._endDrag ~= nil then
-				arg_23_0._endDrag(var_24_1)
+			if uv0._endDrag ~= nil then
+				uv0._endDrag(uv3)
 			end
 
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_PUT)
 		end)
-		arg_23_0:SetCharacterPos(arg_24_2, arg_24_3, var_24_2)
+		uv0:SetCharacterPos(slot2, slot3, slot6)
 	end
 
-	local var_23_1 = {}
+	slot2 = {}
 
-	local function var_23_2(arg_32_0, arg_32_1)
-		for iter_32_0, iter_32_1 in ipairs(arg_32_0) do
-			table.insert(var_23_1, function(arg_33_0)
-				local var_33_0 = SpineRole.New(arg_23_0._shipVOs[iter_32_1])
+	function slot3(slot0, slot1)
+		for slot5, slot6 in ipairs(slot0) do
+			table.insert(uv0, function (slot0)
+				slot1 = SpineRole.New(uv0._shipVOs[uv1])
 
-				var_33_0:Load(function()
-					var_23_0(var_33_0, iter_32_1, arg_32_1, iter_32_0)
-					arg_33_0()
-				end, nil, var_33_0.ORBIT_KEY_UI)
+				slot1:Load(function ()
+					uv0(uv1, uv2, uv3, uv4)
+					uv5()
+				end, nil, slot1.ORBIT_KEY_UI)
 			end)
 		end
 	end
 
-	local var_23_3 = arg_23_0._currentFleetVO:getFleetType()
-
-	if var_23_3 == FleetType.Normal then
-		var_23_2(arg_23_0._currentFleetVO:getTeamByName(TeamType.Vanguard), TeamType.Vanguard)
-		var_23_2(arg_23_0._currentFleetVO:getTeamByName(TeamType.Main), TeamType.Main)
-	elseif var_23_3 == FleetType.Submarine then
-		var_23_2(arg_23_0._currentFleetVO:getTeamByName(TeamType.Submarine), TeamType.Submarine)
+	if slot0._currentFleetVO:getFleetType() == FleetType.Normal then
+		slot3(slot0._currentFleetVO:getTeamByName(TeamType.Vanguard), TeamType.Vanguard)
+		slot3(slot0._currentFleetVO:getTeamByName(TeamType.Main), TeamType.Main)
+	elseif slot4 == FleetType.Submarine then
+		slot3(slot0._currentFleetVO:getTeamByName(TeamType.Submarine), TeamType.Submarine)
 	end
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	parallelAsync(var_23_1, function(arg_35_0)
+	parallelAsync(slot2, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if arg_23_0._exited then
+		if uv0._exited then
 			return
 		end
 
-		arg_23_0:SortSiblingIndex()
+		uv0:SortSiblingIndex()
 
-		if arg_23_0._loadComplete then
-			arg_23_0._loadComplete()
+		if uv0._loadComplete then
+			uv0._loadComplete()
 		end
 	end)
 end
 
-function var_0_0.GetShipPos(arg_36_0, arg_36_1, arg_36_2)
-	if not arg_36_2 then
+function slot0.GetShipPos(slot0, slot1, slot2)
+	if not slot2 then
 		return
 	end
 
-	local var_36_0 = arg_36_2:getTeamType()
-	local var_36_1 = arg_36_1:getTeamByName(var_36_0)
-
-	return table.indexof(var_36_1, arg_36_2.id) or -1, var_36_0
+	return table.indexof(slot1:getTeamByName(slot2:getTeamType()), slot2.id) or -1, slot3
 end
 
-function var_0_0.SetAllCharacterPos(arg_37_0)
-	local var_37_0 = {
+function slot0.SetAllCharacterPos(slot0)
+	_.each({
 		TeamType.Main,
 		TeamType.Vanguard,
 		TeamType.Submarine
-	}
-
-	_.each(var_37_0, function(arg_38_0)
-		for iter_38_0, iter_38_1 in ipairs(arg_37_0._characterList[arg_38_0]) do
-			arg_37_0:SetCharacterPos(arg_38_0, iter_38_0, iter_38_1)
+	}, function (slot0)
+		for slot4, slot5 in ipairs(uv0._characterList[slot0]) do
+			uv0:SetCharacterPos(slot0, slot4, slot5)
 		end
 	end)
 end
 
-function var_0_0.SetCharacterPos(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
-	assert(arg_39_0._gridTFs[arg_39_1], "没有找到编队显示对象_teamType:" .. tostring(arg_39_1))
+function slot0.SetCharacterPos(slot0, slot1, slot2, slot3)
+	assert(slot0._gridTFs[slot1], "没有找到编队显示对象_teamType:" .. tostring(slot1))
 
-	local var_39_0 = arg_39_3.heroInfoTF
-	local var_39_1 = arg_39_3.spineRole
-	local var_39_2 = var_39_1.modelRoot
-	local var_39_3 = arg_39_0._gridTFs[arg_39_1][arg_39_2]
-	local var_39_4 = var_39_3.localPosition
+	slot5 = slot3.spineRole
+	slot6 = slot5.modelRoot
+	slot7 = slot0._gridTFs[slot1][slot2]
+	slot8 = slot7.localPosition
 
-	LeanTween.cancel(var_39_2)
+	LeanTween.cancel(slot6)
 
-	var_39_0.localPosition = Vector3(var_39_4.x, var_39_4.y, -15 + var_39_4.z + arg_39_2)
-	var_39_2.transform.localPosition = Vector3(0, 20, 0)
+	slot3.heroInfoTF.localPosition = Vector3(slot8.x, slot8.y, -15 + slot8.z + slot2)
+	slot6.transform.localPosition = Vector3(0, 20, 0)
 
-	LeanTween.moveY(rtf(var_39_2), 0, 0.5):setDelay(0.5)
-	SetActive(var_39_3:Find("shadow"), true)
-	var_39_1:SetAction("stand")
-	var_39_1:resumeRole()
+	LeanTween.moveY(rtf(slot6), 0, 0.5):setDelay(0.5)
+	SetActive(slot7:Find("shadow"), true)
+	slot5:SetAction("stand")
+	slot5:resumeRole()
 end
 
-function var_0_0.ResetGrid(arg_40_0, arg_40_1, arg_40_2)
-	if not arg_40_0._gridTFs[arg_40_1] then
+function slot0.ResetGrid(slot0, slot1, slot2)
+	if not slot0._gridTFs[slot1] then
 		return
 	end
 
-	local var_40_0 = arg_40_0._currentFleetVO:getTeamByName(arg_40_1)
+	assert(slot0._currentFleetVO:getTeamByName(slot1), slot1)
 
-	assert(var_40_0, arg_40_1)
-
-	local var_40_1 = arg_40_0._gridTFs[arg_40_1]
-
-	for iter_40_0, iter_40_1 in ipairs(var_40_1) do
-		SetActive(iter_40_1:Find("shadow"), false)
-		SetActive(iter_40_1:Find("tip"), false)
+	for slot8, slot9 in ipairs(slot0._gridTFs[slot1]) do
+		SetActive(slot9:Find("shadow"), false)
+		SetActive(slot9:Find("tip"), false)
 	end
 
-	if arg_40_1 == TeamType.Main and #arg_40_0._currentFleetVO:getTeamByName(TeamType.Vanguard) == 0 then
+	if slot1 == TeamType.Main and #slot0._currentFleetVO:getTeamByName(TeamType.Vanguard) == 0 then
 		return
 	end
 
-	local var_40_2 = #var_40_0
+	if #slot3 < 3 then
+		slot7 = slot4[slot5 + 1]:Find("tip")
+		slot7:GetComponent("Button").enabled = true
 
-	if var_40_2 < 3 then
-		local var_40_3 = var_40_1[var_40_2 + 1]:Find("tip")
-
-		var_40_3:GetComponent("Button").enabled = true
-
-		onButton(arg_40_0, var_40_3, function()
-			if arg_40_0._gridTipClick then
-				arg_40_0._gridTipClick(arg_40_1, arg_40_0._currentFleetVO)
+		onButton(slot0, slot7, function ()
+			if uv0._gridTipClick then
+				uv0._gridTipClick(uv1, uv0._currentFleetVO)
 			end
 		end, SFX_PANEL)
 
-		var_40_3.localScale = Vector3(0, 0, 1)
+		slot7.localScale = Vector3(0, 0, 1)
 
-		if not arg_40_0._disableTip then
-			SetActive(var_40_3, not arg_40_2)
+		if not slot0._disableTip then
+			SetActive(slot7, not slot2)
 		end
 
-		LeanTween.value(go(var_40_3), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_42_0)
-			var_40_3.localScale = Vector3(arg_42_0, arg_42_0, 1)
+		LeanTween.value(go(slot7), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
+			uv0.localScale = Vector3(slot0, slot0, 1)
 		end)):setEase(LeanTweenType.easeOutBack)
 	end
 end
 
-function var_0_0.SwitchToShiftMode(arg_43_0, arg_43_1, arg_43_2)
-	assert(arg_43_0._gridTFs[arg_43_2], "没有找到编队显示对象_teamType:" .. tostring(arg_43_2))
+function slot0.SwitchToShiftMode(slot0, slot1, slot2)
+	assert(slot0._gridTFs[slot2], "没有找到编队显示对象_teamType:" .. tostring(slot2))
 
-	if arg_43_0._switchToShiftModeHandler then
-		arg_43_0._switchToShiftModeHandler()
+	if slot0._switchToShiftModeHandler then
+		slot0._switchToShiftModeHandler()
 	end
 
-	for iter_43_0 = 1, 3 do
-		local var_43_0 = {
+	for slot6 = 1, 3 do
+		_.each({
 			TeamType.Vanguard,
 			TeamType.Main,
 			TeamType.Submarine
-		}
-
-		_.each(var_43_0, function(arg_44_0)
-			if arg_43_0._gridTFs[arg_44_0] and arg_43_0._gridTFs[arg_44_0][iter_43_0] then
-				setActive(arg_43_0._gridTFs[arg_44_0][iter_43_0]:Find("tip"), false)
+		}, function (slot0)
+			if uv0._gridTFs[slot0] and uv0._gridTFs[slot0][uv1] then
+				setActive(uv0._gridTFs[slot0][uv1]:Find("tip"), false)
 			end
 		end)
-		setActive(arg_43_0._gridTFs[arg_43_2][iter_43_0]:Find("shadow"), false)
+		setActive(slot0._gridTFs[slot2][slot6]:Find("shadow"), false)
 	end
 
-	local var_43_1 = arg_43_0._characterList[arg_43_2]
+	for slot7, slot8 in ipairs(slot0._characterList[slot2]) do
+		slot11 = slot8.spineRole.modelRoot
 
-	for iter_43_1, iter_43_2 in ipairs(var_43_1) do
-		local var_43_2 = iter_43_2.heroInfoTF
-		local var_43_3 = iter_43_2.spineRole
-		local var_43_4 = var_43_3.modelRoot
+		if slot8.heroInfoTF ~= slot1 then
+			LeanTween.moveY(rtf(slot11), slot11.transform.localPosition.y + 20, 0.5)
 
-		if var_43_2 ~= arg_43_1 then
-			LeanTween.moveY(rtf(var_43_4), var_43_4.transform.localPosition.y + 20, 0.5)
+			slot12, slot13, slot14 = slot10:GetInterface()
+			slot0._eventTriggers[slot14] = true
 
-			local var_43_5, var_43_6, var_43_7 = var_43_3:GetInterface()
-
-			arg_43_0._eventTriggers[var_43_7] = true
-
-			var_43_7:AddPointEnterFunc(function()
-				for iter_45_0, iter_45_1 in ipairs(var_43_1) do
-					if iter_45_1.heroInfoTF == var_43_2 then
+			slot14:AddPointEnterFunc(function ()
+				for slot3, slot4 in ipairs(uv0) do
+					if slot4.heroInfoTF == uv1 then
 						seriesAsync({
-							function(arg_46_0)
-								if not arg_43_0._checkSwitch then
-									return arg_46_0()
+							function (slot0)
+								if not uv0._checkSwitch then
+									return slot0()
 								end
 
-								arg_43_0._checkSwitch(arg_46_0, arg_43_0._shiftIndex, iter_45_0, arg_43_0._currentFleetVO, arg_43_2)
+								uv0._checkSwitch(slot0, uv0._shiftIndex, uv1, uv0._currentFleetVO, uv2)
 							end,
-							function(arg_47_0)
-								arg_43_0:Shift(arg_43_0._shiftIndex, iter_45_0, arg_43_2)
+							function (slot0)
+								uv0:Shift(uv0._shiftIndex, uv1, uv2)
 							end
 						})
 
@@ -450,200 +416,177 @@ function var_0_0.SwitchToShiftMode(arg_43_0, arg_43_1, arg_43_2)
 				end
 			end)
 		else
-			arg_43_0._shiftIndex = iter_43_1
+			slot0._shiftIndex = slot7
 
-			var_43_3:DisableInterface()
+			slot10:DisableInterface()
 		end
 
-		var_43_3:SetAction("normal")
+		slot10:SetAction("normal")
 	end
 end
 
-function var_0_0.SwitchToDisplayMode(arg_48_0)
-	if arg_48_0._switchToDisplayModeHandler then
-		arg_48_0._switchToDisplayModeHandler()
+function slot0.SwitchToDisplayMode(slot0)
+	if slot0._switchToDisplayModeHandler then
+		slot0._switchToDisplayModeHandler()
 	end
 
-	local function var_48_0(arg_49_0)
-		for iter_49_0, iter_49_1 in ipairs(arg_49_0) do
-			local var_49_0 = iter_49_1.heroInfoTF
-			local var_49_1 = iter_49_1.spineRole
-			local var_49_2 = var_49_1.modelRoot
-			local var_49_3, var_49_4, var_49_5 = var_49_1:GetInterface()
+	function slot1(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			slot6 = slot5.heroInfoTF
+			slot7 = slot5.spineRole
+			slot8 = slot7.modelRoot
+			slot9, slot10, slot11 = slot7:GetInterface()
 
-			if var_49_5 then
-				arg_48_0._eventTriggers[var_49_5] = true
+			if slot11 then
+				uv0._eventTriggers[slot11] = true
 
-				if var_49_5 then
-					var_49_5:RemovePointEnterFunc()
+				if slot11 then
+					slot11:RemovePointEnterFunc()
 				end
 			end
 		end
 	end
 
-	arg_48_0:TurnOffPreviewMode()
-	var_48_0(arg_48_0._characterList[TeamType.Vanguard])
-	var_48_0(arg_48_0._characterList[TeamType.Main])
-	var_48_0(arg_48_0._characterList[TeamType.Submarine])
+	slot0:TurnOffPreviewMode()
+	slot1(slot0._characterList[TeamType.Vanguard])
+	slot1(slot0._characterList[TeamType.Main])
+	slot1(slot0._characterList[TeamType.Submarine])
 
-	arg_48_0._shiftIndex = nil
+	slot0._shiftIndex = nil
 end
 
-function var_0_0.SwitchToPreviewMode(arg_50_0)
-	if arg_50_0._swtichToPreviewModeHandler then
-		arg_50_0._swtichToPreviewModeHandler()
+function slot0.SwitchToPreviewMode(slot0)
+	if slot0._swtichToPreviewModeHandler then
+		slot0._swtichToPreviewModeHandler()
 	end
 
-	arg_50_0:ResetGrid(TeamType.Vanguard, true)
-	arg_50_0:ResetGrid(TeamType.Main, true)
-	arg_50_0:ResetGrid(TeamType.Submarine, true)
-	arg_50_0:SetAllCharacterPos()
-	arg_50_0:SetEnableForSpineInterface(false)
+	slot0:ResetGrid(TeamType.Vanguard, true)
+	slot0:ResetGrid(TeamType.Main, true)
+	slot0:ResetGrid(TeamType.Submarine, true)
+	slot0:SetAllCharacterPos()
+	slot0:SetEnableForSpineInterface(false)
 end
 
-function var_0_0.TurnOffPreviewMode(arg_51_0)
-	arg_51_0:ResetGrid(TeamType.Vanguard)
-	arg_51_0:ResetGrid(TeamType.Main)
-	arg_51_0:ResetGrid(TeamType.Submarine)
-	arg_51_0:SetAllCharacterPos()
-	arg_51_0:SetEnableForSpineInterface(true)
+function slot0.TurnOffPreviewMode(slot0)
+	slot0:ResetGrid(TeamType.Vanguard)
+	slot0:ResetGrid(TeamType.Main)
+	slot0:ResetGrid(TeamType.Submarine)
+	slot0:SetAllCharacterPos()
+	slot0:SetEnableForSpineInterface(true)
 end
 
-function var_0_0.SetEnableForSpineInterface(arg_52_0, arg_52_1)
-	local var_52_0 = {
+function slot0.SetEnableForSpineInterface(slot0, slot1)
+	_.each({
 		TeamType.Main,
 		TeamType.Vanguard,
 		TeamType.Submarine
-	}
-
-	_.each(var_52_0, function(arg_53_0)
-		for iter_53_0, iter_53_1 in ipairs(arg_52_0._characterList[arg_53_0]) do
-			if arg_52_1 then
-				iter_53_1.spineRole:EnableInterface()
+	}, function (slot0)
+		for slot4, slot5 in ipairs(uv0._characterList[slot0]) do
+			if uv1 then
+				slot5.spineRole:EnableInterface()
 			else
-				iter_53_1.spineRole:DisableInterface()
+				slot5.spineRole:DisableInterface()
 			end
 		end
 	end)
 end
 
-function var_0_0.Shift(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
-	assert(arg_54_0._gridTFs[arg_54_3], "没有找到编队显示对象_teamType:" .. tostring(arg_54_3))
+function slot0.Shift(slot0, slot1, slot2, slot3)
+	assert(slot0._gridTFs[slot3], "没有找到编队显示对象_teamType:" .. tostring(slot3))
 
-	local var_54_0 = arg_54_0._characterList[arg_54_3]
-	local var_54_1 = arg_54_0._gridTFs[arg_54_3]
-	local var_54_2 = var_54_0[arg_54_2]
-	local var_54_3 = var_54_2.heroInfoTF
-	local var_54_4 = var_54_2.spineRole.modelRoot
-	local var_54_5 = var_54_1[arg_54_1].localPosition
+	slot4 = slot0._characterList[slot3]
+	slot6 = slot4[slot2]
+	slot10 = slot0._gridTFs[slot3][slot1].localPosition
+	slot6.heroInfoTF.localPosition = Vector3(slot10.x, slot10.y + 20, -15 + slot10.z + slot1)
 
-	var_54_3.localPosition = Vector3(var_54_5.x, var_54_5.y + 20, -15 + var_54_5.z + arg_54_1)
+	LeanTween.cancel(slot6.spineRole.modelRoot)
 
-	local var_54_6 = var_54_0[arg_54_1].spineRole.ship.id
-	local var_54_7 = var_54_0[arg_54_2].spineRole.ship.id
+	slot4[slot2] = slot4[slot1]
+	slot4[slot1] = slot4[slot2]
 
-	LeanTween.cancel(var_54_4)
+	slot0._currentFleetVO:switchShip(slot3, slot1, slot2, slot4[slot1].spineRole.ship.id, slot4[slot2].spineRole.ship.id)
 
-	var_54_0[arg_54_1], var_54_0[arg_54_2] = var_54_0[arg_54_2], var_54_0[arg_54_1]
-
-	arg_54_0._currentFleetVO:switchShip(arg_54_3, arg_54_1, arg_54_2, var_54_6, var_54_7)
-
-	arg_54_0._shiftIndex = arg_54_2
+	slot0._shiftIndex = slot2
 end
 
-function var_0_0.SortSiblingIndex(arg_55_0)
-	local var_55_0 = 0
-	local var_55_1 = {
+function slot0.SortSiblingIndex(slot0)
+	slot1 = 0
+
+	for slot6, slot7 in ipairs({
 		2,
 		1,
 		3
-	}
+	}) do
+		if slot0._characterList[TeamType.Main][slot7] then
+			tf(slot8.heroInfoTF):SetSiblingIndex(slot1)
 
-	for iter_55_0, iter_55_1 in ipairs(var_55_1) do
-		local var_55_2 = arg_55_0._characterList[TeamType.Main][iter_55_1]
-
-		if var_55_2 then
-			local var_55_3 = var_55_2.heroInfoTF
-
-			tf(var_55_3):SetSiblingIndex(var_55_0)
-
-			var_55_0 = var_55_0 + 1
+			slot1 = slot1 + 1
 		end
 	end
 
-	local var_55_4 = 3
+	slot3 = 3
 
-	while var_55_4 > 0 do
-		local var_55_5 = arg_55_0._characterList[TeamType.Vanguard][var_55_4]
+	while slot3 > 0 do
+		if slot0._characterList[TeamType.Vanguard][slot3] then
+			tf(slot4.heroInfoTF):SetSiblingIndex(slot1)
 
-		if var_55_5 then
-			local var_55_6 = var_55_5.heroInfoTF
-
-			tf(var_55_6):SetSiblingIndex(var_55_0)
-
-			var_55_0 = var_55_0 + 1
+			slot1 = slot1 + 1
 		end
 
-		var_55_4 = var_55_4 - 1
+		slot3 = slot3 - 1
 	end
 
-	local var_55_7 = 3
+	slot3 = 3
 
-	while var_55_7 > 0 do
-		local var_55_8 = arg_55_0._characterList[TeamType.Submarine][var_55_7]
+	while slot3 > 0 do
+		if slot0._characterList[TeamType.Submarine][slot3] then
+			tf(slot4.heroInfoTF):SetSiblingIndex(slot1)
 
-		if var_55_8 then
-			local var_55_9 = var_55_8.heroInfoTF
-
-			tf(var_55_9):SetSiblingIndex(var_55_0)
-
-			var_55_0 = var_55_0 + 1
+			slot1 = slot1 + 1
 		end
 
-		var_55_7 = var_55_7 - 1
+		slot3 = slot3 - 1
 	end
 end
 
-function var_0_0.UpdateGridVisibility(arg_56_0)
-	local var_56_0 = arg_56_0._currentFleetVO:getFleetType()
+function slot0.UpdateGridVisibility(slot0)
+	slot1 = slot0._currentFleetVO:getFleetType()
 
-	_.each(arg_56_0._gridTFs[TeamType.Main], function(arg_57_0)
-		setActive(arg_57_0, var_56_0 == FleetType.Normal)
+	_.each(slot0._gridTFs[TeamType.Main], function (slot0)
+		setActive(slot0, uv0 == FleetType.Normal)
 	end)
-	_.each(arg_56_0._gridTFs[TeamType.Vanguard], function(arg_58_0)
-		setActive(arg_58_0, var_56_0 == FleetType.Normal)
+	_.each(slot0._gridTFs[TeamType.Vanguard], function (slot0)
+		setActive(slot0, uv0 == FleetType.Normal)
 	end)
-	_.each(arg_56_0._gridTFs[TeamType.Submarine], function(arg_59_0)
-		setActive(arg_59_0, var_56_0 == FleetType.Submarine)
+	_.each(slot0._gridTFs[TeamType.Submarine], function (slot0)
+		setActive(slot0, uv0 == FleetType.Submarine)
 	end)
 end
 
-function var_0_0.RecycleCharacterList(arg_60_0, arg_60_1, arg_60_2)
-	for iter_60_0, iter_60_1 in ipairs(arg_60_1) do
-		local var_60_0 = arg_60_2[iter_60_0]
+function slot0.RecycleCharacterList(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs(slot1) do
+		if slot2[slot6] then
+			slot8.spineRole:Dispose()
 
-		if var_60_0 then
-			var_60_0.spineRole:Dispose()
-
-			arg_60_2[iter_60_0] = nil
+			slot2[slot6] = nil
 		end
 	end
 end
 
-function var_0_0.Destroy(arg_61_0)
-	arg_61_0._exited = true
+function slot0.Destroy(slot0)
+	slot0._exited = true
 
-	arg_61_0:RecycleCharacterList(arg_61_0._currentFleetVO:getTeamByName(TeamType.Main), arg_61_0._characterList[TeamType.Main])
-	arg_61_0:RecycleCharacterList(arg_61_0._currentFleetVO:getTeamByName(TeamType.Vanguard), arg_61_0._characterList[TeamType.Vanguard])
-	arg_61_0:RecycleCharacterList(arg_61_0._currentFleetVO:getTeamByName(TeamType.Submarine), arg_61_0._characterList[TeamType.Submarine])
+	slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Main), slot0._characterList[TeamType.Main])
+	slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Vanguard), slot0._characterList[TeamType.Vanguard])
+	slot0:RecycleCharacterList(slot0._currentFleetVO:getTeamByName(TeamType.Submarine), slot0._characterList[TeamType.Submarine])
 
-	if arg_61_0._eventTriggers then
-		for iter_61_0, iter_61_1 in pairs(arg_61_0._eventTriggers) do
-			ClearEventTrigger(iter_61_0)
+	if slot0._eventTriggers then
+		for slot4, slot5 in pairs(slot0._eventTriggers) do
+			ClearEventTrigger(slot4)
 		end
 
-		arg_61_0._eventTriggers = nil
+		slot0._eventTriggers = nil
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,23 +1,21 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleBuffAddTag", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffAddTag = slot1
+slot1.__name = "BattleBuffAddTag"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleBuffAddTag", var_0_0.Battle.BattleBuffEffect)
-
-var_0_0.Battle.BattleBuffAddTag = var_0_1
-var_0_1.__name = "BattleBuffAddTag"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._labelTag = arg_2_0._tempData.arg_list.tag
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._labelTag = slot0._tempData.arg_list.tag
 end
 
-function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_1:AddLabelTag(arg_3_0._labelTag)
+function slot1.onAttach(slot0, slot1, slot2)
+	slot1:AddLabelTag(slot0._labelTag)
 end
 
-function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_1:RemoveLabelTag(arg_4_0._labelTag)
+function slot1.onRemove(slot0, slot1, slot2)
+	slot1:RemoveLabelTag(slot0._labelTag)
 end

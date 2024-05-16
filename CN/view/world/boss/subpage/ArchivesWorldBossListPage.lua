@@ -1,386 +1,351 @@
-﻿local var_0_0 = class("ArchivesWorldBossListPage", import("view.base.BaseSubView"))
-local var_0_1 = 1
-local var_0_2 = 2
+slot0 = class("ArchivesWorldBossListPage", import("view.base.BaseSubView"))
+slot1 = 1
+slot2 = 2
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ArchivesWorldBossListUI"
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1)
-	arg_2_0.proxy = arg_2_1
+function slot0.Setup(slot0, slot1)
+	slot0.proxy = slot1
 end
 
-function var_0_0.OnSwitchArchives(arg_3_0)
-	arg_3_0.isInit = false
+function slot0.OnSwitchArchives(slot0)
+	slot0.isInit = false
 
-	if arg_3_0.key then
-		arg_3_0:Filter(arg_3_0.key)
+	if slot0.key then
+		slot0:Filter(slot0.key)
 	end
 end
 
-function var_0_0.OnGetMetaAwards(arg_4_0)
-	if arg_4_0.prevCard then
-		local var_4_0 = arg_4_0.prevCard.data
+function slot0.OnGetMetaAwards(slot0)
+	if slot0.prevCard then
+		slot0:UpdateAwards(slot0.prevCard.data)
 
-		arg_4_0:UpdateAwards(var_4_0)
-
-		if arg_4_0.key and not var_4_0.progress.metaPtData:CanGetNextAward() then
-			arg_4_0:OnSwitchArchives()
+		if slot0.key and not slot1.progress.metaPtData:CanGetNextAward() then
+			slot0:OnSwitchArchives()
 		end
 
-		arg_4_0.prevCard:Update(arg_4_0.prevCard.data)
+		slot0.prevCard:Update(slot0.prevCard.data)
 	end
 end
 
-function var_0_0.OnLoaded(arg_5_0)
-	arg_5_0.toggles = {
-		[var_0_2] = arg_5_0:findTF("filter/finish"),
-		[var_0_1] = arg_5_0:findTF("filter/parse")
+function slot0.OnLoaded(slot0)
+	slot0.toggles = {
+		[uv0] = slot0:findTF("filter/finish"),
+		[uv1] = slot0:findTF("filter/parse")
 	}
-	arg_5_0.filterTr = arg_5_0:findTF("filter")
-	arg_5_0.mainTr = arg_5_0:findTF("main")
-	arg_5_0.scrollRect = arg_5_0:findTF("main/list/scrollrect"):GetComponent("LScrollRect")
-	arg_5_0.paintingTr = arg_5_0:findTF("main/paint")
-	arg_5_0.openTr = arg_5_0:findTF("main/open")
-	arg_5_0.ptIcon = arg_5_0:findTF("main/award/pt/icon")
-	arg_5_0.ptTr = arg_5_0:findTF("main/award/pt/Text"):GetComponent(typeof(Text))
-	arg_5_0.getAllBtn = arg_5_0:findTF("main/award/get_all")
-	arg_5_0.awardScrollrect = arg_5_0:findTF("main/award/scrollrect"):GetComponent("LScrollRect")
-	arg_5_0.awardArrTr = arg_5_0:findTF("main/award/arr")
-	arg_5_0.emptyTr = arg_5_0:findTF("empty")
-	arg_5_0.emptyFinishTr = arg_5_0:findTF("empty_finsih")
-	arg_5_0.backBtn = arg_5_0:findTF("blur_panel/adapt/top/back")
-	arg_5_0.msgBox = ArchivesWorldBossMsgboxPage.New(arg_5_0._parentTf.parent, arg_5_0.event)
+	slot0.filterTr = slot0:findTF("filter")
+	slot0.mainTr = slot0:findTF("main")
+	slot0.scrollRect = slot0:findTF("main/list/scrollrect"):GetComponent("LScrollRect")
+	slot0.paintingTr = slot0:findTF("main/paint")
+	slot0.openTr = slot0:findTF("main/open")
+	slot0.ptIcon = slot0:findTF("main/award/pt/icon")
+	slot0.ptTr = slot0:findTF("main/award/pt/Text"):GetComponent(typeof(Text))
+	slot0.getAllBtn = slot0:findTF("main/award/get_all")
+	slot0.awardScrollrect = slot0:findTF("main/award/scrollrect"):GetComponent("LScrollRect")
+	slot0.awardArrTr = slot0:findTF("main/award/arr")
+	slot0.emptyTr = slot0:findTF("empty")
+	slot0.emptyFinishTr = slot0:findTF("empty_finsih")
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back")
+	slot0.msgBox = ArchivesWorldBossMsgboxPage.New(slot0._parentTf.parent, slot0.event)
 
-	setText(arg_5_0:findTF("main/award/pt/label"), i18n("meta_syn_value_label"))
+	setText(slot0:findTF("main/award/pt/label"), i18n("meta_syn_value_label"))
 end
 
-function var_0_0.OnInit(arg_6_0)
-	onButton(arg_6_0, arg_6_0.backBtn, function()
-		arg_6_0:emit(WorldBossScene.ON_QUIT_ARCHIVES_LIST)
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(WorldBossScene.ON_QUIT_ARCHIVES_LIST)
 	end, SFX_CANCEL)
-	onButton(arg_6_0, arg_6_0:findTF("help"), function()
+
+	function slot4()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.world_archives_boss_list_help.tip
 		})
-	end, SFX_CANCEL)
-
-	arg_6_0.cards = {}
-
-	function arg_6_0.scrollRect.onInitItem(arg_9_0)
-		arg_6_0:OnInitItem(arg_9_0)
 	end
 
-	function arg_6_0.scrollRect.onUpdateItem(arg_10_0, arg_10_1)
-		arg_6_0:OnUpdateItem(arg_10_0, arg_10_1)
+	slot5 = SFX_CANCEL
+
+	onButton(slot0, slot0:findTF("help"), slot4, slot5)
+
+	slot0.cards = {}
+
+	function slot0.scrollRect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_6_0.awardScrollrect.onInitItem(arg_11_0)
-		arg_6_0:OnInitAwardItem(arg_11_0)
+	function slot0.scrollRect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 
-	function arg_6_0.awardScrollrect.onUpdateItem(arg_12_0, arg_12_1)
-		arg_6_0:OnUpdateAwardItem(arg_12_0, arg_12_1)
+	function slot0.awardScrollrect.onInitItem(slot0)
+		uv0:OnInitAwardItem(slot0)
 	end
 
-	arg_6_0.awardScrollrect.onValueChanged:AddListener(function(arg_13_0)
-		setActive(arg_6_0.awardArrTr, arg_13_0.x < 0.97)
+	function slot0.awardScrollrect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateAwardItem(slot0, slot1)
+	end
+
+	slot0.awardScrollrect.onValueChanged:AddListener(function (slot0)
+		setActive(uv0.awardArrTr, slot0.x < 0.97)
 	end)
 
-	for iter_6_0, iter_6_1 in pairs(arg_6_0.toggles) do
-		onToggle(arg_6_0, iter_6_1, function(arg_14_0)
-			arg_6_0.isInit = false
+	for slot4, slot5 in pairs(slot0.toggles) do
+		onToggle(slot0, slot5, function (slot0)
+			uv0.isInit = false
 
-			if arg_14_0 then
-				arg_6_0:Filter(iter_6_0)
+			if slot0 then
+				uv0:Filter(uv1)
 			end
 		end, SFX_PANEL)
 	end
 
-	if arg_6_0:findTF("empty_finsih") then
-		GetComponent(arg_6_0:findTF("empty_finsih"), typeof(Image)):SetNativeSize()
+	if slot0:findTF("empty_finsih") then
+		GetComponent(slot0:findTF("empty_finsih"), typeof(Image)):SetNativeSize()
 	end
 end
 
-function var_0_0.Filter(arg_15_0, arg_15_1)
-	local var_15_0 = WorldBossConst.GetAchieveBossList()
+function slot0.Filter(slot0, slot1)
+	slot0.displays = {}
+	slot3 = {}
 
-	arg_15_0.displays = {}
+	for slot7, slot8 in pairs(WorldBossConst.GetAchieveBossList()) do
+		slot9 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(slot8.meta_id)
+		slot10 = slot9:getMetaProgressPTState()
 
-	local var_15_1 = {}
-
-	for iter_15_0, iter_15_1 in pairs(var_15_0) do
-		local var_15_2 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(iter_15_1.meta_id)
-		local var_15_3 = var_15_2:getMetaProgressPTState()
-		local var_15_4 = not var_15_2.metaPtData:CanGetNextAward()
-
-		if arg_15_1 == var_0_2 and var_15_4 then
-			table.insert(arg_15_0.displays, {
-				id = iter_15_1.id,
-				progress = var_15_2
+		if slot1 == uv0 and not slot9.metaPtData:CanGetNextAward() then
+			table.insert(slot0.displays, {
+				id = slot8.id,
+				progress = slot9
 			})
-		elseif arg_15_1 == var_0_1 and not var_15_4 then
-			table.insert(arg_15_0.displays, {
-				id = iter_15_1.id,
-				progress = var_15_2
+		elseif slot1 == uv1 and not slot11 then
+			table.insert(slot0.displays, {
+				id = slot8.id,
+				progress = slot9
 			})
 		end
 
-		var_15_1[iter_15_1.id] = var_15_3
+		slot3[slot8.id] = slot10
 	end
 
-	local var_15_5 = WorldBossConst.GetArchivesId()
+	slot4 = WorldBossConst.GetArchivesId()
 
-	table.sort(arg_15_0.displays, function(arg_16_0, arg_16_1)
-		local var_16_0 = arg_16_0.id == var_15_5 and 1 or 0
-		local var_16_1 = arg_16_1.id == var_15_5 and 1 or 0
-
-		if var_16_0 == var_16_1 then
-			local var_16_2 = var_15_1[arg_16_0.id]
-			local var_16_3 = var_15_1[arg_16_1.id]
-
-			if var_16_2 == var_16_3 then
-				return arg_16_0.progress.configId < arg_16_1.progress.configId
+	table.sort(slot0.displays, function (slot0, slot1)
+		if (slot0.id == uv0 and 1 or 0) == (slot1.id == uv0 and 1 or 0) then
+			if uv1[slot0.id] == uv1[slot1.id] then
+				return slot0.progress.configId < slot1.progress.configId
 			else
-				return var_16_3 < var_16_2
+				return slot5 < slot4
 			end
 		else
-			return var_16_1 < var_16_0
+			return slot3 < slot2
 		end
 	end)
 
-	arg_15_0.key = arg_15_1
+	slot0.key = slot1
+	slot5 = #slot0.displays <= 0
 
-	local var_15_6 = #arg_15_0.displays <= 0
-
-	setActive(arg_15_0.emptyTr, var_15_6 and arg_15_1 == var_0_1)
-	setActive(arg_15_0.emptyFinishTr, var_15_6 and arg_15_1 == var_0_2)
-	setActive(arg_15_0.mainTr, not var_15_6)
-	arg_15_0.scrollRect:SetTotalCount(#arg_15_0.displays)
+	setActive(slot0.emptyTr, slot5 and slot1 == uv1)
+	setActive(slot0.emptyFinishTr, slot5 and slot1 == uv0)
+	setActive(slot0.mainTr, not slot5)
+	slot0.scrollRect:SetTotalCount(#slot0.displays)
 end
 
-function var_0_0.Update(arg_17_0)
-	arg_17_0:Show()
-	triggerToggle(arg_17_0.toggles[var_0_1], true)
+function slot0.Update(slot0)
+	slot0:Show()
+	triggerToggle(slot0.toggles[uv0], true)
 end
 
-function var_0_0.OnInitItem(arg_18_0, arg_18_1)
-	local var_18_0 = ArchivesWorldBossCard.New(arg_18_1)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = ArchivesWorldBossCard.New(slot1)
 
-	onButton(arg_18_0, var_18_0._tf, function()
-		if arg_18_0.prevCard == var_18_0 and arg_18_0.isInit then
+	onButton(slot0, slot2._tf, function ()
+		if uv0.prevCard == uv1 and uv0.isInit then
 			return
 		end
 
-		if arg_18_0.prevCard then
-			arg_18_0.prevCard:UnSelect()
+		if uv0.prevCard then
+			uv0.prevCard:UnSelect()
 		end
 
-		var_18_0:Select()
-		arg_18_0:ClickCard(var_18_0.data)
+		uv1:Select()
+		uv0:ClickCard(uv1.data)
 
-		arg_18_0.prevCard = var_18_0
+		uv0.prevCard = uv1
 	end, SFX_PANEL)
 
-	arg_18_0.cards[arg_18_1] = var_18_0
+	slot0.cards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_20_0, arg_20_1, arg_20_2)
-	local var_20_0 = arg_20_0.cards[arg_20_2]
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot0:OnInitItem(slot2)
 
-	if not var_20_0 then
-		arg_20_0:OnInitItem(arg_20_2)
-
-		var_20_0 = arg_20_0.cards[arg_20_2]
+		slot3 = slot0.cards[slot2]
 	end
 
-	local var_20_1 = arg_20_0.displays[arg_20_1 + 1]
+	slot3:Update(slot0.displays[slot1 + 1])
 
-	var_20_0:Update(var_20_1)
+	if slot1 == 0 and not slot0.isInit then
+		triggerButton(slot3._tf)
 
-	if arg_20_1 == 0 and not arg_20_0.isInit then
-		triggerButton(var_20_0._tf)
-
-		arg_20_0.isInit = true
+		slot0.isInit = true
 	end
 end
 
-function var_0_0.ClickCard(arg_21_0, arg_21_1)
-	arg_21_0:UpdateMain(arg_21_1)
-	arg_21_0:UpdateAwards(arg_21_1)
+function slot0.ClickCard(slot0, slot1)
+	slot0:UpdateMain(slot1)
+	slot0:UpdateAwards(slot1)
 end
 
-function var_0_0.UpdateMain(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1.progress.id
+function slot0.UpdateMain(slot0, slot1)
+	setMetaPaintingPrefabAsync(slot0.paintingTr, slot1.progress.id, "archives")
 
-	setMetaPaintingPrefabAsync(arg_22_0.paintingTr, var_22_0, "archives")
+	slot4 = slot1.id == WorldBossConst.GetArchivesId() or slot1.progress.metaPtData:IsMaxPt()
 
-	local var_22_1 = WorldBossConst.GetArchivesId()
-	local var_22_2 = arg_22_1.id == var_22_1 or arg_22_1.progress.metaPtData:IsMaxPt()
+	setActive(slot0.openTr, not slot4)
 
-	setActive(arg_22_0.openTr, not var_22_2)
-
-	if var_22_2 then
-		removeOnButton(arg_22_0.openTr)
+	if slot4 then
+		removeOnButton(slot0.openTr)
 	else
-		onButton(arg_22_0, arg_22_0.openTr, function()
-			arg_22_0:Switch(arg_22_1)
+		onButton(slot0, slot0.openTr, function ()
+			uv0:Switch(uv1)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.Switch(arg_24_0, arg_24_1)
-	local var_24_0 = WorldBossConst.GetAchieveState()
-
-	if var_24_0 == WorldBossConst.ACHIEVE_STATE_NOSTART then
-		arg_24_0:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg_24_1.id)
-	elseif var_24_0 == WorldBossConst.ACHIEVE_STATE_STARTING then
-		local var_24_1 = WorldBossConst.GetArchivesId()
-		local var_24_2 = WorldBossConst.BossId2MetaId(var_24_1)
-		local var_24_3 = pg.ship_strengthen_meta[var_24_2].ship_id
-		local var_24_4 = pg.ship_data_statistics[var_24_3].name
-
-		arg_24_0.msgBox:ExecuteAction("Show", {
-			content = i18n("world_boss_switch_archives", var_24_4),
-			onYes = function()
-				arg_24_0:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, arg_24_1.id)
+function slot0.Switch(slot0, slot1)
+	if WorldBossConst.GetAchieveState() == WorldBossConst.ACHIEVE_STATE_NOSTART then
+		slot0:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, slot1.id)
+	elseif slot2 == WorldBossConst.ACHIEVE_STATE_STARTING then
+		slot0.msgBox:ExecuteAction("Show", {
+			content = i18n("world_boss_switch_archives", pg.ship_data_statistics[pg.ship_strengthen_meta[WorldBossConst.BossId2MetaId(WorldBossConst.GetArchivesId())].ship_id].name),
+			onYes = function ()
+				uv0:emit(WorldBossMediator.ON_SWITCH_ARCHIVES, uv1.id)
 			end
 		})
 	end
 end
 
-function var_0_0.UpdateAwards(arg_26_0, arg_26_1)
-	local var_26_0 = arg_26_1.progress.metaPtData
-	local var_26_1 = var_26_0.dropList
-	local var_26_2 = var_26_0.targets
+function slot0.UpdateAwards(slot0, slot1)
+	slot2 = slot1.progress.metaPtData
+	slot3 = slot2.dropList
+	slot4 = slot2.targets
 
-	setImageSprite(arg_26_0.ptIcon, LoadSprite(arg_26_1.progress:getPtIconPath()))
+	setImageSprite(slot0.ptIcon, LoadSprite(slot1.progress:getPtIconPath()))
 
-	arg_26_0.ptTr.text = var_26_0.count
+	slot0.ptTr.text = slot2.count
+	slot5 = slot1.progress.metaPtData:CanGetAward()
 
-	local var_26_3 = arg_26_1.progress.metaPtData:CanGetAward()
+	setActive(slot0.getAllBtn, slot5)
 
-	setActive(arg_26_0.getAllBtn, var_26_3)
-
-	if not var_26_3 then
-		removeOnButton(arg_26_0.getAllBtn)
+	if not slot5 then
+		removeOnButton(slot0.getAllBtn)
 	else
-		onButton(arg_26_0, arg_26_0.getAllBtn, function()
-			local var_27_0, var_27_1 = arg_26_0:getOneStepPTAwardLevelAndCount(arg_26_1.progress)
+		onButton(slot0, slot0.getAllBtn, function ()
+			slot0, slot1 = uv0:getOneStepPTAwardLevelAndCount(uv1.progress)
 
 			pg.m02:sendNotification(GAME.GET_META_PT_AWARD, {
-				groupID = arg_26_1.progress.id,
-				targetCount = var_27_1
+				groupID = uv1.progress.id,
+				targetCount = slot1
 			})
 		end, SFX_PANEL)
 	end
 
-	arg_26_0.awardCards = {}
-	arg_26_0.awardDisplays = {}
+	slot0.awardCards = {}
+	slot0.awardDisplays = {}
 
-	for iter_26_0, iter_26_1 in ipairs(var_26_1) do
-		table.insert(arg_26_0.awardDisplays, {
-			itemInfo = iter_26_1,
-			target = var_26_2[iter_26_0],
-			level = var_26_0.level,
-			count = var_26_0.count,
-			unlockPTNum = arg_26_1.progress.unlockPTNum
+	for slot9, slot10 in ipairs(slot3) do
+		table.insert(slot0.awardDisplays, {
+			itemInfo = slot10,
+			target = slot4[slot9],
+			level = slot2.level,
+			count = slot2.count,
+			unlockPTNum = slot1.progress.unlockPTNum
 		})
 	end
 
-	arg_26_0.awardScrollrect:SetTotalCount(#arg_26_0.awardDisplays)
-
-	local var_26_4 = math.min(var_26_0.level, #var_26_2 - 5)
-	local var_26_5 = arg_26_0.awardScrollrect:HeadIndexToValue(var_26_4)
-
-	arg_26_0.awardScrollrect:ScrollTo(var_26_5)
+	slot0.awardScrollrect:SetTotalCount(#slot0.awardDisplays)
+	slot0.awardScrollrect:ScrollTo(slot0.awardScrollrect:HeadIndexToValue(math.min(slot2.level, #slot4 - 5)))
 end
 
-function var_0_0.getOneStepPTAwardLevelAndCount(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_1.metaPtData:GetResProgress()
-	local var_28_1 = arg_28_1.metaPtData.targets
-	local var_28_2 = arg_28_1:getStoryIndexList()
-	local var_28_3 = arg_28_1.unlockPTLevel
-	local var_28_4 = 0
+function slot0.getOneStepPTAwardLevelAndCount(slot0, slot1)
+	slot4 = slot1:getStoryIndexList()
+	slot5 = slot1.unlockPTLevel
+	slot6 = 0
 
-	for iter_28_0 = 1, #var_28_1 do
-		local var_28_5 = false
-		local var_28_6 = false
+	for slot10 = 1, #slot1.metaPtData.targets do
+		slot11 = false
+		slot12 = false
 
-		if var_28_0 >= var_28_1[iter_28_0] then
-			var_28_5 = true
+		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
+			slot11 = true
 		end
 
-		local var_28_7 = var_28_2[iter_28_0]
-
-		if var_28_7 == 0 then
-			var_28_6 = true
-		elseif pg.NewStoryMgr.GetInstance():IsPlayed(var_28_7) then
-			var_28_6 = true
+		if slot4[slot10] == 0 then
+			slot12 = true
+		elseif pg.NewStoryMgr.GetInstance():IsPlayed(slot14) then
+			slot12 = true
 		end
 
-		if var_28_5 and var_28_6 then
-			var_28_4 = iter_28_0
+		if slot11 and slot12 then
+			slot6 = slot10
 		else
 			break
 		end
 	end
 
-	print("calc max level", var_28_4, var_28_1[var_28_4])
+	print("calc max level", slot6, slot3[slot6])
 
-	return var_28_4, var_28_1[var_28_4]
+	return slot6, slot3[slot6]
 end
 
-function var_0_0.OnInitAwardItem(arg_29_0, arg_29_1)
-	local var_29_0 = ArchivesWorldBossAwardCard.New(arg_29_1)
+function slot0.OnInitAwardItem(slot0, slot1)
+	slot2 = ArchivesWorldBossAwardCard.New(slot1)
 
-	onButton(arg_29_0, var_29_0.itemTF, function()
-		arg_29_0:emit(BaseUI.ON_DROP, var_29_0.dropInfo)
+	onButton(slot0, slot2.itemTF, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1.dropInfo)
 	end, SFX_PANEL)
 
-	arg_29_0.awardCards[arg_29_1] = var_29_0
+	slot0.awardCards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateAwardItem(arg_31_0, arg_31_1, arg_31_2)
-	local var_31_0 = arg_31_0.awardCards[arg_31_2]
+function slot0.OnUpdateAwardItem(slot0, slot1, slot2)
+	if not slot0.awardCards[slot2] then
+		slot0:OnInitAwardItem(slot2)
 
-	if not var_31_0 then
-		arg_31_0:OnInitAwardItem(arg_31_2)
-
-		var_31_0 = arg_31_0.awardCards[arg_31_2]
+		slot3 = slot0.awardCards[slot2]
 	end
 
-	local var_31_1 = arg_31_0.awardDisplays[arg_31_1 + 1]
-
-	var_31_0:Update(var_31_1, arg_31_1 + 1)
+	slot3:Update(slot0.awardDisplays[slot1 + 1], slot1 + 1)
 end
 
-function var_0_0.OnDestroy(arg_32_0)
-	arg_32_0.scrollRect.onInitItem = nil
-	arg_32_0.scrollRect.onUpdateItem = nil
-	arg_32_0.awardScrollrect.onInitItem = nil
-	arg_32_0.awardScrollrect.onUpdateItem = nil
+function slot0.OnDestroy(slot0)
+	slot0.scrollRect.onInitItem = nil
+	slot0.scrollRect.onUpdateItem = nil
+	slot0.awardScrollrect.onInitItem = nil
+	slot0.awardScrollrect.onUpdateItem = nil
 
-	arg_32_0.awardScrollrect.onValueChanged:RemoveAllListeners()
+	slot0.awardScrollrect.onValueChanged:RemoveAllListeners()
 
-	if arg_32_0.msgBox then
-		arg_32_0.msgBox:Destroy()
+	if slot0.msgBox then
+		slot0.msgBox:Destroy()
 
-		arg_32_0.msgBox = nil
+		slot0.msgBox = nil
 	end
 
-	for iter_32_0, iter_32_1 in pairs(arg_32_0.cards) do
-		iter_32_1:Dispose()
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:Dispose()
 	end
 
-	arg_32_0.cards = nil
+	slot0.cards = nil
 
-	for iter_32_2, iter_32_3 in pairs(arg_32_0.awardCards or {}) do
-		iter_32_3:Dispose()
+	for slot4, slot5 in pairs(slot0.awardCards or {}) do
+		slot5:Dispose()
 	end
 
-	arg_32_0.awardCards = nil
+	slot0.awardCards = nil
 end
 
-return var_0_0
+return slot0

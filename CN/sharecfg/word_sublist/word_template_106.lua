@@ -1,23 +1,20 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.word_template_106 = {}
-
-local var_0_1 = var_0_0.word_template_106
+pg = pg or {}
+slot0 = pg
+slot0.word_template_106 = {}
+slot1 = slot0.word_template_106
 
 function temp()
-	var_0_1.麥 = {
-		克 = {
-			斯 = {
+	uv0["麥"] = {
+		["克"] = {
+			["斯"] = {
 				this = true
 			}
 		},
-		角 = {
-			醇 = {
+		["角"] = {
+			["醇"] = {
 				this = true
 			},
-			酸 = {
+			["酸"] = {
 				this = true
 			}
 		}
@@ -27,20 +24,20 @@ end
 temp()
 
 function temp()
-	var_0_1.賣 = {
-		逼 = {
+	uv0["賣"] = {
+		["逼"] = {
 			this = true
 		},
-		比 = {
+		["比"] = {
 			this = true
 		},
-		國 = {
+		["國"] = {
 			this = true
 		},
-		騷 = {
+		["騷"] = {
 			this = true
 		},
-		淫 = {
+		["淫"] = {
 			this = true
 		}
 	}
@@ -49,8 +46,8 @@ end
 temp()
 
 function temp()
-	var_0_1.瞞 = {
-		報 = {
+	uv0["瞞"] = {
+		["報"] = {
 			this = true
 		}
 	}
@@ -59,7 +56,7 @@ end
 temp()
 
 function temp()
-	var_0_1.禰 = {
+	uv0["禰"] = {
 		this = {
 			this = true
 		}
@@ -69,7 +66,7 @@ end
 temp()
 
 function temp()
-	var_0_1.羋 = {
+	uv0["羋"] = {
 		this = {
 			this = true
 		}
@@ -79,8 +76,8 @@ end
 temp()
 
 function temp()
-	var_0_1.綿 = {
-		恒 = {
+	uv0["綿"] = {
+		["恒"] = {
 			this = true
 		}
 	}
@@ -89,7 +86,7 @@ end
 temp()
 
 function temp()
-	var_0_1.黽 = {
+	uv0["黽"] = {
 		this = {
 			this = true
 		}
@@ -99,7 +96,7 @@ end
 temp()
 
 function temp()
-	var_0_1.緡 = {
+	uv0["緡"] = {
 		this = {
 			this = true
 		}
@@ -109,7 +106,7 @@ end
 temp()
 
 function temp()
-	var_0_1.湣 = {
+	uv0["湣"] = {
 		this = {
 			this = true
 		}
@@ -119,7 +116,7 @@ end
 temp()
 
 function temp()
-	var_0_1.鰵 = {
+	uv0["鰵"] = {
 		this = {
 			this = true
 		}

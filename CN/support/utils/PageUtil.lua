@@ -1,89 +1,80 @@
-﻿local var_0_0 = class("PageUtil")
+slot0 = class("PageUtil")
+PageUtil = slot0
 
-PageUtil = var_0_0
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	pg.DelegateInfo.New(slot0)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	pg.DelegateInfo.New(arg_1_0)
+	slot0._leftBtn = slot1
+	slot0._rightBtn = slot2
+	slot0._maxBtn = slot3
+	slot0._numTxt = slot4
+	slot5, slot0._leftRemoveTimer = pressPersistTrigger(slot0._leftBtn, 0.5, function (slot0)
+		if uv0._curNum - uv0._addNum <= 0 then
+			slot1 = uv0._curNum or slot1
+		end
 
-	arg_1_0._leftBtn = arg_1_1
-	arg_1_0._rightBtn = arg_1_2
-	arg_1_0._maxBtn = arg_1_3
-	arg_1_0._numTxt = arg_1_4
-
-	local var_1_0, var_1_1 = pressPersistTrigger(arg_1_0._leftBtn, 0.5, function(arg_2_0)
-		local var_2_0 = arg_1_0._curNum - arg_1_0._addNum
-
-		var_2_0 = var_2_0 <= 0 and arg_1_0._curNum or var_2_0
-
-		arg_1_0:setCurNum(var_2_0)
+		uv0:setCurNum(slot1)
 	end, nil, true, true, 0.1, SFX_PANEL)
-
-	arg_1_0._leftRemoveTimer = var_1_1
-
-	local var_1_2, var_1_3 = pressPersistTrigger(arg_1_0._rightBtn, 0.5, function(arg_3_0)
-		local var_3_0 = arg_1_0._curNum + arg_1_0._addNum
-
-		if arg_1_0._maxNum < 0 then
-			arg_1_0:setCurNum(var_3_0)
+	slot7, slot0._rightRemoveTimer = pressPersistTrigger(slot0._rightBtn, 0.5, function (slot0)
+		if uv0._maxNum < 0 then
+			uv0:setCurNum(uv0._curNum + uv0._addNum)
 		else
-			var_3_0 = var_3_0 > arg_1_0._maxNum and arg_1_0._maxNum or var_3_0
+			if uv0._maxNum < slot1 then
+				slot1 = uv0._maxNum or slot1
+			end
 
-			arg_1_0:setCurNum(var_3_0)
+			uv0:setCurNum(slot1)
 		end
 	end, nil, true, true, 0.1, SFX_PANEL)
 
-	arg_1_0._rightRemoveTimer = var_1_3
-
-	onButton(arg_1_0, arg_1_0._maxBtn, function()
-		if arg_1_0._maxNum < 0 then
-			-- block empty
-		else
-			arg_1_0:setCurNum(arg_1_0._maxNum)
+	onButton(slot0, slot0._maxBtn, function ()
+		if uv0._maxNum >= 0 then
+			uv0:setCurNum(uv0._maxNum)
 		end
 	end)
-	arg_1_0:setAddNum(1)
-	arg_1_0:setDefaultNum(1)
-	arg_1_0:setMaxNum(-1)
+	slot0:setAddNum(1)
+	slot0:setDefaultNum(1)
+	slot0:setMaxNum(-1)
 end
 
-function var_0_0.setAddNum(arg_5_0, arg_5_1)
-	arg_5_0._addNum = arg_5_1
+function slot0.setAddNum(slot0, slot1)
+	slot0._addNum = slot1
 end
 
-function var_0_0.setDefaultNum(arg_6_0, arg_6_1)
-	arg_6_0._defaultNum = arg_6_1
+function slot0.setDefaultNum(slot0, slot1)
+	slot0._defaultNum = slot1
 
-	arg_6_0:setCurNum(arg_6_0._defaultNum)
+	slot0:setCurNum(slot0._defaultNum)
 end
 
-function var_0_0.setMaxNum(arg_7_0, arg_7_1)
-	arg_7_0._maxNum = arg_7_1
+function slot0.setMaxNum(slot0, slot1)
+	slot0._maxNum = slot1
 
-	setActive(arg_7_0._maxBtn, arg_7_0._maxNum > 0)
+	setActive(slot0._maxBtn, slot0._maxNum > 0)
 end
 
-function var_0_0.setCurNum(arg_8_0, arg_8_1)
-	arg_8_0._curNum = arg_8_1
+function slot0.setCurNum(slot0, slot1)
+	slot0._curNum = slot1
 
-	setText(arg_8_0._numTxt, arg_8_0._curNum)
+	setText(slot0._numTxt, slot0._curNum)
 
-	if arg_8_0._numUpdate ~= nil then
-		arg_8_0._numUpdate(arg_8_0._curNum)
+	if slot0._numUpdate ~= nil then
+		slot0._numUpdate(slot0._curNum)
 	end
 end
 
-function var_0_0.setNumUpdate(arg_9_0, arg_9_1)
-	arg_9_0._numUpdate = arg_9_1
+function slot0.setNumUpdate(slot0, slot1)
+	slot0._numUpdate = slot1
 end
 
-function var_0_0.getCurNum(arg_10_0)
-	return arg_10_0._curNum
+function slot0.getCurNum(slot0)
+	return slot0._curNum
 end
 
-function var_0_0.Dispose(arg_11_0)
-	existCall(arg_11_0._leftRemoveTimer)
-	existCall(arg_11_0._rightRemoveTimer)
-	pg.DelegateInfo.Dispose(arg_11_0)
+function slot0.Dispose(slot0)
+	existCall(slot0._leftRemoveTimer)
+	existCall(slot0._rightRemoveTimer)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

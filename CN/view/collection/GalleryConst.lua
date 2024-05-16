@@ -1,47 +1,42 @@
-﻿local var_0_0 = class("GalleryConst")
-
-var_0_0.Version = 3
-var_0_0.AutoScrollIndex = 41
-var_0_0.NewCount = 15
-var_0_0.OPEN_FULL_SCREEN_PIC_VIEW = "GelleryConst:OPEN_FULL_SCREEN_PIC_VIEW"
-var_0_0.CardStates = {
+slot0 = class("GalleryConst")
+slot0.Version = 3
+slot0.AutoScrollIndex = 41
+slot0.NewCount = 15
+slot0.OPEN_FULL_SCREEN_PIC_VIEW = "GelleryConst:OPEN_FULL_SCREEN_PIC_VIEW"
+slot0.CardStates = {
 	DirectShow = 0,
 	Unlocked = 1,
 	Unlockable = 2,
 	DisUnlockable = 3
 }
-var_0_0.DateIndex = {
+slot0.DateIndex = {
 	0
 }
-var_0_0.DateIndexName = {
-	(i18n("res_pic_time_all"))
+slot0.DateIndexName = {
+	i18n("res_pic_time_all")
 }
-var_0_0.Data_All_Value = 0
-var_0_0.Sort_Order_Up = 0
-var_0_0.Sort_Order_Down = 1
-var_0_0.Filte_Normal_Value = 0
-var_0_0.Filte_Like_Value = 1
-var_0_0.Loading_BG_NO_Filte = 0
-var_0_0.Loading_BG_Filte = 1
-var_0_0.CARD_PATH_PREFIX = "gallerypic/"
-var_0_0.PIC_PATH_PREFIX = "gallerypic/"
-var_0_0.Still_Show_On_Lock = 0
-var_0_0.Set_BG_Func_Save_Tag = "set_bg_func_save"
+slot0.Data_All_Value = 0
+slot0.Sort_Order_Up = 0
+slot0.Sort_Order_Down = 1
+slot0.Filte_Normal_Value = 0
+slot0.Filte_Like_Value = 1
+slot0.Loading_BG_NO_Filte = 0
+slot0.Loading_BG_Filte = 1
+slot0.CARD_PATH_PREFIX = "gallerypic/"
+slot0.PIC_PATH_PREFIX = "gallerypic/"
+slot0.Still_Show_On_Lock = 0
+slot0.Set_BG_Func_Save_Tag = "set_bg_func_save"
 
-function var_0_0.SetBGFuncTag(arg_1_0)
+function slot0.SetBGFuncTag(slot0)
 	if getProxy(PlayerProxy) then
-		local var_1_0 = getProxy(PlayerProxy):getRawData().id
-
-		PlayerPrefs.SetInt(var_0_0.Set_BG_Func_Save_Tag .. var_1_0, arg_1_0 and 1 or 0)
+		PlayerPrefs.SetInt(uv0.Set_BG_Func_Save_Tag .. getProxy(PlayerProxy):getRawData().id, slot0 and 1 or 0)
 	end
 end
 
-function var_0_0.GetBGFuncTag()
+function slot0.GetBGFuncTag()
 	if getProxy(PlayerProxy) then
-		local var_2_0 = getProxy(PlayerProxy):getRawData().id
-
-		return PlayerPrefs.GetInt(var_0_0.Set_BG_Func_Save_Tag .. var_2_0) == 1 and true or false
+		return PlayerPrefs.GetInt(uv0.Set_BG_Func_Save_Tag .. getProxy(PlayerProxy):getRawData().id) == 1 and true or false
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,74 +1,63 @@
-﻿local var_0_0 = class("MiniGameOPCommand", pm.SimpleCommand)
+slot0 = class("MiniGameOPCommand", pm.SimpleCommand)
+slot0.CMD_COMPLETE = 1
+slot0.CMD_ULTIMATE = 2
+slot0.CMD_SPECIAL_GAME = 3
+slot0.CMD_HIGH_SCORE = 4
+slot0.CMD_PLAY = 5
+slot0.CMD_SPECIAL_TRACK = 100
 
-var_0_0.CMD_COMPLETE = 1
-var_0_0.CMD_ULTIMATE = 2
-var_0_0.CMD_SPECIAL_GAME = 3
-var_0_0.CMD_HIGH_SCORE = 4
-var_0_0.CMD_PLAY = 5
-var_0_0.CMD_SPECIAL_TRACK = 100
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().id or 0
+	slot4 = slot2.hubid
+	slot6 = slot2.args1
+	slot7 = 3
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id or 0
-	local var_1_2 = var_1_0.hubid
-	local var_1_3 = var_1_0.cmd
-	local var_1_4 = var_1_0.args1
-	local var_1_5 = 3
-
-	if var_1_3 == var_0_0.CMD_COMPLETE and var_1_5 > #var_1_4 then
-		for iter_1_0 = #var_1_4, var_1_5 - 1 do
-			table.insert(var_1_4, 0)
+	if slot2.cmd == uv0.CMD_COMPLETE and slot7 > #slot6 then
+		for slot11 = #slot6, slot7 - 1 do
+			table.insert(slot6, 0)
 		end
 
-		if var_1_1 and var_1_1 > 0 then
-			var_1_4[3] = var_1_1
+		if slot3 and slot3 > 0 then
+			slot6[3] = slot3
 		end
 	end
 
-	local var_1_6 = var_1_0.cbFunc
+	slot8 = slot2.cbFunc
 
 	pg.ConnectionMgr.GetInstance():Send(26103, {
-		hubid = var_1_2,
-		cmd = var_1_3,
-		args1 = var_1_4
-	}, 26104, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(MiniGameProxy)
-
-			if arg_2_0.hub.id > 0 then
-				var_2_0:UpdataHubData(arg_2_0.hub)
+		hubid = slot4,
+		cmd = slot5,
+		args1 = slot6
+	}, 26104, function (slot0)
+		if slot0.result == 0 then
+			if slot0.hub.id > 0 then
+				getProxy(MiniGameProxy):UpdataHubData(slot0.hub)
 			end
 
-			if arg_2_0.data.id > 0 then
-				MiniGameDataCreator.DataCreateFunc(var_1_3, var_1_4, arg_2_0.data.datas, arg_2_0.data.date1_key_value_list)
+			if slot0.data.id > 0 then
+				MiniGameDataCreator.DataCreateFunc(uv0, uv1, slot0.data.datas, slot0.data.date1_key_value_list)
 			end
 
-			local var_2_1 = PlayerConst.addTranDrop(arg_2_0.award_list)
+			slot2 = PlayerConst.addTranDrop(slot0.award_list)
 
-			if var_1_3 == var_0_0.CMD_COMPLETE then
-				local var_2_2 = var_2_0:GetHubByHubId(var_1_2):getConfig("reward_target")
-
-				if var_2_2 ~= "" and var_2_2 ~= 0 then
-					local var_2_3 = {
-						count = 1,
-						type = DROP_TYPE_VITEM,
-						id = var_2_2
-					}
-
-					table.insert(var_2_1, var_2_3)
-				end
+			if uv0 == uv2.CMD_COMPLETE and slot1:GetHubByHubId(uv3):getConfig("reward_target") ~= "" and slot4 ~= 0 then
+				table.insert(slot2, {
+					count = 1,
+					type = DROP_TYPE_VITEM,
+					id = slot4
+				})
 			end
 
-			arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP_DONE, {
-				awards = var_2_1,
-				hubid = var_1_2,
-				cmd = var_1_3,
-				argList = var_1_4
+			uv4:sendNotification(GAME.SEND_MINI_GAME_OP_DONE, {
+				awards = slot2,
+				hubid = uv3,
+				cmd = uv0,
+				argList = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips("mini game Error : " .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("mini game Error : " .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

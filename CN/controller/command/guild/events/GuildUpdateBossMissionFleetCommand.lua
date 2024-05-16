@@ -1,101 +1,90 @@
-﻿local var_0_0 = class("GuildUpdateBossMissionFleetCommand", import(".GuildEventBaseCommand"))
+slot0 = class("GuildUpdateBossMissionFleetCommand", import(".GuildEventBaseCommand"))
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.editFleet
-	local var_1_2 = var_1_0.callback
-	local var_1_3 = var_1_0.force
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.editFleet
+	slot4 = slot2.callback
+	slot5 = slot2.force
 
-	if not arg_1_0:ExistBoss() then
+	if not slot0:ExistBoss() then
 		return
 	end
 
-	local function var_1_4(arg_2_0)
-		if table.getCount(arg_2_0) == 0 then
-			if var_1_2 then
-				var_1_2()
+	function slot6(slot0)
+		if table.getCount(slot0) == 0 then
+			if uv0 then
+				uv0()
 			end
 
 			return
 		end
 
 		pg.ConnectionMgr.GetInstance():Send(61013, {
-			fleet = arg_2_0
-		}, 61014, function(arg_3_0)
-			if arg_3_0.result == 0 then
-				local var_3_0 = getProxy(GuildProxy)
-				local var_3_1 = var_3_0:getData()
-				local var_3_2 = var_3_1:GetActiveEvent():GetBossMission()
-
-				for iter_3_0, iter_3_1 in pairs(var_1_1) do
-					var_3_2:UpdateFleet(iter_3_1)
+			fleet = slot0
+		}, 61014, function (slot0)
+			if slot0.result == 0 then
+				for slot8, slot9 in pairs(uv0) do
+					getProxy(GuildProxy):getData():GetActiveEvent():GetBossMission():UpdateFleet(slot9)
 				end
 
-				var_3_0:updateGuild(var_3_1)
-				arg_1_0:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION_DONE)
+				slot1:updateGuild(slot2)
+				uv1:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION_DONE)
 				pg.ShipFlagMgr:GetInstance():UpdateFlagShips("inGuildBossEvent")
 
-				if var_1_2 then
-					var_1_2()
+				if uv2 then
+					uv2()
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 			end
 		end)
 	end
 
-	local var_1_5 = {}
+	slot7 = {}
 
-	for iter_1_0, iter_1_1 in pairs(var_1_1) do
-		if not var_1_3 then
-			local var_1_6, var_1_7 = iter_1_1:IsLegal()
+	for slot11, slot12 in pairs(slot3) do
+		if not slot5 then
+			slot13, slot14 = slot12:IsLegal()
 
-			if not var_1_6 then
-				pg.TipsMgr.GetInstance():ShowTips(var_1_7)
+			if not slot13 then
+				pg.TipsMgr.GetInstance():ShowTips(slot14)
 
 				return
 			end
 		end
 
-		iter_1_1:ClearInvaildShip()
-		iter_1_1:RemoveInvaildCommanders()
-
-		local var_1_8 = arg_1_0:WarpData(iter_1_1)
-
-		table.insert(var_1_5, var_1_8)
+		slot12:ClearInvaildShip()
+		slot12:RemoveInvaildCommanders()
+		table.insert(slot7, slot0:WarpData(slot12))
 	end
 
-	var_1_4(var_1_5)
+	slot6(slot7)
 end
 
-function var_0_0.WarpData(arg_4_0, arg_4_1)
-	local var_4_0 = {}
-	local var_4_1 = arg_4_1:GetShipIds()
-
-	for iter_4_0, iter_4_1 in ipairs(var_4_1) do
-		if arg_4_1:ExistMember(iter_4_1.uid) then
-			table.insert(var_4_0, {
-				user_id = iter_4_1.uid,
-				ship_id = iter_4_1.id
+function slot0.WarpData(slot0, slot1)
+	for slot7, slot8 in ipairs(slot1:GetShipIds()) do
+		if slot1:ExistMember(slot8.uid) then
+			table.insert({}, {
+				user_id = slot8.uid,
+				ship_id = slot8.id
 			})
 		end
 	end
 
-	local var_4_2 = {}
-	local var_4_3 = arg_4_1:getCommanders()
+	slot4 = {}
 
-	for iter_4_2, iter_4_3 in pairs(var_4_3) do
-		table.insert(var_4_2, {
-			pos = iter_4_2,
-			id = iter_4_3.id
+	for slot9, slot10 in pairs(slot1:getCommanders()) do
+		table.insert(slot4, {
+			pos = slot9,
+			id = slot10.id
 		})
 	end
 
 	return {
-		fleet_id = arg_4_1.id,
-		ships = var_4_0,
-		commanders = var_4_2
+		fleet_id = slot1.id,
+		ships = slot2,
+		commanders = slot4
 	}
 end
 
-return var_0_0
+return slot0

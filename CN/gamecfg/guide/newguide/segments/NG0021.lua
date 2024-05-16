@@ -1,7 +1,3 @@
-﻿local var_0_0 = {
-	"点击帮助查看按钮说明"
-}
-
 return {
 	id = "NG0021",
 	events = {
@@ -12,7 +8,9 @@ return {
 				mode = 2,
 				posY = -382,
 				posX = -245,
-				text = var_0_0[1]
+				text = ({
+					"点击帮助查看按钮说明"
+				})[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/TecSpeedUpUI(Clone)/Window/HelpBtn",

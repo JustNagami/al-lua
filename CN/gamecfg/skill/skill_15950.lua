@@ -1,13 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {},
+return {
 	{
 		effect_list = {
 			{
@@ -244,5 +235,14 @@
 	painting = 0,
 	id = 15951,
 	picture = "0",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {}
 }

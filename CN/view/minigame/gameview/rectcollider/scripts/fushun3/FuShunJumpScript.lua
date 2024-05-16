@@ -1,57 +1,54 @@
-﻿local var_0_0 = class("FuShunJumpScript", import("..RectBaseScript"))
+slot0 = class("FuShunJumpScript", import("..RectBaseScript"))
 
-function var_0_0.onInit(arg_1_0)
-	arg_1_0._loop = false
-	arg_1_0._active = false
-	arg_1_0._weight = 2
-	arg_1_0._scriptTime = 0.01
-	arg_1_0._lastActive = false
-	arg_1_0._name = "FuShunJumpScript"
+function slot0.onInit(slot0)
+	slot0._loop = false
+	slot0._active = false
+	slot0._weight = 2
+	slot0._scriptTime = 0.01
+	slot0._lastActive = false
+	slot0._name = "FuShunJumpScript"
 end
 
-function var_0_0.onStep(arg_2_0)
-	if arg_2_0._active then
-		if arg_2_0._collisionInfo.below and arg_2_0._collisionInfo.useJumpTimes == 0 then
-			local var_2_0 = arg_2_0._collisionInfo:getVelocity()
+function slot0.onStep(slot0)
+	if slot0._active then
+		if slot0._collisionInfo.below and slot0._collisionInfo.useJumpTimes == 0 then
+			slot1 = slot0._collisionInfo:getVelocity()
+			slot1.x = 0
 
-			var_2_0.x = 0
-
-			arg_2_0._collisionInfo:setVelocity(var_2_0)
+			slot0._collisionInfo:setVelocity(slot1)
 		end
-	elseif arg_2_0._lastActive and arg_2_0:checkScirptApply() and arg_2_0._collisionInfo.below and arg_2_0._collisionInfo.useJumpTimes == 0 then
-		local var_2_1 = arg_2_0._collisionInfo:getVelocity()
+	elseif slot0._lastActive and slot0:checkScirptApply() and slot0._collisionInfo.below and slot0._collisionInfo.useJumpTimes == 0 then
+		slot0._collisionInfo:getVelocity().y = slot0._collisionInfo.config.maxJumpVelocity
+		slot0._collisionInfo.useJumpTimes = 1
 
-		var_2_1.y = arg_2_0._collisionInfo.config.maxJumpVelocity
-		arg_2_0._collisionInfo.useJumpTimes = 1
-
-		if arg_2_0._event then
-			arg_2_0._event:emit(Fushun3GameEvent.script_jump_event)
+		if slot0._event then
+			slot0._event:emit(Fushun3GameEvent.script_jump_event)
 		end
 
-		var_2_1.x = arg_2_0._collisionInfo.config.moveSpeed
+		slot1.x = slot0._collisionInfo.config.moveSpeed
 
-		arg_2_0._collisionInfo:setVelocity(var_2_1)
+		slot0._collisionInfo:setVelocity(slot1)
 	end
 
-	arg_2_0._lastActive = arg_2_0._active
+	slot0._lastActive = slot0._active
 end
 
-function var_0_0.onLateStep(arg_3_0)
-	if arg_3_0._collisionInfo.below and arg_3_0._collisionInfo.useJumpTimes == 1 then
-		arg_3_0._collisionInfo.useJumpTimes = 0
+function slot0.onLateStep(slot0)
+	if slot0._collisionInfo.below and slot0._collisionInfo.useJumpTimes == 1 then
+		slot0._collisionInfo.useJumpTimes = 0
 	end
 end
 
-function var_0_0.onTrigger(arg_4_0, arg_4_1, arg_4_2)
-	if Application.isEditor and arg_4_0._triggerKey == KeyCode.Space then
-		if not arg_4_2 then
+function slot0.onTrigger(slot0, slot1, slot2)
+	if Application.isEditor and slot0._triggerKey == KeyCode.Space then
+		if not slot2 then
 			print()
 		end
 
-		if arg_4_0:checkScirptApply() then
-			arg_4_0._active = true
+		if slot0:checkScirptApply() then
+			slot0._active = true
 		end
 	end
 end
 
-return var_0_0
+return slot0

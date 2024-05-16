@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				check_target = "TargetAllHelp",
-				minTargetNumber = 6,
-				skill_id = 17560,
-				quota = 1
-			}
-		}
-	},
+return {
 	{
 		desc = "太原技能"
 	},
@@ -53,5 +39,19 @@
 	stack = 1,
 	id = 17560,
 	icon = 11070,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				check_target = "TargetAllHelp",
+				minTargetNumber = 6,
+				skill_id = 17560,
+				quota = 1
+			}
+		}
+	}
 }

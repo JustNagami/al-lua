@@ -1,505 +1,485 @@
-﻿local var_0_0 = class("TerminalPersonalPage", import("view.base.BaseSubView"))
-local var_0_1 = "otherworld_personal_name"
+slot0 = class("TerminalPersonalPage", import("view.base.BaseSubView"))
+slot1 = "otherworld_personal_name"
+slot0.BIND_EVENT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_EVENT_ID
+slot0.config = pg.roll_attr
+slot0.NAME_ID = 1001
+slot0.LV_ID = 1002
+slot0.JOB_ID = 1003
+slot0.GUARDIAN_ID = 1004
 
-var_0_0.BIND_EVENT_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_EVENT_ID
-var_0_0.config = pg.roll_attr
-var_0_0.NAME_ID = 1001
-var_0_0.LV_ID = 1002
-var_0_0.JOB_ID = 1003
-var_0_0.GUARDIAN_ID = 1004
+function slot2(slot0)
+	slot1 = {}
 
-local function var_0_2(arg_1_0)
-	local var_1_0 = {}
-
-	for iter_1_0 = arg_1_0[1], arg_1_0[2] do
-		if var_0_0.config[iter_1_0] then
-			table.insert(var_1_0, iter_1_0)
+	for slot5 = slot0[1], slot0[2] do
+		if uv0.config[slot5] then
+			table.insert(slot1, slot5)
 		end
 	end
 
-	return var_1_0
+	return slot1
 end
 
-var_0_0.PROPERTY_IDS = var_0_2({
+slot0.PROPERTY_IDS = slot2({
 	2001,
 	2006
 })
-var_0_0.ABILITY_IDS = var_0_2({
+slot0.ABILITY_IDS = slot2({
 	3000,
 	3193
 })
-var_0_0.RANDOM_ABILITY_CNT = 8
+slot0.RANDOM_ABILITY_CNT = 8
 
-function var_0_0.getUIName(arg_2_0)
+function slot0.getUIName(slot0)
 	return "TerminalPersonalPage"
 end
 
-function var_0_0.OnLoaded(arg_3_0)
-	arg_3_0._tf.name = tostring(OtherworldTerminalLayer.PAGE_PERSONAL)
-	arg_3_0.infoTF = arg_3_0:findTF("frame/info")
+function slot0.OnLoaded(slot0)
+	slot0._tf.name = tostring(OtherworldTerminalLayer.PAGE_PERSONAL)
+	slot0.infoTF = slot0:findTF("frame/info")
 
-	setText(arg_3_0:findTF("title/content/Text", arg_3_0.infoTF), i18n("personal_info_title"))
+	setText(slot0:findTF("title/content/Text", slot0.infoTF), i18n("personal_info_title"))
 
-	arg_3_0.nameTitle = arg_3_0:findTF("infos/name/title", arg_3_0.infoTF)
-	arg_3_0.nameInput = arg_3_0:findTF("infos/name/box/InputField", arg_3_0.infoTF)
-	arg_3_0.jobTitle = arg_3_0:findTF("infos/job/title", arg_3_0.infoTF)
-	arg_3_0.jobValue = arg_3_0:findTF("infos/job/value", arg_3_0.infoTF)
-	arg_3_0.guardianTitle = arg_3_0:findTF("infos/guardian/title", arg_3_0.infoTF)
-	arg_3_0.guardianValue = arg_3_0:findTF("infos/guardian/value", arg_3_0.infoTF)
-	arg_3_0.lvTitle = arg_3_0:findTF("level/lv/title", arg_3_0.infoTF)
-	arg_3_0.lvValue = arg_3_0:findTF("level/lv/value", arg_3_0.infoTF)
-	arg_3_0.lvSlider = arg_3_0:findTF("level/slider", arg_3_0.infoTF)
-	arg_3_0.lvUpgradeTF = arg_3_0:findTF("level/slider/upgrade", arg_3_0.infoTF)
+	slot0.nameTitle = slot0:findTF("infos/name/title", slot0.infoTF)
+	slot0.nameInput = slot0:findTF("infos/name/box/InputField", slot0.infoTF)
+	slot0.jobTitle = slot0:findTF("infos/job/title", slot0.infoTF)
+	slot0.jobValue = slot0:findTF("infos/job/value", slot0.infoTF)
+	slot0.guardianTitle = slot0:findTF("infos/guardian/title", slot0.infoTF)
+	slot0.guardianValue = slot0:findTF("infos/guardian/value", slot0.infoTF)
+	slot0.lvTitle = slot0:findTF("level/lv/title", slot0.infoTF)
+	slot0.lvValue = slot0:findTF("level/lv/value", slot0.infoTF)
+	slot0.lvSlider = slot0:findTF("level/slider", slot0.infoTF)
+	slot0.lvUpgradeTF = slot0:findTF("level/slider/upgrade", slot0.infoTF)
 
-	setActive(arg_3_0.lvUpgradeTF, false)
+	setActive(slot0.lvUpgradeTF, false)
 
-	arg_3_0.propertyTF = arg_3_0:findTF("frame/property")
+	slot0.propertyTF = slot0:findTF("frame/property")
 
-	setText(arg_3_0:findTF("title/content/Text", arg_3_0.propertyTF), i18n("personal_property_title"))
+	setText(slot0:findTF("title/content/Text", slot0.propertyTF), i18n("personal_property_title"))
 
-	arg_3_0.propertyContent = arg_3_0:findTF("content", arg_3_0.propertyTF)
-	arg_3_0.propertyTpl = arg_3_0:findTF("tpl", arg_3_0.propertyTF)
+	slot0.propertyContent = slot0:findTF("content", slot0.propertyTF)
+	slot0.propertyTpl = slot0:findTF("tpl", slot0.propertyTF)
 
-	setActive(arg_3_0.propertyTpl, false)
-	setActive(arg_3_0:findTF("upgrade", arg_3_0.propertyTpl), false)
+	setActive(slot0.propertyTpl, false)
+	setActive(slot0:findTF("upgrade", slot0.propertyTpl), false)
 
 	if PLATFORM_CODE == PLATFORM_CH or PLATFORM_CODE == PLATFORM_CHT then
-		arg_3_0.abilityTF = arg_3_0:findTF("frame/ability")
+		slot0.abilityTF = slot0:findTF("frame/ability")
 
-		setActive(arg_3_0:findTF("frame/ability_2"), false)
+		setActive(slot0:findTF("frame/ability_2"), false)
 	else
-		arg_3_0.abilityTF = arg_3_0:findTF("frame/ability_2")
+		slot0.abilityTF = slot0:findTF("frame/ability_2")
 
-		setActive(arg_3_0:findTF("frame/ability"), false)
+		setActive(slot0:findTF("frame/ability"), false)
 	end
 
-	setActive(arg_3_0.abilityTF, true)
-	setText(arg_3_0:findTF("title/content/Text", arg_3_0.abilityTF), i18n("personal_ability_title"))
+	setActive(slot0.abilityTF, true)
+	setText(slot0:findTF("title/content/Text", slot0.abilityTF), i18n("personal_ability_title"))
 
-	arg_3_0.abilityContent = arg_3_0:findTF("content", arg_3_0.abilityTF)
-	arg_3_0.abilityTpl = arg_3_0:findTF("tpl", arg_3_0.abilityTF)
+	slot0.abilityContent = slot0:findTF("content", slot0.abilityTF)
+	slot0.abilityTpl = slot0:findTF("tpl", slot0.abilityTF)
 
-	setActive(arg_3_0.abilityTpl, false)
+	setActive(slot0.abilityTpl, false)
 
-	arg_3_0.randomBtn = arg_3_0:findTF("frame/random_btn")
+	slot0.randomBtn = slot0:findTF("frame/random_btn")
 
-	setText(arg_3_0:findTF("Text", arg_3_0.randomBtn), i18n("personal_random"))
+	setText(slot0:findTF("Text", slot0.randomBtn), i18n("personal_random"))
 
-	arg_3_0.randomGreyBtn = arg_3_0:findTF("frame/random_btn_grey")
+	slot0.randomGreyBtn = slot0:findTF("frame/random_btn_grey")
 
-	setText(arg_3_0:findTF("Text", arg_3_0.randomGreyBtn), i18n("personal_random"))
+	setText(slot0:findTF("Text", slot0.randomGreyBtn), i18n("personal_random"))
 
-	arg_3_0.effectTF = arg_3_0:findTF("effect")
+	slot0.effectTF = slot0:findTF("effect")
 
-	setActive(arg_3_0.effectTF, false)
+	setActive(slot0.effectTF, false)
 
-	arg_3_0.playerId = getProxy(PlayerProxy):getRawData().id
-	arg_3_0.showName = getProxy(PlayerProxy):getRawData().name
+	slot0.playerId = getProxy(PlayerProxy):getRawData().id
+	slot0.showName = getProxy(PlayerProxy):getRawData().name
 end
 
-function var_0_0.OnInit(arg_4_0)
-	arg_4_0.activity = getProxy(ActivityProxy):getActivityById(var_0_0.BIND_EVENT_ACT_ID)
+function slot0.OnInit(slot0)
+	slot0.activity = getProxy(ActivityProxy):getActivityById(uv0.BIND_EVENT_ACT_ID)
 
-	assert(arg_4_0.activity, "not exist bind event act, id" .. var_0_0.BIND_EVENT_ACT_ID)
-	arg_4_0.nameInput:GetComponent(typeof(InputField)).onValueChanged:AddListener(function()
-		if not arg_4_0.unlockRandom or not nameValidityCheck(getInputText(arg_4_0.nameInput), 4, 14, {
+	assert(slot0.activity, "not exist bind event act, id" .. uv0.BIND_EVENT_ACT_ID)
+	slot0.nameInput:GetComponent(typeof(InputField)).onValueChanged:AddListener(function ()
+		if not uv0.unlockRandom or not nameValidityCheck(getInputText(uv0.nameInput), 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
 			"login_newPlayerScene_invalideName"
 		}) then
-			arg_4_0:SetDefaultName()
+			uv0:SetDefaultName()
 		else
-			arg_4_0.showName = getInputText(arg_4_0.nameInput)
+			uv0.showName = getInputText(uv0.nameInput)
 
-			setInputText(arg_4_0.nameInput, arg_4_0.showName)
-			arg_4_0:SetLocalName(arg_4_0.showName)
+			setInputText(uv0.nameInput, uv0.showName)
+			uv0:SetLocalName(uv0.showName)
 		end
 	end)
-	onButton(arg_4_0, arg_4_0.randomBtn, function()
-		setActive(arg_4_0.effectTF, false)
-		setActive(arg_4_0.effectTF, true)
-		setActive(arg_4_0.randomBtn, false)
-		setActive(arg_4_0.randomGreyBtn, false)
-		arg_4_0:managedTween(LeanTween.delayedCall, function()
+	onButton(slot0, slot0.randomBtn, function ()
+		setActive(uv0.effectTF, false)
+		setActive(uv0.effectTF, true)
+		setActive(uv0.randomBtn, false)
+		setActive(uv0.randomGreyBtn, false)
+		uv0:managedTween(LeanTween.delayedCall, function ()
 			OtherworldMapScene.personalRandomData = {}
 
-			arg_4_0:UpdateView(true)
-			setActive(arg_4_0.effectTF, false)
-			setActive(arg_4_0.randomBtn, arg_4_0.unlockRandom)
-			setActive(arg_4_0.randomGreyBtn, not arg_4_0.unlockRandom)
-		end, var_0_0.RANDOM_CHANGE_TIME, nil)
+			uv0:UpdateView(true)
+			setActive(uv0.effectTF, false)
+			setActive(uv0.randomBtn, uv0.unlockRandom)
+			setActive(uv0.randomGreyBtn, not uv0.unlockRandom)
+		end, uv1.RANDOM_CHANGE_TIME, nil)
 	end, SFX_PANEL)
-	onButton(arg_4_0, arg_4_0.randomGreyBtn, function()
+	onButton(slot0, slot0.randomGreyBtn, function ()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("personal_random_tip"))
 	end, SFX_PANEL)
 
-	arg_4_0.unlockRandom = arg_4_0.activity:IsFinishAllMain()
+	slot0.unlockRandom = slot0.activity:IsFinishAllMain()
 
-	setActive(arg_4_0.randomBtn, arg_4_0.unlockRandom)
-	setActive(arg_4_0.randomGreyBtn, not arg_4_0.unlockRandom)
-	setActive(arg_4_0:findTF("infos/name/box/edit", arg_4_0.infoTF), arg_4_0.unlockRandom)
+	setActive(slot0.randomBtn, slot0.unlockRandom)
+	setActive(slot0.randomGreyBtn, not slot0.unlockRandom)
+	setActive(slot0:findTF("infos/name/box/edit", slot0.infoTF), slot0.unlockRandom)
 
-	if arg_4_0.unlockRandom and arg_4_0:GetLocalName() ~= "" then
-		arg_4_0.showName = arg_4_0:GetLocalName()
+	if slot0.unlockRandom and slot0:GetLocalName() ~= "" then
+		slot0.showName = slot0:GetLocalName()
 	end
 
-	arg_4_0.nameInput:GetComponent(typeof(InputField)).interactable = arg_4_0.unlockRandom
+	slot0.nameInput:GetComponent(typeof(InputField)).interactable = slot0.unlockRandom
 
-	arg_4_0:UpdateView()
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateView(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.contextData.upgrade and arg_9_0.activity:GetLastShowConfig() or arg_9_0.activity:GetShowConfig()
+function slot0.UpdateView(slot0, slot1)
+	slot0.showCfg = {}
 
-	arg_9_0.showCfg = {}
-
-	for iter_9_0, iter_9_1 in ipairs(var_9_0) do
-		arg_9_0.showCfg[iter_9_1[1]] = iter_9_1[2]
+	for slot6, slot7 in ipairs(slot0.contextData.upgrade and slot0.activity:GetLastShowConfig() or slot0.activity:GetShowConfig()) do
+		slot0.showCfg[slot7[1]] = slot7[2]
 	end
 
-	arg_9_0:UpdateInfo(arg_9_1)
-	arg_9_0:UpdateProperty(arg_9_1)
-	arg_9_0:UpdateAbility(arg_9_1)
+	slot0:UpdateInfo(slot1)
+	slot0:UpdateProperty(slot1)
+	slot0:UpdateAbility(slot1)
 
-	if arg_9_0.contextData.upgrade then
-		arg_9_0.upgradeCfg = {}
+	if slot0.contextData.upgrade then
+		slot0.upgradeCfg = {}
 
-		for iter_9_2, iter_9_3 in ipairs(arg_9_0.activity:GetShowConfig()) do
-			arg_9_0.upgradeCfg[iter_9_3[1]] = iter_9_3[2]
+		for slot6, slot7 in ipairs(slot0.activity:GetShowConfig()) do
+			slot0.upgradeCfg[slot7[1]] = slot7[2]
 		end
 
-		arg_9_0:PlayUpgradeAnims()
+		slot0:PlayUpgradeAnims()
 	end
 end
 
-function var_0_0.SetDefaultName(arg_10_0)
-	setInputText(arg_10_0.nameInput, arg_10_0.showName)
+function slot0.SetDefaultName(slot0)
+	setInputText(slot0.nameInput, slot0.showName)
 end
 
-function var_0_0.UpdateInfo(arg_11_0, arg_11_1)
-	arg_11_0:SetDefaultName()
+function slot0.UpdateInfo(slot0, slot1)
+	slot0:SetDefaultName()
+	setText(slot0.nameTitle, slot0:GetRollAttrInfoById(uv0.NAME_ID, slot1) .. "：")
 
-	local var_11_0 = arg_11_0:GetRollAttrInfoById(var_0_0.NAME_ID, arg_11_1)
+	slot3, slot4 = slot0:GetRollAttrInfoById(uv0.JOB_ID, slot1)
 
-	setText(arg_11_0.nameTitle, var_11_0 .. "：")
+	setText(slot0.jobTitle, slot3 .. "：")
+	setText(slot0.jobValue, slot4)
 
-	local var_11_1, var_11_2 = arg_11_0:GetRollAttrInfoById(var_0_0.JOB_ID, arg_11_1)
+	slot5, slot6 = slot0:GetRollAttrInfoById(uv0.GUARDIAN_ID, slot1)
 
-	setText(arg_11_0.jobTitle, var_11_1 .. "：")
-	setText(arg_11_0.jobValue, var_11_2)
+	setText(slot0.guardianTitle, slot5 .. "：")
+	setText(slot0.guardianValue, slot6)
 
-	local var_11_3, var_11_4 = arg_11_0:GetRollAttrInfoById(var_0_0.GUARDIAN_ID, arg_11_1)
+	slot7, slot8 = slot0:GetRollAttrInfoById(uv0.LV_ID, slot1)
 
-	setText(arg_11_0.guardianTitle, var_11_3 .. "：")
-	setText(arg_11_0.guardianValue, var_11_4)
+	setText(slot0.lvTitle, slot7 .. "：")
+	setText(slot0.lvValue, slot8)
+	setSlider(slot0.lvSlider, 0, 1, tonumber(slot8) / uv0.config[uv0.LV_ID].random_value[2])
 
-	local var_11_5, var_11_6 = arg_11_0:GetRollAttrInfoById(var_0_0.LV_ID, arg_11_1)
-
-	setText(arg_11_0.lvTitle, var_11_5 .. "：")
-	setText(arg_11_0.lvValue, var_11_6)
-	setSlider(arg_11_0.lvSlider, 0, 1, tonumber(var_11_6) / var_0_0.config[var_0_0.LV_ID].random_value[2])
-
-	if arg_11_1 then
-		OtherworldMapScene.personalRandomData[var_0_0.JOB_ID] = var_11_2
-		OtherworldMapScene.personalRandomData[var_0_0.GUARDIAN_ID] = var_11_4
-		OtherworldMapScene.personalRandomData[var_0_0.LV_ID] = var_11_6
+	if slot1 then
+		OtherworldMapScene.personalRandomData[uv0.JOB_ID] = slot4
+		OtherworldMapScene.personalRandomData[uv0.GUARDIAN_ID] = slot6
+		OtherworldMapScene.personalRandomData[uv0.LV_ID] = slot8
 	end
 end
 
-function var_0_0.UpdateProperty(arg_12_0, arg_12_1)
-	local var_12_0 = 0
+function slot0.UpdateProperty(slot0, slot1)
+	for slot6, slot7 in ipairs(uv0.PROPERTY_IDS) do
+		slot8 = slot0.propertyContent.childCount < 0 + 1 and cloneTplTo(slot0.propertyTpl, slot0.propertyContent) or slot0.propertyContent:GetChild(slot2 - 1)
+		slot8.name = slot7
+		slot9, slot10 = slot0:GetRollAttrInfoById(slot7, slot1)
 
-	for iter_12_0, iter_12_1 in ipairs(var_0_0.PROPERTY_IDS) do
-		var_12_0 = var_12_0 + 1
+		setText(slot0:findTF("name", slot8), slot9)
+		setText(slot0:findTF("value/Text", slot8), slot10)
 
-		local var_12_1 = var_12_0 > arg_12_0.propertyContent.childCount and cloneTplTo(arg_12_0.propertyTpl, arg_12_0.propertyContent) or arg_12_0.propertyContent:GetChild(var_12_0 - 1)
-
-		var_12_1.name = iter_12_1
-
-		local var_12_2, var_12_3 = arg_12_0:GetRollAttrInfoById(iter_12_1, arg_12_1)
-
-		setText(arg_12_0:findTF("name", var_12_1), var_12_2)
-		setText(arg_12_0:findTF("value/Text", var_12_1), var_12_3)
-
-		if arg_12_1 then
-			OtherworldMapScene.personalRandomData[iter_12_1] = var_12_3
+		if slot1 then
+			OtherworldMapScene.personalRandomData[slot7] = slot10
 		end
 	end
 
-	for iter_12_2 = 1, arg_12_0.propertyContent.childCount - 1 do
-		if var_12_0 < iter_12_2 then
-			setActive(arg_12_0.propertyContent:GetChild(iter_12_2 - 1), false)
+	for slot6 = 1, slot0.propertyContent.childCount - 1 do
+		if slot2 < slot6 then
+			setActive(slot0.propertyContent:GetChild(slot6 - 1), false)
 		end
 	end
 end
 
-function var_0_0.UpdateAbility(arg_13_0, arg_13_1)
-	local var_13_0 = {}
+function slot0.UpdateAbility(slot0, slot1)
+	slot2 = {}
 
-	if arg_13_1 then
-		var_13_0 = arg_13_0:GetRandomAbilityIds()
+	if slot1 then
+		slot2 = slot0:GetRandomAbilityIds()
 	elseif OtherworldMapScene.personalRandomData then
-		for iter_13_0, iter_13_1 in pairs(OtherworldMapScene.personalRandomData) do
-			if table.contains(var_0_0.ABILITY_IDS, iter_13_0) then
-				table.insert(var_13_0, iter_13_0)
+		for slot6, slot7 in pairs(OtherworldMapScene.personalRandomData) do
+			if table.contains(uv0.ABILITY_IDS, slot6) then
+				table.insert(slot2, slot6)
 			end
 		end
 	else
-		for iter_13_2, iter_13_3 in pairs(arg_13_0.showCfg) do
-			if table.contains(var_0_0.ABILITY_IDS, iter_13_2) then
-				table.insert(var_13_0, iter_13_2)
+		for slot6, slot7 in pairs(slot0.showCfg) do
+			if table.contains(uv0.ABILITY_IDS, slot6) then
+				table.insert(slot2, slot6)
 			end
 		end
 	end
 
-	table.sort(var_13_0)
+	table.sort(slot2)
 
-	for iter_13_4, iter_13_5 in ipairs(var_13_0) do
-		local var_13_1 = iter_13_4 > arg_13_0.abilityContent.childCount and cloneTplTo(arg_13_0.abilityTpl, arg_13_0.abilityContent) or arg_13_0.abilityContent:GetChild(iter_13_4 - 1)
+	for slot6, slot7 in ipairs(slot2) do
+		slot8 = slot0.abilityContent.childCount < slot6 and cloneTplTo(slot0.abilityTpl, slot0.abilityContent) or slot0.abilityContent:GetChild(slot6 - 1)
+		slot8.name = slot6
+		slot9, slot10 = slot0:GetRollAttrInfoById(slot7, slot1)
 
-		var_13_1.name = iter_13_4
+		setText(slot0:findTF("name", slot8), slot9)
+		setText(slot0:findTF("value/Text", slot8), slot10)
 
-		local var_13_2, var_13_3 = arg_13_0:GetRollAttrInfoById(iter_13_5, arg_13_1)
-
-		setText(arg_13_0:findTF("name", var_13_1), var_13_2)
-		setText(arg_13_0:findTF("value/Text", var_13_1), var_13_3)
-
-		if arg_13_1 then
-			OtherworldMapScene.personalRandomData[iter_13_5] = var_13_3
+		if slot1 then
+			OtherworldMapScene.personalRandomData[slot7] = slot10
 		end
 	end
 
-	for iter_13_6 = 1, arg_13_0.abilityContent.childCount do
-		if iter_13_6 > #var_13_0 then
-			setActive(arg_13_0.abilityContent:GetChild(iter_13_6 - 1), false)
+	for slot6 = 1, slot0.abilityContent.childCount do
+		if slot6 > #slot2 then
+			setActive(slot0.abilityContent:GetChild(slot6 - 1), false)
 		end
 	end
 end
 
-function var_0_0.GetRollAttrInfoById(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = ""
+function slot0.GetRollAttrInfoById(slot0, slot1, slot2)
+	slot3 = ""
 
-	if arg_14_2 then
-		local var_14_1 = var_0_0.config[arg_14_1].random_value
+	if slot2 then
+		slot4 = uv0.config[slot1].random_value
 
-		if table.contains(var_0_0.PROPERTY_IDS, arg_14_1) or arg_14_1 == var_0_0.LV_ID then
-			var_14_0 = math.random(var_14_1[1], var_14_1[2])
+		if table.contains(uv0.PROPERTY_IDS, slot1) or slot1 == uv0.LV_ID then
+			slot3 = math.random(slot4[1], slot4[2])
 		else
-			var_14_0 = var_14_1[math.random(#var_14_1)]
+			slot3 = slot4[math.random(#slot4)]
 		end
 	else
-		var_14_0 = arg_14_0.showCfg[arg_14_1] or var_0_0.config[arg_14_1].default_value
+		slot3 = slot0.showCfg[slot1] or uv0.config[slot1].default_value
 
 		if OtherworldMapScene.personalRandomData then
-			var_14_0 = OtherworldMapScene.personalRandomData[arg_14_1]
+			slot3 = OtherworldMapScene.personalRandomData[slot1]
 		end
 	end
 
-	return var_0_0.config[arg_14_1].name, tostring(var_14_0)
+	return uv0.config[slot1].name, tostring(slot3)
 end
 
-function var_0_0.GetRandomAbilityIds(arg_15_0)
-	local var_15_0 = {}
+function slot0.GetRandomAbilityIds(slot0)
+	slot1 = {}
 
-	for iter_15_0 = 1, #var_0_0.ABILITY_IDS do
-		table.insert(var_15_0, iter_15_0)
+	for slot5 = 1, #uv0.ABILITY_IDS do
+		table.insert(slot1, slot5)
 	end
 
-	shuffle(var_15_0)
+	shuffle(slot1)
 
-	local var_15_1 = {}
+	slot2 = {}
 
-	for iter_15_1 = 1, var_0_0.RANDOM_ABILITY_CNT do
-		table.insert(var_15_1, var_0_0.ABILITY_IDS[var_15_0[iter_15_1]])
+	for slot6 = 1, uv0.RANDOM_ABILITY_CNT do
+		table.insert(slot2, uv0.ABILITY_IDS[slot1[slot6]])
 	end
 
-	return var_15_1
+	return slot2
 end
 
-var_0_0.UPGRADE_TAG_SHOW_TIME = 2
-var_0_0.LV_ANIM_TIME = 0.5
-var_0_0.PROPERTY_TPL_ANIM_TIME = 0.5
-var_0_0.ABILITY_TPL_ANIM_TIME = 0.5
-var_0_0.RANDOM_CHANGE_TIME = 0.8
+slot0.UPGRADE_TAG_SHOW_TIME = 2
+slot0.LV_ANIM_TIME = 0.5
+slot0.PROPERTY_TPL_ANIM_TIME = 0.5
+slot0.ABILITY_TPL_ANIM_TIME = 0.5
+slot0.RANDOM_CHANGE_TIME = 0.8
 
-function var_0_0.PlayUpgradeAnims(arg_16_0)
+function slot0.PlayUpgradeAnims(slot0)
 	seriesAsync({
-		function(arg_17_0)
-			arg_16_0:PlayLevelAnim(arg_17_0)
+		function (slot0)
+			uv0:PlayLevelAnim(slot0)
 		end,
-		function(arg_18_0)
-			arg_16_0:PlayPropertyAnim(arg_18_0)
+		function (slot0)
+			uv0:PlayPropertyAnim(slot0)
 		end,
-		function(arg_19_0)
-			arg_16_0:PlayAbilityAnim(arg_19_0)
+		function (slot0)
+			uv0:PlayAbilityAnim(slot0)
 		end
-	}, function()
-		arg_16_0.contextData.upgrade = nil
+	}, function ()
+		uv0.contextData.upgrade = nil
 	end)
 end
 
-function var_0_0.GetStaticInfo(arg_21_0, arg_21_1)
-	local var_21_0 = tonumber(arg_21_0.showCfg[arg_21_1] or var_0_0.config[arg_21_1].default_value)
-	local var_21_1 = tonumber(arg_21_0.upgradeCfg[arg_21_1] or var_21_0)
+function slot0.GetStaticInfo(slot0, slot1)
+	slot2 = tonumber(slot0.showCfg[slot1] or uv0.config[slot1].default_value)
+	slot3 = tonumber(slot0.upgradeCfg[slot1] or slot2)
 
-	return var_21_0, var_21_1, var_21_1 - var_21_0 ~= 0
+	return slot2, slot3, slot3 - slot2 ~= 0
 end
 
-function var_0_0.PlayLevelAnim(arg_22_0, arg_22_1)
-	local var_22_0, var_22_1, var_22_2 = arg_22_0:GetStaticInfo(var_0_0.LV_ID)
+function slot0.PlayLevelAnim(slot0, slot1)
+	slot2, slot3, slot4 = slot0:GetStaticInfo(uv0.LV_ID)
 
-	setActive(arg_22_0.lvUpgradeTF, var_22_2)
+	setActive(slot0.lvUpgradeTF, slot4)
 
-	if var_22_2 then
-		arg_22_0:managedTween(LeanTween.delayedCall, function()
-			setActive(arg_22_0.lvUpgradeTF, false)
-		end, var_0_0.UPGRADE_TAG_SHOW_TIME, nil)
-		arg_22_0:managedTween(LeanTween.value, nil, go(arg_22_0.lvValue), var_22_0, var_22_1, var_0_0.LV_ANIM_TIME):setOnUpdate(System.Action_float(function(arg_24_0)
-			setText(arg_22_0.lvValue, math.floor(arg_24_0))
-		end)):setOnComplete(System.Action(function()
-			arg_22_1()
+	if slot4 then
+		slot0:managedTween(LeanTween.delayedCall, function ()
+			setActive(uv0.lvUpgradeTF, false)
+		end, uv0.UPGRADE_TAG_SHOW_TIME, nil)
+		slot0:managedTween(LeanTween.value, nil, go(slot0.lvValue), slot2, slot3, uv0.LV_ANIM_TIME):setOnUpdate(System.Action_float(function (slot0)
+			setText(uv0.lvValue, math.floor(slot0))
+		end)):setOnComplete(System.Action(function ()
+			uv0()
 		end))
 
-		local var_22_3 = var_0_0.config[var_0_0.LV_ID].random_value[2]
+		slot5 = uv0.config[uv0.LV_ID].random_value[2]
 
-		arg_22_0:managedTween(LeanTween.value, nil, go(arg_22_0.lvSlider), var_22_0 / var_22_3, var_22_1 / var_22_3, var_0_0.LV_ANIM_TIME):setOnUpdate(System.Action_float(function(arg_26_0)
-			setSlider(arg_22_0.lvSlider, 0, 1, arg_26_0)
+		slot0:managedTween(LeanTween.value, nil, go(slot0.lvSlider), slot2 / slot5, slot3 / slot5, uv0.LV_ANIM_TIME):setOnUpdate(System.Action_float(function (slot0)
+			setSlider(uv0.lvSlider, 0, 1, slot0)
 		end))
 	else
-		arg_22_1()
+		slot1()
 	end
 end
 
-function var_0_0.PlayPropertyAnim(arg_27_0, arg_27_1)
-	local var_27_0 = {}
+function slot0.PlayPropertyAnim(slot0, slot1)
+	slot2 = {}
 
-	for iter_27_0 = 1, #var_0_0.PROPERTY_IDS do
-		local var_27_1 = iter_27_0 > arg_27_0.propertyContent.childCount
-		local var_27_2 = var_27_1 and cloneTplTo(arg_27_0.propertyTpl, arg_27_0.propertyContent) or arg_27_0.propertyContent:GetChild(iter_27_0 - 1)
-		local var_27_3 = var_0_0.PROPERTY_IDS[iter_27_0]
-		local var_27_4, var_27_5, var_27_6 = arg_27_0:GetStaticInfo(var_27_3)
+	for slot6 = 1, #uv0.PROPERTY_IDS do
+		slot7 = slot0.propertyContent.childCount < slot6
+		slot8 = slot7 and cloneTplTo(slot0.propertyTpl, slot0.propertyContent) or slot0.propertyContent:GetChild(slot6 - 1)
+		slot10, slot11, slot12 = slot0:GetStaticInfo(uv0.PROPERTY_IDS[slot6])
 
-		if var_27_1 then
-			setText(arg_27_0:findTF("name", var_27_2), var_0_0.config[var_27_3].name)
-			setText(arg_27_0:findTF("value/Text", var_27_2), var_27_4)
+		if slot7 then
+			setText(slot0:findTF("name", slot8), uv0.config[slot9].name)
+			setText(slot0:findTF("value/Text", slot8), slot10)
 		end
 
-		if var_27_6 then
-			table.insert(var_27_0, function(arg_28_0)
-				setActive(arg_27_0:findTF("upgrade", var_27_2), var_27_6)
-				arg_27_0:managedTween(LeanTween.delayedCall, function()
-					setActive(arg_27_0:findTF("upgrade", var_27_2), false)
-				end, var_0_0.UPGRADE_TAG_SHOW_TIME, nil)
-				arg_27_0:managedTween(LeanTween.value, nil, go(var_27_2), var_27_4, var_27_5, var_0_0.PROPERTY_TPL_ANIM_TIME):setOnUpdate(System.Action_float(function(arg_30_0)
-					setText(arg_27_0:findTF("value/Text", var_27_2), math.floor(arg_30_0))
-				end)):setOnComplete(System.Action(function()
-					arg_28_0()
+		if slot12 then
+			table.insert(slot2, function (slot0)
+				setActive(uv0:findTF("upgrade", uv1), uv2)
+				uv0:managedTween(LeanTween.delayedCall, function ()
+					setActive(uv0:findTF("upgrade", uv1), false)
+				end, uv3.UPGRADE_TAG_SHOW_TIME, nil)
+				uv0:managedTween(LeanTween.value, nil, go(uv1), uv4, uv5, uv3.PROPERTY_TPL_ANIM_TIME):setOnUpdate(System.Action_float(function (slot0)
+					setText(uv0:findTF("value/Text", uv1), math.floor(slot0))
+				end)):setOnComplete(System.Action(function ()
+					uv0()
 				end))
 			end)
 		end
 	end
 
-	seriesAsync(var_27_0, function()
-		arg_27_1()
+	seriesAsync(slot2, function ()
+		uv0()
 	end)
 end
 
-function var_0_0.GetDynamicInfo(arg_33_0, arg_33_1)
-	local var_33_0 = {}
-	local var_33_1 = {}
+function slot0.GetDynamicInfo(slot0, slot1)
+	slot2 = {}
+	slot3 = {}
 
-	for iter_33_0, iter_33_1 in pairs(arg_33_0.showCfg) do
-		if table.contains(var_0_0.ABILITY_IDS, iter_33_0) then
-			table.insert(var_33_0, iter_33_0)
+	for slot7, slot8 in pairs(slot0.showCfg) do
+		if table.contains(uv0.ABILITY_IDS, slot7) then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	table.sort(var_33_0)
+	table.sort(slot2)
 
-	for iter_33_2, iter_33_3 in pairs(arg_33_0.upgradeCfg) do
-		if table.contains(var_0_0.ABILITY_IDS, iter_33_2) then
-			table.insert(var_33_1, iter_33_2)
+	for slot7, slot8 in pairs(slot0.upgradeCfg) do
+		if table.contains(uv0.ABILITY_IDS, slot7) then
+			table.insert(slot3, slot7)
 		end
 	end
 
-	table.sort(var_33_1)
+	table.sort(slot3)
 
-	local var_33_2 = #var_33_0 ~= #var_33_1 or underscore.any(var_33_1, function(arg_34_0)
-		return not table.contains(var_33_0, arg_34_0)
+	return slot2, slot3, #slot2 ~= #slot3 or underscore.any(slot3, function (slot0)
+		return not table.contains(uv0, slot0)
 	end)
-
-	return var_33_0, var_33_1, var_33_2
 end
 
-function var_0_0.PlayAbilityAnim(arg_35_0, arg_35_1)
-	local var_35_0, var_35_1, var_35_2 = arg_35_0:GetDynamicInfo()
+function slot0.PlayAbilityAnim(slot0, slot1)
+	slot2, slot3, slot4 = slot0:GetDynamicInfo()
 
-	if var_35_2 then
-		local var_35_3 = {}
+	if slot4 then
+		slot5 = {}
 
-		for iter_35_0 = 1, #var_35_1 do
-			local var_35_4 = iter_35_0 > #var_35_0
-			local var_35_5 = var_35_1[iter_35_0]
-			local var_35_6 = var_35_4 and cloneTplTo(arg_35_0.abilityTpl, arg_35_0.abilityContent) or arg_35_0.abilityContent:GetChild(iter_35_0 - 1)
+		for slot9 = 1, #slot3 do
+			slot10 = slot9 > #slot2
+			GetOrAddComponent(slot10 and cloneTplTo(slot0.abilityTpl, slot0.abilityContent) or slot0.abilityContent:GetChild(slot9 - 1), typeof(CanvasGroup)).alpha = slot10 and 0 or 1
 
-			GetOrAddComponent(var_35_6, typeof(CanvasGroup)).alpha = var_35_4 and 0 or 1
-
-			if var_35_0[iter_35_0] ~= var_35_5 then
-				if not var_35_4 then
-					table.insert(var_35_3, function(arg_36_0)
-						arg_35_0:managedTween(LeanTween.value, nil, go(var_35_6), 1, 0, var_0_0.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function(arg_37_0)
-							GetOrAddComponent(var_35_6, typeof(CanvasGroup)).alpha = arg_37_0
-						end)):setOnComplete(System.Action(function()
-							setText(arg_35_0:findTF("name", var_35_6), var_0_0.config[var_35_5].name)
-							setText(arg_35_0:findTF("value/Text", var_35_6), arg_35_0.upgradeCfg[var_35_5])
-							arg_36_0()
+			if slot2[slot9] ~= slot3[slot9] then
+				if not slot10 then
+					table.insert(slot5, function (slot0)
+						uv0:managedTween(LeanTween.value, nil, go(uv1), 1, 0, uv2.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeInBack):setOnUpdate(System.Action_float(function (slot0)
+							GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = slot0
+						end)):setOnComplete(System.Action(function ()
+							setText(uv0:findTF("name", uv1), uv2.config[uv3].name)
+							setText(uv0:findTF("value/Text", uv1), uv0.upgradeCfg[uv3])
+							uv4()
 						end))
 					end)
 				end
 
-				table.insert(var_35_3, function(arg_39_0)
-					if var_35_4 then
-						setText(arg_35_0:findTF("name", var_35_6), var_0_0.config[var_35_5].name)
-						setText(arg_35_0:findTF("value/Text", var_35_6), arg_35_0.upgradeCfg[var_35_5])
+				table.insert(slot5, function (slot0)
+					if uv0 then
+						setText(uv1:findTF("name", uv2), uv3.config[uv4].name)
+						setText(uv1:findTF("value/Text", uv2), uv1.upgradeCfg[uv4])
 					end
 
-					arg_35_0:managedTween(LeanTween.value, nil, go(var_35_6), 0, 1, var_0_0.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeOutBack):setOnUpdate(System.Action_float(function(arg_40_0)
-						GetOrAddComponent(var_35_6, typeof(CanvasGroup)).alpha = arg_40_0
-					end)):setOnComplete(System.Action(function()
-						arg_39_0()
+					uv1:managedTween(LeanTween.value, nil, go(uv2), 0, 1, uv3.ABILITY_TPL_ANIM_TIME):setEase(LeanTweenType.easeOutBack):setOnUpdate(System.Action_float(function (slot0)
+						GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = slot0
+					end)):setOnComplete(System.Action(function ()
+						uv0()
 					end))
 				end)
 			end
 		end
 
-		seriesAsync(var_35_3, function()
-			arg_35_1()
+		seriesAsync(slot5, function ()
+			uv0()
 		end)
 	else
-		arg_35_1()
+		slot1()
 	end
 end
 
-function var_0_0.GetLocalName(arg_43_0)
-	if not arg_43_0.unlockRandom then
+function slot0.GetLocalName(slot0)
+	if not slot0.unlockRandom then
 		return ""
 	end
 
-	return PlayerPrefs.GetString(var_0_1 .. arg_43_0.playerId)
+	return PlayerPrefs.GetString(uv0 .. slot0.playerId)
 end
 
-function var_0_0.SetLocalName(arg_44_0, arg_44_1)
-	if not arg_44_0.unlockRandom then
+function slot0.SetLocalName(slot0, slot1)
+	if not slot0.unlockRandom then
 		return
 	end
 
-	PlayerPrefs.SetString(var_0_1 .. arg_44_0.playerId, arg_44_1)
+	PlayerPrefs.SetString(uv0 .. slot0.playerId, slot1)
 	PlayerPrefs.Save()
 end
 
-function var_0_0.OnDestroy(arg_45_0)
-	arg_45_0:cleanManagedTween()
+function slot0.OnDestroy(slot0)
+	slot0:cleanManagedTween()
 end
 
-return var_0_0
+return slot0

@@ -1,185 +1,157 @@
-﻿local var_0_0 = class("EducateTargetSetLayer", import(".base.EducateBaseUI"))
+slot0 = class("EducateTargetSetLayer", import(".base.EducateBaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EducateTargetSetUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
 end
 
-function var_0_0.initData(arg_3_0)
-	arg_3_0:initTargetList()
+function slot0.initData(slot0)
+	slot0:initTargetList()
 
-	arg_3_0.selectedIndex = 1
+	slot0.selectedIndex = 1
 end
 
-function var_0_0.initTargetList(arg_4_0)
-	local var_4_0 = getProxy(EducateProxy)
-	local var_4_1 = var_4_0:GetCharData()
+function slot0.initTargetList(slot0)
+	slot1 = getProxy(EducateProxy)
+	slot2 = slot1:GetCharData()
+	slot0.maxAttrId = slot2:GetAttrSortIds()[1]
+	slot6 = slot1:GetPersonalityId()
+	slot8 = {}
 
-	arg_4_0.maxAttrId = var_4_1:GetAttrSortIds()[1]
-
-	local var_4_2 = var_4_1:GetStage()
-	local var_4_3 = var_4_0:GetTaskProxy():GetTargetId() == 0 and 1 or var_4_2 + 1
-	local var_4_4 = var_4_0:GetPersonalityId()
-	local var_4_5 = {}
-	local var_4_6 = {}
-
-	for iter_4_0, iter_4_1 in ipairs(pg.child_target_set.all) do
-		if pg.child_target_set[iter_4_1].stage == var_4_3 then
-			local var_4_7 = pg.child_target_set[iter_4_1].condition
-
-			if var_4_7 == "" or #var_4_7 == 0 then
-				table.insert(var_4_5, iter_4_1)
-			elseif var_4_4 == var_4_7[2][1] then
-				table.insert(var_4_6, iter_4_1)
+	for slot12, slot13 in ipairs(pg.child_target_set.all) do
+		if pg.child_target_set[slot13].stage == (slot1:GetTaskProxy():GetTargetId() == 0 and 1 or slot2:GetStage() + 1) then
+			if pg.child_target_set[slot13].condition == "" or #slot14 == 0 then
+				table.insert({}, slot13)
+			elseif slot6 == slot14[2][1] then
+				table.insert(slot8, slot13)
 			end
 		end
 	end
 
-	table.sort(var_4_6, CompareFuncs({
-		function(arg_5_0)
-			local var_5_0 = pg.child_target_set[arg_5_0].condition[1][1]
+	function slot13(slot0)
+		return slot0
+	end
 
-			return -var_4_1:GetAttrById(var_5_0)
+	table.sort(slot8, CompareFuncs({
+		function (slot0)
+			return -uv0:GetAttrById(pg.child_target_set[slot0].condition[1][1])
 		end,
-		function(arg_6_0)
-			return arg_6_0
-		end
+		slot13
 	}))
 
-	local var_4_8 = 0
+	slot9 = 0
+	slot0.targetList = {}
 
-	arg_4_0.targetList = {}
+	for slot13, slot14 in ipairs(slot8) do
+		table.insert(slot0.targetList, slot14)
 
-	for iter_4_2, iter_4_3 in ipairs(var_4_6) do
-		table.insert(arg_4_0.targetList, iter_4_3)
-
-		var_4_8 = var_4_8 + 1
-
-		if var_4_8 == 4 then
+		if slot9 + 1 == 4 then
 			break
 		end
 	end
 
-	if var_4_8 < 4 then
-		for iter_4_4, iter_4_5 in ipairs(var_4_5) do
-			table.insert(arg_4_0.targetList, iter_4_5)
+	if slot9 < 4 then
+		for slot13, slot14 in ipairs(slot7) do
+			table.insert(slot0.targetList, slot14)
 
-			var_4_8 = var_4_8 + 1
-
-			if var_4_8 == 4 then
+			if slot9 + 1 == 4 then
 				break
 			end
 		end
 	end
 end
 
-function var_0_0.findUI(arg_7_0)
-	arg_7_0.windowTF = arg_7_0:findTF("anim_root/window")
-	arg_7_0.targetContent = arg_7_0:findTF("content", arg_7_0.windowTF)
-	arg_7_0.targetTpl = arg_7_0:findTF("tpl", arg_7_0.targetContent)
+function slot0.findUI(slot0)
+	slot0.windowTF = slot0:findTF("anim_root/window")
+	slot0.targetContent = slot0:findTF("content", slot0.windowTF)
+	slot0.targetTpl = slot0:findTF("tpl", slot0.targetContent)
 
-	setActive(arg_7_0.targetTpl, false)
+	setActive(slot0.targetTpl, false)
 
-	arg_7_0.sureBtn = arg_7_0:findTF("sure_btn", arg_7_0.windowTF)
+	slot0.sureBtn = slot0:findTF("sure_btn", slot0.windowTF)
 
-	setText(arg_7_0:findTF("Text", arg_7_0.sureBtn), i18n("word_ok"))
+	setText(slot0:findTF("Text", slot0.sureBtn), i18n("word_ok"))
 end
 
-function var_0_0.addListener(arg_8_0)
-	onButton(arg_8_0, arg_8_0.sureBtn, function()
-		local var_9_0 = arg_8_0.targetList[arg_8_0.selectedIndex]
-		local var_9_1 = pg.child_target_set[var_9_0].recommend_attr2
-		local var_9_2 = pg.child_attr[var_9_1].name
-
-		arg_8_0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
-			content = i18n("child_target_set_sure_tip", var_9_2),
-			onYes = function()
-				arg_8_0:emit(EducateTargetSetMediator.ON_TARGET_SET, {
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.sureBtn, function ()
+		uv0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+			content = i18n("child_target_set_sure_tip", pg.child_attr[pg.child_target_set[uv0.targetList[uv0.selectedIndex]].recommend_attr2].name),
+			onYes = function ()
+				uv0:emit(EducateTargetSetMediator.ON_TARGET_SET, {
 					open = true,
-					id = var_9_0
+					id = uv1
 				})
-
-				local var_10_0 = arg_8_0:findTF("anim_root"):GetComponent(typeof(Animation))
-				local var_10_1 = arg_8_0:findTF("anim_root"):GetComponent(typeof(DftAniEvent))
-
-				var_10_1:SetEndEvent(function()
-					var_10_1:SetEndEvent(nil)
-					arg_8_0:emit(var_0_0.ON_CLOSE)
+				uv0:findTF("anim_root"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+					uv0:SetEndEvent(nil)
+					uv1:emit(uv2.ON_CLOSE)
 				end)
-				var_10_0:Play("anim_educate_targetset_out")
+				uv0:findTF("anim_root"):GetComponent(typeof(Animation)):Play("anim_educate_targetset_out")
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.didEnter(arg_12_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_12_0._tf)
-	arg_12_0:initTarget()
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	slot0:initTarget()
 end
 
-function var_0_0.initTarget(arg_13_0)
-	for iter_13_0 = 1, #arg_13_0.targetList do
-		local var_13_0 = cloneTplTo(arg_13_0.targetTpl, arg_13_0.targetContent, tostring(iter_13_0))
-		local var_13_1 = arg_13_0.targetList[iter_13_0]
+function slot0.initTarget(slot0)
+	for slot4 = 1, #slot0.targetList do
+		slot5 = cloneTplTo(slot0.targetTpl, slot0.targetContent, tostring(slot4))
+		slot6 = slot0.targetList[slot4]
 
-		setImageSprite(arg_13_0:findTF("animroot/icon/Image", var_13_0), LoadSprite("educatetarget/" .. pg.child_target_set[var_13_1].icon), true)
-		setImageSprite(arg_13_0:findTF("animroot/name", var_13_0), LoadSprite("educatetarget/" .. pg.child_target_set[var_13_1].pic), true)
-		onButton(arg_13_0, var_13_0, function()
-			if arg_13_0.selectedIndex == iter_13_0 then
+		setImageSprite(slot0:findTF("animroot/icon/Image", slot5), LoadSprite("educatetarget/" .. pg.child_target_set[slot6].icon), true)
+		setImageSprite(slot0:findTF("animroot/name", slot5), LoadSprite("educatetarget/" .. pg.child_target_set[slot6].pic), true)
+		onButton(slot0, slot5, function ()
+			if uv0.selectedIndex == uv1 then
 				return
 			end
 
-			arg_13_0.selectedIndex = iter_13_0
+			uv0.selectedIndex = uv1
 
-			arg_13_0:updateTarget()
+			uv0:updateTarget()
 		end, SFX_PANEL)
-
-		local var_13_2 = pg.child_target_set[var_13_1].recommend_attr
-
-		setActive(arg_13_0:findTF("animroot/recommand", var_13_0), var_13_2 == arg_13_0.maxAttrId)
+		setActive(slot0:findTF("animroot/recommand", slot5), pg.child_target_set[slot6].recommend_attr == slot0.maxAttrId)
 	end
 
-	arg_13_0:updateTarget()
-
-	local var_13_3 = {}
-
-	table.insert(var_13_3, function(arg_15_0)
-		onDelayTick(function()
-			arg_15_0()
+	slot0:updateTarget()
+	table.insert({}, function (slot0)
+		onDelayTick(function ()
+			uv0()
 		end, 0.066)
 	end)
 
-	for iter_13_1 = 1, #arg_13_0.targetList do
-		table.insert(var_13_3, function(arg_17_0)
-			arg_13_0:findTF(tostring(iter_13_1), arg_13_0.targetContent):GetComponent(typeof(Animation)):Play("anim_educate_targetset_tpl_in")
-			onDelayTick(function()
-				arg_17_0()
+	for slot5 = 1, #slot0.targetList do
+		table.insert(slot1, function (slot0)
+			uv0:findTF(tostring(uv1), uv0.targetContent):GetComponent(typeof(Animation)):Play("anim_educate_targetset_tpl_in")
+			onDelayTick(function ()
+				uv0()
 			end, 0.066)
 		end)
 	end
 
-	seriesAsync(var_13_3, function()
-		return
+	seriesAsync(slot1, function ()
 	end)
 end
 
-function var_0_0.updateTarget(arg_20_0)
-	eachChild(arg_20_0.targetContent, function(arg_21_0)
-		setActive(arg_20_0:findTF("animroot/selected", arg_21_0), arg_20_0.selectedIndex == tonumber(arg_21_0.name))
+function slot0.updateTarget(slot0)
+	eachChild(slot0.targetContent, function (slot0)
+		setActive(uv0:findTF("animroot/selected", slot0), uv0.selectedIndex == tonumber(slot0.name))
 	end)
 end
 
-function var_0_0.willExit(arg_22_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_22_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-function var_0_0.onBackPressed(arg_23_0)
-	return
+function slot0.onBackPressed(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,25 +1,25 @@
-﻿local var_0_0 = class("AcceptActivityTaskCommand", pm.SimpleCommand)
+slot0 = class("AcceptActivityTaskCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
+function slot0.execute(slot0, slot1)
 	print("accpet activity task...................")
 
-	local var_1_0 = getProxy(ActivityProxy)
+	slot2 = getProxy(ActivityProxy)
 
-	_.each(var_1_0:getActivitiesByTypes({
+	_.each(slot2:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_TASK_LIST,
 		ActivityConst.ACTIVITY_TYPE_TASK_RES
-	}), function(arg_2_0)
-		if not arg_2_0:isEnd() then
-			updateActivityTaskStatus(arg_2_0)
+	}), function (slot0)
+		if not slot0:isEnd() then
+			updateActivityTaskStatus(slot0)
 		end
 	end)
-	underscore.each(var_1_0:getActivitiesByTypes({
+	underscore.each(slot2:getActivitiesByTypes({
 		ActivityConst.ACTIVITY_TYPE_PT_CRUSING
-	}), function(arg_3_0)
-		if not arg_3_0:isEnd() then
-			updateCrusingActivityTask(arg_3_0)
+	}), function (slot0)
+		if not slot0:isEnd() then
+			updateCrusingActivityTask(slot0)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

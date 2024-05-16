@@ -1,298 +1,267 @@
-﻿local var_0_0 = class("LevelRemasterView", import("..base.BaseSubView"))
+slot0 = class("LevelRemasterView", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "LevelRemasterView"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.content = arg_2_0:findTF("list/content")
-	arg_2_0.item = arg_2_0.content:Find("item")
-	arg_2_0.numsTxt = arg_2_0:findTF("nums/text")
-	arg_2_0.helpBtn = arg_2_0:findTF("help")
+function slot0.OnInit(slot0)
+	slot0.content = slot0:findTF("list/content")
+	slot0.item = slot0.content:Find("item")
+	slot0.numsTxt = slot0:findTF("nums/text")
+	slot0.helpBtn = slot0:findTF("help")
 
-	setActive(arg_2_0.item, false)
+	setActive(slot0.item, false)
 
-	arg_2_0.getRemasterTF = arg_2_0:findTF("getBtn/state_before")
-	arg_2_0.gotRemasterTF = arg_2_0:findTF("getBtn/state_after")
-	arg_2_0.exToggle = arg_2_0:findTF("toggles/EX")
-	arg_2_0.spToggle = arg_2_0:findTF("toggles/SP")
+	slot0.getRemasterTF = slot0:findTF("getBtn/state_before")
+	slot0.gotRemasterTF = slot0:findTF("getBtn/state_after")
+	slot0.exToggle = slot0:findTF("toggles/EX")
+	slot0.spToggle = slot0:findTF("toggles/SP")
 
-	arg_2_0:bind(LevelUIConst.FLUSH_REMASTER_INFO, function(arg_3_0)
-		if not arg_2_0:isShowing() then
+	slot0:bind(LevelUIConst.FLUSH_REMASTER_INFO, function (slot0)
+		if not uv0:isShowing() then
 			return
 		end
 
-		arg_2_0:flushOnly()
+		uv0:flushOnly()
 	end)
-	arg_2_0:bind(LevelUIConst.FLUSH_REMASTER_TICKET, function(arg_4_0)
-		if not arg_2_0:isShowing() then
+	slot0:bind(LevelUIConst.FLUSH_REMASTER_TICKET, function (slot0)
+		if not uv0:isShowing() then
 			return
 		end
 
-		arg_2_0:updateTicketDisplay()
+		uv0:updateTicketDisplay()
 	end)
 
-	local var_2_0 = getProxy(ChapterProxy)
-	local var_2_1 = pg.TimeMgr.GetInstance()
+	slot1 = getProxy(ChapterProxy)
+	slot2 = pg.TimeMgr.GetInstance()
+	slot0.itemList = UIItemList.New(slot0.content, slot0.item)
 
-	arg_2_0.itemList = UIItemList.New(arg_2_0.content, arg_2_0.item)
+	slot0.itemList:make(function (slot0, slot1, slot2)
+		slot1 = slot1 + 1
 
-	arg_2_0.itemList:make(function(arg_5_0, arg_5_1, arg_5_2)
-		arg_5_1 = arg_5_1 + 1
+		if slot0 == UIItemList.EventUpdate then
+			setActive(slot2:Find("right"), slot1 % 2 > 0)
+			setActive(slot2:Find("bg/icon"), false)
+			setActive(slot2:Find("bg/lock"), false)
+			setActive(slot2:Find("bg/wait"), false)
+			setActive(slot2:Find("bg/tip"), false)
 
-		if arg_5_0 == UIItemList.EventUpdate then
-			local var_5_0 = arg_2_0.temp[arg_5_1]
-
-			setActive(arg_5_2:Find("right"), arg_5_1 % 2 > 0)
-
-			local var_5_1 = arg_5_2:Find("bg/icon")
-			local var_5_2 = arg_5_2:Find("bg/lock")
-			local var_5_3 = arg_5_2:Find("bg/wait")
-			local var_5_4 = arg_5_2:Find("bg/tip")
-
-			setActive(var_5_1, false)
-			setActive(var_5_2, false)
-			setActive(var_5_3, false)
-			setActive(var_5_4, false)
-
-			if not var_5_0 then
-				setActive(var_5_3, true)
-				onButton(arg_2_0, var_5_3, function()
+			if not uv0.temp[slot1] then
+				setActive(slot6, true)
+				onButton(uv0, slot6, function ()
 					pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_remaster_do_not_open"))
 				end, SFX_PANEL)
-			elseif not var_2_1:inTime(var_5_0.time) then
-				setActive(var_5_2, true)
-				onButton(arg_2_0, var_5_2, function()
+			elseif not uv1:inTime(slot3.time) then
+				setActive(slot5, true)
+				onButton(uv0, slot5, function ()
 					pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_remaster_do_not_open"))
 				end, SFX_PANEL)
 			else
-				setActive(var_5_1, true)
-				GetImageSpriteFromAtlasAsync("activitybanner/" .. var_5_0.bg, "", var_5_1)
+				setActive(slot4, true)
+				GetImageSpriteFromAtlasAsync("activitybanner/" .. slot3.bg, "", slot4)
+				setText(slot4:Find("info"):Find("dec1/index"), slot1 < 10 and "0" .. slot1 or slot1)
 
-				local var_5_5 = var_5_1:Find("info")
-
-				setText(var_5_5:Find("dec1/index"), arg_5_1 < 10 and "0" .. arg_5_1 or arg_5_1)
-
-				local var_5_6 = 0
-
-				for iter_5_0, iter_5_1 in ipairs(var_5_0.config_data) do
-					if var_2_0:getChapterById(iter_5_1):isClear() then
-						var_5_6 = math.max(var_5_6, var_5_0.chapter_progress[iter_5_0])
+				for slot13, slot14 in ipairs(slot3.config_data) do
+					if uv2:getChapterById(slot14):isClear() then
+						slot9 = math.max(0, slot3.chapter_progress[slot13])
 					end
 				end
 
-				setText(var_5_5:Find("progress/Text"), var_5_6 .. "%")
-				onButton(arg_2_0, var_5_1, function()
-					local var_8_0 = (function()
-						local var_9_0 = pg.chapter_template[var_5_0.config_data[1]].map
+				setText(slot8:Find("progress/Text"), slot9 .. "%")
 
-						for iter_9_0, iter_9_1 in ipairs({
-							PlayerPrefs.GetInt("remaster_lastmap_" .. var_5_0.id, var_9_0),
-							var_9_0
+				slot14 = SFX_PANEL
+
+				onButton(uv0, slot4, function ()
+					if function ()
+						slot0 = pg.chapter_template[uv0.config_data[1]].map
+						slot4 = "remaster_lastmap_" .. uv0.id
+						slot5 = slot0
+
+						for slot4, slot5 in ipairs({
+							PlayerPrefs.GetInt(slot4, slot5),
+							slot0
 						}) do
-							if var_2_0:getMapById(iter_9_1):isUnlock() then
-								return iter_9_1
+							if uv1:getMapById(slot5):isUnlock() then
+								return slot5
 							end
 						end
-					end)()
-
-					if var_8_0 then
-						arg_2_0.onSelectMap(var_8_0)
-						arg_2_0:Hide()
+					end() then
+						uv2.onSelectMap(slot0)
+						uv2:Hide()
 					end
-				end, SFX_PANEL)
+				end, slot14)
 
-				local var_5_7
+				slot10 = nil
 
-				for iter_5_2, iter_5_3 in ipairs(var_5_0.drop_gain) do
-					if #iter_5_3 > 0 and var_2_0.remasterInfo[iter_5_3[1]][iter_5_2].receive == false then
-						var_5_7 = {
-							iter_5_2,
-							iter_5_3
+				for slot14, slot15 in ipairs(slot3.drop_gain) do
+					if #slot15 > 0 and uv2.remasterInfo[slot15[1]][slot14].receive == false then
+						slot10 = {
+							slot14,
+							slot15
 						}
 
 						break
 					end
 				end
 
-				local var_5_8 = underscore.rest(var_5_0.drop_display, 1)
-
-				if var_5_7 then
-					table.insert(var_5_8, 1, var_5_7)
-				elseif #var_5_0.drop_display_sp > 0 then
-					var_5_8 = table.mergeArray(var_5_0.drop_display_sp, var_5_8)
+				if slot10 then
+					table.insert(underscore.rest(slot3.drop_display, 1), 1, slot10)
+				elseif #slot3.drop_display_sp > 0 then
+					slot11 = table.mergeArray(slot3.drop_display_sp, slot11)
 				end
 
-				local var_5_9 = var_5_5:Find("content")
-
-				eachChild(var_5_9, function(arg_10_0)
-					setActive(arg_10_0, false)
+				eachChild(slot8:Find("content"), function (slot0)
+					setActive(slot0, false)
 				end)
 
-				for iter_5_4, iter_5_5 in ipairs(var_5_8) do
-					local var_5_10 = iter_5_4 > var_5_9.childCount and cloneTplTo(var_5_9:GetChild(0), var_5_9) or var_5_9:GetChild(iter_5_4 - 1)
+				for slot16, slot17 in ipairs(slot11) do
+					setActive(slot12.childCount < slot16 and cloneTplTo(slot12:GetChild(0), slot12) or slot12:GetChild(slot16 - 1), true)
 
-					setActive(var_5_10, true)
+					if slot10 and slot16 == 1 then
+						slot20, slot21, slot22, slot23 = unpack(slot10[2])
 
-					if var_5_7 and iter_5_4 == 1 then
-						local var_5_11 = var_5_7[1]
-						local var_5_12, var_5_13, var_5_14, var_5_15 = unpack(var_5_7[2])
-						local var_5_16 = var_2_0.remasterInfo[var_5_12][var_5_11]
-
-						setActive(var_5_4, var_5_15 <= var_5_16.count)
-						setActive(var_5_10:Find("mark"), var_5_15 > var_5_16.count)
-						setActive(var_5_10:Find("Slider"), var_5_15 > var_5_16.count)
-						setActive(var_5_10:Find("achieve"), var_5_15 <= var_5_16.count)
-						setSlider(var_5_10:Find("Slider"), 0, var_5_15, var_5_16.count)
-
-						local var_5_17 = {
-							type = var_5_13,
-							id = var_5_14
-						}
-
-						updateDrop(var_5_10:Find("IconTpl"), var_5_17)
-						onButton(arg_2_0, var_5_10:Find("IconTpl"), function()
+						setActive(slot7, slot23 <= uv2.remasterInfo[slot20][slot10[1]].count)
+						setActive(slot18:Find("mark"), slot24.count < slot23)
+						setActive(slot18:Find("Slider"), slot24.count < slot23)
+						setActive(slot18:Find("achieve"), slot23 <= slot24.count)
+						setSlider(slot18:Find("Slider"), 0, slot23, slot24.count)
+						updateDrop(slot18:Find("IconTpl"), {
+							type = slot21,
+							id = slot22
+						})
+						onButton(uv0, slot18:Find("IconTpl"), function ()
 							pg.MsgboxMgr.GetInstance():ShowMsgBox({
 								hideYes = true,
 								hideNo = true,
 								type = MSGBOX_TYPE_SINGLE_ITEM,
-								drop = var_5_17,
+								drop = uv0,
 								weight = LayerWeightConst.TOP_LAYER,
 								remaster = {
-									word = i18n("level_remaster_tip4", pg.chapter_template[var_5_12].chapter_name),
-									number = var_5_16.count .. "/" .. var_5_15,
-									btn_text = i18n(var_5_16.count < var_5_15 and "level_remaster_tip2" or "level_remaster_tip3"),
-									btn_call = function()
-										if var_5_16.count < var_5_15 then
-											local var_12_0 = pg.chapter_template[var_5_12].map
-											local var_12_1, var_12_2 = var_2_0:getMapById(var_12_0):isUnlock()
+									word = i18n("level_remaster_tip4", pg.chapter_template[uv1].chapter_name),
+									number = uv2.count .. "/" .. uv3,
+									btn_text = i18n(uv2.count < uv3 and "level_remaster_tip2" or "level_remaster_tip3"),
+									btn_call = function ()
+										if uv0.count < uv1 then
+											slot1, slot2 = uv3:getMapById(pg.chapter_template[uv2].map):isUnlock()
 
-											if not var_12_1 then
-												pg.TipsMgr.GetInstance():ShowTips(var_12_2)
+											if not slot1 then
+												pg.TipsMgr.GetInstance():ShowTips(slot2)
 											else
-												arg_2_0.onSelectMap(var_12_0)
-												arg_2_0:Hide()
+												uv4.onSelectMap(slot0)
+												uv4:Hide()
 											end
 										else
-											arg_2_0:emit(LevelMediator2.ON_CHAPTER_REMASTER_AWARD, var_5_12, var_5_11)
+											uv4:emit(LevelMediator2.ON_CHAPTER_REMASTER_AWARD, uv2, uv5)
 										end
 									end
 								}
 							})
 						end, SFX_PANEL)
 					else
-						local var_5_18 = {
-							type = iter_5_5[1][1],
-							id = iter_5_5[1][2]
-						}
-
-						updateDrop(var_5_10:Find("IconTpl"), var_5_18)
-						onButton(arg_2_0, var_5_10:Find("IconTpl"), function()
+						updateDrop(slot18:Find("IconTpl"), {
+							type = slot17[1][1],
+							id = slot17[1][2]
+						})
+						onButton(uv0, slot18:Find("IconTpl"), function ()
 							pg.MsgboxMgr.GetInstance():ShowMsgBox({
 								hideYes = true,
 								hideNo = true,
 								type = MSGBOX_TYPE_SINGLE_ITEM,
-								drop = var_5_18,
+								drop = uv0,
 								weight = LayerWeightConst.TOP_LAYER,
 								remaster = {
-									word = i18n("level_remaster_tip1") .. iter_5_5[2],
+									word = i18n("level_remaster_tip1") .. uv1[2],
 									btn_text = i18n("text_confirm")
 								}
 							})
 						end, SFX_PANEL)
-						setActive(var_5_10:Find("mark"), false)
-						setActive(var_5_10:Find("Slider"), false)
-						setActive(var_5_10:Find("achieve"), false)
+						setActive(slot18:Find("mark"), false)
+						setActive(slot18:Find("Slider"), false)
+						setActive(slot18:Find("achieve"), false)
 					end
 				end
 			end
 		end
 	end)
-	onButton(arg_2_0, arg_2_0.getRemasterTF, function()
-		if var_2_0.remasterTickets + pg.gameset.reactivity_ticket_daily.key_value > pg.gameset.reactivity_ticket_max.key_value then
-			local var_14_0 = {
-				content = i18n("tack_tickets_max_warning", math.max(pg.gameset.reactivity_ticket_max.key_value - var_2_0.remasterTickets, 0)),
-				onYes = function()
-					arg_2_0:emit(LevelMediator2.ON_CLICK_RECEIVE_REMASTER_TICKETS_BTN)
+	onButton(slot0, slot0.getRemasterTF, function ()
+		if pg.gameset.reactivity_ticket_max.key_value < uv0.remasterTickets + pg.gameset.reactivity_ticket_daily.key_value then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("tack_tickets_max_warning", math.max(pg.gameset.reactivity_ticket_max.key_value - uv0.remasterTickets, 0)),
+				onYes = function ()
+					uv0:emit(LevelMediator2.ON_CLICK_RECEIVE_REMASTER_TICKETS_BTN)
 				end
-			}
-
-			pg.MsgboxMgr.GetInstance():ShowMsgBox(var_14_0)
+			})
 
 			return
 		end
 
-		arg_2_0:emit(LevelMediator2.ON_CLICK_RECEIVE_REMASTER_TICKETS_BTN)
+		uv1:emit(LevelMediator2.ON_CLICK_RECEIVE_REMASTER_TICKETS_BTN)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnDestroy(arg_16_0)
-	arg_16_0.onItem = nil
+function slot0.OnDestroy(slot0)
+	slot0.onItem = nil
 
-	if arg_16_0:isShowing() then
-		arg_16_0:Hide()
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 end
 
-function var_0_0.Show(arg_17_0)
-	var_0_0.super.Show(arg_17_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_17_0._tf, false, {
+function slot0.Show(slot0)
+	uv0.super.Show(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function var_0_0.Hide(arg_18_0)
-	var_0_0.super.Hide(arg_18_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_18_0._tf, arg_18_0._parentTf)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.set(arg_19_0, arg_19_1, arg_19_2)
-	arg_19_0.templates = {}
+function slot0.set(slot0, slot1, slot2)
+	slot0.templates = {}
 
-	for iter_19_0, iter_19_1 in ipairs(pg.re_map_template.all) do
-		local var_19_0 = pg.re_map_template[iter_19_1]
-
-		table.insert(arg_19_0.templates, var_19_0)
+	for slot6, slot7 in ipairs(pg.re_map_template.all) do
+		table.insert(slot0.templates, pg.re_map_template[slot7])
 	end
 
-	arg_19_0.onSelectMap = arg_19_1
+	slot0.onSelectMap = slot1
 
-	arg_19_0:flush(arg_19_2)
+	slot0:flush(slot2)
 end
 
-function var_0_0.flush(arg_20_0, arg_20_1)
-	onButton(arg_20_0, arg_20_0._tf:Find("bg"), function()
-		arg_20_0:Hide()
+function slot0.flush(slot0, slot1)
+	onButton(slot0, slot0._tf:Find("bg"), function ()
+		uv0:Hide()
 	end, SFX_CANCEL)
-	onButton(arg_20_0, arg_20_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("levelScene_remaster_help_tip")
 		})
 	end, SFX_PANEL)
-	arg_20_0:updateTicketDisplay()
+	slot0:updateTicketDisplay()
 
-	local var_20_0 = {
-		arg_20_0.exToggle,
-		arg_20_0.spToggle
-	}
-	local var_20_1 = getProxy(ChapterProxy)
+	slot3 = getProxy(ChapterProxy)
 
-	for iter_20_0, iter_20_1 in ipairs(var_20_0) do
-		onToggle(arg_20_0, iter_20_1, function(arg_23_0)
-			if arg_23_0 then
-				arg_20_0.temp = underscore.filter(arg_20_0.templates, function(arg_24_0)
-					return arg_24_0.activity_type == iter_20_0
+	for slot7, slot8 in ipairs({
+		slot0.exToggle,
+		slot0.spToggle
+	}) do
+		onToggle(slot0, slot8, function (slot0)
+			if slot0 then
+				uv0.temp = underscore.filter(uv0.templates, function (slot0)
+					return slot0.activity_type == uv0
 				end)
 
-				table.sort(arg_20_0.temp, CompareFuncs({
-					function(arg_25_0)
-						for iter_25_0, iter_25_1 in ipairs(arg_25_0.drop_gain) do
-							if #iter_25_1 > 0 then
-								local var_25_0, var_25_1, var_25_2, var_25_3 = unpack(iter_25_1)
-								local var_25_4 = var_20_1.remasterInfo[var_25_0][iter_25_0]
+				table.sort(uv0.temp, CompareFuncs({
+					function (slot0)
+						for slot4, slot5 in ipairs(slot0.drop_gain) do
+							if #slot5 > 0 then
+								slot6, slot7, slot8, slot9 = unpack(slot5)
 
-								if not var_25_4.receive and var_25_3 <= var_25_4.count then
+								if not uv0.remasterInfo[slot6][slot4].receive and slot9 <= slot10.count then
 									return 0
 								end
 							end
@@ -300,29 +269,28 @@ function var_0_0.flush(arg_20_0, arg_20_1)
 
 						return 1
 					end,
-					function(arg_26_0)
-						return arg_26_0.order
+					function (slot0)
+						return slot0.order
 					end
 				}))
-				arg_20_0.itemList:align(math.max(math.ceil(#arg_20_0.temp / 2) * 2, 4))
+				uv0.itemList:align(math.max(math.ceil(#uv0.temp / 2) * 2, 4))
 			end
 		end, SFX_PANEL)
 	end
 
-	triggerToggle(var_20_0[arg_20_1 and 2 or 1], true)
+	triggerToggle(slot2[slot1 and 2 or 1], true)
 end
 
-function var_0_0.flushOnly(arg_27_0)
-	arg_27_0.itemList:align(math.max(math.ceil(#arg_27_0.temp / 2) * 2, 4))
+function slot0.flushOnly(slot0)
+	slot0.itemList:align(math.max(math.ceil(#slot0.temp / 2) * 2, 4))
 end
 
-function var_0_0.updateTicketDisplay(arg_28_0)
-	local var_28_0 = getProxy(ChapterProxy)
-	local var_28_1 = var_28_0.remasterDailyCount > 0
+function slot0.updateTicketDisplay(slot0)
+	slot2 = getProxy(ChapterProxy).remasterDailyCount > 0
 
-	SetActive(arg_28_0.getRemasterTF, not var_28_1)
-	SetActive(arg_28_0.gotRemasterTF, var_28_1)
-	setText(arg_28_0.numsTxt, var_28_0.remasterTickets .. "/" .. pg.gameset.reactivity_ticket_max.key_value)
+	SetActive(slot0.getRemasterTF, not slot2)
+	SetActive(slot0.gotRemasterTF, slot2)
+	setText(slot0.numsTxt, slot1.remasterTickets .. "/" .. pg.gameset.reactivity_ticket_max.key_value)
 end
 
-return var_0_0
+return slot0

@@ -1,21 +1,19 @@
-﻿local var_0_0 = class("HarvestResourceCommand", pm.SimpleCommand)
+slot0 = class("HarvestResourceCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = id2res(var_1_0)
-	local var_1_2 = getProxy(PlayerProxy)
-	local var_1_3 = var_1_2:getData()
-	local var_1_4
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = id2res(slot2)
+	slot6 = nil
 
-	if var_1_0 == 1 then
-		var_1_4 = var_1_3:getLevelMaxGold()
-	elseif var_1_0 == 2 then
-		var_1_4 = var_1_3:getLevelMaxOil()
+	if slot2 == 1 then
+		slot6 = getProxy(PlayerProxy):getData():getLevelMaxGold()
+	elseif slot2 == 2 then
+		slot6 = slot5:getLevelMaxOil()
 	else
 		assert(false)
 	end
 
-	if var_1_4 <= var_1_3[var_1_1] then
+	if slot6 <= slot5[slot3] then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
 		return
@@ -23,40 +21,39 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 	pg.ConnectionMgr.GetInstance():Send(11013, {
 		number = 0,
-		type = var_1_0
-	}, 11014, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_4 - var_1_3[var_1_1]
-			local var_2_1 = 0
+		type = slot2
+	}, 11014, function (slot0)
+		if slot0.result == 0 then
+			slot2 = 0
 
-			if var_2_0 < var_1_3[var_1_1 .. "Field"] then
-				var_2_1 = var_2_0
+			if uv0 - uv1[uv2] < uv1[uv2 .. "Field"] then
+				slot2 = slot1
 
-				var_1_3:addResources({
-					[var_1_1] = var_2_0
+				uv1:addResources({
+					[uv2] = slot1
 				})
 
-				var_1_3[var_1_1 .. "Field"] = var_1_3[var_1_1 .. "Field"] - var_2_0
+				uv1[uv2 .. "Field"] = uv1[uv2 .. "Field"] - slot1
 			else
-				var_2_1 = var_1_3[var_1_1 .. "Field"]
+				slot2 = uv1[uv2 .. "Field"]
 
-				var_1_3:addResources({
-					[var_1_1] = var_1_3[var_1_1 .. "Field"]
+				uv1:addResources({
+					[uv2] = uv1[uv2 .. "Field"]
 				})
 
-				var_1_3[var_1_1 .. "Field"] = 0
+				uv1[uv2 .. "Field"] = 0
 			end
 
-			var_1_2:updatePlayer(var_1_3)
-			arg_1_0:sendNotification(GAME.HARVEST_RES_DONE, {
-				type = var_1_0,
-				outPut = var_2_1
+			uv3:updatePlayer(uv1)
+			uv4:sendNotification(GAME.HARVEST_RES_DONE, {
+				type = uv5,
+				outPut = slot2
 			})
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_ACADEMY_GETMATERIAL)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("player_harvestResource", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("player_harvestResource", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

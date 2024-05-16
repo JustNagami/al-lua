@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "广结善缘",
+	init_effect = "",
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 16362,
+	icon = 16360,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -19,25 +39,5 @@
 				skill_id = 16361
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "广结善缘",
-	init_effect = "",
-	time = 0,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 16362,
-	icon = 16360,
-	last_effect = ""
+	}
 }

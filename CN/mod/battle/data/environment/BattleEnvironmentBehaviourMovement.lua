@@ -1,126 +1,110 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleConfig
+slot3 = class("BattleEnvironmentBehaviourMovement", slot0.Battle.BattleEnvironmentBehaviour)
+slot0.Battle.BattleEnvironmentBehaviourMovement = slot3
+slot3.__name = "BattleEnvironmentBehaviourMovement"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = class("BattleEnvironmentBehaviourMovement", var_0_0.Battle.BattleEnvironmentBehaviour)
+function slot3.Ctor(slot0)
+	slot0._movebeginTime = nil
+	slot0._moveEndTime = nil
+	slot0._lastPosition = nil
+	slot0._destPosition = nil
+	slot0._targetIndex = 1
 
-var_0_0.Battle.BattleEnvironmentBehaviourMovement = var_0_3
-var_0_3.__name = "BattleEnvironmentBehaviourMovement"
-
-function var_0_3.Ctor(arg_1_0)
-	arg_1_0._movebeginTime = nil
-	arg_1_0._moveEndTime = nil
-	arg_1_0._lastPosition = nil
-	arg_1_0._destPosition = nil
-	arg_1_0._targetIndex = 1
-
-	var_0_3.super.Ctor(arg_1_0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.SetTemplate(arg_2_0, arg_2_1)
-	var_0_3.super.SetTemplate(arg_2_0, arg_2_1)
+function slot3.SetTemplate(slot0, slot1)
+	uv0.super.SetTemplate(slot0, slot1)
 
-	arg_2_0._route = arg_2_1.route or {}
-	arg_2_0._random_duration = arg_2_1.random_duration or {
+	slot0._route = slot1.route or {}
+	slot0._random_duration = slot1.random_duration or {
 		1,
 		5
 	}
-	arg_2_0._random_speed = arg_2_1.random_speed or 1
+	slot0._random_speed = slot1.random_speed or 1
+	slot3, slot4 = nil
 
-	local var_2_0 = arg_2_0._unit:GetTemplate()
-	local var_2_1
-	local var_2_2
-
-	if #var_2_0.cld_data == 1 then
-		var_2_1 = var_2_0.cld_data[1]
-		var_2_2 = var_2_1
-	elseif #var_2_0.cld_data == 2 then
-		var_2_1, var_2_2 = unpack(var_2_0.cld_data)
+	if #slot0._unit:GetTemplate().cld_data == 1 then
+		slot4 = slot2.cld_data[1]
+	elseif #slot2.cld_data == 2 then
+		slot3, slot4 = unpack(slot2.cld_data)
 	end
 
-	local var_2_3 = {
-		var_0_0.Battle.BattleDataProxy.GetInstance():GetFleetBoundByIFF(var_0_2.FRIENDLY_CODE)
+	slot5 = {
+		uv1.Battle.BattleDataProxy.GetInstance():GetFleetBoundByIFF(uv2.FRIENDLY_CODE)
 	}
+	slot5[3] = slot5[3] + slot3
+	slot5[4] = slot5[4] - slot3
+	slot5[2] = slot5[2] + slot4
+	slot5[1] = slot5[1] - slot4
+	slot0._bounds = slot5
+	slot0._lastPosition = Vector3(unpack(slot2.coordinate))
 
-	var_2_3[3] = var_2_3[3] + var_2_1
-	var_2_3[4] = var_2_3[4] - var_2_1
-	var_2_3[2] = var_2_3[2] + var_2_2
-	var_2_3[1] = var_2_3[1] - var_2_2
-	arg_2_0._bounds = var_2_3
-	arg_2_0._lastPosition = Vector3(unpack(var_2_0.coordinate))
-
-	if arg_2_1.random_range then
-		arg_2_0._randomRangeX = arg_2_1.random_range[1]
-		arg_2_0._randomRangeZ = arg_2_1.random_range[2]
-		arg_2_0._resetRandomRange = true
+	if slot1.random_range then
+		slot0._randomRangeX = slot1.random_range[1]
+		slot0._randomRangeZ = slot1.random_range[2]
+		slot0._resetRandomRange = true
 	end
 end
 
-function var_0_3.doBehaviour(arg_3_0)
-	local var_3_0 = pg.TimeMgr.GetInstance():GetCombatTime()
+function slot3.doBehaviour(slot0)
+	slot1 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if not arg_3_0._moveEndTime then
-		local var_3_1 = arg_3_0._route[arg_3_0._targetIndex]
+	if not slot0._moveEndTime then
+		slot0._movebeginTime = slot1
 
-		arg_3_0._movebeginTime = var_3_0
-
-		if var_3_1 then
-			arg_3_0._destPosition = Vector3(unpack(var_3_1))
-			arg_3_0._moveEndTime = var_3_0 + var_3_1[4]
-			arg_3_0._targetIndex = arg_3_0._targetIndex + 1
+		if slot0._route[slot0._targetIndex] then
+			slot0._destPosition = Vector3(unpack(slot2))
+			slot0._moveEndTime = slot1 + slot2[4]
+			slot0._targetIndex = slot0._targetIndex + 1
 		else
-			local var_3_2 = arg_3_0:GenerateRandomPlayerAreaPoint()
-			local var_3_3 = math.random(unpack(arg_3_0._random_duration))
-			local var_3_4 = var_3_3 * arg_3_0._random_speed
-			local var_3_5 = (var_3_2 - arg_3_0._lastPosition):Magnitude()
-
-			if var_3_5 < var_3_4 then
-				var_3_3 = var_3_5 / arg_3_0._random_speed
+			if (slot0:GenerateRandomPlayerAreaPoint() - slot0._lastPosition):Magnitude() < math.random(unpack(slot0._random_duration)) * slot0._random_speed then
+				slot4 = slot6 / slot0._random_speed
 			else
-				var_3_2 = Vector3.Lerp(arg_3_0._lastPosition, var_3_2, var_3_4 / var_3_5)
+				slot3 = Vector3.Lerp(slot0._lastPosition, slot3, slot5 / slot6)
 			end
 
-			arg_3_0._moveEndTime = var_3_0 + var_3_3
-			arg_3_0._destPosition = var_3_2
+			slot0._moveEndTime = slot1 + slot4
+			slot0._destPosition = slot3
 		end
 	end
 
-	if var_3_0 < arg_3_0._moveEndTime then
-		local var_3_6 = Vector3.Lerp(arg_3_0._lastPosition, arg_3_0._destPosition, (var_3_0 - arg_3_0._movebeginTime) / (arg_3_0._moveEndTime - arg_3_0._movebeginTime))
-
-		arg_3_0._unit._aoeData:SetPosition(var_3_6)
+	if slot1 < slot0._moveEndTime then
+		slot0._unit._aoeData:SetPosition(Vector3.Lerp(slot0._lastPosition, slot0._destPosition, (slot1 - slot0._movebeginTime) / (slot0._moveEndTime - slot0._movebeginTime)))
 	else
-		arg_3_0._unit._aoeData:SetPosition(arg_3_0._destPosition)
+		slot0._unit._aoeData:SetPosition(slot0._destPosition)
 
-		arg_3_0._lastPosition = arg_3_0._destPosition
-		arg_3_0._moveEndTime = nil
+		slot0._lastPosition = slot0._destPosition
+		slot0._moveEndTime = nil
 	end
 
-	var_0_3.super.doBehaviour(arg_3_0)
+	uv0.super.doBehaviour(slot0)
 end
 
-function var_0_3.GenerateRandomPlayerAreaPoint(arg_4_0)
-	local var_4_0 = arg_4_0._bounds
-	local var_4_1 = math.random(var_4_0[3], var_4_0[4])
-	local var_4_2 = math.random(var_4_0[2], var_4_0[1])
+function slot3.GenerateRandomPlayerAreaPoint(slot0)
+	slot1 = slot0._bounds
+	slot2 = math.random(slot1[3], slot1[4])
+	slot3 = math.random(slot1[2], slot1[1])
 
-	if arg_4_0._resetRandomRange then
-		arg_4_0:resetRandomBound(var_4_1, var_4_2)
+	if slot0._resetRandomRange then
+		slot0:resetRandomBound(slot2, slot3)
 	end
 
-	return Vector3(var_4_1, 0, var_4_2)
+	return Vector3(slot2, 0, slot3)
 end
 
-function var_0_3.resetRandomBound(arg_5_0, arg_5_1, arg_5_2)
-	arg_5_0._bounds[3] = arg_5_1 - arg_5_0._randomRangeX
-	arg_5_0._bounds[4] = arg_5_1 + arg_5_0._randomRangeX
-	arg_5_0._bounds[2] = arg_5_2 - arg_5_0._randomRangeZ
-	arg_5_0._bounds[1] = arg_5_2 + arg_5_0._randomRangeZ
-	arg_5_0._resetRandomRange = false
+function slot3.resetRandomBound(slot0, slot1, slot2)
+	slot0._bounds[3] = slot1 - slot0._randomRangeX
+	slot0._bounds[4] = slot1 + slot0._randomRangeX
+	slot0._bounds[2] = slot2 - slot0._randomRangeZ
+	slot0._bounds[1] = slot2 + slot0._randomRangeZ
+	slot0._resetRandomRange = false
 end
 
-function var_0_3.Dispose(arg_6_0)
-	var_0_3.super.Dispose(arg_6_0)
-	table.clear(arg_6_0)
+function slot3.Dispose(slot0)
+	uv0.super.Dispose(slot0)
+	table.clear(slot0)
 end

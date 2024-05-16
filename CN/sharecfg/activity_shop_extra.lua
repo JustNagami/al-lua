@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_shop_extra = {
 	{
 		commodity_id = 106011,
@@ -3992,6 +3992,43 @@ pg.activity_shop_extra = {
 			}
 		}
 	},
+	[118] = {
+		commodity_id = 106014,
+		activity = 5324,
+		scene = "",
+		num = 1,
+		num_limit = 1,
+		end_by_maintenance = 1,
+		commodity_type = 7,
+		id = 118,
+		order = 9,
+		time = {
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					13
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
 	get_id_list_by_commodity_type = {
 		[7] = {
 			1,
@@ -4106,7 +4143,8 @@ pg.activity_shop_extra = {
 			114,
 			115,
 			116,
-			117
+			117,
+			118
 		}
 	},
 	all = {
@@ -4222,6 +4260,7 @@ pg.activity_shop_extra = {
 		114,
 		115,
 		116,
-		117
+		117,
+		118
 	}
 }

@@ -1,36 +1,27 @@
-﻿local var_0_0 = class("ChargeGoodsCard", import("...shops.cards.GoodsCard"))
+slot0 = class("ChargeGoodsCard", import("...shops.cards.GoodsCard"))
 
-function var_0_0.update(arg_1_0, arg_1_1)
-	arg_1_0.goodsVO = arg_1_1
+function slot0.update(slot0, slot1)
+	slot0.goodsVO = slot1
 
-	local var_1_0 = arg_1_0.goodsVO:canPurchase()
+	setActive(slot0.mask, not slot0.goodsVO:canPurchase())
+	setActive(slot0.stars, false)
 
-	setActive(arg_1_0.mask, not var_1_0)
-	setActive(arg_1_0.stars, false)
+	slot3 = slot1:getDropInfo()
 
-	local var_1_1 = arg_1_1:getDropInfo()
+	updateDrop(slot0.itemTF, slot3)
+	setText(slot0.nameTxt, shortenString(slot3:getConfig("name") or "", 6))
 
-	updateDrop(arg_1_0.itemTF, var_1_1)
+	slot0.discountTextTF = findTF(slot0.discountTF, "Text"):GetComponent(typeof(Text))
 
-	local var_1_2 = var_1_1:getConfig("name") or ""
+	setActive(slot0.discountTF, slot1:isDisCount())
 
-	setText(arg_1_0.nameTxt, shortenString(var_1_2, 6))
-
-	local var_1_3 = arg_1_1:GetPrice()
-
-	arg_1_0.discountTextTF = findTF(arg_1_0.discountTF, "Text"):GetComponent(typeof(Text))
-
-	local var_1_4 = arg_1_1:getConfig("discount")
-
-	setActive(arg_1_0.discountTF, arg_1_1:isDisCount())
-
-	arg_1_0.discountTextTF.text = var_1_4 .. "%OFF"
-	arg_1_0.countTF.text = math.ceil(var_1_3)
+	slot0.discountTextTF.text = slot1:getConfig("discount") .. "%OFF"
+	slot0.countTF.text = math.ceil(slot1:GetPrice())
 
 	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = arg_1_1:getConfig("resource_type")
-	}):getIcon(), "", tf(arg_1_0.resIconTF))
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "", tf(slot0.resIconTF))
 end
 
-return var_0_0
+return slot0

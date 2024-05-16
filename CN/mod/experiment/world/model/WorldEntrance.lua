@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WorldEntrance", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WorldEntrance", import("...BaseEntity"))
+slot0.Fields = {
 	config = "table",
 	marks = "table",
 	transportDic = "table",
@@ -9,27 +8,28 @@ var_0_0.Fields = {
 	becomeSairen = "boolean",
 	active = "boolean"
 }
-var_0_0.Listeners = {}
-var_0_0.EventUpdateMapIndex = "WorldEntrance.EventUpdateMapIndex"
-var_0_0.EventUpdateDisplayMarks = "WorldEntrance.EventUpdateDisplayMarks"
+slot0.Listeners = {}
+slot0.EventUpdateMapIndex = "WorldEntrance.EventUpdateMapIndex"
+slot0.EventUpdateDisplayMarks = "WorldEntrance.EventUpdateDisplayMarks"
 
-function var_0_0.DebugPrint(arg_1_0)
-	return string.format("入口 [id: %s] [原始地图: %s] [所属区域: %s] [所属海域: %s]", arg_1_0.id, arg_1_0:GetBaseMapId(), arg_1_0.config.regions, arg_1_0.config.world)
+function slot0.DebugPrint(slot0)
+	return string.format("入口 [id: %s] [原始地图: %s] [所属区域: %s] [所属海域: %s]", slot0.id, slot0:GetBaseMapId(), slot0.config.regions, slot0.config.world)
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.id = arg_2_1
+function slot0.Setup(slot0, slot1, slot2)
+	slot0.id = slot1
+	slot6 = slot0.id
 
-	assert(pg.world_chapter_colormask[arg_2_1], "world_chapter_colormask.csv without this id:" .. arg_2_0.id)
+	assert(pg.world_chapter_colormask[slot1], "world_chapter_colormask.csv without this id:" .. slot6)
 
-	arg_2_0.config = pg.world_chapter_colormask[arg_2_1]
-	arg_2_0.transportDic = {}
+	slot0.config = pg.world_chapter_colormask[slot1]
+	slot0.transportDic = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0.config.map_transfer) do
-		arg_2_0.transportDic[iter_2_1] = true
+	for slot6, slot7 in ipairs(slot0.config.map_transfer) do
+		slot0.transportDic[slot7] = true
 	end
 
-	arg_2_0.marks = {
+	slot0.marks = {
 		task_main = 0,
 		task = 0,
 		treasure_sairen = 0,
@@ -43,85 +43,81 @@ function var_0_0.Setup(arg_2_0, arg_2_1, arg_2_2)
 	}
 end
 
-function var_0_0.IsOpen(arg_3_0)
-	return arg_3_0:GetBaseMap():IsMapOpen()
+function slot0.IsOpen(slot0)
+	return slot0:GetBaseMap():IsMapOpen()
 end
 
-function var_0_0.GetBaseMapId(arg_4_0)
-	return arg_4_0.config.chapter
+function slot0.GetBaseMapId(slot0)
+	return slot0.config.chapter
 end
 
-function var_0_0.GetBaseMap(arg_5_0)
-	return nowWorld():GetMap(arg_5_0:GetBaseMapId())
+function slot0.GetBaseMap(slot0)
+	return nowWorld():GetMap(slot0:GetBaseMapId())
 end
 
-function var_0_0.GetColormaskUniqueID(arg_6_0)
-	return arg_6_0.config.color_id
+function slot0.GetColormaskUniqueID(slot0)
+	return slot0.config.color_id
 end
 
-function var_0_0.GetAreaId(arg_7_0)
-	return arg_7_0.config.regions
+function slot0.GetAreaId(slot0)
+	return slot0.config.regions
 end
 
-function var_0_0.IsPressing(arg_8_0)
-	return arg_8_0:GetBaseMap().isPressing
+function slot0.IsPressing(slot0)
+	return slot0:GetBaseMap().isPressing
 end
 
-function var_0_0.HasPort(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0:GetPortId()
-
-	return var_9_0 > 0 and (not arg_9_1 or pg.world_port_data[var_9_0].port_camp == nowWorld():GetRealm())
+function slot0.HasPort(slot0, slot1)
+	return slot0:GetPortId() > 0 and (not slot1 or pg.world_port_data[slot2].port_camp == nowWorld():GetRealm())
 end
 
-function var_0_0.GetPortId(arg_10_0)
-	return arg_10_0.config.port_map_icon
+function slot0.GetPortId(slot0)
+	return slot0.config.port_map_icon
 end
 
-function var_0_0.UpdateActive(arg_11_0, arg_11_1)
-	if arg_11_0.active ~= arg_11_1 then
-		arg_11_0.active = arg_11_1
+function slot0.UpdateActive(slot0, slot1)
+	if slot0.active ~= slot1 then
+		slot0.active = slot1
 
-		if arg_11_1 then
-			nowWorld():GetAtlas():SetActiveEntrance(arg_11_0)
+		if slot1 then
+			nowWorld():GetAtlas():SetActiveEntrance(slot0)
 		end
 	end
 end
 
-function var_0_0.UpdateDisplayMarks(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = arg_12_0.marks[arg_12_1] == 0 and arg_12_2 or arg_12_0.marks[arg_12_1] == 1 and not arg_12_2
+function slot0.UpdateDisplayMarks(slot0, slot1, slot2)
+	slot0.marks[slot1] = slot0.marks[slot1] + (slot2 and 1 or -1)
 
-	arg_12_0.marks[arg_12_1] = arg_12_0.marks[arg_12_1] + (arg_12_2 and 1 or -1)
-
-	if var_12_0 then
-		arg_12_0:DispatchEvent(var_0_0.EventUpdateDisplayMarks, arg_12_1, arg_12_0.marks[arg_12_1] > 0)
+	if slot0.marks[slot1] == 0 and slot2 or slot0.marks[slot1] == 1 and not slot2 then
+		slot0:DispatchEvent(uv0.EventUpdateDisplayMarks, slot1, slot0.marks[slot1] > 0)
 	end
 end
 
-function var_0_0.GetDisplayMarks(arg_13_0)
-	return arg_13_0.marks
+function slot0.GetDisplayMarks(slot0)
+	return slot0.marks
 end
 
-function var_0_0.GetSairenMapId(arg_14_0)
-	return arg_14_0.config.sairen_chapter[1]
+function slot0.GetSairenMapId(slot0)
+	return slot0.config.sairen_chapter[1]
 end
 
-function var_0_0.UpdateSairenMark(arg_15_0, arg_15_1)
-	if tobool(arg_15_0.becomeSairen) ~= tobool(arg_15_1) then
-		arg_15_0.becomeSairen = arg_15_1
+function slot0.UpdateSairenMark(slot0, slot1)
+	if tobool(slot0.becomeSairen) ~= tobool(slot1) then
+		slot0.becomeSairen = slot1
 	end
 end
 
-function var_0_0.GetAchievementAwards(arg_16_0)
-	return _.map(arg_16_0.config.target_drop_show, function(arg_17_0)
+function slot0.GetAchievementAwards(slot0)
+	return _.map(slot0.config.target_drop_show, function (slot0)
 		return {
-			star = arg_17_0[1],
+			star = slot0[1],
 			drop = {
-				type = arg_17_0[2][1],
-				id = arg_17_0[2][2],
-				count = arg_17_0[2][3]
+				type = slot0[2][1],
+				id = slot0[2][2],
+				count = slot0[2][3]
 			}
 		}
 	end)
 end
 
-return var_0_0
+return slot0

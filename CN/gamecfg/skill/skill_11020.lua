@@ -1,23 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 66420
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -155,5 +136,24 @@
 	id = 10047,
 	picture = "0",
 	castCV = "skill",
-	desc = "胡蜂双蛰"
+	desc = "胡蜂双蛰",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 66420
+			}
+		}
+	}
 }

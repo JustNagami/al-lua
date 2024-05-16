@@ -1,25 +1,21 @@
-﻿local var_0_0 = class("UseTecSpeedUpItemCommand", pm.SimpleCommand)
+slot0 = class("UseTecSpeedUpItemCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.blueprintid
-	local var_1_2 = var_1_0.itemid
-	local var_1_3 = var_1_0.number
-	local var_1_4 = var_1_0.taskID
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(63210, {
-		blueprintid = var_1_1,
-		itemid = var_1_2,
-		number = var_1_3,
-		task_id = var_1_4
-	}, 63211, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			getProxy(BagProxy):removeItemById(var_1_2, var_1_3)
-			arg_1_0:sendNotification(GAME.USE_TEC_SPEEDUP_ITEM_DONE)
+		blueprintid = slot2.blueprintid,
+		itemid = slot2.itemid,
+		number = slot2.number,
+		task_id = slot2.taskID
+	}, 63211, function (slot0)
+		if slot0.result == 0 then
+			getProxy(BagProxy):removeItemById(uv0, uv1)
+			uv2:sendNotification(GAME.USE_TEC_SPEEDUP_ITEM_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Error Code" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Error Code" .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

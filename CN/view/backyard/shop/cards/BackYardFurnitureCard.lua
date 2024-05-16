@@ -1,177 +1,132 @@
-﻿local var_0_0 = class("BackYardFurnitureCard")
+slot0 = class("BackYardFurnitureCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_1.transform
-	arg_1_0.group = arg_1_0._tf:GetComponent(typeof(CanvasGroup))
-	arg_1_0.icon = findTF(arg_1_0._tf, "icon"):GetComponent(typeof(Image))
-	arg_1_0.comfortableTF = findTF(arg_1_0._tf, "comfortable")
-	arg_1_0.comfortable = findTF(arg_1_0._tf, "comfortable"):GetComponent(typeof(Text))
-	arg_1_0.name = findTF(arg_1_0._tf, "name"):GetComponent(typeof(Text))
-	arg_1_0.themeName = findTF(arg_1_0._tf, "theme"):GetComponent(typeof(Text))
-	arg_1_0.desc = findTF(arg_1_0._tf, "desc"):GetComponent(typeof(Text))
-	arg_1_0.resGold = findTF(arg_1_0._tf, "res/gold")
-	arg_1_0.resGoldTxt = findTF(arg_1_0._tf, "res/gold/Text"):GetComponent(typeof(Text))
-	arg_1_0.resGemTxt = findTF(arg_1_0._tf, "res/gem/Text"):GetComponent(typeof(Text))
-	arg_1_0.resGem = findTF(arg_1_0._tf, "res/gem")
-	arg_1_0.cantPurchase = findTF(arg_1_0._tf, "res/unopen")
-	arg_1_0.countTxt = findTF(arg_1_0._tf, "count"):GetComponent(typeof(Text))
-	arg_1_0.maskTF = findTF(arg_1_0._tf, "mask")
-	arg_1_0.hotTF = findTF(arg_1_0._tf, "hot")
-	arg_1_0.newTF = findTF(arg_1_0._tf, "new")
-	arg_1_0.skinMark = findTF(arg_1_0._tf, "skin_mark")
-	arg_1_0.maskUnOpen = findTF(arg_1_0._tf, "mask1")
-	arg_1_0.countDownTm = findTF(arg_1_0._tf, "time/Text"):GetComponent(typeof(Text))
-	arg_1_0.timerTr = findTF(arg_1_0._tf, "time")
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.group = slot0._tf:GetComponent(typeof(CanvasGroup))
+	slot0.icon = findTF(slot0._tf, "icon"):GetComponent(typeof(Image))
+	slot0.comfortableTF = findTF(slot0._tf, "comfortable")
+	slot0.comfortable = findTF(slot0._tf, "comfortable"):GetComponent(typeof(Text))
+	slot0.name = findTF(slot0._tf, "name"):GetComponent(typeof(Text))
+	slot0.themeName = findTF(slot0._tf, "theme"):GetComponent(typeof(Text))
+	slot0.desc = findTF(slot0._tf, "desc"):GetComponent(typeof(Text))
+	slot0.resGold = findTF(slot0._tf, "res/gold")
+	slot0.resGoldTxt = findTF(slot0._tf, "res/gold/Text"):GetComponent(typeof(Text))
+	slot0.resGemTxt = findTF(slot0._tf, "res/gem/Text"):GetComponent(typeof(Text))
+	slot0.resGem = findTF(slot0._tf, "res/gem")
+	slot0.cantPurchase = findTF(slot0._tf, "res/unopen")
+	slot0.countTxt = findTF(slot0._tf, "count"):GetComponent(typeof(Text))
+	slot0.maskTF = findTF(slot0._tf, "mask")
+	slot0.hotTF = findTF(slot0._tf, "hot")
+	slot0.newTF = findTF(slot0._tf, "new")
+	slot0.skinMark = findTF(slot0._tf, "skin_mark")
+	slot0.maskUnOpen = findTF(slot0._tf, "mask1")
+	slot0.countDownTm = findTF(slot0._tf, "time/Text"):GetComponent(typeof(Text))
+	slot0.timerTr = findTF(slot0._tf, "time")
 
-	setActive(arg_1_0.timerTr, false)
+	setActive(slot0.timerTr, false)
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1)
-	if arg_2_0.group then
-		arg_2_0.group.alpha = 1
+function slot0.Update(slot0, slot1)
+	if slot0.group then
+		slot0.group.alpha = 1
 	end
 
-	arg_2_0.furniture = arg_2_1
+	slot0.furniture = slot1
+	slot0.name.text = shortenString(HXSet.hxLan(slot1:getConfig("name")), 9)
+	slot0.themeName.text = shortenString(slot1:GetThemeName(), 7)
+	slot0.desc.text = HXSet.hxLan(slot1:getConfig("describe"))
+	slot0.comfortable.text = "+" .. slot1:getConfig("comfortable")
 
-	local var_2_0 = HXSet.hxLan(arg_2_1:getConfig("name"))
-
-	arg_2_0.name.text = shortenString(var_2_0, 9)
-	arg_2_0.themeName.text = shortenString(arg_2_1:GetThemeName(), 7)
-	arg_2_0.desc.text = HXSet.hxLan(arg_2_1:getConfig("describe"))
-	arg_2_0.comfortable.text = "+" .. arg_2_1:getConfig("comfortable")
-
-	GetSpriteFromAtlasAsync("furnitureicon/" .. arg_2_1:getConfig("icon"), "", function(arg_3_0)
-		if IsNil(arg_2_0.icon) then
+	GetSpriteFromAtlasAsync("furnitureicon/" .. slot1:getConfig("icon"), "", function (slot0)
+		if IsNil(uv0.icon) then
 			return
 		end
 
-		arg_2_0.icon.sprite = arg_3_0
+		uv0.icon.sprite = slot0
 	end)
 
-	local var_2_1 = arg_2_1:getConfig("count")
-	local var_2_2 = var_2_1 > 1 and arg_2_1.count .. "/" .. var_2_1 or ""
+	slot0.countTxt.text = slot1:getConfig("count") > 1 and slot1.count .. "/" .. slot3 or ""
 
-	arg_2_0.countTxt.text = var_2_2
+	setActive(slot0.resGem, slot1:canPurchaseByGem())
+	setActive(slot0.resGold, slot1:canPurchaseByDormMoeny())
 
-	local var_2_3 = arg_2_1:canPurchaseByGem()
+	slot7 = slot1:canPurchase()
 
-	setActive(arg_2_0.resGem, var_2_3)
-
-	local var_2_4 = arg_2_1:canPurchaseByDormMoeny()
-
-	setActive(arg_2_0.resGold, var_2_4)
-
-	local var_2_5 = arg_2_1:canPurchase()
-
-	if arg_2_0.maskUnOpen then
-		setActive(arg_2_0.maskUnOpen, var_2_5 and (not var_2_3 and not var_2_4 or not arg_2_1:inTime()))
+	if slot0.maskUnOpen then
+		setActive(slot0.maskUnOpen, slot7 and (not slot5 and not slot6 or not slot1:inTime()))
 	end
 
-	arg_2_0.resGoldTxt.text = arg_2_1:getPrice(PlayerConst.ResDormMoney)
-	arg_2_0.resGemTxt.text = arg_2_1:getPrice(PlayerConst.ResDiamond)
+	slot0.resGoldTxt.text = slot1:getPrice(PlayerConst.ResDormMoney)
+	slot0.resGemTxt.text = slot1:getPrice(PlayerConst.ResDiamond)
 
-	setActive(arg_2_0.maskTF, not var_2_5)
+	setActive(slot0.maskTF, not slot7)
+	setActive(slot0.hotTF, false)
+	setActive(slot0.newTF, slot1:IsNew() and slot7)
 
-	local var_2_6 = false
+	slot10, slot11 = slot1:inTime()
 
-	setActive(arg_2_0.hotTF, var_2_6)
-
-	local var_2_7 = arg_2_1:IsNew()
-
-	setActive(arg_2_0.newTF, var_2_7 and var_2_5)
-
-	local var_2_8, var_2_9 = arg_2_1:inTime()
-	local var_2_10 = arg_2_1:isTimeLimit() and var_2_8
-
-	if var_2_10 then
-		arg_2_0:UpdateCountdown(var_2_9)
+	if slot1:isTimeLimit() and slot10 then
+		slot0:UpdateCountdown(slot11)
 	else
-		arg_2_0:DestoryTimer()
+		slot0:DestoryTimer()
 
-		arg_2_0.countDownTm.text = ""
+		slot0.countDownTm.text = ""
 	end
 
-	setActive(arg_2_0.timerTr, var_2_10)
-	arg_2_0:UpdateSkinType()
+	setActive(slot0.timerTr, slot13)
+	slot0:UpdateSkinType()
 end
 
-function var_0_0.UpdateSkinType(arg_4_0)
-	if IsNil(arg_4_0.skinMark) then
+function slot0.UpdateSkinType(slot0)
+	if IsNil(slot0.skinMark) then
 		return
 	end
 
-	local var_4_0 = Goods.FurnitureId2Id(arg_4_0.furniture.id)
-	local var_4_1 = Goods.ExistFurniture(var_4_0)
-
-	setActive(arg_4_0.skinMark, var_4_1)
+	setActive(slot0.skinMark, Goods.ExistFurniture(Goods.FurnitureId2Id(slot0.furniture.id)))
 end
 
-function var_0_0.UpdateCountdown(arg_5_0, arg_5_1)
-	local var_5_0 = pg.TimeMgr.GetInstance()
+function slot0.UpdateCountdown(slot0, slot1)
+	slot0:DestoryTimer()
 
-	arg_5_0:DestoryTimer()
+	slot3 = pg.TimeMgr.GetInstance():Table2ServerTime(slot1)
+	slot0.prevStr = ""
+	slot0.updateTimer = Timer.New(function ()
+		slot0 = ""
 
-	local var_5_1 = var_5_0:Table2ServerTime(arg_5_1)
+		if uv1 < uv0:GetServerTime() then
+			uv2.countDownTm.text = ""
 
-	arg_5_0.prevStr = ""
-	arg_5_0.updateTimer = Timer.New(function()
-		local var_6_0 = ""
-		local var_6_1 = var_5_0:GetServerTime()
-
-		if var_6_1 > var_5_1 then
-			arg_5_0.countDownTm.text = ""
-
-			setActive(arg_5_0.timerTr, false)
-			arg_5_0:DestoryTimer()
+			setActive(uv2.timerTr, false)
+			uv2:DestoryTimer()
 
 			return
 		end
 
-		local var_6_2 = var_5_1 - var_6_1
-
-		var_6_2 = var_6_2 < 0 and 0 or var_6_2
-
-		local var_6_3 = math.floor(var_6_2 / 86400)
-
-		if var_6_3 > 0 then
-			var_6_0 = var_6_3 .. i18n("word_date")
-		else
-			local var_6_4 = math.floor(var_6_2 / 3600)
-
-			if var_6_4 > 0 then
-				var_6_0 = var_6_4 .. i18n("word_hour")
-			else
-				local var_6_5 = math.floor(var_6_2 / 60)
-
-				if var_6_5 > 0 then
-					var_6_0 = var_6_5 .. i18n("word_minute")
-				else
-					var_6_0 = var_6_2 .. i18n("word_second")
-				end
-			end
+		if uv1 - slot1 < 0 then
+			slot2 = 0
 		end
 
-		if var_6_0 ~= arg_5_0.prevStr then
-			arg_5_0.prevStr = var_6_0
-			arg_5_0.countDownTm.text = var_6_0
+		if (math.floor(slot2 / 86400) > 0 and slot3 .. i18n("word_date") or math.floor(slot2 / 3600) > 0 and slot4 .. i18n("word_hour") or math.floor(slot2 / 60) > 0 and slot5 .. i18n("word_minute") or slot2 .. i18n("word_second")) ~= uv2.prevStr then
+			uv2.prevStr = slot0
+			uv2.countDownTm.text = slot0
 		end
 	end, 1, -1)
 
-	arg_5_0.updateTimer:Start()
-	arg_5_0.updateTimer.func()
+	slot0.updateTimer:Start()
+	slot0.updateTimer.func()
 end
 
-function var_0_0.DestoryTimer(arg_7_0)
-	if arg_7_0.updateTimer then
-		arg_7_0.updateTimer:Stop()
+function slot0.DestoryTimer(slot0)
+	if slot0.updateTimer then
+		slot0.updateTimer:Stop()
 
-		arg_7_0.updateTimer = nil
+		slot0.updateTimer = nil
 	end
 end
 
-function var_0_0.Clear(arg_8_0)
-	arg_8_0:DestoryTimer()
+function slot0.Clear(slot0)
+	slot0:DestoryTimer()
 end
 
-return var_0_0
+return slot0

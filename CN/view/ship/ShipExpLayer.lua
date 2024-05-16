@@ -1,284 +1,266 @@
-﻿local var_0_0 = class("ShipExpLayer", import("..base.BaseUI"))
+slot0 = class("ShipExpLayer", import("..base.BaseUI"))
+slot0.TypeDefault = 0
+slot0.TypeClass = 1
 
-var_0_0.TypeDefault = 0
-var_0_0.TypeClass = 1
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ShipExpUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0._grade = arg_2_0:findTF("grade")
-	arg_2_0._gradeLabel = arg_2_0:findTF("label", arg_2_0._grade)
-	arg_2_0._levelText = arg_2_0:findTF("Text", arg_2_0._grade)
-	arg_2_0._main = arg_2_0:findTF("main")
-	arg_2_0._leftPanel = arg_2_0:findTF("leftPanel", arg_2_0._main)
-	arg_2_0._topBar = arg_2_0:findTF("topBar", arg_2_0._leftPanel)
-	arg_2_0._expResult = arg_2_0:findTF("expResult", arg_2_0._leftPanel)
-	arg_2_0._expContainer = arg_2_0:findTF("expContainer", arg_2_0._expResult)
-	arg_2_0._extpl = arg_2_0:getTpl("ShipCardTpl", arg_2_0._expContainer)
-	arg_2_0._skipBtn = arg_2_0:findTF("skipLayer")
+function slot0.init(slot0)
+	slot0._grade = slot0:findTF("grade")
+	slot0._gradeLabel = slot0:findTF("label", slot0._grade)
+	slot0._levelText = slot0:findTF("Text", slot0._grade)
+	slot0._main = slot0:findTF("main")
+	slot0._leftPanel = slot0:findTF("leftPanel", slot0._main)
+	slot0._topBar = slot0:findTF("topBar", slot0._leftPanel)
+	slot0._expResult = slot0:findTF("expResult", slot0._leftPanel)
+	slot0._expContainer = slot0:findTF("expContainer", slot0._expResult)
+	slot0._extpl = slot0:getTpl("ShipCardTpl", slot0._expContainer)
+	slot0._skipBtn = slot0:findTF("skipLayer")
 
-	setActive(arg_2_0._topBar, false)
+	setActive(slot0._topBar, false)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	arg_3_0.tweenTFs = {}
-	arg_3_0.timerId = {}
+function slot0.didEnter(slot0)
+	slot0.tweenTFs = {}
+	slot0.timerId = {}
 
-	onButton(arg_3_0, arg_3_0._skipBtn, function()
-		arg_3_0:skip()
+	onButton(slot0, slot0._skipBtn, function ()
+		uv0:skip()
 	end, SFX_CONFIRM)
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
-	arg_3_0:display()
+	slot0:display()
 end
 
-function var_0_0.display(arg_5_0)
-	setActive(arg_5_0._grade, true)
-	setText(arg_5_0._levelText, arg_5_0.contextData.title)
+function slot0.display(slot0)
+	setActive(slot0._grade, true)
+	setText(slot0._levelText, slot0.contextData.title)
 
-	if arg_5_0.contextData.type == var_0_0.TypeClass then
-		setActive(arg_5_0._gradeLabel, false)
+	if slot0.contextData.type == uv0.TypeClass then
+		setActive(slot0._gradeLabel, false)
 	else
-		setActive(arg_5_0._gradeLabel, true)
-
-		local var_5_0 = arg_5_0.contextData.isCri and "grade_label_task_perfect" or "grade_label_task_complete"
-
-		LoadImageSpriteAsync("battlescore/" .. var_5_0, arg_5_0._gradeLabel, true)
+		setActive(slot0._gradeLabel, true)
+		LoadImageSpriteAsync("battlescore/" .. (slot0.contextData.isCri and "grade_label_task_perfect" or "grade_label_task_complete"), slot0._gradeLabel, true)
 	end
 
-	local var_5_1 = arg_5_0.contextData.top
+	slot1 = slot0.contextData.top
 
-	setActive(arg_5_0._topBar, var_5_1)
+	setActive(slot0._topBar, slot1)
 
-	if var_5_1 then
-		setText(arg_5_0._topBar:Find("text_1"), var_5_1.text1)
-		setText(arg_5_0._topBar:Find("text_2"), var_5_1.text2)
-		setText(arg_5_0._topBar:Find("text_3"), var_5_1.text3)
+	if slot1 then
+		setText(slot0._topBar:Find("text_1"), slot1.text1)
+		setText(slot0._topBar:Find("text_2"), slot1.text2)
+		setText(slot0._topBar:Find("text_3"), slot1.text3)
 
-		arg_5_0._topBar:Find("progress"):GetComponent(typeof(Image)).fillAmount = var_5_1.progress
+		slot0._topBar:Find("progress"):GetComponent(typeof(Image)).fillAmount = slot1.progress
 	end
 
-	arg_5_0._expTFs = {}
-	arg_5_0._skipExp = {}
-	arg_5_0._maxRightDelay = 0
+	slot0._expTFs = {}
+	slot0._skipExp = {}
+	slot0._maxRightDelay = 0
+	slot2 = {
+		[slot7.id] = slot7
+	}
 
-	local var_5_2 = {}
-
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.contextData.newShips) do
-		var_5_2[iter_5_1.id] = iter_5_1
+	for slot6, slot7 in ipairs(slot0.contextData.newShips) do
+		-- Nothing
 	end
 
-	local var_5_3 = arg_5_0.contextData.oldShips
-	local var_5_4 = 0.5
+	slot4 = 0.5
 
-	for iter_5_2, iter_5_3 in ipairs(var_5_3) do
-		local var_5_5 = var_5_2[iter_5_3.id]
-		local var_5_6 = cloneTplTo(arg_5_0._extpl, arg_5_0._expContainer)
-		local var_5_7 = var_5_6.transform.anchoredPosition
-		local var_5_8 = rtf(var_5_6).rect.width
-		local var_5_9 = findTF(var_5_6, "content")
+	for slot8, slot9 in ipairs(slot0.contextData.oldShips) do
+		slot11 = cloneTplTo(slot0._extpl, slot0._expContainer)
+		slot12 = slot11.transform.anchoredPosition
+		slot14 = findTF(slot11, "content")
+		slot11.transform.anchoredPosition = Vector3(slot12.x + (16.2 + rtf(slot11).rect.width) * (slot8 - 1), slot12.y, slot12.z)
+		slot0._expTFs[#slot0._expTFs + 1] = slot11
 
-		var_5_6.transform.anchoredPosition = Vector3(var_5_7.x + (16.2 + var_5_8) * (iter_5_2 - 1), var_5_7.y, var_5_7.z)
-		arg_5_0._expTFs[#arg_5_0._expTFs + 1] = var_5_6
+		flushShipCard(slot11, slot9)
+		setScrollText(findTF(slot14, "info/name_mask/name"), slot9:GetColorName())
 
-		flushShipCard(var_5_6, iter_5_3)
-		setScrollText(findTF(var_5_9, "info/name_mask/name"), iter_5_3:GetColorName())
+		slot16 = findTF(slot14, "dockyard/lv_bg/levelUpLabel")
+		slot17 = findTF(slot14, "dockyard/lv_bg/levelup")
 
-		local var_5_10 = findTF(var_5_9, "dockyard/lv/Text")
-		local var_5_11 = findTF(var_5_9, "dockyard/lv_bg/levelUpLabel")
-		local var_5_12 = findTF(var_5_9, "dockyard/lv_bg/levelup")
+		setText(findTF(slot14, "dockyard/lv/Text"), slot9.level)
 
-		setText(var_5_10, iter_5_3.level)
+		slot18 = findTF(slot14, "exp")
+		slot19 = findTF(slot18, "exp_text")
+		slot20 = findTF(slot18, "exp_progress")
+		slot0._maxRightDelay = math.max(slot0._maxRightDelay, slot2[slot9.id].level - slot9.level + slot8 * 0.5)
 
-		local var_5_13 = findTF(var_5_9, "exp")
-		local var_5_14 = findTF(var_5_13, "exp_text")
-		local var_5_15 = findTF(var_5_13, "exp_progress")
+		function slot21()
+			SetActive(uv0, true)
 
-		arg_5_0._maxRightDelay = math.max(arg_5_0._maxRightDelay, var_5_5.level - iter_5_3.level + iter_5_2 * 0.5)
+			slot1 = uv2:getLevelExpConfig().exp
+			uv3:GetComponent(typeof(Image)).fillAmount = uv1.exp / uv1:getLevelExpConfig().exp
 
-		local function var_5_16()
-			SetActive(var_5_13, true)
-
-			local var_6_0 = iter_5_3:getLevelExpConfig().exp
-			local var_6_1 = var_5_5:getLevelExpConfig().exp
-
-			var_5_15:GetComponent(typeof(Image)).fillAmount = iter_5_3.exp / var_6_0
-
-			if iter_5_3.level < var_5_5.level then
-				local var_6_2 = 0
-
-				for iter_6_0 = iter_5_3.level, var_5_5.level - 1 do
-					var_6_2 = var_6_2 + iter_5_3:getLevelExpConfig(iter_6_0).exp
+			if uv1.level < uv2.level then
+				for slot6 = uv1.level, uv2.level - 1 do
+					slot2 = 0 + uv1:getLevelExpConfig(slot6).exp
 				end
 
-				arg_5_0:PlayAnimation(var_5_6, 0, var_6_2 + var_5_5.exp - iter_5_3.exp, 1, 0, function(arg_7_0)
-					setText(var_5_14, "+" .. math.ceil(arg_7_0))
+				uv4:PlayAnimation(uv5, 0, slot2 + uv2.exp - uv1.exp, 1, 0, function (slot0)
+					setText(uv0, "+" .. math.ceil(slot0))
 				end)
 
-				local function var_6_3(arg_8_0)
-					SetActive(var_5_11, true)
-					SetActive(var_5_12, true)
+				function slot3(slot0)
+					SetActive(uv0, true)
+					SetActive(uv1, true)
+					LeanTween.moveY(rtf(uv0), uv0.localPosition.y + 30, 0.5):setOnComplete(System.Action(function ()
+						SetActive(uv0, false)
 
-					local var_8_0 = var_5_11.localPosition
-
-					LeanTween.moveY(rtf(var_5_11), var_8_0.y + 30, 0.5):setOnComplete(System.Action(function()
-						SetActive(var_5_11, false)
-
-						var_5_11.localPosition = var_8_0
+						uv0.localPosition = uv1
 
 						pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOAT_LEVEL_UP)
 					end))
-					setText(var_5_10, arg_8_0)
-					table.insert(arg_5_0.tweenTFs, var_5_11)
+					setText(uv2, slot0)
+					table.insert(uv3.tweenTFs, uv0)
 				end
 
-				LeanTween.value(go(var_5_6), iter_5_3.exp / var_6_0, 1, 0.5):setOnUpdate(System.Action_float(function(arg_10_0)
-					var_5_15:GetComponent(typeof(Image)).fillAmount = arg_10_0
-				end)):setOnComplete(System.Action(function()
-					local var_11_0 = iter_5_3.level + 1
+				LeanTween.value(go(uv5), uv1.exp / slot0, 1, 0.5):setOnUpdate(System.Action_float(function (slot0)
+					uv0:GetComponent(typeof(Image)).fillAmount = slot0
+				end)):setOnComplete(System.Action(function ()
+					slot0 = uv0.level + 1
 
-					var_6_3(var_11_0)
+					uv1(slot0)
 
-					local var_11_1 = var_11_0 + 1
-					local var_11_2 = 0.1
+					slot0 = slot0 + 1
+					slot1 = 0.1
 
-					while var_11_1 <= var_5_5.level do
-						local var_11_3 = var_11_1
+					while slot0 <= uv2.level do
+						slot2 = slot0
 
-						LeanTween.value(go(var_5_6), 0, 1, 1):setOnUpdate(System.Action_float(function(arg_12_0)
-							var_5_15:GetComponent(typeof(Image)).fillAmount = arg_12_0
-						end)):setDelay(var_11_2):setOnComplete(System.Action(function()
-							var_6_3(var_11_3)
+						LeanTween.value(go(uv3), 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
+							uv0:GetComponent(typeof(Image)).fillAmount = slot0
+						end)):setDelay(slot1):setOnComplete(System.Action(function ()
+							uv0(uv1)
 						end))
 
-						var_11_2 = var_11_2 + 1
-						var_11_1 = var_11_1 + 1
+						slot1 = slot1 + 1
+						slot0 = slot0 + 1
 					end
 
-					arg_5_0.timerId[iter_5_3.id] = pg.TimeMgr.GetInstance():AddTimer("delayTimer", var_11_2, 0, function()
-						if var_5_5.level == var_5_5:getMaxLevel() then
-							var_5_15:GetComponent(typeof(Image)).fillAmount = 1
-							arg_5_0._skipExp[iter_5_2] = false
+					uv5.timerId[uv0.id] = pg.TimeMgr.GetInstance():AddTimer("delayTimer", slot1, 0, function ()
+						if uv0.level == uv0:getMaxLevel() then
+							uv1:GetComponent(typeof(Image)).fillAmount = 1
+							uv2._skipExp[uv3] = false
 
 							return
 						end
 
-						arg_5_0:PlayAnimation(var_5_6, 0, var_5_5.exp / var_6_1, 0.5, 0, function(arg_15_0)
-							var_5_15:GetComponent(typeof(Image)).fillAmount = arg_15_0
-							arg_5_0._skipExp[iter_5_2] = false
+						uv2:PlayAnimation(uv4, 0, uv0.exp / uv5, 0.5, 0, function (slot0)
+							uv0:GetComponent(typeof(Image)).fillAmount = slot0
+							uv1._skipExp[uv2] = false
 						end)
 					end)
 				end))
-				table.insert(arg_5_0.tweenTFs, var_5_6)
-			else
-				local var_6_4 = math.ceil(var_5_5:getExp() - iter_5_3:getExp())
+				table.insert(uv4.tweenTFs, uv5)
 
-				setText(var_5_14, "+" .. var_6_4)
-
-				if iter_5_3.level == iter_5_3:getMaxLevel() then
-					var_5_15:GetComponent(typeof(Image)).fillAmount = 1
-					arg_5_0._skipExp[iter_5_2] = false
-
-					return
-				end
-
-				arg_5_0:PlayAnimation(var_5_6, iter_5_3.exp / var_6_0, var_5_5.exp / var_6_0, 1, 0, function(arg_16_0)
-					var_5_15:GetComponent(typeof(Image)).fillAmount = arg_16_0
-					arg_5_0._skipExp[iter_5_2] = false
-				end)
+				return
 			end
+
+			setText(uv6, "+" .. math.ceil(uv2:getExp() - uv1:getExp()))
+
+			if uv1.level == uv1:getMaxLevel() then
+				uv3:GetComponent(typeof(Image)).fillAmount = 1
+				uv4._skipExp[uv10] = false
+
+				return
+			end
+
+			uv4:PlayAnimation(uv5, uv1.exp / slot0, uv2.exp / slot0, 1, 0, function (slot0)
+				uv0:GetComponent(typeof(Image)).fillAmount = slot0
+				uv1._skipExp[uv2] = false
+			end)
 		end
 
-		arg_5_0._skipExp[iter_5_2] = function()
-			LeanTween.cancel(go(var_5_11))
-			LeanTween.cancel(go(var_5_6))
-			SetActive(var_5_6, true)
-			SetActive(var_5_13, true)
-			setText(var_5_10, var_5_5.level)
+		slot0._skipExp[slot8] = function ()
+			LeanTween.cancel(go(uv0))
+			LeanTween.cancel(go(uv1))
+			SetActive(uv1, true)
+			SetActive(uv2, true)
+			setText(uv3, uv4.level)
 
-			if iter_5_3.level == iter_5_3:getMaxLevel() then
-				setText(var_5_14, "+" .. math.ceil(var_5_5:getExp() - iter_5_3:getExp()))
+			if uv5.level == uv5:getMaxLevel() then
+				setText(uv6, "+" .. math.ceil(uv4:getExp() - uv5:getExp()))
 
-				var_5_15:GetComponent(typeof(Image)).fillAmount = 1
+				uv7:GetComponent(typeof(Image)).fillAmount = 1
 			else
-				if iter_5_3.level < var_5_5.level then
-					local var_17_0 = 0
-
-					for iter_17_0 = iter_5_3.level, var_5_5.level - 1 do
-						var_17_0 = var_17_0 + iter_5_3:getLevelExpConfig(iter_17_0).exp
+				if uv5.level < uv4.level then
+					for slot4 = uv5.level, uv4.level - 1 do
+						slot0 = 0 + uv5:getLevelExpConfig(slot4).exp
 					end
 
-					setText(var_5_14, "+" .. var_17_0 + var_5_5.exp - iter_5_3.exp)
+					setText(uv6, "+" .. slot0 + uv4.exp - uv5.exp)
 				else
-					setText(var_5_14, "+" .. math.ceil(var_5_5.exp - iter_5_3.exp))
+					setText(uv6, "+" .. math.ceil(uv4.exp - uv5.exp))
 				end
 
-				var_5_15:GetComponent(typeof(Image)).fillAmount = var_5_5.exp / var_5_5:getLevelExpConfig().exp
+				uv7:GetComponent(typeof(Image)).fillAmount = uv4.exp / uv4:getLevelExpConfig().exp
 			end
 
-			SetActive(var_5_11, false)
+			SetActive(uv0, false)
 
-			var_5_6:GetComponent("CanvasGroup").alpha = 1
-			rtf(var_5_6).anchoredPosition = Vector2(rtf(var_5_6).anchoredPosition.x, 0)
+			uv1:GetComponent("CanvasGroup").alpha = 1
+			rtf(uv1).anchoredPosition = Vector2(rtf(uv1).anchoredPosition.x, 0)
 		end
 
-		local var_5_17 = var_5_6:GetComponent("CanvasGroup")
-		local var_5_18 = iter_5_2 * 0.2
+		slot22 = slot11:GetComponent("CanvasGroup")
+		slot23 = slot8 * 0.2
 
-		setActive(var_5_6, false)
-		LeanTween.moveY(rtf(var_5_6), 0, 0.2):setOnComplete(System.Action(function()
-			setActive(var_5_6, true)
-			var_5_16()
-		end)):setDelay(var_5_18)
-		table.insert(arg_5_0.tweenTFs, var_5_6)
-		LeanTween.value(go(var_5_6), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_19_0)
-			var_5_17.alpha = arg_19_0
-		end)):setDelay(var_5_18)
+		setActive(slot11, false)
+		LeanTween.moveY(rtf(slot11), 0, 0.2):setOnComplete(System.Action(function ()
+			setActive(uv0, true)
+			uv1()
+		end)):setDelay(slot23)
+		table.insert(slot0.tweenTFs, slot11)
+		LeanTween.value(go(slot11), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
+			uv0.alpha = slot0
+		end)):setDelay(slot23)
 	end
 end
 
-function var_0_0.skip(arg_20_0)
-	if _.any(arg_20_0._skipExp, function(arg_21_0)
-		return arg_21_0
+function slot0.skip(slot0)
+	if _.any(slot0._skipExp, function (slot0)
+		return slot0
 	end) then
-		for iter_20_0 = 1, #arg_20_0._skipExp do
-			if arg_20_0._skipExp[iter_20_0] then
-				arg_20_0._skipExp[iter_20_0]()
+		for slot4 = 1, #slot0._skipExp do
+			if slot0._skipExp[slot4] then
+				slot0._skipExp[slot4]()
 
-				arg_20_0._skipExp[iter_20_0] = false
+				slot0._skipExp[slot4] = false
 			end
 		end
 	else
-		arg_20_0:emit(BaseUI.ON_CLOSE)
+		slot0:emit(BaseUI.ON_CLOSE)
 	end
 end
 
-function var_0_0.PlayAnimation(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4, arg_22_5, arg_22_6)
-	LeanTween.value(arg_22_1.gameObject, arg_22_2, arg_22_3, arg_22_4):setDelay(arg_22_5):setOnUpdate(System.Action_float(function(arg_23_0)
-		arg_22_6(arg_23_0)
+function slot0.PlayAnimation(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	LeanTween.value(slot1.gameObject, slot2, slot3, slot4):setDelay(slot5):setOnUpdate(System.Action_float(function (slot0)
+		uv0(slot0)
 	end))
-	table.insert(arg_22_0.tweenTFs, arg_22_1)
+	table.insert(slot0.tweenTFs, slot1)
 end
 
-function var_0_0.willExit(arg_24_0)
-	for iter_24_0, iter_24_1 in pairs(arg_24_0.tweenTFs) do
-		if LeanTween.isTweening(go(iter_24_1)) then
-			LeanTween.cancel(go(iter_24_1))
+function slot0.willExit(slot0)
+	for slot4, slot5 in pairs(slot0.tweenTFs) do
+		if LeanTween.isTweening(go(slot5)) then
+			LeanTween.cancel(go(slot5))
 		end
 	end
 
-	arg_24_0.tweenTFs = nil
+	slot0.tweenTFs = nil
 
-	for iter_24_2, iter_24_3 in pairs(arg_24_0.timerId) do
-		pg.TimeMgr.GetInstance():RemoveTimer(iter_24_3)
+	for slot4, slot5 in pairs(slot0.timerId) do
+		pg.TimeMgr.GetInstance():RemoveTimer(slot5)
 	end
 
-	arg_24_0.timerId = nil
+	slot0.timerId = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg_24_0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

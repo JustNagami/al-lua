@@ -1,454 +1,418 @@
-﻿local var_0_0 = class("AutoLoader")
-local var_0_1 = false
-local var_0_2 = false
-local var_0_3 = import("view.util.RequestPackages.LoadPrefabRequestPackage")
-local var_0_4 = import("view.util.RequestPackages.LoadReferenceRequestPackage")
-local var_0_5 = import("view.util.RequestPackages.LoadLive2dRequestPackage")
-local var_0_6 = import("view.util.RequestPackages.LoadBundleRequesetPackage")
-local var_0_7 = import("view.util.RequestPackages.GetSpineRequestPackage")
-local var_0_8 = import("view.util.RequestPackages.GetPrefabRequestPackage")
-local var_0_9 = import("view.util.RequestPackages.GetSpriteRequestPackage")
-local var_0_10 = import("view.util.RequestPackages.ReturnPrefabRequestPackage")
-local var_0_11 = import("view.util.RequestPackages.ReturnSpineRequestPackage")
-local var_0_12 = import("view.util.RequestPackages.UnloadBundleRequesetPackage")
-local var_0_13 = import("view.util.RequestPackages.DestroyAtlasPoolRequestPackage")
+slot0 = class("AutoLoader")
+slot1 = false
+slot2 = false
+slot3 = import("view.util.RequestPackages.LoadPrefabRequestPackage")
+slot4 = import("view.util.RequestPackages.LoadReferenceRequestPackage")
+slot5 = import("view.util.RequestPackages.LoadLive2dRequestPackage")
+slot6 = import("view.util.RequestPackages.LoadBundleRequesetPackage")
+slot7 = import("view.util.RequestPackages.GetSpineRequestPackage")
+slot8 = import("view.util.RequestPackages.GetPrefabRequestPackage")
+slot9 = import("view.util.RequestPackages.GetSpriteRequestPackage")
+slot10 = import("view.util.RequestPackages.ReturnPrefabRequestPackage")
+slot11 = import("view.util.RequestPackages.ReturnSpineRequestPackage")
+slot12 = import("view.util.RequestPackages.UnloadBundleRequesetPackage")
+slot13 = import("view.util.RequestPackages.DestroyAtlasPoolRequestPackage")
+slot0.PartLoading = bit.lshift(1, 0)
+slot0.PartLoaded = bit.lshift(1, 1)
 
-var_0_0.PartLoading = bit.lshift(1, 0)
-var_0_0.PartLoaded = bit.lshift(1, 1)
-
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0._loadingRequest = {}
-	arg_1_0._returnRequest = {}
-	arg_1_0._instKeyDict = {}
-	arg_1_0._keyInstDict = {}
-	arg_1_0._groupDict = {}
+function slot0.Ctor(slot0)
+	slot0._loadingRequest = {}
+	slot0._returnRequest = {}
+	slot0._instKeyDict = {}
+	slot0._keyInstDict = {}
+	slot0._groupDict = {}
 end
 
-function var_0_0.GenerateUID4LoadingRequest(arg_2_0)
-	arg_2_0._uidCounter = (arg_2_0._uidCounter or 0) + 1
+function slot0.GenerateUID4LoadingRequest(slot0)
+	slot0._uidCounter = (slot0._uidCounter or 0) + 1
 
-	assert(arg_2_0._uidCounter ~= 0, "Error on Generating UID Too much times")
+	assert(slot0._uidCounter ~= 0, "Error on Generating UID Too much times")
 
-	return arg_2_0._uidCounter
+	return slot0._uidCounter
 end
 
-function var_0_0.GetPrefab(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-	arg_3_2 = arg_3_2 or ""
+function slot0.GetPrefab(slot0, slot1, slot2, slot3, slot4)
+	slot0:ClearRequest(slot4)
 
-	arg_3_0:ClearRequest(arg_3_4)
+	slot4 = slot4 or slot0:GenerateUID4LoadingRequest()
+	slot5 = nil
+	slot5 = uv0.New(slot1, slot2 or "", function (slot0)
+		uv0._loadingRequest[uv1] = nil
+		uv0._instKeyDict[slot0] = uv1
+		uv0._keyInstDict[uv1] = slot0
+		uv0._returnRequest[uv1] = uv2.New(uv3, uv4, slot0)
 
-	arg_3_4 = arg_3_4 or arg_3_0:GenerateUID4LoadingRequest()
-
-	local var_3_0
-	local var_3_1 = var_0_8.New(arg_3_1, arg_3_2, function(arg_4_0)
-		arg_3_0._loadingRequest[arg_3_4] = nil
-		arg_3_0._instKeyDict[arg_4_0] = arg_3_4
-		arg_3_0._keyInstDict[arg_3_4] = arg_4_0
-		arg_3_0._returnRequest[arg_3_4] = var_0_10.New(arg_3_1, arg_3_2, arg_4_0)
-
-		if arg_3_3 then
-			arg_3_3(arg_4_0)
+		if uv5 then
+			uv5(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Path: " .. arg_3_1 .. " Name: " .. arg_3_2 .. " ;")
+	if uv2 then
+		print("AutoLoader Loading Path: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_3_0._loadingRequest[arg_3_4] = var_3_1
+	slot0._loadingRequest[slot4] = slot5
 
-	var_3_1:Start()
+	slot5:Start()
 
-	return arg_3_4
+	return slot4
 end
 
-function var_0_0.GetPrefabBYStopLoading(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	arg_5_2 = arg_5_2 or ""
+function slot0.GetPrefabBYStopLoading(slot0, slot1, slot2, slot3, slot4)
+	slot0:ClearRequest(slot4, uv0.PartLoading)
 
-	arg_5_0:ClearRequest(arg_5_4, var_0_0.PartLoading)
+	slot4 = slot4 or slot0:GenerateUID4LoadingRequest()
+	slot5 = nil
+	slot5 = uv1.New(slot1, slot2 or "", function (slot0)
+		uv0._loadingRequest[uv1] = nil
 
-	arg_5_4 = arg_5_4 or arg_5_0:GenerateUID4LoadingRequest()
+		uv0:ClearRequest(uv1, uv2.PartLoaded)
 
-	local var_5_0
-	local var_5_1 = var_0_8.New(arg_5_1, arg_5_2, function(arg_6_0)
-		arg_5_0._loadingRequest[arg_5_4] = nil
+		uv0._instKeyDict[slot0] = uv1
+		uv0._keyInstDict[uv1] = slot0
+		uv0._returnRequest[uv1] = uv3.New(uv4, uv5, slot0)
 
-		arg_5_0:ClearRequest(arg_5_4, var_0_0.PartLoaded)
-
-		arg_5_0._instKeyDict[arg_6_0] = arg_5_4
-		arg_5_0._keyInstDict[arg_5_4] = arg_6_0
-		arg_5_0._returnRequest[arg_5_4] = var_0_10.New(arg_5_1, arg_5_2, arg_6_0)
-
-		if arg_5_3 then
-			arg_5_3(arg_6_0)
+		if uv6 then
+			uv6(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Path: " .. arg_5_1 .. " Name: " .. arg_5_2 .. " ;")
+	if uv3 then
+		print("AutoLoader Loading Path: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_5_0._loadingRequest[arg_5_4] = var_5_1
+	slot0._loadingRequest[slot4] = slot5
 
-	var_5_1:Start()
+	slot5:Start()
 
-	return arg_5_4
+	return slot4
 end
 
-function var_0_0.GetPrefabBYGroup(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
-	local var_7_0 = arg_7_0:GetPrefab(arg_7_1, arg_7_2, arg_7_3)
+function slot0.GetPrefabBYGroup(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot0:GetPrefab(slot1, slot2, slot3)
+	slot0._groupDict[slot5] = slot4
 
-	arg_7_0._groupDict[var_7_0] = arg_7_4
-
-	return var_7_0
+	return slot5
 end
 
-function var_0_0.ReturnPrefab(arg_8_0, arg_8_1)
-	arg_8_0:ClearRequest(arg_8_0._instKeyDict[go(arg_8_1)])
+function slot0.ReturnPrefab(slot0, slot1)
+	slot0:ClearRequest(slot0._instKeyDict[go(slot1)])
 end
 
-function var_0_0.ReturnGroup(arg_9_0, arg_9_1)
-	if not arg_9_1 then
+function slot0.ReturnGroup(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0._groupDict) do
-		if iter_9_1 == arg_9_1 then
-			arg_9_0:ClearRequest(iter_9_0)
+	for slot5, slot6 in pairs(slot0._groupDict) do
+		if slot6 == slot1 then
+			slot0:ClearRequest(slot5)
 		end
 	end
 end
 
-function var_0_0.GetSpine(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-	if not arg_10_1 or #arg_10_1 < 0 then
+function slot0.GetSpine(slot0, slot1, slot2, slot3)
+	if not slot1 or #slot1 < 0 then
 		return
 	end
 
-	arg_10_1 = arg_10_1 or ""
+	slot0:ClearRequest(slot3)
 
-	arg_10_0:ClearRequest(arg_10_3)
+	slot3 = slot3 or slot0:GenerateUID4LoadingRequest()
+	slot4 = nil
+	slot4 = uv0.New(slot1 or "", function (slot0)
+		uv0._loadingRequest[uv1] = nil
+		uv0._instKeyDict[slot0] = uv1
+		uv0._keyInstDict[uv1] = slot0
+		uv0._returnRequest[uv1] = uv2.New(uv3, slot0)
 
-	arg_10_3 = arg_10_3 or arg_10_0:GenerateUID4LoadingRequest()
-
-	local var_10_0
-	local var_10_1 = var_0_7.New(arg_10_1, function(arg_11_0)
-		arg_10_0._loadingRequest[arg_10_3] = nil
-		arg_10_0._instKeyDict[arg_11_0] = arg_10_3
-		arg_10_0._keyInstDict[arg_10_3] = arg_11_0
-		arg_10_0._returnRequest[arg_10_3] = var_0_11.New(arg_10_1, arg_11_0)
-
-		if arg_10_2 then
-			arg_10_2(arg_11_0)
+		if uv4 then
+			uv4(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Spine: " .. arg_10_1 .. " ;")
+	if uv2 then
+		print("AutoLoader Loading Spine: " .. slot1 .. " ;")
 	end
 
-	arg_10_0._loadingRequest[arg_10_3] = var_10_1
+	slot0._loadingRequest[slot3] = slot4
 
-	var_10_1:Start()
+	slot4:Start()
 
-	return arg_10_3
+	return slot3
 end
 
-function var_0_0.ReturnSpine(arg_12_0, arg_12_1)
-	arg_12_0:ClearRequest(arg_12_0._instKeyDict[go(arg_12_1)])
+function slot0.ReturnSpine(slot0, slot1)
+	slot0:ClearRequest(slot0._instKeyDict[go(slot1)])
 end
 
-function var_0_0.GetSprite(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
-	arg_13_3:GetComponent(typeof(Image)).enabled = false
+function slot0.GetSprite(slot0, slot1, slot2, slot3, slot4)
+	slot3:GetComponent(typeof(Image)).enabled = false
 
-	return arg_13_0:GetSpriteQuiet(arg_13_1, arg_13_2, arg_13_3, arg_13_4)
+	return slot0:GetSpriteQuiet(slot1, slot2, slot3, slot4)
 end
 
-function var_0_0.GetSpriteQuiet(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
-	arg_14_2 = arg_14_2 or ""
+function slot0.GetSpriteQuiet(slot0, slot1, slot2, slot3, slot4)
+	slot5 = tf(slot3)
 
-	local var_14_0 = tf(arg_14_3)
+	slot0:GetSpriteDirect(slot1, slot2 or "", function (slot0)
+		slot1 = uv0:GetComponent(typeof(Image))
+		slot1.enabled = true
+		slot1.sprite = slot0
 
-	arg_14_0:GetSpriteDirect(arg_14_1, arg_14_2, function(arg_15_0)
-		local var_15_0 = arg_14_3:GetComponent(typeof(Image))
-
-		var_15_0.enabled = true
-		var_15_0.sprite = arg_15_0
-
-		if arg_14_4 then
-			var_15_0:SetNativeSize()
+		if uv1 then
+			slot1:SetNativeSize()
 		end
-	end, var_14_0)
+	end, slot5)
 
-	return var_14_0
+	return slot5
 end
 
-function var_0_0.GetSpriteDirect(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4)
-	arg_16_0:ClearRequest(arg_16_4)
+function slot0.GetSpriteDirect(slot0, slot1, slot2, slot3, slot4)
+	slot0:ClearRequest(slot4)
 
-	arg_16_4 = arg_16_4 or arg_16_0:GenerateUID4LoadingRequest()
+	slot4 = slot4 or slot0:GenerateUID4LoadingRequest()
+	slot5 = nil
+	slot5 = uv0.New(slot1, slot2, function (slot0)
+		uv0._loadingRequest[uv1] = nil
 
-	local var_16_0
-	local var_16_1 = var_0_9.New(arg_16_1, arg_16_2, function(arg_17_0)
-		arg_16_0._loadingRequest[arg_16_4] = nil
-
-		if arg_16_3 then
-			arg_16_3(arg_17_0)
+		if uv2 then
+			uv2(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Atlas: " .. arg_16_1 .. " Name: " .. arg_16_2 .. " ;")
+	if uv1 then
+		print("AutoLoader Loading Atlas: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_16_0._loadingRequest[arg_16_4] = var_16_1
+	slot0._loadingRequest[slot4] = slot5
 
-	var_16_1:Start()
+	slot5:Start()
 
-	arg_16_0._returnRequest[arg_16_1] = var_0_13.New(arg_16_1)
+	slot0._returnRequest[slot1] = uv2.New(slot1)
 
-	return arg_16_4
+	return slot4
 end
 
-function var_0_0.GetOffSpriteRequest(arg_18_0, arg_18_1)
-	arg_18_0:ClearRequest(arg_18_1)
+function slot0.GetOffSpriteRequest(slot0, slot1)
+	slot0:ClearRequest(slot1)
 end
 
-function var_0_0.LoadPrefab(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4)
-	arg_19_2 = arg_19_2 or ""
+function slot0.LoadPrefab(slot0, slot1, slot2, slot3, slot4)
+	slot0:ClearRequest(slot4)
 
-	arg_19_0:ClearRequest(arg_19_4)
+	slot4 = slot4 or slot0:GenerateUID4LoadingRequest()
+	slot5 = nil
+	slot5 = uv0.New(slot1, slot2 or "", function (slot0)
+		uv0._loadingRequest[uv1] = nil
 
-	arg_19_4 = arg_19_4 or arg_19_0:GenerateUID4LoadingRequest()
-
-	local var_19_0
-	local var_19_1 = var_0_3.New(arg_19_1, arg_19_2, function(arg_20_0)
-		arg_19_0._loadingRequest[arg_19_4] = nil
-
-		if arg_19_3 then
-			arg_19_3(arg_20_0)
+		if uv2 then
+			uv2(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Once Path: " .. arg_19_1 .. " Name: " .. arg_19_2 .. " ;")
+	if uv1 then
+		print("AutoLoader Loading Once Path: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_19_0._loadingRequest[arg_19_4] = var_19_1
+	slot0._loadingRequest[slot4] = slot5
 
-	var_19_1:Start()
+	slot5:Start()
 
-	return arg_19_4
+	return slot4
 end
 
-function var_0_0.LoadLive2D(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
-	local var_21_0
-	local var_21_1, var_21_2 = HXSet.autoHxShift("live2d/", arg_21_1)
+function slot0.LoadLive2D(slot0, slot1, slot2, slot3)
+	slot4 = nil
+	slot5, slot6 = HXSet.autoHxShift("live2d/", slot1)
 
-	arg_21_1 = var_21_2
+	slot0:ClearRequest(slot3)
 
-	local var_21_3 = var_21_1 .. arg_21_1
+	slot3 = slot3 or slot0:GenerateUID4LoadingRequest()
+	slot5 = nil
+	slot5 = uv0.New(slot5 .. slot6, slot1, function (slot0)
+		uv0._loadingRequest[uv1] = nil
 
-	arg_21_0:ClearRequest(arg_21_3)
-
-	arg_21_3 = arg_21_3 or arg_21_0:GenerateUID4LoadingRequest()
-
-	local var_21_4
-	local var_21_5 = var_0_5.New(var_21_3, arg_21_1, function(arg_22_0)
-		arg_21_0._loadingRequest[arg_21_3] = nil
-
-		if arg_21_2 then
-			arg_21_2(arg_22_0)
+		if uv2 then
+			uv2(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Live2D Once Path: " .. var_21_3 .. " Name: " .. arg_21_1 .. " ;")
+	if uv1 then
+		print("AutoLoader Loading Live2D Once Path: " .. slot4 .. " Name: " .. slot1 .. " ;")
 	end
 
-	arg_21_0._loadingRequest[arg_21_3] = var_21_5
+	slot0._loadingRequest[slot3] = slot5
 
-	var_21_5:Start()
+	slot5:Start()
 
-	return arg_21_3
+	return slot3
 end
 
-function var_0_0.LoadSprite(arg_23_0, arg_23_1, arg_23_2, arg_23_3, arg_23_4)
-	local var_23_0 = arg_23_3:GetComponent(typeof(Image))
+function slot0.LoadSprite(slot0, slot1, slot2, slot3, slot4)
+	slot3:GetComponent(typeof(Image)).enabled = false
 
-	var_23_0.enabled = false
-	arg_23_2 = arg_23_2 or ""
+	slot0:ClearRequest(tf(slot3))
 
-	local var_23_1 = tf(arg_23_3)
+	slot7 = nil
+	slot7 = uv0.New(slot1, slot2 or "", typeof(Sprite), function (slot0)
+		uv0._loadingRequest[uv1] = nil
+		uv2.enabled = true
+		uv2.sprite = slot0
 
-	arg_23_0:ClearRequest(var_23_1)
-
-	local var_23_2
-	local var_23_3 = var_0_4.New(arg_23_1, arg_23_2, typeof(Sprite), function(arg_24_0)
-		arg_23_0._loadingRequest[var_23_1] = nil
-		var_23_0.enabled = true
-		var_23_0.sprite = arg_24_0
-
-		if arg_23_4 then
-			var_23_0:SetNativeSize()
+		if uv3 then
+			uv2:SetNativeSize()
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Once Path: " .. arg_23_1 .. " Name: " .. arg_23_2 .. " ;")
+	if uv1 then
+		print("AutoLoader Loading Once Path: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_23_0._loadingRequest[var_23_1] = var_23_3
+	slot0._loadingRequest[slot6] = slot7
 
-	var_23_3:Start()
+	slot7:Start()
 
-	return var_23_1
+	return slot6
 end
 
-function var_0_0.LoadReference(arg_25_0, arg_25_1, arg_25_2, arg_25_3, arg_25_4, arg_25_5)
-	arg_25_2 = arg_25_2 or ""
+function slot0.LoadReference(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0:ClearRequest(slot5)
 
-	arg_25_0:ClearRequest(arg_25_5)
+	slot5 = slot5 or slot0:GenerateUID4LoadingRequest()
+	slot6 = nil
+	slot6 = uv0.New(slot1, slot2 or "", slot3, function (slot0)
+		uv0._loadingRequest[uv1] = nil
 
-	arg_25_5 = arg_25_5 or arg_25_0:GenerateUID4LoadingRequest()
-
-	local var_25_0
-	local var_25_1 = var_0_4.New(arg_25_1, arg_25_2, arg_25_3, function(arg_26_0)
-		arg_25_0._loadingRequest[arg_25_5] = nil
-
-		if arg_25_4 then
-			arg_25_4(arg_26_0)
+		if uv2 then
+			uv2(slot0)
 		end
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Once Path: " .. arg_25_1 .. " Name: " .. arg_25_2 .. " ;")
+	if uv1 then
+		print("AutoLoader Loading Once Path: " .. slot1 .. " Name: " .. slot2 .. " ;")
 	end
 
-	arg_25_0._loadingRequest[arg_25_5] = var_25_1
+	slot0._loadingRequest[slot5] = slot6
 
-	var_25_1:Start()
+	slot6:Start()
 
-	return arg_25_5
+	return slot5
 end
 
-function var_0_0.DestroyAtlas(arg_27_0, arg_27_1)
-	arg_27_0:ClearRequest(arg_27_1)
+function slot0.DestroyAtlas(slot0, slot1)
+	slot0:ClearRequest(slot1)
 end
 
-function var_0_0.LoadBundle(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = arg_28_0:GenerateUID4LoadingRequest()
-	local var_28_1
-	local var_28_2 = var_0_6.New(arg_28_1, function(arg_29_0)
-		arg_28_0._loadingRequest[var_28_0] = nil
-		arg_28_0._returnRequest[var_28_0] = var_0_12.New(arg_28_1)
+function slot0.LoadBundle(slot0, slot1, slot2)
+	slot3 = slot0:GenerateUID4LoadingRequest()
+	slot4 = nil
+	slot4 = uv0.New(slot1, function (slot0)
+		uv0._loadingRequest[uv1] = nil
+		uv0._returnRequest[uv1] = uv2.New(uv3)
 
-		existCall(arg_28_2, arg_29_0)
+		existCall(uv4, slot0)
 	end)
 
-	if var_0_1 then
-		print("AutoLoader Loading Bundle: " .. arg_28_1 .. " ;")
+	if uv2 then
+		print("AutoLoader Loading Bundle: " .. slot1 .. " ;")
 	end
 
-	arg_28_0._loadingRequest[var_28_0] = var_28_2
+	slot0._loadingRequest[slot3] = slot4
 
-	var_28_2:Start()
+	slot4:Start()
 
-	return var_28_0
+	return slot3
 end
 
-function var_0_0.GetRequestPackage(arg_30_0, arg_30_1, arg_30_2)
-	arg_30_2 = arg_30_2 or var_0_0.PartLoading + var_0_0.PartLoaded
+function slot0.GetRequestPackage(slot0, slot1, slot2)
+	slot2 = slot2 or uv0.PartLoading + uv0.PartLoaded
 
-	return bit.band(arg_30_2, var_0_0.PartLoading) > 0 and arg_30_0._loadingRequest[arg_30_1] or bit.band(arg_30_2, var_0_0.PartLoaded) > 0 and arg_30_0._returnRequest[arg_30_1] or nil
+	return bit.band(slot2, uv0.PartLoading) > 0 and slot0._loadingRequest[slot1] or bit.band(slot2, uv0.PartLoaded) > 0 and slot0._returnRequest[slot1] or nil
 end
 
-function var_0_0.GetLoadingRP(arg_31_0, arg_31_1)
-	return arg_31_0._loadingRequest[arg_31_1]
+function slot0.GetLoadingRP(slot0, slot1)
+	return slot0._loadingRequest[slot1]
 end
 
-function var_0_0.ClearRequest(arg_32_0, arg_32_1, arg_32_2)
-	if (not arg_32_2 or bit.band(arg_32_2, var_0_0.PartLoading) > 0) and arg_32_0._loadingRequest[arg_32_1] then
-		if var_0_2 then
-			local var_32_0 = arg_32_0._loadingRequest[arg_32_1]
+function slot0.ClearRequest(slot0, slot1, slot2)
+	if (not slot2 or bit.band(slot2, uv0.PartLoading) > 0) and slot0._loadingRequest[slot1] then
+		if uv1 then
+			slot3 = slot0._loadingRequest[slot1]
 
-			print("AutoLoader Unload loading Path: " .. var_32_0.path .. " Name: " .. var_32_0.name .. " ;")
+			print("AutoLoader Unload loading Path: " .. slot3.path .. " Name: " .. slot3.name .. " ;")
 		end
 
-		arg_32_0._loadingRequest[arg_32_1]:Stop()
+		slot0._loadingRequest[slot1]:Stop()
 
-		arg_32_0._loadingRequest[arg_32_1] = nil
+		slot0._loadingRequest[slot1] = nil
 	end
 
-	if not arg_32_2 or bit.band(arg_32_2, var_0_0.PartLoaded) > 0 then
-		if arg_32_0._returnRequest[arg_32_1] then
-			if var_0_2 then
-				local var_32_1 = arg_32_0._returnRequest[arg_32_1]
-
-				if isa(var_32_1, var_0_11) then
-					print("AutoLoader Unload Spine: " .. var_32_1.name .. " ;")
-				elseif isa(var_32_1, var_0_13) then
-					print("AutoLoader Unload Atlas: " .. var_32_1.path .. " ;")
-				elseif isa(var_32_1, var_0_12) then
-					print("AutoLoader Unload Bundle: " .. var_32_1.path .. " ;")
-				elseif isa(var_32_1, var_0_10) then
-					print("AutoLoader Unload Path: " .. var_32_1.path .. " Name: " .. var_32_1.name .. " ;")
+	if not slot2 or bit.band(slot2, uv0.PartLoaded) > 0 then
+		if slot0._returnRequest[slot1] then
+			if uv1 then
+				if isa(slot0._returnRequest[slot1], uv2) then
+					print("AutoLoader Unload Spine: " .. slot3.name .. " ;")
+				elseif isa(slot3, uv3) then
+					print("AutoLoader Unload Atlas: " .. slot3.path .. " ;")
+				elseif isa(slot3, uv4) then
+					print("AutoLoader Unload Bundle: " .. slot3.path .. " ;")
+				elseif isa(slot3, uv5) then
+					print("AutoLoader Unload Path: " .. slot3.path .. " Name: " .. slot3.name .. " ;")
 				end
 			end
 
-			arg_32_0._returnRequest[arg_32_1]:Start()
+			slot0._returnRequest[slot1]:Start()
 
-			arg_32_0._returnRequest[arg_32_1] = nil
+			slot0._returnRequest[slot1] = nil
 		end
 
-		if arg_32_0._keyInstDict[arg_32_1] then
-			arg_32_0._instKeyDict[arg_32_0._keyInstDict[arg_32_1]] = nil
-			arg_32_0._keyInstDict[arg_32_1] = nil
+		if slot0._keyInstDict[slot1] then
+			slot0._instKeyDict[slot0._keyInstDict[slot1]] = nil
+			slot0._keyInstDict[slot1] = nil
 		end
 	end
 
-	if arg_32_1 then
-		arg_32_0._groupDict[arg_32_1] = nil
+	if slot1 then
+		slot0._groupDict[slot1] = nil
 	end
 end
 
-function var_0_0.ClearLoadingRequests(arg_33_0)
-	for iter_33_0 in pairs(arg_33_0._loadingRequest) do
-		arg_33_0:ClearRequest(iter_33_0)
+function slot0.ClearLoadingRequests(slot0)
+	for slot4 in pairs(slot0._loadingRequest) do
+		slot0:ClearRequest(slot4)
 	end
 
-	table.clear(arg_33_0._loadingRequest)
+	table.clear(slot0._loadingRequest)
 end
 
-function var_0_0.ClearLoadedRequests(arg_34_0)
-	for iter_34_0 in pairs(arg_34_0._returnRequest) do
-		arg_34_0:ClearRequest(iter_34_0)
+function slot0.ClearLoadedRequests(slot0)
+	for slot4 in pairs(slot0._returnRequest) do
+		slot0:ClearRequest(slot4)
 	end
 
-	table.clear(arg_34_0._returnRequest)
+	table.clear(slot0._returnRequest)
 end
 
-function var_0_0.ClearRequests(arg_35_0)
-	arg_35_0:ClearLoadingRequests()
-	arg_35_0:ClearLoadedRequests()
-	table.clear(arg_35_0._instKeyDict)
-	table.clear(arg_35_0._keyInstDict)
+function slot0.ClearRequests(slot0)
+	slot0:ClearLoadingRequests()
+	slot0:ClearLoadedRequests()
+	table.clear(slot0._instKeyDict)
+	table.clear(slot0._keyInstDict)
 end
 
-function var_0_0.RegisterLoaded(arg_36_0, arg_36_1, arg_36_2)
-	arg_36_0._instKeyDict[arg_36_2] = arg_36_1
-	arg_36_0._keyInstDict[arg_36_1] = arg_36_2
-
-	local var_36_0 = {
-		Start = function()
-			Destroy(arg_36_2)
+function slot0.RegisterLoaded(slot0, slot1, slot2)
+	slot0._instKeyDict[slot2] = slot1
+	slot0._keyInstDict[slot1] = slot2
+	slot0._returnRequest[slot1] = {
+		Start = function ()
+			Destroy(uv0)
 		end
 	}
-
-	arg_36_0._returnRequest[arg_36_1] = var_36_0
 end
 
-function var_0_0.Clear(arg_38_0)
-	arg_38_0:ClearRequests()
+function slot0.Clear(slot0)
+	slot0:ClearRequests()
 end
 
-return var_0_0
+return slot0

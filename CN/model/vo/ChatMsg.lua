@@ -1,39 +1,39 @@
-﻿local var_0_0 = class("ChatMsg", import(".BaseVO"))
+slot0 = class("ChatMsg", import(".BaseVO"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	assert(arg_1_1, "type should be clarified.")
+function slot0.Ctor(slot0, slot1, slot2)
+	assert(slot1, "type should be clarified.")
 
-	arg_1_0.type = arg_1_1
-	arg_1_0.timestamp = arg_1_2.timestamp
-	arg_1_0.content = arg_1_2.content
-	arg_1_0.emojiId = arg_1_2.emojiId
-	arg_1_0.player = arg_1_2.player
+	slot0.type = slot1
+	slot0.timestamp = slot2.timestamp
+	slot0.content = slot2.content
+	slot0.emojiId = slot2.emojiId
+	slot0.player = slot2.player
 
-	if arg_1_0.player then
-		arg_1_0.playerId = arg_1_0.player.id
+	if slot0.player then
+		slot0.playerId = slot0.player.id
 	end
 
-	arg_1_0.unread = arg_1_2.unread or 0
-	arg_1_0.id = arg_1_2.id
-	arg_1_0.args = arg_1_2.args
-	arg_1_0.uniqueId = arg_1_2.uniqueId
-	arg_1_0.needBanRichText = true
+	slot0.unread = slot2.unread or 0
+	slot0.id = slot2.id
+	slot0.args = slot2.args
+	slot0.uniqueId = slot2.uniqueId
+	slot0.needBanRichText = true
 
-	if arg_1_2.richText then
-		arg_1_0.needBanRichText = false
+	if slot2.richText then
+		slot0.needBanRichText = false
 	end
 end
 
-function var_0_0.IsPublic(arg_2_0)
-	return arg_2_0.id ~= nil
+function slot0.IsPublic(slot0)
+	return slot0.id ~= nil
 end
 
-function var_0_0.IsWorldBossNotify(arg_3_0)
-	return arg_3_0.id == 4
+function slot0.IsWorldBossNotify(slot0)
+	return slot0.id == 4
 end
 
-function var_0_0.IsSame(arg_4_0, arg_4_1)
-	return arg_4_0.uniqueId == arg_4_1
+function slot0.IsSame(slot0, slot1)
+	return slot0.uniqueId == slot1
 end
 
-return var_0_0
+return slot0

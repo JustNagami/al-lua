@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatioByBulletTorpedo",
-				number = 0.2
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -170,5 +157,18 @@
 	stack = 1,
 	id = 17859,
 	icon = 17850,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatioByBulletTorpedo",
+				number = 0.2
+			}
+		}
+	}
 }

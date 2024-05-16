@@ -1,139 +1,128 @@
-﻿local var_0_0 = import(".DynamicCellView")
-local var_0_1 = import(".SpineCellView")
-local var_0_2 = class("FleetCellView", DecorateClass(var_0_0, var_0_1))
+slot2 = class("FleetCellView", DecorateClass(import(".DynamicCellView"), import(".SpineCellView")))
 
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
-	var_0_1.Ctor(arg_1_0)
-	var_0_1.InitCellTransform(arg_1_0)
+function slot2.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
+	uv1.Ctor(slot0)
+	uv1.InitCellTransform(slot0)
 
-	arg_1_0.tfArrow = arg_1_0.tf:Find("arrow")
-	arg_1_0.tfAmmo = arg_1_0.tf:Find("ammo")
-	arg_1_0.tfAmmoText = arg_1_0.tfAmmo:Find("text")
-	arg_1_0.tfOp = arg_1_0.tf:Find("op")
-	arg_1_0.tfIconRecorded = nil
-	arg_1_0.RecordedFlag = nil
+	slot0.tfArrow = slot0.tf:Find("arrow")
+	slot0.tfAmmo = slot0.tf:Find("ammo")
+	slot0.tfAmmoText = slot0.tfAmmo:Find("text")
+	slot0.tfOp = slot0.tf:Find("op")
+	slot0.tfIconRecorded = nil
+	slot0.RecordedFlag = nil
 end
 
-function var_0_2.GetOrder(arg_2_0)
+function slot2.GetOrder(slot0)
 	return ChapterConst.CellPriorityFleet
 end
 
-function var_0_2.showPoisonDamage(arg_3_0, arg_3_1)
-	local var_3_0 = "dexiv4_SLG_poison"
-	local var_3_1 = arg_3_0.tfShip.localPosition
+function slot2.showPoisonDamage(slot0, slot1)
+	slot2 = "dexiv4_SLG_poison"
+	slot3 = slot0.tfShip.localPosition
 
-	arg_3_0:GetLoader():GetPrefab("ui/" .. var_3_0, var_3_0, function(arg_4_0)
-		setParent(arg_4_0.transform, arg_3_0.tf, false)
-		LeanTween.moveY(arg_3_0.tfShip, var_3_1.y - 10, 0.1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+	slot0:GetLoader():GetPrefab("ui/" .. slot2, slot2, function (slot0)
+		setParent(slot0.transform, uv0.tf, false)
+		LeanTween.moveY(uv0.tfShip, uv1.y - 10, 0.1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
 
-		local var_4_0 = arg_4_0:GetComponent(typeof(ParticleSystemEvent))
+		if not IsNil(slot0:GetComponent(typeof(ParticleSystemEvent))) then
+			slot1:AddEndEvent(function ()
+				uv0.tfShip.localPosition = uv1
 
-		if not IsNil(var_4_0) then
-			var_4_0:AddEndEvent(function()
-				arg_3_0.tfShip.localPosition = var_3_1
+				uv0.loader:ClearRequest("PoisonDamage")
+				LeanTween.cancel(uv0.tfShip.gameObject)
 
-				arg_3_0.loader:ClearRequest("PoisonDamage")
-				LeanTween.cancel(arg_3_0.tfShip.gameObject)
-
-				if arg_3_1 then
-					arg_3_1()
+				if uv2 then
+					uv2()
 				end
 			end)
 		end
 	end, "PoisonDamage")
 end
 
-function var_0_2.SetActiveNoPassIcon(arg_6_0, arg_6_1)
-	local var_6_0 = "NoPassIcon"
-
-	if not arg_6_1 then
-		if arg_6_0.loader then
-			arg_6_0.loader:ClearRequest(var_6_0)
+function slot2.SetActiveNoPassIcon(slot0, slot1)
+	if not slot1 then
+		if slot0.loader then
+			slot0.loader:ClearRequest("NoPassIcon")
 		end
 	else
-		if arg_6_0:GetLoader():GetRequestPackage(var_6_0) then
+		if slot0:GetLoader():GetRequestPackage(slot2) then
 			return
 		end
 
-		local var_6_1 = "event_task_small"
+		slot4 = "event_task_small"
 
-		arg_6_0:GetLoader():GetPrefabBYStopLoading("boxprefab/" .. var_6_1, var_6_1, function(arg_7_0)
-			setParent(arg_7_0.transform, arg_6_0.tf, false)
+		slot0:GetLoader():GetPrefabBYStopLoading("boxprefab/" .. slot4, slot4, function (slot0)
+			setParent(slot0.transform, uv0.tf, false)
 
-			local var_7_0 = 150
+			slot1 = 150
 
-			setLocalPosition(arg_7_0, Vector3(0, var_7_0, 0))
-			LeanTween.moveY(rtf(arg_7_0), var_7_0 - 10, 1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
-		end, var_6_0)
+			setLocalPosition(slot0, Vector3(0, slot1, 0))
+			LeanTween.moveY(rtf(slot0), slot1 - 10, 1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+		end, slot2)
 	end
 end
 
-function var_0_2.UpdateIconRecordedFlag(arg_8_0, arg_8_1)
-	arg_8_0.RecordedFlag = arg_8_1
+function slot2.UpdateIconRecordedFlag(slot0, slot1)
+	slot0.RecordedFlag = slot1
 
-	arg_8_0:UpdateIconRecorded()
+	slot0:UpdateIconRecorded()
 end
 
-function var_0_2.UpdateIconRecorded(arg_9_0)
-	if not (arg_9_0.RecordedFlag and arg_9_0.visible) then
-		if not IsNil(arg_9_0.tfIconRecorded) then
-			setActive(arg_9_0.tfIconRecorded, false)
+function slot2.UpdateIconRecorded(slot0)
+	if not (slot0.RecordedFlag and slot0.visible) then
+		if not IsNil(slot0.tfIconRecorded) then
+			setActive(slot0.tfIconRecorded, false)
 		end
 	else
-		if IsNil(arg_9_0.tfIconRecorded) then
-			pg.PoolMgr.GetInstance():GetPrefab("effect/fleet_status_recorded", "", false, function(arg_10_0)
-				arg_9_0.tfIconRecorded = tf(arg_10_0)
+		if IsNil(slot0.tfIconRecorded) then
+			pg.PoolMgr.GetInstance():GetPrefab("effect/fleet_status_recorded", "", false, function (slot0)
+				uv0.tfIconRecorded = tf(slot0)
 
-				setParent(arg_10_0, arg_9_0.tf, false)
+				setParent(slot0, uv0.tf, false)
 			end)
 		end
 
-		setActive(arg_9_0.tfIconRecorded, true)
+		setActive(slot0.tfIconRecorded, true)
 	end
 end
 
-function var_0_2.TweenShining(arg_11_0)
-	local var_11_0 = arg_11_0:GetSpineRole()
-
-	if not var_11_0 then
+function slot2.TweenShining(slot0)
+	if not slot0:GetSpineRole() then
 		return
 	end
 
-	local var_11_1 = Color.black
-	local var_11_2 = Color.gray
+	slot2 = Color.black
+	slot3 = Color.gray
+	slot2.a = 0
+	slot3.a = 0
 
-	var_11_1.a = 0
-	var_11_2.a = 0
-
-	var_11_0:TweenShining(0.2, 2, 0, 1, var_11_1, var_11_2, true, true)
+	slot1:TweenShining(0.2, 2, 0, 1, slot2, slot3, true, true)
 end
 
-function var_0_2.SetSpineVisible(arg_12_0, arg_12_1)
-	arg_12_0.visible = arg_12_1
+function slot2.SetSpineVisible(slot0, slot1)
+	slot0.visible = slot1
 
-	var_0_2.super.SetSpineVisible(arg_12_0, arg_12_1)
-	setActive(arg_12_0.tfShadow, arg_12_1)
-	arg_12_0:UpdateIconRecorded()
+	uv0.super.SetSpineVisible(slot0, slot1)
+	setActive(slot0.tfShadow, slot1)
+	slot0:UpdateIconRecorded()
 end
 
-function var_0_2.StopTween(arg_13_0)
-	local var_13_0 = arg_13_0:GetSpineRole()
-
-	if not var_13_0 then
+function slot2.StopTween(slot0)
+	if not slot0:GetSpineRole() then
 		return
 	end
 
-	var_13_0:StopTweenShining()
+	slot1:StopTweenShining()
 end
 
-function var_0_2.unloadSpine(arg_14_0)
-	var_0_2.super.UnloadSpine(arg_14_0)
+function slot2.unloadSpine(slot0)
+	uv0.super.UnloadSpine(slot0)
 end
 
-function var_0_2.Clear(arg_15_0)
-	var_0_1.ClearSpine(arg_15_0)
-	var_0_2.super.Clear(arg_15_0)
+function slot2.Clear(slot0)
+	uv0.ClearSpine(slot0)
+	uv1.super.Clear(slot0)
 end
 
-return var_0_2
+return slot2

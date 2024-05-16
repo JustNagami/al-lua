@@ -1,96 +1,86 @@
-﻿local var_0_0 = class("Favorite", import(".BaseVO"))
+slot0 = class("Favorite", import(".BaseVO"))
+slot0.STATE_AWARD = 1
+slot0.STATE_WAIT = 2
+slot0.STATE_LOCK = 3
+slot0.STATE_FETCHED = 4
 
-var_0_0.STATE_AWARD = 1
-var_0_0.STATE_WAIT = 2
-var_0_0.STATE_LOCK = 3
-var_0_0.STATE_FETCHED = 4
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.configId = arg_1_1.id
-	arg_1_0.id = arg_1_0.configId
-	arg_1_0.star = arg_1_1.star
+function slot0.Ctor(slot0, slot1)
+	slot0.configId = slot1.id
+	slot0.id = slot0.configId
+	slot0.star = slot1.star
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.storeup_data_template
 end
 
-function var_0_0.getStarCount(arg_3_0, arg_3_1)
-	local var_3_0 = 0
+function slot0.getStarCount(slot0, slot1)
+	slot6 = "char_list"
 
-	for iter_3_0, iter_3_1 in pairs(arg_3_0:getConfig("char_list")) do
-		if arg_3_1[iter_3_1] then
-			var_3_0 = var_3_0 + arg_3_1[iter_3_1].star
+	for slot6, slot7 in pairs(slot0:getConfig(slot6)) do
+		if slot1[slot7] then
+			slot2 = 0 + slot1[slot7].star
 		end
 	end
 
-	return var_3_0
+	return slot2
 end
 
-function var_0_0.getNextAwardIndex(arg_4_0, arg_4_1)
-	local var_4_0 = 1
+function slot0.getNextAwardIndex(slot0, slot1)
+	slot2 = 1
 
-	if arg_4_1[arg_4_0.id] then
-		var_4_0 = arg_4_1[arg_4_0.id] + 1
+	if slot1[slot0.id] then
+		slot2 = slot1[slot0.id] + 1
 	end
 
-	return var_4_0
+	return slot2
 end
 
-function var_0_0.isFetchAll(arg_5_0, arg_5_1)
-	return (arg_5_1[arg_5_0.id] or 0) >= #arg_5_0:getConfig("level")
+function slot0.isFetchAll(slot0, slot1)
+	return (slot1[slot0.id] or 0) >= #slot0:getConfig("level")
 end
 
-function var_0_0.canGetRes(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0:getNextAwardIndex(arg_6_2)
-	local var_6_1 = arg_6_0:getConfig("award_display")
-	local var_6_2 = arg_6_0:getStarCount(arg_6_1)
-	local var_6_3 = false
+function slot0.canGetRes(slot0, slot1, slot2)
+	slot6 = false
 
-	if var_6_0 <= #var_6_1 then
-		var_6_3 = true
+	if slot0:getNextAwardIndex(slot2) <= #slot0:getConfig("award_display") then
+		slot6 = true
 
-		if var_6_2 >= arg_6_0:getConfig("level")[var_6_0] then
+		if slot0:getConfig("level")[slot3] <= slot0:getStarCount(slot1) then
 			return true
 		end
 	end
 
-	return false, var_6_3
+	return false, slot6
 end
 
-function var_0_0.getState(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_2[arg_7_0.id]
-	local var_7_1, var_7_2 = arg_7_0:canGetRes(arg_7_1, arg_7_2)
-	local var_7_3 = arg_7_0:isFetchAll(arg_7_2)
+function slot0.getState(slot0, slot1, slot2)
+	slot3 = slot2[slot0.id]
+	slot4, slot5 = slot0:canGetRes(slot1, slot2)
+	slot6 = slot0:isFetchAll(slot2)
 
-	if var_7_1 then
-		return var_0_0.STATE_AWARD
-	elseif var_7_3 then
-		return var_0_0.STATE_FETCHED
+	if slot4 then
+		return uv0.STATE_AWARD
+	elseif slot6 then
+		return uv0.STATE_FETCHED
 	else
-		return var_7_2 and var_0_0.STATE_WAIT or var_0_0.STATE_LOCK
+		return slot5 and uv0.STATE_WAIT or uv0.STATE_LOCK
 	end
 end
 
-function var_0_0.getAwardState(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = arg_8_2[arg_8_0.id] or 0
-	local var_8_1 = arg_8_0:getConfig("level")
-	local var_8_2 = arg_8_0:getConfig("award_display")
-
-	if var_8_1[arg_8_3] <= arg_8_0:getStarCount(arg_8_1) then
-		return var_8_0 < arg_8_3 and (var_8_2[arg_8_3] and var_0_0.STATE_AWARD or var_0_0.STATE_LOCK) or var_0_0.STATE_FETCHED
+function slot0.getAwardState(slot0, slot1, slot2, slot3)
+	if slot0:getConfig("level")[slot3] <= slot0:getStarCount(slot1) then
+		return (slot2[slot0.id] or 0) < slot3 and (slot0:getConfig("award_display")[slot3] and uv0.STATE_AWARD or uv0.STATE_LOCK) or uv0.STATE_FETCHED
 	else
-		return var_8_2[arg_8_3] and var_0_0.STATE_WAIT or var_0_0.STATE_LOCK
+		return slot6[slot3] and uv0.STATE_WAIT or uv0.STATE_LOCK
 	end
 end
 
-function var_0_0.containShipGroup(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0:getConfig("award_display")
-
-	return _.any(var_9_0, function(arg_10_0)
-		if arg_10_0[1] == DROP_TYPE_SHIP and Ship.New({
-			configId = arg_10_0[2]
-		}):getGroupId() == arg_9_1 then
+function slot0.containShipGroup(slot0, slot1)
+	return _.any(slot0:getConfig("award_display"), function (slot0)
+		if slot0[1] == DROP_TYPE_SHIP and Ship.New({
+			configId = slot0[2]
+		}):getGroupId() == uv0 then
 			return true
 		end
 
@@ -98,4 +88,4 @@ function var_0_0.containShipGroup(arg_9_0, arg_9_1)
 	end)
 end
 
-return var_0_0
+return slot0

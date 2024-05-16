@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行8次攻击，触发专属弹幕-马赛曲II"
+	},
+	desc_get = "主炮每进行8次攻击，触发专属弹幕-马赛曲II",
+	name = "专属弹幕-马赛曲II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发专属弹幕-马赛曲II",
+	stack = 1,
+	id = 30082,
+	icon = 30080,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 30080
 			}
 		}
-	},
-	{
-		desc = "主炮每进行8次攻击，触发专属弹幕-马赛曲II"
-	},
-	desc_get = "主炮每进行8次攻击，触发专属弹幕-马赛曲II",
-	name = "专属弹幕-马赛曲II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发专属弹幕-马赛曲II",
-	stack = 1,
-	id = 30082,
-	icon = 30080,
-	last_effect = ""
+	}
 }

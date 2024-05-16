@@ -1,73 +1,71 @@
-﻿local var_0_0 = import(".View")
-local var_0_1 = import("..patterns.observer.Observer")
-local var_0_2 = class("Controller")
+slot0 = import(".View")
+slot1 = import("..patterns.observer.Observer")
+slot2 = class("Controller")
 
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	if var_0_2.instanceMap[arg_1_1] ~= nil then
-		error(var_0_2.MULTITON_MSG)
+function slot2.Ctor(slot0, slot1)
+	if uv0.instanceMap[slot1] ~= nil then
+		error(uv0.MULTITON_MSG)
 	end
 
-	arg_1_0.multitonKey = arg_1_1
-	var_0_2.instanceMap[arg_1_0.multitonKey] = arg_1_0
-	arg_1_0.commandMap = {}
+	slot0.multitonKey = slot1
+	uv0.instanceMap[slot0.multitonKey] = slot0
+	slot0.commandMap = {}
 
-	arg_1_0:initializeController()
+	slot0:initializeController()
 end
 
-function var_0_2.initializeController(arg_2_0)
-	arg_2_0.view = var_0_0.getInstance(arg_2_0.multitonKey)
+function slot2.initializeController(slot0)
+	slot0.view = uv0.getInstance(slot0.multitonKey)
 end
 
-function var_0_2.getInstance(arg_3_0)
-	if arg_3_0 == nil then
+function slot2.getInstance(slot0)
+	if slot0 == nil then
 		return nil
 	end
 
-	if var_0_2.instanceMap[arg_3_0] == nil then
-		return var_0_2.New(arg_3_0)
+	if uv0.instanceMap[slot0] == nil then
+		return uv0.New(slot0)
 	else
-		return var_0_2.instanceMap[arg_3_0]
+		return uv0.instanceMap[slot0]
 	end
 end
 
-function var_0_2.executeCommand(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0.commandMap[arg_4_1:getName()]
-
-	if var_4_0 == nil then
+function slot2.executeCommand(slot0, slot1)
+	if slot0.commandMap[slot1:getName()] == nil then
 		return
 	end
 
-	local var_4_1 = var_4_0.New()
+	slot3 = slot2.New()
 
-	var_4_1:initializeNotifier(arg_4_0.multitonKey)
-	var_4_1:execute(arg_4_1)
+	slot3:initializeNotifier(slot0.multitonKey)
+	slot3:execute(slot1)
 end
 
-function var_0_2.registerCommand(arg_5_0, arg_5_1, arg_5_2)
-	if arg_5_0.commandMap[arg_5_1] == nil then
-		arg_5_0.view:registerObserver(arg_5_1, var_0_1.New(arg_5_0.executeCommand, arg_5_0))
+function slot2.registerCommand(slot0, slot1, slot2)
+	if slot0.commandMap[slot1] == nil then
+		slot0.view:registerObserver(slot1, uv0.New(slot0.executeCommand, slot0))
 	end
 
-	arg_5_0.commandMap[arg_5_1] = arg_5_2
+	slot0.commandMap[slot1] = slot2
 end
 
-function var_0_2.hasCommand(arg_6_0, arg_6_1)
-	return arg_6_0.commandMap[arg_6_1] ~= nil
+function slot2.hasCommand(slot0, slot1)
+	return slot0.commandMap[slot1] ~= nil
 end
 
-function var_0_2.removeCommand(arg_7_0, arg_7_1)
-	if arg_7_0:hasCommand(arg_7_1) then
-		arg_7_0.view:removeObserver(arg_7_1, arg_7_0)
+function slot2.removeCommand(slot0, slot1)
+	if slot0:hasCommand(slot1) then
+		slot0.view:removeObserver(slot1, slot0)
 
-		arg_7_0.commandMap[arg_7_1] = nil
+		slot0.commandMap[slot1] = nil
 	end
 end
 
-function var_0_2.removeController(arg_8_0)
-	var_0_2.instanceMap[arg_8_0] = nil
+function slot2.removeController(slot0)
+	uv0.instanceMap[slot0] = nil
 end
 
-var_0_2.instanceMap = {}
-var_0_2.MULTITON_MSG = "controller key for this Multiton key already constructed"
+slot2.instanceMap = {}
+slot2.MULTITON_MSG = "controller key for this Multiton key already constructed"
 
-return var_0_2
+return slot2

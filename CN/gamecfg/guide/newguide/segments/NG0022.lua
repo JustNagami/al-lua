@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"点击打开装备研发界面",
 	"可以查看不同类型装备的研发路线。",
 	"拖动屏幕可查看研发路线的后续内容。",
@@ -32,7 +32,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -60.9,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/SelectTechnologyUI(Clone)/frame/bg/transform_btn",
@@ -55,7 +55,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -396.33,
-				text = var_0_0[2],
+				text = slot0[2],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/EquipmentTransformTreeUI(Clone)/Adapt/Left/EquipmentTypes/ViewPort/Content"
 				}
@@ -67,7 +67,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -65.8,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -77,7 +77,7 @@ return {
 				mode = 1,
 				posY = -253.44,
 				posX = 151.52,
-				text = var_0_0[4]
+				text = slot0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/EquipmentTransformTreeUI(Clone)/Adapt/Right/ViewPort/Content/11060/Item",
@@ -100,7 +100,7 @@ return {
 				mode = 1,
 				posY = -251.52,
 				posX = -122.97,
-				text = var_0_0[5],
+				text = slot0[5],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/SourceEquip/Item"
 				}
@@ -113,7 +113,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = -396.56,
-				text = var_0_0[6],
+				text = slot0[6],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/MaterialModule1/Item"
 				}
@@ -126,7 +126,7 @@ return {
 				mode = 1,
 				posY = -215.3,
 				posX = 337.29,
-				text = var_0_0[7],
+				text = slot0[7],
 				ui = {
 					path = "OverlayCamera/Overlay/UIMain/EquipmentTransformUI(Clone)/Adapt/ComposePanel"
 				}

@@ -1,61 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id_list = {
-					386
-				}
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id_list = {
-					387
-				}
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id_list = {
-					389
-				}
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id_list = {
-					388
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -654,5 +597,62 @@
 	stack = 1,
 	id = 15172,
 	icon = 15170,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id_list = {
+					386
+				}
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id_list = {
+					387
+				}
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id_list = {
+					389
+				}
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id_list = {
+					388
+				}
+			}
+		}
+	}
 }

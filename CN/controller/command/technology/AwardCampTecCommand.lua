@@ -1,32 +1,30 @@
-﻿local var_0_0 = class("AwardCampTecCommand", pm.SimpleCommand)
+slot0 = class("AwardCampTecCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.groupID
-	local var_1_2 = var_1_0.tecID
-	local var_1_3 = {
-		group_id = var_1_1,
-		tech_id = var_1_2
-	}
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.groupID
+	slot4 = slot2.tecID
 
-	print("64005 Get TecCamp Award", var_1_1, var_1_2)
-	pg.ConnectionMgr.GetInstance():Send(64005, var_1_3, 64006, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.rewards)
-			local var_2_1 = getProxy(TechnologyNationProxy)
+	print("64005 Get TecCamp Award", slot3, slot4)
+	pg.ConnectionMgr.GetInstance():Send(64005, {
+		group_id = slot3,
+		tech_id = slot4
+	}, 64006, function (slot0)
+		if slot0.result == 0 then
+			slot2 = getProxy(TechnologyNationProxy)
 
-			var_2_1:updateTecItemAward(var_1_1, var_1_2)
-			arg_1_0:sendNotification(TechnologyConst.GOT_TEC_CAMP_AWARD, {
-				awardList = var_2_0,
-				groupID = var_1_1,
-				tecID = var_1_2
+			slot2:updateTecItemAward(uv0, uv1)
+			uv2:sendNotification(TechnologyConst.GOT_TEC_CAMP_AWARD, {
+				awardList = PlayerConst.addTranDrop(slot0.rewards),
+				groupID = uv0,
+				tecID = uv1
 			})
-			var_2_1:refreshRedPoint()
-			arg_1_0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
+			slot2:refreshRedPoint()
+			uv2:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
 		else
-			pg.TipsMgr.GetInstance():ShowTips("64005 Error Code:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("64005 Error Code:" .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,26 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffHOT",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 3,
-				number = 6
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				skill_id = 101123,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -269,5 +247,27 @@
 	stack = 1,
 	id = 101123,
 	icon = 101123,
-	last_effect = "Health"
+	last_effect = "Health",
+	effect_list = {
+		{
+			type = "BattleBuffHOT",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 3,
+				number = 6
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				skill_id = 101123,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

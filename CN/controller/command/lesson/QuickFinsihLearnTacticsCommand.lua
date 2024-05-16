@@ -1,46 +1,43 @@
-﻿local var_0_0 = class("QuickFinsihLearnTacticsCommand", pm.SimpleCommand)
+slot0 = class("QuickFinsihLearnTacticsCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipId
-	local var_1_2 = getProxy(NavalAcademyProxy)
-	local var_1_3 = var_1_0.callback
-	local var_1_4 = var_1_0.onConfirm
-	local var_1_5 = var_1_2:getStudentById(var_1_1)
-	local var_1_6 = getProxy(BayProxy)
-	local var_1_7 = var_1_6:getShipById(var_1_5.shipId)
-	local var_1_8 = var_1_5:getSkillId(var_1_7)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.shipId
+	slot5 = slot2.callback
+	slot6 = slot2.onConfirm
+	slot7 = getProxy(NavalAcademyProxy):getStudentById(slot3)
+	slot10 = slot7:getSkillId(getProxy(BayProxy):getShipById(slot7.shipId))
 
 	pg.ConnectionMgr.GetInstance():Send(22014, {
-		roomid = var_1_1
-	}, 22015, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_2:updateUsedDailyFinishCnt()
-			arg_1_0:sendNotification(GAME.QUICK_FINISH_LEARN_TACTICS_DONE)
+		roomid = slot3
+	}, 22015, function (slot0)
+		if slot0.result == 0 then
+			uv0:updateUsedDailyFinishCnt()
+			uv1:sendNotification(GAME.QUICK_FINISH_LEARN_TACTICS_DONE)
 
-			local var_2_0 = Clone(var_1_7.skills[var_1_8])
+			slot1 = Clone(uv2.skills[uv3])
 
-			var_1_7:addSkillExp(var_2_0.id, var_1_5.exp)
-			var_1_6:updateShip(var_1_7)
-			var_1_2:SaveRecentShip(var_1_5.shipId)
-			var_1_2:deleteStudent(var_1_1)
-			arg_1_0:sendNotification(GAME.CANCEL_LEARN_TACTICS_DONE, {
-				id = var_1_1,
-				shipId = var_1_5.shipId,
-				totalExp = var_1_5.exp,
-				oldSkill = var_2_0,
-				newSkill = var_1_7.skills[var_1_8],
-				onConfirm = var_1_4,
-				newShipVO = var_1_7
+			uv2:addSkillExp(slot1.id, uv4.exp)
+			uv5:updateShip(uv2)
+			uv0:SaveRecentShip(uv4.shipId)
+			uv0:deleteStudent(uv6)
+			uv1:sendNotification(GAME.CANCEL_LEARN_TACTICS_DONE, {
+				id = uv6,
+				shipId = uv4.shipId,
+				totalExp = uv4.exp,
+				oldSkill = slot1,
+				newSkill = uv2.skills[uv3],
+				onConfirm = uv7,
+				newShipVO = uv2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_quickfinsh", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_quickfinsh", slot0.result))
 		end
 
-		if var_1_3 ~= nil then
-			var_1_3()
+		if uv8 ~= nil then
+			uv8()
 		end
 	end)
 end
 
-return var_0_0
+return slot0

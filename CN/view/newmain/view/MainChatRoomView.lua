@@ -1,226 +1,194 @@
-﻿local var_0_0 = class("MainChatRoomView", import("view.base.BaseEventLogic"))
-local var_0_1 = 4
+slot0 = class("MainChatRoomView", import("view.base.BaseEventLogic"))
+slot1 = 4
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot2)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._tf = arg_1_1
-	arg_1_0._go = arg_1_1.gameObject
-
-	local var_1_0 = arg_1_1:Find("item")
-
-	arg_1_0.items = {
-		var_1_0
+	slot0._tf = slot1
+	slot0._go = slot1.gameObject
+	slot3 = slot1:Find("item")
+	slot0.items = {
+		slot3
 	}
-	arg_1_0.tplInitPosY = var_1_0.anchoredPosition.y
-	arg_1_0.enableBtn = arg_1_1:Find("enable")
-	arg_1_0.disableBtn = arg_1_1:Find("disable")
-	arg_1_0.btn = arg_1_1:GetComponent(typeof(Button))
-	arg_1_0.empty = arg_1_1:Find("empty"):GetComponent(typeof(Text))
+	slot0.tplInitPosY = slot3.anchoredPosition.y
+	slot0.enableBtn = slot1:Find("enable")
+	slot0.disableBtn = slot1:Find("disable")
+	slot0.btn = slot1:GetComponent(typeof(Button))
+	slot0.empty = slot1:Find("empty"):GetComponent(typeof(Text))
 
-	arg_1_0:RegisterEvent(arg_1_2)
+	slot0:RegisterEvent(slot2)
 end
 
-function var_0_0.RegisterEvent(arg_2_0, arg_2_1)
-	arg_2_0:bind(NewMainScene.ON_REMOVE_LAYER, function(arg_3_0, arg_3_1)
-		arg_2_0:OnRemoveLayer(arg_3_1)
+function slot0.RegisterEvent(slot0, slot1)
+	slot0:bind(NewMainScene.ON_REMOVE_LAYER, function (slot0, slot1)
+		uv0:OnRemoveLayer(slot1)
 	end)
-	arg_2_0:bind(NewMainScene.ON_CHAT_MSG_UPDATE, function(arg_4_0)
-		arg_2_0:OnUpdateChatMsg()
+	slot0:bind(NewMainScene.ON_CHAT_MSG_UPDATE, function (slot0)
+		uv0:OnUpdateChatMsg()
 	end)
 
-	arg_2_0.hideChatFlag = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
+	slot0.hideChatFlag = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
 
-	onButton(arg_2_0, arg_2_0._tf, function()
-		if not arg_2_0.hideChatFlag or arg_2_0.hideChatFlag ~= 1 then
-			arg_2_0:emit(NewMainMediator.OPEN_CHATVIEW)
+	onButton(slot0, slot0._tf, function ()
+		if not uv0.hideChatFlag or uv0.hideChatFlag ~= 1 then
+			uv0:emit(NewMainMediator.OPEN_CHATVIEW)
 		end
 	end, SFX_MAIN)
-	onButton(arg_2_0, arg_2_0.enableBtn, function()
-		arg_2_0:SwitchState()
+	onButton(slot0, slot0.enableBtn, function ()
+		uv0:SwitchState()
 	end, SFX_MAIN)
-	onButton(arg_2_0, arg_2_0.disableBtn, function()
-		arg_2_0:SwitchState()
+	onButton(slot0, slot0.disableBtn, function ()
+		uv0:SwitchState()
 	end, SFX_MAIN)
-	arg_2_0:UpdateBtnState()
+	slot0:UpdateBtnState()
 end
 
-function var_0_0.SwitchState(arg_8_0)
-	local var_8_0 = arg_8_0.hideChatFlag and arg_8_0.hideChatFlag == 1
-	local var_8_1 = var_8_0 and "show_chat_warning" or "hide_chat_warning"
-
+function slot0.SwitchState(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n(var_8_1),
-		onYes = function()
-			local var_9_0 = var_8_0 and 0 or 1
+		content = i18n(slot0.hideChatFlag and slot0.hideChatFlag == 1 and "show_chat_warning" or "hide_chat_warning"),
+		onYes = function ()
+			PlayerPrefs.SetInt(HIDE_CHAT_FLAG, uv0 and 0 or 1)
 
-			PlayerPrefs.SetInt(HIDE_CHAT_FLAG, var_9_0)
+			uv1.hideChatFlag = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
 
-			arg_8_0.hideChatFlag = PlayerPrefs.GetInt(HIDE_CHAT_FLAG)
-
-			arg_8_0:UpdateBtnState()
+			uv1:UpdateBtnState()
 		end
 	})
 end
 
-function var_0_0.UpdateBtnState(arg_10_0)
-	local var_10_0 = arg_10_0.hideChatFlag and arg_10_0.hideChatFlag == 1
+function slot0.UpdateBtnState(slot0)
+	slot1 = slot0.hideChatFlag and slot0.hideChatFlag == 1
 
-	setActive(arg_10_0.enableBtn, var_10_0)
-	setActive(arg_10_0.disableBtn, not var_10_0)
+	setActive(slot0.enableBtn, slot1)
+	setActive(slot0.disableBtn, not slot1)
 
-	if var_10_0 then
-		arg_10_0:Clear()
+	if slot1 then
+		slot0:Clear()
 	end
 
-	arg_10_0.btn.enabled = not var_10_0
+	slot0.btn.enabled = not slot1
 end
 
-function var_0_0.OnRemoveLayer(arg_11_0, arg_11_1)
-	if arg_11_1.mediator == NotificationMediator then
-		arg_11_0:Update()
+function slot0.OnRemoveLayer(slot0, slot1)
+	if slot1.mediator == NotificationMediator then
+		slot0:Update()
 	end
 end
 
-function var_0_0.OnUpdateChatMsg(arg_12_0)
-	arg_12_0:Update()
+function slot0.OnUpdateChatMsg(slot0)
+	slot0:Update()
 end
 
-function var_0_0.Init(arg_13_0)
-	arg_13_0:Update()
+function slot0.Init(slot0)
+	slot0:Update()
 end
 
-function var_0_0.Refresh(arg_14_0)
-	arg_14_0:Update()
+function slot0.Refresh(slot0)
+	slot0:Update()
 end
 
-function var_0_0.Disable(arg_15_0)
-	arg_15_0.lposX = nil
+function slot0.Disable(slot0)
+	slot0.lposX = nil
 end
 
-function var_0_0.Update(arg_16_0)
-	if arg_16_0.hideChatFlag and arg_16_0.hideChatFlag == 1 then
+function slot0.Update(slot0)
+	if slot0.hideChatFlag and slot0.hideChatFlag == 1 then
 		return
 	end
 
-	local var_16_0 = getProxy(ChatProxy):GetAllTypeChatMessages(var_0_1)
-
-	arg_16_0:UpdateMessages(var_16_0)
+	slot0:UpdateMessages(getProxy(ChatProxy):GetAllTypeChatMessages(uv0))
 end
 
-function var_0_0.InstantiateMsgTpl(arg_17_0, arg_17_1)
-	for iter_17_0 = #arg_17_0.items + 1, arg_17_1 do
-		local var_17_0 = Object.Instantiate(arg_17_0.items[1], arg_17_0.items[1].parent)
-
-		table.insert(arg_17_0.items, var_17_0)
+function slot0.InstantiateMsgTpl(slot0, slot1)
+	for slot6 = #slot0.items + 1, slot1 do
+		table.insert(slot0.items, Object.Instantiate(slot0.items[1], slot0.items[1].parent))
 	end
 
-	for iter_17_1 = #arg_17_0.items, arg_17_1 + 1, -1 do
-		setActive(arg_17_0.items[iter_17_1], false)
+	for slot6 = #slot0.items, slot1 + 1, -1 do
+		setActive(slot0.items[slot6], false)
 	end
 end
 
-function var_0_0.UpdateMessages(arg_18_0, arg_18_1)
-	arg_18_0:InstantiateMsgTpl(#arg_18_1)
+function slot0.UpdateMessages(slot0, slot1)
+	slot0:InstantiateMsgTpl(#slot1)
 
-	for iter_18_0 = 1, #arg_18_1 do
-		local var_18_0 = arg_18_0.items[iter_18_0]
-		local var_18_1 = arg_18_1[iter_18_0]
-		local var_18_2 = var_18_0.sizeDelta.y + 14
-		local var_18_3 = arg_18_0.tplInitPosY - (iter_18_0 - 1) * var_18_2
+	for slot5 = 1, #slot1 do
+		slot6 = slot0.items[slot5]
+		slot6.anchoredPosition = Vector2(slot6.anchoredPosition.x, slot0.tplInitPosY - (slot5 - 1) * (slot6.sizeDelta.y + 14))
 
-		var_18_0.anchoredPosition = Vector2(var_18_0.anchoredPosition.x, var_18_3)
-
-		arg_18_0:UpdateMessage(var_18_0, var_18_1)
+		slot0:UpdateMessage(slot6, slot1[slot5])
 	end
 
-	local var_18_4 = PLATFORM_CODE == PLATFORM_JP and #arg_18_1 <= 0 and "ログはありません" or ""
-
-	arg_18_0.empty.text = var_18_4
+	slot0.empty.text = PLATFORM_CODE == PLATFORM_JP and #slot1 <= 0 and "ログはありません" or ""
 end
 
-function var_0_0.UpdateMessage(arg_19_0, arg_19_1, arg_19_2)
-	setActive(arg_19_1, true)
+function slot0.UpdateMessage(slot0, slot1, slot2)
+	setActive(slot1, true)
 
-	findTF(arg_19_1, "channel"):GetComponent("Image").sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg_19_2.type) .. "_1920")
+	findTF(slot1, "channel"):GetComponent("Image").sprite = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(slot2.type) .. "_1920")
+	slot4 = findTF(slot1, "text"):GetComponent("RichText")
 
-	local var_19_0 = findTF(arg_19_1, "text"):GetComponent("RichText")
+	if slot2.type == ChatConst.ChannelPublic then
+		slot4.supportRichText = true
 
-	if arg_19_2.type == ChatConst.ChannelPublic then
-		var_19_0.supportRichText = true
+		ChatProxy.InjectPublic(slot4, slot2, true)
+	elseif slot2:IsWorldBossNotify() then
+		slot4.supportRichText = true
 
-		ChatProxy.InjectPublic(var_19_0, arg_19_2, true)
-	elseif arg_19_2:IsWorldBossNotify() then
-		var_19_0.supportRichText = true
-
-		local var_19_1 = arg_19_2.args.playerName
-		local var_19_2 = arg_19_2.args.bossName
-		local var_19_3 = GetPerceptualSize(var_19_1 .. var_19_2) - 18
-
-		if var_19_3 > 0 then
-			local var_19_4 = GetPerceptualSize(var_19_2) - var_19_3
-
-			var_19_2 = shortenString(var_19_2, var_19_4)
+		if GetPerceptualSize(slot2.args.playerName .. slot2.args.bossName) - 18 > 0 then
+			slot6 = shortenString(slot6, GetPerceptualSize(slot6) - slot8)
 		end
 
-		var_19_0.text = i18n("ad_4", arg_19_2.args.supportType, var_19_1, var_19_2, arg_19_2.args.level)
+		slot4.text = i18n("ad_4", slot2.args.supportType, slot5, slot6, slot2.args.level)
 	else
-		var_19_0.supportRichText = arg_19_2.emojiId ~= nil
-		var_19_0.text = arg_19_0:MatchEmoji(var_19_0, arg_19_2)
+		slot4.supportRichText = slot2.emojiId ~= nil
+		slot4.text = slot0:MatchEmoji(slot4, slot2)
 	end
 end
 
-function var_0_0.MatchEmoji(arg_20_0, arg_20_1, arg_20_2)
-	local var_20_0 = false
-	local var_20_1 = arg_20_2.player.name .. ": " .. arg_20_2.content
-	local var_20_2 = false
+function slot0.MatchEmoji(slot0, slot1, slot2)
+	slot3 = false
+	slot5 = false
 
-	for iter_20_0 in string.gmatch(var_20_1, ChatConst.EmojiIconCodeMatch) do
-		if table.contains(pg.emoji_small_template.all, tonumber(iter_20_0)) then
-			var_20_2 = true
+	for slot10 in string.gmatch(slot2.player.name .. ": " .. slot2.content, ChatConst.EmojiIconCodeMatch), nil,  do
+		if table.contains(pg.emoji_small_template.all, tonumber(slot10)) then
+			slot5 = true
 
-			local var_20_3 = pg.emoji_small_template[tonumber(iter_20_0)]
-			local var_20_4 = LoadSprite("emoji/" .. var_20_3.pic .. "_small", nil)
-
-			arg_20_1:AddSprite(iter_20_0, var_20_4)
+			slot1:AddSprite(slot10, LoadSprite("emoji/" .. pg.emoji_small_template[tonumber(slot10)].pic .. "_small", nil))
 		end
 	end
 
-	if not arg_20_2.emojiId then
-		var_20_1 = var_20_2 and shortenString(var_20_1, 16) or shortenString(var_20_1, 20)
+	if not slot2.emojiId then
+		slot4 = slot5 and shortenString(slot4, 16) or shortenString(slot4, 20)
 	end
 
-	return (string.gsub(var_20_1, ChatConst.EmojiIconCodeMatch, function(arg_21_0)
-		if table.contains(pg.emoji_small_template.all, tonumber(arg_21_0)) then
-			return string.format("<icon name=%s w=0.7 h=0.7/>", arg_21_0)
+	return string.gsub(slot4, ChatConst.EmojiIconCodeMatch, function (slot0)
+		if table.contains(pg.emoji_small_template.all, tonumber(slot0)) then
+			return string.format("<icon name=%s w=0.7 h=0.7/>", slot0)
 		end
-	end))
+	end)
 end
 
-function var_0_0.Clear(arg_22_0)
-	for iter_22_0, iter_22_1 in ipairs(arg_22_0.items) do
-		setActive(iter_22_1, false)
+function slot0.Clear(slot0)
+	for slot4, slot5 in ipairs(slot0.items) do
+		setActive(slot5, false)
 	end
 end
 
-function var_0_0.Fold(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_0.lposX = arg_23_0.lposX or arg_23_0._tf.localPosition.x
+function slot0.Fold(slot0, slot1, slot2)
+	slot0.lposX = slot0.lposX or slot0._tf.localPosition.x
 
-	local var_23_0 = arg_23_1 and arg_23_0.lposX + 1200 or arg_23_0.lposX
-
-	if arg_23_2 == 0 then
-		local var_23_1 = arg_23_0._go.transform.localPosition
-
-		arg_23_0._go.transform.localPosition = Vector3(var_23_0, var_23_1.y, 0)
+	if slot2 == 0 then
+		slot0._go.transform.localPosition = Vector3(slot1 and slot0.lposX + 1200 or slot0.lposX, slot0._go.transform.localPosition.y, 0)
 	else
-		LeanTween.moveLocalX(arg_23_0._go, var_23_0, arg_23_2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalX(slot0._go, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
 end
 
-function var_0_0.Dispose(arg_24_0)
-	arg_24_0:disposeEvent()
-	pg.DelegateInfo.Dispose(arg_24_0)
+function slot0.Dispose(slot0)
+	slot0:disposeEvent()
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,45 +1,40 @@
-﻿local var_0_0 = class("EquipmentDesignMediator", import("..base.ContextMediator"))
+slot0 = class("EquipmentDesignMediator", import("..base.ContextMediator"))
+slot0.MAKE_EQUIPMENT = "EquipmentDesignMediator:MAKE_EQUIPMENT"
+slot0.OPEN_EQUIPMENTDESIGN_INDEX = "EquipmentDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"
 
-var_0_0.MAKE_EQUIPMENT = "EquipmentDesignMediator:MAKE_EQUIPMENT"
-var_0_0.OPEN_EQUIPMENTDESIGN_INDEX = "EquipmentDesignMediator:OPEN_EQUIPMENTDESIGN_INDEX"
+function slot0.register(slot0)
+	slot0.bagProxy = getProxy(BagProxy)
 
-function var_0_0.register(arg_1_0)
-	arg_1_0.bagProxy = getProxy(BagProxy)
+	slot0.viewComponent:setItems(slot0.bagProxy:getData())
 
-	arg_1_0.viewComponent:setItems(arg_1_0.bagProxy:getData())
+	slot0.equipmentProxy = getProxy(EquipmentProxy)
 
-	arg_1_0.equipmentProxy = getProxy(EquipmentProxy)
+	slot0.viewComponent:setCapacity(slot0.equipmentProxy:getCapacity())
 
-	local var_1_0 = arg_1_0.equipmentProxy:getCapacity()
+	slot0.playerProxy = getProxy(PlayerProxy)
 
-	arg_1_0.viewComponent:setCapacity(var_1_0)
+	slot0.viewComponent:setPlayer(slot0.playerProxy:getData())
 
-	arg_1_0.playerProxy = getProxy(PlayerProxy)
+	slot4 = slot0:getFacade():retrieveMediator(EquipmentMediator.__cname):getViewComponent()
 
-	local var_1_1 = arg_1_0.playerProxy:getData()
-
-	arg_1_0.viewComponent:setPlayer(var_1_1)
-
-	local var_1_2 = arg_1_0:getFacade():retrieveMediator(EquipmentMediator.__cname):getViewComponent()
-
-	arg_1_0.viewComponent:SetParentTF(var_1_2._tf)
-	arg_1_0.viewComponent:SetTopContainer(var_1_2.topPanel)
-	arg_1_0:bind(var_0_0.MAKE_EQUIPMENT, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.COMPOSITE_EQUIPMENT, {
-			id = arg_2_1,
-			count = arg_2_2
+	slot0.viewComponent:SetParentTF(slot4._tf)
+	slot0.viewComponent:SetTopContainer(slot4.topPanel)
+	slot0:bind(uv0.MAKE_EQUIPMENT, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.COMPOSITE_EQUIPMENT, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_EQUIPMENTDESIGN_INDEX, function(arg_3_0, arg_3_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.OPEN_EQUIPMENTDESIGN_INDEX, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = arg_3_1
+			data = slot1
 		}))
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.COMPOSITE_EQUIPMENT_DONE,
 		BagProxy.ITEM_UPDATED,
@@ -48,26 +43,19 @@ function var_0_0.listNotificationInterests(arg_4_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == GAME.COMPOSITE_EQUIPMENT_DONE then
-		local var_5_2 = var_5_1.equipment
-		local var_5_3 = var_5_1.count
-
-		arg_5_0.viewComponent:filter(arg_5_0.contextData.index or 1, true)
-
-		local var_5_4 = var_5_2:getConfig("name")
-
-		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_newEquipLayer_getNewEquip", var_5_4 .. " X" .. var_5_3))
-	elseif var_5_0 == BagProxy.ITEM_UPDATED then
-		arg_5_0.viewComponent:setItems(arg_5_0.bagProxy:getData())
-	elseif var_5_0 == PlayerProxy.UPDATED then
-		arg_5_0.viewComponent:setPlayer(arg_5_0.playerProxy:getData())
-	elseif var_5_0 == EquipmentProxy.EQUIPMENT_UPDATED then
-		arg_5_0.viewComponent:setCapacity(arg_5_0.equipmentProxy:getCapacity())
+	if slot1:getName() == GAME.COMPOSITE_EQUIPMENT_DONE then
+		slot0.viewComponent:filter(slot0.contextData.index or 1, true)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_newEquipLayer_getNewEquip", slot3.equipment:getConfig("name") .. " X" .. slot3.count))
+	elseif slot2 == BagProxy.ITEM_UPDATED then
+		slot0.viewComponent:setItems(slot0.bagProxy:getData())
+	elseif slot2 == PlayerProxy.UPDATED then
+		slot0.viewComponent:setPlayer(slot0.playerProxy:getData())
+	elseif slot2 == EquipmentProxy.EQUIPMENT_UPDATED then
+		slot0.viewComponent:setCapacity(slot0.equipmentProxy:getCapacity())
 	end
 end
 
-return var_0_0
+return slot0

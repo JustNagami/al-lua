@@ -1,185 +1,179 @@
-﻿local var_0_0 = class("WorldShopLayer", import("view.base.BaseUI"))
-
-var_0_0.Listeners = {
+slot0 = class("WorldShopLayer", import("view.base.BaseUI"))
+slot0.Listeners = {
 	onUpdateGoods = "updateGoods"
 }
-var_0_0.optionsPath = {
+slot0.optionsPath = {
 	"adapt/top/title/option"
 }
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "WorldShopUI"
 end
 
-function var_0_0.getBGM(arg_2_0)
+function slot0.getBGM(slot0)
 	return "story-richang"
 end
 
-function var_0_0.init(arg_3_0)
-	for iter_3_0, iter_3_1 in pairs(var_0_0.Listeners) do
-		arg_3_0[iter_3_0] = function(...)
-			var_0_0[iter_3_1](arg_3_0, ...)
+function slot0.init(slot0)
+	for slot4, slot5 in pairs(uv0.Listeners) do
+		slot0[slot4] = function (...)
+			uv0[uv1](uv2, ...)
 		end
 	end
 
-	arg_3_0.btnBack = arg_3_0:findTF("adapt/top/title/back_button")
-	arg_3_0.rtRes = arg_3_0:findTF("adapt/middle/content/res")
-	arg_3_0.rtResetTime = arg_3_0:findTF("adapt/middle/content/resetTimer")
-	arg_3_0.rtResetTip = arg_3_0:findTF("adapt/middle/content/resetTip")
-	arg_3_0.rtShop = arg_3_0:findTF("adapt/middle/content/world_shop")
-	arg_3_0.goodsItemList = UIItemList.New(arg_3_0.rtShop:Find("content"), arg_3_0.rtShop:Find("content/item_tpl"))
-	arg_3_0.singleWindow = OriginShopSingleWindow.New(arg_3_0._tf, arg_3_0.event)
-	arg_3_0.multiWindow = OriginShopMultiWindow.New(arg_3_0._tf, arg_3_0.event)
+	slot0.btnBack = slot0:findTF("adapt/top/title/back_button")
+	slot0.rtRes = slot0:findTF("adapt/middle/content/res")
+	slot0.rtResetTime = slot0:findTF("adapt/middle/content/resetTimer")
+	slot0.rtResetTip = slot0:findTF("adapt/middle/content/resetTip")
+	slot0.rtShop = slot0:findTF("adapt/middle/content/world_shop")
+	slot0.goodsItemList = UIItemList.New(slot0.rtShop:Find("content"), slot0.rtShop:Find("content/item_tpl"))
+	slot0.singleWindow = OriginShopSingleWindow.New(slot0._tf, slot0.event)
+	slot0.multiWindow = OriginShopMultiWindow.New(slot0._tf, slot0.event)
 end
 
-function var_0_0.didEnter(arg_5_0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf, {
-		groupName = arg_5_0:getGroupNameFromData()
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+		groupName = slot0:getGroupNameFromData()
 	})
-	onButton(arg_5_0, arg_5_0.btnBack, function()
-		arg_5_0:closeView()
+	onButton(slot0, slot0.btnBack, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0.rtRes, function()
-		arg_5_0:emit(var_0_0.ON_DROP, {
+	onButton(slot0, slot0.rtRes, function ()
+		uv0:emit(uv1.ON_DROP, {
 			type = DROP_TYPE_RESOURCE,
 			id = WorldConst.ResourceID
 		})
 	end, SFX_PANEL)
-	arg_5_0.goodsItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
-		local var_8_0 = arg_8_1 + 1
+	slot0.goodsItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot4 = Goods.Create(uv0.goodsList[slot1 + 1], Goods.TYPE_WORLD)
 
-		if arg_8_0 == UIItemList.EventUpdate then
-			local var_8_1 = Goods.Create(arg_5_0.goodsList[var_8_0], Goods.TYPE_WORLD)
+			GoodsCard.New(slot2):update(slot4)
 
-			GoodsCard.New(arg_8_2):update(var_8_1)
+			slot6 = slot4:getLimitCount()
 
-			local var_8_2 = var_8_1:getLimitCount()
-
-			setText(arg_8_2:Find("item/count_contain/label"), i18n("activity_shop_exchange_count"))
-			setText(arg_8_2:Find("item/count_contain/count"), var_8_2 - var_8_1.buyCount .. "/" .. var_8_2)
-			setTextColor(arg_8_2:Find("item/count_contain/count"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
-			setTextColor(arg_8_2:Find("item/count_contain/label"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
-			onButton(arg_5_0, arg_8_2, function()
-				local var_9_0 = nowWorld()
-
-				if var_8_1:getConfig("genre") == ShopArgs.WorldCollection and var_9_0:GetTaskProxy():hasDoingCollectionTask() then
+			setText(slot2:Find("item/count_contain/label"), i18n("activity_shop_exchange_count"))
+			setText(slot2:Find("item/count_contain/count"), slot6 - slot4.buyCount .. "/" .. slot6)
+			setTextColor(slot2:Find("item/count_contain/count"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
+			setTextColor(slot2:Find("item/count_contain/label"), Color.New(unpack(ActivityGoodsCard.DefaultColor)))
+			onButton(uv0, slot2, function ()
+				if uv0:getConfig("genre") == ShopArgs.WorldCollection and nowWorld():GetTaskProxy():hasDoingCollectionTask() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("world_collection_task_tip_1"))
 
 					return
-				elseif var_8_1.id == 100000 and not underscore.any(underscore.values(var_9_0.pressingAwardDic), function(arg_10_0)
-					return arg_10_0.flag
+				elseif uv0.id == 100000 and not underscore.any(underscore.values(slot0.pressingAwardDic), function (slot0)
+					return slot0.flag
 				end) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("world_complete_item_tip"))
 
 					return
 				end
 
-				if not var_8_1:canPurchase() then
+				if not uv0:canPurchase() then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 					return
 				end
 
-				;(var_8_2 > 1 and arg_5_0.multiWindow or arg_5_0.singleWindow):ExecuteAction("Open", var_8_1, function(arg_11_0, arg_11_1)
-					arg_5_0:emit(WorldShopMediator.BUY_ITEM, arg_11_0.id, arg_11_1)
+				(uv1 > 1 and uv2.multiWindow or uv2.singleWindow):ExecuteAction("Open", uv0, function (slot0, slot1)
+					uv0:emit(WorldShopMediator.BUY_ITEM, slot0.id, slot1)
 				end)
 			end, SFX_PANEL)
 		end
 	end)
-	arg_5_0:AddWorldListener()
+	slot0:AddWorldListener()
 
-	local var_5_0 = nowWorld()
+	slot1 = nowWorld()
 
-	arg_5_0:updateGoods(nil, nil, var_5_0:GetWorldShopGoodsDictionary())
+	slot0:updateGoods(nil, , slot1:GetWorldShopGoodsDictionary())
 
-	local var_5_1 = var_5_0:IsReseted()
+	slot2 = slot1:IsReseted()
 
-	setActive(arg_5_0.rtResetTime, var_5_1)
-	setActive(arg_5_0.rtResetTip, not var_5_1)
-	setText(arg_5_0.rtResetTime:Find("number"), math.floor(var_5_0:GetResetWaitingTime() / 86400))
-	setText(arg_5_0.rtResetTip:Find("info"), i18n("world_shop_preview_tip"))
+	setActive(slot0.rtResetTime, slot2)
+	setActive(slot0.rtResetTip, not slot2)
+	setText(slot0.rtResetTime:Find("number"), math.floor(slot1:GetResetWaitingTime() / 86400))
+	setText(slot0.rtResetTip:Find("info"), i18n("world_shop_preview_tip"))
 
-	if var_5_1 then
+	if slot2 then
 		WorldGuider.GetInstance():PlayGuide("WorldG180")
 	end
 end
 
-function var_0_0.onBackPressed(arg_12_0)
-	if arg_12_0.singleWindow:isShowing() then
-		arg_12_0.singleWindow:Close()
+function slot0.onBackPressed(slot0)
+	if slot0.singleWindow:isShowing() then
+		slot0.singleWindow:Close()
 
 		return
 	end
 
-	if arg_12_0.multiWindow:isShowing() then
-		arg_12_0.multiWindow:Close()
+	if slot0.multiWindow:isShowing() then
+		slot0.multiWindow:Close()
 
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg_12_0.btnBack)
+	triggerButton(slot0.btnBack)
 end
 
-function var_0_0.willExit(arg_13_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_13_0._tf)
-	arg_13_0:RemoveWorldListener()
-	arg_13_0.singleWindow:Destroy()
-	arg_13_0.multiWindow:Destroy()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+	slot0:RemoveWorldListener()
+	slot0.singleWindow:Destroy()
+	slot0.multiWindow:Destroy()
 end
 
-function var_0_0.setPlayer(arg_14_0, arg_14_1)
-	arg_14_0.player = arg_14_1
+function slot0.setPlayer(slot0, slot1)
+	slot0.player = slot1
 
 	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
 		id = WorldConst.ResourceID
-	}):getIcon(), "", arg_14_0.rtRes:Find("icon"), true)
-	setText(arg_14_0.rtRes:Find("number"), arg_14_0.player:getResource(WorldConst.ResourceID))
+	}):getIcon(), "", slot0.rtRes:Find("icon"), true)
+	setText(slot0.rtRes:Find("number"), slot0.player:getResource(WorldConst.ResourceID))
 end
 
-function var_0_0.AddWorldListener(arg_15_0)
-	nowWorld():AddListener(World.EventUpdateShopGoods, arg_15_0.onUpdateGoods)
+function slot0.AddWorldListener(slot0)
+	nowWorld():AddListener(World.EventUpdateShopGoods, slot0.onUpdateGoods)
 end
 
-function var_0_0.RemoveWorldListener(arg_16_0)
-	nowWorld():RemoveListener(World.EventUpdateShopGoods, arg_16_0.onUpdateGoods)
+function slot0.RemoveWorldListener(slot0)
+	nowWorld():RemoveListener(World.EventUpdateShopGoods, slot0.onUpdateGoods)
 end
 
-function var_0_0.updateGoods(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	local var_17_0 = pg.TimeMgr.GetInstance()
-	local var_17_1 = nowWorld()
-	local var_17_2 = var_17_1.expiredTime
-	local var_17_3 = var_17_1:GetTaskProxy()
-	local var_17_4 = {}
+function slot0.updateGoods(slot0, slot1, slot2, slot3)
+	slot4 = pg.TimeMgr.GetInstance()
+	slot5 = nowWorld()
+	slot7 = slot5:GetTaskProxy()
+	slot8 = {}
 
-	for iter_17_0, iter_17_1 in pairs(arg_17_3) do
-		if not var_17_0:inTime(pg.shop_template[iter_17_0].time) or not var_17_0:inTime(pg.shop_template[iter_17_0].time, var_17_2 - 1) then
-			-- block empty
-		elseif iter_17_0 == 100000 and not nowWorld():IsReseted() then
-			-- block empty
-		elseif pg.shop_template[iter_17_0].genre == ShopArgs.WorldCollection and iter_17_1 == 0 and var_17_3:getRecycleTask(pg.shop_template[iter_17_0].effect_args[2]) then
-			-- block empty
-		else
-			table.insert(var_17_4, {
-				id = iter_17_0,
-				count = iter_17_1
-			})
+	for slot12, slot13 in pairs(slot3) do
+		if slot4:inTime(pg.shop_template[slot12].time) then
+			if not slot4:inTime(pg.shop_template[slot12].time, slot5.expiredTime - 1) then
+				-- Nothing
+			elseif slot12 == 100000 and not nowWorld():IsReseted() then
+				-- Nothing
+			elseif pg.shop_template[slot12].genre ~= ShopArgs.WorldCollection or slot13 ~= 0 or not slot7:getRecycleTask(pg.shop_template[slot12].effect_args[2]) then
+				table.insert(slot8, {
+					id = slot12,
+					count = slot13
+				})
+			end
 		end
 	end
 
-	table.sort(var_17_4, CompareFuncs({
-		function(arg_18_0)
-			return pg.shop_template[arg_18_0.id].order
+	table.sort(slot8, CompareFuncs({
+		function (slot0)
+			return pg.shop_template[slot0.id].order
 		end,
-		function(arg_19_0)
-			return arg_19_0.id
+		function (slot0)
+			return slot0.id
 		end
 	}))
 
-	arg_17_0.goodsList = var_17_4
+	slot0.goodsList = slot8
 
-	arg_17_0.goodsItemList:align(#arg_17_0.goodsList)
+	slot0.goodsItemList:align(#slot0.goodsList)
 end
 
-return var_0_0
+return slot0

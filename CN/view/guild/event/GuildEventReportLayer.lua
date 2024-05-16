@@ -1,182 +1,174 @@
-﻿local var_0_0 = class("GuildEventReportLayer", import("...base.BaseUI"))
+slot0 = class("GuildEventReportLayer", import("...base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildEventReportUI"
 end
 
-function var_0_0.SetReports(arg_2_0, arg_2_1)
-	arg_2_0.reports = arg_2_1
+function slot0.SetReports(slot0, slot1)
+	slot0.reports = slot1
 end
 
-function var_0_0.OnGetReportRankList(arg_3_0, arg_3_1)
-	arg_3_0.rankPage:ExecuteAction("Show", arg_3_1)
+function slot0.OnGetReportRankList(slot0, slot1)
+	slot0.rankPage:ExecuteAction("Show", slot1)
 end
 
-function var_0_0.init(arg_4_0)
-	arg_4_0.scrollrect = arg_4_0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	arg_4_0.getAll = arg_4_0:findTF("frame/get_all")
-	arg_4_0.gotAll = arg_4_0:findTF("frame/get_all/gray")
-	arg_4_0.descTxt = arg_4_0:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg_4_0.cntTxt = arg_4_0:findTF("frame/cnt"):GetComponent(typeof(Text))
-	arg_4_0.closeBtn = arg_4_0:findTF("frame/close")
+function slot0.init(slot0)
+	slot0.scrollrect = slot0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
+	slot0.getAll = slot0:findTF("frame/get_all")
+	slot0.gotAll = slot0:findTF("frame/get_all/gray")
+	slot0.descTxt = slot0:findTF("frame/desc"):GetComponent(typeof(Text))
+	slot0.cntTxt = slot0:findTF("frame/cnt"):GetComponent(typeof(Text))
+	slot0.closeBtn = slot0:findTF("frame/close")
 
-	setText(arg_4_0.getAll:Find("Text"), i18n("guild_report_get_all"))
+	setText(slot0.getAll:Find("Text"), i18n("guild_report_get_all"))
 
-	arg_4_0._parentTf = arg_4_0._tf.parent
+	slot0._parentTf = slot0._tf.parent
 
-	setText(arg_4_0:findTF("frame/desc"), i18n("guild_report_tooltip"))
+	setText(slot0:findTF("frame/desc"), i18n("guild_report_tooltip"))
 
-	arg_4_0.rankPage = GuildBossRankPage.New(arg_4_0._tf, arg_4_0.event)
+	slot0.rankPage = GuildBossRankPage.New(slot0._tf, slot0.event)
 end
 
-function var_0_0.didEnter(arg_5_0)
-	pg.UIMgr:GetInstance():BlurPanel(arg_5_0._tf)
-	onButton(arg_5_0, arg_5_0.closeBtn, function()
-		arg_5_0:emit(var_0_0.ON_CLOSE)
+function slot0.didEnter(slot0)
+	pg.UIMgr:GetInstance():BlurPanel(slot0._tf)
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0._tf, function()
-		arg_5_0:emit(var_0_0.ON_CLOSE)
+	onButton(slot0, slot0._tf, function ()
+		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.getAll, function()
-		local var_8_0 = {}
+	onButton(slot0, slot0.getAll, function ()
+		slot0 = {}
 
-		for iter_8_0, iter_8_1 in pairs(arg_5_0.reports) do
-			if iter_8_1:CanSubmit() then
-				table.insert(var_8_0, iter_8_1.id)
+		for slot4, slot5 in pairs(uv0.reports) do
+			if slot5:CanSubmit() then
+				table.insert(slot0, slot5.id)
 			end
 		end
 
-		if #var_8_0 == 0 then
+		if #slot0 == 0 then
 			return
 		end
 
-		arg_5_0:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, var_8_0)
+		uv0:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, slot0)
 	end, SFX_PANEL)
 
-	function arg_5_0.scrollrect.onInitItem(arg_9_0)
-		arg_5_0:OnInitItem(arg_9_0)
+	function slot0.scrollrect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_5_0.scrollrect.onUpdateItem(arg_10_0, arg_10_1)
-		arg_5_0:OnUpdateItem(arg_10_0, arg_10_1)
+	function slot0.scrollrect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 
-	arg_5_0:SetTotalCount()
-	arg_5_0:UpdateGetAllBtn()
+	slot0:SetTotalCount()
+	slot0:UpdateGetAllBtn()
 end
 
-function var_0_0.preload(arg_11_0, arg_11_1)
+function slot0.preload(slot0, slot1)
 	pg.m02:sendNotification(GAME.GET_GUILD_REPORT, {
-		callback = function(arg_12_0)
-			arg_11_0:SetReports(arg_12_0)
-			arg_11_1()
+		callback = function (slot0)
+			uv0:SetReports(slot0)
+			uv1()
 		end
 	})
 end
 
-function var_0_0.UpdateReports(arg_13_0, arg_13_1)
-	for iter_13_0, iter_13_1 in ipairs(arg_13_1) do
-		for iter_13_2, iter_13_3 in pairs(arg_13_0.cards) do
-			if iter_13_3.report.id == iter_13_1 then
-				local var_13_0 = arg_13_0.reports[iter_13_1]
-
-				iter_13_3:Update(var_13_0)
+function slot0.UpdateReports(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1) do
+		for slot10, slot11 in pairs(slot0.cards) do
+			if slot11.report.id == slot6 then
+				slot11:Update(slot0.reports[slot6])
 			end
 		end
 	end
 
-	arg_13_0:UpdateGetAllBtn()
+	slot0:UpdateGetAllBtn()
 end
 
-function var_0_0.UpdateGetAllBtn(arg_14_0)
-	local var_14_0 = #arg_14_0.displays == 0 or _.all(arg_14_0.displays, function(arg_15_0)
-		return not arg_15_0:CanSubmit()
-	end)
-
-	setActive(arg_14_0.gotAll, var_14_0)
+function slot0.UpdateGetAllBtn(slot0)
+	setActive(slot0.gotAll, #slot0.displays == 0 or _.all(slot0.displays, function (slot0)
+		return not slot0:CanSubmit()
+	end))
 end
 
-function var_0_0.SetTotalCount(arg_16_0)
-	arg_16_0.displays = {}
+function slot0.SetTotalCount(slot0)
+	slot0.displays = {}
 
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.reports) do
-		table.insert(arg_16_0.displays, iter_16_1)
+	for slot4, slot5 in pairs(slot0.reports) do
+		table.insert(slot0.displays, slot5)
 	end
 
-	local function var_16_0(arg_17_0)
-		if arg_17_0.state == 0 then
+	function slot1(slot0)
+		if slot0.state == 0 then
 			return 1
-		elseif arg_17_0.state == 1 then
+		elseif slot0.state == 1 then
 			return 2
-		elseif arg_17_0.state == 2 then
+		elseif slot0.state == 2 then
 			return 0
 		end
 	end
 
-	table.sort(arg_16_0.displays, function(arg_18_0, arg_18_1)
-		return var_16_0(arg_18_0) > var_16_0(arg_18_1)
+	table.sort(slot0.displays, function (slot0, slot1)
+		return uv0(slot1) < uv0(slot0)
 	end)
-	arg_16_0.scrollrect:SetTotalCount(#arg_16_0.displays)
+	slot0.scrollrect:SetTotalCount(#slot0.displays)
 
-	arg_16_0.cntTxt.text = #arg_16_0.displays .. "/" .. GuildConst.MAX_REPORT_CNT()
+	slot0.cntTxt.text = #slot0.displays .. "/" .. GuildConst.MAX_REPORT_CNT()
 end
 
-function var_0_0.OnInitItem(arg_19_0, arg_19_1)
-	local var_19_0 = GuildReportCard.New(arg_19_1, arg_19_0)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = GuildReportCard.New(slot1, slot0)
 
-	if not arg_19_0.cards then
-		arg_19_0.cards = {}
+	if not slot0.cards then
+		slot0.cards = {}
 	end
 
-	onButton(arg_19_0, var_19_0.getBtn, function()
-		if var_19_0.report:IsLock() then
+	onButton(slot0, slot2.getBtn, function ()
+		if uv0.report:IsLock() then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_can_not_get_tip"))
 
 			return
 		end
 
-		arg_19_0:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, {
-			var_19_0.report.id
+		uv1:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, {
+			uv0.report.id
 		})
 	end, SFX_PANEL)
 
-	arg_19_0.cards[arg_19_1] = var_19_0
+	slot0.cards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0 = arg_21_0.cards[arg_21_2]
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot0:OnInitItem(slot2)
 
-	if not var_21_0 then
-		arg_21_0:OnInitItem(arg_21_2)
-
-		var_21_0 = arg_21_0.cards[arg_21_2]
+		slot3 = slot0.cards[slot2]
 	end
 
-	local var_21_1 = arg_21_0.displays[arg_21_1 + 1]
-
-	var_21_0:Update(var_21_1)
+	slot3:Update(slot0.displays[slot1 + 1])
 end
 
-function var_0_0.ShowReportRank(arg_22_0, arg_22_1)
-	arg_22_0:emit(GuildEventReportMediator.GET_REPORT_RANK, arg_22_1)
+function slot0.ShowReportRank(slot0, slot1)
+	slot0:emit(GuildEventReportMediator.GET_REPORT_RANK, slot1)
 end
 
-function var_0_0.willExit(arg_23_0)
-	pg.UIMgr:GetInstance():UnblurPanel(arg_23_0._tf, arg_23_0._parentTf)
+function slot0.willExit(slot0)
+	pg.UIMgr:GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 
-	if arg_23_0.cards then
-		for iter_23_0, iter_23_1 in pairs(arg_23_0.cards) do
-			iter_23_1:Dispose()
+	if slot0.cards then
+		for slot4, slot5 in pairs(slot0.cards) do
+			slot5:Dispose()
 		end
 
-		arg_23_0.cards = nil
+		slot0.cards = nil
 	end
 
-	if arg_23_0.rankPage then
-		arg_23_0.rankPage:Destroy()
+	if slot0.rankPage then
+		slot0.rankPage:Destroy()
 
-		arg_23_0.rankPage = nil
+		slot0.rankPage = nil
 	end
 end
 
-return var_0_0
+return slot0

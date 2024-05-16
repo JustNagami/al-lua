@@ -1,7 +1,6 @@
-﻿local var_0_0 = class("SkinMagazinePage5", import(".TemplatePage.SkinMagazineTemplatePage"))
+slot0 = class("SkinMagazinePage5", import(".TemplatePage.SkinMagazineTemplatePage"))
+slot0.EXPAND_WIDTH = 973
+slot0.CLOSE_WIDTH = 216
+slot0.DURATION_PARAMETER = 2500
 
-var_0_0.EXPAND_WIDTH = 973
-var_0_0.CLOSE_WIDTH = 216
-var_0_0.DURATION_PARAMETER = 2500
-
-return var_0_0
+return slot0

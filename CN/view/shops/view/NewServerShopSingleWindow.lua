@@ -1,37 +1,36 @@
-﻿local var_0_0 = class("NewServerShopSingleWindow", import("..msgbox.ShopSingleWindow"))
+slot0 = class("NewServerShopSingleWindow", import("..msgbox.ShopSingleWindow"))
 
-function var_0_0.InitWindow(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = {
-		id = arg_1_1:getConfig("goods")[1],
-		type = arg_1_1:getConfig("type"),
-		count = arg_1_1:getConfig("num")
+function slot0.InitWindow(slot0, slot1, slot2)
+	slot3 = {
+		id = slot1:getConfig("goods")[1],
+		type = slot1:getConfig("type"),
+		count = slot1:getConfig("num")
 	}
 
-	onButton(arg_1_0, arg_1_0.confirmBtn, function()
-		if arg_1_2 then
-			arg_1_2(arg_1_1, 1, var_1_0:getConfig("name"))
+	onButton(slot0, slot0.confirmBtn, function ()
+		if uv0 then
+			uv0(uv1, 1, uv2:getConfig("name"))
 		end
 
-		arg_1_0:Close()
+		uv3:Close()
 	end, SFX_CANCEL)
-	updateDrop(arg_1_0.itemTF:Find("left/IconTpl"), var_1_0)
-	UpdateOwnDisplay(arg_1_0.itemOwnTF, var_1_0)
-	RegisterDetailButton(arg_1_0, arg_1_0.itemDetailTF, var_1_0)
+	updateDrop(slot0.itemTF:Find("left/IconTpl"), slot3)
+	UpdateOwnDisplay(slot0.itemOwnTF, slot3)
+	RegisterDetailButton(slot0, slot0.itemDetailTF, slot3)
 
-	local var_1_1 = var_1_0.type == DROP_TYPE_SHIP
-	local var_1_2 = arg_1_0.itemTF:Find("ship_group")
+	slot4 = slot3.type == DROP_TYPE_SHIP
 
-	SetActive(var_1_2, var_1_1)
+	SetActive(slot0.itemTF:Find("ship_group"), slot4)
 
-	if var_1_1 then
-		local var_1_3 = tobool(getProxy(CollectionProxy):getShipGroup(pg.ship_data_template[var_1_0.id].group_type))
+	if slot4 then
+		slot6 = tobool(getProxy(CollectionProxy):getShipGroup(pg.ship_data_template[slot3.id].group_type))
 
-		SetActive(var_1_2:Find("unlocked"), var_1_3)
-		SetActive(var_1_2:Find("locked"), not var_1_3)
+		SetActive(slot5:Find("unlocked"), slot6)
+		SetActive(slot5:Find("locked"), not slot6)
 	end
 
-	arg_1_0.descTF.text = var_1_0.desc or var_1_0:getConfig("desc")
-	arg_1_0.nameTF.text = var_1_0:getConfig("name")
+	slot0.descTF.text = slot3.desc or slot3:getConfig("desc")
+	slot0.nameTF.text = slot3:getConfig("name")
 end
 
-return var_0_0
+return slot0

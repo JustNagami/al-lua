@@ -1,72 +1,64 @@
-﻿local var_0_0 = class("BackYardBaseCard")
+slot0 = class("BackYardBaseCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.event = arg_1_2
-	arg_1_0._go = arg_1_1
-	arg_1_0._content = arg_1_1:Find("content")
+	slot0.event = slot2
+	slot0._go = slot1
+	slot0._content = slot1:Find("content")
 
-	arg_1_0:OnInit()
+	slot0:OnInit()
 
-	arg_1_0.startPos = Vector2(135, -354)
-	arg_1_0.space = 255
+	slot0.startPos = Vector2(135, -354)
+	slot0.space = 255
 end
 
-function var_0_0.Disable(arg_2_0)
-	setActive(arg_2_0._go, false)
+function slot0.Disable(slot0)
+	setActive(slot0._go, false)
 end
 
-function var_0_0.Enable(arg_3_0)
-	setActive(arg_3_0._go, true)
+function slot0.Enable(slot0)
+	setActive(slot0._go, true)
 end
 
-function var_0_0.Flush(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0.type = arg_4_1
-	arg_4_0.ship = arg_4_2
+function slot0.Flush(slot0, slot1, slot2)
+	slot0.type = slot1
+	slot0.ship = slot2
 
-	arg_4_0:OnFlush()
+	slot0:OnFlush()
 end
 
-function var_0_0.emit(arg_5_0, ...)
-	if arg_5_0.event then
-		arg_5_0.event:emit(...)
+function slot0.emit(slot0, ...)
+	if slot0.event then
+		slot0.event:emit(...)
 	end
 end
 
-function var_0_0.Clone(arg_6_0)
-	local var_6_0 = cloneTplTo(arg_6_0._go, arg_6_0._go.parent)
-
-	return _G[arg_6_0.__cname].New(var_6_0, arg_6_0.event)
+function slot0.Clone(slot0)
+	return _G[slot0.__cname].New(cloneTplTo(slot0._go, slot0._go.parent), slot0.event)
 end
 
-function var_0_0.SetSiblingIndex(arg_7_0, arg_7_1)
-	arg_7_0._go.gameObject.name = arg_7_1
-
-	local var_7_0 = arg_7_0.startPos.x + (arg_7_1 - 1) * arg_7_0.space
-
-	arg_7_0._go.anchoredPosition3D = Vector3(var_7_0, arg_7_0.startPos.y, 0)
+function slot0.SetSiblingIndex(slot0, slot1)
+	slot0._go.gameObject.name = slot1
+	slot0._go.anchoredPosition3D = Vector3(slot0.startPos.x + (slot1 - 1) * slot0.space, slot0.startPos.y, 0)
 end
 
-function var_0_0.Dispose(arg_8_0)
-	pg.DelegateInfo.Dispose(arg_8_0)
-	arg_8_0:OnDispose()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:OnDispose()
 
-	if not IsNil(arg_8_0._go) then
-		Object.Destroy(arg_8_0._go.gameObject)
+	if not IsNil(slot0._go) then
+		Object.Destroy(slot0._go.gameObject)
 	end
 end
 
-function var_0_0.OnInit(arg_9_0)
-	return
+function slot0.OnInit(slot0)
 end
 
-function var_0_0.OnFlush(arg_10_0)
-	return
+function slot0.OnFlush(slot0)
 end
 
-function var_0_0.OnDispose(arg_11_0)
-	return
+function slot0.OnDispose(slot0)
 end
 
-return var_0_0
+return slot0

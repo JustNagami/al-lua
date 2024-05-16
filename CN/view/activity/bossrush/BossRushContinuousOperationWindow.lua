@@ -1,10 +1,10 @@
-﻿local var_0_0 = class("BossRushContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
+slot0 = class("BossRushContinuousOperationWindow", import("view.activity.worldboss.ContinuousOperationWindow"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "BossRushContinuousOperationWindowUI"
 end
 
-function var_0_0.ResUISettings(arg_2_0)
+function slot0.ResUISettings(slot0)
 	return {
 		reset = true,
 		gemOffsetX = 628,
@@ -12,70 +12,63 @@ function var_0_0.ResUISettings(arg_2_0)
 	}
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.panel = arg_3_0._tf:Find("window/panel")
-	arg_3_0._countSelect = arg_3_0.panel:Find("content")
-	arg_3_0._pageUtil = PageUtil.New(arg_3_0._countSelect:Find("value_bg/left"), arg_3_0._countSelect:Find("value_bg/right"), arg_3_0._countSelect:Find("max"), arg_3_0._countSelect:Find("value_bg/value"))
-	arg_3_0.consumeText = arg_3_0.panel:Find("content/consume"):GetComponent("RichText")
+function slot0.init(slot0)
+	slot0.panel = slot0._tf:Find("window/panel")
+	slot0._countSelect = slot0.panel:Find("content")
+	slot0._pageUtil = PageUtil.New(slot0._countSelect:Find("value_bg/left"), slot0._countSelect:Find("value_bg/right"), slot0._countSelect:Find("max"), slot0._countSelect:Find("value_bg/value"))
+	slot0.consumeText = slot0.panel:Find("content/consume"):GetComponent("RichText")
 
-	setText(arg_3_0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
-	setText(arg_3_0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
-	setText(arg_3_0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
-	setText(arg_3_0.panel:Find("Tip"), i18n("multiple_sorties_tip"))
-	setText(arg_3_0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
-	setText(arg_3_0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
-	setText(arg_3_0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
+	setText(slot0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
+	setText(slot0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
+	setText(slot0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
+	setText(slot0.panel:Find("Tip"), i18n("multiple_sorties_tip"))
+	setText(slot0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
+	setText(slot0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
+	setText(slot0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
 end
 
-function var_0_0.SetActivity(arg_4_0, arg_4_1)
-	arg_4_0.activity = arg_4_1
+function slot0.SetActivity(slot0, slot1)
+	slot0.activity = slot1
 end
 
-function var_0_0.didEnter(arg_5_0)
-	onButton(arg_5_0, arg_5_0.panel:Find("battle"), function()
-		local var_6_0 = arg_5_0.contextData.battleTimes
-
-		if arg_5_0.contextData.oilCost * var_6_0 > getProxy(PlayerProxy):getRawData().oil then
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.panel:Find("battle"), function ()
+		if getProxy(PlayerProxy):getRawData().oil < uv0.contextData.oilCost * uv0.contextData.battleTimes then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 			return
 		end
 
-		arg_5_0:emit(PreCombatMediator.CONTINUOUS_OPERATION)
+		uv0:emit(PreCombatMediator.CONTINUOUS_OPERATION)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0._tf:Find("window/top/btnBack"), function()
-		arg_5_0:closeView()
+	onButton(slot0, slot0._tf:Find("window/top/btnBack"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0._tf:Find("bg"), function()
-		arg_5_0:closeView()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	arg_5_0._pageUtil:setNumUpdate(function(arg_9_0)
-		arg_5_0.contextData.battleTimes = arg_9_0
+	slot0._pageUtil:setNumUpdate(function (slot0)
+		uv0.contextData.battleTimes = slot0
 
-		arg_5_0:UpdateContent()
+		uv0:UpdateContent()
 	end)
+	slot0._pageUtil:setMaxNum(slot0.contextData.maxCount)
 
-	local var_5_0 = arg_5_0.contextData.maxCount
+	slot0.contextData.battleTimes = slot0.contextData.battleTimes or 1
 
-	arg_5_0._pageUtil:setMaxNum(var_5_0)
-
-	arg_5_0.contextData.battleTimes = arg_5_0.contextData.battleTimes or 1
-
-	arg_5_0._pageUtil:setDefaultNum(arg_5_0.contextData.battleTimes)
-	arg_5_0:UpdateContent()
-	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
+	slot0._pageUtil:setDefaultNum(slot0.contextData.battleTimes)
+	slot0:UpdateContent()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-function var_0_0.UpdateContent(arg_10_0)
-	local var_10_0 = arg_10_0.contextData.battleTimes
-	local var_10_1 = arg_10_0.contextData.oilCost * var_10_0
-	local var_10_2 = i18n("multiple_sorties_cost1", var_10_1)
+function slot0.UpdateContent(slot0)
+	slot2 = slot0.contextData.oilCost * slot0.contextData.battleTimes
 
-	if var_10_1 > getProxy(PlayerProxy):getRawData().oil then
-		var_10_2 = string.gsub(var_10_2, "#92fc63", COLOR_RED)
+	if getProxy(PlayerProxy):getRawData().oil < slot2 then
+		slot3 = string.gsub(i18n("multiple_sorties_cost1", slot2), "#92fc63", COLOR_RED)
 	end
 
-	arg_10_0.consumeText.text = var_10_2
+	slot0.consumeText.text = slot3
 end
 
-return var_0_0
+return slot0

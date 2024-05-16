@@ -1,31 +1,30 @@
-﻿local var_0_0 = class("WSMapCamera", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSMapCamera", import("...BaseEntity"))
+slot0.Fields = {
 	map = "table",
 	camera = "userdata",
 	gid = "number"
 }
 
-function var_0_0.Setup(arg_1_0)
-	arg_1_0:Init()
+function slot0.Setup(slot0)
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_2_0)
-	arg_2_0.camera.enabled = false
+function slot0.Dispose(slot0)
+	slot0.camera.enabled = false
 
-	arg_2_0:Clear()
+	slot0:Clear()
 end
 
-function var_0_0.UpdateMap(arg_3_0, arg_3_1)
-	if arg_3_0.map ~= arg_3_1 or arg_3_0.gid ~= arg_3_1.gid then
-		arg_3_0.map = arg_3_1
-		arg_3_0.gid = arg_3_1.gid
-		arg_3_0.camera.fieldOfView = arg_3_1.theme.fov
+function slot0.UpdateMap(slot0, slot1)
+	if slot0.map ~= slot1 or slot0.gid ~= slot1.gid then
+		slot0.map = slot1
+		slot0.gid = slot1.gid
+		slot0.camera.fieldOfView = slot1.theme.fov
 	end
 end
 
-function var_0_0.Init(arg_4_0)
-	arg_4_0.camera.enabled = true
+function slot0.Init(slot0)
+	slot0.camera.enabled = true
 end
 
-return var_0_0
+return slot0

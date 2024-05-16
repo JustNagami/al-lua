@@ -1,34 +1,28 @@
-﻿local var_0_0 = class("MainLanternFestivalBtn", import(".MainBaseActivityBtn"))
+slot0 = class("MainLanternFestivalBtn", import(".MainBaseActivityBtn"))
+slot0.LANTERNFESTIVAL_MINIGAME_ID = 64
 
-var_0_0.LANTERNFESTIVAL_MINIGAME_ID = 64
-
-function var_0_0.GetEventName(arg_1_0)
+function slot0.GetEventName(slot0)
 	return "event_LanternFestival"
 end
 
-function var_0_0.GetActivityID(arg_2_0)
-	local var_2_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
-
-	return var_2_0 and var_2_0.id
+function slot0.GetActivityID(slot0)
+	return getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) and slot1.id
 end
 
-function var_0_0.OnInit(arg_3_0)
-	local var_3_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL)
-	local var_3_1 = false
+function slot0.OnInit(slot0)
+	slot2 = false
 
-	if var_3_0 and not var_3_0:isEnd() then
-		local var_3_2 = getProxy(MiniGameProxy):GetHubByHubId(var_3_0:getConfig("config_id"))
-
-		var_3_1 = var_3_2.count > 0 and var_3_2.usedtime < 7
+	if getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) and not slot1:isEnd() then
+		slot2 = getProxy(MiniGameProxy):GetHubByHubId(slot1:getConfig("config_id")).count > 0 and slot4.usedtime < 7
 	end
 
-	setActive(arg_3_0._tf:Find("Tip"), var_3_1)
+	setActive(slot0._tf:Find("Tip"), slot2)
 end
 
-function var_0_0.CustomOnClick(arg_4_0)
+function slot0.CustomOnClick(slot0)
 	if getProxy(ActivityProxy):getActivityById(ActivityConst.LANTERNFESTIVAL) then
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.LANTERNFESTIVAL_MINIGAME_ID)
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.LANTERNFESTIVAL_MINIGAME_ID)
 	end
 end
 
-return var_0_0
+return slot0

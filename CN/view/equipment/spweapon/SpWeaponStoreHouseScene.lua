@@ -1,114 +1,105 @@
-﻿local var_0_0 = class("SpWeaponStoreHouseScene", import("view.base.BaseUI"))
+slot0 = class("SpWeaponStoreHouseScene", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SpWeaponStoreHouseUI"
 end
 
-function var_0_0.setEquipments(arg_2_0, arg_2_1)
-	arg_2_0.equipmentVOs = arg_2_1
+function slot0.setEquipments(slot0, slot1)
+	slot0.equipmentVOs = slot1
 end
 
-function var_0_0.SetCraftList(arg_3_0, arg_3_1)
-	arg_3_0.craftList = arg_3_1
+function slot0.SetCraftList(slot0, slot1)
+	slot0.craftList = slot1
 end
 
-local var_0_1 = require("view.equipment.SpWeaponSortCfg")
+slot1 = require("view.equipment.SpWeaponSortCfg")
 
-function var_0_0.init(arg_4_0)
-	arg_4_0.topItems = arg_4_0:findTF("topItems")
-	arg_4_0.equipmentView = arg_4_0:findTF("ScrollView")
-	arg_4_0.equipmentsGrid = arg_4_0.equipmentView:Find("Viewport/Content/StoreHouse/Grid")
-	arg_4_0.craftsGrid = arg_4_0.equipmentView:Find("Viewport/Content/Craft/Grid")
+function slot0.init(slot0)
+	slot0.topItems = slot0:findTF("topItems")
+	slot0.equipmentView = slot0:findTF("ScrollView")
+	slot0.equipmentsGrid = slot0.equipmentView:Find("Viewport/Content/StoreHouse/Grid")
+	slot0.craftsGrid = slot0.equipmentView:Find("Viewport/Content/Craft/Grid")
 
-	setActive(arg_4_0.equipmentView:Find("Template"), false)
+	setActive(slot0.equipmentView:Find("Template"), false)
 
-	arg_4_0.blurPanel = arg_4_0:findTF("blur_panel")
-	arg_4_0.topPanel = arg_4_0:findTF("adapt/top", arg_4_0.blurPanel)
-	arg_4_0.indexBtn = arg_4_0:findTF("buttons/index_button", arg_4_0.topPanel)
-	arg_4_0.sortBtn = arg_4_0:findTF("buttons/sort_button", arg_4_0.topPanel)
-	arg_4_0.sortPanel = arg_4_0:findTF("sort", arg_4_0.topItems)
-	arg_4_0.sortContain = arg_4_0:findTF("adapt/mask/panel", arg_4_0.sortPanel)
-	arg_4_0.sortTpl = arg_4_0:findTF("tpl", arg_4_0.sortContain)
+	slot0.blurPanel = slot0:findTF("blur_panel")
+	slot0.topPanel = slot0:findTF("adapt/top", slot0.blurPanel)
+	slot0.indexBtn = slot0:findTF("buttons/index_button", slot0.topPanel)
+	slot0.sortBtn = slot0:findTF("buttons/sort_button", slot0.topPanel)
+	slot0.sortPanel = slot0:findTF("sort", slot0.topItems)
+	slot0.sortContain = slot0:findTF("adapt/mask/panel", slot0.sortPanel)
+	slot0.sortTpl = slot0:findTF("tpl", slot0.sortContain)
 
-	setActive(arg_4_0.sortTpl, false)
+	setActive(slot0.sortTpl, false)
 
-	local var_4_0
-	local var_4_1 = getProxy(SettingsProxy)
+	slot1 = nil
+	slot1 = (NotchAdapt.CheckNotchRatio == 2 or not getProxy(SettingsProxy):CheckLargeScreen()) and slot0.equipmentView.rect.width > 2000 or NotchAdapt.CheckNotchRatio >= 2
+	slot0.equipmentsGrid:GetComponent(typeof(GridLayoutGroup)).constraintCount = slot1 and 8 or 7
+	slot0.craftsGrid:GetComponent(typeof(GridLayoutGroup)).constraintCount = slot1 and 8 or 7
+	slot0.decBtn = findTF(slot0.topPanel, "buttons/dec_btn")
+	slot0.sortImgAsc = findTF(slot0.decBtn, "asc")
+	slot0.sortImgDec = findTF(slot0.decBtn, "desc")
+	slot0.filterBusyToggle = slot0._tf:Find("blur_panel/adapt/left_length/frame/toggle_equip")
 
-	if NotchAdapt.CheckNotchRatio == 2 or not var_4_1:CheckLargeScreen() then
-		var_4_0 = arg_4_0.equipmentView.rect.width > 2000
-	else
-		var_4_0 = NotchAdapt.CheckNotchRatio >= 2
-	end
+	setActive(slot0.filterBusyToggle, false)
 
-	arg_4_0.equipmentsGrid:GetComponent(typeof(GridLayoutGroup)).constraintCount = var_4_0 and 8 or 7
-	arg_4_0.craftsGrid:GetComponent(typeof(GridLayoutGroup)).constraintCount = var_4_0 and 8 or 7
-	arg_4_0.decBtn = findTF(arg_4_0.topPanel, "buttons/dec_btn")
-	arg_4_0.sortImgAsc = findTF(arg_4_0.decBtn, "asc")
-	arg_4_0.sortImgDec = findTF(arg_4_0.decBtn, "desc")
-	arg_4_0.filterBusyToggle = arg_4_0._tf:Find("blur_panel/adapt/left_length/frame/toggle_equip")
+	slot0.bottomBack = slot0:findTF("adapt/bottom_back", slot0.topItems)
+	slot0.capacityTF = slot0:findTF("bottom_left/tip/capcity/Text", slot0.bottomBack)
+	slot0.tipTF = slot0:findTF("bottom_left/tip", slot0.bottomBack)
+	slot0.tip = slot0.tipTF:Find("label")
+	slot0.helpBtn = slot0:findTF("adapt/help_btn", slot0.topItems)
 
-	setActive(arg_4_0.filterBusyToggle, false)
+	setActive(slot0.helpBtn, true)
 
-	arg_4_0.bottomBack = arg_4_0:findTF("adapt/bottom_back", arg_4_0.topItems)
-	arg_4_0.capacityTF = arg_4_0:findTF("bottom_left/tip/capcity/Text", arg_4_0.bottomBack)
-	arg_4_0.tipTF = arg_4_0:findTF("bottom_left/tip", arg_4_0.bottomBack)
-	arg_4_0.tip = arg_4_0.tipTF:Find("label")
-	arg_4_0.helpBtn = arg_4_0:findTF("adapt/help_btn", arg_4_0.topItems)
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
+	slot0.listEmptyTF = slot0:findTF("empty")
 
-	setActive(arg_4_0.helpBtn, true)
+	setActive(slot0.listEmptyTF, false)
 
-	arg_4_0.backBtn = arg_4_0:findTF("blur_panel/adapt/top/back_btn")
-	arg_4_0.listEmptyTF = arg_4_0:findTF("empty")
+	slot0.listEmptyTxt = slot0:findTF("Text", slot0.listEmptyTF)
 
-	setActive(arg_4_0.listEmptyTF, false)
+	setText(slot0.listEmptyTxt, i18n("list_empty_tip_storehouseui_equip"))
+	setText(slot0.equipmentView:Find("Viewport/Content/Craft/Banner/Text"), i18n("spweapon_ui_create"))
+	setText(slot0.equipmentView:Find("Viewport/Content/StoreHouse/Banner/Text"), i18n("spweapon_ui_storage"))
 
-	arg_4_0.listEmptyTxt = arg_4_0:findTF("Text", arg_4_0.listEmptyTF)
-
-	setText(arg_4_0.listEmptyTxt, i18n("list_empty_tip_storehouseui_equip"))
-	setText(arg_4_0.equipmentView:Find("Viewport/Content/Craft/Banner/Text"), i18n("spweapon_ui_create"))
-	setText(arg_4_0.equipmentView:Find("Viewport/Content/StoreHouse/Banner/Text"), i18n("spweapon_ui_storage"))
-
-	arg_4_0.isEquipingOn = false
-	arg_4_0.filterImportance = nil
+	slot0.isEquipingOn = false
+	slot0.filterImportance = nil
 end
 
-function var_0_0.setEquipmentUpdate(arg_5_0)
-	arg_5_0:filterEquipment()
-	arg_5_0:updateCapacity()
+function slot0.setEquipmentUpdate(slot0)
+	slot0:filterEquipment()
+	slot0:updateCapacity()
 end
 
-function var_0_0.didEnter(arg_6_0)
-	onButton(arg_6_0, arg_6_0.helpBtn, function()
-		local var_7_0 = pg.gametip.spweapon_help_storage.tip
-
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = var_7_0
+			helps = pg.gametip.spweapon_help_storage.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.backBtn, function()
-		GetOrAddComponent(arg_6_0._tf, typeof(CanvasGroup)).interactable = false
+	onButton(slot0, slot0.backBtn, function ()
+		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
 
-		arg_6_0:emit(var_0_0.ON_BACK)
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
-	onToggle(arg_6_0, arg_6_0.sortBtn, function(arg_9_0)
-		if arg_9_0 then
-			pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.sortPanel, {
+	onToggle(slot0, slot0.sortBtn, function (slot0)
+		if slot0 then
+			pg.UIMgr.GetInstance():OverlayPanel(uv0.sortPanel, {
 				groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 			})
-			setActive(arg_6_0.sortPanel, true)
+			setActive(uv0.sortPanel, true)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg_6_0.sortPanel, arg_6_0.topItems)
-			setActive(arg_6_0.sortPanel, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(uv0.sortPanel, uv0.topItems)
+			setActive(uv0.sortPanel, false)
 		end
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.sortPanel, function()
-		triggerToggle(arg_6_0.sortBtn, false)
+	onButton(slot0, slot0.sortPanel, function ()
+		triggerToggle(uv0.sortBtn, false)
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.indexBtn, function()
-		local var_11_0 = {
-			indexDatas = Clone(arg_6_0.contextData.indexDatas),
+	onButton(slot0, slot0.indexBtn, function ()
+		uv0:emit(SpWeaponStoreHouseMediator.OPEN_EQUIPMENT_INDEX, {
+			indexDatas = Clone(uv0.contextData.indexDatas),
 			customPanels = {
 				typeIndex = {
 					mode = CustomIndexLayer.Mode.OR,
@@ -139,360 +130,320 @@ function var_0_0.didEnter(arg_6_0)
 					}
 				}
 			},
-			callback = function(arg_12_0)
-				arg_6_0.contextData.indexDatas.typeIndex = arg_12_0.typeIndex
-				arg_6_0.contextData.indexDatas.rarityIndex = arg_12_0.rarityIndex
+			callback = function (slot0)
+				uv0.contextData.indexDatas.typeIndex = slot0.typeIndex
+				uv0.contextData.indexDatas.rarityIndex = slot0.rarityIndex
 
-				arg_6_0:filterEquipment()
+				uv0:filterEquipment()
 			end
-		}
-
-		arg_6_0:emit(SpWeaponStoreHouseMediator.OPEN_EQUIPMENT_INDEX, var_11_0)
+		})
 	end, SFX_PANEL)
+	onToggle(slot0, slot0.equipmentView:Find("Viewport/Content/Craft/Banner/Arrow"), function (slot0)
+		uv0.hideCraft = not slot0
 
-	local var_6_0 = arg_6_0.equipmentView:Find("Viewport/Content/Craft/Banner/Arrow")
+		uv0:UpdateCraftCount()
+	end, SFX_PANEL, SFX_PANEL)
+	onToggle(slot0, slot0.equipmentView:Find("Viewport/Content/StoreHouse/Banner/Arrow"), function (slot0)
+		uv0.hideSpweapon = not slot0
 
-	onToggle(arg_6_0, var_6_0, function(arg_13_0)
-		arg_6_0.hideCraft = not arg_13_0
-
-		arg_6_0:UpdateCraftCount()
+		uv0:updateEquipmentCount()
 	end, SFX_PANEL, SFX_PANEL)
 
-	local var_6_1 = arg_6_0.equipmentView:Find("Viewport/Content/StoreHouse/Banner/Arrow")
+	slot0.equipmetItems = {}
+	slot0.craftItems = {}
 
-	onToggle(arg_6_0, var_6_1, function(arg_14_0)
-		arg_6_0.hideSpweapon = not arg_14_0
+	slot0:initEquipments()
 
-		arg_6_0:updateEquipmentCount()
-	end, SFX_PANEL, SFX_PANEL)
+	slot0.asc = slot0.contextData.asc or false
+	slot0.contextData.sortData = slot0.contextData.sortData or uv1.sort[1]
+	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
 
-	arg_6_0.equipmetItems = {}
-	arg_6_0.craftItems = {}
-
-	arg_6_0:initEquipments()
-
-	arg_6_0.asc = arg_6_0.contextData.asc or false
-	arg_6_0.contextData.sortData = arg_6_0.contextData.sortData or var_0_1.sort[1]
-	arg_6_0.contextData.indexDatas = arg_6_0.contextData.indexDatas or {}
-
-	arg_6_0:initSort()
-	onToggle(arg_6_0, arg_6_0.filterBusyToggle, function(arg_15_0)
-		arg_6_0:SetShowBusyFlag(arg_15_0)
-		arg_6_0:filterEquipment()
+	slot0:initSort()
+	onToggle(slot0, slot0.filterBusyToggle, function (slot0)
+		uv0:SetShowBusyFlag(slot0)
+		uv0:filterEquipment()
 	end, SFX_PANEL)
-	triggerToggle(arg_6_0.filterBusyToggle, arg_6_0.shipVO)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.blurPanel, {
+	triggerToggle(slot0.filterBusyToggle, slot0.shipVO)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.blurPanel, {
 		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0.topItems, {
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.topItems, {
 		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 	})
 
-	local var_6_2 = arg_6_0.contextData.mode or StoreHouseConst.OVERVIEW
+	slot0.contextData.mode = slot0.contextData.mode or StoreHouseConst.OVERVIEW
 
-	arg_6_0.contextData.mode = var_6_2
-
-	arg_6_0:updateCapacity()
-	setActive(arg_6_0.tip, false)
-	setActive(arg_6_0.capacityTF.parent, true)
-	setActive(arg_6_0.filterBusyToggle, true)
-	setActive(arg_6_0.indexBtn, true)
-	setActive(arg_6_0.sortBtn, false)
-	triggerToggle(var_6_0, true)
-	triggerToggle(var_6_1, true)
+	slot0:updateCapacity()
+	setActive(slot0.tip, false)
+	setActive(slot0.capacityTF.parent, true)
+	setActive(slot0.filterBusyToggle, true)
+	setActive(slot0.indexBtn, true)
+	setActive(slot0.sortBtn, false)
+	triggerToggle(slot1, true)
+	triggerToggle(slot2, true)
 end
 
-function var_0_0.isDefaultStatus(arg_16_0)
-	return (not arg_16_0.contextData.indexDatas.typeIndex or arg_16_0.contextData.indexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not arg_16_0.contextData.indexDatas.rarityIndex or arg_16_0.contextData.indexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
+function slot0.isDefaultStatus(slot0)
+	return (not slot0.contextData.indexDatas.typeIndex or slot0.contextData.indexDatas.typeIndex == IndexConst.SpWeaponTypeAll) and (not slot0.contextData.indexDatas.rarityIndex or slot0.contextData.indexDatas.rarityIndex == IndexConst.SpWeaponRarityAll)
 end
 
-function var_0_0.onBackPressed(arg_17_0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg_17_0.sortPanel) then
-		triggerButton(arg_17_0.sortPanel)
+	if isActive(slot0.sortPanel) then
+		triggerButton(slot0.sortPanel)
 	else
-		triggerButton(arg_17_0.backBtn)
+		triggerButton(slot0.backBtn)
 	end
 end
 
-function var_0_0.updateCapacity(arg_18_0)
-	setText(arg_18_0.tip, "")
-
-	local var_18_0 = getProxy(EquipmentProxy):GetSpWeaponCount()
-	local var_18_1 = getProxy(EquipmentProxy):GetSpWeaponCapacity()
-
-	setText(arg_18_0.capacityTF, var_18_0 .. "/" .. var_18_1)
+function slot0.updateCapacity(slot0)
+	setText(slot0.tip, "")
+	setText(slot0.capacityTF, getProxy(EquipmentProxy):GetSpWeaponCount() .. "/" .. getProxy(EquipmentProxy):GetSpWeaponCapacity())
 end
 
-function var_0_0.setShip(arg_19_0, arg_19_1)
-	arg_19_0.shipVO = arg_19_1
+function slot0.setShip(slot0, slot1)
+	slot0.shipVO = slot1
 end
 
-function var_0_0.setPlayer(arg_20_0, arg_20_1)
-	arg_20_0.player = arg_20_1
+function slot0.setPlayer(slot0, slot1)
+	slot0.player = slot1
 end
 
-function var_0_0.initSort(arg_21_0)
-	onButton(arg_21_0, arg_21_0.decBtn, function()
-		arg_21_0.asc = not arg_21_0.asc
-		arg_21_0.contextData.asc = arg_21_0.asc
+function slot0.initSort(slot0)
+	function slot4()
+		uv0.asc = not uv0.asc
+		uv0.contextData.asc = uv0.asc
 
-		arg_21_0:filterEquipment()
+		uv0:filterEquipment()
+	end
+
+	onButton(slot0, slot0.decBtn, slot4)
+
+	slot0.sortButtons = {}
+
+	eachChild(slot0.sortContain, function (slot0)
+		setActive(slot0, false)
 	end)
 
-	arg_21_0.sortButtons = {}
+	for slot4, slot5 in ipairs(uv0.sort) do
+		slot6 = slot4 <= slot0.sortContain.childCount and slot0.sortContain:GetChild(slot4 - 1) or cloneTplTo(slot0.sortTpl, slot0.sortContain)
 
-	eachChild(arg_21_0.sortContain, function(arg_23_0)
-		setActive(arg_23_0, false)
-	end)
+		setActive(slot6, true)
+		setImageSprite(findTF(slot6, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", slot5.spr), true)
+		onToggle(slot0, slot6, function (slot0)
+			if slot0 then
+				uv0.contextData.sortData = uv1
 
-	for iter_21_0, iter_21_1 in ipairs(var_0_1.sort) do
-		local var_21_0 = iter_21_0 <= arg_21_0.sortContain.childCount and arg_21_0.sortContain:GetChild(iter_21_0 - 1) or cloneTplTo(arg_21_0.sortTpl, arg_21_0.sortContain)
-
-		setActive(var_21_0, true)
-		setImageSprite(findTF(var_21_0, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", iter_21_1.spr), true)
-		onToggle(arg_21_0, var_21_0, function(arg_24_0)
-			if arg_24_0 then
-				arg_21_0.contextData.sortData = iter_21_1
-
-				arg_21_0:filterEquipment()
-				triggerToggle(arg_21_0.sortBtn, false)
+				uv0:filterEquipment()
+				triggerToggle(uv0.sortBtn, false)
 			end
 		end, SFX_PANEL)
 
-		arg_21_0.sortButtons[iter_21_0] = var_21_0
+		slot0.sortButtons[slot4] = slot6
 	end
 end
 
-function var_0_0.initEquipments(arg_25_0)
-	arg_25_0.equipmentRect = UIItemList.New(arg_25_0.equipmentsGrid, arg_25_0.equipmentView:Find("Template"))
+function slot0.initEquipments(slot0)
+	slot0.equipmentRect = UIItemList.New(slot0.equipmentsGrid, slot0.equipmentView:Find("Template"))
 
-	arg_25_0.equipmentRect:make(function(arg_26_0, arg_26_1, arg_26_2)
-		local var_26_0 = go(arg_26_2)
-
-		if arg_26_0 == UIItemList.EventInit then
-			arg_25_0:InitSpWeapon(var_26_0)
-		elseif arg_26_0 == UIItemList.EventUpdate then
-			arg_25_0:UpdateSpWeapon(arg_26_1, var_26_0)
-		elseif arg_26_0 == UIItemList.EventExcess then
-			arg_25_0:ReturnSpWeapon(arg_26_1, var_26_0)
+	slot0.equipmentRect:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			uv0:InitSpWeapon(go(slot2))
+		elseif slot0 == UIItemList.EventUpdate then
+			uv0:UpdateSpWeapon(slot1, slot3)
+		elseif slot0 == UIItemList.EventExcess then
+			uv0:ReturnSpWeapon(slot1, slot3)
 		end
 	end)
 
-	arg_25_0.craftRect = UIItemList.New(arg_25_0.craftsGrid, arg_25_0.equipmentView:Find("Template"))
+	slot0.craftRect = UIItemList.New(slot0.craftsGrid, slot0.equipmentView:Find("Template"))
 
-	arg_25_0.craftRect:make(function(arg_27_0, arg_27_1, arg_27_2)
-		local var_27_0 = go(arg_27_2)
-
-		if arg_27_0 == UIItemList.EventInit then
-			arg_25_0:InitCraftItem(var_27_0)
-		elseif arg_27_0 == UIItemList.EventUpdate then
-			arg_25_0:UpdateCraftItem(arg_27_1, var_27_0)
-		elseif arg_27_0 == UIItemList.EventExcess then
-			arg_25_0:ReturnCraftItem(arg_27_1, var_27_0)
+	slot0.craftRect:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			uv0:InitCraftItem(go(slot2))
+		elseif slot0 == UIItemList.EventUpdate then
+			uv0:UpdateCraftItem(slot1, slot3)
+		elseif slot0 == UIItemList.EventExcess then
+			uv0:ReturnCraftItem(slot1, slot3)
 		end
 	end)
 end
 
-function var_0_0.InitSpWeapon(arg_28_0, arg_28_1)
-	local var_28_0 = SpWeaponItemView.New(arg_28_1)
+function slot0.InitSpWeapon(slot0, slot1)
+	slot2 = SpWeaponItemView.New(slot1)
 
-	onButton(arg_28_0, var_28_0.unloadBtn, function()
-		arg_28_0:emit(SpWeaponStoreHouseMediator.ON_UNEQUIP)
+	onButton(slot0, slot2.unloadBtn, function ()
+		uv0:emit(SpWeaponStoreHouseMediator.ON_UNEQUIP)
 	end, SFX_PANEL)
 
-	arg_28_0.equipmetItems[arg_28_1] = var_28_0
+	slot0.equipmetItems[slot1] = slot2
 end
 
-function var_0_0.UpdateSpWeapon(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = arg_30_0.equipmetItems[arg_30_2]
+function slot0.UpdateSpWeapon(slot0, slot1, slot2)
+	slot3 = slot0.equipmetItems[slot2]
 
-	assert(var_30_0, "without init item")
+	assert(slot3, "without init item")
 
-	local var_30_1 = arg_30_0.loadEquipmentVOs[arg_30_1 + 1]
+	slot4 = slot0.loadEquipmentVOs[slot1 + 1]
 
-	var_30_0:update(var_30_1)
+	slot3:update(slot4)
 
-	if not var_30_1 or var_30_1.mask then
-		removeOnButton(var_30_0.go)
+	if not slot4 or slot4.mask then
+		removeOnButton(slot3.go)
 	else
-		onButton(arg_30_0, var_30_0.go, function()
-			local var_31_0 = arg_30_0.shipVO and {
+		onButton(slot0, slot3.go, function ()
+			uv0:emit(uv2.ON_SPWEAPON, uv0.shipVO and {
 				type = EquipmentInfoMediator.TYPE_REPLACE,
-				shipId = arg_30_0.contextData.shipId,
-				oldSpWeaponUid = var_30_1:GetUID(),
-				oldShipId = var_30_1:GetShipId()
-			} or var_30_1:GetShipId() and {
+				shipId = uv0.contextData.shipId,
+				oldSpWeaponUid = uv1:GetUID(),
+				oldShipId = uv1:GetShipId()
+			} or uv1:GetShipId() and {
 				type = EquipmentInfoMediator.TYPE_DISPLAY,
-				spWeaponUid = var_30_1:GetUID(),
-				shipId = var_30_1:GetShipId()
+				spWeaponUid = uv1:GetUID(),
+				shipId = uv1:GetShipId()
 			} or {
 				type = EquipmentInfoMediator.TYPE_DEFAULT,
-				spWeaponUid = var_30_1:GetUID()
-			}
-
-			arg_30_0:emit(var_0_0.ON_SPWEAPON, var_31_0)
+				spWeaponUid = uv1:GetUID()
+			})
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.ReturnSpWeapon(arg_32_0, arg_32_1, arg_32_2)
-	if arg_32_0.exited then
+function slot0.ReturnSpWeapon(slot0, slot1, slot2)
+	if slot0.exited then
 		return
 	end
 
-	local var_32_0 = arg_32_0.equipmetItems[arg_32_2]
-
-	if var_32_0 then
-		removeOnButton(var_32_0.go)
-		var_32_0:clear()
+	if slot0.equipmetItems[slot2] then
+		removeOnButton(slot3.go)
+		slot3:clear()
 	end
 end
 
-function var_0_0.updateEquipmentCount(arg_33_0)
-	local var_33_0 = arg_33_0.hideSpweapon and 0 or #arg_33_0.loadEquipmentVOs
+function slot0.updateEquipmentCount(slot0)
+	slot1 = slot0.hideSpweapon and 0 or #slot0.loadEquipmentVOs
 
-	arg_33_0.equipmentRect:align(var_33_0)
+	slot0.equipmentRect:align(slot1)
 
-	local var_33_1 = arg_33_0.equipmentsGrid:GetComponent(typeof(GridLayoutGroup))
-	local var_33_2 = var_33_1.padding
+	slot3 = slot0.equipmentsGrid:GetComponent(typeof(GridLayoutGroup)).padding
 
-	if var_33_0 then
-		var_33_2.top = 31
-		var_33_2.bottom = 25
+	if slot1 then
+		slot3.top = 31
+		slot3.bottom = 25
 	else
-		var_33_2.top = 0
-		var_33_2.bottom = 0
+		slot3.top = 0
+		slot3.bottom = 0
 	end
 
-	var_33_1.padding = var_33_2
+	slot2.padding = slot3
 end
 
-function var_0_0.filterEquipment(arg_34_0)
-	local var_34_0 = arg_34_0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
-
-	GetSpriteFromAtlasAsync("ui/commonui_atlas", var_34_0, function(arg_35_0)
-		setImageSprite(arg_34_0.indexBtn, arg_35_0, true)
+function slot0.filterEquipment(slot0)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
+		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
+	function ()
+		uv0.loadEquipmentVOs = {}
+		slot0 = {}
 
-	local var_34_1 = arg_34_0.contextData.sortData
-
-	;(function()
-		arg_34_0.loadEquipmentVOs = {}
-
-		local var_36_0 = {}
-
-		for iter_36_0, iter_36_1 in pairs(arg_34_0.equipmentVOs) do
-			table.insert(var_36_0, iter_36_1)
+		for slot4, slot5 in pairs(uv0.equipmentVOs) do
+			table.insert(slot0, slot5)
 		end
 
-		for iter_36_2, iter_36_3 in pairs(var_36_0) do
-			if arg_34_0:checkFitBusyCondition(iter_36_3) and IndexConst.filterSpWeaponByType(iter_36_3, arg_34_0.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(iter_36_3, arg_34_0.contextData.indexDatas.rarityIndex) and (arg_34_0.filterImportance == nil or iter_36_3:IsImportant()) then
-				table.insert(arg_34_0.loadEquipmentVOs, iter_36_3)
+		for slot4, slot5 in pairs(slot0) do
+			if uv0:checkFitBusyCondition(slot5) and IndexConst.filterSpWeaponByType(slot5, uv0.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(slot5, uv0.contextData.indexDatas.rarityIndex) and (uv0.filterImportance == nil or slot5:IsImportant()) then
+				table.insert(uv0.loadEquipmentVOs, slot5)
 			end
 		end
 
-		if var_34_1 then
-			local var_36_1 = arg_34_0.asc
-
-			table.sort(arg_34_0.loadEquipmentVOs, CompareFuncs(var_0_1.sortFunc(var_34_1, var_36_1)))
+		if uv1 then
+			table.sort(uv0.loadEquipmentVOs, CompareFuncs(uv2.sortFunc(uv1, uv0.asc)))
 		end
 
-		if arg_34_0.contextData.qiutBtn then
-			table.insert(arg_34_0.loadEquipmentVOs, 1, false)
+		if uv0.contextData.qiutBtn then
+			table.insert(uv0.loadEquipmentVOs, 1, false)
 		end
-	end)()
-	arg_34_0:updateEquipmentCount()
-	;(function()
-		arg_34_0.showCraftList = {}
+	end()
+	slot0:updateEquipmentCount()
+	function ()
+		uv0.showCraftList = {}
+		slot0 = {}
 
-		local var_37_0 = {}
-
-		for iter_37_0, iter_37_1 in pairs(arg_34_0.craftList) do
-			table.insert(var_37_0, iter_37_1)
+		for slot4, slot5 in pairs(uv0.craftList) do
+			table.insert(slot0, slot5)
 		end
 
-		for iter_37_2, iter_37_3 in pairs(var_37_0) do
-			if arg_34_0:checkFitBusyCondition(iter_37_3) and IndexConst.filterSpWeaponByType(iter_37_3, arg_34_0.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(iter_37_3, arg_34_0.contextData.indexDatas.rarityIndex) and (arg_34_0.filterImportance == nil or iter_37_3:IsImportant()) then
-				table.insert(arg_34_0.showCraftList, iter_37_3)
+		for slot4, slot5 in pairs(slot0) do
+			if uv0:checkFitBusyCondition(slot5) and IndexConst.filterSpWeaponByType(slot5, uv0.contextData.indexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(slot5, uv0.contextData.indexDatas.rarityIndex) and (uv0.filterImportance == nil or slot5:IsImportant()) then
+				table.insert(uv0.showCraftList, slot5)
 			end
 		end
 
-		if var_34_1 then
-			local var_37_1 = arg_34_0.asc
-
-			table.sort(arg_34_0.showCraftList, CompareFuncs(var_0_1.sortFunc(var_34_1, var_37_1)))
+		if uv1 then
+			table.sort(uv0.showCraftList, CompareFuncs(uv2.sortFunc(uv1, uv0.asc)))
 		end
-	end)()
-	arg_34_0:UpdateCraftCount()
-	setImageSprite(arg_34_0:findTF("Image", arg_34_0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var_34_1.spr), true)
-	setActive(arg_34_0.sortImgAsc, arg_34_0.asc)
-	setActive(arg_34_0.sortImgDec, not arg_34_0.asc)
+	end()
+	slot0:UpdateCraftCount()
+	setImageSprite(slot0:findTF("Image", slot0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", slot0.contextData.sortData.spr), true)
+	setActive(slot0.sortImgAsc, slot0.asc)
+	setActive(slot0.sortImgDec, not slot0.asc)
 end
 
-function var_0_0.InitCraftItem(arg_38_0, arg_38_1)
-	local var_38_0 = SpWeaponItemView.New(arg_38_1)
-
-	arg_38_0.craftItems[arg_38_1] = var_38_0
+function slot0.InitCraftItem(slot0, slot1)
+	slot0.craftItems[slot1] = SpWeaponItemView.New(slot1)
 end
 
-function var_0_0.UpdateCraftItem(arg_39_0, arg_39_1, arg_39_2)
-	local var_39_0 = arg_39_0.craftItems[arg_39_2]
+function slot0.UpdateCraftItem(slot0, slot1, slot2)
+	slot3 = slot0.craftItems[slot2]
 
-	assert(var_39_0, "without init item")
-
-	local var_39_1 = arg_39_0.showCraftList[arg_39_1 + 1]
-
-	var_39_0:update(var_39_1)
-	onButton(arg_39_0, var_39_0.go, function()
-		arg_39_0:emit(SpWeaponStoreHouseMediator.ON_COMPOSITE, var_39_1:GetConfigID())
+	assert(slot3, "without init item")
+	slot3:update(slot0.showCraftList[slot1 + 1])
+	onButton(slot0, slot3.go, function ()
+		uv0:emit(SpWeaponStoreHouseMediator.ON_COMPOSITE, uv1:GetConfigID())
 	end, SFX_PANEL)
 end
 
-function var_0_0.ReturnCraftItem(arg_41_0, arg_41_1, arg_41_2)
-	local var_41_0 = arg_41_0.craftItems[arg_41_2]
-
-	if var_41_0 then
-		removeOnButton(var_41_0.go)
-		var_41_0:clear()
+function slot0.ReturnCraftItem(slot0, slot1, slot2)
+	if slot0.craftItems[slot2] then
+		removeOnButton(slot3.go)
+		slot3:clear()
 	end
 end
 
-function var_0_0.UpdateCraftCount(arg_42_0)
-	local var_42_0 = arg_42_0.hideCraft and 0 or #arg_42_0.showCraftList
+function slot0.UpdateCraftCount(slot0)
+	slot1 = slot0.hideCraft and 0 or #slot0.showCraftList
 
-	arg_42_0.craftRect:align(var_42_0)
+	slot0.craftRect:align(slot1)
 
-	local var_42_1 = arg_42_0.craftsGrid:GetComponent(typeof(GridLayoutGroup))
-	local var_42_2 = var_42_1.padding
+	slot3 = slot0.craftsGrid:GetComponent(typeof(GridLayoutGroup)).padding
 
-	if var_42_0 > 0 then
-		var_42_2.top = 31
-		var_42_2.bottom = 25
+	if slot1 > 0 then
+		slot3.top = 31
+		slot3.bottom = 25
 	else
-		var_42_2.top = 0
-		var_42_2.bottom = 0
+		slot3.top = 0
+		slot3.bottom = 0
 	end
 
-	var_42_1.padding = var_42_2
+	slot2.padding = slot3
 end
 
-function var_0_0.GetShowBusyFlag(arg_43_0)
-	return arg_43_0.isEquipingOn
+function slot0.GetShowBusyFlag(slot0)
+	return slot0.isEquipingOn
 end
 
-function var_0_0.SetShowBusyFlag(arg_44_0, arg_44_1)
-	arg_44_0.isEquipingOn = arg_44_1
+function slot0.SetShowBusyFlag(slot0, slot1)
+	slot0.isEquipingOn = slot1
 end
 
-function var_0_0.checkFitBusyCondition(arg_45_0, arg_45_1)
-	return arg_45_0:GetShowBusyFlag() or not arg_45_1:GetShipId()
+function slot0.checkFitBusyCondition(slot0, slot1)
+	return slot0:GetShowBusyFlag() or not slot1:GetShipId()
 end
 
-function var_0_0.willExit(arg_46_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_46_0.blurPanel, arg_46_0._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_46_0.topItems, arg_46_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.blurPanel, slot0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.topItems, slot0._tf)
 end
 
-return var_0_0
+return slot0

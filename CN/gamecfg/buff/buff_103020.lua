@@ -1,32 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBulletHitBefore"
-			},
-			arg_list = {
-				quota = 6,
-				skill_id = 103020,
-				time = 5,
-				rant = 1000,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 1,
-				index = {
-					-1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -337,5 +309,33 @@
 	stack = 1,
 	id = 103020,
 	icon = 103020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBulletHitBefore"
+			},
+			arg_list = {
+				quota = 6,
+				skill_id = 103020,
+				time = 5,
+				rant = 1000,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 1,
+				index = {
+					-1
+				}
+			}
+		}
+	}
 }

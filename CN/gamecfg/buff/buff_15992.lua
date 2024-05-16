@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddTag",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				tag = "shenxue"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -31,5 +19,17 @@
 	stack = 1,
 	id = 15992,
 	icon = 15992,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "shenxue"
+			}
+		}
+	}
 }

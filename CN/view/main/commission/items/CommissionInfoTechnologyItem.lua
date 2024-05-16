@@ -1,180 +1,163 @@
-﻿local var_0_0 = class("CommissionInfoTechnologyItem", import(".CommissionInfoItem"))
+slot0 = class("CommissionInfoTechnologyItem", import(".CommissionInfoItem"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0.commingTF = arg_1_0._tf:Find("comming")
-	arg_1_0.techFrame = arg_1_0._tf:Find("frame")
-	arg_1_0.lockTF = arg_1_0._tf:Find("lock")
+	slot0.commingTF = slot0._tf:Find("comming")
+	slot0.techFrame = slot0._tf:Find("frame")
+	slot0.lockTF = slot0._tf:Find("lock")
 
-	setActive(arg_1_0.lockTF, false)
+	setActive(slot0.lockTF, false)
 end
 
-function var_0_0.CanOpen(arg_2_0)
+function slot0.CanOpen(slot0)
 	return getProxy(PlayerProxy):getData().level >= 30 and not LOCK_TECHNOLOGY
 end
 
-function var_0_0.Init(arg_3_0)
+function slot0.Init(slot0)
 	if LOCK_TECHNOLOGY then
-		setActive(arg_3_0._tf:Find("frame"), false)
-		setActive(arg_3_0.lockTF, false)
-		setActive(arg_3_0.commingTF, true)
+		setActive(slot0._tf:Find("frame"), false)
+		setActive(slot0.lockTF, false)
+		setActive(slot0.commingTF, true)
 	else
-		setActive(arg_3_0._tf:Find("frame"), true)
-		setActive(arg_3_0.lockTF, false)
-		setActive(arg_3_0.commingTF, false)
+		setActive(slot0._tf:Find("frame"), true)
+		setActive(slot0.lockTF, false)
+		setActive(slot0.commingTF, false)
 
-		local var_3_0 = arg_3_0:CanOpen()
+		slot1 = slot0:CanOpen()
 
-		setActive(arg_3_0.lockTF, not var_3_0)
-		setGray(arg_3_0.toggle, not var_3_0, true)
-		setActive(arg_3_0.foldFlag, false)
-		setActive(arg_3_0.goBtn, var_3_0)
-		var_0_0.super.Init(arg_3_0)
+		setActive(slot0.lockTF, not slot1)
+		setGray(slot0.toggle, not slot1, true)
+		setActive(slot0.foldFlag, false)
+		setActive(slot0.goBtn, slot1)
+		uv0.super.Init(slot0)
 	end
 end
 
-function var_0_0.OnFlush(arg_4_0)
-	local var_4_0 = getProxy(TechnologyProxy):getPlanningTechnologys()
-
-	arg_4_0.list = {}
-
-	local var_4_1 = {
+function slot0.OnFlush(slot0)
+	slot0.list = {}
+	slot2 = {
 		ongoing = 0,
 		finished = 0,
 		leisure = TechnologyConst.QUEUE_TOTAL_COUNT + 1
 	}
 
-	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
-		if iter_4_1:isCompleted() then
-			var_4_1.leisure = var_4_1.leisure - 1
-			var_4_1.finished = var_4_1.finished + 1
-		elseif iter_4_1:isActivate() then
-			var_4_1.leisure = var_4_1.leisure - 1
-			var_4_1.ongoing = var_4_1.ongoing + 1
+	for slot6, slot7 in ipairs(getProxy(TechnologyProxy):getPlanningTechnologys()) do
+		if slot7:isCompleted() then
+			slot2.leisure = slot2.leisure - 1
+			slot2.finished = slot2.finished + 1
+		elseif slot7:isActivate() then
+			slot2.leisure = slot2.leisure - 1
+			slot2.ongoing = slot2.ongoing + 1
 		end
 	end
 
-	eachChild(arg_4_0._tf:Find("frame/counter"), function(arg_5_0)
-		setActive(arg_5_0, var_4_1[arg_5_0.name] > 0)
-		setText(arg_5_0:Find("Text"), var_4_1[arg_5_0.name])
+	eachChild(slot0._tf:Find("frame/counter"), function (slot0)
+		setActive(slot0, uv0[slot0.name] > 0)
+		setText(slot0:Find("Text"), uv0[slot0.name])
 	end)
-	setActive(arg_4_0.goBtn, var_4_1.finished == 0)
-	setActive(arg_4_0.finishedBtn, var_4_1.finished > 0)
+	setActive(slot0.goBtn, slot2.finished == 0)
+	setActive(slot0.finishedBtn, slot2.finished > 0)
 end
 
-function var_0_0.UpdateListItem(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = arg_6_2
-	local var_6_1 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var_6_2 = var_6_0:getConfig("time")
-	local var_6_3 = var_6_0.time
+function slot0.UpdateListItem(slot0, slot1, slot2, slot3)
+	slot4 = slot2
+	slot5 = pg.TimeMgr.GetInstance():GetServerTime()
+	slot6 = slot4:getConfig("time")
 
-	if var_6_3 == 0 then
-		setText(arg_6_3:Find("unlock/desc/name_bg/Text"), i18n("commission_idle"))
-		onButton(arg_6_0, arg_6_3:Find("unlock/leisure/go_btn"), function()
-			arg_6_0:OnSkip()
+	if slot4.time == 0 then
+		setText(slot3:Find("unlock/desc/name_bg/Text"), i18n("commission_idle"))
+		onButton(slot0, slot3:Find("unlock/leisure/go_btn"), function ()
+			uv0:OnSkip()
 		end, SFX_PANEL)
-		onButton(arg_6_0, arg_6_3, function()
-			arg_6_0:OnSkip()
+		onButton(slot0, slot3, function ()
+			uv0:OnSkip()
 		end, SFX_PANEL)
-	elseif var_6_1 < var_6_3 - var_6_2 then
-		arg_6_0:UpdateTechnology(arg_6_3, var_6_0)
-		setText(arg_6_3:Find("unlock/ongoging/time"), pg.TimeMgr.GetInstance():DescCDTime(var_6_2))
-	elseif var_6_1 < var_6_3 then
-		arg_6_0:UpdateTechnology(arg_6_3, var_6_0)
-		arg_6_0:AddTimer(var_6_0, arg_6_3)
+	elseif slot5 < slot7 - slot6 then
+		slot0:UpdateTechnology(slot3, slot4)
+		setText(slot3:Find("unlock/ongoging/time"), pg.TimeMgr.GetInstance():DescCDTime(slot6))
+	elseif slot5 < slot7 then
+		slot0:UpdateTechnology(slot3, slot4)
+		slot0:AddTimer(slot4, slot3)
 	else
-		arg_6_0:UpdateTechnology(arg_6_3, var_6_0)
+		slot0:UpdateTechnology(slot3, slot4)
 
-		if var_6_0:finishCondition() then
-			local var_6_4 = arg_6_3:Find("unlock/finished/finish_btn")
-
-			onButton(arg_6_0, var_6_4, function()
-				arg_6_0:emit(CommissionInfoMediator.ON_TECH_FINISHED, {
-					id = var_6_0.id,
-					pool_id = var_6_0.poolId
+		if slot4:finishCondition() then
+			onButton(slot0, slot3:Find("unlock/finished/finish_btn"), function ()
+				uv0:emit(CommissionInfoMediator.ON_TECH_FINISHED, {
+					id = uv1.id,
+					pool_id = uv1.poolId
 				})
 			end, SFX_PANEL)
-			onButton(arg_6_0, arg_6_3, function()
-				triggerButton(var_6_4)
+			onButton(slot0, slot3, function ()
+				triggerButton(uv0)
 			end, SFX_PANEL)
 		else
-			setText(arg_6_3:Find("unlock/ongoging/time"), "00:00:00")
+			setText(slot3:Find("unlock/ongoging/time"), "00:00:00")
 		end
 	end
 
-	setActive(arg_6_3:Find("unlock"), true)
-	setActive(arg_6_3:Find("lock"), false)
-	setActive(arg_6_3:Find("unlock/leisure"), not var_6_0:isActivate())
-	setActive(arg_6_3:Find("unlock/ongoging"), var_6_0:isActivate() and not var_6_0:isCompleted())
-	setActive(arg_6_3:Find("unlock/finished"), var_6_0:isCompleted())
-	setActive(arg_6_3:Find("unlock/desc/task_bg"), var_6_0:isActivate() and var_6_0:getConfig("condition") > 0)
+	setActive(slot3:Find("unlock"), true)
+	setActive(slot3:Find("lock"), false)
+	setActive(slot3:Find("unlock/leisure"), not slot4:isActivate())
+	setActive(slot3:Find("unlock/ongoging"), slot4:isActivate() and not slot4:isCompleted())
+	setActive(slot3:Find("unlock/finished"), slot4:isCompleted())
+	setActive(slot3:Find("unlock/desc/task_bg"), slot4:isActivate() and slot4:getConfig("condition") > 0)
 end
 
-function var_0_0.AddTimer(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_2:Find("unlock/ongoging/time"):GetComponent(typeof(Text))
-
-	arg_11_0.timers[arg_11_1.id] = Timer.New(function()
-		local var_12_0 = arg_11_1:getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime()
-
-		if var_12_0 > 0 then
-			var_11_0.text = pg.TimeMgr.GetInstance():DescCDTime(var_12_0)
+function slot0.AddTimer(slot0, slot1, slot2)
+	slot3 = slot2:Find("unlock/ongoging/time"):GetComponent(typeof(Text))
+	slot0.timers[slot1.id] = Timer.New(function ()
+		if uv0:getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
+			uv1.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
 		else
-			arg_11_0:RemoveTimer(arg_11_1)
-			arg_11_0:OnFlush()
-			arg_11_0:UpdateList()
+			uv2:RemoveTimer(uv0)
+			uv2:OnFlush()
+			uv2:UpdateList()
 		end
 	end, 1, -1)
 
-	arg_11_0.timers[arg_11_1.id]:Start()
-	arg_11_0.timers[arg_11_1.id].func()
+	slot0.timers[slot1.id]:Start()
+	slot0.timers[slot1.id].func()
 end
 
-function var_0_0.RemoveTimer(arg_13_0, arg_13_1)
-	if arg_13_0.timers[arg_13_1.id] then
-		arg_13_0.timers[arg_13_1.id]:Stop()
+function slot0.RemoveTimer(slot0, slot1)
+	if slot0.timers[slot1.id] then
+		slot0.timers[slot1.id]:Stop()
 
-		arg_13_0.timers[arg_13_1.id] = nil
+		slot0.timers[slot1.id] = nil
 	end
 end
 
-function var_0_0.UpdateTechnology(arg_14_0, arg_14_1, arg_14_2)
-	setText(arg_14_1:Find("unlock/desc/name_bg/Text"), arg_14_2:getConfig("name"))
+function slot0.UpdateTechnology(slot0, slot1, slot2)
+	setText(slot1:Find("unlock/desc/name_bg/Text"), slot2:getConfig("name"))
 
-	local var_14_0 = arg_14_2:getConfig("condition")
+	if slot2:getConfig("condition") > 0 then
+		slot4 = getProxy(TaskProxy):getTaskVO(slot3)
 
-	if var_14_0 > 0 then
-		local var_14_1 = getProxy(TaskProxy):getTaskVO(var_14_0)
-		local var_14_2 = var_14_1:getConfig("desc") .. "(" .. var_14_1:getProgress() .. "/" .. var_14_1:getConfig("target_num") .. ")"
-
-		setText(arg_14_1:Find("unlock/desc/task_bg/Text"), shortenString(var_14_2, 10))
+		setText(slot1:Find("unlock/desc/task_bg/Text"), shortenString(slot4:getConfig("desc") .. "(" .. slot4:getProgress() .. "/" .. slot4:getConfig("target_num") .. ")", 10))
 	end
 end
 
-function var_0_0.GetList(arg_15_0)
-	local var_15_0 = getProxy(PlayerProxy):getRawData()
-	local var_15_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_15_0.level, "TechnologyMediator")
-
-	return arg_15_0.list, var_15_1 and TechnologyConst.QUEUE_TOTAL_COUNT + 1 or 0
+function slot0.GetList(slot0)
+	return slot0.list, pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "TechnologyMediator") and TechnologyConst.QUEUE_TOTAL_COUNT + 1 or 0
 end
 
-function var_0_0.OnSkip(arg_16_0)
-	arg_16_0:emit(CommissionInfoMediator.ON_ACTIVE_TECH)
+function slot0.OnSkip(slot0)
+	slot0:emit(CommissionInfoMediator.ON_ACTIVE_TECH)
 end
 
-function var_0_0.OnFinishAll(arg_17_0)
-	local var_17_0 = getProxy(TechnologyProxy)
-
-	if var_17_0.queue[1] and var_17_0.queue[1]:isCompleted() then
-		arg_17_0:emit(CommissionInfoMediator.ON_TECH_QUEUE_FINISH)
+function slot0.OnFinishAll(slot0)
+	if getProxy(TechnologyProxy).queue[1] and slot1.queue[1]:isCompleted() then
+		slot0:emit(CommissionInfoMediator.ON_TECH_QUEUE_FINISH)
 	else
-		local var_17_1 = var_17_0:getActivateTechnology()
+		slot2 = slot1:getActivateTechnology()
 
-		arg_17_0:emit(CommissionInfoMediator.ON_TECH_FINISHED, {
-			id = var_17_1.id,
-			pool_id = var_17_1.poolId
+		slot0:emit(CommissionInfoMediator.ON_TECH_FINISHED, {
+			id = slot2.id,
+			pool_id = slot2.poolId
 		})
 	end
 end
 
-return var_0_0
+return slot0

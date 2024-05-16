@@ -1,25 +1,4 @@
-﻿return {
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBulletHitBefore"
-			},
-			arg_list = {
-				rant = 1000,
-				skill_id = 11141,
-				target = "TargetSelf",
-				time = 0
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -190,5 +169,26 @@
 	stack = 1,
 	id = 11141,
 	icon = 11140,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBulletHitBefore"
+			},
+			arg_list = {
+				rant = 1000,
+				skill_id = 11141,
+				target = "TargetSelf",
+				time = 0
+			}
+		}
+	}
 }

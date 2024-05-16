@@ -1,27 +1,24 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.OSSMgr = singletonClass("OSSMgr")
+slot0 = pg.OSSMgr
 
-local var_0_0 = pg.OSSMgr
+function slot0.Ctor(slot0)
+	slot0.instance = OSSStarter.ins
+	slot0.isIninted = false
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.instance = OSSStarter.ins
-	arg_1_0.isIninted = false
-
-	ReflectionHelp.RefSetField(typeof("OSSStarter"), "debug", arg_1_0.instance, false)
+	ReflectionHelp.RefSetField(typeof("OSSStarter"), "debug", slot0.instance, false)
 end
 
-function var_0_0.InitConfig(arg_2_0)
+function slot0.InitConfig(slot0)
 	if PLATFORM_CODE == PLATFORM_CH then
 		OSS_STS_URL = ""
 		OSS_ENDPOINT = "oss-cn-hangzhou.aliyuncs.com"
 		OSSBUCKETNAME = "blhx-dorm-oss"
-
-		local var_2_0 = pg.SdkMgr.GetInstance():GetChannelUID()
-		local var_2_1 = var_2_0 == "cps" or var_2_0 == "yun" or var_2_0 == "0"
+		slot2 = pg.SdkMgr.GetInstance():GetChannelUID() == "cps" or slot1 == "yun" or slot1 == "0"
 
 		if getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_IPHONEPLAYER then
 			FOLDERNAME = "dorm_ios/"
-		elseif var_2_1 then
+		elseif slot2 then
 			FOLDERNAME = "dorm_bili/"
 		else
 			FOLDERNAME = "dorm_uo/"
@@ -51,93 +48,77 @@ function var_0_0.InitConfig(arg_2_0)
 	end
 end
 
-function var_0_0.Init(arg_3_0)
-	arg_3_0:InitConfig()
+function slot0.Init(slot0)
+	slot0:InitConfig()
 
-	if not arg_3_0.isIninted then
-		arg_3_0.isIninted = true
+	if not slot0.isIninted then
+		slot0.isIninted = true
 
-		arg_3_0:InitClinet()
+		slot0:InitClinet()
 	end
 end
 
-function var_0_0.InitClinet(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0.instance.initMode
-
-	local function var_4_1(arg_5_0, arg_5_1)
-		arg_4_0:AddExpireTimer(arg_5_1)
-		arg_4_0.instance:InitWithArgs(unpack(arg_5_0))
-	end
-
+function slot0.InitClinet(slot0, slot1)
 	pg.m02:sendNotification(GAME.GET_OSS_ARGS, {
-		mode = var_4_0,
-		callback = var_4_1
+		mode = slot0.instance.initMode,
+		callback = function (slot0, slot1)
+			uv0:AddExpireTimer(slot1)
+			uv0.instance:InitWithArgs(unpack(slot0))
+		end
 	})
 end
 
-function var_0_0.UpdateLoad(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = OSSBUCKETNAME
-
-	arg_6_0.instance:UpdateLoad(var_6_0, FOLDERNAME .. arg_6_1, arg_6_2, arg_6_3)
+function slot0.UpdateLoad(slot0, slot1, slot2, slot3)
+	slot0.instance:UpdateLoad(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3)
 end
 
-function var_0_0.AsynUpdateLoad(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	local var_7_0 = OSSBUCKETNAME
-
-	arg_7_0.instance:AsynUpdateLoad(var_7_0, FOLDERNAME .. arg_7_1, arg_7_2, arg_7_3)
+function slot0.AsynUpdateLoad(slot0, slot1, slot2, slot3)
+	slot0.instance:AsynUpdateLoad(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3)
 end
 
-function var_0_0.DeleteObject(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = OSSBUCKETNAME
-
-	print(arg_8_0.instance)
-	arg_8_0.instance:DeleteObject(var_8_0, FOLDERNAME .. arg_8_1, arg_8_2)
+function slot0.DeleteObject(slot0, slot1, slot2)
+	print(slot0.instance)
+	slot0.instance:DeleteObject(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2)
 end
 
-function var_0_0.GetSprite(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5, arg_9_6)
-	local var_9_0 = OSSBUCKETNAME
-
-	arg_9_0.instance:GetSprite(var_9_0, FOLDERNAME .. arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5, arg_9_6)
+function slot0.GetSprite(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	slot0.instance:GetSprite(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3, slot4, slot5, slot6)
 end
 
-function var_0_0.GetTexture2D(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5, arg_10_6)
-	local var_10_0 = OSSBUCKETNAME
-
-	arg_10_0.instance:GetTexture(var_10_0, FOLDERNAME .. arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5, arg_10_6)
+function slot0.GetTexture2D(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	slot0.instance:GetTexture(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3, slot4, slot5, slot6)
 end
 
-function var_0_0.AddExpireTimer(arg_11_0, arg_11_1)
-	arg_11_0:RemoveExpireTimer()
+function slot0.AddExpireTimer(slot0, slot1)
+	slot0:RemoveExpireTimer()
 
-	if not arg_11_1 or arg_11_1 == 0 then
+	if not slot1 or slot1 == 0 then
 		return
 	end
 
-	local var_11_0 = arg_11_1 - pg.TimeMgr.GetInstance():GetServerTime()
-
-	if var_11_0 <= 0 then
-		var_11_0 = 300
+	if slot1 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+		slot2 = 300
 	end
 
-	print("expireTime: ", var_11_0)
+	print("expireTime: ", slot2)
 
-	arg_11_0.timer = Timer.New(function()
-		arg_11_0:InitClinet()
-	end, var_11_0, 1)
+	slot0.timer = Timer.New(function ()
+		uv0:InitClinet()
+	end, slot2, 1)
 
-	arg_11_0.timer:Start()
+	slot0.timer:Start()
 end
 
-function var_0_0.RemoveExpireTimer(arg_13_0)
-	if arg_13_0.timer then
-		arg_13_0.timer:Stop()
+function slot0.RemoveExpireTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_13_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.Dispose(arg_14_0)
-	arg_14_0:RemoveExpireTimer()
+function slot0.Dispose(slot0)
+	slot0:RemoveExpireTimer()
 end
 
-return var_0_0
+return slot0

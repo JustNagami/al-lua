@@ -1,103 +1,96 @@
-﻿local var_0_0 = class("WorldBossRankPage", import("....base.BaseSubView"))
+slot0 = class("WorldBossRankPage", import("....base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "WorldBossRankUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.numberTF1 = arg_2_0:findTF("frame/list/number1")
+function slot0.OnLoaded(slot0)
+	slot0.numberTF1 = slot0:findTF("frame/list/number1")
 
-	setActive(arg_2_0.numberTF1, false)
+	setActive(slot0.numberTF1, false)
 
-	arg_2_0.numberTF2 = arg_2_0:findTF("frame/list/number2")
+	slot0.numberTF2 = slot0:findTF("frame/list/number2")
 
-	setActive(arg_2_0.numberTF2, false)
+	setActive(slot0.numberTF2, false)
 
-	arg_2_0.numberTF3 = arg_2_0:findTF("frame/list/number3")
+	slot0.numberTF3 = slot0:findTF("frame/list/number3")
 
-	setActive(arg_2_0.numberTF3, false)
+	setActive(slot0.numberTF3, false)
 
-	arg_2_0.numberTF4 = arg_2_0:findTF("frame/list/number4")
+	slot0.numberTF4 = slot0:findTF("frame/list/number4")
 
-	setActive(arg_2_0.numberTF4, false)
+	setActive(slot0.numberTF4, false)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Update(arg_5_0, arg_5_1, arg_5_2)
-	arg_5_0.bossProxy = arg_5_1
-	arg_5_0.bossId = arg_5_2
+function slot0.Update(slot0, slot1, slot2)
+	slot0.bossProxy = slot1
+	slot0.bossId = slot2
 
-	arg_5_0:Show()
-	arg_5_0:UpdateRankList()
+	slot0:Show()
+	slot0:UpdateRankList()
 end
 
-function var_0_0.UpdateRankList(arg_6_0)
-	local var_6_0 = arg_6_0.bossId
-	local var_6_1 = arg_6_0.bossProxy:GetRank(var_6_0)
-
-	if var_6_1 == nil then
-		arg_6_0:emit(WorldBossMediator.ON_RANK_LIST, var_6_0)
+function slot0.UpdateRankList(slot0)
+	if slot0.bossProxy:GetRank(slot0.bossId) == nil then
+		slot0:emit(WorldBossMediator.ON_RANK_LIST, slot1)
 	else
-		arg_6_0:UpdateRanks(var_6_1)
+		slot0:UpdateRanks(slot3)
 	end
 end
 
-function var_0_0.UpdateRanks(arg_7_0, arg_7_1)
-	for iter_7_0 = 1, 3 do
-		local var_7_0 = arg_7_1[iter_7_0]
-		local var_7_1 = arg_7_0["numberTF" .. iter_7_0]
+function slot0.UpdateRanks(slot0, slot1)
+	for slot5 = 1, 3 do
+		slot6 = slot1[slot5]
 
-		setActive(var_7_1, var_7_0)
+		setActive(slot0["numberTF" .. slot5], slot6)
 
-		if var_7_0 then
-			arg_7_0:UpdateRank(var_7_1, var_7_0)
+		if slot6 then
+			slot0:UpdateRank(slot7, slot6)
 		end
 	end
 
-	local var_7_2 = getProxy(PlayerProxy):getRawData().id
-	local var_7_3
+	slot3 = nil
 
-	for iter_7_1, iter_7_2 in ipairs(arg_7_1) do
-		if iter_7_2.id == var_7_2 then
-			var_7_3 = iter_7_2
-			var_7_3.number = iter_7_1
+	for slot7, slot8 in ipairs(slot1) do
+		if slot8.id == getProxy(PlayerProxy):getRawData().id then
+			slot8.number = slot7
 
 			break
 		end
 	end
 
-	if var_7_3 then
-		arg_7_0:UpdateMyRank(arg_7_0.numberTF4, var_7_3)
+	if slot3 then
+		slot0:UpdateMyRank(slot0.numberTF4, slot3)
 	else
-		setActive(arg_7_0.numberTF4, false)
+		setActive(slot0.numberTF4, false)
 	end
 end
 
-function var_0_0.UpdateRank(arg_8_0, arg_8_1, arg_8_2)
-	setText(arg_8_1:Find("Text"), arg_8_2.name)
-	setText(arg_8_1:Find("damage/Text"), arg_8_2.damage)
-	setActive(arg_8_1:Find("view"), arg_8_2.id ~= getProxy(PlayerProxy):getRawData().id)
-	onButton(arg_8_0, arg_8_1:Find("view"), function()
-		arg_8_0:emit(WorldBossMediator.FETCH_RANK_FORMATION, arg_8_2.id, arg_8_0.bossId)
+function slot0.UpdateRank(slot0, slot1, slot2)
+	setText(slot1:Find("Text"), slot2.name)
+	setText(slot1:Find("damage/Text"), slot2.damage)
+	setActive(slot1:Find("view"), slot2.id ~= getProxy(PlayerProxy):getRawData().id)
+	onButton(slot0, slot1:Find("view"), function ()
+		uv0:emit(WorldBossMediator.FETCH_RANK_FORMATION, uv1.id, uv0.bossId)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateMyRank(arg_10_0, arg_10_1, arg_10_2)
-	arg_10_0:UpdateRank(arg_10_1, arg_10_2)
-	setText(arg_10_1:Find("number"), arg_10_2.number)
+function slot0.UpdateMyRank(slot0, slot1, slot2)
+	slot0:UpdateRank(slot1, slot2)
+	setText(slot1:Find("number"), slot2.number)
 end
 
-function var_0_0.isActive(arg_11_0)
-	return isActive(arg_11_0._tf)
+function slot0.isActive(slot0)
+	return isActive(slot0._tf)
 end
 
-function var_0_0.OnDestroy(arg_12_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

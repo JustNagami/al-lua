@@ -1,86 +1,76 @@
-﻿local var_0_0 = class("Dorm3dCollectionItemSubView", import("view.base.BaseSubView"))
+slot0 = class("Dorm3dCollectionItemSubView", import("view.base.BaseSubView"))
 
-function var_0_0.OnLoaded(arg_1_0)
-	local var_1_0 = arg_1_0._tf:Find("list/container")
+function slot0.OnLoaded(slot0)
+	slot1 = slot0._tf:Find("list/container")
+	slot0.itemList = UIItemList.New(slot1, slot1:Find("tpl"))
 
-	arg_1_0.itemList = UIItemList.New(var_1_0, var_1_0:Find("tpl"))
+	slot0.itemList:make(function (slot0, slot1, slot2)
+		slot1 = slot1 + 1
 
-	arg_1_0.itemList:make(function(arg_2_0, arg_2_1, arg_2_2)
-		arg_2_1 = arg_2_1 + 1
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0.ids[slot1]
+			slot5 = uv0.unlockDic[slot3]
+			slot6 = uv0.contextData.apartment:checkUnlockConfig(pg.dorm3d_collection_template[slot3].unlock)
+			slot7 = slot1
 
-		if arg_2_0 == UIItemList.EventUpdate then
-			local var_2_0 = arg_1_0.ids[arg_2_1]
-			local var_2_1 = pg.dorm3d_collection_template[var_2_0]
-			local var_2_2 = arg_1_0.unlockDic[var_2_0]
-			local var_2_3 = arg_1_0.contextData.apartment:checkUnlockConfig(var_2_1.unlock)
-			local var_2_4 = arg_2_1
+			for slot11 = 1, 2 do
+				cloneTplTo(uv0.numContainer:Find("num_" .. slot7 % 10), slot2:Find("num"))
 
-			for iter_2_0 = 1, 2 do
-				cloneTplTo(arg_1_0.numContainer:Find("num_" .. var_2_4 % 10), arg_2_2:Find("num"))
-
-				var_2_4 = math.floor(var_2_4 / 10)
+				slot7 = math.floor(slot7 / 10)
 			end
 
-			setActive(arg_2_2:Find("content/lock"), not var_2_3)
-			setActive(arg_2_2:Find("content/mark"), var_2_3 and not var_2_2)
-			setText(arg_2_2:Find("content/name"), var_2_2 and var_2_1.name or string.format("locked:%s", var_2_0))
-			onToggle(arg_1_0, arg_2_2, function(arg_3_0)
-				if arg_3_0 then
-					arg_1_0:UpdateDisplay(arg_2_1, var_2_0)
+			setActive(slot2:Find("content/lock"), not slot6)
+			setActive(slot2:Find("content/mark"), slot6 and not slot5)
+			setText(slot2:Find("content/name"), slot5 and slot4.name or string.format("locked:%s", slot3))
+			onToggle(uv0, slot2, function (slot0)
+				if slot0 then
+					uv0:UpdateDisplay(uv1, uv2)
 				end
 
-				setTextColor(arg_2_2:Find("content/name"), Color.NewHex(not var_2_2 and "a9a9a9" or arg_3_0 and "2d1dfc" or "393a3c"))
-				eachChild(arg_2_2:Find("num"), function(arg_4_0)
-					setImageColor(arg_4_0, Color.NewHex(arg_3_0 and "2d1dfd" or "393a3c"))
+				setTextColor(uv3:Find("content/name"), Color.NewHex(not uv4 and "a9a9a9" or slot0 and "2d1dfc" or "393a3c"))
+				eachChild(uv3:Find("num"), function (slot0)
+					setImageColor(slot0, Color.NewHex(uv0 and "2d1dfd" or "393a3c"))
 				end)
 			end, SFX_PANEL)
 		end
 	end)
 
-	arg_1_0.numContainer = arg_1_0._tf:Find("list/number")
-	arg_1_0.rtInfo = arg_1_0._tf:Find("info")
+	slot0.numContainer = slot0._tf:Find("list/number")
+	slot0.rtInfo = slot0._tf:Find("info")
 end
 
-function var_0_0.OnInit(arg_5_0)
-	local var_5_0 = arg_5_0.contextData.apartment
+function slot0.OnInit(slot0)
+	slot1 = slot0.contextData.apartment
+	slot0.unlockDic = slot1.collectItemDic
 
-	arg_5_0.unlockDic = var_5_0.collectItemDic
+	setText(slot0.rtInfo:Find("count"), string.format("<color=#2d1dfc>%d</color>/%d", table.getCount(slot0.unlockDic), #slot1:getCollectConfig("recall_list")))
+	setText(slot0.rtInfo:Find("empty"), "with out anything")
 
-	setText(arg_5_0.rtInfo:Find("count"), string.format("<color=#2d1dfc>%d</color>/%d", table.getCount(arg_5_0.unlockDic), #var_5_0:getCollectConfig("recall_list")))
-	setText(arg_5_0.rtInfo:Find("empty"), "with out anything")
+	slot0.ids = slot1:getCollectConfig("collection_template_list")
 
-	arg_5_0.ids = var_5_0:getCollectConfig("collection_template_list")
-
-	arg_5_0.itemList:align(#arg_5_0.ids)
-	triggerToggle(arg_5_0.itemList.container:GetChild(0), true)
+	slot0.itemList:align(#slot0.ids)
+	triggerToggle(slot0.itemList.container:GetChild(0), true)
 end
 
-function var_0_0.UpdateDisplay(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0.unlockDic[arg_6_2]
+function slot0.UpdateDisplay(slot0, slot1, slot2)
+	slot3 = slot0.unlockDic[slot2]
 
-	setActive(arg_6_0.rtInfo:Find("empty"), not var_6_0)
+	setActive(slot0.rtInfo:Find("empty"), not slot3)
+	setActive(slot0.rtInfo:Find("content"), slot3)
 
-	local var_6_1 = arg_6_0.rtInfo:Find("content")
-
-	setActive(var_6_1, var_6_0)
-
-	if not var_6_0 then
+	if not slot3 then
 		return
 	end
 
-	local var_6_2 = pg.dorm3d_collection_template[arg_6_2]
+	slot5 = pg.dorm3d_collection_template[slot2]
 
-	GetImageSpriteFromAtlasAsync("dorm3dcollection/" .. var_6_2.model, "", var_6_1:Find("icon"), true)
-	setText(var_6_1:Find("name/Text"), var_6_2.name)
-	setText(var_6_1:Find("desc"), var_6_2.desc)
-
-	local var_6_3 = pg.dorm3d_favor_trigger[var_6_2.award].num
-
-	setText(var_6_1:Find("favor/Text"), string.format("favor plus:%d", var_6_3))
+	GetImageSpriteFromAtlasAsync("dorm3dcollection/" .. slot5.model, "", slot4:Find("icon"), true)
+	setText(slot4:Find("name/Text"), slot5.name)
+	setText(slot4:Find("desc"), slot5.desc)
+	setText(slot4:Find("favor/Text"), string.format("favor plus:%d", pg.dorm3d_favor_trigger[slot5.award].num))
 end
 
-function var_0_0.OnDestroy(arg_7_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

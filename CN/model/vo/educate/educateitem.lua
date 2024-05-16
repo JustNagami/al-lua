@@ -1,75 +1,74 @@
-﻿local var_0_0 = class("EducateItem", import("model.vo.BaseVO"))
-
-var_0_0.TYPE_BOOK = 1
-var_0_0.TYPE_MUSICAL = 2
-var_0_0.TYPE_TOOL = 3
-var_0_0.TYPE_SUDRIES = 4
-var_0_0.RARITY2FRAME = {
+slot0 = class("EducateItem", import("model.vo.BaseVO"))
+slot0.TYPE_BOOK = 1
+slot0.TYPE_MUSICAL = 2
+slot0.TYPE_TOOL = 3
+slot0.TYPE_SUDRIES = 4
+slot0.RARITY2FRAME = {
 	"rarity_grey",
 	"rarity_green",
 	"rarity_blue",
 	"rarity_purple",
 	"rarity_orange"
 }
-var_0_0.USE_TYPE_UNDEFINED = "usage_undefined"
-var_0_0.USE_TYPE_DROP = "usage_drop"
+slot0.USE_TYPE_UNDEFINED = "usage_undefined"
+slot0.USE_TYPE_DROP = "usage_drop"
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.count = arg_1_1.num or 0
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.count = slot1.num or 0
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.child_item
 end
 
-function var_0_0.CanUse(arg_3_0)
-	return arg_3_0:getConfig("usage") ~= var_0_0.USE_TYPE_UNDEFINED
+function slot0.CanUse(slot0)
+	return slot0:getConfig("usage") ~= uv0.USE_TYPE_UNDEFINED
 end
 
-function var_0_0.IsEnough(arg_4_0, arg_4_1)
-	return arg_4_1 <= arg_4_0.count
+function slot0.IsEnough(slot0, slot1)
+	return slot1 <= slot0.count
 end
 
-function var_0_0.Consume(arg_5_0, arg_5_1)
-	arg_5_0.count = arg_5_0.count - arg_5_1
+function slot0.Consume(slot0, slot1)
+	slot0.count = slot0.count - slot1
 end
 
-function var_0_0.AddCount(arg_6_0, arg_6_1)
-	arg_6_0.count = arg_6_0.count + arg_6_1
+function slot0.AddCount(slot0, slot1)
+	slot0.count = slot0.count + slot1
 end
 
-function var_0_0.GetType(arg_7_0)
-	return arg_7_0:getConfig("type")
+function slot0.GetType(slot0)
+	return slot0:getConfig("type")
 end
 
-function var_0_0.GetIcon(arg_8_0)
-	return arg_8_0:getConfig("icon")
+function slot0.GetIcon(slot0)
+	return slot0:getConfig("icon")
 end
 
-function var_0_0.GetName(arg_9_0)
-	return arg_9_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetRarity(arg_10_0)
-	return arg_10_0:getConfig("rarity")
+function slot0.GetRarity(slot0)
+	return slot0:getConfig("rarity")
 end
 
-function var_0_0.GetFrameName(arg_11_0)
-	return var_0_0.RARITY2FRAME[arg_11_0:GetRarity()]
+function slot0.GetFrameName(slot0)
+	return uv0.RARITY2FRAME[slot0:GetRarity()]
 end
 
-function var_0_0.IsShow(arg_12_0)
-	return arg_12_0:getConfig("is_show") == 1
+function slot0.IsShow(slot0)
+	return slot0:getConfig("is_show") == 1
 end
 
-function var_0_0.GetShowInfo(arg_13_0)
+function slot0.GetShowInfo(slot0)
 	return {
 		type = EducateConst.DROP_TYPE_ITEM,
-		id = arg_13_0.id,
-		number = arg_13_0.count
+		id = slot0.id,
+		number = slot0.count
 	}
 end
 
-return var_0_0
+return slot0

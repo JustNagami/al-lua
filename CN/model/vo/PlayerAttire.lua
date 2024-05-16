@@ -1,31 +1,26 @@
-﻿local var_0_0 = class("PlayerAttire", import(".BaseVO"))
+slot0 = class("PlayerAttire", import(".BaseVO"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.display or {}
+function slot0.Ctor(slot0, slot1)
+	slot2 = slot1.display or {}
+	slot0.icon = slot1.icon or slot2.icon
+	slot0.character = slot1.character or slot2.character
+	slot0.skinId = slot1.skin_id or slot2.skin or 0
 
-	arg_1_0.icon = arg_1_1.icon or var_1_0.icon
-	arg_1_0.character = arg_1_1.character or var_1_0.character
-	arg_1_0.skinId = arg_1_1.skin_id or var_1_0.skin or 0
-
-	if arg_1_0.skinId == 0 then
-		local var_1_1 = pg.ship_data_statistics[arg_1_0.icon]
-
-		if var_1_1 then
-			arg_1_0.skinId = var_1_1.skin_id
-		end
+	if slot0.skinId == 0 and pg.ship_data_statistics[slot0.icon] then
+		slot0.skinId = slot3.skin_id
 	end
 
-	arg_1_0.remoulded = false
+	slot0.remoulded = false
 
-	if arg_1_1.remoulded and arg_1_1.remoulded == 1 or var_1_0.transform_flag and var_1_0.transform_flag == 1 then
-		arg_1_0.remoulded = true
+	if slot1.remoulded and slot1.remoulded == 1 or slot2.transform_flag and slot2.transform_flag == 1 then
+		slot0.remoulded = true
 	end
 
-	arg_1_0.propose = arg_1_1.propose and arg_1_1.propose > 0 or var_1_0.marry_flag and var_1_0.marry_flag > 0
-	arg_1_0.proposeTime = arg_1_1.propose or var_1_0.marry_flag
-	arg_1_0.iconFrame = arg_1_1.icon_frame or var_1_0.icon_frame or 0
-	arg_1_0.chatFrame = arg_1_1.chat_frame or var_1_0.chat_frame or 0
-	arg_1_0.iconTheme = arg_1_1.icon_theme or var_1_0.icon_theme or 0
+	slot0.propose = slot1.propose and slot1.propose > 0 or slot2.marry_flag and slot2.marry_flag > 0
+	slot0.proposeTime = slot1.propose or slot2.marry_flag
+	slot0.iconFrame = slot1.icon_frame or slot2.icon_frame or 0
+	slot0.chatFrame = slot1.chat_frame or slot2.chat_frame or 0
+	slot0.iconTheme = slot1.icon_theme or slot2.icon_theme or 0
 end
 
-return var_0_0
+return slot0

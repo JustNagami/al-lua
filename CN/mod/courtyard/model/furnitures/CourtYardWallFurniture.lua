@@ -1,110 +1,102 @@
-﻿local var_0_0 = class("CourtYardWallFurniture", import(".CourtYardFurniture"))
+slot0 = class("CourtYardWallFurniture", import(".CourtYardFurniture"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.furniture_data_template[arg_1_2.configId or arg_1_2.id].size[2] = 1
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.furniture_data_template[slot2.configId or slot2.id].size[2] = 1
 
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1)
-	arg_2_0:UpdatePosition(arg_2_1)
+function slot0.Init(slot0, slot1)
+	slot0:UpdatePosition(slot1)
 end
 
-function var_0_0.UpdatePosition(arg_3_0, arg_3_1)
-	arg_3_0:SetPosition(arg_3_1)
-	arg_3_0:SetDir(arg_3_0:GetDirection())
+function slot0.UpdatePosition(slot0, slot1)
+	slot0:SetPosition(slot1)
+	slot0:SetDir(slot0:GetDirection())
 end
 
-function var_0_0.GetInitSize(arg_4_0)
-	if arg_4_0:RightDirectionLimited() then
+function slot0.GetInitSize(slot0)
+	if slot0:RightDirectionLimited() then
 		return {
 			{
-				arg_4_0.sizeY,
-				arg_4_0.sizeX
+				slot0.sizeY,
+				slot0.sizeX
 			}
 		}
-	elseif arg_4_0:LeftDirectionLimited() then
+	elseif slot0:LeftDirectionLimited() then
 		return {
 			{
-				arg_4_0.sizeX,
-				arg_4_0.sizeY
+				slot0.sizeX,
+				slot0.sizeY
 			}
 		}
 	else
 		return {
 			{
-				arg_4_0.sizeX,
-				arg_4_0.sizeY
+				slot0.sizeX,
+				slot0.sizeY
 			},
 			{
-				arg_4_0.sizeY,
-				arg_4_0.sizeX
+				slot0.sizeY,
+				slot0.sizeX
 			}
 		}
 	end
 end
 
-function var_0_0._GetDirection(arg_5_0, arg_5_1)
-	if arg_5_0:RightDirectionLimited() then
+function slot0._GetDirection(slot0, slot1)
+	if slot0:RightDirectionLimited() then
 		return 2
-	elseif arg_5_0:LeftDirectionLimited() then
+	elseif slot0:LeftDirectionLimited() then
 		return 1
-	elseif arg_5_1.y - arg_5_1.x >= 1 then
+	elseif slot1.y - slot1.x >= 1 then
 		return 1
 	else
 		return 2
 	end
 end
 
-function var_0_0.GetWidth(arg_6_0)
-	return arg_6_0.config.size[1]
+function slot0.GetWidth(slot0)
+	return slot0.config.size[1]
 end
 
-function var_0_0.GetDirection(arg_7_0)
-	local var_7_0 = arg_7_0:GetPosition()
-
-	return arg_7_0:_GetDirection(var_7_0)
+function slot0.GetDirection(slot0)
+	return slot0:_GetDirection(slot0:GetPosition())
 end
 
-function var_0_0.Rotate(arg_8_0)
-	return
+function slot0.Rotate(slot0)
 end
 
-function var_0_0.InActivityRange(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0:GetHost():GetStorey():GetRange()
-
-	return (arg_9_1.x == var_9_0.x or arg_9_1.y == var_9_0.y) and arg_9_1.x ~= arg_9_1.y
+function slot0.InActivityRange(slot0, slot1)
+	return (slot1.x == slot0:GetHost():GetStorey():GetRange().x or slot1.y == slot2.y) and slot1.x ~= slot1.y
 end
 
-function var_0_0.LeftDirectionLimited(arg_10_0)
-	return arg_10_0.config.belong == 3
+function slot0.LeftDirectionLimited(slot0)
+	return slot0.config.belong == 3
 end
 
-function var_0_0.RightDirectionLimited(arg_11_0)
-	return arg_11_0.config.belong == 4
+function slot0.RightDirectionLimited(slot0)
+	return slot0.config.belong == 4
 end
 
-function var_0_0.NormalizePosition(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = arg_12_0:GetHost():GetStorey():GetRange().x
-	local var_12_1 = arg_12_0:_GetDirection(arg_12_1) == 1
-	local var_12_2 = (var_12_1 and Vector2(arg_12_1.x, arg_12_1.y) or Vector2(arg_12_1.y, arg_12_1.x)).x
-	local var_12_3 = arg_12_0:GetWidth()
-	local var_12_4 = math.min(var_12_2, var_12_0 - var_12_3)
-	local var_12_5 = math.max(arg_12_2, var_12_4)
-	local var_12_6 = var_12_1 and Vector2(var_12_5, var_12_0) or Vector2(var_12_0, var_12_5)
+function slot0.NormalizePosition(slot0, slot1, slot2)
+	slot3 = slot0:GetHost():GetStorey():GetRange().x
+	slot4 = slot0:_GetDirection(slot1) == 1
+	slot6 = math.max(slot2, math.min((slot4 and Vector2(slot1.x, slot1.y) or Vector2(slot1.y, slot1.x)).x, slot3 - slot0:GetWidth()))
+	slot8 = slot4 and Vector2(slot6, slot3) or Vector2(slot3, slot6)
 
-	arg_12_0:SetDir(arg_12_0:_GetDirection(var_12_6))
+	slot0:SetDir(slot0:_GetDirection(slot8))
 
-	return var_12_6
+	return slot8
 end
 
-function var_0_0.SetDir(arg_13_0, arg_13_1)
-	var_0_0.super.SetDir(arg_13_0, arg_13_1)
-	arg_13_0:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, arg_13_0.dir)
+function slot0.SetDir(slot0, slot1)
+	uv0.super.SetDir(slot0, slot1)
+	slot0:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, slot0.dir)
 end
 
-function var_0_0.CanPutChild(arg_14_0)
+function slot0.CanPutChild(slot0)
 	return false
 end
 
-return var_0_0
+return slot0

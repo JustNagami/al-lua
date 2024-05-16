@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 30,
-				target = "TargetSelf",
-				skill_id = 10720
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔30秒，生成2面旋转的护盾，每个护盾阻挡10发子弹，护盾持续5秒",
 		addition = {
@@ -82,5 +69,18 @@
 	stack = 1,
 	id = 10720,
 	icon = 10720,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 30,
+				target = "TargetSelf",
+				skill_id = 10720
+			}
+		}
+	}
 }

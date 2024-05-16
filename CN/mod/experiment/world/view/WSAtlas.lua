@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSAtlas", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSAtlas", import("...BaseEntity"))
+slot0.Fields = {
 	transform = "userdata",
 	atlas = "table",
 	tfMapSelect = "userdata",
@@ -16,262 +15,251 @@ var_0_0.Fields = {
 	tfActiveMark = "userdata",
 	selectEntrance = "table"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdateActiveEntrance = "OnUpdateActiveEntrance",
 	onUpdatePressingAward = "OnUpdatePressingAward",
 	onUpdateProgress = "OnUpdateProgress"
 }
-var_0_0.spriteBaseSize = Vector2(2048, 1347)
+slot0.spriteBaseSize = Vector2(2048, 1347)
 
-function var_0_0.Setup(arg_1_0)
-	pg.DelegateInfo.New(arg_1_0)
-	arg_1_0:Init()
+function slot0.Setup(slot0)
+	pg.DelegateInfo.New(slot0)
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_2_0)
-	pg.DelegateInfo.Dispose(arg_2_0)
-	arg_2_0:RemoveAtlasListener()
-	arg_2_0:UpdateStaticMark()
-	arg_2_0:ActiveSelect(arg_2_0.selectEntrance, false)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:RemoveAtlasListener()
+	slot0:UpdateStaticMark()
+	slot0:ActiveSelect(slot0.selectEntrance, false)
 
-	if arg_2_0.tfActiveMark then
-		arg_2_0:DestroyActiveMark()
+	if slot0.tfActiveMark then
+		slot0:DestroyActiveMark()
 	end
 
-	eachChild(arg_2_0.tfMapScene:Find("lock_layer"), function(arg_3_0)
-		arg_2_0:RemoveExtraMarkPrefab(arg_3_0)
+	eachChild(slot0.tfMapScene:Find("lock_layer"), function (slot0)
+		uv0:RemoveExtraMarkPrefab(slot0)
 	end)
-	arg_2_0:ReturnScene()
-	arg_2_0:Clear()
+	slot0:ReturnScene()
+	slot0:Clear()
 end
 
-function var_0_0.Init(arg_4_0)
-	arg_4_0.staticEntranceDic = {}
+function slot0.Init(slot0)
+	slot0.staticEntranceDic = {}
 end
 
-function var_0_0.UpdateAtlas(arg_5_0, arg_5_1)
-	if arg_5_0.atlas ~= arg_5_1 then
-		arg_5_0:RemoveAtlasListener()
+function slot0.UpdateAtlas(slot0, slot1)
+	if slot0.atlas ~= slot1 then
+		slot0:RemoveAtlasListener()
 
-		arg_5_0.atlas = arg_5_1
+		slot0.atlas = slot1
 
-		arg_5_0:AddAtlasListener()
-		arg_5_0:UpdateModelMask()
-		arg_5_0:OnUpdateActiveEntrance(nil, nil, arg_5_0.atlas:GetActiveEntrance())
-		arg_5_0:OnUpdatePressingAward()
+		slot0:AddAtlasListener()
+		slot0:UpdateModelMask()
+		slot0:OnUpdateActiveEntrance(nil, , slot0.atlas:GetActiveEntrance())
+		slot0:OnUpdatePressingAward()
 	end
 end
 
-function var_0_0.AddAtlasListener(arg_6_0)
-	if arg_6_0.atlas then
-		arg_6_0.atlas:AddListener(WorldAtlas.EventUpdateProgress, arg_6_0.onUpdateProgress)
-		arg_6_0.atlas:AddListener(WorldAtlas.EventUpdateActiveEntrance, arg_6_0.onUpdateActiveEntrance)
-		arg_6_0.atlas:AddListener(WorldAtlas.EventAddPressingEntrance, arg_6_0.onUpdatePressingAward)
+function slot0.AddAtlasListener(slot0)
+	if slot0.atlas then
+		slot0.atlas:AddListener(WorldAtlas.EventUpdateProgress, slot0.onUpdateProgress)
+		slot0.atlas:AddListener(WorldAtlas.EventUpdateActiveEntrance, slot0.onUpdateActiveEntrance)
+		slot0.atlas:AddListener(WorldAtlas.EventAddPressingEntrance, slot0.onUpdatePressingAward)
 	end
 end
 
-function var_0_0.RemoveAtlasListener(arg_7_0)
-	if arg_7_0.atlas then
-		arg_7_0.atlas:RemoveListener(WorldAtlas.EventUpdateProgress, arg_7_0.onUpdateProgress)
-		arg_7_0.atlas:RemoveListener(WorldAtlas.EventUpdateActiveEntrance, arg_7_0.onUpdateActiveEntrance)
-		arg_7_0.atlas:RemoveListener(WorldAtlas.EventAddPressingEntrance, arg_7_0.onUpdatePressingAward)
+function slot0.RemoveAtlasListener(slot0)
+	if slot0.atlas then
+		slot0.atlas:RemoveListener(WorldAtlas.EventUpdateProgress, slot0.onUpdateProgress)
+		slot0.atlas:RemoveListener(WorldAtlas.EventUpdateActiveEntrance, slot0.onUpdateActiveEntrance)
+		slot0.atlas:RemoveListener(WorldAtlas.EventAddPressingEntrance, slot0.onUpdatePressingAward)
 	end
 end
 
-function var_0_0.LoadScene(arg_8_0, arg_8_1)
+function slot0.LoadScene(slot0, slot1)
 	assert(false, "overwrite by subclass")
 end
 
-function var_0_0.ReturnScene(arg_9_0)
+function slot0.ReturnScene(slot0)
 	assert(false, "overwrite by subclass")
 end
 
-function var_0_0.ShowOrHide(arg_10_0, arg_10_1)
-	setActive(arg_10_0.transform, arg_10_1)
+function slot0.ShowOrHide(slot0, slot1)
+	setActive(slot0.transform, slot1)
 end
 
-function var_0_0.GetMapScreenPos(arg_11_0, arg_11_1)
-	return arg_11_0.cmPointer:GetMapScreenPos(arg_11_1)
+function slot0.GetMapScreenPos(slot0, slot1)
+	return slot0.cmPointer:GetMapScreenPos(slot1)
 end
 
-function var_0_0.UpdateSelect(arg_12_0, arg_12_1)
-	arg_12_0:ActiveSelect(arg_12_0.selectEntrance, false)
-	arg_12_0:ActiveSelect(arg_12_1, true)
+function slot0.UpdateSelect(slot0, slot1)
+	slot0:ActiveSelect(slot0.selectEntrance, false)
+	slot0:ActiveSelect(slot1, true)
 end
 
-function var_0_0.ActiveSelect(arg_13_0, arg_13_1, arg_13_2)
-	arg_13_0.selectEntrance = arg_13_2 and arg_13_1 or nil
+function slot0.ActiveSelect(slot0, slot1, slot2)
+	slot0.selectEntrance = slot2 and slot1 or nil
 
-	if not arg_13_1 or arg_13_0.staticEntranceDic[arg_13_1.id] then
+	if not slot1 or slot0.staticEntranceDic[slot1.id] then
 		return
 	end
 
-	if arg_13_1:HasPort() then
-		-- block empty
-	else
-		setActive(arg_13_0.tfMapSelect:Find("A" .. arg_13_1:GetColormaskUniqueID() .. "_2"), arg_13_2)
+	if not slot1:HasPort() then
+		setActive(slot0.tfMapSelect:Find("A" .. slot1:GetColormaskUniqueID() .. "_2"), slot2)
 	end
 end
 
-function var_0_0.ActiveStatic(arg_14_0, arg_14_1, arg_14_2)
-	arg_14_0.staticEntranceDic[arg_14_1.id] = arg_14_2
+function slot0.ActiveStatic(slot0, slot1, slot2)
+	slot0.staticEntranceDic[slot1.id] = slot2
 
-	if arg_14_1 == arg_14_0.selectEntrance then
+	if slot1 == slot0.selectEntrance then
 		return
 	end
 
-	if arg_14_1:HasPort() then
-		-- block empty
+	if slot1:HasPort() then
+		-- Nothing
 	else
-		local var_14_0 = arg_14_0.tfMapSelect:Find("A" .. arg_14_1:GetColormaskUniqueID() .. "_2")
+		slot3 = slot0.tfMapSelect:Find("A" .. slot1:GetColormaskUniqueID() .. "_2")
 
-		LeanTween.cancel(go(var_14_0))
+		LeanTween.cancel(go(slot3))
 
-		local var_14_1 = var_14_0:GetComponent("SpriteRenderer").color
+		slot4 = slot3:GetComponent("SpriteRenderer").color
+		slot4.a = slot2 and 0 or 1
+		slot3:GetComponent("SpriteRenderer").color = slot4
 
-		var_14_1.a = arg_14_2 and 0 or 1
-		var_14_0:GetComponent("SpriteRenderer").color = var_14_1
-
-		if arg_14_2 then
-			setActive(var_14_0, true)
-			LeanTween.alpha(go(var_14_0), 0.75, 1):setFrom(0):setLoopPingPong()
+		if slot2 then
+			setActive(slot3, true)
+			LeanTween.alpha(go(slot3), 0.75, 1):setFrom(0):setLoopPingPong()
 		else
-			setActive(var_14_0, arg_14_0.selectEntrance == arg_14_1)
+			setActive(slot3, slot0.selectEntrance == slot1)
 		end
 	end
 end
 
-var_0_0.pressingMaskColor = Color.New(0.027450980392156862, 0.27450980392156865, 0.5490196078431373, 0.5019607843137255)
-var_0_0.openMaskColor = Color.New(0, 0, 0, 0)
-var_0_0.lockMaskColor = Color.New(0, 0, 0, 0.4)
+slot0.pressingMaskColor = Color.New(0.027450980392156862, 0.27450980392156865, 0.5490196078431373, 0.5019607843137255)
+slot0.openMaskColor = Color.New(0, 0, 0, 0)
+slot0.lockMaskColor = Color.New(0, 0, 0, 0.4)
 
-function var_0_0.UpdateModelMask(arg_15_0)
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.atlas.entranceDic) do
-		arg_15_0:UpdateEntranceMask(iter_15_1)
+function slot0.UpdateModelMask(slot0)
+	for slot4, slot5 in pairs(slot0.atlas.entranceDic) do
+		slot0:UpdateEntranceMask(slot5)
 	end
 end
 
-function var_0_0.UpdateEntranceMask(arg_16_0, arg_16_1)
-	if arg_16_1:HasPort() then
-		-- block empty
+function slot0.UpdateEntranceMask(slot0, slot1)
+	if slot1:HasPort() then
+		-- Nothing
 	else
-		local var_16_0 = arg_16_0.tfMapScene:Find("lock_layer/A" .. arg_16_1:GetColormaskUniqueID()):GetComponent("SpriteRenderer")
+		slot3 = slot0.tfMapScene:Find("lock_layer/A" .. slot1:GetColormaskUniqueID()):GetComponent("SpriteRenderer")
 
-		if arg_16_1:IsPressing() then
-			var_16_0.color = var_0_0.pressingMaskColor
-			var_16_0.material = arg_16_0.addSprite
-		elseif arg_16_0.atlas.transportDic[arg_16_1.id] and arg_16_1:IsOpen() then
-			var_16_0.color = var_0_0.openMaskColor
-			var_16_0.material = arg_16_0.defaultSprite
+		if slot1:IsPressing() then
+			slot3.color = uv0.pressingMaskColor
+			slot3.material = slot0.addSprite
+		elseif slot0.atlas.transportDic[slot1.id] and slot1:IsOpen() then
+			slot3.color = uv0.openMaskColor
+			slot3.material = slot0.defaultSprite
 		else
-			var_16_0.color = var_0_0.lockMaskColor
-			var_16_0.material = arg_16_0.defaultSprite
+			slot3.color = uv0.lockMaskColor
+			slot3.material = slot0.defaultSprite
 		end
 	end
 end
 
-function var_0_0.SetSairenMarkActive(arg_17_0, arg_17_1, arg_17_2)
-	arg_17_0:DoUpdatExtraMark(arg_17_1, "dsj_srgr", arg_17_2, function(arg_18_0)
-		if arg_17_2 then
-			arg_18_0:GetComponent("SpriteRenderer").sprite = arg_17_1:GetComponent("SpriteRenderer").sprite
+function slot0.SetSairenMarkActive(slot0, slot1, slot2)
+	slot0:DoUpdatExtraMark(slot1, "dsj_srgr", slot2, function (slot0)
+		if uv0 then
+			slot0:GetComponent("SpriteRenderer").sprite = uv1:GetComponent("SpriteRenderer").sprite
 		end
 	end)
 end
 
-function var_0_0.OnUpdateProgress(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	for iter_19_0 in pairs(arg_19_3) do
-		local var_19_0 = arg_19_0.atlas:GetEntrance(iter_19_0)
-
-		arg_19_0:UpdateEntranceMask(var_19_0)
+function slot0.OnUpdateProgress(slot0, slot1, slot2, slot3)
+	for slot7 in pairs(slot3) do
+		slot0:UpdateEntranceMask(slot0.atlas:GetEntrance(slot7))
 	end
 
-	arg_19_0:UpdateCenterEffectDisplay()
+	slot0:UpdateCenterEffectDisplay()
 end
 
-function var_0_0.BuildActiveMark(arg_20_0)
-	arg_20_0.tfActiveMark = tf(GameObject.New())
-	arg_20_0.tfActiveMark.gameObject.layer = Layer.UI
-	arg_20_0.tfActiveMark.name = "active_mark"
+function slot0.BuildActiveMark(slot0)
+	slot0.tfActiveMark = tf(GameObject.New())
+	slot0.tfActiveMark.gameObject.layer = Layer.UI
+	slot0.tfActiveMark.name = "active_mark"
 
-	arg_20_0.tfActiveMark:SetParent(arg_20_0.tfSpriteScene, false)
-	setActive(arg_20_0.tfActiveMark, false)
+	slot0.tfActiveMark:SetParent(slot0.tfSpriteScene, false)
+	setActive(slot0.tfActiveMark, false)
 end
 
-function var_0_0.DestroyActiveMark(arg_21_0)
-	arg_21_0:RemoveExtraMarkPrefab(arg_21_0.tfActiveMark)
-	Destroy(arg_21_0.tfActiveMark)
+function slot0.DestroyActiveMark(slot0)
+	slot0:RemoveExtraMarkPrefab(slot0.tfActiveMark)
+	Destroy(slot0.tfActiveMark)
 end
 
-function var_0_0.LoadExtraMarkPrefab(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
-	local var_22_0 = PoolMgr.GetInstance()
-
-	var_22_0:GetPrefab("world/mark/" .. arg_22_2, arg_22_2, true, function(arg_23_0)
-		if IsNil(arg_22_1) then
-			var_22_0:ReturnPrefab("world/mark/" .. arg_22_2, arg_22_2, arg_23_0, true)
+function slot0.LoadExtraMarkPrefab(slot0, slot1, slot2, slot3)
+	PoolMgr.GetInstance():GetPrefab("world/mark/" .. slot2, slot2, true, function (slot0)
+		if IsNil(uv0) then
+			uv1:ReturnPrefab("world/mark/" .. uv2, uv2, slot0, true)
 		else
-			arg_23_0.name = arg_22_2
+			slot0.name = uv2
 
-			tf(arg_23_0):SetParent(arg_22_1, false)
-			setActive(arg_23_0, true)
-			existCall(arg_22_3, tf(arg_23_0))
+			tf(slot0):SetParent(uv0, false)
+			setActive(slot0, true)
+			existCall(uv3, tf(slot0))
 		end
 	end)
 end
 
-function var_0_0.RemoveExtraMarkPrefab(arg_24_0, arg_24_1)
-	local var_24_0 = PoolMgr.GetInstance()
+function slot0.RemoveExtraMarkPrefab(slot0, slot1)
+	slot2 = PoolMgr.GetInstance()
 
-	eachChild(arg_24_1, function(arg_25_0)
-		var_24_0:ReturnPrefab("world/mark/" .. arg_25_0.name, arg_25_0.name, go(arg_25_0), true)
+	eachChild(slot1, function (slot0)
+		uv0:ReturnPrefab("world/mark/" .. slot0.name, slot0.name, go(slot0), true)
 	end)
 end
 
-function var_0_0.DoUpdatExtraMark(arg_26_0, arg_26_1, arg_26_2, arg_26_3, arg_26_4)
-	local var_26_0 = arg_26_1:Find(arg_26_2)
-
-	if var_26_0 then
-		setActive(var_26_0, arg_26_3)
-		existCall(arg_26_4, var_26_0)
-	elseif arg_26_3 then
-		arg_26_0:LoadExtraMarkPrefab(arg_26_1, arg_26_2, arg_26_4)
+function slot0.DoUpdatExtraMark(slot0, slot1, slot2, slot3, slot4)
+	if slot1:Find(slot2) then
+		setActive(slot5, slot3)
+		existCall(slot4, slot5)
+	elseif slot3 then
+		slot0:LoadExtraMarkPrefab(slot1, slot2, slot4)
 	end
 end
 
-function var_0_0.OnUpdateActiveEntrance(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	if arg_27_3 then
-		arg_27_0.tfActiveMark.localPosition = WorldConst.CalcModelPosition(arg_27_3, arg_27_0.spriteBaseSize)
+function slot0.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
+	if slot3 then
+		slot0.tfActiveMark.localPosition = WorldConst.CalcModelPosition(slot3, slot0.spriteBaseSize)
 	end
 
-	setActive(arg_27_0.tfActiveMark, arg_27_3)
+	setActive(slot0.tfActiveMark, slot3)
 end
 
-function var_0_0.UpdateStaticMark(arg_28_0, arg_28_1)
-	for iter_28_0, iter_28_1 in pairs(arg_28_0.staticEntranceDic) do
-		arg_28_0:ActiveStatic(arg_28_0.atlas:GetEntrance(iter_28_0), false)
+function slot0.UpdateStaticMark(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.staticEntranceDic) do
+		slot0:ActiveStatic(slot0.atlas:GetEntrance(slot5), false)
 	end
 
-	for iter_28_2, iter_28_3 in pairs(arg_28_1 or {}) do
-		if iter_28_3 then
-			arg_28_0:ActiveStatic(arg_28_0.atlas:GetEntrance(iter_28_2), true)
+	for slot5, slot6 in pairs(slot1 or {}) do
+		if slot6 then
+			slot0:ActiveStatic(slot0.atlas:GetEntrance(slot5), true)
 		end
 	end
 end
 
-function var_0_0.OnUpdatePressingAward(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	arg_29_3 = arg_29_3 or arg_29_0.atlas.transportDic
-
-	for iter_29_0, iter_29_1 in pairs(arg_29_3) do
-		if iter_29_1 then
-			arg_29_0:UpdateEntranceMask(arg_29_0.atlas:GetEntrance(iter_29_0))
+function slot0.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
+	for slot7, slot8 in pairs(slot3 or slot0.atlas.transportDic) do
+		if slot8 then
+			slot0:UpdateEntranceMask(slot0.atlas:GetEntrance(slot7))
 		end
 	end
 end
 
-function var_0_0.UpdateCenterEffectDisplay(arg_30_0)
-	local var_30_0 = nowWorld():CheckAreaUnlock(5)
+function slot0.UpdateCenterEffectDisplay(slot0)
+	slot1 = nowWorld():CheckAreaUnlock(5)
 
-	setActive(arg_30_0.tfEntity:Find("decolation_layer/DSJ_xuanwo"), not var_30_0)
-	setActive(arg_30_0.tfEntity:Find("decolation_layer/DSJ_xuanwo_jianhua"), var_30_0)
+	setActive(slot0.tfEntity:Find("decolation_layer/DSJ_xuanwo"), not slot1)
+	setActive(slot0.tfEntity:Find("decolation_layer/DSJ_xuanwo_jianhua"), slot1)
 end
 
-return var_0_0
+return slot0

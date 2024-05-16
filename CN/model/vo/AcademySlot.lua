@@ -1,38 +1,36 @@
-﻿local var_0_0 = class("AcademySlot", import(".BaseVO"))
+slot0 = class("AcademySlot", import(".BaseVO"))
+slot0.STATE_IDLE = "STATE_IDLE"
+slot0.STATE_IN_CLASS = "STATE_IN_CLASS"
+slot0.STATE_CLASS_OVER = "STATE_CLASS_OVER"
 
-var_0_0.STATE_IDLE = "STATE_IDLE"
-var_0_0.STATE_IN_CLASS = "STATE_IN_CLASS"
-var_0_0.STATE_CLASS_OVER = "STATE_CLASS_OVER"
-
-function var_0_0.Ctor(arg_1_0)
-	return
+function slot0.Ctor(slot0)
 end
 
-function var_0_0.SetSlotData(arg_2_0, arg_2_1)
-	arg_2_0._shipVO = arg_2_1.ship
-	arg_2_0._attrList = {}
+function slot0.SetSlotData(slot0, slot1)
+	slot0._shipVO = slot1.ship
+	slot0._attrList = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1.attr_list) do
-		arg_2_0._attrList[iter_2_1.attr] = iter_2_1.num
+	for slot5, slot6 in ipairs(slot1.attr_list) do
+		slot0._attrList[slot6.attr] = slot6.num
 	end
 
-	arg_2_0._timeStamp = arg_2_1.time
+	slot0._timeStamp = slot1.time
 end
 
-function var_0_0.GetShip(arg_3_0)
-	return arg_3_0._shipVO
+function slot0.GetShip(slot0)
+	return slot0._shipVO
 end
 
-function var_0_0.GetAttrList(arg_4_0)
-	return arg_4_0._attrList
+function slot0.GetAttrList(slot0)
+	return slot0._attrList
 end
 
-function var_0_0.GetDuration(arg_5_0)
-	if arg_5_0._timeStamp then
-		return arg_5_0._timeStamp - pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.GetDuration(slot0)
+	if slot0._timeStamp then
+		return slot0._timeStamp - pg.TimeMgr.GetInstance():GetServerTime()
 	else
 		return nil
 	end
 end
 
-return var_0_0
+return slot0

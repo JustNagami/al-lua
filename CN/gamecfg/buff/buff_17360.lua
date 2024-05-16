@@ -1,20 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFlagShip"
-			},
-			arg_list = {
-				skill_id = 17360,
-				target = "TargetSelf",
-				streakRange = {
-					0,
-					5
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -35,5 +19,21 @@
 	stack = 1,
 	id = 17360,
 	icon = 17360,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFlagShip"
+			},
+			arg_list = {
+				skill_id = 17360,
+				target = "TargetSelf",
+				streakRange = {
+					0,
+					5
+				}
+			}
+		}
+	}
 }

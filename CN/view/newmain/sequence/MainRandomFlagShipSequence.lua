@@ -1,179 +1,162 @@
-﻿local var_0_0 = class("MainRandomFlagShipSequence")
+slot0 = class("MainRandomFlagShipSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(SettingsProxy):GetRandomFlagShipList()
-
-	if #var_1_0 > 0 and _.all(var_1_0, function(arg_2_0)
-		return getProxy(BayProxy):RawGetShipById(arg_2_0) == nil
+function slot0.Execute(slot0, slot1)
+	if #getProxy(SettingsProxy):GetRandomFlagShipList() > 0 and _.all(slot2, function (slot0)
+		return getProxy(BayProxy):RawGetShipById(slot0) == nil
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("random_ship_off_0"))
 		getProxy(SettingsProxy):UpdateRandomFlagShipList({})
-		arg_1_1()
+		slot1()
 
 		return
 	end
 
-	local var_1_1, var_1_2 = arg_1_0:ShouldRandom()
+	slot3, slot4 = slot0:ShouldRandom()
 
-	if var_1_1 then
-		local var_1_3 = arg_1_0:Random()
-
-		if not var_1_3 or #var_1_3 == 0 then
+	if slot3 then
+		if not slot0:Random() or #slot5 == 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("random_ship_off_0"))
-			arg_1_0:SynToCache({}, var_1_2)
+			slot0:SynToCache({}, slot4)
 		else
-			arg_1_0:SynToCache(var_1_3, var_1_2)
+			slot0:SynToCache(slot5, slot4)
 		end
 	end
 
-	arg_1_1()
+	slot1()
 end
 
-local function var_0_1(arg_3_0)
-	local var_3_0 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var_3_1 = GetZeroTime() - 18000
-	local var_3_2 = var_3_1 - 39600
-	local var_3_3 = var_3_2 - 46800
+function slot1(slot0)
+	slot3 = GetZeroTime() - 18000 - 39600
+	slot4 = slot3 - 46800
 
-	if var_3_0 < var_3_2 and arg_3_0 < var_3_3 then
-		return true, var_3_3
+	if pg.TimeMgr.GetInstance():GetServerTime() < slot3 and slot0 < slot4 then
+		return true, slot4
 	end
 
-	if var_3_2 <= var_3_0 and var_3_0 < var_3_1 and arg_3_0 < var_3_2 then
-		return true, var_3_2
+	if slot3 <= slot1 and slot1 < slot2 and slot0 < slot3 then
+		return true, slot3
 	end
 
-	if var_3_1 <= var_3_0 and arg_3_0 < var_3_1 then
-		return true, var_3_1
+	if slot2 <= slot1 and slot0 < slot2 then
+		return true, slot2
 	end
 
 	return false
 end
 
-function var_0_0.ShouldRandom(arg_4_0)
+function slot0.ShouldRandom(slot0)
 	if not getProxy(SettingsProxy):IsOpenRandomFlagShip() then
 		return false
 	end
 
-	local var_4_0 = getProxy(SettingsProxy):GetPrevRandomFlagShipTime()
-
-	return var_0_1(var_4_0)
+	return uv0(getProxy(SettingsProxy):GetPrevRandomFlagShipTime())
 end
 
-local function var_0_2(arg_5_0, arg_5_1)
-	if arg_5_1:isActivityNpc() then
+function slot2(slot0, slot1)
+	if slot1:isActivityNpc() then
 		return false
 	end
 
-	if arg_5_0 == SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED then
-		return arg_5_1:GetPreferenceTag() ~= 0
-	elseif arg_5_0 == SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED then
-		return arg_5_1:GetLockState() ~= 0
-	elseif arg_5_0 == SettingsRandomFlagShipAndSkinPanel.COUSTOM then
-		-- block empty
+	if slot0 == SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED then
+		return slot1:GetPreferenceTag() ~= 0
+	elseif slot0 == SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED then
+		return slot1:GetLockState() ~= 0
+	elseif slot0 == SettingsRandomFlagShipAndSkinPanel.COUSTOM then
+		-- Nothing
 	end
 
 	return true
 end
 
-local function var_0_3(arg_6_0, arg_6_1)
-	local function var_6_0(arg_7_0, arg_7_1, arg_7_2)
-		if not arg_7_0[arg_7_2.groupId] then
-			arg_7_0[arg_7_2.groupId] = {}
+function slot3(slot0, slot1)
+	function slot2(slot0, slot1, slot2)
+		if not slot0[slot2.groupId] then
+			slot0[slot2.groupId] = {}
 
-			table.insert(arg_7_1, arg_7_2.groupId)
+			table.insert(slot1, slot2.groupId)
 		end
 
-		table.insert(arg_7_0[arg_7_2.groupId], arg_7_2.id)
+		table.insert(slot0[slot2.groupId], slot2.id)
 	end
 
-	local var_6_1 = {}
+	slot3 = {}
 
-	if arg_6_0 == SettingsRandomFlagShipAndSkinPanel.COUSTOM then
-		for iter_6_0, iter_6_1 in ipairs(getProxy(PlayerProxy):getRawData():GetCustomRandomShipList()) do
-			local var_6_2 = getProxy(BayProxy):RawGetShipById(iter_6_1)
-
-			if var_6_2 then
-				table.insert(var_6_1, var_6_2)
+	if slot0 == SettingsRandomFlagShipAndSkinPanel.COUSTOM then
+		for slot7, slot8 in ipairs(getProxy(PlayerProxy):getRawData():GetCustomRandomShipList()) do
+			if getProxy(BayProxy):RawGetShipById(slot8) then
+				table.insert(slot3, slot9)
 			end
 		end
 	else
-		var_6_1 = getProxy(BayProxy):getRawData()
+		slot3 = getProxy(BayProxy):getRawData()
 	end
 
-	local var_6_3 = {}
-	local var_6_4 = {}
-	local var_6_5 = {}
-	local var_6_6 = {}
+	slot4 = {}
+	slot5 = {}
+	slot6 = {}
+	slot7 = {}
 
-	for iter_6_2, iter_6_3 in pairs(var_6_1) do
-		if var_0_2(arg_6_0, iter_6_3) then
-			if arg_6_1[iter_6_3.groupId] then
-				var_6_0(var_6_5, var_6_6, iter_6_3)
+	for slot11, slot12 in pairs(slot3) do
+		if uv0(slot0, slot12) then
+			if slot1[slot12.groupId] then
+				slot2(slot6, slot7, slot12)
 			else
-				var_6_0(var_6_3, var_6_4, iter_6_3)
+				slot2(slot4, slot5, slot12)
 			end
 		end
 	end
 
-	return var_6_3, var_6_4, var_6_5, var_6_6
+	return slot4, slot5, slot6, slot7
 end
 
-local function var_0_4(arg_8_0)
-	local var_8_0 = {}
-
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0) do
-		local var_8_1 = getProxy(BayProxy):RawGetShipById(iter_8_1)
-
-		if var_8_1 then
-			var_8_0[var_8_1.groupId] = true
+function slot4(slot0)
+	for slot5, slot6 in ipairs(slot0) do
+		if getProxy(BayProxy):RawGetShipById(slot6) then
+			-- Nothing
 		end
 	end
 
-	return var_8_0
+	return {
+		[slot7.groupId] = true
+	}
 end
 
-function var_0_0.Random(arg_9_0)
-	local var_9_0 = getProxy(PlayerProxy):getRawData():GetRandomFlagShipMode()
-	local var_9_1, var_9_2 = PlayerVitaeShipsPage.GetSlotMaxCnt()
-	local var_9_3 = var_0_4(getProxy(SettingsProxy):GetRandomFlagShipList())
-	local var_9_4, var_9_5, var_9_6, var_9_7 = var_0_3(var_9_0, var_9_3)
+function slot0.Random(slot0)
+	slot3, slot4 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+	slot6, slot7, slot8, slot9 = uv1(getProxy(PlayerProxy):getRawData():GetRandomFlagShipMode(), uv0(getProxy(SettingsProxy):GetRandomFlagShipList()))
 
-	return (arg_9_0:RandomShips(var_9_2, var_9_4, var_9_5, var_9_6, var_9_7))
+	return slot0:RandomShips(slot4, slot6, slot7, slot8, slot9)
 end
 
-function var_0_0.RandomShips(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
-	local var_10_0 = {}
+function slot0.RandomShips(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = {}
 
-	for iter_10_0 = 1, arg_10_1 do
-		if #arg_10_3 == 0 and #arg_10_5 == 0 then
-			return var_10_0
+	for slot10 = 1, slot1 do
+		if #slot3 == 0 and #slot5 == 0 then
+			return slot6
 		end
 
-		local var_10_1 = #arg_10_3 == 0
-		local var_10_2 = var_10_1 and arg_10_5 or arg_10_3
-		local var_10_3 = var_10_1 and arg_10_4 or arg_10_2
-		local var_10_4 = var_10_2[math.random(1, #var_10_2)]
-		local var_10_5 = var_10_3[var_10_4] or {}
+		slot11 = #slot3 == 0
+		slot12 = slot11 and slot5 or slot3
 
-		if #var_10_5 > 0 then
-			local var_10_6 = var_10_5[math.random(1, #var_10_5)]
+		if #((slot11 and slot4 or slot2)[slot12[math.random(1, #slot12)]] or {}) > 0 then
+			slot16 = slot15[math.random(1, #slot15)]
 
-			table.insert(var_10_0, var_10_6)
-			table.removebyvalue(var_10_5, var_10_6)
+			table.insert(slot6, slot16)
+			table.removebyvalue(slot15, slot16)
 		end
 
-		if #var_10_5 == 0 then
-			table.removebyvalue(var_10_2, var_10_4)
+		if #slot15 == 0 then
+			table.removebyvalue(slot12, slot14)
 		end
 	end
 
-	return var_10_0
+	return slot6
 end
 
-function var_0_0.SynToCache(arg_11_0, arg_11_1, arg_11_2)
-	getProxy(SettingsProxy):UpdateRandomFlagShipList(arg_11_1)
-	getProxy(SettingsProxy):SetPrevRandomFlagShipTime(arg_11_2)
+function slot0.SynToCache(slot0, slot1, slot2)
+	getProxy(SettingsProxy):UpdateRandomFlagShipList(slot1)
+	getProxy(SettingsProxy):SetPrevRandomFlagShipTime(slot2)
 end
 
-return var_0_0
+return slot0

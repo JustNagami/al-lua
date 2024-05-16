@@ -1,18 +1,14 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleBulletEvent
+slot2 = slot0.Battle.BattleResourceManager
+slot3 = slot0.Battle.BattleConfig
+slot4 = class("BattleLaserArea", slot0.Battle.BattleBullet)
+slot0.Battle.BattleLaserArea = slot4
+slot4.__name = "BattleLaserArea"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleBulletEvent
-local var_0_2 = var_0_0.Battle.BattleResourceManager
-local var_0_3 = var_0_0.Battle.BattleConfig
-local var_0_4 = class("BattleLaserArea", var_0_0.Battle.BattleBullet)
-
-var_0_0.Battle.BattleLaserArea = var_0_4
-var_0_4.__name = "BattleLaserArea"
-
-function var_0_4.Update(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0._bulletData:GetSpeed()
-
-	if var_1_0.x ~= 0 or var_1_0.z ~= 0 or var_1_0.y ~= 0 then
-		arg_1_0:UpdatePosition()
+function slot4.Update(slot0, slot1)
+	if slot0._bulletData:GetSpeed().x ~= 0 or slot2.z ~= 0 or slot2.y ~= 0 then
+		slot0:UpdatePosition()
 	end
 end

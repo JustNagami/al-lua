@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("BossAward", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("BossAward", import("....BaseEntity"))
+slot0.Fields = {
 	bossId = "number",
 	config = "table",
 	rank = "number",
@@ -9,37 +8,37 @@ var_0_0.Fields = {
 	duetime = "number"
 }
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	arg_1_0.bossId = arg_1_1.bossId
-	arg_1_0.config = pg.world_joint_boss_template[arg_1_0.bossId]
-	arg_1_0.level = arg_1_1.level
-	arg_1_0.rank = arg_1_1.rank
-	arg_1_0.duetime = arg_1_1.duetime
-	arg_1_0.acceptTime = arg_1_1.accept_time or 0
+function slot0.Setup(slot0, slot1)
+	slot0.bossId = slot1.bossId
+	slot0.config = pg.world_joint_boss_template[slot0.bossId]
+	slot0.level = slot1.level
+	slot0.rank = slot1.rank
+	slot0.duetime = slot1.duetime
+	slot0.acceptTime = slot1.accept_time or 0
 end
 
-function var_0_0.IsReceived(arg_2_0)
-	return arg_2_0.acceptTime > 0
+function slot0.IsReceived(slot0)
+	return slot0.acceptTime > 0
 end
 
-function var_0_0.GetAwards(arg_3_0)
-	return arg_3_0.config.drop_show
+function slot0.GetAwards(slot0)
+	return slot0.config.drop_show
 end
 
-function var_0_0.IsExpired(arg_4_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_4_0.duetime
+function slot0.IsExpired(slot0)
+	return slot0.duetime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.GetExpiredTime(arg_5_0, ...)
-	return arg_5_0.duetime
+function slot0.GetExpiredTime(slot0, ...)
+	return slot0.duetime
 end
 
-function var_0_0.GetBossName(arg_6_0)
-	return arg_6_0.config.name
+function slot0.GetBossName(slot0)
+	return slot0.config.name
 end
 
-function var_0_0.GetRank(arg_7_0)
-	return arg_7_0.rank
+function slot0.GetRank(slot0)
+	return slot0.rank
 end
 
-return var_0_0
+return slot0

@@ -1,71 +1,61 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleDamageRateView = class("BattleDamageRateView")
+slot0.Battle.BattleDamageRateView.__name = "BattleDamageRateView"
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleDamageRateView = class("BattleDamageRateView")
-var_0_0.Battle.BattleDamageRateView.__name = "BattleDamageRateView"
-
-function var_0_0.Battle.BattleDamageRateView.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0.tick_bar = arg_1_1.transform:Find("tick_bar"):GetComponent(typeof(Image))
-	arg_1_0.tickBarOb = arg_1_0.tick_bar.gameObject
-	arg_1_0.tick_bar.fillAmount = 0
+function slot0.Battle.BattleDamageRateView.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0.tick_bar = slot1.transform:Find("tick_bar"):GetComponent(typeof(Image))
+	slot0.tickBarOb = slot0.tick_bar.gameObject
+	slot0.tick_bar.fillAmount = 0
 end
 
-function var_0_0.Battle.BattleDamageRateView.UpdateScore(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0:CalScore(arg_2_1, arg_2_2)
-
-	LeanTween.cancel(arg_2_0.tickBarOb)
-	LeanTween.value(arg_2_0.tickBarOb, arg_2_0.tick_bar.fillAmount, var_2_0, 0.5):setOnUpdate(System.Action_float(function(arg_3_0)
-		arg_2_0.tick_bar.fillAmount = arg_3_0
+function slot0.Battle.BattleDamageRateView.UpdateScore(slot0, slot1, slot2)
+	LeanTween.cancel(slot0.tickBarOb)
+	LeanTween.value(slot0.tickBarOb, slot0.tick_bar.fillAmount, slot0:CalScore(slot1, slot2), 0.5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.tick_bar.fillAmount = slot0
 	end))
 end
 
-function var_0_0.Battle.BattleDamageRateView.CalScore(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = pg.expedition_data_template[arg_4_2]
-	local var_4_1 = {
-		"c_score_point",
-		"b_score_point",
-		"a_score_point",
-		"s_score_point",
-		"score_max"
-	}
-	local var_4_2 = {
+function slot0.Battle.BattleDamageRateView.CalScore(slot0, slot1, slot2)
+	slot5 = {
 		0,
 		0.445,
 		0.7,
 		0.88,
 		1
 	}
-	local var_4_3 = 0
+	slot6 = 0
 
-	for iter_4_0, iter_4_1 in ipairs(var_4_1) do
-		if arg_4_1 < var_4_0[iter_4_1] then
+	for slot10, slot11 in ipairs({
+		"c_score_point",
+		"b_score_point",
+		"a_score_point",
+		"s_score_point",
+		"score_max"
+	}) do
+		if slot1 < pg.expedition_data_template[slot2][slot11] then
 			break
 		end
 
-		var_4_3 = iter_4_0
+		slot6 = slot10
 	end
 
-	local var_4_4 = 0
+	slot7 = 0
 
-	if var_4_3 < #var_4_1 then
-		local var_4_5 = var_4_0[var_4_1[var_4_3]]
-
-		if var_4_5 < 0 then
-			var_4_5 = 0
+	if slot6 < #slot4 then
+		if slot3[slot4[slot6]] < 0 then
+			slot8 = 0
 		end
 
-		local var_4_6 = (arg_4_1 - var_4_5) / (var_4_0[var_4_1[var_4_3 + 1]] - var_4_5)
-
-		var_4_4 = (var_4_2[var_4_3 + 1] - var_4_2[var_4_3]) * var_4_6 + var_4_2[var_4_3]
+		slot7 = (slot5[slot6 + 1] - slot5[slot6]) * (slot1 - slot8) / (slot3[slot4[slot6 + 1]] - slot8) + slot5[slot6]
 	else
-		var_4_4 = 1
+		slot7 = 1
 	end
 
-	return var_4_4
+	return slot7
 end
 
-function var_0_0.Battle.BattleDamageRateView.Dispose(arg_5_0)
-	LeanTween.cancel(arg_5_0.tickBarOb)
+function slot0.Battle.BattleDamageRateView.Dispose(slot0)
+	LeanTween.cancel(slot0.tickBarOb)
 end

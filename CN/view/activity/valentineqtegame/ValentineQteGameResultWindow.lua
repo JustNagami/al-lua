@@ -1,97 +1,93 @@
-﻿local var_0_0 = class("ValentineQteGameResultWindow")
+slot0 = class("ValentineQteGameResultWindow")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._tf = arg_1_1
-	arg_1_0._parentTf = arg_1_1.parent
-	arg_1_0.backBtn = arg_1_1:Find("back")
-	arg_1_0.shareBtn = arg_1_1:Find("share")
-	arg_1_0.scoreTxt = arg_1_1:Find("frame/score/Text"):GetComponent(typeof(Text))
-	arg_1_0.perfectTxt = arg_1_1:Find("frame/content/Perfect/value/Text"):GetComponent(typeof(Text))
-	arg_1_0.greatTxt = arg_1_1:Find("frame/content/Great/value/Text"):GetComponent(typeof(Text))
-	arg_1_0.goodTxt = arg_1_1:Find("frame/content/Good/value/Text"):GetComponent(typeof(Text))
-	arg_1_0.missTxt = arg_1_1:Find("frame/content/Miss/value/Text"):GetComponent(typeof(Text))
-	arg_1_0.comboTxt = arg_1_1:Find("frame/content/Combo/value/Text"):GetComponent(typeof(Text))
-	arg_1_0.chatTxt = arg_1_1:Find("chat/Text"):GetComponent(typeof(Text))
-	arg_1_0.nameTxt = arg_1_1:Find("frame/Text"):GetComponent(typeof(Text))
+	slot0._tf = slot1
+	slot0._parentTf = slot1.parent
+	slot0.backBtn = slot1:Find("back")
+	slot0.shareBtn = slot1:Find("share")
+	slot0.scoreTxt = slot1:Find("frame/score/Text"):GetComponent(typeof(Text))
+	slot0.perfectTxt = slot1:Find("frame/content/Perfect/value/Text"):GetComponent(typeof(Text))
+	slot0.greatTxt = slot1:Find("frame/content/Great/value/Text"):GetComponent(typeof(Text))
+	slot0.goodTxt = slot1:Find("frame/content/Good/value/Text"):GetComponent(typeof(Text))
+	slot0.missTxt = slot1:Find("frame/content/Miss/value/Text"):GetComponent(typeof(Text))
+	slot0.comboTxt = slot1:Find("frame/content/Combo/value/Text"):GetComponent(typeof(Text))
+	slot0.chatTxt = slot1:Find("chat/Text"):GetComponent(typeof(Text))
+	slot0.nameTxt = slot1:Find("frame/Text"):GetComponent(typeof(Text))
 
-	arg_1_0:Init()
-	setText(arg_1_1:Find("frame/score/label"), i18n("2023Valentine_minigame_label1"))
+	slot0:Init()
+	setText(slot1:Find("frame/score/label"), i18n("2023Valentine_minigame_label1"))
 
-	arg_1_0.nameTxt.text = getProxy(PlayerProxy):getRawData():GetName()
+	slot0.nameTxt.text = getProxy(PlayerProxy):getRawData():GetName()
 
-	setActive(arg_1_0.nameTxt.gameObject, false)
+	setActive(slot0.nameTxt.gameObject, false)
 end
 
-function var_0_0.Init(arg_2_0)
-	onButton(arg_2_0, arg_2_0.backBtn, function()
-		if arg_2_0.callback then
-			arg_2_0.callback()
+function slot0.Init(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		if uv0.callback then
+			uv0.callback()
 		end
 
-		arg_2_0:Hide()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.shareBtn, function()
+	onButton(slot0, slot0.shareBtn, function ()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeValentineQte, nil, {
 			weight = LayerWeightConst.TOP_LAYER + 1
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.Show(arg_5_0, arg_5_1, arg_5_2)
-	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
+function slot0.Show(slot0, slot1, slot2)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	arg_5_0.statistics = arg_5_1
-	arg_5_0.callback = arg_5_2
+	slot0.statistics = slot1
+	slot0.callback = slot2
 
-	setActive(arg_5_0._tf, true)
-	arg_5_0:Flush()
+	setActive(slot0._tf, true)
+	slot0:Flush()
 end
 
-function var_0_0.Flush(arg_6_0)
-	arg_6_0.scoreTxt.text = arg_6_0.statistics.Score
-	arg_6_0.perfectTxt.text = arg_6_0.statistics.Perfect
-	arg_6_0.greatTxt.text = arg_6_0.statistics.Great
-	arg_6_0.goodTxt.text = arg_6_0.statistics.Good
-	arg_6_0.missTxt.text = arg_6_0.statistics.Miss
-	arg_6_0.comboTxt.text = arg_6_0.statistics.Combo
-	arg_6_0.chatTxt.text = arg_6_0:GetChatTxt(arg_6_0.statistics.Score)
+function slot0.Flush(slot0)
+	slot0.scoreTxt.text = slot0.statistics.Score
+	slot0.perfectTxt.text = slot0.statistics.Perfect
+	slot0.greatTxt.text = slot0.statistics.Great
+	slot0.goodTxt.text = slot0.statistics.Good
+	slot0.missTxt.text = slot0.statistics.Miss
+	slot0.comboTxt.text = slot0.statistics.Combo
+	slot0.chatTxt.text = slot0:GetChatTxt(slot0.statistics.Score)
 end
 
-function var_0_0.GetChatTxt(arg_7_0, arg_7_1)
-	local var_7_0
+function slot0.GetChatTxt(slot0, slot1)
+	slot2 = nil
 
-	for iter_7_0, iter_7_1 in ipairs(ValentineQteGameConst.CHAT_CONTENT) do
-		local var_7_1 = iter_7_1[1]
-		local var_7_2 = iter_7_1[2]
-		local var_7_3 = iter_7_1[3]
-
-		if var_7_1 <= arg_7_1 and arg_7_1 <= var_7_2 then
-			var_7_0 = var_7_3
+	for slot6, slot7 in ipairs(ValentineQteGameConst.CHAT_CONTENT) do
+		if slot7[1] <= slot1 and slot1 <= slot7[2] then
+			slot2 = slot7[3]
 
 			break
 		end
 	end
 
-	if var_7_0 then
-		return i18n("2023Valentine_minigame_" .. var_7_0)
+	if slot2 then
+		return i18n("2023Valentine_minigame_" .. slot2)
 	else
 		return ""
 	end
 end
 
-function var_0_0.Hide(arg_8_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_8_0._tf, arg_8_0._parentTf)
+function slot0.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 
-	arg_8_0.callback = nil
+	slot0.callback = nil
 
-	setActive(arg_8_0._tf, false)
+	setActive(slot0._tf, false)
 end
 
-function var_0_0.Destroy(arg_9_0)
-	arg_9_0:Hide()
-	pg.DelegateInfo.Dispose(arg_9_0)
+function slot0.Destroy(slot0)
+	slot0:Hide()
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

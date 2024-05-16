@@ -1,42 +1,37 @@
-﻿local var_0_0 = class("GetWBOtherBossCommand", pm.SimpleCommand)
+slot0 = class("GetWBOtherBossCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().type
-	local var_1_1 = {}
+function slot0.execute(slot0, slot1)
+	slot4 = {}
 
-	if var_1_0 == WorldBoss.OTHER_BOSS_TYPE_FRIEND then
-		local var_1_2 = getProxy(FriendProxy):getRawData()
-
-		for iter_1_0, iter_1_1 in pairs(var_1_2) do
-			table.insert(var_1_1, iter_1_1.id)
+	if slot1:getBody().type == WorldBoss.OTHER_BOSS_TYPE_FRIEND then
+		for slot10, slot11 in pairs(getProxy(FriendProxy):getRawData()) do
+			table.insert(slot4, slot11.id)
 		end
-	elseif var_1_0 == WorldBoss.OTHER_BOSS_TYPE_GUILD then
-		local var_1_3 = getProxy(GuildProxy):getRawData()
-
-		for iter_1_2, iter_1_3 in pairs(var_1_3.member) do
-			table.insert(var_1_1, iter_1_3.id)
+	elseif slot3 == WorldBoss.OTHER_BOSS_TYPE_GUILD then
+		for slot10, slot11 in pairs(getProxy(GuildProxy):getRawData().member) do
+			table.insert(slot4, slot11.id)
 		end
 	end
 
-	if #var_1_1 == 0 then
+	if #slot4 == 0 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(33503, {
-		user_id_list = var_1_1
-	}, 33504, function(arg_2_0)
-		local var_2_0 = {}
+		user_id_list = slot4
+	}, 33504, function (slot0)
+		slot1 = {}
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.boss_list) do
-			local var_2_1 = WorldBoss.New()
+		for slot5, slot6 in ipairs(slot0.boss_list) do
+			slot7 = WorldBoss.New()
 
-			var_2_1:Setup(iter_2_1)
-			table.insert(var_2_0, var_2_1)
+			slot7:Setup(slot6)
+			table.insert(slot1, slot7)
 		end
 
-		nowWorld():GetBossProxy():UpdateOtheroBosses(var_2_0)
-		arg_1_0:sendNotification(GAME.WORLD_BOSS_GET_OTHER_BOSS_DONE)
+		nowWorld():GetBossProxy():UpdateOtheroBosses(slot1)
+		uv0:sendNotification(GAME.WORLD_BOSS_GET_OTHER_BOSS_DONE)
 	end)
 end
 
-return var_0_0
+return slot0

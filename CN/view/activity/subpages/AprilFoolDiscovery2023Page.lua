@@ -1,130 +1,111 @@
-﻿local var_0_0 = class("AprilFoolDiscovery2023Page", import(".AprilFoolDiscoveryRePage"))
-local var_0_1 = "superburin"
+slot0 = class("AprilFoolDiscovery2023Page", import(".AprilFoolDiscoveryRePage"))
+slot1 = "superburin"
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.items = CustomIndexLayer.Clone2Full(slot0:findTF("AD/list1"), 5)
+	slot5 = slot0:findTF("AD/list2")
 
-	local var_1_0 = arg_1_0:findTF("AD/list1")
+	table.insertto(slot0.items, CustomIndexLayer.Clone2Full(slot5, 5))
 
-	arg_1_0.items = CustomIndexLayer.Clone2Full(var_1_0, 5)
+	slot0.selectIndex = 0
+	slot0.btnHelp = slot0.bg:Find("help_btn")
+	slot0.btnBattle = slot0.bg:Find("battle_btn")
+	slot0.tip = slot0.bg:Find("tip")
+	slot0.slider = slot0.bg:Find("slider")
+	slot0.leftTime = slot0.slider:Find("time")
+	slot0.loader = AutoLoader.New()
 
-	table.insertto(arg_1_0.items, CustomIndexLayer.Clone2Full(arg_1_0:findTF("AD/list2"), 5))
-
-	arg_1_0.selectIndex = 0
-	arg_1_0.btnHelp = arg_1_0.bg:Find("help_btn")
-	arg_1_0.btnBattle = arg_1_0.bg:Find("battle_btn")
-	arg_1_0.tip = arg_1_0.bg:Find("tip")
-	arg_1_0.slider = arg_1_0.bg:Find("slider")
-	arg_1_0.leftTime = arg_1_0.slider:Find("time")
-	arg_1_0.loader = AutoLoader.New()
-
-	for iter_1_0 = 1, #var_0_1 do
-		arg_1_0.loader:GetSprite("ui/activityuipage/aprilfooldiscovery2023page_atlas", string.sub(var_0_1, iter_1_0, iter_1_0), arg_1_0.items[iter_1_0]:Find("character"))
+	for slot5 = 1, #uv0 do
+		slot0.loader:GetSprite("ui/activityuipage/aprilfooldiscovery2023page_atlas", string.sub(uv0, slot5, slot5), slot0.items[slot5]:Find("character"))
 	end
 
-	arg_1_0._funcsLink = {}
+	slot0._funcsLink = {}
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	local var_2_0 = var_0_0.super.OnDataSetting(arg_2_0)
-
-	local function var_2_1()
-		if arg_2_0.activity.data1 == 1 and arg_2_0.activity.data3 == 1 then
-			arg_2_0.activity.data3 = 0
+function slot0.OnDataSetting(slot0)
+	return uv0.super.OnDataSetting(slot0) or function ()
+		if uv0.activity.data1 == 1 and uv0.activity.data3 == 1 then
+			uv0.activity.data3 = 0
 
 			pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 				cmd = 4,
-				actId = arg_2_0.activity.id
+				actId = uv0.activity.id
 			})
 
 			return true
 		end
-	end
-
-	var_2_0 = var_2_0 or var_2_1()
-
-	return var_2_0
+	end()
 end
 
-function var_0_0.OnFirstFlush(arg_4_0)
-	local var_4_0 = pg.activity_event_picturepuzzle[arg_4_0.activity.id]
+function slot0.OnFirstFlush(slot0)
+	slot1 = pg.activity_event_picturepuzzle[slot0.activity.id]
 
-	assert(var_4_0, "Can't Find activity_event_picturepuzzle 's ID : " .. arg_4_0.activity.id)
+	assert(slot1, "Can't Find activity_event_picturepuzzle 's ID : " .. slot0.activity.id)
 
-	arg_4_0.puzzleConfig = var_4_0
-	arg_4_0.keyList = Clone(var_4_0.pickup_picturepuzzle)
+	slot0.puzzleConfig = slot1
+	slot0.keyList = Clone(slot1.pickup_picturepuzzle)
 
-	table.insertto(arg_4_0.keyList, var_4_0.drop_picturepuzzle)
-	assert(#arg_4_0.keyList == #arg_4_0.items, string.format("keyList has {0}, but items has 9", #arg_4_0.keyList))
-	table.sort(arg_4_0.keyList)
-	onButton(arg_4_0, arg_4_0.btnHelp, function()
+	table.insertto(slot0.keyList, slot1.drop_picturepuzzle)
+	assert(#slot0.keyList == #slot0.items, string.format("keyList has {0}, but items has 9", #slot0.keyList))
+	table.sort(slot0.keyList)
+	onButton(slot0, slot0.btnHelp, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.caibulin_help.tip
 		})
 	end, SFX_PANEL)
 
-	local var_4_1 = arg_4_0.activity.id
+	slot2 = slot0.activity.id
 
-	onButton(arg_4_0, arg_4_0.btnBattle, function()
-		if #arg_4_0.activity.data2_list < #arg_4_0.keyList then
+	onButton(slot0, slot0.btnBattle, function ()
+		if #uv0.activity.data2_list < #uv0.keyList then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("caibulin_tip11"))
 
 			return
 		end
 
-		local var_6_0 = arg_4_0.puzzleConfig.chapter
-
-		arg_4_0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
+		uv0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
 			warnMsg = "bulin_tip_other3",
-			stageId = var_6_0
-		}, function()
-			if not pg.NewStoryMgr.GetInstance():IsPlayed(tostring(var_6_0), true) then
+			stageId = uv0.puzzleConfig.chapter
+		}, function ()
+			if not pg.NewStoryMgr.GetInstance():IsPlayed(tostring(uv0), true) then
 				pg.m02:sendNotification(GAME.STORY_UPDATE, {
-					storyId = tostring(var_6_0)
+					storyId = tostring(uv0)
 				})
 			end
 
-			local var_7_0 = getProxy(ActivityProxy)
-			local var_7_1 = var_7_0:getActivityById(var_4_1)
-
-			if var_7_1.data1 == 1 then
+			if getProxy(ActivityProxy):getActivityById(uv1).data1 == 1 then
 				return
 			end
 
-			var_7_1.data3 = 1
+			slot1.data3 = 1
 
-			var_7_0:updateActivity(var_7_1)
+			slot0:updateActivity(slot1)
 		end)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_8_0)
-	local var_8_0
+function slot0.OnUpdateFlush(slot0)
+	slot1 = slot0.activity.data1 >= 1
+	slot2 = #slot0.activity.data2_list == #slot0.keyList
 
-	var_8_0 = arg_8_0.activity.data1 >= 1
+	for slot8, slot9 in ipairs(slot0.items) do
+		slot11 = table.contains(slot0.activity.data2_list, slot0.keyList[slot8]) and 3 or table.contains(slot0.activity.data3_list, slot10) and 2 or 1
 
-	local var_8_1 = #arg_8_0.activity.data2_list == #arg_8_0.keyList
-	local var_8_2 = arg_8_0.activity.data2_list
-	local var_8_3 = arg_8_0.activity.data3_list
-
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.items) do
-		local var_8_4 = arg_8_0.keyList[iter_8_0]
-		local var_8_5 = table.contains(var_8_2, var_8_4) and 3 or table.contains(var_8_3, var_8_4) and 2 or 1
-
-		onButton(arg_8_0, iter_8_1, function()
-			if var_8_5 >= 3 then
+		onButton(slot0, slot9, function ()
+			if uv0 >= 3 then
 				return
 			end
 
-			if var_8_5 == 2 then
-				arg_8_0.selectIndex = iter_8_0
+			if uv0 == 2 then
+				uv1.selectIndex = uv2
 
-				arg_8_0:UpdateSelection()
+				uv1:UpdateSelection()
 
 				return
-			elseif var_8_5 == 1 then
-				if pg.TimeMgr.GetInstance():GetServerTime() < arg_8_0.activity.data2 then
+			elseif uv0 == 1 then
+				if pg.TimeMgr.GetInstance():GetServerTime() < uv1.activity.data2 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("bulin_tip_other2"))
 
 					return
@@ -132,43 +113,40 @@ function var_0_0.OnUpdateFlush(arg_8_0)
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("bulin_tip_other1"),
-					onYes = function()
+					onYes = function ()
 						pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 							cmd = 3,
-							actId = arg_8_0.activity.id,
-							id = var_8_4
+							actId = uv0.activity.id,
+							id = uv1
 						})
 
-						arg_8_0.selectIndex = iter_8_0
+						uv0.selectIndex = uv2
 					end
 				})
 			end
 		end)
-		setActive(iter_8_1:Find("character"), var_8_5 == 3)
-		setActive(iter_8_1:Find("Unlock"), var_8_5 == 2)
-		setActive(iter_8_1:Find("Locked"), var_8_5 == 1)
+		setActive(slot9:Find("character"), slot11 == 3)
+		setActive(slot9:Find("Unlock"), slot11 == 2)
+		setActive(slot9:Find("Locked"), slot11 == 1)
 	end
 
-	setGray(arg_8_0.btnBattle, not var_8_1)
-	arg_8_0:UpdateSelection()
+	setGray(slot0.btnBattle, not slot2)
+	slot0:UpdateSelection()
 
-	local var_8_6 = pg.activity_event_picturepuzzle[arg_8_0.activity.id]
+	slot5 = pg.activity_event_picturepuzzle[slot0.activity.id]
 
-	if #table.mergeArray(arg_8_0.activity.data1_list, arg_8_0.activity.data2_list, true) >= #var_8_6.pickup_picturepuzzle + #var_8_6.drop_picturepuzzle then
-		local var_8_7 = arg_8_0.activity:getConfig("config_client").comStory
+	if #table.mergeArray(slot0.activity.data1_list, slot0.activity.data2_list, true) >= #slot5.pickup_picturepuzzle + #slot5.drop_picturepuzzle then
+		slot7 = slot0.activity:getConfig("config_client").comStory
 
-		arg_8_0:AddFunc(function(arg_11_0)
-			pg.NewStoryMgr.GetInstance():Play(var_8_7, arg_11_0)
+		slot0:AddFunc(function (slot0)
+			pg.NewStoryMgr.GetInstance():Play(uv0, slot0)
 		end)
 	end
 end
 
-function var_0_0.UpdateSelection(arg_12_0)
-	local var_12_0 = arg_12_0.keyList[arg_12_0.selectIndex]
-	local var_12_1 = table.contains(arg_12_0.activity.data3_list, var_12_0)
-
-	setText(arg_12_0.tip, var_12_1 and i18n("caibulin_tip" .. arg_12_0.selectIndex) or "")
-	arg_12_0:CreateCDTimer()
+function slot0.UpdateSelection(slot0)
+	setText(slot0.tip, table.contains(slot0.activity.data3_list, slot0.keyList[slot0.selectIndex]) and i18n("caibulin_tip" .. slot0.selectIndex) or "")
+	slot0:CreateCDTimer()
 end
 
-return var_0_0
+return slot0

@@ -1,10 +1,7 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-local var_0_1 = {}
-
-var_0_0.AssistantInfo = var_0_1
-var_0_1.assistantEvents = {
+pg = pg or {}
+slot1 = {}
+pg.AssistantInfo = slot1
+slot1.assistantEvents = {
 	idleRandom1 = {
 		action = "main_1",
 		dialog = "main_1"
@@ -82,12 +79,12 @@ var_0_1.assistantEvents = {
 		dialog = "touch2"
 	}
 }
-var_0_1.assistantTouchParts = {
+slot1.assistantTouchParts = {
 	"TouchSpecial",
 	"TouchHead",
 	"TouchBody"
 }
-var_0_1.assistantTouchEvents = {
+slot1.assistantTouchEvents = {
 	{
 		"TouchSpecial"
 	},
@@ -107,7 +104,7 @@ var_0_1.assistantTouchEvents = {
 		"idleRandom9"
 	}
 }
-var_0_1.useNewTouchEventShip = {
+slot1.useNewTouchEventShip = {
 	[205131] = {
 		assistantTouchEventsNew = {
 			{
@@ -129,7 +126,7 @@ var_0_1.useNewTouchEventShip = {
 		}
 	}
 }
-var_0_1.action2Id = {
+slot1.action2Id = {
 	touch_drag19 = 120,
 	unlock = 20,
 	idle = 1,
@@ -210,7 +207,7 @@ var_0_1.action2Id = {
 	touch_idle13 = 214,
 	touch_drag10 = 111
 }
-var_0_1.action2Words = {
+slot1.action2Words = {
 	"main1",
 	"main2",
 	"main3",
@@ -223,10 +220,10 @@ var_0_1.action2Words = {
 	"touch",
 	"headtouch"
 }
-var_0_1.idleActions = {
-	var_0_1.action2Id.idle
+slot1.idleActions = {
+	slot1.action2Id.idle
 }
-var_0_1.IdleEvents = {
+slot1.IdleEvents = {
 	"idleRandom1",
 	"idleRandom2",
 	"idleRandom3",
@@ -237,7 +234,7 @@ var_0_1.IdleEvents = {
 	"idleRandom8",
 	"idleRandom9"
 }
-var_0_1.PaintingTouchEvents = {
+slot1.PaintingTouchEvents = {
 	"TouchBody",
 	"idleRandom1",
 	"idleRandom2",
@@ -247,68 +244,61 @@ var_0_1.PaintingTouchEvents = {
 	"idleRandom6",
 	"idleRandom9"
 }
-var_0_1.PaintingTouchParts = {
+slot1.PaintingTouchParts = {
 	["1"] = "TouchSpecial",
 	["3"] = "TouchHead",
 	["2"] = "TouchBody"
 }
 
-function var_0_1.enable()
+function slot1.enable()
 	return HXSet.isHx()
 end
 
-function var_0_1.getAssistantTouchEvents(arg_2_0, arg_2_1)
-	if var_0_1.enable() and var_0_1.assistantTouchParts[arg_2_0] == "TouchSpecial" then
-		arg_2_0 = 3
+function slot1.getAssistantTouchEvents(slot0, slot1)
+	if uv0.enable() and uv0.assistantTouchParts[slot0] == "TouchSpecial" then
+		slot0 = 3
 	end
 
-	if var_0_1.useNewTouchEventShip and var_0_1.useNewTouchEventShip[arg_2_1] then
-		return var_0_1.useNewTouchEventShip[arg_2_1].assistantTouchEventsNew[arg_2_0]
+	if uv0.useNewTouchEventShip and uv0.useNewTouchEventShip[slot1] then
+		return uv0.useNewTouchEventShip[slot1].assistantTouchEventsNew[slot0]
 	end
 
-	return var_0_1.assistantTouchEvents[arg_2_0]
+	return uv0.assistantTouchEvents[slot0]
 end
 
-function var_0_1.getPaintingTouchEvents(arg_3_0)
-	if var_0_1.enable() and var_0_1.PaintingTouchParts[arg_3_0] == "TouchSpecial" then
-		arg_3_0 = "2"
+function slot1.getPaintingTouchEvents(slot0)
+	if uv0.enable() and uv0.PaintingTouchParts[slot0] == "TouchSpecial" then
+		slot0 = "2"
 	end
 
-	return var_0_1.PaintingTouchParts[arg_3_0]
+	return uv0.PaintingTouchParts[slot0]
 end
 
-function var_0_1.isDisableSpecialClick(arg_4_0)
-	if var_0_1.enable() and arg_4_0 == "touch2" then
+function slot1.isDisableSpecialClick(slot0)
+	if uv0.enable() and slot0 == "touch2" then
 		return true
 	end
 
 	return false
 end
 
-function var_0_1.filterAssistantEvents(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = {}
+function slot1.filterAssistantEvents(slot0, slot1, slot2)
+	slot3 = {}
 
-	arg_5_2 = arg_5_2 or 0
-
-	local var_5_1 = ShipWordHelper.GetMainSceneWordCnt(arg_5_1, arg_5_2)
-
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0) do
-		local var_5_2 = var_0_1.assistantEvents[iter_5_1].dialog
-		local var_5_3 = string.split(var_5_2, "_")
-
-		if var_5_3[1] == "main" then
-			if var_5_1 >= tonumber(var_5_3[2]) then
-				table.insert(var_5_0, iter_5_1)
+	for slot8, slot9 in ipairs(slot0) do
+		if string.split(uv0.assistantEvents[slot9].dialog, "_")[1] == "main" then
+			if tonumber(slot12[2]) <= ShipWordHelper.GetMainSceneWordCnt(slot1, slot2 or 0) then
+				table.insert(slot3, slot9)
 			end
 		else
-			table.insert(var_5_0, iter_5_1)
+			table.insert(slot3, slot9)
 		end
 	end
 
-	return var_5_0
+	return slot3
 end
 
-var_0_1.Expressions = {
+slot1.Expressions = {
 	dunkeerke = {
 		faces = {
 			propose = "2",
@@ -2100,34 +2090,32 @@ var_0_1.Expressions = {
 	}
 }
 
-function var_0_1.GetCvList()
-	local var_6_0 = {}
+function slot1.GetCvList()
+	slot0 = {}
 
-	for iter_6_0, iter_6_1 in ipairs(var_0_1.action2Words) do
-		local var_6_1 = var_0_0.character_voice[iter_6_1]
-
-		if var_6_1 and not var_0_0.AssistantInfo.isDisableSpecialClick(iter_6_1) and var_6_1.unlock_condition[1] >= 0 then
-			table.insert(var_6_0, var_6_1)
+	for slot4, slot5 in ipairs(uv0.action2Words) do
+		if uv1.character_voice[slot5] and not uv1.AssistantInfo.isDisableSpecialClick(slot5) and slot6.unlock_condition[1] >= 0 then
+			table.insert(slot0, slot6)
 		end
 	end
 
-	return var_6_0
+	return slot0
 end
 
-function var_0_1.GetCVListForProfile(arg_7_0)
-	local var_7_0 = {}
+function slot1.GetCVListForProfile(slot0)
+	slot1 = {}
 
-	for iter_7_0, iter_7_1 in pairs(var_0_0.character_voice) do
-		if not var_0_0.AssistantInfo.isDisableSpecialClick(iter_7_0) and iter_7_1.unlock_condition[1] >= 0 and iter_7_1.l2d_action ~= "" then
-			if iter_7_1.sp_trans_l2d == 1 then
-				if arg_7_0 then
-					table.insert(var_7_0, iter_7_1)
+	for slot5, slot6 in pairs(uv0.character_voice) do
+		if not uv0.AssistantInfo.isDisableSpecialClick(slot5) and slot6.unlock_condition[1] >= 0 and slot6.l2d_action ~= "" then
+			if slot6.sp_trans_l2d == 1 then
+				if slot0 then
+					table.insert(slot1, slot6)
 				end
-			elseif iter_7_1.sp_trans_l2d == 0 or not iter_7_1.sp_trans_l2d then
-				table.insert(var_7_0, iter_7_1)
+			elseif slot6.sp_trans_l2d == 0 or not slot6.sp_trans_l2d then
+				table.insert(slot1, slot6)
 			end
 		end
 	end
 
-	return var_7_0
+	return slot1
 end

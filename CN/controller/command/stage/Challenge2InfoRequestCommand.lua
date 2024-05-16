@@ -1,33 +1,32 @@
-﻿local var_0_0 = class("Challenge2InfoRequestCommand", pm.SimpleCommand)
+slot0 = class("Challenge2InfoRequestCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().callback
-	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
-	local var_1_2 = getProxy(ChallengeProxy)
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().callback
+	slot6 = getProxy(ChallengeProxy)
 
-	if not var_1_1 or var_1_1:isEnd() then
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE) or slot5:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(24004, {
-		activity_id = var_1_1.id
-	}, 24005, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_2:updateSeasonChallenge(arg_2_0.current_challenge)
+		activity_id = slot5.id
+	}, 24005, function (slot0)
+		if slot0.result == 0 then
+			uv0:updateSeasonChallenge(slot0.current_challenge)
 
-			for iter_2_0, iter_2_1 in ipairs(arg_2_0.user_challenge) do
-				var_1_2:updateCurrentChallenge(iter_2_1)
+			for slot4, slot5 in ipairs(slot0.user_challenge) do
+				uv0:updateCurrentChallenge(slot5)
 			end
 
-			if var_1_0 then
-				var_1_0()
+			if uv1 then
+				uv1()
 			end
 
-			arg_1_0:sendNotification(GAME.CHALLENGE2_INFO_DONE)
+			uv2:sendNotification(GAME.CHALLENGE2_INFO_DONE)
 		else
-			originalPrint("reqquest challenge info fail, data.result: " .. arg_2_0.result)
+			originalPrint("reqquest challenge info fail, data.result: " .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

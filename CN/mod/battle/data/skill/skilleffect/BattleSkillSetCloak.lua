@@ -1,30 +1,25 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleSkillSetCloak = class("BattleSkillSetCloak", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillSetCloak.__name = "BattleSkillSetCloak"
+slot1 = slot0.Battle.BattleSkillSetCloak
 
-local var_0_0 = ys
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1, lv)
 
-var_0_0.Battle.BattleSkillSetCloak = class("BattleSkillSetCloak", var_0_0.Battle.BattleSkillEffect)
-var_0_0.Battle.BattleSkillSetCloak.__name = "BattleSkillSetCloak"
-
-local var_0_1 = var_0_0.Battle.BattleSkillSetCloak
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, lv)
-
-	arg_1_0._rate = arg_1_0._tempData.arg_list.cloak_rate or 0
+	slot0._rate = slot0._tempData.arg_list.cloak_rate or 0
 end
 
-function var_0_1.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0:doSetCloakValue(arg_2_2)
+function slot1.DoDataEffect(slot0, slot1, slot2)
+	slot0:doSetCloakValue(slot2)
 end
 
-function var_0_1.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
-	arg_3_0:doSetCloakValue(arg_3_1)
+function slot1.DoDataEffectWithoutTarget(slot0, slot1)
+	slot0:doSetCloakValue(slot1)
 end
 
-function var_0_1.doSetCloakValue(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:GetCloak()
-
-	if var_4_0 then
-		var_4_0:ForceToRate(arg_4_0._rate)
+function slot1.doSetCloakValue(slot0, slot1)
+	if slot1:GetCloak() then
+		slot2:ForceToRate(slot0._rate)
 	end
 end

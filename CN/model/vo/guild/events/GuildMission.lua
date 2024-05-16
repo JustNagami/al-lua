@@ -1,16 +1,16 @@
-﻿local var_0_0 = class("GuildMission", import("...BaseVO"))
+slot0 = class("GuildMission", import("...BaseVO"))
 
-function var_0_0.CompleteData2FullData(arg_1_0)
-	local var_1_0 = pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.CompleteData2FullData(slot0)
+	slot1 = pg.TimeMgr.GetInstance():GetServerTime()
 
 	return {
 		efficiency = 0,
 		server_finish = true,
-		event_id = arg_1_0.event_id,
-		position = arg_1_0.position,
-		join_number = arg_1_0.join_number,
-		start_time = var_1_0,
-		complete_time = var_1_0 - 10,
+		event_id = slot0.event_id,
+		position = slot0.position,
+		join_number = slot0.join_number,
+		start_time = slot1,
+		complete_time = slot1 - 10,
 		shipinevent = {},
 		attr_acc_list = {},
 		attr_count_list = {},
@@ -19,534 +19,478 @@ function var_0_0.CompleteData2FullData(arg_1_0)
 	}
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.event_id
-	arg_2_0.configId = arg_2_0.id
-	arg_2_0.position = arg_2_1.position
-	arg_2_0.serverFinish = arg_2_1.server_finish
-	arg_2_0.myFleets = {}
-	arg_2_0.myShips = {}
-	arg_2_0.nodeAnimPosistion = 0
-	arg_2_0.formationTime = 0
-	arg_2_0.nations = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.event_id
+	slot0.configId = slot0.id
+	slot0.position = slot1.position
+	slot0.serverFinish = slot1.server_finish
+	slot0.myFleets = {}
+	slot0.myShips = {}
+	slot0.nodeAnimPosistion = 0
+	slot0.formationTime = 0
+	slot0.nations = {}
 
-	local var_2_0 = arg_2_0:getConfig("ship_camp_effect")
-
-	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-		if not table.contains(arg_2_0.nations, iter_2_1[1]) then
-			table.insert(arg_2_0.nations, iter_2_1[1])
+	for slot6, slot7 in ipairs(slot0:getConfig("ship_camp_effect")) do
+		if not table.contains(slot0.nations, slot7[1]) then
+			table.insert(slot0.nations, slot7[1])
 		end
 	end
 
-	arg_2_0.shiptypes = {}
+	slot0.shiptypes = {}
 
-	local var_2_1 = arg_2_0:getConfig("ship_type_effect")
-
-	for iter_2_2, iter_2_3 in ipairs(var_2_1) do
-		table.insert(arg_2_0.shiptypes, iter_2_3[1])
+	for slot7, slot8 in ipairs(slot0:getConfig("ship_type_effect")) do
+		table.insert(slot0.shiptypes, slot8[1])
 	end
 
-	arg_2_0:Flush(arg_2_1, 0)
+	slot0:Flush(slot1, 0)
 
-	arg_2_0.formationTipIndex = PlayerPrefs.GetInt("guild_mission_formation_tip" .. arg_2_0.configId, 0)
+	slot0.formationTipIndex = PlayerPrefs.GetInt("guild_mission_formation_tip" .. slot0.configId, 0)
 end
 
-function var_0_0.Flush(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0.nextRefreshTime = arg_3_2 + pg.TimeMgr.GetInstance():GetServerTime()
-	arg_3_0.startTime = arg_3_1.start_time
-	arg_3_0.finishTime = arg_3_1.complete_time
-	arg_3_0.efficiency = arg_3_1.efficiency or 0
-	arg_3_0.totalTimeCost = arg_3_0.finishTime - arg_3_0.startTime
-	arg_3_0.ships = {}
+function slot0.Flush(slot0, slot1, slot2)
+	slot0.nextRefreshTime = slot2 + pg.TimeMgr.GetInstance():GetServerTime()
+	slot0.startTime = slot1.start_time
+	slot0.finishTime = slot1.complete_time
+	slot0.efficiency = slot1.efficiency or 0
+	slot0.totalTimeCost = slot0.finishTime - slot0.startTime
+	slot0.ships = {}
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_1.shipinevent) do
-		local var_3_0 = {
-			userId = iter_3_1.user_id,
-			shipId = iter_3_1.ship_id,
-			configId = iter_3_1.template_id,
-			skin = iter_3_1.skin
-		}
-
-		table.insert(arg_3_0.ships, var_3_0)
+	for slot6, slot7 in ipairs(slot1.shipinevent) do
+		table.insert(slot0.ships, {
+			userId = slot7.user_id,
+			shipId = slot7.ship_id,
+			configId = slot7.template_id,
+			skin = slot7.skin
+		})
 	end
 
-	local var_3_1 = {}
-
-	for iter_3_2, iter_3_3 in ipairs(arg_3_1.personship or {}) do
-		var_3_1[iter_3_3.page_id] = {}
-
-		for iter_3_4, iter_3_5 in ipairs(iter_3_3.ship_ids) do
-			table.insert(var_3_1[iter_3_3.page_id], iter_3_5)
+	for slot7, slot8 in ipairs(slot1.personship or {}) do
+		for slot12, slot13 in ipairs(slot8.ship_ids) do
+			table.insert(slot3[slot8.page_id], slot13)
 		end
 	end
 
-	arg_3_0:UpdateMyFleets(var_3_1)
+	slot0:UpdateMyFleets({
+		[slot8.page_id] = {}
+	})
 
-	arg_3_0.attrAccList = {}
+	slot0.attrAccList = {}
+	slot4 = {
+		[slot9.key] = slot9.value
+	}
 
-	local var_3_2 = {}
-
-	for iter_3_6, iter_3_7 in ipairs(arg_3_1.attr_acc_list) do
-		var_3_2[iter_3_7.key] = iter_3_7.value
+	for slot8, slot9 in ipairs(slot1.attr_acc_list) do
+		-- Nothing
 	end
 
-	local var_3_3 = arg_3_0:getConfig("event_attr_acc_effect")
-
-	for iter_3_8, iter_3_9 in ipairs(var_3_3) do
-		local var_3_4 = var_3_2[iter_3_9[1]] or 0
-
-		arg_3_0.attrAccList[iter_3_9[1]] = {
-			value = var_3_4,
-			op = iter_3_9[2],
-			goal = iter_3_9[3],
-			score = iter_3_9[4]
+	for slot9, slot10 in ipairs(slot0:getConfig("event_attr_acc_effect")) do
+		slot0.attrAccList[slot10[1]] = {
+			value = slot4[slot10[1]] or 0,
+			op = slot10[2],
+			goal = slot10[3],
+			score = slot10[4]
 		}
 	end
 
-	arg_3_0.attrCntList = {}
+	slot0.attrCntList = {}
+	slot6 = {
+		[slot11.key] = slot11.value
+	}
 
-	local var_3_5 = {}
-
-	for iter_3_10, iter_3_11 in ipairs(arg_3_1.attr_count_list) do
-		var_3_5[iter_3_11.key] = iter_3_11.value
+	for slot10, slot11 in ipairs(slot1.attr_count_list) do
+		-- Nothing
 	end
 
-	local var_3_6 = arg_3_0:getConfig("event_attr_count_effect")
-
-	for iter_3_12, iter_3_13 in ipairs(var_3_6) do
-		local var_3_7 = var_3_5[iter_3_13[1]] or 0
-
-		arg_3_0.attrCntList[iter_3_13[1]] = {
-			value = var_3_7,
-			total = iter_3_13[2],
-			goal = iter_3_13[3],
-			score = iter_3_13[4]
+	for slot11, slot12 in ipairs(slot0:getConfig("event_attr_count_effect")) do
+		slot0.attrCntList[slot12[1]] = {
+			value = slot6[slot12[1]] or 0,
+			total = slot12[2],
+			goal = slot12[3],
+			score = slot12[4]
 		}
 	end
 
-	arg_3_0.nodes = {}
-	arg_3_0.nodeLogs = {}
+	slot0.nodes = {}
+	slot0.nodeLogs = {}
 
-	for iter_3_14, iter_3_15 in ipairs(arg_3_1.eventnodes) do
-		local var_3_8 = GuildMissionNode.New(iter_3_15)
+	for slot11, slot12 in ipairs(slot1.eventnodes) do
+		slot13 = GuildMissionNode.New(slot12)
 
-		table.insert(arg_3_0.nodes, var_3_8)
+		table.insert(slot0.nodes, slot13)
 
-		local var_3_9 = var_3_8:GetLog()
-
-		if var_3_9 then
-			table.insert(arg_3_0.nodeLogs, var_3_9)
+		if slot13:GetLog() then
+			table.insert(slot0.nodeLogs, slot14)
 		end
 	end
 end
 
-function var_0_0.IsFinishedByServer(arg_4_0)
-	return arg_4_0.serverFinish
+function slot0.IsFinishedByServer(slot0)
+	return slot0.serverFinish
 end
 
-function var_0_0.GetTotalTimeCost(arg_5_0)
-	return arg_5_0.totalTimeCost
+function slot0.GetTotalTimeCost(slot0)
+	return slot0.totalTimeCost
 end
 
-function var_0_0.GetStartTime(arg_6_0)
-	return arg_6_0.startTime
+function slot0.GetStartTime(slot0)
+	return slot0.startTime
 end
 
-function var_0_0.GetRemainingTime(arg_7_0)
-	return arg_7_0:GetTotalTimeCost() - (pg.TimeMgr.GetInstance():GetServerTime() - arg_7_0:GetStartTime())
+function slot0.GetRemainingTime(slot0)
+	return slot0:GetTotalTimeCost() - (pg.TimeMgr.GetInstance():GetServerTime() - slot0:GetStartTime())
 end
 
-function var_0_0.IsBoss(arg_8_0)
+function slot0.IsBoss(slot0)
 	return false
 end
 
-function var_0_0.UpdateNodeAnimFlagIndex(arg_9_0, arg_9_1)
-	arg_9_0.nodeAnimPosistion = arg_9_1
+function slot0.UpdateNodeAnimFlagIndex(slot0, slot1)
+	slot0.nodeAnimPosistion = slot1
 end
 
-function var_0_0.GetNodeAnimPosistion(arg_10_0)
-	return arg_10_0.nodeAnimPosistion
+function slot0.GetNodeAnimPosistion(slot0)
+	return slot0.nodeAnimPosistion
 end
 
-function var_0_0.GetNewestSuccessNode(arg_11_0)
-	for iter_11_0 = #arg_11_0.nodes, 1, -1 do
-		local var_11_0 = arg_11_0.nodes[iter_11_0]
-
-		if var_11_0:IsSuccess() then
-			return var_11_0
+function slot0.GetNewestSuccessNode(slot0)
+	for slot4 = #slot0.nodes, 1, -1 do
+		if slot0.nodes[slot4]:IsSuccess() then
+			return slot5
 		end
 	end
 end
 
-function var_0_0.UpdateFormationTime(arg_12_0, arg_12_1)
-	arg_12_0.formationTime = arg_12_1 or 0
+function slot0.UpdateFormationTime(slot0, slot1)
+	slot0.formationTime = slot1 or 0
 end
 
-function var_0_0.CanFormation(arg_13_0)
-	if table.getCount(arg_13_0.myFleets) == GuildConst.MISSION_MAX_FLEET_CNT then
+function slot0.CanFormation(slot0)
+	if table.getCount(slot0.myFleets) == GuildConst.MISSION_MAX_FLEET_CNT then
 		return false
 	end
 
-	if arg_13_0.formationTime == 0 then
+	if slot0.formationTime == 0 then
 		return true
 	end
 
-	local var_13_0 = arg_13_0:GetNextFormationTime() - pg.TimeMgr.GetInstance():GetServerTime()
-
-	return var_13_0 <= 0, var_13_0
+	return slot0:GetNextFormationTime() - pg.TimeMgr.GetInstance():GetServerTime() <= 0, slot2
 end
 
-function var_0_0.GetNextFormationTime(arg_14_0)
-	local var_14_0 = arg_14_0.formationTime
-	local var_14_1 = GetZeroTime()
-	local var_14_2 = GetZeroTime() - 86400
-	local var_14_3 = pg.guildset.operation_member_dispatch_reset.key_args
-	local var_14_4 = _.map(var_14_3, function(arg_15_0)
-		return var_14_2 + arg_15_0 * 3600
-	end)
-	local var_14_5 = _.detect(var_14_4, function(arg_16_0)
-		return arg_16_0 > var_14_0
-	end)
+function slot0.GetNextFormationTime(slot0)
+	slot2 = GetZeroTime()
 
-	if var_14_5 then
-		if var_14_0 < var_14_2 - 86400 + var_14_3[4] * 3600 then
+	if _.detect(_.map(pg.guildset.operation_member_dispatch_reset.key_args, function (slot0)
+		return uv0 + slot0 * 3600
+	end), function (slot0)
+		return uv0 < slot0
+	end) then
+		if slot0.formationTime < GetZeroTime() - 86400 - 86400 + slot4[4] * 3600 then
 			return pg.TimeMgr.GetInstance():GetServerTime()
 		else
-			return var_14_5
+			return slot6
 		end
 	else
-		return var_14_1 + var_14_3[1] * 3600
+		return slot2 + slot4[1] * 3600
 	end
 end
 
-function var_0_0.UpdateMyFleets(arg_17_0, arg_17_1)
-	arg_17_0.myFleets = arg_17_1
-	arg_17_0.myShips = {}
+function slot0.UpdateMyFleets(slot0, slot1)
+	slot0.myFleets = slot1
+	slot0.myShips = {}
 
-	for iter_17_0, iter_17_1 in pairs(arg_17_0.myFleets) do
-		for iter_17_2, iter_17_3 in ipairs(iter_17_1) do
-			table.insert(arg_17_0.myShips, iter_17_3)
+	for slot5, slot6 in pairs(slot0.myFleets) do
+		for slot10, slot11 in ipairs(slot6) do
+			table.insert(slot0.myShips, slot11)
 		end
 	end
 end
 
-function var_0_0.UpdateFleet(arg_18_0, arg_18_1, arg_18_2)
-	arg_18_0.myFleets[arg_18_1] = {}
+function slot0.UpdateFleet(slot0, slot1, slot2)
+	slot0.myFleets[slot1] = {}
 
-	for iter_18_0, iter_18_1 in ipairs(arg_18_2) do
-		table.insert(arg_18_0.myFleets[arg_18_1], iter_18_1)
-		table.insert(arg_18_0.myShips, iter_18_1)
+	for slot6, slot7 in ipairs(slot2) do
+		table.insert(slot0.myFleets[slot1], slot7)
+		table.insert(slot0.myShips, slot7)
 	end
 end
 
-function var_0_0.GetFleetByIndex(arg_19_0, arg_19_1)
-	return arg_19_0.myFleets[arg_19_1]
+function slot0.GetFleetByIndex(slot0, slot1)
+	return slot0.myFleets[slot1]
 end
 
-function var_0_0.GetMaxFleet(arg_20_0)
-	return arg_20_0:GetFleetCnt() + (arg_20_0:CanFormation() and 1 or 0)
+function slot0.GetMaxFleet(slot0)
+	return slot0:GetFleetCnt() + (slot0:CanFormation() and 1 or 0)
 end
 
-function var_0_0.GetFleetCnt(arg_21_0)
-	return table.getCount(arg_21_0.myFleets)
+function slot0.GetFleetCnt(slot0)
+	return table.getCount(slot0.myFleets)
 end
 
-function var_0_0.IsMaxFleetCnt(arg_22_0)
-	return arg_22_0:GetFleetCnt() == GuildConst.MISSION_MAX_FLEET_CNT
+function slot0.IsMaxFleetCnt(slot0)
+	return slot0:GetFleetCnt() == GuildConst.MISSION_MAX_FLEET_CNT
 end
 
-function var_0_0.GetCanFormationIndex(arg_23_0)
-	if arg_23_0:CanFormation() then
-		return table.getCount(arg_23_0.myFleets) + 1
+function slot0.GetCanFormationIndex(slot0)
+	if slot0:CanFormation() then
+		return table.getCount(slot0.myFleets) + 1
 	end
 
 	return -1
 end
 
-function var_0_0.ShouldRefresh(arg_24_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() > arg_24_0.nextRefreshTime
+function slot0.ShouldRefresh(slot0)
+	return slot0.nextRefreshTime < pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.bindConfigTable(arg_25_0)
+function slot0.bindConfigTable(slot0)
 	return pg.guild_base_event
 end
 
-function var_0_0.GetPosition(arg_26_0)
-	return arg_26_0.position
+function slot0.GetPosition(slot0)
+	return slot0.position
 end
 
-function var_0_0.GetIcon(arg_27_0)
-	return arg_27_0:getConfig("pic")
+function slot0.GetIcon(slot0)
+	return slot0:getConfig("pic")
 end
 
-function var_0_0.GetSubType(arg_28_0)
-	return arg_28_0:getConfig("sub_type")
+function slot0.GetSubType(slot0)
+	return slot0:getConfig("sub_type")
 end
 
-function var_0_0.IsMain(arg_29_0)
-	return arg_29_0:GetSubType() == 1
+function slot0.IsMain(slot0)
+	return slot0:GetSubType() == 1
 end
 
-function var_0_0.IsFinish(arg_30_0)
-	local var_30_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return arg_30_0.finishTime > 0 and var_30_0 >= arg_30_0.finishTime
+function slot0.IsFinish(slot0)
+	return slot0.finishTime > 0 and slot0.finishTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.GetName(arg_31_0)
-	return arg_31_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetTag(arg_32_0)
-	return arg_32_0:getConfig("type")
+function slot0.GetTag(slot0)
+	return slot0:getConfig("type")
 end
 
-function var_0_0.IsActive(arg_33_0)
+function slot0.IsActive(slot0)
 	return true
 end
 
-function var_0_0.IsEliteType(arg_34_0)
-	return arg_34_0:getConfig("type") == 2
+function slot0.IsEliteType(slot0)
+	return slot0:getConfig("type") == 2
 end
 
-function var_0_0.GetJoinMemberCnt(arg_35_0)
-	local var_35_0 = {}
+function slot0.GetJoinMemberCnt(slot0)
+	slot1 = {}
 
-	for iter_35_0, iter_35_1 in ipairs(arg_35_0.ships) do
-		if not table.contains(var_35_0, iter_35_1.userId) then
-			table.insert(var_35_0, iter_35_1.userId)
+	for slot5, slot6 in ipairs(slot0.ships) do
+		if not table.contains(slot1, slot6.userId) then
+			table.insert(slot1, slot6.userId)
 		end
 	end
 
-	return #var_35_0
+	return #slot1
 end
 
-function var_0_0.GetEfficiency(arg_36_0)
-	return arg_36_0.efficiency
+function slot0.GetEfficiency(slot0)
+	return slot0.efficiency
 end
 
-function var_0_0.GetShipsByNation(arg_37_0, arg_37_1)
-	local var_37_0 = {}
+function slot0.GetShipsByNation(slot0, slot1)
+	slot2 = {}
 
-	for iter_37_0, iter_37_1 in ipairs(arg_37_0.ships) do
-		if arg_37_1 == pg.ship_data_statistics[iter_37_1.configId].nationality then
-			table.insert(var_37_0, iter_37_1)
+	for slot6, slot7 in ipairs(slot0.ships) do
+		if slot1 == pg.ship_data_statistics[slot7.configId].nationality then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return var_37_0
+	return slot2
 end
 
-function var_0_0.GetNations(arg_38_0)
-	return arg_38_0.nations
+function slot0.GetNations(slot0)
+	return slot0.nations
 end
 
-function var_0_0.GetAttrAcc(arg_39_0)
-	return arg_39_0.attrAccList
+function slot0.GetAttrAcc(slot0)
+	return slot0.attrAccList
 end
 
-function var_0_0.GetAttrCntAcc(arg_40_0)
-	return arg_40_0.attrCntList
+function slot0.GetAttrCntAcc(slot0)
+	return slot0.attrCntList
 end
 
-function var_0_0.GetNodes(arg_41_0)
-	return arg_41_0.nodes
+function slot0.GetNodes(slot0)
+	return slot0.nodes
 end
 
-function var_0_0.GetProgress(arg_42_0)
-	local var_42_0 = arg_42_0:GetTotalTimeCost()
-
-	if var_42_0 > 0 then
-		local var_42_1 = arg_42_0:GetStartTime()
-
-		return (pg.TimeMgr.GetInstance():GetServerTime() - var_42_1) / var_42_0
+function slot0.GetProgress(slot0)
+	if slot0:GetTotalTimeCost() > 0 then
+		return (pg.TimeMgr.GetInstance():GetServerTime() - slot0:GetStartTime()) / slot1
 	else
 		return 0
 	end
 end
 
-function var_0_0.GetMyFlagShip(arg_43_0)
-	return arg_43_0.myShips[1]
+function slot0.GetMyFlagShip(slot0)
+	return slot0.myShips[1]
 end
 
-function var_0_0.GetLogs(arg_44_0)
-	local var_44_0 = arg_44_0:GetMyFlagShip()
+function slot0.GetLogs(slot0)
+	if slot0:GetMyFlagShip() then
+		slot2 = getProxy(BayProxy):getShipById(slot1)
 
-	if var_44_0 then
-		local var_44_1 = getProxy(BayProxy):getShipById(var_44_0)
-
-		do return _.map(arg_44_0.nodeLogs, function(arg_45_0)
-			return string.gsub(arg_45_0, "$2", "<color=#92FC63FF>" .. var_44_1:getName() .. "</color>")
-		end) end
-		return
+		return _.map(slot0.nodeLogs, function (slot0)
+			return string.gsub(slot0, "$2", "<color=#92FC63FF>" .. uv0:getName() .. "</color>")
+		end)
+	else
+		return {}
 	end
-
-	return {}
 end
 
-function var_0_0.GetMyShips(arg_46_0)
-	return arg_46_0.myShips
+function slot0.GetMyShips(slot0)
+	return slot0.myShips
 end
 
-function var_0_0.GetBattleShipType(arg_47_0)
-	return arg_47_0:getConfig("ship_type_display")
+function slot0.GetBattleShipType(slot0)
+	return slot0:getConfig("ship_type_display")
 end
 
-function var_0_0.GetAwards(arg_48_0)
-	return arg_48_0:getConfig("award_list")
+function slot0.GetAwards(slot0)
+	return slot0:getConfig("award_list")
 end
 
-function var_0_0.CalcMyEffect(arg_49_0)
-	if not arg_49_0 or #arg_49_0 == 0 then
+function slot0.CalcMyEffect(slot0)
+	if not slot0 or #slot0 == 0 then
 		return 0
 	end
 
-	local var_49_0 = getProxy(BayProxy)
-	local var_49_1 = 0
-	local var_49_2 = 0
-
-	for iter_49_0, iter_49_1 in ipairs(arg_49_0) do
-		local var_49_3 = var_49_0:getShipById(iter_49_1)
-
-		if var_49_3 then
-			var_49_1 = var_49_3.level + var_49_1
-			var_49_2 = var_49_2 + var_49_3:getShipCombatPower({})
+	for slot7, slot8 in ipairs(slot0) do
+		if getProxy(BayProxy):getShipById(slot8) then
+			slot2 = slot9.level + 0
+			slot3 = 0 + slot9:getShipCombatPower({})
 		end
 	end
 
-	return math.floor((20 + math.pow(var_49_1, 0.7)) * (1 + var_49_2 / (var_49_2 + 12500)))
+	return math.floor((20 + math.pow(slot2, 0.7)) * (1 + slot3 / (slot3 + 12500)))
 end
 
-function var_0_0.GetMyEffect(arg_50_0)
-	return var_0_0.CalcMyEffect(arg_50_0.myShips)
+function slot0.GetMyEffect(slot0)
+	return uv0.CalcMyEffect(slot0.myShips)
 end
 
-function var_0_0.GetRecommendShipTypes(arg_51_0)
-	return arg_51_0.shiptypes
+function slot0.GetRecommendShipTypes(slot0)
+	return slot0.shiptypes
 end
 
-function var_0_0.GetRecommendShipNation(arg_52_0)
-	return arg_52_0.nations
+function slot0.GetRecommendShipNation(slot0)
+	return slot0.nations
 end
 
-function var_0_0.GetSquadron(arg_53_0)
-	return arg_53_0:getConfig("extra_squadron")
+function slot0.GetSquadron(slot0)
+	return slot0:getConfig("extra_squadron")
 end
 
-function var_0_0.GetSquadronDisplay(arg_54_0)
-	return arg_54_0:getConfig("extra_squadron_display")
+function slot0.GetSquadronDisplay(slot0)
+	return slot0:getConfig("extra_squadron_display")
 end
 
-function var_0_0.GetSquadronTargetCnt(arg_55_0)
-	return arg_55_0:getConfig("extra_squadron_num")
+function slot0.GetSquadronTargetCnt(slot0)
+	return slot0:getConfig("extra_squadron_num")
 end
 
-function var_0_0.GetSquadronRatio(arg_56_0)
-	return arg_56_0:getConfig("extra_squedron_ratio") / 100
+function slot0.GetSquadronRatio(slot0)
+	return slot0:getConfig("extra_squedron_ratio") / 100
 end
 
-function var_0_0.GetOtherShips(arg_57_0)
-	local var_57_0 = getProxy(GuildProxy):getRawData()
-	local var_57_1 = {}
+function slot0.GetOtherShips(slot0)
+	slot2 = {}
 
-	for iter_57_0, iter_57_1 in pairs(arg_57_0.ships) do
-		local var_57_2 = var_57_0:getMemberById(iter_57_1.userId)
-
-		if var_57_2 then
-			local var_57_3 = iter_57_1.skin
-
-			if var_57_3 == 0 then
-				var_57_3 = pg.ship_data_statistics[iter_57_1.configId].skin_id
+	for slot6, slot7 in pairs(slot0.ships) do
+		if getProxy(GuildProxy):getRawData():getMemberById(slot7.userId) then
+			if slot7.skin == 0 then
+				slot9 = pg.ship_data_statistics[slot7.configId].skin_id
 			end
 
-			table.insert(var_57_1, {
-				id = iter_57_1.configId,
-				skin = var_57_3,
-				name = var_57_2 and var_57_2.name or ""
+			table.insert(slot2, {
+				id = slot7.configId,
+				skin = slot9,
+				name = slot8 and slot8.name or ""
 			})
 		end
 	end
 
-	return var_57_1
+	return slot2
 end
 
-function var_0_0.RecordFormationTip(arg_58_0)
-	local var_58_0 = arg_58_0:GetCanFormationIndex()
-
-	if var_58_0 > 0 then
-		PlayerPrefs.SetInt("guild_mission_formation_tip" .. arg_58_0.configId, var_58_0)
+function slot0.RecordFormationTip(slot0)
+	if slot0:GetCanFormationIndex() > 0 then
+		PlayerPrefs.SetInt("guild_mission_formation_tip" .. slot0.configId, slot1)
 	end
 end
 
-function var_0_0.ShouldShowFormationTip(arg_59_0)
-	return arg_59_0.formationTipIndex < arg_59_0:GetCanFormationIndex()
+function slot0.ShouldShowFormationTip(slot0)
+	return slot0.formationTipIndex < slot0:GetCanFormationIndex()
 end
 
-function var_0_0.FirstFleetCanFormation(arg_60_0)
-	return arg_60_0:GetFleetCnt() == 0
+function slot0.FirstFleetCanFormation(slot0)
+	return slot0:GetFleetCnt() == 0
 end
 
-function var_0_0.SameSquadron(arg_61_0, arg_61_1)
-	if arg_61_0:IsEliteType() then
-		return table.contains(arg_61_1.tagList, arg_61_0:getConfig("extra_squadron"))
+function slot0.SameSquadron(slot0, slot1)
+	if slot0:IsEliteType() then
+		return table.contains(slot1.tagList, slot0:getConfig("extra_squadron"))
 	end
 
 	return false
 end
 
-function var_0_0.GetEffectAttr(arg_62_0)
-	local var_62_0 = arg_62_0:getConfig("event_attr_count_effect")
-	local var_62_1 = arg_62_0:getConfig("event_attr_acc_effect")
-	local var_62_2
-	local var_62_3
+function slot0.GetEffectAttr(slot0)
+	slot2 = slot0:getConfig("event_attr_acc_effect")
+	slot3, slot4 = nil
 
-	if #var_62_0 > 0 then
-		var_62_2 = var_62_0[1][1]
-		var_62_3 = var_62_0[1][2]
+	if #slot0:getConfig("event_attr_count_effect") > 0 then
+		slot3 = slot1[1][1]
+		slot4 = slot1[1][2]
 	end
 
-	if #var_62_1 > 0 then
-		var_62_2 = var_62_1[1][1]
+	if #slot2 > 0 then
+		slot3 = slot2[1][1]
 	end
 
-	local var_62_4 = pg.attribute_info_by_type
-
-	return var_62_4[var_62_2] and var_62_4[var_62_2].name, var_62_3
+	return pg.attribute_info_by_type[slot3] and slot5[slot3].name, slot4
 end
 
-function var_0_0.MatchAttr(arg_63_0, arg_63_1)
-	if arg_63_0:IsEliteType() then
-		local var_63_0, var_63_1 = arg_63_0:GetEffectAttr()
-		local var_63_2 = arg_63_1.attrs[var_63_0] or 0
+function slot0.MatchAttr(slot0, slot1)
+	if slot0:IsEliteType() then
+		slot2, slot3 = slot0:GetEffectAttr()
 
-		if var_63_1 then
-			return var_63_1 <= var_63_2
+		if slot3 then
+			return slot3 <= (slot1.attrs[slot2] or 0)
 		else
-			return var_63_2 > 0
+			return slot5 > 0
 		end
 	end
 
 	return false
 end
 
-function var_0_0.MatchNation(arg_64_0, arg_64_1)
-	if arg_64_0:IsEliteType() then
-		local var_64_0 = arg_64_0:GetRecommendShipNation()
-
-		return table.contains(var_64_0, arg_64_1.nation)
+function slot0.MatchNation(slot0, slot1)
+	if slot0:IsEliteType() then
+		return table.contains(slot0:GetRecommendShipNation(), slot1.nation)
 	end
 
 	return false
 end
 
-function var_0_0.MatchShipType(arg_65_0, arg_65_1)
-	if arg_65_0:IsEliteType() then
-		local var_65_0 = arg_65_0:GetRecommendShipTypes()
-
-		return table.contains(var_65_0, arg_65_1.type)
+function slot0.MatchShipType(slot0, slot1)
+	if slot0:IsEliteType() then
+		return table.contains(slot0:GetRecommendShipTypes(), slot1.type)
 	end
 
 	return false
 end
 
-return var_0_0
+return slot0

@@ -1,25 +1,23 @@
-﻿local var_0_0 = singletonClass("PoolMgr")
-
+slot0 = singletonClass("PoolMgr")
 pg = pg or {}
-pg.PoolMgr = var_0_0
-PoolMgr = var_0_0
+pg.PoolMgr = slot0
+PoolMgr = slot0
+slot1 = require("Mgr/Pool/PoolPlural")
+slot2 = require("Mgr/Pool/PoolSingleton")
+slot3 = require("Mgr/Pool/PoolObjPack")
+slot4 = require("Mgr/Pool/PoolUtil")
+slot5 = ResourceMgr.Inst
 
-local var_0_1 = require("Mgr/Pool/PoolPlural")
-local var_0_2 = require("Mgr/Pool/PoolSingleton")
-local var_0_3 = require("Mgr/Pool/PoolObjPack")
-local var_0_4 = require("Mgr/Pool/PoolUtil")
-local var_0_5 = ResourceMgr.Inst
-
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.root = GameObject.New("__Pool__").transform
-	arg_1_0.pools_plural = {}
-	arg_1_0.pools_pack = {}
-	arg_1_0.callbacks = {}
-	arg_1_0.pluralIndex = 0
-	arg_1_0.singleIndex = 0
-	arg_1_0.paintingCount = 0
-	arg_1_0.commanderPaintingCount = 0
-	arg_1_0.preloads = {
+function slot0.Ctor(slot0)
+	slot0.root = GameObject.New("__Pool__").transform
+	slot0.pools_plural = {}
+	slot0.pools_pack = {}
+	slot0.callbacks = {}
+	slot0.pluralIndex = 0
+	slot0.singleIndex = 0
+	slot0.paintingCount = 0
+	slot0.commanderPaintingCount = 0
+	slot0.preloads = {
 		shiptype = {
 			"battle_hangmu",
 			"battle_qingxun",
@@ -68,8 +66,8 @@ function var_0_0.Ctor(arg_1_0)
 			"bl",
 			"bprop",
 			"bprop4_0",
-			"bprop5_0",
-			"bprop5_1"
+			"bprop4_1",
+			"bprop5_0"
 		},
 		["shipyardicon/unknown"] = {
 			""
@@ -118,157 +116,166 @@ function var_0_0.Ctor(arg_1_0)
 		channel = {},
 		["painting/mat"] = {}
 	}
-	arg_1_0.ui_tempCache = {}
+	slot0.ui_tempCache = {}
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1)
+function slot0.Init(slot0, slot1)
 	print("initializing pool manager...")
 
-	local var_2_0 = 0
-	local var_2_1 = table.getCount(arg_2_0.preloads)
+	slot2 = 0
+	slot3 = table.getCount(slot0.preloads)
 
-	local function var_2_2()
-		var_2_0 = var_2_0 + 1
+	function slot4()
+		uv0 = uv0 + 1
 
-		if var_2_0 == var_2_1 then
-			arg_2_1()
+		if uv0 == uv1 then
+			uv2()
 		end
 	end
 
-	for iter_2_0, iter_2_1 in pairs(arg_2_0.preloads) do
-		if #iter_2_1 > 0 then
-			local var_2_3 = 0
+	for slot8, slot9 in pairs(slot0.preloads) do
+		if #slot9 > 0 then
+			slot10 = typeof(Sprite)
+			slot11 = false
 
-			for iter_2_2, iter_2_3 in ipairs(iter_2_1) do
-				arg_2_0:GetSprite(iter_2_0, iter_2_3, true, function(arg_4_0)
-					var_2_3 = var_2_3 + 1
-
-					if var_2_3 == #iter_2_1 then
-						var_2_2()
-					end
-				end)
+			function slot12(slot0)
 			end
+
+			buildTempAB(slot8, function (slot0)
+				for slot4, slot5 in ipairs(uv0) do
+					slot6 = slot0:LoadAssetSync(slot5, uv1, uv2, false)
+					slot8 = slot5
+
+					if uv4.pools_pack[uv3] and uv4.pools_pack[slot7]:Get(slot8) then
+						uv5(uv4.pools_pack[slot7]:Get(slot8))
+					else
+						if not uv4.pools_pack[slot7] then
+							uv4.pools_pack[slot7] = uv6.New(uv1)
+						end
+
+						if not uv4.pools_pack[slot7]:Get(slot8) then
+							uv4.pools_pack[slot7]:Set(slot8, slot6)
+						end
+
+						uv5(slot6)
+					end
+				end
+
+				uv7()
+			end)
 		else
-			buildTempAB(iter_2_0, function(arg_5_0)
-				var_2_2()
+			buildTempAB(slot8, function (slot0)
+				uv0()
 			end)
 		end
 	end
 end
 
-function var_0_0.GetSpineChar(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = ("char/" .. arg_6_1) .. arg_6_1
+function slot0.GetSpineChar(slot0, slot1, slot2, slot3)
+	function slot6()
+		slot0 = uv0.pools_plural[uv1]
+		slot0.index = uv0.pluralIndex
+		uv0.pluralIndex = uv0.pluralIndex + 1
+		slot1 = slot0:Dequeue()
 
-	local function var_6_1()
-		local var_7_0 = arg_6_0.pools_plural[var_6_0]
-
-		var_7_0.index = arg_6_0.pluralIndex
-		arg_6_0.pluralIndex = arg_6_0.pluralIndex + 1
-
-		local var_7_1 = var_7_0:Dequeue()
-
-		var_7_1:SetActive(true)
-		arg_6_3(var_7_1)
+		slot1:SetActive(true)
+		uv2(slot1)
 	end
 
-	if not arg_6_0.pools_plural[var_6_0] then
-		arg_6_0:GetSpineSkel(arg_6_1, arg_6_2, function(arg_8_0)
-			assert(arg_8_0 ~= nil, "Spine角色不存在: " .. arg_6_1)
+	if not slot0.pools_plural["char/" .. slot1 .. slot1] then
+		slot0:GetSpineSkel(slot1, slot2, function (slot0)
+			assert(slot0 ~= nil, "Spine角色不存在: " .. uv0)
 
-			if not arg_6_0.pools_plural[var_6_0] then
-				arg_8_0 = SpineAnimUI.AnimChar(arg_6_1, arg_8_0)
+			if not uv1.pools_plural[uv2] then
+				slot0 = SpineAnimUI.AnimChar(uv0, slot0)
 
-				arg_8_0:SetActive(false)
-				tf(arg_8_0):SetParent(arg_6_0.root, false)
+				slot0:SetActive(false)
+				tf(slot0):SetParent(uv1.root, false)
 
-				local var_8_0 = arg_8_0:GetComponent("SkeletonGraphic")
-
-				var_8_0.material = var_8_0.skeletonDataAsset.atlasAssets[0].materials[0]
-				arg_6_0.pools_plural[var_6_0] = var_0_1.New(arg_8_0, 1)
+				slot1 = slot0:GetComponent("SkeletonGraphic")
+				slot1.material = slot1.skeletonDataAsset.atlasAssets[0].materials[0]
+				uv1.pools_plural[uv2] = uv3.New(slot0, 1)
 			end
 
-			var_6_1()
+			uv4()
 		end)
 	else
-		var_6_1()
+		slot6()
 	end
 end
 
-function var_0_0.ReturnSpineChar(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = ("char/" .. arg_9_1) .. arg_9_1
+function slot0.ReturnSpineChar(slot0, slot1, slot2)
+	slot4 = "char/" .. slot1 .. slot1
 
-	if IsNil(arg_9_2) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg_9_1))
-	elseif arg_9_0.pools_plural[var_9_0] then
-		if arg_9_2:GetComponent("SkeletonGraphic").allowMultipleCanvasRenderers then
-			UIUtil.ClearChildren(arg_9_2, {
+	if IsNil(slot2) then
+		Debugger.LogError(debug.traceback("empty go: " .. slot1))
+	elseif slot0.pools_plural[slot4] then
+		if slot2:GetComponent("SkeletonGraphic").allowMultipleCanvasRenderers then
+			UIUtil.ClearChildren(slot2, {
 				"Renderer"
 			})
 		else
-			UIUtil.ClearChildren(arg_9_2)
+			UIUtil.ClearChildren(slot2)
 		end
 
-		setActiveViaLayer(arg_9_2.transform, true)
-		arg_9_2:SetActive(false)
-		arg_9_2.transform:SetParent(arg_9_0.root, false)
+		setActiveViaLayer(slot2.transform, true)
+		slot2:SetActive(false)
+		slot2.transform:SetParent(slot0.root, false)
 
-		arg_9_2.transform.localPosition = Vector3.New(0, 0, 0)
-		arg_9_2.transform.localScale = Vector3.New(0.5, 0.5, 1)
-		arg_9_2.transform.localRotation = Quaternion.identity
+		slot2.transform.localPosition = Vector3.New(0, 0, 0)
+		slot2.transform.localScale = Vector3.New(0.5, 0.5, 1)
+		slot2.transform.localRotation = Quaternion.identity
 
-		arg_9_0.pools_plural[var_9_0]:Enqueue(arg_9_2)
-		arg_9_0:ExcessSpineChar()
+		slot0.pools_plural[slot4]:Enqueue(slot2)
+		slot0:ExcessSpineChar()
 	else
-		var_0_4.Destroy(arg_9_2)
+		uv0.Destroy(slot2)
 	end
 end
 
-function var_0_0.ExcessSpineChar(arg_10_0)
-	local var_10_0 = 0
-	local var_10_1 = 6
-	local var_10_2 = {}
+function slot0.ExcessSpineChar(slot0)
+	slot1 = 0
+	slot2 = 6
+	slot3 = {}
 
-	for iter_10_0, iter_10_1 in pairs(arg_10_0.pools_plural) do
-		if string.find(iter_10_0, "char/") == 1 then
-			table.insert(var_10_2, iter_10_0)
+	for slot7, slot8 in pairs(slot0.pools_plural) do
+		if string.find(slot7, "char/") == 1 then
+			table.insert(slot3, slot7)
 		end
 	end
 
-	if var_10_1 < #var_10_2 then
-		table.sort(var_10_2, function(arg_11_0, arg_11_1)
-			return arg_10_0.pools_plural[arg_11_0].index > arg_10_0.pools_plural[arg_11_1].index
+	if slot2 < #slot3 then
+		table.sort(slot3, function (slot0, slot1)
+			return uv0.pools_plural[slot1].index < uv0.pools_plural[slot0].index
 		end)
 
-		for iter_10_2 = var_10_1 + 1, #var_10_2 do
-			local var_10_3 = var_10_2[iter_10_2]
+		for slot7 = slot2 + 1, #slot3 do
+			slot8 = slot3[slot7]
 
-			arg_10_0.pools_plural[var_10_3]:Clear()
+			slot0.pools_plural[slot8]:Clear()
 
-			arg_10_0.pools_plural[var_10_3] = nil
+			slot0.pools_plural[slot8] = nil
 		end
 	end
 end
 
-function var_0_0.GetSpineSkel(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	local var_12_0, var_12_1 = HXSet.autoHxShiftPath("char/" .. arg_12_1, arg_12_1)
-	local var_12_2 = var_12_1 .. "_SkeletonData"
+function slot0.GetSpineSkel(slot0, slot1, slot2, slot3)
+	slot4, slot5 = HXSet.autoHxShiftPath("char/" .. slot1, slot1)
 
-	arg_12_0:LoadAsset(var_12_0, var_12_2, arg_12_2, typeof(Object), function(arg_13_0)
-		arg_12_3(arg_13_0)
+	slot0:LoadAsset(slot4, slot5 .. "_SkeletonData", slot2, typeof(Object), function (slot0)
+		uv0(slot0)
 	end, true)
 end
 
-function var_0_0.IsSpineSkelCached(arg_14_0, arg_14_1)
-	local var_14_0 = ("char/" .. arg_14_1) .. arg_14_1
-
-	return arg_14_0.pools_plural[var_14_0] ~= nil
+function slot0.IsSpineSkelCached(slot0, slot1)
+	return slot0.pools_plural["char/" .. slot1 .. slot1] ~= nil
 end
 
-local var_0_6 = {
+slot6 = {
 	"ResPanel",
 	"WorldResPanel"
 }
-local var_0_7 = {
+slot7 = {
 	"ResPanel",
 	"WorldResPanel",
 	"NewMainUI",
@@ -284,603 +291,539 @@ local var_0_7 = {
 	"Loading",
 	"WorldUI"
 }
-local var_0_8 = {
+slot8 = {
 	"WorldAllocateUI"
 }
 
-function var_0_0.GetUI(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	local var_15_0 = "ui/" .. arg_15_1
-	local var_15_1 = table.contains(var_0_6, arg_15_1) and 3 or 1
-	local var_15_2 = table.contains(var_0_7, arg_15_1) or table.contains(var_0_8, arg_15_1)
-
-	arg_15_0:FromPlural(var_15_0, arg_15_1, arg_15_2, var_15_1, function(arg_16_0)
-		local function var_16_0()
-			arg_15_3(arg_16_0)
-		end
-
-		if table.indexof(var_0_8, arg_15_1) then
-			local var_16_1 = var_15_0 .. arg_15_1
-
-			arg_15_0.pools_plural[var_16_1].prefab:GetComponent(typeof(UIArchiver)):Clear()
-			arg_16_0:GetComponent(typeof(UIArchiver)):Load(var_16_0)
+function slot0.GetUI(slot0, slot1, slot2, slot3)
+	slot0:FromPlural("ui/" .. slot1, slot1, slot2, table.contains(uv0, slot1) and 3 or 1, function (slot0)
+		if table.indexof(uv1, uv2) then
+			uv4.pools_plural[uv3 .. uv2].prefab:GetComponent(typeof(UIArchiver)):Clear()
+			slot0:GetComponent(typeof(UIArchiver)):Load(function ()
+				uv0(uv1)
+			end)
 		else
-			var_16_0()
+			slot1()
 		end
-	end, var_15_2)
+	end, table.contains(uv1, slot1) or table.contains(uv2, slot1))
 end
 
-function var_0_0.BuildUIPlural(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0 = "ui/" .. arg_18_1
-	local var_18_1 = var_18_0 .. arg_18_1
-
-	if arg_18_0.pools_plural[var_18_1] then
+function slot0.BuildUIPlural(slot0, slot1, slot2)
+	if slot0.pools_plural["ui/" .. slot1 .. slot1] then
 		return
 	end
 
-	local var_18_2 = table.contains(var_0_6, arg_18_1) and 3 or 1
-	local var_18_3 = table.contains(var_0_7, arg_18_1) or table.contains(var_0_8, arg_18_1)
+	slot5 = table.contains(uv0, slot1) and 3 or 1
 
-	arg_18_0:LoadAsset(var_18_0, arg_18_1, true, typeof(Object), function(arg_19_0)
-		if arg_19_0 == nil then
-			Debugger.LogError("can not find asset: " .. var_18_0 .. " : " .. arg_18_1)
+	slot0:LoadAsset(slot3, slot1, true, typeof(Object), function (slot0)
+		if slot0 == nil then
+			Debugger.LogError("can not find asset: " .. uv0 .. " : " .. uv1)
 
 			return
 		end
 
-		if not arg_18_0.pools_plural[var_18_1] then
-			arg_18_0.pools_plural[var_18_1] = var_0_1.New(arg_19_0, var_18_2)
+		if not uv2.pools_plural[uv3] then
+			uv2.pools_plural[uv3] = uv4.New(slot0, uv5)
 		end
 
-		existCall(arg_18_2)
-	end, var_18_3)
+		existCall(uv6)
+	end, table.contains(uv1, slot1) or table.contains(uv2, slot1))
 end
 
-function var_0_0.ReturnUI(arg_20_0, arg_20_1, arg_20_2)
-	local var_20_0 = "ui/" .. arg_20_1
-	local var_20_1 = var_20_0 .. arg_20_1
+function slot0.ReturnUI(slot0, slot1, slot2)
+	slot4 = "ui/" .. slot1 .. slot1
 
-	if IsNil(arg_20_2) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg_20_1))
-	elseif arg_20_0.pools_plural[var_20_1] then
-		if table.indexof(var_0_6, arg_20_1) then
-			arg_20_2.transform:SetParent(arg_20_0.root, false)
+	if IsNil(slot2) then
+		Debugger.LogError(debug.traceback("empty go: " .. slot1))
+	elseif slot0.pools_plural[slot4] then
+		if table.indexof(uv0, slot1) then
+			slot2.transform:SetParent(slot0.root, false)
 		end
 
-		if table.indexof(var_0_7, arg_20_1) or arg_20_0.ui_tempCache[arg_20_1] then
-			setActiveViaLayer(arg_20_2.transform, false)
-			arg_20_0.pools_plural[var_20_1]:Enqueue(arg_20_2)
-		elseif table.indexof(var_0_8, arg_20_1) then
-			setActiveViaLayer(arg_20_2.transform, false)
-			arg_20_2:GetComponent(typeof(UIArchiver)):Clear()
-			arg_20_0.pools_plural[var_20_1]:Enqueue(arg_20_2)
+		if table.indexof(uv1, slot1) or slot0.ui_tempCache[slot1] then
+			setActiveViaLayer(slot2.transform, false)
+			slot0.pools_plural[slot4]:Enqueue(slot2)
+		elseif table.indexof(uv2, slot1) then
+			setActiveViaLayer(slot2.transform, false)
+			slot2:GetComponent(typeof(UIArchiver)):Clear()
+			slot0.pools_plural[slot4]:Enqueue(slot2)
 		else
-			arg_20_0.pools_plural[var_20_1]:Enqueue(arg_20_2, true)
+			slot0.pools_plural[slot4]:Enqueue(slot2, true)
 
-			if arg_20_0.pools_plural[var_20_1]:AllReturned() and (not arg_20_0.callbacks[var_20_1] or #arg_20_0.callbacks[var_20_1] == 0) then
-				var_0_5:ClearBundleRef(var_20_0, true, true)
-				arg_20_0.pools_plural[var_20_1]:Clear()
+			if slot0.pools_plural[slot4]:AllReturned() and (not slot0.callbacks[slot4] or #slot0.callbacks[slot4] == 0) then
+				uv3:ClearBundleRef(slot3, true, true)
+				slot0.pools_plural[slot4]:Clear()
 
-				arg_20_0.pools_plural[var_20_1] = nil
+				slot0.pools_plural[slot4] = nil
 			end
 		end
 	else
-		var_0_4.Destroy(arg_20_2)
+		uv4.Destroy(slot2)
 	end
 end
 
-function var_0_0.HasCacheUI(arg_21_0, arg_21_1)
-	local var_21_0 = ("ui/" .. arg_21_1) .. arg_21_1
-
-	return arg_21_0.pools_plural[var_21_0] ~= nil
+function slot0.HasCacheUI(slot0, slot1)
+	return slot0.pools_plural["ui/" .. slot1 .. slot1] ~= nil
 end
 
-function var_0_0.PreloadUI(arg_22_0, arg_22_1, arg_22_2)
-	local var_22_0 = {}
-	local var_22_1 = ("ui/" .. arg_22_1) .. arg_22_1
+function slot0.PreloadUI(slot0, slot1, slot2)
+	slot3 = {}
 
-	if not arg_22_0.pools_plural[var_22_1] then
-		table.insert(var_22_0, function(arg_23_0)
-			arg_22_0:GetUI(arg_22_1, true, function(arg_24_0)
-				arg_22_0.pools_plural[var_22_1]:Enqueue(arg_24_0)
-				arg_23_0()
+	if not slot0.pools_plural["ui/" .. slot1 .. slot1] then
+		table.insert(slot3, function (slot0)
+			uv0:GetUI(uv1, true, function (slot0)
+				uv0.pools_plural[uv1]:Enqueue(slot0)
+				uv2()
 			end)
 		end)
 	end
 
-	seriesAsync(var_22_0, arg_22_2)
+	seriesAsync(slot3, slot2)
 end
 
-function var_0_0.AddTempCache(arg_25_0, arg_25_1)
-	arg_25_0.ui_tempCache[arg_25_1] = true
+function slot0.AddTempCache(slot0, slot1)
+	slot0.ui_tempCache[slot1] = true
 end
 
-function var_0_0.DelTempCache(arg_26_0, arg_26_1)
-	arg_26_0.ui_tempCache[arg_26_1] = nil
+function slot0.DelTempCache(slot0, slot1)
+	slot0.ui_tempCache[slot1] = nil
 end
 
-function var_0_0.PreloadPainting(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = {}
-	local var_27_1 = ("painting/" .. arg_27_1) .. arg_27_1
+function slot0.PreloadPainting(slot0, slot1, slot2)
+	slot3 = {}
 
-	if not arg_27_0.pools_plural[var_27_1] then
-		table.insert(var_27_0, function(arg_28_0)
-			arg_27_0:GetPainting(arg_27_1, true, function(arg_29_0)
-				arg_27_0.pools_plural[var_27_1]:Enqueue(arg_29_0)
-				arg_28_0()
+	if not slot0.pools_plural["painting/" .. slot1 .. slot1] then
+		table.insert(slot3, function (slot0)
+			uv0:GetPainting(uv1, true, function (slot0)
+				uv0.pools_plural[uv1]:Enqueue(slot0)
+				uv2()
 			end)
 		end)
 	end
 
-	seriesAsync(var_27_0, arg_27_2)
+	seriesAsync(slot3, slot2)
 end
 
-function var_0_0.GetPainting(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
-	local var_30_0 = "painting/" .. arg_30_1
-	local var_30_1 = var_30_0 .. arg_30_1
+function slot0.GetPainting(slot0, slot1, slot2, slot3)
+	slot4 = "painting/" .. slot1
+	slot5 = slot4 .. slot1
 
-	arg_30_0:FromPlural(var_30_0, arg_30_1, arg_30_2, 1, function(arg_31_0)
-		arg_31_0:SetActive(true)
+	slot0:FromPlural(slot4, slot1, slot2, 1, function (slot0)
+		slot0:SetActive(true)
 
-		if ShipExpressionHelper.DefaultFaceless(arg_30_1) then
-			setActive(tf(arg_31_0):Find("face"), true)
+		if ShipExpressionHelper.DefaultFaceless(uv0) then
+			setActive(tf(slot0):Find("face"), true)
 		end
 
-		arg_30_3(arg_31_0)
+		uv1(slot0)
 	end, true)
 end
 
-function var_0_0.ReturnPainting(arg_32_0, arg_32_1, arg_32_2)
-	local var_32_0 = ("painting/" .. arg_32_1) .. arg_32_1
+function slot0.ReturnPainting(slot0, slot1, slot2)
+	slot4 = "painting/" .. slot1 .. slot1
 
-	if IsNil(arg_32_2) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg_32_1))
-	elseif arg_32_0.pools_plural[var_32_0] then
-		setActiveViaLayer(arg_32_2, true)
+	if IsNil(slot2) then
+		Debugger.LogError(debug.traceback("empty go: " .. slot1))
+	elseif slot0.pools_plural[slot4] then
+		setActiveViaLayer(slot2, true)
 
-		local var_32_1 = tf(arg_32_2):Find("face")
-
-		if var_32_1 then
-			setActive(var_32_1, false)
+		if tf(slot2):Find("face") then
+			setActive(slot5, false)
 		end
 
-		arg_32_2:SetActive(false)
-		arg_32_2.transform:SetParent(arg_32_0.root, false)
-		arg_32_0.pools_plural[var_32_0]:Enqueue(arg_32_2)
-		arg_32_0:ExcessPainting()
+		slot2:SetActive(false)
+		slot2.transform:SetParent(slot0.root, false)
+		slot0.pools_plural[slot4]:Enqueue(slot2)
+		slot0:ExcessPainting()
 	else
-		var_0_4.Destroy(arg_32_2, true)
+		uv0.Destroy(slot2, true)
 	end
 end
 
-function var_0_0.ExcessPainting(arg_33_0)
-	local var_33_0 = 0
-	local var_33_1 = 4
-	local var_33_2 = {}
+function slot0.ExcessPainting(slot0)
+	slot1 = 0
+	slot2 = 4
+	slot3 = {}
 
-	for iter_33_0, iter_33_1 in pairs(arg_33_0.pools_plural) do
-		local var_33_3 = string.find(iter_33_0, "painting/")
-
-		if var_33_3 and var_33_3 >= 1 then
-			table.insert(var_33_2, iter_33_0)
+	for slot7, slot8 in pairs(slot0.pools_plural) do
+		if string.find(slot7, "painting/") and slot9 >= 1 then
+			table.insert(slot3, slot7)
 		end
 	end
 
-	if var_33_1 < #var_33_2 then
-		table.sort(var_33_2, function(arg_34_0, arg_34_1)
-			return arg_33_0.pools_plural[arg_34_0].index > arg_33_0.pools_plural[arg_34_1].index
+	if slot2 < #slot3 then
+		table.sort(slot3, function (slot0, slot1)
+			return uv0.pools_plural[slot1].index < uv0.pools_plural[slot0].index
 		end)
 
-		for iter_33_2 = var_33_1 + 1, #var_33_2 do
-			local var_33_4 = var_33_2[iter_33_2]
+		for slot7 = slot2 + 1, #slot3 do
+			slot8 = slot3[slot7]
 
-			arg_33_0.pools_plural[var_33_4]:Clear(true)
+			slot0.pools_plural[slot8]:Clear(true)
 
-			arg_33_0.pools_plural[var_33_4] = nil
+			slot0.pools_plural[slot8] = nil
 		end
 
-		var_0_5:unloadUnusedAssetBundles()
+		uv0:unloadUnusedAssetBundles()
 
-		arg_33_0.paintingCount = arg_33_0.paintingCount + 1
+		slot0.paintingCount = slot0.paintingCount + 1
 
-		if arg_33_0.paintingCount > 10 then
-			arg_33_0.paintingCount = 0
+		if slot0.paintingCount > 10 then
+			slot0.paintingCount = 0
 
-			var_0_5.Inst:ResUnloadAsync()
+			uv0.Inst:ResUnloadAsync()
 		end
 	end
 end
 
-function var_0_0.GetPaintingWithPrefix(arg_35_0, arg_35_1, arg_35_2, arg_35_3, arg_35_4)
-	local var_35_0 = arg_35_4 .. arg_35_1
-	local var_35_1 = var_35_0 .. arg_35_1
+function slot0.GetPaintingWithPrefix(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot4 .. slot1
+	slot6 = slot5 .. slot1
 
-	arg_35_0:FromPlural(var_35_0, arg_35_1, arg_35_2, 1, function(arg_36_0)
-		arg_36_0:SetActive(true)
+	slot0:FromPlural(slot5, slot1, slot2, 1, function (slot0)
+		slot0:SetActive(true)
 
-		if ShipExpressionHelper.DefaultFaceless(arg_35_1) then
-			setActive(tf(arg_36_0):Find("face"), true)
+		if ShipExpressionHelper.DefaultFaceless(uv0) then
+			setActive(tf(slot0):Find("face"), true)
 		end
 
-		arg_35_3(arg_36_0)
+		uv1(slot0)
 	end, true)
 end
 
-function var_0_0.ReturnPaintingWithPrefix(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
-	local var_37_0 = (arg_37_3 .. arg_37_1) .. arg_37_1
+function slot0.ReturnPaintingWithPrefix(slot0, slot1, slot2, slot3)
+	slot5 = slot3 .. slot1 .. slot1
 
-	if IsNil(arg_37_2) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg_37_1))
-	elseif arg_37_0.pools_plural[var_37_0] then
-		setActiveViaLayer(arg_37_2, true)
+	if IsNil(slot2) then
+		Debugger.LogError(debug.traceback("empty go: " .. slot1))
+	elseif slot0.pools_plural[slot5] then
+		setActiveViaLayer(slot2, true)
 
-		local var_37_1 = tf(arg_37_2):Find("face")
-
-		if var_37_1 then
-			setActive(var_37_1, false)
+		if tf(slot2):Find("face") then
+			setActive(slot6, false)
 		end
 
-		arg_37_2:SetActive(false)
-		arg_37_2.transform:SetParent(arg_37_0.root, false)
-		arg_37_0.pools_plural[var_37_0]:Enqueue(arg_37_2)
-		arg_37_0:ExcessPainting()
+		slot2:SetActive(false)
+		slot2.transform:SetParent(slot0.root, false)
+		slot0.pools_plural[slot5]:Enqueue(slot2)
+		slot0:ExcessPainting()
 	else
-		var_0_4.Destroy(arg_37_2, true)
+		uv0.Destroy(slot2, true)
 	end
 end
 
-function var_0_0.GetSprite(arg_38_0, arg_38_1, arg_38_2, arg_38_3, arg_38_4)
-	arg_38_0:FromObjPack(arg_38_1, tostring(arg_38_2), arg_38_3, typeof(Sprite), function(arg_39_0)
-		arg_38_4(arg_39_0)
+function slot0.GetSprite(slot0, slot1, slot2, slot3, slot4)
+	slot0:FromObjPack(slot1, tostring(slot2), slot3, typeof(Sprite), function (slot0)
+		uv0(slot0)
 	end)
 end
 
-function var_0_0.DecreasSprite(arg_40_0, arg_40_1, arg_40_2)
-	local var_40_0 = arg_40_1
-	local var_40_1 = typeof(Sprite)
-
-	if arg_40_0.pools_pack[var_40_0] and arg_40_0.pools_pack[var_40_0].type == var_40_1 then
-		if arg_40_0.pools_pack[var_40_0]:Remove(arg_40_2) then
-			var_0_5:ClearBundleRef(var_40_0, true, false)
+function slot0.DecreasSprite(slot0, slot1, slot2)
+	if slot0.pools_pack[slot1] and slot0.pools_pack[slot3].type == typeof(Sprite) then
+		if slot0.pools_pack[slot3]:Remove(slot2) then
+			uv0:ClearBundleRef(slot3, true, false)
 		end
 
-		if arg_40_0.pools_pack[var_40_0]:GetAmount() <= 0 then
-			arg_40_0.pools_pack[var_40_0]:Clear()
+		if slot0.pools_pack[slot3]:GetAmount() <= 0 then
+			slot0.pools_pack[slot3]:Clear()
 
-			arg_40_0.pools_pack[var_40_0] = nil
+			slot0.pools_pack[slot3] = nil
 		end
 	end
 end
 
-function var_0_0.DestroySprite(arg_41_0, arg_41_1)
-	local var_41_0 = arg_41_1
-	local var_41_1 = typeof(Sprite)
+function slot0.DestroySprite(slot0, slot1)
+	if slot0.pools_pack[slot1] and slot0.pools_pack[slot2].type == typeof(Sprite) then
+		slot0.pools_pack[slot2]:Clear()
 
-	if arg_41_0.pools_pack[var_41_0] and arg_41_0.pools_pack[var_41_0].type == var_41_1 then
-		local var_41_2 = arg_41_0.pools_pack[var_41_0]:GetAmount()
+		slot0.pools_pack[slot2] = nil
 
-		arg_41_0.pools_pack[var_41_0]:Clear()
-
-		arg_41_0.pools_pack[var_41_0] = nil
-
-		for iter_41_0 = 1, var_41_2 do
-			var_0_5:ClearBundleRef(var_41_0, true, false)
+		for slot8 = 1, slot0.pools_pack[slot2]:GetAmount() do
+			uv0:ClearBundleRef(slot2, true, false)
 		end
 	end
 end
 
-function var_0_0.DestroyAllSprite(arg_42_0)
-	local var_42_0 = {}
-	local var_42_1 = typeof(Sprite)
-
-	for iter_42_0, iter_42_1 in pairs(arg_42_0.pools_pack) do
-		if iter_42_1.type == var_42_1 and not arg_42_0.preloads[iter_42_0] then
-			var_42_0[iter_42_0] = iter_42_1
+function slot0.DestroyAllSprite(slot0)
+	for slot6, slot7 in pairs(slot0.pools_pack) do
+		if slot7.type == typeof(Sprite) and not slot0.preloads[slot6] then
+			-- Nothing
 		end
 	end
 
-	for iter_42_2, iter_42_3 in pairs(var_42_0) do
-		local var_42_2 = arg_42_0.pools_pack[iter_42_2]:GetAmount()
+	for slot6, slot7 in pairs({
+		[slot6] = slot7
+	}) do
+		slot0.pools_pack[slot6]:Clear()
 
-		arg_42_0.pools_pack[iter_42_2]:Clear()
+		slot0.pools_pack[slot6] = nil
 
-		arg_42_0.pools_pack[iter_42_2] = nil
-
-		for iter_42_4 = 1, var_42_2 do
-			var_0_5:ClearBundleRef(iter_42_2, true, false)
+		for slot12 = 1, slot0.pools_pack[slot6]:GetAmount() do
+			uv0:ClearBundleRef(slot6, true, false)
 		end
 	end
 
-	var_0_5:unloadUnusedAssetBundles()
+	uv0:unloadUnusedAssetBundles()
 end
 
-function var_0_0.DisplayPoolPacks(arg_43_0)
-	local var_43_0 = ""
+function slot0.DisplayPoolPacks(slot0)
+	slot1 = ""
 
-	for iter_43_0, iter_43_1 in pairs(arg_43_0.pools_pack) do
-		for iter_43_2, iter_43_3 in pairs(iter_43_1.items) do
-			if #var_43_0 > 0 then
-				var_43_0 = var_43_0 .. "\n"
+	for slot5, slot6 in pairs(slot0.pools_pack) do
+		for slot10, slot11 in pairs(slot6.items) do
+			if #slot1 > 0 then
+				slot1 = slot1 .. "\n"
 			end
 
-			local var_43_1 = _.map({
-				iter_43_0,
+			slot1 = slot1 .. " " .. table.concat(_.map({
+				slot5,
 				"assetName:",
-				iter_43_2,
+				slot10,
 				"type:",
-				iter_43_1.type.FullName
-			}, function(arg_44_0)
-				return tostring(arg_44_0)
-			end)
-
-			var_43_0 = var_43_0 .. " " .. table.concat(var_43_1, " ")
+				slot6.type.FullName
+			}, function (slot0)
+				return tostring(slot0)
+			end), " ")
 		end
 	end
 
-	warning(var_43_0)
+	warning(slot1)
 end
 
-function var_0_0.SpriteMemUsage(arg_45_0)
-	local var_45_0 = 0
-	local var_45_1 = 9.5367431640625e-07
-	local var_45_2 = typeof(Sprite)
+function slot0.SpriteMemUsage(slot0)
+	slot1 = 0
+	slot2 = 9.5367431640625e-07
 
-	for iter_45_0, iter_45_1 in pairs(arg_45_0.pools_pack) do
-		if iter_45_1.type == var_45_2 then
-			local var_45_3 = {}
+	for slot7, slot8 in pairs(slot0.pools_pack) do
+		if slot8.type == typeof(Sprite) then
+			slot9 = {}
 
-			for iter_45_2, iter_45_3 in pairs(iter_45_1.items) do
-				local var_45_4 = iter_45_3.texture
-				local var_45_5 = var_45_4.name
+			for slot13, slot14 in pairs(slot8.items) do
+				if not slot9[slot14.texture.name] then
+					slot17 = 4
 
-				if not var_45_3[var_45_5] then
-					local var_45_6 = 4
-					local var_45_7 = var_45_4.format
-
-					if var_45_7 == TextureFormat.RGB24 then
-						var_45_6 = 3
-					elseif var_45_7 == TextureFormat.ARGB4444 or var_45_7 == TextureFormat.RGBA4444 then
-						var_45_6 = 2
-					elseif var_45_7 == TextureFormat.DXT5 or var_45_7 == TextureFormat.ETC2_RGBA8 then
-						var_45_6 = 1
-					elseif var_45_7 == TextureFormat.PVRTC_RGB4 or var_45_7 == TextureFormat.PVRTC_RGBA4 or var_45_7 == TextureFormat.ETC_RGB4 or var_45_7 == TextureFormat.ETC2_RGB or var_45_7 == TextureFormat.DXT1 then
-						var_45_6 = 0.5
+					if slot15.format == TextureFormat.RGB24 then
+						slot17 = 3
+					elseif slot18 == TextureFormat.ARGB4444 or slot18 == TextureFormat.RGBA4444 then
+						slot17 = 2
+					elseif slot18 == TextureFormat.DXT5 or slot18 == TextureFormat.ETC2_RGBA8 then
+						slot17 = 1
+					elseif slot18 == TextureFormat.PVRTC_RGB4 or slot18 == TextureFormat.PVRTC_RGBA4 or slot18 == TextureFormat.ETC_RGB4 or slot18 == TextureFormat.ETC2_RGB or slot18 == TextureFormat.DXT1 then
+						slot17 = 0.5
 					end
 
-					var_45_0 = var_45_0 + var_45_4.width * var_45_4.height * var_45_6 * var_45_1
-					var_45_3[var_45_5] = true
+					slot1 = slot1 + slot15.width * slot15.height * slot17 * slot2
+					slot9[slot16] = true
 				end
 			end
 		end
 	end
 
-	return var_45_0
+	return slot1
 end
 
-local var_0_9 = 64
-local var_0_10 = {
+slot9 = 64
+slot10 = {
 	"chapter/",
 	"emoji/",
 	"world/"
 }
 
-function var_0_0.GetPrefab(arg_46_0, arg_46_1, arg_46_2, arg_46_3, arg_46_4, arg_46_5)
-	local var_46_0 = arg_46_1 .. arg_46_2
+function slot0.GetPrefab(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = slot1 .. slot2
 
-	arg_46_0:FromPlural(arg_46_1, arg_46_2, arg_46_3, arg_46_5 or var_0_9, function(arg_47_0)
-		if string.find(arg_46_1, "emoji/") == 1 then
-			local var_47_0 = arg_47_0:GetComponent(typeof(CriManaEffectUI))
-
-			if var_47_0 then
-				var_47_0:Pause(false)
-			end
+	slot0:FromPlural(slot1, slot2, slot3, slot5 or uv0, function (slot0)
+		if string.find(uv0, "emoji/") == 1 and slot0:GetComponent(typeof(CriManaEffectUI)) then
+			slot1:Pause(false)
 		end
 
-		arg_47_0:SetActive(true)
-		tf(arg_47_0):SetParent(arg_46_0.root, false)
-		arg_46_4(arg_47_0)
+		slot0:SetActive(true)
+		tf(slot0):SetParent(uv1.root, false)
+		uv2(slot0)
 	end, true)
 end
 
-function var_0_0.ReturnPrefab(arg_48_0, arg_48_1, arg_48_2, arg_48_3, arg_48_4)
-	local var_48_0 = arg_48_1 .. arg_48_2
+function slot0.ReturnPrefab(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot1 .. slot2
 
-	if IsNil(arg_48_3) then
-		Debugger.LogError(debug.traceback("empty go: " .. arg_48_2))
-	elseif arg_48_0.pools_plural[var_48_0] then
-		if string.find(arg_48_1, "emoji/") == 1 then
-			local var_48_1 = arg_48_3:GetComponent(typeof(CriManaEffectUI))
-
-			if var_48_1 then
-				var_48_1:Pause(true)
-			end
+	if IsNil(slot3) then
+		Debugger.LogError(debug.traceback("empty go: " .. slot2))
+	elseif slot0.pools_plural[slot5] then
+		if string.find(slot1, "emoji/") == 1 and slot3:GetComponent(typeof(CriManaEffectUI)) then
+			slot6:Pause(true)
 		end
 
-		arg_48_3:SetActive(false)
-		arg_48_3.transform:SetParent(arg_48_0.root, false)
-		arg_48_0.pools_plural[var_48_0]:Enqueue(arg_48_3)
+		slot3:SetActive(false)
+		slot3.transform:SetParent(slot0.root, false)
+		slot0.pools_plural[slot5]:Enqueue(slot3)
 
-		if arg_48_4 and arg_48_0.pools_plural[var_48_0].balance <= 0 and (not arg_48_0.callbacks[var_48_0] or #arg_48_0.callbacks[var_48_0] == 0) then
-			arg_48_0:DestroyPrefab(arg_48_1, arg_48_2)
+		if slot4 and slot0.pools_plural[slot5].balance <= 0 and (not slot0.callbacks[slot5] or #slot0.callbacks[slot5] == 0) then
+			slot0:DestroyPrefab(slot1, slot2)
 		end
 	else
-		var_0_4.Destroy(arg_48_3)
+		uv0.Destroy(slot3)
 	end
 end
 
-function var_0_0.DestroyPrefab(arg_49_0, arg_49_1, arg_49_2)
-	local var_49_0 = arg_49_1 .. arg_49_2
+function slot0.DestroyPrefab(slot0, slot1, slot2)
+	if slot0.pools_plural[slot1 .. slot2] then
+		slot0.pools_plural[slot3]:Clear()
 
-	if arg_49_0.pools_plural[var_49_0] then
-		arg_49_0.pools_plural[var_49_0]:Clear()
+		slot0.pools_plural[slot3] = nil
 
-		arg_49_0.pools_plural[var_49_0] = nil
-
-		var_0_5:ClearBundleRef(arg_49_1, true, false)
+		uv0:ClearBundleRef(slot1, true, false)
 	end
 end
 
-function var_0_0.DestroyAllPrefab(arg_50_0)
-	local var_50_0 = {}
+function slot0.DestroyAllPrefab(slot0)
+	slot1 = {}
 
-	for iter_50_0, iter_50_1 in pairs(arg_50_0.pools_plural) do
-		if _.any(var_0_10, function(arg_51_0)
-			return string.find(iter_50_0, arg_51_0) == 1
+	for slot5, slot6 in pairs(slot0.pools_plural) do
+		if _.any(uv0, function (slot0)
+			return string.find(uv0, slot0) == 1
 		end) then
-			iter_50_1:Clear()
-			var_0_5:ClearBundleRef(iter_50_0, true, false)
-			table.insert(var_50_0, iter_50_0)
+			slot6:Clear()
+			uv1:ClearBundleRef(slot5, true, false)
+			table.insert(slot1, slot5)
 		end
 	end
 
-	_.each(var_50_0, function(arg_52_0)
-		arg_50_0.pools_plural[arg_52_0] = nil
+	_.each(slot1, function (slot0)
+		uv0.pools_plural[slot0] = nil
 	end)
 end
 
-function var_0_0.DisplayPluralPools(arg_53_0)
-	local var_53_0 = ""
+function slot0.DisplayPluralPools(slot0)
+	slot1 = ""
 
-	for iter_53_0, iter_53_1 in pairs(arg_53_0.pools_plural) do
-		if #var_53_0 > 0 then
-			var_53_0 = var_53_0 .. "\n"
+	for slot5, slot6 in pairs(slot0.pools_plural) do
+		if #slot1 > 0 then
+			slot1 = slot1 .. "\n"
 		end
 
-		local var_53_1 = _.map({
-			iter_53_0,
+		slot1 = slot1 .. " " .. table.concat(_.map({
+			slot5,
 			"balance",
-			iter_53_1.balance,
+			slot6.balance,
 			"currentItmes",
-			#iter_53_1.items
-		}, function(arg_54_0)
-			return tostring(arg_54_0)
-		end)
-
-		var_53_0 = var_53_0 .. " " .. table.concat(var_53_1, " ")
+			#slot6.items
+		}, function (slot0)
+			return tostring(slot0)
+		end), " ")
 	end
 
-	warning(var_53_0)
+	warning(slot1)
 end
 
-function var_0_0.GetPluralStatus(arg_55_0, arg_55_1)
-	if not arg_55_0.pools_plural[arg_55_1] then
+function slot0.GetPluralStatus(slot0, slot1)
+	if not slot0.pools_plural[slot1] then
 		return "NIL"
 	end
 
-	local var_55_0 = arg_55_0.pools_plural[arg_55_1]
-	local var_55_1 = _.map({
-		arg_55_1,
-		"balance",
-		var_55_0.balance,
-		"currentItmes",
-		#var_55_0.items
-	}, tostring)
+	slot2 = slot0.pools_plural[slot1]
 
-	return table.concat(var_55_1, " ")
+	return table.concat(_.map({
+		slot1,
+		"balance",
+		slot2.balance,
+		"currentItmes",
+		#slot2.items
+	}, tostring), " ")
 end
 
-function var_0_0.FromPlural(arg_56_0, arg_56_1, arg_56_2, arg_56_3, arg_56_4, arg_56_5, arg_56_6)
-	local var_56_0 = arg_56_1 .. arg_56_2
+function slot0.FromPlural(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	function slot8()
+		slot0 = uv0.pools_plural[uv1]
+		slot0.index = uv0.pluralIndex
+		uv0.pluralIndex = uv0.pluralIndex + 1
 
-	local function var_56_1()
-		local var_57_0 = arg_56_0.pools_plural[var_56_0]
-
-		var_57_0.index = arg_56_0.pluralIndex
-		arg_56_0.pluralIndex = arg_56_0.pluralIndex + 1
-
-		arg_56_5(var_57_0:Dequeue())
+		uv2(slot0:Dequeue())
 	end
 
-	if not arg_56_0.pools_plural[var_56_0] then
-		arg_56_0:LoadAsset(arg_56_1, arg_56_2, arg_56_3, typeof(Object), function(arg_58_0)
-			if arg_58_0 == nil then
-				Debugger.LogError("can not find asset: " .. arg_56_1 .. " : " .. arg_56_2)
+	if not slot0.pools_plural[slot1 .. slot2] then
+		slot0:LoadAsset(slot1, slot2, slot3, typeof(Object), function (slot0)
+			if slot0 == nil then
+				Debugger.LogError("can not find asset: " .. uv0 .. " : " .. uv1)
 
 				return
 			end
 
-			if not arg_56_0.pools_plural[var_56_0] then
-				arg_56_0.pools_plural[var_56_0] = var_0_1.New(arg_58_0, arg_56_4)
+			if not uv2.pools_plural[uv3] then
+				uv2.pools_plural[uv3] = uv4.New(slot0, uv5)
 			end
 
-			var_56_1()
-		end, arg_56_6)
+			uv6()
+		end, slot6)
 	else
-		var_56_1()
+		slot8()
 	end
 end
 
-function var_0_0.FromObjPack(arg_59_0, arg_59_1, arg_59_2, arg_59_3, arg_59_4, arg_59_5)
-	local var_59_0 = arg_59_1
-
-	if not arg_59_0.pools_pack[var_59_0] or not arg_59_0.pools_pack[var_59_0]:Get(arg_59_2) then
-		arg_59_0:LoadAsset(arg_59_1, arg_59_2, arg_59_3, arg_59_4, function(arg_60_0)
-			if not arg_59_0.pools_pack[var_59_0] then
-				arg_59_0.pools_pack[var_59_0] = var_0_3.New(arg_59_4)
+function slot0.FromObjPack(slot0, slot1, slot2, slot3, slot4, slot5)
+	if not slot0.pools_pack[slot1] or not slot0.pools_pack[slot6]:Get(slot2) then
+		slot0:LoadAsset(slot1, slot2, slot3, slot4, function (slot0)
+			if not uv0.pools_pack[uv1] then
+				uv0.pools_pack[uv1] = uv2.New(uv3)
 			end
 
-			if not arg_59_0.pools_pack[var_59_0]:Get(arg_59_2) then
-				arg_59_0.pools_pack[var_59_0]:Set(arg_59_2, arg_60_0)
+			if not uv0.pools_pack[uv1]:Get(uv4) then
+				uv0.pools_pack[uv1]:Set(uv4, slot0)
 			end
 
-			arg_59_5(arg_60_0)
+			uv5(slot0)
 		end, false)
 	else
-		arg_59_5(arg_59_0.pools_pack[var_59_0]:Get(arg_59_2))
+		slot5(slot0.pools_pack[slot6]:Get(slot2))
 	end
 end
 
-function var_0_0.LoadAsset(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg_61_4, arg_61_5, arg_61_6)
-	arg_61_1, arg_61_2 = HXSet.autoHxShiftPath(arg_61_1, arg_61_2)
+function slot0.LoadAsset(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	slot7, slot8 = HXSet.autoHxShiftPath(slot1, slot2)
 
-	local var_61_0 = arg_61_1 .. arg_61_2
-
-	if arg_61_0.callbacks[var_61_0] then
-		if not arg_61_3 then
+	if slot0.callbacks[slot7 .. slot8] then
+		if not slot3 then
 			errorMsg("Sync Loading after async operation")
 		end
 
-		table.insert(arg_61_0.callbacks[var_61_0], arg_61_5)
-	elseif arg_61_3 then
-		arg_61_0.callbacks[var_61_0] = {
-			arg_61_5
+		table.insert(slot0.callbacks[slot7], slot5)
+	elseif slot3 then
+		slot0.callbacks[slot7] = {
+			slot5
 		}
 
-		var_0_5:getAssetAsync(arg_61_1, arg_61_2, arg_61_4, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_62_0)
-			if arg_61_0.callbacks[var_61_0] then
-				local var_62_0 = arg_61_0.callbacks[var_61_0]
+		uv0:getAssetAsync(slot1, slot2, slot4, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			if uv0.callbacks[uv1] then
+				slot1 = uv0.callbacks[uv1]
+				uv0.callbacks[uv1] = nil
 
-				arg_61_0.callbacks[var_61_0] = nil
-
-				while next(var_62_0) do
-					table.remove(var_62_0)(arg_62_0)
+				while next(slot1) do
+					table.remove(slot1)(slot0)
 				end
 			end
-		end), arg_61_6, false)
+		end), slot6, false)
 	else
-		arg_61_5(var_0_5:getAssetSync(arg_61_1, arg_61_2, arg_61_4, arg_61_6, false))
+		slot5(uv0:getAssetSync(slot1, slot2, slot4, slot6, false))
 	end
 end
 
-function var_0_0.PrintPools(arg_63_0)
-	local var_63_0 = ""
-
-	for iter_63_0, iter_63_1 in pairs(arg_63_0.pools_plural) do
-		var_63_0 = var_63_0 .. "\n" .. iter_63_0
+function slot0.PrintPools(slot0)
+	for slot5, slot6 in pairs(slot0.pools_plural) do
+		slot1 = "" .. "\n" .. slot5
 	end
 
-	warning(var_63_0)
+	warning(slot1)
 end
 
-function var_0_0.PrintObjPack(arg_64_0)
-	local var_64_0 = ""
+function slot0.PrintObjPack(slot0)
+	slot1 = ""
 
-	for iter_64_0, iter_64_1 in pairs(arg_64_0.pools_pack) do
-		for iter_64_2, iter_64_3 in pairs(iter_64_1.items) do
-			var_64_0 = var_64_0 .. "\n" .. iter_64_0 .. " " .. iter_64_2
+	for slot5, slot6 in pairs(slot0.pools_pack) do
+		for slot10, slot11 in pairs(slot6.items) do
+			slot1 = slot1 .. "\n" .. slot5 .. " " .. slot10
 		end
 	end
 
-	warning(var_64_0)
+	warning(slot1)
 end
 
-return var_0_0
+return slot0

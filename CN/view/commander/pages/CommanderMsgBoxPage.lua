@@ -1,76 +1,76 @@
-﻿local var_0_0 = class("CommanderMsgBoxPage", import("...base.BaseSubView"))
+slot0 = class("CommanderMsgBoxPage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderMsgBoxUI"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/cancel_btn")
-	arg_2_0.text = arg_2_0._tf:Find("frame/bg/content/Text")
-	arg_2_0.text1 = arg_2_0._tf:Find("frame/bg/content/Text1")
-	arg_2_0.text2 = arg_2_0._tf:Find("frame/bg/content/Text2")
-	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/confirm_btn")
-	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close_btn")
+function slot0.OnInit(slot0)
+	slot0.cancelBtn = slot0._tf:Find("frame/cancel_btn")
+	slot0.text = slot0._tf:Find("frame/bg/content/Text")
+	slot0.text1 = slot0._tf:Find("frame/bg/content/Text1")
+	slot0.text2 = slot0._tf:Find("frame/bg/content/Text2")
+	slot0.confirmBtn = slot0._tf:Find("frame/confirm_btn")
+	slot0.closeBtn = slot0._tf:Find("frame/close_btn")
 
-	onButton(arg_2_0, arg_2_0._tf, function()
-		arg_2_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Show(arg_4_0, arg_4_1)
-	var_0_0.super.Show(arg_4_0)
+function slot0.Show(slot0, slot1)
+	uv0.super.Show(slot0)
 
-	if arg_4_1.content1 then
-		setText(arg_4_0.text1, arg_4_1.content)
-		setText(arg_4_0.text2, arg_4_1.content1)
-	elseif arg_4_1.content then
-		setText(arg_4_0.text, setColorStr(arg_4_1.content, "#847D7B"))
+	if slot1.content1 then
+		setText(slot0.text1, slot1.content)
+		setText(slot0.text2, slot1.content1)
+	elseif slot1.content then
+		setText(slot0.text, setColorStr(slot1.content, "#847D7B"))
 	end
 
-	arg_4_0.layer = arg_4_1.layer
+	slot0.layer = slot1.layer
 
-	onButton(arg_4_0, arg_4_0.cancelBtn, function()
-		arg_4_0:Hide()
+	onButton(slot0, slot0.cancelBtn, function ()
+		uv0:Hide()
 
-		if arg_4_1.onNo then
-			arg_4_1.onNo()
+		if uv1.onNo then
+			uv1.onNo()
 		end
 	end, SFX_PANEL)
-	onButton(arg_4_0, arg_4_0.confirmBtn, function()
-		arg_4_0:Hide()
+	onButton(slot0, slot0.confirmBtn, function ()
+		uv0:Hide()
 
-		if arg_4_1.onYes then
-			arg_4_1.onYes()
+		if uv1.onYes then
+			uv1.onYes()
 		end
 	end, SFX_PANEL)
-	onButton(arg_4_0, arg_4_0.closeBtn, function()
-		arg_4_0:Hide()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 
-		if arg_4_1.onClose then
-			arg_4_1.onClose()
+		if uv1.onClose then
+			uv1.onClose()
 		end
 	end, SFX_PANEL)
 
-	if arg_4_1.onShow then
-		arg_4_1.onShow()
+	if slot1.onShow then
+		slot1.onShow()
 	end
 
-	arg_4_0._tf:SetAsLastSibling()
-	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf, false, {
-		weight = arg_4_0.layer or LayerWeightConst.SECOND_LAYER
+	slot0._tf:SetAsLastSibling()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+		weight = slot0.layer or LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function var_0_0.Hide(arg_8_0)
-	var_0_0.super.Hide(arg_8_0)
-	setText(arg_8_0.text, "")
-	setText(arg_8_0.text1, "")
-	setText(arg_8_0.text2, "")
-	pg.UIMgr.GetInstance():UnblurPanel(arg_8_0._tf, arg_8_0._parentTf)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	setText(slot0.text, "")
+	setText(slot0.text1, "")
+	setText(slot0.text2, "")
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.OnDestroy(arg_9_0)
-	arg_9_0:Hide()
+function slot0.OnDestroy(slot0)
+	slot0:Hide()
 end
 
-return var_0_0
+return slot0

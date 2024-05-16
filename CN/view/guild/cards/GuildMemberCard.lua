@@ -1,143 +1,131 @@
-﻿local var_0_0 = class("GuildMemberCard")
+slot0 = class("GuildMemberCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.go = arg_1_1
-	arg_1_0.tf = tf(arg_1_1)
-	arg_1_0.iconTF = arg_1_0.tf:Find("shipicon/icon"):GetComponent(typeof(Image))
-	arg_1_0.starsTF = arg_1_0.tf:Find("shipicon/stars")
-	arg_1_0.starTF = arg_1_0.tf:Find("shipicon/stars/star")
-	arg_1_0.levelTF = arg_1_0.tf:Find("level/Text"):GetComponent(typeof(Text))
-	arg_1_0.nameTF = arg_1_0.tf:Find("name_bg/Text"):GetComponent(typeof(Text))
-	arg_1_0.dutyTF = arg_1_0.tf:Find("duty"):GetComponent(typeof(Image))
-	arg_1_0.livenessTF = arg_1_0.tf:Find("liveness/Text"):GetComponent(typeof(Text))
-	arg_1_0.onLine = arg_1_0.tf:Find("online_tag")
-	arg_1_0.offLine = arg_1_0.tf:Find("last_time")
-	arg_1_0.onLineLabel = arg_1_0.tf:Find("online")
-	arg_1_0.offLineLabel = arg_1_0.tf:Find("offline")
-	arg_1_0.offLineText = arg_1_0.tf:Find("last_time/Text"):GetComponent(typeof(Text))
-	arg_1_0.maskTF = arg_1_0.tf:Find("mask")
-	arg_1_0.timerTF = arg_1_0.tf:Find("mask/Text"):GetComponent(typeof(Text))
-	arg_1_0.borderTF = arg_1_0.tf:Find("selected")
-	arg_1_0.bg = arg_1_0.tf:Find("bg")
-	arg_1_0.circle = arg_1_0.tf:Find("shipicon/frame")
+function slot0.Ctor(slot0, slot1)
+	slot0.go = slot1
+	slot0.tf = tf(slot1)
+	slot0.iconTF = slot0.tf:Find("shipicon/icon"):GetComponent(typeof(Image))
+	slot0.starsTF = slot0.tf:Find("shipicon/stars")
+	slot0.starTF = slot0.tf:Find("shipicon/stars/star")
+	slot0.levelTF = slot0.tf:Find("level/Text"):GetComponent(typeof(Text))
+	slot0.nameTF = slot0.tf:Find("name_bg/Text"):GetComponent(typeof(Text))
+	slot0.dutyTF = slot0.tf:Find("duty"):GetComponent(typeof(Image))
+	slot0.livenessTF = slot0.tf:Find("liveness/Text"):GetComponent(typeof(Text))
+	slot0.onLine = slot0.tf:Find("online_tag")
+	slot0.offLine = slot0.tf:Find("last_time")
+	slot0.onLineLabel = slot0.tf:Find("online")
+	slot0.offLineLabel = slot0.tf:Find("offline")
+	slot0.offLineText = slot0.tf:Find("last_time/Text"):GetComponent(typeof(Text))
+	slot0.maskTF = slot0.tf:Find("mask")
+	slot0.timerTF = slot0.tf:Find("mask/Text"):GetComponent(typeof(Text))
+	slot0.borderTF = slot0.tf:Find("selected")
+	slot0.bg = slot0.tf:Find("bg")
+	slot0.circle = slot0.tf:Find("shipicon/frame")
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.memberVO = arg_2_1
+function slot0.Update(slot0, slot1, slot2)
+	slot0.memberVO = slot1
 
-	arg_2_0:Clear()
-
-	local var_2_0 = pg.ship_data_statistics[arg_2_1.icon]
-	local var_2_1 = Ship.New({
-		configId = arg_2_1.icon,
-		skin_id = arg_2_1.skinId,
-		propose = arg_2_1.proposeTime
-	})
-
-	LoadSpriteAsync("qicon/" .. var_2_1:getPainting(), function(arg_3_0)
-		if not IsNil(arg_2_0.iconTF) then
-			arg_2_0.iconTF.sprite = arg_3_0
+	slot0:Clear()
+	LoadSpriteAsync("qicon/" .. Ship.New({
+		configId = slot1.icon,
+		skin_id = slot1.skinId,
+		propose = slot1.proposeTime
+	}):getPainting(), function (slot0)
+		if not IsNil(uv0.iconTF) then
+			uv0.iconTF.sprite = slot0
 		end
 	end)
 
-	local var_2_2 = AttireFrame.attireFrameRes(arg_2_1, arg_2_1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, arg_2_1.propose)
+	slot5 = AttireFrame.attireFrameRes(slot1, slot1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, slot1.propose)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_2_2, var_2_2, true, function(arg_4_0)
-		if arg_2_0.circle and not arg_2_0.exited then
-			arg_4_0.name = var_2_2
-			findTF(arg_4_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot5, slot5, true, function (slot0)
+		if uv0.circle and not uv0.exited then
+			slot0.name = uv1
+			findTF(slot0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(arg_4_0, arg_2_0.circle, false)
+			setParent(slot0, uv0.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_2_2, var_2_2, arg_4_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
 		end
 	end)
 
-	local var_2_3 = GetSpriteFromAtlas("dutyicon", arg_2_1.duty)
+	slot0.dutyTF.sprite = GetSpriteFromAtlas("dutyicon", slot1.duty)
 
-	arg_2_0.dutyTF.sprite = var_2_3
-
-	local var_2_4 = arg_2_0.starsTF.childCount
-
-	for iter_2_0 = var_2_4, var_2_0.star - 1 do
-		cloneTplTo(arg_2_0.starTF, arg_2_0.starsTF)
+	for slot11 = slot0.starsTF.childCount, pg.ship_data_statistics[slot1.icon].star - 1 do
+		cloneTplTo(slot0.starTF, slot0.starsTF)
 	end
 
-	for iter_2_1 = 1, var_2_4 do
-		local var_2_5 = arg_2_0.starsTF:GetChild(iter_2_1 - 1)
-
-		setActive(var_2_5, iter_2_1 <= var_2_0.star)
+	for slot11 = 1, slot7 do
+		setActive(slot0.starsTF:GetChild(slot11 - 1), slot11 <= slot3.star)
 	end
 
-	arg_2_0.levelTF.text = arg_2_1.level
-	arg_2_0.nameTF.text = arg_2_1.name
-	arg_2_0.livenessTF.text = arg_2_1.liveness
+	slot0.levelTF.text = slot1.level
+	slot0.nameTF.text = slot1.name
+	slot0.livenessTF.text = slot1.liveness
 
-	setActive(arg_2_0.onLine, arg_2_1:isOnline())
-	setActive(arg_2_0.offLine, not arg_2_1:isOnline())
-	setActive(arg_2_0.onLineLabel, arg_2_1:isOnline())
-	setActive(arg_2_0.offLineLabel, not arg_2_1:isOnline())
+	setActive(slot0.onLine, slot1:isOnline())
+	setActive(slot0.offLine, not slot1:isOnline())
+	setActive(slot0.onLineLabel, slot1:isOnline())
+	setActive(slot0.offLineLabel, not slot1:isOnline())
 
-	if not arg_2_1:isOnline() then
-		arg_2_0.offLineText.text = getOfflineTimeStamp(arg_2_1.preOnLineTime)
+	if not slot1:isOnline() then
+		slot0.offLineText.text = getOfflineTimeStamp(slot1.preOnLineTime)
 	end
 
-	local var_2_6 = arg_2_1.duty == GuildConst.DUTY_COMMANDER and arg_2_2:inKickTime()
+	slot8 = slot1.duty == GuildConst.DUTY_COMMANDER and slot2:inKickTime()
 
-	setActive(arg_2_0.maskTF, var_2_6)
+	setActive(slot0.maskTF, slot8)
 
-	if var_2_6 then
-		arg_2_0:AddTimer(function()
-			local var_5_0 = arg_2_2:getKickLeftTime()
-
-			if var_5_0 > 0 then
-				arg_2_0.timerTF.text = pg.TimeMgr.GetInstance():DescCDTime(var_5_0)
+	if slot8 then
+		slot0:AddTimer(function ()
+			if uv0:getKickLeftTime() > 0 then
+				uv1.timerTF.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
 			else
-				arg_2_0.timerTF.text = ""
+				uv1.timerTF.text = ""
 
-				setActive(arg_2_0.maskTF, false)
+				setActive(uv1.maskTF, false)
 			end
 		end)
 	end
 end
 
-function var_0_0.AddTimer(arg_6_0, arg_6_1)
-	if arg_6_0.timer then
-		arg_6_0.timer:Stop()
+function slot0.AddTimer(slot0, slot1)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_6_0.timer = nil
+		slot0.timer = nil
 	end
 
-	arg_6_0.timer = Timer.New(arg_6_1, 1, -1)
+	slot0.timer = Timer.New(slot1, 1, -1)
 
-	arg_6_0.timer:Start()
-	arg_6_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.Clear(arg_7_0)
-	if arg_7_0.circle.childCount > 0 then
-		local var_7_0 = arg_7_0.circle:GetChild(0)
-		local var_7_1 = var_7_0.gameObject.name
+function slot0.Clear(slot0)
+	if slot0.circle.childCount > 0 then
+		slot1 = slot0.circle:GetChild(0)
+		slot2 = slot1.gameObject.name
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_7_1, var_7_1, var_7_0.gameObject)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. slot2, slot2, slot1.gameObject)
 	end
 
-	if arg_7_0.timer then
-		arg_7_0.timer:Stop()
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_7_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.SetSelected(arg_8_0, arg_8_1)
-	setActive(arg_8_0.borderTF, arg_8_1)
-	setActive(arg_8_0.bg, not arg_8_1)
+function slot0.SetSelected(slot0, slot1)
+	setActive(slot0.borderTF, slot1)
+	setActive(slot0.bg, not slot1)
 end
 
-function var_0_0.Dispose(arg_9_0)
-	arg_9_0.exited = true
+function slot0.Dispose(slot0)
+	slot0.exited = true
 
-	arg_9_0:Clear()
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

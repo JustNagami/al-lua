@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSCompass", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSCompass", import("...BaseEntity"))
+slot0.Fields = {
 	map = "table",
 	scaleRate = "table",
 	ROTATIONOFFSET = "number",
@@ -18,353 +17,303 @@ var_0_0.Fields = {
 	fov = "number",
 	normal = "number"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onAdd = "OnAdd",
 	onRemove = "OnRemove",
 	onUpdateAttachment = "OnUpdateAttachment"
 }
 
-function var_0_0.GetCompassTpl(arg_1_0)
-	if arg_1_0 == WorldMapAttachment.CompassTypeBattle then
+function slot0.GetCompassTpl(slot0)
+	if slot0 == WorldMapAttachment.CompassTypeBattle then
 		return "compassBat_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeExploration then
+	elseif slot0 == WorldMapAttachment.CompassTypeExploration then
 		return "compassExp_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeTask then
+	elseif slot0 == WorldMapAttachment.CompassTypeTask then
 		return "compassTask_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeBoss then
+	elseif slot0 == WorldMapAttachment.CompassTypeBoss then
 		return "compassBoss_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeGuidePost then
+	elseif slot0 == WorldMapAttachment.CompassTypeGuidePost then
 		return "compassGuidepost_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeTaskTrack then
+	elseif slot0 == WorldMapAttachment.CompassTypeTaskTrack then
 		return "compassTask_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypePort then
+	elseif slot0 == WorldMapAttachment.CompassTypePort then
 		return "compassPort_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeSalvage then
+	elseif slot0 == WorldMapAttachment.CompassTypeSalvage then
 		return "compassSalvage_tpl"
-	elseif arg_1_0 == WorldMapAttachment.CompassTypeFile then
+	elseif slot0 == WorldMapAttachment.CompassTypeFile then
 		return "compassFile_tpl"
 	end
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1)
-	arg_2_0.ROTATIONOFFSET = 45
-	arg_2_0.rangeTF = arg_2_0.tf:Find("range")
-	arg_2_0.anchor = arg_2_0.rangeTF:Find("anchor")
-	arg_2_0.border = arg_2_0.rangeTF:Find("mask/border")
-	arg_2_0.fov = WorldConst.GetFOVRadius() * 2
-	arg_2_0.diameter = arg_2_0.fov * 2
-	arg_2_0.normal = arg_2_0.rangeTF.sizeDelta.x / arg_2_0.diameter
-	arg_2_0.marks = {}
-	arg_2_0.prevFleetPos = nil
-	arg_2_0.scaleRate = arg_2_1 and Vector3.one or Vector3.New(0.7, 0.7, 1)
+function slot0.Setup(slot0, slot1)
+	slot0.ROTATIONOFFSET = 45
+	slot0.rangeTF = slot0.tf:Find("range")
+	slot0.anchor = slot0.rangeTF:Find("anchor")
+	slot0.border = slot0.rangeTF:Find("mask/border")
+	slot0.fov = WorldConst.GetFOVRadius() * 2
+	slot0.diameter = slot0.fov * 2
+	slot0.normal = slot0.rangeTF.sizeDelta.x / slot0.diameter
+	slot0.marks = {}
+	slot0.prevFleetPos = nil
+	slot0.scaleRate = slot1 and Vector3.one or Vector3.New(0.7, 0.7, 1)
 end
 
-function var_0_0.Update(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_2:GetFleet()
-	local var_3_1, var_3_2 = arg_3_2:GetMapSize()
-	local var_3_3 = Vector2(var_3_1 - 1, var_3_2 - 1)
+function slot0.Update(slot0, slot1, slot2)
+	slot3 = slot2:GetFleet()
+	slot4, slot5 = slot2:GetMapSize()
+	slot6 = Vector2(slot4 - 1, slot5 - 1)
 
-	if arg_3_0.entrance ~= arg_3_1 or arg_3_0.map ~= arg_3_2 or arg_3_0.gid ~= arg_3_2.gid then
-		arg_3_0.entrance = arg_3_1
-		arg_3_0.map = arg_3_2
-		arg_3_0.gid = arg_3_2.gid
+	if slot0.entrance ~= slot1 or slot0.map ~= slot2 or slot0.gid ~= slot2.gid then
+		slot0.entrance = slot1
+		slot0.map = slot2
+		slot0.gid = slot2.gid
 
-		arg_3_0:InitCells(var_3_3)
+		slot0:InitCells(slot6)
 	end
 
-	arg_3_0:UpdateMarks(var_3_3, var_3_0.row, var_3_0.column)
-	arg_3_0:UpdateBorder(var_3_3, var_3_0.row, var_3_0.column)
-	arg_3_0:UpdateFleetPos(var_3_0, var_3_0.row, var_3_0.column)
+	slot0:UpdateMarks(slot6, slot3.row, slot3.column)
+	slot0:UpdateBorder(slot6, slot3.row, slot3.column)
+	slot0:UpdateFleetPos(slot3, slot3.row, slot3.column)
 end
 
-function var_0_0.UpdateByViewer(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	local var_4_0 = arg_4_1:GetFleet()
-	local var_4_1, var_4_2 = arg_4_1:GetMapSize()
-	local var_4_3 = Vector2(var_4_1 - 1, var_4_2 - 1)
+function slot0.UpdateByViewer(slot0, slot1, slot2, slot3)
+	slot5, slot6 = slot1:GetMapSize()
+	slot7 = Vector2(slot5 - 1, slot6 - 1)
 
-	arg_4_0:ClearMarks()
-	arg_4_0:UpdateMarks(var_4_3, arg_4_2, arg_4_3)
-	arg_4_0:UpdateBorder(var_4_3, arg_4_2, arg_4_3)
-	arg_4_0:UpdateFleetPos(var_4_0, arg_4_2, arg_4_3)
+	slot0:ClearMarks()
+	slot0:UpdateMarks(slot7, slot2, slot3)
+	slot0:UpdateBorder(slot7, slot2, slot3)
+	slot0:UpdateFleetPos(slot1:GetFleet(), slot2, slot3)
 end
 
-function var_0_0.InitCells(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_0.map
+function slot0.InitCells(slot0, slot1)
+	slot2 = slot0.map
 
-	arg_5_0:RemoveCellsListener()
+	slot0:RemoveCellsListener()
 
-	arg_5_0.cells = {}
+	slot0.cells = {}
 
-	for iter_5_0 = 0, arg_5_1.x do
-		for iter_5_1 = 0, arg_5_1.y do
-			local var_5_1 = var_5_0:GetCell(iter_5_0, iter_5_1)
-
-			if var_5_1 then
-				arg_5_0:AddCellListener(var_5_1)
-				table.insert(arg_5_0.cells, var_5_1)
+	for slot6 = 0, slot1.x do
+		for slot10 = 0, slot1.y do
+			if slot2:GetCell(slot6, slot10) then
+				slot0:AddCellListener(slot11)
+				table.insert(slot0.cells, slot11)
 			end
 		end
 	end
 end
 
-function var_0_0.UpdateMarks(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = arg_6_0.map
+function slot0.UpdateMarks(slot0, slot1, slot2, slot3)
+	slot4 = slot0.map
 
-	_.each(arg_6_0.cells, function(arg_7_0)
-		if WorldConst.InFOVRange(arg_6_2, arg_6_3, arg_7_0.row, arg_7_0.column, arg_6_0.fov) then
-			arg_6_0:UpdateInnerMark(arg_7_0, arg_6_2, arg_6_3)
+	_.each(slot0.cells, function (slot0)
+		if WorldConst.InFOVRange(uv0, uv1, slot0.row, slot0.column, uv2.fov) then
+			uv2:UpdateInnerMark(slot0, uv0, uv1)
 		else
-			arg_6_0:UpdateOutsideMark(arg_7_0, arg_6_2, arg_6_3)
+			uv2:UpdateOutsideMark(slot0, uv0, uv1)
 		end
 	end)
 end
 
-function var_0_0.UpdateFleetPos(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0
+function slot0.UpdateFleetPos(slot0, slot1, slot2, slot3)
+	slot4 = nil
 
-	if WorldConst.InFOVRange(arg_8_2, arg_8_3, arg_8_1.row, arg_8_1.column, arg_8_0.fov) then
-		var_8_0 = arg_8_0:CalcInnerPos(arg_8_1.row, arg_8_1.column, arg_8_2, arg_8_3)
-	else
-		var_8_0 = arg_8_0:CalcOutsidePos(arg_8_1.row, arg_8_1.column, arg_8_2, arg_8_3)
-	end
-
-	setAnchoredPosition(arg_8_0.anchor, var_8_0)
+	setAnchoredPosition(slot0.anchor, (not WorldConst.InFOVRange(slot2, slot3, slot1.row, slot1.column, slot0.fov) or slot0:CalcInnerPos(slot1.row, slot1.column, slot2, slot3)) and slot0:CalcOutsidePos(slot1.row, slot1.column, slot2, slot3))
 end
 
-function var_0_0.AddCellListener(arg_9_0, arg_9_1)
-	arg_9_1:AddListener(WorldMapCell.EventAddAttachment, arg_9_0.onAdd)
-	arg_9_1:AddListener(WorldMapCell.EventRemoveAttachment, arg_9_0.onRemove)
-	_.each(arg_9_1.attachments, function(arg_10_0)
-		arg_10_0:AddListener(WorldMapAttachment.EventUpdateLurk, arg_9_0.onUpdateAttachment)
-		arg_10_0:AddListener(WorldMapAttachment.EventUpdateData, arg_9_0.onUpdateAttachment)
-		arg_10_0:AddListener(WorldMapAttachment.EventUpdateFlag, arg_9_0.onUpdateAttachment)
+function slot0.AddCellListener(slot0, slot1)
+	slot1:AddListener(WorldMapCell.EventAddAttachment, slot0.onAdd)
+	slot1:AddListener(WorldMapCell.EventRemoveAttachment, slot0.onRemove)
+	_.each(slot1.attachments, function (slot0)
+		slot0:AddListener(WorldMapAttachment.EventUpdateLurk, uv0.onUpdateAttachment)
+		slot0:AddListener(WorldMapAttachment.EventUpdateData, uv0.onUpdateAttachment)
+		slot0:AddListener(WorldMapAttachment.EventUpdateFlag, uv0.onUpdateAttachment)
 	end)
 end
 
-function var_0_0.RemoveCellsListener(arg_11_0)
-	_.each(arg_11_0.cells or {}, function(arg_12_0)
-		arg_12_0:RemoveListener(WorldMapCell.EventAddAttachment, arg_11_0.onAdd)
-		arg_12_0:RemoveListener(WorldMapCell.EventRemoveAttachment, arg_11_0.onRemove)
-		_.each(arg_12_0.attachments, function(arg_13_0)
-			arg_13_0:RemoveListener(WorldMapAttachment.EventUpdateLurk, arg_11_0.onUpdateAttachment)
-			arg_13_0:RemoveListener(WorldMapAttachment.EventUpdateData, arg_11_0.onUpdateAttachment)
-			arg_13_0:RemoveListener(WorldMapAttachment.EventUpdateFlag, arg_11_0.onUpdateAttachment)
+function slot0.RemoveCellsListener(slot0)
+	_.each(slot0.cells or {}, function (slot0)
+		slot0:RemoveListener(WorldMapCell.EventAddAttachment, uv0.onAdd)
+		slot0:RemoveListener(WorldMapCell.EventRemoveAttachment, uv0.onRemove)
+		_.each(slot0.attachments, function (slot0)
+			slot0:RemoveListener(WorldMapAttachment.EventUpdateLurk, uv0.onUpdateAttachment)
+			slot0:RemoveListener(WorldMapAttachment.EventUpdateData, uv0.onUpdateAttachment)
+			slot0:RemoveListener(WorldMapAttachment.EventUpdateFlag, uv0.onUpdateAttachment)
 		end)
 	end)
 end
 
-function var_0_0.OnAdd(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
-	arg_14_3:AddListener(WorldMapAttachment.EventUpdateLurk, arg_14_0.onUpdateAttachment)
-	arg_14_3:AddListener(WorldMapAttachment.EventUpdateData, arg_14_0.onUpdateAttachment)
-	arg_14_3:AddListener(WorldMapAttachment.EventUpdateFlag, arg_14_0.onUpdateAttachment)
-	arg_14_0:ClearMarks()
-	arg_14_0:Update(arg_14_0.entrance, arg_14_0.map)
+function slot0.OnAdd(slot0, slot1, slot2, slot3)
+	slot3:AddListener(WorldMapAttachment.EventUpdateLurk, slot0.onUpdateAttachment)
+	slot3:AddListener(WorldMapAttachment.EventUpdateData, slot0.onUpdateAttachment)
+	slot3:AddListener(WorldMapAttachment.EventUpdateFlag, slot0.onUpdateAttachment)
+	slot0:ClearMarks()
+	slot0:Update(slot0.entrance, slot0.map)
 end
 
-function var_0_0.OnRemove(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	arg_15_3:RemoveListener(WorldMapAttachment.EventUpdateLurk, arg_15_0.onUpdateAttachment)
-	arg_15_3:RemoveListener(WorldMapAttachment.EventUpdateData, arg_15_0.onUpdateAttachment)
-	arg_15_3:RemoveListener(WorldMapAttachment.EventUpdateFlag, arg_15_0.onUpdateAttachment)
-	arg_15_0:ClearMarks()
-	arg_15_0:Update(arg_15_0.entrance, arg_15_0.map)
+function slot0.OnRemove(slot0, slot1, slot2, slot3)
+	slot3:RemoveListener(WorldMapAttachment.EventUpdateLurk, slot0.onUpdateAttachment)
+	slot3:RemoveListener(WorldMapAttachment.EventUpdateData, slot0.onUpdateAttachment)
+	slot3:RemoveListener(WorldMapAttachment.EventUpdateFlag, slot0.onUpdateAttachment)
+	slot0:ClearMarks()
+	slot0:Update(slot0.entrance, slot0.map)
 end
 
-function var_0_0.OnUpdateAttachment(arg_16_0)
-	if arg_16_0.map and arg_16_0.map.active then
-		arg_16_0:ClearMarks()
-		arg_16_0:Update(arg_16_0.entrance, arg_16_0.map)
+function slot0.OnUpdateAttachment(slot0)
+	if slot0.map and slot0.map.active then
+		slot0:ClearMarks()
+		slot0:Update(slot0.entrance, slot0.map)
 	end
 end
 
-function var_0_0.UpdateCompassRotation(arg_17_0, arg_17_1)
-	local var_17_0 = Vector2(arg_17_1.column, arg_17_1.row)
-
-	if arg_17_0.prevFleetPos == var_17_0 then
+function slot0.UpdateCompassRotation(slot0, slot1)
+	if slot0.prevFleetPos == Vector2(slot1.column, slot1.row) then
 		return
 	end
 
-	if arg_17_0.prevFleetPos then
-		local var_17_1 = calcPositionAngle(arg_17_0.prevFleetPos.x - var_17_0.x, arg_17_0.prevFleetPos.y - var_17_0.y)
-
-		arg_17_0.anchor.localEulerAngles = Vector3(0, 0, arg_17_0.ROTATIONOFFSET + var_17_1)
+	if slot0.prevFleetPos then
+		slot0.anchor.localEulerAngles = Vector3(0, 0, slot0.ROTATIONOFFSET + calcPositionAngle(slot0.prevFleetPos.x - slot2.x, slot0.prevFleetPos.y - slot2.y))
 	else
-		arg_17_0.anchor.localEulerAngles = Vector3(0, 0, arg_17_0.ROTATIONOFFSET)
+		slot0.anchor.localEulerAngles = Vector3(0, 0, slot0.ROTATIONOFFSET)
 	end
 
-	arg_17_0.prevFleetPos = Vector2(arg_17_1.column, arg_17_1.row)
+	slot0.prevFleetPos = Vector2(slot1.column, slot1.row)
 
-	arg_17_0.anchor:SetAsLastSibling()
+	slot0.anchor:SetAsLastSibling()
 end
 
-function var_0_0.GetAnchorEulerAngles(arg_18_0)
-	return arg_18_0.anchor.localEulerAngles
+function slot0.GetAnchorEulerAngles(slot0)
+	return slot0.anchor.localEulerAngles
 end
 
-function var_0_0.SetAnchorEulerAngles(arg_19_0, arg_19_1)
-	arg_19_0.anchor.localEulerAngles = arg_19_1
+function slot0.SetAnchorEulerAngles(slot0, slot1)
+	slot0.anchor.localEulerAngles = slot1
 end
 
-function var_0_0.UpdateBorder(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
-	local var_20_0 = arg_20_1.x
-	local var_20_1 = arg_20_1.y * arg_20_0.normal
-	local var_20_2 = var_20_0 * arg_20_0.normal
-
-	arg_20_0.border.sizeDelta = Vector2(var_20_1, var_20_2)
-	arg_20_0.border.anchoredPosition = Vector2(-arg_20_3 * arg_20_0.normal, arg_20_2 * arg_20_0.normal)
+function slot0.UpdateBorder(slot0, slot1, slot2, slot3)
+	slot0.border.sizeDelta = Vector2(slot1.y * slot0.normal, slot1.x * slot0.normal)
+	slot0.border.anchoredPosition = Vector2(-slot3 * slot0.normal, slot2 * slot0.normal)
 end
 
-function var_0_0.getVector(arg_21_0, arg_21_1)
-	return Vector2(arg_21_1.config.area_pos[1], arg_21_1.config.area_pos[2])
+function slot0.getVector(slot0, slot1)
+	return Vector2(slot1.config.area_pos[1], slot1.config.area_pos[2])
 end
 
-function var_0_0.CalcTaskMarkPos(arg_22_0, arg_22_1)
-	local var_22_0 = calcPositionAngle(arg_22_1.x, arg_22_1.y)
-	local var_22_1 = arg_22_0.normal * (arg_22_0.fov + 1)
-	local var_22_2 = math.sin(math.rad(var_22_0)) * var_22_1
-	local var_22_3 = math.cos(math.rad(var_22_0)) * var_22_1
+function slot0.CalcTaskMarkPos(slot0, slot1)
+	slot2 = calcPositionAngle(slot1.x, slot1.y)
+	slot3 = slot0.normal * (slot0.fov + 1)
 
-	return Vector3(var_22_2, var_22_3, 0)
+	return Vector3(math.sin(math.rad(slot2)) * slot3, math.cos(math.rad(slot2)) * slot3, 0)
 end
 
-function var_0_0.UpdateInnerMark(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	local var_23_0 = arg_23_0.map
-	local var_23_1 = arg_23_1:GetCompassAttachment()
+function slot0.UpdateInnerMark(slot0, slot1, slot2, slot3)
+	slot4 = slot0.map
 
-	if var_23_1 then
-		local var_23_2 = var_23_1:GetCompassType()
-
-		if var_23_2 and var_23_2 ~= WorldMapAttachment.CompassTypeNone then
-			local var_23_3 = arg_23_0:CalcInnerPos(arg_23_1.row, arg_23_1.column, arg_23_2, arg_23_3)
-
-			arg_23_0:NewMark(var_23_2, var_23_3, var_23_1.config.id)
+	if slot1:GetCompassAttachment() then
+		if slot5:GetCompassType() and slot6 ~= WorldMapAttachment.CompassTypeNone then
+			slot0:NewMark(slot6, slot0:CalcInnerPos(slot1.row, slot1.column, slot2, slot3), slot5.config.id)
 		end
-	elseif #var_23_0.ports > 0 then
-		local var_23_4, var_23_5 = unpack(var_23_0.config.port_id[2])
+	elseif #slot4.ports > 0 then
+		slot6, slot7 = unpack(slot4.config.port_id[2])
 
-		if var_23_4 == arg_23_1.row and var_23_5 == arg_23_1.column then
-			local var_23_6 = arg_23_0:CalcInnerPos(arg_23_1.row, arg_23_1.column, arg_23_2, arg_23_3)
-
-			arg_23_0:NewMark(WorldMapAttachment.CompassTypePort, var_23_6)
+		if slot6 == slot1.row and slot7 == slot1.column then
+			slot0:NewMark(WorldMapAttachment.CompassTypePort, slot0:CalcInnerPos(slot1.row, slot1.column, slot2, slot3))
 		end
 	end
 end
 
-function var_0_0.CalcInnerPos(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4)
-	local var_24_0 = Vector2(arg_24_2 - arg_24_4, -1 * (arg_24_1 - arg_24_3))
+function slot0.CalcInnerPos(slot0, slot1, slot2, slot3, slot4)
+	slot5 = Vector2(slot2 - slot4, -1 * (slot1 - slot3))
 
-	return Vector3(arg_24_0.normal * var_24_0.x, arg_24_0.normal * var_24_0.y, 0)
+	return Vector3(slot0.normal * slot5.x, slot0.normal * slot5.y, 0)
 end
 
-function var_0_0.UpdateOutsideMark(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-	local var_25_0 = arg_25_0.map
-	local var_25_1 = arg_25_1:GetCompassAttachment()
+function slot0.UpdateOutsideMark(slot0, slot1, slot2, slot3)
+	slot4 = slot0.map
 
-	if var_25_1 then
-		local var_25_2 = var_25_1:GetCompassType()
-
-		if var_25_2 == WorldMapAttachment.CompassTypeBoss or var_25_2 == WorldMapAttachment.CompassTypeTask or var_25_2 == WorldMapAttachment.CompassTypePort then
-			local var_25_3 = arg_25_0:CalcOutsidePos(arg_25_1.row, arg_25_1.column, arg_25_2, arg_25_3)
-
-			arg_25_0:NewMark(var_25_2, var_25_3)
+	if slot1:GetCompassAttachment() then
+		if slot5:GetCompassType() == WorldMapAttachment.CompassTypeBoss or slot6 == WorldMapAttachment.CompassTypeTask or slot6 == WorldMapAttachment.CompassTypePort then
+			slot0:NewMark(slot6, slot0:CalcOutsidePos(slot1.row, slot1.column, slot2, slot3))
 		end
-	elseif #var_25_0.ports > 0 then
-		local var_25_4, var_25_5 = unpack(var_25_0.config.port_id[2])
+	elseif #slot4.ports > 0 then
+		slot6, slot7 = unpack(slot4.config.port_id[2])
 
-		if var_25_4 == arg_25_1.row and var_25_5 == arg_25_1.column then
-			local var_25_6 = arg_25_0:CalcOutsidePos(arg_25_1.row, arg_25_1.column, arg_25_2, arg_25_3)
-
-			arg_25_0:NewMark(WorldMapAttachment.CompassTypePort, var_25_6)
+		if slot6 == slot1.row and slot7 == slot1.column then
+			slot0:NewMark(WorldMapAttachment.CompassTypePort, slot0:CalcOutsidePos(slot1.row, slot1.column, slot2, slot3))
 		end
 	end
 end
 
-function var_0_0.CalcOutsidePos(arg_26_0, arg_26_1, arg_26_2, arg_26_3, arg_26_4)
-	local var_26_0 = Vector2.Angle(Vector2(arg_26_1 - arg_26_3, arg_26_2 - arg_26_4), Vector2.up)
-	local var_26_1 = math.abs(var_26_0 - 90)
-	local var_26_2 = Vector2(arg_26_2 - arg_26_4, arg_26_3 - arg_26_1)
-	local var_26_3 = arg_26_0.normal * (arg_26_0.fov + 0.5)
-	local var_26_4 = math.sin(math.rad(var_26_1)) * var_26_3 * Mathf.Sign(var_26_2.x)
-	local var_26_5 = math.cos(math.rad(var_26_1)) * var_26_3 * Mathf.Sign(var_26_2.y)
+function slot0.CalcOutsidePos(slot0, slot1, slot2, slot3, slot4)
+	slot5 = math.abs(Vector2.Angle(Vector2(slot1 - slot3, slot2 - slot4), Vector2.up) - 90)
+	slot6 = Vector2(slot2 - slot4, slot3 - slot1)
+	slot7 = slot0.normal * (slot0.fov + 0.5)
 
-	return Vector3(var_26_4, var_26_5, 0)
+	return Vector3(math.sin(math.rad(slot5)) * slot7 * Mathf.Sign(slot6.x), math.cos(math.rad(slot5)) * slot7 * Mathf.Sign(slot6.y), 0)
 end
 
-function var_0_0.NewMark(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	local var_27_0 = var_0_0.GetCompassTpl(arg_27_1)
-	local var_27_1 = arg_27_0.pool:Get(var_27_0)
+function slot0.NewMark(slot0, slot1, slot2, slot3)
+	slot0.pool:Get(uv0.GetCompassTpl(slot1)).transform.localScale = slot0.scaleRate
+	slot5.name = slot3 or "mark"
 
-	var_27_1.transform.localScale = arg_27_0.scaleRate
-	var_27_1.name = arg_27_3 or "mark"
+	setParent(slot5, slot0.rangeTF)
 
-	setParent(var_27_1, arg_27_0.rangeTF)
+	tf(slot5).localPosition = slot2
 
-	tf(var_27_1).localPosition = arg_27_2
-
-	table.insert(arg_27_0.marks, {
-		name = var_27_0,
-		go = var_27_1
+	table.insert(slot0.marks, {
+		name = slot4,
+		go = slot5
 	})
 end
 
-function var_0_0.NewTransportMark(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = arg_28_0.pool:Get(arg_28_1)
+function slot0.NewTransportMark(slot0, slot1, slot2)
+	slot3 = slot0.pool:Get(slot1)
 
-	setParent(var_28_0, arg_28_0.border)
+	setParent(slot3, slot0.border)
 
-	var_28_0.transform.localScale = arg_28_0.scaleRate
+	slot3.transform.localScale = slot0.scaleRate
+	slot3.transform.anchorMin = Vector2(0, 1)
+	slot3.transform.anchorMax = Vector2(0, 1)
+	slot3.transform.anchoredPosition3D = Vector3(slot2.y * slot0.normal, -slot2.x * slot0.normal, 0)
 
-	local var_28_1 = Vector3(arg_28_2.y * arg_28_0.normal, -arg_28_2.x * arg_28_0.normal, 0)
-
-	var_28_0.transform.anchorMin = Vector2(0, 1)
-	var_28_0.transform.anchorMax = Vector2(0, 1)
-	var_28_0.transform.anchoredPosition3D = var_28_1
-
-	table.insert(arg_28_0.marks, {
-		name = arg_28_1,
-		go = var_28_0
+	table.insert(slot0.marks, {
+		name = slot1,
+		go = slot3
 	})
 end
 
-function var_0_0.ClearMarks(arg_29_0)
-	_.each(arg_29_0.marks, function(arg_30_0)
-		arg_30_0.go.transform.localScale = Vector3.one
+function slot0.ClearMarks(slot0)
+	_.each(slot0.marks, function (slot0)
+		slot0.go.transform.localScale = Vector3.one
 
-		arg_29_0.pool:Return(arg_30_0.name, arg_30_0.go)
+		uv0.pool:Return(slot0.name, slot0.go)
 	end)
 
-	arg_29_0.marks = {}
+	slot0.marks = {}
 end
 
-function var_0_0.GetMarkPosition(arg_31_0, arg_31_1, arg_31_2)
-	assert(arg_31_0.map)
+function slot0.GetMarkPosition(slot0, slot1, slot2)
+	assert(slot0.map)
 
-	local var_31_0 = arg_31_0.map:GetFleet()
-	local var_31_1
+	slot4 = slot0.map:GetFleet()
+	slot5 = nil
 
-	if WorldConst.InFOVRange(var_31_0.row, var_31_0.column, arg_31_1, arg_31_2, arg_31_0.fov) then
-		var_31_1 = arg_31_0:CalcInnerPos(arg_31_1, arg_31_2, var_31_0.row, var_31_0.column)
-	else
-		var_31_1 = arg_31_0:CalcOutsidePos(arg_31_1, arg_31_2, var_31_0.row, var_31_0.column)
-	end
-
-	return arg_31_0.rangeTF:TransformPoint(var_31_1)
+	return slot0.rangeTF:TransformPoint((not WorldConst.InFOVRange(slot4.row, slot4.column, slot1, slot2, slot0.fov) or slot0:CalcInnerPos(slot1, slot2, slot4.row, slot4.column)) and slot0:CalcOutsidePos(slot1, slot2, slot4.row, slot4.column))
 end
 
-function var_0_0.GetEntranceTrackMark(arg_32_0, arg_32_1)
-	assert(arg_32_0.entrance)
+function slot0.GetEntranceTrackMark(slot0, slot1)
+	assert(slot0.entrance)
 
-	local var_32_0 = nowWorld():GetMap(arg_32_1)
-	local var_32_1, var_32_2 = arg_32_0:getVector(var_32_0)
-	local var_32_3, var_32_4 = arg_32_0:getVector(arg_32_0.entrance)
-	local var_32_5 = arg_32_0:CalcTaskMarkPos(var_32_1, var_32_2, var_32_3, var_32_4)
+	slot3, slot4 = slot0:getVector(nowWorld():GetMap(slot1))
+	slot5, slot6 = slot0:getVector(slot0.entrance)
 
-	return arg_32_0.rangeTF:TransformPoint(var_32_5)
+	return slot0.rangeTF:TransformPoint(slot0:CalcTaskMarkPos(slot3, slot4, slot5, slot6))
 end
 
-function var_0_0.Dispose(arg_33_0)
-	arg_33_0:RemoveCellsListener()
-	arg_33_0:ClearMarks()
-	arg_33_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:RemoveCellsListener()
+	slot0:ClearMarks()
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

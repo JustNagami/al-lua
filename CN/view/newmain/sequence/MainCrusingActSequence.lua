@@ -1,63 +1,60 @@
-﻿local var_0_0 = class("MainCrusingActSequence")
+slot0 = class("MainCrusingActSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
-	local var_1_1 = {}
+function slot0.Execute(slot0, slot1)
+	slot4 = {}
 
-	if var_1_0 and not var_1_0:isEnd() then
-		table.insert(var_1_1, function(arg_2_0)
-			arg_1_0:CheckCrusingAct(var_1_0, arg_2_0)
+	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot3:isEnd() then
+		table.insert(slot4, function (slot0)
+			uv0:CheckCrusingAct(uv1, slot0)
 		end)
 
-		if PlayerPrefs.GetInt("cursing_first_enter_scene:" .. var_1_0.id, 0) == 0 then
-			table.insert(var_1_1, function(arg_3_0)
-				PlayerPrefs.SetInt("cursing_first_enter_scene:" .. var_1_0.id, 1)
-				arg_1_0:ShowWindow(arg_3_0)
+		if PlayerPrefs.GetInt("cursing_first_enter_scene:" .. slot3.id, 0) == 0 then
+			table.insert(slot4, function (slot0)
+				PlayerPrefs.SetInt("cursing_first_enter_scene:" .. uv0.id, 1)
+				uv1:ShowWindow(slot0)
 			end)
 		end
 	end
 
-	seriesAsync(var_1_1, arg_1_1)
+	seriesAsync(slot4, slot1)
 end
 
-function var_0_0.ShowWindow(arg_4_0, arg_4_1)
+function slot0.ShowWindow(slot0, slot1)
 	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 		parentContext = getProxy(ContextProxy):getCurrentContext(),
 		context = Context.New({
 			mediator = CrusingWindowMediator,
 			viewComponent = CrusingWindowLayer,
 			data = {
-				onClose = arg_4_1
+				onClose = slot1
 			}
 		})
 	})
 end
 
-function var_0_0.CheckCrusingAct(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = PlayerPrefs.GetInt(string.format("crusing_%d_last_time", arg_5_1.id), 3)
-	local var_5_1 = arg_5_1.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
-	local var_5_2 = arg_5_1:GetCrusingUnreceiveAward()
+function slot0.CheckCrusingAct(slot0, slot1, slot2)
+	slot4 = slot1.stopTime - pg.TimeMgr.GetInstance():GetServerTime()
 
-	if #var_5_2 > 0 and var_5_0 > math.floor(var_5_1 / 86400) then
-		PlayerPrefs.SetInt(string.format("crusing_%d_last_time", arg_5_1.id), math.floor(var_5_1 / 86400))
-		arg_5_0:ShowMsg(var_5_2, var_5_1, arg_5_2)
+	if #slot1:GetCrusingUnreceiveAward() > 0 and math.floor(slot4 / 86400) < PlayerPrefs.GetInt(string.format("crusing_%d_last_time", slot1.id), 3) then
+		PlayerPrefs.SetInt(string.format("crusing_%d_last_time", slot1.id), math.floor(slot4 / 86400))
+		slot0:ShowMsg(slot5, slot4, slot2)
 	else
-		arg_5_2()
+		slot2()
 	end
 end
 
-function var_0_0.ShowMsg(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	if arg_6_2 < 86400 then
+function slot0.ShowMsg(slot0, slot1, slot2, slot3)
+	if slot2 < 86400 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			type = MSGBOX_TYPE_ITEM_BOX,
-			content = i18n("battlepass_acquire_attention", math.floor(arg_6_2 / 86400), math.floor(arg_6_2 % 86400 / 3600)),
-			items = arg_6_1,
-			onYes = function()
+			content = i18n("battlepass_acquire_attention", math.floor(slot2 / 86400), math.floor(slot2 % 86400 / 3600)),
+			items = slot1,
+			onYes = function ()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
 			end,
 			yesText = i18n("msgbox_text_forward"),
-			onNo = function()
+			onNo = function ()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
 			end,
 			weight = LayerWeightConst.TOP_LAYER
@@ -65,16 +62,16 @@ function var_0_0.ShowMsg(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
 	else
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_ITEM_BOX,
-			content = i18n("battlepass_acquire_attention", math.floor(arg_6_2 / 86400), math.floor(arg_6_2 % 86400 / 3600)),
-			items = arg_6_1,
-			onYes = function()
+			content = i18n("battlepass_acquire_attention", math.floor(slot2 / 86400), math.floor(slot2 % 86400 / 3600)),
+			items = slot1,
+			onYes = function ()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CRUSING)
 			end,
 			yesText = i18n("msgbox_text_forward"),
-			onNo = arg_6_3,
+			onNo = slot3,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end
 end
 
-return var_0_0
+return slot0

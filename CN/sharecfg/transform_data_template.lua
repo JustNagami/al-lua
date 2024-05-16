@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.transform_data_template = setmetatable({
 	__name = "transform_data_template",
 	all = {
@@ -4541,7 +4541,11 @@ pg.base.transform_data_template = {
 		skin_id = 102079,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，反潜+30，防空+15\n改造后<color=#92fc63>【主炮底座+1】</color>\n<color=#92fc63>【战争之殇】</color>技能将升级为<color=#92fc63>【战争之殇·改】</color>\n<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射III】</color>",
+		descrip = [[
+近代化改造完成，反潜+30，防空+15
+改造后<color=#92fc63>【主炮底座+1】</color>
+<color=#92fc63>【战争之殇】</color>技能将升级为<color=#92fc63>【战争之殇·改】</color>
+<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射III】</color>]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -5022,7 +5026,11 @@ pg.base.transform_data_template = {
 		skin_id = 102089,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座+1】</color>\n改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【专属弹幕-{namecode:524}I】</color>",
+		descrip = [[
+近代化改造完成
+
+改造后<color=#92fc63>【主炮底座+1】</color>
+改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【专属弹幕-{namecode:524}I】</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -9212,7 +9220,11 @@ pg.base.transform_data_template = {
 		skin_id = 201019,
 		use_ship = 1,
 		level_limit = 80,
-		descrip = "近代化改造完成，反潜+40，防空+10\n\n改造后<color=#92fc63>【鱼雷底座-1】</color>\n改造后<color=#92fc63>【防空炮底座+1】</color>",
+		descrip = [[
+近代化改造完成，反潜+40，防空+10
+
+改造后<color=#92fc63>【鱼雷底座-1】</color>
+改造后<color=#92fc63>【防空炮底座+1】</color>]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -16343,7 +16355,12 @@ pg.base.transform_data_template = {
 		skin_id = 205029,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成\n\n改造后<color=#92fc63>第一个【设备】</color>栏位增加可装备设备类型<color=#92fc63>【反潜机】</color>\n改造后解锁<color=#92fc63>【反潜】</color>属性\n改造后<color=#92fc63>【神射手】</color>技能将升级为<color=#92fc63>【神射手·改】</color>",
+		descrip = [[
+近代化改造完成
+
+改造后<color=#92fc63>第一个【设备】</color>栏位增加可装备设备类型<color=#92fc63>【反潜机】</color>
+改造后解锁<color=#92fc63>【反潜】</color>属性
+改造后<color=#92fc63>【神射手】</color>技能将升级为<color=#92fc63>【神射手·改】</color>]],
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -17724,7 +17741,11 @@ pg.base.transform_data_template = {
 		skin_id = 206039,
 		use_ship = 1,
 		level_limit = 90,
-		descrip = "近代化改造完成，防空+35，航空+10\n改造后<color=#92fc63>【所有战斗机+1】</color>\n<color=#92fc63>【支援空母】</color>技能\n将升级为<color=#92fc63>【独角兽的应援】</color>",
+		descrip = [[
+近代化改造完成，防空+35，航空+10
+改造后<color=#92fc63>【所有战斗机+1】</color>
+<color=#92fc63>【支援空母】</color>技能
+将升级为<color=#92fc63>【独角兽的应援】</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -19091,7 +19112,12 @@ pg.base.transform_data_template = {
 		skin_id = 301149,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，雷击+20，机动+25\n\n改造后<color=#92fc63>【鱼雷底座-1】</color> <color=#92fc63>【主炮底座+1】</color>\n技能<color=#92fc63>【所罗门的噩梦】</color>将升级为<color=#92fc63>【所罗门的噩梦.改】</color>\n技能<color=#92fc63>【专属弹幕-{namecode:16}II】</color>将升级为<color=#92fc63>【专属弹幕-{namecode:16}III】</color>",
+		descrip = [[
+近代化改造完成，雷击+20，机动+25
+
+改造后<color=#92fc63>【鱼雷底座-1】</color> <color=#92fc63>【主炮底座+1】</color>
+技能<color=#92fc63>【所罗门的噩梦】</color>将升级为<color=#92fc63>【所罗门的噩梦.改】</color>
+技能<color=#92fc63>【专属弹幕-{namecode:16}II】</color>将升级为<color=#92fc63>【专属弹幕-{namecode:16}III】</color>]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -24130,7 +24156,15 @@ pg.base.transform_data_template = {
 		skin_id = 302109,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（重巡主炮）】</color>\n原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库\n由于舰艇类型变化，原来的<color=#92fc63>【特殊兵装】</color>栏位的兵装若改造后不符合装备要求将被放入仓库\n改造后<color=#92fc63>【主炮底座+1】</color>、<color=#92fc63>【鱼雷底座-1】</color>\n改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射改】</color>\n改造后<color=#92fc63>【反潜】</color>属性将归零、无法装备<color=#92fc63>声呐和深水炸弹</color>",
+		descrip = [[
+近代化改造完成
+
+改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（重巡主炮）】</color>
+原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库
+由于舰艇类型变化，原来的<color=#92fc63>【特殊兵装】</color>栏位的兵装若改造后不符合装备要求将被放入仓库
+改造后<color=#92fc63>【主炮底座+1】</color>、<color=#92fc63>【鱼雷底座-1】</color>
+改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射改】</color>
+改造后<color=#92fc63>【反潜】</color>属性将归零、无法装备<color=#92fc63>声呐和深水炸弹</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -25760,7 +25794,16 @@ pg.base.transform_data_template = {
 		skin_id = 305019,
 		use_ship = 0,
 		level_limit = 75,
-		descrip = "近代化改造完成\n\n习得技能<color=#92fc63>【航空预备】</color>\n第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高20%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【魟改】</color>可以进行<color=#92fc63>空中支援</color>",
+		descrip = [[
+近代化改造完成
+
+习得技能<color=#92fc63>【航空预备】</color>
+第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次
+
+改造后<color=#92fc63>【主炮底座-1】</color>
+改造后<color=#92fc63>主炮效率</color>提高20%
+改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>
+在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【魟改】</color>可以进行<color=#92fc63>空中支援</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26175,7 +26218,16 @@ pg.base.transform_data_template = {
 		skin_id = 305029,
 		use_ship = 0,
 		level_limit = 75,
-		descrip = "近代化改造完成\n\n习得技能<color=#92fc63>【航空预备】</color>\n第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高20%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鲼改】</color>可以进行<color=#92fc63>空中支援</color>",
+		descrip = [[
+近代化改造完成
+
+习得技能<color=#92fc63>【航空预备】</color>
+第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次
+
+改造后<color=#92fc63>【主炮底座-1】</color>
+改造后<color=#92fc63>主炮效率</color>提高20%
+改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>
+在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鲼改】</color>可以进行<color=#92fc63>空中支援</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26398,7 +26450,13 @@ pg.base.transform_data_template = {
 		skin_id = 305039,
 		use_ship = 0,
 		level_limit = 70,
-		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高25%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鳌改】</color>可以进行<color=#92fc63>空中支援</color>",
+		descrip = [[
+近代化改造完成
+
+改造后<color=#92fc63>【主炮底座-1】</color>
+改造后<color=#92fc63>主炮效率</color>提高25%
+改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>
+在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鳌改】</color>可以进行<color=#92fc63>空中支援</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26823,7 +26881,13 @@ pg.base.transform_data_template = {
 		skin_id = 305049,
 		use_ship = 0,
 		level_limit = 70,
-		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高25%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【螯改】</color>可以进行<color=#92fc63>空中支援</color>",
+		descrip = [[
+近代化改造完成
+
+改造后<color=#92fc63>【主炮底座-1】</color>
+改造后<color=#92fc63>主炮效率</color>提高25%
+改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>
+在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【螯改】</color>可以进行<color=#92fc63>空中支援</color>]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -31096,7 +31160,14 @@ pg.base.transform_data_template = {
 		skin_id = 501019,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【鞍山级领舰】升级为【鞍山级领舰.改】\n获得新技能【青龙演武】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
+		descrip = [[
+近代化改造完成，雷击+30，机动+15
+改造后全弹发射升级
+技能【鞍山级领舰】升级为【鞍山级领舰.改】
+获得新技能【青龙演武】
+【鱼雷底座】变更为【导弹底座】
+【主炮底座+1】
+武器效率调整为100%/150%/105%]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -31632,7 +31703,14 @@ pg.base.transform_data_template = {
 		skin_id = 501039,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【互助同盟】升级为【互助同盟.改】\n获得新技能【虎虎生威】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
+		descrip = [[
+近代化改造完成，雷击+30，机动+15
+改造后全弹发射升级
+技能【互助同盟】升级为【互助同盟.改】
+获得新技能【虎虎生威】
+【鱼雷底座】变更为【导弹底座】
+【主炮底座+1】
+武器效率调整为100%/150%/105%]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -32168,7 +32246,14 @@ pg.base.transform_data_template = {
 		skin_id = 501049,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【团结一致】升级为【团结一致.改】\n获得新技能【毅守玄武】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
+		descrip = [[
+近代化改造完成，雷击+30，机动+15
+改造后全弹发射升级
+技能【团结一致】升级为【团结一致.改】
+获得新技能【毅守玄武】
+【鱼雷底座】变更为【导弹底座】
+【主炮底座+1】
+武器效率调整为100%/150%/105%]],
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -41611,7 +41696,11 @@ pg.base.transform_data_template = {
 		skin_id = 702029,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = "近代化改造完成，炮击+35，防空+10\n\n改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（驱逐主炮）】</color>\n原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库",
+		descrip = [[
+近代化改造完成，炮击+35，防空+10
+
+改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（驱逐主炮）】</color>
+原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库]],
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {

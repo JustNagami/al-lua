@@ -1,30 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFoeDying"
-			},
-			arg_list = {
-				buff_id = 17822,
-				target = "TargetSelf",
-				killer = "self",
-				rant = 5000
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFoeDying"
-			},
-			arg_list = {
-				buff_id = 17822,
-				target = "TargetSelf",
-				killer = "child",
-				rant = 5000
-			}
-		}
-	},
+return {
 	{
 		{
 			type = "BattleBuffAddBuff",
@@ -294,5 +268,31 @@
 	stack = 1,
 	id = 17821,
 	icon = 17820,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFoeDying"
+			},
+			arg_list = {
+				buff_id = 17822,
+				target = "TargetSelf",
+				killer = "self",
+				rant = 5000
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFoeDying"
+			},
+			arg_list = {
+				buff_id = 17822,
+				target = "TargetSelf",
+				killer = "child",
+				rant = 5000
+			}
+		}
+	}
 }

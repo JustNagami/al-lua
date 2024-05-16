@@ -1,28 +1,24 @@
-﻿local var_0_0 = class("FuShunDamageScript", import("..RectBaseScript"))
+slot0 = class("FuShunDamageScript", import("..RectBaseScript"))
 
-function var_0_0.onInit(arg_1_0)
-	arg_1_0._loop = false
-	arg_1_0._active = false
-	arg_1_0._weight = 3
-	arg_1_0._scriptTime = 0.5
-	arg_1_0._overrideAble = false
-	arg_1_0._name = "FuShunDamageScript"
+function slot0.onInit(slot0)
+	slot0._loop = false
+	slot0._active = false
+	slot0._weight = 3
+	slot0._scriptTime = 0.5
+	slot0._overrideAble = false
+	slot0._name = "FuShunDamageScript"
 end
 
-function var_0_0.onStep(arg_2_0)
-	return
+function slot0.onStep(slot0)
 end
 
-function var_0_0.onLateStep(arg_3_0)
-	return
+function slot0.onLateStep(slot0)
 end
 
-function var_0_0.onActive(arg_4_0)
-	return
+function slot0.onActive(slot0)
 end
 
-function var_0_0.onTrigger(arg_5_0)
-	return
+function slot0.onTrigger(slot0)
 end
 
-return var_0_0
+return slot0

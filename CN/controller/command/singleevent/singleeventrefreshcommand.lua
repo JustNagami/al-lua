@@ -1,24 +1,22 @@
-﻿local var_0_0 = class("SingleEventRefreshCommand", pm.SimpleCommand)
+slot0 = class("SingleEventRefreshCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 2,
-		activity_id = var_1_0.actId
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(ActivityProxy):getActivityById(var_1_0.actId)
+		activity_id = slot1:getBody().actId
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(ActivityProxy):getActivityById(uv0.actId)
 
-			var_2_0:SetDailyEventIds(arg_2_0.number)
-			getProxy(ActivityProxy):updateActivity(var_2_0)
+			slot1:SetDailyEventIds(slot0.number)
+			getProxy(ActivityProxy):updateActivity(slot1)
 			pg.m02:sendNotification(GAME.SINGLE_EVENT_REFRESH_DONE, {
-				activity = var_2_0
+				activity = slot1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips("Refresh single event failed:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Refresh single event failed:" .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

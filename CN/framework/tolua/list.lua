@@ -1,214 +1,201 @@
-﻿local var_0_0 = setmetatable
-local var_0_1 = {}
+slot1 = {
+	__index = slot1
+}
 
-var_0_1.__index = var_0_1
-
-function var_0_1.new(arg_1_0)
-	local var_1_0 = {
+function slot1.new(slot0)
+	slot1 = {
 		_next = 0,
 		length = 0,
-		_prev = 0
+		_prev = 0,
+		_prev = slot1,
+		_next = slot1
 	}
 
-	var_1_0._prev = var_1_0
-	var_1_0._next = var_1_0
-
-	return var_0_0(var_1_0, var_0_1)
+	return uv0(slot1, uv1)
 end
 
-function var_0_1.clear(arg_2_0)
-	arg_2_0._next = arg_2_0
-	arg_2_0._prev = arg_2_0
-	arg_2_0.length = 0
+function slot1.clear(slot0)
+	slot0._next = slot0
+	slot0._prev = slot0
+	slot0.length = 0
 end
 
-function var_0_1.push(arg_3_0, arg_3_1)
-	local var_3_0 = {
+function slot1.push(slot0, slot1)
+	slot2 = {
 		_prev = 0,
 		_next = 0,
 		removed = false,
-		value = arg_3_1
+		value = slot1
 	}
+	slot0._prev._next = slot2
+	slot2._next = slot0
+	slot2._prev = slot0._prev
+	slot0._prev = slot2
+	slot0.length = slot0.length + 1
 
-	arg_3_0._prev._next = var_3_0
-	var_3_0._next = arg_3_0
-	var_3_0._prev = arg_3_0._prev
-	arg_3_0._prev = var_3_0
-	arg_3_0.length = arg_3_0.length + 1
-
-	return var_3_0
+	return slot2
 end
 
-function var_0_1.pushnode(arg_4_0, arg_4_1)
-	if not arg_4_1.removed then
+function slot1.pushnode(slot0, slot1)
+	if not slot1.removed then
 		return
 	end
 
-	arg_4_0._prev._next = arg_4_1
-	arg_4_1._next = arg_4_0
-	arg_4_1._prev = arg_4_0._prev
-	arg_4_0._prev = arg_4_1
-	arg_4_1.removed = false
-	arg_4_0.length = arg_4_0.length + 1
+	slot0._prev._next = slot1
+	slot1._next = slot0
+	slot1._prev = slot0._prev
+	slot0._prev = slot1
+	slot1.removed = false
+	slot0.length = slot0.length + 1
 end
 
-function var_0_1.pop(arg_5_0)
-	local var_5_0 = arg_5_0._prev
+function slot1.pop(slot0)
+	slot1 = slot0._prev
 
-	arg_5_0:remove(var_5_0)
+	slot0:remove(slot1)
 
-	return var_5_0.value
+	return slot1.value
 end
 
-function var_0_1.unshift(arg_6_0, arg_6_1)
-	local var_6_0 = {
+function slot1.unshift(slot0, slot1)
+	slot2 = {
 		_prev = 0,
 		_next = 0,
 		removed = false,
-		value = arg_6_1
+		value = slot1
 	}
+	slot0._next._prev = slot2
+	slot2._prev = slot0
+	slot2._next = slot0._next
+	slot0._next = slot2
+	slot0.length = slot0.length + 1
 
-	arg_6_0._next._prev = var_6_0
-	var_6_0._prev = arg_6_0
-	var_6_0._next = arg_6_0._next
-	arg_6_0._next = var_6_0
-	arg_6_0.length = arg_6_0.length + 1
-
-	return var_6_0
+	return slot2
 end
 
-function var_0_1.shift(arg_7_0)
-	local var_7_0 = arg_7_0._next
+function slot1.shift(slot0)
+	slot1 = slot0._next
 
-	arg_7_0:remove(var_7_0)
+	slot0:remove(slot1)
 
-	return var_7_0.value
+	return slot1.value
 end
 
-function var_0_1.remove(arg_8_0, arg_8_1)
-	if arg_8_1.removed then
+function slot1.remove(slot0, slot1)
+	if slot1.removed then
 		return
 	end
 
-	local var_8_0 = arg_8_1._prev
-	local var_8_1 = arg_8_1._next
-
-	var_8_1._prev = var_8_0
-	var_8_0._next = var_8_1
-	arg_8_0.length = math.max(0, arg_8_0.length - 1)
-	arg_8_1.removed = true
+	slot2 = slot1._prev
+	slot3 = slot1._next
+	slot3._prev = slot2
+	slot2._next = slot3
+	slot0.length = math.max(0, slot0.length - 1)
+	slot1.removed = true
 end
 
-function var_0_1.find(arg_9_0, arg_9_1, arg_9_2)
-	arg_9_2 = arg_9_2 or arg_9_0
+function slot1.find(slot0, slot1, slot2)
+	slot2 = slot2 or slot0
 
 	repeat
-		if arg_9_1 == arg_9_2.value then
-			return arg_9_2
+		if slot1 == slot2.value then
+			return slot2
 		else
-			arg_9_2 = arg_9_2._next
+			slot2 = slot2._next
 		end
-	until arg_9_2 == arg_9_0
+	until slot2 == slot0
 
 	return nil
 end
 
-function var_0_1.findlast(arg_10_0, arg_10_1, arg_10_2)
-	arg_10_2 = arg_10_2 or arg_10_0
+function slot1.findlast(slot0, slot1, slot2)
+	slot2 = slot2 or slot0
 
 	repeat
-		if arg_10_1 == arg_10_2.value then
-			return arg_10_2
+		if slot1 == slot2.value then
+			return slot2
 		end
-
-		arg_10_2 = arg_10_2._prev
-	until arg_10_2 == arg_10_0
+	until slot2._prev == slot0
 
 	return nil
 end
 
-function var_0_1.next(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1._next
-
-	if var_11_0 ~= arg_11_0 then
-		return var_11_0, var_11_0.value
+function slot1.next(slot0, slot1)
+	if slot1._next ~= slot0 then
+		return slot2, slot2.value
 	end
 
 	return nil
 end
 
-function var_0_1.prev(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_1._prev
-
-	if var_12_0 ~= arg_12_0 then
-		return var_12_0, var_12_0.value
+function slot1.prev(slot0, slot1)
+	if slot1._prev ~= slot0 then
+		return slot2, slot2.value
 	end
 
 	return nil
 end
 
-function var_0_1.erase(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0:find(arg_13_1)
-
-	if var_13_0 then
-		arg_13_0:remove(var_13_0)
+function slot1.erase(slot0, slot1)
+	if slot0:find(slot1) then
+		slot0:remove(slot2)
 	end
 end
 
-function var_0_1.insert(arg_14_0, arg_14_1, arg_14_2)
-	if not arg_14_2 then
-		return arg_14_0:push(arg_14_1)
+function slot1.insert(slot0, slot1, slot2)
+	if not slot2 then
+		return slot0:push(slot1)
 	end
 
-	local var_14_0 = {
+	slot3 = {
 		_prev = 0,
 		_next = 0,
 		removed = false,
-		value = arg_14_1
+		value = slot1
 	}
 
-	if arg_14_2._next then
-		arg_14_2._next._prev = var_14_0
-		var_14_0._next = arg_14_2._next
+	if slot2._next then
+		slot2._next._prev = slot3
+		slot3._next = slot2._next
 	else
-		arg_14_0.last = var_14_0
+		slot0.last = slot3
 	end
 
-	var_14_0._prev = arg_14_2
-	arg_14_2._next = var_14_0
-	arg_14_0.length = arg_14_0.length + 1
+	slot3._prev = slot2
+	slot2._next = slot3
+	slot0.length = slot0.length + 1
 
-	return var_14_0
+	return slot3
 end
 
-function var_0_1.head(arg_15_0)
-	return arg_15_0._next.value
+function slot1.head(slot0)
+	return slot0._next.value
 end
 
-function var_0_1.tail(arg_16_0)
-	return arg_16_0._prev.value
+function slot1.tail(slot0)
+	return slot0._prev.value
 end
 
-function var_0_1.clone(arg_17_0)
-	local var_17_0 = var_0_1:new()
+function slot1.clone(slot0)
+	slot1 = uv0:new()
 
-	for iter_17_0, iter_17_1 in var_0_1.next, arg_17_0, arg_17_0 do
-		var_17_0:push(iter_17_1)
+	for slot5, slot6 in uv0.next, slot0, slot0 do
+		slot1:push(slot6)
 	end
 
-	return var_17_0
+	return slot1
 end
 
-function ilist(arg_18_0)
-	return var_0_1.next, arg_18_0, arg_18_0
+function ilist(slot0)
+	return uv0.next, slot0, slot0
 end
 
-function rilist(arg_19_0)
-	return var_0_1.prev, arg_19_0, arg_19_0
+function rilist(slot0)
+	return uv0.prev, slot0, slot0
 end
 
-var_0_0(var_0_1, {
-	__call = var_0_1.new
+setmetatable(slot1, {
+	__call = slot1.new
 })
 
-return var_0_1
+return slot1

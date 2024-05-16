@@ -1,43 +1,37 @@
-﻿local var_0_0 = class("FinishBluePrintCommand", pm.SimpleCommand)
+slot0 = class("FinishBluePrintCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = getProxy(TechnologyProxy)
-	local var_1_2 = var_1_1:getBluePrintById(var_1_0)
-
-	if not var_1_2 then
+function slot0.execute(slot0, slot1)
+	if not getProxy(TechnologyProxy):getBluePrintById(slot1:getBody().id) then
 		return
 	end
 
-	if not var_1_2:isFinished() then
+	if not slot5:isFinished() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(63202, {
-		blueprint_id = var_1_0
-	}, 63203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = Ship.New(arg_2_0.ship)
+		blueprint_id = slot3
+	}, 63203, function (slot0)
+		if slot0.result == 0 then
+			slot1 = Ship.New(slot0.ship)
 
-			getProxy(BayProxy):addShip(var_2_0)
-			var_1_2:unlock(var_2_0.id)
-			var_1_1:updateBluePrint(var_1_2)
-			arg_1_0:sendNotification(GAME.FINISH_SHIP_BLUEPRINT_DONE, {
-				ship = var_2_0
+			getProxy(BayProxy):addShip(slot1)
+			uv0:unlock(slot1.id)
+			uv1:updateBluePrint(uv0)
+			uv2:sendNotification(GAME.FINISH_SHIP_BLUEPRINT_DONE, {
+				ship = slot1
 			})
 
-			local var_2_1 = {
-				[6] = true,
-				[5] = true
-			}
-
-			if PLATFORM_CODE == PLATFORM_JP and var_2_1[var_1_2:getConfig("blueprint_version")] then
-				pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIPWORKS_COMPLETE, var_2_0.configId)
+			if PLATFORM_CODE == PLATFORM_JP and ({
+				[6.0] = true,
+				[5.0] = true
+			})[uv0:getConfig("blueprint_version")] then
+				pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIPWORKS_COMPLETE, slot1.configId)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("printblue_build_erro") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("printblue_build_erro") .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

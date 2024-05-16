@@ -1,19 +1,19 @@
-﻿local var_0_0 = class("GetGuildInfoCommand", pm.SimpleCommand)
+slot0 = class("GetGuildInfoCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
 	if not getProxy(GuildProxy):getRawData() and not getProxy(GuildProxy).isFetchMainInfo then
 		pg.ConnectionMgr.GetInstance():Send(60037, {
 			type = 0
-		}, 60000, function(arg_2_0)
+		}, 60000, function (slot0)
 			getProxy(GuildProxy).isFetchMainInfo = true
 
-			arg_1_0:sendNotification(GAME.GET_GUILD_INFO_DONE)
+			uv0:sendNotification(GAME.GET_GUILD_INFO_DONE)
 		end)
 	else
-		arg_1_0:sendNotification(GAME.GET_GUILD_INFO_DONE)
+		slot0:sendNotification(GAME.GET_GUILD_INFO_DONE)
 	end
 end
 
-return var_0_0
+return slot0

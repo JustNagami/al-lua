@@ -1,30 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 19480,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"KMS",
-					"CV"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 19482
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -205,5 +179,31 @@
 	stack = 1,
 	id = 19480,
 	icon = 19480,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 19480,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"KMS",
+					"CV"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 19482
+			}
+		}
+	}
 }

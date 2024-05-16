@@ -1,202 +1,178 @@
-﻿local var_0_0 = class("GetPowerRankCommand", pm.SimpleCommand)
-local var_0_1 = 100
-local var_0_2 = 5
+slot0 = class("GetPowerRankCommand", pm.SimpleCommand)
+slot1 = 100
+slot2 = 5
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.type
-	local var_1_2 = var_1_0.activityId
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.type
+	slot4 = slot2.activityId
 
-	assert(var_1_1, "type can not be nil")
+	assert(slot3, "type can not be nil")
 
-	local var_1_3 = getProxy(BillboardProxy)
+	slot5 = getProxy(BillboardProxy)
 
-	local function var_1_4(arg_2_0, arg_2_1)
-		var_1_3:setRankList(var_1_1, var_1_2, arg_2_0)
-		var_1_3:setPlayerRankData(var_1_1, var_1_2, arg_2_1)
-		arg_1_0:sendNotification(GAME.GET_POWERRANK_DONE, {
-			list = arg_2_0,
-			type = var_1_1,
-			playerRankinfo = arg_2_1,
-			activityId = var_1_2
+	function slot6(slot0, slot1)
+		uv0:setRankList(uv1, uv2, slot0)
+		uv0:setPlayerRankData(uv1, uv2, slot1)
+		uv3:sendNotification(GAME.GET_POWERRANK_DONE, {
+			list = slot0,
+			type = uv1,
+			playerRankinfo = slot1,
+			activityId = uv2
 		})
 	end
 
-	if var_1_1 == PowerRank.TYPE_MILITARY_RANK then
+	if slot3 == PowerRank.TYPE_MILITARY_RANK then
 		pg.ConnectionMgr.GetInstance():Send(18006, {
 			type = 0
-		}, 18007, function(arg_3_0)
-			local var_3_0 = {}
+		}, 18007, function (slot0)
+			slot1 = {}
 
-			for iter_3_0, iter_3_1 in ipairs(arg_3_0.arena_rank_lsit) do
-				local var_3_1 = PowerRank.New(iter_3_1, var_1_1)
+			for slot5, slot6 in ipairs(slot0.arena_rank_lsit) do
+				slot7 = PowerRank.New(slot6, uv0)
 
-				var_3_1:setRank(iter_3_0)
-				var_3_1:setArenaRank(SeasonInfo.getEmblem(iter_3_1.score, iter_3_0))
-				table.insert(var_3_0, var_3_1)
+				slot7:setRank(slot5)
+				slot7:setArenaRank(SeasonInfo.getEmblem(slot6.score, slot5))
+				table.insert(slot1, slot7)
 			end
 
-			local var_3_2 = getProxy(PlayerProxy):getData()
-			local var_3_3 = getProxy(BayProxy):getShipById(var_3_2.character)
-			local var_3_4 = {
-				id = var_3_2.id,
-				level = var_3_2.level,
-				name = var_3_2.name,
-				score = var_3_2.score,
-				arena_rank = SeasonInfo.getEmblem(var_3_2.score, var_3_2.rank),
-				icon = var_3_3:getConfig("id"),
-				skin_id = var_3_3.skinId,
-				propose = var_3_3.propose and 1 or 0,
-				remoulded = var_3_3:isRemoulded() and 1 or 0
-			}
-			local var_3_5 = PowerRank.New(var_3_4, var_1_1)
+			slot2 = getProxy(PlayerProxy):getData()
+			slot3 = getProxy(BayProxy):getShipById(slot2.character)
+			slot5 = PowerRank.New({
+				id = slot2.id,
+				level = slot2.level,
+				name = slot2.name,
+				score = slot2.score,
+				arena_rank = SeasonInfo.getEmblem(slot2.score, slot2.rank),
+				icon = slot3:getConfig("id"),
+				skin_id = slot3.skinId,
+				propose = slot3.propose and 1 or 0,
+				remoulded = slot3:isRemoulded() and 1 or 0
+			}, uv0)
 
-			var_3_5:setRank(var_3_2.rank)
-			var_1_4(var_3_0, var_3_5)
+			slot5:setRank(slot2.rank)
+			uv1(slot1, slot5)
 		end)
 	else
-		local var_1_5 = {}
+		slot7 = {}
 
-		local function var_1_6(arg_4_0, arg_4_1)
-			if #var_1_5 < (arg_4_0 - 1) * (var_0_1 / var_0_2) then
-				arg_4_1()
+		function slot8(slot0, slot1)
+			if #uv0 < (slot0 - 1) * uv1 / uv2 then
+				slot1()
 
 				return
 			end
 
 			pg.ConnectionMgr.GetInstance():Send(18201, {
-				page = arg_4_0,
-				type = var_1_1,
-				act_id = var_1_2 or 0
-			}, 18202, function(arg_5_0)
-				for iter_5_0, iter_5_1 in ipairs(arg_5_0.list) do
-					local var_5_0 = PowerRank.New(iter_5_1, var_1_1)
-
-					table.insert(var_1_5, var_5_0)
+				page = slot0,
+				type = uv3,
+				act_id = uv4 or 0
+			}, 18202, function (slot0)
+				for slot4, slot5 in ipairs(slot0.list) do
+					table.insert(uv1, PowerRank.New(slot5, uv0))
 				end
 
-				arg_4_1()
+				uv2()
 			end)
 		end
 
-		local var_1_7
+		slot9 = nil
 
-		local function var_1_8(arg_6_0)
+		function slot10(slot0)
 			pg.ConnectionMgr.GetInstance():Send(18203, {
-				type = var_1_1,
-				act_id = var_1_2 or 0
-			}, 18204, function(arg_7_0)
-				local var_7_0 = getProxy(PlayerProxy):getData()
-				local var_7_1 = getProxy(BayProxy):getShipById(var_7_0.character)
-				local var_7_2
+				type = uv0,
+				act_id = uv1 or 0
+			}, 18204, function (slot0)
+				slot2 = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getData().character)
+				slot3 = nil
 
-				if var_1_1 == PowerRank.TYPE_POWER then
-					var_7_2 = getProxy(BayProxy):getBayPower()
-				elseif var_1_1 == PowerRank.TYPE_COLLECTION then
-					var_7_2 = getProxy(CollectionProxy):getCollectionCount()
-				elseif var_1_1 == PowerRank.TYPE_PT or var_1_1 == PowerRank.TYPE_ACT_BOSS_BATTLE then
-					assert(var_1_2)
+				if uv0 == PowerRank.TYPE_POWER then
+					slot3 = getProxy(BayProxy):getBayPower()
+				elseif uv0 == PowerRank.TYPE_COLLECTION then
+					slot3 = getProxy(CollectionProxy):getCollectionCount()
+				elseif uv0 == PowerRank.TYPE_PT or uv0 == PowerRank.TYPE_ACT_BOSS_BATTLE then
+					assert(uv1)
 
-					local var_7_3 = getProxy(ActivityProxy):getActivityById(var_1_2)
-
-					var_7_2 = var_7_3 and var_7_3.data1 or arg_7_0.point
-				elseif var_1_1 == PowerRank.TYPE_CHALLENGE then
-					local var_7_4 = PowerRank:getActivityByRankType(PowerRank.TYPE_CHALLENGE)
+					slot3 = getProxy(ActivityProxy):getActivityById(uv1) and slot4.data1 or slot0.point
+				elseif uv0 == PowerRank.TYPE_CHALLENGE then
+					slot4 = PowerRank:getActivityByRankType(PowerRank.TYPE_CHALLENGE)
 
 					if getProxy(ChallengeProxy):getChallengeInfo() then
-						local var_7_5 = var_7_4 and getProxy(ChallengeProxy):getChallengeInfo():getGradeList().seasonMaxScore
-
-						var_7_2 = var_7_4 and var_7_5 or arg_7_0.point
+						slot3 = slot4 and (slot4 and getProxy(ChallengeProxy):getChallengeInfo():getGradeList().seasonMaxScore) or slot0.point
 					else
-						var_7_2 = arg_7_0.point
+						slot3 = slot0.point
 					end
-				elseif var_1_1 == PowerRank.TYPE_EXTRA_CHAPTER then
-					local var_7_6 = PowerRank:getActivityByRankType(PowerRank.TYPE_EXTRA_CHAPTER)
-
-					var_7_2 = var_7_6 and var_7_6.data1 or arg_7_0.point
-				elseif var_1_1 == PowerRank.TYPE_BOSSRUSH then
-					local var_7_7 = PowerRank:getActivityByRankType(PowerRank.TYPE_BOSSRUSH)
-
-					var_7_2 = var_7_7 and var_7_7.data1 or arg_7_0.point
+				elseif uv0 == PowerRank.TYPE_EXTRA_CHAPTER then
+					slot3 = PowerRank:getActivityByRankType(PowerRank.TYPE_EXTRA_CHAPTER) and slot4.data1 or slot0.point
+				elseif uv0 == PowerRank.TYPE_BOSSRUSH then
+					slot3 = PowerRank:getActivityByRankType(PowerRank.TYPE_BOSSRUSH) and slot4.data1 or slot0.point
 				else
-					var_7_2 = arg_7_0.point
+					slot3 = slot0.point
 				end
 
-				local var_7_8 = {
-					user_id = var_7_0.id,
-					point = var_7_2,
-					name = var_7_0.name,
-					lv = var_7_0.level,
-					arena_rank = var_7_0.maxRank,
-					icon = var_7_1:getConfig("id"),
-					skin_id = var_7_1.skinId,
-					propose = var_7_1.propose and 1 or 0,
-					remoulded = var_7_1:isRemoulded() and 1 or 0
+				uv2 = PowerRank.New({
+					user_id = slot1.id,
+					point = slot3,
+					name = slot1.name,
+					lv = slot1.level,
+					arena_rank = slot1.maxRank,
+					icon = slot2:getConfig("id"),
+					skin_id = slot2.skinId,
+					propose = slot2.propose and 1 or 0,
+					remoulded = slot2:isRemoulded() and 1 or 0
+				}, uv0)
+
+				uv2:setRank(slot0.rank)
+				uv3()
+			end)
+		end
+
+		slot11 = {}
+
+		for slot15 = 1, uv1 do
+			table.insert(slot11, function (slot0)
+				uv0(uv1, slot0)
+			end)
+		end
+
+		table.insert(slot11, function (slot0)
+			uv0(slot0)
+		end)
+		seriesAsync(slot11, function ()
+			if #uv0 > 0 and uv1 then
+				slot0 = {}
+				slot1 = {
+					[slot8] = 1
 				}
 
-				var_1_7 = PowerRank.New(var_7_8, var_1_1)
-
-				var_1_7:setRank(arg_7_0.rank)
-				arg_6_0()
-			end)
-		end
-
-		local var_1_9 = {}
-
-		for iter_1_0 = 1, var_0_2 do
-			table.insert(var_1_9, function(arg_8_0)
-				var_1_6(iter_1_0, arg_8_0)
-			end)
-		end
-
-		table.insert(var_1_9, function(arg_9_0)
-			var_1_8(arg_9_0)
-		end)
-		seriesAsync(var_1_9, function()
-			if #var_1_5 > 0 and var_1_7 then
-				local var_10_0 = {}
-				local var_10_1 = {}
-
-				local function var_10_2(arg_11_0)
-					local var_11_0 = table.indexof(var_10_0, arg_11_0)
-					local var_11_1 = 0
-
-					for iter_11_0 = 1, var_11_0 - 1 do
-						local var_11_2 = var_10_0[iter_11_0]
-
-						var_11_1 = var_11_1 + var_10_1[var_11_2]
+				function slot2(slot0)
+					for slot6 = 1, table.indexof(uv0, slot0) - 1 do
+						slot2 = 0 + uv1[uv0[slot6]]
 					end
 
-					return var_11_1 + 1
+					return slot2 + 1
 				end
 
-				for iter_10_0, iter_10_1 in ipairs(var_1_5) do
-					local var_10_3 = iter_10_1.power
-
-					if not table.contains(var_10_0, var_10_3) then
-						table.insert(var_10_0, var_10_3)
-
-						var_10_1[var_10_3] = 1
+				for slot6, slot7 in ipairs(uv0) do
+					if not table.contains(slot0, slot7.power) then
+						table.insert(slot0, slot8)
 					else
-						var_10_1[var_10_3] = var_10_1[var_10_3] + 1
+						slot1[slot8] = slot1[slot8] + 1
 					end
 				end
 
-				table.sort(var_10_0, function(arg_12_0, arg_12_1)
-					return arg_12_1 < arg_12_0
+				table.sort(slot0, function (slot0, slot1)
+					return slot1 < slot0
 				end)
 
-				for iter_10_2, iter_10_3 in ipairs(var_1_5) do
-					local var_10_4 = iter_10_3.power
-					local var_10_5 = var_10_2(var_10_4)
-
-					iter_10_3:setRank(var_10_5)
+				for slot6, slot7 in ipairs(uv0) do
+					slot7:setRank(slot2(slot7.power))
 				end
 			end
 
-			var_1_4(var_1_5, var_1_7)
+			uv2(uv0, uv1)
 		end)
 	end
 end
 
-return var_0_0
+return slot0

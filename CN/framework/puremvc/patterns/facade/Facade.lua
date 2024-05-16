@@ -1,153 +1,153 @@
-﻿local var_0_0 = import("...core.Controller")
-local var_0_1 = import("...core.Model")
-local var_0_2 = import("...core.View")
-local var_0_3 = import("..observer.Notification")
-local var_0_4 = class("Facade")
+slot0 = import("...core.Controller")
+slot1 = import("...core.Model")
+slot2 = import("...core.View")
+slot3 = import("..observer.Notification")
+slot4 = class("Facade")
 
-function var_0_4.Ctor(arg_1_0, arg_1_1)
-	if var_0_4.instanceMap[arg_1_1] ~= nil then
-		error(var_0_4.MULTITON_MSG)
+function slot4.Ctor(slot0, slot1)
+	if uv0.instanceMap[slot1] ~= nil then
+		error(uv0.MULTITON_MSG)
 	end
 
-	arg_1_0:initializeNotifier(arg_1_1)
+	slot0:initializeNotifier(slot1)
 
-	var_0_4.instanceMap[arg_1_1] = arg_1_0
+	uv0.instanceMap[slot1] = slot0
 
-	arg_1_0:initializeFacade()
+	slot0:initializeFacade()
 end
 
-function var_0_4.initializeFacade(arg_2_0)
-	arg_2_0:initializeModel()
-	arg_2_0:initializeController()
-	arg_2_0:initializeView()
+function slot4.initializeFacade(slot0)
+	slot0:initializeModel()
+	slot0:initializeController()
+	slot0:initializeView()
 end
 
-function var_0_4.getInstance(arg_3_0)
-	if arg_3_0 == nil then
+function slot4.getInstance(slot0)
+	if slot0 == nil then
 		return nil
 	end
 
-	if var_0_4.instanceMap[arg_3_0] == nil then
-		var_0_4.instanceMap[arg_3_0] = var_0_4.New(arg_3_0)
+	if uv0.instanceMap[slot0] == nil then
+		uv0.instanceMap[slot0] = uv0.New(slot0)
 	end
 
-	return var_0_4.instanceMap[arg_3_0]
+	return uv0.instanceMap[slot0]
 end
 
-function var_0_4.initializeController(arg_4_0)
-	if arg_4_0.controller ~= nil then
+function slot4.initializeController(slot0)
+	if slot0.controller ~= nil then
 		return
 	end
 
-	arg_4_0.controller = var_0_0.getInstance(arg_4_0.multitonKey)
+	slot0.controller = uv0.getInstance(slot0.multitonKey)
 end
 
-function var_0_4.initializeModel(arg_5_0)
-	if arg_5_0.model ~= nil then
+function slot4.initializeModel(slot0)
+	if slot0.model ~= nil then
 		return
 	end
 
-	arg_5_0.model = var_0_1.getInstance(arg_5_0.multitonKey)
+	slot0.model = uv0.getInstance(slot0.multitonKey)
 end
 
-function var_0_4.initializeView(arg_6_0)
-	if arg_6_0.view ~= nil then
+function slot4.initializeView(slot0)
+	if slot0.view ~= nil then
 		return
 	end
 
-	arg_6_0.view = var_0_2.getInstance(arg_6_0.multitonKey)
+	slot0.view = uv0.getInstance(slot0.multitonKey)
 end
 
-function var_0_4.registerCommand(arg_7_0, arg_7_1, arg_7_2)
-	assert(arg_7_2)
-	arg_7_0.controller:registerCommand(arg_7_1, arg_7_2)
+function slot4.registerCommand(slot0, slot1, slot2)
+	assert(slot2)
+	slot0.controller:registerCommand(slot1, slot2)
 end
 
-function var_0_4.removeCommand(arg_8_0, arg_8_1)
-	arg_8_0.controller:removeCommand(arg_8_1)
+function slot4.removeCommand(slot0, slot1)
+	slot0.controller:removeCommand(slot1)
 end
 
-function var_0_4.hasCommand(arg_9_0, arg_9_1)
-	return arg_9_0.controller:hasCommand(arg_9_1)
+function slot4.hasCommand(slot0, slot1)
+	return slot0.controller:hasCommand(slot1)
 end
 
-function var_0_4.registerProxy(arg_10_0, arg_10_1)
-	arg_10_0.model:registerProxy(arg_10_1)
+function slot4.registerProxy(slot0, slot1)
+	slot0.model:registerProxy(slot1)
 end
 
-function var_0_4.retrieveProxy(arg_11_0, arg_11_1)
-	return arg_11_0.model:retrieveProxy(arg_11_1)
+function slot4.retrieveProxy(slot0, slot1)
+	return slot0.model:retrieveProxy(slot1)
 end
 
-function var_0_4.removeProxy(arg_12_0, arg_12_1)
-	local var_12_0
+function slot4.removeProxy(slot0, slot1)
+	slot2 = nil
 
-	if arg_12_0.model ~= nil then
-		var_12_0 = arg_12_0.model:removeProxy(arg_12_1)
+	if slot0.model ~= nil then
+		slot2 = slot0.model:removeProxy(slot1)
 	end
 
-	return var_12_0
+	return slot2
 end
 
-function var_0_4.hasProxy(arg_13_0, arg_13_1)
-	return arg_13_0.model:hasProxy(arg_13_1)
+function slot4.hasProxy(slot0, slot1)
+	return slot0.model:hasProxy(slot1)
 end
 
-function var_0_4.registerMediator(arg_14_0, arg_14_1)
-	if arg_14_0.view ~= nil then
-		arg_14_0.view:registerMediator(arg_14_1)
-	end
-end
-
-function var_0_4.retrieveMediator(arg_15_0, arg_15_1)
-	return arg_15_0.view:retrieveMediator(arg_15_1)
-end
-
-function var_0_4.removeMediator(arg_16_0, arg_16_1)
-	local var_16_0
-
-	if arg_16_0.view ~= nil then
-		var_16_0 = arg_16_0.view:removeMediator(arg_16_1)
-	end
-
-	return var_16_0
-end
-
-function var_0_4.hasMediator(arg_17_0, arg_17_1)
-	return arg_17_0.view:hasMediator(arg_17_1)
-end
-
-function var_0_4.sendNotification(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	arg_18_0:notifyObservers(var_0_3.New(arg_18_1, arg_18_2, arg_18_3))
-end
-
-function var_0_4.notifyObservers(arg_19_0, arg_19_1)
-	if arg_19_0.view ~= nil then
-		arg_19_0.view:notifyObservers(arg_19_1)
+function slot4.registerMediator(slot0, slot1)
+	if slot0.view ~= nil then
+		slot0.view:registerMediator(slot1)
 	end
 end
 
-function var_0_4.initializeNotifier(arg_20_0, arg_20_1)
-	arg_20_0.multitonKey = arg_20_1
+function slot4.retrieveMediator(slot0, slot1)
+	return slot0.view:retrieveMediator(slot1)
 end
 
-function var_0_4.hasCore(arg_21_0)
-	return var_0_4.instanceMap[arg_21_0] ~= nil
+function slot4.removeMediator(slot0, slot1)
+	slot2 = nil
+
+	if slot0.view ~= nil then
+		slot2 = slot0.view:removeMediator(slot1)
+	end
+
+	return slot2
 end
 
-function var_0_4.removeCore(arg_22_0)
-	if var_0_4.instanceMap[arg_22_0] == nil then
+function slot4.hasMediator(slot0, slot1)
+	return slot0.view:hasMediator(slot1)
+end
+
+function slot4.sendNotification(slot0, slot1, slot2, slot3)
+	slot0:notifyObservers(uv0.New(slot1, slot2, slot3))
+end
+
+function slot4.notifyObservers(slot0, slot1)
+	if slot0.view ~= nil then
+		slot0.view:notifyObservers(slot1)
+	end
+end
+
+function slot4.initializeNotifier(slot0, slot1)
+	slot0.multitonKey = slot1
+end
+
+function slot4.hasCore(slot0)
+	return uv0.instanceMap[slot0] ~= nil
+end
+
+function slot4.removeCore(slot0)
+	if uv0.instanceMap[slot0] == nil then
 		return
 	end
 
-	var_0_1.removeModel(arg_22_0)
-	var_0_2.removeView(arg_22_0)
-	var_0_0.removeController(arg_22_0)
+	uv1.removeModel(slot0)
+	uv2.removeView(slot0)
+	uv3.removeController(slot0)
 
-	var_0_4.instanceMap[arg_22_0] = nil
+	uv0.instanceMap[slot0] = nil
 end
 
-var_0_4.instanceMap = {}
-var_0_4.MULTITON_MSG = "Facade instance for this Multiton key already constructed!"
+slot4.instanceMap = {}
+slot4.MULTITON_MSG = "Facade instance for this Multiton key already constructed!"
 
-return var_0_4
+return slot4

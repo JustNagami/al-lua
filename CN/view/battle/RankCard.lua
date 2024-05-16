@@ -1,15 +1,13 @@
-﻿local var_0_0 = class("RankCard")
-
-var_0_0.TYPE_SELF = 1
-var_0_0.TYPE_OTHER = 2
-var_0_0.COLORS = {
+slot0 = class("RankCard")
+slot0.TYPE_SELF = 1
+slot0.TYPE_OTHER = 2
+slot0.COLORS = {
 	"#ffde5c",
 	"#95b0f9",
 	"#cfc1ba",
 	"#797d81"
 }
-
-local var_0_1 = {
+slot1 = {
 	{
 		1,
 		0.8705882352941177,
@@ -32,114 +30,104 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._go = go(arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._type = arg_1_2
-	arg_1_0.frameTF = findTF(arg_1_0._tf, "frame")
-	arg_1_0.frameBgTF = findTF(arg_1_0._tf, "frame/bg"):GetComponent(typeof(Image))
-	arg_1_0.NumImgTF = findTF(arg_1_0._tf, "frame/number_img")
-	arg_1_0.nameTF = findTF(arg_1_0._tf, "frame/name"):GetComponent(typeof(Text))
-	arg_1_0.numberTF = findTF(arg_1_0._tf, "frame/number"):GetComponent(typeof(Text))
-	arg_1_0.notonlistTF = findTF(arg_1_0._tf, "frame/notonlist")
-	arg_1_0.scoreTF = findTF(arg_1_0._tf, "frame/score"):GetComponent(typeof(Text))
-	arg_1_0.emblemTF = findTF(arg_1_0._tf, "frame/emblem")
-	arg_1_0.scoreIconTF = findTF(arg_1_0._tf, "frame/score_icon"):GetComponent(typeof(Image))
-	arg_1_0.iconTF = findTF(arg_1_0._tf, "icon")
-	arg_1_0.levelTxt = findTF(arg_1_0.iconTF, "level_bg/Text"):GetComponent(typeof(Text))
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._go = go(slot1)
+	slot0._tf = slot1
+	slot0._type = slot2
+	slot0.frameTF = findTF(slot0._tf, "frame")
+	slot0.frameBgTF = findTF(slot0._tf, "frame/bg"):GetComponent(typeof(Image))
+	slot0.NumImgTF = findTF(slot0._tf, "frame/number_img")
+	slot0.nameTF = findTF(slot0._tf, "frame/name"):GetComponent(typeof(Text))
+	slot0.numberTF = findTF(slot0._tf, "frame/number"):GetComponent(typeof(Text))
+	slot0.notonlistTF = findTF(slot0._tf, "frame/notonlist")
+	slot0.scoreTF = findTF(slot0._tf, "frame/score"):GetComponent(typeof(Text))
+	slot0.emblemTF = findTF(slot0._tf, "frame/emblem")
+	slot0.scoreIconTF = findTF(slot0._tf, "frame/score_icon"):GetComponent(typeof(Image))
+	slot0.iconTF = findTF(slot0._tf, "icon")
+	slot0.levelTxt = findTF(slot0.iconTF, "level_bg/Text"):GetComponent(typeof(Text))
 
-	ClearTweenItemAlphaAndWhite(arg_1_0._go)
+	ClearTweenItemAlphaAndWhite(slot0._go)
 end
 
-function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.rankVO = arg_2_1
-	arg_2_0.nameTF.text = arg_2_1.name
+function slot0.update(slot0, slot1, slot2)
+	slot0.rankVO = slot1
+	slot0.nameTF.text = slot1.name
+	slot3 = slot1.rank
+	slot0.numberTF.text = slot3
+	slot0.levelTxt.text = "Lv." .. slot1.lv
 
-	local var_2_0 = arg_2_1.rank
+	setActive(slot0.NumImgTF, math.min(slot3 > 0 and slot3 or 4, 4) < 4)
+	setImageSprite(slot0.frameTF, GetSpriteFromAtlas("billboardframe", "bg" .. slot4))
+	setImageSprite(slot0.NumImgTF, GetSpriteFromAtlas("billboardframe", "bgn" .. slot4), true)
 
-	arg_2_0.numberTF.text = var_2_0
+	slot5 = uv0[slot4]
+	slot0.frameBgTF.color = Color.New(slot5[1], slot5[2], slot5[3])
 
-	local var_2_1 = math.min(var_2_0 > 0 and var_2_0 or 4, 4)
+	if slot0._type == uv1.TYPE_OTHER then
+		setActive(slot0.numberTF, slot4 >= 4)
 
-	arg_2_0.levelTxt.text = "Lv." .. arg_2_1.lv
+		slot0.scoreTF.text = setColorStr(slot1:getPowerTxt(), uv1.COLORS[slot4])
+	elseif slot0._type == uv1.TYPE_SELF then
+		setActive(slot0.numberTF, slot3 ~= 0 and slot4 >= 4)
+		setActive(slot0.notonlistTF, slot3 == 0)
 
-	setActive(arg_2_0.NumImgTF, var_2_1 < 4)
-	setImageSprite(arg_2_0.frameTF, GetSpriteFromAtlas("billboardframe", "bg" .. var_2_1))
-	setImageSprite(arg_2_0.NumImgTF, GetSpriteFromAtlas("billboardframe", "bgn" .. var_2_1), true)
-
-	local var_2_2 = var_0_1[var_2_1]
-
-	arg_2_0.frameBgTF.color = Color.New(var_2_2[1], var_2_2[2], var_2_2[3])
-
-	if arg_2_0._type == var_0_0.TYPE_OTHER then
-		setActive(arg_2_0.numberTF, var_2_1 >= 4)
-
-		arg_2_0.scoreTF.text = setColorStr(arg_2_1:getPowerTxt(), var_0_0.COLORS[var_2_1])
-	elseif arg_2_0._type == var_0_0.TYPE_SELF then
-		setActive(arg_2_0.numberTF, var_2_0 ~= 0 and var_2_1 >= 4)
-		setActive(arg_2_0.notonlistTF, var_2_0 == 0)
-
-		arg_2_0.scoreTF.text = arg_2_1:getPowerTxt()
+		slot0.scoreTF.text = slot1:getPowerTxt()
 	end
 
-	local var_2_3 = PowerRank:getScoreIcon(arg_2_1.type)
+	slot6 = PowerRank:getScoreIcon(slot1.type)
 
-	setActive(arg_2_0.scoreIconTF, var_2_3)
+	setActive(slot0.scoreIconTF, slot6)
 
-	if var_2_3 then
-		if arg_2_1.type == PowerRank.TYPE_PT then
-			if arg_2_2 then
-				local var_2_4 = getProxy(ActivityProxy):getActivityById(arg_2_2):getConfig("config_id")
-				local var_2_5 = Drop.New({
+	if slot6 then
+		if slot1.type == PowerRank.TYPE_PT then
+			if slot2 then
+				setImageSprite(slot0.scoreIconTF, LoadSprite(Drop.New({
 					type = DROP_TYPE_RESOURCE,
-					id = var_2_4
-				}):getIcon()
-
-				setImageSprite(arg_2_0.scoreIconTF, LoadSprite(var_2_5))
+					id = getProxy(ActivityProxy):getActivityById(slot2):getConfig("config_id")
+				}):getIcon()))
 			end
 		else
-			setImageSprite(arg_2_0.scoreIconTF, GetSpriteFromAtlas(var_2_3[1], var_2_3[2]), true)
+			setImageSprite(slot0.scoreIconTF, GetSpriteFromAtlas(slot6[1], slot6[2]), true)
 		end
 	end
 
-	LoadImageSpriteAsync("emblem/" .. arg_2_1.arenaRank, arg_2_0.emblemTF)
+	LoadImageSpriteAsync("emblem/" .. slot1.arenaRank, slot0.emblemTF)
 
-	if not go(arg_2_0.emblemTF).activeSelf then
-		setActive(arg_2_0.emblemTF, true)
+	if not go(slot0.emblemTF).activeSelf then
+		setActive(slot0.emblemTF, true)
 	end
 
-	updateDrop(arg_2_0.iconTF, {
+	updateDrop(slot0.iconTF, {
 		type = DROP_TYPE_SHIP,
-		id = arg_2_1.icon,
-		skinId = arg_2_1.skinId,
-		remoulded = arg_2_1.remoulded,
-		propose = arg_2_1.proposeTime
+		id = slot1.icon,
+		skinId = slot1.skinId,
+		remoulded = slot1.remoulded,
+		propose = slot1.proposeTime
 	})
 
-	if not go(arg_2_0.iconTF).activeSelf then
-		setActive(arg_2_0.iconTF, true)
+	if not go(slot0.iconTF).activeSelf then
+		setActive(slot0.iconTF, true)
 	end
 
-	if not go(arg_2_0._tf).activeSelf then
-		setActive(arg_2_0._tf, true)
+	if not go(slot0._tf).activeSelf then
+		setActive(slot0._tf, true)
 	end
 
-	TweenItemAlphaAndWhite(arg_2_0._go)
+	TweenItemAlphaAndWhite(slot0._go)
 end
 
-function var_0_0.clear(arg_3_0)
-	ClearTweenItemAlphaAndWhite(arg_3_0._go)
+function slot0.clear(slot0)
+	ClearTweenItemAlphaAndWhite(slot0._go)
 
-	if not IsNil(arg_3_0.notonlistTF) then
-		setActive(arg_3_0.notonlistTF, false)
+	if not IsNil(slot0.notonlistTF) then
+		setActive(slot0.notonlistTF, false)
 	end
 
-	arg_3_0.scoreTF.text = 0
-	arg_3_0.numberTF.text = 0
+	slot0.scoreTF.text = 0
+	slot0.numberTF.text = 0
 end
 
-function var_0_0.dispose(arg_4_0, ...)
-	return
+function slot0.dispose(slot0, ...)
 end
 
-return var_0_0
+return slot0

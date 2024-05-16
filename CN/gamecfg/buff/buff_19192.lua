@@ -1,30 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBombBulletBang"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				displacement_convert = {
-					rate = 0.0023077,
-					base = 0,
-					max = 0.15
-				},
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -243,5 +217,31 @@
 	stack = 1,
 	id = 19191,
 	icon = 19190,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBombBulletBang"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				displacement_convert = {
+					rate = 0.0023077,
+					base = 0,
+					max = 0.15
+				},
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

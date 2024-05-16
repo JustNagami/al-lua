@@ -1,6 +1,6 @@
-﻿local var_0_0 = class("GameMediator", pm.Mediator)
+slot0 = class("GameMediator", pm.Mediator)
 
-function var_0_0.listNotificationInterests(arg_1_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.GO_SCENE,
 		GAME.GO_MINI_GAME,
@@ -9,54 +9,50 @@ function var_0_0.listNotificationInterests(arg_1_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_1:getName()
-	local var_2_1 = arg_2_1:getBody()
-	local var_2_2
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
+	slot4 = nil
 
-	if var_2_0 == GAME.GO_SCENE then
-		local var_2_3 = arg_2_1:getType()
-		local var_2_4 = Context.New()
+	if slot1:getName() == GAME.GO_SCENE then
+		slot4 = Context.New()
 
-		var_2_4:extendData(var_2_3)
-		SCENE.SetSceneInfo(var_2_4, var_2_1)
-		print("load scene: " .. var_2_1)
-		arg_2_0:sendNotification(GAME.LOAD_SCENE, {
-			context = var_2_4
+		slot4:extendData(slot1:getType())
+		SCENE.SetSceneInfo(slot4, slot3)
+		print("load scene: " .. slot3)
+		slot0:sendNotification(GAME.LOAD_SCENE, {
+			context = slot4
 		})
-	elseif var_2_0 == GAME.GO_MINI_GAME then
-		local var_2_5 = Context.New()
-		local var_2_6 = var_2_1
+	elseif slot2 == GAME.GO_MINI_GAME then
+		slot4 = Context.New()
+		slot5 = slot3
 
-		var_2_5:extendData({
-			miniGameId = var_2_6
+		slot4:extendData({
+			miniGameId = slot5
 		})
 
-		local var_2_7 = pg.mini_game[var_2_6]
+		slot6 = pg.mini_game[slot5]
+		slot4.mediator = _G[slot6.mediator_name]
+		slot4.viewComponent = _G[slot6.view_name]
+		slot4.scene = slot6.view_name
 
-		var_2_5.mediator = _G[var_2_7.mediator_name]
-		var_2_5.viewComponent = _G[var_2_7.view_name]
-		var_2_5.scene = var_2_7.view_name
+		print("load minigame: " .. slot6.view_name)
 
-		print("load minigame: " .. var_2_7.view_name)
-
-		local var_2_8 = {
-			context = var_2_5
+		slot7 = {
+			context = slot4
 		}
-		local var_2_9 = arg_2_1:getType()
 
-		table.merge(var_2_8, var_2_9)
-		arg_2_0:sendNotification(GAME.LOAD_SCENE, var_2_8)
-	elseif var_2_0 == GAME.LOAD_SCENE_DONE then
-		print("scene loaded: ", var_2_1)
+		table.merge(slot7, slot1:getType())
+		slot0:sendNotification(GAME.LOAD_SCENE, slot7)
+	elseif slot2 == GAME.LOAD_SCENE_DONE then
+		print("scene loaded: ", slot3)
 
-		if var_2_1 == SCENE.LOGIN then
+		if slot3 == SCENE.LOGIN then
 			pg.UIMgr.GetInstance():displayLoadingBG(false)
 			pg.UIMgr.GetInstance():LoadingOff()
 		end
-	elseif var_2_0 == GAME.SEND_CMD_DONE then
-		-- block empty
+	elseif slot2 == GAME.SEND_CMD_DONE then
+		-- Nothing
 	end
 end
 
-return var_0_0
+return slot0

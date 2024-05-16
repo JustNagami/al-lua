@@ -1,61 +1,53 @@
-﻿local var_0_0 = class("SettingsResRepairBtn")
+slot0 = class("SettingsResRepairBtn")
 
-function var_0_0.InitTpl(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.tpl
-	local var_1_1 = arg_1_1.container
-	local var_1_2 = arg_1_1.iconSP
+function slot0.InitTpl(slot0, slot1)
+	slot0._tf = cloneTplTo(slot1.tpl, slot1.container, "REPAIR")
+	slot0._go = slot0._tf.gameObject
 
-	arg_1_0._tf = cloneTplTo(var_1_0, var_1_1, "REPAIR")
-	arg_1_0._go = arg_1_0._tf.gameObject
-
-	setImageSprite(arg_1_0._tf:Find("icon"), var_1_2)
+	setImageSprite(slot0._tf:Find("icon"), slot1.iconSP)
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0:InitTpl(arg_2_1)
-	pg.DelegateInfo.New(arg_2_0)
+function slot0.Ctor(slot0, slot1)
+	slot0:InitTpl(slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_2_0.Progress = arg_2_0._tf:Find("progress")
-	arg_2_0.ProgressHandle = arg_2_0._tf:Find("progress/handle")
-	arg_2_0.Info1 = arg_2_0._tf:Find("status")
-	arg_2_0.Info2 = arg_2_0._tf:Find("version")
-	arg_2_0.LabelNew = arg_2_0._tf:Find("version/new")
-	arg_2_0.Dot = arg_2_0._tf:Find("new")
-	arg_2_0.Loading = arg_2_0._tf:Find("loading")
+	slot0.Progress = slot0._tf:Find("progress")
+	slot0.ProgressHandle = slot0._tf:Find("progress/handle")
+	slot0.Info1 = slot0._tf:Find("status")
+	slot0.Info2 = slot0._tf:Find("version")
+	slot0.LabelNew = slot0._tf:Find("version/new")
+	slot0.Dot = slot0._tf:Find("new")
+	slot0.Loading = slot0._tf:Find("loading")
 
-	setText(arg_2_0._tf:Find("title"), i18n("repair_setting_label"))
-	arg_2_0:Init()
+	setText(slot0._tf:Find("title"), i18n("repair_setting_label"))
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_3_0)
-	arg_3_0:UpdateRepairStatus()
-	onButton(arg_3_0, arg_3_0._tf, function()
+function slot0.Init(slot0)
+	slot0:UpdateRepairStatus()
+	onButton(slot0, slot0._tf, function ()
 		pg.RepairResMgr.GetInstance():Repair()
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateRepairStatus(arg_5_0)
-	setSlider(arg_5_0.Progress, 0, 1, 0)
-	setActive(arg_5_0.Dot, false)
-	setActive(arg_5_0.Loading, false)
+function slot0.UpdateRepairStatus(slot0)
+	setSlider(slot0.Progress, 0, 1, 0)
+	setActive(slot0.Dot, false)
+	setActive(slot0.Loading, false)
+	setText(slot0.Info1, i18n("word_files_repair"))
+	setText(slot0.Info2, "")
 
-	local var_5_0 = i18n("word_files_repair")
-	local var_5_1 = ""
+	slot3 = 1
 
-	setText(arg_5_0.Info1, var_5_0)
-	setText(arg_5_0.Info2, var_5_1)
-
-	local var_5_2 = 1
-
-	setSlider(arg_5_0.Progress, 0, 1, var_5_2)
-	setActive(arg_5_0.ProgressHandle, var_5_2 ~= 0 and var_5_2 ~= 1)
-	setActive(arg_5_0.Dot, false)
-	setActive(arg_5_0.Loading, false)
-	setActive(arg_5_0.LabelNew, false)
+	setSlider(slot0.Progress, 0, 1, slot3)
+	setActive(slot0.ProgressHandle, slot3 ~= 0 and slot3 ~= 1)
+	setActive(slot0.Dot, false)
+	setActive(slot0.Loading, false)
+	setActive(slot0.LabelNew, false)
 end
 
-function var_0_0.Dispose(arg_6_0)
-	pg.DelegateInfo.Dispose(arg_6_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,108 +1,87 @@
-﻿local var_0_0 = class("ZeroHourCommand", pm.SimpleCommand)
+slot0 = class("ZeroHourCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0, var_1_1 = pcall(arg_1_0.mainHandler, arg_1_0)
+function slot0.execute(slot0, slot1)
+	slot2, slot3 = pcall(slot0.mainHandler, slot0)
 
-	if not var_1_0 then
+	if not slot2 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("zero_hour_command_error"))
-		error(var_1_1)
+		error(slot3)
 	end
 end
 
-function var_0_0.mainHandler(arg_2_0, arg_2_1)
-	local var_2_0 = getProxy(PlayerProxy)
-	local var_2_1 = var_2_0:getData()
+function slot0.mainHandler(slot0, slot1)
+	slot3 = getProxy(PlayerProxy):getData()
 
-	var_2_1:resetBuyOilCount()
+	slot3:resetBuyOilCount()
 
-	for iter_2_0, iter_2_1 in pairs(var_2_1.vipCards) do
-		if iter_2_1:isExpire() then
-			var_2_1.vipCards[iter_2_1.id] = nil
+	for slot7, slot8 in pairs(slot3.vipCards) do
+		if slot8:isExpire() then
+			slot3.vipCards[slot8.id] = nil
 		end
 	end
 
-	var_2_0:updatePlayer(var_2_1)
+	slot2:updatePlayer(slot3)
 
-	local var_2_2 = getProxy(ShopsProxy)
-	local var_2_3 = var_2_2:getShopStreet()
-
-	if var_2_3 then
-		var_2_3:resetflashCount()
-		var_2_2:setShopStreet(var_2_3)
+	if getProxy(ShopsProxy):getShopStreet() then
+		slot5:resetflashCount()
+		slot4:setShopStreet(slot5)
 	end
 
-	var_2_2.refreshChargeList = true
+	slot4.refreshChargeList = true
 
 	getProxy(CollectionProxy):resetEvaCount()
 
-	local var_2_4 = getProxy(MilitaryExerciseProxy)
-	local var_2_5 = var_2_4:getSeasonInfo()
-
-	if var_2_5 then
-		var_2_5:resetFlashCount()
-		var_2_4:updateSeasonInfo(var_2_5)
+	if getProxy(MilitaryExerciseProxy):getSeasonInfo() then
+		slot8:resetFlashCount()
+		slot7:updateSeasonInfo(slot8)
 	end
 
 	getProxy(DailyLevelProxy):resetDailyCount()
 
-	local var_2_6 = getProxy(ChapterProxy)
+	slot10 = getProxy(ChapterProxy)
 
-	var_2_6:resetRepairTimes()
-	var_2_6:resetEscortChallengeTimes()
+	slot10:resetRepairTimes()
+	slot10:resetEscortChallengeTimes()
 
-	local var_2_7 = var_2_6:getData()
+	for slot15, slot16 in pairs(slot10:getData()) do
+		if slot16.todayDefeatCount > 0 then
+			slot16.todayDefeatCount = 0
 
-	for iter_2_2, iter_2_3 in pairs(var_2_7) do
-		if iter_2_3.todayDefeatCount > 0 then
-			iter_2_3.todayDefeatCount = 0
-
-			var_2_6:updateChapter(iter_2_3)
+			slot10:updateChapter(slot16)
 		end
 	end
 
-	var_2_6:resetDailyCount()
-	;(function()
-		local var_3_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH)
-
-		if not var_3_0 then
+	slot10:resetDailyCount()
+	function ()
+		if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSRUSH) then
 			return
 		end
 
-		local var_3_1 = var_3_0:GetUsedBonus()
-
-		table.Foreach(var_3_1, function(arg_4_0, arg_4_1)
-			var_3_1[arg_4_0] = 0
+		table.Foreach(slot0:GetUsedBonus(), function (slot0, slot1)
+			uv0[slot0] = 0
 		end)
-		getProxy(ActivityProxy):updateActivity(var_3_0)
-	end)()
+		getProxy(ActivityProxy):updateActivity(slot0)
+	end()
 	getProxy(DailyLevelProxy):clearChaptersDefeatCount()
 
-	local var_2_8 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
-
-	if var_2_8.day == 1 then
-		var_2_2.shamShop:update(var_2_8.month, {})
-		var_2_2:AddShamShop(var_2_2.shamShop)
-		var_2_2.fragmentShop:Reset(var_2_8.month)
-		var_2_2:AddFragmentShop(var_2_2.fragmentShop)
+	if pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t").day == 1 then
+		slot4.shamShop:update(slot13.month, {})
+		slot4:AddShamShop(slot4.shamShop)
+		slot4.fragmentShop:Reset(slot13.month)
+		slot4:AddFragmentShop(slot4.fragmentShop)
 
 		if not LOCK_UR_SHIP then
-			local var_2_9 = pg.gameset.urpt_chapter_max.description[1]
-
-			getProxy(BagProxy):ClearLimitCnt(var_2_9)
+			getProxy(BagProxy):ClearLimitCnt(pg.gameset.urpt_chapter_max.description[1])
 		end
 	end
 
-	local var_2_10 = getProxy(ShopsProxy):getMiniShop()
-
-	if var_2_10 and var_2_10:checkShopFlash() then
+	if getProxy(ShopsProxy):getMiniShop() and slot14:checkShopFlash() then
 		pg.m02:sendNotification(GAME.MINI_GAME_SHOP_FLUSH)
 	end
 
-	local var_2_11 = getProxy(ActivityProxy)
-
-	for iter_2_4, iter_2_5 in ipairs(var_2_11:getPanelActivities()) do
-		if (function()
-			local var_5_0 = {
+	for slot19, slot20 in ipairs(getProxy(ActivityProxy):getPanelActivities()) do
+		if function ()
+			slot0 = {
 				ActivityConst.ACTIVITY_TYPE_7DAYSLOGIN,
 				ActivityConst.ACTIVITY_TYPE_PROGRESSLOGIN,
 				ActivityConst.ACTIVITY_TYPE_MONTHSIGN,
@@ -111,255 +90,208 @@ function var_0_0.mainHandler(arg_2_0, arg_2_1)
 				ActivityConst.ACTIVITY_TYPE_BB,
 				ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD
 			}
+			uv0.autoActionForbidden = false
 
-			iter_2_5.autoActionForbidden = false
-
-			if iter_2_5:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BB then
-				iter_2_5.data2 = 0
-			elseif iter_2_5:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD then
-				iter_2_5.data2 = 0
+			if uv0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BB then
+				uv0.data2 = 0
+			elseif uv0:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY_AWARD then
+				uv0.data2 = 0
 			end
 
-			return table.contains(var_5_0, iter_2_5:getConfig("type"))
-		end)() then
-			var_2_11:updateActivity(iter_2_5)
+			return table.contains(slot0, uv0:getConfig("type"))
+		end() then
+			slot15:updateActivity(slot20)
 		end
 	end
 
 	getProxy(RefluxProxy):setAutoActionForbidden(false)
 
-	local var_2_12 = var_2_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_MANUAL_SIGN)
-
-	if var_2_12 and not var_2_12:isEnd() then
+	if slot15:getActivityByType(ActivityConst.ACTIVITY_TYPE_MANUAL_SIGN) and not slot16:isEnd() then
 		pg.m02:sendNotification(GAME.ACT_MANUAL_SIGN, {
-			activity_id = var_2_12.id,
+			activity_id = slot16.id,
 			cmd = ManualSignActivity.OP_SIGN
 		})
 	end
 
-	local var_2_13 = var_2_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_REFLUX)
-
-	if var_2_13 and not var_2_13:isEnd() then
-		var_2_13.data1KeyValueList = {
+	if slot15:getActivityByType(ActivityConst.ACTIVITY_TYPE_REFLUX) and not slot17:isEnd() then
+		slot17.data1KeyValueList = {
 			{}
 		}
 
-		var_2_11:updateActivity(var_2_13)
+		slot15:updateActivity(slot17)
 	end
 
-	local var_2_14 = var_2_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_TURNTABLE)
-
-	if var_2_14 and not var_2_14:isEnd() then
-		local var_2_15 = var_2_14:getConfig("config_id")
-		local var_2_16 = pg.activity_event_turning[var_2_15]
-
-		if var_2_16.total_num <= var_2_14.data3 then
+	if slot15:getActivityByType(ActivityConst.ACTIVITY_TYPE_TURNTABLE) and not slot18:isEnd() then
+		if pg.activity_event_turning[slot18:getConfig("config_id")].total_num <= slot18.data3 then
 			return
 		end
 
-		local var_2_17 = var_2_16.task_table[var_2_14.data4]
-
-		if not var_2_17 then
+		if not slot20.task_table[slot18.data4] then
 			return
 		end
 
-		local var_2_18 = getProxy(TaskProxy)
+		slot23 = getProxy(TaskProxy)
 
-		for iter_2_6, iter_2_7 in ipairs(var_2_17) do
-			if (var_2_18:getTaskById(iter_2_7) or var_2_18:getFinishTaskById(iter_2_7)):getTaskStatus() ~= 2 then
+		for slot27, slot28 in ipairs(slot22) do
+			if (slot23:getTaskById(slot28) or slot23:getFinishTaskById(slot28)):getTaskStatus() ~= 2 then
 				return
 			end
 		end
 
-		arg_2_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+		slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
-			activity_id = var_2_14.id
+			activity_id = slot18.id
 		})
 	end
 
-	local var_2_19 = getProxy(NavalAcademyProxy)
+	slot19 = getProxy(NavalAcademyProxy)
 
-	var_2_19:setCourse(var_2_19.course)
-	arg_2_0:sendNotification(GAME.CLASS_FORCE_UPDATE)
+	slot19:setCourse(slot19.course)
+	slot0:sendNotification(GAME.CLASS_FORCE_UPDATE)
 	getProxy(TechnologyProxy):updateRefreshFlag(0)
-	arg_2_0:sendNotification(GAME.ACCEPT_ACTIVITY_TASK)
+	slot0:sendNotification(GAME.ACCEPT_ACTIVITY_TASK)
 	getProxy(CommanderProxy):resetBoxUseCnt()
 
-	local var_2_20 = getProxy(CommanderProxy):GetCommanderHome()
-
-	if var_2_20 then
-		var_2_20:ResetCatteryOP()
-		var_2_20:ReduceClean()
+	if getProxy(CommanderProxy):GetCommanderHome() then
+		slot21:ResetCatteryOP()
+		slot21:ReduceClean()
 	end
 
-	local var_2_21 = var_2_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
-
-	if var_2_21 and not var_2_21:isEnd() then
-		var_2_11:updateActivity(var_2_21)
+	if slot15:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY) and not slot22:isEnd() then
+		slot15:updateActivity(slot22)
 	end
 
-	local var_2_22 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
-
-	if var_2_22 and not var_2_22:isEnd() then
-		arg_2_0:sendNotification(GAME.CHALLENGE2_INFO, {})
+	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE) and not slot23:isEnd() then
+		slot0:sendNotification(GAME.CHALLENGE2_INFO, {})
 	end
 
 	LimitChallengeConst.RequestInfo()
-	arg_2_0:sendNotification(GAME.REQUEST_MINI_GAME, {
+	slot0:sendNotification(GAME.REQUEST_MINI_GAME, {
 		type = MiniGameRequestCommand.REQUEST_HUB_DATA
 	})
 
-	local var_2_23 = getProxy(MiniGameProxy)
-	local var_2_24 = var_2_23:GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
+	if getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5) then
+		slot26 = slot25.id
 
-	if var_2_24 then
-		local var_2_25 = var_2_24.id
-		local var_2_26 = var_2_23:GetHubByGameId(var_2_25).id
-
-		arg_2_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var_2_26,
+		slot0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = slot24:GetHubByGameId(slot26).id,
 			cmd = MiniGameOPCommand.CMD_SPECIAL_GAME,
 			args1 = {
-				var_2_25,
+				slot26,
 				1
 			}
 		})
 	end
 
-	arg_2_0:sendNotification(GAME.REFLUX_REQUEST_DATA)
+	slot0:sendNotification(GAME.REFLUX_REQUEST_DATA)
 
-	local var_2_27 = nowWorld()
+	slot26 = nowWorld()
 
 	if pg.TimeMgr.GetInstance():GetServerWeek() == 1 then
-		var_2_27.staminaMgr.staminaExchangeTimes = 0
+		slot26.staminaMgr.staminaExchangeTimes = 0
 	end
 
-	if var_2_27 then
-		local var_2_28 = var_2_27:GetBossProxy()
+	if slot26 then
+		slot28 = slot26:GetBossProxy()
 
-		var_2_28:increasePt()
-		var_2_28:ClearSummonPtDailyAcc()
-		var_2_28:ClearSummonPtOldAcc()
+		slot28:increasePt()
+		slot28:ClearSummonPtDailyAcc()
+		slot28:ClearSummonPtOldAcc()
 	end
 
-	local var_2_29 = var_2_11:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
+	if slot15:getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2) and not slot28:isEnd() then
+		slot29 = slot28.data1KeyValueList[1]
 
-	if var_2_29 and not var_2_29:isEnd() then
-		local var_2_30 = var_2_29.data1KeyValueList[1]
-		local var_2_31 = pg.activity_event_worldboss[var_2_29:getConfig("config_id")]
-
-		if var_2_31 then
-			for iter_2_8, iter_2_9 in ipairs(var_2_31.normal_expedition_drop_num or {}) do
-				for iter_2_10, iter_2_11 in ipairs(iter_2_9[1]) do
-					var_2_30[iter_2_11] = iter_2_9[2] or 0
+		if pg.activity_event_worldboss[slot28:getConfig("config_id")] then
+			for slot34, slot35 in ipairs(slot30.normal_expedition_drop_num or {}) do
+				for slot39, slot40 in ipairs(slot35[1]) do
+					slot29[slot40] = slot35[2] or 0
 				end
 			end
 		end
 
-		var_2_11:updateActivity(var_2_29)
+		slot15:updateActivity(slot28)
 	end
 
-	local var_2_32 = getProxy(ActivityProxy)
-	local var_2_33 = var_2_32:getActivityByType(ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT)
+	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_COLLECTION_EVENT) and not slot30:isEnd() then
+		slot31, slot32 = getProxy(EventProxy):GetEventByActivityId(slot30.id)
 
-	if var_2_33 and not var_2_33:isEnd() then
-		local var_2_34, var_2_35 = getProxy(EventProxy):GetEventByActivityId(var_2_33.id)
-
-		if not var_2_34 or var_2_34 and not var_2_34:IsStarting() then
-			if var_2_34 and var_2_35 then
-				table.remove(getProxy(EventProxy).eventList, var_2_35)
+		if not slot31 or slot31 and not slot31:IsStarting() then
+			if slot31 and slot32 then
+				table.remove(getProxy(EventProxy).eventList, slot32)
 			end
 
-			local var_2_36 = var_2_33:getConfig("config_data")
-			local var_2_37 = var_2_33:getDayIndex()
+			slot33 = slot30:getConfig("config_data")
 
-			if var_2_37 > 0 and var_2_37 <= #var_2_36 then
+			if slot30:getDayIndex() > 0 and slot34 <= #slot33 then
 				getProxy(EventProxy):AddActivityEvent(EventInfo.New({
 					finish_time = 0,
 					over_time = 0,
-					id = var_2_36[var_2_37],
+					id = slot33[slot34],
 					ship_id_list = {},
-					activity_id = var_2_33.id
+					activity_id = slot30.id
 				}))
 			end
 
 			pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
-			arg_2_0:sendNotification(GAME.EVENT_LIST_UPDATE)
+			slot0:sendNotification(GAME.EVENT_LIST_UPDATE)
 		end
 	end
 
-	local var_2_38 = getProxy(GuildProxy)
-	local var_2_39 = var_2_38:getRawData()
+	if getProxy(GuildProxy):getRawData() then
+		slot32:ResetTechCancelCnt()
 
-	if var_2_39 then
-		var_2_39:ResetTechCancelCnt()
+		if slot32:getWeeklyTask() and slot33:isExpire() then
+			getProxy(TaskProxy):removeTaskById(slot33:GetPresonTaskId())
 
-		local var_2_40 = var_2_39:getWeeklyTask()
-
-		if var_2_40 and var_2_40:isExpire() then
-			local var_2_41 = var_2_40:GetPresonTaskId()
-
-			getProxy(TaskProxy):removeTaskById(var_2_41)
-
-			var_2_39.weeklyTaskFlag = 0
+			slot32.weeklyTaskFlag = 0
 		end
 
-		local var_2_42 = var_2_39:GetActiveEvent()
-
-		if var_2_42 then
-			var_2_42:GetBossMission():ResetDailyCnt()
+		if slot32:GetActiveEvent() then
+			slot34:GetBossMission():ResetDailyCnt()
 		end
 
-		if var_2_8.day == 1 then
-			var_2_39:ResetActiveEventCnt()
+		if slot13.day == 1 then
+			slot32:ResetActiveEventCnt()
 		end
 
-		var_2_38:updateGuild(var_2_39)
+		slot31:updateGuild(slot32)
 	end
 
-	if var_2_38:GetPublicGuild() then
-		local var_2_43 = math.random(2, 5)
-		local var_2_44
+	if slot31:GetPublicGuild() then
+		slot35 = nil
 
-		var_2_44 = Timer.New(function()
-			var_2_44:Stop()
-			arg_2_0:sendNotification(GAME.GET_PUBLIC_GUILD_USER_DATA, {
+		Timer.New(function ()
+			uv0:Stop()
+			uv1:sendNotification(GAME.GET_PUBLIC_GUILD_USER_DATA, {
 				flag = true
 			})
-		end, var_2_43, 1)
-
-		var_2_44:Start()
+		end, math.random(2, 5), 1):Start()
 	end
 
 	getProxy(NavalAcademyProxy):resetUsedDailyFinishCnt()
 	getProxy(AvatarFrameProxy):clearTimeOut()
-	arg_2_0:sendNotification(GAME.ZERO_HOUR_OP_DONE)
+	slot0:sendNotification(GAME.ZERO_HOUR_OP_DONE)
 	MainRequestActDataSequence.New():RequestRandomDailyTask()
-	;(function()
-		local var_7_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSSINGLE)
-
-		if not var_7_0 or var_7_0:isEnd() then
+	function ()
+		if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSSSINGLE) or slot0:isEnd() then
 			return
 		end
 
-		local var_7_1 = var_7_0:GetDailyCounts()
-
-		table.Foreach(var_7_1, function(arg_8_0, arg_8_1)
-			var_7_1[arg_8_0] = 0
+		table.Foreach(slot0:GetDailyCounts(), function (slot0, slot1)
+			uv0[slot0] = 0
 		end)
-		getProxy(ActivityProxy):updateActivity(var_7_0)
-	end)()
-	;(function()
-		local var_9_0 = var_2_32:getActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE)
-
-		if not var_9_0 or var_9_0:isEnd() then
+		getProxy(ActivityProxy):updateActivity(slot0)
+	end()
+	function ()
+		if not uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE) or slot0:isEnd() then
 			return
 		end
 
-		arg_2_0:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
-			actId = var_9_0.id
+		uv1:sendNotification(GAME.SINGLE_EVENT_REFRESH, {
+			actId = slot0.id
 		})
-	end)()
+	end()
 end
 
-return var_0_0
+return slot0

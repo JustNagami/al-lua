@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				rant = 2000,
-				target = "TargetSelf",
-				skill_id = 10320,
-				time = 10
-			}
-		}
-	},
+return {
 	{
 		desc = "主炮开火时，有20.0%的概率朝自己前方直线发射一轮专属弹幕(依据技能等级)",
 		addition = {
@@ -223,5 +209,19 @@
 	stack = 1,
 	id = 10320,
 	icon = 10320,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				rant = 2000,
+				target = "TargetSelf",
+				skill_id = 10320,
+				time = 10
+			}
+		}
+	}
 }

@@ -1,37 +1,29 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = "BattleCardPuzzleSkillAddBurnDot"
+slot2 = class(slot1, slot0.Battle.BattleCardPuzzleSkillAddBuff)
+slot0.Battle[slot1] = slot2
+slot2.__name = slot1
 
-local var_0_0 = ys
-local var_0_1 = "BattleCardPuzzleSkillAddBurnDot"
-local var_0_2 = class(var_0_1, var_0_0.Battle.BattleCardPuzzleSkillAddBuff)
+function slot2.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-var_0_0.Battle[var_0_1] = var_0_2
-var_0_2.__name = var_0_1
-
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	arg_1_0._buffID = arg_1_0._tempData.arg_list.buff_id
-	arg_1_0._stack_count = arg_1_0._tempData.arg_list.stack_count or 0
-	arg_1_0._stack_ratio = arg_1_0._tempData.arg_list.stack_ratio or 0
+	slot0._buffID = slot0._tempData.arg_list.buff_id
+	slot0._stack_count = slot0._tempData.arg_list.stack_count or 0
+	slot0._stack_ratio = slot0._tempData.arg_list.stack_ratio or 0
 end
 
-function var_0_2.SkillEffectHandler(arg_2_0)
-	local var_2_0 = arg_2_0:GetTarget()
+function slot2.SkillEffectHandler(slot0)
+	for slot5, slot6 in ipairs(slot0:GetTarget()) do
+		if slot6:IsAlive() then
+			slot10 = uv0.Battle.BattleStackableBuffUnit.New(slot0._buffID, 1, slot0._caster, slot0._stack_count + math.floor((slot6:GetBuff(slot0._buffID) and slot8:GetStack() or 0) * slot0._stack_ratio))
+			slot11 = slot0:GetCardPuzzleComponent():GetAttrManager()
 
-	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-		if iter_2_1:IsAlive() then
-			local var_2_1 = arg_2_0._stack_count
-			local var_2_2 = iter_2_1:GetBuff(arg_2_0._buffID)
-			local var_2_3 = var_2_2 and var_2_2:GetStack() or 0
-			local var_2_4 = var_2_1 + math.floor(var_2_3 * arg_2_0._stack_ratio)
-			local var_2_5 = var_0_0.Battle.BattleStackableBuffUnit.New(arg_2_0._buffID, 1, arg_2_0._caster, var_2_4)
-			local var_2_6 = arg_2_0:GetCardPuzzleComponent():GetAttrManager()
-
-			var_2_5:SetStackCount(var_2_6:GetCurrent("BurnStackCount"))
-			var_2_5:SetUnstackCount(var_2_6:GetCurrent("BurnUnStackCount"))
-			iter_2_1:AddBuff(var_2_5)
+			slot10:SetStackCount(slot11:GetCurrent("BurnStackCount"))
+			slot10:SetUnstackCount(slot11:GetCurrent("BurnUnStackCount"))
+			slot6:AddBuff(slot10)
 		end
 	end
 
-	arg_2_0:Finale()
+	slot0:Finale()
 end

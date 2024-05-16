@@ -1,59 +1,52 @@
-﻿local var_0_0 = class("ShipRemouldMediator", import("..base.ContextMediator"))
+slot0 = class("ShipRemouldMediator", import("..base.ContextMediator"))
+slot0.REMOULD_SHIP = "ShipRemouldMediator:REMOULD_SHIP"
+slot0.ON_SELECTE_SHIP = "ShipRemouldMediator:ON_SELECTE_SHIP"
 
-var_0_0.REMOULD_SHIP = "ShipRemouldMediator:REMOULD_SHIP"
-var_0_0.ON_SELECTE_SHIP = "ShipRemouldMediator:ON_SELECTE_SHIP"
+function slot0.register(slot0)
+	slot0.viewComponent:setShipVO(getProxy(BayProxy):getShipById(slot0.contextData.shipId))
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 
-function var_0_0.register(arg_1_0)
-	local var_1_0 = getProxy(BayProxy)
-	local var_1_1 = var_1_0:getShipById(arg_1_0.contextData.shipId)
+	slot0.bagProxy = getProxy(BagProxy)
 
-	arg_1_0.viewComponent:setShipVO(var_1_1)
-
-	local var_1_2 = getProxy(PlayerProxy):getData()
-
-	arg_1_0.viewComponent:setPlayer(var_1_2)
-
-	arg_1_0.bagProxy = getProxy(BagProxy)
-
-	arg_1_0.viewComponent:setItems(arg_1_0.bagProxy:getData())
-	arg_1_0:bind(var_0_0.REMOULD_SHIP, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		if arg_1_0.contextData.materialShipIds and #arg_1_0.contextData.materialShipIds > 1 then
+	slot0.viewComponent:setItems(slot0.bagProxy:getData())
+	slot0:bind(uv0.REMOULD_SHIP, function (slot0, slot1, slot2, slot3)
+		if uv0.contextData.materialShipIds and #uv0.contextData.materialShipIds > 1 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("remould_ship_count_more"))
 
 			return
 		end
 
-		arg_1_0:sendNotification(GAME.REMOULD_SHIP, {
-			shipId = arg_2_1,
-			remouldId = arg_2_2,
-			materialIds = arg_1_0.contextData.materialShipIds or {}
+		uv0:sendNotification(GAME.REMOULD_SHIP, {
+			shipId = slot1,
+			remouldId = slot2,
+			materialIds = uv0.contextData.materialShipIds or {}
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SELECTE_SHIP, function(arg_3_0, arg_3_1)
-		local var_3_0 = var_1_0:getUpgradeShips(arg_3_1)
-		local var_3_1 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_3, underscore.map(var_3_0, function(arg_4_0)
-			return arg_4_0.id
+	slot0:bind(uv0.ON_SELECTE_SHIP, function (slot0, slot1)
+		slot2 = uv0:getUpgradeShips(slot1)
+		slot3 = pg.ShipFlagMgr.GetInstance():FilterShips(ShipStatus.FILTER_SHIPS_FLAGS_3, underscore.map(slot2, function (slot0)
+			return slot0.id
 		end))
 
-		table.insert(var_3_1, arg_3_1.id)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		table.insert(slot3, slot1.id)
+		uv1:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMax = 1,
 			selectedMin = 1,
 			destroyCheck = true,
-			shipVOs = var_3_0,
-			ignoredIds = var_3_1,
-			selectedIds = arg_1_0.contextData.materialShipIds or {},
-			onShip = function(arg_5_0, arg_5_1)
-				if arg_5_0:getFlag("inAdmiral") then
+			shipVOs = slot2,
+			ignoredIds = slot3,
+			selectedIds = uv1.contextData.materialShipIds or {},
+			onShip = function (slot0, slot1)
+				if slot0:getFlag("inAdmiral") then
 					return false, i18n("confirm_unlock_ship_main")
-				elseif arg_5_0:GetLockState() == Ship.LOCK_STATE_LOCK then
+				elseif slot0:GetLockState() == Ship.LOCK_STATE_LOCK then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						yseBtnLetf = true,
-						content = i18n("confirm_unlock_lv", "Lv." .. arg_5_0.level, arg_5_0:getName()),
-						onYes = function()
+						content = i18n("confirm_unlock_lv", "Lv." .. slot0.level, slot0:getName()),
+						onYes = function ()
 							pg.m02:sendNotification(GAME.UPDATE_LOCK, {
 								ship_id_list = {
-									arg_5_0.id
+									uv0.id
 								},
 								is_locked = Ship.LOCK_STATE_UNLOCK
 							})
@@ -63,11 +56,11 @@ function var_0_0.register(arg_1_0)
 
 					return false, nil
 				else
-					return ShipStatus.canDestroyShip(arg_5_0, arg_5_1)
+					return ShipStatus.canDestroyShip(slot0, slot1)
 				end
 			end,
-			onSelected = function(arg_7_0)
-				arg_1_0.contextData.materialShipIds = arg_7_0
+			onSelected = function (slot0)
+				uv0.contextData.materialShipIds = slot0
 			end,
 			mode = DockyardScene.MODE_REMOULD,
 			hideTagFlags = ShipStatus.TAG_HIDE_DESTROY
@@ -75,7 +68,7 @@ function var_0_0.register(arg_1_0)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_8_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.REMOULD_SHIP_DONE,
 		PlayerProxy.UPDATED,
@@ -83,34 +76,33 @@ function var_0_0.listNotificationInterests(arg_8_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1:getName()
-	local var_9_1 = arg_9_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_9_0 == GAME.REMOULD_SHIP_DONE then
-		arg_9_0.viewComponent:setShipVO(var_9_1.ship)
-		arg_9_0.viewComponent:updateLines()
+	if slot1:getName() == GAME.REMOULD_SHIP_DONE then
+		slot0.viewComponent:setShipVO(slot3.ship)
+		slot0.viewComponent:updateLines()
 
-		if #var_9_1.awards ~= 0 then
-			arg_9_0:addSubLayers(Context.New({
+		if #slot3.awards ~= 0 then
+			slot0:addSubLayers(Context.New({
 				mediator = NewShipMediator,
 				viewComponent = NewShipLayer,
 				data = {
 					fromRemould = true,
-					ship = var_9_1.ship
+					ship = slot3.ship
 				}
 			}))
-			arg_9_0.viewComponent:initShipModel()
+			slot0.viewComponent:initShipModel()
 		end
 
-		arg_9_0.contextData.materialShipIds = nil
+		slot0.contextData.materialShipIds = nil
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("remould_ship_ok"))
-	elseif var_9_0 == PlayerProxy.UPDATED then
-		arg_9_0.viewComponent:setPlayer(var_9_1)
-	elseif var_9_0 == BagProxy.ITEM_UPDATED then
-		arg_9_0.viewComponent:setItems(arg_9_0.bagProxy:getData())
+	elseif slot2 == PlayerProxy.UPDATED then
+		slot0.viewComponent:setPlayer(slot3)
+	elseif slot2 == BagProxy.ITEM_UPDATED then
+		slot0.viewComponent:setItems(slot0.bagProxy:getData())
 	end
 end
 
-return var_0_0
+return slot0

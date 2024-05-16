@@ -1,45 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			pop = {},
-			arg_list = {
-				buff_id = 15301,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 15301,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"SN"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 15302,
-				maxWeaponNumber = 0,
-				check_weapon = true,
-				label = {
-					"SN"
-				}
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -209,5 +168,46 @@
 	stack = 1,
 	id = 15300,
 	icon = 15300,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			pop = {},
+			arg_list = {
+				buff_id = 15301,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 15301,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"SN"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 15302,
+				maxWeaponNumber = 0,
+				check_weapon = true,
+				label = {
+					"SN"
+				}
+			}
+		}
+	}
 }

@@ -1,166 +1,152 @@
-﻿local var_0_0 = class("SenrankaguraPtPage", import(".TemplatePage.PtTemplatePage"))
-local var_0_1 = {
+slot0 = class("SenrankaguraPtPage", import(".TemplatePage.PtTemplatePage"))
+slot1 = {
 	1,
 	9,
 	19
 }
-local var_0_2 = {
+slot2 = {
 	"normal1",
 	"normal2",
 	"normal3"
 }
-local var_0_3 = {
+slot3 = {
 	"action1",
 	"action2"
 }
-local var_0_4 = {
+slot4 = {
 	"hudongye_leijiPT_yin",
 	"hudongye_leijiPT_jin"
 }
-local var_0_5 = "ui/activityuipage/senrankaguraptpage_atlas"
-local var_0_6 = "ui-faguang2"
-local var_0_7 = 0.2
+slot5 = "ui/activityuipage/senrankaguraptpage_atlas"
+slot6 = "ui-faguang2"
+slot7 = 0.2
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.maskNode = arg_1_0:findTF("mask", arg_1_0.bg)
-	arg_1_0.bgImgTf = arg_1_0:findTF("bg_img", arg_1_0.bg)
-	arg_1_0.titleImgTf = arg_1_0:findTF("title_img", arg_1_0.bg)
-	arg_1_0.role = arg_1_0:findTF("role", arg_1_0.maskNode)
-	arg_1_0.title = arg_1_0:findTF("title", arg_1_0.maskNode)
-	arg_1_0.spineAnim = GetComponent(arg_1_0.role, "SpineAnimUI")
+	slot0.maskNode = slot0:findTF("mask", slot0.bg)
+	slot0.bgImgTf = slot0:findTF("bg_img", slot0.bg)
+	slot0.titleImgTf = slot0:findTF("title_img", slot0.bg)
+	slot0.role = slot0:findTF("role", slot0.maskNode)
+	slot0.title = slot0:findTF("title", slot0.maskNode)
+	slot0.spineAnim = GetComponent(slot0.role, "SpineAnimUI")
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	var_0_0.super.OnFirstFlush(arg_2_0)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
 
-	local var_2_0 = arg_2_0.ptData:GetLevelProgress()
-	local var_2_1 = arg_2_0:GetBeiBeiStage(var_2_0)
+	slot2 = slot0:GetBeiBeiStage(slot0.ptData:GetLevelProgress())
 
-	arg_2_0:SetBgImage(var_2_1)
-
-	local var_2_2 = var_0_2[var_2_1]
-
-	arg_2_0.spineAnim:SetAction(var_2_2, 0)
-	onButton(arg_2_0, arg_2_0.getBtn, function()
-		local var_3_0 = {}
-		local var_3_1 = arg_2_0.ptData:GetAward()
-		local var_3_2 = getProxy(PlayerProxy):getRawData()
-		local var_3_3 = pg.gameset.urpt_chapter_max.description[1]
-		local var_3_4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_3_3)
-		local var_3_5, var_3_6 = Task.StaticJudgeOverflow(var_3_2.gold, var_3_2.oil, var_3_4, true, true, {
+	slot0:SetBgImage(slot2)
+	slot0.spineAnim:SetAction(uv1[slot2], 0)
+	onButton(slot0, slot0.getBtn, function ()
+		slot0 = {}
+		slot1 = uv0.ptData:GetAward()
+		slot3 = getProxy(PlayerProxy):getRawData()
+		slot6, slot7 = Task.StaticJudgeOverflow(slot3.gold, slot3.oil, LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]), true, true, {
 			{
-				var_3_1.type,
-				var_3_1.id,
-				var_3_1.count
+				slot1.type,
+				slot1.id,
+				slot1.count
 			}
 		})
 
-		if var_3_5 then
-			table.insert(var_3_0, function(arg_4_0)
+		if slot6 then
+			table.insert(slot0, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = var_3_6,
-					onYes = arg_4_0
+					items = uv0,
+					onYes = slot0
 				})
 			end)
 		end
 
-		table.insert(var_3_0, function(arg_5_0)
-			arg_2_0:PlayAnim(arg_5_0)
+		table.insert(slot0, function (slot0)
+			uv0:PlayAnim(slot0)
 		end)
-		seriesAsync(var_3_0, function()
-			local var_6_0, var_6_1 = arg_2_0.ptData:GetResProgress()
+		seriesAsync(slot0, function ()
+			slot0, slot1 = uv0.ptData:GetResProgress()
 
-			arg_2_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg_2_0.ptData:GetId(),
-				arg1 = var_6_1
+				activity_id = uv0.ptData:GetId(),
+				arg1 = slot1
 			})
 		end)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_7_0)
-	var_0_0.super.OnUpdateFlush(arg_7_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 end
 
-function var_0_0.OnDestroy(arg_8_0)
-	if arg_8_0.spineAnim then
-		arg_8_0.spineAnim:SetActionCallBack(nil)
+function slot0.OnDestroy(slot0)
+	if slot0.spineAnim then
+		slot0.spineAnim:SetActionCallBack(nil)
 
-		arg_8_0.spineAnim = nil
+		slot0.spineAnim = nil
 	end
 end
 
-function var_0_0.GetBeiBeiStage(arg_9_0, arg_9_1)
-	local var_9_0 = 0
-
-	for iter_9_0, iter_9_1 in ipairs(var_0_1) do
-		if iter_9_1 <= arg_9_1 then
-			var_9_0 = var_9_0 + 1
+function slot0.GetBeiBeiStage(slot0, slot1)
+	for slot6, slot7 in ipairs(uv0) do
+		if slot7 <= slot1 then
+			slot2 = 0 + 1
 		end
 	end
 
-	return var_9_0
+	return slot2
 end
 
-function var_0_0.PlayAnim(arg_10_0, arg_10_1)
-	if arg_10_0.spineAnim then
-		local var_10_0 = arg_10_0.ptData:GetLevelProgress()
-		local var_10_1 = arg_10_0:GetBeiBeiStage(var_10_0)
-		local var_10_2 = var_0_2[var_10_1]
+function slot0.PlayAnim(slot0, slot1)
+	if slot0.spineAnim then
+		slot4 = uv0[slot0:GetBeiBeiStage(slot0.ptData:GetLevelProgress())]
 
-		if arg_10_0.playing then
+		if slot0.playing then
 			return
 		end
 
-		local var_10_3 = table.indexof(var_0_1, var_10_0)
-
-		if var_10_3 and var_10_3 > 1 then
-			arg_10_0.spineAnim:SetAction(var_0_3[var_10_3 - 1], 0)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_6)
-			arg_10_0.spineAnim:SetActionCallBack(function(arg_11_0)
-				if arg_11_0 == "action" then
-					arg_10_0.playing = true
+		if table.indexof(uv1, slot2) and slot5 > 1 then
+			slot0.spineAnim:SetAction(uv2[slot5 - 1], 0)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv3)
+			slot0.spineAnim:SetActionCallBack(function (slot0)
+				if slot0 == "action" then
+					uv0.playing = true
 				end
 
-				if arg_11_0 == "finish" then
-					arg_10_0.spineAnim:SetActionCallBack(nil)
-					arg_10_0.spineAnim:SetAction(var_10_2, 0)
+				if slot0 == "finish" then
+					uv0.spineAnim:SetActionCallBack(nil)
+					uv0.spineAnim:SetAction(uv1, 0)
 
-					arg_10_0.playing = false
+					uv0.playing = false
 
-					arg_10_0:SetBgImage(var_10_1, var_0_7, arg_10_1)
+					uv0:SetBgImage(uv2, uv3, uv4)
 				end
 			end)
 		else
-			arg_10_1()
+			slot1()
 		end
 	end
 end
 
-function var_0_0.SetBgImage(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	arg_12_2 = arg_12_2 or 0
+function slot0.SetBgImage(slot0, slot1, slot2, slot3)
+	slot2 = slot2 or 0
 
-	for iter_12_0 = 1, 3 do
-		local var_12_0 = findTF(arg_12_0.bgImgTf, "img" .. iter_12_0)
-		local var_12_1 = findTF(arg_12_0.titleImgTf, "img" .. iter_12_0)
-		local var_12_2 = iter_12_0 == arg_12_1 and 1 or 0
+	for slot7 = 1, 3 do
+		slot10 = slot7 == slot1 and 1 or 0
 
-		LeanTween.alpha(var_12_0, var_12_2, arg_12_2):setEase(LeanTweenType.easeOutQuad)
-		LeanTween.alpha(var_12_1, var_12_2, arg_12_2):setEase(LeanTweenType.easeOutQuad)
+		LeanTween.alpha(findTF(slot0.bgImgTf, "img" .. slot7), slot10, slot2):setEase(LeanTweenType.easeOutQuad)
+		LeanTween.alpha(findTF(slot0.titleImgTf, "img" .. slot7), slot10, slot2):setEase(LeanTweenType.easeOutQuad)
 
-		if arg_12_2 > 0 and arg_12_1 > 1 then
-			setActive(arg_12_0:findTF(var_0_4[arg_12_1 - 1], arg_12_0.bg), true)
+		if slot2 > 0 and slot1 > 1 then
+			setActive(slot0:findTF(uv0[slot1 - 1], slot0.bg), true)
 
-			if arg_12_3 then
-				LeanTween.delayedCall(1, System.Action(arg_12_3))
+			if slot3 then
+				LeanTween.delayedCall(1, System.Action(slot3))
 			end
 		end
 	end
 end
 
-return var_0_0
+return slot0

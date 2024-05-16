@@ -1,21 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				skill_id = 13382,
-				nationality = 1,
-				check_target = {
-					"TargetSelf",
-					"TargetNationality"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -36,5 +19,22 @@
 	stack = 1,
 	id = 13382,
 	icon = 13380,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				skill_id = 13382,
+				nationality = 1,
+				check_target = {
+					"TargetSelf",
+					"TargetNationality"
+				}
+			}
+		}
+	}
 }

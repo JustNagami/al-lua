@@ -1,4 +1,17 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行12次攻击，触发全弹发射-新奥尔良级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发全弹发射-新奥尔良级I",
+	stack = 1,
+	id = 20241,
+	icon = 20200,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,18 +37,5 @@
 				countType = 20240
 			}
 		}
-	},
-	{
-		desc = "主炮每进行12次攻击，触发全弹发射-新奥尔良级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发全弹发射-新奥尔良级I",
-	stack = 1,
-	id = 20241,
-	icon = 20200,
-	last_effect = ""
+	}
 }

@@ -1,157 +1,139 @@
-﻿local var_0_0 = class("BaseEntity", import(".BaseDispatcher"))
+slot0 = class("BaseEntity", import(".BaseDispatcher"))
+slot0.Fields = {}
+slot0.Listeners = {}
+slot1 = {
+	__index = function (slot0, slot1)
+		slot2 = rawget(slot0, "class")
 
-var_0_0.Fields = {}
-var_0_0.Listeners = {}
-
-local var_0_1 = {
-	__index = function(arg_1_0, arg_1_1)
-		local var_1_0 = rawget(arg_1_0, "class")
-		local var_1_1 = rawget(arg_1_0, "fields")[arg_1_1]
-
-		if var_1_1 ~= nil then
-			return var_1_1
+		if rawget(slot0, "fields")[slot1] ~= nil then
+			return slot4
 		end
 
-		local var_1_2 = rawget(arg_1_0, arg_1_1)
-
-		if var_1_2 ~= nil then
-			return var_1_2
+		if rawget(slot0, slot1) ~= nil then
+			return slot4
 		end
 
-		return var_1_0[arg_1_1]
+		return slot2[slot1]
 	end,
-	__newindex = function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = rawget(arg_2_0, "fields")
-		local var_2_1 = rawget(arg_2_0, "class")
+	__newindex = function (slot0, slot1, slot2)
+		slot3 = rawget(slot0, "fields")
+		slot4 = rawget(slot0, "class")
 
-		while var_2_1 ~= nil and var_2_1 ~= var_0_0 do
-			if var_2_1.Fields[arg_2_1] ~= nil then
-				assert(type(arg_2_2) == "nil" or type(arg_2_2) == var_2_1.Fields[arg_2_1], "Field type mismatch: " .. var_2_1.__cname .. "." .. arg_2_1)
+		while slot4 ~= nil and slot4 ~= uv0 do
+			if slot4.Fields[slot1] ~= nil then
+				assert(type(slot2) == "nil" or type(slot2) == slot4.Fields[slot1], "Field type mismatch: " .. slot4.__cname .. "." .. slot1)
 
-				var_2_0[arg_2_1] = arg_2_2
+				slot3[slot1] = slot2
 
 				return
 			end
 
-			var_2_1 = var_2_1.super
+			slot4 = slot4.super
 		end
 
-		assert(false, "Field miss: " .. rawget(arg_2_0, "class").__cname .. "." .. arg_2_1)
+		assert(false, "Field miss: " .. rawget(slot0, "class").__cname .. "." .. slot1)
 	end
 }
 
-function var_0_0.Ctor(arg_3_0, ...)
-	var_0_0.super.Ctor(arg_3_0)
+function slot0.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0)
+	rawset(slot0, "fields", {})
 
-	local var_3_0 = {}
+	slot2 = slot0.class
 
-	rawset(arg_3_0, "fields", var_3_0)
+	while slot2 ~= nil and slot2 ~= uv0 do
+		for slot6, slot7 in pairs(slot2.Listeners) do
+			assert(slot2.Fields[slot6] == nil, "Repeated field: " .. slot2.__cname .. "." .. slot6)
 
-	local var_3_1 = arg_3_0.class
-
-	while var_3_1 ~= nil and var_3_1 ~= var_0_0 do
-		for iter_3_0, iter_3_1 in pairs(var_3_1.Listeners) do
-			assert(var_3_1.Fields[iter_3_0] == nil, "Repeated field: " .. var_3_1.__cname .. "." .. iter_3_0)
-
-			local var_3_2 = var_3_1[iter_3_1]
-
-			var_3_0[iter_3_0] = var_3_0[iter_3_0] or function(...)
-				var_3_2(arg_3_0, ...)
+			slot8 = slot2[slot7]
+			slot1[slot6] = slot1[slot6] or function (...)
+				uv0(uv1, ...)
 			end
 		end
 
-		var_3_1 = var_3_1.super
+		slot2 = slot2.super
 	end
 
-	setmetatable(arg_3_0, var_0_1)
-	arg_3_0:Build(...)
+	setmetatable(slot0, uv1)
+	slot0:Build(...)
 end
 
-function var_0_0.Build(arg_5_0)
-	return
+function slot0.Build(slot0)
 end
 
-function var_0_0.Dispose(arg_6_0)
-	arg_6_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-function var_0_0.Clear(arg_7_0)
-	var_0_0.super.ClearListeners(arg_7_0)
+function slot0.Clear(slot0)
+	uv0.super.ClearListeners(slot0)
 
-	local var_7_0 = rawget(arg_7_0, "class")
-	local var_7_1 = rawget(arg_7_0, "fields")
+	slot1 = rawget(slot0, "class")
+	slot2 = rawget(slot0, "fields")
 
-	while var_7_0 ~= nil and var_7_0 ~= var_0_0 do
-		for iter_7_0, iter_7_1 in pairs(var_7_0.Fields) do
-			var_7_1[iter_7_0] = nil
+	while slot1 ~= nil and slot1 ~= uv0 do
+		for slot6, slot7 in pairs(slot1.Fields) do
+			slot2[slot6] = nil
 		end
 
-		var_7_0 = var_7_0.super
+		slot1 = slot1.super
 	end
 end
 
-function var_0_0.Clone(arg_8_0)
-	return var_0_0.Clone_Copy(arg_8_0, {})
+function slot0.Clone(slot0)
+	return uv0.Clone_Copy(slot0, {})
 end
 
-function var_0_0.Clone_Copy(arg_9_0, arg_9_1)
-	if type(arg_9_0) ~= "table" then
-		return arg_9_0
-	elseif arg_9_1[arg_9_0] then
-		return arg_9_1[arg_9_0]
+function slot0.Clone_Copy(slot0, slot1)
+	if type(slot0) ~= "table" then
+		return slot0
+	elseif slot1[slot0] then
+		return slot1[slot0]
 	end
 
-	if type(arg_9_0) == "table" and instanceof(arg_9_0, var_0_0) then
-		local var_9_0 = rawget(arg_9_0, "class")
-		local var_9_1 = var_9_0.New()
+	if type(slot0) == "table" and instanceof(slot0, uv0) then
+		slot1[slot0] = rawget(slot0, "class").New()
+		slot4 = rawget(slot0, "fields")
 
-		arg_9_1[arg_9_0] = var_9_1
-
-		local var_9_2 = rawget(arg_9_0, "fields")
-
-		while var_9_0 ~= nil and var_9_0 ~= var_0_0 do
-			for iter_9_0, iter_9_1 in pairs(var_9_0.Fields) do
-				var_9_1[iter_9_0] = var_0_0.Clone_Copy(var_9_2[iter_9_0], arg_9_1)
+		while slot2 ~= nil and slot2 ~= uv0 do
+			for slot8, slot9 in pairs(slot2.Fields) do
+				slot3[slot8] = uv0.Clone_Copy(slot4[slot8], slot1)
 			end
 
-			var_9_0 = var_9_0.super
+			slot2 = slot2.super
 		end
 
-		return var_9_1
+		return slot3
 	else
-		local var_9_3 = {}
+		slot1[slot0] = {}
 
-		arg_9_1[arg_9_0] = var_9_3
-
-		local var_9_4 = type(arg_9_0) == "table" and arg_9_0.__ctype == 2
-
-		for iter_9_2, iter_9_3 in pairs(arg_9_0) do
-			if var_9_4 and iter_9_2 == "class" then
-				var_9_3[iter_9_2] = iter_9_3
+		for slot7, slot8 in pairs(slot0) do
+			if type(slot0) == "table" and slot0.__ctype == 2 and slot7 == "class" then
+				slot2[slot7] = slot8
 			else
-				var_9_3[var_0_0.Clone_Copy(iter_9_2, arg_9_1)] = var_0_0.Clone_Copy(iter_9_3, arg_9_1)
+				slot2[uv0.Clone_Copy(slot7, slot1)] = uv0.Clone_Copy(slot8, slot1)
 			end
 		end
 
-		return setmetatable(var_9_3, getmetatable(arg_9_0))
+		return setmetatable(slot2, getmetatable(slot0))
 	end
 end
 
-function var_0_0.Trans(arg_10_0, arg_10_1)
-	assert(superof(arg_10_1, var_0_0), "class error: without super of BaseEntity")
+function slot0.Trans(slot0, slot1)
+	assert(superof(slot1, uv0), "class error: without super of BaseEntity")
 
-	local var_10_0 = arg_10_1.New()
-	local var_10_1 = rawget(arg_10_0, "fields")
+	slot2 = slot1.New()
+	slot3 = rawget(slot0, "fields")
 
-	while arg_10_1 ~= nil and arg_10_1 ~= var_0_0 do
-		for iter_10_0, iter_10_1 in pairs(arg_10_1.Fields) do
-			var_10_0[iter_10_0] = var_10_1[iter_10_0]
+	while slot1 ~= nil and slot1 ~= uv0 do
+		for slot7, slot8 in pairs(slot1.Fields) do
+			slot2[slot7] = slot3[slot7]
 		end
 
-		arg_10_1 = arg_10_1.super
+		slot1 = slot1.super
 	end
 
-	return var_10_0
+	return slot2
 end
 
-return var_0_0
+return slot0

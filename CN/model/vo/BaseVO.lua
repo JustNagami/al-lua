@@ -1,65 +1,54 @@
-﻿local var_0_0 = class("BaseVO")
+slot0 = class("BaseVO")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	for iter_1_0, iter_1_1 in pairs(arg_1_1) do
-		arg_1_0[iter_1_0] = iter_1_1
+function slot0.Ctor(slot0, slot1)
+	for slot5, slot6 in pairs(slot1) do
+		slot0[slot5] = slot6
 	end
 end
 
-function var_0_0.display(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_1 == "loaded" or not arg_2_2 then
+function slot0.display(slot0, slot1, slot2)
+	if slot1 == "loaded" or not slot2 then
 		return
 	end
 
-	local var_2_0 = arg_2_0.__cname .. " id: " .. tostring(arg_2_0.id) .. " " .. (arg_2_1 or ".")
-
-	for iter_2_0, iter_2_1 in pairs(arg_2_0) do
-		if iter_2_0 ~= "class" then
-			local var_2_1 = type(iter_2_1)
-
-			var_2_0 = var_2_0 .. "\n" .. iter_2_0 .. ":" .. tostring(iter_2_1)
-
-			if var_2_1 == "table" then
-				var_2_0 = var_2_0 .. " ["
-
-				for iter_2_2, iter_2_3 in pairs(iter_2_1) do
-					var_2_0 = var_2_0 .. tostring(iter_2_3) .. ", "
+	for slot7, slot8 in pairs(slot0) do
+		if slot7 ~= "class" then
+			if type(slot8) == "table" then
+				for slot13, slot14 in pairs(slot8) do
+					slot3 = slot0.__cname .. " id: " .. tostring(slot0.id) .. " " .. (slot1 or ".") .. "\n" .. slot7 .. ":" .. tostring(slot8) .. " [" .. tostring(slot14) .. ", "
 				end
 
-				var_2_0 = var_2_0 .. "]"
+				slot3 = slot3 .. "]"
 			end
 		end
 	end
 
-	print(var_2_0)
+	print(slot3)
 end
 
-function var_0_0.clone(arg_3_0)
-	return Clone(arg_3_0)
+function slot0.clone(slot0)
+	return Clone(slot0)
 end
 
-function var_0_0.bindConfigTable(arg_4_0)
-	return
+function slot0.bindConfigTable(slot0)
 end
 
-function var_0_0.GetConfigID(arg_5_0)
-	return arg_5_0.configId
+function slot0.GetConfigID(slot0)
+	return slot0.configId
 end
 
-function var_0_0.getConfigTable(arg_6_0)
-	local var_6_0 = arg_6_0:bindConfigTable()
+function slot0.getConfigTable(slot0)
+	slot1 = slot0:bindConfigTable()
 
-	assert(var_6_0, "should bindConfigTable() first: " .. arg_6_0.__cname)
+	assert(slot1, "should bindConfigTable() first: " .. slot0.__cname)
 
-	return var_6_0[arg_6_0.configId]
+	return slot1[slot0.configId]
 end
 
-function var_0_0.getConfig(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_0:getConfigTable()
+function slot0.getConfig(slot0, slot1)
+	assert(slot0:getConfigTable() ~= nil, "Config missed, type -" .. slot0.__cname .. " configId: " .. tostring(slot0.configId))
 
-	assert(var_7_0 ~= nil, "Config missed, type -" .. arg_7_0.__cname .. " configId: " .. tostring(arg_7_0.configId))
-
-	return var_7_0[arg_7_1]
+	return slot2[slot1]
 end
 
-return var_0_0
+return slot0

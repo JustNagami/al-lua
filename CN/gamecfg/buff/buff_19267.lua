@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "加斯科涅弹幕",
+	init_effect = "",
+	time = 2,
+	color = "red",
+	picture = "",
+	desc = "检查TAG",
+	stack = 1,
+	id = 19267,
+	icon = 19260,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -38,26 +59,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "加斯科涅弹幕",
-	init_effect = "",
-	time = 2,
-	color = "red",
-	picture = "",
-	desc = "检查TAG",
-	stack = 1,
-	id = 19267,
-	icon = 19260,
-	last_effect = ""
+	}
 }

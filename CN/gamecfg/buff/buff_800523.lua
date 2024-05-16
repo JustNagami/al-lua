@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 5,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 800523,
+	icon = 800520,
+	last_effect = "",
 	effect_list = {
 		{
 			id = 1,
@@ -25,10 +45,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_1_0)
+				centerPosFun = function (slot0)
 					return Vector3(3, -1.8, 0.5)
 				end,
-				rotationFun = function(arg_2_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -54,25 +74,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 5,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 800523,
-	icon = 800520,
-	last_effect = ""
+	}
 }

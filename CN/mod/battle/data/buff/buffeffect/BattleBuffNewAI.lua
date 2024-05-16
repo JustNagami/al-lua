@@ -1,27 +1,25 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleBuffNewAI = class("BattleBuffNewAI", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffNewAI.__name = "BattleBuffNewAI"
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleBuffNewAI = class("BattleBuffNewAI", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffNewAI.__name = "BattleBuffNewAI"
-
-function var_0_0.Battle.BattleBuffNewAI.Ctor(arg_1_0, arg_1_1)
-	var_0_0.Battle.BattleBuffNewAI.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Battle.BattleBuffNewAI.Ctor(slot0, slot1)
+	uv0.Battle.BattleBuffNewAI.super.Ctor(slot0, slot1)
 end
 
-function var_0_0.Battle.BattleBuffNewAI.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._AIOnAttach = arg_2_0._tempData.arg_list.ai_onAttach
-	arg_2_0._AIOnRemove = arg_2_0._tempData.arg_list.ai_onRemove
+function slot0.Battle.BattleBuffNewAI.SetArgs(slot0, slot1, slot2)
+	slot0._AIOnAttach = slot0._tempData.arg_list.ai_onAttach
+	slot0._AIOnRemove = slot0._tempData.arg_list.ai_onRemove
 end
 
-function var_0_0.Battle.BattleBuffNewAI.onAttach(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_0._AIOnAttach then
-		arg_3_1:SetAI(arg_3_0._AIOnAttach)
+function slot0.Battle.BattleBuffNewAI.onAttach(slot0, slot1, slot2)
+	if slot0._AIOnAttach then
+		slot1:SetAI(slot0._AIOnAttach)
 	end
 end
 
-function var_0_0.Battle.BattleBuffNewAI.onRemove(arg_4_0, arg_4_1, arg_4_2)
-	if arg_4_0._AIOnRemove then
-		arg_4_1:SetAI(arg_4_0._AIOnRemove)
+function slot0.Battle.BattleBuffNewAI.onRemove(slot0, slot1, slot2)
+	if slot0._AIOnRemove then
+		slot1:SetAI(slot0._AIOnRemove)
 	end
 end

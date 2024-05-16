@@ -1,45 +1,42 @@
-﻿local var_0_0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
+slot0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
+slot0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
+slot0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
 
-var_0_0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
-var_0_0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.BUY_FURNITURE, {
-			furnitureIds = arg_2_1,
-			type = arg_2_2
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.BUY_FURNITURE, {
+			furnitureIds = slot1,
+			type = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_CHARGE, function(arg_3_0, arg_3_1)
-		if arg_1_0.contextData.onDeattch then
-			arg_1_0.contextData.onDeattch = nil
+	slot0:bind(uv0.ON_CHARGE, function (slot0, slot1)
+		if uv0.contextData.onDeattch then
+			uv0.contextData.onDeattch = nil
 		end
 
-		local var_3_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(CourtYardMediator)
-
-		if var_3_0 then
-			var_3_0.data.skipToCharge = true
+		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(CourtYardMediator) then
+			slot2.data.skipToCharge = true
 		end
 
-		if arg_3_1 == PlayerConst.ResDiamond then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+		if slot1 == PlayerConst.ResDiamond then
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_DIAMOND
 			})
-		elseif arg_3_1 == PlayerConst.ResDormMoney then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
+		elseif slot1 == PlayerConst.ResDormMoney then
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 	end)
-	arg_1_0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
-	arg_1_0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
+	slot0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
+	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
 end
 
-function var_0_0.remove(arg_4_0)
-	if arg_4_0.contextData.onRemove then
-		arg_4_0.contextData.onRemove()
+function slot0.remove(slot0)
+	if slot0.contextData.onRemove then
+		slot0.contextData.onRemove()
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.BUY_FURNITURE_DONE,
@@ -47,18 +44,16 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
-	local var_6_2 = arg_6_1:getType()
+function slot0.handleNotification(slot0, slot1)
+	slot4 = slot1:getType()
 
-	if var_6_0 == PlayerProxy.UPDATED then
-		arg_6_0.viewComponent:PlayerUpdated(var_6_1)
-	elseif var_6_0 == GAME.BUY_FURNITURE_DONE then
-		arg_6_0.viewComponent:FurnituresUpdated(var_6_2)
-	elseif var_6_0 == DormProxy.DORM_UPDATEED then
-		arg_6_0.viewComponent:DormUpdated(getProxy(DormProxy):getRawData())
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:PlayerUpdated(slot1:getBody())
+	elseif slot2 == GAME.BUY_FURNITURE_DONE then
+		slot0.viewComponent:FurnituresUpdated(slot4)
+	elseif slot2 == DormProxy.DORM_UPDATEED then
+		slot0.viewComponent:DormUpdated(getProxy(DormProxy):getRawData())
 	end
 end
 
-return var_0_0
+return slot0

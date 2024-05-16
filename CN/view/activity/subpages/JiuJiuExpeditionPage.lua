@@ -1,50 +1,43 @@
-﻿local var_0_0 = class("JiuJiuExpeditionPage", import("...base.BaseActivityPage"))
+slot0 = class("JiuJiuExpeditionPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.slider = arg_1_0:findTF("slider", arg_1_0.bg)
-	arg_1_0.step = arg_1_0:findTF("step", arg_1_0.bg)
-	arg_1_0.progress = arg_1_0:findTF("progress", arg_1_0.bg)
-	arg_1_0.awardTF = arg_1_0:findTF("award", arg_1_0.bg)
-	arg_1_0.battleBtn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
-	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
-	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
-	arg_1_0.help = arg_1_0:findTF("help", arg_1_0.bg)
-	arg_1_0.book = arg_1_0:findTF("book", arg_1_0.bg)
-	arg_1_0.startGame = arg_1_0:findTF("startGame", arg_1_0.bg)
-	arg_1_0.desc = arg_1_0:findTF("desc", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.slider = slot0:findTF("slider", slot0.bg)
+	slot0.step = slot0:findTF("step", slot0.bg)
+	slot0.progress = slot0:findTF("progress", slot0.bg)
+	slot0.awardTF = slot0:findTF("award", slot0.bg)
+	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
+	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
+	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
+	slot0.help = slot0:findTF("help", slot0.bg)
+	slot0.book = slot0:findTF("book", slot0.bg)
+	slot0.startGame = slot0:findTF("startGame", slot0.bg)
+	slot0.desc = slot0:findTF("desc", slot0.bg)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity:getConfig("config_data")
+function slot0.OnDataSetting(slot0)
+	slot0.taskIDList = _.flatten(slot0.activity:getConfig("config_data"))
+	slot0.dropList = {}
+	slot0.descs = {}
 
-	arg_2_0.taskIDList = _.flatten(var_2_0)
-	arg_2_0.dropList = {}
-	arg_2_0.descs = {}
-
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0.taskIDList) do
-		local var_2_1 = pg.task_data_template[iter_2_1].award_display[1]
-
-		table.insert(arg_2_0.dropList, Clone(var_2_1))
-
-		local var_2_2 = pg.task_data_template[iter_2_1].desc
-
-		table.insert(arg_2_0.descs, var_2_2)
+	for slot5, slot6 in ipairs(slot0.taskIDList) do
+		table.insert(slot0.dropList, Clone(pg.task_data_template[slot6].award_display[1]))
+		table.insert(slot0.descs, pg.task_data_template[slot6].desc)
 	end
 
-	return updateActivityTaskStatus(arg_2_0.activity)
+	return updateActivityTaskStatus(slot0.activity)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	onButton(arg_3_0, arg_3_0.battleBtn, function()
-		if arg_3_0.curTaskVO then
-			arg_3_0:emit(ActivityMediator.ON_TASK_GO, arg_3_0.curTaskVO)
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		if uv0.curTaskVO then
+			uv0:emit(ActivityMediator.ON_TASK_GO, uv0.curTaskVO)
 		end
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.getBtn, function()
-		arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, arg_3_0.curTaskVO)
+	onButton(slot0, slot0.getBtn, function ()
+		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv0.curTaskVO)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.help, function()
+	onButton(slot0, slot0.help, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.jiujiu_expedition_help.tip
@@ -52,68 +45,55 @@ function var_0_0.OnFirstFlush(arg_3_0)
 	end, SFX_PANEL)
 
 	if PLATFORM_CODE ~= PLATFORM_JP then
-		setActive(arg_3_0.book, false)
+		setActive(slot0.book, false)
 	else
-		local var_3_0, var_3_1, var_3_2, var_3_3 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
+		slot1, slot2, slot3, slot4 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
 
-		setActive(findTF(arg_3_0.book, "tip"), var_3_3 < var_3_2)
-		onButton(arg_3_0, arg_3_0.book, function()
-			arg_3_0:emit(ActivityMediator.OPEN_LAYER, Context.New({
+		setActive(findTF(slot0.book, "tip"), slot4 < slot3)
+		onButton(slot0, slot0.book, function ()
+			uv0:emit(ActivityMediator.OPEN_LAYER, Context.New({
 				viewComponent = JiuJiuExpeditionCollectionLayer,
 				mediator = JiuJiuExpeditionCollectionMediator
 			}))
 		end, SFX_PANEL)
 	end
 
-	onButton(arg_3_0, arg_3_0.startGame, function()
-		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.JIUJIU_EXPEDITION)
+	onButton(slot0, slot0.startGame, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.JIUJIU_EXPEDITION)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	local var_9_0, var_9_1 = getActivityTask(arg_9_0.activity)
+function slot0.OnUpdateFlush(slot0)
+	slot1, slot2 = getActivityTask(slot0.activity)
+	slot0.curTaskVO = slot2
 
-	arg_9_0.curTaskVO = var_9_1
+	setText(slot0.desc, slot0.curTaskVO:getConfig("desc"))
 
-	setText(arg_9_0.desc, arg_9_0.curTaskVO:getConfig("desc"))
+	slot3 = slot2:getConfig("award_display")[1]
 
-	local var_9_2 = var_9_1:getConfig("award_display")[1]
-	local var_9_3 = {
-		type = var_9_2[1],
-		id = var_9_2[2],
-		count = var_9_2[3]
-	}
-
-	updateDrop(arg_9_0.awardTF, var_9_3)
-	onButton(arg_9_0, arg_9_0.awardTF, function()
-		arg_9_0:emit(BaseUI.ON_DROP, var_9_3)
+	updateDrop(slot0.awardTF, {
+		type = slot3[1],
+		id = slot3[2],
+		count = slot3[3]
+	})
+	onButton(slot0, slot0.awardTF, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
+	setText(slot0.progress, (slot2:getConfig("target_num") <= slot2:getProgress() and setColorStr(slot5, COLOR_GREEN) or slot5) .. "/" .. slot6)
+	setSlider(slot0.slider, 0, slot6, slot5)
+	setText(slot0.step, table.indexof(slot0.taskIDList, slot1, 1) .. "/" .. #slot0.taskIDList)
+	setActive(slot0.battleBtn, slot2:getTaskStatus() == 0)
+	setActive(slot0.getBtn, slot8 == 1)
+	setActive(slot0.gotBtn, slot8 == 2)
 
-	local var_9_4 = var_9_1:getProgress()
-	local var_9_5 = var_9_1:getConfig("target_num")
-
-	setText(arg_9_0.progress, (var_9_5 <= var_9_4 and setColorStr(var_9_4, COLOR_GREEN) or var_9_4) .. "/" .. var_9_5)
-	setSlider(arg_9_0.slider, 0, var_9_5, var_9_4)
-
-	local var_9_6 = table.indexof(arg_9_0.taskIDList, var_9_0, 1)
-
-	setText(arg_9_0.step, var_9_6 .. "/" .. #arg_9_0.taskIDList)
-
-	local var_9_7 = var_9_1:getTaskStatus()
-
-	setActive(arg_9_0.battleBtn, var_9_7 == 0)
-	setActive(arg_9_0.getBtn, var_9_7 == 1)
-	setActive(arg_9_0.gotBtn, var_9_7 == 2)
-
-	if var_9_7 == 2 then
-		arg_9_0.finishedIndex = var_9_6
+	if slot8 == 2 then
+		slot0.finishedIndex = slot7
 	else
-		arg_9_0.finishedIndex = var_9_6 - 1
+		slot0.finishedIndex = slot7 - 1
 	end
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

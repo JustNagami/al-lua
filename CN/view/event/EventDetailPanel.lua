@@ -1,189 +1,173 @@
-﻿EventConst = require("view/event/EventConst")
+EventConst = require("view/event/EventConst")
+slot0 = class("EventDetailPanel")
 
-local var_0_0 = class("EventDetailPanel")
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+	slot0.go = slot1
+	slot0.tr = slot1.transform
+	slot0.dispatch = slot2
+	slot0.btn = slot0:findTF("btn").gameObject
 
-	arg_1_0.go = arg_1_1
-	arg_1_0.tr = arg_1_1.transform
-	arg_1_0.dispatch = arg_1_2
-	arg_1_0.btn = arg_1_0:findTF("btn").gameObject
+	setText(findTF(slot0.tr, "btn_recommend/text"), pg.gametip.event_ui_recommend.tip)
+	setText(findTF(slot0.tr, "btn_recommend_disable/text"), pg.gametip.event_ui_recommend.tip)
+	setText(findTF(slot0.tr, "consume/label"), pg.gametip.event_ui_consume.tip)
+	setText(findTF(slot0.tr, "btn/start/text"), pg.gametip.event_ui_start.tip)
+	setText(findTF(slot0.tr, "btn_disable/text"), pg.gametip.event_ui_start.tip)
+	setText(findTF(slot0.tr, "btn/giveup/text"), pg.gametip.event_ui_giveup.tip)
+	setText(findTF(slot0.tr, "btn/finish/text"), pg.gametip.event_ui_finish.tip)
 
-	setText(findTF(arg_1_0.tr, "btn_recommend/text"), pg.gametip.event_ui_recommend.tip)
-	setText(findTF(arg_1_0.tr, "btn_recommend_disable/text"), pg.gametip.event_ui_recommend.tip)
-	setText(findTF(arg_1_0.tr, "consume/label"), pg.gametip.event_ui_consume.tip)
-	setText(findTF(arg_1_0.tr, "btn/start/text"), pg.gametip.event_ui_start.tip)
-	setText(findTF(arg_1_0.tr, "btn_disable/text"), pg.gametip.event_ui_start.tip)
-	setText(findTF(arg_1_0.tr, "btn/giveup/text"), pg.gametip.event_ui_giveup.tip)
-	setText(findTF(arg_1_0.tr, "btn/finish/text"), pg.gametip.event_ui_finish.tip)
+	slot0.conditions = findTF(slot0.tr, "conditions")
+	slot0.condition1 = findTF(slot0.conditions, "condition_1/mask/Text")
+	slot0.condition2 = findTF(slot0.conditions, "condition_2/mask/Text")
+	slot0.condition3 = findTF(slot0.conditions, "condition_3/mask/Text")
+	slot0.consume = slot0:findTF("consume/Text")
+	slot0.leftShips = slot0:findTF("frame/ship_contain_left")
+	slot0.rightShips = slot0:findTF("frame/ship_contain_right")
+	slot0.disabeleBtn = slot0:findTF("btn_disable").gameObject
+	slot0.recommentBtn = slot0:findTF("btn_recommend")
+	slot0.recommentDisable = slot0:findTF("btn_recommend_disable")
+	slot0.usePrevFormationBtn = slot0:findTF("use_prev_formation")
+	slot0.shipItems = {}
 
-	arg_1_0.conditions = findTF(arg_1_0.tr, "conditions")
-	arg_1_0.condition1 = findTF(arg_1_0.conditions, "condition_1/mask/Text")
-	arg_1_0.condition2 = findTF(arg_1_0.conditions, "condition_2/mask/Text")
-	arg_1_0.condition3 = findTF(arg_1_0.conditions, "condition_3/mask/Text")
-	arg_1_0.consume = arg_1_0:findTF("consume/Text")
-	arg_1_0.leftShips = arg_1_0:findTF("frame/ship_contain_left")
-	arg_1_0.rightShips = arg_1_0:findTF("frame/ship_contain_right")
-	arg_1_0.disabeleBtn = arg_1_0:findTF("btn_disable").gameObject
-	arg_1_0.recommentBtn = arg_1_0:findTF("btn_recommend")
-	arg_1_0.recommentDisable = arg_1_0:findTF("btn_recommend_disable")
-	arg_1_0.usePrevFormationBtn = arg_1_0:findTF("use_prev_formation")
-	arg_1_0.shipItems = {}
-
-	eachChild(arg_1_0.leftShips, function(arg_2_0)
-		table.insert(arg_1_0.shipItems, 1, arg_2_0)
+	eachChild(slot0.leftShips, function (slot0)
+		table.insert(uv0.shipItems, 1, slot0)
 	end)
-	eachChild(arg_1_0.rightShips, function(arg_3_0)
-		table.insert(arg_1_0.shipItems, 4, arg_3_0)
+	eachChild(slot0.rightShips, function (slot0)
+		table.insert(uv0.shipItems, 4, slot0)
 	end)
-	onButton(arg_1_0, arg_1_0.btn, function()
-		arg_1_0:onFuncClick()
+	onButton(slot0, slot0.btn, function ()
+		uv0:onFuncClick()
 	end, SFX_PANEL)
-	onButton(arg_1_0, arg_1_0.recommentBtn, function()
-		local var_5_0 = getProxy(BayProxy)
-		local var_5_1 = var_5_0:getDelegationRecommendShips(arg_1_0.event)
-		local var_5_2 = var_5_0:getDelegationRecommendShipsLV1(arg_1_0.event)
+	onButton(slot0, slot0.recommentBtn, function ()
+		slot0 = getProxy(BayProxy)
 
-		if #var_5_1 == 0 and #var_5_2 > 0 then
+		if #slot0:getDelegationRecommendShips(uv0.event) == 0 and #slot0:getDelegationRecommendShipsLV1(uv0.event) > 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("event_recommend_level1"),
-				onYes = function()
-					arg_1_0.dispatch(EventConst.EVENT_RECOMMEND_LEVEL1, arg_1_0.event)
+				onYes = function ()
+					uv0.dispatch(EventConst.EVENT_RECOMMEND_LEVEL1, uv0.event)
 				end
 			})
 		else
-			arg_1_0.dispatch(EventConst.EVENT_RECOMMEND, arg_1_0.event)
+			uv0.dispatch(EventConst.EVENT_RECOMMEND, uv0.event)
 		end
 	end)
-	onButton(arg_1_0, arg_1_0.usePrevFormationBtn, function()
-		arg_1_0:UsePrevFormation()
+	onButton(slot0, slot0.usePrevFormationBtn, function ()
+		uv0:UsePrevFormation()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Update(arg_8_0, arg_8_1, arg_8_2)
-	arg_8_0.index = arg_8_1
-	arg_8_0.event = arg_8_2
+function slot0.Update(slot0, slot1, slot2)
+	slot0.index = slot1
+	slot0.event = slot2
 
-	arg_8_0:Flush()
+	slot0:Flush()
 end
 
-function var_0_0.UsePrevFormation(arg_9_0)
-	if arg_9_0.event and arg_9_0.event:ExistPrevFormation() then
-		local var_9_0 = arg_9_0.event:GetPrevFormation()
-
-		arg_9_0.dispatch(EventConst.EVEN_USE_PREV_FORMATION, arg_9_0.event, var_9_0)
+function slot0.UsePrevFormation(slot0)
+	if slot0.event and slot0.event:ExistPrevFormation() then
+		slot0.dispatch(EventConst.EVEN_USE_PREV_FORMATION, slot0.event, slot0.event:GetPrevFormation())
 	end
 end
 
-function var_0_0.Flush(arg_10_0)
-	setActive(arg_10_0.usePrevFormationBtn, arg_10_0.event:ExistPrevFormation() and arg_10_0.event.state == EventInfo.StateNone and arg_10_0.event:CanRecordPrevFormation())
-	eachChild(arg_10_0.btn, function(arg_11_0)
-		if arg_10_0.event.state == EventInfo.StateNone and arg_11_0.name == "start" then
-			SetActive(arg_11_0, true)
-		elseif arg_10_0.event.state == EventInfo.StateActive and arg_11_0.name == "giveup" then
-			SetActive(arg_11_0, true)
-		elseif arg_10_0.event.state == EventInfo.StateFinish and arg_11_0.name == "finish" then
-			SetActive(arg_11_0, true)
+function slot0.Flush(slot0)
+	setActive(slot0.usePrevFormationBtn, slot0.event:ExistPrevFormation() and slot0.event.state == EventInfo.StateNone and slot0.event:CanRecordPrevFormation())
+	eachChild(slot0.btn, function (slot0)
+		if uv0.event.state == EventInfo.StateNone and slot0.name == "start" then
+			SetActive(slot0, true)
+		elseif uv0.event.state == EventInfo.StateActive and slot0.name == "giveup" then
+			SetActive(slot0, true)
+		elseif uv0.event.state == EventInfo.StateFinish and slot0.name == "finish" then
+			SetActive(slot0, true)
 		else
-			SetActive(arg_11_0, false)
+			SetActive(slot0, false)
 		end
 	end)
 
-	local var_10_0 = arg_10_0.event:reachLevel()
-	local var_10_1 = arg_10_0.event:reachNum()
-	local var_10_2 = arg_10_0.event:reachTypes()
+	slot2 = slot0.event:reachNum()
+	slot3 = slot0.event:reachTypes()
 
-	SetActive(arg_10_0.disabeleBtn, not var_10_0 or not var_10_1 or not var_10_2)
+	SetActive(slot0.disabeleBtn, not slot0.event:reachLevel() or not slot2 or not slot3)
 
-	local var_10_3 = arg_10_0.event.ships
-	local var_10_4 = arg_10_0.event.template
-	local var_10_5 = arg_10_0:setConditionStr(i18n("event_condition_ship_level", var_10_4.ship_lv), var_10_0)
+	slot4 = slot0.event.ships
+	slot5 = slot0.event.template
 
-	setScrollText(arg_10_0.condition1, var_10_5)
-	setActive(findTF(arg_10_0.conditions, "condition_1/mark"), var_10_0)
-	setActive(findTF(arg_10_0.conditions, "condition_1/mark1"), not var_10_0)
+	setScrollText(slot0.condition1, slot0:setConditionStr(i18n("event_condition_ship_level", slot5.ship_lv), slot1))
+	setActive(findTF(slot0.conditions, "condition_1/mark"), slot1)
+	setActive(findTF(slot0.conditions, "condition_1/mark1"), not slot1)
+	setScrollText(slot0.condition2, slot0:setConditionStr(i18n("event_condition_ship_count", slot5.ship_num), slot2))
+	setActive(findTF(slot0.conditions, "condition_2/mark"), slot2)
+	setActive(findTF(slot0.conditions, "condition_2/mark1"), not slot2)
+	setScrollText(slot0.condition3, slot0:setConditionStr(slot0.event:getTypesStr(), slot3))
+	setActive(findTF(slot0.conditions, "condition_3/mark"), slot3)
+	setActive(findTF(slot0.conditions, "condition_3/mark1"), not slot3)
+	setText(slot0.consume, slot0.event:getOilConsume())
 
-	local var_10_6 = arg_10_0:setConditionStr(i18n("event_condition_ship_count", var_10_4.ship_num), var_10_1)
+	for slot12, slot13 in ipairs(slot0.shipItems) do
+		slot16 = slot12 <= #slot4
 
-	setScrollText(arg_10_0.condition2, var_10_6)
-	setActive(findTF(arg_10_0.conditions, "condition_2/mark"), var_10_1)
-	setActive(findTF(arg_10_0.conditions, "condition_2/mark1"), not var_10_1)
+		SetActive(slot13:Find("shiptpl"), slot16)
+		SetActive(slot13:Find("emptytpl"), not slot16)
 
-	local var_10_7 = arg_10_0.event:getTypesStr()
-	local var_10_8 = arg_10_0:setConditionStr(var_10_7, var_10_2)
-
-	setScrollText(arg_10_0.condition3, var_10_8)
-	setActive(findTF(arg_10_0.conditions, "condition_3/mark"), var_10_2)
-	setActive(findTF(arg_10_0.conditions, "condition_3/mark1"), not var_10_2)
-	setText(arg_10_0.consume, arg_10_0.event:getOilConsume())
-
-	for iter_10_0, iter_10_1 in ipairs(arg_10_0.shipItems) do
-		local var_10_9 = iter_10_1:Find("shiptpl")
-		local var_10_10 = iter_10_1:Find("emptytpl")
-		local var_10_11 = iter_10_0 <= #var_10_3
-
-		SetActive(var_10_9, var_10_11)
-		SetActive(var_10_10, not var_10_11)
-
-		if var_10_11 then
-			updateShip(var_10_9, var_10_3[iter_10_0], {
+		if slot16 then
+			updateShip(slot14, slot4[slot12], {
 				initStar = true
 			})
-			setText(findTF(var_10_9, "icon_bg/lv/Text"), var_10_3[iter_10_0].level)
-			onButton(arg_10_0, var_10_9:Find("icon_bg"), function()
-				arg_10_0:onRemoveClick(iter_10_0)
+			setText(findTF(slot14, "icon_bg/lv/Text"), slot4[slot12].level)
+			onButton(slot0, slot14:Find("icon_bg"), function ()
+				uv0:onRemoveClick(uv1)
 			end, SFX_PANEL)
 		else
-			onButton(arg_10_0, var_10_10, function()
-				arg_10_0:onChangeClick()
+			onButton(slot0, slot15, function ()
+				uv0:onChangeClick()
 			end)
 		end
 	end
 
-	if arg_10_0.event.state == EventInfo.StateNone then
-		SetActive(arg_10_0.recommentBtn, true)
-		SetActive(arg_10_0.recommentDisable, false)
+	if slot0.event.state == EventInfo.StateNone then
+		SetActive(slot0.recommentBtn, true)
+		SetActive(slot0.recommentDisable, false)
 	else
-		SetActive(arg_10_0.recommentBtn, false)
-		SetActive(arg_10_0.recommentDisable, true)
+		SetActive(slot0.recommentBtn, false)
+		SetActive(slot0.recommentDisable, true)
 	end
 end
 
-function var_0_0.setConditionStr(arg_14_0, arg_14_1, arg_14_2)
-	return arg_14_2 and setColorStr(arg_14_1, COLOR_YELLOW) or setColorStr(arg_14_1, "#F35842FF")
+function slot0.setConditionStr(slot0, slot1, slot2)
+	return slot2 and setColorStr(slot1, COLOR_YELLOW) or setColorStr(slot1, "#F35842FF")
 end
 
-function var_0_0.Clear(arg_15_0)
-	pg.DelegateInfo.Dispose(arg_15_0)
+function slot0.Clear(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-function var_0_0.onChangeClick(arg_16_0)
-	if arg_16_0.event.state == EventInfo.StateNone then
-		arg_16_0.dispatch(EventConst.EVENT_OPEN_DOCK, arg_16_0.event)
+function slot0.onChangeClick(slot0)
+	if slot0.event.state == EventInfo.StateNone then
+		slot0.dispatch(EventConst.EVENT_OPEN_DOCK, slot0.event)
 	end
 end
 
-function var_0_0.onRemoveClick(arg_17_0, arg_17_1)
-	if arg_17_0.event.state == EventInfo.StateNone then
-		table.remove(arg_17_0.event.shipIds, arg_17_1)
-		table.remove(arg_17_0.event.ships, arg_17_1)
-		arg_17_0:Flush()
+function slot0.onRemoveClick(slot0, slot1)
+	if slot0.event.state == EventInfo.StateNone then
+		table.remove(slot0.event.shipIds, slot1)
+		table.remove(slot0.event.ships, slot1)
+		slot0:Flush()
 	end
 end
 
-function var_0_0.onFuncClick(arg_18_0)
-	if arg_18_0.event.state == EventInfo.StateNone then
-		arg_18_0.dispatch(EventConst.EVENT_START, arg_18_0.event)
-	elseif arg_18_0.event.state == EventInfo.StateActive then
-		arg_18_0.dispatch(EventConst.EVENT_GIVEUP, arg_18_0.event)
-	elseif arg_18_0.event.state == EventInfo.StateFinish then
-		arg_18_0.dispatch(EventConst.EVENT_FINISH, arg_18_0.event)
+function slot0.onFuncClick(slot0)
+	if slot0.event.state == EventInfo.StateNone then
+		slot0.dispatch(EventConst.EVENT_START, slot0.event)
+	elseif slot0.event.state == EventInfo.StateActive then
+		slot0.dispatch(EventConst.EVENT_GIVEUP, slot0.event)
+	elseif slot0.event.state == EventInfo.StateFinish then
+		slot0.dispatch(EventConst.EVENT_FINISH, slot0.event)
 	end
 end
 
-function var_0_0.findTF(arg_19_0, arg_19_1)
-	return findTF(arg_19_0.tr, arg_19_1)
+function slot0.findTF(slot0, slot1)
+	return findTF(slot0.tr, slot1)
 end
 
-return var_0_0
+return slot0

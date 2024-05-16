@@ -1,24 +1,24 @@
-﻿local var_0_0 = class("EffectImpack", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
+slot0 = class("EffectImpack", import("view.miniGame.gameView.RyzaMiniGame.effect.TargetEffect"))
 
-function var_0_0.InitUI(arg_1_0, arg_1_1)
-	arg_1_0._tf:Find("Lockon"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(arg_1_0._tf:Find("Lockon"), false)
-		setActive(arg_1_0._tf:Find("impack"), true)
+function slot0.InitUI(slot0, slot1)
+	slot0._tf:Find("Lockon"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(uv0._tf:Find("Lockon"), false)
+		setActive(uv0._tf:Find("impack"), true)
 	end)
 
-	local var_1_0 = arg_1_0._tf:Find("impack"):GetComponent(typeof(DftAniEvent))
+	slot2 = slot0._tf:Find("impack"):GetComponent(typeof(DftAniEvent))
 
-	var_1_0:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function()
-		if arg_1_0.responder:CollideRyza(arg_1_0) then
-			arg_1_0:Calling("hit", {
+	slot2:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
+		if uv0.responder:CollideRyza(uv0) then
+			uv0:Calling("hit", {
 				1,
-				arg_1_0.realPos
+				uv0.realPos
 			}, MoveRyza)
 		end
 	end)
-	var_1_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg_1_0:Destroy()
+	slot2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		uv0:Destroy()
 	end)
 end
 
-return var_0_0
+return slot0

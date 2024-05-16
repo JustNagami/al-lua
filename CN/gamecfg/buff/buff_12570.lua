@@ -1,29 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 12570,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				label = {
-					"Albacore"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 12572
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -153,5 +128,30 @@
 	stack = 1,
 	id = 12570,
 	icon = 12570,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 12570,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				label = {
+					"Albacore"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 12572
+			}
+		}
+	}
 }

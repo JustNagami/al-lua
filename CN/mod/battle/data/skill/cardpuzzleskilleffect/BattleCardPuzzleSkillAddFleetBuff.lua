@@ -1,22 +1,17 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleCardPuzzleSkillAddFleetBuff", slot0.Battle.BattleCardPuzzleSkillEffect)
+slot0.Battle.BattleCardPuzzleSkillAddFleetBuff = slot1
+slot1.__name = "BattleCardPuzzleSkillAddFleetBuff"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleCardPuzzleSkillAddFleetBuff", var_0_0.Battle.BattleCardPuzzleSkillEffect)
+function slot1.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-var_0_0.Battle.BattleCardPuzzleSkillAddFleetBuff = var_0_1
-var_0_1.__name = "BattleCardPuzzleSkillAddFleetBuff"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	arg_1_0._fleetBuffID = arg_1_0._tempData.arg_list.fleet_buff_id
-	arg_1_0._initStack = arg_1_0._tempData.arg_list.init_stack or 1
+	slot0._fleetBuffID = slot0._tempData.arg_list.fleet_buff_id
+	slot0._initStack = slot0._tempData.arg_list.init_stack or 1
 end
 
-function var_0_1.SkillEffectHandler(arg_2_0)
-	local var_2_0 = arg_2_0:GetCardPuzzleComponent():GetBuffManager()
-	local var_2_1 = var_0_0.Battle.BattleFleetBuffUnit.New(arg_2_0._fleetBuffID)
-
-	var_2_0:AttachCardPuzzleBuff(var_2_1)
-	arg_2_0:Finale()
+function slot1.SkillEffectHandler(slot0)
+	slot0:GetCardPuzzleComponent():GetBuffManager():AttachCardPuzzleBuff(uv0.Battle.BattleFleetBuffUnit.New(slot0._fleetBuffID))
+	slot0:Finale()
 end

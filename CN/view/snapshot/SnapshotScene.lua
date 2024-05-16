@@ -1,270 +1,262 @@
-﻿local var_0_0 = class("SnapshotScene", import("..base.BaseUI"))
+slot0 = class("SnapshotScene", import("..base.BaseUI"))
+slot0.SELECT_CHAR_PANEL = "SnapshotScene.SELECT_CHAR_PANEL"
+slot0.SHARE_PANEL = "SnapshotScene.SHARE_PANEL"
+slot0.SHOW_PAINT = 0
+slot0.SHOW_LIVE2D = 1
+slot0.SHOW_SPINE = 2
+slot0.STATE_TAKE_PHOTO = 0
+slot0.STATE_TAKE_VIDEO = 1
 
-var_0_0.SELECT_CHAR_PANEL = "SnapshotScene.SELECT_CHAR_PANEL"
-var_0_0.SHARE_PANEL = "SnapshotScene.SHARE_PANEL"
-var_0_0.SHOW_PAINT = 0
-var_0_0.SHOW_LIVE2D = 1
-var_0_0.SHOW_SPINE = 2
-var_0_0.STATE_TAKE_PHOTO = 0
-var_0_0.STATE_TAKE_VIDEO = 1
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "snapshot"
 end
 
-function var_0_0.init(arg_2_0)
+function slot0.init(slot0)
 	setActive(pg.UIMgr.GetInstance().OverlayEffect, false)
 
-	arg_2_0.dummy = arg_2_0:findTF("SnapshotInvisible")
+	slot0.dummy = slot0:findTF("SnapshotInvisible")
 
-	arg_2_0:SetDummyForIOS(true)
+	slot0:SetDummyForIOS(true)
 
-	arg_2_0.ui = arg_2_0:findTF("ui")
-	arg_2_0.backBtn = arg_2_0:findTF("ui/back")
-	arg_2_0.switchDirBtn = arg_2_0:findTF("ui/switchDir")
-	arg_2_0.takeBtn = arg_2_0:findTF("ui/bg/take")
-	arg_2_0.videoTakeImg = arg_2_0:findTF("ui/bg/take/videoTakeImg")
+	slot0.ui = slot0:findTF("ui")
+	slot0.backBtn = slot0:findTF("ui/back")
+	slot0.switchDirBtn = slot0:findTF("ui/switchDir")
+	slot0.takeBtn = slot0:findTF("ui/bg/take")
+	slot0.videoTakeImg = slot0:findTF("ui/bg/take/videoTakeImg")
 
-	SetActive(arg_2_0.videoTakeImg, false)
+	SetActive(slot0.videoTakeImg, false)
 
-	arg_2_0.switchCamBtn = arg_2_0:findTF("ui/bg/switchCam")
-	arg_2_0.selectCharBtn = arg_2_0:findTF("ui/bg/selectChar")
-	arg_2_0.l2dCtrlPanl = arg_2_0:findTF("ui/bg/l2dBgImg")
-	arg_2_0.l2dStopBtnGo = arg_2_0:findTF("ui/bg/l2dBgImg/stopBtn")
-	arg_2_0.l2dPlayBtnGo = arg_2_0:findTF("ui/bg/l2dBgImg/playBtn")
+	slot0.switchCamBtn = slot0:findTF("ui/bg/switchCam")
+	slot0.selectCharBtn = slot0:findTF("ui/bg/selectChar")
+	slot0.l2dCtrlPanl = slot0:findTF("ui/bg/l2dBgImg")
+	slot0.l2dStopBtnGo = slot0:findTF("ui/bg/l2dBgImg/stopBtn")
+	slot0.l2dPlayBtnGo = slot0:findTF("ui/bg/l2dBgImg/playBtn")
 
-	SetActive(arg_2_0.l2dPlayBtnGo, false)
+	SetActive(slot0.l2dPlayBtnGo, false)
 
-	arg_2_0.l2dAnimationBtnGo = arg_2_0:findTF("ui/bg/l2dBgImg/animationsBtn").gameObject
-	arg_2_0.l2dAnimations = arg_2_0:findTF("ui/bg/animationsBg")
-	arg_2_0.l2dAnimationBackBtnTrans = arg_2_0:findTF("animationsBackBtn", arg_2_0.l2dAnimations)
+	slot0.l2dAnimationBtnGo = slot0:findTF("ui/bg/l2dBgImg/animationsBtn").gameObject
+	slot0.l2dAnimations = slot0:findTF("ui/bg/animationsBg")
+	slot0.l2dAnimationBackBtnTrans = slot0:findTF("animationsBackBtn", slot0.l2dAnimations)
 
-	SetActive(arg_2_0.l2dAnimations, false)
+	SetActive(slot0.l2dAnimations, false)
 
-	arg_2_0.selectedID = 1
-	arg_2_0.scrollItems = {}
-	arg_2_0.isPause = false
-	arg_2_0.animTpl = arg_2_0:findTF("animation_tpl", arg_2_0.l2dAnimations)
+	slot0.selectedID = 1
+	slot0.scrollItems = {}
+	slot0.isPause = false
+	slot0.animTpl = slot0:findTF("animation_tpl", slot0.l2dAnimations)
 
-	SetActive(arg_2_0.animTpl, false)
+	SetActive(slot0.animTpl, false)
 
-	arg_2_0.animLayout = arg_2_0:findTF("animation_container/animations", arg_2_0.l2dAnimations)
-	arg_2_0.animContainer = arg_2_0:findTF("animation_container", arg_2_0.l2dAnimations):GetComponent("LScrollRect")
-	arg_2_0.animContainer.decelerationRate = 0.1
+	slot0.animLayout = slot0:findTF("animation_container/animations", slot0.l2dAnimations)
+	slot0.animContainer = slot0:findTF("animation_container", slot0.l2dAnimations):GetComponent("LScrollRect")
+	slot0.animContainer.decelerationRate = 0.1
 
-	function arg_2_0.animContainer.onInitItem(arg_3_0)
-		arg_2_0:onInitItem(arg_3_0)
+	function slot0.animContainer.onInitItem(slot0)
+		uv0:onInitItem(slot0)
 	end
 
-	function arg_2_0.animContainer.onUpdateItem(arg_4_0, arg_4_1)
-		arg_2_0:onUpdateItem(arg_4_0, arg_4_1)
+	function slot0.animContainer.onUpdateItem(slot0, slot1)
+		uv0:onUpdateItem(slot0, slot1)
 	end
 
-	function arg_2_0.animContainer.onReturnItem(arg_5_0, arg_5_1)
-		arg_2_0:onReturnItem(arg_5_0, arg_5_1)
+	function slot0.animContainer.onReturnItem(slot0, slot1)
+		uv0:onReturnItem(slot0, slot1)
 	end
 
-	function arg_2_0.animContainer.onStart()
-		arg_2_0:updateSelectedItem()
+	function slot0.animContainer.onStart()
+		uv0:updateSelectedItem()
 	end
 
-	arg_2_0.paintBtn = arg_2_0:findTF("ui/bg/paintBtn")
-	arg_2_0.live2dBtn = arg_2_0:findTF("ui/bg/l2dBgImg/live2dBtn")
-	arg_2_0.spineBtn = arg_2_0:findTF("ui/bg/spineBtn")
-	arg_2_0.modePnlTF = arg_2_0:findTF("ui/bg/modePnl")
-	arg_2_0.takePhotoBtn = arg_2_0:findTF("ui/bg/modePnl/takePhotoBtn")
-	arg_2_0.takeVideoBtn = arg_2_0:findTF("ui/bg/modePnl/takeVideoBtn")
-	arg_2_0.stopRecBtn = arg_2_0:findTF("stopRec")
-	arg_2_0.snapshot = arg_2_0:findTF("snapshot")
-	arg_2_0.webcam = arg_2_0.snapshot:GetComponent(typeof(WebCam))
-	arg_2_0.ysScreenShoter = arg_2_0.snapshot:GetComponent(typeof(YSTool.YSScreenShoter))
-	arg_2_0.ysScreenRecorder = arg_2_0.snapshot:GetComponent(typeof(YSTool.YSScreenRecorder))
-	arg_2_0.paint = arg_2_0:findTF("container/paint")
-	arg_2_0.live2d = arg_2_0:findTF("live2d", arg_2_0.paint)
-	arg_2_0.spine = arg_2_0:findTF("spine", arg_2_0.paint)
-	arg_2_0.paintSkin = nil
-	arg_2_0.showLive2d = false
-	arg_2_0.showType = var_0_0.SHOW_PAINT
-	arg_2_0.state = var_0_0.STATE_TAKE_PHOTO
+	slot0.paintBtn = slot0:findTF("ui/bg/paintBtn")
+	slot0.live2dBtn = slot0:findTF("ui/bg/l2dBgImg/live2dBtn")
+	slot0.spineBtn = slot0:findTF("ui/bg/spineBtn")
+	slot0.modePnlTF = slot0:findTF("ui/bg/modePnl")
+	slot0.takePhotoBtn = slot0:findTF("ui/bg/modePnl/takePhotoBtn")
+	slot0.takeVideoBtn = slot0:findTF("ui/bg/modePnl/takeVideoBtn")
+	slot0.stopRecBtn = slot0:findTF("stopRec")
+	slot0.snapshot = slot0:findTF("snapshot")
+	slot0.webcam = slot0.snapshot:GetComponent(typeof(WebCam))
+	slot0.ysScreenShoter = slot0.snapshot:GetComponent(typeof(YSTool.YSScreenShoter))
+	slot0.ysScreenRecorder = slot0.snapshot:GetComponent(typeof(YSTool.YSScreenRecorder))
+	slot0.paint = slot0:findTF("container/paint")
+	slot0.live2d = slot0:findTF("live2d", slot0.paint)
+	slot0.spine = slot0:findTF("spine", slot0.paint)
+	slot0.paintSkin = nil
+	slot0.showLive2d = false
+	slot0.showType = uv0.SHOW_PAINT
+	slot0.state = uv0.STATE_TAKE_PHOTO
 
-	arg_2_0:setSkinAndLive2d(arg_2_0.contextData.skinId, arg_2_0.contextData.live2d)
+	slot0:setSkinAndLive2d(slot0.contextData.skinId, slot0.contextData.live2d)
 
-	arg_2_0.verticalEulerAngle = 90
-	arg_2_0.horizontalEulerAngle = 0
-	arg_2_0.rotateUseTime = 0.2
-	arg_2_0.isVertical = false
-	arg_2_0.backBtnImg = arg_2_0:findTF("ui/back/Image")
-	arg_2_0.selectCharBtnImg = arg_2_0:findTF("ui/bg/selectChar/Image")
-	arg_2_0.switchCamBtnImg = arg_2_0:findTF("ui/bg/switchCam/Image")
-	arg_2_0.l2dBtnImg = arg_2_0:findTF("ui/bg/paintBtn/Image")
-	arg_2_0.l2dStopBtnImg = arg_2_0:findTF("ui/bg/l2dBgImg/stopBtn/Image")
-	arg_2_0.l2dPlayBtnImg = arg_2_0:findTF("ui/bg/l2dBgImg/playBtn/Image")
-	arg_2_0.l2d2PaintBtnImg = arg_2_0:findTF("ui/bg/l2dBgImg/live2dBtn/Image")
-	arg_2_0.takePhotoVerticalText = arg_2_0:findTF("ui/bg/modePnl/takePhotoBtn/verticalText")
-	arg_2_0.takePhotoHorizontalText = arg_2_0:findTF("ui/bg/modePnl/takePhotoBtn/horizontalText")
-	arg_2_0.takePhotoVerticalText:GetComponent("Text").text = i18n("word_photo_mode")
-	arg_2_0.takePhotoHorizontalText:GetComponent("Text").text = i18n("word_photo_mode")
+	slot0.verticalEulerAngle = 90
+	slot0.horizontalEulerAngle = 0
+	slot0.rotateUseTime = 0.2
+	slot0.isVertical = false
+	slot0.backBtnImg = slot0:findTF("ui/back/Image")
+	slot0.selectCharBtnImg = slot0:findTF("ui/bg/selectChar/Image")
+	slot0.switchCamBtnImg = slot0:findTF("ui/bg/switchCam/Image")
+	slot0.l2dBtnImg = slot0:findTF("ui/bg/paintBtn/Image")
+	slot0.l2dStopBtnImg = slot0:findTF("ui/bg/l2dBgImg/stopBtn/Image")
+	slot0.l2dPlayBtnImg = slot0:findTF("ui/bg/l2dBgImg/playBtn/Image")
+	slot0.l2d2PaintBtnImg = slot0:findTF("ui/bg/l2dBgImg/live2dBtn/Image")
+	slot0.takePhotoVerticalText = slot0:findTF("ui/bg/modePnl/takePhotoBtn/verticalText")
+	slot0.takePhotoHorizontalText = slot0:findTF("ui/bg/modePnl/takePhotoBtn/horizontalText")
+	slot0.takePhotoVerticalText:GetComponent("Text").text = i18n("word_photo_mode")
+	slot0.takePhotoHorizontalText:GetComponent("Text").text = i18n("word_photo_mode")
 
-	SetActive(arg_2_0.takePhotoHorizontalText, false)
+	SetActive(slot0.takePhotoHorizontalText, false)
 
-	arg_2_0.takeVideoVerticalText = arg_2_0:findTF("ui/bg/modePnl/takeVideoBtn/verticalText")
-	arg_2_0.takeVideoHorizontalText = arg_2_0:findTF("ui/bg/modePnl/takeVideoBtn/horizontalText")
-	arg_2_0.takeVideoVerticalText:GetComponent("Text").text = i18n("word_video_mode")
-	arg_2_0.takeVideoHorizontalText:GetComponent("Text").text = i18n("word_video_mode")
+	slot0.takeVideoVerticalText = slot0:findTF("ui/bg/modePnl/takeVideoBtn/verticalText")
+	slot0.takeVideoHorizontalText = slot0:findTF("ui/bg/modePnl/takeVideoBtn/horizontalText")
+	slot0.takeVideoVerticalText:GetComponent("Text").text = i18n("word_video_mode")
+	slot0.takeVideoHorizontalText:GetComponent("Text").text = i18n("word_video_mode")
 
-	SetActive(arg_2_0.takeVideoHorizontalText, false)
+	SetActive(slot0.takeVideoHorizontalText, false)
 
-	arg_2_0.isFlipping = false
-	arg_2_0.videoTipPanel = arg_2_0:findTF("videoTipPanel")
+	slot0.isFlipping = false
+	slot0.videoTipPanel = slot0:findTF("videoTipPanel")
 
-	setActive(arg_2_0.videoTipPanel, false)
+	setActive(slot0.videoTipPanel, false)
 end
 
-function var_0_0.back(arg_7_0)
-	if arg_7_0.exited then
+function slot0.back(slot0)
+	if slot0.exited then
 		return
 	end
 
-	arg_7_0:emit(var_0_0.ON_BACK)
+	slot0:emit(uv0.ON_BACK)
 end
 
-function var_0_0.saveVideo(arg_8_0)
+function slot0.saveVideo(slot0)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		content = i18n("word_save_video"),
-		onYes = function()
+		onYes = function ()
 			YARecorder.Inst:DiscardVideo()
 		end
 	})
 end
 
-function var_0_0.didEnter(arg_10_0)
-	onButton(arg_10_0, arg_10_0.backBtn, function()
-		arg_10_0:back()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:back()
 	end)
-	onButton(arg_10_0, arg_10_0.switchDirBtn, function()
-		arg_10_0.isVertical = not arg_10_0.isVertical
+	onButton(slot0, slot0.switchDirBtn, function ()
+		uv0.isVertical = not uv0.isVertical
 
-		arg_10_0:updateUIDirection()
-		arg_10_0:updateCameraCanvas()
+		uv0:updateUIDirection()
+		uv0:updateCameraCanvas()
 	end)
-	onButton(arg_10_0, arg_10_0.takeBtn, function()
-		if arg_10_0.state == var_0_0.STATE_TAKE_PHOTO then
-			setActive(arg_10_0.ui, false)
+	onButton(slot0, slot0.takeBtn, function ()
+		if uv0.state == uv1.STATE_TAKE_PHOTO then
+			setActive(uv0.ui, false)
+			uv0.ysScreenShoter:TakeScreenShotData(function (slot0)
+				warning("截图结果：" .. tostring(slot0))
+				setActive(uv0.ui, true)
+			end, function (slot0)
+				slot1 = UnityEngine.Texture2D.New(Screen.width, Screen.height)
 
-			local function var_13_0(arg_14_0)
-				warning("截图结果：" .. tostring(arg_14_0))
-				setActive(arg_10_0.ui, true)
-			end
-
-			local function var_13_1(arg_15_0)
-				local var_15_0 = UnityEngine.Texture2D.New(Screen.width, Screen.height)
-
-				Tex2DExtension.LoadImage(var_15_0, arg_15_0)
-				arg_10_0:emit(var_0_0.SHARE_PANEL, var_15_0, arg_15_0)
+				Tex2DExtension.LoadImage(slot1, slot0)
+				uv0:emit(uv1.SHARE_PANEL, slot1, slot0)
 
 				if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
 					print("start photo : play sound")
 					NotificationMgr.Inst:PlayShutterSound()
 				end
-			end
+			end)
+		elseif uv0.state == uv1.STATE_TAKE_VIDEO then
+			setActive(uv0.ui, false)
 
-			arg_10_0.ysScreenShoter:TakeScreenShotData(var_13_0, var_13_1)
-		elseif arg_10_0.state == var_0_0.STATE_TAKE_VIDEO then
-			setActive(arg_10_0.ui, false)
-
-			local function var_13_2(arg_16_0)
-				if arg_16_0 ~= -1 then
-					setActive(arg_10_0.ui, true)
-					LeanTween.moveX(arg_10_0.stopRecBtn, arg_10_0.stopRecBtn.rect.width, 0.15)
+			function slot0(slot0)
+				if slot0 ~= -1 then
+					setActive(uv0.ui, true)
+					LeanTween.moveX(uv0.stopRecBtn, uv0.stopRecBtn.rect.width, 0.15)
 				end
 			end
 
-			local function var_13_3(arg_17_0)
-				warning("开始录屏结果：" .. tostring(arg_17_0))
+			function slot1(slot0)
+				warning("开始录屏结果：" .. tostring(slot0))
 			end
 
-			local function var_13_4()
-				setActive(arg_10_0.stopRecBtn, true)
-				LeanTween.moveX(arg_10_0.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function()
-					arg_10_0:SetMute(true)
-					arg_10_0.ysScreenRecorder:BeforeStart()
-					arg_10_0.ysScreenRecorder:StartRecord(var_13_3, var_13_2)
+			function slot2()
+				setActive(uv0.stopRecBtn, true)
+				LeanTween.moveX(uv0.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function ()
+					uv0:SetMute(true)
+					uv0.ysScreenRecorder:BeforeStart()
+					uv0.ysScreenRecorder:StartRecord(uv1, uv2)
 				end))
 			end
 
-			local var_13_5 = PlayerPrefs.GetInt("hadShowForVideoTip")
-
-			if not var_13_5 or var_13_5 <= 0 then
+			if not PlayerPrefs.GetInt("hadShowForVideoTip") or slot3 <= 0 then
 				PlayerPrefs.SetInt("hadShowForVideoTip", 1)
 
-				arg_10_0:findTF("Text", arg_10_0.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
+				uv0:findTF("Text", uv0.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
 
-				onButton(arg_10_0, arg_10_0.videoTipPanel, function()
-					setActive(arg_10_0.videoTipPanel, false)
-					var_13_4()
+				onButton(uv0, uv0.videoTipPanel, function ()
+					setActive(uv0.videoTipPanel, false)
+					uv1()
 
 					if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
 						print("start recording : play sound")
 						NotificationMgr.Inst:PlayStartRecordSound()
 					end
 				end)
-				setActive(arg_10_0.videoTipPanel, true)
+				setActive(uv0.videoTipPanel, true)
 			else
-				var_13_4()
+				slot2()
 			end
 		end
 	end)
-	onButton(arg_10_0, arg_10_0.paintBtn, function()
-		if arg_10_0.showType == var_0_0.SHOW_PAINT then
-			arg_10_0:clearSkin()
+	onButton(slot0, slot0.paintBtn, function ()
+		if uv0.showType == uv1.SHOW_PAINT then
+			uv0:clearSkin()
 
-			arg_10_0.showType = var_0_0.SHOW_LIVE2D
+			uv0.showType = uv1.SHOW_LIVE2D
 
-			arg_10_0:updateShowType()
-			arg_10_0:updateSkin()
-			arg_10_0:ResetL2dPanel()
+			uv0:updateShowType()
+			uv0:updateSkin()
+			uv0:ResetL2dPanel()
 		end
 	end)
-	onButton(arg_10_0, arg_10_0.live2dBtn, function()
-		if arg_10_0.showType == var_0_0.SHOW_LIVE2D then
-			arg_10_0:clearSkin()
+	onButton(slot0, slot0.live2dBtn, function ()
+		if uv0.showType == uv1.SHOW_LIVE2D then
+			uv0:clearSkin()
 
-			arg_10_0.showType = var_0_0.SHOW_PAINT
+			uv0.showType = uv1.SHOW_PAINT
 
-			arg_10_0:updateShowType()
-			arg_10_0:updateSkin()
+			uv0:updateShowType()
+			uv0:updateSkin()
 		end
 	end)
-	onButton(arg_10_0, arg_10_0.spineBtn, function()
-		if arg_10_0.showType == var_0_0.SHOW_SPINE then
-			arg_10_0:clearSkin()
+	onButton(slot0, slot0.spineBtn, function ()
+		if uv0.showType == uv1.SHOW_SPINE then
+			uv0:clearSkin()
 
-			arg_10_0.showType = var_0_0.SHOW_PAINT
+			uv0.showType = uv1.SHOW_PAINT
 
-			arg_10_0:updateShowType()
-			arg_10_0:updateSkin()
+			uv0:updateShowType()
+			uv0:updateSkin()
 		end
 	end)
 
-	local function var_10_0()
-		if arg_10_0.state == var_0_0.STATE_TAKE_PHOTO then
+	function slot1()
+		if uv0.state == uv1.STATE_TAKE_PHOTO then
 			return
 		end
 
-		arg_10_0.state = var_0_0.STATE_TAKE_PHOTO
+		uv0.state = uv1.STATE_TAKE_PHOTO
 
-		LeanTween.moveY(rtf(arg_10_0.modePnlTF), 56, 0.1)
-		SetActive(arg_10_0.videoTakeImg, false)
+		LeanTween.moveY(rtf(uv0.modePnlTF), 56, 0.1)
+		SetActive(uv0.videoTakeImg, false)
 	end
 
-	onButton(arg_10_0, arg_10_0.takePhotoBtn, var_10_0)
-	onButton(arg_10_0, arg_10_0.takeVideoBtn, function()
+	onButton(slot0, slot0.takePhotoBtn, slot1)
+	onButton(slot0, slot0.takeVideoBtn, function ()
 		if CheckPermissionGranted(ANDROID_RECORD_AUDIO_PERMISSION) and CheckPermissionGranted(ANDROID_WRITE_EXTERNAL_PERMISSION) then
-			arg_10_0:changeToTakeVideo()
+			uv0:changeToTakeVideo()
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("apply_permission_record_audio_tip1"),
-				onYes = function()
+				onYes = function ()
 					ApplyPermission({
 						ANDROID_RECORD_AUDIO_PERMISSION,
 						ANDROID_WRITE_EXTERNAL_PERMISSION
@@ -273,561 +265,539 @@ function var_0_0.didEnter(arg_10_0)
 			})
 		end
 	end)
-	var_10_0()
-	onButton(arg_10_0, arg_10_0.stopRecBtn, function()
-		local function var_27_0(arg_28_0)
-			warning("结束录屏结果：" .. tostring(arg_28_0))
+	slot1()
+	onButton(slot0, slot0.stopRecBtn, function ()
+		function slot0(slot0)
+			warning("结束录屏结果：" .. tostring(slot0))
 		end
 
-		if not LeanTween.isTweening(go(arg_10_0.stopRecBtn)) then
-			LeanTween.moveX(arg_10_0.stopRecBtn, arg_10_0.stopRecBtn.rect.width, 0.15):setOnComplete(System.Action(function()
-				setActive(arg_10_0.ui, true)
-				setActive(arg_10_0.stopRecBtn, false)
-				arg_10_0.ysScreenRecorder:StopRecord(var_27_0)
+		if not LeanTween.isTweening(go(uv0.stopRecBtn)) then
+			LeanTween.moveX(uv0.stopRecBtn, uv0.stopRecBtn.rect.width, 0.15):setOnComplete(System.Action(function ()
+				setActive(uv0.ui, true)
+				setActive(uv0.stopRecBtn, false)
+				uv0.ysScreenRecorder:StopRecord(uv1)
 
 				if PLATFORM == PLATFORM_ANDROID then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("word_save_video"),
-						onNo = function()
-							arg_10_0.ysScreenRecorder:DiscardVideo()
+						onNo = function ()
+							uv0.ysScreenRecorder:DiscardVideo()
 						end,
-						onYes = function()
-							local var_31_0 = arg_10_0.ysScreenRecorder:GetVideoFilePath()
+						onYes = function ()
+							slot0 = uv0.ysScreenRecorder:GetVideoFilePath()
 
-							warning("源录像路径：" .. tostring(var_31_0))
-							MediaSaver.SaveVideoWithPath(var_31_0)
+							warning("源录像路径：" .. tostring(slot0))
+							MediaSaver.SaveVideoWithPath(slot0)
 						end
 					})
 				end
 
-				arg_10_0:SetMute(false)
+				uv0:SetMute(false)
 			end))
 		end
 	end)
-	setActive(arg_10_0.stopRecBtn, false)
-	onButton(arg_10_0, arg_10_0.switchCamBtn, function()
-		arg_10_0.isFlipping = not arg_10_0.isFlipping
+	setActive(slot0.stopRecBtn, false)
+	onButton(slot0, slot0.switchCamBtn, function ()
+		uv0.isFlipping = not uv0.isFlipping
 
-		arg_10_0.webcam:SwitchCam()
-		arg_10_0:updateCameraCanvas()
+		uv0.webcam:SwitchCam()
+		uv0:updateCameraCanvas()
 	end)
-	onButton(arg_10_0, arg_10_0.selectCharBtn, function()
-		arg_10_0:emit(var_0_0.SELECT_CHAR_PANEL)
+	onButton(slot0, slot0.selectCharBtn, function ()
+		uv0:emit(uv1.SELECT_CHAR_PANEL)
 	end)
 
-	function arg_10_0.webcam.takeCallback(arg_34_0)
-		setActive(arg_10_0.ui, true)
+	function slot0.webcam.takeCallback(slot0)
+		setActive(uv0.ui, true)
 	end
 
-	onButton(arg_10_0, arg_10_0.l2dStopBtnGo, function()
-		arg_10_0.isPause = true
+	onButton(slot0, slot0.l2dStopBtnGo, function ()
+		uv0.isPause = true
 
-		arg_10_0:UpdateL2dPlayState()
+		uv0:UpdateL2dPlayState()
 	end)
-	onButton(arg_10_0, arg_10_0.l2dPlayBtnGo, function()
-		arg_10_0.isPause = false
+	onButton(slot0, slot0.l2dPlayBtnGo, function ()
+		uv0.isPause = false
 
-		arg_10_0:UpdateL2dPlayState()
+		uv0:UpdateL2dPlayState()
 	end)
-	onButton(arg_10_0, arg_10_0.l2dAnimationBtnGo, function()
-		arg_10_0:setLive2dAnimsPanelState(true)
+	onButton(slot0, slot0.l2dAnimationBtnGo, function ()
+		uv0:setLive2dAnimsPanelState(true)
 	end)
-	onButton(arg_10_0, arg_10_0.l2dAnimationBackBtnTrans, function()
-		arg_10_0:setLive2dAnimsPanelState(false)
+	onButton(slot0, slot0.l2dAnimationBackBtnTrans, function ()
+		uv0:setLive2dAnimsPanelState(false)
 	end)
 	cameraPaintViewAdjust(true)
-	arg_10_0:updateCameraCanvas()
-	arg_10_0:updateShowType()
+	slot0:updateCameraCanvas()
+	slot0:updateShowType()
 end
 
-function var_0_0.changeToTakeVideo(arg_39_0)
-	if arg_39_0.state == var_0_0.STATE_TAKE_VIDEO then
+function slot0.changeToTakeVideo(slot0)
+	if slot0.state == uv0.STATE_TAKE_VIDEO then
 		return
 	end
 
-	arg_39_0.state = var_0_0.STATE_TAKE_VIDEO
+	slot0.state = uv0.STATE_TAKE_VIDEO
 
-	LeanTween.moveY(rtf(arg_39_0.modePnlTF), -56, 0.1)
-	SetActive(arg_39_0.videoTakeImg, true)
+	LeanTween.moveY(rtf(slot0.modePnlTF), -56, 0.1)
+	SetActive(slot0.videoTakeImg, true)
 end
 
-function var_0_0.willExit(arg_40_0)
-	arg_40_0:SetDummyForIOS(false)
+function slot0.willExit(slot0)
+	slot0:SetDummyForIOS(false)
 	cameraPaintViewAdjust(false)
-	arg_40_0:clearSkin()
-
-	local var_40_0 = PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0
-
-	setActive(pg.UIMgr.GetInstance().OverlayEffect, var_40_0)
+	slot0:clearSkin()
+	setActive(pg.UIMgr.GetInstance().OverlayEffect, PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0)
 end
 
-function var_0_0.clearSkin(arg_41_0)
-	if arg_41_0.paintSkin and arg_41_0.showType == var_0_0.SHOW_PAINT then
-		retPaintingPrefab(arg_41_0.paint, arg_41_0.paintSkin)
+function slot0.clearSkin(slot0)
+	if slot0.paintSkin and slot0.showType == uv0.SHOW_PAINT then
+		retPaintingPrefab(slot0.paint, slot0.paintSkin)
 	end
 
-	if arg_41_0.spineSkin and arg_41_0.showType == var_0_0.SHOW_SPINE then
-		PoolMgr.GetInstance():ReturnSpineChar(arg_41_0.spineSkin, go(arg_41_0:findTF("model", arg_41_0.spine)))
+	if slot0.spineSkin and slot0.showType == uv0.SHOW_SPINE then
+		PoolMgr.GetInstance():ReturnSpineChar(slot0.spineSkin, go(slot0:findTF("model", slot0.spine)))
 	end
 
-	if arg_41_0.live2dCom then
-		arg_41_0.live2dCom.FinishAction = nil
-		arg_41_0.live2dCom.EventAction = nil
+	if slot0.live2dCom then
+		slot0.live2dCom.FinishAction = nil
+		slot0.live2dCom.EventAction = nil
 	end
 
-	if arg_41_0.live2dCom and arg_41_0.showType == var_0_0.SHOW_LIVE2D then
-		Destroy(arg_41_0.live2dCom.gameObject)
+	if slot0.live2dCom and slot0.showType == uv0.SHOW_LIVE2D then
+		Destroy(slot0.live2dCom.gameObject)
 
-		arg_41_0.live2dCom = nil
+		slot0.live2dCom = nil
 	end
 
-	pg.Live2DMgr.GetInstance():StopLoadingLive2d(arg_41_0.live2dRequestId)
+	pg.Live2DMgr.GetInstance():StopLoadingLive2d(slot0.live2dRequestId)
 
-	arg_41_0.live2dRequestId = nil
+	slot0.live2dRequestId = nil
 end
 
-function var_0_0.checkSkin(arg_42_0, arg_42_1)
-	local var_42_0 = pg.ship_skin_template[arg_42_1]
+function slot0.checkSkin(slot0, slot1)
+	slot2 = pg.ship_skin_template[slot1]
 
-	assert(arg_42_1 == -1 or var_42_0, "invalid skin id " .. arg_42_1)
+	assert(slot1 == -1 or slot2, "invalid skin id " .. slot1)
 
-	arg_42_0.skin = var_42_0
+	slot0.skin = slot2
+	slot3 = false
 
-	local var_42_1 = false
+	if slot0.contextData.tbId then
+		slot0.paintSkin = pg.secretary_special_ship[slot0.contextData.tbId].prefab or "tbniang"
+		slot3 = true
+		slot0.contextData.tbId = nil
+	elseif slot0.paintSkin ~= slot2.painting or slot2.spineSkin ~= slot2.prefab then
+		slot0:clearSkin()
 
-	if arg_42_0.contextData.tbId then
-		arg_42_0.paintSkin = pg.secretary_special_ship[arg_42_0.contextData.tbId].prefab or "tbniang"
-		var_42_1 = true
-		arg_42_0.contextData.tbId = nil
-	elseif arg_42_0.paintSkin ~= var_42_0.painting or var_42_0.spineSkin ~= var_42_0.prefab then
-		arg_42_0:clearSkin()
+		slot0.paintSkin = slot2.painting
+		slot0.spineSkin = slot2.prefab
+		slot0.l2dAnims = slot2.l2d_animations
 
-		arg_42_0.paintSkin = var_42_0.painting
-		arg_42_0.spineSkin = var_42_0.prefab
-		arg_42_0.l2dAnims = var_42_0.l2d_animations
-
-		if arg_42_0.l2dAnims == "" then
-			arg_42_0.l2dAnims = {
+		if slot0.l2dAnims == "" then
+			slot0.l2dAnims = {
 				"idle"
 			}
 		end
 
-		var_42_1 = true
+		slot3 = true
 	end
 
-	return var_42_1
+	return slot3
 end
 
-function var_0_0.setSkinAndLive2d(arg_43_0, arg_43_1, arg_43_2)
-	local var_43_0 = arg_43_0:checkSkin(arg_43_1)
+function slot0.setSkinAndLive2d(slot0, slot1, slot2)
+	slot3 = slot0:checkSkin(slot1)
 
-	if arg_43_0.showType ~= var_0_0.SHOW_LIVE2D and arg_43_2 then
-		arg_43_0.showType = var_0_0.SHOW_LIVE2D
+	if slot0.showType ~= uv0.SHOW_LIVE2D and slot2 then
+		slot0.showType = uv0.SHOW_LIVE2D
 
-		arg_43_0:updateShowType()
+		slot0:updateShowType()
 
-		var_43_0 = true
+		slot3 = true
 	end
 
-	if var_43_0 then
-		arg_43_0:updateSkin()
-	end
-end
-
-function var_0_0.setSkin(arg_44_0, arg_44_1)
-	if arg_44_0:checkSkin(arg_44_1) then
-		arg_44_0:updateSkin()
+	if slot3 then
+		slot0:updateSkin()
 	end
 end
 
-function var_0_0.setLive2d(arg_45_0, arg_45_1)
-	if arg_45_0.showType ~= var_0_0.SHOW_LIVE2D and arg_45_1 then
-		arg_45_0:clearSkin()
-
-		arg_45_0.showType = var_0_0.SHOW_LIVE2D
-
-		arg_45_0:updateShowType()
-		arg_45_0:updateSkin()
+function slot0.setSkin(slot0, slot1)
+	if slot0:checkSkin(slot1) then
+		slot0:updateSkin()
 	end
 end
 
-function var_0_0.updateShowType(arg_46_0)
-	setActive(arg_46_0.paintBtn, false)
-	arg_46_0:setLive2dAnimsPanelState(false)
-	setActive(arg_46_0.live2dBtn, false)
-	setActive(arg_46_0.l2dCtrlPanl, false)
-	setActive(arg_46_0.spineBtn, false)
+function slot0.setLive2d(slot0, slot1)
+	if slot0.showType ~= uv0.SHOW_LIVE2D and slot1 then
+		slot0:clearSkin()
 
-	if arg_46_0.showType == var_0_0.SHOW_PAINT then
-		setActive(arg_46_0.paintBtn, true)
-	elseif arg_46_0.showType == var_0_0.SHOW_LIVE2D then
-		setActive(arg_46_0.live2dBtn, true)
-		SetActive(arg_46_0.l2dCtrlPanl, true)
-	elseif arg_46_0.showType == var_0_0.SHOW_SPINE then
-		setActive(arg_46_0.spineBtn, true)
+		slot0.showType = uv0.SHOW_LIVE2D
+
+		slot0:updateShowType()
+		slot0:updateSkin()
 	end
 end
 
-local function var_0_1(arg_47_0)
-	if arg_47_0 == var_0_0.SHOW_PAINT then
+function slot0.updateShowType(slot0)
+	setActive(slot0.paintBtn, false)
+	slot0:setLive2dAnimsPanelState(false)
+	setActive(slot0.live2dBtn, false)
+	setActive(slot0.l2dCtrlPanl, false)
+	setActive(slot0.spineBtn, false)
+
+	if slot0.showType == uv0.SHOW_PAINT then
+		setActive(slot0.paintBtn, true)
+	elseif slot0.showType == uv0.SHOW_LIVE2D then
+		setActive(slot0.live2dBtn, true)
+		SetActive(slot0.l2dCtrlPanl, true)
+	elseif slot0.showType == uv0.SHOW_SPINE then
+		setActive(slot0.spineBtn, true)
+	end
+end
+
+function slot1(slot0)
+	if slot0 == uv0.SHOW_PAINT then
 		return 0.5, 2
-	elseif arg_47_0 == var_0_0.SHOW_LIVE2D then
+	elseif slot0 == uv0.SHOW_LIVE2D then
 		return 0.5, 2
-	elseif arg_47_0 == var_0_0.SHOW_SPINE then
+	elseif slot0 == uv0.SHOW_SPINE then
 		return 0.5, 4
 	end
 end
 
-function var_0_0.updateSkin(arg_48_0)
-	if arg_48_0.showType == var_0_0.SHOW_LIVE2D and (not ResourceMgr.Inst:AssetExist("live2d/" .. arg_48_0.paintSkin) or not PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. arg_48_0.paintSkin))) then
-		arg_48_0.showType = var_0_0.SHOW_PAINT
+function slot0.updateSkin(slot0)
+	if slot0.showType == uv0.SHOW_LIVE2D and (not ResourceMgr.Inst:AssetExist("live2d/" .. slot0.paintSkin) or not PathMgr.FileExists(PathMgr.getAssetBundle("live2d/" .. slot0.paintSkin))) then
+		slot0.showType = uv0.SHOW_PAINT
 
-		arg_48_0:updateShowType()
+		slot0:updateShowType()
 	end
 
-	local var_48_0 = arg_48_0.paint:GetComponent(typeof(Zoom))
-	local var_48_1 = 0
-	local var_48_2 = 0
-	local var_48_3, var_48_4 = var_0_1(arg_48_0.showType)
+	slot1 = slot0.paint:GetComponent(typeof(Zoom))
+	slot2 = 0
+	slot3 = 0
+	slot1.minZoom, slot3 = uv1(slot0.showType)
+	slot1.maxZoom = slot3
 
-	var_48_0.minZoom, var_48_0.maxZoom = var_48_3, var_48_4
-
-	if var_48_4 < arg_48_0.paint.localScale.x then
-		arg_48_0.paint.localScale = Vector3(var_48_4, var_48_4, var_48_4)
-	elseif var_48_3 > arg_48_0.paint.localScale.x then
-		arg_48_0.paint.localScale = Vector3(var_48_3, var_48_3, var_48_3)
+	if slot3 < slot0.paint.localScale.x then
+		slot0.paint.localScale = Vector3(slot3, slot3, slot3)
+	elseif slot0.paint.localScale.x < slot2 then
+		slot0.paint.localScale = Vector3(slot2, slot2, slot2)
 	end
 
-	if arg_48_0.showType == var_0_0.SHOW_LIVE2D then
+	if slot0.showType == uv0.SHOW_LIVE2D then
 		pg.UIMgr.GetInstance():LoadingOn()
 
-		arg_48_0.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(arg_48_0.paintSkin, function(arg_49_0)
-			UIUtil.SetLayerRecursively(arg_49_0, LayerMask.NameToLayer("UI"))
+		slot0.live2dRequestId = pg.Live2DMgr.GetInstance():GetLive2DModelAsync(slot0.paintSkin, function (slot0)
+			UIUtil.SetLayerRecursively(slot0, LayerMask.NameToLayer("UI"))
 
-			local var_49_0 = arg_49_0.transform
+			slot1 = slot0.transform
 
-			var_49_0:SetParent(arg_48_0.live2d, true)
+			slot1:SetParent(uv0.live2d, true)
 
-			var_49_0.localScale = Vector3(52, 52, 52)
-			var_49_0.localPosition = BuildVector3(arg_48_0.skin.live2d_offset)
+			slot1.localScale = Vector3(52, 52, 52)
+			slot1.localPosition = BuildVector3(uv0.skin.live2d_offset)
+			slot2 = slot0:GetComponent(typeof(Live2dChar))
 
-			local var_49_1 = arg_49_0:GetComponent(typeof(Live2dChar))
-			local var_49_2 = pg.AssistantInfo.action2Id.idle
+			slot2:SetAction(pg.AssistantInfo.action2Id.idle)
 
-			var_49_1:SetAction(var_49_2)
-
-			function var_49_1.FinishAction(arg_50_0)
-				if arg_48_0.selectedID and arg_48_0.selectedID ~= pg.AssistantInfo.action2Id.idle then
-					arg_48_0:setL2dAction(arg_48_0.selectedID)
+			function slot2.FinishAction(slot0)
+				if uv0.selectedID and uv0.selectedID ~= pg.AssistantInfo.action2Id.idle then
+					uv0:setL2dAction(uv0.selectedID)
 				end
 			end
 
-			arg_48_0.live2dCom = var_49_1
-			arg_48_0.live2dCom.name = arg_48_0.paintSkin
-			arg_48_0.playActionId = pg.AssistantInfo.action2Id.idle
-			arg_48_0.selectedID = pg.AssistantInfo.action2Id.idle
-			arg_48_0.live2dAnimator = arg_49_0:GetComponent(typeof(Animator))
+			uv0.live2dCom = slot2
+			uv0.live2dCom.name = uv0.paintSkin
+			uv0.playActionId = pg.AssistantInfo.action2Id.idle
+			uv0.selectedID = pg.AssistantInfo.action2Id.idle
+			uv0.live2dAnimator = slot0:GetComponent(typeof(Animator))
 
-			local var_49_3 = arg_48_0.live2dCom:GetCubismParameter("Paramring")
-
-			if var_49_3 then
-				if arg_48_0.contextData and arg_48_0.contextData.propose then
-					arg_48_0.live2dCom:AddParameterValue(var_49_3, 1, CubismParameterBlendMode.Override)
+			if uv0.live2dCom:GetCubismParameter("Paramring") then
+				if uv0.contextData and uv0.contextData.propose then
+					uv0.live2dCom:AddParameterValue(slot4, 1, CubismParameterBlendMode.Override)
 				else
-					arg_48_0.live2dCom:AddParameterValue(var_49_3, 0, CubismParameterBlendMode.Override)
+					uv0.live2dCom:AddParameterValue(slot4, 0, CubismParameterBlendMode.Override)
 				end
 			end
 
-			arg_48_0:ResetL2dPanel()
-			arg_48_0:setLive2dAnimsPanelState(true)
-			SetActive(arg_48_0.spine, false)
-			SetActive(arg_48_0.live2d, true)
+			uv0:ResetL2dPanel()
+			uv0:setLive2dAnimsPanelState(true)
+			SetActive(uv0.spine, false)
+			SetActive(uv0.live2d, true)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			local var_49_4 = arg_48_0.skin.lip_sync_gain
-			local var_49_5 = arg_48_0.skin.lip_smoothing
+			slot6 = uv0.skin.lip_smoothing
 
-			if var_49_4 and var_49_4 ~= 0 then
-				arg_48_0.live2d:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = var_49_4
+			if uv0.skin.lip_sync_gain and slot5 ~= 0 then
+				uv0.live2d:GetChild(0):GetComponent("CubismCriSrcMouthInput").Gain = slot5
 			end
 
-			if var_49_5 and var_49_5 ~= 0 then
-				arg_48_0.live2d:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = var_49_5
+			if slot6 and slot6 ~= 0 then
+				uv0.live2d:GetChild(0):GetComponent("CubismCriSrcMouthInput").Smoothing = slot6
 			end
 		end)
-	elseif arg_48_0.showType == var_0_0.SHOW_PAINT then
-		SetActive(arg_48_0.live2d, false)
-		SetActive(arg_48_0.spine, false)
-		setPaintingPrefabAsync(arg_48_0.paint, arg_48_0.paintSkin, "mainNormal")
-	elseif arg_48_0.showType == var_0_0.SHOW_SPINE then
-		SetActive(arg_48_0.live2d, false)
-		SetActive(arg_48_0.spine, true)
-		PoolMgr.GetInstance():GetSpineChar(arg_48_0.spineSkin, true, function(arg_51_0)
-			arg_51_0.name = "model"
+	elseif slot0.showType == uv0.SHOW_PAINT then
+		SetActive(slot0.live2d, false)
+		SetActive(slot0.spine, false)
+		setPaintingPrefabAsync(slot0.paint, slot0.paintSkin, "mainNormal")
+	elseif slot0.showType == uv0.SHOW_SPINE then
+		SetActive(slot0.live2d, false)
+		SetActive(slot0.spine, true)
+		PoolMgr.GetInstance():GetSpineChar(slot0.spineSkin, true, function (slot0)
+			slot0.name = "model"
+			slot1 = slot0.transform
 
-			local var_51_0 = arg_51_0.transform
+			slot1:SetParent(uv0.spine, true)
 
-			var_51_0:SetParent(arg_48_0.spine, true)
+			slot1.localScale = Vector3(0.5, 0.5, 0.5)
+			slot1.localPosition = Vector3.zero
 
-			var_51_0.localScale = Vector3(0.5, 0.5, 0.5)
-			var_51_0.localPosition = Vector3.zero
-
-			arg_48_0:playAction("normal")
+			uv0:playAction("normal")
 		end)
 	end
 end
 
-function var_0_0.playAction(arg_52_0, arg_52_1)
-	if arg_52_0.showType ~= var_0_0.SHOW_SPINE then
+function slot0.playAction(slot0, slot1)
+	if slot0.showType ~= uv0.SHOW_SPINE then
 		return
 	end
 
-	GetOrAddComponent(arg_52_0:findTF("model", arg_52_0.spine), typeof(SpineAnimUI)):SetAction(arg_52_1, 0)
+	GetOrAddComponent(slot0:findTF("model", slot0.spine), typeof(SpineAnimUI)):SetAction(slot1, 0)
 end
 
-function var_0_0.ResetL2dPanel(arg_53_0)
-	arg_53_0.selectedID = pg.AssistantInfo.action2Id.idle
-	arg_53_0.isPause = false
+function slot0.ResetL2dPanel(slot0)
+	slot0.selectedID = pg.AssistantInfo.action2Id.idle
+	slot0.isPause = false
 
-	arg_53_0:UpdateL2dPlayState(true)
-	arg_53_0:updateSelectedItem()
+	slot0:UpdateL2dPlayState(true)
+	slot0:updateSelectedItem()
 end
 
-function var_0_0.UpdateL2dPlayState(arg_54_0, arg_54_1)
-	if arg_54_0.showType ~= var_0_0.SHOW_LIVE2D then
+function slot0.UpdateL2dPlayState(slot0, slot1)
+	if slot0.showType ~= uv0.SHOW_LIVE2D then
 		return
 	end
 
-	if arg_54_0.isPause then
-		SetActive(arg_54_0.l2dStopBtnGo, false)
-		SetActive(arg_54_0.l2dPlayBtnGo, true)
+	if slot0.isPause then
+		SetActive(slot0.l2dStopBtnGo, false)
+		SetActive(slot0.l2dPlayBtnGo, true)
 	else
-		SetActive(arg_54_0.l2dStopBtnGo, true)
-		SetActive(arg_54_0.l2dPlayBtnGo, false)
+		SetActive(slot0.l2dStopBtnGo, true)
+		SetActive(slot0.l2dPlayBtnGo, false)
 	end
 
-	if not arg_54_1 then
-		arg_54_0:L2dAnimationState()
+	if not slot1 then
+		slot0:L2dAnimationState()
 	end
 end
 
-function var_0_0.L2dAnimationState(arg_55_0)
-	if arg_55_0.showType ~= var_0_0.SHOW_LIVE2D then
+function slot0.L2dAnimationState(slot0)
+	if slot0.showType ~= uv0.SHOW_LIVE2D then
 		return
 	end
 
-	if arg_55_0.isPause then
-		arg_55_0.live2dAnimator.speed = 0
+	if slot0.isPause then
+		slot0.live2dAnimator.speed = 0
 	else
-		arg_55_0.live2dAnimator.speed = 1
+		slot0.live2dAnimator.speed = 1
 	end
 end
 
-function var_0_0.updateLive2dAnimationPanel(arg_56_0)
-	SetActive(arg_56_0.l2dAnimations, arg_56_0.isShowL2dAnims)
-	SetActive(arg_56_0.l2dAnimationBtnGo, not arg_56_0.isShowL2dAnims)
+function slot0.updateLive2dAnimationPanel(slot0)
+	SetActive(slot0.l2dAnimations, slot0.isShowL2dAnims)
+	SetActive(slot0.l2dAnimationBtnGo, not slot0.isShowL2dAnims)
 
-	if arg_56_0.isShowL2dAnims and #arg_56_0.l2dAnims > 1 then
-		arg_56_0.animContainer:SetTotalCount(#arg_56_0.l2dAnims, 0)
+	if slot0.isShowL2dAnims and #slot0.l2dAnims > 1 then
+		slot0.animContainer:SetTotalCount(#slot0.l2dAnims, 0)
 	end
 end
 
-function var_0_0.setLive2dAnimsPanelState(arg_57_0, arg_57_1)
-	arg_57_0.isShowL2dAnims = arg_57_1
+function slot0.setLive2dAnimsPanelState(slot0, slot1)
+	slot0.isShowL2dAnims = slot1
 
-	arg_57_0:updateLive2dAnimationPanel()
+	slot0:updateLive2dAnimationPanel()
 end
 
-local var_0_2 = 3
+slot2 = 3
 
-function var_0_0.onInitItem(arg_58_0, arg_58_1)
-	local var_58_0 = SnapshotItem.New(arg_58_1, false)
+function slot0.onInitItem(slot0, slot1)
+	slot2 = SnapshotItem.New(slot1, false)
 
-	onButton(arg_58_0, var_58_0.go, function()
-		if arg_58_0.l2dClickCD and Time.fixedTime - arg_58_0.l2dClickCD < var_0_2 then
+	onButton(slot0, slot2.go, function ()
+		if uv0.l2dClickCD and Time.fixedTime - uv0.l2dClickCD < uv1 then
 			return
 		end
 
-		if arg_58_0.selectedID == var_58_0:GetID() then
+		if uv0.selectedID == uv2:GetID() then
 			return
 		end
 
-		if var_58_0:GetID() == 6 or var_58_0:GetID() == 7 then
-			arg_58_0.l2dClickCD = Time.fixedTime
+		if uv2:GetID() == 6 or uv2:GetID() == 7 then
+			uv0.l2dClickCD = Time.fixedTime
 		end
 
-		arg_58_0.selectedID = var_58_0:GetID()
+		uv0.selectedID = uv2:GetID()
 
-		arg_58_0:updateSelectedItem()
-		arg_58_0:setL2dAction(arg_58_0.selectedID)
+		uv0:updateSelectedItem()
+		uv0:setL2dAction(uv0.selectedID)
 	end, SFX_CONFIRM)
 
-	arg_58_0.scrollItems[arg_58_1] = var_58_0
+	slot0.scrollItems[slot1] = slot2
 end
 
-function var_0_0.setL2dAction(arg_60_0, arg_60_1)
-	if arg_60_1 ~= pg.AssistantInfo.action2Id.idle then
-		-- block empty
+function slot0.setL2dAction(slot0, slot1)
+	if slot1 ~= pg.AssistantInfo.action2Id.idle then
+		-- Nothing
 	end
 
-	if arg_60_0.live2dCom and arg_60_1 then
-		if arg_60_1 == pg.AssistantInfo.action2Id.idle then
-			arg_60_0.live2dCom:SetAction(arg_60_1)
-		elseif arg_60_0.playActionId == pg.AssistantInfo.action2Id.idle then
-			arg_60_0.live2dCom:SetAction(arg_60_1)
-		elseif arg_60_0.playActionId == arg_60_1 then
-			arg_60_0.live2dCom:SetAction(arg_60_1)
+	if slot0.live2dCom and slot1 then
+		if slot1 == pg.AssistantInfo.action2Id.idle then
+			slot0.live2dCom:SetAction(slot1)
+		elseif slot0.playActionId == pg.AssistantInfo.action2Id.idle then
+			slot0.live2dCom:SetAction(slot1)
+		elseif slot0.playActionId == slot1 then
+			slot0.live2dCom:SetAction(slot1)
 		end
 
-		arg_60_0.playActionId = arg_60_1
+		slot0.playActionId = slot1
 	end
 end
 
-function var_0_0.onUpdateItem(arg_61_0, arg_61_1, arg_61_2)
-	arg_61_1 = arg_61_1 + 1
+function slot0.onUpdateItem(slot0, slot1, slot2)
+	slot1 = slot1 + 1
 
-	local var_61_0 = arg_61_0.scrollItems[arg_61_2]
+	if not slot0.scrollItems[slot2] then
+		slot0:onInitItem(slot2)
 
-	if not var_61_0 then
-		arg_61_0:onInitItem(arg_61_2)
-
-		var_61_0 = arg_61_0.scrollItems[arg_61_2]
+		slot3 = slot0.scrollItems[slot2]
 	end
 
-	local var_61_1 = arg_61_0.l2dAnims[arg_61_1]
-	local var_61_2 = pg.AssistantInfo.action2Id[var_61_1]
-	local var_61_3 = {
-		id = var_61_2,
-		name = i18n(var_61_1)
-	}
+	slot4 = slot0.l2dAnims[slot1]
 
-	var_61_0:Update(var_61_3)
+	slot3:Update({
+		id = pg.AssistantInfo.action2Id[slot4],
+		name = i18n(slot4)
+	})
 
-	if arg_61_0.isVertical then
-		var_61_0:SetEulerAngle(arg_61_0.verticalEulerAngle)
+	if slot0.isVertical then
+		slot3:SetEulerAngle(slot0.verticalEulerAngle)
 	else
-		var_61_0:SetEulerAngle(arg_61_0.horizontalEulerAngle)
+		slot3:SetEulerAngle(slot0.horizontalEulerAngle)
 	end
 
-	if var_61_0:GetID() == arg_61_0.selectedID then
-		var_61_0:UpdateSelected(true)
+	if slot3:GetID() == slot0.selectedID then
+		slot3:UpdateSelected(true)
 	else
-		var_61_0:UpdateSelected(false)
+		slot3:UpdateSelected(false)
 	end
 end
 
-function var_0_0.onReturnItem(arg_62_0, arg_62_1, arg_62_2)
-	return
+function slot0.onReturnItem(slot0, slot1, slot2)
 end
 
-function var_0_0.updateSelectedItem(arg_63_0)
-	for iter_63_0, iter_63_1 in pairs(arg_63_0.scrollItems) do
-		if iter_63_1:HasInfo() then
-			if iter_63_1:GetID() == arg_63_0.selectedID then
-				iter_63_1:UpdateSelected(true)
+function slot0.updateSelectedItem(slot0)
+	for slot4, slot5 in pairs(slot0.scrollItems) do
+		if slot5:HasInfo() then
+			if slot5:GetID() == slot0.selectedID then
+				slot5:UpdateSelected(true)
 			else
-				iter_63_1:UpdateSelected(false)
+				slot5:UpdateSelected(false)
 			end
 		end
 	end
 end
 
-function var_0_0.updateUIDirection(arg_64_0)
-	if arg_64_0.isVertical then
-		local var_64_0 = arg_64_0.verticalEulerAngle
-		local var_64_1 = arg_64_0.rotateUseTime
+function slot0.updateUIDirection(slot0)
+	if slot0.isVertical then
+		slot1 = slot0.verticalEulerAngle
+		slot2 = slot0.rotateUseTime
 
-		LeanTween.rotateZ(go(arg_64_0.backBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.selectCharBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.switchCamBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.l2dBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.l2dStopBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.l2dPlayBtnImg), var_64_0, var_64_1)
-		LeanTween.rotateZ(go(arg_64_0.l2d2PaintBtnImg), var_64_0, var_64_1)
-		SetActive(arg_64_0.takePhotoVerticalText, false)
-		SetActive(arg_64_0.takePhotoHorizontalText, true)
-		SetActive(arg_64_0.takeVideoVerticalText, false)
-		SetActive(arg_64_0.takeVideoHorizontalText, true)
-		LeanTween.rotateZ(go(arg_64_0.paint), var_64_0, var_64_1)
-		arg_64_0:updateListItemRotate(var_64_0, var_64_1)
+		LeanTween.rotateZ(go(slot0.backBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.selectCharBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.switchCamBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dStopBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dPlayBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2d2PaintBtnImg), slot1, slot2)
+		SetActive(slot0.takePhotoVerticalText, false)
+		SetActive(slot0.takePhotoHorizontalText, true)
+		SetActive(slot0.takeVideoVerticalText, false)
+		SetActive(slot0.takeVideoHorizontalText, true)
+		LeanTween.rotateZ(go(slot0.paint), slot1, slot2)
+		slot0:updateListItemRotate(slot1, slot2)
 	else
-		local var_64_2 = arg_64_0.horizontalEulerAngle
-		local var_64_3 = arg_64_0.rotateUseTime
+		slot1 = slot0.horizontalEulerAngle
+		slot2 = slot0.rotateUseTime
 
-		LeanTween.rotateZ(go(arg_64_0.backBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.selectCharBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.switchCamBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.l2dBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.l2dStopBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.l2dPlayBtnImg), var_64_2, var_64_3)
-		LeanTween.rotateZ(go(arg_64_0.l2d2PaintBtnImg), var_64_2, var_64_3)
-		SetActive(arg_64_0.takePhotoVerticalText, true)
-		SetActive(arg_64_0.takePhotoHorizontalText, false)
-		SetActive(arg_64_0.takeVideoVerticalText, true)
-		SetActive(arg_64_0.takeVideoHorizontalText, false)
-		LeanTween.rotateZ(go(arg_64_0.paint), var_64_2, var_64_3)
-		arg_64_0:updateListItemRotate(var_64_2, var_64_3)
+		LeanTween.rotateZ(go(slot0.backBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.selectCharBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.switchCamBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dStopBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2dPlayBtnImg), slot1, slot2)
+		LeanTween.rotateZ(go(slot0.l2d2PaintBtnImg), slot1, slot2)
+		SetActive(slot0.takePhotoVerticalText, true)
+		SetActive(slot0.takePhotoHorizontalText, false)
+		SetActive(slot0.takeVideoVerticalText, true)
+		SetActive(slot0.takeVideoHorizontalText, false)
+		LeanTween.rotateZ(go(slot0.paint), slot1, slot2)
+		slot0:updateListItemRotate(slot1, slot2)
 	end
 end
 
-function var_0_0.updateListItemRotate(arg_65_0, arg_65_1, arg_65_2)
-	for iter_65_0, iter_65_1 in pairs(arg_65_0.scrollItems) do
-		iter_65_1:RotateUI(arg_65_1, arg_65_2)
+function slot0.updateListItemRotate(slot0, slot1, slot2)
+	for slot6, slot7 in pairs(slot0.scrollItems) do
+		slot7:RotateUI(slot1, slot2)
 	end
 end
 
-function var_0_0.updateCameraCanvas(arg_66_0)
-	local var_66_0 = CameraMgr.instance.AspectRatio
-	local var_66_1 = UnityEngine.Screen.width
-	local var_66_2 = UnityEngine.Screen.height
-	local var_66_3 = 1
-	local var_66_4 = var_66_1 / var_66_2
+function slot0.updateCameraCanvas(slot0)
+	slot4 = 1
 
-	if var_66_4 < var_66_0 then
-		var_66_3 = var_66_0 / var_66_4
-	elseif var_66_0 < var_66_4 then
-		var_66_3 = var_66_4 / var_66_0
+	if CameraMgr.instance.AspectRatio > UnityEngine.Screen.width / UnityEngine.Screen.height then
+		slot4 = slot1 / slot5
+	elseif slot1 < slot5 then
+		slot4 = slot5 / slot1
 	end
 
-	if arg_66_0.isFlipping then
-		arg_66_0.snapshot.localScale = Vector3(-var_66_3, var_66_3, 1)
+	if slot0.isFlipping then
+		slot0.snapshot.localScale = Vector3(-slot4, slot4, 1)
 	else
-		arg_66_0.snapshot.localScale = Vector3(var_66_3, var_66_3, 1)
+		slot0.snapshot.localScale = Vector3(slot4, slot4, 1)
 	end
 end
 
-function var_0_0.SetDummyForIOS(arg_67_0, arg_67_1)
+function slot0.SetDummyForIOS(slot0, slot1)
 	if PLATFORM ~= PLATFORM_IPHONEPLAYER then
-		setActive(arg_67_0.dummy, false)
+		setActive(slot0.dummy, false)
 
 		return
 	end
 
-	local var_67_0 = pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera))
+	if slot1 then
+		pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera)).nearClipPlane = 0
 
-	if arg_67_1 then
-		var_67_0.nearClipPlane = 0
+		slot0.dummy:SetParent(pg.UIMgr.GetInstance():GetMainCamera().transform)
 
-		arg_67_0.dummy:SetParent(pg.UIMgr.GetInstance():GetMainCamera().transform)
+		slot0.dummy.localPosition = Vector3(0, 0, 3)
+		slot0.dummy.localRotation = Vector3(0, 0, 0)
+		slot0.dummy.localScale = Vector3(1, 1, 1)
 
-		arg_67_0.dummy.localPosition = Vector3(0, 0, 3)
-		arg_67_0.dummy.localRotation = Vector3(0, 0, 0)
-		arg_67_0.dummy.localScale = Vector3(1, 1, 1)
-
-		setActive(arg_67_0.dummy, true)
+		setActive(slot0.dummy, true)
 	else
-		var_67_0.nearClipPlane = -100
+		slot2.nearClipPlane = -100
 
-		arg_67_0.dummy:SetParent(arg_67_0._tf)
+		slot0.dummy:SetParent(slot0._tf)
 
-		arg_67_0.dummy.localPosition = Vector3(0, 0, 0)
-		arg_67_0.dummy.localRotation = Vector3(0, 0, 0)
-		arg_67_0.dummy.localScale = Vector3(1, 1, 1)
+		slot0.dummy.localPosition = Vector3(0, 0, 0)
+		slot0.dummy.localRotation = Vector3(0, 0, 0)
+		slot0.dummy.localScale = Vector3(1, 1, 1)
 	end
 end
 
-function var_0_0.SetMute(arg_68_0, arg_68_1)
-	if arg_68_1 then
+function slot0.SetMute(slot0, slot1)
+	if slot1 then
 		CriAtom.SetCategoryVolume("Category_CV", 0)
 		CriAtom.SetCategoryVolume("Category_BGM", 0)
 		CriAtom.SetCategoryVolume("Category_SE", 0)
@@ -838,4 +808,4 @@ function var_0_0.SetMute(arg_68_0, arg_68_1)
 	end
 end
 
-return var_0_0
+return slot0

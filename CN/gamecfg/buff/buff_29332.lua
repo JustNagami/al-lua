@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-凯旋II"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-凯旋II",
+	name = "专属弹幕-凯旋II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-凯旋II",
+	stack = 1,
+	id = 29332,
+	icon = 29330,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -52,19 +66,5 @@
 				}
 			}
 		}
-	},
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-凯旋II"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-凯旋II",
-	name = "专属弹幕-凯旋II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-凯旋II",
-	stack = 1,
-	id = 29332,
-	icon = 29330,
-	last_effect = ""
+	}
 }

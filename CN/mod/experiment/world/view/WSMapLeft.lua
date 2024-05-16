@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSMapLeft", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSMapLeft", import("...BaseEntity"))
+slot0.Fields = {
 	map = "table",
 	fleet = "table",
 	rtArrow = "userdata",
@@ -26,7 +25,7 @@ var_0_0.Fields = {
 	rtMain = "userdata",
 	rtFleetBar = "userdata"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdateShipHpRate = "OnUpdateShipHpRate",
 	onUpdateFleetOrder = "OnUpdateFleetOrder",
 	onUpdateFleetBar = "OnUpdateFleetBar",
@@ -34,429 +33,390 @@ var_0_0.Listeners = {
 	onUpdateShipBroken = "OnUpdateShipBroken",
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet"
 }
-var_0_0.EventSelectFleet = "WSMapLeft.EventSelectFleet"
+slot0.EventSelectFleet = "WSMapLeft.EventSelectFleet"
 
-function var_0_0.Setup(arg_1_0)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Setup(slot0)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.delayCallFuncs = {}
+	slot0.delayCallFuncs = {}
 
-	arg_1_0:Init()
-	arg_1_0:AddWorldListener()
-	arg_1_0:UpdateAllCatSalvage()
+	slot0:Init()
+	slot0:AddWorldListener()
+	slot0:UpdateAllCatSalvage()
 end
 
-function var_0_0.Dispose(arg_2_0)
-	local function var_2_0(arg_3_0)
-		LeanTween.cancel(go(arg_3_0))
-		LeanTween.cancel(go(arg_3_0:Find("text")))
+function slot0.Dispose(slot0)
+	function slot1(slot0)
+		LeanTween.cancel(go(slot0))
+		LeanTween.cancel(go(slot0:Find("text")))
 	end
 
-	eachChild(arg_2_0.rtMain, function(arg_4_0)
-		local var_4_0 = arg_4_0:Find("HP_POP")
+	eachChild(slot0.rtMain, function (slot0)
+		slot1 = slot0:Find("HP_POP")
 
-		var_2_0(var_4_0:Find("heal"))
-		var_2_0(var_4_0:Find("normal"))
+		uv0(slot1:Find("heal"))
+		uv0(slot1:Find("normal"))
 	end)
-	eachChild(arg_2_0.rtVanguard, function(arg_5_0)
-		local var_5_0 = arg_5_0:Find("HP_POP")
+	eachChild(slot0.rtVanguard, function (slot0)
+		slot1 = slot0:Find("HP_POP")
 
-		var_2_0(var_5_0:Find("heal"))
-		var_2_0(var_5_0:Find("normal"))
+		uv0(slot1:Find("heal"))
+		uv0(slot1:Find("normal"))
 	end)
-	arg_2_0:RemoveWorldListener()
-	arg_2_0:RemoveFleetListener(arg_2_0.fleet)
-	arg_2_0:RemoveMapListener()
-	pg.DelegateInfo.Dispose(arg_2_0)
-	arg_2_0:Clear()
+	slot0:RemoveWorldListener()
+	slot0:RemoveFleetListener(slot0.fleet)
+	slot0:RemoveMapListener()
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Clear()
 end
 
-function var_0_0.Init(arg_6_0)
-	local var_6_0 = arg_6_0.transform
+function slot0.Init(slot0)
+	slot1 = slot0.transform
+	slot0.rtBG = slot1:Find("bg")
+	slot0.rtFleet = slot0.rtBG:Find("fleet")
+	slot0.rtMain = slot0.rtFleet:Find("main")
+	slot0.rtVanguard = slot0.rtFleet:Find("vanguard")
+	slot0.rtShip = slot0.rtFleet:Find("shiptpl")
+	slot0.btnCollapse = slot0.rtBG:Find("collapse")
+	slot0.rtArrow = slot0.btnCollapse:Find("arrow")
+	slot0.rtFleetBar = slot1:Find("other/fleet_bar")
+	slot0.toggleMask = slot1:Find("mask")
+	slot0.toggleList = slot0.toggleMask:Find("list")
+	slot0.toggles = {}
 
-	arg_6_0.rtBG = var_6_0:Find("bg")
-	arg_6_0.rtFleet = arg_6_0.rtBG:Find("fleet")
-	arg_6_0.rtMain = arg_6_0.rtFleet:Find("main")
-	arg_6_0.rtVanguard = arg_6_0.rtFleet:Find("vanguard")
-	arg_6_0.rtShip = arg_6_0.rtFleet:Find("shiptpl")
-	arg_6_0.btnCollapse = arg_6_0.rtBG:Find("collapse")
-	arg_6_0.rtArrow = arg_6_0.btnCollapse:Find("arrow")
-	arg_6_0.rtFleetBar = var_6_0:Find("other/fleet_bar")
-	arg_6_0.toggleMask = var_6_0:Find("mask")
-	arg_6_0.toggleList = arg_6_0.toggleMask:Find("list")
-	arg_6_0.toggles = {}
-
-	for iter_6_0 = 0, arg_6_0.toggleList.childCount - 1 do
-		table.insert(arg_6_0.toggles, arg_6_0.toggleList:GetChild(iter_6_0))
+	for slot5 = 0, slot0.toggleList.childCount - 1 do
+		table.insert(slot0.toggles, slot0.toggleList:GetChild(slot5))
 	end
 
-	arg_6_0.rtSubBar = var_6_0:Find("other/sub_bar")
-	arg_6_0.rtAmmo = arg_6_0.rtSubBar:Find("text")
-	arg_6_0.rtSalvageList = var_6_0:Find("other/salvage_list")
+	slot0.rtSubBar = slot1:Find("other/sub_bar")
+	slot0.rtAmmo = slot0.rtSubBar:Find("text")
+	slot0.rtSalvageList = slot1:Find("other/salvage_list")
 
-	setActive(arg_6_0.rtShip, false)
-	setActive(arg_6_0.toggleMask, false)
-	setActive(arg_6_0.rtSubBar, false)
-	onButton(arg_6_0, arg_6_0.btnCollapse, function()
-		arg_6_0:Collpase()
+	setActive(slot0.rtShip, false)
+	setActive(slot0.toggleMask, false)
+	setActive(slot0.rtSubBar, false)
+	onButton(slot0, slot0.btnCollapse, function ()
+		uv0:Collpase()
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.rtFleetBar, function()
-		arg_6_0:ShowToggleMask(function(arg_9_0)
-			arg_6_0:DispatchEvent(var_0_0.EventSelectFleet, arg_9_0)
+	onButton(slot0, slot0.rtFleetBar, function ()
+		uv0:ShowToggleMask(function (slot0)
+			uv0:DispatchEvent(uv1.EventSelectFleet, slot0)
 		end)
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.toggleMask, function()
-		arg_6_0:HideToggleMask()
+	onButton(slot0, slot0.toggleMask, function ()
+		uv0:HideToggleMask()
 	end, SFX_PANEL)
 end
 
-function var_0_0.AddWorldListener(arg_11_0)
-	underscore.each(nowWorld():GetNormalFleets(), function(arg_12_0)
-		arg_12_0:AddListener(WorldMapFleet.EventUpdateCatSalvage, arg_11_0.onUpdateCatSalvage)
+function slot0.AddWorldListener(slot0)
+	underscore.each(nowWorld():GetNormalFleets(), function (slot0)
+		slot0:AddListener(WorldMapFleet.EventUpdateCatSalvage, uv0.onUpdateCatSalvage)
 	end)
 end
 
-function var_0_0.RemoveWorldListener(arg_13_0)
-	underscore.each(nowWorld():GetNormalFleets(), function(arg_14_0)
-		arg_14_0:RemoveListener(WorldMapFleet.EventUpdateCatSalvage, arg_13_0.onUpdateCatSalvage)
+function slot0.RemoveWorldListener(slot0)
+	underscore.each(nowWorld():GetNormalFleets(), function (slot0)
+		slot0:RemoveListener(WorldMapFleet.EventUpdateCatSalvage, uv0.onUpdateCatSalvage)
 	end)
 end
 
-function var_0_0.UpdateMap(arg_15_0, arg_15_1)
-	arg_15_0:RemoveMapListener()
+function slot0.UpdateMap(slot0, slot1)
+	slot0:RemoveMapListener()
 
-	arg_15_0.map = arg_15_1
+	slot0.map = slot1
 
-	arg_15_0:AddMapListener()
-	arg_15_0:OnUpdateSelectedFleet()
-	arg_15_0:OnUpdateSubmarineSupport()
+	slot0:AddMapListener()
+	slot0:OnUpdateSelectedFleet()
+	slot0:OnUpdateSubmarineSupport()
 end
 
-function var_0_0.AddMapListener(arg_16_0)
-	if arg_16_0.map then
-		arg_16_0.map:AddListener(WorldMap.EventUpdateFIndex, arg_16_0.onUpdateSelectedFleet)
+function slot0.AddMapListener(slot0)
+	if slot0.map then
+		slot0.map:AddListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
 	end
 end
 
-function var_0_0.RemoveMapListener(arg_17_0)
-	if arg_17_0.map then
-		arg_17_0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg_17_0.onUpdateSelectedFleet)
+function slot0.RemoveMapListener(slot0)
+	if slot0.map then
+		slot0.map:RemoveListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
 	end
 end
 
-function var_0_0.AddFleetListener(arg_18_0, arg_18_1)
-	if arg_18_1 then
-		arg_18_1:AddListener(WorldMapFleet.EventUpdateShipOrder, arg_18_0.onUpdateFleetOrder)
-		arg_18_1:AddListener(WorldMapFleet.EventUpdateBuff, arg_18_0.onUpdateFleetBar)
-		_.each(arg_18_1:GetShips(true), function(arg_19_0)
-			arg_19_0:AddListener(WorldMapShip.EventHpRantChange, arg_18_0.onUpdateShipHpRate)
-			arg_19_0:AddListener(WorldMapShip.EventUpdateBroken, arg_18_0.onUpdateShipBroken)
-		end)
-	end
-end
-
-function var_0_0.RemoveFleetListener(arg_20_0, arg_20_1)
-	if arg_20_1 then
-		arg_20_1:RemoveListener(WorldMapFleet.EventUpdateShipOrder, arg_20_0.onUpdateFleetOrder)
-		arg_20_1:RemoveListener(WorldMapFleet.EventUpdateBuff, arg_20_0.onUpdateFleetBar)
-		_.each(arg_20_1:GetShips(true), function(arg_21_0)
-			arg_21_0:RemoveListener(WorldMapShip.EventHpRantChange, arg_20_0.onUpdateShipHpRate)
-			arg_21_0:RemoveListener(WorldMapShip.EventUpdateBroken, arg_20_0.onUpdateShipBroken)
+function slot0.AddFleetListener(slot0, slot1)
+	if slot1 then
+		slot1:AddListener(WorldMapFleet.EventUpdateShipOrder, slot0.onUpdateFleetOrder)
+		slot1:AddListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdateFleetBar)
+		_.each(slot1:GetShips(true), function (slot0)
+			slot0:AddListener(WorldMapShip.EventHpRantChange, uv0.onUpdateShipHpRate)
+			slot0:AddListener(WorldMapShip.EventUpdateBroken, uv0.onUpdateShipBroken)
 		end)
 	end
 end
 
-function var_0_0.OnUpdateSelectedFleet(arg_22_0)
-	local var_22_0 = arg_22_0.map:GetFleet()
-
-	if arg_22_0.fleet ~= var_22_0 then
-		arg_22_0:RemoveFleetListener(arg_22_0.fleet)
-
-		arg_22_0.fleet = var_22_0
-
-		arg_22_0:AddFleetListener(arg_22_0.fleet)
-
-		arg_22_0.delayCallFuncs = {}
-
-		arg_22_0:UpdateShipList(arg_22_0.rtMain, arg_22_0.fleet:GetTeamShips(TeamType.Main, true))
-		arg_22_0:UpdateShipList(arg_22_0.rtVanguard, arg_22_0.fleet:GetTeamShips(TeamType.Vanguard, true))
-		setImageSprite(arg_22_0.rtFleetBar:Find("text_selected/x"), getImageSprite(arg_22_0.toggles[var_22_0.index]:Find("text_selected/x")))
-		arg_22_0:OnUpdateFleetBar(nil, var_22_0)
+function slot0.RemoveFleetListener(slot0, slot1)
+	if slot1 then
+		slot1:RemoveListener(WorldMapFleet.EventUpdateShipOrder, slot0.onUpdateFleetOrder)
+		slot1:RemoveListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdateFleetBar)
+		_.each(slot1:GetShips(true), function (slot0)
+			slot0:RemoveListener(WorldMapShip.EventHpRantChange, uv0.onUpdateShipHpRate)
+			slot0:RemoveListener(WorldMapShip.EventUpdateBroken, uv0.onUpdateShipBroken)
+		end)
 	end
 end
 
-function var_0_0.UpdateAllCatSalvage(arg_23_0)
-	local var_23_0 = nowWorld():GetNormalFleets()
-	local var_23_1 = arg_23_0.rtSalvageList:GetChild(0)
+function slot0.OnUpdateSelectedFleet(slot0)
+	if slot0.fleet ~= slot0.map:GetFleet() then
+		slot0:RemoveFleetListener(slot0.fleet)
 
-	for iter_23_0 = arg_23_0.rtSalvageList.childCount + 1, #var_23_0 do
-		cloneTplTo(var_23_1, arg_23_0.rtSalvageList, var_23_1.name)
+		slot0.fleet = slot1
+
+		slot0:AddFleetListener(slot0.fleet)
+
+		slot0.delayCallFuncs = {}
+
+		slot0:UpdateShipList(slot0.rtMain, slot0.fleet:GetTeamShips(TeamType.Main, true))
+		slot0:UpdateShipList(slot0.rtVanguard, slot0.fleet:GetTeamShips(TeamType.Vanguard, true))
+		setImageSprite(slot0.rtFleetBar:Find("text_selected/x"), getImageSprite(slot0.toggles[slot1.index]:Find("text_selected/x")))
+		slot0:OnUpdateFleetBar(nil, slot1)
+	end
+end
+
+function slot0.UpdateAllCatSalvage(slot0)
+	slot2 = slot0.rtSalvageList:GetChild(0)
+
+	for slot6 = slot0.rtSalvageList.childCount + 1, #nowWorld():GetNormalFleets() do
+		cloneTplTo(slot2, slot0.rtSalvageList, slot2.name)
 	end
 
-	for iter_23_1 = #var_23_0 + 1, arg_23_0.rtSalvageList.childCount do
-		setActive(arg_23_0.rtSalvageList:GetChild(iter_23_1 - 1), false)
+	for slot6 = #slot1 + 1, slot0.rtSalvageList.childCount do
+		setActive(slot0.rtSalvageList:GetChild(slot6 - 1), false)
 	end
 
-	underscore.each(var_23_0, function(arg_24_0)
-		arg_23_0:OnUpdateCatSalvage(nil, arg_24_0)
+	underscore.each(slot1, function (slot0)
+		uv0:OnUpdateCatSalvage(nil, slot0)
 	end)
 end
 
-function var_0_0.OnUpdateCatSalvage(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_2:IsCatSalvage()
-	local var_25_1 = arg_25_0.rtSalvageList:GetChild(arg_25_2.index - 1)
+function slot0.OnUpdateCatSalvage(slot0, slot1, slot2)
+	slot3 = slot2:IsCatSalvage()
 
-	setActive(var_25_1, var_25_0)
+	setActive(slot0.rtSalvageList:GetChild(slot2.index - 1), slot3)
 
-	if var_25_0 then
-		local var_25_2 = arg_25_2:GetDisplayCommander():getPainting()
-
-		GetImageSpriteFromAtlasAsync("commandericon/" .. var_25_2, "", var_25_1:Find("icon"))
-		setActive(var_25_1:Find("rarity"), arg_25_2:GetRarityState() > 0)
-		setActive(var_25_1:Find("doing"), arg_25_2.catSalvageStep < #arg_25_2.catSalvageList)
-		setSlider(var_25_1:Find("doing/Slider"), 0, #arg_25_2.catSalvageList, arg_25_2.catSalvageStep)
-		setActive(var_25_1:Find("finish"), arg_25_2.catSalvageStep == #arg_25_2.catSalvageList)
+	if slot3 then
+		GetImageSpriteFromAtlasAsync("commandericon/" .. slot2:GetDisplayCommander():getPainting(), "", slot4:Find("icon"))
+		setActive(slot4:Find("rarity"), slot2:GetRarityState() > 0)
+		setActive(slot4:Find("doing"), slot2.catSalvageStep < #slot2.catSalvageList)
+		setSlider(slot4:Find("doing/Slider"), 0, #slot2.catSalvageList, slot2.catSalvageStep)
+		setActive(slot4:Find("finish"), slot2.catSalvageStep == #slot2.catSalvageList)
 	end
 
-	onButton(arg_25_0, var_25_1, function()
-		arg_25_0.onClickSalvage(arg_25_2.id)
+	onButton(slot0, slot4, function ()
+		uv0.onClickSalvage(uv1.id)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateSubmarineSupport(arg_27_0)
-	local var_27_0 = nowWorld()
+function slot0.OnUpdateSubmarineSupport(slot0)
+	slot1 = nowWorld()
 
-	setActive(arg_27_0.rtSubBar, var_27_0:IsSubmarineSupporting())
+	setActive(slot0.rtSubBar, slot1:IsSubmarineSupporting())
 
-	local var_27_1 = var_27_0:GetSubmarineFleet()
+	if slot1:GetSubmarineFleet() then
+		slot3, slot4 = slot2:GetAmmo()
 
-	if var_27_1 then
-		local var_27_2, var_27_3 = var_27_1:GetAmmo()
-
-		setText(arg_27_0.rtAmmo, var_27_2 .. "/" .. var_27_3)
-		setGray(arg_27_0.rtSubBar, var_27_1:GetAmmo() <= 0, true)
+		setText(slot0.rtAmmo, slot3 .. "/" .. slot4)
+		setGray(slot0.rtSubBar, slot2:GetAmmo() <= 0, true)
 	end
 end
 
-function var_0_0.OnUpdateFleetOrder(arg_28_0)
-	arg_28_0.delayCallFuncs = {}
+function slot0.OnUpdateFleetOrder(slot0)
+	slot0.delayCallFuncs = {}
 
-	arg_28_0:UpdateShipList(arg_28_0.rtMain, arg_28_0.fleet:GetTeamShips(TeamType.Main, true))
-	arg_28_0:UpdateShipList(arg_28_0.rtVanguard, arg_28_0.fleet:GetTeamShips(TeamType.Vanguard, true))
+	slot0:UpdateShipList(slot0.rtMain, slot0.fleet:GetTeamShips(TeamType.Main, true))
+	slot0:UpdateShipList(slot0.rtVanguard, slot0.fleet:GetTeamShips(TeamType.Vanguard, true))
 end
 
-function var_0_0.GetShipObject(arg_29_0, arg_29_1)
-	local var_29_0 = {
-		[TeamType.Main] = arg_29_0.rtMain,
-		[TeamType.Vanguard] = arg_29_0.rtVanguard
-	}
-
-	for iter_29_0, iter_29_1 in pairs(var_29_0) do
-		local var_29_1 = arg_29_0.fleet:GetTeamShips(iter_29_0, true)
-
-		for iter_29_2, iter_29_3 in ipairs(var_29_1) do
-			if arg_29_1.id == iter_29_3.id then
-				return iter_29_1:GetChild(iter_29_2 - 1)
+function slot0.GetShipObject(slot0, slot1)
+	for slot6, slot7 in pairs({
+		[TeamType.Main] = slot0.rtMain,
+		[TeamType.Vanguard] = slot0.rtVanguard
+	}) do
+		for slot12, slot13 in ipairs(slot0.fleet:GetTeamShips(slot6, true)) do
+			if slot1.id == slot13.id then
+				return slot7:GetChild(slot12 - 1)
 			end
 		end
 	end
 end
 
-function var_0_0.OnUpdateShipHpRate(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = arg_30_0:GetShipObject(arg_30_2)
-
-	assert(var_30_0, "can not find this ship in display fleet: " .. arg_30_2.id)
-	table.insert(arg_30_0.delayCallFuncs[arg_30_2.id], function()
-		arg_30_0:ShipDamageDisplay(arg_30_2, var_30_0, true)
+function slot0.OnUpdateShipHpRate(slot0, slot1, slot2)
+	assert(slot0:GetShipObject(slot2), "can not find this ship in display fleet: " .. slot2.id)
+	table.insert(slot0.delayCallFuncs[slot2.id], function ()
+		uv0:ShipDamageDisplay(uv1, uv2, true)
 	end)
 
-	if not arg_30_0.delayCallFuncs[arg_30_2.id].isDoing then
-		table.remove(arg_30_0.delayCallFuncs[arg_30_2.id], 1)()
+	if not slot0.delayCallFuncs[slot2.id].isDoing then
+		table.remove(slot0.delayCallFuncs[slot2.id], 1)()
 	end
 end
 
-function var_0_0.OnUpdateShipBroken(arg_32_0, arg_32_1, arg_32_2)
-	local var_32_0 = arg_32_0:GetShipObject(arg_32_2)
-
-	setActive(var_32_0:Find("broken"), arg_32_2:IsBroken())
+function slot0.OnUpdateShipBroken(slot0, slot1, slot2)
+	setActive(slot0:GetShipObject(slot2):Find("broken"), slot2:IsBroken())
 end
 
-function var_0_0.OnUpdateFleetBar(arg_33_0, arg_33_1, arg_33_2)
-	local var_33_0 = arg_33_2:GetWatchingBuff()
+function slot0.OnUpdateFleetBar(slot0, slot1, slot2)
+	slot3 = slot2:GetWatchingBuff()
 
-	setActive(arg_33_0.rtFleetBar:Find("watching_buff"), var_33_0)
+	setActive(slot0.rtFleetBar:Find("watching_buff"), slot3)
 
-	if var_33_0 then
-		if #var_33_0.config.icon > 0 then
-			GetImageSpriteFromAtlasAsync("world/watchingbuff/" .. var_33_0.config.icon, "", arg_33_0.rtFleetBar:Find("watching_buff"))
+	if slot3 then
+		if #slot3.config.icon > 0 then
+			GetImageSpriteFromAtlasAsync("world/watchingbuff/" .. slot3.config.icon, "", slot0.rtFleetBar:Find("watching_buff"))
 		else
-			setImageSprite(arg_33_0.rtFleetBar:Find("watching_buff"), nil)
+			setImageSprite(slot0.rtFleetBar:Find("watching_buff"), nil)
 		end
 	end
 end
 
-function var_0_0.UpdateShipList(arg_34_0, arg_34_1, arg_34_2)
-	local var_34_0 = UIItemList.New(arg_34_1, arg_34_0.rtShip)
+function slot0.UpdateShipList(slot0, slot1, slot2)
+	slot3 = UIItemList.New(slot1, slot0.rtShip)
 
-	var_34_0:make(function(arg_35_0, arg_35_1, arg_35_2)
-		if arg_35_0 == UIItemList.EventUpdate then
-			local var_35_0 = arg_34_2[arg_35_1 + 1]
+	slot3:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			updateShip(arg_35_2, WorldConst.FetchShipVO(var_35_0.id))
-			onButton(arg_34_0, arg_35_2:Find("agony"), function()
-				if arg_34_0.onAgonyClickEnabled then
-					arg_34_0.onAgonyClick()
+			updateShip(slot2, WorldConst.FetchShipVO(slot3.id))
+			onButton(uv1, slot2:Find("agony"), function ()
+				if uv0.onAgonyClickEnabled then
+					uv0.onAgonyClick()
 				end
 			end, SFX_PANEL)
 
-			arg_34_0.delayCallFuncs[var_35_0.id] = {}
+			uv1.delayCallFuncs[slot3.id] = {}
 
-			arg_34_0:ShipDamageDisplay(var_35_0, arg_35_2)
+			uv1:ShipDamageDisplay(slot3, slot2)
 
-			local var_35_1 = GetOrAddComponent(arg_35_2, "UILongPressTrigger").onLongPressed
+			slot4 = GetOrAddComponent(slot2, "UILongPressTrigger").onLongPressed
 
-			pg.DelegateInfo.Add(arg_34_0, var_35_1)
-			var_35_1:RemoveAllListeners()
-			var_35_1:AddListener(function()
-				arg_34_0.onLongPress(var_35_0)
+			pg.DelegateInfo.Add(uv1, slot4)
+			slot4:RemoveAllListeners()
+			slot4:AddListener(function ()
+				uv0.onLongPress(uv1)
 			end)
 		end
 	end)
-	var_34_0:align(#arg_34_2)
+	slot3:align(#slot2)
 end
 
-function var_0_0.ShipDamageDisplay(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-	local var_38_0 = arg_38_2:Find("HP_POP")
+function slot0.ShipDamageDisplay(slot0, slot1, slot2, slot3)
+	slot4 = slot2:Find("HP_POP")
 
-	setActive(var_38_0, true)
-	setActive(var_38_0:Find("heal"), false)
-	setActive(var_38_0:Find("normal"), false)
+	setActive(slot4, true)
+	setActive(slot4:Find("heal"), false)
+	setActive(slot4:Find("normal"), false)
 
-	local var_38_1 = arg_38_2:Find("blood")
-
-	if arg_38_3 then
-		local var_38_2 = var_38_1:GetComponent(typeof(Slider)).value
-		local var_38_3 = WorldConst.FetchShipVO(arg_38_1.id):getShipProperties()
-		local var_38_4 = calcFloor((arg_38_1.hpRant - var_38_2) / 10000 * var_38_3[AttributeType.Durability])
-
-		local function var_38_5(arg_39_0, arg_39_1)
-			setActive(arg_39_0, true)
-			setText(findTF(arg_39_0, "text"), arg_39_1)
-			setTextAlpha(findTF(arg_39_0, "text"), 0)
-
-			arg_38_0.delayCallFuncs[arg_38_1.id].isDoing = true
-
-			parallelAsync({
-				function(arg_40_0)
-					LeanTween.moveY(arg_39_0, 60, 1):setOnComplete(System.Action(arg_40_0))
-				end,
-				function(arg_41_0)
-					LeanTween.textAlpha(findTF(arg_39_0, "text"), 1, 0.3):setOnComplete(System.Action(function()
-						LeanTween.textAlpha(findTF(arg_39_0, "text"), 0, 0.5):setDelay(0.4):setOnComplete(System.Action(arg_41_0))
-					end))
-				end
-			}, function()
-				arg_39_0.localPosition = Vector3(0, 0, 0)
-
-				if not arg_38_0.delayCallFuncs[arg_38_1.id] then
-					return
-				end
-
-				arg_38_0.delayCallFuncs[arg_38_1.id].isDoing = false
-
-				if #arg_38_0.delayCallFuncs[arg_38_1.id] > 0 then
-					table.remove(arg_38_0.delayCallFuncs[arg_38_1.id], 1)()
-				end
-			end)
+	if slot3 then
+		function slot10(slot0)
+			LeanTween.moveX(slot0, slot0.transform.localPosition.x, 0.05):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(4)
+			LeanTween.alpha(findTF(slot0, "red"), 0.5, 0.4)
+			LeanTween.alpha(findTF(slot0, "red"), 0, 0.4):setDelay(0.4)
 		end
 
-		local function var_38_6(arg_44_0)
-			local var_44_0 = arg_44_0.transform.localPosition.x
+		if calcFloor((slot1.hpRant - slot2:Find("blood"):GetComponent(typeof(Slider)).value) / 10000 * WorldConst.FetchShipVO(slot1.id):getShipProperties()[AttributeType.Durability]) > 0 then
+			function (slot0, slot1)
+				setActive(slot0, true)
+				setText(findTF(slot0, "text"), slot1)
+				setTextAlpha(findTF(slot0, "text"), 0)
 
-			LeanTween.moveX(arg_44_0, var_44_0, 0.05):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(4)
-			LeanTween.alpha(findTF(arg_44_0, "red"), 0.5, 0.4)
-			LeanTween.alpha(findTF(arg_44_0, "red"), 0, 0.4):setDelay(0.4)
-		end
+				uv0.delayCallFuncs[uv1.id].isDoing = true
 
-		if var_38_4 > 0 then
-			var_38_5(findTF(var_38_0, "heal"), var_38_4)
-		elseif var_38_4 < 0 then
-			var_38_6(arg_38_2)
-			var_38_5(findTF(var_38_0, "normal"), var_38_4)
+				parallelAsync({
+					function (slot0)
+						LeanTween.moveY(uv0, 60, 1):setOnComplete(System.Action(slot0))
+					end,
+					function (slot0)
+						LeanTween.textAlpha(findTF(uv0, "text"), 1, 0.3):setOnComplete(System.Action(function ()
+							LeanTween.textAlpha(findTF(uv0, "text"), 0, 0.5):setDelay(0.4):setOnComplete(System.Action(uv1))
+						end))
+					end
+				}, function ()
+					uv0.localPosition = Vector3(0, 0, 0)
+
+					if not uv1.delayCallFuncs[uv2.id] then
+						return
+					end
+
+					uv1.delayCallFuncs[uv2.id].isDoing = false
+
+					if #uv1.delayCallFuncs[uv2.id] > 0 then
+						table.remove(uv1.delayCallFuncs[uv2.id], 1)()
+					end
+				end)
+			end(findTF(slot4, "heal"), slot8)
+		elseif slot8 < 0 then
+			slot10(slot2)
+			slot9(findTF(slot4, "normal"), slot8)
 		end
 	end
 
-	local var_38_7 = var_38_1:Find("fillarea/green")
-	local var_38_8 = var_38_1:Find("fillarea/red")
-	local var_38_9 = not arg_38_1:IsHpSafe()
+	slot8 = not slot1:IsHpSafe()
 
-	setActive(var_38_7, not var_38_9)
-	setActive(var_38_8, var_38_9)
+	setActive(slot5:Find("fillarea/green"), not slot8)
+	setActive(slot5:Find("fillarea/red"), slot8)
 
-	var_38_1:GetComponent(typeof(Slider)).fillRect = var_38_9 and var_38_8 or var_38_7
+	slot5:GetComponent(typeof(Slider)).fillRect = slot8 and slot7 or slot6
 
-	setSlider(var_38_1, 0, 10000, arg_38_1.hpRant)
-
-	local var_38_10 = arg_38_2:Find("agony")
-
-	setActive(var_38_10, var_38_9)
-
-	local var_38_11 = arg_38_2:Find("broken")
-
-	setActive(var_38_11, arg_38_1:IsBroken())
+	setSlider(slot5, 0, 10000, slot1.hpRant)
+	setActive(slot2:Find("agony"), slot8)
+	setActive(slot2:Find("broken"), slot1:IsBroken())
 end
 
-function var_0_0.ShowToggleMask(arg_45_0, arg_45_1)
-	local var_45_0 = arg_45_0.toggleList.position
+function slot0.ShowToggleMask(slot0, slot1)
+	slot2 = slot0.toggleList.position
+	slot2.x = slot0.rtFleetBar.position.x
+	slot0.toggleList.position = slot2
 
-	var_45_0.x = arg_45_0.rtFleetBar.position.x
-	arg_45_0.toggleList.position = var_45_0
+	setActive(slot0.toggleMask, true)
 
-	setActive(arg_45_0.toggleMask, true)
+	for slot7, slot8 in ipairs(slot0.toggles) do
+		slot9 = slot0.map:GetNormalFleets()[slot7]
 
-	local var_45_1 = arg_45_0.map:GetNormalFleets()
+		setActive(slot8, slot9)
 
-	for iter_45_0, iter_45_1 in ipairs(arg_45_0.toggles) do
-		local var_45_2 = var_45_1[iter_45_0]
+		if slot9 then
+			slot10 = slot7 == slot0.map.findex
+			slot11 = slot9:GetWatchingBuff()
 
-		setActive(iter_45_1, var_45_2)
+			setActive(slot8:Find("selected"), slot10)
+			setActive(slot8:Find("text"), not slot10)
+			setActive(slot8:Find("text_selected"), slot10)
+			setActive(slot8:Find("watching_buff"), slot11)
 
-		if var_45_2 then
-			local var_45_3 = iter_45_0 == arg_45_0.map.findex
-			local var_45_4 = var_45_2:GetWatchingBuff()
-
-			setActive(iter_45_1:Find("selected"), var_45_3)
-			setActive(iter_45_1:Find("text"), not var_45_3)
-			setActive(iter_45_1:Find("text_selected"), var_45_3)
-			setActive(iter_45_1:Find("watching_buff"), var_45_4)
-
-			if var_45_4 then
-				if #var_45_4.config.icon > 0 then
-					GetImageSpriteFromAtlasAsync("world/watchingbuff/" .. var_45_4.config.icon, "", iter_45_1:Find("watching_buff"))
+			if slot11 then
+				if #slot11.config.icon > 0 then
+					GetImageSpriteFromAtlasAsync("world/watchingbuff/" .. slot11.config.icon, "", slot8:Find("watching_buff"))
 				else
-					setImageSprite(iter_45_1:Find("watching_buff"), nil)
+					setImageSprite(slot8:Find("watching_buff"), nil)
 				end
 			end
 
-			onButton(arg_45_0, iter_45_1, function()
-				arg_45_0:HideToggleMask()
-				arg_45_1(var_45_2)
+			onButton(slot0, slot8, function ()
+				uv0:HideToggleMask()
+				uv1(uv2)
 			end, SFX_UI_TAG)
 		end
 	end
 end
 
-function var_0_0.HideToggleMask(arg_47_0)
-	setActive(arg_47_0.toggleMask, false)
+function slot0.HideToggleMask(slot0)
+	setActive(slot0.toggleMask, false)
 end
 
-function var_0_0.Collpase(arg_48_0)
-	setActive(arg_48_0.rtFleet, not isActive(arg_48_0.rtFleet))
+function slot0.Collpase(slot0)
+	setActive(slot0.rtFleet, not isActive(slot0.rtFleet))
 
-	local var_48_0 = arg_48_0.rtArrow.localScale
-
-	var_48_0.x = -var_48_0.x
-	arg_48_0.rtArrow.localScale = var_48_0
+	slot1 = slot0.rtArrow.localScale
+	slot1.x = -slot1.x
+	slot0.rtArrow.localScale = slot1
 end
 
-return var_0_0
+return slot0

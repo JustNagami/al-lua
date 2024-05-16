@@ -1,61 +1,57 @@
-﻿local var_0_0 = class("MetaProgress", import("..BaseVO"))
+slot0 = class("MetaProgress", import("..BaseVO"))
+slot0.STATE_LESS_PT = 1
+slot0.STATE_LESS_STORY = 2
+slot0.STATE_CAN_AWARD = 3
+slot0.STATE_CAN_FINISH = 4
+slot0.STATE_GOT_SHIP = 5
 
-var_0_0.STATE_LESS_PT = 1
-var_0_0.STATE_LESS_STORY = 2
-var_0_0.STATE_CAN_AWARD = 3
-var_0_0.STATE_CAN_FINISH = 4
-var_0_0.STATE_GOT_SHIP = 5
-
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.ship_strengthen_meta
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.id
-	arg_2_0.configId = arg_2_0.id
-	arg_2_0.metaType = arg_2_0:getConfig("type")
-	arg_2_0.actID = arg_2_0:getConfig("activity_id")
-	arg_2_0.metaShipVO = nil
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.metaType = slot0:getConfig("type")
+	slot0.actID = slot0:getConfig("activity_id")
+	slot0.metaShipVO = nil
 
-	if arg_2_0:isPtType() then
-		arg_2_0.unlockPTNum = arg_2_0:getConfig("synchronize")
-		arg_2_0.unlockPTLevel = nil
-		arg_2_0.metaPtData = MetaPTData.New({
-			group_id = arg_2_0.id
+	if slot0:isPtType() then
+		slot0.unlockPTNum = slot0:getConfig("synchronize")
+		slot0.unlockPTLevel = nil
+		slot0.metaPtData = MetaPTData.New({
+			group_id = slot0.id
 		})
+		slot2 = nil
 
-		local var_2_0
-
-		for iter_2_0, iter_2_1 in ipairs(pg.world_joint_boss_template.all) do
-			local var_2_1 = pg.world_joint_boss_template[iter_2_1]
-
-			if var_2_1.meta_id == arg_2_0.id then
-				var_2_0 = var_2_1
+		for slot6, slot7 in ipairs(pg.world_joint_boss_template.all) do
+			if pg.world_joint_boss_template[slot7].meta_id == slot0.id then
+				slot2 = slot8
 
 				break
 			end
 		end
 
-		if var_2_0 then
-			arg_2_0.timeConfig = var_2_0.state
+		if slot2 then
+			slot0.timeConfig = slot2.state
 		end
 	end
 end
 
-function var_0_0.updateMetaPtData(arg_3_0, arg_3_1)
-	if arg_3_0.metaPtData then
-		arg_3_0.metaPtData:Update(arg_3_1)
+function slot0.updateMetaPtData(slot0, slot1)
+	if slot0.metaPtData then
+		slot0.metaPtData:Update(slot1)
 	end
 end
 
-function var_0_0.getSynRate(arg_4_0)
-	local var_4_0, var_4_1, var_4_2 = arg_4_0.metaPtData:GetResProgress()
+function slot0.getSynRate(slot0)
+	slot1, slot2, slot3 = slot0.metaPtData:GetResProgress()
 
-	return var_4_0 / arg_4_0.unlockPTNum
+	return slot1 / slot0.unlockPTNum
 end
 
-function var_0_0.getStoryIndexList(arg_5_0)
-	return arg_5_0:getConfig("unlock_story") or {
+function slot0.getStoryIndexList(slot0)
+	return slot0:getConfig("unlock_story") or {
 		0,
 		0,
 		0,
@@ -103,141 +99,130 @@ function var_0_0.getStoryIndexList(arg_5_0)
 	}
 end
 
-function var_0_0.getCurLevelStoryIndex(arg_6_0)
-	local var_6_0, var_6_1, var_6_2 = arg_6_0.metaPtData:GetLevelProgress()
+function slot0.getCurLevelStoryIndex(slot0)
+	slot1, slot2, slot3 = slot0.metaPtData:GetLevelProgress()
 
-	return arg_6_0:getStoryIndexList()[var_6_0]
+	return slot0:getStoryIndexList()[slot1]
 end
 
-function var_0_0.isFinishCurLevelStory(arg_7_0)
-	local var_7_0 = arg_7_0:getCurLevelStoryIndex()
-	local var_7_1 = false
+function slot0.isFinishCurLevelStory(slot0)
+	slot2 = false
 
-	if var_7_0 == 0 then
-		var_7_1 = true
+	if slot0:getCurLevelStoryIndex() == 0 then
+		slot2 = true
 	else
-		local var_7_2 = pg.NewStoryMgr.GetInstance()
-		local var_7_3 = var_7_2:StoryName2StoryId(var_7_0)
+		slot3 = pg.NewStoryMgr.GetInstance()
 
-		if var_7_2:IsPlayed(var_7_3) then
-			var_7_1 = true
+		if slot3:IsPlayed(slot3:StoryName2StoryId(slot1)) then
+			slot2 = true
 		end
 	end
 
-	return var_7_1
+	return slot2
 end
 
-function var_0_0.getCurLevelStoryName(arg_8_0)
-	local var_8_0 = arg_8_0:getCurLevelStoryIndex()
-
-	return pg.memory_template[var_8_0].title
+function slot0.getCurLevelStoryName(slot0)
+	return pg.memory_template[slot0:getCurLevelStoryIndex()].title
 end
 
-function var_0_0.isCanGetAward(arg_9_0)
-	local var_9_0 = arg_9_0.metaPtData:CanGetAward()
-	local var_9_1 = arg_9_0:getCurLevelStoryIndex()
-	local var_9_2 = false
+function slot0.isCanGetAward(slot0)
+	slot1 = slot0.metaPtData:CanGetAward()
+	slot3 = false
 
-	if var_9_1 == 0 then
-		var_9_2 = true
+	if slot0:getCurLevelStoryIndex() == 0 then
+		slot3 = true
 	else
-		local var_9_3 = pg.NewStoryMgr.GetInstance()
-		local var_9_4 = var_9_3:GetStoryByName("index")[var_9_1]
+		slot4 = pg.NewStoryMgr.GetInstance()
+		slot6 = slot4:GetStoryByName("index")[slot2]
 
-		if var_9_3:IsPlayed(var_9_1) then
-			var_9_2 = true
+		if slot4:IsPlayed(slot2) then
+			slot3 = true
 		end
 	end
 
-	return var_9_0 and var_9_2
+	return slot1 and slot3
 end
 
-function var_0_0.getMetaProgressPTState(arg_10_0)
-	local var_10_0 = arg_10_0.metaPtData:CanGetAward()
-	local var_10_1 = arg_10_0:isFinishCurLevelStory()
-	local var_10_2 = arg_10_0:isUnlocked()
-	local var_10_3 = arg_10_0.metaPtData.level + 1
+function slot0.getMetaProgressPTState(slot0)
+	slot2 = slot0:isFinishCurLevelStory()
+	slot3 = slot0:isUnlocked()
 
-	if var_10_3 < arg_10_0.unlockPTLevel then
-		if not var_10_0 then
-			return var_0_0.STATE_LESS_PT
-		elseif var_10_1 == false then
-			return var_0_0.STATE_LESS_STORY
-		elseif var_10_1 == true then
-			return var_0_0.STATE_CAN_AWARD
+	if slot0.metaPtData.level + 1 < slot0.unlockPTLevel then
+		if not slot0.metaPtData:CanGetAward() then
+			return uv0.STATE_LESS_PT
+		elseif slot2 == false then
+			return uv0.STATE_LESS_STORY
+		elseif slot2 == true then
+			return uv0.STATE_CAN_AWARD
 		end
-	elseif var_10_3 == arg_10_0.unlockPTLevel then
-		if not var_10_0 then
-			return var_0_0.STATE_LESS_PT
-		elseif var_10_1 == false then
-			return var_0_0.STATE_LESS_STORY
-		elseif var_10_1 == true then
-			return var_0_0.STATE_CAN_FINISH
+	elseif slot4 == slot0.unlockPTLevel then
+		if not slot1 then
+			return uv0.STATE_LESS_PT
+		elseif slot2 == false then
+			return uv0.STATE_LESS_STORY
+		elseif slot2 == true then
+			return uv0.STATE_CAN_FINISH
 		end
-	elseif var_10_3 > arg_10_0.unlockPTLevel then
-		return var_0_0.STATE_GOT_SHIP
+	elseif slot0.unlockPTLevel < slot4 then
+		return uv0.STATE_GOT_SHIP
 	end
 end
 
-function var_0_0.IsGotAllAwards(arg_11_0)
-	return arg_11_0:isInAct() and arg_11_0:isInArchive() and not arg_11_0.metaPtData:CanGetNextAward()
+function slot0.IsGotAllAwards(slot0)
+	return slot0:isInAct() and slot0:isInArchive() and not slot0.metaPtData:CanGetNextAward()
 end
 
-function var_0_0.getRepairRateFromMetaCharacter(arg_12_0)
-	assert(arg_12_0.metaShipVO, "metaShipVO is null")
+function slot0.getRepairRateFromMetaCharacter(slot0)
+	assert(slot0.metaShipVO, "metaShipVO is null")
 
-	local var_12_0 = arg_12_0.metaShipVO.metaCharacter
+	slot1 = slot0.metaShipVO.metaCharacter
 
-	assert(var_12_0, "metaCharacterVO is null")
+	assert(slot1, "metaCharacterVO is null")
 
-	return (var_12_0:getRepairRate())
+	return slot1:getRepairRate()
 end
 
-function var_0_0.isPtType(arg_13_0)
-	return arg_13_0.metaType == MetaCharacterConst.Meta_Type_Act_PT
+function slot0.isPtType(slot0)
+	return slot0.metaType == MetaCharacterConst.Meta_Type_Act_PT
 end
 
-function var_0_0.isPassType(arg_14_0)
-	return arg_14_0.metaType == MetaCharacterConst.Meta_Type_Pass
+function slot0.isPassType(slot0)
+	return slot0.metaType == MetaCharacterConst.Meta_Type_Pass
 end
 
-function var_0_0.isBuildType(arg_15_0)
-	return arg_15_0.metaType == MetaCharacterConst.Meta_Type_Build
+function slot0.isBuildType(slot0)
+	return slot0.metaType == MetaCharacterConst.Meta_Type_Build
 end
 
-function var_0_0.isInAct(arg_16_0)
-	if arg_16_0:isPtType() then
-		return WorldBossConst.IsCurrBoss(arg_16_0.id)
-	elseif arg_16_0:isPassType() or arg_16_0:isBuildType() then
-		local var_16_0 = arg_16_0:getConfig("activity_id")
-		local var_16_1 = getProxy(ActivityProxy):getActivityById(var_16_0)
-
-		return var_16_1 and not var_16_1:isEnd()
+function slot0.isInAct(slot0)
+	if slot0:isPtType() then
+		return WorldBossConst.IsCurrBoss(slot0.id)
+	elseif slot0:isPassType() or slot0:isBuildType() then
+		return getProxy(ActivityProxy):getActivityById(slot0:getConfig("activity_id")) and not slot2:isEnd()
 	end
 end
 
-function var_0_0.isInArchive(arg_17_0)
-	return WorldBossConst.IsAchieveBoss(arg_17_0.id)
+function slot0.isInArchive(slot0)
+	return WorldBossConst.IsAchieveBoss(slot0.id)
 end
 
-function var_0_0.isUnlocked(arg_18_0)
-	return arg_18_0.metaShipVO ~= nil
+function slot0.isUnlocked(slot0)
+	return slot0.metaShipVO ~= nil
 end
 
-function var_0_0.isShow(arg_19_0)
-	local var_19_0 = arg_19_0:isInAct()
-	local var_19_1 = arg_19_0:isInArchive()
-	local var_19_2 = arg_19_0:isUnlocked()
-	local var_19_3 = true
+function slot0.isShow(slot0)
+	slot1 = slot0:isInAct()
+	slot2 = slot0:isInArchive()
+	slot4 = true
 
-	if var_19_2 then
+	if slot0:isUnlocked() then
 		return true
-	elseif var_19_1 then
+	elseif slot2 then
 		return true
-	elseif var_19_0 then
-		if arg_19_0:isPtType() and var_19_3 then
+	elseif slot1 then
+		if slot0:isPtType() and slot4 then
 			return true
-		elseif arg_19_0:isPassType() or arg_19_0:isBuildType() then
+		elseif slot0:isPassType() or slot0:isBuildType() then
 			return true
 		else
 			return false
@@ -247,91 +232,82 @@ function var_0_0.isShow(arg_19_0)
 	end
 end
 
-function var_0_0.getMetaShipFromBayProxy(arg_20_0)
-	local var_20_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_20_0.configId)
+function slot0.getMetaShipFromBayProxy(slot0)
+	slot1 = getProxy(BayProxy):getMetaShipByGroupId(slot0.configId)
+	slot0.metaShipVO = slot1
 
-	arg_20_0.metaShipVO = var_20_0
-
-	return var_20_0
+	return slot1
 end
 
-function var_0_0.getShip(arg_21_0)
-	return arg_21_0.metaShipVO
+function slot0.getShip(slot0)
+	return slot0.metaShipVO
 end
 
-function var_0_0.updateShip(arg_22_0, arg_22_1)
-	assert(arg_22_1, "metaShipVO can not be null!")
+function slot0.updateShip(slot0, slot1)
+	assert(slot1, "metaShipVO can not be null!")
 
-	arg_22_0.metaShipVO = arg_22_1
+	slot0.metaShipVO = slot1
 end
 
-function var_0_0.setDataBeforeGet(arg_23_0)
-	arg_23_0.metaShipVO = arg_23_0:getMetaShipFromBayProxy()
+function slot0.setDataBeforeGet(slot0)
+	slot0.metaShipVO = slot0:getMetaShipFromBayProxy()
 
-	if arg_23_0:isPtType() and arg_23_0.metaPtData and not arg_23_0.unlockPTLevel then
-		local var_23_0 = arg_23_0.metaPtData.targets
-
-		for iter_23_0, iter_23_1 in ipairs(var_23_0) do
-			if iter_23_1 == arg_23_0.unlockPTNum then
-				arg_23_0.unlockPTLevel = iter_23_0
+	if slot0:isPtType() and slot0.metaPtData and not slot0.unlockPTLevel then
+		for slot5, slot6 in ipairs(slot0.metaPtData.targets) do
+			if slot6 == slot0.unlockPTNum then
+				slot0.unlockPTLevel = slot5
 
 				break
 			end
 		end
 	end
 
-	if (arg_23_0:isPassType() or arg_23_0:isBuildType()) and not arg_23_0.timeConfig then
-		local var_23_1 = arg_23_0:getConfig("activity_id")
-		local var_23_2 = getProxy(ActivityProxy):getActivityById(var_23_1)
-
-		if var_23_2 then
-			arg_23_0.timeConfig = {
-				var_23_2:getConfig("time")[2],
-				var_23_2:getConfig("time")[3]
-			}
-		end
+	if (slot0:isPassType() or slot0:isBuildType()) and not slot0.timeConfig and getProxy(ActivityProxy):getActivityById(slot0:getConfig("activity_id")) then
+		slot0.timeConfig = {
+			slot2:getConfig("time")[2],
+			slot2:getConfig("time")[3]
+		}
 	end
 end
 
-function var_0_0.updateDataAfterAddShip(arg_24_0)
-	arg_24_0.metaShipVO = arg_24_0:getMetaShipFromBayProxy()
+function slot0.updateDataAfterAddShip(slot0)
+	slot0.metaShipVO = slot0:getMetaShipFromBayProxy()
 end
 
-function var_0_0.addPT(arg_25_0, arg_25_1)
-	if arg_25_0:isPtType() and arg_25_0.metaPtData then
-		arg_25_0.metaPtData:addPT(arg_25_1)
+function slot0.addPT(slot0, slot1)
+	if slot0:isPtType() and slot0.metaPtData then
+		slot0.metaPtData:addPT(slot1)
 	end
 end
 
-function var_0_0.updatePTLevel(arg_26_0, arg_26_1)
-	if arg_26_0:isPtType() and arg_26_0.metaPtData then
-		arg_26_0.metaPtData:updateLevel(arg_26_1)
+function slot0.updatePTLevel(slot0, slot1)
+	if slot0:isPtType() and slot0.metaPtData then
+		slot0.metaPtData:updateLevel(slot1)
 	end
 end
 
-function var_0_0.getPaintPathAndName(arg_27_0)
-	local var_27_0 = arg_27_0:isUnlocked()
-	local var_27_1, var_27_2 = MetaCharacterConst.GetMetaCharacterPaintPath(arg_27_0.configId, var_27_0)
+function slot0.getPaintPathAndName(slot0)
+	slot2, slot3 = MetaCharacterConst.GetMetaCharacterPaintPath(slot0.configId, slot0:isUnlocked())
 
-	return var_27_1, var_27_2
+	return slot2, slot3
 end
 
-function var_0_0.getBannerPathAndName(arg_28_0)
-	local var_28_0, var_28_1 = MetaCharacterConst.GetMetaCharacterBannerPath(arg_28_0.configId)
+function slot0.getBannerPathAndName(slot0)
+	slot1, slot2 = MetaCharacterConst.GetMetaCharacterBannerPath(slot0.configId)
 
-	return var_28_0, var_28_1
+	return slot1, slot2
 end
 
-function var_0_0.getBGNamePathAndName(arg_29_0)
-	local var_29_0, var_29_1 = MetaCharacterConst.GetMetaCharacterNamePath(arg_29_0.configId)
+function slot0.getBGNamePathAndName(slot0)
+	slot1, slot2 = MetaCharacterConst.GetMetaCharacterNamePath(slot0.configId)
 
-	return var_29_0, var_29_1
+	return slot1, slot2
 end
 
-function var_0_0.getPtIconPath(arg_30_0)
-	assert(arg_30_0:isPtType() and arg_30_0.metaPtData)
+function slot0.getPtIconPath(slot0)
+	assert(slot0:isPtType() and slot0.metaPtData)
 
-	return Item.getConfigData(arg_30_0.metaPtData.resId).icon
+	return Item.getConfigData(slot0.metaPtData.resId).icon
 end
 
-return var_0_0
+return slot0

@@ -1,20 +1,19 @@
-﻿local var_0_0 = class("Challenge2SettleRequestCommand", pm.SimpleCommand)
+slot0 = class("Challenge2SettleRequestCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if not var_1_1 or var_1_1:isEnd() then
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE) or slot4:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(24009, {
-		activity_id = var_1_1.id
-	}, 24010, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			arg_1_0:sendNotification(GAME.CHALLENGE2_SETTLE_DONE)
+		activity_id = slot4.id
+	}, 24010, function (slot0)
+		if slot0.result == 0 then
+			uv0:sendNotification(GAME.CHALLENGE2_SETTLE_DONE)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

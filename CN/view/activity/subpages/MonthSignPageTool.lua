@@ -1,96 +1,83 @@
-﻿local var_0_0 = class("MonthSignPageTool")
+slot0 = class("MonthSignPageTool")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._event = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0._event = slot1
 end
 
-function var_0_0.onAcheve(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0
+function slot0.onAcheve(slot0, slot1, slot2)
+	slot3 = nil
+	slot3 = coroutine.create(function ()
+		if table.getCount(uv0) > 0 then
+			slot0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MONTH_SIGN_ACTIVITY_ID)
+			slot1 = pg.activity_month_sign[slot0.data2].resign_count
+			slot3 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
 
-	local function var_2_1()
-		if var_2_0 and coroutine.status(var_2_0) == "suspended" then
-			local var_3_0, var_3_1 = coroutine.resume(var_2_0)
+			if slot0:getSpecialData("reMonthSignDay") ~= nil then
+				uv1.reMonthSignItems = uv1.reMonthSignItems and uv1.reMonthSignItems or {}
 
-			assert(var_3_0, var_3_1)
-		end
-	end
-
-	var_2_0 = coroutine.create(function()
-		if table.getCount(arg_2_1) > 0 then
-			local var_4_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MONTH_SIGN_ACTIVITY_ID)
-			local var_4_1 = pg.activity_month_sign[var_4_0.data2].resign_count
-			local var_4_2 = pg.TimeMgr.GetInstance():GetServerTime()
-			local var_4_3 = pg.TimeMgr.GetInstance():STimeDescS(var_4_2, "*t")
-
-			if var_4_0:getSpecialData("reMonthSignDay") ~= nil then
-				arg_2_0.reMonthSignItems = arg_2_0.reMonthSignItems and arg_2_0.reMonthSignItems or {}
-
-				for iter_4_0, iter_4_1 in pairs(arg_2_1) do
-					table.insert(arg_2_0.reMonthSignItems, iter_4_1)
+				for slot7, slot8 in pairs(uv0) do
+					table.insert(uv1.reMonthSignItems, slot8)
 				end
 
-				if var_4_3.day > #var_4_0.data1_list and var_4_1 > var_4_0.data3 then
-					Timer.New(function()
-						arg_2_2()
+				if slot3.day > #slot0.data1_list and slot0.data3 < slot1 then
+					Timer.New(function ()
+						uv0()
 					end, 0.3, 1):Start()
 
 					return
 				else
-					arg_2_0._event:emit(MonthSignPage.SHOW_RE_MONTH_SIGN, arg_2_0.reMonthSignItems, var_2_1)
+					uv1._event:emit(MonthSignPage.SHOW_RE_MONTH_SIGN, uv1.reMonthSignItems, uv3)
 
-					arg_2_1 = arg_2_0.reMonthSignItems
+					uv0 = uv1.reMonthSignItems
 				end
 			else
-				arg_2_0.reMonthSignItems = nil
+				uv1.reMonthSignItems = nil
 
-				arg_2_0._event:emit(BaseUI.ON_AWARD, {
-					items = arg_2_1,
-					removeFunc = var_2_1
+				uv1._event:emit(BaseUI.ON_AWARD, {
+					items = uv0,
+					removeFunc = uv3
 				})
 			end
 
 			coroutine.yield()
 
-			local var_4_4 = #_.filter(arg_2_1, function(arg_6_0)
-				return arg_6_0.type == DROP_TYPE_SHIP
+			slot5 = _.filter(uv0, function (slot0)
+				return slot0.type == DROP_TYPE_OPERATION
 			end)
-			local var_4_5 = _.filter(arg_2_1, function(arg_7_0)
-				return arg_7_0.type == DROP_TYPE_OPERATION
-			end)
-			local var_4_6 = var_4_4 + #var_4_5
-			local var_4_7 = getProxy(BayProxy)
-			local var_4_8 = var_4_7:getNewShip(true)
+			slot7 = getProxy(BayProxy):getNewShip(true)
 
-			_.each(var_4_5, function(arg_8_0)
-				table.insert(var_4_8, var_4_7:getShipById(arg_8_0.id))
+			_.each(slot5, function (slot0)
+				table.insert(uv0, uv1:getShipById(slot0.id))
 			end)
 
-			if var_4_6 <= (pg.gameset.award_ship_limit and pg.gameset.award_ship_limit.key_value or 20) then
-				for iter_4_2 = math.max(1, #var_4_8 - var_4_6 + 1), #var_4_8 do
-					arg_2_0._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
+			if #_.filter(uv0, function (slot0)
+				return slot0.type == DROP_TYPE_SHIP
+			end) + #slot5 <= (pg.gameset.award_ship_limit and pg.gameset.award_ship_limit.key_value or 20) then
+				for slot12 = math.max(1, #slot7 - slot4 + 1), #slot7 do
+					uv1._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
 						mediator = NewShipMediator,
 						viewComponent = NewShipLayer,
 						data = {
-							ship = var_4_8[iter_4_2]
+							ship = slot7[slot12]
 						},
-						onRemoved = var_2_1
+						onRemoved = uv3
 					}))
 					coroutine.yield()
 				end
 			end
 
-			for iter_4_3, iter_4_4 in pairs(arg_2_1) do
-				if iter_4_4.type == DROP_TYPE_SKIN then
-					if pg.ship_skin_template[iter_4_4.id].skin_type == ShipSkin.SKIN_TYPE_REMAKE then
-						-- block empty
-					elseif not getProxy(ShipSkinProxy):hasOldNonLimitSkin(iter_4_4.id) then
-						arg_2_0._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
+			for slot12, slot13 in pairs(uv0) do
+				if slot13.type == DROP_TYPE_SKIN then
+					if pg.ship_skin_template[slot13.id].skin_type == ShipSkin.SKIN_TYPE_REMAKE then
+						-- Nothing
+					elseif not getProxy(ShipSkinProxy):hasOldNonLimitSkin(slot13.id) then
+						uv1._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
 							mediator = NewSkinMediator,
 							viewComponent = NewSkinLayer,
 							data = {
-								skinId = iter_4_4.id
+								skinId = slot13.id
 							},
-							onRemoved = var_2_1
+							onRemoved = uv3
 						}))
 					end
 
@@ -99,12 +86,18 @@ function var_0_0.onAcheve(arg_2_0, arg_2_1, arg_2_2)
 			end
 		end
 
-		if arg_2_2 then
-			arg_2_2()
+		if uv2 then
+			uv2()
 		end
 	end)
 
-	var_2_1()
+	function ()
+		if uv0 and coroutine.status(uv0) == "suspended" then
+			slot0, slot1 = coroutine.resume(uv0)
+
+			assert(slot0, slot1)
+		end
+	end()
 end
 
-return var_0_0
+return slot0

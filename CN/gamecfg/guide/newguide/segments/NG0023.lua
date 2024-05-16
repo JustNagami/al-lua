@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"进入科研界面",
 	"现在解锁了META研究室功能",
 	"通过与信标作战可以获取其同步值,累计同步值获取丰厚奖励",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -308.7,
 				posX = 199.3,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/technologyButton",
@@ -38,7 +38,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 286.9,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/SelectTechnologyUI(Clone)/frame/bg/meta_btn",
@@ -62,7 +62,7 @@ return {
 				mode = 1,
 				posY = -236.99,
 				posX = -419.8,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -72,7 +72,7 @@ return {
 				mode = 2,
 				posY = -236.99,
 				posX = -419.8,
-				text = var_0_0[4],
+				text = slot0[4],
 				ui = {
 					path = "UICamera/Canvas/UIMain/MetaCharacterUI(Clone)/HidePanel/ActTimeTip"
 				}

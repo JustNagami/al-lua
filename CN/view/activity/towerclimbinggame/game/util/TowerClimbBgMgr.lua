@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("TowerClimbBgMgr")
-local var_0_1 = {
+slot0 = class("TowerClimbBgMgr")
+slot1 = {
 	{
 		"1",
 		"2",
@@ -16,8 +16,7 @@ local var_0_1 = {
 		"9"
 	}
 }
-
-var_0_0.effects = {
+slot0.effects = {
 	{
 		{
 			"pata_jiandan",
@@ -150,188 +149,171 @@ var_0_0.effects = {
 	}
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.tr = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.tr = slot1
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1, arg_2_2)
-	var_0_0.bgMaps = var_0_1[arg_2_1]
+function slot0.Init(slot0, slot1, slot2)
+	uv0.bgMaps = uv1[slot1]
 
-	assert(var_0_0.bgMaps, arg_2_1)
+	assert(uv0.bgMaps, slot1)
 
-	arg_2_0.list = {
-		arg_2_0.tr:Find("Image1"),
-		arg_2_0.tr:Find("Image2"),
-		arg_2_0.tr:Find("Image3")
+	slot0.list = {
+		slot0.tr:Find("Image1"),
+		slot0.tr:Find("Image2"),
+		slot0.tr:Find("Image3")
 	}
-	arg_2_0.names = {}
+	slot0.names = {}
+	slot3 = {}
 
-	local var_2_0 = {}
+	for slot7 = 1, 2 do
+		setActive(slot0.list[slot7], false)
+		table.insert(slot3, function (slot0)
+			slot1 = uv0:GetBg(uv1)
 
-	for iter_2_0 = 1, 2 do
-		setActive(arg_2_0.list[iter_2_0], false)
-		table.insert(var_2_0, function(arg_3_0)
-			local var_3_0 = arg_2_0:GetBg(iter_2_0)
+			uv0:LoadImage(slot1, function (slot0)
+				setActive(uv0.list[uv1], true)
 
-			arg_2_0:LoadImage(var_3_0, function(arg_4_0)
-				setActive(arg_2_0.list[iter_2_0], true)
+				uv0.list[uv1]:GetComponent(typeof(Image)).sprite = slot0
 
-				arg_2_0.list[iter_2_0]:GetComponent(typeof(Image)).sprite = arg_4_0
-
-				arg_2_0.list[iter_2_0]:GetComponent(typeof(Image)):SetNativeSize()
-				arg_3_0()
+				uv0.list[uv1]:GetComponent(typeof(Image)):SetNativeSize()
+				uv2()
 			end)
 
-			arg_2_0.names[arg_2_0.list[iter_2_0]] = var_3_0
+			uv0.names[uv0.list[uv1]] = slot1
 
-			arg_2_0:LoadEffect(var_3_0, arg_2_0.list[iter_2_0])
+			uv0:LoadEffect(slot1, uv0.list[uv1])
 		end)
 	end
 
-	seriesAsync(var_2_0, function()
-		local var_5_0 = 0
-
-		for iter_5_0, iter_5_1 in ipairs(arg_2_0.list) do
-			local var_5_1 = arg_2_0.list[iter_5_0 - 1]
-
-			if var_5_1 then
-				var_5_0 = var_5_0 + var_5_1.rect.height
+	seriesAsync(slot3, function ()
+		for slot4, slot5 in ipairs(uv0.list) do
+			if uv0.list[slot4 - 1] then
+				slot0 = 0 + slot6.rect.height
 			end
 
-			setAnchoredPosition(iter_5_1, {
+			setAnchoredPosition(slot5, {
 				x = 0,
 				z = 0,
-				y = var_5_0
+				y = slot0
 			})
 		end
 
-		arg_2_2()
+		uv1()
 	end)
 end
 
-function var_0_0.DoMove(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = {}
-	local var_6_1
+function slot0.DoMove(slot0, slot1, slot2)
+	slot3 = {}
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.list) do
-		if iter_6_1 then
-			var_6_1 = var_6_1 or iter_6_0
+	for slot8, slot9 in ipairs(slot0.list) do
+		if slot9 then
+			slot4 = nil or slot8
 
-			table.insert(var_6_0, function(arg_7_0)
-				local var_7_0 = getAnchoredPosition(iter_6_1)
-
-				LeanTween.value(iter_6_1.gameObject, iter_6_1.anchoredPosition.y, var_7_0.y - arg_6_1 * 0.8, 0.2):setOnUpdate(System.Action_float(function(arg_8_0)
-					setAnchoredPosition(iter_6_1, {
-						y = arg_8_0
+			table.insert(slot3, function (slot0)
+				LeanTween.value(uv0.gameObject, uv0.anchoredPosition.y, getAnchoredPosition(uv0).y - uv1 * 0.8, 0.2):setOnUpdate(System.Action_float(function (slot0)
+					setAnchoredPosition(uv0, {
+						y = slot0
 					})
-				end)):setEase(LeanTweenType.easeOutQuad):setOnComplete(System.Action(arg_7_0))
+				end)):setEase(LeanTweenType.easeOutQuad):setOnComplete(System.Action(slot0))
 			end)
 		end
 	end
 
-	parallelAsync(var_6_0, function()
-		arg_6_0:DoCheck(var_6_1)
-		arg_6_2()
+	parallelAsync(slot3, function ()
+		uv0:DoCheck(uv1)
+		uv2()
 	end)
 end
 
-function var_0_0.DoCheck(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.list[arg_10_1]
-	local var_10_1 = arg_10_0.list[arg_10_1 + 2]
-	local var_10_2 = getAnchoredPosition(var_10_0)
+function slot0.DoCheck(slot0, slot1)
+	slot2 = slot0.list[slot1]
+	slot3 = slot0.list[slot1 + 2]
 
-	if var_10_2.y + var_10_0.rect.height + arg_10_0.list[arg_10_1 + 1].rect.height - arg_10_0.tr.rect.height >= 50 then
-		local var_10_3 = var_10_1:GetComponent(typeof(Image))
-		local var_10_4 = arg_10_0:GetBg(arg_10_1 + 2)
+	if getAnchoredPosition(slot2).y + slot2.rect.height + slot0.list[slot1 + 1].rect.height - slot0.tr.rect.height >= 50 then
+		slot6 = slot3:GetComponent(typeof(Image))
 
-		if arg_10_0.names[var_10_1] ~= var_10_4 then
-			arg_10_0:LoadImage(var_10_4, function(arg_11_0)
-				setActive(var_10_1, true)
+		if slot0.names[slot3] ~= slot0:GetBg(slot1 + 2) then
+			slot0:LoadImage(slot7, function (slot0)
+				setActive(uv0, true)
 
-				var_10_3.sprite = arg_11_0
+				uv1.sprite = slot0
 
-				var_10_3:SetNativeSize()
+				uv1:SetNativeSize()
 			end)
-			arg_10_0:LoadEffect(var_10_4, var_10_1)
+			slot0:LoadEffect(slot7, slot3)
 
-			arg_10_0.names[var_10_1] = var_10_4
+			slot0.names[slot3] = slot7
 		end
 	end
 
-	if math.abs(var_10_2.y) >= var_10_0.rect.height then
-		var_10_0:GetComponent(typeof(Image)).sprite = nil
-		arg_10_0.names[var_10_0] = nil
+	if slot2.rect.height <= math.abs(slot4.y) then
+		slot2:GetComponent(typeof(Image)).sprite = nil
+		slot0.names[slot2] = nil
 
-		var_10_0:SetAsFirstSibling()
+		slot2:SetAsFirstSibling()
 
-		arg_10_0.list[arg_10_1 + 3] = var_10_0
-		arg_10_0.list[arg_10_1] = false
+		slot0.list[slot1 + 3] = slot2
+		slot0.list[slot1] = false
 
-		local var_10_5 = getAnchoredPosition(var_10_1)
-
-		setAnchoredPosition(var_10_0, {
-			y = var_10_5.y + var_10_1.rect.height
+		setAnchoredPosition(slot2, {
+			y = getAnchoredPosition(slot3).y + slot3.rect.height
 		})
-		arg_10_0:ReturnEffect(var_10_0)
+		slot0:ReturnEffect(slot2)
 	end
 end
 
-function var_0_0.GetBg(arg_12_0, arg_12_1)
-	return var_0_0.bgMaps[arg_12_1] or var_0_0.bgMaps[#var_0_0.bgMaps]
+function slot0.GetBg(slot0, slot1)
+	return uv0.bgMaps[slot1] or uv0.bgMaps[#uv0.bgMaps]
 end
 
-function var_0_0.LoadImage(arg_13_0, arg_13_1, arg_13_2)
-	LoadSpriteAtlasAsync("clutter/towerclimbing_bg" .. arg_13_1, nil, function(arg_14_0)
-		arg_13_2(arg_14_0)
+function slot0.LoadImage(slot0, slot1, slot2)
+	LoadSpriteAtlasAsync("clutter/towerclimbing_bg" .. slot1, nil, function (slot0)
+		uv0(slot0)
 	end)
 end
 
-function var_0_0.LoadEffect(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = var_0_0.effects[tonumber(arg_15_1)]
+function slot0.LoadEffect(slot0, slot1, slot2)
+	if uv0.effects[tonumber(slot1)] then
+		for slot7, slot8 in ipairs(slot3) do
+			slot10 = slot8[2]
 
-	if var_15_0 then
-		for iter_15_0, iter_15_1 in ipairs(var_15_0) do
-			local var_15_1 = iter_15_1[1]
-			local var_15_2 = iter_15_1[2]
-
-			PoolMgr.GetInstance():GetUI(var_15_1, true, function(arg_16_0)
-				if not arg_15_0.list then
-					PoolMgr.GetInstance():ReturnUI(var_15_1, arg_16_0)
+			PoolMgr.GetInstance():GetUI(slot8[1], true, function (slot0)
+				if not uv0.list then
+					PoolMgr.GetInstance():ReturnUI(uv1, slot0)
 				else
-					arg_16_0.name = var_15_1
+					slot0.name = uv1
 
-					SetParent(arg_16_0, arg_15_2)
+					SetParent(slot0, uv2)
 
-					arg_16_0.transform.anchoredPosition3D = Vector3(var_15_2[1], var_15_2[2], -200)
+					slot0.transform.anchoredPosition3D = Vector3(uv3[1], uv3[2], -200)
 
-					setActive(arg_16_0, true)
+					setActive(slot0, true)
 				end
 			end)
 		end
 	end
 end
 
-function var_0_0.ReturnEffect(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_1.childCount
+function slot0.ReturnEffect(slot0, slot1)
+	if slot1.childCount > 0 then
+		for slot6 = 1, slot2 do
+			slot7 = slot1:GetChild(slot6 - 1)
 
-	if var_17_0 > 0 then
-		for iter_17_0 = 1, var_17_0 do
-			local var_17_1 = arg_17_1:GetChild(iter_17_0 - 1)
-
-			PoolMgr.GetInstance():ReturnUI(var_17_1.name, var_17_1.gameObject)
+			PoolMgr.GetInstance():ReturnUI(slot7.name, slot7.gameObject)
 		end
 	end
 end
 
-function var_0_0.Clear(arg_18_0)
-	eachChild(arg_18_0.tr, function(arg_19_0)
-		arg_19_0:GetComponent(typeof(Image)).sprite = nil
+function slot0.Clear(slot0)
+	eachChild(slot0.tr, function (slot0)
+		slot0:GetComponent(typeof(Image)).sprite = nil
 
-		arg_18_0:ReturnEffect(arg_19_0)
+		uv0:ReturnEffect(slot0)
 	end)
 
-	arg_18_0.list = nil
-	arg_18_0.names = nil
+	slot0.list = nil
+	slot0.names = nil
 end
 
-return var_0_0
+return slot0

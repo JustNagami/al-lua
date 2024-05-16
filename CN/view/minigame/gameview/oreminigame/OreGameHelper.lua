@@ -1,22 +1,20 @@
-﻿local var_0_0 = class("OreGameHelper")
+slot0 = class("OreGameHelper")
 
-local function var_0_1(arg_1_0)
-	local var_1_0 = arg_1_0.x * 90 + 90
-	local var_1_1 = arg_1_0.y * 90 + 90
-	local var_1_2 = var_1_0
+function slot1(slot0)
+	slot3 = slot0.x * 90 + 90
 
-	if var_1_1 < 90 then
-		if var_1_0 <= 90 then
-			var_1_2 = 270 + var_1_1
-		elseif var_1_0 > 90 then
-			var_1_2 = 180 + (90 - var_1_1)
+	if slot0.y * 90 + 90 < 90 then
+		if slot1 <= 90 then
+			slot3 = 270 + slot2
+		elseif slot1 > 90 then
+			slot3 = 180 + 90 - slot2
 		end
 	end
 
-	return var_1_2
+	return slot3
 end
 
-local var_0_2 = {
+slot2 = {
 	"W",
 	"NW",
 	"N",
@@ -27,7 +25,7 @@ local var_0_2 = {
 	"SW",
 	"STAND"
 }
-local var_0_3 = {
+slot3 = {
 	W = Vector2(-1, 0),
 	NW = Vector2(-1, 1).normalized,
 	N = Vector2(0, 1),
@@ -39,72 +37,62 @@ local var_0_3 = {
 	STAND = Vector2(0, 0)
 }
 
-local function var_0_4(arg_2_0)
-	if arg_2_0.x == 0 and arg_2_0.y == 0 then
+function slot4(slot0)
+	if slot0.x == 0 and slot0.y == 0 then
 		return "STAND"
 	end
 
-	local var_2_0 = var_0_1(arg_2_0)
+	slot1 = uv0(slot0)
 
-	for iter_2_0 = 1, 8 do
-		if iter_2_0 == 1 then
-			if var_2_0 >= 0 and var_2_0 <= 22.5 or var_2_0 >= 337.5 and var_2_0 <= 360 then
-				return var_0_2[iter_2_0]
+	for slot5 = 1, 8 do
+		if slot5 == 1 then
+			if slot1 >= 0 and slot1 <= 22.5 or slot1 >= 337.5 and slot1 <= 360 then
+				return uv1[slot5]
 			end
-		else
-			local var_2_1 = 22.5 + (iter_2_0 - 2) * 45
-
-			if var_2_1 < var_2_0 and var_2_0 <= var_2_1 + 45 then
-				return var_0_2[iter_2_0]
-			end
+		elseif slot1 > 22.5 + (slot5 - 2) * 45 and slot1 <= slot6 + 45 then
+			return uv1[slot5]
 		end
 	end
 
 	return "STAND"
 end
 
-function var_0_0.GetEightDirVector(arg_3_0)
-	local var_3_0 = var_0_4(arg_3_0)
-
-	return var_0_3[var_3_0]
+function slot0.GetEightDirVector(slot0)
+	return uv1[uv0(slot0)]
 end
 
-local var_0_5 = {
+slot5 = {
 	"W",
 	"N",
 	"E",
 	"S"
 }
 
-function var_0_0.GetFourDirLabel(arg_4_0)
-	if arg_4_0.x == 0 and arg_4_0.y == 0 then
+function slot0.GetFourDirLabel(slot0)
+	if slot0.x == 0 and slot0.y == 0 then
 		return "STAND"
 	end
 
-	local var_4_0 = var_0_1(arg_4_0)
+	slot1 = uv0(slot0)
 
-	for iter_4_0 = 1, 4 do
-		if iter_4_0 == 1 then
-			if var_4_0 >= 0 and var_4_0 <= 45 or var_4_0 >= 315 and var_4_0 <= 360 then
-				return var_0_5[iter_4_0]
+	for slot5 = 1, 4 do
+		if slot5 == 1 then
+			if slot1 >= 0 and slot1 <= 45 or slot1 >= 315 and slot1 <= 360 then
+				return uv1[slot5]
 			end
-		else
-			local var_4_1 = 45 + (iter_4_0 - 2) * 90
-
-			if var_4_1 < var_4_0 and var_4_0 <= var_4_1 + 90 then
-				return var_0_5[iter_4_0]
-			end
+		elseif slot1 > 45 + (slot5 - 2) * 90 and slot1 <= slot6 + 90 then
+			return uv1[slot5]
 		end
 	end
 
 	return "STAND"
 end
 
-function var_0_0.CheckRemovable(arg_5_0)
-	if arg_5_0.x >= OreGameConfig.RANGE_X[1] and arg_5_0.x <= OreGameConfig.RANGE_X[2] and arg_5_0.y >= OreGameConfig.RANGE_Y[1] and arg_5_0.y <= OreGameConfig.RANGE_Y[2] then
-		if arg_5_0.y >= OreGameConfig.BAN_Y[1] then
+function slot0.CheckRemovable(slot0)
+	if OreGameConfig.RANGE_X[1] <= slot0.x and slot0.x <= OreGameConfig.RANGE_X[2] and OreGameConfig.RANGE_Y[1] <= slot0.y and slot0.y <= OreGameConfig.RANGE_Y[2] then
+		if OreGameConfig.BAN_Y[1] <= slot0.y then
 			return true
-		elseif arg_5_0.x >= OreGameConfig.BAN_Y[2][1] and arg_5_0.x <= OreGameConfig.BAN_Y[2][2] then
+		elseif OreGameConfig.BAN_Y[2][1] <= slot0.x and slot0.x <= OreGameConfig.BAN_Y[2][2] then
 			return true
 		end
 	end
@@ -112,61 +100,50 @@ function var_0_0.CheckRemovable(arg_5_0)
 	return false
 end
 
-function var_0_0.GetBeziersPoints(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = arg_6_0:Clone():Mul((1 - arg_6_3) * (1 - arg_6_3))
-	local var_6_1 = arg_6_2:Clone():Mul(2 * arg_6_3 * (1 - arg_6_3))
-	local var_6_2 = arg_6_1:Clone():Mul(arg_6_3 * arg_6_3)
-
-	return var_6_0:Add(var_6_1):Add(var_6_2)
+function slot0.GetBeziersPoints(slot0, slot1, slot2, slot3)
+	return slot0:Clone():Mul((1 - slot3) * (1 - slot3)):Add(slot2:Clone():Mul(2 * slot3 * (1 - slot3))):Add(slot1:Clone():Mul(slot3 * slot3))
 end
 
-function var_0_0.GetOreIDWithWeight(arg_7_0)
-	local var_7_0 = 0
-
-	for iter_7_0, iter_7_1 in ipairs(arg_7_0) do
-		var_7_0 = var_7_0 + iter_7_1[2]
+function slot0.GetOreIDWithWeight(slot0)
+	for slot5, slot6 in ipairs(slot0) do
+		slot1 = 0 + slot6[2]
 	end
 
-	local var_7_1 = math.random() * var_7_0
-	local var_7_2 = 0
-
-	for iter_7_2, iter_7_3 in ipairs(arg_7_0) do
-		var_7_2 = var_7_2 + iter_7_3[2]
-
-		if var_7_1 <= var_7_2 then
-			return iter_7_3[1]
+	for slot7, slot8 in ipairs(slot0) do
+		if math.random() * slot1 <= 0 + slot8[2] then
+			return slot8[1]
 		end
 	end
 end
 
-function var_0_0.GetAABBWithTF(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0.rect.width
-	local var_8_1 = arg_8_0.rect.height
-	local var_8_2 = arg_8_0.anchoredPosition
-	local var_8_3 = {
-		var_8_2.x - var_8_0 / 2,
-		var_8_2.y + var_8_1 / 2
+function slot0.GetAABBWithTF(slot0, slot1)
+	slot2 = slot0.rect.width
+	slot3 = slot0.rect.height
+	slot4 = slot0.anchoredPosition
+	slot5 = {
+		slot4.x - slot2 / 2,
+		slot4.y + slot3 / 2
 	}
-	local var_8_4 = {
-		var_8_2.x + var_8_0 / 2,
-		var_8_2.y - var_8_1 / 2
+	slot6 = {
+		slot4.x + slot2 / 2,
+		slot4.y - slot3 / 2
 	}
 
-	if arg_8_1 then
-		var_8_3 = {
-			var_8_2.x + var_8_0 / 2,
-			var_8_2.y + var_8_1 / 2
+	if slot1 then
+		slot5 = {
+			slot4.x + slot2 / 2,
+			slot4.y + slot3 / 2
 		}
-		var_8_4 = {
-			var_8_2.x - var_8_0 / 2,
-			var_8_2.y - var_8_1 / 2
+		slot6 = {
+			slot4.x - slot2 / 2,
+			slot4.y - slot3 / 2
 		}
 	end
 
 	return {
-		var_8_3,
-		var_8_4
+		slot5,
+		slot6
 	}
 end
 
-return var_0_0
+return slot0

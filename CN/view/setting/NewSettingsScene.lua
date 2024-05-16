@@ -1,196 +1,184 @@
-﻿local var_0_0 = class("NewSettingsScene", import("..base.BaseUI"))
+slot0 = class("NewSettingsScene", import("..base.BaseUI"))
+slot0.PAGE_OTHER = 1
+slot0.PAGE_OPTION = 2
+slot0.PAGE_BATTLE = 3
+slot0.PAGE_RES = 4
 
-var_0_0.PAGE_OTHER = 1
-var_0_0.PAGE_OPTION = 2
-var_0_0.PAGE_BATTLE = 3
-var_0_0.PAGE_RES = 4
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "NewSettingsUI"
 end
 
-function var_0_0.OnShowDescWindow(arg_2_0, arg_2_1)
-	arg_2_0.descWindow:ExecuteAction("Show", arg_2_1.desc, arg_2_1.alignment)
+function slot0.OnShowDescWindow(slot0, slot1)
+	slot0.descWindow:ExecuteAction("Show", slot1.desc, slot1.alignment)
 end
 
-function var_0_0.OnClearExchangeCode(arg_3_0)
-	if arg_3_0.pages and arg_3_0.pages[1] and arg_3_0.pages[1]:GetLoaded() then
-		arg_3_0.pages[1]:OnClearExchangeCode()
+function slot0.OnClearExchangeCode(slot0)
+	if slot0.pages and slot0.pages[1] and slot0.pages[1]:GetLoaded() then
+		slot0.pages[1]:OnClearExchangeCode()
 	end
 end
 
-function var_0_0.OnShowTranscode(arg_4_0, arg_4_1)
-	if arg_4_0.pages and arg_4_0.pages[1] and arg_4_0.pages[1]:GetLoaded() then
-		arg_4_0.pages[1]:OnShowTranscode(arg_4_1)
+function slot0.OnShowTranscode(slot0, slot1)
+	if slot0.pages and slot0.pages[1] and slot0.pages[1]:GetLoaded() then
+		slot0.pages[1]:OnShowTranscode(slot1)
 	end
 end
 
-function var_0_0.OnCheckAllAccountState(arg_5_0)
-	if arg_5_0.pages and arg_5_0.pages[1] and arg_5_0.pages[1]:GetLoaded() then
-		arg_5_0.pages[1]:OnCheckAllAccountState()
+function slot0.OnCheckAllAccountState(slot0)
+	if slot0.pages and slot0.pages[1] and slot0.pages[1]:GetLoaded() then
+		slot0.pages[1]:OnCheckAllAccountState()
 	end
 end
 
-function var_0_0.OnSecondPwdStateChange(arg_6_0)
-	if arg_6_0.pages and arg_6_0.pages[1] and arg_6_0.pages[1]:GetLoaded() then
-		arg_6_0.pages[1]:OnSecondPwdStateChange()
+function slot0.OnSecondPwdStateChange(slot0)
+	if slot0.pages and slot0.pages[1] and slot0.pages[1]:GetLoaded() then
+		slot0.pages[1]:OnSecondPwdStateChange()
 	end
 end
 
-function var_0_0.OnRandomFlagShipModeUpdate(arg_7_0)
-	arg_7_0:emit(SettingsRandomFlagShipAndSkinPanel.EVT_UPDTAE)
+function slot0.OnRandomFlagShipModeUpdate(slot0)
+	slot0:emit(SettingsRandomFlagShipAndSkinPanel.EVT_UPDTAE)
 end
 
-function var_0_0.GetPage(arg_8_0, arg_8_1)
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.pages) do
-		if isa(iter_8_1, arg_8_1) then
-			return iter_8_1
+function slot0.GetPage(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.pages) do
+		if isa(slot6, slot1) then
+			return slot6
 		end
 	end
 end
 
-function var_0_0.init(arg_9_0)
-	arg_9_0.backBtn = arg_9_0:findTF("blur_panel/adapt/top/back_btn")
-
-	local var_9_0 = arg_9_0:findTF("pages")
-
-	arg_9_0.pages = {
-		SettingsOtherPage.New(var_9_0, arg_9_0.event, arg_9_0.contextData),
-		SettingsOptionPage.New(var_9_0, arg_9_0.event, arg_9_0.contextData),
-		SettingsBattlePage.New(var_9_0, arg_9_0.event, arg_9_0.contextData),
-		SettingsResPage.New(var_9_0, arg_9_0.event, arg_9_0.contextData)
+function slot0.init(slot0)
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
+	slot1 = slot0:findTF("pages")
+	slot0.pages = {
+		SettingsOtherPage.New(slot1, slot0.event, slot0.contextData),
+		SettingsOptionPage.New(slot1, slot0.event, slot0.contextData),
+		SettingsBattlePage.New(slot1, slot0.event, slot0.contextData),
+		SettingsResPage.New(slot1, slot0.event, slot0.contextData)
 	}
-	arg_9_0.toggles = {
-		arg_9_0:findTF("blur_panel/adapt/left_length/other"),
-		arg_9_0:findTF("blur_panel/adapt/left_length/options"),
-		arg_9_0:findTF("blur_panel/adapt/left_length/battle_ui"),
-		arg_9_0:findTF("blur_panel/adapt/left_length/resources")
+	slot0.toggles = {
+		slot0:findTF("blur_panel/adapt/left_length/other"),
+		slot0:findTF("blur_panel/adapt/left_length/options"),
+		slot0:findTF("blur_panel/adapt/left_length/battle_ui"),
+		slot0:findTF("blur_panel/adapt/left_length/resources")
 	}
-	arg_9_0.otherTip = arg_9_0.toggles[1]:Find("tip")
-	arg_9_0.logoutBtn = arg_9_0:findTF("blur_panel/adapt/left_length/logout")
-	arg_9_0.helpBtn = arg_9_0:findTF("blur_panel/adapt/left_length/help_us")
-	arg_9_0.descWindow = SettingsMsgBosPage.New(arg_9_0._tf, arg_9_0.event)
+	slot0.otherTip = slot0.toggles[1]:Find("tip")
+	slot0.logoutBtn = slot0:findTF("blur_panel/adapt/left_length/logout")
+	slot0.helpBtn = slot0:findTF("blur_panel/adapt/left_length/help_us")
+	slot0.descWindow = SettingsMsgBosPage.New(slot0._tf, slot0.event)
 end
 
-function var_0_0.didEnter(arg_10_0)
-	onButton(arg_10_0, arg_10_0.backBtn, function()
-		arg_10_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg_10_0, arg_10_0.logoutBtn, function()
+	onButton(slot0, slot0.logoutBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("main_settingsScene_quest_exist"),
-			onYes = function()
-				arg_10_0:emit(NewSettingsMediator.ON_LOGOUT)
+			onYes = function ()
+				uv0:emit(NewSettingsMediator.ON_LOGOUT)
 			end
 		})
 	end, SFX_PANEL)
 
 	if PLATFORM_CODE == PLATFORM_US then
-		setActive(arg_10_0.helpBtn, true)
-		onButton(arg_10_0, arg_10_0.helpBtn, function()
+		setActive(slot0.helpBtn, true)
+		onButton(slot0, slot0.helpBtn, function ()
 			pg.SdkMgr.GetInstance():OpenYostarHelp()
 		end, SFX_PANEL)
 	elseif PLATFORM_CODE == PLATFORM_KR then
-		setActive(arg_10_0.helpBtn, true)
-		onButton(arg_10_0, arg_10_0.helpBtn, function()
+		setActive(slot0.helpBtn, true)
+		onButton(slot0, slot0.helpBtn, function ()
 			pg.SdkMgr.GetInstance():BugReport()
 		end, SFX_CANCEL)
-		arg_10_0.helpBtn:SetAsFirstSibling()
+		slot0.helpBtn:SetAsFirstSibling()
 	end
 
-	for iter_10_0, iter_10_1 in ipairs(arg_10_0.toggles) do
-		onToggle(arg_10_0, iter_10_1, function(arg_16_0)
-			if arg_16_0 then
-				arg_10_0:SwitchPage(iter_10_0)
+	for slot4, slot5 in ipairs(slot0.toggles) do
+		onToggle(slot0, slot5, function (slot0)
+			if slot0 then
+				uv0:SwitchPage(uv1)
 			end
 		end, SFX_PANEL)
 	end
 
-	setActive(arg_10_0.otherTip, PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0)
-	arg_10_0:EnterDefaultPage()
+	setActive(slot0.otherTip, PlayerPrefs.GetFloat("firstIntoOtherPanel") == 0)
+	slot0:EnterDefaultPage()
 end
 
-function var_0_0.EnterDefaultPage(arg_17_0)
-	local var_17_0
-	local var_17_1 = arg_17_0.contextData.toggle
+function slot0.EnterDefaultPage(slot0)
+	slot1 = nil
 
-	if var_17_1 and type(var_17_1) == "string" then
-		if var_17_1 == "sound" or var_17_1 == "res" then
-			var_17_0 = var_0_0.PAGE_RES
-		else
-			var_17_0 = table.indexof({
-				"other",
-				"options",
-				"interface",
-				"res"
-			}, var_17_1)
-		end
+	if slot0.contextData.toggle and type(slot2) == "string" then
+		slot1 = (slot2 ~= "sound" and slot2 ~= "res" or uv0.PAGE_RES) and table.indexof({
+			"other",
+			"options",
+			"interface",
+			"res"
+		}, slot2)
 	end
 
-	local var_17_2 = arg_17_0.contextData.page or var_17_0 or var_0_0.PAGE_RES
-
-	triggerToggle(arg_17_0.toggles[var_17_2], true)
+	triggerToggle(slot0.toggles[slot0.contextData.page or slot1 or uv0.PAGE_RES], true)
 end
 
-function var_0_0.SwitchPage(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0.pages[arg_18_1]
+function slot0.SwitchPage(slot0, slot1)
+	slot2 = slot0.pages[slot1]
 
-	if arg_18_0.page and arg_18_0.page ~= var_18_0 and arg_18_0.page:GetLoaded() then
-		arg_18_0.page:Hide()
+	if slot0.page and slot0.page ~= slot2 and slot0.page:GetLoaded() then
+		slot0.page:Hide()
 	end
 
-	var_18_0:ExecuteAction("Show")
+	slot2:ExecuteAction("Show")
 
-	arg_18_0.page = var_18_0
+	slot0.page = slot2
 
-	if isa(var_18_0, SettingsOtherPage) and isActive(arg_18_0.otherTip) then
-		setActive(arg_18_0.otherTip, false)
+	if isa(slot2, SettingsOtherPage) and isActive(slot0.otherTip) then
+		setActive(slot0.otherTip, false)
 	end
 end
 
-function var_0_0.OpenYostarAlertView(arg_19_0)
-	arg_19_0.yostarAlertView = YostarAlertView.New(arg_19_0._tf, arg_19_0.event, {
+function slot0.OpenYostarAlertView(slot0)
+	slot0.yostarAlertView = YostarAlertView.New(slot0._tf, slot0.event, {
 		isDestroyOnClose = true,
 		isLinkMode = true
 	})
 
-	arg_19_0.yostarAlertView:Load()
-	arg_19_0.yostarAlertView:ActionInvoke("Show")
+	slot0.yostarAlertView:Load()
+	slot0.yostarAlertView:ActionInvoke("Show")
 end
 
-function var_0_0.CloseYostarAlertView(arg_20_0)
-	if arg_20_0.yostarAlertView and arg_20_0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
-		arg_20_0.yostarAlertView:Destroy()
+function slot0.CloseYostarAlertView(slot0)
+	if slot0.yostarAlertView and slot0.yostarAlertView:CheckState(BaseSubView.STATES.INITED) then
+		slot0.yostarAlertView:Destroy()
 	end
 end
 
-function var_0_0.onBackPressed(arg_21_0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	local var_21_0 = GameObject.Find("OverlayCamera/Overlay/UIMain/DialogPanel")
-
-	if isActive(var_21_0) then
-		triggerButton(var_21_0.transform:Find("dialog/title/back"))
+	if isActive(GameObject.Find("OverlayCamera/Overlay/UIMain/DialogPanel")) then
+		triggerButton(slot1.transform:Find("dialog/title/back"))
 
 		return
 	end
 
-	arg_21_0:emit(var_0_0.ON_BACK)
+	slot0:emit(uv0.ON_BACK)
 end
 
-function var_0_0.willExit(arg_22_0)
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.pages) do
-		iter_22_1:Destroy()
+function slot0.willExit(slot0)
+	for slot4, slot5 in pairs(slot0.pages) do
+		slot5:Destroy()
 	end
 
-	if arg_22_0.descWindow then
-		arg_22_0.descWindow:Destroy()
+	if slot0.descWindow then
+		slot0.descWindow:Destroy()
 
-		arg_22_0.descWindow = nil
+		slot0.descWindow = nil
 	end
 
-	arg_22_0.page = nil
-	arg_22_0.pages = nil
+	slot0.page = nil
+	slot0.pages = nil
 end
 
-return var_0_0
+return slot0

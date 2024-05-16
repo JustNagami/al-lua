@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 3,
+	name = "",
+	init_effect = "jinengchufablue",
+	picture = "",
+	desc = "无敌",
+	stack = 1,
+	id = 109244,
+	icon = 109244,
+	last_effect = "",
 	blink = {
 		0,
 		0.7,
@@ -29,24 +48,5 @@
 				tag = "isInvincible_1"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 3,
-	name = "",
-	init_effect = "jinengchufablue",
-	picture = "",
-	desc = "无敌",
-	stack = 1,
-	id = 109244,
-	icon = 109244,
-	last_effect = ""
+	}
 }

@@ -1,14 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 17824,
-				target = "TargetAllHarm"
-			}
-		}
-	},
+return {
 	{
 		time = 1
 	},
@@ -47,5 +37,15 @@
 	stack = 1,
 	id = 17823,
 	icon = 17823,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 17824,
+				target = "TargetAllHarm"
+			}
+		}
+	}
 }

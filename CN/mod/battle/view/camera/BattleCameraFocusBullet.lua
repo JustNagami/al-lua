@@ -1,31 +1,26 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = slot0.Battle.BattleVariable
+slot0.Battle.BattleCameraFocusBulet = class("BattleCameraFocusBulet")
+slot0.Battle.BattleCameraFocusBulet.__name = "BattleCameraFocusBulet"
+slot3 = slot0.Battle.BattleCameraFocusBulet
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = var_0_0.Battle.BattleVariable
-
-var_0_0.Battle.BattleCameraFocusBulet = class("BattleCameraFocusBulet")
-var_0_0.Battle.BattleCameraFocusBulet.__name = "BattleCameraFocusBulet"
-
-local var_0_3 = var_0_0.Battle.BattleCameraFocusBulet
-
-function var_0_3.Ctor(arg_1_0)
-	return
+function slot3.Ctor(slot0)
 end
 
-function var_0_3.SetUnit(arg_2_0, arg_2_1)
-	arg_2_0._unit = arg_2_1
+function slot3.SetUnit(slot0, slot1)
+	slot0._unit = slot1
 end
 
-function var_0_3.GetCameraPos(arg_3_0)
-	local var_3_0 = arg_3_0._unit:GetPosition():Clone()
+function slot3.GetCameraPos(slot0)
+	slot1 = slot0._unit:GetPosition():Clone()
+	slot1.y = slot1.y + uv0.CameraFocusHeight
+	slot1.z = slot1.z - slot1.y / uv0._camera_radian_x_tan
 
-	var_3_0.y = var_3_0.y + var_0_2.CameraFocusHeight
-	var_3_0.z = var_3_0.z - var_3_0.y / var_0_2._camera_radian_x_tan
-
-	return var_3_0
+	return slot1
 end
 
-function var_0_3.Dispose(arg_4_0)
-	arg_4_0._unit = nil
+function slot3.Dispose(slot0)
+	slot0._unit = nil
 end

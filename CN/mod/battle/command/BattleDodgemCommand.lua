@@ -1,71 +1,58 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleEvent
+slot3 = class("BattleDodgemCommand", slot0.Battle.BattleSingleDungeonCommand)
+slot0.Battle.BattleDodgemCommand = slot3
+slot3.__name = "BattleDodgemCommand"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = class("BattleDodgemCommand", var_0_0.Battle.BattleSingleDungeonCommand)
-
-var_0_0.Battle.BattleDodgemCommand = var_0_3
-var_0_3.__name = "BattleDodgemCommand"
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.Initialize(arg_2_0)
-	var_0_3.super.Initialize(arg_2_0)
-	arg_2_0._dataProxy:DodgemCountInit()
+function slot3.Initialize(slot0)
+	uv0.super.Initialize(slot0)
+	slot0._dataProxy:DodgemCountInit()
 end
 
-function var_0_3.DoPrologue(arg_3_0)
+function slot3.DoPrologue(slot0)
 	pg.UIMgr.GetInstance():Marching()
-
-	local function var_3_0()
-		arg_3_0._uiMediator:OpeningEffect(function()
-			arg_3_0._dataProxy:SetupDamageKamikazeShip(var_0_0.Battle.BattleFormulas.CalcDamageLockS2M)
-			arg_3_0._dataProxy:SetupDamageCrush(var_0_0.Battle.BattleFormulas.UnilateralCrush)
-			arg_3_0._uiMediator:ShowTimer()
-			arg_3_0._state:ChangeState(var_0_0.Battle.BattleState.BATTLE_STATE_FIGHT)
-			arg_3_0._waveUpdater:Start()
+	slot0._uiMediator:SeaSurfaceShift(45, 0, nil, function ()
+		uv0._uiMediator:OpeningEffect(function ()
+			uv0._dataProxy:SetupDamageKamikazeShip(uv1.Battle.BattleFormulas.CalcDamageLockS2M)
+			uv0._dataProxy:SetupDamageCrush(uv1.Battle.BattleFormulas.UnilateralCrush)
+			uv0._uiMediator:ShowTimer()
+			uv0._state:ChangeState(uv1.Battle.BattleState.BATTLE_STATE_FIGHT)
+			uv0._waveUpdater:Start()
 		end)
-		arg_3_0._dataProxy:GetFleetByIFF(var_0_0.Battle.BattleConfig.FRIENDLY_CODE):FleetWarcry()
-	end
-
-	arg_3_0._uiMediator:SeaSurfaceShift(45, 0, nil, var_3_0)
-	arg_3_0._uiMediator:ShowDodgemScoreBar()
+		uv0._dataProxy:GetFleetByIFF(uv1.Battle.BattleConfig.FRIENDLY_CODE):FleetWarcry()
+	end)
+	slot0._uiMediator:ShowDodgemScoreBar()
 end
 
-function var_0_3.initWaveModule(arg_6_0)
-	local function var_6_0(arg_7_0, arg_7_1, arg_7_2)
-		arg_6_0._dataProxy:SpawnMonster(arg_7_0, arg_7_1, arg_7_2, var_0_0.Battle.BattleConfig.FOE_CODE)
-	end
-
-	local function var_6_1()
-		if arg_6_0._vertifyFail then
+function slot3.initWaveModule(slot0)
+	slot0._waveUpdater = uv0.Battle.BattleWaveUpdater.New(function (slot0, slot1, slot2)
+		uv0._dataProxy:SpawnMonster(slot0, slot1, slot2, uv1.Battle.BattleConfig.FOE_CODE)
+	end, nil, function ()
+		if uv0._vertifyFail then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
-				reason = arg_6_0._vertifyFail
+				reason = uv0._vertifyFail
 			})
 
 			return
 		end
 
-		arg_6_0._dataProxy:CalcDodgemScore()
-		arg_6_0._state:BattleEnd()
-	end
-
-	arg_6_0._waveUpdater = var_0_0.Battle.BattleWaveUpdater.New(var_6_0, nil, var_6_1, nil)
+		uv0._dataProxy:CalcDodgemScore()
+		uv0._state:BattleEnd()
+	end, nil)
 end
 
-function var_0_3.onWillDie(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1.Dispatcher
+function slot3.onWillDie(slot0, slot1)
+	slot2 = slot1.Dispatcher
 
-	arg_9_0._dataProxy:CalcDodgemCount(var_9_0)
+	slot0._dataProxy:CalcDodgemCount(slot2)
 
-	local var_9_1 = var_9_0:GetDeathReason()
-
-	if var_9_0:GetTemplate().type == ShipType.JinBi and var_9_1 == var_0_0.Battle.BattleConst.UnitDeathReason.CRUSH then
-		local var_9_2 = arg_9_0._dataProxy:GetScorePoint()
-
-		var_9_0:DispatchScorePoint(var_9_2)
+	if slot2:GetTemplate().type == ShipType.JinBi and slot2:GetDeathReason() == uv0.Battle.BattleConst.UnitDeathReason.CRUSH then
+		slot2:DispatchScorePoint(slot0._dataProxy:GetScorePoint())
 	end
 end

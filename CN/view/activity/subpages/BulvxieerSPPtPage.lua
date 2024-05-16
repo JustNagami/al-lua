@@ -1,1 +1,1 @@
-﻿return (class("BulvxieerSPPtPage", import(".TemplatePage.PtTemplatePage")))
+return class("BulvxieerSPPtPage", import(".TemplatePage.PtTemplatePage"))

@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeHit"
-			},
-			arg_list = {
-				rant = 1500,
-				target = "TargetSelf",
-				skill_id = 4061,
-				time = 15
-			}
-		}
-	},
+return {
 	{
 		desc = "受到伤害时有15%的概率发动，在角色侧面生成2面护盾，护盾可阻挡6发子弹，持续5秒",
 		addition = {
@@ -83,5 +69,19 @@
 	stack = 1,
 	id = 4061,
 	icon = 4060,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeHit"
+			},
+			arg_list = {
+				rant = 1500,
+				target = "TargetSelf",
+				skill_id = 4061,
+				time = 15
+			}
+		}
+	}
 }

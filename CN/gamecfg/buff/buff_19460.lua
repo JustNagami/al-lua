@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				buff_id = 19461,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -31,5 +19,17 @@
 	stack = 1,
 	id = 19460,
 	icon = 19460,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				buff_id = 19461,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

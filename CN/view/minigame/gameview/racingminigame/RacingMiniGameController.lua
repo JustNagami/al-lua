@@ -1,368 +1,357 @@
-﻿local var_0_0 = class("RacingMiniGameController")
+slot0 = class("RacingMiniGameController")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.binder = arg_1_1
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.binder = slot1
 
-	arg_1_0:InitTimer()
-	arg_1_0:InitGameUI(arg_1_2)
+	slot0:InitTimer()
+	slot0:InitGameUI(slot2)
 end
 
-local function var_0_1(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0:GetComponentsInChildren(typeof(Animator), true)
-
-	for iter_2_0 = 0, var_2_0.Length - 1 do
-		var_2_0[iter_2_0].speed = arg_2_1
+function slot1(slot0, slot1)
+	for slot6 = 0, slot0:GetComponentsInChildren(typeof(Animator), true).Length - 1 do
+		slot2[slot6].speed = slot1
 	end
 end
 
-local function var_0_2(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0:GetComponentsInChildren(typeof(SpineAnimUI), true)
-
-	for iter_3_0 = 0, var_3_0.Length - 1 do
-		if IsNil(var_3_0[iter_3_0]) then
-			-- block empty
-		elseif arg_3_1 then
-			var_3_0[iter_3_0]:Pause()
+function slot2(slot0, slot1)
+	for slot6 = 0, slot0:GetComponentsInChildren(typeof(SpineAnimUI), true).Length - 1 do
+		if IsNil(slot2[slot6]) then
+			-- Nothing
+		elseif slot1 then
+			slot2[slot6]:Pause()
 		else
-			var_3_0[iter_3_0]:Resume()
+			slot2[slot6]:Resume()
 		end
 	end
 end
 
-function var_0_0.InitTimer(arg_4_0)
-	arg_4_0.timer = Timer.New(function()
-		arg_4_0:OnTimer(RacingMiniGameConfig.TIME_INTERVAL)
+function slot0.InitTimer(slot0)
+	slot0.timer = Timer.New(function ()
+		uv0:OnTimer(RacingMiniGameConfig.TIME_INTERVAL)
 	end, RacingMiniGameConfig.TIME_INTERVAL, -1)
 
-	if IsUnityEditor and not arg_4_0.handle then
-		arg_4_0.handle = UpdateBeat:CreateListener(function()
+	if IsUnityEditor and not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(function ()
 			if Input.GetKeyDown(KeyCode.W) then
-				arg_4_0.up = true
+				uv0.up = true
 			end
 
 			if Input.GetKeyUp(KeyCode.W) then
-				arg_4_0.up = false
+				uv0.up = false
 			end
 
 			if Input.GetKeyDown(KeyCode.S) then
-				arg_4_0.down = true
+				uv0.down = true
 			end
 
 			if Input.GetKeyUp(KeyCode.S) then
-				arg_4_0.down = false
+				uv0.down = false
 			end
 
 			if Input.GetKeyDown(KeyCode.Space) then
-				arg_4_0.boost = true
+				uv0.boost = true
 			end
 
 			if Input.GetKeyUp(KeyCode.Space) then
-				arg_4_0.boost = false
+				uv0.boost = false
 			end
-		end, arg_4_0)
+		end, slot0)
 
-		UpdateBeat:AddListener(arg_4_0.handle)
+		UpdateBeat:AddListener(slot0.handle)
 	end
 end
 
-function var_0_0.InitGameUI(arg_7_0, arg_7_1)
-	arg_7_0.rtViewport = arg_7_1:Find("Viewport")
-	arg_7_0.bgSingleSize = arg_7_0.rtViewport.rect.width
-	arg_7_0.rtBgContent = arg_7_0.rtViewport:Find("BgContent")
-	arg_7_0.rtMainContent = arg_7_0.rtViewport:Find("MainContent")
-	arg_7_0.singleHeight = arg_7_0.rtMainContent.rect.height / 3
-	arg_7_0.rtRes = arg_7_1:Find("Resource")
-	arg_7_0.rtController = arg_7_1:Find("Controller")
+function slot0.InitGameUI(slot0, slot1)
+	slot0.rtViewport = slot1:Find("Viewport")
+	slot0.bgSingleSize = slot0.rtViewport.rect.width
+	slot0.rtBgContent = slot0.rtViewport:Find("BgContent")
+	slot0.rtMainContent = slot0.rtViewport:Find("MainContent")
+	slot0.singleHeight = slot0.rtMainContent.rect.height / 3
+	slot0.rtRes = slot1:Find("Resource")
+	slot0.rtController = slot1:Find("Controller")
 
-	for iter_7_0, iter_7_1 in ipairs({
+	for slot5, slot6 in ipairs({
 		"up",
 		"down",
 		"boost"
 	}) do
-		local var_7_0 = GetOrAddComponent(arg_7_0.rtController:Find("bottom/btn_" .. iter_7_1), typeof(EventTriggerListener))
+		slot7 = GetOrAddComponent(slot0.rtController:Find("bottom/btn_" .. slot6), typeof(EventTriggerListener))
 
-		var_7_0:AddPointDownFunc(function()
-			arg_7_0[iter_7_1] = true
+		slot7:AddPointDownFunc(function ()
+			uv0[uv1] = true
 		end)
-		var_7_0:AddPointUpFunc(function()
-			arg_7_0[iter_7_1] = false
+		slot7:AddPointUpFunc(function ()
+			uv0[uv1] = false
 		end)
 	end
 
 	if RacingMiniGameConfig.BOOST_BUTTON_TYPE_CHANGE then
-		RemoveComponent(arg_7_0.rtController:Find("bottom/btn_boost"), typeof(EventTriggerListener))
-		onButton(arg_7_0.binder, arg_7_0.rtController:Find("bottom/btn_boost"), function()
-			if not arg_7_0.target.isBlock then
-				local var_10_0 = RacingMiniGameConfig.M_LIST
-				local var_10_1 = RacingMiniGameConfig.S_LIST
+		RemoveComponent(slot0.rtController:Find("bottom/btn_boost"), typeof(EventTriggerListener))
+		onButton(slot0.binder, slot0.rtController:Find("bottom/btn_boost"), function ()
+			if not uv0.target.isBlock then
+				slot0 = RacingMiniGameConfig.M_LIST
+				slot1 = RacingMiniGameConfig.S_LIST
+				uv0.enginePower = math.clamp(uv0.enginePower + RacingMiniGameConfig.BOOST_RATE[2], slot0[1], slot0[#slot0])
 
-				arg_7_0.enginePower = math.clamp(arg_7_0.enginePower + RacingMiniGameConfig.BOOST_RATE[2], var_10_0[1], var_10_0[#var_10_0])
-
-				if arg_7_0.target.state == "base" then
-					arg_7_0.target:Show("accel")
+				if uv0.target.state == "base" then
+					uv0.target:Show("accel")
 				end
 			end
 		end)
 	end
 
-	arg_7_0.rtTime = arg_7_0.rtController:Find("top/time")
+	slot0.rtTime = slot0.rtController:Find("top/time")
 
-	setText(arg_7_0.rtTime:Find("Text/plus"), "+" .. RacingMiniGameConfig.ITEM_ADD_TIME .. "s")
-	arg_7_0.rtTime:Find("Text/plus"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(arg_7_0.rtTime:Find("Text/plus"), false)
+	setText(slot0.rtTime:Find("Text/plus"), "+" .. RacingMiniGameConfig.ITEM_ADD_TIME .. "s")
+	slot0.rtTime:Find("Text/plus"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(uv0.rtTime:Find("Text/plus"), false)
 	end)
 
-	arg_7_0.rtDis = arg_7_0.rtController:Find("top/dis")
-	arg_7_0.rtPower = arg_7_0.rtController:Find("bottom/speed")
-	arg_7_0.rtFriend = arg_7_0.rtController:Find("top/friend")
-	arg_7_0.queue = {}
+	slot0.rtDis = slot0.rtController:Find("top/dis")
+	slot0.rtPower = slot0.rtController:Find("bottom/speed")
+	slot0.rtFriend = slot0.rtController:Find("top/friend")
+	slot0.queue = {}
 end
 
-function var_0_0.ResetGame(arg_12_0)
-	arg_12_0.timeCount = 0
-	arg_12_0.timeAll = RacingMiniGameConfig.ALL_TIME
+function slot0.ResetGame(slot0)
+	slot0.timeCount = 0
+	slot0.timeAll = RacingMiniGameConfig.ALL_TIME
 
-	if arg_12_0.target then
-		arg_12_0.target:Clear()
+	if slot0.target then
+		slot0.target:Clear()
 
-		arg_12_0.target = nil
+		slot0.target = nil
 	end
 
-	while #arg_12_0.queue > 0 do
-		arg_12_0.queue[#arg_12_0.queue]:Clear()
+	while #slot0.queue > 0 do
+		slot0.queue[#slot0.queue]:Clear()
 	end
 
-	arg_12_0.enginePower = 0
-	arg_12_0.chargeDis = 0
-	arg_12_0.disCount = 0
-	arg_12_0.rateDic = {}
-	arg_12_0.itemCountDic = {}
+	slot0.enginePower = 0
+	slot0.chargeDis = 0
+	slot0.disCount = 0
+	slot0.rateDic = {}
+	slot0.itemCountDic = {}
 end
 
-function var_0_0.ReadyGame(arg_13_0, arg_13_1)
-	local var_13_0 = getProxy(PlayerProxy):getRawData()
-
-	arg_13_0.rankData = underscore.filter(arg_13_1, function(arg_14_0)
-		return arg_14_0.player_id ~= var_13_0.id
+function slot0.ReadyGame(slot0, slot1)
+	slot2 = getProxy(PlayerProxy):getRawData()
+	slot0.rankData = underscore.filter(slot1, function (slot0)
+		return slot0.player_id ~= uv0.id
 	end)
 
-	table.sort(arg_13_0.rankData, CompareFuncs({
-		function(arg_15_0)
-			return arg_15_0.score
+	table.sort(slot0.rankData, CompareFuncs({
+		function (slot0)
+			return slot0.score
 		end
 	}))
 
-	arg_13_0.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(arg_13_0.rtRes:Find("qiye_minigame"), arg_13_0.rtMainContent:Find(-2)), NewPos(0, 0), arg_13_0)
+	slot0.target = RacingMiniNameSpace.Motorcycle.New(cloneTplTo(slot0.rtRes:Find("qiye_minigame"), slot0.rtMainContent:Find(-2)), NewPos(0, 0), slot0)
 
-	table.insert(arg_13_0.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(arg_13_0.rtRes:Find("start_mark"), arg_13_0.rtMainContent:Find(-2)), NewPos(550, 0), arg_13_0))
-	arg_13_0:UpdateDisplay()
-	onNextTick(function()
-		arg_13_0:PauseGame()
+	table.insert(slot0.queue, RacingMiniNameSpace.StartMark.New(cloneTplTo(slot0.rtRes:Find("start_mark"), slot0.rtMainContent:Find(-2)), NewPos(550, 0), slot0))
+	slot0:UpdateDisplay()
+	onNextTick(function ()
+		uv0:PauseGame()
 	end)
 end
 
-function var_0_0.StartGame(arg_17_0)
-	arg_17_0.isStart = true
+function slot0.StartGame(slot0)
+	slot0.isStart = true
 
-	arg_17_0:ResumeGame()
+	slot0:ResumeGame()
 end
 
-function var_0_0.EndGame(arg_18_0, arg_18_1)
-	arg_18_0.isStart = false
+function slot0.EndGame(slot0, slot1)
+	slot0.isStart = false
 
-	arg_18_0:PauseGame()
+	slot0:PauseGame()
 
-	arg_18_0.result = arg_18_1 or 0
-	arg_18_0.point = arg_18_0.disCount / 20
-	arg_18_0.point = arg_18_0.point - arg_18_0.point % 0.01
+	slot0.result = slot1 or 0
+	slot0.point = slot0.disCount / 20
+	slot0.point = slot0.point - slot0.point % 0.01
 
-	arg_18_0.binder:openUI("result")
+	slot0.binder:openUI("result")
 end
 
-function var_0_0.ResumeGame(arg_19_0)
-	arg_19_0.isPause = false
+function slot0.ResumeGame(slot0)
+	slot0.isPause = false
 
-	arg_19_0.timer:Start()
-	var_0_1(arg_19_0.rtViewport, 1)
-	var_0_2(arg_19_0.rtViewport, false)
+	slot0.timer:Start()
+	uv0(slot0.rtViewport, 1)
+	uv1(slot0.rtViewport, false)
 end
 
-function var_0_0.PauseGame(arg_20_0)
-	arg_20_0.isPause = true
+function slot0.PauseGame(slot0)
+	slot0.isPause = true
 
-	arg_20_0.timer:Stop()
-	var_0_1(arg_20_0.rtViewport, 0)
-	var_0_2(arg_20_0.rtViewport, true)
+	slot0.timer:Stop()
+	uv0(slot0.rtViewport, 0)
+	uv1(slot0.rtViewport, true)
 end
 
-local function var_0_3(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_1.pos - arg_21_0.pos
-	local var_21_1 = {}
+function slot3(slot0, slot1)
+	slot2 = slot1.pos - slot0.pos
+	slot3 = {
+		[slot7] = {}
+	}
 
-	for iter_21_0 = 1, 2 do
-		var_21_1[iter_21_0] = {}
-		var_21_1[iter_21_0][1] = arg_21_0.colliderSize[iter_21_0][1] - arg_21_1.colliderSize[iter_21_0][2]
-		var_21_1[iter_21_0][2] = arg_21_0.colliderSize[iter_21_0][2] - arg_21_1.colliderSize[iter_21_0][1]
+	for slot7 = 1, 2 do
+		slot3[slot7][1] = slot0.colliderSize[slot7][1] - slot1.colliderSize[slot7][2]
+		slot3[slot7][2] = slot0.colliderSize[slot7][2] - slot1.colliderSize[slot7][1]
 	end
 
-	return var_21_1[1][1] < var_21_0.x and var_21_0.x < var_21_1[1][2] and var_21_1[2][1] < var_21_0.y and var_21_0.y < var_21_1[2][2]
+	return slot3[1][1] < slot2.x and slot2.x < slot3[1][2] and slot3[2][1] < slot2.y and slot2.y < slot3[2][2]
 end
 
-function var_0_0.OnTimer(arg_22_0, arg_22_1)
-	arg_22_0.timeCount = arg_22_0.timeCount + arg_22_1
+function slot0.OnTimer(slot0, slot1)
+	slot0.timeCount = slot0.timeCount + slot1
 
-	if arg_22_0.timeCount > arg_22_0.timeAll then
-		arg_22_0:EndGame(1)
+	if slot0.timeAll < slot0.timeCount then
+		slot0:EndGame(1)
 
 		return
 	end
 
-	if arg_22_0.target.invincibleTime then
-		arg_22_0.target:UpdateInvincibility(arg_22_1)
+	if slot0.target.invincibleTime then
+		slot0.target:UpdateInvincibility(slot1)
 	end
 
-	local var_22_0 = NewPos(0, 0)
-	local var_22_1 = arg_22_0:GetSpeed(RacingMiniGameConfig.BOOST_RATE[not arg_22_0.target.isBlock and arg_22_0.boost and 2 or 1] * arg_22_1)
+	NewPos(0, 0).x = slot0:GetSpeed(RacingMiniGameConfig.BOOST_RATE[not slot0.target.isBlock and slot0.boost and 2 or 1] * slot1) * slot1
 
-	var_22_0.x = var_22_1 * arg_22_1
-
-	if not arg_22_0.target.isBlock then
-		if var_22_1 > 0 then
-			if arg_22_0.up then
-				var_22_0.y = var_22_0.y + 1
+	if not slot0.target.isBlock then
+		if slot3 > 0 then
+			if slot0.up then
+				slot2.y = slot2.y + 1
 			end
 
-			if arg_22_0.down then
-				var_22_0.y = var_22_0.y - 1
+			if slot0.down then
+				slot2.y = slot2.y - 1
 			end
 
-			var_22_0.y = var_22_0.y * arg_22_0.singleHeight / RacingMiniGameConfig.Y_COVER_TIME * (arg_22_0.target.isVertigo and RacingMiniGameConfig.Y_OBSTACLE_REDUCE or 1) * arg_22_1
+			slot2.y = slot2.y * slot0.singleHeight / RacingMiniGameConfig.Y_COVER_TIME * (slot0.target.isVertigo and RacingMiniGameConfig.Y_OBSTACLE_REDUCE or 1) * slot1
 
-			if arg_22_0.target.state == "base" and arg_22_0.boost then
-				arg_22_0.target:Show("accel")
+			if slot0.target.state == "base" and slot0.boost then
+				slot0.target:Show("accel")
 			end
-		elseif not arg_22_0.target.isVertigo and arg_22_0.target.state ~= "base" then
-			arg_22_0.target:Show("base")
+		elseif not slot0.target.isVertigo and slot0.target.state ~= "base" then
+			slot0.target:Show("base")
 		end
 	end
 
-	arg_22_0.target:UpdatePos(var_22_0 * NewPos(0, 1), arg_22_0.singleHeight)
-	setParent(arg_22_0.target.rt, arg_22_0.rtMainContent:Find(math.clamp(math.floor((arg_22_0.target.pos.y + arg_22_0.singleHeight) * 3 / 2 / arg_22_0.singleHeight) - 1, -1, 1) - 1))
+	slot0.target:UpdatePos(slot2 * NewPos(0, 1), slot0.singleHeight)
+	setParent(slot0.target.rt, slot0.rtMainContent:Find(math.clamp(math.floor((slot0.target.pos.y + slot0.singleHeight) * 3 / 2 / slot0.singleHeight) - 1, -1, 1) - 1))
 
-	local var_22_2 = 1
+	slot4 = 1
 
-	while var_22_2 <= #arg_22_0.queue do
-		local var_22_3 = arg_22_0.queue[var_22_2]
+	while slot4 <= #slot0.queue do
+		slot5 = slot0.queue[slot4]
 
-		var_22_3:UpdatePos(var_22_0 * NewPos(-1, 0))
+		slot5:UpdatePos(slot2 * NewPos(-1, 0))
 
-		if not var_22_3.isTriggered and var_22_3.colliderSize and var_0_3(var_22_3, arg_22_0.target) then
-			var_22_3:Trigger(arg_22_0.target)
+		if not slot5.isTriggered and slot5.colliderSize and uv0(slot5, slot0.target) then
+			slot5:Trigger(slot0.target)
 		end
 
-		if var_22_3.pos.x < -arg_22_0.bgSingleSize then
-			var_22_3:Clear()
+		if slot5.pos.x < -slot0.bgSingleSize then
+			slot5:Clear()
 		else
-			var_22_2 = var_22_2 + 1
+			slot4 = slot4 + 1
 		end
 	end
 
-	local var_22_4 = arg_22_0.rtBgContent.anchoredPosition.x - var_22_0.x
-
-	if var_22_4 < -arg_22_0.bgSingleSize / 2 then
-		var_22_4 = var_22_4 + arg_22_0.bgSingleSize
+	if slot0.rtBgContent.anchoredPosition.x - slot2.x < -slot0.bgSingleSize / 2 then
+		slot5 = slot5 + slot0.bgSingleSize
 	end
 
-	setAnchoredPosition(arg_22_0.rtBgContent, {
-		x = var_22_4
+	setAnchoredPosition(slot0.rtBgContent, {
+		x = slot5
 	})
 
-	arg_22_0.chargeDis = arg_22_0.chargeDis - var_22_0.x
+	slot0.chargeDis = slot0.chargeDis - slot2.x
 
-	if arg_22_0.chargeDis <= 0 then
-		arg_22_0:CreateNewObject()
+	if slot0.chargeDis <= 0 then
+		slot0:CreateNewObject()
 	end
 
-	arg_22_0.disCount = arg_22_0.disCount + var_22_0.x
+	slot0.disCount = slot0.disCount + slot2.x
 
-	arg_22_0:UpdateDisplay()
+	slot0:UpdateDisplay()
 end
 
-function var_0_0.UpdateDisplay(arg_23_0)
-	local var_23_0 = arg_23_0.timeAll - arg_23_0.timeCount
+function slot0.UpdateDisplay(slot0)
+	slot1 = slot0.timeAll - slot0.timeCount
+	slot9 = slot1
 
-	setText(arg_23_0.rtTime:Find("Text"), string.format("%02d:%02ds", math.floor(var_23_0), math.floor((var_23_0 - math.floor(var_23_0)) * 100)))
+	setText(slot0.rtTime:Find("Text"), string.format("%02d:%02ds", math.floor(slot1), math.floor((slot1 - math.floor(slot9)) * 100)))
 
-	local var_23_1 = arg_23_0.disCount / 20
+	slot2 = slot0.disCount / 20
 
-	setText(arg_23_0.rtDis, string.format("%.2fm", var_23_1 - var_23_1 % 0.01))
+	setText(slot0.rtDis, string.format("%.2fm", slot2 - slot2 % 0.01))
 
-	local var_23_2 = RacingMiniGameConfig.BUOY_POWER_LIST
-	local var_23_3 = RacingMiniGameConfig.BUOY_POS_LIST
-	local var_23_4
+	slot4 = RacingMiniGameConfig.BUOY_POS_LIST
+	slot5 = nil
 
-	for iter_23_0, iter_23_1 in ipairs(var_23_2) do
-		if iter_23_1 >= arg_23_0.enginePower then
-			var_23_4 = iter_23_0
+	for slot9, slot10 in ipairs(RacingMiniGameConfig.BUOY_POWER_LIST) do
+		if slot0.enginePower <= slot10 then
+			slot5 = slot9
 
 			break
 		end
 	end
 
-	setAnchoredPosition(arg_23_0.rtPower:Find("range/buoy"), {
-		x = var_23_4 > 1 and var_23_3[var_23_4 - 1] + (arg_23_0.enginePower - var_23_2[var_23_4 - 1]) / (var_23_2[var_23_4] - var_23_2[var_23_4 - 1]) * (var_23_3[var_23_4] - var_23_3[var_23_4 - 1]) or 0
+	setAnchoredPosition(slot0.rtPower:Find("range/buoy"), {
+		x = slot5 > 1 and slot4[slot5 - 1] + (slot0.enginePower - slot3[slot5 - 1]) / (slot3[slot5] - slot3[slot5 - 1]) * (slot4[slot5] - slot4[slot5 - 1]) or 0
 	})
 
-	if arg_23_0.target.isVertigo then
-		var_23_4 = 1
+	if slot0.target.isVertigo then
+		slot5 = 1
 	end
 
-	for iter_23_2, iter_23_3 in ipairs(arg_23_0.target.effectList) do
-		setActive(iter_23_3, var_23_4 - 1 == iter_23_2)
+	for slot9, slot10 in ipairs(slot0.target.effectList) do
+		setActive(slot10, slot5 - 1 == slot9)
 	end
 
-	local var_23_5 = RacingMiniGameConfig.FRIEND_DIS_LIST
+	slot6 = RacingMiniGameConfig.FRIEND_DIS_LIST
+	slot0.friendIndex = defaultValue(slot0.friendIndex, 1)
 
-	arg_23_0.friendIndex = defaultValue(arg_23_0.friendIndex, 1)
-
-	while arg_23_0.friendIndex < #var_23_5 and var_23_5[arg_23_0.friendIndex + 1] < arg_23_0.disCount / 20 do
-		arg_23_0.friendIndex = arg_23_0.friendIndex + 1
-		arg_23_0.friendDirty = true
+	while slot0.friendIndex < #slot6 and slot6[slot0.friendIndex + 1] < slot0.disCount / 20 do
+		slot0.friendIndex = slot0.friendIndex + 1
+		slot0.friendDirty = true
 	end
 
-	if arg_23_0.friendDirty then
-		arg_23_0.friendDirty = false
+	if slot0.friendDirty then
+		slot0.friendDirty = false
 
-		while #arg_23_0.rankData > 0 and arg_23_0.rankData[1].score / 100 < var_23_5[arg_23_0.friendIndex] do
-			table.remove(arg_23_0.rankData, 1)
+		while #slot0.rankData > 0 and slot0.rankData[1].score / 100 < slot6[slot0.friendIndex] do
+			table.remove(slot0.rankData, 1)
 		end
 
-		local var_23_6
+		slot7 = nil
 
-		for iter_23_4, iter_23_5 in ipairs(arg_23_0.rankData) do
-			if arg_23_0.friendIndex == #var_23_5 or iter_23_5.score / 100 < var_23_5[arg_23_0.friendIndex + 1] then
-				var_23_6 = iter_23_4
+		for slot11, slot12 in ipairs(slot0.rankData) do
+			if slot0.friendIndex == #slot6 or slot12.score / 100 < slot6[slot0.friendIndex + 1] then
+				slot7 = slot11
 			else
 				break
 			end
 		end
 
-		setActive(arg_23_0.rtFriend, var_23_6)
+		setActive(slot0.rtFriend, slot7)
 
-		if var_23_6 then
-			arg_23_0.friendInfo = arg_23_0.rankData[math.random(var_23_6)]
+		if slot7 then
+			slot0.friendInfo = slot0.rankData[math.random(slot7)]
 		else
-			arg_23_0.friendInfo = nil
+			slot0.friendInfo = nil
 		end
 
-		if arg_23_0.friendInfo then
-			setText(arg_23_0.rtFriend:Find("Text"), arg_23_0.friendInfo.name)
-			setText(arg_23_0.rtFriend:Find("point"), string.format("%.2fm", arg_23_0.friendInfo.score / 100))
+		if slot0.friendInfo then
+			setText(slot0.rtFriend:Find("Text"), slot0.friendInfo.name)
+			setText(slot0.rtFriend:Find("point"), string.format("%.2fm", slot0.friendInfo.score / 100))
 		end
 	end
 end
 
-local var_0_4 = {
+slot4 = {
 	TrafficCone = "roadblocks",
 	Mire = "mire",
 	Roadblock = "roadblocks",
@@ -372,121 +361,111 @@ local var_0_4 = {
 	Invincibility = "invincibility"
 }
 
-function var_0_0.CreateNewObject(arg_24_0)
-	local var_24_0
+function slot0.CreateNewObject(slot0)
+	slot1 = nil
 
-	for iter_24_0, iter_24_1 in ipairs(RacingMiniGameConfig.FIELD_CONFIG) do
-		if arg_24_0.timeCount < iter_24_1.time then
+	for slot5, slot6 in ipairs(RacingMiniGameConfig.FIELD_CONFIG) do
+		if slot0.timeCount < slot6.time then
 			break
 		else
-			var_24_0 = iter_24_1
+			slot1 = slot6
 		end
 	end
 
-	local var_24_1 = {}
-	local var_24_2 = 0
+	slot2 = {
+		[slot7] = true
+	}
 
-	for iter_24_2 = -1, 1 do
-		arg_24_0.rateDic[iter_24_2] = defaultValue(arg_24_0.rateDic[iter_24_2], 0)
+	for slot7 = -1, 1 do
+		slot0.rateDic[slot7] = defaultValue(slot0.rateDic[slot7], 0)
+		slot9 = nil
 
-		local var_24_3 = math.random() / (2 - iter_24_2)
-		local var_24_4
-
-		if var_24_3 < arg_24_0.rateDic[iter_24_2] then
-			var_24_2 = var_24_2 + 1
-			var_24_1[iter_24_2] = true
+		if math.random() / (2 - slot7) < slot0.rateDic[slot7] then
+			slot3 = 0 + 1
 		else
-			var_24_1[iter_24_2] = false
+			slot2[slot7] = false
 		end
 	end
 
-	if var_24_2 == 3 then
-		var_24_1[math.random(3) - 2] = false
+	if slot3 == 3 then
+		slot2[math.random(3) - 2] = false
 	end
 
-	for iter_24_3 = -1, 1 do
-		if var_24_1[iter_24_3] then
-			classCfg = var_24_0.obstacle_distribution
+	for slot7 = -1, 1 do
+		if slot2[slot7] then
+			classCfg = slot1.obstacle_distribution
 		else
-			classCfg = var_24_0.item_distribution
+			classCfg = slot1.item_distribution
 		end
 
 		rate = math.random()
+		slot8 = 0
 
-		local var_24_5 = 0
-		local var_24_6 = 0
-
-		for iter_24_4, iter_24_5 in ipairs(classCfg) do
-			var_24_6 = var_24_6 + iter_24_5[2]
+		for slot13, slot14 in ipairs(classCfg) do
+			slot9 = 0 + slot14[2]
 		end
 
-		local var_24_7
+		slot10 = nil
 
-		for iter_24_6, iter_24_7 in ipairs(classCfg) do
-			var_24_5 = var_24_5 + iter_24_7[2]
-
-			if var_24_5 > rate * var_24_6 then
-				var_24_7 = iter_24_7[1]
+		for slot14, slot15 in ipairs(classCfg) do
+			if slot8 + slot15[2] > rate * slot9 then
+				slot10 = slot15[1]
 
 				break
 			end
 		end
 
-		if var_24_7 and superof(RacingMiniNameSpace[var_24_7], RacingMiniNameSpace.Item) then
-			if defaultValue(arg_24_0.itemCountDic[var_24_7], 0) < defaultValue(var_24_0.item_create_limit[var_24_7], 0) then
-				arg_24_0.itemCountDic[var_24_7] = defaultValue(arg_24_0.itemCountDic[var_24_7], 0) + 1
+		if slot10 and superof(RacingMiniNameSpace[slot10], RacingMiniNameSpace.Item) then
+			if defaultValue(slot0.itemCountDic[slot10], 0) < defaultValue(slot1.item_create_limit[slot10], 0) then
+				slot0.itemCountDic[slot10] = defaultValue(slot0.itemCountDic[slot10], 0) + 1
 			else
-				var_24_7 = nil
+				slot10 = nil
 			end
 		end
 
-		if var_24_7 then
-			local var_24_8 = RacingMiniNameSpace[var_24_7].New(cloneTplTo(arg_24_0.rtRes:Find(var_0_4[var_24_7]), arg_24_0.rtMainContent:Find(iter_24_3)), NewPos(arg_24_0.bgSingleSize * 1.5 + arg_24_0.chargeDis, iter_24_3 * arg_24_0.singleHeight), arg_24_0)
+		if slot10 then
+			table.insert(slot0.queue, RacingMiniNameSpace[slot10].New(cloneTplTo(slot0.rtRes:Find(uv0[slot10]), slot0.rtMainContent:Find(slot7)), NewPos(slot0.bgSingleSize * 1.5 + slot0.chargeDis, slot7 * slot0.singleHeight), slot0))
 
-			table.insert(arg_24_0.queue, var_24_8)
-
-			arg_24_0.rateDic[iter_24_3] = arg_24_0.rateDic[iter_24_3] * var_24_0.continue_reduce
+			slot0.rateDic[slot7] = slot0.rateDic[slot7] * slot1.continue_reduce
 		else
-			arg_24_0.rateDic[iter_24_3] = arg_24_0.rateDic[iter_24_3] + var_24_0.bye_plus
+			slot0.rateDic[slot7] = slot0.rateDic[slot7] + slot1.bye_plus
 		end
 	end
 
-	arg_24_0.chargeDis = arg_24_0.chargeDis + var_24_0.recharge_dis
+	slot0.chargeDis = slot0.chargeDis + slot1.recharge_dis
 end
 
-function var_0_0.GetSpeed(arg_25_0, arg_25_1)
-	local var_25_0
-	local var_25_1 = RacingMiniGameConfig.M_LIST
-	local var_25_2 = RacingMiniGameConfig.S_LIST
+function slot0.GetSpeed(slot0, slot1)
+	slot2 = nil
+	slot4 = RacingMiniGameConfig.S_LIST
 
-	for iter_25_0 = 1, #var_25_1 - 1 do
-		if var_25_1[iter_25_0 + 1] > arg_25_0.enginePower then
-			var_25_0 = var_25_2[iter_25_0] + (arg_25_0.enginePower - var_25_1[iter_25_0]) / (var_25_1[iter_25_0 + 1] - var_25_1[iter_25_0]) * (var_25_2[iter_25_0 + 1] - var_25_2[iter_25_0])
+	for slot8 = 1, #RacingMiniGameConfig.M_LIST - 1 do
+		if slot0.enginePower < slot3[slot8 + 1] then
+			slot2 = slot4[slot8] + (slot0.enginePower - slot3[slot8]) / (slot3[slot8 + 1] - slot3[slot8]) * (slot4[slot8 + 1] - slot4[slot8])
 
 			break
 		end
 	end
 
-	var_25_0 = var_25_0 or var_25_2[#var_25_2]
-	arg_25_0.enginePower = math.clamp(arg_25_0.enginePower + arg_25_1, var_25_1[1], var_25_1[#var_25_1])
+	slot0.enginePower = math.clamp(slot0.enginePower + slot1, slot3[1], slot3[#slot3])
 
-	return var_25_0 * 10
+	return (slot2 or slot4[#slot4]) * 10
 end
 
-function var_0_0.AddTime(arg_26_0, arg_26_1)
-	arg_26_0.timeAll = arg_26_0.timeAll + arg_26_1
+function slot0.AddTime(slot0, slot1)
+	slot0.timeAll = slot0.timeAll + slot1
 
-	setActive(arg_26_0.rtTime:Find("Text/plus"), true)
+	setActive(slot0.rtTime:Find("Text/plus"), true)
 end
 
-function var_0_0.SetEnginePower(arg_27_0, arg_27_1)
-	arg_27_0.enginePower = math.min(arg_27_0.enginePower, arg_27_1)
+function slot0.SetEnginePower(slot0, slot1)
+	slot0.enginePower = math.min(slot0.enginePower, slot1)
 end
 
-function var_0_0.willExit(arg_28_0)
-	if arg_28_0.handle then
-		UpdateBeat:RemoveListener(arg_28_0.handle)
+function slot0.willExit(slot0)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 end
 
-return var_0_0
+return slot0

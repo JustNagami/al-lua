@@ -1,179 +1,151 @@
-﻿local var_0_0 = coroutine.create
-local var_0_1 = coroutine.running
-local var_0_2 = coroutine.resume
-local var_0_3 = coroutine.yield
-local var_0_4 = error
-local var_0_5 = unpack
-local var_0_6 = debug
-local var_0_7 = FrameTimer
-local var_0_8 = CoTimer
-local var_0_9 = {}
-local var_0_10 = {}
+slot0 = coroutine.create
+slot1 = coroutine.running
+slot2 = coroutine.resume
+slot3 = coroutine.yield
+slot4 = error
+slot5 = unpack
+slot6 = debug
+slot7 = FrameTimer
+slot8 = CoTimer
+slot10 = {}
 
-setmetatable(var_0_9, {
+setmetatable({}, {
 	__mode = "kv"
 })
 
-function coroutine.start(arg_1_0, ...)
-	local var_1_0 = var_0_0(arg_1_0)
+function coroutine.start(slot0, ...)
+	slot1 = uv0(slot0)
 
-	if var_0_1() == nil then
-		local var_1_1, var_1_2 = var_0_2(var_1_0, ...)
+	if uv1() == nil then
+		slot2, slot3 = uv2(slot1, ...)
 
-		if not var_1_1 then
-			var_0_4(var_0_6.traceback(var_1_0, var_1_2))
+		if not slot2 then
+			uv3(uv4.traceback(slot1, slot3))
 		end
 	else
-		local var_1_3 = packEx(...)
-		local var_1_4
+		slot2 = packEx(...)
+		slot3 = nil
 
-		local function var_1_5()
-			var_0_9[var_1_0] = nil
-			var_1_4.func = nil
+		if #uv6 > 0 then
+			table.remove(uv6):Reset(function ()
+				uv0[uv1] = nil
+				uv2.func = nil
+				slot0, slot1 = uv3(uv1, unpackEx(uv4))
 
-			local var_2_0, var_2_1 = var_0_2(var_1_0, unpackEx(var_1_3))
+				table.insert(uv5, uv2)
 
-			table.insert(var_0_10, var_1_4)
-
-			if not var_2_0 then
-				var_1_4:Stop()
-				var_0_4(var_0_6.traceback(var_1_0, var_2_1))
-			end
-		end
-
-		if #var_0_10 > 0 then
-			var_1_4 = table.remove(var_0_10)
-
-			var_1_4:Reset(var_1_5, 0, 1)
+				if not slot0 then
+					uv2:Stop()
+					uv6(uv7.traceback(uv1, slot1))
+				end
+			end, 0, 1)
 		else
-			var_1_4 = var_0_7.New(var_1_5, 0, 1)
+			slot3 = uv7.New(slot4, 0, 1)
 		end
 
-		var_0_9[var_1_0] = var_1_4
+		uv5[slot1] = slot3
 
-		var_1_4:Start()
+		slot3:Start()
 	end
 
-	return var_1_0
+	return slot1
 end
 
-function coroutine.wait(arg_3_0, arg_3_1, ...)
-	local var_3_0 = packEx(...)
+function coroutine.wait(slot0, slot1, ...)
+	slot2 = packEx(...)
+	slot3 = nil
+	slot3 = uv5.New(function ()
+		uv0[uv1] = nil
+		uv2.func = nil
+		slot0, slot1 = uv3(uv1, unpackEx(uv4))
 
-	arg_3_1 = arg_3_1 or var_0_1()
-
-	local var_3_1
-
-	local function var_3_2()
-		var_0_9[arg_3_1] = nil
-		var_3_1.func = nil
-
-		local var_4_0, var_4_1 = var_0_2(arg_3_1, unpackEx(var_3_0))
-
-		if not var_4_0 then
-			var_3_1:Stop()
-			var_0_4(var_0_6.traceback(arg_3_1, var_4_1))
+		if not slot0 then
+			uv2:Stop()
+			uv5(uv6.traceback(uv1, slot1))
 
 			return
 		end
-	end
+	end, slot0, 1)
+	uv1[slot1 or uv0()] = slot3
 
-	var_3_1 = var_0_8.New(var_3_2, arg_3_0, 1)
-	var_0_9[arg_3_1] = var_3_1
+	slot3:Start()
 
-	var_3_1:Start()
-
-	return var_0_3()
+	return uv6()
 end
 
-function coroutine.step(arg_5_0, arg_5_1, ...)
-	local var_5_0 = packEx(...)
+function coroutine.step(slot0, slot1, ...)
+	slot2 = packEx(...)
+	slot1 = slot1 or uv0()
+	slot3 = nil
 
-	arg_5_1 = arg_5_1 or var_0_1()
+	if #uv3 > 0 then
+		table.remove(uv3):Reset(function ()
+			uv0[uv1] = nil
+			uv2.func = nil
+			slot0, slot1 = uv3(uv1, unpackEx(uv4))
 
-	local var_5_1
+			table.insert(uv5, uv2)
 
-	local function var_5_2()
-		var_0_9[arg_5_1] = nil
-		var_5_1.func = nil
+			if not slot0 then
+				uv2:Stop()
+				uv6(uv7.traceback(uv1, slot1))
 
-		local var_6_0, var_6_1 = var_0_2(arg_5_1, unpackEx(var_5_0))
-
-		table.insert(var_0_10, var_5_1)
-
-		if not var_6_0 then
-			var_5_1:Stop()
-			var_0_4(var_0_6.traceback(arg_5_1, var_6_1))
-
-			return
-		end
-	end
-
-	if #var_0_10 > 0 then
-		var_5_1 = table.remove(var_0_10)
-
-		var_5_1:Reset(var_5_2, arg_5_0 or 1, 1)
+				return
+			end
+		end, slot0 or 1, 1)
 	else
-		var_5_1 = var_0_7.New(var_5_2, arg_5_0 or 1, 1)
+		slot3 = uv6.New(slot4, slot0 or 1, 1)
 	end
 
-	var_0_9[arg_5_1] = var_5_1
+	uv1[slot1] = slot3
 
-	var_5_1:Start()
+	slot3:Start()
 
-	return var_0_3()
+	return uv7()
 end
 
-function coroutine.www(arg_7_0, arg_7_1)
-	arg_7_1 = arg_7_1 or var_0_1()
+function coroutine.www(slot0, slot1)
+	slot1 = slot1 or uv0()
+	slot2 = nil
 
-	local var_7_0
+	if #uv3 > 0 then
+		table.remove(uv3):Reset(function ()
+			if not uv0.isDone then
+				return
+			end
 
-	local function var_7_1()
-		if not arg_7_0.isDone then
-			return
-		end
+			uv1[uv2] = nil
 
-		var_0_9[arg_7_1] = nil
+			uv3:Stop()
 
-		var_7_0:Stop()
+			uv3.func = nil
+			slot0, slot1 = uv4(uv2)
 
-		var_7_0.func = nil
+			table.insert(uv5, uv3)
 
-		local var_8_0, var_8_1 = var_0_2(arg_7_1)
+			if not slot0 then
+				uv6(uv7.traceback(uv2, slot1))
 
-		table.insert(var_0_10, var_7_0)
-
-		if not var_8_0 then
-			var_0_4(var_0_6.traceback(arg_7_1, var_8_1))
-
-			return
-		end
-	end
-
-	if #var_0_10 > 0 then
-		var_7_0 = table.remove(var_0_10)
-
-		var_7_0:Reset(var_7_1, 1, -1)
+				return
+			end
+		end, 1, -1)
 	else
-		var_7_0 = var_0_7.New(var_7_1, 1, -1)
+		slot2 = uv6.New(slot3, 1, -1)
 	end
 
-	var_0_9[arg_7_1] = var_7_0
+	uv1[slot1] = slot2
 
-	var_7_0:Start()
+	slot2:Start()
 
-	return var_0_3()
+	return uv7()
 end
 
-function coroutine.stop(arg_9_0)
-	local var_9_0 = var_0_9[arg_9_0]
+function coroutine.stop(slot0)
+	if uv0[slot0] ~= nil then
+		uv0[slot0] = nil
 
-	if var_9_0 ~= nil then
-		var_0_9[arg_9_0] = nil
+		slot1:Stop()
 
-		var_9_0:Stop()
-
-		var_9_0.func = nil
+		slot1.func = nil
 	end
 end

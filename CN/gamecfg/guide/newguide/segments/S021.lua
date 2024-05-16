@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"前往<color=#ff7d36>编队</color>，将角色编入队伍",
 	"指挥官还记得怎么操作吗？",
 	"点击队伍空位上的<color=#ff7d36>添加</color>",
@@ -18,7 +18,7 @@ return {
 				mode = 2,
 				posY = 104.87,
 				posX = 4.77,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/formationButton",
@@ -40,7 +40,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = slot0[2]
 			}
 		},
 		{
@@ -50,7 +50,7 @@ return {
 				mode = 2,
 				posY = 240,
 				posX = -88.52,
-				text = var_0_0[3]
+				text = slot0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/GridFrame/vanguard_3/tip",
@@ -71,7 +71,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = slot0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/DockyardUI(Clone)/main/ship_container/ships",
@@ -98,7 +98,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 239.42,
-				text = var_0_0[5]
+				text = slot0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/select_panel/confirm_button",
@@ -120,7 +120,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[6]
+				text = slot0[6]
 			}
 		},
 		{
@@ -130,7 +130,7 @@ return {
 				mode = 2,
 				posY = 226.21,
 				posX = -130.49,
-				text = var_0_0[7]
+				text = slot0[7]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/FormationUI(Clone)/blur_panel/top/back_btn",

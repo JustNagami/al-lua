@@ -1,7 +1,7 @@
-﻿local var_0_0 = class("MainSequenceView")
+slot0 = class("MainSequenceView")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.sequence = {
+function slot0.Ctor(slot0)
+	slot0.sequence = {
 		MainRefundSequence.New(),
 		MainForcePlayerNameModificationSequence.New(),
 		MainRequestVoteInfoSequence.New(),
@@ -34,55 +34,55 @@ function var_0_0.Ctor(arg_1_0)
 	}
 end
 
-function var_0_0.MapSequence(arg_2_0, arg_2_1)
-	local var_2_0 = {}
+function slot0.MapSequence(slot0, slot1)
+	slot2 = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
-		table.insert(var_2_0, function(arg_3_0)
-			if arg_2_0._exited then
+	for slot6, slot7 in ipairs(slot1) do
+		table.insert(slot2, function (slot0)
+			if uv0._exited then
 				return
 			end
 
-			iter_2_1:Execute(arg_3_0)
+			uv1:Execute(slot0)
 		end)
 	end
 
-	return var_2_0
+	return slot2
 end
 
-function var_0_0.Execute(arg_4_0, arg_4_1)
+function slot0.Execute(slot0, slot1)
 	if not pg.SeriesGuideMgr.GetInstance():isEnd() then
-		arg_4_1()
+		slot1()
 
 		return
 	end
 
-	if not arg_4_0.executable then
-		arg_4_0.executable = arg_4_0:MapSequence(arg_4_0.sequence)
+	if not slot0.executable then
+		slot0.executable = slot0:MapSequence(slot0.sequence)
 	end
 
-	seriesAsync(arg_4_0.executable, arg_4_1)
+	seriesAsync(slot0.executable, slot1)
 end
 
-function var_0_0.Disable(arg_5_0)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.sequence) do
-		if iter_5_1.Clear ~= nil then
-			iter_5_1:Clear()
+function slot0.Disable(slot0)
+	for slot4, slot5 in ipairs(slot0.sequence) do
+		if slot5.Clear ~= nil then
+			slot5:Clear()
 		end
 	end
 end
 
-function var_0_0.Dispose(arg_6_0)
-	arg_6_0._exited = true
+function slot0.Dispose(slot0)
+	slot0._exited = true
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.sequence) do
-		if iter_6_1.Dispose ~= nil then
-			iter_6_1:Dispose()
+	for slot4, slot5 in ipairs(slot0.sequence) do
+		if slot5.Dispose ~= nil then
+			slot5:Dispose()
 		end
 	end
 
-	arg_6_0.sequence = nil
-	arg_6_0.executable = nil
+	slot0.sequence = nil
+	slot0.executable = nil
 end
 
-return var_0_0
+return slot0

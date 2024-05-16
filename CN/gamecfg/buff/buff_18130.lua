@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "飞行NG! +",
+	init_effect = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "飞行NG! +",
+	stack = 1,
+	id = 18130,
+	icon = 18130,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -34,26 +55,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "飞行NG! +",
-	init_effect = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "飞行NG! +",
-	stack = 1,
-	id = 18130,
-	icon = 18130,
-	last_effect = ""
+	}
 }

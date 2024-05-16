@@ -1,134 +1,111 @@
-﻿local var_0_0 = class("BattleMediator", import("..base.ContextMediator"))
+slot0 = class("BattleMediator", import("..base.ContextMediator"))
+slot0.ON_BATTLE_RESULT = "BattleMediator:ON_BATTLE_RESULT"
+slot0.ON_PAUSE = "BattleMediator:ON_PAUSE"
+slot0.ENTER = "BattleMediator:ENTER"
+slot0.ON_BACK_PRE_SCENE = "BattleMediator:ON_BACK_PRE_SCENE"
+slot0.ON_LEAVE = "BattleMediator:ON_LEAVE"
+slot0.ON_QUIT_BATTLE_MANUALLY = "BattleMediator:ON_QUIT_BATTLE_MANUALLY"
+slot0.HIDE_ALL_BUTTONS = "BattleMediator:HIDE_ALL_BUTTONS"
+slot0.ON_CHAT = "BattleMediator:ON_CHAT"
+slot0.CLOSE_CHAT = "BattleMediator:CLOSE_CHAT"
+slot0.ON_AUTO = "BattleMediator:ON_AUTO"
+slot0.ON_PUZZLE_RELIC = "BattleMediator.ON_PUZZLE_RELIC"
+slot0.ON_PUZZLE_CARD = "BattleMediator.ON_PUZZLE_CARD"
 
-var_0_0.ON_BATTLE_RESULT = "BattleMediator:ON_BATTLE_RESULT"
-var_0_0.ON_PAUSE = "BattleMediator:ON_PAUSE"
-var_0_0.ENTER = "BattleMediator:ENTER"
-var_0_0.ON_BACK_PRE_SCENE = "BattleMediator:ON_BACK_PRE_SCENE"
-var_0_0.ON_LEAVE = "BattleMediator:ON_LEAVE"
-var_0_0.ON_QUIT_BATTLE_MANUALLY = "BattleMediator:ON_QUIT_BATTLE_MANUALLY"
-var_0_0.HIDE_ALL_BUTTONS = "BattleMediator:HIDE_ALL_BUTTONS"
-var_0_0.ON_CHAT = "BattleMediator:ON_CHAT"
-var_0_0.CLOSE_CHAT = "BattleMediator:CLOSE_CHAT"
-var_0_0.ON_AUTO = "BattleMediator:ON_AUTO"
-var_0_0.ON_PUZZLE_RELIC = "BattleMediator.ON_PUZZLE_RELIC"
-var_0_0.ON_PUZZLE_CARD = "BattleMediator.ON_PUZZLE_CARD"
-
-function var_0_0.register(arg_1_0)
+function slot0.register(slot0)
 	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(true)
-	arg_1_0:GenBattleData()
+	slot0:GenBattleData()
 
-	arg_1_0.contextData.battleData = arg_1_0._battleData
+	slot0.contextData.battleData = slot0._battleData
+	slot1 = ys.Battle.BattleState.GetInstance()
 
-	local var_1_0 = ys.Battle.BattleState.GetInstance()
-	local var_1_1 = arg_1_0.contextData.system
-
-	arg_1_0:bind(var_0_0.ON_BATTLE_RESULT, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.FINISH_STAGE, {
-			token = arg_1_0.contextData.token,
-			mainFleetId = arg_1_0.contextData.mainFleetId,
-			stageId = arg_1_0.contextData.stageId,
-			rivalId = arg_1_0.contextData.rivalId,
-			memory = arg_1_0.contextData.memory,
-			bossId = arg_1_0.contextData.bossId,
-			exitCallback = arg_1_0.contextData.exitCallback,
-			system = var_1_1,
-			statistics = arg_2_1,
-			actId = arg_1_0.contextData.actId,
-			mode = arg_1_0.contextData.mode,
-			puzzleCombatID = arg_1_0.contextData.puzzleCombatID
+	slot0:bind(uv0.ON_BATTLE_RESULT, function (slot0, slot1)
+		uv0:sendNotification(GAME.FINISH_STAGE, {
+			token = uv0.contextData.token,
+			mainFleetId = uv0.contextData.mainFleetId,
+			stageId = uv0.contextData.stageId,
+			rivalId = uv0.contextData.rivalId,
+			memory = uv0.contextData.memory,
+			bossId = uv0.contextData.bossId,
+			exitCallback = uv0.contextData.exitCallback,
+			system = uv1,
+			statistics = slot1,
+			actId = uv0.contextData.actId,
+			mode = uv0.contextData.mode,
+			puzzleCombatID = uv0.contextData.puzzleCombatID
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_AUTO, function(arg_3_0, arg_3_1)
-		arg_1_0:onAutoBtn(arg_3_1)
+	slot0:bind(uv0.ON_AUTO, function (slot0, slot1)
+		uv0:onAutoBtn(slot1)
 	end)
-	arg_1_0:bind(var_0_0.ON_PAUSE, function(arg_4_0)
-		arg_1_0:onPauseBtn()
+	slot0:bind(uv0.ON_PAUSE, function (slot0)
+		uv0:onPauseBtn()
 	end)
-	arg_1_0:bind(var_0_0.ON_LEAVE, function(arg_5_0)
-		arg_1_0:warnFunc()
+	slot0:bind(uv0.ON_LEAVE, function (slot0)
+		uv0:warnFunc()
 	end)
-	arg_1_0:bind(var_0_0.ON_CHAT, function(arg_6_0, arg_6_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_CHAT, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = NotificationMediator,
 			viewComponent = NotificationLayer,
 			data = {
 				form = NotificationLayer.FORM_BATTLE,
-				chatViewParent = arg_6_1
+				chatViewParent = slot1
 			}
 		}))
 	end)
-	arg_1_0:bind(var_0_0.ENTER, function(arg_7_0)
-		var_1_0:EnterBattle(arg_1_0._battleData, arg_1_0.contextData.prePause)
+	slot0:bind(uv0.ENTER, function (slot0)
+		uv0:EnterBattle(uv1._battleData, uv1.contextData.prePause)
 	end)
-	arg_1_0:bind(var_0_0.ON_BACK_PRE_SCENE, function()
-		local var_8_0 = getProxy(ContextProxy)
-		local var_8_1 = var_8_0:getContextByMediator(DailyLevelMediator)
-		local var_8_2 = var_8_0:getContextByMediator(LevelMediator2)
-		local var_8_3 = var_8_0:getContextByMediator(ChallengeMainMediator)
-		local var_8_4 = var_8_0:getContextByMediator(ActivityBossMediatorTemplate)
-		local var_8_5 = var_8_0:getContextByMediator(WorldMediator)
-		local var_8_6 = var_8_0:getContextByMediator(WorldBossMediator)
+	slot0:bind(uv0.ON_BACK_PRE_SCENE, function ()
+		slot0 = getProxy(ContextProxy)
+		slot1 = slot0:getContextByMediator(DailyLevelMediator)
+		slot2 = slot0:getContextByMediator(LevelMediator2)
+		slot3 = slot0:getContextByMediator(ChallengeMainMediator)
+		slot4 = slot0:getContextByMediator(ActivityBossMediatorTemplate)
+		slot5 = slot0:getContextByMediator(WorldMediator)
 
-		if var_8_6 and arg_1_0.contextData.bossId then
-			arg_1_0:sendNotification(GAME.WORLD_BOSS_BATTLE_QUIT, {
-				id = arg_1_0.contextData.bossId
+		if slot0:getContextByMediator(WorldBossMediator) and uv0.contextData.bossId then
+			uv0:sendNotification(GAME.WORLD_BOSS_BATTLE_QUIT, {
+				id = uv0.contextData.bossId
 			})
 
-			local var_8_7 = var_8_6:getContextByMediator(WorldBossFormationMediator)
-
-			if var_8_7 then
-				var_8_6:removeChild(var_8_7)
+			if slot6:getContextByMediator(WorldBossFormationMediator) then
+				slot6:removeChild(slot7)
 			end
-		elseif var_8_5 then
-			local var_8_8 = var_8_5:getContextByMediator(WorldPreCombatMediator) or var_8_5:getContextByMediator(WorldBossInformationMediator)
-
-			if var_8_8 then
-				var_8_5:removeChild(var_8_8)
+		elseif slot5 then
+			if slot5:getContextByMediator(WorldPreCombatMediator) or slot5:getContextByMediator(WorldBossInformationMediator) then
+				slot5:removeChild(slot7)
 			end
-		elseif var_8_1 then
-			local var_8_9 = var_8_1:getContextByMediator(PreCombatMediator)
-
-			var_8_1:removeChild(var_8_9)
-		elseif var_8_3 then
-			arg_1_0:sendNotification(GAME.CHALLENGE2_RESET, {
-				mode = arg_1_0.contextData.mode
+		elseif slot1 then
+			slot1:removeChild(slot1:getContextByMediator(PreCombatMediator))
+		elseif slot3 then
+			uv0:sendNotification(GAME.CHALLENGE2_RESET, {
+				mode = uv0.contextData.mode
 			})
-
-			local var_8_10 = var_8_3:getContextByMediator(ChallengePreCombatMediator)
-
-			var_8_3:removeChild(var_8_10)
-		elseif var_8_2 then
-			if var_1_1 == SYSTEM_DUEL then
-				-- block empty
-			elseif var_1_1 == SYSTEM_SCENARIO then
-				local var_8_11 = var_8_2:getContextByMediator(ChapterPreCombatMediator)
-
-				if var_8_11 then
-					var_8_2:removeChild(var_8_11)
+			slot3:removeChild(slot3:getContextByMediator(ChallengePreCombatMediator))
+		elseif slot2 then
+			if uv1 == SYSTEM_DUEL then
+				-- Nothing
+			elseif uv1 == SYSTEM_SCENARIO then
+				if slot2:getContextByMediator(ChapterPreCombatMediator) then
+					slot2:removeChild(slot7)
 				end
-			elseif var_1_1 ~= SYSTEM_PERFORM and var_1_1 ~= SYSTEM_SIMULATION then
-				local var_8_12 = var_8_2:getContextByMediator(PreCombatMediator)
-
-				if var_8_12 then
-					var_8_2:removeChild(var_8_12)
-				end
+			elseif uv1 ~= SYSTEM_PERFORM and uv1 ~= SYSTEM_SIMULATION and slot2:getContextByMediator(PreCombatMediator) then
+				slot2:removeChild(slot7)
 			end
-		elseif var_8_4 then
-			local var_8_13 = var_8_4:getContextByMediator(PreCombatMediator)
-
-			if var_8_13 then
-				var_8_4:removeChild(var_8_13)
-			end
+		elseif slot4 and slot4:getContextByMediator(PreCombatMediator) then
+			slot4:removeChild(slot7)
 		end
 
-		arg_1_0:sendNotification(GAME.GO_BACK)
+		uv0:sendNotification(GAME.GO_BACK)
 	end)
-	arg_1_0:bind(var_0_0.ON_QUIT_BATTLE_MANUALLY, function(arg_9_0)
-		if var_1_1 == SYSTEM_SCENARIO then
+	slot0:bind(uv0.ON_QUIT_BATTLE_MANUALLY, function (slot0)
+		if uv0 == SYSTEM_SCENARIO then
 			getProxy(ChapterProxy):StopAutoFight(ChapterConst.AUTOFIGHT_STOP_REASON.MANUAL)
-		elseif var_1_1 == SYSTEM_WORLD then
+		elseif uv0 == SYSTEM_WORLD then
 			nowWorld():TriggerAutoFight(false)
-		elseif var_1_1 == SYSTEM_ACT_BOSS then
+		elseif uv0 == SYSTEM_ACT_BOSS then
 			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
 				getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
 					mediator = ActivityBossTotalRewardPanelMediator,
@@ -137,25 +114,23 @@ function var_0_0.register(arg_1_0)
 						isAutoFight = false,
 						isLayer = true,
 						rewards = getProxy(ChapterProxy):PopActBossRewards(),
-						continuousBattleTimes = arg_1_0.contextData.continuousBattleTimes,
-						totalBattleTimes = arg_1_0.contextData.totalBattleTimes
+						continuousBattleTimes = uv1.contextData.continuousBattleTimes,
+						totalBattleTimes = uv1.contextData.totalBattleTimes
 					}
 				}))
 			end
-		elseif var_1_1 == SYSTEM_BOSS_RUSH then
+		elseif uv0 == SYSTEM_BOSS_RUSH then
 			if getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
-				local var_9_0 = getProxy(ActivityProxy):PopBossRushAwards()
-
 				getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
 					mediator = BossRushTotalRewardPanelMediator,
 					viewComponent = BossRushTotalRewardPanel,
 					data = {
 						isLayer = true,
-						rewards = var_9_0
+						rewards = getProxy(ActivityProxy):PopBossRushAwards()
 					}
 				}))
 			end
-		elseif var_1_1 == SYSTEM_BOSS_SINGLE and getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
+		elseif uv0 == SYSTEM_BOSS_SINGLE and getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
 			getProxy(ContextProxy):GetPrevContext(1):addChild(Context.New({
 				mediator = BossSingleTotalRewardPanelMediator,
 				viewComponent = BossSingleTotalRewardPanel,
@@ -163,376 +138,322 @@ function var_0_0.register(arg_1_0)
 					isAutoFight = false,
 					isLayer = true,
 					rewards = getProxy(ChapterProxy):PopBossSingleRewards(),
-					continuousBattleTimes = arg_1_0.contextData.continuousBattleTimes,
-					totalBattleTimes = arg_1_0.contextData.totalBattleTimes
+					continuousBattleTimes = uv1.contextData.continuousBattleTimes,
+					totalBattleTimes = uv1.contextData.totalBattleTimes
 				}
 			}))
 		end
 	end)
-	arg_1_0:bind(var_0_0.ON_PUZZLE_RELIC, function(arg_10_0, arg_10_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_PUZZLE_RELIC, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleRelicDeckMediator,
 			viewComponent = CardPuzzleRelicDeckLayerCombat,
-			data = arg_10_1
+			data = slot1
 		}))
-		var_1_0:Pause()
+		uv1:Pause()
 	end)
-	arg_1_0:bind(var_0_0.ON_PUZZLE_CARD, function(arg_11_0, arg_11_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_PUZZLE_CARD, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleCardDeckMediator,
 			viewComponent = CardPuzzleCardDeckLayerCombat,
-			data = arg_11_1
+			data = slot1
 		}))
-		var_1_0:Pause()
+		uv1:Pause()
 	end)
 
-	if arg_1_0.contextData.continuousBattleTimes and arg_1_0.contextData.continuousBattleTimes > 0 then
-		if var_1_1 == SYSTEM_BOSS_SINGLE then
+	if slot0.contextData.continuousBattleTimes and slot0.contextData.continuousBattleTimes > 0 then
+		if slot0.contextData.system == SYSTEM_BOSS_SINGLE then
 			if not getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossSingleContinuousOperationMediator) then
-				local var_1_2 = CreateShell(arg_1_0.contextData)
+				slot3 = CreateShell(slot0.contextData)
+				slot3.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
 
-				var_1_2.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
-
-				arg_1_0:addSubLayers(Context.New({
+				slot0:addSubLayers(Context.New({
 					mediator = BossSingleContinuousOperationMediator,
 					viewComponent = BossSingleContinuousOperationPanel,
-					data = var_1_2
+					data = slot3
 				}))
 			end
 		elseif not getProxy(ContextProxy):getCurrentContext():getContextByMediator(ContinuousOperationMediator) then
-			local var_1_3 = CreateShell(arg_1_0.contextData)
+			slot3 = CreateShell(slot0.contextData)
+			slot3.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
 
-			var_1_3.LayerWeightMgr_weight = LayerWeightConst.BASE_LAYER
-
-			arg_1_0:addSubLayers(Context.New({
+			slot0:addSubLayers(Context.New({
 				mediator = ContinuousOperationMediator,
 				viewComponent = ContinuousOperationPanel,
-				data = var_1_3
+				data = slot3
 			}))
 		end
 
-		arg_1_0.contextData.battleData.hideAllButtons = true
+		slot0.contextData.battleData.hideAllButtons = true
 	end
 
-	local var_1_4 = getProxy(PlayerProxy)
+	if getProxy(PlayerProxy) then
+		slot0.player = slot3:getData()
 
-	if var_1_4 then
-		arg_1_0.player = var_1_4:getData()
-
-		var_1_4:setFlag("battle", true)
+		slot3:setFlag("battle", true)
 	end
 end
 
-function var_0_0.onAutoBtn(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_1.isOn
-	local var_12_1 = arg_12_1.toggle
-	local var_12_2 = arg_12_1.system
-
-	arg_12_0:sendNotification(GAME.AUTO_BOT, {
-		isActiveBot = var_12_0,
-		toggle = var_12_1,
-		system = var_12_2
+function slot0.onAutoBtn(slot0, slot1)
+	slot0:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = slot1.isOn,
+		toggle = slot1.toggle,
+		system = slot1.system
 	})
 end
 
-function var_0_0.onPauseBtn(arg_13_0)
-	local var_13_0 = ys.Battle.BattleState.GetInstance()
+function slot0.onPauseBtn(slot0)
+	slot1 = ys.Battle.BattleState.GetInstance()
 
-	if arg_13_0.contextData.system == SYSTEM_PROLOGUE or arg_13_0.contextData.system == SYSTEM_PERFORM then
-		local var_13_1 = {}
+	if slot0.contextData.system == SYSTEM_PROLOGUE or slot0.contextData.system == SYSTEM_PERFORM then
+		slot2 = {}
 
 		if EPILOGUE_SKIPPABLE then
-			local var_13_2 = {
+			table.insert(slot2, 1, {
 				text = "关爱胡德",
 				btnType = pg.MsgboxMgr.BUTTON_RED,
-				onCallback = function()
-					var_13_0:Deactive()
-					arg_13_0:sendNotification(GAME.CHANGE_SCENE, SCENE.CREATE_PLAYER)
+				onCallback = function ()
+					uv0:Deactive()
+					uv1:sendNotification(GAME.CHANGE_SCENE, SCENE.CREATE_PLAYER)
 				end
-			}
-
-			table.insert(var_13_1, 1, var_13_2)
+			})
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_battle_rule"),
-			onClose = function()
+			onClose = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
-			onNo = function()
+			onNo = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
-			custom = var_13_1
+			custom = slot2
 		})
-		var_13_0:Pause()
-	elseif arg_13_0.contextData.system == SYSTEM_DODGEM then
-		local var_13_3 = {
-			text = "text_cancel_fight",
-			btnType = pg.MsgboxMgr.BUTTON_RED,
-			onCallback = function()
-				arg_13_0:warnFunc(function()
-					ys.Battle.BattleState.GetInstance():Resume()
-				end)
-			end
-		}
-
+		slot1:Pause()
+	elseif slot0.contextData.system == SYSTEM_DODGEM then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_battle_warspite"),
-			onClose = function()
+			onClose = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
-			onNo = function()
+			onNo = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
 			custom = {
-				var_13_3
+				{
+					text = "text_cancel_fight",
+					btnType = pg.MsgboxMgr.BUTTON_RED,
+					onCallback = function ()
+						uv0:warnFunc(function ()
+							ys.Battle.BattleState.GetInstance():Resume()
+						end)
+					end
+				}
 			}
 		})
-		var_13_0:Pause()
-	elseif arg_13_0.contextData.system == SYSTEM_SIMULATION then
-		local var_13_4 = {
-			text = "text_cancel_fight",
-			btnType = pg.MsgboxMgr.BUTTON_RED,
-			onCallback = function()
-				arg_13_0:warnFunc(function()
-					ys.Battle.BattleState.GetInstance():Resume()
-				end)
-			end
-		}
-
+		slot1:Pause()
+	elseif slot0.contextData.system == SYSTEM_SIMULATION then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_battle_rule"),
-			onClose = function()
+			onClose = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
-			onNo = function()
+			onNo = function ()
 				ys.Battle.BattleState.GetInstance():Resume()
 			end,
 			custom = {
-				var_13_4
+				{
+					text = "text_cancel_fight",
+					btnType = pg.MsgboxMgr.BUTTON_RED,
+					onCallback = function ()
+						uv0:warnFunc(function ()
+							ys.Battle.BattleState.GetInstance():Resume()
+						end)
+					end
+				}
 			}
 		})
-		var_13_0:Pause()
-	elseif arg_13_0.contextData.system == SYSTEM_SUBMARINE_RUN or arg_13_0.contextData.system == SYSTEM_SUB_ROUTINE or arg_13_0.contextData.system == SYSTEM_REWARD_PERFORM or arg_13_0.contextData.system == SYSTEM_AIRFIGHT then
-		var_13_0:Pause()
-		arg_13_0:warnFunc(function()
+		slot1:Pause()
+	elseif slot0.contextData.system == SYSTEM_SUBMARINE_RUN or slot0.contextData.system == SYSTEM_SUB_ROUTINE or slot0.contextData.system == SYSTEM_REWARD_PERFORM or slot0.contextData.system == SYSTEM_AIRFIGHT then
+		slot1:Pause()
+		slot0:warnFunc(function ()
 			ys.Battle.BattleState.GetInstance():Resume()
 		end)
-	elseif arg_13_0.contextData.system == SYSTEM_CARDPUZZLE then
-		arg_13_0:addSubLayers(Context.New({
+	elseif slot0.contextData.system == SYSTEM_CARDPUZZLE then
+		slot0:addSubLayers(Context.New({
 			mediator = CardPuzzleCombatPauseMediator,
 			viewComponent = CardPuzzleCombatPauseLayer
 		}))
-		var_13_0:Pause()
+		slot1:Pause()
 	else
-		arg_13_0.viewComponent:updatePauseWindow()
-		var_13_0:Pause()
+		slot0.viewComponent:updatePauseWindow()
+		slot1:Pause()
 	end
 end
 
-function var_0_0.warnFunc(arg_26_0, arg_26_1)
-	local var_26_0 = ys.Battle.BattleState.GetInstance()
-	local var_26_1 = arg_26_0.contextData.system
-	local var_26_2
-	local var_26_3
-
-	local function var_26_4()
-		var_26_0:Stop()
-	end
-
-	local var_26_5 = arg_26_0.contextData.warnMsg
-
-	if var_26_5 and #var_26_5 > 0 then
-		var_26_3 = i18n(var_26_5)
-	elseif var_26_1 == SYSTEM_CHALLENGE then
-		var_26_3 = i18n("battle_battleMediator_clear_warning")
-	elseif var_26_1 == SYSTEM_SIMULATION then
-		var_26_3 = i18n("tech_simulate_quit")
-	else
-		var_26_3 = i18n("battle_battleMediator_quest_exist")
-	end
+function slot0.warnFunc(slot0, slot1)
+	slot2 = ys.Battle.BattleState.GetInstance()
+	slot3 = slot0.contextData.system
+	slot4, slot5 = nil
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		modal = true,
 		hideNo = true,
 		hideYes = true,
-		content = var_26_3,
-		onClose = arg_26_1,
+		content = (not slot0.contextData.warnMsg or #slot6 <= 0 or i18n(slot6)) and (slot3 ~= SYSTEM_CHALLENGE or i18n("battle_battleMediator_clear_warning")) and (slot3 ~= SYSTEM_SIMULATION or i18n("tech_simulate_quit")) and i18n("battle_battleMediator_quest_exist"),
+		onClose = slot1,
 		custom = {
 			{
 				text = "text_cancel",
-				onCallback = arg_26_1,
+				onCallback = slot1,
 				sound = SFX_CANCEL
 			},
 			{
 				text = "text_exit",
 				btnType = pg.MsgboxMgr.BUTTON_RED,
-				onCallback = var_26_4,
+				onCallback = function ()
+					uv0:Stop()
+				end,
 				sound = SFX_CONFIRM
 			}
 		}
 	})
 end
 
-function var_0_0.guideDispatch(arg_28_0)
-	return
+function slot0.guideDispatch(slot0)
 end
 
-local function var_0_1(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	local var_29_0 = {}
+function slot1(slot0, slot1, slot2, slot3)
+	slot4 = {}
 
-	for iter_29_0, iter_29_1 in ipairs(arg_29_1:getActiveEquipments()) do
-		if iter_29_1 then
-			var_29_0[#var_29_0 + 1] = {
-				id = iter_29_1.configId,
-				skin = iter_29_1.skinId,
-				equipmentInfo = iter_29_1
+	for slot8, slot9 in ipairs(slot1:getActiveEquipments()) do
+		if slot9 then
+			slot4[#slot4 + 1] = {
+				id = slot9.configId,
+				skin = slot9.skinId,
+				equipmentInfo = slot9
 			}
 		else
-			var_29_0[#var_29_0 + 1] = {
+			slot4[#slot4 + 1] = {
 				skin = 0,
-				id = iter_29_1,
-				equipmentInfo = iter_29_1
+				id = slot9,
+				equipmentInfo = slot9
 			}
 		end
 	end
 
-	local var_29_1 = {}
+	slot5 = {
+		[slot13.id] = slot13
+	}
 
-	local function var_29_2(arg_30_0)
-		local var_30_0 = {
-			level = arg_30_0.level
-		}
-		local var_30_1 = arg_30_0.id
-		local var_30_2 = arg_29_1:RemapSkillId(var_30_1)
-
-		var_30_0.id = ys.Battle.BattleDataFunction.SkillTranform(arg_29_0, var_30_2)
-
-		return var_30_0
+	for slot11, slot12 in pairs(ys.Battle.BattleDataFunction.GenerateHiddenBuff(slot1.configId)) do
+		slot13 = function (slot0)
+			return {
+				level = slot0.level,
+				id = ys.Battle.BattleDataFunction.SkillTranform(uv1, uv0:RemapSkillId(slot0.id))
+			}
+		end(slot12)
 	end
 
-	local var_29_3 = ys.Battle.BattleDataFunction.GenerateHiddenBuff(arg_29_1.configId)
-
-	for iter_29_2, iter_29_3 in pairs(var_29_3) do
-		local var_29_4 = var_29_2(iter_29_3)
-
-		var_29_1[var_29_4.id] = var_29_4
-	end
-
-	for iter_29_4, iter_29_5 in pairs(arg_29_1.skills) do
-		if iter_29_5 and iter_29_5.id == 14900 and not arg_29_1.transforms[16412] then
-			-- block empty
-		else
-			local var_29_5 = var_29_2(iter_29_5)
-
-			var_29_1[var_29_5.id] = var_29_5
+	for slot11, slot12 in pairs(slot1.skills) do
+		if not slot12 or slot12.id ~= 14900 or slot1.transforms[16412] then
+			slot13 = slot6(slot12)
+			slot5[slot13.id] = slot13
 		end
 	end
 
-	local var_29_6 = ys.Battle.BattleDataFunction.GetEquipSkill(var_29_0)
-
-	for iter_29_6, iter_29_7 in ipairs(var_29_6) do
-		local var_29_7 = {}
-
-		var_29_7.level = 1
-		var_29_7.id = ys.Battle.BattleDataFunction.SkillTranform(arg_29_0, iter_29_7)
-		var_29_1[var_29_7.id] = var_29_7
+	for slot12, slot13 in ipairs(ys.Battle.BattleDataFunction.GetEquipSkill(slot4)) do
+		slot14 = {
+			level = 1,
+			id = ys.Battle.BattleDataFunction.SkillTranform(slot0, slot13)
+		}
+		slot5[slot14.id] = slot14
 	end
 
-	local var_29_8
+	slot9 = nil
 
-	;(function()
-		var_29_8 = arg_29_1:GetSpWeapon()
+	function ()
+		uv0 = uv1:GetSpWeapon()
 
-		if not var_29_8 then
+		if not uv0 then
 			return
 		end
 
-		local var_31_0 = var_29_8:GetEffect()
-
-		if var_31_0 == 0 then
+		if uv0:GetEffect() == 0 then
 			return
 		end
 
-		local var_31_1 = {}
-
-		var_31_1.level = 1
-		var_31_1.id = ys.Battle.BattleDataFunction.SkillTranform(arg_29_0, var_31_0)
-		var_29_1[var_31_1.id] = var_31_1
-	end)()
-
-	for iter_29_8, iter_29_9 in pairs(arg_29_1:getTriggerSkills()) do
-		local var_29_9 = {
-			level = iter_29_9.level,
-			id = ys.Battle.BattleDataFunction.SkillTranform(arg_29_0, iter_29_9.id)
+		slot1 = {
+			level = 1,
+			id = ys.Battle.BattleDataFunction.SkillTranform(uv2, slot0)
 		}
+		uv3[slot1.id] = slot1
+	end()
 
-		var_29_1[var_29_9.id] = var_29_9
+	for slot14, slot15 in pairs(slot1:getTriggerSkills()) do
+		slot16 = {
+			level = slot15.level,
+			id = ys.Battle.BattleDataFunction.SkillTranform(slot0, slot15.id)
+		}
+		slot5[slot16.id] = slot16
 	end
 
-	local var_29_10 = arg_29_0 == SYSTEM_WORLD
-	local var_29_11 = false
+	slot12 = false
 
-	if var_29_10 then
-		local var_29_12 = WorldConst.FetchWorldShip(arg_29_1.id)
-
-		if var_29_12 then
-			var_29_11 = var_29_12:IsBroken()
-		end
+	if slot0 == SYSTEM_WORLD and WorldConst.FetchWorldShip(slot1.id) then
+		slot12 = slot13:IsBroken()
 	end
 
-	if var_29_11 then
-		for iter_29_10, iter_29_11 in pairs(var_29_1) do
-			local var_29_13 = pg.skill_data_template[iter_29_10].world_death_mark[1]
-
-			if var_29_13 == ys.Battle.BattleConst.DEATH_MARK_SKILL.DEACTIVE then
-				var_29_1[iter_29_10] = nil
-			elseif var_29_13 == ys.Battle.BattleConst.DEATH_MARK_SKILL.IGNORE then
-				-- block empty
+	if slot12 then
+		for slot16, slot17 in pairs(slot5) do
+			if pg.skill_data_template[slot16].world_death_mark[1] == ys.Battle.BattleConst.DEATH_MARK_SKILL.DEACTIVE then
+				slot5[slot16] = nil
+			elseif slot19 == ys.Battle.BattleConst.DEATH_MARK_SKILL.IGNORE then
+				-- Nothing
 			end
 		end
 	end
 
 	return {
-		id = arg_29_1.id,
-		tmpID = arg_29_1.configId,
-		skinId = arg_29_1.skinId,
-		level = arg_29_1.level,
-		equipment = var_29_0,
-		properties = arg_29_1:getProperties(arg_29_2, arg_29_3, var_29_10),
-		baseProperties = arg_29_1:getShipProperties(),
-		proficiency = arg_29_1:getEquipProficiencyList(),
-		rarity = arg_29_1:getRarity(),
-		intimacy = arg_29_1:getCVIntimacy(),
-		shipGS = arg_29_1:getShipCombatPower(),
-		skills = var_29_1,
-		baseList = arg_29_1:getBaseList(),
-		preloasList = arg_29_1:getPreLoadCount(),
-		name = arg_29_1:getName(),
-		deathMark = var_29_11,
-		spWeapon = var_29_8
+		id = slot1.id,
+		tmpID = slot1.configId,
+		skinId = slot1.skinId,
+		level = slot1.level,
+		equipment = slot4,
+		properties = slot1:getProperties(slot2, slot3, slot11),
+		baseProperties = slot1:getShipProperties(),
+		proficiency = slot1:getEquipProficiencyList(),
+		rarity = slot1:getRarity(),
+		intimacy = slot1:getCVIntimacy(),
+		shipGS = slot1:getShipCombatPower(),
+		skills = slot5,
+		baseList = slot1:getBaseList(),
+		preloasList = slot1:getPreLoadCount(),
+		name = slot1:getName(),
+		deathMark = slot12,
+		spWeapon = slot9
 	}
 end
 
-local function var_0_2(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_0:getProperties(arg_32_1)
-	local var_32_1 = arg_32_0:getConfig("id")
+function slot2(slot0, slot1)
+	slot2 = slot0:getProperties(slot1)
+	slot3 = slot0:getConfig("id")
 
 	return {
 		deathMark = false,
 		shipGS = 100,
 		rarity = 1,
 		intimacy = 100,
-		id = var_32_1,
-		tmpID = var_32_1,
-		skinId = arg_32_0:getConfig("skin_id"),
-		level = arg_32_0:getConfig("level"),
-		equipment = arg_32_0:getConfig("default_equip"),
-		properties = var_32_0,
-		baseProperties = var_32_0,
+		id = slot3,
+		tmpID = slot3,
+		skinId = slot0:getConfig("skin_id"),
+		level = slot0:getConfig("level"),
+		equipment = slot0:getConfig("default_equip"),
+		properties = slot2,
+		baseProperties = slot2,
 		proficiency = {
 			1,
 			1,
@@ -549,1102 +470,890 @@ local function var_0_2(arg_32_0, arg_32_1)
 			0,
 			0
 		},
-		name = var_32_1,
-		fleetIndex = arg_32_0:getConfig("location")
+		name = slot3,
+		fleetIndex = slot0:getConfig("location")
 	}
 end
 
-function var_0_0.GenBattleData(arg_33_0)
-	local var_33_0 = {}
-	local var_33_1 = arg_33_0.contextData.system
+function slot0.GenBattleData(slot0)
+	slot1 = {}
+	slot0._battleData = slot1
+	slot1.battleType = slot0.contextData.system
+	slot1.StageTmpId = slot0.contextData.stageId
+	slot1.CMDArgs = slot0.contextData.cmdArgs
+	slot1.MainUnitList = {}
+	slot1.VanguardUnitList = {}
+	slot1.SubUnitList = {}
+	slot1.AidUnitList = {}
+	slot1.SupportUnitList = {}
+	slot1.SubFlag = -1
+	slot1.ActID = slot0.contextData.actId
+	slot1.bossLevel = slot0.contextData.bossLevel
+	slot1.bossConfigId = slot0.contextData.bossConfigId
 
-	arg_33_0._battleData = var_33_0
-	var_33_0.battleType = arg_33_0.contextData.system
-	var_33_0.StageTmpId = arg_33_0.contextData.stageId
-	var_33_0.CMDArgs = arg_33_0.contextData.cmdArgs
-	var_33_0.MainUnitList = {}
-	var_33_0.VanguardUnitList = {}
-	var_33_0.SubUnitList = {}
-	var_33_0.AidUnitList = {}
-	var_33_0.SupportUnitList = {}
-	var_33_0.SubFlag = -1
-	var_33_0.ActID = arg_33_0.contextData.actId
-	var_33_0.bossLevel = arg_33_0.contextData.bossLevel
-	var_33_0.bossConfigId = arg_33_0.contextData.bossConfigId
-
-	if pg.battle_cost_template[var_33_1].global_buff_effected > 0 then
-		local var_33_2 = BuffHelper.GetBattleBuffs(var_33_1)
-
-		var_33_0.GlobalBuffIDs = _.map(var_33_2, function(arg_34_0)
-			return arg_34_0:getConfig("benefit_effect")
+	if pg.battle_cost_template[slot0.contextData.system].global_buff_effected > 0 then
+		slot1.GlobalBuffIDs = _.map(BuffHelper.GetBattleBuffs(slot2), function (slot0)
+			return slot0:getConfig("benefit_effect")
 		end) or {}
 	end
 
-	local var_33_3 = pg.battle_cost_template[var_33_1]
-	local var_33_4 = getProxy(BayProxy)
-	local var_33_5 = {}
+	slot3 = pg.battle_cost_template[slot2]
+	slot4 = getProxy(BayProxy)
+	slot5 = {}
 
-	if var_33_1 == SYSTEM_SCENARIO then
-		local var_33_6 = getProxy(ChapterProxy)
-		local var_33_7 = var_33_6:getActiveChapter()
+	if slot2 == SYSTEM_SCENARIO then
+		slot6 = getProxy(ChapterProxy)
+		slot7 = slot6:getActiveChapter()
+		slot1.RepressInfo = slot7:getRepressInfo()
 
-		var_33_0.RepressInfo = var_33_7:getRepressInfo()
+		slot0.viewComponent:setChapter(slot7)
 
-		arg_33_0.viewComponent:setChapter(var_33_7)
+		slot8 = slot7.fleet
+		slot1.KizunaJamming = slot7.extraFlagList
+		slot1.DefeatCount = slot8:getDefeatCount()
+		slot1.ChapterBuffIDs, slot1.CommanderList = slot7:getFleetBattleBuffs(slot8)
+		slot1.StageWaveFlags = slot7:GetStageFlags()
+		slot1.ChapterWeatherIDS = slot7:GetWeather(slot8.line.row, slot8.line.column)
+		slot1.MapAuraSkills = slot6.GetChapterAuraBuffs(slot7)
+		slot1.MapAidSkills = {}
 
-		local var_33_8 = var_33_7.fleet
+		for slot13, slot14 in pairs(slot6.GetChapterAidBuffs(slot7)) do
+			table.insert(slot1.AidUnitList, uv0(slot2, slot13, _.values(slot7:getFleetByShipVO(slot13):getCommanders())))
 
-		var_33_0.KizunaJamming = var_33_7.extraFlagList
-		var_33_0.DefeatCount = var_33_8:getDefeatCount()
-		var_33_0.ChapterBuffIDs, var_33_0.CommanderList = var_33_7:getFleetBattleBuffs(var_33_8)
-		var_33_0.StageWaveFlags = var_33_7:GetStageFlags()
-		var_33_0.ChapterWeatherIDS = var_33_7:GetWeather(var_33_8.line.row, var_33_8.line.column)
-		var_33_0.MapAuraSkills = var_33_6.GetChapterAuraBuffs(var_33_7)
-		var_33_0.MapAidSkills = {}
-
-		local var_33_9 = var_33_6.GetChapterAidBuffs(var_33_7)
-
-		for iter_33_0, iter_33_1 in pairs(var_33_9) do
-			local var_33_10 = var_33_7:getFleetByShipVO(iter_33_0)
-			local var_33_11 = _.values(var_33_10:getCommanders())
-			local var_33_12 = var_0_1(var_33_1, iter_33_0, var_33_11)
-
-			table.insert(var_33_0.AidUnitList, var_33_12)
-
-			for iter_33_2, iter_33_3 in ipairs(iter_33_1) do
-				table.insert(var_33_0.MapAidSkills, iter_33_3)
+			for slot21, slot22 in ipairs(slot14) do
+				table.insert(slot1.MapAidSkills, slot22)
 			end
 		end
 
-		local var_33_13 = var_33_8:getShipsByTeam(TeamType.Main, false)
-		local var_33_14 = var_33_8:getShipsByTeam(TeamType.Vanguard, false)
-		local var_33_15 = {}
-		local var_33_16 = _.values(var_33_8:getCommanders())
-		local var_33_17 = {}
-		local var_33_18, var_33_19 = var_33_6.getSubAidFlag(var_33_7, arg_33_0.contextData.stageId)
+		slot10 = slot8:getShipsByTeam(TeamType.Main, false)
+		slot11 = slot8:getShipsByTeam(TeamType.Vanguard, false)
+		slot12 = {}
+		slot13 = _.values(slot8:getCommanders())
+		slot14 = {}
+		slot15, slot16 = slot6.getSubAidFlag(slot7, slot0.contextData.stageId)
 
-		if var_33_18 == true or var_33_18 > 0 then
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
-			var_33_15 = var_33_19:getShipsByTeam(TeamType.Submarine, false)
-			var_33_17 = _.values(var_33_19:getCommanders())
-
-			local var_33_20, var_33_21 = var_33_7:getFleetBattleBuffs(var_33_19)
-
-			var_33_0.SubCommanderList = var_33_21
+		if slot15 == true or slot15 > 0 then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+			slot12 = slot16:getShipsByTeam(TeamType.Submarine, false)
+			slot14 = _.values(slot16:getCommanders())
+			slot17, slot1.SubCommanderList = slot7:getFleetBattleBuffs(slot16)
 		else
-			var_33_0.SubFlag = var_33_18
+			slot1.SubFlag = slot15
 
-			if var_33_18 ~= ys.Battle.BattleConst.SubAidFlag.AID_EMPTY then
-				var_33_0.TotalSubAmmo = 0
+			if slot15 ~= ys.Battle.BattleConst.SubAidFlag.AID_EMPTY then
+				slot1.TotalSubAmmo = 0
 			end
 		end
 
-		arg_33_0.mainShips = {}
+		slot0.mainShips = {}
 
-		local function var_33_22(arg_35_0, arg_35_1, arg_35_2)
-			local var_35_0 = arg_35_0.id
-			local var_35_1 = arg_35_0.hpRant * 0.0001
+		for slot21, slot22 in ipairs(slot10) do
+			function (slot0, slot1, slot2)
+				slot4 = slot0.hpRant * 0.0001
 
-			if table.contains(var_33_5, var_35_0) then
-				BattleVertify.cloneShipVertiry = true
-			end
+				if table.contains(uv0, slot0.id) then
+					BattleVertify.cloneShipVertiry = true
+				end
 
-			var_33_5[#var_33_5 + 1] = var_35_0
+				uv0[#uv0 + 1] = slot3
+				slot5 = uv1(uv2, slot0, slot1)
+				slot5.initHPRate = slot4
 
-			local var_35_2 = var_0_1(var_33_1, arg_35_0, arg_35_1)
-
-			var_35_2.initHPRate = var_35_1
-
-			table.insert(arg_33_0.mainShips, arg_35_0)
-			table.insert(arg_35_2, var_35_2)
+				table.insert(uv3.mainShips, slot0)
+				table.insert(slot2, slot5)
+			end(slot22, slot13, slot1.MainUnitList)
 		end
 
-		for iter_33_4, iter_33_5 in ipairs(var_33_13) do
-			var_33_22(iter_33_5, var_33_16, var_33_0.MainUnitList)
+		for slot21, slot22 in ipairs(slot11) do
+			slot17(slot22, slot13, slot1.VanguardUnitList)
 		end
 
-		for iter_33_6, iter_33_7 in ipairs(var_33_14) do
-			var_33_22(iter_33_7, var_33_16, var_33_0.VanguardUnitList)
+		for slot21, slot22 in ipairs(slot12) do
+			slot17(slot22, slot14, slot1.SubUnitList)
 		end
 
-		for iter_33_8, iter_33_9 in ipairs(var_33_15) do
-			var_33_22(iter_33_9, var_33_17, var_33_0.SubUnitList)
-		end
-
-		local var_33_23 = var_33_7:getChapterSupportFleet()
-
-		if var_33_23 then
-			local var_33_24 = var_33_23:getShips()
-
-			for iter_33_10, iter_33_11 in pairs(var_33_24) do
-				var_33_22(iter_33_11, {}, var_33_0.SupportUnitList)
+		if slot7:getChapterSupportFleet() then
+			for slot23, slot24 in pairs(slot18:getShips()) do
+				slot17(slot24, {}, slot1.SupportUnitList)
 			end
 		end
 
-		arg_33_0.viewComponent:setFleet(var_33_13, var_33_14, var_33_15)
-	elseif var_33_1 == SYSTEM_CHALLENGE then
-		local var_33_25 = arg_33_0.contextData.mode
-		local var_33_26 = getProxy(ChallengeProxy):getUserChallengeInfo(var_33_25)
+		slot0.viewComponent:setFleet(slot10, slot11, slot12)
+	elseif slot2 == SYSTEM_CHALLENGE then
+		slot8 = getProxy(ChallengeProxy):getUserChallengeInfo(slot0.contextData.mode)
+		slot1.ChallengeInfo = slot8
 
-		var_33_0.ChallengeInfo = var_33_26
+		slot0.viewComponent:setChapter(slot8)
 
-		arg_33_0.viewComponent:setChapter(var_33_26)
+		slot9 = slot8:getRegularFleet()
+		slot1.CommanderList = slot9:buildBattleBuffList()
+		slot10 = _.values(slot9:getCommanders())
+		slot11 = {}
+		slot12 = slot9:getShipsByTeam(TeamType.Main, false)
+		slot13 = slot9:getShipsByTeam(TeamType.Vanguard, false)
+		slot14 = {}
 
-		local var_33_27 = var_33_26:getRegularFleet()
-
-		var_33_0.CommanderList = var_33_27:buildBattleBuffList()
-
-		local var_33_28 = _.values(var_33_27:getCommanders())
-		local var_33_29 = {}
-		local var_33_30 = var_33_27:getShipsByTeam(TeamType.Main, false)
-		local var_33_31 = var_33_27:getShipsByTeam(TeamType.Vanguard, false)
-		local var_33_32 = {}
-		local var_33_33 = var_33_26:getSubmarineFleet()
-		local var_33_34 = var_33_33:getShipsByTeam(TeamType.Submarine, false)
-
-		if #var_33_34 > 0 then
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
-			var_33_29 = _.values(var_33_33:getCommanders())
-			var_33_0.SubCommanderList = var_33_33:buildBattleBuffList()
+		if #slot8:getSubmarineFleet():getShipsByTeam(TeamType.Submarine, false) > 0 then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+			slot11 = _.values(slot15:getCommanders())
+			slot1.SubCommanderList = slot15:buildBattleBuffList()
 		else
-			var_33_0.SubFlag = 0
-			var_33_0.TotalSubAmmo = 0
+			slot1.SubFlag = 0
+			slot1.TotalSubAmmo = 0
 		end
 
-		arg_33_0.mainShips = {}
+		slot0.mainShips = {}
 
-		local function var_33_35(arg_36_0, arg_36_1, arg_36_2)
-			local var_36_0 = arg_36_0.id
-			local var_36_1 = arg_36_0.hpRant * 0.0001
+		for slot20, slot21 in ipairs(slot12) do
+			function (slot0, slot1, slot2)
+				slot4 = slot0.hpRant * 0.0001
 
-			if table.contains(var_33_5, var_36_0) then
-				BattleVertify.cloneShipVertiry = true
-			end
+				if table.contains(uv0, slot0.id) then
+					BattleVertify.cloneShipVertiry = true
+				end
 
-			var_33_5[#var_33_5 + 1] = var_36_0
+				uv0[#uv0 + 1] = slot3
+				slot5 = uv1(uv2, slot0, slot1)
+				slot5.initHPRate = slot4
 
-			local var_36_2 = var_0_1(var_33_1, arg_36_0, arg_36_1)
-
-			var_36_2.initHPRate = var_36_1
-
-			table.insert(arg_33_0.mainShips, arg_36_0)
-			table.insert(arg_36_2, var_36_2)
+				table.insert(uv3.mainShips, slot0)
+				table.insert(slot2, slot5)
+			end(slot21, slot10, slot1.MainUnitList)
 		end
 
-		for iter_33_12, iter_33_13 in ipairs(var_33_30) do
-			var_33_35(iter_33_13, var_33_28, var_33_0.MainUnitList)
+		for slot20, slot21 in ipairs(slot13) do
+			slot16(slot21, slot10, slot1.VanguardUnitList)
 		end
 
-		for iter_33_14, iter_33_15 in ipairs(var_33_31) do
-			var_33_35(iter_33_15, var_33_28, var_33_0.VanguardUnitList)
+		for slot20, slot21 in ipairs(slot14) do
+			slot16(slot21, slot11, slot1.SubUnitList)
 		end
 
-		for iter_33_16, iter_33_17 in ipairs(var_33_34) do
-			var_33_35(iter_33_17, var_33_29, var_33_0.SubUnitList)
-		end
+		slot0.viewComponent:setFleet(slot12, slot13, slot14)
+	elseif slot2 == SYSTEM_WORLD then
+		slot7 = nowWorld():GetActiveMap()
+		slot8 = slot7:GetFleet()
 
-		arg_33_0.viewComponent:setFleet(var_33_30, var_33_31, var_33_34)
-	elseif var_33_1 == SYSTEM_WORLD then
-		local var_33_36 = nowWorld()
-		local var_33_37 = var_33_36:GetActiveMap()
-		local var_33_38 = var_33_37:GetFleet()
-		local var_33_39 = var_33_37:GetCell(var_33_38.row, var_33_38.column):GetStageEnemy()
-		local var_33_40 = var_33_39:GetHP()
-
-		if var_33_40 then
-			var_33_0.RepressInfo = {
-				repressEnemyHpRant = var_33_40 / var_33_39:GetMaxHP()
+		if slot7:GetCell(slot8.row, slot8.column):GetStageEnemy():GetHP() then
+			slot1.RepressInfo = {
+				repressEnemyHpRant = slot11 / slot10:GetMaxHP()
 			}
 		end
 
-		var_33_0.AffixBuffList = table.mergeArray(var_33_39:GetBattleLuaBuffs(), var_33_37:GetBattleLuaBuffs(WorldMap.FactionEnemy, var_33_39))
+		slot17 = slot10
+		slot1.AffixBuffList = table.mergeArray(slot10:GetBattleLuaBuffs(), slot7:GetBattleLuaBuffs(WorldMap.FactionEnemy, slot17))
+		slot1.DefeatCount = slot8:getDefeatCount()
+		slot1.ChapterBuffIDs, slot1.CommanderList = slot7:getFleetBattleBuffs(slot8, true)
+		slot1.MapAuraSkills = slot7:GetChapterAuraBuffs()
+		slot1.MapAuraSkills = function (slot0)
+			slot1 = {}
 
-		local function var_33_41(arg_37_0)
-			local var_37_0 = {}
-
-			for iter_37_0, iter_37_1 in ipairs(arg_37_0) do
-				local var_37_1 = {
-					id = ys.Battle.BattleDataFunction.SkillTranform(var_33_1, iter_37_1.id),
-					level = iter_37_1.level
-				}
-
-				table.insert(var_37_0, var_37_1)
+			for slot5, slot6 in ipairs(slot0) do
+				table.insert(slot1, {
+					id = ys.Battle.BattleDataFunction.SkillTranform(uv0, slot6.id),
+					level = slot6.level
+				})
 			end
 
-			return var_37_0
+			return slot1
+		end(slot1.MapAuraSkills)
+		slot1.MapAidSkills = {}
+
+		for slot17, slot18 in pairs(slot7:GetChapterAidBuffs()) do
+			table.insert(slot1.AidUnitList, uv0(slot2, WorldConst.FetchShipVO(slot17.id), _.values(slot7:GetFleet(slot17.fleetId):getCommanders(true))))
+
+			slot1.MapAidSkills = table.mergeArray(slot1.MapAidSkills, slot12(slot18))
 		end
 
-		var_33_0.DefeatCount = var_33_38:getDefeatCount()
-		var_33_0.ChapterBuffIDs, var_33_0.CommanderList = var_33_37:getFleetBattleBuffs(var_33_38, true)
-		var_33_0.MapAuraSkills = var_33_37:GetChapterAuraBuffs()
-		var_33_0.MapAuraSkills = var_33_41(var_33_0.MapAuraSkills)
-		var_33_0.MapAidSkills = {}
+		slot14 = slot8:GetTeamShipVOs(TeamType.Main, false)
+		slot15 = slot8:GetTeamShipVOs(TeamType.Vanguard, false)
+		slot16 = {}
+		slot17 = _.values(slot8:getCommanders(true))
+		slot18 = {}
 
-		local var_33_42 = var_33_37:GetChapterAidBuffs()
-
-		for iter_33_18, iter_33_19 in pairs(var_33_42) do
-			local var_33_43 = var_33_37:GetFleet(iter_33_18.fleetId)
-			local var_33_44 = _.values(var_33_43:getCommanders(true))
-			local var_33_45 = var_0_1(var_33_1, WorldConst.FetchShipVO(iter_33_18.id), var_33_44)
-
-			table.insert(var_33_0.AidUnitList, var_33_45)
-
-			var_33_0.MapAidSkills = table.mergeArray(var_33_0.MapAidSkills, var_33_41(iter_33_19))
-		end
-
-		local var_33_46 = var_33_38:GetTeamShipVOs(TeamType.Main, false)
-		local var_33_47 = var_33_38:GetTeamShipVOs(TeamType.Vanguard, false)
-		local var_33_48 = {}
-		local var_33_49 = _.values(var_33_38:getCommanders(true))
-		local var_33_50 = {}
-		local var_33_51 = var_33_36:GetSubAidFlag()
-
-		if var_33_51 == true then
-			local var_33_52 = var_33_37:GetSubmarineFleet()
-
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
-			var_33_48 = var_33_52:GetTeamShipVOs(TeamType.Submarine, false)
-			var_33_50 = _.values(var_33_52:getCommanders(true))
-
-			local var_33_53, var_33_54 = var_33_37:getFleetBattleBuffs(var_33_52, true)
-
-			var_33_0.SubCommanderList = var_33_54
+		if slot6:GetSubAidFlag() == true then
+			slot20 = slot7:GetSubmarineFleet()
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+			slot16 = slot20:GetTeamShipVOs(TeamType.Submarine, false)
+			slot18 = _.values(slot20:getCommanders(true))
+			slot21, slot1.SubCommanderList = slot7:getFleetBattleBuffs(slot20, true)
 		else
-			var_33_0.SubFlag = 0
+			slot1.SubFlag = 0
 
-			if var_33_51 ~= ys.Battle.BattleConst.SubAidFlag.AID_EMPTY then
-				var_33_0.TotalSubAmmo = 0
+			if slot19 ~= ys.Battle.BattleConst.SubAidFlag.AID_EMPTY then
+				slot1.TotalSubAmmo = 0
 			end
 		end
 
-		arg_33_0.mainShips = {}
+		slot0.mainShips = {}
 
-		for iter_33_20, iter_33_21 in ipairs(var_33_46) do
-			local var_33_55 = iter_33_21.id
-			local var_33_56 = WorldConst.FetchWorldShip(iter_33_21.id).hpRant * 0.0001
+		for slot23, slot24 in ipairs(slot14) do
+			slot26 = WorldConst.FetchWorldShip(slot24.id).hpRant * 0.0001
 
-			if table.contains(var_33_5, var_33_55) then
+			if table.contains(slot5, slot24.id) then
 				BattleVertify.cloneShipVertiry = true
 			end
 
-			var_33_5[#var_33_5 + 1] = var_33_55
+			slot5[#slot5 + 1] = slot25
+			slot27 = uv0(slot2, slot24, slot17)
+			slot27.initHPRate = slot26
 
-			local var_33_57 = var_0_1(var_33_1, iter_33_21, var_33_49)
-
-			var_33_57.initHPRate = var_33_56
-
-			table.insert(arg_33_0.mainShips, iter_33_21)
-			table.insert(var_33_0.MainUnitList, var_33_57)
+			table.insert(slot0.mainShips, slot24)
+			table.insert(slot1.MainUnitList, slot27)
 		end
 
-		for iter_33_22, iter_33_23 in ipairs(var_33_47) do
-			local var_33_58 = iter_33_23.id
-			local var_33_59 = WorldConst.FetchWorldShip(iter_33_23.id).hpRant * 0.0001
+		for slot23, slot24 in ipairs(slot15) do
+			slot26 = WorldConst.FetchWorldShip(slot24.id).hpRant * 0.0001
 
-			if table.contains(var_33_5, var_33_58) then
+			if table.contains(slot5, slot24.id) then
 				BattleVertify.cloneShipVertiry = true
 			end
 
-			var_33_5[#var_33_5 + 1] = var_33_58
+			slot5[#slot5 + 1] = slot25
+			slot27 = uv0(slot2, slot24, slot17)
+			slot27.initHPRate = slot26
 
-			local var_33_60 = var_0_1(var_33_1, iter_33_23, var_33_49)
-
-			var_33_60.initHPRate = var_33_59
-
-			table.insert(arg_33_0.mainShips, iter_33_23)
-			table.insert(var_33_0.VanguardUnitList, var_33_60)
+			table.insert(slot0.mainShips, slot24)
+			table.insert(slot1.VanguardUnitList, slot27)
 		end
 
-		for iter_33_24, iter_33_25 in ipairs(var_33_48) do
-			local var_33_61 = iter_33_25.id
-			local var_33_62 = WorldConst.FetchWorldShip(iter_33_25.id).hpRant * 0.0001
+		for slot23, slot24 in ipairs(slot16) do
+			slot26 = WorldConst.FetchWorldShip(slot24.id).hpRant * 0.0001
 
-			if table.contains(var_33_5, var_33_61) then
+			if table.contains(slot5, slot24.id) then
 				BattleVertify.cloneShipVertiry = true
 			end
 
-			var_33_5[#var_33_5 + 1] = var_33_61
+			slot5[#slot5 + 1] = slot25
+			slot27 = uv0(slot2, slot24, slot18)
+			slot27.initHPRate = slot26
 
-			local var_33_63 = var_0_1(var_33_1, iter_33_25, var_33_50)
-
-			var_33_63.initHPRate = var_33_62
-
-			table.insert(arg_33_0.mainShips, iter_33_25)
-			table.insert(var_33_0.SubUnitList, var_33_63)
+			table.insert(slot0.mainShips, slot24)
+			table.insert(slot1.SubUnitList, slot27)
 		end
 
-		arg_33_0.viewComponent:setFleet(var_33_46, var_33_47, var_33_48)
+		slot0.viewComponent:setFleet(slot14, slot15, slot16)
 
-		local var_33_64 = pg.expedition_data_template[arg_33_0.contextData.stageId]
-
-		if var_33_64.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
-			var_33_0.WorldMapId = var_33_37.config.expedition_map_id
-			var_33_0.WorldLevel = WorldConst.WorldLevelCorrect(var_33_37.config.expedition_level, var_33_64.type)
+		if pg.expedition_data_template[slot0.contextData.stageId].difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+			slot1.WorldMapId = slot7.config.expedition_map_id
+			slot1.WorldLevel = WorldConst.WorldLevelCorrect(slot7.config.expedition_level, slot20.type)
 		end
-	elseif var_33_1 == SYSTEM_WORLD_BOSS then
-		local var_33_65 = nowWorld():GetBossProxy()
-		local var_33_66 = arg_33_0.contextData.bossId
-		local var_33_67 = var_33_65:GetFleet(var_33_66)
-		local var_33_68 = var_33_65:GetBossById(var_33_66)
+	elseif slot2 == SYSTEM_WORLD_BOSS then
+		slot7 = nowWorld():GetBossProxy()
+		slot8 = slot0.contextData.bossId
+		slot9 = slot7:GetFleet(slot8)
+		slot10 = slot7:GetBossById(slot8)
 
-		assert(var_33_68, var_33_66)
+		assert(slot10, slot8)
 
-		local var_33_69 = var_33_68:GetHP()
-
-		if var_33_69 then
-			if var_33_68:IsSelf() then
-				var_33_0.RepressInfo = {
-					repressEnemyHpRant = var_33_69 / var_33_68:GetMaxHp()
+		if slot10:GetHP() then
+			if slot10:IsSelf() then
+				slot1.RepressInfo = {
+					repressEnemyHpRant = slot11 / slot10:GetMaxHp()
 				}
 			else
-				var_33_0.RepressInfo = {
+				slot1.RepressInfo = {
 					repressEnemyHpRant = 1
 				}
 			end
 		end
 
-		local var_33_70 = _.values(var_33_67:getCommanders())
+		slot12 = _.values(slot9:getCommanders())
+		slot1.CommanderList = slot9:buildBattleBuffList()
+		slot0.mainShips = slot4:getShipsByFleet(slot9)
+		slot13 = {}
+		slot14 = {}
+		slot15 = {}
 
-		var_33_0.CommanderList = var_33_67:buildBattleBuffList()
-		arg_33_0.mainShips = var_33_4:getShipsByFleet(var_33_67)
-
-		local var_33_71 = {}
-		local var_33_72 = {}
-		local var_33_73 = {}
-		local var_33_74 = var_33_67:getTeamByName(TeamType.Main)
-
-		for iter_33_26, iter_33_27 in ipairs(var_33_74) do
-			if table.contains(var_33_5, iter_33_27) then
+		for slot20, slot21 in ipairs(slot9:getTeamByName(TeamType.Main)) do
+			if table.contains(slot5, slot21) then
 				BattleVertify.cloneShipVertiry = true
 			end
 
-			var_33_5[#var_33_5 + 1] = iter_33_27
+			slot5[#slot5 + 1] = slot21
+			slot22 = slot4:getShipById(slot21)
 
-			local var_33_75 = var_33_4:getShipById(iter_33_27)
-			local var_33_76 = var_0_1(var_33_1, var_33_75, var_33_70)
-
-			table.insert(var_33_71, var_33_75)
-			table.insert(var_33_0.MainUnitList, var_33_76)
+			table.insert(slot13, slot22)
+			table.insert(slot1.MainUnitList, uv0(slot2, slot22, slot12))
 		end
 
-		local var_33_77 = var_33_67:getTeamByName(TeamType.Vanguard)
-
-		for iter_33_28, iter_33_29 in ipairs(var_33_77) do
-			if table.contains(var_33_5, iter_33_29) then
+		for slot21, slot22 in ipairs(slot9:getTeamByName(TeamType.Vanguard)) do
+			if table.contains(slot5, slot22) then
 				BattleVertify.cloneShipVertiry = true
 			end
 
-			var_33_5[#var_33_5 + 1] = iter_33_29
+			slot5[#slot5 + 1] = slot22
+			slot23 = slot4:getShipById(slot22)
 
-			local var_33_78 = var_33_4:getShipById(iter_33_29)
-			local var_33_79 = var_0_1(var_33_1, var_33_78, var_33_70)
-
-			table.insert(var_33_72, var_33_78)
-			table.insert(var_33_0.VanguardUnitList, var_33_79)
+			table.insert(slot14, slot23)
+			table.insert(slot1.VanguardUnitList, uv0(slot2, slot23, slot12))
 		end
 
-		arg_33_0.viewComponent:setFleet(var_33_71, var_33_72, var_33_73)
+		slot0.viewComponent:setFleet(slot13, slot14, slot15)
 
-		var_33_0.MapAidSkills = {}
+		slot1.MapAidSkills = {}
 
-		if var_33_68:IsSelf() then
-			local var_33_80, var_33_81, var_33_82 = var_33_65.GetSupportValue()
+		if slot10:IsSelf() then
+			slot18, slot19, slot20 = slot7.GetSupportValue()
 
-			if var_33_80 then
-				table.insert(var_33_0.MapAidSkills, {
+			if slot18 then
+				table.insert(slot1.MapAidSkills, {
 					level = 1,
-					id = var_33_82
+					id = slot20
 				})
 			end
 		end
-	elseif var_33_1 == SYSTEM_HP_SHARE_ACT_BOSS or var_33_1 == SYSTEM_ACT_BOSS or var_33_1 == SYSTEM_ACT_BOSS_SP or var_33_1 == SYSTEM_BOSS_EXPERIMENT then
-		if arg_33_0.contextData.mainFleetId then
-			local var_33_83 = getProxy(FleetProxy):getActivityFleets()[arg_33_0.contextData.actId]
-			local var_33_84 = var_33_83[arg_33_0.contextData.mainFleetId]
-			local var_33_85 = _.values(var_33_84:getCommanders())
+	elseif slot2 == SYSTEM_HP_SHARE_ACT_BOSS or slot2 == SYSTEM_ACT_BOSS or slot2 == SYSTEM_ACT_BOSS_SP or slot2 == SYSTEM_BOSS_EXPERIMENT then
+		if slot0.contextData.mainFleetId then
+			slot8 = getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId]
+			slot1.CommanderList = slot8:buildBattleBuffList()
+			slot0.mainShips = {}
+			slot11 = {}
+			slot12 = {}
+			slot15 = slot8:getTeamByName(TeamType.Vanguard)
 
-			var_33_0.CommanderList = var_33_84:buildBattleBuffList()
-			arg_33_0.mainShips = {}
-
-			local var_33_86 = {}
-			local var_33_87 = {}
-			local var_33_88 = {}
-
-			local function var_33_89(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-				if table.contains(var_33_5, arg_38_0) then
-					BattleVertify.cloneShipVertiry = true
-				end
-
-				var_33_5[#var_33_5 + 1] = arg_38_0
-
-				local var_38_0 = var_33_4:getShipById(arg_38_0)
-				local var_38_1 = var_0_1(var_33_1, var_38_0, arg_38_1)
-
-				table.insert(arg_33_0.mainShips, var_38_0)
-				table.insert(arg_38_3, var_38_0)
-				table.insert(arg_38_2, var_38_1)
-			end
-
-			local var_33_90 = var_33_84:getTeamByName(TeamType.Main)
-			local var_33_91 = var_33_84:getTeamByName(TeamType.Vanguard)
-
-			for iter_33_30, iter_33_31 in ipairs(var_33_90) do
-				var_33_89(iter_33_31, var_33_85, var_33_0.MainUnitList, var_33_86)
-			end
-
-			for iter_33_32, iter_33_33 in ipairs(var_33_91) do
-				var_33_89(iter_33_33, var_33_85, var_33_0.VanguardUnitList, var_33_87)
-			end
-
-			local var_33_92 = var_33_83[arg_33_0.contextData.mainFleetId + 10]
-			local var_33_93 = _.values(var_33_92:getCommanders())
-			local var_33_94 = var_33_92:getTeamByName(TeamType.Submarine)
-
-			for iter_33_34, iter_33_35 in ipairs(var_33_94) do
-				var_33_89(iter_33_35, var_33_93, var_33_0.SubUnitList, var_33_88)
-			end
-
-			local var_33_95 = getProxy(PlayerProxy):getRawData()
-			local var_33_96 = getProxy(ActivityProxy):getActivityById(arg_33_0.contextData.actId)
-			local var_33_97 = var_33_96:getConfig("config_id")
-			local var_33_98 = pg.activity_event_worldboss[var_33_97].use_oil_limit[arg_33_0.contextData.mainFleetId]
-			local var_33_99 = var_33_96:IsOilLimit(arg_33_0.contextData.stageId)
-			local var_33_100 = 0
-			local var_33_101 = var_33_3.oil_cost > 0
-
-			local function var_33_102(arg_39_0, arg_39_1)
-				if var_33_101 then
-					local var_39_0 = arg_39_0:getEndCost().oil
-
-					if arg_39_1 > 0 then
-						local var_39_1 = arg_39_0:getStartCost().oil
-
-						cost = math.clamp(arg_39_1 - var_39_1, 0, var_39_0)
+			for slot19, slot20 in ipairs(slot8:getTeamByName(TeamType.Main)) do
+				function (slot0, slot1, slot2, slot3)
+					if table.contains(uv0, slot0) then
+						BattleVertify.cloneShipVertiry = true
 					end
 
-					var_33_100 = var_33_100 + var_39_0
+					uv0[#uv0 + 1] = slot0
+					slot4 = uv1:getShipById(slot0)
+
+					table.insert(uv4.mainShips, slot4)
+					table.insert(slot3, slot4)
+					table.insert(slot2, uv2(uv3, slot4, slot1))
+				end(slot20, _.values(slot8:getCommanders()), slot1.MainUnitList, {})
+			end
+
+			for slot19, slot20 in ipairs(slot15) do
+				slot13(slot20, slot9, slot1.VanguardUnitList, slot11)
+			end
+
+			slot16 = slot7[slot0.contextData.mainFleetId + 10]
+
+			for slot22, slot23 in ipairs(slot16:getTeamByName(TeamType.Submarine)) do
+				slot13(slot23, _.values(slot16:getCommanders()), slot1.SubUnitList, slot12)
+			end
+
+			slot20 = getProxy(PlayerProxy):getRawData()
+			slot21 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId)
+			slot24 = pg.activity_event_worldboss[slot21:getConfig("config_id")].use_oil_limit[slot0.contextData.mainFleetId]
+			slot25 = slot21:IsOilLimit(slot0.contextData.stageId)
+			slot26 = 0
+			slot27 = slot3.oil_cost > 0
+
+			function slot28(slot0, slot1)
+				if uv0 then
+					slot2 = slot0:getEndCost().oil
+
+					if slot1 > 0 then
+						cost = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot2)
+					end
+
+					uv1 = uv1 + slot2
 				end
 			end
 
-			if var_33_1 == SYSTEM_ACT_BOSS_SP then
-				local var_33_103 = getProxy(ActivityProxy):GetActivityBossRuntime(arg_33_0.contextData.actId).buffIds
-				local var_33_104 = _.map(var_33_103, function(arg_40_0)
+			if slot2 == SYSTEM_ACT_BOSS_SP then
+				slot30 = _.map(getProxy(ActivityProxy):GetActivityBossRuntime(slot0.contextData.actId).buffIds, function (slot0)
 					return ActivityBossBuff.New({
-						configId = arg_40_0
+						configId = slot0
 					})
 				end)
-
-				var_33_0.ExtraBuffList = _.map(_.select(var_33_104, function(arg_41_0)
-					return arg_41_0:CastOnEnemy()
-				end), function(arg_42_0)
-					return arg_42_0:GetBuffID()
+				slot1.ExtraBuffList = _.map(_.select(slot30, function (slot0)
+					return slot0:CastOnEnemy()
+				end), function (slot0)
+					return slot0:GetBuffID()
 				end)
-				var_33_0.ChapterBuffIDs = _.map(_.select(var_33_104, function(arg_43_0)
-					return not arg_43_0:CastOnEnemy()
-				end), function(arg_44_0)
-					return arg_44_0:GetBuffID()
+				slot1.ChapterBuffIDs = _.map(_.select(slot30, function (slot0)
+					return not slot0:CastOnEnemy()
+				end), function (slot0)
+					return slot0:GetBuffID()
 				end)
 			else
-				var_33_102(var_33_84, var_33_99 and var_33_98[1] or 0)
-				var_33_102(var_33_92, var_33_99 and var_33_98[2] or 0)
+				slot28(slot8, slot25 and slot24[1] or 0)
+				slot28(slot16, slot25 and slot24[2] or 0)
 			end
 
-			if var_33_92:isLegalToFight() == true and (var_33_1 == SYSTEM_BOSS_EXPERIMENT or var_33_100 <= var_33_95.oil) then
-				var_33_0.SubFlag = 1
-				var_33_0.TotalSubAmmo = 1
+			if slot16:isLegalToFight() == true and (slot2 == SYSTEM_BOSS_EXPERIMENT or slot26 <= slot20.oil) then
+				slot1.SubFlag = 1
+				slot1.TotalSubAmmo = 1
 			end
 
-			var_33_0.SubCommanderList = var_33_92:buildBattleBuffList()
+			slot1.SubCommanderList = slot16:buildBattleBuffList()
 
-			arg_33_0.viewComponent:setFleet(var_33_86, var_33_87, var_33_88)
+			slot0.viewComponent:setFleet(slot10, slot11, slot12)
 		end
-	elseif var_33_1 == SYSTEM_GUILD then
-		local var_33_105 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission()
-		local var_33_106 = var_33_105:GetMainFleet()
-		local var_33_107 = _.values(var_33_106:getCommanders())
+	elseif slot2 == SYSTEM_GUILD then
+		slot9 = getProxy(GuildProxy):getRawData():GetActiveEvent():GetBossMission():GetMainFleet()
+		slot10 = _.values(slot9:getCommanders())
+		slot1.CommanderList = slot9:BuildBattleBuffList()
+		slot0.mainShips = {}
+		slot11 = {}
+		slot12 = {}
+		slot13 = {}
 
-		var_33_0.CommanderList = var_33_106:BuildBattleBuffList()
-		arg_33_0.mainShips = {}
-
-		local var_33_108 = {}
-		local var_33_109 = {}
-		local var_33_110 = {}
-
-		local function var_33_111(arg_45_0, arg_45_1, arg_45_2, arg_45_3)
-			local var_45_0 = var_0_1(var_33_1, arg_45_0, arg_45_1)
-
-			table.insert(arg_33_0.mainShips, arg_45_0)
-			table.insert(arg_45_3, arg_45_0)
-			table.insert(arg_45_2, var_45_0)
+		function slot14(slot0, slot1, slot2, slot3)
+			table.insert(uv2.mainShips, slot0)
+			table.insert(slot3, slot0)
+			table.insert(slot2, uv0(uv1, slot0, slot1))
 		end
 
-		local var_33_112 = {}
-		local var_33_113 = {}
-		local var_33_114 = var_33_106:GetShips()
+		slot15 = {}
+		slot16 = {}
 
-		for iter_33_36, iter_33_37 in pairs(var_33_114) do
-			local var_33_115 = iter_33_37.ship
-
-			if var_33_115:getTeamType() == TeamType.Main then
-				table.insert(var_33_112, var_33_115)
-			elseif var_33_115:getTeamType() == TeamType.Vanguard then
-				table.insert(var_33_113, var_33_115)
+		for slot21, slot22 in pairs(slot9:GetShips()) do
+			if slot22.ship:getTeamType() == TeamType.Main then
+				table.insert(slot15, slot23)
+			elseif slot23:getTeamType() == TeamType.Vanguard then
+				table.insert(slot16, slot23)
 			end
 		end
 
-		for iter_33_38, iter_33_39 in ipairs(var_33_112) do
-			var_33_111(iter_33_39, var_33_107, var_33_0.MainUnitList, var_33_108)
+		for slot21, slot22 in ipairs(slot15) do
+			slot14(slot22, slot10, slot1.MainUnitList, slot11)
 		end
 
-		for iter_33_40, iter_33_41 in ipairs(var_33_113) do
-			var_33_111(iter_33_41, var_33_107, var_33_0.VanguardUnitList, var_33_109)
+		for slot21, slot22 in ipairs(slot16) do
+			slot14(slot22, slot10, slot1.VanguardUnitList, slot12)
 		end
 
-		local var_33_116 = var_33_105:GetSubFleet()
-		local var_33_117 = _.values(var_33_116:getCommanders())
-		local var_33_118 = {}
-		local var_33_119 = var_33_116:GetShips()
+		slot18 = slot8:GetSubFleet()
+		slot19 = _.values(slot18:getCommanders())
+		slot20 = {}
 
-		for iter_33_42, iter_33_43 in pairs(var_33_119) do
-			local var_33_120 = iter_33_43.ship
-
-			if var_33_120:getTeamType() == TeamType.Submarine then
-				table.insert(var_33_118, var_33_120)
+		for slot25, slot26 in pairs(slot18:GetShips()) do
+			if slot26.ship:getTeamType() == TeamType.Submarine then
+				table.insert(slot20, slot27)
 			end
 		end
 
-		for iter_33_44, iter_33_45 in ipairs(var_33_118) do
-			var_33_111(iter_33_45, var_33_117, var_33_0.SubUnitList, var_33_110)
+		for slot25, slot26 in ipairs(slot20) do
+			slot14(slot26, slot19, slot1.SubUnitList, slot13)
 		end
 
-		if #var_33_110 > 0 then
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
+		if #slot13 > 0 then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
 		end
 
-		var_33_0.SubCommanderList = var_33_116:BuildBattleBuffList()
+		slot1.SubCommanderList = slot18:BuildBattleBuffList()
 
-		arg_33_0.viewComponent:setFleet(var_33_108, var_33_109, var_33_110)
-	elseif var_33_1 == SYSTEM_BOSS_RUSH or var_33_1 == SYSTEM_BOSS_RUSH_EX then
-		local var_33_121 = getProxy(ActivityProxy):getActivityById(arg_33_0.contextData.actId):GetSeriesData()
+		slot0.viewComponent:setFleet(slot11, slot12, slot13)
+	elseif slot2 == SYSTEM_BOSS_RUSH or slot2 == SYSTEM_BOSS_RUSH_EX then
+		slot7 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId):GetSeriesData()
 
-		assert(var_33_121)
+		assert(slot7)
 
-		local var_33_122 = var_33_121:GetStaegLevel() + 1
-		local var_33_123 = var_33_121:GetFleetIds()
-		local var_33_124 = var_33_123[var_33_122]
-		local var_33_125 = var_33_123[#var_33_123]
+		slot9 = slot7:GetFleetIds()
+		slot10 = slot9[slot7:GetStaegLevel() + 1]
+		slot11 = slot9[#slot9]
 
-		if var_33_121:GetMode() == BossRushSeriesData.MODE.SINGLE then
-			var_33_124 = var_33_123[1]
+		if slot7:GetMode() == BossRushSeriesData.MODE.SINGLE then
+			slot10 = slot9[1]
 		end
 
-		local var_33_126 = getProxy(FleetProxy):getActivityFleets()[arg_33_0.contextData.actId]
+		slot0.mainShips = {}
+		slot16 = {}
+		slot17 = {}
+		slot19 = getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot10]
+		slot1.CommanderList = slot19:buildBattleBuffList()
+		slot22 = slot19:getTeamByName(TeamType.Vanguard)
 
-		arg_33_0.mainShips = {}
-
-		local var_33_127 = {}
-		local var_33_128 = {}
-		local var_33_129 = {}
-
-		local function var_33_130(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
-			if table.contains(var_33_5, arg_46_0) then
-				BattleVertify.cloneShipVertiry = true
-			end
-
-			var_33_5[#var_33_5 + 1] = arg_46_0
-
-			local var_46_0 = var_33_4:getShipById(arg_46_0)
-			local var_46_1 = var_0_1(var_33_1, var_46_0, arg_46_1)
-
-			table.insert(arg_33_0.mainShips, var_46_0)
-			table.insert(arg_46_3, var_46_0)
-			table.insert(arg_46_2, var_46_1)
-		end
-
-		local var_33_131 = var_33_126[var_33_124]
-		local var_33_132 = _.values(var_33_131:getCommanders())
-
-		var_33_0.CommanderList = var_33_131:buildBattleBuffList()
-
-		local var_33_133 = var_33_131:getTeamByName(TeamType.Main)
-		local var_33_134 = var_33_131:getTeamByName(TeamType.Vanguard)
-
-		for iter_33_46, iter_33_47 in ipairs(var_33_133) do
-			var_33_130(iter_33_47, var_33_132, var_33_0.MainUnitList, var_33_127)
-		end
-
-		for iter_33_48, iter_33_49 in ipairs(var_33_134) do
-			var_33_130(iter_33_49, var_33_132, var_33_0.VanguardUnitList, var_33_128)
-		end
-
-		local var_33_135 = var_33_126[var_33_125]
-		local var_33_136 = _.values(var_33_135:getCommanders())
-
-		var_33_0.SubCommanderList = var_33_135:buildBattleBuffList()
-
-		local var_33_137 = var_33_135:getTeamByName(TeamType.Submarine)
-
-		for iter_33_50, iter_33_51 in ipairs(var_33_137) do
-			var_33_130(iter_33_51, var_33_136, var_33_0.SubUnitList, var_33_129)
-		end
-
-		local var_33_138 = getProxy(PlayerProxy):getRawData()
-		local var_33_139 = 0
-		local var_33_140 = var_33_121:GetOilLimit()
-		local var_33_141 = var_33_3.oil_cost > 0
-
-		local function var_33_142(arg_47_0, arg_47_1)
-			local var_47_0 = 0
-
-			if var_33_141 then
-				local var_47_1 = arg_47_0:getStartCost().oil
-				local var_47_2 = arg_47_0:getEndCost().oil
-
-				var_47_0 = var_47_2
-
-				if arg_47_1 > 0 then
-					var_47_0 = math.clamp(arg_47_1 - var_47_1, 0, var_47_2)
-				end
-			end
-
-			return var_47_0
-		end
-
-		local var_33_143 = var_33_139 + var_33_142(var_33_131, var_33_140[1]) + var_33_142(var_33_135, var_33_140[2])
-
-		if var_33_135:isLegalToFight() == true and var_33_143 <= var_33_138.oil then
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
-		end
-
-		arg_33_0.viewComponent:setFleet(var_33_127, var_33_128, var_33_129)
-	elseif var_33_1 == SYSTEM_LIMIT_CHALLENGE then
-		local var_33_144 = LimitChallengeConst.GetChallengeIDByStageID(arg_33_0.contextData.stageId)
-
-		var_33_0.ExtraBuffList = AcessWithinNull(pg.expedition_constellation_challenge_template[var_33_144], "buff_id")
-
-		local var_33_145 = FleetProxy.CHALLENGE_FLEET_ID
-		local var_33_146 = FleetProxy.CHALLENGE_SUB_FLEET_ID
-		local var_33_147 = getProxy(FleetProxy)
-		local var_33_148 = var_33_147:getFleetById(var_33_145)
-		local var_33_149 = var_33_147:getFleetById(var_33_146)
-
-		arg_33_0.mainShips = {}
-
-		local var_33_150 = {}
-		local var_33_151 = {}
-		local var_33_152 = {}
-
-		local function var_33_153(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
-			if table.contains(var_33_5, arg_48_0) then
-				BattleVertify.cloneShipVertiry = true
-			end
-
-			var_33_5[#var_33_5 + 1] = arg_48_0
-
-			local var_48_0 = var_33_4:getShipById(arg_48_0)
-			local var_48_1 = var_0_1(var_33_1, var_48_0, arg_48_1)
-
-			table.insert(arg_33_0.mainShips, var_48_0)
-			table.insert(arg_48_3, var_48_0)
-			table.insert(arg_48_2, var_48_1)
-		end
-
-		local var_33_154 = _.values(var_33_148:getCommanders())
-
-		var_33_0.CommanderList = var_33_148:buildBattleBuffList()
-
-		local var_33_155 = var_33_148:getTeamByName(TeamType.Main)
-		local var_33_156 = var_33_148:getTeamByName(TeamType.Vanguard)
-
-		for iter_33_52, iter_33_53 in ipairs(var_33_155) do
-			var_33_153(iter_33_53, var_33_154, var_33_0.MainUnitList, var_33_150)
-		end
-
-		for iter_33_54, iter_33_55 in ipairs(var_33_156) do
-			var_33_153(iter_33_55, var_33_154, var_33_0.VanguardUnitList, var_33_151)
-		end
-
-		local var_33_157 = _.values(var_33_149:getCommanders())
-
-		var_33_0.SubCommanderList = var_33_149:buildBattleBuffList()
-
-		local var_33_158 = var_33_149:getTeamByName(TeamType.Submarine)
-
-		for iter_33_56, iter_33_57 in ipairs(var_33_158) do
-			var_33_153(iter_33_57, var_33_157, var_33_0.SubUnitList, var_33_152)
-		end
-
-		local var_33_159 = getProxy(PlayerProxy):getRawData()
-		local var_33_160 = 0
-		local var_33_161 = var_33_3.oil_cost > 0
-
-		local function var_33_162(arg_49_0, arg_49_1)
-			local var_49_0 = 0
-
-			if var_33_161 then
-				local var_49_1 = arg_49_0:getStartCost().oil
-				local var_49_2 = arg_49_0:getEndCost().oil
-
-				var_49_0 = var_49_2
-
-				if arg_49_1 > 0 then
-					var_49_0 = math.clamp(arg_49_1 - var_49_1, 0, var_49_2)
-				end
-			end
-
-			return var_49_0
-		end
-
-		local var_33_163 = var_33_160 + var_33_162(var_33_148, 0) + var_33_162(var_33_149, 0)
-
-		if var_33_149:isLegalToFight() == true and var_33_163 <= var_33_159.oil then
-			var_33_0.SubFlag = 1
-			var_33_0.TotalSubAmmo = 1
-		end
-
-		arg_33_0.viewComponent:setFleet(var_33_150, var_33_151, var_33_152)
-	elseif var_33_1 == SYSTEM_CARDPUZZLE then
-		local var_33_164 = {}
-		local var_33_165 = {}
-		local var_33_166 = arg_33_0.contextData.relics
-
-		for iter_33_58, iter_33_59 in ipairs(arg_33_0.contextData.cardPuzzleFleet) do
-			local var_33_167 = var_0_2(iter_33_59, var_33_166)
-			local var_33_168 = var_33_167.fleetIndex
-
-			if var_33_168 == 1 then
-				table.insert(var_33_165, var_33_167)
-				table.insert(var_33_0.VanguardUnitList, var_33_167)
-			elseif var_33_168 == 2 then
-				table.insert(var_33_164, var_33_167)
-				table.insert(var_33_0.MainUnitList, var_33_167)
-			end
-		end
-
-		var_33_0.CardPuzzleCardIDList = arg_33_0.contextData.cards
-		var_33_0.CardPuzzleCommonHPValue = arg_33_0.contextData.hp
-		var_33_0.CardPuzzleRelicList = var_33_166
-		var_33_0.CardPuzzleCombatID = arg_33_0.contextData.puzzleCombatID
-	elseif var_33_1 == SYSTEM_BOSS_SINGLE then
-		if arg_33_0.contextData.mainFleetId then
-			local var_33_169 = getProxy(FleetProxy):getActivityFleets()[arg_33_0.contextData.actId]
-			local var_33_170 = var_33_169[arg_33_0.contextData.mainFleetId]
-			local var_33_171 = _.values(var_33_170:getCommanders())
-
-			var_33_0.CommanderList = var_33_170:buildBattleBuffList()
-			arg_33_0.mainShips = {}
-
-			local var_33_172 = {}
-			local var_33_173 = {}
-			local var_33_174 = {}
-
-			local function var_33_175(arg_50_0, arg_50_1, arg_50_2, arg_50_3)
-				if table.contains(var_33_5, arg_50_0) then
+		for slot26, slot27 in ipairs(slot19:getTeamByName(TeamType.Main)) do
+			function (slot0, slot1, slot2, slot3)
+				if table.contains(uv0, slot0) then
 					BattleVertify.cloneShipVertiry = true
 				end
 
-				var_33_5[#var_33_5 + 1] = arg_50_0
+				uv0[#uv0 + 1] = slot0
+				slot4 = uv1:getShipById(slot0)
 
-				local var_50_0 = var_33_4:getShipById(arg_50_0)
-				local var_50_1 = var_0_1(var_33_1, var_50_0, arg_50_1)
+				table.insert(uv4.mainShips, slot4)
+				table.insert(slot3, slot4)
+				table.insert(slot2, uv2(uv3, slot4, slot1))
+			end(slot27, _.values(slot19:getCommanders()), slot1.MainUnitList, {})
+		end
 
-				table.insert(arg_33_0.mainShips, var_50_0)
-				table.insert(arg_50_3, var_50_0)
-				table.insert(arg_50_2, var_50_1)
+		for slot26, slot27 in ipairs(slot22) do
+			slot18(slot27, slot20, slot1.VanguardUnitList, slot16)
+		end
+
+		slot23 = slot14[slot11]
+		slot1.SubCommanderList = slot23:buildBattleBuffList()
+
+		for slot29, slot30 in ipairs(slot23:getTeamByName(TeamType.Submarine)) do
+			slot18(slot30, _.values(slot23:getCommanders()), slot1.SubUnitList, slot17)
+		end
+
+		slot29 = slot7:GetOilLimit()
+		slot30 = slot3.oil_cost > 0
+
+		function slot31(slot0, slot1)
+			slot2 = 0
+
+			if uv0 then
+				slot2 = slot0:getEndCost().oil
+
+				if slot1 > 0 then
+					slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot4)
+				end
 			end
 
-			local var_33_176 = var_33_170:getTeamByName(TeamType.Main)
-			local var_33_177 = var_33_170:getTeamByName(TeamType.Vanguard)
+			return slot2
+		end
 
-			for iter_33_60, iter_33_61 in ipairs(var_33_176) do
-				var_33_175(iter_33_61, var_33_171, var_33_0.MainUnitList, var_33_172)
+		if slot23:isLegalToFight() == true and 0 + slot31(slot19, slot29[1]) + slot31(slot23, slot29[2]) <= getProxy(PlayerProxy):getRawData().oil then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+		end
+
+		slot0.viewComponent:setFleet(slot15, slot16, slot17)
+	elseif slot2 == SYSTEM_LIMIT_CHALLENGE then
+		slot1.ExtraBuffList = AcessWithinNull(pg.expedition_constellation_challenge_template[LimitChallengeConst.GetChallengeIDByStageID(slot0.contextData.stageId)], "buff_id")
+		slot10 = getProxy(FleetProxy)
+		slot11 = slot10:getFleetById(FleetProxy.CHALLENGE_FLEET_ID)
+		slot12 = slot10:getFleetById(FleetProxy.CHALLENGE_SUB_FLEET_ID)
+		slot0.mainShips = {}
+		slot14 = {}
+		slot15 = {}
+		slot1.CommanderList = slot11:buildBattleBuffList()
+		slot19 = slot11:getTeamByName(TeamType.Vanguard)
+
+		for slot23, slot24 in ipairs(slot11:getTeamByName(TeamType.Main)) do
+			function (slot0, slot1, slot2, slot3)
+				if table.contains(uv0, slot0) then
+					BattleVertify.cloneShipVertiry = true
+				end
+
+				uv0[#uv0 + 1] = slot0
+				slot4 = uv1:getShipById(slot0)
+
+				table.insert(uv4.mainShips, slot4)
+				table.insert(slot3, slot4)
+				table.insert(slot2, uv2(uv3, slot4, slot1))
+			end(slot24, _.values(slot11:getCommanders()), slot1.MainUnitList, {})
+		end
+
+		for slot23, slot24 in ipairs(slot19) do
+			slot16(slot24, slot17, slot1.VanguardUnitList, slot14)
+		end
+
+		slot1.SubCommanderList = slot12:buildBattleBuffList()
+
+		for slot25, slot26 in ipairs(slot12:getTeamByName(TeamType.Submarine)) do
+			slot16(slot26, _.values(slot12:getCommanders()), slot1.SubUnitList, slot15)
+		end
+
+		slot25 = slot3.oil_cost > 0
+
+		function slot26(slot0, slot1)
+			slot2 = 0
+
+			if uv0 then
+				slot2 = slot0:getEndCost().oil
+
+				if slot1 > 0 then
+					slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot4)
+				end
 			end
 
-			for iter_33_62, iter_33_63 in ipairs(var_33_177) do
-				var_33_175(iter_33_63, var_33_171, var_33_0.VanguardUnitList, var_33_173)
+			return slot2
+		end
+
+		if slot12:isLegalToFight() == true and 0 + slot26(slot11, 0) + slot26(slot12, 0) <= getProxy(PlayerProxy):getRawData().oil then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+		end
+
+		slot0.viewComponent:setFleet(slot13, slot14, slot15)
+	elseif slot2 == SYSTEM_CARDPUZZLE then
+		slot6 = {}
+		slot8 = slot0.contextData.relics
+
+		for slot12, slot13 in ipairs(slot0.contextData.cardPuzzleFleet) do
+			if uv1(slot13, slot8).fleetIndex == 1 then
+				table.insert({}, slot14)
+				table.insert(slot1.VanguardUnitList, slot14)
+			elseif slot15 == 2 then
+				table.insert(slot6, slot14)
+				table.insert(slot1.MainUnitList, slot14)
 			end
+		end
 
-			local var_33_178 = var_33_169[arg_33_0.contextData.mainFleetId + 10]
-			local var_33_179 = _.values(var_33_178:getCommanders())
-			local var_33_180 = var_33_178:getTeamByName(TeamType.Submarine)
+		slot1.CardPuzzleCardIDList = slot0.contextData.cards
+		slot1.CardPuzzleCommonHPValue = slot0.contextData.hp
+		slot1.CardPuzzleRelicList = slot8
+		slot1.CardPuzzleCombatID = slot0.contextData.puzzleCombatID
+	elseif slot2 == SYSTEM_BOSS_SINGLE then
+		if slot0.contextData.mainFleetId then
+			slot8 = getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId]
+			slot1.CommanderList = slot8:buildBattleBuffList()
+			slot0.mainShips = {}
+			slot11 = {}
+			slot12 = {}
+			slot15 = slot8:getTeamByName(TeamType.Vanguard)
 
-			for iter_33_64, iter_33_65 in ipairs(var_33_180) do
-				var_33_175(iter_33_65, var_33_179, var_33_0.SubUnitList, var_33_174)
-			end
-
-			local var_33_181 = getProxy(PlayerProxy):getRawData()
-			local var_33_182 = getProxy(ActivityProxy):getActivityById(arg_33_0.contextData.actId)
-
-			var_33_0.ChapterBuffIDs = var_33_182:GetBuffIdsByStageId(arg_33_0.contextData.stageId)
-
-			local var_33_183 = var_33_182:GetEnemyDataByStageId(arg_33_0.contextData.stageId):GetOilLimit()
-			local var_33_184 = 0
-			local var_33_185 = var_33_3.oil_cost > 0
-
-			local function var_33_186(arg_51_0, arg_51_1)
-				if var_33_185 then
-					local var_51_0 = arg_51_0:getEndCost().oil
-
-					if arg_51_1 > 0 then
-						local var_51_1 = arg_51_0:getStartCost().oil
-
-						cost = math.clamp(arg_51_1 - var_51_1, 0, var_51_0)
+			for slot19, slot20 in ipairs(slot8:getTeamByName(TeamType.Main)) do
+				function (slot0, slot1, slot2, slot3)
+					if table.contains(uv0, slot0) then
+						BattleVertify.cloneShipVertiry = true
 					end
 
-					var_33_184 = var_33_184 + var_51_0
+					uv0[#uv0 + 1] = slot0
+					slot4 = uv1:getShipById(slot0)
+
+					table.insert(uv4.mainShips, slot4)
+					table.insert(slot3, slot4)
+					table.insert(slot2, uv2(uv3, slot4, slot1))
+				end(slot20, _.values(slot8:getCommanders()), slot1.MainUnitList, {})
+			end
+
+			for slot19, slot20 in ipairs(slot15) do
+				slot13(slot20, slot9, slot1.VanguardUnitList, slot11)
+			end
+
+			slot16 = slot7[slot0.contextData.mainFleetId + 10]
+
+			for slot22, slot23 in ipairs(slot16:getTeamByName(TeamType.Submarine)) do
+				slot13(slot23, _.values(slot16:getCommanders()), slot1.SubUnitList, slot12)
+			end
+
+			slot21 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId)
+			slot1.ChapterBuffIDs = slot21:GetBuffIdsByStageId(slot0.contextData.stageId)
+			slot23 = slot21:GetEnemyDataByStageId(slot0.contextData.stageId):GetOilLimit()
+			slot25 = slot3.oil_cost > 0
+
+			function (slot0, slot1)
+				if uv0 then
+					slot2 = slot0:getEndCost().oil
+
+					if slot1 > 0 then
+						cost = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot2)
+					end
+
+					uv1 = uv1 + slot2
 				end
+			end(slot8, slot23[1] or 0)
+			slot26(slot16, slot23[2] or 0)
+
+			if slot16:isLegalToFight() == true and 0 <= getProxy(PlayerProxy):getRawData().oil then
+				slot1.SubFlag = 1
+				slot1.TotalSubAmmo = 1
 			end
 
-			var_33_186(var_33_170, var_33_183[1] or 0)
-			var_33_186(var_33_178, var_33_183[2] or 0)
+			slot1.SubCommanderList = slot16:buildBattleBuffList()
 
-			if var_33_178:isLegalToFight() == true and var_33_184 <= var_33_181.oil then
-				var_33_0.SubFlag = 1
-				var_33_0.TotalSubAmmo = 1
-			end
-
-			var_33_0.SubCommanderList = var_33_178:buildBattleBuffList()
-
-			arg_33_0.viewComponent:setFleet(var_33_172, var_33_173, var_33_174)
+			slot0.viewComponent:setFleet(slot10, slot11, slot12)
 		end
-	elseif arg_33_0.contextData.mainFleetId then
-		local var_33_187 = var_33_1 == SYSTEM_DUEL
-		local var_33_188 = getProxy(FleetProxy)
-		local var_33_189
-		local var_33_190
-		local var_33_191 = var_33_188:getFleetById(arg_33_0.contextData.mainFleetId)
+	elseif slot0.contextData.mainFleetId then
+		slot6 = slot2 == SYSTEM_DUEL
+		slot8, slot9 = nil
+		slot8 = getProxy(FleetProxy):getFleetById(slot0.contextData.mainFleetId)
+		slot0.mainShips = slot4:getShipsByFleet(slot8)
+		slot10 = {}
+		slot11 = {}
+		slot12 = {}
 
-		arg_33_0.mainShips = var_33_4:getShipsByFleet(var_33_191)
-
-		local var_33_192 = {}
-		local var_33_193 = {}
-		local var_33_194 = {}
-
-		local function var_33_195(arg_52_0, arg_52_1, arg_52_2)
-			for iter_52_0, iter_52_1 in ipairs(arg_52_0) do
-				if table.contains(var_33_5, iter_52_1) then
+		function slot13(slot0, slot1, slot2)
+			for slot6, slot7 in ipairs(slot0) do
+				if table.contains(uv0, slot7) then
 					BattleVertify.cloneShipVertiry = true
 				end
 
-				var_33_5[#var_33_5 + 1] = iter_52_1
+				uv0[#uv0 + 1] = slot7
+				slot8 = uv1:getShipById(slot7)
 
-				local var_52_0 = var_33_4:getShipById(iter_52_1)
-				local var_52_1 = var_0_1(var_33_1, var_52_0, nil, var_33_187)
-
-				table.insert(arg_52_1, var_52_0)
-				table.insert(arg_52_2, var_52_1)
+				table.insert(slot1, slot8)
+				table.insert(slot2, uv2(uv3, slot8, nil, uv4))
 			end
 		end
 
-		local var_33_196 = var_33_191:getTeamByName(TeamType.Main)
-		local var_33_197 = var_33_191:getTeamByName(TeamType.Vanguard)
-		local var_33_198 = var_33_191:getTeamByName(TeamType.Submarine)
+		slot13(slot8:getTeamByName(TeamType.Main), slot10, slot1.MainUnitList)
+		slot13(slot8:getTeamByName(TeamType.Vanguard), slot11, slot1.VanguardUnitList)
+		slot13(slot8:getTeamByName(TeamType.Submarine), slot12, slot1.SubUnitList)
+		slot0.viewComponent:setFleet(slot10, slot11, slot12)
 
-		var_33_195(var_33_196, var_33_192, var_33_0.MainUnitList)
-		var_33_195(var_33_197, var_33_193, var_33_0.VanguardUnitList)
-		var_33_195(var_33_198, var_33_194, var_33_0.SubUnitList)
-		arg_33_0.viewComponent:setFleet(var_33_192, var_33_193, var_33_194)
+		if BATTLE_DEBUG and BATTLE_FREE_SUBMARINE and #slot7:getFleetById(11):getTeamByName(TeamType.Submarine) > 0 then
+			slot1.SubFlag = 1
+			slot1.TotalSubAmmo = 1
+			slot1.SubCommanderList = slot9:buildBattleBuffList()
 
-		if BATTLE_DEBUG and BATTLE_FREE_SUBMARINE then
-			local var_33_199 = var_33_188:getFleetById(11)
-			local var_33_200 = var_33_199:getTeamByName(TeamType.Submarine)
+			for slot23, slot24 in ipairs(slot17) do
+				slot25 = slot4:getShipById(slot24)
 
-			if #var_33_200 > 0 then
-				var_33_0.SubFlag = 1
-				var_33_0.TotalSubAmmo = 1
-
-				local var_33_201 = _.values(var_33_199:getCommanders())
-
-				var_33_0.SubCommanderList = var_33_199:buildBattleBuffList()
-
-				for iter_33_66, iter_33_67 in ipairs(var_33_200) do
-					local var_33_202 = var_33_4:getShipById(iter_33_67)
-					local var_33_203 = var_0_1(var_33_1, var_33_202, var_33_201, var_33_187)
-
-					table.insert(var_33_194, var_33_202)
-					table.insert(var_33_0.SubUnitList, var_33_203)
-				end
+				table.insert(slot12, slot25)
+				table.insert(slot1.SubUnitList, uv0(slot2, slot25, _.values(slot9:getCommanders()), slot6))
 			end
 		end
 	end
 
-	if var_33_1 == SYSTEM_WORLD then
-		local var_33_204 = nowWorld()
-		local var_33_205 = var_33_204:GetActiveMap()
-		local var_33_206 = var_33_205:GetFleet()
-		local var_33_207 = var_33_205:GetCell(var_33_206.row, var_33_206.column):GetStageEnemy()
-		local var_33_208 = pg.world_expedition_data[arg_33_0.contextData.stageId]
-		local var_33_209 = var_33_204:GetWorldMapDifficultyBuffLevel()
-
-		var_33_0.EnemyMapRewards = {
-			var_33_209[1] * (1 + var_33_208.expedition_sairenvalueA / 10000),
-			var_33_209[2] * (1 + var_33_208.expedition_sairenvalueB / 10000),
-			var_33_209[3] * (1 + var_33_208.expedition_sairenvalueC / 10000)
+	if slot2 == SYSTEM_WORLD then
+		slot6 = nowWorld()
+		slot7 = slot6:GetActiveMap()
+		slot8 = slot7:GetFleet()
+		slot10 = slot7:GetCell(slot8.row, slot8.column):GetStageEnemy()
+		slot11 = pg.world_expedition_data[slot0.contextData.stageId]
+		slot12 = slot6:GetWorldMapDifficultyBuffLevel()
+		slot1.EnemyMapRewards = {
+			slot12[1] * (1 + slot11.expedition_sairenvalueA / 10000),
+			slot12[2] * (1 + slot11.expedition_sairenvalueB / 10000),
+			slot12[3] * (1 + slot11.expedition_sairenvalueC / 10000)
 		}
-		var_33_0.FleetMapRewards = var_33_204:GetWorldMapBuffLevel()
+		slot1.FleetMapRewards = slot6:GetWorldMapBuffLevel()
 	end
 
-	var_33_0.RivalMainUnitList, var_33_0.RivalVanguardUnitList = {}, {}
+	slot1.RivalVanguardUnitList = {}
+	slot1.RivalMainUnitList = {}
+	slot6 = nil
 
-	local var_33_210
-
-	if var_33_1 == SYSTEM_DUEL and arg_33_0.contextData.rivalId then
-		local var_33_211 = getProxy(MilitaryExerciseProxy)
-
-		var_33_210 = var_33_211:getRivalById(arg_33_0.contextData.rivalId)
-		arg_33_0.oldRank = var_33_211:getSeasonInfo()
+	if slot2 == SYSTEM_DUEL and slot0.contextData.rivalId then
+		slot7 = getProxy(MilitaryExerciseProxy)
+		slot6 = slot7:getRivalById(slot0.contextData.rivalId)
+		slot0.oldRank = slot7:getSeasonInfo()
 	end
 
-	if var_33_210 then
-		var_33_0.RivalVO = var_33_210
+	if slot6 then
+		slot1.RivalVO = slot6
 
-		local var_33_212 = 0
-
-		for iter_33_68, iter_33_69 in ipairs(var_33_210.mainShips) do
-			var_33_212 = var_33_212 + iter_33_69.level
+		for slot11, slot12 in ipairs(slot6.mainShips) do
+			slot7 = 0 + slot12.level
 		end
 
-		for iter_33_70, iter_33_71 in ipairs(var_33_210.vanguardShips) do
-			var_33_212 = var_33_212 + iter_33_71.level
+		for slot11, slot12 in ipairs(slot6.vanguardShips) do
+			slot7 = slot7 + slot12.level
 		end
 
 		BattleVertify = BattleVertify or {}
-		BattleVertify.rivalLevel = var_33_212
+		BattleVertify.rivalLevel = slot7
 
-		for iter_33_72, iter_33_73 in ipairs(var_33_210.mainShips) do
-			if not iter_33_73.hpRant or iter_33_73.hpRant > 0 then
-				local var_33_213 = var_0_1(var_33_1, iter_33_73, nil, true)
+		for slot11, slot12 in ipairs(slot6.mainShips) do
+			if not slot12.hpRant or slot12.hpRant > 0 then
+				slot13 = uv0(slot2, slot12, nil, true)
 
-				if iter_33_73.hpRant then
-					var_33_213.initHPRate = iter_33_73.hpRant * 0.0001
+				if slot12.hpRant then
+					slot13.initHPRate = slot12.hpRant * 0.0001
 				end
 
-				table.insert(var_33_0.RivalMainUnitList, var_33_213)
+				table.insert(slot1.RivalMainUnitList, slot13)
 			end
 		end
 
-		for iter_33_74, iter_33_75 in ipairs(var_33_210.vanguardShips) do
-			if not iter_33_75.hpRant or iter_33_75.hpRant > 0 then
-				local var_33_214 = var_0_1(var_33_1, iter_33_75, nil, true)
+		for slot11, slot12 in ipairs(slot6.vanguardShips) do
+			if not slot12.hpRant or slot12.hpRant > 0 then
+				slot13 = uv0(slot2, slot12, nil, true)
 
-				if iter_33_75.hpRant then
-					var_33_214.initHPRate = iter_33_75.hpRant * 0.0001
+				if slot12.hpRant then
+					slot13.initHPRate = slot12.hpRant * 0.0001
 				end
 
-				table.insert(var_33_0.RivalVanguardUnitList, var_33_214)
+				table.insert(slot1.RivalVanguardUnitList, slot13)
 			end
 		end
 	end
 
-	local var_33_215 = arg_33_0.contextData.prefabFleet.main_unitList
-	local var_33_216 = arg_33_0.contextData.prefabFleet.vanguard_unitList
-	local var_33_217 = arg_33_0.contextData.prefabFleet.submarine_unitList
+	slot8 = slot0.contextData.prefabFleet.vanguard_unitList
+	slot9 = slot0.contextData.prefabFleet.submarine_unitList
 
-	if var_33_215 then
-		for iter_33_76, iter_33_77 in ipairs(var_33_215) do
-			local var_33_218 = {}
+	if slot0.contextData.prefabFleet.main_unitList then
+		for slot13, slot14 in ipairs(slot7) do
+			slot15 = {}
 
-			for iter_33_78, iter_33_79 in ipairs(iter_33_77.equipment) do
-				var_33_218[#var_33_218 + 1] = {
+			for slot19, slot20 in ipairs(slot14.equipment) do
+				slot15[#slot15 + 1] = {
 					skin = 0,
-					id = iter_33_79
+					id = slot20
 				}
 			end
 
-			local var_33_219 = {
-				id = iter_33_77.id,
-				tmpID = iter_33_77.configId,
-				skinId = iter_33_77.skinId,
-				level = iter_33_77.level,
-				equipment = var_33_218,
-				properties = iter_33_77.properties,
-				baseProperties = iter_33_77.properties,
+			table.insert(slot1.MainUnitList, {
+				id = slot14.id,
+				tmpID = slot14.configId,
+				skinId = slot14.skinId,
+				level = slot14.level,
+				equipment = slot15,
+				properties = slot14.properties,
+				baseProperties = slot14.properties,
 				proficiency = {
 					1,
 					1,
 					1
 				},
-				skills = iter_33_77.skills
-			}
-
-			table.insert(var_33_0.MainUnitList, var_33_219)
+				skills = slot14.skills
+			})
 		end
 	end
 
-	if var_33_216 then
-		for iter_33_80, iter_33_81 in ipairs(var_33_216) do
-			local var_33_220 = {}
+	if slot8 then
+		for slot13, slot14 in ipairs(slot8) do
+			slot15 = {}
 
-			for iter_33_82, iter_33_83 in ipairs(iter_33_81.equipment) do
-				var_33_220[#var_33_220 + 1] = {
+			for slot19, slot20 in ipairs(slot14.equipment) do
+				slot15[#slot15 + 1] = {
 					skin = 0,
-					id = iter_33_83
+					id = slot20
 				}
 			end
 
-			local var_33_221 = {
-				id = iter_33_81.id,
-				tmpID = iter_33_81.configId,
-				skinId = iter_33_81.skinId,
-				level = iter_33_81.level,
-				equipment = var_33_220,
-				properties = iter_33_81.properties,
-				baseProperties = iter_33_81.properties,
+			table.insert(slot1.VanguardUnitList, {
+				id = slot14.id,
+				tmpID = slot14.configId,
+				skinId = slot14.skinId,
+				level = slot14.level,
+				equipment = slot15,
+				properties = slot14.properties,
+				baseProperties = slot14.properties,
 				proficiency = {
 					1,
 					1,
 					1
 				},
-				skills = iter_33_81.skills
-			}
-
-			table.insert(var_33_0.VanguardUnitList, var_33_221)
+				skills = slot14.skills
+			})
 		end
 	end
 
-	if var_33_217 then
-		for iter_33_84, iter_33_85 in ipairs(var_33_217) do
-			local var_33_222 = {}
+	if slot9 then
+		for slot13, slot14 in ipairs(slot9) do
+			slot15 = {}
 
-			for iter_33_86, iter_33_87 in ipairs(iter_33_85.equipment) do
-				var_33_222[#var_33_222 + 1] = {
+			for slot19, slot20 in ipairs(slot14.equipment) do
+				slot15[#slot15 + 1] = {
 					skin = 0,
-					id = iter_33_87
+					id = slot20
 				}
 			end
 
-			local var_33_223 = {
-				id = iter_33_85.id,
-				tmpID = iter_33_85.configId,
-				skinId = iter_33_85.skinId,
-				level = iter_33_85.level,
-				equipment = var_33_222,
-				properties = iter_33_85.properties,
-				baseProperties = iter_33_85.properties,
+			table.insert(slot1.SubUnitList, {
+				id = slot14.id,
+				tmpID = slot14.configId,
+				skinId = slot14.skinId,
+				level = slot14.level,
+				equipment = slot15,
+				properties = slot14.properties,
+				baseProperties = slot14.properties,
 				proficiency = {
 					1,
 					1,
 					1
 				},
-				skills = iter_33_85.skills
-			}
+				skills = slot14.skills
+			})
 
-			table.insert(var_33_0.SubUnitList, var_33_223)
-
-			if var_33_1 == SYSTEM_SIMULATION and #var_33_0.SubUnitList > 0 then
-				var_33_0.SubFlag = 1
-				var_33_0.TotalSubAmmo = 1
+			if slot2 == SYSTEM_SIMULATION and #slot1.SubUnitList > 0 then
+				slot1.SubFlag = 1
+				slot1.TotalSubAmmo = 1
 			end
 		end
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_53_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.FINISH_STAGE_DONE,
 		GAME.FINISH_STAGE_ERROR,
@@ -1654,138 +1363,119 @@ function var_0_0.listNotificationInterests(arg_53_0)
 		GAME.START_GUIDE,
 		GAME.PAUSE_BATTLE,
 		GAME.RESUME_BATTLE,
-		var_0_0.CLOSE_CHAT,
+		uv0.CLOSE_CHAT,
 		GAME.QUIT_BATTLE,
-		var_0_0.HIDE_ALL_BUTTONS
+		uv0.HIDE_ALL_BUTTONS
 	}
 end
 
-function var_0_0.handleNotification(arg_54_0, arg_54_1)
-	local var_54_0 = arg_54_1:getName()
-	local var_54_1 = arg_54_1:getBody()
-	local var_54_2 = ys.Battle.BattleState.GetInstance()
-	local var_54_3 = arg_54_0.contextData.system
+function slot0.handleNotification(slot0, slot1)
+	slot4 = ys.Battle.BattleState.GetInstance()
+	slot5 = slot0.contextData.system
 
-	if var_54_0 == GAME.FINISH_STAGE_DONE then
+	if slot1:getName() == GAME.FINISH_STAGE_DONE then
 		pg.MsgboxMgr.GetInstance():hide()
 
-		local var_54_4 = var_54_1.system
-
-		if var_54_4 == SYSTEM_PROLOGUE then
+		if slot1:getBody().system == SYSTEM_PROLOGUE then
 			ys.Battle.BattleState.GetInstance():Deactive()
-			arg_54_0:sendNotification(GAME.CHANGE_SCENE, SCENE.CREATE_PLAYER)
-		elseif var_54_4 == SYSTEM_PERFORM or var_54_4 == SYSTEM_SIMULATION then
+			slot0:sendNotification(GAME.CHANGE_SCENE, SCENE.CREATE_PLAYER)
+		elseif slot6 == SYSTEM_PERFORM or slot6 == SYSTEM_SIMULATION then
 			ys.Battle.BattleState.GetInstance():Deactive()
-			arg_54_0.viewComponent:exitBattle()
+			slot0.viewComponent:exitBattle()
 
-			if var_54_1.exitCallback then
-				var_54_1.exitCallback()
+			if slot3.exitCallback then
+				slot3.exitCallback()
 			end
 		else
-			local var_54_5 = BattleResultMediator.GetResultView(var_54_4)
-			local var_54_6 = {}
+			slot7 = BattleResultMediator.GetResultView(slot6)
+			slot8 = {}
 
-			if var_54_4 == SYSTEM_SCENARIO then
-				var_54_6 = getProxy(ChapterProxy):getActiveChapter().operationBuffList
+			if slot6 == SYSTEM_SCENARIO then
+				slot8 = getProxy(ChapterProxy):getActiveChapter().operationBuffList
 			end
 
-			arg_54_0:addSubLayers(Context.New({
+			slot0:addSubLayers(Context.New({
 				mediator = NewBattleResultMediator,
 				viewComponent = NewBattleResultScene,
 				data = {
-					system = var_54_4,
-					rivalId = arg_54_0.contextData.rivalId,
-					mainFleetId = arg_54_0.contextData.mainFleetId,
-					stageId = arg_54_0.contextData.stageId,
-					oldMainShips = arg_54_0.mainShips or {},
-					oldPlayer = arg_54_0.player,
-					oldRank = arg_54_0.oldRank,
-					statistics = var_54_1.statistics,
-					score = var_54_1.score,
-					drops = var_54_1.drops,
-					bossId = var_54_1.bossId,
-					name = var_54_1.name,
-					prefabFleet = var_54_1.prefabFleet,
-					commanderExps = var_54_1.commanderExps,
-					actId = arg_54_0.contextData.actId,
-					result = var_54_1.result,
-					extraDrops = var_54_1.extraDrops,
-					extraBuffList = var_54_6,
-					isLastBonus = var_54_1.isLastBonus,
-					continuousBattleTimes = arg_54_0.contextData.continuousBattleTimes,
-					totalBattleTimes = arg_54_0.contextData.totalBattleTimes,
-					mode = arg_54_0.contextData.mode,
-					cmdArgs = arg_54_0.contextData.cmdArgs
+					system = slot6,
+					rivalId = slot0.contextData.rivalId,
+					mainFleetId = slot0.contextData.mainFleetId,
+					stageId = slot0.contextData.stageId,
+					oldMainShips = slot0.mainShips or {},
+					oldPlayer = slot0.player,
+					oldRank = slot0.oldRank,
+					statistics = slot3.statistics,
+					score = slot3.score,
+					drops = slot3.drops,
+					bossId = slot3.bossId,
+					name = slot3.name,
+					prefabFleet = slot3.prefabFleet,
+					commanderExps = slot3.commanderExps,
+					actId = slot0.contextData.actId,
+					result = slot3.result,
+					extraDrops = slot3.extraDrops,
+					extraBuffList = slot8,
+					isLastBonus = slot3.isLastBonus,
+					continuousBattleTimes = slot0.contextData.continuousBattleTimes,
+					totalBattleTimes = slot0.contextData.totalBattleTimes,
+					mode = slot0.contextData.mode,
+					cmdArgs = slot0.contextData.cmdArgs
 				}
 			}))
 		end
-	elseif var_54_0 == GAME.STORY_BEGIN then
-		var_54_2:Pause()
-	elseif var_54_0 == GAME.STORY_END then
-		var_54_2:Resume()
-	elseif var_54_0 == GAME.START_GUIDE then
-		var_54_2:Pause()
-	elseif var_54_0 == GAME.END_GUIDE then
-		var_54_2:Resume()
-	elseif var_54_0 == GAME.PAUSE_BATTLE then
-		if not var_54_2:IsPause() then
-			arg_54_0:onPauseBtn()
+	elseif slot2 == GAME.STORY_BEGIN then
+		slot4:Pause()
+	elseif slot2 == GAME.STORY_END then
+		slot4:Resume()
+	elseif slot2 == GAME.START_GUIDE then
+		slot4:Pause()
+	elseif slot2 == GAME.END_GUIDE then
+		slot4:Resume()
+	elseif slot2 == GAME.PAUSE_BATTLE then
+		if not slot4:IsPause() then
+			slot0:onPauseBtn()
 		end
-	elseif var_54_0 == GAME.RESUME_BATTLE then
-		var_54_2:Resume()
-	elseif var_54_0 == GAME.FINISH_STAGE_ERROR then
+	elseif slot2 == GAME.RESUME_BATTLE then
+		slot4:Resume()
+	elseif slot2 == GAME.FINISH_STAGE_ERROR then
 		gcAll(true)
 
-		local var_54_7 = getProxy(ContextProxy)
-		local var_54_8 = var_54_7:getContextByMediator(DailyLevelMediator)
-		local var_54_9 = var_54_7:getContextByMediator(LevelMediator2)
-		local var_54_10 = var_54_7:getContextByMediator(ChallengeMainMediator)
-		local var_54_11 = var_54_7:getContextByMediator(ActivityBossMediatorTemplate)
+		slot6 = getProxy(ContextProxy)
+		slot8 = slot6:getContextByMediator(LevelMediator2)
+		slot9 = slot6:getContextByMediator(ChallengeMainMediator)
+		slot10 = slot6:getContextByMediator(ActivityBossMediatorTemplate)
 
-		if var_54_8 then
-			local var_54_12 = var_54_8:getContextByMediator(PreCombatMediator)
-
-			var_54_8:removeChild(var_54_12)
-		elseif var_54_10 then
-			local var_54_13 = var_54_10:getContextByMediator(ChallengePreCombatMediator)
-
-			var_54_10:removeChild(var_54_13)
-		elseif var_54_9 then
-			if var_54_3 == SYSTEM_DUEL then
-				-- block empty
-			elseif var_54_3 == SYSTEM_SCENARIO then
-				local var_54_14 = var_54_9:getContextByMediator(ChapterPreCombatMediator)
-
-				var_54_9:removeChild(var_54_14)
-			elseif var_54_3 ~= SYSTEM_PERFORM and var_54_3 ~= SYSTEM_SIMULATION then
-				local var_54_15 = var_54_9:getContextByMediator(PreCombatMediator)
-
-				if var_54_15 then
-					var_54_9:removeChild(var_54_15)
-				end
+		if slot6:getContextByMediator(DailyLevelMediator) then
+			slot7:removeChild(slot7:getContextByMediator(PreCombatMediator))
+		elseif slot9 then
+			slot9:removeChild(slot9:getContextByMediator(ChallengePreCombatMediator))
+		elseif slot8 then
+			if slot5 == SYSTEM_DUEL then
+				-- Nothing
+			elseif slot5 == SYSTEM_SCENARIO then
+				slot8:removeChild(slot8:getContextByMediator(ChapterPreCombatMediator))
+			elseif slot5 ~= SYSTEM_PERFORM and slot5 ~= SYSTEM_SIMULATION and slot8:getContextByMediator(PreCombatMediator) then
+				slot8:removeChild(slot11)
 			end
-		elseif var_54_11 then
-			local var_54_16 = var_54_11:getContextByMediator(PreCombatMediator)
-
-			if var_54_16 then
-				var_54_11:removeChild(var_54_16)
-			end
+		elseif slot10 and slot10:getContextByMediator(PreCombatMediator) then
+			slot10:removeChild(slot11)
 		end
 
-		arg_54_0:sendNotification(GAME.GO_BACK)
-	elseif var_54_0 == var_0_0.CLOSE_CHAT then
-		arg_54_0.viewComponent:OnCloseChat()
-	elseif var_54_0 == var_0_0.HIDE_ALL_BUTTONS then
+		slot0:sendNotification(GAME.GO_BACK)
+	elseif slot2 == uv0.CLOSE_CHAT then
+		slot0.viewComponent:OnCloseChat()
+	elseif slot2 == uv0.HIDE_ALL_BUTTONS then
 		ys.Battle.BattleState.GetInstance():GetProxyByName(ys.Battle.BattleDataProxy.__name):DispatchEvent(ys.Event.New(ys.Battle.BattleEvent.HIDE_INTERACTABLE_BUTTONS, {
-			isActive = var_54_1
+			isActive = slot3
 		}))
-	elseif var_54_0 == GAME.QUIT_BATTLE then
-		var_54_2:Stop()
+	elseif slot2 == GAME.QUIT_BATTLE then
+		slot4:Stop()
 	end
 end
 
-function var_0_0.remove(arg_55_0)
+function slot0.remove(slot0)
 	pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(false)
 end
 
-return var_0_0
+return slot0

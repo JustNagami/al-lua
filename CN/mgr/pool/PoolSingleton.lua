@@ -1,16 +1,16 @@
-﻿local var_0_0 = require("Mgr/Pool/PoolUtil")
-local var_0_1 = class("PoolSingleton")
+slot0 = require("Mgr/Pool/PoolUtil")
+slot1 = class("PoolSingleton")
 
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.prefab = arg_1_1
-	arg_1_0.index = 0
+function slot1.Ctor(slot0, slot1)
+	slot0.prefab = slot1
+	slot0.index = 0
 end
 
-function var_0_1.Clear(arg_2_0)
-	var_0_0.Destroy(arg_2_0.prefab)
+function slot1.Clear(slot0)
+	uv0.Destroy(slot0.prefab)
 
-	arg_2_0.prefab = nil
-	arg_2_0.index = 0
+	slot0.prefab = nil
+	slot0.index = 0
 end
 
-return var_0_1
+return slot1

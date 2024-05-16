@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.01
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -147,5 +136,16 @@
 	id = 1011712,
 	picture = "0",
 	aniEffect = "",
-	desc = "杜尔拉汗回复skill"
+	desc = "杜尔拉汗回复skill",
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.01
+			}
+		}
+	}
 }

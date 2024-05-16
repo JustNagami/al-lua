@@ -1,168 +1,148 @@
-﻿ys = ys or {}
-
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = var_0_0.Battle.BattleBulletEvent
-local var_0_3 = var_0_0.Battle.BattleFormulas
-
-var_0_0.Battle.BattleShrapnelBulletUnit = class("BattleShrapnelBulletUnit", var_0_0.Battle.BattleBulletUnit)
-var_0_0.Battle.BattleShrapnelBulletUnit.__name = "BattleShrapnelBulletUnit"
-
-local var_0_4 = var_0_0.Battle.BattleShrapnelBulletUnit
-
-var_0_4.STATE_NORMAL = "normal"
-var_0_4.STATE_SPLIT = "split"
-var_0_4.STATE_SPIN = "spin"
-var_0_4.STATE_FINAL_SPLIT = "final_split"
-var_0_4.STATE_EXPIRE = "expire"
-var_0_4.STATE_PRIORITY = {
-	[var_0_4.STATE_EXPIRE] = 5,
-	[var_0_4.STATE_FINAL_SPLIT] = 4,
-	[var_0_4.STATE_SPLIT] = 3,
-	[var_0_4.STATE_SPIN] = 2,
-	[var_0_4.STATE_NORMAL] = 1
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = slot0.Battle.BattleBulletEvent
+slot3 = slot0.Battle.BattleFormulas
+slot0.Battle.BattleShrapnelBulletUnit = class("BattleShrapnelBulletUnit", slot0.Battle.BattleBulletUnit)
+slot0.Battle.BattleShrapnelBulletUnit.__name = "BattleShrapnelBulletUnit"
+slot4 = slot0.Battle.BattleShrapnelBulletUnit
+slot4.STATE_NORMAL = "normal"
+slot4.STATE_SPLIT = "split"
+slot4.STATE_SPIN = "spin"
+slot4.STATE_FINAL_SPLIT = "final_split"
+slot4.STATE_EXPIRE = "expire"
+slot4.STATE_PRIORITY = {
+	[slot4.STATE_EXPIRE] = 5,
+	[slot4.STATE_FINAL_SPLIT] = 4,
+	[slot4.STATE_SPLIT] = 3,
+	[slot4.STATE_SPIN] = 2,
+	[slot4.STATE_NORMAL] = 1
 }
 
-function var_0_4.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_4.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot4.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0._splitCount = 0
-	arg_1_0._cacheEmitter = {}
+	slot0._splitCount = 0
+	slot0._cacheEmitter = {}
 
-	arg_1_0:ChangeShrapnelState(arg_1_0.STATE_NORMAL)
+	slot0:ChangeShrapnelState(slot0.STATE_NORMAL)
 end
 
-function var_0_4.Hit(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_0:GetTemplate().extra_param.rangeAA then
+function slot4.Hit(slot0, slot1, slot2)
+	if slot0:GetTemplate().extra_param.rangeAA then
 		return
 	end
 
-	var_0_4.super.Hit(arg_2_0, arg_2_1, arg_2_2)
+	uv0.super.Hit(slot0, slot1, slot2)
 
-	arg_2_0._pierceCount = arg_2_0._pierceCount - 1
+	slot0._pierceCount = slot0._pierceCount - 1
 end
 
-function var_0_4.SplitFinishCount(arg_3_0)
-	arg_3_0._splitCount = arg_3_0._splitCount + 1
+function slot4.SplitFinishCount(slot0)
+	slot0._splitCount = slot0._splitCount + 1
 end
 
-function var_0_4.IsAllSplitFinish(arg_4_0)
-	return arg_4_0._splitCount >= #arg_4_0._tempData.extra_param.shrapnel
+function slot4.IsAllSplitFinish(slot0)
+	return slot0._splitCount >= #slot0._tempData.extra_param.shrapnel
 end
 
-function var_0_4.Update(arg_5_0, arg_5_1)
-	if arg_5_0._currentState == var_0_4.STATE_NORMAL then
-		local var_5_0 = arg_5_0._verticalSpeed
+function slot4.Update(slot0, slot1)
+	if slot0._currentState == uv0.STATE_NORMAL then
+		uv0.super.Update(slot0, slot1)
 
-		var_0_4.super.Update(arg_5_0, arg_5_1)
-
-		if var_5_0 ~= 0 and var_5_0 * arg_5_0._verticalSpeed < 0 then
-			arg_5_0:ChangeShrapnelState(var_0_4.STATE_SPLIT)
+		if slot0._verticalSpeed ~= 0 and slot2 * slot0._verticalSpeed < 0 then
+			slot0:ChangeShrapnelState(uv0.STATE_SPLIT)
 		end
-	elseif arg_5_0._currentState == var_0_4.STATE_SPIN and (not arg_5_0._tempData.extra_param.lastTime or arg_5_1 - arg_5_0._spinStartTime > arg_5_0._tempData.extra_param.lastTime) then
-		arg_5_0:ChangeShrapnelState(var_0_4.STATE_SPLIT)
+	elseif slot0._currentState == uv0.STATE_SPIN and (not slot0._tempData.extra_param.lastTime or slot0._tempData.extra_param.lastTime < slot1 - slot0._spinStartTime) then
+		slot0:ChangeShrapnelState(uv0.STATE_SPLIT)
 	end
 end
 
-function var_0_4.ChangeShrapnelState(arg_6_0, arg_6_1)
-	local var_6_0 = var_0_4.STATE_PRIORITY[arg_6_0._currentState]
-
-	if var_6_0 and var_6_0 >= var_0_4.STATE_PRIORITY[arg_6_1] then
+function slot4.ChangeShrapnelState(slot0, slot1)
+	if uv0.STATE_PRIORITY[slot0._currentState] and uv0.STATE_PRIORITY[slot1] <= slot2 then
 		return
 	end
 
-	arg_6_0._currentState = arg_6_1
+	slot0._currentState = slot1
 
-	if arg_6_0._currentState == var_0_4.STATE_SPIN then
-		arg_6_0._spinStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-	elseif arg_6_0._currentState == var_0_4.STATE_SPLIT then
-		arg_6_0:DispatchEvent(var_0_0.Event.New(var_0_2.SPLIT, {}))
+	if slot0._currentState == uv0.STATE_SPIN then
+		slot0._spinStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	elseif slot0._currentState == uv0.STATE_SPLIT then
+		slot0:DispatchEvent(uv1.Event.New(uv2.SPLIT, {}))
 	end
 end
 
-function var_0_4.IsOutRange(arg_7_0, arg_7_1)
-	if arg_7_0._currentState == var_0_4.STATE_NORMAL then
-		return var_0_4.super.IsOutRange(arg_7_0, arg_7_1)
+function slot4.IsOutRange(slot0, slot1)
+	if slot0._currentState == uv0.STATE_NORMAL then
+		return uv0.super.IsOutRange(slot0, slot1)
 	else
 		return false
 	end
 end
 
-function var_0_4.SetSrcHost(arg_8_0, arg_8_1)
-	arg_8_0._srcHost = arg_8_1
+function slot4.SetSrcHost(slot0, slot1)
+	slot0._srcHost = slot1
 end
 
-function var_0_4.GetSrcHost(arg_9_0)
-	return arg_9_0._srcHost
+function slot4.GetSrcHost(slot0)
+	return slot0._srcHost
 end
 
-function var_0_4.GetShrapnelParam(arg_10_0)
-	return arg_10_0._tempData.extra_param
+function slot4.GetShrapnelParam(slot0)
+	return slot0._tempData.extra_param
 end
 
-function var_0_4.GetCurrentState(arg_11_0)
-	return arg_11_0._currentState
+function slot4.GetCurrentState(slot0)
+	return slot0._currentState
 end
 
-function var_0_4.SetSpawnPosition(arg_12_0, arg_12_1)
-	var_0_4.super.SetSpawnPosition(arg_12_0, arg_12_1)
+function slot4.SetSpawnPosition(slot0, slot1)
+	uv0.super.SetSpawnPosition(slot0, slot1)
 
-	local var_12_0 = arg_12_0:GetTemplate().extra_param
-	local var_12_1 = pg.Tool.FilterY(arg_12_0._spawnPos)
-	local var_12_2 = Vector3.Distance(var_12_1, pg.Tool.FilterY(arg_12_0._explodePos))
+	slot4 = Vector3.Distance(pg.Tool.FilterY(slot0._spawnPos), pg.Tool.FilterY(slot0._explodePos))
 
-	if var_12_0.flare then
-		local var_12_3 = var_12_0.shrapnel[1].bullet_ID
-		local var_12_4 = var_0_0.Battle.BattleDataFunction.GetBulletTmpDataFromID(var_12_3)
-		local var_12_5 = var_12_4.hit_type.time
-		local var_12_6 = 0.5 * math.abs(var_12_4.extra_param.gravity or -0.0005) * (var_12_5 * var_0_1.calcFPS)^2 - arg_12_0._spawnPos.y
-
-		arg_12_0._convertedVelocity = math.sqrt(-0.5 * arg_12_0._gravity * var_12_2 * var_12_2 / var_12_6)
-
-		local var_12_7 = var_12_2 / arg_12_0._convertedVelocity
-
-		arg_12_0._verticalSpeed = var_12_6 / var_12_7 - 0.5 * arg_12_0._gravity * var_12_7
-	elseif var_12_0.rangeAA then
-		local var_12_8 = var_0_1.AircraftHeight - arg_12_0._spawnPos.y
-		local var_12_9 = 0.5 * arg_12_0._gravity
-
-		arg_12_0._velocity = math.sqrt(-var_12_9 * var_12_2 * var_12_2 / var_12_8)
-
-		local var_12_10 = var_12_2 / arg_12_0._velocity
-
-		arg_12_0._verticalSpeed = var_12_8 / var_12_10 - var_12_9 * var_12_10
-		arg_12_0._velocity = var_0_3.ConvertBulletDataSpeed(arg_12_0._velocity)
-	elseif arg_12_0._convertedVelocity ~= 0 then
-		local var_12_11 = var_12_2 / arg_12_0._convertedVelocity
-		local var_12_12 = arg_12_0._explodePos.y - arg_12_0._spawnPos.y
-
-		arg_12_0._verticalSpeed = var_12_0.launchVrtSpeed or var_12_12 / var_12_11 - 0.5 * arg_12_0._gravity * var_12_11
+	if slot0:GetTemplate().extra_param.flare then
+		slot6 = uv1.Battle.BattleDataFunction.GetBulletTmpDataFromID(slot2.shrapnel[1].bullet_ID)
+		slot9 = 0.5 * math.abs(slot6.extra_param.gravity or -0.0005) * (slot6.hit_type.time * uv2.calcFPS)^2 - slot0._spawnPos.y
+		slot0._convertedVelocity = math.sqrt(-0.5 * slot0._gravity * slot4 * slot4 / slot9)
+		slot10 = slot4 / slot0._convertedVelocity
+		slot0._verticalSpeed = slot9 / slot10 - 0.5 * slot0._gravity * slot10
+	elseif slot2.rangeAA then
+		slot5 = uv2.AircraftHeight - slot0._spawnPos.y
+		slot6 = 0.5 * slot0._gravity
+		slot0._velocity = math.sqrt(-slot6 * slot4 * slot4 / slot5)
+		slot7 = slot4 / slot0._velocity
+		slot0._verticalSpeed = slot5 / slot7 - slot6 * slot7
+		slot0._velocity = uv3.ConvertBulletDataSpeed(slot0._velocity)
+	elseif slot0._convertedVelocity ~= 0 then
+		slot5 = slot4 / slot0._convertedVelocity
+		slot0._verticalSpeed = slot2.launchVrtSpeed or (slot0._explodePos.y - slot0._spawnPos.y) / slot5 - 0.5 * slot0._gravity * slot5
 	end
 end
 
-function var_0_4.GetExplodePostion(arg_13_0)
-	return arg_13_0._explodePos
+function slot4.GetExplodePostion(slot0)
+	return slot0._explodePos
 end
 
-function var_0_4.SetExplodePosition(arg_14_0, arg_14_1)
-	arg_14_0._explodePos = Clone(arg_14_1)
-	arg_14_0._explodePos.y = var_0_1.BombDetonateHeight
+function slot4.SetExplodePosition(slot0, slot1)
+	slot0._explodePos = Clone(slot1)
+	slot0._explodePos.y = uv0.BombDetonateHeight
 end
 
-function var_0_4.CacheChildEimtter(arg_15_0, arg_15_1)
-	table.insert(arg_15_0._cacheEmitter, arg_15_1)
+function slot4.CacheChildEimtter(slot0, slot1)
+	table.insert(slot0._cacheEmitter, slot1)
 end
 
-function var_0_4.interruptChildEmitter(arg_16_0)
-	for iter_16_0, iter_16_1 in ipairs(arg_16_0._cacheEmitter) do
-		iter_16_1:Destroy()
+function slot4.interruptChildEmitter(slot0)
+	for slot4, slot5 in ipairs(slot0._cacheEmitter) do
+		slot5:Destroy()
 	end
 end
 
-function var_0_4.Dispose(arg_17_0)
-	arg_17_0:interruptChildEmitter()
+function slot4.Dispose(slot0)
+	slot0:interruptChildEmitter()
 
-	arg_17_0._cacheEmitter = nil
+	slot0._cacheEmitter = nil
 
-	var_0_4.super.Dispose(arg_17_0)
+	uv0.super.Dispose(slot0)
 end

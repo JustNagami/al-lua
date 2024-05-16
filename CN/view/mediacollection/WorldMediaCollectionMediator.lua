@@ -1,31 +1,29 @@
-﻿local var_0_0 = class("WorldMediaCollectionMediator", ContextMediator)
+slot0 = class("WorldMediaCollectionMediator", ContextMediator)
+slot0.BEGIN_STAGE = "WorldMediaCollectionMediator BEGIN_STAGE"
 
-var_0_0.BEGIN_STAGE = "WorldMediaCollectionMediator BEGIN_STAGE"
+function slot0.register(slot0)
+	slot0:bind(uv0.BEGIN_STAGE, function (slot0, slot1)
+		uv0.contextData.revertBgm = pg.CriMgr.GetInstance().bgmNow
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.BEGIN_STAGE, function(arg_2_0, arg_2_1)
-		arg_1_0.contextData.revertBgm = pg.CriMgr.GetInstance().bgmNow
-
-		arg_1_0:sendNotification(GAME.BEGIN_STAGE, arg_2_1)
+		uv0:sendNotification(GAME.BEGIN_STAGE, slot1)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.BEGIN_STAGE_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_4_0 == PlayerProxy.UPDATED then
-		arg_4_0.viewComponent:UpdateView()
-	elseif var_4_0 == GAME.BEGIN_STAGE_DONE then
-		arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_4_1)
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:UpdateView()
+	elseif slot2 == GAME.BEGIN_STAGE_DONE then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
 	end
 end
 
-return var_0_0
+return slot0

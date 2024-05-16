@@ -1,22 +1,20 @@
-﻿local var_0_0 = class("BaseShop", import("..BaseVO"))
+slot0 = class("BaseShop", import("..BaseVO"))
 
-function var_0_0.IsSameKind(arg_1_0, arg_1_1)
+function slot0.IsSameKind(slot0, slot1)
 	assert(false)
 end
 
-function var_0_0.GetCommodityById(arg_2_0, arg_2_1)
+function slot0.GetCommodityById(slot0, slot1)
 	assert(false)
 end
 
-function var_0_0.GetCommodities(arg_3_0)
+function slot0.GetCommodities(slot0)
 	assert(false)
 end
 
-function var_0_0.IsPurchaseAll(arg_4_0)
-	local var_4_0 = arg_4_0:GetCommodities()
-
-	for iter_4_0, iter_4_1 in pairs(var_4_0) do
-		if iter_4_1:canPurchase() then
+function slot0.IsPurchaseAll(slot0)
+	for slot5, slot6 in pairs(slot0:GetCommodities()) do
+		if slot6:canPurchase() then
 			return false
 		end
 	end
@@ -24,4 +22,4 @@ function var_0_0.IsPurchaseAll(arg_4_0)
 	return true
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "连接着的羁绊",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "连接着的羁绊-检测TAG",
+	stack = 1,
+	id = 104031,
+	icon = 104030,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -37,25 +57,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "连接着的羁绊",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "连接着的羁绊-检测TAG",
-	stack = 1,
-	id = 104031,
-	icon = 104030,
-	last_effect = ""
+	}
 }

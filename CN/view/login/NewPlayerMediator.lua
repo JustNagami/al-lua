@@ -1,46 +1,42 @@
-﻿local var_0_0 = class("NewPlayerMediator", import("..base.ContextMediator"))
+slot0 = class("NewPlayerMediator", import("..base.ContextMediator"))
+slot0.ON_CREATE = "NewPlayerMediator:ON_CREATE"
+slot0.ON_SKILLINFO = "NewPlayerMediator:ON_SKILLINFO"
 
-var_0_0.ON_CREATE = "NewPlayerMediator:ON_CREATE"
-var_0_0.ON_SKILLINFO = "NewPlayerMediator:ON_SKILLINFO"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_CREATE, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.CREATE_NEW_PLAYER, {
-			nickname = arg_2_1,
-			shipId = arg_2_2
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_CREATE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.CREATE_NEW_PLAYER, {
+			nickname = slot1,
+			shipId = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SKILLINFO, function(arg_3_0, arg_3_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_SKILLINFO, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = SkillInfoLayer,
 			data = {
 				fromNewShip = true,
-				skillId = arg_3_1
+				skillId = slot1
 			}
 		}))
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.CREATE_NEW_PLAYER_DONE,
 		GAME.LOAD_PLAYER_DATA_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
-
-	if var_5_0 == GAME.CREATE_NEW_PLAYER_DONE then
-		arg_5_0.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.CREATE_NEW_PLAYER_DONE then
+		slot0.facade:sendNotification(GAME.LOAD_PLAYER_DATA, {
 			isNewPlayer = true,
-			id = var_5_1
+			id = slot1:getBody()
 		})
-	elseif var_5_0 == GAME.LOAD_PLAYER_DATA_DONE then
-		arg_5_0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
+	elseif slot2 == GAME.LOAD_PLAYER_DATA_DONE then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 	end
 end
 
-return var_0_0
+return slot0

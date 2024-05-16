@@ -1,94 +1,82 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleDataFunction
+slot2 = slot0.Battle.BattleConst
+slot3 = class("BattleSkillFireSupport", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillFireSupport = slot3
+slot3.__name = "BattleSkillFireSupport"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleDataFunction
-local var_0_2 = var_0_0.Battle.BattleConst
-local var_0_3 = class("BattleSkillFireSupport", var_0_0.Battle.BattleSkillEffect)
+function slot3.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1, lv)
 
-var_0_0.Battle.BattleSkillFireSupport = var_0_3
-var_0_3.__name = "BattleSkillFireSupport"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	var_0_3.super.Ctor(arg_1_0, arg_1_1, lv)
-
-	arg_1_0._weaponID = arg_1_0._tempData.arg_list.weapon_id
-	arg_1_0._supportTargetFilter = arg_1_0._tempData.arg_list.supportTarget.targetChoice
-	arg_1_0._supportTargetArgList = arg_1_0._tempData.arg_list.supportTarget.arg_list
+	slot0._weaponID = slot0._tempData.arg_list.weapon_id
+	slot0._supportTargetFilter = slot0._tempData.arg_list.supportTarget.targetChoice
+	slot0._supportTargetArgList = slot0._tempData.arg_list.supportTarget.arg_list
 end
 
-function var_0_3.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_0._weapon == nil then
-		local var_2_0
-
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0._supportTargetFilter) do
-			var_2_0 = var_0_0.Battle.BattleTargetChoise[iter_2_1](arg_2_1, arg_2_0._supportTargetArgList, var_2_0)
+function slot3.DoDataEffect(slot0, slot1, slot2)
+	if slot0._weapon == nil then
+		for slot7, slot8 in ipairs(slot0._supportTargetFilter) do
+			slot3 = uv0.Battle.BattleTargetChoise[slot8](slot1, slot0._supportTargetArgList, nil)
 		end
 
-		local var_2_1 = var_2_0[1]
+		slot4 = slot3[1]
+		slot0._weapon = uv0.Battle.BattleDataFunction.CreateWeaponUnit(slot0._weaponID, slot1)
 
-		arg_2_0._weapon = var_0_0.Battle.BattleDataFunction.CreateWeaponUnit(arg_2_0._weaponID, arg_2_1)
-
-		if BATTLE_DEBUG and (arg_2_0._weapon:GetType() == var_0_2.EquipmentType.INTERCEPT_AIRCRAFT or arg_2_0._weapon:GetType() == var_0_2.EquipmentType.STRIKE_AIRCRAFT) then
-			arg_2_0._weapon:GetATKAircraftList()
+		if BATTLE_DEBUG and (slot0._weapon:GetType() == uv1.EquipmentType.INTERCEPT_AIRCRAFT or slot0._weapon:GetType() == uv1.EquipmentType.STRIKE_AIRCRAFT) then
+			slot0._weapon:GetATKAircraftList()
 		end
 
-		if var_2_1 then
-			arg_2_0._weapon:SetStandHost(var_2_1)
+		if slot4 then
+			slot0._weapon:SetStandHost(slot4)
 		end
 
-		local var_2_2 = {
-			weapon = arg_2_0._weapon
-		}
-		local var_2_3 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.CREATE_TEMPORARY_WEAPON, var_2_2)
-
-		arg_2_1:DispatchEvent(var_2_3)
+		slot1:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.CREATE_TEMPORARY_WEAPON, {
+			weapon = slot0._weapon
+		}))
 	end
 
-	local function var_2_4()
-		arg_2_0._weapon:Clear()
-	end
-
-	arg_2_0._weapon:updateMovementInfo()
-	arg_2_0._weapon:SingleFire(arg_2_2, arg_2_0._emitter, var_2_4)
+	slot0._weapon:updateMovementInfo()
+	slot0._weapon:SingleFire(slot2, slot0._emitter, function ()
+		uv0._weapon:Clear()
+	end)
 end
 
-function var_0_3.DoDataEffectWithoutTarget(arg_4_0, arg_4_1)
-	arg_4_0:DoDataEffect(arg_4_1)
+function slot3.DoDataEffectWithoutTarget(slot0, slot1)
+	slot0:DoDataEffect(slot1)
 end
 
-function var_0_3.Clear(arg_5_0)
-	var_0_3.super.Clear(arg_5_0)
+function slot3.Clear(slot0)
+	uv0.super.Clear(slot0)
 
-	if arg_5_0._weapon and not arg_5_0._weapon:GetHost():IsAlive() then
-		arg_5_0._weapon:Clear()
+	if slot0._weapon and not slot0._weapon:GetHost():IsAlive() then
+		slot0._weapon:Clear()
 	end
 end
 
-function var_0_3.Interrupt(arg_6_0)
-	var_0_3.super.Interrupt(arg_6_0)
+function slot3.Interrupt(slot0)
+	uv0.super.Interrupt(slot0)
 
-	if arg_6_0._weapon then
-		arg_6_0._weapon:Cease()
-		arg_6_0._weapon:Clear()
+	if slot0._weapon then
+		slot0._weapon:Cease()
+		slot0._weapon:Clear()
 	end
 end
 
-function var_0_3.GetDamageSum(arg_7_0)
-	local var_7_0 = 0
+function slot3.GetDamageSum(slot0)
+	slot1 = 0
 
-	if not arg_7_0._weapon then
-		var_7_0 = 0
-	elseif arg_7_0._weapon:GetType() == var_0_2.EquipmentType.INTERCEPT_AIRCRAFT or arg_7_0._weapon:GetType() == var_0_2.EquipmentType.STRIKE_AIRCRAFT then
-		for iter_7_0, iter_7_1 in ipairs(arg_7_0._weapon:GetATKAircraftList()) do
-			local var_7_1 = iter_7_1:GetWeapon()
-
-			for iter_7_2, iter_7_3 in ipairs(var_7_1) do
-				var_7_0 = var_7_0 + iter_7_3:GetDamageSUM()
+	if not slot0._weapon then
+		slot1 = 0
+	elseif slot0._weapon:GetType() == uv0.EquipmentType.INTERCEPT_AIRCRAFT or slot0._weapon:GetType() == uv0.EquipmentType.STRIKE_AIRCRAFT then
+		for slot5, slot6 in ipairs(slot0._weapon:GetATKAircraftList()) do
+			for slot11, slot12 in ipairs(slot6:GetWeapon()) do
+				slot1 = slot1 + slot12:GetDamageSUM()
 			end
 		end
 	else
-		var_7_0 = arg_7_0._weapon:GetDamageSUM()
+		slot1 = slot0._weapon:GetDamageSUM()
 	end
 
-	return var_7_0
+	return slot1
 end

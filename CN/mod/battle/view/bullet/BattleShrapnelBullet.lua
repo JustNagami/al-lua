@@ -1,26 +1,24 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleBulletEvent
+slot2 = class("BattleShrapnelBullet", slot0.Battle.BattleBullet)
+slot0.Battle.BattleShrapnelBullet = slot2
+slot2.__name = "BattleShrapnelBullet"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleBulletEvent
-local var_0_2 = class("BattleShrapnelBullet", var_0_0.Battle.BattleBullet)
-
-var_0_0.Battle.BattleShrapnelBullet = var_0_2
-var_0_2.__name = "BattleShrapnelBullet"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot2.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 end
 
-function var_0_2.AddBulletEvent(arg_2_0)
-	var_0_2.super.AddBulletEvent(arg_2_0)
-	arg_2_0._bulletData:RegisterEventListener(arg_2_0, var_0_1.SPLIT, arg_2_0.onBulletSplit)
+function slot2.AddBulletEvent(slot0)
+	uv0.super.AddBulletEvent(slot0)
+	slot0._bulletData:RegisterEventListener(slot0, uv1.SPLIT, slot0.onBulletSplit)
 end
 
-function var_0_2.RemoveBulletEvent(arg_3_0)
-	var_0_2.super.RemoveBulletEvent(arg_3_0)
-	arg_3_0._bulletData:UnregisterEventListener(arg_3_0, var_0_1.SPLIT)
+function slot2.RemoveBulletEvent(slot0)
+	uv0.super.RemoveBulletEvent(slot0)
+	slot0._bulletData:UnregisterEventListener(slot0, uv1.SPLIT)
 end
 
-function var_0_2.onBulletSplit(arg_4_0, arg_4_1)
-	arg_4_0._bulletHitFunc(arg_4_0)
+function slot2.onBulletSplit(slot0, slot1)
+	slot0:_bulletHitFunc()
 end

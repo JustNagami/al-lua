@@ -1,24 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			target_choise = {
-				"TargetPlayerVanguardFleet",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.01
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -166,5 +146,25 @@
 	id = 14764,
 	picture = "0",
 	castCV = "skill",
-	desc = "耐久回复"
+	desc = "耐久回复",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			target_choise = {
+				"TargetPlayerVanguardFleet",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.01
+			}
+		}
+	}
 }

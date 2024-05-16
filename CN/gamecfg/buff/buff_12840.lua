@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 12840,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 12842,
-				target = "TargetPlayerVanguardFleet"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -39,5 +19,25 @@
 	stack = 1,
 	id = 12840,
 	icon = 12840,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 12840,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 12842,
+				target = "TargetPlayerVanguardFleet"
+			}
+		}
+	}
 }

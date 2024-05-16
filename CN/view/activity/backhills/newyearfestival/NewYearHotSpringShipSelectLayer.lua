@@ -1,173 +1,162 @@
-﻿local var_0_0 = class("NewYearHotSpringShipSelectLayer", import("view.base.BaseUI"))
-local var_0_1 = import(".NewYearHotSpringFormationCard")
+slot0 = class("NewYearHotSpringShipSelectLayer", import("view.base.BaseUI"))
+slot1 = import(".NewYearHotSpringFormationCard")
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "NewYearHotSpringShipSelectUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.counterTxt = arg_2_0:findTF("frame/top/value/Text"):GetComponent(typeof(Text))
-	arg_2_0.cardContainer = arg_2_0:findTF("frame/panel")
-	arg_2_0.mainPanel = arg_2_0:findTF("frame")
-	arg_2_0.addShipTpl = arg_2_0.cardContainer:Find("AddShipTpl")
-	arg_2_0.extendShipTpl = arg_2_0.cardContainer:Find("ExtendShipTpl")
-	arg_2_0.shipCardTpl = arg_2_0.cardContainer:Find("ShipCardTpl")
+function slot0.init(slot0)
+	slot0.counterTxt = slot0:findTF("frame/top/value/Text"):GetComponent(typeof(Text))
+	slot0.cardContainer = slot0:findTF("frame/panel")
+	slot0.mainPanel = slot0:findTF("frame")
+	slot0.addShipTpl = slot0.cardContainer:Find("AddShipTpl")
+	slot0.extendShipTpl = slot0.cardContainer:Find("ExtendShipTpl")
+	slot0.shipCardTpl = slot0.cardContainer:Find("ShipCardTpl")
 
-	setActive(arg_2_0.addShipTpl, false)
-	setActive(arg_2_0.extendShipTpl, false)
-	setActive(arg_2_0.shipCardTpl, false)
+	setActive(slot0.addShipTpl, false)
+	setActive(slot0.extendShipTpl, false)
+	setActive(slot0.shipCardTpl, false)
 
-	arg_2_0.cardContainer = arg_2_0.cardContainer:Find("Scroll View/Content")
-	arg_2_0.shipCards = {}
+	slot0.cardContainer = slot0.cardContainer:Find("Scroll View/Content")
+	slot0.shipCards = {}
 
-	setText(arg_2_0:findTF("frame/desc"), i18n("hotspring_tip1"))
+	setText(slot0:findTF("frame/desc"), i18n("hotspring_tip1"))
 end
 
-function var_0_0.SetActivity(arg_3_0, arg_3_1)
-	arg_3_0.activity = arg_3_1
+function slot0.SetActivity(slot0, slot1)
+	slot0.activity = slot1
 end
 
-function var_0_0.didEnter(arg_4_0)
-	arg_4_0._tf:Find("BG"):SetSiblingIndex(0)
-	onButton(arg_4_0, arg_4_0._tf:Find("BG"), function()
-		arg_4_0:emit(var_0_0.ON_CLOSE)
+function slot0.didEnter(slot0)
+	slot0._tf:Find("BG"):SetSiblingIndex(0)
+	onButton(slot0, slot0._tf:Find("BG"), function ()
+		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_PANEL)
 
-	local function var_4_0(arg_6_0)
-		setActive(arg_4_0:findTF("frame/panel/ArrowRight"), arg_6_0.x < 0.01)
-		setActive(arg_4_0:findTF("frame/panel/ArrowLeft"), arg_6_0.x > 0.99)
+	function slot1(slot0)
+		setActive(uv0:findTF("frame/panel/ArrowRight"), slot0.x < 0.01)
+		setActive(uv0:findTF("frame/panel/ArrowLeft"), slot0.x > 0.99)
 	end
 
-	onScroll(arg_4_0, arg_4_0.cardContainer.parent, var_4_0)
-	var_4_0({
+	onScroll(slot0, slot0.cardContainer.parent, slot1)
+	slot1({
 		x = 0
 	})
-	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.BASE_LAYER
 	})
-	arg_4_0:UpdateSlots()
+	slot0:UpdateSlots()
 end
 
-function var_0_0.UpdateSlots(arg_7_0)
-	local var_7_0 = arg_7_0.activity
-	local var_7_1 = 0
-	local var_7_2 = 0
+function slot0.UpdateSlots(slot0)
+	slot0:CleanCards()
+	_.each(_.range(1, slot0.activity:GetTotalSlotCount()), function (slot0)
+		slot1 = uv0:GetShipIds()[slot0] or 0
+		slot2 = math.clamp(slot0 - uv0:GetSlotCount(), 0, 2)
+		slot3 = slot1 > 0 and getProxy(BayProxy):RawGetShipById(slot1)
 
-	arg_7_0:CleanCards()
-	_.each(_.range(1, var_7_0:GetTotalSlotCount()), function(arg_8_0)
-		local var_8_0 = var_7_0:GetShipIds()[arg_8_0] or 0
-		local var_8_1 = math.clamp(arg_8_0 - var_7_0:GetSlotCount(), 0, 2)
-		local var_8_2 = var_8_0 > 0 and getProxy(BayProxy):RawGetShipById(var_8_0)
+		uv1:AddCard(slot0, slot2, slot3)
 
-		arg_7_0:AddCard(arg_8_0, var_8_1, var_8_2)
-
-		var_7_1 = var_7_1 + (var_8_1 == 0 and 1 or 0)
-		var_7_2 = var_7_2 + (var_8_2 and 1 or 0)
+		uv2 = uv2 + (slot2 == 0 and 1 or 0)
+		uv3 = uv3 + (slot3 and 1 or 0)
 	end)
 
-	arg_7_0.counterTxt.text = var_7_2 .. "/" .. var_7_1
+	slot0.counterTxt.text = 0 .. "/" .. 0
 end
 
-function var_0_0.AddCard(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0
+function slot0.AddCard(slot0, slot1, slot2, slot3)
+	slot4 = nil
 
-	if arg_9_2 == 0 and arg_9_3 then
-		var_9_0 = cloneTplTo(arg_9_0.shipCardTpl, arg_9_0.cardContainer)
+	if slot2 == 0 and slot3 then
+		slot4 = cloneTplTo(slot0.shipCardTpl, slot0.cardContainer)
+		slot5 = slot4:Find("content")
 
-		local var_9_1 = var_9_0:Find("content")
-		local var_9_2 = var_0_1.New(go(var_9_0))
-
-		onButton(arg_9_0, var_9_1, function()
-			arg_9_0:emit(NewYearHotSpringShipSelectMediator.OPEN_CHUANWU, arg_9_1, arg_9_3)
+		onButton(slot0, slot5, function ()
+			uv0:emit(NewYearHotSpringShipSelectMediator.OPEN_CHUANWU, uv1, uv2)
 		end, SFX_PANEL)
 
-		local var_9_3 = GetOrAddComponent(var_9_1, typeof(UILongPressTrigger))
+		slot7 = GetOrAddComponent(slot5, typeof(UILongPressTrigger))
 
-		var_9_3.onLongPressed:RemoveAllListeners()
-		var_9_3.onLongPressed:AddListener(function()
-			if not arg_9_3 then
+		slot7.onLongPressed:RemoveAllListeners()
+		slot7.onLongPressed:AddListener(function ()
+			if not uv0 then
 				return
 			end
 
-			arg_9_0:emit(NewYearHotSpringShipSelectMediator.LOOG_PRESS_SHIP, arg_9_1, arg_9_3)
+			uv1:emit(NewYearHotSpringShipSelectMediator.LOOG_PRESS_SHIP, uv2, uv0)
 		end)
-		var_9_2:update(arg_9_3)
+		uv0.New(go(slot4)):update(slot3)
 
-		local var_9_4 = arg_9_3:getRecoverEnergyPoint() + arg_9_0.activity:GetEnergyRecoverAddition()
-		local var_9_5 = 0
+		slot9 = 0
 
-		if arg_9_3.state == Ship.STATE_REST or arg_9_3.state == Ship.STATE_TRAIN then
-			if arg_9_3.state == Ship.STATE_TRAIN then
-				var_9_4 = var_9_4 + Ship.BACKYARD_1F_ENERGY_ADDITION
-			elseif arg_9_3.state == Ship.STATE_REST then
-				var_9_4 = var_9_4 + Ship.BACKYARD_2F_ENERGY_ADDITION
+		if slot3.state == Ship.STATE_REST or slot3.state == Ship.STATE_TRAIN then
+			if slot3.state == Ship.STATE_TRAIN then
+				slot8 = slot3:getRecoverEnergyPoint() + slot0.activity:GetEnergyRecoverAddition() + Ship.BACKYARD_1F_ENERGY_ADDITION
+			elseif slot3.state == Ship.STATE_REST then
+				slot8 = slot8 + Ship.BACKYARD_2F_ENERGY_ADDITION
 			end
 
-			for iter_9_0, iter_9_1 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
-				var_9_5 = var_9_5 + tonumber(iter_9_1:getConfig("benefit_effect"))
+			for slot13, slot14 in ipairs(getProxy(ActivityProxy):getBackyardEnergyActivityBuffs()) do
+				slot9 = slot9 + tonumber(slot14:getConfig("benefit_effect"))
 			end
 		end
 
-		var_9_2:updateProps1({
+		slot6:updateProps1({
 			{
 				i18n("word_lv"),
-				arg_9_3.level
+				slot3.level
 			},
 			{
 				i18n("word_nowenergy"),
-				arg_9_3.energy
+				slot3.energy
 			},
 			{
 				i18n("word_energy_recov_speed"),
-				setColorStr(10 * var_9_4, COLOR_GREEN) .. (var_9_5 > 0 and setColorStr("+" .. 10 * var_9_5, COLOR_GREEN) or "") .. "/h"
+				setColorStr(10 * slot8, COLOR_GREEN) .. (slot9 > 0 and setColorStr("+" .. 10 * slot9, COLOR_GREEN) or "") .. "/h"
 			}
 		})
-		setActive(var_9_2.propsTr, false)
-		setActive(var_9_2.propsTr1, true)
-		table.insert(arg_9_0.shipCards, {
-			info = var_9_2,
-			longpressedTigger = var_9_3
+		setActive(slot6.propsTr, false)
+		setActive(slot6.propsTr1, true)
+		table.insert(slot0.shipCards, {
+			info = slot6,
+			longpressedTigger = slot7
 		})
 	else
-		var_9_0 = cloneTplTo(arg_9_0.extendShipTpl, arg_9_0.cardContainer)
+		setActive(cloneTplTo(slot0.extendShipTpl, slot0.cardContainer):Find("content"):Find("label/add"), slot2 == 0)
+		setActive(slot5:Find("label/unlock"), slot2 == 1)
+		setActive(slot5:Find("label/lock"), slot2 == 2)
+		setActive(slot5:Find("mask"), slot2 == 2)
 
-		local var_9_6 = var_9_0:Find("content")
-
-		setActive(var_9_6:Find("label/add"), arg_9_2 == 0)
-		setActive(var_9_6:Find("label/unlock"), arg_9_2 == 1)
-		setActive(var_9_6:Find("label/lock"), arg_9_2 == 2)
-		setActive(var_9_6:Find("mask"), arg_9_2 == 2)
-
-		if arg_9_2 == 0 then
-			onButton(arg_9_0, var_9_6, function()
-				arg_9_0:emit(NewYearHotSpringShipSelectMediator.OPEN_CHUANWU, arg_9_1)
+		if slot2 == 0 then
+			onButton(slot0, slot5, function ()
+				uv0:emit(NewYearHotSpringShipSelectMediator.OPEN_CHUANWU, uv1)
 			end, SFX_PANEL)
-		elseif arg_9_2 == 1 then
-			onButton(arg_9_0, var_9_6, function()
-				arg_9_0:emit(NewYearHotSpringShipSelectMediator.EXTEND, arg_9_1)
+		elseif slot2 == 1 then
+			onButton(slot0, slot5, function ()
+				uv0:emit(NewYearHotSpringShipSelectMediator.EXTEND, uv1)
 			end, SFX_PANEL)
-		elseif arg_9_2 == 2 then
-			-- block empty
+		elseif slot2 == 2 then
+			-- Nothing
 		end
 	end
 
-	setActive(var_9_0, true)
+	setActive(slot4, true)
 end
 
-function var_0_0.CleanCards(arg_14_0)
-	_.each(arg_14_0.shipCards, function(arg_15_0)
-		arg_15_0.longpressedTigger.onLongPressed:RemoveAllListeners()
-		arg_15_0.info:clear()
+function slot0.CleanCards(slot0)
+	_.each(slot0.shipCards, function (slot0)
+		slot0.longpressedTigger.onLongPressed:RemoveAllListeners()
+		slot0.info:clear()
 	end)
 
-	arg_14_0.shipCards = {}
+	slot0.shipCards = {}
 
-	removeAllChildren(arg_14_0.cardContainer)
+	removeAllChildren(slot0.cardContainer)
 end
 
-function var_0_0.willExit(arg_16_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_16_0._tf)
-	arg_16_0:CleanCards()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	slot0:CleanCards()
 end
 
-return var_0_0
+return slot0

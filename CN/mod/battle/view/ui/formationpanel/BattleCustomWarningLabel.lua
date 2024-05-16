@@ -1,52 +1,48 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleDataFunction
+slot2 = class("BattleCustomWarningLabel")
+slot0.Battle.BattleCustomWarningLabel = slot2
+slot2.__name = "BattleCustomWarningLabel"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleDataFunction
-local var_0_2 = class("BattleCustomWarningLabel")
-
-var_0_0.Battle.BattleCustomWarningLabel = var_0_2
-var_0_2.__name = "BattleCustomWarningLabel"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_1.transform
-	arg_1_0._expire = false
+function slot2.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0._expire = false
 end
 
-function var_0_2.ConfigData(arg_2_0, arg_2_1)
-	setText(arg_2_0._tf:Find("text"), i18n(arg_2_1.dialogue))
+function slot2.ConfigData(slot0, slot1)
+	setText(slot0._tf:Find("text"), i18n(slot1.dialogue))
 
-	arg_2_0._duration = arg_2_1.duration
-
-	local var_2_0 = (arg_2_1.x + 1) * 0.5
-	local var_2_1 = (arg_2_1.y + 1) * 0.5
-
-	arg_2_0._tf.anchorMin = Vector2(var_2_0, var_2_1)
-	arg_2_0._tf.anchorMax = Vector2(var_2_0, var_2_1)
-	arg_2_0._startTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+	slot0._duration = slot1.duration
+	slot2 = (slot1.x + 1) * 0.5
+	slot3 = (slot1.y + 1) * 0.5
+	slot0._tf.anchorMin = Vector2(slot2, slot3)
+	slot0._tf.anchorMax = Vector2(slot2, slot3)
+	slot0._startTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var_0_2.GetDuration(arg_3_0)
-	return arg_3_0._duration
+function slot2.GetDuration(slot0)
+	return slot0._duration
 end
 
-function var_0_2.SetExpire(arg_4_0)
-	arg_4_0._expire = true
+function slot2.SetExpire(slot0)
+	slot0._expire = true
 end
 
-function var_0_2.IsExpire(arg_5_0)
-	return arg_5_0._expire
+function slot2.IsExpire(slot0)
+	return slot0._expire
 end
 
-function var_0_2.Update(arg_6_0)
-	if arg_6_0._duration > 0 and pg.TimeMgr.GetInstance():GetCombatTime() - arg_6_0._startTimeStamp > arg_6_0._duration then
-		arg_6_0:SetExpire()
+function slot2.Update(slot0)
+	if slot0._duration > 0 and slot0._duration < pg.TimeMgr.GetInstance():GetCombatTime() - slot0._startTimeStamp then
+		slot0:SetExpire()
 	end
 end
 
-function var_0_2.Dispose(arg_7_0)
-	Destroy(arg_7_0._go)
+function slot2.Dispose(slot0)
+	Destroy(slot0._go)
 
-	arg_7_0._go = nil
-	arg_7_0._tf = nil
+	slot0._go = nil
+	slot0._tf = nil
 end

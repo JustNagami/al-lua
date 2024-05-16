@@ -1,165 +1,155 @@
-﻿local var_0_0 = class("AmusementParkShopPage", import("view.base.BaseUI"))
+slot0 = class("AmusementParkShopPage", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "AmusementParkShopPage"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.goodsContainer = arg_2_0._tf:Find("Box/Container/Goods")
-	arg_2_0.specialsContainer = arg_2_0._tf:Find("Box/Container/SpecialList")
-	arg_2_0.specailsDecoration = arg_2_0._tf:Find("Box/Container/Specials")
-	arg_2_0.specailsOtherDecoration = arg_2_0._tf:Find("Box/Container/SpecialsOther")
+function slot0.init(slot0)
+	slot0.goodsContainer = slot0._tf:Find("Box/Container/Goods")
+	slot0.specialsContainer = slot0._tf:Find("Box/Container/SpecialList")
+	slot0.specailsDecoration = slot0._tf:Find("Box/Container/Specials")
+	slot0.specailsOtherDecoration = slot0._tf:Find("Box/Container/SpecialsOther")
 
-	setActive(arg_2_0.specailsOtherDecoration, false)
+	setActive(slot0.specailsOtherDecoration, false)
 
-	arg_2_0.chat = arg_2_0._tf:Find("Box/Bubble")
-	arg_2_0.chatText = arg_2_0.chat:Find("BubbleText")
-	arg_2_0.chatClick = arg_2_0._tf:Find("Box/BubbleClick")
-	arg_2_0.chatActive = false
-	arg_2_0.pollText = {
+	slot0.chat = slot0._tf:Find("Box/Bubble")
+	slot0.chatText = slot0.chat:Find("BubbleText")
+	slot0.chatClick = slot0._tf:Find("Box/BubbleClick")
+	slot0.chatActive = false
+	slot0.pollText = {
 		i18n("amusementpark_shop_carousel1"),
 		i18n("amusementpark_shop_carousel2"),
 		i18n("amusementpark_shop_carousel3"),
 		i18n("amusementpark_shop_0")
 	}
-	arg_2_0.pollIndex = math.random(0, math.max(0, #arg_2_0.pollText - 1))
-	arg_2_0.msgbox = arg_2_0._tf:Find("Msgbox")
+	slot0.pollIndex = math.random(0, math.max(0, #slot0.pollText - 1))
+	slot0.msgbox = slot0._tf:Find("Msgbox")
 
-	setActive(arg_2_0.msgbox, false)
+	setActive(slot0.msgbox, false)
 
-	arg_2_0.contentText = arg_2_0.msgbox:Find("window/msg_panel/content"):GetComponent("RichText")
+	slot0.contentText = slot0.msgbox:Find("window/msg_panel/content"):GetComponent("RichText")
 end
 
-function var_0_0.SetShop(arg_3_0, arg_3_1)
-	arg_3_0.shop = arg_3_1
+function slot0.SetShop(slot0, slot1)
+	slot0.shop = slot1
 end
 
-function var_0_0.SetSpecial(arg_4_0, arg_4_1)
-	arg_4_0.specialLists = arg_4_1
+function slot0.SetSpecial(slot0, slot1)
+	slot0.specialLists = slot1
 end
 
-function var_0_0.didEnter(arg_5_0)
-	onButton(arg_5_0, arg_5_0._tf:Find("Top/Back"), function()
-		arg_5_0:closeView()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0._tf:Find("Top/Back"), function ()
+		uv0:closeView()
 	end, SOUND_BACK)
-	onButton(arg_5_0, arg_5_0._tf:Find("Top/Help"), function()
+	onButton(slot0, slot0._tf:Find("Top/Help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.amusementpark_shop_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.msgbox:Find("BG"), function()
-		setActive(arg_5_0.msgbox, false)
+	onButton(slot0, slot0.msgbox:Find("BG"), function ()
+		setActive(uv0.msgbox, false)
 	end)
-	onButton(arg_5_0, arg_5_0.msgbox:Find("window/button_container/Button1"), function()
-		setActive(arg_5_0.msgbox, false)
+	onButton(slot0, slot0.msgbox:Find("window/button_container/Button1"), function ()
+		setActive(uv0.msgbox, false)
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0.chatClick, function()
-		arg_5_0:SetActiveBubble(not arg_5_0.chatActive)
+	onButton(slot0, slot0.chatClick, function ()
+		uv0:SetActiveBubble(not uv0.chatActive)
 	end)
 
-	local var_5_0 = arg_5_0.shop:getResId()
-	local var_5_1 = Drop.New({
+	slot2 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = var_5_0
+		id = slot0.shop:getResId()
 	}):getIcon()
 
-	arg_5_0.contentText:AddSprite(var_5_1, LoadSprite(var_5_1, ""))
-	arg_5_0:UpdateView()
-	arg_5_0:ShowEnterMsg()
-	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf)
+	slot0.contentText:AddSprite(slot2, LoadSprite(slot2, ""))
+	slot0:UpdateView()
+	slot0:ShowEnterMsg()
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
 end
 
-function var_0_0.ShowEnterMsg(arg_11_0)
-	if _.all(_.values(arg_11_0.shop.goods), function(arg_12_0)
-		return not arg_12_0:canPurchase()
+function slot0.ShowEnterMsg(slot0)
+	if _.all(_.values(slot0.shop.goods), function (slot0)
+		return not slot0:canPurchase()
 	end) then
-		arg_11_0:ShowShipWord(i18n("amusementpark_shop_end"))
+		slot0:ShowShipWord(i18n("amusementpark_shop_end"))
 
 		return
 	end
 
-	arg_11_0:ShowShipWord(i18n("amusementpark_shop_enter"))
+	slot0:ShowShipWord(i18n("amusementpark_shop_enter"))
 end
 
-function var_0_0.UpdateView(arg_13_0)
-	local var_13_0 = arg_13_0.shop:getResId()
-	local var_13_1 = getProxy(PlayerProxy):getRawData()[id2res(var_13_0)] or 0
-
-	setText(arg_13_0._tf:Find("Box/TicketText"), "X" .. var_13_1)
-	arg_13_0:UpdateGoods()
+function slot0.UpdateView(slot0)
+	setText(slot0._tf:Find("Box/TicketText"), "X" .. (getProxy(PlayerProxy):getRawData()[id2res(slot0.shop:getResId())] or 0))
+	slot0:UpdateGoods()
 end
 
-function var_0_0.UpdateGoods(arg_14_0)
-	local var_14_0 = _.values(arg_14_0.shop.goods)
+function slot0.UpdateGoods(slot0)
+	slot1 = _.values(slot0.shop.goods)
 
-	table.sort(var_14_0, function(arg_15_0, arg_15_1)
-		return arg_15_0.id < arg_15_1.id
+	table.sort(slot1, function (slot0, slot1)
+		return slot0.id < slot1.id
 	end)
-	UIItemList.StaticAlign(arg_14_0.goodsContainer, arg_14_0.goodsContainer:GetChild(0), #var_14_0, function(arg_16_0, arg_16_1, arg_16_2)
-		if arg_16_0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(slot0.goodsContainer, slot0.goodsContainer:GetChild(0), #slot1, function (slot0, slot1, slot2)
+		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var_16_0 = var_14_0[arg_16_1 + 1]
-		local var_16_1 = var_16_0:canPurchase()
+		slot3 = uv0[slot1 + 1]
 
-		setActive(arg_16_2:Find("mask"), not var_16_1)
-
-		local var_16_2 = var_16_0:getConfig("commodity_type")
-		local var_16_3 = var_16_0:getConfig("commodity_id")
-		local var_16_4 = {
-			type = var_16_2,
-			id = var_16_3,
-			count = var_16_0:getConfig("num")
-		}
-
-		updateDrop(arg_16_2, var_16_4)
-		setText(arg_16_2:Find("Price"), var_16_0:getConfig("resource_num"))
-		onButton(arg_14_0, arg_16_2, function()
-			arg_14_0:OnClickCommodity(var_16_0, function(arg_18_0, arg_18_1)
-				arg_14_0:OnPurchase(var_16_0, arg_18_1)
+		setActive(slot2:Find("mask"), not slot3:canPurchase())
+		updateDrop(slot2, {
+			type = slot3:getConfig("commodity_type"),
+			id = slot3:getConfig("commodity_id"),
+			count = slot3:getConfig("num")
+		})
+		setText(slot2:Find("Price"), slot3:getConfig("resource_num"))
+		onButton(uv1, slot2, function ()
+			uv0:OnClickCommodity(uv1, function (slot0, slot1)
+				uv0:OnPurchase(uv1, slot1)
 			end)
 		end, SFX_PANEL)
 	end)
-	setActive(arg_14_0.specailsDecoration, #arg_14_0.specialLists > 0)
-	setActive(arg_14_0.specailsOtherDecoration, #arg_14_0.specialLists <= 0)
-	UIItemList.StaticAlign(arg_14_0.specialsContainer, arg_14_0.specialsContainer:GetChild(0), 3, function(arg_19_0, arg_19_1, arg_19_2)
-		if arg_19_0 ~= UIItemList.EventUpdate then
+	setActive(slot0.specailsDecoration, #slot0.specialLists > 0)
+	setActive(slot0.specailsOtherDecoration, #slot0.specialLists <= 0)
+	UIItemList.StaticAlign(slot0.specialsContainer, slot0.specialsContainer:GetChild(0), 3, function (slot0, slot1, slot2)
+		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var_19_0 = arg_14_0.specialLists[arg_19_1 + 1]
+		slot3 = uv0.specialLists[slot1 + 1]
 
-		setActive(arg_19_2, var_19_0)
+		setActive(slot2, slot3)
 
-		if not var_19_0 then
+		if not slot3 then
 			return
 		end
 
-		setActive(arg_19_2:Find("mask"), var_19_0.HasGot)
-		onButton(arg_14_0, arg_19_2, function()
-			arg_14_0:emit(BaseUI.ON_DROP, var_19_0)
+		setActive(slot2:Find("mask"), slot3.HasGot)
+		onButton(uv0, slot2, function ()
+			uv0:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
 	end)
 end
 
-function var_0_0.CheckRes(arg_21_0, arg_21_1, arg_21_2)
-	if not arg_21_1:canPurchase() then
+function slot0.CheckRes(slot0, slot1, slot2)
+	if not slot1:canPurchase() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 		return false
 	end
 
 	if ({
-		type = arg_21_1:getConfig("resource_category"),
-		id = arg_21_1:getConfig("resource_type")
-	}):getOwnedCount() < arg_21_1:getConfig("resource_num") * arg_21_2 then
-		arg_21_0:ShowMsgbox({
+		type = slot1:getConfig("resource_category"),
+		id = slot1:getConfig("resource_type")
+	}):getOwnedCount() < slot1:getConfig("resource_num") * slot2 then
+		slot0:ShowMsgbox({
 			useGO = true,
 			content = i18n("amusementpark_shop_exchange"),
-			onYes = function()
-				arg_21_0:emit(AmusementParkShopMediator.GO_SCENE, SCENE.TASK)
+			onYes = function ()
+				uv0:emit(AmusementParkShopMediator.GO_SCENE, SCENE.TASK)
 			end
 		})
 
@@ -169,142 +159,118 @@ function var_0_0.CheckRes(arg_21_0, arg_21_1, arg_21_2)
 	return true
 end
 
-function var_0_0.Purchase(arg_23_0, arg_23_1, arg_23_2, arg_23_3, arg_23_4)
-	arg_23_0:ShowMsgbox({
-		content = i18n("amusementpark_shop_exchange2", arg_23_1:getConfig("resource_num") * arg_23_2, arg_23_1:getConfig("num") * arg_23_2, arg_23_3),
-		onYes = function()
-			if arg_23_0:CheckRes(arg_23_1, arg_23_2) then
-				arg_23_4(arg_23_1, arg_23_2)
+function slot0.Purchase(slot0, slot1, slot2, slot3, slot4)
+	slot0:ShowMsgbox({
+		content = i18n("amusementpark_shop_exchange2", slot1:getConfig("resource_num") * slot2, slot1:getConfig("num") * slot2, slot3),
+		onYes = function ()
+			if uv0:CheckRes(uv1, uv2) then
+				uv3(uv1, uv2)
 			end
 		end
 	})
 end
 
-function var_0_0.OnClickCommodity(arg_25_0, arg_25_1, arg_25_2)
-	if not arg_25_0:CheckRes(arg_25_1, 1) then
+function slot0.OnClickCommodity(slot0, slot1, slot2)
+	if not slot0:CheckRes(slot1, 1) then
 		return
 	end
 
-	local var_25_0 = Drop.New({
-		id = arg_25_1:getConfig("commodity_id"),
-		type = arg_25_1:getConfig("commodity_type")
-	})
-
-	arg_25_0:Purchase(arg_25_1, 1, var_25_0:getConfig("name"), arg_25_2)
+	slot0:Purchase(slot1, 1, Drop.New({
+		id = slot1:getConfig("commodity_id"),
+		type = slot1:getConfig("commodity_type")
+	}):getConfig("name"), slot2)
 end
 
-function var_0_0.OnPurchase(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = arg_26_0.shop.activityId
-
-	arg_26_0:emit(AmusementParkShopMediator.ON_ACT_SHOPPING, var_26_0, 1, arg_26_1.id, arg_26_2)
+function slot0.OnPurchase(slot0, slot1, slot2)
+	slot0:emit(AmusementParkShopMediator.ON_ACT_SHOPPING, slot0.shop.activityId, 1, slot1.id, slot2)
 end
 
-function var_0_0.ShowMsgbox(arg_27_0, arg_27_1)
-	setActive(arg_27_0.msgbox, true)
+function slot0.ShowMsgbox(slot0, slot1)
+	setActive(slot0.msgbox, true)
 
-	arg_27_0.contentText.text = arg_27_1.content
+	slot0.contentText.text = slot1.content
+	slot4 = slot1.useGO
 
-	local var_27_0 = arg_27_0.msgbox:Find("window/button_container/Button2")
-	local var_27_1 = arg_27_0.msgbox:Find("window/button_container/Button3")
-	local var_27_2 = arg_27_1.useGO
-
-	setActive(var_27_0, not var_27_2)
-	setActive(var_27_1, var_27_2)
-
-	local var_27_3 = var_27_2 and var_27_1 or var_27_0
-
-	onButton(arg_27_0, var_27_3, function()
-		setActive(arg_27_0.msgbox, false)
-		existCall(arg_27_1.onYes)
+	setActive(slot0.msgbox:Find("window/button_container/Button2"), not slot4)
+	setActive(slot0.msgbox:Find("window/button_container/Button3"), slot4)
+	onButton(slot0, slot4 and slot3 or slot2, function ()
+		setActive(uv0.msgbox, false)
+		existCall(uv1.onYes)
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.SetActiveBubble(arg_29_0, arg_29_1, arg_29_2)
-	if arg_29_0.chatActive == tobool(arg_29_1) and not arg_29_2 then
+function slot0.SetActiveBubble(slot0, slot1, slot2)
+	if slot0.chatActive == tobool(slot1) and not slot2 then
 		return
 	end
 
-	LeanTween.cancel(go(arg_29_0.chat))
+	LeanTween.cancel(go(slot0.chat))
 
-	local var_29_0 = 0.3
+	slot0.chatActive = tobool(slot1)
 
-	arg_29_0.chatActive = tobool(arg_29_1)
-
-	if arg_29_1 then
-		setActive(arg_29_0.chat, true)
-		LeanTween.scale(arg_29_0.chat.gameObject, Vector3.New(1, 1, 1), var_29_0):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack)
+	if slot1 then
+		setActive(slot0.chat, true)
+		LeanTween.scale(slot0.chat.gameObject, Vector3.New(1, 1, 1), 0.3):setFrom(Vector3.New(0, 0, 0)):setEase(LeanTweenType.easeOutBack)
 	else
-		setActive(arg_29_0.chat, true)
-		LeanTween.scale(arg_29_0.chat.gameObject, Vector3.New(0, 0, 0), var_29_0):setFrom(Vector3.New(1, 1, 1)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function()
-			setActive(arg_29_0.chat, false)
+		setActive(slot0.chat, true)
+		LeanTween.scale(slot0.chat.gameObject, Vector3.New(0, 0, 0), slot3):setFrom(Vector3.New(1, 1, 1)):setEase(LeanTweenType.easeOutBack):setOnComplete(System.Action(function ()
+			setActive(uv0.chat, false)
 		end))
 	end
 end
 
-function var_0_0.ShowShipWord(arg_31_0, arg_31_1)
-	arg_31_0:SetActiveBubble(true, true)
-	setText(arg_31_0.chatText, arg_31_1)
-	arg_31_0:AddPollingChat()
+function slot0.ShowShipWord(slot0, slot1)
+	slot0:SetActiveBubble(true, true)
+	setText(slot0.chatText, slot1)
+	slot0:AddPollingChat()
 end
 
-function var_0_0.AddPollingChat(arg_32_0)
-	arg_32_0:StopPolling()
+function slot0.AddPollingChat(slot0)
+	slot0:StopPolling()
 
-	arg_32_0.pollTimer = Timer.New(function()
-		local var_33_0 = arg_32_0.pollText[arg_32_0.pollIndex + 1]
+	slot0.pollTimer = Timer.New(function ()
+		uv0:ShowShipWord(uv0.pollText[uv0.pollIndex + 1])
 
-		arg_32_0:ShowShipWord(var_33_0)
-
-		arg_32_0.pollIndex = (arg_32_0.pollIndex + 1) % #arg_32_0.pollText
+		uv0.pollIndex = (uv0.pollIndex + 1) % #uv0.pollText
 	end, 6)
 
-	arg_32_0.pollTimer:Start()
+	slot0.pollTimer:Start()
 end
 
-function var_0_0.StopPolling(arg_34_0)
-	if not arg_34_0.pollTimer then
+function slot0.StopPolling(slot0)
+	if not slot0.pollTimer then
 		return
 	end
 
-	arg_34_0.pollTimer:Stop()
+	slot0.pollTimer:Stop()
 
-	arg_34_0.pollTimer = nil
+	slot0.pollTimer = nil
 end
 
-function var_0_0.StopChat(arg_35_0)
-	if LeanTween.isTweening(go(arg_35_0.chat)) then
-		LeanTween.cancel(go(arg_35_0.chat))
+function slot0.StopChat(slot0)
+	if LeanTween.isTweening(go(slot0.chat)) then
+		LeanTween.cancel(go(slot0.chat))
 	end
 
-	setActive(arg_35_0.chat, false)
+	setActive(slot0.chat, false)
 end
 
-function var_0_0.willExit(arg_36_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_36_0._tf)
-	arg_36_0:StopPolling()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+	slot0:StopPolling()
 end
 
-function var_0_0.GetActivityShopTip()
-	local var_37_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
-
-	if not var_37_0 or var_37_0:isEnd() then
+function slot0.GetActivityShopTip()
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD) or slot1:isEnd() then
 		return
 	end
 
-	local var_37_1 = pg.activity_shop_template
-
-	for iter_37_0, iter_37_1 in ipairs(var_37_1.all) do
-		if var_37_0.id == var_37_1[iter_37_1].activity then
-			local var_37_2 = table.indexof(var_37_0.data1_list, iter_37_1)
-			local var_37_3 = var_37_2 and var_37_0.data2_list[var_37_2] or 0
-			local var_37_4 = var_37_1[iter_37_1]
-			local var_37_5 = var_37_4.num_limit == 0 or var_37_3 < var_37_4.num_limit
-			local var_37_6 = Drop.New({
-				type = var_37_4.resource_category,
-				id = var_37_4.resource_type
-			}):getOwnedCount() >= var_37_4.resource_num
-
-			if var_37_5 and var_37_6 then
+	for slot6, slot7 in ipairs(pg.activity_shop_template.all) do
+		if slot1.id == slot2[slot7].activity then
+			if (slot2[slot7].num_limit == 0 or (table.indexof(slot1.data1_list, slot7) and slot1.data2_list[slot8] or 0) < slot10.num_limit) and slot10.resource_num <= Drop.New({
+				type = slot10.resource_category,
+				id = slot10.resource_type
+			}):getOwnedCount() then
 				return true
 			end
 		end
@@ -313,4 +279,4 @@ function var_0_0.GetActivityShopTip()
 	return false
 end
 
-return var_0_0
+return slot0

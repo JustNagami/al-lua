@@ -1,28 +1,22 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleBuffLink = class("BattleBuffLink", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffLink.__name = "BattleBuffLink"
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleBuffLink = class("BattleBuffLink", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffLink.__name = "BattleBuffLink"
-
-function var_0_0.Battle.BattleBuffLink.Ctor(arg_1_0, arg_1_1)
-	var_0_0.Battle.BattleBuffLink.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Battle.BattleBuffLink.Ctor(slot0, slot1)
+	uv0.Battle.BattleBuffLink.super.Ctor(slot0, slot1)
 end
 
-function var_0_0.Battle.BattleBuffLink.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._target = arg_2_0._tempData.arg_list.target
-	arg_2_0._buff_id = arg_2_0._tempData.arg_list.buff_id
+function slot0.Battle.BattleBuffLink.SetArgs(slot0, slot1, slot2)
+	slot0._target = slot0._tempData.arg_list.target
+	slot0._buff_id = slot0._tempData.arg_list.buff_id
 end
 
-function var_0_0.Battle.BattleBuffLink.Trigger(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-	local var_3_0 = arg_3_0:getTargetList(arg_3_2, arg_3_0._target, arg_3_0._tempData.arg_list)
-
-	if var_3_0 then
-		for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-			local var_3_1 = iter_3_1:GetBuff(arg_3_0._buff_id)
-
-			if var_3_1 then
-				var_3_1:onTrigger(arg_3_1, iter_3_1, arg_3_4)
+function slot0.Battle.BattleBuffLink.Trigger(slot0, slot1, slot2, slot3, slot4)
+	if slot0:getTargetList(slot2, slot0._target, slot0._tempData.arg_list) then
+		for slot9, slot10 in ipairs(slot5) do
+			if slot10:GetBuff(slot0._buff_id) then
+				slot11:onTrigger(slot1, slot10, slot4)
 			end
 		end
 	end

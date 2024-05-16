@@ -1,62 +1,60 @@
-﻿local var_0_0 = class("RyzaTaskMediator", import("..base.ContextMediator"))
+slot0 = class("RyzaTaskMediator", import("..base.ContextMediator"))
+slot0.SUBMIT_TASK_ALL = "activity submit task all"
+slot0.SUBMIT_TASK = "activity submit task "
+slot0.TASK_GO = "activity task go "
+slot0.SHOW_DETAIL = "activity task show detail"
 
-var_0_0.SUBMIT_TASK_ALL = "activity submit task all"
-var_0_0.SUBMIT_TASK = "activity submit task "
-var_0_0.TASK_GO = "activity task go "
-var_0_0.SHOW_DETAIL = "activity task show detail"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.SUBMIT_TASK_ALL, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
-			act_id = arg_2_1.activityId,
-			task_ids = arg_2_1.ids
+function slot0.register(slot0)
+	slot0:bind(uv0.SUBMIT_TASK_ALL, function (slot0, slot1)
+		uv0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			act_id = slot1.activityId,
+			task_ids = slot1.ids
 		})
 	end)
-	arg_1_0:bind(var_0_0.SUBMIT_TASK, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
-			act_id = arg_3_1.activityId,
+	slot0:bind(uv0.SUBMIT_TASK, function (slot0, slot1)
+		uv0:sendNotification(GAME.AVATAR_FRAME_AWARD, {
+			act_id = slot1.activityId,
 			task_ids = {
-				arg_3_1.id
+				slot1.id
 			}
 		})
 	end)
-	arg_1_0:bind(var_0_0.TASK_GO, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg_4_1.taskVO
+	slot0:bind(uv0.TASK_GO, function (slot0, slot1)
+		uv0:sendNotification(GAME.TASK_GO, {
+			taskVO = slot1.taskVO
 		})
 	end)
-	arg_1_0:bind(var_0_0.SHOW_DETAIL, function(arg_5_0, arg_5_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.SHOW_DETAIL, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = AtelierMaterialDetailMediator,
 			viewComponent = AtelierMaterialDetailLayer,
 			data = {
-				material = arg_5_1
+				material = slot1
 			}
 		}))
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_6_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SUBMIT_AVATAR_TASK_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1:getName()
-	local var_7_1 = arg_7_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_7_0 == GAME.SUBMIT_AVATAR_TASK_DONE then
-		if #var_7_1.awards > 0 then
-			arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_7_1.awards)
+	if slot1:getName() == GAME.SUBMIT_AVATAR_TASK_DONE then
+		if #slot3.awards > 0 then
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 		end
 
-		if var_7_1.callback then
-			-- block empty
+		if slot3.callback then
+			-- Nothing
 		end
 
-		arg_7_0.viewComponent:updateTask(true)
+		slot0.viewComponent:updateTask(true)
 	end
 end
 
-return var_0_0
+return slot0

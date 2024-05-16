@@ -1,85 +1,75 @@
-﻿local var_0_0 = class("RectKeyInfo")
+slot0 = class("RectKeyInfo")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0._inPutKeyDic = {}
+function slot0.Ctor(slot0)
+	slot0._inPutKeyDic = {}
 end
 
-function var_0_0.setKeyPress(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0:getKeyData(arg_2_1).status = arg_2_2
+function slot0.setKeyPress(slot0, slot1, slot2)
+	slot0:getKeyData(slot1).status = slot2
 
-	arg_2_0:setKeyData(arg_2_1, arg_2_2)
+	slot0:setKeyData(slot1, slot2)
 
-	if arg_2_0._triggerCallback then
-		arg_2_0._triggerCallback(arg_2_1, arg_2_2)
+	if slot0._triggerCallback then
+		slot0._triggerCallback(slot1, slot2)
 	end
 end
 
-function var_0_0.setTriggerCallback(arg_3_0, arg_3_1)
-	arg_3_0._triggerCallback = arg_3_1
+function slot0.setTriggerCallback(slot0, slot1)
+	slot0._triggerCallback = slot1
 end
 
-function var_0_0.setKeyData(arg_4_0, arg_4_1, arg_4_2)
-	for iter_4_0 = 1, #arg_4_0._inPutKeyDic do
-		local var_4_0 = arg_4_0._inPutKeyDic[iter_4_0]
-
-		if var_4_0.code == arg_4_1 then
-			var_4_0.status = arg_4_2
+function slot0.setKeyData(slot0, slot1, slot2)
+	for slot6 = 1, #slot0._inPutKeyDic do
+		if slot0._inPutKeyDic[slot6].code == slot1 then
+			slot7.status = slot2
 		end
 	end
 end
 
-function var_0_0.getKeyData(arg_5_0, arg_5_1)
-	if not arg_5_1 then
+function slot0.getKeyData(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	local var_5_0
+	slot2 = nil
 
-	for iter_5_0 = 1, #arg_5_0._inPutKeyDic do
-		local var_5_1 = arg_5_0._inPutKeyDic[iter_5_0]
-
-		if var_5_1.code == arg_5_1 then
-			var_5_0 = var_5_1
+	for slot6 = 1, #slot0._inPutKeyDic do
+		if slot0._inPutKeyDic[slot6].code == slot1 then
+			slot2 = slot7
 		end
 	end
 
-	if not var_5_0 then
-		var_5_0 = {
+	if not slot2 then
+		table.insert(slot0._inPutKeyDic, {
 			status = false,
-			code = arg_5_1
-		}
-
-		table.insert(arg_5_0._inPutKeyDic, var_5_0)
+			code = slot1
+		})
 	end
 
-	return var_5_0
+	return slot2
 end
 
-function var_0_0.getKeyCode(arg_6_0, arg_6_1)
-	if not arg_6_1 then
+function slot0.getKeyCode(slot0, slot1)
+	if not slot1 then
 		return nil
 	end
 
-	local var_6_0
+	slot2 = nil
 
-	for iter_6_0 = 1, #arg_6_0._inPutKeyDic do
-		local var_6_1 = arg_6_0._inPutKeyDic[iter_6_0]
-
-		if var_6_1.code == arg_6_1 then
-			var_6_0 = var_6_1
+	for slot6 = 1, #slot0._inPutKeyDic do
+		if slot0._inPutKeyDic[slot6].code == slot1 then
+			slot2 = slot7
 		end
 	end
 
-	if not var_6_0 then
-		var_6_0 = {
+	if not slot2 then
+		table.insert(slot0._inPutKeyDic, {
 			status = false,
-			code = arg_6_1
-		}
-
-		table.insert(arg_6_0._inPutKeyDic, var_6_0)
+			code = slot1
+		})
 	end
 
-	return var_6_0.status
+	return slot2.status
 end
 
-return var_0_0
+return slot0

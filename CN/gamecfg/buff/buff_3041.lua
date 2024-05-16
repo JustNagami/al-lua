@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 3041,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每次执行空袭后提高己方其他航母5.0%航空，持续8秒",
 		addition = {
@@ -81,5 +69,17 @@
 	stack = 1,
 	id = 3041,
 	icon = 3040,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 3041,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

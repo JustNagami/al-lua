@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"啊~作战失败！点击确定退出当前关卡",
 	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ffde38>出击</color>",
 	"选择主线",
@@ -17,7 +17,7 @@ return {
 				mode = 1,
 				posY = 147.8,
 				posX = 328.7,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/Msgbox(Clone)/window/button_container/custom_button_1(Clone)",
@@ -41,7 +41,7 @@ return {
 				mode = 1,
 				posY = -50,
 				posX = 250,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -66,7 +66,7 @@ return {
 				mode = 1,
 				posY = -50,
 				posX = 250,
-				text = var_0_0[3]
+				text = slot0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/LevelMainScene(Clone)/entrance/enters/enter_main",
@@ -91,7 +91,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = slot0[4]
 			},
 			ui = {
 				delay = 1.8,
@@ -113,7 +113,7 @@ return {
 				mode = 2,
 				posY = -410,
 				posX = -446,
-				text = var_0_0[5]
+				text = slot0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/LevelStageInfoView(Clone)/panel/start_button",
@@ -134,7 +134,7 @@ return {
 				mode = 2,
 				posY = -164,
 				posX = 270,
-				text = var_0_0[6]
+				text = slot0[6]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/LevelFleetSelectView(Clone)/panel/Fixed/start_button",

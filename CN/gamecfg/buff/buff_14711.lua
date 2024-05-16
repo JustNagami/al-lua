@@ -1,23 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_ARE",
-				number = 0.01
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -168,5 +149,24 @@
 	stack = 1,
 	id = 14711,
 	icon = 14710,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_ARE",
+				number = 0.01
+			}
+		}
+	}
 }

@@ -1,11 +1,9 @@
-﻿local var_0_0 = class("LevelStageTotalRewardPanelMediator", import("view.base.ContextMediator"))
+slot0 = class("LevelStageTotalRewardPanelMediator", import("view.base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(LevelMediator2.ON_RETRACKING, function(arg_2_0, ...)
-		local var_2_0 = packEx(...)
-
-		arg_1_0:sendNotification(LevelMediator2.ON_RETRACKING, var_2_0)
+function slot0.register(slot0)
+	slot0:bind(LevelMediator2.ON_RETRACKING, function (slot0, ...)
+		uv0:sendNotification(LevelMediator2.ON_RETRACKING, packEx(...))
 	end)
 end
 
-return var_0_0
+return slot0

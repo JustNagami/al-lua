@@ -1,17 +1,15 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = singletonClass("BattleSubCharacterFactory", slot0.Battle.BattlePlayerCharacterFactory)
+slot0.Battle.BattleSubCharacterFactory = slot1
+slot1.__name = "BattleSubCharacterFactory"
 
-local var_0_0 = ys
-local var_0_1 = singletonClass("BattleSubCharacterFactory", var_0_0.Battle.BattlePlayerCharacterFactory)
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-var_0_0.Battle.BattleSubCharacterFactory = var_0_1
-var_0_1.__name = "BattleSubCharacterFactory"
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
-
-	arg_1_0.ARROW_BAR_NAME = "EnemyArrowContainer/SubArrow"
+	slot0.ARROW_BAR_NAME = "EnemyArrowContainer/SubArrow"
 end
 
-function var_0_1.MakeCharacter(arg_2_0)
-	return var_0_0.Battle.BattleSubCharacter.New()
+function slot1.MakeCharacter(slot0)
+	return uv0.Battle.BattleSubCharacter.New()
 end

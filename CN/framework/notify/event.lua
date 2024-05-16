@@ -1,263 +1,246 @@
-﻿local var_0_0 = require
-local var_0_1 = setmetatable
-local var_0_2 = string
-local var_0_3 = error
-local var_0_4 = unpack
-local var_0_5 = var_0_0("Framework.notify.double-queue")
-local var_0_6 = ":"
-local var_0_7 = {}
-local var_0_8 = {}
-local var_0_9 = {
-	__index = var_0_8
+slot1 = setmetatable
+slot2 = string
+slot3 = error
+slot4 = unpack
+slot5 = require("Framework.notify.double-queue")
+slot6 = ":"
+slot7 = {
+	New = function ()
+		return uv0({
+			stopped = false,
+			events = {}
+		}, uv1)
+	end
+}
+slot8 = {}
+slot9 = {
+	__index = slot8
 }
 
-local function var_0_10()
+function slot10()
 	return {
-		handlers = var_0_5.New(),
-		pre_emits = var_0_5.New(),
-		post_emits = var_0_5.New(),
+		handlers = uv0.New(),
+		pre_emits = uv0.New(),
+		post_emits = uv0.New(),
 		blocked_handlers = {},
 		subevents = {}
 	}
 end
 
-local function var_0_11(arg_2_0)
-	local var_2_0 = {}
+function slot11(slot0)
+	slot1 = {}
+	slot5 = uv1
 
-	for iter_2_0 in var_0_2.gmatch(arg_2_0, "[^" .. var_0_6 .. "]+") do
-		var_2_0[#var_2_0 + 1] = iter_2_0
+	for slot5 in uv0.gmatch(slot0, "[^" .. slot5 .. "]+") do
+		slot1[#slot1 + 1] = slot5
 	end
 
-	return var_2_0
+	return slot1
 end
 
-local function var_0_12(arg_3_0, arg_3_1)
-	local var_3_0 = var_0_11(arg_3_1)
-	local var_3_1 = arg_3_0.events[var_3_0[1]] or var_0_10()
+function slot12(slot0, slot1)
+	slot0.events[slot2[1]] = slot0.events[uv0(slot1)[1]] or uv1()
 
-	arg_3_0.events[var_3_0[1]] = var_3_1
-
-	for iter_3_0 = 2, #var_3_0 do
-		local var_3_2 = var_3_1.subevents[var_3_0[iter_3_0]] or var_0_10()
-
-		var_3_1.subevents[var_3_0[iter_3_0]] = var_3_2
-		var_3_1 = var_3_2
+	for slot7 = 2, #slot2 do
+		slot8 = slot3.subevents[slot2[slot7]] or uv1()
+		slot3.subevents[slot2[slot7]] = slot8
+		slot3 = slot8
 	end
 
-	return var_3_1
+	return slot3
 end
 
-local function var_0_13(arg_4_0, arg_4_1)
-	local var_4_0 = var_0_11(arg_4_1)
-	local var_4_1 = arg_4_0.events[var_4_0[1]]
-
-	if not var_4_1 then
+function slot13(slot0, slot1)
+	if not slot0.events[uv0(slot1)[1]] then
 		return true
 	end
 
-	for iter_4_0 = 2, #var_4_0 do
-		local var_4_2 = var_4_1.subevents[var_4_0[iter_4_0]]
-
-		if not var_4_2 then
+	for slot7 = 2, #slot2 do
+		if not slot3.subevents[slot2[slot7]] then
 			return true
 		end
 
-		var_4_1 = var_4_2
+		slot3 = slot8
 	end
 
 	return false
 end
 
-local function var_0_14(arg_5_0, arg_5_1)
-	local var_5_0 = var_0_11(arg_5_1)
-	local var_5_1 = 2
-	local var_5_2 = arg_5_0.events[var_5_0[1]]
+function slot14(slot0, slot1)
+	slot3 = 2
+	slot4 = slot0.events[uv0(slot1)[1]]
 
-	return function()
-		if not var_5_2 then
+	return function ()
+		if not uv0 then
 			return
 		end
 
-		local var_6_0 = var_5_2
+		slot0 = uv0
 
-		if var_5_0[var_5_1] then
-			var_5_2 = var_5_2.subevents[var_5_0[var_5_1]]
-			var_5_1 = var_5_1 + 1
+		if uv1[uv2] then
+			uv0 = uv0.subevents[uv1[uv2]]
+			uv2 = uv2 + 1
 		else
-			var_5_2 = nil
+			uv0 = nil
 		end
 
-		return var_6_0
+		return slot0
 	end
 end
 
-local function var_0_15(arg_7_0, arg_7_1)
-	local var_7_0 = var_0_5.New()
-	local var_7_1 = var_0_5.New()
+function slot15(slot0, slot1)
+	slot2 = uv0.New()
+	slot3 = uv0.New()
 
-	for iter_7_0 in var_0_14(arg_7_0, arg_7_1) do
-		for iter_7_1 in iter_7_0.pre_emits:get_iterator() do
-			iter_7_1(arg_7_1)
+	for slot7 in uv1(slot0, slot1) do
+		for slot11 in slot7.pre_emits:get_iterator() do
+			slot11(slot1)
 		end
 
-		var_7_0:push_back(iter_7_0)
-		var_7_1:push_front(iter_7_0)
+		slot2:push_back(slot7)
+		slot3:push_front(slot7)
 	end
 
-	return var_7_0, var_7_1
+	return slot2, slot3
 end
 
-local function var_0_16(arg_8_0, arg_8_1)
-	for iter_8_0 in arg_8_1:get_iterator() do
-		for iter_8_1 in iter_8_0.post_emits:get_iterator() do
-			iter_8_1(arg_8_0)
+function slot16(slot0, slot1)
+	for slot5 in slot1:get_iterator() do
+		for slot9 in slot5.post_emits:get_iterator() do
+			slot9(slot0)
 		end
 	end
 end
 
-local function var_0_17(arg_9_0, arg_9_1)
-	for iter_9_0 in arg_9_1.nodes:get_iterator() do
-		for iter_9_1 in iter_9_0.handlers:get_iterator() do
-			if arg_9_0.stopped then
+function slot17(slot0, slot1)
+	for slot5 in slot1.nodes:get_iterator() do
+		for slot9 in slot5.handlers:get_iterator() do
+			if slot0.stopped then
 				return
 			end
 
-			if iter_9_0.blocked_handlers[iter_9_1] == 0 then
-				if arg_9_1.accumulator then
-					arg_9_1.accumulator(iter_9_1(arg_9_1.event_name, unpackEx(arg_9_1.args)))
+			if slot5.blocked_handlers[slot9] == 0 then
+				if slot1.accumulator then
+					slot1.accumulator(slot9(slot1.event_name, unpackEx(slot1.args)))
 				else
-					iter_9_1(arg_9_1.event_name, unpackEx(arg_9_1.args))
+					slot9(slot1.event_name, unpackEx(slot1.args))
 				end
 			end
 		end
 	end
 end
 
-function var_0_7.New()
-	return var_0_1({
-		stopped = false,
-		events = {}
-	}, var_0_9)
-end
+function slot8.connect(slot0, slot1, slot2)
+	slot3 = uv0(slot0, slot1)
 
-function var_0_8.connect(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = var_0_12(arg_11_0, arg_11_1)
+	slot3.handlers:push_back(slot2)
 
-	var_11_0.handlers:push_back(arg_11_2)
-
-	if not var_11_0.blocked_handlers[arg_11_2] then
-		var_11_0.blocked_handlers[arg_11_2] = 0
+	if not slot3.blocked_handlers[slot2] then
+		slot3.blocked_handlers[slot2] = 0
 	end
 end
 
-function var_0_8.disconnect(arg_12_0, arg_12_1, arg_12_2)
-	if var_0_13(arg_12_0, arg_12_1) then
+function slot8.disconnect(slot0, slot1, slot2)
+	if uv0(slot0, slot1) then
 		return
 	end
 
-	local var_12_0 = var_0_12(arg_12_0, arg_12_1)
+	slot3 = uv1(slot0, slot1)
 
-	var_12_0.handlers:remove(arg_12_2)
+	slot3.handlers:remove(slot2)
 
-	var_12_0.blocked_handlers[arg_12_2] = nil
+	slot3.blocked_handlers[slot2] = nil
 end
 
-function var_0_8.chectConnect(arg_13_0, arg_13_1)
-	return not var_0_13(arg_13_0, arg_13_1)
+function slot8.chectConnect(slot0, slot1)
+	return not uv0(slot0, slot1)
 end
 
-function var_0_8.block(arg_14_0, arg_14_1, arg_14_2)
-	if var_0_13(arg_14_0, arg_14_1) then
+function slot8.block(slot0, slot1, slot2)
+	if uv0(slot0, slot1) then
 		return
 	end
 
-	local var_14_0 = var_0_12(arg_14_0, arg_14_1)
-	local var_14_1 = var_14_0.blocked_handlers[arg_14_2]
-
-	if var_14_1 then
-		var_14_0.blocked_handlers[arg_14_2] = var_14_1 + 1
+	if uv1(slot0, slot1).blocked_handlers[slot2] then
+		slot3.blocked_handlers[slot2] = slot4 + 1
 	end
 end
 
-function var_0_8.unblock(arg_15_0, arg_15_1, arg_15_2)
-	if var_0_13(arg_15_0, arg_15_1) then
+function slot8.unblock(slot0, slot1, slot2)
+	if uv0(slot0, slot1) then
 		return
 	end
 
-	local var_15_0 = var_0_12(arg_15_0, arg_15_1)
-
-	if var_15_0.blocked_handlers[arg_15_2] and var_15_0.blocked_handlers[arg_15_2] > 0 then
-		var_15_0.blocked_handlers[arg_15_2] = var_15_0.blocked_handlers[arg_15_2] - 1
+	if uv1(slot0, slot1).blocked_handlers[slot2] and slot3.blocked_handlers[slot2] > 0 then
+		slot3.blocked_handlers[slot2] = slot3.blocked_handlers[slot2] - 1
 	end
 end
 
-function var_0_8.emit(arg_16_0, arg_16_1, ...)
-	arg_16_0.stopped = false
+function slot8.emit(slot0, slot1, ...)
+	slot0.stopped = false
+	slot2, slot3 = uv0(slot0, slot1)
 
-	local var_16_0, var_16_1 = var_0_15(arg_16_0, arg_16_1)
-
-	var_0_17(arg_16_0, {
-		event_name = arg_16_1,
-		nodes = var_16_0,
+	uv1(slot0, {
+		event_name = slot1,
+		nodes = slot2,
 		args = packEx(...)
 	})
-	var_0_16(arg_16_1, var_16_1)
+	uv2(slot1, slot3)
 end
 
-function var_0_8.emit_with_accumulator(arg_17_0, arg_17_1, arg_17_2, ...)
-	arg_17_0.stopped = false
+function slot8.emit_with_accumulator(slot0, slot1, slot2, ...)
+	slot0.stopped = false
+	slot3, slot4 = uv0(slot0, slot1)
 
-	local var_17_0, var_17_1 = var_0_15(arg_17_0, arg_17_1)
-
-	var_0_17(arg_17_0, {
-		event_name = arg_17_1,
-		nodes = var_17_0,
-		accumulator = arg_17_2,
+	uv1(slot0, {
+		event_name = slot1,
+		nodes = slot3,
+		accumulator = slot2,
 		args = packEx(...)
 	})
-	var_0_16(arg_17_1, var_17_1)
+	uv2(slot1, slot4)
 end
 
-function var_0_8.add_pre_emit(arg_18_0, arg_18_1, arg_18_2)
-	var_0_12(arg_18_0, arg_18_1).pre_emits:push_back(arg_18_2)
+function slot8.add_pre_emit(slot0, slot1, slot2)
+	uv0(slot0, slot1).pre_emits:push_back(slot2)
 end
 
-function var_0_8.remove_pre_emit(arg_19_0, arg_19_1, arg_19_2)
-	if var_0_13(arg_19_0, arg_19_1) then
+function slot8.remove_pre_emit(slot0, slot1, slot2)
+	if uv0(slot0, slot1) then
 		return
 	end
 
-	var_0_12(arg_19_0, arg_19_1).pre_emits:remove(arg_19_2)
+	uv1(slot0, slot1).pre_emits:remove(slot2)
 end
 
-function var_0_8.add_post_emit(arg_20_0, arg_20_1, arg_20_2)
-	var_0_12(arg_20_0, arg_20_1).post_emits:push_front(arg_20_2)
+function slot8.add_post_emit(slot0, slot1, slot2)
+	uv0(slot0, slot1).post_emits:push_front(slot2)
 end
 
-function var_0_8.remove_post_emit(arg_21_0, arg_21_1, arg_21_2)
-	if var_0_13(arg_21_0, arg_21_1) then
+function slot8.remove_post_emit(slot0, slot1, slot2)
+	if uv0(slot0, slot1) then
 		return
 	end
 
-	var_0_12(arg_21_0, arg_21_1).post_emits:remove(arg_21_2)
+	uv1(slot0, slot1).post_emits:remove(slot2)
 end
 
-function var_0_8.stop(arg_22_0)
-	arg_22_0.stopped = true
+function slot8.stop(slot0)
+	slot0.stopped = true
 end
 
-function var_0_8.clear(arg_23_0, arg_23_1)
-	if not arg_23_1 then
-		arg_23_0.events = {}
+function slot8.clear(slot0, slot1)
+	if not slot1 then
+		slot0.events = {}
 
 		return
 	end
 end
 
-local var_0_18 = var_0_7.New()
+slot18 = slot7.New()
 
-function var_0_7.get_global_event()
-	return var_0_18
+function slot7.get_global_event()
+	return uv0
 end
 
-return var_0_7
+return slot7

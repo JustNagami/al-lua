@@ -1,21 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10590,
-				target = "TargetSelf"
-			}
-		}
-	},
-	ship_type = {
-		2,
-		3,
-		18
-	},
+return {
 	{
 		desc = "战斗后，队伍中轻巡、重巡、超巡获得经验值增加5.0%",
 		exp_ratio = 0.05,
@@ -147,5 +130,22 @@
 	stack = 1,
 	id = 10590,
 	icon = 10590,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10590,
+				target = "TargetSelf"
+			}
+		}
+	},
+	ship_type = {
+		2,
+		3,
+		18
+	}
 }

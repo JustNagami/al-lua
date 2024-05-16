@@ -1,184 +1,179 @@
-﻿local var_0_0 = class("FeastScene", import("view.base.BaseUI"))
+slot0 = class("FeastScene", import("view.base.BaseUI"))
+slot0.PAGE_INVITATION = 1
+slot0.ON_TASK_UPDATE = "FeastScene:ON_TASK_UPDATE"
+slot0.ON_ACT_UPDATE = "FeastScene:ON_ACT_UPDATE"
+slot0.ON_SKIP_GIVE_GIFT = "FeastScene:ON_SKIP_GIVE_GIFT"
+slot0.ON_BACK_FEAST = "FeastScene:ON_BACK_FEAST"
+slot0.ON_MAKE_TICKET = "FeastScene:ON_MAKE_TICKET"
+slot0.ON_GOT_TICKET = "FeastScene:ON_GOT_TICKET"
+slot0.ON_GOT_GIFT = "FeastScene:ON_GOT_GIFT"
+slot0.GO_INTERACTION = "FeastScene:GO_INTERACTION"
+slot0.GO_INVITATION = "FeastScene:GO_INVITATION"
 
-var_0_0.PAGE_INVITATION = 1
-var_0_0.ON_TASK_UPDATE = "FeastScene:ON_TASK_UPDATE"
-var_0_0.ON_ACT_UPDATE = "FeastScene:ON_ACT_UPDATE"
-var_0_0.ON_SKIP_GIVE_GIFT = "FeastScene:ON_SKIP_GIVE_GIFT"
-var_0_0.ON_BACK_FEAST = "FeastScene:ON_BACK_FEAST"
-var_0_0.ON_MAKE_TICKET = "FeastScene:ON_MAKE_TICKET"
-var_0_0.ON_GOT_TICKET = "FeastScene:ON_GOT_TICKET"
-var_0_0.ON_GOT_GIFT = "FeastScene:ON_GOT_GIFT"
-var_0_0.GO_INTERACTION = "FeastScene:GO_INTERACTION"
-var_0_0.GO_INVITATION = "FeastScene:GO_INVITATION"
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "FeastUI"
 end
 
-function var_0_0.forceGC(arg_2_0)
+function slot0.forceGC(slot0)
 	return true
 end
 
-function var_0_0.PlayBGM(arg_3_0)
+function slot0.PlayBGM(slot0)
 	pg.CriMgr.GetInstance():StopBGM()
 end
 
-function var_0_0.init(arg_4_0)
-	arg_4_0.mainCG = GetOrAddComponent(arg_4_0._tf, typeof(CanvasGroup))
-	arg_4_0.backBtn = arg_4_0:findTF("main/return")
-	arg_4_0.invitationBtn = arg_4_0:findTF("btns/invitation")
-	arg_4_0.invitationBtnTip = arg_4_0.invitationBtn:Find("tip")
-	arg_4_0.taskBtn = arg_4_0:findTF("btns/task")
-	arg_4_0.taskBtnTip = arg_4_0.taskBtn:Find("tip")
-	arg_4_0.invitationPage = FeastInvitationPage.New(arg_4_0._tf, arg_4_0.event)
-	arg_4_0.taskPage = FeastTaskPage.New(arg_4_0._tf, arg_4_0.event)
-	arg_4_0.helpBtn = arg_4_0:findTF("main/help")
-	arg_4_0.homeBtn = arg_4_0:findTF("main/home")
-	arg_4_0.buffUIlist = UIItemList.New(arg_4_0:findTF("main/buffs"), arg_4_0:findTF("main/buffs/tpl"))
+function slot0.init(slot0)
+	slot0.mainCG = GetOrAddComponent(slot0._tf, typeof(CanvasGroup))
+	slot0.backBtn = slot0:findTF("main/return")
+	slot0.invitationBtn = slot0:findTF("btns/invitation")
+	slot0.invitationBtnTip = slot0.invitationBtn:Find("tip")
+	slot0.taskBtn = slot0:findTF("btns/task")
+	slot0.taskBtnTip = slot0.taskBtn:Find("tip")
+	slot0.invitationPage = FeastInvitationPage.New(slot0._tf, slot0.event)
+	slot0.taskPage = FeastTaskPage.New(slot0._tf, slot0.event)
+	slot0.helpBtn = slot0:findTF("main/help")
+	slot0.homeBtn = slot0:findTF("main/home")
+	slot0.buffUIlist = UIItemList.New(slot0:findTF("main/buffs"), slot0:findTF("main/buffs/tpl"))
 
-	setText(arg_4_0.invitationBtn:Find("Text"), i18n("feast_invitation_btn_label"))
-	setText(arg_4_0.taskBtn:Find("Text"), i18n("feast_task_btn_label"))
+	setText(slot0.invitationBtn:Find("Text"), i18n("feast_invitation_btn_label"))
+	setText(slot0.taskBtn:Find("Text"), i18n("feast_task_btn_label"))
 end
 
-function var_0_0.didEnter(arg_5_0)
-	arg_5_0:BlockEvents()
-	arg_5_0:SetUpCourtYard()
+function slot0.didEnter(slot0)
+	slot0:BlockEvents()
+	slot0:SetUpCourtYard()
 end
 
-function var_0_0.OnCourtYardLoaded(arg_6_0)
-	arg_6_0:UnBlockEvents()
-	onButton(arg_6_0, arg_6_0.backBtn, function()
-		arg_6_0:emit(var_0_0.ON_BACK)
+function slot0.OnCourtYardLoaded(slot0)
+	slot0:UnBlockEvents()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.invitationBtn, function()
-		arg_6_0.invitationPage:ExecuteAction("Show")
+	onButton(slot0, slot0.invitationBtn, function ()
+		uv0.invitationPage:ExecuteAction("Show")
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.taskBtn, function()
-		arg_6_0.taskPage:ExecuteAction("Show")
+	onButton(slot0, slot0.taskBtn, function ()
+		uv0.taskPage:ExecuteAction("Show")
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.feast_tip.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.homeBtn, function()
-		arg_6_0:emit(BaseUI.ON_HOME)
+	onButton(slot0, slot0.homeBtn, function ()
+		uv0:emit(BaseUI.ON_HOME)
 	end, SFX_PANEL)
-	arg_6_0:bind(FeastScene.ON_TASK_UPDATE, function()
-		arg_6_0:UpdateTips()
+	slot0:bind(FeastScene.ON_TASK_UPDATE, function ()
+		uv0:UpdateTips()
 	end)
-	arg_6_0:bind(FeastScene.ON_ACT_UPDATE, function()
-		arg_6_0:UpdateTips()
+	slot0:bind(FeastScene.ON_ACT_UPDATE, function ()
+		uv0:UpdateTips()
 	end)
-	arg_6_0:bind(FeastScene.ON_GOT_GIFT, function()
-		arg_6_0:UpdateTips()
+	slot0:bind(FeastScene.ON_GOT_GIFT, function ()
+		uv0:UpdateTips()
 	end)
-	arg_6_0:bind(FeastScene.ON_GOT_TICKET, function()
-		arg_6_0:UpdateTips()
+	slot0:bind(FeastScene.ON_GOT_TICKET, function ()
+		uv0:UpdateTips()
 	end)
-	arg_6_0:bind(FeastScene.GO_INTERACTION, function()
-		if arg_6_0.taskPage and arg_6_0.taskPage:GetLoaded() and arg_6_0.taskPage:isShowing() then
-			arg_6_0.taskPage:Hide()
+	slot0:bind(FeastScene.GO_INTERACTION, function ()
+		if uv0.taskPage and uv0.taskPage:GetLoaded() and uv0.taskPage:isShowing() then
+			uv0.taskPage:Hide()
 		end
 	end)
-	arg_6_0:bind(FeastScene.GO_INVITATION, function()
-		if arg_6_0.taskPage and arg_6_0.taskPage:GetLoaded() and arg_6_0.taskPage:isShowing() then
-			arg_6_0.taskPage:Hide()
+	slot0:bind(FeastScene.GO_INVITATION, function ()
+		if uv0.taskPage and uv0.taskPage:GetLoaded() and uv0.taskPage:isShowing() then
+			uv0.taskPage:Hide()
 		end
 
-		arg_6_0.invitationPage:ExecuteAction("Show")
+		uv0.invitationPage:ExecuteAction("Show")
 	end)
-	arg_6_0:bind(FeastScene.ON_ACT_UPDATE, function()
-		arg_6_0:UpdateBuffs()
+	slot0:bind(FeastScene.ON_ACT_UPDATE, function ()
+		uv0:UpdateBuffs()
 	end)
-	arg_6_0:bind(FeastScene.ON_BACK_FEAST, function()
-		if arg_6_0.invitationPage and arg_6_0.invitationPage:GetLoaded() and arg_6_0.invitationPage:isShowing() then
-			arg_6_0.invitationPage:Hide()
+	slot0:bind(FeastScene.ON_BACK_FEAST, function ()
+		if uv0.invitationPage and uv0.invitationPage:GetLoaded() and uv0.invitationPage:isShowing() then
+			uv0.invitationPage:Hide()
 		end
 	end)
-	arg_6_0:PlayEnterStory()
-	arg_6_0:UpdateTips()
-	arg_6_0:UpdateBuffs()
+	slot0:PlayEnterStory()
+	slot0:UpdateTips()
+	slot0:UpdateBuffs()
 
-	if arg_6_0.contextData.page and arg_6_0.contextData.page == var_0_0.PAGE_INVITATION then
-		triggerButton(arg_6_0.invitationBtn)
+	if slot0.contextData.page and slot0.contextData.page == uv0.PAGE_INVITATION then
+		triggerButton(slot0.invitationBtn)
 	end
 end
 
-function var_0_0.UpdateBuffs(arg_20_0)
-	local var_20_0 = getProxy(FeastProxy):GetBuffList()
+function slot0.UpdateBuffs(slot0)
+	slot0.buffUIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-	arg_20_0.buffUIlist:make(function(arg_21_0, arg_21_1, arg_21_2)
-		if arg_21_0 == UIItemList.EventUpdate then
-			local var_21_0 = var_20_0[arg_21_1 + 1]
-
-			onButton(arg_20_0, arg_21_2, function()
-				arg_20_0:emit(BaseUI.ON_DROP, {
+			onButton(uv1, slot2, function ()
+				uv0:emit(BaseUI.ON_DROP, {
 					type = DROP_TYPE_BUFF,
-					id = var_21_0.id
+					id = uv1.id
 				})
 			end, SFX_PANEL)
 		end
 	end)
-	arg_20_0.buffUIlist:align(#var_20_0)
+	slot0.buffUIlist:align(#getProxy(FeastProxy):GetBuffList())
 end
 
-function var_0_0.PlayEnterStory(arg_23_0)
-	local var_23_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST):getConfig("config_client")[6]
-
-	if var_23_0 and var_23_0 ~= "" and not pg.NewStoryMgr.GetInstance():IsPlayed(var_23_0) then
-		pg.NewStoryMgr.GetInstance():Play(var_23_0)
+function slot0.PlayEnterStory(slot0)
+	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FEAST):getConfig("config_client")[6] and slot3 ~= "" and not pg.NewStoryMgr.GetInstance():IsPlayed(slot3) then
+		pg.NewStoryMgr.GetInstance():Play(slot3)
 	end
 end
 
-function var_0_0.UpdateTips(arg_24_0)
-	setActive(arg_24_0.invitationBtnTip, getProxy(FeastProxy):ShouldTipInvitation())
-	setActive(arg_24_0.taskBtnTip, getProxy(FeastProxy):ShouldTipTask())
+function slot0.UpdateTips(slot0)
+	setActive(slot0.invitationBtnTip, getProxy(FeastProxy):ShouldTipInvitation())
+	setActive(slot0.taskBtnTip, getProxy(FeastProxy):ShouldTipTask())
 end
 
-function var_0_0.SetUpCourtYard(arg_25_0)
-	arg_25_0.contextData.mode = CourtYardConst.SYSTEM_FEAST
+function slot0.SetUpCourtYard(slot0)
+	slot0.contextData.mode = CourtYardConst.SYSTEM_FEAST
 
-	arg_25_0:emit(FeastMediator.SET_UP, 1)
+	slot0:emit(FeastMediator.SET_UP, 1)
 end
 
-function var_0_0.BlockEvents(arg_26_0)
-	arg_26_0.mainCG.blocksRaycasts = false
+function slot0.BlockEvents(slot0)
+	slot0.mainCG.blocksRaycasts = false
 end
 
-function var_0_0.UnBlockEvents(arg_27_0)
-	arg_27_0.mainCG.blocksRaycasts = true
+function slot0.UnBlockEvents(slot0)
+	slot0.mainCG.blocksRaycasts = true
 end
 
-function var_0_0.onBackPressed(arg_28_0)
-	if arg_28_0.invitationPage and arg_28_0.invitationPage:GetLoaded() and arg_28_0.invitationPage:isShowing() then
-		arg_28_0.invitationPage:onBackPressed()
+function slot0.onBackPressed(slot0)
+	if slot0.invitationPage and slot0.invitationPage:GetLoaded() and slot0.invitationPage:isShowing() then
+		slot0.invitationPage:onBackPressed()
 
 		return
 	end
 
-	if arg_28_0.taskPage and arg_28_0.taskPage:GetLoaded() and arg_28_0.taskPage:isShowing() then
-		arg_28_0.taskPage:Hide()
+	if slot0.taskPage and slot0.taskPage:GetLoaded() and slot0.taskPage:isShowing() then
+		slot0.taskPage:Hide()
 
 		return
 	end
 
-	arg_28_0:emit(var_0_0.ON_BACK_PRESSED)
+	slot0:emit(uv0.ON_BACK_PRESSED)
 end
 
-function var_0_0.willExit(arg_29_0)
-	if arg_29_0.invitationPage then
-		arg_29_0.invitationPage:Destroy()
+function slot0.willExit(slot0)
+	if slot0.invitationPage then
+		slot0.invitationPage:Destroy()
 
-		arg_29_0.invitationPage = nil
+		slot0.invitationPage = nil
 	end
 
-	if arg_29_0.taskPage then
-		arg_29_0.taskPage:Destroy()
+	if slot0.taskPage then
+		slot0.taskPage:Destroy()
 
-		arg_29_0.taskPage = nil
+		slot0.taskPage = nil
 	end
 end
 
-return var_0_0
+return slot0

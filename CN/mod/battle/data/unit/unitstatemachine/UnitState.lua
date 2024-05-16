@@ -1,289 +1,243 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot2 = slot0.Battle.BattleConst.ActionName
+slot0.Battle.UnitState = class("UnitState")
+slot0.Battle.UnitState.__name = "UnitState"
+slot0.Battle.UnitState.STATE_IDLE = "STATE_IDLE"
+slot0.Battle.UnitState.STATE_MOVE = "STATE_MOVE"
+slot0.Battle.UnitState.STATE_ATTACK = "STATE_ATTACK"
+slot0.Battle.UnitState.STATE_ATTACKLEFT = "STATE_ATTACKLEFT"
+slot0.Battle.UnitState.STATE_DEAD = "STATE_DEAD"
+slot0.Battle.UnitState.STATE_MOVELEFT = "STATE_MOVELEFT"
+slot0.Battle.UnitState.STATE_SKILL = "STATE_SKILL"
+slot0.Battle.UnitState.STATE_VICTORY = "STATE_VICTORY"
+slot0.Battle.UnitState.STATE_STAND = "STATE_STAND"
+slot0.Battle.UnitState.STATE_INTERRUPT = "STATE_INTERRUPT"
+slot0.Battle.UnitState.STATE_SKILL_START = "STATE_SKILL_START"
+slot0.Battle.UnitState.STATE_SKILL_END = "STATE_SKILL_END"
+slot0.Battle.UnitState.STATE_DIVING = "STATE_DIVING"
+slot0.Battle.UnitState.STATE_DIVE = "STATE_DIVE"
+slot0.Battle.UnitState.STATE_DIVELEFT = "STATE_DIVELEFT"
+slot0.Battle.UnitState.STATE_RAID = "STATE_RAID"
+slot0.Battle.UnitState.STATE_RAIDLEFT = "STATE_RAIDLEFT"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_1.ActionName
+function slot0.Battle.UnitState.Ctor(slot0, slot1)
+	slot0._target = slot1
+	slot0._idleState = uv0.Battle.IdleState.New()
+	slot0._moveState = uv0.Battle.MoveState.New()
+	slot0._attackState = uv0.Battle.AttackState.New()
+	slot0._attackLeftState = uv0.Battle.AttackLeftState.New()
+	slot0._deadState = uv0.Battle.DeadState.New()
+	slot0._moveLeftState = uv0.Battle.MoveLeftState.New()
+	slot0._victoryState = uv0.Battle.VictoryState.New()
+	slot0._victorySwimState = uv0.Battle.VictorySwimState.New()
+	slot0._standState = uv0.Battle.StandState.New()
+	slot0._spellState = uv0.Battle.SpellState.New()
+	slot0._interruptState = uv0.Battle.InterruptState.New()
+	slot0._skillStartState = uv0.Battle.SkillStartState.New()
+	slot0._skillEndState = uv0.Battle.SkillEndState.New()
+	slot0._diveState = uv0.Battle.DiveState.New()
+	slot0._diveLeftState = uv0.Battle.DiveLeftState.New()
+	slot0._raidState = uv0.Battle.RaidState.New()
+	slot0._raidLeftState = uv0.Battle.RaidLeftState.New()
 
-var_0_0.Battle.UnitState = class("UnitState")
-var_0_0.Battle.UnitState.__name = "UnitState"
-var_0_0.Battle.UnitState.STATE_IDLE = "STATE_IDLE"
-var_0_0.Battle.UnitState.STATE_MOVE = "STATE_MOVE"
-var_0_0.Battle.UnitState.STATE_ATTACK = "STATE_ATTACK"
-var_0_0.Battle.UnitState.STATE_ATTACKLEFT = "STATE_ATTACKLEFT"
-var_0_0.Battle.UnitState.STATE_DEAD = "STATE_DEAD"
-var_0_0.Battle.UnitState.STATE_MOVELEFT = "STATE_MOVELEFT"
-var_0_0.Battle.UnitState.STATE_SKILL = "STATE_SKILL"
-var_0_0.Battle.UnitState.STATE_VICTORY = "STATE_VICTORY"
-var_0_0.Battle.UnitState.STATE_STAND = "STATE_STAND"
-var_0_0.Battle.UnitState.STATE_INTERRUPT = "STATE_INTERRUPT"
-var_0_0.Battle.UnitState.STATE_SKILL_START = "STATE_SKILL_START"
-var_0_0.Battle.UnitState.STATE_SKILL_END = "STATE_SKILL_END"
-var_0_0.Battle.UnitState.STATE_DIVING = "STATE_DIVING"
-var_0_0.Battle.UnitState.STATE_DIVE = "STATE_DIVE"
-var_0_0.Battle.UnitState.STATE_DIVELEFT = "STATE_DIVELEFT"
-var_0_0.Battle.UnitState.STATE_RAID = "STATE_RAID"
-var_0_0.Battle.UnitState.STATE_RAIDLEFT = "STATE_RAIDLEFT"
-
-function var_0_0.Battle.UnitState.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._target = arg_1_1
-	arg_1_0._idleState = var_0_0.Battle.IdleState.New()
-	arg_1_0._moveState = var_0_0.Battle.MoveState.New()
-	arg_1_0._attackState = var_0_0.Battle.AttackState.New()
-	arg_1_0._attackLeftState = var_0_0.Battle.AttackLeftState.New()
-	arg_1_0._deadState = var_0_0.Battle.DeadState.New()
-	arg_1_0._moveLeftState = var_0_0.Battle.MoveLeftState.New()
-	arg_1_0._victoryState = var_0_0.Battle.VictoryState.New()
-	arg_1_0._victorySwimState = var_0_0.Battle.VictorySwimState.New()
-	arg_1_0._standState = var_0_0.Battle.StandState.New()
-	arg_1_0._spellState = var_0_0.Battle.SpellState.New()
-	arg_1_0._interruptState = var_0_0.Battle.InterruptState.New()
-	arg_1_0._skillStartState = var_0_0.Battle.SkillStartState.New()
-	arg_1_0._skillEndState = var_0_0.Battle.SkillEndState.New()
-	arg_1_0._diveState = var_0_0.Battle.DiveState.New()
-	arg_1_0._diveLeftState = var_0_0.Battle.DiveLeftState.New()
-	arg_1_0._raidState = var_0_0.Battle.RaidState.New()
-	arg_1_0._raidLeftState = var_0_0.Battle.RaidLeftState.New()
-
-	arg_1_0:OnIdleState()
+	slot0:OnIdleState()
 end
 
-function var_0_0.Battle.UnitState.FreshActionKeyOffset(arg_2_0)
-	local var_2_0 = arg_2_0:ActionKeyOffset()
-
-	if var_2_0 then
-		if string.find(arg_2_0._currentAction, var_2_0) == nil then
-			arg_2_0:SendAction(arg_2_0._currentAction .. var_2_0)
+function slot0.Battle.UnitState.FreshActionKeyOffset(slot0)
+	if slot0:ActionKeyOffset() then
+		if string.find(slot0._currentAction, slot1) == nil then
+			slot0:SendAction(slot0._currentAction .. slot1)
 		end
-	elseif arg_2_0._offset ~= nil then
-		local var_2_1 = string.find(arg_2_0._currentAction, arg_2_0._offset)
-
-		arg_2_0:SendAction(string.sub(arg_2_0._currentAction, 1, var_2_1 - 1))
+	elseif slot0._offset ~= nil then
+		slot0:SendAction(string.sub(slot0._currentAction, 1, string.find(slot0._currentAction, slot0._offset) - 1))
 	end
 
-	arg_2_0._offset = var_2_0
+	slot0._offset = slot1
 end
 
-function var_0_0.Battle.UnitState.ChangeState(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_1 == arg_3_0.STATE_IDLE then
-		arg_3_0._currentState:AddIdleState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_MOVE then
-		arg_3_0._currentState:AddMoveState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_MOVE then
-		arg_3_0._currentState:AddMoveState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_ATTACK then
-		arg_3_0._currentState:AddAttackState(arg_3_0, arg_3_2)
-	elseif arg_3_1 == arg_3_0.STATE_DEAD then
-		arg_3_0._currentState:AddDeadState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_MOVELEFT then
-		arg_3_0._currentState:AddMoveLeftState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_VICTORY then
-		local var_3_0 = arg_3_0:GetTarget():GetOxyState()
-
-		if var_3_0 and var_3_0:GetCurrentDiveState() == var_0_1.OXY_STATE.DIVE then
-			arg_3_0._currentState:AddVictorySwimState(arg_3_0)
+function slot0.Battle.UnitState.ChangeState(slot0, slot1, slot2)
+	if slot1 == slot0.STATE_IDLE then
+		slot0._currentState:AddIdleState(slot0)
+	elseif slot1 == slot0.STATE_MOVE then
+		slot0._currentState:AddMoveState(slot0)
+	elseif slot1 == slot0.STATE_MOVE then
+		slot0._currentState:AddMoveState(slot0)
+	elseif slot1 == slot0.STATE_ATTACK then
+		slot0._currentState:AddAttackState(slot0, slot2)
+	elseif slot1 == slot0.STATE_DEAD then
+		slot0._currentState:AddDeadState(slot0)
+	elseif slot1 == slot0.STATE_MOVELEFT then
+		slot0._currentState:AddMoveLeftState(slot0)
+	elseif slot1 == slot0.STATE_VICTORY then
+		if slot0:GetTarget():GetOxyState() and slot3:GetCurrentDiveState() == uv0.OXY_STATE.DIVE then
+			slot0._currentState:AddVictorySwimState(slot0)
 		else
-			arg_3_0._currentState:AddVictoryState(arg_3_0)
+			slot0._currentState:AddVictoryState(slot0)
 		end
-	elseif arg_3_1 == arg_3_0.STATE_INTERRUPT then
-		arg_3_0._currentState:AddInterruptState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_STAND then
-		arg_3_0._currentState:AddStandState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_DIVE then
-		arg_3_0._currentState:AddDiveState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_DIVELEFT then
-		arg_3_0._currentState:AddDiveLeftState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_SKILL_START then
-		arg_3_0._currentState:AddSkillStartState(arg_3_0)
-	elseif arg_3_1 == arg_3_0.STATE_SKILL_END then
-		arg_3_0._currentState:AddSkillEndState(arg_3_0)
+	elseif slot1 == slot0.STATE_INTERRUPT then
+		slot0._currentState:AddInterruptState(slot0)
+	elseif slot1 == slot0.STATE_STAND then
+		slot0._currentState:AddStandState(slot0)
+	elseif slot1 == slot0.STATE_DIVE then
+		slot0._currentState:AddDiveState(slot0)
+	elseif slot1 == slot0.STATE_DIVELEFT then
+		slot0._currentState:AddDiveLeftState(slot0)
+	elseif slot1 == slot0.STATE_SKILL_START then
+		slot0._currentState:AddSkillStartState(slot0)
+	elseif slot1 == slot0.STATE_SKILL_END then
+		slot0._currentState:AddSkillEndState(slot0)
 	else
-		assert(false, arg_3_0._target.__name .. "'s state machine, unexcepted state: " .. arg_3_1)
+		assert(false, slot0._target.__name .. "'s state machine, unexcepted state: " .. slot1)
 	end
 end
 
-function var_0_0.Battle.UnitState.OnMoveState(arg_4_0)
-	arg_4_0._currentState = arg_4_0._moveState
+function slot0.Battle.UnitState.OnMoveState(slot0)
+	slot0._currentState = slot0._moveState
 
-	local var_4_0 = arg_4_0._currentState:GetActionName(arg_4_0)
-
-	arg_4_0:SendAction(var_4_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnMoveLeftState(arg_5_0)
-	arg_5_0._currentState = arg_5_0._moveLeftState
+function slot0.Battle.UnitState.OnMoveLeftState(slot0)
+	slot0._currentState = slot0._moveLeftState
 
-	local var_5_0 = arg_5_0._currentState:GetActionName(arg_5_0)
-
-	arg_5_0:SendAction(var_5_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnIdleState(arg_6_0)
-	arg_6_0._currentState = arg_6_0._idleState
+function slot0.Battle.UnitState.OnIdleState(slot0)
+	slot0._currentState = slot0._idleState
 
-	local var_6_0 = arg_6_0._currentState:GetActionName(arg_6_0)
-
-	arg_6_0:SendAction(var_6_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnAttackState(arg_7_0, arg_7_1)
-	arg_7_0._currentState = arg_7_0._attackState
+function slot0.Battle.UnitState.OnAttackState(slot0, slot1)
+	slot0._currentState = slot0._attackState
 
-	local var_7_0 = arg_7_0._currentState:GetActionName(arg_7_0, arg_7_1)
-
-	arg_7_0:SendAction(var_7_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0, slot1))
 end
 
-function var_0_0.Battle.UnitState.OnAttackLeftState(arg_8_0, arg_8_1)
-	arg_8_0._currentState = arg_8_0._attackLeftState
+function slot0.Battle.UnitState.OnAttackLeftState(slot0, slot1)
+	slot0._currentState = slot0._attackLeftState
 
-	local var_8_0 = arg_8_0._currentState:GetActionName(arg_8_0, arg_8_1)
-
-	arg_8_0:SendAction(var_8_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0, slot1))
 end
 
-function var_0_0.Battle.UnitState.OnDiveState(arg_9_0)
-	arg_9_0._currentState = arg_9_0._diveState
+function slot0.Battle.UnitState.OnDiveState(slot0)
+	slot0._currentState = slot0._diveState
 
-	local var_9_0 = arg_9_0._currentState:GetActionName(arg_9_0)
-
-	arg_9_0:SendAction(var_9_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnDiveLeftState(arg_10_0)
-	arg_10_0._currentState = arg_10_0._diveLeftState
+function slot0.Battle.UnitState.OnDiveLeftState(slot0)
+	slot0._currentState = slot0._diveLeftState
 
-	local var_10_0 = arg_10_0._currentState:GetActionName(arg_10_0)
-
-	arg_10_0:SendAction(var_10_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnRaidState(arg_11_0, arg_11_1)
-	arg_11_0._currentState = arg_11_0._raidState
+function slot0.Battle.UnitState.OnRaidState(slot0, slot1)
+	slot0._currentState = slot0._raidState
 
-	local var_11_0 = arg_11_0._currentState:GetActionName(arg_11_0)
-
-	arg_11_0:SendAction(var_11_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnRaidLeftState(arg_12_0, arg_12_1)
-	arg_12_0._currentState = arg_12_0._raidLeftState
+function slot0.Battle.UnitState.OnRaidLeftState(slot0, slot1)
+	slot0._currentState = slot0._raidLeftState
 
-	local var_12_0 = arg_12_0._currentState:GetActionName(arg_12_0)
-
-	arg_12_0:SendAction(var_12_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnDeadState(arg_13_0)
-	arg_13_0._currentState = arg_13_0._deadState
+function slot0.Battle.UnitState.OnDeadState(slot0)
+	slot0._currentState = slot0._deadState
 
-	local var_13_0 = arg_13_0._currentState:GetActionName(arg_13_0)
-
-	arg_13_0:SendAction(var_13_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnVictoryState(arg_14_0)
-	arg_14_0._currentState = arg_14_0._victoryState
+function slot0.Battle.UnitState.OnVictoryState(slot0)
+	slot0._currentState = slot0._victoryState
 
-	local var_14_0 = arg_14_0._currentState:GetActionName(arg_14_0)
-
-	arg_14_0:SendAction(var_14_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnVictorySwimState(arg_15_0)
-	arg_15_0._currentState = arg_15_0._victorySwimState
+function slot0.Battle.UnitState.OnVictorySwimState(slot0)
+	slot0._currentState = slot0._victorySwimState
 
-	local var_15_0 = arg_15_0._currentState:GetActionName(arg_15_0)
-
-	arg_15_0:SendAction(var_15_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnStandState(arg_16_0)
-	arg_16_0._currentState = arg_16_0._standState
+function slot0.Battle.UnitState.OnStandState(slot0)
+	slot0._currentState = slot0._standState
 
-	local var_16_0 = arg_16_0._currentState:GetActionName(arg_16_0)
-
-	arg_16_0:SendAction(var_16_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnInterruptState(arg_17_0)
-	arg_17_0._currentState = arg_17_0._interruptState
+function slot0.Battle.UnitState.OnInterruptState(slot0)
+	slot0._currentState = slot0._interruptState
 
-	local var_17_0 = arg_17_0._currentState:GetActionName(arg_17_0)
-
-	arg_17_0:SendAction(var_17_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnSkillStartState(arg_18_0)
-	arg_18_0._currentState = arg_18_0._skillStartState
+function slot0.Battle.UnitState.OnSkillStartState(slot0)
+	slot0._currentState = slot0._skillStartState
 
-	local var_18_0 = arg_18_0._currentState:GetActionName(arg_18_0)
-
-	arg_18_0:SendAction(var_18_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.OnSkillEndState(arg_19_0)
-	arg_19_0._currentState = arg_19_0._skillEndState
+function slot0.Battle.UnitState.OnSkillEndState(slot0)
+	slot0._currentState = slot0._skillEndState
 
-	local var_19_0 = arg_19_0._currentState:GetActionName(arg_19_0)
-
-	arg_19_0:SendAction(var_19_0)
+	slot0:SendAction(slot0._currentState:GetActionName(slot0))
 end
 
-function var_0_0.Battle.UnitState.ChangeToMoveState(arg_20_0)
-	local var_20_0 = arg_20_0:GetTarget():GetSpeed().x
-	local var_20_1 = arg_20_0:GetTarget():GetOxyState()
-
-	if var_20_1 and var_20_1:GetCurrentDiveState() == var_0_1.OXY_STATE.DIVE then
-		if var_20_0 >= 0 then
-			arg_20_0:OnDiveState()
+function slot0.Battle.UnitState.ChangeToMoveState(slot0)
+	if slot0:GetTarget():GetOxyState() and slot2:GetCurrentDiveState() == uv0.OXY_STATE.DIVE then
+		if slot0:GetTarget():GetSpeed().x >= 0 then
+			slot0:OnDiveState()
 		else
-			arg_20_0:OnDiveLeftState()
+			slot0:OnDiveLeftState()
 		end
-	elseif var_20_0 >= 0 then
-		arg_20_0:OnMoveState()
+	elseif slot1 >= 0 then
+		slot0:OnMoveState()
 	else
-		arg_20_0:OnMoveLeftState()
+		slot0:OnMoveLeftState()
 	end
 end
 
-function var_0_0.Battle.UnitState.SendAction(arg_21_0, arg_21_1)
-	arg_21_0._currentAction = arg_21_1
+function slot0.Battle.UnitState.SendAction(slot0, slot1)
+	slot0._currentAction = slot1
 
-	local var_21_0 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.CHANGE_ACTION, {
-		actionType = arg_21_1
-	})
-
-	arg_21_0._target:DispatchEvent(var_21_0)
+	slot0._target:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.CHANGE_ACTION, {
+		actionType = slot1
+	}))
 end
 
-function var_0_0.Battle.UnitState.ChangeOxyState(arg_22_0, arg_22_1)
-	arg_22_0._target:ChangeOxygenState(arg_22_1)
+function slot0.Battle.UnitState.ChangeOxyState(slot0, slot1)
+	slot0._target:ChangeOxygenState(slot1)
 end
 
-function var_0_0.Battle.UnitState.GetTarget(arg_23_0)
-	return arg_23_0._target
+function slot0.Battle.UnitState.GetTarget(slot0)
+	return slot0._target
 end
 
-function var_0_0.Battle.UnitState.ActionKeyOffset(arg_24_0)
-	return arg_24_0._target:GetActionKeyOffset()
+function slot0.Battle.UnitState.ActionKeyOffset(slot0)
+	return slot0._target:GetActionKeyOffset()
 end
 
-function var_0_0.Battle.UnitState.GetCurrentStateName(arg_25_0)
-	return arg_25_0._currentState.__name
+function slot0.Battle.UnitState.GetCurrentStateName(slot0)
+	return slot0._currentState.__name
 end
 
-function var_0_0.Battle.UnitState.NeedWeaponCache(arg_26_0)
-	return arg_26_0._currentState:CacheWeapon()
+function slot0.Battle.UnitState.NeedWeaponCache(slot0)
+	return slot0._currentState:CacheWeapon()
 end
 
-function var_0_0.Battle.UnitState.OnActionStart(arg_27_0)
-	arg_27_0._currentState:OnStart(arg_27_0)
+function slot0.Battle.UnitState.OnActionStart(slot0)
+	slot0._currentState:OnStart(slot0)
 end
 
-function var_0_0.Battle.UnitState.OnActionTrigger(arg_28_0)
-	arg_28_0._currentState:OnTrigger(arg_28_0)
+function slot0.Battle.UnitState.OnActionTrigger(slot0)
+	slot0._currentState:OnTrigger(slot0)
 end
 
-function var_0_0.Battle.UnitState.OnActionEnd(arg_29_0)
-	arg_29_0._currentState:OnEnd(arg_29_0)
+function slot0.Battle.UnitState.OnActionEnd(slot0)
+	slot0._currentState:OnEnd(slot0)
 end

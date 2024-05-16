@@ -1,90 +1,87 @@
-﻿local var_0_0 = class("ActivitySingleScene", import("..base.BaseUI"))
+slot0 = class("ActivitySingleScene", import("..base.BaseUI"))
+slot0.EXIT = "exit"
 
-var_0_0.EXIT = "exit"
-
-function var_0_0.preload(arg_1_0, arg_1_1)
-	arg_1_1()
+function slot0.preload(slot0, slot1)
+	slot1()
 end
 
-function var_0_0.getUIName(arg_2_0)
+function slot0.getUIName(slot0)
 	return "ActivitySingleUI"
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.shareData = ActivityShareData.New()
-	arg_3_0.pageContainer = arg_3_0._tf
+function slot0.init(slot0)
+	slot0.shareData = ActivityShareData.New()
+	slot0.pageContainer = slot0._tf
 
-	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
 end
 
-function var_0_0.didEnter(arg_4_0)
-	arg_4_0:bind(var_0_0.EXIT, function(arg_5_0)
-		arg_4_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	slot0:bind(uv0.EXIT, function (slot0)
+		uv0:emit(uv1.ON_BACK)
 	end)
 end
 
-function var_0_0.setPlayer(arg_6_0, arg_6_1)
-	arg_6_0.shareData:SetPlayer(arg_6_1)
+function slot0.setPlayer(slot0, slot1)
+	slot0.shareData:SetPlayer(slot1)
 end
 
-function var_0_0.setFlagShip(arg_7_0, arg_7_1)
-	arg_7_0.shareData:SetFlagShip(arg_7_1)
+function slot0.setFlagShip(slot0, slot1)
+	slot0.shareData:SetFlagShip(slot1)
 end
 
-function var_0_0.updateTaskLayers(arg_8_0)
-	if not arg_8_0.activity then
+function slot0.updateTaskLayers(slot0)
+	if not slot0.activity then
 		return
 	end
 
-	arg_8_0:updateActivity(arg_8_0.activity)
+	slot0:updateActivity(slot0.activity)
 end
 
-function var_0_0.selectActivity(arg_9_0, arg_9_1)
-	arg_9_0.activity = arg_9_1
+function slot0.selectActivity(slot0, slot1)
+	slot0.activity = slot1
 
-	local var_9_0 = arg_9_1:getConfig("page_info")
+	if slot1:getConfig("page_info").class_name and not slot1:isEnd() then
+		slot0.actPage = import("view.activity.subPages." .. slot2.class_name).New(slot0.pageContainer, slot0.event, slot0.contextData)
 
-	if var_9_0.class_name and not arg_9_1:isEnd() then
-		arg_9_0.actPage = import("view.activity.subPages." .. var_9_0.class_name).New(arg_9_0.pageContainer, arg_9_0.event, arg_9_0.contextData)
-
-		if arg_9_0.actPage:UseSecondPage(arg_9_1) then
-			arg_9_0.actPage:SetUIName(var_9_0.ui_name2)
+		if slot0.actPage:UseSecondPage(slot1) then
+			slot0.actPage:SetUIName(slot2.ui_name2)
 		else
-			arg_9_0.actPage:SetUIName(var_9_0.ui_name)
+			slot0.actPage:SetUIName(slot2.ui_name)
 		end
 
-		arg_9_0.actPage:SetShareData(arg_9_0.shareData)
-		arg_9_0.actPage:Load()
-		arg_9_0.actPage:ActionInvoke("Flush", arg_9_0.activity)
-		arg_9_0.actPage:ActionInvoke("ShowOrHide", true)
+		slot0.actPage:SetShareData(slot0.shareData)
+		slot0.actPage:Load()
+		slot0.actPage:ActionInvoke("Flush", slot0.activity)
+		slot0.actPage:ActionInvoke("ShowOrHide", true)
 	end
 end
 
-function var_0_0.updateActivity(arg_10_0, arg_10_1)
-	if ActivityConst.PageIdLink[arg_10_1.id] then
-		arg_10_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.PageIdLink[arg_10_1.id])
+function slot0.updateActivity(slot0, slot1)
+	if ActivityConst.PageIdLink[slot1.id] then
+		slot1 = getProxy(ActivityProxy):getActivityById(ActivityConst.PageIdLink[slot1.id])
 	end
 
-	if arg_10_1:isShow() and not arg_10_1:isEnd() and arg_10_0.activity and arg_10_0.activity.id == arg_10_1.id then
-		arg_10_0.activity = arg_10_1
+	if slot1:isShow() and not slot1:isEnd() and slot0.activity and slot0.activity.id == slot1.id then
+		slot0.activity = slot1
 
-		arg_10_0.actPage:ActionInvoke("Flush", arg_10_1)
+		slot0.actPage:ActionInvoke("Flush", slot1)
 	end
 end
 
-function var_0_0.onBackPressed(arg_11_0)
-	arg_11_0.actPage:ActionInvoke("onBackPressed")
-	arg_11_0:emit(var_0_0.ON_BACK_PRESSED)
+function slot0.onBackPressed(slot0)
+	slot0.actPage:ActionInvoke("onBackPressed")
+	slot0:emit(uv0.ON_BACK_PRESSED)
 end
 
-function var_0_0.willExit(arg_12_0)
-	arg_12_0.shareData = nil
+function slot0.willExit(slot0)
+	slot0.shareData = nil
 
-	if arg_12_0.actPage then
-		arg_12_0.actPage:Destroy()
+	if slot0.actPage then
+		slot0.actPage:Destroy()
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

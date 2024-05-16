@@ -1,63 +1,62 @@
-﻿local var_0_0 = class("ShrineResultView", import("...base.BaseSubView"))
+slot0 = class("ShrineResultView", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ShrineResult"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:Show()
-	arg_2_0:initData()
-	arg_2_0:initUI()
+function slot0.OnInit(slot0)
+	slot0:Show()
+	slot0:initData()
+	slot0:initUI()
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	if arg_3_0.closeFunc then
-		arg_3_0.closeFunc()
+function slot0.OnDestroy(slot0)
+	if slot0.closeFunc then
+		slot0.closeFunc()
 
-		arg_3_0.closeFunc = nil
+		slot0.closeFunc = nil
 	end
 end
 
-function var_0_0.initData(arg_4_0)
-	return
+function slot0.initData(slot0)
 end
 
-function var_0_0.initUI(arg_5_0)
-	arg_5_0.bg = arg_5_0:findTF("BGImg")
-	arg_5_0.dft = GetComponent(arg_5_0._tf, "DftAniEvent")
-	arg_5_0.text_buff = arg_5_0:findTF("Main/MainBox/Text_Buff")
-	arg_5_0.text_nobuff = arg_5_0:findTF("Main/MainBox/Text_NoBuff")
-	arg_5_0.buffImg_1 = arg_5_0:findTF("Main/MainBox/Buff_1")
-	arg_5_0.buffImg_2 = arg_5_0:findTF("Main/MainBox/Buff_2")
-	arg_5_0.buffImg_3 = arg_5_0:findTF("Main/MainBox/Buff_3")
+function slot0.initUI(slot0)
+	slot0.bg = slot0:findTF("BGImg")
+	slot0.dft = GetComponent(slot0._tf, "DftAniEvent")
+	slot0.text_buff = slot0:findTF("Main/MainBox/Text_Buff")
+	slot0.text_nobuff = slot0:findTF("Main/MainBox/Text_NoBuff")
+	slot0.buffImg_1 = slot0:findTF("Main/MainBox/Buff_1")
+	slot0.buffImg_2 = slot0:findTF("Main/MainBox/Buff_2")
+	slot0.buffImg_3 = slot0:findTF("Main/MainBox/Buff_3")
 
-	onButton(arg_5_0, arg_5_0.bg, function()
-		arg_5_0:Destroy()
+	onButton(slot0, slot0.bg, function ()
+		uv0:Destroy()
 	end, SFX_CANCEL)
-	arg_5_0.dft:SetStartEvent(function()
-		setButtonEnabled(arg_5_0.bg, false)
+	slot0.dft:SetStartEvent(function ()
+		setButtonEnabled(uv0.bg, false)
 	end)
-	arg_5_0.dft:SetEndEvent(function()
-		setButtonEnabled(arg_5_0.bg, true)
+	slot0.dft:SetEndEvent(function ()
+		setButtonEnabled(uv0.bg, true)
 	end)
 end
 
-function var_0_0.updateView(arg_9_0, arg_9_1, arg_9_2)
-	if arg_9_2 then
-		setText(arg_9_0.text_buff, arg_9_1)
+function slot0.updateView(slot0, slot1, slot2)
+	if slot2 then
+		setText(slot0.text_buff, slot1)
 	else
-		setText(arg_9_0.text_nobuff, arg_9_1)
+		setText(slot0.text_nobuff, slot1)
 	end
 
-	setActive(arg_9_0.text_buff, arg_9_2)
-	setActive(arg_9_0.text_nobuff, not arg_9_2)
-	setActive(arg_9_0.buffImg_1, arg_9_2 == 1)
-	setActive(arg_9_0.buffImg_2, arg_9_2 == 2)
-	setActive(arg_9_0.buffImg_3, arg_9_2 == 3)
+	setActive(slot0.text_buff, slot2)
+	setActive(slot0.text_nobuff, not slot2)
+	setActive(slot0.buffImg_1, slot2 == 1)
+	setActive(slot0.buffImg_2, slot2 == 2)
+	setActive(slot0.buffImg_3, slot2 == 3)
 end
 
-function var_0_0.setCloseFunc(arg_10_0, arg_10_1)
-	arg_10_0.closeFunc = arg_10_1
+function slot0.setCloseFunc(slot0, slot1)
+	slot0.closeFunc = slot1
 end
 
-return var_0_0
+return slot0

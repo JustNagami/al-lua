@@ -1,54 +1,53 @@
-﻿local var_0_0 = class("StoryPerformPlayer", import(".BasePerformPlayer"))
+slot0 = class("StoryPerformPlayer", import(".BasePerformPlayer"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.bgTF = arg_1_0:findTF("bg", arg_1_0._tf)
-	arg_1_0.nameTF = arg_1_0:findTF("name", arg_1_0.bgTF)
-	arg_1_0.imageCom = arg_1_0:findTF("picture", arg_1_0.bgTF):GetComponent(typeof(Image))
+	slot0.bgTF = slot0:findTF("bg", slot0._tf)
+	slot0.nameTF = slot0:findTF("name", slot0.bgTF)
+	slot0.imageCom = slot0:findTF("picture", slot0.bgTF):GetComponent(typeof(Image))
 end
 
-function var_0_0.Play(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0:Show()
+function slot0.Play(slot0, slot1, slot2, slot3)
+	slot0:Show()
 
-	if arg_2_0._anim then
-		arg_2_0._anim:Play()
+	if slot0._anim then
+		slot0._anim:Play()
 	end
 
-	if arg_2_3 then
-		setText(arg_2_0.nameTF, arg_2_3)
+	if slot3 then
+		setText(slot0.nameTF, slot3)
 	end
 
-	local var_2_0 = arg_2_1.param[1] or ""
-	local var_2_1 = arg_2_1.param[2] or 3
+	slot5 = slot1.param[2] or 3
 
-	setActive(arg_2_0.bgTF, false)
-	ResourceMgr.Inst:getAssetAsync("educatepicture/" .. var_2_0, "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
-		arg_2_0.imageCom.sprite = arg_3_0
+	setActive(slot0.bgTF, false)
+	ResourceMgr.Inst:getAssetAsync("educatepicture/" .. (slot1.param[1] or ""), "", typeof(Sprite), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		uv0.imageCom.sprite = slot0
 
-		setActive(arg_2_0.bgTF, true)
+		setActive(uv0.bgTF, true)
 
-		arg_2_0.timer = Timer.New(function()
-			if arg_2_2 then
-				arg_2_2()
+		uv0.timer = Timer.New(function ()
+			if uv0 then
+				uv0()
 			end
-		end, var_2_1)
+		end, uv2)
 
-		arg_2_0.timer:Start()
+		uv0.timer:Start()
 	end), true, true)
 end
 
-function var_0_0.Clear(arg_5_0)
-	arg_5_0.imageCom.sprite = nil
+function slot0.Clear(slot0)
+	slot0.imageCom.sprite = nil
 
-	if arg_5_0.timer ~= nil then
-		arg_5_0.timer:Stop()
+	if slot0.timer ~= nil then
+		slot0.timer:Stop()
 
-		arg_5_0.timer = nil
+		slot0.timer = nil
 	end
 
-	setText(arg_5_0.nameTF, "")
-	arg_5_0:Hide()
+	setText(slot0.nameTF, "")
+	slot0:Hide()
 end
 
-return var_0_0
+return slot0

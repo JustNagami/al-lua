@@ -1,17 +1,13 @@
-﻿local var_0_0 = class("BeginStageCommand", pm.SimpleCommand)
+slot0 = class("BeginStageCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().system
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(40005, {
-		system = var_1_0
-	}, 40006, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			-- block empty
-		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("stage_beginStage", arg_2_0.result))
+		system = slot1:getBody().system
+	}, 40006, function (slot0)
+		if slot0.result ~= 0 then
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("stage_beginStage", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

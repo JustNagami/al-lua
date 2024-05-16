@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.voice_bgm = {
 	ActivityMainScene = {
 		default_bgm = "main",
@@ -1516,5 +1516,29 @@ pg.voice_bgm = {
 		special_bgm = "",
 		time = "",
 		bgm = "story-richang-12"
+	},
+	BrestTecCatchupPage = {
+		default_bgm = "theme-designshipVI",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-designshipVI"
+	},
+	LinerSignPage = {
+		default_bgm = "story-richang-10",
+		special_bgm = "",
+		time = "",
+		bgm = "story-richang-10"
+	},
+	FaxiV4FramePage = {
+		default_bgm = "theme-schoolfuture",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-schoolfuture"
+	},
+	LuodeniTaskPage = {
+		default_bgm = "theme-starsea-core",
+		special_bgm = "",
+		time = "",
+		bgm = "theme-starsea-core"
 	}
 }

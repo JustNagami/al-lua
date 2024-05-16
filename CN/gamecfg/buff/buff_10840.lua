@@ -1,21 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFriendlyShipDying"
-			},
-			arg_list = {
-				maxTargetNumber = 1,
-				quota = 1,
-				skill_id = 10840,
-				check_target = {
-					"TargetAllHelp",
-					"TargetPlayerVanguardFleet"
-				}
-			}
-		}
-	},
+return {
 	{
 		desc = "决死突袭"
 	},
@@ -56,5 +39,22 @@
 	stack = 1,
 	id = 10840,
 	icon = 10840,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFriendlyShipDying"
+			},
+			arg_list = {
+				maxTargetNumber = 1,
+				quota = 1,
+				skill_id = 10840,
+				check_target = {
+					"TargetAllHelp",
+					"TargetPlayerVanguardFleet"
+				}
+			}
+		}
+	}
 }

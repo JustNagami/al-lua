@@ -1,31 +1,29 @@
-﻿local var_0_0 = class("SixthAnniversaryIslandShopWindowMediator", import("..base.ContextMediator"))
+slot0 = class("SixthAnniversaryIslandShopWindowMediator", import("..base.ContextMediator"))
+slot0.SHOPPING_CONFIRM = "SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM"
 
-var_0_0.SHOPPING_CONFIRM = "SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.SHOPPING_CONFIRM, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.ISLAND_SHOPPING, {
-			shop = arg_1_0.contextData.shop,
-			arg1 = arg_1_0.contextData.goods.id,
-			arg2 = arg_2_1
+function slot0.register(slot0)
+	slot0:bind(uv0.SHOPPING_CONFIRM, function (slot0, slot1)
+		uv0:sendNotification(GAME.ISLAND_SHOPPING, {
+			shop = uv0.contextData.shop,
+			arg1 = uv0.contextData.goods.id,
+			arg2 = slot1
 		})
 	end)
-	arg_1_0.viewComponent:setGoods(arg_1_0.contextData.goods)
+	slot0.viewComponent:setGoods(slot0.contextData.goods)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.ISLAND_SHOPPING_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_4_0 == GAME.ISLAND_SHOPPING_DONE then
-		arg_4_0.viewComponent:closeView()
+	if slot1:getName() == GAME.ISLAND_SHOPPING_DONE then
+		slot0.viewComponent:closeView()
 	end
 end
 
-return var_0_0
+return slot0

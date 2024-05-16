@@ -1,27 +1,25 @@
-﻿local var_0_0 = class("AwardCampTecCommand", pm.SimpleCommand)
+slot0 = class("AwardCampTecCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = 1
-	local var_1_1 = {
-		type = var_1_0
-	}
+function slot0.execute(slot0, slot1)
+	slot2 = 1
 
-	print("64007 Get TecCamp Award OneStep", var_1_0)
-	pg.ConnectionMgr.GetInstance():Send(64007, var_1_1, 64008, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.rewards)
-			local var_2_1 = getProxy(TechnologyNationProxy)
+	print("64007 Get TecCamp Award OneStep", slot2)
+	pg.ConnectionMgr.GetInstance():Send(64007, {
+		type = slot2
+	}, 64008, function (slot0)
+		if slot0.result == 0 then
+			slot2 = getProxy(TechnologyNationProxy)
 
-			var_2_1:updateTecItemAwardOneStep()
-			arg_1_0:sendNotification(TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP, {
-				awardList = var_2_0
+			slot2:updateTecItemAwardOneStep()
+			uv0:sendNotification(TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP, {
+				awardList = PlayerConst.addTranDrop(slot0.rewards)
 			})
-			var_2_1:refreshRedPoint()
-			arg_1_0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
+			slot2:refreshRedPoint()
+			uv0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
 		else
-			pg.TipsMgr.GetInstance():ShowTips("64007 Error Code:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("64007 Error Code:" .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

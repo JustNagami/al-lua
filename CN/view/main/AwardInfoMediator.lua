@@ -1,44 +1,43 @@
-﻿local var_0_0 = class("AwardInfoMediator", import("..base.ContextMediator"))
+slot0 = class("AwardInfoMediator", import("..base.ContextMediator"))
+slot0.ON_DROP = "AwardInfoMediator:ON_DROP"
 
-var_0_0.ON_DROP = "AwardInfoMediator:ON_DROP"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_DROP, function(arg_2_0, arg_2_1, arg_2_2)
-		if arg_2_1.type == DROP_TYPE_EQUIP then
-			arg_1_0:addSubLayers(Context.New({
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_DROP, function (slot0, slot1, slot2)
+		if slot1.type == DROP_TYPE_EQUIP then
+			uv0:addSubLayers(Context.New({
 				mediator = EquipmentInfoMediator,
 				viewComponent = EquipmentInfoLayer,
 				data = {
-					equipmentId = arg_2_1:getConfig("id"),
+					equipmentId = slot1:getConfig("id"),
 					type = EquipmentInfoMediator.TYPE_DISPLAY,
-					onRemoved = arg_2_2,
+					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
 				}
 			}))
-		elseif arg_2_1.type == DROP_TYPE_SPWEAPON then
-			arg_1_0:addSubLayers(Context.New({
+		elseif slot1.type == DROP_TYPE_SPWEAPON then
+			uv0:addSubLayers(Context.New({
 				mediator = SpWeaponInfoMediator,
 				viewComponent = SpWeaponInfoLayer,
 				data = {
-					spWeaponConfigId = arg_2_1:getConfig("id"),
+					spWeaponConfigId = slot1:getConfig("id"),
 					type = SpWeaponInfoLayer.TYPE_DISPLAY,
-					onRemoved = arg_2_2,
+					onRemoved = slot2,
 					LayerWeightMgr_weight = LayerWeightConst.THIRD_LAYER
 				}
 			}))
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_SINGLE_ITEM,
-				drop = arg_2_1,
-				onNo = arg_2_2,
-				onYes = arg_2_2,
+				drop = slot1,
+				onNo = slot2,
+				onYes = slot2,
 				weight = LayerWeightConst.THIRD_LAYER
 			})
 		end
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.STORY_BEGIN,
 		GAME.STORY_END,
@@ -46,15 +45,14 @@ function var_0_0.listNotificationInterests(arg_3_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_4_0 == GAME.STORY_BEGIN or var_4_0 == GAME.STORY_NEXT then
-		arg_4_0.viewComponent:ShowOrHideSpriteMask(false)
-	elseif var_4_0 == GAME.STORY_END then
-		arg_4_0.viewComponent:ShowOrHideSpriteMask(true)
+	if slot1:getName() == GAME.STORY_BEGIN or slot2 == GAME.STORY_NEXT then
+		slot0.viewComponent:ShowOrHideSpriteMask(false)
+	elseif slot2 == GAME.STORY_END then
+		slot0.viewComponent:ShowOrHideSpriteMask(true)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onStack",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = -0.01
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -181,5 +167,19 @@
 	stack = 1,
 	id = 105121,
 	icon = 105120,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onStack",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = -0.01
+			}
+		}
+	}
 }

@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onLeader"
-			},
-			arg_list = {
-				minTargetNumber = 2,
-				target = "TargetSelf",
-				skill_id = 102010,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Bilibili"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -39,5 +19,25 @@
 	stack = 1,
 	id = 102010,
 	icon = 102010,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onLeader"
+			},
+			arg_list = {
+				minTargetNumber = 2,
+				target = "TargetSelf",
+				skill_id = 102010,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Bilibili"
+				}
+			}
+		}
+	}
 }

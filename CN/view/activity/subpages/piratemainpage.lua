@@ -1,1 +1,1 @@
-﻿return (class("PirateMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return class("PirateMainPage", import(".TemplatePage.PreviewTemplatePage"))

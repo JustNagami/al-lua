@@ -1,81 +1,75 @@
-﻿local var_0_0 = class("CourtYardStoreyRecorder")
+slot0 = class("CourtYardStoreyRecorder")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.storey = arg_1_1
-	arg_1_0.setup = false
+function slot0.Ctor(slot0, slot1)
+	slot0.storey = slot1
+	slot0.setup = false
 end
 
-function var_0_0.BeginCheckChange(arg_2_0)
-	arg_2_0:Reset()
+function slot0.BeginCheckChange(slot0)
+	slot0:Reset()
 
-	arg_2_0.setup = true
-	arg_2_0.headSample = arg_2_0.storey:ToTable()
+	slot0.setup = true
+	slot0.headSample = slot0.storey:ToTable()
 end
 
-function var_0_0.TakeSample(arg_3_0)
-	if not arg_3_0.setup then
+function slot0.TakeSample(slot0)
+	if not slot0.setup then
 		return
 	end
 
-	local var_3_0 = {}
-	local var_3_1 = {}
-	local var_3_2 = arg_3_0.storey:GetAllFurniture()
+	slot1 = {}
+	slot3 = slot0.storey:GetAllFurniture()
 
-	for iter_3_0, iter_3_1 in pairs(arg_3_0.furnitures) do
-		if not var_3_2[iter_3_1.id] then
-			table.insert(var_3_1, iter_3_1.id)
+	for slot7, slot8 in pairs(slot0.furnitures) do
+		if not slot3[slot8.id] then
+			table.insert({}, slot8.id)
 		end
 	end
 
-	for iter_3_2, iter_3_3 in pairs(var_3_2) do
-		if iter_3_3:IsDirty() then
-			table.insert(var_3_0, iter_3_3:ToTable())
+	for slot7, slot8 in pairs(slot3) do
+		if slot8:IsDirty() then
+			table.insert(slot1, slot8:ToTable())
 		end
 	end
 
-	arg_3_0:Reset()
+	slot0:Reset()
 
-	return var_3_0, var_3_1
+	return slot1, slot2
 end
 
-function var_0_0.Reset(arg_4_0)
-	arg_4_0.furnitures = arg_4_0.storey:GetAllFurniture()
+function slot0.Reset(slot0)
+	slot0.furnitures = slot0.storey:GetAllFurniture()
 
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.furnitures) do
-		if iter_4_1:IsDirty() then
-			iter_4_1:UnDirty()
+	for slot4, slot5 in pairs(slot0.furnitures) do
+		if slot5:IsDirty() then
+			slot5:UnDirty()
 		end
 	end
 end
 
-function var_0_0.EndCheckChange(arg_5_0)
-	arg_5_0:Clear()
+function slot0.EndCheckChange(slot0)
+	slot0:Clear()
 end
 
-function var_0_0.Clear(arg_6_0)
-	arg_6_0.furnitures = nil
-	arg_6_0.setup = false
-	arg_6_0.headSample = nil
+function slot0.Clear(slot0)
+	slot0.furnitures = nil
+	slot0.setup = false
+	slot0.headSample = nil
 end
 
-function var_0_0.HasChange(arg_7_0)
-	local var_7_0 = arg_7_0.storey:ToTable()
-	local var_7_1 = arg_7_0.headSample
-
-	if table.getCount(var_7_0) ~= table.getCount(var_7_1) then
+function slot0.HasChange(slot0)
+	if table.getCount(slot0.storey:ToTable()) ~= table.getCount(slot0.headSample) then
 		return true
 	end
 
-	local function var_7_2(arg_8_0, arg_8_1)
-		if not arg_8_1 then
-			return false
-		end
+	for slot7, slot8 in pairs(slot1) do
+		if not function (slot0, slot1)
+			if not slot1 then
+				return false
+			end
 
-		return arg_8_0.id == arg_8_1.id and arg_8_0.dir == arg_8_1.dir and arg_8_0.parent == arg_8_1.parent and arg_8_0.position == arg_8_1.position
-	end
-
-	for iter_7_0, iter_7_1 in pairs(var_7_0) do
-		if not var_7_2(iter_7_1, var_7_1[iter_7_1.id]) then
+			return slot0.id == slot1.id and slot0.dir == slot1.dir and slot0.parent == slot1.parent and slot0.position == slot1.position
+		end(slot8, slot2[slot8.id]) then
 			return true
 		end
 	end
@@ -83,20 +77,20 @@ function var_0_0.HasChange(arg_7_0)
 	return false
 end
 
-function var_0_0.GetHeadSample(arg_9_0)
-	local var_9_0 = {}
+function slot0.GetHeadSample(slot0)
+	slot1 = {}
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.headSample) do
-		table.insert(var_9_0, iter_9_1)
+	for slot5, slot6 in pairs(slot0.headSample) do
+		table.insert(slot1, slot6)
 	end
 
-	table.sort(var_9_0, BackyardThemeFurniture._LoadWeight)
+	table.sort(slot1, BackyardThemeFurniture._LoadWeight)
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.Dispose(arg_10_0)
-	arg_10_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

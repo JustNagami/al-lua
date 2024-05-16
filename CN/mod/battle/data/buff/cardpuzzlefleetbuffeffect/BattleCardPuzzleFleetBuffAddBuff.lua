@@ -1,42 +1,32 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleCardPuzzleFleetBuffAddBuff", slot0.Battle.BattleFleetBuffEffect)
+slot0.Battle.BattleCardPuzzleFleetBuffAddBuff = slot1
+slot1.__name = "BattleCardPuzzleFleetBuffAddBuff"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleCardPuzzleFleetBuffAddBuff", var_0_0.Battle.BattleFleetBuffEffect)
+function slot1.Ctor(slot0, slot1)
+	slot0._tempData = Clone(slot1)
 
-var_0_0.Battle.BattleCardPuzzleFleetBuffAddBuff = var_0_1
-var_0_1.__name = "BattleCardPuzzleFleetBuffAddBuff"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tempData = Clone(arg_1_1)
-
-	arg_1_0:SetActive()
+	slot0:SetActive()
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	var_0_1.super.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+function slot1.SetArgs(slot0, slot1, slot2)
+	uv0.super.SetArgs(slot0, slot1, slot2)
 
-	arg_2_0._buffID = arg_2_0._tempData.arg_list.buff_id
-	arg_2_0._targetFilter = arg_2_0._tempData.arg_list.target
-	arg_2_0._targetParam = arg_2_0._tempData.arg_list.target_param
-
-	local var_2_0 = arg_2_0._tempData.arg_list.caster or TeamType.TeamPos.LEADER
-
-	arg_2_0._caster = var_0_0.Battle.BattleTargetChoise.TargetFleetIndex(nil, {
-		fleetPos = var_2_0
+	slot0._buffID = slot0._tempData.arg_list.buff_id
+	slot0._targetFilter = slot0._tempData.arg_list.target
+	slot0._targetParam = slot0._tempData.arg_list.target_param
+	slot0._caster = uv1.Battle.BattleTargetChoise.TargetFleetIndex(nil, {
+		fleetPos = slot0._tempData.arg_list.caster or TeamType.TeamPos.LEADER
 	})[1]
 end
 
-function var_0_1.onTrigger(arg_3_0)
-	local var_3_0 = {}
-	local var_3_1 = arg_3_0._targetParam
-
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0._targetFilter) do
-		var_3_0 = var_0_0.Battle.BattleTargetChoise[iter_3_1](arg_3_0._caster, var_3_1, var_3_0)
+function slot1.onTrigger(slot0)
+	for slot6, slot7 in ipairs(slot0._targetFilter) do
+		slot1 = uv0.Battle.BattleTargetChoise[slot7](slot0._caster, slot0._targetParam, {})
 	end
 
-	for iter_3_2, iter_3_3 in ipairs(var_3_0) do
-		local var_3_2 = var_0_0.Battle.BattleBuffUnit.New(arg_3_0._buffID)
-
-		iter_3_3:AddBuff(var_3_2)
+	for slot6, slot7 in ipairs(slot1) do
+		slot7:AddBuff(uv0.Battle.BattleBuffUnit.New(slot0._buffID))
 	end
 end

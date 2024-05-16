@@ -1,197 +1,194 @@
-﻿local var_0_0 = class("PlayerSecondSummaryInfoScene", import("...base.BaseUI"))
+slot0 = class("PlayerSecondSummaryInfoScene", import("...base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "PlayerSecondSummaryUI"
 end
 
-function var_0_0.setActivity(arg_2_0, arg_2_1)
-	arg_2_0.activityVO = arg_2_1
+function slot0.setActivity(slot0, slot1)
+	slot0.activityVO = slot1
 end
 
-function var_0_0.setPlayer(arg_3_0, arg_3_1)
-	arg_3_0.palyerVO = arg_3_1
+function slot0.setPlayer(slot0, slot1)
+	slot0.palyerVO = slot1
 end
 
-function var_0_0.setSummaryInfo(arg_4_0, arg_4_1)
-	arg_4_0.summaryInfoVO = arg_4_1
+function slot0.setSummaryInfo(slot0, slot1)
+	slot0.summaryInfoVO = slot1
 end
 
-function var_0_0.init(arg_5_0)
-	arg_5_0.backBtn = arg_5_0:findTF("bg/back_btn")
-	arg_5_0.pageContainer = arg_5_0:findTF("bg/main/pages")
-	arg_5_0.pageFootContainer = arg_5_0:findTF("bg/main/foots")
+function slot0.init(slot0)
+	slot0.backBtn = slot0:findTF("bg/back_btn")
+	slot0.pageContainer = slot0:findTF("bg/main/pages")
+	slot0.pageFootContainer = slot0:findTF("bg/main/foots")
 
-	setActive(arg_5_0.pageFootContainer, false)
+	setActive(slot0.pageFootContainer, false)
 end
 
-function var_0_0.didEnter(arg_6_0)
-	if arg_6_0.summaryInfoVO then
-		arg_6_0:initSummaryInfo()
+function slot0.didEnter(slot0)
+	if slot0.summaryInfoVO then
+		slot0:initSummaryInfo()
 	else
-		arg_6_0:emit(PlayerSummaryInfoMediator.GET_PLAYER_SUMMARY_INFO)
+		slot0:emit(PlayerSummaryInfoMediator.GET_PLAYER_SUMMARY_INFO)
 	end
 
-	onButton(arg_6_0, arg_6_0.backBtn, function()
-		if arg_6_0:inAnim() then
+	onButton(slot0, slot0.backBtn, function ()
+		if uv0:inAnim() then
 			return
 		end
 
-		arg_6_0:closeView()
+		uv0:closeView()
 	end, SFX_CANCEL)
 end
 
-function var_0_0.inAnim(arg_8_0)
-	return arg_8_0.inAniming or arg_8_0.currPage and arg_8_0.pages[arg_8_0.currPage]:inAnim()
+function slot0.inAnim(slot0)
+	return slot0.inAniming or slot0.currPage and slot0.pages[slot0.currPage]:inAnim()
 end
 
-function var_0_0.initSummaryInfo(arg_9_0)
-	arg_9_0.loadingPage = SecondSummaryPage1.New(arg_9_0:findTF("page1", arg_9_0.pageContainer))
+function slot0.initSummaryInfo(slot0)
+	slot0.loadingPage = SecondSummaryPage1.New(slot0:findTF("page1", slot0.pageContainer))
 
-	arg_9_0.loadingPage:Init(arg_9_0.summaryInfoVO)
+	slot0.loadingPage:Init(slot0.summaryInfoVO)
 
-	arg_9_0.pages = {}
+	slot0.pages = {}
 
-	local function var_9_0(arg_10_0, arg_10_1, arg_10_2)
-		setActive(arg_10_0, false)
+	function slot1(slot0, slot1, slot2)
+		setActive(slot0, false)
 
-		local var_10_0 = arg_10_1.New(arg_10_0)
+		slot3 = slot1.New(slot0)
 
-		table.insert(arg_9_0.pages, var_10_0)
-		var_10_0:Init(arg_10_2)
+		table.insert(uv0.pages, slot3)
+		slot3:Init(slot2)
 	end
 
-	var_9_0(arg_9_0.pageContainer:Find("page2"), SecondSummaryPage2, arg_9_0.summaryInfoVO)
-	var_9_0(arg_9_0.pageContainer:Find("page3"), SecondSummaryPage3, arg_9_0.summaryInfoVO)
-	var_9_0(arg_9_0.pageContainer:Find("page6"), SecondSummaryPage6, arg_9_0.summaryInfoVO)
+	slot1(slot0.pageContainer:Find("page2"), SecondSummaryPage2, slot0.summaryInfoVO)
+	slot1(slot0.pageContainer:Find("page3"), SecondSummaryPage3, slot0.summaryInfoVO)
+	slot1(slot0.pageContainer:Find("page6"), SecondSummaryPage6, slot0.summaryInfoVO)
+	setActive(slot0.pageContainer:Find("page4"), false)
 
-	local var_9_1 = arg_9_0.pageContainer:Find("page4")
+	slot3 = 0
 
-	setActive(var_9_1, false)
-
-	local var_9_2 = 0
-
-	if #arg_9_0.summaryInfoVO.medalList > 0 then
-		var_9_2 = math.floor((#arg_9_0.summaryInfoVO.medalList - 1) / SecondSummaryPage4.PerPageCount) + 1
+	if #slot0.summaryInfoVO.medalList > 0 then
+		slot3 = math.floor((#slot0.summaryInfoVO.medalList - 1) / SecondSummaryPage4.PerPageCount) + 1
 	end
 
-	for iter_9_0 = 1, var_9_2 do
-		var_9_0(cloneTplTo(var_9_1, arg_9_0.pageContainer, "page4_1_" .. iter_9_0), SecondSummaryPage4, setmetatable({
+	for slot7 = 1, slot3 do
+		slot1(cloneTplTo(slot2, slot0.pageContainer, "page4_1_" .. slot7), SecondSummaryPage4, setmetatable({
 			pageType = SecondSummaryPage4.PageTypeFurniture,
-			samePage = iter_9_0,
-			activityVO = arg_9_0.activityVO
+			samePage = slot7,
+			activityVO = slot0.activityVO
 		}, {
-			__index = arg_9_0.summaryInfoVO
+			__index = slot0.summaryInfoVO
 		}))
 	end
 
-	local var_9_3 = 0
+	slot3 = 0
 
-	if #arg_9_0.summaryInfoVO.iconFrameList > 0 then
-		var_9_3 = math.floor((#arg_9_0.summaryInfoVO.iconFrameList - 1) / SecondSummaryPage4.PerPageCount) + 1
+	if #slot0.summaryInfoVO.iconFrameList > 0 then
+		slot3 = math.floor((#slot0.summaryInfoVO.iconFrameList - 1) / SecondSummaryPage4.PerPageCount) + 1
 	end
 
-	for iter_9_1 = 1, var_9_3 do
-		var_9_0(cloneTplTo(var_9_1, arg_9_0.pageContainer, "page4_2_" .. iter_9_1), SecondSummaryPage4, setmetatable({
+	for slot7 = 1, slot3 do
+		slot1(cloneTplTo(slot2, slot0.pageContainer, "page4_2_" .. slot7), SecondSummaryPage4, setmetatable({
 			pageType = SecondSummaryPage4.PageTypeIconFrame,
-			samePage = iter_9_1,
-			activityVO = arg_9_0.activityVO
+			samePage = slot7,
+			activityVO = slot0.activityVO
 		}, {
-			__index = arg_9_0.summaryInfoVO
+			__index = slot0.summaryInfoVO
 		}))
 	end
 
-	var_9_0(arg_9_0.pageContainer:Find("page5"), SecondSummaryPage5, arg_9_0.summaryInfoVO)
-	onButton(arg_9_0, arg_9_0:findTF("page5/share", arg_9_0.pageContainer), function()
+	slot1(slot0.pageContainer:Find("page5"), SecondSummaryPage5, slot0.summaryInfoVO)
+	onButton(slot0, slot0:findTF("page5/share", slot0.pageContainer), function ()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeSecondSummary)
 	end, SFX_CONFIRM)
 	seriesAsync({
-		function(arg_12_0)
-			arg_9_0.inAniming = true
+		function (slot0)
+			uv0.inAniming = true
 
-			arg_9_0.loadingPage:Show(arg_12_0)
+			uv0.loadingPage:Show(slot0)
 		end,
-		function(arg_13_0)
-			arg_9_0.inAniming = false
+		function (slot0)
+			uv0.inAniming = false
 
-			arg_9_0.loadingPage:Hide()
-			arg_9_0:registerFootEvent()
-			arg_9_0:registerDrag()
-			arg_13_0()
+			uv0.loadingPage:Hide()
+			uv0:registerFootEvent()
+			uv0:registerDrag()
+			slot0()
 		end
-	}, function()
-		setActive(arg_9_0.pageFootContainer, true)
-		arg_9_0:updatePageFoot(1)
+	}, function ()
+		setActive(uv0.pageFootContainer, true)
+		uv0:updatePageFoot(1)
 	end)
 end
 
-function var_0_0.registerFootEvent(arg_15_0)
-	local var_15_0 = UIItemList.New(arg_15_0.pageFootContainer, arg_15_0.pageFootContainer:Find("dot"))
+function slot0.registerFootEvent(slot0)
+	slot1 = UIItemList.New(slot0.pageFootContainer, slot0.pageFootContainer:Find("dot"))
 
-	var_15_0:make(function(arg_16_0, arg_16_1, arg_16_2)
-		local var_16_0 = arg_16_1 + 1
+	slot1:make(function (slot0, slot1, slot2)
+		slot3 = slot1 + 1
 
-		if arg_16_0 == UIItemList.EventUpdate then
-			onToggle(arg_15_0, arg_16_2, function(arg_17_0)
-				if arg_17_0 then
-					arg_15_0.pages[var_16_0]:Show()
+		if slot0 == UIItemList.EventUpdate then
+			onToggle(uv0, slot2, function (slot0)
+				if slot0 then
+					uv0.pages[uv1]:Show()
 
-					arg_15_0.currPage = var_16_0
+					uv0.currPage = uv1
 				else
-					arg_15_0.pages[arg_15_0.currPage]:Hide()
+					uv0.pages[uv0.currPage]:Hide()
 				end
 			end)
 		end
 	end)
-	var_15_0:align(#arg_15_0.pages)
+	slot1:align(#slot0.pages)
 end
 
-function var_0_0.registerDrag(arg_18_0)
-	arg_18_0:addVerticalDrag(arg_18_0:findTF("bg"), function()
-		arg_18_0:updatePageFoot(arg_18_0.currPage - 1)
-	end, function()
-		arg_18_0:updatePageFoot(arg_18_0.currPage + 1)
+function slot0.registerDrag(slot0)
+	slot0:addVerticalDrag(slot0:findTF("bg"), function ()
+		uv0:updatePageFoot(uv0.currPage - 1)
+	end, function ()
+		uv0:updatePageFoot(uv0.currPage + 1)
 	end)
 end
 
-function var_0_0.updatePageFoot(arg_21_0, arg_21_1)
-	if arg_21_0:inAnim() or not arg_21_0.pages[arg_21_1] then
+function slot0.updatePageFoot(slot0, slot1)
+	if slot0:inAnim() or not slot0.pages[slot1] then
 		return
 	end
 
-	triggerToggle(arg_21_0.pageFootContainer:GetChild(arg_21_1 - 1), true)
+	triggerToggle(slot0.pageFootContainer:GetChild(slot1 - 1), true)
 end
 
-function var_0_0.addVerticalDrag(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
-	local var_22_0 = GetOrAddComponent(arg_22_1, "EventTriggerListener")
-	local var_22_1
-	local var_22_2 = 0
-	local var_22_3 = 50
+function slot0.addVerticalDrag(slot0, slot1, slot2, slot3)
+	slot4 = GetOrAddComponent(slot1, "EventTriggerListener")
+	slot5 = nil
+	slot6 = 0
+	slot7 = 50
 
-	var_22_0:AddBeginDragFunc(function(arg_23_0, arg_23_1)
-		var_22_2 = 0
-		var_22_1 = arg_23_1.position
+	slot4:AddBeginDragFunc(function (slot0, slot1)
+		uv0 = 0
+		uv1 = slot1.position
 	end)
-	var_22_0:AddDragFunc(function(arg_24_0, arg_24_1)
-		var_22_2 = arg_24_1.position.x - var_22_1.x
+	slot4:AddDragFunc(function (slot0, slot1)
+		uv0 = slot1.position.x - uv1.x
 	end)
-	var_22_0:AddDragEndFunc(function(arg_25_0, arg_25_1)
-		if var_22_2 < -var_22_3 then
-			if arg_22_3 then
-				arg_22_3()
+	slot4:AddDragEndFunc(function (slot0, slot1)
+		if uv0 < -uv1 then
+			if uv2 then
+				uv2()
 			end
-		elseif var_22_2 > var_22_3 and arg_22_2 then
-			arg_22_2()
+		elseif uv1 < uv0 and uv3 then
+			uv3()
 		end
 	end)
 end
 
-function var_0_0.willExit(arg_26_0)
-	for iter_26_0, iter_26_1 in pairs(arg_26_0.pages) do
-		iter_26_1:Dispose()
+function slot0.willExit(slot0)
+	for slot4, slot5 in pairs(slot0.pages) do
+		slot5:Dispose()
 	end
 
-	arg_26_0.pages = nil
-	arg_26_0.currPage = nil
+	slot0.pages = nil
+	slot0.currPage = nil
 end
 
-return var_0_0
+return slot0

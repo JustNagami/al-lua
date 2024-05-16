@@ -1,57 +1,55 @@
-﻿local var_0_0 = class("RandomDockYardCard")
+slot0 = class("RandomDockYardCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_1.transform
-	arg_1_0.npcTr = findTF(arg_1_0._tf, "content/dockyard/npc")
-	arg_1_0.nameTF = findTF(arg_1_0._tf, "content/info/name_mask/name")
-	arg_1_0.lockTr = findTF(arg_1_0._tf, "content/dockyard/container/lock")
-	arg_1_0.selected = findTF(arg_1_0._tf, "content/front/selected")
-	arg_1_0.existAnim = false
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.npcTr = findTF(slot0._tf, "content/dockyard/npc")
+	slot0.nameTF = findTF(slot0._tf, "content/info/name_mask/name")
+	slot0.lockTr = findTF(slot0._tf, "content/dockyard/container/lock")
+	slot0.selected = findTF(slot0._tf, "content/front/selected")
+	slot0.existAnim = false
 
-	ClearTweenItemAlphaAndWhite(arg_1_0._go)
+	ClearTweenItemAlphaAndWhite(slot0._go)
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
-	TweenItemAlphaAndWhite(arg_2_0._go)
+function slot0.Update(slot0, slot1, slot2)
+	TweenItemAlphaAndWhite(slot0._go)
 
-	if not arg_2_0.ship or arg_2_0.ship.id ~= arg_2_1.id then
-		arg_2_0.ship = arg_2_1
+	if not slot0.ship or slot0.ship.id ~= slot1.id then
+		slot0.ship = slot1
 
-		arg_2_0:Flush()
+		slot0:Flush()
 	end
 
-	arg_2_0:UpdateSelected(arg_2_2)
+	slot0:UpdateSelected(slot2)
 end
 
-function var_0_0.UpdateSelected(arg_3_0, arg_3_1)
-	setActive(arg_3_0.selected, arg_3_1)
+function slot0.UpdateSelected(slot0, slot1)
+	setActive(slot0.selected, slot1)
 
-	if not arg_3_1 then
-		arg_3_0.existAnim = false
+	if not slot1 then
+		slot0.existAnim = false
 
-		LeanTween.cancel(arg_3_0.selected.gameObject)
-	elseif arg_3_0.existAnim then
-		-- block empty
-	else
-		arg_3_0.existAnim = true
+		LeanTween.cancel(slot0.selected.gameObject)
+	elseif not slot0.existAnim then
+		slot0.existAnim = true
 
-		blinkAni(arg_3_0.selected, 0.6, -1, 0.3):setFrom(1)
+		blinkAni(slot0.selected, 0.6, -1, 0.3):setFrom(1)
 	end
 end
 
-function var_0_0.Flush(arg_4_0)
-	local var_4_0 = arg_4_0.ship
+function slot0.Flush(slot0)
+	slot1 = slot0.ship
 
-	flushShipCard(arg_4_0._tf, var_4_0)
-	setActive(arg_4_0.npcTr, var_4_0:isActivityNpc())
-	setText(arg_4_0.nameTF, var_4_0:GetColorName(shortenString(var_4_0:getName(), PLATFORM_CODE == PLATFORM_US and 6 or 7)))
-	arg_4_0.lockTr.gameObject:SetActive(var_4_0:GetLockState() == Ship.LOCK_STATE_LOCK)
+	flushShipCard(slot0._tf, slot1)
+	setActive(slot0.npcTr, slot1:isActivityNpc())
+	setText(slot0.nameTF, slot1:GetColorName(shortenString(slot1:getName(), PLATFORM_CODE == PLATFORM_US and 6 or 7)))
+	slot0.lockTr.gameObject:SetActive(slot1:GetLockState() == Ship.LOCK_STATE_LOCK)
 end
 
-function var_0_0.Dispose(arg_5_0)
-	ClearTweenItemAlphaAndWhite(arg_5_0._go)
-	arg_5_0:UpdateSelected(false)
+function slot0.Dispose(slot0)
+	ClearTweenItemAlphaAndWhite(slot0._go)
+	slot0:UpdateSelected(false)
 end
 
-return var_0_0
+return slot0

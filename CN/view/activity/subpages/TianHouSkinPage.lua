@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("TianHouSkinPage", import("...base.BaseActivityPage"))
-local var_0_1 = {
+slot0 = class("TianHouSkinPage", import("...base.BaseActivityPage"))
+slot1 = {
 	[0] = {
 		color = "ffffff",
 		name = "none"
@@ -30,153 +30,142 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0.GetCurrentDay()
-	local var_1_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-	return pg.TimeMgr.GetInstance():STimeDescS(var_1_0, "*t").yday
+function slot0.GetCurrentDay()
+	return pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t").yday
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.bg = arg_2_0:findTF("AD")
-	arg_2_0.helpBtn = arg_2_0:findTF("help", arg_2_0.bg)
-	arg_2_0.gotTag = arg_2_0:findTF("got", arg_2_0.bg)
-	arg_2_0.medalText = arg_2_0:findTF("medal", arg_2_0.bg)
-	arg_2_0.ticketText = arg_2_0:findTF("ticket", arg_2_0.bg)
-	arg_2_0.fireworkBtn = arg_2_0:findTF("game_list/firework", arg_2_0.bg)
-	arg_2_0.shootBtn = arg_2_0:findTF("game_list/shoot", arg_2_0.bg)
-	arg_2_0.foodBtn = arg_2_0:findTF("game_list/food", arg_2_0.bg)
-	arg_2_0.effectNode = arg_2_0:findTF("effectNode", arg_2_0.bg)
-	arg_2_0.playEffectBtn = arg_2_0:findTF("fire", arg_2_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.helpBtn = slot0:findTF("help", slot0.bg)
+	slot0.gotTag = slot0:findTF("got", slot0.bg)
+	slot0.medalText = slot0:findTF("medal", slot0.bg)
+	slot0.ticketText = slot0:findTF("ticket", slot0.bg)
+	slot0.fireworkBtn = slot0:findTF("game_list/firework", slot0.bg)
+	slot0.shootBtn = slot0:findTF("game_list/shoot", slot0.bg)
+	slot0.foodBtn = slot0:findTF("game_list/food", slot0.bg)
+	slot0.effectNode = slot0:findTF("effectNode", slot0.bg)
+	slot0.playEffectBtn = slot0:findTF("fire", slot0.bg)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	arg_3_0.hubID = arg_3_0.activity:getConfig("config_id")
+function slot0.OnFirstFlush(slot0)
+	slot0.hubID = slot0.activity:getConfig("config_id")
 
-	onButton(arg_3_0, arg_3_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_summer_feast")
 		})
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.fireworkBtn, function()
+	onButton(slot0, slot0.fireworkBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 26)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.shootBtn, function()
+	onButton(slot0, slot0.shootBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 27)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.foodBtn, function()
+	onButton(slot0, slot0.foodBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 25)
 	end, SFX_PANEL)
 
-	local var_3_0 = getProxy(MiniGameProxy):GetMiniGameData(26):GetRuntimeData("elements")
+	slot0.ishow = getProxy(MiniGameProxy):GetMiniGameData(26):GetRuntimeData("elements") and #slot2 >= 4 and slot2[4] == slot0.GetCurrentDay()
 
-	arg_3_0.ishow = var_3_0 and #var_3_0 >= 4 and var_3_0[4] == arg_3_0.GetCurrentDay()
-
-	onButton(arg_3_0, arg_3_0.playEffectBtn, function()
-		if not arg_3_0.ishow then
+	onButton(slot0, slot0.playEffectBtn, function ()
+		if not uv0.ishow then
 			return
 		end
 
-		arg_3_0:PlayFirework(var_3_0)
-		setActive(arg_3_0.playEffectBtn, false)
+		uv0:PlayFirework(uv1)
+		setActive(uv0.playEffectBtn, false)
 	end, SFX_PANEL)
-	blinkAni(arg_3_0:findTF("light", arg_3_0.playEffectBtn), 0.5)
+	blinkAni(slot0:findTF("light", slot0.playEffectBtn), 0.5)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	local var_9_0 = getProxy(MiniGameProxy):GetHubByHubId(arg_9_0.hubID)
-	local var_9_1 = var_9_0:getConfig("reward_need")
+function slot0.OnUpdateFlush(slot0)
+	slot2 = getProxy(MiniGameProxy):GetHubByHubId(slot0.hubID)
 
-	setText(arg_9_0.ticketText, var_9_0.count)
-	setText(arg_9_0.medalText, var_9_0.usedtime .. "/" .. var_9_1)
-	setActive(arg_9_0.gotTag, var_9_0.ultimate ~= 0)
+	setText(slot0.ticketText, slot2.count)
+	setText(slot0.medalText, slot2.usedtime .. "/" .. slot2:getConfig("reward_need"))
+	setActive(slot0.gotTag, slot2.ultimate ~= 0)
 
-	if var_9_0.ultimate == 0 and var_9_1 <= var_9_0.usedtime then
+	if slot2.ultimate == 0 and slot3 <= slot2.usedtime then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg_9_0.hubID,
+			hubid = slot0.hubID,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 
-	setActive(arg_9_0.playEffectBtn, arg_9_0.ishow)
+	setActive(slot0.playEffectBtn, slot0.ishow)
 	pg.NewStoryMgr.GetInstance():Play("TIANHOUYUYI1")
 end
 
-function var_0_0.TransformColor(arg_10_0)
-	local var_10_0 = tonumber(string.sub(arg_10_0, 1, 2), 16)
-	local var_10_1 = tonumber(string.sub(arg_10_0, 3, 4), 16)
-	local var_10_2 = tonumber(string.sub(arg_10_0, 5, 6), 16)
-
-	return Color.New(var_10_0 / 255, var_10_1 / 255, var_10_2 / 255)
+function slot0.TransformColor(slot0)
+	return Color.New(tonumber(string.sub(slot0, 1, 2), 16) / 255, tonumber(string.sub(slot0, 3, 4), 16) / 255, tonumber(string.sub(slot0, 5, 6), 16) / 255)
 end
 
-function var_0_0.PlayFirework(arg_11_0, arg_11_1)
-	arg_11_1 = arg_11_1 or {
+function slot0.PlayFirework(slot0, slot1)
+	slot1 = slot1 or {
 		0,
 		0,
 		0
 	}
+	slot2 = UnityEngine.ParticleSystem.MinMaxGradient.New
 
-	local var_11_0 = UnityEngine.ParticleSystem.MinMaxGradient.New
+	pg.PoolMgr.GetInstance():GetPrefab("ui/firework", "", false, function (slot0)
+		slot2 = tf(slot0):Find("Fire"):GetComponent("ParticleSystem").main.startColor
+		tf(slot0):Find("Fire"):GetComponent("ParticleSystem").main.startColor = uv0(uv1.TransformColor(uv2[uv3[1]].color))
+		tf(slot0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = uv0(uv1.TransformColor(uv2[uv3[2]].color))
+		tf(slot0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = uv0(uv1.TransformColor(uv2[uv3[3]].color))
 
-	pg.PoolMgr.GetInstance():GetPrefab("ui/firework", "", false, function(arg_12_0)
-		local var_12_0 = tf(arg_12_0):Find("Fire"):GetComponent("ParticleSystem").main.startColor
+		setParent(slot0, uv1.effectNode)
 
-		tf(arg_12_0):Find("Fire"):GetComponent("ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[1]].color))
-		tf(arg_12_0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[2]].color))
-		tf(arg_12_0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[3]].color))
-
-		setParent(arg_12_0, arg_11_0.effectNode)
-
-		arg_12_0.transform.localPosition = Vector2(0, 0)
-		arg_11_0.fireEffect = arg_12_0
+		slot0.transform.localPosition = Vector2(0, 0)
+		uv1.fireEffect = slot0
 	end)
-	arg_11_0:PlaySE()
+	slot0:PlaySE()
 end
 
-function var_0_0.ClearEffectFirework(arg_13_0)
-	arg_13_0:StopSE()
+function slot0.ClearEffectFirework(slot0)
+	slot0:StopSE()
 
-	if arg_13_0.fireEffect then
-		pg.PoolMgr.GetInstance():ReturnPrefab("ui/firework", "", arg_13_0.fireEffect)
+	if slot0.fireEffect then
+		pg.PoolMgr.GetInstance():ReturnPrefab("ui/firework", "", slot0.fireEffect)
 	end
 end
 
-function var_0_0.PlaySE(arg_14_0)
-	if arg_14_0.SETimer then
+function slot0.PlaySE(slot0)
+	if slot0.SETimer then
 		return
 	end
 
-	arg_14_0.SECount = 10
-	arg_14_0.SETimer = Timer.New(function()
-		arg_14_0.SECount = arg_14_0.SECount - 1
+	slot0.SECount = 10
+	slot0.SETimer = Timer.New(function ()
+		uv0.SECount = uv0.SECount - 1
 
-		if arg_14_0.SECount <= 0 then
-			arg_14_0.SECount = math.random(5, 20)
+		if uv0.SECount <= 0 then
+			uv0.SECount = math.random(5, 20)
 
 			pg.CriMgr.GetInstance():PlaySE_V3("battle-firework")
 		end
 	end, 0.1, -1)
 
-	arg_14_0.SETimer:Start()
+	slot0.SETimer:Start()
 end
 
-function var_0_0.StopSE(arg_16_0)
-	if arg_16_0.SETimer then
+function slot0.StopSE(slot0)
+	if slot0.SETimer then
 		pg.CriMgr.GetInstance():StopSEBattle_V3()
-		arg_16_0.SETimer:Stop()
+		slot0.SETimer:Stop()
 
-		arg_16_0.SETimer = nil
+		slot0.SETimer = nil
 	end
 end
 
-function var_0_0.OnHideFlush(arg_17_0)
-	arg_17_0:ClearEffectFirework()
+function slot0.OnHideFlush(slot0)
+	slot0:ClearEffectFirework()
 end
 
-function var_0_0.OnDestroy(arg_18_0)
-	arg_18_0:ClearEffectFirework()
+function slot0.OnDestroy(slot0)
+	slot0:ClearEffectFirework()
 end
 
-return var_0_0
+return slot0

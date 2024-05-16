@@ -1,130 +1,109 @@
-﻿local var_0_0 = class("ShipProfileCvBtn")
+slot0 = class("ShipProfileCvBtn")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._go = go(arg_1_1)
-	arg_1_0.nameTxt = arg_1_0._tf:Find("Text"):GetComponent(typeof(Text))
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0._go = go(slot1)
+	slot0.nameTxt = slot0._tf:Find("Text"):GetComponent(typeof(Text))
 
-	setActive(arg_1_0._tf:Find("tag_common"), true)
+	setActive(slot0._tf:Find("tag_common"), true)
 
-	arg_1_0.tagDiff = arg_1_0._tf:Find("tag_diff")
-	arg_1_0.playIcon = arg_1_0._tf:Find("play_icon")
+	slot0.tagDiff = slot0._tf:Find("tag_diff")
+	slot0.playIcon = slot0._tf:Find("play_icon")
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-	arg_2_0.shipGroup = arg_2_1
-	arg_2_0.isLive2d = arg_2_3
-	arg_2_0.skin = arg_2_2
-	arg_2_0.voice = arg_2_4
-	arg_2_0.words = pg.ship_skin_words[arg_2_0.skin.id]
+function slot0.Init(slot0, slot1, slot2, slot3, slot4)
+	slot0.shipGroup = slot1
+	slot0.isLive2d = slot3
+	slot0.skin = slot2
+	slot0.voice = slot4
+	slot0.words = pg.ship_skin_words[slot0.skin.id]
 
-	local var_2_0 = arg_2_0.voice.key
-	local var_2_1 = arg_2_1:getIntimacyName(var_2_0)
-
-	if var_2_1 then
-		arg_2_0.voice = setmetatable({
-			voice_name = var_2_1
+	if slot1:getIntimacyName(slot0.voice.key) then
+		slot0.voice = setmetatable({
+			voice_name = slot6
 		}, {
-			__index = arg_2_4
+			__index = slot4
 		})
 	end
 
-	local var_2_2
-	local var_2_3
-	local var_2_4
-	local var_2_5
-	local var_2_6
-	local var_2_7
-	local var_2_8 = arg_2_4.key
+	slot7, slot8, slot9, slot10, slot11, slot12 = nil
 
-	if string.find(var_2_8, ShipWordHelper.WORD_TYPE_MAIN) then
-		local var_2_9 = string.gsub(var_2_8, ShipWordHelper.WORD_TYPE_MAIN, "")
+	if string.find(slot4.key, ShipWordHelper.WORD_TYPE_MAIN) then
+		slot7, slot8, slot9 = ShipWordHelper.GetWordAndCV(slot0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, tonumber(string.gsub(slot13, ShipWordHelper.WORD_TYPE_MAIN, "")))
 
-		var_2_5 = tonumber(var_2_9)
-		var_2_2, var_2_3, var_2_4 = ShipWordHelper.GetWordAndCV(arg_2_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_2_5)
-
-		if arg_2_0.isLive2d then
-			var_2_6 = ShipWordHelper.GetL2dCvCalibrate(arg_2_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_2_5)
-			var_2_7 = ShipWordHelper.GetL2dSoundEffect(arg_2_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_2_5)
+		if slot0.isLive2d then
+			slot11 = ShipWordHelper.GetL2dCvCalibrate(slot0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, slot10)
+			slot12 = ShipWordHelper.GetL2dSoundEffect(slot0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, slot10)
 		end
 	else
-		var_2_2, var_2_3, var_2_4 = ShipWordHelper.GetWordAndCV(arg_2_0.skin.id, var_2_8)
+		slot7, slot8, slot9 = ShipWordHelper.GetWordAndCV(slot0.skin.id, slot13)
 
-		if arg_2_0.isLive2d then
-			var_2_6 = ShipWordHelper.GetL2dCvCalibrate(arg_2_0.skin.id, var_2_8)
-			var_2_7 = ShipWordHelper.GetL2dSoundEffect(arg_2_0.skin.id, var_2_8)
+		if slot0.isLive2d then
+			slot11 = ShipWordHelper.GetL2dCvCalibrate(slot0.skin.id, slot13)
+			slot12 = ShipWordHelper.GetL2dSoundEffect(slot0.skin.id, slot13)
 		end
 	end
 
-	arg_2_0.l2dEventFlag = var_2_6 == -1
-	var_2_6 = arg_2_0.l2dEventFlag and 0 or var_2_6
-	arg_2_0.wordData = {
+	slot0.l2dEventFlag = slot11 == -1
+
+	if slot0.l2dEventFlag then
+		slot11 = 0
+	end
+
+	slot0.wordData = {
 		maxfavor = 0,
-		cvKey = var_2_2,
-		cvPath = var_2_3,
-		textContent = var_2_4,
-		mainIndex = var_2_5,
-		voiceCalibrate = var_2_6,
-		se = var_2_7
+		cvKey = slot7,
+		cvPath = slot8,
+		textContent = slot9,
+		mainIndex = slot10,
+		voiceCalibrate = slot11,
+		se = slot12
 	}
 end
 
-function var_0_0.Update(arg_3_0)
-	local var_3_0 = arg_3_0.voice
-	local var_3_1 = var_3_0.unlock_condition[1] < 0
-	local var_3_2 = arg_3_0.wordData.textContent == nil or arg_3_0.wordData.textContent == "nil" or arg_3_0.wordData.textContent == ""
-
-	if not arg_3_0.isLive2d then
-		var_3_1 = var_3_1 or var_3_2
+function slot0.Update(slot0)
+	if not slot0.isLive2d then
+		slot2 = slot0.voice.unlock_condition[1] < 0 or (slot0.wordData.textContent == nil or slot0.wordData.textContent == "nil" or slot0.wordData.textContent == "")
 	else
-		local var_3_3 = var_3_0.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
-
-		var_3_1 = var_3_1 or var_3_2 and var_3_3
+		slot2 = slot2 or slot3 and slot1.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
 	end
 
-	setActive(arg_3_0._tf, not var_3_1)
+	setActive(slot0._tf, not slot2)
 
-	if not var_3_1 then
-		arg_3_0:UpdateCvBtn()
-		arg_3_0:UpdateIcon()
+	if not slot2 then
+		slot0:UpdateCvBtn()
+		slot0:UpdateIcon()
 	end
 end
 
-function var_0_0.UpdateCvBtn(arg_4_0)
-	local var_4_0 = arg_4_0.voice
-	local var_4_1, var_4_2 = arg_4_0.shipGroup:VoiceReplayCodition(var_4_0)
-	local var_4_3 = var_4_1 and var_4_0.voice_name or "???"
+function slot0.UpdateCvBtn(slot0)
+	slot3, slot4 = slot0.shipGroup:VoiceReplayCodition(slot0.voice)
+	slot0.nameTxt.text = slot3 and slot1.voice_name or "???"
 
-	arg_4_0.nameTxt.text = var_4_3
+	setActive(slot0.tagDiff, ShipWordHelper.ExistDifferentWord(slot0.skin.id, slot1.key, slot0.wordData.mainIndex))
 
-	local var_4_4 = ShipWordHelper.ExistDifferentWord(arg_4_0.skin.id, var_4_0.key, arg_4_0.wordData.mainIndex)
-
-	setActive(arg_4_0.tagDiff, var_4_4)
-
-	if not var_4_1 then
-		onButton(nil, arg_4_0._tf, function()
-			pg.TipsMgr.GetInstance():ShowTips(var_4_2)
+	if not slot3 then
+		onButton(nil, slot0._tf, function ()
+			pg.TipsMgr.GetInstance():ShowTips(uv0)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.UpdateIcon(arg_6_0)
-	local var_6_0 = arg_6_0.voice.key == "unlock" and PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/star_level_unlock_anim_" .. arg_6_0.skin.id))
-
-	setActive(arg_6_0.playIcon, var_6_0)
+function slot0.UpdateIcon(slot0)
+	setActive(slot0.playIcon, slot0.voice.key == "unlock" and PathMgr.FileExists(PathMgr.getAssetBundle("ui/skinunlockanim/star_level_unlock_anim_" .. slot0.skin.id)))
 end
 
-function var_0_0.L2dHasEvent(arg_7_0)
-	return arg_7_0.l2dEventFlag
+function slot0.L2dHasEvent(slot0)
+	return slot0.l2dEventFlag
 end
 
-function var_0_0.isEx(arg_8_0)
+function slot0.isEx(slot0)
 	return false
 end
 
-function var_0_0.Destroy(arg_9_0)
-	Destroy(arg_9_0._go)
-	removeOnButton(arg_9_0._tf)
+function slot0.Destroy(slot0)
+	Destroy(slot0._go)
+	removeOnButton(slot0._tf)
 end
 
-return var_0_0
+return slot0

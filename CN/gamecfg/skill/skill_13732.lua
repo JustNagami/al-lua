@@ -1,29 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHarm",
-				"TargetShipTag"
-			},
-			arg_list = {
-				weapon_id = 65241,
-				ship_tag_list = {
-					"ShadowClaw"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -221,5 +196,30 @@
 	id = 13732,
 	picture = "1",
 	castCV = "",
-	desc = "鱼雷"
+	desc = "鱼雷",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHarm",
+				"TargetShipTag"
+			},
+			arg_list = {
+				weapon_id = 65241,
+				ship_tag_list = {
+					"ShadowClaw"
+				}
+			}
+		}
+	}
 }

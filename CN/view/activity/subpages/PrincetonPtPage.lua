@@ -1,13 +1,13 @@
-﻿local var_0_0 = class("PrincetonPtPage", import(".TemplatePage.SpTemplatePage"))
+slot0 = class("PrincetonPtPage", import(".TemplatePage.SpTemplatePage"))
 
-function var_0_0.OnUpdateFlush(arg_1_0)
-	var_0_0.super.OnUpdateFlush(arg_1_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 
-	local var_1_0, var_1_1, var_1_2 = arg_1_0.ptData:GetLevelProgress()
-	local var_1_3, var_1_4, var_1_5 = arg_1_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
+	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
 
-	setText(arg_1_0.step, setColorStr(var_1_0, "#4180FFFF") .. "/" .. var_1_1)
-	setText(arg_1_0.progress, setColorStr(var_1_3, "#4180FFFF") .. "/" .. var_1_4)
+	setText(slot0.step, setColorStr(slot1, "#4180FFFF") .. "/" .. slot2)
+	setText(slot0.progress, setColorStr(slot4, "#4180FFFF") .. "/" .. slot5)
 end
 
-return var_0_0
+return slot0

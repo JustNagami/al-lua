@@ -1,36 +1,35 @@
-﻿local var_0_0 = class("WorldDailyTaskMediator", import("..base.ContextMediator"))
+slot0 = class("WorldDailyTaskMediator", import("..base.ContextMediator"))
+slot0.OnTaskGoto = "WorldDailyTaskMediator.OnTaskGoto"
+slot0.OnAccepetTask = "WorldDailyTaskMediator.OnAccepetTask"
+slot0.OnSubmitTask = "WorldDailyTaskMediator.OnSubmitTask"
 
-var_0_0.OnTaskGoto = "WorldDailyTaskMediator.OnTaskGoto"
-var_0_0.OnAccepetTask = "WorldDailyTaskMediator.OnAccepetTask"
-var_0_0.OnSubmitTask = "WorldDailyTaskMediator.OnSubmitTask"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.OnTaskGoto, function(arg_2_0, arg_2_1)
-		arg_1_0.viewComponent:closeView()
-		arg_1_0:sendNotification(WorldMediator.OnTriggerTaskGo, {
-			taskId = arg_2_1
+function slot0.register(slot0)
+	slot0:bind(uv0.OnTaskGoto, function (slot0, slot1)
+		uv0.viewComponent:closeView()
+		uv0:sendNotification(WorldMediator.OnTriggerTaskGo, {
+			taskId = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.OnAccepetTask, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.WORLD_TRIGGER_DAILY_TASK, {
-			taskIds = arg_3_1
+	slot0:bind(uv0.OnAccepetTask, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_TRIGGER_DAILY_TASK, {
+			taskIds = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.OnSubmitTask, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.WORLD_SUMBMIT_TASK, {
-			taskId = arg_4_1.id
+	slot0:bind(uv0.OnSubmitTask, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_SUMBMIT_TASK, {
+			taskId = slot1.id
 		})
 	end)
-	arg_1_0.viewComponent:SetTaskProxy(nowWorld():GetTaskProxy())
+	slot0.viewComponent:SetTaskProxy(nowWorld():GetTaskProxy())
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-return var_0_0
+return slot0

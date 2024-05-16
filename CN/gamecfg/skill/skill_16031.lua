@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 62851
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -146,5 +135,16 @@
 	painting = 0,
 	id = 16031,
 	picture = "0",
-	desc = "武藏弹幕"
+	desc = "武藏弹幕",
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 62851
+			}
+		}
+	}
 }

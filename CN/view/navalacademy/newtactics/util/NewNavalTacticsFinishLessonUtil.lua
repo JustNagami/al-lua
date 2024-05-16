@@ -1,197 +1,176 @@
-﻿local var_0_0 = class("NewNavalTacticsFinishLessonUtil")
+slot0 = class("NewNavalTacticsFinishLessonUtil")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.studentsPage = arg_1_1
-	arg_1_0.selLessonPage = arg_1_2
-	arg_1_0.selSkillPage = arg_1_3
-	arg_1_0.queue = {}
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.studentsPage = slot1
+	slot0.selLessonPage = slot2
+	slot0.selSkillPage = slot3
+	slot0.queue = {}
 end
 
-function var_0_0.Enter(arg_2_0, arg_2_1, arg_2_2)
-	if _.any(arg_2_0.queue, function(arg_3_0)
-		return arg_3_0[1] == arg_2_1
+function slot0.Enter(slot0, slot1, slot2)
+	if _.any(slot0.queue, function (slot0)
+		return slot0[1] == uv0
 	end) then
 		return
 	end
 
-	table.insert(arg_2_0.queue, {
-		arg_2_1,
-		arg_2_2
+	table.insert(slot0.queue, {
+		slot1,
+		slot2
 	})
 
-	if #arg_2_0.queue == 1 then
-		arg_2_0:Excute()
+	if #slot0.queue == 1 then
+		slot0:Excute()
 	end
 end
 
-function var_0_0.Excute(arg_4_0)
-	local var_4_0 = arg_4_0.queue[1]
-
-	if var_4_0[2] == Student.CANCEL_TYPE_QUICKLY then
+function slot0.Excute(slot0)
+	if slot0.queue[1][2] == Student.CANCEL_TYPE_QUICKLY then
 		pg.m02:sendNotification(GAME.QUICK_FINISH_LEARN_TACTICS, {
-			shipId = var_4_0[1]
+			shipId = slot1[1]
 		})
 	else
 		pg.m02:sendNotification(GAME.CANCEL_LEARN_TACTICS, {
-			shipId = var_4_0[1],
-			type = var_4_0[2]
+			shipId = slot1[1],
+			type = slot1[2]
 		})
 	end
 end
 
-function var_0_0.NextOne(arg_5_0)
-	table.remove(arg_5_0.queue, 1)
+function slot0.NextOne(slot0)
+	table.remove(slot0.queue, 1)
 	pg.m02:sendNotification(NewNavalTacticsMediator.ON_FINISH_ONE_ANIM)
 
-	if #arg_5_0.queue > 0 then
-		arg_5_0:Excute()
+	if #slot0.queue > 0 then
+		slot0:Excute()
 	end
 end
 
-function var_0_0.IsWorking(arg_6_0)
-	return #arg_6_0.queue > 0
+function slot0.IsWorking(slot0)
+	return #slot0.queue > 0
 end
 
-function var_0_0.WaitForFinish(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4, arg_7_5)
-	local function var_7_0()
-		arg_7_0:DisplayResult(arg_7_1, arg_7_3, arg_7_2, arg_7_4, arg_7_5)
-	end
+function slot0.WaitForFinish(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot7 = slot0.studentsPage:GetCard(slot1)
 
-	local var_7_1 = arg_7_0.studentsPage:GetCard(arg_7_1)
-
-	var_7_1:RemoveTimer()
-	arg_7_0:DoAnimtion(var_7_1, arg_7_3, arg_7_4, arg_7_5, var_7_0)
+	slot7:RemoveTimer()
+	slot0:DoAnimtion(slot7, slot3, slot4, slot5, function ()
+		uv0:DisplayResult(uv1, uv2, uv3, uv4, uv5)
+	end)
 end
 
-function var_0_0.DisplayResult(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
-	local var_9_0 = ""
-	local var_9_1 = getProxy(BayProxy):RawGetShipById(arg_9_3)
-	local var_9_2 = var_9_1:getName()
-	local var_9_3 = arg_9_4:GetName()
+function slot0.DisplayResult(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = ""
+	slot8 = getProxy(BayProxy):RawGetShipById(slot3):getName()
+	slot9 = slot4:GetName()
 
-	if arg_9_5.level > arg_9_4.level then
-		var_9_0 = i18n("tactics_end_to_learn", var_9_2, var_9_3, arg_9_2) .. i18n("tactics_skill_level_up", arg_9_4.level, arg_9_5.level)
+	if slot5:IsMaxLevel() then
+		slot0:HandleMaxLevel(slot1, slot7, slot4.level < slot5.level and i18n("tactics_end_to_learn", slot8, slot9, slot2) .. i18n("tactics_skill_level_up", slot4.level, slot5.level) or i18n("tactics_end_to_learn", slot8, slot9, slot2), slot8, slot9, slot2)
 	else
-		var_9_0 = i18n("tactics_end_to_learn", var_9_2, var_9_3, arg_9_2)
-	end
-
-	if arg_9_5:IsMaxLevel() then
-		arg_9_0:HandleMaxLevel(arg_9_1, var_9_1, var_9_0, var_9_2, var_9_3, arg_9_2)
-	else
-		arg_9_0:WhetherToContinue(var_9_0, arg_9_1, var_9_1, arg_9_4.id)
+		slot0:WhetherToContinue(slot6, slot1, slot7, slot4.id)
 	end
 end
 
-function var_0_0.HandleMaxLevel(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5, arg_10_6)
-	local var_10_0 = arg_10_2:getSkillList()
-
-	if _.all(var_10_0, function(arg_11_0)
-		return ShipSkill.New(arg_10_2.skills[arg_11_0]):IsMaxLevel()
+function slot0.HandleMaxLevel(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	if _.all(slot2:getSkillList(), function (slot0)
+		return ShipSkill.New(uv0.skills[slot0]):IsMaxLevel()
 	end) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
-			content = arg_10_3,
-			onYes = function()
-				arg_10_0:NextOne()
+			content = slot3,
+			onYes = function ()
+				uv0:NextOne()
 			end
 		})
 	else
-		arg_10_0:WhetherToContinueForOtherSkill(arg_10_1, arg_10_2, arg_10_4, arg_10_5, arg_10_6)
+		slot0:WhetherToContinueForOtherSkill(slot1, slot2, slot4, slot5, slot6)
 	end
 end
 
-function var_0_0.WhetherToContinueForOtherSkill(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4, arg_13_5)
-	local var_13_0 = i18n("tactics_end_to_learn", arg_13_3, arg_13_4, arg_13_5) .. i18n("tactics_continue_to_learn_other_skill")
-
+function slot0.WhetherToContinueForOtherSkill(slot0, slot1, slot2, slot3, slot4, slot5)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		modal = true,
 		hideClose = true,
-		content = var_13_0,
-		onYes = function()
-			if arg_13_0:ExistBook() then
-				arg_13_0:ContinuousLearningForOtherSkill(arg_13_1, arg_13_2)
+		content = i18n("tactics_end_to_learn", slot3, slot4, slot5) .. i18n("tactics_continue_to_learn_other_skill"),
+		onYes = function ()
+			if uv0:ExistBook() then
+				uv0:ContinuousLearningForOtherSkill(uv1, uv2)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_no_lesson"))
-				arg_13_0:NextOne()
+				uv0:NextOne()
 			end
 		end,
-		onNo = function()
-			arg_13_0:NextOne()
+		onNo = function ()
+			uv0:NextOne()
 		end
 	})
 end
 
-function var_0_0.ContinuousLearningForOtherSkill(arg_16_0, arg_16_1, arg_16_2)
-	local var_16_0 = Student.New({
-		id = arg_16_1,
-		ship_id = arg_16_2.id
-	})
-
-	arg_16_0.selSkillPage:SetCancelCallback(function()
-		arg_16_0:NextOne()
+function slot0.ContinuousLearningForOtherSkill(slot0, slot1, slot2)
+	slot0.selSkillPage:SetCancelCallback(function ()
+		uv0:NextOne()
 	end)
-	arg_16_0.selLessonPage:SetHideCallback(function()
-		arg_16_0:NextOne()
+	slot0.selLessonPage:SetHideCallback(function ()
+		uv0:NextOne()
 	end)
-	arg_16_0.selSkillPage:ExecuteAction("Show", var_16_0)
+	slot0.selSkillPage:ExecuteAction("Show", Student.New({
+		id = slot1,
+		ship_id = slot2.id
+	}))
 end
 
-function var_0_0.WhetherToContinue(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4)
-	arg_19_1 = arg_19_1 .. i18n("tactics_continue_to_learn")
-
+function slot0.WhetherToContinue(slot0, slot1, slot2, slot3, slot4)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		modal = true,
 		hideClose = true,
-		content = arg_19_1,
-		onYes = function()
-			if arg_19_0:ExistBook() then
-				arg_19_0:ContinuousLearning(arg_19_2, arg_19_3, arg_19_4)
+		content = slot1 .. i18n("tactics_continue_to_learn"),
+		onYes = function ()
+			if uv0:ExistBook() then
+				uv0:ContinuousLearning(uv1, uv2, uv3)
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_no_lesson"))
-				arg_19_0:NextOne()
+				uv0:NextOne()
 			end
 		end,
-		onNo = function()
-			arg_19_0:NextOne()
+		onNo = function ()
+			uv0:NextOne()
 		end
 	})
 end
 
-function var_0_0.ExistBook(arg_22_0)
+function slot0.ExistBook(slot0)
 	return #getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE) > 0
 end
 
-function var_0_0.ContinuousLearning(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	local var_23_0 = Student.New({
-		id = arg_23_1,
-		ship_id = arg_23_2.id
+function slot0.ContinuousLearning(slot0, slot1, slot2, slot3)
+	slot4 = Student.New({
+		id = slot1,
+		ship_id = slot2.id
 	})
-	local var_23_1 = arg_23_2:getSkillList()
-	local var_23_2 = table.indexof(var_23_1, arg_23_3)
 
-	assert(var_23_2 and var_23_2 > 0)
-	var_23_0:setSkillIndex(var_23_2)
-	arg_23_0.selLessonPage:SetHideCallback(function()
-		arg_23_0:NextOne()
+	assert(table.indexof(slot2:getSkillList(), slot3) and slot6 > 0)
+	slot4:setSkillIndex(slot6)
+	slot0.selLessonPage:SetHideCallback(function ()
+		uv0:NextOne()
 	end)
-	arg_23_0.selLessonPage:ExecuteAction("Show", var_23_0, false)
+	slot0.selLessonPage:ExecuteAction("Show", slot4, false)
 end
 
-function var_0_0.DoAnimtion(arg_25_0, arg_25_1, arg_25_2, arg_25_3, arg_25_4, arg_25_5)
-	if not arg_25_1 then
-		arg_25_5()
+function slot0.DoAnimtion(slot0, slot1, slot2, slot3, slot4, slot5)
+	if not slot1 then
+		slot5()
 	else
-		arg_25_1:DoAddExpAnim(arg_25_3, arg_25_4, arg_25_5)
+		slot1:DoAddExpAnim(slot3, slot4, slot5)
 	end
 end
 
-function var_0_0.Dispose(arg_26_0)
-	arg_26_0.studentsPage = nil
-	arg_26_0.selLessonPage = nil
-	arg_26_0.selSkillPage = nil
-	arg_26_0.queue = {}
+function slot0.Dispose(slot0)
+	slot0.studentsPage = nil
+	slot0.selLessonPage = nil
+	slot0.selSkillPage = nil
+	slot0.queue = {}
 end
 
-return var_0_0
+return slot0

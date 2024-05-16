@@ -1,43 +1,42 @@
-﻿local var_0_0 = class("BatchGetCommanderCommand", pm.SimpleCommand)
+slot0 = class("BatchGetCommanderCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().boxIds
-	local var_1_1 = {}
-	local var_1_2 = {}
-	local var_1_3 = {}
+function slot0.execute(slot0, slot1)
+	slot4 = {}
+	slot5 = {}
+	slot6 = {}
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
-		table.insert(var_1_3, function(arg_2_0)
-			if arg_1_0:CheckFullCapacity() then
-				arg_2_0()
+	for slot10, slot11 in ipairs(slot1:getBody().boxIds) do
+		table.insert(slot6, function (slot0)
+			if uv0:CheckFullCapacity() then
+				slot0()
 
 				return
 			end
 
-			arg_1_0:sendNotification(GAME.COMMANDER_ON_OPEN_BOX, {
+			uv0:sendNotification(GAME.COMMANDER_ON_OPEN_BOX, {
 				notify = false,
-				id = iter_1_1,
-				callback = function(arg_3_0)
-					if arg_3_0 then
-						table.insert(var_1_1, arg_3_0)
-						table.insert(var_1_2, iter_1_1)
+				id = uv1,
+				callback = function (slot0)
+					if slot0 then
+						table.insert(uv0, slot0)
+						table.insert(uv1, uv2)
 					end
 
-					arg_2_0()
+					uv3()
 				end
 			})
 		end)
 	end
 
-	seriesAsync(var_1_3, function()
-		arg_1_0:sendNotification(GAME.COMMANDER_ON_BATCH_DONE, {
-			boxIds = var_1_2,
-			commanders = var_1_1
+	seriesAsync(slot6, function ()
+		uv0:sendNotification(GAME.COMMANDER_ON_BATCH_DONE, {
+			boxIds = uv1,
+			commanders = uv2
 		})
 	end)
 end
 
-function var_0_0.CheckFullCapacity(arg_5_0)
+function slot0.CheckFullCapacity(slot0)
 	if getProxy(PlayerProxy):getRawData().commanderBagMax <= getProxy(CommanderProxy):getCommanderCnt() then
 		return true
 	end
@@ -45,4 +44,4 @@ function var_0_0.CheckFullCapacity(arg_5_0)
 	return false
 end
 
-return var_0_0
+return slot0

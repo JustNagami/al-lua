@@ -1,81 +1,61 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleBuffHPLink = class("BattleBuffHPLink", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffHPLink.__name = "BattleBuffHPLink"
+slot1 = slot0.Battle.BattleBuffHPLink
+slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleBuffHPLink = class("BattleBuffHPLink", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffHPLink.__name = "BattleBuffHPLink"
-
-local var_0_1 = var_0_0.Battle.BattleBuffHPLink
-
-var_0_1.FX_TYPE = var_0_0.Battle.BattleBuffEffect.FX_TYPE_LINK
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0._tempData.arg_list
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._number = slot0._tempData.arg_list.number or 0
+	slot0._absorbRate = slot3.absorb or 0
+	slot0._restoreRate = 0
+	slot0._sumDMG = 0
 
-	arg_2_0._number = var_2_0.number or 0
-	arg_2_0._absorbRate = var_2_0.absorb or 0
-	arg_2_0._restoreRate = 0
-	arg_2_0._sumDMG = 0
-
-	if var_2_0.restoreRatio then
-		arg_2_0._restoreRate = var_2_0.restoreRatio * 0.0001
+	if slot3.restoreRatio then
+		slot0._restoreRate = slot3.restoreRatio * 0.0001
 	end
 end
 
-function var_0_1.onTakeDamage(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	if arg_3_3.isShare then
+function slot1.onTakeDamage(slot0, slot1, slot2, slot3)
+	if slot3.isShare then
 		return
 	end
 
-	local var_3_0 = arg_3_3.damage
-	local var_3_1 = arg_3_2:GetCaster()
+	slot4 = slot3.damage
 
-	if var_3_1 and var_3_1:IsAlive() and var_3_1 ~= arg_3_1 then
-		arg_3_3.damage = math.ceil(var_3_0 * arg_3_0._number)
+	if slot2:GetCaster() and slot5:IsAlive() and slot5 ~= slot1 then
+		slot3.damage = math.ceil(slot4 * slot0._number)
 
-		local var_3_2 = math.ceil((var_3_0 - arg_3_3.damage) * (1 - arg_3_0._absorbRate))
+		if math.ceil((slot4 - slot3.damage) * (1 - slot0._absorbRate)) > 0 then
+			slot0._sumDMG = slot0._sumDMG + slot4
 
-		if var_3_2 > 0 then
-			arg_3_0._sumDMG = arg_3_0._sumDMG + var_3_2
-
-			local var_3_3 = {
+			slot5:UpdateHP(-slot4, {
 				isMiss = false,
 				isCri = false,
 				isHeal = false,
 				isShare = true
-			}
+			})
 
-			var_3_1:UpdateHP(-var_3_2, var_3_3)
+			if slot3.damageSrc then
+				slot7 = slot3.damageSrc
 
-			if arg_3_3.damageSrc then
-				local var_3_4 = arg_3_3.damageSrc
-
-				var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(var_3_4, arg_3_1:GetAttrByName("id"), -var_3_2)
-				var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(var_3_4, var_3_1:GetAttrByName("id"), var_3_2)
+				uv0.Battle.BattleDataProxy.GetInstance():DamageStatistics(slot7, slot1:GetAttrByName("id"), -slot4)
+				uv0.Battle.BattleDataProxy.GetInstance():DamageStatistics(slot7, slot5:GetAttrByName("id"), slot4)
 			end
 		end
 	end
 end
 
-function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_2:GetCaster()
-
-	if var_4_0 and var_4_0:IsAlive() and arg_4_0._restoreRate > 0 and var_4_0 ~= arg_4_1 then
-		local var_4_1 = var_4_0:GetAttrByName("healingRate")
-		local var_4_2 = math.floor(arg_4_0._sumDMG * arg_4_0._restoreRate * var_4_1)
-
-		if var_4_2 ~= 0 then
-			local var_4_3 = {
-				isMiss = false,
-				isCri = false,
-				isHeal = true
-			}
-
-			var_4_0:UpdateHP(var_4_2, var_4_3)
-		end
+function slot1.onRemove(slot0, slot1, slot2)
+	if slot2:GetCaster() and slot3:IsAlive() and slot0._restoreRate > 0 and slot3 ~= slot1 and math.floor(slot0._sumDMG * slot0._restoreRate * slot3:GetAttrByName("healingRate")) ~= 0 then
+		slot3:UpdateHP(slot5, {
+			isMiss = false,
+			isCri = false,
+			isHeal = true
+		})
 	end
 end

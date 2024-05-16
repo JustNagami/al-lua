@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				skill_id = 10810,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "鹤之加护"
 	},
@@ -50,5 +38,17 @@
 	stack = 1,
 	id = 10810,
 	icon = 10810,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				skill_id = 10810,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

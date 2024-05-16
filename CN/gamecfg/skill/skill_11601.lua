@@ -1,23 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmNearest",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 67220
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -155,5 +136,24 @@
 	id = 11601,
 	picture = "0",
 	castCV = "",
-	desc = "格斗炮术"
+	desc = "格斗炮术",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmNearest",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 67220
+			}
+		}
+	}
 }

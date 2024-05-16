@@ -1,22 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 12253,
-				target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Helena-Chan"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -37,5 +19,23 @@
 	stack = 1,
 	id = 12252,
 	icon = 12250,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 12253,
+				target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Helena-Chan"
+				}
+			}
+		}
+	}
 }

@@ -1,114 +1,108 @@
-﻿local var_0_0 = class("GoodsCard", import(".BaseGoodsCard"))
+slot0 = class("GoodsCard", import(".BaseGoodsCard"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.go = arg_1_1
-	arg_1_0.tr = tf(arg_1_1)
-	arg_1_0.mask = arg_1_0.tr:Find("mask")
-	arg_1_0.selloutTag = arg_1_0.tr:Find("mask/tag/sellout_tag")
+	slot0.go = slot1
+	slot0.tr = tf(slot1)
+	slot0.mask = slot0.tr:Find("mask")
+	slot0.selloutTag = slot0.tr:Find("mask/tag/sellout_tag")
 
-	setText(arg_1_0.selloutTag, i18n("common_sale_out"))
+	setText(slot0.selloutTag, i18n("common_sale_out"))
 
-	arg_1_0.levelTag = arg_1_0.tr:Find("mask/tag/level_tag")
+	slot0.levelTag = slot0.tr:Find("mask/tag/level_tag")
 
-	setText(arg_1_0.levelTag, i18n("shop_charge_level_limit"))
+	setText(slot0.levelTag, i18n("shop_charge_level_limit"))
 
-	arg_1_0.levelTagText = arg_1_0.tr:Find("mask/tag/level_tag/Text")
-	arg_1_0.stars = arg_1_0.tr:Find("item/icon_bg/stars")
-	arg_1_0.itemTF = findTF(arg_1_0.tr, "item")
-	arg_1_0.nameTxt = findTF(arg_1_0.tr, "item/name_mask/name")
-	arg_1_0.discountTF = findTF(arg_1_0.tr, "item/discount")
-	arg_1_0.discountTextTF = findTF(arg_1_0.discountTF, "Text"):GetComponent(typeof(Text))
-	arg_1_0.countTF = findTF(arg_1_0.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
-	arg_1_0.resIconTF = findTF(arg_1_0.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
-	arg_1_0.itemIconTF = arg_1_0.itemTF:Find("icon_bg/icon"):GetComponent(typeof(Image))
-	arg_1_0.itemCountTF = arg_1_0.itemTF:Find("icon_bg/count"):GetComponent(typeof(Text))
-	arg_1_0.maskTip = i18n("buy_countLimit")
+	slot0.levelTagText = slot0.tr:Find("mask/tag/level_tag/Text")
+	slot0.stars = slot0.tr:Find("item/icon_bg/stars")
+	slot0.itemTF = findTF(slot0.tr, "item")
+	slot0.nameTxt = findTF(slot0.tr, "item/name_mask/name")
+	slot0.discountTF = findTF(slot0.tr, "item/discount")
+	slot0.discountTextTF = findTF(slot0.discountTF, "Text"):GetComponent(typeof(Text))
+	slot0.countTF = findTF(slot0.tr, "item/consume/contain/Text"):GetComponent(typeof(Text))
+	slot0.resIconTF = findTF(slot0.tr, "item/consume/contain/icon"):GetComponent(typeof(Image))
+	slot0.itemIconTF = slot0.itemTF:Find("icon_bg/icon"):GetComponent(typeof(Image))
+	slot0.itemCountTF = slot0.itemTF:Find("icon_bg/count"):GetComponent(typeof(Text))
+	slot0.maskTip = i18n("buy_countLimit")
 
-	onButton(arg_1_0, arg_1_0.mask, function()
-		pg.TipsMgr.GetInstance():ShowTips(arg_1_0.maskTip)
+	onButton(slot0, slot0.mask, function ()
+		pg.TipsMgr.GetInstance():ShowTips(uv0.maskTip)
 	end, SFX_PANEL)
 end
 
-function var_0_0.setGroupMask(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0.goodsVO:getConfig("group_limit")
-	local var_3_1 = var_3_0 > 0 and var_3_0 <= arg_3_1
+function slot0.setGroupMask(slot0, slot1)
+	slot3 = slot0.goodsVO:getConfig("group_limit") > 0 and slot2 <= slot1
 
-	if isActive(arg_3_0.mask) then
+	if isActive(slot0.mask) then
 		return
 	end
 
-	setActive(arg_3_0.mask, var_3_1)
+	setActive(slot0.mask, slot3)
 
-	if var_3_0 > 0 and var_3_0 <= arg_3_1 then
-		setActive(arg_3_0.selloutTag, true)
-		setActive(arg_3_0.levelTag, false)
+	if slot2 > 0 and slot2 <= slot1 then
+		setActive(slot0.selloutTag, true)
+		setActive(slot0.levelTag, false)
 	end
 end
 
-function var_0_0.setLevelMask(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0.goodsVO:getLevelLimit(arg_4_1)
-	local var_4_1 = arg_4_0.goodsVO:isLevelLimit(arg_4_1)
+function slot0.setLevelMask(slot0, slot1)
+	slot2 = slot0.goodsVO:getLevelLimit(slot1)
+	slot3 = slot0.goodsVO:isLevelLimit(slot1)
 
-	if isActive(arg_4_0.mask) then
+	if isActive(slot0.mask) then
 		return
 	end
 
-	setActive(arg_4_0.mask, var_4_1)
+	setActive(slot0.mask, slot3)
 
-	if var_4_1 then
-		setText(arg_4_0.levelTagText, tostring(var_4_0))
-		setActive(arg_4_0.levelTag, true)
-		setActive(arg_4_0.selloutTag, false)
+	if slot3 then
+		setText(slot0.levelTagText, tostring(slot2))
+		setActive(slot0.levelTag, true)
+		setActive(slot0.selloutTag, false)
 
-		arg_4_0.maskTip = i18n("charge_level_limit")
+		slot0.maskTip = i18n("charge_level_limit")
 	end
 end
 
-function var_0_0.update(arg_5_0, arg_5_1)
-	arg_5_0.goodsVO = arg_5_1
+function slot0.update(slot0, slot1)
+	slot0.goodsVO = slot1
+	slot2 = slot0.goodsVO:canPurchase()
 
-	local var_5_0 = arg_5_0.goodsVO:canPurchase()
+	setActive(slot0.mask, not slot2)
+	setActive(slot0.selloutTag, not slot2)
+	setActive(slot0.stars, false)
 
-	setActive(arg_5_0.mask, not var_5_0)
-	setActive(arg_5_0.selloutTag, not var_5_0)
-	setActive(arg_5_0.stars, false)
+	slot3 = slot1:getDropInfo()
 
-	local var_5_1 = arg_5_1:getDropInfo()
+	updateDrop(slot0.itemTF, slot3)
+	setText(slot0.nameTxt, shortenString(slot3:getConfig("name") or "", 6))
 
-	updateDrop(arg_5_0.itemTF, var_5_1)
+	slot5 = ""
 
-	local var_5_2 = var_5_1:getConfig("name") or ""
-
-	setText(arg_5_0.nameTxt, shortenString(var_5_2, 6))
-
-	local var_5_3 = ""
-	local var_5_4 = arg_5_1:getConfig("resource_num")
-
-	if arg_5_1:getConfig("genre") == ShopArgs.ShoppingStreetLimit then
-		var_5_3 = 100 - arg_5_1.discount .. "%OFF"
-		var_5_4 = var_5_4 * (arg_5_1.discount / 100)
+	if slot1:getConfig("genre") == ShopArgs.ShoppingStreetLimit then
+		slot5 = 100 - slot1.discount .. "%OFF"
+		slot6 = slot1:getConfig("resource_num") * slot1.discount / 100
 	end
 
-	setActive(arg_5_0.discountTF, false)
+	setActive(slot0.discountTF, false)
 
-	arg_5_0.discountTF = arg_5_1.activityDiscount and findTF(arg_5_0.tr, "item/discount_activity") or findTF(arg_5_0.tr, "item/discount")
-	arg_5_0.discountTextTF = findTF(arg_5_0.discountTF, "Text"):GetComponent(typeof(Text))
+	slot0.discountTF = slot1.activityDiscount and findTF(slot0.tr, "item/discount_activity") or findTF(slot0.tr, "item/discount")
+	slot0.discountTextTF = findTF(slot0.discountTF, "Text"):GetComponent(typeof(Text))
 
-	setActive(arg_5_0.discountTF, arg_5_1:hasDiscount())
+	setActive(slot0.discountTF, slot1:hasDiscount())
 
-	arg_5_0.discountTextTF.text = var_5_3
-	arg_5_0.countTF.text = math.ceil(var_5_4)
+	slot0.discountTextTF.text = slot5
+	slot0.countTF.text = math.ceil(slot6)
 
 	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = arg_5_1:getConfig("resource_type")
-	}):getIcon(), "", tf(arg_5_0.resIconTF))
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "", tf(slot0.resIconTF))
 end
 
-function var_0_0.OnDispose(arg_6_0)
-	arg_6_0.goodsVO = nil
+function slot0.OnDispose(slot0)
+	slot0.goodsVO = nil
 end
 
-return var_0_0
+return slot0

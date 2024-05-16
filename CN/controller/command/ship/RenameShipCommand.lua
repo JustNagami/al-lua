@@ -1,35 +1,32 @@
-﻿local var_0_0 = class("RenameShipCommand", pm.SimpleCommand)
+slot0 = class("RenameShipCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipId
-	local var_1_2 = var_1_0.name
-	local var_1_3 = getProxy(BayProxy)
-	local var_1_4 = var_1_3:getShipById(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.name
 
-	if not var_1_4 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_1))
+	if not getProxy(BayProxy):getShipById(slot2.shipId) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot3))
 
 		return
 	end
 
-	local var_1_5 = var_1_4:isRemoulded() and pg.ship_skin_template[var_1_4:getRemouldSkinId()].name or pg.ship_data_statistics[var_1_4.configId].name
+	slot7 = slot6:isRemoulded() and pg.ship_skin_template[slot6:getRemouldSkinId()].name or pg.ship_data_statistics[slot6.configId].name
 
-	if var_1_4:getName() == var_1_2 then
-		arg_1_0:sendNotification(GAME.RENAME_SHIP_DONE, {
-			ship = var_1_4
+	if slot6:getName() == slot4 then
+		slot0:sendNotification(GAME.RENAME_SHIP_DONE, {
+			ship = slot6
 		})
 
 		return
 	end
 
-	if var_1_2 == "" then
+	if slot4 == "" then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("login_createNewPlayer_error_nameNull"))
 
 		return
 	end
 
-	if var_1_2 ~= var_1_5 and not nameValidityCheck(var_1_2, 0, 40, {
+	if slot4 ~= slot7 and not nameValidityCheck(slot4, 0, 40, {
 		"spece_illegal_tip",
 		"login_newPlayerScene_name_tooShort",
 		"ship_renameShip_error_2011",
@@ -38,32 +35,32 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	local function var_1_6()
+	function slot8()
 		pg.ConnectionMgr.GetInstance():Send(12034, {
-			ship_id = var_1_1,
-			name = var_1_2 == var_1_5 and "" or var_1_2
-		}, 12035, function(arg_3_0)
-			if arg_3_0.result == 0 then
-				var_1_4.name = var_1_2
-				var_1_4.renameTime = pg.TimeMgr.GetInstance():GetServerTime()
+			ship_id = uv0,
+			name = uv1 == uv2 and "" or uv1
+		}, 12035, function (slot0)
+			if slot0.result == 0 then
+				uv0.name = uv1
+				uv0.renameTime = pg.TimeMgr.GetInstance():GetServerTime()
 
-				var_1_3:updateShip(var_1_4)
-				arg_1_0:sendNotification(BayProxy.SHIP_UPDATED, var_1_4)
-				arg_1_0:sendNotification(GAME.RENAME_SHIP_DONE, {
-					ship = var_1_4
+				uv2:updateShip(uv0)
+				uv3:sendNotification(BayProxy.SHIP_UPDATED, uv0)
+				uv3:sendNotification(GAME.RENAME_SHIP_DONE, {
+					ship = uv0
 				})
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_renameShip", arg_3_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_renameShip", slot0.result))
 			end
 		end)
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = i18n("word_rename_time_warning", var_1_4:getName(), var_1_2),
-		onYes = function()
-			var_1_6()
+		content = i18n("word_rename_time_warning", slot6:getName(), slot4),
+		onYes = function ()
+			uv0()
 		end
 	})
 end
 
-return var_0_0
+return slot0

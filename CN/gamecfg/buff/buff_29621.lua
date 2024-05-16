@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-恶毒μI"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-恶毒μI",
+	name = "专属弹幕-恶毒μI",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-恶毒μI",
+	stack = 1,
+	id = 29621,
+	icon = 29620,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 29620
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-恶毒μI"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-恶毒μI",
-	name = "专属弹幕-恶毒μI",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-恶毒μI",
-	stack = 1,
-	id = 29621,
-	icon = 29620,
-	last_effect = ""
+	}
 }

@@ -1,29 +1,22 @@
-﻿local var_0_0 = type
-local var_0_1 = {}
-local var_0_2 = tolua.typeof
-local var_0_3 = tolua.findtype
+slot0 = type
+slot1 = {}
+slot2 = tolua.typeof
+slot3 = tolua.findtype
 
-function typeof(arg_1_0)
-	local var_1_0 = var_0_0(arg_1_0)
-	local var_1_1
+function typeof(slot0)
+	slot2 = nil
 
-	if var_1_0 == "table" then
-		var_1_1 = var_0_1[arg_1_0]
-
-		if var_1_1 == nil then
-			var_1_1 = var_0_2(arg_1_0)
-			var_0_1[arg_1_0] = var_1_1
+	if uv0(slot0) == "table" then
+		if uv1[slot0] == nil then
+			uv1[slot0] = uv2(slot0)
 		end
-	elseif var_1_0 == "string" then
-		var_1_1 = var_0_1[arg_1_0]
-
-		if var_1_1 == nil then
-			var_1_1 = var_0_3(arg_1_0)
-			var_0_1[arg_1_0] = var_1_1
+	elseif slot1 == "string" then
+		if uv1[slot0] == nil then
+			uv1[slot0] = uv3(slot0)
 		end
 	else
-		error(debug.traceback("attemp to call typeof on type " .. var_1_0))
+		error(debug.traceback("attemp to call typeof on type " .. slot1))
 	end
 
-	return var_1_1
+	return slot2
 end

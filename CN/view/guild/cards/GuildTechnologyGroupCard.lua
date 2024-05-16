@@ -1,75 +1,69 @@
-﻿local var_0_0 = class("GuildTechnologyGroupCard", import(".GuildTechnologyCard"))
+slot0 = class("GuildTechnologyGroupCard", import(".GuildTechnologyCard"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0.devBtn = arg_1_0.breakoutTF:Find("dev_btn")
-	arg_1_0.cancelBtn = arg_1_0.breakoutTF:Find("cancel_btn")
-	arg_1_0.devBtnTxt = arg_1_0.devBtn:Find("Text"):GetComponent(typeof(Text))
+	slot0.devBtn = slot0.breakoutTF:Find("dev_btn")
+	slot0.cancelBtn = slot0.breakoutTF:Find("cancel_btn")
+	slot0.devBtnTxt = slot0.devBtn:Find("Text"):GetComponent(typeof(Text))
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = arg_2_1.id
+function slot0.Update(slot0, slot1, slot2, slot3)
+	slot0.titleImg.text = slot1:getConfig("name")
+	slot0.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", slot1.id)
+	slot0.descTxt.text = slot1:GetDesc()
+	slot7 = slot1:GetState()
 
-	arg_2_0.titleImg.text = arg_2_1:getConfig("name")
-	arg_2_0.iconImag.sprite = GetSpriteFromAtlas("GuildTechnology", var_2_0)
-	arg_2_0.descTxt.text = arg_2_1:GetDesc()
+	setActive(slot0.maxTF, slot1:GetMaxLevel() <= slot1:GetLevel())
+	setActive(slot0.breakoutTF, slot6 < slot5)
+	setActive(slot0.devBtn, slot7 == GuildTechnologyGroup.STATE_STOP and slot6 < slot5)
+	setActive(slot0.breakoutSlider.gameObject, slot7 == GuildTechnologyGroup.STATE_START)
+	setActive(slot0.cancelBtn, false)
 
-	local var_2_1 = arg_2_1:GetMaxLevel()
-	local var_2_2 = arg_2_1:GetLevel()
-	local var_2_3 = arg_2_1:GetState()
-
-	setActive(arg_2_0.maxTF, var_2_1 <= var_2_2)
-	setActive(arg_2_0.breakoutTF, var_2_2 < var_2_1)
-	setActive(arg_2_0.devBtn, var_2_3 == GuildTechnologyGroup.STATE_STOP and var_2_2 < var_2_1)
-	setActive(arg_2_0.breakoutSlider.gameObject, var_2_3 == GuildTechnologyGroup.STATE_START)
-	setActive(arg_2_0.cancelBtn, false)
-
-	if var_2_2 < var_2_1 then
-		onButton(arg_2_0, arg_2_0._tf, function()
-			if not arg_2_3 then
+	if slot6 < slot5 then
+		onButton(slot0, slot0._tf, function ()
+			if not uv0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_non_admin"))
 
 				return
 			end
 
 			pg.MsgboxMgr:GetInstance():ShowMsgBox({
-				content = i18n("guild_start_tech_group_tip", arg_2_1:getConfig("name")),
-				onYes = function()
-					arg_2_0.view:emit(GuildTechnologyMediator.ON_START, var_2_0)
+				content = i18n("guild_start_tech_group_tip", uv1:getConfig("name")),
+				onYes = function ()
+					uv0.view:emit(GuildTechnologyMediator.ON_START, uv1)
 				end
 			})
 		end, SFX_PANEL)
 
-		arg_2_0.levelTxt.text = "Lv." .. var_2_2 .. "/" .. var_2_1
+		slot0.levelTxt.text = "Lv." .. slot6 .. "/" .. slot5
 	else
-		arg_2_0.levelTxt.text = "Lv." .. var_2_1 .. "/" .. var_2_1
+		slot0.levelTxt.text = "Lv." .. slot5 .. "/" .. slot5
 	end
 
-	if var_2_3 == GuildTechnologyGroup.STATE_START then
-		local var_2_4 = arg_2_1:GetTargetProgress()
-		local var_2_5 = arg_2_1:GetProgress()
-
-		arg_2_0.breakoutSlider.value = var_2_5 / var_2_4
-		arg_2_0.breakoutTxt.text = var_2_5 .. "/" .. var_2_4
+	if slot7 == GuildTechnologyGroup.STATE_START then
+		slot8 = slot1:GetTargetProgress()
+		slot9 = slot1:GetProgress()
+		slot0.breakoutSlider.value = slot9 / slot8
+		slot0.breakoutTxt.text = slot9 .. "/" .. slot8
 	end
 
-	onButton(arg_2_0, arg_2_0.cancelBtn, function()
-		if not arg_2_3 then
+	onButton(slot0, slot0.cancelBtn, function ()
+		if not uv0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_non_admin"))
 
 			return
 		end
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			content = i18n("guild_cancel_tech_tip", arg_2_1:getConfig("name")),
-			onYes = function()
-				arg_2_0.view:emit(GuildTechnologyMediator.ON_CANCEL_TECH, var_2_0)
+			content = i18n("guild_cancel_tech_tip", uv1:getConfig("name")),
+			onYes = function ()
+				uv0.view:emit(GuildTechnologyMediator.ON_CANCEL_TECH, uv1)
 			end
 		})
 	end, SFX_PANEL)
 
-	arg_2_0.devBtnTxt.text = i18n("guild_tech_donate_target", arg_2_1:GetTargetProgress())
+	slot0.devBtnTxt.text = i18n("guild_tech_donate_target", slot1:GetTargetProgress())
 end
 
-return var_0_0
+return slot0

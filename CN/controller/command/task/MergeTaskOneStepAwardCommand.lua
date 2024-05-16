@@ -1,72 +1,67 @@
-﻿local var_0_0 = class("MergeTaskOneStepAwardCommand", pm.SimpleCommand)
+slot0 = class("MergeTaskOneStepAwardCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().resultList
+function slot0.execute(slot0, slot1)
+	if #slot1:getBody().resultList > 0 then
+		slot4 = {}
 
-	if #var_1_0 > 0 then
-		local var_1_1 = {}
-		local var_1_2 = {}
-
-		for iter_1_0, iter_1_1 in ipairs(var_1_0) do
-			if iter_1_1.isWeekTask then
-				table.insert(var_1_2, iter_1_1.id)
+		for slot9, slot10 in ipairs(slot3) do
+			if slot10.isWeekTask then
+				table.insert({}, slot10.id)
 			else
-				table.insert(var_1_1, iter_1_1)
+				table.insert(slot4, slot10)
 			end
 		end
 
-		local var_1_3 = {}
+		slot6 = {}
 
-		local function var_1_4(arg_2_0)
-			for iter_2_0, iter_2_1 in ipairs(arg_2_0) do
-				table.insert(var_1_3, iter_2_1)
+		function slot7(slot0)
+			for slot4, slot5 in ipairs(slot0) do
+				table.insert(uv0, slot5)
 			end
 		end
 
 		seriesAsync({
-			function(arg_3_0)
-				if #var_1_1 <= 0 then
-					arg_3_0()
+			function (slot0)
+				if #uv0 <= 0 then
+					slot0()
 
 					return
 				end
 
-				arg_1_0:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
+				uv1:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
 					dontSendMsg = true,
-					resultList = var_1_1,
-					callback = function(arg_4_0)
-						var_1_4(arg_4_0)
-						arg_3_0()
+					resultList = uv0,
+					callback = function (slot0)
+						uv0(slot0)
+						uv1()
 					end
 				})
 			end,
-			function(arg_5_0)
-				if #var_1_2 <= 0 then
-					arg_5_0()
+			function (slot0)
+				if #uv0 <= 0 then
+					slot0()
 
 					return
 				end
 
-				arg_1_0:sendNotification(GAME.BATCH_SUBMIT_WEEK_TASK, {
+				uv1:sendNotification(GAME.BATCH_SUBMIT_WEEK_TASK, {
 					dontSendMsg = true,
-					ids = var_1_2,
-					callback = function(arg_6_0)
-						var_1_4(arg_6_0)
-						arg_5_0()
+					ids = uv0,
+					callback = function (slot0)
+						uv0(slot0)
+						uv1()
 					end
 				})
 			end
-		}, function()
-			local var_7_0 = _.map(var_1_1, function(arg_8_0)
-				return arg_8_0.id
-			end)
-
-			arg_1_0:sendNotification(GAME.MERGE_TASK_ONE_STEP_AWARD_DONE, {
-				awards = var_1_3,
-				taskIds = var_7_0
+		}, function ()
+			uv1:sendNotification(GAME.MERGE_TASK_ONE_STEP_AWARD_DONE, {
+				awards = uv2,
+				taskIds = _.map(uv0, function (slot0)
+					return slot0.id
+				end)
 			})
 		end)
 	end
 end
 
-return var_0_0
+return slot0

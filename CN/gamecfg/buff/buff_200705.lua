@@ -1,4 +1,28 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "黑基洛夫BOSS战 彗星机械重组",
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 200705,
+	icon = 200705,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -35,29 +59,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "黑基洛夫BOSS战 彗星机械重组",
-	time = 0,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 200705,
-	icon = 200705,
-	last_effect = ""
+	}
 }

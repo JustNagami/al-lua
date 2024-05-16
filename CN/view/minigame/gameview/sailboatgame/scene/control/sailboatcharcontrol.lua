@@ -1,206 +1,160 @@
-﻿local var_0_0 = class("SailBoatCharControl")
-local var_0_1
+slot0 = class("SailBoatCharControl")
+slot1 = nil
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1 = SailBoatGameVo
-	arg_1_0._bgContent = arg_1_1
-	arg_1_0._eventCall = arg_1_2
-	arg_1_0._charContent = findTF(arg_1_0._bgContent, "scene/content")
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0 = SailBoatGameVo
+	slot0._bgContent = slot1
+	slot0._eventCall = slot2
+	slot0._charContent = findTF(slot0._bgContent, "scene/content")
+	slot3 = SailBoatGameConst.game_char[uv0.char_id]
+	slot0._char = SailBoatChar.New(uv0.GetGameCharTf(slot3.tpl), slot0._eventCall)
 
-	local var_1_0 = SailBoatGameConst.game_char[var_0_1.char_id]
-	local var_1_1 = var_0_1.GetGameCharTf(var_1_0.tpl)
-
-	arg_1_0._char = SailBoatChar.New(var_1_1, arg_1_0._eventCall)
-
-	arg_1_0._char:setData(var_1_0)
-	arg_1_0._char:setContent(arg_1_0._charContent, var_0_1.char_start_pos)
+	slot0._char:setData(slot3)
+	slot0._char:setContent(slot0._charContent, uv0.char_start_pos)
 end
 
-function var_0_0.start(arg_2_0)
-	var_0_1.SetGameChar(arg_2_0._char)
+function slot0.start(slot0)
+	uv0.SetGameChar(slot0._char)
 
-	arg_2_0._fireIndex = var_0_1.fire_step
+	slot0._fireIndex = uv0.fire_step
 
-	local var_2_0 = {}
-	local var_2_1 = {}
+	slot0._char:clearEquipData()
 
-	arg_2_0._char:clearEquipData()
+	for slot6 = 1, #uv0.equips do
+		if uv0.equips[slot6] and uv0.equips[slot6] > 0 then
+			slot7 = SailBoatGameConst.equip_data[uv0.equips[slot6]]
 
-	for iter_2_0 = 1, #var_0_1.equips do
-		if var_0_1.equips[iter_2_0] and var_0_1.equips[iter_2_0] > 0 then
-			local var_2_2 = SailBoatGameConst.equip_data[var_0_1.equips[iter_2_0]]
+			slot0._char:setEquipData(slot7)
 
-			arg_2_0._char:setEquipData(var_2_2)
+			if slot7.weapon_id and slot7.weapon_id ~= 0 then
+				slot8 = SailBoatGameConst.game_weapon[slot7.weapon_id]
 
-			if var_2_2.weapon_id and var_2_2.weapon_id ~= 0 then
-				local var_2_3 = SailBoatGameConst.game_weapon[var_2_2.weapon_id]
-				local var_2_4 = SailBoatWeapon.New(var_2_3)
-				local var_2_5 = SailBoatWeapon.New(var_2_3)
-
-				table.insert(var_2_0, var_2_4)
-				table.insert(var_2_1, var_2_5)
+				table.insert({}, SailBoatWeapon.New(slot8))
+				table.insert({}, SailBoatWeapon.New(slot8))
 			end
 		end
 	end
 
-	local var_2_6 = var_0_1.char_weapons
-
-	for iter_2_1 = 1, #var_2_6[1] do
-		local var_2_7 = var_2_6[1][iter_2_1]
-		local var_2_8 = SailBoatGameConst.game_weapon[var_2_7]
-		local var_2_9 = SailBoatWeapon.New(Clone(var_2_8))
-
-		table.insert(var_2_0, var_2_9)
+	for slot7 = 1, #uv0.char_weapons[1] do
+		table.insert(slot1, SailBoatWeapon.New(Clone(SailBoatGameConst.game_weapon[slot3[1][slot7]])))
 	end
 
-	for iter_2_2 = 1, #var_2_6[2] do
-		local var_2_10 = var_2_6[2][iter_2_2]
-		local var_2_11 = SailBoatGameConst.game_weapon[var_2_10]
-		local var_2_12 = SailBoatWeapon.New(Clone(var_2_11))
-
-		table.insert(var_2_1, var_2_12)
+	for slot7 = 1, #slot3[2] do
+		table.insert(slot2, SailBoatWeapon.New(Clone(SailBoatGameConst.game_weapon[slot3[2][slot7]])))
 	end
 
-	arg_2_0._char:setWeapon(var_2_0, var_2_1)
-	arg_2_0._char:start()
+	slot0._char:setWeapon(slot1, slot2)
+	slot0._char:start()
 
-	arg_2_0._ableFire = true
+	slot0._ableFire = true
 end
 
-function var_0_0.step(arg_3_0, arg_3_1)
-	local var_3_0 = var_0_1.joyStickData
-	local var_3_1 = 0
-	local var_3_2 = 0
-	local var_3_3 = 0
-	local var_3_4 = 0
+function slot0.step(slot0, slot1)
+	slot3 = 0
+	slot4 = 0
+	slot5 = 0
+	slot6 = 0
 
-	if var_3_0 and var_3_0.active then
-		var_3_1, var_3_2 = var_3_0.x, var_3_0.y
-		var_3_3, var_3_4 = var_3_0.directX, var_3_0.directY
+	if uv0.joyStickData and slot2.active then
+		slot4 = slot2.y
+		slot3 = slot2.x
+		slot6 = slot2.directY
 
-		if math.abs(var_3_3) < 0.1 then
-			var_3_3 = 0
+		if math.abs(slot2.directX) < 0.1 then
+			slot5 = 0
 		end
 
-		if math.abs(var_3_4) < 0.1 then
-			var_3_4 = 0
+		if math.abs(slot6) < 0.1 then
+			slot6 = 0
 		end
 	end
 
-	if arg_3_0:getCharNextTouchFlag(var_3_1, var_3_2, var_3_3, var_3_4) then
-		var_3_1, var_3_2 = 0, 0
+	if slot0:getCharNextTouchFlag(slot3, slot4, slot5, slot6) then
+		slot4 = 0
+		slot3 = 0
 	end
 
-	arg_3_0._char:changeDirect(var_3_1, var_3_2)
-	arg_3_0._char:step(arg_3_1)
+	slot0._char:changeDirect(slot3, slot4)
+	slot0._char:step(slot1)
 
-	arg_3_0._fireIndex = arg_3_0._fireIndex - 1
+	slot0._fireIndex = slot0._fireIndex - 1
 
-	if arg_3_0._fireIndex <= 0 then
-		arg_3_0._fireIndex = var_0_1.fire_step
+	if slot0._fireIndex <= 0 then
+		slot0._fireIndex = uv0.fire_step
 	end
 
-	if arg_3_0._ableFire then
-		local var_3_5 = arg_3_0._char:getPosition()
-		local var_3_6 = var_0_1.GetGameEnemys()
+	if slot0._ableFire then
+		slot8 = slot0._char:getPosition()
 
-		for iter_3_0 = 1, #var_3_6 do
-			local var_3_7 = var_3_6[iter_3_0]
-
-			arg_3_0:checkCharEnemyFire(arg_3_0._char, var_3_7)
+		for slot13 = 1, #uv0.GetGameEnemys() do
+			slot0:checkCharEnemyFire(slot0._char, slot9[slot13])
 		end
 	end
 end
 
-function var_0_0.checkCharEnemyFire(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_1:getPosition()
-	local var_4_1 = arg_4_1:getWeaponMaxDistance()
-	local var_4_2 = arg_4_2:getPosition()
-	local var_4_3 = var_4_2.x > var_4_0.x and 1 or -1
+function slot0.checkCharEnemyFire(slot0, slot1, slot2)
+	slot4 = slot1:getWeaponMaxDistance()
 
-	if arg_4_1:getLife() and arg_4_2:getLife() and not arg_4_1:inFireCd(var_4_3) then
-		local var_4_4, var_4_5 = arg_4_0._char:getWeapons()
-		local var_4_6, var_4_7 = arg_4_0._char:getFirePos()
-		local var_4_8, var_4_9 = arg_4_0._char:getFireContent()
-		local var_4_10 = var_4_2.x > var_4_0.x and var_4_5 or var_4_4
-		local var_4_11 = var_4_2.x > var_4_0.x and var_4_7 or var_4_6
+	if slot1:getLife() and slot2:getLife() and not slot1:inFireCd(slot1:getPosition().x < slot2:getPosition().x and 1 or -1) then
+		slot7, slot8 = slot0._char:getWeapons()
+		slot9, slot10 = slot0._char:getFirePos()
+		slot11, slot12 = slot0._char:getFireContent()
+		slot13 = slot3.x < slot5.x and slot8 or slot7
+		slot14 = slot3.x < slot5.x and slot10 or slot9
+		slot14.y = slot14.y + math.random(-10, 10)
+		slot15 = slot3.x < slot5.x and slot12 or slot11
 
-		var_4_11.y = var_4_11.y + math.random(-10, 10)
+		if math.sqrt(math.pow(slot5.x - slot3.x, 2) + math.pow(slot5.y - slot3.y, 2)) < slot0._char:getWeaponMaxDistance() then
+			slot23 = 20
 
-		local var_4_12 = var_4_2.x > var_4_0.x and var_4_9 or var_4_8
+			for slot23 = 1, #slot13 do
+				if slot13[slot23]:getFireAble() then
+					slot26 = false
 
-		if math.sqrt(math.pow(var_4_2.x - var_4_0.x, 2) + math.pow(var_4_2.y - var_4_0.y, 2)) < arg_4_0._char:getWeaponMaxDistance() then
-			local var_4_13 = math.atan2(var_4_2.y - var_4_0.y + math.random(-20, 20), var_4_2.x - var_4_0.x + math.random(-20, 20))
-			local var_4_14 = var_4_13 * math.rad2Deg
-
-			for iter_4_0 = 1, #var_4_10 do
-				local var_4_15 = var_4_10[iter_4_0]
-
-				if var_4_15:getFireAble() then
-					local var_4_16 = var_4_15:getAngel()
-					local var_4_17 = false
-
-					if var_4_16 > math.abs(var_4_14) and var_4_3 == 1 then
-						var_4_17 = true
-					elseif var_4_16 > math.abs(180 - math.abs(var_4_14)) and var_4_3 == -1 then
-						var_4_17 = true
+					if math.abs(math.atan2(slot5.y - slot3.y + math.random(-20, 20), slot5.x - slot3.x + math.random(-20, slot23)) * math.rad2Deg) < slot24:getAngel() and slot6 == 1 then
+						slot26 = true
+					elseif math.abs(180 - math.abs(slot19)) < slot25 and slot6 == -1 then
+						slot26 = true
 					end
 
-					if var_4_17 then
-						local var_4_18 = var_4_15:fire()
-
-						if var_4_18 then
-							arg_4_1:fire(var_4_3)
-							pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_FIRE)
-
-							local var_4_19 = {
-								pos = var_4_11,
-								move = Vector2(math.cos(var_4_13), math.sin(var_4_13)),
-								hit = arg_4_0._char:getHitGroup(),
+					if slot26 and slot24:fire() then
+						slot1:fire(slot6)
+						pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_SOUND_FIRE)
+						slot0._eventCall(SailBoatGameEvent.BOAT_EVENT_FIRE, {
+							bullet_id = slot27.bullet_id,
+							weapon_data = slot27,
+							fire_data = {
+								pos = slot14,
+								move = Vector2(math.cos(slot18), math.sin(slot18)),
+								hit = slot0._char:getHitGroup(),
 								effect_pos = Vector2(0, 0),
-								effect_content = var_4_12
+								effect_content = slot15
 							}
+						})
 
-							arg_4_0._eventCall(SailBoatGameEvent.BOAT_EVENT_FIRE, {
-								bullet_id = var_4_18.bullet_id,
-								weapon_data = var_4_18,
-								fire_data = var_4_19
-							})
-
-							return
-						end
+						return
 					end
 				end
 			end
 		end
-	elseif not arg_4_1:inFireCd(var_4_3) then
-		-- block empty
+	elseif not slot1:inFireCd(slot6) then
+		-- Nothing
 	end
 end
 
-function var_0_0.getCharNextTouchFlag(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	local var_5_0 = arg_5_0._char:getNextPosition(arg_5_1, arg_5_2)
-	local var_5_1 = arg_5_0._char:getBoundData()
-	local var_5_2 = arg_5_0._char:getColliderMinPosition()
-	local var_5_3 = Vector2(0, 0)
+function slot0.getCharNextTouchFlag(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot0._char:getNextPosition(slot1, slot2)
+	slot7 = slot0._char:getColliderMinPosition()
+	slot8 = Vector2(0, 0)
+	slot8.x = slot5.x + slot7.x
+	slot8.y = slot5.y + slot7.y
 
-	var_5_3.x = var_5_0.x + var_5_2.x
-	var_5_3.y = var_5_0.y + var_5_2.y
+	for slot13 = 1, #uv0.GetGameItems() do
+		if slot9[slot13]:getConfig("type") == SailBoatGameConst.item_static and math.abs(slot14:getPosition().x - slot5.x) < 500 and math.abs(slot15.y - slot5.y) < 500 then
+			slot16, slot17 = slot14:getColliderData()
 
-	local var_5_4 = var_0_1.GetGameItems()
-
-	for iter_5_0 = 1, #var_5_4 do
-		local var_5_5 = var_5_4[iter_5_0]
-
-		if var_5_5:getConfig("type") == SailBoatGameConst.item_static then
-			local var_5_6 = var_5_5:getPosition()
-
-			if math.abs(var_5_6.x - var_5_0.x) < 500 and math.abs(var_5_6.y - var_5_0.y) < 500 then
-				local var_5_7, var_5_8 = var_5_5:getColliderData()
-
-				if not arg_5_0:checkLeave(arg_5_3, arg_5_4, var_5_0, var_5_6) and var_0_1.CheckRectCollider(var_5_3, var_5_7, var_5_1, var_5_8) then
-					return true
-				end
+			if not slot0:checkLeave(slot3, slot4, slot5, slot15) and uv0.CheckRectCollider(slot8, slot16, slot0._char:getBoundData(), slot17) then
+				return true
 			end
 		end
 	end
@@ -208,60 +162,52 @@ function var_0_0.getCharNextTouchFlag(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_
 	return false
 end
 
-function var_0_0.checkLeave(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
-	local var_6_0
-	local var_6_1
-	local var_6_2 = false
-	local var_6_3
-	local var_6_4
+function slot0.checkLeave(slot0, slot1, slot2, slot3, slot4)
+	slot5, slot6 = nil
+	slot7 = false
+	slot8, slot9 = nil
 
-	if arg_6_1 ~= 0 then
-		var_6_3 = arg_6_3.x > arg_6_4.x and arg_6_1 == 1 and true or arg_6_3.x <= arg_6_4.x and arg_6_1 == -1 and true or false
+	if slot1 ~= 0 then
+		slot8 = slot4.x < slot3.x and slot1 == 1 and true or slot3.x <= slot4.x and slot1 == -1 and true or false
 	end
 
-	if arg_6_2 ~= 0 then
-		var_6_4 = arg_6_3.y > arg_6_4.y and arg_6_2 == 1 and true or arg_6_3.y <= arg_6_4.y and arg_6_2 == -1 and true or false
+	if slot2 ~= 0 then
+		slot9 = slot4.y < slot3.y and slot2 == 1 and true or slot3.y <= slot4.y and slot2 == -1 and true or false
 	end
 
-	if arg_6_1 ~= 0 and arg_6_2 ~= 0 then
-		-- block empty
-	elseif arg_6_1 ~= 0 and arg_6_2 == 0 then
-		var_6_2 = var_6_3
-	elseif arg_6_1 == 0 and arg_6_2 ~= 0 then
-		var_6_2 = var_6_4
+	if slot1 ~= 0 and slot2 ~= 0 then
+		-- Nothing
+	elseif slot1 ~= 0 and slot2 == 0 then
+		slot7 = slot8
+	elseif slot1 == 0 and slot2 ~= 0 then
+		slot7 = slot9
 	end
 
-	return var_6_2
+	return slot7
 end
 
-function var_0_0.ableFire(arg_7_0)
-	return
+function slot0.ableFire(slot0)
 end
 
-function var_0_0.clear(arg_8_0)
-	return
+function slot0.clear(slot0)
 end
 
-function var_0_0.stop(arg_9_0)
-	return
+function slot0.stop(slot0)
 end
 
-function var_0_0.dispose(arg_10_0)
-	return
+function slot0.dispose(slot0)
 end
 
-function var_0_0.useSkill(arg_11_0)
-	arg_11_0._char:useSkill()
+function slot0.useSkill(slot0)
+	slot0._char:useSkill()
 end
 
-function var_0_0.onEventCall(arg_12_0, arg_12_1, arg_12_2)
-	if arg_12_1 == SailBoatGameEvent.PLAYER_EVENT_DAMAGE then
-		arg_12_0._char:damage(arg_12_2)
-	elseif arg_12_1 == SailBoatGameEvent.USE_ITEM then
-		local var_12_0 = arg_12_2.hp
-
-		arg_12_0._char:addHp(var_12_0)
+function slot0.onEventCall(slot0, slot1, slot2)
+	if slot1 == SailBoatGameEvent.PLAYER_EVENT_DAMAGE then
+		slot0._char:damage(slot2)
+	elseif slot1 == SailBoatGameEvent.USE_ITEM then
+		slot0._char:addHp(slot2.hp)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 2081
-			}
-		}
-	},
+return {
 	{
 		desc = "穿甲弹伤害提高15.0%",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 2081,
 	icon = 2080,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 2081
+			}
+		}
+	}
 }

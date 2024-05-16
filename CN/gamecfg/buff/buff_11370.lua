@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onSubmarineRaid"
-			},
-			arg_list = {
-				buff_id = 11371,
-				quota = 1,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 11370,
 	icon = 11370,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onSubmarineRaid"
+			},
+			arg_list = {
+				buff_id = 11371,
+				quota = 1,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

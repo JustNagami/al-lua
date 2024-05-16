@@ -1,36 +1,31 @@
-﻿local var_0_0 = class("SkinAtlasScene", import("...base.BaseUI"))
+slot0 = class("SkinAtlasScene", import("...base.BaseUI"))
+slot0.PAGE_ALL = -1
+slot0.ON_NEXT_SKIN = "SkinAtlasScene:ON_NEXT_SKIN"
+slot0.ON_PREV_SKIN = "SkinAtlasScene:ON_PREV_SKIN"
 
-var_0_0.PAGE_ALL = -1
-var_0_0.ON_NEXT_SKIN = "SkinAtlasScene:ON_NEXT_SKIN"
-var_0_0.ON_PREV_SKIN = "SkinAtlasScene:ON_PREV_SKIN"
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SkinAtlasUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.canvasGroup = arg_2_0._tf:GetComponent(typeof(CanvasGroup))
-	arg_2_0.backBtn = arg_2_0:findTF("adapt/top_panel/back_btn")
-	arg_2_0.homeBtn = arg_2_0:findTF("adapt/top_panel/option")
-	arg_2_0.indexBtn = arg_2_0:findTF("adapt/top_panel/index_btn")
-	arg_2_0.indexBtnSel = arg_2_0.indexBtn:Find("sel")
-	arg_2_0.inptuTr = arg_2_0:findTF("adapt/top_panel/search")
-	arg_2_0.emptyTr = arg_2_0:findTF("adapt/main_panel/empty")
+function slot0.init(slot0)
+	slot0.canvasGroup = slot0._tf:GetComponent(typeof(CanvasGroup))
+	slot0.backBtn = slot0:findTF("adapt/top_panel/back_btn")
+	slot0.homeBtn = slot0:findTF("adapt/top_panel/option")
+	slot0.indexBtn = slot0:findTF("adapt/top_panel/index_btn")
+	slot0.indexBtnSel = slot0.indexBtn:Find("sel")
+	slot0.inptuTr = slot0:findTF("adapt/top_panel/search")
+	slot0.emptyTr = slot0:findTF("adapt/main_panel/empty")
+	slot0.rollingCircleRect = RollingCircleRect.New(slot0:findTF("adapt/left_panel/mask/content/0"), slot0:findTF("adapt/left_panel"))
 
-	local var_2_0 = arg_2_0:findTF("adapt/left_panel/mask/content/0")
-	local var_2_1 = arg_2_0:findTF("adapt/left_panel")
+	slot0.rollingCircleRect:SetCallback(slot0, uv0.OnSelectSkinPage, uv0.OnConfirmSkinPage)
 
-	arg_2_0.rollingCircleRect = RollingCircleRect.New(var_2_0, var_2_1)
+	slot0.scrollrect = slot0:findTF("adapt/main_panel/scrollrect"):GetComponent("LScrollRect")
+	slot0.previewPage = SkinAtlasPreviewPage.New(slot0._tf, slot0.event)
 
-	arg_2_0.rollingCircleRect:SetCallback(arg_2_0, var_0_0.OnSelectSkinPage, var_0_0.OnConfirmSkinPage)
+	setText(slot0:findTF("adapt/main_panel/empty/Text1"), i18n("skinatlas_search_result_is_empty"))
+	setText(slot0:findTF("adapt/top_panel/search/holder"), i18n("skinatlas_search_holder"))
 
-	arg_2_0.scrollrect = arg_2_0:findTF("adapt/main_panel/scrollrect"):GetComponent("LScrollRect")
-	arg_2_0.previewPage = SkinAtlasPreviewPage.New(arg_2_0._tf, arg_2_0.event)
-
-	setText(arg_2_0:findTF("adapt/main_panel/empty/Text1"), i18n("skinatlas_search_result_is_empty"))
-	setText(arg_2_0:findTF("adapt/top_panel/search/holder"), i18n("skinatlas_search_holder"))
-
-	arg_2_0.defaultIndex = {
+	slot0.defaultIndex = {
 		typeIndex = ShipIndexConst.TypeAll,
 		campIndex = ShipIndexConst.CampAll,
 		rarityIndex = ShipIndexConst.RarityAll,
@@ -38,270 +33,246 @@ function var_0_0.init(arg_2_0)
 	}
 end
 
-function var_0_0.didEnter(arg_3_0)
-	arg_3_0.cards = {}
+function slot0.didEnter(slot0)
+	slot0.cards = {}
 
-	onButton(arg_3_0, arg_3_0.homeBtn, function()
-		arg_3_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0.homeBtn, function ()
+		uv0:emit(uv1.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.backBtn, function()
-		arg_3_0:closeView()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, arg_3_0.indexBtn, function()
-		arg_3_0:emit(SkinAtlasMediator.OPEN_INDEX, {
-			OnFilter = function(arg_7_0)
-				arg_3_0:OnFilter(arg_7_0)
+	onButton(slot0, slot0.indexBtn, function ()
+		uv0:emit(SkinAtlasMediator.OPEN_INDEX, {
+			OnFilter = function (slot0)
+				uv0:OnFilter(slot0)
 			end,
-			defaultIndex = arg_3_0.defaultIndex
+			defaultIndex = uv0.defaultIndex
 		})
 	end, SFX_PANEL)
-	arg_3_0:bind(var_0_0.ON_NEXT_SKIN, function(arg_8_0, arg_8_1)
-		arg_3_0:SwitchPreviewSkin(arg_8_1 + 1)
+	slot0:bind(uv0.ON_NEXT_SKIN, function (slot0, slot1)
+		uv0:SwitchPreviewSkin(slot1 + 1)
 	end)
-	arg_3_0:bind(var_0_0.ON_PREV_SKIN, function(arg_9_0, arg_9_1)
-		arg_3_0:SwitchPreviewSkin(arg_9_1 - 1)
+	slot0:bind(uv0.ON_PREV_SKIN, function (slot0, slot1)
+		uv0:SwitchPreviewSkin(slot1 - 1)
 	end)
 
-	function arg_3_0.scrollrect.onInitItem(arg_10_0)
-		arg_3_0:OnInitItem(arg_10_0)
+	function slot0.scrollrect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_3_0.scrollrect.onUpdateItem(arg_11_0, arg_11_1)
-		arg_3_0:OnUpdateItem(arg_11_0, arg_11_1)
+	function slot0.scrollrect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 
-	onInputChanged(arg_3_0, arg_3_0.inptuTr, function()
-		arg_3_0:OnSearch()
+	onInputChanged(slot0, slot0.inptuTr, function ()
+		uv0:OnSearch()
 	end)
-	arg_3_0:InitSkinPages()
+	slot0:InitSkinPages()
 end
 
-function var_0_0.SwitchPreviewSkin(arg_13_0, arg_13_1)
-	if arg_13_0.displays and arg_13_0.displays[arg_13_1] then
-		local var_13_0 = arg_13_0.displays[arg_13_1]
-
-		arg_13_0.previewPage:ExecuteAction("Flush", var_13_0, arg_13_1)
+function slot0.SwitchPreviewSkin(slot0, slot1)
+	if slot0.displays and slot0.displays[slot1] then
+		slot0.previewPage:ExecuteAction("Flush", slot0.displays[slot1], slot1)
 	end
 end
 
-local function var_0_1(arg_14_0)
-	local var_14_0 = pg.skin_page_template
-	local var_14_1 = arg_14_0:GetID()
-	local var_14_2 = var_14_1 == var_0_0.PAGE_ALL and "text_all" or "text_" .. var_14_0[var_14_1].res
+function slot1(slot0)
+	slot1 = pg.skin_page_template
+	slot3 = slot0:GetID() == uv0.PAGE_ALL and "text_all" or "text_" .. slot1[slot2].res
 
-	LoadSpriteAtlasAsync("SkinClassified", var_14_2 .. "01", function(arg_15_0)
-		local var_15_0 = arg_14_0._tr:Find("name"):GetComponent(typeof(Image))
+	LoadSpriteAtlasAsync("SkinClassified", slot3 .. "01", function (slot0)
+		slot1 = uv0._tr:Find("name"):GetComponent(typeof(Image))
+		slot1.sprite = slot0
 
-		var_15_0.sprite = arg_15_0
-
-		var_15_0:SetNativeSize()
+		slot1:SetNativeSize()
 	end)
-	LoadSpriteAtlasAsync("SkinClassified", var_14_2, function(arg_16_0)
-		local var_16_0 = arg_14_0._tr:Find("selected/Image"):GetComponent(typeof(Image))
+	LoadSpriteAtlasAsync("SkinClassified", slot3, function (slot0)
+		slot1 = uv0._tr:Find("selected/Image"):GetComponent(typeof(Image))
+		slot1.sprite = slot0
 
-		var_16_0.sprite = arg_16_0
-
-		var_16_0:SetNativeSize()
+		slot1:SetNativeSize()
 	end)
-	setText(arg_14_0._tr:Find("eng"), var_14_1 == var_0_0.PAGE_ALL and "ALL" or var_14_0[var_14_1].english_name)
+	setText(slot0._tr:Find("eng"), slot2 == uv0.PAGE_ALL and "ALL" or slot1[slot2].english_name)
 end
 
-function var_0_0.InitSkinPages(arg_17_0, arg_17_1)
-	local var_17_0 = Clone(pg.skin_page_template.all)
+function slot0.InitSkinPages(slot0, slot1)
+	slot2 = Clone(pg.skin_page_template.all)
 
-	table.insert(var_17_0, 1, var_0_0.PAGE_ALL)
+	table.insert(slot2, 1, uv0.PAGE_ALL)
 
-	arg_17_0.canvasGroup.blocksRaycasts = false
+	slot0.canvasGroup.blocksRaycasts = false
+	slot3 = {}
 
-	local var_17_1 = {}
+	for slot7, slot8 in ipairs(slot2) do
+		table.insert(slot3, function (slot0)
+			uv2(uv0.rollingCircleRect:AddItem(uv1))
 
-	for iter_17_0, iter_17_1 in ipairs(var_17_0) do
-		table.insert(var_17_1, function(arg_18_0)
-			local var_18_0 = arg_17_0.rollingCircleRect:AddItem(iter_17_1)
-
-			var_0_1(var_18_0)
-
-			if (iter_17_0 - 1) % 3 == 0 or iter_17_0 == #var_17_0 then
-				onNextTick(arg_18_0)
+			if (uv3 - 1) % 3 == 0 or uv3 == #uv4 then
+				onNextTick(slot0)
 			else
-				arg_18_0()
+				slot0()
 			end
 		end)
 	end
 
-	seriesAsync(var_17_1, function()
-		setActive(arg_17_0.scrollrect.gameObject, true)
-		arg_17_0.rollingCircleRect:ScrollTo(var_0_0.PAGE_ALL)
+	seriesAsync(slot3, function ()
+		setActive(uv0.scrollrect.gameObject, true)
+		uv0.rollingCircleRect:ScrollTo(uv1.PAGE_ALL)
 
-		arg_17_0.canvasGroup.blocksRaycasts = true
+		uv0.canvasGroup.blocksRaycasts = true
 	end)
 end
 
-function var_0_0.OnSelectSkinPage(arg_20_0, arg_20_1)
-	if arg_20_0.selectedSkinPageItem then
-		setActive(arg_20_0.selectedSkinPageItem._tr:Find("selected"), false)
-		setActive(arg_20_0.selectedSkinPageItem._tr:Find("name"), true)
+function slot0.OnSelectSkinPage(slot0, slot1)
+	if slot0.selectedSkinPageItem then
+		setActive(slot0.selectedSkinPageItem._tr:Find("selected"), false)
+		setActive(slot0.selectedSkinPageItem._tr:Find("name"), true)
 	end
 
-	setActive(arg_20_1._tr:Find("selected"), true)
-	setActive(arg_20_1._tr:Find("name"), false)
+	setActive(slot1._tr:Find("selected"), true)
+	setActive(slot1._tr:Find("name"), false)
 
-	arg_20_0.selectedSkinPageItem = arg_20_1
+	slot0.selectedSkinPageItem = slot1
 end
 
-function var_0_0.OnConfirmSkinPage(arg_21_0, arg_21_1)
-	arg_21_0.skinPageID = arg_21_1:GetID()
+function slot0.OnConfirmSkinPage(slot0, slot1)
+	slot0.skinPageID = slot1:GetID()
 
-	arg_21_0:UpdateSkinCards()
+	slot0:UpdateSkinCards()
 end
 
-function var_0_0.OnSearch(arg_22_0)
-	arg_22_0:UpdateSkinCards()
+function slot0.OnSearch(slot0)
+	slot0:UpdateSkinCards()
 end
 
-function var_0_0.OnFilter(arg_23_0, arg_23_1)
-	arg_23_0.defaultIndex = {
-		typeIndex = arg_23_1.typeIndex,
-		campIndex = arg_23_1.campIndex,
-		rarityIndex = arg_23_1.rarityIndex,
-		extraIndex = arg_23_1.extraIndex
+function slot0.OnFilter(slot0, slot1)
+	slot0.defaultIndex = {
+		typeIndex = slot1.typeIndex,
+		campIndex = slot1.campIndex,
+		rarityIndex = slot1.rarityIndex,
+		extraIndex = slot1.extraIndex
 	}
 
-	arg_23_0:UpdateSkinCards()
-	setActive(arg_23_0.indexBtnSel, arg_23_1.typeIndex ~= ShipIndexConst.TypeAll or arg_23_1.campIndex ~= ShipIndexConst.CampAll or arg_23_1.rarityIndex ~= ShipIndexConst.RarityAll or arg_23_1.extraIndex ~= SkinAtlasIndexLayer.ExtraALL)
+	slot0:UpdateSkinCards()
+	setActive(slot0.indexBtnSel, slot1.typeIndex ~= ShipIndexConst.TypeAll or slot1.campIndex ~= ShipIndexConst.CampAll or slot1.rarityIndex ~= ShipIndexConst.RarityAll or slot1.extraIndex ~= SkinAtlasIndexLayer.ExtraALL)
 end
 
-function var_0_0.ToVShip(arg_24_0, arg_24_1)
-	if not arg_24_0.vship then
-		arg_24_0.vship = {}
-
-		function arg_24_0.vship.getNation()
-			return arg_24_0.vship.config.nationality
-		end
-
-		function arg_24_0.vship.getShipType()
-			return arg_24_0.vship.config.type
-		end
-
-		function arg_24_0.vship.getTeamType()
-			return TeamType.GetTeamFromShipType(arg_24_0.vship.config.type)
-		end
-
-		function arg_24_0.vship.getRarity()
-			return arg_24_0.vship.config.rarity
-		end
+function slot0.ToVShip(slot0, slot1)
+	if not slot0.vship then
+		slot0.vship = {
+			getNation = function ()
+				return uv0.vship.config.nationality
+			end,
+			getShipType = function ()
+				return uv0.vship.config.type
+			end,
+			getTeamType = function ()
+				return TeamType.GetTeamFromShipType(uv0.vship.config.type)
+			end,
+			getRarity = function ()
+				return uv0.vship.config.rarity
+			end
+		}
 	end
 
-	arg_24_0.vship.config = arg_24_1
+	slot0.vship.config = slot1
 
-	return arg_24_0.vship
+	return slot0.vship
 end
 
-function var_0_0.MatchIndex(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_1:GetDefaultShipConfig()
-
-	if not var_29_0 then
+function slot0.MatchIndex(slot0, slot1)
+	if not slot1:GetDefaultShipConfig() then
 		return false
 	end
 
-	local var_29_1 = arg_29_0:ToVShip(var_29_0)
-	local var_29_2 = ShipIndexConst.filterByType(var_29_1, arg_29_0.defaultIndex.typeIndex)
-	local var_29_3 = ShipIndexConst.filterByCamp(var_29_1, arg_29_0.defaultIndex.campIndex)
-	local var_29_4 = ShipIndexConst.filterByRarity(var_29_1, arg_29_0.defaultIndex.rarityIndex)
-	local var_29_5 = SkinAtlasIndexLayer.filterByExtra(arg_29_1, arg_29_0.defaultIndex.extraIndex)
+	slot3 = slot0:ToVShip(slot2)
 
-	return var_29_2 and var_29_3 and var_29_4 and var_29_5
+	return ShipIndexConst.filterByType(slot3, slot0.defaultIndex.typeIndex) and ShipIndexConst.filterByCamp(slot3, slot0.defaultIndex.campIndex) and ShipIndexConst.filterByRarity(slot3, slot0.defaultIndex.rarityIndex) and SkinAtlasIndexLayer.filterByExtra(slot1, slot0.defaultIndex.extraIndex)
 end
 
-function var_0_0.GetSkinList(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = {}
-	local var_30_1 = getProxy(ShipSkinProxy):GetOwnSkins()
+function slot0.GetSkinList(slot0, slot1, slot2)
+	slot3 = {}
 
-	for iter_30_0, iter_30_1 in pairs(var_30_1) do
-		if (arg_30_1 == var_0_0.PAGE_ALL or iter_30_1:IsType(arg_30_1)) and not iter_30_1:IsDefault() and iter_30_1:IsMatchKey(arg_30_2) and arg_30_0:MatchIndex(iter_30_1) then
-			table.insert(var_30_0, iter_30_1)
+	for slot8, slot9 in pairs(getProxy(ShipSkinProxy):GetOwnSkins()) do
+		if (slot1 == uv0.PAGE_ALL or slot9:IsType(slot1)) and not slot9:IsDefault() and slot9:IsMatchKey(slot2) and slot0:MatchIndex(slot9) then
+			table.insert(slot3, slot9)
 		end
 	end
 
-	return var_30_0
+	return slot3
 end
 
-function var_0_0.UpdateSkinCards(arg_31_0)
-	local var_31_0 = arg_31_0.skinPageID
-	local var_31_1 = getInputText(arg_31_0.inptuTr)
+function slot0.UpdateSkinCards(slot0)
+	slot0.displays = slot0:GetSkinList(slot0.skinPageID, getInputText(slot0.inptuTr))
 
-	arg_31_0.displays = arg_31_0:GetSkinList(var_31_0, var_31_1)
-
-	arg_31_0:SortDisplay(arg_31_0.displays)
-	arg_31_0.scrollrect:SetTotalCount(#arg_31_0.displays)
-	setActive(arg_31_0.emptyTr, #arg_31_0.displays == 0)
+	slot0:SortDisplay(slot0.displays)
+	slot0.scrollrect:SetTotalCount(#slot0.displays)
+	setActive(slot0.emptyTr, #slot0.displays == 0)
 end
 
-function var_0_0.SortDisplay(arg_32_0, arg_32_1)
-	table.sort(arg_32_1, function(arg_33_0, arg_33_1)
-		local var_33_0 = arg_33_0:getConfig("ship_group")
-		local var_33_1 = arg_33_1:getConfig("ship_group")
-
-		if var_33_0 == var_33_1 then
-			return arg_33_0:getConfig("group_index") < arg_33_1:getConfig("group_index")
+function slot0.SortDisplay(slot0, slot1)
+	table.sort(slot1, function (slot0, slot1)
+		if slot0:getConfig("ship_group") == slot1:getConfig("ship_group") then
+			return slot0:getConfig("group_index") < slot1:getConfig("group_index")
 		else
-			return var_33_0 < var_33_1
+			return slot2 < slot3
 		end
 	end)
 end
 
-function var_0_0.OnInitItem(arg_34_0, arg_34_1)
-	local var_34_0 = SkinAtlasCard.New(arg_34_1)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = SkinAtlasCard.New(slot1)
 
-	onButton(arg_34_0, var_34_0._tf, function()
-		arg_34_0.previewPage:ExecuteAction("Show", var_34_0.skin, var_34_0.index)
+	onButton(slot0, slot2._tf, function ()
+		uv0.previewPage:ExecuteAction("Show", uv1.skin, uv1.index)
 	end, SFX_PANEL)
 
-	arg_34_0.cards[arg_34_1] = var_34_0
+	slot0.cards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_36_0, arg_36_1, arg_36_2)
-	if not arg_36_0.cards[arg_36_2] then
-		arg_36_0:OnInitItem(arg_36_2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot0:OnInitItem(slot2)
 	end
 
-	arg_36_0.cards[arg_36_2]:Update(arg_36_0.displays[arg_36_1 + 1], arg_36_1 + 1)
+	slot0.cards[slot2]:Update(slot0.displays[slot1 + 1], slot1 + 1)
 end
 
-function var_0_0.onBackPressed(arg_37_0)
-	if arg_37_0.previewPage and arg_37_0.previewPage:GetLoaded() and arg_37_0.previewPage:isShowing() then
-		if arg_37_0.previewPage:IsShowSelectShipView() then
-			arg_37_0.previewPage:CloseSelectShipView()
+function slot0.onBackPressed(slot0)
+	if slot0.previewPage and slot0.previewPage:GetLoaded() and slot0.previewPage:isShowing() then
+		if slot0.previewPage:IsShowSelectShipView() then
+			slot0.previewPage:CloseSelectShipView()
 
 			return
 		end
 
-		arg_37_0.previewPage:Hide()
+		slot0.previewPage:Hide()
 
 		return
 	end
 
-	var_0_0.super.onBackPressed(arg_37_0)
+	uv0.super.onBackPressed(slot0)
 end
 
-function var_0_0.willExit(arg_38_0)
-	for iter_38_0, iter_38_1 in pairs(arg_38_0.cards) do
-		iter_38_1:Dispose()
+function slot0.willExit(slot0)
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:Dispose()
 	end
 
-	arg_38_0.cards = nil
+	slot0.cards = nil
 
-	if arg_38_0.rollingCircleRect then
-		arg_38_0.rollingCircleRect:Dispose()
+	if slot0.rollingCircleRect then
+		slot0.rollingCircleRect:Dispose()
 
-		arg_38_0.rollingCircleRect = nil
+		slot0.rollingCircleRect = nil
 	end
 
-	if arg_38_0.previewPage then
-		arg_38_0.previewPage:Destroy()
+	if slot0.previewPage then
+		slot0.previewPage:Destroy()
 
-		arg_38_0.previewPage = nil
+		slot0.previewPage = nil
 	end
 end
 
-return var_0_0
+return slot0

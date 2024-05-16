@@ -1,130 +1,108 @@
-﻿local var_0_0 = class("NewBattleResultPlayerAniamtion")
+slot0 = class("NewBattleResultPlayerAniamtion")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	arg_1_0.playerLv = arg_1_1
-	arg_1_0.playerExp = arg_1_2
-	arg_1_0.playerExpBar = arg_1_3
-	arg_1_0.newPlayer = arg_1_4
-	arg_1_0.oldPlayer = arg_1_5
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0.playerLv = slot1
+	slot0.playerExp = slot2
+	slot0.playerExpBar = slot3
+	slot0.newPlayer = slot4
+	slot0.oldPlayer = slot5
 end
 
-function var_0_0.SetUp(arg_2_0, arg_2_1)
+function slot0.SetUp(slot0, slot1)
 	parallelAsync({
-		function(arg_3_0)
-			arg_2_0:LevelAnimation(arg_3_0)
+		function (slot0)
+			uv0:LevelAnimation(slot0)
 		end,
-		function(arg_4_0)
-			arg_2_0:ExpAnimation(arg_4_0)
+		function (slot0)
+			uv0:ExpAnimation(slot0)
 		end,
-		function(arg_5_0)
-			arg_2_0:ExpBarAnimation(arg_5_0)
+		function (slot0)
+			uv0:ExpBarAnimation(slot0)
 		end
-	}, arg_2_1)
+	}, slot1)
 end
 
-function var_0_0.LevelAnimation(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.oldPlayer.level
-	local var_6_1 = arg_6_0.newPlayer.level
+function slot0.LevelAnimation(slot0, slot1)
+	if slot0.oldPlayer.level == slot0.newPlayer.level then
+		slot0.playerLv.text = "Lv." .. slot3
 
-	if var_6_0 == var_6_1 then
-		arg_6_0.playerLv.text = "Lv." .. var_6_1
-
-		arg_6_1()
+		slot1()
 
 		return
 	end
 
-	LeanTween.value(arg_6_0.playerLv.gameObject, var_6_0, var_6_1, 1.5):setOnUpdate(System.Action_float(function(arg_7_0)
-		arg_6_0.playerLv.text = "Lv." .. math.ceil(arg_7_0)
-	end)):setOnComplete(System.Action(arg_6_1))
+	LeanTween.value(slot0.playerLv.gameObject, slot2, slot3, 1.5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerLv.text = "Lv." .. math.ceil(slot0)
+	end)):setOnComplete(System.Action(slot1))
 end
 
-function var_0_0.ExpAnimation(arg_8_0, arg_8_1)
-	local var_8_0 = NewBattleResultUtil.GetPlayerExpOffset(arg_8_0.oldPlayer, arg_8_0.newPlayer)
-
-	LeanTween.value(arg_8_0.playerExp.gameObject, 0, var_8_0, 1.5):setOnUpdate(System.Action_float(function(arg_9_0)
-		arg_8_0.playerExp.text = "+" .. math.ceil(arg_9_0)
-	end)):setOnComplete(System.Action(arg_8_1))
+function slot0.ExpAnimation(slot0, slot1)
+	LeanTween.value(slot0.playerExp.gameObject, 0, NewBattleResultUtil.GetPlayerExpOffset(slot0.oldPlayer, slot0.newPlayer), 1.5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerExp.text = "+" .. math.ceil(slot0)
+	end)):setOnComplete(System.Action(slot1))
 end
 
-local function var_0_1(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.oldPlayer.exp
-	local var_10_1 = arg_10_0.newPlayer.exp
-	local var_10_2 = getConfigFromLevel1(pg.user_level, arg_10_0.newPlayer.level).exp_interval
+function slot1(slot0, slot1)
+	slot4 = getConfigFromLevel1(pg.user_level, slot0.newPlayer.level).exp_interval
 
-	LeanTween.value(arg_10_0.playerExpBar.gameObject, var_10_0, var_10_1, 1.5):setOnUpdate(System.Action_float(function(arg_11_0)
-		arg_10_0.playerExpBar.fillAmount = arg_11_0 / var_10_2
-	end)):setOnComplete(System.Action(arg_10_1))
+	LeanTween.value(slot0.playerExpBar.gameObject, slot0.oldPlayer.exp, slot0.newPlayer.exp, 1.5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerExpBar.fillAmount = slot0 / uv1
+	end)):setOnComplete(System.Action(slot1))
 end
 
-local function var_0_2(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0.oldPlayer.exp
-	local var_12_1 = getConfigFromLevel1(pg.user_level, arg_12_0.oldPlayer.level).exp_interval
-
-	LeanTween.value(arg_12_0.playerExpBar.gameObject, var_12_0 / var_12_1, 1, 1):setOnUpdate(System.Action_float(function(arg_13_0)
-		arg_12_0.playerExpBar.fillAmount = arg_13_0
-	end)):setOnComplete(System.Action(arg_12_1))
+function slot2(slot0, slot1)
+	LeanTween.value(slot0.playerExpBar.gameObject, slot0.oldPlayer.exp / getConfigFromLevel1(pg.user_level, slot0.oldPlayer.level).exp_interval, 1, 1):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerExpBar.fillAmount = slot0
+	end)):setOnComplete(System.Action(slot1))
 end
 
-local function var_0_3(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_0.newPlayer.exp
-	local var_14_1 = getConfigFromLevel1(pg.user_level, arg_14_0.newPlayer.level).exp_interval
-
-	LeanTween.value(arg_14_0.playerExpBar.gameObject, 0, var_14_0 / var_14_1, 1):setOnUpdate(System.Action_float(function(arg_15_0)
-		arg_14_0.playerExpBar.fillAmount = arg_15_0
-	end)):setOnComplete(System.Action(arg_14_1))
+function slot3(slot0, slot1)
+	LeanTween.value(slot0.playerExpBar.gameObject, 0, slot0.newPlayer.exp / getConfigFromLevel1(pg.user_level, slot0.newPlayer.level).exp_interval, 1):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerExpBar.fillAmount = slot0
+	end)):setOnComplete(System.Action(slot1))
 end
 
-local function var_0_4(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_0.oldPlayer.level
-	local var_16_1 = arg_16_0.newPlayer.level - (var_16_0 + 1)
-
-	LeanTween.value(arg_16_0.playerExpBar.gameObject, 0, 1, 1):setOnUpdate(System.Action_float(function(arg_17_0)
-		arg_16_0.playerExpBar.fillAmount = arg_17_0
-	end)):setRepeat(var_16_1):setOnComplete(System.Action(arg_16_1))
+function slot4(slot0, slot1)
+	LeanTween.value(slot0.playerExpBar.gameObject, 0, 1, 1):setOnUpdate(System.Action_float(function (slot0)
+		uv0.playerExpBar.fillAmount = slot0
+	end)):setRepeat(slot0.newPlayer.level - (slot0.oldPlayer.level + 1)):setOnComplete(System.Action(slot1))
 end
 
-local function var_0_5(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0.oldPlayer.level
-	local var_18_1 = arg_18_0.newPlayer.level
-	local var_18_2 = {}
-
-	table.insert(var_18_2, function(arg_19_0)
-		var_0_2(arg_18_0, arg_19_0)
+function slot5(slot0, slot1)
+	table.insert({}, function (slot0)
+		uv0(uv1, slot0)
 	end)
 
-	if var_18_0 + 1 ~= var_18_1 then
-		table.insert(var_18_2, function(arg_20_0)
-			var_0_4(arg_18_0, arg_20_0)
+	if slot0.oldPlayer.level + 1 ~= slot0.newPlayer.level then
+		table.insert(slot4, function (slot0)
+			uv0(uv1, slot0)
 		end)
 	end
 
-	table.insert(var_18_2, function(arg_21_0)
-		var_0_3(arg_18_0, arg_21_0)
+	table.insert(slot4, function (slot0)
+		uv0(uv1, slot0)
 	end)
-	seriesAsync(var_18_2, arg_18_1)
+	seriesAsync(slot4, slot1)
 end
 
-function var_0_0.ExpBarAnimation(arg_22_0, arg_22_1)
-	if arg_22_0.oldPlayer.level == arg_22_0.newPlayer.level then
-		var_0_1(arg_22_0, arg_22_1)
+function slot0.ExpBarAnimation(slot0, slot1)
+	if slot0.oldPlayer.level == slot0.newPlayer.level then
+		uv0(slot0, slot1)
 	else
-		var_0_5(arg_22_0, arg_22_1)
+		uv1(slot0, slot1)
 	end
 end
 
-function var_0_0.Dispose(arg_23_0)
-	for iter_23_0, iter_23_1 in ipairs({
+function slot0.Dispose(slot0)
+	for slot4, slot5 in ipairs({
 		"playerLv",
 		"playerExp",
 		"playerExpBar"
 	}) do
-		local var_23_0 = arg_23_0[iter_23_1].gameObject
-
-		if LeanTween.isTweening(var_23_0) then
-			LeanTween.cancel(var_23_0)
+		if LeanTween.isTweening(slot0[slot5].gameObject) then
+			LeanTween.cancel(slot6)
 		end
 	end
 end
 
-return var_0_0
+return slot0

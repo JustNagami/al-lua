@@ -1,15 +1,13 @@
-﻿local var_0_0 = class("ChallengePassedMediator", import("..base.ContextMediator"))
+slot0 = class("ChallengePassedMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	return
+function slot0.register(slot0)
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	return
+function slot0.handleNotification(slot0, slot1)
 end
 
-return var_0_0
+return slot0

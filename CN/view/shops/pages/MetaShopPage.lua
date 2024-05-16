@@ -1,62 +1,48 @@
-﻿local var_0_0 = class("MetaShopPage", import(".ActivityShopPage"))
+slot0 = class("MetaShopPage", import(".ActivityShopPage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "MetaShop"
 end
 
-function var_0_0.ResId2ItemId(arg_2_0, arg_2_1)
-	return arg_2_1
+function slot0.ResId2ItemId(slot0, slot1)
+	return slot1
 end
 
-function var_0_0.SetResIcon(arg_3_0)
-	var_0_0.super.SetResIcon(arg_3_0, DROP_TYPE_ITEM)
+function slot0.SetResIcon(slot0)
+	uv0.super.SetResIcon(slot0, DROP_TYPE_ITEM)
 end
 
-function var_0_0.UpdateTip(arg_4_0)
-	arg_4_0.time.text = i18n("meta_shop_tip")
+function slot0.UpdateTip(slot0)
+	slot0.time.text = i18n("meta_shop_tip")
 end
 
-function var_0_0.OnUpdatePlayer(arg_5_0)
-	return
+function slot0.OnUpdatePlayer(slot0)
 end
 
-function var_0_0.OnUpdateItems(arg_6_0)
-	local var_6_0 = arg_6_0.shop:GetResList()
+function slot0.OnUpdateItems(slot0)
+	for slot5, slot6 in pairs(slot0.resTrList) do
+		slot8 = slot6[2]
 
-	for iter_6_0, iter_6_1 in pairs(arg_6_0.resTrList) do
-		local var_6_1 = iter_6_1[1]
-		local var_6_2 = iter_6_1[2]
-		local var_6_3 = iter_6_1[3]
-		local var_6_4 = var_6_0[iter_6_0]
+		setActive(slot6[1], slot0.shop:GetResList()[slot5] ~= nil)
 
-		setActive(var_6_1, var_6_4 ~= nil)
-
-		if var_6_4 ~= nil then
-			var_6_3.text = (arg_6_0.items[var_6_4] or Item.New({
+		if slot10 ~= nil then
+			slot6[3].text = (slot0.items[slot10] or Item.New({
 				count = 0,
-				id = var_6_4
+				id = slot10
 			})).count
 		end
 	end
 end
 
-function var_0_0.OnPurchase(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_0.shop.activityId
-
-	arg_7_0:emit(NewShopsMediator.ON_META_SHOP, var_7_0, 1, arg_7_1.id, arg_7_2)
+function slot0.OnPurchase(slot0, slot1, slot2)
+	slot0:emit(NewShopsMediator.ON_META_SHOP, slot0.shop.activityId, 1, slot1.id, slot2)
 end
 
-function var_0_0.GetPaintingName(arg_8_0)
-	local var_8_0, var_8_1, var_8_2 = var_0_0.super.GetPaintingName(arg_8_0)
-	local var_8_3
+function slot0.GetPaintingName(slot0)
+	slot1, slot2, slot3 = uv0.super.GetPaintingName(slot0)
+	slot4 = nil
 
-	if type(var_8_0) == "table" then
-		var_8_3 = var_8_0[math.random(1, #var_8_0)]
-	else
-		var_8_3 = var_8_0
-	end
-
-	return var_8_3, var_8_1, var_8_2
+	return (type(slot1) ~= "table" or slot1[math.random(1, #slot1)]) and slot1, slot2, slot3
 end
 
-return var_0_0
+return slot0

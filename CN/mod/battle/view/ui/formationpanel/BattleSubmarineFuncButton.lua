@@ -1,49 +1,47 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleSubmarineFuncButton", slot0.Battle.BattleWeaponButton)
+slot0.Battle.BattleSubmarineFuncButton = slot1
+slot1.__name = "BattleSubmarineFuncButton"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleSubmarineFuncButton", var_0_0.Battle.BattleWeaponButton)
+function slot1.Ctor(slot0)
+	uv0.EventListener.AttachEventListener(slot0)
 
-var_0_0.Battle.BattleSubmarineFuncButton = var_0_1
-var_0_1.__name = "BattleSubmarineFuncButton"
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_0.EventListener.AttachEventListener(arg_1_0)
-
-	arg_1_0.eventTriggers = {}
+	slot0.eventTriggers = {}
 end
 
-function var_0_1.OnfilledEffect(arg_2_0)
-	SetActive(arg_2_0._filledEffect, true)
+function slot1.OnfilledEffect(slot0)
+	SetActive(slot0._filledEffect, true)
 end
 
-function var_0_1.SetProgressInfo(arg_3_0, arg_3_1)
-	arg_3_0._progressInfo = arg_3_1
+function slot1.SetProgressInfo(slot0, slot1)
+	slot0._progressInfo = slot1
 
-	arg_3_0._progressInfo:RegisterEventListener(arg_3_0, var_0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS, arg_3_0.OnfilledEffect)
-	arg_3_0._progressInfo:RegisterEventListener(arg_3_0, var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE, arg_3_0.OnOverLoadChange)
-	arg_3_0:OnOverLoadChange()
-	arg_3_0:SetControllerActive(true)
+	slot0._progressInfo:RegisterEventListener(slot0, uv0.Battle.BattleEvent.WEAPON_COUNT_PLUS, slot0.OnfilledEffect)
+	slot0._progressInfo:RegisterEventListener(slot0, uv0.Battle.BattleEvent.OVER_LOAD_CHANGE, slot0.OnOverLoadChange)
+	slot0:OnOverLoadChange()
+	slot0:SetControllerActive(true)
 end
 
-function var_0_1.Update(arg_4_0)
-	if arg_4_0._progressInfo:GetCurrent() < arg_4_0._progressInfo:GetMax() then
-		arg_4_0:updateProgressBar()
+function slot1.Update(slot0)
+	if slot0._progressInfo:GetCurrent() < slot0._progressInfo:GetMax() then
+		slot0:updateProgressBar()
 	end
 end
 
-function var_0_1.Dispose(arg_5_0)
-	if arg_5_0.eventTriggers then
-		for iter_5_0, iter_5_1 in pairs(arg_5_0.eventTriggers) do
-			ClearEventTrigger(iter_5_0)
+function slot1.Dispose(slot0)
+	if slot0.eventTriggers then
+		for slot4, slot5 in pairs(slot0.eventTriggers) do
+			ClearEventTrigger(slot4)
 		end
 
-		arg_5_0.eventTriggers = nil
+		slot0.eventTriggers = nil
 	end
 
-	arg_5_0._progress = nil
-	arg_5_0._progressBar = nil
+	slot0._progress = nil
+	slot0._progressBar = nil
 
-	arg_5_0._progressInfo:UnregisterEventListener(arg_5_0, var_0_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
-	arg_5_0._progressInfo:UnregisterEventListener(arg_5_0, var_0_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
-	var_0_0.EventListener.DetachEventListener(arg_5_0)
+	slot0._progressInfo:UnregisterEventListener(slot0, uv0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+	slot0._progressInfo:UnregisterEventListener(slot0, uv0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
+	uv0.EventListener.DetachEventListener(slot0)
 end

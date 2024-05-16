@@ -1,1 +1,1 @@
-﻿return (class("EquipmentTransformInfoMediator", import("view.base.ContextMediator")))
+return class("EquipmentTransformInfoMediator", import("view.base.ContextMediator"))

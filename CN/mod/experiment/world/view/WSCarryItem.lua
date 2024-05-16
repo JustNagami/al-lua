@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSCarryItem", import(".WSMapTransform"))
-
-var_0_0.Fields = {
+slot0 = class("WSCarryItem", import(".WSMapTransform"))
+slot0.Fields = {
 	wsMapPath = "table",
 	active = "boolean",
 	followList = "table",
@@ -8,135 +7,130 @@ var_0_0.Fields = {
 	fleet = "table",
 	carryItem = "table"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdate = "Update",
 	onMoveEnd = "OnMoveEnd"
 }
 
-function var_0_0.GetResName(arg_1_0)
+function slot0.GetResName(slot0)
 	return "event_tpl"
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.fleet = arg_2_1
+function slot0.Setup(slot0, slot1, slot2, slot3)
+	slot0.fleet = slot1
 
-	arg_2_0.fleet:AddListener(WorldMapFleet.EventUpdateLocation, arg_2_0.onUpdate)
+	slot0.fleet:AddListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdate)
 
-	arg_2_0.carryItem = arg_2_2
+	slot0.carryItem = slot2
 
-	arg_2_0.carryItem:AddListener(WorldCarryItem.EventUpdateOffset, arg_2_0.onUpdate)
+	slot0.carryItem:AddListener(WorldCarryItem.EventUpdateOffset, slot0.onUpdate)
 
-	arg_2_0.theme = arg_2_3
+	slot0.theme = slot3
 
-	arg_2_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_3_0)
-	arg_3_0.fleet:RemoveListener(WorldMapFleet.EventUpdateLocation, arg_3_0.onUpdate)
-	arg_3_0.carryItem:RemoveListener(WorldCarryItem.EventUpdateOffset, arg_3_0.onUpdate)
+function slot0.Dispose(slot0)
+	slot0.fleet:RemoveListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdate)
+	slot0.carryItem:RemoveListener(WorldCarryItem.EventUpdateOffset, slot0.onUpdate)
 
-	if arg_3_0.wsMapPath then
-		arg_3_0.wsMapPath:RemoveListener(WSMapPath.EventArrived, arg_3_0.onMoveEnd)
-		arg_3_0.wsMapPath:Dispose()
+	if slot0.wsMapPath then
+		slot0.wsMapPath:RemoveListener(WSMapPath.EventArrived, slot0.onMoveEnd)
+		slot0.wsMapPath:Dispose()
 	end
 
-	var_0_0.super.Dispose(arg_3_0)
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_0.Init(arg_4_0)
-	local var_4_0 = arg_4_0.transform
+function slot0.Init(slot0)
+	slot1 = slot0.transform
+	slot1.name = "carry_item_" .. slot0.carryItem.id
+	slot1.localEulerAngles = Vector3(-slot0.theme.angle, 0, 0)
 
-	var_4_0.name = "carry_item_" .. arg_4_0.carryItem.id
-	var_4_0.localEulerAngles = Vector3(-arg_4_0.theme.angle, 0, 0)
-
-	arg_4_0:Update()
-	arg_4_0:UpdateActive(arg_4_0.active or true)
-	arg_4_0:UpdateModelScale(arg_4_0.carryItem:GetScale())
+	slot0:Update()
+	slot0:UpdateActive(slot0.active or true)
+	slot0:UpdateModelScale(slot0.carryItem:GetScale())
 end
 
-function var_0_0.Update(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_0.transform
-	local var_5_1 = arg_5_0.fleet
-	local var_5_2 = arg_5_0.carryItem
-	local var_5_3, var_5_4 = arg_5_0:GetLocation()
+function slot0.Update(slot0, slot1)
+	slot3 = slot0.fleet
+	slot4 = slot0.carryItem
+	slot5, slot6 = slot0:GetLocation()
 
-	if not arg_5_0.isMoving and (arg_5_1 == nil or arg_5_1 == WorldMapFleet.EventUpdateLocation or arg_5_1 == WorldCarryItem.EventUpdateOffset) then
-		var_5_0.anchoredPosition3D = arg_5_0.theme:GetLinePosition(var_5_3, var_5_4)
+	if not slot0.isMoving and (slot1 == nil or slot1 == WorldMapFleet.EventUpdateLocation or slot1 == WorldCarryItem.EventUpdateOffset) then
+		slot0.transform.anchoredPosition3D = slot0.theme:GetLinePosition(slot5, slot6)
 	end
 
-	if arg_5_1 == nil or arg_5_1 == WorldMapFleet.EventUpdateLocation or arg_5_1 == WorldCarryItem.EventUpdateOffset then
-		arg_5_0:SetModelOrder(WorldConst.LOFleet, var_5_3)
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateLocation or slot1 == WorldCarryItem.EventUpdateOffset then
+		slot0:SetModelOrder(WorldConst.LOFleet, slot5)
 	end
 
-	if arg_5_1 == nil then
-		local var_5_5 = var_5_2:IsAvatar()
-		local var_5_6 = var_5_0:Find("char")
-		local var_5_7 = var_5_0:Find("icon")
+	if slot1 == nil then
+		slot7 = slot4:IsAvatar()
 
-		setActive(var_5_6, var_5_5)
-		setActive(var_5_7, not var_5_5)
+		setActive(slot2:Find("char"), slot7)
+		setActive(slot2:Find("icon"), not slot7)
 
-		if var_5_5 then
-			arg_5_0:LoadModel(WorldConst.ModelSpine, var_5_2.config.icon, nil, true, function()
-				arg_5_0.model:SetParent(var_5_6:Find("ship"), false)
+		if slot7 then
+			slot0:LoadModel(WorldConst.ModelSpine, slot4.config.icon, nil, true, function ()
+				uv0.model:SetParent(uv1:Find("ship"), false)
 			end)
 		else
-			arg_5_0:LoadModel(WorldConst.ModelPrefab, WorldConst.ResBoxPrefab .. var_5_2.config.icon, var_5_2.config.icon, true, function()
-				arg_5_0.model:SetParent(var_5_7, false)
+			slot0:LoadModel(WorldConst.ModelPrefab, WorldConst.ResBoxPrefab .. slot4.config.icon, slot4.config.icon, true, function ()
+				uv0.model:SetParent(uv1, false)
 			end)
 		end
 
-		setActive(var_5_0:Find("buffs"), false)
-		setActive(var_5_0:Find("map_buff"), false)
+		setActive(slot2:Find("buffs"), false)
+		setActive(slot2:Find("map_buff"), false)
 	end
 end
 
-function var_0_0.UpdateActive(arg_8_0, arg_8_1)
-	if arg_8_0.active ~= arg_8_1 then
-		arg_8_0.active = arg_8_1
+function slot0.UpdateActive(slot0, slot1)
+	if slot0.active ~= slot1 then
+		slot0.active = slot1
 
-		setActive(arg_8_0.transform, arg_8_0.active)
+		setActive(slot0.transform, slot0.active)
 	end
 end
 
-function var_0_0.FollowPath(arg_9_0, arg_9_1)
-	if not arg_9_0.wsMapPath then
-		arg_9_0.wsMapPath = WSMapPath.New()
+function slot0.FollowPath(slot0, slot1)
+	if not slot0.wsMapPath then
+		slot0.wsMapPath = WSMapPath.New()
 
-		arg_9_0.wsMapPath:Setup(arg_9_0.theme)
-		arg_9_0.wsMapPath:AddListener(WSMapPath.EventArrived, arg_9_0.onMoveEnd)
+		slot0.wsMapPath:Setup(slot0.theme)
+		slot0.wsMapPath:AddListener(WSMapPath.EventArrived, slot0.onMoveEnd)
 	end
 
-	arg_9_0.followList = arg_9_0.followList or {}
+	slot0.followList = slot0.followList or {}
 
-	table.insert(arg_9_0.followList, function()
-		local var_10_0, var_10_1 = arg_9_0:GetLocation()
-		local var_10_2 = {
-			row = var_10_0,
-			column = var_10_1
-		}
+	table.insert(slot0.followList, function ()
+		slot0, slot1 = uv0:GetLocation()
 
-		arg_9_0.wsMapPath:UpdateObject(arg_9_0)
-		arg_9_0.wsMapPath:UpdateAction(WorldConst.ActionMove)
-		arg_9_0.wsMapPath:UpdateDirType(WorldConst.DirType2)
-		arg_9_0.wsMapPath:StartMove(var_10_2, arg_9_1)
+		uv0.wsMapPath:UpdateObject(uv0)
+		uv0.wsMapPath:UpdateAction(WorldConst.ActionMove)
+		uv0.wsMapPath:UpdateDirType(WorldConst.DirType2)
+		uv0.wsMapPath:StartMove({
+			row = slot0,
+			column = slot1
+		}, uv1)
 	end)
 
-	if not arg_9_0.isMoving then
-		arg_9_0:OnMoveEnd()
+	if not slot0.isMoving then
+		slot0:OnMoveEnd()
 	end
 
-	return arg_9_0.wsMapPath
+	return slot0.wsMapPath
 end
 
-function var_0_0.OnMoveEnd(arg_11_0, arg_11_1)
-	if #arg_11_0.followList > 0 then
-		table.remove(arg_11_0.followList, 1)()
+function slot0.OnMoveEnd(slot0, slot1)
+	if #slot0.followList > 0 then
+		table.remove(slot0.followList, 1)()
 	end
 end
 
-function var_0_0.GetLocation(arg_12_0)
-	return arg_12_0.fleet.row + arg_12_0.carryItem.offsetRow, arg_12_0.fleet.column + arg_12_0.carryItem.offsetColumn
+function slot0.GetLocation(slot0)
+	return slot0.fleet.row + slot0.carryItem.offsetRow, slot0.fleet.column + slot0.carryItem.offsetColumn
 end
 
-return var_0_0
+return slot0

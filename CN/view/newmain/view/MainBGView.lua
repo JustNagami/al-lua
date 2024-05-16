@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("MainBGView")
-local var_0_1 = {
+slot0 = class("MainBGView")
+slot1 = {
 	{
 		{
 			0,
@@ -36,201 +36,181 @@ local var_0_1 = {
 		"bg_main_night"
 	}
 }
-local var_0_2 = 0
+slot2 = 0
 
-function var_0_0.GetBgAndBgm()
-	local var_1_0 = var_0_1
-	local var_1_1 = getProxy(ActivityProxy):RawGetActivityById(pg.gameset.dayandnight_bgm.key_value)
+function slot0.GetBgAndBgm()
+	slot0 = uv0
 
-	if var_1_1 and not var_1_1:isEnd() then
-		var_1_0 = pg.gameset.dayandnight_bgm.description
+	if getProxy(ActivityProxy):RawGetActivityById(pg.gameset.dayandnight_bgm.key_value) and not slot1:isEnd() then
+		slot0 = pg.gameset.dayandnight_bgm.description
 	end
 
-	local var_1_2 = pg.TimeMgr.GetInstance():GetServerHour()
+	slot2 = pg.TimeMgr.GetInstance():GetServerHour()
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
-		local var_1_3 = iter_1_1[1]
-
-		if var_1_2 >= var_1_3[1] and var_1_2 < var_1_3[2] then
-			return iter_1_1[2], iter_1_1[3]
+	for slot6, slot7 in ipairs(slot0) do
+		if slot7[1][1] <= slot2 and slot2 < slot8[2] then
+			return slot7[2], slot7[3]
 		end
 	end
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0._tf = arg_2_1
-	arg_2_0._go = arg_2_1.gameObject
-	arg_2_0.paintingCanvases = {
-		arg_2_1.parent.parent:Find("paintBg"):GetComponent(typeof(Canvas)),
-		arg_2_1.parent.parent:Find("paint"):GetComponent(typeof(Canvas)),
-		arg_2_1.parent.parent:Find("chat"):GetComponent(typeof(Canvas))
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0._go = slot1.gameObject
+	slot0.paintingCanvases = {
+		slot1.parent.parent:Find("paintBg"):GetComponent(typeof(Canvas)),
+		slot1.parent.parent:Find("paint"):GetComponent(typeof(Canvas)),
+		slot1.parent.parent:Find("chat"):GetComponent(typeof(Canvas))
 	}
-	arg_2_0.isSpecialBg = false
-	arg_2_0.isloading = false
+	slot0.isSpecialBg = false
+	slot0.isloading = false
 end
 
-function var_0_0.getUIName(arg_3_0)
+function slot0.getUIName(slot0)
 	return "MainBGView"
 end
 
-function var_0_0.Init(arg_4_0, arg_4_1)
-	arg_4_0.ship = arg_4_1
+function slot0.Init(slot0, slot1)
+	slot0.ship = slot1
 
-	arg_4_0:ClearSpecailBg()
+	slot0:ClearSpecailBg()
 
-	local var_4_0 = arg_4_1:getShipBgPrint()
+	slot0.isSpecialBg = slot1:getShipBgPrint() ~= slot1:rarity2bgPrintForGet()
+	slot3, slot4 = MainPaintingView.GetAssistantStatus(slot1)
 
-	arg_4_0.isSpecialBg = var_4_0 ~= arg_4_1:rarity2bgPrintForGet()
+	if slot0.isSpecialBg and slot4 then
+		slot0:SetSpecailBg(slot2)
+		slot0:ClearMapBg()
+	elseif uv0 and uv0 ~= 0 then
+		slot5 = pg.expedition_data_by_map[uv0]
 
-	local var_4_1, var_4_2 = MainPaintingView.GetAssistantStatus(arg_4_1)
+		assert(slot5, "expedition_data_by_map >>> " .. uv0)
 
-	if arg_4_0.isSpecialBg and var_4_2 then
-		arg_4_0:SetSpecailBg(var_4_0)
-		arg_4_0:ClearMapBg()
-	elseif var_0_2 and var_0_2 ~= 0 then
-		local var_4_3 = pg.expedition_data_by_map[var_0_2]
+		if slot0.mapLoaderKey ~= slot5.bg .. "_" .. slot5.ani_name then
+			slot0:ClearMapBg()
 
-		assert(var_4_3, "expedition_data_by_map >>> " .. var_0_2)
+			slot0.mapLoaderKey = slot6
 
-		local var_4_4 = var_4_3.bg .. "_" .. var_4_3.ani_name
-
-		if arg_4_0.mapLoaderKey ~= var_4_4 then
-			arg_4_0:ClearMapBg()
-
-			arg_4_0.mapLoaderKey = var_4_4
-
-			arg_4_0:SetMapBg(var_4_3.bg, var_4_3.ani_name)
+			slot0:SetMapBg(slot5.bg, slot5.ani_name)
 		end
 	else
-		local var_4_5 = var_0_0.GetBgAndBgm()
-
-		arg_4_0:SetCommonBg(var_4_5)
-		arg_4_0:ClearMapBg()
+		slot0:SetCommonBg(uv1.GetBgAndBgm())
+		slot0:ClearMapBg()
 	end
 end
 
-function var_0_0.Refresh(arg_5_0, arg_5_1)
-	arg_5_0:Init(arg_5_1)
+function slot0.Refresh(slot0, slot1)
+	slot0:Init(slot1)
 end
 
-function var_0_0.SetSpecailBg(arg_6_0, arg_6_1)
-	arg_6_0.isloading = true
+function slot0.SetSpecailBg(slot0, slot1)
+	slot0.isloading = true
 
-	pg.DynamicBgMgr.GetInstance():LoadBg(arg_6_0, arg_6_1, arg_6_0._tf.parent, arg_6_0._tf, function(arg_7_0)
-		arg_6_0.isloading = false
-		arg_7_0.transform.localPosition = Vector3(0, 0, 200)
-	end, function()
-		arg_6_0.isloading = false
+	pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
+		uv0.isloading = false
+		slot0.transform.localPosition = Vector3(0, 0, 200)
+	end, function ()
+		uv0.isloading = false
 	end)
 end
 
-function var_0_0.SetMapBg(arg_9_0, arg_9_1, arg_9_2)
-	arg_9_0.isloading = true
-	arg_9_0.effectGo = nil
+function slot0.SetMapBg(slot0, slot1, slot2)
+	slot0.isloading = true
+	slot0.effectGo = nil
 
 	parallelAsync({
-		function(arg_10_0)
-			PoolMgr.GetInstance():GetSprite("levelmap/" .. arg_9_1, "", true, function(arg_11_0)
-				setImageSprite(arg_9_0._tf, arg_11_0)
-				arg_10_0()
+		function (slot0)
+			PoolMgr.GetInstance():GetSprite("levelmap/" .. uv0, "", true, function (slot0)
+				setImageSprite(uv0._tf, slot0)
+				uv1()
 			end)
 		end,
-		function(arg_12_0)
-			if not arg_9_2 or arg_9_2 == "" then
-				arg_12_0()
+		function (slot0)
+			if not uv0 or uv0 == "" then
+				slot0()
 
 				return
 			end
 
-			PoolMgr.GetInstance():GetPrefab("ui/" .. arg_9_2, "", true, function(arg_13_0)
-				setParent(arg_13_0, arg_9_0._tf)
-				arg_9_0:AdjustMapEffect(arg_13_0)
+			PoolMgr.GetInstance():GetPrefab("ui/" .. uv0, "", true, function (slot0)
+				setParent(slot0, uv0._tf)
+				uv0:AdjustMapEffect(slot0)
 
-				arg_9_0.effectGo = arg_13_0
+				uv0.effectGo = slot0
 
-				arg_12_0()
+				uv1()
 			end)
 		end
-	}, function()
-		arg_9_0.isloading = false
+	}, function ()
+		uv0.isloading = false
 	end)
 end
 
-function var_0_0.ClearMapBg(arg_15_0)
-	if not IsNil(arg_15_0.effectGo) then
-		Object.Destroy(arg_15_0.effectGo)
+function slot0.ClearMapBg(slot0)
+	if not IsNil(slot0.effectGo) then
+		Object.Destroy(slot0.effectGo)
 
-		arg_15_0.effectGo = nil
+		slot0.effectGo = nil
 	end
 
-	for iter_15_0, iter_15_1 in ipairs(arg_15_0.paintingCanvases) do
-		iter_15_1.overrideSorting = false
-		iter_15_1.sortingOrder = 0
+	for slot4, slot5 in ipairs(slot0.paintingCanvases) do
+		slot5.overrideSorting = false
+		slot5.sortingOrder = 0
 	end
 
-	arg_15_0.mapLoaderKey = nil
+	slot0.mapLoaderKey = nil
 end
 
-function var_0_0.AdjustMapEffect(arg_16_0, arg_16_1)
-	local var_16_0 = -math.huge
-	local var_16_1 = arg_16_1:GetComponentsInChildren(typeof(Canvas))
-
-	for iter_16_0 = 1, var_16_1.Length do
-		local var_16_2 = var_16_1[iter_16_0 - 1]
-
-		if var_16_0 < var_16_2.sortingOrder then
-			var_16_0 = var_16_2.sortingOrder
+function slot0.AdjustMapEffect(slot0, slot1)
+	for slot7 = 1, slot1:GetComponentsInChildren(typeof(Canvas)).Length do
+		if -math.huge < slot3[slot7 - 1].sortingOrder then
+			slot2 = slot8.sortingOrder
 		end
 	end
 
-	local var_16_3 = arg_16_1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
-
-	for iter_16_1 = 1, var_16_3.Length do
-		local var_16_4 = var_16_3[iter_16_1 - 1]
-		local var_16_5 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_16_4)
-
-		if var_16_0 < var_16_5 then
-			var_16_0 = var_16_5
+	for slot8 = 1, slot1:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length do
+		if slot2 < ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot4[slot8 - 1]) then
+			slot2 = slot10
 		end
 	end
 
-	for iter_16_2, iter_16_3 in ipairs(arg_16_0.paintingCanvases) do
-		iter_16_3.overrideSorting = true
-		iter_16_3.sortingOrder = var_16_0 + (iter_16_2 == 3 and 2 or 1)
+	for slot8, slot9 in ipairs(slot0.paintingCanvases) do
+		slot9.overrideSorting = true
+		slot9.sortingOrder = slot2 + (slot8 == 3 and 2 or 1)
 	end
 end
 
-function var_0_0.SetCommonBg(arg_17_0, arg_17_1)
-	setActive(arg_17_0._tf, true)
+function slot0.SetCommonBg(slot0, slot1)
+	setActive(slot0._tf, true)
 
-	arg_17_0.isloading = true
+	slot0.isloading = true
 
-	PoolMgr.GetInstance():GetSprite("commonbg/" .. arg_17_1, "", true, function(arg_18_0)
-		arg_17_0.isloading = false
+	PoolMgr.GetInstance():GetSprite("commonbg/" .. slot1, "", true, function (slot0)
+		uv0.isloading = false
 
-		setImageSprite(arg_17_0._tf, arg_18_0)
+		setImageSprite(uv0._tf, slot0)
 	end)
 end
 
-function var_0_0.ClearSpecailBg(arg_19_0)
-	if arg_19_0.isSpecialBg then
-		pg.DynamicBgMgr.GetInstance():ClearBg(arg_19_0:getUIName())
+function slot0.ClearSpecailBg(slot0)
+	if slot0.isSpecialBg then
+		pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
 
-		arg_19_0.isSpecialBg = false
+		slot0.isSpecialBg = false
 	end
 end
 
-function var_0_0.IsLoading(arg_20_0)
-	return arg_20_0.isloading
+function slot0.IsLoading(slot0)
+	return slot0.isloading
 end
 
-function var_0_0.Disable(arg_21_0)
-	arg_21_0:ClearSpecailBg()
+function slot0.Disable(slot0)
+	slot0:ClearSpecailBg()
 end
 
-function var_0_0.Dispose(arg_22_0)
-	arg_22_0:ClearSpecailBg()
-	arg_22_0:ClearMapBg()
+function slot0.Dispose(slot0)
+	slot0:ClearSpecailBg()
+	slot0:ClearMapBg()
 end
 
-return var_0_0
+return slot0

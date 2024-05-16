@@ -1,89 +1,87 @@
-﻿ys = ys or {}
-
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleAttr
-local var_0_2 = var_0_0.Battle.BattleTargetChoise
-
-var_0_0.Battle.BattleSkillFusion = class("BattleSkillFusion", var_0_0.Battle.BattleSkillEffect)
-var_0_0.Battle.BattleSkillFusion.__name = "BattleSkillFusion"
-
-local var_0_3 = var_0_0.Battle.BattleSkillFusion
-
-var_0_3.FREEZE_POS = {
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleAttr
+slot2 = slot0.Battle.BattleTargetChoise
+slot0.Battle.BattleSkillFusion = class("BattleSkillFusion", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillFusion.__name = "BattleSkillFusion"
+slot3 = slot0.Battle.BattleSkillFusion
+slot3.FREEZE_POS = {
 	Vector3(-10000, 0, 58),
 	[-1] = Vector3(10000, 0, 58)
 }
 
-function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_3.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot3.Ctor(slot0, slot1, slot2)
+	slot6 = slot2
 
-	arg_1_0._fusionUnitTempID = arg_1_0._tempData.arg_list.fusion_id
-	arg_1_0._fusionUnitSkinID = arg_1_0._tempData.arg_list.ship_skin_id
-	arg_1_0._elementTagList = arg_1_0._tempData.arg_list.element_tag_list
-	arg_1_0._attrInheritList = arg_1_0._tempData.arg_list.attr_inherit_list
-	arg_1_0._fusionUnitEquipmentList = {}
+	uv0.super.Ctor(slot0, slot1, slot6)
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_0._tempData.arg_list.weapon_id_list) do
-		table.insert(arg_1_0._fusionUnitEquipmentList, {
-			id = iter_1_1,
+	slot0._fusionUnitTempID = slot0._tempData.arg_list.fusion_id
+	slot0._fusionUnitSkinID = slot0._tempData.arg_list.ship_skin_id
+	slot0._elementTagList = slot0._tempData.arg_list.element_tag_list
+	slot0._attrInheritList = slot0._tempData.arg_list.attr_inherit_list
+	slot0._fusionUnitEquipmentList = {}
+
+	for slot6, slot7 in ipairs(slot0._tempData.arg_list.weapon_id_list) do
+		table.insert(slot0._fusionUnitEquipmentList, {
+			id = slot7,
 			equipment = {
 				weapon_id = {
-					iter_1_1
+					slot7
 				}
 			}
 		})
 	end
 
-	arg_1_0._fusionUnitSkillList = {}
+	slot0._fusionUnitSkillList = {}
 
-	for iter_1_2, iter_1_3 in ipairs(arg_1_0._tempData.arg_list.buff_list) do
-		table.insert(arg_1_0._fusionUnitSkillList, {
-			id = iter_1_3,
-			level = arg_1_0._level
+	for slot6, slot7 in ipairs(slot0._tempData.arg_list.buff_list) do
+		table.insert(slot0._fusionUnitSkillList, {
+			id = slot7,
+			level = slot0._level
 		})
 	end
 
-	arg_1_0._duration = arg_1_0._tempData.arg_list.duration
+	slot0._duration = slot0._tempData.arg_list.duration
 end
 
-function var_0_3.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0:doFusion(arg_2_1)
+function slot3.DoDataEffect(slot0, slot1, slot2)
+	slot0:doFusion(slot1)
 end
 
-function var_0_3.DoDataEffectWithoutTarget(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0:doFusion(arg_3_1)
+function slot3.DoDataEffectWithoutTarget(slot0, slot1, slot2)
+	slot0:doFusion(slot1)
 end
 
-function var_0_3.doFusion(arg_4_0, arg_4_1)
-	local var_4_0 = var_0_2.TargetAllHelp(arg_4_1)
-	local var_4_1 = var_0_2.TargetShipTag(arg_4_1, {
-		ship_tag_list = arg_4_0._elementTagList
-	}, var_4_0)
-	local var_4_2 = {}
+function slot3.doFusion(slot0, slot1)
+	slot3 = uv0.TargetShipTag(slot1, {
+		ship_tag_list = slot0._elementTagList
+	}, uv0.TargetAllHelp(slot1))
+	slot4 = {
+		[slot9] = 1
+	}
 
-	for iter_4_0, iter_4_1 in ipairs(Ship.PROPERTIES) do
-		var_4_2[iter_4_1] = 1
+	for slot8, slot9 in ipairs(Ship.PROPERTIES) do
+		-- Nothing
 	end
 
-	local var_4_3 = var_0_0.Battle.BattleDataProxy.GetInstance()
-	local var_4_4 = {
+	slot8 = uv1.Battle.BattleDataProxy.GetInstance():SpawnFusionUnit(slot1, {
 		name = "123",
 		shipGS = 1,
-		id = arg_4_1.id,
-		tmpID = arg_4_0._fusionUnitTempID,
-		skinId = arg_4_0._fusionUnitSkinID,
-		level = var_0_1.GetCurrent(arg_4_1, "formulaLevel"),
-		equipment = arg_4_0._fusionUnitEquipmentList,
-		properties = var_4_2,
-		baseProperties = var_4_2,
+		id = slot1.id,
+		tmpID = slot0._fusionUnitTempID,
+		skinId = slot0._fusionUnitSkinID,
+		level = uv2.GetCurrent(slot1, "formulaLevel"),
+		equipment = slot0._fusionUnitEquipmentList,
+		properties = slot4,
+		baseProperties = slot4,
 		proficiency = {
 			1,
 			1,
 			1
 		},
-		rarity = arg_4_1:GetRarity(),
-		intimacy = arg_4_1:GetIntimacy(),
-		skills = arg_4_0._fusionUnitSkillList,
+		rarity = slot1:GetRarity(),
+		intimacy = slot1:GetIntimacy(),
+		skills = slot0._fusionUnitSkillList,
 		baseList = {
 			1,
 			1,
@@ -94,68 +92,63 @@ function var_0_3.doFusion(arg_4_0, arg_4_1)
 			0,
 			0
 		}
+	}, slot3, slot0._attrInheritList):GetHP()
+	slot9 = {
+		[slot14] = Clone(slot14:GetPosition())
 	}
-	local var_4_5 = var_4_3:SpawnFusionUnit(arg_4_1, var_4_4, var_4_1, arg_4_0._attrInheritList)
-	local var_4_6 = var_4_5:GetHP()
-	local var_4_7 = {}
 
-	for iter_4_2, iter_4_3 in ipairs(var_4_1) do
-		if iter_4_3:IsMainFleetUnit() then
-			var_4_7[iter_4_3] = Clone(iter_4_3:GetPosition())
+	for slot13, slot14 in ipairs(slot3) do
+		if slot14:IsMainFleetUnit() then
+			-- Nothing
 		end
 
-		var_4_3:FreezeUnit(iter_4_3)
-		iter_4_3:SetPosition(var_0_3.FREEZE_POS[iter_4_3:GetIFF()])
+		slot5:FreezeUnit(slot14)
+		slot14:SetPosition(uv3.FREEZE_POS[slot14:GetIFF()])
 	end
 
-	if arg_4_1:IsMainFleetUnit() then
-		var_4_7[arg_4_1] = Clone(arg_4_1:GetPosition())
+	if slot1:IsMainFleetUnit() then
+		slot9[slot1] = Clone(slot1:GetPosition())
 	end
 
-	var_4_3:FreezeUnit(arg_4_1)
-	arg_4_1:SetPosition(var_0_3.FREEZE_POS[arg_4_1:GetIFF()])
+	slot5:FreezeUnit(slot1)
+	slot1:SetPosition(uv3.FREEZE_POS[slot1:GetIFF()])
 
-	arg_4_0._fusionTimer = nil
+	slot0._fusionTimer = nil
+	slot0._fusionTimer = pg.TimeMgr.GetInstance():AddBattleTimer("fusionSkillTimer", 0, slot0._duration, function ()
+		slot0, slot1 = uv0:GetHP()
+		slot2 = slot1 - slot0
+		slot3 = 0
+		slot4 = uv0:GetPosition()
+		slot5 = uv0:GetAttrByName("hpProvideRate")
 
-	local function var_4_8()
-		local var_5_0, var_5_1 = var_4_5:GetHP()
-		local var_5_2 = var_5_1 - var_5_0
-		local var_5_3 = 0
-		local var_5_4 = var_4_5:GetPosition()
-		local var_5_5 = var_4_5:GetAttrByName("hpProvideRate")
-
-		if arg_4_1:IsMainFleetUnit() then
-			arg_4_1:SetPosition(var_4_7[arg_4_1])
+		if uv1:IsMainFleetUnit() then
+			uv1:SetPosition(uv2[uv1])
 		else
-			arg_4_1:SetPosition(Clone(var_5_4))
+			uv1:SetPosition(Clone(slot4))
 		end
 
-		local var_5_6 = math.floor(var_5_2 * var_5_5[arg_4_1:GetAttrByName("id")])
+		slot9 = math.floor(slot2 * slot5[uv1:GetAttrByName("id")])
 
-		var_4_3:HandleDirectDamage(arg_4_1, var_5_6)
-		var_4_3:ActiveFreezeUnit(arg_4_1)
+		uv3:HandleDirectDamage(uv1, slot9)
+		uv3:ActiveFreezeUnit(uv1)
 
-		for iter_5_0, iter_5_1 in ipairs(var_4_1) do
-			if iter_5_1:IsMainFleetUnit() then
-				iter_5_1:SetPosition(var_4_7[iter_5_1])
+		for slot9, slot10 in ipairs(uv4) do
+			if slot10:IsMainFleetUnit() then
+				slot10:SetPosition(uv2[slot10])
 			else
-				iter_5_1:SetPosition(Clone(var_5_4))
+				slot10:SetPosition(Clone(slot4))
 			end
 
-			local var_5_7 = math.floor(var_5_2 * var_5_5[iter_5_1:GetAttrByName("id")])
-
-			var_4_3:HandleDirectDamage(iter_5_1, var_5_7)
-			var_4_3:ActiveFreezeUnit(iter_5_1)
+			uv3:HandleDirectDamage(slot10, math.floor(slot2 * slot5[slot10:GetAttrByName("id")]))
+			uv3:ActiveFreezeUnit(slot10)
 		end
 
-		var_4_3:DefusionUnit(var_4_5)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_4_0._fusionTimer)
-	end
-
-	arg_4_0._fusionTimer = pg.TimeMgr.GetInstance():AddBattleTimer("fusionSkillTimer", 0, arg_4_0._duration, var_4_8, true)
+		uv3:DefusionUnit(uv0)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(uv5._fusionTimer)
+	end, true)
 end
 
-function var_0_3.Clear(arg_6_0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_6_0._fusionTimer)
-	var_0_3.super.Clear(arg_6_0)
+function slot3.Clear(slot0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._fusionTimer)
+	uv0.super.Clear(slot0)
 end

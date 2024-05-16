@@ -1,127 +1,116 @@
-﻿local var_0_0 = class("EventFinishCommand", pm.SimpleCommand)
+slot0 = class("EventFinishCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.callback
-	local var_1_3 = var_1_0.onConfirm
-	local var_1_4 = getProxy(EventProxy)
-	local var_1_5 = var_1_4:findInfoById(var_1_1)
-	local var_1_6, var_1_7 = var_1_4:CanFinishEvent(var_1_5)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.callback
+	slot5 = slot2.onConfirm
+	slot6 = getProxy(EventProxy)
+	slot8, slot9 = slot6:CanFinishEvent(slot6:findInfoById(slot2.id))
 
-	if not var_1_6 then
-		if var_1_7 then
-			pg.TipsMgr.GetInstance():ShowTips(var_1_7)
+	if not slot8 then
+		if slot9 then
+			pg.TipsMgr.GetInstance():ShowTips(slot9)
 		end
 
-		if var_1_2 then
-			var_1_2()
+		if slot4 then
+			slot4()
 		end
 
 		return
 	end
 
-	if var_1_5:IsActivityType() then
-		arg_1_0:sendNotification(GAME.ACT_COLLECTION_EVENT_OP, {
+	if slot7:IsActivityType() then
+		slot0:sendNotification(GAME.ACT_COLLECTION_EVENT_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.COLLETION_EVENT_OP_SUBMIT,
-			arg1 = var_1_1,
+			arg1 = slot3,
 			arg_list = {},
-			callBack = var_1_2,
-			onConfirm = var_1_3
+			callBack = slot4,
+			onConfirm = slot5
 		})
 	else
 		pg.ConnectionMgr.GetInstance():Send(13005, {
-			id = var_1_1
-		}, 13006, function(arg_2_0)
-			if arg_2_0.result == 0 then
-				getProxy(EventProxy):findInfoById(var_1_1):SavePrevFormation()
-				var_0_0.OnFinish(var_1_1, arg_2_0, var_1_3)
+			id = slot3
+		}, 13006, function (slot0)
+			if slot0.result == 0 then
+				getProxy(EventProxy):findInfoById(uv0):SavePrevFormation()
+				uv1.OnFinish(uv0, slot0, uv2)
 
-				if var_1_2 then
-					var_1_2()
+				if uv3 then
+					uv3()
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("event_finish_fail", arg_2_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("event_finish_fail", slot0.result))
 
-				if var_1_2 then
-					var_1_2()
+				if uv3 then
+					uv3()
 				end
 			end
 		end)
 	end
 end
 
-function var_0_0.OnFinish(arg_3_0, arg_3_1, arg_3_2)
+function slot0.OnFinish(slot0, slot1, slot2)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("event_finish_success"))
 
-	local var_3_0 = getProxy(EventProxy)
-	local var_3_1 = {}
-	local var_3_2 = {}
+	slot3 = getProxy(EventProxy)
+	slot4 = {}
+	slot5 = {}
 
-	if arg_3_1.exp > 0 then
-		local var_3_3 = getProxy(BayProxy)
-		local var_3_4 = var_3_0:findInfoById(arg_3_0).shipIds
+	if slot1.exp > 0 then
+		slot6 = getProxy(BayProxy)
 
-		for iter_3_0, iter_3_1 in ipairs(var_3_4) do
-			local var_3_5 = var_3_3:getShipById(iter_3_1)
+		for slot11, slot12 in ipairs(slot3:findInfoById(slot0).shipIds) do
+			if slot6:getShipById(slot12) then
+				slot14 = Clone(slot13)
 
-			if var_3_5 then
-				local var_3_6 = Clone(var_3_5)
-
-				var_3_6:addExp(arg_3_1.exp)
-				var_3_3:updateShip(var_3_6)
-				table.insert(var_3_1, var_3_5)
-				table.insert(var_3_2, var_3_6)
+				slot14:addExp(slot1.exp)
+				slot6:updateShip(slot14)
+				table.insert(slot4, slot13)
+				table.insert(slot5, slot14)
 			end
 		end
 	end
 
-	local var_3_7 = PlayerConst.addTranDrop(arg_3_1.drop_list)
-	local var_3_8 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT)
+	slot6 = PlayerConst.addTranDrop(slot1.drop_list)
 
-	if var_3_8 then
-		local var_3_9 = var_3_8:getConfig("config_client").shopActID
+	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT) and slot7:getConfig("config_client").shopActID then
+		slot9 = pg.activity_template[slot8].config_client.pt_id
 
-		if var_3_9 then
-			local var_3_10 = pg.activity_template[var_3_9].config_client.pt_id
-
-			_.each(var_3_7, function(arg_4_0)
-				if arg_4_0.id == var_3_10 then
-					arg_4_0.catchupActTag = true
-				end
-			end)
-			table.sort(var_3_7, CompareFuncs({
-				function(arg_5_0)
-					return arg_5_0.id == var_3_10 and 1 or 0
-				end
-			}))
-		end
+		_.each(slot6, function (slot0)
+			if slot0.id == uv0 then
+				slot0.catchupActTag = true
+			end
+		end)
+		table.sort(slot6, CompareFuncs({
+			function (slot0)
+				return slot0.id == uv0 and 1 or 0
+			end
+		}))
 	end
 
-	local var_3_11 = getProxy(PlayerProxy)
-	local var_3_12 = var_3_11:getData()
+	slot8 = getProxy(PlayerProxy)
+	slot9 = slot8:getData()
+	slot9.collect_attack_count = slot9.collect_attack_count + 1
 
-	var_3_12.collect_attack_count = var_3_12.collect_attack_count + 1
+	slot8:updatePlayer(slot9)
 
-	var_3_11:updatePlayer(var_3_12)
+	slot10, slot11 = slot3:findInfoById(slot0)
 
-	local var_3_13, var_3_14 = var_3_0:findInfoById(arg_3_0)
-
-	table.remove(var_3_0.eventList, var_3_14)
-	_.each(arg_3_1.new_collection, function(arg_6_0)
-		table.insert(var_3_0.eventList, EventInfo.New(arg_6_0))
+	table.remove(slot3.eventList, slot11)
+	_.each(slot1.new_collection, function (slot0)
+		table.insert(uv0.eventList, EventInfo.New(slot0))
 	end)
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inEvent")
 	pg.m02:sendNotification(GAME.EVENT_LIST_UPDATE)
 	pg.m02:sendNotification(GAME.EVENT_SHOW_AWARDS, {
-		eventId = arg_3_0,
-		oldShips = var_3_1,
-		newShips = var_3_2,
-		awards = var_3_7,
-		isCri = arg_3_1.is_cri > 0,
-		onConfirm = arg_3_2
+		eventId = slot0,
+		oldShips = slot4,
+		newShips = slot5,
+		awards = slot6,
+		isCri = slot1.is_cri > 0,
+		onConfirm = slot2
 	})
 end
 
-return var_0_0
+return slot0

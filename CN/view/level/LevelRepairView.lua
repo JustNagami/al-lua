@@ -1,78 +1,76 @@
-﻿local var_0_0 = class("LevelRepairView", import("..base.BaseSubView"))
+slot0 = class("LevelRepairView", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "LevelRepairView"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:InitUI()
-	setActive(arg_2_0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
+function slot0.OnInit(slot0)
+	slot0:InitUI()
+	setActive(slot0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	arg_3_0.onConfirm = nil
-	arg_3_0.onCancel = nil
+function slot0.OnDestroy(slot0)
+	slot0.onConfirm = nil
+	slot0.onCancel = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg_3_0._tf, arg_3_0._parentTf)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.setCBFunc(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0.onConfirm = arg_4_1
-	arg_4_0.onCancel = arg_4_2
+function slot0.setCBFunc(slot0, slot1, slot2)
+	slot0.onConfirm = slot1
+	slot0.onCancel = slot2
 end
 
-function var_0_0.InitUI(arg_5_0)
-	arg_5_0.desc = arg_5_0:findTF("window/desc")
-	arg_5_0.descFree = arg_5_0:findTF("window/text_free")
-	arg_5_0.descCharge = arg_5_0:findTF("window/text_charge")
-	arg_5_0.free = arg_5_0:findTF("window/text_free/time")
-	arg_5_0.charge = arg_5_0:findTF("window/text_charge/time")
-	arg_5_0.diamond = arg_5_0:findTF("window/diamond")
-	arg_5_0.cost = findTF(arg_5_0.diamond, "cost")
-	arg_5_0.cancel = arg_5_0:findTF("window/actions/cancel_button")
-	arg_5_0.confirm = arg_5_0:findTF("window/actions/use_button")
-	arg_5_0.back = arg_5_0:findTF("top/btnBack")
+function slot0.InitUI(slot0)
+	slot0.desc = slot0:findTF("window/desc")
+	slot0.descFree = slot0:findTF("window/text_free")
+	slot0.descCharge = slot0:findTF("window/text_charge")
+	slot0.free = slot0:findTF("window/text_free/time")
+	slot0.charge = slot0:findTF("window/text_charge/time")
+	slot0.diamond = slot0:findTF("window/diamond")
+	slot0.cost = findTF(slot0.diamond, "cost")
+	slot0.cancel = slot0:findTF("window/actions/cancel_button")
+	slot0.confirm = slot0:findTF("window/actions/use_button")
+	slot0.back = slot0:findTF("top/btnBack")
 end
 
-function var_0_0.set(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
-	arg_6_0.repairTimes = arg_6_1
-	arg_6_0.freeTimes = arg_6_2
-	arg_6_0.chargeTimes = arg_6_3
-	arg_6_0.chargeDiamond = arg_6_4
+function slot0.set(slot0, slot1, slot2, slot3, slot4)
+	slot0.repairTimes = slot1
+	slot0.freeTimes = slot2
+	slot0.chargeTimes = slot3
+	slot0.chargeDiamond = slot4
+	slot5 = slot0.freeTimes - math.min(slot0.repairTimes, slot0.freeTimes)
 
-	local var_6_0 = arg_6_0.freeTimes - math.min(arg_6_0.repairTimes, arg_6_0.freeTimes)
-	local var_6_1 = arg_6_0.chargeTimes - (arg_6_0.repairTimes - (arg_6_0.freeTimes - var_6_0))
+	setText(slot0.free, slot5 .. "/" .. slot0.freeTimes)
+	setText(slot0.charge, slot0.chargeTimes - (slot0.repairTimes - (slot0.freeTimes - slot5)) .. "/" .. slot0.chargeTimes)
+	setText(slot0.cost, slot0.chargeDiamond)
+	setActive(slot0.descFree, slot5 > 0)
+	setActive(slot0.descCharge, slot5 <= 0)
+	setText(slot0.desc, i18n("battle_repair_special_tip"))
+	setText(slot0.descFree, i18n("battle_repair_normal_name"))
+	setText(slot0.descCharge, i18n("battle_repair_special_name"))
 
-	setText(arg_6_0.free, var_6_0 .. "/" .. arg_6_0.freeTimes)
-	setText(arg_6_0.charge, var_6_1 .. "/" .. arg_6_0.chargeTimes)
-	setText(arg_6_0.cost, arg_6_0.chargeDiamond)
-	setActive(arg_6_0.descFree, var_6_0 > 0)
-	setActive(arg_6_0.descCharge, var_6_0 <= 0)
-	setText(arg_6_0.desc, i18n("battle_repair_special_tip"))
-	setText(arg_6_0.descFree, i18n("battle_repair_normal_name"))
-	setText(arg_6_0.descCharge, i18n("battle_repair_special_name"))
+	slot7 = slot0.repairTimes < slot0.freeTimes + slot0.chargeTimes
 
-	local var_6_2 = arg_6_0.repairTimes < arg_6_0.freeTimes + arg_6_0.chargeTimes
-
-	setActive(arg_6_0.diamond, var_6_2 and arg_6_0.repairTimes >= arg_6_0.freeTimes)
-	setButtonEnabled(arg_6_0.confirm, var_6_2)
-	setGray(arg_6_0.confirm, not var_6_2, true)
-	onButton(arg_6_0, arg_6_0.back, function()
-		if arg_6_0.onCancel then
-			arg_6_0.onCancel()
+	setActive(slot0.diamond, slot7 and slot0.freeTimes <= slot0.repairTimes)
+	setButtonEnabled(slot0.confirm, slot7)
+	setGray(slot0.confirm, not slot7, true)
+	onButton(slot0, slot0.back, function ()
+		if uv0.onCancel then
+			uv0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg_6_0, arg_6_0.cancel, function()
-		if arg_6_0.onCancel then
-			arg_6_0.onCancel()
+	onButton(slot0, slot0.cancel, function ()
+		if uv0.onCancel then
+			uv0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg_6_0, arg_6_0.confirm, function()
-		if arg_6_0.onConfirm then
-			arg_6_0.onConfirm()
+	onButton(slot0, slot0.confirm, function ()
+		if uv0.onConfirm then
+			uv0.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end
 
-return var_0_0
+return slot0

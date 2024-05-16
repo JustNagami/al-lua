@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "破盾效果",
+	time = 1,
+	picture = "",
+	desc = "监听器",
+	stack = 1,
+	id = 17846,
+	icon = 17840,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -32,24 +51,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "破盾效果",
-	time = 1,
-	picture = "",
-	desc = "监听器",
-	stack = 1,
-	id = 17846,
-	icon = 17840,
-	last_effect = ""
+	}
 }

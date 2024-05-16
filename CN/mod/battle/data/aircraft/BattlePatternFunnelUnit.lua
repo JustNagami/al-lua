@@ -1,123 +1,111 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = slot0.Battle.BattleTargetChoise
+slot3 = slot0.Battle.BattleDataFunction
+slot4 = slot0.Battle.BattleUnitEvent
+slot0.Battle.BattlePatternFunnelUnit = class("BattlePatternFunnelUnit", slot0.Battle.BattleAircraftUnit)
+slot0.Battle.BattlePatternFunnelUnit.__name = "BattlePatternFunnelUnit"
+slot5 = slot0.Battle.BattlePatternFunnelUnit
+slot5.STOP_STATE = "STOP_STATE"
+slot5.MOVE_STATE = "MOVE_STATE"
+slot5.CRASH_STATE = "CRASH_STATE"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = var_0_0.Battle.BattleTargetChoise
-local var_0_3 = var_0_0.Battle.BattleDataFunction
-local var_0_4 = var_0_0.Battle.BattleUnitEvent
+function slot5.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-var_0_0.Battle.BattlePatternFunnelUnit = class("BattlePatternFunnelUnit", var_0_0.Battle.BattleAircraftUnit)
-var_0_0.Battle.BattlePatternFunnelUnit.__name = "BattlePatternFunnelUnit"
-
-local var_0_5 = var_0_0.Battle.BattlePatternFunnelUnit
-
-var_0_5.STOP_STATE = "STOP_STATE"
-var_0_5.MOVE_STATE = "MOVE_STATE"
-var_0_5.CRASH_STATE = "CRASH_STATE"
-
-function var_0_5.Ctor(arg_1_0, arg_1_1)
-	var_0_5.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0._untDir = var_0_0.Battle.BattleConst.UnitDir.LEFT
-	arg_1_0._type = var_0_0.Battle.BattleConst.UnitType.FUNNEL_UNIT
-	arg_1_0._move = var_0_0.Battle.MoveComponent.New()
+	slot0._untDir = uv1.Battle.BattleConst.UnitDir.LEFT
+	slot0._type = uv1.Battle.BattleConst.UnitType.FUNNEL_UNIT
+	slot0._move = uv1.Battle.MoveComponent.New()
 end
 
-function var_0_5.Update(arg_2_0, arg_2_1)
-	arg_2_0:updatePatrol(arg_2_1)
-	arg_2_0:UpdateWeapon()
-	arg_2_0:updatePosition()
+function slot5.Update(slot0, slot1)
+	slot0:updatePatrol(slot1)
+	slot0:UpdateWeapon()
+	slot0:updatePosition()
 end
 
-function var_0_5.OnMotherDead(arg_3_0)
-	arg_3_0:onDead()
+function slot5.OnMotherDead(slot0)
+	slot0:onDead()
 end
 
-function var_0_5.updateExist(arg_4_0)
-	if not arg_4_0._existStartTime then
+function slot5.updateExist(slot0)
+	if not slot0._existStartTime then
 		return
 	end
 
-	if arg_4_0._existStartTime + arg_4_0._existDuration < pg.TimeMgr.GetInstance():GetCombatTime() then
-		arg_4_0:changePartolState(var_0_5.CRASH_STATE)
+	if slot0._existStartTime + slot0._existDuration < pg.TimeMgr.GetInstance():GetCombatTime() then
+		slot0:changePartolState(uv0.CRASH_STATE)
 	end
 end
 
-function var_0_5.UpdateWeapon(arg_5_0)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0:GetWeapon()) do
-		iter_5_1:Update()
+function slot5.UpdateWeapon(slot0)
+	for slot4, slot5 in ipairs(slot0:GetWeapon()) do
+		slot5:Update()
 	end
 end
 
-function var_0_5.SetMotherUnit(arg_6_0, arg_6_1)
-	var_0_5.super.SetMotherUnit(arg_6_0, arg_6_1)
+function slot5.SetMotherUnit(slot0, slot1)
+	uv0.super.SetMotherUnit(slot0, slot1)
 
-	local var_6_0 = arg_6_0:GetIFF() * -1
-
-	arg_6_0._upperBound, arg_6_0._lowerBound, arg_6_0._leftBound, arg_6_0._rightBound = var_0_0.Battle.BattleDataProxy.GetInstance():GetFleetBoundByIFF(var_6_0)
+	slot0._upperBound, slot0._lowerBound, slot0._leftBound, slot0._rightBound = uv1.Battle.BattleDataProxy.GetInstance():GetFleetBoundByIFF(slot0:GetIFF() * -1)
 end
 
-function var_0_5.SetTemplate(arg_7_0, arg_7_1)
-	var_0_5.super.SetTemplate(arg_7_0, arg_7_1)
+function slot5.SetTemplate(slot0, slot1)
+	uv0.super.SetTemplate(slot0, slot1)
 
-	arg_7_0._existDuration = arg_7_1.funnel_behavior.exist
+	slot0._existDuration = slot1.funnel_behavior.exist
 end
 
-function var_0_5.changePartolState(arg_8_0, arg_8_1)
-	if arg_8_1 == var_0_5.MOVE_STATE then
-		arg_8_0:changeToMoveState()
+function slot5.changePartolState(slot0, slot1)
+	if slot1 == uv0.MOVE_STATE then
+		slot0:changeToMoveState()
 	end
 
-	arg_8_0._portalState = arg_8_1
+	slot0._portalState = slot1
 end
 
-function var_0_5.AddCreateTimer(arg_9_0, arg_9_1, arg_9_2)
-	arg_9_0._currentState = arg_9_0.STATE_CREATE
-	arg_9_0._speedDir = arg_9_1
-	arg_9_0._velocity = var_0_0.Battle.BattleFormulas.ConvertAircraftSpeed(30)
+function slot5.AddCreateTimer(slot0, slot1, slot2)
+	slot0._currentState = slot0.STATE_CREATE
+	slot0._speedDir = slot1
+	slot0._velocity = uv0.Battle.BattleFormulas.ConvertAircraftSpeed(30)
+	slot0.updatePatrol = slot0._updateCreate
+	slot0._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, 0.5, function ()
+		uv0._existStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+		uv0._velocity = uv1.Battle.BattleFormulas.ConvertAircraftSpeed(uv0._tmpData.speed)
 
-	local function var_9_0()
-		arg_9_0._existStartTime = pg.TimeMgr.GetInstance():GetCombatTime()
-		arg_9_0._velocity = var_0_0.Battle.BattleFormulas.ConvertAircraftSpeed(arg_9_0._tmpData.speed)
+		uv0:changePartolState(uv2.MOVE_STATE)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(uv0._createTimer)
 
-		arg_9_0:changePartolState(var_0_5.MOVE_STATE)
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_9_0._createTimer)
-
-		arg_9_0._createTimer = nil
-	end
-
-	arg_9_0.updatePatrol = arg_9_0._updateCreate
-	arg_9_0._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, 0.5, var_9_0)
+		uv0._createTimer = nil
+	end)
 end
 
-function var_0_5.updatePosition(arg_11_0)
-	arg_11_0._pos = arg_11_0._pos + arg_11_0._speed
+function slot5.updatePosition(slot0)
+	slot0._pos = slot0._pos + slot0._speed
 end
 
-function var_0_5._updateCreate(arg_12_0)
-	arg_12_0:UpdateSpeed()
-	arg_12_0:updatePosition()
+function slot5._updateCreate(slot0)
+	slot0:UpdateSpeed()
+	slot0:updatePosition()
 end
 
-function var_0_5.changeToMoveState(arg_13_0)
-	arg_13_0._currentState = var_0_5.MOVE_STATE
+function slot5.changeToMoveState(slot0)
+	slot0._currentState = uv0.MOVE_STATE
 
-	local var_13_0 = var_0_3.GetAITmpDataFromID(arg_13_0._tmpData.funnel_behavior.AI)
-	local var_13_1 = var_0_0.Battle.AutoPilot.New(arg_13_0, var_13_0)
+	slot0._move:ImmuneMaxAreaLimit(true)
+	slot0._move:CancelFormationCtrl()
 
-	arg_13_0._move:ImmuneMaxAreaLimit(true)
-	arg_13_0._move:CancelFormationCtrl()
+	slot0._autoPilotAI = uv2.Battle.AutoPilot.New(slot0, uv1.GetAITmpDataFromID(slot0._tmpData.funnel_behavior.AI))
 
-	arg_13_0._autoPilotAI = var_13_1
+	slot0._autoPilotAI:SetHiveUnit(slot0._motherUnit)
 
-	arg_13_0._autoPilotAI:SetHiveUnit(arg_13_0._motherUnit)
-
-	arg_13_0.updatePatrol = arg_13_0._updateMove
+	slot0.updatePatrol = slot0._updateMove
 end
 
-function var_0_5._updateMove(arg_14_0, arg_14_1)
-	arg_14_0._move:Update()
-	arg_14_0._speed:Copy(arg_14_0._move:GetSpeed())
-	arg_14_0._speed:Mul(arg_14_0._velocity * arg_14_0:GetSpeedRatio())
-	arg_14_0:updatePosition()
+function slot5._updateMove(slot0, slot1)
+	slot0._move:Update()
+	slot0._speed:Copy(slot0._move:GetSpeed())
+	slot0._speed:Mul(slot0._velocity * slot0:GetSpeedRatio())
+	slot0:updatePosition()
 end

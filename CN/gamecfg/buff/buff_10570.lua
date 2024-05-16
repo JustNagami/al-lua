@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10570
-			}
-		}
-	},
+return {
 	{
 		desc = "高爆弹武器造成起火概率提高4.5%，起火伤害提高20.0%",
 		addition = {
@@ -90,5 +79,16 @@
 	stack = 1,
 	id = 10570,
 	icon = 10570,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10570
+			}
+		}
+	}
 }

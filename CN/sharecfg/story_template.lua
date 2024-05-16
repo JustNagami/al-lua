@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.story_template = {
 	[4172] = {
 		id = 4172,

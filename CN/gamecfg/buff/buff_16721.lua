@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			pop = {},
-			arg_list = {
-				attr = "antiAirPower",
-				number = 600
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -169,5 +156,18 @@
 	id = 16721,
 	picture = "",
 	last_effect = "",
-	desc = "属性提升"
+	desc = "属性提升",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			pop = {},
+			arg_list = {
+				attr = "antiAirPower",
+				number = 600
+			}
+		}
+	}
 }

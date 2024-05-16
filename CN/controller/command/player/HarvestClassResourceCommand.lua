@@ -1,11 +1,9 @@
-﻿local var_0_0 = class("HarvestClassResourceCommand", pm.SimpleCommand)
+slot0 = class("HarvestClassResourceCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(NavalAcademyProxy):GetClassVO()
-	local var_1_2 = var_1_1:GetCanGetResCnt()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if var_1_2 <= 0 then
+	if getProxy(NavalAcademyProxy):GetClassVO():GetCanGetResCnt() <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("player_harvestResource_error_fullBag"))
 
 		return
@@ -13,38 +11,32 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 	pg.ConnectionMgr.GetInstance():Send(22009, {
 		type = 0
-	}, 22010, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_1:GetTarget()
-			local var_2_1 = var_1_1:GetResourceType()
-			local var_2_2 = Drop.New({
+	}, 22010, function (slot0)
+		if slot0.result == 0 then
+			slot3 = Drop.New({
 				type = DROP_TYPE_ITEM,
-				id = var_2_1,
-				count = var_1_2
+				id = uv0:GetResourceType(),
+				count = uv1
 			})
 
-			arg_1_0:sendNotification(GAME.ADD_ITEM, var_2_2)
+			uv2:sendNotification(GAME.ADD_ITEM, slot3)
 
-			local var_2_3 = var_1_2 * var_2_0
-			local var_2_4 = getProxy(PlayerProxy):getData()
+			slot5 = getProxy(PlayerProxy):getData()
 
-			var_2_4:consume({
-				[id2res(PlayerConst.ResClassField)] = var_2_3
+			slot5:consume({
+				[id2res(PlayerConst.ResClassField)] = uv1 * uv0:GetTarget()
 			})
-			getProxy(PlayerProxy):updatePlayer(var_2_4)
-
-			local var_2_5 = var_2_2:getConfig("name")
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commission_get_award", var_2_5, var_1_2))
-			getProxy(NavalAcademyProxy):getCourse():SetProficiency(arg_2_0.exp_in_well)
-			arg_1_0:sendNotification(GAME.HARVEST_CLASS_RES_DONE, {
-				award = var_2_2,
-				value = var_1_2
+			getProxy(PlayerProxy):updatePlayer(slot5)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commission_get_award", slot3:getConfig("name"), uv1))
+			getProxy(NavalAcademyProxy):getCourse():SetProficiency(slot0.exp_in_well)
+			uv2:sendNotification(GAME.HARVEST_CLASS_RES_DONE, {
+				award = slot3,
+				value = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

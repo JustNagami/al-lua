@@ -1,255 +1,215 @@
-﻿local var_0_0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
+slot0 = class("BaseTargetCatchupPanel", import("...base.BaseUI"))
+slot0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
 
-var_0_0.SELECT_CHAR_LIGHT_FADE_TIME = 0.3
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0)
+	PoolMgr.GetInstance():GetUI(slot0:getUIName(), true, function (slot0)
+		slot0.transform:SetParent(uv0, false)
+		uv1:onUILoaded(slot0)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0)
-	PoolMgr.GetInstance():GetUI(arg_1_0:getUIName(), true, function(arg_2_0)
-		arg_2_0.transform:SetParent(arg_1_1, false)
-		arg_1_0:onUILoaded(arg_2_0)
-
-		if arg_1_2 then
-			arg_1_2()
+		if uv2 then
+			uv2()
 		end
 	end)
 end
 
-function var_0_0.getUIName(arg_3_0)
+function slot0.getUIName(slot0)
 	assert(false)
 
 	return ""
 end
 
-function var_0_0.init(arg_4_0)
-	return
+function slot0.init(slot0)
 end
 
-function var_0_0.initData(arg_5_0)
-	arg_5_0.curSelectedIndex = 0
-	arg_5_0.technologyProxy = getProxy(TechnologyProxy)
-	arg_5_0.bayProxy = getProxy(BayProxy)
-	arg_5_0.bagProxy = getProxy(BagProxy)
-	arg_5_0.configCatchup = pg.technology_catchup_template
-	arg_5_0.charIDList = arg_5_0.configCatchup[arg_5_0.tecID].char_choice
-	arg_5_0.urList = arg_5_0.configCatchup[arg_5_0.tecID].ur_char
-	arg_5_0.state = arg_5_0.technologyProxy:getCatchupState(arg_5_0.tecID)
+function slot0.initData(slot0)
+	slot0.curSelectedIndex = 0
+	slot0.technologyProxy = getProxy(TechnologyProxy)
+	slot0.bayProxy = getProxy(BayProxy)
+	slot0.bagProxy = getProxy(BagProxy)
+	slot0.configCatchup = pg.technology_catchup_template
+	slot0.charIDList = slot0.configCatchup[slot0.tecID].char_choice
+	slot0.urList = slot0.configCatchup[slot0.tecID].ur_char
+	slot0.state = slot0.technologyProxy:getCatchupState(slot0.tecID)
 end
 
-function var_0_0.initUI(arg_6_0)
-	arg_6_0.choosePanel = arg_6_0:findTF("ChoosePanel")
+function slot0.initUI(slot0)
+	slot0.choosePanel = slot0:findTF("ChoosePanel")
+	slot0.selectedImgUIItemList = UIItemList.New(slot0:findTF("SelectedImgList", slot0.choosePanel), slot0:findTF("SelectedImgTpl", slot0.choosePanel))
 
-	local var_6_0 = arg_6_0:findTF("SelectedImgTpl", arg_6_0.choosePanel)
-	local var_6_1 = arg_6_0:findTF("SelectedImgList", arg_6_0.choosePanel)
+	slot0.selectedImgUIItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setActive(uv0:findTF("Selected", slot2), slot1 + 1 == uv0.curSelectedIndex)
 
-	arg_6_0.selectedImgUIItemList = UIItemList.New(var_6_1, var_6_0)
-
-	arg_6_0.selectedImgUIItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_7_0 == UIItemList.EventUpdate then
-			arg_7_1 = arg_7_1 + 1
-
-			local var_7_0 = arg_6_0:findTF("Selected", arg_7_2)
-
-			setActive(var_7_0, arg_7_1 == arg_6_0.curSelectedIndex)
-
-			if arg_7_1 == arg_6_0.curSelectedIndex then
-				setImageAlpha(var_7_0, 0)
-				arg_6_0:updateProgress(arg_6_0.charIDList[arg_6_0.curSelectedIndex])
-				arg_6_0:managedTween(LeanTween.alpha, nil, rtf(var_7_0), 1, var_0_0.SELECT_CHAR_LIGHT_FADE_TIME):setFrom(0)
+			if slot1 == uv0.curSelectedIndex then
+				setImageAlpha(slot3, 0)
+				uv0:updateProgress(uv0.charIDList[uv0.curSelectedIndex])
+				uv0:managedTween(LeanTween.alpha, nil, rtf(slot3), 1, uv1.SELECT_CHAR_LIGHT_FADE_TIME):setFrom(0)
 			end
 		end
 	end)
-	arg_6_0.selectedImgUIItemList:align(#arg_6_0.charIDList)
+	slot0.selectedImgUIItemList:align(#slot0.charIDList)
 
-	local var_6_2 = arg_6_0:findTF("CharTpl", arg_6_0.choosePanel)
-	local var_6_3 = arg_6_0:findTF("CharList", arg_6_0.choosePanel)
+	slot0.charUIItemList = UIItemList.New(slot0:findTF("CharList", slot0.choosePanel), slot0:findTF("CharTpl", slot0.choosePanel))
 
-	arg_6_0.charUIItemList = UIItemList.New(var_6_3, var_6_2)
+	slot0.charUIItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:updateCharTpl(slot1 + 1, slot2)
+			onButton(uv0, slot2, function ()
+				if uv0 ~= uv1.curSelectedIndex then
+					uv1.curSelectedIndex = uv0
 
-	arg_6_0.charUIItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_8_0 == UIItemList.EventUpdate then
-			arg_8_1 = arg_8_1 + 1
-
-			arg_6_0:updateCharTpl(arg_8_1, arg_8_2)
-			onButton(arg_6_0, arg_8_2, function()
-				if arg_8_1 ~= arg_6_0.curSelectedIndex then
-					arg_6_0.curSelectedIndex = arg_8_1
-
-					arg_6_0.selectedImgUIItemList:align(#arg_6_0.charIDList)
+					uv1.selectedImgUIItemList:align(#uv1.charIDList)
 				end
 			end, SFX_PANEL)
 		end
 	end)
-	arg_6_0.charUIItemList:align(#arg_6_0.charIDList)
+	slot0.charUIItemList:align(#slot0.charIDList)
 
-	arg_6_0.confirmBtn = arg_6_0:findTF("ConfirmBtn", arg_6_0.choosePanel)
+	slot0.confirmBtn = slot0:findTF("ConfirmBtn", slot0.choosePanel)
 
-	onButton(arg_6_0, arg_6_0.confirmBtn, function()
-		if arg_6_0.curSelectedIndex and arg_6_0.curSelectedIndex ~= 0 then
-			local var_10_0 = arg_6_0.charIDList[arg_6_0.curSelectedIndex]
-
+	onButton(slot0, slot0.confirmBtn, function ()
+		if uv0.curSelectedIndex and uv0.curSelectedIndex ~= 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("tec_target_catchup_select_tip", ShipGroup.getDefaultShipNameByGroupID(var_10_0)),
-				onYes = function()
+				content = i18n("tec_target_catchup_select_tip", ShipGroup.getDefaultShipNameByGroupID(uv0.charIDList[uv0.curSelectedIndex])),
+				onYes = function ()
 					pg.m02:sendNotification(GAME.SELECT_TEC_TARGET_CATCHUP, {
-						tecID = arg_6_0.tecID,
-						charID = var_10_0
+						tecID = uv0.tecID,
+						charID = uv1
 					})
 				end
 			})
 		end
 	end, SFX_PANEL)
 
-	arg_6_0.proTitle = arg_6_0:findTF("ProgressTitle/Text", arg_6_0.choosePanel)
+	slot0.proTitle = slot0:findTF("ProgressTitle/Text", slot0.choosePanel)
 
-	setText(arg_6_0.proTitle, i18n("tec_target_catchup_progress"))
+	setText(slot0.proTitle, i18n("tec_target_catchup_progress"))
 
-	arg_6_0.ssrProgress = arg_6_0:findTF("ProgressTitle/Progress_SSR", arg_6_0.choosePanel)
-	arg_6_0.urProgress = arg_6_0:findTF("ProgressTitle/Progress_UR", arg_6_0.choosePanel)
-	arg_6_0.showPanel = arg_6_0:findTF("ShowPanel", arg_6_0.targetCatchupPanel)
-	arg_6_0.showBG = arg_6_0:findTF("BG", arg_6_0.showPanel)
-	arg_6_0.nameText = arg_6_0:findTF("NameText", arg_6_0.showPanel)
-	arg_6_0.progressText = arg_6_0:findTF("Progress/ProgressText", arg_6_0.showPanel)
-	arg_6_0.tipText = arg_6_0:findTF("Progress/Text", arg_6_0.showPanel)
+	slot0.ssrProgress = slot0:findTF("ProgressTitle/Progress_SSR", slot0.choosePanel)
+	slot0.urProgress = slot0:findTF("ProgressTitle/Progress_UR", slot0.choosePanel)
+	slot0.showPanel = slot0:findTF("ShowPanel", slot0.targetCatchupPanel)
+	slot0.showBG = slot0:findTF("BG", slot0.showPanel)
+	slot0.nameText = slot0:findTF("NameText", slot0.showPanel)
+	slot0.progressText = slot0:findTF("Progress/ProgressText", slot0.showPanel)
+	slot0.tipText = slot0:findTF("Progress/Text", slot0.showPanel)
 
-	setText(arg_6_0.tipText, i18n("tec_target_catchup_progress"))
+	setText(slot0.tipText, i18n("tec_target_catchup_progress"))
 
-	arg_6_0.selectedImg = arg_6_0:findTF("Selected", arg_6_0.showPanel)
-	arg_6_0.giveupBtn = arg_6_0:findTF("GiveupBtn", arg_6_0.showPanel)
-	arg_6_0.finishedImg = arg_6_0:findTF("Finished", arg_6_0.showPanel)
-	arg_6_0.helpBtn = arg_6_0:findTF("HelpBtn", arg_6_0.targetCatchupPanel)
+	slot0.selectedImg = slot0:findTF("Selected", slot0.showPanel)
+	slot0.giveupBtn = slot0:findTF("GiveupBtn", slot0.showPanel)
+	slot0.finishedImg = slot0:findTF("Finished", slot0.showPanel)
+	slot0.helpBtn = slot0:findTF("HelpBtn", slot0.targetCatchupPanel)
 
-	onButton(arg_6_0, arg_6_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.tec_target_catchup_help_tip.tip
 		})
 	end, SFX_PANEL)
-	setText(arg_6_0:findTF("FinishAll/BG/Text", arg_6_0.choosePanel), i18n("tec_target_catchup_all_finish_tip"))
-	setText(arg_6_0:findTF("CharListBG/SSRTag/Text", arg_6_0.choosePanel), i18n("tec_target_catchup_pry_char"))
+	setText(slot0:findTF("FinishAll/BG/Text", slot0.choosePanel), i18n("tec_target_catchup_all_finish_tip"))
+	setText(slot0:findTF("CharListBG/SSRTag/Text", slot0.choosePanel), i18n("tec_target_catchup_pry_char"))
 
-	if #arg_6_0.urList > 0 then
-		setText(arg_6_0:findTF("FinishPart/BG/Text", arg_6_0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
-		setText(arg_6_0:findTF("CharListBG/URTag/Text", arg_6_0.choosePanel), i18n("tec_target_catchup_dr_char"))
+	if #slot0.urList > 0 then
+		setText(slot0:findTF("FinishPart/BG/Text", slot0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
+		setText(slot0:findTF("CharListBG/URTag/Text", slot0.choosePanel), i18n("tec_target_catchup_dr_char"))
 	end
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.urList) do
-		setText(arg_6_0:findTF("Finish_" .. iter_6_1 .. "/BG/Text", arg_6_0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
+	for slot8, slot9 in ipairs(slot0.urList) do
+		setText(slot0:findTF("Finish_" .. slot9 .. "/BG/Text", slot0.choosePanel), i18n("tec_target_catchup_dr_finish_tip"))
 	end
 end
 
-function var_0_0.updateTargetCatchupPage(arg_13_0)
-	arg_13_0.state = arg_13_0.technologyProxy:getCatchupState(arg_13_0.tecID)
+function slot0.updateTargetCatchupPage(slot0)
+	slot0.state = slot0.technologyProxy:getCatchupState(slot0.tecID)
 
-	if arg_13_0.state == TechnologyCatchup.STATE_CATCHUPING then
-		arg_13_0:updateShowPanel()
+	if slot0.state == TechnologyCatchup.STATE_CATCHUPING then
+		slot0:updateShowPanel()
 	else
-		arg_13_0:updateChoosePanel()
+		slot0:updateChoosePanel()
 	end
 end
 
-function var_0_0.updateCharTpl(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_0:findTF("PrintNum/Text", arg_14_2)
+function slot0.updateCharTpl(slot0, slot1, slot2)
+	setText(slot0:findTF("PrintNum/Text", slot2), i18n("tec_target_need_print"))
 
-	setText(var_14_0, i18n("tec_target_need_print"))
+	slot8 = slot0.charIDList[slot1]
+	slot11 = pg.ship_data_blueprint[slot8].strengthen_item
 
-	local var_14_1 = arg_14_0:findTF("PrintNum/NumText", arg_14_2)
-	local var_14_2 = arg_14_0:findTF("NameText", arg_14_2)
-	local var_14_3 = arg_14_0:findTF("LevelText", arg_14_2)
-	local var_14_4 = arg_14_0:findTF("NotGetTag", arg_14_2)
-	local var_14_5 = arg_14_0.charIDList[arg_14_1]
-	local var_14_6 = arg_14_0.bayProxy:findShipByGroup(var_14_5)
-	local var_14_7 = arg_14_0.technologyProxy:getBluePrintVOByGroupID(var_14_5)
-	local var_14_8 = pg.ship_data_blueprint[var_14_5].strengthen_item
-	local var_14_9 = var_14_6 and math.floor(arg_14_0:getShipBluePrintCurExp(var_14_7) / Item.getConfigData(var_14_8).usage_arg[1]) or 0
-	local var_14_10 = arg_14_0.configCatchup[arg_14_0.tecID].blueprint_max[arg_14_1]
-	local var_14_11 = arg_14_0.bagProxy:getItemCountById(var_14_8)
-	local var_14_12 = math.max(var_14_10 - var_14_9 - var_14_11, 0)
+	setText(slot0:findTF("PrintNum/NumText", slot2), math.max(slot0.configCatchup[slot0.tecID].blueprint_max[slot1] - (slot0.bayProxy:findShipByGroup(slot8) and math.floor(slot0:getShipBluePrintCurExp(slot0.technologyProxy:getBluePrintVOByGroupID(slot8)) / Item.getConfigData(slot11).usage_arg[1]) or 0) - slot0.bagProxy:getItemCountById(slot11), 0))
+	setText(slot0:findTF("NameText", slot2), ShipGroup.getDefaultShipNameByGroupID(slot8))
+	setActive(slot0:findTF("LevelText", slot2), slot9)
+	setActive(slot0:findTF("NotGetTag", slot2), not slot9)
 
-	setText(var_14_1, var_14_12)
+	if slot9 then
+		slot17 = slot0.technologyProxy:getBluePrintVOByGroupID(slot8)
 
-	local var_14_13 = ShipGroup.getDefaultShipNameByGroupID(var_14_5)
-
-	setText(var_14_2, var_14_13)
-	setActive(var_14_3, var_14_6)
-	setActive(var_14_4, not var_14_6)
-
-	if var_14_6 then
-		local var_14_14 = arg_14_0.technologyProxy:getBluePrintVOByGroupID(var_14_5)
-
-		setText(var_14_3, "Lv. " .. var_14_14.level .. "/" .. var_14_14:getMaxLevel())
+		setText(slot6, "Lv. " .. slot17.level .. "/" .. slot17:getMaxLevel())
 	end
 end
 
-function var_0_0.updateShowPanel(arg_15_0)
-	setActive(arg_15_0.showPanel, true)
-	setActive(arg_15_0.choosePanel, false)
+function slot0.updateShowPanel(slot0)
+	setActive(slot0.showPanel, true)
+	setActive(slot0.choosePanel, false)
 
-	local var_15_0 = arg_15_0.technologyProxy:getCurCatchupTecInfo()
-	local var_15_1 = var_15_0.tecID
-	local var_15_2 = var_15_0.groupID
-	local var_15_3 = var_15_0.printNum
+	slot1 = slot0.technologyProxy:getCurCatchupTecInfo()
+	slot2 = slot1.tecID
+	slot3 = slot1.groupID
 
-	setImageSprite(arg_15_0.showBG, LoadSprite("TecCatchup/selbg" .. var_15_2, var_15_2))
+	setImageSprite(slot0.showBG, LoadSprite("TecCatchup/selbg" .. slot3, slot3))
+	setText(slot0.nameText, ShipGroup.getDefaultShipNameByGroupID(slot3))
+	setText(slot0.progressText, slot1.printNum .. "/" .. slot0:getMaxNum(slot3))
 
-	local var_15_4 = ShipGroup.getDefaultShipNameByGroupID(var_15_2)
+	slot6 = slot0.state == TechnologyCatchup.STATE_FINISHED_ALL
 
-	setText(arg_15_0.nameText, var_15_4)
-	setText(arg_15_0.progressText, var_15_3 .. "/" .. arg_15_0:getMaxNum(var_15_2))
-
-	local var_15_5 = arg_15_0.state == TechnologyCatchup.STATE_FINISHED_ALL
-
-	setActive(arg_15_0.finishedImg, var_15_5)
-	setActive(arg_15_0.selectedImg, not var_15_5)
-	onButton(arg_15_0, arg_15_0.selectedImg, function()
-		arg_15_0:updateChoosePanel()
-		setActive(arg_15_0:findTF("ProgressTitle", arg_15_0.choosePanel), false)
+	setActive(slot0.finishedImg, slot6)
+	setActive(slot0.selectedImg, not slot6)
+	onButton(slot0, slot0.selectedImg, function ()
+		uv0:updateChoosePanel()
+		setActive(uv0:findTF("ProgressTitle", uv0.choosePanel), false)
 	end, SFX_PANEL)
 end
 
-function var_0_0.updateChoosePanel(arg_17_0)
-	setActive(arg_17_0.showPanel, false)
-	setActive(arg_17_0.choosePanel, true)
+function slot0.updateChoosePanel(slot0)
+	setActive(slot0.showPanel, false)
+	setActive(slot0.choosePanel, true)
 
-	local var_17_0 = arg_17_0.technologyProxy:getCatchupData(arg_17_0.tecID)
+	slot1 = slot0.technologyProxy:getCatchupData(slot0.tecID)
 
-	if arg_17_0.state == TechnologyCatchup.STATE_FINISHED_ALL then
-		setActive(arg_17_0:findTF("FinishAll", arg_17_0.choosePanel), true)
-		setActive(arg_17_0:findTF("ProgressTitle", arg_17_0.choosePanel), false)
-	elseif #arg_17_0.urList > 0 then
-		setActive(arg_17_0:findTF("FinishAll", arg_17_0.choosePanel), false)
+	if slot0.state == TechnologyCatchup.STATE_FINISHED_ALL then
+		setActive(slot0:findTF("FinishAll", slot0.choosePanel), true)
+		setActive(slot0:findTF("ProgressTitle", slot0.choosePanel), false)
+	elseif #slot0.urList > 0 then
+		setActive(slot0:findTF("FinishAll", slot0.choosePanel), false)
 
-		local var_17_1 = var_17_0:isFinishSSR()
+		slot7 = "FinishPart"
+		slot8 = slot0.choosePanel
 
-		setActive(arg_17_0:findTF("FinishPart", arg_17_0.choosePanel), var_17_1)
+		setActive(slot0:findTF(slot7, slot8), slot1:isFinishSSR())
 
-		for iter_17_0, iter_17_1 in ipairs(arg_17_0.urList) do
-			local var_17_2 = var_17_0:isFinish(iter_17_1)
-
-			setActive(arg_17_0:findTF("Finish_" .. iter_17_1, arg_17_0.choosePanel), var_17_2)
+		for slot7, slot8 in ipairs(slot0.urList) do
+			setActive(slot0:findTF("Finish_" .. slot8, slot0.choosePanel), slot1:isFinish(slot8))
 		end
 	end
 end
 
-function var_0_0.updateProgress(arg_18_0, arg_18_1)
-	setActive(arg_18_0:findTF("ProgressTitle", arg_18_0.choosePanel), true)
+function slot0.updateProgress(slot0, slot1)
+	setActive(slot0:findTF("ProgressTitle", slot0.choosePanel), true)
 
-	local var_18_0 = arg_18_0.technologyProxy:getCatchupData(arg_18_0.tecID):getTargetNum(arg_18_1)
-	local var_18_1 = arg_18_0:getMaxNum(arg_18_1)
-
-	if arg_18_0:isUR(arg_18_1) then
-		setActive(arg_18_0.urProgress, true)
-		setActive(arg_18_0.ssrProgress, false)
-		setText(arg_18_0:findTF("Text", arg_18_0.urProgress), var_18_0 .. "/" .. var_18_1)
+	if slot0:isUR(slot1) then
+		setActive(slot0.urProgress, true)
+		setActive(slot0.ssrProgress, false)
+		setText(slot0:findTF("Text", slot0.urProgress), slot0.technologyProxy:getCatchupData(slot0.tecID):getTargetNum(slot1) .. "/" .. slot0:getMaxNum(slot1))
 	else
-		setActive(arg_18_0.urProgress, false)
-		setActive(arg_18_0.ssrProgress, true)
-		setText(arg_18_0:findTF("Text", arg_18_0.ssrProgress), var_18_0 .. "/" .. var_18_1)
+		setActive(slot0.urProgress, false)
+		setActive(slot0.ssrProgress, true)
+		setText(slot0:findTF("Text", slot0.ssrProgress), slot3 .. "/" .. slot4)
 	end
 end
 
-function var_0_0.isUR(arg_19_0, arg_19_1)
-	for iter_19_0, iter_19_1 in ipairs(arg_19_0.urList) do
-		if arg_19_1 == iter_19_1 then
+function slot0.isUR(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.urList) do
+		if slot1 == slot6 then
 			return true
 		end
 	end
@@ -257,31 +217,27 @@ function var_0_0.isUR(arg_19_0, arg_19_1)
 	return false
 end
 
-function var_0_0.getMaxNum(arg_20_0, arg_20_1)
-	return arg_20_0:isUR(arg_20_1) and pg.technology_catchup_template[arg_20_0.tecID].obtain_max_per_ur or pg.technology_catchup_template[arg_20_0.tecID].obtain_max
+function slot0.getMaxNum(slot0, slot1)
+	return slot0:isUR(slot1) and pg.technology_catchup_template[slot0.tecID].obtain_max_per_ur or pg.technology_catchup_template[slot0.tecID].obtain_max
 end
 
-function var_0_0.willExit(arg_21_0)
-	PoolMgr.GetInstance():ReturnUI(arg_21_0:getUIName(), arg_21_0._go)
+function slot0.willExit(slot0)
+	PoolMgr.GetInstance():ReturnUI(slot0:getUIName(), slot0._go)
 end
 
-function var_0_0.getShipBluePrintCurExp(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1.level
-	local var_22_1 = arg_22_1.fateLevel
-	local var_22_2 = arg_22_1.exp
-	local var_22_3 = arg_22_1:getConfig("strengthen_effect")
-	local var_22_4 = arg_22_1:getConfig("fate_strengthen")
-	local var_22_5 = 0 + var_22_2
+function slot0.getShipBluePrintCurExp(slot0, slot1)
+	slot3 = slot1.fateLevel
+	slot6 = slot1:getConfig("fate_strengthen")
 
-	for iter_22_0 = 1, var_22_0 do
-		var_22_5 = var_22_5 + pg.ship_strengthen_blueprint[var_22_3[iter_22_0]].need_exp
+	for slot11 = 1, slot1.level do
+		slot7 = 0 + slot1.exp + pg.ship_strengthen_blueprint[slot1:getConfig("strengthen_effect")[slot11]].need_exp
 	end
 
-	for iter_22_1 = 1, var_22_1 do
-		var_22_5 = var_22_5 + pg.ship_strengthen_blueprint[var_22_4[iter_22_1]].need_exp
+	for slot11 = 1, slot3 do
+		slot7 = slot7 + pg.ship_strengthen_blueprint[slot6[slot11]].need_exp
 	end
 
-	return var_22_5
+	return slot7
 end
 
-return var_0_0
+return slot0

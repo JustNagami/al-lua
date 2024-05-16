@@ -1,1 +1,1 @@
-﻿return (class("DrakeTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return class("DrakeTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage"))

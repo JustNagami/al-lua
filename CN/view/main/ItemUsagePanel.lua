@@ -1,165 +1,169 @@
-﻿local var_0_0 = class("ItemUsagePanel")
+slot0 = class("ItemUsagePanel")
+slot0.SINGLE = 1
+slot0.BATCH = 2
+slot0.INFO = 3
+slot0.SEE = 4
 
-var_0_0.SINGLE = 1
-var_0_0.BATCH = 2
-var_0_0.INFO = 3
-var_0_0.SEE = 4
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+	slot0._go = slot1
 
-	arg_1_0._go = arg_1_1
+	setActive(slot0._go, false)
 
-	setActive(arg_1_0._go, false)
+	slot0._parent = slot2
+	slot0.backBtn = findTF(slot0._go, "window/top/btnBack")
+	slot0.itemTF = findTF(slot0._go, "window/item")
+	slot0.itemIntro = findTF(slot0.itemTF, "display_panel/desc/Text")
+	slot0.itemName = findTF(slot0.itemTF, "display_panel/name_container/name/Text")
+	slot0.resetBtn = findTF(slot0.itemTF, "reset_btn")
+	slot0.useBtn = findTF(slot0._go, "window/actions/use_one_button")
 
-	arg_1_0._parent = arg_1_2
-	arg_1_0.backBtn = findTF(arg_1_0._go, "window/top/btnBack")
-	arg_1_0.itemTF = findTF(arg_1_0._go, "window/item")
-	arg_1_0.itemIntro = findTF(arg_1_0.itemTF, "display_panel/desc/Text")
-	arg_1_0.itemName = findTF(arg_1_0.itemTF, "display_panel/name_container/name/Text")
-	arg_1_0.resetBtn = findTF(arg_1_0.itemTF, "reset_btn")
-	arg_1_0.useBtn = findTF(arg_1_0._go, "window/actions/use_one_button")
+	setActive(slot0.useBtn, false)
 
-	setActive(arg_1_0.useBtn, false)
+	slot0.batchUseBtn = findTF(slot0._go, "window/actions/batch_use_button")
 
-	arg_1_0.batchUseBtn = findTF(arg_1_0._go, "window/actions/batch_use_button")
+	setActive(slot0.batchUseBtn, false)
 
-	setActive(arg_1_0.batchUseBtn, false)
+	slot0.useOneBtn = findTF(slot0._go, "window/actions/use_button")
 
-	arg_1_0.useOneBtn = findTF(arg_1_0._go, "window/actions/use_button")
+	setActive(slot0.useOneBtn, false)
 
-	setActive(arg_1_0.useOneBtn, false)
+	slot0.confirmBtn = findTF(slot0._go, "window/actions/confirm_button")
 
-	arg_1_0.confirmBtn = findTF(arg_1_0._go, "window/actions/confirm_button")
+	setActive(slot0.confirmBtn, false)
 
-	setActive(arg_1_0.confirmBtn, false)
+	slot0.seeBtn = findTF(slot0._go, "window/actions/see_button")
 
-	arg_1_0.seeBtn = findTF(arg_1_0._go, "window/actions/see_button")
+	setActive(slot0.seeBtn, false)
 
-	setActive(arg_1_0.seeBtn, false)
+	slot0.batchText = slot0.batchUseBtn:Find("text")
 
-	arg_1_0.batchText = arg_1_0.batchUseBtn:Find("text")
-
-	onButton(arg_1_0, arg_1_0.backBtn, function()
-		arg_1_0:Close()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:Close()
 	end, SFX_PANEL)
-	onButton(arg_1_0, findTF(arg_1_0._go, "bg"), function()
-		arg_1_0:Close()
+	onButton(slot0, findTF(slot0._go, "bg"), function ()
+		uv0:Close()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Open(arg_4_0, arg_4_1)
-	arg_4_0.settings = arg_4_1 or {}
+function slot0.Open(slot0, slot1)
+	slot0.settings = slot1 or {}
+	slot2 = slot0.settings.item
 
-	local var_4_0 = arg_4_0.settings.item
-
-	arg_4_0:Update(var_4_0)
-	arg_4_0:UpdateAction(var_4_0)
-	setActive(arg_4_0.resetBtn, true)
-	setActive(arg_4_0._go, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._go)
+	slot0:Update(slot2)
+	slot0:UpdateAction(slot2)
+	setActive(slot0.resetBtn, true)
+	setActive(slot0._go, true)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._go)
 end
 
-function var_0_0.Close(arg_5_0)
-	arg_5_0.settings = nil
+function slot0.Close(slot0)
+	slot0.settings = nil
 
-	setActive(arg_5_0._go, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_5_0._go, arg_5_0._parent)
+	setActive(slot0._go, false)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._go, slot0._parent)
 end
 
-function var_0_0.Update(arg_6_0, arg_6_1)
-	local var_6_0 = Drop.New({
+function slot0.Update(slot0, slot1)
+	slot2 = Drop.New({
 		type = DROP_TYPE_WORLD_ITEM,
-		id = arg_6_1.id,
-		count = arg_6_1.count
+		id = slot1.id,
+		count = slot1.count
 	})
 
-	updateDrop(arg_6_0.itemTF:Find("left/IconTpl"), var_6_0)
-	UpdateOwnDisplay(arg_6_0.itemTF:Find("left/own"), var_6_0)
-	RegisterDetailButton(arg_6_0, arg_6_0.itemTF:Find("left/detail"), var_6_0)
-	setText(arg_6_0.itemIntro, arg_6_1:getConfig("display"))
-	setText(arg_6_0.itemName, arg_6_1:getConfig("name"))
-	onButton(arg_6_0, arg_6_0.resetBtn, function()
-		assert(arg_6_0.settings.onResetInfo, "without reset info callback")
-		arg_6_0.settings.onResetInfo(Drop.New({
+	updateDrop(slot0.itemTF:Find("left/IconTpl"), slot2)
+	UpdateOwnDisplay(slot0.itemTF:Find("left/own"), slot2)
+	RegisterDetailButton(slot0, slot0.itemTF:Find("left/detail"), slot2)
+	setText(slot0.itemIntro, slot1:getConfig("display"))
+	setText(slot0.itemName, slot1:getConfig("name"))
+	onButton(slot0, slot0.resetBtn, function ()
+		assert(uv0.settings.onResetInfo, "without reset info callback")
+		uv0.settings.onResetInfo(Drop.New({
 			count = 1,
 			type = DROP_TYPE_WORLD_ITEM,
-			id = arg_6_1.id
+			id = uv1.id
 		}))
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateAction(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0.settings
-	local var_8_1 = arg_8_0.settings.mode or var_0_0.SINGLE
+function slot0.UpdateAction(slot0, slot1)
+	slot2 = slot0.settings
+	slot3 = slot0.settings.mode or uv0.SINGLE
 
-	setActive(arg_8_0.useBtn, var_8_1 == var_0_0.SINGLE)
-	setActive(arg_8_0.batchUseBtn, var_8_1 == var_0_0.BATCH)
-	setActive(arg_8_0.useOneBtn, var_8_1 == var_0_0.BATCH)
-	setActive(arg_8_0.confirmBtn, var_8_1 == var_0_0.INFO)
-	setActive(arg_8_0.seeBtn, var_8_1 == var_0_0.SEE)
+	setActive(slot0.useBtn, slot3 == uv0.SINGLE)
+	setActive(slot0.batchUseBtn, slot3 == uv0.BATCH)
+	setActive(slot0.useOneBtn, slot3 == uv0.BATCH)
+	setActive(slot0.confirmBtn, slot3 == uv0.INFO)
+	setActive(slot0.seeBtn, slot3 == uv0.SEE)
 
-	if var_8_1 == var_0_0.SINGLE then
-		onButton(arg_8_0, arg_8_0.useBtn, function()
-			if arg_8_1.count == 0 then
+	if slot3 == uv0.SINGLE then
+		onButton(slot0, slot0.useBtn, function ()
+			if uv0.count == 0 then
 				return
 			end
 
-			if var_8_0.onUse then
-				var_8_0.onUse()
+			if uv1.onUse then
+				uv1.onUse()
 			end
 
-			arg_8_0:Close()
+			uv2:Close()
 		end, SFX_PANEL)
-	elseif var_8_1 == var_0_0.BATCH then
-		local var_8_2 = math.min(arg_8_1.count, 10)
+	else
+		if slot3 == uv0.BATCH then
+			slot4 = math.min(slot1.count, 10)
 
-		setText(arg_8_0.batchText, var_8_2)
-		onButton(arg_8_0, arg_8_0.batchUseBtn, function()
-			if arg_8_1.count == 0 then
-				return
-			end
+			setText(slot0.batchText, slot4)
+			onButton(slot0, slot0.batchUseBtn, function ()
+				if uv0.count == 0 then
+					return
+				end
 
-			if var_8_0.onUseBatch then
-				var_8_0.onUseBatch(var_8_2)
-			end
+				if uv1.onUseBatch then
+					uv1.onUseBatch(uv2)
+				end
 
-			arg_8_0:Close()
-		end, SFX_PANEL)
-		onButton(arg_8_0, arg_8_0.useOneBtn, function()
-			if arg_8_1.count == 0 then
-				return
-			end
+				uv3:Close()
+			end, SFX_PANEL)
+			onButton(slot0, slot0.useOneBtn, function ()
+				if uv0.count == 0 then
+					return
+				end
 
-			if var_8_0.onUseOne then
-				var_8_0.onUseOne()
-			end
+				if uv1.onUseOne then
+					uv1.onUseOne()
+				end
 
-			arg_8_0:Close()
-		end, SFX_PANEL)
-		setActive(arg_8_0.batchUseBtn, var_8_2 > 1)
-	elseif var_8_1 == var_0_0.INFO then
-		onButton(arg_8_0, arg_8_0.confirmBtn, function()
-			arg_8_0:Close()
-		end, SFX_PANEL)
-	elseif var_8_1 == var_0_0.SEE then
-		onButton(arg_8_0, arg_8_0.seeBtn, function()
-			if arg_8_1.count == 0 then
-				return
-			end
+				uv2:Close()
+			end, SFX_PANEL)
+			setActive(slot0.batchUseBtn, slot4 > 1)
 
-			if var_8_0.onUse then
-				var_8_0.onUse()
-			end
+			return
+		end
 
-			arg_8_0:Close()
-		end, SFX_PANEL)
+		if slot3 == uv0.INFO then
+			onButton(slot0, slot0.confirmBtn, function ()
+				uv0:Close()
+			end, SFX_PANEL)
+		elseif slot3 == uv0.SEE then
+			onButton(slot0, slot0.seeBtn, function ()
+				if uv0.count == 0 then
+					return
+				end
+
+				if uv1.onUse then
+					uv1.onUse()
+				end
+
+				uv2:Close()
+			end, SFX_PANEL)
+		end
 	end
 end
 
-function var_0_0.Dispose(arg_14_0)
-	pg.DelegateInfo.Dispose(arg_14_0)
-	arg_14_0:Close()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Close()
 end
 
-return var_0_0
+return slot0

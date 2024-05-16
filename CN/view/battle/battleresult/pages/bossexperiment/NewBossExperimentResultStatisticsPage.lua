@@ -1,20 +1,20 @@
-﻿local var_0_0 = class("NewBossExperimentResultStatisticsPage", import("..hpShareActBoss.NewHpShareActBossResultStatisticsPage"))
+slot0 = class("NewBossExperimentResultStatisticsPage", import("..hpShareActBoss.NewHpShareActBossResultStatisticsPage"))
 
-function var_0_0.GetTicketUseCount(arg_1_0)
+function slot0.GetTicketUseCount(slot0)
 	return 0
 end
 
-function var_0_0.UpdateTicket(arg_2_0, arg_2_1)
-	var_0_0.super.UpdateTicket(arg_2_0, arg_2_1)
+function slot0.UpdateTicket(slot0, slot1)
+	uv0.super.UpdateTicket(slot0, slot1)
 
-	local var_2_0 = arg_2_1:Find("playAgain/ticket/checkbox")
+	slot2 = slot1:Find("playAgain/ticket/checkbox")
 
-	triggerToggle(var_2_0, false)
-	setToggleEnabled(var_2_0, false)
+	triggerToggle(slot2, false)
+	setToggleEnabled(slot2, false)
 end
 
-function var_0_0.OnPlayAgain(arg_3_0, arg_3_1)
-	arg_3_0:emit(NewBattleResultMediator.REENTER_STAGE)
+function slot0.OnPlayAgain(slot0, slot1)
+	slot0:emit(NewBattleResultMediator.REENTER_STAGE)
 end
 
-return var_0_0
+return slot0

@@ -1,28 +1,27 @@
-﻿local var_0_0 = class("MetaQuickTacticsOverflowMediator", import("...base.ContextMediator"))
+slot0 = class("MetaQuickTacticsOverflowMediator", import("...base.ContextMediator"))
+slot0.USE_TACTICS_BOOK = "MetaQuickTacticsOverflowMediator.USE_TACTICS_BOOK"
 
-var_0_0.USE_TACTICS_BOOK = "MetaQuickTacticsOverflowMediator.USE_TACTICS_BOOK"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bindEvent()
+function slot0.register(slot0)
+	slot0:bindEvent()
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-function var_0_0.bindEvent(arg_4_0)
-	arg_4_0:bind(var_0_0.USE_TACTICS_BOOK, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-		arg_4_0:sendNotification(GAME.META_QUICK_TACTICS, {
-			shipID = arg_5_1,
-			skillID = arg_5_2,
-			useCountDict = arg_5_3
+function slot0.bindEvent(slot0)
+	slot0:bind(uv0.USE_TACTICS_BOOK, function (slot0, slot1, slot2, slot3)
+		uv0:sendNotification(GAME.META_QUICK_TACTICS, {
+			shipID = slot1,
+			skillID = slot2,
+			useCountDict = slot3
 		})
 	end)
 end
 
-return var_0_0
+return slot0

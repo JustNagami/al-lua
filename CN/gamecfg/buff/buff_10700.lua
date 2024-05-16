@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10700,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "经历了多次破交作战，累积了丰富的经验，自身炮击提升15.0%",
 		addition = {
@@ -81,5 +69,17 @@
 	stack = 1,
 	id = 10700,
 	icon = 10700,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10700,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

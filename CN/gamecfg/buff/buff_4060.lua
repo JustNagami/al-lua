@@ -1,72 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			id = 1,
-			type = "BattleBuffShieldWall",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				do_when_hit = "intercept",
-				effect = "shield02",
-				count = 6,
-				bulletType = 1,
-				cld_list = {
-					{
-						box = {
-							5,
-							7,
-							10
-						},
-						offset = {
-							2,
-							0,
-							-2
-						}
-					}
-				},
-				centerPosFun = function(arg_1_0)
-					return Vector3(1, 0, -3.5)
-				end,
-				rotationFun = function(arg_2_0)
-					return Vector3(0, -120, 0)
-				end
-			}
-		},
-		{
-			id = 2,
-			type = "BattleBuffShieldWall",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				do_when_hit = "intercept",
-				effect = "shield02",
-				count = 6,
-				bulletType = 1,
-				cld_list = {
-					{
-						box = {
-							4,
-							6,
-							9
-						},
-						offset = {
-							2,
-							0,
-							-2
-						}
-					}
-				},
-				centerPosFun = function(arg_3_0)
-					return Vector3(1, 0, 3.5)
-				end,
-				rotationFun = function(arg_4_0)
-					return Vector3(0, 120, 0)
-				end
-			}
-		}
-	},
+return {
 	{
 		time = 5
 	},
@@ -106,5 +38,73 @@
 	stack = 1,
 	id = 4060,
 	icon = 4060,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			id = 1,
+			type = "BattleBuffShieldWall",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				do_when_hit = "intercept",
+				effect = "shield02",
+				count = 6,
+				bulletType = 1,
+				cld_list = {
+					{
+						box = {
+							5,
+							7,
+							10
+						},
+						offset = {
+							2,
+							0,
+							-2
+						}
+					}
+				},
+				centerPosFun = function (slot0)
+					return Vector3(1, 0, -3.5)
+				end,
+				rotationFun = function (slot0)
+					return Vector3(0, -120, 0)
+				end
+			}
+		},
+		{
+			id = 2,
+			type = "BattleBuffShieldWall",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				do_when_hit = "intercept",
+				effect = "shield02",
+				count = 6,
+				bulletType = 1,
+				cld_list = {
+					{
+						box = {
+							4,
+							6,
+							9
+						},
+						offset = {
+							2,
+							0,
+							-2
+						}
+					}
+				},
+				centerPosFun = function (slot0)
+					return Vector3(1, 0, 3.5)
+				end,
+				rotationFun = function (slot0)
+					return Vector3(0, 120, 0)
+				end
+			}
+		}
+	}
 }

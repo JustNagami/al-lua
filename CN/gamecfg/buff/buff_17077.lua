@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 1,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17077,
+	icon = 17070,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -34,26 +55,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 1,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17077,
-	icon = 17070,
-	last_effect = ""
+	}
 }

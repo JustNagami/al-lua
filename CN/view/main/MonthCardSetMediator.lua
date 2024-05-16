@@ -1,31 +1,27 @@
-﻿local var_0_0 = class("MonthCardSetMediator", import("..base.ContextMediator"))
+slot0 = class("MonthCardSetMediator", import("..base.ContextMediator"))
+slot0.ON_SET_RATIO = "MonthCardSetMediator:ON_SET_RATIO"
 
-var_0_0.ON_SET_RATIO = "MonthCardSetMediator:ON_SET_RATIO"
+function slot0.register(slot0)
+	slot2 = getProxy(PlayerProxy):getRawData()
 
-function var_0_0.register(arg_1_0)
-	local var_1_0 = getProxy(PlayerProxy):getRawData()
-
-	arg_1_0:bind(var_0_0.ON_SET_RATIO, function(arg_2_0, arg_2_1)
-		if var_1_0:getCardById(VipCard.MONTH).data ~= arg_2_1 then
-			arg_1_0:sendNotification(GAME.MONTH_CARD_SET_RATIO, arg_2_1)
+	slot0:bind(uv0.ON_SET_RATIO, function (slot0, slot1)
+		if uv0:getCardById(VipCard.MONTH).data ~= slot1 then
+			uv1:sendNotification(GAME.MONTH_CARD_SET_RATIO, slot1)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("month_card_set_ratio_not_change"))
 		end
 	end)
-	arg_1_0.viewComponent:setPlayer(var_1_0)
-
-	local var_1_1 = var_1_0:getCardById(VipCard.MONTH)
-
-	arg_1_0.viewComponent:setRatio(var_1_1.data)
+	slot0.viewComponent:setPlayer(slot2)
+	slot0.viewComponent:setRatio(slot2:getCardById(VipCard.MONTH).data)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-return var_0_0
+return slot0

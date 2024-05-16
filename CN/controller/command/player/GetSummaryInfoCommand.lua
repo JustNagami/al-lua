@@ -1,18 +1,16 @@
-﻿local var_0_0 = class("GetSummaryInfoCommand", pm.SimpleCommand)
+slot0 = class("GetSummaryInfoCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().activityId
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(26021, {
-		act_id = var_1_0
-	}, 26022, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = Summary.New(arg_2_0)
+		act_id = slot1:getBody().activityId
+	}, 26022, function (slot0)
+		if slot0.result == 0 then
+			slot1 = Summary.New(slot0)
 
-			getProxy(PlayerProxy):setSummaryInfo(var_2_0)
-			arg_1_0:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO_DONE, Clone(var_2_0))
+			getProxy(PlayerProxy):setSummaryInfo(slot1)
+			uv0:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO_DONE, Clone(slot1))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

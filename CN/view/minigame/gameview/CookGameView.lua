@@ -1,723 +1,670 @@
-﻿local var_0_0 = class("CookGameView", import("..BaseMiniGameView"))
-local var_0_1 = "bar-soft"
-local var_0_2 = "event:/ui/ddldaoshu2"
-local var_0_3 = "event:/ui/break_out_full"
-local var_0_4 = 60
-local var_0_5 = "cookgameui_atlas"
-local var_0_6 = 0.1
-local var_0_7 = 8
-local var_0_8 = {
+slot0 = class("CookGameView", import("..BaseMiniGameView"))
+slot1 = "bar-soft"
+slot2 = "event:/ui/ddldaoshu2"
+slot3 = "event:/ui/break_out_full"
+slot4 = 60
+slot6 = 0.1
+slot7 = 8
+slot8 = {
 	time_up = 0.5,
 	cake_num = 5,
 	extend_time = 10,
 	char_path = "ui/minigameui/cookgameassets",
 	speed_num = 3,
-	path = "ui/minigameui/" .. var_0_5
+	path = "ui/minigameui/" .. "cookgameui_atlas"
 }
+slot0.CLICK_JUDGE_EVENT = "click judge event"
+slot0.AC_CAKE_EVENT = "ac cake event"
+slot0.SERVE_EVENT = "serve event"
+slot0.EXTEND_EVENT = "extend event"
 
-var_0_0.CLICK_JUDGE_EVENT = "click judge event"
-var_0_0.AC_CAKE_EVENT = "ac cake event"
-var_0_0.SERVE_EVENT = "serve event"
-var_0_0.EXTEND_EVENT = "extend event"
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CookGameUI"
 end
 
-function var_0_0.didEnter(arg_2_0)
-	arg_2_0:initEvent()
-	arg_2_0:initData()
-	arg_2_0:initUI()
-	arg_2_0:initGameUI()
-	arg_2_0:initController()
-	arg_2_0:updateMenuUI()
-	arg_2_0:openMenuUI()
+function slot0.didEnter(slot0)
+	slot0:initEvent()
+	slot0:initData()
+	slot0:initUI()
+	slot0:initGameUI()
+	slot0:initController()
+	slot0:updateMenuUI()
+	slot0:openMenuUI()
 end
 
-function var_0_0.initEvent(arg_3_0)
-	if not arg_3_0.uiCam then
-		arg_3_0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+function slot0.initEvent(slot0)
+	if not slot0.uiCam then
+		slot0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
 	end
 
-	arg_3_0:bind(CookGameView.CLICK_JUDGE_EVENT, function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_3_0.charController then
-			arg_3_0.charController:setJudgeAction(arg_4_1, nil, arg_4_2)
+	slot0:bind(CookGameView.CLICK_JUDGE_EVENT, function (slot0, slot1, slot2)
+		if uv0.charController then
+			uv0.charController:setJudgeAction(slot1, nil, slot2)
 		end
 	end)
-	arg_3_0:bind(CookGameView.AC_CAKE_EVENT, function(arg_5_0, arg_5_1, arg_5_2)
-		if arg_3_0.charController then
-			arg_3_0.charController:createAcCake(arg_5_1, arg_5_2)
+	slot0:bind(CookGameView.AC_CAKE_EVENT, function (slot0, slot1, slot2)
+		if uv0.charController then
+			uv0.charController:createAcCake(slot1, slot2)
 		end
 	end)
-	arg_3_0:bind(CookGameView.SERVE_EVENT, function(arg_6_0, arg_6_1, arg_6_2)
-		local var_6_0 = arg_6_1.serveData.battleData.id
-		local var_6_1 = arg_6_1.right
-		local var_6_2 = arg_6_1.pos
-		local var_6_3 = arg_6_1.rate
-		local var_6_4 = arg_6_1.weight
-		local var_6_5 = var_6_1 and 1 or -1
-		local var_6_6 = var_6_1 and 1 or 0
-		local var_6_7 = arg_6_1.serveData.parameter.right_index
-		local var_6_8
-		local var_6_9 = var_6_0 ~= var_0_8.playerChar and var_6_0 ~= var_0_8.partnerChar and var_6_0 ~= var_0_8.partnerPet
+	slot0:bind(CookGameView.SERVE_EVENT, function (slot0, slot1, slot2)
+		slot3 = slot1.serveData.battleData.id
+		slot5 = slot1.pos
+		slot6 = slot1.rate
+		slot7 = slot1.weight
+		slot8 = slot1.right and 1 or -1
+		slot9 = slot4 and 1 or 0
+		slot10 = slot1.serveData.parameter.right_index
+		slot11 = nil
+		slot11 = slot3 ~= uv0.playerChar and slot3 ~= uv0.partnerChar and slot3 ~= uv0.partnerPet
+		slot12 = slot1.serveData.battleData.weight or 0
 
-		if not arg_6_1.serveData.battleData.weight then
-			local var_6_10 = 0
+		if slot4 and slot1.serveData.battleData.cake_allow then
+			slot9 = 3
 		end
 
-		if var_6_1 and arg_6_1.serveData.battleData.cake_allow then
-			var_6_6 = 3
+		if slot4 and slot1.serveData.battleData.score_added then
+			slot8 = slot8 + slot1.serveData.parameter.series_right_index - 1
 		end
 
-		if var_6_1 and arg_6_1.serveData.battleData.score_added then
-			var_6_5 = var_6_5 + arg_6_1.serveData.parameter.series_right_index - 1
+		if slot1.serveData.battleData.random_score then
+			slot8 = slot8 * math.random(1, CookGameConst.random_score)
 		end
 
-		if arg_6_1.serveData.battleData.random_score then
-			var_6_5 = var_6_5 * math.random(1, CookGameConst.random_score)
-		end
+		slot8 = slot8 * slot6
 
-		local var_6_11 = var_6_5 * var_6_3
+		uv1:addScore(slot8, slot11)
+		uv1:showScore(slot8, slot5, slot9)
 
-		arg_3_0:addScore(var_6_11, var_6_9)
-		arg_3_0:showScore(var_6_11, var_6_2, var_6_6)
-
-		if arg_6_1.serveData.battleData.double_score == 8 then
-			if var_6_1 and var_6_7 and var_6_7 % 2 == 0 then
-				arg_3_0:addScore(var_6_11, var_6_9)
-				LeanTween.delayedCall(go(arg_3_0._tf), 0.5, System.Action(function()
-					arg_3_0:showScore(var_6_11, var_6_2, 2)
+		if slot1.serveData.battleData.double_score == 8 then
+			if slot4 and slot10 and slot10 % 2 == 0 then
+				uv1:addScore(slot8, slot11)
+				LeanTween.delayedCall(go(uv1._tf), 0.5, System.Action(function ()
+					uv0:showScore(uv1, uv2, 2)
 				end))
 			end
-		elseif arg_6_1.serveData.battleData.half_double and var_6_1 and math.random() > 0.5 then
-			arg_3_0:addScore(var_6_11, var_6_9)
-			LeanTween.delayedCall(go(arg_3_0._tf), 0.5, System.Action(function()
-				arg_3_0:showScore(var_6_11, var_6_2, 2)
+		elseif slot1.serveData.battleData.half_double and slot4 and math.random() > 0.5 then
+			uv1:addScore(slot8, slot11)
+			LeanTween.delayedCall(go(uv1._tf), 0.5, System.Action(function ()
+				uv0:showScore(uv1, uv2, 2)
 			end))
 		end
 	end)
-	arg_3_0:bind(CookGameView.EXTEND_EVENT, function(arg_9_0, arg_9_1, arg_9_2)
-		if arg_3_0.judgesController then
-			arg_3_0.judgesController:extend()
+	slot0:bind(CookGameView.EXTEND_EVENT, function (slot0, slot1, slot2)
+		if uv0.judgesController then
+			uv0.judgesController:extend()
 		end
 
-		arg_3_0.waitingExtendTime = false
-		arg_3_0.extendTime = var_0_8.extend_time
-		arg_3_0.gameTime = 0
+		uv0.waitingExtendTime = false
+		uv0.extendTime = uv1.extend_time
+		uv0.gameTime = 0
 	end)
 end
 
-function var_0_0.showScore(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-	if arg_10_1 == 0 then
+function slot0.showScore(slot0, slot1, slot2, slot3)
+	if slot1 == 0 then
 		return
 	end
 
-	local var_10_0
+	slot4 = nil
 
-	if #arg_10_0.showScoresPool > 0 then
-		var_10_0 = table.remove(arg_10_0.showScoresPool, 1)
+	if #slot0.showScoresPool > 0 then
+		slot4 = table.remove(slot0.showScoresPool, 1)
 	else
-		var_10_0 = tf(Instantiate(arg_10_0.showScoreTpl))
+		slot4 = tf(Instantiate(slot0.showScoreTpl))
 
-		setParent(var_10_0, arg_10_0.sceneFrontContainer)
-		GetComponent(findTF(var_10_0, "anim"), typeof(DftAniEvent)):SetEndEvent(function()
-			for iter_11_0 = #arg_10_0.showScores, 1, -1 do
-				if var_10_0 == arg_10_0.showScores[iter_11_0] then
-					setActive(var_10_0, false)
-					table.insert(arg_10_0.showScoresPool, table.remove(arg_10_0.showScores, iter_11_0))
+		setParent(slot4, slot0.sceneFrontContainer)
+		GetComponent(findTF(slot4, "anim"), typeof(DftAniEvent)):SetEndEvent(function ()
+			for slot3 = #uv0.showScores, 1, -1 do
+				if uv1 == uv0.showScores[slot3] then
+					setActive(uv1, false)
+					table.insert(uv0.showScoresPool, table.remove(uv0.showScores, slot3))
 				end
 			end
 		end)
 	end
 
-	var_10_0.anchoredPosition = arg_10_0.sceneFrontContainer:InverseTransformPoint(arg_10_2)
+	slot4.anchoredPosition = slot0.sceneFrontContainer:InverseTransformPoint(slot2)
 
-	setText(findTF(var_10_0, "anim/text_sub"), "" .. tostring(arg_10_1))
-	setText(findTF(var_10_0, "anim/text_add"), "+" .. tostring(arg_10_1))
+	setText(findTF(slot4, "anim/text_sub"), "" .. tostring(slot1))
+	setText(findTF(slot4, "anim/text_add"), "+" .. tostring(slot1))
 
-	if arg_10_1 > 0 then
-		setActive(findTF(var_10_0, "anim/text_sub"), false)
-		setActive(findTF(var_10_0, "anim/text_add"), true)
+	if slot1 > 0 then
+		setActive(findTF(slot4, "anim/text_sub"), false)
+		setActive(findTF(slot4, "anim/text_add"), true)
 	else
-		setActive(findTF(var_10_0, "anim/text_sub"), true)
-		setActive(findTF(var_10_0, "anim/text_add"), false)
+		setActive(findTF(slot4, "anim/text_sub"), true)
+		setActive(findTF(slot4, "anim/text_add"), false)
 	end
 
-	setActive(var_10_0, false)
-	setActive(var_10_0, true)
-	table.insert(arg_10_0.showScores, var_10_0)
+	setActive(slot4, false)
+	setActive(slot4, true)
+	table.insert(slot0.showScores, slot4)
 end
 
-function var_0_0.onEventHandle(arg_12_0, arg_12_1)
-	return
+function slot0.onEventHandle(slot0, slot1)
 end
 
-function var_0_0.initData(arg_13_0)
-	local var_13_0 = Application.targetFrameRate or 60
-
-	if var_13_0 > 60 then
-		var_13_0 = 60
+function slot0.initData(slot0)
+	if (Application.targetFrameRate or 60) > 60 then
+		slot1 = 60
 	end
 
-	arg_13_0.timer = Timer.New(function()
-		arg_13_0:onTimer()
-	end, 1 / var_13_0, -1)
-	arg_13_0.showScores = {}
-	arg_13_0.showScoresPool = {}
-	arg_13_0.dropData = pg.mini_game[arg_13_0:GetMGData().id].simple_config_data.drop_ids
-	var_0_8.playerChar = nil
-	var_0_8.partnerChar = nil
-	var_0_8.partnerPet = nil
-	var_0_8.enemy1Char = nil
-	var_0_8.enemy2Char = nil
-	var_0_8.enemyPet = nil
-	arg_13_0.selectPlayer = true
-	arg_13_0.selectPartner = false
+	slot0.timer = Timer.New(function ()
+		uv0:onTimer()
+	end, 1 / slot1, -1)
+	slot0.showScores = {}
+	slot0.showScoresPool = {}
+	slot0.dropData = pg.mini_game[slot0:GetMGData().id].simple_config_data.drop_ids
+	uv0.playerChar = nil
+	uv0.partnerChar = nil
+	uv0.partnerPet = nil
+	uv0.enemy1Char = nil
+	uv0.enemy2Char = nil
+	uv0.enemyPet = nil
+	slot0.selectPlayer = true
+	slot0.selectPartner = false
 end
 
-function var_0_0.initUI(arg_15_0)
-	arg_15_0.backSceneTf = findTF(arg_15_0._tf, "scene_background")
-	arg_15_0.sceneContainer = findTF(arg_15_0._tf, "sceneMask/sceneContainer")
-	arg_15_0.sceneFrontContainer = findTF(arg_15_0._tf, "sceneMask/sceneContainer/scene_front")
-	arg_15_0.clickMask = findTF(arg_15_0._tf, "clickMask")
-	arg_15_0.bg = findTF(arg_15_0._tf, "bg")
-	arg_15_0.countUI = findTF(arg_15_0._tf, "pop/CountUI")
-	arg_15_0.countAnimator = GetComponent(findTF(arg_15_0.countUI, "count"), typeof(Animator))
-	arg_15_0.countDft = GetOrAddComponent(findTF(arg_15_0.countUI, "count"), typeof(DftAniEvent))
+function slot0.initUI(slot0)
+	slot0.backSceneTf = findTF(slot0._tf, "scene_background")
+	slot0.sceneContainer = findTF(slot0._tf, "sceneMask/sceneContainer")
+	slot0.sceneFrontContainer = findTF(slot0._tf, "sceneMask/sceneContainer/scene_front")
+	slot0.clickMask = findTF(slot0._tf, "clickMask")
+	slot0.bg = findTF(slot0._tf, "bg")
+	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
+	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
+	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
 
-	arg_15_0.countDft:SetTriggerEvent(function()
-		return
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-	arg_15_0.countDft:SetEndEvent(function()
-		setActive(arg_15_0.countUI, false)
-		arg_15_0:gameStart()
+	slot0.countDft:SetEndEvent(function ()
+		setActive(uv0.countUI, false)
+		uv0:gameStart()
 	end)
 
-	arg_15_0.leaveUI = findTF(arg_15_0._tf, "pop/LeaveUI")
+	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
 
-	onButton(arg_15_0, findTF(arg_15_0.leaveUI, "ad/btnOk"), function()
-		arg_15_0:resumeGame()
-		arg_15_0:onGameOver()
+	onButton(slot0, findTF(slot0.leaveUI, "ad/btnOk"), function ()
+		uv0:resumeGame()
+		uv0:onGameOver()
 	end, SFX_CANCEL)
-	onButton(arg_15_0, findTF(arg_15_0.leaveUI, "ad/btnCancel"), function()
-		arg_15_0:resumeGame()
+	onButton(slot0, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
+		uv0:resumeGame()
 	end, SFX_CANCEL)
-	setActive(arg_15_0.leaveUI, false)
+	setActive(slot0.leaveUI, false)
 
-	arg_15_0.pauseUI = findTF(arg_15_0._tf, "pop/pauseUI")
+	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
 
-	onButton(arg_15_0, findTF(arg_15_0.pauseUI, "ad/btnOk"), function()
-		setActive(arg_15_0.pauseUI, false)
-		arg_15_0:resumeGame()
+	onButton(slot0, findTF(slot0.pauseUI, "ad/btnOk"), function ()
+		setActive(uv0.pauseUI, false)
+		uv0:resumeGame()
 	end, SFX_CANCEL)
 
-	arg_15_0.settlementUI = findTF(arg_15_0._tf, "pop/SettleMentUI")
+	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
 
-	onButton(arg_15_0, findTF(arg_15_0.settlementUI, "ad/btnOver"), function()
-		setActive(arg_15_0.settlementUI, false)
-		arg_15_0:openMenuUI()
+	onButton(slot0, findTF(slot0.settlementUI, "ad/btnOver"), function ()
+		setActive(uv0.settlementUI, false)
+		uv0:openMenuUI()
 	end, SFX_CANCEL)
-	setActive(arg_15_0.settlementUI, false)
+	setActive(slot0.settlementUI, false)
 
-	arg_15_0.menuUI = findTF(arg_15_0._tf, "pop/menuUI")
-	arg_15_0.battleScrollRect = GetComponent(findTF(arg_15_0.menuUI, "battList"), typeof(ScrollRect))
-	arg_15_0.totalTimes = arg_15_0:getGameTotalTime()
+	slot0.menuUI = findTF(slot0._tf, "pop/menuUI")
+	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
+	slot0.totalTimes = slot0:getGameTotalTime()
 
-	local var_15_0 = arg_15_0:getGameUsedTimes() - 4 < 0 and 0 or arg_15_0:getGameUsedTimes() - 4
-
-	scrollTo(arg_15_0.battleScrollRect, 0, 1 - var_15_0 / (arg_15_0.totalTimes - 4))
-	onButton(arg_15_0, findTF(arg_15_0.menuUI, "rightPanelBg/arrowUp"), function()
-		local var_22_0 = arg_15_0.battleScrollRect.normalizedPosition.y + 1 / (arg_15_0.totalTimes - 4)
-
-		if var_22_0 > 1 then
-			var_22_0 = 1
+	scrollTo(slot0.battleScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
+	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
+			slot0 = 1
 		end
 
-		scrollTo(arg_15_0.battleScrollRect, 0, var_22_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_15_0, findTF(arg_15_0.menuUI, "rightPanelBg/arrowDown"), function()
-		local var_23_0 = arg_15_0.battleScrollRect.normalizedPosition.y - 1 / (arg_15_0.totalTimes - 4)
-
-		if var_23_0 < 0 then
-			var_23_0 = 0
+	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
+			slot0 = 0
 		end
 
-		scrollTo(arg_15_0.battleScrollRect, 0, var_23_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_15_0, findTF(arg_15_0.menuUI, "adButton/btnBack"), function()
-		arg_15_0:closeView()
+	onButton(slot0, findTF(slot0.menuUI, "adButton/btnBack"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_15_0, findTF(arg_15_0.menuUI, "btnRule"), function()
+	onButton(slot0, findTF(slot0.menuUI, "btnRule"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.mini_cookgametip.tip
 		})
 	end, SFX_CANCEL)
-	onButton(arg_15_0, findTF(arg_15_0.menuUI, "btnStart"), function()
-		setActive(arg_15_0.menuUI, false)
-		arg_15_0:openSelectUI()
+	onButton(slot0, findTF(slot0.menuUI, "btnStart"), function ()
+		setActive(uv0.menuUI, false)
+		uv0:openSelectUI()
 	end, SFX_CANCEL)
 
-	local var_15_1 = findTF(arg_15_0.menuUI, "tplBattleItem")
+	slot0.battleItems = {}
+	slot0.dropItems = {}
 
-	arg_15_0.battleItems = {}
-	arg_15_0.dropItems = {}
+	for slot6 = 1, 7 do
+		slot7 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
+		slot7.name = "battleItem_" .. slot6
 
-	for iter_15_0 = 1, 7 do
-		local var_15_2 = tf(instantiate(var_15_1))
-
-		var_15_2.name = "battleItem_" .. iter_15_0
-
-		setParent(var_15_2, findTF(arg_15_0.menuUI, "battList/Viewport/Content"))
-
-		local var_15_3 = iter_15_0
-
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, "battleDesc" .. var_15_3, function(arg_27_0)
-			if arg_27_0 then
-				setImageSprite(findTF(var_15_2, "state_open/desc"), arg_27_0, true)
-				setImageSprite(findTF(var_15_2, "state_clear/desc"), arg_27_0, true)
-				setImageSprite(findTF(var_15_2, "state_current/desc"), arg_27_0, true)
-				setImageSprite(findTF(var_15_2, "state_closed/desc"), arg_27_0, true)
+		setParent(slot7, findTF(slot0.menuUI, "battList/Viewport/Content"))
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. uv0, "battleDesc" .. slot6, function (slot0)
+			if slot0 then
+				setImageSprite(findTF(uv0, "state_open/desc"), slot0, true)
+				setImageSprite(findTF(uv0, "state_clear/desc"), slot0, true)
+				setImageSprite(findTF(uv0, "state_current/desc"), slot0, true)
+				setImageSprite(findTF(uv0, "state_closed/desc"), slot0, true)
 			end
 		end)
 
-		local var_15_4 = findTF(var_15_2, "icon")
-		local var_15_5 = {
-			type = arg_15_0.dropData[iter_15_0][1],
-			id = arg_15_0.dropData[iter_15_0][2],
-			amount = arg_15_0.dropData[iter_15_0][3]
-		}
+		slot9 = findTF(slot7, "icon")
 
-		updateDrop(var_15_4, var_15_5)
-		onButton(arg_15_0, var_15_4, function()
-			arg_15_0:emit(BaseUI.ON_DROP, var_15_5)
+		updateDrop(slot9, {
+			type = slot0.dropData[slot6][1],
+			id = slot0.dropData[slot6][2],
+			amount = slot0.dropData[slot6][3]
+		})
+		onButton(slot0, slot9, function ()
+			uv0:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
-		table.insert(arg_15_0.dropItems, var_15_4)
-		setActive(var_15_2, true)
-		table.insert(arg_15_0.battleItems, var_15_2)
+		table.insert(slot0.dropItems, slot9)
+		setActive(slot7, true)
+		table.insert(slot0.battleItems, slot7)
 	end
 
-	arg_15_0.selectUI = findTF(arg_15_0._tf, "pop/selectUI")
-	arg_15_0.selectCharTpl = findTF(arg_15_0.selectUI, "ad/charTpl")
+	slot0.selectUI = findTF(slot0._tf, "pop/selectUI")
+	slot0.selectCharTpl = findTF(slot0.selectUI, "ad/charTpl")
 
-	setActive(arg_15_0.selectCharTpl, false)
+	setActive(slot0.selectCharTpl, false)
 
-	arg_15_0.selectCharsContainer = findTF(arg_15_0.selectUI, "ad/chars/Viewport/Content")
-	arg_15_0.selectCharId = nil
-	arg_15_0.selectChars = {}
+	slot0.selectCharsContainer = findTF(slot0.selectUI, "ad/chars/Viewport/Content")
+	slot0.selectCharId = nil
+	slot0.selectChars = {}
+	slot4 = findTF(slot0.selectUI, "ad/charDetail")
+	slot0.detailDescPositons = {}
 
-	local var_15_6 = #CookGameConst.char_ids
-	local var_15_7 = findTF(arg_15_0.selectUI, "ad/charDetail")
+	for slot8 = 1, #CookGameConst.char_ids do
+		setParent(tf(instantiate(slot0.selectCharTpl)), slot0.selectCharsContainer)
 
-	arg_15_0.detailDescPositons = {}
+		if slot0:getCharDataById(CookGameConst.char_ids[slot8]) then
+			slot12 = slot10.icon
+			slot13 = slot10.pos
 
-	for iter_15_1 = 1, var_15_6 do
-		local var_15_8 = CookGameConst.char_ids[iter_15_1]
-		local var_15_9 = arg_15_0:getCharDataById(var_15_8)
-		local var_15_10 = tf(instantiate(arg_15_0.selectCharTpl))
-
-		setParent(var_15_10, arg_15_0.selectCharsContainer)
-
-		if var_15_9 then
-			local var_15_11 = var_15_9.icon
-			local var_15_12 = var_15_9.pos
-			local var_15_13 = pg.gametip[var_15_9.desc].tip
-			local var_15_14 = pg.ship_data_statistics[var_15_9.ship_id].name
-
-			setScrollText(findTF(var_15_10, "name/text"), var_15_14)
-			setActive(findTF(var_15_10, "desc"), false)
-			setActive(findTF(var_15_10, "desc_en"), false)
+			setScrollText(findTF(slot11, "name/text"), pg.ship_data_statistics[slot10.ship_id].name)
+			setActive(findTF(slot11, "desc"), false)
+			setActive(findTF(slot11, "desc_en"), false)
 
 			if PLATFORM_CODE == PLATFORM_US then
-				setActive(findTF(var_15_10, "desc_en"), true)
-				setText(findTF(var_15_10, "desc_en"), var_15_13)
+				setActive(findTF(slot11, "desc_en"), true)
+				setText(findTF(slot11, "desc_en"), pg.gametip[slot10.desc].tip)
 			else
-				setActive(findTF(var_15_10, "desc"), true)
-				setText(findTF(var_15_10, "desc"), var_15_13)
+				setActive(findTF(slot11, "desc"), true)
+				setText(findTF(slot11, "desc"), slot14)
 			end
 
-			local var_15_15 = findTF(var_15_10, "detailDesc")
+			setActive(findTF(slot11, "detailDesc"), false)
 
-			setActive(var_15_15, false)
+			if slot10.detail_name then
+				slot0.detailDescPositons[slot10.detail_name] = slot16.anchoredPosition
 
-			if var_15_9.detail_name then
-				arg_15_0.detailDescPositons[var_15_9.detail_name] = var_15_15.anchoredPosition
+				setText(findTF(slot16, "name"), i18n(slot10.detail_name))
+				setText(findTF(slot16, "desc"), i18n(slot10.detail_desc))
+				setActive(findTF(slot11, "clickDesc"), true)
+				onButton(slot0, findTF(slot11, "clickDesc"), function ()
+					slot1 = nil
 
-				setText(findTF(var_15_15, "name"), i18n(var_15_9.detail_name))
-				setText(findTF(var_15_15, "desc"), i18n(var_15_9.detail_desc))
-				setActive(findTF(var_15_10, "clickDesc"), true)
-				onButton(arg_15_0, findTF(var_15_10, "clickDesc"), function()
-					local var_29_0 = isActive(var_15_15)
-					local var_29_1
+					if not isActive(uv0) then
+						slot1 = uv1:InverseTransformPoint(uv0.position)
 
-					if not var_29_0 then
-						var_29_1 = var_15_7:InverseTransformPoint(var_15_15.position)
+						setParent(uv0, uv1)
 
-						setParent(var_15_15, var_15_7)
-
-						arg_15_0.detailDescTf = var_15_15
-						arg_15_0.detailDescContent = var_15_10
-						arg_15_0.detailDescName = var_15_9.detail_name
+						uv2.detailDescTf = uv0
+						uv2.detailDescContent = uv3
+						uv2.detailDescName = uv4.detail_name
 					else
-						var_29_1 = arg_15_0.detailDescPositons[var_15_9.detail_name]
+						slot1 = uv2.detailDescPositons[uv4.detail_name]
 
-						setParent(var_15_15, var_15_10)
+						setParent(uv0, uv3)
 
-						arg_15_0.detailDescTf = nil
-						arg_15_0.detailDescContent = nil
-						arg_15_0.detailDescName = nil
+						uv2.detailDescTf = nil
+						uv2.detailDescContent = nil
+						uv2.detailDescName = nil
 					end
 
-					var_15_15.anchoredPosition = var_29_1
+					uv0.anchoredPosition = slot1
 
-					setActive(var_15_15, not var_29_0)
+					setActive(uv0, not slot0)
 				end)
 			end
 
-			GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, var_15_11, function(arg_30_0)
-				local var_30_0 = findTF(var_15_10, "icon/img")
+			GetSpriteFromAtlasAsync("ui/minigameui/" .. uv0, slot12, function (slot0)
+				slot1 = findTF(uv0, "icon/img")
 
-				setActive(var_30_0, true)
+				setActive(slot1, true)
 
-				var_30_0.anchoredPosition = var_15_12
+				slot1.anchoredPosition = uv1
 
-				setImageSprite(var_30_0, arg_30_0, true)
+				setImageSprite(slot1, slot0, true)
 			end)
-			setActive(findTF(var_15_10, "selected"), false)
-			onButton(arg_15_0, findTF(var_15_10, "click"), function()
-				arg_15_0:selectChar(var_15_9.id)
+			setActive(findTF(slot11, "selected"), false)
+			onButton(slot0, findTF(slot11, "click"), function ()
+				uv0:selectChar(uv1.id)
 			end, SFX_PANEL)
 		else
-			GetComponent(var_15_10, typeof(CanvasGroup)).alpha = 0
+			GetComponent(slot11, typeof(CanvasGroup)).alpha = 0
 		end
 
-		setActive(var_15_10, true)
-		table.insert(arg_15_0.selectChars, {
-			data = var_15_9,
-			tf = var_15_10
+		setActive(slot11, true)
+		table.insert(slot0.selectChars, {
+			data = slot10,
+			tf = slot11
 		})
 	end
 
-	arg_15_0.playerTf = findTF(arg_15_0.selectUI, "ad/player")
-	arg_15_0.partnerTf = findTF(arg_15_0.selectUI, "ad/partner")
-	arg_15_0.selectClickTf = findTF(arg_15_0.selectUI, "ad/click")
+	slot0.playerTf = findTF(slot0.selectUI, "ad/player")
+	slot0.partnerTf = findTF(slot0.selectUI, "ad/partner")
+	slot0.selectClickTf = findTF(slot0.selectUI, "ad/click")
 
-	setActive(arg_15_0.selectClickTf, false)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/btnStart"), function()
-		if var_0_8.playerChar and var_0_8.partnerChar then
-			arg_15_0:randomAIShip()
-			setActive(arg_15_0.selectUI, false)
-			arg_15_0:readyStart()
+	setActive(slot0.selectClickTf, false)
+	onButton(slot0, findTF(slot0.selectUI, "ad/btnStart"), function ()
+		if uv0.playerChar and uv0.partnerChar then
+			uv1:randomAIShip()
+			setActive(uv1.selectUI, false)
+			uv1:readyStart()
 		end
 	end, SFX_PANEL)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/player"), function()
-		arg_15_0.selectPlayer = true
-		arg_15_0.selectPartner = false
+	onButton(slot0, findTF(slot0.selectUI, "ad/player"), function ()
+		uv0.selectPlayer = true
+		uv0.selectPartner = false
 
-		arg_15_0:updateSelectUI()
+		uv0:updateSelectUI()
 	end, SFX_PANEL)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/partner"), function()
-		arg_15_0.selectPlayer = false
-		arg_15_0.selectPartner = true
+	onButton(slot0, findTF(slot0.selectUI, "ad/partner"), function ()
+		uv0.selectPlayer = false
+		uv0.selectPartner = true
 
-		arg_15_0:updateSelectUI()
+		uv0:updateSelectUI()
 	end, SFX_PANEL)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/back"), function()
-		setActive(arg_15_0.selectUI, false)
-		arg_15_0:openMenuUI()
+	onButton(slot0, findTF(slot0.selectUI, "ad/back"), function ()
+		setActive(uv0.selectUI, false)
+		uv0:openMenuUI()
 	end, SFX_PANEL)
 
-	arg_15_0.pageMax = math.ceil(var_15_6 / var_0_7) - 1
-	arg_15_0.curPageIndex = 0
-	arg_15_0.scrollNum = 1 / arg_15_0.pageMax
-	arg_15_0.scrollRect = GetComponent(findTF(arg_15_0.selectUI, "ad/chars"), typeof(ScrollRect))
-	arg_15_0.scrollRect.normalizedPosition = Vector2(0, 0)
+	slot0.pageMax = math.ceil(slot3 / uv2) - 1
+	slot0.curPageIndex = 0
+	slot0.scrollNum = 1 / slot0.pageMax
+	slot0.scrollRect = GetComponent(findTF(slot0.selectUI, "ad/chars"), typeof(ScrollRect))
+	slot0.scrollRect.normalizedPosition = Vector2(0, 0)
 
-	arg_15_0.scrollRect.onValueChanged:Invoke(Vector2(0, 0))
+	slot0.scrollRect.onValueChanged:Invoke(Vector2(0, 0))
 
-	arg_15_0.scrollRect.normalizedPosition = Vector2(0, 0)
+	slot0.scrollRect.normalizedPosition = Vector2(0, 0)
 
-	arg_15_0.scrollRect.onValueChanged:Invoke(Vector2(0, 0))
-	GetOrAddComponent(findTF(arg_15_0.selectUI, "ad/chars"), typeof(EventTriggerListener)):AddPointDownFunc(function(arg_36_0, arg_36_1)
-		return
+	slot0.scrollRect.onValueChanged:Invoke(Vector2(0, 0))
+	GetOrAddComponent(findTF(slot0.selectUI, "ad/chars"), typeof(EventTriggerListener)):AddPointDownFunc(function (slot0, slot1)
 	end)
-	arg_15_0.scrollRect.onValueChanged:AddListener(function(arg_37_0, arg_37_1, arg_37_2)
-		if arg_15_0.detailDescTf then
-			setActive(arg_15_0.detailDescTf, false)
-			setParent(arg_15_0.detailDescTf, arg_15_0.detailDescContent)
+	slot0.scrollRect.onValueChanged:AddListener(function (slot0, slot1, slot2)
+		if uv0.detailDescTf then
+			setActive(uv0.detailDescTf, false)
+			setParent(uv0.detailDescTf, uv0.detailDescContent)
 
-			arg_15_0.detailDescTf.anchoredPosition = arg_15_0.detailDescPositons[arg_15_0.detailDescName]
-			arg_15_0.detailDescTf = nil
-			arg_15_0.detailDescContent = nil
-			arg_15_0.detailDescName = nil
+			uv0.detailDescTf.anchoredPosition = uv0.detailDescPositons[uv0.detailDescName]
+			uv0.detailDescTf = nil
+			uv0.detailDescContent = nil
+			uv0.detailDescName = nil
 		end
 	end)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/next"), function()
-		arg_15_0.curPageIndex = arg_15_0.curPageIndex + arg_15_0.scrollNum
+	onButton(slot0, findTF(slot0.selectUI, "ad/next"), function ()
+		uv0.curPageIndex = uv0.curPageIndex + uv0.scrollNum
 
-		if arg_15_0.curPageIndex > 1 then
-			arg_15_0.curPageIndex = 1
+		if uv0.curPageIndex > 1 then
+			uv0.curPageIndex = 1
 		end
 
-		arg_15_0.scrollRect.normalizedPosition = Vector2(arg_15_0.curPageIndex, 0)
+		uv0.scrollRect.normalizedPosition = Vector2(uv0.curPageIndex, 0)
 
-		arg_15_0.scrollRect.onValueChanged:Invoke(Vector2(arg_15_0.curPageIndex, 0))
+		uv0.scrollRect.onValueChanged:Invoke(Vector2(uv0.curPageIndex, 0))
 	end, SFX_PANEL)
-	onButton(arg_15_0, findTF(arg_15_0.selectUI, "ad/pre"), function()
-		arg_15_0.curPageIndex = arg_15_0.curPageIndex - arg_15_0.scrollNum
+	onButton(slot0, findTF(slot0.selectUI, "ad/pre"), function ()
+		uv0.curPageIndex = uv0.curPageIndex - uv0.scrollNum
 
-		if arg_15_0.curPageIndex < 0 then
-			arg_15_0.curPageIndex = 0
+		if uv0.curPageIndex < 0 then
+			uv0.curPageIndex = 0
 		end
 
-		arg_15_0.scrollRect.normalizedPosition = Vector2(arg_15_0.curPageIndex, 0)
+		uv0.scrollRect.normalizedPosition = Vector2(uv0.curPageIndex, 0)
 
-		arg_15_0.scrollRect.onValueChanged:Invoke(Vector2(arg_15_0.curPageIndex, 0))
+		uv0.scrollRect.onValueChanged:Invoke(Vector2(uv0.curPageIndex, 0))
 	end, SFX_PANEL)
-	setActive(arg_15_0.selectUI, false)
+	setActive(slot0.selectUI, false)
 
-	if not arg_15_0.handle and IsUnityEditor then
-		arg_15_0.handle = UpdateBeat:CreateListener(arg_15_0.Update, arg_15_0)
+	if not slot0.handle and IsUnityEditor then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 
-		UpdateBeat:AddListener(arg_15_0.handle)
+		UpdateBeat:AddListener(slot0.handle)
 	end
 
-	GetComponent(findTF(arg_15_0.selectUI, "ad/playerDesc"), typeof(Image)):SetNativeSize()
-	GetComponent(findTF(arg_15_0.selectUI, "ad/partnerDesc"), typeof(Image)):SetNativeSize()
-	GetComponent(findTF(arg_15_0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
-	GetComponent(findTF(arg_15_0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(slot0.selectUI, "ad/playerDesc"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(slot0.selectUI, "ad/partnerDesc"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(slot0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(slot0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
 end
 
-function var_0_0.initGameUI(arg_40_0)
-	arg_40_0.gameUI = findTF(arg_40_0._tf, "ui/gameUI")
-	arg_40_0.showScoreTpl = findTF(arg_40_0.sceneFrontContainer, "score")
+function slot0.initGameUI(slot0)
+	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
+	slot0.showScoreTpl = findTF(slot0.sceneFrontContainer, "score")
 
-	setActive(arg_40_0.showScoreTpl, false)
-	onButton(arg_40_0, findTF(arg_40_0.gameUI, "topRight/btnStop"), function()
-		arg_40_0:stopGame()
-		setActive(arg_40_0.pauseUI, true)
+	setActive(slot0.showScoreTpl, false)
+	onButton(slot0, findTF(slot0.gameUI, "topRight/btnStop"), function ()
+		uv0:stopGame()
+		setActive(uv0.pauseUI, true)
 	end)
-	onButton(arg_40_0, findTF(arg_40_0.gameUI, "btnLeave"), function()
-		arg_40_0:stopGame()
-		setActive(arg_40_0.leaveUI, true)
+	onButton(slot0, findTF(slot0.gameUI, "btnLeave"), function ()
+		uv0:stopGame()
+		setActive(uv0.leaveUI, true)
 	end)
 
-	arg_40_0.gameTimeS = findTF(arg_40_0.gameUI, "top/time/s")
-	arg_40_0.scoreTf = findTF(arg_40_0.gameUI, "top/score")
-	arg_40_0.otherScoreTf = findTF(arg_40_0.gameUI, "top/otherScore")
+	slot0.gameTimeS = findTF(slot0.gameUI, "top/time/s")
+	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
+	slot0.otherScoreTf = findTF(slot0.gameUI, "top/otherScore")
 end
 
-function var_0_0.initController(arg_43_0)
-	arg_43_0.judgesController = CookGameJudgesController.New(arg_43_0.sceneContainer, var_0_8, arg_43_0)
+function slot0.initController(slot0)
+	slot0.judgesController = CookGameJudgesController.New(slot0.sceneContainer, uv0, slot0)
 
-	local var_43_0 = findTF(arg_43_0.sceneContainer, "scene_background/charTpl")
+	setActive(findTF(slot0.sceneContainer, "scene_background/charTpl"), false)
 
-	setActive(var_43_0, false)
-
-	arg_43_0.charController = CookGameCharController.New(arg_43_0.sceneContainer, var_0_8, arg_43_0)
+	slot0.charController = CookGameCharController.New(slot0.sceneContainer, uv0, slot0)
 end
 
-function var_0_0.Update(arg_44_0)
-	arg_44_0:AddDebugInput()
+function slot0.Update(slot0)
+	slot0:AddDebugInput()
 end
 
-function var_0_0.AddDebugInput(arg_45_0)
-	if arg_45_0.gameStop or arg_45_0.settlementFlag then
+function slot0.AddDebugInput(slot0)
+	if slot0.gameStop or slot0.settlementFlag then
 		return
 	end
 
 	if IsUnityEditor and Input.GetKeyDown(KeyCode.S) then
-		-- block empty
+		-- Nothing
 	end
 end
 
-function var_0_0.updateMenuUI(arg_46_0)
-	local var_46_0 = arg_46_0:getGameUsedTimes()
-	local var_46_1 = arg_46_0:getGameTimes()
+function slot0.updateMenuUI(slot0)
+	slot2 = slot0:getGameTimes()
 
-	for iter_46_0 = 1, #arg_46_0.battleItems do
-		setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_open"), false)
-		setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_closed"), false)
-		setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_clear"), false)
-		setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_current"), false)
+	for slot6 = 1, #slot0.battleItems do
+		setActive(findTF(slot0.battleItems[slot6], "state_open"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_closed"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_clear"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_current"), false)
 
-		if iter_46_0 <= var_46_0 then
-			SetParent(arg_46_0.dropItems[iter_46_0], findTF(arg_46_0.battleItems[iter_46_0], "state_clear/icon"))
-			setActive(arg_46_0.dropItems[iter_46_0], true)
-			setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_clear"), true)
-		elseif iter_46_0 == var_46_0 + 1 and var_46_1 >= 1 then
-			setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_current"), true)
-			SetParent(arg_46_0.dropItems[iter_46_0], findTF(arg_46_0.battleItems[iter_46_0], "state_current/icon"))
-			setActive(arg_46_0.dropItems[iter_46_0], true)
-		elseif var_46_0 < iter_46_0 and iter_46_0 <= var_46_0 + var_46_1 then
-			setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_open"), true)
-			SetParent(arg_46_0.dropItems[iter_46_0], findTF(arg_46_0.battleItems[iter_46_0], "state_open/icon"))
-			setActive(arg_46_0.dropItems[iter_46_0], true)
+		if slot6 <= slot0:getGameUsedTimes() then
+			SetParent(slot0.dropItems[slot6], findTF(slot0.battleItems[slot6], "state_clear/icon"))
+			setActive(slot0.dropItems[slot6], true)
+			setActive(findTF(slot0.battleItems[slot6], "state_clear"), true)
+		elseif slot6 == slot1 + 1 and slot2 >= 1 then
+			setActive(findTF(slot0.battleItems[slot6], "state_current"), true)
+			SetParent(slot0.dropItems[slot6], findTF(slot0.battleItems[slot6], "state_current/icon"))
+			setActive(slot0.dropItems[slot6], true)
+		elseif slot1 < slot6 and slot6 <= slot1 + slot2 then
+			setActive(findTF(slot0.battleItems[slot6], "state_open"), true)
+			SetParent(slot0.dropItems[slot6], findTF(slot0.battleItems[slot6], "state_open/icon"))
+			setActive(slot0.dropItems[slot6], true)
 		else
-			setActive(findTF(arg_46_0.battleItems[iter_46_0], "state_closed"), true)
-			SetParent(arg_46_0.dropItems[iter_46_0], findTF(arg_46_0.battleItems[iter_46_0], "state_closed/icon"))
-			setActive(arg_46_0.dropItems[iter_46_0], true)
+			setActive(findTF(slot0.battleItems[slot6], "state_closed"), true)
+			SetParent(slot0.dropItems[slot6], findTF(slot0.battleItems[slot6], "state_closed/icon"))
+			setActive(slot0.dropItems[slot6], true)
 		end
 	end
 
-	arg_46_0.totalTimes = arg_46_0:getGameTotalTime()
+	slot0.totalTimes = slot0:getGameTotalTime()
 
-	local var_46_2 = 1 - (arg_46_0:getGameUsedTimes() - 3 < 0 and 0 or arg_46_0:getGameUsedTimes() - 3) / (arg_46_0.totalTimes - 4)
-
-	if var_46_2 > 1 then
-		var_46_2 = 1
+	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
+		slot4 = 1
 	end
 
-	scrollTo(arg_46_0.battleScrollRect, 0, var_46_2)
-	setActive(findTF(arg_46_0.menuUI, "btnStart/tip"), var_46_1 > 0)
-	arg_46_0:CheckGet()
+	scrollTo(slot0.battleScrollRect, 0, slot4)
+	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot2 > 0)
+	slot0:CheckGet()
 end
 
-function var_0_0.CheckGet(arg_47_0)
-	setActive(findTF(arg_47_0.menuUI, "got"), false)
+function slot0.CheckGet(slot0)
+	setActive(findTF(slot0.menuUI, "got"), false)
 
-	if arg_47_0:getUltimate() and arg_47_0:getUltimate() ~= 0 then
-		setActive(findTF(arg_47_0.menuUI, "got"), true)
+	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 
-	if arg_47_0:getUltimate() == 0 then
-		if arg_47_0:getGameTotalTime() > arg_47_0:getGameUsedTimes() then
+	if slot0:getUltimate() == 0 then
+		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg_47_0:GetMGHubData().id,
+			hubid = slot0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg_47_0.menuUI, "got"), true)
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 end
 
-function var_0_0.openSelectUI(arg_48_0)
-	setActive(arg_48_0.selectUI, true)
+function slot0.openSelectUI(slot0)
+	setActive(slot0.selectUI, true)
 
-	arg_48_0.selectPlayer = true
-	arg_48_0.selectPartner = false
+	slot0.selectPlayer = true
+	slot0.selectPartner = false
 
-	arg_48_0:updateSelectUI()
+	slot0:updateSelectUI()
 end
 
-function var_0_0.updateSelectUI(arg_49_0)
-	local var_49_0 = var_0_8.playerChar
+function slot0.updateSelectUI(slot0)
+	if uv0.playerChar then
+		slot2 = findTF(slot0.selectUI, "ad/player/icon/img")
+		slot4 = slot0:getCharData(slot1, "pos")
 
-	if var_49_0 then
-		local var_49_1 = findTF(arg_49_0.selectUI, "ad/player/icon/img")
-		local var_49_2 = arg_49_0:getCharData(var_49_0, "icon")
-		local var_49_3 = arg_49_0:getCharData(var_49_0, "pos")
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. uv1, slot0:getCharData(slot1, "icon"), function (slot0)
+			uv0.anchoredPosition = uv1
 
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, var_49_2, function(arg_50_0)
-			var_49_1.anchoredPosition = var_49_3
-
-			setActive(var_49_1, true)
-			setImageSprite(var_49_1, arg_50_0, true)
+			setActive(uv0, true)
+			setImageSprite(uv0, slot0, true)
 		end)
 	else
-		setActive(findTF(arg_49_0.selectUI, "ad/player/icon/img"), false)
+		setActive(findTF(slot0.selectUI, "ad/player/icon/img"), false)
 	end
 
-	local var_49_4 = var_0_8.partnerChar
+	if uv0.partnerChar then
+		slot3 = findTF(slot0.selectUI, "ad/partner/icon/img")
+		slot5 = slot0:getCharData(slot2, "pos")
 
-	if var_49_4 then
-		local var_49_5 = findTF(arg_49_0.selectUI, "ad/partner/icon/img")
-		local var_49_6 = arg_49_0:getCharData(var_49_4, "icon")
-		local var_49_7 = arg_49_0:getCharData(var_49_4, "pos")
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. uv1, slot0:getCharData(slot2, "icon"), function (slot0)
+			uv0.anchoredPosition = uv1
 
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, var_49_6, function(arg_51_0)
-			var_49_5.anchoredPosition = var_49_7
-
-			setActive(var_49_5, true)
-			setImageSprite(var_49_5, arg_51_0, true)
+			setActive(uv0, true)
+			setImageSprite(uv0, slot0, true)
 		end)
 	else
-		setActive(findTF(arg_49_0.selectUI, "ad/partner/icon/img"), false)
+		setActive(findTF(slot0.selectUI, "ad/partner/icon/img"), false)
 	end
 
-	if arg_49_0.selectPlayer then
-		setActive(findTF(arg_49_0.selectUI, "ad/player/selected"), true)
-		setActive(findTF(arg_49_0.selectUI, "ad/partner/selected"), false)
-	elseif arg_49_0.selectPartner then
-		setActive(findTF(arg_49_0.selectUI, "ad/player/selected"), false)
-		setActive(findTF(arg_49_0.selectUI, "ad/partner/selected"), true)
+	if slot0.selectPlayer then
+		setActive(findTF(slot0.selectUI, "ad/player/selected"), true)
+		setActive(findTF(slot0.selectUI, "ad/partner/selected"), false)
+	elseif slot0.selectPartner then
+		setActive(findTF(slot0.selectUI, "ad/player/selected"), false)
+		setActive(findTF(slot0.selectUI, "ad/partner/selected"), true)
 	end
 end
 
-function var_0_0.selectChar(arg_52_0, arg_52_1)
-	arg_52_0.selectCharId = arg_52_1
+function slot0.selectChar(slot0, slot1)
+	slot0.selectCharId = slot1
 
-	for iter_52_0 = 1, #arg_52_0.selectChars do
-		local var_52_0 = arg_52_0.selectChars[iter_52_0].data
-
-		if var_52_0 then
-			local var_52_1 = arg_52_0.selectChars[iter_52_0].tf
-
-			if var_52_0.id == arg_52_1 then
-				setActive(findTF(var_52_1, "selected"), true)
+	for slot5 = 1, #slot0.selectChars do
+		if slot0.selectChars[slot5].data then
+			if slot6.id == slot1 then
+				setActive(findTF(slot0.selectChars[slot5].tf, "selected"), true)
 			else
-				setActive(findTF(var_52_1, "selected"), false)
+				setActive(findTF(slot7, "selected"), false)
 			end
 		end
 	end
 
-	if arg_52_0.selectPlayer then
-		if var_0_8.partnerChar and var_0_8.partnerChar == arg_52_1 then
-			var_0_8.partnerChar = var_0_8.playerChar or nil
+	if slot0.selectPlayer then
+		if uv0.partnerChar and uv0.partnerChar == slot1 then
+			uv0.partnerChar = uv0.playerChar or nil
 		end
 
-		var_0_8.playerChar = arg_52_1
+		uv0.playerChar = slot1
 
-		if not var_0_8.partnerChar then
-			arg_52_0.selectPlayer = false
-			arg_52_0.selectPartner = true
+		if not uv0.partnerChar then
+			slot0.selectPlayer = false
+			slot0.selectPartner = true
 		end
-	elseif arg_52_0.selectPartner then
-		if var_0_8.playerChar and var_0_8.playerChar == arg_52_1 then
-			var_0_8.playerChar = var_0_8.partnerChar
+	elseif slot0.selectPartner then
+		if uv0.playerChar and uv0.playerChar == slot1 then
+			uv0.playerChar = uv0.partnerChar
 		end
 
-		var_0_8.partnerChar = arg_52_1
+		uv0.partnerChar = slot1
 
-		if not var_0_8.playerChar then
-			arg_52_0.selectPlayer = true
-			arg_52_0.selectPartner = false
+		if not uv0.playerChar then
+			slot0.selectPlayer = true
+			slot0.selectPartner = false
 		end
 	end
 
-	if var_0_8.playerChar and CookGameConst.char_battle_data[var_0_8.playerChar].pet then
-		var_0_8.partnerPet = CookGameConst.char_battle_data[var_0_8.playerChar].pet
-	elseif var_0_8.partnerChar and CookGameConst.char_battle_data[var_0_8.partnerChar].pet then
-		var_0_8.partnerPet = CookGameConst.char_battle_data[var_0_8.partnerChar].pet
+	if uv0.playerChar and CookGameConst.char_battle_data[uv0.playerChar].pet then
+		uv0.partnerPet = CookGameConst.char_battle_data[uv0.playerChar].pet
+	elseif uv0.partnerChar and CookGameConst.char_battle_data[uv0.partnerChar].pet then
+		uv0.partnerPet = CookGameConst.char_battle_data[uv0.partnerChar].pet
 	else
-		var_0_8.partnerPet = nil
+		uv0.partnerPet = nil
 	end
 
-	arg_52_0:updateSelectUI()
+	slot0:updateSelectUI()
 end
 
-function var_0_0.getCharDataById(arg_53_0, arg_53_1)
-	for iter_53_0, iter_53_1 in pairs(CookGameConst.char_data) do
-		if iter_53_1.id == arg_53_1 then
-			return Clone(iter_53_1)
+function slot0.getCharDataById(slot0, slot1)
+	for slot5, slot6 in pairs(CookGameConst.char_data) do
+		if slot6.id == slot1 then
+			return Clone(slot6)
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.getCharData(arg_54_0, arg_54_1, arg_54_2)
-	for iter_54_0 = 1, #CookGameConst.char_data do
-		local var_54_0 = CookGameConst.char_data[iter_54_0]
-
-		if var_54_0.id == arg_54_1 then
-			if not arg_54_2 then
-				return Clone(var_54_0)
+function slot0.getCharData(slot0, slot1, slot2)
+	for slot6 = 1, #CookGameConst.char_data do
+		if CookGameConst.char_data[slot6].id == slot1 then
+			if not slot2 then
+				return Clone(slot7)
 			else
-				return Clone(var_54_0[arg_54_2])
+				return Clone(slot7[slot2])
 			end
 		end
 	end
@@ -725,441 +672,428 @@ function var_0_0.getCharData(arg_54_0, arg_54_1, arg_54_2)
 	return nil
 end
 
-function var_0_0.randomAIShip(arg_55_0)
-	local var_55_0 = {}
-
-	for iter_55_0, iter_55_1 in pairs(CookGameConst.char_battle_data) do
-		if iter_55_1.extend then
-			table.insert(var_55_0, iter_55_1.id)
+function slot0.randomAIShip(slot0)
+	for slot5, slot6 in pairs(CookGameConst.char_battle_data) do
+		if slot6.extend then
+			table.insert({}, slot6.id)
 		end
 	end
 
-	if var_0_8.playerChar then
-		table.insert(var_55_0, var_0_8.playerChar)
+	if uv0.playerChar then
+		table.insert(slot1, uv0.playerChar)
 	end
 
-	if var_0_8.partnerChar then
-		table.insert(var_55_0, var_0_8.partnerChar)
+	if uv0.partnerChar then
+		table.insert(slot1, uv0.partnerChar)
 	end
 
-	local var_55_1 = Clone(CookGameConst.random_ids)
-
-	for iter_55_2 = #var_55_1, 1, -1 do
-		if table.contains(var_55_0, var_55_1[iter_55_2]) then
-			table.remove(var_55_1, iter_55_2)
+	for slot6 = #Clone(CookGameConst.random_ids), 1, -1 do
+		if table.contains(slot1, slot2[slot6]) then
+			table.remove(slot2, slot6)
 		end
 	end
 
-	var_0_8.enemy1Char = table.remove(var_55_1, math.random(1, #var_55_1))
-	var_0_8.enemy2Char = table.remove(var_55_1, math.random(1, #var_55_1))
-	var_0_8.enemyPet = CookGameConst.char_battle_data[var_0_8.enemy1Char].pet or CookGameConst.char_battle_data[var_0_8.enemy2Char].pet or nil
+	uv0.enemy1Char = table.remove(slot2, math.random(1, #slot2))
+	uv0.enemy2Char = table.remove(slot2, math.random(1, #slot2))
+	uv0.enemyPet = CookGameConst.char_battle_data[uv0.enemy1Char].pet or CookGameConst.char_battle_data[uv0.enemy2Char].pet or nil
 end
 
-function var_0_0.openMenuUI(arg_56_0)
-	setActive(findTF(arg_56_0.sceneContainer, "scene_front"), false)
-	setActive(findTF(arg_56_0.sceneContainer, "scene_background"), false)
-	setActive(findTF(arg_56_0.sceneContainer, "scene"), false)
-	setActive(arg_56_0.gameUI, false)
-	setActive(arg_56_0.menuUI, true)
-	setActive(arg_56_0.bg, true)
-	arg_56_0:updateMenuUI()
+function slot0.openMenuUI(slot0)
+	setActive(findTF(slot0.sceneContainer, "scene_front"), false)
+	setActive(findTF(slot0.sceneContainer, "scene_background"), false)
+	setActive(findTF(slot0.sceneContainer, "scene"), false)
+	setActive(slot0.gameUI, false)
+	setActive(slot0.menuUI, true)
+	setActive(slot0.bg, true)
+	slot0:updateMenuUI()
 end
 
-function var_0_0.clearUI(arg_57_0)
-	setActive(arg_57_0.sceneContainer, false)
-	setActive(arg_57_0.settlementUI, false)
-	setActive(arg_57_0.countUI, false)
-	setActive(arg_57_0.menuUI, false)
-	setActive(arg_57_0.gameUI, false)
-	setActive(arg_57_0.selectUI, false)
+function slot0.clearUI(slot0)
+	setActive(slot0.sceneContainer, false)
+	setActive(slot0.settlementUI, false)
+	setActive(slot0.countUI, false)
+	setActive(slot0.menuUI, false)
+	setActive(slot0.gameUI, false)
+	setActive(slot0.selectUI, false)
 end
 
-function var_0_0.readyStart(arg_58_0)
-	arg_58_0.readyStartFlag = true
+function slot0.readyStart(slot0)
+	slot0.readyStartFlag = true
 
-	arg_58_0:controllerReady()
-	setActive(arg_58_0.countUI, true)
-	arg_58_0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
+	slot0:controllerReady()
+	setActive(slot0.countUI, true)
+	slot0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 
-	arg_58_0.readyStartFlag = false
+	slot0.readyStartFlag = false
 end
 
-function var_0_0.gameStart(arg_59_0)
-	setActive(findTF(arg_59_0.sceneContainer, "scene_front"), true)
-	setActive(findTF(arg_59_0.sceneContainer, "scene_background"), true)
-	setActive(findTF(arg_59_0.sceneContainer, "scene"), true)
+function slot0.gameStart(slot0)
+	setActive(findTF(slot0.sceneContainer, "scene_front"), true)
+	setActive(findTF(slot0.sceneContainer, "scene_background"), true)
+	setActive(findTF(slot0.sceneContainer, "scene"), true)
 
-	GetComponent(findTF(arg_59_0.sceneContainer, "scene"), typeof(CanvasGroup)).alpha = 1
+	GetComponent(findTF(slot0.sceneContainer, "scene"), typeof(CanvasGroup)).alpha = 1
 
-	setActive(arg_59_0.bg, false)
+	setActive(slot0.bg, false)
 
-	arg_59_0.sceneContainer.anchoredPosition = Vector2(0, 0)
-	arg_59_0.offsetPosition = Vector2(0, 0)
+	slot0.sceneContainer.anchoredPosition = Vector2(0, 0)
+	slot0.offsetPosition = Vector2(0, 0)
 
-	setActive(arg_59_0.gameUI, true)
+	setActive(slot0.gameUI, true)
 
-	arg_59_0.gameStartFlag = true
-	arg_59_0.scoreNum = 0
-	arg_59_0.otherScoreNum = 0
-	arg_59_0.gameStepTime = 0
-	arg_59_0.gameTime = var_0_4
-	arg_59_0.extendTime = nil
-	arg_59_0.waitingExtendTime = false
+	slot0.gameStartFlag = true
+	slot0.scoreNum = 0
+	slot0.otherScoreNum = 0
+	slot0.gameStepTime = 0
+	slot0.gameTime = uv0
+	slot0.extendTime = nil
+	slot0.waitingExtendTime = false
 
-	if var_0_8.playerChar == 6 or var_0_8.partnerChar == 6 then
-		arg_59_0.waitingExtendTime = true
+	if uv1.playerChar == 6 or uv1.partnerChar == 6 then
+		slot0.waitingExtendTime = true
 	end
 
-	for iter_59_0 = #arg_59_0.showScores, 1, -1 do
-		if not table.contains(arg_59_0.showScoresPool, arg_59_0.showScores[iter_59_0]) then
-			local var_59_0 = table.remove(arg_59_0.showScores, iter_59_0)
-
-			table.insert(arg_59_0.showScoresPool, var_59_0)
+	for slot4 = #slot0.showScores, 1, -1 do
+		if not table.contains(slot0.showScoresPool, slot0.showScores[slot4]) then
+			table.insert(slot0.showScoresPool, table.remove(slot0.showScores, slot4))
 		end
 	end
 
-	for iter_59_1 = #arg_59_0.showScoresPool, 1, -1 do
-		setActive(arg_59_0.showScoresPool[iter_59_1], false)
+	for slot4 = #slot0.showScoresPool, 1, -1 do
+		setActive(slot0.showScoresPool[slot4], false)
 	end
 
-	local function var_59_1(arg_60_0, arg_60_1)
-		local var_60_0 = arg_59_0:getCharData(arg_60_0, "icon")
-		local var_60_1 = arg_59_0:getCharData(arg_60_0, "pos")
+	function slot1(slot0, slot1)
+		slot3 = uv0:getCharData(slot0, "pos")
 
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, var_60_0, function(arg_61_0)
-			setActive(arg_60_1, true)
-			setImageSprite(arg_60_1, arg_61_0, true)
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. uv1, uv0:getCharData(slot0, "icon"), function (slot0)
+			setActive(uv0, true)
+			setImageSprite(uv0, slot0, true)
 		end)
 	end
 
-	var_59_1(var_0_8.playerChar, findTF(arg_59_0.gameUI, "top/leftCharPos/player/img"))
-	var_59_1(var_0_8.partnerChar, findTF(arg_59_0.gameUI, "top/leftCharPos/partner/img"))
-	var_59_1(var_0_8.enemy1Char, findTF(arg_59_0.gameUI, "top/rightCharPos/enemy1/img"))
-	var_59_1(var_0_8.enemy2Char, findTF(arg_59_0.gameUI, "top/rightCharPos/enemy2/img"))
-	arg_59_0:updateGameUI()
-	arg_59_0:timerStart()
-	arg_59_0:controllerStart()
+	slot1(uv1.playerChar, findTF(slot0.gameUI, "top/leftCharPos/player/img"))
+	slot1(uv1.partnerChar, findTF(slot0.gameUI, "top/leftCharPos/partner/img"))
+	slot1(uv1.enemy1Char, findTF(slot0.gameUI, "top/rightCharPos/enemy1/img"))
+	slot1(uv1.enemy2Char, findTF(slot0.gameUI, "top/rightCharPos/enemy2/img"))
+	slot0:updateGameUI()
+	slot0:timerStart()
+	slot0:controllerStart()
 end
 
-function var_0_0.controllerReady(arg_62_0)
-	GetComponent(findTF(arg_62_0.sceneContainer, "scene"), typeof(CanvasGroup)).alpha = 0
+function slot0.controllerReady(slot0)
+	GetComponent(findTF(slot0.sceneContainer, "scene"), typeof(CanvasGroup)).alpha = 0
 
-	setActive(findTF(arg_62_0.sceneContainer, "scene"), true)
-	arg_62_0.charController:readyStart()
+	setActive(findTF(slot0.sceneContainer, "scene"), true)
+	slot0.charController:readyStart()
 end
 
-function var_0_0.controllerStart(arg_63_0)
-	arg_63_0.judgesController:start()
-	arg_63_0.charController:start()
+function slot0.controllerStart(slot0)
+	slot0.judgesController:start()
+	slot0.charController:start()
 end
 
-function var_0_0.getGameTimes(arg_64_0)
-	return arg_64_0:GetMGHubData().count
+function slot0.getGameTimes(slot0)
+	return slot0:GetMGHubData().count
 end
 
-function var_0_0.getGameUsedTimes(arg_65_0)
-	return arg_65_0:GetMGHubData().usedtime
+function slot0.getGameUsedTimes(slot0)
+	return slot0:GetMGHubData().usedtime
 end
 
-function var_0_0.getUltimate(arg_66_0)
-	return arg_66_0:GetMGHubData().ultimate
+function slot0.getUltimate(slot0)
+	return slot0:GetMGHubData().ultimate
 end
 
-function var_0_0.getGameTotalTime(arg_67_0)
-	return (arg_67_0:GetMGHubData():getConfig("reward_need"))
+function slot0.getGameTotalTime(slot0)
+	return slot0:GetMGHubData():getConfig("reward_need")
 end
 
-function var_0_0.changeSpeed(arg_68_0, arg_68_1)
-	if arg_68_0.judgesController then
-		arg_68_0.judgesController:changeSpeed(arg_68_1)
+function slot0.changeSpeed(slot0, slot1)
+	if slot0.judgesController then
+		slot0.judgesController:changeSpeed(slot1)
 	end
 
-	if arg_68_0.charController then
-		arg_68_0.charController:changeSpeed(arg_68_1)
+	if slot0.charController then
+		slot0.charController:changeSpeed(slot1)
 	end
 end
 
-function var_0_0.onTimer(arg_69_0)
-	arg_69_0:gameStep()
+function slot0.onTimer(slot0)
+	slot0:gameStep()
 end
 
-function var_0_0.gameStep(arg_70_0)
-	if arg_70_0.gameTime and arg_70_0.gameTime > 3 and arg_70_0.gameTime - Time.deltaTime < 3 and var_0_8.playerChar ~= 6 and var_0_8.playerChar ~= 6 then
-		arg_70_0.judgesController:timeUp()
+function slot0.gameStep(slot0)
+	if slot0.gameTime and slot0.gameTime > 3 and slot0.gameTime - Time.deltaTime < 3 and uv0.playerChar ~= 6 and uv0.playerChar ~= 6 then
+		slot0.judgesController:timeUp()
 	end
 
-	if arg_70_0.extendTime and arg_70_0.extendTime > 3 and arg_70_0.extendTime - Time.deltaTime < 3 then
-		arg_70_0.judgesController:timeUp()
+	if slot0.extendTime and slot0.extendTime > 3 and slot0.extendTime - Time.deltaTime < 3 then
+		slot0.judgesController:timeUp()
 	end
 
-	arg_70_0.gameTime = arg_70_0.gameTime - Time.deltaTime
+	slot0.gameTime = slot0.gameTime - Time.deltaTime
 
-	if arg_70_0.gameTime < 0 then
-		arg_70_0.gameTime = 0
+	if slot0.gameTime < 0 then
+		slot0.gameTime = 0
 	end
 
-	var_0_8.gameTime = arg_70_0.gameTime
+	uv0.gameTime = slot0.gameTime
 
-	if arg_70_0.extendTime and arg_70_0.extendTime > 0 then
-		arg_70_0.extendTime = arg_70_0.extendTime - Time.deltaTime
+	if slot0.extendTime and slot0.extendTime > 0 then
+		slot0.extendTime = slot0.extendTime - Time.deltaTime
 
-		if arg_70_0.extendTime < 0 then
-			arg_70_0.extendTime = 0
+		if slot0.extendTime < 0 then
+			slot0.extendTime = 0
 		end
 	end
 
-	arg_70_0.gameStepTime = arg_70_0.gameStepTime + Time.deltaTime
+	slot0.gameStepTime = slot0.gameStepTime + Time.deltaTime
 
-	arg_70_0:controllerStep(Time.deltaTime)
-	arg_70_0:updateGameUI()
+	slot0:controllerStep(Time.deltaTime)
+	slot0:updateGameUI()
 
-	if not arg_70_0.waitingExtendTime and arg_70_0.gameTime <= 0 then
-		if arg_70_0.extendTime then
-			if arg_70_0.extendTime <= 0 then
-				arg_70_0:onGameOver()
+	if not slot0.waitingExtendTime and slot0.gameTime <= 0 then
+		if slot0.extendTime then
+			if slot0.extendTime <= 0 then
+				slot0:onGameOver()
 			end
 		else
-			arg_70_0:onGameOver()
+			slot0:onGameOver()
 		end
 
 		return
 	end
 end
 
-function var_0_0.controllerStep(arg_71_0, arg_71_1)
-	arg_71_0.judgesController:step(arg_71_1)
-	arg_71_0.charController:step(arg_71_1)
+function slot0.controllerStep(slot0, slot1)
+	slot0.judgesController:step(slot1)
+	slot0.charController:step(slot1)
 end
 
-function var_0_0.timerStart(arg_72_0)
-	if not arg_72_0.timer.running then
-		arg_72_0.timer:Start()
+function slot0.timerStart(slot0)
+	if not slot0.timer.running then
+		slot0.timer:Start()
 	end
 end
 
-function var_0_0.timerStop(arg_73_0)
-	if arg_73_0.timer.running then
-		arg_73_0.timer:Stop()
+function slot0.timerStop(slot0)
+	if slot0.timer.running then
+		slot0.timer:Stop()
 	end
 end
 
-function var_0_0.updateGameUI(arg_74_0)
-	setText(arg_74_0.scoreTf, arg_74_0.scoreNum)
-	setText(arg_74_0.otherScoreTf, arg_74_0.otherScoreNum)
+function slot0.updateGameUI(slot0)
+	setText(slot0.scoreTf, slot0.scoreNum)
+	setText(slot0.otherScoreTf, slot0.otherScoreNum)
 
-	if arg_74_0.extendTime and arg_74_0.extendTime > 0 then
-		setText(arg_74_0.gameTimeS, math.ceil(arg_74_0.extendTime))
+	if slot0.extendTime and slot0.extendTime > 0 then
+		setText(slot0.gameTimeS, math.ceil(slot0.extendTime))
 	else
-		setText(arg_74_0.gameTimeS, math.ceil(arg_74_0.gameTime))
+		setText(slot0.gameTimeS, math.ceil(slot0.gameTime))
 	end
 end
 
-function var_0_0.addScore(arg_75_0, arg_75_1, arg_75_2)
-	if arg_75_2 then
-		arg_75_0.otherScoreNum = arg_75_0.otherScoreNum + arg_75_1
+function slot0.addScore(slot0, slot1, slot2)
+	if slot2 then
+		slot0.otherScoreNum = slot0.otherScoreNum + slot1
 
-		if arg_75_0.otherScoreNum < 0 then
-			arg_75_0.otherScoreNum = 0
+		if slot0.otherScoreNum < 0 then
+			slot0.otherScoreNum = 0
 		end
 	else
-		arg_75_0.scoreNum = arg_75_0.scoreNum + arg_75_1
+		slot0.scoreNum = slot0.scoreNum + slot1
 
-		if arg_75_0.scoreNum < 0 then
-			arg_75_0.scoreNum = 0
+		if slot0.scoreNum < 0 then
+			slot0.scoreNum = 0
 		end
 	end
 end
 
-function var_0_0.onGameOver(arg_76_0)
-	if arg_76_0.settlementFlag then
+function slot0.onGameOver(slot0)
+	if slot0.settlementFlag then
 		return
 	end
 
-	arg_76_0:timerStop()
-	arg_76_0:controllerClear()
+	slot0:timerStop()
+	slot0:controllerClear()
 
-	arg_76_0.settlementFlag = true
+	slot0.settlementFlag = true
 
-	setActive(arg_76_0.clickMask, true)
-	LeanTween.delayedCall(go(arg_76_0._tf), 0.1, System.Action(function()
-		arg_76_0.settlementFlag = false
-		arg_76_0.gameStartFlag = false
+	setActive(slot0.clickMask, true)
+	LeanTween.delayedCall(go(slot0._tf), 0.1, System.Action(function ()
+		uv0.settlementFlag = false
+		uv0.gameStartFlag = false
 
-		setActive(arg_76_0.clickMask, false)
-		arg_76_0:showSettlement()
+		setActive(uv0.clickMask, false)
+		uv0:showSettlement()
 	end))
 end
 
-function var_0_0.showSettlement(arg_78_0)
-	setActive(arg_78_0.settlementUI, true)
-	GetComponent(findTF(arg_78_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function slot0.showSettlement(slot0)
+	setActive(slot0.settlementUI, true)
+	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var_78_0 = arg_78_0:GetMGData():GetRuntimeData("elements")
-	local var_78_1 = arg_78_0.scoreNum
-	local var_78_2 = var_78_0 and #var_78_0 > 0 and var_78_0[1] or 0
-	local var_78_3 = arg_78_0.otherScoreNum or 0
+	slot3 = slot0.scoreNum
+	slot4 = slot0:GetMGData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0
+	slot5 = slot0.otherScoreNum or 0
 
-	setActive(findTF(arg_78_0.settlementUI, "ad/new"), var_78_2 < var_78_1)
+	setActive(findTF(slot0.settlementUI, "ad/new"), slot4 < slot3)
 
-	if var_78_2 <= var_78_1 then
-		var_78_2 = var_78_1
-
-		arg_78_0:StoreDataToServer({
-			var_78_2
+	if slot4 <= slot3 then
+		slot0:StoreDataToServer({
+			slot3
 		})
 	end
 
-	local var_78_4 = findTF(arg_78_0.settlementUI, "ad/highText")
-	local var_78_5 = findTF(arg_78_0.settlementUI, "ad/currentText")
-	local var_78_6 = findTF(arg_78_0.settlementUI, "ad/otherText")
+	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
+	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
+	setText(findTF(slot0.settlementUI, "ad/otherText"), slot5)
 
-	setText(var_78_4, var_78_2)
-	setText(var_78_5, var_78_1)
-	setText(var_78_6, var_78_3)
+	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
+		slot0.sendSuccessFlag = true
 
-	if arg_78_0:getGameTimes() and arg_78_0:getGameTimes() > 0 then
-		arg_78_0.sendSuccessFlag = true
-
-		arg_78_0:SendSuccess(0)
+		slot0:SendSuccess(0)
 	end
 
-	if var_78_3 < var_78_1 then
-		setActive(findTF(arg_78_0.settlementUI, "ad/win"), true)
-		setActive(findTF(arg_78_0.settlementUI, "ad/defeat"), false)
-	elseif var_78_1 < var_78_3 then
-		setActive(findTF(arg_78_0.settlementUI, "ad/win"), false)
-		setActive(findTF(arg_78_0.settlementUI, "ad/defeat"), true)
+	if slot5 < slot3 then
+		setActive(findTF(slot0.settlementUI, "ad/win"), true)
+		setActive(findTF(slot0.settlementUI, "ad/defeat"), false)
+	elseif slot3 < slot5 then
+		setActive(findTF(slot0.settlementUI, "ad/win"), false)
+		setActive(findTF(slot0.settlementUI, "ad/defeat"), true)
 	else
-		setActive(findTF(arg_78_0.settlementUI, "ad/win"), false)
-		setActive(findTF(arg_78_0.settlementUI, "ad/defeat"), false)
+		setActive(findTF(slot0.settlementUI, "ad/win"), false)
+		setActive(findTF(slot0.settlementUI, "ad/defeat"), false)
 	end
 
-	local var_78_7 = {}
+	slot9 = {}
 
-	table.insert(var_78_7, {
+	table.insert(slot9, {
 		name = "player",
-		char_id = var_0_8.playerChar
+		char_id = uv0.playerChar
 	})
-	table.insert(var_78_7, {
+	table.insert(slot9, {
 		name = "partner",
-		char_id = var_0_8.partnerChar
+		char_id = uv0.partnerChar
 	})
-	table.insert(var_78_7, {
+	table.insert(slot9, {
 		name = "enemy1",
-		char_id = var_0_8.enemy1Char
+		char_id = uv0.enemy1Char
 	})
-	table.insert(var_78_7, {
+
+	slot13 = uv0.enemy2Char
+
+	table.insert(slot9, {
 		name = "enemy2",
-		char_id = var_0_8.enemy2Char
+		char_id = slot13
 	})
 
-	for iter_78_0 = 1, #var_78_7 do
-		local var_78_8 = var_78_7[iter_78_0].char_id
-		local var_78_9 = findTF(arg_78_0.settlementUI, "ad/" .. var_78_7[iter_78_0].name)
-		local var_78_10 = arg_78_0:getCharData(var_78_8, "icon")
-		local var_78_11 = arg_78_0:getCharData(var_78_8, "pos")
+	for slot13 = 1, #slot9 do
+		slot14 = slot9[slot13].char_id
+		slot15 = findTF(slot0.settlementUI, "ad/" .. slot9[slot13].name)
+		slot17 = slot0:getCharData(slot14, "pos")
 
-		GetSpriteFromAtlasAsync("ui/minigameui/" .. var_0_5, var_78_10, function(arg_79_0)
-			local var_79_0 = findTF(var_78_9, "mask/img")
+		GetSpriteFromAtlasAsync("ui/minigameui/" .. uv1, slot0:getCharData(slot14, "icon"), function (slot0)
+			slot1 = findTF(uv0, "mask/img")
 
-			setActive(var_79_0, true)
+			setActive(slot1, true)
 
-			var_79_0.anchoredPosition = var_78_11
+			slot1.anchoredPosition = uv1
 
-			setImageSprite(var_79_0, arg_79_0, true)
+			setImageSprite(slot1, slot0, true)
 		end)
 	end
 end
 
-function var_0_0.OnApplicationPaused(arg_80_0)
-	if not arg_80_0.gameStartFlag then
+function slot0.OnApplicationPaused(slot0)
+	if not slot0.gameStartFlag then
 		return
 	end
 
-	if arg_80_0.readyStartFlag then
+	if slot0.readyStartFlag then
 		return
 	end
 
-	if arg_80_0.settlementFlag then
+	if slot0.settlementFlag then
 		return
 	end
 
-	if isActive(arg_80_0.pauseUI) or isActive(arg_80_0.leaveUI) then
+	if isActive(slot0.pauseUI) or isActive(slot0.leaveUI) then
 		return
 	end
 
-	if not isActive(arg_80_0.pauseUI) then
-		setActive(arg_80_0.pauseUI, true)
+	if not isActive(slot0.pauseUI) then
+		setActive(slot0.pauseUI, true)
 	end
 
-	arg_80_0:stopGame()
+	slot0:stopGame()
 end
 
-function var_0_0.controllerClear(arg_81_0)
-	arg_81_0.judgesController:clear()
-	arg_81_0.charController:clear()
+function slot0.controllerClear(slot0)
+	slot0.judgesController:clear()
+	slot0.charController:clear()
 end
 
-function var_0_0.resumeGame(arg_82_0)
-	arg_82_0.gameStop = false
+function slot0.resumeGame(slot0)
+	slot0.gameStop = false
 
-	setActive(arg_82_0.leaveUI, false)
-	arg_82_0:changeSpeed(1)
-	arg_82_0:timerStart()
+	setActive(slot0.leaveUI, false)
+	slot0:changeSpeed(1)
+	slot0:timerStart()
 end
 
-function var_0_0.stopGame(arg_83_0)
-	arg_83_0.gameStop = true
+function slot0.stopGame(slot0)
+	slot0.gameStop = true
 
-	arg_83_0:timerStop()
-	arg_83_0:changeSpeed(0)
+	slot0:timerStop()
+	slot0:changeSpeed(0)
 end
 
-function var_0_0.onBackPressed(arg_84_0)
-	if arg_84_0.readyStartFlag then
+function slot0.onBackPressed(slot0)
+	if slot0.readyStartFlag then
 		return
 	end
 
-	if not arg_84_0.gameStartFlag then
-		arg_84_0:emit(var_0_0.ON_BACK_PRESSED)
+	if not slot0.gameStartFlag then
+		slot0:emit(uv0.ON_BACK_PRESSED)
 	else
-		if arg_84_0.settlementFlag then
+		if slot0.settlementFlag then
 			return
 		end
 
-		if isActive(arg_84_0.pauseUI) then
-			setActive(arg_84_0.pauseUI, false)
+		if isActive(slot0.pauseUI) then
+			setActive(slot0.pauseUI, false)
 		end
 
-		arg_84_0:stopGame()
-		setActive(arg_84_0.leaveUI, true)
+		slot0:stopGame()
+		setActive(slot0.leaveUI, true)
 	end
 end
 
-function var_0_0.willExit(arg_85_0)
-	if arg_85_0.handle then
-		UpdateBeat:RemoveListener(arg_85_0.handle)
+function slot0.willExit(slot0)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 
-	if arg_85_0._tf and LeanTween.isTweening(go(arg_85_0._tf)) then
-		LeanTween.cancel(go(arg_85_0._tf))
+	if slot0._tf and LeanTween.isTweening(go(slot0._tf)) then
+		LeanTween.cancel(go(slot0._tf))
 	end
 
-	arg_85_0:destroyController()
+	slot0:destroyController()
 
-	if arg_85_0.timer and arg_85_0.timer.running then
-		arg_85_0.timer:Stop()
+	if slot0.timer and slot0.timer.running then
+		slot0.timer:Stop()
 	end
 
-	arg_85_0.scrollRect.onValueChanged:RemoveAllListeners()
+	slot0.scrollRect.onValueChanged:RemoveAllListeners()
 
 	Time.timeScale = 1
-	arg_85_0.timer = nil
+	slot0.timer = nil
 end
 
-function var_0_0.destroyController(arg_86_0)
-	return
+function slot0.destroyController(slot0)
 end
 
-return var_0_0
+return slot0

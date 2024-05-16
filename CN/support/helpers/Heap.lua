@@ -1,57 +1,61 @@
-﻿local var_0_0 = class("Heap")
+slot0 = class("Heap")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.array = arg_1_1
-	arg_1_0.func = arg_1_2
-	arg_1_0.values = underscore.map(arg_1_1, function(arg_2_0)
-		return arg_1_2(arg_1_1)
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.array = slot1
+	slot0.func = slot2
+	slot0.values = underscore.map(slot1, function (slot0)
+		return uv0(uv1)
 	end)
 
-	for iter_1_0 = math.floor(#arg_1_0.array / 2), 1, -1 do
-		arg_1_0:Dive(iter_1_0)
+	for slot6 = math.floor(#slot0.array / 2), 1, -1 do
+		slot0:Dive(slot6)
 	end
 end
 
-function var_0_0.Float(arg_3_0, arg_3_1)
-	local var_3_0 = math.floor(arg_3_1 / 2)
+function slot0.Float(slot0, slot1)
+	slot2 = math.floor(slot1 / 2)
 
-	while var_3_0 > 0 and arg_3_0.values[arg_3_1] < arg_3_0.values[var_3_0] do
-		arg_3_0.array[var_3_0], arg_3_0.array[arg_3_1] = arg_3_0.array[arg_3_1], arg_3_0.array[var_3_0]
-		arg_3_0.values[var_3_0], arg_3_0.values[arg_3_1] = arg_3_0.values[arg_3_1], arg_3_0.values[var_3_0]
-		arg_3_1, var_3_0 = var_3_0, math.floor(var_3_0 / 2)
+	while slot2 > 0 and slot0.values[slot1] < slot0.values[slot2] do
+		slot0.array[slot1] = slot0.array[slot2]
+		slot0.array[slot2] = slot0.array[slot1]
+		slot0.values[slot1] = slot0.values[slot2]
+		slot0.values[slot2] = slot0.values[slot1]
+		slot2 = math.floor(slot2 / 2)
+		slot1 = slot2
 	end
 end
 
-function var_0_0.Dive(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1 + arg_4_1
-	local var_4_1 = var_4_0 + (var_4_0 < #arg_4_0.array and arg_4_0.values[var_4_0 + 1] < arg_4_0.values[var_4_0] and 1 or 0)
+function slot0.Dive(slot0, slot1)
+	slot2 = slot2 + (slot1 + slot1 < #slot0.array and slot0.values[slot2 + 1] < slot0.values[slot2] and 1 or 0)
 
-	while var_4_1 <= #arg_4_0.array and arg_4_0.values[var_4_1] < arg_4_0.values[arg_4_1] do
-		arg_4_0.array[var_4_1], arg_4_0.array[arg_4_1] = arg_4_0.array[arg_4_1], arg_4_0.array[var_4_1]
-		arg_4_0.values[var_4_1], arg_4_0.values[arg_4_1] = arg_4_0.values[arg_4_1], arg_4_0.values[var_4_1]
-		arg_4_1, var_4_1 = var_4_1, var_4_1 + var_4_1
-		var_4_1 = var_4_1 + (var_4_1 < #arg_4_0.array and arg_4_0.values[var_4_1 + 1] < arg_4_0.values[var_4_1] and 1 or 0)
+	while slot2 <= #slot0.array and slot0.values[slot2] < slot0.values[slot1] do
+		slot0.array[slot1] = slot0.array[slot2]
+		slot0.array[slot2] = slot0.array[slot1]
+		slot0.values[slot1] = slot0.values[slot2]
+		slot0.values[slot2] = slot0.values[slot1]
+		slot1 = slot2
+		slot2 = slot2 + (slot2 + slot2 < #slot0.array and slot0.values[slot2 + 1] < slot0.values[slot2] and 1 or 0)
 	end
 end
 
-function var_0_0.POP(arg_5_0)
-	assert(#arg_5_0.array == #arg_5_0.values)
+function slot0.POP(slot0)
+	assert(#slot0.array == #slot0.values)
 
-	arg_5_0.array[1], arg_5_0.array[#arg_5_0.array] = arg_5_0.array[#arg_5_0.array], arg_5_0.array[1]
-	arg_5_0.values[1], arg_5_0.values[#arg_5_0.values] = arg_5_0.values[#arg_5_0.values], arg_5_0.values[1]
+	slot0.array[#slot0.array] = slot0.array[1]
+	slot0.array[1] = slot0.array[#slot0.array]
+	slot0.values[#slot0.values] = slot0.values[1]
+	slot0.values[1] = slot0.values[#slot0.values]
 
-	local var_5_0 = table.remove(arg_5_0.array)
+	table.remove(slot0.values)
+	slot0:Dive(1)
 
-	table.remove(arg_5_0.values)
-	arg_5_0:Dive(1)
-
-	return var_5_0
+	return table.remove(slot0.array)
 end
 
-function var_0_0.PUSH(arg_6_0, arg_6_1)
-	table.insert(arg_6_0.array, arg_6_1)
-	table.insert(arg_6_0.values, arg_6_0.func(arg_6_1))
-	arg_6_0:Float(#arg_6_0.array)
+function slot0.PUSH(slot0, slot1)
+	table.insert(slot0.array, slot1)
+	table.insert(slot0.values, slot0.func(slot1))
+	slot0:Float(#slot0.array)
 end
 
-return var_0_0
+return slot0

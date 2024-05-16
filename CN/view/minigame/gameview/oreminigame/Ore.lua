@@ -1,137 +1,131 @@
-﻿local var_0_0 = class("Ore")
+slot0 = class("Ore")
+slot0.TYPE_SMALL = 1
+slot0.TYPE_LA = 2
+slot0.FallTime = 1
 
-var_0_0.TYPE_SMALL = 1
-var_0_0.TYPE_LA = 2
-var_0_0.FallTime = 1
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0.binder = slot1
+	slot0._tf = slot2
+	slot0.collisionMgr = slot3
+	slot0.id = slot4
+	slot0.config = OreGameConfig.ORE_CONFIG[slot0.id]
+	slot0.startPoint = slot5
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	arg_1_0.binder = arg_1_1
-	arg_1_0._tf = arg_1_2
-	arg_1_0.collisionMgr = arg_1_3
-	arg_1_0.id = arg_1_4
-	arg_1_0.config = OreGameConfig.ORE_CONFIG[arg_1_0.id]
-	arg_1_0.startPoint = arg_1_5
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.AddListener(arg_2_0)
-	arg_2_0.binder:bind(OreGameConfig.EVENT_UPDATE_ORE_TARGET, function(arg_3_0, arg_3_1)
-		if not arg_2_0.isDestroy then
-			setActive(findTF(arg_2_0.effectTF, "Frame"), arg_2_0.index == arg_3_1.index)
+function slot0.AddListener(slot0)
+	slot0.binder:bind(OreGameConfig.EVENT_UPDATE_ORE_TARGET, function (slot0, slot1)
+		if not uv0.isDestroy then
+			setActive(findTF(uv0.effectTF, "Frame"), uv0.index == slot1.index)
 		end
 
-		arg_2_0.isTarget = arg_2_0.index == arg_3_1.index
+		uv0.isTarget = uv0.index == slot1.index
 	end)
-	arg_2_0.binder:bind(OreGameConfig.EVENT_CHECK_CARRY, function(arg_4_0, arg_4_1)
-		if not arg_2_0.isDestroy and arg_2_0.isTarget then
-			if arg_4_1.weight + arg_2_0.config.weight > OreGameConfig.MAX_WEIGHT then
-				setActive(findTF(arg_2_0.effectTF, "Limit"), true)
-				setActive(findTF(arg_2_0.effectTF, "Full"), true)
+	slot0.binder:bind(OreGameConfig.EVENT_CHECK_CARRY, function (slot0, slot1)
+		if not uv0.isDestroy and uv0.isTarget then
+			if OreGameConfig.MAX_WEIGHT < slot1.weight + uv0.config.weight then
+				setActive(findTF(uv0.effectTF, "Limit"), true)
+				setActive(findTF(uv0.effectTF, "Full"), true)
 			else
-				arg_2_0.binder:emit(OreGameConfig.EVENT_DO_CARRY, {
-					weight = arg_2_0.config.weight,
-					point = arg_2_0.config.score,
-					type = arg_2_0.config.type
+				uv0.binder:emit(OreGameConfig.EVENT_DO_CARRY, {
+					weight = uv0.config.weight,
+					point = uv0.config.score,
+					type = uv0.config.type
 				})
-				arg_2_0.animator:Play("Vanish")
-				arg_2_0.collisionMgr:RemoveOreObject(arg_2_0.index, arg_2_0)
+				uv0.animator:Play("Vanish")
+				uv0.collisionMgr:RemoveOreObject(uv0.index, uv0)
 			end
 		end
 	end)
 end
 
-function var_0_0.AddDftAniEvent(arg_5_0)
-	findTF(arg_5_0._tf, "main"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg_5_0:Destroy()
+function slot0.AddDftAniEvent(slot0)
+	findTF(slot0._tf, "main"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		uv0:Destroy()
 	end)
-	findTF(arg_5_0._tf, "main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		arg_5_0:Destroy()
+	findTF(slot0._tf, "main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		uv0:Destroy()
 	end)
-	findTF(arg_5_0.effectTF, "Limit"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(findTF(arg_5_0.effectTF, "Limit"), false)
+	findTF(slot0.effectTF, "Limit"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(findTF(uv0.effectTF, "Limit"), false)
 	end)
-	findTF(arg_5_0.effectTF, "Full"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(findTF(arg_5_0.effectTF, "Full"), false)
-	end)
-end
-
-function var_0_0.Init(arg_10_0)
-	setAnchoredPosition(arg_10_0._tf, arg_10_0.startPoint)
-
-	arg_10_0.effectTF = findTF(arg_10_0._tf, "effect")
-	arg_10_0.animator = findTF(arg_10_0._tf, "main/Image"):GetComponent(typeof(Animator))
-	arg_10_0.index = arg_10_0._tf.name
-	arg_10_0.endPoint = findTF(arg_10_0._tf.parent.parent, "pos/" .. arg_10_0._tf.name).anchoredPosition
-
-	local var_10_0 = math.random() > 0.5 and -10 or 10
-
-	arg_10_0.centerPoint = Vector2(arg_10_0.startPoint.x + var_10_0, arg_10_0.startPoint.y + 80)
-	arg_10_0.time = 0
-	arg_10_0.isFallEnd = false
-	arg_10_0.isTarget = false
-
-	arg_10_0:AddListener()
-	arg_10_0:AddDftAniEvent()
-	arg_10_0._tf:Find("main"):GetComponent(typeof(Animator)):Play("Initial")
-	arg_10_0._tf:Find("main/Image"):GetComponent(typeof(Animator)):Play("Fall")
-	eachChild(arg_10_0.effectTF, function(arg_11_0)
-		setActive(arg_11_0, false)
+	findTF(slot0.effectTF, "Full"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(findTF(uv0.effectTF, "Full"), false)
 	end)
 end
 
-function var_0_0.FallEnd(arg_12_0)
-	arg_12_0.animator:Play("Spawn")
+function slot0.Init(slot0)
+	setAnchoredPosition(slot0._tf, slot0.startPoint)
 
-	arg_12_0.isFallEnd = true
+	slot0.effectTF = findTF(slot0._tf, "effect")
+	slot0.animator = findTF(slot0._tf, "main/Image"):GetComponent(typeof(Animator))
+	slot0.index = slot0._tf.name
+	slot0.endPoint = findTF(slot0._tf.parent.parent, "pos/" .. slot0._tf.name).anchoredPosition
+	slot0.centerPoint = Vector2(slot0.startPoint.x + (math.random() > 0.5 and -10 or 10), slot0.startPoint.y + 80)
+	slot0.time = 0
+	slot0.isFallEnd = false
+	slot0.isTarget = false
 
-	arg_12_0.collisionMgr:AddOreObject(arg_12_0.index, arg_12_0)
+	slot0:AddListener()
+	slot0:AddDftAniEvent()
+	slot0._tf:Find("main"):GetComponent(typeof(Animator)):Play("Initial")
+	slot0._tf:Find("main/Image"):GetComponent(typeof(Animator)):Play("Fall")
+	eachChild(slot0.effectTF, function (slot0)
+		setActive(slot0, false)
+	end)
 end
 
-function var_0_0.PlayBlink(arg_13_0)
-	findTF(arg_13_0._tf, "main"):GetComponent(typeof(Animator)):Play("Blink")
+function slot0.FallEnd(slot0)
+	slot0.animator:Play("Spawn")
+
+	slot0.isFallEnd = true
+
+	slot0.collisionMgr:AddOreObject(slot0.index, slot0)
 end
 
-function var_0_0.Destroy(arg_14_0)
-	if arg_14_0.isDestroy then
+function slot0.PlayBlink(slot0)
+	findTF(slot0._tf, "main"):GetComponent(typeof(Animator)):Play("Blink")
+end
+
+function slot0.Destroy(slot0)
+	if slot0.isDestroy then
 		return
 	end
 
-	arg_14_0.binder:emit(OreGameConfig.EVENT_ORE_DESTROY, {
-		index = arg_14_0.index,
-		id = arg_14_0.id
+	slot0.binder:emit(OreGameConfig.EVENT_ORE_DESTROY, {
+		index = slot0.index,
+		id = slot0.id
 	})
-	arg_14_0.collisionMgr:RemoveOreObject(arg_14_0.index, arg_14_0)
+	slot0.collisionMgr:RemoveOreObject(slot0.index, slot0)
 
-	arg_14_0.isDestroy = true
+	slot0.isDestroy = true
 end
 
-function var_0_0.Dispose(arg_15_0)
-	arg_15_0.isDestroy = true
+function slot0.Dispose(slot0)
+	slot0.isDestroy = true
 end
 
-function var_0_0.OnTimer(arg_16_0, arg_16_1)
-	if arg_16_0.time < var_0_0.FallTime then
-		arg_16_0.time = arg_16_0.time + arg_16_1
+function slot0.OnTimer(slot0, slot1)
+	if slot0.time < uv0.FallTime then
+		slot0.time = slot0.time + slot1
 
-		local var_16_0 = OreGameHelper.GetBeziersPoints(arg_16_0.startPoint, arg_16_0.endPoint, arg_16_0.centerPoint, arg_16_0.time)
-
-		setAnchoredPosition(arg_16_0._tf, var_16_0)
-	elseif not arg_16_0.isFallEnd then
-		arg_16_0:FallEnd()
+		setAnchoredPosition(slot0._tf, OreGameHelper.GetBeziersPoints(slot0.startPoint, slot0.endPoint, slot0.centerPoint, slot0.time))
+	elseif not slot0.isFallEnd then
+		slot0:FallEnd()
 	end
 
-	if arg_16_0.isFallEnd then
-		arg_16_0.time = arg_16_0.time + arg_16_1
+	if slot0.isFallEnd then
+		slot0.time = slot0.time + slot1
 
-		if arg_16_0.time > var_0_0.FallTime + arg_16_0.config.duration then
-			arg_16_0:PlayBlink()
+		if slot0.time > uv0.FallTime + slot0.config.duration then
+			slot0:PlayBlink()
 		end
 	end
 end
 
-function var_0_0.GetAABB(arg_17_0)
-	if arg_17_0.config.size == var_0_0.TYPE_SMALL then
+function slot0.GetAABB(slot0)
+	if slot0.config.size == uv0.TYPE_SMALL then
 		return {
 			{
 				-7,
@@ -156,11 +150,11 @@ function var_0_0.GetAABB(arg_17_0)
 	end
 end
 
-function var_0_0.GetCollisionInfo(arg_18_0)
+function slot0.GetCollisionInfo(slot0)
 	return {
-		pos = arg_18_0._tf.anchoredPosition,
-		aabb = arg_18_0:GetAABB()
+		pos = slot0._tf.anchoredPosition,
+		aabb = slot0:GetAABB()
 	}
 end
 
-return var_0_0
+return slot0

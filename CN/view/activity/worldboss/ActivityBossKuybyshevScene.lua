@@ -1,23 +1,22 @@
-﻿local var_0_0 = class("ActivityBossKuybyshevScene", import(".ActivityBossSceneTemplate"))
+slot0 = class("ActivityBossKuybyshevScene", import(".ActivityBossSceneTemplate"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ActivityBossKuybyshevUI"
 end
 
-function var_0_0.UpdateDropItems(arg_2_0)
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0.contextData.DisplayItems or {}) do
-		local var_2_0 = arg_2_0:findTF("milestone/item", arg_2_0.barList[iter_2_0])
-		local var_2_1 = {
-			type = arg_2_0.contextData.DisplayItems[5 - iter_2_0][1],
-			id = arg_2_0.contextData.DisplayItems[5 - iter_2_0][2],
-			count = arg_2_0.contextData.DisplayItems[5 - iter_2_0][3]
-		}
+function slot0.UpdateDropItems(slot0)
+	for slot4, slot5 in ipairs(slot0.contextData.DisplayItems or {}) do
+		slot6 = slot0:findTF("milestone/item", slot0.barList[slot4])
 
-		updateDrop(var_2_0:GetChild(0), var_2_1)
-		onButton(arg_2_0, var_2_0, function()
-			arg_2_0:emit(var_0_0.ON_DROP, var_2_1)
+		updateDrop(slot6:GetChild(0), {
+			type = slot0.contextData.DisplayItems[5 - slot4][1],
+			id = slot0.contextData.DisplayItems[5 - slot4][2],
+			count = slot0.contextData.DisplayItems[5 - slot4][3]
+		})
+		onButton(slot0, slot6, function ()
+			uv0:emit(uv1.ON_DROP, uv2)
 		end, SFX_PANEL)
 	end
 end
 
-return var_0_0
+return slot0

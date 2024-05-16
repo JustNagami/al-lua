@@ -1,162 +1,154 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.SimpleConnectionMgr = singletonClass("SimpleConnectionMgr")
+slot1 = slot0.SimpleConnectionMgr
+slot2 = createLog("SimpleConnectionMgr", false)
+slot3, slot4 = nil
+slot5 = false
+slot6 = {}
+slot7 = nil
 
-local var_0_0 = pg
+function slot1.Connect(slot0, slot1, slot2, slot3, slot4)
+	uv0.stopTimer()
 
-var_0_0.SimpleConnectionMgr = singletonClass("SimpleConnectionMgr")
+	uv1 = Connection.New(slot1, slot2)
 
-local var_0_1 = var_0_0.SimpleConnectionMgr
-local var_0_2 = createLog("SimpleConnectionMgr", false)
-local var_0_3
-local var_0_4
-local var_0_5 = false
-local var_0_6 = {}
-local var_0_7
+	uv2.UIMgr.GetInstance():LoadingOn()
+	uv1.onConnected:AddListener(function ()
+		uv0.UIMgr.GetInstance():LoadingOff()
+		uv1("Simple Network Connected.")
 
-function var_0_1.Connect(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	var_0_1.stopTimer()
+		uv2 = uv2 or uv0.SendWindow.New(uv3, 0)
 
-	var_0_3 = Connection.New(arg_1_1, arg_1_2)
+		uv4.onData:AddListener(uv2.onData)
 
-	var_0_0.UIMgr.GetInstance():LoadingOn()
-	var_0_3.onConnected:AddListener(function()
-		var_0_0.UIMgr.GetInstance():LoadingOff()
-		var_0_2("Simple Network Connected.")
+		uv5 = true
+		uv6 = false
 
-		var_0_4 = var_0_4 or var_0_0.SendWindow.New(arg_1_0, 0)
-
-		var_0_3.onData:AddListener(var_0_4.onData)
-
-		var_0_5 = true
-		var_0_7 = false
-
-		arg_1_3()
+		uv7()
 	end)
-	var_0_3.onData:AddListener(arg_1_0.onData)
-	var_0_3.onError:AddListener(arg_1_0.onError)
-	var_0_3.onDisconnected:AddListener(arg_1_0.onDisconnected)
+	uv1.onData:AddListener(slot0.onData)
+	uv1.onError:AddListener(slot0.onError)
+	uv1.onDisconnected:AddListener(slot0.onDisconnected)
 
-	var_0_7 = true
+	uv6 = true
 
-	var_0_3:Connect()
+	uv1:Connect()
 
-	arg_1_4 = defaultValue(arg_1_4, SEND_TIMEOUT)
-	var_0_1.timer = Timer.New(function()
-		if not var_0_5 then
-			warning("connect timeout error (custom): " .. arg_1_4)
-			var_0_1.stopTimer()
-			arg_1_0.onDisconnected(false, DISCONNECT_TIME_OUT)
+	uv0.timer = Timer.New(function ()
+		if not uv0 then
+			warning("connect timeout error (custom): " .. uv1)
+			uv2.stopTimer()
+			uv3.onDisconnected(false, DISCONNECT_TIME_OUT)
 
-			if var_0_1.errorCB then
-				var_0_1.errorCB()
+			if uv2.errorCB then
+				uv2.errorCB()
 			end
 		end
-	end, arg_1_4, 1)
+	end, defaultValue(slot4, SEND_TIMEOUT), 1)
 
-	var_0_1.timer:Start()
+	uv0.timer:Start()
 end
 
-function var_0_1.stopTimer()
-	if var_0_1.timer then
-		var_0_1.timer:Stop()
+function slot1.stopTimer()
+	if uv0.timer then
+		uv0.timer:Stop()
 
-		var_0_1.timer = nil
+		uv0.timer = nil
 	end
 end
 
-function var_0_1.onDisconnected(arg_5_0, arg_5_1)
-	var_0_2("Simple Network onDisconnected: " .. tostring(arg_5_0))
+function slot1.onDisconnected(slot0, slot1)
+	uv0("Simple Network onDisconnected: " .. tostring(slot0))
 
-	if var_0_3 then
-		if not arg_5_0 then
-			var_0_3.onDisconnected:RemoveAllListeners()
+	if uv1 then
+		if not slot0 then
+			uv1.onDisconnected:RemoveAllListeners()
 		end
 
-		var_0_3:Dispose()
+		uv1:Dispose()
 
-		var_0_3 = nil
+		uv1 = nil
 	end
 
-	if arg_5_0 then
-		var_0_5 = false
+	if slot0 then
+		uv2 = false
 	end
 
-	if var_0_7 then
-		var_0_0.UIMgr.GetInstance():LoadingOff()
+	if uv3 then
+		uv4.UIMgr.GetInstance():LoadingOff()
 	end
 
-	var_0_7 = false
+	uv3 = false
 end
 
-function var_0_1.onData(arg_6_0)
-	if var_0_6[arg_6_0.cmd] then
-		local var_6_0 = var_0_0.Packer.GetInstance():Unpack(arg_6_0.cmd, arg_6_0:getLuaStringBuffer())
+function slot1.onData(slot0)
+	if uv0[slot0.cmd] then
+		slot5 = slot0
 
-		for iter_6_0, iter_6_1 in ipairs(var_0_6[arg_6_0.cmd]) do
-			iter_6_1(var_6_0)
+		for slot5, slot6 in ipairs(uv0[slot0.cmd]) do
+			slot6(uv1.Packer.GetInstance():Unpack(slot0.cmd, slot0.getLuaStringBuffer(slot5)))
 		end
 	end
 end
 
-function var_0_1.SetErrorCB(arg_7_0, arg_7_1)
-	var_0_1.errorCB = arg_7_1
+function slot1.SetErrorCB(slot0, slot1)
+	uv0.errorCB = slot1
 end
 
-function var_0_1.onError(arg_8_0)
-	var_0_0.UIMgr.GetInstance():LoadingOff()
-	var_0_1.stopTimer()
+function slot1.onError(slot0)
+	uv0.UIMgr.GetInstance():LoadingOff()
+	uv1.stopTimer()
+	uv2("Simple Network Error: " .. tostring(slot0))
 
-	arg_8_0 = tostring(arg_8_0)
+	if uv3 then
+		uv3:Dispose()
 
-	var_0_2("Simple Network Error: " .. arg_8_0)
-
-	if var_0_3 then
-		var_0_3:Dispose()
-
-		var_0_3 = nil
+		uv3 = nil
 	end
 
-	if var_0_7 then
-		var_0_7 = false
+	if uv4 then
+		uv4 = false
 	end
 
-	if var_0_1.errorCB then
-		var_0_1.errorCB()
+	if uv1.errorCB then
+		uv1.errorCB()
 	end
 end
 
-function var_0_1.Send(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5, arg_9_6)
-	if not var_0_5 then
-		warning("Simple Network is not connected. msgid " .. arg_9_1)
+function slot1.Send(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	if not uv0 then
+		warning("Simple Network is not connected. msgid " .. slot1)
 
 		return
 	end
 
-	var_0_4:Queue(arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5, nil, arg_9_6)
+	uv1:Queue(slot1, slot2, slot3, slot4, slot5, nil, slot6)
 end
 
-function var_0_1.setPacketIdx(arg_10_0, arg_10_1)
-	var_0_4:setPacketIdx(arg_10_1)
+function slot1.setPacketIdx(slot0, slot1)
+	uv0:setPacketIdx(slot1)
 end
 
-function var_0_1.On(arg_11_0, arg_11_1, arg_11_2)
-	if var_0_6[arg_11_1] == nil then
-		var_0_6[arg_11_1] = {}
+function slot1.On(slot0, slot1, slot2)
+	if uv0[slot1] == nil then
+		uv0[slot1] = {}
 	end
 
-	table.insert(var_0_6[arg_11_1], arg_11_2)
+	table.insert(uv0[slot1], slot2)
 end
 
-function var_0_1.Off(arg_12_0, arg_12_1, arg_12_2)
-	if var_0_6[arg_12_1] == nil then
+function slot1.Off(slot0, slot1, slot2)
+	if uv0[slot1] == nil then
 		return
 	end
 
-	if arg_12_2 == nil then
-		var_0_6[arg_12_1] = nil
+	if slot2 == nil then
+		uv0[slot1] = nil
 	else
-		for iter_12_0, iter_12_1 in ipairs(var_0_6[arg_12_1]) do
-			if iter_12_1 == arg_12_2 then
-				table.remove(var_0_6[arg_12_1], iter_12_0)
+		for slot6, slot7 in ipairs(uv0[slot1]) do
+			if slot7 == slot2 then
+				table.remove(uv0[slot1], slot6)
 
 				break
 			end
@@ -164,45 +156,43 @@ function var_0_1.Off(arg_12_0, arg_12_1, arg_12_2)
 	end
 end
 
-function var_0_1.Disconnect(arg_13_0)
-	var_0_6 = {}
+function slot1.Disconnect(slot0)
+	uv0 = {}
 
-	var_0_2("Simple Network Disconnect !!!")
+	uv1("Simple Network Disconnect !!!")
 
-	if var_0_3 then
-		var_0_3:Dispose()
+	if uv2 then
+		uv2:Dispose()
 
-		var_0_3 = nil
+		uv2 = nil
 	end
 
-	var_0_4 = nil
-	var_0_5 = false
+	uv3 = nil
+	uv4 = false
 end
 
-function var_0_1.Reconnect(arg_14_0, arg_14_1)
-	arg_14_0:Disconnect()
+function slot1.Reconnect(slot0, slot1)
+	slot0:Disconnect()
 
-	if var_0_1.errorCB then
-		var_0_1.errorCB()
+	if uv0.errorCB then
+		uv0.errorCB()
 	end
 end
 
-function var_0_1.resetHBTimer(arg_15_0)
-	return
+function slot1.resetHBTimer(slot0)
 end
 
-function var_0_1.getConnection(arg_16_0)
-	return var_0_3
+function slot1.getConnection(slot0)
+	return uv0
 end
 
-function var_0_1.isConnecting(arg_17_0)
-	return var_0_7
+function slot1.isConnecting(slot0)
+	return uv0
 end
 
-function var_0_1.isConnected(arg_18_0)
-	return var_0_5
+function slot1.isConnected(slot0)
+	return uv0
 end
 
-function var_0_1.SwitchProxy(arg_19_0)
-	return
+function slot1.SwitchProxy(slot0)
 end

@@ -1,23 +1,20 @@
-﻿local var_0_0 = class("SummerRemakePage", import(".TemplatePage.PreviewTemplatePage"))
+slot0 = class("SummerRemakePage", import(".TemplatePage.PreviewTemplatePage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	var_0_0.super.OnFirstFlush(arg_2_0)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
 end
 
-function var_0_0.OnDataSetting(arg_3_0)
-	return
+function slot0.OnDataSetting(slot0)
 end
 
-function var_0_0.OnUpdateFlush(arg_4_0)
-	return
+function slot0.OnUpdateFlush(slot0)
 end
 
-function var_0_0.OnDestroy(arg_5_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

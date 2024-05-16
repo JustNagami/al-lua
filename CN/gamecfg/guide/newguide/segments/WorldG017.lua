@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "WorldG017",
 	events = {
 		{
@@ -9,7 +9,7 @@
 		},
 		{
 			alpha = 0,
-			doFunc = function()
+			doFunc = function ()
 				WorldConst.GuideEnemyEnd = true
 			end
 		},
@@ -85,7 +85,7 @@
 		},
 		{
 			alpha = 0,
-			doFunc = function()
+			doFunc = function ()
 				WorldConst.GuideEnemyEnd = false
 			end
 		}

@@ -1,41 +1,37 @@
-﻿local var_0_0 = class("AssignedShipScene", import(".BaseAssignedShipScene"))
+slot0 = class("AssignedShipScene", import(".BaseAssignedShipScene"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "AssignedShipUI"
 end
 
-function var_0_0.init(arg_2_0)
-	var_0_0.super.init(arg_2_0)
+function slot0.init(slot0)
+	uv0.super.init(slot0)
 
-	arg_2_0.scrollrect = arg_2_0:findTF("layer/select_panel")
-	arg_2_0.rightBtn = arg_2_0:findTF("layer/right")
-	arg_2_0.leftBtn = arg_2_0:findTF("layer/left")
+	slot0.scrollrect = slot0:findTF("layer/select_panel")
+	slot0.rightBtn = slot0:findTF("layer/right")
+	slot0.leftBtn = slot0:findTF("layer/left")
 end
 
-function var_0_0.didEnter(arg_3_0)
-	var_0_0.super.didEnter(arg_3_0)
+function slot0.didEnter(slot0)
+	uv0.super.didEnter(slot0)
 
-	arg_3_0.isZero = true
-	arg_3_0.isOne = false
+	slot0.isZero = true
+	slot0.isOne = false
 
-	onScroll(arg_3_0, arg_3_0.scrollrect, function(arg_4_0)
-		local var_4_0 = Mathf.Clamp01(arg_4_0.x)
-		local var_4_1 = arg_3_0.isZero
-		local var_4_2 = arg_3_0.isOne
+	onScroll(slot0, slot0.scrollrect, function (slot0)
+		uv0.isZero = Mathf.Clamp01(slot0.x) - 0.0001 <= 0
+		uv0.isOne = slot1 + 0.0001 >= 1
 
-		arg_3_0.isZero = var_4_0 - 0.0001 <= 0
-		arg_3_0.isOne = var_4_0 + 0.0001 >= 1
-
-		if var_4_1 ~= arg_3_0.isZero or var_4_2 ~= arg_3_0.isOne then
-			arg_3_0:UpdateArr()
+		if uv0.isZero ~= uv0.isZero or uv0.isOne ~= uv0.isOne then
+			uv0:UpdateArr()
 		end
 	end)
-	arg_3_0:UpdateArr()
+	slot0:UpdateArr()
 end
 
-function var_0_0.UpdateArr(arg_5_0)
-	setActive(arg_5_0.rightBtn, not arg_5_0.isZero)
-	setActive(arg_5_0.leftBtn, not arg_5_0.isOne)
+function slot0.UpdateArr(slot0)
+	setActive(slot0.rightBtn, not slot0.isZero)
+	setActive(slot0.leftBtn, not slot0.isOne)
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.item_data_frame = {
 	[0] = {
 		time_limit_type = 0,
@@ -441,6 +441,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>「跨越冰山，穿越雪原，定义自我，见证未来。」</color>\n「雪境迷踪」活动获取",
 		scene = {}
 	},
+	[330] = {
+		time_limit_type = 0,
+		name = "幻梦守护者 ",
+		gain_by = "",
+		id = 330,
+		time_second = 0,
+		desc = "通过后续活动获得",
+		scene = {}
+	},
 	[401] = {
 		time_limit_type = 0,
 		name = "殿堂纪念：企业",
@@ -734,6 +743,7 @@ pg.item_data_frame = {
 		327,
 		328,
 		329,
+		330,
 		401,
 		402,
 		404,

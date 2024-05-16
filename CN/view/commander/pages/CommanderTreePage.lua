@@ -1,71 +1,68 @@
-﻿local var_0_0 = class("CommanderTreePage", import("...base.BaseSubView"))
+slot0 = class("CommanderTreePage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderTreeUI"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.treePanel = arg_2_0._tf
-	arg_2_0.treeList = UIItemList.New(arg_2_0:findTF("bg/frame/bg/talents", arg_2_0.treePanel), arg_2_0:findTF("bg/frame/bg/talents/telent", arg_2_0.treePanel))
-	arg_2_0.treeTalentDesTxt = arg_2_0.treePanel:Find("bg/frame/bg/desc/Text"):GetComponent(typeof(Text))
-	arg_2_0.treePanelCloseBtn = arg_2_0:findTF("bg/frame/close_btn", arg_2_0.treePanel)
+function slot0.OnInit(slot0)
+	slot0.treePanel = slot0._tf
+	slot0.treeList = UIItemList.New(slot0:findTF("bg/frame/bg/talents", slot0.treePanel), slot0:findTF("bg/frame/bg/talents/telent", slot0.treePanel))
+	slot0.treeTalentDesTxt = slot0.treePanel:Find("bg/frame/bg/desc/Text"):GetComponent(typeof(Text))
+	slot0.treePanelCloseBtn = slot0:findTF("bg/frame/close_btn", slot0.treePanel)
 
-	setActive(arg_2_0.treePanel, false)
-	onButton(arg_2_0, arg_2_0.treePanel, function()
-		arg_2_0:closeTreePanel()
+	setActive(slot0.treePanel, false)
+	onButton(slot0, slot0.treePanel, function ()
+		uv0:closeTreePanel()
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.treePanelCloseBtn, function()
-		arg_2_0:closeTreePanel()
+	onButton(slot0, slot0.treePanelCloseBtn, function ()
+		uv0:closeTreePanel()
 	end, SFX_PANEL)
-	setText(arg_2_0._tf:Find("Text"), i18n("commander_choice_talent_4"))
+	setText(slot0._tf:Find("Text"), i18n("commander_choice_talent_4"))
 end
 
-function var_0_0.Show(arg_5_0, arg_5_1, arg_5_2)
-	setActive(arg_5_0.treePanel, true)
-	arg_5_0.treePanel:SetAsLastSibling()
+function slot0.Show(slot0, slot1, slot2)
+	setActive(slot0.treePanel, true)
+	slot0.treePanel:SetAsLastSibling()
 
-	local function var_5_0(arg_6_0)
-		arg_5_0.treeTalentDesTxt.text = arg_6_0:getConfig("desc")
+	function slot3(slot0)
+		uv0.treeTalentDesTxt.text = slot0:getConfig("desc")
 	end
 
-	local var_5_1 = arg_5_1:getTalentList()
-
-	arg_5_0.treeList:make(function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_7_0 == UIItemList.EventUpdate then
-			local var_7_0 = CommanderTalent.New({
+	slot0.treeList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = CommanderTalent.New({
 				origin = false,
-				id = var_5_1[arg_7_1 + 1]
+				id = uv0[slot1 + 1]
 			})
 
-			onToggle(arg_5_0, arg_7_2, function(arg_8_0)
-				if arg_8_0 then
-					var_5_0(var_7_0)
+			onToggle(uv1, slot2, function (slot0)
+				if slot0 then
+					uv0(uv1)
 				end
 			end, SFX_PANEL)
-			setText(arg_7_2:Find("name"), var_7_0:getConfig("name"))
-			triggerToggle(arg_7_2, arg_5_1.id == var_7_0.id)
-			setActive(arg_7_2:Find("curr"), arg_5_1.id == var_7_0.id)
-			setActive(arg_7_2:Find("arr"), arg_7_1 ~= #var_5_1 - 1)
-			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var_7_0:getConfig("icon"), "", arg_7_2)
+			setText(slot2:Find("name"), slot3:getConfig("name"))
+			triggerToggle(slot2, uv3.id == slot3.id)
+			setActive(slot2:Find("curr"), uv3.id == slot3.id)
+			setActive(slot2:Find("arr"), slot1 ~= #uv0 - 1)
+			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot3:getConfig("icon"), "", slot2)
 		end
 	end)
-	arg_5_0.treeList:align(#var_5_1)
-	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf, false, {
-		weight = arg_5_2 or LayerWeightConst.SECOND_LAYER
+	slot0.treeList:align(#slot1:getTalentList())
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+		weight = slot2 or LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function var_0_0.Hide(arg_9_0)
-	arg_9_0:closeTreePanel()
+function slot0.Hide(slot0)
+	slot0:closeTreePanel()
 end
 
-function var_0_0.closeTreePanel(arg_10_0)
-	setActive(arg_10_0.treePanel, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf, arg_10_0._parentTf)
+function slot0.closeTreePanel(slot0)
+	setActive(slot0.treePanel, false)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

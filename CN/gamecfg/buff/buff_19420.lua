@@ -1,77 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 19420,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					1
-				},
-				label = {
-					"MG",
-					"AP"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 19420,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					1
-				},
-				label = {
-					"MG",
-					"CM"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 19421,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					1
-				},
-				label = {
-					"MG",
-					"HE"
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 19422,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					1
-				},
-				type = {
-					11
-				}
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -262,5 +189,78 @@
 	stack = 1,
 	id = 19420,
 	icon = 19420,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 19420,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					1
+				},
+				label = {
+					"MG",
+					"AP"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 19420,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					1
+				},
+				label = {
+					"MG",
+					"CM"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 19421,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					1
+				},
+				label = {
+					"MG",
+					"HE"
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 19422,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					1
+				},
+				type = {
+					11
+				}
+			}
+		}
+	}
 }

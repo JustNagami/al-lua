@@ -1,11 +1,10 @@
-﻿local var_0_0 = class("VoteScene", import("..base.BaseUI"))
-
-var_0_0.ShipIndex = {
+slot0 = class("VoteScene", import("..base.BaseUI"))
+slot0.ShipIndex = {
 	typeIndex = ShipIndexConst.TypeAll,
 	campIndex = ShipIndexConst.CampAll,
 	rarityIndex = ShipIndexConst.RarityAll
 }
-var_0_0.ShipIndexData = {
+slot0.ShipIndexData = {
 	customPanels = {
 		typeIndex = {
 			blueSeleted = true,
@@ -54,39 +53,37 @@ var_0_0.ShipIndexData = {
 	}
 }
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "VoteUI"
 end
 
-function var_0_0.LoadUIFromPool(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0.contextData.voteGroup
-	local var_2_1
-	local var_2_2 = var_2_0:isFinalsRace() and "VoteUIForFinal" or var_2_0:isResurrectionRace() and "VoteUIForResurrection" or var_2_0:IsFunMetaRace() and "VoteUIForMeta" or var_2_0:IsFunSireRace() and "VoteUIForSire" or var_2_0:IsFunKidRace() and "VoteUIForKid" or "VoteUI"
+function slot0.LoadUIFromPool(slot0, slot1, slot2)
+	slot4 = nil
 
-	var_0_0.super.LoadUIFromPool(arg_2_0, var_2_2, arg_2_2)
+	uv0.super.LoadUIFromPool(slot0, slot0.contextData.voteGroup:isFinalsRace() and "VoteUIForFinal" or slot3:isResurrectionRace() and "VoteUIForResurrection" or slot3:IsFunMetaRace() and "VoteUIForMeta" or slot3:IsFunSireRace() and "VoteUIForSire" or slot3:IsFunKidRace() and "VoteUIForKid" or "VoteUI", slot2)
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.title = arg_3_0:findTF("main/right_panel/title/main"):GetComponent(typeof(Text))
-	arg_3_0.titleBg1 = arg_3_0:findTF("main/right_panel/title/title_bg1")
-	arg_3_0.titleBg2 = arg_3_0:findTF("main/right_panel/title/title_bg2")
-	arg_3_0.titleBg3 = arg_3_0:findTF("main/right_panel/title/title_bg3")
-	arg_3_0.subTitle = arg_3_0:findTF("main/right_panel/title/Text"):GetComponent(typeof(Text))
-	arg_3_0.tagtimeTF = arg_3_0:findTF("main/right_panel/title/main/sub"):GetComponent(typeof(Text))
-	arg_3_0.backBtn = arg_3_0:findTF("blur_panel/adapt/top/back_btn")
-	arg_3_0.helpBtn = arg_3_0:findTF("main/right_panel/title/help")
-	arg_3_0.filterBtn = arg_3_0:findTF("main/right_panel/filter_bg/filter_btn")
-	arg_3_0.filterSel = arg_3_0:findTF("main/right_panel/filter_bg/filter_btn/Image")
-	arg_3_0.scheduleBtn = arg_3_0:findTF("main/right_panel/title/schedule")
-	arg_3_0.awardBtn = arg_3_0:findTF("main/right_panel/filter_bg/award_btn")
-	arg_3_0.ticketBtn = arg_3_0:findTF("main/right_panel/filter_bg/ticket")
-	arg_3_0.numberTxt = arg_3_0:findTF("main/right_panel/filter_bg/Text"):GetComponent(typeof(Text))
-	arg_3_0.search = arg_3_0:findTF("main/right_panel/filter_bg/search")
+function slot0.init(slot0)
+	slot0.title = slot0:findTF("main/right_panel/title/main"):GetComponent(typeof(Text))
+	slot0.titleBg1 = slot0:findTF("main/right_panel/title/title_bg1")
+	slot0.titleBg2 = slot0:findTF("main/right_panel/title/title_bg2")
+	slot0.titleBg3 = slot0:findTF("main/right_panel/title/title_bg3")
+	slot0.subTitle = slot0:findTF("main/right_panel/title/Text"):GetComponent(typeof(Text))
+	slot0.tagtimeTF = slot0:findTF("main/right_panel/title/main/sub"):GetComponent(typeof(Text))
+	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
+	slot0.helpBtn = slot0:findTF("main/right_panel/title/help")
+	slot0.filterBtn = slot0:findTF("main/right_panel/filter_bg/filter_btn")
+	slot0.filterSel = slot0:findTF("main/right_panel/filter_bg/filter_btn/Image")
+	slot0.scheduleBtn = slot0:findTF("main/right_panel/title/schedule")
+	slot0.awardBtn = slot0:findTF("main/right_panel/filter_bg/award_btn")
+	slot0.ticketBtn = slot0:findTF("main/right_panel/filter_bg/ticket")
+	slot0.numberTxt = slot0:findTF("main/right_panel/filter_bg/Text"):GetComponent(typeof(Text))
+	slot0.search = slot0:findTF("main/right_panel/filter_bg/search")
 
-	setText(arg_3_0:findTF("main/right_panel/filter_bg/search/hold"), i18n("dockyard_search_holder"))
+	setText(slot0:findTF("main/right_panel/filter_bg/search/hold"), i18n("dockyard_search_holder"))
 end
 
-function var_0_0.GetPageMap(arg_4_0)
+function slot0.GetPageMap(slot0)
 	return {
 		[VoteConst.RACE_TYPE_PRE] = {
 			VotePreRaceShipPage,
@@ -115,202 +112,182 @@ function var_0_0.GetPageMap(arg_4_0)
 	}
 end
 
-function var_0_0.didEnter(arg_5_0)
-	local var_5_0 = arg_5_0:GetPageMap()
-	local var_5_1 = arg_5_0.contextData.voteGroup:getConfig("type")
-	local var_5_2 = var_5_0[var_5_1][1]
-	local var_5_3 = var_5_0[var_5_1][2]
+function slot0.didEnter(slot0)
+	slot1 = slot0:GetPageMap()
+	slot2 = slot0.contextData.voteGroup:getConfig("type")
+	slot0.shipsPage = slot1[slot2][1].New(slot0:findTF("main/right_panel"), slot0.event, slot0.contextData)
 
-	arg_5_0.shipsPage = var_5_2.New(arg_5_0:findTF("main/right_panel"), arg_5_0.event, arg_5_0.contextData)
-
-	arg_5_0.shipsPage:SetCallBack(function(arg_6_0, arg_6_1)
+	slot0.shipsPage:SetCallBack(function (slot0, slot1)
 		seriesAsync({
-			function(arg_7_0)
-				arg_5_0:CheckPaintingRes(arg_6_0, arg_7_0)
+			function (slot0)
+				uv0:CheckPaintingRes(uv1, slot0)
 			end
-		}, function()
-			arg_5_0:OnVote(arg_6_0, arg_6_1)
+		}, function ()
+			uv0:OnVote(uv1, uv2)
 		end)
 	end)
 
-	arg_5_0.rankPage = var_5_3.New(arg_5_0:findTF("main/left_panel"), arg_5_0.event, arg_5_0.contextData)
-	arg_5_0.voteMsgBox = VoteDiaplayPage.New(arg_5_0._tf, arg_5_0.event)
-	arg_5_0.awardWindowPage = VoteAwardWindowPage.New(arg_5_0._tf, arg_5_0.event)
+	slot0.rankPage = slot1[slot2][2].New(slot0:findTF("main/left_panel"), slot0.event, slot0.contextData)
+	slot0.voteMsgBox = VoteDiaplayPage.New(slot0._tf, slot0.event)
+	slot0.awardWindowPage = VoteAwardWindowPage.New(slot0._tf, slot0.event)
 
-	onButton(arg_5_0, arg_5_0.backBtn, function()
-		arg_5_0:closeView()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0.helpBtn, function()
-		local var_10_0 = arg_5_0.contextData.voteGroup:getConfig("help_text")
-
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip[var_10_0].tip
+			helps = pg.gametip[uv0.contextData.voteGroup:getConfig("help_text")].tip
 		})
 	end, SFX_PANEL)
-	setActive(arg_5_0.helpBtn, false)
-	onButton(arg_5_0, arg_5_0.filterBtn, function()
-		local var_11_0 = Clone(var_0_0.ShipIndexData)
+	setActive(slot0.helpBtn, false)
+	onButton(slot0, slot0.filterBtn, function ()
+		slot0 = Clone(uv0.ShipIndexData)
+		slot0.indexDatas = Clone(uv0.ShipIndex)
 
-		var_11_0.indexDatas = Clone(var_0_0.ShipIndex)
+		function slot0.callback(slot0)
+			uv0.ShipIndex.typeIndex = slot0.typeIndex
+			uv0.ShipIndex.rarityIndex = slot0.rarityIndex
+			uv0.ShipIndex.campIndex = slot0.campIndex
 
-		function var_11_0.callback(arg_12_0)
-			var_0_0.ShipIndex.typeIndex = arg_12_0.typeIndex
-			var_0_0.ShipIndex.rarityIndex = arg_12_0.rarityIndex
-			var_0_0.ShipIndex.campIndex = arg_12_0.campIndex
-
-			arg_5_0:initShips()
+			uv1:initShips()
 		end
 
-		arg_5_0:emit(VoteMediator.ON_FILTER, var_11_0)
+		uv1:emit(VoteMediator.ON_FILTER, slot0)
 	end, SFX_PANEL)
-	onInputEndEdit(arg_5_0, arg_5_0.search, function()
-		arg_5_0:initShips()
+	onInputEndEdit(slot0, slot0.search, function ()
+		uv0:initShips()
 	end)
-	onButton(arg_5_0, arg_5_0.scheduleBtn, function()
-		arg_5_0:emit(VoteMediator.ON_SCHEDULE)
+	onButton(slot0, slot0.scheduleBtn, function ()
+		uv0:emit(VoteMediator.ON_SCHEDULE)
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.awardBtn, function()
-		arg_5_0.awardWindowPage:ExecuteAction("Show")
+	onButton(slot0, slot0.awardBtn, function ()
+		uv0.awardWindowPage:ExecuteAction("Show")
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.ticketBtn, function()
-		arg_5_0:emit(VoteMediator.OPEN_EXCHANGE)
+	onButton(slot0, slot0.ticketBtn, function ()
+		uv0:emit(VoteMediator.OPEN_EXCHANGE)
 	end)
-	arg_5_0:updateMainview()
-	arg_5_0:initTitles()
+	slot0:updateMainview()
+	slot0:initTitles()
 end
 
-function var_0_0.CheckPaintingRes(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_1.voteShip:getPainting()
-	local var_17_1 = {}
+function slot0.CheckPaintingRes(slot0, slot1, slot2)
+	slot5 = {}
 
-	for iter_17_0, iter_17_1 in ipairs({
-		var_17_0
+	for slot9, slot10 in ipairs({
+		slot1.voteShip:getPainting()
 	}) do
-		PaintingGroupConst.AddPaintingNameWithFilteMap(var_17_1, iter_17_1)
+		PaintingGroupConst.AddPaintingNameWithFilteMap(slot5, slot10)
 	end
 
 	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = var_17_1,
-		finishFunc = arg_17_2
+		paintingNameList = slot5,
+		finishFunc = slot2
 	})
 end
 
-function var_0_0.OnVote(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0 = arg_18_1.voteShip
-	local var_18_1 = arg_18_0.contextData.voteGroup:GetRank(var_18_0)
-	local var_18_2 = arg_18_0:GetVotes()
+function slot0.OnVote(slot0, slot1, slot2)
+	slot3 = slot1.voteShip
 
-	arg_18_2 = defaultValue(arg_18_2, false)
-
-	arg_18_0.voteMsgBox:ExecuteAction("Open", var_18_0, var_18_1, var_18_2, arg_18_2, function(arg_19_0)
-		if arg_18_0.contextData.voteGroup:GetStage() ~= VoteGroup.VOTE_STAGE then
+	slot0.voteMsgBox:ExecuteAction("Open", slot3, slot0.contextData.voteGroup:GetRank(slot3), slot0:GetVotes(), defaultValue(slot2, false), function (slot0)
+		if uv0.contextData.voteGroup:GetStage() ~= VoteGroup.VOTE_STAGE then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		if arg_19_0 <= var_18_2 then
-			arg_18_0:emit(VoteMediator.ON_VOTE, arg_18_0.contextData.voteGroup.id, var_18_0.group, arg_19_0)
+		if slot0 <= uv1 then
+			uv0:emit(VoteMediator.ON_VOTE, uv0.contextData.voteGroup.id, uv2.group, slot0)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("vote_not_enough"))
 		end
 	end)
 end
 
-function var_0_0.updateMainview(arg_20_0)
-	arg_20_0:initShips()
-	arg_20_0:initRanks()
-	arg_20_0:updateNumber()
+function slot0.updateMainview(slot0)
+	slot0:initShips()
+	slot0:initRanks()
+	slot0:updateNumber()
 end
 
-function var_0_0.initRanks(arg_21_0)
-	arg_21_0.rankPage:ExecuteAction("Update", arg_21_0.contextData.voteGroup)
+function slot0.initRanks(slot0)
+	slot0.rankPage:ExecuteAction("Update", slot0.contextData.voteGroup)
 end
 
-function var_0_0.initShips(arg_22_0)
-	arg_22_0.displays = {}
+function slot0.initShips(slot0)
+	slot0.displays = {}
 
-	local var_22_0 = arg_22_0.contextData.voteGroup:GetRankList()
-	local var_22_1 = getInputText(arg_22_0.search)
-
-	for iter_22_0, iter_22_1 in ipairs(var_22_0) do
-		if var_0_0.ShipIndex.typeIndex == ShipIndexConst.TypeAll and var_0_0.ShipIndex.rarityIndex == ShipIndexConst.RarityAll and var_0_0.ShipIndex.campIndex == ShipIndexConst.CampAll and iter_22_1:IsMatchSearchKey(var_22_1) then
-			table.insert(arg_22_0.displays, iter_22_1)
-		else
-			local var_22_2 = iter_22_1
-
-			if ShipIndexConst.filterByType(var_22_2, var_0_0.ShipIndex.typeIndex) and ShipIndexConst.filterByRarity(var_22_2, var_0_0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCamp(var_22_2, var_0_0.ShipIndex.campIndex) and iter_22_1:IsMatchSearchKey(var_22_1) then
-				table.insert(arg_22_0.displays, iter_22_1)
-			end
+	for slot6, slot7 in ipairs(slot0.contextData.voteGroup:GetRankList()) do
+		if uv0.ShipIndex.typeIndex == ShipIndexConst.TypeAll and uv0.ShipIndex.rarityIndex == ShipIndexConst.RarityAll and uv0.ShipIndex.campIndex == ShipIndexConst.CampAll and slot7:IsMatchSearchKey(getInputText(slot0.search)) then
+			table.insert(slot0.displays, slot7)
+		elseif ShipIndexConst.filterByType(slot7, uv0.ShipIndex.typeIndex) and ShipIndexConst.filterByRarity(slot8, uv0.ShipIndex.rarityIndex) and ShipIndexConst.filterByCamp(slot8, uv0.ShipIndex.campIndex) and slot7:IsMatchSearchKey(slot2) then
+			table.insert(slot0.displays, slot7)
 		end
 	end
 
-	local var_22_3 = arg_22_0:GetVotes()
-
-	arg_22_0.shipsPage:ExecuteAction("Update", arg_22_0.contextData.voteGroup, arg_22_0.displays, var_22_3)
-	setActive(arg_22_0.filterSel, var_0_0.ShipIndex.typeIndex ~= ShipIndexConst.TypeAll or var_0_0.ShipIndex.campIndex ~= ShipIndexConst.CampAll or var_0_0.ShipIndex.rarityIndex ~= ShipIndexConst.RarityAll)
+	slot0.shipsPage:ExecuteAction("Update", slot0.contextData.voteGroup, slot0.displays, slot0:GetVotes())
+	setActive(slot0.filterSel, uv0.ShipIndex.typeIndex ~= ShipIndexConst.TypeAll or uv0.ShipIndex.campIndex ~= ShipIndexConst.CampAll or uv0.ShipIndex.rarityIndex ~= ShipIndexConst.RarityAll)
 end
 
-function var_0_0.initTitles(arg_23_0)
-	arg_23_0.tagtimeTF.text = arg_23_0.contextData.voteGroup:getTimeDesc()
+function slot0.initTitles(slot0)
+	slot0.tagtimeTF.text = slot0.contextData.voteGroup:getTimeDesc()
 
-	if not arg_23_0.contextData.voteGroup:isFinalsRace() then
-		arg_23_0.title.text = arg_23_0.contextData.voteGroup:getConfig("name")
+	if not slot0.contextData.voteGroup:isFinalsRace() then
+		slot0.title.text = slot0.contextData.voteGroup:getConfig("name")
 	end
 
-	arg_23_0.subTitle.text = arg_23_0.contextData.voteGroup:getConfig("desc")
+	slot0.subTitle.text = slot0.contextData.voteGroup:getConfig("desc")
 end
 
-function var_0_0.updateNumber(arg_24_0)
-	arg_24_0.numberTxt.text = "X" .. arg_24_0:GetVotes()
+function slot0.updateNumber(slot0)
+	slot0.numberTxt.text = "X" .. slot0:GetVotes()
 end
 
-function var_0_0.GetVotes(arg_25_0)
-	return (getProxy(VoteProxy):GetVotesByConfigId(arg_25_0.contextData.voteGroup.configId))
+function slot0.GetVotes(slot0)
+	return getProxy(VoteProxy):GetVotesByConfigId(slot0.contextData.voteGroup.configId)
 end
 
-function var_0_0.onBackPressed(arg_26_0)
-	if arg_26_0.voteMsgBox and arg_26_0.voteMsgBox:GetLoaded() and arg_26_0.voteMsgBox:isShowing() then
-		arg_26_0.voteMsgBox:Close()
+function slot0.onBackPressed(slot0)
+	if slot0.voteMsgBox and slot0.voteMsgBox:GetLoaded() and slot0.voteMsgBox:isShowing() then
+		slot0.voteMsgBox:Close()
 
 		return
 	end
 
-	if arg_26_0.awardWindowPage and arg_26_0.awardWindowPage:GetLoaded() and arg_26_0.awardWindowPage:isShowing() then
-		arg_26_0.awardWindowPage:Hide()
+	if slot0.awardWindowPage and slot0.awardWindowPage:GetLoaded() and slot0.awardWindowPage:isShowing() then
+		slot0.awardWindowPage:Hide()
 
 		return
 	end
 
-	arg_26_0:emit(var_0_0.ON_BACK_PRESSED)
+	slot0:emit(uv0.ON_BACK_PRESSED)
 end
 
-function var_0_0.willExit(arg_27_0)
-	if arg_27_0.rankPage then
-		arg_27_0.rankPage:Destroy()
+function slot0.willExit(slot0)
+	if slot0.rankPage then
+		slot0.rankPage:Destroy()
 
-		arg_27_0.rankPage = nil
+		slot0.rankPage = nil
 	end
 
-	if arg_27_0.shipsPage then
-		arg_27_0.shipsPage:Destroy()
+	if slot0.shipsPage then
+		slot0.shipsPage:Destroy()
 
-		arg_27_0.shipsPage = nil
+		slot0.shipsPage = nil
 	end
 
-	if arg_27_0.voteMsgBox then
-		arg_27_0.voteMsgBox:Destroy()
+	if slot0.voteMsgBox then
+		slot0.voteMsgBox:Destroy()
 
-		arg_27_0.voteMsgBox = nil
+		slot0.voteMsgBox = nil
 	end
 
-	if arg_27_0.awardWindowPage then
-		arg_27_0.awardWindowPage:Destroy()
+	if slot0.awardWindowPage then
+		slot0.awardWindowPage:Destroy()
 
-		arg_27_0.awardWindowPage = nil
+		slot0.awardWindowPage = nil
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,17 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发全弹发射-克利夫兰级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发全弹发射-克利夫兰级I",
+	stack = 1,
+	id = 20141,
+	icon = 20100,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,18 +37,5 @@
 				countType = 20140
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发全弹发射-克利夫兰级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发全弹发射-克利夫兰级I",
-	stack = 1,
-	id = 20141,
-	icon = 20100,
-	last_effect = ""
+	}
 }

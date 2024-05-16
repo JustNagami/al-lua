@@ -1,34 +1,32 @@
-﻿local var_0_0 = class("PrayPoolHomeView", import("..base.BaseSubView"))
+slot0 = class("PrayPoolHomeView", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "PrayPoolHomeView"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:initUI()
-	arg_2_0:Show()
+function slot0.OnInit(slot0)
+	slot0:initData()
+	slot0:initUI()
+	slot0:Show()
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.OnBackPress(arg_4_0)
-	return
+function slot0.OnBackPress(slot0)
 end
 
-function var_0_0.initData(arg_5_0)
-	arg_5_0.prayProxy = getProxy(PrayProxy)
+function slot0.initData(slot0)
+	slot0.prayProxy = getProxy(PrayProxy)
 end
 
-function var_0_0.initUI(arg_6_0)
-	arg_6_0.startBtn = arg_6_0:findTF("StartBtn")
+function slot0.initUI(slot0)
+	slot0.startBtn = slot0:findTF("StartBtn")
 
-	onButton(arg_6_0, arg_6_0.startBtn, function()
-		arg_6_0.prayProxy:updatePageState(PrayProxy.STATE_SELECT_POOL)
-		arg_6_0:emit(PrayPoolConst.SWITCH_TO_SELECT_POOL_PAGE, PrayProxy.STATE_SELECT_POOL)
+	onButton(slot0, slot0.startBtn, function ()
+		uv0.prayProxy:updatePageState(PrayProxy.STATE_SELECT_POOL)
+		uv0:emit(PrayPoolConst.SWITCH_TO_SELECT_POOL_PAGE, PrayProxy.STATE_SELECT_POOL)
 	end, SFX_PANEL)
 end
 
-return var_0_0
+return slot0

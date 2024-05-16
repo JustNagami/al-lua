@@ -1,47 +1,44 @@
-﻿local var_0_0 = class("AttachmentSupplyCell", import("view.level.cell.StaticCellView"))
+slot0 = class("AttachmentSupplyCell", import("view.level.cell.StaticCellView"))
 
-function var_0_0.GetOrder(arg_1_0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var_0_0.Update(arg_2_0)
-	local var_2_0 = arg_2_0.info
+function slot0.Update(slot0)
+	slot1 = slot0.info
 
-	if IsNil(arg_2_0.go) then
-		arg_2_0:PrepareBase("supply")
-		arg_2_0:GetLoader():GetPrefab("leveluiview/tpl_supply", "Tpl_Supply", function(arg_3_0)
-			setParent(arg_3_0, arg_2_0.tf)
+	if IsNil(slot0.go) then
+		slot0:PrepareBase("supply")
+		slot0:GetLoader():GetPrefab("leveluiview/tpl_supply", "Tpl_Supply", function (slot0)
+			setParent(slot0, uv0.tf)
 
-			tf(arg_3_0).anchoredPosition3D = Vector3(0, 30, 0)
+			tf(slot0).anchoredPosition3D = Vector3(0, 30, 0)
+			uv0.attachTw = LeanTween.moveY(tf(slot0), 40, 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
+			uv0.supply = slot0
 
-			local var_3_0 = LeanTween.moveY(tf(arg_3_0), 40, 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
-
-			arg_2_0.attachTw = var_3_0.uniqueId
-			arg_2_0.supply = arg_3_0
-
-			arg_2_0:Update()
+			uv0:Update()
 		end)
 	end
 
-	if arg_2_0.supply then
-		setActive(findTF(arg_2_0.supply, "normal"), var_2_0.attachmentId > 0)
-		setActive(findTF(arg_2_0.supply, "empty"), false)
+	if slot0.supply then
+		setActive(findTF(slot0.supply, "normal"), slot1.attachmentId > 0)
+		setActive(findTF(slot0.supply, "empty"), false)
 	end
 
-	setActive(arg_2_0.tf, var_2_0.flag == ChapterConst.CellFlagActive)
+	setActive(slot0.tf, slot1.flag == ChapterConst.CellFlagActive)
 end
 
-function var_0_0.RemoveTween(arg_4_0)
-	if arg_4_0.attachTw then
-		LeanTween.cancel(arg_4_0.attachTw)
+function slot0.RemoveTween(slot0)
+	if slot0.attachTw then
+		LeanTween.cancel(slot0.attachTw)
 	end
 
-	arg_4_0.attachTw = nil
+	slot0.attachTw = nil
 end
 
-function var_0_0.Clear(arg_5_0)
-	arg_5_0:RemoveTween()
-	var_0_0.super.Clear(arg_5_0)
+function slot0.Clear(slot0)
+	slot0:RemoveTween()
+	uv0.super.Clear(slot0)
 end
 
-return var_0_0
+return slot0

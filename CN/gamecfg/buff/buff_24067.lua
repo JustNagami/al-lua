@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 8,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 24067,
+	icon = 17470,
+	last_effect = "",
 	blink = {
 		1,
 		0,
@@ -32,34 +53,13 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_1_0)
+				centerPosFun = function (slot0)
 					return Vector3(3, -1.8, 0.5)
 				end,
-				rotationFun = function(arg_2_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 192, 0)
 				end
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 8,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 24067,
-	icon = 17470,
-	last_effect = ""
+	}
 }

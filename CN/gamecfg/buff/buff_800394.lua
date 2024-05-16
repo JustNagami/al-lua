@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "jinengchufared",
+	color = "yellow",
+	picture = "",
+	desc = "提高伤害",
+	stack = 1,
+	id = 800394,
+	icon = 800390,
+	last_effect = "",
 	blink = {
 		1,
 		0,
@@ -31,25 +51,5 @@
 				skill_id = 800393
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "",
-	init_effect = "jinengchufared",
-	color = "yellow",
-	picture = "",
-	desc = "提高伤害",
-	stack = 1,
-	id = 800394,
-	icon = 800390,
-	last_effect = ""
+	}
 }

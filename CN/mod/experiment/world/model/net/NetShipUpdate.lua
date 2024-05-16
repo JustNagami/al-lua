@@ -1,13 +1,12 @@
-﻿local var_0_0 = class("NetShipUpdate", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("NetShipUpdate", import("....BaseEntity"))
+slot0.Fields = {
 	id = "number",
 	hpRant = "number"
 }
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.hpRant = arg_1_1.hp_rant
+function slot0.Setup(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.hpRant = slot1.hp_rant
 end
 
-return var_0_0
+return slot0

@@ -1,24 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "criDamage",
-				number = 0.05
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -176,5 +156,25 @@
 	id = 110095,
 	picture = "",
 	last_effect = "",
-	desc = "属性提升"
+	desc = "属性提升",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "criDamage",
+				number = 0.05
+			}
+		}
+	}
 }

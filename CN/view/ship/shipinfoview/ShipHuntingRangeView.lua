@@ -1,115 +1,98 @@
-﻿local var_0_0 = class("ShipHuntingRangeView", import("...base.BaseSubView"))
+slot0 = class("ShipHuntingRangeView", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ShipHuntingRangeView"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.huntingRange = arg_2_0._tf
+function slot0.OnInit(slot0)
+	slot0.huntingRange = slot0._tf
 
-	setActive(arg_2_0.huntingRange, false)
+	setActive(slot0.huntingRange, false)
 
-	arg_2_0.curLevel = arg_2_0.huntingRange:Find("frame/current_level")
-	arg_2_0.showLevel = arg_2_0.huntingRange:Find("frame/level/Text")
-	arg_2_0.tips = arg_2_0.huntingRange:Find("frame/tips")
-	arg_2_0.closeBtn = arg_2_0.huntingRange:Find("frame/close_btn")
-	arg_2_0.helpBtn = arg_2_0.huntingRange:Find("frame/help")
-	arg_2_0.cellRoot = arg_2_0.huntingRange:Find("frame/range")
-	arg_2_0.onSelected = false
+	slot0.curLevel = slot0.huntingRange:Find("frame/current_level")
+	slot0.showLevel = slot0.huntingRange:Find("frame/level/Text")
+	slot0.tips = slot0.huntingRange:Find("frame/tips")
+	slot0.closeBtn = slot0.huntingRange:Find("frame/close_btn")
+	slot0.helpBtn = slot0.huntingRange:Find("frame/help")
+	slot0.cellRoot = slot0.huntingRange:Find("frame/range")
+	slot0.onSelected = false
 end
 
-function var_0_0.SetShareData(arg_3_0, arg_3_1)
-	arg_3_0.shareData = arg_3_1
+function slot0.SetShareData(slot0, slot1)
+	slot0.shareData = slot1
 end
 
-function var_0_0.GetShipVO(arg_4_0)
-	if arg_4_0.shareData and arg_4_0.shareData.shipVO then
-		return arg_4_0.shareData.shipVO
+function slot0.GetShipVO(slot0)
+	if slot0.shareData and slot0.shareData.shipVO then
+		return slot0.shareData.shipVO
 	end
 
 	return nil
 end
 
-function var_0_0.DisplayHuntingRange(arg_5_0)
-	arg_5_0.onSelected = true
+function slot0.DisplayHuntingRange(slot0)
+	slot0.onSelected = true
+	slot1 = slot0:GetShipVO()
 
-	local var_5_0 = arg_5_0:GetShipVO()
-
-	setActive(arg_5_0.huntingRange, true)
-	arg_5_0:UpdateHuntingRange(var_5_0, var_5_0:getHuntingLv())
-	setText(arg_5_0.curLevel, "Lv." .. var_5_0:getHuntingLv())
-	setText(arg_5_0.tips, i18n("ship_hunting_level_tips"))
-	onButton(arg_5_0, arg_5_0.closeBtn, function()
-		arg_5_0:HideHuntingRange()
+	setActive(slot0.huntingRange, true)
+	slot0:UpdateHuntingRange(slot1, slot1:getHuntingLv())
+	setText(slot0.curLevel, "Lv." .. slot1:getHuntingLv())
+	setText(slot0.tips, i18n("ship_hunting_level_tips"))
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:HideHuntingRange()
 	end, SFX_CANCEL)
-	onButton(arg_5_0, arg_5_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_shipinfo_hunting.tip
 		})
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():BlurPanel(arg_5_0.huntingRange)
+	pg.UIMgr.GetInstance():BlurPanel(slot0.huntingRange)
 end
 
-function var_0_0.UpdateHuntingRange(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_0.cellRoot
-
-	for iter_8_0 = 0, var_8_0.childCount - 1 do
-		local var_8_1 = var_8_0:GetChild(iter_8_0)
-
-		setActive(arg_8_0:findTF("activate", var_8_1), false)
+function slot0.UpdateHuntingRange(slot0, slot1, slot2)
+	for slot7 = 0, slot0.cellRoot.childCount - 1 do
+		setActive(slot0:findTF("activate", slot3:GetChild(slot7)), false)
 	end
 
-	local var_8_2 = arg_8_1:getHuntingRange(arg_8_2)
-
-	_.each(var_8_2, function(arg_9_0)
-		local var_9_0 = arg_9_0[1]
-		local var_9_1 = arg_9_0[2]
-		local var_9_2 = var_9_0 * 7 + var_9_1 + math.floor(24.5)
-		local var_9_3 = var_8_0:GetChild(var_9_2)
-
-		if var_9_3 and var_9_2 ~= 24 then
-			setActive(arg_8_0:findTF("activate", var_9_3), true)
+	_.each(slot1:getHuntingRange(slot2), function (slot0)
+		if uv0:GetChild(slot0[1] * 7 + slot0[2] + math.floor(24.5)) and slot3 ~= 24 then
+			setActive(uv1:findTF("activate", slot4), true)
 		end
 	end)
 
-	local var_8_3 = arg_8_0.huntingRange:Find("frame/last")
-	local var_8_4 = arg_8_0.huntingRange:Find("frame/next")
+	slot6 = slot0.huntingRange:Find("frame/next")
 
-	setActive(var_8_3, arg_8_2 > 1)
-	setActive(var_8_4, arg_8_2 < #arg_8_1:getConfig("hunting_range"))
-	setText(arg_8_0.showLevel, "Lv." .. arg_8_2)
-	onButton(arg_8_0, var_8_3, function()
-		local var_10_0 = arg_8_2 - 1
-
-		if var_10_0 == 0 then
-			var_10_0 = #arg_8_1:getConfig("hunting_range")
+	setActive(slot0.huntingRange:Find("frame/last"), slot2 > 1)
+	setActive(slot6, slot2 < #slot1:getConfig("hunting_range"))
+	setText(slot0.showLevel, "Lv." .. slot2)
+	onButton(slot0, slot5, function ()
+		if uv0 - 1 == 0 then
+			slot0 = #uv1:getConfig("hunting_range")
 		end
 
-		arg_8_0:UpdateHuntingRange(arg_8_1, var_10_0)
+		uv2:UpdateHuntingRange(uv1, slot0)
 	end, SFX_PANEL)
-	onButton(arg_8_0, var_8_4, function()
-		local var_11_0 = arg_8_2 + 1
-
-		if var_11_0 == #arg_8_1:getConfig("hunting_range") + 1 then
-			var_11_0 = 1
+	onButton(slot0, slot6, function ()
+		if uv0 + 1 == #uv1:getConfig("hunting_range") + 1 then
+			slot0 = 1
 		end
 
-		arg_8_0:UpdateHuntingRange(arg_8_1, var_11_0)
+		uv2:UpdateHuntingRange(uv1, slot0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.HideHuntingRange(arg_12_0)
-	setActive(arg_12_0.huntingRange, false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_12_0.huntingRange, arg_12_0._tf)
+function slot0.HideHuntingRange(slot0)
+	setActive(slot0.huntingRange, false)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0.huntingRange, slot0._tf)
 
-	arg_12_0.onSelected = false
+	slot0.onSelected = false
 end
 
-function var_0_0.OnDestroy(arg_13_0)
-	arg_13_0:HideHuntingRange()
+function slot0.OnDestroy(slot0)
+	slot0:HideHuntingRange()
 
-	arg_13_0.shareData = nil
+	slot0.shareData = nil
 end
 
-return var_0_0
+return slot0

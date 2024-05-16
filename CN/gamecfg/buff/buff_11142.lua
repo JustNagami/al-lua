@@ -1,27 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				target = "TargetSelf",
-				number = -0.2
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onTakeDamage"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -281,5 +258,28 @@
 	stack = 1,
 	id = 11142,
 	icon = 11140,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				target = "TargetSelf",
+				number = -0.2
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onTakeDamage"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	}
 }

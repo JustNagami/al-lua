@@ -1,44 +1,42 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.RepairResMgr = singletonClass("RepairResMgr")
+slot0 = pg.RepairResMgr
+slot0.TYPE_DEFAULT_RES = 2
+slot0.TYPE_L2D = 4
+slot0.TYPE_PAINTING = 8
+slot0.TYPE_CIPHER = 16
 
-local var_0_0 = pg.RepairResMgr
+function slot0.Init(slot0, slot1)
+	PoolMgr.GetInstance():GetUI("RepairUI", true, function (slot0)
+		uv0._go = slot0
+		uv0._tf = uv0._go.transform
 
-var_0_0.TYPE_DEFAULT_RES = 2
-var_0_0.TYPE_L2D = 4
-var_0_0.TYPE_PAINTING = 8
-var_0_0.TYPE_CIPHER = 16
+		uv0._go:SetActive(false)
 
-function var_0_0.Init(arg_1_0, arg_1_1)
-	PoolMgr.GetInstance():GetUI("RepairUI", true, function(arg_2_0)
-		arg_1_0._go = arg_2_0
-		arg_1_0._tf = arg_1_0._go.transform
+		uv0.contentTxt = uv0._tf:Find("window/content/Text"):GetComponent(typeof(Text))
+		uv0.parentTr = pg.UIMgr.GetInstance().OverlayToast
 
-		arg_1_0._go:SetActive(false)
+		uv0._go.transform:SetParent(uv0.parentTr, false)
 
-		arg_1_0.contentTxt = arg_1_0._tf:Find("window/content/Text"):GetComponent(typeof(Text))
-		arg_1_0.parentTr = pg.UIMgr.GetInstance().OverlayToast
-
-		arg_1_0._go.transform:SetParent(arg_1_0.parentTr, false)
-
-		arg_1_0.closeBtn = arg_1_0._tf:Find("window/top/btnBack")
-		arg_1_0.btns = {
-			arg_1_0:InitDefaultResBtn(),
-			arg_1_0:InitL2dBtn(),
-			arg_1_0:InitPaintingBtn(),
-			arg_1_0:InitCipherBtn()
+		uv0.closeBtn = uv0._tf:Find("window/top/btnBack")
+		uv0.btns = {
+			uv0:InitDefaultResBtn(),
+			uv0:InitL2dBtn(),
+			uv0:InitPaintingBtn(),
+			uv0:InitCipherBtn()
 		}
-		arg_1_0.uiItemList = UIItemList.New(arg_1_0._tf:Find("window/buttons"), arg_1_0._tf:Find("window/buttons/custom_button_1"))
+		uv0.uiItemList = UIItemList.New(uv0._tf:Find("window/buttons"), uv0._tf:Find("window/buttons/custom_button_1"))
 
-		setText(arg_1_0._tf:Find("window/top/title"), i18n("msgbox_repair_title"))
-		arg_1_1()
+		setText(uv0._tf:Find("window/top/title"), i18n("msgbox_repair_title"))
+		uv1()
 	end)
 end
 
-function var_0_0.InitDefaultResBtn(arg_3_0)
+function slot0.InitDefaultResBtn(slot0)
 	return {
-		type = var_0_0.TYPE_DEFAULT_RES,
+		type = uv0.TYPE_DEFAULT_RES,
 		text = i18n("msgbox_repair"),
-		onCallback = function()
+		onCallback = function ()
 			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes.csv") then
 				BundleWizard.Inst:GetGroupMgr("DEFAULT_RES"):StartVerifyForLua()
 			else
@@ -48,11 +46,11 @@ function var_0_0.InitDefaultResBtn(arg_3_0)
 	}
 end
 
-function var_0_0.InitL2dBtn(arg_5_0)
+function slot0.InitL2dBtn(slot0)
 	return {
-		type = var_0_0.TYPE_L2D,
+		type = uv0.TYPE_L2D,
 		text = i18n("msgbox_repair_l2d"),
-		onCallback = function()
+		onCallback = function ()
 			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-live2d.csv") then
 				BundleWizard.Inst:GetGroupMgr("L2D"):StartVerifyForLua()
 			else
@@ -62,11 +60,11 @@ function var_0_0.InitL2dBtn(arg_5_0)
 	}
 end
 
-function var_0_0.InitPaintingBtn(arg_7_0)
+function slot0.InitPaintingBtn(slot0)
 	return {
-		type = var_0_0.TYPE_PAINTING,
+		type = uv0.TYPE_PAINTING,
 		text = i18n("msgbox_repair_painting"),
-		onCallback = function()
+		onCallback = function ()
 			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-painting.csv") then
 				BundleWizard.Inst:GetGroupMgr("PAINTING"):StartVerifyForLua()
 			else
@@ -76,11 +74,11 @@ function var_0_0.InitPaintingBtn(arg_7_0)
 	}
 end
 
-function var_0_0.InitCipherBtn(arg_9_0)
+function slot0.InitCipherBtn(slot0)
 	return {
-		type = var_0_0.TYPE_CIPHER,
+		type = uv0.TYPE_CIPHER,
 		text = i18n("msgbox_repair_cipher"),
-		onCallback = function()
+		onCallback = function ()
 			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-cipher.csv") then
 				BundleWizard.Inst:GetGroupMgr("CIPHER"):StartVerifyForLua()
 			else
@@ -90,51 +88,48 @@ function var_0_0.InitCipherBtn(arg_9_0)
 	}
 end
 
-function var_0_0.Repair(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1 or bit.bor(var_0_0.TYPE_DEFAULT_RES, var_0_0.TYPE_L2D, var_0_0.TYPE_PAINTING, var_0_0.TYPE_CIPHER)
-	local var_11_1 = {}
+function slot0.Repair(slot0, slot1)
+	slot3 = {}
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0.btns) do
-		if bit.band(iter_11_1.type, var_11_0) > 0 then
-			table.insert(var_11_1, iter_11_1)
+	for slot7, slot8 in ipairs(slot0.btns) do
+		if bit.band(slot8.type, slot1 or bit.bor(uv0.TYPE_DEFAULT_RES, uv0.TYPE_L2D, uv0.TYPE_PAINTING, uv0.TYPE_CIPHER)) > 0 then
+			table.insert(slot3, slot8)
 		end
 	end
 
-	arg_11_0:Show(var_11_1)
+	slot0:Show(slot3)
 end
 
-function var_0_0.Show(arg_12_0, arg_12_1)
-	pg.DelegateInfo.New(arg_12_0)
-	arg_12_0._go:SetActive(true)
-	pg.UIMgr.GetInstance():BlurPanel(arg_12_0._tf)
-	arg_12_0.uiItemList:make(function(arg_13_0, arg_13_1, arg_13_2)
-		if arg_13_0 == UIItemList.EventUpdate then
-			local var_13_0 = arg_12_1[arg_13_1 + 1]
-
-			setText(arg_13_2:Find("Text"), var_13_0.text)
-			onButton(arg_12_0, arg_13_2, function()
-				if var_13_0.onCallback then
-					var_13_0.onCallback()
+function slot0.Show(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
+	slot0._go:SetActive(true)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	slot0.uiItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setText(slot2:Find("Text"), uv0[slot1 + 1].text)
+			onButton(uv1, slot2, function ()
+				if uv0.onCallback then
+					uv0.onCallback()
 				end
 
-				arg_12_0:Hide()
+				uv1:Hide()
 			end, SFX_PANEL)
 		end
 	end)
-	arg_12_0.uiItemList:align(#arg_12_1)
+	slot0.uiItemList:align(#slot1)
 
-	arg_12_0.contentTxt.text = i18n("resource_verify_warn")
+	slot0.contentTxt.text = i18n("resource_verify_warn")
 
-	onButton(arg_12_0, arg_12_0._tf, function()
-		arg_12_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.closeBtn, function()
-		arg_12_0:Hide()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Hide(arg_17_0)
-	pg.DelegateInfo.Dispose(arg_17_0)
-	arg_17_0._go:SetActive(false)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_17_0._tf, arg_17_0.parentTr)
+function slot0.Hide(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0._go:SetActive(false)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.parentTr)
 end

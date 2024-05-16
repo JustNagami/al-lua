@@ -1,47 +1,42 @@
-﻿local var_0_0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
+slot0 = class("ActivityBossBuffSelectMediator", import("view.base.ContextMediator"))
+slot0.ON_START = "ActivityBossBuffSelectMediator:ON_START"
+slot0.SHOW_REWARDS = "ActivityBossBuffSelectMediator:SHOW_REWARDS"
 
-var_0_0.ON_START = "ActivityBossBuffSelectMediator:ON_START"
-var_0_0.SHOW_REWARDS = "ActivityBossBuffSelectMediator:SHOW_REWARDS"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_START, function(arg_2_0, arg_2_1)
-		local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
-
-		getProxy(ActivityProxy):GetActivityBossRuntime(var_2_0.id).buffIds = _.map(arg_2_1, function(arg_3_0)
-			return arg_3_0:GetConfigID()
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_START, function (slot0, slot1)
+		getProxy(ActivityProxy):GetActivityBossRuntime(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2).id).buffIds = _.map(slot1, function (slot0)
+			return slot0:GetConfigID()
 		end)
 
-		arg_1_0:sendNotification(var_0_0.ON_START)
-		arg_1_0.viewComponent:closeView()
+		uv0:sendNotification(uv1.ON_START)
+		uv0.viewComponent:closeView()
 	end)
-	arg_1_0:bind(var_0_0.SHOW_REWARDS, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.SHOW_REWARDS, function (slot0, slot1, slot2, slot3)
+		uv0:addSubLayers(Context.New({
 			mediator = ActivityBossScoreAwardMediator,
 			viewComponent = ActivityBossScoreAwardLayer,
 			data = {
-				awards = arg_4_1,
-				targets = arg_4_2,
-				score = arg_4_3
+				awards = slot1,
+				targets = slot2,
+				score = slot3
 			}
 		}))
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == nil then
-		-- block empty
+	if slot1:getName() == nil then
+		-- Nothing
 	end
 end
 
-function var_0_0.remove(arg_7_0)
-	return
+function slot0.remove(slot0)
 end
 
-return var_0_0
+return slot0

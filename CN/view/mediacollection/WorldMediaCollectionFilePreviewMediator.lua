@@ -1,1 +1,1 @@
-﻿return (class("WorldMediaCollectionFilePreviewMediator", ContextMediator))
+return class("WorldMediaCollectionFilePreviewMediator", ContextMediator)

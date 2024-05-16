@@ -1,31 +1,31 @@
-﻿local var_0_0 = class("FriendListCard", import(".FriendCard"))
+slot0 = class("FriendListCard", import(".FriendCard"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.occuptBtn = arg_1_0.tf:Find("frame/btns/occupy_btn")
-	arg_1_0.deleteBtn = arg_1_0.tf:Find("frame/btns/delete_btn")
-	arg_1_0.backYardBtn = arg_1_0.tf:Find("frame/btns/backyard_btn")
-	arg_1_0.chatTip = arg_1_0.tf:Find("frame/btns/occupy_btn/tip")
-	arg_1_0.date = arg_1_0.tf:Find("frame/request_info/date"):GetComponent(typeof(Text))
-	arg_1_0.online = arg_1_0.tf:Find("frame/request_info/online")
-	arg_1_0.levelTF = arg_1_0.tf:Find("frame/request_info/lv_bg/Text"):GetComponent(typeof(Text))
+	slot0.occuptBtn = slot0.tf:Find("frame/btns/occupy_btn")
+	slot0.deleteBtn = slot0.tf:Find("frame/btns/delete_btn")
+	slot0.backYardBtn = slot0.tf:Find("frame/btns/backyard_btn")
+	slot0.chatTip = slot0.tf:Find("frame/btns/occupy_btn/tip")
+	slot0.date = slot0.tf:Find("frame/request_info/date"):GetComponent(typeof(Text))
+	slot0.online = slot0.tf:Find("frame/request_info/online")
+	slot0.levelTF = slot0.tf:Find("frame/request_info/lv_bg/Text"):GetComponent(typeof(Text))
 end
 
-function var_0_0.update(arg_2_0, arg_2_1)
-	var_0_0.super.update(arg_2_0, arg_2_1)
-	setActive(arg_2_0.chatTip, arg_2_1.unreadCount > 0)
+function slot0.update(slot0, slot1)
+	uv0.super.update(slot0, slot1)
+	setActive(slot0.chatTip, slot1.unreadCount > 0)
 
-	arg_2_0.manifestoTF.text = arg_2_1:GetManifesto()
+	slot0.manifestoTF.text = slot1:GetManifesto()
 
-	setActive(arg_2_0.online, arg_2_1.online == Friend.ONLINE)
-	setActive(arg_2_0.date.gameObject, arg_2_1.online ~= Friend.ONLINE)
+	setActive(slot0.online, slot1.online == Friend.ONLINE)
+	setActive(slot0.date.gameObject, slot1.online ~= Friend.ONLINE)
 
-	if arg_2_1.online ~= Friend.ONLINE then
-		arg_2_0.date.text = getOfflineTimeStamp(arg_2_1.preOnLineTime)
+	if slot1.online ~= Friend.ONLINE then
+		slot0.date.text = getOfflineTimeStamp(slot1.preOnLineTime)
 	end
 
-	arg_2_0.levelTF.text = "Lv." .. arg_2_1.level
+	slot0.levelTF.text = "Lv." .. slot1.level
 end
 
-return var_0_0
+return slot0

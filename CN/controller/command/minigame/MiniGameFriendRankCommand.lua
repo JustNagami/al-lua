@@ -1,43 +1,35 @@
-﻿local var_0_0 = class("MiniGameFriendRankCommand", pm.SimpleCommand)
+slot0 = class("MiniGameFriendRankCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	if var_1_0.id == nil then
+function slot0.execute(slot0, slot1)
+	if slot1:getBody().id == nil then
 		return
 	end
 
-	local var_1_1 = var_1_0.id
-
 	pg.ConnectionMgr.GetInstance():Send(26111, {
-		gameid = var_1_1
-	}, 26112, function(arg_2_0)
-		local var_2_0 = underscore(arg_2_0.ranks):chain():sort(function(arg_3_0, arg_3_1)
-			return arg_3_0.score > arg_3_1.score
-		end):reduce({}, function(arg_4_0, arg_4_1)
-			local var_4_0 = {
-				position = #arg_4_0 + 1,
-				player_id = arg_4_1.id,
-				name = arg_4_1.name,
-				score = arg_4_1.score,
-				display = arg_4_1.display
+		gameid = slot2.id
+	}, 26112, function (slot0)
+		getProxy(MiniGameProxy):SetRank(uv0, underscore(slot0.ranks):chain():sort(function (slot0, slot1)
+			return slot1.score < slot0.score
+		end):reduce({}, function (slot0, slot1)
+			slot0[#slot0 + 1] = {
+				position = #slot0 + 1,
+				player_id = slot1.id,
+				name = slot1.name,
+				score = slot1.score,
+				display = slot1.display
 			}
 
-			arg_4_0[#arg_4_0 + 1] = var_4_0
-
-			if #arg_4_0 > 1 and arg_4_0[#arg_4_0 - 1].score == arg_4_1.score then
-				var_4_0.position = arg_4_0[#arg_4_0 - 1].position
+			if #slot0 > 1 and slot0[#slot0 - 1].score == slot1.score then
+				slot2.position = slot0[#slot0 - 1].position
 			end
 
-			return arg_4_0
-		end):value()
+			return slot0
+		end):value())
 
-		getProxy(MiniGameProxy):SetRank(var_1_1, var_2_0)
-
-		if var_1_0.callback then
-			var_1_0.callback(var_2_0)
+		if uv1.callback then
+			uv1.callback(slot1)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

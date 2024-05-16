@@ -1,38 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillSummon",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				spawnData = {
-					monsterTemplateID = 50051,
-					buffList = {
-						801022
-					},
-					phase = {
-						{
-							index = 0,
-							setAI = 20006,
-							addWeapon = {
-								482,
-								483
-							}
-						}
-					}
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -320,5 +286,39 @@
 	id = 16760,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillSummon",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				spawnData = {
+					monsterTemplateID = 50051,
+					buffList = {
+						801022
+					},
+					phase = {
+						{
+							index = 0,
+							setAI = 20006,
+							addWeapon = {
+								482,
+								483
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

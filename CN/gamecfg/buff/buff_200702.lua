@@ -1,4 +1,28 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "黑基洛夫BOSS战 本体召唤BUFF",
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 200702,
+	icon = 200702,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddAttr",
@@ -53,29 +77,5 @@
 				time = 0.2
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "黑基洛夫BOSS战 本体召唤BUFF",
-	time = 0,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 200702,
-	icon = 200702,
-	last_effect = ""
+	}
 }

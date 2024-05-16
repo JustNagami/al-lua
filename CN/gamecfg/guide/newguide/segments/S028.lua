@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"指挥官请点击<color=#ff7d36>出击</color>",
 	"敌方旗舰出现！点击目标继续战斗！",
 	"点击<color=#ff7d36>出击</color>进行战斗！"
@@ -14,7 +14,7 @@ return {
 				mode = 2,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -38,7 +38,7 @@ return {
 				mode = 2,
 				posY = 171.89,
 				posX = 32.25,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			baseui = {
 				path = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/cells/chapter_cell_4_7/attachment",
@@ -71,7 +71,7 @@ return {
 				mode = 2,
 				posY = -68.93,
 				posX = 241.87,
-				text = var_0_0[3]
+				text = slot0[3]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/ChapterPreCombatUI(Clone)/right/start",

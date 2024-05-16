@@ -1,33 +1,29 @@
-﻿local var_0_0 = class("AssignedShipMediator", import("...base.ContextMediator"))
+slot0 = class("AssignedShipMediator", import("...base.ContextMediator"))
+slot0.ON_USE_ITEM = "AssignedShipMediator:ON_USE_ITEM"
 
-var_0_0.ON_USE_ITEM = "AssignedShipMediator:ON_USE_ITEM"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_USE_ITEM, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		arg_1_0:sendNotification(GAME.USE_ITEM, {
-			id = arg_2_1,
-			count = arg_2_2,
-			arg = arg_2_3
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_USE_ITEM, function (slot0, slot1, slot2, slot3)
+		uv0:sendNotification(GAME.USE_ITEM, {
+			id = slot1,
+			count = slot2,
+			arg = slot3
 		})
 	end)
-	arg_1_0.viewComponent:setItemVO(arg_1_0.contextData.itemVO)
+	slot0.viewComponent:setItemVO(slot0.contextData.itemVO)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.USE_ITEM_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
-
-	if var_4_0 == GAME.USE_ITEM_DONE then
-		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1, function()
-			triggerButton(arg_4_0.viewComponent.backBtn)
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.USE_ITEM_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1:getBody(), function ()
+			triggerButton(uv0.viewComponent.backBtn)
 		end)
 	end
 end
 
-return var_0_0
+return slot0

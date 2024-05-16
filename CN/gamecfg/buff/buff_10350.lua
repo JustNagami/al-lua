@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10351,
-				time = 20,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔20秒，有30.0%几率触发一次专属弹幕技能(依据技能等级)",
 		addition = {
@@ -82,5 +69,18 @@
 	stack = 1,
 	id = 10350,
 	icon = 10350,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10351,
+				time = 20,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

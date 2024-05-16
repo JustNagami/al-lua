@@ -1,50 +1,41 @@
-﻿local var_0_0 = class("ActivityBossExchangeTicketCommand", pm.SimpleCommand)
+slot0 = class("ActivityBossExchangeTicketCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().stageId
-
-	if not var_1_0 then
+function slot0.execute(slot0, slot1)
+	if not slot1:getBody().stageId then
 		return
 	end
 
-	local var_1_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2)
-
-	if not var_1_1 or var_1_1:isEnd() then
+	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2) or slot4:isEnd() then
 		return
 	end
 
-	local var_1_2 = pg.activity_event_worldboss[var_1_1:getConfig("config_id")]
-
-	if not var_1_2 then
+	if not pg.activity_event_worldboss[slot4:getConfig("config_id")] then
 		return
 	end
 
-	local var_1_3 = getProxy(PlayerProxy):getRawData()
-	local var_1_4 = var_1_2.ticket
-
-	if var_1_3:getResource(var_1_4) <= 0 then
+	if getProxy(PlayerProxy):getRawData():getResource(slot5.ticket) <= 0 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = var_1_1.id,
-		arg1 = var_1_0,
+		activity_id = slot4.id,
+		arg1 = slot3,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
 			getProxy(PlayerProxy):getRawData():consume({
-				[id2res(var_1_4)] = 1
+				[id2res(uv0)] = 1
 			})
-			arg_1_0:sendNotification(GAME.ACT_BOSS_NORMAL_UPDATE, {
+			uv1:sendNotification(GAME.ACT_BOSS_NORMAL_UPDATE, {
 				num = 1,
-				stageId = var_1_0
+				stageId = uv2
 			})
-			arg_1_0:sendNotification(GAME.ACT_BOSS_EXCHANGE_TICKET_DONE)
+			uv1:sendNotification(GAME.ACT_BOSS_EXCHANGE_TICKET_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

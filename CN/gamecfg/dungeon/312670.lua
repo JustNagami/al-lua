@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = 312670,
 	stages = {
 		{
@@ -958,7 +958,7 @@
 						105
 					},
 					conditionWaves = {
-						[105] = true
+						[105.0] = true
 					},
 					triggerParams = {
 						kill_list = {
@@ -974,7 +974,7 @@
 						104
 					},
 					conditionWaves = {
-						[104] = true
+						[104.0] = true
 					},
 					triggerParams = {}
 				},
@@ -986,7 +986,7 @@
 						105
 					},
 					conditionWaves = {
-						[105] = true
+						[105.0] = true
 					},
 					triggerParams = {}
 				},
@@ -998,7 +998,7 @@
 						104
 					},
 					conditionWaves = {
-						[104] = true
+						[104.0] = true
 					},
 					triggerParams = {
 						id = "WORLD508K"
@@ -1012,7 +1012,7 @@
 						902
 					},
 					conditionWaves = {
-						[105] = true
+						[105.0] = true
 					},
 					triggerParams = {
 						id = "WORLD508N"

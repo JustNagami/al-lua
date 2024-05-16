@@ -1,143 +1,126 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.TipsMgr = singletonClass("TipsMgr")
+slot1 = slot0.TipsMgr
 
-local var_0_0 = pg
-
-var_0_0.TipsMgr = singletonClass("TipsMgr")
-
-local var_0_1 = var_0_0.TipsMgr
-
-function var_0_1.Ctor(arg_1_0)
-	arg_1_0._go = nil
+function slot1.Ctor(slot0)
+	slot0._go = nil
 end
 
-function var_0_1.Init(arg_2_0, arg_2_1)
+function slot1.Init(slot0, slot1)
 	print("initializing tip manager...")
 
-	arg_2_0._count = 0
-	arg_2_0._tipTable = {}
+	slot0._count = 0
+	slot0._tipTable = {}
 
-	PoolMgr.GetInstance():GetUI("TipPanel", true, function(arg_3_0)
-		arg_2_0._go = arg_3_0
+	PoolMgr.GetInstance():GetUI("TipPanel", true, function (slot0)
+		uv0._go = slot0
 
-		arg_2_0._go:SetActive(false)
+		uv0._go:SetActive(false)
+		uv0._go.transform:SetParent(GameObject.Find("Overlay/UIOverlay").transform, false)
 
-		local var_3_0 = GameObject.Find("Overlay/UIOverlay")
+		uv0._tips = uv0._go.transform:Find("toolTip")
+		uv0._picTips = uv0._go.transform:Find("toolPicTip")
+		uv0._grid = uv0._go.transform:Find("Grid")
 
-		arg_2_0._go.transform:SetParent(var_3_0.transform, false)
-
-		arg_2_0._tips = arg_2_0._go.transform:Find("toolTip")
-		arg_2_0._picTips = arg_2_0._go.transform:Find("toolPicTip")
-		arg_2_0._grid = arg_2_0._go.transform:Find("Grid")
-
-		arg_2_1()
+		uv1()
 	end)
 end
 
-function var_0_1.ShowTips(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	var_0_0.CriMgr.GetInstance():PlaySoundEffect_V3(arg_4_3 or SFX_UI_TIP)
-	arg_4_0._go.transform:SetAsLastSibling()
-	SetActive(arg_4_0._go, true)
+function slot1.ShowTips(slot0, slot1, slot2, slot3)
+	uv0.CriMgr.GetInstance():PlaySoundEffect_V3(slot3 or SFX_UI_TIP)
+	slot0._go.transform:SetAsLastSibling()
+	SetActive(slot0._go, true)
 
-	arg_4_0._count = arg_4_0._count + 1
+	slot0._count = slot0._count + 1
+	slot4 = cloneTplTo(slot0._tips, slot0._grid)
 
-	local var_4_0 = cloneTplTo(arg_4_0._tips, arg_4_0._grid)
-	local var_4_1 = arg_4_2 or "white"
+	setText(slot4.transform:Find("Text"), "<color=" .. (slot2 or "white") .. ">" .. slot1 .. "</color>")
 
-	setText(var_4_0.transform:Find("Text"), "<color=" .. var_4_1 .. ">" .. arg_4_1 .. "</color>")
+	slot4.transform.localScale = Vector3(0, 0.1, 1)
 
-	var_4_0.transform.localScale = Vector3(0, 0.1, 1)
+	LeanTween.scale(slot4, Vector3(1.8, 0.1, 1), 0.1):setUseEstimatedTime(true)
+	LeanTween.scale(slot4, Vector3(1.1, 1.1, 1), 0.1):setDelay(0.1):setUseEstimatedTime(true)
 
-	LeanTween.scale(var_4_0, Vector3(1.8, 0.1, 1), 0.1):setUseEstimatedTime(true)
-	LeanTween.scale(var_4_0, Vector3(1.1, 1.1, 1), 0.1):setDelay(0.1):setUseEstimatedTime(true)
+	if slot0._count <= 3 then
+		slot0._tipTable[slot0._count] = slot4
 
-	local function var_4_2(arg_5_0, arg_5_1)
-		local var_5_0 = GetOrAddComponent(arg_5_0, "CanvasGroup")
+		function (slot0, slot1)
+			slot2 = GetOrAddComponent(slot0, "CanvasGroup")
 
-		Timer.New(function()
-			if IsNil(arg_5_0) then
-				return
-			end
+			Timer.New(function ()
+				if IsNil(uv0) then
+					return
+				end
 
-			LeanTween.scale(arg_5_0, Vector3(0.1, 1.5, 1), 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function()
-				LeanTween.scale(arg_5_0, Vector3.zero, 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function()
-					Destroy(arg_5_0)
+				LeanTween.scale(uv0, Vector3(0.1, 1.5, 1), 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function ()
+					LeanTween.scale(uv0, Vector3.zero, 0.1):setUseEstimatedTime(true):setOnComplete(System.Action(function ()
+						Destroy(uv0)
 
-					for iter_8_0, iter_8_1 in pairs(arg_4_0._tipTable) do
-						if iter_8_1 == arg_5_0 then
-							table.remove(arg_4_0._tipTable, iter_8_0)
+						for slot3, slot4 in pairs(uv1._tipTable) do
+							if slot4 == uv0 then
+								table.remove(uv1._tipTable, slot3)
+							end
 						end
-					end
 
-					arg_4_0._count = arg_4_0._count - 1
+						uv1._count = uv1._count - 1
 
-					if arg_4_0._count == 0 then
-						SetActive(arg_4_0._go, false)
-					end
+						if uv1._count == 0 then
+							SetActive(uv1._go, false)
+						end
+					end))
 				end))
-			end))
-		end, 3):Start()
-	end
-
-	if arg_4_0._count <= 3 then
-		arg_4_0._tipTable[arg_4_0._count] = var_4_0
-
-		var_4_2(var_4_0, arg_4_0._count)
+			end, 3):Start()
+		end(slot4, slot0._count)
 	else
-		Destroy(arg_4_0._tipTable[1])
-		table.remove(arg_4_0._tipTable, 1)
+		Destroy(slot0._tipTable[1])
+		table.remove(slot0._tipTable, 1)
 
-		arg_4_0._count = 3
-		arg_4_0._tipTable[3] = var_4_0
+		slot0._count = 3
+		slot0._tipTable[3] = slot4
 
-		var_4_2(var_4_0, arg_4_0._count)
+		slot6(slot4, slot0._count)
 	end
 end
 
-function var_0_1.ShowPicTips(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
-	var_0_0.CriMgr.GetInstance():PlaySoundEffect_V3(arg_9_4 or SFX_UI_TIP)
-	arg_9_0._go.transform:SetAsLastSibling()
-	SetActive(arg_9_0._go, true)
+function slot1.ShowPicTips(slot0, slot1, slot2, slot3, slot4)
+	uv0.CriMgr.GetInstance():PlaySoundEffect_V3(slot4 or SFX_UI_TIP)
+	slot0._go.transform:SetAsLastSibling()
+	SetActive(slot0._go, true)
 
-	arg_9_0._count = arg_9_0._count + 1
+	slot0._count = slot0._count + 1
 
-	local var_9_0 = cloneTplTo(arg_9_0._picTips, arg_9_0._grid)
-	local var_9_1 = arg_9_3 or "white"
+	setText(cloneTplTo(slot0._picTips, slot0._grid).transform:Find("Text"), "<color=" .. (slot3 or "white") .. ">\"" .. slot1 .. "\" x" .. slot2 .. "</color>")
 
-	setText(var_9_0.transform:Find("Text"), "<color=" .. var_9_1 .. ">\"" .. arg_9_1 .. "\" x" .. arg_9_2 .. "</color>")
+	if slot0._count <= 3 then
+		slot0._tipTable[slot0._count] = slot5
 
-	local function var_9_2(arg_10_0)
-		local var_10_0 = GetOrAddComponent(arg_10_0, "CanvasGroup")
+		function (slot0)
+			slot1 = GetOrAddComponent(slot0, "CanvasGroup")
+			slot1.alpha = 1
+			slot2 = LeanTween.alphaCanvas(slot1, 0, 5):setUseEstimatedTime(true):setOnComplete(System.Action(function ()
+				Destroy(uv0)
 
-		var_10_0.alpha = 1
-
-		local var_10_1 = LeanTween.alphaCanvas(var_10_0, 0, 5):setUseEstimatedTime(true):setOnComplete(System.Action(function()
-			Destroy(arg_10_0)
-
-			for iter_11_0, iter_11_1 in pairs(arg_9_0._tipTable) do
-				if iter_11_1 == arg_10_0 then
-					table.remove(arg_9_0._tipTable, iter_11_0)
+				for slot3, slot4 in pairs(uv1._tipTable) do
+					if slot4 == uv0 then
+						table.remove(uv1._tipTable, slot3)
+					end
 				end
-			end
 
-			arg_9_0._count = arg_9_0._count - 1
+				uv1._count = uv1._count - 1
 
-			if arg_9_0._count == 0 then
-				SetActive(arg_9_0._go, false)
-			end
-		end))
-	end
-
-	if arg_9_0._count <= 3 then
-		arg_9_0._tipTable[arg_9_0._count] = var_9_0
-
-		var_9_2(var_9_0)
+				if uv1._count == 0 then
+					SetActive(uv1._go, false)
+				end
+			end))
+		end(slot5)
 	else
-		Destroy(arg_9_0._tipTable[1])
-		table.remove(arg_9_0._tipTable, 1)
+		Destroy(slot0._tipTable[1])
+		table.remove(slot0._tipTable, 1)
 
-		arg_9_0._count = 3
-		arg_9_0._tipTable[3] = var_9_0
+		slot0._count = 3
+		slot0._tipTable[3] = slot5
 
-		var_9_2(var_9_0)
+		slot7(slot5)
 	end
 end

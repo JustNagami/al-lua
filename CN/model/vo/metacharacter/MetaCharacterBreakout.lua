@@ -1,52 +1,50 @@
-﻿local var_0_0 = class("MetaCharacterBreakout", import("..BaseVO"))
+slot0 = class("MetaCharacterBreakout", import("..BaseVO"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.ship_meta_breakout
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.id
-	arg_2_0.configId = arg_2_0.id
-	arg_2_0.needLevel = arg_2_0:getConfig("level")
-	arg_2_0.needRepairRate = arg_2_0:getConfig("repair")
-	arg_2_0.needItems = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.needLevel = slot0:getConfig("level")
+	slot0.needRepairRate = slot0:getConfig("repair")
+	slot0.needItems = {}
 
-	table.insert(arg_2_0.needItems, {
-		itemId = arg_2_0:getConfig("item1"),
-		count = arg_2_0:getConfig("item1_num")
+	table.insert(slot0.needItems, {
+		itemId = slot0:getConfig("item1"),
+		count = slot0:getConfig("item1_num")
 	})
 
-	arg_2_0.needGold = arg_2_0:getConfig("gold")
-	arg_2_0.weaponIds = arg_2_0:getConfig("weapon_ids")
-	arg_2_0.breakoutView = arg_2_0:getConfig("breakout_view")
+	slot0.needGold = slot0:getConfig("gold")
+	slot0.weaponIds = slot0:getConfig("weapon_ids")
+	slot0.breakoutView = slot0:getConfig("breakout_view")
 
-	local var_2_0 = arg_2_0:getConfig("breakout_id")
-
-	if var_2_0 ~= 0 then
-		arg_2_0.nextBreakInfo = MetaCharacterBreakout.New({
-			id = var_2_0
+	if slot0:getConfig("breakout_id") ~= 0 then
+		slot0.nextBreakInfo = MetaCharacterBreakout.New({
+			id = slot2
 		})
 	end
 end
 
-function var_0_0.getConsume(arg_3_0)
-	return arg_3_0.needGold, arg_3_0.needItems
+function slot0.getConsume(slot0)
+	return slot0.needGold, slot0.needItems
 end
 
-function var_0_0.getLimited(arg_4_0)
-	return arg_4_0.needLevel, arg_4_0.needRepairRate
+function slot0.getLimited(slot0)
+	return slot0.needLevel, slot0.needRepairRate
 end
 
-function var_0_0.hasNextInfo(arg_5_0)
-	return arg_5_0.nextBreakInfo ~= nil
+function slot0.hasNextInfo(slot0)
+	return slot0.nextBreakInfo ~= nil
 end
 
-function var_0_0.getNextInfo(arg_6_0)
-	return arg_6_0.nextBreakInfo
+function slot0.getNextInfo(slot0)
+	return slot0.nextBreakInfo
 end
 
-function var_0_0.getWeaponIds(arg_7_0)
-	return arg_7_0.weaponIds
+function slot0.getWeaponIds(slot0)
+	return slot0.weaponIds
 end
 
-return var_0_0
+return slot0

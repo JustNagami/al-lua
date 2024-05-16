@@ -1,59 +1,53 @@
-﻿local var_0_0 = class("TowerClimbingSignPage", import("...base.BaseActivityPage"))
+slot0 = class("TowerClimbingSignPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.icons = {
-		arg_1_0:findTF("AD/bg/npc1"),
-		arg_1_0:findTF("AD/bg/npc2"),
-		arg_1_0:findTF("AD/bg/npc3"),
-		arg_1_0:findTF("AD/bg/npc4"),
-		arg_1_0:findTF("AD/bg/npc5"),
-		arg_1_0:findTF("AD/bg/npc6"),
-		arg_1_0:findTF("AD/bg/npc7")
+function slot0.OnInit(slot0)
+	slot0.icons = {
+		slot0:findTF("AD/bg/npc1"),
+		slot0:findTF("AD/bg/npc2"),
+		slot0:findTF("AD/bg/npc3"),
+		slot0:findTF("AD/bg/npc4"),
+		slot0:findTF("AD/bg/npc5"),
+		slot0:findTF("AD/bg/npc6"),
+		slot0:findTF("AD/bg/npc7")
 	}
-	arg_1_0.helpBtn = arg_1_0:findTF("AD/help")
-	arg_1_0.goBtn = arg_1_0:findTF("AD/go")
+	slot0.helpBtn = slot0:findTF("AD/help")
+	slot0.goBtn = slot0:findTF("AD/go")
 end
 
-function var_0_0.SetData(arg_2_0)
-	local var_2_0 = getProxy(MiniGameProxy):GetHubByHubId(9)
-
-	arg_2_0.data = var_2_0
-	arg_2_0.ultimate = var_2_0.ultimate
-	arg_2_0.usedtime = var_2_0.usedtime
+function slot0.SetData(slot0)
+	slot2 = getProxy(MiniGameProxy):GetHubByHubId(9)
+	slot0.data = slot2
+	slot0.ultimate = slot2.ultimate
+	slot0.usedtime = slot2.usedtime
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	arg_3_0:SetData()
-	onButton(arg_3_0, arg_3_0.goBtn, function()
+function slot0.OnFirstFlush(slot0)
+	slot0:SetData()
+	onButton(slot0, slot0.goBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 13)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.towerclimbing_sign_help.tip
 		})
 	end, SFX_PANEL)
-	arg_3_0:UpdateSigned()
-	arg_3_0:CheckGet()
+	slot0:UpdateSigned()
+	slot0:CheckGet()
 end
 
-function var_0_0.UpdateSigned(arg_6_0)
-	local var_6_0 = arg_6_0.data:getConfig("reward_need")
-	local var_6_1 = arg_6_0.usedtime
-	local var_6_2
+function slot0.UpdateSigned(slot0)
+	slot1 = slot0.data:getConfig("reward_need")
+	slot3 = slot0.ultimate == 0
 
-	var_6_2 = arg_6_0.ultimate == 0
-
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.icons) do
-		local var_6_3 = iter_6_0 <= var_6_1
-
-		setActive(iter_6_1, var_6_3)
+	for slot7, slot8 in ipairs(slot0.icons) do
+		setActive(slot8, slot7 <= slot0.usedtime)
 	end
 end
 
-function var_0_0.CheckGet(arg_7_0)
-	if arg_7_0.ultimate == 0 then
-		if arg_7_0.data:getConfig("reward_need") > arg_7_0.usedtime then
+function slot0.CheckGet(slot0)
+	if slot0.ultimate == 0 then
+		if slot0.usedtime < slot0.data:getConfig("reward_need") then
 			return
 		end
 
@@ -65,4 +59,4 @@ function var_0_0.CheckGet(arg_7_0)
 	end
 end
 
-return var_0_0
+return slot0

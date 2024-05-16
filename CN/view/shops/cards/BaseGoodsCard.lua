@@ -1,49 +1,45 @@
-﻿local var_0_0 = class("BaseGoodsCard")
+slot0 = class("BaseGoodsCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.go = arg_1_1
-	arg_1_0.tf = arg_1_1.transform
+	slot0.go = slot1
+	slot0.tf = slot1.transform
 
-	setActive(arg_1_0.tf:Find("item/discount"), false)
-	setActive(arg_1_0.tf:Find("item/group_locked"), false)
-	setActive(arg_1_0.tf:Find("item/limit_time_sell"), false)
-	setActive(arg_1_0.tf:Find("item/icon_bg/slv"), false)
-	eachChild(arg_1_0.tf:Find("mask/tag"), function(arg_2_0)
-		setActive(arg_2_0, false)
+	setActive(slot0.tf:Find("item/discount"), false)
+	setActive(slot0.tf:Find("item/group_locked"), false)
+	setActive(slot0.tf:Find("item/limit_time_sell"), false)
+	setActive(slot0.tf:Find("item/icon_bg/slv"), false)
+	eachChild(slot0.tf:Find("mask/tag"), function (slot0)
+		setActive(slot0, false)
 	end)
-	ClearAllText(arg_1_0.go)
-	removeAllOnButton(arg_1_0.go)
-	setText(arg_1_0.tf:Find("mask/tag/limit_tag"), i18n("quota_shop_good_limit"))
-	setText(arg_1_0.tf:Find("mask/tag/limit_tag/limit_tag_en"), "LIMIT")
-	setText(arg_1_0.tf:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
-	setText(arg_1_0.tf:Find("mask/tag/sellout_tag/sellout_tag_en"), "SELL OUT")
-	setText(arg_1_0.tf:Find("mask/tag/unexchange_tag"), i18n("meta_shop_exchange_limit"))
-	setText(arg_1_0.tf:Find("mask/tag/unexchange_tag/sellout_tag_en"), "LIMIT")
-	removeAllChildren(arg_1_0.tf:Find("item/icon_bg/stars"))
+	ClearAllText(slot0.go)
+	removeAllOnButton(slot0.go)
+	setText(slot0.tf:Find("mask/tag/limit_tag"), i18n("quota_shop_good_limit"))
+	setText(slot0.tf:Find("mask/tag/limit_tag/limit_tag_en"), "LIMIT")
+	setText(slot0.tf:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
+	setText(slot0.tf:Find("mask/tag/sellout_tag/sellout_tag_en"), "SELL OUT")
+	setText(slot0.tf:Find("mask/tag/unexchange_tag"), i18n("meta_shop_exchange_limit"))
+	setText(slot0.tf:Find("mask/tag/unexchange_tag/sellout_tag_en"), "LIMIT")
+	removeAllChildren(slot0.tf:Find("item/icon_bg/stars"))
 
-	local var_1_0 = arg_1_0.tf:Find("item/icon_bg/icon")
-
-	var_1_0.offsetMin = Vector2(2, 2)
-	var_1_0.offsetMax = Vector2(-2, -2)
-
-	local var_1_1 = arg_1_0.tf:Find("item/icon_bg/frame")
-
-	var_1_1.offsetMin = Vector2(0, 0)
-	var_1_1.offsetMax = Vector2(0, 0)
+	slot2 = slot0.tf:Find("item/icon_bg/icon")
+	slot2.offsetMin = Vector2(2, 2)
+	slot2.offsetMax = Vector2(-2, -2)
+	slot3 = slot0.tf:Find("item/icon_bg/frame")
+	slot3.offsetMin = Vector2(0, 0)
+	slot3.offsetMax = Vector2(0, 0)
 end
 
-function var_0_0.Dispose(arg_3_0)
-	arg_3_0:OnDispose()
-	eachChild(arg_3_0.tf:Find("item/icon_bg/frame"), function(arg_4_0)
-		setActive(arg_4_0, false)
+function slot0.Dispose(slot0)
+	slot0:OnDispose()
+	eachChild(slot0.tf:Find("item/icon_bg/frame"), function (slot0)
+		setActive(slot0, false)
 	end)
-	pg.DelegateInfo.Dispose(arg_3_0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-function var_0_0.OnDispose(arg_5_0)
-	return
+function slot0.OnDispose(slot0)
 end
 
-return var_0_0
+return slot0

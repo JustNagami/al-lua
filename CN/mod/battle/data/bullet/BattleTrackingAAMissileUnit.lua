@@ -1,223 +1,192 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = Vector3.up
+slot2 = slot0.Battle.BattleTargetChoise
+slot3 = class("BattleTrackingAAMissileUnit", slot0.Battle.BattleBulletUnit)
+slot3.__name = "BattleTrackingAAMissileUnit"
+slot0.Battle.BattleTrackingAAMissileUnit = slot3
 
-local var_0_0 = ys
-local var_0_1 = Vector3.up
-local var_0_2 = var_0_0.Battle.BattleTargetChoise
-local var_0_3 = class("BattleTrackingAAMissileUnit", var_0_0.Battle.BattleBulletUnit)
+function slot3.doAccelerate(slot0, slot1)
+	slot2, slot3 = slot0:GetAcceleration(slot1)
 
-var_0_3.__name = "BattleTrackingAAMissileUnit"
-var_0_0.Battle.BattleTrackingAAMissileUnit = var_0_3
-
-function var_0_3.doAccelerate(arg_1_0, arg_1_1)
-	local var_1_0, var_1_1 = arg_1_0:GetAcceleration(arg_1_1)
-
-	if var_1_0 == 0 and var_1_1 == 0 then
+	if slot2 == 0 and slot3 == 0 then
 		return
 	end
 
-	if var_1_0 < 0 and arg_1_0._speedLength + var_1_0 < 0 then
-		arg_1_0:reverseAcceleration()
+	if slot2 < 0 and slot0._speedLength + slot2 < 0 then
+		slot0:reverseAcceleration()
 	end
 
-	arg_1_0._speed:Set(arg_1_0._speed.x + arg_1_0._speedNormal.x * var_1_0 + arg_1_0._speedCross.x * var_1_1, arg_1_0._speed.y + arg_1_0._speedNormal.y * var_1_0 + arg_1_0._speedCross.y * var_1_1, arg_1_0._speed.z + arg_1_0._speedNormal.z * var_1_0 + arg_1_0._speedCross.z * var_1_1)
+	slot0._speed:Set(slot0._speed.x + slot0._speedNormal.x * slot2 + slot0._speedCross.x * slot3, slot0._speed.y + slot0._speedNormal.y * slot2 + slot0._speedCross.y * slot3, slot0._speed.z + slot0._speedNormal.z * slot2 + slot0._speedCross.z * slot3)
 
-	arg_1_0._speedLength = arg_1_0._speed:Magnitude()
+	slot0._speedLength = slot0._speed:Magnitude()
 
-	if arg_1_0._speedLength ~= 0 then
-		arg_1_0._speedNormal:Copy(arg_1_0._speed)
-		arg_1_0._speedNormal:Div(arg_1_0._speedLength)
+	if slot0._speedLength ~= 0 then
+		slot0._speedNormal:Copy(slot0._speed)
+		slot0._speedNormal:Div(slot0._speedLength)
 	end
 
-	arg_1_0._speedCross:Copy(arg_1_0._speedNormal)
-	arg_1_0._speedCross:Cross2(var_0_1)
+	slot0._speedCross:Copy(slot0._speedNormal)
+	slot0._speedCross:Cross2(uv0)
 end
 
-function var_0_3.doTrack(arg_2_0)
-	if arg_2_0:getTrackingTarget() == nil then
-		local var_2_0 = arg_2_0:GetFilteredList()
-		local var_2_1 = var_0_2.TargetWeightiest(arg_2_0, nil, var_2_0)[1]
+function slot3.doTrack(slot0)
+	if slot0:getTrackingTarget() == nil and uv0.TargetWeightiest(slot0, nil, slot0:GetFilteredList())[1] ~= nil then
+		slot0:setTrackingTarget(slot2)
+	end
 
-		if var_2_1 ~= nil then
-			arg_2_0:setTrackingTarget(var_2_1)
+	if slot0:getTrackingTarget() == nil or slot1 == -1 then
+		return
+	elseif not slot1:IsAlive() then
+		slot0:CleanAimMark()
+		slot0:setTrackingTarget(-1)
+
+		return
+	end
+
+	if not slot1:GetBeenAimedPosition() then
+		return
+	end
+
+	slot3 = slot2 - slot0:GetPosition()
+
+	slot3:SetNormalize()
+
+	slot4 = Vector3.Normalize(slot0._speed)
+	slot7 = slot0:GetSpeedRatio()
+	slot8 = Vector3.Dot(slot4, slot3)
+	slot9 = slot4.z * slot3.x - slot4.x * slot3.z
+
+	slot0._speed:Set(slot0._speed.x * slot8 + slot0._speed.z * slot9, 0, slot0._speed.z * slot8 - slot0._speed.x * slot9)
+end
+
+function slot3.doNothing(slot0)
+	if slot0._gravity ~= 0 then
+		slot0._verticalSpeed = slot0._verticalSpeed + slot0._gravity * slot0:GetSpeedRatio()
+	end
+end
+
+function slot3.GetFilteredList(slot0)
+	return slot0:FilterAngle(slot0:FilterRange(uv0.TargetAllHarm(slot0)))
+end
+
+function slot3.FilterRange(slot0, slot1)
+	if not slot0._trackDist then
+		return slot1
+	end
+
+	for slot5 = #slot1, 1, -1 do
+		if slot0:IsOutOfRange(slot1[slot5]) then
+			table.remove(slot1, slot5)
 		end
 	end
 
-	local var_2_2 = arg_2_0:getTrackingTarget()
-
-	if var_2_2 == nil or var_2_2 == -1 then
-		return
-	elseif not var_2_2:IsAlive() then
-		arg_2_0:CleanAimMark()
-		arg_2_0:setTrackingTarget(-1)
-
-		return
-	end
-
-	local var_2_3 = var_2_2:GetBeenAimedPosition()
-
-	if not var_2_3 then
-		return
-	end
-
-	local var_2_4 = var_2_3 - arg_2_0:GetPosition()
-
-	var_2_4:SetNormalize()
-
-	local var_2_5 = Vector3.Normalize(arg_2_0._speed)
-	local var_2_6 = Vector3.Dot(var_2_5, var_2_4)
-	local var_2_7 = var_2_5.z * var_2_4.x - var_2_5.x * var_2_4.z
-	local var_2_8 = arg_2_0:GetSpeedRatio()
-	local var_2_9 = var_2_6
-	local var_2_10 = var_2_7
-	local var_2_11 = arg_2_0._speed.x * var_2_9 + arg_2_0._speed.z * var_2_10
-	local var_2_12 = arg_2_0._speed.z * var_2_9 - arg_2_0._speed.x * var_2_10
-
-	arg_2_0._speed:Set(var_2_11, 0, var_2_12)
+	return slot1
 end
 
-function var_0_3.doNothing(arg_3_0)
-	if arg_3_0._gravity ~= 0 then
-		arg_3_0._verticalSpeed = arg_3_0._verticalSpeed + arg_3_0._gravity * arg_3_0:GetSpeedRatio()
-	end
-end
-
-function var_0_3.GetFilteredList(arg_4_0)
-	local var_4_0 = var_0_2.TargetAllHarm(arg_4_0)
-	local var_4_1 = arg_4_0:FilterRange(var_4_0)
-
-	return (arg_4_0:FilterAngle(var_4_1))
-end
-
-function var_0_3.FilterRange(arg_5_0, arg_5_1)
-	if not arg_5_0._trackDist then
-		return arg_5_1
-	end
-
-	for iter_5_0 = #arg_5_1, 1, -1 do
-		if arg_5_0:IsOutOfRange(arg_5_1[iter_5_0]) then
-			table.remove(arg_5_1, iter_5_0)
-		end
-	end
-
-	return arg_5_1
-end
-
-function var_0_3.IsOutOfRange(arg_6_0, arg_6_1)
-	if not arg_6_0._trackDist then
+function slot3.IsOutOfRange(slot0, slot1)
+	if not slot0._trackDist then
 		return true
 	end
 
-	return arg_6_0:GetDistance(arg_6_1) > arg_6_0._trackDist
+	return slot0._trackDist < slot0:GetDistance(slot1)
 end
 
-function var_0_3.FilterAngle(arg_7_0, arg_7_1)
-	if not arg_7_0._trackAngle or arg_7_0._trackAngle >= 360 then
-		return arg_7_1
+function slot3.FilterAngle(slot0, slot1)
+	if not slot0._trackAngle or slot0._trackAngle >= 360 then
+		return slot1
 	end
 
-	for iter_7_0 = #arg_7_1, 1, -1 do
-		if arg_7_0:IsOutOfAngle(arg_7_1[iter_7_0]) then
-			table.remove(arg_7_1, iter_7_0)
+	for slot5 = #slot1, 1, -1 do
+		if slot0:IsOutOfAngle(slot1[slot5]) then
+			table.remove(slot1, slot5)
 		end
 	end
 
-	return arg_7_1
+	return slot1
 end
 
-function var_0_3.IsOutOfAngle(arg_8_0, arg_8_1)
-	if not arg_8_0._trackAngle or arg_8_0._trackAngle >= 360 then
+function slot3.IsOutOfAngle(slot0, slot1)
+	if not slot0._trackAngle or slot0._trackAngle >= 360 then
 		return false
 	end
 
-	local var_8_0 = arg_8_0:GetPosition()
-	local var_8_1 = arg_8_1:GetPosition() - var_8_0
-	local var_8_2 = arg_8_0._speedNormal
-	local var_8_3 = Vector3.Dot(var_8_1, var_8_2) / var_8_1:Magnitude()
-	local var_8_4 = math.acos(var_8_3)
+	slot4 = slot1:GetPosition() - slot0:GetPosition()
 
-	return var_8_4 > arg_8_0._trackRadian or var_8_4 < -arg_8_0._trackRadian
+	return slot0._trackRadian < math.acos(Vector3.Dot(slot4, slot0._speedNormal) / slot4:Magnitude()) or slot7 < -slot0._trackRadian
 end
 
-function var_0_3.SetTrackingFXData(arg_9_0, arg_9_1)
-	arg_9_0._trackingFXData = arg_9_1
+function slot3.SetTrackingFXData(slot0, slot1)
+	slot0._trackingFXData = slot1
 end
 
-function var_0_3.InitSpeed(arg_10_0, arg_10_1)
-	if arg_10_0._yAngle == nil then
-		if arg_10_0._targetPos ~= nil then
-			arg_10_0._yAngle = arg_10_1 + arg_10_0._barrageAngle
+function slot3.InitSpeed(slot0, slot1)
+	if slot0._yAngle == nil then
+		if slot0._targetPos ~= nil then
+			slot0._yAngle = slot1 + slot0._barrageAngle
 		else
-			arg_10_0._yAngle = arg_10_0._baseAngle + arg_10_0._barrageAngle
+			slot0._yAngle = slot0._baseAngle + slot0._barrageAngle
 		end
 	end
 
-	arg_10_0:calcSpeed()
+	slot0:calcSpeed()
 
-	local var_10_0 = {}
+	slot2 = {}
 
-	local function var_10_1(arg_11_0, arg_11_1)
-		for iter_11_0, iter_11_1 in ipairs(var_10_0) do
-			iter_11_1(arg_11_0, arg_11_1)
+	function slot3(slot0, slot1)
+		for slot5, slot6 in ipairs(uv0) do
+			slot6(slot0, slot1)
 		end
 
-		local var_11_0 = arg_10_0:getTrackingTarget()
-
-		if var_11_0 and var_11_0 ~= -1 and not arg_10_0._trackingFXData.aimingFX and arg_10_0._trackingFXData.fxName and arg_10_0._trackingFXData.fxName ~= "" then
-			local var_11_1 = var_0_0.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(var_11_0:GetUniqueID())
-
-			arg_10_0._trackingFXData.aimingFX = var_11_1:AddFX(arg_10_0._trackingFXData.fxName)
+		if uv1:getTrackingTarget() and slot2 ~= -1 and not uv1._trackingFXData.aimingFX and uv1._trackingFXData.fxName and uv1._trackingFXData.fxName ~= "" then
+			uv1._trackingFXData.aimingFX = uv2.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(slot2:GetUniqueID()):AddFX(uv1._trackingFXData.fxName)
 		end
 	end
 
-	if arg_10_0:IsTracker() then
-		local var_10_2 = arg_10_0._accTable.tracker
+	if slot0:IsTracker() then
+		slot4 = slot0._accTable.tracker
+		slot0._trackAngle = slot4.angular
+		slot0._trackDist = slot4.range
 
-		arg_10_0._trackAngle = var_10_2.angular
-		arg_10_0._trackDist = var_10_2.range
-
-		if var_10_2.angular then
-			arg_10_0._trackRadian = math.deg2Rad * arg_10_0._trackAngle * 0.5
+		if slot4.angular then
+			slot0._trackRadian = math.deg2Rad * slot0._trackAngle * 0.5
 		end
 
-		table.insert(var_10_0, arg_10_0.doTrack)
+		table.insert(slot2, slot0.doTrack)
 	end
 
-	if arg_10_0:HasAcceleration() then
-		arg_10_0._speedLength = arg_10_0._speed:Magnitude()
-		arg_10_0._speedNormal = arg_10_0._speed / arg_10_0._speedLength
-		arg_10_0._speedCross = Vector3.Cross(arg_10_0._speedNormal, var_0_1)
+	if slot0:HasAcceleration() then
+		slot0._speedLength = slot0._speed:Magnitude()
+		slot0._speedNormal = slot0._speed / slot0._speedLength
+		slot0._speedCross = Vector3.Cross(slot0._speedNormal, uv1)
 
-		table.insert(var_10_0, function(arg_12_0, ...)
-			arg_10_0._speedLength = arg_10_0._speed:Magnitude()
-			arg_10_0._speedNormal = arg_10_0._speed / arg_10_0._speedLength
-			arg_10_0._speedCross = Vector3.Cross(arg_10_0._speedNormal, var_0_1)
+		table.insert(slot2, function (slot0, ...)
+			uv0._speedLength = uv0._speed:Magnitude()
+			uv0._speedNormal = uv0._speed / uv0._speedLength
+			uv0._speedCross = Vector3.Cross(uv0._speedNormal, uv1)
 
-			arg_10_0.doAccelerate(arg_12_0, ...)
+			uv0.doAccelerate(slot0, ...)
 		end)
 	end
 
-	if #var_10_0 == 0 then
-		table.insert(var_10_0, arg_10_0.doNothing)
+	if #slot2 == 0 then
+		table.insert(slot2, slot0.doNothing)
 	end
 
-	arg_10_0.updateSpeed = var_10_1
+	slot0.updateSpeed = slot3
 end
 
-function var_0_3.CleanAimMark(arg_13_0)
-	local var_13_0 = arg_13_0:getTrackingTarget()
-
-	if var_13_0 and var_13_0 ~= -1 and arg_13_0._trackingFXData.aimingFX then
-		local var_13_1 = var_0_0.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(var_13_0:GetUniqueID())
-
-		if var_13_1 then
-			var_13_1:RemoveFX(arg_13_0._trackingFXData.aimingFX)
+function slot3.CleanAimMark(slot0)
+	if slot0:getTrackingTarget() and slot1 ~= -1 and slot0._trackingFXData.aimingFX then
+		if uv0.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(slot1:GetUniqueID()) then
+			slot3:RemoveFX(slot0._trackingFXData.aimingFX)
 		end
 
-		arg_13_0._trackingFXData.aimingFX = nil
+		slot0._trackingFXData.aimingFX = nil
 	end
 end
 
-function var_0_3.OutRange(arg_14_0, ...)
-	arg_14_0:CleanAimMark()
-	var_0_3.super.OutRange(arg_14_0, ...)
+function slot3.OutRange(slot0, ...)
+	slot0:CleanAimMark()
+	uv0.super.OutRange(slot0, ...)
 end

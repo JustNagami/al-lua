@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 6,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 600047,
+	icon = 600040,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -39,26 +60,5 @@
 				number = -0.4
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 6,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 600047,
-	icon = 600040,
-	last_effect = ""
+	}
 }

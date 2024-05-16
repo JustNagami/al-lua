@@ -1,192 +1,144 @@
-﻿ys.Battle.BattleCardPuzzleFormulas = ys.Battle.BattleCardPuzzleFormulas or {}
-
-local var_0_0 = ys.Battle.BattleCardPuzzleFormulas
-local var_0_1 = ys.Battle.BattleConst
-local var_0_2 = pg.gameset
-local var_0_3 = ys.Battle.BattleAttr
-local var_0_4 = ys.Battle.BattleConfig
-local var_0_5 = ys.Battle.BattleConfig.AnitAirRepeaterConfig
-local var_0_6 = pg.bfConsts
-local var_0_7 = var_0_4.AMMO_DAMAGE_ENHANCE
-local var_0_8 = var_0_4.AMMO_DAMAGE_REDUCE
-
-var_0_0.CUSTOM_FORMULA = {
+ys.Battle.BattleCardPuzzleFormulas = ys.Battle.BattleCardPuzzleFormulas or {}
+slot0 = ys.Battle.BattleCardPuzzleFormulas
+slot1 = ys.Battle.BattleConst
+slot2 = pg.gameset
+slot3 = ys.Battle.BattleAttr
+slot4 = ys.Battle.BattleConfig
+slot5 = ys.Battle.BattleConfig.AnitAirRepeaterConfig
+slot6 = pg.bfConsts
+slot7 = slot4.AMMO_DAMAGE_ENHANCE
+slot8 = slot4.AMMO_DAMAGE_REDUCE
+slot0.CUSTOM_FORMULA = {
 	double_energy = "energy*5+combo+2"
 }
 
-function var_0_0.CreateContextCalculateDamage(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	local var_1_0 = var_0_6.NUM1
-	local var_1_1 = var_0_6.NUM0
-	local var_1_2 = var_0_6.NUM10000
-	local var_1_3 = var_0_6.DRATE
-	local var_1_4 = var_0_6.ACCURACY
-	local var_1_5 = arg_1_0:GetWeaponHostAttr()
-	local var_1_6 = arg_1_0:GetWeapon()
-	local var_1_7 = arg_1_0:GetWeaponTempData()
-	local var_1_8 = var_1_7.type
-	local var_1_9 = var_1_7.attack_attribute
-	local var_1_10 = var_1_6:GetConvertedAtkAttr()
-	local var_1_11 = arg_1_0:GetTemplate()
-	local var_1_12 = var_1_11.damage_type
-	local var_1_13 = var_1_11.random_damage_rate
-	local var_1_14 = arg_1_1._attr
-	local var_1_15 = arg_1_3 or var_1_0
+function slot0.CreateContextCalculateDamage(slot0, slot1, slot2, slot3)
+	slot4 = uv0.NUM1
+	slot6 = uv0.NUM10000
+	slot7 = uv0.DRATE
+	slot8 = uv0.ACCURACY
+	slot11 = slot0:GetWeaponTempData()
+	slot12 = slot11.type
+	slot15 = slot0:GetTemplate()
+	slot16 = slot15.damage_type
+	slot17 = slot15.random_damage_rate
+	slot18 = slot1._attr
+	slot19 = slot3 or slot4
+	slot2 = slot2 or uv0.NUM0
+	slot20 = slot18.armorType
+	slot21 = slot0:GetWeaponHostAttr().formulaLevel - slot18.formulaLevel
+	slot22 = slot4
+	slot23 = false
+	slot24 = false
+	slot25 = slot4
+	slot26 = (slot4 + slot0:GetWeaponAtkAttr() * slot0:GetWeapon():GetConvertedAtkAttr()) * slot0:GetCorrectedDMG()
 
-	arg_1_2 = arg_1_2 or var_1_1
-
-	local var_1_16 = var_1_14.armorType
-	local var_1_17 = var_1_5.formulaLevel - var_1_14.formulaLevel
-	local var_1_18 = var_1_0
-	local var_1_19 = false
-	local var_1_20 = false
-	local var_1_21 = var_1_0
-	local var_1_22 = arg_1_0:GetCorrectedDMG()
-	local var_1_23 = (var_1_0 + arg_1_0:GetWeaponAtkAttr() * var_1_10) * var_1_22
-
-	if var_1_9 == var_0_1.WeaponDamageAttr.CANNON then
-		var_1_15 = var_1_0 + var_0_3.GetCurrent(arg_1_1, "injureRatioByCannon") + var_0_3.GetCurrent(arg_1_0, "damageRatioByCannon")
-	elseif var_1_9 == var_0_1.WeaponDamageAttr.TORPEDO then
-		var_1_15 = var_1_0 + var_0_3.GetCurrent(arg_1_1, "injureRatioByBulletTorpedo") + var_0_3.GetCurrent(arg_1_0, "damageRatioByBulletTorpedo")
-	elseif var_1_9 == var_0_1.WeaponDamageAttr.AIR then
-		local var_1_24 = var_0_3.GetCurrent(arg_1_0, "airResistPierceActive") == 1 and var_0_3.GetCurrent(arg_1_0, "airResistPierce") or 0
-
-		var_1_15 = var_1_15 * math.min(var_1_3[7] / (var_1_14.antiAirPower + var_1_3[7]) + var_1_24, 1) * (var_1_0 + var_0_3.GetCurrent(arg_1_1, "injureRatioByAir") + var_0_3.GetCurrent(arg_1_0, "damageRatioByAir"))
-	elseif var_1_9 == var_0_1.WeaponDamageAttr.ANTI_AIR then
-		-- block empty
-	elseif var_1_9 == var_0_1.WeaponDamageAttr.ANIT_SUB then
-		-- block empty
+	if slot11.attack_attribute == uv1.WeaponDamageAttr.CANNON then
+		slot19 = slot4 + uv2.GetCurrent(slot1, "injureRatioByCannon") + uv2.GetCurrent(slot0, "damageRatioByCannon")
+	elseif slot13 == uv1.WeaponDamageAttr.TORPEDO then
+		slot19 = slot4 + uv2.GetCurrent(slot1, "injureRatioByBulletTorpedo") + uv2.GetCurrent(slot0, "damageRatioByBulletTorpedo")
+	elseif slot13 == uv1.WeaponDamageAttr.AIR then
+		slot19 = slot19 * math.min(slot7[7] / (slot18.antiAirPower + slot7[7]) + (uv2.GetCurrent(slot0, "airResistPierceActive") == 1 and uv2.GetCurrent(slot0, "airResistPierce") or 0), 1) * (slot4 + uv2.GetCurrent(slot1, "injureRatioByAir") + uv2.GetCurrent(slot0, "damageRatioByAir"))
+	elseif slot13 == uv1.WeaponDamageAttr.ANTI_AIR then
+		-- Nothing
+	elseif slot13 == uv1.WeaponDamageAttr.ANIT_SUB then
+		-- Nothing
 	end
 
-	local var_1_25 = var_1_5.luck - var_1_14.luck
+	slot28 = slot9.luck - slot18.luck
 
-	if var_0_3.GetCurrent(arg_1_1, "perfectDodge") == 1 then
-		var_1_19 = true
+	if uv2.GetCurrent(slot1, "perfectDodge") == 1 then
+		slot23 = true
 	end
 
-	if not var_1_19 then
-		var_1_21 = var_1_23
+	if not slot23 then
+		slot25 = slot26
 
-		if var_0_3.GetCurrent(arg_1_0, "GCT") == 1 then
-			var_1_20 = true
-			var_1_18 = math.max(1, var_0_6.DFT_CRIT_EFFECT + var_0_3.GetCurrent(arg_1_0, "criDamage") - var_0_3.GetCurrent(arg_1_1, "criDamageResist"))
+		if uv2.GetCurrent(slot0, "GCT") == 1 then
+			slot24 = true
+			slot22 = math.max(1, uv0.DFT_CRIT_EFFECT + uv2.GetCurrent(slot0, "criDamage") - uv2.GetCurrent(slot1, "criDamageResist"))
 		else
-			var_1_20 = false
+			slot24 = false
 		end
 	else
-		var_1_21 = var_1_1
-
-		local var_1_26 = {
+		return slot5, {
 			isMiss = true,
 			isDamagePrevent = false,
-			isCri = var_1_20
+			isCri = slot24
 		}
-
-		return var_1_21, var_1_26
 	end
 
-	local var_1_27 = var_0_6.NUM1
-	local var_1_28 = var_0_3.GetCurrent(arg_1_0, "damageRatioBullet")
-	local var_1_29 = var_0_3.GetTagAttr(arg_1_0, arg_1_1)
-	local var_1_30 = var_0_3.GetCurrent(arg_1_1, "injureRatio")
-	local var_1_31 = (var_1_6:GetFixAmmo() or var_1_12[var_1_16] or var_1_27) + var_0_3.GetCurrent(arg_1_0, var_0_4.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[var_1_16])
-	local var_1_32 = var_0_3.GetCurrent(arg_1_0, var_0_4.DAMAGE_TO_ARMOR_RATE_ENHANCE[var_1_16])
-	local var_1_33 = var_0_3.GetCurrent(arg_1_0, var_0_7[var_1_11.ammo_type])
-	local var_1_34 = var_0_3.GetCurrent(arg_1_1, var_0_8[var_1_11.ammo_type])
-	local var_1_35 = var_0_3.GetCurrent(arg_1_0, "comboTag")
-	local var_1_36 = var_0_3.GetCurrent(arg_1_1, var_1_35)
-	local var_1_37 = math.max(var_1_27, math.floor(var_1_21 * var_1_15 * (var_1_27 - arg_1_2) * var_1_31 * (var_1_27 + var_1_32) * var_1_18 * (var_1_27 + var_1_28) * var_1_29 * (var_1_27 + var_1_30) * (var_1_27 + var_1_33 - var_1_34) * (var_1_27 + var_1_36) * (var_1_27 + math.min(var_1_3[1], math.max(-var_1_3[1], var_1_17)) * var_1_3[2])))
+	slot30 = uv0.NUM1
 
-	if arg_1_1:GetCurrentOxyState() == var_0_1.OXY_STATE.DIVE then
-		var_1_37 = math.floor(var_1_37 * var_1_11.antisub_enhancement)
+	if slot1:GetCurrentOxyState() == uv1.OXY_STATE.DIVE then
+		slot25 = math.floor(math.max(slot30, math.floor(slot25 * slot19 * (slot30 - slot2) * ((slot10:GetFixAmmo() or slot16[slot20] or slot30) + uv2.GetCurrent(slot0, uv3.DAMAGE_AMMO_TO_ARMOR_RATE_ENHANCE[slot20])) * (slot30 + uv2.GetCurrent(slot0, uv3.DAMAGE_TO_ARMOR_RATE_ENHANCE[slot20])) * slot22 * (slot30 + uv2.GetCurrent(slot0, "damageRatioBullet")) * uv2.GetTagAttr(slot0, slot1) * (slot30 + uv2.GetCurrent(slot1, "injureRatio")) * (slot30 + uv2.GetCurrent(slot0, uv4[slot15.ammo_type]) - uv2.GetCurrent(slot1, uv5[slot15.ammo_type])) * (slot30 + uv2.GetCurrent(slot1, uv2.GetCurrent(slot0, "comboTag"))) * (slot30 + math.min(slot7[1], math.max(-slot7[1], slot21)) * slot7[2]))) * slot15.antisub_enhancement)
 	end
 
-	local var_1_38 = {
-		isMiss = var_1_19,
-		isCri = var_1_20,
-		damageAttr = var_1_9
+	slot40 = {
+		isMiss = slot23,
+		isCri = slot24,
+		damageAttr = slot13
 	}
-	local var_1_39 = arg_1_0:GetDamageEnhance()
 
-	if var_1_39 ~= 1 then
-		var_1_37 = math.floor(var_1_37 * var_1_39)
+	if slot0:GetDamageEnhance() ~= 1 then
+		slot25 = math.floor(slot25 * slot41)
 	end
 
-	local var_1_40 = var_1_37 * var_1_14.repressReduce
-
-	if var_1_13 ~= 0 then
-		var_1_40 = var_1_40 * (Mathf.RandomFloat(var_1_13) + 1)
+	if slot17 ~= 0 then
+		slot25 = slot25 * slot18.repressReduce * (Mathf.RandomFloat(slot17) + 1)
 	end
 
-	local var_1_41 = var_0_3.GetCurrent(arg_1_0, "damageEnhanceProjectile")
-	local var_1_42 = math.max(0, var_1_40 + var_1_41) * arg_1_0:GetWeaponCardPuzzleEnhance()
-	local var_1_43 = math.floor(var_1_42)
-	local var_1_44 = var_1_11.DMG_font[var_1_16]
+	slot42 = uv2.GetCurrent(slot0, "damageEnhanceProjectile")
+	slot25 = math.floor(math.max(0, slot25 + slot42) * slot0:GetWeaponCardPuzzleEnhance())
+	slot44 = slot15.DMG_font[slot20]
 
-	if var_1_41 < 0 then
-		var_1_44 = var_0_4.BULLET_DECREASE_DMG_FONT
+	if slot42 < 0 then
+		slot44 = uv3.BULLET_DECREASE_DMG_FONT
 	end
 
-	return var_1_43, var_1_38, var_1_44
+	return slot25, slot40, slot44
 end
 
-function var_0_0.parseCompare(arg_2_0, arg_2_1)
-	local var_2_0, var_2_1 = string.find(arg_2_0, "%p+")
-	local var_2_2 = string.sub(arg_2_0, var_2_0, var_2_1)
-	local var_2_3 = string.sub(arg_2_0, 1, var_2_0 - 1)
-	local var_2_4 = string.sub(arg_2_0, var_2_1 + 1, #arg_2_0)
-	local var_2_5 = getCompareFuncByPunctuation(var_2_2)
-	local var_2_6 = tonumber(var_2_3) or arg_2_1:GetCurrent(var_2_3)
-	local var_2_7 = tonumber(var_2_4) or arg_2_1:GetCurrent(var_2_4)
+function slot0.parseCompare(slot0, slot1)
+	slot2, slot3 = string.find(slot0, "%p+")
+	slot6 = string.sub(slot0, slot3 + 1, #slot0)
 
-	return var_2_5(var_2_6, var_2_7)
+	return getCompareFuncByPunctuation(string.sub(slot0, slot2, slot3))(tonumber(string.sub(slot0, 1, slot2 - 1)) or slot1:GetCurrent(slot5), tonumber(slot6) or slot1:GetCurrent(slot6))
 end
 
-function var_0_0.parseFormula(arg_3_0, arg_3_1)
-	local var_3_0 = {}
-	local var_3_1 = {}
+function slot0.parseFormula(slot0, slot1)
+	slot3 = {}
 
-	for iter_3_0 in string.gmatch(arg_3_0, "%w+%.?%w*") do
-		table.insert(var_3_0, iter_3_0)
+	for slot7 in string.gmatch(slot0, "%w+%.?%w*") do
+		table.insert({}, slot7)
 	end
 
-	for iter_3_1 in string.gmatch(arg_3_0, "[^%w%.]") do
-		table.insert(var_3_1, iter_3_1)
+	for slot7 in string.gmatch(slot0, "[^%w%.]") do
+		table.insert(slot3, slot7)
 	end
 
-	local var_3_2 = {}
-	local var_3_3 = {}
-	local var_3_4 = 1
-	local var_3_5 = var_3_0[1]
+	slot5 = {}
+	slot6 = 1
 
-	var_3_5 = tonumber(var_3_5) or arg_3_1:GetCurrent(var_3_5)
+	for slot11, slot12 in ipairs(slot3) do
+		if slot12 == "+" or slot12 == "-" then
+			table.insert(slot5, tonumber(slot2[1]) or slot1:GetCurrent(slot7))
 
-	for iter_3_2, iter_3_3 in ipairs(var_3_1) do
-		var_3_4 = var_3_4 + 1
+			slot7 = tonumber(slot2[slot6 + 1]) or slot1:GetCurrent(slot2[slot6])
 
-		local var_3_6 = tonumber(var_3_0[var_3_4]) or arg_3_1:GetCurrent(var_3_0[var_3_4])
-
-		if iter_3_3 == "+" or iter_3_3 == "-" then
-			table.insert(var_3_3, var_3_5)
-
-			var_3_5 = var_3_6
-
-			table.insert(var_3_2, iter_3_3)
-		elseif iter_3_3 == "*" or iter_3_3 == "/" then
-			var_3_5 = getArithmeticFuncByOperator(iter_3_3)(var_3_5, var_3_6)
+			table.insert({}, slot12)
+		elseif slot12 == "*" or slot12 == "/" then
+			slot7 = getArithmeticFuncByOperator(slot12)(slot7, slot13)
 		end
 	end
 
-	table.insert(var_3_3, var_3_5)
+	table.insert(slot5, slot7)
 
-	local var_3_7 = 1
-	local var_3_8 = var_3_3[var_3_7]
+	slot8 = slot5[1]
 
-	while var_3_7 < #var_3_3 do
-		local var_3_9 = getArithmeticFuncByOperator(var_3_2[var_3_7])
-
-		var_3_7 = var_3_7 + 1
-		var_3_8 = var_3_9(var_3_8, var_3_3[var_3_7])
+	while slot6 < #slot5 do
+		slot8 = getArithmeticFuncByOperator(slot4[slot6])(slot8, slot5[slot6 + 1])
 	end
 
-	return var_3_8
+	return slot8
 end

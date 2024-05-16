@@ -1,81 +1,79 @@
-﻿local var_0_0 = class("EducateShopProxy")
+slot0 = class("EducateShopProxy")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.binder = arg_1_1
-	arg_1_0.data = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.binder = slot1
+	slot0.data = {}
 end
 
-function var_0_0.SetUp(arg_2_0, arg_2_1)
-	local var_2_0 = {}
+function slot0.SetUp(slot0, slot1)
+	slot2 = {
+		[slot7.shop_id] = slot7.goods
+	}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1.shops or {}) do
-		var_2_0[iter_2_1.shop_id] = iter_2_1.goods
+	for slot6, slot7 in ipairs(slot1.shops or {}) do
+		-- Nothing
 	end
 
-	arg_2_0.data = {}
+	slot0.data = {}
 
-	for iter_2_2, iter_2_3 in ipairs(pg.child_shop.all) do
-		arg_2_0.data[iter_2_3] = EducateShop.New(iter_2_3, var_2_0[iter_2_3] or {})
+	for slot6, slot7 in ipairs(pg.child_shop.all) do
+		slot0.data[slot7] = EducateShop.New(slot7, slot2[slot7] or {})
 	end
 
-	arg_2_0.discountData = {}
+	slot0.discountData = {}
 
-	for iter_2_4, iter_2_5 in ipairs(arg_2_1.discountEventIds or {}) do
-		arg_2_0:AddDiscountEventById(iter_2_5)
+	for slot6, slot7 in ipairs(slot1.discountEventIds or {}) do
+		slot0:AddDiscountEventById(slot7)
 	end
 end
 
-function var_0_0.GetShopWithId(arg_3_0, arg_3_1)
-	return arg_3_0.data[arg_3_1]
+function slot0.GetShopWithId(slot0, slot1)
+	return slot0.data[slot1]
 end
 
-function var_0_0.UpdateShop(arg_4_0, arg_4_1)
-	arg_4_0.data[arg_4_1.id] = arg_4_1
+function slot0.UpdateShop(slot0, slot1)
+	slot0.data[slot1.id] = slot1
 end
 
-function var_0_0.GetDiscountData(arg_5_0)
-	return arg_5_0.discountData
+function slot0.GetDiscountData(slot0)
+	return slot0.discountData
 end
 
-function var_0_0.IsDiscountById(arg_6_0, arg_6_1)
-	return arg_6_0.discountData[arg_6_1]
+function slot0.IsDiscountById(slot0, slot1)
+	return slot0.discountData[slot1]
 end
 
-function var_0_0.GetDiscountById(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_0.discountData[arg_7_1]
-
-	return var_7_0 and var_7_0:GetDiscountRatio() or 0
+function slot0.GetDiscountById(slot0, slot1)
+	return slot0.discountData[slot1] and slot2:GetDiscountRatio() or 0
 end
 
-function var_0_0.AddDiscountEventById(arg_8_0, arg_8_1)
-	local var_8_0 = EducateSpecialEvent.New(arg_8_1)
-
-	arg_8_0.discountData[var_8_0:GetDiscountShopId()] = var_8_0
+function slot0.AddDiscountEventById(slot0, slot1)
+	slot2 = EducateSpecialEvent.New(slot1)
+	slot0.discountData[slot2:GetDiscountShopId()] = slot2
 end
 
-function var_0_0.OnNewWeek(arg_9_0, arg_9_1)
-	local var_9_0 = {}
+function slot0.OnNewWeek(slot0, slot1)
+	slot2 = {}
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.data) do
-		if iter_9_1:IsRefreshShop(arg_9_1) then
-			table.insert(var_9_0, function(arg_10_0)
-				arg_9_0.binder:sendNotification(GAME.EDUCATE_REQUEST_SHOP_DATA, {
-					shopId = iter_9_1.id,
-					callback = arg_10_0
+	for slot6, slot7 in pairs(slot0.data) do
+		if slot7:IsRefreshShop(slot1) then
+			table.insert(slot2, function (slot0)
+				uv0.binder:sendNotification(GAME.EDUCATE_REQUEST_SHOP_DATA, {
+					shopId = uv1.id,
+					callback = slot0
 				})
 			end)
 		end
 	end
 
-	seriesAsync(var_9_0, function()
-		return
+	seriesAsync(slot2, function ()
 	end)
 
-	for iter_9_2, iter_9_3 in pairs(arg_9_0.discountData) do
-		if not iter_9_3:InDiscountTime(arg_9_1) then
-			arg_9_0.discountData[iter_9_2] = nil
+	for slot6, slot7 in pairs(slot0.discountData) do
+		if not slot7:InDiscountTime(slot1) then
+			slot0.discountData[slot6] = nil
 		end
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,43 +1,33 @@
-﻿local var_0_0 = class("PlayerVitaeBMGBtn", import(".PlayerVitaeBaseBtn"))
+slot0 = class("PlayerVitaeBMGBtn", import(".PlayerVitaeBaseBtn"))
 
-function var_0_0.GetBgName(arg_1_0)
-	if arg_1_0:IsHrzType() then
-		return "commonUI_atlas", "bgm_bg"
-	else
-		return "AdmiralUI_atlas", "bgm"
-	end
+function slot0.GetBgName(slot0)
+	return "AdmiralUI_atlas", "bgm"
 end
 
-function var_0_0.IsActive(arg_2_0, arg_2_1)
-	return arg_2_1:IsBgmSkin()
+function slot0.IsActive(slot0, slot1)
+	return slot1:IsBgmSkin()
 end
 
-function var_0_0.GetDefaultValue(arg_3_0)
+function slot0.GetDefaultValue(slot0)
 	return getProxy(SettingsProxy):IsBGMEnable()
 end
 
-function var_0_0.OnSwitch(arg_4_0, arg_4_1)
-	getProxy(SettingsProxy):SetBgmFlag(arg_4_1)
+function slot0.OnSwitch(slot0, slot1)
+	getProxy(SettingsProxy):SetBgmFlag(slot1)
 
-	local var_4_0
+	slot2 = nil
 
-	if arg_4_1 then
-		var_4_0 = arg_4_0.ship:GetSkinBgm()
-	else
-		var_4_0 = "main"
-	end
-
-	pg.BgmMgr.GetInstance():Push(PlayerVitaeScene.__cname, var_4_0)
+	pg.BgmMgr.GetInstance():Push(PlayerVitaeScene.__cname, (not slot1 or slot0.ship:GetSkinBgm()) and "main")
 
 	return true
 end
 
-function var_0_0.Load(arg_5_0, arg_5_1)
-	var_0_0.super.Load(arg_5_0, arg_5_1)
+function slot0.Load(slot0, slot1)
+	uv0.super.Load(slot0, slot1)
 
-	if arg_5_0:IsHrzType() then
-		arg_5_1.gameObject.name = "bmg"
+	if slot0:IsHrzType() then
+		slot1.gameObject.name = "bmg"
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 20,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 15824,
+	icon = 15820,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -31,25 +51,5 @@
 				buff_id = 15823
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 20,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 15824,
-	icon = 15820,
-	last_effect = ""
+	}
 }

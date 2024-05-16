@@ -1,11 +1,11 @@
-﻿local var_0_0 = class("MainAwakeSequenceView", import(".MainSequenceView"))
+slot0 = class("MainAwakeSequenceView", import(".MainSequenceView"))
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.sequence = {
+function slot0.Ctor(slot0)
+	slot0.sequence = {
 		MainCompatibleDataSequence.New(),
 		MainRandomFlagShipSequence.New(),
 		MainFixSettingDefaultValue.New()
 	}
 end
 
-return var_0_0
+return slot0

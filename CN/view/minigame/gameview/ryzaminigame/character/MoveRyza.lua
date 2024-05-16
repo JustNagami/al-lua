@@ -1,84 +1,83 @@
-﻿local var_0_0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
+slot0 = class("MoveEnemy", import("view.miniGame.gameView.RyzaMiniGame.character.TargetMove"))
 
-function var_0_0.InitUI(arg_1_0, arg_1_1)
-	arg_1_0.hp = arg_1_1.hp or 3
-	arg_1_0.bomb = arg_1_1.bomb or 4
-	arg_1_0.bombCount = arg_1_0.bomb
-	arg_1_0.power = arg_1_1.power or 4
-	arg_1_0.speed = arg_1_1.speed or 4
+function slot0.InitUI(slot0, slot1)
+	slot0.hp = slot1.hp or 3
+	slot0.bomb = slot1.bomb or 4
+	slot0.bombCount = slot0.bomb
+	slot0.power = slot1.power or 4
+	slot0.speed = slot1.speed or 4
 
-	arg_1_0:UpdateSpirit(defaultValue(arg_1_1.spirit, true))
+	slot0:UpdateSpirit(defaultValue(slot1.spirit, true))
 
-	arg_1_0.neglectTime = 0
-	arg_1_0.invincibilityTime = 0
+	slot0.neglectTime = 0
+	slot0.invincibilityTime = 0
 
-	arg_1_0:PlayIdle()
-	arg_1_0.rtScale:Find("main/spirit"):GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
+	slot0:PlayIdle()
+	slot0.rtScale:Find("main/spirit"):GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
 
-	local var_1_0 = arg_1_0.rtScale:Find("main/character"):GetComponent(typeof(DftAniEvent))
+	slot2 = slot0.rtScale:Find("main/character"):GetComponent(typeof(DftAniEvent))
 
-	var_1_0:SetTriggerEvent(function()
-		switch(arg_1_0.status, {
-			Burn_S = function()
-				if arg_1_0.spriteVanish then
-					arg_1_0.spriteVanish = false
+	slot2:SetTriggerEvent(function ()
+		switch(uv0.status, {
+			Burn_S = function ()
+				if uv0.spriteVanish then
+					uv0.spriteVanish = false
 
-					setActive(arg_1_0.rtScale:Find("front/EF_Vanish"), true)
+					setActive(uv0.rtScale:Find("front/EF_Vanish"), true)
 				end
 			end
 		})
 	end)
-	var_1_0:SetEndEvent(function()
-		arg_1_0.lock = false
+	slot2:SetEndEvent(function ()
+		uv0.lock = false
 
-		if arg_1_0.hp <= 0 then
-			arg_1_0.responder:GameFinish(false)
+		if uv0.hp <= 0 then
+			uv0.responder:GameFinish(false)
 		end
 	end)
-	eachChild(arg_1_0.rtScale:Find("front"), function(arg_5_0)
-		arg_5_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-			setActive(arg_5_0, false)
+	eachChild(slot0.rtScale:Find("front"), function (slot0)
+		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+			setActive(uv0, false)
 		end)
 	end)
-	arg_1_0.rtScale:Find("front/EF_Summon"):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function()
-		arg_1_0.summonCount = defaultValue(arg_1_0.summonCount, 0) + 1
+	slot0.rtScale:Find("front/EF_Summon"):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
+		uv0.summonCount = defaultValue(uv0.summonCount, 0) + 1
+		slot0 = uv0.rtScale:Find("main/spirit")
 
-		local var_7_0 = arg_1_0.rtScale:Find("main/spirit")
-
-		switch(arg_1_0.summonCount, {
-			function()
-				GetOrAddComponent(var_7_0, typeof(CanvasGroup)).alpha = 0
+		switch(uv0.summonCount, {
+			function ()
+				GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = 0
 			end,
-			function()
-				GetOrAddComponent(var_7_0, typeof(CanvasGroup)).alpha = 1
+			function ()
+				GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = 1
 
-				var_7_0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 1)
+				uv0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 1)
 			end,
-			function()
-				var_7_0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
+			function ()
+				uv0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
 			end
 		})
 
-		arg_1_0.summonCount = arg_1_0.summonCount % 3
+		uv0.summonCount = uv0.summonCount % 3
 	end)
 end
 
-function var_0_0.InitRegister(arg_11_0, arg_11_1)
-	arg_11_0:Register("feedback", function()
-		arg_11_0.bombCount = math.min(arg_11_0.bombCount + 1, arg_11_0.bomb)
+function slot0.InitRegister(slot0, slot1)
+	slot0:Register("feedback", function ()
+		uv0.bombCount = math.min(uv0.bombCount + 1, uv0.bomb)
 	end, {})
-	arg_11_0:Register("burn", function()
-		if arg_11_0.invincibilityTime > 0 then
+	slot0:Register("burn", function ()
+		if uv0.invincibilityTime > 0 then
 			return
 		end
 
-		arg_11_0:Hurt(1)
+		uv0:Hurt(1)
 
-		if arg_11_0.hp > 0 then
-			arg_11_0:PlayAnim("Burn_S")
+		if uv0.hp > 0 then
+			uv0:PlayAnim("Burn_S")
 		else
-			arg_11_0:DeregisterAll()
-			arg_11_0:PlayAnim("Gameover_B")
+			uv0:DeregisterAll()
+			uv0:PlayAnim("Gameover_B")
 		end
 	end, {
 		{
@@ -86,133 +85,129 @@ function var_0_0.InitRegister(arg_11_0, arg_11_1)
 			0
 		}
 	})
-	arg_11_0:Register("hit", function(arg_14_0, arg_14_1)
-		if arg_11_0.invincibilityTime > 0 then
+	slot0:Register("hit", function (slot0, slot1)
+		if uv0.invincibilityTime > 0 then
 			return
 		end
 
-		arg_11_0:Hurt(arg_14_0)
+		uv0:Hurt(slot0)
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-damage")
 
-		local var_14_0 = arg_14_1 - arg_11_0.realPos
-		local var_14_1 = var_14_0 * (1 / math.sqrt(var_14_0:SqrMagnitude()))
+		slot2 = slot1 - uv0.realPos
+		slot2 = slot2 * 1 / math.sqrt(slot2:SqrMagnitude())
 
-		setAnchoredPosition(arg_11_0.rtScale:Find("front/EF_Hit"), NewPos(var_14_1.x, -var_14_1.y) * 16)
-		setActive(arg_11_0.rtScale:Find("front/EF_Hit"), true)
+		setAnchoredPosition(uv0.rtScale:Find("front/EF_Hit"), NewPos(slot2.x, -slot2.y) * 16)
+		setActive(uv0.rtScale:Find("front/EF_Hit"), true)
 
-		if arg_11_0.hp > 0 then
-			local var_14_2 = RyzaMiniGameConfig.GetFourDirMark(var_14_1)
-
-			arg_11_0:PlayAnim("Damage_" .. (var_14_2 == "" and "S" or var_14_2))
-			arg_11_0:PlayDamage()
+		if uv0.hp > 0 then
+			uv0:PlayAnim("Damage_" .. (RyzaMiniGameConfig.GetFourDirMark(slot2) == "" and "S" or slot3))
+			uv0:PlayDamage()
 		else
-			arg_11_0:DeregisterAll()
-			arg_11_0:PlayAnim("Gameover_A")
+			uv0:DeregisterAll()
+			uv0:PlayAnim("Gameover_A")
 		end
 	end, {})
 end
 
-function var_0_0.Hurt(arg_15_0, arg_15_1)
-	if arg_15_0.spirit then
-		arg_15_0.spriteVanish = true
+function slot0.Hurt(slot0, slot1)
+	if slot0.spirit then
+		slot0.spriteVanish = true
 
-		arg_15_0:UpdateSpirit(false)
+		slot0:UpdateSpirit(false)
 	else
-		arg_15_0.hp = arg_15_0.hp - arg_15_1
+		slot0.hp = slot0.hp - slot1
 
-		arg_15_0.responder:SyncStatus(arg_15_0, "hp", {
-			num = arg_15_0.hp,
-			delta = -arg_15_1
+		slot0.responder:SyncStatus(slot0, "hp", {
+			num = slot0.hp,
+			delta = -slot1
 		})
 	end
 
-	arg_15_0.invincibilityTime = 3
+	slot0.invincibilityTime = 3
 end
 
-function var_0_0.AddItem(arg_16_0, arg_16_1)
+function slot0.AddItem(slot0, slot1)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-powerup")
-	switch(arg_16_1, {
-		bomb = function()
-			arg_16_0.bomb = math.min(arg_16_0.bomb + 1, 7)
-			arg_16_0.bombCount = arg_16_0.bombCount + 1
+	switch(slot1, {
+		bomb = function ()
+			uv0.bomb = math.min(uv0.bomb + 1, 7)
+			uv0.bombCount = uv0.bombCount + 1
 
-			arg_16_0.responder:SyncStatus(arg_16_0, "bomb", {
-				num = arg_16_0.bomb
+			uv0.responder:SyncStatus(uv0, "bomb", {
+				num = uv0.bomb
 			})
 		end,
-		power = function()
-			arg_16_0.power = math.min(arg_16_0.power + 1, 7)
+		power = function ()
+			uv0.power = math.min(uv0.power + 1, 7)
 
-			arg_16_0.responder:SyncStatus(arg_16_0, "power", {
-				num = arg_16_0.power
+			uv0.responder:SyncStatus(uv0, "power", {
+				num = uv0.power
 			})
 		end,
-		speed = function()
-			arg_16_0.speed = math.min(arg_16_0.speed + 1, 7)
+		speed = function ()
+			uv0.speed = math.min(uv0.speed + 1, 7)
 
-			arg_16_0.responder:SyncStatus(arg_16_0, "speed", {
-				num = arg_16_0.speed
+			uv0.responder:SyncStatus(uv0, "speed", {
+				num = uv0.speed
 			})
 		end,
-		hp1 = function()
-			arg_16_0.hp = math.min(arg_16_0.hp + 1, 3)
+		hp1 = function ()
+			uv0.hp = math.min(uv0.hp + 1, 3)
 
-			arg_16_0.responder:SyncStatus(arg_16_0, "hp", {
+			uv0.responder:SyncStatus(uv0, "hp", {
 				delta = 1,
-				num = arg_16_0.hp
+				num = uv0.hp
 			})
 		end,
-		hp2 = function()
-			arg_16_0.hp = math.min(arg_16_0.hp + 2, 3)
+		hp2 = function ()
+			uv0.hp = math.min(uv0.hp + 2, 3)
 
-			arg_16_0.responder:SyncStatus(arg_16_0, "hp", {
+			uv0.responder:SyncStatus(uv0, "hp", {
 				delta = 2,
-				num = arg_16_0.hp
+				num = uv0.hp
 			})
 		end,
-		spirit = function()
-			if not arg_16_0.spirit then
-				arg_16_0:UpdateSpirit(true)
-				setActive(arg_16_0.rtScale:Find("front/EF_Summon"), true)
+		spirit = function ()
+			if not uv0.spirit then
+				uv0:UpdateSpirit(true)
+				setActive(uv0.rtScale:Find("front/EF_Summon"), true)
 			end
 		end
 	})
 end
 
-function var_0_0.UpdateSpirit(arg_23_0, arg_23_1)
-	arg_23_0.spirit = arg_23_1
+function slot0.UpdateSpirit(slot0, slot1)
+	slot0.spirit = slot1
 
-	local var_23_0 = arg_23_0.spirit and "spirit" or "character"
-
-	eachChild(arg_23_0.rtScale:Find("main"), function(arg_24_0)
-		setActive(arg_24_0, arg_24_0.name == var_23_0)
-		arg_24_0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
+	eachChild(slot0.rtScale:Find("main"), function (slot0)
+		setActive(slot0, slot0.name == uv0)
+		slot0:GetComponent(typeof(Image)).material:SetInt("_Overwrite", 0)
 	end)
 
-	arg_23_0.mainTarget = arg_23_0.rtScale:Find("main/" .. var_23_0)
+	slot0.mainTarget = slot0.rtScale:Find("main/" .. (slot0.spirit and "spirit" or "character"))
 end
 
-function var_0_0.SetBomb(arg_25_0)
-	if not arg_25_0.lock and arg_25_0.bombCount > 0 and arg_25_0.responder:GetCellCanBomb(arg_25_0.pos) then
-		arg_25_0.bombCount = arg_25_0.bombCount - 1
+function slot0.SetBomb(slot0)
+	if not slot0.lock and slot0.bombCount > 0 and slot0.responder:GetCellCanBomb(slot0.pos) then
+		slot0.bombCount = slot0.bombCount - 1
 
-		arg_25_0.responder:Create({
+		slot0.responder:Create({
 			name = "Bomb",
 			pos = {
-				arg_25_0.pos.x,
-				arg_25_0.pos.y
+				slot0.pos.x,
+				slot0.pos.y
 			},
-			power = arg_25_0.power
+			power = slot0.power
 		})
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-boom set")
 	end
 end
 
-function var_0_0.GetSpeed(arg_26_0)
-	return arg_26_0.spirit and 7 or arg_26_0.speed
+function slot0.GetSpeed(slot0)
+	return slot0.spirit and 7 or slot0.speed
 end
 
-local var_0_1 = {
+slot1 = {
 	S = {
 		0,
 		1
@@ -230,123 +225,119 @@ local var_0_1 = {
 		0
 	}
 }
-local var_0_2 = 0.15
+slot2 = 0.15
 
-function var_0_0.TimeUpdate(arg_27_0, arg_27_1)
-	arg_27_0.invincibilityTime = arg_27_0.invincibilityTime - arg_27_1
+function slot0.TimeUpdate(slot0, slot1)
+	slot0.invincibilityTime = slot0.invincibilityTime - slot1
 
-	if not arg_27_0.lock then
-		if arg_27_0.invincibilityTime > 0 then
-			arg_27_0.rtScale:Find("main/character"):GetComponent(typeof(Image)).material:SetInt("_Overwrite", math.floor(arg_27_0.invincibilityTime / var_0_2) % 2)
+	if not slot0.lock then
+		if slot0.invincibilityTime > 0 then
+			slot0.rtScale:Find("main/character"):GetComponent(typeof(Image)).material:SetInt("_Overwrite", math.floor(slot0.invincibilityTime / uv0) % 2)
 		end
 
-		local var_27_0, var_27_1 = arg_27_0:GetMoveInfo()
-		local var_27_2 = RyzaMiniGameConfig.GetEightDirMark(var_27_1)
+		slot2, slot3 = slot0:GetMoveInfo()
 
-		if var_27_2 == "" then
-			if arg_27_0.spirit then
-				arg_27_0.neglectTime = 0
+		if RyzaMiniGameConfig.GetEightDirMark(slot3) == "" then
+			if slot0.spirit then
+				slot0.neglectTime = 0
 
-				arg_27_0:PlayIdle()
-			elseif arg_27_0.neglectTime < 5 then
-				arg_27_0.neglectTime = arg_27_0.neglectTime + arg_27_1
+				slot0:PlayIdle()
+			elseif slot0.neglectTime < 5 then
+				slot0.neglectTime = slot0.neglectTime + slot1
 
-				arg_27_0:PlayIdle()
+				slot0:PlayIdle()
 			else
-				arg_27_0:PlayNeglect(arg_27_1)
+				slot0:PlayNeglect(slot1)
 			end
 		else
-			arg_27_0.neglectTime = 0
+			slot0.neglectTime = 0
 
-			if arg_27_0:GetSpeed() < 7 then
-				arg_27_0:PlayAnim("Trot_" .. var_27_2)
+			if slot0:GetSpeed() < 7 then
+				slot0:PlayAnim("Trot_" .. slot4)
 			else
-				arg_27_0:PlayAnim("Run_" .. var_27_2)
+				slot0:PlayAnim("Run_" .. slot4)
 			end
 		end
 
-		local var_27_3 = arg_27_0:MoveDelta(var_27_1, arg_27_0:GetSpeedDis() * arg_27_1)
+		slot0:MoveUpdate(slot0:MoveDelta(slot3, slot0:GetSpeedDis() * slot1))
 
-		arg_27_0:MoveUpdate(var_27_3)
-
-		if #var_27_2 == 1 and var_0_1[var_27_2][1] * var_27_3.x + var_0_1[var_27_2][2] * var_27_3.y == 0 then
-			arg_27_0:Calling("touch", {
-				arg_27_0
+		if #slot4 == 1 and uv1[slot4][1] * slot5.x + uv1[slot4][2] * slot5.y == 0 then
+			slot0:Calling("touch", {
+				slot0
 			}, {
-				var_0_1[var_27_2]
+				uv1[slot4]
 			})
 		end
 	end
 end
 
-function var_0_0.GetMoveInfo(arg_28_0)
-	return nil, arg_28_0.responder:GetJoyStick()
+function slot0.GetMoveInfo(slot0)
+	return nil, slot0.responder:GetJoyStick()
 end
 
-function var_0_0.PlayNeglect(arg_29_0, arg_29_1)
-	arg_29_0.flowCount = defaultValue(arg_29_0.flowCount, 0) + arg_29_1
+function slot0.PlayNeglect(slot0, slot1)
+	slot0.flowCount = defaultValue(slot0.flowCount, 0) + slot1
 
-	if arg_29_0.flowCount < 0.2 then
+	if slot0.flowCount < 0.2 then
 		return
 	else
-		arg_29_0.flowCount = 0
+		slot0.flowCount = 0
 	end
 
-	switch(arg_29_0.status, {
-		Idle_N = function()
-			arg_29_0:PlayAnim("Idle_NE")
+	switch(slot0.status, {
+		Idle_N = function ()
+			uv0:PlayAnim("Idle_NE")
 		end,
-		Idle_NE = function()
-			arg_29_0:PlayAnim("Idle_E")
+		Idle_NE = function ()
+			uv0:PlayAnim("Idle_E")
 		end,
-		Idle_E = function()
-			arg_29_0:PlayAnim("Idle_SE")
+		Idle_E = function ()
+			uv0:PlayAnim("Idle_SE")
 		end,
-		Idle_SE = function()
-			arg_29_0:PlayAnim("Idle_S")
+		Idle_SE = function ()
+			uv0:PlayAnim("Idle_S")
 		end,
-		Idle_NW = function()
-			arg_29_0:PlayAnim("Idle_W")
+		Idle_NW = function ()
+			uv0:PlayAnim("Idle_W")
 		end,
-		Idle_W = function()
-			arg_29_0:PlayAnim("Idle_SW")
+		Idle_W = function ()
+			uv0:PlayAnim("Idle_SW")
 		end,
-		Idle_SW = function()
-			arg_29_0:PlayAnim("Idle_S")
+		Idle_SW = function ()
+			uv0:PlayAnim("Idle_S")
 		end,
-		Idle_S = function()
-			arg_29_0:PlayAnim("Neglect")
+		Idle_S = function ()
+			uv0:PlayAnim("Neglect")
 		end,
-		Neglect = function()
-			return
+		Neglect = function ()
 		end
 	})
 end
 
-function var_0_0.PlayIdle(arg_39_0)
-	arg_39_0:PlayAnim("Idle_" .. (string.split(arg_39_0.status, "_")[2] or "S"))
+function slot0.PlayIdle(slot0)
+	slot0:PlayAnim("Idle_" .. (string.split(slot0.status, "_")[2] or "S"))
 end
 
-function var_0_0.PlayDamage(arg_40_0)
-	arg_40_0:PlayAnim("Damage_" .. (string.split(arg_40_0.status, "_")[2] or "S"))
+function slot0.PlayDamage(slot0)
+	slot0:PlayAnim("Damage_" .. (string.split(slot0.status, "_")[2] or "S"))
 end
 
-var_0_0.loopDic = {
+slot0.loopDic = {
 	Trot = true,
 	Neglect = true,
 	Idle = true,
 	Run = true
 }
 
-function var_0_0.UpdatePosition(arg_41_0)
-	var_0_0.super.UpdatePosition(arg_41_0)
-	arg_41_0.responder:WindowFocrus(arg_41_0._tf.localPosition)
+function slot0.UpdatePosition(slot0)
+	uv0.super.UpdatePosition(slot0)
+	slot0.responder:WindowFocrus(slot0._tf.localPosition)
 end
 
-function var_0_0.SetHide(arg_42_0, arg_42_1)
-	var_0_0.super.SetHide(arg_42_0, arg_42_1)
+function slot0.SetHide(slot0, slot1)
+	uv0.super.SetHide(slot0, slot1)
 
-	GetOrAddComponent(arg_42_0._tf, typeof(CanvasGroup)).alpha = arg_42_1 and 0.7 or 1
+	GetOrAddComponent(slot0._tf, typeof(CanvasGroup)).alpha = slot1 and 0.7 or 1
 end
 
-return var_0_0
+return slot0

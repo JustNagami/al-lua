@@ -1,50 +1,50 @@
-﻿local var_0_0 = class("CourtyardPlayTheLutePage", import(".CourtYardBaseSubPage"))
+slot0 = class("CourtyardPlayTheLutePage", import(".CourtYardBaseSubPage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CourtyardPlayTheLuteui"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.backBtn = arg_2_0:findTF("back")
-	arg_2_0.tpl = arg_2_0:findTF("keys/key")
-	arg_2_0.noteTr = arg_2_0:findTF("prints/tansou_yinfu")
-	arg_2_0.keyTplPool = {
-		arg_2_0.tpl
+function slot0.OnLoaded(slot0)
+	slot0.backBtn = slot0:findTF("back")
+	slot0.tpl = slot0:findTF("keys/key")
+	slot0.noteTr = slot0:findTF("prints/tansou_yinfu")
+	slot0.keyTplPool = {
+		slot0.tpl
 	}
-	arg_2_0.tpls = {}
+	slot0.tpls = {}
 end
 
-function var_0_0.Show(arg_3_0, arg_3_1)
-	arg_3_0.furniture = arg_3_1
+function slot0.Show(slot0, slot1)
+	slot0.furniture = slot1
 	Input.multiTouchEnabled = true
 
-	if arg_3_0.isInit then
-		arg_3_0:BlurPanel()
+	if slot0.isInit then
+		slot0:BlurPanel()
 	else
 		seriesAsync({
-			function(arg_4_0)
-				arg_3_0:InitKeys(arg_4_0)
+			function (slot0)
+				uv0:InitKeys(slot0)
 			end,
-			function(arg_5_0)
-				arg_3_0.isInit = true
+			function (slot0)
+				uv0.isInit = true
 
-				arg_3_0:RegisetEvent()
-				onNextTick(arg_5_0)
+				uv0:RegisetEvent()
+				onNextTick(slot0)
 			end,
-			function(arg_6_0)
-				arg_3_0:BlurPanel()
-				arg_6_0()
+			function (slot0)
+				uv0:BlurPanel()
+				slot0()
 			end
 		})
 	end
 end
 
-function var_0_0.BlurPanel(arg_7_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf)
-	var_0_0.super.Show(arg_7_0)
+function slot0.BlurPanel(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	uv0.super.Show(slot0)
 end
 
-function var_0_0.GetKeys(arg_8_0)
+function slot0.GetKeys(slot0)
 	return {
 		{
 			"7D",
@@ -113,105 +113,101 @@ function var_0_0.GetKeys(arg_8_0)
 	}
 end
 
-function var_0_0.GetTpl(arg_9_0)
-	if #arg_9_0.keyTplPool > 0 then
-		return table.remove(arg_9_0.keyTplPool, 1)
+function slot0.GetTpl(slot0)
+	if #slot0.keyTplPool > 0 then
+		return table.remove(slot0.keyTplPool, 1)
 	else
-		local var_9_0 = arg_9_0.tpl
+		slot1 = slot0.tpl
 
-		return Object.Instantiate(var_9_0, var_9_0.parent)
+		return Object.Instantiate(slot1, slot1.parent)
 	end
 end
 
-function var_0_0.InitKeys(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0:GetKeys()
-	local var_10_1 = {}
+function slot0.InitKeys(slot0, slot1)
+	slot3 = {}
 
-	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
-		table.insert(var_10_1, function(arg_11_0)
-			local var_11_0 = arg_10_0:GetTpl()
+	for slot7, slot8 in ipairs(slot0:GetKeys()) do
+		table.insert(slot3, function (slot0)
+			slot1 = uv0:GetTpl()
 
-			arg_10_0:InitKey(var_11_0, iter_10_1[1], iter_10_1[2])
-			table.insert(arg_10_0.tpls, var_11_0)
+			uv0:InitKey(slot1, uv1[1], uv1[2])
+			table.insert(uv0.tpls, slot1)
 
-			if iter_10_0 % 3 == 0 then
-				onNextTick(arg_11_0)
+			if uv2 % 3 == 0 then
+				onNextTick(slot0)
 			else
-				arg_11_0()
+				slot0()
 			end
 		end)
 	end
 
-	seriesAsync(var_10_1, arg_10_1)
+	seriesAsync(slot3, slot1)
 end
 
-function var_0_0.InitKey(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	local var_12_0 = arg_12_1:Find("Text"):GetComponent(typeof(Image))
+function slot0.InitKey(slot0, slot1, slot2, slot3)
+	slot4 = slot1:Find("Text"):GetComponent(typeof(Image))
+	slot4.sprite = GetSpriteFromAtlas("ui/CourtyardLute_atlas", slot2)
 
-	var_12_0.sprite = GetSpriteFromAtlas("ui/CourtyardLute_atlas", arg_12_2)
+	slot4:SetNativeSize()
 
-	var_12_0:SetNativeSize()
+	slot5 = slot1:Find("sel")
 
-	local var_12_1 = arg_12_1:Find("sel")
-
-	onButton(arg_12_0, arg_12_1, function()
-		setActive(var_12_1, true)
-		arg_12_0:AnimationForKey(arg_12_1)
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. arg_12_3)
-		arg_12_0:OnStartPlay(arg_12_2)
+	onButton(slot0, slot1, function ()
+		setActive(uv0, true)
+		uv1:AnimationForKey(uv2)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/" .. uv3)
+		uv1:OnStartPlay(uv4)
 	end)
-	arg_12_1:Find("animation"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(var_12_1, false)
-		arg_12_0:OnEndPlay(arg_12_2)
+	slot1:Find("animation"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(uv0, false)
+		uv1:OnEndPlay(uv2)
 	end)
 end
 
-function var_0_0.OnStartPlay(arg_15_0, arg_15_1)
-	return
+function slot0.OnStartPlay(slot0, slot1)
 end
 
-function var_0_0.OnEndPlay(arg_16_0, arg_16_1)
-	return
+function slot0.OnEndPlay(slot0, slot1)
 end
 
-function var_0_0.AnimationForKey(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_1:Find("animation"):GetComponent(typeof(Animation))
+function slot0.AnimationForKey(slot0, slot1)
+	slot2 = slot1:Find("animation"):GetComponent(typeof(Animation))
 
-	var_17_0:Stop()
-	var_17_0:Play()
+	slot2:Stop()
+	slot2:Play()
 end
 
-function var_0_0.ClearAnimationForKey(arg_18_0, arg_18_1)
-	arg_18_1:Find("animation"):GetComponent(typeof(Animation)):Stop()
-	arg_18_1:Find("animation"):GetComponent(typeof(DftAniEvent)):SetEndEvent(nil)
+function slot0.ClearAnimationForKey(slot0, slot1)
+	slot1:Find("animation"):GetComponent(typeof(Animation)):Stop()
+	slot1:Find("animation"):GetComponent(typeof(DftAniEvent)):SetEndEvent(nil)
 end
 
-function var_0_0.RegisetEvent(arg_19_0)
-	onButton(arg_19_0, arg_19_0.backBtn, function()
-		arg_19_0:Hide()
+function slot0.RegisetEvent(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:Hide()
 	end, SFX)
 end
 
-function var_0_0.Hide(arg_21_0)
+function slot0.Hide(slot0)
 	Input.multiTouchEnabled = false
 
-	var_0_0.super.Hide(arg_21_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0._tf, arg_21_0._parentTf)
-	arg_21_0:Emit("StopPlayMusicalInstruments", arg_21_0.furniture.id)
+	uv0.super.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+	slot0:Emit("StopPlayMusicalInstruments", slot0.furniture.id)
 end
 
-function var_0_0.ClearAllAnimation(arg_22_0)
-	for iter_22_0, iter_22_1 in ipairs(arg_22_0.tpls) do
-		arg_22_0:ClearAnimationForKey(iter_22_1)
+function slot0.ClearAllAnimation(slot0)
+	for slot4, slot5 in ipairs(slot0.tpls) do
+		slot0:ClearAnimationForKey(slot5)
 	end
 end
 
-function var_0_0.OnDestroy(arg_23_0)
-	arg_23_0:ClearAllAnimation()
+function slot0.OnDestroy(slot0)
+	slot0:ClearAllAnimation()
 
-	if arg_23_0:isShowing() then
-		arg_23_0:Hide()
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 end
 
-return var_0_0
+return slot0

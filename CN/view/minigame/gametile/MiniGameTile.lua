@@ -1,8 +1,7 @@
-﻿local var_0_0 = class("MiniGameTile")
-
-var_0_0.BOOM_GAME = "BoomGame"
-var_0_0.SPRING23_GAME = "Spring23Game"
-var_0_0.tiles = {
+slot0 = class("MiniGameTile")
+slot0.BOOM_GAME = "BoomGame"
+slot0.SPRING23_GAME = "Spring23Game"
+slot0.tiles = {
 	BoomGame = {
 		name = "BoomGame",
 		tile_map = {
@@ -40,7 +39,7 @@ var_0_0.tiles = {
 		}
 	}
 }
-var_0_0.drops = {
+slot0.drops = {
 	{
 		{
 			"bomb",
@@ -140,7 +139,7 @@ var_0_0.drops = {
 		}
 	}
 }
-var_0_0.attrs = {
+slot0.attrs = {
 	BoomLevel_0 = {
 		Ryza = {
 			speed = 4,
@@ -341,4 +340,4 @@ var_0_0.attrs = {
 	}
 }
 
-return var_0_0
+return slot0

@@ -1,92 +1,85 @@
-﻿local var_0_0 = class("FeastGiveTicketPage", import(".FeastGiveGiftPage"))
+slot0 = class("FeastGiveTicketPage", import(".FeastGiveGiftPage"))
 
-function var_0_0.BindEvents(arg_1_0)
-	arg_1_0.eventId = arg_1_0:bind(FeastScene.ON_GOT_TICKET, function(arg_2_0, arg_2_1)
-		arg_1_0:OnGotGift(arg_2_1)
+function slot0.BindEvents(slot0)
+	slot0.eventId = slot0:bind(FeastScene.ON_GOT_TICKET, function (slot0, slot1)
+		uv0:OnGotGift(slot1)
 	end)
 end
 
-function var_0_0.OnGotGift(arg_3_0, arg_3_1)
-	if arg_3_0.feastShip then
-		arg_3_0:BlockEvents()
+function slot0.OnGotGift(slot0, slot1)
+	if slot0.feastShip then
+		slot0:BlockEvents()
 		seriesAsync({
-			function(arg_4_0)
-				arg_3_0:UpdateGiftState(arg_3_0.feastShip, arg_4_0)
+			function (slot0)
+				uv0:UpdateGiftState(uv0.feastShip, slot0)
 			end,
-			function(arg_5_0)
-				arg_3_0:emit(BaseUI.ON_ACHIEVE, arg_3_1, arg_5_0)
+			function (slot0)
+				uv0:emit(BaseUI.ON_ACHIEVE, uv1, slot0)
 			end,
-			function(arg_6_0)
-				local var_6_0 = arg_3_0.feastShip:GetInvitationStory()
-
-				pg.NewStoryMgr.GetInstance():Play(var_6_0, arg_6_0)
+			function (slot0)
+				pg.NewStoryMgr.GetInstance():Play(uv0.feastShip:GetInvitationStory(), slot0)
 			end
-		}, function()
-			arg_3_0:emit(FeastMediator.ON_SHIP_ENTER_FEAST, arg_3_0.feastShip.id)
-			arg_3_0:emit(FeastScene.ON_BACK_FEAST)
+		}, function ()
+			uv0:emit(FeastMediator.ON_SHIP_ENTER_FEAST, uv0.feastShip.id)
+			uv0:emit(FeastScene.ON_BACK_FEAST)
 		end)
 	end
 end
 
-function var_0_0.ClearBindEvents(arg_8_0)
-	if arg_8_0.eventId then
-		arg_8_0:disconnect(arg_8_0.eventId)
+function slot0.ClearBindEvents(slot0)
+	if slot0.eventId then
+		slot0:disconnect(slot0.eventId)
 
-		arg_8_0.eventId = nil
+		slot0.eventId = nil
 	end
 end
 
-function var_0_0.LoadItem(arg_9_0, arg_9_1, arg_9_2)
-	GetSpriteFromAtlasAsync("ui/FeastInvitation_atlas", "res_icon", function(arg_10_0)
-		local var_10_0 = arg_9_0.giftTr:GetComponent(typeof(Image))
+function slot0.LoadItem(slot0, slot1, slot2)
+	GetSpriteFromAtlasAsync("ui/FeastInvitation_atlas", "res_icon", function (slot0)
+		slot1 = uv0.giftTr:GetComponent(typeof(Image))
+		slot1.sprite = slot0
 
-		var_10_0.sprite = arg_10_0
-
-		var_10_0:SetNativeSize()
-		arg_9_2()
+		slot1:SetNativeSize()
+		uv1()
 	end)
 end
 
-function var_0_0.UpdateGiftState(arg_11_0, arg_11_1, arg_11_2)
-	arg_11_0:ClearGiftEvent()
+function slot0.UpdateGiftState(slot0, slot1, slot2)
+	slot0:ClearGiftEvent()
 	parallelAsync({
-		function(arg_12_0)
-			arg_11_0:UpdateContent(arg_11_1:GetDialogueForTicket(), 3, arg_12_0)
+		function (slot0)
+			uv0:UpdateContent(uv1:GetDialogueForTicket(), 3, slot0)
 		end,
-		function(arg_13_0)
-			local var_13_0 = arg_11_0.loadedChar.spineAnimUI
-
-			if not arg_11_1:GotTicket() then
-				setActive(arg_11_0.giftTr, true)
-				arg_11_0:AddGiftEvent()
-				var_13_0:SetAction("activity_wait", 0)
+		function (slot0)
+			if not uv1:GotTicket() then
+				setActive(uv0.giftTr, true)
+				uv0:AddGiftEvent()
+				uv0.loadedChar.spineAnimUI:SetAction("activity_wait", 0)
 			else
-				setActive(arg_11_0.giftTr, false)
-				var_13_0:SetActionCallBack(function(arg_14_0)
-					if arg_14_0 == "finish" then
-						var_13_0:SetActionCallBack(nil)
-						setActive(var_13_0.gameObject, false)
-						arg_13_0()
+				setActive(uv0.giftTr, false)
+				slot1:SetActionCallBack(function (slot0)
+					if slot0 == "finish" then
+						uv0:SetActionCallBack(nil)
+						setActive(uv0.gameObject, false)
+						uv1()
 					end
 				end)
-				var_13_0:SetAction("activity_getletter", 0)
+				slot1:SetAction("activity_getletter", 0)
 			end
 		end
-	}, function()
-		if arg_11_2 then
-			arg_11_2()
+	}, function ()
+		if uv0 then
+			uv0()
 		end
 	end)
 end
 
-function var_0_0.Send(arg_16_0)
-	local var_16_0 = arg_16_0.feastShip
-
-	arg_16_0:emit(FeastMediator.GIVE_TICKET, var_16_0.tid)
+function slot0.Send(slot0)
+	slot0:emit(FeastMediator.GIVE_TICKET, slot0.feastShip.tid)
 end
 
-function var_0_0.SetTipContent(arg_17_0)
-	arg_17_0.tipTr.text = i18n("feast_drag_invitation_tip")
+function slot0.SetTipContent(slot0)
+	slot0.tipTr.text = i18n("feast_drag_invitation_tip")
 end
 
-return var_0_0
+return slot0

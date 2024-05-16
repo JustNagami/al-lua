@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffHPLink",
-			trigger = {
-				"onTakeDamage",
-				"onRemove"
-			},
-			arg_list = {
-				number = 0.75
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -230,5 +218,17 @@
 	painting = 1,
 	stack = 1,
 	color = "red",
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffHPLink",
+			trigger = {
+				"onTakeDamage",
+				"onRemove"
+			},
+			arg_list = {
+				number = 0.75
+			}
+		}
+	}
 }

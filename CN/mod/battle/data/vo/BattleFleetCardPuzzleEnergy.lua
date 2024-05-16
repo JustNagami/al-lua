@@ -1,118 +1,108 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleEvent
+slot3 = slot0.Battle.BattleCardPuzzleEvent
+slot4 = slot0.Battle.BattleFormulas
+slot5 = slot0.Battle.BattleConst
+slot6 = slot0.Battle.BattleConfig
+slot7 = slot0.Battle.BattleAttr
+slot8 = slot0.Battle.BattleDataFunction
+slot9 = slot0.Battle.BattleAttr
+slot10 = slot0.Battle.BattleCardPuzzleConfig
+slot11 = class("BattleFleetCardPuzzleEnergy")
+slot0.Battle.BattleFleetCardPuzzleEnergy = slot11
+slot11.__name = "BattleFleetCardPuzzleEnergy"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
-local var_0_4 = var_0_0.Battle.BattleFormulas
-local var_0_5 = var_0_0.Battle.BattleConst
-local var_0_6 = var_0_0.Battle.BattleConfig
-local var_0_7 = var_0_0.Battle.BattleAttr
-local var_0_8 = var_0_0.Battle.BattleDataFunction
-local var_0_9 = var_0_0.Battle.BattleAttr
-local var_0_10 = var_0_0.Battle.BattleCardPuzzleConfig
-local var_0_11 = class("BattleFleetCardPuzzleEnergy")
+function slot11.Ctor(slot0, slot1)
+	slot0._client = slot1
+	slot0._fleetAttr = slot0._client:GetAttrManager()
 
-var_0_0.Battle.BattleFleetCardPuzzleEnergy = var_0_11
-var_0_11.__name = "BattleFleetCardPuzzleEnergy"
-
-function var_0_11.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._client = arg_1_1
-	arg_1_0._fleetAttr = arg_1_0._client:GetAttrManager()
-
-	arg_1_0:init()
+	slot0:init()
 end
 
-function var_0_11.CustomConfig(arg_2_0, arg_2_1)
-	local var_2_0 = var_0_8.GetPuzzleDungeonTemplate(arg_2_1)
-
-	arg_2_0._currentEnergy = var_2_0.init_energy
-	arg_2_0._generateRate = var_2_0.energy_recovery
+function slot11.CustomConfig(slot0, slot1)
+	slot2 = uv0.GetPuzzleDungeonTemplate(slot1)
+	slot0._currentEnergy = slot2.init_energy
+	slot0._generateRate = slot2.energy_recovery
 end
 
-function var_0_11.Dispose(arg_3_0)
-	return
+function slot11.Dispose(slot0)
 end
 
-function var_0_11.GetMaxEnergy(arg_4_0)
-	return arg_4_0._maxEnergy
+function slot11.GetMaxEnergy(slot0)
+	return slot0._maxEnergy
 end
 
-function var_0_11.GetCurrentEnergy(arg_5_0)
-	return arg_5_0._currentEnergy
+function slot11.GetCurrentEnergy(slot0)
+	return slot0._currentEnergy
 end
 
-function var_0_11.GetGeneratingProcess(arg_6_0)
-	if arg_6_0._currentEnergy == arg_6_0._maxEnergy then
+function slot11.GetGeneratingProcess(slot0)
+	if slot0._currentEnergy == slot0._maxEnergy then
 		return 1
 	else
-		return arg_6_0._energyGenerating
+		return slot0._energyGenerating
 	end
 end
 
-function var_0_11.ConsumeEnergy(arg_7_0, arg_7_1)
-	arg_7_0._currentEnergy = math.max(arg_7_0._currentEnergy - arg_7_1, 0)
+function slot11.ConsumeEnergy(slot0, slot1)
+	slot0._currentEnergy = math.max(slot0._currentEnergy - slot1, 0)
 
-	arg_7_0._client:EnergyUpdate()
+	slot0._client:EnergyUpdate()
 
-	if arg_7_1 > 0 then
-		arg_7_0._client:FlushHandOverheat()
+	if slot1 > 0 then
+		slot0._client:FlushHandOverheat()
 	end
 end
 
-function var_0_11.Update(arg_8_0, arg_8_1)
-	arg_8_0:update(arg_8_1)
+function slot11.Update(slot0, slot1)
+	slot0:update(slot1)
 end
 
-function var_0_11.init(arg_9_0)
-	arg_9_0._currentEnergy = var_0_10.baseEnergyInitial
-	arg_9_0._maxEnergy = 10
-	arg_9_0._generateRate = var_0_10.baseEnergyGenerateSpeedPerSecond
-	arg_9_0._energyGenerating = 0
+function slot11.init(slot0)
+	slot0._currentEnergy = uv0.baseEnergyInitial
+	slot0._maxEnergy = 10
+	slot0._generateRate = uv0.baseEnergyGenerateSpeedPerSecond
+	slot0._energyGenerating = 0
 end
 
-function var_0_11.updateTimeStamp(arg_10_0)
-	arg_10_0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+function slot11.updateTimeStamp(slot0)
+	slot0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var_0_11.Start(arg_11_0)
-	arg_11_0:updateTimeStamp()
+function slot11.Start(slot0)
+	slot0:updateTimeStamp()
 end
 
-function var_0_11.update(arg_12_0, arg_12_1)
-	if arg_12_0._currentEnergy < arg_12_0._maxEnergy then
-		arg_12_0._energyGenerating = (arg_12_1 - arg_12_0._lastUpdateTimeStamp) * arg_12_0:getCurrentSpeed() + arg_12_0._energyGenerating
+function slot11.update(slot0, slot1)
+	if slot0._currentEnergy < slot0._maxEnergy then
+		slot0._energyGenerating = (slot1 - slot0._lastUpdateTimeStamp) * slot0:getCurrentSpeed() + slot0._energyGenerating
 
-		if arg_12_0._energyGenerating >= 1 then
-			arg_12_0._currentEnergy = arg_12_0._currentEnergy + 1
+		if slot0._energyGenerating >= 1 then
+			slot0._currentEnergy = slot0._currentEnergy + 1
 
-			arg_12_0._client:EnergyUpdate()
+			slot0._client:EnergyUpdate()
 
-			arg_12_0._energyGenerating = 0
+			slot0._energyGenerating = 0
 		end
 	end
 
-	arg_12_0:updateTimeStamp()
+	slot0:updateTimeStamp()
 end
 
-function var_0_11.getCurrentSpeed(arg_13_0)
-	local var_13_0 = arg_13_0._fleetAttr:GetCurrent("BaseEnergyBoostRate")
-	local var_13_1 = arg_13_0._fleetAttr:GetCurrent("BaseEnergyBoostExtra")
-
-	return (math.max(arg_13_0._generateRate * (1 + var_13_0) + var_13_1, 0))
+function slot11.getCurrentSpeed(slot0)
+	return math.max(slot0._generateRate * (1 + slot0._fleetAttr:GetCurrent("BaseEnergyBoostRate")) + slot0._fleetAttr:GetCurrent("BaseEnergyBoostExtra"), 0)
 end
 
-function var_0_11.FillToCooldown(arg_14_0, arg_14_1)
-	if arg_14_1 <= arg_14_0._currentEnergy then
+function slot11.FillToCooldown(slot0, slot1)
+	if slot1 <= slot0._currentEnergy then
 		return 0
 	else
-		local var_14_0 = arg_14_0:getCurrentSpeed()
-		local var_14_1 = (1 - arg_14_0._energyGenerating) / var_14_0
-
-		if arg_14_1 - arg_14_0._currentEnergy >= 2 then
-			var_14_1 = 1 / var_14_0 * (arg_14_1 - arg_14_0._currentEnergy - 1) + var_14_1
+		if slot1 - slot0._currentEnergy >= 2 then
+			slot3 = 1 / slot2 * (slot1 - slot0._currentEnergy - 1) + (1 - slot0._energyGenerating) / slot0:getCurrentSpeed()
 		end
 
-		return var_14_1
+		return slot3
 	end
 end

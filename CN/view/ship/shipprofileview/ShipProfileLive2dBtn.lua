@@ -1,119 +1,109 @@
-﻿local var_0_0 = class("ShipProfileLive2dBtn")
+slot0 = class("ShipProfileLive2dBtn")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._tf = arg_1_1
-	arg_1_0.live2dBtn = arg_1_1
-	arg_1_0.live2dToggle = arg_1_0.live2dBtn:Find("toggle")
-	arg_1_0.live2dState = arg_1_0.live2dBtn:Find("state")
-	arg_1_0.live2dOn = arg_1_0.live2dToggle:Find("on")
-	arg_1_0.live2dOff = arg_1_0.live2dToggle:Find("off")
-	arg_1_0.manager = BundleWizard.Inst:GetGroupMgr("L2D")
+	slot0._tf = slot1
+	slot0.live2dBtn = slot1
+	slot0.live2dToggle = slot0.live2dBtn:Find("toggle")
+	slot0.live2dState = slot0.live2dBtn:Find("state")
+	slot0.live2dOn = slot0.live2dToggle:Find("on")
+	slot0.live2dOff = slot0.live2dToggle:Find("off")
+	slot0.manager = BundleWizard.Inst:GetGroupMgr("L2D")
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.paintingName = arg_2_1
-	arg_2_0.isOn = arg_2_2
+function slot0.Update(slot0, slot1, slot2)
+	slot0.paintingName = slot1
+	slot0.isOn = slot2
+	slot4 = HXSet.autoHxShiftPath("live2d/" .. slot1, nil, true)
 
-	local var_2_0 = arg_2_0.manager
-	local var_2_1 = "live2d/" .. arg_2_1
-	local var_2_2 = HXSet.autoHxShiftPath(var_2_1, nil, true)
-	local var_2_3 = var_2_0.state
-
-	if var_2_3 == DownloadState.None or var_2_3 == DownloadState.CheckFailure then
-		var_2_0:CheckD()
+	if slot0.manager.state == DownloadState.None or slot5 == DownloadState.CheckFailure then
+		slot3:CheckD()
 	end
 
-	local var_2_4 = var_2_0:CheckF(var_2_2)
-
-	if var_2_4 == DownloadState.CheckToUpdate or var_2_4 == DownloadState.UpdateFailure then
-		arg_2_0:OnCheckToUpdate(var_2_2)
-	elseif var_2_4 == DownloadState.Updating then
-		arg_2_0:OnUpdating()
+	if slot3:CheckF(slot4) == DownloadState.CheckToUpdate or slot6 == DownloadState.UpdateFailure then
+		slot0:OnCheckToUpdate(slot4)
+	elseif slot6 == DownloadState.Updating then
+		slot0:OnUpdating()
 	else
-		arg_2_0:OnUpdated(var_2_2, arg_2_2)
+		slot0:OnUpdated(slot4, slot2)
 	end
 
-	arg_2_0:AddTimer(var_2_2, var_2_4, arg_2_1, arg_2_2)
+	slot0:AddTimer(slot4, slot6, slot1, slot2)
 end
 
-function var_0_0.RemoveTimer(arg_3_0)
-	if arg_3_0.live2dTimer then
-		arg_3_0.live2dTimer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.live2dTimer then
+		slot0.live2dTimer:Stop()
 
-		arg_3_0.live2dTimer = nil
+		slot0.live2dTimer = nil
 	end
 end
 
-function var_0_0.AddTimer(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
-	arg_4_0:RemoveTimer()
+function slot0.AddTimer(slot0, slot1, slot2, slot3, slot4)
+	slot0:RemoveTimer()
 
-	if arg_4_2 == DownloadState.CheckToUpdate or arg_4_2 == DownloadState.UpdateFailure or arg_4_2 == DownloadState.Updating then
-		arg_4_0.live2dTimer = Timer.New(function()
-			local var_5_0 = arg_4_0.manager:CheckF(arg_4_1)
-
-			arg_4_0:Update(arg_4_3, var_5_0 == DownloadState.UpdateSuccess and true or arg_4_4)
+	if slot2 == DownloadState.CheckToUpdate or slot2 == DownloadState.UpdateFailure or slot2 == DownloadState.Updating then
+		slot0.live2dTimer = Timer.New(function ()
+			uv0:Update(uv2, uv0.manager:CheckF(uv1) == DownloadState.UpdateSuccess and true or uv3)
 		end, 0.5, 1)
 
-		arg_4_0.live2dTimer:Start()
+		slot0.live2dTimer:Start()
 	end
 end
 
-function var_0_0.OnCheckToUpdate(arg_6_0, arg_6_1)
-	setActive(arg_6_0.live2dBtn, true)
-	setActive(arg_6_0.live2dState, false)
-	setActive(arg_6_0.live2dToggle, true)
-	setActive(arg_6_0.live2dOn, false)
-	setActive(arg_6_0.live2dOff, true)
-	onButton(arg_6_0, arg_6_0.live2dBtn, function()
-		VersionMgr.Inst:RequestUIForUpdateF("L2D", arg_6_1, true)
+function slot0.OnCheckToUpdate(slot0, slot1)
+	setActive(slot0.live2dBtn, true)
+	setActive(slot0.live2dState, false)
+	setActive(slot0.live2dToggle, true)
+	setActive(slot0.live2dOn, false)
+	setActive(slot0.live2dOff, true)
+	onButton(slot0, slot0.live2dBtn, function ()
+		VersionMgr.Inst:RequestUIForUpdateF("L2D", uv0, true)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdating(arg_8_0)
-	setActive(arg_8_0.live2dBtn, true)
-	setActive(arg_8_0.live2dToggle, false)
-	setActive(arg_8_0.live2dState, true)
-	removeOnButton(arg_8_0.live2dBtn)
+function slot0.OnUpdating(slot0)
+	setActive(slot0.live2dBtn, true)
+	setActive(slot0.live2dToggle, false)
+	setActive(slot0.live2dState, true)
+	removeOnButton(slot0.live2dBtn)
 end
 
-function var_0_0.OnUpdated(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = PathMgr.FileExists(PathMgr.getAssetBundle(arg_9_1))
-
-	setActive(arg_9_0.live2dBtn, var_9_0)
-	setActive(arg_9_0.live2dState, false)
-	setActive(arg_9_0.live2dToggle, true)
-	setActive(arg_9_0.live2dOn, arg_9_2)
-	setActive(arg_9_0.live2dOff, not arg_9_2)
-	onButton(arg_9_0, arg_9_0.live2dBtn, function()
-		arg_9_0:Update(arg_9_0.paintingName, not arg_9_0.isOn)
+function slot0.OnUpdated(slot0, slot1, slot2)
+	setActive(slot0.live2dBtn, PathMgr.FileExists(PathMgr.getAssetBundle(slot1)))
+	setActive(slot0.live2dState, false)
+	setActive(slot0.live2dToggle, true)
+	setActive(slot0.live2dOn, slot2)
+	setActive(slot0.live2dOff, not slot2)
+	onButton(slot0, slot0.live2dBtn, function ()
+		uv0:Update(uv0.paintingName, not uv0.isOn)
 	end, SFX_PANEL)
 
-	if arg_9_0.callback then
-		arg_9_0.callback(arg_9_0.isOn)
+	if slot0.callback then
+		slot0.callback(slot0.isOn)
 	end
 end
 
-function var_0_0.Disable(arg_11_0)
-	if arg_11_0.isOn then
-		triggerButton(arg_11_0.live2dBtn)
+function slot0.Disable(slot0)
+	if slot0.isOn then
+		triggerButton(slot0.live2dBtn)
 	end
 end
 
-function var_0_0.SetEnable(arg_12_0, arg_12_1)
-	setButtonEnabled(arg_12_0.live2dBtn, arg_12_1)
+function slot0.SetEnable(slot0, slot1)
+	setButtonEnabled(slot0.live2dBtn, slot1)
 end
 
-function var_0_0.AddListener(arg_13_0, arg_13_1)
-	arg_13_0.callback = arg_13_1
+function slot0.AddListener(slot0, slot1)
+	slot0.callback = slot1
 end
 
-function var_0_0.Dispose(arg_14_0)
-	arg_14_0.callback = nil
+function slot0.Dispose(slot0)
+	slot0.callback = nil
 
-	arg_14_0:RemoveTimer()
-	pg.DelegateInfo.Dispose(arg_14_0)
+	slot0:RemoveTimer()
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

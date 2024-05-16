@@ -1,45 +1,41 @@
-﻿local var_0_0 = class("BaseEntityBank", import(".BaseEntityPool"))
-
-var_0_0.Fields = {
+slot0 = class("BaseEntityBank", import(".BaseEntityPool"))
+slot0.Fields = {
 	marks = "table"
 }
 
-function var_0_0.Build(arg_1_0)
-	var_0_0.super.Build(arg_1_0)
+function slot0.Build(slot0)
+	uv0.super.Build(slot0)
 
-	arg_1_0.marks = {}
+	slot0.marks = {}
 end
 
-function var_0_0.Fetch(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0:Get(arg_2_1)
+function slot0.Fetch(slot0, slot1)
+	slot2 = slot0:Get(slot1)
+	slot0.marks[slot1] = slot0.marks[slot1] or {}
 
-	arg_2_0.marks[arg_2_1] = arg_2_0.marks[arg_2_1] or {}
+	table.insert(slot0.marks[slot1], slot2)
 
-	table.insert(arg_2_0.marks[arg_2_1], var_2_0)
-
-	return var_2_0
+	return slot2
 end
 
-function var_0_0.Recycle(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0.marks[arg_3_1]
-
-	if var_3_0 then
-		for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-			arg_3_0:Return(iter_3_1, arg_3_1)
+function slot0.Recycle(slot0, slot1)
+	if slot0.marks[slot1] then
+		for slot6, slot7 in ipairs(slot2) do
+			slot0:Return(slot7, slot1)
 		end
 
-		arg_3_0.marks[arg_3_1] = nil
+		slot0.marks[slot1] = nil
 	end
 end
 
-function var_0_0.RecycleAll(arg_4_0)
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.marks) do
-		for iter_4_2, iter_4_3 in ipairs(iter_4_1) do
-			arg_4_0:Return(iter_4_3, iter_4_0)
+function slot0.RecycleAll(slot0)
+	for slot4, slot5 in pairs(slot0.marks) do
+		for slot9, slot10 in ipairs(slot5) do
+			slot0:Return(slot10, slot4)
 		end
 	end
 
-	arg_4_0.marks = {}
+	slot0.marks = {}
 end
 
-return var_0_0
+return slot0

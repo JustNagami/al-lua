@@ -1,49 +1,44 @@
-﻿local var_0_0 = class("WorldDetailMediator", import("..base.ContextMediator"))
+slot0 = class("WorldDetailMediator", import("..base.ContextMediator"))
+slot0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
+slot0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
 
-var_0_0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
-var_0_0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
+function slot0.register(slot0)
+	slot0:bind(uv0.OnShipInfo, function (slot0, slot1, slot2)
+		slot3 = WorldConst.FetchWorldShip(slot1)
+		uv0.contextData.fleetId = slot3.fleetId
+		uv0.contextData.toggle = slot2
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.OnShipInfo, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = WorldConst.FetchWorldShip(arg_2_1)
-
-		arg_1_0.contextData.fleetId = var_2_0.fleetId
-		arg_1_0.contextData.toggle = arg_2_2
-
-		local var_2_1 = nowWorld():GetFleet(var_2_0.fleetId):GetShipVOs(true)
-
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = var_2_0.id,
-			shipVOs = var_2_1
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+			shipId = slot3.id,
+			shipVOs = nowWorld():GetFleet(slot3.fleetId):GetShipVOs(true)
 		})
 	end)
-	arg_1_0:bind(var_0_0.OnCmdSkill, function(arg_3_0, arg_3_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.OnCmdSkill, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = CommanderSkillLayer,
 			data = {
 				isWorld = true,
-				skill = arg_3_1
+				skill = slot1
 			}
 		}))
 	end)
-	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	arg_1_0.viewComponent:setFleets(nowWorld():GetFleets())
+	slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	slot0.viewComponent:setFleets(nowWorld():GetFleets())
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == PlayerProxy.UPDATED then
-		arg_5_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 	end
 end
 
-return var_0_0
+return slot0

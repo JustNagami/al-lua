@@ -1,28 +1,27 @@
-﻿local var_0_0 = class("FuShunAttakeScript", import("..RectBaseScript"))
+slot0 = class("FuShunAttakeScript", import("..RectBaseScript"))
 
-function var_0_0.onInit(arg_1_0)
-	arg_1_0._loop = false
-	arg_1_0._active = false
-	arg_1_0._weight = 2
-	arg_1_0._scriptTime = 0.4
-	arg_1_0._overrideAble = true
-	arg_1_0._name = "FuShunAttakeScript"
+function slot0.onInit(slot0)
+	slot0._loop = false
+	slot0._active = false
+	slot0._weight = 2
+	slot0._scriptTime = 0.4
+	slot0._overrideAble = true
+	slot0._name = "FuShunAttakeScript"
 end
 
-function var_0_0.onStep(arg_2_0)
-	if arg_2_0._active and arg_2_0._collisionInfo.below and not arg_2_0._lateActive then
-		arg_2_0._event:emit(Fushun3GameEvent.script_attack_event)
+function slot0.onStep(slot0)
+	if slot0._active and slot0._collisionInfo.below and not slot0._lateActive then
+		slot0._event:emit(Fushun3GameEvent.script_attack_event)
 	end
 end
 
-function var_0_0.onLateStep(arg_3_0)
-	return
+function slot0.onLateStep(slot0)
 end
 
-function var_0_0.onTrigger(arg_4_0)
-	if Application.isEditor and arg_4_0._triggerKey == KeyCode.J and arg_4_0._triggerStatus and arg_4_0:checkScirptApply() then
-		arg_4_0._active = true
+function slot0.onTrigger(slot0)
+	if Application.isEditor and slot0._triggerKey == KeyCode.J and slot0._triggerStatus and slot0:checkScirptApply() then
+		slot0._active = true
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,51 +1,47 @@
-﻿local var_0_0 = class("BlackWhiteGridOPCommand", pm.SimpleCommand)
+slot0 = class("BlackWhiteGridOPCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.activityId
-	local var_1_3 = var_1_0.cmd
-	local var_1_4 = var_1_0.score
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.id
+	slot4 = slot2.activityId
+	slot5 = slot2.cmd
 
-	if var_1_4 < 0 then
+	if slot2.score < 0 then
 		return
 	end
 
-	local var_1_5 = getProxy(ActivityProxy)
-	local var_1_6 = var_1_5:getActivityById(var_1_2)
-
-	if not var_1_6 or var_1_6:isEnd() then
+	if not getProxy(ActivityProxy):getActivityById(slot4) or slot8:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 1,
-		activity_id = var_1_2,
-		arg1 = var_1_1,
-		arg2 = var_1_4,
+		activity_id = slot4,
+		arg1 = slot3,
+		arg2 = slot6,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			slot1 = PlayerConst.addTranDrop(slot0.award_list)
 
-			if not table.contains(var_1_6.data1_list, var_1_1) then
-				table.insert(var_1_6.data1_list, var_1_1)
+			if not table.contains(uv0.data1_list, uv1) then
+				table.insert(uv0.data1_list, uv1)
 			end
 
-			local var_2_1 = table.indexof(var_1_6.data1_list, var_1_1)
+			slot2 = table.indexof(uv0.data1_list, uv1)
 
-			assert(var_2_1)
+			assert(slot2)
 
-			var_1_6.data2_list[var_2_1] = var_1_4
+			uv0.data2_list[slot2] = uv2
 
-			var_1_5:updateActivity(var_1_6)
-			arg_1_0:sendNotification(GAME.BLACK_WHITE_GRID_OP_DONE, {
-				awards = var_2_0
+			uv3:updateActivity(uv0)
+			uv4:sendNotification(GAME.BLACK_WHITE_GRID_OP_DONE, {
+				awards = slot1
 			})
 		else
-			originalPrint(arg_2_0.result)
+			originalPrint(slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

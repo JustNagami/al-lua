@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSAtlasWorld", import(".WSAtlas"))
-
-var_0_0.Fields = {
+slot0 = class("WSAtlasWorld", import(".WSAtlas"))
+slot0.Fields = {
 	isDragging = "boolean",
 	tfMapModel = "userdata",
 	tfModel = "userdata",
@@ -14,659 +13,614 @@ var_0_0.Fields = {
 	entranceTplDic = "table",
 	twFocusIds = "table"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdateActiveEntrance = "OnUpdateActiveEntrance",
 	onUpdatePortMark = "OnUpdatePortMark",
 	onUpdatePressingAward = "OnUpdatePressingAward",
 	onUpdateProgress = "OnUpdateProgress"
 }
-var_0_0.EventUpdateselectEntrance = "WSAtlasWorld.EventUpdateselectEntrance"
-var_0_0.baseDistance = -217.4
-var_0_0.frontDistance = -101.6237
-var_0_0.basePoint = Vector2(1024, 550)
-var_0_0.baseMoveDistance = 100
-var_0_0.baseDuration = 0.8
-var_0_0.selectOffsetPos = Vector2(107, 61)
+slot0.EventUpdateselectEntrance = "WSAtlasWorld.EventUpdateselectEntrance"
+slot0.baseDistance = -217.4
+slot0.frontDistance = -101.6237
+slot0.basePoint = Vector2(1024, 550)
+slot0.baseMoveDistance = 100
+slot0.baseDuration = 0.8
+slot0.selectOffsetPos = Vector2(107, 61)
 
-function var_0_0.Dispose(arg_1_0)
-	arg_1_0:DisposeEntranceTplDic()
-	var_0_0.super.Dispose(arg_1_0)
+function slot0.Dispose(slot0)
+	slot0:DisposeEntranceTplDic()
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_0.Init(arg_2_0)
-	var_0_0.super.Init(arg_2_0)
+function slot0.Init(slot0)
+	uv0.super.Init(slot0)
 
-	arg_2_0.entranceTplDic = {}
-	arg_2_0.twFocusIds = {}
-	arg_2_0.areaLockPressingAward = {}
+	slot0.entranceTplDic = {}
+	slot0.twFocusIds = {}
+	slot0.areaLockPressingAward = {}
 end
 
-function var_0_0.UpdateAtlas(arg_3_0, arg_3_1)
-	if arg_3_0.atlas ~= arg_3_1 then
-		arg_3_0:RemoveAtlasListener()
-		arg_3_0:DisposeEntranceTplDic()
+function slot0.UpdateAtlas(slot0, slot1)
+	if slot0.atlas ~= slot1 then
+		slot0:RemoveAtlasListener()
+		slot0:DisposeEntranceTplDic()
 
-		arg_3_0.atlas = arg_3_1
+		slot0.atlas = slot1
 
-		arg_3_0:AddAtlasListener()
-		arg_3_0:NewEntranceTplDic()
-		arg_3_0:UpdateModelMask()
-		arg_3_0:OnUpdateActiveEntrance(nil, nil, arg_3_0.atlas:GetActiveEntrance())
-		arg_3_0:OnUpdatePressingAward()
+		slot0:AddAtlasListener()
+		slot0:NewEntranceTplDic()
+		slot0:UpdateModelMask()
+		slot0:OnUpdateActiveEntrance(nil, , slot0.atlas:GetActiveEntrance())
+		slot0:OnUpdatePressingAward()
 	end
 end
 
-function var_0_0.AddAtlasListener(arg_4_0)
-	if arg_4_0.atlas then
-		arg_4_0.atlas:AddListener(WorldAtlas.EventUpdatePortMark, arg_4_0.onUpdatePortMark)
+function slot0.AddAtlasListener(slot0)
+	if slot0.atlas then
+		slot0.atlas:AddListener(WorldAtlas.EventUpdatePortMark, slot0.onUpdatePortMark)
 	end
 
-	var_0_0.super.AddAtlasListener(arg_4_0)
+	uv0.super.AddAtlasListener(slot0)
 end
 
-function var_0_0.RemoveAtlasListener(arg_5_0)
-	if arg_5_0.atlas then
-		arg_5_0.atlas:RemoveListener(WorldAtlas.EventUpdatePortMark, arg_5_0.onUpdatePortMark)
+function slot0.RemoveAtlasListener(slot0)
+	if slot0.atlas then
+		slot0.atlas:RemoveListener(WorldAtlas.EventUpdatePortMark, slot0.onUpdatePortMark)
 	end
 
-	var_0_0.super.RemoveAtlasListener(arg_5_0)
+	uv0.super.RemoveAtlasListener(slot0)
 end
 
-function var_0_0.LoadModel(arg_6_0, arg_6_1)
-	local var_6_0 = {}
+function slot0.LoadModel(slot0, slot1)
+	slot2 = {}
 
-	if not arg_6_0.tfModel then
-		table.insert(var_6_0, function(arg_7_0)
-			local var_7_0 = PoolMgr.GetInstance()
+	if not slot0.tfModel then
+		table.insert(slot2, function (slot0)
+			PoolMgr.GetInstance():GetPrefab("model/worldmapmodel", "WorldMapModel", true, function (slot0)
+				if uv0.transform then
+					uv0.tfModel = tf(slot0)
 
-			var_7_0:GetPrefab("model/worldmapmodel", "WorldMapModel", true, function(arg_8_0)
-				if arg_6_0.transform then
-					arg_6_0.tfModel = tf(arg_8_0)
-
-					setParent(arg_6_0.tfModel, arg_6_0.tfMapModel, false)
+					setParent(uv0.tfModel, uv0.tfMapModel, false)
 				else
-					var_7_0:ReturnPrefab("model/worldmapmodel", "WorldMapModel", arg_8_0, true)
+					uv1:ReturnPrefab("model/worldmapmodel", "WorldMapModel", slot0, true)
 				end
 
-				return arg_7_0()
+				return uv2()
 			end)
 		end)
 	end
 
-	seriesAsync(var_6_0, function()
-		return existCall(arg_6_1)
+	seriesAsync(slot2, function ()
+		return existCall(uv0)
 	end)
 end
 
-function var_0_0.ReturnModel(arg_10_0)
-	if arg_10_0.tfModel then
-		PoolMgr.GetInstance():ReturnPrefab("model/worldmapmodel", "WorldMapModel", go(arg_10_0.tfModel), true)
+function slot0.ReturnModel(slot0)
+	if slot0.tfModel then
+		PoolMgr.GetInstance():ReturnPrefab("model/worldmapmodel", "WorldMapModel", go(slot0.tfModel), true)
 	end
 end
 
-function var_0_0.LoadScene(arg_11_0, arg_11_1)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "worldmap3d", LoadSceneMode.Additive, function(arg_12_0, arg_12_1)
-		arg_11_0.transform = tf(arg_12_0:GetRootGameObjects()[0])
+function slot0.LoadScene(slot0, slot1)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "worldmap3d", LoadSceneMode.Additive, function (slot0, slot1)
+		uv0.transform = tf(slot0:GetRootGameObjects()[0])
 
-		setActive(arg_11_0.transform, false)
+		setActive(uv0.transform, false)
 
-		arg_11_0.tfEntity = arg_11_0.transform:Find("entity")
-		arg_11_0.tfAreaScene = arg_11_0.tfEntity:Find("area_scene")
-		arg_11_0.tfMapScene = arg_11_0.tfEntity:Find("map_scene")
-		arg_11_0.tfMapModel = arg_11_0.tfEntity:Find("model")
-		arg_11_0.tfMapSelect = arg_11_0.tfMapScene:Find("selected_layer")
-		arg_11_0.tfSpriteScene = arg_11_0.tfEntity:Find("sprite_scene")
-		arg_11_0.tfCamera = arg_11_0.transform:Find("Main Camera")
-		arg_11_0.tfCamera:GetComponent("Camera").depthTextureMode = UnityEngine.DepthTextureMode.Depth
-		arg_11_0.defaultSprite = arg_11_0.tfEntity:Find("decolation_layer/edge"):GetComponent("SpriteRenderer").material
-		arg_11_0.addSprite = arg_11_0.tfEntity:Find("map_scene/mask_layer"):GetComponent("SpriteRenderer").material
+		uv0.tfEntity = uv0.transform:Find("entity")
+		uv0.tfAreaScene = uv0.tfEntity:Find("area_scene")
+		uv0.tfMapScene = uv0.tfEntity:Find("map_scene")
+		uv0.tfMapModel = uv0.tfEntity:Find("model")
+		uv0.tfMapSelect = uv0.tfMapScene:Find("selected_layer")
+		uv0.tfSpriteScene = uv0.tfEntity:Find("sprite_scene")
+		uv0.tfCamera = uv0.transform:Find("Main Camera")
+		uv0.tfCamera:GetComponent("Camera").depthTextureMode = UnityEngine.DepthTextureMode.Depth
+		uv0.defaultSprite = uv0.tfEntity:Find("decolation_layer/edge"):GetComponent("SpriteRenderer").material
+		uv0.addSprite = uv0.tfEntity:Find("map_scene/mask_layer"):GetComponent("SpriteRenderer").material
+		slot2 = math.deg2Rad * 30
+		slot3 = uv0.frontDistance / UnityEngine.Screen.height
+		uv0.dragTrigger = uv0.tfEntity:Find("Plane"):GetComponent("EventTriggerListener")
 
-		local var_12_0 = math.deg2Rad * 30
-		local var_12_1 = arg_11_0.frontDistance / UnityEngine.Screen.height
+		uv0.dragTrigger:AddDragFunc(function (slot0, slot1)
+			uv0.isDragging = true
 
-		arg_11_0.dragTrigger = arg_11_0.tfEntity:Find("Plane"):GetComponent("EventTriggerListener")
-
-		arg_11_0.dragTrigger:AddDragFunc(function(arg_13_0, arg_13_1)
-			arg_11_0.isDragging = true
-
-			if not arg_11_0.nowArea or arg_11_0:CheckIsTweening() then
+			if not uv0.nowArea or uv0:CheckIsTweening() then
 				return
 			end
 
-			if arg_11_0.selectEntrance then
-				arg_11_0:UpdateSelect()
+			if uv0.selectEntrance then
+				uv0:UpdateSelect()
 			end
 
-			local var_13_0 = Vector3(arg_13_1.delta.x, 0, arg_13_1.delta.y / math.cos(var_12_0)) * var_12_1
-
-			arg_11_0.tfCamera.localPosition = arg_11_0.tfCamera.localPosition + var_13_0
+			uv0.tfCamera.localPosition = uv0.tfCamera.localPosition + Vector3(slot1.delta.x, 0, slot1.delta.y / math.cos(uv1)) * uv2
 		end)
-		arg_11_0.dragTrigger:AddDragEndFunc(function(arg_14_0, arg_14_1)
-			arg_11_0.isDragging = false
+		uv0.dragTrigger:AddDragEndFunc(function (slot0, slot1)
+			uv0.isDragging = false
 		end)
-		arg_11_0:UpdateCenterEffectDisplay()
-		arg_11_0:BuildActiveMark()
+		uv0:UpdateCenterEffectDisplay()
+		uv0:BuildActiveMark()
 
-		local var_12_2 = nowWorld()
+		slot4 = nowWorld()
+		uv0.cmPointer = uv0.tfEntity:Find("Plane"):GetComponent(typeof(PointerInfo))
 
-		arg_11_0.cmPointer = arg_11_0.tfEntity:Find("Plane"):GetComponent(typeof(PointerInfo))
-
-		arg_11_0.cmPointer:AddColorMaskClickListener(function(arg_15_0, arg_15_1)
-			if arg_11_0.isDragging then
+		uv0.cmPointer:AddColorMaskClickListener(function (slot0, slot1)
+			if uv0.isDragging then
 				return
 			end
 
-			local var_15_0 = var_12_2:ColorToEntrance(arg_15_0)
-
-			if var_15_0 then
-				arg_11_0.onClickColor(var_15_0, arg_15_1.position)
+			if uv1:ColorToEntrance(slot0) then
+				uv0.onClickColor(slot2, slot1.position)
 			end
 		end)
 
-		return existCall(arg_11_1)
+		return existCall(uv1)
 	end)
 end
 
-function var_0_0.ReturnScene(arg_16_0)
-	arg_16_0:ReturnModel()
+function slot0.ReturnScene(slot0)
+	slot0:ReturnModel()
 
-	if arg_16_0.transform then
-		local var_16_0 = arg_16_0.tfMapScene:GetComponent("FMultiSpriteRenderCtrl")
+	if slot0.transform then
+		slot1 = slot0.tfMapScene:GetComponent("FMultiSpriteRenderCtrl")
+		slot1.alpha = 1
 
-		var_16_0.alpha = 1
+		slot1:UpdateAlpha()
 
-		var_16_0:UpdateAlpha()
+		slot2 = slot0.tfAreaScene:GetComponent("FMultiSpriteRenderCtrl")
+		slot2.alpha = 1
 
-		local var_16_1 = arg_16_0.tfAreaScene:GetComponent("FMultiSpriteRenderCtrl")
-
-		var_16_1.alpha = 1
-
-		var_16_1:UpdateAlpha()
+		slot2:UpdateAlpha()
 		SceneOpMgr.Inst:UnloadSceneAsync("scene/worldmap3d", "worldmap3d")
 
-		arg_16_0.cmPointer = nil
+		slot0.cmPointer = nil
 	end
 end
 
-function var_0_0.ShowOrHide(arg_17_0, arg_17_1)
-	var_0_0.super.ShowOrHide(arg_17_0, arg_17_1)
+function slot0.ShowOrHide(slot0, slot1)
+	uv0.super.ShowOrHide(slot0, slot1)
 
-	if arg_17_1 then
+	if slot1 then
 		SceneManager.SetActiveScene(SceneManager.GetSceneByName("WorldMap3D"))
 	else
 		SceneManager.SetActiveScene(SceneManager.GetSceneByName("main"))
 	end
 end
 
-function var_0_0.GetOffsetMapPos(arg_18_0)
-	local var_18_0 = var_0_0.selectOffsetPos
-	local var_18_1 = arg_18_0.tfEntity.localEulerAngles.y
-	local var_18_2 = math.rad(-var_18_1)
+function slot0.GetOffsetMapPos(slot0)
+	slot1 = uv0.selectOffsetPos
+	slot3 = math.rad(-slot0.tfEntity.localEulerAngles.y)
 
-	return Vector2(var_18_0.x * math.cos(var_18_2) - var_18_0.y * math.sin(var_18_2), var_18_0.y * math.cos(var_18_2) + var_18_0.x * math.sin(var_18_2))
+	return Vector2(slot1.x * math.cos(slot3) - slot1.y * math.sin(slot3), slot1.y * math.cos(slot3) + slot1.x * math.sin(slot3))
 end
 
-function var_0_0.UpdateSelect(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	if arg_19_1 then
-		arg_19_0.nowArea = arg_19_1:GetAreaId()
+function slot0.UpdateSelect(slot0, slot1, slot2, slot3)
+	if slot1 then
+		slot0.nowArea = slot1:GetAreaId()
 
-		arg_19_0:FocusPos(Vector2(arg_19_1.config.area_pos[1], arg_19_1.config.area_pos[2]) + arg_19_0:GetOffsetMapPos(), nil, 1, true, function()
-			var_0_0.super.UpdateSelect(arg_19_0, arg_19_1)
-			arg_19_0:DispatchEvent(var_0_0.EventUpdateselectEntrance, arg_19_1, arg_19_2, arg_19_3)
+		slot0:FocusPos(Vector2(slot1.config.area_pos[1], slot1.config.area_pos[2]) + slot0:GetOffsetMapPos(), nil, 1, true, function ()
+			uv0.super.UpdateSelect(uv1, uv2)
+			uv1:DispatchEvent(uv0.EventUpdateselectEntrance, uv2, uv3, uv4)
 		end)
 	else
-		var_0_0.super.UpdateSelect(arg_19_0, arg_19_1)
-		arg_19_0:DispatchEvent(var_0_0.EventUpdateselectEntrance, arg_19_1, arg_19_2, arg_19_3)
+		uv0.super.UpdateSelect(slot0, slot1)
+		slot0:DispatchEvent(uv0.EventUpdateselectEntrance, slot1, slot2, slot3)
 	end
 end
 
-function var_0_0.UpdateModelMask(arg_21_0)
-	var_0_0.super.UpdateModelMask(arg_21_0)
-	arg_21_0:UpdateAreaLock()
+function slot0.UpdateModelMask(slot0)
+	uv0.super.UpdateModelMask(slot0)
+	slot0:UpdateAreaLock()
 end
 
-function var_0_0.UpdateEntranceMask(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0.entranceTplDic[arg_22_1.id]
-
-	if arg_22_1:HasPort() then
-		var_22_0:UpdatePort(arg_22_0.atlas:GetEntrancePortInfo(arg_22_1.id))
+function slot0.UpdateEntranceMask(slot0, slot1)
+	if slot1:HasPort() then
+		slot0.entranceTplDic[slot1.id]:UpdatePort(slot0.atlas:GetEntrancePortInfo(slot1.id))
 	end
 
-	var_0_0.super.UpdateEntranceMask(arg_22_0, arg_22_1)
+	uv0.super.UpdateEntranceMask(slot0, slot1)
 end
 
-function var_0_0.OnUpdateProgress(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	var_0_0.super.OnUpdateProgress(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	arg_23_0:UpdateAreaLock()
+function slot0.OnUpdateProgress(slot0, slot1, slot2, slot3)
+	uv0.super.OnUpdateProgress(slot0, slot1, slot2, slot3)
+	slot0:UpdateAreaLock()
 end
 
-function var_0_0.UpdateAreaLock(arg_24_0)
-	for iter_24_0 = 1, 5 do
-		local var_24_0 = nowWorld():CheckAreaUnlock(iter_24_0)
+function slot0.UpdateAreaLock(slot0)
+	for slot4 = 1, 5 do
+		slot5 = nowWorld():CheckAreaUnlock(slot4)
 
-		setActive(arg_24_0.tfAreaScene:Find("lock_layer/" .. iter_24_0), not var_24_0)
-		setActive(arg_24_0.tfMapScene:Find("mask_layer/" .. iter_24_0), var_24_0)
+		setActive(slot0.tfAreaScene:Find("lock_layer/" .. slot4), not slot5)
+		setActive(slot0.tfMapScene:Find("mask_layer/" .. slot4), slot5)
 
-		if var_24_0 and arg_24_0.areaLockPressingAward[iter_24_0] then
-			for iter_24_1, iter_24_2 in ipairs(arg_24_0.areaLockPressingAward[iter_24_0]) do
-				arg_24_0.entranceTplDic[iter_24_2]:UpdatePressingAward()
+		if slot5 and slot0.areaLockPressingAward[slot4] then
+			for slot9, slot10 in ipairs(slot0.areaLockPressingAward[slot4]) do
+				slot0.entranceTplDic[slot10]:UpdatePressingAward()
 			end
 
-			arg_24_0.areaLockPressingAward[iter_24_0] = nil
+			slot0.areaLockPressingAward[slot4] = nil
 		end
 	end
 end
 
-function var_0_0.OnUpdateActiveEntrance(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-	var_0_0.super.OnUpdateActiveEntrance(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+function slot0.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
+	uv0.super.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
 
-	if arg_25_3 then
-		local var_25_0 = arg_25_3:HasPort()
+	if slot3 then
+		slot4 = slot3:HasPort()
 
-		arg_25_0:DoUpdatExtraMark(arg_25_0.tfActiveMark, "mark_active_1", not var_25_0)
-		arg_25_0:DoUpdatExtraMark(arg_25_0.tfActiveMark, "mark_active_port", var_25_0)
+		slot0:DoUpdatExtraMark(slot0.tfActiveMark, "mark_active_1", not slot4)
+		slot0:DoUpdatExtraMark(slot0.tfActiveMark, "mark_active_port", slot4)
 	end
 
-	local var_25_1 = arg_25_3 and arg_25_3:GetAreaId()
+	slot4 = slot3 and slot3:GetAreaId()
 
-	for iter_25_0 = 1, 5 do
-		setActive(arg_25_0.tfAreaScene:Find("selected_layer/B" .. iter_25_0 .. "_2"), iter_25_0 == var_25_1)
-		setActive(arg_25_0.tfAreaScene:Find("base_layer/B" .. iter_25_0), iter_25_0 ~= var_25_1)
+	for slot8 = 1, 5 do
+		setActive(slot0.tfAreaScene:Find("selected_layer/B" .. slot8 .. "_2"), slot8 == slot4)
+		setActive(slot0.tfAreaScene:Find("base_layer/B" .. slot8), slot8 ~= slot4)
 	end
 end
 
-function var_0_0.OnUpdatePressingAward(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
-	arg_26_3 = arg_26_3 or arg_26_0.atlas.transportDic
+function slot0.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
+	slot3 = slot3 or slot0.atlas.transportDic
 
-	for iter_26_0, iter_26_1 in pairs(arg_26_3) do
-		if iter_26_1 then
-			local var_26_0 = arg_26_0.atlas:GetEntrance(iter_26_0):GetAreaId()
-
-			if nowWorld():CheckAreaUnlock(var_26_0) then
-				arg_26_0.entranceTplDic[iter_26_0]:UpdatePressingAward()
+	for slot7, slot8 in pairs(slot3) do
+		if slot8 then
+			if nowWorld():CheckAreaUnlock(slot0.atlas:GetEntrance(slot7):GetAreaId()) then
+				slot0.entranceTplDic[slot7]:UpdatePressingAward()
 			else
-				arg_26_0.areaLockPressingAward[var_26_0] = arg_26_0.areaLockPressingAward[var_26_0] or {}
+				slot0.areaLockPressingAward[slot9] = slot0.areaLockPressingAward[slot9] or {}
 
-				table.insert(arg_26_0.areaLockPressingAward[var_26_0], iter_26_0)
+				table.insert(slot0.areaLockPressingAward[slot9], slot7)
 			end
 		end
 	end
 
-	var_0_0.super.OnUpdatePressingAward(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+	uv0.super.OnUpdatePressingAward(slot0, slot1, slot2, slot3)
 end
 
-function var_0_0.OnUpdatePortMark(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	for iter_27_0, iter_27_1 in pairs(arg_27_3) do
-		if iter_27_1 then
-			arg_27_0.entranceTplDic[iter_27_0]:UpdatePort(arg_27_0.atlas:GetEntrancePortInfo(iter_27_0))
+function slot0.OnUpdatePortMark(slot0, slot1, slot2, slot3)
+	for slot7, slot8 in pairs(slot3) do
+		if slot8 then
+			slot0.entranceTplDic[slot7]:UpdatePort(slot0.atlas:GetEntrancePortInfo(slot7))
 		end
 	end
 end
 
-function var_0_0.NewEntranceTplDic(arg_28_0)
-	for iter_28_0, iter_28_1 in pairs(arg_28_0.atlas.entranceDic) do
-		arg_28_0.entranceTplDic[iter_28_1.id] = arg_28_0:NewEntranceTpl(iter_28_1)
+function slot0.NewEntranceTplDic(slot0)
+	for slot4, slot5 in pairs(slot0.atlas.entranceDic) do
+		slot0.entranceTplDic[slot5.id] = slot0:NewEntranceTpl(slot5)
 	end
 end
 
-function var_0_0.DisposeEntranceTplDic(arg_29_0)
-	WPool:ReturnArray(_.values(arg_29_0.entranceTplDic))
+function slot0.DisposeEntranceTplDic(slot0)
+	WPool:ReturnArray(_.values(slot0.entranceTplDic))
 
-	arg_29_0.entranceTplDic = {}
+	slot0.entranceTplDic = {}
 end
 
-function var_0_0.NewEntranceTpl(arg_30_0, arg_30_1)
-	local var_30_0 = WPool:Get(WSEntranceTpl)
+function slot0.NewEntranceTpl(slot0, slot1)
+	slot2 = WPool:Get(WSEntranceTpl)
 
-	var_30_0.transform:SetParent(arg_30_0.tfSpriteScene, false)
+	slot2.transform:SetParent(slot0.tfSpriteScene, false)
 
-	var_30_0.transform.localPosition = WorldConst.CalcModelPosition(arg_30_1, arg_30_0.spriteBaseSize)
-	var_30_0.tfArea = arg_30_0.tfAreaScene:Find("display_layer")
-	var_30_0.tfMap = arg_30_0.tfMapScene:Find("display_layer")
+	slot2.transform.localPosition = WorldConst.CalcModelPosition(slot1, slot0.spriteBaseSize)
+	slot2.tfArea = slot0.tfAreaScene:Find("display_layer")
+	slot2.tfMap = slot0.tfMapScene:Find("display_layer")
 
-	var_30_0:Setup()
-	var_30_0:UpdateEntrance(arg_30_1)
+	slot2:Setup()
+	slot2:UpdateEntrance(slot1)
 
-	return var_30_0
+	return slot2
 end
 
-function var_0_0.FindEntranceTpl(arg_31_0, arg_31_1)
-	return arg_31_0.entranceTplDic[arg_31_1.id]
+function slot0.FindEntranceTpl(slot0, slot1)
+	return slot0.entranceTplDic[slot1.id]
 end
 
-function var_0_0.UpdateScale(arg_32_0, arg_32_1)
-	arg_32_1 = arg_32_1 or 0
-
-	local var_32_0 = arg_32_0.tfCamera.localEulerAngles.x / 180 * math.pi
-	local var_32_1 = arg_32_0.tfCamera.localPosition.y / -math.sin(var_32_0)
-	local var_32_2 = var_0_0.baseDistance * (1 - arg_32_1) + arg_32_0.frontDistance * arg_32_1 - var_32_1
-	local var_32_3 = Vector3(0, -math.sin(var_32_0) * var_32_2, math.cos(var_32_0) * var_32_2)
-
-	arg_32_0.tfCamera.localPosition = arg_32_0.tfCamera.localPosition + var_32_3
+function slot0.UpdateScale(slot0, slot1)
+	slot1 = slot1 or 0
+	slot2 = slot0.tfCamera.localEulerAngles.x / 180 * math.pi
+	slot4 = uv0.baseDistance * (1 - slot1) + slot0.frontDistance * slot1 - slot0.tfCamera.localPosition.y / -math.sin(slot2)
+	slot0.tfCamera.localPosition = slot0.tfCamera.localPosition + Vector3(0, -math.sin(slot2) * slot4, math.cos(slot2) * slot4)
 end
 
-function var_0_0.FocusPos(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4, arg_33_5)
-	if arg_33_0.twRotateId then
-		LeanTween.cancel(arg_33_0.twRotateId)
+function slot0.FocusPos(slot0, slot1, slot2, slot3, slot4, slot5)
+	if slot0.twRotateId then
+		LeanTween.cancel(slot0.twRotateId)
 
-		arg_33_0.twRotateId = nil
+		slot0.twRotateId = nil
 	end
 
-	arg_33_3 = arg_33_3 or 0
-	arg_33_2 = 0
+	slot3 = slot3 or 0
+	slot2 = 0
 
-	if not arg_33_1 then
-		local var_33_0 = math.rad(-arg_33_2)
-
-		arg_33_1 = var_0_0.basePoint - var_0_0.spriteBaseSize / 2
-		arg_33_1 = Vector2(arg_33_1.x * math.cos(var_33_0) - arg_33_1.y * math.sin(var_33_0), arg_33_1.y * math.cos(var_33_0) + arg_33_1.x * math.sin(var_33_0))
-		arg_33_1 = arg_33_1 + var_0_0.spriteBaseSize / 2
+	if not slot1 then
+		slot6 = math.rad(-slot2)
+		slot1 = uv0.basePoint - uv0.spriteBaseSize / 2
+		slot1 = Vector2(slot1.x * math.cos(slot6) - slot1.y * math.sin(slot6), slot1.y * math.cos(slot6) + slot1.x * math.sin(slot6)) + uv0.spriteBaseSize / 2
 	end
 
-	local var_33_1 = math.rad(arg_33_0.tfEntity.localEulerAngles.y - arg_33_2)
+	slot6 = math.rad(slot0.tfEntity.localEulerAngles.y - slot2)
+	slot1 = slot1 - uv0.spriteBaseSize / 2
+	slot1 = Vector2(slot1.x * math.cos(slot6) - slot1.y * math.sin(slot6), slot1.y * math.cos(slot6) + slot1.x * math.sin(slot6))
+	slot8 = slot0.transform:InverseTransformPoint(slot0.tfSpriteScene:TransformPoint(Vector3(slot1.x, 0, slot1.y) / PIXEL_PER_UNIT))
+	slot9 = math.rad(slot0.tfCamera.localEulerAngles.x)
+	slot10 = slot8 - Vector3(0, slot8.y, slot8.y / -math.tan(slot9)) + Vector3(0, slot0.tfCamera.localPosition.y, slot0.tfCamera.localPosition.y / -math.tan(slot9))
+	slot12 = uv0.baseDistance * (1 - slot3) + uv0.frontDistance * slot3 - slot10.y / -math.sin(slot9)
+	slot10 = slot10 + Vector3(0, -math.sin(slot9) * slot12, math.cos(slot9) * slot12)
 
-	arg_33_1 = arg_33_1 - var_0_0.spriteBaseSize / 2
-	arg_33_1 = Vector2(arg_33_1.x * math.cos(var_33_1) - arg_33_1.y * math.sin(var_33_1), arg_33_1.y * math.cos(var_33_1) + arg_33_1.x * math.sin(var_33_1))
+	if slot4 then
+		slot13 = math.min(Vector3.Distance(slot0.tfCamera.localPosition, slot10) / uv0.baseMoveDistance, 1) * uv0.baseDuration
+		slot14 = math.min(math.abs(slot2 - slot0.tfEntity.localEulerAngles.y) / 180, 1) * uv0.baseDuration
+		slot15 = {}
 
-	local var_33_2 = Vector3(arg_33_1.x, 0, arg_33_1.y) / PIXEL_PER_UNIT
-	local var_33_3 = arg_33_0.transform:InverseTransformPoint(arg_33_0.tfSpriteScene:TransformPoint(var_33_2))
-	local var_33_4 = math.rad(arg_33_0.tfCamera.localEulerAngles.x)
-	local var_33_5 = var_33_3 - Vector3(0, var_33_3.y, var_33_3.y / -math.tan(var_33_4)) + Vector3(0, arg_33_0.tfCamera.localPosition.y, arg_33_0.tfCamera.localPosition.y / -math.tan(var_33_4))
-	local var_33_6 = var_33_5.y / -math.sin(var_33_4)
-	local var_33_7 = var_0_0.baseDistance * (1 - arg_33_3) + var_0_0.frontDistance * arg_33_3 - var_33_6
-	local var_33_8 = var_33_5 + Vector3(0, -math.sin(var_33_4) * var_33_7, math.cos(var_33_4) * var_33_7)
+		table.insert(slot15, function (slot0)
+			slot1 = LeanTween.moveLocal(go(uv0.tfCamera), uv1, uv2):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(slot0)).uniqueId
 
-	if arg_33_4 then
-		local var_33_9 = math.min(Vector3.Distance(arg_33_0.tfCamera.localPosition, var_33_8) / var_0_0.baseMoveDistance, 1) * var_0_0.baseDuration
-		local var_33_10 = math.min(math.abs(arg_33_2 - arg_33_0.tfEntity.localEulerAngles.y) / 180, 1) * var_0_0.baseDuration
-		local var_33_11 = {}
-
-		table.insert(var_33_11, function(arg_34_0)
-			local var_34_0 = LeanTween.moveLocal(go(arg_33_0.tfCamera), var_33_8, var_33_9):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_34_0)).uniqueId
-
-			table.insert(arg_33_0.twFocusIds, var_34_0)
-			arg_33_0.wsTimer:AddTween(var_34_0)
+			table.insert(uv0.twFocusIds, slot1)
+			uv0.wsTimer:AddTween(slot1)
 		end)
-		table.insert(var_33_11, function(arg_35_0)
-			local var_35_0 = LeanTween.rotateY(go(arg_33_0.tfEntity), arg_33_2, var_33_10):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_35_0)).uniqueId
+		table.insert(slot15, function (slot0)
+			slot1 = LeanTween.rotateY(go(uv0.tfEntity), uv1, uv2):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(slot0)).uniqueId
 
-			table.insert(arg_33_0.twFocusIds, var_35_0)
-			arg_33_0.wsTimer:AddTween(var_35_0)
+			table.insert(uv0.twFocusIds, slot1)
+			uv0.wsTimer:AddTween(slot1)
 		end)
-		parallelAsync(var_33_11, function()
-			existCall(arg_33_5)
+		parallelAsync(slot15, function ()
+			existCall(uv0)
 		end)
-	else
-		arg_33_0.tfCamera.localPosition = var_33_8
-		arg_33_0.tfEntity.localEulerAngles = Vector3(0, arg_33_2, 0)
 
-		return existCall(arg_33_5)
-	end
-end
-
-function var_0_0.FocusPosInArea(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
-	if arg_37_1 then
-		local var_37_0 = pg.world_regions_data[arg_37_1]
-
-		arg_37_0:FocusPos(Vector2(var_37_0.regions_pos[1], var_37_0.regions_pos[2]), var_37_0.regions_rotation[1], 1, arg_37_2, arg_37_3)
-	else
-		arg_37_0:FocusPos(var_0_0.basePoint, 0, 0, arg_37_2, arg_37_3)
-	end
-end
-
-function var_0_0.SwitchArea(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-	local var_38_0 = {}
-
-	if arg_38_2 and tobool(arg_38_1) ~= tobool(arg_38_0.nowArea) then
-		table.insert(var_38_0, function(arg_39_0)
-			arg_38_0:SwitchMode(arg_38_1, arg_38_2, arg_39_0)
-		end)
-	end
-
-	table.insert(var_38_0, function(arg_40_0)
-		setActive(arg_38_0.tfAreaScene, not arg_38_1)
-		setActive(arg_38_0.tfMapScene, arg_38_1)
-		setActive(arg_38_0.tfMapModel, not arg_38_1)
-		arg_40_0()
-	end)
-
-	arg_38_0.nowArea = arg_38_1
-
-	parallelAsync({
-		function(arg_41_0)
-			seriesAsync(var_38_0, arg_41_0)
-		end,
-		function(arg_42_0)
-			arg_38_0:FocusPosInArea(arg_38_1, arg_38_2, arg_42_0)
-		end
-	}, function()
-		return existCall(arg_38_3)
-	end)
-end
-
-function var_0_0.SwitchMode(arg_44_0, arg_44_1, arg_44_2, arg_44_3)
-	local function var_44_0(arg_45_0)
-		setActive(arg_44_0.tfAreaScene, true)
-
-		local var_45_0 = arg_44_0.tfAreaScene:GetComponent("FMultiSpriteRenderCtrl")
-
-		var_45_0:Init()
-
-		var_45_0.alpha = arg_44_1 and 1 or 0
-
-		var_45_0:UpdateAlpha()
-
-		local var_45_1 = LeanTween.value(go(arg_44_0.tfAreaScene), arg_44_1 and 1 or 0, arg_44_1 and 0 or 1, var_0_0.baseDuration):setOnUpdate(System.Action_float(function(arg_46_0)
-			var_45_0.alpha = arg_46_0
-		end)):setOnComplete(System.Action(function()
-			var_45_0.alpha = 1
-
-			var_45_0:UpdateAlpha()
-			setActive(arg_44_0.tfAreaScene, not arg_44_1)
-
-			return arg_45_0()
-		end)).uniqueId
-
-		table.insert(arg_44_0.twFocusIds, var_45_1)
-		arg_44_0.wsTimer:AddTween(var_45_1)
-	end
-
-	local function var_44_1(arg_48_0)
-		setActive(arg_44_0.tfMapScene, true)
-
-		local var_48_0 = arg_44_0.tfMapScene:GetComponent("FMultiSpriteRenderCtrl")
-
-		var_48_0:Init()
-
-		var_48_0.alpha = arg_44_1 and 0 or 1
-
-		var_48_0:UpdateAlpha()
-
-		local var_48_1 = LeanTween.value(go(arg_44_0.tfMapScene), arg_44_1 and 0 or 1, arg_44_1 and 1 or 0, var_0_0.baseDuration):setOnUpdate(System.Action_float(function(arg_49_0)
-			var_48_0.alpha = arg_49_0
-		end)):setOnComplete(System.Action(function()
-			var_48_0.alpha = 1
-
-			var_48_0:UpdateAlpha()
-			setActive(arg_44_0.tfMapScene, arg_44_1)
-
-			return arg_48_0()
-		end)).uniqueId
-
-		table.insert(arg_44_0.twFocusIds, var_48_1)
-		arg_44_0.wsTimer:AddTween(var_48_1)
-	end
-
-	local function var_44_2(arg_51_0)
-		setActive(arg_44_0.tfMapModel, true)
-
-		local var_51_0 = {}
-		local var_51_1 = var_0_0.baseDuration
-
-		table.insert(var_51_0, function(arg_52_0)
-			local var_52_0 = arg_44_0.tfModel:Find("Terrain_LOD9_perfect")
-			local var_52_1 = var_52_0:GetComponent("MeshRenderer").material
-
-			var_52_1:SetFloat("_Invisible", arg_44_1 and 1 or 0)
-
-			local var_52_2 = LeanTween.value(go(var_52_0), arg_44_1 and 1 or 0, arg_44_1 and 0 or 1, var_51_1):setOnUpdate(System.Action_float(function(arg_53_0)
-				var_52_1:SetFloat("_Invisible", arg_53_0)
-			end)):setOnComplete(System.Action(function()
-				var_52_1:SetFloat("_Invisible", arg_44_1 and 0 or 1)
-				arg_52_0()
-			end)).uniqueId
-
-			table.insert(arg_44_0.twFocusIds, var_52_2)
-			arg_44_0.wsTimer:AddTween(var_52_2)
-		end)
-		table.insert(var_51_0, function(arg_55_0)
-			local var_55_0 = arg_44_0.tfModel:Find("decolation_model")
-			local var_55_1 = var_55_0:GetComponent("FMultiSpriteRenderCtrl")
-
-			var_55_1:Init()
-
-			var_55_1.alpha = arg_44_1 and 1 or 0
-
-			var_55_1:UpdateAlpha()
-
-			local var_55_2 = LeanTween.value(go(var_55_0), arg_44_1 and 1 or 0, arg_44_1 and 0 or 1, var_51_1):setOnUpdate(System.Action_float(function(arg_56_0)
-				var_55_1.alpha = arg_56_0
-			end)):setOnComplete(System.Action(function()
-				var_55_1.alpha = 1
-
-				var_55_1:UpdateAlpha()
-				arg_55_0()
-			end)).uniqueId
-
-			table.insert(arg_44_0.twFocusIds, var_55_2)
-			arg_44_0.wsTimer:AddTween(var_55_2)
-		end)
-		parallelAsync(var_51_0, function()
-			setActive(arg_44_0.tfMapModel, not arg_44_1)
-
-			return arg_51_0()
-		end)
-	end
-
-	local function var_44_3()
-		arg_44_0:BreathRotate(not arg_44_1)
-
-		return existCall(arg_44_3)
-	end
-
-	if arg_44_2 then
-		parallelAsync({
-			var_44_0,
-			var_44_1,
-			var_44_2
-		}, function()
-			return var_44_3()
-		end)
-	else
-		return var_44_3()
-	end
-end
-
-var_0_0.LowRotation = -5
-var_0_0.HeightRotation = 5
-var_0_0.BreathTime = 18
-
-function var_0_0.BreathRotate(arg_61_0, arg_61_1)
-	if arg_61_0.twRotateId then
-		LeanTween.cancel(arg_61_0.twRotateId)
-
-		arg_61_0.twRotateId = nil
-	end
-
-	if not arg_61_1 then
 		return
 	end
 
-	local var_61_0 = -1
+	slot0.tfCamera.localPosition = slot10
+	slot0.tfEntity.localEulerAngles = Vector3(0, slot2, 0)
 
-	local function var_61_1()
-		var_61_0 = -1 * var_61_0
-		arg_61_0.twRotateId = LeanTween.rotateY(go(arg_61_0.tfEntity), var_61_0 == 1 and var_0_0.HeightRotation or var_0_0.LowRotation, var_0_0.BreathTime):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
-			var_61_1()
+	return existCall(slot5)
+end
+
+function slot0.FocusPosInArea(slot0, slot1, slot2, slot3)
+	if slot1 then
+		slot4 = pg.world_regions_data[slot1]
+
+		slot0:FocusPos(Vector2(slot4.regions_pos[1], slot4.regions_pos[2]), slot4.regions_rotation[1], 1, slot2, slot3)
+	else
+		slot0:FocusPos(uv0.basePoint, 0, 0, slot2, slot3)
+	end
+end
+
+function slot0.SwitchArea(slot0, slot1, slot2, slot3)
+	slot4 = {}
+
+	if slot2 and tobool(slot1) ~= tobool(slot0.nowArea) then
+		table.insert(slot4, function (slot0)
+			uv0:SwitchMode(uv1, uv2, slot0)
+		end)
+	end
+
+	table.insert(slot4, function (slot0)
+		setActive(uv0.tfAreaScene, not uv1)
+		setActive(uv0.tfMapScene, uv1)
+		setActive(uv0.tfMapModel, not uv1)
+		slot0()
+	end)
+
+	slot0.nowArea = slot1
+
+	parallelAsync({
+		function (slot0)
+			seriesAsync(uv0, slot0)
+		end,
+		function (slot0)
+			uv0:FocusPosInArea(uv1, uv2, slot0)
+		end
+	}, function ()
+		return existCall(uv0)
+	end)
+end
+
+function slot0.SwitchMode(slot0, slot1, slot2, slot3)
+	function slot7()
+		uv0:BreathRotate(not uv1)
+
+		return existCall(uv2)
+	end
+
+	if slot2 then
+		parallelAsync({
+			function (slot0)
+				setActive(uv0.tfAreaScene, true)
+				uv0.tfAreaScene:GetComponent("FMultiSpriteRenderCtrl"):Init()
+
+				slot1.alpha = uv1 and 1 or 0
+
+				slot1:UpdateAlpha()
+
+				slot2 = LeanTween.value(go(uv0.tfAreaScene), uv1 and 1 or 0, uv1 and 0 or 1, uv2.baseDuration):setOnUpdate(System.Action_float(function (slot0)
+					uv0.alpha = slot0
+				end)):setOnComplete(System.Action(function ()
+					uv0.alpha = 1
+
+					uv0:UpdateAlpha()
+					setActive(uv1.tfAreaScene, not uv2)
+
+					return uv3()
+				end)).uniqueId
+
+				table.insert(uv0.twFocusIds, slot2)
+				uv0.wsTimer:AddTween(slot2)
+			end,
+			function (slot0)
+				setActive(uv0.tfMapScene, true)
+				uv0.tfMapScene:GetComponent("FMultiSpriteRenderCtrl"):Init()
+
+				slot1.alpha = uv1 and 0 or 1
+
+				slot1:UpdateAlpha()
+
+				slot2 = LeanTween.value(go(uv0.tfMapScene), uv1 and 0 or 1, uv1 and 1 or 0, uv2.baseDuration):setOnUpdate(System.Action_float(function (slot0)
+					uv0.alpha = slot0
+				end)):setOnComplete(System.Action(function ()
+					uv0.alpha = 1
+
+					uv0:UpdateAlpha()
+					setActive(uv1.tfMapScene, uv2)
+
+					return uv3()
+				end)).uniqueId
+
+				table.insert(uv0.twFocusIds, slot2)
+				uv0.wsTimer:AddTween(slot2)
+			end,
+			function (slot0)
+				setActive(uv0.tfMapModel, true)
+
+				slot1 = {}
+				slot2 = uv1.baseDuration
+
+				table.insert(slot1, function (slot0)
+					uv0.tfModel:Find("Terrain_LOD9_perfect"):GetComponent("MeshRenderer").material:SetFloat("_Invisible", uv1 and 1 or 0)
+
+					slot3 = LeanTween.value(go(slot1), uv1 and 1 or 0, uv1 and 0 or 1, uv2):setOnUpdate(System.Action_float(function (slot0)
+						uv0:SetFloat("_Invisible", slot0)
+					end)):setOnComplete(System.Action(function ()
+						uv0:SetFloat("_Invisible", uv1 and 0 or 1)
+						uv2()
+					end)).uniqueId
+
+					table.insert(uv0.twFocusIds, slot3)
+					uv0.wsTimer:AddTween(slot3)
+				end)
+				table.insert(slot1, function (slot0)
+					uv0.tfModel:Find("decolation_model"):GetComponent("FMultiSpriteRenderCtrl"):Init()
+
+					slot2.alpha = uv1 and 1 or 0
+
+					slot2:UpdateAlpha()
+
+					slot3 = LeanTween.value(go(slot1), uv1 and 1 or 0, uv1 and 0 or 1, uv2):setOnUpdate(System.Action_float(function (slot0)
+						uv0.alpha = slot0
+					end)):setOnComplete(System.Action(function ()
+						uv0.alpha = 1
+
+						uv0:UpdateAlpha()
+						uv1()
+					end)).uniqueId
+
+					table.insert(uv0.twFocusIds, slot3)
+					uv0.wsTimer:AddTween(slot3)
+				end)
+				parallelAsync(slot1, function ()
+					setActive(uv0.tfMapModel, not uv1)
+
+					return uv2()
+				end)
+			end
+		}, function ()
+			return uv0()
+		end)
+	else
+		return slot7()
+	end
+end
+
+slot0.LowRotation = -5
+slot0.HeightRotation = 5
+slot0.BreathTime = 18
+
+function slot0.BreathRotate(slot0, slot1)
+	if slot0.twRotateId then
+		LeanTween.cancel(slot0.twRotateId)
+
+		slot0.twRotateId = nil
+	end
+
+	if not slot1 then
+		return
+	end
+
+	slot2 = -1
+
+	function slot3()
+		uv0 = -1 * uv0
+		uv1.twRotateId = LeanTween.rotateY(go(uv1.tfEntity), uv0 == 1 and uv2.HeightRotation or uv2.LowRotation, uv2.BreathTime):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
+			uv0()
 		end)).uniqueId
 	end
 
-	arg_61_0.twRotateId = LeanTween.rotateY(go(arg_61_0.tfEntity), var_0_0.LowRotation, var_0_0.BreathTime / 2):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
-		var_61_1()
+	slot0.twRotateId = LeanTween.rotateY(go(slot0.tfEntity), uv0.LowRotation, uv0.BreathTime / 2):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function ()
+		uv0()
 	end)):setDelay(1).uniqueId
 end
 
-function var_0_0.CheckIsTweening(arg_65_0)
-	while #arg_65_0.twFocusIds > 0 and not LeanTween.isTweening(arg_65_0.twFocusIds[1]) do
-		table.remove(arg_65_0.twFocusIds, 1)
+function slot0.CheckIsTweening(slot0)
+	while #slot0.twFocusIds > 0 and not LeanTween.isTweening(slot0.twFocusIds[1]) do
+		table.remove(slot0.twFocusIds, 1)
 	end
 
-	return arg_65_0.isTransAnim or #arg_65_0.twFocusIds > 0
+	return slot0.isTransAnim or #slot0.twFocusIds > 0
 end
 
-function var_0_0.ActiveTrans(arg_66_0, arg_66_1)
-	if arg_66_0.entranceTplDic[arg_66_1.id].portCamp then
-		-- block empty
-	else
-		local var_66_0 = arg_66_0.tfMapSelect:Find("A" .. arg_66_1:GetColormaskUniqueID() .. "_2")
+function slot0.ActiveTrans(slot0, slot1)
+	if not slot0.entranceTplDic[slot1.id].portCamp then
+		slot3 = slot0.tfMapSelect:Find("A" .. slot1:GetColormaskUniqueID() .. "_2")
 
-		setActive(var_66_0, true)
+		setActive(slot3, true)
 
-		local var_66_1 = var_66_0:GetComponent("SpriteRenderer").color
+		slot4 = slot3:GetComponent("SpriteRenderer").color
+		slot4.a = 0
+		slot3:GetComponent("SpriteRenderer").color = slot4
 
-		var_66_1.a = 0
-		var_66_0:GetComponent("SpriteRenderer").color = var_66_1
+		LeanTween.alpha(go(slot3), 1, 0.3):setOnComplete(System.Action(function ()
+			LeanTween.alpha(go(uv0), 0, 0.2):setDelay(0.1):setOnComplete(System.Action(function ()
+				setActive(uv0, uv1.selectEntrance == uv2)
 
-		LeanTween.alpha(go(var_66_0), 1, 0.3):setOnComplete(System.Action(function()
-			LeanTween.alpha(go(var_66_0), 0, 0.2):setDelay(0.1):setOnComplete(System.Action(function()
-				setActive(var_66_0, arg_66_0.selectEntrance == arg_66_1)
-
-				var_66_1.a = 1
-				var_66_0:GetComponent("SpriteRenderer").color = var_66_1
+				uv3.a = 1
+				uv0:GetComponent("SpriteRenderer").color = uv3
 			end))
 		end))
 	end
 end
 
-function var_0_0.DisplayTransport(arg_69_0, arg_69_1, arg_69_2)
-	local var_69_0 = {}
-
-	for iter_69_0, iter_69_1 in pairs(arg_69_0.atlas.transportDic) do
-		if iter_69_1 and not arg_69_1[iter_69_0] then
-			var_69_0[iter_69_0] = true
+function slot0.DisplayTransport(slot0, slot1, slot2)
+	for slot7, slot8 in pairs(slot0.atlas.transportDic) do
+		if slot8 and not slot1[slot7] then
+			-- Nothing
 		end
 	end
 
-	arg_69_0:UpdateTransMark(var_69_0, arg_69_2)
+	slot0:UpdateTransMark({
+		[slot7] = true
+	}, slot2)
 end
 
-function var_0_0.UpdateTransMark(arg_70_0, arg_70_1, arg_70_2)
-	for iter_70_0, iter_70_1 in pairs(arg_70_1) do
-		if iter_70_1 then
-			arg_70_0.isTransAnim = true
+function slot0.UpdateTransMark(slot0, slot1, slot2)
+	for slot6, slot7 in pairs(slot1) do
+		if slot7 then
+			slot0.isTransAnim = true
 
-			arg_70_0:ActiveTrans(arg_70_0.atlas:GetEntrance(iter_70_0))
+			slot0:ActiveTrans(slot0.atlas:GetEntrance(slot6))
 		end
 	end
 
-	if arg_70_0.isTransAnim then
-		arg_70_0.wsTimer:AddTimer(function()
-			arg_70_0.isTransAnim = false
+	if slot0.isTransAnim then
+		slot0.wsTimer:AddTimer(function ()
+			uv0.isTransAnim = false
 
-			arg_70_2()
+			uv1()
 		end, 0.6):Start()
 	else
-		arg_70_2()
+		slot2()
 	end
 end
 
-function var_0_0.UpdateActiveMark(arg_72_0)
-	local var_72_0 = nowWorld():GetActiveMap():CkeckTransport()
+function slot0.UpdateActiveMark(slot0)
+	slot1 = nowWorld():GetActiveMap():CkeckTransport()
 
-	eachChild(arg_72_0.tfActiveMark, function(arg_73_0)
-		setActive(arg_73_0:Find("base"), var_72_0)
-		setActive(arg_73_0:Find("limit"), not var_72_0)
+	eachChild(slot0.tfActiveMark, function (slot0)
+		setActive(slot0:Find("base"), uv0)
+		setActive(slot0:Find("limit"), not uv0)
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,7 +1,7 @@
-﻿local var_0_0 = class("MissileBar", import(".LevelStageStatusBarTemplate"))
+slot0 = class("MissileBar", import(".LevelStageStatusBarTemplate"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "MissileBar"
 end
 
-return var_0_0
+return slot0

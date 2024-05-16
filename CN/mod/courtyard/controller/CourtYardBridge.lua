@@ -1,86 +1,86 @@
-﻿local var_0_0 = class("CourtYardBridge")
+slot0 = class("CourtYardBridge")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.core = arg_1_1.core
-	arg_1_0.isSetup = false
-	arg_1_0.controller = arg_1_0:System2Controller(arg_1_1.system, arg_1_1)
-	arg_1_0.view = CourtYardView.New(arg_1_1.name, arg_1_0.controller:GetStorey())
+function slot0.Ctor(slot0, slot1)
+	slot0.core = slot1.core
+	slot0.isSetup = false
+	slot0.controller = slot0:System2Controller(slot1.system, slot1)
+	slot0.view = CourtYardView.New(slot1.name, slot0.controller:GetStorey())
 
-	if not arg_1_0.handle then
-		arg_1_0.handle = UpdateBeat:CreateListener(arg_1_0.Update, arg_1_0)
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	UpdateBeat:AddListener(arg_1_0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 end
 
-function var_0_0.SetUp(arg_2_0)
-	if arg_2_0.controller then
-		arg_2_0.isSetup = true
+function slot0.SetUp(slot0)
+	if slot0.controller then
+		slot0.isSetup = true
 
-		arg_2_0.controller:SetUp()
-	end
-end
-
-function var_0_0.Update(arg_3_0)
-	if not arg_3_0.isSetup and arg_3_0.view:IsInit() then
-		arg_3_0:SetUp()
-	end
-
-	if arg_3_0.isSetup and arg_3_0.controller then
-		arg_3_0.controller:Update()
+		slot0.controller:SetUp()
 	end
 end
 
-function var_0_0.IsLoaed(arg_4_0)
-	if not arg_4_0.controller then
+function slot0.Update(slot0)
+	if not slot0.isSetup and slot0.view:IsInit() then
+		slot0:SetUp()
+	end
+
+	if slot0.isSetup and slot0.controller then
+		slot0.controller:Update()
+	end
+end
+
+function slot0.IsLoaed(slot0)
+	if not slot0.controller then
 		return false
 	end
 
-	return arg_4_0.controller:IsLoaed()
+	return slot0.controller:IsLoaed()
 end
 
-function var_0_0.GetView(arg_5_0)
-	return arg_5_0.view
+function slot0.GetView(slot0)
+	return slot0.view
 end
 
-function var_0_0.GetController(arg_6_0)
-	return arg_6_0.controller
+function slot0.GetController(slot0)
+	return slot0.controller
 end
 
-function var_0_0.Exit(arg_7_0)
-	if arg_7_0.controller then
-		arg_7_0.controller:Dispose()
+function slot0.Exit(slot0)
+	if slot0.controller then
+		slot0.controller:Dispose()
 
-		arg_7_0.controller = nil
+		slot0.controller = nil
 	end
 
-	if arg_7_0.view then
-		arg_7_0.view:Dispose()
+	if slot0.view then
+		slot0.view:Dispose()
 
-		arg_7_0.view = nil
-	end
-end
-
-function var_0_0.SendNotification(arg_8_0, arg_8_1, arg_8_2)
-	if arg_8_0.core then
-		arg_8_0.core:sendNotification(arg_8_1, arg_8_2)
+		slot0.view = nil
 	end
 end
 
-function var_0_0.Dispose(arg_9_0)
-	if arg_9_0.handle then
-		UpdateBeat:RemoveListener(arg_9_0.handle)
+function slot0.SendNotification(slot0, slot1, slot2)
+	if slot0.core then
+		slot0.core:sendNotification(slot1, slot2)
 	end
-
-	arg_9_0:Exit()
 end
 
-function var_0_0.System2Controller(arg_10_0, arg_10_1, arg_10_2)
-	if arg_10_1 == CourtYardConst.SYSTEM_FEAST then
-		return CourtYardFeastController.New(arg_10_0, arg_10_2)
+function slot0.Dispose(slot0)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
+	end
+
+	slot0:Exit()
+end
+
+function slot0.System2Controller(slot0, slot1, slot2)
+	if slot1 == CourtYardConst.SYSTEM_FEAST then
+		return CourtYardFeastController.New(slot0, slot2)
 	else
-		return CourtYardController.New(arg_10_0, arg_10_2)
+		return CourtYardController.New(slot0, slot2)
 	end
 end
 
-return var_0_0
+return slot0

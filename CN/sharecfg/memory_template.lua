@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.memory_template = setmetatable({
 	__name = "memory_template",
 	all = {
@@ -2976,6 +2976,18 @@ pg.memory_template = setmetatable({
 		3535,
 		3536,
 		3537,
+		3541,
+		3542,
+		3543,
+		3544,
+		3545,
+		3551,
+		3552,
+		3553,
+		3554,
+		3555,
+		3556,
+		3557,
 		10011,
 		10012,
 		10013,
@@ -3515,17 +3527,6 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
-	[4001] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-1",
-		condition = "进入「异色格」作战 A2/C2",
-		story = "TACT20016",
-		id = 4001,
-		icon = "activity",
-		is_open = 0
-	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3658,17 +3659,6 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
-	[4000] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "将杀-1",
-		condition = "进入「异色格」作战B4/D4",
-		story = "TACT20015",
-		id = 4000,
-		icon = "activity",
-		is_open = 0
-	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3677,17 +3667,6 @@ pg.base.memory_template = {
 		condition = "与「异色格」作战 B4/D4 BOSS交战",
 		story = "TACT20013",
 		id = 49,
-		icon = "activity",
-		is_open = 0
-	},
-	[4002] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "侧翼-2",
-		condition = "通过「异色格」作战 B4/D4",
-		story = "TACT20017",
-		id = 4002,
 		icon = "activity",
 		is_open = 0
 	},
@@ -6670,6 +6649,39 @@ pg.base.memory_template = {
 		story = "ACTRUYUE06",
 		id = 320,
 		icon = "memory_actruyue",
+		is_open = 0
+	},
+	[4001] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-1",
+		condition = "进入「异色格」作战 A2/C2",
+		story = "TACT20016",
+		id = 4001,
+		icon = "activity",
+		is_open = 0
+	},
+	[4000] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "将杀-1",
+		condition = "进入「异色格」作战B4/D4",
+		story = "TACT20015",
+		id = 4000,
+		icon = "activity",
+		is_open = 0
+	},
+	[4002] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "侧翼-2",
+		condition = "通过「异色格」作战 B4/D4",
+		story = "TACT20017",
+		id = 4002,
+		icon = "activity",
 		is_open = 0
 	},
 	[322] = {
@@ -35831,6 +35843,138 @@ pg.base.memory_template = {
 		story = "HAITIAN7",
 		id = 3537,
 		icon = "memory_haitian",
+		is_open = 0
+	},
+	[3541] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "一切的开始",
+		condition = "解锁「于启航之前」DAY1",
+		story = "YUQIHANGZHIQIAN1",
+		id = 3541,
+		icon = "memory_yuqihangzhiqian",
+		is_open = 0
+	},
+	[3542] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "可靠的接待员？",
+		condition = "解锁「于启航之前」DAY2",
+		story = "YUQIHANGZHIQIAN2",
+		id = 3542,
+		icon = "memory_yuqihangzhiqian",
+		is_open = 0
+	},
+	[3543] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "又一日辛苦",
+		condition = "解锁「于启航之前」DAY3",
+		story = "YUQIHANGZHIQIAN3",
+		id = 3543,
+		icon = "memory_yuqihangzhiqian",
+		is_open = 0
+	},
+	[3544] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "犒劳努力的自己",
+		condition = "解锁「于启航之前」DAY4",
+		story = "YUQIHANGZHIQIAN4",
+		id = 3544,
+		icon = "memory_yuqihangzhiqian",
+		is_open = 0
+	},
+	[3545] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "命名日",
+		condition = "解锁「于启航之前」DAY5",
+		story = "YUQIHANGZHIQIAN5",
+		id = 3545,
+		icon = "memory_yuqihangzhiqian",
+		is_open = 0
+	},
+	[3551] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "水下龙宫",
+		condition = "解锁「彼方之音」DAY1",
+		story = "BIFANGZHIYIN1",
+		id = 3551,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3552] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "流浪者？",
+		condition = "解锁「彼方之音」DAY2",
+		story = "BIFANGZHIYIN2",
+		id = 3552,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3553] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "女王之光号",
+		condition = "解锁「彼方之音」DAY3",
+		story = "BIFANGZHIYIN3",
+		id = 3553,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3554] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "冲击",
+		condition = "解锁「彼方之音」DAY4",
+		story = "BIFANGZHIYIN4",
+		id = 3554,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3555] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "有限援助",
+		condition = "解锁「彼方之音」DAY5",
+		story = "BIFANGZHIYIN5",
+		id = 3555,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3556] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "死神之桥",
+		condition = "解锁「彼方之音」DAY6",
+		story = "BIFANGZHIYIN6",
+		id = 3556,
+		icon = "memory_bifangzhiyin",
+		is_open = 0
+	},
+	[3557] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "星间一梦",
+		condition = "解锁「彼方之音」DAY7",
+		story = "BIFANGZHIYIN7",
+		id = 3557,
+		icon = "memory_bifangzhiyin",
 		is_open = 0
 	},
 	[10011] = {

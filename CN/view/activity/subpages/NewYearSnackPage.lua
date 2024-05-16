@@ -1,107 +1,83 @@
-﻿local var_0_0 = class("NewYearSnackPage", import("...base.BaseActivityPage"))
+slot0 = class("NewYearSnackPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.progressTpl = arg_1_0:findTF("ProgressTpl")
-	arg_1_0.progressTplContainer = arg_1_0:findTF("ProgressList")
-	arg_1_0.progressUIItemList = UIItemList.New(arg_1_0.progressTplContainer, arg_1_0.progressTpl)
-	arg_1_0.helpBtn = arg_1_0:findTF("HelpBtn")
-	arg_1_0.goBtn = arg_1_0:findTF("GoBtn")
+function slot0.OnInit(slot0)
+	slot0.progressTpl = slot0:findTF("ProgressTpl")
+	slot0.progressTplContainer = slot0:findTF("ProgressList")
+	slot0.progressUIItemList = UIItemList.New(slot0.progressTplContainer, slot0.progressTpl)
+	slot0.helpBtn = slot0:findTF("HelpBtn")
+	slot0.goBtn = slot0:findTF("GoBtn")
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity:getConfig("config_client").linkMiniGameID
-	local var_2_1 = getProxy(MiniGameProxy):GetMiniGameData(var_2_0):getConfig("hub_id")
-	local var_2_2 = getProxy(MiniGameProxy):GetHubByHubId(var_2_1)
-
-	arg_2_0.needCount = var_2_2:getConfig("reward_need")
-	arg_2_0.leftCount = var_2_2.count
-	arg_2_0.playedCount = var_2_2.usedtime
-	arg_2_0.isGotAward = var_2_2.ultimate > 0
-	arg_2_0.curDay = arg_2_0.leftCount + arg_2_0.playedCount
+function slot0.OnDataSetting(slot0)
+	slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0.activity:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
+	slot0.needCount = slot4:getConfig("reward_need")
+	slot0.leftCount = slot4.count
+	slot0.playedCount = slot4.usedtime
+	slot0.isGotAward = slot4.ultimate > 0
+	slot0.curDay = slot0.leftCount + slot0.playedCount
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	arg_3_0.progressUIItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventUpdate then
-			arg_4_1 = arg_4_1 + 1
+function slot0.OnFirstFlush(slot0)
+	slot0.progressUIItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setActive(uv0:findTF("Locked", slot2), uv0.curDay < slot1 + 1)
 
-			local var_4_0 = arg_3_0:findTF("Locked", arg_4_2)
-			local var_4_1 = arg_3_0:findTF("Unlocked", arg_4_2)
-			local var_4_2 = arg_3_0:findTF("Finished", arg_4_2)
-			local var_4_3 = arg_3_0:findTF("FinalFinished", arg_4_2)
-
-			setActive(var_4_0, arg_4_1 > arg_3_0.curDay)
-
-			if arg_4_1 <= arg_3_0.curDay then
-				setActive(var_4_1, arg_4_1 > arg_3_0.playedCount)
-				setActive(var_4_2, arg_4_1 <= arg_3_0.playedCount and arg_4_1 ~= arg_3_0.needCount)
-				setActive(var_4_3, arg_4_1 <= arg_3_0.playedCount and arg_4_1 == arg_3_0.needCount)
+			if slot1 <= uv0.curDay then
+				setActive(uv0:findTF("Unlocked", slot2), uv0.playedCount < slot1)
+				setActive(uv0:findTF("Finished", slot2), slot1 <= uv0.playedCount and slot1 ~= uv0.needCount)
+				setActive(uv0:findTF("FinalFinished", slot2), slot1 <= uv0.playedCount and slot1 == uv0.needCount)
 			else
-				setActive(var_4_1, false)
-				setActive(var_4_2, false)
-				setActive(var_4_3, false)
+				setActive(slot4, false)
+				setActive(slot5, false)
+				setActive(slot6, false)
 			end
 		end
 	end)
-	arg_3_0.progressUIItemList:align(arg_3_0.needCount)
-	onButton(arg_3_0, arg_3_0.goBtn, function()
+	slot0.progressUIItemList:align(slot0.needCount)
+	onButton(slot0, slot0.goBtn, function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 19, {
-			callback = function()
-				local var_6_0 = Context.New()
+			callback = function ()
+				slot0 = Context.New()
 
-				SCENE.SetSceneInfo(var_6_0, SCENE.NEWYEAR_BACKHILL)
-				getProxy(ContextProxy):PushContext2Prev(var_6_0)
+				SCENE.SetSceneInfo(slot0, SCENE.NEWYEAR_BACKHILL)
+				getProxy(ContextProxy):PushContext2Prev(slot0)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("help_xinnian2021__meishiyemian")
 		})
 	end, SFX_PANEL)
-	arg_3_0:tryGetFinalAward()
+	slot0:tryGetFinalAward()
 end
 
-function var_0_0.OnUpdateFlush(arg_8_0)
-	return
+function slot0.OnUpdateFlush(slot0)
 end
 
-function var_0_0.OnDestroy(arg_9_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.tryGetFinalAward(arg_10_0)
-	local var_10_0 = arg_10_0.activity:getConfig("config_client").linkMiniGameID
-	local var_10_1 = getProxy(MiniGameProxy):GetMiniGameData(var_10_0):getConfig("hub_id")
-	local var_10_2 = getProxy(MiniGameProxy):GetHubByHubId(var_10_1)
-	local var_10_3 = var_10_2.usedtime
-	local var_10_4 = var_10_2:getConfig("reward_need")
-	local var_10_5 = var_10_2.ultimate > 0
+function slot0.tryGetFinalAward(slot0)
+	slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0.activity:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
 
-	if var_10_4 <= var_10_3 and not var_10_5 then
+	if slot4:getConfig("reward_need") <= slot4.usedtime and not (slot4.ultimate > 0) then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var_10_2.id,
+			hubid = slot4.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-function var_0_0.IsTip()
-	local var_11_0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEWYEAR_SNACK_PAGE_ID.act_id)
+function slot0.IsTip()
+	if getProxy(ActivityProxy):getActivityById(pg.activity_const.NEWYEAR_SNACK_PAGE_ID.act_id) and not slot0:isEnd() then
+		slot4 = getProxy(MiniGameProxy):GetHubByHubId(getProxy(MiniGameProxy):GetMiniGameData(slot0:getConfig("config_client").linkMiniGameID):getConfig("hub_id"))
 
-	if var_11_0 and not var_11_0:isEnd() then
-		local var_11_1 = var_11_0:getConfig("config_client").linkMiniGameID
-		local var_11_2 = getProxy(MiniGameProxy):GetMiniGameData(var_11_1):getConfig("hub_id")
-		local var_11_3 = getProxy(MiniGameProxy):GetHubByHubId(var_11_2)
-		local var_11_4 = var_11_3.usedtime
-		local var_11_5 = var_11_3:getConfig("reward_need")
-		local var_11_6 = var_11_3.ultimate > 0
-
-		if var_11_5 <= var_11_4 and not var_11_6 then
+		if slot4:getConfig("reward_need") <= slot4.usedtime and not (slot4.ultimate > 0) then
 			return true
-		elseif var_11_3.count > 0 then
+		elseif slot4.count > 0 then
 			return true
 		else
 			return false
@@ -109,4 +85,4 @@ function var_0_0.IsTip()
 	end
 end
 
-return var_0_0
+return slot0

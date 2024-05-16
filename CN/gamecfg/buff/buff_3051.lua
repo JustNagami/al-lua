@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 3051,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每次执行空袭后，降低己方先锋受到伤害5.0%，持续8秒",
 		addition = {
@@ -81,5 +69,17 @@
 	stack = 1,
 	id = 3051,
 	icon = 3050,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 3051,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

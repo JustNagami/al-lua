@@ -1,4 +1,17 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行8次攻击，触发全弹发射-莱比锡II"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发全弹发射-莱比锡II",
+	stack = 1,
+	id = 23122,
+	icon = 20100,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,18 +37,5 @@
 				countType = 23120
 			}
 		}
-	},
-	{
-		desc = "主炮每进行8次攻击，触发全弹发射-莱比锡II"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发全弹发射-莱比锡II",
-	stack = 1,
-	id = 23122,
-	icon = 20100,
-	last_effect = ""
+	}
 }

@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_skin_expression = {
 	dunkeerke = {
 		default = "",
@@ -52043,6 +52043,41 @@ pg.ship_skin_expression = {
 		main_4 = "",
 		main_5 = "",
 		login = "4",
+		detail = "4"
+	},
+	changdao_4 = {
+		default = "",
+		feeling3 = "3",
+		unlock = "",
+		propose = "1",
+		expedition = "1",
+		win_mvp = "2",
+		home = "1",
+		mission = "",
+		touch2 = "6",
+		feeling1 = "4",
+		painting = "changdao_4",
+		lose = "5",
+		feeling4 = "2",
+		touch = "2",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		skill = "6",
+		feeling5 = "1",
+		hp_warning = "",
+		upgrade = "2",
+		feeling2 = "2",
+		mission_complete = "1",
+		battle = "1",
+		main_1 = "1",
+		main_2 = "2",
+		main_3 = "1",
+		profile = "",
+		headtouch = "",
+		main_4 = "",
+		main_5 = "",
+		login = "3",
 		detail = "4"
 	}
 }

@@ -1,72 +1,64 @@
-﻿local var_0_0 = class("CourtYardShipFactory")
+slot0 = class("CourtYardShipFactory")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.poolMgr = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.poolMgr = slot1
 end
 
-function var_0_0.Make(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0.poolMgr:GetShipPool():Dequeue()
-	local var_2_1 = SpineRole.New(arg_2_1)
-	local var_2_2
-
-	if arg_2_1:GetShipType() == CourtYardConst.SHIP_TYPE_OTHER then
-		var_2_2 = CourtYardOtherPlayerShipModule.New(arg_2_1, var_2_0, var_2_1)
-	else
-		var_2_2 = ({
-			CourtYardShipModule,
-			CourtYardVisitorShipModule,
-			CourtYardFeastShipModule
-		})[arg_2_1:GetShipType()].New(arg_2_1, var_2_0, var_2_1)
-	end
-
-	local var_2_3 = arg_2_1:GetPrefab()
+function slot0.Make(slot0, slot1)
+	slot2 = slot0.poolMgr:GetShipPool():Dequeue()
+	slot3 = SpineRole.New(slot1)
+	slot4 = nil
+	slot5 = slot1:GetPrefab()
 
 	seriesAsync({
-		function(arg_3_0)
-			var_2_1:Load(arg_3_0, true)
+		function (slot0)
+			uv0:Load(slot0, true)
 		end,
-		function(arg_4_0)
-			arg_2_0:MakeAttachments(var_2_0, arg_2_1, arg_4_0)
+		function (slot0)
+			uv0:MakeAttachments(uv1, uv2, slot0)
 		end
-	}, function()
-		if IsNil(var_2_0) then
+	}, function ()
+		if IsNil(uv0) then
 			return
 		end
 
-		local var_5_0 = var_2_1.modelRoot
+		slot0 = uv1.modelRoot
+		slot0.name = "model"
+		slot0.transform.localScale = Vector3.one
+		rtf(slot0).sizeDelta = Vector2.New(200, 500)
 
-		var_5_0.name = "model"
-		var_5_0.transform.localScale = Vector3.one
-		rtf(var_5_0).sizeDelta = Vector2.New(200, 500)
-
-		SetParent(var_5_0, var_2_0)
-		var_5_0.transform:SetSiblingIndex(2)
-		setActive(var_2_0, true)
-		var_2_2:OnIconLoaed()
-		var_2_2:Init()
+		SetParent(slot0, uv0)
+		slot0.transform:SetSiblingIndex(2)
+		setActive(uv0, true)
+		uv2:OnIconLoaed()
+		uv2:Init()
 	end)
 
-	return var_2_2
+	return (slot1:GetShipType() ~= CourtYardConst.SHIP_TYPE_OTHER or CourtYardOtherPlayerShipModule.New(slot1, slot2, slot3)) and ({
+		CourtYardShipModule,
+		CourtYardVisitorShipModule,
+		CourtYardFeastShipModule
+	})[slot1:GetShipType()].New(slot1, slot2, slot3)
 end
 
-function var_0_0.MakeAttachments(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	if arg_6_2:GetShipType() == CourtYardConst.SHIP_TYPE_FEAST then
-		ResourceMgr.Inst:getAssetAsync("ui/CourtYardFeastAttachments", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_7_0)
-			if arg_6_0.exited then
+function slot0.MakeAttachments(slot0, slot1, slot2, slot3)
+	if slot2:GetShipType() == CourtYardConst.SHIP_TYPE_FEAST then
+		ResourceMgr.Inst:getAssetAsync("ui/CourtYardFeastAttachments", "", typeof(GameObject), UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			if uv0.exited then
 				return
 			end
 
-			Object.Instantiate(arg_7_0, arg_6_1.transform).name = "feastAttachments"
+			Object.Instantiate(slot0, uv1.transform).name = "feastAttachments"
 
-			arg_6_3()
+			uv2()
 		end), true, true)
 	else
-		arg_6_3()
+		slot3()
 	end
 end
 
-function var_0_0.Dispose(arg_8_0)
-	arg_8_0.exited = true
+function slot0.Dispose(slot0)
+	slot0.exited = true
 end
 
-return var_0_0
+return slot0

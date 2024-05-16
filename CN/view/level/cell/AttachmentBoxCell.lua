@@ -1,80 +1,72 @@
-﻿local var_0_0 = class("AttachmentBoxCell", import("view.level.cell.StaticCellView"))
+slot0 = class("AttachmentBoxCell", import("view.level.cell.StaticCellView"))
 
-function var_0_0.GetOrder(arg_1_0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var_0_0.Update(arg_2_0)
-	local var_2_0 = arg_2_0.info
+function slot0.Update(slot0)
+	slot1 = slot0.info
 
-	if IsNil(arg_2_0.go) then
-		local var_2_1 = pg.box_data_template[var_2_0.attachmentId]
+	if IsNil(slot0.go) then
+		assert(pg.box_data_template[slot1.attachmentId], "box_data_template not exist: " .. slot1.attachmentId)
+		slot0:PrepareBase("box_" .. slot1.attachmentId)
 
-		assert(var_2_1, "box_data_template not exist: " .. var_2_0.attachmentId)
-
-		local var_2_2 = "box_" .. var_2_0.attachmentId
-
-		arg_2_0:PrepareBase(var_2_2)
-
-		local var_2_3
-		local var_2_4
+		slot4, slot5 = nil
 
 		parallelAsync({
-			function(arg_3_0)
-				arg_2_0:GetLoader():GetPrefab("boxprefab/" .. var_2_1.icon, var_2_1.icon, function(arg_4_0)
-					var_2_4 = arg_4_0
+			function (slot0)
+				uv0:GetLoader():GetPrefab("boxprefab/" .. uv1.icon, uv1.icon, function (slot0)
+					uv0 = slot0
 
-					arg_3_0()
+					uv1()
 				end)
 			end,
-			function(arg_5_0)
-				arg_2_0:GetLoader():GetPrefab("leveluiview/tpl_box", "tpl_box", function(arg_6_0)
-					var_2_3 = arg_6_0
+			function (slot0)
+				uv0:GetLoader():GetPrefab("leveluiview/tpl_box", "tpl_box", function (slot0)
+					uv0 = slot0
 
-					setParent(tf(var_2_3), arg_2_0.tf)
+					setParent(tf(uv0), uv1.tf)
 
-					tf(var_2_3).anchoredPosition3D = Vector3(0, 30, 0)
+					tf(uv0).anchoredPosition3D = Vector3(0, 30, 0)
 
-					if var_2_1.type ~= ChapterConst.BoxTorpedo then
-						local var_6_0 = LeanTween.move(tf(var_2_3), Vector3(0, 40, 0), 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
-
-						arg_2_0.attachTw = var_6_0.uniqueId
+					if uv2.type ~= ChapterConst.BoxTorpedo then
+						uv1.attachTw = LeanTween.move(tf(uv0), Vector3(0, 40, 0), 1.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
 					end
 
-					arg_2_0.box = var_2_3
+					uv1.box = uv0
 
-					arg_5_0()
+					uv3()
 				end)
 			end
-		}, function()
-			setParent(var_2_4, tf(var_2_3):Find("icon"))
-			arg_2_0:ResetCanvasOrder()
-			arg_2_0:Update()
+		}, function ()
+			setParent(uv0, tf(uv1):Find("icon"))
+			uv2:ResetCanvasOrder()
+			uv2:Update()
 		end)
 	end
 
-	if arg_2_0.box and var_2_0.flag == ChapterConst.CellFlagActive then
-		setActive(findTF(arg_2_0.box, "effect_found"), var_2_0.trait == ChapterConst.TraitVirgin)
+	if slot0.box and slot1.flag == ChapterConst.CellFlagActive then
+		setActive(findTF(slot0.box, "effect_found"), slot1.trait == ChapterConst.TraitVirgin)
 
-		if var_2_0.trait == ChapterConst.TraitVirgin then
+		if slot1.trait == ChapterConst.TraitVirgin then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 		end
 	end
 
-	setActive(arg_2_0.tf, var_2_0.flag == ChapterConst.CellFlagActive)
+	setActive(slot0.tf, slot1.flag == ChapterConst.CellFlagActive)
 end
 
-function var_0_0.RemoveTween(arg_8_0)
-	if arg_8_0.attachTw then
-		LeanTween.cancel(arg_8_0.attachTw)
+function slot0.RemoveTween(slot0)
+	if slot0.attachTw then
+		LeanTween.cancel(slot0.attachTw)
 	end
 
-	arg_8_0.attachTw = nil
+	slot0.attachTw = nil
 end
 
-function var_0_0.Clear(arg_9_0)
-	arg_9_0:RemoveTween()
-	var_0_0.super.Clear(arg_9_0)
+function slot0.Clear(slot0)
+	slot0:RemoveTween()
+	uv0.super.Clear(slot0)
 end
 
-return var_0_0
+return slot0

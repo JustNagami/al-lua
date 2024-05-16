@@ -1,492 +1,436 @@
-﻿local var_0_0 = class("WorldMapOpCommand", pm.SimpleCommand)
+slot0 = class("WorldMapOpCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	assert(var_1_0.class == WorldMapOp, "command parameter should be type of WorldMapOp")
+function slot0.execute(slot0, slot1)
+	assert(slot1:getBody().class == WorldMapOp, "command parameter should be type of WorldMapOp")
 	pg.ConnectionMgr.GetInstance():Send(33103, {
-		act = var_1_0.op,
-		group_id = var_1_0.id or 0,
-		act_arg_1 = var_1_0.arg1,
-		act_arg_2 = var_1_0.arg2,
-		pos_list = var_1_0.locations or {}
-	}, 33104, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(WorldProxy)
-			local var_2_1 = nowWorld():GetActiveMap()
+		act = slot2.op,
+		group_id = slot2.id or 0,
+		act_arg_1 = slot2.arg1,
+		act_arg_2 = slot2.arg2,
+		pos_list = slot2.locations or {}
+	}, 33104, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(WorldProxy)
 
-			assert(var_2_1, "active map not exist.")
+			assert(nowWorld():GetActiveMap(), "active map not exist.")
 
-			var_1_0.drops = PlayerConst.addTranDrop(arg_2_0.drop_list)
-			var_1_0.updateAttachmentCells = var_2_0:NetBuildMapAttachmentCells(arg_2_0.pos_list)
-			var_1_0.fleetAttachUpdates = var_2_0:NetBuildFleetAttachUpdate(arg_2_0.pos_list)
-			var_1_0.terrainUpdates = var_2_0:NetBulidTerrainUpdate(arg_2_0.land_list)
-			var_1_0.fleetUpdates = var_2_0:NetBuildFleetUpdate(arg_2_0.group_update)
-			var_1_0.shipUpdates = var_2_0:NetBuildShipUpdate(arg_2_0.ship_update)
-			var_1_0.salvageUpdates = var_2_0:NetBuildSalvageUpdate(arg_2_0.cmd_collection_list)
+			uv0.drops = PlayerConst.addTranDrop(slot0.drop_list)
+			uv0.updateAttachmentCells = slot1:NetBuildMapAttachmentCells(slot0.pos_list)
+			uv0.fleetAttachUpdates = slot1:NetBuildFleetAttachUpdate(slot0.pos_list)
+			uv0.terrainUpdates = slot1:NetBulidTerrainUpdate(slot0.land_list)
+			uv0.fleetUpdates = slot1:NetBuildFleetUpdate(slot0.group_update)
+			uv0.shipUpdates = slot1:NetBuildShipUpdate(slot0.ship_update)
+			uv0.salvageUpdates = slot1:NetBuildSalvageUpdate(slot0.cmd_collection_list)
 
-			WorldConst.DebugPrintAttachmentCell("Op is " .. var_1_0.op, var_1_0.updateAttachmentCells)
-			var_2_0:NetUpdateAchievements(arg_2_0.target_list)
+			WorldConst.DebugPrintAttachmentCell("Op is " .. uv0.op, uv0.updateAttachmentCells)
+			slot1:NetUpdateAchievements(slot0.target_list)
 
-			if var_1_0.op == WorldConst.OpReqMoveFleet then
-				arg_1_0:BuildFleetMove(arg_2_0.move_path, var_1_0)
-			elseif var_1_0.op == WorldConst.OpReqRetreat then
-				var_1_0.childOps = arg_1_0:BuildAIAction(arg_2_0)
-			elseif var_1_0.op == WorldConst.OpReqEvent then
-				local var_2_2 = var_1_0.effect
-				local var_2_3 = var_2_2.effect_type
-				local var_2_4 = var_2_2.effect_paramater
+			if uv0.op == WorldConst.OpReqMoveFleet then
+				uv1:BuildFleetMove(slot0.move_path, uv0)
+			elseif uv0.op == WorldConst.OpReqRetreat then
+				uv0.childOps = uv1:BuildAIAction(slot0)
+			elseif uv0.op == WorldConst.OpReqEvent then
+				slot3 = uv0.effect
+				slot5 = slot3.effect_paramater
 
-				if var_2_3 == WorldMapAttachment.EffectEventTeleport or var_2_3 == WorldMapAttachment.EffectEventTeleportBack then
-					arg_1_0:BuildTransfer(arg_2_0, var_1_0)
-				elseif var_2_3 == WorldMapAttachment.EffectEventProgress then
-					var_1_0.childOps = arg_1_0:BuildProgressAction(var_2_4[1])
-				elseif var_2_3 == WorldMapAttachment.EffectEventBlink1 or var_2_3 == WorldMapAttachment.EffectEventBlink2 then
-					var_1_0.childOps = arg_1_0:BuildBlinkAction(var_1_0.attachment, var_1_0.updateAttachmentCells)
+				if slot3.effect_type == WorldMapAttachment.EffectEventTeleport or slot4 == WorldMapAttachment.EffectEventTeleportBack then
+					uv1:BuildTransfer(slot0, uv0)
+				elseif slot4 == WorldMapAttachment.EffectEventProgress then
+					uv0.childOps = uv1:BuildProgressAction(slot5[1])
+				elseif slot4 == WorldMapAttachment.EffectEventBlink1 or slot4 == WorldMapAttachment.EffectEventBlink2 then
+					uv0.childOps = uv1:BuildBlinkAction(uv0.attachment, uv0.updateAttachmentCells)
 				end
-			elseif var_1_0.op == WorldConst.OpReqTransport then
-				arg_1_0:BuildTransfer(arg_2_0, var_1_0)
-			elseif var_1_0.op == WorldConst.OpReqJumpOut then
-				arg_1_0:BuildTransfer(arg_2_0, var_1_0)
-			elseif var_1_0.op == WorldConst.OpReqRound then
-				var_1_0.childOps = arg_1_0:BuildAIAction(arg_2_0)
-			elseif var_1_0.op == WorldConst.OpReqBox then
-				-- block empty
+			elseif uv0.op == WorldConst.OpReqTransport then
+				uv1:BuildTransfer(slot0, uv0)
+			elseif uv0.op == WorldConst.OpReqJumpOut then
+				uv1:BuildTransfer(slot0, uv0)
+			elseif uv0.op == WorldConst.OpReqRound then
+				uv0.childOps = uv1:BuildAIAction(slot0)
+			elseif uv0.op == WorldConst.OpReqBox then
+				-- Nothing
 			end
 		else
-			if arg_2_0.result == 130 then
+			if slot0.result == 130 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("world_stamina_not_enough"))
-			elseif var_1_0.op == WorldConst.OpReqRetreat then
+			elseif uv0.op == WorldConst.OpReqRetreat then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("no_way_to_escape"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("world_map_op_error_", arg_2_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("world_map_op_error_", slot0.result))
 			end
 
-			if var_1_0.op == WorldConst.OpReqEvent then
-				WorldConst.Print(var_1_0.attachment:DebugPrint())
+			if uv0.op == WorldConst.OpReqEvent then
+				WorldConst.Print(uv0.attachment:DebugPrint())
 			end
 		end
 
-		arg_1_0:sendNotification(GAME.WORLD_MAP_OP_DONE, {
-			result = arg_2_0.result,
-			mapOp = var_1_0
+		uv1:sendNotification(GAME.WORLD_MAP_OP_DONE, {
+			result = slot0.result,
+			mapOp = uv0
 		})
 	end)
 end
 
-function var_0_0.BuildAIAction(arg_3_0, arg_3_1)
-	local var_3_0 = {}
-	local var_3_1 = getProxy(WorldProxy)
+function slot0.BuildAIAction(slot0, slot1)
+	slot3 = getProxy(WorldProxy)
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_1.ai_act_list) do
-		local var_3_2 = {}
-
-		if iter_3_1.type == WorldMapAttachment.TypeFleet then
-			var_3_2 = arg_3_0:BuildFleetAction(iter_3_1)
-		elseif iter_3_1.type == WorldMapAttachment.TypeTrap then
-			var_3_2 = arg_3_0:BuildTrapAction(iter_3_1)
-		else
-			var_3_2 = arg_3_0:BuildAttachmentAction(iter_3_1)
-		end
-
-		var_3_2[#var_3_2].shipUpdates = var_3_1:NetBuildShipUpdate(iter_3_1.ship_update)
-		var_3_2[#var_3_2].fleetAttachUpdates = var_3_1:NetBuildFleetAttachUpdate(iter_3_1.pos_list)
-		var_3_0 = table.mergeArray(var_3_0, var_3_2)
+	for slot7, slot8 in ipairs(slot1.ai_act_list) do
+		slot9 = {}
+		slot9 = (slot8.type ~= WorldMapAttachment.TypeFleet or slot0:BuildFleetAction(slot8)) and (slot8.type ~= WorldMapAttachment.TypeTrap or slot0:BuildTrapAction(slot8)) and slot0:BuildAttachmentAction(slot8)
+		slot9[#slot9].shipUpdates = slot3:NetBuildShipUpdate(slot8.ship_update)
+		slot9[#slot9].fleetAttachUpdates = slot3:NetBuildFleetAttachUpdate(slot8.pos_list)
+		slot2 = table.mergeArray({}, slot9)
 	end
 
-	return var_3_0
+	return slot2
 end
 
-function var_0_0.BuildTransfer(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_2.entranceId = arg_4_1.enter_map_id
-	arg_4_2.destMapId = arg_4_1.id.random_id
-	arg_4_2.destGridId = arg_4_1.id.template_id
-	arg_4_2.staminaUpdate = {
-		arg_4_1.action_power,
-		arg_4_1.action_power_extra
+function slot0.BuildTransfer(slot0, slot1, slot2)
+	slot2.entranceId = slot1.enter_map_id
+	slot2.destMapId = slot1.id.random_id
+	slot2.destGridId = slot1.id.template_id
+	slot2.staminaUpdate = {
+		slot1.action_power,
+		slot1.action_power_extra
 	}
 end
 
-function var_0_0.BuildFleetMove(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = {}
+function slot0.BuildFleetMove(slot0, slot1, slot2)
+	if #slot1 > 0 then
+		slot4 = nowWorld():GetActiveMap()
+		slot5 = slot4:GetFleet()
+		slot2.updateAttachmentCells = {}
+		slot3 = table.mergeArray({}, slot0:BuildFleetMoveAction(slot1, slot4, slot5.id, slot5.row, slot5.column, slot2.updateAttachmentCells, true))
+	elseif slot2.trap == WorldBuff.TrapVortex then
+		slot4 = WBank:Fetch(WorldMapOp)
+		slot4.op = WorldConst.OpActionFleetAnim
+		slot4.id = slot2.id
+		slot4.anim = WorldConst.ActionYun
+		slot4.duration = 2
 
-	if #arg_5_1 > 0 then
-		local var_5_1 = nowWorld():GetActiveMap()
-		local var_5_2 = var_5_1:GetFleet()
-		local var_5_3 = arg_5_2.updateAttachmentCells
-
-		arg_5_2.updateAttachmentCells = {}
-		var_5_0 = table.mergeArray(var_5_0, arg_5_0:BuildFleetMoveAction(arg_5_1, var_5_1, var_5_2.id, var_5_2.row, var_5_2.column, var_5_3, true))
-	elseif arg_5_2.trap == WorldBuff.TrapVortex then
-		local var_5_4 = WBank:Fetch(WorldMapOp)
-
-		var_5_4.op = WorldConst.OpActionFleetAnim
-		var_5_4.id = arg_5_2.id
-		var_5_4.anim = WorldConst.ActionYun
-		var_5_4.duration = 2
-
-		table.insert(var_5_0, var_5_4)
+		table.insert(slot3, slot4)
 	end
 
-	arg_5_2.path = _.rest(arg_5_1, 1)
-	arg_5_2.childOps = var_5_0
+	slot2.path = _.rest(slot1, 1)
+	slot2.childOps = slot3
 end
 
-function var_0_0.BuildFleetPath(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
-	local var_6_0 = nowWorld():GetActiveMap()
-	local var_6_1 = var_6_0:GetFleet(arg_6_3.id)
-
-	_.each(arg_6_1, function(arg_7_0)
-		arg_7_0.duration = arg_7_0.duration * var_6_1:GetStepDurationRate()
+function slot0.BuildFleetPath(slot0, slot1, slot2, slot3, slot4)
+	_.each(slot1, function (slot0)
+		slot0.duration = slot0.duration * uv0:GetStepDurationRate()
 	end)
 
-	local var_6_2 = {}
-	local var_6_3 = {}
-	local var_6_4 = {}
-	local var_6_5 = var_6_1:GetCarries()
-	local var_6_6 = _.map(var_6_5, function(arg_8_0)
-		return var_6_1:BuildCarryPath(arg_8_0, arg_6_2, arg_6_1)
+	slot8 = {}
+	slot11 = _.map(nowWorld():GetActiveMap():GetFleet(slot3.id):GetCarries(), function (slot0)
+		return uv0:BuildCarryPath(slot0, uv1, uv2)
 	end)
 
-	_.each(arg_6_1, function(arg_9_0)
-		local var_9_0 = WBank:Fetch(WorldMapOp)
-
-		var_9_0.op = WorldConst.OpActionMoveStep
-		var_9_0.id = arg_6_3.id
-		var_9_0.pos = {
-			row = arg_9_0.row,
-			column = arg_9_0.column
+	_.each(slot1, function (slot0)
+		slot1 = WBank:Fetch(WorldMapOp)
+		slot1.op = WorldConst.OpActionMoveStep
+		slot1.id = uv0.id
+		slot1.pos = {
+			row = slot0.row,
+			column = slot0.column
 		}
-		var_9_0.updateAttachmentCells = {}
-		var_9_0.hiddenCells = {}
-		var_9_0.hiddenAttachments = {}
+		slot1.updateAttachmentCells = {}
+		slot1.hiddenCells = {}
+		slot1.hiddenAttachments = {}
 
-		if #var_6_5 > 0 then
-			var_9_0.updateCarryItems = {}
+		if #uv1 > 0 then
+			slot1.updateCarryItems = {}
 
-			for iter_9_0, iter_9_1 in ipairs(var_6_5) do
-				local var_9_1 = var_6_6[#var_9_0.updateCarryItems + 1]
-				local var_9_2 = WPool:Get(WorldCarryItem)
+			for slot5, slot6 in ipairs(uv1) do
+				slot7 = uv2[#slot1.updateCarryItems + 1]
+				slot8 = WPool:Get(WorldCarryItem)
 
-				var_9_2:Setup(iter_9_1.id)
-				var_9_2:UpdateOffset(var_9_1[#var_6_2 + 1].row - arg_9_0.row, var_9_1[#var_6_2 + 1].column - arg_9_0.column)
-				table.insert(var_9_0.updateCarryItems, var_9_2)
+				slot8:Setup(slot6.id)
+				slot8:UpdateOffset(slot7[#uv3 + 1].row - slot0.row, slot7[#uv3 + 1].column - slot0.column)
+				table.insert(slot1.updateCarryItems, slot8)
 			end
 		end
 
-		local var_9_3 = var_6_0.theme
-		local var_9_4 = var_6_0:GetFOVRange(var_6_1, arg_9_0.row, arg_9_0.column)
+		slot2 = uv4.theme
+		slot7 = slot0.column
+		slot3 = uv4:GetFOVRange(uv5, slot0.row, slot7)
 
-		for iter_9_2 = arg_9_0.row - var_9_4, arg_9_0.row + var_9_4 do
-			for iter_9_3 = arg_9_0.column - var_9_4, arg_9_0.column + var_9_4 do
-				local var_9_5 = var_6_0:GetCell(iter_9_2, iter_9_3)
-				local var_9_6 = iter_9_2 .. "_" .. iter_9_3
+		for slot7 = slot0.row - slot3, slot0.row + slot3 do
+			for slot11 = slot0.column - slot3, slot0.column + slot3 do
+				slot13 = slot7 .. "_" .. slot11
 
-				if var_9_5 and not var_9_5.discovered and WorldConst.InFOVRange(arg_9_0.row, arg_9_0.column, iter_9_2, iter_9_3, var_9_4) and not var_6_3[var_9_6] then
-					var_6_3[var_9_6] = true
+				if uv4:GetCell(slot7, slot11) and not slot12.discovered and WorldConst.InFOVRange(slot0.row, slot0.column, slot7, slot11, slot3) and not uv6[slot13] then
+					uv6[slot13] = true
 
-					table.insert(var_9_0.hiddenCells, var_9_5)
-					table.insert(var_6_4, {
-						row = var_9_5.row,
-						column = var_9_5.column
+					table.insert(slot1.hiddenCells, slot12)
+					table.insert(uv7, {
+						row = slot12.row,
+						column = slot12.column
 					})
-					_.each(var_9_5.attachments, function(arg_10_0)
-						if arg_10_0:ShouldMarkAsLurk() then
-							table.insert(var_9_0.hiddenAttachments, arg_10_0)
+					_.each(slot12.attachments, function (slot0)
+						if slot0:ShouldMarkAsLurk() then
+							table.insert(uv0.hiddenAttachments, slot0)
 						end
 					end)
 
-					local var_9_7 = WorldMapCell.GetName(var_9_5.row, var_9_5.column)
-
-					if arg_6_4[var_9_7] then
-						_.each(arg_6_4[var_9_7].attachmentList, function(arg_11_0)
-							if arg_11_0:ShouldMarkAsLurk() then
-								table.insert(var_9_0.hiddenAttachments, arg_11_0)
+					if uv8[WorldMapCell.GetName(slot12.row, slot12.column)] then
+						_.each(uv8[slot14].attachmentList, function (slot0)
+							if slot0:ShouldMarkAsLurk() then
+								table.insert(uv0.hiddenAttachments, slot0)
 							end
 						end)
 
-						var_9_0.updateAttachmentCells[var_9_7] = arg_6_4[var_9_7]
-						arg_6_4[var_9_7] = nil
+						slot1.updateAttachmentCells[slot14] = uv8[slot14]
+						uv8[slot14] = nil
 					end
 				end
 			end
 		end
 
-		table.insert(var_6_2, var_9_0)
+		table.insert(uv3, slot1)
 	end)
 
-	arg_6_3.stepOps = var_6_2
-	arg_6_3.path = arg_6_1
-	arg_6_3.pos = {
-		row = arg_6_2.row,
-		column = arg_6_2.column
+	slot3.stepOps = {}
+	slot3.path = slot1
+	slot3.pos = {
+		row = slot2.row,
+		column = slot2.column
 	}
-	arg_6_3.locations = var_6_4
+	slot3.locations = {}
 end
 
-function var_0_0.BuildFleetAction(arg_12_0, arg_12_1)
-	local var_12_0 = nowWorld():GetActiveMap()
-	local var_12_1 = var_12_0:FindFleet(arg_12_1.ai_pos.row, arg_12_1.ai_pos.column)
+function slot0.BuildFleetAction(slot0, slot1)
+	assert(nowWorld():GetActiveMap():FindFleet(slot1.ai_pos.row, slot1.ai_pos.column), "fleet not exist at: " .. slot1.ai_pos.column .. ", " .. slot1.ai_pos.column)
 
-	assert(var_12_1, "fleet not exist at: " .. arg_12_1.ai_pos.column .. ", " .. arg_12_1.ai_pos.column)
+	slot5 = nil
 
-	local var_12_2 = getProxy(WorldProxy):NetBuildMapAttachmentCells(arg_12_1.pos_list)
-	local var_12_3
-
-	if #arg_12_1.move_path > 0 then
-		var_12_3 = arg_12_0:BuildFleetMoveAction(arg_12_1.move_path, var_12_0, var_12_1.id, var_12_1.row, var_12_1.column, var_12_2)
+	if #slot1.move_path > 0 then
+		slot5 = slot0:BuildFleetMoveAction(slot1.move_path, slot2, slot3.id, slot3.row, slot3.column, getProxy(WorldProxy):NetBuildMapAttachmentCells(slot1.pos_list))
 	else
-		local var_12_4 = WBank:Fetch(WorldMapOp)
-
-		var_12_4.op = WorldConst.OpActionUpdate
-		var_12_4.updateAttachmentCells = var_12_2
-		var_12_3 = {
-			var_12_4
+		slot6 = WBank:Fetch(WorldMapOp)
+		slot6.op = WorldConst.OpActionUpdate
+		slot6.updateAttachmentCells = slot4
+		slot5 = {
+			slot6
 		}
 	end
 
-	return var_12_3
+	return slot5
 end
 
-function var_0_0.BuildFleetMoveAction(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4, arg_13_5, arg_13_6, arg_13_7)
-	local var_13_0 = {}
-	local var_13_1 = arg_13_7 and WorldMapCell.TerrainNone or arg_13_2:GetCell(arg_13_4, arg_13_5):GetTerrain()
-	local var_13_2 = arg_13_2:GetCell(arg_13_4, arg_13_5).terrainStrong
-	local var_13_3 = {
-		row = arg_13_4,
-		column = arg_13_5
+function slot0.BuildFleetMoveAction(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+	slot8 = {}
+	slot9 = slot7 and WorldMapCell.TerrainNone or slot2:GetCell(slot4, slot5):GetTerrain()
+	slot11 = {
+		row = slot4,
+		column = slot5
 	}
-	local var_13_4 = 0
-	local var_13_5 = {}
+	slot13 = {}
 
-	for iter_13_0, iter_13_1 in ipairs(arg_13_1) do
-		local var_13_6 = arg_13_2:GetCell(iter_13_1.row, iter_13_1.column)
-		local var_13_7 = var_13_6:GetTerrain()
+	for slot17, slot18 in ipairs(slot1) do
+		slot20 = slot2:GetCell(slot18.row, slot18.column):GetTerrain()
 
-		table.insert(var_13_5, {
-			row = iter_13_1.row,
-			column = iter_13_1.column,
-			terrain = var_13_1,
-			duration = WorldConst.GetTerrainMoveStepDuration(var_13_1)
+		table.insert(slot13, {
+			row = slot18.row,
+			column = slot18.column,
+			terrain = slot9,
+			duration = WorldConst.GetTerrainMoveStepDuration(slot9)
 		})
 
-		local var_13_8
-		local var_13_9
-		local var_13_10
+		slot21, slot22, slot23 = nil
 
-		if var_13_1 == WorldMapCell.TerrainWind and var_13_4 + var_13_2 > #var_13_5 then
-			var_13_8 = true
-		elseif var_13_1 ~= var_13_7 then
-			var_13_9 = true
-		elseif var_13_7 == WorldMapCell.TerrainWind then
-			var_13_10 = true
+		if slot9 == WorldMapCell.TerrainWind and 0 + slot2:GetCell(slot4, slot5).terrainStrong > #slot13 then
+			slot21 = true
+		elseif slot9 ~= slot20 then
+			slot22 = true
+		elseif slot20 == WorldMapCell.TerrainWind then
+			slot23 = true
 		end
 
-		if iter_13_0 == #arg_13_1 or var_13_9 then
-			var_13_4 = 0
+		if slot17 == #slot1 or slot22 then
+			slot12 = 0
+			slot24 = WBank:Fetch(WorldMapOp)
+			slot24.op = WorldConst.OpActionFleetMove
+			slot24.id = slot3
+			slot24.arg1 = slot18.row
+			slot24.arg2 = slot18.column
 
-			local var_13_11 = WBank:Fetch(WorldMapOp)
+			slot0:BuildFleetPath(slot13, slot11, slot24, slot6)
 
-			var_13_11.op = WorldConst.OpActionFleetMove
-			var_13_11.id = arg_13_3
-			var_13_11.arg1 = iter_13_1.row
-			var_13_11.arg2 = iter_13_1.column
-
-			arg_13_0:BuildFleetPath(var_13_5, var_13_3, var_13_11, arg_13_6)
-
-			if iter_13_0 == #arg_13_1 then
-				var_13_11.updateAttachmentCells = arg_13_6
+			if slot17 == #slot1 then
+				slot24.updateAttachmentCells = slot6
 			end
 
-			table.insert(var_13_0, var_13_11)
+			table.insert(slot8, slot24)
 
-			var_13_5, var_13_3 = {}, {
-				row = iter_13_1.row,
-				column = iter_13_1.column
+			slot11 = {
+				row = slot18.row,
+				column = slot18.column
 			}
-		elseif var_13_10 then
-			var_13_4 = var_13_4 + var_13_2
+			slot13 = {}
+		elseif slot23 then
+			slot12 = slot12 + slot10
 		end
 
-		if var_13_8 then
-			-- block empty
-		else
-			var_13_1 = var_13_7
-			var_13_2 = var_13_6.terrainStrong
+		if not slot21 then
+			slot9 = slot20
+			slot10 = slot19.terrainStrong
 		end
 	end
 
-	return var_13_0
+	return slot8
 end
 
-function var_0_0.BuildAttachmentAction(arg_14_0, arg_14_1)
-	local var_14_0 = nowWorld():GetActiveMap()
-	local var_14_1 = arg_14_1.ai_pos.row
-	local var_14_2 = arg_14_1.ai_pos.column
-	local var_14_3 = var_14_0:GetCell(var_14_1, var_14_2):FindAliveAttachment(WorldMapAttachment.TypeEnemyAI)
+function slot0.BuildAttachmentAction(slot0, slot1)
+	slot3 = slot1.ai_pos.row
+	slot4 = slot1.ai_pos.column
+	slot6 = nowWorld():GetActiveMap():GetCell(slot3, slot4):FindAliveAttachment(WorldMapAttachment.TypeEnemyAI)
 
-	assert(var_14_3, "attachment not exist at: " .. var_14_1 .. ", " .. var_14_2)
+	assert(slot6, "attachment not exist at: " .. slot3 .. ", " .. slot4)
 
-	local var_14_4 = {}
-	local var_14_5 = WBank:Fetch(WorldMapOp)
+	slot8 = WBank:Fetch(WorldMapOp)
+	slot8.op = WorldConst.OpActionCameraMove
+	slot8.attachment = slot6
 
-	var_14_5.op = WorldConst.OpActionCameraMove
-	var_14_5.attachment = var_14_3
+	table.insert({}, slot8)
 
-	table.insert(var_14_4, var_14_5)
+	WBank:Fetch(WorldMapOp).updateAttachmentCells = getProxy(WorldProxy):NetBuildMapAttachmentCells(slot1.pos_list)
 
-	local var_14_6 = WBank:Fetch(WorldMapOp)
+	if #slot1.move_path > 0 then
+		slot9.op = WorldConst.OpActionAttachmentMove
+		slot9.attachment = slot6
 
-	var_14_6.updateAttachmentCells = getProxy(WorldProxy):NetBuildMapAttachmentCells(arg_14_1.pos_list)
-
-	if #arg_14_1.move_path > 0 then
-		var_14_6.op = WorldConst.OpActionAttachmentMove
-		var_14_6.attachment = var_14_3
-
-		arg_14_0:BuildAttachmentActionPath(arg_14_1.move_path, var_14_6)
+		slot0:BuildAttachmentActionPath(slot1.move_path, slot9)
 	else
-		var_14_6.op = WorldConst.OpActionUpdate
+		slot9.op = WorldConst.OpActionUpdate
 	end
 
-	table.insert(var_14_4, var_14_6)
+	table.insert(slot7, slot9)
 
-	return var_14_4
+	return slot7
 end
 
-function var_0_0.BuildAttachmentActionPath(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = nowWorld():GetActiveMap()
+function slot0.BuildAttachmentActionPath(slot0, slot1, slot2)
+	assert(nowWorld():GetActiveMap(), "active map not exist.")
 
-	assert(var_15_0, "active map not exist.")
-
-	arg_15_2.path = underscore.map(arg_15_1, function(arg_16_0)
+	slot2.path = underscore.map(slot1, function (slot0)
 		return {
-			row = arg_16_0.row,
-			column = arg_16_0.column,
+			row = slot0.row,
+			column = slot0.column,
 			duration = WorldConst.GetTerrainMoveStepDuration(WorldMapCell.TerrainNone)
 		}
 	end)
-	arg_15_2.pos = {
-		row = arg_15_2.attachment.row,
-		column = arg_15_2.attachment.column
+	slot2.pos = {
+		row = slot2.attachment.row,
+		column = slot2.attachment.column
 	}
 end
 
-function var_0_0.BuildTrapAction(arg_17_0, arg_17_1)
-	local var_17_0 = nowWorld():GetActiveMap()
-	local var_17_1 = arg_17_1.ai_pos.row
-	local var_17_2 = arg_17_1.ai_pos.column
-	local var_17_3 = var_17_0:GetCell(var_17_1, var_17_2):FindAliveAttachment(WorldMapAttachment.TypeTrap)
+function slot0.BuildTrapAction(slot0, slot1)
+	slot3 = slot1.ai_pos.row
+	slot4 = slot1.ai_pos.column
+	slot6 = nowWorld():GetActiveMap():GetCell(slot3, slot4):FindAliveAttachment(WorldMapAttachment.TypeTrap)
 
-	assert(var_17_3, "attachment not exist at: " .. var_17_1 .. ", " .. var_17_2)
+	assert(slot6, "attachment not exist at: " .. slot3 .. ", " .. slot4)
 
-	local var_17_4 = {}
-	local var_17_5 = WBank:Fetch(WorldMapOp)
+	slot7 = {}
+	slot8 = WBank:Fetch(WorldMapOp)
+	slot8.op = WorldConst.OpActionCameraMove
+	slot8.attachment = slot6
 
-	var_17_5.op = WorldConst.OpActionCameraMove
-	var_17_5.attachment = var_17_3
+	table.insert(slot7, slot8)
 
-	table.insert(var_17_4, var_17_5)
+	slot9 = WBank:Fetch(WorldMapOp)
+	slot9.op = WorldConst.OpActionTrapGravityAnim
+	slot9.attachment = slot6
 
-	local var_17_6 = WBank:Fetch(WorldMapOp)
+	table.insert(slot7, slot9)
 
-	var_17_6.op = WorldConst.OpActionTrapGravityAnim
-	var_17_6.attachment = var_17_3
-
-	table.insert(var_17_4, var_17_6)
-
-	return var_17_4
+	return slot7
 end
 
-function var_0_0.BuildBlinkAction(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0 = {}
-	local var_18_1 = arg_18_1:GetSpEventType()
-	local var_18_2 = arg_18_2[WorldMapCell.GetName(arg_18_1.row, arg_18_1.column)]
-	local var_18_3
+function slot0.BuildBlinkAction(slot0, slot1, slot2)
+	slot3 = {}
+	slot4 = slot1:GetSpEventType()
+	slot5 = slot2[WorldMapCell.GetName(slot1.row, slot1.column)]
+	slot6 = nil
 
-	for iter_18_0, iter_18_1 in pairs(arg_18_2) do
-		if _.any(iter_18_1.attachmentList, function(arg_19_0)
-			return arg_19_0.type == arg_18_1.type and arg_19_0.id == arg_18_1.id
+	for slot10, slot11 in pairs(slot2) do
+		if _.any(slot11.attachmentList, function (slot0)
+			return slot0.type == uv0.type and slot0.id == uv0.id
 		end) then
-			var_18_3 = iter_18_1
+			slot6 = slot11
 
 			break
 		end
 	end
 
-	if var_18_1 == WorldMapAttachment.SpEventHaibao then
-		local var_18_4 = WBank:Fetch(WorldMapOp)
-
-		var_18_4.op = WorldConst.OpActionAttachmentAnim
-		var_18_4.attachment = arg_18_1
-		var_18_4.anim = WorldConst.ActionVanish
-		var_18_4.updateAttachmentCells = {
-			[WorldMapCell.GetName(var_18_2.pos.row, var_18_2.pos.column)] = var_18_2,
-			[WorldMapCell.GetName(var_18_3.pos.row, var_18_3.pos.column)] = var_18_3
+	if slot4 == WorldMapAttachment.SpEventHaibao then
+		slot7 = WBank:Fetch(WorldMapOp)
+		slot7.op = WorldConst.OpActionAttachmentAnim
+		slot7.attachment = slot1
+		slot7.anim = WorldConst.ActionVanish
+		slot7.updateAttachmentCells = {
+			[WorldMapCell.GetName(slot5.pos.row, slot5.pos.column)] = slot5,
+			[WorldMapCell.GetName(slot6.pos.row, slot6.pos.column)] = slot6
 		}
-		arg_18_2[WorldMapCell.GetName(var_18_2.pos.row, var_18_2.pos.column)] = nil
-		arg_18_2[WorldMapCell.GetName(var_18_3.pos.row, var_18_3.pos.column)] = nil
+		slot2[WorldMapCell.GetName(slot5.pos.row, slot5.pos.column)] = nil
+		slot2[WorldMapCell.GetName(slot6.pos.row, slot6.pos.column)] = nil
 
-		table.insert(var_18_0, var_18_4)
+		table.insert(slot3, slot7)
 
-		local var_18_5 = WBank:Fetch(WorldMapOp)
-
-		var_18_5.op = WorldConst.OpActionAttachmentAnim
-		var_18_5.attachment = _.detect(var_18_3.attachmentList, function(arg_20_0)
-			return arg_20_0.type == arg_18_1.type and arg_20_0.id == arg_18_1.id
+		slot8 = WBank:Fetch(WorldMapOp)
+		slot8.op = WorldConst.OpActionAttachmentAnim
+		slot8.attachment = _.detect(slot6.attachmentList, function (slot0)
+			return slot0.type == uv0.type and slot0.id == uv0.id
 		end)
-		var_18_5.anim = WorldConst.ActionAppear
+		slot8.anim = WorldConst.ActionAppear
 
-		table.insert(var_18_0, var_18_5)
-	elseif var_18_1 == WorldMapAttachment.SpEventFufen then
-		local var_18_6, var_18_7 = nowWorld():GetActiveMap():FindAIPath({
-			row = arg_18_1.row,
-			column = arg_18_1.column
+		table.insert(slot3, slot8)
+	elseif slot4 == WorldMapAttachment.SpEventFufen then
+		slot8, slot9 = nowWorld():GetActiveMap():FindAIPath({
+			row = slot1.row,
+			column = slot1.column
 		}, {
-			row = var_18_3.pos.row,
-			column = var_18_3.pos.column
+			row = slot6.pos.row,
+			column = slot6.pos.column
 		})
 
-		if var_18_6 < PathFinding.PrioObstacle then
-			local var_18_8 = WBank:Fetch(WorldMapOp)
+		if slot8 < PathFinding.PrioObstacle then
+			slot10 = WBank:Fetch(WorldMapOp)
+			slot10.op = WorldConst.OpActionAttachmentMove
+			slot10.attachment = slot1
 
-			var_18_8.op = WorldConst.OpActionAttachmentMove
-			var_18_8.attachment = arg_18_1
-
-			arg_18_0:BuildAttachmentActionPath(var_18_7, var_18_8)
-			table.insert(var_18_0, var_18_8)
+			slot0:BuildAttachmentActionPath(slot9, slot10)
+			table.insert(slot3, slot10)
 		end
 	end
 
-	return var_18_0
+	return slot3
 end
 
-function var_0_0.BuildProgressAction(arg_21_0, arg_21_1)
-	local var_21_0 = {}
-	local var_21_1 = nowWorld()
-	local var_21_2 = var_21_1:GetRealm()
+function slot0.BuildProgressAction(slot0, slot1)
+	slot2 = {}
+	slot3 = nowWorld()
+	slot4 = slot3:GetRealm()
 
-	if arg_21_1 > var_21_1:GetProgress() then
-		local var_21_3 = WorldConst.FindStageTemplates(arg_21_1)
+	if slot3:GetProgress() < slot1 then
+		_.each(WorldConst.FindStageTemplates(slot1), function (slot0)
+			if slot0 and #slot0.stage_effect[uv0] > 0 then
+				_.each(slot0.stage_effect[uv0], function (slot0)
+					slot1 = pg.world_effect_data[slot0]
 
-		_.each(var_21_3, function(arg_22_0)
-			if arg_22_0 and #arg_22_0.stage_effect[var_21_2] > 0 then
-				_.each(arg_22_0.stage_effect[var_21_2], function(arg_23_0)
-					local var_23_0 = pg.world_effect_data[arg_23_0]
+					assert(slot1, "world_effect_data not exist: " .. slot0)
 
-					assert(var_23_0, "world_effect_data not exist: " .. arg_23_0)
+					slot2 = WBank:Fetch(WorldMapOp)
+					slot2.op = WorldConst.OpActionEventEffect
+					slot2.effect = slot1
 
-					local var_23_1 = WBank:Fetch(WorldMapOp)
-
-					var_23_1.op = WorldConst.OpActionEventEffect
-					var_23_1.effect = var_23_0
-
-					table.insert(var_21_0, var_23_1)
+					table.insert(uv0, slot2)
 				end)
 			end
 		end)
 	end
 
-	return var_21_0
+	return slot2
 end
 
-return var_0_0
+return slot0

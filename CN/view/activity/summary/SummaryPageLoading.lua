@@ -1,75 +1,75 @@
-﻿local var_0_0 = class("SummaryPageLoading", import(".SummaryPage"))
-local var_0_1 = 0.05
+slot0 = class("SummaryPageLoading", import(".SummaryPage"))
+slot1 = 0.05
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.textContainer = findTF(arg_1_0._go, "texts")
-	arg_1_0.textTFs = {}
+function slot0.OnInit(slot0)
+	slot0.textContainer = findTF(slot0._go, "texts")
+	slot0.textTFs = {}
 
-	eachChild(arg_1_0.textContainer, function(arg_2_0)
-		setActive(arg_2_0, false)
-		table.insert(arg_1_0.textTFs, 1, arg_2_0)
+	eachChild(slot0.textContainer, function (slot0)
+		setActive(slot0, false)
+		table.insert(uv0.textTFs, 1, slot0)
 	end)
 
-	arg_1_0.timers = {}
+	slot0.timers = {}
 
-	setActive(arg_1_0._go, false)
+	setActive(slot0._go, false)
 end
 
-function var_0_0.Show(arg_3_0, arg_3_1)
-	arg_3_0.inAniming = true
+function slot0.Show(slot0, slot1)
+	slot0.inAniming = true
 
-	setActive(arg_3_0._tf, true)
+	setActive(slot0._tf, true)
 
-	local var_3_0 = {}
+	slot2 = {}
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0.textTFs) do
-		table.insert(var_3_0, function(arg_4_0)
-			arg_3_0.timers[iter_3_0] = Timer.New(function()
-				if arg_3_0.timers[iter_3_0] then
-					arg_3_0.timers[iter_3_0]:Stop()
+	for slot6, slot7 in ipairs(slot0.textTFs) do
+		table.insert(slot2, function (slot0)
+			uv0.timers[uv1] = Timer.New(function ()
+				if uv0.timers[uv1] then
+					uv0.timers[uv1]:Stop()
 
-					arg_3_0.timers[iter_3_0] = nil
+					uv0.timers[uv1] = nil
 				end
 
-				setActive(iter_3_1, true)
-				iter_3_1:GetComponent(typeof(Typewriter)):setSpeed(0.015)
-				arg_4_0()
-			end, var_0_1 * iter_3_0, 1)
+				setActive(uv2, true)
+				uv2:GetComponent(typeof(Typewriter)):setSpeed(0.015)
+				uv3()
+			end, uv3 * uv1, 1)
 
-			arg_3_0.timers[iter_3_0]:Start()
+			uv0.timers[uv1]:Start()
 		end)
 	end
 
-	table.insert(var_3_0, function(arg_6_0)
-		local var_6_0 = arg_3_0.textContainer:GetComponent(typeof(CanvasGroup))
+	table.insert(slot2, function (slot0)
+		slot1 = uv0.textContainer:GetComponent(typeof(CanvasGroup))
 
-		LeanTween.value(go(arg_3_0.textContainer), 1, 0, 0.5):setOnUpdate(System.Action_float(function(arg_7_0)
-			var_6_0.alpha = arg_7_0
-		end)):setOnComplete(System.Action(arg_6_0)):setDelay(0.6)
+		LeanTween.value(go(uv0.textContainer), 1, 0, 0.5):setOnUpdate(System.Action_float(function (slot0)
+			uv0.alpha = slot0
+		end)):setOnComplete(System.Action(slot0)):setDelay(0.6)
 	end)
-	seriesAsync(var_3_0, function()
-		arg_3_0.inAniming = nil
+	seriesAsync(slot2, function ()
+		uv0.inAniming = nil
 
-		arg_3_1()
+		uv1()
 	end)
 end
 
-function var_0_0.Hide(arg_9_0, arg_9_1)
-	arg_9_0:Clear()
-	setActive(arg_9_0._tf, false)
-	arg_9_1()
+function slot0.Hide(slot0, slot1)
+	slot0:Clear()
+	setActive(slot0._tf, false)
+	slot1()
 end
 
-function var_0_0.inAnim(arg_10_0)
-	return arg_10_0.inAniming
+function slot0.inAnim(slot0)
+	return slot0.inAniming
 end
 
-function var_0_0.Clear(arg_11_0)
-	for iter_11_0, iter_11_1 in pairs(arg_11_0.timers) do
-		iter_11_1:Stop()
+function slot0.Clear(slot0)
+	for slot4, slot5 in pairs(slot0.timers) do
+		slot5:Stop()
 	end
 
-	arg_11_0.timers = {}
+	slot0.timers = {}
 end
 
-return var_0_0
+return slot0

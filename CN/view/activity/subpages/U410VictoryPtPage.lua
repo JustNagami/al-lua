@@ -1,10 +1,10 @@
-﻿local var_0_0 = class("U410VictoryPtPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("U410VictoryPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
-	onButton(arg_1_0, arg_1_0.battleBtn, function()
-		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 end
 
-return var_0_0
+return slot0

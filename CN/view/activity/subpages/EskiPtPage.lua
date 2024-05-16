@@ -1,55 +1,45 @@
-﻿local var_0_0 = class("EskiPtPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("EskiPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.progresses = arg_1_0:findTF("progresses", arg_1_0.bg)
-	arg_1_0.progress_r = arg_1_0:findTF("progress_r", arg_1_0.progresses)
-	arg_1_0.progress_l = arg_1_0:findTF("progress_l", arg_1_0.progresses)
-	arg_1_0.buildBtn = arg_1_0:findTF("build_btn", arg_1_0.bg)
+	slot0.progresses = slot0:findTF("progresses", slot0.bg)
+	slot0.progress_r = slot0:findTF("progress_r", slot0.progresses)
+	slot0.progress_l = slot0:findTF("progress_l", slot0.progresses)
+	slot0.buildBtn = slot0:findTF("build_btn", slot0.bg)
 end
 
-function var_0_0.OnUpdateFlush(arg_2_0)
-	local var_2_0 = arg_2_0.ptData:getTargetLevel()
-	local var_2_1 = arg_2_0.activity:getConfig("config_client").story
-
-	if checkExist(var_2_1, {
-		var_2_0
+function slot0.OnUpdateFlush(slot0)
+	if checkExist(slot0.activity:getConfig("config_client").story, {
+		slot0.ptData:getTargetLevel()
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_2_1[var_2_0][1])
+		pg.NewStoryMgr.GetInstance():Play(slot2[slot1][1])
 	end
 
-	local var_2_2, var_2_3, var_2_4 = arg_2_0.ptData:GetLevelProgress()
-	local var_2_5, var_2_6, var_2_7 = arg_2_0.ptData:GetResProgress()
+	slot3, slot4, slot5 = slot0.ptData:GetLevelProgress()
+	slot6, slot7, slot8 = slot0.ptData:GetResProgress()
 
-	setText(arg_2_0.step, var_2_2 .. "/" .. var_2_3)
+	setText(slot0.step, slot3 .. "/" .. slot4)
+	setText(slot0.progress_r, (slot8 >= 1 and setColorStr(slot6, COLOR_GREEN) or slot6) .. "/" .. slot7)
+	setSlider(slot0.slider, 0, 1, slot8)
 
-	local var_2_8 = var_2_7 >= 1 and setColorStr(var_2_5, COLOR_GREEN) or var_2_5
+	slot10 = slot0.ptData:CanGetAward()
+	slot11 = slot0.ptData:CanGetNextAward()
 
-	setText(arg_2_0.progress_r, var_2_8 .. "/" .. var_2_6)
-	setSlider(arg_2_0.slider, 0, 1, var_2_7)
-
-	local var_2_9 = arg_2_0.ptData:CanGetAward()
-	local var_2_10 = arg_2_0.ptData:CanGetNextAward()
-	local var_2_11 = arg_2_0.ptData:CanGetMorePt()
-
-	setActive(arg_2_0.battleBtn, var_2_11 and not var_2_9 and var_2_10)
-	setActive(arg_2_0.getBtn, var_2_9)
-	setActive(arg_2_0.gotBtn, not var_2_10)
-
-	local var_2_12 = arg_2_0.ptData:GetAward()
-
-	updateDrop(arg_2_0.awardTF, var_2_12)
-	onButton(arg_2_0, arg_2_0.awardTF, function()
-		arg_2_0:emit(BaseUI.ON_DROP, var_2_12)
+	setActive(slot0.battleBtn, slot0.ptData:CanGetMorePt() and not slot10 and slot11)
+	setActive(slot0.getBtn, slot10)
+	setActive(slot0.gotBtn, not slot11)
+	updateDrop(slot0.awardTF, slot0.ptData:GetAward())
+	onButton(slot0, slot0.awardTF, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.buildBtn, function()
-		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+	onButton(slot0, slot0.buildBtn, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = BuildShipScene.PROJECTS.LIGHT
 		})
 	end, SFX_PANEL)
 end
 
-return var_0_0
+return slot0

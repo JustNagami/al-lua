@@ -1,98 +1,81 @@
-﻿local var_0_0 = class("JiuJiuExpeditionCollectionMediator", import("...base.ContextMediator"))
+slot0 = class("JiuJiuExpeditionCollectionMediator", import("...base.ContextMediator"))
+slot0.ON_GET = "JiuJiuExpeditionCollectionMediator:ON_GET"
+slot1 = 691
 
-var_0_0.ON_GET = "JiuJiuExpeditionCollectionMediator:ON_GET"
-
-local var_0_1 = 691
-
-function var_0_0.register(arg_1_0)
+function slot0.register(slot0)
 	if PLATFORM_CODE == PLATFORM_JP then
-		arg_1_0:bind(var_0_0.ON_GET, function(arg_2_0, arg_2_1)
+		slot0:bind(uv0.ON_GET, function (slot0, slot1)
 			pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 				cmd = 4,
-				activity_id = var_0_1
+				activity_id = uv0
 			})
 		end)
 	end
 
-	local var_1_0, var_1_1, var_1_2, var_1_3 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
+	slot1, slot2, slot3, slot4 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
 
-	arg_1_0.viewComponent:SetData(var_1_0, var_1_1, var_1_2, var_1_3)
+	slot0.viewComponent:SetData(slot1, slot2, slot3, slot4)
 end
 
-function var_0_0.GetCollectionData()
-	local var_3_0 = 1
-	local var_3_1 = pg.activity_event_adventure[var_3_0]
-	local var_3_2 = var_3_1.boss_list
-	local var_3_3 = {}
-	local var_3_4 = getProxy(ActivityProxy):getActivityById(var_0_1)
-	local var_3_5 = var_3_4.data1
-	local var_3_6 = var_3_4.data1_list
-	local var_3_7 = var_3_4:getConfig("config_data")
+function slot0.GetCollectionData()
+	slot2 = pg.activity_event_adventure[1].boss_list
+	slot3 = {}
+	slot4 = getProxy(ActivityProxy):getActivityById(uv0)
+	slot6 = slot4.data1_list
+	slot7 = slot4:getConfig("config_data")
 
-	if var_3_5 == 0 then
-		var_3_5 = #var_3_7 + 1
+	if slot4.data1 == 0 then
+		slot5 = #slot7 + 1
 	end
 
-	for iter_3_0 = 1, #var_3_7 do
-		local var_3_8 = pg.activity_event_chequer[var_3_7[iter_3_0]].list_boss
+	for slot11 = 1, #slot7 do
+		slot12 = pg.activity_event_chequer[slot7[slot11]].list_boss
 
-		if iter_3_0 < var_3_5 then
-			for iter_3_1 = 1, #var_3_8 do
-				table.insert(var_3_3, var_3_8[iter_3_1])
+		if slot11 < slot5 then
+			for slot16 = 1, #slot12 do
+				table.insert(slot3, slot12[slot16])
 			end
-		elseif iter_3_0 == var_3_5 and var_3_6 and #var_3_6 > 0 then
-			for iter_3_2 = 1, #var_3_6 do
-				local var_3_9 = var_3_6[iter_3_2]
-
-				if bit.band(var_3_9, ActivityConst.EXPEDITION_TYPE_BOSS) ~= 0 and bit.band(var_3_9, ActivityConst.EXPEDITION_TYPE_GOT) ~= 0 then
-					local var_3_10 = bit.rshift(var_3_9, 4)
-
-					table.insert(var_3_3, var_3_10)
+		elseif slot11 == slot5 and slot6 and #slot6 > 0 then
+			for slot16 = 1, #slot6 do
+				if bit.band(slot6[slot16], ActivityConst.EXPEDITION_TYPE_BOSS) ~= 0 and bit.band(slot17, ActivityConst.EXPEDITION_TYPE_GOT) ~= 0 then
+					table.insert(slot3, bit.rshift(slot17, 4))
 				end
 			end
 		end
 	end
 
-	local var_3_11 = 0
+	slot8 = 0
 
-	for iter_3_3 = 1, #var_3_1.boss_list do
-		local var_3_12 = var_3_1.boss_list[iter_3_3]
-		local var_3_13 = 0
-
-		for iter_3_4 = 1, #var_3_12 do
-			if table.contains(var_3_3, var_3_12[iter_3_4]) then
-				var_3_13 = var_3_13 + 1
+	for slot12 = 1, #slot1.boss_list do
+		for slot18 = 1, #slot1.boss_list[slot12] do
+			if table.contains(slot3, slot13[slot18]) then
+				slot14 = 0 + 1
 			end
 		end
 
-		if var_3_13 == #var_3_12 then
-			var_3_11 = var_3_11 + 1
+		if slot14 == #slot13 then
+			slot8 = slot8 + 1
 		end
 	end
 
-	local var_3_14 = var_3_4.data2_list[1] or var_3_11
-
-	return var_3_2, var_3_3, var_3_11, var_3_14
+	return slot2, slot3, slot8, slot4.data2_list[1] or slot8
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED and slot1:getBody().id == uv0 then
+		slot4, slot5, slot6, slot7 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
 
-	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED and var_5_1.id == var_0_1 then
-		local var_5_2, var_5_3, var_5_4, var_5_5 = JiuJiuExpeditionCollectionMediator.GetCollectionData()
-
-		arg_5_0.viewComponent:SetData(var_5_2, var_5_3, var_5_4, var_5_5)
-		arg_5_0.viewComponent:updateBooks()
-		arg_5_0.viewComponent:UpdateTip()
-		arg_5_0.viewComponent:OpenBook(var_5_5 + 1)
+		slot0.viewComponent:SetData(slot4, slot5, slot6, slot7)
+		slot0.viewComponent:updateBooks()
+		slot0.viewComponent:UpdateTip()
+		slot0.viewComponent:OpenBook(slot7 + 1)
 	end
 end
 
-return var_0_0
+return slot0

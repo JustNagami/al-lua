@@ -1,20 +1,20 @@
-﻿local var_0_0 = class("YingxiV3VictoryPtPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("YingxiV3VictoryPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
-	onButton(arg_1_0, arg_1_0.battleBtn, function()
-		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_3_0)
-	var_0_0.super.OnUpdateFlush(arg_3_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 
-	local var_3_0, var_3_1, var_3_2 = arg_3_0.ptData:GetLevelProgress()
-	local var_3_3, var_3_4, var_3_5 = arg_3_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetLevelProgress()
+	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
 
-	setText(arg_3_0.step, var_3_0)
-	setText(arg_3_0.progress, (var_3_5 >= 1 and setColorStr(var_3_3, COLOR_GREEN) or setColorStr(var_3_3, "#e7dfc7")) .. "/" .. var_3_4)
+	setText(slot0.step, slot1)
+	setText(slot0.progress, (slot6 >= 1 and setColorStr(slot4, COLOR_GREEN) or setColorStr(slot4, "#e7dfc7")) .. "/" .. slot5)
 end
 
-return var_0_0
+return slot0

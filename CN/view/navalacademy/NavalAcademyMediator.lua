@@ -1,110 +1,106 @@
-﻿local var_0_0 = class("NavalAcademyMediator", import("..base.ContextMediator"))
+slot0 = class("NavalAcademyMediator", import("..base.ContextMediator"))
+slot0.ON_OPEN_CLASSROOM = "NavalAcademyMediator:ON_OPEN_CLASSROOM"
+slot0.ON_OPEN_COMMANDER = "NavalAcademyMediator:ON_OPEN_COMMANDER"
+slot0.ON_OPEN_COLLECTION = "NavalAcademyMediator:ON_OPEN_COLLECTION"
+slot0.ON_OPEN_OILRESFIELD = "NavalAcademyMediator:ON_OPEN_OILRESFIELD"
+slot0.ON_OPEN_GOLDRESFIELD = "NavalAcademyMediator:ON_OPEN_GOLDRESFIELD"
+slot0.ON_OPEN_SUPPLYSHOP = "NavalAcademyMediator:ON_OPEN_SUPPLYSHOP"
+slot0.ON_OPEN_TACTICROOM = "NavalAcademyMediator:ON_OPEN_TACTICROOM"
+slot0.ON_OPEN_MINIGAMEHALL = "NavalAcademyMediator:ON_OPEN_MINIGAMEHALL"
+slot0.UPGRADE_FIELD = "NavalAcademyMediator:UPGRADE_FIELD"
+slot0.GO_SCENE = "NavalAcademyMediator:GO_SCENE"
+slot0.OPEN_ACTIVITY_PANEL = "NavalAcademyMediator:OPEN_ACTIVITY_PANEL"
+slot0.OPEN_ACTIVITY_SHOP = "NavalAcademyMediator:OPEN_ACTIVITY_SHOP"
+slot0.OPEN_SCROLL = "NavalAcademyMediator:OPEN_SCROLL"
+slot0.ACTIVITY_OP = "NavalAcademyMediator:ACTIVITY_OP"
+slot0.TASK_GO = "NavalAcademyMediator:TASK_GO"
+slot0.GO_TASK_SCENE = "NavalAcademyMediator:GO_TASK_SCENE"
+slot0.ON_GET_CLASS_RES = "NavalAcademyMediator:ON_GET_CLASS_RES"
+slot0.ON_GET_RES = "NavalAcademyMediator:ON_GET_RES"
 
-var_0_0.ON_OPEN_CLASSROOM = "NavalAcademyMediator:ON_OPEN_CLASSROOM"
-var_0_0.ON_OPEN_COMMANDER = "NavalAcademyMediator:ON_OPEN_COMMANDER"
-var_0_0.ON_OPEN_COLLECTION = "NavalAcademyMediator:ON_OPEN_COLLECTION"
-var_0_0.ON_OPEN_OILRESFIELD = "NavalAcademyMediator:ON_OPEN_OILRESFIELD"
-var_0_0.ON_OPEN_GOLDRESFIELD = "NavalAcademyMediator:ON_OPEN_GOLDRESFIELD"
-var_0_0.ON_OPEN_SUPPLYSHOP = "NavalAcademyMediator:ON_OPEN_SUPPLYSHOP"
-var_0_0.ON_OPEN_TACTICROOM = "NavalAcademyMediator:ON_OPEN_TACTICROOM"
-var_0_0.ON_OPEN_MINIGAMEHALL = "NavalAcademyMediator:ON_OPEN_MINIGAMEHALL"
-var_0_0.UPGRADE_FIELD = "NavalAcademyMediator:UPGRADE_FIELD"
-var_0_0.GO_SCENE = "NavalAcademyMediator:GO_SCENE"
-var_0_0.OPEN_ACTIVITY_PANEL = "NavalAcademyMediator:OPEN_ACTIVITY_PANEL"
-var_0_0.OPEN_ACTIVITY_SHOP = "NavalAcademyMediator:OPEN_ACTIVITY_SHOP"
-var_0_0.OPEN_SCROLL = "NavalAcademyMediator:OPEN_SCROLL"
-var_0_0.ACTIVITY_OP = "NavalAcademyMediator:ACTIVITY_OP"
-var_0_0.TASK_GO = "NavalAcademyMediator:TASK_GO"
-var_0_0.GO_TASK_SCENE = "NavalAcademyMediator:GO_TASK_SCENE"
-var_0_0.ON_GET_CLASS_RES = "NavalAcademyMediator:ON_GET_CLASS_RES"
-var_0_0.ON_GET_RES = "NavalAcademyMediator:ON_GET_RES"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_GET_CLASS_RES, function(arg_2_0)
-		arg_1_0:sendNotification(GAME.HARVEST_CLASS_RES)
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_GET_CLASS_RES, function (slot0)
+		uv0:sendNotification(GAME.HARVEST_CLASS_RES)
 	end)
-	arg_1_0:bind(var_0_0.ON_GET_RES, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.HARVEST_RES, arg_3_1)
+	slot0:bind(uv0.ON_GET_RES, function (slot0, slot1)
+		uv0:sendNotification(GAME.HARVEST_RES, slot1)
 	end)
-	arg_1_0:bind(var_0_0.GO_TASK_SCENE, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.TASK, arg_4_1)
+	slot0:bind(uv0.GO_TASK_SCENE, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.TASK, slot1)
 	end)
-	arg_1_0:bind(var_0_0.TASK_GO, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.TASK_GO, arg_5_1)
+	slot0:bind(uv0.TASK_GO, function (slot0, slot1)
+		uv0:sendNotification(GAME.TASK_GO, slot1)
 	end)
-	arg_1_0:bind(var_0_0.ACTIVITY_OP, function(arg_6_0, arg_6_1)
-		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_6_1)
+	slot0:bind(uv0.ACTIVITY_OP, function (slot0, slot1)
+		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
 	end)
-	arg_1_0:bind(var_0_0.OPEN_SCROLL, function(arg_7_0, arg_7_1)
+	slot0:bind(uv0.OPEN_SCROLL, function (slot0, slot1)
 		assert(false, "问卷系统已废弃")
 	end)
-	arg_1_0:bind(var_0_0.OPEN_ACTIVITY_SHOP, function(arg_8_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	slot0:bind(uv0.OPEN_ACTIVITY_SHOP, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_ACTIVITY_PANEL, function(arg_9_0, arg_9_1)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = arg_9_1
+	slot0:bind(uv0.OPEN_ACTIVITY_PANEL, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.GO_SCENE, function(arg_10_0, arg_10_1)
-		arg_1_0:sendNotification(GAME.GO_SCENE, arg_10_1[1], arg_10_1[2])
+	slot0:bind(uv0.GO_SCENE, function (slot0, slot1)
+		uv0:sendNotification(GAME.GO_SCENE, slot1[1], slot1[2])
 	end)
-	arg_1_0:bind(var_0_0.UPGRADE_FIELD, function(arg_11_0, arg_11_1)
-		arg_1_0:sendNotification(GAME.SHOPPING, {
+	slot0:bind(uv0.UPGRADE_FIELD, function (slot0, slot1)
+		uv0:sendNotification(GAME.SHOPPING, {
 			count = 1,
-			id = arg_11_1
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_CLASSROOM, function(arg_12_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CLASS)
+	slot0:bind(uv0.ON_OPEN_CLASSROOM, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.CLASS)
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_COMMANDER, function(arg_13_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+	slot0:bind(uv0.ON_OPEN_COMMANDER, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 			fleetType = CommanderCatScene.FLEET_TYPE_COMMON
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_COLLECTION, function(arg_14_0)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_OPEN_COLLECTION, function (slot0)
+		uv0:addSubLayers(Context.New({
 			mediator = TrophyGalleryMediator,
 			viewComponent = TrophyGalleryLayer
 		}))
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_GOLDRESFIELD, function(arg_15_0)
-		arg_1_0.viewComponent:OpenGoldResField()
+	slot0:bind(uv0.ON_OPEN_GOLDRESFIELD, function (slot0)
+		uv0.viewComponent:OpenGoldResField()
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_OILRESFIELD, function(arg_16_0)
-		arg_1_0.viewComponent:OpenOilResField()
+	slot0:bind(uv0.ON_OPEN_OILRESFIELD, function (slot0)
+		uv0.viewComponent:OpenOilResField()
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_SUPPLYSHOP, function(arg_17_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	slot0:bind(uv0.ON_OPEN_SUPPLYSHOP, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_SHOP_STREET
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_TACTICROOM, function(arg_18_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.NAVALTACTICS, {
-			shipToLesson = arg_1_0.contextData.shipToLesson
+	slot0:bind(uv0.ON_OPEN_TACTICROOM, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.NAVALTACTICS, {
+			shipToLesson = uv0.contextData.shipToLesson
 		})
 
-		arg_1_0.contextData.shipToLesson = nil
+		uv0.contextData.shipToLesson = nil
 	end)
-	arg_1_0:bind(var_0_0.ON_OPEN_MINIGAMEHALL, function(arg_19_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.GAME_HALL)
+	slot0:bind(uv0.ON_OPEN_MINIGAMEHALL, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.GAME_HALL)
 	end)
 
-	local var_1_0 = getProxy(NavalAcademyProxy)
+	slot1 = getProxy(NavalAcademyProxy)
 
-	arg_1_0.viewComponent:SetOilResField(var_1_0:GetOilVO())
-	arg_1_0.viewComponent:SetGoldResField(var_1_0:GetGoldVO())
-	arg_1_0.viewComponent:SetClassResField(var_1_0:GetClassVO())
-
-	local var_1_1 = getProxy(PlayerProxy):getData()
-
-	arg_1_0.viewComponent:SetPlayer(var_1_1)
+	slot0.viewComponent:SetOilResField(slot1:GetOilVO())
+	slot0.viewComponent:SetGoldResField(slot1:GetGoldVO())
+	slot0.viewComponent:SetClassResField(slot1:GetClassVO())
+	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getData())
 end
 
-function var_0_0.listNotificationInterests(arg_20_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.LOAD_LAYERS,
 		GAME.REMOVE_LAYERS,
@@ -119,49 +115,40 @@ function var_0_0.listNotificationInterests(arg_20_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_1:getName()
-	local var_21_1 = arg_21_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_21_0 == GAME.LOAD_LAYERS then
-		arg_21_0.viewComponent:OnAddLayer()
-	elseif var_21_0 == GAME.REMOVE_LAYERS then
-		arg_21_0.viewComponent:OnRemoveLayer(var_21_1)
-	elseif var_21_0 == GAME.HARVEST_RES_DONE then
-		arg_21_0.viewComponent:OnGetRes(var_21_1.type, var_21_1.outPut)
+	if slot1:getName() == GAME.LOAD_LAYERS then
+		slot0.viewComponent:OnAddLayer()
+	elseif slot2 == GAME.REMOVE_LAYERS then
+		slot0.viewComponent:OnRemoveLayer(slot3)
+	elseif slot2 == GAME.HARVEST_RES_DONE then
+		slot0.viewComponent:OnGetRes(slot3.type, slot3.outPut)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelMediator_ok_takeResource"))
-	elseif var_21_0 == PlayerProxy.UPDATED then
-		arg_21_0.viewComponent:UpdatePlayer(var_21_1)
-	elseif var_21_0 == NavalAcademyProxy.RESOURCE_UPGRADE then
-		arg_21_0.viewComponent:UpdatePlayer(getProxy(PlayerProxy):getData())
-		arg_21_0.viewComponent:OnStartUpgradeResField(var_21_1.resVO)
-	elseif var_21_0 == NavalAcademyProxy.RESOURCE_UPGRADE_DONE then
-		local var_21_2 = var_21_1.field
-
-		if isa(var_21_2, GoldResourceField) then
-			local var_21_3 = pg.navalacademy_data_template[3].name
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_upgrade_complete", var_21_3, var_21_1.value))
-		elseif isa(var_21_2, OilResourceField) then
-			local var_21_4 = pg.navalacademy_data_template[4].name
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_upgrade_complete", var_21_4, var_21_1.value))
-		elseif isa(var_21_2, ClassResourceField) then
-			local var_21_5 = pg.navalacademy_data_template[1].name
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_class_upgrade_complete", var_21_5, var_21_1.value, var_21_1.rate, var_21_1.exp))
+	elseif slot2 == PlayerProxy.UPDATED then
+		slot0.viewComponent:UpdatePlayer(slot3)
+	elseif slot2 == NavalAcademyProxy.RESOURCE_UPGRADE then
+		slot0.viewComponent:UpdatePlayer(getProxy(PlayerProxy):getData())
+		slot0.viewComponent:OnStartUpgradeResField(slot3.resVO)
+	elseif slot2 == NavalAcademyProxy.RESOURCE_UPGRADE_DONE then
+		if isa(slot3.field, GoldResourceField) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_upgrade_complete", pg.navalacademy_data_template[3].name, slot3.value))
+		elseif isa(slot4, OilResourceField) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_upgrade_complete", pg.navalacademy_data_template[4].name, slot3.value))
+		elseif isa(slot4, ClassResourceField) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("main_navalAcademyScene_class_upgrade_complete", pg.navalacademy_data_template[1].name, slot3.value, slot3.rate, slot3.exp))
 		end
 
-		arg_21_0.viewComponent:OnResFieldLevelUp(var_21_2)
-	elseif var_21_0 == CollectionProxy.TROPHY_UPDATE then
-		arg_21_0.viewComponent:OnCollectionUpdate()
-	elseif var_21_0 == GAME.BEGIN_STAGE_DONE then
-		arg_21_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_21_1)
-	elseif var_21_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		arg_21_0.viewComponent:RefreshChars()
-	elseif var_21_0 == GAME.HARVEST_CLASS_RES_DONE then
-		arg_21_0.viewComponent:OnGetRes(3, var_21_1.value)
+		slot0.viewComponent:OnResFieldLevelUp(slot4)
+	elseif slot2 == CollectionProxy.TROPHY_UPDATE then
+		slot0.viewComponent:OnCollectionUpdate()
+	elseif slot2 == GAME.BEGIN_STAGE_DONE then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
+	elseif slot2 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		slot0.viewComponent:RefreshChars()
+	elseif slot2 == GAME.HARVEST_CLASS_RES_DONE then
+		slot0.viewComponent:OnGetRes(3, slot3.value)
 	end
 end
 
-return var_0_0
+return slot0

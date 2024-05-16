@@ -1,27 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetShipTag",
-			targetAniEffect = "",
-			arg_list = {
-				delay = 0.1,
-				weapon_id = 67671,
-				ship_tag_list = {
-					"wushuang"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -199,5 +176,28 @@
 	id = 103100,
 	picture = "0",
 	castCV = "skill",
-	desc = "双影无双"
+	desc = "双影无双",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetShipTag",
+			targetAniEffect = "",
+			arg_list = {
+				delay = 0.1,
+				weapon_id = 67671,
+				ship_tag_list = {
+					"wushuang"
+				}
+			}
+		}
+	}
 }

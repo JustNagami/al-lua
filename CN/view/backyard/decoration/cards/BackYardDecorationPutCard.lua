@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("BackYardDecorationPutCard")
-local var_0_1 = {
+slot0 = class("BackYardDecorationPutCard")
+slot1 = {
 	"word_furniture",
 	"word_decorate",
 	"word_wallpaper",
@@ -9,34 +9,34 @@ local var_0_1 = {
 	"word_shipskin"
 }
 
-local function var_0_2(arg_1_0)
-	return i18n(var_0_1[arg_1_0])
+function slot2(slot0)
+	return i18n(uv0[slot0])
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0._go = arg_2_1
-	arg_2_0._tf = tf(arg_2_1)
-	arg_2_0.nameTxt = findTF(arg_2_0._tf, "name"):GetComponent(typeof(Text))
-	arg_2_0.tagTxt = findTF(arg_2_0._tf, "tag"):GetComponent(typeof(Text))
-	arg_2_0.icon = findTF(arg_2_0._tf, "icon"):GetComponent(typeof(Image))
-	arg_2_0.mark = findTF(arg_2_0._tf, "mark")
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
+	slot0.nameTxt = findTF(slot0._tf, "name"):GetComponent(typeof(Text))
+	slot0.tagTxt = findTF(slot0._tf, "tag"):GetComponent(typeof(Text))
+	slot0.icon = findTF(slot0._tf, "icon"):GetComponent(typeof(Image))
+	slot0.mark = findTF(slot0._tf, "mark")
 end
 
-function var_0_0.MarkOrUnMark(arg_3_0, arg_3_1)
-	setActive(arg_3_0.mark, arg_3_0.furniture.id == arg_3_1)
+function slot0.MarkOrUnMark(slot0, slot1)
+	setActive(slot0.mark, slot0.furniture.id == slot1)
 end
 
-function var_0_0.Update(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0.furniture = arg_4_1
-	arg_4_0.nameTxt.text = arg_4_1:getConfig("name")
-	arg_4_0.tagTxt.text = var_0_2(arg_4_1:getConfig("tag"))
-	arg_4_0.icon.sprite = LoadSprite("furnitureicon/" .. arg_4_1:getConfig("icon"))
+function slot0.Update(slot0, slot1, slot2)
+	slot0.furniture = slot1
+	slot0.nameTxt.text = slot1:getConfig("name")
+	slot0.tagTxt.text = uv0(slot1:getConfig("tag"))
+	slot0.icon.sprite = LoadSprite("furnitureicon/" .. slot1:getConfig("icon"))
 
-	arg_4_0:MarkOrUnMark(arg_4_2)
+	slot0:MarkOrUnMark(slot2)
 end
 
-function var_0_0.Clear(arg_5_0)
-	arg_5_0:MarkOrUnMark(false)
+function slot0.Clear(slot0)
+	slot0:MarkOrUnMark(false)
 end
 
-return var_0_0
+return slot0

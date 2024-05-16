@@ -1,76 +1,74 @@
-﻿local var_0_0 = class("SettingsBasePanel")
-local var_0_1 = 0
-local var_0_2 = 1
-local var_0_3 = 2
+slot0 = class("SettingsBasePanel")
+slot1 = 0
+slot2 = 1
+slot3 = 2
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.parentTF = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.parentTF = slot1
 
-	pg.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.state = var_0_1
+	slot0.state = uv0
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1)
-	if arg_2_0.state == var_0_1 then
-		arg_2_0:Load(arg_2_1)
+function slot0.Init(slot0, slot1)
+	if slot0.state == uv0 then
+		slot0:Load(slot1)
 	else
-		arg_2_1()
+		slot1()
 	end
 end
 
-function var_0_0.IsLoaded(arg_3_0)
-	return arg_3_0.state == var_0_3
+function slot0.IsLoaded(slot0)
+	return slot0.state == uv0
 end
 
-function var_0_0.Load(arg_4_0, arg_4_1)
-	arg_4_0.state = var_0_2
+function slot0.Load(slot0, slot1)
+	slot0.state = uv0
 
-	PoolMgr.GetInstance():GetUI(arg_4_0:GetUIName(), true, function(arg_5_0)
-		arg_4_0.state = var_0_3
-		arg_4_0._go = arg_5_0
-		arg_4_0._tf = arg_5_0.transform
+	PoolMgr.GetInstance():GetUI(slot0:GetUIName(), true, function (slot0)
+		uv0.state = uv1
+		uv0._go = slot0
+		uv0._tf = slot0.transform
 
-		setParent(arg_4_0._tf, arg_4_0.parentTF)
-		arg_4_0:InitTitle()
-		arg_4_0:OnInit()
-		arg_4_0:OnUpdate()
-		setActive(arg_4_0._tf, true)
-		arg_4_1()
+		setParent(uv0._tf, uv0.parentTF)
+		uv0:InitTitle()
+		uv0:OnInit()
+		uv0:OnUpdate()
+		setActive(uv0._tf, true)
+		uv2()
 	end)
 end
 
-function var_0_0.InitTitle(arg_6_0)
-	setText(arg_6_0._tf:Find("title"), arg_6_0:GetTitle())
-	setText(arg_6_0._tf:Find("title/title_text"), arg_6_0:GetTitleEn())
+function slot0.InitTitle(slot0)
+	setText(slot0._tf:Find("title"), slot0:GetTitle())
+	setText(slot0._tf:Find("title/title_text"), slot0:GetTitleEn())
 end
 
-function var_0_0.Dispose(arg_7_0)
-	pg.DelegateInfo.Dispose(arg_7_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 
-	if arg_7_0.state >= var_0_3 then
-		PoolMgr.GetInstance():ReturnUI(arg_7_0:GetUIName(), arg_7_0._go)
+	if uv0 <= slot0.state then
+		PoolMgr.GetInstance():ReturnUI(slot0:GetUIName(), slot0._go)
 	end
 end
 
-function var_0_0.GetUIName(arg_8_0)
+function slot0.GetUIName(slot0)
 	assert(false, "overwrite me !!!")
 end
 
-function var_0_0.GetTitle(arg_9_0)
+function slot0.GetTitle(slot0)
 	assert(false, "overwrite me !!!")
 end
 
-function var_0_0.GetTitleEn(arg_10_0)
+function slot0.GetTitleEn(slot0)
 	assert(false, "overwrite me !!!")
 end
 
-function var_0_0.OnInit(arg_11_0)
-	return
+function slot0.OnInit(slot0)
 end
 
-function var_0_0.OnUpdate(arg_12_0)
-	return
+function slot0.OnUpdate(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "天之骑士·检测PUTAG",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "检查TAG",
+	stack = 1,
+	id = 11920,
+	icon = 11920,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -54,26 +75,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "天之骑士·检测PUTAG",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "检查TAG",
-	stack = 1,
-	id = 11920,
-	icon = 11920,
-	last_effect = ""
+	}
 }

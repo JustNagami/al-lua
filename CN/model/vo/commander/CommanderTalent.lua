@@ -1,133 +1,121 @@
-﻿local var_0_0 = class("CommanderTalent", import("..BaseVO"))
-local var_0_1 = pg.commander_ability_group
+slot0 = class("CommanderTalent", import("..BaseVO"))
+slot1 = pg.commander_ability_group
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.groupId = arg_1_0:getConfig("group_id")
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.groupId = slot0:getConfig("group_id")
 
-	assert(var_0_1[arg_1_0.groupId])
+	assert(uv0[slot0.groupId])
 
-	arg_1_0.list = var_0_1[arg_1_0.groupId].ability_list
+	slot0.list = uv0[slot0.groupId].ability_list
 end
 
-function var_0_0.reset(arg_2_0)
-	arg_2_0.id = arg_2_0.list[1]
-	arg_2_0.configId = arg_2_0.id
+function slot0.reset(slot0)
+	slot0.id = slot0.list[1]
+	slot0.configId = slot0.id
 end
 
-function var_0_0.setOrigin(arg_3_0, arg_3_1)
-	arg_3_0.origin = arg_3_1
+function slot0.setOrigin(slot0, slot1)
+	slot0.origin = slot1
 end
 
-function var_0_0.isOrigin(arg_4_0)
-	return arg_4_0.origin
+function slot0.isOrigin(slot0)
+	return slot0.origin
 end
 
-function var_0_0.getTalentList(arg_5_0)
-	return arg_5_0.list
+function slot0.getTalentList(slot0)
+	return slot0.list
 end
 
-function var_0_0.bindConfigTable(arg_6_0)
+function slot0.bindConfigTable(slot0)
 	return pg.commander_ability_template
 end
 
-function var_0_0.getConsume(arg_7_0)
-	local var_7_0 = 0
-	local var_7_1 = table.indexof(arg_7_0.list, arg_7_0.id)
+function slot0.getConsume(slot0)
+	slot1 = 0
+	slot2 = table.indexof(slot0.list, slot0.id)
 
-	if arg_7_0.origin then
-		var_7_0 = var_7_1 - table.indexof(arg_7_0.list, arg_7_0.origin.id)
-	else
-		var_7_0 = var_7_1
-	end
-
-	return var_7_0
+	return slot0.origin and slot2 - table.indexof(slot0.list, slot0.origin.id) or slot2
 end
 
-function var_0_0.getAttrsAddition(arg_8_0)
-	local var_8_0 = {}
-	local var_8_1 = {}
+function slot0.getAttrsAddition(slot0)
+	slot1 = {}
+	slot2 = {}
 
-	for iter_8_0, iter_8_1 in ipairs(CommanderConst.PROPERTIES) do
-		for iter_8_2, iter_8_3 in ipairs(arg_8_0:getConfig("add")) do
-			if CommanderConst.TALENT_ADDITION_NUMBER == iter_8_3[1] then
-				if iter_8_3[4] == iter_8_0 then
-					var_8_0[iter_8_1] = {
-						value = iter_8_3[5],
-						nation = iter_8_3[2],
-						shiptype = iter_8_3[3]
+	for slot6, slot7 in ipairs(CommanderConst.PROPERTIES) do
+		slot11 = "add"
+
+		for slot11, slot12 in ipairs(slot0:getConfig(slot11)) do
+			if CommanderConst.TALENT_ADDITION_NUMBER == slot12[1] then
+				if slot12[4] == slot6 then
+					slot1[slot7] = {
+						value = slot12[5],
+						nation = slot12[2],
+						shiptype = slot12[3]
 					}
 				end
-			elseif CommanderConst.TALENT_ADDITION_RATIO == iter_8_3[1] and iter_8_3[4] == iter_8_0 then
-				var_8_1[iter_8_1] = {
-					value = iter_8_3[5],
-					nation = iter_8_3[2],
-					shiptype = iter_8_3[3]
+			elseif CommanderConst.TALENT_ADDITION_RATIO == slot12[1] and slot12[4] == slot6 then
+				slot2[slot7] = {
+					value = slot12[5],
+					nation = slot12[2],
+					shiptype = slot12[3]
 				}
 			end
 		end
 	end
 
-	return var_8_0, var_8_1
+	return slot1, slot2
 end
 
-function var_0_0.getBuffsAddition(arg_9_0)
-	local var_9_0 = {}
+function slot0.getBuffsAddition(slot0)
+	slot1 = {}
+	slot5 = "add"
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0:getConfig("add")) do
-		if CommanderConst.TALENT_ADDITION_BUFF == iter_9_1[1] then
-			table.insert(var_9_0, iter_9_1[4])
+	for slot5, slot6 in ipairs(slot0:getConfig(slot5)) do
+		if CommanderConst.TALENT_ADDITION_BUFF == slot6[1] then
+			table.insert(slot1, slot6[4])
 		end
 	end
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.getDestoryExpValue(arg_10_0)
-	local var_10_0 = 0
-	local var_10_1 = arg_10_0:getConfig("add")
-
-	for iter_10_0, iter_10_1 in ipairs(var_10_1) do
-		if iter_10_1[1] == CommanderConst.TALENT_ADDITION_NUMBER and iter_10_1[4] == CommanderConst.DESTROY_ATTR_ID then
-			var_10_0 = var_10_0 + iter_10_1[5]
+function slot0.getDestoryExpValue(slot0)
+	for slot6, slot7 in ipairs(slot0:getConfig("add")) do
+		if slot7[1] == CommanderConst.TALENT_ADDITION_NUMBER and slot7[4] == CommanderConst.DESTROY_ATTR_ID then
+			slot1 = 0 + slot7[5]
 		end
 	end
 
-	return var_10_0
+	return slot1
 end
 
-function var_0_0.getDestoryExpRetio(arg_11_0)
-	local var_11_0 = 0
-	local var_11_1 = arg_11_0:getConfig("add")
-
-	for iter_11_0, iter_11_1 in ipairs(var_11_1) do
-		if iter_11_1[1] == CommanderConst.TALENT_ADDITION_RATIO and iter_11_1[4] == CommanderConst.DESTROY_ATTR_ID then
-			var_11_0 = var_11_0 + iter_11_1[5]
+function slot0.getDestoryExpRetio(slot0)
+	for slot6, slot7 in ipairs(slot0:getConfig("add")) do
+		if slot7[1] == CommanderConst.TALENT_ADDITION_RATIO and slot7[4] == CommanderConst.DESTROY_ATTR_ID then
+			slot1 = 0 + slot7[5]
 		end
 	end
 
-	return var_11_0
+	return slot1
 end
 
-function var_0_0.getDesc(arg_12_0)
-	local var_12_0 = {}
-	local var_12_1 = arg_12_0:getConfig("add_desc")
+function slot0.getDesc(slot0)
+	slot1 = {}
 
-	for iter_12_0, iter_12_1 in ipairs(var_12_1) do
-		local var_12_2 = iter_12_1[1]
-
-		if var_12_0[var_12_2] then
-			var_12_0[var_12_2].value = var_12_0[var_12_2].value + iter_12_1[2]
+	for slot6, slot7 in ipairs(slot0:getConfig("add_desc")) do
+		if slot1[slot7[1]] then
+			slot1[slot8].value = slot1[slot8].value + slot7[2]
 		else
-			var_12_0[var_12_2] = {
-				value = iter_12_1[2],
-				type = iter_12_1[3] and CommanderConst.TALENT_ADDITION_RATIO or CommanderConst.TALENT_ADDITION_NUMBER
+			slot1[slot8] = {
+				value = slot7[2],
+				type = slot7[3] and CommanderConst.TALENT_ADDITION_RATIO or CommanderConst.TALENT_ADDITION_NUMBER
 			}
 		end
 	end
 
-	return var_12_0
+	return slot1
 end
 
-return var_0_0
+return slot0

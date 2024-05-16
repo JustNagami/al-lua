@@ -1,92 +1,73 @@
-﻿local var_0_0 = class("GameHallListPanel")
-local var_0_1 = false
+slot0 = class("GameHallListPanel")
+slot1 = false
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._event = arg_1_2
-	arg_1_0.content = findTF(arg_1_0._tf, "ad/viewport/content")
-	arg_1_0.listTpl = findTF(arg_1_0.content, "listTpl")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._tf = slot1
+	slot0._event = slot2
+	slot0.content = findTF(slot0._tf, "ad/viewport/content")
+	slot0.listTpl = findTF(slot0.content, "listTpl")
 
-	setActive(arg_1_0.listTpl, false)
+	setActive(slot0.listTpl, false)
 
-	arg_1_0.gameRoomDatas = {}
+	slot0.gameRoomDatas = {}
 
-	for iter_1_0, iter_1_1 in ipairs(pg.game_room_template.all) do
-		local var_1_0 = pg.game_room_template[iter_1_1].unlock_time
+	for slot6, slot7 in ipairs(pg.game_room_template.all) do
+		slot8 = pg.game_room_template[slot7].unlock_time
 
 		if pg.TimeMgr:GetInstance():Table2ServerTime({
-			year = var_1_0[1][1],
-			month = var_1_0[1][2],
-			day = var_1_0[1][3],
-			hour = var_1_0[2][1],
-			min = var_1_0[2][2],
-			sec = var_1_0[2][3]
+			year = slot8[1][1],
+			month = slot8[1][2],
+			day = slot8[1][3],
+			hour = slot8[2][1],
+			min = slot8[2][2],
+			sec = slot8[2][3]
 		}) < pg.TimeMgr:GetInstance():GetServerTime() then
-			table.insert(arg_1_0.gameRoomDatas, Clone(pg.game_room_template[iter_1_1]))
+			table.insert(slot0.gameRoomDatas, Clone(pg.game_room_template[slot7]))
 		end
 	end
 
-	for iter_1_2 = 1, #arg_1_0.gameRoomDatas do
-		local var_1_1 = tf(instantiate(go(arg_1_0.listTpl)))
-		local var_1_2 = arg_1_0.gameRoomDatas[iter_1_2]
+	for slot6 = 1, #slot0.gameRoomDatas do
+		slot7 = tf(instantiate(go(slot0.listTpl)))
+		slot8 = slot0.gameRoomDatas[slot6]
 
-		setParent(var_1_1, arg_1_0.content)
-		setActive(var_1_1, true)
+		setParent(slot7, slot0.content)
+		setActive(slot7, true)
+		setActive(findTF(slot7, "empty"), getProxy(GameRoomProxy):getRoomScore(slot8.id) == 0)
+		setActive(findTF(slot7, "total"), slot11 > 0)
+		setActive(findTF(slot7, "txtScore"), slot11 > 0)
 
-		local var_1_3 = var_1_2.icon
-		local var_1_4 = var_1_2.id
-		local var_1_5 = getProxy(GameRoomProxy):getRoomScore(var_1_4)
+		slot12 = nil
 
-		setActive(findTF(var_1_1, "empty"), var_1_5 == 0)
-		setActive(findTF(var_1_1, "total"), var_1_5 > 0)
-		setActive(findTF(var_1_1, "txtScore"), var_1_5 > 0)
-
-		local var_1_6
-
-		if var_1_5 < 10 then
-			var_1_6 = "00" .. var_1_5
-		elseif var_1_5 < 100 then
-			var_1_6 = "0" .. var_1_5
-		else
-			var_1_6 = "" .. var_1_5
-		end
-
-		setText(findTF(var_1_1, "txtScore"), var_1_6)
-		setImageSprite(findTF(var_1_1, "mask/gameIcon"), LoadSprite("gamehallicon/" .. var_1_3), true)
-		onButton(arg_1_0._event, var_1_1, function()
-			arg_1_0._event:emit(GameHallMediator.OPEN_MINI_GAME, var_1_2)
+		setText(findTF(slot7, "txtScore"), slot11 < 10 and "00" .. slot11 or slot11 < 100 and "0" .. slot11 or "" .. slot11)
+		setImageSprite(findTF(slot7, "mask/gameIcon"), LoadSprite("gamehallicon/" .. slot8.icon), true)
+		onButton(slot0._event, slot7, function ()
+			uv0._event:emit(GameHallMediator.OPEN_MINI_GAME, uv1)
 		end, SFX_CANCEL)
 	end
 end
 
-function var_0_0.setVisible(arg_3_0, arg_3_1)
-	setActive(arg_3_0._tf, arg_3_1)
+function slot0.setVisible(slot0, slot1)
+	setActive(slot0._tf, slot1)
 
-	if arg_3_1 then
-		local var_3_0 = getProxy(GameRoomProxy):ticketMaxTip()
+	if slot1 and getProxy(GameRoomProxy):ticketMaxTip() and not GameRoomProxy.ticket_remind then
+		GameRoomProxy.ticket_remind = true
 
-		if var_3_0 and not GameRoomProxy.ticket_remind then
-			GameRoomProxy.ticket_remind = true
-
-			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = var_3_0,
-				onYes = function()
-					return
-				end,
-				onNo = function()
-					arg_3_0:setVisible(false)
-				end
-			})
-		end
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			content = slot2,
+			onYes = function ()
+			end,
+			onNo = function ()
+				uv0:setVisible(false)
+			end
+		})
 	end
 end
 
-function var_0_0.getVisible(arg_6_0)
-	return isActive(arg_6_0._tf)
+function slot0.getVisible(slot0)
+	return isActive(slot0._tf)
 end
 
-function var_0_0.dispose(arg_7_0)
-	return
+function slot0.dispose(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,29 +1,27 @@
-﻿local var_0_0 = class("InstagramFetchCommand", pm.SimpleCommand)
+slot0 = class("InstagramFetchCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(ActivityProxy)
-	local var_1_2 = var_1_1:getActivityById(var_1_0.activity_id)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = getProxy(ActivityProxy):getActivityById(slot2.activity_id)
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
 		cmd = 6,
-		activity_id = var_1_0.activity_id,
+		activity_id = slot2.activity_id,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_2.data1_list
-			local var_2_1 = math.floor(#arg_2_0.number)
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			slot1 = uv0.data1_list
 
-			for iter_2_0 = 1, var_2_1 do
-				var_1_2.data1_list[iter_2_0] = arg_2_0.number[iter_2_0]
+			for slot6 = 1, math.floor(#slot0.number) do
+				uv0.data1_list[slot6] = slot0.number[slot6]
 			end
 
-			var_1_1:RegisterRequestTime(var_1_0.activity_id, pg.TimeMgr.GetInstance():GetServerTime())
-			var_1_1:updateActivity(var_1_2)
+			uv1:RegisterRequestTime(uv2.activity_id, pg.TimeMgr.GetInstance():GetServerTime())
+			uv1:updateActivity(uv0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

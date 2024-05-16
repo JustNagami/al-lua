@@ -1,174 +1,135 @@
-﻿local var_0_0 = class("ShipExpressionHelper")
-local var_0_1 = pg.ship_skin_expression
-local var_0_2 = pg.ship_skin_expression_ex
-local var_0_3 = false
+slot0 = class("ShipExpressionHelper")
+slot1 = pg.ship_skin_expression
+slot2 = pg.ship_skin_expression_ex
+slot3 = false
 
-local function var_0_4(...)
-	if var_0_3 and IsUnityEditor then
+function slot4(...)
+	if uv0 and IsUnityEditor then
 		print(...)
 	end
 end
 
-local function var_0_5(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = var_0_2[arg_2_0]
+function slot5(slot0, slot1, slot2, slot3)
+	function slot6(slot0)
+		if uv0.main_ex and slot1 ~= "" then
+			slot2 = nil
 
-	local function var_2_1()
-		local var_3_0 = var_2_0[arg_2_1]
-		local var_3_1
-
-		if var_3_0 and var_3_0 ~= "" then
-			for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-				if arg_2_2 >= iter_3_1[1] then
-					var_3_1 = iter_3_1[2]
-				end
-			end
-		end
-
-		return var_3_1
-	end
-
-	local function var_2_2(arg_4_0)
-		local var_4_0 = var_2_0.main_ex
-
-		if var_4_0 and var_4_0 ~= "" then
-			local var_4_1
-
-			for iter_4_0, iter_4_1 in ipairs(var_4_0) do
-				if arg_2_2 >= iter_4_1[1] then
-					var_4_1 = iter_4_1[2]
+			for slot6, slot7 in ipairs(slot1) do
+				if slot7[1] <= uv1 then
+					slot2 = slot7[2]
 				end
 			end
 
-			if var_4_1 then
-				return string.split(var_4_1, "|")[arg_4_0]
+			if slot2 then
+				return string.split(slot2, "|")[slot0]
 			end
 		end
 
 		return nil
 	end
 
-	local function var_2_3()
-		local var_5_0 = string.split(arg_2_1, "_")[2]
+	slot8 = nil
 
-		if not var_5_0 then
-			return nil
-		end
+	if uv0[slot0] then
+		slot8 = (not slot3 or not string.find(slot1, "main") or function ()
+			if not string.split(uv0, "_")[2] then
+				return nil
+			end
 
-		local var_5_1 = tonumber(var_5_0) - ShipWordHelper.GetMainSceneWordCnt(arg_2_3)
+			if tonumber(slot1) - ShipWordHelper.GetMainSceneWordCnt(uv1) > 0 then
+				return uv2(slot3)
+			else
+				return uv3()
+			end
+		end()) and function ()
+			slot1 = nil
 
-		if var_5_1 > 0 then
-			return var_2_2(var_5_1)
-		else
-			return var_2_1()
-		end
+			if uv0[uv1] and slot0 ~= "" then
+				for slot5, slot6 in ipairs(slot0) do
+					if slot6[1] <= uv2 then
+						slot1 = slot6[2]
+					end
+				end
+			end
+
+			return slot1
+		end()
 	end
 
-	local var_2_4
-
-	if var_2_0 then
-		if arg_2_3 and string.find(arg_2_1, "main") then
-			var_2_4 = var_2_3()
-		else
-			var_2_4 = var_2_1()
-		end
-	end
-
-	return var_2_4
+	return slot8
 end
 
-function var_0_0.GetExpression(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	var_0_4("name:", arg_6_0, " - kind:", arg_6_1, " - favor:", arg_6_2)
+function slot0.GetExpression(slot0, slot1, slot2, slot3)
+	uv0("name:", slot0, " - kind:", slot1, " - favor:", slot2)
 
-	local var_6_0 = var_0_1[arg_6_0]
-
-	if not var_6_0 then
+	if not uv1[slot0] then
 		return nil
 	end
 
-	local var_6_1 = var_6_0[arg_6_1]
+	slot5 = slot4[slot1]
 
-	if arg_6_2 then
-		local var_6_2 = var_0_5(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	if slot2 and uv2(slot0, slot1, slot2, slot3) then
+		uv0("get expression form ex:", slot6)
 
-		if var_6_2 then
-			var_0_4("get expression form ex:", var_6_2)
-
-			var_6_1 = var_6_2
-		end
+		slot5 = slot6
 	end
 
-	if not var_6_1 or var_6_1 == "" then
-		var_6_1 = var_6_0.default
-
-		var_0_4("get expression form default:", var_6_1)
+	if not slot5 or slot5 == "" then
+		uv0("get expression form default:", slot4.default)
 	end
 
-	var_0_4("get express :", var_6_1)
+	uv0("get express :", slot5)
 
-	return var_6_1
+	return slot5
 end
 
-function var_0_0.SetExpression(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
-	local var_7_0 = var_0_0.GetExpression(arg_7_1, arg_7_2, arg_7_3, arg_7_4)
-
-	return var_0_0.UpdateExpression(arg_7_0, arg_7_1, var_7_0)
+function slot0.SetExpression(slot0, slot1, slot2, slot3, slot4)
+	return uv0.UpdateExpression(slot0, slot1, uv0.GetExpression(slot1, slot2, slot3, slot4))
 end
 
-function var_0_0.UpdateExpression(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = tf(arg_8_0):Find("face")
-
-	if not var_8_0 then
+function slot0.UpdateExpression(slot0, slot1, slot2)
+	if not tf(slot0):Find("face") then
 		return false, nil
 	end
 
-	local var_8_1 = arg_8_1
+	slot4 = slot1
 
-	if not arg_8_2 or arg_8_2 == "" then
-		var_8_1 = string.gsub(arg_8_1, "_n", "")
-
-		if var_0_0.DefaultFaceless(var_8_1) then
-			arg_8_2 = var_0_0.GetDefaultFace(var_8_1)
-		end
+	if (not slot2 or slot2 == "") and uv0.DefaultFaceless(string.gsub(slot1, "_n", "")) then
+		slot2 = uv0.GetDefaultFace(slot4)
 	end
 
-	if not arg_8_2 or arg_8_2 == "" then
-		setActive(var_8_0, false)
+	if not slot2 or slot2 == "" then
+		setActive(slot3, false)
 
 		return false, nil
 	end
 
-	var_0_0._UpdateExpression(var_8_0, var_8_1, arg_8_2)
+	uv0._UpdateExpression(slot3, slot4, slot2)
 
-	return true, arg_8_2
+	return true, slot2
 end
 
-function var_0_0._UpdateExpression(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = GetSpriteFromAtlas("paintingface/" .. arg_9_1, arg_9_2)
+function slot0._UpdateExpression(slot0, slot1, slot2)
+	setImageSprite(slot0, GetSpriteFromAtlas("paintingface/" .. slot1, slot2))
+	setActive(slot0, true)
 
-	setImageSprite(arg_9_0, var_9_0)
-	setActive(arg_9_0, true)
+	if findTF(slot0, "face_sub") then
+		slot5 = GetSpriteFromAtlas("paintingface/" .. slot1, slot2 .. "_sub")
 
-	local var_9_1 = findTF(arg_9_0, "face_sub")
+		setActive(slot4, slot5)
 
-	if var_9_1 then
-		local var_9_2 = GetSpriteFromAtlas("paintingface/" .. arg_9_1, arg_9_2 .. "_sub")
-
-		setActive(var_9_1, var_9_2)
-
-		if var_9_2 then
-			setImageSprite(var_9_1, var_9_2)
+		if slot5 then
+			setImageSprite(slot4, slot5)
 		end
 	end
 end
 
-function var_0_0.DefaultFaceless(arg_10_0)
-	local var_10_0 = var_0_1[arg_10_0]
-
-	return var_10_0 and var_10_0.default ~= ""
+function slot0.DefaultFaceless(slot0)
+	return uv0[slot0] and slot1.default ~= ""
 end
 
-function var_0_0.GetDefaultFace(arg_11_0)
-	return var_0_1[arg_11_0].default
+function slot0.GetDefaultFace(slot0)
+	return uv0[slot0].default
 end
 
-return var_0_0
+return slot0

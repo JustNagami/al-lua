@@ -1,53 +1,48 @@
-﻿local var_0_0 = class("WSPortTaskDetail", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSPortTaskDetail", import("...BaseEntity"))
+slot0.Fields = {
 	task = "table",
 	onCancel = "function",
 	transform = "userdata"
 }
 
-function var_0_0.Setup(arg_1_0)
-	pg.DelegateInfo.New(arg_1_0)
-	arg_1_0:Init()
+function slot0.Setup(slot0)
+	pg.DelegateInfo.New(slot0)
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_2_0)
-	pg.DelegateInfo.Dispose(arg_2_0)
-	arg_2_0:Clear()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Clear()
 end
 
-function var_0_0.Init(arg_3_0)
-	local var_3_0 = arg_3_0.transform
+function slot0.Init(slot0)
+	slot1 = slot0.transform
 
-	onButton(arg_3_0, var_3_0, function()
-		arg_3_0.onCancel()
+	onButton(slot0, slot1, function ()
+		uv0.onCancel()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, var_3_0:Find("top/btnBack"), function()
-		arg_3_0.onCancel()
+	onButton(slot0, slot1:Find("top/btnBack"), function ()
+		uv0.onCancel()
 	end, SFX_CANCEL)
 end
 
-function var_0_0.UpdateTask(arg_6_0, arg_6_1)
-	arg_6_0.task = arg_6_1
+function slot0.UpdateTask(slot0, slot1)
+	slot0.task = slot1
+	slot2 = slot0.transform
 
-	local var_6_0 = arg_6_0.transform
+	setText(slot2:Find("window/desc"), slot1.config.description)
 
-	setText(var_6_0:Find("window/desc"), arg_6_1.config.description)
+	slot6 = UIItemList.New(slot2:Find("window/scrollview/list"), slot2:Find("window/scrollview/item"))
 
-	local var_6_1 = arg_6_1:GetDisplayDrops()
-	local var_6_2 = var_6_0:Find("window/scrollview/list")
-	local var_6_3 = var_6_0:Find("window/scrollview/item")
-	local var_6_4 = UIItemList.New(var_6_2, var_6_3)
+	slot6:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-	var_6_4:make(function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_7_0 == UIItemList.EventUpdate then
-			local var_7_0 = var_6_1[arg_7_1 + 1]
-
-			updateDrop(arg_7_2, var_7_0)
-			setScrollText(arg_7_2:Find("name_mask/name"), var_7_0:getConfig("name"))
+			updateDrop(slot2, slot3)
+			setScrollText(slot2:Find("name_mask/name"), slot3:getConfig("name"))
 		end
 	end)
-	var_6_4:align(#var_6_1)
+	slot6:align(#slot1:GetDisplayDrops())
 end
 
-return var_0_0
+return slot0

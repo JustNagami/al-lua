@@ -1,134 +1,121 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleDataFunction
+slot2 = slot0.Battle.BattleFormulas
+slot3 = class("BattleBuffAddBuff", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffAddBuff = slot3
+slot3.__name = "BattleBuffAddBuff"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleDataFunction
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = class("BattleBuffAddBuff", var_0_0.Battle.BattleBuffEffect)
-
-var_0_0.Battle.BattleBuffAddBuff = var_0_3
-var_0_3.__name = "BattleBuffAddBuff"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	var_0_0.Battle.BattleBuffAddBuff.super.Ctor(arg_1_0, arg_1_1)
+function slot3.Ctor(slot0, slot1)
+	uv0.Battle.BattleBuffAddBuff.super.Ctor(slot0, slot1)
 end
 
-function var_0_3.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._level = arg_2_2:GetLv()
-
-	local var_2_0 = arg_2_0._tempData.arg_list
-
-	arg_2_0._buff_id = var_2_0.buff_id
-	arg_2_0._target = var_2_0.target or "TargetSelf"
-	arg_2_0._time = var_2_0.time or 0
-	arg_2_0._rant = var_2_0.rant or 10000
-	arg_2_0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_2_0._time
-	arg_2_0._check_target = var_2_0.check_target
-	arg_2_0._minTargetNumber = var_2_0.minTargetNumber or 0
-	arg_2_0._maxTargetNumber = var_2_0.maxTargetNumber or 10000
-	arg_2_0._isBuffStackByCheckTarget = var_2_0.isBuffStackByCheckTarget
-	arg_2_0._countType = var_2_0.countType
-	arg_2_0._weaponType = arg_2_0._tempData.arg_list.weaponType
+function slot3.SetArgs(slot0, slot1, slot2)
+	slot0._level = slot2:GetLv()
+	slot3 = slot0._tempData.arg_list
+	slot0._buff_id = slot3.buff_id
+	slot0._target = slot3.target or "TargetSelf"
+	slot0._time = slot3.time or 0
+	slot0._rant = slot3.rant or 10000
+	slot0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot0._time
+	slot0._check_target = slot3.check_target
+	slot0._minTargetNumber = slot3.minTargetNumber or 0
+	slot0._maxTargetNumber = slot3.maxTargetNumber or 10000
+	slot0._isBuffStackByCheckTarget = slot3.isBuffStackByCheckTarget
+	slot0._countType = slot3.countType
+	slot0._weaponType = slot0._tempData.arg_list.weaponType
 end
 
-function var_0_3.onUpdate(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	local var_3_0 = arg_3_3.timeStamp
+function slot3.onUpdate(slot0, slot1, slot2, slot3)
+	if slot0._nextEffectTime <= slot3.timeStamp then
+		slot0:attachBuff(slot0._buff_id, slot0._level, slot1)
 
-	if var_3_0 >= arg_3_0._nextEffectTime then
-		arg_3_0:attachBuff(arg_3_0._buff_id, arg_3_0._level, arg_3_1)
-
-		arg_3_0._nextEffectTime = var_3_0 + arg_3_0._time
+		slot0._nextEffectTime = slot4 + slot0._time
 	end
 end
 
-function var_0_3.onBulletHit(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	if not arg_4_0:equipIndexRequire(arg_4_3.equipIndex) then
+function slot3.onBulletHit(slot0, slot1, slot2, slot3)
+	if not slot0:equipIndexRequire(slot3.equipIndex) then
 		return
 	end
 
-	local var_4_0 = arg_4_3.target
+	slot4 = slot3.target
 
-	if (not arg_4_0._weaponType or arg_4_3.weaponType == arg_4_0._weaponType) and var_4_0:IsAlive() then
-		arg_4_0:attachBuff(arg_4_0._buff_id, arg_4_0._level, var_4_0)
+	if (not slot0._weaponType or slot3.weaponType == slot0._weaponType) and slot4:IsAlive() then
+		slot0:attachBuff(slot0._buff_id, slot0._level, slot4)
 	end
 end
 
-function var_0_3.onBulletCreate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	if not arg_5_0:equipIndexRequire(arg_5_3.equipIndex) then
+function slot3.onBulletCreate(slot0, slot1, slot2, slot3)
+	if not slot0:equipIndexRequire(slot3.equipIndex) then
 		return
 	end
 
-	local var_5_0 = arg_5_3._bullet
-	local var_5_1 = arg_5_0._buff_id
-	local var_5_2 = arg_5_0._level
-	local var_5_3 = arg_5_0._tempData.arg_list.bulletTrigger
+	slot5 = slot0._buff_id
+	slot6 = slot0._level
 
-	local function var_5_4(arg_6_0, arg_6_1)
-		arg_5_0:attachBuff(var_5_1, var_5_2, arg_6_0)
-	end
-
-	var_5_0:SetBuffFun(var_5_3, var_5_4)
+	slot3._bullet:SetBuffFun(slot0._tempData.arg_list.bulletTrigger, function (slot0, slot1)
+		uv0:attachBuff(uv1, uv2, slot0)
+	end)
 end
 
-function var_0_3.onTrigger(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	var_0_3.super.onTrigger(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	arg_7_0:AddBuff(arg_7_1, arg_7_3)
+function slot3.onTrigger(slot0, slot1, slot2, slot3)
+	uv0.super.onTrigger(slot0, slot1, slot2, slot3)
+	slot0:AddBuff(slot1, slot3)
 end
 
-function var_0_3.AddBuff(arg_8_0, arg_8_1, arg_8_2)
-	if not arg_8_0:commanderRequire(arg_8_1, arg_8_0._tempData.arg_list) then
+function slot3.AddBuff(slot0, slot1, slot2)
+	if not slot0:commanderRequire(slot1, slot0._tempData.arg_list) then
 		return
 	end
 
-	if not arg_8_0:ammoRequire(arg_8_1) then
+	if not slot0:ammoRequire(slot1) then
 		return
 	end
 
-	if arg_8_0._check_target then
-		local var_8_0 = #arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target, arg_8_0._tempData.arg_list, arg_8_2)
+	if slot0._check_target then
+		if slot0._minTargetNumber <= #slot0:getTargetList(slot1, slot0._check_target, slot0._tempData.arg_list, slot2) and slot4 <= slot0._maxTargetNumber then
+			slot9 = slot0._tempData.arg_list
+			slot10 = slot2
 
-		if var_8_0 >= arg_8_0._minTargetNumber and var_8_0 <= arg_8_0._maxTargetNumber then
-			local var_8_1 = arg_8_0:getTargetList(arg_8_1, arg_8_0._target, arg_8_0._tempData.arg_list, arg_8_2)
-
-			for iter_8_0, iter_8_1 in ipairs(var_8_1) do
-				if arg_8_0._isBuffStackByCheckTarget then
-					iter_8_1:SetBuffStack(arg_8_0._buff_id, arg_8_0._level, var_8_0)
+			for slot9, slot10 in ipairs(slot0:getTargetList(slot1, slot0._target, slot9, slot10)) do
+				if slot0._isBuffStackByCheckTarget then
+					slot10:SetBuffStack(slot0._buff_id, slot0._level, slot4)
 				else
-					arg_8_0:attachBuff(arg_8_0._buff_id, arg_8_0._level, iter_8_1)
+					slot0:attachBuff(slot0._buff_id, slot0._level, slot10)
 				end
 			end
 		end
 	else
-		local var_8_2 = arg_8_0:getTargetList(arg_8_1, arg_8_0._target, arg_8_0._tempData.arg_list, arg_8_2)
+		slot7 = slot0._tempData.arg_list
+		slot8 = slot2
 
-		for iter_8_2, iter_8_3 in ipairs(var_8_2) do
-			arg_8_0:attachBuff(arg_8_0._buff_id, arg_8_0._level, iter_8_3)
+		for slot7, slot8 in ipairs(slot0:getTargetList(slot1, slot0._target, slot7, slot8)) do
+			slot0:attachBuff(slot0._buff_id, slot0._level, slot8)
 		end
 	end
 end
 
-function var_0_3.attachBuff(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0 = var_0_1.GetBuffTemplate(arg_9_1).effect_list
-	local var_9_1
+function slot3.attachBuff(slot0, slot1, slot2, slot3)
+	slot6 = nil
 
-	if #var_9_0 == 1 and var_9_0[1].type == "BattleBuffDOT" then
-		if var_0_2.CaclulateDOTPlace(arg_9_0._rant, var_9_0[1], arg_9_0._caster, arg_9_3) then
-			var_9_1 = var_0_0.Battle.BattleBuffUnit.New(arg_9_1, nil, arg_9_0._caster)
-
-			var_9_1:SetOrb(arg_9_0._caster, 1)
+	if #uv0.GetBuffTemplate(slot1).effect_list == 1 and slot5[1].type == "BattleBuffDOT" then
+		if uv1.CaclulateDOTPlace(slot0._rant, slot5[1], slot0._caster, slot3) then
+			uv2.Battle.BattleBuffUnit.New(slot1, nil, slot0._caster):SetOrb(slot0._caster, 1)
 		end
-	elseif var_0_2.IsHappen(arg_9_0._rant) then
-		var_9_1 = var_0_0.Battle.BattleBuffUnit.New(arg_9_1, arg_9_2, arg_9_0._caster)
+	elseif uv1.IsHappen(slot0._rant) then
+		slot6 = uv2.Battle.BattleBuffUnit.New(slot1, slot2, slot0._caster)
 	end
 
-	if var_9_1 then
-		var_9_1:SetCommander(arg_9_0._commander)
-		arg_9_3:AddBuff(var_9_1)
+	if slot6 then
+		slot6:SetCommander(slot0._commander)
+		slot3:AddBuff(slot6)
 	end
 end
 
-function var_0_3.Dispose(arg_10_0)
-	var_0_0.Battle.BattleBuffAddBuff.super:Dispose()
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_10_0._timer)
+function slot3.Dispose(slot0)
+	uv0.Battle.BattleBuffAddBuff.super:Dispose()
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._timer)
 
-	arg_10_0._timer = nil
+	slot0._timer = nil
 end

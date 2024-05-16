@@ -1,60 +1,56 @@
-﻿local var_0_0 = class("Reactor", import("view.miniGame.gameView.RyzaMiniGame.BaseReactor"))
+slot0 = class("Reactor", import("view.miniGame.gameView.RyzaMiniGame.BaseReactor"))
 
-function var_0_0.GetBaseOrder(arg_1_0)
+function slot0.GetBaseOrder(slot0)
 	return 1
 end
 
-function var_0_0.CellPassability(arg_2_0)
+function slot0.CellPassability(slot0)
 	return true
 end
 
-function var_0_0.FirePassability(arg_3_0)
+function slot0.FirePassability(slot0)
 	return 0
 end
 
-function var_0_0.InTimeRiver(arg_4_0)
+function slot0.InTimeRiver(slot0)
 	return false
 end
 
-function var_0_0.Init(arg_5_0, arg_5_1)
-	arg_5_0.name = arg_5_1.name
+function slot0.Init(slot0, slot1)
+	slot0.name = slot1.name
 
-	if arg_5_0:GetBaseOrder() ~= "floor" then
-		setCanvasOverrideSorting(arg_5_0._tf, true)
+	if slot0:GetBaseOrder() ~= "floor" then
+		setCanvasOverrideSorting(slot0._tf, true)
 	end
 
-	var_0_0.UpdatePos(arg_5_0, NewPos(unpack(arg_5_1.pos)))
+	uv0.UpdatePos(slot0, NewPos(unpack(slot1.pos)))
 
-	arg_5_0.realPos = NewPos(unpack(arg_5_1.realPos or arg_5_1.pos))
+	slot0.realPos = NewPos(unpack(slot1.realPos or slot1.pos))
 
-	arg_5_0:UpdatePosition()
-	arg_5_0:InitUI(arg_5_1)
-	arg_5_0:InitRegister(arg_5_1)
+	slot0:UpdatePosition()
+	slot0:InitUI(slot1)
+	slot0:InitRegister(slot1)
 end
 
-function var_0_0.InitUI(arg_6_0, arg_6_1)
-	return
+function slot0.InitUI(slot0, slot1)
 end
 
-function var_0_0.InitRegister(arg_7_0, arg_7_1)
-	return
+function slot0.InitRegister(slot0, slot1)
 end
 
-function var_0_0.UpdatePos(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0:GetBaseOrder()
-
-	if var_8_0 ~= "floor" then
-		arg_8_0._tf:GetComponent(typeof(Canvas)).sortingOrder = arg_8_1.y * 10 + var_8_0
+function slot0.UpdatePos(slot0, slot1)
+	if slot0:GetBaseOrder() ~= "floor" then
+		slot0._tf:GetComponent(typeof(Canvas)).sortingOrder = slot1.y * 10 + slot2
 	end
 
-	arg_8_0.pos = arg_8_1
+	slot0.pos = slot1
 end
 
-function var_0_0.UpdatePosition(arg_9_0)
-	setAnchoredPosition(arg_9_0._tf, {
-		x = arg_9_0.realPos.x * 32,
-		y = arg_9_0.realPos.y * -32
+function slot0.UpdatePosition(slot0)
+	setAnchoredPosition(slot0._tf, {
+		x = slot0.realPos.x * 32,
+		y = slot0.realPos.y * -32
 	})
 end
 
-return var_0_0
+return slot0

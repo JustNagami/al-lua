@@ -1,42 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minWeaponNumber = 1,
-				target = "TargetSelf",
-				skill_id = 17390,
-				check_weapon = true,
-				label = {
-					"USS",
-					"CV"
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAirAssistReady"
-			},
-			arg_list = {
-				buff_id = 17392,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			pop = {},
-			arg_list = {
-				buff_id = 17394
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -207,5 +169,43 @@
 	stack = 1,
 	id = 17390,
 	icon = 17390,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minWeaponNumber = 1,
+				target = "TargetSelf",
+				skill_id = 17390,
+				check_weapon = true,
+				label = {
+					"USS",
+					"CV"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAirAssistReady"
+			},
+			arg_list = {
+				buff_id = 17392,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			pop = {},
+			arg_list = {
+				buff_id = 17394
+			}
+		}
+	}
 }

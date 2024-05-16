@@ -1,51 +1,46 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot1 = require("Mgr/Pool/PoolUtil")
+slot2 = singletonClass("BattleArrowManager")
+ys.Battle.BattleArrowManager = slot2
+slot2.__name = "BattleArrowManager"
+slot2.ROOT_NAME = "EnemyArrowContainer"
+slot2.ARROW_NAME = "EnemyArrow"
 
-local var_0_0 = ys
-local var_0_1 = require("Mgr/Pool/PoolUtil")
-local var_0_2 = singletonClass("BattleArrowManager")
-
-var_0_0.Battle.BattleArrowManager = var_0_2
-var_0_2.__name = "BattleArrowManager"
-var_0_2.ROOT_NAME = "EnemyArrowContainer"
-var_0_2.ARROW_NAME = "EnemyArrow"
-
-function var_0_2.Ctor(arg_1_0)
-	return
+function slot2.Ctor(slot0)
 end
 
-local var_0_3 = Vector3(0, 10000, 0)
+slot3 = Vector3(0, 10000, 0)
 
-function var_0_2.HideBullet(arg_2_0)
-	arg_2_0.transform.position = var_0_3
+function slot2.HideBullet(slot0)
+	slot0.transform.position = uv0
 end
 
-function var_0_2.Init(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:Find(var_0_2.ARROW_NAME).gameObject
+function slot2.Init(slot0, slot1)
+	slot2 = slot1:Find(uv0.ARROW_NAME).gameObject
+	slot2.transform.position = uv1
 
-	var_3_0.transform.position = var_0_3
+	slot2:SetActive(true)
 
-	var_3_0:SetActive(true)
+	slot3 = pg.Pool.New(slot1, slot2, 5, 10, true, true)
 
-	local var_3_1 = pg.Pool.New(arg_3_1, var_3_0, 5, 10, true, true)
+	slot3:SetRecycleFuncs(uv0.HideBullet)
+	slot3:InitSize()
 
-	var_3_1:SetRecycleFuncs(var_0_2.HideBullet)
-	var_3_1:InitSize()
-
-	arg_3_0._arrowPool = var_3_1
+	slot0._arrowPool = slot3
 end
 
-function var_0_2.Clear(arg_4_0)
-	arg_4_0._arrowPool:Dispose()
+function slot2.Clear(slot0)
+	slot0._arrowPool:Dispose()
 end
 
-function var_0_2.GetArrow(arg_5_0)
-	return (arg_5_0._arrowPool:GetObject())
+function slot2.GetArrow(slot0)
+	return slot0._arrowPool:GetObject()
 end
 
-function var_0_2.DestroyObj(arg_6_0, arg_6_1)
-	if arg_6_1 == nil then
+function slot2.DestroyObj(slot0, slot1)
+	if slot1 == nil then
 		return
 	end
 
-	arg_6_0._arrowPool:Recycle(arg_6_1)
+	slot0._arrowPool:Recycle(slot1)
 end

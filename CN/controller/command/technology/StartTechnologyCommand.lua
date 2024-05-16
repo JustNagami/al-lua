@@ -1,49 +1,44 @@
-﻿local var_0_0 = class("StartTechnologyCommand", pm.SimpleCommand)
+slot0 = class("StartTechnologyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.pool_id
-	local var_1_3 = getProxy(TechnologyProxy)
-	local var_1_4 = var_1_3:getTechnologyById(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.pool_id
 
-	if not var_1_4 then
+	if not getProxy(TechnologyProxy):getTechnologyById(slot2.id) then
 		return
 	end
 
-	if tobool(var_1_3:getActivateTechnology()) then
+	if tobool(slot5:getActivateTechnology()) then
 		return
 	end
 
-	local var_1_5, var_1_6 = var_1_4:hasResToStart()
+	slot7, slot8 = slot6:hasResToStart()
 
-	if not var_1_5 then
-		pg.TipsMgr.GetInstance():ShowTips(var_1_6)
+	if not slot7 then
+		pg.TipsMgr.GetInstance():ShowTips(slot8)
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(63001, {
-		tech_id = var_1_1,
-		refresh_id = var_1_2
-	}, 63002, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_4:getConfig("consume")
-
-			for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-				arg_1_0:sendNotification(GAME.CONSUME_ITEM, Drop.Create(iter_2_1))
+		tech_id = slot3,
+		refresh_id = slot4
+	}, 63002, function (slot0)
+		if slot0.result == 0 then
+			for slot5, slot6 in ipairs(uv0:getConfig("consume")) do
+				uv1:sendNotification(GAME.CONSUME_ITEM, Drop.Create(slot6))
 			end
 
-			var_1_4:start(arg_2_0.time)
-			var_1_3:updateTechnology(var_1_4)
-			arg_1_0:sendNotification(GAME.START_TECHNOLOGY_DONE, {
-				technologyId = var_1_4.id
+			uv0:start(slot0.time)
+			uv2:updateTechnology(uv0)
+			uv1:sendNotification(GAME.START_TECHNOLOGY_DONE, {
+				technologyId = uv0.id
 			})
 			pg.TipsMgr.GetInstance():ShowTips(i18n("technology_start_up"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("technology_start_erro") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("technology_start_erro") .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

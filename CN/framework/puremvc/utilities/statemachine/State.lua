@@ -1,40 +1,40 @@
-﻿local var_0_0 = class("State")
+slot0 = class("State")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	arg_1_0.name = arg_1_1
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	slot0.name = slot1
 
-	if arg_1_2 ~= nil then
-		arg_1_0.entering = arg_1_2
+	if slot2 ~= nil then
+		slot0.entering = slot2
 	end
 
-	if arg_1_3 ~= nil then
-		arg_1_0.exiting = arg_1_3
+	if slot3 ~= nil then
+		slot0.exiting = slot3
 	end
 
-	if arg_1_4 ~= nil then
-		arg_1_0.changed = arg_1_4
+	if slot4 ~= nil then
+		slot0.changed = slot4
 	end
 
-	arg_1_0.transitions = {}
+	slot0.transitions = {}
 end
 
-function var_0_0.defineTrans(arg_2_0, arg_2_1, arg_2_2)
-	assert(arg_2_1, "action should not be nil at " .. arg_2_0.name)
-	assert(arg_2_2, "target should not be nil at " .. arg_2_0.name)
+function slot0.defineTrans(slot0, slot1, slot2)
+	assert(slot1, "action should not be nil at " .. slot0.name)
+	assert(slot2, "target should not be nil at " .. slot0.name)
 
-	if arg_2_0:getTarget(arg_2_1) ~= nil then
+	if slot0:getTarget(slot1) ~= nil then
 		return
 	end
 
-	arg_2_0.transitions[arg_2_1] = arg_2_2
+	slot0.transitions[slot1] = slot2
 end
 
-function var_0_0.removeTrans(arg_3_0, arg_3_1)
-	arg_3_0.transitions[arg_3_1] = nil
+function slot0.removeTrans(slot0, slot1)
+	slot0.transitions[slot1] = nil
 end
 
-function var_0_0.getTarget(arg_4_0, arg_4_1)
-	return arg_4_0.transitions[arg_4_1]
+function slot0.getTarget(slot0, slot1)
+	return slot0.transitions[slot1]
 end
 
-return var_0_0
+return slot0

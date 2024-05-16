@@ -1,214 +1,192 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.FileDownloadMgr = singletonClass("FileDownloadMgr")
+slot1 = slot0.FileDownloadMgr
+slot2 = FileDownloadConst
 
-local var_0_0 = pg
-
-var_0_0.FileDownloadMgr = singletonClass("FileDownloadMgr")
-
-local var_0_1 = var_0_0.FileDownloadMgr
-local var_0_2 = FileDownloadConst
-
-function var_0_1.Init(arg_1_0, arg_1_1)
+function slot1.Init(slot0, slot1)
 	print("initializing filedownloadmgr manager...")
-	PoolMgr.GetInstance():GetUI("FileDownloadUI", true, function(arg_2_0)
-		arg_1_0._go = arg_2_0
+	PoolMgr.GetInstance():GetUI("FileDownloadUI", true, function (slot0)
+		uv0._go = slot0
 
-		arg_1_0._go:SetActive(false)
+		uv0._go:SetActive(false)
 
-		arg_1_0._tf = arg_1_0._go.transform
+		uv0._tf = uv0._go.transform
 
-		arg_1_0._tf:SetParent(var_0_0.UIMgr.GetInstance().OverlayMain, false)
-		arg_1_0:initUI()
-		arg_1_0:initUITextTips()
-		arg_1_1()
+		uv0._tf:SetParent(uv1.UIMgr.GetInstance().OverlayMain, false)
+		uv0:initUI()
+		uv0:initUITextTips()
+		uv2()
 	end)
 end
 
-function var_0_1.Main(arg_3_0, arg_3_1)
-	arg_3_0:initData()
-	arg_3_0:setData(arg_3_1)
-	arg_3_0:show()
-	arg_3_0:startDownload()
+function slot1.Main(slot0, slot1)
+	slot0:initData()
+	slot0:setData(slot1)
+	slot0:show()
+	slot0:startDownload()
 end
 
-function var_0_1.IsRunning(arg_4_0)
-	return isActive(arg_4_0._go)
+function slot1.IsRunning(slot0)
+	return isActive(slot0._go)
 end
 
-var_0_1.KEY_STOP_REMIND = "File_Download_Remind_Time"
+slot1.KEY_STOP_REMIND = "File_Download_Remind_Time"
 
-function var_0_1.SetRemind(arg_5_0, arg_5_1)
-	arg_5_0.isStopRemind = arg_5_1
+function slot1.SetRemind(slot0, slot1)
+	slot0.isStopRemind = slot1
 end
 
-function var_0_1.IsNeedRemind(arg_6_0)
-	if arg_6_0.isStopRemind == true then
+function slot1.IsNeedRemind(slot0)
+	if slot0.isStopRemind == true then
 		return false
 	else
 		return true
 	end
 end
 
-function var_0_1.show(arg_7_0)
-	arg_7_0._go:SetActive(true)
+function slot1.show(slot0)
+	slot0._go:SetActive(true)
 end
 
-function var_0_1.hide(arg_8_0)
-	arg_8_0._go:SetActive(false)
+function slot1.hide(slot0)
+	slot0._go:SetActive(false)
 end
 
-function var_0_1.initUI(arg_9_0)
-	arg_9_0.mainTF = arg_9_0._tf:Find("Main")
-	arg_9_0.titleText = arg_9_0.mainTF:Find("Title")
-	arg_9_0.progressText = arg_9_0.mainTF:Find("ProgressText")
-	arg_9_0.progressBar = arg_9_0.mainTF:Find("ProgressBar")
+function slot1.initUI(slot0)
+	slot0.mainTF = slot0._tf:Find("Main")
+	slot0.titleText = slot0.mainTF:Find("Title")
+	slot0.progressText = slot0.mainTF:Find("ProgressText")
+	slot0.progressBar = slot0.mainTF:Find("ProgressBar")
 end
 
-function var_0_1.initUITextTips(arg_10_0)
-	setText(arg_10_0.titleText, i18n("file_down_mgr_title"))
+function slot1.initUITextTips(slot0)
+	setText(slot0.titleText, i18n("file_down_mgr_title"))
 end
 
-function var_0_1.initData(arg_11_0)
-	arg_11_0.curGroupIndex = 0
-	arg_11_0.curGroupMgr = nil
-	arg_11_0.validGroupNameList = nil
-	arg_11_0.validFileNameArrMap = nil
-	arg_11_0.dataList = nil
-	arg_11_0.onFinish = nil
+function slot1.initData(slot0)
+	slot0.curGroupIndex = 0
+	slot0.curGroupMgr = nil
+	slot0.validGroupNameList = nil
+	slot0.validFileNameArrMap = nil
+	slot0.dataList = nil
+	slot0.onFinish = nil
 end
 
-function var_0_1.setData(arg_12_0, arg_12_1)
-	arg_12_0.dataList = arg_12_1.dataList
-	arg_12_0.onFinish = arg_12_1.onFinish
+function slot1.setData(slot0, slot1)
+	slot0.dataList = slot1.dataList
+	slot0.onFinish = slot1.onFinish
 end
 
-function var_0_1.fileProgress(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
-	local var_13_0 = HashUtil.BytesToString(arg_13_3)
-	local var_13_1 = HashUtil.BytesToString(arg_13_4)
-
-	setText(arg_13_0.progressText, i18n("file_down_mgr_progress", var_13_0, var_13_1))
-	setSlider(arg_13_0.progressBar, 0, arg_13_4, arg_13_3)
+function slot1.fileProgress(slot0, slot1, slot2, slot3, slot4)
+	setText(slot0.progressText, i18n("file_down_mgr_progress", HashUtil.BytesToString(slot3), HashUtil.BytesToString(slot4)))
+	setSlider(slot0.progressBar, 0, slot4, slot3)
 end
 
-function var_0_1.fileFinish(arg_14_0, arg_14_1, arg_14_2)
-	return
+function slot1.fileFinish(slot0, slot1, slot2)
 end
 
-function var_0_1.groupComplete(arg_15_0, arg_15_1)
-	local var_15_0 = HashUtil.BytesToString(arg_15_1)
+function slot1.groupComplete(slot0, slot1)
+	slot2 = HashUtil.BytesToString(slot1)
 
-	setText(arg_15_0.progressText, i18n("file_down_mgr_progress", var_15_0, var_15_0))
-	setSlider(arg_15_0.progressBar, 0, 1, 1)
+	setText(slot0.progressText, i18n("file_down_mgr_progress", slot2, slot2))
+	setSlider(slot0.progressBar, 0, 1, 1)
 
-	arg_15_0.curGroupIndex = arg_15_0.curGroupIndex + 1
+	slot0.curGroupIndex = slot0.curGroupIndex + 1
 
-	if arg_15_0.curGroupIndex > #arg_15_0.validGroupNameList then
-		arg_15_0:allComplete()
+	if slot0.curGroupIndex > #slot0.validGroupNameList then
+		slot0:allComplete()
 	else
-		arg_15_0:download(arg_15_0.curGroupIndex)
+		slot0:download(slot0.curGroupIndex)
 	end
 end
 
-function var_0_1.allComplete(arg_16_0)
-	if arg_16_0.onFinish then
-		arg_16_0.onFinish()
+function slot1.allComplete(slot0)
+	if slot0.onFinish then
+		slot0.onFinish()
 	end
 
-	arg_16_0:initData()
-	arg_16_0:hide()
+	slot0:initData()
+	slot0:hide()
 end
 
-function var_0_1.error(arg_17_0, arg_17_1, arg_17_2)
-	local function var_17_0()
-		arg_17_0:show()
-		arg_17_0:startDownload()
-	end
-
-	local function var_17_1()
+function slot1.error(slot0, slot1, slot2)
+	function slot4()
 		Application.Quit()
 	end
 
-	arg_17_0:hide()
-	var_0_0.MsgboxMgr.GetInstance():ShowMsgBox({
+	slot0:hide()
+	uv0.MsgboxMgr.GetInstance():ShowMsgBox({
 		modal = true,
 		locked = true,
-		content = i18n("file_down_mgr_error", arg_17_1, arg_17_2),
-		onYes = var_17_0,
-		onNo = var_17_1,
-		onClose = var_17_1,
+		content = i18n("file_down_mgr_error", slot1, slot2),
+		onYes = function ()
+			uv0:show()
+			uv0:startDownload()
+		end,
+		onNo = slot4,
+		onClose = slot4,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function var_0_1.download(arg_20_0)
-	local var_20_0 = arg_20_0.validGroupNameList[arg_20_0.curGroupIndex]
-	local var_20_1 = arg_20_0.validFileNameArrMap[var_20_0]
-
-	if not var_20_1 or var_20_1.Length == 0 then
-		arg_20_0:groupComplete()
+function slot1.download(slot0)
+	if not slot0.validFileNameArrMap[slot0.validGroupNameList[slot0.curGroupIndex]] or slot2.Length == 0 then
+		slot0:groupComplete()
 
 		return
 	end
 
-	arg_20_0.curGroupMgr = GroupHelper.GetGroupMgrByName(var_20_0)
-
-	local function var_20_2(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
-		arg_20_0:fileProgress(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
-	end
-
-	local function var_20_3(arg_22_0, arg_22_1)
-		arg_20_0:fileFinish(arg_22_0, arg_22_1)
-	end
-
-	local function var_20_4(arg_23_0, arg_23_1)
-		warning("----------------------Tag 单组下载完成,恢复UpdateD----------------------")
-
-		arg_20_0.curGroupMgr.isPauseUpdateD = false
-
-		warning("----------------------Tag 单组下载完成,调用groupComplete----------------------")
-		arg_20_0:groupComplete(arg_23_1)
-	end
-
-	local function var_20_5(arg_24_0, arg_24_1)
-		arg_20_0:error(arg_24_0, arg_24_1)
-	end
+	slot0.curGroupMgr = GroupHelper.GetGroupMgrByName(slot1)
 
 	warning("----------------------Tag 停止UpdateD----------------------")
 
-	arg_20_0.curGroupMgr.isPauseUpdateD = true
+	slot0.curGroupMgr.isPauseUpdateD = true
 
 	warning("----------------------Tag 开始UpdateFileArray----------------------")
-	arg_20_0.curGroupMgr:UpdateFileArray(var_20_1, var_20_2, var_20_3, var_20_4, var_20_5)
+	slot0.curGroupMgr:UpdateFileArray(slot2, function (slot0, slot1, slot2, slot3)
+		uv0:fileProgress(slot0, slot1, slot2, slot3)
+	end, function (slot0, slot1)
+		uv0:fileFinish(slot0, slot1)
+	end, function (slot0, slot1)
+		warning("----------------------Tag 单组下载完成,恢复UpdateD----------------------")
+
+		uv0.curGroupMgr.isPauseUpdateD = false
+
+		warning("----------------------Tag 单组下载完成,调用groupComplete----------------------")
+		uv0:groupComplete(slot1)
+	end, function (slot0, slot1)
+		uv0:error(slot0, slot1)
+	end)
 end
 
-function var_0_1.startDownload(arg_25_0)
-	if arg_25_0:verifyValidData() then
-		arg_25_0.curGroupIndex = 1
+function slot1.startDownload(slot0)
+	if slot0:verifyValidData() then
+		slot0.curGroupIndex = 1
 
-		arg_25_0:download(arg_25_0.curGroupIndex)
+		slot0:download(slot0.curGroupIndex)
 	else
-		arg_25_0:allComplete()
+		slot0:allComplete()
 	end
 end
 
-function var_0_1.verifyValidData(arg_26_0)
-	arg_26_0.validGroupNameList = {}
-	arg_26_0.validFileNameArrMap = {}
+function slot1.verifyValidData(slot0)
+	slot0.validGroupNameList = {}
+	slot0.validFileNameArrMap = {}
 
-	for iter_26_0, iter_26_1 in ipairs(arg_26_0.dataList) do
-		local var_26_0 = iter_26_1.groupName
-		local var_26_1 = iter_26_1.fileNameList
-		local var_26_2
+	for slot4, slot5 in ipairs(slot0.dataList) do
+		slot8 = nil
 
-		if var_26_1 and #var_26_1 > 0 then
-			var_26_2 = GroupHelper.CreateArrByLuaFileList(var_26_0, var_26_1)
+		if slot5.fileNameList and #slot7 > 0 then
+			slot8 = GroupHelper.CreateArrByLuaFileList(slot5.groupName, slot7)
 		end
 
-		if var_26_2 and var_26_2.Length > 0 then
-			table.insert(arg_26_0.validGroupNameList, var_26_0)
+		if slot8 and slot8.Length > 0 then
+			table.insert(slot0.validGroupNameList, slot6)
 
-			arg_26_0.validFileNameArrMap[var_26_0] = var_26_2
+			slot0.validFileNameArrMap[slot6] = slot8
 		end
 	end
 
-	return #arg_26_0.validGroupNameList > 0
+	return #slot0.validGroupNameList > 0
 end

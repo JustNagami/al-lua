@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFlagShip"
-			},
-			arg_list = {
-				buff_id = 13546,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -31,5 +19,17 @@
 	stack = 1,
 	id = 13545,
 	icon = 13540,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFlagShip"
+			},
+			arg_list = {
+				buff_id = 13546,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

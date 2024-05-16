@@ -1,4 +1,4 @@
-﻿ShareCfg = {
+ShareCfg = {
 	["ShareCfg.activity_event_monopoly"] = true,
 	["ShareCfg.roll_attr"] = true,
 	["ShareCfg.puzzle_ship_template"] = true,

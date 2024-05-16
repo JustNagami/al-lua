@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				rant = 400,
-				target = "TargetSelf",
-				skill_id = 10040,
-				time = 5
-			}
-		}
-	},
+return {
 	{
 		desc = "开火时有4%几率触发，8秒内，提高队伍移动速度，先锋机动提升20.0%",
 		addition = {
@@ -83,5 +69,19 @@
 	stack = 1,
 	id = 10040,
 	icon = 10040,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				rant = 400,
+				target = "TargetSelf",
+				skill_id = 10040,
+				time = 5
+			}
+		}
+	}
 }

@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				buff_id = 600171
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -29,5 +18,16 @@
 	stack = 1,
 	id = 600170,
 	icon = 600170,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 600171
+			}
+		}
+	}
 }

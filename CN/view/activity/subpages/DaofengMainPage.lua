@@ -1,1 +1,1 @@
-﻿return (class("DaofengMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return class("DaofengMainPage", import(".TemplatePage.PreviewTemplatePage"))

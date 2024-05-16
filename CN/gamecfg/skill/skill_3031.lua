@@ -1,23 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetPlayerVanguardFleet",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.035
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -155,5 +136,24 @@
 	id = 3031,
 	picture = "0",
 	castCV = "skill",
-	desc = "每次执行空袭后为先锋部队回复少量耐久"
+	desc = "每次执行空袭后为先锋部队回复少量耐久",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetPlayerVanguardFleet",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.035
+			}
+		}
+	}
 }

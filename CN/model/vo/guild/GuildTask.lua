@@ -1,129 +1,120 @@
-﻿local var_0_0 = class("GuildTask", import("..BaseVO"))
-
-var_0_0.STATE_EMPTY = 0
-var_0_0.STATE_ONGOING = 2
-var_0_0.STATE_FINISHED = 3
-var_0_0.PRIVATE_TASK_TYPE_EVENT = {
+slot0 = class("GuildTask", import("..BaseVO"))
+slot0.STATE_EMPTY = 0
+slot0.STATE_ONGOING = 2
+slot0.STATE_FINISHED = 3
+slot0.PRIVATE_TASK_TYPE_EVENT = {
 	400
 }
-var_0_0.PRIVATE_TASK_TYPE_BATTLE = {
+slot0.PRIVATE_TASK_TYPE_BATTLE = {
 	20,
 	11
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id or 0
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.progress = arg_1_1.progress or 0
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id or 0
+	slot0.configId = slot0.id
+	slot0.progress = slot1.progress or 0
+	slot0.endTime = 0
 
-	local var_1_0 = arg_1_1.monday_0clock or 0
-
-	arg_1_0.endTime = 0
-
-	if var_1_0 > 0 then
-		arg_1_0.endTime = var_1_0 + 604800
+	if (slot1.monday_0clock or 0) > 0 then
+		slot0.endTime = slot2 + 604800
 	end
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.guild_mission_template
 end
 
-function var_0_0.GetLivenessAddition(arg_3_0)
-	return arg_3_0:getConfig("guild_active")
+function slot0.GetLivenessAddition(slot0)
+	return slot0:getConfig("guild_active")
 end
 
-function var_0_0.isExpire(arg_4_0)
-	return arg_4_0.endTime > 0 and arg_4_0:isEnd()
+function slot0.isExpire(slot0)
+	return slot0.endTime > 0 and slot0:isEnd()
 end
 
-function var_0_0.getProgress(arg_5_0)
-	return arg_5_0.progress
+function slot0.getProgress(slot0)
+	return slot0.progress
 end
 
-function var_0_0.updateProgress(arg_6_0, arg_6_1)
-	arg_6_0.progress = arg_6_1
+function slot0.updateProgress(slot0, slot1)
+	slot0.progress = slot1
 end
 
-function var_0_0.isEnd(arg_7_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_7_0.endTime
+function slot0.isEnd(slot0)
+	return slot0.endTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.getState(arg_8_0)
-	if arg_8_0.id == 0 or arg_8_0:isEnd() then
-		return var_0_0.STATE_EMPTY
-	elseif arg_8_0:isFinished() then
-		return var_0_0.STATE_FINISHED
+function slot0.getState(slot0)
+	if slot0.id == 0 or slot0:isEnd() then
+		return uv0.STATE_EMPTY
+	elseif slot0:isFinished() then
+		return uv0.STATE_FINISHED
 	else
-		return var_0_0.STATE_ONGOING
+		return uv0.STATE_ONGOING
 	end
 end
 
-function var_0_0.GetPresonTaskId(arg_9_0)
-	return arg_9_0:getConfig("task_id")
+function slot0.GetPresonTaskId(slot0)
+	return slot0:getConfig("task_id")
 end
 
-function var_0_0.GetPrivateTaskName(arg_10_0)
-	local var_10_0 = arg_10_0:GetPresonTaskId()
-
-	return pg.task_data_template[var_10_0].desc
+function slot0.GetPrivateTaskName(slot0)
+	return pg.task_data_template[slot0:GetPresonTaskId()].desc
 end
 
-function var_0_0.IsSamePrivateTask(arg_11_0, arg_11_1)
-	return arg_11_1 and arg_11_1.id == arg_11_0:GetPresonTaskId()
+function slot0.IsSamePrivateTask(slot0, slot1)
+	return slot1 and slot1.id == slot0:GetPresonTaskId()
 end
 
-function var_0_0.isFinished(arg_12_0)
-	return arg_12_0.progress >= arg_12_0:getMaxProgress()
+function slot0.isFinished(slot0)
+	return slot0:getMaxProgress() <= slot0.progress
 end
 
-function var_0_0.getMaxProgress(arg_13_0)
-	return arg_13_0:getConfig("max_num")
+function slot0.getMaxProgress(slot0)
+	return slot0:getConfig("max_num")
 end
 
-function var_0_0.isRemind(arg_14_0, arg_14_1)
-	return arg_14_0:getConfig("warning_time")[arg_14_1] >= pg.TimeMgr.GetInstance():GetServerWeek()
+function slot0.isRemind(slot0, slot1)
+	return pg.TimeMgr.GetInstance():GetServerWeek() <= slot0:getConfig("warning_time")[slot1]
 end
 
-function var_0_0.GetScale(arg_15_0)
-	return arg_15_0:getConfig("task_scale")
+function slot0.GetScale(slot0)
+	return slot0:getConfig("task_scale")
 end
 
-function var_0_0.GetDesc(arg_16_0)
-	return arg_16_0:getConfig("name")
+function slot0.GetDesc(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetPrivateAward(arg_17_0)
-	return arg_17_0:getConfig("award_display")
+function slot0.GetPrivateAward(slot0)
+	return slot0:getConfig("award_display")
 end
 
-function var_0_0.GetCaptailAward(arg_18_0)
-	return arg_18_0:getConfig("award_capital_display") * arg_18_0:getMaxProgress()
+function slot0.GetCaptailAward(slot0)
+	return slot0:getConfig("award_capital_display") * slot0:getMaxProgress()
 end
 
-function var_0_0.GetCurrCaptailAward(arg_19_0)
-	return arg_19_0.progress * arg_19_0:getConfig("award_capital_display")
+function slot0.GetCurrCaptailAward(slot0)
+	return slot0.progress * slot0:getConfig("award_capital_display")
 end
 
-function var_0_0.PrivateBeFinished(arg_20_0)
-	if var_0_0.STATE_ONGOING == arg_20_0:getState() then
-		local var_20_0 = arg_20_0:GetPresonTaskId()
-		local var_20_1 = getProxy(TaskProxy)
-		local var_20_2 = var_20_1:getTaskById(var_20_0) or var_20_1:getFinishTaskById(var_20_0)
+function slot0.PrivateBeFinished(slot0)
+	if uv0.STATE_ONGOING == slot0:getState() then
+		slot3 = getProxy(TaskProxy):getTaskById(slot0:GetPresonTaskId()) or slot2:getFinishTaskById(slot1)
 
-		return var_20_2 and var_20_2:isFinish() and not var_20_2:isReceive()
+		return slot3 and slot3:isFinish() and not slot3:isReceive()
 	end
 
 	return false
 end
 
-function var_0_0.SamePrivateTaskType(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_0:GetPresonTaskId()
-	local var_21_1 = pg.task_data_template[var_21_0].sub_type
+function slot0.SamePrivateTaskType(slot0, slot1)
+	slot3 = pg.task_data_template[slot0:GetPresonTaskId()].sub_type
 
-	return _.any(arg_21_1, function(arg_22_0)
-		return arg_22_0 == var_21_1
+	return _.any(slot1, function (slot0)
+		return slot0 == uv0
 	end)
 end
 
-return var_0_0
+return slot0

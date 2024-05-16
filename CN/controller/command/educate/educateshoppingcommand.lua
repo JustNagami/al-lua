@@ -1,45 +1,37 @@
-﻿local var_0_0 = class("EducateShoppingCommand", pm.SimpleCommand)
+slot0 = class("EducateShoppingCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
+	slot5 = getProxy(EducateProxy):GetShopProxy()
 
-	var_1_1 = var_1_0 and var_1_0.callback
-
-	local var_1_2 = getProxy(EducateProxy)
-	local var_1_3 = var_1_2:GetShopProxy()
-	local var_1_4 = var_1_3:GetShopWithId(var_1_0.shopId)
-	local var_1_5 = var_1_3:GetDiscountById(var_1_0.shopId)
-	local var_1_6 = {}
-
-	for iter_1_0, iter_1_1 in ipairs(var_1_0.goods) do
-		table.insert(var_1_6, var_1_4:GetGoodById(iter_1_1.id):GetCost(var_1_5))
+	for slot12, slot13 in ipairs(slot2.goods) do
+		table.insert({}, slot5:GetShopWithId(slot2.shopId):GetGoodById(slot13.id):GetCost(slot5:GetDiscountById(slot2.shopId)))
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(27033, {
-		shop_id = var_1_0.shopId,
-		goods = var_1_0.goods
-	}, 27034, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_2:ReduceResForCosts(var_1_6)
-			EducateHelper.UpdateDropsData(arg_2_0.drops)
+		shop_id = slot2.shopId,
+		goods = slot2.goods
+	}, 27034, function (slot0)
+		if slot0.result == 0 then
+			uv0:ReduceResForCosts(uv1)
+			EducateHelper.UpdateDropsData(slot0.drops)
 
-			for iter_2_0, iter_2_1 in ipairs(var_1_0.goods) do
-				local var_2_0 = var_1_4:GetGoodById(iter_2_1.id)
+			for slot4, slot5 in ipairs(uv2.goods) do
+				slot6 = uv3:GetGoodById(slot5.id)
 
-				var_2_0:ReduceRemainCnt(iter_2_1.num)
-				var_1_4:UpdateGood(var_2_0)
+				slot6:ReduceRemainCnt(slot5.num)
+				uv3:UpdateGood(slot6)
 			end
 
-			var_1_3:UpdateShop(var_1_4)
-			arg_1_0:sendNotification(GAME.EDUCATE_SHOPPING_DONE, {
-				id = var_1_0.shopId,
-				drops = arg_2_0.drops
+			uv4:UpdateShop(uv3)
+			uv5:sendNotification(GAME.EDUCATE_SHOPPING_DONE, {
+				id = uv2.shopId,
+				drops = slot0.drops
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate shop buy error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate shop buy error: ", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

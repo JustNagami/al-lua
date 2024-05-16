@@ -1,270 +1,232 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleEvent
+slot2 = slot0.Battle.BattleFormulas
+slot3 = slot0.Battle.BattleConst
+slot4 = slot0.Battle.BattleConfig
+slot5 = slot0.Battle.BattleDataFunction
+slot6 = slot0.Battle.BattleAttr
+slot7 = slot0.Battle.BattleVariable
+slot8 = class("BattleFleetAntiAirUnit")
+slot0.Battle.BattleFleetAntiAirUnit = slot8
+slot8.__name = "BattleFleetAntiAirUnit"
+slot8.STATE_DISABLE = "DISABLE"
+slot8.STATE_READY = "READY"
+slot8.STATE_PRECAST = "PRECAST"
+slot8.STATE_PRECAST_FINISH = "STATE_PRECAST_FINISH"
+slot8.STATE_ATTACK = "ATTACK"
+slot8.STATE_OVER_HEAT = "OVER_HEAT"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleEvent
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = var_0_0.Battle.BattleConst
-local var_0_4 = var_0_0.Battle.BattleConfig
-local var_0_5 = var_0_0.Battle.BattleDataFunction
-local var_0_6 = var_0_0.Battle.BattleAttr
-local var_0_7 = var_0_0.Battle.BattleVariable
-local var_0_8 = class("BattleFleetAntiAirUnit")
-
-var_0_0.Battle.BattleFleetAntiAirUnit = var_0_8
-var_0_8.__name = "BattleFleetAntiAirUnit"
-var_0_8.STATE_DISABLE = "DISABLE"
-var_0_8.STATE_READY = "READY"
-var_0_8.STATE_PRECAST = "PRECAST"
-var_0_8.STATE_PRECAST_FINISH = "STATE_PRECAST_FINISH"
-var_0_8.STATE_ATTACK = "ATTACK"
-var_0_8.STATE_OVER_HEAT = "OVER_HEAT"
-
-function var_0_8.Ctor(arg_1_0)
-	arg_1_0:init()
+function slot8.Ctor(slot0)
+	slot0:init()
 end
 
-function var_0_8.init(arg_2_0)
-	arg_2_0._crewUnitList = {}
-	arg_2_0._hitFXResIDList = {}
-	arg_2_0._currentState = var_0_8.STATE_DISABLE
-	arg_2_0._dataProxy = var_0_0.Battle.BattleDataProxy.GetInstance()
-	arg_2_0._range = 0
+function slot8.init(slot0)
+	slot0._crewUnitList = {}
+	slot0._hitFXResIDList = {}
+	slot0._currentState = uv0.STATE_DISABLE
+	slot0._dataProxy = uv1.Battle.BattleDataProxy.GetInstance()
+	slot0._range = 0
 end
 
-function var_0_8.AppendCrewUnit(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:GetFleetAntiAirList()
+function slot8.AppendCrewUnit(slot0, slot1)
+	if #slot1:GetFleetAntiAirList() > 0 then
+		slot0._currentState = uv0.STATE_READY
+		slot0._crewUnitList[slot1] = slot2
 
-	if #var_3_0 > 0 then
-		arg_3_0._currentState = var_0_8.STATE_READY
-		arg_3_0._crewUnitList[arg_3_1] = var_3_0
-
-		arg_3_0:flush()
+		slot0:flush()
 	end
 end
 
-function var_0_8.RemoveCrewUnit(arg_4_0, arg_4_1)
-	if arg_4_0._crewUnitList[arg_4_1] then
-		arg_4_0._crewUnitList[arg_4_1] = nil
+function slot8.RemoveCrewUnit(slot0, slot1)
+	if slot0._crewUnitList[slot1] then
+		slot0._crewUnitList[slot1] = nil
 
-		arg_4_0:flush()
+		slot0:flush()
 	end
 end
 
-function var_0_8.FlushCrewUnit(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:GetFleetAntiAirList()
-
-	if #var_5_0 <= 0 then
-		arg_5_0:RemoveCrewUnit(arg_5_1)
-	elseif arg_5_0._crewUnitList[arg_5_1] == nil then
-		arg_5_0:AppendCrewUnit(arg_5_1)
+function slot8.FlushCrewUnit(slot0, slot1)
+	if #slot1:GetFleetAntiAirList() <= 0 then
+		slot0:RemoveCrewUnit(slot1)
+	elseif slot0._crewUnitList[slot1] == nil then
+		slot0:AppendCrewUnit(slot1)
 	else
-		arg_5_0._crewUnitList[arg_5_1] = var_5_0
+		slot0._crewUnitList[slot1] = slot2
 
-		arg_5_0:flush()
+		slot0:flush()
 	end
 end
 
-function var_0_8.SwitchHost(arg_6_0, arg_6_1)
-	arg_6_0._host = arg_6_1
+function slot8.SwitchHost(slot0, slot1)
+	slot0._host = slot1
 end
 
-function var_0_8.GetCrewUnitList(arg_7_0)
-	return arg_7_0._crewUnitList
+function slot8.GetCrewUnitList(slot0)
+	return slot0._crewUnitList
 end
 
-function var_0_8.GetRange(arg_8_0)
-	return arg_8_0._range
+function slot8.GetRange(slot0)
+	return slot0._range
 end
 
-function var_0_8.flush(arg_9_0)
-	arg_9_0._range = 0
-	arg_9_0._interval = 0
-	arg_9_0._hitFXResIDList = {}
-	arg_9_0._SFXID = nil
+function slot8.flush(slot0)
+	slot0._range = 0
+	slot0._interval = 0
+	slot0._hitFXResIDList = {}
+	slot0._SFXID = nil
+	slot1 = {}
+	slot2 = 0
 
-	local var_9_0 = {}
-	local var_9_1 = 0
-
-	for iter_9_0, iter_9_1 in pairs(arg_9_0._crewUnitList) do
-		for iter_9_2, iter_9_3 in ipairs(iter_9_1) do
-			var_9_1 = var_9_1 + 1
-			arg_9_0._interval = arg_9_0._interval + iter_9_3:GetReloadTime()
-
-			local var_9_2 = iter_9_3:GetTemplateData()
-
-			arg_9_0._range = arg_9_0._range + var_9_2.range
-			arg_9_0._hitFXResIDList[iter_9_3] = var_0_0.Battle.BattleDataFunction.GetBulletTmpDataFromID(var_9_2.bullet_ID[1]).hit_fx
-			arg_9_0._SFXID = var_9_2.fire_sfx
+	for slot6, slot7 in pairs(slot0._crewUnitList) do
+		for slot11, slot12 in ipairs(slot7) do
+			slot2 = slot2 + 1
+			slot0._interval = slot0._interval + slot12:GetReloadTime()
+			slot13 = slot12:GetTemplateData()
+			slot0._range = slot0._range + slot13.range
+			slot0._hitFXResIDList[slot12] = uv0.Battle.BattleDataFunction.GetBulletTmpDataFromID(slot13.bullet_ID[1]).hit_fx
+			slot0._SFXID = slot13.fire_sfx
 		end
 
-		local var_9_3 = iter_9_0:GetAttrByName("antiAirPower")
-		local var_9_4 = var_0_2.AntiAirPowerWeight(var_9_3)
-		local var_9_5 = {
-			weight = var_9_4,
-			rst = iter_9_0
+		slot1[#slot1 + 1] = {
+			weight = uv1.AntiAirPowerWeight(slot6:GetAttrByName("antiAirPower")),
+			rst = slot6
 		}
-
-		var_9_0[#var_9_0 + 1] = var_9_5
 	end
 
-	if var_9_1 == 0 then
-		arg_9_0._currentState = var_0_8.STATE_DISABLE
+	if slot2 == 0 then
+		slot0._currentState = uv2.STATE_DISABLE
 
-		if arg_9_0._precastTimer then
-			arg_9_0:RemovePrecastTimer()
+		if slot0._precastTimer then
+			slot0:RemovePrecastTimer()
 		end
 	else
-		arg_9_0._range = arg_9_0._range / var_9_1
-		arg_9_0._interval = arg_9_0._interval / var_9_1 + 0.5
-		arg_9_0._weightList, arg_9_0._totalWeight = var_0_2.GenerateWeightList(var_9_0)
+		slot0._range = slot0._range / slot2
+		slot0._interval = slot0._interval / slot2 + 0.5
+		slot0._weightList, slot0._totalWeight = uv1.GenerateWeightList(slot1)
 	end
 end
 
-function var_0_8.Update(arg_10_0)
-	if arg_10_0._currentState == var_0_8.STATE_READY then
-		local var_10_0 = arg_10_0:FilterTarget()
-
-		if #arg_10_0:FilterRange(var_10_0) > 0 then
-			arg_10_0:AddPreCastTimer()
-		end
+function slot8.Update(slot0)
+	if slot0._currentState == uv0.STATE_READY and #slot0:FilterRange(slot0:FilterTarget()) > 0 then
+		slot0:AddPreCastTimer()
 	end
 end
 
-function var_0_8.AddPreCastTimer(arg_11_0)
-	local function var_11_0()
-		arg_11_0:RemovePrecastTimer()
-		arg_11_0:Fire()
-	end
-
-	arg_11_0._currentState = var_0_8.STATE_PRECAST
-	arg_11_0._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 0, var_0_4.AntiAirConfig.Precast_duration, var_11_0, true)
+function slot8.AddPreCastTimer(slot0)
+	slot0._currentState = uv0.STATE_PRECAST
+	slot0._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", 0, uv1.AntiAirConfig.Precast_duration, function ()
+		uv0:RemovePrecastTimer()
+		uv0:Fire()
+	end, true)
 end
 
-function var_0_8.RemovePrecastTimer(arg_13_0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_13_0._precastTimer)
+function slot8.RemovePrecastTimer(slot0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._precastTimer)
 
-	arg_13_0._precastTimer = nil
+	slot0._precastTimer = nil
 end
 
-function var_0_8.FilterTarget(arg_14_0)
-	local var_14_0 = arg_14_0._dataProxy:GetAircraftList()
-	local var_14_1 = {}
-	local var_14_2 = arg_14_0._host:GetIFF()
-	local var_14_3 = 1
+function slot8.FilterTarget(slot0)
+	slot4 = 1
 
-	for iter_14_0, iter_14_1 in pairs(var_14_0) do
-		if iter_14_1:GetIFF() ~= var_14_2 and iter_14_1:IsVisitable() then
-			var_14_1[var_14_3] = iter_14_1
-			var_14_3 = var_14_3 + 1
+	for slot8, slot9 in pairs(slot0._dataProxy:GetAircraftList()) do
+		if slot9:GetIFF() ~= slot0._host:GetIFF() and slot9:IsVisitable() then
+			slot4 = slot4 + 1
 		end
 	end
 
-	return var_14_1
+	return {
+		[slot4] = slot9
+	}
 end
 
-function var_0_8.FilterRange(arg_15_0, arg_15_1)
-	for iter_15_0 = #arg_15_1, 1, -1 do
-		if arg_15_0:IsOutOfRange(arg_15_1[iter_15_0]) then
-			table.remove(arg_15_1, iter_15_0)
+function slot8.FilterRange(slot0, slot1)
+	for slot5 = #slot1, 1, -1 do
+		if slot0:IsOutOfRange(slot1[slot5]) then
+			table.remove(slot1, slot5)
 		end
 	end
 
-	return arg_15_1
+	return slot1
 end
 
-function var_0_8.IsOutOfRange(arg_16_0, arg_16_1)
-	return arg_16_0:getTrackingHost():GetDistance(arg_16_1) > arg_16_0._range
+function slot8.IsOutOfRange(slot0, slot1)
+	return slot0._range < slot0:getTrackingHost():GetDistance(slot1)
 end
 
-function var_0_8.getTrackingHost(arg_17_0)
-	return arg_17_0._host
+function slot8.getTrackingHost(slot0)
+	return slot0._host
 end
 
-function var_0_8.Fire(arg_18_0)
-	if arg_18_0._currentState == arg_18_0.DISABLE then
+function slot8.Fire(slot0)
+	if slot0._currentState == slot0.DISABLE then
 		return
 	end
 
-	local function var_18_0(arg_19_0)
-		local var_19_0 = {}
-		local var_19_1 = arg_18_0._dataProxy:GetAircraftList()
+	slot5 = slot0._host:GetIFF()
+	slot6 = slot0._host:GetPosition()
 
-		for iter_19_0, iter_19_1 in ipairs(arg_19_0) do
-			if iter_19_1.Active then
-				local var_19_2 = var_19_1[iter_19_1.UID]
+	slot0._dataProxy:SpawnColumnArea(uv1.AOEField.AIR, slot5, slot6, slot0._range * 2, -1, function (slot0)
+		slot1 = {}
 
-				if var_19_2 and var_19_2:IsVisitable() then
-					var_19_0[#var_19_0 + 1] = var_19_2
-				end
+		for slot6, slot7 in ipairs(slot0) do
+			if slot7.Active and uv0._dataProxy:GetAircraftList()[slot7.UID] and slot8:IsVisitable() then
+				slot1[#slot1 + 1] = slot8
 			end
 		end
 
-		local var_19_3 = var_0_2.CalculateFleetAntiAirTotalDamage(arg_18_0)
-		local var_19_4 = var_0_2.GetMeteoDamageRatio(#var_19_0)
-
-		for iter_19_2, iter_19_3 in ipairs(var_19_0) do
-			local var_19_5 = math.max(1, math.floor(var_19_3 * var_19_4[iter_19_2]))
-			local var_19_6 = var_0_2.WeightListRandom(arg_18_0._weightList, arg_18_0._totalWeight)
-
-			arg_18_0._dataProxy:HandleDirectDamage(iter_19_3, var_19_5, var_19_6)
+		for slot8, slot9 in ipairs(slot1) do
+			uv0._dataProxy:HandleDirectDamage(slot9, math.max(1, math.floor(uv1.CalculateFleetAntiAirTotalDamage(uv0) * uv1.GetMeteoDamageRatio(#slot1)[slot8])), uv1.WeightListRandom(uv0._weightList, uv0._totalWeight))
 		end
+	end)
+	slot0:EnterCoolDown()
+
+	for slot5, slot6 in pairs(slot0._crewUnitList) do
+		slot5:TriggerBuff(uv2.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_FIRE_NEAR, {})
+		slot5:PlayFX(slot6[1]:GetTemplateData().fire_fx, true)
 	end
 
-	arg_18_0._dataProxy:SpawnColumnArea(var_0_3.AOEField.AIR, arg_18_0._host:GetIFF(), arg_18_0._host:GetPosition(), arg_18_0._range * 2, -1, var_18_0)
-	arg_18_0:EnterCoolDown()
-
-	for iter_18_0, iter_18_1 in pairs(arg_18_0._crewUnitList) do
-		iter_18_0:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_ANTIAIR_FIRE_NEAR, {})
-		iter_18_0:PlayFX(iter_18_1[1]:GetTemplateData().fire_fx, true)
+	for slot5, slot6 in pairs(slot0._hitFXResIDList) do
+		pg.EffectMgr.GetInstance():PlayBattleEffect(uv2.Battle.BattleFXPool.GetInstance():GetFX(slot6), slot0._host:GetPosition() + Vector3((math.random() * 2 - 1) * slot0._range, 10, (math.random() * 2 - 1) * slot0._range), true)
 	end
 
-	for iter_18_2, iter_18_3 in pairs(arg_18_0._hitFXResIDList) do
-		local var_18_1 = (math.random() * 2 - 1) * arg_18_0._range
-		local var_18_2 = (math.random() * 2 - 1) * arg_18_0._range
-		local var_18_3 = arg_18_0._host:GetPosition() + Vector3(var_18_1, 10, var_18_2)
-		local var_18_4 = var_0_0.Battle.BattleFXPool.GetInstance():GetFX(iter_18_3)
-
-		pg.EffectMgr.GetInstance():PlayBattleEffect(var_18_4, var_18_3, true)
-	end
-
-	var_0_0.Battle.PlayBattleSFX(arg_18_0._SFXID)
+	uv2.Battle.PlayBattleSFX(slot0._SFXID)
 end
 
-function var_0_8.EnterCoolDown(arg_20_0)
-	arg_20_0._currentState = arg_20_0.STATE_OVER_HEAT
+function slot8.EnterCoolDown(slot0)
+	slot0._currentState = slot0.STATE_OVER_HEAT
 
-	arg_20_0:AddCDTimer(arg_20_0._interval)
+	slot0:AddCDTimer(slot0._interval)
 end
 
-function var_0_8.GetCurrentState(arg_21_0)
-	return arg_21_0._currentState
+function slot8.GetCurrentState(slot0)
+	return slot0._currentState
 end
 
-function var_0_8.AddCDTimer(arg_22_0, arg_22_1)
-	local function var_22_0()
-		arg_22_0._currentState = arg_22_0.STATE_READY
+function slot8.AddCDTimer(slot0, slot1)
+	slot0:RemoveCDTimer()
 
-		arg_22_0:RemoveCDTimer()
-	end
+	slot0._cdTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponTimer", -1, slot1, function ()
+		uv0._currentState = uv0.STATE_READY
 
-	arg_22_0:RemoveCDTimer()
-
-	arg_22_0._cdTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponTimer", -1, arg_22_1, var_22_0, true)
+		uv0:RemoveCDTimer()
+	end, true)
 end
 
-function var_0_8.RemoveCDTimer(arg_24_0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_24_0._cdTimer)
+function slot8.RemoveCDTimer(slot0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._cdTimer)
 
-	arg_24_0._cdTimer = nil
+	slot0._cdTimer = nil
 end
 
-function var_0_8.Dispose(arg_25_0)
-	arg_25_0:RemoveCDTimer()
-	arg_25_0:RemovePrecastTimer()
+function slot8.Dispose(slot0)
+	slot0:RemoveCDTimer()
+	slot0:RemovePrecastTimer()
 
-	arg_25_0._crewUnitList = nil
-	arg_25_0._weightList = nil
-	arg_25_0._hitFXResIDList = nil
-	arg_25_0._dataProxy = nil
-	arg_25_0._SFXID = nil
+	slot0._crewUnitList = nil
+	slot0._weightList = nil
+	slot0._hitFXResIDList = nil
+	slot0._dataProxy = nil
+	slot0._SFXID = nil
 end

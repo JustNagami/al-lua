@@ -1,49 +1,43 @@
-﻿local var_0_0 = class("MiniGameHubData", import(".BaseVO"))
+slot0 = class("MiniGameHubData", import(".BaseVO"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_1.id
-	arg_1_0.count = arg_1_1.available_cnt or arg_1_0:getConfig("reborn_times")
-	arg_1_0.usedtime = arg_1_1.used_cnt or 0
-	arg_1_0.ultimate = arg_1_1.ultimate or 0
-	arg_1_0.highScores = {}
+	slot0.id = slot1.id
+	slot0.configId = slot1.id
+	slot0.count = slot1.available_cnt or slot0:getConfig("reborn_times")
+	slot0.usedtime = slot1.used_cnt or 0
+	slot0.ultimate = slot1.ultimate or 0
+	slot0.highScores = {}
 
-	underscore.each(arg_1_1.maxscores or {}, function(arg_2_0)
-		arg_1_0.highScores[arg_2_0.key] = arg_2_0.value
+	underscore.each(slot1.maxscores or {}, function (slot0)
+		uv0.highScores[slot0.key] = slot0.value
 	end)
 end
 
-function var_0_0.bindConfigTable(arg_3_0)
+function slot0.bindConfigTable(slot0)
 	return pg.mini_game_hub
 end
 
-function var_0_0.UpdateData(arg_4_0, arg_4_1)
-	arg_4_0.count = arg_4_1.available_cnt or arg_4_0.count
-	arg_4_0.usedtime = arg_4_1.used_cnt or arg_4_0.usedtime
-	arg_4_0.ultimate = arg_4_1.ultimate or arg_4_0.ultimate
+function slot0.UpdateData(slot0, slot1)
+	slot0.count = slot1.available_cnt or slot0.count
+	slot0.usedtime = slot1.used_cnt or slot0.usedtime
+	slot0.ultimate = slot1.ultimate or slot0.ultimate
 
-	underscore.each(arg_4_1.maxscores or {}, function(arg_5_0)
-		arg_4_0.highScores[arg_5_0.key] = arg_5_0.value
+	underscore.each(slot1.maxscores or {}, function (slot0)
+		uv0.highScores[slot0.key] = slot0.value
 	end)
-	print("Hub 更新", "ID:", tostring(arg_4_0.id), "Count:", tostring(arg_4_0.count), "UsedTime:", tostring(arg_4_0.usedtime), "Ultimate:", tostring(arg_4_0.ultimate))
+	print("Hub 更新", "ID:", tostring(slot0.id), "Count:", tostring(slot0.count), "UsedTime:", tostring(slot0.usedtime), "Ultimate:", tostring(slot0.ultimate))
 end
 
-function var_0_0.CheckInTime(arg_6_0)
-	local var_6_0 = arg_6_0:getConfig("act_id")
-
-	if var_6_0 ~= nil then
-		local var_6_1 = pg.activity_template[var_6_0]
-
-		if var_6_1 then
-			local var_6_2 = var_6_1.time
-
-			return (pg.TimeMgr.GetInstance():inTime(var_6_2))
+function slot0.CheckInTime(slot0)
+	if slot0:getConfig("act_id") ~= nil then
+		if pg.activity_template[slot1] then
+			return pg.TimeMgr.GetInstance():inTime(slot2.time)
 		end
 	else
 		return true
 	end
 end
 
-return var_0_0
+return slot0

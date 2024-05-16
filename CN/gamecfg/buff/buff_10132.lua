@@ -1,23 +1,4 @@
-﻿return {
-	limit = {
-		SYSTEM_SCENARIO,
-		SYSTEM_ROUTINE,
-		SYSTEM_SHAM,
-		SYSTEM_CHALLENGE
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				rant = 3000,
-				skill_id = 10130,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -176,5 +157,24 @@
 	stack = 1,
 	id = 10132,
 	icon = 10130,
-	last_effect = ""
+	last_effect = "",
+	limit = {
+		SYSTEM_SCENARIO,
+		SYSTEM_ROUTINE,
+		SYSTEM_SHAM,
+		SYSTEM_CHALLENGE
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				rant = 3000,
+				skill_id = 10130,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

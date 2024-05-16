@@ -1,39 +1,36 @@
-﻿local var_0_0 = class("CommanderChangeCatteryStyleCommand", pm.SimpleCommand)
+slot0 = class("CommanderChangeCatteryStyleCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.styleId
-	local var_1_3 = getProxy(CommanderProxy):GetCommanderHome()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.id
+	slot4 = slot2.styleId
 
-	if not var_1_3 then
+	if not getProxy(CommanderProxy):GetCommanderHome() then
 		return
 	end
 
-	local var_1_4 = var_1_3:GetCatteryById(var_1_1)
-
-	if not var_1_4 then
+	if not slot6:GetCatteryById(slot3) then
 		return
 	end
 
-	if var_1_4:GetStyle() == var_1_2 then
+	if slot7:GetStyle() == slot4 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25032, {
-		slotidx = var_1_1,
-		styleidx = var_1_2
-	}, 25033, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_4:UpdateStyle(var_1_2)
+		slotidx = slot3,
+		styleidx = slot4
+	}, 25033, function (slot0)
+		if slot0.result == 0 then
+			uv0:UpdateStyle(uv1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cattery_style_change_success"))
-			arg_1_0:sendNotification(GAME.COMMANDER_CHANGE_CATTERY_STYLE_DONE, {
-				id = var_1_4.id
+			uv2:sendNotification(GAME.COMMANDER_CHANGE_CATTERY_STYLE_DONE, {
+				id = uv0.id
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

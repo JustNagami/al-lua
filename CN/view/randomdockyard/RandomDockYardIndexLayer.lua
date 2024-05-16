@@ -1,23 +1,22 @@
-﻿local var_0_0 = class("RandomDockYardIndexLayer", import("..common.CustomIndexLayer"))
+slot0 = class("RandomDockYardIndexLayer", import("..common.CustomIndexLayer"))
 
-function var_0_0.init(arg_1_0)
-	var_0_0.super.init(arg_1_0)
+function slot0.init(slot0)
+	uv0.super.init(slot0)
 
-	local var_1_0 = arg_1_0.contextData
-
-	arg_1_0.OnFilter = var_1_0.OnFilter
-	arg_1_0.indexDatas = var_1_0.defaultIndex or {}
+	slot1 = slot0.contextData
+	slot0.OnFilter = slot1.OnFilter
+	slot0.indexDatas = slot1.defaultIndex or {}
 end
 
-function var_0_0.didEnter(arg_2_0)
-	arg_2_0.contextData = arg_2_0:InitData()
+function slot0.didEnter(slot0)
+	slot0.contextData = slot0:InitData()
 
-	var_0_0.super.didEnter(arg_2_0)
+	uv0.super.didEnter(slot0)
 end
 
-function var_0_0.InitData(arg_3_0)
+function slot0.InitData(slot0)
 	return {
-		indexDatas = Clone(arg_3_0.indexDatas),
+		indexDatas = Clone(slot0.indexDatas),
 		customPanels = {
 			minHeight = 650,
 			sortIndex = {
@@ -103,10 +102,10 @@ function var_0_0.InitData(arg_3_0)
 				}
 			}
 		},
-		callback = function(arg_4_0)
-			arg_3_0.OnFilter(arg_4_0)
+		callback = function (slot0)
+			uv0.OnFilter(slot0)
 		end
 	}
 end
 
-return var_0_0
+return slot0

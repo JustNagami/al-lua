@@ -1,29 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				check_target = "TargetNationalityFriendly",
-				minTargetNumber = 3,
-				skill_id = 10821,
-				nationality = 3
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				skill_id = 10820
-			}
-		}
-	},
+return {
 	{
 		desc = "鹤之奋进"
 	},
@@ -64,5 +39,30 @@
 	stack = 1,
 	id = 10820,
 	icon = 10820,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				check_target = "TargetNationalityFriendly",
+				minTargetNumber = 3,
+				skill_id = 10821,
+				nationality = 3
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				skill_id = 10820
+			}
+		}
+	}
 }

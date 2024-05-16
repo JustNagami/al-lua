@@ -1,132 +1,127 @@
-﻿local var_0_0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
+slot0 = class("AnniversaryIslandHotSpringMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringMediator"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.OPEN_CHUANWU, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:OnSelShips(arg_2_1, arg_2_2)
+function slot0.register(slot0)
+	slot0:bind(uv0.OPEN_CHUANWU, function (slot0, slot1, slot2)
+		uv0:OnSelShips(slot1, slot2)
 	end)
 
-	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_HOTSPRING_2)
+	slot0.activity = slot1
 
-	arg_1_0.activity = var_1_0
-
-	arg_1_0.viewComponent:SetActivity(var_1_0)
-	arg_1_0:bind(var_0_0.OPEN_INFO, function()
-		arg_1_0:addSubLayers(Context.New({
+	slot0.viewComponent:SetActivity(slot1)
+	slot0:bind(uv0.OPEN_INFO, function ()
+		uv0:addSubLayers(Context.New({
 			mediator = AnniversaryIslandSpringShipSelectMediator,
 			viewComponent = AnniversaryIslandSpringShipSelectLayer,
 			data = {
-				actId = var_1_0.id
+				actId = uv1.id
 			}
 		}))
 	end)
 end
 
-function var_0_0.OnSelected(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	local var_4_0 = Clone(arg_4_0.activity:GetShipIds())
+function slot0.OnSelected(slot0, slot1, slot2, slot3)
+	slot4 = Clone(slot0.activity:GetShipIds())
 
-	_.each(_.range(arg_4_0.activity:GetSlotCount()), function(arg_5_0)
-		var_4_0[arg_5_0] = var_4_0[arg_5_0] or 0
+	_.each(_.range(slot0.activity:GetSlotCount()), function (slot0)
+		uv0[slot0] = uv0[slot0] or 0
 	end)
 
-	if arg_4_2 == nil or #arg_4_2 == 0 then
-		if var_4_0[arg_4_1] > 0 then
-			arg_4_0:sendNotification(GAME.ACTIVITY_OPERATION, {
-				activity_id = arg_4_0.activity.id,
+	if slot2 == nil or #slot2 == 0 then
+		if slot4[slot1] > 0 then
+			slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
+				activity_id = slot0.activity.id,
 				cmd = Spring2Activity.OPERATION_SETSHIP,
 				kvargs1 = {
 					{
 						value = 0,
-						key = arg_4_1
+						key = slot1
 					}
 				}
 			})
 		end
 
-		existCall(arg_4_3)
+		existCall(slot3)
 
 		return
 	end
 
-	local var_4_1 = _.filter(arg_4_2, function(arg_6_0)
-		return not table.contains(var_4_0, arg_6_0)
-	end)
-
-	table.Foreach(var_4_0, function(arg_7_0, arg_7_1)
-		if arg_7_1 == 0 or table.contains(arg_4_2, arg_7_1) then
+	table.Foreach(slot4, function (slot0, slot1)
+		if slot1 == 0 or table.contains(uv0, slot1) then
 			return
 		end
 
-		var_4_0[arg_7_0] = 0
+		uv1[slot0] = 0
 	end)
 
-	if #var_4_1 == 1 and var_4_0[arg_4_1] == 0 then
-		var_4_0[arg_4_1] = var_4_1[1]
+	if #_.filter(slot2, function (slot0)
+		return not table.contains(uv0, slot0)
+	end) == 1 and slot4[slot1] == 0 then
+		slot4[slot1] = slot5[1]
 	else
-		local var_4_2 = 0
+		slot6 = 0
 
-		_.each(var_4_1, function(arg_8_0)
-			while var_4_2 <= #var_4_0 do
-				var_4_2 = var_4_2 + 1
+		_.each(slot5, function (slot0)
+			while uv0 <= #uv1 do
+				uv0 = uv0 + 1
 
-				if var_4_0[var_4_2] == 0 then
+				if uv1[uv0] == 0 then
 					break
 				end
 			end
 
-			var_4_0[var_4_2] = arg_8_0
+			uv1[uv0] = slot0
 		end)
 	end
 
-	local var_4_3 = {}
-	local var_4_4 = arg_4_0.activity:GetShipIds()
+	slot7 = slot0.activity:GetShipIds()
 
-	table.Foreach(var_4_0, function(arg_9_0, arg_9_1)
-		if (var_4_4[arg_9_0] or 0) ~= arg_9_1 then
-			table.insert(var_4_3, {
-				key = arg_9_0,
-				value = arg_9_1
+	table.Foreach(slot4, function (slot0, slot1)
+		if (uv0[slot0] or 0) ~= slot1 then
+			table.insert(uv1, {
+				key = slot0,
+				value = slot1
 			})
 		end
 	end)
 
-	if #var_4_3 > 0 then
-		arg_4_0:sendNotification(GAME.ACTIVITY_OPERATION, {
-			activity_id = arg_4_0.activity.id,
+	if #{} > 0 then
+		slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
+			activity_id = slot0.activity.id,
 			cmd = Spring2Activity.OPERATION_SETSHIP,
-			kvargs1 = var_4_3
+			kvargs1 = slot6
 		})
 	end
 
-	arg_4_3()
+	slot3()
 end
 
-function var_0_0.listNotificationInterests(arg_10_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
-		var_0_0.OPEN_CHUANWU
+		uv0.OPEN_CHUANWU
 	}
 end
 
-function var_0_0.handleNotification(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1:getName()
-	local var_11_1 = arg_11_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_11_0 == nil then
-		-- block empty
-	elseif var_11_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg_11_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_11_1.awards, var_11_1.callback)
-	elseif var_11_0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var_11_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
-			arg_11_0.activity = var_11_1
+	if slot1:getName() == nil then
+		-- Nothing
+	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
+		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
+			slot0.activity = slot3
 
-			arg_11_0.viewComponent:SetActivity(var_11_1)
-			arg_11_0.viewComponent:UpdateView()
+			slot0.viewComponent:SetActivity(slot3)
+			slot0.viewComponent:UpdateView()
 		end
-	elseif var_11_0 == var_0_0.OPEN_CHUANWU then
-		arg_11_0.viewComponent:emit(var_0_0.OPEN_CHUANWU, unpack(var_11_1))
+	elseif slot2 == uv0.OPEN_CHUANWU then
+		slot0.viewComponent:emit(uv0.OPEN_CHUANWU, unpack(slot3))
 	end
 end
 
-return var_0_0
+return slot0

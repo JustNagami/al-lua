@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAntiAirWeaponFireNear"
-			},
-			arg_list = {
-				rant = 2500,
-				target = "TargetSelf",
-				skill_id = 4091,
-				time = 5
-			}
-		}
-	},
+return {
 	{
 		desc = "防空炮开火时有25%概率触发，自身防空提高20.0%但炮击降低40.0%，持续3秒",
 		addition = {
@@ -93,5 +79,19 @@
 	stack = 1,
 	id = 4091,
 	icon = 4090,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAntiAirWeaponFireNear"
+			},
+			arg_list = {
+				rant = 2500,
+				target = "TargetSelf",
+				skill_id = 4091,
+				time = 5
+			}
+		}
+	}
 }

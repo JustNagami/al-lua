@@ -1,19 +1,19 @@
-﻿local var_0_0 = class("ShipPreviewMediator", import("..base.ContextMediator"))
+slot0 = class("ShipPreviewMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	assert(arg_1_0.contextData.shipVO, "shipVO is nil")
-	assert(arg_1_0.contextData.weaponIds, "weaponIds is nil")
-	assert(arg_1_0.contextData.equipSkinId, "equipment skin id is nil")
-	arg_1_0.viewComponent:setShip(arg_1_0.contextData.shipVO, arg_1_0.contextData.weaponIds, arg_1_0.contextData.equipSkinId)
+function slot0.register(slot0)
+	assert(slot0.contextData.shipVO, "shipVO is nil")
+	assert(slot0.contextData.weaponIds, "weaponIds is nil")
+	assert(slot0.contextData.equipSkinId, "equipment skin id is nil")
+	slot0.viewComponent:setShip(slot0.contextData.shipVO, slot0.contextData.weaponIds, slot0.contextData.equipSkinId)
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-return var_0_0
+return slot0

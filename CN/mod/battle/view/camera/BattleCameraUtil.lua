@@ -1,391 +1,361 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleVariable
+slot2 = slot0.Battle.BattleEvent
+slot3 = slot0.Battle.BattleConfig
+slot4 = singletonClass("BattleCameraUtil")
+slot0.Battle.BattleCameraUtil = slot4
+slot4.__name = "BattleCameraUtil"
+slot4.FOCUS_PILOT = "FOCUS_PILOT"
+slot4.TWEEN_TO_CHARACTER = "TWEEN_TO_CHARACTER"
+slot4.FOLLOW_GESTURE = "FOLLOW_GESTURE"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleVariable
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = var_0_0.Battle.BattleConfig
-local var_0_4 = singletonClass("BattleCameraUtil")
+function slot4.Ctor(slot0)
+	uv0.EventDispatcher.AttachEventDispatcher(slot0)
 
-var_0_0.Battle.BattleCameraUtil = var_0_4
-var_0_4.__name = "BattleCameraUtil"
-var_0_4.FOCUS_PILOT = "FOCUS_PILOT"
-var_0_4.TWEEN_TO_CHARACTER = "TWEEN_TO_CHARACTER"
-var_0_4.FOLLOW_GESTURE = "FOLLOW_GESTURE"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_0.EventDispatcher.AttachEventDispatcher(arg_1_0)
-
-	arg_1_0._camera = pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera))
-	arg_1_0._cameraTF = arg_1_0._camera.transform
-	arg_1_0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
-	arg_1_0._cameraFixMgr = pg.CameraFixMgr.GetInstance()
+	slot0._camera = pg.UIMgr.GetInstance():GetMainCamera():GetComponent(typeof(Camera))
+	slot0._cameraTF = slot0._camera.transform
+	slot0._uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
+	slot0._cameraFixMgr = pg.CameraFixMgr.GetInstance()
 end
 
-function var_0_4.ActiveMainCemera(arg_2_0)
-	CameraMgr.instance:SetActiveMainCamera(arg_2_0)
+function slot4.ActiveMainCemera(slot0)
+	CameraMgr.instance:SetActiveMainCamera(slot0)
 end
 
-function var_0_4.Initialize(arg_3_0)
-	arg_3_0._cameraTF.localPosition = var_0_3.CAMERA_INIT_POS
+function slot4.Initialize(slot0)
+	slot0._cameraTF.localPosition = uv0.CAMERA_INIT_POS
 
-	var_0_1.UpdateCameraPositionArgs()
-	arg_3_0:setArrowPoint()
+	uv1.UpdateCameraPositionArgs()
+	slot0:setArrowPoint()
 
-	arg_3_0._boundFix = var_0_0.Battle.BattleCameraBoundFixDecorate.New()
-	arg_3_0._followPilot = var_0_0.Battle.BattleCameraFollowPilot.New()
-	arg_3_0._focusCharacter = var_0_0.Battle.BattleCameraFocusChar.New()
-	arg_3_0._fromTo = var_0_0.Battle.BattleCameraTween.New()
-	arg_3_0._gesture = var_0_0.Battle.BattleCameraFollowGesture.New()
+	slot0._boundFix = uv2.Battle.BattleCameraBoundFixDecorate.New()
+	slot0._followPilot = uv2.Battle.BattleCameraFollowPilot.New()
+	slot0._focusCharacter = uv2.Battle.BattleCameraFocusChar.New()
+	slot0._fromTo = uv2.Battle.BattleCameraTween.New()
+	slot0._gesture = uv2.Battle.BattleCameraFollowGesture.New()
 
-	arg_3_0:active()
-	arg_3_0:SwitchCameraPos()
+	slot0:active()
+	slot0:SwitchCameraPos()
 
-	arg_3_0._shakeEnabled = true
-	arg_3_0._uiMediator = var_0_0.Battle.BattleState.GetInstance():GetMediatorByName(var_0_0.Battle.BattleUIMediator.__name)
+	slot0._shakeEnabled = true
+	slot0._uiMediator = uv2.Battle.BattleState.GetInstance():GetMediatorByName(uv2.Battle.BattleUIMediator.__name)
 end
 
-function var_0_4.Clear(arg_4_0)
-	arg_4_0.ActiveMainCemera(false)
-	LeanTween.cancel(go(arg_4_0._camera))
-	arg_4_0:Deactive()
-	arg_4_0:StopShake()
-	arg_4_0._boundFix:Dispose()
-	arg_4_0._followPilot:Dispose()
-	arg_4_0._focusCharacter:Dispose()
-	arg_4_0._fromTo:Dispose()
-	arg_4_0._gesture:Dispose()
+function slot4.Clear(slot0)
+	slot0.ActiveMainCemera(false)
+	LeanTween.cancel(go(slot0._camera))
+	slot0:Deactive()
+	slot0:StopShake()
+	slot0._boundFix:Dispose()
+	slot0._followPilot:Dispose()
+	slot0._focusCharacter:Dispose()
+	slot0._fromTo:Dispose()
+	slot0._gesture:Dispose()
 
-	arg_4_0._cameraTF.localPosition = Vector3(0, 62, -10)
-	arg_4_0._camera.orthographicSize = 20
-	arg_4_0._uiMediator = nil
+	slot0._cameraTF.localPosition = Vector3(0, 62, -10)
+	slot0._camera.orthographicSize = 20
+	slot0._uiMediator = nil
 end
 
-function var_0_4.SetMapData(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	local var_5_0, var_5_1, var_5_2, var_5_3 = arg_5_0._boundFix:SetMapData(arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	local var_5_4 = pg.CameraFixMgr.GetInstance().actualWidth
+function slot4.SetMapData(slot0, slot1, slot2, slot3, slot4)
+	slot5, slot6, slot7, slot8 = slot0._boundFix:SetMapData(slot1, slot2, slot3, slot4)
 
-	arg_5_0._followPilot:SetGoldenRation(arg_5_0._camera:ScreenToWorldPoint(Vector3(var_5_4 * var_0_3.CAMERA_GOLDEN_RATE, 0, 0)).x - arg_5_0._cameraTF.position.x)
+	slot0._followPilot:SetGoldenRation(slot0._camera:ScreenToWorldPoint(Vector3(pg.CameraFixMgr.GetInstance().actualWidth * uv0.CAMERA_GOLDEN_RATE, 0, 0)).x - slot0._cameraTF.position.x)
 
-	return var_5_0, var_5_1, var_5_2, var_5_3
+	return slot5, slot6, slot7, slot8
 end
 
-function var_0_4.SetFocusFleet(arg_6_0, arg_6_1)
-	arg_6_0._followPilot:SetFleetVO(arg_6_1)
+function slot4.SetFocusFleet(slot0, slot1)
+	slot0._followPilot:SetFleetVO(slot1)
 
-	arg_6_0._cameraTF.position = arg_6_0._boundFix:GetCameraPos(arg_6_0._followPilot:GetCameraPos())
+	slot0._cameraTF.position = slot0._boundFix:GetCameraPos(slot0._followPilot:GetCameraPos())
 
-	var_0_1.UpdateCameraPositionArgs()
+	uv0.UpdateCameraPositionArgs()
 end
 
-function var_0_4.SetCameraSilder(arg_7_0, arg_7_1)
-	arg_7_0._gesture:SetGestureComponent(arg_7_1)
+function slot4.SetCameraSilder(slot0, slot1)
+	slot0._gesture:SetGestureComponent(slot1)
 end
 
-function var_0_4.SwitchCameraPos(arg_8_0, arg_8_1)
-	if arg_8_1 == "TWEEN_TO_CHARACTER" then
-		function arg_8_0._currentCameraPos()
-			return arg_8_0._fromTo:GetCameraPos()
+function slot4.SwitchCameraPos(slot0, slot1)
+	if slot1 == "TWEEN_TO_CHARACTER" then
+		function slot0._currentCameraPos()
+			return uv0._fromTo:GetCameraPos()
 		end
-	elseif arg_8_1 == "FOLLOW_GESTURE" then
-		function arg_8_0._currentCameraPos()
-			return arg_8_0._boundFix:GetCameraPos(arg_8_0._gesture:GetCameraPos(arg_8_0._cameraTF.position))
+	elseif slot1 == "FOLLOW_GESTURE" then
+		function slot0._currentCameraPos()
+			return uv0._boundFix:GetCameraPos(uv0._gesture:GetCameraPos(uv0._cameraTF.position))
 		end
 	else
-		function arg_8_0._currentCameraPos()
-			return arg_8_0._boundFix:GetCameraPos(arg_8_0._followPilot:GetCameraPos())
+		function slot0._currentCameraPos()
+			return uv0._boundFix:GetCameraPos(uv0._followPilot:GetCameraPos())
 		end
 	end
 end
 
-function var_0_4.GetS2WPoint(arg_12_0, arg_12_1)
-	return arg_12_0._camera:ScreenToWorldPoint(arg_12_1)
+function slot4.GetS2WPoint(slot0, slot1)
+	return slot0._camera:ScreenToWorldPoint(slot1)
 end
 
-function var_0_4.setArrowPoint(arg_13_0)
-	local var_13_0 = 1
-	local var_13_1 = arg_13_0._uiCamera:ScreenToWorldPoint(arg_13_0._cameraFixMgr.leftBottomVector) + Vector3(var_13_0, var_13_0, 0)
-	local var_13_2 = arg_13_0._uiCamera:ScreenToWorldPoint(arg_13_0._cameraFixMgr.rightTopVector) - Vector3(var_13_0, var_13_0, 0)
-
-	arg_13_0._arrowCenterPos = (var_13_1 + var_13_2) * 0.5
-	arg_13_0._arrowRightHorizon = var_13_2.x + 4
-	arg_13_0._arrowTopHorizon = var_13_2.y + 4
-	arg_13_0._arrowBottomHorizon = var_13_1.y - 4
-	arg_13_0._arrowLeftHorizon = var_13_1.x - 3.75
-	arg_13_0._arrowLeftBottomPos_notch = arg_13_0._uiCamera:ScreenToWorldPoint(arg_13_0._cameraFixMgr.notchAdaptLBVector) + Vector3(var_13_0, var_13_0, 0)
-	arg_13_0._arrowRightTopPos_notch = arg_13_0._uiCamera:ScreenToWorldPoint(arg_13_0._cameraFixMgr.notchAdaptRTVector) - Vector3(var_13_0, var_13_0, 0)
-	arg_13_0._arrowFieldHalfWidth_notch = arg_13_0._arrowRightTopPos_notch.x - arg_13_0._arrowCenterPos.x
+function slot4.setArrowPoint(slot0)
+	slot1 = 1
+	slot2 = slot0._uiCamera:ScreenToWorldPoint(slot0._cameraFixMgr.leftBottomVector) + Vector3(slot1, slot1, 0)
+	slot3 = slot0._uiCamera:ScreenToWorldPoint(slot0._cameraFixMgr.rightTopVector) - Vector3(slot1, slot1, 0)
+	slot0._arrowCenterPos = (slot2 + slot3) * 0.5
+	slot0._arrowRightHorizon = slot3.x + 4
+	slot0._arrowTopHorizon = slot3.y + 4
+	slot0._arrowBottomHorizon = slot2.y - 4
+	slot0._arrowLeftHorizon = slot2.x - 3.75
+	slot0._arrowLeftBottomPos_notch = slot0._uiCamera:ScreenToWorldPoint(slot0._cameraFixMgr.notchAdaptLBVector) + Vector3(slot1, slot1, 0)
+	slot0._arrowRightTopPos_notch = slot0._uiCamera:ScreenToWorldPoint(slot0._cameraFixMgr.notchAdaptRTVector) - Vector3(slot1, slot1, 0)
+	slot0._arrowFieldHalfWidth_notch = slot0._arrowRightTopPos_notch.x - slot0._arrowCenterPos.x
 end
 
-function var_0_4.Update(arg_14_0)
-	local var_14_0 = arg_14_0:GetCameraPoint()
-	local var_14_1 = arg_14_0._cameraTF.position
+function slot4.Update(slot0)
+	if slot0._cameraTF.position.x ~= slot0:GetCameraPoint().x or slot2.z ~= slot1 then
+		slot0._cameraTF.position = slot1
 
-	if var_14_1.x ~= var_14_0.x or var_14_1.z ~= var_14_0 then
-		arg_14_0._cameraTF.position = var_14_0
-
-		var_0_1.UpdateCameraPositionArgs()
+		uv0.UpdateCameraPositionArgs()
 	end
 
-	if arg_14_0._shakeInfo and arg_14_0._shakeEnabled then
-		arg_14_0:DoShake()
+	if slot0._shakeInfo and slot0._shakeEnabled then
+		slot0:DoShake()
 	end
 end
 
-function var_0_4.StartShake(arg_15_0, arg_15_1)
-	if arg_15_0._shakeInfo and (arg_15_0._shakeInfo._priority > arg_15_1.priority or arg_15_1.priority == 0) then
+function slot4.StartShake(slot0, slot1)
+	if slot0._shakeInfo and (slot1.priority < slot0._shakeInfo._priority or slot1.priority == 0) then
 		return
 	end
 
-	arg_15_0._shakeInfo = {}
-	arg_15_0._shakeInfo._elapsed = 0
-	arg_15_0._shakeInfo._duration = arg_15_1.time or 0
-	arg_15_0._shakeInfo._count = 0
-	arg_15_0._shakeInfo._loop = arg_15_1.loop or 1
-	arg_15_0._shakeInfo._direction = 1
-	arg_15_0._shakeInfo._vibrationH = arg_15_1.vibration_H or 0
-	arg_15_0._shakeInfo._fricConstH = arg_15_1.friction_const_H or 0
-	arg_15_0._shakeInfo._fricCoefH = arg_15_1.friction_coefficient_H or 1
-	arg_15_0._shakeInfo._vibrationV = arg_15_1.vibration_V or 0
-	arg_15_0._shakeInfo._fricConstV = arg_15_1.friction_const_V or 0
-	arg_15_0._shakeInfo._fricCoefV = arg_15_1.friction_coefficient_V or 1
-	arg_15_0._shakeInfo._diff = Vector3.zero
-	arg_15_0._shakeInfo._bounce = arg_15_1.bounce
+	slot0._shakeInfo = {
+		_elapsed = 0,
+		_duration = slot1.time or 0,
+		_count = 0,
+		_loop = slot1.loop or 1,
+		_direction = 1,
+		_vibrationH = slot1.vibration_H or 0,
+		_fricConstH = slot1.friction_const_H or 0,
+		_fricCoefH = slot1.friction_coefficient_H or 1,
+		_vibrationV = slot1.vibration_V or 0,
+		_fricConstV = slot1.friction_const_V or 0,
+		_fricCoefV = slot1.friction_coefficient_V or 1,
+		_diff = Vector3.zero,
+		_bounce = slot1.bounce
+	}
 
-	if arg_15_0._shakeInfo._bounce then
-		arg_15_0._shakeInfo._duration = arg_15_0._shakeInfo._duration * 0.5
+	if slot0._shakeInfo._bounce then
+		slot0._shakeInfo._duration = slot0._shakeInfo._duration * 0.5
 	end
 
-	arg_15_0._shakeInfo._priority = arg_15_1.priority
+	slot0._shakeInfo._priority = slot1.priority
 end
 
-function var_0_4.StopShake(arg_16_0)
-	arg_16_0._shakeInfo = nil
+function slot4.StopShake(slot0)
+	slot0._shakeInfo = nil
 end
 
-function var_0_4.DoShake(arg_17_0)
-	arg_17_0._shakeInfo._count = arg_17_0._shakeInfo._count + 1
-	arg_17_0._shakeInfo._elapsed = arg_17_0._shakeInfo._elapsed + Time.deltaTime
+function slot4.DoShake(slot0)
+	slot0._shakeInfo._count = slot0._shakeInfo._count + 1
+	slot0._shakeInfo._elapsed = slot0._shakeInfo._elapsed + Time.deltaTime
 
-	local var_17_0 = arg_17_0._shakeInfo._vibrationH * (math.random() * 0.5 + 0.5) * arg_17_0._shakeInfo._count
-	local var_17_1 = arg_17_0._shakeInfo._vibrationV * (math.random() * 0.5 + 0.5) * arg_17_0._shakeInfo._count
-	local var_17_2 = Vector3(var_17_0, var_17_1, 0):Mul(arg_17_0._shakeInfo._direction)
+	LuaHelper.UpdateTFLocalPos(slot0._cameraTF, Vector3(slot0._shakeInfo._vibrationH * (math.random() * 0.5 + 0.5) * slot0._shakeInfo._count, slot0._shakeInfo._vibrationV * (math.random() * 0.5 + 0.5) * slot0._shakeInfo._count, 0):Mul(slot0._shakeInfo._direction) - slot0._shakeInfo._diff)
 
-	LuaHelper.UpdateTFLocalPos(arg_17_0._cameraTF, var_17_2 - arg_17_0._shakeInfo._diff)
-
-	if arg_17_0._shakeInfo._count >= arg_17_0._shakeInfo._loop then
-		arg_17_0._shakeInfo._vibrationH = arg_17_0._shakeInfo._vibrationH * arg_17_0._shakeInfo._fricCoefH + arg_17_0._shakeInfo._fricConstH
-		arg_17_0._shakeInfo._vibrationV = arg_17_0._shakeInfo._vibrationV * arg_17_0._shakeInfo._fricCoefV + arg_17_0._shakeInfo._fricConstV
-		arg_17_0._shakeInfo._direction = -arg_17_0._shakeInfo._direction
-		arg_17_0._shakeInfo._count = 0
+	if slot0._shakeInfo._loop <= slot0._shakeInfo._count then
+		slot0._shakeInfo._vibrationH = slot0._shakeInfo._vibrationH * slot0._shakeInfo._fricCoefH + slot0._shakeInfo._fricConstH
+		slot0._shakeInfo._vibrationV = slot0._shakeInfo._vibrationV * slot0._shakeInfo._fricCoefV + slot0._shakeInfo._fricConstV
+		slot0._shakeInfo._direction = -slot0._shakeInfo._direction
+		slot0._shakeInfo._count = 0
 	end
 
-	if arg_17_0._shakeInfo._elapsed > arg_17_0._shakeInfo._duration then
-		if arg_17_0._shakeInfo._bounce then
-			var_0_4.bounceReverse(arg_17_0._shakeInfo)
+	if slot0._shakeInfo._duration < slot0._shakeInfo._elapsed then
+		if slot0._shakeInfo._bounce then
+			uv0.bounceReverse(slot0._shakeInfo)
 
-			arg_17_0._shakeInfo._elapsed = 0
-			arg_17_0._shakeInfo._bounce = false
+			slot0._shakeInfo._elapsed = 0
+			slot0._shakeInfo._bounce = false
 		else
-			arg_17_0:StopShake()
+			slot0:StopShake()
 		end
 	else
-		arg_17_0._shakeInfo._diff = var_17_2
+		slot0._shakeInfo._diff = slot3
 	end
 end
 
-function var_0_4.bounceReverse(arg_18_0)
-	if arg_18_0._fricCoefH ~= 0 then
-		arg_18_0._fricCoefH = 1 / arg_18_0._fricCoefH
+function slot4.bounceReverse(slot0)
+	if slot0._fricCoefH ~= 0 then
+		slot0._fricCoefH = 1 / slot0._fricCoefH
 	end
 
-	if arg_18_0._fricCoefV ~= 0 then
-		arg_18_0._fricCoefV = 1 / arg_18_0._fricCoefV
+	if slot0._fricCoefV ~= 0 then
+		slot0._fricCoefV = 1 / slot0._fricCoefV
 	end
 
-	arg_18_0._fricConstH = arg_18_0._fricConstH * -1
-	arg_18_0._fricConstV = arg_18_0._fricConstV * -1
+	slot0._fricConstH = slot0._fricConstH * -1
+	slot0._fricConstV = slot0._fricConstV * -1
 end
 
-function var_0_4.PauseShake(arg_19_0)
-	arg_19_0._shakeEnabled = false
+function slot4.PauseShake(slot0)
+	slot0._shakeEnabled = false
 end
 
-function var_0_4.ResumeShake(arg_20_0)
-	arg_20_0._shakeEnabled = true
+function slot4.ResumeShake(slot0)
+	slot0._shakeEnabled = true
 end
 
-function var_0_4.active(arg_21_0)
-	UpdateBeat:Add(arg_21_0.Update, arg_21_0)
+function slot4.active(slot0)
+	UpdateBeat:Add(slot0.Update, slot0)
 end
 
-function var_0_4.Deactive(arg_22_0)
-	UpdateBeat:Remove(arg_22_0.Update, arg_22_0)
+function slot4.Deactive(slot0)
+	UpdateBeat:Remove(slot0.Update, slot0)
 end
 
-function var_0_4.CutInPainting(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_0:DispatchEvent(var_0_0.Event.New(var_0_2.SHOW_PAINTING, {
-		caster = arg_23_1,
-		speed = arg_23_2
+function slot4.CutInPainting(slot0, slot1, slot2)
+	slot0:DispatchEvent(uv0.Event.New(uv1.SHOW_PAINTING, {
+		caster = slot1,
+		speed = slot2
 	}))
 end
 
-function var_0_4.BulletTime(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
-	local var_24_0 = {
-		key = arg_24_1,
-		speed = arg_24_2,
-		exemptUnit = arg_24_3
-	}
+function slot4.BulletTime(slot0, slot1, slot2, slot3)
+	slot0:DispatchEvent(uv0.Event.New(uv1.BULLET_TIME, {
+		key = slot1,
+		speed = slot2,
+		exemptUnit = slot3
+	}))
+	uv0.Battle.BattleState.GetInstance():ScaleTimer(slot2)
 
-	arg_24_0:DispatchEvent(var_0_0.Event.New(var_0_2.BULLET_TIME, var_24_0))
-	var_0_0.Battle.BattleState.GetInstance():ScaleTimer(arg_24_2)
-
-	if arg_24_0._uiMediator and arg_24_0._uiMediator:GetAppearFX() ~= nil then
-		arg_24_0._uiMediator:GetAppearFX():GetComponent(typeof(Animator)).speed = 1 / (arg_24_2 or 1)
+	if slot0._uiMediator and slot0._uiMediator:GetAppearFX() ~= nil then
+		slot0._uiMediator:GetAppearFX():GetComponent(typeof(Animator)).speed = 1 / (slot2 or 1)
 	end
 end
 
-function var_0_4.ZoomCamara(arg_25_0, arg_25_1, arg_25_2, arg_25_3, arg_25_4)
-	arg_25_3 = arg_25_3 or 1.6
-	arg_25_2 = arg_25_2 or var_0_3.CAMERA_SIZE
-	arg_25_1 = arg_25_1 or arg_25_0._camera.orthographicSize
-
-	local var_25_0 = LeanTween.value(go(arg_25_0._camera), arg_25_1, arg_25_2, arg_25_3):setOnUpdate(System.Action_float(function(arg_26_0)
-		arg_25_0._camera.orthographicSize = arg_26_0
-	end))
-
-	if arg_25_4 then
-		var_25_0:setEase(LeanTweenType.easeOutExpo)
+function slot4.ZoomCamara(slot0, slot1, slot2, slot3, slot4)
+	if slot4 then
+		LeanTween.value(go(slot0._camera), slot1 or slot0._camera.orthographicSize, slot2 or uv0.CAMERA_SIZE, slot3 or 1.6):setOnUpdate(System.Action_float(function (slot0)
+			uv0._camera.orthographicSize = slot0
+		end)):setEase(LeanTweenType.easeOutExpo)
 	end
 end
 
-function var_0_4.FocusCharacter(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4, arg_27_5)
-	arg_27_0:StopShake()
+function slot4.FocusCharacter(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0:StopShake()
 
 	delay = delay or 0
-
-	local var_27_0 = {
-		unit = arg_27_1,
-		duration = arg_27_2,
-		extraBulletTime = arg_27_3,
-		skill = arg_27_4 or false
+	slot6 = {
+		unit = slot1,
+		duration = slot2,
+		extraBulletTime = slot3,
+		skill = slot4 or false
 	}
 
-	LeanTween.cancel(go(arg_27_0._camera))
+	LeanTween.cancel(go(slot0._camera))
 
-	local var_27_1 = arg_27_0._cameraTF.position
+	slot7 = slot0._cameraTF.position
 
-	if arg_27_1 ~= nil then
-		arg_27_0._focusCharacter:SetUnit(arg_27_1)
+	if slot1 ~= nil then
+		slot0._focusCharacter:SetUnit(slot1)
 
-		local var_27_2 = arg_27_0._focusCharacter:GetCameraPos()
+		slot8 = slot0._focusCharacter:GetCameraPos()
 
-		if arg_27_5 == nil then
-			arg_27_5 = true
+		if slot5 == nil then
+			slot5 = true
 		end
 
-		arg_27_0._fromTo:SetFromTo(arg_27_0._camera, var_27_1, var_27_2, arg_27_2, delay, arg_27_5)
-		arg_27_0:SwitchCameraPos(var_0_4.TWEEN_TO_CHARACTER)
+		slot0._fromTo:SetFromTo(slot0._camera, slot7, slot8, slot2, delay, slot5)
+		slot0:SwitchCameraPos(uv0.TWEEN_TO_CHARACTER)
 	else
-		local var_27_3 = arg_27_0._boundFix:GetCameraPos(arg_27_0._followPilot:GetCameraPos())
+		slot8 = slot0._boundFix:GetCameraPos(slot0._followPilot:GetCameraPos())
 
-		local function var_27_4()
-			arg_27_0:SwitchCameraPos()
+		function slot9()
+			uv0:SwitchCameraPos()
 		end
 
-		if arg_27_5 == nil then
-			arg_27_5 = false
+		if slot5 == nil then
+			slot5 = false
 		end
 
-		arg_27_0._fromTo:SetFromTo(arg_27_0._camera, var_27_1, var_27_3, arg_27_2, delay, arg_27_5, var_27_4)
-		arg_27_0:SwitchCameraPos(var_0_4.TWEEN_TO_CHARACTER)
+		slot0._fromTo:SetFromTo(slot0._camera, slot7, slot8, slot2, delay, slot5, slot9)
+		slot0:SwitchCameraPos(uv0.TWEEN_TO_CHARACTER)
 	end
 
-	arg_27_0:DispatchEvent(var_0_0.Event.New(var_0_2.CAMERA_FOCUS, var_27_0))
+	slot0:DispatchEvent(uv1.Event.New(uv2.CAMERA_FOCUS, slot6))
 end
 
-function var_0_4.ResetFocus(arg_29_0)
-	arg_29_0:StopShake()
-	LeanTween.cancel(go(arg_29_0._camera))
-	LeanTween.cancel(go(arg_29_0._uiCamera))
-
-	local var_29_0 = arg_29_0._boundFix:GetCameraPos(arg_29_0._followPilot:GetCameraPos())
-
-	LeanTween.move(go(arg_29_0._camera), var_29_0, var_0_3.CAM_RESET_DURATION):setOnUpdate(System.Action_float(function(arg_30_0)
-		var_0_1.UpdateCameraPositionArgs()
+function slot4.ResetFocus(slot0)
+	slot0:StopShake()
+	LeanTween.cancel(go(slot0._camera))
+	LeanTween.cancel(go(slot0._uiCamera))
+	LeanTween.move(go(slot0._camera), slot0._boundFix:GetCameraPos(slot0._followPilot:GetCameraPos()), uv0.CAM_RESET_DURATION):setOnUpdate(System.Action_float(function (slot0)
+		uv0.UpdateCameraPositionArgs()
 	end))
-	arg_29_0:DispatchEvent(var_0_0.Event.New(var_0_2.CAMERA_FOCUS_RESET, {}))
+	slot0:DispatchEvent(uv2.Event.New(uv3.CAMERA_FOCUS_RESET, {}))
 end
 
-function var_0_4.GetCharacterArrowBarPosition(arg_31_0, arg_31_1, arg_31_2)
-	local var_31_0 = arg_31_0._arrowLeftBottomPos_notch
-	local var_31_1 = arg_31_0._arrowRightTopPos_notch
-	local var_31_2 = arg_31_0._arrowCenterPos
+function slot4.GetCharacterArrowBarPosition(slot0, slot1, slot2)
+	slot3 = slot0._arrowLeftBottomPos_notch
+	slot4 = slot0._arrowRightTopPos_notch
+	slot5 = slot0._arrowCenterPos
 
-	if arg_31_1.x >= arg_31_0._arrowLeftHorizon and arg_31_1.x < arg_31_0._arrowRightHorizon and arg_31_1.y >= arg_31_0._arrowBottomHorizon and arg_31_1.y <= arg_31_0._arrowTopHorizon then
+	if slot0._arrowLeftHorizon <= slot1.x and slot1.x < slot0._arrowRightHorizon and slot0._arrowBottomHorizon <= slot1.y and slot1.y <= slot0._arrowTopHorizon then
 		return nil
 	else
-		local var_31_3 = arg_31_1.y - var_31_2.y
-		local var_31_4
-		local var_31_5
-		local var_31_6
-		local var_31_7
+		slot6 = slot1.y - slot5.y
+		slot7, slot8, slot9, slot10 = nil
 
-		if arg_31_1.x > var_31_2.x then
-			var_31_6 = var_31_1.x
-			var_31_7 = arg_31_1.x - var_31_2.x
+		if slot5.x < slot1.x then
+			slot9 = slot4.x
+			slot10 = slot1.x - slot5.x
 		else
-			var_31_6 = var_31_0.x
-			var_31_7 = var_31_2.x - arg_31_1.x
+			slot9 = slot3.x
+			slot10 = slot5.x - slot1.x
 		end
 
-		local var_31_8 = var_31_3 / var_31_7 * arg_31_0._arrowFieldHalfWidth_notch
-
-		if var_31_8 > var_31_1.y then
-			var_31_8 = var_31_1.y
-			var_31_6 = var_31_7 / var_31_3 * (var_31_8 - var_31_2.y)
-		elseif var_31_8 < var_31_0.y then
-			var_31_8 = var_31_0.y
-			var_31_6 = var_31_7 / var_31_3 * (var_31_8 - var_31_2.y)
+		if slot4.y < slot6 / slot10 * slot0._arrowFieldHalfWidth_notch then
+			slot9 = slot10 / slot6 * (slot4.y - slot5.y)
+		elseif slot8 < slot3.y then
+			slot9 = slot10 / slot6 * (slot3.y - slot5.y)
 		end
 
-		if arg_31_2 then
-			arg_31_2:Set(var_31_6, var_31_8, 10)
+		if slot2 then
+			slot2:Set(slot9, slot8, 10)
 
-			return arg_31_2
+			return slot2
 		else
-			return Vector3(var_31_6, var_31_8, 10)
+			return Vector3(slot9, slot8, 10)
 		end
 	end
 end
 
-function var_0_4.GetCameraPoint(arg_32_0)
-	return arg_32_0._currentCameraPos()
+function slot4.GetCameraPoint(slot0)
+	return slot0._currentCameraPos()
 end
 
-function var_0_4.GetArrowCenterPos(arg_33_0)
-	return arg_33_0._arrowCenterPos
+function slot4.GetArrowCenterPos(slot0)
+	return slot0._arrowCenterPos
 end
 
-function var_0_4.GetCamera(arg_34_0)
-	return arg_34_0._camera
+function slot4.GetCamera(slot0)
+	return slot0._camera
 end
 
-function var_0_4.Add2Camera(arg_35_0, arg_35_1, arg_35_2)
-	arg_35_2 = arg_35_2 or 0
-	arg_35_1 = tf(arg_35_1)
+function slot4.Add2Camera(slot0, slot1, slot2)
+	slot1 = tf(slot1)
 
-	arg_35_1:SetParent(arg_35_0._cameraTF)
-	pg.ViewUtils.SetSortingOrder(arg_35_1, arg_35_2)
+	slot1:SetParent(slot0._cameraTF)
+	pg.ViewUtils.SetSortingOrder(slot1, slot2 or 0)
 
-	return arg_35_0._cameraTF.localScale
+	return slot0._cameraTF.localScale
 end
 
-function var_0_4.PauseCameraTween(arg_36_0)
-	LeanTween.pause(go(arg_36_0._camera))
-	LeanTween.pause(go(arg_36_0._uiCamera))
+function slot4.PauseCameraTween(slot0)
+	LeanTween.pause(go(slot0._camera))
+	LeanTween.pause(go(slot0._uiCamera))
 end
 
-function var_0_4.ResumeCameraTween(arg_37_0)
-	LeanTween.resume(go(arg_37_0._camera))
-	LeanTween.resume(go(arg_37_0._uiCamera))
+function slot4.ResumeCameraTween(slot0)
+	LeanTween.resume(go(slot0._camera))
+	LeanTween.resume(go(slot0._uiCamera))
 end

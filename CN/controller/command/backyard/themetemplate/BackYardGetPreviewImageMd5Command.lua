@@ -1,84 +1,79 @@
-﻿local var_0_0 = class("BackYardGetPreviewImageMd5Command", pm.SimpleCommand)
+slot0 = class("BackYardGetPreviewImageMd5Command", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.type
-	local var_1_2 = var_1_0.callback
-	local var_1_3 = getProxy(DormProxy)
-	local var_1_4 = arg_1_0:GetListByType(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.callback
+	slot5 = getProxy(DormProxy)
 
-	if table.getCount(var_1_4) == 0 then
-		if var_1_2 then
-			var_1_2()
+	if table.getCount(slot0:GetListByType(slot2.type)) == 0 then
+		if slot4 then
+			slot4()
 		end
 
 		return
 	end
 
-	local var_1_5 = {}
+	slot7 = {}
 
-	for iter_1_0, iter_1_1 in pairs(var_1_4) do
-		table.insert(var_1_5, iter_1_1.id)
+	for slot11, slot12 in pairs(slot6) do
+		table.insert(slot7, slot12.id)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19131, {
-		id_list = var_1_5
-	}, 19132, function(arg_2_0)
-		local var_2_0 = {}
+		id_list = slot7
+	}, 19132, function (slot0)
+		slot1 = {
+			[slot6.id] = slot6.md5
+		}
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.list) do
-			var_2_0[iter_2_1.id] = iter_2_1.md5
+		for slot5, slot6 in ipairs(slot0.list) do
+			-- Nothing
 		end
 
-		for iter_2_2, iter_2_3 in pairs(var_1_4) do
-			if not var_2_0[iter_2_3.id] then
-				arg_1_0:DeleteByType(var_1_1, iter_2_3.id)
+		for slot5, slot6 in pairs(uv0) do
+			if not slot1[slot6.id] then
+				uv1:DeleteByType(uv2, slot6.id)
 			else
-				arg_1_0:UpdateMd5ByType(var_1_1, iter_2_3.id, var_2_0[iter_2_3.id])
+				uv1:UpdateMd5ByType(uv2, slot6.id, slot1[slot6.id])
 			end
 		end
 
-		if var_1_2 then
-			var_1_2()
+		if uv3 then
+			uv3()
 		end
 	end)
 end
 
-function var_0_0.GetListByType(arg_3_0, arg_3_1)
-	local var_3_0 = getProxy(DormProxy)
-
-	if arg_3_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		return var_3_0:GetShopThemeTemplates()
-	elseif arg_3_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		return var_3_0:GetCollectionThemeTemplates()
+function slot0.GetListByType(slot0, slot1)
+	if slot1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		return getProxy(DormProxy):GetShopThemeTemplates()
+	elseif slot1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		return slot2:GetCollectionThemeTemplates()
 	end
 
 	assert(false)
 end
 
-function var_0_0.DeleteByType(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = getProxy(DormProxy)
-
-	if arg_4_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		var_4_0:DeleteShopThemeTemplate(arg_4_2)
-	elseif arg_4_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		var_4_0:DeleteCollectionThemeTemplate(arg_4_2)
+function slot0.DeleteByType(slot0, slot1, slot2)
+	if slot1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		getProxy(DormProxy):DeleteShopThemeTemplate(slot2)
+	elseif slot1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot3:DeleteCollectionThemeTemplate(slot2)
 	end
 end
 
-function var_0_0.UpdateMd5ByType(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	local var_5_0 = getProxy(DormProxy)
-	local var_5_1
+function slot0.UpdateMd5ByType(slot0, slot1, slot2, slot3)
+	slot5 = nil
 
-	if arg_5_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		var_5_1 = var_5_0:GetShopThemeTemplateById(arg_5_2)
-	elseif arg_5_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		var_5_1 = var_5_0:GetCollectionThemeTemplateById(arg_5_2)
+	if slot1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot5 = getProxy(DormProxy):GetShopThemeTemplateById(slot2)
+	elseif slot1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot5 = slot4:GetCollectionThemeTemplateById(slot2)
 	end
 
-	if var_5_1 then
-		var_5_1:UpdateIconMd5(arg_5_3)
+	if slot5 then
+		slot5:UpdateIconMd5(slot3)
 	end
 end
 
-return var_0_0
+return slot0

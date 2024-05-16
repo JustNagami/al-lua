@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSMapFleet", import(".WSMapTransform"))
-
-var_0_0.Fields = {
+slot0 = class("WSMapFleet", import(".WSMapTransform"))
+slot0.Fields = {
 	rtShadow = "userdata",
 	rtSub = "userdata",
 	rtArrow = "userdata",
@@ -19,250 +18,239 @@ var_0_0.Fields = {
 	active = "boolean",
 	submarineSupport = "boolean"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdate = "Update"
 }
-var_0_0.EventUpdateSelected = "WSMapFleet.EventUpdateSelected"
+slot0.EventUpdateSelected = "WSMapFleet.EventUpdateSelected"
 
-function var_0_0.GetResName(arg_1_0)
+function slot0.GetResName(slot0)
 	return "ship_tpl"
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.fleet = arg_2_1
+function slot0.Setup(slot0, slot1, slot2)
+	slot0.fleet = slot1
 
-	arg_2_0.fleet:AddListener(WorldMapFleet.EventUpdateLocation, arg_2_0.onUpdate)
-	arg_2_0.fleet:AddListener(WorldMapFleet.EventUpdateShipOrder, arg_2_0.onUpdate)
-	arg_2_0.fleet:AddListener(WorldMapFleet.EventUpdateBuff, arg_2_0.onUpdate)
-	arg_2_0.fleet:AddListener(WorldMapFleet.EventUpdateDamageLevel, arg_2_0.onUpdate)
+	slot0.fleet:AddListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdate)
+	slot0.fleet:AddListener(WorldMapFleet.EventUpdateShipOrder, slot0.onUpdate)
+	slot0.fleet:AddListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdate)
+	slot0.fleet:AddListener(WorldMapFleet.EventUpdateDamageLevel, slot0.onUpdate)
 
-	arg_2_0.theme = arg_2_2
-	arg_2_0.attaches = {}
+	slot0.theme = slot2
+	slot0.attaches = {}
 
-	arg_2_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_3_0)
-	arg_3_0.fleet:RemoveListener(WorldMapFleet.EventUpdateLocation, arg_3_0.onUpdate)
-	arg_3_0.fleet:RemoveListener(WorldMapFleet.EventUpdateShipOrder, arg_3_0.onUpdate)
-	arg_3_0.fleet:RemoveListener(WorldMapFleet.EventUpdateBuff, arg_3_0.onUpdate)
-	arg_3_0.fleet:RemoveListener(WorldMapFleet.EventUpdateDamageLevel, arg_3_0.onUpdate)
-	arg_3_0:ClearAttaches()
-	arg_3_0:ClearHealthTimer()
-	var_0_0.super.Dispose(arg_3_0)
+function slot0.Dispose(slot0)
+	slot0.fleet:RemoveListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdate)
+	slot0.fleet:RemoveListener(WorldMapFleet.EventUpdateShipOrder, slot0.onUpdate)
+	slot0.fleet:RemoveListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdate)
+	slot0.fleet:RemoveListener(WorldMapFleet.EventUpdateDamageLevel, slot0.onUpdate)
+	slot0:ClearAttaches()
+	slot0:ClearHealthTimer()
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_0.Init(arg_4_0)
-	arg_4_0.rtRetreat = arg_4_0.transform:Find("retreat")
-	arg_4_0.rtArrow = arg_4_0.transform:Find("arrow")
-	arg_4_0.rtFx = arg_4_0.transform:Find("fx")
-	arg_4_0.rtShadow = arg_4_0.transform:Find("shadow")
-	arg_4_0.rtSub = arg_4_0.transform:Find("marks/sub")
-	arg_4_0.rtDamage = arg_4_0.transform:Find("marks/damage")
-	arg_4_0.rtMoveTurn = arg_4_0.transform:Find("marks/move_turn")
-	arg_4_0.rtHealth = arg_4_0.transform:Find("Health")
+function slot0.Init(slot0)
+	slot0.rtRetreat = slot0.transform:Find("retreat")
+	slot0.rtArrow = slot0.transform:Find("arrow")
+	slot0.rtFx = slot0.transform:Find("fx")
+	slot0.rtShadow = slot0.transform:Find("shadow")
+	slot0.rtSub = slot0.transform:Find("marks/sub")
+	slot0.rtDamage = slot0.transform:Find("marks/damage")
+	slot0.rtMoveTurn = slot0.transform:Find("marks/move_turn")
+	slot0.rtHealth = slot0.transform:Find("Health")
 
-	setActive(arg_4_0.rtRetreat, false)
-	setActive(arg_4_0.rtArrow, false)
-	setActive(arg_4_0.rtSub, false)
-	setActive(arg_4_0.rtDamage, false)
-	setActive(arg_4_0.rtMoveTurn, false)
-	setActive(arg_4_0.rtHealth, false)
+	setActive(slot0.rtRetreat, false)
+	setActive(slot0.rtArrow, false)
+	setActive(slot0.rtSub, false)
+	setActive(slot0.rtDamage, false)
+	setActive(slot0.rtMoveTurn, false)
+	setActive(slot0.rtHealth, false)
 
-	arg_4_0.transform.name = "fleet_" .. arg_4_0.fleet.id
-	arg_4_0.transform.localEulerAngles = Vector3(-arg_4_0.theme.angle, 0, 0)
-	arg_4_0.rtShadow.localPosition = Vector3.zero
+	slot0.transform.name = "fleet_" .. slot0.fleet.id
+	slot0.transform.localEulerAngles = Vector3(-slot0.theme.angle, 0, 0)
+	slot0.rtShadow.localPosition = Vector3.zero
 
-	arg_4_0:Update()
-	arg_4_0:UpdateActive(arg_4_0.active or true)
-	arg_4_0:UpdateSelected(arg_4_0.selected or false)
-	arg_4_0:UpdateSubmarineSupport()
-	arg_4_0:UpdateModelScale(Vector3(0.4, 0.4, 1))
-	arg_4_0:UpdateModelAngles(Vector3.zero)
+	slot0:Update()
+	slot0:UpdateActive(slot0.active or true)
+	slot0:UpdateSelected(slot0.selected or false)
+	slot0:UpdateSubmarineSupport()
+	slot0:UpdateModelScale(Vector3(0.4, 0.4, 1))
+	slot0:UpdateModelAngles(Vector3.zero)
 
-	arg_4_0.moveTurnCount = 0
+	slot0.moveTurnCount = 0
 end
 
-function var_0_0.LoadSpine(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_0.modelResAsync
-	local var_5_1 = arg_5_0.fleet:GetFlagShipVO()
-	local var_5_2 = SpineRole.New(var_5_1)
+function slot0.LoadSpine(slot0, slot1)
+	slot4 = SpineRole.New(slot0.fleet:GetFlagShipVO())
 
-	var_5_2:Load(function()
-		if arg_5_0.modelType ~= WorldConst.ModelSpine then
-			var_5_2:Dispose()
+	slot4:Load(function ()
+		if uv0.modelType ~= WorldConst.ModelSpine then
+			uv1:Dispose()
 
 			return
 		end
 
-		local var_6_0 = var_5_2.modelRoot.transform
+		slot0 = uv1.modelRoot.transform
+		uv1.model:GetComponent("SkeletonGraphic").raycastTarget = false
+		slot0.anchoredPosition3D = Vector3.zero
+		slot0.localScale = Vector3.one
 
-		var_5_2.model:GetComponent("SkeletonGraphic").raycastTarget = false
-		var_6_0.anchoredPosition3D = Vector3.zero
-		var_6_0.localScale = Vector3.one
+		pg.ViewUtils.SetLayer(slot0, Layer.UI)
+		uv1:SetParent(uv0.model)
 
-		pg.ViewUtils.SetLayer(var_6_0, Layer.UI)
-		var_5_2:SetParent(arg_5_0.model)
-
-		arg_5_0.modelComps = {
-			var_5_2.model:GetComponent("SpineAnimUI")
+		uv0.modelComps = {
+			uv1.model:GetComponent("SpineAnimUI")
 		}
-		arg_5_0.spineRole = var_5_2
+		uv0.spineRole = uv1
 
-		arg_5_1()
-	end, var_5_0, var_5_2.ORBIT_KEY_SLG)
+		uv2()
+	end, slot0.modelResAsync, slot4.ORBIT_KEY_SLG)
 end
 
-function var_0_0.UnloadSpine(arg_7_0)
-	if arg_7_0.spineRole then
-		arg_7_0.spineRole:Dispose()
+function slot0.UnloadSpine(slot0)
+	if slot0.spineRole then
+		slot0.spineRole:Dispose()
 
-		arg_7_0.spineRole = nil
+		slot0.spineRole = nil
 	end
 end
 
-function var_0_0.Update(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0.fleet
+function slot0.Update(slot0, slot1)
+	slot2 = slot0.fleet
 
-	if arg_8_1 == nil or arg_8_1 == WorldMapFleet.EventUpdateLocation and not arg_8_0.isMoving then
-		arg_8_0.transform.anchoredPosition3D = arg_8_0.theme:GetLinePosition(var_8_0.row, var_8_0.column)
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateLocation and not slot0.isMoving then
+		slot0.transform.anchoredPosition3D = slot0.theme:GetLinePosition(slot2.row, slot2.column)
 	end
 
-	if arg_8_1 == nil or arg_8_1 == WorldMapFleet.EventUpdateLocation then
-		arg_8_0:SetModelOrder(WorldConst.LOFleet, var_8_0.row)
-		underscore.each(arg_8_0.attaches, function(arg_9_0)
-			arg_9_0.modelOrder = arg_8_0.modelOrder
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateLocation then
+		slot0:SetModelOrder(WorldConst.LOFleet, slot2.row)
+		underscore.each(slot0.attaches, function (slot0)
+			slot0.modelOrder = uv0.modelOrder
 		end)
 	end
 
-	if arg_8_1 == nil or arg_8_1 == WorldMapFleet.EventUpdateShipOrder then
-		arg_8_0:LoadModel(WorldConst.ModelSpine, var_8_0:GetPrefab(), nil, true, function()
-			arg_8_0.model:SetParent(arg_8_0.transform:Find("ship"), false)
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateShipOrder then
+		slot0:LoadModel(WorldConst.ModelSpine, slot2:GetPrefab(), nil, true, function ()
+			uv0.model:SetParent(uv0.transform:Find("ship"), false)
 		end)
 	end
 
-	if arg_8_1 == nil or arg_8_1 == WorldMapFleet.EventUpdateBuff then
-		arg_8_0:UpdateAttaches()
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateBuff then
+		slot0:UpdateAttaches()
 	end
 
-	if arg_8_1 == nil or arg_8_1 == WorldMapFleet.EventUpdateDamageLevel then
-		arg_8_0:UpdateDamageLevel()
-	end
-end
-
-function var_0_0.UpdateActive(arg_11_0, arg_11_1)
-	if arg_11_0.active ~= arg_11_1 then
-		arg_11_0.active = arg_11_1
-
-		setActive(arg_11_0.transform, arg_11_0.active)
+	if slot1 == nil or slot1 == WorldMapFleet.EventUpdateDamageLevel then
+		slot0:UpdateDamageLevel()
 	end
 end
 
-function var_0_0.UpdateSelected(arg_12_0, arg_12_1)
-	if arg_12_0.selected ~= arg_12_1 then
-		arg_12_0.selected = arg_12_1
+function slot0.UpdateActive(slot0, slot1)
+	if slot0.active ~= slot1 then
+		slot0.active = slot1
 
-		setActive(arg_12_0.rtArrow, arg_12_0.selected)
-		arg_12_0:DispatchEvent(var_0_0.EventUpdateSelected)
+		setActive(slot0.transform, slot0.active)
 	end
 end
 
-function var_0_0.UpdateSubmarineSupport(arg_13_0)
-	local var_13_0 = nowWorld()
-	local var_13_1 = var_13_0:IsSubmarineSupporting()
+function slot0.UpdateSelected(slot0, slot1)
+	if slot0.selected ~= slot1 then
+		slot0.selected = slot1
 
-	setActive(arg_13_0.rtSub, var_13_1)
-
-	if var_13_1 then
-		setGray(arg_13_0.rtSub, not var_13_0:GetSubAidFlag(), false)
+		setActive(slot0.rtArrow, slot0.selected)
+		slot0:DispatchEvent(uv0.EventUpdateSelected)
 	end
 end
 
-function var_0_0.UpdateAttaches(arg_14_0)
-	local var_14_0 = arg_14_0.fleet:GetBuffFxList()
+function slot0.UpdateSubmarineSupport(slot0)
+	slot2 = nowWorld():IsSubmarineSupporting()
 
-	for iter_14_0 = #var_14_0 + 1, #arg_14_0.attaches do
-		arg_14_0.attaches[iter_14_0]:Unload()
-	end
+	setActive(slot0.rtSub, slot2)
 
-	for iter_14_1 = #arg_14_0.attaches + 1, #var_14_0 do
-		local var_14_1 = WPool:Get(WSMapEffect)
-
-		var_14_1.transform = createNewGameObject("mapEffect")
-
-		var_14_1.transform:SetParent(arg_14_0.rtFx, false)
-
-		var_14_1.modelOrder = arg_14_0.modelOrder
-
-		table.insert(arg_14_0.attaches, var_14_1)
-	end
-
-	for iter_14_2 = 1, #var_14_0 do
-		local var_14_2 = arg_14_0.attaches[iter_14_2]
-
-		var_14_2:Setup(WorldConst.GetBuffEffect(var_14_0[iter_14_2]))
-		var_14_2:Load()
+	if slot2 then
+		setGray(slot0.rtSub, not slot1:GetSubAidFlag(), false)
 	end
 end
 
-function var_0_0.ClearAttaches(arg_15_0)
-	local var_15_0 = _.map(arg_15_0.attaches, function(arg_16_0)
-		return arg_16_0.transform
-	end)
-
-	WPool:ReturnArray(arg_15_0.attaches)
-
-	for iter_15_0, iter_15_1 in ipairs(var_15_0) do
-		Destroy(iter_15_1)
+function slot0.UpdateAttaches(slot0)
+	for slot5 = #slot0.fleet:GetBuffFxList() + 1, #slot0.attaches do
+		slot0.attaches[slot5]:Unload()
 	end
 
-	arg_15_0.attaches = {}
-end
+	for slot5 = #slot0.attaches + 1, #slot1 do
+		slot6 = WPool:Get(WSMapEffect)
+		slot6.transform = createNewGameObject("mapEffect")
 
-function var_0_0.UpdateDamageLevel(arg_17_0)
-	local var_17_0 = arg_17_0.fleet.damageLevel
+		slot6.transform:SetParent(slot0.rtFx, false)
 
-	setActive(arg_17_0.rtDamage, var_17_0 > 0)
+		slot6.modelOrder = slot0.modelOrder
 
-	for iter_17_0 = 1, #WorldConst.DamageBuffList do
-		setActive(arg_17_0.rtDamage:Find(iter_17_0), var_17_0 == iter_17_0)
+		table.insert(slot0.attaches, slot6)
+	end
+
+	for slot5 = 1, #slot1 do
+		slot6 = slot0.attaches[slot5]
+
+		slot6:Setup(WorldConst.GetBuffEffect(slot1[slot5]))
+		slot6:Load()
 	end
 end
 
-function var_0_0.PlusMoveTurn(arg_18_0)
-	arg_18_0.moveTurnCount = arg_18_0.moveTurnCount + 1
+function slot0.ClearAttaches(slot0)
+	WPool:ReturnArray(slot0.attaches)
 
-	setText(arg_18_0.rtMoveTurn:Find("Text"), arg_18_0.moveTurnCount)
-	setActive(arg_18_0.rtMoveTurn, arg_18_0.moveTurnCount > 0)
+	for slot5, slot6 in ipairs(_.map(slot0.attaches, function (slot0)
+		return slot0.transform
+	end)) do
+		Destroy(slot6)
+	end
+
+	slot0.attaches = {}
 end
 
-function var_0_0.ClearMoveTurn(arg_19_0)
-	arg_19_0.moveTurnCount = 0
+function slot0.UpdateDamageLevel(slot0)
+	setActive(slot0.rtDamage, slot0.fleet.damageLevel > 0)
 
-	setActive(arg_19_0.rtMoveTurn, false)
+	for slot5 = 1, #WorldConst.DamageBuffList do
+		setActive(slot0.rtDamage:Find(slot5), slot1 == slot5)
+	end
 end
 
-function var_0_0.DisplayHealth(arg_20_0)
-	arg_20_0:ClearHealthTimer()
-	setActive(arg_20_0.rtHealth, true)
+function slot0.PlusMoveTurn(slot0)
+	slot0.moveTurnCount = slot0.moveTurnCount + 1
 
-	arg_20_0.timerHealth = Timer.New(function()
-		setActive(arg_20_0.rtHealth, false)
+	setText(slot0.rtMoveTurn:Find("Text"), slot0.moveTurnCount)
+	setActive(slot0.rtMoveTurn, slot0.moveTurnCount > 0)
+end
 
-		arg_20_0.timerHealth = nil
+function slot0.ClearMoveTurn(slot0)
+	slot0.moveTurnCount = 0
+
+	setActive(slot0.rtMoveTurn, false)
+end
+
+function slot0.DisplayHealth(slot0)
+	slot0:ClearHealthTimer()
+	setActive(slot0.rtHealth, true)
+
+	slot0.timerHealth = Timer.New(function ()
+		setActive(uv0.rtHealth, false)
+
+		uv0.timerHealth = nil
 	end, 2)
 
-	arg_20_0.timerHealth:Start()
+	slot0.timerHealth:Start()
 end
 
-function var_0_0.ClearHealthTimer(arg_22_0)
-	if arg_22_0.timerHealth then
-		arg_22_0.timerHealth:Stop()
+function slot0.ClearHealthTimer(slot0)
+	if slot0.timerHealth then
+		slot0.timerHealth:Stop()
 
-		arg_22_0.timerHealth = nil
+		slot0.timerHealth = nil
 
-		setActive(arg_22_0.rtHealth, false)
+		setActive(slot0.rtHealth, false)
 	end
 end
 
-return var_0_0
+return slot0

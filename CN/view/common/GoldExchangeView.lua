@@ -1,181 +1,181 @@
-﻿local var_0_0 = class("GoldExchangeView")
-
-var_0_0.itemid1 = 12
-var_0_0.itemid2 = 24
-var_0_0.const = 5
-var_0_0.goldNum = {
-	[1] = 3000,
-	[2] = 15000
+slot0 = class("GoldExchangeView")
+slot0.itemid1 = 12
+slot0.itemid2 = 24
+slot0.const = 5
+slot0.goldNum = {
+	[1.0] = 3000,
+	[2.0] = 15000
 }
-var_0_0.gemNum = {
-	[1] = 100,
-	[2] = 450
+slot0.gemNum = {
+	[1.0] = 100,
+	[2.0] = 450
 }
 
-function var_0_0.Ctor(arg_1_0)
-	pg.DelegateInfo.New(arg_1_0)
-	PoolMgr.GetInstance():GetUI("GoldExchangeWindow", false, function(arg_2_0)
-		local var_2_0 = pg.UIMgr.GetInstance().UIMain
+function slot0.Ctor(slot0)
+	pg.DelegateInfo.New(slot0)
+	PoolMgr.GetInstance():GetUI("GoldExchangeWindow", false, function (slot0)
+		slot0.transform:SetParent(pg.UIMgr.GetInstance().UIMain.transform, false)
 
-		arg_2_0.transform:SetParent(var_2_0.transform, false)
+		uv0._go = slot0
+		uv0._tf = slot0.transform
 
-		arg_1_0._go = arg_2_0
-		arg_1_0._tf = arg_2_0.transform
-
-		arg_1_0:init()
+		uv0:init()
 	end)
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0:initData()
-	arg_3_0:initUI()
-	arg_3_0:addListener()
-	arg_3_0:overLayMyself(true)
-	arg_3_0:updateView()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:initUI()
+	slot0:addListener()
+	slot0:overLayMyself(true)
+	slot0:updateView()
 end
 
-function var_0_0.findTF(arg_4_0, arg_4_1, arg_4_2)
-	assert(arg_4_0._tf, "transform should exist")
+function slot0.findTF(slot0, slot1, slot2)
+	assert(slot0._tf, "transform should exist")
 
-	return findTF(arg_4_2 or arg_4_0._tf, arg_4_1)
+	return findTF(slot2 or slot0._tf, slot1)
 end
 
-function var_0_0.exit(arg_5_0)
-	pg.DelegateInfo.Dispose(arg_5_0)
-	arg_5_0:overLayMyself(false)
-	PoolMgr.GetInstance():ReturnUI("GoldExchangeWindow", arg_5_0._go)
+function slot0.exit(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:overLayMyself(false)
+	PoolMgr.GetInstance():ReturnUI("GoldExchangeWindow", slot0._go)
 
 	pg.goldExchangeMgr = nil
 end
 
-function var_0_0.initData(arg_6_0)
-	arg_6_0.selectedIndex = 1
-	arg_6_0.selectedNum = 1
-	arg_6_0.selectedMax = 10
-	arg_6_0.player = getProxy(PlayerProxy):getData()
+function slot0.initData(slot0)
+	slot0.selectedIndex = 1
+	slot0.selectedNum = 1
+	slot0.selectedMax = 10
+	slot0.player = getProxy(PlayerProxy):getData()
 end
 
-function var_0_0.initUI(arg_7_0)
-	arg_7_0.bg = arg_7_0:findTF("BG")
-	arg_7_0.btnBack = arg_7_0:findTF("Window/top/btnBack")
-	arg_7_0.contentTF = arg_7_0:findTF("Window/Content")
-	arg_7_0.goldTF = {}
-	arg_7_0.goldTF[1] = {}
-	arg_7_0.goldTF_1 = arg_7_0:findTF("Gold1", arg_7_0.contentTF)
-	arg_7_0.goldTF[1].itemTF = arg_7_0.goldTF_1
-	arg_7_0.goldTF[1].countTF = arg_7_0:findTF("item/icon_bg/count", arg_7_0.goldTF_1)
-	arg_7_0.goldTF[1].priceTF = arg_7_0:findTF("item/consume/contain/price", arg_7_0.goldTF_1)
-	arg_7_0.goldTF[1].selectedTF = arg_7_0:findTF("item/selected", arg_7_0.goldTF_1)
-	arg_7_0.goldTF[1].selectedNumTF = arg_7_0:findTF("reduce/Text", arg_7_0.goldTF[1].selectedTF)
+function slot0.initUI(slot0)
+	slot0.bg = slot0:findTF("BG")
+	slot0.btnBack = slot0:findTF("Window/top/btnBack")
+	slot0.contentTF = slot0:findTF("Window/Content")
+	slot0.goldTF = {
+		{}
+	}
+	slot0.goldTF_1 = slot0:findTF("Gold1", slot0.contentTF)
+	slot0.goldTF[1].itemTF = slot0.goldTF_1
+	slot0.goldTF[1].countTF = slot0:findTF("item/icon_bg/count", slot0.goldTF_1)
+	slot0.goldTF[1].priceTF = slot0:findTF("item/consume/contain/price", slot0.goldTF_1)
+	slot0.goldTF[1].selectedTF = slot0:findTF("item/selected", slot0.goldTF_1)
+	slot0.goldTF[1].selectedNumTF = slot0:findTF("reduce/Text", slot0.goldTF[1].selectedTF)
 
-	setText(arg_7_0.goldTF[1].countTF, var_0_0.goldNum[1])
-	setText(arg_7_0.goldTF[1].priceTF, var_0_0.gemNum[1])
+	setText(slot0.goldTF[1].countTF, uv0.goldNum[1])
+	setText(slot0.goldTF[1].priceTF, uv0.gemNum[1])
 
-	arg_7_0.goldTF[2] = {}
-	arg_7_0.goldTF_2 = arg_7_0:findTF("Gold2", arg_7_0.contentTF)
-	arg_7_0.goldTF[2].itemTF = arg_7_0.goldTF_2
-	arg_7_0.goldTF[2].countTF = arg_7_0:findTF("item/icon_bg/count", arg_7_0.goldTF_2)
-	arg_7_0.goldTF[2].priceTF = arg_7_0:findTF("item/consume/contain/price", arg_7_0.goldTF_2)
-	arg_7_0.goldTF[2].selectedTF = arg_7_0:findTF("item/selected", arg_7_0.goldTF_2)
-	arg_7_0.goldTF[2].selectedNumTF = arg_7_0:findTF("reduce/Text", arg_7_0.goldTF[2].selectedTF)
+	slot0.goldTF[2] = {}
+	slot0.goldTF_2 = slot0:findTF("Gold2", slot0.contentTF)
+	slot0.goldTF[2].itemTF = slot0.goldTF_2
+	slot0.goldTF[2].countTF = slot0:findTF("item/icon_bg/count", slot0.goldTF_2)
+	slot0.goldTF[2].priceTF = slot0:findTF("item/consume/contain/price", slot0.goldTF_2)
+	slot0.goldTF[2].selectedTF = slot0:findTF("item/selected", slot0.goldTF_2)
+	slot0.goldTF[2].selectedNumTF = slot0:findTF("reduce/Text", slot0.goldTF[2].selectedTF)
 
-	setText(arg_7_0.goldTF[2].countTF, var_0_0.goldNum[2])
-	setText(arg_7_0.goldTF[2].priceTF, var_0_0.gemNum[2])
+	setText(slot0.goldTF[2].countTF, uv0.goldNum[2])
+	setText(slot0.goldTF[2].priceTF, uv0.gemNum[2])
 
-	arg_7_0.gemCountText = arg_7_0:findTF("Tip/DiamondCount", arg_7_0.contentTF)
-	arg_7_0.goldCountText = arg_7_0:findTF("Tip/GoldCount", arg_7_0.contentTF)
-	arg_7_0.shopBtn = arg_7_0:findTF("Window/button_container/ShopBtn")
-	arg_7_0.confirmBtn = arg_7_0:findTF("Window/button_container/ConfirmBtn")
+	slot0.gemCountText = slot0:findTF("Tip/DiamondCount", slot0.contentTF)
+	slot0.goldCountText = slot0:findTF("Tip/GoldCount", slot0.contentTF)
+	slot0.shopBtn = slot0:findTF("Window/button_container/ShopBtn")
+	slot0.confirmBtn = slot0:findTF("Window/button_container/ConfirmBtn")
 end
 
-function var_0_0.addListener(arg_8_0)
-	onButton(arg_8_0, arg_8_0.bg, function()
-		arg_8_0:exit()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.bg, function ()
+		uv0:exit()
 	end, SFX_CANCEL)
-	onButton(arg_8_0, arg_8_0.btnBack, function()
-		arg_8_0:exit()
+	onButton(slot0, slot0.btnBack, function ()
+		uv0:exit()
 	end, SFX_CANCEL)
-	onButton(arg_8_0, arg_8_0.shopBtn, function()
+	onButton(slot0, slot0.shopBtn, function ()
 		if getProxy(ContextProxy):getContextByMediator(ChargeMediator) then
-			arg_8_0:exit()
+			uv0:exit()
 		else
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
 				wrap = ChargeScene.TYPE_ITEM
 			})
 		end
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.confirmBtn, function()
-		local var_12_0
 
-		if arg_8_0.selectedIndex == 1 then
-			var_12_0 = var_0_0.itemid1
-		elseif arg_8_0.selectedIndex == 2 then
-			var_12_0 = var_0_0.itemid2
+	function slot4()
+		slot0 = nil
+
+		if uv0.selectedIndex == 1 then
+			slot0 = uv1.itemid1
+		elseif uv0.selectedIndex == 2 then
+			slot0 = uv1.itemid2
 		end
 
 		pg.m02:sendNotification(GAME.SHOPPING, {
 			isQuickShopping = true,
-			id = var_12_0,
-			count = arg_8_0.selectedNum
+			id = slot0,
+			count = uv0.selectedNum
 		})
-		arg_8_0:exit()
-	end, SFX_PANEL)
+		uv0:exit()
+	end
 
-	for iter_8_0 = 1, 2 do
-		onButton(arg_8_0, arg_8_0.goldTF[iter_8_0].itemTF, function()
-			if arg_8_0.selectedIndex == iter_8_0 then
-				arg_8_0.selectedNum = math.min(arg_8_0.selectedNum + 1, arg_8_0.selectedMax)
+	onButton(slot0, slot0.confirmBtn, slot4, SFX_PANEL)
+
+	for slot4 = 1, 2 do
+		onButton(slot0, slot0.goldTF[slot4].itemTF, function ()
+			if uv0.selectedIndex == uv1 then
+				uv0.selectedNum = math.min(uv0.selectedNum + 1, uv0.selectedMax)
 			else
-				arg_8_0.selectedIndex = iter_8_0
-				arg_8_0.selectedNum = 1
+				uv0.selectedIndex = uv1
+				uv0.selectedNum = 1
 			end
 
-			arg_8_0:updateView()
+			uv0:updateView()
 		end, SFX_PANEL)
-		onButton(arg_8_0, arg_8_0.goldTF[iter_8_0].selectedTF, function()
-			if arg_8_0.selectedNum > 1 then
-				arg_8_0.selectedNum = arg_8_0.selectedNum - 1
+		onButton(slot0, slot0.goldTF[slot4].selectedTF, function ()
+			if uv0.selectedNum > 1 then
+				uv0.selectedNum = uv0.selectedNum - 1
 
-				arg_8_0:updateView()
+				uv0:updateView()
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.updateView(arg_15_0)
-	for iter_15_0 = 1, 2 do
-		setActive(arg_15_0.goldTF[iter_15_0].selectedTF, iter_15_0 == arg_15_0.selectedIndex)
-		setActive(arg_15_0.goldTF[3 - iter_15_0].selectedTF, iter_15_0 ~= arg_15_0.selectedIndex)
+function slot0.updateView(slot0)
+	for slot4 = 1, 2 do
+		setActive(slot0.goldTF[slot4].selectedTF, slot4 == slot0.selectedIndex)
+		setActive(slot0.goldTF[3 - slot4].selectedTF, slot4 ~= slot0.selectedIndex)
 
-		if iter_15_0 == arg_15_0.selectedIndex then
-			setText(arg_15_0.goldTF[iter_15_0].selectedNumTF, arg_15_0.selectedNum)
+		if slot4 == slot0.selectedIndex then
+			setText(slot0.goldTF[slot4].selectedNumTF, slot0.selectedNum)
 		end
 	end
 
-	local var_15_0
-	local var_15_1
-	local var_15_2 = var_0_0.gemNum[arg_15_0.selectedIndex] * arg_15_0.selectedNum
-	local var_15_3 = var_0_0.goldNum[arg_15_0.selectedIndex] * arg_15_0.selectedNum
+	slot1, slot2 = nil
+	slot1 = uv0.gemNum[slot0.selectedIndex] * slot0.selectedNum
+	slot2 = uv0.goldNum[slot0.selectedIndex] * slot0.selectedNum
 
-	setText(arg_15_0.gemCountText, var_15_2)
+	setText(slot0.gemCountText, slot1)
 
-	if var_15_2 > arg_15_0.player:getTotalGem() then
-		setTextColor(arg_15_0.gemCountText, Color.red)
+	if slot0.player:getTotalGem() < slot1 then
+		setTextColor(slot0.gemCountText, Color.red)
 	else
-		setTextColor(arg_15_0.gemCountText, Color.yellow)
+		setTextColor(slot0.gemCountText, Color.yellow)
 	end
 
-	setText(arg_15_0.goldCountText, var_15_3)
+	setText(slot0.goldCountText, slot2)
 end
 
-function var_0_0.overLayMyself(arg_16_0, arg_16_1)
-	if arg_16_1 == true then
-		pg.UIMgr.GetInstance():BlurPanel(arg_16_0._tf, false, {
+function slot0.overLayMyself(slot0, slot1)
+	if slot1 == true then
+		pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(arg_16_0._tf)
+		pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 	end
 end
 
-return var_0_0
+return slot0

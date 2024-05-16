@@ -1,50 +1,50 @@
-﻿local var_0_0 = class("CourtYardStoreyDragBtn")
+slot0 = class("CourtYardStoreyDragBtn")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._go = arg_1_1.gameObject
-	arg_1_0.agent = CourtYardDragAgent.New(arg_1_0, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._tf = slot1
+	slot0._go = slot1.gameObject
+	slot0.agent = CourtYardDragAgent.New(slot0, slot2)
 
-	arg_1_0.agent:Enable(false)
+	slot0.agent:Enable(false)
 end
 
-function var_0_0.Active(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.OnDragCallBack = arg_2_1
-	arg_2_0.OnDragingCallBack = arg_2_2
-	arg_2_0.OnDragEndCallBack = arg_2_3
+function slot0.Active(slot0, slot1, slot2, slot3)
+	slot0.OnDragCallBack = slot1
+	slot0.OnDragingCallBack = slot2
+	slot0.OnDragEndCallBack = slot3
 
-	arg_2_0.agent:Enable(true)
+	slot0.agent:Enable(true)
 end
 
-function var_0_0.DeActive(arg_3_0)
-	arg_3_0.OnDragCallBack = nil
-	arg_3_0.OnDragingCallBack = nil
-	arg_3_0.OnDragEndCallBack = nil
+function slot0.DeActive(slot0)
+	slot0.OnDragCallBack = nil
+	slot0.OnDragingCallBack = nil
+	slot0.OnDragEndCallBack = nil
 
-	arg_3_0.agent:Enable(false)
+	slot0.agent:Enable(false)
 end
 
-function var_0_0.OnBeginDrag(arg_4_0)
-	if arg_4_0.OnDragCallBack then
-		arg_4_0.OnDragCallBack()
+function slot0.OnBeginDrag(slot0)
+	if slot0.OnDragCallBack then
+		slot0.OnDragCallBack()
 	end
 end
 
-function var_0_0.OnDragging(arg_5_0, arg_5_1)
-	if arg_5_0.OnDragingCallBack then
-		arg_5_0.OnDragingCallBack(arg_5_1)
+function slot0.OnDragging(slot0, slot1)
+	if slot0.OnDragingCallBack then
+		slot0.OnDragingCallBack(slot1)
 	end
 end
 
-function var_0_0.OnDragEnd(arg_6_0, arg_6_1)
-	if arg_6_0.OnDragEndCallBack then
-		arg_6_0.OnDragEndCallBack(arg_6_1)
+function slot0.OnDragEnd(slot0, slot1)
+	if slot0.OnDragEndCallBack then
+		slot0.OnDragEndCallBack(slot1)
 	end
 end
 
-function var_0_0.Dispose(arg_7_0)
-	arg_7_0:DeActive()
-	arg_7_0.agent:Dispose()
+function slot0.Dispose(slot0)
+	slot0:DeActive()
+	slot0.agent:Dispose()
 end
 
-return var_0_0
+return slot0

@@ -1,155 +1,145 @@
-﻿local var_0_0 = _G
-local var_0_1 = require("string")
-local var_0_2 = require("socket")
-local var_0_3 = require("ltn12")
+slot0 = _G
+slot1 = require("string")
+slot2 = require("socket")
+slot3 = require("ltn12")
+slot2.tp = {}
+slot4 = slot2.tp
+slot4.TIMEOUT = 60
 
-var_0_2.tp = {}
+function slot5(slot0)
+	slot1, slot2, slot3 = nil
+	slot6, slot5 = slot0:receive()
 
-local var_0_4 = var_0_2.tp
-
-var_0_4.TIMEOUT = 60
-
-local function var_0_5(arg_1_0)
-	local var_1_0
-	local var_1_1
-	local var_1_2
-	local var_1_3, var_1_4 = arg_1_0:receive()
-	local var_1_5 = var_1_3
-
-	if var_1_4 then
-		return nil, var_1_4
+	if slot5 then
+		return nil, slot5
 	end
 
-	local var_1_6, var_1_7 = var_0_2.skip(2, var_0_1.find(var_1_3, "^(%d%d%d)(.?)"))
+	slot7, slot3 = uv0.skip(2, uv1.find(slot4, "^(%d%d%d)(.?)"))
 
-	if not var_1_6 then
+	if not slot7 then
 		return nil, "invalid server reply"
 	end
 
-	if var_1_7 == "-" then
+	if slot3 == "-" then
 		repeat
-			local var_1_8, var_1_9 = arg_1_0:receive()
+			slot4, slot8 = slot0:receive()
 
-			if var_1_9 then
-				return nil, var_1_9
+			if slot8 then
+				return nil, slot5
 			end
 
-			local var_1_10, var_1_11 = var_0_2.skip(2, var_0_1.find(var_1_8, "^(%d%d%d)(.?)"))
-
-			var_1_5 = var_1_5 .. "\n" .. var_1_8
-		until var_1_6 == var_1_10 and var_1_11 == " "
+			slot7, slot3 = uv0.skip(2, uv1.find(slot4, "^(%d%d%d)(.?)"))
+			slot6 = slot6 .. "\n" .. slot4
+		until slot1 == slot7 and slot3 == " "
 	end
 
-	return var_1_6, var_1_5
+	return slot1, slot6
 end
 
-local var_0_6 = {
+slot6 = {
 	__index = {}
 }
 
-function var_0_6.__index.getpeername(arg_2_0)
-	return arg_2_0.c:getpeername()
+function slot6.__index.getpeername(slot0)
+	return slot0.c:getpeername()
 end
 
-function var_0_6.__index.getsockname(arg_3_0)
-	return arg_3_0.c:getpeername()
+function slot6.__index.getsockname(slot0)
+	return slot0.c:getpeername()
 end
 
-function var_0_6.__index.check(arg_4_0, arg_4_1)
-	local var_4_0, var_4_1 = var_0_5(arg_4_0.c)
+function slot6.__index.check(slot0, slot1)
+	slot2, slot3 = uv0(slot0.c)
 
-	if not var_4_0 then
-		return nil, var_4_1
+	if not slot2 then
+		return nil, slot3
 	end
 
-	if var_0_0.type(arg_4_1) ~= "function" then
-		if var_0_0.type(arg_4_1) == "table" then
-			for iter_4_0, iter_4_1 in var_0_0.ipairs(arg_4_1) do
-				if var_0_1.find(var_4_0, iter_4_1) then
-					return var_0_0.tonumber(var_4_0), var_4_1
+	if uv1.type(slot1) ~= "function" then
+		if uv1.type(slot1) == "table" then
+			for slot7, slot8 in uv1.ipairs(slot1) do
+				if uv2.find(slot2, slot8) then
+					return uv1.tonumber(slot2), slot3
 				end
 			end
 
-			return nil, var_4_1
-		elseif var_0_1.find(var_4_0, arg_4_1) then
-			return var_0_0.tonumber(var_4_0), var_4_1
+			return nil, slot3
+		elseif uv2.find(slot2, slot1) then
+			return uv1.tonumber(slot2), slot3
 		else
-			return nil, var_4_1
+			return nil, slot3
 		end
 	else
-		return arg_4_1(var_0_0.tonumber(var_4_0), var_4_1)
+		return slot1(uv1.tonumber(slot2), slot3)
 	end
 end
 
-function var_0_6.__index.command(arg_5_0, arg_5_1, arg_5_2)
-	arg_5_1 = var_0_1.upper(arg_5_1)
-
-	if arg_5_2 then
-		return arg_5_0.c:send(arg_5_1 .. " " .. arg_5_2 .. "\r\n")
+function slot6.__index.command(slot0, slot1, slot2)
+	if slot2 then
+		return slot0.c:send(uv0.upper(slot1) .. " " .. slot2 .. "\r\n")
 	else
-		return arg_5_0.c:send(arg_5_1 .. "\r\n")
+		return slot0.c:send(slot1 .. "\r\n")
 	end
 end
 
-function var_0_6.__index.sink(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0, var_6_1 = arg_6_0.c:receive(arg_6_2)
+function slot6.__index.sink(slot0, slot1, slot2)
+	slot3, slot4 = slot0.c:receive(slot2)
 
-	return arg_6_1(var_6_0, var_6_1)
+	return slot1(slot3, slot4)
 end
 
-function var_0_6.__index.send(arg_7_0, arg_7_1)
-	return arg_7_0.c:send(arg_7_1)
+function slot6.__index.send(slot0, slot1)
+	return slot0.c:send(slot1)
 end
 
-function var_0_6.__index.receive(arg_8_0, arg_8_1)
-	return arg_8_0.c:receive(arg_8_1)
+function slot6.__index.receive(slot0, slot1)
+	return slot0.c:receive(slot1)
 end
 
-function var_0_6.__index.getfd(arg_9_0)
-	return arg_9_0.c:getfd()
+function slot6.__index.getfd(slot0)
+	return slot0.c:getfd()
 end
 
-function var_0_6.__index.dirty(arg_10_0)
-	return arg_10_0.c:dirty()
+function slot6.__index.dirty(slot0)
+	return slot0.c:dirty()
 end
 
-function var_0_6.__index.getcontrol(arg_11_0)
-	return arg_11_0.c
+function slot6.__index.getcontrol(slot0)
+	return slot0.c
 end
 
-function var_0_6.__index.source(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = var_0_2.sink("keep-open", arg_12_0.c)
-	local var_12_1, var_12_2 = var_0_3.pump.all(arg_12_1, var_12_0, arg_12_2 or var_0_3.pump.step)
+function slot6.__index.source(slot0, slot1, slot2)
+	slot4, slot5 = uv1.pump.all(slot1, uv0.sink("keep-open", slot0.c), slot2 or uv1.pump.step)
 
-	return var_12_1, var_12_2
+	return slot4, slot5
 end
 
-function var_0_6.__index.close(arg_13_0)
-	arg_13_0.c:close()
+function slot6.__index.close(slot0)
+	slot0.c:close()
 
 	return 1
 end
 
-function var_0_4.connect(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
-	local var_14_0, var_14_1 = (arg_14_3 or var_0_2.tcp)()
+function slot4.connect(slot0, slot1, slot2, slot3)
+	slot4, slot5 = slot3 or uv0.tcp()
 
-	if not var_14_0 then
-		return nil, var_14_1
+	if not slot4 then
+		return nil, slot5
 	end
 
-	var_14_0:settimeout(arg_14_2 or var_0_4.TIMEOUT)
+	slot4:settimeout(slot2 or uv1.TIMEOUT)
 
-	local var_14_2, var_14_3 = var_14_0:connect(arg_14_0, arg_14_1)
+	slot6, slot7 = slot4:connect(slot0, slot1)
 
-	if not var_14_2 then
-		var_14_0:close()
+	if not slot6 then
+		slot4:close()
 
-		return nil, var_14_3
+		return nil, slot7
 	end
 
-	return var_0_0.setmetatable({
-		c = var_14_0
-	}, var_0_6)
+	return uv2.setmetatable({
+		c = slot4
+	}, uv3)
 end
 
-return var_0_4
+return slot4

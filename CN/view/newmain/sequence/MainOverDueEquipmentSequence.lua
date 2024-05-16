@@ -1,69 +1,67 @@
-﻿local var_0_0 = class("MainOverDueEquipmentSequence", import(".MainSublayerSequence"))
+slot0 = class("MainOverDueEquipmentSequence", import(".MainSublayerSequence"))
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(EquipmentProxy):getTimeLimitShipList()
-
-	if #var_1_0 > 0 then
-		arg_1_0:ShowMsgBox({
+function slot0.Execute(slot0, slot1)
+	if #getProxy(EquipmentProxy):getTimeLimitShipList() > 0 then
+		slot0:ShowMsgBox({
 			item2Row = true,
-			itemList = var_1_0,
+			itemList = slot2,
 			content = i18n("time_limit_equip_destroy_on_ship"),
-			onYes = arg_1_1,
-			onNo = arg_1_1
+			onYes = slot1,
+			onNo = slot1
 		})
 	else
-		arg_1_1()
+		slot1()
 	end
 end
 
-function var_0_0.ShowMsgBox(arg_2_0, arg_2_1)
+function slot0.ShowMsgBox(slot0, slot1)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
 		type = MSGBOX_TYPE_ITEM_BOX,
-		items = arg_2_1.itemList,
-		content = arg_2_1.content,
-		item2Row = arg_2_1.item2Row,
-		itemFunc = function(arg_3_0)
-			arg_2_0:ShowItemBox(arg_3_0, function()
-				arg_2_0:ShowMsgBox(arg_2_1)
+		items = slot1.itemList,
+		content = slot1.content,
+		item2Row = slot1.item2Row,
+		itemFunc = function (slot0)
+			uv0:ShowItemBox(slot0, function ()
+				uv0:ShowMsgBox(uv1)
 			end)
 		end,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function var_0_0.ShowItemBox(arg_5_0, arg_5_1, arg_5_2)
-	if arg_5_1.type == DROP_TYPE_EQUIP then
-		arg_5_0:AddSubLayers(Context.New({
+function slot0.ShowItemBox(slot0, slot1, slot2)
+	if slot1.type == DROP_TYPE_EQUIP then
+		slot0:AddSubLayers(Context.New({
 			mediator = EquipmentInfoMediator,
 			viewComponent = EquipmentInfoLayer,
 			data = {
-				equipmentId = arg_5_1:getConfig("id"),
+				equipmentId = slot1:getConfig("id"),
 				type = EquipmentInfoMediator.TYPE_DISPLAY,
-				onRemoved = arg_5_2,
+				onRemoved = slot2,
 				LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
 			}
 		}))
-	elseif arg_5_1.type == DROP_TYPE_SPWEAPON then
-		arg_5_0:AddSubLayers(Context.New({
+	elseif slot1.type == DROP_TYPE_SPWEAPON then
+		slot0:AddSubLayers(Context.New({
 			mediator = SpWeaponInfoMediator,
 			viewComponent = SpWeaponInfoLayer,
 			data = {
-				spWeaponConfigId = arg_5_1:getConfig("id"),
+				spWeaponConfigId = slot1:getConfig("id"),
 				type = SpWeaponInfoLayer.TYPE_DISPLAY,
-				onRemoved = arg_5_2,
+				onRemoved = slot2,
 				LayerWeightMgr_weight = LayerWeightConst.TOP_LAYER
 			}
 		}))
 	else
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
-			drop = arg_5_1,
-			onNo = arg_5_2,
-			onYes = arg_5_2,
+			drop = slot1,
+			onNo = slot2,
+			onYes = slot2,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end
 end
 
-return var_0_0
+return slot0

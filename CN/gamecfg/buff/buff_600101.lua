@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrBloodrage",
-			trigger = {
-				"onAttach",
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				threshold = 1,
-				value = 1.66667,
-				attr = "damageRatioBullet"
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -77,5 +63,19 @@
 	stack = 1,
 	id = 600101,
 	icon = 600101,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrBloodrage",
+			trigger = {
+				"onAttach",
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				threshold = 1,
+				value = 1.66667,
+				attr = "damageRatioBullet"
+			}
+		}
+	}
 }

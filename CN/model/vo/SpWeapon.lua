@@ -1,334 +1,312 @@
-﻿local var_0_0 = class("SpWeapon", import(".BaseVO"))
+slot0 = class("SpWeapon", import(".BaseVO"))
+slot0.type = DROP_TYPE_SPWEAPON
+slot0.CONFIRM_OP_DISCARD = 0
+slot0.CONFIRM_OP_EXCHANGE = 1
 
-var_0_0.type = DROP_TYPE_SPWEAPON
-var_0_0.CONFIRM_OP_DISCARD = 0
-var_0_0.CONFIRM_OP_EXCHANGE = 1
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0.configId = arg_1_1.id
+	slot0.configId = slot1.id
 end
 
-function var_0_0.CreateByNet(arg_2_0)
-	if arg_2_0.template_id == 0 then
+function slot0.CreateByNet(slot0)
+	if slot0.template_id == 0 then
 		return
 	end
 
-	local var_2_0 = {
-		uid = arg_2_0.id,
-		id = arg_2_0.template_id,
-		attr1 = arg_2_0.attr_1,
-		attr2 = arg_2_0.attr_2,
-		attrTemp1 = arg_2_0.attr_temp_1,
-		attrTemp2 = arg_2_0.attr_temp_2,
-		pt = arg_2_0.pt
-	}
-
-	return var_0_0.New(var_2_0)
+	return uv0.New({
+		uid = slot0.id,
+		id = slot0.template_id,
+		attr1 = slot0.attr_1,
+		attr2 = slot0.attr_2,
+		attrTemp1 = slot0.attr_temp_1,
+		attrTemp2 = slot0.attr_temp_2,
+		pt = slot0.pt
+	})
 end
 
-function var_0_0.bindConfigTable(arg_3_0)
+function slot0.bindConfigTable(slot0)
 	return pg.spweapon_data_statistics
 end
 
-function var_0_0.GetUID(arg_4_0)
-	return arg_4_0.uid
+function slot0.GetUID(slot0)
+	return slot0.uid
 end
 
-function var_0_0.IsReal(arg_5_0)
-	return tobool(arg_5_0:GetUID())
+function slot0.IsReal(slot0)
+	return tobool(slot0:GetUID())
 end
 
-function var_0_0.GetConfigID(arg_6_0)
-	return arg_6_0.configId
+function slot0.GetConfigID(slot0)
+	return slot0.configId
 end
 
-function var_0_0.GetOriginID(arg_7_0)
-	return arg_7_0:getConfig("base") or arg_7_0:GetConfigID()
+function slot0.GetOriginID(slot0)
+	return slot0:getConfig("base") or slot0:GetConfigID()
 end
 
-function var_0_0.IsImportant(arg_8_0)
-	return arg_8_0:getConfig("important") == 2
+function slot0.IsImportant(slot0)
+	return slot0:getConfig("important") == 2
 end
 
-function var_0_0.IsUnique(arg_9_0)
-	return arg_9_0:getConfig("unique") ~= 0
+function slot0.IsUnique(slot0)
+	return slot0:getConfig("unique") ~= 0
 end
 
-function var_0_0.GetUniqueGroup(arg_10_0)
-	return arg_10_0:getConfig("unique")
+function slot0.GetUniqueGroup(slot0)
+	return slot0:getConfig("unique")
 end
 
-function var_0_0.GetType(arg_11_0)
-	return arg_11_0:getConfig("type")
+function slot0.GetType(slot0)
+	return slot0:getConfig("type")
 end
 
-function var_0_0.GetName(arg_12_0)
-	return arg_12_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetLevel(arg_13_0)
-	return arg_13_0:getConfig("level")
+function slot0.GetLevel(slot0)
+	return slot0:getConfig("level")
 end
 
-function var_0_0.GetTechTier(arg_14_0)
-	return arg_14_0:getConfig("tech")
+function slot0.GetTechTier(slot0)
+	return slot0:getConfig("tech")
 end
 
-function var_0_0.GetIconPath(arg_15_0)
-	return "SpWeapon/" .. arg_15_0:getConfig("icon")
+function slot0.GetIconPath(slot0)
+	return "SpWeapon/" .. slot0:getConfig("icon")
 end
 
-function var_0_0.GetRarity(arg_16_0)
-	return arg_16_0:getConfig("rarity")
+function slot0.GetRarity(slot0)
+	return slot0:getConfig("rarity")
 end
 
-function var_0_0.GetPt(arg_17_0)
-	return arg_17_0:IsReal() and arg_17_0.pt or 0
+function slot0.GetPt(slot0)
+	return slot0:IsReal() and slot0.pt or 0
 end
 
-function var_0_0.SetPt(arg_18_0, arg_18_1)
-	assert(arg_18_1)
+function slot0.SetPt(slot0, slot1)
+	assert(slot1)
 
-	arg_18_0.pt = arg_18_1 or 0
+	slot0.pt = slot1 or 0
 end
 
-function var_0_0.GetEffect(arg_19_0)
-	return arg_19_0:getConfig("effect_id")
+function slot0.GetEffect(slot0)
+	return slot0:getConfig("effect_id")
 end
 
-function var_0_0.GetDisplayEffect(arg_20_0)
-	return arg_20_0:getConfig("effect_id_display")
+function slot0.GetDisplayEffect(slot0)
+	return slot0:getConfig("effect_id_display")
 end
 
-function var_0_0.GetUpgradableSkillIds(arg_21_0)
-	return arg_21_0:getConfig("skill_upgrade")
+function slot0.GetUpgradableSkillIds(slot0)
+	return slot0:getConfig("skill_upgrade")
 end
 
-function var_0_0.GetNextUpgradeID(arg_22_0)
-	return arg_22_0:getConfig("next")
+function slot0.GetNextUpgradeID(slot0)
+	return slot0:getConfig("next")
 end
 
-function var_0_0.GetPrevUpgradeID(arg_23_0)
-	return arg_23_0:getConfig("prev")
+function slot0.GetPrevUpgradeID(slot0)
+	return slot0:getConfig("prev")
 end
 
-function var_0_0.MigrateTo(arg_24_0, arg_24_1)
-	local var_24_0 = Clone(arg_24_0)
+function slot0.MigrateTo(slot0, slot1)
+	slot2 = Clone(slot0)
+	slot2.id = slot1
+	slot2.configId = slot1
+	slot2.pt = 0
 
-	var_24_0.id = arg_24_1
-	var_24_0.configId = arg_24_1
-	var_24_0.pt = 0
-
-	return var_24_0
+	return slot2
 end
 
-function var_0_0.GetLabel(arg_25_0)
-	return arg_25_0:getConfig("label")
+function slot0.GetLabel(slot0)
+	return slot0:getConfig("label")
 end
 
-function var_0_0.SetShipId(arg_26_0, arg_26_1)
-	arg_26_0.shipId = arg_26_1
+function slot0.SetShipId(slot0, slot1)
+	slot0.shipId = slot1
 end
 
-function var_0_0.GetShipId(arg_27_0)
-	return arg_27_0.shipId
+function slot0.GetShipId(slot0)
+	return slot0.shipId
 end
 
-function var_0_0.GetSkill(arg_28_0)
-	local var_28_0 = arg_28_0:GetEffect()
-
-	return var_28_0 > 0 and getSkillConfig(var_28_0) or nil
+function slot0.GetSkill(slot0)
+	return slot0:GetEffect() > 0 and getSkillConfig(slot1) or nil
 end
 
-function var_0_0.GetSkillInfo(arg_29_0)
-	local var_29_0 = {
+function slot0.GetSkillInfo(slot0)
+	slot1.unlock = ({
 		lv = 1,
-		skillId = arg_29_0:GetDisplayEffect()
-	}
+		skillId = slot0:GetDisplayEffect()
+	}).skillId == slot0:GetEffect()
 
-	var_29_0.unlock = var_29_0.skillId == arg_29_0:GetEffect()
-
-	return var_29_0
+	return slot1
 end
 
-function var_0_0.GetUpgradableSkillInfo(arg_30_0)
-	local var_30_0 = 0
-	local var_30_1 = 1
-	local var_30_2 = false
-	local var_30_3 = arg_30_0:GetShipId()
+function slot0.GetUpgradableSkillInfo(slot0)
+	slot1 = 0
+	slot3 = false
 
-	if var_30_3 then
-		local var_30_4 = getProxy(BayProxy):getShipById(var_30_3)
-		local var_30_5, var_30_6 = arg_30_0:GetActiveUpgradableSkill(var_30_4)
+	if slot0:GetShipId() then
+		slot6, slot7 = slot0:GetActiveUpgradableSkill(getProxy(BayProxy):getShipById(slot4))
 
-		if var_30_5 then
-			var_30_0 = var_30_5
+		if slot6 then
+			slot1 = slot6
 
-			local var_30_7 = var_30_4 and var_30_4.skills[var_30_6]
+			if slot5 and slot5.skills[slot7] then
+				slot2 = slot8.level or 1
+			end
 
-			var_30_1 = var_30_7 and var_30_7.level or var_30_1
-			var_30_2 = true
+			slot3 = true
 		end
 	end
 
-	if var_30_0 == 0 then
-		local var_30_8 = arg_30_0:GetUpgradableSkillIds()[1]
-
-		if var_30_8 and var_30_8[2] then
-			var_30_0 = var_30_8[2]
-			var_30_2 = var_30_8[1] ~= 0
-		end
+	if slot1 == 0 and slot0:GetUpgradableSkillIds()[1] and slot5[2] then
+		slot1 = slot5[2]
+		slot3 = slot5[1] ~= 0
 	end
 
 	return {
-		skillId = var_30_0,
-		lv = var_30_1,
-		unlock = var_30_2
+		skillId = slot1,
+		lv = slot2,
+		unlock = slot3
 	}
 end
 
-function var_0_0.GetActiveUpgradableSkill(arg_31_0, arg_31_1)
-	for iter_31_0, iter_31_1 in ipairs(arg_31_1:getSkillList()) do
-		local var_31_0, var_31_1 = arg_31_0:RemapSkillId(iter_31_1)
+function slot0.GetActiveUpgradableSkill(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1:getSkillList()) do
+		slot7, slot8 = slot0:RemapSkillId(slot6)
 
-		if var_31_1 then
-			return var_31_0, iter_31_1
+		if slot8 then
+			return slot7, slot6
 		end
 	end
 end
 
-function var_0_0.RemapSkillId(arg_32_0, arg_32_1)
-	for iter_32_0, iter_32_1 in ipairs(arg_32_0:GetUpgradableSkillIds()) do
-		if iter_32_1[1] == arg_32_1 then
-			return iter_32_1[2], true
+function slot0.RemapSkillId(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0:GetUpgradableSkillIds()) do
+		if slot6[1] == slot1 then
+			return slot6[2], true
 		end
 	end
 
-	return arg_32_1, false
+	return slot1, false
 end
 
-function var_0_0.GetSkillGroup(arg_33_0)
+function slot0.GetSkillGroup(slot0)
 	return {
-		arg_33_0:GetSkillInfo(),
-		(arg_33_0:GetUpgradableSkillInfo())
+		slot0:GetSkillInfo(),
+		slot0:GetUpgradableSkillInfo()
 	}
 end
 
-function var_0_0.GetConfigAttributes(arg_34_0)
+function slot0.GetConfigAttributes(slot0)
 	return {
-		arg_34_0:getConfig("value_1"),
-		arg_34_0:getConfig("value_2")
+		slot0:getConfig("value_1"),
+		slot0:getConfig("value_2")
 	}
 end
 
-function var_0_0.GetAttributesRange(arg_35_0)
+function slot0.GetAttributesRange(slot0)
 	return {
-		arg_35_0:getConfig("value_1_random"),
-		arg_35_0:getConfig("value_2_random")
+		slot0:getConfig("value_1_random"),
+		slot0:getConfig("value_2_random")
 	}
 end
 
-function var_0_0.GetAttributes(arg_36_0)
-	local var_36_0 = arg_36_0:GetConfigAttributes()
+function slot0.GetAttributes(slot0)
+	slot1 = slot0:GetConfigAttributes()
 
-	if arg_36_0:IsReal() then
-		var_36_0[1] = var_36_0[1] + arg_36_0.attr1
-		var_36_0[2] = var_36_0[2] + arg_36_0.attr2
+	if slot0:IsReal() then
+		slot1[1] = slot1[1] + slot0.attr1
+		slot1[2] = slot1[2] + slot0.attr2
 	end
 
-	return var_36_0
+	return slot1
 end
 
-function var_0_0.GetBaseAttributes(arg_37_0)
+function slot0.GetBaseAttributes(slot0)
 	return {
-		arg_37_0.attr1 or 0,
-		arg_37_0.attr2 or 0
+		slot0.attr1 or 0,
+		slot0.attr2 or 0
 	}
 end
 
-function var_0_0.SetBaseAttributes(arg_38_0, arg_38_1)
-	arg_38_0.attr1 = arg_38_1[1]
-	arg_38_0.attr2 = arg_38_1[2]
+function slot0.SetBaseAttributes(slot0, slot1)
+	slot0.attr1 = slot1[1]
+	slot0.attr2 = slot1[2]
 end
 
-function var_0_0.GetAttributeOptions(arg_39_0)
+function slot0.GetAttributeOptions(slot0)
 	return {
-		arg_39_0.attrTemp1 or 0,
-		arg_39_0.attrTemp2 or 0
+		slot0.attrTemp1 or 0,
+		slot0.attrTemp2 or 0
 	}
 end
 
-function var_0_0.SetAttributeOptions(arg_40_0, arg_40_1)
-	arg_40_0.attrTemp1 = arg_40_1[1]
-	arg_40_0.attrTemp2 = arg_40_1[2]
+function slot0.SetAttributeOptions(slot0, slot1)
+	slot0.attrTemp1 = slot1[1]
+	slot0.attrTemp2 = slot1[2]
 end
 
-function var_0_0.GetPropertiesInfo(arg_41_0)
-	local var_41_0 = {
+function slot0.GetPropertiesInfo(slot0)
+	slot1 = {
 		attrs = {}
 	}
-	local var_41_1 = arg_41_0:GetAttributes()
+	slot2 = slot0:GetAttributes()
 
-	table.insert(var_41_0.attrs, {
-		type = arg_41_0:getConfig("attribute_1"),
-		value = var_41_1[1]
+	table.insert(slot1.attrs, {
+		type = slot0:getConfig("attribute_1"),
+		value = slot2[1]
 	})
-	table.insert(var_41_0.attrs, {
-		type = arg_41_0:getConfig("attribute_2"),
-		value = var_41_1[2]
+	table.insert(slot1.attrs, {
+		type = slot0:getConfig("attribute_2"),
+		value = slot2[2]
 	})
 
-	var_41_0.weapon = {
+	slot1.weapon = {
 		sub = {}
 	}
-	var_41_0.equipInfo = {
+	slot1.equipInfo = {
 		sub = {}
 	}
-
-	local var_41_2 = arg_41_0:GetWearableShipTypes()
-
-	var_41_0.part = {
-		var_41_2,
-		var_41_2
+	slot3 = slot0:GetWearableShipTypes()
+	slot1.part = {
+		slot3,
+		slot3
 	}
 
-	return var_41_0
+	return slot1
 end
 
-function var_0_0.GetWearableShipTypes(arg_42_0)
-	local var_42_0 = arg_42_0:getConfig("usability")
-
-	if var_42_0 and #var_42_0 > 0 then
-		return var_42_0
+function slot0.GetWearableShipTypes(slot0)
+	if slot0:getConfig("usability") and #slot1 > 0 then
+		return slot1
 	end
 
-	return pg.spweapon_type[arg_42_0:GetType()].ship_type
+	return pg.spweapon_type[slot0:GetType()].ship_type
 end
 
-function var_0_0.IsCraftable(arg_43_0)
-	return not arg_43_0:IsUnCraftable() and arg_43_0:GetUpgradeConfig().create_use_gold > 0
+function slot0.IsCraftable(slot0)
+	return not slot0:IsUnCraftable() and slot0:GetUpgradeConfig().create_use_gold > 0
 end
 
-function var_0_0.GetUpgradeConfig(arg_44_0)
-	local var_44_0 = arg_44_0:getConfig("upgrade_id")
-
-	return pg.spweapon_upgrade[var_44_0]
+function slot0.GetUpgradeConfig(slot0)
+	return pg.spweapon_upgrade[slot0:getConfig("upgrade_id")]
 end
 
-function var_0_0.IsUnCraftable(arg_45_0)
-	return arg_45_0:getConfig("uncraftable") == 1
+function slot0.IsUnCraftable(slot0)
+	return slot0:getConfig("uncraftable") == 1
 end
 
-function var_0_0.CalculateHistoryPt(arg_46_0, arg_46_1)
-	local var_46_0 = _.reduce(arg_46_0, 0, function(arg_47_0, arg_47_1)
-		return arg_47_0 + Item.getConfigData(arg_47_1.id).usage_arg[1] * arg_47_1.count
+function slot0.CalculateHistoryPt(slot0, slot1)
+	return _.reduce(slot1, _.reduce(slot0, 0, function (slot0, slot1)
+		return slot0 + Item.getConfigData(slot1.id).usage_arg[1] * slot1.count
+	end), function (slot0, slot1)
+		return slot0 + 0 + slot1:GetUpgradeConfig().upgrade_supply_pt
 	end)
-
-	return (_.reduce(arg_46_1, var_46_0, function(arg_48_0, arg_48_1)
-		return arg_48_0 + (0 + arg_48_1:GetUpgradeConfig().upgrade_supply_pt)
-	end))
 end
 
-return var_0_0
+return slot0

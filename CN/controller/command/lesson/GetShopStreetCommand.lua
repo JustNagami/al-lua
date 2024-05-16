@@ -1,20 +1,17 @@
-﻿local var_0_0 = class("GetShopStreetCommand", pm.SimpleCommand)
+slot0 = class("GetShopStreetCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0 and var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(22101, {
 		type = 0
-	}, 22102, function(arg_2_0)
-		arg_1_0:sendNotification(GAME.GET_SHOPSTREET_DONE)
+	}, 22102, function (slot0)
+		uv0:sendNotification(GAME.GET_SHOPSTREET_DONE)
 
-		local var_2_0 = getProxy(ShopsProxy):getShopStreet()
-
-		if var_1_1 then
-			var_1_1(var_2_0)
+		if uv1 then
+			uv1(getProxy(ShopsProxy):getShopStreet())
 		end
 	end)
 end
 
-return var_0_0
+return slot0

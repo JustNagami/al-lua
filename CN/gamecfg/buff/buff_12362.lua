@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				buff_id = 12363,
-				quota = 1,
-				hpUpperBound = 0.5,
-				target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Bertin"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -39,5 +19,25 @@
 	stack = 1,
 	id = 12362,
 	icon = 12360,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				buff_id = 12363,
+				quota = 1,
+				hpUpperBound = 0.5,
+				target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Bertin"
+				}
+			}
+		}
+	}
 }

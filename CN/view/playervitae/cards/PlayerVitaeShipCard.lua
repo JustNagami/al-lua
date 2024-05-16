@@ -1,379 +1,356 @@
-﻿local var_0_0 = class("PlayerVitaeShipCard", import(".PlayerVitaeBaseCard"))
+slot0 = class("PlayerVitaeShipCard", import(".PlayerVitaeBaseCard"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bgImage = arg_1_0._tf:Find("bg"):GetComponent(typeof(Image))
-	arg_1_0.paintingTr = arg_1_0._tf:Find("ship_icon/painting")
-	arg_1_0.detailTF = arg_1_0._tf:Find("detail")
-	arg_1_0.lvTxtTF = arg_1_0.detailTF:Find("top/level")
-	arg_1_0.lvTxt = arg_1_0.lvTxtTF:GetComponent(typeof(Text))
-	arg_1_0.shipType = arg_1_0.detailTF:Find("top/type")
-	arg_1_0.propsTr = arg_1_0.detailTF:Find("info")
-	arg_1_0.nameTxt = arg_1_0.detailTF:Find("name_mask/name")
-	arg_1_0.frame = arg_1_0._tf:Find("front/frame")
-	arg_1_0.UIlist = UIItemList.New(arg_1_0._tf:Find("front/stars"), arg_1_0._tf:Find("front/stars/star_tpl"))
-	arg_1_0.shipState = arg_1_0._tf:Find("front/flag")
-	arg_1_0.proposeMark = arg_1_0._tf:Find("front/propose")
-	arg_1_0.otherBg = arg_1_0._tf:Find("front/bg_other")
-	arg_1_0.editTr = arg_1_0._tf:Find("mask")
-	arg_1_0.changskinBtn = arg_1_0.editTr:Find("skin")
-	arg_1_0.changskinBtnTag = arg_1_0.changskinBtn:Find("Tag")
-	arg_1_0.randomTr = arg_1_0._tf:Find("mask1")
-	arg_1_0.randomSkinBtn = arg_1_0.randomTr:Find("random_skin")
-	arg_1_0.randomShipBtn = arg_1_0.randomTr:Find("random_ship")
-	arg_1_0.tipTime = 0
-	arg_1_0.nativeTr = arg_1_0._tf:Find("mask_2")
+function slot0.OnInit(slot0)
+	slot0.bgImage = slot0._tf:Find("bg"):GetComponent(typeof(Image))
+	slot0.paintingTr = slot0._tf:Find("ship_icon/painting")
+	slot0.detailTF = slot0._tf:Find("detail")
+	slot0.lvTxtTF = slot0.detailTF:Find("top/level")
+	slot0.lvTxt = slot0.lvTxtTF:GetComponent(typeof(Text))
+	slot0.shipType = slot0.detailTF:Find("top/type")
+	slot0.propsTr = slot0.detailTF:Find("info")
+	slot0.nameTxt = slot0.detailTF:Find("name_mask/name")
+	slot0.frame = slot0._tf:Find("front/frame")
+	slot0.UIlist = UIItemList.New(slot0._tf:Find("front/stars"), slot0._tf:Find("front/stars/star_tpl"))
+	slot0.shipState = slot0._tf:Find("front/flag")
+	slot0.proposeMark = slot0._tf:Find("front/propose")
+	slot0.otherBg = slot0._tf:Find("front/bg_other")
+	slot0.editTr = slot0._tf:Find("mask")
+	slot0.changskinBtn = slot0.editTr:Find("skin")
+	slot0.changskinBtnTag = slot0.changskinBtn:Find("Tag")
+	slot0.randomTr = slot0._tf:Find("mask1")
+	slot0.randomSkinBtn = slot0.randomTr:Find("random_skin")
+	slot0.randomShipBtn = slot0.randomTr:Find("random_ship")
+	slot0.tipTime = 0
+	slot0.nativeTr = slot0._tf:Find("mask_2")
+	slot1 = slot0.editTr:Find("tpl")
 
-	local var_1_0 = arg_1_0.editTr:Find("tpl")
-
-	eachChild(arg_1_0.editTr, function(arg_2_0)
-		if string.find(arg_2_0.gameObject.name, "tpl") and arg_2_0 ~= var_1_0 then
-			Object.Destroy(arg_2_0.gameObject)
+	eachChild(slot0.editTr, function (slot0)
+		if string.find(slot0.gameObject.name, "tpl") and slot0 ~= uv0 then
+			Object.Destroy(slot0.gameObject)
 		end
 	end)
 
-	arg_1_0.btns = {
-		PlayerVitaeSpineBtn.New(var_1_0, PlayerVitaeBaseBtn.VEC_TYPE),
-		PlayerVitaeBGBtn.New(var_1_0, PlayerVitaeBaseBtn.VEC_TYPE),
-		PlayerVitaeLive2dBtn.New(var_1_0, PlayerVitaeBaseBtn.VEC_TYPE)
+	slot0.btns = {
+		PlayerVitaeSpineBtn.New(slot1, PlayerVitaeBaseBtn.VEC_TYPE),
+		PlayerVitaeBGBtn.New(slot1, PlayerVitaeBaseBtn.VEC_TYPE),
+		PlayerVitaeLive2dBtn.New(slot1, PlayerVitaeBaseBtn.VEC_TYPE)
 	}
 
-	onButton(arg_1_0, arg_1_0.changskinBtn, function()
-		arg_1_0:emit(PlayerVitaeMediator.CHANGE_SKIN, arg_1_0.displayShip)
+	onButton(slot0, slot0.changskinBtn, function ()
+		uv0:emit(PlayerVitaeMediator.CHANGE_SKIN, uv0.displayShip)
 	end, SFX_PANEL)
-	onButton(arg_1_0, arg_1_0._tf, function()
-		if arg_1_0.inEdit then
+	onButton(slot0, slot0._tf, function ()
+		if uv0.inEdit then
 			return
 		end
 
-		if not arg_1_0.canClick then
-			if arg_1_0:ShouldTip() then
-				arg_1_0:SetNextTipTime()
+		if not uv0.canClick then
+			if uv0:ShouldTip() then
+				uv0:SetNextTipTime()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("random_ship_forbidden"))
 			end
 
 			return
 		end
 
-		arg_1_0:emit(PlayerVitaeMediator.CHANGE_PAINT, arg_1_0.displayShip)
+		uv0:emit(PlayerVitaeMediator.CHANGE_PAINT, uv0.displayShip)
 	end, SFX_PANEL)
 
-	arg_1_0.eventTrigger = GetOrAddComponent(arg_1_0._go, typeof(EventTriggerListener))
+	slot0.eventTrigger = GetOrAddComponent(slot0._go, typeof(EventTriggerListener))
 
-	arg_1_0:RegisterEvent()
-	setText(arg_1_0.randomSkinBtn:Find("Text"), i18n("random_ship_skin_label"))
-	setText(arg_1_0.randomShipBtn:Find("Text"), i18n("random_ship_label"))
-	setText(arg_1_0.changskinBtn:Find("Text"), i18n("random_flag_ship_changskinBtn_label"))
+	slot0:RegisterEvent()
+	setText(slot0.randomSkinBtn:Find("Text"), i18n("random_ship_skin_label"))
+	setText(slot0.randomShipBtn:Find("Text"), i18n("random_ship_label"))
+	setText(slot0.changskinBtn:Find("Text"), i18n("random_flag_ship_changskinBtn_label"))
 
-	arg_1_0.canDragFlag = true
+	slot0.canDragFlag = true
 end
 
-function var_0_0.DisableDrag(arg_5_0)
-	arg_5_0.canDragFlag = false
+function slot0.DisableDrag(slot0)
+	slot0.canDragFlag = false
 end
 
-function var_0_0.EnableDrag(arg_6_0)
-	arg_6_0.canDragFlag = true
+function slot0.EnableDrag(slot0)
+	slot0.canDragFlag = true
 end
 
-function var_0_0.CanDrag(arg_7_0)
-	return not arg_7_0.inEdit and arg_7_0.canDragFlag
+function slot0.CanDrag(slot0)
+	return not slot0.inEdit and slot0.canDragFlag
 end
 
-function var_0_0.ShouldTip(arg_8_0)
-	return arg_8_0.tipTime <= pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.ShouldTip(slot0)
+	return slot0.tipTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.SetNextTipTime(arg_9_0)
-	arg_9_0.tipTime = pg.TimeMgr.GetInstance():GetServerTime() + 3
+function slot0.SetNextTipTime(slot0)
+	slot0.tipTime = pg.TimeMgr.GetInstance():GetServerTime() + 3
 end
 
-function var_0_0.RegisterEvent(arg_10_0)
-	local var_10_0 = arg_10_0.eventTrigger
-	local var_10_1 = PlayerVitaeShipsPage.GetSlotMaxCnt()
+function slot0.RegisterEvent(slot0)
+	slot1 = slot0.eventTrigger
+	slot2 = PlayerVitaeShipsPage.GetSlotMaxCnt()
 
-	var_10_0:AddBeginDragFunc(function()
-		if not arg_10_0:CanDrag() then
+	slot1:AddBeginDragFunc(function ()
+		if not uv0:CanDrag() then
 			return
 		end
 
-		if not arg_10_0.canClick then
-			if arg_10_0:ShouldTip() then
-				arg_10_0:SetNextTipTime()
+		if not uv0.canClick then
+			if uv0:ShouldTip() then
+				uv0:SetNextTipTime()
 				pg.TipsMgr.GetInstance():ShowTips(i18n("random_ship_forbidden"))
 			end
 
 			return
 		end
 
-		LeanTween.scale(arg_10_0.paintingTr, Vector3(1.1, 1.1, 0), 0.3)
-		arg_10_0._tf:SetSiblingIndex(var_10_1 - 1)
-		arg_10_0:emit(PlayerVitaeShipsPage.ON_BEGIN_DRAG_CARD, arg_10_0.slotIndex)
-		setButtonEnabled(arg_10_0._tf, false)
+		LeanTween.scale(uv0.paintingTr, Vector3(1.1, 1.1, 0), 0.3)
+		uv0._tf:SetSiblingIndex(uv1 - 1)
+		uv0:emit(PlayerVitaeShipsPage.ON_BEGIN_DRAG_CARD, uv0.slotIndex)
+		setButtonEnabled(uv0._tf, false)
 	end)
-	var_10_0:AddDragFunc(function(arg_12_0, arg_12_1)
-		if not arg_10_0:CanDrag() then
+	slot1:AddDragFunc(function (slot0, slot1)
+		if not uv0:CanDrag() then
 			return
 		end
 
-		if not arg_10_0.canClick then
+		if not uv0.canClick then
 			return
 		end
 
-		local var_12_0 = arg_10_0:Change2RectPos(arg_10_0._tf.parent, arg_12_1.position)
+		slot2 = uv0:Change2RectPos(uv0._tf.parent, slot1.position)
+		uv0._tf.localPosition = Vector3(slot2.x, uv0._tf.localPosition.y, 0)
 
-		arg_10_0._tf.localPosition = Vector3(var_12_0.x, arg_10_0._tf.localPosition.y, 0)
-
-		arg_10_0:emit(PlayerVitaeShipsPage.ON_DRAGING_CARD, var_12_0)
+		uv0:emit(PlayerVitaeShipsPage.ON_DRAGING_CARD, slot2)
 	end)
-	var_10_0:AddDragEndFunc(function(arg_13_0, arg_13_1)
-		if not arg_10_0:CanDrag() then
+	slot1:AddDragEndFunc(function (slot0, slot1)
+		if not uv0:CanDrag() then
 			return
 		end
 
-		if not arg_10_0.canClick then
+		if not uv0.canClick then
 			return
 		end
 
-		LeanTween.scale(arg_10_0.paintingTr, Vector3(1, 1, 0), 0.3)
-		arg_10_0:emit(PlayerVitaeShipsPage.ON_DRAG_END_CARD)
-		setButtonEnabled(arg_10_0._tf, true)
+		LeanTween.scale(uv0.paintingTr, Vector3(1, 1, 0), 0.3)
+		uv0:emit(PlayerVitaeShipsPage.ON_DRAG_END_CARD)
+		setButtonEnabled(uv0._tf, true)
 	end)
 end
 
-function var_0_0.Change2RectPos(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = GameObject.Find("OverlayCamera"):GetComponent("Camera")
-
-	return (LuaHelper.ScreenToLocal(arg_14_1, arg_14_2, var_14_0))
+function slot0.Change2RectPos(slot0, slot1, slot2)
+	return LuaHelper.ScreenToLocal(slot1, slot2, GameObject.Find("OverlayCamera"):GetComponent("Camera"))
 end
 
-function var_0_0.OnUpdate(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4, arg_15_5)
-	arg_15_0.canClick = arg_15_4 ~= PlayerVitaeShipsPage.RANDOM_FLAG_SHIP_PAGE
-	arg_15_0.slotIndex = arg_15_1
-	arg_15_0.typeIndex = arg_15_2
-	arg_15_0.shipIds = arg_15_3
-	arg_15_0.pageType = arg_15_4
-	arg_15_0.native = arg_15_5
+function slot0.OnUpdate(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0.canClick = slot4 ~= PlayerVitaeShipsPage.RANDOM_FLAG_SHIP_PAGE
+	slot0.slotIndex = slot1
+	slot0.typeIndex = slot2
+	slot0.shipIds = slot3
+	slot0.pageType = slot4
+	slot0.native = slot5
+	slot7 = getProxy(BayProxy):RawGetShipById(slot3[slot2])
 
-	local var_15_0 = arg_15_3[arg_15_2]
-	local var_15_1 = getProxy(BayProxy):RawGetShipById(var_15_0)
-
-	if not arg_15_0.displayShip or arg_15_0.displayShip.skinId ~= var_15_1.skinId or arg_15_0.displayShip.id ~= var_15_1.id then
-		arg_15_0:UpdateShip(var_15_1)
+	if not slot0.displayShip or slot0.displayShip.skinId ~= slot7.skinId or slot0.displayShip.id ~= slot7.id then
+		slot0:UpdateShip(slot7)
 	end
 
-	local var_15_2 = not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(var_15_1)
+	slot8 = not HXSet.isHxSkin() and getProxy(ShipSkinProxy):HasFashion(slot7)
 
-	setActive(arg_15_0.changskinBtn, var_15_2)
-	setActive(arg_15_0.nativeTr, arg_15_0.canClick and arg_15_0.native)
+	setActive(slot0.changskinBtn, slot8)
+	setActive(slot0.nativeTr, slot0.canClick and slot0.native)
 
-	if var_15_2 then
-		arg_15_0:updatePaintingTag(var_15_1)
+	if slot8 then
+		slot0:updatePaintingTag(slot7)
 	end
 end
 
-function var_0_0.Refresh(arg_16_0)
-	arg_16_0:OnUpdate(arg_16_0.slotIndex, arg_16_0.typeIndex, arg_16_0.shipIds, arg_16_0.pageType, arg_16_0.native)
+function slot0.Refresh(slot0)
+	slot0:OnUpdate(slot0.slotIndex, slot0.typeIndex, slot0.shipIds, slot0.pageType, slot0.native)
 
-	if isActive(arg_16_0.editTr) then
-		arg_16_0:UpdateBtns()
+	if isActive(slot0.editTr) then
+		slot0:UpdateBtns()
 	end
 end
 
-function var_0_0.UpdateShip(arg_17_0, arg_17_1)
-	arg_17_0.displayShip = arg_17_1
-	arg_17_0.lvTxt.text = "Lv." .. arg_17_1.level
+function slot0.UpdateShip(slot0, slot1)
+	slot0.displayShip = slot1
+	slot0.lvTxt.text = "Lv." .. slot1.level
+	slot3 = slot1:getStar()
 
-	local var_17_0 = arg_17_1:getMaxStar()
-	local var_17_1 = arg_17_1:getStar()
-
-	arg_17_0.UIlist:make(function(arg_18_0, arg_18_1, arg_18_2)
-		if arg_18_0 == UIItemList.EventUpdate then
-			setActive(arg_18_2:Find("star"), arg_18_1 < var_17_1)
+	slot0.UIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setActive(slot2:Find("star"), slot1 < uv0)
 		end
 	end)
-	arg_17_0.UIlist:align(var_17_0)
-	setScrollText(arg_17_0.nameTxt, arg_17_1:GetColorName())
-	setPaintingPrefabAsync(arg_17_0.paintingTr, arg_17_1:getPainting(), "biandui")
+	slot0.UIlist:align(slot1:getMaxStar())
+	setScrollText(slot0.nameTxt, slot1:GetColorName())
+	setPaintingPrefabAsync(slot0.paintingTr, slot1:getPainting(), "biandui")
 
-	local var_17_2 = arg_17_1:rarity2bgPrint()
+	slot4 = slot1:rarity2bgPrint()
 
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_17_2, "", arg_17_0.bgImage)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot4, "", slot0.bgImage)
+	setImageSprite(slot0.shipType, GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType())))
 
-	local var_17_3 = arg_17_1:getShipType()
+	slot6, slot7 = slot1:GetFrameAndEffect(true)
 
-	setImageSprite(arg_17_0.shipType, GetSpriteFromAtlas("shiptype", shipType2print(var_17_3)))
-
-	local var_17_4, var_17_5 = arg_17_1:GetFrameAndEffect(true)
-
-	setRectShipCardFrame(arg_17_0.frame, var_17_2, var_17_4)
-	setFrameEffect(arg_17_0.otherBg, var_17_5)
-	setProposeMarkIcon(arg_17_0.proposeMark, arg_17_1)
-	arg_17_0:UpdateProps(arg_17_1)
+	setRectShipCardFrame(slot0.frame, slot4, slot6)
+	setFrameEffect(slot0.otherBg, slot7)
+	setProposeMarkIcon(slot0.proposeMark, slot1)
+	slot0:UpdateProps(slot1)
 end
 
-function var_0_0.updatePaintingTag(arg_19_0)
-	local var_19_0 = arg_19_0.displayShip
-
-	if var_19_0 then
-		setActive(arg_19_0.changskinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(var_19_0) > 0)
+function slot0.updatePaintingTag(slot0)
+	if slot0.displayShip then
+		setActive(slot0.changskinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(slot1) > 0)
 	end
 end
 
-function var_0_0.UpdateProps(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1:getShipCombatPower()
-	local var_20_1, var_20_2 = arg_20_1:getIntimacyDetail()
-	local var_20_3 = {
+function slot0.UpdateProps(slot0, slot1)
+	slot3, slot4 = slot1:getIntimacyDetail()
+	slot5 = {
 		{
 			i18n("word_lv"),
-			arg_20_1.level
+			slot1.level
 		},
 		{
 			i18n("attribute_intimacy"),
-			var_20_2
+			slot4
 		},
 		{
 			i18n("word_synthesize_power"),
-			"<color=#ffff00>" .. var_20_0 .. "</color>"
+			"<color=#ffff00>" .. slot1:getShipCombatPower() .. slot9
 		}
 	}
+	slot9 = "</color>"
 
-	for iter_20_0 = 0, 2 do
-		local var_20_4 = arg_20_0.propsTr:GetChild(iter_20_0)
+	for slot9 = 0, 2 do
+		slot10 = slot0.propsTr:GetChild(slot9)
 
-		if iter_20_0 < #var_20_3 then
-			var_20_4.gameObject:SetActive(true)
+		if slot9 < #slot5 then
+			slot10.gameObject:SetActive(true)
 
-			var_20_4:GetChild(0):GetComponent("Text").text = var_20_3[iter_20_0 + 1][1]
-			var_20_4:GetChild(1):GetComponent("Text").text = var_20_3[iter_20_0 + 1][2]
+			slot10:GetChild(0):GetComponent("Text").text = slot5[slot9 + 1][1]
+			slot10:GetChild(1):GetComponent("Text").text = slot5[slot9 + 1][2]
 		else
-			var_20_4.gameObject:SetActive(false)
+			slot10.gameObject:SetActive(false)
 		end
 	end
 end
 
-function var_0_0.EditCard(arg_21_0, arg_21_1)
-	if not arg_21_0.displayShip then
+function slot0.EditCard(slot0, slot1)
+	if not slot0.displayShip then
 		return
 	end
 
-	setActive(arg_21_0.editTr, arg_21_1)
-	arg_21_0:UpdateBtns()
+	setActive(slot0.editTr, slot1)
+	slot0:UpdateBtns()
 
-	arg_21_0.inEdit = arg_21_1
+	slot0.inEdit = slot1
 
-	setActive(arg_21_0.nativeTr, arg_21_0.canClick and arg_21_0.native and not arg_21_0.inEdit)
+	setActive(slot0.nativeTr, slot0.canClick and slot0.native and not slot0.inEdit)
 end
 
-function var_0_0.UpdateBtns(arg_22_0)
-	local var_22_0 = arg_22_0.displayShip
-	local var_22_1 = 0
+function slot0.UpdateBtns(slot0)
+	slot1 = slot0.displayShip
 
-	for iter_22_0, iter_22_1 in ipairs(arg_22_0.btns) do
-		local var_22_2 = iter_22_1:IsActive(var_22_0)
-
-		if var_22_2 then
-			var_22_1 = var_22_1 + 1
+	for slot6, slot7 in ipairs(slot0.btns) do
+		if slot7:IsActive(slot1) then
+			slot2 = 0 + 1
 		end
 
-		iter_22_1:Update(var_22_2, var_22_1, var_22_0)
+		slot7:Update(slot8, slot2, slot1)
 	end
 end
 
-function var_0_0.EditCardForRandom(arg_23_0, arg_23_1)
-	if not arg_23_0.displayShip then
+function slot0.EditCardForRandom(slot0, slot1)
+	if not slot0.displayShip then
 		return
 	end
 
-	setActive(arg_23_0.randomTr, arg_23_1)
+	setActive(slot0.randomTr, slot1)
 
-	if arg_23_1 then
-		arg_23_0:UpdateRandomBtns()
+	if slot1 then
+		slot0:UpdateRandomBtns()
 	else
-		removeOnButton(arg_23_0.randomSkinBtn)
-		removeOnButton(arg_23_0.randomShipBtn)
-		arg_23_0:ClearRandomFlagValue()
+		removeOnButton(slot0.randomSkinBtn)
+		removeOnButton(slot0.randomShipBtn)
+		slot0:ClearRandomFlagValue()
 	end
 
-	arg_23_0.inEdit = arg_23_1
-	arg_23_0.inRandomEdit = arg_23_1
+	slot0.inEdit = slot1
+	slot0.inRandomEdit = slot1
 end
 
-local function var_0_1(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
-	local var_24_0 = arg_24_1:Find("on")
-	local var_24_1 = arg_24_1:Find("off")
+function slot1(slot0, slot1, slot2, slot3)
+	onButton(slot0, slot1, function ()
+		uv0 = not uv0
 
-	onButton(arg_24_0, arg_24_1, function()
-		arg_24_2 = not arg_24_2
-
-		setActive(var_24_0, arg_24_2)
-		setActive(var_24_1, not arg_24_2)
-		arg_24_3(arg_24_2)
+		setActive(uv1, uv0)
+		setActive(uv2, not uv0)
+		uv3(uv0)
 	end, SFX_PANEL)
-	setActive(var_24_0, arg_24_2)
-	setActive(var_24_1, not arg_24_2)
+	setActive(slot1:Find("on"), slot2)
+	setActive(slot1:Find("off"), not slot2)
 end
 
-function var_0_0.UpdateRandomBtns(arg_26_0)
-	local function var_26_0(arg_27_0, arg_27_1)
-		return (arg_27_0 and 1 or 0) + (arg_27_1 and 2 or 0)
-	end
+function slot0.UpdateRandomBtns(slot0)
+	slot2 = slot0.slotIndex or 1
+	slot3 = getProxy(PlayerProxy):getRawData()
+	slot4 = slot3:IsOpenRandomFlagShipSkinInPos(slot2)
+	slot5 = slot3:IsOpenRandomFlagShipInPos(slot2)
 
-	local var_26_1 = arg_26_0.slotIndex or 1
-	local var_26_2 = getProxy(PlayerProxy):getRawData()
-	local var_26_3 = var_26_2:IsOpenRandomFlagShipSkinInPos(var_26_1)
-	local var_26_4 = var_26_2:IsOpenRandomFlagShipInPos(var_26_1)
-
-	var_0_1(arg_26_0, arg_26_0.randomSkinBtn, var_26_3, function(arg_28_0)
-		var_26_3 = arg_28_0
-		arg_26_0.randomFlagValue = var_26_0(var_26_3, var_26_4)
+	uv0(slot0, slot0.randomSkinBtn, slot4, function (slot0)
+		uv0 = slot0
+		uv1.randomFlagValue = uv2(uv0, uv3)
 	end)
-	var_0_1(arg_26_0, arg_26_0.randomShipBtn, var_26_4, function(arg_29_0)
-		var_26_4 = arg_29_0
-		arg_26_0.randomFlagValue = var_26_0(var_26_3, var_26_4)
+	uv0(slot0, slot0.randomShipBtn, slot5, function (slot0)
+		uv0 = slot0
+		uv1.randomFlagValue = uv2(uv3, uv0)
 	end)
 
-	arg_26_0.randomFlagValue = var_26_0(var_26_3, var_26_4)
+	slot0.randomFlagValue = function (slot0, slot1)
+		return (slot0 and 1 or 0) + (slot1 and 2 or 0)
+	end(slot4, slot5)
 
-	setActive(arg_26_0.randomShipBtn, var_26_2:CanRandomFlagShipInPos(var_26_1))
+	setActive(slot0.randomShipBtn, slot3:CanRandomFlagShipInPos(slot2))
 end
 
-function var_0_0.GetRandomFlagValue(arg_30_0)
-	assert(arg_30_0.inRandomEdit)
+function slot0.GetRandomFlagValue(slot0)
+	assert(slot0.inRandomEdit)
 
-	if arg_30_0.randomFlagValue then
-		return arg_30_0.randomFlagValue
+	if slot0.randomFlagValue then
+		return slot0.randomFlagValue
 	else
-		return getProxy(PlayerProxy):getRawData():RawGetRandomShipAndSkinValueInpos(arg_30_0.slotIndex)
+		return getProxy(PlayerProxy):getRawData():RawGetRandomShipAndSkinValueInpos(slot0.slotIndex)
 	end
 end
 
-function var_0_0.ClearRandomFlagValue(arg_31_0)
-	arg_31_0.randomFlagValue = nil
+function slot0.ClearRandomFlagValue(slot0)
+	slot0.randomFlagValue = nil
 end
 
-function var_0_0.Disable(arg_32_0)
-	var_0_0.super.Disable(arg_32_0)
+function slot0.Disable(slot0)
+	uv0.super.Disable(slot0)
 
-	arg_32_0.inEdit = false
-	arg_32_0.inRandomEdit = false
+	slot0.inEdit = false
+	slot0.inRandomEdit = false
 end
 
-function var_0_0.OnDispose(arg_33_0)
-	local var_33_0 = arg_33_0.displayShip
-
-	if var_33_0 then
-		retPaintingPrefab(arg_33_0.paintingTr, var_33_0:getPainting())
+function slot0.OnDispose(slot0)
+	if slot0.displayShip then
+		retPaintingPrefab(slot0.paintingTr, slot1:getPainting())
 	end
 
-	ClearEventTrigger(arg_33_0.eventTrigger)
+	ClearEventTrigger(slot0.eventTrigger)
 
-	for iter_33_0, iter_33_1 in ipairs(arg_33_0.btns) do
-		iter_33_1:Dispose()
+	for slot5, slot6 in ipairs(slot0.btns) do
+		slot6:Dispose()
 	end
 
-	arg_33_0.btns = nil
+	slot0.btns = nil
 
-	arg_33_0:Disable()
+	slot0:Disable()
 end
 
-return var_0_0
+return slot0

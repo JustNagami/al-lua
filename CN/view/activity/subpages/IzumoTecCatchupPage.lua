@@ -1,1 +1,1 @@
-﻿return (class("IzumoTecCatchupPage", import(".NeptuneTecCatchupPage")))
+return class("IzumoTecCatchupPage", import(".NeptuneTecCatchupPage"))

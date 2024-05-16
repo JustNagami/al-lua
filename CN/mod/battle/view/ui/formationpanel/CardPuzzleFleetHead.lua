@@ -1,91 +1,75 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = slot0.Battle.BattleCardPuzzleEvent
+slot0.Battle.CardPuzzleFleetHead = class("CardPuzzleFleetHead")
+slot3 = slot0.Battle.CardPuzzleFleetHead
+slot3.__name = "CardPuzzleFleetHead"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = var_0_0.Battle.BattleCardPuzzleEvent
-
-var_0_0.Battle.CardPuzzleFleetHead = class("CardPuzzleFleetHead")
-
-local var_0_3 = var_0_0.Battle.CardPuzzleFleetHead
-
-var_0_3.__name = "CardPuzzleFleetHead"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_0._go.transform
-	arg_1_0._mainIcon = arg_1_0._tf:Find("main/icon")
-	arg_1_0._scoutIcon = arg_1_0._tf:Find("scout/icon")
-	arg_1_0._testAttrContainer = arg_1_0._tf:Find("test_attr_list")
-	arg_1_0._testAttrTpl = arg_1_0._tf:Find("test_attr_tpl")
-	arg_1_0._testAttrList = {}
-	arg_1_0._loader = AutoLoader.New()
+function slot3.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot0._go.transform
+	slot0._mainIcon = slot0._tf:Find("main/icon")
+	slot0._scoutIcon = slot0._tf:Find("scout/icon")
+	slot0._testAttrContainer = slot0._tf:Find("test_attr_list")
+	slot0._testAttrTpl = slot0._tf:Find("test_attr_tpl")
+	slot0._testAttrList = {}
+	slot0._loader = AutoLoader.New()
 end
 
-function var_0_3.SetCardPuzzleComponent(arg_2_0, arg_2_1)
-	var_0_0.EventListener.AttachEventListener(arg_2_0)
+function slot3.SetCardPuzzleComponent(slot0, slot1)
+	uv0.EventListener.AttachEventListener(slot0)
 
-	arg_2_0._info = arg_2_1
+	slot0._info = slot1
 
 	if TEST_ATTR_PANEL then
-		arg_2_0._info:RegisterEventListener(arg_2_0, var_0_2.UPDATE_FLEET_ATTR, arg_2_0.onUpdateFleetAttr)
-		arg_2_0:onUpdateFleetAttr()
+		slot0._info:RegisterEventListener(slot0, uv1.UPDATE_FLEET_ATTR, slot0.onUpdateFleetAttr)
+		slot0:onUpdateFleetAttr()
 	end
 end
 
-function var_0_3.Update(arg_3_0)
-	return
+function slot3.Update(slot0)
 end
 
-function var_0_3.UpdateShipIcon(arg_4_0, arg_4_1)
-	local var_4_0
-	local var_4_1
+function slot3.UpdateShipIcon(slot0, slot1)
+	slot2, slot3 = nil
 
-	if arg_4_1 == TeamType.TeamPos.FLAG_SHIP then
-		var_4_0 = arg_4_0._info:GetMainUnit()
-		var_4_1 = arg_4_0._mainIcon
-	elseif arg_4_1 == TeamType.TeamPos.LEADER then
-		var_4_0 = arg_4_0._info:GetScoutUnit()
-		var_4_1 = arg_4_0._scoutIcon
+	if slot1 == TeamType.TeamPos.FLAG_SHIP then
+		slot2 = slot0._info:GetMainUnit()
+		slot3 = slot0._mainIcon
+	elseif slot1 == TeamType.TeamPos.LEADER then
+		slot2 = slot0._info:GetScoutUnit()
+		slot3 = slot0._scoutIcon
 	end
 
-	local var_4_2 = CardPuzzleShip.getPaintingName(var_4_0:GetTemplate().id)
-
-	arg_4_0._loader:GetSprite("cardtowerselectships/" .. var_4_2 .. "_select", "", var_4_1)
+	slot0._loader:GetSprite("cardtowerselectships/" .. CardPuzzleShip.getPaintingName(slot2:GetTemplate().id) .. "_select", "", slot3)
 end
 
-function var_0_3.UpdateShipBuff(arg_5_0)
-	return
+function slot3.UpdateShipBuff(slot0)
 end
 
-function var_0_3.onUpdateFleetAttr(arg_6_0)
-	local var_6_0 = arg_6_0._info:GetAttrManager()._attrList
+function slot3.onUpdateFleetAttr(slot0)
+	for slot5, slot6 in pairs(slot0._info:GetAttrManager()._attrList) do
+		if slot0._testAttrList[slot5] == nil then
+			slot7 = cloneTplTo(slot0._testAttrTpl, slot0._testAttrContainer)
+			slot0._testAttrList[slot5] = slot7
 
-	for iter_6_0, iter_6_1 in pairs(var_6_0) do
-		if arg_6_0._testAttrList[iter_6_0] == nil then
-			local var_6_1 = cloneTplTo(arg_6_0._testAttrTpl, arg_6_0._testAttrContainer)
-
-			arg_6_0._testAttrList[iter_6_0] = var_6_1
-
-			setText(var_6_1:Find("name"), iter_6_0)
+			setText(slot7:Find("name"), slot5)
 		end
 
-		local var_6_2 = arg_6_0._testAttrList[iter_6_0]
-		local var_6_3 = arg_6_0._info:GetAttrManager():GetCurrent(iter_6_0)
-
-		setText(var_6_2:Find("value"), var_6_3)
+		setText(slot0._testAttrList[slot5]:Find("value"), slot0._info:GetAttrManager():GetCurrent(slot5))
 	end
 end
 
-function var_0_3.updateHPBar(arg_7_0)
-	return
+function slot3.updateHPBar(slot0)
 end
 
-function var_0_3.Dispose(arg_8_0)
-	arg_8_0._mainIcon = nil
-	arg_8_0._scoutIcon = nil
-	arg_8_0._testAttrContainer = nil
-	arg_8_0._testAttrTpl = nil
-	arg_8_0._testAttrList = nil
+function slot3.Dispose(slot0)
+	slot0._mainIcon = nil
+	slot0._scoutIcon = nil
+	slot0._testAttrContainer = nil
+	slot0._testAttrTpl = nil
+	slot0._testAttrList = nil
 
-	arg_8_0._loader:Clear()
+	slot0._loader:Clear()
 end

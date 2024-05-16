@@ -1,126 +1,106 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = class("CardPuzzleBoardClicker")
+slot0.Battle.CardPuzzleBoardClicker = slot2
+slot2.__name = "CardPuzzleBoardClicker"
+slot2.CLICK_STATE_CLICK = "CLICK_STATE_CLICK"
+slot2.CLICK_STATE_DRAG = "CLICK_STATE_DRAG"
+slot2.CLICK_STATE_RELEASE = "CLICK_STATE_RELEASE"
+slot2.CLICK_STATE_NONE = "CLICK_STATE_NONE"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = class("CardPuzzleBoardClicker")
+function slot2.Ctor(slot0, slot1)
+	slot0._go = slot1
 
-var_0_0.Battle.CardPuzzleBoardClicker = var_0_2
-var_0_2.__name = "CardPuzzleBoardClicker"
-var_0_2.CLICK_STATE_CLICK = "CLICK_STATE_CLICK"
-var_0_2.CLICK_STATE_DRAG = "CLICK_STATE_DRAG"
-var_0_2.CLICK_STATE_RELEASE = "CLICK_STATE_RELEASE"
-var_0_2.CLICK_STATE_NONE = "CLICK_STATE_NONE"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_2.Init(arg_2_0)
-	SetActive(arg_2_0._go, true)
+function slot2.Init(slot0)
+	SetActive(slot0._go, true)
 
-	arg_2_0._distX, arg_2_0._distY = 0, 0
-	arg_2_0._dirX, arg_2_0._dirY = 0, 0
-	arg_2_0._prePress = false
-	arg_2_0._isPress = false
+	slot0._distY = 0
+	slot0._distX = 0
+	slot0._dirY = 0
+	slot0._dirX = 0
+	slot0._prePress = false
+	slot0._isPress = false
+	slot1 = pg.CameraFixMgr.GetInstance()
+	slot0._screenHeight = slot1:GetCurrentHeight()
+	slot0._screenWidth = slot1:GetCurrentWidth()
 
-	local var_2_0 = pg.CameraFixMgr.GetInstance()
-
-	arg_2_0._screenWidth, arg_2_0._screenHeight = var_2_0:GetCurrentWidth(), var_2_0:GetCurrentHeight()
-
-	arg_2_0._go:GetComponent("StickController"):SetStickFunc(function(arg_3_0, arg_3_1)
-		arg_2_0:updateStick(arg_3_0, arg_3_1)
+	slot0._go:GetComponent("StickController"):SetStickFunc(function (slot0, slot1)
+		uv0:updateStick(slot0, slot1)
 	end)
 end
 
-function var_0_2.SetCardPuzzleComponent(arg_4_0, arg_4_1)
-	arg_4_0._cardPuzzleInfo = arg_4_1
+function slot2.SetCardPuzzleComponent(slot0, slot1)
+	slot0._cardPuzzleInfo = slot1
 end
 
-function var_0_2.updateStick(arg_5_0, arg_5_1, arg_5_2)
-	if not arg_5_0._cardPuzzleInfo:GetClickEnable() then
+function slot2.updateStick(slot0, slot1, slot2)
+	if not slot0._cardPuzzleInfo:GetClickEnable() then
 		return
 	end
 
-	arg_5_0._initX = false
-	arg_5_0._initY = false
+	slot0._initX = false
+	slot0._initY = false
 
-	if arg_5_2 == -1 then
-		arg_5_0._startX = nil
-		arg_5_0._startY = nil
-		arg_5_0._isPress = false
+	if slot2 == -1 then
+		slot0._startX = nil
+		slot0._startY = nil
+		slot0._isPress = false
 	else
-		arg_5_0._isPress = true
+		slot0._isPress = true
 
-		local var_5_0 = arg_5_1.x
-		local var_5_1 = arg_5_1.y
-
-		if arg_5_0._startX == nil then
-			arg_5_0._startX = var_5_0
-			arg_5_0._startY = var_5_1
-			arg_5_0._initX = true
-			arg_5_0._initY = true
+		if slot0._startX == nil then
+			slot0._startX = slot1.x
+			slot0._startY = slot1.y
+			slot0._initX = true
+			slot0._initY = true
 		else
-			local var_5_2 = var_5_0 - arg_5_0._lastPosX
-
-			if var_5_2 * arg_5_0._dirX < 0 then
-				arg_5_0._startX = var_5_0
-				arg_5_0._initX = true
+			if (slot3 - slot0._lastPosX) * slot0._dirX < 0 then
+				slot0._startX = slot3
+				slot0._initX = true
 			end
 
-			if var_5_2 ~= 0 then
-				arg_5_0._dirX = var_5_2
+			if slot5 ~= 0 then
+				slot0._dirX = slot5
 			end
 
-			local var_5_3 = var_5_1 - arg_5_0._lastPosY
-
-			if var_5_3 * arg_5_0._dirY < 0 then
-				arg_5_0._startY = var_5_1
-				arg_5_0._initY = true
+			if (slot4 - slot0._lastPosY) * slot0._dirY < 0 then
+				slot0._startY = slot4
+				slot0._initY = true
 			end
 
-			if var_5_3 ~= 0 then
-				arg_5_0._dirY = var_5_3
+			if slot6 ~= 0 then
+				slot0._dirY = slot6
 			end
 		end
 
-		arg_5_0._distX = (var_5_0 - arg_5_0._startX) / arg_5_0._screenWidth
-		arg_5_0._distY = (var_5_1 - arg_5_0._startY) / arg_5_0._screenHeight
+		slot0._distX = (slot3 - slot0._startX) / slot0._screenWidth
+		slot0._distY = (slot4 - slot0._startY) / slot0._screenHeight
 	end
 
-	arg_5_0._lastPosX = arg_5_1.x
-	arg_5_0._lastPosY = arg_5_1.y
+	slot0._lastPosX = slot1.x
+	slot0._lastPosY = slot1.y
+	slot3 = nil
 
-	local var_5_4
+	slot0._cardPuzzleInfo:UpdateClickPos(slot0._lastPosX, slot0._lastPosY, (slot0._prePress or not slot0._isPress or uv0.CLICK_STATE_CLICK) and (not slot0._prePress or not slot0._isPress or uv0.CLICK_STATE_DRAG) and (not slot0._prePress or slot0._isPress or uv0.CLICK_STATE_RELEASE) and uv0.CLICK_STATE_NONE)
 
-	if not arg_5_0._prePress and arg_5_0._isPress then
-		var_5_4 = var_0_2.CLICK_STATE_CLICK
-	elseif arg_5_0._prePress and arg_5_0._isPress then
-		var_5_4 = var_0_2.CLICK_STATE_DRAG
-	elseif arg_5_0._prePress and not arg_5_0._isPress then
-		var_5_4 = var_0_2.CLICK_STATE_RELEASE
-	else
-		var_5_4 = var_0_2.CLICK_STATE_NONE
-	end
-
-	arg_5_0._cardPuzzleInfo:UpdateClickPos(arg_5_0._lastPosX, arg_5_0._lastPosY, var_5_4)
-
-	arg_5_0._prePress = arg_5_0._isPress
+	slot0._prePress = slot0._isPress
 end
 
-function var_0_2.GetDistance(arg_6_0)
-	return arg_6_0._distX, arg_6_0._distY
+function slot2.GetDistance(slot0)
+	return slot0._distX, slot0._distY
 end
 
-function var_0_2.IsFirstPress(arg_7_0)
-	return arg_7_0._initX, arg_7_0._initY
+function slot2.IsFirstPress(slot0)
+	return slot0._initX, slot0._initY
 end
 
-function var_0_2.IsPress(arg_8_0)
-	return arg_8_0._isPress
+function slot2.IsPress(slot0)
+	return slot0._isPress
 end
 
-function var_0_2.Dispose(arg_9_0)
-	return
+function slot2.Dispose(slot0)
 end

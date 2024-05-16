@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+for slot4, slot5 in pairs(({
 	Points = {
 		{
 			x = 266.6748,
@@ -18,10 +18,8 @@
 		}
 	},
 	Edges = {}
-}
-
-for iter_0_0, iter_0_1 in pairs(var_0_0.Points) do
-	iter_0_1.scale = 0.4
+}).Points) do
+	slot5.scale = 0.4
 end
 
-return var_0_0
+return slot0

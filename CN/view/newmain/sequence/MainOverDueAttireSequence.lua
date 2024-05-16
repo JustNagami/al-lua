@@ -1,36 +1,34 @@
-﻿local var_0_0 = class("MainOverDueAttireSequence")
+slot0 = class("MainOverDueAttireSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(AttireProxy):getExpiredChaces()
-
-	if #var_1_0 > 0 then
-		arg_1_0:Display(AttireExpireDisplayPage, var_1_0, arg_1_1)
+function slot0.Execute(slot0, slot1)
+	if #getProxy(AttireProxy):getExpiredChaces() > 0 then
+		slot0:Display(AttireExpireDisplayPage, slot3, slot1)
 	else
-		arg_1_1()
+		slot1()
 	end
 end
 
-function var_0_0.Display(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.page = arg_2_1.New(pg.UIMgr.GetInstance().UIMain)
+function slot0.Display(slot0, slot1, slot2, slot3)
+	slot0.page = slot1.New(pg.UIMgr.GetInstance().UIMain)
 
-	function arg_2_0.page.Hide()
-		arg_2_0:Clear()
-		arg_2_3()
+	function slot0.page.Hide()
+		uv0:Clear()
+		uv1()
 	end
 
-	arg_2_0.page:ExecuteAction("Show", arg_2_2)
+	slot0.page:ExecuteAction("Show", slot2)
 end
 
-function var_0_0.Clear(arg_4_0)
-	if arg_4_0.page then
-		arg_4_0.page:Destroy()
+function slot0.Clear(slot0)
+	if slot0.page then
+		slot0.page:Destroy()
 
-		arg_4_0.page = nil
+		slot0.page = nil
 	end
 end
 
-function var_0_0.Dispose(arg_5_0)
-	arg_5_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

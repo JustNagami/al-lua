@@ -1,111 +1,99 @@
-﻿local var_0_0 = class("CourtYardBaseView")
+slot0 = class("CourtYardBaseView")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.name = arg_1_1
-	arg_1_0.storey = arg_1_2
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.name = slot1
+	slot0.storey = slot2
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.isInit = false
-
-	local var_2_0 = arg_2_0:GetStoreyModule()
-	local var_2_1
+function slot0.Init(slot0)
+	slot0.isInit = false
+	slot1 = slot0:GetStoreyModule()
+	slot2 = nil
 
 	seriesAsync({
-		function(arg_3_0)
-			arg_2_0:LoadUI(var_2_0.__cname, function(arg_4_0)
-				var_2_1 = arg_4_0
+		function (slot0)
+			uv0:LoadUI(uv1.__cname, function (slot0)
+				uv0 = slot0
 
-				arg_3_0()
+				uv1()
 			end)
 		end,
-		function(arg_5_0)
-			arg_2_0:InitObjPool(arg_5_0)
+		function (slot0)
+			uv0:InitObjPool(slot0)
 		end
-	}, function()
-		arg_2_0.storeyModule = var_2_0.New(arg_2_0.storey, var_2_1)
-		arg_2_0.isInit = true
+	}, function ()
+		uv0.storeyModule = uv1.New(uv0.storey, uv2)
+		uv0.isInit = true
 	end)
 end
 
-function var_0_0.IsInit(arg_7_0)
-	return arg_7_0.isInit == true
+function slot0.IsInit(slot0)
+	return slot0.isInit == true
 end
 
-function var_0_0.LoadUI(arg_8_0, arg_8_1, arg_8_2)
-	arg_8_0.resName = arg_8_1
+function slot0.LoadUI(slot0, slot1, slot2)
+	slot0.resName = slot1
 
-	ResourceMgr.Inst:getAssetAsync("UI/" .. arg_8_0.resName, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_9_0)
-		local var_9_0
+	ResourceMgr.Inst:getAssetAsync("UI/" .. slot0.resName, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		slot1 = nil
+		slot2 = Object.Instantiate(slot0, (uv0.storey:GetStyle() ~= CourtYardConst.STYLE_PREVIEW or pg.UIMgr.GetInstance().OverlayMain:Find("BackYardInterActionPreview(Clone)/frame/view")) and pg.UIMgr.GetInstance().UIMain:Find(uv0.name .. "(Clone)"))
+		uv0._go = slot2
 
-		if arg_8_0.storey:GetStyle() == CourtYardConst.STYLE_PREVIEW then
-			var_9_0 = pg.UIMgr.GetInstance().OverlayMain:Find("BackYardInterActionPreview(Clone)/frame/view")
-		else
-			var_9_0 = pg.UIMgr.GetInstance().UIMain:Find(arg_8_0.name .. "(Clone)")
-		end
+		slot2.transform:SetSiblingIndex(1)
+		setActive(slot2, true)
 
-		local var_9_1 = Object.Instantiate(arg_9_0, var_9_0)
+		uv0.poolRoot = slot2.transform:Find("root")
 
-		arg_8_0._go = var_9_1
-
-		var_9_1.transform:SetSiblingIndex(1)
-		setActive(var_9_1, true)
-
-		arg_8_0.poolRoot = var_9_1.transform:Find("root")
-
-		arg_8_2(var_9_1)
+		uv1(slot2)
 	end), true, true)
 end
 
-function var_0_0.GetRect(arg_10_0)
-	assert(arg_10_0.storeyModule)
+function slot0.GetRect(slot0)
+	assert(slot0.storeyModule)
 
-	return arg_10_0.storeyModule.rectTF
+	return slot0.storeyModule.rectTF
 end
 
-function var_0_0.GetStoreyModule(arg_11_0)
-	local var_11_0 = arg_11_0.storey
-
+function slot0.GetStoreyModule(slot0)
 	return ({
 		[CourtYardConst.STYLE_INNER] = CourtYardStoreyModule,
 		[CourtYardConst.STYLE_OUTSIDE] = CourtYardOutStoreyModule,
 		[CourtYardConst.STYLE_FEAST] = CourtYardFeastStoreyModule,
 		[CourtYardConst.STYLE_PREVIEW] = CourtYardStoreyPreviewModule
-	})[var_11_0:GetStyle()]
+	})[slot0.storey:GetStyle()]
 end
 
-function var_0_0.InitObjPool(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0.storey
-	local var_12_1 = ({
+function slot0.InitObjPool(slot0, slot1)
+	slot4 = ({
 		[CourtYardConst.STYLE_INNER] = CourtYardPoolMgr,
 		[CourtYardConst.STYLE_OUTSIDE] = CourtYardPoolMgr,
 		[CourtYardConst.STYLE_FEAST] = CourtYardFeastPoolMgr,
 		[CourtYardConst.STYLE_PREVIEW] = CourtYardPoolMgr
-	})[var_12_0:GetStyle()].New()
+	})[slot0.storey:GetStyle()].New()
 
-	var_12_1:Init(arg_12_0.poolRoot, arg_12_1)
+	slot4:Init(slot0.poolRoot, slot1)
 
-	arg_12_0.poolMgr = var_12_1
+	slot0.poolMgr = slot4
 end
 
-function var_0_0.GetCurrStorey(arg_13_0)
-	return arg_13_0.storeyModule
+function slot0.GetCurrStorey(slot0)
+	return slot0.storeyModule
 end
 
-function var_0_0.Dispose(arg_14_0)
-	if arg_14_0.storeyModule then
-		arg_14_0.storeyModule:Dispose()
+function slot0.Dispose(slot0)
+	if slot0.storeyModule then
+		slot0.storeyModule:Dispose()
 
-		arg_14_0.storeyModule = nil
+		slot0.storeyModule = nil
 	end
 
-	arg_14_0.storey = nil
+	slot0.storey = nil
 
-	arg_14_0.poolMgr:Dispose()
+	slot0.poolMgr:Dispose()
 
-	arg_14_0.poolMgr = nil
+	slot0.poolMgr = nil
 end
 
-return var_0_0
+return slot0

@@ -1,84 +1,77 @@
-﻿local var_0_0 = class("ChongYingFramePage", import(".TemplatePage.NewFrameTemplatePage"))
+slot0 = class("ChongYingFramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.bar = arg_1_0:findTF("AD/switcher/phase2/barContent")
-	arg_1_0.cur = arg_1_0:findTF("AD/switcher/phase2/progress/step")
-	arg_1_0.target = arg_1_0:findTF("AD/switcher/phase2/progress/all")
-	arg_1_0.getTag = arg_1_0:findTF("AD/switcher/phase2/get")
-	arg_1_0.gotTag = arg_1_0:findTF("AD/switcher/phase2/got")
-	arg_1_0.titles = {
-		arg_1_0.switchBtn:Find("2"),
-		arg_1_0.switchBtn:Find("1")
+	slot0.bar = slot0:findTF("AD/switcher/phase2/barContent")
+	slot0.cur = slot0:findTF("AD/switcher/phase2/progress/step")
+	slot0.target = slot0:findTF("AD/switcher/phase2/progress/all")
+	slot0.getTag = slot0:findTF("AD/switcher/phase2/get")
+	slot0.gotTag = slot0:findTF("AD/switcher/phase2/got")
+	slot0.titles = {
+		slot0.switchBtn:Find("2"),
+		slot0.switchBtn:Find("1")
 	}
 end
 
-function var_0_0.OnUpdateFlush(arg_2_0)
-	local var_2_0 = arg_2_0.activity.data1
-	local var_2_1 = arg_2_0.avatarConfig.target
+function slot0.OnUpdateFlush(slot0)
+	if slot0.avatarConfig.target < slot0.activity.data1 then
+		slot1 = slot2 or slot1
+	end
 
-	var_2_0 = var_2_1 < var_2_0 and var_2_1 or var_2_0
+	setText(slot0.cur, slot1 / slot2 >= 1 and setColorStr(slot1, COLOR_GREEN) or slot1)
+	setText(slot0.target, "/" .. slot2)
+	setSlider(slot0.bar, 0, slot2, slot1)
 
-	local var_2_2 = var_2_0 / var_2_1
+	slot4 = slot2 <= slot1
+	slot5 = slot0.activity.data2 >= 1
 
-	setText(arg_2_0.cur, var_2_2 >= 1 and setColorStr(var_2_0, COLOR_GREEN) or var_2_0)
-	setText(arg_2_0.target, "/" .. var_2_1)
-	setSlider(arg_2_0.bar, 0, var_2_1, var_2_0)
-
-	local var_2_3 = var_2_1 <= var_2_0
-	local var_2_4 = arg_2_0.activity.data2 >= 1
-
-	setActive(arg_2_0.battleBtn, arg_2_0.inPhase2 and not var_2_3)
-	setActive(arg_2_0.getBtn, arg_2_0.inPhase2 and not var_2_4 and var_2_3)
-	setActive(arg_2_0.gotBtn, arg_2_0.inPhase2 and var_2_4)
-	setActive(arg_2_0.getTag, arg_2_0.inPhase2 and not var_2_4 and var_2_3)
-	setActive(arg_2_0.gotTag, arg_2_0.inPhase2 and var_2_4)
-	setActive(arg_2_0:findTF("AD/switcher/phase2/progress"), not var_2_4)
+	setActive(slot0.battleBtn, slot0.inPhase2 and not slot4)
+	setActive(slot0.getBtn, slot0.inPhase2 and not slot5 and slot4)
+	setActive(slot0.gotBtn, slot0.inPhase2 and slot5)
+	setActive(slot0.getTag, slot0.inPhase2 and not slot5 and slot4)
+	setActive(slot0.gotTag, slot0.inPhase2 and slot5)
+	setActive(slot0:findTF("AD/switcher/phase2/progress"), not slot5)
 end
 
-function var_0_0.Switch(arg_3_0, arg_3_1)
-	arg_3_0.isSwitching = true
+function slot0.Switch(slot0, slot1)
+	slot0.isSwitching = true
 
-	setToggleEnabled(arg_3_0.switchBtn, false)
+	setToggleEnabled(slot0.switchBtn, false)
 
-	local var_3_0 = {}
+	slot2 = {}
 
-	for iter_3_0, iter_3_1 in ipairs({
-		arg_3_0.phases,
-		arg_3_0.titles
+	for slot6, slot7 in ipairs({
+		slot0.phases,
+		slot0.titles
 	}) do
-		local var_3_1, var_3_2 = unpack(iter_3_1)
+		slot9, slot8 = unpack(slot7)
 
-		if arg_3_1 then
-			var_3_1, var_3_2 = var_3_2, var_3_1
+		if slot1 then
+			-- Nothing
 		end
 
-		LeanTween.cancel(go(var_3_1))
+		LeanTween.cancel(go(slot8))
 
-		local var_3_3 = GetOrAddComponent(var_3_1, "CanvasGroup")
+		GetOrAddComponent(slot8, "CanvasGroup").alpha = 0
 
-		var_3_3.alpha = 0
-
-		table.insert(var_3_0, function(arg_4_0)
-			LeanTween.alphaCanvas(var_3_3, 1, 0.4):setOnComplete(System.Action(arg_4_0))
+		table.insert(slot2, function (slot0)
+			LeanTween.alphaCanvas(uv0, 1, 0.4):setOnComplete(System.Action(slot0))
 		end)
-		LeanTween.cancel(go(var_3_2))
+		LeanTween.cancel(go(slot9))
 
-		local var_3_4 = GetOrAddComponent(var_3_2, "CanvasGroup")
+		GetOrAddComponent(slot9, "CanvasGroup").alpha = 1
 
-		var_3_4.alpha = 1
-
-		table.insert(var_3_0, function(arg_5_0)
-			LeanTween.alphaCanvas(var_3_4, 0, 0.4):setOnComplete(System.Action(arg_5_0))
+		table.insert(slot2, function (slot0)
+			LeanTween.alphaCanvas(uv0, 0, 0.4):setOnComplete(System.Action(slot0))
 		end)
 	end
 
-	parallelAsync(var_3_0, function()
-		arg_3_0.isSwitching = nil
+	parallelAsync(slot2, function ()
+		uv0.isSwitching = nil
 
-		setToggleEnabled(arg_3_0.switchBtn, true)
+		setToggleEnabled(uv0.switchBtn, true)
 	end)
 end
 
-return var_0_0
+return slot0

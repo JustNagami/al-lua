@@ -1,49 +1,48 @@
-﻿local var_0_0 = class("SummaryPage")
+slot0 = class("SummaryPage")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = tf(arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
 
-	pg.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(slot0)
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1)
-	arg_2_0.summaryInfoVO = arg_2_1
+function slot0.Init(slot0, slot1)
+	slot0.summaryInfoVO = slot1
 
-	arg_2_0:OnInit()
+	slot0:OnInit()
 end
 
-function var_0_0.OnInit(arg_3_0)
+function slot0.OnInit(slot0)
 	assert(false)
 end
 
-function var_0_0.Show(arg_4_0, arg_4_1)
-	setActive(arg_4_0._tf, true)
+function slot0.Show(slot0, slot1)
+	setActive(slot0._tf, true)
 
-	if arg_4_1 then
-		arg_4_1()
+	if slot1 then
+		slot1()
 	end
 end
 
-function var_0_0.Hide(arg_5_0, arg_5_1)
-	setActive(arg_5_0._tf, false)
+function slot0.Hide(slot0, slot1)
+	setActive(slot0._tf, false)
 
-	if arg_5_1 then
-		arg_5_1()
+	if slot1 then
+		slot1()
 	end
 end
 
-function var_0_0.inAnim(arg_6_0)
+function slot0.inAnim(slot0)
 	assert(false)
 end
 
-function var_0_0.Clear(arg_7_0)
-	return
+function slot0.Clear(slot0)
 end
 
-function var_0_0.Dispose(arg_8_0)
-	pg.DelegateInfo.Dispose(arg_8_0)
-	arg_8_0:Clear()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 2,
+	id = 19752,
+	icon = 19750,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -22,24 +41,5 @@
 				countType = 19752
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	picture = "",
-	desc = "",
-	stack = 2,
-	id = 19752,
-	icon = 19750,
-	last_effect = ""
+	}
 }

@@ -1,58 +1,45 @@
-﻿local var_0_0 = class("PrayPoolMediator", import("..base.ContextMediator"))
+slot0 = class("PrayPoolMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(PrayPoolConst.CLICK_INDEX_BTN, function(arg_2_0, arg_2_1)
-		arg_1_0:addSubLayers(Context.New({
+function slot0.register(slot0)
+	slot0:bind(PrayPoolConst.CLICK_INDEX_BTN, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = arg_2_1
+			data = slot1
 		}))
 	end)
-	arg_1_0:bind(PrayPoolConst.CLICK_BUILD_BTN, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(PrayPoolConst.BUILD_PRAY_POOL_CMD, arg_3_1)
+	slot0:bind(PrayPoolConst.CLICK_BUILD_BTN, function (slot0, slot1)
+		uv0:sendNotification(PrayPoolConst.BUILD_PRAY_POOL_CMD, slot1)
 	end)
-	arg_1_0:bind(PrayPoolConst.START_BUILD_SHIP_EVENT, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+	slot0:bind(PrayPoolConst.START_BUILD_SHIP_EVENT, function (slot0, slot1, slot2, slot3)
+		uv0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
-			buildId = arg_4_1,
+			buildId = slot1,
 			activity_id = ActivityConst.ACTIVITY_PRAY_POOL,
-			arg1 = arg_4_2,
-			arg2 = arg_4_3
+			arg1 = slot2,
+			arg2 = slot3
 		})
 	end)
 
-	local var_1_0 = getProxy(ActivityProxy)
-	local var_1_1 = getProxy(PrayProxy)
-
-	if var_1_1:getPageState() ~= PrayProxy.STAGE_BUILD_SUCCESS then
-		local var_1_2 = var_1_0:getActivityById(ActivityConst.ACTIVITY_PRAY_POOL)
-
-		if var_1_2 then
-			local var_1_3 = var_1_2:getData1()
-			local var_1_4 = var_1_2:getData1List()
-
-			if var_1_3 and table.indexof(pg.activity_ship_create.all, var_1_3, 1) then
-				var_1_1:setSelectedPoolNum(var_1_3)
-				var_1_1:setSelectedShipList(var_1_4)
-				var_1_1:updatePageState(PrayProxy.STAGE_BUILD_SUCCESS)
-			end
+	if getProxy(PrayProxy):getPageState() ~= PrayProxy.STAGE_BUILD_SUCCESS and getProxy(ActivityProxy):getActivityById(ActivityConst.ACTIVITY_PRAY_POOL) then
+		if slot3:getData1() and table.indexof(pg.activity_ship_create.all, slot4, 1) then
+			slot2:setSelectedPoolNum(slot4)
+			slot2:setSelectedShipList(slot3:getData1List())
+			slot2:updatePageState(PrayProxy.STAGE_BUILD_SUCCESS)
 		end
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PrayPoolConst.BUILD_PRAY_POOL_SUCCESS
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
-
-	if var_6_0 == PrayPoolConst.BUILD_PRAY_POOL_SUCCESS then
-		arg_6_0.viewComponent:switchPage(var_6_1)
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == PrayPoolConst.BUILD_PRAY_POOL_SUCCESS then
+		slot0.viewComponent:switchPage(slot1:getBody())
 	end
 end
 
-return var_0_0
+return slot0

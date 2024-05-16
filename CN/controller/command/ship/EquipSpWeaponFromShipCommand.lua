@@ -1,134 +1,128 @@
-﻿local var_0_0 = class("EquipSpWeaponFromShipCommand", pm.SimpleCommand)
+slot0 = class("EquipSpWeaponFromShipCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipId
-	local var_1_2 = var_1_0.oldShipId
-	local var_1_3 = var_1_0.spWeaponUid
-	local var_1_4 = getProxy(BayProxy)
-	local var_1_5 = getProxy(EquipmentProxy)
-	local var_1_6
-	local var_1_7
-	local var_1_8
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.shipId
+	slot4 = slot2.oldShipId
+	slot5 = slot2.spWeaponUid
+	slot6 = getProxy(BayProxy)
+	slot7 = getProxy(EquipmentProxy)
+	slot8, slot9, slot10 = nil
 
-	if not (function()
-		var_1_7 = var_1_4:getShipById(var_1_1)
+	if not function ()
+		uv0 = uv1:getShipById(uv2)
 
-		if var_1_7 == nil then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_1))
+		if uv0 == nil then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", uv2))
 
 			return
 		end
 
-		local var_2_0, var_2_1 = ShipStatus.ShipStatusCheck("onModify", var_1_7)
+		slot0, slot1 = ShipStatus.ShipStatusCheck("onModify", uv0)
 
-		if not var_2_0 then
-			pg.TipsMgr.GetInstance():ShowTips(var_2_1)
+		if not slot0 then
+			pg.TipsMgr.GetInstance():ShowTips(slot1)
 
 			return
 		end
 
-		if var_1_7:GetSpWeapon() and getProxy(EquipmentProxy):GetSpWeaponCapacity() <= getProxy(EquipmentProxy):GetSpWeaponCount() then
+		if uv0:GetSpWeapon() and getProxy(EquipmentProxy):GetSpWeaponCapacity() <= getProxy(EquipmentProxy):GetSpWeaponCount() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_bag_no_enough"))
 
 			return
 		end
 
-		var_1_8 = var_1_4:getShipById(var_1_2)
+		uv3 = uv1:getShipById(uv4)
 
-		if var_1_8 == nil then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_2))
-
-			return
-		end
-
-		local var_2_2, var_2_3 = ShipStatus.ShipStatusCheck("onModify", var_1_8)
-		local var_2_4 = var_2_3
-
-		if not var_2_2 then
-			pg.TipsMgr.GetInstance():ShowTips(var_2_4)
+		if uv3 == nil then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", uv4))
 
 			return
 		end
 
-		local var_2_5, var_2_6 = ShipStatus.ShipStatusCheck("onModify", var_1_8)
+		slot2, slot1 = ShipStatus.ShipStatusCheck("onModify", uv3)
 
-		if not var_2_5 then
-			pg.TipsMgr.GetInstance():ShowTips(var_2_6)
+		if not slot2 then
+			pg.TipsMgr.GetInstance():ShowTips(slot1)
+
+			return
 		end
 
-		var_1_6 = var_1_8:GetSpWeapon()
+		slot2, slot3 = ShipStatus.ShipStatusCheck("onModify", uv3)
 
-		if not var_1_6 or var_1_6:GetUID() ~= var_1_3 then
+		if not slot2 then
+			pg.TipsMgr.GetInstance():ShowTips(slot3)
+		end
+
+		uv5 = uv3:GetSpWeapon()
+
+		if not uv5 or uv5:GetUID() ~= uv6 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_error_noEquip"))
 
 			return
 		end
 
-		local var_2_7, var_2_8 = var_1_7:CanEquipSpWeapon(var_1_6)
+		slot4, slot5 = uv0:CanEquipSpWeapon(uv5)
 
-		if not var_2_7 then
-			pg.TipsMgr.GetInstance():ShowTips(var_2_8)
+		if not slot4 then
+			pg.TipsMgr.GetInstance():ShowTips(slot5)
 
 			return
 		end
 
 		return true
-	end)() then
+	end() then
 		return
 	end
 
 	seriesAsync({
-		function(arg_3_0)
+		function (slot0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("ship_equip_exchange_tip", var_1_8:getName(), var_1_6:GetName(), var_1_7:getName()),
-				onYes = arg_3_0
+				content = i18n("ship_equip_exchange_tip", uv0:getName(), uv1:GetName(), uv2:getName()),
+				onYes = slot0
 			})
 		end,
-		function(arg_4_0)
+		function (slot0)
 			pg.ConnectionMgr.GetInstance():Send(14201, {
 				spweapon_id = 0,
-				ship_id = var_1_2
-			}, 14202, function(arg_5_0)
-				if arg_5_0.result == 0 then
-					local var_5_0 = var_1_4:getShipById(var_1_2)
-					local var_5_1 = var_5_0:GetSpWeapon()
+				ship_id = uv0
+			}, 14202, function (slot0)
+				if slot0.result == 0 then
+					slot1 = uv0:getShipById(uv1)
+					slot2 = slot1:GetSpWeapon()
 
-					var_5_0:UpdateSpWeapon(nil)
-					var_1_4:updateShip(var_5_0)
-					var_1_5:AddSpWeapon(var_5_1)
-					arg_4_0(var_5_1:GetUID())
+					slot1:UpdateSpWeapon(nil)
+					uv0:updateShip(slot1)
+					uv2:AddSpWeapon(slot2)
+					uv3(slot2:GetUID())
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_unequipFromShip", arg_5_0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_unequipFromShip", slot0.result))
 				end
 			end)
 		end,
-		function(arg_6_0, arg_6_1)
+		function (slot0, slot1)
 			pg.ConnectionMgr.GetInstance():Send(14201, {
-				spweapon_id = arg_6_1,
-				ship_id = var_1_1
-			}, 14202, function(arg_7_0)
-				if arg_7_0.result == 0 then
-					local var_7_0 = var_1_4:getShipById(var_1_1)
-					local var_7_1 = var_7_0:GetSpWeapon()
-
-					if var_7_1 then
-						var_1_5:AddSpWeapon(var_7_1)
+				spweapon_id = slot1,
+				ship_id = uv0
+			}, 14202, function (slot0)
+				if slot0.result == 0 then
+					if uv0:getShipById(uv1):GetSpWeapon() then
+						uv2:AddSpWeapon(slot2)
 					end
 
-					local var_7_2 = var_1_5:GetSpWeaponByUid(arg_6_1)
+					slot3 = uv2:GetSpWeaponByUid(uv3)
 
-					var_7_0:UpdateSpWeapon(var_7_2)
-					var_1_4:updateShip(var_7_0)
-					var_1_5:RemoveSpWeapon(var_7_2)
-					arg_1_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP_DONE, var_7_0)
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_ok", var_7_2:GetName()), "green")
+					slot1:UpdateSpWeapon(slot3)
+					uv0:updateShip(slot1)
+					uv2:RemoveSpWeapon(slot3)
+					uv4:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP_DONE, slot1)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_ok", slot3:GetName()), "green")
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", arg_7_0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", slot0.result))
 				end
 			end)
 		end
 	})
 end
 
-return var_0_0
+return slot0

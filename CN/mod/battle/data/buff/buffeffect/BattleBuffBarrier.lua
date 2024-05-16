@@ -1,85 +1,78 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = pg.effect_offset
+slot0.Battle.BattleBuffBarrier = class("BattleBuffBarrier", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffBarrier.__name = "BattleBuffBarrier"
+slot2 = slot0.Battle.BattleBuffBarrier
 
-local var_0_0 = ys
-local var_0_1 = pg.effect_offset
-
-var_0_0.Battle.BattleBuffBarrier = class("BattleBuffBarrier", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffBarrier.__name = "BattleBuffBarrier"
-
-local var_0_2 = var_0_0.Battle.BattleBuffBarrier
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function slot2.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0._tempData.arg_list
+function slot2.SetArgs(slot0, slot1, slot2)
+	slot3 = slot0._tempData.arg_list
+	slot0._durability = slot3.durability
+	slot0._dir = slot1:GetDirection()
+	slot0._unit = slot1
+	slot0._dataProxy = uv0.Battle.BattleDataProxy.GetInstance()
+	slot0._centerPos = slot1:GetPosition()
 
-	arg_2_0._durability = var_2_0.durability
-	arg_2_0._dir = arg_2_1:GetDirection()
-	arg_2_0._unit = arg_2_1
-	arg_2_0._dataProxy = var_0_0.Battle.BattleDataProxy.GetInstance()
-	arg_2_0._centerPos = arg_2_1:GetPosition()
-
-	local function var_2_1(arg_3_0)
-		arg_2_0._dataProxy:HandleDamage(arg_3_0, arg_2_0._unit)
-		arg_3_0:Intercepted()
-		arg_2_0._dataProxy:RemoveBulletUnit(arg_3_0:GetUniqueID())
+	function slot4(slot0)
+		uv0._dataProxy:HandleDamage(slot0, uv0._unit)
+		slot0:Intercepted()
+		uv0._dataProxy:RemoveBulletUnit(slot0:GetUniqueID())
 	end
 
-	local var_2_2 = var_2_0.cld_data
-	local var_2_3 = var_2_2.box
-	local var_2_4 = Clone(var_2_2.offset)
+	slot5 = slot3.cld_data
+	slot6 = slot5.box
+	slot7 = Clone(slot5.offset)
 
-	if arg_2_1:GetDirection() == var_0_0.Battle.BattleConst.UnitDir.LEFT then
-		var_2_4[1] = -var_2_4[1]
+	if slot1:GetDirection() == uv0.Battle.BattleConst.UnitDir.LEFT then
+		slot7[1] = -slot7[1]
 	end
 
-	arg_2_0._wall = arg_2_0._dataProxy:SpawnWall(arg_2_0, var_2_1, var_2_3, var_2_4)
+	slot0._wall = slot0._dataProxy:SpawnWall(slot0, slot4, slot6, slot7)
 end
 
-function var_0_2.onUpdate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	local var_4_0 = arg_4_3.timeStamp
-
-	arg_4_0._centerPos = arg_4_1:GetPosition()
+function slot2.onUpdate(slot0, slot1, slot2, slot3)
+	slot4 = slot3.timeStamp
+	slot0._centerPos = slot1:GetPosition()
 end
 
-function var_0_2.onTakeDamage(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	if arg_5_0:damageCheck(arg_5_3) then
-		local var_5_0 = arg_5_3.damage
+function slot2.onTakeDamage(slot0, slot1, slot2, slot3)
+	if slot0:damageCheck(slot3) then
+		slot0._durability = slot0._durability - slot3.damage
 
-		arg_5_0._durability = arg_5_0._durability - var_5_0
-
-		if arg_5_0._durability > 0 then
-			arg_5_3.damage = 0
+		if slot0._durability > 0 then
+			slot3.damage = 0
 		else
-			arg_5_3.damage = -arg_5_0._durability
+			slot3.damage = -slot0._durability
 
-			arg_5_2:SetToCancel()
+			slot2:SetToCancel()
 		end
 	end
 end
 
-function var_0_2.onAttach(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	if arg_6_0._unit:IsBoss() then
-		arg_6_0._unit:BarrierStateChange(arg_6_0._durability, arg_6_2:GetDuration())
+function slot2.onAttach(slot0, slot1, slot2, slot3)
+	if slot0._unit:IsBoss() then
+		slot0._unit:BarrierStateChange(slot0._durability, slot2:GetDuration())
 	end
 end
 
-function var_0_2.onRemove(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	if arg_7_0._unit:IsBoss() then
-		arg_7_0._unit:BarrierStateChange(0)
+function slot2.onRemove(slot0, slot1, slot2, slot3)
+	if slot0._unit:IsBoss() then
+		slot0._unit:BarrierStateChange(0)
 	end
 end
 
-function var_0_2.GetIFF(arg_8_0)
-	return arg_8_0._unit:GetIFF()
+function slot2.GetIFF(slot0)
+	return slot0._unit:GetIFF()
 end
 
-function var_0_2.GetPosition(arg_9_0)
-	return arg_9_0._centerPos
+function slot2.GetPosition(slot0)
+	return slot0._centerPos
 end
 
-function var_0_2.IsWallActive(arg_10_0)
-	return arg_10_0._durability > 0
+function slot2.IsWallActive(slot0)
+	return slot0._durability > 0
 end

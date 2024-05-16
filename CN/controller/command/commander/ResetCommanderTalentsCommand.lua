@@ -1,26 +1,19 @@
-﻿local var_0_0 = class("ResetCommanderTalentsCommand", pm.SimpleCommand)
+slot0 = class("ResetCommanderTalentsCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = getProxy(CommanderProxy)
-	local var_1_2 = var_1_1:getCommanderById(var_1_0)
-
-	if not var_1_2 then
+function slot0.execute(slot0, slot1)
+	if not getProxy(CommanderProxy):getCommanderById(slot1:getBody().id) then
 		return
 	end
 
-	if pg.TimeMgr.GetInstance():GetServerTime() < var_1_2:GetNextResetAbilityTime() then
+	if pg.TimeMgr.GetInstance():GetServerTime() < slot5:GetNextResetAbilityTime() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_reset_talent_time_no_rearch"))
 
 		return
 	end
 
-	local var_1_3 = var_1_2:getTalentOrigins()
-	local var_1_4 = var_1_2:getTalents()
-
-	if #var_1_3 == #var_1_4 and _.all(var_1_3, function(arg_2_0)
-		return _.any(var_1_4, function(arg_3_0)
-			return arg_3_0.id == arg_2_0.id
+	if #slot5:getTalentOrigins() == #slot5:getTalents() and _.all(slot6, function (slot0)
+		return _.any(uv0, function (slot0)
+			return slot0.id == uv0.id
 		end)
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_reset_talent_is_not_need"))
@@ -28,35 +21,31 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	local var_1_5 = getProxy(PlayerProxy)
-	local var_1_6 = var_1_5:getData()
-	local var_1_7 = var_1_2:getResetTalentConsume()
-
-	if var_1_7 > var_1_6.gold then
+	if getProxy(PlayerProxy):getData().gold < slot5:getResetTalentConsume() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25014, {
-		commanderid = var_1_0
-	}, 25015, function(arg_4_0)
-		if arg_4_0.result == 0 then
-			var_1_6:consume({
-				gold = var_1_7
+		commanderid = slot3
+	}, 25015, function (slot0)
+		if slot0.result == 0 then
+			uv0:consume({
+				gold = uv1
 			})
-			var_1_5:updatePlayer(var_1_6)
-			var_1_2:resetTalents()
-			var_1_2:updatePt(0)
-			var_1_2:updateNotLearnedList({})
-			var_1_1:updateCommander(var_1_2)
-			var_1_2:updateAbilityTime(pg.TimeMgr.GetInstance():GetServerTime())
-			arg_1_0:sendNotification(GAME.COMMANDER_RESET_TALENTS_DONE)
+			uv2:updatePlayer(uv0)
+			uv3:resetTalents()
+			uv3:updatePt(0)
+			uv3:updateNotLearnedList({})
+			uv4:updateCommander(uv3)
+			uv3:updateAbilityTime(pg.TimeMgr.GetInstance():GetServerTime())
+			uv5:sendNotification(GAME.COMMANDER_RESET_TALENTS_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_reset_talent_success"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_reset_talent_erro", arg_4_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_reset_talent_erro", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

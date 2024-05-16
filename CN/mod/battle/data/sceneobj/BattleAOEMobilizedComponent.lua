@@ -1,62 +1,57 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = class("BattleAOEMobilizedComponent")
+slot0.Battle.BattleAOEMobilizedComponent = slot2
+slot2.__name = "BattleAOEMobilizedComponent"
+slot2.STAY = 0
+slot2.FOLLOW = 1
+slot2.REFERENCE = 2
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = class("BattleAOEMobilizedComponent")
+function slot2.Ctor(slot0, slot1)
+	slot0._area = slot1
 
-var_0_0.Battle.BattleAOEMobilizedComponent = var_0_2
-var_0_2.__name = "BattleAOEMobilizedComponent"
-var_0_2.STAY = 0
-var_0_2.FOLLOW = 1
-var_0_2.REFERENCE = 2
+	slot0._area:AppendComponent(slot0)
 
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._area = arg_1_1
+	slot2 = slot0._area.Settle
 
-	arg_1_0._area:AppendComponent(arg_1_0)
-
-	local var_1_0 = arg_1_0._area.Settle
-
-	function arg_1_0._area.Settle()
-		arg_1_0:updatePosition()
-		var_1_0(arg_1_0._area)
+	function slot0._area.Settle()
+		uv0:updatePosition()
+		uv1(uv0._area)
 	end
 end
 
-function var_0_2.Dispose(arg_3_0)
-	arg_3_0._area = nil
-	arg_3_0._referenceUnit = nil
+function slot2.Dispose(slot0)
+	slot0._area = nil
+	slot0._referenceUnit = nil
 end
 
-function var_0_2.SetReferenceUnit(arg_4_0, arg_4_1)
-	arg_4_0._referenceUnit = arg_4_1
-	arg_4_0._referencePoint = Clone(arg_4_1:GetPosition())
+function slot2.SetReferenceUnit(slot0, slot1)
+	slot0._referenceUnit = slot1
+	slot0._referencePoint = Clone(slot1:GetPosition())
 end
 
-function var_0_2.ConfigData(arg_5_0, arg_5_1, arg_5_2)
-	if arg_5_1 == var_0_2.STAY then
-		arg_5_0.updatePosition = var_0_2.doStay
-	elseif arg_5_1 == var_0_2.FOLLOW then
-		arg_5_0.updatePosition = var_0_2.doFollow
-	elseif arg_5_1 == var_0_2.REFERENCE then
-		arg_5_0.updatePosition = var_0_2.doReference
-		arg_5_0._speedVector = Vector3.New(arg_5_2.speedX, 0, 0)
+function slot2.ConfigData(slot0, slot1, slot2)
+	if slot1 == uv0.STAY then
+		slot0.updatePosition = uv0.doStay
+	elseif slot1 == uv0.FOLLOW then
+		slot0.updatePosition = uv0.doFollow
+	elseif slot1 == uv0.REFERENCE then
+		slot0.updatePosition = uv0.doReference
+		slot0._speedVector = Vector3.New(slot2.speedX, 0, 0)
 	end
 end
 
-function var_0_2.doStay()
-	return
+function slot2.doStay()
 end
 
-function var_0_2.doFollow(arg_7_0)
-	local var_7_0 = setmetatable({}, {
-		__index = arg_7_0._referenceUnit:GetPosition()
-	})
-
-	arg_7_0._area:SetPosition(var_7_0)
+function slot2.doFollow(slot0)
+	slot0._area:SetPosition(setmetatable({}, {
+		__index = slot0._referenceUnit:GetPosition()
+	}))
 end
 
-function var_0_2.doReference(arg_8_0)
-	arg_8_0._referencePoint:Add(arg_8_0._speedVector)
-	arg_8_0._area:SetPosition(arg_8_0._referencePoint)
+function slot2.doReference(slot0)
+	slot0._referencePoint:Add(slot0._speedVector)
+	slot0._area:SetPosition(slot0._referencePoint)
 end

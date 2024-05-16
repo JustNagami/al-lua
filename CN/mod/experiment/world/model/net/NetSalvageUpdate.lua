@@ -1,21 +1,20 @@
-﻿local var_0_0 = class("NetSalvageUpdate", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("NetSalvageUpdate", import("....BaseEntity"))
+slot0.Fields = {
 	id = "number",
 	list = "table",
 	mapId = "number",
 	step = "number"
 }
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.group_id
-	arg_1_0.step = arg_1_1.cmd_collection.progress
-	arg_1_0.list = underscore.rest(arg_1_1.cmd_collection.progress_list, 1)
-	arg_1_0.mapId = arg_1_1.cmd_collection.random_id
+function slot0.Setup(slot0, slot1)
+	slot0.id = slot1.group_id
+	slot0.step = slot1.cmd_collection.progress
+	slot0.list = underscore.rest(slot1.cmd_collection.progress_list, 1)
+	slot0.mapId = slot1.cmd_collection.random_id
 end
 
-function var_0_0.Dispose(arg_2_0)
-	arg_2_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

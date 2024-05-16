@@ -1,15 +1,13 @@
-﻿local var_0_0 = class("ActivityPermanentStartCommand", pm.SimpleCommand)
+slot0 = class("ActivityPermanentStartCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().activity_id
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(11206, {
-		activity_id = var_1_0
-	}, 11207, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			getProxy(ActivityPermanentProxy):startSelectActivity(var_1_0)
-			arg_1_0:sendNotification(GAME.ACTIVITY_PERMANENT_START_DONE, {
-				id = var_1_0
+		activity_id = slot1:getBody().activity_id
+	}, 11207, function (slot0)
+		if slot0.result == 0 then
+			getProxy(ActivityPermanentProxy):startSelectActivity(uv0)
+			uv1:sendNotification(GAME.ACTIVITY_PERMANENT_START_DONE, {
+				id = uv0
 			})
 		else
 			warning("error permanent")
@@ -17,4 +15,4 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	end)
 end
 
-return var_0_0
+return slot0

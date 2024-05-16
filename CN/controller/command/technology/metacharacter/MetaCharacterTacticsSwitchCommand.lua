@@ -1,31 +1,28 @@
-﻿local var_0_0 = class("MetaCharacterTacticsSwitchCommand", pm.SimpleCommand)
+slot0 = class("MetaCharacterTacticsSwitchCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipID
-	local var_1_2 = var_1_0.skillID
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.shipID
+	slot4 = slot2.skillID
 
-	print("63307 switch skill", tostring(var_1_1), tostring(var_1_2))
+	print("63307 switch skill", tostring(slot3), tostring(slot4))
 	pg.ConnectionMgr.GetInstance():Send(63307, {
-		ship_id = var_1_1,
-		skill_id = var_1_2
-	}, 63308, function(arg_2_0)
-		if arg_2_0.result == 0 then
+		ship_id = slot3,
+		skill_id = slot4
+	}, 63308, function (slot0)
+		if slot0.result == 0 then
 			print("63308 switch success")
-			getProxy(MetaCharacterProxy):switchMetaTacticsSkill(var_1_1, var_1_2)
-			getProxy(MetaCharacterProxy):tryRemoveMetaSkillLevelMaxInfo(var_1_1, var_1_2)
-
-			local var_2_0 = arg_2_0.switch_cnt
-
-			arg_1_0:sendNotification(GAME.TACTICS_META_SWITCH_SKILL_DONE, {
-				metaShipID = var_1_1,
-				skillID = var_1_2,
-				leftSwitchCount = var_2_0
+			getProxy(MetaCharacterProxy):switchMetaTacticsSkill(uv0, uv1)
+			getProxy(MetaCharacterProxy):tryRemoveMetaSkillLevelMaxInfo(uv0, uv1)
+			uv2:sendNotification(GAME.TACTICS_META_SWITCH_SKILL_DONE, {
+				metaShipID = uv0,
+				skillID = uv1,
+				leftSwitchCount = slot0.switch_cnt
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

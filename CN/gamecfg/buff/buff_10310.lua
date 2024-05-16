@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 35,
-				skill_id = 10310
-			}
-		}
-	},
+return {
 	{
 		desc = "每35秒，对距离最远的敌人额外发动一轮必定暴击的专属通常弹炮击(威力依据技能等级)",
 		addition = {
@@ -222,5 +209,18 @@
 	stack = 1,
 	id = 10310,
 	icon = 10310,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 35,
+				skill_id = 10310
+			}
+		}
+	}
 }

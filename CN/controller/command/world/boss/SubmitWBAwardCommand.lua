@@ -1,24 +1,21 @@
-﻿local var_0_0 = class("SubmitWBAwardCommand", pm.SimpleCommand)
+slot0 = class("SubmitWBAwardCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().bossId
-	local var_1_1 = nowWorld():GetBossProxy()
+function slot0.execute(slot0, slot1)
+	slot5 = nowWorld():GetBossProxy()
 
 	pg.ConnectionMgr.GetInstance():Send(34511, {
-		boss_id = var_1_0
-	}, 34512, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drops)
-
-			var_1_1:RemoveSelfBoss()
-			var_1_1:ClearRank(var_1_0)
-			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD_DONE, {
-				items = var_2_0
+		boss_id = slot1:getBody().bossId
+	}, 34512, function (slot0)
+		if slot0.result == 0 then
+			uv0:RemoveSelfBoss()
+			uv0:ClearRank(uv1)
+			uv2:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD_DONE, {
+				items = PlayerConst.addTranDrop(slot0.drops)
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n1("领取失败") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n1("领取失败") .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

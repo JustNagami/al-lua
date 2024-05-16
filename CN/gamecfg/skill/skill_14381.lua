@@ -1,56 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetPlayerMainFleet",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.035
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSameToLastEffect",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 14382
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetPlayerVanguardFleet",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.035
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSameToLastEffect",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 14382
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -518,5 +466,57 @@
 	id = 14381,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetPlayerMainFleet",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.035
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSameToLastEffect",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 14382
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetPlayerVanguardFleet",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.035
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSameToLastEffect",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 14382
+			}
+		}
+	}
 }

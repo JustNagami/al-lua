@@ -1,38 +1,36 @@
-﻿local var_0_0 = class("VoteExchangeMediator", import("view.base.ContextMediator"))
+slot0 = class("VoteExchangeMediator", import("view.base.ContextMediator"))
+slot0.GO_TASK = "VoteExchangeMediator:GO_TASK"
+slot0.SKIP_TASK = "VoteExchangeMediator:SKIP_TASK"
+slot0.SUBMIT_TASK = "VoteExchangeMediator:SUBMIT_TASK"
 
-var_0_0.GO_TASK = "VoteExchangeMediator:GO_TASK"
-var_0_0.SKIP_TASK = "VoteExchangeMediator:SKIP_TASK"
-var_0_0.SUBMIT_TASK = "VoteExchangeMediator:SUBMIT_TASK"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.GO_TASK, function(arg_2_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
+function slot0.register(slot0)
+	slot0:bind(uv0.GO_TASK, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
 			page = TaskScene.PAGE_TYPE_ROUTINE
 		})
 	end)
-	arg_1_0:bind(var_0_0.SKIP_TASK, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg_3_1
+	slot0:bind(uv0.SKIP_TASK, function (slot0, slot1)
+		uv0:sendNotification(GAME.TASK_GO, {
+			taskVO = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.SUBMIT_TASK, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_4_1)
+	slot0:bind(uv0.SUBMIT_TASK, function (slot0, slot1)
+		uv0:sendNotification(GAME.SUBMIT_TASK, slot1)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SUBMIT_TASK_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == GAME.SUBMIT_TASK_DONE then
-		arg_6_0.viewComponent:Flush()
+	if slot1:getName() == GAME.SUBMIT_TASK_DONE then
+		slot0.viewComponent:Flush()
 	end
 end
 
-return var_0_0
+return slot0

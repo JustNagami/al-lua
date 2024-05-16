@@ -1,54 +1,41 @@
-﻿MangaConst = {}
+MangaConst = {}
+slot0 = MangaConst
+slot0.Version = 0
+slot0.NewCount = 0
 
-local var_0_0 = MangaConst
+function slot0.setVersionAndNewCount()
+	slot0 = #pg.cartoon.all
+	uv0.Version = pg.cartoon[pg.cartoon.all[slot0]].mark
 
-var_0_0.Version = 0
-var_0_0.NewCount = 0
-
-function var_0_0.setVersionAndNewCount()
-	local var_1_0 = #pg.cartoon.all
-	local var_1_1 = pg.cartoon.all[var_1_0]
-
-	var_0_0.Version = pg.cartoon[var_1_1].mark
-
-	local var_1_2 = 0
-
-	for iter_1_0 = var_1_0, 1, -1 do
-		local var_1_3 = pg.cartoon.all[iter_1_0]
-		local var_1_4 = pg.cartoon[var_1_3].mark
-
-		if var_1_4 == var_0_0.Version then
-			var_1_2 = var_1_2 + 1
-		elseif var_1_4 < var_0_0.Version then
+	for slot6 = slot0, 1, -1 do
+		if pg.cartoon[pg.cartoon.all[slot6]].mark == uv0.Version then
+			slot2 = 0 + 1
+		elseif slot8 < uv0.Version then
 			break
 		end
 	end
 
-	var_0_0.NewCount = var_1_2
+	uv0.NewCount = slot2
 end
 
-var_0_0.MANGA_PATH_PREFIX = "mangapic/"
-var_0_0.SET_MANGA_LIKE = 0
-var_0_0.CANCEL_MANGA_LIKE = 1
+slot0.MANGA_PATH_PREFIX = "mangapic/"
+slot0.SET_MANGA_LIKE = 0
+slot0.CANCEL_MANGA_LIKE = 1
 
-function var_0_0.isMangaEverReadByID(arg_2_0)
-	local var_2_0 = getProxy(AppreciateProxy):getMangaReadIDList()
-
-	return table.contains(var_2_0, arg_2_0)
+function slot0.isMangaEverReadByID(slot0)
+	return table.contains(getProxy(AppreciateProxy):getMangaReadIDList(), slot0)
 end
 
-function var_0_0.isMangaNewByID(arg_3_0)
-	local var_3_0 = pg.cartoon[arg_3_0]
+function slot0.isMangaNewByID(slot0)
+	slot1 = pg.cartoon[slot0]
 
-	assert(var_3_0, "Manga info is null, ID:" .. tostring(arg_3_0))
+	assert(slot1, "Manga info is null, ID:" .. tostring(slot0))
 
-	return var_3_0.mark >= var_0_0.Version
+	return uv0.Version <= slot1.mark
 end
 
-function var_0_0.isMangaLikeByID(arg_4_0)
-	local var_4_0 = getProxy(AppreciateProxy):getMangaLikeIDList()
-
-	return table.contains(var_4_0, arg_4_0)
+function slot0.isMangaLikeByID(slot0)
+	return table.contains(getProxy(AppreciateProxy):getMangaLikeIDList(), slot0)
 end
 
-return var_0_0
+return slot0

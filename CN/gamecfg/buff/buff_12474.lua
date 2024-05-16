@@ -1,19 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.05,
-				index = {
-					-1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -192,5 +177,20 @@
 	stack = 1,
 	id = 12474,
 	icon = 12470,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.05,
+				index = {
+					-1
+				}
+			}
+		}
+	}
 }

@@ -1,18 +1,18 @@
-﻿local var_0_0 = class("RequestPackage")
+slot0 = class("RequestPackage")
 
-function var_0_0.Start(arg_1_0, ...)
-	if arg_1_0.__call then
-		arg_1_0.__call(arg_1_0, ...)
+function slot0.Start(slot0, ...)
+	if slot0.__call then
+		slot0:__call(...)
 	end
 
-	return arg_1_0
+	return slot0
 end
 
-function var_0_0.Stop(arg_2_0)
-	setmetatable(arg_2_0, nil)
-	table.clear(arg_2_0)
+function slot0.Stop(slot0)
+	setmetatable(slot0, nil)
+	table.clear(slot0)
 
-	arg_2_0.stopped = true
+	slot0.stopped = true
 end
 
-return var_0_0
+return slot0

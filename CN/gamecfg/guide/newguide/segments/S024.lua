@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"指挥官请点击<color=#ff7d36>出击</color>",
 	"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
 	"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -39,7 +39,7 @@ return {
 				mode = 2,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/normal/func_button",
@@ -64,7 +64,7 @@ return {
 				mode = 2,
 				posY = -304,
 				posX = -190,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -75,7 +75,7 @@ return {
 				mode = 2,
 				posY = 167.08,
 				posX = 23.41,
-				text = var_0_0[4]
+				text = slot0[4]
 			}
 		},
 		{

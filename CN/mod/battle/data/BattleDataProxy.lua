@@ -1,2647 +1,2335 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleEvent
+slot2 = slot0.Battle.BattleFormulas
+slot3 = slot0.Battle.BattleConst
+slot4 = slot0.Battle.BattleConfig
+slot5 = slot0.Battle.BattleDataFunction
+slot6 = slot0.Battle.BattleAttr
+slot7 = slot0.Battle.BattleVariable
+slot8 = slot0.Battle.BattleCardPuzzleEvent
+slot9 = singletonClass("BattleDataProxy", slot0.MVC.Proxy)
+slot0.Battle.BattleDataProxy = slot9
+slot9.__name = "BattleDataProxy"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleEvent
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = var_0_0.Battle.BattleConst
-local var_0_4 = var_0_0.Battle.BattleConfig
-local var_0_5 = var_0_0.Battle.BattleDataFunction
-local var_0_6 = var_0_0.Battle.BattleAttr
-local var_0_7 = var_0_0.Battle.BattleVariable
-local var_0_8 = var_0_0.Battle.BattleCardPuzzleEvent
-local var_0_9 = singletonClass("BattleDataProxy", var_0_0.MVC.Proxy)
-
-var_0_0.Battle.BattleDataProxy = var_0_9
-var_0_9.__name = "BattleDataProxy"
-
-function var_0_9.Ctor(arg_1_0)
-	var_0_9.super.Ctor(arg_1_0)
+function slot9.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_9.InitBattle(arg_2_0, arg_2_1)
-	arg_2_0.Update = arg_2_0.updateInit
+function slot9.InitBattle(slot0, slot1)
+	slot0.Update = slot0.updateInit
 
-	local var_2_0 = arg_2_1.battleType
-	local var_2_1 = var_2_0 == SYSTEM_WORLD or var_2_0 == SYSTEM_WORLD_BOSS
-	local var_2_2 = pg.SdkMgr.GetInstance():CheckPretest() and (PlayerPrefs.GetInt("stage_scratch") or 0) == 1
+	slot0:SetupCalculateDamage(pg.SdkMgr.GetInstance():CheckPretest() and (PlayerPrefs.GetInt("stage_scratch") or 0) == 1 and GodenFnger or uv0.CreateContextCalculateDamage(slot1.battleType == SYSTEM_WORLD or slot2 == SYSTEM_WORLD_BOSS))
+	slot0:SetupDamageKamikazeAir()
+	slot0:SetupDamageKamikazeShip()
+	slot0:SetupDamageCrush()
+	uv1.Init()
+	slot0:InitData(slot1)
+	slot0:DispatchEvent(uv2.Event.New(uv3.STAGE_DATA_INIT_FINISH))
+	slot0._cameraUtil:Initialize()
 
-	arg_2_0:SetupCalculateDamage(var_2_2 and GodenFnger or var_0_2.CreateContextCalculateDamage(var_2_1))
-	arg_2_0:SetupDamageKamikazeAir()
-	arg_2_0:SetupDamageKamikazeShip()
-	arg_2_0:SetupDamageCrush()
-	var_0_7.Init()
-	arg_2_0:InitData(arg_2_1)
-	arg_2_0:DispatchEvent(var_0_0.Event.New(var_0_1.STAGE_DATA_INIT_FINISH))
-	arg_2_0._cameraUtil:Initialize()
+	slot0._cameraTop, slot0._cameraBottom, slot0._cameraLeft, slot0._cameraRight = slot0._cameraUtil:SetMapData(slot0:GetTotalBounds())
 
-	arg_2_0._cameraTop, arg_2_0._cameraBottom, arg_2_0._cameraLeft, arg_2_0._cameraRight = arg_2_0._cameraUtil:SetMapData(arg_2_0:GetTotalBounds())
-
-	arg_2_0:InitWeatherData()
-	arg_2_0:InitUserShipsData(arg_2_0._battleInitData.MainUnitList, arg_2_0._battleInitData.VanguardUnitList, var_0_4.FRIENDLY_CODE, arg_2_0._battleInitData.SubUnitList)
-	arg_2_0:InitUserSupportShipsData(var_0_4.FRIENDLY_CODE, arg_2_0._battleInitData.SupportUnitList)
-	arg_2_0:InitUserAidData()
-	arg_2_0:SetSubmarinAidData()
-	arg_2_0._cameraUtil:SetFocusFleet(arg_2_0:GetFleetByIFF(var_0_4.FRIENDLY_CODE))
-	arg_2_0:StatisticsInit(arg_2_0._fleetList[var_0_4.FRIENDLY_CODE]:GetUnitList())
-	arg_2_0:SetFlagShipID(arg_2_0:GetFleetByIFF(var_0_4.FRIENDLY_CODE):GetFlagShip())
-	arg_2_0:DispatchEvent(var_0_0.Event.New(var_0_1.COMMON_DATA_INIT_FINISH, {}))
+	slot0:InitWeatherData()
+	slot0:InitUserShipsData(slot0._battleInitData.MainUnitList, slot0._battleInitData.VanguardUnitList, uv4.FRIENDLY_CODE, slot0._battleInitData.SubUnitList)
+	slot0:InitUserSupportShipsData(uv4.FRIENDLY_CODE, slot0._battleInitData.SupportUnitList)
+	slot0:InitUserAidData()
+	slot0:SetSubmarinAidData()
+	slot0._cameraUtil:SetFocusFleet(slot0:GetFleetByIFF(uv4.FRIENDLY_CODE))
+	slot0:StatisticsInit(slot0._fleetList[uv4.FRIENDLY_CODE]:GetUnitList())
+	slot0:SetFlagShipID(slot0:GetFleetByIFF(uv4.FRIENDLY_CODE):GetFlagShip())
+	slot0:DispatchEvent(uv2.Event.New(uv3.COMMON_DATA_INIT_FINISH, {}))
 end
 
-function var_0_9.OnCameraRatioUpdate(arg_3_0)
-	arg_3_0._cameraTop, arg_3_0._cameraBottom, arg_3_0._cameraLeft, arg_3_0._cameraRight = arg_3_0._cameraUtil:SetMapData(arg_3_0:GetTotalBounds())
+function slot9.OnCameraRatioUpdate(slot0)
+	slot0._cameraTop, slot0._cameraBottom, slot0._cameraLeft, slot0._cameraRight = slot0._cameraUtil:SetMapData(slot0:GetTotalBounds())
 
-	arg_3_0._cameraUtil:setArrowPoint()
+	slot0._cameraUtil:setArrowPoint()
 end
 
-function var_0_9.Start(arg_4_0)
-	arg_4_0._startTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+function slot9.Start(slot0)
+	slot0._startTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var_0_9.TriggerBattleInitBuffs(arg_5_0)
-	for iter_5_0, iter_5_1 in pairs(arg_5_0._fleetList) do
-		local var_5_0 = iter_5_1:GetUnitList()
+function slot9.TriggerBattleInitBuffs(slot0)
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		slot6 = slot5:GetUnitList()
 
-		iter_5_1:FleetBuffTrigger(var_0_3.BuffEffectType.ON_INIT_GAME)
+		slot5:FleetBuffTrigger(uv0.BuffEffectType.ON_INIT_GAME)
 	end
 end
 
-function var_0_9.TirggerBattleStartBuffs(arg_6_0)
-	for iter_6_0, iter_6_1 in pairs(arg_6_0._fleetList) do
-		local var_6_0 = iter_6_1:GetUnitList()
-		local var_6_1 = iter_6_1:GetScoutList()
-		local var_6_2 = var_6_1[1]
-		local var_6_3 = #var_6_1 > 1 and var_6_1[#var_6_1] or nil
-		local var_6_4 = #var_6_1 == 3 and var_6_1[2] or nil
-		local var_6_5 = iter_6_1:GetMainList()
-		local var_6_6 = var_6_5[1]
-		local var_6_7 = var_6_5[2]
-		local var_6_8 = var_6_5[3]
+function slot9.TirggerBattleStartBuffs(slot0)
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		slot7 = slot5:GetScoutList()
+		slot8 = slot7[1]
+		slot9 = #slot7 > 1 and slot7[#slot7] or nil
+		slot10 = #slot7 == 3 and slot7[2] or nil
+		slot11 = slot5:GetMainList()
+		slot12 = slot11[1]
+		slot13 = slot11[2]
+		slot14 = slot11[3]
 
-		for iter_6_2, iter_6_3 in ipairs(var_6_0) do
-			underscore.each(arg_6_0._battleInitData.ChapterBuffIDs or {}, function(arg_7_0)
-				local var_7_0 = var_0_0.Battle.BattleBuffUnit.New(arg_7_0)
-
-				iter_6_3:AddBuff(var_7_0)
+		for slot18, slot19 in ipairs(slot5:GetUnitList()) do
+			underscore.each(slot0._battleInitData.ChapterBuffIDs or {}, function (slot0)
+				uv1:AddBuff(uv0.Battle.BattleBuffUnit.New(slot0))
 			end)
-			underscore.each(arg_6_0._battleInitData.GlobalBuffIDs or {}, function(arg_8_0)
-				arg_8_0 = tonumber(arg_8_0)
-
-				local var_8_0 = var_0_0.Battle.BattleBuffUnit.New(arg_8_0)
-
-				iter_6_3:AddBuff(var_8_0)
+			underscore.each(slot0._battleInitData.GlobalBuffIDs or {}, function (slot0)
+				uv1:AddBuff(uv0.Battle.BattleBuffUnit.New(tonumber(slot0)))
 			end)
 
-			if arg_6_0._battleInitData.MapAuraSkills then
-				for iter_6_4, iter_6_5 in ipairs(arg_6_0._battleInitData.MapAuraSkills) do
-					local var_6_9 = var_0_0.Battle.BattleBuffUnit.New(iter_6_5.id, iter_6_5.level)
-
-					iter_6_3:AddBuff(var_6_9)
+			if slot0._battleInitData.MapAuraSkills then
+				for slot23, slot24 in ipairs(slot0._battleInitData.MapAuraSkills) do
+					slot19:AddBuff(uv0.Battle.BattleBuffUnit.New(slot24.id, slot24.level))
 				end
 			end
 
-			if arg_6_0._battleInitData.MapAidSkills then
-				for iter_6_6, iter_6_7 in ipairs(arg_6_0._battleInitData.MapAidSkills) do
-					local var_6_10 = var_0_0.Battle.BattleBuffUnit.New(iter_6_7.id, iter_6_7.level)
-
-					iter_6_3:AddBuff(var_6_10)
+			if slot0._battleInitData.MapAidSkills then
+				for slot23, slot24 in ipairs(slot0._battleInitData.MapAidSkills) do
+					slot19:AddBuff(uv0.Battle.BattleBuffUnit.New(slot24.id, slot24.level))
 				end
 			end
 
-			if arg_6_0._currentStageData.stageBuff then
-				for iter_6_8, iter_6_9 in ipairs(arg_6_0._currentStageData.stageBuff) do
-					local var_6_11 = var_0_0.Battle.BattleBuffUnit.New(iter_6_9.id, iter_6_9.level)
-
-					iter_6_3:AddBuff(var_6_11)
+			if slot0._currentStageData.stageBuff then
+				for slot23, slot24 in ipairs(slot0._currentStageData.stageBuff) do
+					slot19:AddBuff(uv0.Battle.BattleBuffUnit.New(slot24.id, slot24.level))
 				end
 			end
 
-			iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_START_GAME)
+			slot19:TriggerBuff(uv1.BuffEffectType.ON_START_GAME)
 
-			if iter_6_3 == var_6_6 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_FLAG_SHIP)
-			elseif iter_6_3 == var_6_7 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_UPPER_CONSORT)
-			elseif iter_6_3 == var_6_8 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_LOWER_CONSORT)
-			elseif iter_6_3 == var_6_2 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_LEADER)
-			elseif iter_6_3 == var_6_4 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_CENTER)
-			elseif iter_6_3 == var_6_3 then
-				iter_6_3:TriggerBuff(var_0_3.BuffEffectType.ON_REAR)
+			if slot19 == slot12 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_FLAG_SHIP)
+			elseif slot19 == slot13 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_UPPER_CONSORT)
+			elseif slot19 == slot14 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_LOWER_CONSORT)
+			elseif slot19 == slot8 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_LEADER)
+			elseif slot19 == slot10 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_CENTER)
+			elseif slot19 == slot9 then
+				slot19:TriggerBuff(uv1.BuffEffectType.ON_REAR)
 			end
 		end
 
-		local var_6_12 = iter_6_1:GetSupportUnitList()
-
-		for iter_6_10, iter_6_11 in ipairs(var_6_12) do
-			underscore.each(arg_6_0._battleInitData.ChapterBuffIDs or {}, function(arg_9_0)
-				if var_0_5.GetSLGStrategyBuffByCombatBuffID(arg_9_0).type == ChapterConst.AirDominanceStrategyBuffType then
-					local var_9_0 = var_0_0.Battle.BattleBuffUnit.New(arg_9_0)
-
-					iter_6_11:AddBuff(var_9_0)
+		for slot19, slot20 in ipairs(slot5:GetSupportUnitList()) do
+			underscore.each(slot0._battleInitData.ChapterBuffIDs or {}, function (slot0)
+				if uv0.GetSLGStrategyBuffByCombatBuffID(slot0).type == ChapterConst.AirDominanceStrategyBuffType then
+					uv2:AddBuff(uv1.Battle.BattleBuffUnit.New(slot0))
 				end
 			end)
 		end
 	end
 end
 
-function var_0_9.InitAllFleetUnitsWeaponCD(arg_10_0)
-	for iter_10_0, iter_10_1 in pairs(arg_10_0._fleetList) do
-		local var_10_0 = iter_10_1:GetUnitList()
-
-		for iter_10_2, iter_10_3 in ipairs(var_10_0) do
-			var_0_9.InitUnitWeaponCD(iter_10_3)
+function slot9.InitAllFleetUnitsWeaponCD(slot0)
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		for slot10, slot11 in ipairs(slot5:GetUnitList()) do
+			uv0.InitUnitWeaponCD(slot11)
 		end
 	end
 end
 
-function var_0_9.InitUnitWeaponCD(arg_11_0)
-	arg_11_0:CheckWeaponInitial()
+function slot9.InitUnitWeaponCD(slot0)
+	slot0:CheckWeaponInitial()
 end
 
-function var_0_9.StartCardPuzzle(arg_12_0)
-	for iter_12_0, iter_12_1 in pairs(arg_12_0._fleetList) do
-		iter_12_1:GetCardPuzzleComponent():Start()
+function slot9.StartCardPuzzle(slot0)
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		slot5:GetCardPuzzleComponent():Start()
 	end
 end
 
-function var_0_9.PausePuzzleComponent(arg_13_0)
-	for iter_13_0, iter_13_1 in pairs(arg_13_0._fleetList) do
-		local var_13_0 = iter_13_1:GetCardPuzzleComponent()
-
-		if var_13_0 then
-			var_13_0:BlockComponentByCard(true)
+function slot9.PausePuzzleComponent(slot0)
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		if slot5:GetCardPuzzleComponent() then
+			slot6:BlockComponentByCard(true)
 		end
 	end
 end
 
-function var_0_9.ResumePuzzleComponent(arg_14_0)
-	onDelayTick(function()
-		for iter_15_0, iter_15_1 in pairs(arg_14_0._fleetList) do
-			local var_15_0 = iter_15_1:GetCardPuzzleComponent()
-
-			if var_15_0 then
-				var_15_0:BlockComponentByCard(false)
+function slot9.ResumePuzzleComponent(slot0)
+	onDelayTick(function ()
+		for slot3, slot4 in pairs(uv0._fleetList) do
+			if slot4:GetCardPuzzleComponent() then
+				slot5:BlockComponentByCard(false)
 			end
 		end
 	end, 0.06)
 end
 
-function var_0_9.GetInitData(arg_16_0)
-	return arg_16_0._battleInitData
+function slot9.GetInitData(slot0)
+	return slot0._battleInitData
 end
 
-function var_0_9.GetDungeonData(arg_17_0)
-	return arg_17_0._dungeonInfo
+function slot9.GetDungeonData(slot0)
+	return slot0._dungeonInfo
 end
 
-function var_0_9.InitData(arg_18_0, arg_18_1)
-	arg_18_0.FrameIndex = 1
-	arg_18_0._friendlyCode = 1
-	arg_18_0._foeCode = -1
-	var_0_3.FRIENDLY_CODE = 1
-	var_0_3.FOE_CODE = -1
-	arg_18_0._completelyRepress = false
-	arg_18_0._repressReduce = 1
-	arg_18_0._repressLevel = 0
-	arg_18_0._repressEnemyHpRant = 1
-	arg_18_0._friendlyShipList = {}
-	arg_18_0._foeShipList = {}
-	arg_18_0._friendlyAircraftList = {}
-	arg_18_0._foeAircraftList = {}
-	arg_18_0._minionShipList = {}
-	arg_18_0._spectreShipList = {}
-	arg_18_0._fleetList = {}
-	arg_18_0._freeShipList = {}
-	arg_18_0._teamList = {}
-	arg_18_0._waveSummonList = {}
-	arg_18_0._aidUnitList = {}
-	arg_18_0._unitList = {}
-	arg_18_0._unitCount = 0
-	arg_18_0._bulletList = {}
-	arg_18_0._bulletCount = 0
-	arg_18_0._aircraftList = {}
-	arg_18_0._aircraftCount = 0
-	arg_18_0._AOEList = {}
-	arg_18_0._AOECount = 0
-	arg_18_0._wallList = {}
-	arg_18_0._wallIndex = 0
-	arg_18_0._shelterList = {}
-	arg_18_0._shelterIndex = 0
-	arg_18_0._environmentList = {}
-	arg_18_0._environmentIndex = 0
-	arg_18_0._deadUnitList = {}
-	arg_18_0._enemySubmarineCount = 0
-	arg_18_0._airFighterList = {}
-	arg_18_0._currentStageIndex = 1
-	arg_18_0._battleInitData = arg_18_1
-	arg_18_0._expeditionID = arg_18_1.StageTmpId
-	arg_18_0._expeditionTmp = pg.expedition_data_template[arg_18_0._expeditionID]
+function slot9.InitData(slot0, slot1)
+	slot0.FrameIndex = 1
+	slot0._friendlyCode = 1
+	slot0._foeCode = -1
+	uv0.FRIENDLY_CODE = 1
+	uv0.FOE_CODE = -1
+	slot0._completelyRepress = false
+	slot0._repressReduce = 1
+	slot0._repressLevel = 0
+	slot0._repressEnemyHpRant = 1
+	slot0._friendlyShipList = {}
+	slot0._foeShipList = {}
+	slot0._friendlyAircraftList = {}
+	slot0._foeAircraftList = {}
+	slot0._minionShipList = {}
+	slot0._spectreShipList = {}
+	slot0._fleetList = {}
+	slot0._freeShipList = {}
+	slot0._teamList = {}
+	slot0._waveSummonList = {}
+	slot0._aidUnitList = {}
+	slot0._unitList = {}
+	slot0._unitCount = 0
+	slot0._bulletList = {}
+	slot0._bulletCount = 0
+	slot0._aircraftList = {}
+	slot0._aircraftCount = 0
+	slot0._AOEList = {}
+	slot0._AOECount = 0
+	slot0._wallList = {}
+	slot0._wallIndex = 0
+	slot0._shelterList = {}
+	slot0._shelterIndex = 0
+	slot0._environmentList = {}
+	slot0._environmentIndex = 0
+	slot0._deadUnitList = {}
+	slot0._enemySubmarineCount = 0
+	slot0._airFighterList = {}
+	slot0._currentStageIndex = 1
+	slot0._battleInitData = slot1
+	slot0._expeditionID = slot1.StageTmpId
+	slot0._expeditionTmp = pg.expedition_data_template[slot0._expeditionID]
 
-	arg_18_0:SetDungeonLevel(arg_18_1.WorldLevel or arg_18_0._expeditionTmp.level)
+	slot0:SetDungeonLevel(slot1.WorldLevel or slot0._expeditionTmp.level)
 
-	arg_18_0._dungeonID = arg_18_0._expeditionTmp.dungeon_id
-	arg_18_0._dungeonInfo = var_0_5.GetDungeonTmpDataByID(arg_18_0._dungeonID)
+	slot0._dungeonID = slot0._expeditionTmp.dungeon_id
+	slot0._dungeonInfo = uv1.GetDungeonTmpDataByID(slot0._dungeonID)
 
-	if arg_18_1.WorldMapId then
-		arg_18_0._mapId = arg_18_1.WorldMapId
-	elseif arg_18_0._expeditionTmp.map_id then
-		local var_18_0 = arg_18_0._expeditionTmp.map_id
-
-		if #var_18_0 == 1 then
-			arg_18_0._mapId = var_18_0[1][1]
+	if slot1.WorldMapId then
+		slot0._mapId = slot1.WorldMapId
+	elseif slot0._expeditionTmp.map_id then
+		if #slot0._expeditionTmp.map_id == 1 then
+			slot0._mapId = slot2[1][1]
 		else
-			local var_18_1 = {}
+			slot3 = {}
 
-			for iter_18_0, iter_18_1 in ipairs(var_18_0) do
-				local var_18_2 = iter_18_1[2] * 100
-
-				table.insert(var_18_1, {
-					rst = iter_18_1[1],
-					weight = var_18_2
+			for slot7, slot8 in ipairs(slot2) do
+				table.insert(slot3, {
+					rst = slot8[1],
+					weight = slot8[2] * 100
 				})
 			end
 
-			arg_18_0._mapId = var_0_2.WeightRandom(var_18_1)
+			slot0._mapId = uv2.WeightRandom(slot3)
 		end
 	end
 
-	arg_18_0._weahter = arg_18_1.ChapterWeatherIDS or {}
-	arg_18_0._exposeSpeed = arg_18_0._expeditionTmp.expose_speed
-	arg_18_0._airExpose = arg_18_0._expeditionTmp.aircraft_expose[1]
-	arg_18_0._airExposeEX = arg_18_0._expeditionTmp.aircraft_expose[2]
-	arg_18_0._shipExpose = arg_18_0._expeditionTmp.ship_expose[1]
-	arg_18_0._shipExposeEX = arg_18_0._expeditionTmp.ship_expose[2]
-	arg_18_0._commander = arg_18_1.CommanderList or {}
-	arg_18_0._subCommander = arg_18_1.SubCommanderList or {}
-	arg_18_0._commanderBuff = arg_18_0.initCommanderBuff(arg_18_0._commander)
-	arg_18_0._subCommanderBuff = arg_18_0.initCommanderBuff(arg_18_0._subCommander)
+	slot0._weahter = slot1.ChapterWeatherIDS or {}
+	slot0._exposeSpeed = slot0._expeditionTmp.expose_speed
+	slot0._airExpose = slot0._expeditionTmp.aircraft_expose[1]
+	slot0._airExposeEX = slot0._expeditionTmp.aircraft_expose[2]
+	slot0._shipExpose = slot0._expeditionTmp.ship_expose[1]
+	slot0._shipExposeEX = slot0._expeditionTmp.ship_expose[2]
+	slot0._commander = slot1.CommanderList or {}
+	slot0._subCommander = slot1.SubCommanderList or {}
+	slot0._commanderBuff = slot0.initCommanderBuff(slot0._commander)
+	slot0._subCommanderBuff = slot0.initCommanderBuff(slot0._subCommander)
 
-	if arg_18_0._battleInitData.RepressInfo then
-		local var_18_3 = arg_18_0._battleInitData.RepressInfo
+	if slot0._battleInitData.RepressInfo then
+		slot2 = slot0._battleInitData.RepressInfo
 
-		if arg_18_0._battleInitData.battleType == SYSTEM_SCENARIO then
-			if var_18_3.repressCount >= var_18_3.repressMax then
-				arg_18_0._completelyRepress = true
+		if slot0._battleInitData.battleType == SYSTEM_SCENARIO then
+			if slot2.repressMax <= slot2.repressCount then
+				slot0._completelyRepress = true
 			end
 
-			arg_18_0._repressReduce = var_0_2.ChapterRepressReduce(var_18_3.repressReduce)
-			arg_18_0._repressLevel = var_18_3.repressLevel
-			arg_18_0._repressEnemyHpRant = var_18_3.repressEnemyHpRant
-		elseif arg_18_0._battleInitData.battleType == SYSTEM_WORLD or arg_18_0._battleInitData.battleType == SYSTEM_WORLD_BOSS then
-			arg_18_0._repressEnemyHpRant = var_18_3.repressEnemyHpRant
+			slot0._repressReduce = uv2.ChapterRepressReduce(slot2.repressReduce)
+			slot0._repressLevel = slot2.repressLevel
+			slot0._repressEnemyHpRant = slot2.repressEnemyHpRant
+		elseif slot0._battleInitData.battleType == SYSTEM_WORLD or slot0._battleInitData.battleType == SYSTEM_WORLD_BOSS then
+			slot0._repressEnemyHpRant = slot2.repressEnemyHpRant
 		end
 	end
 
-	arg_18_0._chapterWinningStreak = arg_18_0._battleInitData.DefeatCount or 0
-	arg_18_0._waveFlags = table.shallowCopy(arg_18_1.StageWaveFlags) or {}
+	slot0._chapterWinningStreak = slot0._battleInitData.DefeatCount or 0
+	slot0._waveFlags = table.shallowCopy(slot1.StageWaveFlags) or {}
 
-	arg_18_0:InitStageData()
+	slot0:InitStageData()
 
-	arg_18_0._cldSystem = var_0_0.Battle.BattleCldSystem.New(arg_18_0)
-	arg_18_0._cameraUtil = var_0_0.Battle.BattleCameraUtil.GetInstance()
+	slot0._cldSystem = uv3.Battle.BattleCldSystem.New(slot0)
+	slot0._cameraUtil = uv3.Battle.BattleCameraUtil.GetInstance()
 
-	arg_18_0:initBGM()
+	slot0:initBGM()
 end
 
-function var_0_9.initBGM(arg_19_0)
-	arg_19_0._initBGMList = {}
-	arg_19_0._otherBGMList = {}
+function slot9.initBGM(slot0)
+	slot0._initBGMList = {}
+	slot0._otherBGMList = {}
+	slot1 = {}
+	slot2 = {}
 
-	local var_19_0 = {}
-	local var_19_1 = {}
+	function slot3(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			slot6 = {}
 
-	local function var_19_2(arg_20_0)
-		for iter_20_0, iter_20_1 in ipairs(arg_20_0) do
-			local var_20_0 = {}
-
-			if iter_20_1.skills then
-				for iter_20_2, iter_20_3 in ipairs(iter_20_1.skills) do
-					table.insert(var_20_0, iter_20_3)
+			if slot5.skills then
+				for slot10, slot11 in ipairs(slot5.skills) do
+					table.insert(slot6, slot11)
 				end
 			end
 
-			if iter_20_1.equipment then
-				local var_20_1 = var_0_5.GetEquipSkill(iter_20_1.equipment, arg_19_0._battleInitData.battleType)
-
-				for iter_20_4, iter_20_5 in ipairs(var_20_1) do
-					var_20_0[iter_20_5] = {
+			if slot5.equipment then
+				for slot11, slot12 in ipairs(uv0.GetEquipSkill(slot5.equipment, uv1._battleInitData.battleType)) do
+					slot6[slot12] = {
 						level = 1,
-						id = iter_20_5
+						id = slot12
 					}
 				end
 			end
 
-			local var_20_2 = var_0_5.GetSongList(var_20_0)
-
-			for iter_20_6, iter_20_7 in pairs(var_20_2.initList) do
-				var_19_0[iter_20_6] = true
+			for slot11, slot12 in pairs(uv0.GetSongList(slot6).initList) do
+				uv2[slot11] = true
 			end
 
-			for iter_20_8, iter_20_9 in pairs(var_20_2.otherList) do
-				var_19_1[iter_20_8] = true
+			for slot11, slot12 in pairs(slot7.otherList) do
+				uv3[slot11] = true
 			end
 		end
 	end
 
-	var_19_2(arg_19_0._battleInitData.MainUnitList)
-	var_19_2(arg_19_0._battleInitData.VanguardUnitList)
-	var_19_2(arg_19_0._battleInitData.SubUnitList)
+	slot3(slot0._battleInitData.MainUnitList)
+	slot3(slot0._battleInitData.VanguardUnitList)
+	slot3(slot0._battleInitData.SubUnitList)
 
-	if arg_19_0._battleInitData.RivalMainUnitList then
-		var_19_2(arg_19_0._battleInitData.RivalMainUnitList)
+	if slot0._battleInitData.RivalMainUnitList then
+		slot3(slot0._battleInitData.RivalMainUnitList)
 	end
 
-	if arg_19_0._battleInitData.RivalVanguardUnitList then
-		var_19_2(arg_19_0._battleInitData.RivalVanguardUnitList)
+	if slot0._battleInitData.RivalVanguardUnitList then
+		slot3(slot0._battleInitData.RivalVanguardUnitList)
 	end
 
-	for iter_19_0, iter_19_1 in pairs(var_19_0) do
-		table.insert(arg_19_0._initBGMList, iter_19_0)
+	for slot7, slot8 in pairs(slot1) do
+		table.insert(slot0._initBGMList, slot7)
 	end
 
-	for iter_19_2, iter_19_3 in pairs(var_19_1) do
-		table.insert(arg_19_0._otherBGMList, iter_19_2)
+	for slot7, slot8 in pairs(slot2) do
+		table.insert(slot0._otherBGMList, slot7)
 	end
 end
 
-function var_0_9.initCommanderBuff(arg_21_0)
-	local var_21_0 = {}
+function slot9.initCommanderBuff(slot0)
+	slot1 = {}
 
-	for iter_21_0, iter_21_1 in ipairs(arg_21_0) do
-		local var_21_1 = iter_21_1[1]
-		local var_21_2 = var_21_1:getSkills()[1]:getLevel()
-
-		for iter_21_2, iter_21_3 in ipairs(iter_21_1[2]) do
-			table.insert(var_21_0, {
-				id = iter_21_3,
-				level = var_21_2,
-				commander = var_21_1
+	for slot5, slot6 in ipairs(slot0) do
+		for slot12, slot13 in ipairs(slot6[2]) do
+			table.insert(slot1, {
+				id = slot13,
+				level = slot6[1]:getSkills()[1]:getLevel(),
+				commander = slot7
 			})
 		end
 	end
 
-	return var_21_0
+	return slot1
 end
 
-function var_0_9.Clear(arg_22_0)
-	for iter_22_0, iter_22_1 in pairs(arg_22_0._teamList) do
-		arg_22_0:KillNPCTeam(iter_22_1)
+function slot9.Clear(slot0)
+	for slot4, slot5 in pairs(slot0._teamList) do
+		slot0:KillNPCTeam(slot5)
 	end
 
-	arg_22_0._teamList = nil
+	slot0._teamList = nil
 
-	for iter_22_2, iter_22_3 in pairs(arg_22_0._bulletList) do
-		arg_22_0:RemoveBulletUnit(iter_22_2)
+	for slot4, slot5 in pairs(slot0._bulletList) do
+		slot0:RemoveBulletUnit(slot4)
 	end
 
-	arg_22_0._bulletList = nil
+	slot0._bulletList = nil
 
-	for iter_22_4, iter_22_5 in pairs(arg_22_0._unitList) do
-		arg_22_0:KillUnit(iter_22_4)
+	for slot4, slot5 in pairs(slot0._unitList) do
+		slot0:KillUnit(slot4)
 	end
 
-	arg_22_0._unitList = nil
+	slot0._unitList = nil
 
-	for iter_22_6, iter_22_7 in ipairs(arg_22_0._deadUnitList) do
-		iter_22_7:Dispose()
+	for slot4, slot5 in ipairs(slot0._deadUnitList) do
+		slot5:Dispose()
 	end
 
-	arg_22_0._deadUnitList = nil
+	slot0._deadUnitList = nil
 
-	for iter_22_8, iter_22_9 in pairs(arg_22_0._aircraftList) do
-		arg_22_0:KillAircraft(iter_22_8)
+	for slot4, slot5 in pairs(slot0._aircraftList) do
+		slot0:KillAircraft(slot4)
 	end
 
-	arg_22_0._aircraftList = nil
+	slot0._aircraftList = nil
 
-	for iter_22_10, iter_22_11 in pairs(arg_22_0._fleetList) do
-		iter_22_11:Dispose()
+	for slot4, slot5 in pairs(slot0._fleetList) do
+		slot5:Dispose()
 
-		arg_22_0._fleetList[iter_22_10] = nil
+		slot0._fleetList[slot4] = nil
 	end
 
-	arg_22_0._fleetList = nil
+	slot0._fleetList = nil
 
-	for iter_22_12, iter_22_13 in pairs(arg_22_0._aidUnitList) do
-		iter_22_13:Dispose()
+	for slot4, slot5 in pairs(slot0._aidUnitList) do
+		slot5:Dispose()
 	end
 
-	arg_22_0._aidUnitList = nil
+	slot0._aidUnitList = nil
 
-	for iter_22_14, iter_22_15 in pairs(arg_22_0._environmentList) do
-		arg_22_0:RemoveEnvironment(iter_22_15:GetUniqueID())
+	for slot4, slot5 in pairs(slot0._environmentList) do
+		slot0:RemoveEnvironment(slot5:GetUniqueID())
 	end
 
-	arg_22_0._environmentList = nil
+	slot0._environmentList = nil
 
-	for iter_22_16, iter_22_17 in pairs(arg_22_0._AOEList) do
-		arg_22_0:RemoveAreaOfEffect(iter_22_16)
+	for slot4, slot5 in pairs(slot0._AOEList) do
+		slot0:RemoveAreaOfEffect(slot4)
 	end
 
-	arg_22_0._AOEList = nil
+	slot0._AOEList = nil
 
-	arg_22_0._cldSystem:Dispose()
+	slot0._cldSystem:Dispose()
 
-	arg_22_0._cldSystem = nil
-	arg_22_0._dungeonInfo = nil
-	arg_22_0._flagShipUnit = nil
-	arg_22_0._friendlyShipList = nil
-	arg_22_0._foeShipList = nil
-	arg_22_0._spectreShipList = nil
-	arg_22_0._friendlyAircraftList = nil
-	arg_22_0._foeAircraftList = nil
-	arg_22_0._fleetList = nil
-	arg_22_0._freeShipList = nil
-	arg_22_0._countDown = nil
-	arg_22_0._lastUpdateTime = nil
-	arg_22_0._statistics = nil
-	arg_22_0._battleInitData = nil
-	arg_22_0._currentStageData = nil
+	slot0._cldSystem = nil
+	slot0._dungeonInfo = nil
+	slot0._flagShipUnit = nil
+	slot0._friendlyShipList = nil
+	slot0._foeShipList = nil
+	slot0._spectreShipList = nil
+	slot0._friendlyAircraftList = nil
+	slot0._foeAircraftList = nil
+	slot0._fleetList = nil
+	slot0._freeShipList = nil
+	slot0._countDown = nil
+	slot0._lastUpdateTime = nil
+	slot0._statistics = nil
+	slot0._battleInitData = nil
+	slot0._currentStageData = nil
 
-	arg_22_0:ClearFormulas()
-	var_0_5.ClearDungeonCfg(arg_22_0._dungeonID)
+	slot0:ClearFormulas()
+	uv0.ClearDungeonCfg(slot0._dungeonID)
 end
 
-function var_0_9.DeactiveProxy(arg_23_0)
-	arg_23_0._state = nil
+function slot9.DeactiveProxy(slot0)
+	slot0._state = nil
 
-	arg_23_0:Clear()
-	var_0_0.Battle.BattleDataProxy.super.DeactiveProxy(arg_23_0)
+	slot0:Clear()
+	uv0.Battle.BattleDataProxy.super.DeactiveProxy(slot0)
 end
 
-function var_0_9.InitUserShipsData(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4)
-	for iter_24_0, iter_24_1 in ipairs(arg_24_2) do
-		local var_24_0 = arg_24_0:SpawnVanguard(iter_24_1, arg_24_3)
+function slot9.InitUserShipsData(slot0, slot1, slot2, slot3, slot4)
+	for slot8, slot9 in ipairs(slot2) do
+		slot10 = slot0:SpawnVanguard(slot9, slot3)
 	end
 
-	for iter_24_2, iter_24_3 in ipairs(arg_24_1) do
-		local var_24_1 = arg_24_0:SpawnMain(iter_24_3, arg_24_3)
+	for slot8, slot9 in ipairs(slot1) do
+		slot10 = slot0:SpawnMain(slot9, slot3)
 	end
 
-	local var_24_2 = arg_24_0:GetFleetByIFF(arg_24_3)
+	slot0:GetFleetByIFF(slot3):FleetUnitSpwanFinish()
 
-	var_24_2:FleetUnitSpwanFinish()
-
-	local var_24_3 = arg_24_0._battleInitData.battleType
-
-	if var_24_3 == SYSTEM_SUBMARINE_RUN or var_24_3 == SYSTEM_SUB_ROUTINE then
-		for iter_24_4, iter_24_5 in ipairs(arg_24_4) do
-			arg_24_0:SpawnManualSub(iter_24_5, arg_24_3)
+	if slot0._battleInitData.battleType == SYSTEM_SUBMARINE_RUN or slot6 == SYSTEM_SUB_ROUTINE then
+		for slot10, slot11 in ipairs(slot4) do
+			slot0:SpawnManualSub(slot11, slot3)
 		end
 
-		var_24_2:ShiftManualSub()
+		slot5:ShiftManualSub()
 	else
-		var_24_2:SetSubUnitData(arg_24_4)
+		slot5:SetSubUnitData(slot4)
 	end
 
-	if arg_24_0._battleInitData.battleType == SYSTEM_DUEL then
-		for iter_24_6, iter_24_7 in ipairs(var_24_2:GetCloakList()) do
-			iter_24_7:GetCloak():SetRecoverySpeed(0)
+	if slot0._battleInitData.battleType == SYSTEM_DUEL then
+		for slot10, slot11 in ipairs(slot5:GetCloakList()) do
+			slot11:GetCloak():SetRecoverySpeed(0)
 		end
 	end
 
-	arg_24_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_FLEET, {
-		fleetVO = var_24_2
+	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_FLEET, {
+		fleetVO = slot5
 	}))
 end
 
-function var_0_9.InitUserSupportShipsData(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_0:GetFleetByIFF(arg_25_1)
+function slot9.InitUserSupportShipsData(slot0, slot1, slot2)
+	slot3 = slot0:GetFleetByIFF(slot1)
 
-	for iter_25_0, iter_25_1 in ipairs(arg_25_2) do
-		local var_25_1 = arg_25_0:SpawnSupportUnit(iter_25_1, arg_25_1)
+	for slot7, slot8 in ipairs(slot2) do
+		slot9 = slot0:SpawnSupportUnit(slot8, slot1)
 	end
 end
 
-function var_0_9.InitUserAidData(arg_26_0)
-	for iter_26_0, iter_26_1 in ipairs(arg_26_0._battleInitData.AidUnitList) do
-		local var_26_0 = arg_26_0:GenerateUnitID()
-		local var_26_1 = iter_26_1.properties
+function slot9.InitUserAidData(slot0)
+	for slot4, slot5 in ipairs(slot0._battleInitData.AidUnitList) do
+		slot7 = slot5.properties
+		slot7.level = slot5.level
+		slot7.formationID = uv0.FORMATION_ID
+		slot7.id = slot5.id
 
-		var_26_1.level = iter_26_1.level
-		var_26_1.formationID = var_0_4.FORMATION_ID
-		var_26_1.id = iter_26_1.id
+		uv1.AttrFixer(slot0._battleInitData.battleType, slot7)
 
-		var_0_2.AttrFixer(arg_26_0._battleInitData.battleType, var_26_1)
-
-		local var_26_2 = iter_26_1.proficiency or {
+		slot9 = uv2.CreateBattleUnitData(slot0:GenerateUnitID(), uv3.UnitType.PLAYER_UNIT, uv0.FRIENDLY_CODE, slot5.tmpID, slot5.skinId, slot5.equipment, slot7, slot5.baseProperties, slot5.proficiency or {
 			1,
 			1,
 			1
-		}
-		local var_26_3 = var_0_5.CreateBattleUnitData(var_26_0, var_0_3.UnitType.PLAYER_UNIT, var_0_4.FRIENDLY_CODE, iter_26_1.tmpID, iter_26_1.skinId, iter_26_1.equipment, var_26_1, iter_26_1.baseProperties, var_26_2, iter_26_1.baseList, iter_26_1.preloasList)
-
-		arg_26_0._aidUnitList[var_26_3:GetUniqueID()] = var_26_3
+		}, slot5.baseList, slot5.preloasList)
+		slot0._aidUnitList[slot9:GetUniqueID()] = slot9
 	end
 end
 
-function var_0_9.SetSubmarinAidData(arg_27_0)
-	arg_27_0:GetFleetByIFF(var_0_4.FRIENDLY_CODE):SetSubAidData(arg_27_0._battleInitData.TotalSubAmmo, arg_27_0._battleInitData.SubFlag)
+function slot9.SetSubmarinAidData(slot0)
+	slot0:GetFleetByIFF(uv0.FRIENDLY_CODE):SetSubAidData(slot0._battleInitData.TotalSubAmmo, slot0._battleInitData.SubFlag)
 end
 
-function var_0_9.AddWeather(arg_28_0, arg_28_1)
-	table.insert(arg_28_0._weahter, arg_28_1)
-	arg_28_0:InitWeatherData()
+function slot9.AddWeather(slot0, slot1)
+	table.insert(slot0._weahter, slot1)
+	slot0:InitWeatherData()
 end
 
-function var_0_9.InitWeatherData(arg_29_0)
-	for iter_29_0, iter_29_1 in ipairs(arg_29_0._weahter) do
-		if iter_29_1 == var_0_3.WEATHER.NIGHT then
-			for iter_29_2, iter_29_3 in pairs(arg_29_0._fleetList) do
-				iter_29_3:AttachNightCloak()
+function slot9.InitWeatherData(slot0)
+	for slot4, slot5 in ipairs(slot0._weahter) do
+		if slot5 == uv0.WEATHER.NIGHT then
+			for slot9, slot10 in pairs(slot0._fleetList) do
+				slot10:AttachNightCloak()
 			end
 
-			for iter_29_4, iter_29_5 in pairs(arg_29_0._unitList) do
-				var_0_5.AttachWeather(iter_29_5, arg_29_0._weahter)
+			for slot9, slot10 in pairs(slot0._unitList) do
+				uv1.AttachWeather(slot10, slot0._weahter)
 			end
 		end
 	end
 end
 
-function var_0_9.CelebrateVictory(arg_30_0, arg_30_1)
-	local var_30_0
+function slot9.CelebrateVictory(slot0, slot1)
+	slot2 = nil
 
-	if arg_30_1 == arg_30_0:GetFoeCode() then
-		var_30_0 = arg_30_0._foeShipList
+	for slot6, slot7 in pairs((slot1 ~= slot0:GetFoeCode() or slot0._foeShipList) and slot0._friendlyShipList) do
+		slot7:StateChange(uv0.Battle.UnitState.STATE_VICTORY)
+	end
+end
+
+function slot9.InitStageData(slot0)
+	slot0._currentStageData = slot0._dungeonInfo.stages[slot0._currentStageIndex]
+	slot0._countDown = slot0._currentStageData.timeCount
+	slot1 = slot0._currentStageData.totalArea
+	slot0._totalLeftBound = slot1[1]
+	slot0._totalRightBound = slot1[1] + slot1[3]
+	slot0._totalUpperBound = slot1[2] + slot1[4]
+	slot0._totalLowerBound = slot1[2]
+	slot2 = slot0._currentStageData.playerArea
+	slot0._leftZoneLeftBound = slot2[1]
+	slot0._leftZoneRightBound = slot2[1] + slot2[3]
+	slot0._leftZoneUpperBound = slot2[2] + slot2[4]
+	slot0._leftZoneLowerBound = slot2[2]
+	slot0._rightZoneLeftBound = slot0._leftZoneRightBound
+	slot0._rightZoneRightBound = slot0._totalRightBound
+	slot0._rightZoneUpperBound = slot0._leftZoneUpperBound
+	slot0._rightZoneLowerBound = slot0._leftZoneLowerBound
+	slot0._bulletUpperBound = slot0._totalUpperBound + 3
+	slot0._bulletLowerBound = slot0._totalLowerBound - 10
+	slot0._bulletLeftBound = slot0._totalLeftBound - 10
+	slot0._bulletRightBound = slot0._totalRightBound + 10
+	slot0._bulletUpperBoundVision = slot0._totalUpperBound + uv0.BULLET_UPPER_BOUND_VISION_OFFSET
+	slot0._bulletLowerBoundSplit = slot0._bulletLowerBound + uv0.BULLET_LOWER_BOUND_SPLIT_OFFSET
+	slot0._bulletLeftBoundSplit = slot0._bulletLeftBound + uv0.BULLET_LEFT_BOUND_SPLIT_OFFSET
+
+	if slot0._battleInitData.battleType == SYSTEM_DUEL then
+		slot0._leftFieldBound = slot0._totalLeftBound
+		slot0._rightFieldBound = slot0._totalRightBound
 	else
-		var_30_0 = arg_30_0._friendlyShipList
-	end
-
-	for iter_30_0, iter_30_1 in pairs(var_30_0) do
-		iter_30_1:StateChange(var_0_0.Battle.UnitState.STATE_VICTORY)
+		slot3 = nil
+		slot0._leftFieldBound = ((not slot0._currentStageData.mainUnitPosition or not slot0._currentStageData.mainUnitPosition[uv0.FRIENDLY_CODE] or slot0._currentStageData.mainUnitPosition[uv0.FRIENDLY_CODE][1].x) and uv0.MAIN_UNIT_POS[uv0.FRIENDLY_CODE][1].x) - 1
+		slot0._rightFieldBound = slot0._totalRightBound + uv0.FIELD_RIGHT_BOUND_BIAS
 	end
 end
 
-function var_0_9.InitStageData(arg_31_0)
-	arg_31_0._currentStageData = arg_31_0._dungeonInfo.stages[arg_31_0._currentStageIndex]
-	arg_31_0._countDown = arg_31_0._currentStageData.timeCount
+function slot9.GetVanguardBornCoordinate(slot0, slot1)
+	if slot1 == uv0.FRIENDLY_CODE then
+		return slot0._currentStageData.fleetCorrdinate
+	elseif slot1 == uv0.FOE_CODE then
+		return slot0._currentStageData.rivalCorrdinate
+	end
+end
 
-	local var_31_0 = arg_31_0._currentStageData.totalArea
+function slot9.GetTotalBounds(slot0)
+	return slot0._totalUpperBound, slot0._totalLowerBound, slot0._totalLeftBound, slot0._totalRightBound
+end
 
-	arg_31_0._totalLeftBound = var_31_0[1]
-	arg_31_0._totalRightBound = var_31_0[1] + var_31_0[3]
-	arg_31_0._totalUpperBound = var_31_0[2] + var_31_0[4]
-	arg_31_0._totalLowerBound = var_31_0[2]
+function slot9.GetTotalRightBound(slot0)
+	return slot0._totalRightBound
+end
 
-	local var_31_1 = arg_31_0._currentStageData.playerArea
+function slot9.GetTotalLowerBound(slot0)
+	return slot0._totalLowerBound
+end
 
-	arg_31_0._leftZoneLeftBound = var_31_1[1]
-	arg_31_0._leftZoneRightBound = var_31_1[1] + var_31_1[3]
-	arg_31_0._leftZoneUpperBound = var_31_1[2] + var_31_1[4]
-	arg_31_0._leftZoneLowerBound = var_31_1[2]
-	arg_31_0._rightZoneLeftBound = arg_31_0._leftZoneRightBound
-	arg_31_0._rightZoneRightBound = arg_31_0._totalRightBound
-	arg_31_0._rightZoneUpperBound = arg_31_0._leftZoneUpperBound
-	arg_31_0._rightZoneLowerBound = arg_31_0._leftZoneLowerBound
-	arg_31_0._bulletUpperBound = arg_31_0._totalUpperBound + 3
-	arg_31_0._bulletLowerBound = arg_31_0._totalLowerBound - 10
-	arg_31_0._bulletLeftBound = arg_31_0._totalLeftBound - 10
-	arg_31_0._bulletRightBound = arg_31_0._totalRightBound + 10
-	arg_31_0._bulletUpperBoundVision = arg_31_0._totalUpperBound + var_0_4.BULLET_UPPER_BOUND_VISION_OFFSET
-	arg_31_0._bulletLowerBoundSplit = arg_31_0._bulletLowerBound + var_0_4.BULLET_LOWER_BOUND_SPLIT_OFFSET
-	arg_31_0._bulletLeftBoundSplit = arg_31_0._bulletLeftBound + var_0_4.BULLET_LEFT_BOUND_SPLIT_OFFSET
+function slot9.GetUnitBoundByIFF(slot0, slot1)
+	if slot1 == uv0.FRIENDLY_CODE then
+		return slot0._leftZoneUpperBound, slot0._leftZoneLowerBound, slot0._leftZoneLeftBound, uv0.MaxRight, uv0.MaxLeft, slot0._leftZoneRightBound
+	elseif slot1 == uv0.FOE_CODE then
+		return slot0._rightZoneUpperBound, slot0._rightZoneLowerBound, slot0._rightZoneLeftBound, slot0._rightZoneRightBound, slot0._rightZoneLeftBound, uv0.MaxRight
+	end
+end
 
-	if arg_31_0._battleInitData.battleType == SYSTEM_DUEL then
-		arg_31_0._leftFieldBound = arg_31_0._totalLeftBound
-		arg_31_0._rightFieldBound = arg_31_0._totalRightBound
+function slot9.GetFleetBoundByIFF(slot0, slot1)
+	if slot1 == uv0.FRIENDLY_CODE then
+		return slot0._leftZoneUpperBound, slot0._leftZoneLowerBound, slot0._leftZoneLeftBound, slot0._leftZoneRightBound
+	elseif slot1 == uv0.FOE_CODE then
+		return slot0._rightZoneUpperBound, slot0._rightZoneLowerBound, slot0._rightZoneLeftBound, slot0._rightZoneRightBound
+	end
+end
+
+function slot9.ShiftFleetBound(slot0, slot1, slot2)
+	slot1:GetUnitBound():SwtichDuelAggressive()
+	slot1:SetAutobotBound(slot0:GetFleetBoundByIFF(slot2))
+	slot1:UpdateScoutUnitBound()
+end
+
+function slot9.GetFieldBound(slot0)
+	if slot0._battleInitData and slot0._battleInitData.battleType == SYSTEM_DUEL then
+		return slot0:GetTotalBounds()
 	else
-		local var_31_2
-
-		if arg_31_0._currentStageData.mainUnitPosition and arg_31_0._currentStageData.mainUnitPosition[var_0_4.FRIENDLY_CODE] then
-			var_31_2 = arg_31_0._currentStageData.mainUnitPosition[var_0_4.FRIENDLY_CODE][1].x
-		else
-			var_31_2 = var_0_4.MAIN_UNIT_POS[var_0_4.FRIENDLY_CODE][1].x
-		end
-
-		arg_31_0._leftFieldBound = var_31_2 - 1
-		arg_31_0._rightFieldBound = arg_31_0._totalRightBound + var_0_4.FIELD_RIGHT_BOUND_BIAS
+		return slot0._totalUpperBound, slot0._totalLowerBound, slot0._leftFieldBound, slot0._rightFieldBound
 	end
 end
 
-function var_0_9.GetVanguardBornCoordinate(arg_32_0, arg_32_1)
-	if arg_32_1 == var_0_4.FRIENDLY_CODE then
-		return arg_32_0._currentStageData.fleetCorrdinate
-	elseif arg_32_1 == var_0_4.FOE_CODE then
-		return arg_32_0._currentStageData.rivalCorrdinate
-	end
-end
+function slot9.GetFleetByIFF(slot0, slot1)
+	if slot0._fleetList[slot1] == nil then
+		slot2 = uv0.Battle.BattleFleetVO.New(slot1)
+		slot0._fleetList[slot1] = slot2
 
-function var_0_9.GetTotalBounds(arg_33_0)
-	return arg_33_0._totalUpperBound, arg_33_0._totalLowerBound, arg_33_0._totalLeftBound, arg_33_0._totalRightBound
-end
+		slot2:SetAutobotBound(slot0:GetFleetBoundByIFF(slot1))
+		slot2:SetTotalBound(slot0:GetTotalBounds())
+		slot2:SetUnitBound(slot0._currentStageData.totalArea, slot0._currentStageData.playerArea)
+		slot2:SetExposeLine(slot0._expeditionTmp.horizon_line[slot1], slot0._expeditionTmp.expose_line[slot1])
+		slot2:CalcSubmarineBaseLine(slot0._battleInitData.battleType)
 
-function var_0_9.GetTotalRightBound(arg_34_0)
-	return arg_34_0._totalRightBound
-end
+		if slot0._battleInitData.battleType == SYSTEM_CARDPUZZLE then
+			slot3 = slot2:AttachCardPuzzleComponent()
 
-function var_0_9.GetTotalLowerBound(arg_35_0)
-	return arg_35_0._totalLowerBound
-end
-
-function var_0_9.GetUnitBoundByIFF(arg_36_0, arg_36_1)
-	if arg_36_1 == var_0_4.FRIENDLY_CODE then
-		return arg_36_0._leftZoneUpperBound, arg_36_0._leftZoneLowerBound, arg_36_0._leftZoneLeftBound, var_0_4.MaxRight, var_0_4.MaxLeft, arg_36_0._leftZoneRightBound
-	elseif arg_36_1 == var_0_4.FOE_CODE then
-		return arg_36_0._rightZoneUpperBound, arg_36_0._rightZoneLowerBound, arg_36_0._rightZoneLeftBound, arg_36_0._rightZoneRightBound, arg_36_0._rightZoneLeftBound, var_0_4.MaxRight
-	end
-end
-
-function var_0_9.GetFleetBoundByIFF(arg_37_0, arg_37_1)
-	if arg_37_1 == var_0_4.FRIENDLY_CODE then
-		return arg_37_0._leftZoneUpperBound, arg_37_0._leftZoneLowerBound, arg_37_0._leftZoneLeftBound, arg_37_0._leftZoneRightBound
-	elseif arg_37_1 == var_0_4.FOE_CODE then
-		return arg_37_0._rightZoneUpperBound, arg_37_0._rightZoneLowerBound, arg_37_0._rightZoneLeftBound, arg_37_0._rightZoneRightBound
-	end
-end
-
-function var_0_9.ShiftFleetBound(arg_38_0, arg_38_1, arg_38_2)
-	arg_38_1:GetUnitBound():SwtichDuelAggressive()
-	arg_38_1:SetAutobotBound(arg_38_0:GetFleetBoundByIFF(arg_38_2))
-	arg_38_1:UpdateScoutUnitBound()
-end
-
-function var_0_9.GetFieldBound(arg_39_0)
-	if arg_39_0._battleInitData and arg_39_0._battleInitData.battleType == SYSTEM_DUEL then
-		return arg_39_0:GetTotalBounds()
-	else
-		return arg_39_0._totalUpperBound, arg_39_0._totalLowerBound, arg_39_0._leftFieldBound, arg_39_0._rightFieldBound
-	end
-end
-
-function var_0_9.GetFleetByIFF(arg_40_0, arg_40_1)
-	if arg_40_0._fleetList[arg_40_1] == nil then
-		local var_40_0 = var_0_0.Battle.BattleFleetVO.New(arg_40_1)
-
-		arg_40_0._fleetList[arg_40_1] = var_40_0
-
-		var_40_0:SetAutobotBound(arg_40_0:GetFleetBoundByIFF(arg_40_1))
-		var_40_0:SetTotalBound(arg_40_0:GetTotalBounds())
-		var_40_0:SetUnitBound(arg_40_0._currentStageData.totalArea, arg_40_0._currentStageData.playerArea)
-		var_40_0:SetExposeLine(arg_40_0._expeditionTmp.horizon_line[arg_40_1], arg_40_0._expeditionTmp.expose_line[arg_40_1])
-		var_40_0:CalcSubmarineBaseLine(arg_40_0._battleInitData.battleType)
-
-		if arg_40_0._battleInitData.battleType == SYSTEM_CARDPUZZLE then
-			local var_40_1 = var_40_0:AttachCardPuzzleComponent()
-			local var_40_2 = {
-				cardList = arg_40_0._battleInitData.CardPuzzleCardIDList,
-				commonHP = arg_40_0._battleInitData.CardPuzzleCommonHPValue,
-				relicList = arg_40_0._battleInitData.CardPuzzleRelicList
-			}
-
-			var_40_1:InitCardPuzzleData(var_40_2)
-			var_40_1:CustomConfigID(arg_40_0._battleInitData.CardPuzzleCombatID)
-			arg_40_0:DispatchEvent(var_0_0.Event.New(var_0_8.CARD_PUZZLE_INIT))
+			slot3:InitCardPuzzleData({
+				cardList = slot0._battleInitData.CardPuzzleCardIDList,
+				commonHP = slot0._battleInitData.CardPuzzleCommonHPValue,
+				relicList = slot0._battleInitData.CardPuzzleRelicList
+			})
+			slot3:CustomConfigID(slot0._battleInitData.CardPuzzleCombatID)
+			slot0:DispatchEvent(uv0.Event.New(uv1.CARD_PUZZLE_INIT))
 		end
 	end
 
-	return arg_40_0._fleetList[arg_40_1]
+	return slot0._fleetList[slot1]
 end
 
-function var_0_9.GetAidUnit(arg_41_0)
-	return arg_41_0._aidUnitList
+function slot9.GetAidUnit(slot0)
+	return slot0._aidUnitList
 end
 
-function var_0_9.GetFleetList(arg_42_0)
-	return arg_42_0._fleetList
+function slot9.GetFleetList(slot0)
+	return slot0._fleetList
 end
 
-function var_0_9.GetEnemySubmarineCount(arg_43_0)
-	return arg_43_0._enemySubmarineCount
+function slot9.GetEnemySubmarineCount(slot0)
+	return slot0._enemySubmarineCount
 end
 
-function var_0_9.GetCommander(arg_44_0)
-	return arg_44_0._commander
+function slot9.GetCommander(slot0)
+	return slot0._commander
 end
 
-function var_0_9.GetCommanderBuff(arg_45_0)
-	return arg_45_0._commanderBuff, arg_45_0._subCommanderBuff
+function slot9.GetCommanderBuff(slot0)
+	return slot0._commanderBuff, slot0._subCommanderBuff
 end
 
-function var_0_9.GetStageInfo(arg_46_0)
-	return arg_46_0._currentStageData
+function slot9.GetStageInfo(slot0)
+	return slot0._currentStageData
 end
 
-function var_0_9.GetWinningStreak(arg_47_0)
-	return arg_47_0._chapterWinningStreak
+function slot9.GetWinningStreak(slot0)
+	return slot0._chapterWinningStreak
 end
 
-function var_0_9.GetBGMList(arg_48_0, arg_48_1)
-	if not arg_48_1 then
-		return arg_48_0._initBGMList
+function slot9.GetBGMList(slot0, slot1)
+	if not slot1 then
+		return slot0._initBGMList
 	else
-		return arg_48_0._otherBGMList
+		return slot0._otherBGMList
 	end
 end
 
-function var_0_9.GetDungeonLevel(arg_49_0)
-	return arg_49_0._dungeonLevel
+function slot9.GetDungeonLevel(slot0)
+	return slot0._dungeonLevel
 end
 
-function var_0_9.SetDungeonLevel(arg_50_0, arg_50_1)
-	arg_50_0._dungeonLevel = arg_50_1
+function slot9.SetDungeonLevel(slot0, slot1)
+	slot0._dungeonLevel = slot1
 end
 
-function var_0_9.IsCompletelyRepress(arg_51_0)
-	return arg_51_0._completelyRepress
+function slot9.IsCompletelyRepress(slot0)
+	return slot0._completelyRepress
 end
 
-function var_0_9.GetRepressReduce(arg_52_0)
-	return arg_52_0._repressReduce
+function slot9.GetRepressReduce(slot0)
+	return slot0._repressReduce
 end
 
-function var_0_9.GetRepressLevel(arg_53_0)
-	return arg_53_0._repressLevel
+function slot9.GetRepressLevel(slot0)
+	return slot0._repressLevel
 end
 
-function var_0_9.updateInit(arg_54_0, arg_54_1)
-	arg_54_0:TriggerBattleInitBuffs()
+function slot9.updateInit(slot0, slot1)
+	slot0:TriggerBattleInitBuffs()
 
-	arg_54_0.checkCld = true
+	slot0.checkCld = true
 
-	arg_54_0:updateLoop(arg_54_1)
+	slot0:updateLoop(slot1)
 
-	arg_54_0.Update = arg_54_0.updateLoop
+	slot0.Update = slot0.updateLoop
 end
 
-function var_0_9.updateLoop(arg_55_0, arg_55_1)
-	arg_55_0.FrameIndex = arg_55_0.FrameIndex + 1
+function slot9.updateLoop(slot0, slot1)
+	slot0.FrameIndex = slot0.FrameIndex + 1
 
-	arg_55_0:updateDeadList()
-	arg_55_0:UpdateCountDown(arg_55_1)
-	arg_55_0:UpdateWeather(arg_55_1)
+	slot0:updateDeadList()
+	slot0:UpdateCountDown(slot1)
+	slot0:UpdateWeather(slot1)
 
-	for iter_55_0, iter_55_1 in pairs(arg_55_0._fleetList) do
-		iter_55_1:UpdateMotion()
+	for slot5, slot6 in pairs(slot0._fleetList) do
+		slot6:UpdateMotion()
 	end
 
-	arg_55_0.checkCld = not arg_55_0.checkCld
-
-	local var_55_0 = {
-		[var_0_4.FRIENDLY_CODE] = arg_55_0._totalLeftBound,
-		[var_0_4.FOE_CODE] = arg_55_0._totalRightBound
+	slot0.checkCld = not slot0.checkCld
+	slot2 = {
+		[uv0.FRIENDLY_CODE] = slot0._totalLeftBound,
+		[uv0.FOE_CODE] = slot0._totalRightBound
 	}
 
-	for iter_55_2, iter_55_3 in pairs(arg_55_0._unitList) do
-		if iter_55_3:IsSpectre() then
-			if iter_55_3:GetAttrByName(var_0_0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY) <= var_0_4.FUSION_ELEMENT_UNIT_TYPE then
-				-- block empty
-			else
-				iter_55_3:Update(arg_55_1)
+	for slot6, slot7 in pairs(slot0._unitList) do
+		if slot7:IsSpectre() then
+			if slot7:GetAttrByName(uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY) > uv0.FUSION_ELEMENT_UNIT_TYPE then
+				slot7:Update(slot1)
 			end
 		else
-			if arg_55_0.checkCld then
-				arg_55_0._cldSystem:UpdateShipCldTree(iter_55_3)
+			if slot0.checkCld then
+				slot0._cldSystem:UpdateShipCldTree(slot7)
 			end
 
-			if iter_55_3:IsAlive() then
-				iter_55_3:Update(arg_55_1)
+			if slot7:IsAlive() then
+				slot7:Update(slot1)
 			end
 
-			local var_55_1 = iter_55_3:GetPosition().x
-			local var_55_2 = iter_55_3:GetIFF()
-
-			if var_55_2 == var_0_4.FRIENDLY_CODE then
-				var_55_0[var_55_2] = math.max(var_55_0[var_55_2], var_55_1)
-			elseif var_55_2 == var_0_4.FOE_CODE then
-				var_55_0[var_55_2] = math.min(var_55_0[var_55_2], var_55_1)
+			if slot7:GetIFF() == uv0.FRIENDLY_CODE then
+				slot2[slot9] = math.max(slot2[slot9], slot7:GetPosition().x)
+			elseif slot9 == uv0.FOE_CODE then
+				slot2[slot9] = math.min(slot2[slot9], slot8)
 			end
 		end
 	end
 
-	local var_55_3 = arg_55_0._fleetList[var_0_4.FRIENDLY_CODE]
-	local var_55_4 = var_55_3:GetFleetExposeLine()
-	local var_55_5 = var_55_3:GetFleetVisionLine()
-	local var_55_6 = var_55_0[var_0_4.FOE_CODE]
+	slot3 = slot0._fleetList[uv0.FRIENDLY_CODE]
+	slot5 = slot3:GetFleetVisionLine()
 
-	if var_55_4 and var_55_6 < var_55_4 then
-		var_55_3:CloakFatalExpose()
-	elseif var_55_6 < var_55_5 then
-		var_55_3:CloakInVision(arg_55_0._exposeSpeed)
+	if slot3:GetFleetExposeLine() and slot2[uv0.FOE_CODE] < slot4 then
+		slot3:CloakFatalExpose()
+	elseif slot6 < slot5 then
+		slot3:CloakInVision(slot0._exposeSpeed)
 	else
-		var_55_3:CloakOutVision()
+		slot3:CloakOutVision()
 	end
 
-	if arg_55_0._fleetList[var_0_4.FOE_CODE] then
-		local var_55_7 = arg_55_0._fleetList[var_0_4.FOE_CODE]
-		local var_55_8 = var_55_7:GetFleetExposeLine()
-		local var_55_9 = var_55_7:GetFleetVisionLine()
-		local var_55_10 = var_55_0[var_0_4.FRIENDLY_CODE]
+	if slot0._fleetList[uv0.FOE_CODE] then
+		slot7 = slot0._fleetList[uv0.FOE_CODE]
+		slot9 = slot7:GetFleetVisionLine()
 
-		if var_55_8 and var_55_8 < var_55_10 then
-			var_55_7:CloakFatalExpose()
-		elseif var_55_9 < var_55_10 then
-			var_55_7:CloakInVision(arg_55_0._exposeSpeed)
+		if slot7:GetFleetExposeLine() and slot8 < slot2[uv0.FRIENDLY_CODE] then
+			slot7:CloakFatalExpose()
+		elseif slot9 < slot10 then
+			slot7:CloakInVision(slot0._exposeSpeed)
 		else
-			var_55_7:CloakOutVision()
+			slot7:CloakOutVision()
 		end
 	end
 
-	for iter_55_4, iter_55_5 in pairs(arg_55_0._bulletList) do
-		local var_55_11 = iter_55_5:GetSpeed()
-		local var_55_12 = iter_55_5:GetPosition()
-		local var_55_13 = iter_55_5:GetType()
-		local var_55_14 = iter_55_5:GetOutBound()
+	for slot10, slot11 in pairs(slot0._bulletList) do
+		slot12 = slot11:GetSpeed()
+		slot13 = slot11:GetPosition()
 
-		if var_55_14 == var_0_3.BulletOutBound.SPLIT and var_55_13 == var_0_3.BulletType.SHRAPNEL and (var_55_12.x > arg_55_0._bulletRightBound and var_55_11.x > 0 or var_55_12.x < arg_55_0._bulletLeftBoundSplit and var_55_11.x < 0 or var_55_12.z > arg_55_0._bulletUpperBound and var_55_11.z > 0 or var_55_12.z < arg_55_0._bulletLowerBoundSplit and var_55_11.z < 0) then
-			if iter_55_5:GetExist() then
-				iter_55_5:OutRange()
+		if slot11:GetOutBound() == uv2.BulletOutBound.SPLIT and slot11:GetType() == uv2.BulletType.SHRAPNEL and (slot0._bulletRightBound < slot13.x and slot12.x > 0 or slot13.x < slot0._bulletLeftBoundSplit and slot12.x < 0 or slot0._bulletUpperBound < slot13.z and slot12.z > 0 or slot13.z < slot0._bulletLowerBoundSplit and slot12.z < 0) then
+			if slot11:GetExist() then
+				slot11:OutRange()
 			else
-				arg_55_0:RemoveBulletUnit(iter_55_5:GetUniqueID())
+				slot0:RemoveBulletUnit(slot11:GetUniqueID())
 			end
-		elseif var_55_14 == var_0_3.BulletOutBound.COMMON and (var_55_12.x > arg_55_0._bulletRightBound and var_55_11.x > 0 or var_55_12.z < arg_55_0._bulletLowerBound and var_55_11.z < 0) then
-			arg_55_0:RemoveBulletUnit(iter_55_5:GetUniqueID())
-		elseif var_55_12.x < arg_55_0._bulletLeftBound and var_55_11.x < 0 and var_55_13 ~= var_0_3.BulletType.BOMB then
-			if var_55_14 == var_0_3.BulletOutBound.RANDOM then
-				local var_55_15 = arg_55_0._fleetList[var_0_4.FRIENDLY_CODE]:RandomMainVictim()
-
-				if var_55_15 then
-					arg_55_0:HandleDamage(iter_55_5, var_55_15)
-				end
+		elseif slot15 == uv2.BulletOutBound.COMMON and (slot0._bulletRightBound < slot13.x and slot12.x > 0 or slot13.z < slot0._bulletLowerBound and slot12.z < 0) then
+			slot0:RemoveBulletUnit(slot11:GetUniqueID())
+		elseif slot13.x < slot0._bulletLeftBound and slot12.x < 0 and slot14 ~= uv2.BulletType.BOMB then
+			if slot15 == uv2.BulletOutBound.RANDOM and slot0._fleetList[uv0.FRIENDLY_CODE]:RandomMainVictim() then
+				slot0:HandleDamage(slot11, slot16)
 			end
 
-			arg_55_0:RemoveBulletUnit(iter_55_5:GetUniqueID())
+			slot0:RemoveBulletUnit(slot11:GetUniqueID())
 		else
-			iter_55_5:Update(arg_55_1)
+			slot11:Update(slot1)
 
-			local var_55_16 = iter_55_5.GetCurrentState and iter_55_5:GetCurrentState() or nil
-
-			if var_55_16 == var_0_0.Battle.BattleShrapnelBulletUnit.STATE_FINAL_SPLIT then
-				-- block empty
-			elseif var_55_16 == var_0_0.Battle.BattleShrapnelBulletUnit.STATE_SPLIT and not iter_55_5:IsFragile() then
-				-- block empty
-			elseif var_55_14 == var_0_3.BulletOutBound.COMMON and var_55_12.z > arg_55_0._bulletUpperBound and var_55_11.z > 0 or var_55_14 == var_0_3.BulletOutBound.VISION and var_55_12.z > arg_55_0._bulletUpperBoundVision and var_55_11.z > 0 or iter_55_5:IsOutRange(arg_55_1) then
-				if iter_55_5:GetExist() then
-					iter_55_5:OutRange()
+			if (slot11.GetCurrentState and slot11:GetCurrentState() or nil) == uv1.Battle.BattleShrapnelBulletUnit.STATE_FINAL_SPLIT then
+				-- Nothing
+			elseif slot16 == uv1.Battle.BattleShrapnelBulletUnit.STATE_SPLIT and not slot11:IsFragile() then
+				-- Nothing
+			elseif slot15 == uv2.BulletOutBound.COMMON and slot0._bulletUpperBound < slot13.z and slot12.z > 0 or slot15 == uv2.BulletOutBound.VISION and slot0._bulletUpperBoundVision < slot13.z and slot12.z > 0 or slot11:IsOutRange(slot1) then
+				if slot11:GetExist() then
+					slot11:OutRange()
 				else
-					arg_55_0:RemoveBulletUnit(iter_55_5:GetUniqueID())
+					slot0:RemoveBulletUnit(slot11:GetUniqueID())
 				end
-			elseif arg_55_0.checkCld then
-				arg_55_0._cldSystem:UpdateBulletCld(iter_55_5)
+			elseif slot0.checkCld then
+				slot0._cldSystem:UpdateBulletCld(slot11)
 			end
 		end
 	end
 
-	for iter_55_6, iter_55_7 in pairs(arg_55_0._aircraftList) do
-		iter_55_7:Update(arg_55_1)
+	for slot10, slot11 in pairs(slot0._aircraftList) do
+		slot11:Update(slot1)
 
-		local var_55_17, var_55_18 = iter_55_7:GetIFF()
+		slot12, slot13 = slot11:GetIFF()
 
-		if var_55_17 == var_0_4.FRIENDLY_CODE then
-			var_55_18 = arg_55_0._totalRightBound
-		elseif var_55_17 == var_0_4.FOE_CODE then
-			var_55_18 = arg_55_0._totalLeftBound
+		if slot12 == uv0.FRIENDLY_CODE then
+			slot13 = slot0._totalRightBound
+		elseif slot12 == uv0.FOE_CODE then
+			slot13 = slot0._totalLeftBound
 		end
 
-		if iter_55_7:GetPosition().x * var_55_17 > math.abs(var_55_18) and iter_55_7:GetSpeed().x * var_55_17 > 0 then
-			iter_55_7:OutBound()
+		if math.abs(slot13) < slot11:GetPosition().x * slot12 and slot11:GetSpeed().x * slot12 > 0 then
+			slot11:OutBound()
 		else
-			arg_55_0._cldSystem:UpdateAircraftCld(iter_55_7)
+			slot0._cldSystem:UpdateAircraftCld(slot11)
 		end
 
-		if not iter_55_7:IsAlive() then
-			arg_55_0:KillAircraft(iter_55_7:GetUniqueID())
-		end
-	end
-
-	for iter_55_8, iter_55_9 in pairs(arg_55_0._AOEList) do
-		arg_55_0._cldSystem:UpdateAOECld(iter_55_9)
-		iter_55_9:Settle()
-
-		if iter_55_9:GetActiveFlag() == false then
-			iter_55_9:SettleFinale()
-			arg_55_0:RemoveAreaOfEffect(iter_55_9:GetUniqueID())
+		if not slot11:IsAlive() then
+			slot0:KillAircraft(slot11:GetUniqueID())
 		end
 	end
 
-	for iter_55_10, iter_55_11 in pairs(arg_55_0._environmentList) do
-		iter_55_11:Update()
+	for slot10, slot11 in pairs(slot0._AOEList) do
+		slot0._cldSystem:UpdateAOECld(slot11)
+		slot11:Settle()
 
-		if iter_55_11:IsExpire(arg_55_1) then
-			arg_55_0:RemoveEnvironment(iter_55_11:GetUniqueID())
+		if slot11:GetActiveFlag() == false then
+			slot11:SettleFinale()
+			slot0:RemoveAreaOfEffect(slot11:GetUniqueID())
 		end
 	end
 
-	if arg_55_0.checkCld then
-		for iter_55_12, iter_55_13 in pairs(arg_55_0._shelterList) do
-			if not iter_55_13:IsWallActive() then
-				arg_55_0:RemoveShelter(iter_55_13:GetUniqueID())
+	for slot10, slot11 in pairs(slot0._environmentList) do
+		slot11:Update()
+
+		if slot11:IsExpire(slot1) then
+			slot0:RemoveEnvironment(slot11:GetUniqueID())
+		end
+	end
+
+	if slot0.checkCld then
+		for slot10, slot11 in pairs(slot0._shelterList) do
+			if not slot11:IsWallActive() then
+				slot0:RemoveShelter(slot11:GetUniqueID())
 			else
-				iter_55_13:Update(arg_55_1)
+				slot11:Update(slot1)
 			end
 		end
 
-		for iter_55_14, iter_55_15 in pairs(arg_55_0._wallList) do
-			if iter_55_15:IsActive() then
-				arg_55_0._cldSystem:UpdateWallCld(iter_55_15)
+		for slot10, slot11 in pairs(slot0._wallList) do
+			if slot11:IsActive() then
+				slot0._cldSystem:UpdateWallCld(slot11)
 			end
 		end
 	end
 
-	if arg_55_0._battleInitData.battleType ~= SYSTEM_DUEL then
-		for iter_55_16, iter_55_17 in pairs(arg_55_0._foeShipList) do
-			if iter_55_17:GetPosition().x + iter_55_17:GetBoxSize().x < arg_55_0._leftZoneLeftBound then
-				iter_55_17:SetDeathReason(var_0_3.UnitDeathReason.TOUCHDOWN)
-				iter_55_17:DeadAction()
-				arg_55_0:KillUnit(iter_55_17:GetUniqueID())
-				arg_55_0:HandleShipMissDamage(iter_55_17, arg_55_0._fleetList[var_0_4.FRIENDLY_CODE])
+	if slot0._battleInitData.battleType ~= SYSTEM_DUEL then
+		for slot10, slot11 in pairs(slot0._foeShipList) do
+			if slot11:GetPosition().x + slot11:GetBoxSize().x < slot0._leftZoneLeftBound then
+				slot11:SetDeathReason(uv2.UnitDeathReason.TOUCHDOWN)
+				slot11:DeadAction()
+				slot0:KillUnit(slot11:GetUniqueID())
+				slot0:HandleShipMissDamage(slot11, slot0._fleetList[uv0.FRIENDLY_CODE])
 			end
 		end
 	end
 end
 
-function var_0_9.UpdateAutoComponent(arg_56_0, arg_56_1)
-	for iter_56_0, iter_56_1 in pairs(arg_56_0._fleetList) do
-		iter_56_1:UpdateAutoComponent(arg_56_1)
+function slot9.UpdateAutoComponent(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._fleetList) do
+		slot6:UpdateAutoComponent(slot1)
 	end
 
-	for iter_56_2, iter_56_3 in pairs(arg_56_0._teamList) do
-		if iter_56_3:IsFatalDamage() then
-			arg_56_0:KillNPCTeam(iter_56_2)
+	for slot5, slot6 in pairs(slot0._teamList) do
+		if slot6:IsFatalDamage() then
+			slot0:KillNPCTeam(slot5)
 		else
-			iter_56_3:UpdateMotion()
+			slot6:UpdateMotion()
 		end
 	end
 
-	for iter_56_4, iter_56_5 in pairs(arg_56_0._freeShipList) do
-		iter_56_5:UpdateOxygen(arg_56_1)
-		iter_56_5:UpdateWeapon(arg_56_1)
-		iter_56_5:UpdatePhaseSwitcher()
+	for slot5, slot6 in pairs(slot0._freeShipList) do
+		slot6:UpdateOxygen(slot1)
+		slot6:UpdateWeapon(slot1)
+		slot6:UpdatePhaseSwitcher()
 	end
 end
 
-function var_0_9.UpdateWeather(arg_57_0, arg_57_1)
-	for iter_57_0, iter_57_1 in ipairs(arg_57_0._weahter) do
-		if iter_57_1 == var_0_3.WEATHER.NIGHT then
-			local var_57_0 = {
-				[var_0_4.FRIENDLY_CODE] = 0,
-				[var_0_4.FOE_CODE] = 0
+function slot9.UpdateWeather(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._weahter) do
+		if slot6 == uv0.WEATHER.NIGHT then
+			slot7 = {
+				[uv1.FRIENDLY_CODE] = 0,
+				[uv1.FOE_CODE] = 0
 			}
-			local var_57_1 = {
-				[var_0_4.FRIENDLY_CODE] = 0,
-				[var_0_4.FOE_CODE] = 0
+			slot8 = {
+				[uv1.FRIENDLY_CODE] = 0,
+				[uv1.FOE_CODE] = 0
 			}
-			local var_57_2 = {
-				[var_0_4.FRIENDLY_CODE] = 0,
-				[var_0_4.FOE_CODE] = 0
+			slot9 = {
+				[uv1.FRIENDLY_CODE] = 0,
+				[uv1.FOE_CODE] = 0
 			}
 
-			for iter_57_2, iter_57_3 in pairs(arg_57_0._unitList) do
-				local var_57_3 = iter_57_3:GetAimBias()
+			for slot13, slot14 in pairs(slot0._unitList) do
+				if not slot14:GetAimBias() or slot15:GetCurrentState() ~= slot15.STATE_SUMMON_SICKNESS then
+					slot16 = slot14:GetIFF()
+					slot8[slot16] = math.max(slot8[slot16], uv2.GetCurrent(slot14, "attackRating"))
+					slot9[slot16] = slot9[slot16] + uv2.GetCurrent(slot14, "aimBiasExtraACC")
 
-				if not var_57_3 or var_57_3:GetCurrentState() ~= var_57_3.STATE_SUMMON_SICKNESS then
-					local var_57_4 = iter_57_3:GetIFF()
-					local var_57_5 = var_57_1[var_57_4]
-					local var_57_6 = var_0_6.GetCurrent(iter_57_3, "attackRating")
-					local var_57_7 = var_0_6.GetCurrent(iter_57_3, "aimBiasExtraACC")
-
-					var_57_1[var_57_4] = math.max(var_57_5, var_57_6)
-					var_57_2[var_57_4] = var_57_2[var_57_4] + var_57_7
-
-					if ShipType.ContainInLimitBundle(ShipType.BundleAntiSubmarine, iter_57_3:GetTemplate().type) then
-						var_57_0[var_57_4] = math.max(var_57_0[var_57_4], var_57_6)
+					if ShipType.ContainInLimitBundle(ShipType.BundleAntiSubmarine, slot14:GetTemplate().type) then
+						slot7[slot16] = math.max(slot7[slot16], slot18)
 					end
 				end
 			end
 
-			for iter_57_4, iter_57_5 in pairs(arg_57_0._fleetList) do
-				local var_57_8 = iter_57_5:GetFleetBias()
-				local var_57_9 = iter_57_4 * -1
+			for slot13, slot14 in pairs(slot0._fleetList) do
+				slot15 = slot14:GetFleetBias()
+				slot16 = slot13 * -1
+				slot20 = slot9[slot16]
 
-				var_57_8:SetDecayFactor(var_57_1[var_57_9], var_57_2[var_57_9])
-				var_57_8:Update(arg_57_1)
+				slot15:SetDecayFactor(slot8[slot16], slot20)
+				slot15:Update(slot1)
 
-				for iter_57_6, iter_57_7 in ipairs(iter_57_5:GetSubList()) do
-					local var_57_10 = iter_57_7:GetAimBias()
+				for slot20, slot21 in ipairs(slot14:GetSubList()) do
+					slot22 = slot21:GetAimBias()
 
-					if var_57_10:GetDecayFactorType() == var_57_10.DIVING then
-						var_57_10:SetDecayFactor(var_57_0[var_57_9], var_57_2[var_57_9])
+					if slot22:GetDecayFactorType() == slot22.DIVING then
+						slot22:SetDecayFactor(slot7[slot16], slot9[slot16])
 					else
-						var_57_10:SetDecayFactor(var_57_1[var_57_9], var_57_2[var_57_9])
+						slot22:SetDecayFactor(slot8[slot16], slot9[slot16])
 					end
 
-					var_57_10:Update(arg_57_1)
+					slot22:Update(slot1)
 				end
 			end
 
-			for iter_57_8, iter_57_9 in pairs(arg_57_0._freeShipList) do
-				local var_57_11 = iter_57_9:GetIFF() * -1
-				local var_57_12 = iter_57_9:GetAimBias()
+			for slot13, slot14 in pairs(slot0._freeShipList) do
+				slot16 = slot14:GetIFF() * -1
+				slot17 = slot14:GetAimBias()
 
-				if var_57_12:GetDecayFactorType() == var_57_12.DIVING then
-					var_57_12:SetDecayFactor(var_57_0[var_57_11], var_57_2[var_57_11])
+				if slot17:GetDecayFactorType() == slot17.DIVING then
+					slot17:SetDecayFactor(slot7[slot16], slot9[slot16])
 				else
-					var_57_12:SetDecayFactor(var_57_1[var_57_11], var_57_2[var_57_11])
+					slot17:SetDecayFactor(slot8[slot16], slot9[slot16])
 				end
 
-				var_57_12:Update(arg_57_1)
+				slot17:Update(slot1)
 			end
 		end
 	end
 end
 
-function var_0_9.UpdateEscapeOnly(arg_58_0, arg_58_1)
-	for iter_58_0, iter_58_1 in pairs(arg_58_0._foeShipList) do
-		iter_58_1:Update(arg_58_1)
+function slot9.UpdateEscapeOnly(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._foeShipList) do
+		slot6:Update(slot1)
 	end
 end
 
-function var_0_9.UpdateCountDown(arg_59_0, arg_59_1)
-	arg_59_0._lastUpdateTime = arg_59_0._lastUpdateTime or arg_59_1
+function slot9.UpdateCountDown(slot0, slot1)
+	slot0._lastUpdateTime = slot0._lastUpdateTime or slot1
 
-	local var_59_0 = arg_59_0._countDown - (arg_59_1 - arg_59_0._lastUpdateTime)
-
-	if var_59_0 <= 0 then
-		var_59_0 = 0
+	if slot0._countDown - (slot1 - slot0._lastUpdateTime) <= 0 then
+		slot2 = 0
 	end
 
-	if math.floor(arg_59_0._countDown - var_59_0) == 0 or var_59_0 == 0 then
-		arg_59_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_COUNT_DOWN, {}))
+	if math.floor(slot0._countDown - slot2) == 0 or slot2 == 0 then
+		slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_COUNT_DOWN, {}))
 	end
 
-	arg_59_0._countDown = var_59_0
-	arg_59_0._totalTime = arg_59_1 - arg_59_0._startTimeStamp
-	arg_59_0._lastUpdateTime = arg_59_1
+	slot0._countDown = slot2
+	slot0._totalTime = slot1 - slot0._startTimeStamp
+	slot0._lastUpdateTime = slot1
 end
 
-function var_0_9.SpawnMonster(arg_60_0, arg_60_1, arg_60_2, arg_60_3, arg_60_4, arg_60_5)
-	local var_60_0 = arg_60_0:GenerateUnitID()
-	local var_60_1 = var_0_5.GetMonsterTmpDataFromID(arg_60_1.monsterTemplateID)
-	local var_60_2 = {}
+function slot9.SpawnMonster(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = slot0:GenerateUnitID()
 
-	for iter_60_0, iter_60_1 in ipairs(var_60_1.equipment_list) do
-		table.insert(var_60_2, {
-			id = iter_60_1
+	for slot12, slot13 in ipairs(uv0.GetMonsterTmpDataFromID(slot1.monsterTemplateID).equipment_list) do
+		table.insert({}, {
+			id = slot13
 		})
 	end
 
-	local var_60_3 = var_60_1.random_equipment_list
-	local var_60_4 = var_60_1.random_nub
+	slot10 = slot7.random_nub
 
-	for iter_60_2, iter_60_3 in ipairs(var_60_3) do
-		local var_60_5 = var_60_4[iter_60_2]
-		local var_60_6 = Clone(iter_60_3)
+	for slot14, slot15 in ipairs(slot7.random_equipment_list) do
+		slot17 = Clone(slot15)
 
-		for iter_60_4 = 1, var_60_5 do
-			local var_60_7 = math.random(#var_60_6)
+		for slot21 = 1, slot10[slot14] do
+			slot22 = math.random(#slot17)
 
-			table.insert(var_60_2, {
-				id = var_60_6[var_60_7]
+			table.insert(slot8, {
+				id = slot17[slot22]
 			})
-			table.remove(var_60_6, var_60_7)
+			table.remove(slot17, slot22)
 		end
 	end
 
-	local var_60_8 = var_0_5.CreateBattleUnitData(var_60_0, arg_60_3, arg_60_4, arg_60_1.monsterTemplateID, nil, var_60_2, arg_60_1.extraInfo, nil, nil, nil, nil, arg_60_1.level)
+	uv1.MonsterAttrFixer(slot0._battleInitData.battleType, uv0.CreateBattleUnitData(slot6, slot3, slot4, slot1.monsterTemplateID, nil, slot8, slot1.extraInfo, nil, , , , slot1.level))
 
-	var_0_6.MonsterAttrFixer(arg_60_0._battleInitData.battleType, var_60_8)
+	slot12 = nil
 
-	local var_60_9
+	if ((not slot1.immuneHPInherit or slot11:GetMaxHP()) and math.ceil(slot11:GetMaxHP() * slot0._repressEnemyHpRant)) <= 0 then
+		slot12 = 1
+	end
 
-	if arg_60_1.immuneHPInherit then
-		var_60_9 = var_60_8:GetMaxHP()
+	slot11:SetCurrentHP(slot12)
+	slot11:SetPosition(uv2.RandomPos(slot1.corrdinate))
+	slot11:SetAI(slot1.pilotAITemplateID or slot7.pilot_ai_template_id)
+	slot0:setShipUnitBound(slot11)
+
+	if table.contains(TeamType.SubShipType, slot7.type) then
+		slot11:InitOxygen()
+		slot0:UpdateHostileSubmarine(true)
+	end
+
+	uv0.AttachWeather(slot11, slot0._weahter)
+
+	slot0._freeShipList[slot6] = slot11
+	slot0._unitList[slot6] = slot11
+
+	if slot11:IsSpectre() then
+		slot11:UpdateBlindInvisibleBySpectre()
 	else
-		var_60_9 = math.ceil(var_60_8:GetMaxHP() * arg_60_0._repressEnemyHpRant)
+		slot0._cldSystem:InitShipCld(slot11)
 	end
 
-	if var_60_9 <= 0 then
-		var_60_9 = 1
-	end
+	slot11:SummonSickness(slot1.sickness or uv3.SUMMONING_SICKNESS_DURATION)
+	slot11:SetMoveCast(slot1.moveCast == true)
 
-	var_60_8:SetCurrentHP(var_60_9)
-
-	local var_60_10 = var_0_2.RandomPos(arg_60_1.corrdinate)
-
-	var_60_8:SetPosition(var_60_10)
-	var_60_8:SetAI(arg_60_1.pilotAITemplateID or var_60_1.pilot_ai_template_id)
-	arg_60_0:setShipUnitBound(var_60_8)
-
-	if table.contains(TeamType.SubShipType, var_60_1.type) then
-		var_60_8:InitOxygen()
-		arg_60_0:UpdateHostileSubmarine(true)
-	end
-
-	var_0_5.AttachWeather(var_60_8, arg_60_0._weahter)
-
-	arg_60_0._freeShipList[var_60_0] = var_60_8
-	arg_60_0._unitList[var_60_0] = var_60_8
-
-	if var_60_8:IsSpectre() then
-		var_60_8:UpdateBlindInvisibleBySpectre()
+	if slot11:GetIFF() == uv4.FRIENDLY_CODE then
+		slot0._friendlyShipList[slot6] = slot11
 	else
-		arg_60_0._cldSystem:InitShipCld(var_60_8)
-	end
-
-	local var_60_11 = arg_60_1.sickness or var_0_3.SUMMONING_SICKNESS_DURATION
-
-	var_60_8:SummonSickness(var_60_11)
-	var_60_8:SetMoveCast(arg_60_1.moveCast == true)
-
-	if var_60_8:GetIFF() == var_0_4.FRIENDLY_CODE then
-		arg_60_0._friendlyShipList[var_60_0] = var_60_8
-	else
-		if var_60_8:IsSpectre() then
-			arg_60_0._spectreShipList[var_60_0] = var_60_8
+		if slot11:IsSpectre() then
+			slot0._spectreShipList[slot6] = slot11
 		else
-			arg_60_0._foeShipList[var_60_0] = var_60_8
+			slot0._foeShipList[slot6] = slot11
 		end
 
-		var_60_8:SetWaveIndex(arg_60_2)
+		slot11:SetWaveIndex(slot2)
 	end
 
-	if arg_60_1.reinforce then
-		var_60_8:Reinforce()
+	if slot1.reinforce then
+		slot11:Reinforce()
 	end
 
-	if arg_60_1.reinforceDelay then
-		var_60_8:SetReinforceCastTime(arg_60_1.reinforceDelay)
+	if slot1.reinforceDelay then
+		slot11:SetReinforceCastTime(slot1.reinforceDelay)
 	end
 
-	if arg_60_1.team then
-		arg_60_0:GetNPCTeam(arg_60_1.team):AppendUnit(var_60_8)
+	if slot1.team then
+		slot0:GetNPCTeam(slot1.team):AppendUnit(slot11)
 	end
 
-	if arg_60_1.phase then
-		var_0_0.Battle.BattleUnitPhaseSwitcher.New(var_60_8):SetTemplateData(arg_60_1.phase)
+	if slot1.phase then
+		uv5.Battle.BattleUnitPhaseSwitcher.New(slot11):SetTemplateData(slot1.phase)
 	end
 
-	if arg_60_5 then
-		arg_60_5(var_60_8)
+	if slot5 then
+		slot5(slot11)
 	end
 
-	local var_60_12 = {
-		type = arg_60_3,
-		unit = var_60_8,
-		bossData = arg_60_1.bossData,
-		extraInfo = arg_60_1.extraInfo
-	}
+	slot0:DispatchEvent(uv5.Event.New(uv6.ADD_UNIT, {
+		type = slot3,
+		unit = slot11,
+		bossData = slot1.bossData,
+		extraInfo = slot1.extraInfo
+	}))
 
-	arg_60_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_60_12))
+	function slot16(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			slot6, slot7 = nil
 
-	local function var_60_13(arg_61_0)
-		for iter_61_0, iter_61_1 in ipairs(arg_61_0) do
-			local var_61_0
-			local var_61_1
-			local var_61_2
-
-			if type(iter_61_1) == "number" then
-				var_61_1 = iter_61_1
-				var_61_2 = 1
+			if type(slot5) == "number" then
+				slot7 = slot5
+				slot6 = 1
 			else
-				var_61_1 = iter_61_1.ID
-				var_61_2 = iter_61_1.LV or 1
+				slot7 = slot5.ID
+				slot6 = slot5.LV or 1
 			end
 
-			local var_61_3 = var_0_0.Battle.BattleBuffUnit.New(var_61_1, var_61_2, var_60_8)
-
-			var_60_8:AddBuff(var_61_3)
+			uv1:AddBuff(uv0.Battle.BattleBuffUnit.New(slot7, slot6, uv1))
 		end
 	end
 
-	local var_60_14 = var_60_8:GetTemplate().buff_list
-	local var_60_15 = arg_60_1.buffList or {}
-	local var_60_16 = arg_60_0._battleInitData.ExtraBuffList or {}
-	local var_60_17 = arg_60_0._battleInitData.AffixBuffList or {}
+	slot16(slot11:GetTemplate().buff_list)
+	slot16(slot0._battleInitData.ExtraBuffList or {})
+	slot16(slot1.buffList or {})
 
-	var_60_13(var_60_14)
-	var_60_13(var_60_16)
-	var_60_13(var_60_15)
-
-	if arg_60_1.affix then
-		var_60_13(var_60_17)
+	if slot1.affix then
+		slot16(slot0._battleInitData.AffixBuffList or {})
 	end
 
-	local var_60_18 = arg_60_1.summonWaveIndex
-
-	if var_60_18 then
-		arg_60_0._waveSummonList[var_60_18] = arg_60_0._waveSummonList[var_60_18] or {}
-		arg_60_0._waveSummonList[var_60_18][var_60_8] = true
+	if slot1.summonWaveIndex then
+		slot0._waveSummonList[slot21] = slot0._waveSummonList[slot21] or {}
+		slot0._waveSummonList[slot21][slot11] = true
 	end
 
-	var_60_8:CheckWeaponInitial()
+	slot11:CheckWeaponInitial()
 
-	if arg_60_0._battleInitData.CMDArgs and var_60_8:GetTemplateID() == arg_60_0._battleInitData.CMDArgs then
-		arg_60_0:InitSpecificEnemyStatistics(var_60_8)
+	if slot0._battleInitData.CMDArgs and slot11:GetTemplateID() == slot0._battleInitData.CMDArgs then
+		slot0:InitSpecificEnemyStatistics(slot11)
 	end
 
-	var_60_8:OverrideDeadFX(arg_60_1.deadFX)
+	slot11:OverrideDeadFX(slot1.deadFX)
 
-	if BATTLE_ENEMY_AIMBIAS_RANGE and var_60_8:GetAimBias() then
-		arg_60_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AIM_BIAS, {
-			aimBias = var_60_8:GetAimBias()
+	if BATTLE_ENEMY_AIMBIAS_RANGE and slot11:GetAimBias() then
+		slot0:DispatchEvent(uv5.Event.New(uv6.ADD_AIM_BIAS, {
+			aimBias = slot11:GetAimBias()
 		}))
 	end
 
-	return var_60_8
+	return slot11
 end
 
-function var_0_9.UpdateHostileSubmarine(arg_62_0, arg_62_1)
-	if arg_62_1 then
-		arg_62_0._enemySubmarineCount = arg_62_0._enemySubmarineCount + 1
+function slot9.UpdateHostileSubmarine(slot0, slot1)
+	if slot1 then
+		slot0._enemySubmarineCount = slot0._enemySubmarineCount + 1
 	else
-		arg_62_0._enemySubmarineCount = arg_62_0._enemySubmarineCount - 1
+		slot0._enemySubmarineCount = slot0._enemySubmarineCount - 1
 	end
 
-	arg_62_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_HOSTILE_SUBMARINE))
+	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_HOSTILE_SUBMARINE))
 end
 
-function var_0_9.SpawnNPC(arg_63_0, arg_63_1, arg_63_2)
-	local var_63_0 = arg_63_0:GenerateUnitID()
-	local var_63_1 = var_0_3.UnitType.MINION_UNIT
-	local var_63_2 = var_0_5.GetMonsterTmpDataFromID(arg_63_1.monsterTemplateID)
-	local var_63_3 = {}
+function slot9.SpawnNPC(slot0, slot1, slot2)
+	slot3 = slot0:GenerateUnitID()
+	slot4 = uv0.UnitType.MINION_UNIT
+	slot6 = {}
 
-	for iter_63_0, iter_63_1 in ipairs(var_63_2.equipment_list) do
-		table.insert(var_63_3, {
-			id = iter_63_1
+	for slot10, slot11 in ipairs(uv1.GetMonsterTmpDataFromID(slot1.monsterTemplateID).equipment_list) do
+		table.insert(slot6, {
+			id = slot11
 		})
 	end
 
-	local var_63_4 = var_0_5.CreateBattleUnitData(var_63_0, var_63_1, arg_63_2:GetIFF(), arg_63_1.monsterTemplateID, nil, var_63_3, arg_63_1.extraInfo, nil, nil, nil, nil, arg_63_1.level)
+	slot7 = uv1.CreateBattleUnitData(slot3, slot4, slot2:GetIFF(), slot1.monsterTemplateID, nil, slot6, slot1.extraInfo, nil, , , , slot1.level)
 
-	var_63_4:SetMaster(arg_63_2)
-	var_63_4:InheritMasterAttr()
+	slot7:SetMaster(slot2)
+	slot7:InheritMasterAttr()
+	slot7:SetCurrentHP(slot7:GetMaxHP())
 
-	local var_63_5 = var_63_4:GetMaxHP()
+	slot9 = nil
 
-	var_63_4:SetCurrentHP(var_63_5)
+	slot7:SetPosition((not slot1.corrdinate or uv2.RandomPos(slot1.corrdinate)) and Clone(slot2:GetPosition()))
+	slot7:SetAI(slot1.pilotAITemplateID or slot5.pilot_ai_template_id)
+	slot0:setShipUnitBound(slot7)
 
-	local var_63_6
+	if table.contains(TeamType.SubShipType, slot5.type) then
+		slot7:InitOxygen()
 
-	if arg_63_1.corrdinate then
-		var_63_6 = var_0_2.RandomPos(arg_63_1.corrdinate)
-	else
-		var_63_6 = Clone(arg_63_2:GetPosition())
-	end
-
-	var_63_4:SetPosition(var_63_6)
-	var_63_4:SetAI(arg_63_1.pilotAITemplateID or var_63_2.pilot_ai_template_id)
-	arg_63_0:setShipUnitBound(var_63_4)
-
-	if table.contains(TeamType.SubShipType, var_63_2.type) then
-		var_63_4:InitOxygen()
-
-		if var_63_4:GetIFF() ~= var_0_4.FRIENDLY_CODE then
-			arg_63_0:UpdateHostileSubmarine(true)
+		if slot7:GetIFF() ~= uv3.FRIENDLY_CODE then
+			slot0:UpdateHostileSubmarine(true)
 		end
 	end
 
-	var_0_5.AttachWeather(var_63_4, arg_63_0._weahter)
+	uv1.AttachWeather(slot7, slot0._weahter)
 
-	arg_63_0._freeShipList[var_63_0] = var_63_4
-	arg_63_0._unitList[var_63_0] = var_63_4
+	slot0._freeShipList[slot3] = slot7
+	slot0._unitList[slot3] = slot7
 
-	arg_63_0._cldSystem:InitShipCld(var_63_4)
-	var_63_4:SummonSickness(var_0_3.SUMMONING_SICKNESS_DURATION)
-	var_63_4:SetMoveCast(arg_63_1.moveCast == true)
+	slot0._cldSystem:InitShipCld(slot7)
+	slot7:SummonSickness(uv0.SUMMONING_SICKNESS_DURATION)
+	slot7:SetMoveCast(slot1.moveCast == true)
 
-	arg_63_0._minionShipList[var_63_0] = var_63_4
+	slot0._minionShipList[slot3] = slot7
 
-	if arg_63_1.phase then
-		var_0_0.Battle.BattleUnitPhaseSwitcher.New(var_63_4):SetTemplateData(arg_63_1.phase)
+	if slot1.phase then
+		uv4.Battle.BattleUnitPhaseSwitcher.New(slot7):SetTemplateData(slot1.phase)
 	end
 
-	local var_63_7 = {
-		type = var_63_1,
-		unit = var_63_4,
-		bossData = arg_63_1.bossData,
-		extraInfo = arg_63_1.extraInfo
-	}
+	slot0:DispatchEvent(uv4.Event.New(uv5.ADD_UNIT, {
+		type = slot4,
+		unit = slot7,
+		bossData = slot1.bossData,
+		extraInfo = slot1.extraInfo
+	}))
 
-	arg_63_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_63_7))
+	function slot11(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			slot6, slot7 = nil
 
-	local function var_63_8(arg_64_0)
-		for iter_64_0, iter_64_1 in ipairs(arg_64_0) do
-			local var_64_0
-			local var_64_1
-			local var_64_2
-
-			if type(iter_64_1) == "number" then
-				var_64_1 = iter_64_1
-				var_64_2 = 1
+			if type(slot5) == "number" then
+				slot7 = slot5
+				slot6 = 1
 			else
-				var_64_1 = iter_64_1.ID
-				var_64_2 = iter_64_1.LV or 1
+				slot7 = slot5.ID
+				slot6 = slot5.LV or 1
 			end
 
-			local var_64_3 = var_0_0.Battle.BattleBuffUnit.New(var_64_1, var_64_2, var_63_4)
-
-			var_63_4:AddBuff(var_64_3)
+			uv1:AddBuff(uv0.Battle.BattleBuffUnit.New(slot7, slot6, uv1))
 		end
 	end
 
-	local var_63_9 = var_63_4:GetTemplate().buff_list
-	local var_63_10 = arg_63_1.buffList or {}
+	slot11(slot7:GetTemplate().buff_list)
+	slot11(slot1.buffList or {})
+	slot7:CheckWeaponInitial()
 
-	var_63_8(var_63_9)
-	var_63_8(var_63_10)
-	var_63_4:CheckWeaponInitial()
-
-	return var_63_4
+	return slot7
 end
 
-function var_0_9.EnemyEscape(arg_65_0)
-	for iter_65_0, iter_65_1 in pairs(arg_65_0._foeShipList) do
-		if iter_65_1:ContainsLabelTag(var_0_4.ESCAPE_EXPLO_TAG) then
-			iter_65_1:SetDeathReason(var_0_3.UnitDeathReason.CLS)
-			iter_65_1:DeadAction()
+function slot9.EnemyEscape(slot0)
+	for slot4, slot5 in pairs(slot0._foeShipList) do
+		if slot5:ContainsLabelTag(uv0.ESCAPE_EXPLO_TAG) then
+			slot5:SetDeathReason(uv1.UnitDeathReason.CLS)
+			slot5:DeadAction()
 		else
-			iter_65_1:RemoveAllAutoWeapon()
-			iter_65_1:SetAI(var_0_4.COUNT_DOWN_ESCAPE_AI_ID)
+			slot5:RemoveAllAutoWeapon()
+			slot5:SetAI(uv0.COUNT_DOWN_ESCAPE_AI_ID)
 		end
 	end
 end
 
-function var_0_9.GetNPCTeam(arg_66_0, arg_66_1)
-	if not arg_66_0._teamList[arg_66_1] then
-		arg_66_0._teamList[arg_66_1] = var_0_0.Battle.BattleTeamVO.New(arg_66_1)
+function slot9.GetNPCTeam(slot0, slot1)
+	if not slot0._teamList[slot1] then
+		slot0._teamList[slot1] = uv0.Battle.BattleTeamVO.New(slot1)
 	end
 
-	return arg_66_0._teamList[arg_66_1]
+	return slot0._teamList[slot1]
 end
 
-function var_0_9.KillNPCTeam(arg_67_0, arg_67_1)
-	local var_67_0 = arg_67_0._teamList[arg_67_1]
+function slot9.KillNPCTeam(slot0, slot1)
+	if slot0._teamList[slot1] then
+		slot2:Dispose()
 
-	if var_67_0 then
-		var_67_0:Dispose()
-
-		arg_67_0._teamList[arg_67_1] = nil
+		slot0._teamList[slot1] = nil
 	end
 end
 
-function var_0_9.SpawnVanguard(arg_68_0, arg_68_1, arg_68_2)
-	local var_68_0 = arg_68_0:GetVanguardBornCoordinate(arg_68_2)
-	local var_68_1 = arg_68_0:generatePlayerUnit(arg_68_1, arg_68_2, BuildVector3(var_68_0), arg_68_0._commanderBuff)
+function slot9.SpawnVanguard(slot0, slot1, slot2)
+	slot4 = slot0:generatePlayerUnit(slot1, slot2, BuildVector3(slot0:GetVanguardBornCoordinate(slot2)), slot0._commanderBuff)
 
-	arg_68_0:GetFleetByIFF(arg_68_2):AppendPlayerUnit(var_68_1)
-	arg_68_0:setShipUnitBound(var_68_1)
-	var_0_5.AttachWeather(var_68_1, arg_68_0._weahter)
-	arg_68_0._cldSystem:InitShipCld(var_68_1)
+	slot0:GetFleetByIFF(slot2):AppendPlayerUnit(slot4)
+	slot0:setShipUnitBound(slot4)
+	uv0.AttachWeather(slot4, slot0._weahter)
+	slot0._cldSystem:InitShipCld(slot4)
+	slot0:DispatchEvent(uv2.Event.New(uv3.ADD_UNIT, {
+		type = uv1.UnitType.PLAYER_UNIT,
+		unit = slot4
+	}))
 
-	local var_68_2 = {
-		type = var_0_3.UnitType.PLAYER_UNIT,
-		unit = var_68_1
-	}
-
-	arg_68_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_68_2))
-
-	return var_68_1
+	return slot4
 end
 
-function var_0_9.SpawnMain(arg_69_0, arg_69_1, arg_69_2)
-	local var_69_0
-	local var_69_1 = arg_69_0:GetFleetByIFF(arg_69_2)
-	local var_69_2 = #var_69_1:GetMainList() + 1
+function slot9.SpawnMain(slot0, slot1, slot2)
+	slot3 = nil
+	slot5 = #slot0:GetFleetByIFF(slot2):GetMainList() + 1
+	slot3 = (not slot0._currentStageData.mainUnitPosition or not slot0._currentStageData.mainUnitPosition[slot2] or Clone(slot0._currentStageData.mainUnitPosition[slot2][slot5])) and Clone(uv0.MAIN_UNIT_POS[slot2][slot5])
+	slot6 = slot0:generatePlayerUnit(slot1, slot2, slot3, slot0._commanderBuff)
 
-	if arg_69_0._currentStageData.mainUnitPosition and arg_69_0._currentStageData.mainUnitPosition[arg_69_2] then
-		var_69_0 = Clone(arg_69_0._currentStageData.mainUnitPosition[arg_69_2][var_69_2])
-	else
-		var_69_0 = Clone(var_0_4.MAIN_UNIT_POS[arg_69_2][var_69_2])
+	slot6:SetBornPosition(slot3)
+	slot6:SetMainFleetUnit()
+
+	if slot3.x < slot0._totalLeftBound or slot0._totalRightBound < slot7 then
+		slot6:SetImmuneCommonBulletCLD()
 	end
 
-	local var_69_3 = arg_69_0:generatePlayerUnit(arg_69_1, arg_69_2, var_69_0, arg_69_0._commanderBuff)
+	slot4:AppendPlayerUnit(slot6)
+	slot0:setShipUnitBound(slot6)
+	uv1.AttachWeather(slot6, slot0._weahter)
+	slot0._cldSystem:InitShipCld(slot6)
+	slot0:DispatchEvent(uv3.Event.New(uv4.ADD_UNIT, {
+		type = uv2.UnitType.PLAYER_UNIT,
+		unit = slot6
+	}))
 
-	var_69_3:SetBornPosition(var_69_0)
-	var_69_3:SetMainFleetUnit()
+	return slot6
+end
 
-	local var_69_4 = var_69_0.x
+function slot9.SpawnSub(slot0, slot1, slot2)
+	slot3 = nil
+	slot5 = #slot0:GetFleetByIFF(slot2):GetSubList() + 1
+	slot6 = uv0.SUB_UNIT_OFFSET_X + (uv1.GetPlayerShipTmpDataFromID(slot1.tmpID).summon_offset or 0)
+	slot7 = slot0:generatePlayerUnit(slot1, slot2, (slot2 ~= uv0.FRIENDLY_CODE or Vector3(slot6 + slot0._totalLeftBound, 0, uv0.SUB_UNIT_POS_Z[slot5])) and Vector3(slot0._totalRightBound - slot6, 0, uv0.SUB_UNIT_POS_Z[slot5]), slot0._subCommanderBuff)
 
-	if var_69_4 < arg_69_0._totalLeftBound or var_69_4 > arg_69_0._totalRightBound then
-		var_69_3:SetImmuneCommonBulletCLD()
+	slot4:AddSubMarine(slot7)
+	slot0:setShipUnitBound(slot7)
+	uv1.AttachWeather(slot7, slot0._weahter)
+	slot0._cldSystem:InitShipCld(slot7)
+	slot0:DispatchEvent(uv3.Event.New(uv4.ADD_UNIT, {
+		type = uv2.UnitType.PLAYER_UNIT,
+		unit = slot7
+	}))
+
+	return slot7
+end
+
+function slot9.SpawnManualSub(slot0, slot1, slot2)
+	slot4 = slot0:generatePlayerUnit(slot1, slot2, BuildVector3(slot0:GetVanguardBornCoordinate(slot2)), slot0._commanderBuff)
+
+	slot0:GetFleetByIFF(slot2):AddManualSubmarine(slot4)
+	slot0:setShipUnitBound(slot4)
+	slot0._cldSystem:InitShipCld(slot4)
+	slot0:DispatchEvent(uv1.Event.New(uv2.ADD_UNIT, {
+		type = uv0.UnitType.SUB_UNIT,
+		unit = slot4
+	}))
+
+	return slot4
+end
+
+function slot9.SpawnSupportUnit(slot0, slot1, slot2)
+	slot3 = slot0:generateSupportPlayerUnit(slot1, slot2)
+
+	slot0:GetFleetByIFF(slot2):AppendSupportUnit(slot3)
+
+	return slot3
+end
+
+function slot9.ShutdownPlayerUnit(slot0, slot1)
+	slot2 = slot0._unitList[slot1]
+	slot4 = slot0:GetFleetByIFF(slot2:GetIFF())
+
+	slot4:RemovePlayerUnit(slot2)
+
+	if slot4:GetFleetAntiAirWeapon():GetRange() == 0 then
+		-- Nothing
 	end
 
-	var_69_1:AppendPlayerUnit(var_69_3)
-	arg_69_0:setShipUnitBound(var_69_3)
-	var_0_5.AttachWeather(var_69_3, arg_69_0._weahter)
-	arg_69_0._cldSystem:InitShipCld(var_69_3)
-
-	local var_69_5 = {
-		type = var_0_3.UnitType.PLAYER_UNIT,
-		unit = var_69_3
-	}
-
-	arg_69_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_69_5))
-
-	return var_69_3
+	slot0:DispatchEvent(uv0.Event.New(uv1.ANTI_AIR_AREA, {
+		isShow = false
+	}))
+	slot0:DispatchEvent(uv0.Event.New(uv1.SHUT_DOWN_PLAYER, {
+		unit = slot2
+	}))
 end
 
-function var_0_9.SpawnSub(arg_70_0, arg_70_1, arg_70_2)
-	local var_70_0
-	local var_70_1 = arg_70_0:GetFleetByIFF(arg_70_2)
-	local var_70_2 = #var_70_1:GetSubList() + 1
-	local var_70_3 = var_0_4.SUB_UNIT_OFFSET_X + (var_0_5.GetPlayerShipTmpDataFromID(arg_70_1.tmpID).summon_offset or 0)
+function slot9.updateDeadList(slot0)
+	slot1 = #slot0._deadUnitList
 
-	if arg_70_2 == var_0_4.FRIENDLY_CODE then
-		var_70_0 = Vector3(var_70_3 + arg_70_0._totalLeftBound, 0, var_0_4.SUB_UNIT_POS_Z[var_70_2])
-	else
-		var_70_0 = Vector3(arg_70_0._totalRightBound - var_70_3, 0, var_0_4.SUB_UNIT_POS_Z[var_70_2])
-	end
+	while slot1 > 0 do
+		slot0._deadUnitList[slot1]:Dispose()
 
-	local var_70_4 = arg_70_0:generatePlayerUnit(arg_70_1, arg_70_2, var_70_0, arg_70_0._subCommanderBuff)
-
-	var_70_1:AddSubMarine(var_70_4)
-	arg_70_0:setShipUnitBound(var_70_4)
-	var_0_5.AttachWeather(var_70_4, arg_70_0._weahter)
-	arg_70_0._cldSystem:InitShipCld(var_70_4)
-
-	local var_70_5 = {
-		type = var_0_3.UnitType.PLAYER_UNIT,
-		unit = var_70_4
-	}
-
-	arg_70_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_70_5))
-
-	return var_70_4
-end
-
-function var_0_9.SpawnManualSub(arg_71_0, arg_71_1, arg_71_2)
-	local var_71_0 = arg_71_0:GetVanguardBornCoordinate(arg_71_2)
-	local var_71_1 = arg_71_0:generatePlayerUnit(arg_71_1, arg_71_2, BuildVector3(var_71_0), arg_71_0._commanderBuff)
-
-	arg_71_0:GetFleetByIFF(arg_71_2):AddManualSubmarine(var_71_1)
-	arg_71_0:setShipUnitBound(var_71_1)
-	arg_71_0._cldSystem:InitShipCld(var_71_1)
-
-	local var_71_2 = {
-		type = var_0_3.UnitType.SUB_UNIT,
-		unit = var_71_1
-	}
-
-	arg_71_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_71_2))
-
-	return var_71_1
-end
-
-function var_0_9.SpawnSupportUnit(arg_72_0, arg_72_1, arg_72_2)
-	local var_72_0 = arg_72_0:generateSupportPlayerUnit(arg_72_1, arg_72_2)
-
-	arg_72_0:GetFleetByIFF(arg_72_2):AppendSupportUnit(var_72_0)
-
-	return var_72_0
-end
-
-function var_0_9.ShutdownPlayerUnit(arg_73_0, arg_73_1)
-	local var_73_0 = arg_73_0._unitList[arg_73_1]
-	local var_73_1 = var_73_0:GetIFF()
-	local var_73_2 = arg_73_0:GetFleetByIFF(var_73_1)
-
-	var_73_2:RemovePlayerUnit(var_73_0)
-
-	local var_73_3 = {}
-
-	if var_73_2:GetFleetAntiAirWeapon():GetRange() == 0 then
-		var_73_3.isShow = false
-	end
-
-	arg_73_0:DispatchEvent(var_0_0.Event.New(var_0_1.ANTI_AIR_AREA, var_73_3))
-
-	local var_73_4 = {
-		unit = var_73_0
-	}
-
-	arg_73_0:DispatchEvent(var_0_0.Event.New(var_0_1.SHUT_DOWN_PLAYER, var_73_4))
-end
-
-function var_0_9.updateDeadList(arg_74_0)
-	local var_74_0 = #arg_74_0._deadUnitList
-
-	while var_74_0 > 0 do
-		arg_74_0._deadUnitList[var_74_0]:Dispose()
-
-		arg_74_0._deadUnitList[var_74_0] = nil
-		var_74_0 = var_74_0 - 1
+		slot0._deadUnitList[slot1] = nil
+		slot1 = slot1 - 1
 	end
 end
 
-function var_0_9.KillUnit(arg_75_0, arg_75_1)
-	local var_75_0 = arg_75_0._unitList[arg_75_1]
-
-	if var_75_0 == nil then
+function slot9.KillUnit(slot0, slot1)
+	if slot0._unitList[slot1] == nil then
 		return
 	end
 
-	local var_75_1 = var_75_0:GetUnitType()
+	slot3 = slot2:GetUnitType()
 
-	arg_75_0._cldSystem:DeleteShipCld(var_75_0)
-	var_75_0:Clear()
+	slot0._cldSystem:DeleteShipCld(slot2)
+	slot2:Clear()
 
-	arg_75_0._unitList[arg_75_1] = nil
+	slot0._unitList[slot1] = nil
 
-	if arg_75_0._freeShipList[arg_75_1] then
-		arg_75_0._freeShipList[arg_75_1] = nil
+	if slot0._freeShipList[slot1] then
+		slot0._freeShipList[slot1] = nil
 	end
 
-	local var_75_2 = var_75_0:GetIFF()
-	local var_75_3 = var_75_0:GetDeathReason()
+	slot4 = slot2:GetIFF()
+	slot5 = slot2:GetDeathReason()
 
-	if var_75_0:GetAimBias() then
-		local var_75_4 = var_75_0:GetAimBias()
+	if slot2:GetAimBias() then
+		slot6 = slot2:GetAimBias()
 
-		var_75_4:RemoveCrew(var_75_0)
+		slot6:RemoveCrew(slot2)
 
-		if var_75_4:GetCurrentState() == var_75_4.STATE_EXPIRE then
-			arg_75_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIM_BIAS, {
-				aimBias = var_75_0:GetAimBias()
+		if slot6:GetCurrentState() == slot6.STATE_EXPIRE then
+			slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIM_BIAS, {
+				aimBias = slot2:GetAimBias()
 			}))
 		end
 	end
 
-	if var_75_0:IsSpectre() then
-		arg_75_0._spectreShipList[arg_75_1] = nil
-	elseif var_75_2 == var_0_4.FOE_CODE then
-		arg_75_0._foeShipList[arg_75_1] = nil
+	if slot2:IsSpectre() then
+		slot0._spectreShipList[slot1] = nil
+	elseif slot4 == uv2.FOE_CODE then
+		slot0._foeShipList[slot1] = nil
 
-		if var_75_1 == var_0_3.UnitType.ENEMY_UNIT or var_75_1 == var_0_3.UnitType.BOSS_UNIT then
-			if var_75_0:GetTeam() then
-				var_75_0:GetTeam():RemoveUnit(var_75_0)
+		if slot3 == uv3.UnitType.ENEMY_UNIT or slot3 == uv3.UnitType.BOSS_UNIT then
+			if slot2:GetTeam() then
+				slot2:GetTeam():RemoveUnit(slot2)
 			end
 
-			local var_75_5 = var_75_0:GetTemplate().type
-
-			if table.contains(TeamType.SubShipType, var_75_5) then
-				arg_75_0:UpdateHostileSubmarine(false)
+			if table.contains(TeamType.SubShipType, slot2:GetTemplate().type) then
+				slot0:UpdateHostileSubmarine(false)
 			end
 
-			local var_75_6 = var_75_0:GetWaveIndex()
-
-			if var_75_6 and arg_75_0._waveSummonList[var_75_6] then
-				arg_75_0._waveSummonList[var_75_6][var_75_0] = nil
+			if slot2:GetWaveIndex() and slot0._waveSummonList[slot7] then
+				slot0._waveSummonList[slot7][slot2] = nil
 			end
 		end
-	elseif var_75_2 == var_0_4.FRIENDLY_CODE then
-		arg_75_0._friendlyShipList[arg_75_1] = nil
+	elseif slot4 == uv2.FRIENDLY_CODE then
+		slot0._friendlyShipList[slot1] = nil
 	end
 
-	local var_75_7 = {
-		UID = arg_75_1,
-		type = var_75_1,
-		deadReason = var_75_3,
-		unit = var_75_0
-	}
-
-	arg_75_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_UNIT, var_75_7))
-	table.insert(arg_75_0._deadUnitList, var_75_0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_UNIT, {
+		UID = slot1,
+		type = slot3,
+		deadReason = slot5,
+		unit = slot2
+	}))
+	table.insert(slot0._deadUnitList, slot2)
 end
 
-function var_0_9.KillAllEnemy(arg_76_0)
-	for iter_76_0, iter_76_1 in pairs(arg_76_0._unitList) do
-		if iter_76_1:GetIFF() == var_0_4.FOE_CODE and iter_76_1:IsAlive() and not iter_76_1:IsBoss() then
-			iter_76_1:DeadAction()
+function slot9.KillAllEnemy(slot0)
+	for slot4, slot5 in pairs(slot0._unitList) do
+		if slot5:GetIFF() == uv0.FOE_CODE and slot5:IsAlive() and not slot5:IsBoss() then
+			slot5:DeadAction()
 		end
 	end
 end
 
-function var_0_9.KillSubmarineByIFF(arg_77_0, arg_77_1)
-	for iter_77_0, iter_77_1 in pairs(arg_77_0._unitList) do
-		if iter_77_1:GetIFF() == arg_77_1 and iter_77_1:IsAlive() and table.contains(TeamType.SubShipType, iter_77_1:GetTemplate().type) and not iter_77_1:IsBoss() then
-			iter_77_1:DeadAction()
+function slot9.KillSubmarineByIFF(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._unitList) do
+		if slot6:GetIFF() == slot1 and slot6:IsAlive() and table.contains(TeamType.SubShipType, slot6:GetTemplate().type) and not slot6:IsBoss() then
+			slot6:DeadAction()
 		end
 	end
 end
 
-function var_0_9.KillAllAircraft(arg_78_0)
-	for iter_78_0, iter_78_1 in pairs(arg_78_0._aircraftList) do
-		iter_78_1:Clear()
+function slot9.KillAllAircraft(slot0)
+	for slot4, slot5 in pairs(slot0._aircraftList) do
+		slot5:Clear()
+		slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_CRAFT, {
+			UID = slot4
+		}))
 
-		local var_78_0 = {
-			UID = iter_78_0
-		}
-
-		arg_78_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_CRAFT, var_78_0))
-
-		arg_78_0._aircraftList[iter_78_0] = nil
+		slot0._aircraftList[slot4] = nil
 	end
 end
 
-function var_0_9.KillWaveSummonMonster(arg_79_0, arg_79_1)
-	local var_79_0 = arg_79_0._waveSummonList[arg_79_1]
-
-	if var_79_0 then
-		for iter_79_0, iter_79_1 in pairs(var_79_0) do
-			local var_79_1 = iter_79_0:GetUniqueID()
-
-			arg_79_0:KillUnit(var_79_1)
+function slot9.KillWaveSummonMonster(slot0, slot1)
+	if slot0._waveSummonList[slot1] then
+		for slot6, slot7 in pairs(slot2) do
+			slot0:KillUnit(slot6:GetUniqueID())
 		end
 	end
 
-	arg_79_0._waveSummonList[arg_79_1] = nil
+	slot0._waveSummonList[slot1] = nil
 end
 
-function var_0_9.IsThereBoss(arg_80_0)
-	return arg_80_0:GetActiveBossCount() > 0
+function slot9.IsThereBoss(slot0)
+	return slot0:GetActiveBossCount() > 0
 end
 
-function var_0_9.GetActiveBossCount(arg_81_0)
-	local var_81_0 = 0
-
-	for iter_81_0, iter_81_1 in pairs(arg_81_0:GetUnitList()) do
-		if iter_81_1:IsBoss() and iter_81_1:IsAlive() then
-			var_81_0 = var_81_0 + 1
+function slot9.GetActiveBossCount(slot0)
+	for slot5, slot6 in pairs(slot0:GetUnitList()) do
+		if slot6:IsBoss() and slot6:IsAlive() then
+			slot1 = 0 + 1
 		end
 	end
 
-	return var_81_0
+	return slot1
 end
 
-function var_0_9.setShipUnitBound(arg_82_0, arg_82_1)
-	local var_82_0 = arg_82_1:GetIFF()
+function slot9.setShipUnitBound(slot0, slot1)
+	slot2 = slot1:GetIFF()
 
-	if arg_82_1:GetFleetVO() then
-		arg_82_1:SetBound(arg_82_1:GetFleetVO():GetUnitBound():GetBound())
+	if slot1:GetFleetVO() then
+		slot1:SetBound(slot1:GetFleetVO():GetUnitBound():GetBound())
 	else
-		arg_82_1:SetBound(arg_82_0:GetUnitBoundByIFF(var_82_0))
+		slot1:SetBound(slot0:GetUnitBoundByIFF(slot2))
 	end
 end
 
-function var_0_9.generatePlayerUnit(arg_83_0, arg_83_1, arg_83_2, arg_83_3, arg_83_4)
-	local var_83_0 = arg_83_0:GenerateUnitID()
-	local var_83_1 = arg_83_1.properties
+function slot9.generatePlayerUnit(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot0:GenerateUnitID()
+	slot6 = slot1.properties
+	slot6.level = slot1.level
+	slot6.formationID = uv0.FORMATION_ID
+	slot6.id = slot1.id
 
-	var_83_1.level = arg_83_1.level
-	var_83_1.formationID = var_0_4.FORMATION_ID
-	var_83_1.id = arg_83_1.id
+	uv1.AttrFixer(slot0._battleInitData.battleType, slot6)
 
-	var_0_6.AttrFixer(arg_83_0._battleInitData.battleType, var_83_1)
-
-	local var_83_2 = arg_83_1.proficiency or {
+	slot7 = slot1.proficiency or {
 		1,
 		1,
 		1
 	}
-	local var_83_3 = var_0_3.UnitType.PLAYER_UNIT
-	local var_83_4 = arg_83_0._battleInitData.battleType
+	slot8 = uv2.UnitType.PLAYER_UNIT
 
-	if var_83_4 == SYSTEM_SUBMARINE_RUN or var_83_4 == SYSTEM_SUB_ROUTINE then
-		var_83_3 = var_0_3.UnitType.SUB_UNIT
-	elseif var_83_4 == SYSTEM_AIRFIGHT then
-		var_83_3 = var_0_3.UnitType.CONST_UNIT
-	elseif var_83_4 == SYSTEM_CARDPUZZLE then
-		var_83_3 = var_0_3.UnitType.CARDPUZZLE_PLAYER_UNIT
+	if slot0._battleInitData.battleType == SYSTEM_SUBMARINE_RUN or slot9 == SYSTEM_SUB_ROUTINE then
+		slot8 = uv2.UnitType.SUB_UNIT
+	elseif slot9 == SYSTEM_AIRFIGHT then
+		slot8 = uv2.UnitType.CONST_UNIT
+	elseif slot9 == SYSTEM_CARDPUZZLE then
+		slot8 = uv2.UnitType.CARDPUZZLE_PLAYER_UNIT
 	end
 
-	local var_83_5 = var_0_5.CreateBattleUnitData(var_83_0, var_83_3, arg_83_2, arg_83_1.tmpID, arg_83_1.skinId, arg_83_1.equipment, var_83_1, arg_83_1.baseProperties, var_83_2, arg_83_1.baseList, arg_83_1.preloasList)
+	slot10 = uv3.CreateBattleUnitData(slot5, slot8, slot2, slot1.tmpID, slot1.skinId, slot1.equipment, slot6, slot1.baseProperties, slot7, slot1.baseList, slot1.preloasList)
 
-	var_0_5.AttachUltimateBonus(var_83_5)
-	var_83_5:InitCurrentHP(arg_83_1.initHPRate or 1)
-	var_83_5:SetRarity(arg_83_1.rarity)
-	var_83_5:SetIntimacy(arg_83_1.intimacy)
-	var_83_5:SetShipName(arg_83_1.name)
+	uv3.AttachUltimateBonus(slot10)
+	slot10:InitCurrentHP(slot1.initHPRate or 1)
+	slot10:SetRarity(slot1.rarity)
+	slot10:SetIntimacy(slot1.intimacy)
+	slot10:SetShipName(slot1.name)
 
-	if arg_83_1.spWeapon then
-		var_83_5:SetSpWeapon(arg_83_1.spWeapon)
-		_.each(arg_83_1.spWeapon:GetLabel(), function(arg_84_0)
-			var_83_5:AddLabelTag(arg_84_0)
+	if slot1.spWeapon then
+		slot10:SetSpWeapon(slot1.spWeapon)
+		_.each(slot1.spWeapon:GetLabel(), function (slot0)
+			uv0:AddLabelTag(slot0)
 		end)
 	end
 
-	arg_83_0._unitList[var_83_0] = var_83_5
+	slot0._unitList[slot5] = slot10
 
-	if var_83_5:GetIFF() == var_0_4.FRIENDLY_CODE then
-		arg_83_0._friendlyShipList[var_83_0] = var_83_5
-	elseif var_83_5:GetIFF() == var_0_4.FOE_CODE then
-		arg_83_0._foeShipList[var_83_0] = var_83_5
+	if slot10:GetIFF() == uv0.FRIENDLY_CODE then
+		slot0._friendlyShipList[slot5] = slot10
+	elseif slot10:GetIFF() == uv0.FOE_CODE then
+		slot0._foeShipList[slot5] = slot10
 	end
 
-	if var_83_4 == SYSTEM_WORLD then
-		local var_83_6 = var_0_2.WorldMapRewardHealingRate(arg_83_0._battleInitData.EnemyMapRewards, arg_83_0._battleInitData.FleetMapRewards)
-
-		var_0_6.SetCurrent(var_83_5, "healingRate", var_83_6)
+	if slot9 == SYSTEM_WORLD then
+		uv1.SetCurrent(slot10, "healingRate", uv4.WorldMapRewardHealingRate(slot0._battleInitData.EnemyMapRewards, slot0._battleInitData.FleetMapRewards))
 	end
 
-	var_83_5:SetPosition(arg_83_3)
-	var_0_5.InitUnitSkill(arg_83_1, var_83_5, var_83_4)
-	var_0_5.InitEquipSkill(arg_83_1.equipment, var_83_5, var_83_4)
-	var_0_5.InitCommanderSkill(arg_83_4, var_83_5, var_83_4)
-	var_83_5:SetGearScore(arg_83_1.shipGS)
+	slot10:SetPosition(slot3)
+	uv3.InitUnitSkill(slot1, slot10, slot9)
+	uv3.InitEquipSkill(slot1.equipment, slot10, slot9)
+	uv3.InitCommanderSkill(slot4, slot10, slot9)
+	slot10:SetGearScore(slot1.shipGS)
 
-	if arg_83_1.deathMark then
-		var_83_5:SetWorldDeathMark()
+	if slot1.deathMark then
+		slot10:SetWorldDeathMark()
 	end
 
-	return var_83_5
+	return slot10
 end
 
-function var_0_9.generateSupportPlayerUnit(arg_85_0, arg_85_1, arg_85_2)
-	local var_85_0 = arg_85_0:GenerateUnitID()
-	local var_85_1 = arg_85_1.properties
+function slot9.generateSupportPlayerUnit(slot0, slot1, slot2)
+	slot3 = slot0:GenerateUnitID()
+	slot4 = slot1.properties
+	slot4.level = slot1.level
+	slot4.formationID = uv0.FORMATION_ID
+	slot4.id = slot1.id
 
-	var_85_1.level = arg_85_1.level
-	var_85_1.formationID = var_0_4.FORMATION_ID
-	var_85_1.id = arg_85_1.id
+	uv1.AttrFixer(slot0._battleInitData.battleType, slot4)
 
-	var_0_6.AttrFixer(arg_85_0._battleInitData.battleType, var_85_1)
-
-	local var_85_2 = arg_85_1.proficiency or {
+	slot6 = uv2.CreateBattleUnitData(slot3, uv3.UnitType.SUPPORT_UNIT, slot2, slot1.tmpID, slot1.skinId, slot1.equipment, slot4, slot1.baseProperties, slot1.proficiency or {
 		1,
 		1,
 		1
-	}
-	local var_85_3 = var_0_5.CreateBattleUnitData(var_85_0, var_0_3.UnitType.SUPPORT_UNIT, arg_85_2, arg_85_1.tmpID, arg_85_1.skinId, arg_85_1.equipment, var_85_1, arg_85_1.baseProperties, var_85_2, arg_85_1.baseList, arg_85_1.preloasList)
+	}, slot1.baseList, slot1.preloasList)
 
-	var_85_3:InitCurrentHP(1)
-	var_85_3:SetShipName(arg_85_1.name)
+	slot6:InitCurrentHP(1)
+	slot6:SetShipName(slot1.name)
 
-	arg_85_0._spectreShipList[var_85_0] = var_85_3
+	slot0._spectreShipList[slot3] = slot6
 
-	var_85_3:SetPosition(Clone(var_0_4.AirSupportUnitPos))
+	slot6:SetPosition(Clone(uv0.AirSupportUnitPos))
 
-	return var_85_3
+	return slot6
 end
 
-function var_0_9.SwitchSpectreUnit(arg_86_0, arg_86_1)
-	local var_86_0 = arg_86_1:GetUniqueID()
-	local var_86_1 = arg_86_1:GetIFF() == var_0_4.FRIENDLY_CODE and arg_86_0._friendlyShipList or arg_86_0._foeShipList
+function slot9.SwitchSpectreUnit(slot0, slot1)
+	slot2 = slot1:GetUniqueID()
 
-	if arg_86_1:IsSpectre() then
-		var_86_1[var_86_0] = nil
-		arg_86_0._spectreShipList[var_86_0] = arg_86_1
+	if slot1:IsSpectre() then
+		(slot1:GetIFF() == uv0.FRIENDLY_CODE and slot0._friendlyShipList or slot0._foeShipList)[slot2] = nil
+		slot0._spectreShipList[slot2] = slot1
 
-		for iter_86_0, iter_86_1 in pairs(arg_86_0._AOEList) do
-			iter_86_1:ForceExit(arg_86_1:GetUniqueID())
+		for slot8, slot9 in pairs(slot0._AOEList) do
+			slot9:ForceExit(slot1:GetUniqueID())
 		end
 
-		arg_86_0._cldSystem:DeleteShipCld(arg_86_1)
+		slot0._cldSystem:DeleteShipCld(slot1)
 	else
-		arg_86_0._spectreShipList[var_86_0] = nil
-		var_86_1[var_86_0] = arg_86_1
+		slot0._spectreShipList[slot2] = nil
+		slot4[slot2] = slot1
 
-		arg_86_1:ActiveCldBox()
-		arg_86_0._cldSystem:InitShipCld(arg_86_1)
+		slot1:ActiveCldBox()
+		slot0._cldSystem:InitShipCld(slot1)
 	end
 end
 
-function var_0_9.GetUnitList(arg_87_0)
-	return arg_87_0._unitList
+function slot9.GetUnitList(slot0)
+	return slot0._unitList
 end
 
-function var_0_9.GetFriendlyShipList(arg_88_0)
-	return arg_88_0._friendlyShipList
+function slot9.GetFriendlyShipList(slot0)
+	return slot0._friendlyShipList
 end
 
-function var_0_9.GetFoeShipList(arg_89_0)
-	return arg_89_0._foeShipList
+function slot9.GetFoeShipList(slot0)
+	return slot0._foeShipList
 end
 
-function var_0_9.GetFoeAircraftList(arg_90_0)
-	return arg_90_0._foeAircraftList
+function slot9.GetFoeAircraftList(slot0)
+	return slot0._foeAircraftList
 end
 
-function var_0_9.GetFreeShipList(arg_91_0)
-	return arg_91_0._freeShipList
+function slot9.GetFreeShipList(slot0)
+	return slot0._freeShipList
 end
 
-function var_0_9.GetSpectreShipList(arg_92_0)
-	return arg_92_0._spectreShipList
+function slot9.GetSpectreShipList(slot0)
+	return slot0._spectreShipList
 end
 
-function var_0_9.GenerateUnitID(arg_93_0)
-	arg_93_0._unitCount = arg_93_0._unitCount + 1
+function slot9.GenerateUnitID(slot0)
+	slot0._unitCount = slot0._unitCount + 1
 
-	return arg_93_0._unitCount
+	return slot0._unitCount
 end
 
-function var_0_9.GetCountDown(arg_94_0)
-	return arg_94_0._countDown
+function slot9.GetCountDown(slot0)
+	return slot0._countDown
 end
 
-function var_0_9.SpawnAirFighter(arg_95_0, arg_95_1)
-	local var_95_0 = #arg_95_0._airFighterList + 1
-	local var_95_1 = var_0_5.GetFormationTmpDataFromID(arg_95_1.formation).pos_offset
-	local var_95_2 = {
+function slot9.SpawnAirFighter(slot0, slot1)
+	slot2 = #slot0._airFighterList + 1
+	slot3 = uv0.GetFormationTmpDataFromID(slot1.formation).pos_offset
+	slot4 = {
 		currentNumber = 0,
-		templateID = arg_95_1.templateID,
-		totalNumber = arg_95_1.totalNumber or 0,
-		onceNumber = arg_95_1.onceNumber,
-		timeDelay = arg_95_1.interval or 3,
-		maxTotalNumber = arg_95_1.maxTotalNumber or 15
+		templateID = slot1.templateID,
+		totalNumber = slot1.totalNumber or 0,
+		onceNumber = slot1.onceNumber,
+		timeDelay = slot1.interval or 3,
+		maxTotalNumber = slot1.maxTotalNumber or 15
 	}
 
-	local function var_95_3(arg_96_0)
-		local var_96_0 = var_95_2.currentNumber
+	function slot5(slot0)
+		if uv0.currentNumber < uv0.totalNumber then
+			uv0.currentNumber = slot1 + 1
+			slot2 = uv1:CreateAirFighter(uv2)
 
-		if var_96_0 < var_95_2.totalNumber then
-			var_95_2.currentNumber = var_96_0 + 1
+			slot2:SetFormationOffset(uv3[slot0])
+			slot2:SetFormationIndex(slot0)
+			slot2:SetDeadCallBack(function ()
+				uv0.totalNumber = uv0.totalNumber - 1
+				uv0.currentNumber = uv0.currentNumber - 1
 
-			local var_96_1 = arg_95_0:CreateAirFighter(arg_95_1)
-
-			var_96_1:SetFormationOffset(var_95_1[arg_96_0])
-			var_96_1:SetFormationIndex(arg_96_0)
-			var_96_1:SetDeadCallBack(function()
-				var_95_2.totalNumber = var_95_2.totalNumber - 1
-				var_95_2.currentNumber = var_95_2.currentNumber - 1
-
-				arg_95_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_FIGHTER_ICON, {
-					index = var_95_0
+				uv1:DispatchEvent(uv2.Event.New(uv3.REMOVE_AIR_FIGHTER_ICON, {
+					index = uv4
 				}))
-				arg_95_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_AIR_SUPPORT_LABEL, {}))
+				uv1:DispatchEvent(uv2.Event.New(uv3.UPDATE_AIR_SUPPORT_LABEL, {}))
 			end)
-			var_96_1:SetLiveCallBack(function()
-				var_95_2.currentNumber = var_95_2.currentNumber - 1
+			slot2:SetLiveCallBack(function ()
+				uv0.currentNumber = uv0.currentNumber - 1
 			end)
 		end
 	end
 
-	local function var_95_4()
-		local var_99_0 = var_95_2.onceNumber
+	slot0._airFighterList[slot2] = slot4
 
-		if var_95_2.totalNumber > 0 then
-			for iter_99_0 = 1, var_99_0 do
-				var_95_3(iter_99_0)
+	slot0:DispatchEvent(uv1.Event.New(uv2.ADD_AIR_FIGHTER_ICON, {
+		index = slot2
+	}))
+	slot0:DispatchEvent(uv1.Event.New(uv2.UPDATE_AIR_SUPPORT_LABEL, {}))
+
+	slot4.timer = pg.TimeMgr.GetInstance():AddBattleTimer("striker", -1, slot1.interval, function ()
+		slot0 = uv0.onceNumber
+
+		if uv0.totalNumber > 0 then
+			for slot4 = 1, slot0 do
+				uv1(slot4)
 			end
 		else
-			pg.TimeMgr.GetInstance():RemoveBattleTimer(var_95_2.timer)
+			pg.TimeMgr.GetInstance():RemoveBattleTimer(uv0.timer)
 
-			var_95_2.timer = nil
+			uv0.timer = nil
+		end
+	end)
+end
+
+function slot9.ClearAirFighterTimer(slot0)
+	for slot4, slot5 in ipairs(slot0._airFighterList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot5.timer)
+
+		slot5.timer = nil
+	end
+
+	slot0._airFighterList = {}
+end
+
+function slot9.KillAllAirStrike(slot0)
+	for slot4, slot5 in pairs(slot0._aircraftList) do
+		if slot5.__name == uv0.Battle.BattleAirFighterUnit.__name then
+			slot0._cldSystem:DeleteAircraftCld(slot5)
+
+			slot5._aliveState = false
+			slot0._aircraftList[slot4] = nil
+			slot0._foeAircraftList[slot4] = nil
+
+			slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_CRAFT, {
+				UID = slot4
+			}))
 		end
 	end
 
-	arg_95_0._airFighterList[var_95_0] = var_95_2
+	slot1 = true
 
-	arg_95_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AIR_FIGHTER_ICON, {
-		index = var_95_0
-	}))
-	arg_95_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_AIR_SUPPORT_LABEL, {}))
-
-	var_95_2.timer = pg.TimeMgr.GetInstance():AddBattleTimer("striker", -1, arg_95_1.interval, var_95_4)
-end
-
-function var_0_9.ClearAirFighterTimer(arg_100_0)
-	for iter_100_0, iter_100_1 in ipairs(arg_100_0._airFighterList) do
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_100_1.timer)
-
-		iter_100_1.timer = nil
-	end
-
-	arg_100_0._airFighterList = {}
-end
-
-function var_0_9.KillAllAirStrike(arg_101_0)
-	for iter_101_0, iter_101_1 in pairs(arg_101_0._aircraftList) do
-		if iter_101_1.__name == var_0_0.Battle.BattleAirFighterUnit.__name then
-			arg_101_0._cldSystem:DeleteAircraftCld(iter_101_1)
-
-			iter_101_1._aliveState = false
-			arg_101_0._aircraftList[iter_101_0] = nil
-			arg_101_0._foeAircraftList[iter_101_0] = nil
-
-			local var_101_0 = {
-				UID = iter_101_0
-			}
-
-			arg_101_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_CRAFT, var_101_0))
-		end
-	end
-
-	local var_101_1 = true
-
-	for iter_101_2, iter_101_3 in pairs(arg_101_0._foeAircraftList) do
-		var_101_1 = false
+	for slot5, slot6 in pairs(slot0._foeAircraftList) do
+		slot1 = false
 
 		break
 	end
 
-	if var_101_1 then
-		arg_101_0:DispatchEvent(var_0_0.Event.New(var_0_1.ANTI_AIR_AREA, {
+	if slot1 then
+		slot0:DispatchEvent(uv0.Event.New(uv1.ANTI_AIR_AREA, {
 			isShow = false
 		}))
 	end
 
-	for iter_101_4, iter_101_5 in ipairs(arg_101_0._airFighterList) do
-		iter_101_5.totalNumber = 0
+	for slot5, slot6 in ipairs(slot0._airFighterList) do
+		slot6.totalNumber = 0
 
-		arg_101_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_FIGHTER_ICON, {
-			index = iter_101_4
+		slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_FIGHTER_ICON, {
+			index = slot5
 		}))
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_101_5.timer)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot6.timer)
 
-		iter_101_5.timer = nil
+		slot6.timer = nil
 	end
 
-	arg_101_0._airFighterList = {}
+	slot0._airFighterList = {}
 end
 
-function var_0_9.GetAirFighterInfo(arg_102_0, arg_102_1)
-	return arg_102_0._airFighterList[arg_102_1]
+function slot9.GetAirFighterInfo(slot0, slot1)
+	return slot0._airFighterList[slot1]
 end
 
-function var_0_9.GetAirFighterList(arg_103_0)
-	return arg_103_0._airFighterList
+function slot9.GetAirFighterList(slot0)
+	return slot0._airFighterList
 end
 
-function var_0_9.CreateAircraft(arg_104_0, arg_104_1, arg_104_2, arg_104_3, arg_104_4)
-	local var_104_0 = arg_104_0:GenerateAircraftID()
-	local var_104_1 = var_0_5.CreateAircraftUnit(var_104_0, arg_104_2, arg_104_1, arg_104_3)
+function slot9.CreateAircraft(slot0, slot1, slot2, slot3, slot4)
+	slot6 = uv0.CreateAircraftUnit(slot0:GenerateAircraftID(), slot2, slot1, slot3)
 
-	if arg_104_4 then
-		var_104_1:SetSkinID(arg_104_4)
+	if slot4 then
+		slot6:SetSkinID(slot4)
 	end
 
-	local var_104_2
+	slot7 = nil
 
-	if arg_104_1:GetIFF() == var_0_4.FRIENDLY_CODE then
-		-- block empty
-	else
-		var_104_2 = true
-	end
+	slot0:doCreateAirUnit(slot5, slot6, uv2.UnitType.AIRCRAFT_UNIT, (slot1:GetIFF() ~= uv1.FRIENDLY_CODE or false) and true)
 
-	arg_104_0:doCreateAirUnit(var_104_0, var_104_1, var_0_3.UnitType.AIRCRAFT_UNIT, var_104_2)
-
-	return var_104_1
+	return slot6
 end
 
-function var_0_9.CreateAirFighter(arg_105_0, arg_105_1)
-	local var_105_0 = arg_105_0:GenerateAircraftID()
-	local var_105_1 = var_0_5.CreateAirFighterUnit(var_105_0, arg_105_1)
+function slot9.CreateAirFighter(slot0, slot1)
+	slot2 = slot0:GenerateAircraftID()
+	slot3 = uv0.CreateAirFighterUnit(slot2, slot1)
 
-	arg_105_0:doCreateAirUnit(var_105_0, var_105_1, var_0_3.UnitType.AIRFIGHTER_UNIT, true)
+	slot0:doCreateAirUnit(slot2, slot3, uv1.UnitType.AIRFIGHTER_UNIT, true)
 
-	return var_105_1
+	return slot3
 end
 
-function var_0_9.doCreateAirUnit(arg_106_0, arg_106_1, arg_106_2, arg_106_3, arg_106_4)
-	arg_106_0._aircraftList[arg_106_1] = arg_106_2
+function slot9.doCreateAirUnit(slot0, slot1, slot2, slot3, slot4)
+	slot0._aircraftList[slot1] = slot2
 
-	arg_106_0._cldSystem:InitAircraftCld(arg_106_2)
-	arg_106_2:SetBound(arg_106_0._leftZoneUpperBound, arg_106_0._leftZoneLowerBound)
-	arg_106_2:SetViewBoundData(arg_106_0._cameraTop, arg_106_0._cameraBottom, arg_106_0._cameraLeft, arg_106_0._cameraRight)
-	arg_106_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, {
-		unit = arg_106_2,
-		type = arg_106_3
+	slot0._cldSystem:InitAircraftCld(slot2)
+	slot2:SetBound(slot0._leftZoneUpperBound, slot0._leftZoneLowerBound)
+	slot2:SetViewBoundData(slot0._cameraTop, slot0._cameraBottom, slot0._cameraLeft, slot0._cameraRight)
+	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_UNIT, {
+		unit = slot2,
+		type = slot3
 	}))
 
-	arg_106_4 = arg_106_4 or false
+	if slot4 or false then
+		slot0._foeAircraftList[slot1] = slot2
 
-	if arg_106_4 then
-		arg_106_0._foeAircraftList[arg_106_1] = arg_106_2
-
-		arg_106_0:DispatchEvent(var_0_0.Event.New(var_0_1.ANTI_AIR_AREA, {
+		slot0:DispatchEvent(uv0.Event.New(uv1.ANTI_AIR_AREA, {
 			isShow = true
 		}))
 	end
 end
 
-function var_0_9.KillAircraft(arg_107_0, arg_107_1)
-	local var_107_0 = arg_107_0._aircraftList[arg_107_1]
-
-	if var_107_0 == nil then
+function slot9.KillAircraft(slot0, slot1)
+	if slot0._aircraftList[slot1] == nil then
 		return
 	end
 
-	var_107_0:Clear()
-	arg_107_0._cldSystem:DeleteAircraftCld(var_107_0)
+	slot2:Clear()
+	slot0._cldSystem:DeleteAircraftCld(slot2)
 
-	if var_107_0:IsUndefeated() and var_107_0:GetCurrentState() ~= var_107_0.STRIKE_STATE_RECYCLE then
-		local var_107_1 = var_107_0:GetIFF() * -1
-
-		arg_107_0:HandleAircraftMissDamage(var_107_0, arg_107_0._fleetList[var_107_1])
+	if slot2:IsUndefeated() and slot2:GetCurrentState() ~= slot2.STRIKE_STATE_RECYCLE then
+		slot0:HandleAircraftMissDamage(slot2, slot0._fleetList[slot2:GetIFF() * -1])
 	end
 
-	var_107_0._aliveState = false
-	arg_107_0._aircraftList[arg_107_1] = nil
-	arg_107_0._foeAircraftList[arg_107_1] = nil
+	slot2._aliveState = false
+	slot0._aircraftList[slot1] = nil
+	slot0._foeAircraftList[slot1] = nil
+	slot3 = true
 
-	local var_107_2 = true
-
-	for iter_107_0, iter_107_1 in pairs(arg_107_0._foeAircraftList) do
-		var_107_2 = false
+	for slot7, slot8 in pairs(slot0._foeAircraftList) do
+		slot3 = false
 
 		break
 	end
 
-	if var_107_2 then
-		arg_107_0:DispatchEvent(var_0_0.Event.New(var_0_1.ANTI_AIR_AREA, {
+	if slot3 then
+		slot0:DispatchEvent(uv0.Event.New(uv1.ANTI_AIR_AREA, {
 			isShow = false
 		}))
 	end
 
-	local var_107_3 = {
-		UID = arg_107_1
-	}
-
-	arg_107_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_CRAFT, var_107_3))
-end
-
-function var_0_9.GetAircraftList(arg_108_0)
-	return arg_108_0._aircraftList
-end
-
-function var_0_9.GenerateAircraftID(arg_109_0)
-	arg_109_0._aircraftCount = arg_109_0._aircraftCount + 1
-
-	return arg_109_0._aircraftCount
-end
-
-function var_0_9.CreateBulletUnit(arg_110_0, arg_110_1, arg_110_2, arg_110_3, arg_110_4)
-	local var_110_0 = arg_110_0:GenerateBulletID()
-	local var_110_1, var_110_2 = var_0_5.CreateBattleBulletData(var_110_0, arg_110_1, arg_110_2, arg_110_3, arg_110_4)
-
-	if var_110_2 then
-		arg_110_0._cldSystem:InitBulletCld(var_110_1)
-	end
-
-	local var_110_3, var_110_4 = arg_110_3:GetFixBulletRange()
-
-	if var_110_3 or var_110_4 then
-		var_110_1:FixRange(var_110_3, var_110_4)
-	end
-
-	arg_110_0._bulletList[var_110_0] = var_110_1
-
-	return var_110_1
-end
-
-function var_0_9.RemoveBulletUnit(arg_111_0, arg_111_1)
-	local var_111_0 = arg_111_0._bulletList[arg_111_1]
-
-	if var_111_0 == nil then
-		return
-	end
-
-	var_111_0:DamageUnitListWriteback()
-
-	if var_111_0:GetIsCld() then
-		arg_111_0._cldSystem:DeleteBulletCld(var_111_0)
-	end
-
-	arg_111_0._bulletList[arg_111_1] = nil
-
-	local var_111_1 = {
-		UID = arg_111_1
-	}
-
-	arg_111_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_BULLET, var_111_1))
-	var_111_0:Dispose()
-end
-
-function var_0_9.GetBulletList(arg_112_0)
-	return arg_112_0._bulletList
-end
-
-function var_0_9.GenerateBulletID(arg_113_0)
-	local var_113_0 = arg_113_0._bulletCount + 1
-
-	arg_113_0._bulletCount = var_113_0
-
-	return var_113_0
-end
-
-function var_0_9.CLSBullet(arg_114_0, arg_114_1, arg_114_2)
-	local var_114_0 = true
-
-	if arg_114_0._battleInitData.battleType == SYSTEM_DUEL then
-		var_114_0 = false
-	end
-
-	if var_114_0 then
-		for iter_114_0, iter_114_1 in pairs(arg_114_0._bulletList) do
-			if iter_114_1:GetIFF() ~= arg_114_1 or not iter_114_1:GetExist() or iter_114_1:ImmuneCLS() or iter_114_1:ImmuneBombCLS() and arg_114_2 then
-				-- block empty
-			else
-				arg_114_0:RemoveBulletUnit(iter_114_0)
-			end
-		end
-	end
-end
-
-function var_0_9.CLSAircraft(arg_115_0, arg_115_1)
-	for iter_115_0, iter_115_1 in pairs(arg_115_0._aircraftList) do
-		if iter_115_1:GetIFF() == arg_115_1 then
-			iter_115_1:Clear()
-
-			local var_115_0 = {
-				UID = iter_115_0
-			}
-
-			arg_115_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIR_CRAFT, var_115_0))
-
-			arg_115_0._aircraftList[iter_115_0] = nil
-		end
-	end
-end
-
-function var_0_9.CLSMinion(arg_116_0)
-	for iter_116_0, iter_116_1 in pairs(arg_116_0._unitList) do
-		if iter_116_1:GetIFF() == var_0_4.FOE_CODE and iter_116_1:IsAlive() and not iter_116_1:IsBoss() then
-			iter_116_1:SetDeathReason(var_0_3.UnitDeathReason.CLS)
-			iter_116_1:DeadAction()
-		end
-	end
-end
-
-function var_0_9.SpawnColumnArea(arg_117_0, arg_117_1, arg_117_2, arg_117_3, arg_117_4, arg_117_5, arg_117_6, arg_117_7, arg_117_8)
-	arg_117_7 = arg_117_7 or false
-
-	local var_117_0 = arg_117_0:GenerateAreaID()
-	local var_117_1 = var_0_0.Battle.BattleAOEData.New(var_117_0, arg_117_2, arg_117_6, arg_117_8)
-	local var_117_2 = Clone(arg_117_3)
-
-	var_117_1:SetPosition(var_117_2)
-	var_117_1:SetRange(arg_117_4)
-	var_117_1:SetAreaType(var_0_3.AreaType.COLUMN)
-	var_117_1:SetLifeTime(arg_117_5)
-	var_117_1:SetFieldType(arg_117_1)
-	var_117_1:SetOpponentAffected(not arg_117_7)
-	arg_117_0:CreateAreaOfEffect(var_117_1)
-
-	return var_117_1
-end
-
-function var_0_9.SpawnCubeArea(arg_118_0, arg_118_1, arg_118_2, arg_118_3, arg_118_4, arg_118_5, arg_118_6, arg_118_7, arg_118_8, arg_118_9)
-	arg_118_8 = arg_118_8 or false
-
-	local var_118_0 = arg_118_0:GenerateAreaID()
-	local var_118_1 = var_0_0.Battle.BattleAOEData.New(var_118_0, arg_118_2, arg_118_7, arg_118_9)
-	local var_118_2 = Clone(arg_118_3)
-
-	var_118_1:SetPosition(var_118_2)
-	var_118_1:SetWidth(arg_118_4)
-	var_118_1:SetHeight(arg_118_5)
-	var_118_1:SetAreaType(var_0_3.AreaType.CUBE)
-	var_118_1:SetLifeTime(arg_118_6)
-	var_118_1:SetFieldType(arg_118_1)
-	var_118_1:SetOpponentAffected(not arg_118_8)
-	arg_118_0:CreateAreaOfEffect(var_118_1)
-
-	return var_118_1
-end
-
-function var_0_9.SpawnLastingColumnArea(arg_119_0, arg_119_1, arg_119_2, arg_119_3, arg_119_4, arg_119_5, arg_119_6, arg_119_7, arg_119_8, arg_119_9, arg_119_10, arg_119_11)
-	arg_119_8 = arg_119_8 or false
-
-	local var_119_0 = arg_119_0:GenerateAreaID()
-	local var_119_1 = var_0_0.Battle.BattleLastingAOEData.New(var_119_0, arg_119_2, arg_119_6, arg_119_7, arg_119_10, arg_119_11)
-	local var_119_2 = Clone(arg_119_3)
-
-	var_119_1:SetPosition(var_119_2)
-	var_119_1:SetRange(arg_119_4)
-	var_119_1:SetAreaType(var_0_3.AreaType.COLUMN)
-	var_119_1:SetLifeTime(arg_119_5)
-	var_119_1:SetFieldType(arg_119_1)
-	var_119_1:SetOpponentAffected(not arg_119_8)
-	arg_119_0:CreateAreaOfEffect(var_119_1)
-
-	if arg_119_9 and arg_119_9 ~= "" then
-		local var_119_3 = {
-			area = var_119_1,
-			FXID = arg_119_9
-		}
-
-		arg_119_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AREA, var_119_3))
-	end
-
-	return var_119_1
-end
-
-function var_0_9.SpawnLastingCubeArea(arg_120_0, arg_120_1, arg_120_2, arg_120_3, arg_120_4, arg_120_5, arg_120_6, arg_120_7, arg_120_8, arg_120_9, arg_120_10, arg_120_11, arg_120_12)
-	arg_120_9 = arg_120_9 or false
-
-	local var_120_0 = arg_120_0:GenerateAreaID()
-	local var_120_1 = var_0_0.Battle.BattleLastingAOEData.New(var_120_0, arg_120_2, arg_120_7, arg_120_8, arg_120_11, arg_120_12)
-	local var_120_2 = Clone(arg_120_3)
-
-	var_120_1:SetPosition(var_120_2)
-	var_120_1:SetWidth(arg_120_4)
-	var_120_1:SetHeight(arg_120_5)
-	var_120_1:SetAreaType(var_0_3.AreaType.CUBE)
-	var_120_1:SetLifeTime(arg_120_6)
-	var_120_1:SetFieldType(arg_120_1)
-	var_120_1:SetOpponentAffected(not arg_120_9)
-	arg_120_0:CreateAreaOfEffect(var_120_1)
-
-	if arg_120_10 and arg_120_10 ~= "" then
-		local var_120_3 = {
-			area = var_120_1,
-			FXID = arg_120_10
-		}
-
-		arg_120_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AREA, var_120_3))
-	end
-
-	return var_120_1
-end
-
-function var_0_9.SpawnTriggerColumnArea(arg_121_0, arg_121_1, arg_121_2, arg_121_3, arg_121_4, arg_121_5, arg_121_6, arg_121_7, arg_121_8)
-	arg_121_6 = arg_121_6 or false
-
-	local var_121_0 = arg_121_0:GenerateAreaID()
-	local var_121_1 = var_0_0.Battle.BattleTriggerAOEData.New(var_121_0, arg_121_2, arg_121_8)
-	local var_121_2 = Clone(arg_121_3)
-
-	var_121_1:SetPosition(var_121_2)
-	var_121_1:SetRange(arg_121_4)
-	var_121_1:SetAreaType(var_0_3.AreaType.COLUMN)
-	var_121_1:SetLifeTime(arg_121_5)
-	var_121_1:SetFieldType(arg_121_1)
-	var_121_1:SetOpponentAffected(not arg_121_6)
-	arg_121_0:CreateAreaOfEffect(var_121_1)
-
-	if arg_121_7 and arg_121_7 ~= "" then
-		local var_121_3 = {
-			area = var_121_1,
-			FXID = arg_121_7
-		}
-
-		arg_121_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AREA, var_121_3))
-	end
-
-	return var_121_1
-end
-
-function var_0_9.CreateAreaOfEffect(arg_122_0, arg_122_1)
-	arg_122_0._AOEList[arg_122_1:GetUniqueID()] = arg_122_1
-
-	arg_122_0._cldSystem:InitAOECld(arg_122_1)
-	arg_122_1:StartTimer()
-end
-
-function var_0_9.RemoveAreaOfEffect(arg_123_0, arg_123_1)
-	local var_123_0 = arg_123_0._AOEList[arg_123_1]
-
-	if not var_123_0 then
-		return
-	end
-
-	var_123_0:Dispose()
-
-	arg_123_0._AOEList[arg_123_1] = nil
-
-	arg_123_0._cldSystem:DeleteAOECld(var_123_0)
-	arg_123_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AREA, {
-		id = arg_123_1
+	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_CRAFT, {
+		UID = slot1
 	}))
 end
 
-function var_0_9.GetAOEList(arg_124_0)
-	return arg_124_0._AOEList
+function slot9.GetAircraftList(slot0)
+	return slot0._aircraftList
 end
 
-function var_0_9.GenerateAreaID(arg_125_0)
-	arg_125_0._AOECount = arg_125_0._AOECount + 1
+function slot9.GenerateAircraftID(slot0)
+	slot0._aircraftCount = slot0._aircraftCount + 1
 
-	return arg_125_0._AOECount
+	return slot0._aircraftCount
 end
 
-function var_0_9.SpawnWall(arg_126_0, arg_126_1, arg_126_2, arg_126_3, arg_126_4)
-	local var_126_0 = arg_126_0:GenerateWallID()
-	local var_126_1 = var_0_0.Battle.BattleWallData.New(var_126_0, arg_126_1, arg_126_2, arg_126_3, arg_126_4)
+function slot9.CreateBulletUnit(slot0, slot1, slot2, slot3, slot4)
+	slot6, slot7 = uv0.CreateBattleBulletData(slot0:GenerateBulletID(), slot1, slot2, slot3, slot4)
 
-	arg_126_0._wallList[var_126_0] = var_126_1
+	if slot7 then
+		slot0._cldSystem:InitBulletCld(slot6)
+	end
 
-	arg_126_0._cldSystem:InitWallCld(var_126_1)
+	slot8, slot9 = slot3:GetFixBulletRange()
 
-	return var_126_1
+	if slot8 or slot9 then
+		slot6:FixRange(slot8, slot9)
+	end
+
+	slot0._bulletList[slot5] = slot6
+
+	return slot6
 end
 
-function var_0_9.RemoveWall(arg_127_0, arg_127_1)
-	local var_127_0 = arg_127_0._wallList[arg_127_1]
+function slot9.RemoveBulletUnit(slot0, slot1)
+	if slot0._bulletList[slot1] == nil then
+		return
+	end
 
-	arg_127_0._wallList[arg_127_1] = nil
+	slot2:DamageUnitListWriteback()
 
-	arg_127_0._cldSystem:DeleteWallCld(var_127_0)
+	if slot2:GetIsCld() then
+		slot0._cldSystem:DeleteBulletCld(slot2)
+	end
+
+	slot0._bulletList[slot1] = nil
+
+	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_BULLET, {
+		UID = slot1
+	}))
+	slot2:Dispose()
 end
 
-function var_0_9.SpawnShelter(arg_128_0, arg_128_1, arg_128_2)
-	local var_128_0 = arg_128_0:GernerateShelterID()
-	local var_128_1 = var_0_0.Battle.BattleShelterData.New(var_128_0)
-
-	arg_128_0._shelterList[var_128_0] = var_128_1
-
-	return var_128_1
+function slot9.GetBulletList(slot0)
+	return slot0._bulletList
 end
 
-function var_0_9.RemoveShelter(arg_129_0, arg_129_1)
-	local var_129_0 = arg_129_0._shelterList[arg_129_1]
-	local var_129_1 = {
-		uid = arg_129_1
-	}
+function slot9.GenerateBulletID(slot0)
+	slot1 = slot0._bulletCount + 1
+	slot0._bulletCount = slot1
 
-	arg_129_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_SHELTER, var_129_1))
-	var_129_0:Deactive()
-
-	arg_129_0._shelterList[arg_129_1] = nil
+	return slot1
 end
 
-function var_0_9.GetWallList(arg_130_0)
-	return arg_130_0._wallList
-end
+function slot9.CLSBullet(slot0, slot1, slot2)
+	slot3 = true
 
-function var_0_9.GenerateWallID(arg_131_0)
-	arg_131_0._wallIndex = arg_131_0._wallIndex + 1
+	if slot0._battleInitData.battleType == SYSTEM_DUEL then
+		slot3 = false
+	end
 
-	return arg_131_0._wallIndex
-end
-
-function var_0_9.GernerateShelterID(arg_132_0)
-	arg_132_0._shelterIndex = arg_132_0._shelterIndex + 1
-
-	return arg_132_0._shelterIndex
-end
-
-function var_0_9.SpawnEnvironment(arg_133_0, arg_133_1)
-	local var_133_0 = arg_133_0:GernerateEnvironmentID()
-	local var_133_1 = var_0_0.Battle.BattleEnvironmentUnit.New(var_133_0, var_0_4.FOE_CODE)
-
-	var_133_1:SetTemplate(arg_133_1)
-
-	local var_133_2 = var_133_1:GetBehaviours()
-	local var_133_3 = Vector3(arg_133_1.coordinate[1], arg_133_1.coordinate[2], arg_133_1.coordinate[3])
-
-	local function var_133_4(arg_134_0)
-		local var_134_0 = {}
-
-		for iter_134_0, iter_134_1 in ipairs(arg_134_0) do
-			if iter_134_1.Active then
-				local var_134_1 = arg_133_0._unitList[iter_134_1.UID]
-
-				if not var_134_1:IsSpectre() then
-					table.insert(var_134_0, var_134_1)
+	if slot3 then
+		for slot8, slot9 in pairs(slot0._bulletList) do
+			if slot9:GetIFF() == slot1 and slot9:GetExist() and not slot9:ImmuneCLS() then
+				if not slot9:ImmuneBombCLS() or not slot2 then
+					slot0:RemoveBulletUnit(slot8)
 				end
 			end
 		end
+	end
+end
 
-		var_133_1:UpdateFrequentlyCollide(var_134_0)
+function slot9.CLSAircraft(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._aircraftList) do
+		if slot6:GetIFF() == slot1 then
+			slot6:Clear()
+			slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AIR_CRAFT, {
+				UID = slot5
+			}))
+
+			slot0._aircraftList[slot5] = nil
+		end
+	end
+end
+
+function slot9.CLSMinion(slot0)
+	for slot4, slot5 in pairs(slot0._unitList) do
+		if slot5:GetIFF() == uv0.FOE_CODE and slot5:IsAlive() and not slot5:IsBoss() then
+			slot5:SetDeathReason(uv1.UnitDeathReason.CLS)
+			slot5:DeadAction()
+		end
+	end
+end
+
+function slot9.SpawnColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
+	slot10 = uv0.Battle.BattleAOEData.New(slot0:GenerateAreaID(), slot2, slot6, slot8)
+
+	slot10:SetPosition(Clone(slot3))
+	slot10:SetRange(slot4)
+	slot10:SetAreaType(uv1.AreaType.COLUMN)
+	slot10:SetLifeTime(slot5)
+	slot10:SetFieldType(slot1)
+	slot10:SetOpponentAffected(not (slot7 or false))
+	slot0:CreateAreaOfEffect(slot10)
+
+	return slot10
+end
+
+function slot9.SpawnCubeArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9)
+	slot11 = uv0.Battle.BattleAOEData.New(slot0:GenerateAreaID(), slot2, slot7, slot9)
+
+	slot11:SetPosition(Clone(slot3))
+	slot11:SetWidth(slot4)
+	slot11:SetHeight(slot5)
+	slot11:SetAreaType(uv1.AreaType.CUBE)
+	slot11:SetLifeTime(slot6)
+	slot11:SetFieldType(slot1)
+	slot11:SetOpponentAffected(not (slot8 or false))
+	slot0:CreateAreaOfEffect(slot11)
+
+	return slot11
+end
+
+function slot9.SpawnLastingColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11)
+	slot13 = uv0.Battle.BattleLastingAOEData.New(slot0:GenerateAreaID(), slot2, slot6, slot7, slot10, slot11)
+
+	slot13:SetPosition(Clone(slot3))
+	slot13:SetRange(slot4)
+	slot13:SetAreaType(uv1.AreaType.COLUMN)
+	slot13:SetLifeTime(slot5)
+	slot13:SetFieldType(slot1)
+	slot13:SetOpponentAffected(not (slot8 or false))
+	slot0:CreateAreaOfEffect(slot13)
+
+	if slot9 and slot9 ~= "" then
+		slot0:DispatchEvent(uv0.Event.New(uv2.ADD_AREA, {
+			area = slot13,
+			FXID = slot9
+		}))
 	end
 
-	local function var_133_5()
+	return slot13
+end
+
+function slot9.SpawnLastingCubeArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9, slot10, slot11, slot12)
+	slot14 = uv0.Battle.BattleLastingAOEData.New(slot0:GenerateAreaID(), slot2, slot7, slot8, slot11, slot12)
+
+	slot14:SetPosition(Clone(slot3))
+	slot14:SetWidth(slot4)
+	slot14:SetHeight(slot5)
+	slot14:SetAreaType(uv1.AreaType.CUBE)
+	slot14:SetLifeTime(slot6)
+	slot14:SetFieldType(slot1)
+	slot14:SetOpponentAffected(not (slot9 or false))
+	slot0:CreateAreaOfEffect(slot14)
+
+	if slot10 and slot10 ~= "" then
+		slot0:DispatchEvent(uv0.Event.New(uv2.ADD_AREA, {
+			area = slot14,
+			FXID = slot10
+		}))
+	end
+
+	return slot14
+end
+
+function slot9.SpawnTriggerColumnArea(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
+	slot10 = uv0.Battle.BattleTriggerAOEData.New(slot0:GenerateAreaID(), slot2, slot8)
+
+	slot10:SetPosition(Clone(slot3))
+	slot10:SetRange(slot4)
+	slot10:SetAreaType(uv1.AreaType.COLUMN)
+	slot10:SetLifeTime(slot5)
+	slot10:SetFieldType(slot1)
+	slot10:SetOpponentAffected(not (slot6 or false))
+	slot0:CreateAreaOfEffect(slot10)
+
+	if slot7 and slot7 ~= "" then
+		slot0:DispatchEvent(uv0.Event.New(uv2.ADD_AREA, {
+			area = slot10,
+			FXID = slot7
+		}))
+	end
+
+	return slot10
+end
+
+function slot9.CreateAreaOfEffect(slot0, slot1)
+	slot0._AOEList[slot1:GetUniqueID()] = slot1
+
+	slot0._cldSystem:InitAOECld(slot1)
+	slot1:StartTimer()
+end
+
+function slot9.RemoveAreaOfEffect(slot0, slot1)
+	if not slot0._AOEList[slot1] then
 		return
 	end
 
-	local function var_133_6()
-		return
-	end
+	slot2:Dispose()
 
-	local var_133_7 = arg_133_1.field_type or var_0_3.BulletField.SURFACE
-	local var_133_8 = arg_133_1.IFF or var_0_4.FOE_CODE
-	local var_133_9 = 0
-	local var_133_10
+	slot0._AOEList[slot1] = nil
 
-	if #arg_133_1.cld_data == 1 then
-		local var_133_11 = arg_133_1.cld_data[1]
-
-		var_133_10 = arg_133_0:SpawnLastingColumnArea(var_133_7, var_133_8, var_133_3, var_133_11, var_133_9, var_133_4, var_133_5, false, arg_133_1.prefab, var_133_6, true)
-	else
-		local var_133_12 = arg_133_1.cld_data[1]
-		local var_133_13 = arg_133_1.cld_data[2]
-
-		var_133_10 = arg_133_0:SpawnLastingCubeArea(var_133_7, var_133_8, var_133_3, var_133_12, var_133_13, var_133_9, var_133_4, var_133_5, false, arg_133_1.prefab, var_133_6, true)
-	end
-
-	var_133_1:SetAOEData(var_133_10)
-
-	arg_133_0._environmentList[var_133_0] = var_133_1
-
-	return var_133_1
-end
-
-function var_0_9.RemoveEnvironment(arg_137_0, arg_137_1)
-	local var_137_0 = arg_137_0._environmentList[arg_137_1]
-	local var_137_1 = var_137_0:GetAOEData()
-
-	arg_137_0:RemoveAreaOfEffect(var_137_1:GetUniqueID())
-	var_137_0:Dispose()
-
-	arg_137_0._environmentList[arg_137_1] = nil
-end
-
-function var_0_9.DispatchWarning(arg_138_0, arg_138_1, arg_138_2)
-	arg_138_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_ENVIRONMENT_WARNING, {
-		isActive = arg_138_1
+	slot0._cldSystem:DeleteAOECld(slot2)
+	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_AREA, {
+		id = slot1
 	}))
 end
 
-function var_0_9.GetEnvironmentList(arg_139_0)
-	return arg_139_0._environmentList
+function slot9.GetAOEList(slot0)
+	return slot0._AOEList
 end
 
-function var_0_9.GernerateEnvironmentID(arg_140_0)
-	arg_140_0._environmentIndex = arg_140_0._environmentIndex + 1
+function slot9.GenerateAreaID(slot0)
+	slot0._AOECount = slot0._AOECount + 1
 
-	return arg_140_0._environmentIndex
+	return slot0._AOECount
 end
 
-function var_0_9.SpawnEffect(arg_141_0, arg_141_1, arg_141_2, arg_141_3)
-	arg_141_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_EFFECT, {
-		FXID = arg_141_1,
-		position = arg_141_2,
-		localScale = arg_141_3
+function slot9.SpawnWall(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot0:GenerateWallID()
+	slot6 = uv0.Battle.BattleWallData.New(slot5, slot1, slot2, slot3, slot4)
+	slot0._wallList[slot5] = slot6
+
+	slot0._cldSystem:InitWallCld(slot6)
+
+	return slot6
+end
+
+function slot9.RemoveWall(slot0, slot1)
+	slot0._wallList[slot1] = nil
+
+	slot0._cldSystem:DeleteWallCld(slot0._wallList[slot1])
+end
+
+function slot9.SpawnShelter(slot0, slot1, slot2)
+	slot3 = slot0:GernerateShelterID()
+	slot4 = uv0.Battle.BattleShelterData.New(slot3)
+	slot0._shelterList[slot3] = slot4
+
+	return slot4
+end
+
+function slot9.RemoveShelter(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.REMOVE_SHELTER, {
+		uid = slot1
 	}))
+	slot0._shelterList[slot1]:Deactive()
+
+	slot0._shelterList[slot1] = nil
 end
 
-function var_0_9.SpawnUIFX(arg_142_0, arg_142_1, arg_142_2, arg_142_3, arg_142_4)
-	arg_142_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UI_FX, {
-		FXID = arg_142_1,
-		position = arg_142_2,
-		localScale = arg_142_3,
-		orderDiff = arg_142_4
-	}))
+function slot9.GetWallList(slot0)
+	return slot0._wallList
 end
 
-function var_0_9.SpawnCameraFX(arg_143_0, arg_143_1, arg_143_2, arg_143_3, arg_143_4)
-	arg_143_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_CAMERA_FX, {
-		FXID = arg_143_1,
-		position = arg_143_2,
-		localScale = arg_143_3,
-		orderDiff = arg_143_4
-	}))
+function slot9.GenerateWallID(slot0)
+	slot0._wallIndex = slot0._wallIndex + 1
+
+	return slot0._wallIndex
 end
 
-function var_0_9.GetFriendlyCode(arg_144_0)
-	return arg_144_0._friendlyCode
+function slot9.GernerateShelterID(slot0)
+	slot0._shelterIndex = slot0._shelterIndex + 1
+
+	return slot0._shelterIndex
 end
 
-function var_0_9.GetFoeCode(arg_145_0)
-	return arg_145_0._foeCode
-end
+function slot9.SpawnEnvironment(slot0, slot1)
+	slot3 = uv0.Battle.BattleEnvironmentUnit.New(slot0:GernerateEnvironmentID(), uv1.FOE_CODE)
 
-function var_0_9.GetOppoSideCode(arg_146_0)
-	if arg_146_0 == var_0_4.FRIENDLY_CODE then
-		return var_0_4.FOE_CODE
-	elseif arg_146_0 == var_0_4.FOE_CODE then
-		return var_0_4.FRIENDLY_CODE
-	end
-end
+	slot3:SetTemplate(slot1)
 
-function var_0_9.GetStatistics(arg_147_0)
-	return arg_147_0._statistics
-end
+	slot4 = slot3:GetBehaviours()
+	slot5 = Vector3(slot1.coordinate[1], slot1.coordinate[2], slot1.coordinate[3])
 
-function var_0_9.BlockManualCast(arg_148_0, arg_148_1)
-	local var_148_0 = arg_148_1 and 1 or -1
+	function slot6(slot0)
+		slot1 = {}
 
-	for iter_148_0, iter_148_1 in pairs(arg_148_0._fleetList) do
-		iter_148_1:SetWeaponBlock(var_148_0)
-	end
-end
-
-function var_0_9.JamManualCast(arg_149_0, arg_149_1)
-	arg_149_0:DispatchEvent(var_0_0.Event.New(var_0_1.JAMMING, {
-		jammingFlag = arg_149_1
-	}))
-end
-
-function var_0_9.SubmarineStrike(arg_150_0, arg_150_1)
-	local var_150_0 = arg_150_0:GetFleetByIFF(arg_150_1)
-	local var_150_1 = var_150_0:GetSubAidVO()
-
-	if var_150_0:GetWeaponBlock() or var_150_1:GetCurrent() < 1 then
-		return
-	end
-
-	local var_150_2 = var_150_0:GetSubUnitData()
-
-	for iter_150_0, iter_150_1 in ipairs(var_150_2) do
-		local var_150_3 = arg_150_0:SpawnSub(iter_150_1, arg_150_1)
-
-		arg_150_0:InitAidUnitStatistics(var_150_3)
-	end
-
-	var_150_0:SubWarcry()
-
-	local var_150_4 = var_150_0:GetSubList()
-
-	for iter_150_2, iter_150_3 in ipairs(var_150_4) do
-		if iter_150_2 == 1 then
-			iter_150_3:TriggerBuff(var_0_3.BuffEffectType.ON_SUB_LEADER)
-		elseif iter_150_2 == 2 then
-			iter_150_3:TriggerBuff(var_0_3.BuffEffectType.ON_UPPER_SUB_CONSORT)
-		elseif iter_150_2 == 3 then
-			iter_150_3:TriggerBuff(var_0_3.BuffEffectType.ON_LOWER_SUB_CONSORT)
+		for slot5, slot6 in ipairs(slot0) do
+			if slot6.Active and not uv0._unitList[slot6.UID]:IsSpectre() then
+				table.insert(slot1, slot7)
+			end
 		end
 
-		if iter_150_3:GetAimBias() then
-			arg_150_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_AIM_BIAS, {
-				aimBias = iter_150_3:GetAimBias()
+		uv1:UpdateFrequentlyCollide(slot1)
+	end
+
+	function slot7()
+	end
+
+	function slot8()
+	end
+
+	slot9 = slot1.field_type or uv2.BulletField.SURFACE
+	slot10 = slot1.IFF or uv1.FOE_CODE
+	slot11 = 0
+	slot12 = nil
+
+	slot3:SetAOEData((#slot1.cld_data ~= 1 or slot0:SpawnLastingColumnArea(slot9, slot10, slot5, slot1.cld_data[1], slot11, slot6, slot7, false, slot1.prefab, slot8, true)) and slot0:SpawnLastingCubeArea(slot9, slot10, slot5, slot1.cld_data[1], slot1.cld_data[2], slot11, slot6, slot7, false, slot1.prefab, slot8, true))
+
+	slot0._environmentList[slot2] = slot3
+
+	return slot3
+end
+
+function slot9.RemoveEnvironment(slot0, slot1)
+	slot2 = slot0._environmentList[slot1]
+
+	slot0:RemoveAreaOfEffect(slot2:GetAOEData():GetUniqueID())
+	slot2:Dispose()
+
+	slot0._environmentList[slot1] = nil
+end
+
+function slot9.DispatchWarning(slot0, slot1, slot2)
+	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_ENVIRONMENT_WARNING, {
+		isActive = slot1
+	}))
+end
+
+function slot9.GetEnvironmentList(slot0)
+	return slot0._environmentList
+end
+
+function slot9.GernerateEnvironmentID(slot0)
+	slot0._environmentIndex = slot0._environmentIndex + 1
+
+	return slot0._environmentIndex
+end
+
+function slot9.SpawnEffect(slot0, slot1, slot2, slot3)
+	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_EFFECT, {
+		FXID = slot1,
+		position = slot2,
+		localScale = slot3
+	}))
+end
+
+function slot9.SpawnUIFX(slot0, slot1, slot2, slot3, slot4)
+	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_UI_FX, {
+		FXID = slot1,
+		position = slot2,
+		localScale = slot3,
+		orderDiff = slot4
+	}))
+end
+
+function slot9.SpawnCameraFX(slot0, slot1, slot2, slot3, slot4)
+	slot0:DispatchEvent(uv0.Event.New(uv1.ADD_CAMERA_FX, {
+		FXID = slot1,
+		position = slot2,
+		localScale = slot3,
+		orderDiff = slot4
+	}))
+end
+
+function slot9.GetFriendlyCode(slot0)
+	return slot0._friendlyCode
+end
+
+function slot9.GetFoeCode(slot0)
+	return slot0._foeCode
+end
+
+function slot9.GetOppoSideCode(slot0)
+	if slot0 == uv0.FRIENDLY_CODE then
+		return uv0.FOE_CODE
+	elseif slot0 == uv0.FOE_CODE then
+		return uv0.FRIENDLY_CODE
+	end
+end
+
+function slot9.GetStatistics(slot0)
+	return slot0._statistics
+end
+
+function slot9.BlockManualCast(slot0, slot1)
+	for slot6, slot7 in pairs(slot0._fleetList) do
+		slot7:SetWeaponBlock(slot1 and 1 or -1)
+	end
+end
+
+function slot9.JamManualCast(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.JAMMING, {
+		jammingFlag = slot1
+	}))
+end
+
+function slot9.SubmarineStrike(slot0, slot1)
+	slot2 = slot0:GetFleetByIFF(slot1)
+
+	if slot2:GetWeaponBlock() or slot2:GetSubAidVO():GetCurrent() < 1 then
+		return
+	end
+
+	for slot8, slot9 in ipairs(slot2:GetSubUnitData()) do
+		slot0:InitAidUnitStatistics(slot0:SpawnSub(slot9, slot1))
+	end
+
+	slot2:SubWarcry()
+
+	for slot9, slot10 in ipairs(slot2:GetSubList()) do
+		if slot9 == 1 then
+			slot10:TriggerBuff(uv0.BuffEffectType.ON_SUB_LEADER)
+		elseif slot9 == 2 then
+			slot10:TriggerBuff(uv0.BuffEffectType.ON_UPPER_SUB_CONSORT)
+		elseif slot9 == 3 then
+			slot10:TriggerBuff(uv0.BuffEffectType.ON_LOWER_SUB_CONSORT)
+		end
+
+		if slot10:GetAimBias() then
+			slot0:DispatchEvent(uv1.Event.New(uv2.ADD_AIM_BIAS, {
+				aimBias = slot10:GetAimBias()
 			}))
 		end
 	end
 
-	local var_150_5 = var_150_4[1]
+	slot6 = slot5[1]
 
-	var_150_1:Cast()
+	slot3:Cast()
 end
 
-function var_0_9.GetWaveFlags(arg_151_0)
-	return arg_151_0._waveFlags
+function slot9.GetWaveFlags(slot0)
+	return slot0._waveFlags
 end
 
-function var_0_9.AddWaveFlag(arg_152_0, arg_152_1)
-	if not arg_152_1 then
+function slot9.AddWaveFlag(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	local var_152_0 = arg_152_0:GetWaveFlags()
-
-	if table.contains(var_152_0, arg_152_1) then
+	if table.contains(slot0:GetWaveFlags(), slot1) then
 		return
 	end
 
-	table.insert(var_152_0, arg_152_1)
+	table.insert(slot2, slot1)
 end
 
-function var_0_9.RemoveFlag(arg_153_0, arg_153_1)
-	if not arg_153_1 then
+function slot9.RemoveFlag(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	local var_153_0 = arg_153_0:GetWaveFlags()
-
-	if not table.contains(var_153_0, arg_153_1) then
+	if not table.contains(slot0:GetWaveFlags(), slot1) then
 		return
 	end
 
-	table.removebyvalue(var_153_0, arg_153_1)
+	table.removebyvalue(slot2, slot1)
 end
 
-function var_0_9.DispatchCustomWarning(arg_154_0, arg_154_1)
-	arg_154_0:DispatchEvent(var_0_0.Event.New(var_0_1.EDIT_CUSTOM_WARNING_LABEL, {
-		labelData = arg_154_1
+function slot9.DispatchCustomWarning(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.EDIT_CUSTOM_WARNING_LABEL, {
+		labelData = slot1
 	}))
 end
 
-function var_0_9.DispatchGridmanSkill(arg_155_0, arg_155_1, arg_155_2)
-	arg_155_0:DispatchEvent(var_0_0.Event.New(var_0_1.GRIDMAN_SKILL_FLOAT, {
-		type = arg_155_1,
-		IFF = arg_155_2
+function slot9.DispatchGridmanSkill(slot0, slot1, slot2)
+	slot0:DispatchEvent(uv0.Event.New(uv1.GRIDMAN_SKILL_FLOAT, {
+		type = slot1,
+		IFF = slot2
 	}))
 end
 
-function var_0_9.SpawnFusionUnit(arg_156_0, arg_156_1, arg_156_2, arg_156_3, arg_156_4)
-	local var_156_0 = Clone(arg_156_1:GetPosition())
-	local var_156_1 = arg_156_1:GetIFF()
-	local var_156_2 = arg_156_0:generatePlayerUnit(arg_156_2, var_156_1, var_156_0, arg_156_0._commanderBuff)
+function slot9.SpawnFusionUnit(slot0, slot1, slot2, slot3, slot4)
+	slot7 = slot0:generatePlayerUnit(slot2, slot1:GetIFF(), Clone(slot1:GetPosition()), slot0._commanderBuff)
 
-	var_0_6.SetFusionAttrFromElement(var_156_2, arg_156_1, arg_156_3, arg_156_4)
-	var_156_2:SetCurrentHP(var_156_2:GetMaxHP())
-	arg_156_1:GetFleetVO():AppendPlayerUnit(var_156_2)
-	arg_156_0:setShipUnitBound(var_156_2)
-	var_0_5.AttachWeather(var_156_2, arg_156_0._weahter)
-	arg_156_0._cldSystem:InitShipCld(var_156_2)
+	uv0.SetFusionAttrFromElement(slot7, slot1, slot3, slot4)
+	slot7:SetCurrentHP(slot7:GetMaxHP())
+	slot1:GetFleetVO():AppendPlayerUnit(slot7)
+	slot0:setShipUnitBound(slot7)
+	uv1.AttachWeather(slot7, slot0._weahter)
+	slot0._cldSystem:InitShipCld(slot7)
+	slot0:DispatchEvent(uv3.Event.New(uv4.ADD_UNIT, {
+		type = uv2.UnitType.PLAYER_UNIT,
+		unit = slot7
+	}))
 
-	local var_156_3 = {
-		type = var_0_3.UnitType.PLAYER_UNIT,
-		unit = var_156_2
-	}
-
-	arg_156_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_UNIT, var_156_3))
-
-	return var_156_2
+	return slot7
 end
 
-function var_0_9.DefusionUnit(arg_157_0, arg_157_1)
-	local var_157_0 = arg_157_1:GetIFF()
-	local var_157_1 = arg_157_0:GetFleetByIFF(var_157_0)
+function slot9.DefusionUnit(slot0, slot1)
+	slot3 = slot0:GetFleetByIFF(slot1:GetIFF())
 
-	var_157_1:RemovePlayerUnit(arg_157_1)
+	slot3:RemovePlayerUnit(slot1)
 
-	local var_157_2 = {}
-
-	if var_157_1:GetFleetAntiAirWeapon():GetRange() == 0 then
-		var_157_2.isShow = false
+	if slot3:GetFleetAntiAirWeapon():GetRange() == 0 then
+		-- Nothing
 	end
 
-	arg_157_0:DispatchEvent(var_0_0.Event.New(var_0_1.ANTI_AIR_AREA, var_157_2))
-	arg_157_1:SetDeathReason(var_0_3.UnitDeathReason.DEFUSION)
-	arg_157_0:KillUnit(arg_157_1:GetUniqueID())
+	slot0:DispatchEvent(uv0.Event.New(uv1.ANTI_AIR_AREA, {
+		isShow = false
+	}))
+	slot1:SetDeathReason(uv2.UnitDeathReason.DEFUSION)
+	slot0:KillUnit(slot1:GetUniqueID())
 end
 
-function var_0_9.FreezeUnit(arg_158_0, arg_158_1)
-	var_0_6.SetCurrent(arg_158_1, var_0_0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, var_0_4.FUSION_ELEMENT_UNIT_TYPE)
-	arg_158_1:UpdateBlindInvisibleBySpectre()
-	arg_158_0:SwitchSpectreUnit(arg_158_1)
+function slot9.FreezeUnit(slot0, slot1)
+	uv0.SetCurrent(slot1, uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, uv2.FUSION_ELEMENT_UNIT_TYPE)
+	slot1:UpdateBlindInvisibleBySpectre()
+	slot0:SwitchSpectreUnit(slot1)
 
-	if arg_158_1:GetAimBias() then
-		local var_158_0 = arg_158_1:GetAimBias()
+	if slot1:GetAimBias() then
+		slot2 = slot1:GetAimBias()
 
-		var_158_0:RemoveCrew(arg_158_1)
+		slot2:RemoveCrew(slot1)
 
-		if var_158_0:GetCurrentState() == var_158_0.STATE_EXPIRE then
-			arg_158_0:DispatchEvent(var_0_0.Event.New(var_0_1.REMOVE_AIM_BIAS, {
-				aimBias = arg_158_1:GetAimBias()
+		if slot2:GetCurrentState() == slot2.STATE_EXPIRE then
+			slot0:DispatchEvent(uv1.Event.New(uv3.REMOVE_AIM_BIAS, {
+				aimBias = slot1:GetAimBias()
 			}))
 		end
 	end
 
-	arg_158_1:Freeze()
+	slot1:Freeze()
 
-	local var_158_1 = arg_158_1:GetFleetVO()
-
-	if var_158_1 then
-		var_158_1:FreezeUnit(arg_158_1)
+	if slot1:GetFleetVO() then
+		slot2:FreezeUnit(slot1)
 	end
 end
 
-function var_0_9.ActiveFreezeUnit(arg_159_0, arg_159_1)
-	var_0_6.SetCurrent(arg_159_1, var_0_0.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, var_0_4.PLAYER_DEFAULT)
-	arg_159_1:UpdateBlindInvisibleBySpectre()
-	arg_159_0:SwitchSpectreUnit(arg_159_1)
-	var_0_5.AttachWeather(arg_159_1, arg_159_0._weahter)
-	arg_159_1:ActiveFreeze()
+function slot9.ActiveFreezeUnit(slot0, slot1)
+	uv0.SetCurrent(slot1, uv1.Battle.BattleBuffSetBattleUnitType.ATTR_KEY, uv2.PLAYER_DEFAULT)
+	slot1:UpdateBlindInvisibleBySpectre()
+	slot0:SwitchSpectreUnit(slot1)
+	uv3.AttachWeather(slot1, slot0._weahter)
+	slot1:ActiveFreeze()
 
-	local var_159_0 = arg_159_1:GetFleetVO()
-
-	if var_159_0 then
-		var_159_0:ActiveFreezeUnit(arg_159_1)
+	if slot1:GetFleetVO() then
+		slot2:ActiveFreezeUnit(slot1)
 	end
 end

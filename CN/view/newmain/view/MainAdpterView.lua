@@ -1,45 +1,38 @@
-﻿local var_0_0 = class("MainAdpterView")
+slot0 = class("MainAdpterView")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.topBg = arg_1_1
-	arg_1_0.bottomBg = arg_1_2
-	arg_1_0.rightBg = arg_1_3
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.topBg = slot1
+	slot0.bottomBg = slot2
+	slot0.rightBg = slot3
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.topBgY = arg_2_0.topBg.localPosition.y
-	arg_2_0.bottomBgY = arg_2_0.bottomBg.localPosition.y
-	arg_2_0.rightBgX = arg_2_0.rightBg.localPosition.x
+function slot0.Init(slot0)
+	slot0.topBgY = slot0.topBg.localPosition.y
+	slot0.bottomBgY = slot0.bottomBg.localPosition.y
+	slot0.rightBgX = slot0.rightBg.localPosition.x
 end
 
-function var_0_0.Fold(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_1 and arg_3_0.topBgY + 200 or arg_3_0.topBgY
-
-	if arg_3_2 <= 0 then
-		arg_3_0.topBg.localPosition = Vector3(arg_3_0.topBg.localPosition.x, var_3_0, 0)
+function slot0.Fold(slot0, slot1, slot2)
+	if slot2 <= 0 then
+		slot0.topBg.localPosition = Vector3(slot0.topBg.localPosition.x, slot1 and slot0.topBgY + 200 or slot0.topBgY, 0)
 	else
-		LeanTween.moveLocalY(arg_3_0.topBg.gameObject, var_3_0, arg_3_2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalY(slot0.topBg.gameObject, slot3, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
 
-	local var_3_1 = arg_3_1 and arg_3_0.bottomBgY - 200 or arg_3_0.bottomBgY
-
-	if arg_3_2 <= 0 then
-		arg_3_0.bottomBg.localPosition = Vector3(arg_3_0.bottomBg.localPosition.x, var_3_1, 0)
+	if slot2 <= 0 then
+		slot0.bottomBg.localPosition = Vector3(slot0.bottomBg.localPosition.x, slot1 and slot0.bottomBgY - 200 or slot0.bottomBgY, 0)
 	else
-		LeanTween.moveLocalY(arg_3_0.bottomBg.gameObject, var_3_1, arg_3_2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalY(slot0.bottomBg.gameObject, slot4, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
 
-	local var_3_2 = arg_3_1 and arg_3_0.rightBgX + 1200 or arg_3_0.rightBgX
-
-	if arg_3_2 <= 0 then
-		arg_3_0.rightBg.localPosition = Vector3(var_3_2, arg_3_0.rightBg.localPosition.y, 0)
+	if slot2 <= 0 then
+		slot0.rightBg.localPosition = Vector3(slot1 and slot0.rightBgX + 1200 or slot0.rightBgX, slot0.rightBg.localPosition.y, 0)
 	else
-		LeanTween.moveLocalX(arg_3_0.rightBg.gameObject, var_3_2, arg_3_2):setEase(LeanTweenType.easeInOutExpo)
+		LeanTween.moveLocalX(slot0.rightBg.gameObject, slot5, slot2):setEase(LeanTweenType.easeInOutExpo)
 	end
 end
 
-function var_0_0.Dispose(arg_4_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

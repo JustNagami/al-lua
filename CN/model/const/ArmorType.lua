@@ -1,19 +1,18 @@
-﻿local var_0_0 = class("ArmorType")
+slot0 = class("ArmorType")
+slot0.Light = 1
+slot0.Medium = 2
+slot0.Heavy = 3
 
-var_0_0.Light = 1
-var_0_0.Medium = 2
-var_0_0.Heavy = 3
-
-function var_0_0.Type2Name(arg_1_0)
-	if not var_0_0.names then
-		var_0_0.names = {
+function slot0.Type2Name(slot0)
+	if not uv0.names then
+		uv0.names = {
 			i18n("word_lightArmor"),
 			i18n("word_mediumArmor"),
 			i18n("word_heavyarmor")
 		}
 	end
 
-	return var_0_0.names[arg_1_0]
+	return uv0.names[slot0]
 end
 
-return var_0_0
+return slot0

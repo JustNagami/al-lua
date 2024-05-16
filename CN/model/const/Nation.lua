@@ -1,34 +1,33 @@
-﻿local var_0_0 = class("Nation")
+slot0 = class("Nation")
+slot0.CM = 0
+slot0.US = 1
+slot0.EN = 2
+slot0.JP = 3
+slot0.DE = 4
+slot0.CN = 5
+slot0.ITA = 6
+slot0.SN = 7
+slot0.FF = 8
+slot0.MNF = 9
+slot0.FR = 10
+slot0.MOT = 96
+slot0.META = 97
+slot0.BURIN = 98
+slot0.SIRE = 99
+slot0.LINK = 100
+slot0.IDOL_LINK = 107
 
-var_0_0.CM = 0
-var_0_0.US = 1
-var_0_0.EN = 2
-var_0_0.JP = 3
-var_0_0.DE = 4
-var_0_0.CN = 5
-var_0_0.ITA = 6
-var_0_0.SN = 7
-var_0_0.FF = 8
-var_0_0.MNF = 9
-var_0_0.FR = 10
-var_0_0.MOT = 96
-var_0_0.META = 97
-var_0_0.BURIN = 98
-var_0_0.SIRE = 99
-var_0_0.LINK = 100
-var_0_0.IDOL_LINK = 107
-
-function var_0_0.IsLinkType(arg_1_0)
-	return arg_1_0 > var_0_0.LINK
+function slot0.IsLinkType(slot0)
+	return uv0.LINK < slot0
 end
 
-function var_0_0.IsMeta(arg_2_0)
-	return arg_2_0 == var_0_0.META
+function slot0.IsMeta(slot0)
+	return slot0 == uv0.META
 end
 
-function var_0_0.Nation2Print(arg_3_0)
-	if not var_0_0.prints then
-		var_0_0.prints = {
+function slot0.Nation2Print(slot0)
+	if not uv0.prints then
+		uv0.prints = {
 			[0] = "cm",
 			"us",
 			"en",
@@ -40,29 +39,29 @@ function var_0_0.Nation2Print(arg_3_0)
 			"ff",
 			"mnf",
 			"ff",
-			[96] = "mot",
-			[97] = "meta",
-			[104] = "um",
-			[108] = "um",
-			[102] = "bili",
-			[101] = "np",
-			[107] = "um",
-			[110] = "um",
-			[103] = "um",
-			[98] = "cm",
-			[106] = "um",
-			[105] = "um",
-			[99] = "sr",
-			[109] = "um"
+			[96.0] = "mot",
+			[97.0] = "meta",
+			[104.0] = "um",
+			[108.0] = "um",
+			[102.0] = "bili",
+			[101.0] = "np",
+			[107.0] = "um",
+			[110.0] = "um",
+			[103.0] = "um",
+			[98.0] = "cm",
+			[106.0] = "um",
+			[105.0] = "um",
+			[99.0] = "sr",
+			[109.0] = "um"
 		}
 	end
 
-	return var_0_0.prints[arg_3_0]
+	return uv0.prints[slot0]
 end
 
-function var_0_0.Nation2Side(arg_4_0)
-	if not var_0_0.side then
-		var_0_0.side = {
+function slot0.Nation2Side(slot0)
+	if not uv0.side then
+		uv0.side = {
 			[0] = "West",
 			"West",
 			"West",
@@ -74,28 +73,28 @@ function var_0_0.Nation2Side(arg_4_0)
 			"West",
 			"West",
 			"West",
-			[96] = "West",
-			[108] = "Jp",
-			[104] = "West",
-			[97] = "Meta",
-			[102] = "Cn",
-			[101] = "Jp",
-			[107] = "Imas",
-			[106] = "Jp",
-			[105] = "Jp",
-			[98] = "West",
-			[110] = "Jp",
-			[103] = "Jp",
-			[109] = "West"
+			[96.0] = "West",
+			[108.0] = "Jp",
+			[104.0] = "West",
+			[97.0] = "Meta",
+			[102.0] = "Cn",
+			[101.0] = "Jp",
+			[107.0] = "Imas",
+			[106.0] = "Jp",
+			[105.0] = "Jp",
+			[98.0] = "West",
+			[110.0] = "Jp",
+			[103.0] = "Jp",
+			[109.0] = "West"
 		}
 	end
 
-	return var_0_0.side[arg_4_0]
+	return uv0.side[slot0]
 end
 
-function var_0_0.Nation2BG(arg_5_0)
-	if not var_0_0.bg then
-		var_0_0.bg = {
+function slot0.Nation2BG(slot0)
+	if not uv0.bg then
+		uv0.bg = {
 			[0] = "bg/bg_church",
 			"bg/bg_church",
 			"bg/bg_church",
@@ -107,28 +106,28 @@ function var_0_0.Nation2BG(arg_5_0)
 			"bg/bg_church",
 			"bg/bg_church",
 			"bg/bg_church",
-			[96] = "bg/bg_church",
-			[108] = "bg/bg_church",
-			[104] = "bg/bg_church",
-			[97] = "bg/bg_church_meta",
-			[102] = "bg/bg_church",
-			[101] = "bg/bg_church",
-			[107] = "bg/bg_church_imas",
-			[106] = "bg/bg_church",
-			[105] = "bg/bg_church",
-			[98] = "bg/bg_church",
-			[110] = "bg/bg_church",
-			[103] = "bg/bg_church",
-			[109] = "bg/bg_church"
+			[96.0] = "bg/bg_church",
+			[108.0] = "bg/bg_church",
+			[104.0] = "bg/bg_church",
+			[97.0] = "bg/bg_church_meta",
+			[102.0] = "bg/bg_church",
+			[101.0] = "bg/bg_church",
+			[107.0] = "bg/bg_church_imas",
+			[106.0] = "bg/bg_church",
+			[105.0] = "bg/bg_church",
+			[98.0] = "bg/bg_church",
+			[110.0] = "bg/bg_church",
+			[103.0] = "bg/bg_church",
+			[109.0] = "bg/bg_church"
 		}
 	end
 
-	return var_0_0.bg[arg_5_0]
+	return uv0.bg[slot0]
 end
 
-function var_0_0.Nation2Name(arg_6_0)
-	if not var_0_0.nationName then
-		var_0_0.nationName = {
+function slot0.Nation2Name(slot0)
+	if not uv0.nationName then
+		uv0.nationName = {
 			[0] = i18n("word_shipNation_other"),
 			i18n("word_shipNation_baiYing"),
 			i18n("word_shipNation_huangJia"),
@@ -156,12 +155,12 @@ function var_0_0.Nation2Name(arg_6_0)
 		}
 	end
 
-	return var_0_0.nationName[arg_6_0]
+	return uv0.nationName[slot0]
 end
 
-function var_0_0.Nation2facionName(arg_7_0)
-	if not var_0_0.facionName then
-		var_0_0.facionName = {
+function slot0.Nation2facionName(slot0)
+	if not uv0.facionName then
+		uv0.facionName = {
 			[0] = i18n("guild_faction_unknown"),
 			i18n("guild_faction_blhx"),
 			i18n("guild_faction_blhx"),
@@ -189,7 +188,7 @@ function var_0_0.Nation2facionName(arg_7_0)
 		}
 	end
 
-	return var_0_0.facionName[arg_7_0]
+	return uv0.facionName[slot0]
 end
 
-return var_0_0
+return slot0

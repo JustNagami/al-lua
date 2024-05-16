@@ -1,31 +1,25 @@
-﻿local var_0_0 = class("BattleGateSubmarine")
+slot0 = class("BattleGateSubmarine")
+ys.Battle.BattleGateSubmarine = slot0
+slot0.__name = "BattleGateSubmarine"
 
-ys.Battle.BattleGateSubmarine = var_0_0
-var_0_0.__name = "BattleGateSubmarine"
+function slot0.Entrance(slot0, slot1)
+	slot2 = slot0.stageId
 
-function var_0_0.Entrance(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0.stageId
-	local var_1_1 = pg.expedition_data_template[var_1_0].dungeon_id
-	local var_1_2 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_1).fleet_prefab
-	local var_1_3 = {
-		prefabFleet = var_1_2,
-		stageId = var_1_0,
+	slot1:sendNotification(GAME.BEGIN_STAGE_DONE, {
+		prefabFleet = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot2].dungeon_id).fleet_prefab,
+		stageId = slot2,
 		system = SYSTEM_SUBMARINE_RUN
-	}
-
-	arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_1_3)
-end
-
-function var_0_0.Exit(arg_2_0, arg_2_1)
-	local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN)
-
-	arg_2_1:sendNotification(GAME.ACTIVITY_OPERATION, {
-		cmd = 1,
-		activity_id = var_2_0 and var_2_0.id,
-		statistics = arg_2_0.statistics,
-		arg1 = arg_2_0.statistics._battleScore,
-		arg2 = arg_2_0.statistics.subRunResult.score
 	})
 end
 
-return var_0_0
+function slot0.Exit(slot0, slot1)
+	slot1:sendNotification(GAME.ACTIVITY_OPERATION, {
+		cmd = 1,
+		activity_id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUBMARINE_RUN) and slot2.id,
+		statistics = slot0.statistics,
+		arg1 = slot0.statistics._battleScore,
+		arg2 = slot0.statistics.subRunResult.score
+	})
+end
+
+return slot0

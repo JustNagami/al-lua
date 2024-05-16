@@ -1,25 +1,24 @@
-﻿local var_0_0 = class("EquipmentTransformTreeMediator", import("view.base.ContextMediator"))
+slot0 = class("EquipmentTransformTreeMediator", import("view.base.ContextMediator"))
+slot0.OPEN_LAYER = "OPEN_LAYER"
 
-var_0_0.OPEN_LAYER = "OPEN_LAYER"
+function slot0.register(slot0)
+	slot0:BindEvent()
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:BindEvent()
+	slot0.env = {}
 
-	arg_1_0.env = {}
+	slot0:getViewComponent():SetEnv(slot0.env)
 
-	arg_1_0:getViewComponent():SetEnv(arg_1_0.env)
-
-	arg_1_0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
-	arg_1_0.env.nationsTree = EquipmentProxy.EquipmentTransformTreeTemplate
+	slot0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
+	slot0.env.nationsTree = EquipmentProxy.EquipmentTransformTreeTemplate
 end
 
-function var_0_0.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_0.OPEN_LAYER, function(arg_3_0, ...)
-		arg_2_0:addSubLayers(...)
+function slot0.BindEvent(slot0)
+	slot0:bind(uv0.OPEN_LAYER, function (slot0, ...)
+		uv0:addSubLayers(...)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.TRANSFORM_EQUIPMENT_DONE,
 		PlayerProxy.UPDATED,
@@ -29,19 +28,18 @@ function var_0_0.listNotificationInterests(arg_4_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == PlayerProxy.UPDATED or var_5_0 == BagProxy.ITEM_UPDATED then
-		arg_5_0:getViewComponent():UpdateItemNodes()
-	elseif var_5_0 == EquipmentProxy.EQUIPMENT_UPDATED then
-		if var_5_1.count == 0 then
-			arg_5_0:getViewComponent():UpdateItemNodes()
+	if slot1:getName() == PlayerProxy.UPDATED or slot2 == BagProxy.ITEM_UPDATED then
+		slot0:getViewComponent():UpdateItemNodes()
+	elseif slot2 == EquipmentProxy.EQUIPMENT_UPDATED then
+		if slot3.count == 0 then
+			slot0:getViewComponent():UpdateItemNodes()
 		end
-	elseif var_5_0 == EquipmentTransformMediator.UPDATE_NEW_FLAG then
-		arg_5_0:getViewComponent():UpdateItemNodeByID(var_5_1)
+	elseif slot2 == EquipmentTransformMediator.UPDATE_NEW_FLAG then
+		slot0:getViewComponent():UpdateItemNodeByID(slot3)
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffDOT",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 2,
-				number = 5,
-				dotType = 1,
-				k = 0
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -149,5 +135,19 @@
 	desc = "",
 	stack = 1,
 	color = "red",
-	last_effect = "zihuozhuoshao"
+	last_effect = "zihuozhuoshao",
+	effect_list = {
+		{
+			type = "BattleBuffDOT",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 2,
+				number = 5,
+				dotType = 1,
+				k = 0
+			}
+		}
+	}
 }

@@ -1,38 +1,33 @@
-﻿local var_0_0 = class("FetchEvaluationCommand", pm.SimpleCommand)
+slot0 = class("FetchEvaluationCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = pg.TimeMgr.GetInstance():GetServerTime()
-	local var_1_2 = getProxy(CollectionProxy)
-	local var_1_3 = var_1_2:getShipGroup(var_1_0)
+function slot0.execute(slot0, slot1)
+	slot3 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if not var_1_3 then
+	if not getProxy(CollectionProxy):getShipGroup(slot1:getBody()) then
 		return
 	end
 
-	assert(var_1_3, "shipGroup is nil" .. var_1_0)
+	assert(slot5, "shipGroup is nil" .. slot2)
 
-	if var_1_1 - var_1_3.lastReqStamp > ShipGroup.REQ_INTERVAL then
+	if ShipGroup.REQ_INTERVAL < slot3 - slot5.lastReqStamp then
 		pg.ConnectionMgr.GetInstance():Send(17101, {
-			ship_group_id = var_1_0
-		}, 17102, function(arg_2_0)
-			local var_2_0 = arg_2_0.ship_discuss
+			ship_group_id = slot2
+		}, 17102, function (slot0)
+			if slot0.ship_discuss and slot1.ship_group_id == uv0 then
+				if uv1 then
+					uv1.evaluation = ShipEvaluation.New(slot1)
+					uv1.lastReqStamp = pg.TimeMgr.GetInstance():GetServerTime()
 
-			if var_2_0 and var_2_0.ship_group_id == var_1_0 then
-				if var_1_3 then
-					var_1_3.evaluation = ShipEvaluation.New(var_2_0)
-					var_1_3.lastReqStamp = pg.TimeMgr.GetInstance():GetServerTime()
-
-					var_1_2:updateShipGroup(var_1_3)
-					arg_1_0:sendNotification(GAME.FETCH_EVALUATION_DONE, var_1_0)
+					uv2:updateShipGroup(uv1)
+					uv3:sendNotification(GAME.FETCH_EVALUATION_DONE, uv0)
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("fetch_ship_eva", arg_2_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("fetch_ship_eva", slot0.result))
 			end
 		end)
-	elseif var_1_3.evaluation then
-		arg_1_0:sendNotification(GAME.FETCH_EVALUATION_DONE, var_1_0)
+	elseif slot5.evaluation then
+		slot0:sendNotification(GAME.FETCH_EVALUATION_DONE, slot2)
 	end
 end
 
-return var_0_0
+return slot0

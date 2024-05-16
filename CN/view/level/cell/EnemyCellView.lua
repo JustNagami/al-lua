@@ -1,89 +1,81 @@
-﻿local var_0_0 = class("EnemyCellView")
+slot0 = class("EnemyCellView")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0._extraEffectList = {}
+function slot0.Ctor(slot0)
+	slot0._extraEffectList = {}
 end
 
-function var_0_0.SetPoolType(arg_2_0, arg_2_1)
-	arg_2_0.poolType = arg_2_1
+function slot0.SetPoolType(slot0, slot1)
+	slot0.poolType = slot1
 end
 
-function var_0_0.GetPoolType(arg_3_0)
-	return arg_3_0.poolType
+function slot0.GetPoolType(slot0)
+	return slot0.poolType
 end
 
-function var_0_0.ClearExtraEffects(arg_4_0)
-	for iter_4_0, iter_4_1 in pairs(arg_4_0._extraEffectList) do
-		if not IsNil(iter_4_1) then
-			Destroy(iter_4_1)
+function slot0.ClearExtraEffects(slot0)
+	for slot4, slot5 in pairs(slot0._extraEffectList) do
+		if not IsNil(slot5) then
+			Destroy(slot5)
 		end
 	end
 
-	table.clear(arg_4_0._extraEffectList)
+	table.clear(slot0._extraEffectList)
 end
 
-function var_0_0.LoadExtraEffects(arg_5_0, arg_5_1)
-	if arg_5_1 and #arg_5_1 > 0 then
-		local var_5_0 = "effect/" .. arg_5_1
+function slot0.LoadExtraEffects(slot0, slot1)
+	if slot1 and #slot1 > 0 then
+		slot0:GetLoader():LoadPrefab("effect/" .. slot1, slot1, function (slot0)
+			uv0._extraEffectList[uv1] = slot0
 
-		arg_5_0:GetLoader():LoadPrefab(var_5_0, arg_5_1, function(arg_6_0)
-			arg_5_0._extraEffectList[var_5_0] = arg_6_0
+			setParent(slot0, uv0.tf, false)
 
-			local var_6_0 = arg_6_0.transform.localScale
+			slot0.transform.localScale = slot0.transform.localScale
 
-			setParent(arg_6_0, arg_5_0.tf, false)
-
-			arg_6_0.transform.localScale = var_6_0
-
-			arg_5_0:ResetCanvasOrder()
+			uv0:ResetCanvasOrder()
 		end)
 	end
 end
 
-function var_0_0.RefreshEnemyTplIcons(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_0.tf:Find("random_buff_container")
-
-	if not var_7_0 then
+function slot0.RefreshEnemyTplIcons(slot0, slot1, slot2)
+	if not slot0.tf:Find("random_buff_container") then
 		return
 	end
 
-	local var_7_1 = {}
-
-	if arg_7_1.icon_type == 1 then
-		local var_7_2 = arg_7_1.type
-
-		if ChapterConst.EnemySize[var_7_2] == 1 or not ChapterConst.EnemySize[var_7_2] then
-			table.insert(var_7_1, "xiao")
-		elseif ChapterConst.EnemySize[var_7_2] == 2 then
-			table.insert(var_7_1, "zhong")
-		elseif ChapterConst.EnemySize[var_7_2] == 3 then
-			table.insert(var_7_1, "da")
+	if slot1.icon_type == 1 then
+		if ChapterConst.EnemySize[slot1.type] == 1 or not ChapterConst.EnemySize[slot6] then
+			table.insert({}, "xiao")
+		elseif ChapterConst.EnemySize[slot6] == 2 then
+			table.insert(slot4, "zhong")
+		elseif ChapterConst.EnemySize[slot6] == 3 then
+			table.insert(slot4, "da")
 		end
 	end
 
-	if arg_7_1.bufficon and #arg_7_1.bufficon > 0 then
-		table.insertto(var_7_1, arg_7_1.bufficon)
+	if slot1.bufficon and #slot1.bufficon > 0 then
+		table.insertto(slot4, slot1.bufficon)
 	end
 
-	_.each(_.filter(arg_7_2:GetWeather(arg_7_0.line.row, arg_7_0.line.column), function(arg_8_0)
-		return arg_8_0 == ChapterConst.FlagWeatherFog
-	end), function(arg_9_0)
-		table.insert(var_7_1, pg.weather_data_template[arg_9_0].buff_icon)
+	slot10 = slot0.line.row
+
+	function slot9(slot0)
+		return slot0 == ChapterConst.FlagWeatherFog
+	end
+
+	_.each(_.filter(slot2:GetWeather(slot10, slot0.line.column), slot9), function (slot0)
+		table.insert(uv0, pg.weather_data_template[slot0].buff_icon)
 	end)
-	setActive(var_7_0, true)
-	LevelGrid.AlignListContainer(var_7_0, #var_7_1)
+	setActive(slot3, true)
+	LevelGrid.AlignListContainer(slot3, #slot4)
 
-	for iter_7_0, iter_7_1 in ipairs(var_7_1) do
-		if #iter_7_1 > 0 then
-			local var_7_3 = var_7_0:GetChild(iter_7_0 - 1)
-
-			arg_7_0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", iter_7_1, var_7_3)
+	for slot9, slot10 in ipairs(slot4) do
+		if #slot10 > 0 then
+			slot0:GetLoader():GetSpriteQuiet("ui/share/ship_gizmos_atlas", slot10, slot3:GetChild(slot9 - 1))
 		end
 	end
 end
 
-function var_0_0.Clear(arg_10_0)
-	arg_10_0.ClearExtraEffects(arg_10_0)
+function slot0.Clear(slot0)
+	slot0:ClearExtraEffects()
 end
 
-return var_0_0
+return slot0

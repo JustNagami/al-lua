@@ -1,33 +1,30 @@
-﻿local var_0_0 = class("SettingsAdjustScreenPanle", import(".SettingsBasePanel"))
+slot0 = class("SettingsAdjustScreenPanle", import(".SettingsBasePanel"))
 
-function var_0_0.GetUIName(arg_1_0)
+function slot0.GetUIName(slot0)
 	return "SettingsAdjustScreen"
 end
 
-function var_0_0.GetTitle(arg_2_0)
+function slot0.GetTitle(slot0)
 	return i18n("Settings_title_AdjustScr")
 end
 
-function var_0_0.GetTitleEn(arg_3_0)
+function slot0.GetTitleEn(slot0)
 	return "  / SCREEN SETTING"
 end
 
-function var_0_0.OnInit(arg_4_0)
-	arg_4_0.notchSlider = findTF(arg_4_0._tf, "slider")
+function slot0.OnInit(slot0)
+	slot0.notchSlider = findTF(slot0._tf, "slider")
 end
 
-function var_0_0.OnUpdate(arg_5_0)
-	local var_5_0 = getProxy(SettingsProxy)
-	local var_5_1 = Screen.width / Screen.height - 0.001
+function slot0.OnUpdate(slot0)
+	setSlider(slot0.notchSlider, ADAPT_MIN, Screen.width / Screen.height - 0.001, getProxy(SettingsProxy):GetScreenRatio())
+	OnSliderWithButton(slot0, slot0.notchSlider, function (slot0)
+		uv0:SetScreenRatio(slot0)
 
-	setSlider(arg_5_0.notchSlider, ADAPT_MIN, var_5_1, var_5_0:GetScreenRatio())
-	OnSliderWithButton(arg_5_0, arg_5_0.notchSlider, function(arg_6_0)
-		var_5_0:SetScreenRatio(arg_6_0)
-
-		NotchAdapt.CheckNotchRatio = arg_6_0
+		NotchAdapt.CheckNotchRatio = slot0
 
 		NotchAdapt.AdjustUI()
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 0,
+	picture = "",
+	desc = "准备速度提高",
+	stack = 1,
+	id = 13201,
+	icon = 13200,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddReloadRequirement",
@@ -20,24 +39,5 @@
 				count = 3
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 0,
-	picture = "",
-	desc = "准备速度提高",
-	stack = 1,
-	id = 13201,
-	icon = 13200,
-	last_effect = ""
+	}
 }

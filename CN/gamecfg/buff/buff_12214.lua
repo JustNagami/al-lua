@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "蜂鸟侵扰",
+	time = 0,
+	picture = "",
+	desc = "敌方效果-自身航速下降",
+	stack = 1,
+	id = 12214,
+	icon = 12210,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -21,24 +40,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "蜂鸟侵扰",
-	time = 0,
-	picture = "",
-	desc = "敌方效果-自身航速下降",
-	stack = 1,
-	id = 12214,
-	icon = 12210,
-	last_effect = ""
+	}
 }

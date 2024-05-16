@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行12次攻击，触发专属弹幕-罗恩I"
+	},
+	desc_get = "主炮每进行12次攻击，触发专属弹幕-罗恩I",
+	name = "专属弹幕-罗恩I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发专属弹幕-罗恩I",
+	stack = 1,
+	id = 29241,
+	icon = 29240,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 29240
 			}
 		}
-	},
-	{
-		desc = "主炮每进行12次攻击，触发专属弹幕-罗恩I"
-	},
-	desc_get = "主炮每进行12次攻击，触发专属弹幕-罗恩I",
-	name = "专属弹幕-罗恩I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发专属弹幕-罗恩I",
-	stack = 1,
-	id = 29241,
-	icon = 29240,
-	last_effect = ""
+	}
 }

@@ -1,18 +1,18 @@
-﻿local var_0_0 = class("WorldStoryGroup")
-local var_0_1 = pg.memory_group
+slot0 = class("WorldStoryGroup")
+slot1 = pg.memory_group
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_1.id
-	arg_1_0.config = var_0_1[arg_1_0.configId]
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot1.id
+	slot0.config = uv0[slot0.configId]
 
-	assert(arg_1_0.config)
+	assert(slot0.config)
 
-	arg_1_0.storyIds = arg_1_0.config.memories
+	slot0.storyIds = slot0.config.memories
 end
 
-function var_0_0.getStoryIds(arg_2_0)
-	return arg_2_0.storyIds
+function slot0.getStoryIds(slot0)
+	return slot0.storyIds
 end
 
-return var_0_0
+return slot0

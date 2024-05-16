@@ -1,34 +1,32 @@
-﻿local var_0_0 = class("GetWorldBossCommand", pm.SimpleCommand)
+slot0 = class("GetWorldBossCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = (arg_1_1:getBody() or {}).callback
-	local var_1_1 = nowWorld()
+function slot0.execute(slot0, slot1)
+	slot3 = (slot1:getBody() or {}).callback
 
-	if not var_1_1.worldBossProxy then
+	if not nowWorld().worldBossProxy then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(34501, {
 		type = 0
-	}, 34502, function(arg_2_0)
-		local var_2_0 = var_1_1.worldBossProxy
+	}, 34502, function (slot0)
+		slot1 = uv0.worldBossProxy
 
-		var_2_0:Setup(arg_2_0)
-		arg_1_0:sendNotification(GAME.WORLD_GET_BOSS_DONE)
+		slot1:Setup(slot0)
+		uv1:sendNotification(GAME.WORLD_GET_BOSS_DONE)
 
-		if not var_2_0:IsOpen() and var_2_0:GetSelfBoss() ~= nil then
+		if not slot1:IsOpen() and slot1:GetSelfBoss() ~= nil then
 			originalPrint("Notification : boss is overtime")
 			pg.ConnectionMgr.GetInstance():Send(34513, {
 				type = 0
-			}, 34514, function(arg_3_0)
-				return
+			}, 34514, function (slot0)
 			end)
 		end
 
-		if var_1_0 then
-			var_1_0()
+		if uv2 then
+			uv2()
 		end
 	end)
 end
 
-return var_0_0
+return slot0

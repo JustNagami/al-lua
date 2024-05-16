@@ -1,210 +1,185 @@
-﻿local var_0_0 = class("BattleAirFightResultLayer", import(".BattleResultLayer"))
+slot0 = class("BattleAirFightResultLayer", import(".BattleResultLayer"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "BattleAirFightResultUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0._grade = arg_2_0:findTF("grade")
-	arg_2_0._levelText = arg_2_0:findTF("chapterName/Text22", arg_2_0._grade)
-	arg_2_0._main = arg_2_0:findTF("main")
-	arg_2_0._blurConatiner = arg_2_0:findTF("blur_container")
-	arg_2_0._bg = arg_2_0:findTF("main/jiesuanbeijing")
-	arg_2_0._painting = arg_2_0:findTF("painting", arg_2_0._blurConatiner)
-	arg_2_0._chat = arg_2_0:findTF("chat", arg_2_0._painting)
-	arg_2_0._rightBottomPanel = arg_2_0:findTF("rightBottomPanel", arg_2_0._blurConatiner)
-	arg_2_0._confirmBtn = arg_2_0:findTF("confirmBtn", arg_2_0._rightBottomPanel)
+function slot0.init(slot0)
+	slot0._grade = slot0:findTF("grade")
+	slot0._levelText = slot0:findTF("chapterName/Text22", slot0._grade)
+	slot0._main = slot0:findTF("main")
+	slot0._blurConatiner = slot0:findTF("blur_container")
+	slot0._bg = slot0:findTF("main/jiesuanbeijing")
+	slot0._painting = slot0:findTF("painting", slot0._blurConatiner)
+	slot0._chat = slot0:findTF("chat", slot0._painting)
+	slot0._rightBottomPanel = slot0:findTF("rightBottomPanel", slot0._blurConatiner)
+	slot0._confirmBtn = slot0:findTF("confirmBtn", slot0._rightBottomPanel)
 
-	setText(arg_2_0._confirmBtn:Find("Text"), i18n("text_confirm"))
+	setText(slot0._confirmBtn:Find("Text"), i18n("text_confirm"))
 
-	arg_2_0._statisticsBtn = arg_2_0:findTF("statisticsBtn", arg_2_0._rightBottomPanel)
-	arg_2_0._skipBtn = arg_2_0:findTF("skipLayer", arg_2_0._tf)
-	arg_2_0._conditions = arg_2_0:findTF("main/conditions")
-	arg_2_0._conditionContainer = arg_2_0:findTF("bg16/list", arg_2_0._conditions)
-	arg_2_0._conditionTpl = arg_2_0:findTF("bg16/conditionTpl", arg_2_0._conditions)
-	arg_2_0._conditionSubTpl = arg_2_0:findTF("bg16/conditionSubTpl", arg_2_0._conditions)
-	arg_2_0._conditionContributeTpl = arg_2_0:findTF("bg16/conditionContributeTpl", arg_2_0._conditions)
-	arg_2_0._conditionBGContribute = arg_2_0:findTF("bg16/bg_contribute", arg_2_0._conditions)
+	slot0._statisticsBtn = slot0:findTF("statisticsBtn", slot0._rightBottomPanel)
+	slot0._skipBtn = slot0:findTF("skipLayer", slot0._tf)
+	slot0._conditions = slot0:findTF("main/conditions")
+	slot0._conditionContainer = slot0:findTF("bg16/list", slot0._conditions)
+	slot0._conditionTpl = slot0:findTF("bg16/conditionTpl", slot0._conditions)
+	slot0._conditionSubTpl = slot0:findTF("bg16/conditionSubTpl", slot0._conditions)
+	slot0._conditionContributeTpl = slot0:findTF("bg16/conditionContributeTpl", slot0._conditions)
+	slot0._conditionBGContribute = slot0:findTF("bg16/bg_contribute", slot0._conditions)
 
-	arg_2_0:setGradeLabel()
-	SetActive(arg_2_0._levelText, false)
+	slot0:setGradeLabel()
+	SetActive(slot0._levelText, false)
 
-	arg_2_0._delayLeanList = {}
+	slot0._delayLeanList = {}
 end
 
-function var_0_0.setPlayer(arg_3_0)
-	return
+function slot0.setPlayer(slot0)
 end
 
-function var_0_0.setGradeLabel(arg_4_0)
-	local var_4_0 = {
+function slot0.setGradeLabel(slot0)
+	slot4, slot5, slot6 = nil
+	slot8 = ys.Battle.BattleConst.BattleScore.C < slot0.contextData.score
+
+	setActive(slot0:findTF("jieuan01/BG/bg_victory", slot0._bg), slot8)
+	setActive(slot0:findTF("jieuan01/BG/bg_fail", slot0._bg), not slot8)
+
+	slot6 = ({
 		"d",
 		"c",
 		"b",
 		"a",
 		"s"
-	}
-	local var_4_1 = arg_4_0:findTF("grade/Xyz/bg13")
-	local var_4_2 = arg_4_0:findTF("grade/Xyz/bg14")
-	local var_4_3
-	local var_4_4
-	local var_4_5
-	local var_4_6 = arg_4_0.contextData.score
-	local var_4_7 = var_4_6 > ys.Battle.BattleConst.BattleScore.C
+	})[slot7 + 1]
 
-	setActive(arg_4_0:findTF("jieuan01/BG/bg_victory", arg_4_0._bg), var_4_7)
-	setActive(arg_4_0:findTF("jieuan01/BG/bg_fail", arg_4_0._bg), not var_4_7)
-
-	local var_4_8 = var_4_0[var_4_6 + 1]
-	local var_4_9 = "battlescore/battle_score_" .. var_4_8 .. "/letter_" .. var_4_8
-	local var_4_10 = "battlescore/battle_score_" .. var_4_8 .. "/label_" .. var_4_8
-
-	LoadImageSpriteAsync(var_4_9, var_4_1, false)
-	LoadImageSpriteAsync(var_4_10, var_4_2, false)
+	LoadImageSpriteAsync("battlescore/battle_score_" .. slot6 .. "/letter_" .. slot6, slot0:findTF("grade/Xyz/bg13"), false)
+	LoadImageSpriteAsync("battlescore/battle_score_" .. slot6 .. "/label_" .. slot6, slot0:findTF("grade/Xyz/bg14"), false)
 end
 
-function var_0_0.didEnter(arg_5_0)
-	arg_5_0:setStageName()
+function slot0.didEnter(slot0)
+	slot0:setStageName()
 
-	local var_5_0 = rtf(arg_5_0._grade)
+	slot1 = rtf(slot0._grade)
+	slot0._gradeUpperLeftPos = slot1.localPosition
+	slot1.localPosition = Vector3(0, 25, 0)
 
-	arg_5_0._gradeUpperLeftPos = var_5_0.localPosition
-	var_5_0.localPosition = Vector3(0, 25, 0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
+	slot0._grade.transform.localScale = Vector3(1.5, 1.5, 0)
 
-	arg_5_0._grade.transform.localScale = Vector3(1.5, 1.5, 0)
-
-	LeanTween.scale(arg_5_0._grade, Vector3(0.88, 0.88, 1), var_0_0.DURATION_WIN_SCALE):setOnComplete(System.Action(function()
-		SetActive(arg_5_0._levelText, true)
-		arg_5_0:rankAnimaFinish()
+	LeanTween.scale(slot0._grade, Vector3(0.88, 0.88, 1), uv0.DURATION_WIN_SCALE):setOnComplete(System.Action(function ()
+		SetActive(uv0._levelText, true)
+		uv0:rankAnimaFinish()
 	end))
 
-	arg_5_0._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
-	arg_5_0._stateFlag = BattleResultLayer.STATE_RANK_ANIMA
+	slot0._tf:GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0.5)
+	slot0._stateFlag = BattleResultLayer.STATE_RANK_ANIMA
 
-	onButton(arg_5_0, arg_5_0._skipBtn, function()
-		arg_5_0:skip()
+	onButton(slot0, slot0._skipBtn, function ()
+		uv0:skip()
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.rankAnimaFinish(arg_8_0)
-	local var_8_0 = arg_8_0:findTF("main/conditions")
+function slot0.rankAnimaFinish(slot0)
+	SetActive(slot0:findTF("main/conditions"), true)
 
-	SetActive(var_8_0, true)
+	slot2 = slot0.contextData.statistics._airFightStatistics
 
-	local var_8_1 = arg_8_0.contextData.statistics._airFightStatistics
+	slot0:setCondition(i18n("fighterplane_destroy_tip") .. slot2.kill, slot2.score, COLOR_BLUE)
+	slot0:setCondition(i18n("fighterplane_hit_tip") .. slot2.hit, -slot2.lose, COLOR_BLUE)
+	slot0:setCondition(i18n("fighterplane_score_tip"), slot2.total, COLOR_YELLOW)
+	table.insert(slot0._delayLeanList, LeanTween.delayedCall(1, System.Action(function ()
+		uv0._stateFlag = uv1.STATE_REPORTED
 
-	arg_8_0:setCondition(i18n("fighterplane_destroy_tip") .. var_8_1.kill, var_8_1.score, COLOR_BLUE)
-	arg_8_0:setCondition(i18n("fighterplane_hit_tip") .. var_8_1.hit, -var_8_1.lose, COLOR_BLUE)
-	arg_8_0:setCondition(i18n("fighterplane_score_tip"), var_8_1.total, COLOR_YELLOW)
+		SetActive(uv0:findTF("jieuan01/tips", uv0._bg), true)
+	end)).id)
 
-	local var_8_2 = LeanTween.delayedCall(1, System.Action(function()
-		arg_8_0._stateFlag = var_0_0.STATE_REPORTED
-
-		SetActive(arg_8_0:findTF("jieuan01/tips", arg_8_0._bg), true)
-	end))
-
-	table.insert(arg_8_0._delayLeanList, var_8_2.id)
-
-	arg_8_0._stateFlag = var_0_0.STATE_REPORT
+	slot0._stateFlag = uv0.STATE_REPORT
 end
 
-function var_0_0.setCondition(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-	local var_10_0 = cloneTplTo(arg_10_0._conditionContributeTpl, arg_10_0._conditionContainer)
+function slot0.setCondition(slot0, slot1, slot2, slot3)
+	slot4 = cloneTplTo(slot0._conditionContributeTpl, slot0._conditionContainer)
 
-	setActive(var_10_0, false)
+	setActive(slot4, false)
 
-	local var_10_1
+	slot5 = nil
+	slot4:Find("text"):GetComponent(typeof(Text)).text = setColorStr(slot1, "#FFFFFFFF")
+	slot4:Find("value"):GetComponent(typeof(Text)).text = setColorStr(slot2, slot3)
 
-	var_10_0:Find("text"):GetComponent(typeof(Text)).text = setColorStr(arg_10_1, "#FFFFFFFF")
-	var_10_0:Find("value"):GetComponent(typeof(Text)).text = setColorStr(arg_10_2, arg_10_3)
-
-	local var_10_2 = arg_10_0._conditionContainer.childCount - 1
-
-	if var_10_2 > 0 then
-		local var_10_3 = LeanTween.delayedCall(var_0_0.CONDITIONS_FREQUENCE * var_10_2, System.Action(function()
-			setActive(var_10_0, true)
-		end))
-
-		table.insert(arg_10_0._delayLeanList, var_10_3.id)
+	if slot0._conditionContainer.childCount - 1 > 0 then
+		table.insert(slot0._delayLeanList, LeanTween.delayedCall(uv0.CONDITIONS_FREQUENCE * slot8, System.Action(function ()
+			setActive(uv0, true)
+		end)).id)
 	else
-		setActive(var_10_0, true)
+		setActive(slot4, true)
 	end
 end
 
-function var_0_0.displayBG(arg_12_0)
-	local var_12_0 = rtf(arg_12_0._grade)
+function slot0.displayBG(slot0)
+	LeanTween.moveX(rtf(slot0._conditions), 1300, uv0.DURATION_MOVE)
+	LeanTween.scale(slot0._grade, Vector3(0.6, 0.6, 0), uv0.DURATION_MOVE)
+	LeanTween.moveLocal(go(rtf(slot0._grade)), slot0._gradeUpperLeftPos, uv0.DURATION_MOVE):setOnComplete(System.Action(function ()
+		uv0._stateFlag = uv1.STATE_DISPLAY
 
-	LeanTween.moveX(rtf(arg_12_0._conditions), 1300, var_0_0.DURATION_MOVE)
-	LeanTween.scale(arg_12_0._grade, Vector3(0.6, 0.6, 0), var_0_0.DURATION_MOVE)
-	LeanTween.moveLocal(go(var_12_0), arg_12_0._gradeUpperLeftPos, var_0_0.DURATION_MOVE):setOnComplete(System.Action(function()
-		arg_12_0._stateFlag = var_0_0.STATE_DISPLAY
+		uv0:showPainting()
 
-		arg_12_0:showPainting()
-
-		arg_12_0._stateFlag = var_0_0.STATE_DISPLAYED
+		uv0._stateFlag = uv1.STATE_DISPLAYED
 	end))
-	setActive(arg_12_0:findTF("jieuan01/Bomb", arg_12_0._bg), false)
+	setActive(slot0:findTF("jieuan01/Bomb", slot0._bg), false)
 end
 
-function var_0_0.showPainting(arg_14_0)
-	SetActive(arg_14_0._painting, true)
+function slot0.showPainting(slot0)
+	SetActive(slot0._painting, true)
 
-	arg_14_0.paintingName = "yanzhan"
+	slot0.paintingName = "yanzhan"
 
-	setPaintingPrefabAsync(arg_14_0._painting, arg_14_0.paintingName, "jiesuan", function()
-		if findTF(arg_14_0._painting, "fitter").childCount > 0 then
-			ShipExpressionHelper.SetExpression(findTF(arg_14_0._painting, "fitter"):GetChild(0), arg_14_0.paintingName, "win_mvp")
+	setPaintingPrefabAsync(slot0._painting, slot0.paintingName, "jiesuan", function ()
+		if findTF(uv0._painting, "fitter").childCount > 0 then
+			ShipExpressionHelper.SetExpression(findTF(uv0._painting, "fitter"):GetChild(0), uv0.paintingName, "win_mvp")
 		end
 	end)
 
-	local var_14_0 = arg_14_0.contextData.score > 1 and ShipWordHelper.WORD_TYPE_MVP or ShipWordHelper.WORD_TYPE_LOSE
-	local var_14_1, var_14_2, var_14_3 = ShipWordHelper.GetWordAndCV(205020, var_14_0)
+	slot2, slot3, slot4 = ShipWordHelper.GetWordAndCV(205020, slot0.contextData.score > 1 and ShipWordHelper.WORD_TYPE_MVP or ShipWordHelper.WORD_TYPE_LOSE)
 
-	setText(arg_14_0._chat:Find("Text"), var_14_3)
+	setText(slot0._chat:Find("Text"), slot4)
 
-	local var_14_4 = arg_14_0._chat:Find("Text"):GetComponent(typeof(Text))
-
-	if #var_14_4.text > CHAT_POP_STR_LEN then
-		var_14_4.alignment = TextAnchor.MiddleLeft
+	if CHAT_POP_STR_LEN < #slot0._chat:Find("Text"):GetComponent(typeof(Text)).text then
+		slot5.alignment = TextAnchor.MiddleLeft
 	else
-		var_14_4.alignment = TextAnchor.MiddleCenter
+		slot5.alignment = TextAnchor.MiddleCenter
 	end
 
-	SetActive(arg_14_0._chat, true)
+	SetActive(slot0._chat, true)
 
-	arg_14_0._chat.transform.localScale = Vector3.New(0, 0, 0)
+	slot0._chat.transform.localScale = Vector3.New(0, 0, 0)
 
-	LeanTween.moveX(rtf(arg_14_0._painting), 50, 0.1):setOnComplete(System.Action(function()
-		LeanTween.scale(rtf(arg_14_0._chat.gameObject), Vector3.New(1, 1, 1), 0.1):setEase(LeanTweenType.easeOutBack)
+	LeanTween.moveX(rtf(slot0._painting), 50, 0.1):setOnComplete(System.Action(function ()
+		LeanTween.scale(rtf(uv0._chat.gameObject), Vector3.New(1, 1, 1), 0.1):setEase(LeanTweenType.easeOutBack)
 	end))
 end
 
-function var_0_0.skip(arg_17_0)
-	if arg_17_0._stateFlag == BattleResultLayer.STATE_REPORTED then
-		arg_17_0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
+function slot0.skip(slot0)
+	if slot0._stateFlag == BattleResultLayer.STATE_REPORTED then
+		slot0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 	end
 end
 
-function var_0_0.showRightBottomPanel(arg_18_0)
-	SetActive(arg_18_0._skipBtn, false)
-	SetActive(arg_18_0._rightBottomPanel, true)
-	SetActive(arg_18_0._subToggle, false)
-	onButton(arg_18_0, arg_18_0._confirmBtn, function()
-		arg_18_0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
+function slot0.showRightBottomPanel(slot0)
+	SetActive(slot0._skipBtn, false)
+	SetActive(slot0._rightBottomPanel, true)
+	SetActive(slot0._subToggle, false)
+	onButton(slot0, slot0._confirmBtn, function ()
+		uv0:emit(BattleResultMediator.ON_BACK_TO_LEVEL_SCENE)
 	end, SFX_CONFIRM)
 
-	arg_18_0._stateFlag = nil
+	slot0._stateFlag = nil
 end
 
-function var_0_0.onBackPressed(arg_20_0)
-	triggerButton(arg_20_0._skipBtn)
+function slot0.onBackPressed(slot0)
+	triggerButton(slot0._skipBtn)
 end
 
-function var_0_0.willExit(arg_21_0)
-	LeanTween.cancel(go(arg_21_0._tf))
-	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0._tf)
+function slot0.willExit(slot0)
+	LeanTween.cancel(go(slot0._tf))
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

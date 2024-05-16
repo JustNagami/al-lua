@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				buff_id = 800802,
-				hpUpperBound = 1
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -31,5 +19,17 @@
 	stack = 1,
 	id = 800801,
 	icon = 800800,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				buff_id = 800802,
+				hpUpperBound = 1
+			}
+		}
+	}
 }

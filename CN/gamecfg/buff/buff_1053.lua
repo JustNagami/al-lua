@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1053
-			}
-		}
-	},
+return {
 	{
 		desc = "提高舰队中所有战列舰1.0%炮击、雷击、装填属性，同类指挥技能无法同时生效",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 1053,
 	icon = 1050,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1053
+			}
+		}
+	}
 }

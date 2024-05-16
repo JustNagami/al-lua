@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 4131,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "先锋部队与敌方相撞时，我方受到伤害降低15.0%",
 		addition = {
@@ -81,5 +69,17 @@
 	stack = 1,
 	id = 4131,
 	icon = 4130,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 4131,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

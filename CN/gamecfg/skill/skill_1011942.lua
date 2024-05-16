@@ -1,40 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 67961,
-				delay = 2
-			},
-			casterAniEffect = {
-				time = 2,
-				effect = "feijiyingzi",
-				posFun = function(arg_1_0, arg_1_1, arg_1_2)
-					return Vector3(-100, 0, arg_1_1.z) - arg_1_0
-				end
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetSameToLastEffect",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 67971,
-				delay = 2
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -48,8 +12,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_2_0, arg_2_1, arg_2_2)
-						return Vector3(-100, 0, arg_2_1.z) - arg_2_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -78,8 +42,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_3_0, arg_3_1, arg_3_2)
-						return Vector3(-100, 0, arg_3_1.z) - arg_3_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -108,8 +72,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_4_0, arg_4_1, arg_4_2)
-						return Vector3(-100, 0, arg_4_1.z) - arg_4_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -138,8 +102,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_5_0, arg_5_1, arg_5_2)
-						return Vector3(-100, 0, arg_5_1.z) - arg_5_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -168,8 +132,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_6_0, arg_6_1, arg_6_2)
-						return Vector3(-100, 0, arg_6_1.z) - arg_6_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -198,8 +162,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_7_0, arg_7_1, arg_7_2)
-						return Vector3(-100, 0, arg_7_1.z) - arg_7_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -228,8 +192,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_8_0, arg_8_1, arg_8_2)
-						return Vector3(-100, 0, arg_8_1.z) - arg_8_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -258,8 +222,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_9_0, arg_9_1, arg_9_2)
-						return Vector3(-100, 0, arg_9_1.z) - arg_9_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -288,8 +252,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_10_0, arg_10_1, arg_10_2)
-						return Vector3(-100, 0, arg_10_1.z) - arg_10_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -318,8 +282,8 @@
 				casterAniEffect = {
 					time = 2,
 					effect = "feijiyingzi",
-					posFun = function(arg_11_0, arg_11_1, arg_11_2)
-						return Vector3(-100, 0, arg_11_1.z) - arg_11_0
+					posFun = function (slot0, slot1, slot2)
+						return Vector3(-100, 0, slot1.z) - slot0
 					end
 				}
 			},
@@ -342,5 +306,41 @@
 	id = 1011942,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 67961,
+				delay = 2
+			},
+			casterAniEffect = {
+				time = 2,
+				effect = "feijiyingzi",
+				posFun = function (slot0, slot1, slot2)
+					return Vector3(-100, 0, slot1.z) - slot0
+				end
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetSameToLastEffect",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 67971,
+				delay = 2
+			}
+		}
+	}
 }

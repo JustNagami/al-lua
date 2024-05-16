@@ -1,474 +1,454 @@
-﻿local var_0_0 = class("BeachGuardGameView", import("..BaseMiniGameView"))
+slot0 = class("BeachGuardGameView", import("..BaseMiniGameView"))
+slot0.LEVEL_GAME = "leavel game"
+slot0.PAUSE_GAME = "pause game "
+slot0.OPEN_PAUSE_UI = "open pause ui"
+slot0.OPEN_LEVEL_UI = "open leave ui"
+slot0.BACK_MENU = "back menu"
+slot0.CLOSE_GAME = "close game"
+slot0.SHOW_RULE = "show rule"
+slot0.READY_START = "ready start"
+slot0.COUNT_DOWN = "count down"
+slot0.STORE_SERVER = "store server"
+slot0.SUBMIT_GAME_SUCCESS = "submit game success"
+slot0.RECYCLES_CHAR = "RECYCLES CHAR"
+slot0.RECYCLES_CHAR_CANCEL = "RECYCLES CHAR CANCEL"
+slot0.DRAG_CHAR = "DRAG CHAR"
+slot0.PULL_CHAR = "PULL CHAR"
+slot0.USE_SKILL = "USE SKILL"
+slot0.ADD_CRAFT = "ADD CRAFT"
+slot0.ADD_ENEMY = "ADD ENEMY"
+slot0.CREATE_CHAR_DAMAGE = "create char damage"
+slot0.REMOVE_CHAR = "REMOVE CHAR"
+slot0.BULLET_DAMAGE = "BULLET DAMAGE"
+slot0.GAME_OVER = "GAME OVER"
+slot0.ENEMY_COMMING = "enemy comming"
+slot1 = 1920
+slot2 = 1080
+slot3 = "bar-soft"
+slot4 = 6000
+slot5 = "pvzminigame_help"
+slot6 = Application.targetFrameRate or 60
 
-var_0_0.LEVEL_GAME = "leavel game"
-var_0_0.PAUSE_GAME = "pause game "
-var_0_0.OPEN_PAUSE_UI = "open pause ui"
-var_0_0.OPEN_LEVEL_UI = "open leave ui"
-var_0_0.BACK_MENU = "back menu"
-var_0_0.CLOSE_GAME = "close game"
-var_0_0.SHOW_RULE = "show rule"
-var_0_0.READY_START = "ready start"
-var_0_0.COUNT_DOWN = "count down"
-var_0_0.STORE_SERVER = "store server"
-var_0_0.SUBMIT_GAME_SUCCESS = "submit game success"
-var_0_0.RECYCLES_CHAR = "RECYCLES CHAR"
-var_0_0.RECYCLES_CHAR_CANCEL = "RECYCLES CHAR CANCEL"
-var_0_0.DRAG_CHAR = "DRAG CHAR"
-var_0_0.PULL_CHAR = "PULL CHAR"
-var_0_0.USE_SKILL = "USE SKILL"
-var_0_0.ADD_CRAFT = "ADD CRAFT"
-var_0_0.ADD_ENEMY = "ADD ENEMY"
-var_0_0.CREATE_CHAR_DAMAGE = "create char damage"
-var_0_0.REMOVE_CHAR = "REMOVE CHAR"
-var_0_0.BULLET_DAMAGE = "BULLET DAMAGE"
-var_0_0.GAME_OVER = "GAME OVER"
-var_0_0.ENEMY_COMMING = "enemy comming"
-
-local var_0_1 = 1920
-local var_0_2 = 1080
-local var_0_3 = "bar-soft"
-local var_0_4 = 6000
-local var_0_5 = "pvzminigame_help"
-local var_0_6 = Application.targetFrameRate or 60
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "BeachGuardGameUI"
 end
 
-function var_0_0.didEnter(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:initEvent()
-	arg_2_0:initUI()
-	arg_2_0:initController()
-	arg_2_0.beachGuardUI:clearUI()
-	setActive(arg_2_0.bg, true)
-	arg_2_0.menuUI:show(true)
-	arg_2_0.menuUI:update(arg_2_0:GetMGHubData())
-	arg_2_0:PlayGuider("NG0035")
+function slot0.didEnter(slot0)
+	slot0:initData()
+	slot0:initEvent()
+	slot0:initUI()
+	slot0:initController()
+	slot0.beachGuardUI:clearUI()
+	setActive(slot0.bg, true)
+	slot0.menuUI:show(true)
+	slot0.menuUI:update(slot0:GetMGHubData())
+	slot0:PlayGuider("NG0035")
 end
 
-function var_0_0.PlayGuider(arg_3_0, arg_3_1)
-	if not pg.NewStoryMgr.GetInstance():IsPlayed(arg_3_1) then
-		pg.NewGuideMgr.GetInstance():Play(arg_3_1)
+function slot0.PlayGuider(slot0, slot1)
+	if not pg.NewStoryMgr.GetInstance():IsPlayed(slot1) then
+		pg.NewGuideMgr.GetInstance():Play(slot1)
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
-			storyId = arg_3_1
+			storyId = slot1
 		})
 	end
 end
 
-function var_0_0.initData(arg_4_0)
-	if var_0_6 > 60 then
-		var_0_6 = 60
+function slot0.initData(slot0)
+	if uv0 > 60 then
+		uv0 = 60
 	end
 
-	arg_4_0.timer = Timer.New(function()
-		arg_4_0:onTimer()
-	end, 1 / var_0_6, -1)
-	arg_4_0.gameData = {
+	slot0.timer = Timer.New(function ()
+		uv0:onTimer()
+	end, 1 / uv0, -1)
+	slot0.gameData = {
 		path = "ui/minigameui/beachguardgameui_atlas",
-		game_time = var_0_4,
-		drop = pg.mini_game[arg_4_0:GetMGData().id].simple_config_data.drop,
-		total_times = arg_4_0:GetMGHubData():getConfig("reward_need"),
-		rule_tip = var_0_5,
-		asset = BeachGuardAsset.New(arg_4_0._tf)
+		game_time = uv1,
+		drop = pg.mini_game[slot0:GetMGData().id].simple_config_data.drop,
+		total_times = slot0:GetMGHubData():getConfig("reward_need"),
+		rule_tip = uv2,
+		asset = BeachGuardAsset.New(slot0._tf)
 	}
 end
 
-function var_0_0.initEvent(arg_6_0)
-	if not arg_6_0.handle and IsUnityEditor then
-		arg_6_0.handle = UpdateBeat:CreateListener(arg_6_0.Update, arg_6_0)
+function slot0.initEvent(slot0)
+	if not slot0.handle and IsUnityEditor then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 
-		UpdateBeat:AddListener(arg_6_0.handle)
+		UpdateBeat:AddListener(slot0.handle)
 	end
 
-	arg_6_0:bind(BeachGuardGameView.LEVEL_GAME, function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_7_1 then
-			arg_6_0:resumeGame()
-			arg_6_0:onGameOver()
+	slot0:bind(BeachGuardGameView.LEVEL_GAME, function (slot0, slot1, slot2)
+		if slot1 then
+			uv0:resumeGame()
+			uv0:onGameOver()
 		else
-			arg_6_0:resumeGame()
+			uv0:resumeGame()
 		end
 	end)
-	arg_6_0:bind(BeachGuardGameView.COUNT_DOWN, function(arg_8_0, arg_8_1, arg_8_2)
-		arg_6_0:gameStart()
+	slot0:bind(BeachGuardGameView.COUNT_DOWN, function (slot0, slot1, slot2)
+		uv0:gameStart()
 	end)
-	arg_6_0:bind(BeachGuardGameView.OPEN_PAUSE_UI, function(arg_9_0, arg_9_1, arg_9_2)
-		arg_6_0.beachGuardUI:popPauseUI()
+	slot0:bind(BeachGuardGameView.OPEN_PAUSE_UI, function (slot0, slot1, slot2)
+		uv0.beachGuardUI:popPauseUI()
 	end)
-	arg_6_0:bind(BeachGuardGameView.OPEN_LEVEL_UI, function(arg_10_0, arg_10_1, arg_10_2)
-		arg_6_0.beachGuardUI:popLeaveUI()
+	slot0:bind(BeachGuardGameView.OPEN_LEVEL_UI, function (slot0, slot1, slot2)
+		uv0.beachGuardUI:popLeaveUI()
 	end)
-	arg_6_0:bind(BeachGuardGameView.PAUSE_GAME, function(arg_11_0, arg_11_1, arg_11_2)
-		if arg_11_1 then
-			arg_6_0:pauseGame()
+	slot0:bind(BeachGuardGameView.PAUSE_GAME, function (slot0, slot1, slot2)
+		if slot1 then
+			uv0:pauseGame()
 		else
-			arg_6_0:resumeGame()
+			uv0:resumeGame()
 		end
 	end)
-	arg_6_0:bind(BeachGuardGameView.BACK_MENU, function(arg_12_0, arg_12_1, arg_12_2)
-		setActive(arg_6_0.sceneContainer, false)
-		arg_6_0.menuUI:update(arg_6_0:GetMGHubData())
-		arg_6_0.menuUI:show(true)
-		arg_6_0.gameUI:show(false)
+	slot0:bind(BeachGuardGameView.BACK_MENU, function (slot0, slot1, slot2)
+		setActive(uv0.sceneContainer, false)
+		uv0.menuUI:update(uv0:GetMGHubData())
+		uv0.menuUI:show(true)
+		uv0.gameUI:show(false)
 	end)
-	arg_6_0:bind(BeachGuardGameView.CLOSE_GAME, function(arg_13_0, arg_13_1, arg_13_2)
-		arg_6_0:closeView()
+	slot0:bind(BeachGuardGameView.CLOSE_GAME, function (slot0, slot1, slot2)
+		uv0:closeView()
 	end)
-	arg_6_0:bind(BeachGuardGameView.ENEMY_COMMING, function(arg_14_0, arg_14_1, arg_14_2)
-		arg_6_0.gameUI:setEnemyComming()
+	slot0:bind(BeachGuardGameView.ENEMY_COMMING, function (slot0, slot1, slot2)
+		uv0.gameUI:setEnemyComming()
 	end)
-	arg_6_0:bind(BeachGuardGameView.GAME_OVER, function(arg_15_0, arg_15_1, arg_15_2)
-		arg_6_0:onGameOver()
+	slot0:bind(BeachGuardGameView.GAME_OVER, function (slot0, slot1, slot2)
+		uv0:onGameOver()
 	end)
-	arg_6_0:bind(BeachGuardGameView.SHOW_RULE, function(arg_16_0, arg_16_1, arg_16_2)
+	slot0:bind(BeachGuardGameView.SHOW_RULE, function (slot0, slot1, slot2)
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip[arg_6_0.gameData.rule_tip].tip
+			helps = pg.gametip[uv0.gameData.rule_tip].tip
 		})
 	end)
-	arg_6_0:bind(BeachGuardGameView.READY_START, function(arg_17_0, arg_17_1, arg_17_2)
-		arg_6_0:readyStart()
+	slot0:bind(BeachGuardGameView.READY_START, function (slot0, slot1, slot2)
+		uv0:readyStart()
 	end)
-	arg_6_0:bind(BeachGuardGameView.STORE_SERVER, function(arg_18_0, arg_18_1, arg_18_2)
-		arg_6_0:StoreDataToServer({
-			arg_18_1
+	slot0:bind(BeachGuardGameView.STORE_SERVER, function (slot0, slot1, slot2)
+		uv0:StoreDataToServer({
+			slot1
 		})
 	end)
-	arg_6_0:bind(BeachGuardGameView.SUBMIT_GAME_SUCCESS, function(arg_19_0, arg_19_1, arg_19_2)
-		if not arg_6_0.sendSuccessFlag then
-			arg_6_0.sendSuccessFlag = true
+	slot0:bind(BeachGuardGameView.SUBMIT_GAME_SUCCESS, function (slot0, slot1, slot2)
+		if not uv0.sendSuccessFlag then
+			uv0.sendSuccessFlag = true
 
-			arg_6_0:SendSuccess(0)
+			uv0:SendSuccess(0)
 		end
 	end)
-	arg_6_0:bind(BeachGuardGameView.RECYCLES_CHAR, function(arg_20_0, arg_20_1, arg_20_2)
-		arg_6_0:changeRecycles(arg_20_1)
+	slot0:bind(BeachGuardGameView.RECYCLES_CHAR, function (slot0, slot1, slot2)
+		uv0:changeRecycles(slot1)
 	end)
-	arg_6_0:bind(BeachGuardGameView.RECYCLES_CHAR_CANCEL, function(arg_21_0, arg_21_1, arg_21_2)
-		arg_6_0.gameUI:cancelRecycle()
-		arg_6_0:changeRecycles(false)
+	slot0:bind(BeachGuardGameView.RECYCLES_CHAR_CANCEL, function (slot0, slot1, slot2)
+		uv0.gameUI:cancelRecycle()
+		uv0:changeRecycles(false)
 	end)
-	arg_6_0:bind(BeachGuardGameView.DRAG_CHAR, function(arg_22_0, arg_22_1, arg_22_2)
-		arg_6_0.sceneMgr:setDrag(arg_22_1)
+	slot0:bind(BeachGuardGameView.DRAG_CHAR, function (slot0, slot1, slot2)
+		uv0.sceneMgr:setDrag(slot1)
 	end)
-	arg_6_0:bind(BeachGuardGameView.PULL_CHAR, function(arg_23_0, arg_23_1, arg_23_2)
-		local var_23_0 = arg_23_1.card_id
-		local var_23_1 = arg_23_1.line_index
-		local var_23_2 = arg_23_1.grid_index
-		local var_23_3 = BeachGuardConst.char_card[var_23_0]
-		local var_23_4 = var_23_3.char_id
-		local var_23_5 = var_23_3.cost
-		local var_23_6 = var_23_3.once
-		local var_23_7 = arg_6_0.runningData.goodsNum
-		local var_23_8 = arg_6_0.runningData.sceneChars
+	slot0:bind(BeachGuardGameView.PULL_CHAR, function (slot0, slot1, slot2)
+		slot4 = slot1.line_index
+		slot5 = slot1.grid_index
+		slot6 = BeachGuardConst.char_card[slot1.card_id]
+		slot7 = slot6.char_id
+		slot9 = slot6.once
+		slot11 = uv0.runningData.sceneChars
 
-		if var_23_7 < var_23_5 then
+		if uv0.runningData.goodsNum < slot6.cost then
 			return
 		end
 
-		if var_23_6 and table.contains(var_23_8, var_23_4) then
+		if slot9 and table.contains(slot11, slot7) then
 			return
 		end
 
-		if arg_6_0.sceneMgr:pullChar(var_23_4, var_23_1, var_23_2) then
-			arg_6_0:goodsUpdate(-1 * math.abs(var_23_5))
-			arg_6_0:pullSceneChar(var_23_4)
+		if uv0.sceneMgr:pullChar(slot7, slot4, slot5) then
+			uv0:goodsUpdate(-1 * math.abs(slot8))
+			uv0:pullSceneChar(slot7)
 		end
 	end)
-	arg_6_0:bind(BeachGuardGameView.USE_SKILL, function(arg_24_0, arg_24_1, arg_24_2)
-		arg_6_0.sceneMgr:useSkill(arg_24_1)
+	slot0:bind(BeachGuardGameView.USE_SKILL, function (slot0, slot1, slot2)
+		uv0.sceneMgr:useSkill(slot1)
 	end)
-	arg_6_0:bind(BeachGuardGameView.ADD_CRAFT, function(arg_25_0, arg_25_1, arg_25_2)
-		arg_6_0:goodsUpdate(arg_25_1.num)
+	slot0:bind(BeachGuardGameView.ADD_CRAFT, function (slot0, slot1, slot2)
+		uv0:goodsUpdate(slot1.num)
 	end)
-	arg_6_0:bind(BeachGuardGameView.ADD_ENEMY, function(arg_26_0, arg_26_1, arg_26_2)
-		arg_6_0.sceneMgr:addEnemy(arg_26_1)
+	slot0:bind(BeachGuardGameView.ADD_ENEMY, function (slot0, slot1, slot2)
+		uv0.sceneMgr:addEnemy(slot1)
 	end)
-	arg_6_0:bind(BeachGuardGameView.CREATE_CHAR_DAMAGE, function(arg_27_0, arg_27_1, arg_27_2)
-		arg_6_0.sceneMgr:craeteCharDamage(arg_27_1)
+	slot0:bind(BeachGuardGameView.CREATE_CHAR_DAMAGE, function (slot0, slot1, slot2)
+		uv0.sceneMgr:craeteCharDamage(slot1)
 	end)
-	arg_6_0:bind(BeachGuardGameView.REMOVE_CHAR, function(arg_28_0, arg_28_1, arg_28_2)
-		arg_6_0:removeSceneChar(arg_28_1:getId())
-		arg_6_0.sceneMgr:removeChar(arg_28_1)
+	slot0:bind(BeachGuardGameView.REMOVE_CHAR, function (slot0, slot1, slot2)
+		uv0:removeSceneChar(slot1:getId())
+		uv0.sceneMgr:removeChar(slot1)
 
-		if arg_28_1 and arg_28_1:getCamp() == 2 then
-			arg_6_0:addScore(arg_28_1:getScore())
+		if slot1 and slot1:getCamp() == 2 then
+			uv0:addScore(slot1:getScore())
 		end
 	end)
-	arg_6_0:bind(BeachGuardGameView.BULLET_DAMAGE, function(arg_29_0, arg_29_1, arg_29_2)
-		arg_6_0.sceneMgr:bulletDamage(arg_29_1)
+	slot0:bind(BeachGuardGameView.BULLET_DAMAGE, function (slot0, slot1, slot2)
+		uv0.sceneMgr:bulletDamage(slot1)
 	end)
 end
 
-function var_0_0.onEventHandle(arg_30_0, arg_30_1)
-	return
+function slot0.onEventHandle(slot0, slot1)
 end
 
-function var_0_0.initUI(arg_31_0)
-	arg_31_0.sceneMask = findTF(arg_31_0._tf, "sceneMask")
-	arg_31_0.sceneContainer = findTF(arg_31_0._tf, "sceneMask/sceneContainer")
-	arg_31_0.clickMask = findTF(arg_31_0._tf, "clickMask")
-	arg_31_0.bg = findTF(arg_31_0._tf, "bg")
-	arg_31_0.beachGuardUI = BeachGuardUI.New(arg_31_0._tf, arg_31_0.gameData, arg_31_0)
-	arg_31_0.gameUI = BeachGuardGameUI.New(arg_31_0._tf, arg_31_0.gameData, arg_31_0)
-	arg_31_0.menuUI = BeachGuardMenuUI.New(arg_31_0._tf, arg_31_0.gameData, arg_31_0)
+function slot0.initUI(slot0)
+	slot0.sceneMask = findTF(slot0._tf, "sceneMask")
+	slot0.sceneContainer = findTF(slot0._tf, "sceneMask/sceneContainer")
+	slot0.clickMask = findTF(slot0._tf, "clickMask")
+	slot0.bg = findTF(slot0._tf, "bg")
+	slot0.beachGuardUI = BeachGuardUI.New(slot0._tf, slot0.gameData, slot0)
+	slot0.gameUI = BeachGuardGameUI.New(slot0._tf, slot0.gameData, slot0)
+	slot0.menuUI = BeachGuardMenuUI.New(slot0._tf, slot0.gameData, slot0)
 end
 
-function var_0_0.initController(arg_32_0)
-	arg_32_0.sceneMgr = BeachGuardSceneMgr.New(arg_32_0.sceneMask, arg_32_0.gameData, arg_32_0)
+function slot0.initController(slot0)
+	slot0.sceneMgr = BeachGuardSceneMgr.New(slot0.sceneMask, slot0.gameData, slot0)
 end
 
-function var_0_0.Update(arg_33_0)
-	if arg_33_0.gameStop or arg_33_0.settlementFlag then
+function slot0.Update(slot0)
+	if slot0.gameStop or slot0.settlementFlag then
 		return
 	end
 
 	if IsUnityEditor and Input.GetKeyDown(KeyCode.S) then
-		-- block empty
+		-- Nothing
 	end
 end
 
-function var_0_0.readyStart(arg_34_0)
-	arg_34_0.readyStartFlag = true
+function slot0.readyStart(slot0)
+	slot0.readyStartFlag = true
 
-	arg_34_0.beachGuardUI:readyStart()
-	arg_34_0.menuUI:show(false)
-	arg_34_0.gameUI:show(false)
+	slot0.beachGuardUI:readyStart()
+	slot0.menuUI:show(false)
+	slot0.gameUI:show(false)
 
-	local var_34_0 = arg_34_0:getChapter()
-	local var_34_1 = BeachGuardConst.chapater_enemy[var_34_0].init_goods
-	local var_34_2 = BeachGuardConst.chapter_data[var_34_0]
+	slot1 = slot0:getChapter()
+	slot2 = BeachGuardConst.chapater_enemy[slot1].init_goods
 
-	if var_34_2.fog then
+	if BeachGuardConst.chapter_data[slot1].fog then
 		BeachGuardConst.enemy_bullet_width = BeachGuardConst.enemy_bullet_fog
 	else
 		BeachGuardConst.enemy_bullet_width = BeachGuardConst.enemy_bullet_defaut
 	end
 
-	arg_34_0.runningData = {
+	slot0.runningData = {
 		scoreNum = 0,
 		stepTime = 0,
 		gameStepTime = 0,
-		gameTime = arg_34_0.gameData.game_time,
-		chapter = var_34_0,
-		goodsNum = var_34_1 or 0,
+		gameTime = slot0.gameData.game_time,
+		chapter = slot1,
+		goodsNum = slot2 or 0,
 		sceneChars = {},
-		fog = var_34_2.fog
+		fog = slot3.fog
 	}
 
-	arg_34_0.sceneMgr:setData(arg_34_0.runningData)
+	slot0.sceneMgr:setData(slot0.runningData)
 end
 
-function var_0_0.getChapter(arg_35_0)
-	local var_35_0
+function slot0.getChapter(slot0)
+	slot1 = nil
+	slot1 = (not slot0:GetMGHubData().usedtime or slot0:GetMGHubData().usedtime == 0) and 1 or slot0:GetMGHubData().count > 0 and slot0:GetMGHubData().usedtime + 1 or slot0:GetMGHubData().usedtime
 
-	if not arg_35_0:GetMGHubData().usedtime or arg_35_0:GetMGHubData().usedtime == 0 then
-		var_35_0 = 1
-	elseif arg_35_0:GetMGHubData().count > 0 then
-		var_35_0 = arg_35_0:GetMGHubData().usedtime + 1
-	else
-		var_35_0 = arg_35_0:GetMGHubData().usedtime
-	end
+	print("return chapter is " .. slot1)
 
-	print("return chapter is " .. var_35_0)
-
-	return var_35_0
+	return slot1
 end
 
-function var_0_0.gameStart(arg_36_0)
-	arg_36_0.readyStartFlag = false
-	arg_36_0.gameStartFlag = true
-	arg_36_0.sendSuccessFlag = false
+function slot0.gameStart(slot0)
+	slot0.readyStartFlag = false
+	slot0.gameStartFlag = true
+	slot0.sendSuccessFlag = false
 
-	setActive(arg_36_0.sceneContainer, true)
-	setActive(arg_36_0.bg, false)
-	arg_36_0.beachGuardUI:popCountUI(false)
-	arg_36_0.gameUI:firstUpdate(arg_36_0.runningData)
-	arg_36_0.gameUI:show(true)
-	arg_36_0.sceneMgr:start()
-	arg_36_0:timerStart()
+	setActive(slot0.sceneContainer, true)
+	setActive(slot0.bg, false)
+	slot0.beachGuardUI:popCountUI(false)
+	slot0.gameUI:firstUpdate(slot0.runningData)
+	slot0.gameUI:show(true)
+	slot0.sceneMgr:start()
+	slot0:timerStart()
 end
 
-function var_0_0.changeSpeed(arg_37_0, arg_37_1)
-	return
+function slot0.changeSpeed(slot0, slot1)
 end
 
-function var_0_0.onTimer(arg_38_0)
-	arg_38_0:gameStep()
+function slot0.onTimer(slot0)
+	slot0:gameStep()
 end
 
-function var_0_0.gameStep(arg_39_0)
-	arg_39_0:stepRunTimeData()
-	arg_39_0.sceneMgr:step()
-	arg_39_0.gameUI:update(arg_39_0.runningData)
+function slot0.gameStep(slot0)
+	slot0:stepRunTimeData()
+	slot0.sceneMgr:step()
+	slot0.gameUI:update(slot0.runningData)
 
-	if arg_39_0.runningData.gameTime <= 0 then
-		arg_39_0:onGameOver()
+	if slot0.runningData.gameTime <= 0 then
+		slot0:onGameOver()
 	end
 end
 
-function var_0_0.timerStart(arg_40_0)
-	if not arg_40_0.timer.running then
-		arg_40_0.timer:Start()
+function slot0.timerStart(slot0)
+	if not slot0.timer.running then
+		slot0.timer:Start()
 	end
 end
 
-function var_0_0.timerResume(arg_41_0)
-	if not arg_41_0.timer.running then
-		arg_41_0.timer:Start()
+function slot0.timerResume(slot0)
+	if not slot0.timer.running then
+		slot0.timer:Start()
 	end
 end
 
-function var_0_0.timerStop(arg_42_0)
-	if arg_42_0.timer.running then
-		arg_42_0.timer:Stop()
+function slot0.timerStop(slot0)
+	if slot0.timer.running then
+		slot0.timer:Stop()
 	end
 end
 
-function var_0_0.stepRunTimeData(arg_43_0)
-	local var_43_0 = Time.deltaTime
-
-	if var_43_0 > 0.016 then
-		var_43_0 = 0.016
+function slot0.stepRunTimeData(slot0)
+	if Time.deltaTime > 0.016 then
+		slot1 = 0.016
 	end
 
-	arg_43_0.runningData.gameTime = arg_43_0.runningData.gameTime - var_43_0
-	arg_43_0.runningData.gameStepTime = arg_43_0.runningData.gameStepTime + var_43_0
-	arg_43_0.runningData.deltaTime = var_43_0
+	slot0.runningData.gameTime = slot0.runningData.gameTime - slot1
+	slot0.runningData.gameStepTime = slot0.runningData.gameStepTime + slot1
+	slot0.runningData.deltaTime = slot1
 end
 
-function var_0_0.changeRecycles(arg_44_0, arg_44_1)
-	arg_44_0.runningData.recycles = arg_44_1
+function slot0.changeRecycles(slot0, slot1)
+	slot0.runningData.recycles = slot1
 
-	arg_44_0.sceneMgr:changeRecycles(arg_44_1)
-	arg_44_0:runningUpdate()
+	slot0.sceneMgr:changeRecycles(slot1)
+	slot0:runningUpdate()
 end
 
-function var_0_0.addScore(arg_45_0, arg_45_1)
-	arg_45_0.runningData.scoreNum = arg_45_0.runningData.scoreNum + arg_45_1
+function slot0.addScore(slot0, slot1)
+	slot0.runningData.scoreNum = slot0.runningData.scoreNum + slot1
 end
 
-function var_0_0.pullSceneChar(arg_46_0, arg_46_1)
-	table.insert(arg_46_0.runningData.sceneChars, arg_46_1)
-	arg_46_0:runningUpdate()
+function slot0.pullSceneChar(slot0, slot1)
+	table.insert(slot0.runningData.sceneChars, slot1)
+	slot0:runningUpdate()
 end
 
-function var_0_0.removeSceneChar(arg_47_0, arg_47_1)
-	for iter_47_0 = #arg_47_0.runningData.sceneChars, 1, -1 do
-		if arg_47_0.runningData.sceneChars[iter_47_0] == arg_47_1 then
-			table.remove(arg_47_0.runningData.sceneChars, iter_47_0)
+function slot0.removeSceneChar(slot0, slot1)
+	for slot5 = #slot0.runningData.sceneChars, 1, -1 do
+		if slot0.runningData.sceneChars[slot5] == slot1 then
+			table.remove(slot0.runningData.sceneChars, slot5)
 		end
 	end
 end
 
-function var_0_0.goodsUpdate(arg_48_0, arg_48_1)
-	arg_48_0.runningData.goodsNum = arg_48_0.runningData.goodsNum + arg_48_1
+function slot0.goodsUpdate(slot0, slot1)
+	slot0.runningData.goodsNum = slot0.runningData.goodsNum + slot1
 
-	arg_48_0.gameUI:updateGoods(arg_48_1)
+	slot0.gameUI:updateGoods(slot1)
 end
 
-function var_0_0.runningUpdate(arg_49_0)
-	return
+function slot0.runningUpdate(slot0)
 end
 
-function var_0_0.onGameOver(arg_50_0)
-	if arg_50_0.settlementFlag then
+function slot0.onGameOver(slot0)
+	if slot0.settlementFlag then
 		return
 	end
 
-	arg_50_0:timerStop()
-	arg_50_0:clearGame()
+	slot0:timerStop()
+	slot0:clearGame()
 
-	arg_50_0.settlementFlag = true
+	slot0.settlementFlag = true
 
-	setActive(arg_50_0.clickMask, true)
-	LeanTween.delayedCall(go(arg_50_0._tf), 0.1, System.Action(function()
-		arg_50_0.settlementFlag = false
-		arg_50_0.gameStartFlag = false
+	setActive(slot0.clickMask, true)
+	LeanTween.delayedCall(go(slot0._tf), 0.1, System.Action(function ()
+		uv0.settlementFlag = false
+		uv0.gameStartFlag = false
 
-		setActive(arg_50_0.clickMask, false)
-		arg_50_0.beachGuardUI:updateSettlementUI(arg_50_0:GetMGData(), arg_50_0:GetMGHubData(), arg_50_0.runningData)
-		arg_50_0.beachGuardUI:openSettlementUI(true)
+		setActive(uv0.clickMask, false)
+		uv0.beachGuardUI:updateSettlementUI(uv0:GetMGData(), uv0:GetMGHubData(), uv0.runningData)
+		uv0.beachGuardUI:openSettlementUI(true)
 	end))
 end
 
-function var_0_0.OnApplicationPaused(arg_52_0)
-	if not arg_52_0.gameStartFlag then
+function slot0.OnApplicationPaused(slot0)
+	if not slot0.gameStartFlag then
 		return
 	end
 
-	if arg_52_0.readyStartFlag then
+	if slot0.readyStartFlag then
 		return
 	end
 
-	if arg_52_0.settlementFlag then
+	if slot0.settlementFlag then
 		return
 	end
 
-	arg_52_0:pauseGame()
-	arg_52_0.beachGuardUI:popPauseUI()
+	slot0:pauseGame()
+	slot0.beachGuardUI:popPauseUI()
 end
 
-function var_0_0.clearGame(arg_53_0)
-	arg_53_0.sceneMgr:clear()
+function slot0.clearGame(slot0)
+	slot0.sceneMgr:clear()
 end
 
-function var_0_0.pauseGame(arg_54_0)
-	arg_54_0.gameStop = true
+function slot0.pauseGame(slot0)
+	slot0.gameStop = true
 
-	arg_54_0:changeSpeed(0)
-	arg_54_0:timerStop()
+	slot0:changeSpeed(0)
+	slot0:timerStop()
 end
 
-function var_0_0.resumeGame(arg_55_0)
-	arg_55_0.gameStop = false
+function slot0.resumeGame(slot0)
+	slot0.gameStop = false
 
-	arg_55_0:changeSpeed(1)
-	arg_55_0:timerStart()
+	slot0:changeSpeed(1)
+	slot0:timerStart()
 end
 
-function var_0_0.onBackPressed(arg_56_0)
-	if arg_56_0.readyStartFlag then
+function slot0.onBackPressed(slot0)
+	if slot0.readyStartFlag then
 		return
 	end
 
-	if not arg_56_0.gameStartFlag then
-		arg_56_0:emit(var_0_0.ON_BACK_PRESSED)
+	if not slot0.gameStartFlag then
+		slot0:emit(uv0.ON_BACK_PRESSED)
 	else
-		if arg_56_0.settlementFlag then
+		if slot0.settlementFlag then
 			return
 		end
 
-		arg_56_0.beachGuardUI:backPressed()
+		slot0.beachGuardUI:backPressed()
 	end
 end
 
-function var_0_0.OnSendMiniGameOPDone(arg_57_0, arg_57_1)
-	return
+function slot0.OnSendMiniGameOPDone(slot0, slot1)
 end
 
-function var_0_0.willExit(arg_58_0)
-	if arg_58_0.handle then
-		UpdateBeat:RemoveListener(arg_58_0.handle)
+function slot0.willExit(slot0)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 
-	if arg_58_0._tf and LeanTween.isTweening(go(arg_58_0._tf)) then
-		LeanTween.cancel(go(arg_58_0._tf))
+	if slot0._tf and LeanTween.isTweening(go(slot0._tf)) then
+		LeanTween.cancel(go(slot0._tf))
 	end
 
-	if arg_58_0.timer and arg_58_0.timer.running then
-		arg_58_0.timer:Stop()
+	if slot0.timer and slot0.timer.running then
+		slot0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	arg_58_0.timer = nil
+	slot0.timer = nil
 
-	arg_58_0:destroyController()
+	slot0:destroyController()
 	BeachGuardAsset.clear()
 end
 
-function var_0_0.destroyController(arg_59_0)
-	return
+function slot0.destroyController(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,105 +1,102 @@
-﻿local var_0_0 = class("StageProxy", import(".NetProxy"))
+slot0 = class("StageProxy", import(".NetProxy"))
+slot0.STAGE_ADDED = "stage added"
+slot0.STAGE_UPDATED = "stage updated"
+slot0.RANDOM_STAGE_DELETE = "random stage deleted"
+slot0.RANDOM_STAGE_ADDED = "stage added"
 
-var_0_0.STAGE_ADDED = "stage added"
-var_0_0.STAGE_UPDATED = "stage updated"
-var_0_0.RANDOM_STAGE_DELETE = "random stage deleted"
-var_0_0.RANDOM_STAGE_ADDED = "stage added"
+function slot0.register(slot0)
+	slot0:on(13001, function (slot0)
+		uv0.data.satges = {}
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:on(13001, function(arg_2_0)
-		arg_1_0.data.satges = {}
+		for slot4, slot5 in ipairs(slot0.expedition_list) do
+			slot6 = Stage.New(slot5)
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.expedition_list) do
-			local var_2_0 = Stage.New(iter_2_1)
+			slot6:display("loaded")
 
-			var_2_0:display("loaded")
-
-			arg_1_0.data.satges[var_2_0.id] = var_2_0
+			uv0.data.satges[slot6.id] = slot6
 		end
 	end)
-	arg_1_0:on(13100, function(arg_3_0)
-		arg_1_0.data.randomexpeditions = {}
+	slot0:on(13100, function (slot0)
+		uv0.data.randomexpeditions = {}
 
-		for iter_3_0, iter_3_1 in ipairs(arg_3_0.random_expedition_list) do
-			local var_3_0 = Stage.New(iter_3_1)
+		for slot4, slot5 in ipairs(slot0.random_expedition_list) do
+			slot6 = Stage.New(slot5)
 
-			var_3_0:display("loaded")
+			slot6:display("loaded")
 
-			if not arg_1_0.data.randomexpeditions[var_3_0.id] then
-				print("随机关卡添加" .. var_3_0.id)
-				arg_1_0:addRandomStage(var_3_0)
+			if not uv0.data.randomexpeditions[slot6.id] then
+				print("随机关卡添加" .. slot6.id)
+				uv0:addRandomStage(slot6)
 			else
-				arg_1_0.data.randomexpeditions[var_3_0.id] = var_3_0
+				uv0.data.randomexpeditions[slot6.id] = slot6
 			end
 		end
 	end)
-	arg_1_0:listenerRandomStage()
+	slot0:listenerRandomStage()
 end
 
-function var_0_0.remove(arg_4_0)
-	pg.TimeMgr.GetInstance():RemoveTimer(arg_4_0.timerId)
+function slot0.remove(slot0)
+	pg.TimeMgr.GetInstance():RemoveTimer(slot0.timerId)
 
-	arg_4_0.timerId = nil
+	slot0.timerId = nil
 end
 
-function var_0_0.addStage(arg_5_0, arg_5_1)
-	assert(isa(arg_5_1, Stage), "should be an instance of Stage")
-	assert(arg_5_0.data.satges[arg_5_1.id] == nil, "ship already exist, use updateStage() instead")
+function slot0.addStage(slot0, slot1)
+	assert(isa(slot1, Stage), "should be an instance of Stage")
+	assert(slot0.data.satges[slot1.id] == nil, "ship already exist, use updateStage() instead")
 
-	arg_5_0.data.satges[arg_5_1.id] = arg_5_1:clone()
+	slot0.data.satges[slot1.id] = slot1:clone()
 
-	arg_5_0.data.satges[arg_5_1.id]:display("added")
-	arg_5_0.facade:sendNotification(var_0_0.STAGE_ADDED, arg_5_1:clone())
+	slot0.data.satges[slot1.id]:display("added")
+	slot0.facade:sendNotification(uv0.STAGE_ADDED, slot1:clone())
 end
 
-function var_0_0.getStageById(arg_6_0, arg_6_1)
-	if arg_6_0.data.satges[arg_6_1] ~= nil then
-		return arg_6_0.data.satges[arg_6_1]:clone()
+function slot0.getStageById(slot0, slot1)
+	if slot0.data.satges[slot1] ~= nil then
+		return slot0.data.satges[slot1]:clone()
 	end
 end
 
-function var_0_0.updateStage(arg_7_0, arg_7_1)
-	assert(isa(arg_7_1, Stage), "should be an instance of Stage")
+function slot0.updateStage(slot0, slot1)
+	assert(isa(slot1, Stage), "should be an instance of Stage")
 
-	arg_7_0.data.satges[arg_7_1.id] = arg_7_1:clone()
+	slot0.data.satges[slot1.id] = slot1:clone()
 
-	arg_7_0.data.satges[arg_7_1.id]:display("updated")
-	arg_7_0.facade:sendNotification(var_0_0.STAGE_UPDATED, arg_7_1:clone())
+	slot0.data.satges[slot1.id]:display("updated")
+	slot0.facade:sendNotification(uv0.STAGE_UPDATED, slot1:clone())
 end
 
-function var_0_0.getRandomStages(arg_8_0)
-	return Clone(arg_8_0.data.randomexpeditions) or {}
+function slot0.getRandomStages(slot0)
+	return Clone(slot0.data.randomexpeditions) or {}
 end
 
-function var_0_0.addRandomStage(arg_9_0, arg_9_1)
-	assert(isa(arg_9_1, Stage), "should be an instance of Stage")
-	assert(arg_9_0.data.randomexpeditions[arg_9_1.id] == nil, "ship already exist, use updateStage() instead")
+function slot0.addRandomStage(slot0, slot1)
+	assert(isa(slot1, Stage), "should be an instance of Stage")
+	assert(slot0.data.randomexpeditions[slot1.id] == nil, "ship already exist, use updateStage() instead")
 
-	arg_9_0.data.randomexpeditions[arg_9_1.id] = arg_9_1
+	slot0.data.randomexpeditions[slot1.id] = slot1
 
-	arg_9_0.facade:sendNotification(var_0_0.RANDOM_STAGE_ADDED, arg_9_1:clone())
+	slot0.facade:sendNotification(uv0.RANDOM_STAGE_ADDED, slot1:clone())
 end
 
-function var_0_0.listenerRandomStage(arg_10_0)
-	arg_10_0.timerId = pg.TimeMgr.GetInstance():AddTimer("listenerRandomStage", 0, 1, function()
-		if arg_10_0.data.randomexpeditions and table.getCount(arg_10_0.data.randomexpeditions) > 0 then
-			local var_11_0 = pg.TimeMgr.GetInstance():GetServerTime()
-
-			for iter_11_0, iter_11_1 in pairs(arg_10_0.data.randomexpeditions) do
-				if iter_11_1.out_time == var_11_0 then
-					arg_10_0:removeRandomStageById(iter_11_1.id)
+function slot0.listenerRandomStage(slot0)
+	slot0.timerId = pg.TimeMgr.GetInstance():AddTimer("listenerRandomStage", 0, 1, function ()
+		if uv0.data.randomexpeditions and table.getCount(uv0.data.randomexpeditions) > 0 then
+			for slot4, slot5 in pairs(uv0.data.randomexpeditions) do
+				if slot5.out_time == pg.TimeMgr.GetInstance():GetServerTime() then
+					uv0:removeRandomStageById(slot5.id)
 				end
 			end
 		end
 	end)
 end
 
-function var_0_0.removeRandomStageById(arg_12_0, arg_12_1)
-	assert(arg_12_0.data.randomexpeditions[arg_12_1], "不存在随机卡关" .. arg_12_1)
+function slot0.removeRandomStageById(slot0, slot1)
+	assert(slot0.data.randomexpeditions[slot1], "不存在随机卡关" .. slot1)
 
-	arg_12_0.data.randomexpeditions[arg_12_1] = nil
+	slot0.data.randomexpeditions[slot1] = nil
 
-	arg_12_0.facade:sendNotification(var_0_0.RANDOM_STAGE_DELETE, arg_12_1)
+	slot0.facade:sendNotification(uv0.RANDOM_STAGE_DELETE, slot1)
 end
 
-return var_0_0
+return slot0

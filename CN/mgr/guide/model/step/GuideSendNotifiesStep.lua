@@ -1,28 +1,28 @@
-﻿local var_0_0 = class("GuideSendNotifiesStep", import(".GuideStep"))
+slot0 = class("GuideSendNotifiesStep", import(".GuideStep"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.notifies = {}
+	slot0.notifies = {}
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_1.notifies) do
-		table.insert(arg_1_0.notifies, {
-			notify = iter_1_1.notify,
-			body = iter_1_1.body
+	for slot5, slot6 in ipairs(slot1.notifies) do
+		table.insert(slot0.notifies, {
+			notify = slot6.notify,
+			body = slot6.body
 		})
 	end
 end
 
-function var_0_0.GetType(arg_2_0)
+function slot0.GetType(slot0)
 	return GuideStep.TYPE_SENDNOTIFIES
 end
 
-function var_0_0.GetNotifies(arg_3_0)
-	return arg_3_0.notifies
+function slot0.GetNotifies(slot0)
+	return slot0.notifies
 end
 
-function var_0_0.ExistTrigger(arg_4_0)
+function slot0.ExistTrigger(slot0)
 	return true
 end
 
-return var_0_0
+return slot0

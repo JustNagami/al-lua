@@ -1,243 +1,217 @@
-﻿local var_0_0 = class("ChargeMenuScene", import("...base.BaseUI"))
+slot0 = class("ChargeMenuScene", import("...base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ChargeMenuUI"
 end
 
-function var_0_0.preload(arg_2_0, arg_2_1)
+function slot0.preload(slot0, slot1)
 	if getProxy(ShopsProxy):ShouldRefreshChargeList() then
 		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
-			callback = arg_2_1
+			callback = slot1
 		})
 	else
-		arg_2_1()
+		slot1()
 	end
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0:initData()
-	arg_3_0:findUI()
-	arg_3_0:addListener()
-	arg_3_0:initUIText()
-	arg_3_0:InitBanner()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
+	slot0:initUIText()
+	slot0:InitBanner()
 end
 
-function var_0_0.didEnter(arg_4_0)
-	arg_4_0:updatePlayerRes()
-	arg_4_0:updatePanel()
-	arg_4_0:tryAutoOpenShop()
+function slot0.didEnter(slot0)
+	slot0:updatePlayerRes()
+	slot0:updatePanel()
+	slot0:tryAutoOpenShop()
 end
 
-function var_0_0.ResUISettings(arg_5_0)
+function slot0.ResUISettings(slot0)
 	return true
 end
 
-function var_0_0.onBackPressed(arg_6_0)
-	if arg_6_0.chargeTipWindow and arg_6_0.chargeTipWindow:GetLoaded() and arg_6_0.chargeTipWindow:isShowing() then
-		arg_6_0.chargeTipWindow:Hide()
+function slot0.onBackPressed(slot0)
+	if slot0.chargeTipWindow and slot0.chargeTipWindow:GetLoaded() and slot0.chargeTipWindow:isShowing() then
+		slot0.chargeTipWindow:Hide()
 
 		return
 	end
 
-	var_0_0.super.onBackPressed(arg_6_0)
+	uv0.super.onBackPressed(slot0)
 end
 
-function var_0_0.willExit(arg_7_0)
-	if arg_7_0.bannerRect then
-		arg_7_0.bannerRect:Dispose()
+function slot0.willExit(slot0)
+	if slot0.bannerRect then
+		slot0.bannerRect:Dispose()
 
-		arg_7_0.bannerRect = nil
+		slot0.bannerRect = nil
 	end
 
-	if arg_7_0.chargeOrPurchaseHandler then
-		arg_7_0.chargeOrPurchaseHandler:Dispose()
+	if slot0.chargeOrPurchaseHandler then
+		slot0.chargeOrPurchaseHandler:Dispose()
 
-		arg_7_0.chargeOrPurchaseHandler = nil
+		slot0.chargeOrPurchaseHandler = nil
 	end
 
-	if arg_7_0.chargeTipWindow then
-		arg_7_0.chargeTipWindow:Destroy()
+	if slot0.chargeTipWindow then
+		slot0.chargeTipWindow:Destroy()
 
-		arg_7_0.chargeTipWindow = nil
+		slot0.chargeTipWindow = nil
 	end
 end
 
-function var_0_0.initData(arg_8_0)
-	return
+function slot0.initData(slot0)
 end
 
-function var_0_0.initUIText(arg_9_0)
-	return
+function slot0.initUIText(slot0)
 end
 
-function var_0_0.findUI(arg_10_0)
-	arg_10_0.blurTF = arg_10_0:findTF("blur_panel")
-	arg_10_0.topTF = arg_10_0:findTF("adapt/top", arg_10_0.blurTF)
-	arg_10_0.resTF = arg_10_0:findTF("res", arg_10_0.topTF)
-	arg_10_0.backBtn = arg_10_0:findTF("back_button", arg_10_0.topTF)
-	arg_10_0.menuTF = arg_10_0:findTF("menu_screen")
-	arg_10_0.skinShopBtn = arg_10_0:findTF("skin_shop", arg_10_0.menuTF)
-	arg_10_0.diamondShopBtn = arg_10_0:findTF("dimond_shop", arg_10_0.menuTF)
-	arg_10_0.itemShopBtn = arg_10_0:findTF("props", arg_10_0.menuTF)
-	arg_10_0.giftShopBtn = arg_10_0:findTF("gift_shop", arg_10_0.menuTF)
-	arg_10_0.supplyShopBtn = arg_10_0:findTF("supply", arg_10_0.menuTF)
-	arg_10_0.monthCardTag = arg_10_0:findTF("monthcard_tag", arg_10_0.diamondShopBtn)
-	arg_10_0.giftTag = arg_10_0:findTF("tip", arg_10_0.giftShopBtn)
-	arg_10_0.bannerRect = BannerScrollRect.New(arg_10_0:findTF("menu_screen/banner/mask/content"), arg_10_0:findTF("menu_screen/banner/dots"))
-	arg_10_0.chargeOrPurchaseHandler = ChargeOrPurchaseHandler.New()
-	arg_10_0.chargeTipWindow = ChargeTipWindow.New(arg_10_0._tf, arg_10_0.event)
+function slot0.findUI(slot0)
+	slot0.blurTF = slot0:findTF("blur_panel")
+	slot0.topTF = slot0:findTF("adapt/top", slot0.blurTF)
+	slot0.resTF = slot0:findTF("res", slot0.topTF)
+	slot0.backBtn = slot0:findTF("back_button", slot0.topTF)
+	slot0.menuTF = slot0:findTF("menu_screen")
+	slot0.skinShopBtn = slot0:findTF("skin_shop", slot0.menuTF)
+	slot0.diamondShopBtn = slot0:findTF("dimond_shop", slot0.menuTF)
+	slot0.itemShopBtn = slot0:findTF("props", slot0.menuTF)
+	slot0.giftShopBtn = slot0:findTF("gift_shop", slot0.menuTF)
+	slot0.supplyShopBtn = slot0:findTF("supply", slot0.menuTF)
+	slot0.monthCardTag = slot0:findTF("monthcard_tag", slot0.diamondShopBtn)
+	slot0.giftTag = slot0:findTF("tip", slot0.giftShopBtn)
+	slot0.bannerRect = BannerScrollRect.New(slot0:findTF("menu_screen/banner/mask/content"), slot0:findTF("menu_screen/banner/dots"))
+	slot0.chargeOrPurchaseHandler = ChargeOrPurchaseHandler.New()
+	slot0.chargeTipWindow = ChargeTipWindow.New(slot0._tf, slot0.event)
 end
 
-local function var_0_1(arg_11_0, arg_11_1, arg_11_2)
-	setText(arg_11_1:Find("name"), arg_11_2:GetName())
-	setText(arg_11_1:Find("desc"), arg_11_2:GetDesc())
+function slot1(slot0, slot1, slot2)
+	setText(slot1:Find("name"), slot2:GetName())
+	setText(slot1:Find("desc"), slot2:GetDesc())
 
-	local var_11_0 = arg_11_2:GetDropList()
-	local var_11_1 = UIItemList.New(arg_11_1:Find("items"), arg_11_1:Find("items/award"))
+	slot4 = UIItemList.New(slot1:Find("items"), slot1:Find("items/award"))
 
-	var_11_1:make(function(arg_12_0, arg_12_1, arg_12_2)
-		if arg_12_0 == UIItemList.EventUpdate then
-			local var_12_0 = var_11_0[arg_12_1 + 1]
-
-			updateDrop(arg_12_2, var_12_0)
-			onButton(arg_11_0, arg_12_2, function()
-				arg_11_0:emit(BaseUI.ON_DROP, var_12_0)
+	slot4:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			updateDrop(slot2, uv0[slot1 + 1])
+			onButton(uv1, slot2, function ()
+				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 		end
 	end)
-	var_11_1:align(#var_11_0)
+	slot4:align(#slot2:GetDropList())
+	setActive(slot1:Find("gem"), slot2:GetGem() > 0)
+	setText(slot1:Find("gem/Text"), slot5)
 
-	local var_11_2 = arg_11_2:GetGem()
+	slot6, slot7, slot8 = slot2:GetPrice()
 
-	setActive(arg_11_1:Find("gem"), var_11_2 > 0)
-	setText(arg_11_1:Find("gem/Text"), var_11_2)
-
-	local var_11_3, var_11_4, var_11_5 = arg_11_2:GetPrice()
-
-	setText(arg_11_1:Find("price/Text"), var_11_4)
-	setActive(arg_11_1:Find("price/Text/icon"), var_11_3 ~= RecommendCommodity.PRICE_TYPE_RMB)
-	setText(arg_11_1:Find("price/Text/label"), var_11_3 == RecommendCommodity.PRICE_TYPE_RMB and GetMoneySymbol() or "")
-
-	local var_11_6 = arg_11_1:Find("icon")
-
-	GetSpriteFromAtlasAsync(arg_11_2:GetIcon(), "", function(arg_14_0)
-		setImageSprite(var_11_6, arg_14_0)
+	setText(slot1:Find("price/Text"), slot7)
+	setActive(slot1:Find("price/Text/icon"), slot6 ~= RecommendCommodity.PRICE_TYPE_RMB)
+	setText(slot1:Find("price/Text/label"), slot6 == RecommendCommodity.PRICE_TYPE_RMB and GetMoneySymbol() or "")
+	GetSpriteFromAtlasAsync(slot2:GetIcon(), "", function (slot0)
+		setImageSprite(uv0, slot0)
 	end)
 
-	var_11_6.sizeDelta = Vector2(180, 180)
+	slot1:Find("icon").sizeDelta = Vector2(180, 180)
 end
 
-function var_0_0.InitBanner(arg_15_0)
-	local var_15_0 = getProxy(ShopsProxy):GetRecommendCommodities()
+function slot0.InitBanner(slot0)
+	for slot5, slot6 in ipairs(getProxy(ShopsProxy):GetRecommendCommodities()) do
+		slot7 = slot0.bannerRect:AddChild()
 
-	for iter_15_0, iter_15_1 in ipairs(var_15_0) do
-		local var_15_1 = arg_15_0.bannerRect:AddChild()
+		uv0(slot0, slot7, slot6)
+		onButton(slot0, slot7, function ()
+			slot0, slot1 = uv0:IsMonthCardAndCantPurchase()
 
-		var_0_1(arg_15_0, var_15_1, iter_15_1)
-		onButton(arg_15_0, var_15_1, function()
-			local var_16_0, var_16_1 = iter_15_1:IsMonthCardAndCantPurchase()
-
-			if var_16_0 then
-				pg.TipsMgr.GetInstance():ShowTips(var_16_1)
+			if slot0 then
+				pg.TipsMgr.GetInstance():ShowTips(slot1)
 
 				return
 			end
 
-			arg_15_0.bannerRect:Puase()
+			uv1.bannerRect:Puase()
 
-			arg_15_0.lookUpIndex = iter_15_0
+			uv1.lookUpIndex = uv2
 
-			pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_LOOKUP_RECOMMEND, iter_15_0))
-			arg_15_0.chargeOrPurchaseHandler:ChargeOrPurchaseAsyn(iter_15_1:GetRealCommodity())
+			pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_LOOKUP_RECOMMEND, uv2))
+			uv1.chargeOrPurchaseHandler:ChargeOrPurchaseAsyn(uv0:GetRealCommodity())
 		end, SFX_PANEL)
 	end
 
-	arg_15_0.bannerRect:SetUp()
+	slot0.bannerRect:SetUp()
 end
 
-function var_0_0.FlushBanner(arg_17_0)
-	arg_17_0.bannerRect:Reset()
-	arg_17_0:InitBanner()
+function slot0.FlushBanner(slot0)
+	slot0.bannerRect:Reset()
+	slot0:InitBanner()
 end
 
-function var_0_0.addListener(arg_18_0)
-	onButton(arg_18_0, arg_18_0.backBtn, function()
-		arg_18_0:closeView()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_18_0, arg_18_0.skinShopBtn, function()
-		arg_18_0:emit(ChargeMenuMediator.GO_SKIN_SHOP)
+	onButton(slot0, slot0.skinShopBtn, function ()
+		uv0:emit(ChargeMenuMediator.GO_SKIN_SHOP)
 	end, SFX_PANEL)
-	onButton(arg_18_0, arg_18_0.diamondShopBtn, function()
-		arg_18_0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_DIAMOND)
+	onButton(slot0, slot0.diamondShopBtn, function ()
+		uv0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_DIAMOND)
 	end, SFX_PANEL)
-	onButton(arg_18_0, arg_18_0.giftShopBtn, function()
-		arg_18_0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_GIFT)
-
-		local var_22_0 = isActive(arg_18_0.giftTag)
-
-		pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_ENTER_GIFT, var_22_0))
+	onButton(slot0, slot0.giftShopBtn, function ()
+		uv0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_GIFT)
+		pg.m02:sendNotification(GAME.TRACK, TrackConst.GetTrackData(TrackConst.SYSTEM_SHOP, TrackConst.ACTION_ENTER_GIFT, isActive(uv0.giftTag)))
 	end, SFX_PANEL)
-	onButton(arg_18_0, arg_18_0.itemShopBtn, function()
-		arg_18_0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_ITEM)
+	onButton(slot0, slot0.itemShopBtn, function ()
+		uv0:emit(ChargeMenuMediator.GO_CHARGE_SHOP, ChargeScene.TYPE_ITEM)
 	end, SFX_PANEL)
-	onButton(arg_18_0, arg_18_0.supplyShopBtn, function()
-		arg_18_0:emit(ChargeMenuMediator.GO_SUPPLY_SHOP, {
+	onButton(slot0, slot0.supplyShopBtn, function ()
+		uv0:emit(ChargeMenuMediator.GO_SUPPLY_SHOP, {
 			warp = NewShopsScene.TYPE_SHOP_STREET
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.updatePlayerRes(arg_25_0)
-	return
+function slot0.updatePlayerRes(slot0)
 end
 
-function var_0_0.updatePanel(arg_26_0)
-	local var_26_0 = getProxy(ActivityProxy)
-	local var_26_1 = var_26_0:getActiveBannerByType(GAMEUI_BANNER_9)
-
-	if var_26_1 ~= nil then
-		LoadImageSpriteAsync("activitybanner/" .. var_26_1.pic, arg_26_0.skinShopBtn)
+function slot0.updatePanel(slot0)
+	if getProxy(ActivityProxy):getActiveBannerByType(GAMEUI_BANNER_9) ~= nil then
+		LoadImageSpriteAsync("activitybanner/" .. slot2.pic, slot0.skinShopBtn)
 	end
 
-	local var_26_2 = var_26_0:getActiveBannerByType(GAMEUI_BANNER_11)
-
-	if var_26_2 ~= nil then
-		LoadImageSpriteAsync("activitybanner/" .. var_26_2.pic, arg_26_0:findTF("BG", arg_26_0.giftShopBtn))
+	if slot1:getActiveBannerByType(GAMEUI_BANNER_11) ~= nil then
+		LoadImageSpriteAsync("activitybanner/" .. slot3.pic, slot0:findTF("BG", slot0.giftShopBtn))
 	end
 
-	local var_26_3 = MonthCardOutDateTipPanel.GetShowMonthCardTag()
-
-	setActive(arg_26_0.monthCardTag, var_26_3)
+	setActive(slot0.monthCardTag, MonthCardOutDateTipPanel.GetShowMonthCardTag())
 	MonthCardOutDateTipPanel.SetMonthCardTagDate()
 	TagTipHelper.SetFuDaiTagMark()
 	TagTipHelper.SetSkinTagMark()
 	TagTipHelper.FreeGiftTag({
-		arg_26_0.giftTag
+		slot0.giftTag
 	})
 end
 
-function var_0_0.tryAutoOpenShop(arg_27_0)
-	local var_27_0 = arg_27_0.contextData.wrap
-
-	if var_27_0 ~= nil then
-		if var_27_0 == ChargeScene.TYPE_DIAMOND then
-			triggerButton(arg_27_0.diamondShopBtn)
-		elseif var_27_0 == ChargeScene.TYPE_GIFT then
-			triggerButton(arg_27_0.giftShopBtn)
-		elseif var_27_0 == ChargeScene.TYPE_ITEM then
-			triggerButton(arg_27_0.itemShopBtn)
+function slot0.tryAutoOpenShop(slot0)
+	if slot0.contextData.wrap ~= nil then
+		if slot1 == ChargeScene.TYPE_DIAMOND then
+			triggerButton(slot0.diamondShopBtn)
+		elseif slot1 == ChargeScene.TYPE_GIFT then
+			triggerButton(slot0.giftShopBtn)
+		elseif slot1 == ChargeScene.TYPE_ITEM then
+			triggerButton(slot0.itemShopBtn)
 		end
 	end
 end
 
-function var_0_0.OnRemoveLayer(arg_28_0, arg_28_1)
-	if arg_28_1.mediator == ChargeItemPanelMediator and arg_28_0.bannerRect then
-		arg_28_0.bannerRect:Resume()
+function slot0.OnRemoveLayer(slot0, slot1)
+	if slot1.mediator == ChargeItemPanelMediator and slot0.bannerRect then
+		slot0.bannerRect:Resume()
 	end
 end
 
-function var_0_0.OnChargeSuccess(arg_29_0, arg_29_1)
-	arg_29_0.chargeTipWindow:ExecuteAction("Show", arg_29_1)
+function slot0.OnChargeSuccess(slot0, slot1)
+	slot0.chargeTipWindow:ExecuteAction("Show", slot1)
 end
 
-return var_0_0
+return slot0

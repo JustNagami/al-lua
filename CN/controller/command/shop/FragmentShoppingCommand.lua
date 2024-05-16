@@ -1,73 +1,65 @@
-﻿local var_0_0 = class("FragmentShoppingCommand", pm.SimpleCommand)
+slot0 = class("FragmentShoppingCommand", pm.SimpleCommand)
+slot0.FRAG_SHOP = 2
+slot0.FRAG_NORMAL_SHOP = 3
 
-var_0_0.FRAG_SHOP = 2
-var_0_0.FRAG_NORMAL_SHOP = 3
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot5 = slot2.type
+	slot7 = getProxy(PlayerProxy):getRawData()
+	slot10 = getProxy(ShopsProxy):getFragmentShop():getGoodsCfg(slot2.id)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.count
-	local var_1_3 = var_1_0.type
-	local var_1_4 = getProxy(PlayerProxy):getRawData()
-	local var_1_5 = getProxy(ShopsProxy)
-	local var_1_6 = var_1_5:getFragmentShop()
-	local var_1_7 = var_1_6:getGoodsCfg(var_1_1)
-	local var_1_8 = Drop.New({
-		type = var_1_7.resource_category,
-		id = var_1_7.resource_type
-	})
-
-	if var_1_8:getOwnedCount() < var_1_7.resource_num * var_1_2 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_1_8:getName()))
+	if Drop.New({
+		type = slot10.resource_category,
+		id = slot10.resource_type
+	}):getOwnedCount() < slot10.resource_num * slot2.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", slot11:getName()))
 
 		return
 	end
 
-	if var_1_7.commodity_type == 1 then
-		if var_1_7.commodity_id == 1 and var_1_4:GoldMax(var_1_7.num * var_1_2) then
+	if slot10.commodity_type == 1 then
+		if slot10.commodity_id == 1 and slot7:GoldMax(slot10.num * slot4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if var_1_7.commodity_id == 2 and var_1_4:OilMax(var_1_7.num * var_1_2) then
+		if slot10.commodity_id == 2 and slot7:OilMax(slot10.num * slot4) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 	end
 
-	local var_1_9 = var_1_6:GetCommodityById(var_1_1)
-	local var_1_10 = var_0_0.FRAG_SHOP
+	slot13 = uv0.FRAG_SHOP
 
-	if var_1_9.type == Goods.TYPE_FRAGMENT_NORMAL then
-		var_1_10 = var_0_0.FRAG_NORMAL_SHOP
+	if slot9:GetCommodityById(slot3).type == Goods.TYPE_FRAGMENT_NORMAL then
+		slot13 = uv0.FRAG_NORMAL_SHOP
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(16201, {
-		id = var_1_1,
-		type = var_1_10,
-		count = var_1_2
-	}, 16202, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
-			local var_2_1 = var_1_5:getFragmentShop()
+		id = slot3,
+		type = slot13,
+		count = slot4
+	}, 16202, function (slot0)
+		if slot0.result == 0 then
+			slot2 = uv0:getFragmentShop()
 
-			var_2_1:getGoodsById(var_1_1):addBuyCount(var_1_2)
-			var_1_5:updateFragmentShop(var_2_1)
+			slot2:getGoodsById(uv1):addBuyCount(uv2)
+			uv0:updateFragmentShop(slot2)
 			reducePlayerOwn({
-				type = var_1_7.resource_category,
-				id = var_1_7.resource_type,
-				count = var_1_7.resource_num * var_1_2
+				type = uv3.resource_category,
+				id = uv3.resource_type,
+				count = uv3.resource_num * uv2
 			})
-			arg_1_0:sendNotification(GAME.FRAG_SHOPPING_DONE, {
-				awards = var_2_0,
-				id = var_1_1
+			uv4:sendNotification(GAME.FRAG_SHOPPING_DONE, {
+				awards = PlayerConst.addTranDrop(slot0.drop_list),
+				id = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

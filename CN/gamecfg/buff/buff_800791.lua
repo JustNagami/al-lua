@@ -1,39 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "torpedoPower",
-				number = 450
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 800790,
-				minTargetNumber = 2,
-				check_target = {
-					"TargetShipTypeFriendly"
-				},
-				ship_type_list = {
-					8
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -342,5 +307,40 @@
 	stack = 1,
 	id = 800791,
 	icon = 800790,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "torpedoPower",
+				number = 450
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 800790,
+				minTargetNumber = 2,
+				check_target = {
+					"TargetShipTypeFriendly"
+				},
+				ship_type_list = {
+					8
+				}
+			}
+		}
+	}
 }

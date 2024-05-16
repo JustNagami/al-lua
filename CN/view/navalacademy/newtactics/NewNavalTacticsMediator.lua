@@ -1,176 +1,160 @@
-﻿local var_0_0 = class("NewNavalTacticsMediator", import("...base.ContextMediator"))
+slot0 = class("NewNavalTacticsMediator", import("...base.ContextMediator"))
+slot0.ON_SKILL = "NewNavalTacticsMediator:ON_SKILL"
+slot0.ON_SHOPPING = "NewNavalTacticsMediator:ON_SHOPPING"
+slot0.ON_SELECT_SHIP = "NewNavalTacticsMediator:ON_SELECT_SHIP"
+slot0.ON_START = "NewNavalTacticsMediator:ON_START"
+slot0.ON_CANCEL = "NewNavalTacticsMediator:ON_CANCEL"
+slot0.ON_FINISH_ONE_ANIM = "NewNavalTacticsMediator:ON_FINISH_ONE_ANIM"
+slot0.ON_CANCEL_ADD_STUDENT = "NewNavalTacticsMediator:ON_CANCEL_ADD_STUDENT"
+slot0.ON_QUICK_FINISH = "NavalTacticsMediator:ON_QUICK_FINISH"
 
-var_0_0.ON_SKILL = "NewNavalTacticsMediator:ON_SKILL"
-var_0_0.ON_SHOPPING = "NewNavalTacticsMediator:ON_SHOPPING"
-var_0_0.ON_SELECT_SHIP = "NewNavalTacticsMediator:ON_SELECT_SHIP"
-var_0_0.ON_START = "NewNavalTacticsMediator:ON_START"
-var_0_0.ON_CANCEL = "NewNavalTacticsMediator:ON_CANCEL"
-var_0_0.ON_FINISH_ONE_ANIM = "NewNavalTacticsMediator:ON_FINISH_ONE_ANIM"
-var_0_0.ON_CANCEL_ADD_STUDENT = "NewNavalTacticsMediator:ON_CANCEL_ADD_STUDENT"
-var_0_0.ON_QUICK_FINISH = "NavalTacticsMediator:ON_QUICK_FINISH"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_CANCEL_ADD_STUDENT, function(arg_2_0)
-		arg_1_0:sendNotification(var_0_0.ON_CANCEL_ADD_STUDENT)
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_CANCEL_ADD_STUDENT, function (slot0)
+		uv0:sendNotification(uv1.ON_CANCEL_ADD_STUDENT)
 	end)
-	arg_1_0:bind(var_0_0.ON_SELECT_SHIP, function(arg_3_0, arg_3_1)
-		arg_1_0:SelectShip(arg_3_1)
+	slot0:bind(uv0.ON_SELECT_SHIP, function (slot0, slot1)
+		uv0:SelectShip(slot1)
 	end)
-	arg_1_0:bind(var_0_0.ON_SKILL, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_SKILL, function (slot0, slot1, slot2)
+		uv0:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = NavalTacticsSkillInfoLayer,
 			data = {
-				skillOnShip = arg_4_2,
-				skillId = arg_4_1
+				skillOnShip = slot2,
+				skillId = slot1
 			}
 		}))
 	end)
-	arg_1_0:bind(var_0_0.ON_SHOPPING, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.SHOPPING, {
+	slot0:bind(uv0.ON_SHOPPING, function (slot0, slot1)
+		uv0:sendNotification(GAME.SHOPPING, {
 			count = 1,
-			id = arg_5_1
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_START, function(arg_6_0, arg_6_1)
-		arg_1_0:sendNotification(GAME.START_TO_LEARN_TACTICS, arg_6_1)
+	slot0:bind(uv0.ON_START, function (slot0, slot1)
+		uv0:sendNotification(GAME.START_TO_LEARN_TACTICS, slot1)
 	end)
 
-	arg_1_0.cancelList = {}
+	slot0.cancelList = {}
 
-	arg_1_0:bind(var_0_0.ON_CANCEL, function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_1_0.viewComponent:IsInAddStudentProcess() then
-			table.insert(arg_1_0.cancelList, {
-				arg_7_1,
-				arg_7_2
+	slot0:bind(uv0.ON_CANCEL, function (slot0, slot1, slot2)
+		if uv0.viewComponent:IsInAddStudentProcess() then
+			table.insert(uv0.cancelList, {
+				slot1,
+				slot2
 			})
 		else
-			arg_1_0.viewComponent.finishLessonUtil:Enter(arg_7_1, arg_7_2)
+			uv0.viewComponent.finishLessonUtil:Enter(slot1, slot2)
 		end
 	end)
-	arg_1_0:bind(var_0_0.ON_QUICK_FINISH, function(arg_8_0, arg_8_1)
-		if arg_1_0.viewComponent:IsInAddStudentProcess() then
-			table.insert(arg_1_0.cancelList, {
-				arg_8_1,
+	slot0:bind(uv0.ON_QUICK_FINISH, function (slot0, slot1)
+		if uv0.viewComponent:IsInAddStudentProcess() then
+			table.insert(uv0.cancelList, {
+				slot1,
 				type
 			})
 		else
-			arg_1_0.viewComponent.finishLessonUtil:Enter(arg_8_1, Student.CANCEL_TYPE_QUICKLY)
+			uv0.viewComponent.finishLessonUtil:Enter(slot1, Student.CANCEL_TYPE_QUICKLY)
 		end
 	end)
-
-	local var_1_0 = getProxy(NavalAcademyProxy):RawGetStudentList()
-
-	arg_1_0.viewComponent:SetStudents(var_1_0)
+	slot0.viewComponent:SetStudents(getProxy(NavalAcademyProxy):RawGetStudentList())
 end
 
-function var_0_0.SelectShip(arg_9_0, arg_9_1)
-	local var_9_0 = {}
-	local var_9_1 = getProxy(NavalAcademyProxy)
+function slot0.SelectShip(slot0, slot1)
+	slot2 = {}
 
-	for iter_9_0, iter_9_1 in pairs(var_9_1:RawGetStudentList()) do
-		table.insert(var_9_0, iter_9_1.shipId)
+	for slot7, slot8 in pairs(getProxy(NavalAcademyProxy):RawGetStudentList()) do
+		table.insert(slot2, slot8.shipId)
 	end
 
-	local var_9_2 = {
-		selectedMax = 1,
-		prevPage = "NewNavalTacticsMediator",
-		ignoredIds = var_9_0,
-		hideTagFlags = ShipStatus.TAG_HIDE_TACTICES,
-		onShip = function(arg_10_0, arg_10_1, arg_10_2)
-			if not arg_10_0 then
-				return false
-			end
-
-			local var_10_0, var_10_1 = ShipStatus.ShipStatusCheck("inTactics", arg_10_0, arg_10_1)
-
-			if not var_10_0 then
-				return var_10_0, var_10_1
-			end
-
-			return true
-		end,
-		onSelected = function(arg_11_0)
-			local var_11_0 = arg_11_0[1]
-
-			if not var_11_0 then
-				return
-			end
-
-			if getProxy(BayProxy):RawGetShipById(var_11_0):isMetaShip() then
-				arg_9_0.contextData.metaShipID = var_11_0
-
-				arg_9_0.viewComponent:Init()
-
-				return
-			end
-
-			arg_9_0.contextData.shipToLesson = {
-				shipId = var_11_0,
-				index = arg_9_1
-			}
-
-			arg_9_0.viewComponent:Init()
-		end
-	}
-
-	arg_9_0:addSubLayers(Context.New({
+	slot0:addSubLayers(Context.New({
 		viewComponent = NavTacticsDockyardScene,
 		mediator = DockyardMediator,
-		data = var_9_2
+		data = {
+			selectedMax = 1,
+			prevPage = "NewNavalTacticsMediator",
+			ignoredIds = slot2,
+			hideTagFlags = ShipStatus.TAG_HIDE_TACTICES,
+			onShip = function (slot0, slot1, slot2)
+				if not slot0 then
+					return false
+				end
+
+				slot3, slot4 = ShipStatus.ShipStatusCheck("inTactics", slot0, slot1)
+
+				if not slot3 then
+					return slot3, slot4
+				end
+
+				return true
+			end,
+			onSelected = function (slot0)
+				if not slot0[1] then
+					return
+				end
+
+				if getProxy(BayProxy):RawGetShipById(slot1):isMetaShip() then
+					uv0.contextData.metaShipID = slot1
+
+					uv0.viewComponent:Init()
+
+					return
+				end
+
+				uv0.contextData.shipToLesson = {
+					shipId = slot1,
+					index = uv1
+				}
+
+				uv0.viewComponent:Init()
+			end
+		}
 	}))
 end
 
-function var_0_0.listNotificationInterests(arg_12_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		NavalAcademyProxy.SKILL_CLASS_POS_UPDATED,
 		GAME.START_TO_LEARN_TACTICS_DONE,
 		GAME.CANCEL_LEARN_TACTICS_DONE,
-		var_0_0.ON_FINISH_ONE_ANIM,
+		uv0.ON_FINISH_ONE_ANIM,
 		GAME.CANCEL_LEARN_TACTICS,
-		var_0_0.ON_CANCEL_ADD_STUDENT,
+		uv0.ON_CANCEL_ADD_STUDENT,
 		GAME.TACTICS_META_UNLOCK_SKILL_DONE,
 		GAME.TACTICS_META_SWITCH_SKILL_DONE,
 		GAME.QUICK_FINISH_LEARN_TACTICS_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1:getName()
-	local var_13_1 = arg_13_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_13_0 == NavalAcademyProxy.SKILL_CLASS_POS_UPDATED then
-		arg_13_0.viewComponent:OnUnlockSlot()
-	elseif var_13_0 == GAME.START_TO_LEARN_TACTICS_DONE then
-		arg_13_0.viewComponent:OnAddStudent()
-		arg_13_0.viewComponent:ResendCancelOp(arg_13_0.cancelList)
+	if slot1:getName() == NavalAcademyProxy.SKILL_CLASS_POS_UPDATED then
+		slot0.viewComponent:OnUnlockSlot()
+	elseif slot2 == GAME.START_TO_LEARN_TACTICS_DONE then
+		slot0.viewComponent:OnAddStudent()
+		slot0.viewComponent:ResendCancelOp(slot0.cancelList)
 
-		arg_13_0.cancelList = {}
-	elseif var_13_0 == var_0_0.ON_CANCEL_ADD_STUDENT then
-		arg_13_0.viewComponent:ResendCancelOp(arg_13_0.cancelList)
+		slot0.cancelList = {}
+	elseif slot2 == uv0.ON_CANCEL_ADD_STUDENT then
+		slot0.viewComponent:ResendCancelOp(slot0.cancelList)
 
-		arg_13_0.cancelList = {}
-	elseif var_13_0 == GAME.CANCEL_LEARN_TACTICS_DONE then
-		local var_13_2 = var_13_1.id
-		local var_13_3 = var_13_1.totalExp
-		local var_13_4 = ShipSkill.New(var_13_1.oldSkill)
-		local var_13_5 = ShipSkill.New(var_13_1.newSkill)
-		local var_13_6 = var_13_1.shipId
-
-		arg_13_0.viewComponent.finishLessonUtil:WaitForFinish(var_13_2, var_13_6, var_13_3, var_13_4, var_13_5)
-	elseif var_13_0 == GAME.CANCEL_LEARN_TACTICS then
-		arg_13_0.viewComponent:BlockEvents()
-	elseif var_13_0 == var_0_0.ON_FINISH_ONE_ANIM then
-		arg_13_0.viewComponent:UnblockEvents()
-		arg_13_0.viewComponent:OnExitStudent()
-	elseif var_13_0 == GAME.TACTICS_META_UNLOCK_SKILL_DONE then
-		arg_13_0.viewComponent:OnUpdateMetaSkillPanel(var_13_1.metaShipID)
-	elseif var_13_0 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
-		arg_13_0.viewComponent:OnUpdateMetaSkillPanel(var_13_1.metaShipID)
-	elseif var_13_0 == GAME.QUICK_FINISH_LEARN_TACTICS_DONE then
-		arg_13_0.viewComponent:BlockEvents()
-		arg_13_0.viewComponent:OnUpdateQuickFinishPanel()
+		slot0.cancelList = {}
+	elseif slot2 == GAME.CANCEL_LEARN_TACTICS_DONE then
+		slot0.viewComponent.finishLessonUtil:WaitForFinish(slot3.id, slot3.shipId, slot3.totalExp, ShipSkill.New(slot3.oldSkill), ShipSkill.New(slot3.newSkill))
+	elseif slot2 == GAME.CANCEL_LEARN_TACTICS then
+		slot0.viewComponent:BlockEvents()
+	elseif slot2 == uv0.ON_FINISH_ONE_ANIM then
+		slot0.viewComponent:UnblockEvents()
+		slot0.viewComponent:OnExitStudent()
+	elseif slot2 == GAME.TACTICS_META_UNLOCK_SKILL_DONE then
+		slot0.viewComponent:OnUpdateMetaSkillPanel(slot3.metaShipID)
+	elseif slot2 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
+		slot0.viewComponent:OnUpdateMetaSkillPanel(slot3.metaShipID)
+	elseif slot2 == GAME.QUICK_FINISH_LEARN_TACTICS_DONE then
+		slot0.viewComponent:BlockEvents()
+		slot0.viewComponent:OnUpdateQuickFinishPanel()
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,61 +1,56 @@
-﻿local var_0_0 = class("CourtYardPedestalFloorPaper", import(".CourtYardPedestalStructure"))
-local var_0_1 = {
+slot0 = class("CourtYardPedestalFloorPaper", import(".CourtYardPedestalStructure"))
+slot1 = {
 	0.5,
 	0.67,
 	0.83,
 	1
 }
 
-function var_0_0.Update(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.paper = arg_1_1
+function slot0.Update(slot0, slot1, slot2)
+	slot0.paper = slot1
 
-	var_0_0.super.Update(arg_1_0, arg_1_2)
+	uv0.super.Update(slot0, slot2)
 end
 
-function var_0_0.GetAssetPath(arg_2_0)
-	if not arg_2_0.paper then
+function slot0.GetAssetPath(slot0)
+	if not slot0.paper then
 		return "furnitrues/base/floor_4"
 	end
 
-	local var_2_0 = arg_2_0.paper:GetObjType()
+	if slot0.paper:GetObjType() == CourtYardConst.OBJ_TYPE_COMMOM then
+		return "furnitrues/" .. slot0.paper:GetPicture()
+	elseif slot1 == CourtYardConst.OBJ_TYPE_SPINE then
+		slot2, slot3 = slot0.paper:GetSpineNameAndAction()
 
-	if var_2_0 == CourtYardConst.OBJ_TYPE_COMMOM then
-		return "furnitrues/" .. arg_2_0.paper:GetPicture()
-	elseif var_2_0 == CourtYardConst.OBJ_TYPE_SPINE then
-		local var_2_1, var_2_2 = arg_2_0.paper:GetSpineNameAndAction()
-
-		return "sfurniture/" .. var_2_1
+		return "sfurniture/" .. slot2
 	end
 end
 
-function var_0_0.OnLoaded(arg_3_0, arg_3_1)
-	rtf(arg_3_1).sizeDelta = Vector2(1888, 944)
-	rtf(arg_3_1).anchorMin = Vector2(0.5, 1)
-	rtf(arg_3_1).anchorMax = Vector2(0.5, 1)
-	rtf(arg_3_1).pivot = Vector2(0.5, 1)
-	rtf(arg_3_1).localScale = Vector3(1, 1, 1)
+function slot0.OnLoaded(slot0, slot1)
+	rtf(slot1).sizeDelta = Vector2(1888, 944)
+	rtf(slot1).anchorMin = Vector2(0.5, 1)
+	rtf(slot1).anchorMax = Vector2(0.5, 1)
+	rtf(slot1).pivot = Vector2(0.5, 1)
+	rtf(slot1).localScale = Vector3(1, 1, 1)
 
-	setAnchoredPosition(rtf(arg_3_1), Vector3(0, -280, 0))
+	setAnchoredPosition(rtf(slot1), Vector3(0, -280, 0))
 
-	if arg_3_0.paper and arg_3_0.paper:GetObjType() == CourtYardConst.OBJ_TYPE_SPINE then
-		arg_3_0:InitSpine(arg_3_1)
+	if slot0.paper and slot0.paper:GetObjType() == CourtYardConst.OBJ_TYPE_SPINE then
+		slot0:InitSpine(slot1)
 	end
 
-	local var_3_0 = arg_3_0:GetRect():GetSiblingIndex()
+	tf(slot1):SetSiblingIndex(slot0:GetRect():GetSiblingIndex())
 
-	tf(arg_3_1):SetSiblingIndex(var_3_0)
-
-	local var_3_1 = var_0_1[arg_3_0.level]
-
-	arg_3_1.transform.localScale = Vector3(var_3_1, var_3_1, 1)
+	slot3 = uv0[slot0.level]
+	slot1.transform.localScale = Vector3(slot3, slot3, 1)
 end
 
-function var_0_0.InitSpine(arg_4_0, arg_4_1)
-	local var_4_0, var_4_1 = arg_4_0.paper:GetSpineNameAndAction()
+function slot0.InitSpine(slot0, slot1)
+	slot2, slot3 = slot0.paper:GetSpineNameAndAction()
 
-	if var_4_1 then
-		GetOrAddComponent(tf(arg_4_1):GetChild(0), typeof(SpineAnimUI)):SetAction(var_4_1, 0)
+	if slot3 then
+		GetOrAddComponent(tf(slot1):GetChild(0), typeof(SpineAnimUI)):SetAction(slot3, 0)
 	end
 end
 
-return var_0_0
+return slot0

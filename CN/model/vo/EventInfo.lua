@@ -1,168 +1,148 @@
-﻿local var_0_0 = class("EventInfo", import(".BaseVO"))
+slot0 = class("EventInfo", import(".BaseVO"))
+slot0.StateNone = 0
+slot0.StateActive = 1
+slot0.StateFinish = 2
 
-var_0_0.StateNone = 0
-var_0_0.StateActive = 1
-var_0_0.StateFinish = 2
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.template = pg.collection_template[slot0.id]
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.template = pg.collection_template[arg_1_0.id]
+	assert(slot0.template, "pg.collection_template>>>" .. slot0.id)
 
-	assert(arg_1_0.template, "pg.collection_template>>>" .. arg_1_0.id)
+	slot0.finishTime = slot1.finish_time
+	slot0.overTime = slot1.over_time
+	slot0.shipIds = slot1.ship_id_list or {}
+	slot0.ships = {}
+	slot0.state = uv0.StateNone
+	slot0.activityId = slot1.activity_id or 0
 
-	arg_1_0.finishTime = arg_1_1.finish_time
-	arg_1_0.overTime = arg_1_1.over_time
-	arg_1_0.shipIds = arg_1_1.ship_id_list or {}
-	arg_1_0.ships = {}
-	arg_1_0.state = var_0_0.StateNone
-	arg_1_0.activityId = arg_1_1.activity_id or 0
-
-	if arg_1_0.finishTime == 0 then
-		arg_1_0.state = var_0_0.StateNone
-	elseif arg_1_0.finishTime >= pg.TimeMgr.GetInstance():GetServerTime() then
-		arg_1_0.state = var_0_0.StateActive
+	if slot0.finishTime == 0 then
+		slot0.state = uv0.StateNone
+	elseif pg.TimeMgr.GetInstance():GetServerTime() <= slot0.finishTime then
+		slot0.state = uv0.StateActive
 	else
-		arg_1_0.state = var_0_0.StateFinish
+		slot0.state = uv0.StateFinish
 	end
 end
 
-function var_0_0.IsActivityType(arg_2_0)
-	return arg_2_0.activityId > 0
+function slot0.IsActivityType(slot0)
+	return slot0.activityId > 0
 end
 
-function var_0_0.IsStarting(arg_3_0)
-	return arg_3_0.state ~= var_0_0.StateNone
+function slot0.IsStarting(slot0)
+	return slot0.state ~= uv0.StateNone
 end
 
-function var_0_0.SetActivityId(arg_4_0, arg_4_1)
-	arg_4_0.activityId = arg_4_1
+function slot0.SetActivityId(slot0, slot1)
+	slot0.activityId = slot1
 end
 
-function var_0_0.BelongActivity(arg_5_0, arg_5_1)
-	return arg_5_0.activityId > 0 and arg_5_0.activityId == arg_5_1
+function slot0.BelongActivity(slot0, slot1)
+	return slot0.activityId > 0 and slot0.activityId == slot1
 end
 
-function var_0_0.reachNum(arg_6_0)
-	return arg_6_0.template.ship_num <= #arg_6_0.ships
+function slot0.reachNum(slot0)
+	return slot0.template.ship_num <= #slot0.ships
 end
 
-function var_0_0.reachLevel(arg_7_0)
-	return #arg_7_0.ships > 0 and _.any(arg_7_0.ships, function(arg_8_0)
-		return arg_8_0.level >= arg_7_0.template.ship_lv
+function slot0.reachLevel(slot0)
+	return #slot0.ships > 0 and _.any(slot0.ships, function (slot0)
+		return uv0.template.ship_lv <= slot0.level
 	end)
 end
 
-function var_0_0.reachTypes(arg_9_0)
-	if table.getCount(arg_9_0.ships) == 0 then
+function slot0.reachTypes(slot0)
+	if table.getCount(slot0.ships) == 0 then
 		return false
 	end
 
-	local var_9_0 = true
+	slot1 = true
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0.ships) do
-		local var_9_1 = iter_9_1:getShipType()
-
-		if not table.contains(arg_9_0.template.ship_type, var_9_1) then
-			var_9_0 = false
+	for slot5, slot6 in ipairs(slot0.ships) do
+		if not table.contains(slot0.template.ship_type, slot6:getShipType()) then
+			slot1 = false
 
 			break
 		end
 	end
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.getOilConsume(arg_10_0)
-	return arg_10_0.template.oil or 0
+function slot0.getOilConsume(slot0)
+	return slot0.template.oil or 0
 end
 
-function var_0_0.updateTime(arg_11_0)
-	local var_11_0 = false
+function slot0.updateTime(slot0)
+	slot1 = false
 
-	if arg_11_0.state == var_0_0.StateActive and pg.TimeMgr.GetInstance():GetServerTime() > arg_11_0.finishTime then
-		arg_11_0.state = var_0_0.StateFinish
-		var_11_0 = true
+	if slot0.state == uv0.StateActive and slot0.finishTime < pg.TimeMgr.GetInstance():GetServerTime() then
+		slot0.state = uv0.StateFinish
+		slot1 = true
 	end
 
-	return var_11_0
+	return slot1
 end
 
-function var_0_0.getTypesStr(arg_12_0)
-	local var_12_0 = pg.ship_data_by_type
-	local var_12_1 = arg_12_0.template.ship_type
-	local var_12_2 = false
+function slot0.getTypesStr(slot0)
+	slot3 = false
 
-	if #var_12_1 == #var_12_0.all then
-		var_12_2 = true
+	if #slot0.template.ship_type == #pg.ship_data_by_type.all then
+		slot3 = true
 
-		for iter_12_0, iter_12_1 in pairs(var_12_0.all) do
-			if not table.contains(var_12_1, iter_12_1) then
-				var_12_2 = false
+		for slot7, slot8 in pairs(slot1.all) do
+			if not table.contains(slot2, slot8) then
+				slot3 = false
 
 				break
 			end
 		end
 	end
 
-	if var_12_2 then
+	if slot3 then
 		return i18n("event_type_unlimit")
 	else
-		local var_12_3 = ""
-
-		for iter_12_2, iter_12_3 in ipairs(ShipType.FilterOverQuZhuType(var_12_1)) do
-			local var_12_4 = iter_12_2 == #arg_12_0.template.ship_type and "" or "、"
-
-			var_12_3 = var_12_3 .. var_12_0[iter_12_3].type_name .. var_12_4
+		for slot8, slot9 in ipairs(ShipType.FilterOverQuZhuType(slot2)) do
+			slot4 = "" .. slot1[slot9].type_name .. (slot8 == #slot0.template.ship_type and "" or "、")
 		end
 
-		return i18n("event_condition_ship_type", var_12_3)
+		return i18n("event_condition_ship_type", slot4)
 	end
 end
 
-local var_0_1 = "EVENTINFO_FORMATION_KEY_"
+slot1 = "EVENTINFO_FORMATION_KEY_"
 
-function var_0_0.ExistPrevFormation(arg_13_0)
-	local var_13_0 = getProxy(PlayerProxy):getRawData().id
-
-	return PlayerPrefs.HasKey(var_0_1 .. var_13_0)
+function slot0.ExistPrevFormation(slot0)
+	return PlayerPrefs.HasKey(uv0 .. getProxy(PlayerProxy):getRawData().id)
 end
 
-function var_0_0.GetPrevFormation(arg_14_0)
-	local var_14_0 = getProxy(PlayerProxy):getRawData().id
-	local var_14_1 = PlayerPrefs.GetString(var_0_1 .. var_14_0)
-	local var_14_2 = string.split(var_14_1, "#")
-
-	return _.map(var_14_2, function(arg_15_0)
-		return tonumber(arg_15_0)
+function slot0.GetPrevFormation(slot0)
+	return _.map(string.split(PlayerPrefs.GetString(uv0 .. getProxy(PlayerProxy):getRawData().id), "#"), function (slot0)
+		return tonumber(slot0)
 	end)
 end
 
-function var_0_0.SavePrevFormation(arg_16_0)
-	if not arg_16_0:CanRecordPrevFormation() then
+function slot0.SavePrevFormation(slot0)
+	if not slot0:CanRecordPrevFormation() then
 		return
 	end
 
-	local var_16_0 = _.map(arg_16_0.ships, function(arg_17_0)
-		return arg_17_0.id
-	end)
-
-	if #var_16_0 == 0 then
-		var_16_0 = arg_16_0.shipIds
+	if #_.map(slot0.ships, function (slot0)
+		return slot0.id
+	end) == 0 then
+		slot1 = slot0.shipIds
 	end
 
-	local var_16_1 = table.concat(var_16_0, "#")
-	local var_16_2 = getProxy(PlayerProxy):getRawData().id
-
-	PlayerPrefs.SetString(var_0_1 .. var_16_2, var_16_1)
+	PlayerPrefs.SetString(uv0 .. getProxy(PlayerProxy):getRawData().id, table.concat(slot1, "#"))
 	PlayerPrefs.Save()
 end
 
-function var_0_0.CanRecordPrevFormation(arg_18_0)
-	return arg_18_0.template.oil >= 800
+function slot0.CanRecordPrevFormation(slot0)
+	return slot0.template.oil >= 800
 end
 
-function var_0_0.GetCountDownTime(arg_19_0)
-	return arg_19_0.state == EventInfo.StateNone and arg_19_0.overTime > 0 and arg_19_0.overTime - pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.GetCountDownTime(slot0)
+	return slot0.state == EventInfo.StateNone and slot0.overTime > 0 and slot0.overTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-return var_0_0
+return slot0

@@ -1,26 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 1090010,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				buff_id = 1090012,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每次执行空袭后为先锋部队提高5.0%伤害，持续8秒，同技能效果不叠加",
 		addition = {
@@ -91,5 +69,27 @@
 	stack = 1,
 	id = 1090010,
 	icon = 3020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 1090010,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 1090012,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

@@ -1,13 +1,11 @@
-﻿local var_0_0 = class("GatewayNoticeMediator", import("..base.ContextMediator"))
+slot0 = class("GatewayNoticeMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:updateNotices()
+function slot0.register(slot0)
+	slot0:updateNotices()
 end
 
-function var_0_0.updateNotices(arg_2_0)
-	local var_2_0 = getProxy(GatewayNoticeProxy)
-
-	arg_2_0.viewComponent:updateNotices(var_2_0:getGatewayNotices(false))
+function slot0.updateNotices(slot0)
+	slot0.viewComponent:updateNotices(getProxy(GatewayNoticeProxy):getGatewayNotices(false))
 end
 
-return var_0_0
+return slot0

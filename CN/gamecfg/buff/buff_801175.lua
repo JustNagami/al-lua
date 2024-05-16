@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_MetaVampireskill",
-				number = 0.015
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -161,5 +149,17 @@
 	stack = 1,
 	id = 801175,
 	icon = 801175,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_MetaVampireskill",
+				number = 0.015
+			}
+		}
+	}
 }

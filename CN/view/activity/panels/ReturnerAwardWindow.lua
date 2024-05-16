@@ -1,63 +1,54 @@
-﻿local var_0_0 = class("ReturnerAwardWindow", import(".PtAwardWindow"))
+slot0 = class("ReturnerAwardWindow", import(".PtAwardWindow"))
 
-local function var_0_1(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.UIlist:make(function(arg_2_0, arg_2_1, arg_2_2)
-		if arg_2_0 == UIItemList.EventUpdate then
-			local var_2_0 = arg_1_1[arg_2_1 + 1]
-			local var_2_1 = arg_1_2[arg_2_1 + 1]
+function slot1(slot0, slot1, slot2, slot3)
+	slot0.UIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
+			slot4 = uv1[slot1 + 1]
+			uv2.resTitle = string.gsub(uv2.resTitle, "：", "")
 
-			arg_1_0.resTitle = string.gsub(arg_1_0.resTitle, "：", "")
-
-			setText(arg_2_2:Find("title/Text"), "PHASE " .. arg_2_1 + 1)
-			setText(arg_2_2:Find("target/Text"), var_2_1)
-			setText(arg_2_2:Find("target/title"), arg_1_0.resTitle)
-
-			local var_2_2 = {
-				type = var_2_0[1],
-				id = var_2_0[2],
-				count = var_2_0[3]
-			}
-
-			updateDrop(arg_2_2:Find("award"), var_2_2, {
+			setText(slot2:Find("title/Text"), "PHASE " .. slot1 + 1)
+			setText(slot2:Find("target/Text"), slot4)
+			setText(slot2:Find("target/title"), uv2.resTitle)
+			updateDrop(slot2:Find("award"), {
+				type = slot3[1],
+				id = slot3[2],
+				count = slot3[3]
+			}, {
 				hideName = true
 			})
-			onButton(arg_1_0.binder, arg_2_2:Find("award"), function()
-				arg_1_0.binder:emit(BaseUI.ON_DROP, var_2_2)
+			onButton(uv2.binder, slot2:Find("award"), function ()
+				uv0.binder:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setActive(arg_2_2:Find("award/mask"), table.contains(arg_1_3, var_2_1))
+			setActive(slot2:Find("award/mask"), table.contains(uv3, slot4))
 
-			if arg_2_2:Find("target/icon") and arg_1_0.resIcon and arg_1_0.resIcon ~= "" then
-				setActive(arg_2_2:Find("target/icon"), true)
-				LoadImageSpriteAsync(arg_1_0.resIcon, arg_2_2:Find("target/icon"), false)
+			if slot2:Find("target/icon") and uv2.resIcon and uv2.resIcon ~= "" then
+				setActive(slot2:Find("target/icon"), true)
+				LoadImageSpriteAsync(uv2.resIcon, slot2:Find("target/icon"), false)
 			else
-				setActive(arg_2_2:Find("target/icon"), false)
+				setActive(slot2:Find("target/icon"), false)
 			end
 		end
 	end)
-	arg_1_0.UIlist:align(#arg_1_1)
+	slot0.UIlist:align(#slot1)
 end
 
-function var_0_0.Show(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1.dropList
-	local var_4_1 = arg_4_1.targets
-	local var_4_2 = arg_4_1.fetchList
-	local var_4_3 = arg_4_1.count
-	local var_4_4 = arg_4_1.resId
-	local var_4_5 = Drop.New({
+function slot0.Show(slot0, slot1)
+	slot7 = Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = var_4_4
+		id = slot1.resId
 	}):getName()
+	slot0.cntTitle = i18n("pt_total_count", slot7)
+	slot0.resTitle = i18n("pt_count", slot7)
+	slot0.cntTitle = string.gsub(slot0.cntTitle, "：", "")
 
-	arg_4_0.resTitle, arg_4_0.cntTitle = i18n("pt_count", var_4_5), i18n("pt_total_count", var_4_5)
-	arg_4_0.cntTitle = string.gsub(arg_4_0.cntTitle, "：", "")
+	slot0:updateResIcon(slot1.resId, slot1.resIcon, slot1.type)
+	uv0(slot0, slot1.dropList, slot1.targets, slot1.fetchList)
 
-	arg_4_0:updateResIcon(arg_4_1.resId, arg_4_1.resIcon, arg_4_1.type)
-	var_0_1(arg_4_0, var_4_0, var_4_1, var_4_2)
+	slot0.totalTxt.text = slot1.count
+	slot0.totalTitleTxt.text = slot0.cntTitle
 
-	arg_4_0.totalTxt.text = var_4_3
-	arg_4_0.totalTitleTxt.text = arg_4_0.cntTitle
-
-	setActive(arg_4_0._tf, true)
+	setActive(slot0._tf, true)
 end
 
-return var_0_0
+return slot0

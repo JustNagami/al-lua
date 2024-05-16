@@ -1,5 +1,4 @@
-﻿return {
-	effect_list = {},
+return {
 	{
 		effect_list = {
 			{
@@ -226,5 +225,6 @@
 	painting = 1,
 	id = 19540,
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	effect_list = {}
 }

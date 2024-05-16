@@ -1,125 +1,112 @@
-﻿local var_0_0 = class("EducatePlan", import("model.vo.BaseVO"))
-
-var_0_0.RARITY2BG = {
+slot0 = class("EducatePlan", import("model.vo.BaseVO"))
+slot0.RARITY2BG = {
 	"plan_icon_grey",
 	"plan_icon_purple",
 	"plan_icon_yellow"
 }
-var_0_0.TYPE_SCHOOL = 1
-var_0_0.TYPE_INTEREST = 2
-var_0_0.TYPE_COMMUNITY = 3
-var_0_0.TYPE_FREETIME = 4
-var_0_0.TYPE_FREETIME_2 = 5
+slot0.TYPE_SCHOOL = 1
+slot0.TYPE_INTEREST = 2
+slot0.TYPE_COMMUNITY = 3
+slot0.TYPE_FREETIME = 4
+slot0.TYPE_FREETIME_2 = 5
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.child_plan
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1
-	arg_2_0.configId = arg_2_0.id
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1
+	slot0.configId = slot0.id
 end
 
-function var_0_0.GetIconBgName(arg_3_0)
-	return var_0_0.RARITY2BG[arg_3_0:getConfig("rare")]
+function slot0.GetIconBgName(slot0)
+	return uv0.RARITY2BG[slot0:getConfig("rare")]
 end
 
-function var_0_0.IsInStage(arg_4_0, arg_4_1)
-	return #arg_4_0:getConfig("stage") == 0 or table.contains(arg_4_0:getConfig("stage"), arg_4_1)
+function slot0.IsInStage(slot0, slot1)
+	return #slot0:getConfig("stage") == 0 or table.contains(slot0:getConfig("stage"), slot1)
 end
 
-function var_0_0.GetType(arg_5_0)
-	if arg_5_0:getConfig("type") == var_0_0.TYPE_FREETIME_2 then
-		return var_0_0.TYPE_FREETIME
+function slot0.GetType(slot0)
+	if slot0:getConfig("type") == uv0.TYPE_FREETIME_2 then
+		return uv0.TYPE_FREETIME
 	end
 
-	return arg_5_0:getConfig("type")
+	return slot0:getConfig("type")
 end
 
-function var_0_0.IsInTime(arg_6_0, arg_6_1, arg_6_2)
-	return underscore.any(arg_6_0:getConfig("time"), function(arg_7_0)
-		return arg_7_0[1] == arg_6_1 and arg_7_0[2] == arg_6_2
+function slot0.IsInTime(slot0, slot1, slot2)
+	return underscore.any(slot0:getConfig("time"), function (slot0)
+		return slot0[1] == uv0 and slot0[2] == uv1
 	end)
 end
 
-function var_0_0.IsShow(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	return arg_8_0:IsInStage(arg_8_1) and arg_8_0:IsInTime(arg_8_2, arg_8_3)
+function slot0.IsShow(slot0, slot1, slot2, slot3)
+	return slot0:IsInStage(slot1) and slot0:IsInTime(slot2, slot3)
 end
 
-function var_0_0.IsMatchAttr(arg_9_0, arg_9_1)
-	return underscore.all(arg_9_0:getConfig("ability"), function(arg_10_0)
-		return arg_9_1:GetAttrById(arg_10_0[2]) >= arg_10_0[3]
+function slot0.IsMatchAttr(slot0, slot1)
+	return underscore.all(slot0:getConfig("ability"), function (slot0)
+		return slot0[3] <= uv0:GetAttrById(slot0[2])
 	end)
 end
 
-function var_0_0.ExistNextPlanCanFill(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0:getConfig("pre_next")
-
-	if var_11_0 == 0 then
+function slot0.ExistNextPlanCanFill(slot0, slot1)
+	if slot0:getConfig("pre_next") == 0 then
 		return false
 	end
 
-	local var_11_1 = pg.child_plan[var_11_0].pre[2]
-	local var_11_2 = getProxy(EducateProxy):GetPlanProxy():GetHistoryCntById(arg_11_0.id)
-	local var_11_3 = EducatePlan.New(var_11_0)
-
-	return var_11_1 <= var_11_2 and var_11_3:IsMatchAttr(arg_11_1)
+	return pg.child_plan[slot2].pre[2] <= getProxy(EducateProxy):GetPlanProxy():GetHistoryCntById(slot0.id) and EducatePlan.New(slot2):IsMatchAttr(slot1)
 end
 
-function var_0_0.IsMatchPre(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0:getConfig("pre")
-
-	if #var_12_0 == 0 then
+function slot0.IsMatchPre(slot0, slot1)
+	if #slot0:getConfig("pre") == 0 then
 		return true
 	end
 
-	return arg_12_1 >= var_12_0[2]
+	return slot2[2] <= slot1
 end
 
-function var_0_0.GetCost(arg_13_0)
-	return arg_13_0:getConfig("cost_resource1"), arg_13_0:getConfig("cost_resource2"), arg_13_0:getConfig("cost_resource3")
+function slot0.GetCost(slot0)
+	return slot0:getConfig("cost_resource1"), slot0:getConfig("cost_resource2"), slot0:getConfig("cost_resource3")
 end
 
-function var_0_0.GetResult(arg_14_0)
-	return arg_14_0:getConfig("result_display")
+function slot0.GetResult(slot0)
+	return slot0:getConfig("result_display")
 end
 
-function var_0_0.CheckResult(arg_15_0, arg_15_1, arg_15_2)
-	return underscore.any(arg_15_0:GetResult(), function(arg_16_0)
-		return arg_16_0[1] == arg_15_1 and arg_16_0[2] == arg_15_2 and arg_16_0[3] > 0
+function slot0.CheckResult(slot0, slot1, slot2)
+	return underscore.any(slot0:GetResult(), function (slot0)
+		return slot0[1] == uv0 and slot0[2] == uv1 and slot0[3] > 0
 	end)
 end
 
-function var_0_0.CheckResultBySubType(arg_17_0, arg_17_1, arg_17_2)
-	return underscore.any(arg_17_0:GetResult(), function(arg_18_0)
-		return arg_18_0[1] == arg_17_1 and EducateHelper.IsMatchSubType(arg_17_2, arg_18_0[2]) and arg_18_0[3] > 0
+function slot0.CheckResultBySubType(slot0, slot1, slot2)
+	return underscore.any(slot0:GetResult(), function (slot0)
+		return slot0[1] == uv0 and EducateHelper.IsMatchSubType(uv1, slot0[2]) and slot0[3] > 0
 	end)
 end
 
-function var_0_0.GetAttrResultValue(arg_19_0, arg_19_1)
-	local var_19_0 = underscore.select(arg_19_0:GetResult(), function(arg_20_0)
-		return arg_20_0[1] == EducateConst.DROP_TYPE_ATTR and arg_20_0[2] == arg_19_1 and arg_20_0[3] > 0
-	end)
-
-	return var_19_0 and var_19_0[3] or 0
+function slot0.GetAttrResultValue(slot0, slot1)
+	return underscore.select(slot0:GetResult(), function (slot0)
+		return slot0[1] == EducateConst.DROP_TYPE_ATTR and slot0[2] == uv0 and slot0[3] > 0
+	end) and slot2[3] or 0
 end
 
-function var_0_0.GetDropInfo(arg_21_0)
-	local var_21_0 = {}
-
-	underscore.each(arg_21_0:GetResult(), function(arg_22_0)
-		table.insert(var_21_0, Drop.New({
-			type = arg_22_0[1],
-			id = arg_22_0[2],
-			number = arg_22_0[3]
+function slot0.GetDropInfo(slot0)
+	underscore.each(slot0:GetResult(), function (slot0)
+		table.insert(uv0, Drop.New({
+			type = slot0[1],
+			id = slot0[2],
+			number = slot0[3]
 		}))
 	end)
 
-	return var_21_0
+	return {}
 end
 
-function var_0_0.GetPerformance(arg_23_0)
-	return arg_23_0:getConfig("performance")
+function slot0.GetPerformance(slot0)
+	return slot0:getConfig("performance")
 end
 
-return var_0_0
+return slot0

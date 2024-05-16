@@ -1,21 +1,18 @@
-﻿local var_0_0 = class("CourtYardOtherPlayerShipModule", import(".CourtYardShipModule"))
+slot0 = class("CourtYardOtherPlayerShipModule", import(".CourtYardShipModule"))
 
-function var_0_0.Emit(arg_1_0, arg_1_1, ...)
-	if arg_1_1 == "TouchShip" or arg_1_1 == "ShipAnimtionFinish" then
-		var_0_0.super.Emit(arg_1_0, arg_1_1, ...)
+function slot0.Emit(slot0, slot1, ...)
+	if slot1 == "TouchShip" or slot1 == "ShipAnimtionFinish" then
+		uv0.super.Emit(slot0, slot1, ...)
 	end
 end
 
-function var_0_0.OnBeginDrag(arg_2_0)
-	return
+function slot0.OnBeginDrag(slot0)
 end
 
-function var_0_0.OnDragging(arg_3_0, arg_3_1)
-	return
+function slot0.OnDragging(slot0, slot1)
 end
 
-function var_0_0.OnDragEnd(arg_4_0, arg_4_1)
-	return
+function slot0.OnDragEnd(slot0, slot1)
 end
 
-return var_0_0
+return slot0

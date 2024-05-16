@@ -1,37 +1,33 @@
-﻿local var_0_0 = class("FetchCommanderTalentCommand", pm.SimpleCommand)
+slot0 = class("FetchCommanderTalentCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = getProxy(CommanderProxy)
-	local var_1_2 = var_1_1:getCommanderById(var_1_0)
-
-	if not var_1_2 then
+function slot0.execute(slot0, slot1)
+	if not getProxy(CommanderProxy):getCommanderById(slot1:getBody().id) then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25010, {
-		commanderid = var_1_0
-	}, 25011, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = {}
+		commanderid = slot3
+	}, 25011, function (slot0)
+		if slot0.result == 0 then
+			slot1 = {}
 
-			for iter_2_0, iter_2_1 in ipairs(arg_2_0.abilityid) do
-				table.insert(var_2_0, CommanderTalent.New({
+			for slot5, slot6 in ipairs(slot0.abilityid) do
+				table.insert(slot1, CommanderTalent.New({
 					origin = false,
-					id = iter_2_1
+					id = slot6
 				}))
 			end
 
-			var_1_2:updateNotLearnedList(var_2_0)
-			var_1_1:updateCommander(var_1_2)
-			arg_1_0:sendNotification(GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT_DONE, {
-				commander = var_1_2,
-				list = var_2_0
+			uv0:updateNotLearnedList(slot1)
+			uv1:updateCommander(uv0)
+			uv2:sendNotification(GAME.COMMANDER_FETCH_NOT_LEARNED_TALENT_DONE, {
+				commander = uv0,
+				list = slot1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_get_skills_done") .. arg_2_0.result .. "-" .. var_1_0)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_get_skills_done") .. slot0.result .. "-" .. uv3)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

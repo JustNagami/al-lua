@@ -1,149 +1,131 @@
-﻿local var_0_0 = class("ChatBubbleWorldBoss")
+slot0 = class("ChatBubbleWorldBoss")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.tf = tf(arg_1_1)
-	arg_1_0.interactable = defaultValue(arg_1_2, true)
-	arg_1_0.nameTF = findTF(arg_1_0.tf, "desc/name"):GetComponent("Text")
-	arg_1_0.face = findTF(arg_1_0.tf, "face/content")
-	arg_1_0.circle = findTF(arg_1_0.tf, "shipicon/frame")
-	arg_1_0.timeTF = findTF(arg_1_0.tf, "time"):GetComponent("Text")
-	arg_1_0.headTF = findTF(arg_1_0.tf, "shipicon/icon"):GetComponent("Image")
-	arg_1_0.stars = findTF(arg_1_0.tf, "shipicon/stars")
-	arg_1_0.star = findTF(arg_1_0.stars, "star")
-	arg_1_0.dutyTF = findTF(arg_1_0.tf, "desc/duty")
-	arg_1_0.channel = findTF(arg_1_0.tf, "desc/channel")
-	arg_1_0.chatframe = findTF(arg_1_0.tf, "chat_fram")
-	arg_1_0.chatContent = findTF(arg_1_0.tf, "chat_fram/Text"):GetComponent("Text")
-	arg_1_0.chatframeSel = findTF(arg_1_0.tf, "chat_fram/sel")
-	arg_1_0.chatframeUnsel = findTF(arg_1_0.tf, "chat_fram/unsel")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.tf = tf(slot1)
+	slot0.interactable = defaultValue(slot2, true)
+	slot0.nameTF = findTF(slot0.tf, "desc/name"):GetComponent("Text")
+	slot0.face = findTF(slot0.tf, "face/content")
+	slot0.circle = findTF(slot0.tf, "shipicon/frame")
+	slot0.timeTF = findTF(slot0.tf, "time"):GetComponent("Text")
+	slot0.headTF = findTF(slot0.tf, "shipicon/icon"):GetComponent("Image")
+	slot0.stars = findTF(slot0.tf, "shipicon/stars")
+	slot0.star = findTF(slot0.stars, "star")
+	slot0.dutyTF = findTF(slot0.tf, "desc/duty")
+	slot0.channel = findTF(slot0.tf, "desc/channel")
+	slot0.chatframe = findTF(slot0.tf, "chat_fram")
+	slot0.chatContent = findTF(slot0.tf, "chat_fram/Text"):GetComponent("Text")
+	slot0.chatframeSel = findTF(slot0.tf, "chat_fram/sel")
+	slot0.chatframeUnsel = findTF(slot0.tf, "chat_fram/unsel")
 
-	setActive(arg_1_0.chatframeSel, true)
-	setActive(arg_1_0.chatframeUnsel, false)
+	setActive(slot0.chatframeSel, true)
+	setActive(slot0.chatframeUnsel, false)
 end
 
-function var_0_0.update(arg_2_0, arg_2_1)
-	if arg_2_0.data == arg_2_1 then
+function slot0.update(slot0, slot1)
+	if slot0.data == slot1 then
 		return
 	end
 
-	arg_2_0.data = arg_2_1
+	slot0.data = slot1
+	slot2 = false
 
-	local var_2_0 = false
-	local var_2_1 = arg_2_1.player
-
-	if var_2_1.icon == 0 then
-		var_2_1.icon = 101171
+	if slot1.player.icon == 0 then
+		slot3.icon = 101171
 	end
 
-	local var_2_2 = var_2_1.propose
+	slot4 = slot3.propose
+	slot0.nameTF.text = slot3.name
+	slot0.timeTF.text = getOfflineTimeStamp(slot1.timestamp)
 
-	arg_2_0.nameTF.text = var_2_1.name
-
-	local var_2_3 = arg_2_1.timestamp
-	local var_2_4 = getOfflineTimeStamp(var_2_3)
-
-	arg_2_0.timeTF.text = var_2_4
-
-	local var_2_5 = pg.ship_data_statistics[var_2_1.icon]
-	local var_2_6 = Ship.New({
-		configId = var_2_5.id
-	})
-	local var_2_7 = arg_2_0.stars.childCount
-	local var_2_8 = var_2_6:getStar()
-
-	for iter_2_0 = var_2_7, var_2_8 - 1 do
-		cloneTplTo(arg_2_0.star, arg_2_0.stars)
+	for slot14 = slot0.stars.childCount, Ship.New({
+		configId = pg.ship_data_statistics[slot3.icon].id
+	}):getStar() - 1 do
+		cloneTplTo(slot0.star, slot0.stars)
 	end
 
-	local var_2_9 = arg_2_0.stars.childCount
-
-	for iter_2_1 = 0, var_2_9 - 1 do
-		arg_2_0.stars:GetChild(iter_2_1).gameObject:SetActive(iter_2_1 < var_2_5.star)
+	for slot14 = 0, slot0.stars.childCount - 1 do
+		slot0.stars:GetChild(slot14).gameObject:SetActive(slot14 < slot7.star)
 	end
 
-	if arg_2_0.channel then
-		local var_2_10 = GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg_2_1.type) .. "_1920")
-
-		setImageSprite(arg_2_0.channel, var_2_10, true)
+	if slot0.channel then
+		setImageSprite(slot0.channel, GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(slot1.type) .. "_1920"), true)
 	end
 
-	arg_2_0.headTF.color = Color.New(1, 1, 1, 0)
+	slot0.headTF.color = Color.New(1, 1, 1, 0)
 
-	LoadSpriteAsync("qicon/" .. var_2_1:getPainting(), function(arg_3_0)
-		if not IsNil(arg_2_0.headTF) then
-			arg_2_0.headTF.color = Color.white
-			arg_2_0.headTF.sprite = arg_3_0 or LoadSprite("heroicon/unknown")
+	LoadSpriteAsync("qicon/" .. slot3:getPainting(), function (slot0)
+		if not IsNil(uv0.headTF) then
+			uv0.headTF.color = Color.white
+			uv0.headTF.sprite = slot0 or LoadSprite("heroicon/unknown")
 		end
 	end)
 
-	if arg_2_0.dutyTF then
-		setActive(arg_2_0.dutyTF, var_2_1.duty)
+	if slot0.dutyTF then
+		setActive(slot0.dutyTF, slot3.duty)
 
-		if var_2_1.duty then
-			local var_2_11 = GetSpriteFromAtlas("dutyicon", var_2_1.duty)
-
-			setImageSprite(arg_2_0.dutyTF, var_2_11, true)
+		if slot3.duty then
+			setImageSprite(slot0.dutyTF, GetSpriteFromAtlas("dutyicon", slot3.duty), true)
 		end
 	end
 
-	local var_2_12 = AttireFrame.attireFrameRes(var_2_1, var_2_0, AttireConst.TYPE_ICON_FRAME, var_2_2)
+	slot11 = AttireFrame.attireFrameRes(slot3, slot2, AttireConst.TYPE_ICON_FRAME, slot4)
 
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_2_12, var_2_12, true, function(arg_4_0)
-		if IsNil(arg_2_0.tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot11, slot11, true, function (slot0)
+		if IsNil(uv0.tf) then
 			return
 		end
 
-		if arg_2_0.circle and arg_2_0.data then
-			arg_4_0.name = var_2_12
-			findTF(arg_4_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		if uv0.circle and uv0.data then
+			slot0.name = uv1
+			findTF(slot0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(arg_4_0, arg_2_0.circle, false)
+			setParent(slot0, uv0.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_2_12, var_2_12, arg_4_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
 		end
 	end)
 
-	local var_2_13 = arg_2_1.args.wordBossId
+	slot12 = slot1.args.wordBossId
 
-	onButton(nil, arg_2_0.chatframe, function()
-		if not arg_2_0.interactable then
+	onButton(nil, slot0.chatframe, function ()
+		if not uv0.interactable then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_inbattle"))
 
 			return
 		end
 
-		if arg_2_1.args.isDeath then
-			arg_2_0:SetGray()
+		if uv1.args.isDeath then
+			uv0:SetGray()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
 
 			return
 		end
 
-		pg.WorldBossTipMgr.GetInstance():OnClick("", var_2_13, arg_2_1.args.lastTime, function()
-			arg_2_0:SetGray()
+		pg.WorldBossTipMgr.GetInstance():OnClick("", uv2, uv1.args.lastTime, function ()
+			uv0:SetGray()
 		end)
 	end, SFX_PANEL)
 
-	if arg_2_1.args.isDeath then
-		arg_2_0:SetGray()
+	if slot1.args.isDeath then
+		slot0:SetGray()
 	end
 
-	arg_2_0.chatContent.text = i18n("world_boss_ad", arg_2_1.args.bossName, arg_2_1.args.level)
+	slot0.chatContent.text = i18n("world_boss_ad", slot1.args.bossName, slot1.args.level)
 end
 
-function var_0_0.SetGray(arg_7_0)
-	setActive(arg_7_0.chatframeSel, false)
-	setActive(arg_7_0.chatframeUnsel, true)
+function slot0.SetGray(slot0)
+	setActive(slot0.chatframeSel, false)
+	setActive(slot0.chatframeUnsel, true)
 end
 
-function var_0_0.dispose(arg_8_0)
-	removeOnButton(arg_8_0.chatframe)
+function slot0.dispose(slot0)
+	removeOnButton(slot0.chatframe)
 
-	if arg_8_0.circle.childCount > 0 then
-		local var_8_0 = arg_8_0.circle:GetChild(0).gameObject
+	if slot0.circle.childCount > 0 then
+		slot1 = slot0.circle:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_8_0.name, var_8_0.name, var_8_0)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. slot1.name, slot1.name, slot1)
 	end
 end
 
-return var_0_0
+return slot0

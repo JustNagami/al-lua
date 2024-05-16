@@ -1,47 +1,33 @@
-﻿local var_0_0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
+slot0 = class("PlayerSummaryInfoMediator", import("...base.ContextMediator"))
+slot0.GET_PLAYER_SUMMARY_INFO = "PlayerSummaryInfoMediator:GET_PLAYER_SUMMARY_INFO"
 
-var_0_0.GET_PLAYER_SUMMARY_INFO = "PlayerSummaryInfoMediator:GET_PLAYER_SUMMARY_INFO"
-
-function var_0_0.register(arg_1_0)
-	local var_1_0 = getProxy(ActivityProxy)
-
-	arg_1_0:bind(var_0_0.GET_PLAYER_SUMMARY_INFO, function(arg_2_0)
-		local var_2_0 = var_1_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
-
-		if var_2_0 and not var_2_0:isEnd() then
-			arg_1_0:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO, {
-				activityId = var_2_0.id
+function slot0.register(slot0)
+	slot0:bind(uv0.GET_PLAYER_SUMMARY_INFO, function (slot0)
+		if uv0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY) and not slot1:isEnd() then
+			uv1:sendNotification(GAME.GET_PLAYER_SUMMARY_INFO, {
+				activityId = slot1.id
 			})
 		end
 	end)
+	slot0.viewComponent:setActivity(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY))
 
-	local var_1_1 = var_1_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_SUMMARY)
+	slot3 = getProxy(PlayerProxy)
 
-	arg_1_0.viewComponent:setActivity(var_1_1)
-
-	local var_1_2 = getProxy(PlayerProxy)
-
-	arg_1_0.viewComponent:setPlayer(var_1_2:getData())
-
-	local var_1_3 = var_1_2:getSummaryInfo()
-
-	arg_1_0.viewComponent:setSummaryInfo(var_1_3)
+	slot0.viewComponent:setPlayer(slot3:getData())
+	slot0.viewComponent:setSummaryInfo(slot3:getSummaryInfo())
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.GET_PLAYER_SUMMARY_INFO_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
-
-	if var_4_0 == GAME.GET_PLAYER_SUMMARY_INFO_DONE then
-		arg_4_0.viewComponent:setSummaryInfo(var_4_1)
-		arg_4_0.viewComponent:initSummaryInfo()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.GET_PLAYER_SUMMARY_INFO_DONE then
+		slot0.viewComponent:setSummaryInfo(slot1:getBody())
+		slot0.viewComponent:initSummaryInfo()
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,20 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 16522,
-				target = "TargetSelf"
-			}
-		}
-	},
-	ship_type = {
-		6,
-		7
-	},
+return {
 	{
 		desc = "战斗后，队伍中航母获得经验值增加1.0%",
 		exp_ratio = 0.01,
@@ -136,5 +120,21 @@
 	stack = 1,
 	id = 16523,
 	icon = 16523,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 16522,
+				target = "TargetSelf"
+			}
+		}
+	},
+	ship_type = {
+		6,
+		7
+	}
 }

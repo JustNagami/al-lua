@@ -1,29 +1,26 @@
-﻿local var_0_0 = class("CastleMainScene", import("..base.BaseUI"))
-
-var_0_0.optionsPath = {
+slot0 = class("CastleMainScene", import("..base.BaseUI"))
+slot0.optionsPath = {
 	"main/top/btn_home"
 }
-
-local var_0_1 = "name"
-local var_0_2 = "default_value"
-local var_0_3 = "random_value"
-
-var_0_0.ACT_ID = ActivityConst.CASTLE_ACT_ID
-var_0_0.AWARD_ACT_ID = ActivityConst.CASTLE_AWARD_ID
-var_0_0.SKILL_COLOR = {
+slot1 = "name"
+slot2 = "default_value"
+slot3 = "random_value"
+slot0.ACT_ID = ActivityConst.CASTLE_ACT_ID
+slot0.AWARD_ACT_ID = ActivityConst.CASTLE_AWARD_ID
+slot0.SKILL_COLOR = {
 	"#546190",
 	"#835490",
 	"#A57D55",
 	"#C15348"
 }
-var_0_0.BAD_FILL_COLOR = Color(0.6588235294117647, 0.5019607843137255, 0.4823529411764706, 0.5)
-var_0_0.NORMAL_FILL_COLOR = Color(1, 1, 1, 0.5)
-var_0_0.TRANSPARENT_COLOR = Color(1, 1, 1, 0)
-var_0_0.MARK_CURRENT = "1"
-var_0_0.MARK_UNEXPLORED = "2"
-var_0_0.MARK_BAD = "3"
-var_0_0.MARK_EXPLORABLE = "4"
-var_0_0.MAP_POS = {
+slot0.BAD_FILL_COLOR = Color(0.6588235294117647, 0.5019607843137255, 0.4823529411764706, 0.5)
+slot0.NORMAL_FILL_COLOR = Color(1, 1, 1, 0.5)
+slot0.TRANSPARENT_COLOR = Color(1, 1, 1, 0)
+slot0.MARK_CURRENT = "1"
+slot0.MARK_UNEXPLORED = "2"
+slot0.MARK_BAD = "3"
+slot0.MARK_EXPLORABLE = "4"
+slot0.MAP_POS = {
 	1,
 	2,
 	3,
@@ -49,182 +46,183 @@ var_0_0.MAP_POS = {
 	17,
 	16
 }
-var_0_0.ROOM_NUM = 17
-var_0_0.WALK_SE = "event:/ui/castle_walk"
-var_0_0.ROLL_SE = "event:/ui/caslte_roll"
-var_0_0.CARD_SE = "event:/ui/huihua1"
+slot0.ROOM_NUM = 17
+slot0.WALK_SE = "event:/ui/castle_walk"
+slot0.ROLL_SE = "event:/ui/caslte_roll"
+slot0.CARD_SE = "event:/ui/huihua1"
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CastleMainUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:InitData()
-	arg_2_0:InitTF()
-	arg_2_0:InitAward()
-	arg_2_0:InitCharacter()
-	arg_2_0:InitDice()
-	arg_2_0:InitVX()
+function slot0.init(slot0)
+	slot0:InitData()
+	slot0:InitTF()
+	slot0:InitAward()
+	slot0:InitCharacter()
+	slot0:InitDice()
+	slot0:InitVX()
 end
 
-function var_0_0.InitTF(arg_3_0)
-	arg_3_0.main = arg_3_0:findTF("main")
-	arg_3_0.map = arg_3_0:findTF("map", arg_3_0.main)
-	arg_3_0.floors = {
-		arg_3_0:findTF("floor1", arg_3_0.map),
-		arg_3_0:findTF("floor2", arg_3_0.map)
+function slot0.InitTF(slot0)
+	slot0.main = slot0:findTF("main")
+	slot0.map = slot0:findTF("map", slot0.main)
+	slot0.floors = {
+		slot0:findTF("floor1", slot0.map),
+		slot0:findTF("floor2", slot0.map)
 	}
-	arg_3_0.rooms = {
-		arg_3_0:findTF("rooms", arg_3_0.floors[1]),
-		arg_3_0:findTF("rooms", arg_3_0.floors[2])
+	slot0.rooms = {
+		slot0:findTF("rooms", slot0.floors[1]),
+		slot0:findTF("rooms", slot0.floors[2])
 	}
-	arg_3_0.top = arg_3_0:findTF("top", arg_3_0.main)
-	arg_3_0.buttonBack = arg_3_0:findTF("btn_back", arg_3_0.top)
-	arg_3_0.buttonHelp = arg_3_0:findTF("btn_help", arg_3_0.top)
-	arg_3_0.buttonAward = arg_3_0:findTF("btn_award", arg_3_0.top)
-	arg_3_0.buttonCharacter = arg_3_0:findTF("btn_character", arg_3_0.top)
-	arg_3_0.buttonDice = arg_3_0:findTF("btn_dice", arg_3_0.top)
-	arg_3_0.diceRes = arg_3_0:findTF("dice_res", arg_3_0.buttonDice)
-	arg_3_0.button1F = arg_3_0:findTF("btn_1F", arg_3_0.top)
-	arg_3_0.button2F = arg_3_0:findTF("btn_2F", arg_3_0.top)
-	arg_3_0.window = arg_3_0:findTF("window")
+	slot0.top = slot0:findTF("top", slot0.main)
+	slot0.buttonBack = slot0:findTF("btn_back", slot0.top)
+	slot0.buttonHelp = slot0:findTF("btn_help", slot0.top)
+	slot0.buttonAward = slot0:findTF("btn_award", slot0.top)
+	slot0.buttonCharacter = slot0:findTF("btn_character", slot0.top)
+	slot0.buttonDice = slot0:findTF("btn_dice", slot0.top)
+	slot0.diceRes = slot0:findTF("dice_res", slot0.buttonDice)
+	slot0.button1F = slot0:findTF("btn_1F", slot0.top)
+	slot0.button2F = slot0:findTF("btn_2F", slot0.top)
+	slot0.window = slot0:findTF("window")
 end
 
-function var_0_0.InitData(arg_4_0)
-	arg_4_0.storyMgr = pg.NewStoryMgr.GetInstance()
-	arg_4_0.activity = getProxy(ActivityProxy):getActivityById(var_0_0.ACT_ID)
-	arg_4_0.story2Map = {}
-	arg_4_0.map2Story = {}
-	arg_4_0.storyGroup = {}
+function slot0.InitData(slot0)
+	slot0.storyMgr = pg.NewStoryMgr.GetInstance()
+	slot0.activity = getProxy(ActivityProxy):getActivityById(uv0.ACT_ID)
+	slot0.story2Map = {}
+	slot0.map2Story = {}
+	slot0.storyGroup = {}
+	slot4 = "config_data"
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0.activity:getConfig("config_data")[3]) do
-		table.insert(arg_4_0.storyGroup, iter_4_1[1][1])
-		table.insert(arg_4_0.storyGroup, iter_4_1[2][2])
-		table.insert(arg_4_0.storyGroup, iter_4_1[2][1])
+	for slot4, slot5 in ipairs(slot0.activity:getConfig(slot4)[3]) do
+		table.insert(slot0.storyGroup, slot5[1][1])
+		table.insert(slot0.storyGroup, slot5[2][2])
+		table.insert(slot0.storyGroup, slot5[2][1])
 	end
 
-	for iter_4_2 = 1, var_0_0.ROOM_NUM do
-		table.insert(arg_4_0.map2Story, {})
+	for slot4 = 1, uv0.ROOM_NUM do
+		table.insert(slot0.map2Story, {})
 	end
 
-	for iter_4_3 = 1, #arg_4_0.storyGroup do
-		table.insert(arg_4_0.story2Map, arg_4_0.storyGroup[iter_4_3], var_0_0.MAP_POS[iter_4_3])
-		table.insert(arg_4_0.map2Story[var_0_0.MAP_POS[iter_4_3]], arg_4_0.storyGroup[iter_4_3])
+	for slot4 = 1, #slot0.storyGroup do
+		table.insert(slot0.story2Map, slot0.storyGroup[slot4], uv0.MAP_POS[slot4])
+		table.insert(slot0.map2Story[uv0.MAP_POS[slot4]], slot0.storyGroup[slot4])
 	end
 
-	arg_4_0.explorableStories = {}
-	arg_4_0.exploredStories = {}
+	slot0.explorableStories = {}
+	slot0.exploredStories = {}
 
-	if arg_4_0.activity.data1 ~= nil and arg_4_0.activity.data1 ~= 0 then
-		for iter_4_4 = 1, #arg_4_0.storyGroup do
-			table.insert(arg_4_0:IsPlayed(arg_4_0.storyGroup[iter_4_4]) and arg_4_0.exploredStories or arg_4_0.explorableStories, arg_4_0.storyGroup[iter_4_4])
+	if slot0.activity.data1 ~= nil and slot0.activity.data1 ~= 0 then
+		for slot4 = 1, #slot0.storyGroup do
+			table.insert(slot0:IsPlayed(slot0.storyGroup[slot4]) and slot0.exploredStories or slot0.explorableStories, slot0.storyGroup[slot4])
 
-			if arg_4_0.storyGroup[iter_4_4] == arg_4_0.activity.data1 then
+			if slot0.storyGroup[slot4] == slot0.activity.data1 then
 				break
 			end
 		end
 	end
 
-	arg_4_0.explorablePos = arg_4_0.activity.data1
-	arg_4_0.currentPos = #arg_4_0.exploredStories == 0 and 0 or arg_4_0.exploredStories[#arg_4_0.exploredStories]
+	slot0.explorablePos = slot0.activity.data1
+	slot0.currentPos = #slot0.exploredStories == 0 and 0 or slot0.exploredStories[#slot0.exploredStories]
 end
 
-function var_0_0.InitAward(arg_5_0)
-	arg_5_0.awardWindow = arg_5_0:findTF("award_window", arg_5_0.window)
-	arg_5_0.buttonAwardGet = arg_5_0:findTF("award_bg/btn_get", arg_5_0.awardWindow)
-	arg_5_0.awardWindowBg = arg_5_0:findTF("bg", arg_5_0.awardWindow)
-	arg_5_0.awardItem = arg_5_0:findTF("award_bg/mask/item", arg_5_0.awardWindow)
-	arg_5_0.awardItems = arg_5_0:findTF("award_bg/mask/content", arg_5_0.awardWindow)
-	arg_5_0.awardActivity = getProxy(ActivityProxy):getActivityById(var_0_0.AWARD_ACT_ID)
-	arg_5_0.taskProxy = getProxy(TaskProxy)
-	arg_5_0.taskGroup = arg_5_0.awardActivity:getConfig("config_data")
-	arg_5_0.taskList = UIItemList.New(arg_5_0.awardItems, arg_5_0.awardItem)
-	arg_5_0.taskMap = {}
+function slot0.InitAward(slot0)
+	slot0.awardWindow = slot0:findTF("award_window", slot0.window)
+	slot0.buttonAwardGet = slot0:findTF("award_bg/btn_get", slot0.awardWindow)
+	slot0.awardWindowBg = slot0:findTF("bg", slot0.awardWindow)
+	slot0.awardItem = slot0:findTF("award_bg/mask/item", slot0.awardWindow)
+	slot4 = slot0.awardWindow
+	slot0.awardItems = slot0:findTF("award_bg/mask/content", slot4)
+	slot0.awardActivity = getProxy(ActivityProxy):getActivityById(uv0.AWARD_ACT_ID)
+	slot0.taskProxy = getProxy(TaskProxy)
+	slot0.taskGroup = slot0.awardActivity:getConfig("config_data")
+	slot0.taskList = UIItemList.New(slot0.awardItems, slot0.awardItem)
+	slot0.taskMap = {}
 
-	for iter_5_0 = 1, #arg_5_0.taskGroup do
-		table.insert(arg_5_0.taskMap, iter_5_0)
+	for slot4 = 1, #slot0.taskGroup do
+		table.insert(slot0.taskMap, slot4)
 	end
 end
 
-function var_0_0.InitDice(arg_6_0)
-	arg_6_0.diceWindow = arg_6_0:findTF("dice_window", arg_6_0.window)
-	arg_6_0.buttonDiceContinue = arg_6_0:findTF("btn_continue", arg_6_0.diceWindow)
-	arg_6_0.dice = arg_6_0:findTF("dice", arg_6_0.diceWindow)
-	arg_6_0.dices = {
-		arg_6_0:findTF("dice1", arg_6_0.dice),
-		arg_6_0:findTF("dice2", arg_6_0.dice)
+function slot0.InitDice(slot0)
+	slot0.diceWindow = slot0:findTF("dice_window", slot0.window)
+	slot0.buttonDiceContinue = slot0:findTF("btn_continue", slot0.diceWindow)
+	slot0.dice = slot0:findTF("dice", slot0.diceWindow)
+	slot0.dices = {
+		slot0:findTF("dice1", slot0.dice),
+		slot0:findTF("dice2", slot0.dice)
 	}
-	arg_6_0.result = arg_6_0:findTF("result", arg_6_0.diceWindow)
-	arg_6_0.success = arg_6_0:findTF("success", arg_6_0.result)
-	arg_6_0.criticalSuccess = arg_6_0:findTF("critical_success", arg_6_0.result)
-	arg_6_0.failure = arg_6_0:findTF("failure", arg_6_0.result)
-	arg_6_0.criticalFailure = arg_6_0:findTF("critical_failure", arg_6_0.result)
+	slot0.result = slot0:findTF("result", slot0.diceWindow)
+	slot0.success = slot0:findTF("success", slot0.result)
+	slot0.criticalSuccess = slot0:findTF("critical_success", slot0.result)
+	slot0.failure = slot0:findTF("failure", slot0.result)
+	slot0.criticalFailure = slot0:findTF("critical_failure", slot0.result)
 end
 
-function var_0_0.InitCharacter(arg_7_0)
-	arg_7_0.characterWindow = arg_7_0:findTF("character_window", arg_7_0.window)
-	arg_7_0.characterWindowBg = arg_7_0:findTF("bg", arg_7_0.characterWindow)
-	arg_7_0.characterCard = arg_7_0:findTF("character_card", arg_7_0.characterWindowBg)
-	arg_7_0.characterName = arg_7_0:findTF("title_base/name", arg_7_0.characterCard)
-	arg_7_0.profession = arg_7_0:findTF("title_base/profession", arg_7_0.characterCard)
-	arg_7_0.nameInput = arg_7_0:findTF("InputField", arg_7_0.characterName)
-	arg_7_0.attrGroup = arg_7_0:findTF("title_attr/attrGroup", arg_7_0.characterCard)
-	arg_7_0.skillGroup = arg_7_0:findTF("title_skill/skillGroup", arg_7_0.characterCard)
-	arg_7_0.characterTip = arg_7_0:findTF("tip", arg_7_0.characterCard)
+function slot0.InitCharacter(slot0)
+	slot0.characterWindow = slot0:findTF("character_window", slot0.window)
+	slot0.characterWindowBg = slot0:findTF("bg", slot0.characterWindow)
+	slot0.characterCard = slot0:findTF("character_card", slot0.characterWindowBg)
+	slot0.characterName = slot0:findTF("title_base/name", slot0.characterCard)
+	slot0.profession = slot0:findTF("title_base/profession", slot0.characterCard)
+	slot0.nameInput = slot0:findTF("InputField", slot0.characterName)
+	slot0.attrGroup = slot0:findTF("title_attr/attrGroup", slot0.characterCard)
+	slot0.skillGroup = slot0:findTF("title_skill/skillGroup", slot0.characterCard)
+	slot0.characterTip = slot0:findTF("tip", slot0.characterCard)
 
-	setText(arg_7_0.characterTip, i18n("roll_unlock"))
+	setText(slot0.characterTip, i18n("roll_unlock"))
 
-	arg_7_0.buttonRandom = arg_7_0:findTF("random", arg_7_0.characterCard)
-	arg_7_0.randomLock = arg_7_0:findTF("lock", arg_7_0.buttonRandom)
-	arg_7_0.randomText = arg_7_0:findTF("Image", arg_7_0.buttonRandom)
+	slot0.buttonRandom = slot0:findTF("random", slot0.characterCard)
+	slot0.randomLock = slot0:findTF("lock", slot0.buttonRandom)
+	slot0.randomText = slot0:findTF("Image", slot0.buttonRandom)
 
-	setText(arg_7_0:findTF("title_base", arg_7_0.characterCard), i18n("roll_card_info"))
-	setText(arg_7_0:findTF("title_attr", arg_7_0.characterCard), i18n("roll_card_attr"))
-	setText(arg_7_0:findTF("title_skill", arg_7_0.characterCard), i18n("roll_card_skill"))
+	setText(slot0:findTF("title_base", slot0.characterCard), i18n("roll_card_info"))
+	setText(slot0:findTF("title_attr", slot0.characterCard), i18n("roll_card_attr"))
 
-	local var_7_0 = arg_7_0.activity:getConfig("config_client")[2]
+	slot5 = slot0.characterCard
 
-	arg_7_0.story2Attr = {}
+	setText(slot0:findTF("title_skill", slot5), i18n("roll_card_skill"))
 
-	for iter_7_0, iter_7_1 in ipairs(var_7_0) do
-		table.insert(arg_7_0.story2Attr, iter_7_1[1], iter_7_1[2])
+	slot0.story2Attr = {}
+
+	for slot5, slot6 in ipairs(slot0.activity:getConfig("config_client")[2]) do
+		table.insert(slot0.story2Attr, slot6[1], slot6[2])
 	end
 
-	arg_7_0.attrLock = {}
+	slot0.attrLock = {}
 end
 
-function var_0_0.InitVX(arg_8_0)
-	for iter_8_0, iter_8_1 in ipairs({
+function slot0.InitVX(slot0)
+	for slot4, slot5 in ipairs({
 		"success",
 		"Csuccess",
 		"failure",
 		"Cfailure"
 	}) do
-		local var_8_0 = arg_8_0.result:GetChild(iter_8_0 - 1)
-		local var_8_1 = findTF(var_8_0, iter_8_1)
-		local var_8_2 = findTF(var_8_0, "VX/glow")
+		slot6 = slot0.result:GetChild(slot4 - 1)
+		slot7 = findTF(slot6, slot5)
 
-		setLocalScale(var_8_2, {
-			x = var_8_1.rect.width,
-			y = var_8_1.rect.height
+		setLocalScale(findTF(slot6, "VX/glow"), {
+			x = slot7.rect.width,
+			y = slot7.rect.height
 		})
 	end
 end
 
-function var_0_0.didEnter(arg_9_0)
-	for iter_9_0 = 1, var_0_0.ROOM_NUM do
-		local var_9_0 = arg_9_0:GetRoomTF(iter_9_0)
-		local var_9_1 = findTF(var_9_0, "name")
+function slot0.didEnter(slot0)
+	for slot4 = 1, uv0.ROOM_NUM do
+		slot5 = slot0:GetRoomTF(slot4)
 
-		setText(var_9_1, i18n("roll_room_unexplored"))
+		setText(findTF(slot5, "name"), i18n("roll_room_unexplored"))
 
-		local var_9_2 = findTF(var_9_0, "explorable")
+		slot7 = findTF(slot5, "explorable")
 
-		setImageRaycastTarget(findTF(var_9_0, "fill"), true)
-		onButton(arg_9_0, var_9_0, function()
-			for iter_10_0, iter_10_1 in ipairs(arg_9_0.map2Story[iter_9_0]) do
-				if table.contains(arg_9_0.explorableStories, iter_10_1) then
-					arg_9_0:PlayStory(iter_10_1)
+		setImageRaycastTarget(findTF(slot5, "fill"), true)
+		onButton(slot0, slot5, function ()
+			for slot3, slot4 in ipairs(uv0.map2Story[uv1]) do
+				if table.contains(uv0.explorableStories, slot4) then
+					uv0:PlayStory(slot4)
 
 					break
 				end
@@ -232,129 +230,123 @@ function var_0_0.didEnter(arg_9_0)
 		end, SFX_PANEL)
 	end
 
-	if table.contains(arg_9_0.explorableStories, arg_9_0.storyGroup[15]) or table.contains(arg_9_0.exploredStories, arg_9_0.storyGroup[15]) then
-		local var_9_3
+	if table.contains(slot0.explorableStories, slot0.storyGroup[15]) or table.contains(slot0.exploredStories, slot0.storyGroup[15]) then
+		slot2 = nil
 
-		for iter_9_1 = #arg_9_0.exploredStories, 1, -1 do
-			if not arg_9_0:IsBadEnd(arg_9_0.exploredStories[iter_9_1]) then
-				var_9_3 = arg_9_0.exploredStories[iter_9_1]
+		for slot6 = #slot0.exploredStories, 1, -1 do
+			if not slot0:IsBadEnd(slot0.exploredStories[slot6]) then
+				slot2 = slot0.exploredStories[slot6]
 
 				break
 			end
 		end
 
-		local var_9_4 = var_9_3 and arg_9_0.story2Map[var_9_3] or 0
-		local var_9_5 = var_9_4 > 10 and var_9_4 < 17
+		slot3 = slot2 and slot0.story2Map[slot2] or 0
+		slot4 = slot3 > 10 and slot3 < 17
 
-		setActive(arg_9_0.floors[1], not var_9_5)
-		setActive(arg_9_0.floors[2], var_9_5)
-		setActive(arg_9_0.button1F, not var_9_5)
-		setActive(arg_9_0.button2F, var_9_5)
+		setActive(slot0.floors[1], not slot4)
+		setActive(slot0.floors[2], slot4)
+		setActive(slot0.button1F, not slot4)
+		setActive(slot0.button2F, slot4)
 	else
-		setActive(arg_9_0.button1F, false)
-		setActive(arg_9_0.button2F, false)
+		setActive(slot0.button1F, false)
+		setActive(slot0.button2F, false)
 	end
 
-	arg_9_0.taskList:make(function(arg_11_0, arg_11_1, arg_11_2)
-		if arg_11_0 == UIItemList.EventUpdate then
-			arg_9_0:UpdateTask(arg_11_1, arg_11_2)
+	slot0.taskList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:UpdateTask(slot1, slot2)
 		end
 	end)
-	arg_9_0.nameInput:GetComponent(typeof(InputField)).onValueChanged:AddListener(function()
-		if not nameValidityCheck(getInputText(arg_9_0.nameInput), 0, 40, {
+	slot0.nameInput:GetComponent(typeof(InputField)).onValueChanged:AddListener(function ()
+		if not nameValidityCheck(getInputText(uv0.nameInput), 0, 40, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"ship_renameShip_error_2011",
 			"playerinfo_mask_word"
 		}) then
-			setInputText(arg_9_0.nameInput, getProxy(PlayerProxy):getData().name)
+			setInputText(uv0.nameInput, getProxy(PlayerProxy):getData().name)
 		end
 	end)
-	arg_9_0:InitButton()
-	arg_9_0:UpdateFlush()
+	slot0:InitButton()
+	slot0:UpdateFlush()
 
-	local var_9_6 = arg_9_0.activity:getConfig("config_data")[1]
-
-	if var_9_6 and not arg_9_0:IsPlayed(var_9_6) then
-		arg_9_0:emit(CastleMainMediator.CASTLE_ACT_OP, {
+	if slot0.activity:getConfig("config_data")[1] and not slot0:IsPlayed(slot2) then
+		slot0:emit(CastleMainMediator.CASTLE_ACT_OP, {
 			cmd = 3,
-			id = var_0_0.ACT_ID,
-			arg1 = var_9_6
+			id = uv0.ACT_ID,
+			arg1 = slot2
 		})
 	else
-		arg_9_0:CheckGuide()
+		slot0:CheckGuide()
 	end
 end
 
-function var_0_0.InitButton(arg_13_0)
-	onButton(arg_13_0, arg_13_0.button1F, function()
-		setActive(arg_13_0.button1F, false)
-		setActive(arg_13_0.button2F, true)
-		setActive(arg_13_0.floors[2], true)
-		setActive(arg_13_0.floors[1], false)
-	end, var_0_0.WALK_SE)
-	onButton(arg_13_0, arg_13_0.button2F, function()
-		setActive(arg_13_0.button2F, false)
-		setActive(arg_13_0.button1F, true)
-		setActive(arg_13_0.floors[1], true)
-		setActive(arg_13_0.floors[2], false)
-	end, var_0_0.WALK_SE)
-	onButton(arg_13_0, arg_13_0.buttonBack, function()
-		arg_13_0:closeView()
+function slot0.InitButton(slot0)
+	onButton(slot0, slot0.button1F, function ()
+		setActive(uv0.button1F, false)
+		setActive(uv0.button2F, true)
+		setActive(uv0.floors[2], true)
+		setActive(uv0.floors[1], false)
+	end, uv0.WALK_SE)
+	onButton(slot0, slot0.button2F, function ()
+		setActive(uv0.button2F, false)
+		setActive(uv0.button1F, true)
+		setActive(uv0.floors[1], true)
+		setActive(uv0.floors[2], false)
+	end, uv0.WALK_SE)
+	onButton(slot0, slot0.buttonBack, function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_13_0, arg_13_0.buttonHelp, function()
-		local var_17_0 = i18n("roll_gametip")
-
+	onButton(slot0, slot0.buttonHelp, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = var_17_0
+			helps = i18n("roll_gametip")
 		})
 	end, SFX_PANEL)
-	onButton(arg_13_0, arg_13_0.buttonAward, function()
-		setActive(arg_13_0.awardWindow, true)
-		arg_13_0:CheckAwardGet()
-		arg_13_0:ExplorableEffect(false)
+	onButton(slot0, slot0.buttonAward, function ()
+		setActive(uv0.awardWindow, true)
+		uv0:CheckAwardGet()
+		uv0:ExplorableEffect(false)
 	end, SFX_PANEL)
-	onButton(arg_13_0, arg_13_0.buttonAwardGet, function()
-		local var_19_0 = underscore(arg_13_0.taskGroup):chain():map(function(arg_20_0)
-			return arg_13_0.taskProxy:getTaskVO(arg_20_0)
-		end):filter(function(arg_21_0)
-			return arg_21_0:getTaskStatus() == 1
-		end):value()
-
-		if #var_19_0 > 0 then
-			arg_13_0:emit(CastleMainMediator.ON_TASK_SUBMIT, var_19_0)
+	onButton(slot0, slot0.buttonAwardGet, function ()
+		if #underscore(uv0.taskGroup):chain():map(function (slot0)
+			return uv0.taskProxy:getTaskVO(slot0)
+		end):filter(function (slot0)
+			return slot0:getTaskStatus() == 1
+		end):value() > 0 then
+			uv0:emit(CastleMainMediator.ON_TASK_SUBMIT, slot0)
 		end
 	end, SFX_PANEL)
-	onButton(arg_13_0, arg_13_0.awardWindowBg, function()
-		setActive(arg_13_0.awardWindow, false)
-		arg_13_0:ExplorableEffect(true)
+	onButton(slot0, slot0.awardWindowBg, function ()
+		setActive(uv0.awardWindow, false)
+		uv0:ExplorableEffect(true)
 	end, SFX_CANCEL)
-	onButton(arg_13_0, arg_13_0.buttonCharacter, function()
-		arg_13_0:UpdateCard()
-		setActive(arg_13_0.characterWindow, true)
-		pg.UIMgr.GetInstance():BlurPanel(arg_13_0.characterCard)
+	onButton(slot0, slot0.buttonCharacter, function ()
+		uv0:UpdateCard()
+		setActive(uv0.characterWindow, true)
+		pg.UIMgr.GetInstance():BlurPanel(uv0.characterCard)
 	end, SFX_PANEL)
-	onButton(arg_13_0, arg_13_0.characterWindowBg, function()
-		setActive(arg_13_0.characterWindow, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg_13_0.characterCard, arg_13_0.characterWindowBg)
-		arg_13_0:UpdateFlush()
-		arg_13_0:CheckGuide()
+	onButton(slot0, slot0.characterWindowBg, function ()
+		setActive(uv0.characterWindow, false)
+		pg.UIMgr.GetInstance():UnblurPanel(uv0.characterCard, uv0.characterWindowBg)
+		uv0:UpdateFlush()
+		uv0:CheckGuide()
 	end, SFX_CANCEL)
-	onButton(arg_13_0, arg_13_0.buttonRandom, function()
-		if arg_13_0:IsFinish() then
-			if #getInputText(arg_13_0.nameInput) == 0 then
+	onButton(slot0, slot0.buttonRandom, function ()
+		if uv0:IsFinish() then
+			if #getInputText(uv0.nameInput) == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("roll_noname"))
 			else
-				arg_13_0:RollCharacterCard()
+				uv0:RollCharacterCard()
 			end
 		end
 	end, SFX_CANCEL)
-	onButton(arg_13_0, arg_13_0.buttonDice, function()
-		if arg_13_0.diceCount < 1 then
-			if table.contains(arg_13_0.explorableStories, arg_13_0.storyGroup[23]) or table.contains(arg_13_0.explorableStories, arg_13_0.storyGroup[24]) then
+	onButton(slot0, slot0.buttonDice, function ()
+		if uv0.diceCount < 1 then
+			if table.contains(uv0.explorableStories, uv0.storyGroup[23]) or table.contains(uv0.explorableStories, uv0.storyGroup[24]) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("roll_ending_tip1"))
-			elseif table.contains(arg_13_0.exploredStories, arg_13_0.storyGroup[23]) and table.contains(arg_13_0.exploredStories, arg_13_0.storyGroup[24]) then
+			elseif table.contains(uv0.exploredStories, uv0.storyGroup[23]) and table.contains(uv0.exploredStories, uv0.storyGroup[24]) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("roll_ending_tip2"))
 			else
 				pg.TipsMgr.GetInstance():ShowTips(i18n("roll_notimes"))
@@ -363,643 +355,609 @@ function var_0_0.InitButton(arg_13_0)
 			return
 		end
 
-		if arg_13_0:IndexofStory(arg_13_0.explorablePos) > arg_13_0:IndexofStory(arg_13_0.currentPos) then
+		if uv0:IndexofStory(uv0.currentPos) < uv0:IndexofStory(uv0.explorablePos) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("roll_tip2"))
 
 			return
 		end
 
-		arg_13_0:emit(CastleMainMediator.CASTLE_ACT_OP, {
+		uv0:emit(CastleMainMediator.CASTLE_ACT_OP, {
 			cmd = 1,
-			id = var_0_0.ACT_ID
+			id = uv1.ACT_ID
 		})
 	end, SFX_PANEL)
-	onButton(arg_13_0, arg_13_0.buttonDiceContinue, function()
-		setActive(arg_13_0.diceWindow, false)
-		arg_13_0:UpdateFlush()
-		arg_13_0:CheckGuide()
-		arg_13_0:ExplorableEffect(true)
+	onButton(slot0, slot0.buttonDiceContinue, function ()
+		setActive(uv0.diceWindow, false)
+		uv0:UpdateFlush()
+		uv0:CheckGuide()
+		uv0:ExplorableEffect(true)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateFlush(arg_28_0)
-	arg_28_0.activity = getProxy(ActivityProxy):getActivityById(var_0_0.ACT_ID)
-	arg_28_0.awardActivity = getProxy(ActivityProxy):getActivityById(var_0_0.AWARD_ACT_ID)
-	arg_28_0.taskGroup = arg_28_0.awardActivity:getConfig("config_data")
+function slot0.UpdateFlush(slot0)
+	slot0.activity = getProxy(ActivityProxy):getActivityById(uv0.ACT_ID)
+	slot0.awardActivity = getProxy(ActivityProxy):getActivityById(uv0.AWARD_ACT_ID)
+	slot0.taskGroup = slot0.awardActivity:getConfig("config_data")
 
-	arg_28_0:UpdateDice()
-	arg_28_0:UpdateMap()
-	arg_28_0:UpdateAward()
-	arg_28_0:UpdateCharacter()
+	slot0:UpdateDice()
+	slot0:UpdateMap()
+	slot0:UpdateAward()
+	slot0:UpdateCharacter()
 
-	if arg_28_0:IndexofStory(arg_28_0.explorablePos) == 15 and arg_28_0:IndexofStory(arg_28_0.explorablePos) > arg_28_0:IndexofStory(arg_28_0.currentPos) then
-		setActive(arg_28_0.button1F, true)
+	if slot0:IndexofStory(slot0.explorablePos) == 15 and slot0:IndexofStory(slot0.currentPos) < slot0:IndexofStory(slot0.explorablePos) then
+		setActive(slot0.button1F, true)
 	end
 
-	setActive(arg_28_0.buttonDice, not arg_28_0:IsFinish())
+	setActive(slot0.buttonDice, not slot0:IsFinish())
 end
 
-function var_0_0.UpdateDice(arg_29_0)
-	arg_29_0.diceCount = arg_29_0.activity.data2
+function slot0.UpdateDice(slot0)
+	slot0.diceCount = slot0.activity.data2
 
-	if table.contains(arg_29_0.explorableStories, arg_29_0.explorablePos) and arg_29_0:IsBadEnd(arg_29_0.explorablePos) then
-		arg_29_0.diceCount = arg_29_0.diceCount - 1
+	if table.contains(slot0.explorableStories, slot0.explorablePos) and slot0:IsBadEnd(slot0.explorablePos) then
+		slot0.diceCount = slot0.diceCount - 1
 	end
 
-	setText(arg_29_0.diceRes, i18n("roll_times_left", arg_29_0.diceCount))
+	setText(slot0.diceRes, i18n("roll_times_left", slot0.diceCount))
 
-	if arg_29_0.explorablePos == arg_29_0.currentPos and arg_29_0.diceCount > 0 then
-		arg_29_0.buttonDice:GetComponent(typeof(Animation)):Play("anim_castle_dice_tiploop")
+	if slot0.explorablePos == slot0.currentPos and slot0.diceCount > 0 then
+		slot0.buttonDice:GetComponent(typeof(Animation)):Play("anim_castle_dice_tiploop")
 	else
-		arg_29_0.buttonDice:GetComponent(typeof(Animation)):Stop()
+		slot0.buttonDice:GetComponent(typeof(Animation)):Stop()
 	end
 end
 
-function var_0_0.UpdateMap(arg_30_0)
-	for iter_30_0 = 1, var_0_0.ROOM_NUM do
-		arg_30_0:ChangeRoomColor(iter_30_0, var_0_0.TRANSPARENT_COLOR)
-		arg_30_0:ChangeRoomMark(iter_30_0, nil)
+function slot0.UpdateMap(slot0)
+	for slot4 = 1, uv0.ROOM_NUM do
+		slot0:ChangeRoomColor(slot4, uv0.TRANSPARENT_COLOR)
+		slot0:ChangeRoomMark(slot4, nil)
 	end
 
-	for iter_30_1, iter_30_2 in ipairs(arg_30_0.exploredStories) do
-		local var_30_0 = arg_30_0.story2Map[iter_30_2]
-		local var_30_1 = arg_30_0:GetRoomTF(var_30_0)
+	for slot4, slot5 in ipairs(slot0.exploredStories) do
+		slot6 = slot0.story2Map[slot5]
 
-		setText(findTF(var_30_1, "name"), i18n("roll_room" .. var_30_0))
+		setText(findTF(slot0:GetRoomTF(slot6), "name"), i18n("roll_room" .. slot6))
 	end
 
-	setActive(findTF(arg_30_0.main, "finish_mask"), false)
+	setActive(findTF(slot0.main, "finish_mask"), false)
 
-	if arg_30_0:IsFinish() then
-		setActive(findTF(arg_30_0.main, "finish_mask"), true)
+	if slot0:IsFinish() then
+		setActive(findTF(slot0.main, "finish_mask"), true)
 
 		return
 	end
 
-	for iter_30_3, iter_30_4 in ipairs(arg_30_0.exploredStories) do
-		local var_30_2 = arg_30_0.story2Map[iter_30_4]
+	for slot4, slot5 in ipairs(slot0.exploredStories) do
+		slot6 = slot0.story2Map[slot5]
 
-		if arg_30_0:IsBadEnd(iter_30_4) then
-			if var_30_2 ~= 17 then
-				if var_30_2 ~= 4 then
-					arg_30_0:ChangeRoomColor(var_30_2, var_0_0.BAD_FILL_COLOR)
+		if slot0:IsBadEnd(slot5) then
+			if slot6 ~= 17 then
+				if slot6 ~= 4 then
+					slot0:ChangeRoomColor(slot6, uv0.BAD_FILL_COLOR)
 				end
 
-				arg_30_0:ChangeRoomMark(var_30_2, var_0_0.MARK_BAD)
+				slot0:ChangeRoomMark(slot6, uv0.MARK_BAD)
 			end
 		else
-			arg_30_0:ChangeRoomColor(var_30_2, var_0_0.NORMAL_FILL_COLOR)
+			slot0:ChangeRoomColor(slot6, uv0.NORMAL_FILL_COLOR)
 		end
 	end
 
-	for iter_30_5, iter_30_6 in ipairs(arg_30_0.explorableStories) do
-		local var_30_3 = arg_30_0.story2Map[iter_30_6]
+	for slot4, slot5 in ipairs(slot0.explorableStories) do
+		slot6 = slot0.story2Map[slot5]
 
-		arg_30_0:ChangeRoomMark(var_30_3, var_0_0.MARK_EXPLORABLE)
-		arg_30_0:ChangeRoomMark(var_30_3, var_0_0.MARK_UNEXPLORED, true)
+		slot0:ChangeRoomMark(slot6, uv0.MARK_EXPLORABLE)
+		slot0:ChangeRoomMark(slot6, uv0.MARK_UNEXPLORED, true)
 	end
 
-	if #arg_30_0.exploredStories > 0 then
-		local var_30_4
+	if #slot0.exploredStories > 0 then
+		slot1 = nil
 
-		for iter_30_7, iter_30_8 in ipairs(arg_30_0.storyGroup) do
-			if not arg_30_0:IsBadEnd(iter_30_8) and table.contains(arg_30_0.exploredStories, iter_30_8) then
-				var_30_4 = iter_30_8
+		for slot5, slot6 in ipairs(slot0.storyGroup) do
+			if not slot0:IsBadEnd(slot6) and table.contains(slot0.exploredStories, slot6) then
+				slot1 = slot6
 			end
 		end
 
-		arg_30_0:ChangeRoomMark(arg_30_0.story2Map[var_30_4], var_0_0.MARK_CURRENT, true)
+		slot0:ChangeRoomMark(slot0.story2Map[slot1], uv0.MARK_CURRENT, true)
 	end
 
-	setActive(arg_30_0.button1F:Find("Image"), table.contains(arg_30_0.explorableStories, arg_30_0.storyGroup[24]))
-	setActive(arg_30_0.button2F:Find("Image"), table.contains(arg_30_0.explorableStories, arg_30_0.storyGroup[23]))
+	setActive(slot0.button1F:Find("Image"), table.contains(slot0.explorableStories, slot0.storyGroup[24]))
+	setActive(slot0.button2F:Find("Image"), table.contains(slot0.explorableStories, slot0.storyGroup[23]))
 end
 
-function var_0_0.UpdateAward(arg_31_0)
-	arg_31_0:CheckAwardGet()
-	table.sort(arg_31_0.taskMap, function(arg_32_0, arg_32_1)
-		local var_32_0 = arg_31_0.taskProxy:getTaskVO(arg_31_0.taskGroup[arg_32_0]):getTaskStatus() == 2 and 1 or 0
-		local var_32_1 = arg_31_0.taskProxy:getTaskVO(arg_31_0.taskGroup[arg_32_1]):getTaskStatus() == 2 and 1 or 0
-
-		if var_32_0 == var_32_1 then
-			return arg_32_0 < arg_32_1
+function slot0.UpdateAward(slot0)
+	slot0:CheckAwardGet()
+	table.sort(slot0.taskMap, function (slot0, slot1)
+		if (uv0.taskProxy:getTaskVO(uv0.taskGroup[slot0]):getTaskStatus() == 2 and 1 or 0) == (uv0.taskProxy:getTaskVO(uv0.taskGroup[slot1]):getTaskStatus() == 2 and 1 or 0) then
+			return slot0 < slot1
 		end
 
-		return var_32_0 < var_32_1
+		return slot2 < slot3
 	end)
-	arg_31_0.taskList:align(#arg_31_0.taskGroup)
+	slot0.taskList:align(#slot0.taskGroup)
 
-	local var_31_0 = arg_31_0.storyMgr:StoryId2StoryName(arg_31_0.activity:getConfig("config_client")[1][3])
-
-	if not arg_31_0:IsPlayed(var_31_0) and getProxy(TaskProxy):isReceiveTasks(arg_31_0.taskGroup) then
-		playStory(var_31_0)
+	if not slot0:IsPlayed(slot0.storyMgr:StoryId2StoryName(slot0.activity:getConfig("config_client")[1][3])) and getProxy(TaskProxy):isReceiveTasks(slot0.taskGroup) then
+		playStory(slot1)
 	end
 end
 
-function var_0_0.UpdateCharacter(arg_33_0)
-	setActive(arg_33_0.randomLock, not arg_33_0:IsFinish())
-	setActive(arg_33_0.randomText, arg_33_0:IsFinish())
+function slot0.UpdateCharacter(slot0)
+	setActive(slot0.randomLock, not slot0:IsFinish())
+	setActive(slot0.randomText, slot0:IsFinish())
 
-	arg_33_0.nameInput:GetComponent(typeof(InputField)).interactable = arg_33_0:IsFinish()
+	slot0.nameInput:GetComponent(typeof(InputField)).interactable = slot0:IsFinish()
 
-	setActive(arg_33_0:findTF("edit", arg_33_0.characterName), arg_33_0:IsFinish())
+	setActive(slot0:findTF("edit", slot0.characterName), slot0:IsFinish())
 end
 
-function var_0_0.UpdateTask(arg_34_0, arg_34_1, arg_34_2)
-	local var_34_0 = arg_34_0.taskMap[arg_34_1 + 1]
-	local var_34_1 = arg_34_0:findTF("IconTpl", arg_34_2)
-	local var_34_2 = arg_34_0.taskGroup[var_34_0]
-	local var_34_3 = arg_34_0.taskProxy:getTaskVO(var_34_2)
+function slot0.UpdateTask(slot0, slot1, slot2)
+	slot3 = slot0.taskMap[slot1 + 1]
+	slot4 = slot0:findTF("IconTpl", slot2)
+	slot5 = slot0.taskGroup[slot3]
+	slot6 = slot0.taskProxy:getTaskVO(slot5)
 
-	assert(var_34_3, "without this task by id: " .. var_34_2)
-	setText(arg_34_0:findTF("title", arg_34_2), i18n("roll_reward_word" .. var_34_0))
+	assert(slot6, "without this task by id: " .. slot5)
+	setText(slot0:findTF("title", slot2), i18n("roll_reward_word" .. slot3))
 
-	local var_34_4 = var_34_3:getConfig("award_display")[1]
-	local var_34_5 = {
-		type = var_34_4[1],
-		id = var_34_4[2],
-		count = var_34_4[3]
-	}
+	slot7 = slot6:getConfig("award_display")[1]
 
-	updateDrop(var_34_1, var_34_5)
-	onButton(arg_34_0, var_34_1, function()
-		arg_34_0:emit(BaseUI.ON_DROP, var_34_5)
+	updateDrop(slot4, {
+		type = slot7[1],
+		id = slot7[2],
+		count = slot7[3]
+	})
+	onButton(slot0, slot4, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-
-	local var_34_6 = var_34_3:getProgress()
-	local var_34_7 = var_34_3:getConfig("target_num")
-
-	setText(arg_34_0:findTF("progress", arg_34_2), i18n("roll_reward_tip", var_34_6, var_34_7))
-	setText(arg_34_0:findTF("mask/Text", arg_34_2), i18n("roll_reward_got"))
-	setActive(arg_34_0:findTF("mask", arg_34_2), var_34_3:isReceive())
+	setText(slot0:findTF("progress", slot2), i18n("roll_reward_tip", slot6:getProgress(), slot6:getConfig("target_num")))
+	setText(slot0:findTF("mask/Text", slot2), i18n("roll_reward_got"))
+	setActive(slot0:findTF("mask", slot2), slot6:isReceive())
 end
 
-function var_0_0.UpdateAttrLock(arg_36_0)
-	arg_36_0.attrLock = {}
+function slot0.UpdateAttrLock(slot0)
+	slot0.attrLock = {}
 
-	for iter_36_0, iter_36_1 in ipairs(arg_36_0.exploredStories) do
-		if arg_36_0.story2Attr[iter_36_1] ~= nil then
-			for iter_36_2, iter_36_3 in ipairs(arg_36_0.story2Attr[iter_36_1]) do
-				table.insert(arg_36_0.attrLock, iter_36_3)
+	for slot4, slot5 in ipairs(slot0.exploredStories) do
+		if slot0.story2Attr[slot5] ~= nil then
+			for slot9, slot10 in ipairs(slot0.story2Attr[slot5]) do
+				table.insert(slot0.attrLock, slot10)
 			end
 		end
 	end
 end
 
-function var_0_0.UpdateCard(arg_37_0)
-	arg_37_0:UpdateAttrLock()
-	setText(arg_37_0.characterName, var_0_0.GetRollData(1, var_0_1) .. ":")
-	setInputText(arg_37_0.nameInput, getProxy(PlayerProxy):getData().name)
-	setText(arg_37_0.profession, var_0_0.GetRollData(2, var_0_1) .. ":")
-	setText(findTF(arg_37_0.profession, "Text"), var_0_0.GetRollData(2, var_0_2))
+function slot0.UpdateCard(slot0)
+	slot0:UpdateAttrLock()
+	setText(slot0.characterName, uv0.GetRollData(1, uv1) .. ":")
+	setInputText(slot0.nameInput, getProxy(PlayerProxy):getData().name)
+	setText(slot0.profession, uv0.GetRollData(2, uv1) .. ":")
 
-	for iter_37_0 = 1, arg_37_0.attrGroup.childCount do
-		local var_37_0 = arg_37_0.attrGroup:GetChild(iter_37_0 - 1)
+	slot4 = 2
 
-		for iter_37_1 = 1, var_37_0.childCount do
-			local var_37_1 = var_37_0:GetChild(iter_37_1 - 1)
-			local var_37_2 = (iter_37_1 - 1) * arg_37_0.attrGroup.childCount + iter_37_0 + 2
+	setText(findTF(slot0.profession, "Text"), uv0.GetRollData(slot4, uv2))
 
-			setText(findTF(var_37_1, "name"), var_0_0.GetRollData(var_37_2, var_0_1))
-			setText(findTF(var_37_1, "Text"), table.contains(arg_37_0.attrLock, var_37_2) and var_0_0.GetRollData(var_37_2, var_0_2) or "---")
-			setActive(findTF(var_37_1, "Text/Image"), not table.contains(arg_37_0.attrLock, var_37_2))
+	for slot4 = 1, slot0.attrGroup.childCount do
+		for slot9 = 1, slot0.attrGroup:GetChild(slot4 - 1).childCount do
+			slot10 = slot5:GetChild(slot9 - 1)
+			slot11 = (slot9 - 1) * slot0.attrGroup.childCount + slot4 + 2
+
+			setText(findTF(slot10, "name"), uv0.GetRollData(slot11, uv1))
+			setText(findTF(slot10, "Text"), table.contains(slot0.attrLock, slot11) and uv0.GetRollData(slot11, uv2) or "---")
+			setActive(findTF(slot10, "Text/Image"), not table.contains(slot0.attrLock, slot11))
 		end
 	end
 
-	for iter_37_2 = 1, arg_37_0.skillGroup.childCount do
-		local var_37_3 = arg_37_0.skillGroup:GetChild(iter_37_2 - 1)
-
-		for iter_37_3 = 1, var_37_3.childCount do
-			local var_37_4 = var_37_3:GetChild(iter_37_3 - 1)
-			local var_37_5 = (iter_37_3 - 1) * arg_37_0.attrGroup.childCount + iter_37_2 + 10
-
-			setText(findTF(var_37_4, "group/skill_name"), table.contains(arg_37_0.attrLock, var_37_5) and var_0_0.GetRollData(var_37_5, var_0_1) or "")
-			setText(findTF(var_37_4, "group/Text"), table.contains(arg_37_0.attrLock, var_37_5) and var_0_0.GetColorValue(var_37_5, var_0_0.GetRollData(var_37_5, var_0_2)) or "")
-			setActive(findTF(var_37_4, "Image"), not table.contains(arg_37_0.attrLock, var_37_5))
+	for slot4 = 1, slot0.skillGroup.childCount do
+		for slot9 = 1, slot0.skillGroup:GetChild(slot4 - 1).childCount do
+			setText(findTF(slot5:GetChild(slot9 - 1), "group/skill_name"), table.contains(slot0.attrLock, (slot9 - 1) * slot0.attrGroup.childCount + slot4 + 10) and uv0.GetRollData(slot11, uv1) or "")
+			setText(findTF(slot10, "group/Text"), table.contains(slot0.attrLock, slot11) and uv0.GetColorValue(slot11, uv0.GetRollData(slot11, uv2)) or "")
+			setActive(findTF(slot10, "Image"), not table.contains(slot0.attrLock, slot11))
 		end
 	end
 end
 
-function var_0_0.RollCharacterCard(arg_38_0)
-	for iter_38_0 = 1, arg_38_0.attrGroup.childCount do
-		local var_38_0 = arg_38_0.attrGroup:GetChild(iter_38_0 - 1)
+function slot0.RollCharacterCard(slot0)
+	for slot4 = 1, slot0.attrGroup.childCount do
+		for slot9 = 1, slot0.attrGroup:GetChild(slot4 - 1).childCount do
+			slot12 = uv0.GetRollData((slot9 - 1) * slot0.attrGroup.childCount + slot4 + 2, uv1)
 
-		for iter_38_1 = 1, var_38_0.childCount do
-			local var_38_1 = var_38_0:GetChild(iter_38_1 - 1)
-			local var_38_2 = (iter_38_1 - 1) * arg_38_0.attrGroup.childCount + iter_38_0 + 2
-			local var_38_3 = var_0_0.GetRollData(var_38_2, var_0_3)
-
-			setText(findTF(var_38_1, "Text"), math.random(var_38_3[1], var_38_3[2]))
+			setText(findTF(slot5:GetChild(slot9 - 1), "Text"), math.random(slot12[1], slot12[2]))
 		end
 	end
 
-	local var_38_4 = var_0_0.GetRandomValue(i18n("roll_attr_list"), 8)
-	local var_38_5 = 1
+	slot1 = uv0.GetRandomValue(i18n("roll_attr_list"), 8)
+	slot2 = 1
 
-	for iter_38_2 = 1, arg_38_0.skillGroup.childCount do
-		local var_38_6 = arg_38_0.skillGroup:GetChild(iter_38_2 - 1)
+	for slot6 = 1, slot0.skillGroup.childCount do
+		for slot11 = 1, slot0.skillGroup:GetChild(slot6 - 1).childCount do
+			slot12 = slot7:GetChild(slot11 - 1)
+			slot13 = (slot11 - 1) * slot0.attrGroup.childCount + slot6 + 10
 
-		for iter_38_3 = 1, var_38_6.childCount do
-			local var_38_7 = var_38_6:GetChild(iter_38_3 - 1)
-			local var_38_8 = (iter_38_3 - 1) * arg_38_0.attrGroup.childCount + iter_38_2 + 10
+			setText(findTF(slot12, "group/skill_name"), slot1[slot2])
 
-			setText(findTF(var_38_7, "group/skill_name"), var_38_4[var_38_5])
+			slot2 = slot2 + 1
 
-			var_38_5 = var_38_5 + 1
-
-			setText(findTF(var_38_7, "group/Text"), var_0_0.GetColorValue(var_38_8, var_0_0.GetRandomValue(var_0_0.GetRollData(var_38_8, var_0_3), 1)[1]))
+			setText(findTF(slot12, "group/Text"), uv0.GetColorValue(slot13, uv0.GetRandomValue(uv0.GetRollData(slot13, uv1), 1)[1]))
 		end
 	end
 end
 
-function var_0_0.IsFinish(arg_39_0)
-	return #arg_39_0.exploredStories == 24
+function slot0.IsFinish(slot0)
+	return #slot0.exploredStories == 24
 end
 
-function var_0_0.GetRandomValue(arg_40_0, arg_40_1)
-	local var_40_0 = {}
+function slot0.GetRandomValue(slot0, slot1)
+	slot2 = {}
 
-	for iter_40_0 = 1, #arg_40_0 do
-		table.insert(var_40_0, iter_40_0)
+	for slot6 = 1, #slot0 do
+		table.insert(slot2, slot6)
 	end
 
-	shuffle(var_40_0)
+	shuffle(slot2)
 
-	local var_40_1 = {}
+	slot3 = {}
 
-	for iter_40_1 = 1, arg_40_1 do
-		table.insert(var_40_1, arg_40_0[var_40_0[iter_40_1]])
+	for slot7 = 1, slot1 do
+		table.insert(slot3, slot0[slot2[slot7]])
 	end
 
-	return var_40_1
+	return slot3
 end
 
-function var_0_0.GetColorValue(arg_41_0, arg_41_1)
-	local var_41_0 = var_0_0.GetRollData(arg_41_0, var_0_3)
-	local var_41_1 = table.indexof(var_41_0, arg_41_1)
-
-	return setColorStr(arg_41_1, var_0_0.SKILL_COLOR[var_41_1])
+function slot0.GetColorValue(slot0, slot1)
+	return setColorStr(slot1, uv0.SKILL_COLOR[table.indexof(uv0.GetRollData(slot0, uv1), slot1)])
 end
 
-function var_0_0.CheckAwardGet(arg_42_0)
-	local var_42_0 = false
+function slot0.CheckAwardGet(slot0)
+	slot1 = false
 
-	for iter_42_0, iter_42_1 in ipairs(arg_42_0.taskGroup) do
-		if arg_42_0.taskProxy:getTaskVO(iter_42_1):getTaskStatus() == 1 then
-			var_42_0 = true
+	for slot5, slot6 in ipairs(slot0.taskGroup) do
+		if slot0.taskProxy:getTaskVO(slot6):getTaskStatus() == 1 then
+			slot1 = true
 		end
 	end
 
-	setActive(arg_42_0.buttonAwardGet, var_42_0)
-	setActive(findTF(arg_42_0.buttonAward, "red"), var_42_0)
+	setActive(slot0.buttonAwardGet, slot1)
+	setActive(findTF(slot0.buttonAward, "red"), slot1)
 end
 
-function var_0_0.PlayStory(arg_43_0, arg_43_1)
-	if arg_43_0:IsPlayed(arg_43_1) then
+function slot0.PlayStory(slot0, slot1)
+	if slot0:IsPlayed(slot1) then
 		return
 	end
 
-	arg_43_0.waitPlayStory = arg_43_1
+	slot0.waitPlayStory = slot1
 
-	arg_43_0:emit(CastleMainMediator.CASTLE_ACT_OP, {
+	slot0:emit(CastleMainMediator.CASTLE_ACT_OP, {
 		cmd = 2,
-		id = var_0_0.ACT_ID,
-		arg1 = arg_43_1
+		id = uv0.ACT_ID,
+		arg1 = slot1
 	})
 end
 
-function var_0_0.StoryActEnd(arg_44_0, arg_44_1)
-	if not arg_44_0.waitPlayStory then
+function slot0.StoryActEnd(slot0, slot1)
+	if not slot0.waitPlayStory then
 		return
 	end
 
-	local var_44_0, var_44_1 = arg_44_0.storyMgr:StoryId2StoryName(arg_44_0.waitPlayStory)
+	slot2, slot3 = slot0.storyMgr:StoryId2StoryName(slot0.waitPlayStory)
 
-	local function var_44_2()
-		if arg_44_0.story2Attr[arg_44_0.waitPlayStory] == nil then
+	function slot4()
+		if uv0.story2Attr[uv0.waitPlayStory] == nil then
 			return false
 		end
 
-		local var_45_0 = 0
-
-		for iter_45_0, iter_45_1 in ipairs(arg_44_0.story2Attr[arg_44_0.waitPlayStory]) do
-			if not table.contains(arg_44_0.attrLock, iter_45_1) then
-				var_45_0 = var_45_0 + 1
+		for slot4, slot5 in ipairs(uv0.story2Attr[uv0.waitPlayStory]) do
+			if not table.contains(uv0.attrLock, slot5) then
+				slot0 = 0 + 1
 			end
 		end
 
-		return var_45_0 > 0
+		return slot0 > 0
 	end
 
-	playStory(var_44_0, function()
-		if var_44_2() then
-			arg_44_0:UpdateCard()
-			setActive(arg_44_0.characterWindow, true)
-			pg.UIMgr.GetInstance():BlurPanel(arg_44_0.characterCard)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_0.CARD_SE)
+	playStory(slot2, function ()
+		if uv0() then
+			uv1:UpdateCard()
+			setActive(uv1.characterWindow, true)
+			pg.UIMgr.GetInstance():BlurPanel(uv1.characterCard)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2.CARD_SE)
 
-			for iter_46_0, iter_46_1 in ipairs(arg_44_0.story2Attr[arg_44_0.waitPlayStory]) do
-				if iter_46_1 < 11 then
-					local var_46_0 = iter_46_1 - 3
-					local var_46_1 = math.floor(var_46_0 / arg_44_0.attrGroup.childCount)
-					local var_46_2 = var_46_0 % arg_44_0.attrGroup.childCount
-					local var_46_3 = arg_44_0.attrGroup:GetChild(var_46_2):GetChild(var_46_1)
+			for slot3, slot4 in ipairs(uv1.story2Attr[uv1.waitPlayStory]) do
+				if slot4 < 11 then
+					slot5 = slot4 - 3
+					slot8 = uv1.attrGroup:GetChild(slot5 % uv1.attrGroup.childCount):GetChild(math.floor(slot5 / uv1.attrGroup.childCount))
 
-					setText(findTF(var_46_3, "Text"), var_0_0.GetRollData(iter_46_1, var_0_2))
-					findTF(var_46_3, "Text/Image"):GetComponent(typeof(Animation)):Play("anim_castle_skill")
+					setText(findTF(slot8, "Text"), uv2.GetRollData(slot4, uv3))
+					findTF(slot8, "Text/Image"):GetComponent(typeof(Animation)):Play("anim_castle_skill")
 				else
-					local var_46_4 = iter_46_1 - 11
-					local var_46_5 = math.floor(var_46_4 / arg_44_0.skillGroup.childCount)
-					local var_46_6 = var_46_4 % arg_44_0.skillGroup.childCount
-					local var_46_7 = arg_44_0.skillGroup:GetChild(var_46_6):GetChild(var_46_5)
+					slot5 = slot4 - 11
+					slot8 = uv1.skillGroup:GetChild(slot5 % uv1.skillGroup.childCount):GetChild(math.floor(slot5 / uv1.skillGroup.childCount))
 
-					setText(findTF(var_46_7, "group/skill_name"), var_0_0.GetRollData(iter_46_1, var_0_1))
-					setText(findTF(var_46_7, "group/Text"), var_0_0.GetColorValue(iter_46_1, var_0_0.GetRollData(iter_46_1, var_0_2)))
-					findTF(var_46_7, "Image"):GetComponent(typeof(Animation)):Play("anim_castle_skill")
+					setText(findTF(slot8, "group/skill_name"), uv2.GetRollData(slot4, uv4))
+					setText(findTF(slot8, "group/Text"), uv2.GetColorValue(slot4, uv2.GetRollData(slot4, uv3)))
+					findTF(slot8, "Image"):GetComponent(typeof(Animation)):Play("anim_castle_skill")
 				end
 			end
 
-			arg_44_0:ExploreStory(arg_44_0.waitPlayStory)
-			arg_44_0:UnlockStory(arg_44_1)
-			arg_44_0:UpdateAttrLock()
+			uv1:ExploreStory(uv1.waitPlayStory)
+			uv1:UnlockStory(uv5)
+			uv1:UpdateAttrLock()
 		else
-			arg_44_0:ExploreStory(arg_44_0.waitPlayStory)
-			arg_44_0:UnlockStory(arg_44_1)
-			arg_44_0:UpdateAttrLock()
-			arg_44_0:UpdateFlush()
-			arg_44_0:CheckGuide()
+			uv1:ExploreStory(uv1.waitPlayStory)
+			uv1:UnlockStory(uv5)
+			uv1:UpdateAttrLock()
+			uv1:UpdateFlush()
+			uv1:CheckGuide()
 		end
 	end)
 end
 
-function var_0_0.FirstStory(arg_47_0)
-	local var_47_0 = arg_47_0.activity:getConfig("config_data")[1]
-	local var_47_1, var_47_2 = arg_47_0.storyMgr:StoryId2StoryName(var_47_0)
+function slot0.FirstStory(slot0)
+	slot2, slot3 = slot0.storyMgr:StoryId2StoryName(slot0.activity:getConfig("config_data")[1])
 
-	playStory(var_47_1, function()
-		local var_48_0 = {
+	playStory(slot2, function ()
+		slot0 = {
 			8,
 			59496,
 			1
 		}
-		local var_48_1 = {
-			type = var_48_0[1],
-			id = var_48_0[2],
-			count = var_48_0[3]
-		}
 
-		arg_47_0:UpdateFlush()
-		arg_47_0:emit(BaseUI.ON_AWARD, {
+		uv0:UpdateFlush()
+		uv0:emit(BaseUI.ON_AWARD, {
 			items = {
-				var_48_1
+				{
+					type = slot0[1],
+					id = slot0[2],
+					count = slot0[3]
+				}
 			},
 			title = AwardInfoLayer.TITLE.ITEM,
-			removeFunc = function()
-				arg_47_0:CheckGuide()
+			removeFunc = function ()
+				uv0:CheckGuide()
 			end
 		})
 	end)
 end
 
-function var_0_0.RollDice(arg_50_0, arg_50_1, arg_50_2)
-	for iter_50_0, iter_50_1 in ipairs({
-		arg_50_0.success,
-		arg_50_0.criticalSuccess,
-		arg_50_0.failure,
-		arg_50_0.criticalFailure
+function slot0.RollDice(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs({
+		slot0.success,
+		slot0.criticalSuccess,
+		slot0.failure,
+		slot0.criticalFailure
 	}) do
-		setActive(iter_50_1, false)
+		setActive(slot7, false)
 	end
 
-	setActive(arg_50_0.diceWindow, true)
-	setActive(arg_50_0.buttonDiceContinue, false)
-	arg_50_0:ExplorableEffect(false)
-	setImageAlpha(arg_50_0.buttonDiceContinue, 0)
+	setActive(slot0.diceWindow, true)
+	setActive(slot0.buttonDiceContinue, false)
+	slot0:ExplorableEffect(false)
+	setImageAlpha(slot0.buttonDiceContinue, 0)
 
-	arg_50_0.diceNumber = arg_50_1
+	slot0.diceNumber = slot1
 
-	if arg_50_1 == 100 then
-		arg_50_1 = 0
+	if slot1 == 100 then
+		slot1 = 0
 	end
 
-	local var_50_0 = math.floor(arg_50_1 / 10)
-	local var_50_1 = arg_50_1 % 10
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.ROLL_SE)
+	slot0:SetAnim(slot0.dices[1], math.floor(slot1 / 10), nil)
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_0.ROLL_SE)
-	arg_50_0:SetAnim(arg_50_0.dices[1], var_50_0, nil)
-	arg_50_0:SetAnim(arg_50_0.dices[2], var_50_1, function()
-		LeanTween.delayedCall(go(arg_50_0._tf), 0.12, System.Action(function()
-			if arg_50_0.diceNumber <= 5 then
-				setActive(arg_50_0.criticalSuccess, true)
-			elseif arg_50_0.diceNumber <= 50 then
-				setActive(arg_50_0.success, true)
-			elseif arg_50_0.diceNumber <= 94 then
-				setActive(arg_50_0.failure, true)
+	slot8 = slot1 % 10
+
+	function slot9()
+		LeanTween.delayedCall(go(uv0._tf), 0.12, System.Action(function ()
+			if uv0.diceNumber <= 5 then
+				setActive(uv0.criticalSuccess, true)
+			elseif uv0.diceNumber <= 50 then
+				setActive(uv0.success, true)
+			elseif uv0.diceNumber <= 94 then
+				setActive(uv0.failure, true)
 			else
-				setActive(arg_50_0.criticalFailure, true)
+				setActive(uv0.criticalFailure, true)
 			end
 
-			setActive(arg_50_0.buttonDiceContinue, true)
-			LeanTween.delayedCall(go(arg_50_0._tf), 0.495, System.Action(function()
-				LeanTween.alpha(arg_50_0.buttonDiceContinue, 1, 0.26)
+			setActive(uv0.buttonDiceContinue, true)
+			LeanTween.delayedCall(go(uv0._tf), 0.495, System.Action(function ()
+				LeanTween.alpha(uv0.buttonDiceContinue, 1, 0.26)
 			end))
 		end))
-	end)
+	end
 
-	arg_50_0.explorablePos = arg_50_2
+	slot0:SetAnim(slot0.dices[2], slot8, slot9)
 
-	for iter_50_2, iter_50_3 in ipairs(arg_50_0.storyGroup) do
-		arg_50_0:UnlockStory(iter_50_3)
+	slot0.explorablePos = slot2
 
-		if iter_50_3 == arg_50_2 then
+	for slot8, slot9 in ipairs(slot0.storyGroup) do
+		slot0:UnlockStory(slot9)
+
+		if slot9 == slot2 then
 			break
 		end
 	end
 end
 
-function var_0_0.SetAnim(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
-	local var_54_0 = arg_54_1:GetComponent(typeof(SpineAnimUI))
+function slot0.SetAnim(slot0, slot1, slot2, slot3)
+	slot4 = slot1:GetComponent(typeof(SpineAnimUI))
 
-	var_54_0:SetActionCallBack(nil)
-	var_54_0:SetAction("roll" .. arg_54_2, 0)
-	var_54_0:SetActionCallBack(function(arg_55_0)
-		if arg_55_0 == "finish" then
-			var_54_0:SetActionCallBack(nil)
-			var_54_0:SetAction("normal" .. arg_54_2, 0)
+	slot4:SetActionCallBack(nil)
+	slot4:SetAction("roll" .. slot2, 0)
+	slot4:SetActionCallBack(function (slot0)
+		if slot0 == "finish" then
+			uv0:SetActionCallBack(nil)
+			uv0:SetAction("normal" .. uv1, 0)
 
-			if arg_54_3 then
-				arg_54_3()
+			if uv2 then
+				uv2()
 			end
 		end
 	end)
 end
 
-function var_0_0.UnlockStory(arg_56_0, arg_56_1)
-	if table.contains(arg_56_0.explorableStories, arg_56_1) or table.contains(arg_56_0.exploredStories, arg_56_1) then
+function slot0.UnlockStory(slot0, slot1)
+	if table.contains(slot0.explorableStories, slot1) or table.contains(slot0.exploredStories, slot1) then
 		return
 	end
 
-	table.insert(arg_56_0.explorableStories, arg_56_1)
+	table.insert(slot0.explorableStories, slot1)
 
-	if arg_56_0:IndexofStory(arg_56_1) > arg_56_0:IndexofStory(arg_56_0.explorablePos) then
-		arg_56_0.explorablePos = arg_56_1
+	if slot0:IndexofStory(slot0.explorablePos) < slot0:IndexofStory(slot1) then
+		slot0.explorablePos = slot1
 	end
 end
 
-function var_0_0.ExploreStory(arg_57_0, arg_57_1)
-	if table.contains(arg_57_0.exploredStories, arg_57_1) then
+function slot0.ExploreStory(slot0, slot1)
+	if table.contains(slot0.exploredStories, slot1) then
 		return
 	end
 
-	if not table.contains(arg_57_0.explorableStories, arg_57_1) then
+	if not table.contains(slot0.explorableStories, slot1) then
 		return
 	end
 
-	table.removebyvalue(arg_57_0.explorableStories, arg_57_1)
-	table.insert(arg_57_0.exploredStories, arg_57_1)
+	table.removebyvalue(slot0.explorableStories, slot1)
+	table.insert(slot0.exploredStories, slot1)
 
-	if arg_57_0:IndexofStory(arg_57_1) > arg_57_0:IndexofStory(arg_57_0.currentPos) then
-		arg_57_0.currentPos = arg_57_1
+	if slot0:IndexofStory(slot0.currentPos) < slot0:IndexofStory(slot1) then
+		slot0.currentPos = slot1
 	end
 end
 
-function var_0_0.IndexofStory(arg_58_0, arg_58_1)
-	local var_58_0 = table.indexof(arg_58_0.storyGroup, arg_58_1)
-
-	if var_58_0 == false then
+function slot0.IndexofStory(slot0, slot1)
+	if table.indexof(slot0.storyGroup, slot1) == false then
 		return -1
 	end
 
-	return var_58_0
+	return slot2
 end
 
-function var_0_0.IsPlayed(arg_59_0, arg_59_1)
-	local var_59_0, var_59_1 = arg_59_0.storyMgr:StoryId2StoryName(arg_59_1)
+function slot0.IsPlayed(slot0, slot1)
+	slot2, slot3 = slot0.storyMgr:StoryId2StoryName(slot1)
 
-	return arg_59_0.storyMgr:IsPlayed(var_59_0, var_59_1)
+	return slot0.storyMgr:IsPlayed(slot2, slot3)
 end
 
-function var_0_0.IsBadEnd(arg_60_0, arg_60_1)
-	return (table.indexof(arg_60_0.storyGroup, arg_60_1) + 1) % 3 == 0
+function slot0.IsBadEnd(slot0, slot1)
+	return (table.indexof(slot0.storyGroup, slot1) + 1) % 3 == 0
 end
 
-function var_0_0.ExplorableEffect(arg_61_0, arg_61_1)
-	for iter_61_0 = 1, var_0_0.ROOM_NUM do
-		local var_61_0 = arg_61_0:GetRoomTF(iter_61_0)
+function slot0.ExplorableEffect(slot0, slot1)
+	for slot5 = 1, uv0.ROOM_NUM do
+		slot6 = slot0:GetRoomTF(slot5)
 
-		setActive(findTF(var_61_0, "explorable/glow"), arg_61_1)
-		setActive(findTF(var_61_0, "explorable/glow1"), arg_61_1)
+		setActive(findTF(slot6, "explorable/glow"), slot1)
+		setActive(findTF(slot6, "explorable/glow1"), slot1)
 	end
 end
 
-function var_0_0.ChangeRoomColor(arg_62_0, arg_62_1, arg_62_2)
-	local var_62_0 = arg_62_0:GetRoomTF(arg_62_1)
-	local var_62_1 = findTF(var_62_0, "fill")
-
-	if arg_62_2 then
-		setImageColor(var_62_1, arg_62_2)
+function slot0.ChangeRoomColor(slot0, slot1, slot2)
+	if slot2 then
+		setImageColor(findTF(slot0:GetRoomTF(slot1), "fill"), slot2)
 	end
 end
 
-function var_0_0.ChangeRoomMark(arg_63_0, arg_63_1, arg_63_2, arg_63_3)
+function slot0.ChangeRoomMark(slot0, slot1, slot2, slot3)
 	cover = cover or false
+	slot4 = slot0:GetRoomTF(slot1)
+	slot5 = findTF(slot4, "current")
+	slot6 = findTF(slot4, "unexplored")
+	slot7 = findTF(slot4, "bad")
+	slot8 = findTF(slot4, "explorable")
 
-	local var_63_0 = arg_63_0:GetRoomTF(arg_63_1)
-	local var_63_1 = findTF(var_63_0, "current")
-	local var_63_2 = findTF(var_63_0, "unexplored")
-	local var_63_3 = findTF(var_63_0, "bad")
-	local var_63_4 = findTF(var_63_0, "explorable")
-
-	if not arg_63_3 then
-		for iter_63_0, iter_63_1 in ipairs({
-			var_63_1,
-			var_63_2,
-			var_63_3,
-			var_63_4
+	if not slot3 then
+		for slot12, slot13 in ipairs({
+			slot5,
+			slot6,
+			slot7,
+			slot8
 		}) do
-			setActive(iter_63_1, false)
+			setActive(slot13, false)
 		end
 	end
 
-	if arg_63_2 then
-		if arg_63_2 == var_0_0.MARK_CURRENT then
-			setActive(var_63_1, true)
-		elseif arg_63_2 == var_0_0.MARK_UNEXPLORED then
-			setActive(var_63_2, true)
-		elseif arg_63_2 == var_0_0.MARK_BAD then
-			setActive(var_63_3, true)
-		elseif arg_63_2 == var_0_0.MARK_EXPLORABLE then
-			setActive(var_63_4, true)
+	if slot2 then
+		if slot2 == uv0.MARK_CURRENT then
+			setActive(slot5, true)
+		elseif slot2 == uv0.MARK_UNEXPLORED then
+			setActive(slot6, true)
+		elseif slot2 == uv0.MARK_BAD then
+			setActive(slot7, true)
+		elseif slot2 == uv0.MARK_EXPLORABLE then
+			setActive(slot8, true)
 		end
 	end
 end
 
-function var_0_0.GetRoomTF(arg_64_0, arg_64_1)
-	if arg_64_1 == var_0_0.ROOM_NUM then
-		return arg_64_0.rooms[1]:GetChild(arg_64_0.rooms[1].childCount - 1)
-	elseif arg_64_1 < arg_64_0.rooms[1].childCount then
-		return arg_64_0.rooms[1]:GetChild(arg_64_1 - 1)
+function slot0.GetRoomTF(slot0, slot1)
+	if slot1 == uv0.ROOM_NUM then
+		return slot0.rooms[1]:GetChild(slot0.rooms[1].childCount - 1)
+	elseif slot1 < slot0.rooms[1].childCount then
+		return slot0.rooms[1]:GetChild(slot1 - 1)
 	end
 
-	arg_64_1 = arg_64_1 - arg_64_0.rooms[1].childCount
-
-	return arg_64_0.rooms[2]:GetChild(arg_64_1)
+	return slot0.rooms[2]:GetChild(slot1 - slot0.rooms[1].childCount)
 end
 
-function var_0_0.CheckGuide(arg_65_0)
-	for iter_65_0, iter_65_1 in pairs({
+function slot0.CheckGuide(slot0)
+	slot5 = slot0.storyMgr
+
+	function slot4(slot0)
+		return getProxy(TaskProxy):isReceiveTasks(slot0.taskGroup)
+	end
+
+	for slot4, slot5 in pairs({
 		{
 			"guide",
 			"Castle000",
-			function(arg_66_0)
-				return #arg_66_0.exploredStories == 0
+			function (slot0)
+				return #slot0.exploredStories == 0
 			end
 		},
 		{
 			"guide",
 			"Castle001",
-			function(arg_67_0)
-				return #arg_67_0.exploredStories == 1 and arg_67_0:IndexofStory(arg_67_0.explorablePos) <= arg_67_0:IndexofStory(arg_67_0.currentPos)
+			function (slot0)
+				return #slot0.exploredStories == 1 and slot0:IndexofStory(slot0.explorablePos) <= slot0:IndexofStory(slot0.currentPos)
 			end
 		},
 		{
 			"story",
-			arg_65_0.storyMgr:StoryId2StoryName(arg_65_0.activity:getConfig("config_client")[1][1]),
-			function(arg_68_0)
-				return #arg_68_0.exploredStories == 1 and arg_68_0:IndexofStory(arg_68_0.explorablePos) > arg_68_0:IndexofStory(arg_68_0.currentPos)
+			slot0.storyMgr:StoryId2StoryName(slot0.activity:getConfig("config_client")[1][1]),
+			function (slot0)
+				return #slot0.exploredStories == 1 and slot0:IndexofStory(slot0.currentPos) < slot0:IndexofStory(slot0.explorablePos)
 			end
 		},
 		{
 			"story",
-			arg_65_0.storyMgr:StoryId2StoryName(arg_65_0.activity:getConfig("config_client")[1][2]),
-			function(arg_69_0)
-				return #arg_69_0.exploredStories == 2 and arg_69_0:IndexofStory(arg_69_0.explorablePos) <= arg_69_0:IndexofStory(arg_69_0.currentPos)
+			slot0.storyMgr:StoryId2StoryName(slot0.activity:getConfig("config_client")[1][2]),
+			function (slot0)
+				return #slot0.exploredStories == 2 and slot0:IndexofStory(slot0.explorablePos) <= slot0:IndexofStory(slot0.currentPos)
 			end
 		},
 		{
 			"guide",
 			"Castle002",
-			function(arg_70_0)
-				return arg_70_0:IndexofStory(arg_70_0.explorablePos) == 15 and arg_70_0:IndexofStory(arg_70_0.explorablePos) > arg_70_0:IndexofStory(arg_70_0.currentPos)
+			function (slot0)
+				return slot0:IndexofStory(slot0.explorablePos) == 15 and slot0:IndexofStory(slot0.currentPos) < slot0:IndexofStory(slot0.explorablePos)
 			end
 		},
 		{
 			"story",
-			arg_65_0.storyMgr:StoryId2StoryName(arg_65_0.activity:getConfig("config_client")[1][3]),
-			function(arg_71_0)
-				return getProxy(TaskProxy):isReceiveTasks(arg_71_0.taskGroup)
-			end
+			slot4.StoryId2StoryName(slot5, slot0.activity:getConfig("config_client")[1][3]),
+			slot4
 		}
 	}) do
-		local var_65_0, var_65_1, var_65_2 = unpack(iter_65_1)
+		slot6, slot7, slot8 = unpack(slot5)
 
-		if not arg_65_0:IsPlayed(var_65_1) and var_65_2(arg_65_0) then
-			if var_65_0 == "guide" then
-				pg.NewGuideMgr.GetInstance():Play(var_65_1, nil, function()
-					arg_65_0:emit(CastleMainMediator.UPDATE_GUIDE, var_65_1)
+		if not slot0:IsPlayed(slot7) and slot8(slot0) then
+			if slot6 == "guide" then
+				pg.NewGuideMgr.GetInstance():Play(slot7, nil, function ()
+					uv0:emit(CastleMainMediator.UPDATE_GUIDE, uv1)
 				end)
-			elseif var_65_0 == "story" then
-				playStory(var_65_1)
+			elseif slot6 == "story" then
+				playStory(slot7)
 			else
 				assert(false)
 			end
@@ -1009,29 +967,29 @@ function var_0_0.CheckGuide(arg_65_0)
 	end
 end
 
-function var_0_0.PlaySE(arg_73_0)
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_73_0)
+function slot0.PlaySE(slot0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot0)
 end
 
-function var_0_0.GetRollData(arg_74_0, arg_74_1)
-	return pg.roll_attr[arg_74_0][arg_74_1]
+function slot0.GetRollData(slot0, slot1)
+	return pg.roll_attr[slot0][slot1]
 end
 
-function var_0_0.willExit(arg_75_0)
-	if isActive(arg_75_0.characterWindow) then
-		setActive(arg_75_0.characterWindow, false)
-		pg.UIMgr.GetInstance():UnblurPanel(arg_75_0.characterCard, arg_75_0.characterWindowBg)
+function slot0.willExit(slot0)
+	if isActive(slot0.characterWindow) then
+		setActive(slot0.characterWindow, false)
+		pg.UIMgr.GetInstance():UnblurPanel(slot0.characterCard, slot0.characterWindowBg)
 	end
 
-	LeanTween.cancel(go(arg_75_0._tf))
+	LeanTween.cancel(go(slot0._tf))
 end
 
-function var_0_0.onBackPressed(arg_76_0)
-	if isActive(arg_76_0.diceWindow) then
+function slot0.onBackPressed(slot0)
+	if isActive(slot0.diceWindow) then
 		return
 	end
 
-	arg_76_0:emit(var_0_0.ON_BACK_PRESSED)
+	slot0:emit(uv0.ON_BACK_PRESSED)
 end
 
-return var_0_0
+return slot0

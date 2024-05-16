@@ -1,46 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetShipType",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.01,
-				ship_type_list = {
-					6,
-					7
-				}
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetPlayerFlagShip",
-				"TargetShipType"
-			},
-			arg_list = {
-				maxHPRatio = 0.01,
-				ship_type_list = {
-					7
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -408,5 +366,47 @@
 	id = 14680,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetShipType",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.01,
+				ship_type_list = {
+					6,
+					7
+				}
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetPlayerFlagShip",
+				"TargetShipType"
+			},
+			arg_list = {
+				maxHPRatio = 0.01,
+				ship_type_list = {
+					7
+				}
+			}
+		}
+	}
 }

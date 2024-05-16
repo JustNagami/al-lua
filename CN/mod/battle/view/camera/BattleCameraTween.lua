@@ -1,44 +1,39 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig
+slot2 = slot0.Battle.BattleVariable
+slot0.Battle.BattleCameraTween = class("BattleCameraTween")
+slot0.Battle.BattleCameraTween.__name = "BattleCameraTween"
+slot3 = slot0.Battle.BattleCameraTween
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig
-local var_0_2 = var_0_0.Battle.BattleVariable
-
-var_0_0.Battle.BattleCameraTween = class("BattleCameraTween")
-var_0_0.Battle.BattleCameraTween.__name = "BattleCameraTween"
-
-local var_0_3 = var_0_0.Battle.BattleCameraTween
-
-function var_0_3.Ctor(arg_1_0)
-	arg_1_0._point = Vector3.zero
+function slot3.Ctor(slot0)
+	slot0._point = Vector3.zero
 end
 
-function var_0_3.SetFromTo(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_2_6, arg_2_7)
-	arg_2_0._point:Set(arg_2_2.x, arg_2_2.y, arg_2_2.z)
+function slot3.SetFromTo(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+	slot0._point:Set(slot2.x, slot2.y, slot2.z)
 
-	local var_2_0 = LeanTween.value(go(arg_2_1), arg_2_2, arg_2_3, arg_2_4):setOnUpdateVector3(System.Action_UnityEngine_Vector3(function(arg_3_0)
-		arg_2_0._point:Set(arg_3_0.x, arg_3_0.y, arg_3_0.z)
-	end))
-
-	if arg_2_5 and arg_2_5 ~= 0 then
-		var_2_0:setDelay(arg_2_5)
+	if slot5 and slot5 ~= 0 then
+		LeanTween.value(go(slot1), slot2, slot3, slot4):setOnUpdateVector3(System.Action_UnityEngine_Vector3(function (slot0)
+			uv0._point:Set(slot0.x, slot0.y, slot0.z)
+		end)):setDelay(slot5)
 	end
 
-	if arg_2_6 then
-		var_2_0:setEase(LeanTweenType.easeOutExpo)
+	if slot6 then
+		slot8:setEase(LeanTweenType.easeOutExpo)
 	end
 
-	if arg_2_7 then
-		var_2_0:setOnComplete(System.Action(function()
-			arg_2_7()
+	if slot7 then
+		slot8:setOnComplete(System.Action(function ()
+			uv0()
 		end))
 	end
 end
 
-function var_0_3.GetCameraPos(arg_5_0)
-	return arg_5_0._point
+function slot3.GetCameraPos(slot0)
+	return slot0._point
 end
 
-function var_0_3.Dispose(arg_6_0)
-	arg_6_0._point = nil
+function slot3.Dispose(slot0)
+	slot0._point = nil
 end

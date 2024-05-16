@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				hpUpperBound = 1,
-				skill_id = 800806,
-				hpLowerBound = 0.2
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 800805,
 	icon = 800800,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				hpUpperBound = 1,
+				skill_id = 800806,
+				hpLowerBound = 0.2
+			}
+		}
+	}
 }

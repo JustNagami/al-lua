@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10030
-			}
-		}
-	},
+return {
 	{
 		desc = "出击时，提高全队弗莱彻级驱逐舰的炮击、机动10.0%",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 10030,
 	icon = 10030,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10030
+			}
+		}
+	}
 }

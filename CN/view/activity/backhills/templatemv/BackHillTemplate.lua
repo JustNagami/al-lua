@@ -1,314 +1,261 @@
-﻿local var_0_0 = class("BackHillTemplate", import("view.base.BaseUI"))
+slot0 = class("BackHillTemplate", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
-	return arg_1_0.UIName
+function slot0.getUIName(slot0)
+	return slot0.UIName
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.loader = AutoLoader.New()
+function slot0.init(slot0)
+	slot0.loader = AutoLoader.New()
 end
 
-function var_0_0.willExit(arg_3_0)
-	arg_3_0.loader:Clear()
+function slot0.willExit(slot0)
+	slot0.loader:Clear()
 end
 
-function var_0_0.InitFacility(arg_4_0, arg_4_1, arg_4_2)
-	onButton(arg_4_0, arg_4_1, arg_4_2)
-	onButton(arg_4_0, arg_4_1:Find("button"), arg_4_2)
+function slot0.InitFacility(slot0, slot1, slot2)
+	onButton(slot0, slot1, slot2)
+	onButton(slot0, slot1:Find("button"), slot2)
 end
 
-function var_0_0.InitFacilityCross(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	onButton(arg_5_0, arg_5_1:Find(arg_5_3), arg_5_4, SFX_PANEL)
-	onButton(arg_5_0, arg_5_2:Find(arg_5_3), arg_5_4, SFX_PANEL)
+function slot0.InitFacilityCross(slot0, slot1, slot2, slot3, slot4)
+	onButton(slot0, slot1:Find(slot3), slot4, SFX_PANEL)
+	onButton(slot0, slot2:Find(slot3), slot4, SFX_PANEL)
 end
 
-function var_0_0.getStudents(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = {}
-	local var_6_1 = getProxy(ActivityProxy):getActivityById(arg_6_0)
-
-	if not var_6_1 then
-		return var_6_0
+function slot0.getStudents(slot0, slot1, slot2)
+	if not getProxy(ActivityProxy):getActivityById(slot0) then
+		return {}
 	end
 
-	local var_6_2 = var_6_1:getConfig("config_client")
+	if slot5:getConfig("config_client") and slot6.ships then
+		slot7 = math.random(slot1, slot2)
+		slot8 = #Clone(slot6)
 
-	var_6_2 = var_6_2 and var_6_2.ships
+		while slot7 > 0 and slot8 > 0 do
+			slot9 = math.random(1, slot8)
 
-	if var_6_2 then
-		local var_6_3 = Clone(var_6_2)
-		local var_6_4 = math.random(arg_6_1, arg_6_2)
-		local var_6_5 = #var_6_3
+			table.insert(slot3, slot6[slot9])
 
-		while var_6_4 > 0 and var_6_5 > 0 do
-			local var_6_6 = math.random(1, var_6_5)
-
-			table.insert(var_6_0, var_6_3[var_6_6])
-
-			var_6_3[var_6_6] = var_6_3[var_6_5]
-			var_6_5 = var_6_5 - 1
-			var_6_4 = var_6_4 - 1
+			slot6[slot9] = slot6[slot8]
+			slot8 = slot8 - 1
+			slot7 = slot7 - 1
 		end
 	end
 
-	return var_6_0
+	return slot3
 end
 
-function var_0_0.InitStudents(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	local var_7_0 = var_0_0.getStudents(arg_7_1, arg_7_2, arg_7_3)
-	local var_7_1 = {}
+function slot0.InitStudents(slot0, slot1, slot2, slot3)
+	slot4 = uv0.getStudents(slot1, slot2, slot3)
+	slot5 = {}
 
-	for iter_7_0, iter_7_1 in pairs(arg_7_0.graphPath.points) do
-		if not iter_7_1.outRandom then
-			table.insert(var_7_1, iter_7_1)
+	for slot9, slot10 in pairs(slot0.graphPath.points) do
+		if not slot10.outRandom then
+			table.insert(slot5, slot10)
 		end
 	end
 
-	local var_7_2 = #var_7_1
+	slot0.academyStudents = {}
 
-	arg_7_0.academyStudents = {}
+	for slot11, slot12 in pairs(slot4) do
+		if not slot0.academyStudents[slot11] then
+			slot13 = cloneTplTo(slot0._shipTpl, slot0._map)
+			slot13.gameObject.name = slot11
+			slot15 = SummerFeastNavigationAgent.New(slot13.gameObject)
 
-	local var_7_3 = {}
-
-	for iter_7_2, iter_7_3 in pairs(var_7_0) do
-		if not arg_7_0.academyStudents[iter_7_2] then
-			local var_7_4 = cloneTplTo(arg_7_0._shipTpl, arg_7_0._map)
-
-			var_7_4.gameObject.name = iter_7_2
-
-			local var_7_5 = arg_7_0.ChooseRandomPos(var_7_1, var_7_2)
-
-			var_7_2 = (var_7_2 - 2) % #var_7_1 + 1
-
-			local var_7_6 = SummerFeastNavigationAgent.New(var_7_4.gameObject)
-
-			var_7_6:attach()
-			var_7_6:setPathFinder(arg_7_0.graphPath)
-			var_7_6:SetPositionTable(var_7_3)
-			var_7_6:setCurrentIndex(var_7_5 and var_7_5.id)
-			var_7_6:SetOnTransEdge(function(arg_8_0, arg_8_1, arg_8_2)
-				arg_8_1, arg_8_2 = math.min(arg_8_1, arg_8_2), math.max(arg_8_1, arg_8_2)
-
-				local var_8_0 = arg_7_0[arg_7_0.edge2area[arg_8_1 .. "_" .. arg_8_2] or arg_7_0.edge2area.default]
-
-				arg_8_0._tf:SetParent(var_8_0)
+			slot15:attach()
+			slot15:setPathFinder(slot0.graphPath)
+			slot15:SetPositionTable({})
+			slot15:setCurrentIndex(slot0.ChooseRandomPos(slot5, (#slot5 - 2) % #slot5 + 1) and slot14.id)
+			slot15:SetOnTransEdge(function (slot0, slot1, slot2)
+				slot0._tf:SetParent(uv0[uv0.edge2area[math.min(slot1, slot2) .. "_" .. math.max(slot1, slot2)] or uv0.edge2area.default])
 			end)
-			var_7_6:updateStudent(iter_7_3)
+			slot15:updateStudent(slot12)
 
-			arg_7_0.academyStudents[iter_7_2] = var_7_6
+			slot0.academyStudents[slot11] = slot15
 		end
 	end
 
-	if #var_7_0 > 0 then
-		arg_7_0.sortTimer = Timer.New(function()
-			arg_7_0:sortStudents()
+	if #slot4 > 0 then
+		slot0.sortTimer = Timer.New(function ()
+			uv0:sortStudents()
 		end, 0.2, -1)
 
-		arg_7_0.sortTimer:Start()
-		arg_7_0.sortTimer.func()
+		slot0.sortTimer:Start()
+		slot0.sortTimer.func()
 	end
 end
 
-function var_0_0.ChooseRandomPos(arg_10_0, arg_10_1)
-	local var_10_0 = math.random(1, arg_10_1)
-
-	if not var_10_0 then
+function slot0.ChooseRandomPos(slot0, slot1)
+	if not math.random(1, slot1) then
 		return nil
 	end
 
-	pg.Tool.Swap(arg_10_0, var_10_0, arg_10_1)
+	pg.Tool.Swap(slot0, slot2, slot1)
 
-	return arg_10_0[arg_10_1]
+	return slot0[slot1]
 end
 
-function var_0_0.sortStudents(arg_11_0)
-	local var_11_0 = arg_11_0.containers
+function slot0.sortStudents(slot0)
+	for slot5, slot6 in pairs(slot0.containers) do
+		if slot6.childCount > 1 then
+			slot7 = {}
 
-	for iter_11_0, iter_11_1 in pairs(var_11_0) do
-		if iter_11_1.childCount > 1 then
-			local var_11_1 = {}
-
-			for iter_11_2 = 1, iter_11_1.childCount do
-				local var_11_2 = iter_11_1:GetChild(iter_11_2 - 1)
-
-				table.insert(var_11_1, {
-					tf = var_11_2,
-					index = iter_11_2
+			for slot11 = 1, slot6.childCount do
+				table.insert(slot7, {
+					tf = slot6:GetChild(slot11 - 1),
+					index = slot11
 				})
 			end
 
-			table.sort(var_11_1, function(arg_12_0, arg_12_1)
-				local var_12_0 = arg_12_0.tf.anchoredPosition.y - arg_12_1.tf.anchoredPosition.y
-
-				if math.abs(var_12_0) < 1 then
-					return arg_12_0.index < arg_12_1.index
+			table.sort(slot7, function (slot0, slot1)
+				if math.abs(slot0.tf.anchoredPosition.y - slot1.tf.anchoredPosition.y) < 1 then
+					return slot0.index < slot1.index
 				else
-					return var_12_0 > 0
+					return slot2 > 0
 				end
 			end)
 
-			for iter_11_3, iter_11_4 in ipairs(var_11_1) do
-				iter_11_4.tf:SetSiblingIndex(iter_11_3 - 1)
+			for slot11, slot12 in ipairs(slot7) do
+				slot12.tf:SetSiblingIndex(slot11 - 1)
 			end
 		end
 	end
 end
 
-function var_0_0.clearStudents(arg_13_0)
-	if arg_13_0.sortTimer then
-		arg_13_0.sortTimer:Stop()
+function slot0.clearStudents(slot0)
+	if slot0.sortTimer then
+		slot0.sortTimer:Stop()
 
-		arg_13_0.sortTimer = nil
+		slot0.sortTimer = nil
 	end
 
-	if arg_13_0.academyStudents then
-		for iter_13_0, iter_13_1 in pairs(arg_13_0.academyStudents) do
-			iter_13_1:detach()
-			Destroy(iter_13_1._go)
+	if slot0.academyStudents then
+		for slot4, slot5 in pairs(slot0.academyStudents) do
+			slot5:detach()
+			Destroy(slot5._go)
 		end
 
-		table.clear(arg_13_0.academyStudents)
+		table.clear(slot0.academyStudents)
 	end
 end
 
-function var_0_0.AutoFitScreen(arg_14_0)
-	local var_14_0 = Screen.width / Screen.height
-	local var_14_1 = 1.7777777777777777
-	local var_14_2 = arg_14_0._map.rect.width
-	local var_14_3 = arg_14_0._map.rect.height
-	local var_14_4
+function slot0.AutoFitScreen(slot0)
+	slot5 = nil
+	slot5 = (1.7777777777777777 > Screen.width / Screen.height or math.clamp(1080 * slot1 / slot0._map.rect.width, 1, 2)) and math.clamp(1920 / slot1 / slot0._map.rect.height, 1, 2)
 
-	if var_14_1 <= var_14_0 then
-		local var_14_5 = 1080 * var_14_0
-
-		var_14_4 = math.clamp(var_14_5 / var_14_2, 1, 2)
-	else
-		local var_14_6 = 1920 / var_14_0
-
-		var_14_4 = math.clamp(var_14_6 / var_14_3, 1, 2)
-	end
-
-	setLocalScale(arg_14_0._map, {
-		x = var_14_4,
-		y = var_14_4,
-		z = var_14_4
+	setLocalScale(slot0._map, {
+		x = slot5,
+		y = slot5,
+		z = slot5
 	})
-	setLocalScale(arg_14_0._upper, {
-		x = var_14_4,
-		y = var_14_4,
-		z = var_14_4
+	setLocalScale(slot0._upper, {
+		x = slot5,
+		y = slot5,
+		z = slot5
 	})
 end
 
-function var_0_0.IsMiniActNeedTip(arg_15_0)
-	local var_15_0 = getProxy(ActivityProxy):getActivityById(arg_15_0)
+function slot0.IsMiniActNeedTip(slot0)
+	slot1 = getProxy(ActivityProxy):getActivityById(slot0)
 
-	assert(var_15_0)
+	assert(slot1)
 
-	return Activity.IsActivityReady(var_15_0)
+	return Activity.IsActivityReady(slot1)
 end
 
-function var_0_0.UpdateActivity(arg_16_0, arg_16_1)
-	return
+function slot0.UpdateActivity(slot0, slot1)
 end
 
-function var_0_0.BindItemActivityShop(arg_17_0)
-	arg_17_0:InitFacilityCross(arg_17_0._map, arg_17_0._upper, "bujishangdian", function()
-		arg_17_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SHOP, {
+function slot0.BindItemActivityShop(slot0)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "bujishangdian", function ()
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_ACTIVITY
 		})
 	end)
 end
 
-function var_0_0.BindItemSkinShop(arg_19_0)
-	arg_19_0:InitFacilityCross(arg_19_0._map, arg_19_0._upper, "huanzhuangshangdian", function()
-		arg_19_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SKINSHOP)
+function slot0.BindItemSkinShop(slot0)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "huanzhuangshangdian", function ()
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.SKINSHOP)
 	end)
 end
 
-function var_0_0.BindItemBuildShip(arg_21_0)
-	arg_21_0:InitFacilityCross(arg_21_0._map, arg_21_0._upper, "xianshijianzao", function()
-		local var_22_0
-		local var_22_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1)
-		local var_22_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILD)
+function slot0.BindItemBuildShip(slot0)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "xianshijianzao", function ()
+		slot0 = nil
+		slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILD)
 
-		if var_22_1 and not var_22_1:isEnd() then
-			var_22_0 = BuildShipScene.PROJECTS.ACTIVITY
-		elseif var_22_2 and not var_22_2:isEnd() then
-			var_22_0 = ({
+		if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1) and not slot1:isEnd() then
+			slot0 = BuildShipScene.PROJECTS.ACTIVITY
+		elseif slot2 and not slot2:isEnd() then
+			slot0 = ({
 				BuildShipScene.PROJECTS.SPECIAL,
 				BuildShipScene.PROJECTS.LIGHT,
 				BuildShipScene.PROJECTS.HEAVY
-			})[var_22_2:getConfig("config_client").id]
+			})[slot2:getConfig("config_client").id]
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		arg_21_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.GETBOAT, {
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.GETBOAT, {
 			page = BuildShipScene.PAGE_BUILD,
-			projectName = var_22_0
+			projectName = slot0
 		})
 	end)
 end
 
-function var_0_0.BindItemBattle(arg_23_0)
-	arg_23_0:InitFacilityCross(arg_23_0._map, arg_23_0._upper, "tebiezuozhan", function()
-		local var_24_0 = getProxy(ChapterProxy)
-		local var_24_1, var_24_2 = var_24_0:getLastMapForActivity()
+function slot0.BindItemBattle(slot0)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "tebiezuozhan", function ()
+		slot1, slot2 = getProxy(ChapterProxy):getLastMapForActivity()
 
-		if not var_24_1 or not var_24_0:getMapById(var_24_1):isUnlock() then
+		if not slot1 or not slot0:getMapById(slot1):isUnlock() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
-			arg_23_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.LEVEL, {
-				chapterId = var_24_2,
-				mapIdx = var_24_1
+			uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.LEVEL, {
+				chapterId = slot2,
+				mapIdx = slot1
 			})
 		end
 	end)
 end
 
-function var_0_0.UpdateBuildingTip(arg_25_0, arg_25_1, arg_25_2)
-	if not arg_25_1 then
+function slot0.UpdateBuildingTip(slot0, slot1, slot2)
+	if not slot1 then
 		return false
 	end
 
-	local var_25_0 = arg_25_1:GetBuildingLevel(arg_25_2)
-	local var_25_1 = pg.activity_event_building[arg_25_2]
+	slot3 = slot1:GetBuildingLevel(slot2)
 
-	if not var_25_1 or var_25_0 >= #var_25_1.buff then
+	if not pg.activity_event_building[slot2] or slot3 >= #slot4.buff then
 		return false
 	end
 
-	local var_25_2 = var_25_1.material[var_25_0]
+	return _.all(slot4.material[slot3], function (slot0)
+		slot2 = slot0[2]
+		slot3 = slot0[3]
+		slot4 = 0
 
-	return _.all(var_25_2, function(arg_26_0)
-		local var_26_0 = arg_26_0[1]
-		local var_26_1 = arg_26_0[2]
-		local var_26_2 = arg_26_0[3]
-		local var_26_3 = 0
+		if slot0[1] == DROP_TYPE_VITEM then
+			assert(AcessWithinNull(Item.getConfigData(slot2), "link_id") == uv0.id)
 
-		if var_26_0 == DROP_TYPE_VITEM then
-			local var_26_4 = AcessWithinNull(Item.getConfigData(var_26_1), "link_id")
+			slot4 = uv0:GetMaterialCount(slot2)
+		elseif DROP_TYPE_USE_ACTIVITY_DROP < slot1 then
+			slot5 = AcessWithinNull(pg.activity_drop_type[slot1], "activity_id")
 
-			assert(var_26_4 == arg_25_1.id)
+			assert(slot5)
 
-			var_26_3 = arg_25_1:GetMaterialCount(var_26_1)
-		elseif var_26_0 > DROP_TYPE_USE_ACTIVITY_DROP then
-			local var_26_5 = AcessWithinNull(pg.activity_drop_type[var_26_0], "activity_id")
-
-			assert(var_26_5)
-
-			bagAct = getProxy(ActivityProxy):getActivityById(var_26_5)
-			var_26_3 = bagAct:getVitemNumber(var_26_1)
+			bagAct = getProxy(ActivityProxy):getActivityById(slot5)
+			slot4 = bagAct:getVitemNumber(slot2)
 		end
 
-		return var_26_2 <= var_26_3
+		return slot3 <= slot4
 	end)
 end
 
-function var_0_0.UpdateView(arg_27_0)
-	return
+function slot0.UpdateView(slot0)
 end
 
-return var_0_0
+return slot0

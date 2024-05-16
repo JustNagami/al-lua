@@ -1,128 +1,121 @@
-﻿local var_0_0 = class("BaseMiniGameView", import("..base.BaseUI"))
+slot0 = class("BaseMiniGameView", import("..base.BaseUI"))
 
-function var_0_0.SetExtraData(arg_1_0, arg_1_1)
-	arg_1_0.mg_extraData = arg_1_1
+function slot0.SetExtraData(slot0, slot1)
+	slot0.mg_extraData = slot1
 end
 
-function var_0_0.GetExtraValue(arg_2_0, arg_2_1)
-	if arg_2_0.mg_extraData[arg_2_1] then
-		return arg_2_0.mg_extraData[arg_2_1]
+function slot0.GetExtraValue(slot0, slot1)
+	if slot0.mg_extraData[slot1] then
+		return slot0.mg_extraData[slot1]
 	else
 		return nil
 	end
 end
 
-function var_0_0.SetMGData(arg_3_0, arg_3_1)
-	arg_3_0.mg_data = arg_3_1
+function slot0.SetMGData(slot0, slot1)
+	slot0.mg_data = slot1
 end
 
-function var_0_0.GetMGData(arg_4_0)
-	return arg_4_0.mg_data
+function slot0.GetMGData(slot0)
+	return slot0.mg_data
 end
 
-function var_0_0.SetMGHubData(arg_5_0, arg_5_1)
-	arg_5_0.mg_hubData = arg_5_1
+function slot0.SetMGHubData(slot0, slot1)
+	slot0.mg_hubData = slot1
 end
 
-function var_0_0.GetMGHubData(arg_6_0)
-	return arg_6_0.mg_hubData
+function slot0.GetMGHubData(slot0)
+	return slot0.mg_hubData
 end
 
-function var_0_0.setGameRoomData(arg_7_0, arg_7_1)
-	arg_7_0.gameRoomData = arg_7_1
+function slot0.setGameRoomData(slot0, slot1)
+	slot0.gameRoomData = slot1
 end
 
-function var_0_0.getGameRoomData(arg_8_0)
-	return arg_8_0.gameRoomData or nil
+function slot0.getGameRoomData(slot0)
+	return slot0.gameRoomData or nil
 end
 
-function var_0_0.SendSuccess(arg_9_0, ...)
-	arg_9_0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, ...)
+function slot0.SendSuccess(slot0, ...)
+	slot0:emit(BaseMiniGameMediator.MINI_GAME_SUCCESS, ...)
 end
 
-function var_0_0.SendFailure(arg_10_0, ...)
-	arg_10_0:emit(BaseMiniGameMediator.MINI_GAME_FAILURE, ...)
+function slot0.SendFailure(slot0, ...)
+	slot0:emit(BaseMiniGameMediator.MINI_GAME_FAILURE, ...)
 end
 
-function var_0_0.StoreDataToServer(arg_11_0, arg_11_1)
-	if arg_11_0.mg_data:getConfig("type") == MiniGameConst.MG_TYPE_2 then
-		local var_11_0 = {
-			arg_11_0.mg_data.id,
+function slot0.StoreDataToServer(slot0, slot1)
+	if slot0.mg_data:getConfig("type") == MiniGameConst.MG_TYPE_2 then
+		slot3 = {
+			slot0.mg_data.id,
 			2
 		}
 
-		table.insertto(var_11_0, arg_11_1)
-		arg_11_0.mg_data:SetRuntimeData("elements", arg_11_1)
-		arg_11_0:emit(BaseMiniGameMediator.MINI_GAME_OPERATOR, MiniGameOPCommand.CMD_SPECIAL_GAME, var_11_0)
+		table.insertto(slot3, slot1)
+		slot0.mg_data:SetRuntimeData("elements", slot1)
+		slot0:emit(BaseMiniGameMediator.MINI_GAME_OPERATOR, MiniGameOPCommand.CMD_SPECIAL_GAME, slot3)
 	end
 end
 
-function var_0_0.SendOperator(arg_12_0, arg_12_1, arg_12_2)
-	arg_12_0:emit(BaseMiniGameMediator.MINI_GAME_OPERATOR, arg_12_1, arg_12_2)
+function slot0.SendOperator(slot0, slot1, slot2)
+	slot0:emit(BaseMiniGameMediator.MINI_GAME_OPERATOR, slot1, slot2)
 end
 
-function var_0_0.OnSendMiniGameOPDone(arg_13_0, arg_13_1)
-	return
+function slot0.OnSendMiniGameOPDone(slot0, slot1)
 end
 
-function var_0_0.OnModifyMiniGameDataDone(arg_14_0, arg_14_1)
-	return
+function slot0.OnModifyMiniGameDataDone(slot0, slot1)
 end
 
-function var_0_0.loadCoinLayer(arg_15_0)
-	if not arg_15_0.coinLayer then
-		arg_15_0:emit(BaseMiniGameMediator.MINI_GAME_COIN)
+function slot0.loadCoinLayer(slot0)
+	if not slot0.coinLayer then
+		slot0:emit(BaseMiniGameMediator.MINI_GAME_COIN)
 	end
 end
 
-function var_0_0.setCoinLayer(arg_16_0)
-	if arg_16_0.coinLayer then
+function slot0.setCoinLayer(slot0)
+	if slot0.coinLayer then
 		return
 	end
 
-	arg_16_0:checkTicktRemind()
+	slot0:checkTicktRemind()
 
-	arg_16_0.coinLayer = true
+	slot0.coinLayer = true
 end
 
-function var_0_0.openCoinLayer(arg_17_0, arg_17_1)
-	if not arg_17_0.coinLayer then
+function slot0.openCoinLayer(slot0, slot1)
+	if not slot0.coinLayer then
 		return
 	end
 
-	if arg_17_1 then
-		arg_17_0:checkTicktRemind()
+	if slot1 then
+		slot0:checkTicktRemind()
 	end
 
-	arg_17_0.coinLayerVisible = arg_17_1
+	slot0.coinLayerVisible = slot1
 
-	arg_17_0:emit(BaseMiniGameMediator.COIN_WINDOW_CHANGE, arg_17_1)
+	slot0:emit(BaseMiniGameMediator.COIN_WINDOW_CHANGE, slot1)
 end
 
-function var_0_0.checkTicktRemind(arg_18_0)
-	local var_18_0 = getProxy(GameRoomProxy):ticketMaxTip()
-
-	if var_18_0 and not GameRoomProxy.ticket_remind then
+function slot0.checkTicktRemind(slot0)
+	if getProxy(GameRoomProxy):ticketMaxTip() and not GameRoomProxy.ticket_remind then
 		GameRoomProxy.ticket_remind = true
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = var_18_0,
-			onYes = function()
-				return
+			content = slot1,
+			onYes = function ()
 			end,
-			onNo = function()
-				arg_18_0:closeView()
+			onNo = function ()
+				uv0:closeView()
 			end
 		})
 	end
 end
 
-function var_0_0.OnGetAwardDone(arg_21_0, arg_21_1)
-	return
+function slot0.OnGetAwardDone(slot0, slot1)
 end
 
-function var_0_0.OnApplicationPaused(arg_22_0, arg_22_1)
-	return
+function slot0.OnApplicationPaused(slot0, slot1)
 end
 
-return var_0_0
+return slot0

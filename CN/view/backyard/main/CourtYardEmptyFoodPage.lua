@@ -1,56 +1,56 @@
-﻿local var_0_0 = class("CourtYardEmptyFoodPage", import("...base.BaseSubView"))
+slot0 = class("CourtYardEmptyFoodPage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CourtYardEmptyFoodUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.confirmBtn = arg_2_0:findTF("frame/ok_btn")
-	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel_btn")
+function slot0.OnLoaded(slot0)
+	slot0.confirmBtn = slot0:findTF("frame/ok_btn")
+	slot0.cancelBtn = slot0:findTF("frame/cancel_btn")
 
-	setButtonText(arg_2_0.confirmBtn, i18n("text_nofood_yes"))
-	setButtonText(arg_2_0.cancelBtn, i18n("text_nofood_no"))
+	setButtonText(slot0.confirmBtn, i18n("text_nofood_yes"))
+	setButtonText(slot0.cancelBtn, i18n("text_nofood_no"))
 
-	arg_2_0.frame = arg_2_0:findTF("frame")
+	slot0.frame = slot0:findTF("frame")
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.confirmBtn, function()
-		arg_3_0:emit(CourtYardMediator.GO_GRANARY)
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.confirmBtn, function ()
+		uv0:emit(CourtYardMediator.GO_GRANARY)
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.cancelBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.cancelBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Flush(arg_7_0)
-	arg_7_0:Show()
+function slot0.Flush(slot0)
+	slot0:Show()
 end
 
-function var_0_0.Show(arg_8_0)
-	var_0_0.super.Show(arg_8_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf, false, {
+function slot0.Show(slot0)
+	uv0.super.Show(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
-	LeanTween.cancel(go(arg_8_0.frame))
+	LeanTween.cancel(go(slot0.frame))
 
-	arg_8_0.frame.localScale = Vector3(0, 0, 0)
+	slot0.frame.localScale = Vector3(0, 0, 0)
 
-	LeanTween.scale(arg_8_0.frame, Vector3(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
+	LeanTween.scale(slot0.frame, Vector3(1, 1, 1), 0.3):setEase(LeanTweenType.easeOutBack)
 end
 
-function var_0_0.Hide(arg_9_0)
-	LeanTween.cancel(go(arg_9_0.frame))
-	var_0_0.super.Hide(arg_9_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf, arg_9_0._parentTf)
+function slot0.Hide(slot0)
+	LeanTween.cancel(go(slot0.frame))
+	uv0.super.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.OnDestroy(arg_10_0)
-	arg_10_0:Hide()
+function slot0.OnDestroy(slot0)
+	slot0:Hide()
 end
 
-return var_0_0
+return slot0

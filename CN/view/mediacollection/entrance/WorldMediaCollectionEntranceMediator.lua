@@ -1,38 +1,37 @@
-﻿local var_0_0 = class("WorldMediaCollectionEntranceMediator", import("view.base.ContextMediator"))
+slot0 = class("WorldMediaCollectionEntranceMediator", import("view.base.ContextMediator"))
+slot0.OPEN_RECALL = "WorldMediaCollectionEntranceMediator:OPEN_RECALL"
+slot0.OPEN_CRYPTOLALIA = "WorldMediaCollectionEntranceMediator:OPEN_CRYPTOLALIA"
+slot0.OPEN_ARCHIVE = "WorldMediaCollectionEntranceMediator:OPEN_ARCHIVE"
+slot0.OPEN_RECORD = "WorldMediaCollectionEntranceMediator:OPEN_RECORD"
 
-var_0_0.OPEN_RECALL = "WorldMediaCollectionEntranceMediator:OPEN_RECALL"
-var_0_0.OPEN_CRYPTOLALIA = "WorldMediaCollectionEntranceMediator:OPEN_CRYPTOLALIA"
-var_0_0.OPEN_ARCHIVE = "WorldMediaCollectionEntranceMediator:OPEN_ARCHIVE"
-var_0_0.OPEN_RECORD = "WorldMediaCollectionEntranceMediator:OPEN_RECORD"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.OPEN_CRYPTOLALIA, function(arg_2_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA)
+function slot0.register(slot0)
+	slot0:bind(uv0.OPEN_CRYPTOLALIA, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.CRYPTOLALIA)
 	end)
-	arg_1_0:bind(var_0_0.OPEN_RECALL, function(arg_3_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
+	slot0:bind(uv0.OPEN_RECALL, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 			page = WorldMediaCollectionScene.PAGE_MEMORTY
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_ARCHIVE, function(arg_4_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
+	slot0:bind(uv0.OPEN_ARCHIVE, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 			page = WorldMediaCollectionScene.PAGE_RECORD
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_RECORD, function(arg_5_0)
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
+	slot0:bind(uv0.OPEN_RECORD, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLD_COLLECTION, {
 			page = WorldMediaCollectionScene.PAGE_FILE
 		})
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_6_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1:getName()
-	local var_7_1 = arg_7_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot2 = slot1:getName()
+	slot3 = slot1:getBody()
 end
 
-return var_0_0
+return slot0

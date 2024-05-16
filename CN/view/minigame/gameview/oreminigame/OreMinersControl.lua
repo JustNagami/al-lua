@@ -1,33 +1,31 @@
-﻿local var_0_0 = class("OreMinersControl")
+slot0 = class("OreMinersControl")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.binder = arg_1_1
-	arg_1_0._tf = arg_1_2
-	arg_1_0.tpl = findTF(arg_1_0._tf, "tpl")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.binder = slot1
+	slot0._tf = slot2
+	slot0.tpl = findTF(slot0._tf, "tpl")
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.minerList = {}
+function slot0.Init(slot0)
+	slot0.minerList = {}
 
-	eachChild(findTF(arg_2_0._tf, "pos"), function(arg_3_0)
-		local var_3_0 = cloneTplTo(arg_2_0.tpl, arg_3_0, arg_3_0.name)
-
-		table.insert(arg_2_0.minerList, OreMiner.New(arg_2_0.binder, var_3_0, 1.5 + math.random()))
+	eachChild(findTF(slot0._tf, "pos"), function (slot0)
+		table.insert(uv0.minerList, OreMiner.New(uv0.binder, cloneTplTo(uv0.tpl, slot0, slot0.name), 1.5 + math.random()))
 	end)
 end
 
-function var_0_0.Reset(arg_4_0)
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0.minerList) do
-		iter_4_1:Reset()
+function slot0.Reset(slot0)
+	for slot4, slot5 in ipairs(slot0.minerList) do
+		slot5:Reset()
 	end
 end
 
-function var_0_0.OnTimer(arg_5_0, arg_5_1)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.minerList) do
-		iter_5_1:OnTimer(arg_5_1)
+function slot0.OnTimer(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.minerList) do
+		slot6:OnTimer(slot1)
 	end
 end
 
-return var_0_0
+return slot0

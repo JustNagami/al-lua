@@ -1,86 +1,85 @@
-﻿local var_0_0 = class("EducateGrid")
+slot0 = class("EducateGrid")
+slot0.TYPE_LOCK = -1
+slot0.TYPE_EMPTY = 0
+slot0.TYPE_PLAN = 1
+slot0.TYPE_PLAN_OCCUPY = 2
+slot0.TYPE_EVENT = 3
+slot0.TYPE_EVENT_OCCUPY = 4
 
-var_0_0.TYPE_LOCK = -1
-var_0_0.TYPE_EMPTY = 0
-var_0_0.TYPE_PLAN = 1
-var_0_0.TYPE_PLAN_OCCUPY = 2
-var_0_0.TYPE_EVENT = 3
-var_0_0.TYPE_EVENT_OCCUPY = 4
+function slot0.Ctor(slot0, slot1)
+	slot0.type = slot1.type
+	slot0.id = slot1.id or 0
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.type = arg_1_1.type
-	arg_1_0.id = arg_1_1.id or 0
-
-	arg_1_0:initData(arg_1_1)
+	slot0:initData(slot1)
 end
 
-function var_0_0.initData(arg_2_0)
-	switch(arg_2_0.type, {
-		[var_0_0.TYPE_LOCK] = function()
-			arg_2_0.data = nil
+function slot0.initData(slot0)
+	switch(slot0.type, {
+		[uv0.TYPE_LOCK] = function ()
+			uv0.data = nil
 		end,
-		[var_0_0.TYPE_EMPTY] = function()
-			arg_2_0.data = nil
+		[uv0.TYPE_EMPTY] = function ()
+			uv0.data = nil
 		end,
-		[var_0_0.TYPE_PLAN] = function()
-			arg_2_0.data = EducatePlan.New(arg_2_0.id)
+		[uv0.TYPE_PLAN] = function ()
+			uv0.data = EducatePlan.New(uv0.id)
 		end,
-		[var_0_0.TYPE_PLAN_OCCUPY] = function()
-			arg_2_0.data = EducatePlan.New(arg_2_0.id)
+		[uv0.TYPE_PLAN_OCCUPY] = function ()
+			uv0.data = EducatePlan.New(uv0.id)
 		end,
-		[var_0_0.TYPE_EVENT] = function()
-			arg_2_0.data = EducateSpecialEvent.New(arg_2_0.id)
+		[uv0.TYPE_EVENT] = function ()
+			uv0.data = EducateSpecialEvent.New(uv0.id)
 		end,
-		[var_0_0.TYPE_EVENT_OCCUPY] = function()
-			arg_2_0.data = EducateSpecialEvent.New(arg_2_0.id)
+		[uv0.TYPE_EVENT_OCCUPY] = function ()
+			uv0.data = EducateSpecialEvent.New(uv0.id)
 		end
 	})
 end
 
-function var_0_0.IsLock(arg_9_0)
-	return arg_9_0.type == var_0_0.TYPE_LOCK
+function slot0.IsLock(slot0)
+	return slot0.type == uv0.TYPE_LOCK
 end
 
-function var_0_0.IsEmpty(arg_10_0)
-	return arg_10_0.type == var_0_0.TYPE_EMPTY
+function slot0.IsEmpty(slot0)
+	return slot0.type == uv0.TYPE_EMPTY
 end
 
-function var_0_0.IsPlan(arg_11_0)
-	return arg_11_0.type == var_0_0.TYPE_PLAN
+function slot0.IsPlan(slot0)
+	return slot0.type == uv0.TYPE_PLAN
 end
 
-function var_0_0.IsPlanOccupy(arg_12_0)
-	return arg_12_0.type == var_0_0.TYPE_PLAN_OCCUPY
+function slot0.IsPlanOccupy(slot0)
+	return slot0.type == uv0.TYPE_PLAN_OCCUPY
 end
 
-function var_0_0.IsEvent(arg_13_0)
-	return arg_13_0.type == var_0_0.TYPE_EVENT
+function slot0.IsEvent(slot0)
+	return slot0.type == uv0.TYPE_EVENT
 end
 
-function var_0_0.IsEventOccupy(arg_14_0)
-	return arg_14_0.type == var_0_0.TYPE_EVENT_OCCUPY
+function slot0.IsEventOccupy(slot0)
+	return slot0.type == uv0.TYPE_EVENT_OCCUPY
 end
 
-function var_0_0.GetOccupyGridCnt(arg_15_0)
-	return (arg_15_0:IsPlan() or arg_15_0:IsPlanOccupy()) and arg_15_0.data:getConfig("cost_resource3") or 1
+function slot0.GetOccupyGridCnt(slot0)
+	return (slot0:IsPlan() or slot0:IsPlanOccupy()) and slot0.data:getConfig("cost_resource3") or 1
 end
 
-function var_0_0.GetName(arg_16_0)
-	if arg_16_0.type == var_0_0.TYPE_PLAN then
-		return arg_16_0.data:getConfig("name")
-	elseif arg_16_0.type == var_0_0.TYPE_EVENT then
-		return arg_16_0.data:getConfig("id")
+function slot0.GetName(slot0)
+	if slot0.type == uv0.TYPE_PLAN then
+		return slot0.data:getConfig("name")
+	elseif slot0.type == uv0.TYPE_EVENT then
+		return slot0.data:getConfig("id")
 	end
 
 	return ""
 end
 
-function var_0_0.GetPerformance(arg_17_0)
-	return arg_17_0.data and arg_17_0.data:GetPerformance() or ""
+function slot0.GetPerformance(slot0)
+	return slot0.data and slot0.data:GetPerformance() or ""
 end
 
-function var_0_0.GetResult(arg_18_0)
-	return arg_18_0.data and arg_18_0.data:GetResult() or {}
+function slot0.GetResult(slot0)
+	return slot0.data and slot0.data:GetResult() or {}
 end
 
-return var_0_0
+return slot0

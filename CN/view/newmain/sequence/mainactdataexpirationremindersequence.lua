@@ -1,57 +1,49 @@
-﻿local var_0_0 = class("MainActDataExpirationReminderSequence")
+slot0 = class("MainActDataExpirationReminderSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
+function slot0.Execute(slot0, slot1)
 	seriesAsync({
-		function(arg_2_0)
-			arg_1_0:CheckSkinCouponActivity(arg_2_0)
+		function (slot0)
+			uv0:CheckSkinCouponActivity(slot0)
 		end
-	}, arg_1_1)
+	}, slot1)
 end
 
-function var_0_0.CheckSkinCouponActivity(arg_3_0, arg_3_1)
-	local var_3_0 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON)
-
-	if not var_3_0 or #var_3_0 == 0 then
-		arg_3_1()
+function slot0.CheckSkinCouponActivity(slot0, slot1)
+	if not getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SKIN_COUPON) or #slot2 == 0 then
+		slot1()
 
 		return
 	end
 
-	local var_3_1 = {}
+	slot3 = {}
 
-	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-		if iter_3_1:ShouldTipUsage() then
-			table.insert(var_3_1, function(arg_4_0)
-				iter_3_1:SaveTipTime()
-				arg_3_0:ShowTipMsg(iter_3_1, arg_4_0)
+	for slot7, slot8 in ipairs(slot2) do
+		if slot8:ShouldTipUsage() then
+			table.insert(slot3, function (slot0)
+				uv0:SaveTipTime()
+				uv1:ShowTipMsg(uv0, slot0)
 			end)
 		end
 	end
 
-	seriesAsync(var_3_1, arg_3_1)
+	seriesAsync(slot3, slot1)
 end
 
-function var_0_0.ShowTipMsg(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_1:GetCanUsageCnt()
-	local var_5_1 = arg_5_1:GetItemConfig()
-	local var_5_2 = {
-		{
-			type = DROP_TYPE_ITEM,
-			id = var_5_1.id,
-			count = var_5_0
-		}
-	}
-	local var_5_3 = arg_5_1:GetItemName()
-	local var_5_4 = pg.TimeMgr.GetInstance():STimeDescS(arg_5_1.stopTime, "%m.%d")
-
+function slot0.ShowTipMsg(slot0, slot1, slot2)
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideNo = true,
 		type = MSGBOX_TYPE_ITEM_BOX,
-		content = i18n("skin_discount_timelimit", var_5_3, var_5_4),
-		items = var_5_2,
-		onYes = arg_5_2,
+		content = i18n("skin_discount_timelimit", slot1:GetItemName(), pg.TimeMgr.GetInstance():STimeDescS(slot1.stopTime, "%m.%d")),
+		items = {
+			{
+				type = DROP_TYPE_ITEM,
+				id = slot1:GetItemConfig().id,
+				count = slot1:GetCanUsageCnt()
+			}
+		},
+		onYes = slot2,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-return var_0_0
+return slot0

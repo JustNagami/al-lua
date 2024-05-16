@@ -1,19 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				buff_id = 15451,
-				target = "TargetSelf",
-				index = {
-					2
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -34,5 +19,20 @@
 	stack = 1,
 	id = 15430,
 	icon = 15430,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				buff_id = 15451,
+				target = "TargetSelf",
+				index = {
+					2
+				}
+			}
+		}
+	}
 }

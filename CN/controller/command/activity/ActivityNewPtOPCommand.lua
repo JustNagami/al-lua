@@ -1,89 +1,81 @@
-﻿local var_0_0 = class("ActivityNewPtOPCommand", pm.SimpleCommand)
+slot0 = class("ActivityNewPtOPCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.callback
-	local var_1_2 = getProxy(ActivityProxy)
-	local var_1_3 = var_1_2:getActivityById(var_1_0.activity_id)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.callback
 
-	if not var_1_3 or var_1_3:isEnd() then
+	if not getProxy(ActivityProxy):getActivityById(slot2.activity_id) or slot5:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = var_1_0.activity_id,
-		cmd = var_1_0.cmd or 0,
-		arg1 = var_1_0.arg1 or 0,
-		arg2 = var_1_0.arg2 or 0,
+		activity_id = slot2.activity_id,
+		cmd = slot2.cmd or 0,
+		arg1 = slot2.arg1 or 0,
+		arg2 = slot2.arg2 or 0,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = {}
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			slot1 = {}
 
-			if var_1_0.cmd == 1 then
-				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
-				var_1_3 = var_1_2:getActivityById(var_1_0.activity_id)
+			if uv0.cmd == 1 then
+				slot1 = PlayerConst.addTranDrop(slot0.award_list)
+				uv1 = uv2:getActivityById(uv0.activity_id)
 
-				table.insert(var_1_3.data1_list, var_1_0.arg1)
+				table.insert(uv1.data1_list, uv0.arg1)
 
-				if var_1_3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PIZZA_PT and var_1_0.arg2 and var_1_0.arg2 > 0 then
-					table.insert(var_1_3.data2_list, var_1_0.arg2)
+				if uv1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_PIZZA_PT and uv0.arg2 and uv0.arg2 > 0 then
+					table.insert(uv1.data2_list, uv0.arg2)
 				end
-			elseif var_1_0.cmd == 2 then
-				var_1_3.data3 = arg_2_0.number[1]
-			elseif var_1_0.cmd == 3 then
-				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
-				var_1_3 = var_1_2:getActivityById(var_1_0.activity_id)
+			elseif uv0.cmd == 2 then
+				uv1.data3 = slot0.number[1]
+			elseif uv0.cmd == 3 then
+				slot1 = PlayerConst.addTranDrop(slot0.award_list)
+				uv1 = uv2:getActivityById(uv0.activity_id)
 
-				if var_1_0.arg1 and var_1_0.arg1 > 0 then
-					table.insert(var_1_3.data2_list, var_1_0.arg1)
+				if uv0.arg1 and uv0.arg1 > 0 then
+					table.insert(uv1.data2_list, uv0.arg1)
 				end
 
-				local var_2_1 = var_1_0.oldBuffId or 0
-
-				for iter_2_0, iter_2_1 in ipairs(var_1_3.data3_list) do
-					if iter_2_1 == var_2_1 then
-						var_1_3.data3_list[iter_2_0] = var_1_0.arg2
+				for slot6, slot7 in ipairs(uv1.data3_list) do
+					if slot7 == (uv0.oldBuffId or 0) then
+						uv1.data3_list[slot6] = uv0.arg2
 					end
 				end
-			elseif var_1_0.cmd == 4 then
-				var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
-				var_1_3 = var_1_2:getActivityById(var_1_0.activity_id)
+			elseif uv0.cmd == 4 then
+				slot1 = PlayerConst.addTranDrop(slot0.award_list)
+				uv1 = uv2:getActivityById(uv0.activity_id)
 
-				local var_2_2 = var_1_3:getDataConfig("target")
-
-				for iter_2_2, iter_2_3 in ipairs(var_2_2) do
-					if iter_2_3 <= var_1_0.arg1 then
-						if not table.contains(var_1_3.data1_list, iter_2_3) then
-							table.insert(var_1_3.data1_list, iter_2_3)
+				for slot6, slot7 in ipairs(uv1:getDataConfig("target")) do
+					if slot7 <= uv0.arg1 then
+						if not table.contains(uv1.data1_list, slot7) then
+							table.insert(uv1.data1_list, slot7)
 						end
 					else
 						break
 					end
 				end
-			elseif var_1_0.cmd == 5 then
-				local var_2_3 = arg_2_0.number[1]
+			elseif uv0.cmd == 5 then
+				slot2 = slot0.number[1]
+				uv1.data1 = uv1.data1 + slot2
+				slot3 = getProxy(PlayerProxy)
+				slot4 = slot3:getRawData()
 
-				var_1_3.data1 = var_1_3.data1 + var_2_3
-
-				local var_2_4 = getProxy(PlayerProxy)
-				local var_2_5 = var_2_4:getRawData()
-
-				var_2_5:consume({
-					[id2res(var_1_0.arg1)] = var_2_3
+				slot4:consume({
+					[id2res(uv0.arg1)] = slot2
 				})
-				var_2_4:updatePlayer(var_2_5)
+				slot3:updatePlayer(slot4)
 			end
 
-			var_1_2:updateActivity(var_1_3)
-			arg_1_0:sendNotification(GAME.ACT_NEW_PT_DONE, {
-				awards = var_2_0,
-				callback = var_1_1
+			uv2:updateActivity(uv1)
+			uv3:sendNotification(GAME.ACT_NEW_PT_DONE, {
+				awards = slot1,
+				callback = uv4
 			})
 		else
-			originalPrint(errorTip("", arg_2_0.result))
+			originalPrint(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

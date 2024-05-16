@@ -1,37 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 0.05,
-				label = {
-					"MG"
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = -0.3,
-				label = {
-					"AA"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -321,5 +288,38 @@
 	stack = 1,
 	id = 11511,
 	icon = 11511,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 0.05,
+				label = {
+					"MG"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = -0.3,
+				label = {
+					"AA"
+				}
+			}
+		}
+	}
 }

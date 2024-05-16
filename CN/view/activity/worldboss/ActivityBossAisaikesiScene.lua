@@ -1,121 +1,112 @@
-﻿local var_0_0 = class("ActivityBossAisaikesiScene", import(".ActivityBossSceneTemplate"))
+slot0 = class("ActivityBossAisaikesiScene", import(".ActivityBossSceneTemplate"))
+slot0.ASKSRemasterStage = 1201204
 
-var_0_0.ASKSRemasterStage = 1201204
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ActivityBossAisaikesiUI"
 end
 
-function var_0_0.init(arg_2_0)
-	var_0_0.super.init(arg_2_0)
+function slot0.init(slot0)
+	uv0.super.init(slot0)
 
-	arg_2_0.loader = AutoLoader.New()
+	slot0.loader = AutoLoader.New()
 end
 
-function var_0_0.didEnter(arg_3_0)
-	var_0_0.super.didEnter(arg_3_0)
+function slot0.didEnter(slot0)
+	uv0.super.didEnter(slot0)
 
-	local var_3_0 = 0
+	slot1 = 0
 
-	onButton(arg_3_0, arg_3_0.mainTF:Find("logo"), function()
-		var_3_0 = var_3_0 + 1
+	onButton(slot0, slot0.mainTF:Find("logo"), function ()
+		uv0 = uv0 + 1
 
-		if var_3_0 >= 10 then
-			arg_3_0:RemasterSuffering()
+		if uv0 >= 10 then
+			uv1:RemasterSuffering()
 
-			var_3_0 = 0
+			uv0 = 0
 
 			return
 		end
 
-		pg.TipsMgr.GetInstance():ShowTips(10 - var_3_0)
+		pg.TipsMgr.GetInstance():ShowTips(10 - uv0)
 	end)
 end
 
-function var_0_0.UpdatePage(arg_5_0)
-	var_0_0.super.UpdatePage(arg_5_0)
+function slot0.UpdatePage(slot0)
+	uv0.super.UpdatePage(slot0)
 end
 
-function var_0_0.EnterAnim(arg_6_0)
-	local function var_6_0()
-		var_0_0.super.EnterAnim(arg_6_0)
-		arg_6_0.loader:GetPrefab("ui/ASKS_Loop", "", function(arg_8_0)
-			setParent(arg_8_0, arg_6_0.mainTF)
-			setAnchoredPosition(arg_8_0, {
-				x = -154.7,
-				y = -120.9
-			})
-			tf(arg_8_0):SetAsFirstSibling()
+function slot0.EnterAnim(slot0)
+	if not slot0.contextData.showAni then
+		function ()
+			uv0.super.EnterAnim(uv1)
+			uv1.loader:GetPrefab("ui/ASKS_Loop", "", function (slot0)
+				setParent(slot0, uv0.mainTF)
+				setAnchoredPosition(slot0, {
+					x = -154.7,
+					y = -120.9
+				})
+				tf(slot0):SetAsFirstSibling()
 
-			arg_6_0.raidarAnim = arg_8_0
+				uv0.raidarAnim = slot0
 
-			setActive(arg_8_0, true)
-		end)
-	end
-
-	if not arg_6_0.contextData.showAni then
-		var_6_0()
+				setActive(slot0, true)
+			end)
+		end()
 
 		return
 	end
 
-	arg_6_0.contextData.showAni = nil
+	slot0.contextData.showAni = nil
 
-	local var_6_1 = arg_6_0.mainTF:Find("logo")
+	setActive(slot0.mainTF:Find("logo"), false)
 
-	setActive(var_6_1, false)
+	slot3 = nil
 
-	local var_6_2
-
-	local function var_6_3()
-		setActive(var_6_1, true)
-		setActive(var_6_2, false)
-		arg_6_0.loader:ReturnPrefab(var_6_2)
+	function slot4()
+		setActive(uv0, true)
+		setActive(uv1, false)
+		uv2.loader:ReturnPrefab(uv1)
 	end
 
-	arg_6_0.loader:GetPrefab("ui/asks", "asks", function(arg_10_0)
-		setParent(arg_10_0, arg_6_0._tf)
+	slot0.loader:GetPrefab("ui/asks", "asks", function (slot0)
+		setParent(slot0, uv0._tf)
 
-		var_6_2 = arg_10_0
+		uv1 = slot0
+		slot1 = nil
+		slot2 = slot0:GetComponent("DftAniEvent")
 
-		local var_10_0
-		local var_10_1 = arg_10_0:GetComponent("DftAniEvent")
+		slot2:SetEndEvent(uv2)
+		slot2:SetTriggerEvent(function ()
+			uv0()
 
-		var_10_1:SetEndEvent(var_6_3)
-		var_10_1:SetTriggerEvent(function()
-			var_6_0()
-
-			var_10_0 = true
+			uv1 = true
 		end)
-		onButton(arg_6_0, arg_10_0, function()
-			var_10_0 = var_10_0 or var_6_0() or true
+		onButton(uv0, slot0, function ()
+			uv0 = uv0 or uv1() or true
 
-			var_6_3()
+			uv2()
 		end)
 	end)
 end
 
-function var_0_0.RemasterSuffering(arg_13_0)
-	local var_13_0 = GameObject.New("Mask")
-	local var_13_1 = var_13_0:AddComponent(typeof(RectTransform))
+function slot0.RemasterSuffering(slot0)
+	slot1 = GameObject.New("Mask")
+	slot2 = slot1:AddComponent(typeof(RectTransform))
+	slot2.anchorMin = Vector2.zero
+	slot2.anchorMax = Vector2.one
+	slot3 = slot1:AddComponent(typeof(Image))
+	slot3.color = Color.New(0, 0, 0, 1)
+	slot3.raycastTarget = false
 
-	var_13_1.anchorMin = Vector2.zero
-	var_13_1.anchorMax = Vector2.one
-
-	local var_13_2 = var_13_0:AddComponent(typeof(Image))
-
-	var_13_2.color = Color.New(0, 0, 0, 1)
-	var_13_2.raycastTarget = false
-
-	var_13_1:SetParent(arg_13_0._tf)
-	pg.NewStoryMgr.GetInstance():Play("AISAIKESICAIDAN", function()
-		arg_13_0:emit(arg_13_0.contextData.mediatorClass.ON_PERFORM_COMBAT, arg_13_0.ASKSRemasterStage)
+	slot2:SetParent(slot0._tf)
+	pg.NewStoryMgr.GetInstance():Play("AISAIKESICAIDAN", function ()
+		uv0:emit(uv0.contextData.mediatorClass.ON_PERFORM_COMBAT, uv0.ASKSRemasterStage)
 	end)
 end
 
-function var_0_0.willExit(arg_15_0)
-	arg_15_0.loader:Clear()
-	var_0_0.super.willExit(arg_15_0)
+function slot0.willExit(slot0)
+	slot0.loader:Clear()
+	uv0.super.willExit(slot0)
 end
 
-return var_0_0
+return slot0

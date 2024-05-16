@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 600106,
-				target = "TargetAllHarm"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -30,5 +18,17 @@
 	stack = 1,
 	id = 600105,
 	icon = 600105,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 600106,
+				target = "TargetAllHarm"
+			}
+		}
+	}
 }

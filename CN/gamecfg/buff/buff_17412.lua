@@ -1,25 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				quota = 1,
-				skill_id = 17412,
-				target = "TargetSelf",
-				check_target = {
-					"TargetAllHarm",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"FlasherSP"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -40,5 +19,26 @@
 	stack = 1,
 	id = 17412,
 	icon = 17410,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				quota = 1,
+				skill_id = 17412,
+				target = "TargetSelf",
+				check_target = {
+					"TargetAllHarm",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"FlasherSP"
+				}
+			}
+		}
+	}
 }

@@ -1,12 +1,9 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.IPAddress = class("IPAddress")
-
-local var_0_1 = var_0_0.IPAddress
-local var_0_2 = "https://www.azurlane.tw/getip"
-local var_0_3 = {
+pg = pg or {}
+slot0 = pg
+slot0.IPAddress = class("IPAddress")
+slot1 = slot0.IPAddress
+slot2 = "https://www.azurlane.tw/getip"
+slot3 = {
 	{
 		"202.39.128.0",
 		"202.39.255.255"
@@ -109,102 +106,97 @@ local var_0_3 = {
 	}
 }
 
-function var_0_1.Ctor(arg_1_0)
-	arg_1_0:ConvertIPRange()
+function slot1.Ctor(slot0)
+	slot0:ConvertIPRange()
 
-	arg_1_0.requestUrl = var_0_2
+	slot0.requestUrl = uv0
 
 	if not IsUnityEditor then
-		VersionMgr.Inst:WebRequest(arg_1_0.requestUrl, function(arg_2_0, arg_2_1)
-			arg_1_0.exportIP = arg_2_1
-			arg_1_0.isSpecialIP = arg_1_0:CheckExportIP()
+		VersionMgr.Inst:WebRequest(slot0.requestUrl, function (slot0, slot1)
+			uv0.exportIP = slot1
+			uv0.isSpecialIP = uv0:CheckExportIP()
 		end)
 	end
 end
 
-function var_0_1.IsIPString(arg_3_0, arg_3_1)
-	if type(arg_3_1) ~= "string" then
+function slot1.IsIPString(slot0, slot1)
+	if type(slot1) ~= "string" then
 		return false
 	end
 
-	local var_3_0 = string.len(arg_3_1)
-
-	if var_3_0 < 7 or var_3_0 > 15 then
+	if string.len(slot1) < 7 or slot2 > 15 then
 		return false
 	end
 
-	local var_3_1 = string.find(arg_3_1, "%p", 1)
-	local var_3_2 = 0
+	slot3 = string.find(slot1, "%p", 1)
+	slot4 = 0
 
-	while var_3_1 ~= nil do
-		if string.sub(arg_3_1, var_3_1, var_3_1) ~= "." then
+	while slot3 ~= nil do
+		if string.sub(slot1, slot3, slot3) ~= "." then
 			return false
 		end
 
-		var_3_2 = var_3_2 + 1
-		var_3_1 = string.find(arg_3_1, "%p", var_3_1 + 1)
+		slot3 = string.find(slot1, "%p", slot3 + 1)
 
-		if var_3_2 > 3 then
+		if slot4 + 1 > 3 then
 			return false
 		end
 	end
 
-	if var_3_2 ~= 3 then
+	if slot4 ~= 3 then
 		return false
 	end
 
-	local var_3_3 = {}
+	slot5 = {}
 
-	for iter_3_0 in string.gmatch(arg_3_1, "%d+") do
-		var_3_3[#var_3_3 + 1] = iter_3_0
+	for slot9 in string.gmatch(slot1, "%d+") do
+		slot5[#slot5 + 1] = slot9
 
-		local var_3_4 = tonumber(iter_3_0)
-
-		if var_3_4 == nil or var_3_4 > 255 then
+		if tonumber(slot9) == nil or slot10 > 255 then
 			return false
 		end
 	end
 
-	if #var_3_3 ~= 4 then
+	if #slot5 ~= 4 then
 		return false
 	end
 
 	return true
 end
 
-function var_0_1.IP2Int(arg_4_0, arg_4_1)
-	local var_4_0 = 0
-	local var_4_1, var_4_2, var_4_3, var_4_4 = arg_4_1:match("(%d+)%.(%d+)%.(%d+)%.(%d+)")
+function slot1.IP2Int(slot0, slot1)
+	slot2 = 0
+	slot3, slot4, slot5, slot6 = slot1:match("(%d+)%.(%d+)%.(%d+)%.(%d+)")
 
-	return 16777216 * var_4_1 + 65536 * var_4_2 + 256 * var_4_3 + var_4_4
+	return 16777216 * slot3 + 65536 * slot4 + 256 * slot5 + slot6
 end
 
-function var_0_1.ConvertIPRange(arg_5_0)
-	arg_5_0.IPRangeIntList = {}
+function slot1.ConvertIPRange(slot0)
+	slot0.IPRangeIntList = {}
 
-	for iter_5_0, iter_5_1 in ipairs(var_0_3) do
-		local var_5_0 = {}
-		local var_5_1 = arg_5_0:IP2Int(iter_5_1[1])
+	for slot4, slot5 in ipairs(uv0) do
+		slot6 = {}
+		slot7 = slot0:IP2Int(slot5[1])
 
-		table.insert(var_5_0, var_5_1)
+		table.insert(slot6, slot7)
 
-		local var_5_2 = arg_5_0:IP2Int(iter_5_1[2])
+		slot8 = slot0:IP2Int(slot5[2])
 
-		table.insert(var_5_0, var_5_2)
-		assert(var_5_1 < var_5_2, "ip range is illegal" .. iter_5_1[1] .. "-" .. iter_5_1[2])
-		table.insert(arg_5_0.IPRangeIntList, var_5_0)
+		table.insert(slot6, slot8)
+		assert(slot7 < slot8, "ip range is illegal" .. slot5[1] .. "-" .. slot5[2])
+		table.insert(slot0.IPRangeIntList, slot6)
 	end
 end
 
-function var_0_1.CheckExportIP(arg_6_0)
-	if not arg_6_0.exportIP or not arg_6_0:IsIPString(arg_6_0.exportIP) then
+function slot1.CheckExportIP(slot0)
+	if not slot0.exportIP or not slot0:IsIPString(slot0.exportIP) then
 		return false
 	end
 
-	local var_6_0 = arg_6_0:IP2Int(arg_6_0.exportIP)
+	slot1 = slot0:IP2Int(slot0.exportIP)
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.IPRangeIntList) do
-		if var_6_0 >= iter_6_1[1] and var_6_0 <= iter_6_1[2] then
+	for slot5, slot6 in ipairs(slot0.IPRangeIntList) do
+		if slot6[1] <= slot1 and slot1 <= slot6[2] then
 			return true
 		end
 	end
@@ -212,18 +204,16 @@ function var_0_1.CheckExportIP(arg_6_0)
 	return false
 end
 
-function var_0_1.GetExportIPString(arg_7_0)
-	return arg_7_0.exportIP
+function slot1.GetExportIPString(slot0)
+	return slot0.exportIP
 end
 
-function var_0_1.GetLocalIP(arg_8_0)
-	local var_8_0 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.Network"), "player")
+function slot1.GetLocalIP(slot0)
+	slot0.localIP = ReflectionHelp.RefGetProperty(typeof("UnityEngine.NetworkPlayer"), "ipAddress", ReflectionHelp.RefGetProperty(typeof("UnityEngine.Network"), "player"))
 
-	arg_8_0.localIP = ReflectionHelp.RefGetProperty(typeof("UnityEngine.NetworkPlayer"), "ipAddress", var_8_0)
-
-	return arg_8_0.localIP
+	return slot0.localIP
 end
 
-function var_0_1.IsSpecialIP(arg_9_0)
-	return arg_9_0.isSpecialIP
+function slot1.IsSpecialIP(slot0)
+	return slot0.isSpecialIP
 end

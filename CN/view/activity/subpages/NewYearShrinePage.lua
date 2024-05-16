@@ -1,134 +1,111 @@
-﻿local var_0_0 = class("NewYearShrinePage", import("...base.BaseActivityPage"))
+slot0 = class("NewYearShrinePage", import("...base.BaseActivityPage"))
+slot0.MAX_COUNT = 7
+slot0.GO_MINI_GAME_ID = 34
+slot0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2022
 
-var_0_0.MAX_COUNT = 7
-var_0_0.GO_MINI_GAME_ID = 34
-var_0_0.GO_BACKHILL_SCENE = SCENE.NEWYEAR_BACKHILL_2022
-
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.progressTpl = arg_1_0:findTF("ProgressTpl")
-	arg_1_0.progressTplContainer = arg_1_0:findTF("ProgressList")
-	arg_1_0.progressUIItemList = UIItemList.New(arg_1_0.progressTplContainer, arg_1_0.progressTpl)
-	arg_1_0.countText = arg_1_0:findTF("CountText")
-
-	local var_1_0 = arg_1_0:findTF("Award")
-
-	arg_1_0.lockTF = arg_1_0:findTF("Unlock", var_1_0)
-	arg_1_0.getBtn = arg_1_0:findTF("Achieve", var_1_0)
-	arg_1_0.gotTag = arg_1_0:findTF("Got", var_1_0)
-	arg_1_0.goBtn = arg_1_0:findTF("GoBtn")
+function slot0.OnInit(slot0)
+	slot0.progressTpl = slot0:findTF("ProgressTpl")
+	slot0.progressTplContainer = slot0:findTF("ProgressList")
+	slot0.progressUIItemList = UIItemList.New(slot0.progressTplContainer, slot0.progressTpl)
+	slot0.countText = slot0:findTF("CountText")
+	slot1 = slot0:findTF("Award")
+	slot0.lockTF = slot0:findTF("Unlock", slot1)
+	slot0.getBtn = slot0:findTF("Achieve", slot1)
+	slot0.gotTag = slot0:findTF("Got", slot1)
+	slot0.goBtn = slot0:findTF("GoBtn")
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	arg_2_0.isAchieved = arg_2_0.activity.data1
-	arg_2_0.playCount = arg_2_0.activity.data2
-	arg_2_0.startTimestamp = arg_2_0.activity.data3
-	arg_2_0.dayFromStart = pg.TimeMgr.GetInstance():DiffDay(arg_2_0.startTimestamp, pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	arg_2_0.curDay = math.clamp(arg_2_0.dayFromStart, 1, var_0_0.MAX_COUNT)
-	arg_2_0.storyIDTable = {}
+function slot0.OnDataSetting(slot0)
+	slot0.isAchieved = slot0.activity.data1
+	slot0.playCount = slot0.activity.data2
+	slot0.startTimestamp = slot0.activity.data3
+	slot0.dayFromStart = pg.TimeMgr.GetInstance():DiffDay(slot0.startTimestamp, pg.TimeMgr.GetInstance():GetServerTime()) + 1
+	slot0.curDay = math.clamp(slot0.dayFromStart, 1, uv0.MAX_COUNT)
+	slot0.storyIDTable = {}
 
-	local var_2_0 = arg_2_0.activity:getConfig("config_client").story
-
-	if var_2_0 then
-		for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-			local var_2_1 = iter_2_1[1]
-
-			if var_2_1 then
-				arg_2_0.storyIDTable[iter_2_0] = var_2_1
+	if slot0.activity:getConfig("config_client").story then
+		for slot5, slot6 in ipairs(slot1) do
+			if slot6[1] then
+				slot0.storyIDTable[slot5] = slot7
 			end
 		end
 	end
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	local var_3_0 = math.clamp(arg_3_0.playCount, 0, var_0_0.MAX_COUNT)
+function slot0.OnFirstFlush(slot0)
+	setText(slot0.countText, math.clamp(slot0.playCount, 0, uv0.MAX_COUNT))
+	slot0.progressUIItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setActive(uv0:findTF("Lock", slot2), slot1 + 1 > uv0.curDay)
 
-	setText(arg_3_0.countText, var_3_0)
-	arg_3_0.progressUIItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventUpdate then
-			arg_4_1 = arg_4_1 + 1
-
-			local var_4_0 = arg_3_0:findTF("Achieve", arg_4_2)
-			local var_4_1 = arg_3_0:findTF("Unlock", arg_4_2)
-			local var_4_2 = arg_3_0:findTF("Lock", arg_4_2)
-
-			setActive(var_4_2, not (arg_4_1 <= arg_3_0.curDay))
-
-			if arg_4_1 <= arg_3_0.curDay then
-				setActive(var_4_0, arg_4_1 <= var_3_0)
-				setActive(var_4_1, arg_4_1 > var_3_0)
+			if slot1 <= uv0.curDay then
+				setActive(uv0:findTF("Achieve", slot2), slot1 <= uv1)
+				setActive(uv0:findTF("Unlock", slot2), uv1 < slot1)
 			else
-				setActive(var_4_0, false)
-				setActive(var_4_1, true)
+				setActive(slot3, false)
+				setActive(slot4, true)
 			end
 		end
 	end)
-	arg_3_0.progressUIItemList:align(var_0_0.MAX_COUNT)
-	onButton(arg_3_0, arg_3_0.getBtn, function()
-		if arg_3_0.curDay >= var_0_0.MAX_COUNT and arg_3_0.playCount >= var_0_0.MAX_COUNT and not (arg_3_0.isAchieved > 0) then
-			arg_3_0:emit(ActivityMediator.EVENT_OPERATION, {
+	slot0.progressUIItemList:align(uv0.MAX_COUNT)
+	onButton(slot0, slot0.getBtn, function ()
+		if uv1.MAX_COUNT <= uv0.curDay and uv1.MAX_COUNT <= uv0.playCount and uv0.isAchieved <= 0 then
+			uv0:emit(ActivityMediator.EVENT_OPERATION, {
 				cmd = 1,
-				activity_id = arg_3_0.activity.id
+				activity_id = uv0.activity.id
 			})
 		end
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.goBtn, function()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.GO_MINI_GAME_ID, {
-			callback = function()
-				local var_7_0 = Context.New()
+	onButton(slot0, slot0.goBtn, function ()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.GO_MINI_GAME_ID, {
+			callback = function ()
+				slot0 = Context.New()
 
-				SCENE.SetSceneInfo(var_7_0, var_0_0.GO_BACKHILL_SCENE)
-				getProxy(ContextProxy):PushContext2Prev(var_7_0)
+				SCENE.SetSceneInfo(slot0, uv0.GO_BACKHILL_SCENE)
+				getProxy(ContextProxy):PushContext2Prev(slot0)
 			end
 		})
 	end, SFX_PANEL)
 
-	local var_3_1 = {}
-	local var_3_2 = pg.NewStoryMgr.GetInstance()
-	local var_3_3 = math.clamp(arg_3_0.playCount, 0, var_0_0.MAX_COUNT)
+	slot2 = {}
+	slot3 = pg.NewStoryMgr.GetInstance()
 
-	for iter_3_0 = 1, var_0_0.MAX_COUNT do
-		local var_3_4 = arg_3_0.storyIDTable[iter_3_0]
-
-		if var_3_4 and iter_3_0 <= arg_3_0.curDay and iter_3_0 <= var_3_3 then
-			table.insert(var_3_1, function(arg_8_0)
-				var_3_2:Play(var_3_4, arg_8_0)
+	for slot8 = 1, uv0.MAX_COUNT do
+		if slot0.storyIDTable[slot8] and slot8 <= slot0.curDay and slot8 <= math.clamp(slot0.playCount, 0, uv0.MAX_COUNT) then
+			table.insert(slot2, function (slot0)
+				uv0:Play(uv1, slot0)
 			end)
 		end
 	end
 
-	seriesAsync(var_3_1, function()
-		print("play story done,count:", #var_3_1)
+	seriesAsync(slot2, function ()
+		print("play story done,count:", #uv0)
 	end)
 end
 
-function var_0_0.OnUpdateFlush(arg_10_0)
-	setActive(arg_10_0.gotTag, arg_10_0.isAchieved > 0)
+function slot0.OnUpdateFlush(slot0)
+	setActive(slot0.gotTag, slot0.isAchieved > 0)
 
-	if arg_10_0.curDay >= var_0_0.MAX_COUNT and arg_10_0.playCount >= var_0_0.MAX_COUNT and not (arg_10_0.isAchieved > 0) then
-		setActive(arg_10_0.lockTF, false)
-		setActive(arg_10_0.getBtn, true)
-		triggerButton(arg_10_0.getBtn)
-	elseif arg_10_0.isAchieved > 0 then
-		setActive(arg_10_0.lockTF, false)
-		setActive(arg_10_0.getBtn, true)
+	if uv0.MAX_COUNT <= slot0.curDay and uv0.MAX_COUNT <= slot0.playCount and slot0.isAchieved <= 0 then
+		setActive(slot0.lockTF, false)
+		setActive(slot0.getBtn, true)
+		triggerButton(slot0.getBtn)
+	elseif slot0.isAchieved > 0 then
+		setActive(slot0.lockTF, false)
+		setActive(slot0.getBtn, true)
 	else
-		setActive(arg_10_0.lockTF, true)
-		setActive(arg_10_0.getBtn, false)
+		setActive(slot0.lockTF, true)
+		setActive(slot0.getBtn, false)
 	end
 end
 
-function var_0_0.OnDestroy(arg_11_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.IsTip()
-	local var_12_0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEWYEAR_SHRINE_PAGE_ID.act_id)
-
-	if var_12_0 and not var_12_0:isEnd() then
-		local var_12_1 = pg.TimeMgr.GetInstance():DiffDay(var_12_0.data3, pg.TimeMgr.GetInstance():GetServerTime()) + 1
-
-		return math.clamp(var_12_1, 1, var_0_0.MAX_COUNT) > math.clamp(var_12_0.data2, 0, var_0_0.MAX_COUNT)
+function slot0.IsTip()
+	if getProxy(ActivityProxy):getActivityById(pg.activity_const.NEWYEAR_SHRINE_PAGE_ID.act_id) and not slot0:isEnd() then
+		return math.clamp(slot0.data2, 0, uv0.MAX_COUNT) < math.clamp(pg.TimeMgr.GetInstance():DiffDay(slot0.data3, pg.TimeMgr.GetInstance():GetServerTime()) + 1, 1, uv0.MAX_COUNT)
 	end
 end
 
-return var_0_0
+return slot0

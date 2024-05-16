@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
 	"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
 	"这样我们的第一支潜艇舰队就诞生了！",
@@ -22,7 +22,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[1]
+				text = slot0[1]
 			}
 		},
 		{
@@ -83,7 +83,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[2]
+				text = slot0[2]
 			}
 		},
 		{
@@ -129,7 +129,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -139,7 +139,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[4]
+				text = slot0[4]
 			}
 		},
 		{
@@ -171,7 +171,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[5]
+				text = slot0[5]
 			}
 		},
 		{

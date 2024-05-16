@@ -1,83 +1,76 @@
-﻿local var_0_0 = class("WorldPreCombatMediator", import("..base.ContextMediator"))
+slot0 = class("WorldPreCombatMediator", import("..base.ContextMediator"))
+slot0.OnSwitchShip = "WorldPreCombatMediator.OnSwitchShip"
+slot0.OnMapOp = "WorldPreCombatMediator.OnMapOp"
+slot0.OnAuto = "WorldPreCombatMediator.OnAuto"
+slot0.OnSubAuto = "WorldPreCombatMediator.OnSubAuto"
+slot0.OnStartBattle = "WorldPreCombatMediator.OnStartBattle"
+slot0.OnOpenSublayer = "OpenSublayer"
 
-var_0_0.OnSwitchShip = "WorldPreCombatMediator.OnSwitchShip"
-var_0_0.OnMapOp = "WorldPreCombatMediator.OnMapOp"
-var_0_0.OnAuto = "WorldPreCombatMediator.OnAuto"
-var_0_0.OnSubAuto = "WorldPreCombatMediator.OnSubAuto"
-var_0_0.OnStartBattle = "WorldPreCombatMediator.OnStartBattle"
-var_0_0.OnOpenSublayer = "OpenSublayer"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.OnSwitchShip, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		nowWorld():GetFleet(arg_2_1):SwitchShip(arg_2_2, arg_2_3)
+function slot0.register(slot0)
+	slot0:bind(uv0.OnSwitchShip, function (slot0, slot1, slot2, slot3)
+		nowWorld():GetFleet(slot1):SwitchShip(slot2, slot3)
 	end)
-	arg_1_0:bind(var_0_0.OnAuto, function(arg_3_0, arg_3_1)
-		arg_1_0:onAutoBtn(arg_3_1)
+	slot0:bind(uv0.OnAuto, function (slot0, slot1)
+		uv0:onAutoBtn(slot1)
 	end)
-	arg_1_0:bind(var_0_0.OnSubAuto, function(arg_4_0, arg_4_1)
-		arg_1_0:onSubAuto(arg_4_1)
+	slot0:bind(uv0.OnSubAuto, function (slot0, slot1)
+		uv0:onSubAuto(slot1)
 	end)
-	arg_1_0:bind(var_0_0.OnMapOp, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.WORLD_MAP_OP, arg_5_1)
+	slot0:bind(uv0.OnMapOp, function (slot0, slot1)
+		uv0:sendNotification(GAME.WORLD_MAP_OP, slot1)
 	end)
-	arg_1_0:bind(var_0_0.OnStartBattle, function(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-		if arg_6_2.damageLevel > arg_6_3:GetLimitDamageLevel() then
+	slot0:bind(uv0.OnStartBattle, function (slot0, slot1, slot2, slot3)
+		if slot3:GetLimitDamageLevel() < slot2.damageLevel then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideYes = true,
 				content = i18n("world_low_morale")
 			})
 		else
-			arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
+			uv0:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_WORLD,
-				stageId = arg_6_1
+				stageId = slot1
 			})
 		end
 	end)
-	arg_1_0:bind(var_0_0.OnOpenSublayer, function(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-		arg_1_0:addSubLayers(arg_7_1, arg_7_2, arg_7_3)
+	slot0:bind(uv0.OnOpenSublayer, function (slot0, slot1, slot2, slot3)
+		uv0:addSubLayers(slot1, slot2, slot3)
 	end)
-	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 end
 
-function var_0_0.onAutoBtn(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1.isOn
-	local var_8_1 = arg_8_1.toggle
-
-	arg_8_0:sendNotification(GAME.AUTO_BOT, {
-		isActiveBot = var_8_0,
-		toggle = var_8_1,
+function slot0.onAutoBtn(slot0, slot1)
+	slot0:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = slot1.isOn,
+		toggle = slot1.toggle,
 		system = SYSTEM_WORLD
 	})
 end
 
-function var_0_0.onSubAuto(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1.isOn
-	local var_9_1 = arg_9_1.toggle
-	local var_9_2 = arg_9_1.system
+function slot0.onSubAuto(slot0, slot1)
+	slot4 = slot1.system
 
-	arg_9_0:sendNotification(GAME.AUTO_SUB, {
-		isActiveSub = var_9_0,
-		toggle = var_9_1,
+	slot0:sendNotification(GAME.AUTO_SUB, {
+		isActiveSub = slot1.isOn,
+		toggle = slot1.toggle,
 		system = SYSTEM_WORLD
 	})
 end
 
-function var_0_0.listNotificationInterests(arg_10_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.WORLD_MAP_OP_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1:getName()
-	local var_11_1 = arg_11_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_11_0 == PlayerProxy.UPDATED then
-		arg_11_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	elseif var_11_0 == GAME.WORLD_MAP_OP_DONE then
-		-- block empty
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	elseif slot2 == GAME.WORLD_MAP_OP_DONE then
+		-- Nothing
 	end
 end
 
-return var_0_0
+return slot0

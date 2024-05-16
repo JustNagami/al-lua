@@ -1,27 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				time = 5,
-				skill_id = 4101
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				count = 0,
-				delay = 6
-			}
-		}
-	},
+return {
 	{
 		desc = "战斗开始10秒后使用烟雾弹，随后每20秒有20.0%概率使用烟雾弹，处于烟幕中的角色回避率提高15.0%，受到航空伤害降低15.0%，持续10秒，同技能效果不叠加",
 		addition = {
@@ -102,5 +79,28 @@
 	stack = 1,
 	id = 4101,
 	icon = 4100,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				time = 5,
+				skill_id = 4101
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				count = 0,
+				delay = 6
+			}
+		}
+	}
 }

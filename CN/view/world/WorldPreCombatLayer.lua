@@ -1,863 +1,772 @@
-﻿local var_0_0 = class("WorldPreCombatLayer", import("..base.BaseUI"))
-local var_0_1 = import("..ship.FormationUI")
-local var_0_2 = {
-	[99] = true
+slot0 = class("WorldPreCombatLayer", import("..base.BaseUI"))
+slot1 = import("..ship.FormationUI")
+slot2 = {
+	[99.0] = true
 }
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "WorldPreCombatUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.eventTriggers = {}
-	arg_2_0.middle = arg_2_0:findTF("middle")
-	arg_2_0.right = arg_2_0:findTF("right")
-	arg_2_0.top = arg_2_0:findTF("top")
-	arg_2_0.moveLayer = arg_2_0:findTF("moveLayer")
-	arg_2_0.backBtn = arg_2_0.top:Find("back_btn")
-	arg_2_0.playerResOb = arg_2_0.top:Find("playerRes")
-	arg_2_0.resPanel = WorldResource.New()
+function slot0.init(slot0)
+	slot0.eventTriggers = {}
+	slot0.middle = slot0:findTF("middle")
+	slot0.right = slot0:findTF("right")
+	slot0.top = slot0:findTF("top")
+	slot0.moveLayer = slot0:findTF("moveLayer")
+	slot0.backBtn = slot0.top:Find("back_btn")
+	slot0.playerResOb = slot0.top:Find("playerRes")
+	slot0.resPanel = WorldResource.New()
 
-	tf(arg_2_0.resPanel._go):SetParent(tf(arg_2_0.playerResOb), false)
+	tf(slot0.resPanel._go):SetParent(tf(slot0.playerResOb), false)
 
-	arg_2_0.strategyInfo = arg_2_0:findTF("strategy_info", arg_2_0.top)
+	slot4 = slot0.top
+	slot0.strategyInfo = slot0:findTF("strategy_info", slot4)
 
-	setActive(arg_2_0.strategyInfo, false)
+	setActive(slot0.strategyInfo, false)
 
-	arg_2_0.mainGS = arg_2_0.middle:Find("gear_score/main/Text")
-	arg_2_0.vanguardGS = arg_2_0.middle:Find("gear_score/vanguard/Text")
+	slot0.mainGS = slot0.middle:Find("gear_score/main/Text")
+	slot0.vanguardGS = slot0.middle:Find("gear_score/vanguard/Text")
 
-	setText(arg_2_0.mainGS, 0)
-	setText(arg_2_0.vanguardGS, 0)
+	setText(slot0.mainGS, 0)
+	setText(slot0.vanguardGS, 0)
 
-	arg_2_0.gridTFs = {
+	slot0.gridTFs = {
 		vanguard = {},
 		main = {}
 	}
-	arg_2_0.gridFrame = arg_2_0.middle:Find("mask/GridFrame")
+	slot0.gridFrame = slot0.middle:Find("mask/GridFrame")
 
-	for iter_2_0 = 1, 3 do
-		arg_2_0.gridTFs[TeamType.Vanguard][iter_2_0] = arg_2_0.gridFrame:Find("vanguard_" .. iter_2_0)
-		arg_2_0.gridTFs[TeamType.Main][iter_2_0] = arg_2_0.gridFrame:Find("main_" .. iter_2_0)
+	for slot4 = 1, 3 do
+		slot0.gridTFs[TeamType.Vanguard][slot4] = slot0.gridFrame:Find("vanguard_" .. slot4)
+		slot0.gridTFs[TeamType.Main][slot4] = slot0.gridFrame:Find("main_" .. slot4)
 	end
 
-	arg_2_0.heroContainer = arg_2_0.middle:Find("HeroContainer")
-	arg_2_0.strategy = arg_2_0.middle:Find("strategy")
+	slot0.heroContainer = slot0.middle:Find("HeroContainer")
+	slot0.strategy = slot0.middle:Find("strategy")
 
-	setActive(arg_2_0.strategy, false)
+	setActive(slot0.strategy, false)
 
-	arg_2_0.fleet = arg_2_0:findTF("middle/fleet")
-	arg_2_0.ship_tpl = findTF(arg_2_0.fleet, "shiptpl")
-	arg_2_0.empty_tpl = findTF(arg_2_0.fleet, "emptytpl")
+	slot0.fleet = slot0:findTF("middle/fleet")
+	slot0.ship_tpl = findTF(slot0.fleet, "shiptpl")
+	slot0.empty_tpl = findTF(slot0.fleet, "emptytpl")
 
-	setActive(arg_2_0.ship_tpl, false)
-	setActive(arg_2_0.empty_tpl, false)
+	setActive(slot0.ship_tpl, false)
+	setActive(slot0.empty_tpl, false)
 
-	arg_2_0.autoToggle = arg_2_0.right:Find("auto_toggle")
-	arg_2_0.autoSubToggle = arg_2_0.right:Find("sub_toggle_container/sub_toggle")
-	arg_2_0.startBtn = arg_2_0.right:Find("start")
-	arg_2_0.infoBtn = arg_2_0.right:Find("information")
-	arg_2_0.heroInfo = arg_2_0:getTpl("heroInfo")
-	arg_2_0.starTpl = arg_2_0:getTpl("star_tpl")
-	arg_2_0.energyDescTF = arg_2_0:findTF("energy_desc")
-	arg_2_0.energyDescTextTF = arg_2_0:findTF("energy_desc/Text")
-	arg_2_0.normaltab = arg_2_0.right:Find("normal")
-	arg_2_0.informationtab = arg_2_0.right:Find("infomation")
-	arg_2_0.buffInfo = arg_2_0.normaltab:Find("buff")
-	arg_2_0.bossInfo = arg_2_0.normaltab:Find("boss")
-	arg_2_0.spoilsContainer = arg_2_0.normaltab:Find("spoils/items/items_container")
-	arg_2_0.spoilsItem = arg_2_0.normaltab:Find("spoils/items/item_tpl")
-	arg_2_0.digits = arg_2_0.Clone2Full(arg_2_0.informationtab:Find("target/simple/digits"), 3)
-	arg_2_0.digitExtras = arg_2_0.Clone2Full(arg_2_0.informationtab:Find("target/detail"), 3)
-	arg_2_0.dropright = arg_2_0.informationtab:Find("spoils/right")
-	arg_2_0.dropleft = arg_2_0.informationtab:Find("spoils/left")
-	arg_2_0.dropitems = arg_2_0.Clone2Full(arg_2_0.informationtab:Find("spoils/items_container"), 3)
+	slot0.autoToggle = slot0.right:Find("auto_toggle")
+	slot0.autoSubToggle = slot0.right:Find("sub_toggle_container/sub_toggle")
+	slot0.startBtn = slot0.right:Find("start")
+	slot0.infoBtn = slot0.right:Find("information")
+	slot0.heroInfo = slot0:getTpl("heroInfo")
+	slot0.starTpl = slot0:getTpl("star_tpl")
+	slot0.energyDescTF = slot0:findTF("energy_desc")
+	slot0.energyDescTextTF = slot0:findTF("energy_desc/Text")
+	slot0.normaltab = slot0.right:Find("normal")
+	slot0.informationtab = slot0.right:Find("infomation")
+	slot0.buffInfo = slot0.normaltab:Find("buff")
+	slot0.bossInfo = slot0.normaltab:Find("boss")
+	slot0.spoilsContainer = slot0.normaltab:Find("spoils/items/items_container")
+	slot0.spoilsItem = slot0.normaltab:Find("spoils/items/item_tpl")
+	slot0.digits = slot0.Clone2Full(slot0.informationtab:Find("target/simple/digits"), 3)
+	slot0.digitExtras = slot0.Clone2Full(slot0.informationtab:Find("target/detail"), 3)
+	slot0.dropright = slot0.informationtab:Find("spoils/right")
+	slot0.dropleft = slot0.informationtab:Find("spoils/left")
+	slot0.dropitems = slot0.Clone2Full(slot0.informationtab:Find("spoils/items_container"), 3)
 
-	setActive(arg_2_0.informationtab:Find("target/simple"), true)
-	setActive(arg_2_0.informationtab:Find("target/detail"), false)
+	setActive(slot0.informationtab:Find("target/simple"), true)
 
-	for iter_2_1 = 1, #arg_2_0.digitExtras do
-		local var_2_0 = arg_2_0.digitExtras[iter_2_1]
+	slot4 = "target/detail"
 
-		setText(var_2_0:Find("desc"), i18n("world_mapbuff_compare_txt") .. "：")
+	setActive(slot0.informationtab:Find(slot4), false)
+
+	for slot4 = 1, #slot0.digitExtras do
+		setText(slot0.digitExtras[slot4]:Find("desc"), i18n("world_mapbuff_compare_txt") .. "：")
 	end
 end
 
-function var_0_0.uiStartAnimating(arg_3_0)
-	setAnchoredPosition(arg_3_0.middle, {
+function slot0.uiStartAnimating(slot0)
+	setAnchoredPosition(slot0.middle, {
 		x = -840
 	})
-	setAnchoredPosition(arg_3_0.right, {
+	setAnchoredPosition(slot0.right, {
 		x = 470
 	})
-	setAnchoredPosition(arg_3_0.top, {
-		y = arg_3_0.top.rect.height
+	setAnchoredPosition(slot0.top, {
+		y = slot0.top.rect.height
 	})
 
-	local var_3_0 = 0
-	local var_3_1 = 0.3
+	slot1 = 0
+	slot2 = 0.3
 
-	shiftPanel(arg_3_0.middle, 0, nil, var_3_1, var_3_0, true, true)
-	shiftPanel(arg_3_0.right, 0, nil, var_3_1, var_3_0, true, true, nil)
-	shiftPanel(arg_3_0.top, nil, 0, var_3_1, var_3_0, true, true, nil, nil)
+	shiftPanel(slot0.middle, 0, nil, slot2, slot1, true, true)
+	shiftPanel(slot0.right, 0, nil, slot2, slot1, true, true, nil)
+	shiftPanel(slot0.top, nil, 0, slot2, slot1, true, true, nil, )
 end
 
-function var_0_0.uiExitAnimating(arg_4_0)
-	local var_4_0 = 0
-	local var_4_1 = 0.3
+function slot0.uiExitAnimating(slot0)
+	slot1 = 0
+	slot2 = 0.3
 
-	shiftPanel(arg_4_0.middle, -840, nil, var_4_1, var_4_0, true, true)
-	shiftPanel(arg_4_0.right, 470, nil, var_4_1, var_4_0, true, true)
-	shiftPanel(arg_4_0.top, nil, arg_4_0.top.rect.height, var_4_1, var_4_0, true, true, nil, nil)
+	shiftPanel(slot0.middle, -840, nil, slot2, slot1, true, true)
+	shiftPanel(slot0.right, 470, nil, slot2, slot1, true, true)
+	shiftPanel(slot0.top, nil, slot0.top.rect.height, slot2, slot1, true, true, nil, )
 end
 
-function var_0_0.didEnter(arg_5_0)
-	onButton(arg_5_0, arg_5_0.backBtn, function()
-		GetOrAddComponent(arg_5_0._tf, typeof(CanvasGroup)).interactable = false
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
 
-		arg_5_0:uiExitAnimating()
-		LeanTween.delayedCall(0.3, System.Action(function()
-			arg_5_0:emit(var_0_0.ON_CLOSE)
+		uv0:uiExitAnimating()
+		LeanTween.delayedCall(0.3, System.Action(function ()
+			uv0:emit(uv1.ON_CLOSE)
 		end))
 	end, SFX_CANCEL)
-	onToggle(arg_5_0, arg_5_0.autoToggle, function(arg_8_0)
-		arg_5_0:emit(WorldPreCombatMediator.OnAuto, {
-			isOn = not arg_8_0,
-			toggle = arg_5_0.autoToggle
+	onToggle(slot0, slot0.autoToggle, function (slot0)
+		uv0:emit(WorldPreCombatMediator.OnAuto, {
+			isOn = not slot0,
+			toggle = uv0.autoToggle
 		})
 
-		if arg_8_0 and nowWorld():GetSubAidFlag() then
-			setActive(arg_5_0.autoSubToggle, true)
-			onToggle(arg_5_0, arg_5_0.autoSubToggle, function(arg_9_0)
-				arg_5_0:emit(WorldPreCombatMediator.OnSubAuto, {
-					isOn = not arg_9_0,
-					toggle = arg_5_0.autoSubToggle
+		if slot0 and nowWorld():GetSubAidFlag() then
+			setActive(uv0.autoSubToggle, true)
+			onToggle(uv0, uv0.autoSubToggle, function (slot0)
+				uv0:emit(WorldPreCombatMediator.OnSubAuto, {
+					isOn = not slot0,
+					toggle = uv0.autoSubToggle
 				})
 			end, SFX_PANEL, SFX_PANEL)
-			triggerToggle(arg_5_0.autoSubToggle, ys.Battle.BattleState.IsAutoSubActive(SYSTEM_WORLD))
+			triggerToggle(uv0.autoSubToggle, ys.Battle.BattleState.IsAutoSubActive(SYSTEM_WORLD))
 		else
-			setActive(arg_5_0.autoSubToggle, false)
+			setActive(uv0.autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf)
-	arg_5_0:updateCharacters()
-	arg_5_0:updateStageView()
-	triggerToggle(arg_5_0.autoToggle, ys.Battle.BattleState.IsAutoBotActive(SYSTEM_WORLD))
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+	slot0:updateCharacters()
+	slot0:updateStageView()
+	triggerToggle(slot0.autoToggle, ys.Battle.BattleState.IsAutoBotActive(SYSTEM_WORLD))
 
-	local var_5_0 = arg_5_0:GetCurrentAttachment()
-	local var_5_1 = var_5_0:GetBattleStageId()
-	local var_5_2 = pg.expedition_data_template[var_5_1]
+	slot2 = slot0:GetCurrentAttachment():GetBattleStageId()
 
-	assert(var_5_2, "expedition_data_template not exist: " .. var_5_1)
-
-	local var_5_3 = pg.world_expedition_data[var_5_1]
-	local var_5_4 = var_5_3 and var_5_3.battle_type and var_5_3.battle_type ~= 0
-
-	onNextTick(function()
-		arg_5_0:uiStartAnimating()
+	assert(pg.expedition_data_template[slot2], "expedition_data_template not exist: " .. slot2)
+	onNextTick(function ()
+		uv0:uiStartAnimating()
 	end)
 
-	arg_5_0.contextData.entetagain = true
+	slot0.contextData.entetagain = true
 
-	setActive(arg_5_0.infoBtn, var_5_4)
-	onButton(arg_5_0, arg_5_0.infoBtn, function()
-		arg_5_0:emit(WorldPreCombatMediator.OnOpenSublayer, Context.New({
+	setActive(slot0.infoBtn, pg.world_expedition_data[slot2] and slot4.battle_type and slot4.battle_type ~= 0)
+	onButton(slot0, slot0.infoBtn, function ()
+		uv0:emit(WorldPreCombatMediator.OnOpenSublayer, Context.New({
 			mediator = WorldBossInformationMediator,
 			viewComponent = WorldBossInformationLayer
-		}), true, function()
-			arg_5_0:closeView()
+		}), true, function ()
+			uv0:closeView()
 		end)
 	end)
-	onButton(arg_5_0, arg_5_0.startBtn, function()
-		arg_5_0:emit(WorldPreCombatMediator.OnStartBattle, var_5_0:GetBattleStageId(), arg_5_0:getCurrentFleet(), var_5_0)
+	onButton(slot0, slot0.startBtn, function ()
+		uv0:emit(WorldPreCombatMediator.OnStartBattle, uv1:GetBattleStageId(), uv0:getCurrentFleet(), uv1)
 	end, SFX_UI_WEIGHANCHOR)
 end
 
-function var_0_0.onBackPressed(arg_14_0)
-	if arg_14_0.strategyPanel and arg_14_0.strategyPanel._go and isActive(arg_14_0.strategyPanel._go) then
+function slot0.onBackPressed(slot0)
+	if slot0.strategyPanel and slot0.strategyPanel._go and isActive(slot0.strategyPanel._go) then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		arg_14_0:hideStrategyInfo()
+		slot0:hideStrategyInfo()
 	else
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(arg_14_0.backBtn)
+		triggerButton(slot0.backBtn)
 	end
 end
 
-function var_0_0.setPlayerInfo(arg_15_0, arg_15_1)
-	arg_15_0.resPanel:setPlayer(arg_15_1)
-	setActive(arg_15_0.resPanel._tf, nowWorld():IsSystemOpen(WorldConst.SystemResource))
+function slot0.setPlayerInfo(slot0, slot1)
+	slot0.resPanel:setPlayer(slot1)
+	setActive(slot0.resPanel._tf, nowWorld():IsSystemOpen(WorldConst.SystemResource))
 end
 
-function var_0_0.getCurrentFleet(arg_16_0)
+function slot0.getCurrentFleet(slot0)
 	return nowWorld():GetFleet()
 end
 
-function var_0_0.GetCurrentAttachment(arg_17_0)
-	local var_17_0 = nowWorld():GetActiveMap()
-	local var_17_1 = var_17_0:GetFleet()
+function slot0.GetCurrentAttachment(slot0)
+	slot1 = nowWorld():GetActiveMap()
+	slot2 = slot1:GetFleet()
 
-	return var_17_0:GetCell(var_17_1.row, var_17_1.column):GetAliveAttachment(), var_17_0.config.difficulty
+	return slot1:GetCell(slot2.row, slot2.column):GetAliveAttachment(), slot1.config.difficulty
 end
 
-function var_0_0.updateStageView(arg_18_0)
-	setActive(arg_18_0.normaltab, false)
-	setActive(arg_18_0.informationtab, true)
-	arg_18_0:UpdateInformationtab()
+function slot0.updateStageView(slot0)
+	setActive(slot0.normaltab, false)
+	setActive(slot0.informationtab, true)
+	slot0:UpdateInformationtab()
 end
 
-function var_0_0.UpdateNormaltab(arg_19_0)
-	local var_19_0, var_19_1 = arg_19_0:GetCurrentAttachment()
-	local var_19_2 = var_19_0:GetBattleStageId()
-	local var_19_3 = pg.world_expedition_data[var_19_2]
-	local var_19_4 = {}
+function slot0.UpdateNormaltab(slot0)
+	slot1, slot2 = slot0:GetCurrentAttachment()
+	slot5 = {}
 
-	for iter_19_0, iter_19_1 in ipairs(var_19_3.award_display_world) do
-		if var_19_1 == iter_19_1[1] then
-			var_19_4 = iter_19_1[2]
+	for slot9, slot10 in ipairs(pg.world_expedition_data[slot1:GetBattleStageId()].award_display_world) do
+		if slot2 == slot10[1] then
+			slot5 = slot10[2]
 		end
 	end
 
-	local var_19_5 = UIItemList.New(arg_19_0.spoilsContainer, arg_19_0.spoilsItem)
+	slot6 = UIItemList.New(slot0.spoilsContainer, slot0.spoilsItem)
 
-	var_19_5:make(function(arg_20_0, arg_20_1, arg_20_2)
-		local var_20_0 = arg_20_2
-		local var_20_1 = var_19_4[arg_20_1 + 1]
-		local var_20_2 = {
-			type = var_20_1[1],
-			id = var_20_1[2]
-		}
+	slot6:make(function (slot0, slot1, slot2)
+		slot3 = slot2
+		slot4 = uv0[slot1 + 1]
 
-		updateDrop(var_20_0, var_20_2)
-		onButton(arg_19_0, var_20_0, function()
-			arg_19_0:emit(var_0_0.ON_DROP, var_20_2)
+		updateDrop(slot3, {
+			type = slot4[1],
+			id = slot4[2]
+		})
+		onButton(uv1, slot3, function ()
+			uv0:emit(uv1.ON_DROP, uv2)
 		end, SFX_PANEL)
 	end)
-	var_19_5:align(#var_19_4)
+	slot6:align(#slot5)
 end
 
-local var_0_3 = "fe2222"
-local var_0_4 = "92fc63"
+slot3 = "fe2222"
+slot4 = "92fc63"
 
-function var_0_0.UpdateInformationtab(arg_22_0)
-	local var_22_0, var_22_1 = arg_22_0:GetCurrentAttachment()
-	local var_22_2 = var_22_0:GetBattleStageId()
-	local var_22_3 = pg.world_expedition_data[var_22_2]
+function slot0.UpdateInformationtab(slot0)
+	slot1, slot2 = slot0:GetCurrentAttachment()
+	slot3 = slot1:GetBattleStageId()
+	slot4 = pg.world_expedition_data[slot3]
 
-	assert(var_22_3, "world_expedition_data not exist: " .. var_22_2)
+	assert(slot4, "world_expedition_data not exist: " .. slot3)
 
-	local var_22_4 = {}
+	slot5 = {}
 
-	for iter_22_0, iter_22_1 in ipairs(var_22_3.award_display_world) do
-		if var_22_1 == iter_22_1[1] then
-			var_22_4 = iter_22_1[2]
+	for slot9, slot10 in ipairs(slot4.award_display_world) do
+		if slot2 == slot10[1] then
+			slot5 = slot10[2]
 		end
 	end
 
-	local var_22_5 = 0
+	slot6 = 0
 
-	local function var_22_6()
-		for iter_23_0 = 1, #arg_22_0.dropitems do
-			local var_23_0 = arg_22_0.dropitems[iter_23_0]:Find("item_tpl")
-			local var_23_1 = var_22_4[iter_23_0 + var_22_5]
+	onButton(slot0, slot0.dropright, function ()
+		uv0 = uv0 + 1
 
-			setActive(var_23_0, var_23_1 ~= nil)
+		uv1()
+	end)
+	onButton(slot0, slot0.dropleft, function ()
+		uv0 = uv0 - 1
 
-			if var_23_1 then
-				local var_23_2 = {
-					type = var_23_1[1],
-					id = var_23_1[2]
+		uv1()
+	end)
+	function ()
+		for slot3 = 1, #uv0.dropitems do
+			setActive(uv0.dropitems[slot3]:Find("item_tpl"), uv1[slot3 + uv2] ~= nil)
+
+			if slot5 then
+				slot6 = {
+					type = slot5[1],
+					id = slot5[2]
 				}
 
-				updateDrop(var_23_0, var_23_2)
-				setScrollText(var_23_0:Find("ScrollMask/DropName"), var_23_2:getConfig("name"))
-				onButton(arg_22_0, var_23_0, function()
-					arg_22_0:emit(var_0_0.ON_DROP, var_23_2)
+				updateDrop(slot4, slot6)
+				setScrollText(slot4:Find("ScrollMask/DropName"), slot6:getConfig("name"))
+				onButton(uv0, slot4, function ()
+					uv0:emit(uv1.ON_DROP, uv2)
 				end, SFX_PANEL)
 			end
 		end
 
-		setActive(arg_22_0.dropleft, var_22_5 > 0)
-		setActive(arg_22_0.dropright, #var_22_4 - var_22_5 > #arg_22_0.dropitems)
-	end
+		setActive(uv0.dropleft, uv2 > 0)
+		setActive(uv0.dropright, #uv1 - uv2 > #uv0.dropitems)
+	end()
 
-	onButton(arg_22_0, arg_22_0.dropright, function()
-		var_22_5 = var_22_5 + 1
-
-		var_22_6()
-	end)
-	onButton(arg_22_0, arg_22_0.dropleft, function()
-		var_22_5 = var_22_5 - 1
-
-		var_22_6()
-	end)
-	var_22_6()
-
-	local var_22_7 = nowWorld()
-	local var_22_8 = ys.Battle.BattleFormulas
-	local var_22_9 = var_22_7:GetWorldMapDifficultyBuffLevel()
-	local var_22_10 = {
-		var_22_9[1] * (1 + var_22_3.expedition_sairenvalueA / 10000),
-		var_22_9[2] * (1 + var_22_3.expedition_sairenvalueB / 10000),
-		var_22_9[3] * (1 + var_22_3.expedition_sairenvalueC / 10000)
+	slot8 = nowWorld()
+	slot9 = ys.Battle.BattleFormulas
+	slot10 = slot8:GetWorldMapDifficultyBuffLevel()
+	slot11 = {
+		slot10[1] * (1 + slot4.expedition_sairenvalueA / 10000),
+		slot10[2] * (1 + slot4.expedition_sairenvalueB / 10000),
+		slot10[3] * (1 + slot4.expedition_sairenvalueC / 10000)
 	}
-	local var_22_11 = var_22_7:GetWorldMapBuffLevel()
-	local var_22_12, var_22_13, var_22_14 = var_22_8.WorldMapRewardAttrEnhance(var_22_10, var_22_11)
-	local var_22_15 = 1 - var_22_8.WorldMapRewardHealingRate(var_22_10, var_22_11)
-	local var_22_16 = {
-		var_22_12,
-		var_22_13,
-		var_22_15
+	slot12 = slot8:GetWorldMapBuffLevel()
+	slot13, slot14, slot15 = slot9.WorldMapRewardAttrEnhance(slot11, slot12)
+	slot17 = {
+		slot13,
+		slot14,
+		1 - slot9.WorldMapRewardHealingRate(slot11, slot12)
 	}
 
-	for iter_22_2 = 1, #arg_22_0.digits do
-		local var_22_17 = arg_22_0.digits[iter_22_2]
-
-		setText(var_22_17:Find("digit"), string.format("%d", var_22_10[iter_22_2]))
-
-		local var_22_18 = iter_22_2 == 3 and 1 - var_22_16[iter_22_2] or var_22_16[iter_22_2] + 1
-
-		setText(var_22_17:Find("desc"), i18n("world_mapbuff_attrtxt_" .. iter_22_2) .. string.format("%3d%%", var_22_18 * 100))
+	for slot21 = 1, #slot0.digits do
+		setText(slot0.digits[slot21]:Find("digit"), string.format("%d", slot11[slot21]))
+		setText(slot22:Find("desc"), i18n("world_mapbuff_attrtxt_" .. slot21) .. string.format("%3d%%", (slot21 == 3 and 1 - slot17[slot21] or slot17[slot21] + 1) * 100))
 	end
 
-	for iter_22_3 = 1, #arg_22_0.digitExtras do
-		local var_22_19 = arg_22_0.digitExtras[iter_22_3]
+	for slot21 = 1, #slot0.digitExtras do
+		slot22 = slot0.digitExtras[slot21]
 
-		setText(var_22_19:Find("enemy"), string.format("%d", var_22_10[iter_22_3]))
-		setText(var_22_19:Find("ally"), string.format("%d", var_22_11[iter_22_3]))
-		setText(var_22_19:Find("result"), string.format("%d%%", var_22_16[iter_22_3] * 100))
-		setTextColor(var_22_19:Find("result"), var_22_16[iter_22_3] > 0 and arg_22_0.TransformColor(var_0_3) or arg_22_0.TransformColor(var_0_4))
-		setText(var_22_19:Find("result/arrow"), var_22_16[iter_22_3] == 0 and "" or var_22_16[iter_22_3] > 0 and "↑" or "↓")
+		setText(slot22:Find("enemy"), string.format("%d", slot11[slot21]))
+		setText(slot22:Find("ally"), string.format("%d", slot12[slot21]))
+		setText(slot22:Find("result"), string.format("%d%%", slot17[slot21] * 100))
+		setTextColor(slot22:Find("result"), slot17[slot21] > 0 and slot0.TransformColor(uv1) or slot0.TransformColor(uv2))
+		setText(slot22:Find("result/arrow"), slot17[slot21] == 0 and "" or slot17[slot21] > 0 and "↑" or "↓")
 
-		if var_22_16[iter_22_3] ~= 0 then
-			setTextColor(var_22_19:Find("result/arrow"), var_22_16[iter_22_3] > 0 and arg_22_0.TransformColor(var_0_3) or arg_22_0.TransformColor(var_0_4))
+		if slot17[slot21] ~= 0 then
+			setTextColor(slot22:Find("result/arrow"), slot17[slot21] > 0 and slot0.TransformColor(uv1) or slot0.TransformColor(uv2))
 		end
 	end
 
-	onButton(arg_22_0, arg_22_0.informationtab:Find("target/bg"), function()
-		local var_27_0 = arg_22_0.informationtab:Find("target/simple")
-		local var_27_1 = arg_22_0.informationtab:Find("target/detail")
-		local var_27_2 = go(var_27_0).activeSelf
+	onButton(slot0, slot0.informationtab:Find("target/bg"), function ()
+		slot0 = uv0.informationtab:Find("target/simple")
+		slot2 = go(slot0).activeSelf
 
-		setActive(var_27_0, not var_27_2)
-		setActive(var_27_1, var_27_2)
+		setActive(slot0, not slot2)
+		setActive(uv0.informationtab:Find("target/detail"), slot2)
 	end, SFX_PANEL)
 end
 
-function var_0_0.updateCharacters(arg_28_0)
+function slot0.updateCharacters(slot0)
 	pg.UIMgr.GetInstance():LoadingOn()
-	arg_28_0:resetGrid(TeamType.Vanguard)
-	arg_28_0:resetGrid(TeamType.Main)
-	arg_28_0:loadAllCharacter(function()
-		arg_28_0:updateFleetView()
-		arg_28_0:displayFleetInfo()
+	slot0:resetGrid(TeamType.Vanguard)
+	slot0:resetGrid(TeamType.Main)
+	slot0:loadAllCharacter(function ()
+		uv0:updateFleetView()
+		uv0:displayFleetInfo()
 		pg.UIMgr.GetInstance():LoadingOff()
 	end)
 end
 
-function var_0_0.flushCharacters(arg_30_0)
-	arg_30_0:resetGrid(TeamType.Vanguard)
-	arg_30_0:resetGrid(TeamType.Main)
-	arg_30_0:setAllCharacterPos(true)
-	arg_30_0:updateFleetView()
+function slot0.flushCharacters(slot0)
+	slot0:resetGrid(TeamType.Vanguard)
+	slot0:resetGrid(TeamType.Main)
+	slot0:setAllCharacterPos(true)
+	slot0:updateFleetView()
 end
 
-function var_0_0.updateFleetView(arg_31_0)
-	local function var_31_0(arg_32_0, arg_32_1)
-		removeAllChildren(arg_32_0)
+function slot0.updateFleetView(slot0)
+	function slot1(slot0, slot1)
+		removeAllChildren(slot0)
 
-		for iter_32_0 = 1, 3 do
-			if arg_32_1[iter_32_0] then
-				local var_32_0 = cloneTplTo(arg_31_0.ship_tpl, arg_32_0)
+		for slot5 = 1, 3 do
+			if slot1[slot5] then
+				slot6 = cloneTplTo(uv0.ship_tpl, slot0)
 
-				updateShip(var_32_0, arg_32_1[iter_32_0])
+				updateShip(slot6, slot1[slot5])
 
-				local var_32_1 = WorldConst.FetchWorldShip(arg_32_1[iter_32_0].id)
-				local var_32_2 = var_32_1:IsHpSafe()
-				local var_32_3 = var_32_1:IsAlive()
-				local var_32_4 = findTF(var_32_0, "blood/fillarea/green")
-				local var_32_5 = findTF(var_32_0, "blood/fillarea/red")
+				slot7 = WorldConst.FetchWorldShip(slot1[slot5].id)
+				slot8 = slot7:IsHpSafe()
 
-				setActive(var_32_4, var_32_2)
-				setActive(var_32_5, not var_32_2)
+				setActive(findTF(slot6, "blood/fillarea/green"), slot8)
+				setActive(findTF(slot6, "blood/fillarea/red"), not slot8)
 
-				;(var_32_2 and var_32_4 or var_32_5):GetComponent("Image").fillAmount = var_32_1.hpRant * 0.0001
+				(slot8 and slot10 or slot11):GetComponent("Image").fillAmount = slot7.hpRant * 0.0001
 
-				setActive(var_32_0:Find("broken"), var_32_1:IsBroken())
-				setActive(var_32_0:Find("mask"), not var_32_3)
+				setActive(slot6:Find("broken"), slot7:IsBroken())
+				setActive(slot6:Find("mask"), not slot7:IsAlive())
 			end
 		end
 	end
 
-	local var_31_1 = arg_31_0:getCurrentFleet()
+	slot2 = slot0:getCurrentFleet()
 
-	var_31_0(arg_31_0.fleet:Find("main"), var_31_1:GetTeamShipVOs(TeamType.Main, true))
-	var_31_0(arg_31_0.fleet:Find("vanguard"), var_31_1:GetTeamShipVOs(TeamType.Vanguard, true))
+	slot1(slot0.fleet:Find("main"), slot2:GetTeamShipVOs(TeamType.Main, true))
+	slot1(slot0.fleet:Find("vanguard"), slot2:GetTeamShipVOs(TeamType.Vanguard, true))
 end
 
-function var_0_0.loadAllCharacter(arg_33_0, arg_33_1)
-	removeAllChildren(arg_33_0.heroContainer)
+function slot0.loadAllCharacter(slot0, slot1)
+	removeAllChildren(slot0.heroContainer)
 
-	arg_33_0.characterList = {
+	slot0.characterList = {
 		[TeamType.Vanguard] = {},
 		[TeamType.Main] = {}
 	}
 
-	local function var_33_0(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
-		if arg_33_0.exited then
-			arg_34_0:Dispose()
+	function slot2(slot0, slot1, slot2, slot3)
+		if uv0.exited then
+			slot0:Dispose()
 
 			return
 		end
 
-		local var_34_0 = arg_34_0.model
-		local var_34_1 = WorldConst.FetchWorldShip(arg_34_1.id)
+		slot4 = slot0.model
+		slot5 = WorldConst.FetchWorldShip(slot1.id)
+		uv0.characterList[slot2][slot3] = slot0
 
-		arg_33_0.characterList[arg_34_2][arg_34_3] = arg_34_0
+		tf(slot4):SetParent(uv0.heroContainer, false)
 
-		tf(var_34_0):SetParent(arg_33_0.heroContainer, false)
+		tf(slot4).localScale = Vector3(0.65, 0.65, 1)
 
-		tf(var_34_0).localScale = Vector3(0.65, 0.65, 1)
+		pg.ViewUtils.SetLayer(tf(slot4), Layer.UI)
+		uv0:enabledCharacter(slot4, true, slot2)
+		uv0:setCharacterPos(slot2, slot3, slot4)
+		uv0:sortSiblingIndex()
 
-		pg.ViewUtils.SetLayer(tf(var_34_0), Layer.UI)
-		arg_33_0:enabledCharacter(var_34_0, true, arg_34_2)
-		arg_33_0:setCharacterPos(arg_34_2, arg_34_3, var_34_0)
-		arg_33_0:sortSiblingIndex()
+		slot6 = cloneTplTo(uv0.heroInfo, slot4)
 
-		local var_34_2 = cloneTplTo(arg_33_0.heroInfo, var_34_0)
-
-		setAnchoredPosition(var_34_2, {
+		setAnchoredPosition(slot6, {
 			x = 0,
 			y = 0
 		})
 
-		var_34_2.localScale = Vector3(2, 2, 1)
+		slot6.localScale = Vector3(2, 2, 1)
 
-		SetActive(var_34_2, true)
+		SetActive(slot6, true)
 
-		var_34_2.name = "info"
+		slot6.name = "info"
+		slot8 = findTF(findTF(slot6, "info"), "stars")
+		slot10 = findTF(slot7, "energy")
 
-		local var_34_3 = findTF(var_34_2, "info")
-		local var_34_4 = findTF(var_34_3, "stars")
-		local var_34_5 = arg_34_1:getEnergy() <= Ship.ENERGY_MID
-		local var_34_6 = findTF(var_34_3, "energy")
+		if slot1:getEnergy() <= Ship.ENERGY_MID then
+			slot11, slot12 = slot1:getEnergyPrint()
 
-		if var_34_5 then
-			local var_34_7, var_34_8 = arg_34_1:getEnergyPrint()
-			local var_34_9 = GetSpriteFromAtlas("energy", var_34_7)
-
-			if not var_34_9 then
+			if not GetSpriteFromAtlas("energy", slot11) then
 				warning("找不到疲劳")
 			end
 
-			setImageSprite(var_34_6, var_34_9)
+			setImageSprite(slot10, slot13)
 		end
 
-		setActive(var_34_6, var_34_5)
+		setActive(slot10, slot9)
 
-		local var_34_10 = arg_34_1:getStar()
-
-		for iter_34_0 = 1, var_34_10 do
-			cloneTplTo(arg_33_0.starTpl, var_34_4)
+		for slot15 = 1, slot1:getStar() do
+			cloneTplTo(uv0.starTpl, slot8)
 		end
 
-		local var_34_11 = GetSpriteFromAtlas("shiptype", shipType2print(arg_34_1:getShipType()))
-
-		if not var_34_11 then
-			warning("找不到船形, shipConfigId: " .. arg_34_1.configId)
+		if not GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType())) then
+			warning("找不到船形, shipConfigId: " .. slot1.configId)
 		end
 
-		setImageSprite(findTF(var_34_3, "type"), var_34_11, true)
-		setText(findTF(var_34_3, "frame/lv_contain/lv"), arg_34_1.level)
+		setImageSprite(findTF(slot7, "type"), slot12, true)
+		setText(findTF(slot7, "frame/lv_contain/lv"), slot1.level)
 
-		local var_34_12 = var_34_1:IsHpSafe()
-		local var_34_13 = findTF(var_34_3, "blood")
-		local var_34_14 = findTF(var_34_13, "fillarea/green")
-		local var_34_15 = findTF(var_34_13, "fillarea/red")
+		slot13 = slot5:IsHpSafe()
+		slot14 = findTF(slot7, "blood")
 
-		setActive(var_34_14, var_34_12)
-		setActive(var_34_15, not var_34_12)
+		setActive(findTF(slot14, "fillarea/green"), slot13)
+		setActive(findTF(slot14, "fillarea/red"), not slot13)
 
-		var_34_13:GetComponent(typeof(Slider)).fillRect = var_34_12 and var_34_14 or var_34_15
+		slot14:GetComponent(typeof(Slider)).fillRect = slot13 and slot15 or slot16
 
-		setSlider(var_34_13, 0, 10000, var_34_1.hpRant)
-		setActive(var_34_13:Find("broken"), var_34_1:IsBroken())
+		setSlider(slot14, 0, 10000, slot5.hpRant)
+		setActive(slot14:Find("broken"), slot5:IsBroken())
+		setActive(slot7:Find("expbuff"), getProxy(ActivityProxy):getBuffShipList()[slot1:getGroupId()] ~= nil)
 
-		local var_34_16 = getProxy(ActivityProxy):getBuffShipList()[arg_34_1:getGroupId()]
-		local var_34_17 = var_34_3:Find("expbuff")
-
-		setActive(var_34_17, var_34_16 ~= nil)
-
-		if var_34_16 then
-			local var_34_18 = var_34_16 / 100
-			local var_34_19 = var_34_16 % 100
-			local var_34_20 = tostring(var_34_18)
-
-			if var_34_19 > 0 then
-				var_34_20 = var_34_20 .. "." .. tostring(var_34_19)
+		if slot18 then
+			if slot18 % 100 > 0 then
+				slot22 = tostring(slot18 / 100) .. "." .. tostring(slot21)
 			end
 
-			setText(var_34_17:Find("text"), string.format("EXP +%s%%", var_34_20))
+			setText(slot19:Find("text"), string.format("EXP +%s%%", slot22))
 		end
 	end
 
-	local var_33_1 = {}
-
-	local function var_33_2(arg_35_0)
-		local var_35_0 = arg_33_0:getCurrentFleet():GetTeamShipVOs(arg_35_0, false)
-
-		for iter_35_0, iter_35_1 in ipairs(var_35_0) do
-			table.insert(var_33_1, function(arg_36_0)
-				local var_36_0 = SpineRole.New(iter_35_1)
-
-				var_36_0:Load(function()
-					var_33_0(var_36_0, iter_35_1, arg_35_0, iter_35_0)
-					onNextTick(arg_36_0)
+	function slot4(slot0)
+		for slot6, slot7 in ipairs(uv0:getCurrentFleet():GetTeamShipVOs(slot0, false)) do
+			table.insert(uv1, function (slot0)
+				SpineRole.New(uv0):Load(function ()
+					uv0(uv1, uv2, uv3, uv4)
+					onNextTick(uv5)
 				end)
 			end)
 		end
 	end
 
-	var_33_2(TeamType.Vanguard)
-	var_33_2(TeamType.Main)
-	seriesAsync(var_33_1, function(arg_38_0)
-		if arg_33_0.exited then
+	slot4(TeamType.Vanguard)
+	slot4(TeamType.Main)
+	seriesAsync({}, function (slot0)
+		if uv0.exited then
 			return
 		end
 
-		if arg_33_1 then
-			arg_33_1()
+		if uv1 then
+			uv1()
 		end
 	end)
 end
 
-function var_0_0.showEnergyDesc(arg_39_0, arg_39_1, arg_39_2)
-	if LeanTween.isTweening(go(arg_39_0.energyDescTF)) then
-		LeanTween.cancel(go(arg_39_0.energyDescTF))
+function slot0.showEnergyDesc(slot0, slot1, slot2)
+	if LeanTween.isTweening(go(slot0.energyDescTF)) then
+		LeanTween.cancel(go(slot0.energyDescTF))
 
-		arg_39_0.energyDescTF.localScale = Vector3.one
+		slot0.energyDescTF.localScale = Vector3.one
 	end
 
-	setText(arg_39_0.energyDescTextTF, arg_39_2)
+	setText(slot0.energyDescTextTF, slot2)
 
-	arg_39_0.energyDescTF.position = arg_39_1
+	slot0.energyDescTF.position = slot1
 
-	setActive(arg_39_0.energyDescTF, true)
-	LeanTween.scale(arg_39_0.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function()
-		arg_39_0.energyDescTF.localScale = Vector3.one
+	setActive(slot0.energyDescTF, true)
+	LeanTween.scale(slot0.energyDescTF, Vector3.zero, 0.2):setDelay(1):setFrom(Vector3.one):setOnComplete(System.Action(function ()
+		uv0.energyDescTF.localScale = Vector3.one
 
-		setActive(arg_39_0.energyDescTF, false)
+		setActive(uv0.energyDescTF, false)
 	end))
 end
 
-function var_0_0.setAllCharacterPos(arg_41_0, arg_41_1)
-	for iter_41_0, iter_41_1 in ipairs(arg_41_0.characterList[TeamType.Vanguard]) do
-		arg_41_0:setCharacterPos(TeamType.Vanguard, iter_41_0, tf(iter_41_1.model), arg_41_1)
+function slot0.setAllCharacterPos(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0.characterList[TeamType.Vanguard]) do
+		slot0:setCharacterPos(TeamType.Vanguard, slot5, tf(slot6.model), slot1)
 	end
 
-	for iter_41_2, iter_41_3 in ipairs(arg_41_0.characterList[TeamType.Main]) do
-		arg_41_0:setCharacterPos(TeamType.Main, iter_41_2, tf(iter_41_3.model), arg_41_1)
+	for slot5, slot6 in ipairs(slot0.characterList[TeamType.Main]) do
+		slot0:setCharacterPos(TeamType.Main, slot5, tf(slot6.model), slot1)
 	end
 
-	arg_41_0:sortSiblingIndex()
+	slot0:sortSiblingIndex()
 end
 
-function var_0_0.setCharacterPos(arg_42_0, arg_42_1, arg_42_2, arg_42_3, arg_42_4)
-	SetActive(arg_42_3, true)
+function slot0.setCharacterPos(slot0, slot1, slot2, slot3, slot4)
+	SetActive(slot3, true)
 
-	local var_42_0 = arg_42_0.gridTFs[arg_42_1][arg_42_2]
-	local var_42_1 = var_42_0.localPosition
+	slot6 = slot0.gridTFs[slot1][slot2].localPosition
 
-	LeanTween.cancel(go(arg_42_3))
+	LeanTween.cancel(go(slot3))
 
-	if arg_42_4 then
-		tf(arg_42_3).localPosition = Vector3(var_42_1.x + 2, var_42_1.y - 80, var_42_1.z)
+	if slot4 then
+		tf(slot3).localPosition = Vector3(slot6.x + 2, slot6.y - 80, slot6.z)
 
-		LeanTween.moveLocalY(go(arg_42_3), var_42_1.y - 110, 0.5):setDelay(0.5)
+		LeanTween.moveLocalY(go(slot3), slot6.y - 110, 0.5):setDelay(0.5)
 	else
-		tf(arg_42_3).localPosition = Vector3(var_42_1.x + 2, var_42_1.y - 110, var_42_1.z)
+		tf(slot3).localPosition = Vector3(slot6.x + 2, slot6.y - 110, slot6.z)
 	end
 
-	SetActive(var_42_0:Find("shadow"), true)
-	arg_42_3:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+	SetActive(slot5:Find("shadow"), true)
+	slot3:GetComponent("SpineAnimUI"):SetAction("stand", 0)
 end
 
-function var_0_0.resetGrid(arg_43_0, arg_43_1)
-	local var_43_0 = arg_43_0.gridTFs[arg_43_1]
-
-	for iter_43_0, iter_43_1 in ipairs(var_43_0) do
-		SetActive(iter_43_1:Find("shadow"), false)
+function slot0.resetGrid(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.gridTFs[slot1]) do
+		SetActive(slot7:Find("shadow"), false)
 	end
 end
 
-function var_0_0.switchToEditMode(arg_44_0)
-	local function var_44_0(arg_45_0)
-		for iter_45_0, iter_45_1 in ipairs(arg_45_0) do
-			local var_45_0 = iter_45_1.model
-			local var_45_1 = tf(var_45_0):Find("mouseChild")
+function slot0.switchToEditMode(slot0)
+	function slot1(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			if tf(slot5.model):Find("mouseChild") then
+				slot8 = slot7:GetComponent("EventTriggerListener")
+				uv0.eventTriggers[slot8] = true
 
-			if var_45_1 then
-				local var_45_2 = var_45_1:GetComponent("EventTriggerListener")
-
-				arg_44_0.eventTriggers[var_45_2] = true
-
-				if var_45_2 then
-					var_45_2:RemovePointEnterFunc()
+				if slot8 then
+					slot8:RemovePointEnterFunc()
 				end
 
-				if iter_45_0 == arg_44_0._shiftIndex then
-					var_45_1:GetComponent(typeof(Image)).enabled = true
+				if slot4 == uv0._shiftIndex then
+					slot7:GetComponent(typeof(Image)).enabled = true
 				end
 			end
 		end
 	end
 
-	var_44_0(arg_44_0.characterList[TeamType.Vanguard])
-	var_44_0(arg_44_0.characterList[TeamType.Main])
+	slot1(slot0.characterList[TeamType.Vanguard])
+	slot1(slot0.characterList[TeamType.Main])
 
-	arg_44_0._shiftIndex = nil
+	slot0._shiftIndex = nil
 
-	arg_44_0:flushCharacters()
+	slot0:flushCharacters()
 end
 
-function var_0_0.switchToShiftMode(arg_46_0, arg_46_1, arg_46_2)
-	for iter_46_0 = 1, 3 do
-		local var_46_0 = arg_46_0.gridTFs[TeamType.Vanguard][iter_46_0]
-		local var_46_1 = arg_46_0.gridTFs[TeamType.Main][iter_46_0]
-
-		setActive(var_46_0:Find("tip"), false)
-		setActive(var_46_1:Find("tip"), false)
-		setActive(arg_46_0.gridTFs[arg_46_2][iter_46_0]:Find("shadow"), false)
+function slot0.switchToShiftMode(slot0, slot1, slot2)
+	for slot6 = 1, 3 do
+		setActive(slot0.gridTFs[TeamType.Vanguard][slot6]:Find("tip"), false)
+		setActive(slot0.gridTFs[TeamType.Main][slot6]:Find("tip"), false)
+		setActive(slot0.gridTFs[slot2][slot6]:Find("shadow"), false)
 	end
 
-	local var_46_2 = arg_46_0.characterList[arg_46_2]
+	for slot7, slot8 in ipairs(slot0.characterList[slot2]) do
+		if slot8.model ~= slot1 then
+			LeanTween.moveLocalY(slot9, slot0.gridTFs[slot2][slot7].localPosition.y - 80, 0.5)
 
-	for iter_46_1, iter_46_2 in ipairs(var_46_2) do
-		local var_46_3 = iter_46_2.model
+			slot11 = tf(slot9):Find("mouseChild"):GetComponent("EventTriggerListener")
+			slot0.eventTriggers[slot11] = true
 
-		if var_46_3 ~= arg_46_1 then
-			local var_46_4 = arg_46_0.gridTFs[arg_46_2][iter_46_1]
-
-			LeanTween.moveLocalY(var_46_3, var_46_4.localPosition.y - 80, 0.5)
-
-			local var_46_5 = tf(var_46_3):Find("mouseChild"):GetComponent("EventTriggerListener")
-
-			arg_46_0.eventTriggers[var_46_5] = true
-
-			var_46_5:AddPointEnterFunc(function()
-				for iter_47_0, iter_47_1 in ipairs(var_46_2) do
-					if iter_47_1.model == var_46_3 then
-						arg_46_0:shift(arg_46_0._shiftIndex, iter_47_0, arg_46_2)
+			slot11:AddPointEnterFunc(function ()
+				for slot3, slot4 in ipairs(uv0) do
+					if slot4.model == uv1 then
+						uv2:shift(uv2._shiftIndex, slot3, uv3)
 
 						break
 					end
 				end
 			end)
 		else
-			arg_46_0._shiftIndex = iter_46_1
-			tf(var_46_3):Find("mouseChild"):GetComponent(typeof(Image)).enabled = false
+			slot0._shiftIndex = slot7
+			tf(slot9):Find("mouseChild"):GetComponent(typeof(Image)).enabled = false
 		end
 
-		var_46_3:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		slot9:GetComponent("SpineAnimUI"):SetAction("normal", 0)
 	end
 end
 
-function var_0_0.shift(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
-	local var_48_0 = arg_48_0.characterList[arg_48_3]
-	local var_48_1 = arg_48_0.gridTFs[arg_48_3]
-	local var_48_2 = var_48_0[arg_48_2].model
-	local var_48_3 = var_48_1[arg_48_1].localPosition
+function slot0.shift(slot0, slot1, slot2, slot3)
+	slot4 = slot0.characterList[slot3]
+	slot6 = slot4[slot2].model
+	slot8 = slot0.gridTFs[slot3][slot1].localPosition
+	tf(slot6).localPosition = Vector3(slot8.x + 2, slot8.y - 80, slot8.z)
 
-	tf(var_48_2).localPosition = Vector3(var_48_3.x + 2, var_48_3.y - 80, var_48_3.z)
+	LeanTween.cancel(slot6)
 
-	LeanTween.cancel(var_48_2)
+	slot4[slot2] = slot4[slot1]
+	slot4[slot1] = slot4[slot2]
+	slot9 = slot0:getCurrentFleet()
+	slot10 = slot9:GetTeamShips(slot3, false)
 
-	var_48_0[arg_48_1], var_48_0[arg_48_2] = var_48_0[arg_48_2], var_48_0[arg_48_1]
+	slot9:SwitchShip(slot10[slot1].id, slot10[slot2].id)
 
-	local var_48_4 = arg_48_0:getCurrentFleet()
-	local var_48_5 = var_48_4:GetTeamShips(arg_48_3, false)
+	slot0._shiftIndex = slot2
 
-	var_48_4:SwitchShip(var_48_5[arg_48_1].id, var_48_5[arg_48_2].id)
-
-	arg_48_0._shiftIndex = arg_48_2
-
-	arg_48_0:sortSiblingIndex()
+	slot0:sortSiblingIndex()
 end
 
-function var_0_0.sortSiblingIndex(arg_49_0)
-	local var_49_0 = 3
-	local var_49_1 = 0
+function slot0.sortSiblingIndex(slot0)
+	slot1 = 3
+	slot2 = 0
 
-	while var_49_0 > 0 do
-		local var_49_2 = arg_49_0.characterList[TeamType.Main][var_49_0]
-		local var_49_3 = arg_49_0.characterList[TeamType.Vanguard][var_49_0]
+	while slot1 > 0 do
+		slot4 = slot0.characterList[TeamType.Vanguard][slot1]
 
-		if var_49_2 then
-			local var_49_4 = var_49_2.model
+		if slot0.characterList[TeamType.Main][slot1] then
+			tf(slot3.model):SetSiblingIndex(slot2)
 
-			tf(var_49_4):SetSiblingIndex(var_49_1)
-
-			var_49_1 = var_49_1 + 1
+			slot2 = slot2 + 1
 		end
 
-		if var_49_3 then
-			local var_49_5 = var_49_3.model
+		if slot4 then
+			tf(slot4.model):SetSiblingIndex(slot2)
 
-			tf(var_49_5):SetSiblingIndex(var_49_1)
-
-			var_49_1 = var_49_1 + 1
+			slot2 = slot2 + 1
 		end
 
-		var_49_0 = var_49_0 - 1
+		slot1 = slot1 - 1
 	end
 end
 
-function var_0_0.enabledTeamCharacter(arg_50_0, arg_50_1, arg_50_2)
-	local var_50_0 = arg_50_0.characterList[arg_50_1]
-
-	for iter_50_0, iter_50_1 in ipairs(var_50_0) do
-		arg_50_0:enabledCharacter(iter_50_1.model, arg_50_2, arg_50_1)
+function slot0.enabledTeamCharacter(slot0, slot1, slot2)
+	for slot7, slot8 in ipairs(slot0.characterList[slot1]) do
+		slot0:enabledCharacter(slot8.model, slot2, slot1)
 	end
 end
 
-function var_0_0.enabledCharacter(arg_51_0, arg_51_1, arg_51_2, arg_51_3)
-	if arg_51_2 then
-		local var_51_0, var_51_1, var_51_2 = tf(arg_51_1):Find("mouseChild")
+function slot0.enabledCharacter(slot0, slot1, slot2, slot3)
+	if slot2 then
+		slot4, slot5, slot6 = tf(slot1):Find("mouseChild")
 
-		if var_51_0 then
-			SetActive(var_51_0, true)
+		if slot4 then
+			SetActive(slot4, true)
 		else
-			local var_51_3 = GameObject("mouseChild")
+			slot4 = GameObject("mouseChild")
 
-			tf(var_51_3):SetParent(tf(arg_51_1))
+			tf(slot4):SetParent(tf(slot1))
 
-			tf(var_51_3).localPosition = Vector3.zero
+			tf(slot4).localPosition = Vector3.zero
+			slot6 = GetOrAddComponent(slot4, "EventTriggerListener")
+			slot0.eventTriggers[slot6] = true
 
-			local var_51_4 = GetOrAddComponent(var_51_3, "ModelDrag")
-			local var_51_5 = GetOrAddComponent(var_51_3, "EventTriggerListener")
+			GetOrAddComponent(slot4, "ModelDrag"):Init()
 
-			arg_51_0.eventTriggers[var_51_5] = true
+			slot7 = slot4:GetComponent(typeof(RectTransform))
+			slot7.sizeDelta = Vector2(2.5, 2.5)
+			slot7.pivot = Vector2(0.5, 0)
+			slot7.anchoredPosition = Vector2(0, 0)
+			slot8, slot9, slot10, slot11 = nil
 
-			var_51_4:Init()
+			slot6:AddBeginDragFunc(function ()
+				uv0 = UnityEngine.Screen.width
+				uv1 = UnityEngine.Screen.height
+				uv2 = rtf(uv3._tf).rect.width / uv0
+				uv4 = rtf(uv3._tf).rect.height / uv1
 
-			local var_51_6 = var_51_3:GetComponent(typeof(RectTransform))
-
-			var_51_6.sizeDelta = Vector2(2.5, 2.5)
-			var_51_6.pivot = Vector2(0.5, 0)
-			var_51_6.anchoredPosition = Vector2(0, 0)
-
-			local var_51_7
-			local var_51_8
-			local var_51_9
-			local var_51_10
-
-			var_51_5:AddBeginDragFunc(function()
-				var_51_7 = UnityEngine.Screen.width
-				var_51_8 = UnityEngine.Screen.height
-				var_51_9 = rtf(arg_51_0._tf).rect.width / var_51_7
-				var_51_10 = rtf(arg_51_0._tf).rect.height / var_51_8
-
-				LeanTween.cancel(go(arg_51_1))
-				arg_51_0:switchToShiftMode(arg_51_1, arg_51_3)
-				arg_51_1:GetComponent("SpineAnimUI"):SetAction("tuozhuai", 0)
-				tf(arg_51_1):SetParent(arg_51_0.moveLayer, false)
+				LeanTween.cancel(go(uv5))
+				uv3:switchToShiftMode(uv5, uv6)
+				uv5:GetComponent("SpineAnimUI"):SetAction("tuozhuai", 0)
+				tf(uv5):SetParent(uv3.moveLayer, false)
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_DRAG)
 			end)
-			var_51_5:AddDragFunc(function(arg_53_0, arg_53_1)
-				rtf(arg_51_1).anchoredPosition = Vector2((arg_53_1.position.x - var_51_7 / 2) * var_51_9 + 20, (arg_53_1.position.y - var_51_8 / 2) * var_51_10 - 20)
+			slot6:AddDragFunc(function (slot0, slot1)
+				rtf(uv0).anchoredPosition = Vector2((slot1.position.x - uv1 / 2) * uv2 + 20, (slot1.position.y - uv3 / 2) * uv4 - 20)
 			end)
-			var_51_5:AddDragEndFunc(function(arg_54_0, arg_54_1)
-				arg_51_1:GetComponent("SpineAnimUI"):SetAction("tuozhuai", 0)
-				tf(arg_51_1):SetParent(arg_51_0.heroContainer, false)
-				arg_51_0:switchToEditMode()
-				arg_51_0:sortSiblingIndex()
+			slot6:AddDragEndFunc(function (slot0, slot1)
+				uv0:GetComponent("SpineAnimUI"):SetAction("tuozhuai", 0)
+				tf(uv0):SetParent(uv1.heroContainer, false)
+				uv1:switchToEditMode()
+				uv1:sortSiblingIndex()
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_HOME_PUT)
 			end)
 		end
 	else
-		SetActive(tf(arg_51_1):Find("mouseChild"), false)
+		SetActive(tf(slot1):Find("mouseChild"), false)
 	end
 end
 
-function var_0_0.displayFleetInfo(arg_55_0)
-	local var_55_0 = arg_55_0:getCurrentFleet()
-	local var_55_1 = _.reduce(var_55_0:GetTeamShipVOs(TeamType.Vanguard, false), 0, function(arg_56_0, arg_56_1)
-		return arg_56_0 + arg_56_1:getShipCombatPower()
-	end)
-	local var_55_2 = _.reduce(var_55_0:GetTeamShipVOs(TeamType.Main, false), 0, function(arg_57_0, arg_57_1)
-		return arg_57_0 + arg_57_1:getShipCombatPower()
-	end)
+function slot0.displayFleetInfo(slot0)
+	slot1 = slot0:getCurrentFleet()
 
-	var_0_1.tweenNumText(arg_55_0.vanguardGS, var_55_1)
-	var_0_1.tweenNumText(arg_55_0.mainGS, var_55_2)
+	uv0.tweenNumText(slot0.vanguardGS, _.reduce(slot1:GetTeamShipVOs(TeamType.Vanguard, false), 0, function (slot0, slot1)
+		return slot0 + slot1:getShipCombatPower()
+	end))
+	uv0.tweenNumText(slot0.mainGS, _.reduce(slot1:GetTeamShipVOs(TeamType.Main, false), 0, function (slot0, slot1)
+		return slot0 + slot1:getShipCombatPower()
+	end))
 end
 
-function var_0_0.hideStrategyInfo(arg_58_0)
-	if arg_58_0.strategyPanel then
-		arg_58_0.strategyPanel:detach()
+function slot0.hideStrategyInfo(slot0)
+	if slot0.strategyPanel then
+		slot0.strategyPanel:detach()
 	end
 end
 
-function var_0_0.recycleCharacterList(arg_59_0, arg_59_1, arg_59_2)
-	for iter_59_0, iter_59_1 in ipairs(arg_59_1) do
-		if arg_59_2[iter_59_0] then
-			arg_59_2[iter_59_0]:Dispose()
+function slot0.recycleCharacterList(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs(slot1) do
+		if slot2[slot6] then
+			slot2[slot6]:Dispose()
 
-			arg_59_2[iter_59_0] = nil
+			slot2[slot6] = nil
 		end
 	end
 end
 
-function var_0_0.willExit(arg_60_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_60_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 
-	if arg_60_0.resPanel then
-		arg_60_0.resPanel:exit()
+	if slot0.resPanel then
+		slot0.resPanel:exit()
 
-		arg_60_0.resPanel = nil
+		slot0.resPanel = nil
 	end
 
-	if arg_60_0.eventTriggers then
-		for iter_60_0, iter_60_1 in pairs(arg_60_0.eventTriggers) do
-			ClearEventTrigger(iter_60_0)
+	if slot0.eventTriggers then
+		for slot4, slot5 in pairs(slot0.eventTriggers) do
+			ClearEventTrigger(slot4)
 		end
 
-		arg_60_0.eventTriggers = nil
+		slot0.eventTriggers = nil
 	end
 
-	if arg_60_0.tweens then
-		cancelTweens(arg_60_0.tweens)
+	if slot0.tweens then
+		cancelTweens(slot0.tweens)
 	end
 
-	local var_60_0 = arg_60_0:getCurrentFleet()
+	slot1 = slot0:getCurrentFleet()
 
-	arg_60_0:recycleCharacterList(var_60_0:GetTeamShipVOs(TeamType.Main, false), arg_60_0.characterList[TeamType.Main])
-	arg_60_0:recycleCharacterList(var_60_0:GetTeamShipVOs(TeamType.Vanguard, false), arg_60_0.characterList[TeamType.Vanguard])
+	slot0:recycleCharacterList(slot1:GetTeamShipVOs(TeamType.Main, false), slot0.characterList[TeamType.Main])
+	slot0:recycleCharacterList(slot1:GetTeamShipVOs(TeamType.Vanguard, false), slot0.characterList[TeamType.Vanguard])
 end
 
-function var_0_0.Clone2Full(arg_61_0, arg_61_1)
-	local var_61_0 = {}
-	local var_61_1 = arg_61_0:GetChild(0)
-	local var_61_2 = arg_61_0.childCount
+function slot0.Clone2Full(slot0, slot1)
+	slot3 = slot0:GetChild(0)
 
-	for iter_61_0 = 0, var_61_2 - 1 do
-		table.insert(var_61_0, arg_61_0:GetChild(iter_61_0))
+	for slot8 = 0, slot0.childCount - 1 do
+		table.insert({}, slot0:GetChild(slot8))
 	end
 
-	for iter_61_1 = var_61_2, arg_61_1 - 1 do
-		local var_61_3 = cloneTplTo(var_61_1, arg_61_0)
-
-		table.insert(var_61_0, tf(var_61_3))
+	for slot8 = slot4, slot1 - 1 do
+		table.insert(slot2, tf(cloneTplTo(slot3, slot0)))
 	end
 
-	return var_61_0
+	return slot2
 end
 
-function var_0_0.TransformColor(arg_62_0)
-	local var_62_0 = tonumber(string.sub(arg_62_0, 1, 2), 16)
-	local var_62_1 = tonumber(string.sub(arg_62_0, 3, 4), 16)
-	local var_62_2 = tonumber(string.sub(arg_62_0, 5, 6), 16)
-
-	return Color.New(var_62_0 / 255, var_62_1 / 255, var_62_2 / 255)
+function slot0.TransformColor(slot0)
+	return Color.New(tonumber(string.sub(slot0, 1, 2), 16) / 255, tonumber(string.sub(slot0, 3, 4), 16) / 255, tonumber(string.sub(slot0, 5, 6), 16) / 255)
 end
 
-return var_0_0
+return slot0

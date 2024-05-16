@@ -1,1 +1,1 @@
-﻿return (class("StarSeaMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return class("StarSeaMainPage", import(".TemplatePage.PreviewTemplatePage"))

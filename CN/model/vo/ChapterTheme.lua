@@ -1,21 +1,21 @@
-﻿local var_0_0 = class("ChapterTheme")
+slot0 = class("ChapterTheme")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.assetSea = arg_1_1[1]
-	arg_1_0.angle = arg_1_1[2]
-	arg_1_0.fov = arg_1_1[3]
-	arg_1_0.offsetx = arg_1_1[4]
-	arg_1_0.offsety = arg_1_1[5]
-	arg_1_0.offsetz = 0
-	arg_1_0.cellSize = Vector2.New(arg_1_1[6], arg_1_1[7])
-	arg_1_0.cellSpace = Vector2.New(arg_1_1[8], arg_1_1[9])
-	arg_1_0.seaBase = arg_1_1[10]
+function slot0.Ctor(slot0, slot1)
+	slot0.assetSea = slot1[1]
+	slot0.angle = slot1[2]
+	slot0.fov = slot1[3]
+	slot0.offsetx = slot1[4]
+	slot0.offsety = slot1[5]
+	slot0.offsetz = 0
+	slot0.cellSize = Vector2.New(slot1[6], slot1[7])
+	slot0.cellSpace = Vector2.New(slot1[8], slot1[9])
+	slot0.seaBase = slot1[10]
 end
 
-function var_0_0.GetLinePosition(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = Vector2(arg_2_2 + 0.5, ChapterConst.MaxRow * 0.5 - arg_2_1 - 0.5)
+function slot0.GetLinePosition(slot0, slot1, slot2)
+	slot3 = Vector2(slot2 + 0.5, ChapterConst.MaxRow * 0.5 - slot1 - 0.5)
 
-	return Vector3(var_2_0.x * (arg_2_0.cellSize.x + arg_2_0.cellSpace.x), var_2_0.y * (arg_2_0.cellSize.y + arg_2_0.cellSpace.y), 0)
+	return Vector3(slot3.x * (slot0.cellSize.x + slot0.cellSpace.x), slot3.y * (slot0.cellSize.y + slot0.cellSpace.y), 0)
 end
 
-return var_0_0
+return slot0

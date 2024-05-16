@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("MusicGameConst")
-
-var_0_0.music_game_data = {
+slot0 = class("MusicGameConst")
+slot0.music_game_data = {
 	{
 		bg = 1,
 		pu = "06",
@@ -157,13 +156,32 @@ var_0_0.music_game_data = {
 	}
 }
 
-function var_0_0.getRandomBand()
-	local var_1_0 = math.random(1, #MusicGameConst.random_band)
-
-	return MusicGameConst.random_band[var_1_0]
+function slot0.getRandomBand()
+	return MusicGameConst.random_band[math.random(1, #MusicGameConst.random_band)]
 end
 
-var_0_0.random_band = {
+slot0.painting_const_key = {
+	jiasikenie_idolns = "jiasikenie_idol",
+	kelifulan_idolns = "kelifulan_idol",
+	ougen_idol_n = "ougen_idol",
+	boyixi_idol_n = "boyixi_idol",
+	baerdimo_idol_n = "baerdimo_idol",
+	edu_idol_n = "edu_idol",
+	lumang_idol_n = "lumang_idol",
+	jingang_idol_n = "jingang_idol",
+	luoen_idol_n = "luoen_idol",
+	dafeng_idol_n = "dafeng_idol",
+	nengdai_idol_n = "nengdai_idol",
+	kewei_idol_n = "kewei_idol",
+	xiefeierde_idolns = "xiefeierde_idol",
+	daqinghuayu_idolns = "tashigan_idol_n",
+	xipeier_idolns = "xipeier_idol",
+	daiduo_idol_n = "daiduo_idol",
+	tashigan_idol_n = "tashigan_idol",
+	guanghui_idol_n = "guanghui_idol",
+	chicheng_idolns = "chicheng_idol"
+}
+slot0.random_band = {
 	{
 		bg = 4,
 		light = false,
@@ -230,7 +248,7 @@ var_0_0.random_band = {
 		}
 	}
 }
-var_0_0.music_all_ship = {
+slot0.music_all_ship = {
 	"chicheng_idol",
 	"xiefeierde_idol",
 	"jiasikenie_idol",
@@ -245,7 +263,7 @@ var_0_0.music_all_ship = {
 	"tashigan_idol",
 	"daqinghuayu_idol"
 }
-var_0_0.music_all_painting = {
+slot0.music_all_painting = {
 	"chicheng_idolns",
 	"xiefeierde_idolns",
 	"jiasikenie_idolns",
@@ -261,4 +279,4 @@ var_0_0.music_all_painting = {
 	"tashigan_idol_n"
 }
 
-return var_0_0
+return slot0

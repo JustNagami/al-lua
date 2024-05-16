@@ -1,7 +1,6 @@
-﻿local var_0_0 = class("BackYardGetSpecifiedTypeThemplateCommand", pm.SimpleCommand)
+slot0 = class("BackYardGetSpecifiedTypeThemplateCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	return
+function slot0.execute(slot0, slot1)
 end
 
-return var_0_0
+return slot0

@@ -1,118 +1,104 @@
-﻿local var_0_0 = class("MetaCharActiveEnergyCommand", pm.SimpleCommand)
+slot0 = class("MetaCharActiveEnergyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().shipId
-	local var_1_1 = getProxy(BayProxy)
-	local var_1_2 = var_1_1:getShipById(var_1_0)
-
-	if not var_1_2 then
+function slot0.execute(slot0, slot1)
+	if not getProxy(BayProxy):getShipById(slot1:getBody().shipId) then
 		return
 	end
 
-	local var_1_3 = var_1_2:getMetaCharacter()
-	local var_1_4 = var_1_3:getBreakOutInfo()
-	local var_1_5 = var_1_4:getNextInfo()
-
-	if not var_1_5 then
+	if not slot5:getMetaCharacter():getBreakOutInfo():getNextInfo() then
 		return
 	end
 
-	local var_1_6, var_1_7 = var_1_4:getLimited()
+	slot9, slot10 = slot7:getLimited()
 
-	if var_1_6 > var_1_2.level or var_1_7 > var_1_3:getCurRepairExp() then
+	if slot5.level < slot9 or slot6:getCurRepairExp() < slot10 then
 		pg.TipsMgr.GetInstance():ShowTips("level or repair progress is not enough")
 
 		return
 	end
 
-	local var_1_8, var_1_9 = var_1_4:getConsume()
-	local var_1_10 = getProxy(PlayerProxy):getData()
+	slot11, slot12 = slot7:getConsume()
 
-	if var_1_8 > var_1_10.gold then
+	if getProxy(PlayerProxy):getData().gold < slot11 then
 		pg.TipsMgr.GetInstance():ShowTips("gold not enough")
 
 		return
 	end
 
-	local var_1_11 = getProxy(BagProxy)
+	slot14 = getProxy(BagProxy)
 
-	if _.any(var_1_9, function(arg_2_0)
-		return var_1_11:getItemCountById(arg_2_0.itemId) < arg_2_0.count
+	if _.any(slot12, function (slot0)
+		return uv0:getItemCountById(slot0.itemId) < slot0.count
 	end) then
 		pg.TipsMgr.GetInstance():ShowTips("item not enough")
 
 		return
 	end
 
-	print("63303 meta energy", var_1_2.id)
+	print("63303 meta energy", slot5.id)
 	pg.ConnectionMgr.GetInstance():Send(63303, {
-		ship_id = var_1_2.id
-	}, 63304, function(arg_3_0)
-		if arg_3_0.result == 0 then
-			print("63304 meta energy success", var_1_2.id)
+		ship_id = slot5.id
+	}, 63304, function (slot0)
+		if slot0.result == 0 then
+			print("63304 meta energy success", uv0.id)
 
-			local var_3_0 = Clone(var_1_2)
+			slot1 = Clone(uv0)
 
-			arg_1_0:updateStar(var_1_2, var_3_0.configId, var_1_5.id)
-			var_1_1:updateShip(var_1_2)
+			uv1:updateStar(uv0, slot1.configId, uv2.id)
+			uv3:updateShip(uv0)
 
-			local var_3_1 = getProxy(CollectionProxy)
-			local var_3_2 = var_3_1:getShipGroup(var_3_0.groupId)
+			if getProxy(CollectionProxy):getShipGroup(slot1.groupId) then
+				slot3.star = uv0:getStar()
 
-			if var_3_2 then
-				var_3_2.star = var_1_2:getStar()
-
-				var_3_1:updateShipGroup(var_3_2)
+				slot2:updateShipGroup(slot3)
 			end
 
-			var_1_10:consume({
-				gold = var_1_8
-			})
-			getProxy(PlayerProxy):updatePlayer(var_1_10)
+			slot7 = uv5
 
-			for iter_3_0, iter_3_1 in pairs(var_1_9) do
-				arg_1_0:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+			uv4:consume({
+				gold = slot7
+			})
+			getProxy(PlayerProxy):updatePlayer(uv4)
+
+			for slot7, slot8 in pairs(uv6) do
+				uv1:sendNotification(GAME.CONSUME_ITEM, Drop.New({
 					type = DROP_TYPE_ITEM,
-					id = iter_3_1.itemId,
-					count = iter_3_1.count
+					id = slot8.itemId,
+					count = slot8.count
 				}))
 			end
 
-			getProxy(MetaCharacterProxy):getMetaProgressVOByID(var_1_3.id):updateShip(var_1_2)
-			arg_1_0:sendNotification(GAME.ENERGY_META_ACTIVATION_DONE, {
-				newShip = var_1_2,
-				oldShip = var_3_0
+			getProxy(MetaCharacterProxy):getMetaProgressVOByID(uv7.id):updateShip(uv0)
+			uv1:sendNotification(GAME.ENERGY_META_ACTIVATION_DONE, {
+				newShip = uv0,
+				oldShip = slot1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_3_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-function var_0_0.updateStar(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	arg_4_1.configId = arg_4_3
+function slot0.updateStar(slot0, slot1, slot2, slot3)
+	slot1.configId = slot3
 
-	local var_4_0 = pg.ship_data_template[arg_4_1.configId]
-
-	for iter_4_0, iter_4_1 in ipairs(var_4_0.buff_list) do
-		if not arg_4_1.skills[iter_4_1] then
-			arg_4_1.skills[iter_4_1] = {
+	for slot8, slot9 in ipairs(pg.ship_data_template[slot1.configId].buff_list) do
+		if not slot1.skills[slot9] then
+			slot1.skills[slot9] = {
 				exp = 0,
 				level = 1,
-				id = iter_4_1
+				id = slot9
 			}
 		end
 	end
 
-	arg_4_1:updateMaxLevel(var_4_0.max_level)
+	slot1:updateMaxLevel(slot4.max_level)
 
-	local var_4_1 = pg.ship_data_template[arg_4_2].buff_list
-
-	for iter_4_2, iter_4_3 in ipairs(var_4_1) do
-		if not table.contains(var_4_0.buff_list, iter_4_3) then
-			arg_4_1.skills[iter_4_3] = nil
+	for slot9, slot10 in ipairs(pg.ship_data_template[slot2].buff_list) do
+		if not table.contains(slot4.buff_list, slot10) then
+			slot1.skills[slot10] = nil
 		end
 	end
 end
 
-return var_0_0
+return slot0

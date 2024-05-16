@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				rant = 5000,
-				target = "TargetSelf",
-				skill_id = 10140,
-				time = 12
-			}
-		}
-	},
+return {
 	{
 		desc = "主炮射击时有50.0%概率恢复先锋部队4.0%耐久——“这次，一定要保护好大家”",
 		addition = {
@@ -83,5 +69,19 @@
 	stack = 1,
 	id = 10140,
 	icon = 10140,
-	last_effect = "Health"
+	last_effect = "Health",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				rant = 5000,
+				target = "TargetSelf",
+				skill_id = 10140,
+				time = 12
+			}
+		}
+	}
 }

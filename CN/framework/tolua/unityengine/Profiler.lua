@@ -1,279 +1,220 @@
-﻿local var_0_0 = LuaProfiler
-local var_0_1 = jit and require("jit.vmdef")
-local var_0_2 = {
+slot0 = LuaProfiler
+slot1 = jit and require("jit.vmdef")
+slot2 = {
 	event = {
-		[20] = "_xpcall.__call",
-		[142] = "event.__call"
+		[20.0] = "_xpcall.__call",
+		[142.0] = "event.__call"
 	},
 	slot = {
-		[11] = "slot.__call"
+		[11.0] = "slot.__call"
 	},
 	MainScene = {
-		[250] = "MainScene.Update"
+		[250.0] = "MainScene.Update"
 	}
 }
-local var_0_3 = {
+slot3 = {
 	ipairs_aux = 1,
 	["_xpcall.__call"] = 1,
 	unknow = 1
 }
-local var_0_4 = {
-	mark = 1,
-	cache = 1
-}
-local var_0_5 = {}
+slot5 = {}
 
-function var_0_4.scan(arg_1_0, arg_1_1, arg_1_2)
-	if arg_1_0.mark[arg_1_1] then
-		return
+function slot6(slot0)
+	slot1 = #uv0 + 1
+
+	for slot5, slot6 in ipairs(uv0) do
+		if slot6 == slot0 then
+			slot1 = slot5
+		end
 	end
 
-	arg_1_0.mark[arg_1_1] = true
+	return slot1
+end
 
-	for iter_1_0, iter_1_1 in pairs(arg_1_1) do
-		if type(iter_1_0) == "string" then
-			if type(iter_1_1) == "function" then
-				local var_1_0 = iter_1_0
+function slot7(slot0)
+	if #uv0 > 0 and debug.getinfo(5, "f") then
+		if slot1 < uv1(slot2.func) and debug.getinfo(6, "f") then
+			slot4 = uv1(slot2.func) or slot4
+		end
 
-				if arg_1_2 then
-					var_1_0 = arg_1_2 .. "." .. var_1_0
-				end
-
-				if not var_0_3[var_1_0] and iter_1_0 ~= "__index" and iter_1_0 ~= "__newindex" then
-					arg_1_0.cache[iter_1_1] = {
-						id = -1,
-						name = var_1_0
-					}
-				end
-			elseif type(iter_1_1) == "table" and not arg_1_0.mark[iter_1_1] then
-				arg_1_0:scan(iter_1_1, iter_1_0)
-			end
-		elseif arg_1_2 and iter_1_0 == tolua.gettag or iter_1_0 == tolua.settag then
-			arg_1_0:scan(iter_1_1, arg_1_2)
+		for slot8 = slot4 + 1, slot1 do
+			table.remove(uv0)
+			uv2.EndSample()
 		end
 	end
 end
 
-function var_0_4.scanlibs(arg_2_0)
-	local var_2_0 = package.loaded
+function slot8(slot0, slot1, slot2)
+	uv0()
+	table.insert(uv1, slot1)
 
-	arg_2_0.mark[var_2_0] = true
-
-	for iter_2_0, iter_2_1 in pairs(var_2_0) do
-		if type(iter_2_0) == "string" and type(iter_2_1) == "table" then
-			arg_2_0:scan(iter_2_1, iter_2_0)
-
-			local var_2_1 = getmetatable(iter_2_1)
-
-			if var_2_1 then
-				arg_2_0:scan(var_2_1, iter_2_0)
-			end
-		end
+	if slot2.id == -1 then
+		slot2.name = slot0
+		slot2.id = uv2.GetID(slot0)
 	end
+
+	uv2.BeginSample(slot2.id)
 end
 
-local function var_0_6(arg_3_0)
-	local var_3_0 = #var_0_5 + 1
+function slot9(slot0, slot1, slot2)
+	uv0()
+	table.insert(uv1, slot1)
 
-	for iter_3_0, iter_3_1 in ipairs(var_0_5) do
-		if iter_3_1 == arg_3_0 then
-			var_3_0 = iter_3_0
-		end
+	slot3 = -1
+
+	if slot2.nick == nil then
+		slot2.nick = {}
 	end
 
-	return var_3_0
+	if not slot2.nick[slot0] then
+		slot2.nick[slot0] = uv2.GetID(slot0)
+	end
+
+	uv2.BeginSample(slot3)
 end
 
-local function var_0_7(arg_4_0)
-	local var_4_0 = #var_0_5
+function profiler_hook(slot0, slot1)
+	if slot0 == "call" then
+		slot2 = nil
 
-	if var_4_0 > 0 then
-		local var_4_1 = debug.getinfo(5, "f")
-
-		if var_4_1 then
-			local var_4_2 = var_4_1.func
-			local var_4_3 = var_0_6(var_4_2)
-
-			if var_4_0 < var_4_3 then
-				local var_4_4 = debug.getinfo(6, "f")
-
-				if var_4_4 then
-					local var_4_5 = var_4_4.func
-
-					var_4_3 = var_0_6(var_4_5) or var_4_3
-				end
-			end
-
-			for iter_4_0 = var_4_3 + 1, var_4_0 do
-				table.remove(var_0_5)
-				var_0_0.EndSample()
-			end
-		end
-	end
-end
-
-local function var_0_8(arg_5_0, arg_5_1, arg_5_2)
-	var_0_7()
-	table.insert(var_0_5, arg_5_1)
-
-	if arg_5_2.id == -1 then
-		arg_5_2.name = arg_5_0
-		arg_5_2.id = var_0_0.GetID(arg_5_0)
-	end
-
-	var_0_0.BeginSample(arg_5_2.id)
-end
-
-local function var_0_9(arg_6_0, arg_6_1, arg_6_2)
-	var_0_7()
-	table.insert(var_0_5, arg_6_1)
-
-	local var_6_0 = -1
-
-	if arg_6_2.nick == nil then
-		arg_6_2.nick = {}
-	end
-
-	local var_6_1 = arg_6_2.nick[arg_6_0]
-
-	if not var_6_1 then
-		var_6_1 = var_0_0.GetID(arg_6_0)
-		arg_6_2.nick[arg_6_0] = var_6_1
-	end
-
-	var_0_0.BeginSample(var_6_1)
-end
-
-function profiler_hook(arg_7_0, arg_7_1)
-	if arg_7_0 == "call" then
-		local var_7_0
-		local var_7_1 = debug.getinfo(2, "f").func
-		local var_7_2 = var_0_4.cache[var_7_1]
-
-		if var_7_2 then
-			var_7_0 = var_7_2.name
+		if uv0.cache[debug.getinfo(2, "f").func] then
+			slot2 = slot4.name
 		end
 
-		if var_0_3[var_7_0] then
+		if uv1[slot2] then
 			return
 		end
 
-		if var_7_0 == "event.__call" then
-			local var_7_3 = debug.getinfo(2, "n")
-
-			var_0_9(var_7_3.name or var_7_0, var_7_1, var_7_2)
-		elseif var_7_0 then
-			var_0_8(var_7_0, var_7_1, var_7_2)
+		if slot2 == "event.__call" then
+			uv2(debug.getinfo(2, "n").name or slot2, slot3, slot4)
+		elseif slot2 then
+			uv3(slot2, slot3, slot4)
 		else
-			local var_7_4 = debug.getinfo(2, "Sn")
-			local var_7_5 = var_7_4.name
-			local var_7_6 = var_7_4.linedefined
+			slot5 = debug.getinfo(2, "Sn")
+			slot6 = slot5.name
+			slot7 = slot5.linedefined
 
-			if not var_7_2 then
-				var_7_2 = {
+			if not slot4 then
+				uv0.cache[slot3] = {
 					id = -1,
 					name = "unknow"
 				}
-				var_0_4.cache[var_7_1] = var_7_2
 			end
 
-			if var_7_4.short_src == "[C]" then
-				if var_7_5 == "__index" or var_7_5 == "__newindex" then
+			if slot5.short_src == "[C]" then
+				if slot6 == "__index" or slot6 == "__newindex" then
 					return
 				end
 
-				local var_7_7 = tostring(var_7_1):match("function: builtin#(%d+)")
+				if not tostring(slot3):match("function: builtin#(%d+)") then
+					if slot6 then
+						slot8 = slot6
 
-				if not var_7_7 then
-					if var_7_5 then
-						local var_7_8 = var_7_5
-
-						var_0_8(var_7_5, var_7_1, var_7_2)
-					elseif var_7_6 ~= -1 then
-						local var_7_9 = var_7_4.short_src .. var_7_6
-
-						var_0_8(var_7_9, var_7_1, var_7_2)
+						uv3(slot6, slot3, slot4)
+					elseif slot7 ~= -1 then
+						uv3(slot5.short_src .. slot7, slot3, slot4)
 					end
-				else
-					local var_7_10 = var_0_1.ffnames[tonumber(var_7_7)]
-
-					if not var_0_3[var_7_10] then
-						var_0_8(var_7_10, var_7_1, var_7_2)
-					end
+				elseif not uv1[uv4.ffnames[tonumber(slot9)]] then
+					uv3(slot8, slot3, slot4)
 				end
-			elseif var_7_6 ~= -1 or var_7_5 then
-				local var_7_11 = var_7_4.short_src
+			elseif slot7 ~= -1 or slot6 then
+				slot8 = slot5.short_src
+				slot6 = slot6 or slot7
+				slot9 = nil
+				slot9 = slot8:match("([^/\\]+)%.%w+$") or slot8:match("([^/\\]+)$")
 
-				var_7_5 = var_7_5 or var_7_6
-
-				local var_7_12
-				local var_7_13 = var_7_11:match("([^/\\]+)%.%w+$") or var_7_11:match("([^/\\]+)$")
-				local var_7_14 = var_0_2[var_7_13]
-
-				if var_7_14 then
-					var_7_13 = var_7_14[var_7_6]
-				else
-					var_7_13 = var_7_13 .. "." .. var_7_5
-				end
-
-				var_7_13 = var_7_13 or var_7_11 .. "." .. var_7_5
-
-				var_0_8(var_7_13, var_7_1, var_7_2)
+				uv3((not uv5[slot9] or slot10[slot7]) and slot9 .. "." .. slot6 or slot8 .. "." .. slot6, slot3, slot4)
 			else
-				var_0_8(var_7_0, var_7_1, var_7_2)
+				uv3(slot2, slot3, slot4)
 			end
 		end
-	elseif arg_7_0 == "return" then
-		local var_7_15 = #var_0_5
-
-		if var_7_15 == 0 then
+	elseif slot0 == "return" then
+		if #uv6 == 0 then
 			return
 		end
 
-		local var_7_16 = debug.getinfo(2, "f")
-
-		if var_7_16.func == var_0_5[var_7_15] then
-			table.remove(var_0_5)
-			var_0_0.EndSample()
+		if debug.getinfo(2, "f").func == uv6[slot2] then
+			table.remove(uv6)
+			uv7.EndSample()
 		else
-			local var_7_17 = var_0_6(var_7_16.func)
-
-			if var_7_15 < var_7_17 then
+			if slot2 < uv8(slot3.func) then
 				return
 			end
 
-			for iter_7_0 = var_7_17, var_7_15 do
-				table.remove(var_0_5)
-				var_0_0.EndSample()
+			for slot8 = slot4, slot2 do
+				table.remove(uv6)
+				uv7.EndSample()
 			end
 		end
 	end
 end
 
-function var_0_4.start(arg_8_0)
-	arg_8_0.mark = {}
-	arg_8_0.cache = {
-		__mode = "k"
-	}
+return {
+	mark = 1,
+	cache = 1,
+	scan = function (slot0, slot1, slot2)
+		if slot0.mark[slot1] then
+			return
+		end
 
-	arg_8_0:scan(_G, nil)
-	arg_8_0:scanlibs()
+		slot0.mark[slot1] = true
 
-	arg_8_0.mark = nil
+		for slot6, slot7 in pairs(slot1) do
+			if type(slot6) == "string" then
+				if type(slot7) == "function" then
+					if slot2 then
+						slot8 = slot2 .. "." .. slot6
+					end
 
-	debug.sethook(profiler_hook, "cr", 0)
-end
+					if not uv0[slot8] and slot6 ~= "__index" and slot6 ~= "__newindex" then
+						slot0.cache[slot7] = {
+							id = -1,
+							name = slot8
+						}
+					end
+				elseif type(slot7) == "table" and not slot0.mark[slot7] then
+					slot0:scan(slot7, slot6)
+				end
+			elseif slot2 and slot6 == tolua.gettag or slot6 == tolua.settag then
+				slot0:scan(slot7, slot2)
+			end
+		end
+	end,
+	scanlibs = function (slot0)
+		slot1 = package.loaded
+		slot0.mark[slot1] = true
 
-function var_0_4.print(arg_9_0)
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.cache) do
-		print(iter_9_1.name)
+		for slot5, slot6 in pairs(slot1) do
+			if type(slot5) == "string" and type(slot6) == "table" then
+				slot0:scan(slot6, slot5)
+
+				if getmetatable(slot6) then
+					slot0:scan(slot7, slot5)
+				end
+			end
+		end
+	end,
+	start = function (slot0)
+		slot0.mark = {}
+		slot0.cache = {
+			__mode = "k"
+		}
+
+		slot0:scan(_G, nil)
+		slot0:scanlibs()
+
+		slot0.mark = nil
+
+		debug.sethook(profiler_hook, "cr", 0)
+	end,
+	print = function (slot0)
+		for slot4, slot5 in pairs(slot0.cache) do
+			print(slot5.name)
+		end
+	end,
+	stop = function (slot0)
+		debug.sethook(nil)
+
+		slot0.cache = nil
 	end
-end
-
-function var_0_4.stop(arg_10_0)
-	debug.sethook(nil)
-
-	arg_10_0.cache = nil
-end
-
-return var_0_4
+}

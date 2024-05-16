@@ -1,159 +1,144 @@
-﻿local var_0_0 = class("CommanderQuicklyToolPage", import("..base.BaseSubView"))
+slot0 = class("CommanderQuicklyToolPage", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderQuicklyToolPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.closeBtn = arg_2_0:findTF("frame/close_btn")
-	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel_btn")
-	arg_2_0.confirmBtn = arg_2_0:findTF("frame/confirm_btn")
-	arg_2_0.addBtn = arg_2_0:findTF("frame/content/count/add")
-	arg_2_0.reduceBtn = arg_2_0:findTF("frame/content/count/reduce")
-	arg_2_0.valueTxt = arg_2_0:findTF("frame/content/count/Text"):GetComponent(typeof(Text))
-	arg_2_0.time1Txt = arg_2_0:findTF("frame/content/time/Text"):GetComponent(typeof(Text))
-	arg_2_0.maxTxt = arg_2_0:findTF("frame/total/Text"):GetComponent(typeof(Text))
+function slot0.OnLoaded(slot0)
+	slot0.closeBtn = slot0:findTF("frame/close_btn")
+	slot0.cancelBtn = slot0:findTF("frame/cancel_btn")
+	slot0.confirmBtn = slot0:findTF("frame/confirm_btn")
+	slot0.addBtn = slot0:findTF("frame/content/count/add")
+	slot0.reduceBtn = slot0:findTF("frame/content/count/reduce")
+	slot0.valueTxt = slot0:findTF("frame/content/count/Text"):GetComponent(typeof(Text))
+	slot0.time1Txt = slot0:findTF("frame/content/time/Text"):GetComponent(typeof(Text))
+	slot0.maxTxt = slot0:findTF("frame/total/Text"):GetComponent(typeof(Text))
 
-	setText(arg_2_0:findTF("frame/content/label1"), i18n("commander_box_quickly_tool_tip_1"))
-	setText(arg_2_0:findTF("frame/content/label2"), i18n("commander_box_quickly_tool_tip_2"))
-	setText(arg_2_0:findTF("frame/content/time/label"), i18n("commander_box_quickly_tool_tip_3"))
+	setText(slot0:findTF("frame/content/label1"), i18n("commander_box_quickly_tool_tip_1"))
+	setText(slot0:findTF("frame/content/label2"), i18n("commander_box_quickly_tool_tip_2"))
+	setText(slot0:findTF("frame/content/time/label"), i18n("commander_box_quickly_tool_tip_3"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.closeBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.cancelBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.cancelBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.addBtn, function()
-		if arg_3_0.maxCnt == 0 then
+	onButton(slot0, slot0.addBtn, function ()
+		if uv0.maxCnt == 0 then
 			return
 		end
 
-		arg_3_0:UpdateValue(math.min(arg_3_0.value + 1, arg_3_0.maxCnt))
+		uv0:UpdateValue(math.min(uv0.value + 1, uv0.maxCnt))
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.reduceBtn, function()
-		if arg_3_0.value <= 1 then
+	onButton(slot0, slot0.reduceBtn, function ()
+		if uv0.value <= 1 then
 			return
 		end
 
-		arg_3_0:UpdateValue(math.max(1, arg_3_0.value - 1))
+		uv0:UpdateValue(math.max(1, uv0.value - 1))
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.confirmBtn, function()
-		if arg_3_0.value <= 0 then
+	onButton(slot0, slot0.confirmBtn, function ()
+		if uv0.value <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cat_accelfrate_notenough"))
 
 			return
 		end
 
-		if arg_3_0.value > arg_3_0.maxCnt then
+		if uv0.maxCnt < uv0.value then
 			return
 		end
 
-		local var_9_0 = arg_3_0:CalcMaxUsageCnt()
-
-		if var_9_0 <= 0 then
+		if uv0:CalcMaxUsageCnt() <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_box_was_finished"))
 
 			return
 		end
 
-		if var_9_0 < arg_3_0.value then
-			arg_3_0:UpdateValue(var_9_0)
+		if slot0 < uv0.value then
+			uv0:UpdateValue(slot0)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("comander_tool_cnt_is_reclac"))
 
 			return
 		end
 
-		arg_3_0:emit(CommanderCatMediator.USE_QUICKLY_TOOL, arg_3_0.itemId, arg_3_0.value, arg_3_0.boxId)
-		arg_3_0:Hide()
+		uv0:emit(CommanderCatMediator.USE_QUICKLY_TOOL, uv0.itemId, uv0.value, uv0.boxId)
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Show(arg_10_0, arg_10_1, arg_10_2)
-	setParent(arg_10_0._tf, pg.UIMgr.GetInstance().OverlayMain)
-	var_0_0.super.Show(arg_10_0)
+function slot0.Show(slot0, slot1, slot2)
+	setParent(slot0._tf, pg.UIMgr.GetInstance().OverlayMain)
+	uv0.super.Show(slot0)
 
-	arg_10_0.itemId = arg_10_2
-	arg_10_0.boxId = arg_10_1
-	arg_10_0.cost = Item.getConfigData(arg_10_0.itemId).usage_arg[1]
-	arg_10_0.costM = arg_10_0.cost / 60
+	slot0.itemId = slot2
+	slot0.boxId = slot1
+	slot0.cost = Item.getConfigData(slot0.itemId).usage_arg[1]
+	slot0.costM = slot0.cost / 60
+	slot3 = getProxy(BagProxy):getItemCountById(slot2)
+	slot0.maxCnt = math.min(slot0:CalcMaxUsageCnt(), slot3)
+	slot0.maxTxt.text = slot3
 
-	local var_10_0 = getProxy(BagProxy):getItemCountById(arg_10_2)
-	local var_10_1 = arg_10_0:CalcMaxUsageCnt()
-
-	arg_10_0.maxCnt = math.min(var_10_1, var_10_0)
-	arg_10_0.maxTxt.text = var_10_0
-
-	arg_10_0:UpdateValue(arg_10_0.maxCnt)
+	slot0:UpdateValue(slot0.maxCnt)
 end
 
-function var_0_0.Hide(arg_11_0)
-	var_0_0.super.Hide(arg_11_0)
-	setParent(arg_11_0._tf, arg_11_0._parentTf)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	setParent(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.UpdateValue(arg_12_0, arg_12_1)
-	arg_12_0.value = arg_12_1
-	arg_12_0.valueTxt.text = arg_12_1
+function slot0.UpdateValue(slot0, slot1)
+	slot0.value = slot1
+	slot0.valueTxt.text = slot1
 
-	local var_12_0 = arg_12_0.costM * arg_12_1 * 60
-	local var_12_1 = getProxy(CommanderProxy):getBoxById(arg_12_0.boxId):getFinishTime() - var_12_0
-
-	arg_12_0:AddTimer(var_12_1)
+	slot0:AddTimer(getProxy(CommanderProxy):getBoxById(slot0.boxId):getFinishTime() - slot0.costM * slot1 * 60)
 end
 
-function var_0_0.CalcMaxUsageCnt(arg_13_0)
-	local var_13_0 = getProxy(CommanderProxy):getBoxById(arg_13_0.boxId):getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime()
-
-	if var_13_0 > 0 then
-		return (math.ceil(var_13_0 / arg_13_0.cost))
+function slot0.CalcMaxUsageCnt(slot0)
+	if getProxy(CommanderProxy):getBoxById(slot0.boxId):getFinishTime() - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
+		return math.ceil(slot4 / slot0.cost)
 	else
 		return 0
 	end
 end
 
-function var_0_0.AddTimer(arg_14_0, arg_14_1)
-	arg_14_0:RemoveTimer()
+function slot0.AddTimer(slot0, slot1)
+	slot0:RemoveTimer()
 
-	arg_14_0.timer = Timer.New(function()
-		local var_15_0 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var_15_1 = arg_14_1 - var_15_0
+	slot0.timer = Timer.New(function ()
+		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
+			uv1:RemoveTimer()
 
-		if var_15_1 <= 0 then
-			arg_14_0:RemoveTimer()
-
-			arg_14_0.time1Txt.text = "00:00:00"
+			uv1.time1Txt.text = "00:00:00"
 		else
-			local var_15_2 = pg.TimeMgr.GetInstance():DescCDTime(var_15_1)
-
-			arg_14_0.time1Txt.text = var_15_2
+			uv1.time1Txt.text = pg.TimeMgr.GetInstance():DescCDTime(slot1)
 		end
 	end, 1, -1)
 
-	arg_14_0.timer:Start()
-	arg_14_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.RemoveTimer(arg_16_0)
-	if arg_16_0.timer then
-		arg_16_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_16_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.Hide(arg_17_0)
-	var_0_0.super.Hide(arg_17_0)
-	arg_17_0:RemoveTimer()
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	slot0:RemoveTimer()
 end
 
-function var_0_0.OnDestroy(arg_18_0)
-	arg_18_0:RemoveTimer()
+function slot0.OnDestroy(slot0)
+	slot0:RemoveTimer()
 end
 
-return var_0_0
+return slot0

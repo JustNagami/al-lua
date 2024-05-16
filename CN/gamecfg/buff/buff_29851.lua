@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-贾维斯I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-贾维斯I",
+	name = "专属弹幕-贾维斯I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-贾维斯I",
+	stack = 1,
+	id = 29851,
+	icon = 29850,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 29850
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-贾维斯I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-贾维斯I",
-	name = "专属弹幕-贾维斯I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-贾维斯I",
-	stack = 1,
-	id = 29851,
-	icon = 29850,
-	last_effect = ""
+	}
 }

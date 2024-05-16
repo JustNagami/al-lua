@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "花之牌",
+	init_effect = "",
+	time = 15,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 11840,
+	icon = 11840,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -22,26 +43,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "花之牌",
-	init_effect = "",
-	time = 15,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 11840,
-	icon = 11840,
-	last_effect = ""
+	}
 }

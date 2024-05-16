@@ -1,34 +1,33 @@
-﻿local var_0_0 = class("PathFinding")
+slot0 = class("PathFinding")
+PathFinding = slot0
+slot0.PrioNormal = 1
+slot0.PrioObstacle = 1000
+slot0.PrioForbidden = 1000000
 
-PathFinding = var_0_0
-var_0_0.PrioNormal = 1
-var_0_0.PrioObstacle = 1000
-var_0_0.PrioForbidden = 1000000
-
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.cells = arg_1_1
-	arg_1_0.rows = arg_1_2
-	arg_1_0.columns = arg_1_3
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.cells = slot1
+	slot0.rows = slot2
+	slot0.columns = slot3
 end
 
-function var_0_0.Find(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_1 = {
-		row = arg_2_1.row,
-		column = arg_2_1.column
+function slot0.Find(slot0, slot1, slot2)
+	slot1 = {
+		row = slot1.row,
+		column = slot1.column
 	}
-	arg_2_2 = {
-		row = arg_2_2.row,
-		column = arg_2_2.column
+	slot2 = {
+		row = slot2.row,
+		column = slot2.column
 	}
 
-	if arg_2_0.cells[arg_2_1.row][arg_2_1.column] < 0 or arg_2_0.cells[arg_2_2.row][arg_2_2.column] < 0 then
+	if slot0.cells[slot1.row][slot1.column] < 0 or slot0.cells[slot2.row][slot2.column] < 0 then
 		return 0, {}
 	else
-		return arg_2_0:_Find(arg_2_1, arg_2_2)
+		return slot0:_Find(slot1, slot2)
 	end
 end
 
-local var_0_1 = {
+slot1 = {
 	{
 		1,
 		0
@@ -47,97 +46,87 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0._Find(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = var_0_0.PrioForbidden
-	local var_3_1 = {}
-	local var_3_2 = {
-		arg_3_1
+function slot0._Find(slot0, slot1, slot2)
+	slot3 = uv0.PrioForbidden
+	slot4 = {}
+	slot5 = {
+		slot1
 	}
-	local var_3_3 = {}
-	local var_3_4 = {
-		[arg_3_1.row] = {
-			[arg_3_1.column] = {
+	slot6 = {}
+	slot7 = {
+		[slot1.row] = {
+			[slot1.column] = {
 				priority = 0,
 				path = {}
 			}
 		}
 	}
 
-	while #var_3_2 > 0 do
-		local var_3_5 = table.remove(var_3_2, 1)
-
-		if var_3_5.row == arg_3_2.row and var_3_5.column == arg_3_2.column then
-			local var_3_6 = var_3_4[var_3_5.row][var_3_5.column]
-
-			var_3_0 = var_3_6.priority
-			var_3_1 = var_3_6.path
+	while #slot5 > 0 do
+		if table.remove(slot5, 1).row == slot2.row and slot8.column == slot2.column then
+			slot9 = slot7[slot8.row][slot8.column]
+			slot3 = slot9.priority
+			slot4 = slot9.path
 
 			break
 		end
 
-		table.insert(var_3_3, var_3_5)
-		_.each(var_0_1, function(arg_4_0)
-			local var_4_0 = {
-				row = var_3_5.row + arg_4_0[1],
-				column = var_3_5.column + arg_4_0[2]
+		table.insert(slot6, slot8)
+		_.each(uv1, function (slot0)
+			slot1 = {
+				row = uv0.row + slot0[1],
+				column = uv0.column + slot0[2]
 			}
 
-			if not (_.any(var_3_2, function(arg_5_0)
-				return arg_5_0.row == var_4_0.row and arg_5_0.column == var_4_0.column
-			end) or _.any(var_3_3, function(arg_6_0)
-				return arg_6_0.row == var_4_0.row and arg_6_0.column == var_4_0.column
-			end)) and var_4_0.row >= 0 and var_4_0.row < arg_3_0.rows and var_4_0.column >= 0 and var_4_0.column < arg_3_0.columns then
-				local var_4_1 = var_3_4[var_3_5.row][var_3_5.column]
-				local var_4_2 = var_4_1.priority + arg_3_0.cells[var_4_0.row][var_4_0.column]
+			if not (_.any(uv1, function (slot0)
+				return slot0.row == uv0.row and slot0.column == uv0.column
+			end) or _.any(uv2, function (slot0)
+				return slot0.row == uv0.row and slot0.column == uv0.column
+			end)) and slot1.row >= 0 and slot1.row < uv3.rows and slot1.column >= 0 and slot1.column < uv3.columns then
+				if uv4[uv0.row][uv0.column].priority + uv3.cells[slot1.row][slot1.column] < uv5.PrioObstacle then
+					slot5 = Clone(slot3)
 
-				if var_4_2 < var_0_0.PrioObstacle then
-					local var_4_3 = Clone(var_4_1)
+					table.insert(slot5.path, slot1)
 
-					table.insert(var_4_3.path, var_4_0)
+					slot5.priority = slot4
+					uv4[slot1.row] = uv4[slot1.row] or {}
+					uv4[slot1.row][slot1.column] = slot5
+					slot6 = 0
 
-					var_4_3.priority = var_4_2
-					var_3_4[var_4_0.row] = var_3_4[var_4_0.row] or {}
-					var_3_4[var_4_0.row][var_4_0.column] = var_4_3
+					for slot10 = #uv1, 1, -1 do
+						slot11 = uv1[slot10]
 
-					local var_4_4 = 0
-
-					for iter_4_0 = #var_3_2, 1, -1 do
-						local var_4_5 = var_3_2[iter_4_0]
-						local var_4_6 = var_3_4[var_4_5.row][var_4_5.column]
-
-						if var_4_3.priority >= var_4_6.priority then
-							var_4_4 = iter_4_0
+						if uv4[slot11.row][slot11.column].priority <= slot5.priority then
+							slot6 = slot10
 
 							break
 						end
 					end
 
-					table.insert(var_3_2, var_4_4 + 1, var_4_0)
+					table.insert(uv1, slot6 + 1, slot1)
 				else
-					var_3_0 = math.min(var_3_0, var_4_2)
+					uv6 = math.min(uv6, slot4)
 				end
 			end
 		end)
 	end
 
-	if var_3_0 >= var_0_0.PrioObstacle then
-		local var_3_7 = 1000000
-		local var_3_8 = var_0_0.PrioForbidden
+	if uv0.PrioObstacle <= slot3 then
+		slot8 = 1000000
+		slot9 = uv0.PrioForbidden
 
-		for iter_3_0, iter_3_1 in pairs(var_3_4) do
-			for iter_3_2, iter_3_3 in pairs(iter_3_1) do
-				local var_3_9 = math.abs(arg_3_2.row - iter_3_0) + math.abs(arg_3_2.column - iter_3_2)
-
-				if var_3_9 < var_3_7 or var_3_9 == var_3_7 and var_3_8 > iter_3_3.priority then
-					var_3_7 = var_3_9
-					var_3_8 = iter_3_3.priority
-					var_3_1 = iter_3_3.path
+		for slot13, slot14 in pairs(slot7) do
+			for slot18, slot19 in pairs(slot14) do
+				if slot8 > math.abs(slot2.row - slot13) + math.abs(slot2.column - slot18) or slot20 == slot8 and slot19.priority < slot9 then
+					slot8 = slot20
+					slot9 = slot19.priority
+					slot4 = slot19.path
 				end
 			end
 		end
 	end
 
-	return var_3_0, var_3_1
+	return slot3, slot4
 end
 
-return var_0_0
+return slot0

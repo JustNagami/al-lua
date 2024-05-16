@@ -1,59 +1,50 @@
-﻿local var_0_0 = class("MainTechnologySequence")
+slot0 = class("MainTechnologySequence")
+slot0.DontNotifyBluePrintTaskAgain = false
 
-var_0_0.DontNotifyBluePrintTaskAgain = false
-
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(TechnologyProxy):getBuildingBluePrint()
-
-	if not var_1_0 then
-		arg_1_1()
+function slot0.Execute(slot0, slot1)
+	if not getProxy(TechnologyProxy):getBuildingBluePrint() then
+		slot1()
 
 		return
 	end
 
-	local var_1_1 = var_1_0:getTaskIds()
-	local var_1_2 = false
+	slot5 = false
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_1) do
-		if var_1_0:getTaskOpenTimeStamp(iter_1_1) <= pg.TimeMgr.GetInstance():GetServerTime() then
-			local var_1_3 = getProxy(TaskProxy):getTaskById(iter_1_1) or getProxy(TaskProxy):getFinishTaskById(iter_1_1)
-			local var_1_4 = getProxy(TaskProxy):isFinishPrevTasks(iter_1_1)
+	for slot9, slot10 in ipairs(slot3:getTaskIds()) do
+		if slot3:getTaskOpenTimeStamp(slot10) <= pg.TimeMgr.GetInstance():GetServerTime() then
+			if not (getProxy(TaskProxy):getTaskById(slot10) or getProxy(TaskProxy):getFinishTaskById(slot10)) and getProxy(TaskProxy):isFinishPrevTasks(slot10) then
+				slot5 = true
 
-			if not var_1_3 and var_1_4 then
-				var_1_2 = true
-
-				arg_1_0:TriggerTask(iter_1_1)
+				slot0:TriggerTask(slot10)
 			end
 		end
 	end
 
-	if var_1_2 and not var_0_0.DontNotifyBluePrintTaskAgain then
-		local var_1_5 = var_1_0:getShipVO()
-
+	if slot5 and not uv0.DontNotifyBluePrintTaskAgain then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("blueprint_task_update_tip", var_1_5:getConfig("name")),
+			content = i18n("blueprint_task_update_tip", slot3:getShipVO():getConfig("name")),
 			weight = LayerWeightConst.SECOND_LAYER,
-			onYes = function()
+			onYes = function ()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT)
-				arg_1_1()
+				uv0()
 			end,
-			onNo = function()
-				var_0_0.DontNotifyBluePrintTaskAgain = true
+			onNo = function ()
+				uv0.DontNotifyBluePrintTaskAgain = true
 
-				arg_1_1()
+				uv1()
 			end
 		})
 	else
-		arg_1_1()
+		slot1()
 	end
 end
 
-function var_0_0.TriggerTask(arg_4_0, arg_4_1)
-	if not getProxy(TaskProxy):isFinishPrevTasks(arg_4_1) then
+function slot0.TriggerTask(slot0, slot1)
+	if not getProxy(TaskProxy):isFinishPrevTasks(slot1) then
 		return
 	end
 
-	pg.m02:sendNotification(GAME.TRIGGER_TASK, arg_4_1)
+	pg.m02:sendNotification(GAME.TRIGGER_TASK, slot1)
 end
 
-return var_0_0
+return slot0

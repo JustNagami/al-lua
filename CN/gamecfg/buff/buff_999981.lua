@@ -1,4 +1,4 @@
-﻿return {
+return {
 	init_effect = "",
 	name = "肉鸽引导1 平射护盾",
 	time = 999,
@@ -34,10 +34,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_1_0)
+				centerPosFun = function (slot0)
 					return Vector3(2, -1.8, 5.5)
 				end,
-				rotationFun = function(arg_2_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 120, 0)
 				end
 			}
@@ -67,10 +67,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_3_0)
+				centerPosFun = function (slot0)
 					return Vector3(3.5, -1.8, 0.5)
 				end,
-				rotationFun = function(arg_4_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -100,10 +100,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_5_0)
+				centerPosFun = function (slot0)
 					return Vector3(1.5, -1.8, -4.5)
 				end,
-				rotationFun = function(arg_6_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 238, 0)
 				end
 			}

@@ -1,29 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate",
-				"onRemove"
-			},
-			arg_list = {
-				buff_id = 17246,
-				time = 1,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffFixVelocity",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				add = 0,
-				mul = -1000
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -301,5 +276,30 @@
 	id = 17243,
 	picture = "",
 	last_effect = "",
-	desc = "持续伤害+减速"
+	desc = "持续伤害+减速",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate",
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 17246,
+				time = 1,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffFixVelocity",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				add = 0,
+				mul = -1000
+			}
+		}
+	}
 }

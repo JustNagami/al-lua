@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "小齐柏林1",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "副炮",
+	stack = 1,
+	id = 12093,
+	icon = 12090,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -34,25 +54,5 @@
 				quota = 1
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "小齐柏林1",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "副炮",
-	stack = 1,
-	id = 12093,
-	icon = 12090,
-	last_effect = ""
+	}
 }

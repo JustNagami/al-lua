@@ -1,55 +1,54 @@
-﻿local var_0_0 = class("Challenge2Fleet", import(".Fleet"))
+slot0 = class("Challenge2Fleet", import(".Fleet"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
 
-	arg_1_0:updateShips(arg_1_1.ships)
+	slot0:updateShips(slot1.ships)
 
-	arg_1_0.commanderList = {}
+	slot0.commanderList = {}
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_1.commanders or {}) do
-		arg_1_0.commanderList[iter_1_1.pos] = Commander.New(iter_1_1.commanderinfo)
+	for slot5, slot6 in ipairs(slot1.commanders or {}) do
+		slot0.commanderList[slot6.pos] = Commander.New(slot6.commanderinfo)
 	end
 
-	arg_1_0.skills = {}
+	slot0.skills = {}
 
-	arg_1_0:updateCommanderSkills()
+	slot0:updateCommanderSkills()
 end
 
-function var_0_0.getShipsByTeam(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = {}
+function slot0.getShipsByTeam(slot0, slot1, slot2)
+	slot3 = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0[arg_2_1]) do
-		if iter_2_1.hpRant > 0 then
-			var_2_0[#var_2_0 + 1] = iter_2_1
+	for slot7, slot8 in ipairs(slot0[slot1]) do
+		if slot8.hpRant > 0 then
+			slot3[#slot3 + 1] = slot8
 		end
 	end
 
-	if arg_2_2 then
-		for iter_2_2, iter_2_3 in ipairs(arg_2_0[arg_2_1]) do
-			if iter_2_3.hpRant <= 0 then
-				var_2_0[#var_2_0 + 1] = iter_2_3
+	if slot2 then
+		for slot7, slot8 in ipairs(slot0[slot1]) do
+			if slot8.hpRant <= 0 then
+				slot3[#slot3 + 1] = slot8
 			end
 		end
 	end
 
-	return var_2_0
+	return slot3
 end
 
-function var_0_0.getTeamByName(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0[arg_3_1]
-	local var_3_1 = {}
+function slot0.getTeamByName(slot0, slot1)
+	slot3 = {}
 
-	for iter_3_0, iter_3_1 in pairs(var_3_0) do
-		table.insert(var_3_1, iter_3_1.id)
+	for slot7, slot8 in pairs(slot0[slot1]) do
+		table.insert(slot3, slot8.id)
 	end
 
-	return var_3_1
+	return slot3
 end
 
-function var_0_0.getFleetType(arg_4_0)
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.ships) do
-		if iter_4_1:getTeamType() == TeamType.Submarine then
+function slot0.getFleetType(slot0)
+	for slot4, slot5 in pairs(slot0.ships) do
+		if slot5:getTeamType() == TeamType.Submarine then
 			return FleetType.Submarine
 		end
 	end
@@ -57,47 +56,43 @@ function var_0_0.getFleetType(arg_4_0)
 	return FleetType.Normal
 end
 
-function var_0_0.getShips(arg_5_0, arg_5_1)
-	local var_5_0 = {}
-	local var_5_1 = arg_5_0:getFleetType()
+function slot0.getShips(slot0, slot1)
+	slot2 = {}
 
-	if var_5_1 == FleetType.Normal then
-		_.each(arg_5_0:getShipsByTeam(TeamType.Main, arg_5_1), function(arg_6_0)
-			table.insert(var_5_0, arg_6_0)
+	if slot0:getFleetType() == FleetType.Normal then
+		_.each(slot0:getShipsByTeam(TeamType.Main, slot1), function (slot0)
+			table.insert(uv0, slot0)
 		end)
-		_.each(arg_5_0:getShipsByTeam(TeamType.Vanguard, arg_5_1), function(arg_7_0)
-			table.insert(var_5_0, arg_7_0)
+		_.each(slot0:getShipsByTeam(TeamType.Vanguard, slot1), function (slot0)
+			table.insert(uv0, slot0)
 		end)
-	elseif var_5_1 == FleetType.Submarine then
-		_.each(arg_5_0:getShipsByTeam(TeamType.Submarine, arg_5_1), function(arg_8_0)
-			table.insert(var_5_0, arg_8_0)
+	elseif slot3 == FleetType.Submarine then
+		_.each(slot0:getShipsByTeam(TeamType.Submarine, slot1), function (slot0)
+			table.insert(uv0, slot0)
 		end)
 	end
 
-	return var_5_0
+	return slot2
 end
 
-function var_0_0.updateShips(arg_9_0, arg_9_1)
-	arg_9_0[TeamType.Vanguard] = {}
-	arg_9_0[TeamType.Main] = {}
-	arg_9_0[TeamType.Submarine] = {}
-	arg_9_0.ships = {}
+function slot0.updateShips(slot0, slot1)
+	slot0[TeamType.Vanguard] = {}
+	slot0[TeamType.Main] = {}
+	slot0[TeamType.Submarine] = {}
+	slot0.ships = {}
 
-	_.each(arg_9_1 or {}, function(arg_10_0)
-		local var_10_0 = Ship.New(arg_10_0.ship_info)
+	_.each(slot1 or {}, function (slot0)
+		slot1 = Ship.New(slot0.ship_info)
+		slot1.hpRant = slot0.hp_rant
+		uv0.ships[slot1.id] = slot1
 
-		var_10_0.hpRant = arg_10_0.hp_rant
-		arg_9_0.ships[var_10_0.id] = var_10_0
-
-		table.insert(arg_9_0[var_10_0:getTeamType()], var_10_0)
+		table.insert(uv0[slot1:getTeamType()], slot1)
 	end)
 end
 
-function var_0_0.updateShipsHP(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_0.ships[arg_11_1]
-
-	if var_11_0 then
-		var_11_0.hpRant = arg_11_2
+function slot0.updateShipsHP(slot0, slot1, slot2)
+	if slot0.ships[slot1] then
+		slot3.hpRant = slot2
 
 		return true
 	else
@@ -105,96 +100,80 @@ function var_0_0.updateShipsHP(arg_11_0, arg_11_1, arg_11_2)
 	end
 end
 
-function var_0_0.getCommanders(arg_12_0)
-	return arg_12_0.commanderList
+function slot0.getCommanders(slot0)
+	return slot0.commanderList
 end
 
-function var_0_0.switchShip(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0 = arg_13_0:getShipsByTeam(arg_13_1, false)
-	local var_13_1 = var_13_0[arg_13_2].id
-	local var_13_2 = var_13_0[arg_13_3].id
-	local var_13_3
-	local var_13_4
-	local var_13_5
-	local var_13_6
+function slot0.switchShip(slot0, slot1, slot2, slot3)
+	slot4 = slot0:getShipsByTeam(slot1, false)
+	slot6 = slot4[slot3].id
+	slot7, slot8, slot9, slot10 = nil
 
-	for iter_13_0, iter_13_1 in pairs(arg_13_0.ships) do
-		if iter_13_0 == var_13_1 then
-			var_13_3 = iter_13_1:getTeamType()
-			var_13_4 = table.indexof(arg_13_0[var_13_3], iter_13_1)
+	for slot14, slot15 in pairs(slot0.ships) do
+		if slot14 == slot4[slot2].id then
+			slot8 = table.indexof(slot0[slot15:getTeamType()], slot15)
 		end
 
-		if iter_13_0 == var_13_2 then
-			var_13_5 = iter_13_1:getTeamType()
-			var_13_6 = table.indexof(arg_13_0[var_13_5], iter_13_1)
+		if slot14 == slot6 then
+			slot10 = table.indexof(slot0[slot15:getTeamType()], slot15)
 		end
 	end
 
-	if var_13_3 == var_13_5 and var_13_4 ~= var_13_6 then
-		arg_13_0[var_13_3][var_13_4], arg_13_0[var_13_5][var_13_6] = arg_13_0[var_13_5][var_13_6], arg_13_0[var_13_3][var_13_4]
+	if slot7 == slot9 and slot8 ~= slot10 then
+		slot0[slot9][slot10] = slot0[slot7][slot8]
+		slot0[slot7][slot8] = slot0[slot9][slot10]
 	end
 end
 
-function var_0_0.buildBattleBuffList(arg_14_0)
-	local var_14_0 = {}
-	local var_14_1, var_14_2 = FleetSkill.triggerMirrorSkill(arg_14_0, FleetSkill.TypeBattleBuff)
+function slot0.buildBattleBuffList(slot0)
+	slot1 = {}
+	slot2, slot3 = FleetSkill.triggerMirrorSkill(slot0, FleetSkill.TypeBattleBuff)
 
-	if var_14_1 and #var_14_1 > 0 then
-		local var_14_3 = {}
+	if slot2 and #slot2 > 0 then
+		slot4 = {}
 
-		for iter_14_0, iter_14_1 in ipairs(var_14_1) do
-			local var_14_4 = var_14_2[iter_14_0]
-			local var_14_5 = arg_14_0:findCommanderBySkillId(var_14_4.id)
+		for slot8, slot9 in ipairs(slot2) do
+			slot4[slot11] = slot4[slot0:findCommanderBySkillId(slot3[slot8].id)] or {}
 
-			var_14_3[var_14_5] = var_14_3[var_14_5] or {}
-
-			table.insert(var_14_3[var_14_5], iter_14_1)
+			table.insert(slot4[slot11], slot9)
 		end
 
-		for iter_14_2, iter_14_3 in pairs(var_14_3) do
-			table.insert(var_14_0, {
-				iter_14_2,
-				iter_14_3
+		for slot8, slot9 in pairs(slot4) do
+			table.insert(slot1, {
+				slot8,
+				slot9
 			})
 		end
 	end
 
-	local var_14_6 = arg_14_0:getCommanders()
+	for slot8, slot9 in pairs(slot0:getCommanders()) do
+		for slot14, slot15 in ipairs(slot9:getTalents()) do
+			if #slot15:getBuffsAddition() > 0 then
+				slot17 = nil
 
-	for iter_14_4, iter_14_5 in pairs(var_14_6) do
-		local var_14_7 = iter_14_5:getTalents()
-
-		for iter_14_6, iter_14_7 in ipairs(var_14_7) do
-			local var_14_8 = iter_14_7:getBuffsAddition()
-
-			if #var_14_8 > 0 then
-				local var_14_9
-
-				for iter_14_8, iter_14_9 in ipairs(var_14_0) do
-					if iter_14_9[1] == iter_14_5 then
-						var_14_9 = iter_14_9[2]
+				for slot21, slot22 in ipairs(slot1) do
+					if slot22[1] == slot9 then
+						slot17 = slot22[2]
 
 						break
 					end
 				end
 
-				if not var_14_9 then
-					var_14_9 = {}
-
-					table.insert(var_14_0, {
-						iter_14_5,
-						var_14_9
+				if not slot17 then
+					table.insert(slot1, {
+						slot9,
+						{}
 					})
 				end
 
-				for iter_14_10, iter_14_11 in ipairs(var_14_8) do
-					table.insert(var_14_9, iter_14_11)
+				for slot21, slot22 in ipairs(slot16) do
+					table.insert(slot17, slot22)
 				end
 			end
 		end
 	end
 
-	return var_14_0
+	return slot1
 end
 
-return var_0_0
+return slot0

@@ -1,61 +1,58 @@
-﻿local var_0_0 = class("CommanderHomeSelCommanderPage", import(".CommanderHomeBaseSelPage"))
+slot0 = class("CommanderHomeSelCommanderPage", import(".CommanderHomeBaseSelPage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderHomeSelCommanderPage"
 end
 
-function var_0_0.OnCatteryUpdate(arg_2_0, arg_2_1)
-	arg_2_0.cattery = arg_2_1
+function slot0.OnCatteryUpdate(slot0, slot1)
+	slot0.cattery = slot1
 
-	arg_2_0:Update(arg_2_0.home, arg_2_1)
+	slot0:Update(slot0.home, slot1)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	var_0_0.super.OnInit(arg_3_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_3_0.selectedID = -1
+	slot0.selectedID = -1
 
-	onButton(arg_3_0, arg_3_0.okBtn, function()
-		if arg_3_0.selectedID >= 0 then
-			arg_3_0:emit(CommanderHomeMediator.ON_SEL_COMMANDER, arg_3_0.cattery.id, arg_3_0.selectedID)
+	onButton(slot0, slot0.okBtn, function ()
+		if uv0.selectedID >= 0 then
+			uv0:emit(CommanderHomeMediator.ON_SEL_COMMANDER, uv0.cattery.id, uv0.selectedID)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnSelected(arg_5_0, arg_5_1)
-	if arg_5_1.commanderVO then
-		local var_5_0 = arg_5_1.commanderVO.id
-		local var_5_1, var_5_2 = arg_5_0:Check(var_5_0)
+function slot0.OnSelected(slot0, slot1)
+	if slot1.commanderVO then
+		slot3, slot4 = slot0:Check(slot1.commanderVO.id)
 
-		if var_5_1 then
-			if arg_5_0.mark then
-				setActive(arg_5_0.mark, false)
+		if slot3 then
+			if slot0.mark then
+				setActive(slot0.mark, false)
 			end
 
-			if arg_5_0.selectedID == var_5_0 then
-				arg_5_0.selectedID = 0
-				arg_5_0.mark = nil
+			if slot0.selectedID == slot2 then
+				slot0.selectedID = 0
+				slot0.mark = nil
 
-				arg_5_0:emit(CatteryDescPage.CHANGE_COMMANDER, nil)
+				slot0:emit(CatteryDescPage.CHANGE_COMMANDER, nil)
 			else
-				setActive(arg_5_1.mark2, true)
+				setActive(slot1.mark2, true)
 
-				arg_5_0.mark = arg_5_1.mark2
-				arg_5_0.selectedID = var_5_0
+				slot0.mark = slot1.mark2
+				slot0.selectedID = slot2
 
-				arg_5_0:emit(CatteryDescPage.CHANGE_COMMANDER, arg_5_1.commanderVO)
+				slot0:emit(CatteryDescPage.CHANGE_COMMANDER, slot1.commanderVO)
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(var_5_2)
+			pg.TipsMgr.GetInstance():ShowTips(slot4)
 		end
 	end
 end
 
-function var_0_0.Check(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.home:GetCatteries()
-
-	for iter_6_0, iter_6_1 in ipairs(var_6_0) do
-		if iter_6_1:GetCommanderId() == arg_6_1 and iter_6_1.id ~= arg_6_0.cattery.id then
+function slot0.Check(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.home:GetCatteries()) do
+		if slot7:GetCommanderId() == slot1 and slot7.id ~= slot0.cattery.id then
 			return false, i18n("commander_is_in_cattery")
 		end
 	end
@@ -63,11 +60,9 @@ function var_0_0.Check(arg_6_0, arg_6_1)
 	return true
 end
 
-function var_0_0.CheckIncludeSelf(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_0.home:GetCatteries()
-
-	for iter_7_0, iter_7_1 in ipairs(var_7_0) do
-		if iter_7_1:GetCommanderId() == arg_7_1 then
+function slot0.CheckIncludeSelf(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.home:GetCatteries()) do
+		if slot7:GetCommanderId() == slot1 then
 			return false
 		end
 	end
@@ -75,48 +70,42 @@ function var_0_0.CheckIncludeSelf(arg_7_0, arg_7_1)
 	return true
 end
 
-function var_0_0.OnUpdateItem(arg_8_0, arg_8_1, arg_8_2)
-	var_0_0.super.OnUpdateItem(arg_8_0, arg_8_1, arg_8_2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	uv0.super.OnUpdateItem(slot0, slot1, slot2)
 
-	local var_8_0 = arg_8_1 + 1
-	local var_8_1 = arg_8_0.displays[var_8_0]
-	local var_8_2 = arg_8_0.cards[arg_8_2]
+	slot5 = slot0.cards[slot2]
 
-	if var_8_1 then
-		local var_8_3 = arg_8_0.selectedID == var_8_1.id
+	if slot0.displays[slot1 + 1] then
+		slot6 = slot0.selectedID == slot4.id
 
-		setActive(var_8_2.mark2, var_8_3)
+		setActive(slot5.mark2, slot6)
 
-		if var_8_3 then
-			arg_8_0.mark = var_8_2.mark2
+		if slot6 then
+			slot0.mark = slot5.mark2
 		end
 
-		local var_8_4 = arg_8_0:CheckIncludeSelf(var_8_1.id)
-
-		setActive(var_8_2._tf:Find("info/home"), not var_8_4)
+		setActive(slot5._tf:Find("info/home"), not slot0:CheckIncludeSelf(slot4.id))
 	end
 end
 
-function var_0_0.Update(arg_9_0, arg_9_1, arg_9_2)
-	arg_9_0:Show()
+function slot0.Update(slot0, slot1, slot2)
+	slot0:Show()
 
-	arg_9_0.home = arg_9_1
-	arg_9_0.cattery = arg_9_2
+	slot0.home = slot1
+	slot0.cattery = slot2
 
-	local var_9_0 = arg_9_2:GetCommanderId()
-
-	if var_9_0 ~= 0 then
-		arg_9_0.selectedID = var_9_0
+	if slot2:GetCommanderId() ~= 0 then
+		slot0.selectedID = slot3
 	end
 
-	var_0_0.super.Update(arg_9_0)
+	uv0.super.Update(slot0)
 end
 
-function var_0_0.Hide(arg_10_0)
-	var_0_0.super.Hide(arg_10_0)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
 
-	arg_10_0.selectedID = -1
-	arg_10_0.mark = nil
+	slot0.selectedID = -1
+	slot0.mark = nil
 end
 
-return var_0_0
+return slot0

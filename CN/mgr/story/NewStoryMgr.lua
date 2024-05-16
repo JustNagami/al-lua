@@ -1,30 +1,27 @@
-﻿pg = pg or {}
-
-local var_0_0 = singletonClass("NewStoryMgr")
-
-pg.NewStoryMgr = var_0_0
-
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5 = 5
-local var_0_6 = 6
-local var_0_7 = 7
-local var_0_8 = Color.New(1, 0.8705, 0.4196, 1)
-local var_0_9 = Color.New(1, 1, 1, 1)
+pg = pg or {}
+slot0 = singletonClass("NewStoryMgr")
+pg.NewStoryMgr = slot0
+slot1 = 1
+slot2 = 2
+slot3 = 3
+slot4 = 4
+slot5 = 5
+slot6 = 6
+slot7 = 7
+slot8 = Color.New(1, 0.8705, 0.4196, 1)
+slot9 = Color.New(1, 1, 1, 1)
 
 require("Mgr/Story/Include")
 
-local var_0_10 = true
+slot10 = true
 
-local function var_0_11(...)
-	if var_0_10 and IsUnityEditor then
+function slot11(...)
+	if uv0 and IsUnityEditor then
 		originalPrint(...)
 	end
 end
 
-local var_0_12 = {
+slot12 = {
 	"",
 	"JP",
 	"KR",
@@ -32,868 +29,821 @@ local var_0_12 = {
 	""
 }
 
-local function var_0_13(arg_2_0)
-	local var_2_0 = var_0_12[PLATFORM_CODE]
+function slot13(slot0)
+	slot1 = uv0[PLATFORM_CODE]
 
-	if arg_2_0 == "index" then
-		arg_2_0 = arg_2_0 .. var_2_0
+	if slot0 == "index" then
+		slot0 = slot0 .. slot1
 	end
 
-	local var_2_1
-
-	if PLATFORM_CODE == PLATFORM_JP then
-		var_2_1 = "GameCfg.story" .. var_2_0 .. "." .. arg_2_0
-	else
-		var_2_1 = "GameCfg.story" .. "." .. arg_2_0
-	end
-
-	local var_2_2, var_2_3 = pcall(function()
-		return require(var_2_1)
+	slot2 = nil
+	slot2 = PLATFORM_CODE == PLATFORM_JP and "GameCfg.story" .. slot1 .. "." .. slot0 or "GameCfg.story" .. "." .. slot0
+	slot3, slot4 = pcall(function ()
+		return require(uv0)
 	end)
 
-	if not var_2_2 then
-		local var_2_4 = true
+	if not slot3 then
+		slot5 = true
 
 		if UnGamePlayState then
-			local var_2_5 = "GameCfg.dungeon." .. arg_2_0
+			slot6 = "GameCfg.dungeon." .. slot0
 
-			if pcall(function()
-				return require(var_2_5)
+			if pcall(function ()
+				return require(uv0)
 			end) then
-				var_2_4 = false
+				slot5 = false
 			end
 		end
 
-		if var_2_4 then
-			errorMsg("不存在剧情ID对应的Lua:" .. arg_2_0)
+		if slot5 then
+			errorMsg("不存在剧情ID对应的Lua:" .. slot0)
 		end
 	end
 
-	return var_2_2 and var_2_3
+	return slot3 and slot4
 end
 
-function var_0_0.SetData(arg_5_0, arg_5_1)
-	arg_5_0.playedList = {}
+function slot0.SetData(slot0, slot1)
+	slot0.playedList = {}
 
-	for iter_5_0, iter_5_1 in ipairs(arg_5_1) do
-		local var_5_0 = iter_5_1
+	for slot5, slot6 in ipairs(slot1) do
+		slot7 = slot6
 
-		if iter_5_1 == 20008 then
-			var_5_0 = 1131
+		if slot6 == 20008 then
+			slot7 = 1131
 		end
 
-		if iter_5_1 == 20009 then
-			var_5_0 = 1132
+		if slot6 == 20009 then
+			slot7 = 1132
 		end
 
-		if iter_5_1 == 20010 then
-			var_5_0 = 1133
+		if slot6 == 20010 then
+			slot7 = 1133
 		end
 
-		if iter_5_1 == 20011 then
-			var_5_0 = 1134
+		if slot6 == 20011 then
+			slot7 = 1134
 		end
 
-		if iter_5_1 == 20012 then
-			var_5_0 = 1135
+		if slot6 == 20012 then
+			slot7 = 1135
 		end
 
-		if iter_5_1 == 20013 then
-			var_5_0 = 1136
+		if slot6 == 20013 then
+			slot7 = 1136
 		end
 
-		if iter_5_1 == 20014 then
-			var_5_0 = 1137
+		if slot6 == 20014 then
+			slot7 = 1137
 		end
 
-		arg_5_0.playedList[var_5_0] = true
+		slot0.playedList[slot7] = true
 	end
 end
 
-function var_0_0.SetPlayedFlag(arg_6_0, arg_6_1)
-	var_0_11("Update story id", arg_6_1)
+function slot0.SetPlayedFlag(slot0, slot1)
+	uv0("Update story id", slot1)
 
-	arg_6_0.playedList[arg_6_1] = true
+	slot0.playedList[slot1] = true
 end
 
-function var_0_0.GetPlayedFlag(arg_7_0, arg_7_1)
-	return arg_7_0.playedList[arg_7_1]
+function slot0.GetPlayedFlag(slot0, slot1)
+	return slot0.playedList[slot1]
 end
 
-function var_0_0.IsPlayed(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0, var_8_1 = arg_8_0:StoryName2StoryId(arg_8_1)
-	local var_8_2 = arg_8_0:GetPlayedFlag(var_8_0)
-	local var_8_3 = true
+function slot0.IsPlayed(slot0, slot1, slot2)
+	slot3, slot4 = slot0:StoryName2StoryId(slot1)
+	slot5 = slot0:GetPlayedFlag(slot3)
+	slot6 = true
 
-	if var_8_1 and not arg_8_2 then
-		var_8_3 = arg_8_0:GetPlayedFlag(var_8_1)
+	if slot4 and not slot2 then
+		slot6 = slot0:GetPlayedFlag(slot4)
 	end
 
-	return var_8_2 and var_8_3
+	return slot5 and slot6
 end
 
-local function var_0_14(arg_9_0)
-	local var_9_0 = {}
-
-	for iter_9_0, iter_9_1 in pairs(arg_9_0) do
-		var_9_0[iter_9_1] = iter_9_0
+function slot14(slot0)
+	for slot5, slot6 in pairs(slot0) do
+		-- Nothing
 	end
 
-	return var_9_0
+	return {
+		[slot6] = slot5
+	}
 end
 
-function var_0_0.StoryName2StoryId(arg_10_0, arg_10_1)
-	if not var_0_0.indexs then
-		var_0_0.indexs = var_0_14(var_0_13("index"))
+function slot0.StoryName2StoryId(slot0, slot1)
+	if not uv0.indexs then
+		uv0.indexs = uv1(uv2("index"))
 	end
 
-	if not var_0_0.againIndexs then
-		var_0_0.againIndexs = var_0_14(var_0_13("index_again"))
+	if not uv0.againIndexs then
+		uv0.againIndexs = uv1(uv2("index_again"))
 	end
 
-	return var_0_0.indexs[arg_10_1], var_0_0.againIndexs[arg_10_1]
+	return uv0.indexs[slot1], uv0.againIndexs[slot1]
 end
 
-function var_0_0.StoryId2StoryName(arg_11_0, arg_11_1)
-	if not var_0_0.indexIds then
-		var_0_0.indexIds = var_0_13("index")
+function slot0.StoryId2StoryName(slot0, slot1)
+	if not uv0.indexIds then
+		uv0.indexIds = uv1("index")
 	end
 
-	if not var_0_0.againIndexIds then
-		var_0_0.againIndexIds = var_0_13("index_again")
+	if not uv0.againIndexIds then
+		uv0.againIndexIds = uv1("index_again")
 	end
 
-	return var_0_0.indexIds[arg_11_1], var_0_0.againIndexIds[arg_11_1]
+	return uv0.indexIds[slot1], uv0.againIndexIds[slot1]
 end
 
-function var_0_0.StoryLinkNames(arg_12_0, arg_12_1)
-	if not var_0_0.linkNames then
-		var_0_0.linkNames = var_0_13("index_link")
+function slot0.StoryLinkNames(slot0, slot1)
+	if not uv0.linkNames then
+		uv0.linkNames = uv1("index_link")
 	end
 
-	return var_0_0.linkNames[arg_12_1]
+	return uv0.linkNames[slot1]
 end
 
-function var_0_0._GetStoryPaintingsByName(arg_13_0, arg_13_1)
-	return arg_13_1:GetUsingPaintingNames()
+function slot0._GetStoryPaintingsByName(slot0, slot1)
+	return slot1:GetUsingPaintingNames()
 end
 
-function var_0_0.GetStoryPaintingsByName(arg_14_0, arg_14_1)
-	local var_14_0 = var_0_13(arg_14_1)
-
-	if not var_14_0 then
-		var_0_11("not exist story file")
+function slot0.GetStoryPaintingsByName(slot0, slot1)
+	if not uv0(slot1) then
+		uv1("not exist story file")
 
 		return {}
 	end
 
-	local var_14_1 = Story.New(var_14_0, false)
-
-	return arg_14_0:_GetStoryPaintingsByName(var_14_1)
+	return slot0:_GetStoryPaintingsByName(Story.New(slot2, false))
 end
 
-function var_0_0.GetStoryPaintingsByNameList(arg_15_0, arg_15_1)
-	local var_15_0 = {}
-	local var_15_1 = {}
+function slot0.GetStoryPaintingsByNameList(slot0, slot1)
+	slot2 = {}
+	slot3 = {}
 
-	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
-		for iter_15_2, iter_15_3 in ipairs(arg_15_0:GetStoryPaintingsByName(iter_15_1)) do
-			var_15_1[iter_15_3] = true
+	for slot7, slot8 in ipairs(slot1) do
+		slot12 = slot8
+
+		for slot12, slot13 in ipairs(slot0:GetStoryPaintingsByName(slot12)) do
+			slot3[slot13] = true
 		end
 	end
 
-	for iter_15_4, iter_15_5 in pairs(var_15_1) do
-		table.insert(var_15_0, iter_15_4)
+	for slot7, slot8 in pairs(slot3) do
+		table.insert(slot2, slot7)
 	end
 
-	return var_15_0
+	return slot2
 end
 
-function var_0_0.GetStoryPaintingsById(arg_16_0, arg_16_1)
-	return arg_16_0:GetStoryPaintingsByIdList({
-		arg_16_1
+function slot0.GetStoryPaintingsById(slot0, slot1)
+	return slot0:GetStoryPaintingsByIdList({
+		slot1
 	})
 end
 
-function var_0_0.GetStoryPaintingsByIdList(arg_17_0, arg_17_1)
-	local var_17_0 = _.map(arg_17_1, function(arg_18_0)
-		return arg_17_0:StoryId2StoryName(arg_18_0)
-	end)
-
-	return arg_17_0:GetStoryPaintingsByNameList(var_17_0)
+function slot0.GetStoryPaintingsByIdList(slot0, slot1)
+	return slot0:GetStoryPaintingsByNameList(_.map(slot1, function (slot0)
+		return uv0:StoryId2StoryName(slot0)
+	end))
 end
 
-function var_0_0.ShouldDownloadRes(arg_19_0, arg_19_1)
-	local var_19_0 = arg_19_0:GetStoryPaintingsByName(arg_19_1)
-
-	return _.any(var_19_0, function(arg_20_0)
-		return PaintingGroupConst.VerifyPaintingFileName(arg_20_0)
+function slot0.ShouldDownloadRes(slot0, slot1)
+	return _.any(slot0:GetStoryPaintingsByName(slot1), function (slot0)
+		return PaintingGroupConst.VerifyPaintingFileName(slot0)
 	end)
 end
 
-function var_0_0.Init(arg_21_0, arg_21_1)
-	arg_21_0.state = var_0_1
-	arg_21_0.playedList = {}
-	arg_21_0.playQueue = {}
+function slot0.Init(slot0, slot1)
+	slot0.state = uv0
+	slot0.playedList = {}
+	slot0.playQueue = {}
 
-	PoolMgr.GetInstance():GetUI("NewStoryUI", true, function(arg_22_0)
-		arg_21_0._go = arg_22_0
-		arg_21_0._tf = tf(arg_21_0._go)
-		arg_21_0.frontTr = findTF(arg_21_0._tf, "front")
-		arg_21_0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
+	PoolMgr.GetInstance():GetUI("NewStoryUI", true, function (slot0)
+		uv0._go = slot0
+		uv0._tf = tf(uv0._go)
+		uv0.frontTr = findTF(uv0._tf, "front")
+		uv0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
-		arg_21_0._go.transform:SetParent(arg_21_0.UIOverlay.transform, false)
+		uv0._go.transform:SetParent(uv0.UIOverlay.transform, false)
 
-		arg_21_0.skipBtn = findTF(arg_21_0._tf, "front/btns/btns/skip_button")
-		arg_21_0.autoBtn = findTF(arg_21_0._tf, "front/btns/btns/auto_button")
-		arg_21_0.autoBtnImg = findTF(arg_21_0._tf, "front/btns/btns/auto_button/sel"):GetComponent(typeof(Image))
-		arg_21_0.alphaImage = arg_21_0._tf:GetComponent(typeof(Image))
-		arg_21_0.recordBtn = findTF(arg_21_0._tf, "front/btns/record")
-		arg_21_0.dialogueContainer = findTF(arg_21_0._tf, "front/dialogue")
-		arg_21_0.players = {
-			AsideStoryPlayer.New(arg_22_0),
-			DialogueStoryPlayer.New(arg_22_0),
-			BgStoryPlayer.New(arg_22_0),
-			CarouselPlayer.New(arg_22_0),
-			VedioStoryPlayer.New(arg_22_0),
-			CastStoryPlayer.New(arg_22_0)
+		uv0.skipBtn = findTF(uv0._tf, "front/btns/btns/skip_button")
+		uv0.autoBtn = findTF(uv0._tf, "front/btns/btns/auto_button")
+		uv0.autoBtnImg = findTF(uv0._tf, "front/btns/btns/auto_button/sel"):GetComponent(typeof(Image))
+		uv0.alphaImage = uv0._tf:GetComponent(typeof(Image))
+		uv0.recordBtn = findTF(uv0._tf, "front/btns/record")
+		uv0.dialogueContainer = findTF(uv0._tf, "front/dialogue")
+		uv0.players = {
+			AsideStoryPlayer.New(slot0),
+			DialogueStoryPlayer.New(slot0),
+			BgStoryPlayer.New(slot0),
+			CarouselPlayer.New(slot0),
+			VedioStoryPlayer.New(slot0),
+			CastStoryPlayer.New(slot0)
 		}
-		arg_21_0.setSpeedPanel = StorySetSpeedPanel.New(arg_21_0._tf)
-		arg_21_0.recordPanel = NewStoryRecordPanel.New()
-		arg_21_0.recorder = StoryRecorder.New()
+		uv0.setSpeedPanel = StorySetSpeedPanel.New(uv0._tf)
+		uv0.recordPanel = NewStoryRecordPanel.New()
+		uv0.recorder = StoryRecorder.New()
 
-		setActive(arg_21_0._go, false)
+		setActive(uv0._go, false)
 
-		arg_21_0.state = var_0_2
+		uv0.state = uv1
 
-		if arg_21_1 then
-			arg_21_1()
+		if uv2 then
+			uv2()
 		end
 	end)
 end
 
-function var_0_0.Play(arg_23_0, arg_23_1, arg_23_2, arg_23_3, arg_23_4, arg_23_5, arg_23_6)
-	table.insert(arg_23_0.playQueue, {
-		arg_23_1,
-		arg_23_2
+function slot0.Play(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	table.insert(slot0.playQueue, {
+		slot1,
+		slot2
 	})
 
-	if #arg_23_0.playQueue == 1 then
-		local var_23_0
+	if #slot0.playQueue == 1 then
+		slot7 = nil
 
-		local function var_23_1()
-			if #arg_23_0.playQueue == 0 then
+		function ()
+			if #uv0.playQueue == 0 then
 				return
 			end
 
-			local var_24_0 = arg_23_0.playQueue[1][1]
-			local var_24_1 = arg_23_0.playQueue[1][2]
+			slot1 = uv0.playQueue[1][2]
 
-			arg_23_0:SoloPlay(var_24_0, function(arg_25_0, arg_25_1)
-				if var_24_1 then
-					var_24_1(arg_25_0, arg_25_1)
+			uv0:SoloPlay(uv0.playQueue[1][1], function (slot0, slot1)
+				if uv0 then
+					uv0(slot0, slot1)
 				end
 
-				table.remove(arg_23_0.playQueue, 1)
-				var_23_1()
-			end, arg_23_3, arg_23_4, arg_23_5, arg_23_6)
-		end
-
-		var_23_1()
+				table.remove(uv1.playQueue, 1)
+				uv2()
+			end, uv2, uv3, uv4, uv5)
+		end()
 	end
 end
 
-function var_0_0.Puase(arg_26_0)
-	if arg_26_0.state ~= var_0_3 then
-		var_0_11("state is not 'running'")
+function slot0.Puase(slot0)
+	if slot0.state ~= uv0 then
+		uv1("state is not 'running'")
 
 		return
 	end
 
-	arg_26_0.state = var_0_4
+	slot0.state = uv2
 
-	for iter_26_0, iter_26_1 in ipairs(arg_26_0.players) do
-		iter_26_1:Pause()
+	for slot4, slot5 in ipairs(slot0.players) do
+		slot5:Pause()
 	end
 end
 
-function var_0_0.Resume(arg_27_0)
-	if arg_27_0.state ~= var_0_4 then
-		var_0_11("state is not 'pause'")
+function slot0.Resume(slot0)
+	if slot0.state ~= uv0 then
+		uv1("state is not 'pause'")
 
 		return
 	end
 
-	arg_27_0.state = var_0_3
+	slot0.state = uv2
 
-	for iter_27_0, iter_27_1 in ipairs(arg_27_0.players) do
-		iter_27_1:Resume()
+	for slot4, slot5 in ipairs(slot0.players) do
+		slot5:Resume()
 	end
 end
 
-function var_0_0.Stop(arg_28_0)
-	if arg_28_0.state ~= var_0_3 then
-		var_0_11("state is not 'running'")
+function slot0.Stop(slot0)
+	if slot0.state ~= uv0 then
+		uv1("state is not 'running'")
 
 		return
 	end
 
-	arg_28_0.state = var_0_5
+	slot0.state = uv2
 
-	for iter_28_0, iter_28_1 in ipairs(arg_28_0.players) do
-		iter_28_1:Stop()
+	for slot4, slot5 in ipairs(slot0.players) do
+		slot5:Stop()
 	end
 end
 
-function var_0_0.PlayForWorld(arg_29_0, arg_29_1, arg_29_2, arg_29_3, arg_29_4, arg_29_5, arg_29_6, arg_29_7)
-	arg_29_0.optionSelCodes = arg_29_2 or {}
-	arg_29_0.autoPlayFlag = arg_29_6
+function slot0.PlayForWorld(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+	slot0.optionSelCodes = slot2 or {}
+	slot0.autoPlayFlag = slot6
 
-	arg_29_0:Play(arg_29_1, arg_29_3, arg_29_4, arg_29_5, arg_29_7, true)
+	slot0:Play(slot1, slot3, slot4, slot5, slot7, true)
 end
 
-function var_0_0.ForceAutoPlay(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
-	arg_30_0.autoPlayFlag = true
+function slot0.ForceAutoPlay(slot0, slot1, slot2, slot3, slot4)
+	slot0.autoPlayFlag = true
 
-	local function var_30_0(arg_31_0, arg_31_1)
-		arg_30_2(arg_31_0, arg_31_1, arg_30_0.isAutoPlay)
-	end
-
-	arg_30_0:Play(arg_30_1, var_30_0, arg_30_3, arg_30_4, true)
+	slot0:Play(slot1, function (slot0, slot1)
+		uv0(slot0, slot1, uv1.isAutoPlay)
+	end, slot3, slot4, true)
 end
 
-function var_0_0.ForceManualPlay(arg_32_0, arg_32_1, arg_32_2, arg_32_3, arg_32_4)
-	arg_32_0.banPlayFlag = true
+function slot0.ForceManualPlay(slot0, slot1, slot2, slot3, slot4)
+	slot0.banPlayFlag = true
 
-	local function var_32_0(arg_33_0, arg_33_1)
-		arg_32_2(arg_33_0, arg_33_1, arg_32_0.isAutoPlay)
-	end
-
-	arg_32_0:Play(arg_32_1, var_32_0, arg_32_3, arg_32_4, true)
+	slot0:Play(slot1, function (slot0, slot1)
+		uv0(slot0, slot1, uv1.isAutoPlay)
+	end, slot3, slot4, true)
 end
 
-function var_0_0.SeriesPlay(arg_34_0, arg_34_1, arg_34_2, arg_34_3, arg_34_4, arg_34_5, arg_34_6)
-	local var_34_0 = {}
+function slot0.SeriesPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	slot7 = {}
 
-	for iter_34_0, iter_34_1 in ipairs(arg_34_1) do
-		table.insert(var_34_0, function(arg_35_0)
-			arg_34_0:SoloPlay(iter_34_1, arg_35_0, arg_34_3, arg_34_4, arg_34_5, arg_34_6)
+	for slot11, slot12 in ipairs(slot1) do
+		table.insert(slot7, function (slot0)
+			uv0:SoloPlay(uv1, slot0, uv2, uv3, uv4, uv5)
 		end)
 	end
 
-	seriesAsync(var_34_0, arg_34_2)
+	seriesAsync(slot7, slot2)
 end
 
-function var_0_0.SoloPlay(arg_36_0, arg_36_1, arg_36_2, arg_36_3, arg_36_4, arg_36_5, arg_36_6)
-	var_0_11("Play Story:", arg_36_1)
+function slot0.SoloPlay(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	uv0("Play Story:", slot1)
 
-	local var_36_0 = 1
+	slot7 = 1
 
-	local function var_36_1(arg_37_0, arg_37_1)
-		var_36_0 = var_36_0 - 1
+	if not uv1(slot1) then
+		function (slot0, slot1)
+			uv0 = uv0 - 1
 
-		if arg_36_2 and var_36_0 == 0 then
-			onNextTick(function()
-				arg_36_2(arg_37_0, arg_37_1)
-			end)
-		end
-	end
-
-	local var_36_2 = var_0_13(arg_36_1)
-
-	if not var_36_2 then
-		var_36_1(false)
-		var_0_11("not exist story file")
+			if uv1 and uv0 == 0 then
+				onNextTick(function ()
+					uv0(uv1, uv2)
+				end)
+			end
+		end(false)
+		uv0("not exist story file")
 
 		return nil
 	end
 
-	if arg_36_0:IsReView() then
-		arg_36_3 = true
+	if slot0:IsReView() then
+		slot3 = true
 	end
 
-	arg_36_0.storyScript = Story.New(var_36_2, arg_36_3, arg_36_0.optionSelCodes, arg_36_5, arg_36_6)
+	slot0.storyScript = Story.New(slot9, slot3, slot0.optionSelCodes, slot5, slot6)
 
-	if not arg_36_0:CheckState() then
-		var_0_11("story state error")
-		var_36_1(false)
+	if not slot0:CheckState() then
+		uv0("story state error")
+		slot8(false)
 
 		return nil
 	end
 
-	if not arg_36_0.storyScript:CanPlay() then
-		var_0_11("story cant be played")
-		var_36_1(false)
+	if not slot0.storyScript:CanPlay() then
+		uv0("story cant be played")
+		slot8(false)
 
 		return nil
 	end
 
 	seriesAsync({
-		function(arg_39_0)
-			arg_36_0:CheckResDownload(arg_36_0.storyScript, arg_39_0)
+		function (slot0)
+			uv0:CheckResDownload(uv0.storyScript, slot0)
 		end,
-		function(arg_40_0)
+		function (slot0)
 			originalPrint("start load story window...")
-			arg_36_0:CheckAndLoadDialogue(arg_36_0.storyScript, arg_40_0)
+			uv0:CheckAndLoadDialogue(uv0.storyScript, slot0)
 		end
-	}, function()
+	}, function ()
 		originalPrint("enter story...")
-		arg_36_0:OnStart()
+		uv0:OnStart()
 
-		local var_41_0 = {}
+		slot0 = {}
+		uv0.currPlayer = nil
 
-		arg_36_0.currPlayer = nil
-
-		for iter_41_0, iter_41_1 in ipairs(arg_36_0.storyScript.steps) do
-			table.insert(var_41_0, function(arg_42_0)
+		for slot4, slot5 in ipairs(uv0.storyScript.steps) do
+			table.insert(slot0, function (slot0)
 				pg.m02:sendNotification(GAME.STORY_NEXT)
 
-				local var_42_0 = arg_36_0.players[iter_41_1:GetMode()]
+				slot1 = uv0.players[uv1:GetMode()]
+				uv0.currPlayer = slot1
 
-				arg_36_0.currPlayer = var_42_0
-
-				var_42_0:Play(arg_36_0.storyScript, iter_41_0, arg_42_0)
+				slot1:Play(uv0.storyScript, uv2, slot0)
 			end)
 		end
 
-		seriesAsync(var_41_0, function()
-			arg_36_0:OnEnd(var_36_1)
+		seriesAsync(slot0, function ()
+			uv0:OnEnd(uv1)
 		end)
 	end)
 end
 
-function var_0_0.CheckResDownload(arg_44_0, arg_44_1, arg_44_2)
-	local var_44_0 = arg_44_0:_GetStoryPaintingsByName(arg_44_1)
-	local var_44_1 = table.concat(var_44_0, ",")
+function slot0.CheckResDownload(slot0, slot1, slot2)
+	slot3 = slot0:_GetStoryPaintingsByName(slot1)
 
-	originalPrint("start download res " .. var_44_1)
+	originalPrint("start download res " .. table.concat(slot3, ","))
 
-	local var_44_2 = {}
+	slot5 = {}
 
-	for iter_44_0, iter_44_1 in ipairs(var_44_0) do
-		PaintingGroupConst.AddPaintingNameWithFilteMap(var_44_2, iter_44_1)
+	for slot9, slot10 in ipairs(slot3) do
+		PaintingGroupConst.AddPaintingNameWithFilteMap(slot5, slot10)
 	end
 
 	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = var_44_2,
-		finishFunc = arg_44_2
+		paintingNameList = slot5,
+		finishFunc = slot2
 	})
 end
 
-local function var_0_15(arg_45_0, arg_45_1)
-	ResourceMgr.Inst:getAssetAsync("ui/" .. arg_45_0, arg_45_0, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_46_0)
-		arg_45_1(arg_46_0)
+function slot15(slot0, slot1)
+	ResourceMgr.Inst:getAssetAsync("ui/" .. slot0, slot0, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+		uv0(slot0)
 	end), true, true)
 end
 
-function var_0_0.CheckAndLoadDialogue(arg_47_0, arg_47_1, arg_47_2)
-	local var_47_0 = arg_47_1:GetDialogueStyleName()
+function slot0.CheckAndLoadDialogue(slot0, slot1, slot2)
+	if not slot0.dialogueContainer:Find(slot1:GetDialogueStyleName()) then
+		uv0("NewStoryDialogue" .. slot3, function (slot0)
+			Object.Instantiate(slot0, uv0.dialogueContainer).name = uv1
 
-	if not arg_47_0.dialogueContainer:Find(var_47_0) then
-		var_0_15("NewStoryDialogue" .. var_47_0, function(arg_48_0)
-			Object.Instantiate(arg_48_0, arg_47_0.dialogueContainer).name = var_47_0
-
-			arg_47_2()
+			uv2()
 		end)
 	else
-		arg_47_2()
+		slot2()
 	end
 end
 
-function var_0_0.CheckState(arg_49_0)
-	if arg_49_0.state == var_0_3 or arg_49_0.state == var_0_1 or arg_49_0.state == var_0_4 then
+function slot0.CheckState(slot0)
+	if slot0.state == uv0 or slot0.state == uv1 or slot0.state == uv2 then
 		return false
 	end
 
 	return true
 end
 
-function var_0_0.RegistSkipBtn(arg_50_0)
-	local function var_50_0()
-		arg_50_0:TrackingSkip()
-		arg_50_0.storyScript:SkipAll()
-		arg_50_0.currPlayer:NextOneImmediately()
+function slot0.RegistSkipBtn(slot0)
+	function slot1()
+		uv0:TrackingSkip()
+		uv0.storyScript:SkipAll()
+		uv0.currPlayer:NextOneImmediately()
 	end
 
-	onButton(arg_50_0, arg_50_0.skipBtn, function()
-		if arg_50_0:IsStopping() or arg_50_0:IsPausing() then
+	onButton(slot0, slot0.skipBtn, function ()
+		if uv0:IsStopping() or uv0:IsPausing() then
 			return
 		end
 
-		if not arg_50_0.currPlayer:CanSkip() then
+		if not uv0.currPlayer:CanSkip() then
 			return
 		end
 
-		if arg_50_0:IsReView() or arg_50_0.storyScript:IsPlayed() or not arg_50_0.storyScript:ShowSkipTip() then
-			var_50_0()
+		if uv0:IsReView() or uv0.storyScript:IsPlayed() or not uv0.storyScript:ShowSkipTip() then
+			uv1()
 
 			return
 		end
 
-		arg_50_0:Puase()
+		uv0:Puase()
 
-		arg_50_0.isOpenMsgbox = true
+		uv0.isOpenMsgbox = true
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			parent = rtf(arg_50_0._tf:Find("front")),
+			parent = rtf(uv0._tf:Find("front")),
 			content = i18n("story_skip_confirm"),
-			onYes = function()
-				arg_50_0:Resume()
-				var_50_0()
+			onYes = function ()
+				uv0:Resume()
+				uv1()
 			end,
-			onNo = function()
-				arg_50_0.isOpenMsgbox = false
+			onNo = function ()
+				uv0.isOpenMsgbox = false
 
-				arg_50_0:Resume()
+				uv0:Resume()
 			end,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.RegistAutoBtn(arg_55_0)
-	onButton(arg_55_0, arg_55_0.autoBtn, function()
-		if arg_55_0:IsStopping() or arg_55_0:IsPausing() then
+function slot0.RegistAutoBtn(slot0)
+	onButton(slot0, slot0.autoBtn, function ()
+		if uv0:IsStopping() or uv0:IsPausing() then
 			return
 		end
 
-		if arg_55_0.storyScript:GetAutoPlayFlag() then
-			arg_55_0.storyScript:StopAutoPlay()
-			arg_55_0.currPlayer:CancelAuto()
+		if uv0.storyScript:GetAutoPlayFlag() then
+			uv0.storyScript:StopAutoPlay()
+			uv0.currPlayer:CancelAuto()
 		else
-			arg_55_0.storyScript:SetAutoPlay()
-			arg_55_0.currPlayer:NextOne()
+			uv0.storyScript:SetAutoPlay()
+			uv0.currPlayer:NextOne()
 		end
 
-		if arg_55_0.storyScript then
-			arg_55_0:UpdateAutoBtn()
+		if uv0.storyScript then
+			uv0:UpdateAutoBtn()
 		end
 	end, SFX_PANEL)
 
-	local var_55_0 = arg_55_0:IsAutoPlay()
+	if slot0:IsAutoPlay() then
+		slot0.storyScript:SetAutoPlay()
+		slot0:UpdateAutoBtn()
 
-	if var_55_0 then
-		arg_55_0.storyScript:SetAutoPlay()
-		arg_55_0:UpdateAutoBtn()
-
-		arg_55_0.autoPlayFlag = false
+		slot0.autoPlayFlag = false
 	end
 
-	arg_55_0.banPlayFlag = false
-	arg_55_0.isAutoPlay = var_55_0
+	slot0.banPlayFlag = false
+	slot0.isAutoPlay = slot1
 end
 
-function var_0_0.RegistRecordBtn(arg_57_0)
-	onButton(arg_57_0, arg_57_0.recordBtn, function()
-		if arg_57_0.storyScript:GetAutoPlayFlag() then
+function slot0.RegistRecordBtn(slot0)
+	onButton(slot0, slot0.recordBtn, function ()
+		if uv0.storyScript:GetAutoPlayFlag() then
 			return
 		end
 
-		local var_58_0 = "Show"
-
-		arg_57_0.recordPanel[var_58_0](arg_57_0.recordPanel, arg_57_0.recorder)
+		uv0.recordPanel.Show(uv0.recordPanel, uv0.recorder)
 	end, SFX_PANEL)
 end
 
-function var_0_0.TriggerAutoBtn(arg_59_0)
-	if not arg_59_0:IsRunning() then
+function slot0.TriggerAutoBtn(slot0)
+	if not slot0:IsRunning() then
 		return
 	end
 
-	triggerButton(arg_59_0.autoBtn)
+	triggerButton(slot0.autoBtn)
 end
 
-function var_0_0.TriggerSkipBtn(arg_60_0)
-	if not arg_60_0:IsRunning() then
+function slot0.TriggerSkipBtn(slot0)
+	if not slot0:IsRunning() then
 		return
 	end
 
-	triggerButton(arg_60_0.skipBtn)
+	triggerButton(slot0.skipBtn)
 end
 
-function var_0_0.ForEscPress(arg_61_0)
-	if arg_61_0.recordPanel:IsShowing() then
-		arg_61_0.recordPanel:Hide()
+function slot0.ForEscPress(slot0)
+	if slot0.recordPanel:IsShowing() then
+		slot0.recordPanel:Hide()
 	else
-		arg_61_0:TriggerSkipBtn()
+		slot0:TriggerSkipBtn()
 	end
 end
 
-function var_0_0.UpdatePlaySpeed(arg_62_0, arg_62_1)
-	if arg_62_0:IsRunning() and arg_62_0.storyScript then
-		arg_62_0.storyScript:SetPlaySpeed(arg_62_1)
+function slot0.UpdatePlaySpeed(slot0, slot1)
+	if slot0:IsRunning() and slot0.storyScript then
+		slot0.storyScript:SetPlaySpeed(slot1)
 	end
 end
 
-function var_0_0.GetPlaySpeed(arg_63_0)
-	if arg_63_0:IsRunning() and arg_63_0.storyScript then
-		return arg_63_0.storyScript:GetPlaySpeed()
+function slot0.GetPlaySpeed(slot0)
+	if slot0:IsRunning() and slot0.storyScript then
+		return slot0.storyScript:GetPlaySpeed()
 	end
 end
 
-function var_0_0.OnStart(arg_64_0)
-	arg_64_0.recorder:Clear()
-	removeOnButton(arg_64_0._go)
-	removeOnButton(arg_64_0.skipBtn)
-	removeOnButton(arg_64_0.autoBtn)
-	removeOnButton(arg_64_0.recordBtn)
+function slot0.OnStart(slot0)
+	slot0.recorder:Clear()
+	removeOnButton(slot0._go)
+	removeOnButton(slot0.skipBtn)
+	removeOnButton(slot0.autoBtn)
+	removeOnButton(slot0.recordBtn)
 
-	arg_64_0.alphaImage.color = Color(0, 0, 0, arg_64_0.storyScript:GetStoryAlpha())
+	slot0.alphaImage.color = Color(0, 0, 0, slot0.storyScript:GetStoryAlpha())
 
-	setActive(arg_64_0.recordBtn, not arg_64_0.storyScript:ShouldHideRecord())
-	arg_64_0:ClearStoryEventTriggerListener()
+	setActive(slot0.recordBtn, not slot0.storyScript:ShouldHideRecord())
+	slot0:ClearStoryEventTriggerListener()
 
-	local var_64_0 = arg_64_0.storyScript:GetAllStepDispatcherRecallName()
-
-	if #var_64_0 > 0 then
-		arg_64_0.storyEventTriggerListener = StoryEventTriggerListener.New(var_64_0)
+	if #slot0.storyScript:GetAllStepDispatcherRecallName() > 0 then
+		slot0.storyEventTriggerListener = StoryEventTriggerListener.New(slot1)
 	end
 
-	arg_64_0.state = var_0_3
+	slot0.state = uv0
 
-	arg_64_0:TrackingStart()
-	pg.m02:sendNotification(GAME.STORY_BEGIN, arg_64_0.storyScript:GetName())
-	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg_64_0.storyScript:GetName()
-	})
-	pg.DelegateInfo.New(arg_64_0)
+	slot0:TrackingStart()
+	pg.m02:sendNotification(GAME.STORY_BEGIN, slot0.storyScript:GetName())
 
-	for iter_64_0, iter_64_1 in ipairs(arg_64_0.players) do
-		iter_64_1:StoryStart(arg_64_0.storyScript)
+	slot5 = {
+		storyId = slot6
+	}
+	slot6 = slot0.storyScript:GetName()
+
+	pg.m02:sendNotification(GAME.STORY_UPDATE, slot5)
+	pg.DelegateInfo.New(slot0)
+
+	for slot5, slot6 in ipairs(slot0.players) do
+		slot6:StoryStart(slot0.storyScript)
 	end
 
-	setActive(arg_64_0._go, true)
-	arg_64_0._tf:SetAsLastSibling()
-	setActive(arg_64_0.skipBtn, not arg_64_0.storyScript:ShouldHideSkip())
-	setActive(arg_64_0.autoBtn, not arg_64_0.storyScript:ShouldHideAutoBtn())
+	setActive(slot0._go, true)
+	slot0._tf:SetAsLastSibling()
+	setActive(slot0.skipBtn, not slot0.storyScript:ShouldHideSkip())
+	setActive(slot0.autoBtn, not slot0.storyScript:ShouldHideAutoBtn())
 
-	arg_64_0.bgmVolumeValue = pg.CriMgr.GetInstance():getBGMVolume()
+	slot0.bgmVolumeValue = pg.CriMgr.GetInstance():getBGMVolume()
 
-	arg_64_0:RegistSkipBtn()
-	arg_64_0:RegistAutoBtn()
-	arg_64_0:RegistRecordBtn()
+	slot0:RegistSkipBtn()
+	slot0:RegistAutoBtn()
+	slot0:RegistRecordBtn()
 end
 
-function var_0_0.TrackingStart(arg_65_0)
-	arg_65_0.trackFlag = false
+function slot0.TrackingStart(slot0)
+	slot0.trackFlag = false
 
-	if not arg_65_0.storyScript then
+	if not slot0.storyScript then
 		return
 	end
 
-	local var_65_0 = arg_65_0:StoryName2StoryId(arg_65_0.storyScript:GetName())
+	if not slot0:GetPlayedFlag(slot0:StoryName2StoryId(slot0.storyScript:GetName())) then
+		TrackConst.StoryStart(slot1)
 
-	if not arg_65_0:GetPlayedFlag(var_65_0) then
-		TrackConst.StoryStart(var_65_0)
-
-		arg_65_0.trackFlag = true
+		slot0.trackFlag = true
 	end
 end
 
-function var_0_0.TrackingSkip(arg_66_0)
-	if not arg_66_0.trackFlag or not arg_66_0.storyScript then
+function slot0.TrackingSkip(slot0)
+	if not slot0.trackFlag or not slot0.storyScript then
 		return
 	end
 
-	local var_66_0 = arg_66_0:StoryName2StoryId(arg_66_0.storyScript:GetName())
-
-	TrackConst.StorySkip(var_66_0)
+	TrackConst.StorySkip(slot0:StoryName2StoryId(slot0.storyScript:GetName()))
 end
 
-function var_0_0.ClearStoryEvent(arg_67_0)
-	if arg_67_0.storyEventTriggerListener then
-		arg_67_0.storyEventTriggerListener:Clear()
+function slot0.ClearStoryEvent(slot0)
+	if slot0.storyEventTriggerListener then
+		slot0.storyEventTriggerListener:Clear()
 	end
 end
 
-function var_0_0.CheckStoryEvent(arg_68_0, arg_68_1)
-	if arg_68_0.storyEventTriggerListener then
-		return arg_68_0.storyEventTriggerListener:ExistCache(arg_68_1)
+function slot0.CheckStoryEvent(slot0, slot1)
+	if slot0.storyEventTriggerListener then
+		return slot0.storyEventTriggerListener:ExistCache(slot1)
 	end
 
 	return false
 end
 
-function var_0_0.GetStoryEventArg(arg_69_0, arg_69_1)
-	if not arg_69_0:CheckStoryEvent(arg_69_1) then
+function slot0.GetStoryEventArg(slot0, slot1)
+	if not slot0:CheckStoryEvent(slot1) then
 		return nil
 	end
 
-	if arg_69_0.storyEventTriggerListener and arg_69_0.storyEventTriggerListener:ExistArg(arg_69_1) then
-		return arg_69_0.storyEventTriggerListener:GetArg(arg_69_1)
+	if slot0.storyEventTriggerListener and slot0.storyEventTriggerListener:ExistArg(slot1) then
+		return slot0.storyEventTriggerListener:GetArg(slot1)
 	end
 
 	return nil
 end
 
-function var_0_0.UpdateAutoBtn(arg_70_0)
-	local var_70_0 = arg_70_0.storyScript:GetAutoPlayFlag()
-
-	arg_70_0:ClearAutoBtn(var_70_0)
+function slot0.UpdateAutoBtn(slot0)
+	slot0:ClearAutoBtn(slot0.storyScript:GetAutoPlayFlag())
 end
 
-function var_0_0.ClearAutoBtn(arg_71_0, arg_71_1)
-	arg_71_0.autoBtnImg.color = arg_71_1 and var_0_8 or var_0_9
-	arg_71_0.isAutoPlay = arg_71_1
+function slot0.ClearAutoBtn(slot0, slot1)
+	slot0.autoBtnImg.color = slot1 and uv0 or uv1
+	slot0.isAutoPlay = slot1
 
-	local var_71_0 = arg_71_1 and "Show" or "Hide"
-
-	arg_71_0.setSpeedPanel[var_71_0](arg_71_0.setSpeedPanel)
+	slot0.setSpeedPanel[slot1 and "Show" or "Hide"](slot0.setSpeedPanel)
 end
 
-function var_0_0.ClearStoryEventTriggerListener(arg_72_0)
-	if arg_72_0.storyEventTriggerListener then
-		arg_72_0.storyEventTriggerListener:Dispose()
+function slot0.ClearStoryEventTriggerListener(slot0)
+	if slot0.storyEventTriggerListener then
+		slot0.storyEventTriggerListener:Dispose()
 
-		arg_72_0.storyEventTriggerListener = nil
+		slot0.storyEventTriggerListener = nil
 	end
 end
 
-function var_0_0.Clear(arg_73_0)
-	arg_73_0:ClearStoryEventTriggerListener()
-	arg_73_0.recorder:Clear()
-	arg_73_0.recordPanel:Hide()
+function slot0.Clear(slot0)
+	slot0:ClearStoryEventTriggerListener()
+	slot0.recorder:Clear()
+	slot0.recordPanel:Hide()
 
-	arg_73_0.autoPlayFlag = false
-	arg_73_0.banPlayFlag = false
+	slot0.autoPlayFlag = false
+	slot0.banPlayFlag = false
 
-	removeOnButton(arg_73_0._go)
-	removeOnButton(arg_73_0.skipBtn)
-	removeOnButton(arg_73_0.recordBtn)
-	removeOnButton(arg_73_0.autoBtn)
-	arg_73_0:ClearAutoBtn(false)
+	removeOnButton(slot0._go)
+	removeOnButton(slot0.skipBtn)
+	removeOnButton(slot0.recordBtn)
+	removeOnButton(slot0.autoBtn)
+	slot0:ClearAutoBtn(false)
 
-	if isActive(arg_73_0._go) then
-		pg.DelegateInfo.Dispose(arg_73_0)
+	if isActive(slot0._go) then
+		pg.DelegateInfo.Dispose(slot0)
 	end
 
-	if arg_73_0.setSpeedPanel then
-		arg_73_0.setSpeedPanel:Clear()
+	if slot0.setSpeedPanel then
+		slot0.setSpeedPanel:Clear()
 	end
 
-	setActive(arg_73_0.skipBtn, false)
-	setActive(arg_73_0._go, false)
+	setActive(slot0.skipBtn, false)
+	setActive(slot0._go, false)
 
-	for iter_73_0, iter_73_1 in ipairs(arg_73_0.players) do
-		iter_73_1:StoryEnd(arg_73_0.storyScript)
+	for slot4, slot5 in ipairs(slot0.players) do
+		slot5:StoryEnd(slot0.storyScript)
 	end
 
-	arg_73_0.optionSelCodes = nil
+	slot0.optionSelCodes = nil
 
 	pg.BgmMgr.GetInstance():ContinuePlay()
 	pg.m02:sendNotification(GAME.STORY_END)
 
-	if arg_73_0.isOpenMsgbox then
+	if slot0.isOpenMsgbox then
 		pg.MsgboxMgr:GetInstance():hide()
 	end
 
-	local var_73_0 = pg.CriMgr.GetInstance():getBGMVolume()
-
-	if arg_73_0.bgmVolumeValue and arg_73_0.bgmVolumeValue ~= var_73_0 then
-		pg.CriMgr.GetInstance():setBGMVolume(arg_73_0.bgmVolumeValue)
+	if slot0.bgmVolumeValue and slot0.bgmVolumeValue ~= pg.CriMgr.GetInstance():getBGMVolume() then
+		pg.CriMgr.GetInstance():setBGMVolume(slot0.bgmVolumeValue)
 	end
 
-	arg_73_0.bgmVolumeValue = nil
+	slot0.bgmVolumeValue = nil
 end
 
-function var_0_0.OnEnd(arg_74_0, arg_74_1)
-	arg_74_0:Clear()
+function slot0.OnEnd(slot0, slot1)
+	slot0:Clear()
 
-	if arg_74_0.state == var_0_3 or arg_74_0.state == var_0_5 then
-		arg_74_0.state = var_0_6
+	if slot0.state == uv0 or slot0.state == uv1 then
+		slot0.state = uv2
 
-		local var_74_0 = arg_74_0.storyScript:GetNextScriptName()
+		if slot0.storyScript:GetNextScriptName() and not slot0:IsReView() then
+			slot0.storyScript = nil
 
-		if var_74_0 and not arg_74_0:IsReView() then
-			arg_74_0.storyScript = nil
-
-			arg_74_0:Play(var_74_0, arg_74_1)
+			slot0:Play(slot2, slot1)
 		else
-			local var_74_1 = arg_74_0.storyScript:GetBranchCode()
+			slot0.storyScript = nil
 
-			arg_74_0.storyScript = nil
-
-			if arg_74_1 then
-				arg_74_1(true, var_74_1)
+			if slot1 then
+				slot1(true, slot0.storyScript:GetBranchCode())
 			end
 		end
 	else
-		arg_74_0.state = var_0_6
+		slot0.state = uv2
 
-		local var_74_2 = arg_74_0.storyScript:GetBranchCode()
-
-		if arg_74_1 then
-			arg_74_1(true, var_74_2)
+		if slot1 then
+			slot1(true, slot0.storyScript:GetBranchCode())
 		end
 	end
 end
 
-function var_0_0.OnSceneEnter(arg_75_0, arg_75_1)
-	if not arg_75_0.scenes then
-		arg_75_0.scenes = {}
+function slot0.OnSceneEnter(slot0, slot1)
+	if not slot0.scenes then
+		slot0.scenes = {}
 	end
 
-	arg_75_0.scenes[arg_75_1.view] = true
+	slot0.scenes[slot1.view] = true
 end
 
-function var_0_0.OnSceneExit(arg_76_0, arg_76_1)
-	if not arg_76_0.scenes then
+function slot0.OnSceneExit(slot0, slot1)
+	if not slot0.scenes then
 		return
 	end
 
-	arg_76_0.scenes[arg_76_1.view] = nil
+	slot0.scenes[slot1.view] = nil
 end
 
-function var_0_0.IsReView(arg_77_0)
-	local var_77_0 = getProxy(ContextProxy):GetPrevContext(1)
+function slot0.IsReView(slot0)
+	slot1 = getProxy(ContextProxy):GetPrevContext(1)
 
-	return arg_77_0.scenes[WorldMediaCollectionScene.__cname] == true or var_77_0 and var_77_0.mediator == WorldMediaCollectionMediator
+	return slot0.scenes[WorldMediaCollectionScene.__cname] == true or slot1 and slot1.mediator == WorldMediaCollectionMediator
 end
 
-function var_0_0.IsRunning(arg_78_0)
-	return arg_78_0.state == var_0_3
+function slot0.IsRunning(slot0)
+	return slot0.state == uv0
 end
 
-function var_0_0.IsStopping(arg_79_0)
-	return arg_79_0.state == var_0_5
+function slot0.IsStopping(slot0)
+	return slot0.state == uv0
 end
 
-function var_0_0.IsPausing(arg_80_0)
-	return arg_80_0.state == var_0_4
+function slot0.IsPausing(slot0)
+	return slot0.state == uv0
 end
 
-function var_0_0.IsAutoPlay(arg_81_0)
-	if arg_81_0.banPlayFlag then
+function slot0.IsAutoPlay(slot0)
+	if slot0.banPlayFlag then
 		return false
 	end
 
-	return getProxy(SettingsProxy):GetStoryAutoPlayFlag() or arg_81_0.autoPlayFlag == true
+	return getProxy(SettingsProxy):GetStoryAutoPlayFlag() or slot0.autoPlayFlag == true
 end
 
-function var_0_0.GetRectSize(arg_82_0)
-	return Vector2(arg_82_0._tf.rect.width, arg_82_0._tf.rect.height)
+function slot0.GetRectSize(slot0)
+	return Vector2(slot0._tf.rect.width, slot0._tf.rect.height)
 end
 
-function var_0_0.AddRecord(arg_83_0, arg_83_1)
-	arg_83_0.recorder:Add(arg_83_1)
+function slot0.AddRecord(slot0, slot1)
+	slot0.recorder:Add(slot1)
 end
 
-function var_0_0.Quit(arg_84_0)
-	arg_84_0.recorder:Dispose()
-	arg_84_0.recordPanel:Dispose()
-	arg_84_0.setSpeedPanel:Dispose()
+function slot0.Quit(slot0)
+	slot0.recorder:Dispose()
+	slot0.recordPanel:Dispose()
+	slot0.setSpeedPanel:Dispose()
 
-	arg_84_0.state = var_0_7
-	arg_84_0.storyScript = nil
-	arg_84_0.playQueue = {}
-	arg_84_0.playedList = {}
-	arg_84_0.scenes = {}
+	slot0.state = uv0
+	slot0.storyScript = nil
+	slot0.playQueue = {}
+	slot0.playedList = {}
+	slot0.scenes = {}
 end
 
-function var_0_0.Fix(arg_85_0)
-	local var_85_0 = getProxy(PlayerProxy):getRawData():GetRegisterTime()
-	local var_85_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig({
+function slot0.Fix(slot0)
+	if getProxy(PlayerProxy):getRawData():GetRegisterTime() <= pg.TimeMgr.GetInstance():parseTimeFromConfig({
 		{
 			2021,
 			4,
@@ -904,67 +854,47 @@ function var_0_0.Fix(arg_85_0)
 			0,
 			0
 		}
-	})
-	local var_85_2 = {
-		10020,
-		10021,
-		10022,
-		10023,
-		10024,
-		10025,
-		10026,
-		10027
-	}
-
-	if var_85_0 <= var_85_1 then
-		_.each(var_85_2, function(arg_86_0)
-			arg_85_0.playedList[arg_86_0] = true
+	}) then
+		_.each({
+			10020,
+			10021,
+			10022,
+			10023,
+			10024,
+			10025,
+			10026,
+			10027
+		}, function (slot0)
+			uv0.playedList[slot0] = true
 		end)
 	end
 
-	local var_85_3 = 5001
-	local var_85_4 = 5020
-	local var_85_5 = getProxy(TaskProxy)
-	local var_85_6 = 0
+	slot7 = getProxy(TaskProxy)
+	slot8 = 0
 
-	for iter_85_0 = var_85_3, var_85_4, -1 do
-		if var_85_5:getFinishTaskById(iter_85_0) or var_85_5:getTaskById(iter_85_0) then
-			var_85_6 = iter_85_0
+	for slot12 = 5001, 5020, -1 do
+		if slot7:getFinishTaskById(slot12) or slot7:getTaskById(slot12) then
+			slot8 = slot12
 
 			break
 		end
 	end
 
-	for iter_85_1 = var_85_6, var_85_4, -1 do
-		local var_85_7 = pg.task_data_template[iter_85_1]
-
-		if var_85_7 then
-			local var_85_8 = var_85_7.story_id
-
-			if var_85_8 and #var_85_8 > 0 and not arg_85_0:IsPlayed(var_85_8) then
-				arg_85_0.playedList[var_85_8] = true
-			end
+	for slot12 = slot8, slot6, -1 do
+		if pg.task_data_template[slot12] and slot13.story_id and #slot14 > 0 and not slot0:IsPlayed(slot14) then
+			slot0.playedList[slot14] = true
 		end
 	end
 
-	local var_85_9 = getProxy(ActivityProxy):getActivityById(ActivityConst.JYHZ_ACTIVITY_ID)
-
-	if var_85_9 and not var_85_9:isEnd() then
-		local var_85_10 = _.flatten(var_85_9:getConfig("config_data"))
-		local var_85_11
-
-		for iter_85_2 = #var_85_10, 1, -1 do
-			local var_85_12 = pg.task_data_template[var_85_10[iter_85_2]].story_id
-
-			if var_85_12 and #var_85_12 > 0 then
-				local var_85_13 = arg_85_0:IsPlayed(var_85_12)
-
-				if var_85_11 then
-					if not var_85_13 then
-						arg_85_0.playedList[var_85_12] = true
+	if getProxy(ActivityProxy):getActivityById(ActivityConst.JYHZ_ACTIVITY_ID) and not slot9:isEnd() then
+		for slot15 = #_.flatten(slot9:getConfig("config_data")), 1, -1 do
+			if pg.task_data_template[slot10[slot15]].story_id and #slot16 > 0 then
+				if nil then
+					if not slot0:IsPlayed(slot16) then
+						slot0.playedList[slot16] = true
 					end
-				elseif var_85_13 then
-					var_85_11 = iter_85_2
+				elseif slot17 then
+					slot11 = slot15
 				end
 			end
 		end

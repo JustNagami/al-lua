@@ -1,9 +1,9 @@
-﻿local var_0_0 = class("NewNavalTacticsEmptyCard", import(".NewNavalTacticsBaseCard"))
+slot0 = class("NewNavalTacticsEmptyCard", import(".NewNavalTacticsBaseCard"))
 
-function var_0_0.OnInit(arg_1_0)
-	onButton(arg_1_0, arg_1_0._tf, function()
-		arg_1_0:emit(NewNavalTacticsLayer.ON_ADD_STUDENT, arg_1_0.index)
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:emit(NewNavalTacticsLayer.ON_ADD_STUDENT, uv0.index)
 	end, SFX_PANEL)
 end
 
-return var_0_0
+return slot0

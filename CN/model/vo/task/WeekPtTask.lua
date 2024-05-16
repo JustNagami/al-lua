@@ -1,49 +1,49 @@
-﻿local var_0_0 = class("WeekPtTask", import(".Task"))
+slot0 = class("WeekPtTask", import(".Task"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.isWeekTask = true
+	slot0.isWeekTask = true
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.weekly_task_template
 end
 
-function var_0_0.getConfig(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0:bindConfigTable()[arg_3_0.configId]
+function slot0.getConfig(slot0, slot1)
+	slot3 = slot0:bindConfigTable()[slot0.configId]
 
-	assert(var_3_0, arg_3_0.configId)
+	assert(slot3, slot0.configId)
 
-	if var_3_0[arg_3_1] then
-		if arg_3_1 == "award_display" then
+	if slot3[slot1] then
+		if slot1 == "award_display" then
 			return {
-				var_3_0[arg_3_1]
+				slot3[slot1]
 			}
 		else
-			return var_3_0[arg_3_1]
+			return slot3[slot1]
 		end
-	elseif arg_3_1 == "name" or arg_3_1 == "story_id" or arg_3_1 == "story_icon" or arg_3_1 == "scene" then
+	elseif slot1 == "name" or slot1 == "story_id" or slot1 == "story_icon" or slot1 == "scene" then
 		return ""
-	elseif arg_3_1 == "type" then
+	elseif slot1 == "type" then
 		return 4
-	elseif arg_3_1 == "level" or arg_3_1 == "visibility" then
+	elseif slot1 == "level" or slot1 == "visibility" then
 		return 1
-	elseif arg_3_1 == "priority_type" then
+	elseif slot1 == "priority_type" then
 		return 0
-	elseif arg_3_1 == "award_choice" then
+	elseif slot1 == "award_choice" then
 		return nil
 	else
-		assert(false, "表 weekly_task_template 没有字段:" .. arg_3_1)
+		assert(false, "表 weekly_task_template 没有字段:" .. slot1)
 	end
 end
 
-function var_0_0.GetAward(arg_4_0)
-	return arg_4_0:getConfig("award_display")[1]
+function slot0.GetAward(slot0)
+	return slot0:getConfig("award_display")[1]
 end
 
-function var_0_0.IsFinished(arg_5_0)
-	return arg_5_0:isFinish()
+function slot0.IsFinished(slot0)
+	return slot0:isFinish()
 end
 
-return var_0_0
+return slot0

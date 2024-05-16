@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "在队伍中(存活)时降低轻母、航母受到的伤害",
+	name = "远东的羁绊",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "队伍中(存活)时降低轻母、航母受到的伤害$1",
+	stack = 1,
+	id = 12000,
+	icon = 12000,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffField",
@@ -45,26 +66,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "在队伍中(存活)时降低轻母、航母受到的伤害",
-	name = "远东的羁绊",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "队伍中(存活)时降低轻母、航母受到的伤害$1",
-	stack = 1,
-	id = 12000,
-	icon = 12000,
-	last_effect = ""
+	}
 }

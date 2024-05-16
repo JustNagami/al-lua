@@ -1,23 +1,22 @@
-﻿local var_0_0 = class("NewSettingsMediator", import("..base.ContextMediator"))
+slot0 = class("NewSettingsMediator", import("..base.ContextMediator"))
+slot0.SHOW_DESC = "NewSettingsMediator:SHOW_DESC"
+slot0.ON_LOGOUT = "NewSettingsMediator:ON_LOGOUT"
+slot0.ON_SECON_PWD_STATE_CHANGE = "NewSettingsMediator:ON_SECON_PWD_STATE_CHANGE"
+slot0.OPEN_YOSTAR_ALERT_VIEW = "NewSettingsMediator:OPEN_YOSTAR_ALERT_VIEW"
 
-var_0_0.SHOW_DESC = "NewSettingsMediator:SHOW_DESC"
-var_0_0.ON_LOGOUT = "NewSettingsMediator:ON_LOGOUT"
-var_0_0.ON_SECON_PWD_STATE_CHANGE = "NewSettingsMediator:ON_SECON_PWD_STATE_CHANGE"
-var_0_0.OPEN_YOSTAR_ALERT_VIEW = "NewSettingsMediator:OPEN_YOSTAR_ALERT_VIEW"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_LOGOUT, function(arg_2_0)
-		arg_1_0:sendNotification(GAME.LOGOUT, {
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_LOGOUT, function (slot0)
+		uv0:sendNotification(GAME.LOGOUT, {
 			code = 0
 		})
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
-		var_0_0.SHOW_DESC,
-		var_0_0.ON_SECON_PWD_STATE_CHANGE,
-		var_0_0.OPEN_YOSTAR_ALERT_VIEW,
+		uv0.SHOW_DESC,
+		uv0.ON_SECON_PWD_STATE_CHANGE,
+		uv0.OPEN_YOSTAR_ALERT_VIEW,
 		GAME.EXCHANGECODE_USE_SUCCESS,
 		GAME.ON_GET_TRANSCODE,
 		GAME.ON_SOCIAL_LINKED,
@@ -26,26 +25,23 @@ function var_0_0.listNotificationInterests(arg_3_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
-
-	if var_4_0 == var_0_0.SHOW_DESC then
-		arg_4_0.viewComponent:OnShowDescWindow(var_4_1)
-	elseif var_4_0 == GAME.EXCHANGECODE_USE_SUCCESS then
-		arg_4_0.viewComponent:OnClearExchangeCode()
-	elseif var_4_0 == GAME.ON_GET_TRANSCODE then
-		arg_4_0.viewComponent:OnShowTranscode(var_4_1.transcode)
-	elseif var_4_0 == GAME.ON_SOCIAL_LINKED or var_4_0 == GAME.ON_SOCIAL_UNLINKED then
-		arg_4_0.viewComponent:OnCheckAllAccountState()
-		arg_4_0.viewComponent:CloseYostarAlertView()
-	elseif var_4_0 == var_0_0.ON_SECON_PWD_STATE_CHANGE then
-		arg_4_0.viewComponent:OnSecondPwdStateChange()
-	elseif var_4_0 == var_0_0.OPEN_YOSTAR_ALERT_VIEW then
-		arg_4_0.viewComponent:OpenYostarAlertView()
-	elseif var_4_0 == GAME.CHANGE_RANDOM_SHIP_MODE_DONE then
-		arg_4_0.viewComponent:OnRandomFlagShipModeUpdate()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == uv0.SHOW_DESC then
+		slot0.viewComponent:OnShowDescWindow(slot1:getBody())
+	elseif slot2 == GAME.EXCHANGECODE_USE_SUCCESS then
+		slot0.viewComponent:OnClearExchangeCode()
+	elseif slot2 == GAME.ON_GET_TRANSCODE then
+		slot0.viewComponent:OnShowTranscode(slot3.transcode)
+	elseif slot2 == GAME.ON_SOCIAL_LINKED or slot2 == GAME.ON_SOCIAL_UNLINKED then
+		slot0.viewComponent:OnCheckAllAccountState()
+		slot0.viewComponent:CloseYostarAlertView()
+	elseif slot2 == uv0.ON_SECON_PWD_STATE_CHANGE then
+		slot0.viewComponent:OnSecondPwdStateChange()
+	elseif slot2 == uv0.OPEN_YOSTAR_ALERT_VIEW then
+		slot0.viewComponent:OpenYostarAlertView()
+	elseif slot2 == GAME.CHANGE_RANDOM_SHIP_MODE_DONE then
+		slot0.viewComponent:OnRandomFlagShipModeUpdate()
 	end
 end
 
-return var_0_0
+return slot0

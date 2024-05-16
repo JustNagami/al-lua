@@ -1,311 +1,264 @@
-﻿local var_0_0 = class("MiniGameTileData")
+slot0 = class("MiniGameTileData")
 
-local function var_0_1(arg_1_0)
-	local var_1_0 = {}
-	local var_1_1 = {}
-	local var_1_2 = {}
-	local var_1_3 = 1
-	local var_1_4 = "{\n"
+function slot1(slot0)
+	slot1 = {}
+	slot2 = {}
+	slot3 = {}
+	slot4 = 1
+	slot5 = "{\n"
 
 	while true do
-		local var_1_5 = 0
-
-		for iter_1_0, iter_1_1 in pairs(arg_1_0) do
-			var_1_5 = var_1_5 + 1
+		for slot10, slot11 in pairs(slot0) do
+			slot6 = 0 + 1
 		end
 
-		local var_1_6 = 1
+		slot7 = 1
 
-		for iter_1_2, iter_1_3 in pairs(arg_1_0) do
-			if var_1_0[arg_1_0] == nil or var_1_6 >= var_1_0[arg_1_0] then
-				if string.find(var_1_4, "}", var_1_4:len()) then
-					var_1_4 = var_1_4 .. ",\n"
-				elseif not string.find(var_1_4, "\n", var_1_4:len()) then
-					var_1_4 = var_1_4 .. "\n"
+		for slot11, slot12 in pairs(slot0) do
+			if slot1[slot0] == nil or slot1[slot0] <= slot7 then
+				if string.find(slot5, "}", slot5:len()) then
+					slot5 = slot5 .. ",\n"
+				elseif not string.find(slot5, "\n", slot5:len()) then
+					slot5 = slot5 .. "\n"
 				end
 
-				table.insert(var_1_2, var_1_4)
+				table.insert(slot3, slot5)
 
-				var_1_4 = ""
+				slot13 = nil
 
-				local var_1_7
+				if type(slot12) == "number" or type(slot12) == "boolean" then
+					slot5 = "" .. string.rep("\t", slot4) .. ((type(slot11) == "number" or type(slot11) == "boolean") and "[" .. tostring(slot11) .. "]" or "['" .. tostring(slot11) .. "']") .. " = " .. tostring(slot12)
+				elseif type(slot12) == "table" then
+					slot5 = slot5 .. string.rep("\t", slot4) .. slot13 .. " = {\n"
 
-				if type(iter_1_2) == "number" or type(iter_1_2) == "boolean" then
-					var_1_7 = "[" .. tostring(iter_1_2) .. "]"
-				else
-					var_1_7 = "['" .. tostring(iter_1_2) .. "']"
-				end
+					table.insert(slot2, slot0)
+					table.insert(slot2, slot12)
 
-				if type(iter_1_3) == "number" or type(iter_1_3) == "boolean" then
-					var_1_4 = var_1_4 .. string.rep("\t", var_1_3) .. var_1_7 .. " = " .. tostring(iter_1_3)
-				elseif type(iter_1_3) == "table" then
-					var_1_4 = var_1_4 .. string.rep("\t", var_1_3) .. var_1_7 .. " = {\n"
-
-					table.insert(var_1_1, arg_1_0)
-					table.insert(var_1_1, iter_1_3)
-
-					var_1_0[arg_1_0] = var_1_6 + 1
+					slot1[slot0] = slot7 + 1
 
 					break
 				else
-					var_1_4 = var_1_4 .. string.rep("\t", var_1_3) .. var_1_7 .. " = '" .. tostring(iter_1_3) .. "'"
+					slot5 = slot5 .. string.rep("\t", slot4) .. slot13 .. " = '" .. tostring(slot12) .. "'"
 				end
 
-				if var_1_6 == var_1_5 then
-					var_1_4 = var_1_4 .. "\n" .. string.rep("\t", var_1_3 - 1) .. "}"
+				if slot7 == slot6 then
+					slot5 = slot5 .. "\n" .. string.rep("\t", slot4 - 1) .. "}"
 				else
-					var_1_4 = var_1_4 .. ","
+					slot5 = slot5 .. ","
 				end
-			elseif var_1_6 == var_1_5 then
-				var_1_4 = var_1_4 .. "\n" .. string.rep("\t", var_1_3 - 1) .. "}"
+			elseif slot7 == slot6 then
+				slot5 = slot5 .. "\n" .. string.rep("\t", slot4 - 1) .. "}"
 			end
 
-			var_1_6 = var_1_6 + 1
+			slot7 = slot7 + 1
 		end
 
-		if var_1_5 == 0 then
-			var_1_4 = var_1_4 .. "\n" .. string.rep("\t", var_1_3 - 1) .. "}"
+		if slot6 == 0 then
+			slot5 = slot5 .. "\n" .. string.rep("\t", slot4 - 1) .. "}"
 		end
 
-		if #var_1_1 > 0 then
-			arg_1_0 = var_1_1[#var_1_1]
-			var_1_1[#var_1_1] = nil
-			var_1_3 = var_1_0[arg_1_0] == nil and var_1_3 + 1 or var_1_3 - 1
+		if #slot2 > 0 then
+			slot2[#slot2] = nil
+			slot4 = slot1[slot2[#slot2]] == nil and slot4 + 1 or slot4 - 1
 		else
 			break
 		end
 	end
 
-	table.insert(var_1_2, var_1_4)
-
-	local var_1_8 = table.concat(var_1_2)
-
-	print(var_1_8)
+	table.insert(slot3, slot5)
+	print(table.concat(slot3))
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0._data = arg_2_1
-	arg_2_0._name = arg_2_1.name
-	arg_2_0.tileMaps = arg_2_1.tile_map
-	arg_2_0.tileDatas = arg_2_1.tile_data
-	arg_2_0.tileMapDic = {}
-	arg_2_0.tileDataDic = {}
+function slot0.Ctor(slot0, slot1)
+	slot0._data = slot1
+	slot0._name = slot1.name
+	slot0.tileMaps = slot1.tile_map
+	slot0.tileDatas = slot1.tile_data
+	slot0.tileMapDic = {}
+	slot0.tileDataDic = {}
 
-	arg_2_0:initTile()
-	arg_2_0:initData()
+	slot0:initTile()
+	slot0:initData()
 end
 
-function var_0_0.loadTile(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = "GameCfg.MiniGameTile." .. arg_3_1 .. "." .. arg_3_2
-	local var_3_1, var_3_2 = pcall(function()
-		return require(var_3_0)
+function slot0.loadTile(slot0, slot1, slot2)
+	slot4, slot5 = pcall(function ()
+		return require(uv0)
 	end)
 
-	if not var_3_1 then
-		errorMsg("不存在地图数据:" .. var_3_0)
+	if not slot4 then
+		errorMsg("不存在地图数据:" .. ("GameCfg.MiniGameTile." .. slot1 .. "." .. slot2))
 	end
 
-	return var_3_1 and var_3_2
+	return slot4 and slot5
 end
 
-function var_0_0.initTile(arg_5_0)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.tileMaps) do
-		local var_5_0 = arg_5_0:loadTile(arg_5_0._name, iter_5_1)
-		local var_5_1 = var_5_0.name
-		local var_5_2 = var_5_0.tiles
-
-		arg_5_0.tileMapDic[var_5_1] = arg_5_0:createTile(var_5_2)
+function slot0.initTile(slot0)
+	for slot4, slot5 in ipairs(slot0.tileMaps) do
+		slot6 = slot0:loadTile(slot0._name, slot5)
+		slot0.tileMapDic[slot6.name] = slot0:createTile(slot6.tiles)
 	end
 end
 
-function var_0_0.getTileDataLayer(arg_6_0, arg_6_1)
-	if arg_6_0.tileDataDic[arg_6_1] then
-		return arg_6_0.tileDataDic[arg_6_1].layers
+function slot0.getTileDataLayer(slot0, slot1)
+	if slot0.tileDataDic[slot1] then
+		return slot0.tileDataDic[slot1].layers
 	end
 
 	return nil
 end
 
-function var_0_0.dumpTileDataLayer(arg_7_0, arg_7_1, arg_7_2)
-	if arg_7_0.tileDataDic[arg_7_1] then
-		local var_7_0 = arg_7_0.tileDataDic[arg_7_1].layers
+function slot0.dumpTileDataLayer(slot0, slot1, slot2)
+	if slot0.tileDataDic[slot1] then
+		for slot7 = 1, #slot0.tileDataDic[slot1].layers do
+			slot8 = slot3[slot7]
 
-		for iter_7_0 = 1, #var_7_0 do
-			local var_7_1 = var_7_0[iter_7_0]
-
-			if not arg_7_2 or arg_7_2 == var_7_1.name then
-				print(var_7_1.name .. " = ")
-				var_0_1(var_7_1)
+			if not slot2 or slot2 == slot8.name then
+				print(slot8.name .. " = ")
+				uv0(slot8)
 			end
 		end
 	end
 end
 
-function var_0_0.initData(arg_8_0)
-	for iter_8_0, iter_8_1 in ipairs(arg_8_0.tileDatas) do
-		local var_8_0 = arg_8_0:loadTile(arg_8_0._name, iter_8_1)
-
-		arg_8_0.tileDataDic[iter_8_1] = arg_8_0:createMapData(var_8_0, iter_8_1)
+function slot0.initData(slot0)
+	for slot4, slot5 in ipairs(slot0.tileDatas) do
+		slot0.tileDataDic[slot5] = slot0:createMapData(slot0:loadTile(slot0._name, slot5), slot5)
 	end
 end
 
-function var_0_0.createTile(arg_9_0, arg_9_1)
-	local var_9_0 = {}
-	local var_9_1 = {}
+function slot0.createTile(slot0, slot1)
+	slot2 = {}
+	slot3 = {}
 
-	for iter_9_0 = 1, #arg_9_1 do
-		local var_9_2 = arg_9_1[iter_9_0]
-		local var_9_3 = var_9_2.id
-		local var_9_4 = var_9_2.properties or {}
-		local var_9_5 = var_9_2.image
-		local var_9_6
+	for slot7 = 1, #slot1 do
+		slot8 = slot1[slot7]
+		slot9 = slot8.id
+		slot10 = slot8.properties or {}
+		slot11 = slot8.image
+		slot12 = nil
 
-		for iter_9_1 in string.gmatch(var_9_2.image, "[^/]+$") do
-			var_9_6 = iter_9_1
+		for slot16 in string.gmatch(slot8.image, "[^/]+$") do
+			slot12 = slot16
 		end
 
-		local var_9_7 = string.gsub(var_9_6, ".png", "")
-		local var_9_8 = string.gsub(var_9_7, ".jpg", "")
-
-		table.insert(var_9_1, {
-			id = var_9_3,
-			name = var_9_8,
-			properties = var_9_4
+		table.insert(slot3, {
+			id = slot9,
+			name = string.gsub(string.gsub(slot12, ".png", ""), ".jpg", ""),
+			properties = slot10
 		})
 	end
 
-	var_9_0.maps = var_9_1
+	slot2.maps = slot3
 
-	return var_9_0
+	return slot2
 end
 
-function var_0_0.createMapData(arg_10_0, arg_10_1, arg_10_2)
-	if not arg_10_1 then
+function slot0.createMapData(slot0, slot1, slot2)
+	if not slot1 then
 		return {
 			layer = {},
 			tilesets = {}
 		}
 	end
 
-	local var_10_0 = arg_10_1.tilesets
-	local var_10_1 = arg_10_1.layers
-	local var_10_2 = arg_10_1.width
-	local var_10_3 = arg_10_1.height
-	local var_10_4 = {}
+	slot3 = slot1.tilesets
+	slot7 = {}
 
-	for iter_10_0, iter_10_1 in ipairs(var_10_1) do
-		local var_10_5 = iter_10_1.name
-		local var_10_6 = iter_10_1.data
-		local var_10_7 = arg_10_0:createLayerData(var_10_6, var_10_0, arg_10_2)
-
-		table.insert(var_10_4, {
-			name = var_10_5,
-			layer = var_10_7,
-			width = var_10_2,
-			height = var_10_3
+	for slot11, slot12 in ipairs(slot1.layers) do
+		table.insert(slot7, {
+			name = slot12.name,
+			layer = slot0:createLayerData(slot12.data, slot3, slot2),
+			width = slot1.width,
+			height = slot1.height
 		})
 	end
 
 	return {
-		layers = var_10_4,
-		tilesets = var_10_0
+		layers = slot7,
+		tilesets = slot3
 	}
 end
 
-function var_0_0.createLayerData(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	local var_11_0 = {}
+function slot0.createLayerData(slot0, slot1, slot2, slot3)
+	slot4 = {}
 
-	for iter_11_0 = 1, #arg_11_1 do
-		local var_11_1 = arg_11_1[iter_11_0]
-		local var_11_2 = iter_11_0
-		local var_11_3 = arg_11_0:relationTile(var_11_1, arg_11_2, arg_11_3, var_11_2)
-
-		if var_11_3 and var_11_1 ~= 0 then
-			table.insert(var_11_0, var_11_3)
+	for slot8 = 1, #slot1 do
+		if slot0:relationTile(slot1[slot8], slot2, slot3, slot8) and slot9 ~= 0 then
+			table.insert(slot4, slot11)
 		end
 	end
 
-	return var_11_0
+	return slot4
 end
 
-function var_0_0.relationTile(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
-	local var_12_0 = {}
+function slot0.relationTile(slot0, slot1, slot2, slot3, slot4)
+	slot5 = {}
 
-	if arg_12_0._name == MiniGameTile.BOOM_GAME then
-		-- block empty
-	elseif arg_12_0._name == MiniGameTile.SPRING23_GAME then
-		-- block empty
-	else
-		var_12_0.id = arg_12_1
+	if slot0._name == MiniGameTile.BOOM_GAME then
+		-- Nothing
+	elseif slot0._name ~= MiniGameTile.SPRING23_GAME then
+		slot5.id = slot1
 	end
 
-	var_12_0.item = nil
-	var_12_0.drop = nil
-	var_12_0.index = arg_12_4
+	slot5.item = nil
+	slot5.drop = nil
+	slot5.index = slot4
 
-	for iter_12_0 = 1, #arg_12_2 do
-		local var_12_1 = arg_12_2[iter_12_0]
-		local var_12_2 = var_12_1.firstgid
-		local var_12_3 = var_12_1.name
-		local var_12_4 = arg_12_0.tileMapDic[var_12_3]
+	for slot9 = 1, #slot2 do
+		slot10 = slot2[slot9]
 
-		if var_12_4 then
-			local var_12_5 = var_12_4.maps
+		if slot0.tileMapDic[slot10.name] then
+			slot14 = slot13.maps
 
-			if var_12_2 <= arg_12_1 then
-				for iter_12_1, iter_12_2 in ipairs(var_12_5) do
-					if iter_12_2.id + var_12_2 == arg_12_1 then
-						local var_12_6 = arg_12_1
-						local var_12_7 = iter_12_2.name
-						local var_12_8, var_12_9 = arg_12_0:createGridPropData(iter_12_2.properties, iter_12_2.name, arg_12_3)
+			if slot10.firstgid <= slot1 then
+				for slot18, slot19 in ipairs(slot14) do
+					if slot19.id + slot11 == slot1 then
+						slot21 = slot1
+						slot23, slot24 = slot0:createGridPropData(slot19.properties, slot19.name, slot3)
+						slot5.item = slot19.name or nil
+						slot5.prop = slot23 or nil
 
-						var_12_0.item = var_12_7 or nil
-						var_12_0.prop = var_12_8 or nil
-
-						return var_12_0
+						return slot5
 					end
 				end
 			end
 		else
-			print("警告 找不到" .. var_12_3 .. "的贴图数据")
+			print("警告 找不到" .. slot12 .. "的贴图数据")
 		end
 	end
 
-	return var_12_0
+	return slot5
 end
 
-function var_0_0.createGridPropData(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0 = {}
-	local var_13_1
+function slot0.createGridPropData(slot0, slot1, slot2, slot3)
+	slot5 = nil
 
-	if arg_13_0._name == MiniGameTile.BOOM_GAME then
-		local var_13_2 = arg_13_1.drop_id
-		local var_13_3
+	if slot0._name == MiniGameTile.BOOM_GAME then
+		slot7 = nil
 
-		if var_13_2 and var_13_2 > 0 then
-			var_13_0.drop = MiniGameTile.drops[var_13_2]
+		if slot1.drop_id and slot6 > 0 then
+			-- Nothing
 		else
-			var_13_0.drop = nil
+			slot4.drop = nil
 		end
 
-		if arg_13_1.use_attr and arg_13_1.use_attr ~= nil then
-			local var_13_4 = MiniGameTile.attrs[arg_13_3][arg_13_2]
-
-			if var_13_4 then
-				for iter_13_0, iter_13_1 in pairs(var_13_4) do
-					var_13_0[iter_13_0] = iter_13_1
-				end
+		if slot1.use_attr and slot1.use_attr ~= nil and MiniGameTile.attrs[slot3][slot2] then
+			for slot13, slot14 in pairs(slot9) do
+				slot4[slot13] = slot14
 			end
 		end
-	elseif arg_13_0._name == MiniGameTile.SPRING23_GAME then
-		var_13_0 = nil
+	elseif slot0._name == MiniGameTile.SPRING23_GAME then
+		slot4 = nil
 	end
 
-	return var_13_0
+	return {
+		drop = MiniGameTile.drops[slot6]
+	}
 end
 
-function var_0_0.getName(arg_14_0)
-	return arg_14_0._name
+function slot0.getName(slot0)
+	return slot0._name
 end
 
-return var_0_0
+return slot0

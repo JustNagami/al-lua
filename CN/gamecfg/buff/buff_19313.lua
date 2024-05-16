@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "破盾监听",
+	time = 10,
+	picture = "",
+	desc = "监听器",
+	stack = 1,
+	id = 19313,
+	icon = 19313,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -20,24 +39,5 @@
 				shieldBuffID = 19312
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "破盾监听",
-	time = 10,
-	picture = "",
-	desc = "监听器",
-	stack = 1,
-	id = 19313,
-	icon = 19313,
-	last_effect = ""
+	}
 }

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "FUXINGDEZANMEISHI32",
@@ -58,23 +58,6 @@
 			painting = {
 				alpha = 0.3,
 				time = 1
-			}
-		},
-		flashout = {
-			black = true,
-			dur = 0.5,
-			alpha = {
-				0,
-				1
-			}
-		},
-		flashin = {
-			delay = 0.5,
-			dur = 0.5,
-			black = true,
-			alpha = {
-				1,
-				0
 			}
 		},
 		{
@@ -483,6 +466,23 @@
 			painting = {
 				alpha = 0.3,
 				time = 1
+			}
+		},
+		flashout = {
+			black = true,
+			dur = 0.5,
+			alpha = {
+				0,
+				1
+			}
+		},
+		flashin = {
+			delay = 0.5,
+			dur = 0.5,
+			black = true,
+			alpha = {
+				1,
+				0
 			}
 		}
 	}

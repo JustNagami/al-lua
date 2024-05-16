@@ -1,180 +1,173 @@
-﻿local var_0_0 = class("FleetAIAction")
+slot0 = class("FleetAIAction")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.actType = arg_1_1.act_type
-	arg_1_0.line = {
-		row = arg_1_1.ai_pos.row,
-		column = arg_1_1.ai_pos.column
+function slot0.Ctor(slot0, slot1)
+	slot0.actType = slot1.act_type
+	slot0.line = {
+		row = slot1.ai_pos.row,
+		column = slot1.ai_pos.column
 	}
 
-	if arg_1_1.target_pos and arg_1_1.target_pos.row < 9999 and arg_1_1.target_pos.column < 9999 then
-		arg_1_0.target = {
-			row = arg_1_1.target_pos.row,
-			column = arg_1_1.target_pos.column
+	if slot1.target_pos and slot1.target_pos.row < 9999 and slot1.target_pos.column < 9999 then
+		slot0.target = {
+			row = slot1.target_pos.row,
+			column = slot1.target_pos.column
 		}
 	end
 
-	arg_1_0.shipUpdate = _.map(arg_1_1.ship_update, function(arg_2_0)
+	slot0.shipUpdate = _.map(slot1.ship_update, function (slot0)
 		return {
-			id = arg_2_0.id,
-			hpRant = arg_2_0.hp_rant
+			id = slot0.id,
+			hpRant = slot0.hp_rant
 		}
 	end)
-	arg_1_0.cellUpdates = {}
+	slot0.cellUpdates = {}
 
-	_.each(arg_1_1.map_update, function(arg_3_0)
-		if arg_3_0.item_type ~= ChapterConst.AttachNone and arg_3_0.item_type ~= ChapterConst.AttachBorn and arg_3_0.item_type ~= ChapterConst.AttachBorn_Sub and (arg_3_0.item_type ~= ChapterConst.AttachStory or arg_3_0.item_data ~= ChapterConst.StoryTrigger) then
-			local var_3_0 = arg_3_0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(arg_3_0) or ChapterCell.New(arg_3_0)
-
-			table.insert(arg_1_0.cellUpdates, var_3_0)
+	_.each(slot1.map_update, function (slot0)
+		if slot0.item_type ~= ChapterConst.AttachNone and slot0.item_type ~= ChapterConst.AttachBorn and slot0.item_type ~= ChapterConst.AttachBorn_Sub and (slot0.item_type ~= ChapterConst.AttachStory or slot0.item_data ~= ChapterConst.StoryTrigger) then
+			table.insert(uv0.cellUpdates, slot0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(slot0) or ChapterCell.New(slot0))
 		end
 	end)
 
-	arg_1_0.commanderSkillEffectId = arg_1_1.commander_skill_effect_id
+	slot0.commanderSkillEffectId = slot1.commander_skill_effect_id
 end
 
-function var_0_0.applyTo(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_1:getFleet(FleetType.Normal, arg_4_0.line.row, arg_4_0.line.column)
-
-	if var_4_0 then
-		return arg_4_0:applyToFleet(arg_4_1, var_4_0, arg_4_2)
+function slot0.applyTo(slot0, slot1, slot2)
+	if slot1:getFleet(FleetType.Normal, slot0.line.row, slot0.line.column) then
+		return slot0:applyToFleet(slot1, slot3, slot2)
 	end
 
-	return false, "can not find any fleet at: [" .. arg_4_0.line.row .. ", " .. arg_4_0.line.column .. "]"
+	return false, "can not find any fleet at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 end
 
-function var_0_0.applyToFleet(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	if not arg_5_2:isValid() then
-		return false, "fleet " .. arg_5_2.id .. " is invalid."
+function slot0.applyToFleet(slot0, slot1, slot2, slot3)
+	if not slot2:isValid() then
+		return false, "fleet " .. slot2.id .. " is invalid."
 	end
 
-	local var_5_0 = 0
+	slot4 = 0
 
-	if arg_5_1:isPlayingWithBombEnemy() then
-		if not arg_5_3 then
-			_.each(arg_5_0.cellUpdates, function(arg_6_0)
-				local var_6_0 = arg_5_1:getChapterCell(arg_6_0.row, arg_6_0.column)
+	if slot1:isPlayingWithBombEnemy() then
+		if not slot3 then
+			_.each(slot0.cellUpdates, function (slot0)
+				if uv0:getChapterCell(slot0.row, slot0.column).flag == ChapterConst.CellFlagActive and slot0.flag == ChapterConst.CellFlagDisabled then
+					slot2 = pg.specialunit_template[slot1.attachmentId]
 
-				if var_6_0.flag == ChapterConst.CellFlagActive and arg_6_0.flag == ChapterConst.CellFlagDisabled then
-					local var_6_1 = pg.specialunit_template[var_6_0.attachmentId]
+					assert(slot2, "specialunit_template not exist: " .. slot1.attachmentId)
 
-					assert(var_6_1, "specialunit_template not exist: " .. var_6_0.attachmentId)
-
-					arg_5_1.modelCount = arg_5_1.modelCount + var_6_1.enemy_point
+					uv0.modelCount = uv0.modelCount + slot2.enemy_point
 				end
 
-				arg_5_1:mergeChapterCell(arg_6_0)
+				uv0:mergeChapterCell(slot0)
 
-				var_5_0 = bit.bor(var_5_0, ChapterConst.DirtyAttachment)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 			end)
 		end
-	elseif arg_5_0.target then
-		local var_5_1 = _.detect(arg_5_0.cellUpdates, function(arg_7_0)
-			return arg_7_0.row == arg_5_0.target.row and arg_7_0.column == arg_5_0.target.column
+	elseif slot0.target then
+		slot5 = _.detect(slot0.cellUpdates, function (slot0)
+			return slot0.row == uv0.target.row and slot0.column == uv0.target.column
 		end)
 
-		if not arg_5_3 then
-			if arg_5_0.shipUpdate then
-				_.each(arg_5_0.shipUpdate, function(arg_8_0)
-					arg_5_1:updateFleetShipHp(arg_8_0.id, arg_8_0.hpRant)
+		if not slot3 then
+			if slot0.shipUpdate then
+				_.each(slot0.shipUpdate, function (slot0)
+					uv0:updateFleetShipHp(slot0.id, slot0.hpRant)
 				end)
 
-				var_5_0 = bit.bor(var_5_0, ChapterConst.DirtyFleet)
+				slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 			end
 
-			if var_5_1 then
-				if isa(var_5_1, ChapterChampionPackage) then
-					arg_5_1:mergeChampion(var_5_1)
+			if slot5 then
+				if isa(slot5, ChapterChampionPackage) then
+					slot1:mergeChampion(slot5)
 
-					var_5_0 = bit.bor(var_5_0, ChapterConst.DirtyChampion)
+					slot4 = bit.bor(slot4, ChapterConst.DirtyChampion)
 				else
-					arg_5_1:mergeChapterCell(var_5_1)
+					slot1:mergeChapterCell(slot5)
 
-					var_5_0 = bit.bor(var_5_0, ChapterConst.DirtyAttachment)
+					slot4 = bit.bor(slot4, ChapterConst.DirtyAttachment)
 				end
 
-				var_5_0 = bit.bor(var_5_0, ChapterConst.DirtyFleet)
+				slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 			end
 		end
 	end
 
-	return true, var_5_0
+	return true, slot4
 end
 
-function var_0_0.PlayAIAction(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0 = arg_9_1:getFleetIndex(FleetType.Normal, arg_9_0.line.row, arg_9_0.line.column)
+function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
+	assert(slot1:getFleetIndex(FleetType.Normal, slot0.line.row, slot0.line.column))
 
-	assert(var_9_0)
+	if slot1:isPlayingWithBombEnemy() then
+		slot6 = slot1:getMapShip(slot1.fleets[slot4])
 
-	if arg_9_1:isPlayingWithBombEnemy() then
-		local var_9_1 = arg_9_1.fleets[var_9_0]
-		local var_9_2 = arg_9_1:getMapShip(var_9_1)
+		slot2.viewComponent:doPlayStrikeAnim(slot6, slot6:GetMapStrikeAnim(), slot3)
+	elseif slot0.actType == ChapterConst.ActType_Poison then
+		slot3()
+	else
+		if slot0.target then
+			slot5 = slot1.fleets[slot4]
+			slot6 = _.detect(slot0.cellUpdates, function (slot0)
+				return slot0.row == uv0.target.row and slot0.column == uv0.target.column
+			end)
 
-		arg_9_2.viewComponent:doPlayStrikeAnim(var_9_2, var_9_2:GetMapStrikeAnim(), arg_9_3)
-	elseif arg_9_0.actType == ChapterConst.ActType_Poison then
-		arg_9_3()
-	elseif arg_9_0.target then
-		local var_9_3 = arg_9_1.fleets[var_9_0]
-		local var_9_4 = _.detect(arg_9_0.cellUpdates, function(arg_10_0)
-			return arg_10_0.row == arg_9_0.target.row and arg_10_0.column == arg_9_0.target.column
-		end)
+			assert(slot6, "can not find cell")
 
-		assert(var_9_4, "can not find cell")
+			if slot6.attachment == ChapterConst.AttachLandbase then
+				if pg.land_based_template[slot6.attachmentId].type == ChapterConst.LBCoastalGun then
+					slot8 = slot1:getMapShip(slot5)
 
-		if var_9_4.attachment == ChapterConst.AttachLandbase then
-			if pg.land_based_template[var_9_4.attachmentId].type == ChapterConst.LBCoastalGun then
-				local var_9_5 = arg_9_1:getMapShip(var_9_3)
+					slot2.viewComponent:doPlayStrikeAnim(slot8, slot8:GetMapStrikeAnim(), slot3)
+				else
+					assert(false)
+				end
 
-				arg_9_2.viewComponent:doPlayStrikeAnim(var_9_5, var_9_5:GetMapStrikeAnim(), arg_9_3)
-			else
-				assert(false)
+				return
 			end
+
+			slot7 = "-" .. slot6.data / 100 .. "%"
+			slot8 = slot0.commanderSkillEffectId
+
+			assert(slot5:getSkill(slot8), "can not find skill: " .. slot8)
+
+			slot10 = slot5:findCommanderBySkillId(slot8)
+
+			assert(slot10, "command can not find by skill id: " .. slot8)
+			slot2.viewComponent:doPlayCommander(slot10, function ()
+				if uv0:GetType() == FleetSkill.TypeAirStrikeDodge then
+					uv1.viewComponent:easeAvoid(uv1.viewComponent.grid.cellFleets[uv2.id].tf.position, uv3)
+
+					return
+				elseif uv0:GetType() == FleetSkill.TypeAttack then
+					slot1 = nil
+
+					switch(uv0:GetArgs()[1], {
+						airfight = function ()
+							uv0 = "AirStrikeUI"
+						end,
+						torpedo = function ()
+							uv0 = "SubTorpedoUI"
+						end,
+						cannon = function ()
+							uv0 = "CannonUI"
+						end
+					})
+					assert(slot1)
+					uv1.viewComponent:doPlayStrikeAnim(uv4:getStrikeAnimShip(uv2, slot1), slot1, function ()
+						uv0.viewComponent:strikeEnemy(uv1.target, uv2, uv3)
+					end)
+
+					return
+				else
+					assert(false)
+				end
+			end)
 
 			return
 		end
 
-		local var_9_6 = "-" .. var_9_4.data / 100 .. "%"
-		local var_9_7 = arg_9_0.commanderSkillEffectId
-		local var_9_8 = var_9_3:getSkill(var_9_7)
-
-		assert(var_9_8, "can not find skill: " .. var_9_7)
-
-		local var_9_9 = var_9_3:findCommanderBySkillId(var_9_7)
-
-		assert(var_9_9, "command can not find by skill id: " .. var_9_7)
-		arg_9_2.viewComponent:doPlayCommander(var_9_9, function()
-			if var_9_8:GetType() == FleetSkill.TypeAirStrikeDodge then
-				arg_9_2.viewComponent:easeAvoid(arg_9_2.viewComponent.grid.cellFleets[var_9_3.id].tf.position, arg_9_3)
-
-				return
-			elseif var_9_8:GetType() == FleetSkill.TypeAttack then
-				local var_11_0 = var_9_8:GetArgs()
-				local var_11_1
-
-				switch(var_11_0[1], {
-					airfight = function()
-						var_11_1 = "AirStrikeUI"
-					end,
-					torpedo = function()
-						var_11_1 = "SubTorpedoUI"
-					end,
-					cannon = function()
-						var_11_1 = "CannonUI"
-					end
-				})
-				assert(var_11_1)
-				arg_9_2.viewComponent:doPlayStrikeAnim(arg_9_1:getStrikeAnimShip(var_9_3, var_11_1), var_11_1, function()
-					arg_9_2.viewComponent:strikeEnemy(arg_9_0.target, var_9_6, arg_9_3)
-				end)
-
-				return
-			else
-				assert(false)
-			end
-		end)
-	else
-		arg_9_3()
+		slot3()
 	end
 end
 
-return var_0_0
+return slot0

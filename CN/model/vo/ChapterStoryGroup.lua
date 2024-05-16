@@ -1,75 +1,71 @@
-﻿local var_0_0 = class("ChapterStoryGroup", import("model.vo.BaseVO"))
+slot0 = class("ChapterStoryGroup", import("model.vo.BaseVO"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.story_group
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	var_0_0.super.Ctor(arg_2_0, arg_2_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_2_0.id = arg_2_0.configId
+	slot0.id = slot0.configId
 end
 
-function var_0_0.GetConfigID(arg_3_0)
-	return arg_3_0.configId
+function slot0.GetConfigID(slot0)
+	return slot0.configId
 end
 
-function var_0_0.GetStoryIds(arg_4_0)
-	return arg_4_0:getConfig("list")
+function slot0.GetStoryIds(slot0)
+	return slot0:getConfig("list")
 end
 
-function var_0_0.isUnlock(arg_5_0)
-	return arg_5_0:IsCleanPrevChapter() and arg_5_0:IsCleanPrevStory()
+function slot0.isUnlock(slot0)
+	return slot0:IsCleanPrevChapter() and slot0:IsCleanPrevStory()
 end
 
-function var_0_0.IsCleanPrevChapter(arg_6_0)
-	local var_6_0 = arg_6_0:getConfig("pre_chapter")
-
-	if var_6_0 == 0 then
+function slot0.IsCleanPrevChapter(slot0)
+	if slot0:getConfig("pre_chapter") == 0 then
 		return true
 	end
 
-	return getProxy(ChapterProxy):GetChapterItemById(var_6_0):isClear()
+	return getProxy(ChapterProxy):GetChapterItemById(slot1):isClear()
 end
 
-function var_0_0.IsCleanPrevStory(arg_7_0)
-	local var_7_0 = arg_7_0:getConfig("pre_story")
-
-	if var_7_0 == 0 then
+function slot0.IsCleanPrevStory(slot0)
+	if slot0:getConfig("pre_story") == 0 then
 		return true
 	end
 
-	return getProxy(ChapterProxy):GetChapterItemById(var_7_0):isClear()
+	return getProxy(ChapterProxy):GetChapterItemById(slot1):isClear()
 end
 
-function var_0_0.isClear(arg_8_0)
-	return _.all(arg_8_0:GetChapterStories(), function(arg_9_0)
-		return arg_9_0:IsClear()
-	end) and arg_8_0:IsCleanPrevChapter()
+function slot0.isClear(slot0)
+	return _.all(slot0:GetChapterStories(), function (slot0)
+		return slot0:IsClear()
+	end) and slot0:IsCleanPrevChapter()
 end
 
-function var_0_0.GetChapterStories(arg_10_0)
-	return (_.map(arg_10_0:GetStoryIds(), function(arg_11_0)
+function slot0.GetChapterStories(slot0)
+	return _.map(slot0:GetStoryIds(), function (slot0)
 		return ChapterStoryItem.New({
-			configId = arg_11_0
+			configId = slot0
 		})
-	end))
+	end)
 end
 
-function var_0_0.isAllAchieve(arg_12_0)
+function slot0.isAllAchieve(slot0)
 	return true
 end
 
-function var_0_0.activeAlways(arg_13_0)
+function slot0.activeAlways(slot0)
 	return true
 end
 
-function var_0_0.ifNeedHide(arg_14_0)
+function slot0.ifNeedHide(slot0)
 	return false
 end
 
-function var_0_0.inActTime(arg_15_0)
+function slot0.inActTime(slot0)
 	return true
 end
 
-return var_0_0
+return slot0

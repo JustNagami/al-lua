@@ -1,117 +1,108 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot0.Battle.BattleEnemyCharacter = class("BattleEnemyCharacter", slot0.Battle.BattleCharacter)
+slot0.Battle.BattleEnemyCharacter.__name = "BattleEnemyCharacter"
+slot2 = slot0.Battle.BattleEnemyCharacter
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
+function slot2.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-var_0_0.Battle.BattleEnemyCharacter = class("BattleEnemyCharacter", var_0_0.Battle.BattleCharacter)
-var_0_0.Battle.BattleEnemyCharacter.__name = "BattleEnemyCharacter"
-
-local var_0_2 = var_0_0.Battle.BattleEnemyCharacter
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
-
-	arg_1_0._preCastBound = false
+	slot0._preCastBound = false
 end
 
-function var_0_2.RegisterWeaponListener(arg_2_0, arg_2_1)
-	var_0_2.super.RegisterWeaponListener(arg_2_0, arg_2_1)
-	arg_2_1:RegisterEventListener(arg_2_0, var_0_1.WEAPON_PRE_CAST, arg_2_0.onWeaponPreCast)
-	arg_2_1:RegisterEventListener(arg_2_0, var_0_1.WEAPON_PRE_CAST_FINISH, arg_2_0.onWeaponPrecastFinish)
-	arg_2_1:RegisterEventListener(arg_2_0, var_0_1.WEAPON_INTERRUPT, arg_2_0.onWeaponInterrupted)
+function slot2.RegisterWeaponListener(slot0, slot1)
+	uv0.super.RegisterWeaponListener(slot0, slot1)
+	slot1:RegisterEventListener(slot0, uv1.WEAPON_PRE_CAST, slot0.onWeaponPreCast)
+	slot1:RegisterEventListener(slot0, uv1.WEAPON_PRE_CAST_FINISH, slot0.onWeaponPrecastFinish)
+	slot1:RegisterEventListener(slot0, uv1.WEAPON_INTERRUPT, slot0.onWeaponInterrupted)
 end
 
-function var_0_2.UnregisterWeaponListener(arg_3_0, arg_3_1)
-	var_0_2.super.UnregisterWeaponListener(arg_3_0, arg_3_1)
-	arg_3_1:UnregisterEventListener(arg_3_0, var_0_1.WEAPON_PRE_CAST)
-	arg_3_1:UnregisterEventListener(arg_3_0, var_0_1.WEAPON_PRE_CAST_FINISH)
-	arg_3_1:UnregisterEventListener(arg_3_0, var_0_1.WEAPON_INTERRUPT)
+function slot2.UnregisterWeaponListener(slot0, slot1)
+	uv0.super.UnregisterWeaponListener(slot0, slot1)
+	slot1:UnregisterEventListener(slot0, uv1.WEAPON_PRE_CAST)
+	slot1:UnregisterEventListener(slot0, uv1.WEAPON_PRE_CAST_FINISH)
+	slot1:UnregisterEventListener(slot0, uv1.WEAPON_INTERRUPT)
 end
 
-function var_0_2.Update(arg_4_0)
-	var_0_2.super.Update(arg_4_0)
-	arg_4_0:UpdatePosition()
-	arg_4_0:UpdateMatrix()
-	arg_4_0:UpdateArrowBarPostition()
-	arg_4_0:UpdateArrowBarRotation()
+function slot2.Update(slot0)
+	uv0.super.Update(slot0)
+	slot0:UpdatePosition()
+	slot0:UpdateMatrix()
+	slot0:UpdateArrowBarPostition()
+	slot0:UpdateArrowBarRotation()
 
-	if arg_4_0._vigilantBar then
-		arg_4_0:UpdateVigilantBarPosition()
-		arg_4_0._vigilantBar:UpdateVigilantProgress()
+	if slot0._vigilantBar then
+		slot0:UpdateVigilantBarPosition()
+		slot0._vigilantBar:UpdateVigilantProgress()
 	end
 end
 
-function var_0_2.Dispose(arg_5_0)
-	if arg_5_0._vigilantBar then
-		arg_5_0._vigilantBar:Dispose()
+function slot2.Dispose(slot0)
+	if slot0._vigilantBar then
+		slot0._vigilantBar:Dispose()
 
-		arg_5_0._vigilantBar = nil
+		slot0._vigilantBar = nil
 	end
 
-	arg_5_0:AddShaderColor()
-	arg_5_0._factory:GetArrowPool():DestroyObj(arg_5_0._arrowBar)
-	var_0_2.super.Dispose(arg_5_0)
+	slot0:AddShaderColor()
+	slot0._factory:GetArrowPool():DestroyObj(slot0._arrowBar)
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_2.GetModleID(arg_6_0)
-	return arg_6_0._unitData:GetTemplate().prefab
+function slot2.GetModleID(slot0)
+	return slot0._unitData:GetTemplate().prefab
 end
 
-function var_0_2.onWeaponPreCast(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1.Data
-	local var_7_1 = var_7_0.fx
+function slot2.onWeaponPreCast(slot0, slot1)
+	slot2 = slot1.Data
 
-	arg_7_0:AddFX(var_7_1, true)
+	slot0:AddFX(slot2.fx, true)
 
-	arg_7_0._preCastBound = var_7_0.isBound
+	slot0._preCastBound = slot2.isBound
 end
 
-function var_0_2.onWeaponPrecastFinish(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1.Data.fx
+function slot2.onWeaponPrecastFinish(slot0, slot1)
+	slot0:RemoveCacheFX(slot1.Data.fx)
 
-	arg_8_0:RemoveCacheFX(var_8_0)
-
-	arg_8_0._preCastBound = false
+	slot0._preCastBound = false
 end
 
-function var_0_2.OnUpdateHP(arg_9_0, arg_9_1)
-	var_0_2.super.OnUpdateHP(arg_9_0, arg_9_1)
+function slot2.OnUpdateHP(slot0, slot1)
+	uv0.super.OnUpdateHP(slot0, slot1)
 
-	if arg_9_1.Data.dHP <= 0 then
-		arg_9_0:AddBlink(1, 1, 1, 0.1, 0.1, true)
+	if slot1.Data.dHP <= 0 then
+		slot0:AddBlink(1, 1, 1, 0.1, 0.1, true)
 	end
 end
 
-function var_0_2.AddModel(arg_10_0, arg_10_1)
-	var_0_2.super.AddModel(arg_10_0, arg_10_1)
+function slot2.AddModel(slot0, slot1)
+	uv0.super.AddModel(slot0, slot1)
 
-	local var_10_0 = arg_10_0._unitData:GetTemplate().hp_bar[2]
-
-	arg_10_0._hpBarOffset = Vector3(0, var_10_0, 0)
+	slot0._hpBarOffset = Vector3(0, slot0._unitData:GetTemplate().hp_bar[2], 0)
 end
 
-function var_0_2.GetSpecificFXScale(arg_11_0)
-	return arg_11_0._unitData:GetTemplate().specific_fx_scale
+function slot2.GetSpecificFXScale(slot0)
+	return slot0._unitData:GetTemplate().specific_fx_scale
 end
 
-function var_0_2.OnAnimatorTrigger(arg_12_0)
-	arg_12_0._unitData:CharacterActionTriggerCallback()
+function slot2.OnAnimatorTrigger(slot0)
+	slot0._unitData:CharacterActionTriggerCallback()
 end
 
-function var_0_2.OnAnimatorEnd(arg_13_0)
-	arg_13_0._unitData:CharacterActionEndCallback()
+function slot2.OnAnimatorEnd(slot0)
+	slot0._unitData:CharacterActionEndCallback()
 end
 
-function var_0_2.OnAnimatorStart(arg_14_0)
-	arg_14_0._unitData:CharacterActionStartCallback()
+function slot2.OnAnimatorStart(slot0)
+	slot0._unitData:CharacterActionStartCallback()
 end
 
-function var_0_2.UpdateAimBiasBar(arg_15_0)
-	var_0_2.super.UpdateAimBiasBar(arg_15_0)
+function slot2.UpdateAimBiasBar(slot0)
+	uv0.super.UpdateAimBiasBar(slot0)
 
-	if arg_15_0._fogFx then
-		local var_15_0 = arg_15_0:GetUnitData():GetAimBias():GetCurrentRate()
-
-		arg_15_0._fogFx.transform.localScale = Vector3(var_15_0, var_15_0, 1)
+	if slot0._fogFx then
+		slot1 = slot0:GetUnitData():GetAimBias():GetCurrentRate()
+		slot0._fogFx.transform.localScale = Vector3(slot1, slot1, 1)
 	end
 end

@@ -1,94 +1,94 @@
-﻿local var_0_0 = class("Dorm3dCameraZone", import("model.vo.BaseVO"))
+slot0 = class("Dorm3dCameraZone", import("model.vo.BaseVO"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.dorm3d_camera_zone_template
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	var_0_0.super.Ctor(arg_2_0, arg_2_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_2_0.regulaAnims = _.map(arg_2_0:GetRegularAnimIDList(), function(arg_3_0)
+	slot0.regulaAnims = _.map(slot0:GetRegularAnimIDList(), function (slot0)
 		return Dorm3dCameraAnim.New({
-			configId = arg_3_0
+			configId = slot0
 		})
 	end)
-	arg_2_0.specialAnims = _.map(arg_2_0:GetSpecialFurnitureIDList(), function(arg_4_0)
-		local var_4_0 = arg_4_0[1]
+	slot0.specialAnims = _.map(slot0:GetSpecialFurnitureIDList(), function (slot0)
+		slot1 = slot0[1]
 
 		return {
-			furnitureId = var_4_0,
-			slotId = arg_4_0[2],
-			anims = _.map(arg_2_0:GetSpecialAnimIDListByFurnitureID(var_4_0), function(arg_5_0)
+			furnitureId = slot1,
+			slotId = slot0[2],
+			anims = _.map(uv0:GetSpecialAnimIDListByFurnitureID(slot1), function (slot0)
 				return Dorm3dCameraAnim.New({
-					configId = arg_5_0
+					configId = slot0
 				})
 			end)
 		}
 	end)
 end
 
-function var_0_0.GetName(arg_6_0)
-	return arg_6_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetShipGroupId(arg_7_0)
-	return arg_7_0:getConfig("char_id")
+function slot0.GetShipGroupId(slot0)
+	return slot0:getConfig("char_id")
 end
 
-function var_0_0.GetWatchCameraName(arg_8_0)
-	return arg_8_0:getConfig("watch_camera")
+function slot0.GetWatchCameraName(slot0)
+	return slot0:getConfig("watch_camera")
 end
 
-function var_0_0.GetRegularAnimIDList(arg_9_0)
-	return arg_9_0:getConfig("regular_anim") or {}
+function slot0.GetRegularAnimIDList(slot0)
+	return slot0:getConfig("regular_anim") or {}
 end
 
-function var_0_0.GetRegularAnims(arg_10_0)
-	return arg_10_0.regulaAnims
+function slot0.GetRegularAnims(slot0)
+	return slot0.regulaAnims
 end
 
-function var_0_0.GetSpecialFurnitureIDList(arg_11_0)
-	return arg_11_0:getConfig("special_furniture") or {}
+function slot0.GetSpecialFurnitureIDList(slot0)
+	return slot0:getConfig("special_furniture") or {}
 end
 
-function var_0_0.GetSpecialAnimIDListByFurnitureID(arg_12_0, arg_12_1)
-	return pg.dorm3d_camera_anim_template.get_id_list_by_furniture_id[arg_12_1] or {}
+function slot0.GetSpecialAnimIDListByFurnitureID(slot0, slot1)
+	return pg.dorm3d_camera_anim_template.get_id_list_by_furniture_id[slot1] or {}
 end
 
-function var_0_0.GetSpecialAnims(arg_13_0)
-	return arg_13_0.specialAnims
+function slot0.GetSpecialAnims(slot0)
+	return slot0.specialAnims
 end
 
-function var_0_0.GetAnimSpeeds(arg_14_0)
-	return arg_14_0:getConfig("anim_speeds")
+function slot0.GetAnimSpeeds(slot0)
+	return slot0:getConfig("anim_speeds")
 end
 
-function var_0_0.Get(arg_15_0)
-	return arg_15_0:getConfig("")
+function slot0.Get(slot0)
+	return slot0:getConfig("")
 end
 
-function var_0_0.GetRecordTime(arg_16_0)
-	return arg_16_0:getConfig("record_time")
+function slot0.GetRecordTime(slot0)
+	return slot0:getConfig("record_time")
 end
 
-function var_0_0.GetFocusDistanceRange(arg_17_0)
-	return arg_17_0:getConfig("focus_distance")
+function slot0.GetFocusDistanceRange(slot0)
+	return slot0:getConfig("focus_distance")
 end
 
-function var_0_0.GetDepthOfFieldBlurRange(arg_18_0)
-	return arg_18_0:getConfig("blur_strength")
+function slot0.GetDepthOfFieldBlurRange(slot0)
+	return slot0:getConfig("blur_strength")
 end
 
-function var_0_0.GetExposureRange(arg_19_0)
-	return arg_19_0:getConfig("exposure")
+function slot0.GetExposureRange(slot0)
+	return slot0:getConfig("exposure")
 end
 
-function var_0_0.GetContrastRange(arg_20_0)
-	return arg_20_0:getConfig("contrast")
+function slot0.GetContrastRange(slot0)
+	return slot0:getConfig("contrast")
 end
 
-function var_0_0.GetSaturationRange(arg_21_0)
-	return arg_21_0:getConfig("saturation")
+function slot0.GetSaturationRange(slot0)
+	return slot0:getConfig("saturation")
 end
 
-return var_0_0
+return slot0

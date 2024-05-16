@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 2032,
-				time = 20,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔20秒，有25%的概率发动，提高全队5.0%伤害，持续8秒，同技能效果不叠加",
 		addition = {
@@ -82,5 +69,18 @@
 	stack = 1,
 	id = 2031,
 	icon = 2030,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 2032,
+				time = 20,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

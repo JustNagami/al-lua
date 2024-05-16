@@ -1,67 +1,58 @@
-﻿local var_0_0 = class("AnniversaryIsland2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
+slot0 = class("AnniversaryIsland2023Mediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-function var_0_0.register(arg_1_0)
-	var_0_0.super.register(arg_1_0)
-
-	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
-
-	arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+function slot0.register(slot0)
+	uv0.super.register(slot0)
+	slot0:sendNotification(GAME.ACTIVITY_OPERATION, {
 		cmd = 2,
-		activity_id = var_1_0.id
+		activity_id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2).id
 	})
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
-	local var_2_0 = var_0_0.super.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
+	slot1 = uv0.super.listNotificationInterests(slot0)
 
-	table.insertto(var_2_0, {
+	table.insertto(slot1, {
 		ActivityProxy.ACTIVITY_SHOW_AWARDS
 	})
 
-	return var_2_0
+	return slot1
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	var_0_0.super.handleNotification(arg_3_0, arg_3_1)
+function slot0.handleNotification(slot0, slot1)
+	uv0.super.handleNotification(slot0, slot1)
 
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+	slot3 = slot1:getBody()
 
-	if var_3_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg_3_0:addSubLayers(Context.New({
+	if slot1:getName() == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		slot0:addSubLayers(Context.New({
 			mediator = AwardInfoMediator,
 			viewComponent = AnniversaryIslandAwardLayer,
 			data = {
-				items = var_3_1.awards
+				items = slot3.awards
 			},
-			onRemoved = var_3_1.callback
+			onRemoved = slot3.callback
 		}))
 	end
 end
 
-function var_0_0.CheckPreloadData(arg_4_0, arg_4_1)
+function slot0.CheckPreloadData(slot0, slot1)
 	if getProxy(ContextProxy):getContextByMediator(AnniversaryIsland2023Mediator) then
-		local var_4_0 = getProxy(ContextProxy):getCurrentContext()
-
-		arg_4_0.prevContext = arg_4_0.prevContext or var_4_0
+		slot0.prevContext = slot0.prevContext or getProxy(ContextProxy):getCurrentContext()
 
 		getProxy(ContextProxy):CleanUntilMediator(AnniversaryIsland2023Mediator)
 	else
-		local var_4_1 = Context.New()
+		slot2 = Context.New()
 
-		SCENE.SetSceneInfo(var_4_1, SCENE.ANNIVERSARY_ISLAND_BACKHILL_2023)
-
-		local var_4_2 = getProxy(ContextProxy):getCurrentContext()
-
-		var_4_1:extendData({
-			fromMediatorName = var_4_2.mediator.__cname
+		SCENE.SetSceneInfo(slot2, SCENE.ANNIVERSARY_ISLAND_BACKHILL_2023)
+		slot2:extendData({
+			fromMediatorName = getProxy(ContextProxy):getCurrentContext().mediator.__cname
 		})
-		getProxy(ContextProxy):pushContext(var_4_1)
+		getProxy(ContextProxy):pushContext(slot2)
 
-		arg_4_0.prevContext = arg_4_0.prevContext or var_4_2
+		slot0.prevContext = slot0.prevContext or slot3
 	end
 
-	existCall(arg_4_1)
+	existCall(slot1)
 end
 
-return var_0_0
+return slot0

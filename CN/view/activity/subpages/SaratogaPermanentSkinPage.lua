@@ -1,15 +1,15 @@
-﻿local var_0_0 = class("SaratogaPermanentSkinPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("SaratogaPermanentSkinPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnUpdateFlush(arg_1_0)
-	var_0_0.super.OnUpdateFlush(arg_1_0)
-	onButton(arg_1_0, arg_1_0.battleBtn, function()
-		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 
-	local var_1_0, var_1_1, var_1_2 = arg_1_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
 
-	setText(arg_1_0.progress, setColorStr(var_1_0, "#FF8DB5") .. "/" .. var_1_1)
-	setText(arg_1_0.bg:Find("Text"), i18n("activity_kill"))
+	setText(slot0.progress, setColorStr(slot1, "#FF8DB5") .. "/" .. slot2)
+	setText(slot0.bg:Find("Text"), i18n("activity_kill"))
 end
 
-return var_0_0
+return slot0

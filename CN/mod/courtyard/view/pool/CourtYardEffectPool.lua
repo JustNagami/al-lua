@@ -1,35 +1,34 @@
-﻿local var_0_0 = class("CourtYardEffectPool", import(".CourtYardPool"))
+slot0 = class("CourtYardEffectPool", import(".CourtYardPool"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	arg_1_0.recycleTime = arg_1_5 or 2
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0.recycleTime = slot5 or 2
 
-	pg.ViewUtils.SetLayer(tf(arg_1_2), Layer.UI)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	pg.ViewUtils.SetLayer(tf(slot2), Layer.UI)
+	uv0.super.Ctor(slot0, slot1, slot2, slot3, slot4)
 
-	arg_1_0.timers = {}
+	slot0.timers = {}
 end
 
-function var_0_0.Dequeue(arg_2_0)
-	local var_2_0 = var_0_0.super.Dequeue(arg_2_0)
+function slot0.Dequeue(slot0)
+	slot1 = uv0.super.Dequeue(slot0)
+	slot0.timers[slot1] = Timer.New(function ()
+		uv0:Enqueue(uv1)
+	end, slot0.recycleTime, 1)
 
-	arg_2_0.timers[var_2_0] = Timer.New(function()
-		arg_2_0:Enqueue(var_2_0)
-	end, arg_2_0.recycleTime, 1)
+	slot0.timers[slot1]:Start()
 
-	arg_2_0.timers[var_2_0]:Start()
-
-	return var_2_0
+	return slot1
 end
 
-function var_0_0.Dispose(arg_4_0)
-	for iter_4_0, iter_4_1 in pairs(arg_4_0.timers) do
-		arg_4_0:Enqueue(iter_4_0)
-		iter_4_1:Stop()
+function slot0.Dispose(slot0)
+	for slot4, slot5 in pairs(slot0.timers) do
+		slot0:Enqueue(slot4)
+		slot5:Stop()
 	end
 
-	arg_4_0.timers = nil
+	slot0.timers = nil
 
-	var_0_0.super.Dispose(arg_4_0)
+	uv0.super.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

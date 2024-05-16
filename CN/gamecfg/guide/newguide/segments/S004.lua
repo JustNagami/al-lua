@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"前往<color=#ff7d36>编队</color>，将角色编入队伍",
 	"但需要注意，<color=#ffde38>驱逐、轻巡、重巡</color>只能编队到先锋编队中",
 	"<color=#ffde38>航母、战列舰</color>只能编队到主力编队中",
@@ -19,7 +19,7 @@ return {
 				mode = 2,
 				posY = -275,
 				posX = 348,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/formationButton",
@@ -41,7 +41,7 @@ return {
 				mode = 1,
 				posY = -100,
 				posX = 300,
-				text = var_0_0[2]
+				text = slot0[2]
 			}
 		},
 		{
@@ -51,7 +51,7 @@ return {
 				mode = 1,
 				posY = 200,
 				posX = 0,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -61,7 +61,7 @@ return {
 				mode = 2,
 				posY = 122.82,
 				posX = 243.5,
-				text = var_0_0[4]
+				text = slot0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/GridFrame/vanguard_2/tip",
@@ -83,7 +83,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[5]
+				text = slot0[5]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/DockyardUI(Clone)/main/ship_container/ships",
@@ -110,7 +110,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[6]
+				text = slot0[6]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/select_panel/confirm_button",
@@ -133,7 +133,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[7]
+				text = slot0[7]
 			}
 		},
 		{
@@ -143,7 +143,7 @@ return {
 				mode = 2,
 				posY = 215.7,
 				posX = -95.62,
-				text = var_0_0[8]
+				text = slot0[8]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/blur_panel/top/back_btn",

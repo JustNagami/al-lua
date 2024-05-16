@@ -1,32 +1,28 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot1 = singletonClass("BattleBulletPool")
+ys.Battle.BattleBulletPool = slot1
+slot1.__name = "BattleBulletPool"
 
-local var_0_0 = ys
-local var_0_1 = singletonClass("BattleBulletPool")
-
-var_0_0.Battle.BattleBulletPool = var_0_1
-var_0_1.__name = "BattleBulletPool"
-
-function var_0_1.Ctor(arg_1_0)
-	return
+function slot1.Ctor(slot0)
 end
 
-function var_0_1.Init(arg_2_0)
-	arg_2_0._bulletResCache = {}
+function slot1.Init(slot0)
+	slot0._bulletResCache = {}
 end
 
-function var_0_1.InstantiateBullet(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_0._bulletResCache[arg_3_1] ~= nil then
-		arg_3_2(arg_3_0._bulletResCache[arg_3_1])
+function slot1.InstantiateBullet(slot0, slot1, slot2)
+	if slot0._bulletResCache[slot1] ~= nil then
+		slot2(slot0._bulletResCache[slot1])
 	else
-		ResourceMgr.Inst:getAssetAsync("Item/" .. arg_3_1, arg_3_1, UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
-			assert(arg_4_0, "子弹资源加载失败：" .. arg_3_1)
-			arg_3_2(arg_4_0)
+		ResourceMgr.Inst:getAssetAsync("Item/" .. slot1, slot1, UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			assert(slot0, "子弹资源加载失败：" .. uv0)
+			uv1(slot0)
 
-			arg_3_0._bulletResCache[arg_3_1] = arg_4_0
+			uv2._bulletResCache[uv0] = slot0
 		end), true, true)
 	end
 end
 
-function var_0_1.Clear(arg_5_0)
-	arg_5_0._bulletResCache = nil
+function slot1.Clear(slot0)
+	slot0._bulletResCache = nil
 end

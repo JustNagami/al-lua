@@ -1,29 +1,26 @@
-﻿local var_0_0 = class("AttireApplyCommand", pm.SimpleCommand)
+slot0 = class("AttireApplyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.type
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if not getProxy(AttireProxy):getAttireFrame(var_1_2, var_1_1) then
+	if not getProxy(AttireProxy):getAttireFrame(slot2.type, slot2.id) then
 		return
 	end
 
-	local var_1_3 = getProxy(PlayerProxy)
-	local var_1_4 = var_1_3:getData()
+	slot7 = getProxy(PlayerProxy):getData()
 
 	pg.ConnectionMgr.GetInstance():Send(11005, {
-		id = var_1_1,
-		type = var_1_2
-	}, 11006, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_4:updateAttireFrame(var_1_2, var_1_1)
-			var_1_3:updatePlayer(var_1_4)
-			arg_1_0:sendNotification(GAME.ATTIRE_APPLY_DONE)
+		id = slot3,
+		type = slot4
+	}, 11006, function (slot0)
+		if slot0.result == 0 then
+			uv0:updateAttireFrame(uv1, uv2)
+			uv3:updatePlayer(uv0)
+			uv4:sendNotification(GAME.ATTIRE_APPLY_DONE)
 		else
-			print(arg_2_0.result)
+			print(slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

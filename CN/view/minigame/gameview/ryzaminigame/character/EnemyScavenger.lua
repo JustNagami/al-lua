@@ -1,44 +1,44 @@
-﻿local var_0_0 = class("EnemyScavenger", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
+slot0 = class("EnemyScavenger", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
 
-function var_0_0.InitUI(arg_1_0, arg_1_1)
-	var_0_0.super.InitUI(arg_1_0, arg_1_1)
+function slot0.InitUI(slot0, slot1)
+	uv0.super.InitUI(slot0, slot1)
 
-	arg_1_0.hp = arg_1_1.hp or 1
-	arg_1_0.hpMax = arg_1_0.hp
-	arg_1_0.speed = arg_1_1.speed or 1
-	arg_1_0.skillCD = 0
-	arg_1_0.skillTime = 0
-	arg_1_0.rate = arg_1_1.rate or 1.1
+	slot0.hp = slot1.hp or 1
+	slot0.hpMax = slot0.hp
+	slot0.speed = slot1.speed or 1
+	slot0.skillCD = 0
+	slot0.skillTime = 0
+	slot0.rate = slot1.rate or 1.1
 end
 
-function var_0_0.GetSpeedDis(arg_2_0)
-	return var_0_0.super.GetSpeedDis(arg_2_0) * (arg_2_0.skillTime > 0 and arg_2_0.rate or 1)
+function slot0.GetSpeedDis(slot0)
+	return uv0.super.GetSpeedDis(slot0) * (slot0.skillTime > 0 and slot0.rate or 1)
 end
 
-function var_0_0.PlayMove(arg_3_0, arg_3_1)
-	if arg_3_0.skillTime > 0 then
-		arg_3_0:PlayAnim("Move2_" .. arg_3_1)
+function slot0.PlayMove(slot0, slot1)
+	if slot0.skillTime > 0 then
+		slot0:PlayAnim("Move2_" .. slot1)
 	else
-		arg_3_0:PlayAnim("Move_" .. arg_3_1)
+		slot0:PlayAnim("Move_" .. slot1)
 	end
 end
 
-var_0_0.loopDic = {
+slot0.loopDic = {
 	Wait = true,
 	Move2 = true,
 	Move = true
 }
 
-function var_0_0.TimeTrigger(arg_4_0, arg_4_1)
-	var_0_0.super.TimeTrigger(arg_4_0, arg_4_1)
+function slot0.TimeTrigger(slot0, slot1)
+	uv0.super.TimeTrigger(slot0, slot1)
 
-	arg_4_0.skillCD = arg_4_0.skillCD - arg_4_1
-	arg_4_0.skillTime = arg_4_0.skillTime - arg_4_1
+	slot0.skillCD = slot0.skillCD - slot1
+	slot0.skillTime = slot0.skillTime - slot1
 
-	if not arg_4_0.lock and arg_4_0.skillCD <= 0 and arg_4_0.responder:SearchRyza(arg_4_0, arg_4_0.search) then
-		arg_4_0.skillCD = 10
-		arg_4_0.skillTime = 5
+	if not slot0.lock and slot0.skillCD <= 0 and slot0.responder:SearchRyza(slot0, slot0.search) then
+		slot0.skillCD = 10
+		slot0.skillTime = 5
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,117 +1,100 @@
-﻿local var_0_0 = class("CryptolaliaScrollRectItem")
-local var_0_1 = Vector3(490, -35, 0)
-local var_0_2 = Vector3(297, 297, 0)
+slot0 = class("CryptolaliaScrollRectItem")
+slot1 = Vector3(490, -35, 0)
+slot2 = Vector3(297, 297, 0)
 
-local function var_0_3(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0.midIndex - arg_1_1
-	local var_1_1 = var_0_2 * var_1_0
-
-	return var_0_1 + var_1_1
+function slot3(slot0, slot1)
+	return uv1 + uv0 * (slot0.midIndex - slot1)
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0._go = arg_2_1
-	arg_2_0._tf = arg_2_1.transform
-	arg_2_0.initIndex = arg_2_3
-	arg_2_0.midIndex = arg_2_2
-	arg_2_0.img = arg_2_0._go:GetComponent(typeof(Image))
-	arg_2_0.text = arg_2_0._tf:Find("Text")
-	arg_2_0.index = arg_2_3
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.initIndex = slot3
+	slot0.midIndex = slot2
+	slot0.img = slot0._go:GetComponent(typeof(Image))
+	slot0.text = slot0._tf:Find("Text")
+	slot0.index = slot3
 
-	local var_2_0 = var_0_3(arg_2_0, arg_2_3)
-
-	arg_2_0:SetPosition(var_2_0)
+	slot0:SetPosition(uv0(slot0, slot3))
 end
 
-function var_0_0.Interactable(arg_3_0, arg_3_1)
-	arg_3_0.img.raycastTarget = arg_3_1
+function slot0.Interactable(slot0, slot1)
+	slot0.img.raycastTarget = slot1
 
-	setActive(arg_3_0.text, not arg_3_1)
+	setActive(slot0.text, not slot1)
 end
 
-function var_0_0.CanInteractable(arg_4_0)
-	return arg_4_0.img.raycastTarget
+function slot0.CanInteractable(slot0)
+	return slot0.img.raycastTarget
 end
 
-function var_0_0.UpdateIndexWithAnim(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	local var_5_0 = math.abs(arg_5_1 - arg_5_0.index) > 1
-
-	local function var_5_1(arg_6_0, arg_6_1)
-		LeanTween.moveLocal(arg_5_0._go, arg_6_0, 0.594):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(arg_6_1))
-	end
-
-	if var_5_0 then
-		local var_5_2 = var_0_3(arg_5_0, arg_5_2)
-
-		var_5_1(var_5_2, function()
-			arg_5_0:UpdateIndex(arg_5_1)
-			arg_5_3()
+function slot0.UpdateIndexWithAnim(slot0, slot1, slot2, slot3)
+	if math.abs(slot1 - slot0.index) > 1 then
+		function (slot0, slot1)
+			LeanTween.moveLocal(uv0._go, slot0, 0.594):setEase(LeanTweenType.easeInOutCirc):setOnComplete(System.Action(slot1))
+		end(uv0(slot0, slot2), function ()
+			uv0:UpdateIndex(uv1)
+			uv2()
 		end)
 	else
-		local var_5_3 = var_0_3(arg_5_0, arg_5_1)
-
-		var_5_1(var_5_3, function()
-			arg_5_0:UpdateIndex(arg_5_1)
+		slot5(uv0(slot0, slot1), function ()
+			uv0:UpdateIndex(uv1)
 		end)
 	end
 end
 
-function var_0_0.UpdateIndex(arg_9_0, arg_9_1)
-	arg_9_0.index = arg_9_1
-	arg_9_0._go.name = arg_9_1
+function slot0.UpdateIndex(slot0, slot1)
+	slot0.index = slot1
+	slot0._go.name = slot1
 
-	local var_9_0 = var_0_3(arg_9_0, arg_9_1)
-
-	arg_9_0:SetPosition(var_9_0)
+	slot0:SetPosition(uv0(slot0, slot1))
 end
 
-function var_0_0.UpdateIndexSilence(arg_10_0, arg_10_1)
-	arg_10_0.index = arg_10_1
-	arg_10_0._go.name = arg_10_1
+function slot0.UpdateIndexSilence(slot0, slot1)
+	slot0.index = slot1
+	slot0._go.name = slot1
 end
 
-function var_0_0.Refresh(arg_11_0)
-	local var_11_0 = arg_11_0:GetIndex()
-
-	arg_11_0:UpdateIndex(var_11_0)
+function slot0.Refresh(slot0)
+	slot0:UpdateIndex(slot0:GetIndex())
 end
 
-function var_0_0.ClearAnimation(arg_12_0)
-	if LeanTween.isTweening(arg_12_0._go) then
-		LeanTween.cancel(arg_12_0._go)
+function slot0.ClearAnimation(slot0)
+	if LeanTween.isTweening(slot0._go) then
+		LeanTween.cancel(slot0._go)
 	end
 
-	arg_12_0:SetPosition(var_0_3(arg_12_0, arg_12_0.index))
+	slot0:SetPosition(uv0(slot0, slot0.index))
 end
 
-function var_0_0.GetIndex(arg_13_0)
-	return arg_13_0.index
+function slot0.GetIndex(slot0)
+	return slot0.index
 end
 
-function var_0_0.GetInitIndex(arg_14_0)
-	return arg_14_0.initIndex
+function slot0.GetInitIndex(slot0)
+	return slot0.initIndex
 end
 
-function var_0_0.IsMidIndex(arg_15_0)
-	return arg_15_0:GetIndex() == arg_15_0.midIndex
+function slot0.IsMidIndex(slot0)
+	return slot0:GetIndex() == slot0.midIndex
 end
 
-function var_0_0.UpdateSprite(arg_16_0, arg_16_1)
-	arg_16_0.img.sprite = arg_16_1
+function slot0.UpdateSprite(slot0, slot1)
+	slot0.img.sprite = slot1
 
-	arg_16_0.img:SetNativeSize()
+	slot0.img:SetNativeSize()
 end
 
-function var_0_0.SetPosition(arg_17_0, arg_17_1)
-	arg_17_0._tf.localPosition = arg_17_1
+function slot0.SetPosition(slot0, slot1)
+	slot0._tf.localPosition = slot1
 end
 
-function var_0_0.GetPosition(arg_18_0)
-	return arg_18_0._tf.localPosition
+function slot0.GetPosition(slot0)
+	return slot0._tf.localPosition
 end
 
-function var_0_0.Dispose(arg_19_0)
-	arg_19_0:ClearAnimation()
+function slot0.Dispose(slot0)
+	slot0:ClearAnimation()
 end
 
-return var_0_0
+return slot0

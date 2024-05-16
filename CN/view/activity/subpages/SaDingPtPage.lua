@@ -1,1 +1,1 @@
-﻿return (class("SaDingPtPage", import(".TemplatePage.PtTemplatePage")))
+return class("SaDingPtPage", import(".TemplatePage.PtTemplatePage"))

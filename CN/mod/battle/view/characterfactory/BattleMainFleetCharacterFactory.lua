@@ -1,40 +1,34 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleMainFleetCharacterFactory = singletonClass("BattleMainFleetCharacterFactory", slot0.Battle.BattlePlayerCharacterFactory)
+slot0.Battle.BattleMainFleetCharacterFactory.__name = "BattleMainFleetCharacterFactory"
+slot1 = slot0.Battle.BattleMainFleetCharacterFactory
 
-local var_0_0 = ys
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-var_0_0.Battle.BattleMainFleetCharacterFactory = singletonClass("BattleMainFleetCharacterFactory", var_0_0.Battle.BattlePlayerCharacterFactory)
-var_0_0.Battle.BattleMainFleetCharacterFactory.__name = "BattleMainFleetCharacterFactory"
-
-local var_0_1 = var_0_0.Battle.BattleMainFleetCharacterFactory
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
-
-	arg_1_0.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
+	slot0.ARROW_BAR_NAME = "EnemyArrowContainer/MainArrow"
 end
 
-function var_0_1.MakeCharacter(arg_2_0)
-	return var_0_0.Battle.BattleMainFleetCharacter.New()
+function slot1.MakeCharacter(slot0)
+	return uv0.Battle.BattleMainFleetCharacter.New()
 end
 
-function var_0_1.MakeModel(arg_3_0, arg_3_1, arg_3_2)
-	local function var_3_0(arg_4_0)
-		arg_3_1:AddModel(arg_4_0)
-
-		local var_4_0 = arg_3_0:GetSceneMediator()
-
-		arg_3_1:CameraOrthogonal(var_0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var_4_0:AddPlayerCharacter(arg_3_1)
-		arg_3_0:MakeUIComponentContainer(arg_3_1)
-		arg_3_0:MakeFXContainer(arg_3_1)
-		arg_3_0:MakePopNumPool(arg_3_1)
-		arg_3_0:MakeBloodBar(arg_3_1)
-		arg_3_0:MakeWaveFX(arg_3_1)
-		arg_3_0:MakeSmokeFX(arg_3_1)
-		arg_3_0:MakeArrowBar(arg_3_1)
+function slot1.MakeModel(slot0, slot1, slot2)
+	function slot3(slot0)
+		uv0:AddModel(slot0)
+		uv0:CameraOrthogonal(uv2.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		uv1:GetSceneMediator():AddPlayerCharacter(uv0)
+		uv1:MakeUIComponentContainer(uv0)
+		uv1:MakeFXContainer(uv0)
+		uv1:MakePopNumPool(uv0)
+		uv1:MakeBloodBar(uv0)
+		uv1:MakeWaveFX(uv0)
+		uv1:MakeSmokeFX(uv0)
+		uv1:MakeArrowBar(uv0)
 	end
 
-	arg_3_0:GetCharacterPool():InstCharacter(arg_3_1:GetModleID(), function(arg_5_0)
-		var_3_0(arg_5_0)
+	slot0:GetCharacterPool():InstCharacter(slot1:GetModleID(), function (slot0)
+		uv0(slot0)
 	end)
 end

@@ -1,27 +1,27 @@
-﻿local var_0_0 = class("GatewayNoticeProxy", import(".NetProxy"))
+slot0 = class("GatewayNoticeProxy", import(".NetProxy"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0.data = {}
+function slot0.register(slot0)
+	slot0.data = {}
 end
 
-function var_0_0.getGatewayNotices(arg_2_0, arg_2_1)
-	local var_2_0 = {}
+function slot0.getGatewayNotices(slot0, slot1)
+	slot2 = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_0.data) do
-		if not arg_2_1 or not iter_2_1.isRead then
-			table.insert(var_2_0, iter_2_1)
+	for slot6, slot7 in ipairs(slot0.data) do
+		if not slot1 or not slot7.isRead then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return var_2_0
+	return slot2
 end
 
-function var_0_0.setGatewayNotices(arg_3_0, arg_3_1)
-	arg_3_0.data = {}
+function slot0.setGatewayNotices(slot0, slot1)
+	slot0.data = {}
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
-		table.insert(arg_3_0.data, GatewayNotice.New(iter_3_1))
+	for slot5, slot6 in ipairs(slot1) do
+		table.insert(slot0.data, GatewayNotice.New(slot6))
 	end
 end
 
-return var_0_0
+return slot0

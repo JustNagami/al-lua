@@ -1,114 +1,106 @@
-﻿local var_0_0 = class("CommanderBox", import("..BaseVO"))
+slot0 = class("CommanderBox", import("..BaseVO"))
+slot0.STATE_EMPTY = -1
+slot0.STATE_WAITING = 0
+slot0.STATE_STARTING = 1
+slot0.STATE_FINISHED = 2
 
-var_0_0.STATE_EMPTY = -1
-var_0_0.STATE_WAITING = 0
-var_0_0.STATE_STARTING = 1
-var_0_0.STATE_FINISHED = 2
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.id = slot1.id
+	slot0.index = slot2 or 99
+	slot0.configId = slot0.id
+	slot0.finishTime = slot1.finish_time or 0
+	slot0.beginTime = slot1.begin_time or 0
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.index = arg_1_2 or 99
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.finishTime = arg_1_1.finish_time or 0
-	arg_1_0.beginTime = arg_1_1.begin_time or 0
-
-	local var_1_0 = arg_1_1.poolId or 0
-
-	if var_1_0 and var_1_0 > 0 then
-		arg_1_0.pool = getProxy(CommanderProxy):getPoolById(var_1_0)
+	if (slot1.poolId or 0) and slot3 > 0 then
+		slot0.pool = getProxy(CommanderProxy):getPoolById(slot3)
 	end
 end
 
-function var_0_0.getPool(arg_2_0)
-	return arg_2_0.pool
+function slot0.getPool(slot0)
+	return slot0.pool
 end
 
-function var_0_0.getFinishTime(arg_3_0)
-	return arg_3_0.finishTime
+function slot0.getFinishTime(slot0)
+	return slot0.finishTime
 end
 
-function var_0_0.ReduceFinishTime(arg_4_0, arg_4_1)
-	arg_4_0.finishTime = math.max(arg_4_0.beginTime, arg_4_0.finishTime - arg_4_1)
+function slot0.ReduceFinishTime(slot0, slot1)
+	slot0.finishTime = math.max(slot0.beginTime, slot0.finishTime - slot1)
 end
 
-function var_0_0.costTime(arg_5_0)
-	local var_5_0 = arg_5_0:getState()
-
-	if var_5_0 == var_0_0.STATE_STARTING or var_5_0 == var_0_0.STATE_FINISHED then
-		return arg_5_0.finishTime - arg_5_0.beginTime
+function slot0.costTime(slot0)
+	if slot0:getState() == uv0.STATE_STARTING or slot1 == uv0.STATE_FINISHED then
+		return slot0.finishTime - slot0.beginTime
 	else
 		return 0
 	end
 end
 
-function var_0_0.getState(arg_6_0)
-	local var_6_0 = pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.getState(slot0)
+	slot1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	if arg_6_0.finishTime == 0 then
-		return var_0_0.STATE_EMPTY
-	elseif var_6_0 >= arg_6_0.finishTime then
-		return var_0_0.STATE_FINISHED
-	elseif arg_6_0.finishTime > 0 and var_6_0 < arg_6_0.beginTime then
-		return var_0_0.STATE_WAITING
-	elseif arg_6_0.finishTime > 0 and var_6_0 < arg_6_0.finishTime then
-		return var_0_0.STATE_STARTING
+	if slot0.finishTime == 0 then
+		return uv0.STATE_EMPTY
+	elseif slot0.finishTime <= slot1 then
+		return uv0.STATE_FINISHED
+	elseif slot0.finishTime > 0 and slot1 < slot0.beginTime then
+		return uv0.STATE_WAITING
+	elseif slot0.finishTime > 0 and slot1 < slot0.finishTime then
+		return uv0.STATE_STARTING
 	end
 end
 
-function var_0_0.finish(arg_7_0)
-	arg_7_0.finishTime = 0
-	arg_7_0.beginTime = 0
+function slot0.finish(slot0)
+	slot0.finishTime = 0
+	slot0.beginTime = 0
 end
 
-function var_0_0.getPrefab(arg_8_0)
-	if not arg_8_0.rarity2Str then
-		arg_8_0.rarity2Str = {
+function slot0.getPrefab(slot0)
+	if not slot0.rarity2Str then
+		slot0.rarity2Str = {
 			"",
 			"SR",
 			"SSR"
 		}
 	end
 
-	if arg_8_0.pool then
-		local var_8_0 = arg_8_0.rarity2Str[arg_8_0.pool:getRarity()]
-		local var_8_1 = arg_8_0:getState()
-
-		if var_8_1 == var_0_0.STATE_WAITING then
-			return var_8_0 .. "NekoBox1"
-		elseif var_8_1 == var_0_0.STATE_STARTING then
-			return var_8_0 .. "NekoBox2"
-		elseif var_8_1 == var_0_0.STATE_FINISHED then
-			return var_8_0 .. "NekoBox3"
+	if slot0.pool then
+		if slot0:getState() == uv0.STATE_WAITING then
+			return slot0.rarity2Str[slot0.pool:getRarity()] .. "NekoBox1"
+		elseif slot2 == uv0.STATE_STARTING then
+			return slot1 .. "NekoBox2"
+		elseif slot2 == uv0.STATE_FINISHED then
+			return slot1 .. "NekoBox3"
 		end
 	else
 		return nil
 	end
 end
 
-function var_0_0.getFetchPrefab(arg_9_0)
-	if not arg_9_0.rarity2Str then
-		arg_9_0.rarity2Str = {
+function slot0.getFetchPrefab(slot0)
+	if not slot0.rarity2Str then
+		slot0.rarity2Str = {
 			"",
 			"SR",
 			"SSR"
 		}
 	end
 
-	assert(arg_9_0.pool)
+	assert(slot0.pool)
 
-	return arg_9_0.rarity2Str[arg_9_0.pool:getRarity()] .. "NekoBox4"
+	return slot0.rarity2Str[slot0.pool:getRarity()] .. "NekoBox4"
 end
 
-function var_0_0.IsSsr(arg_10_0)
-	return arg_10_0.pool:getRarity() == 3
+function slot0.IsSsr(slot0)
+	return slot0.pool:getRarity() == 3
 end
 
-function var_0_0.IsSr(arg_11_0)
-	return arg_11_0.pool:getRarity() == 2
+function slot0.IsSr(slot0)
+	return slot0.pool:getRarity() == 2
 end
 
-function var_0_0.IsR(arg_12_0)
-	return arg_12_0.pool:getRarity() == 1
+function slot0.IsR(slot0)
+	return slot0.pool:getRarity() == 1
 end
 
-return var_0_0
+return slot0

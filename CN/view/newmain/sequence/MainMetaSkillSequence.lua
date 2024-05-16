@@ -1,72 +1,54 @@
-﻿local var_0_0 = class("MainMetaSkillSequence")
+slot0 = class("MainMetaSkillSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	arg_1_1 = arg_1_1 or function()
-		return
-	end
-
-	local var_1_0 = getProxy(MetaCharacterProxy)
-
-	if not var_1_0 then
-		arg_1_1()
+function slot0.Execute(slot0, slot1)
+	if not getProxy(MetaCharacterProxy) then
+		slot1 or function ()
+		end()
 
 		return
 	end
 
-	local var_1_1 = getProxy(ChapterProxy)
-	local var_1_2 = var_1_1:getActiveChapter()
-	local var_1_3
+	slot5 = nil
 
-	if var_1_2 then
-		var_1_3 = var_1_1:GetChapterAutoFlag(var_1_2.id) == 1
+	if getProxy(ChapterProxy):getActiveChapter() then
+		slot5 = slot3:GetChapterAutoFlag(slot4.id) == 1
 	end
 
-	if var_1_3 then
-		arg_1_1()
+	if slot5 then
+		slot1()
 
 		return
 	end
 
-	local var_1_4 = var_1_0:getMetaSkillLevelMaxInfoList()
-
-	if var_1_4 and #var_1_4 > 0 then
-		local var_1_5 = arg_1_0:GetShipName(var_1_4)
-
+	if slot2:getMetaSkillLevelMaxInfoList() and #slot6 > 0 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("meta_skill_maxtip", var_1_5),
-			onYes = function()
+			content = i18n("meta_skill_maxtip", slot0:GetShipName(slot6)),
+			onYes = function ()
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.METACHARACTER, {
 					autoOpenTactics = true,
-					autoOpenShipConfigID = var_1_4[1].metaShipVO.configId
+					autoOpenShipConfigID = uv0[1].metaShipVO.configId
 				})
 			end,
-			onClose = arg_1_1,
+			onClose = slot1,
 			weight = LayerWeightConst.TOP_LAYER
 		})
 	else
-		arg_1_1()
+		slot1()
 	end
 
-	var_1_0:clearMetaSkillLevelMaxInfoList()
+	slot2:clearMetaSkillLevelMaxInfoList()
 end
 
-function var_0_0.GetShipName(arg_4_0, arg_4_1)
-	local var_4_0 = ""
+function slot0.GetShipName(slot0, slot1)
+	slot2 = ""
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
-		local var_4_1 = iter_4_1.metaShipVO
-		local var_4_2 = iter_4_1.metaSkillID
-		local var_4_3 = var_4_1:getName()
-		local var_4_4 = setColorStr(var_4_3, COLOR_GREEN)
-
-		if iter_4_0 < #arg_4_1 then
-			var_4_0 = var_4_0 .. var_4_4 .. "、"
-		else
-			var_4_0 = var_4_0 .. var_4_4
-		end
+	for slot6, slot7 in ipairs(slot1) do
+		slot9 = slot7.metaSkillID
+		slot10 = setColorStr(slot7.metaShipVO:getName(), COLOR_GREEN)
+		slot2 = slot6 < #slot1 and slot2 .. slot10 .. "、" or slot2 .. slot10 .. "、" .. slot10
 	end
 
-	return var_4_0
+	return slot2
 end
 
-return var_0_0
+return slot0

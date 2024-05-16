@@ -1,57 +1,52 @@
-﻿local var_0_0 = class("GuildDonateCard")
+slot0 = class("GuildDonateCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0.title = arg_1_0._tf:Find("name"):GetComponent(typeof(Text))
-	arg_1_0.awardTF = arg_1_0._tf:Find("item")
-	arg_1_0.awardTxtTF = arg_1_0._tf:Find("item/Text")
-	arg_1_0.res = arg_1_0._tf:Find("award/Text"):GetComponent(typeof(Text))
-	arg_1_0.commitBtn = arg_1_0._tf:Find("submit")
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0.title = slot0._tf:Find("name"):GetComponent(typeof(Text))
+	slot0.awardTF = slot0._tf:Find("item")
+	slot0.awardTxtTF = slot0._tf:Find("item/Text")
+	slot0.res = slot0._tf:Find("award/Text"):GetComponent(typeof(Text))
+	slot0.commitBtn = slot0._tf:Find("submit")
 end
 
-function var_0_0.update(arg_2_0, arg_2_1)
-	arg_2_0.dtask = arg_2_1
+function slot0.update(slot0, slot1)
+	slot0.dtask = slot1
+	slot2 = slot1:getCommitItem()
 
-	local var_2_0 = arg_2_1:getCommitItem()
-
-	updateDrop(arg_2_0.awardTF, {
-		type = var_2_0[1],
-		id = var_2_0[2],
-		count = var_2_0[3]
+	updateDrop(slot0.awardTF, {
+		type = slot2[1],
+		id = slot2[2],
+		count = slot2[3]
 	})
 
-	arg_2_0.title.text = arg_2_1:getConfig("name")
+	slot0.title.text = slot1:getConfig("name")
 
-	local var_2_1 = arg_2_0:GetResCntByAward(var_2_0)
-	local var_2_2 = var_2_0[3]
+	setText(slot0.awardTxtTF, string.format(slot0:GetResCntByAward(slot2) < slot2[3] and "<color=" .. COLOR_RED .. ">%s</color>/%s" or "%s/%s", slot0:WrapNum(slot3), slot0:WrapNum(slot4)))
 
-	setText(arg_2_0.awardTxtTF, string.format(var_2_1 < var_2_2 and "<color=" .. COLOR_RED .. ">%s</color>/%s" or "%s/%s", arg_2_0:WrapNum(var_2_1), arg_2_0:WrapNum(var_2_2)))
-
-	arg_2_0.res.text = arg_2_1:getConfig("award_contribution")
+	slot0.res.text = slot1:getConfig("award_contribution")
 end
 
-function var_0_0.GetResCntByAward(arg_3_0, arg_3_1)
-	if arg_3_1[1] == DROP_TYPE_RESOURCE then
-		return getProxy(PlayerProxy):getRawData():getResource(arg_3_1[2])
-	elseif arg_3_1[1] == DROP_TYPE_ITEM then
-		return getProxy(BagProxy):getItemCountById(arg_3_1[2])
+function slot0.GetResCntByAward(slot0, slot1)
+	if slot1[1] == DROP_TYPE_RESOURCE then
+		return getProxy(PlayerProxy):getRawData():getResource(slot1[2])
+	elseif slot1[1] == DROP_TYPE_ITEM then
+		return getProxy(BagProxy):getItemCountById(slot1[2])
 	else
 		assert(false)
 	end
 end
 
-function var_0_0.WrapNum(arg_4_0, arg_4_1)
-	if arg_4_1 > 1000000 then
-		return math.floor(arg_4_1 / 1000000) .. "M"
-	elseif arg_4_1 > 1000 then
-		return math.floor(arg_4_1 / 1000) .. "K"
+function slot0.WrapNum(slot0, slot1)
+	if slot1 > 1000000 then
+		return math.floor(slot1 / 1000000) .. "M"
+	elseif slot1 > 1000 then
+		return math.floor(slot1 / 1000) .. "K"
 	end
 
-	return arg_4_1
+	return slot1
 end
 
-function var_0_0.Dispose(arg_5_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

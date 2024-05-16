@@ -1,214 +1,197 @@
-﻿local var_0_0 = class("AmusementParkScene2", import("..TemplateMV.BackHillTemplate"))
-
-var_0_0.UIName = "AmusementParkUI2"
-var_0_0.edge2area = {
+slot0 = class("AmusementParkScene2", import("..TemplateMV.BackHillTemplate"))
+slot0.UIName = "AmusementParkUI2"
+slot0.edge2area = {
 	default = "map_middle"
 }
-var_0_0.Buildings = {
-	[13] = "jiujiuchonglang",
-	[15] = "huahuashijie",
-	[16] = "jiujiupubu",
-	[14] = "jiujiutiaoshui"
+slot0.Buildings = {
+	[13.0] = "jiujiuchonglang",
+	[15.0] = "huahuashijie",
+	[16.0] = "jiujiupubu",
+	[14.0] = "jiujiutiaoshui"
 }
+slot1 = 23
 
-local var_0_1 = 23
+function slot0.init(slot0)
+	slot0.top = slot0:findTF("Top")
+	slot0._map = slot0:findTF("map")
 
-function var_0_0.init(arg_1_0)
-	arg_1_0.top = arg_1_0:findTF("Top")
-	arg_1_0._map = arg_1_0:findTF("map")
-
-	for iter_1_0 = 0, arg_1_0._map.childCount - 1 do
-		local var_1_0 = arg_1_0._map:GetChild(iter_1_0)
-		local var_1_1 = go(var_1_0).name
-
-		arg_1_0["map_" .. var_1_1] = var_1_0
+	for slot4 = 0, slot0._map.childCount - 1 do
+		slot5 = slot0._map:GetChild(slot4)
+		slot0["map_" .. go(slot5).name] = slot5
 	end
 
-	arg_1_0._shipTpl = arg_1_0._map:Find("ship")
-	arg_1_0.containers = {
-		arg_1_0.map_middle
+	slot0._shipTpl = slot0._map:Find("ship")
+	slot0.containers = {
+		slot0.map_middle
 	}
-	arg_1_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.AmusementParkGraph2"))
-	arg_1_0._upper = arg_1_0:findTF("upper")
+	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.AmusementParkGraph2"))
+	slot0._upper = slot0:findTF("upper")
 
-	for iter_1_1 = 0, arg_1_0._upper.childCount - 1 do
-		local var_1_2 = arg_1_0._upper:GetChild(iter_1_1)
-		local var_1_3 = go(var_1_2).name
-
-		arg_1_0["upper_" .. var_1_3] = var_1_2
+	for slot4 = 0, slot0._upper.childCount - 1 do
+		slot5 = slot0._upper:GetChild(slot4)
+		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	arg_1_0.gameCountTxt = arg_1_0.top:Find("GameCount/text"):GetComponent(typeof(Text))
-	arg_1_0.materialTxt = arg_1_0.top:Find("MaterialCount/text"):GetComponent(typeof(Text))
+	slot0.gameCountTxt = slot0.top:Find("GameCount/text"):GetComponent(typeof(Text))
+	slot0.materialTxt = slot0.top:Find("MaterialCount/text"):GetComponent(typeof(Text))
 
 	if PLATFORM_CODE ~= PLATFORM_JP then
-		setActive(arg_1_0.upper_jinianchengbao, false)
+		setActive(slot0.upper_jinianchengbao, false)
 
-		GetOrAddComponent(arg_1_0.map_jinianchengbao, typeof(Button)).enabled = false
+		GetOrAddComponent(slot0.map_jinianchengbao, typeof(Button)).enabled = false
 	end
 
-	arg_1_0:RegisterDataResponse()
+	slot0:RegisterDataResponse()
 
-	arg_1_0.loader = AutoLoader.New()
+	slot0.loader = AutoLoader.New()
 end
 
-function var_0_0.RegisterDataResponse(arg_2_0)
-	arg_2_0.Respones = ResponsableTree.CreateShell({})
+function slot0.RegisterDataResponse(slot0)
+	slot0.Respones = ResponsableTree.CreateShell({})
 
-	arg_2_0.Respones:SetRawData("view", arg_2_0)
+	slot0.Respones:SetRawData("view", slot0)
 
-	local var_2_0 = _.values(arg_2_0.Buildings)
-
-	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-		arg_2_0.Respones:AddRawListener({
+	for slot5, slot6 in ipairs(_.values(slot0.Buildings)) do
+		slot0.Respones:AddRawListener({
 			"view",
-			iter_2_1
-		}, function(arg_3_0, arg_3_1)
-			if not arg_3_1 then
+			slot6
+		}, function (slot0, slot1)
+			if not slot1 then
 				return
 			end
 
-			arg_3_0.loader:GetSpriteQuiet("ui/AmusementParkUI2_atlas", "entrance_" .. iter_2_1 .. arg_3_1, arg_3_0["map_" .. iter_2_1])
+			slot0.loader:GetSpriteQuiet("ui/AmusementParkUI2_atlas", "entrance_" .. uv0 .. slot1, slot0["map_" .. uv0])
 
-			local var_3_0 = arg_3_0["upper_" .. iter_2_1]
-
-			if not var_3_0 or IsNil(var_3_0:Find("Level")) then
+			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("Level")) then
 				return
 			end
 
-			setText(var_3_0:Find("Level"), "LV." .. arg_3_1)
+			setText(slot2:Find("Level"), "LV." .. slot1)
 		end)
 	end
 
-	local var_2_1 = {
+	slot2 = {
 		"jiujiudalaotuan"
 	}
 
-	table.insertto(var_2_1, var_2_0)
+	table.insertto(slot2, slot1)
 
-	for iter_2_2, iter_2_3 in ipairs(var_2_1) do
-		arg_2_0.Respones:AddRawListener({
+	for slot6, slot7 in ipairs(slot2) do
+		slot0.Respones:AddRawListener({
 			"view",
-			iter_2_3 .. "Tip"
-		}, function(arg_4_0, arg_4_1)
-			local var_4_0 = arg_4_0["upper_" .. iter_2_3]
-
-			if not var_4_0 or IsNil(var_4_0:Find("Tip")) then
+			slot7 .. "Tip"
+		}, function (slot0, slot1)
+			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("Tip")) then
 				return
 			end
 
-			setActive(var_4_0:Find("Tip"), arg_4_1)
+			setActive(slot2:Find("Tip"), slot1)
 		end)
 	end
 
-	arg_2_0.Respones.hubData = {}
+	slot0.Respones.hubData = {}
 
-	arg_2_0.Respones:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
-	}, function(arg_5_0, arg_5_1)
-		arg_5_0.gameCountTxt.text = "X" .. arg_5_1.count
+	}, function (slot0, slot1)
+		slot0.gameCountTxt.text = "X" .. slot1.count
 	end, {
 		strict = true
 	})
-	arg_2_0.Respones:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
-	}, function(arg_6_0, arg_6_1)
-		arg_6_0.materialTxt.text = arg_6_1
+	}, function (slot0, slot1)
+		slot0.materialTxt.text = slot1
 	end)
 end
 
-function var_0_0.didEnter(arg_7_0)
-	onButton(arg_7_0, arg_7_0.top:Find("Back"), function()
-		arg_7_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.top:Find("Back"), function ()
+		uv0:emit(uv1.ON_BACK)
 	end)
-	onButton(arg_7_0, arg_7_0.top:Find("Home"), function()
-		arg_7_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0.top:Find("Home"), function ()
+		uv0:emit(uv1.ON_HOME)
 	end)
-	onButton(arg_7_0, arg_7_0.top:Find("Help"), function()
+	onButton(slot0, slot0.top:Find("Help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.activity_event_building.tip
 		})
 	end)
-	onButton(arg_7_0, arg_7_0.top:Find("Invitation"), function()
-		local var_11_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.JP_CEREMONY_INVITATION_ID)
 
-		if var_11_0 and not var_11_0:isEnd() then
-			arg_7_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
-				id = var_11_0.id
+	slot5 = "Invitation"
+
+	function slot4()
+		if getProxy(ActivityProxy):getActivityById(ActivityConst.JP_CEREMONY_INVITATION_ID) and not slot0:isEnd() then
+			uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+				id = slot0.id
 			})
 		end
-	end)
+	end
 
-	for iter_7_0, iter_7_1 in pairs(arg_7_0.Buildings) do
-		arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, iter_7_1, function()
-			arg_7_0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+	onButton(slot0, slot0.top:Find(slot5), slot4)
+
+	for slot4, slot5 in pairs(slot0.Buildings) do
+		slot0:InitFacilityCross(slot0._map, slot0._upper, slot5, function ()
+			uv0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
 				mediator = BuildingUpgradeMediator,
 				viewComponent = BuildingUpgradeLayer,
 				data = {
-					buildingID = iter_7_0
+					buildingID = uv1
 				}
 			}))
 		end)
 	end
 
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "jiujiudalaotuan", function()
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "jiujiudalaotuan", function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 30)
 	end)
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "jinianchengbao", function()
-		arg_7_0:emit(AmusementParkMediator.GO_SCENE, SCENE.SUMMARY)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "jinianchengbao", function ()
+		uv0:emit(AmusementParkMediator.GO_SCENE, SCENE.SUMMARY)
 	end)
-	arg_7_0:BindItemSkinShop()
-	arg_7_0:BindItemBuildShip()
-
-	local var_7_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-
-	arg_7_0:InitStudents(var_7_0 and var_7_0.id, 3, 4)
-	arg_7_0:UpdateView()
+	slot0:BindItemSkinShop()
+	slot0:BindItemBuildShip()
+	slot0:InitStudents(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and slot1.id, 3, 4)
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateActivity(arg_15_0, arg_15_1)
-	arg_15_0.activity = arg_15_1
+function slot0.UpdateActivity(slot0, slot1)
+	slot0.activity = slot1
 
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.Buildings) do
-		arg_15_0.Respones[iter_15_1] = arg_15_1.data1KeyValueList[2][iter_15_0] or 1
+	for slot5, slot6 in pairs(slot0.Buildings) do
+		slot0.Respones[slot6] = slot1.data1KeyValueList[2][slot5] or 1
 	end
 
-	local var_15_0 = next(arg_15_1.data1KeyValueList[1])
+	slot0.Respones.materialCount = slot1.data1KeyValueList[1][next(slot1.data1KeyValueList[1])] or 0
 
-	arg_15_0.Respones.materialCount = arg_15_1.data1KeyValueList[1][var_15_0] or 0
-
-	arg_15_0:UpdateView()
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateView(arg_16_0)
-	local var_16_0
+function slot0.UpdateView(slot0)
+	slot1 = nil
 
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.Buildings) do
-		arg_16_0.Respones[iter_16_1 .. "Tip"] = arg_16_0:UpdateBuildingTip(arg_16_0.activity, iter_16_0)
+	for slot5, slot6 in pairs(slot0.Buildings) do
+		slot0.Respones[slot6 .. "Tip"] = slot0:UpdateBuildingTip(slot0.activity, slot5)
 	end
 
-	local var_16_1 = getProxy(MiniGameProxy):GetHubByHubId(var_0_1)
-	local var_16_2 = var_16_1.count > 0
+	slot0.Respones.jiujiudalaotuanTip = getProxy(MiniGameProxy):GetHubByHubId(uv0).count > 0
 
-	arg_16_0.Respones.jiujiudalaotuanTip = var_16_2
-
-	arg_16_0:UpdateHubData(var_16_1)
+	slot0:UpdateHubData(slot3)
 end
 
-function var_0_0.UpdateHubData(arg_17_0, arg_17_1)
-	arg_17_0.Respones.hubData.count = arg_17_1.count
-	arg_17_0.Respones.hubData.usedtime = arg_17_1.usedtime
-	arg_17_0.Respones.hubData.id = arg_17_1.id
+function slot0.UpdateHubData(slot0, slot1)
+	slot0.Respones.hubData.count = slot1.count
+	slot0.Respones.hubData.usedtime = slot1.usedtime
+	slot0.Respones.hubData.id = slot1.id
 
-	arg_17_0.Respones:PropertyChange("hubData")
+	slot0.Respones:PropertyChange("hubData")
 end
 
-function var_0_0.willExit(arg_18_0)
-	arg_18_0:clearStudents()
-	var_0_0.super.willExit(arg_18_0)
+function slot0.willExit(slot0)
+	slot0:clearStudents()
+	uv0.super.willExit(slot0)
 end
 
-return var_0_0
+return slot0

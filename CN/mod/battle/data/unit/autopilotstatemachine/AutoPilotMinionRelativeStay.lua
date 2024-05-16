@@ -1,48 +1,42 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("AutoPilotMinionRelativeStay", slot0.Battle.IPilot)
+slot0.Battle.AutoPilotMinionRelativeStay = slot1
+slot1.__name = "AutoPilotMinionRelativeStay"
 
-local var_0_0 = ys
-local var_0_1 = class("AutoPilotMinionRelativeStay", var_0_0.Battle.IPilot)
-
-var_0_0.Battle.AutoPilotMinionRelativeStay = var_0_1
-var_0_1.__name = "AutoPilotMinionRelativeStay"
-
-function var_0_1.Ctor(arg_1_0, ...)
-	var_0_1.super.Ctor(arg_1_0, ...)
+function slot1.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0, ...)
 end
 
-function var_0_1.SetParameter(arg_2_0, arg_2_1, arg_2_2)
-	var_0_1.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+function slot1.SetParameter(slot0, slot1, slot2)
+	uv0.super.SetParameter(slot0, slot1, slot2)
 
-	arg_2_0._distX = arg_2_1.x
-	arg_2_0._distZ = arg_2_1.z
-	arg_2_0._nextBuffID = arg_2_1.buffID
+	slot0._distX = slot1.x
+	slot0._distZ = slot1.z
+	slot0._nextBuffID = slot1.buffID
 end
 
-function var_0_1.GetDirection(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0._pilot:GetTarget():GetMaster()
-
-	if not var_3_0:IsAlive() then
-		if arg_3_0._nextBuffID then
-			local var_3_1 = var_0_0.Battle.BattleBuffUnit.New(arg_3_0._nextBuffID)
-
-			arg_3_0._pilot:GetTarget():AddBuff(var_3_1)
+function slot1.GetDirection(slot0, slot1)
+	if not slot0._pilot:GetTarget():GetMaster():IsAlive() then
+		if slot0._nextBuffID then
+			slot0._pilot:GetTarget():AddBuff(uv0.Battle.BattleBuffUnit.New(slot0._nextBuffID))
 		end
 
 		return Vector3.zero
 	end
 
-	local var_3_2 = var_3_0:GetPosition()
-	local var_3_3 = Vector3(var_3_2.x + arg_3_0._distX, arg_3_1.y, var_3_2.z + arg_3_0._distZ) - arg_3_1
+	slot3 = slot2:GetPosition()
+	slot5 = Vector3(slot3.x + slot0._distX, slot1.y, slot3.z + slot0._distZ) - slot1
 
-	if arg_3_0:IsExpired() then
-		arg_3_0:Finish()
+	if slot0:IsExpired() then
+		slot0:Finish()
 	end
 
-	if var_3_3.magnitude < 0.4 then
+	if slot5.magnitude < 0.4 then
 		return Vector3.zero
 	else
-		var_3_3.y = 0
+		slot5.y = 0
 
-		return var_3_3:SetNormalize()
+		return slot5:SetNormalize()
 	end
 end

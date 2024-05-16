@@ -1,39 +1,38 @@
-﻿local var_0_0 = class("ChangeMedalDisplayCommand", pm.SimpleCommand)
+slot0 = class("ChangeMedalDisplayCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().medalList
-	local var_1_1 = getProxy(PlayerProxy)
-	local var_1_2 = var_1_1:getData().displayTrophyList
-	local var_1_3 = 0
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().medalList
+	slot6 = getProxy(PlayerProxy):getData().displayTrophyList
+	slot7 = 0
 
-	while var_1_3 < 5 do
-		if var_1_0[var_1_3] ~= var_1_2[var_1_3] then
+	while slot7 < 5 do
+		if slot3[slot7] ~= slot6[slot7] then
 			break
 		end
 
-		if var_1_3 == 5 then
+		if slot7 == 5 then
 			return
 		end
 
-		var_1_3 = var_1_3 + 1
+		slot7 = slot7 + 1
 	end
 
-	local var_1_4 = {}
+	slot8 = {}
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
-		table.insert(var_1_4, iter_1_1)
+	for slot12, slot13 in ipairs(slot3) do
+		table.insert(slot8, slot13)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(17401, {
 		fixed_const = 1,
-		medal_id = var_1_4
-	}, 17402, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_1:updatePlayerMedalDisplay(var_1_0)
+		medal_id = slot8
+	}, 17402, function (slot0)
+		if slot0.result == 0 then
+			uv0:updatePlayerMedalDisplay(uv1)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("change_display_medal_success"))
-			arg_1_0:sendNotification(GAME.CHANGE_PLAYER_MEDAL_DISPLAY_DONE)
+			uv2:sendNotification(GAME.CHANGE_PLAYER_MEDAL_DISPLAY_DONE)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

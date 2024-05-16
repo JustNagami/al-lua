@@ -1,25 +1,23 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.TorAlert = class("TorAlert")
+slot0.Battle.TorAlert.__name = "TorAlert"
 
-local var_0_0 = ys
+function slot0.Battle.TorAlert.Ctor(slot0, slot1)
+	slot0._alertGO = slot1
+	slot0._alertTF = slot1.transform
+	slot0._alertTF.localScale = Vector3(20, 5, 1)
 
-var_0_0.Battle.TorAlert = class("TorAlert")
-var_0_0.Battle.TorAlert.__name = "TorAlert"
-
-function var_0_0.Battle.TorAlert.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._alertGO = arg_1_1
-	arg_1_0._alertTF = arg_1_1.transform
-	arg_1_0._alertTF.localScale = Vector3(20, 5, 1)
-
-	LeanTween.scaleY(arg_1_1, 0, 0.5):setDelay(0.1)
+	LeanTween.scaleY(slot1, 0, 0.5):setDelay(0.1)
 end
 
-function var_0_0.Battle.TorAlert.SetPosition(arg_2_0, arg_2_1, arg_2_2)
-	pg.EffectMgr.GetInstance():PlayBattleEffect(arg_2_0._alertGO, arg_2_1)
+function slot0.Battle.TorAlert.SetPosition(slot0, slot1, slot2)
+	pg.EffectMgr.GetInstance():PlayBattleEffect(slot0._alertGO, slot1)
 
-	arg_2_0._alertTF.eulerAngles = Vector3(0, 180 - arg_2_2, 0)
+	slot0._alertTF.eulerAngles = Vector3(0, 180 - slot2, 0)
 end
 
-function var_0_0.Battle.TorAlert.Dispose(arg_3_0)
-	LeanTween.cancel(arg_3_0._alertGO)
-	var_0_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg_3_0._alertGO)
+function slot0.Battle.TorAlert.Dispose(slot0)
+	LeanTween.cancel(slot0._alertGO)
+	uv0.Battle.BattleResourceManager.GetInstance():DestroyOb(slot0._alertGO)
 end

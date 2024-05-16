@@ -1,25 +1,23 @@
-﻿local var_0_0 = class("EducateTriggerEventCommand", pm.SimpleCommand)
+slot0 = class("EducateTriggerEventCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0 and var_1_0.callback
-	local var_1_2 = var_1_0.eventId
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(27016, {
-		eventid = var_1_2
-	}, 27017, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			EducateHelper.UpdateDropsData(arg_2_0.drops)
-			getProxy(EducateProxy):GetEventProxy():RemoveEvent(var_1_2)
-			arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_EVENT_DONE, {
-				id = var_1_2,
-				drops = arg_2_0.drops,
-				cb = var_1_1
+		eventid = slot2.eventId
+	}, 27017, function (slot0)
+		if slot0.result == 0 then
+			EducateHelper.UpdateDropsData(slot0.drops)
+			getProxy(EducateProxy):GetEventProxy():RemoveEvent(uv0)
+			uv1:sendNotification(GAME.EDUCATE_TRIGGER_EVENT_DONE, {
+				id = uv0,
+				drops = slot0.drops,
+				cb = uv2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate trigger event error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate trigger event error: ", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,62 +1,58 @@
-﻿local var_0_0 = class("Fushun3SceneController")
+slot0 = class("Fushun3SceneController")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0._sceneTf = arg_1_2
-	arg_1_0._followTf = arg_1_3
-	arg_1_0._sceneBackTf = arg_1_1
-	arg_1_0._backGrouds = {}
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0._sceneTf = slot2
+	slot0._followTf = slot3
+	slot0._sceneBackTf = slot1
+	slot0._backGrouds = {}
 
-	for iter_1_0 = 1, #Fushun3GameConst.backgroud_data do
-		local var_1_0 = Fushun3GameConst.backgroud_data[iter_1_0]
-		local var_1_1 = findTF(arg_1_0._sceneBackTf, var_1_0.name)
+	for slot7 = 1, #Fushun3GameConst.backgroud_data do
+		slot8 = Fushun3GameConst.backgroud_data[slot7]
 
-		table.insert(arg_1_0._backGrouds, {
-			tf = var_1_1,
-			data = var_1_0
+		table.insert(slot0._backGrouds, {
+			tf = findTF(slot0._sceneBackTf, slot8.name),
+			data = slot8
 		})
 	end
 end
 
-function var_0_0.start(arg_2_0)
-	arg_2_0._sceneTf.anchoredPosition = Vector2(0, 0)
+function slot0.start(slot0)
+	slot4 = 0
+	slot0._sceneTf.anchoredPosition = Vector2(0, slot4)
 
-	for iter_2_0 = 1, #arg_2_0._backGrouds do
-		arg_2_0._backGrouds[iter_2_0].tf.anchoredPosition = Vector2(0, 0)
+	for slot4 = 1, #slot0._backGrouds do
+		slot0._backGrouds[slot4].tf.anchoredPosition = Vector2(0, 0)
 	end
 end
 
-function var_0_0.step(arg_3_0)
-	local var_3_0 = arg_3_0._sceneTf.anchoredPosition
-	local var_3_1 = arg_3_0._followTf.anchoredPosition.x + var_3_0.x
-	local var_3_2 = 0
+function slot0.step(slot0)
+	slot4 = 0
 
-	if var_3_1 > 350 then
-		var_3_2 = (var_3_1 - Fushun3GameConst.follow_bound_mid) * Fushun3GameConst.follow_spring * -1
-	elseif var_3_1 < 250 then
-		var_3_2 = math.abs(var_3_1 - Fushun3GameConst.follow_bound_mid) * Fushun3GameConst.follow_spring
+	if slot0._followTf.anchoredPosition.x + slot0._sceneTf.anchoredPosition.x > 350 then
+		slot4 = (slot3 - Fushun3GameConst.follow_bound_mid) * Fushun3GameConst.follow_spring * -1
+	elseif slot3 < 250 then
+		slot4 = math.abs(slot3 - Fushun3GameConst.follow_bound_mid) * Fushun3GameConst.follow_spring
 	end
 
-	if var_3_2 ~= 0 then
-		if math.abs(var_3_2) < 1 then
-			var_3_2 = 1 * math.sign(var_3_2)
+	if slot4 ~= 0 then
+		if math.abs(slot4) < 1 then
+			slot4 = 1 * math.sign(slot4)
 		end
 
-		var_3_0.x = var_3_0.x + var_3_2
-		arg_3_0._sceneTf.anchoredPosition = var_3_0
+		slot1.x = slot1.x + slot4
+		slot0._sceneTf.anchoredPosition = slot1
 
-		for iter_3_0 = 1, #arg_3_0._backGrouds do
-			local var_3_3 = arg_3_0._backGrouds[iter_3_0]
-			local var_3_4 = var_3_3.tf.anchoredPosition
-
-			var_3_4.x = var_3_0.x * var_3_3.data.rate
-			var_3_4.y = var_3_0.y * var_3_3.data.rate
-			var_3_3.tf.anchoredPosition = var_3_4
+		for slot8 = 1, #slot0._backGrouds do
+			slot9 = slot0._backGrouds[slot8]
+			slot10 = slot9.tf.anchoredPosition
+			slot10.x = slot1.x * slot9.data.rate
+			slot10.y = slot1.y * slot9.data.rate
+			slot9.tf.anchoredPosition = slot10
 		end
 	end
 end
 
-function var_0_0.dispose(arg_4_0)
-	return
+function slot0.dispose(slot0)
 end
 
-return var_0_0
+return slot0

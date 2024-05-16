@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffShiftBullet",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				bullet_id = 19011,
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -182,5 +168,19 @@
 	stack = 1,
 	id = 12481,
 	icon = 12480,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffShiftBullet",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				bullet_id = 19011,
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

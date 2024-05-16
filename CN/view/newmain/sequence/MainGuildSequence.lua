@@ -1,69 +1,63 @@
-﻿local var_0_0 = class("MainGuildSequence")
+slot0 = class("MainGuildSequence")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.ignores = {}
-	arg_1_0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.Ctor(slot0)
+	slot0.ignores = {}
+	slot0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.Execute(arg_2_0, arg_2_1)
-	local var_2_0 = getProxy(GuildProxy):getRawData()
-
-	if not var_2_0 then
-		arg_2_1()
+function slot0.Execute(slot0, slot1)
+	if not getProxy(GuildProxy):getRawData() then
+		slot1()
 
 		return
 	end
 
-	local var_2_1 = var_2_0:GetActiveEvent()
-
-	if not var_2_1 or not var_2_1:IsParticipant() then
-		arg_2_1()
+	if not slot2:GetActiveEvent() or not slot3:IsParticipant() then
+		slot1()
 
 		return
 	end
 
-	local var_2_2, var_2_3 = var_2_1:AnyMissionFirstFleetCanFroamtion()
+	slot4, slot5 = slot3:AnyMissionFirstFleetCanFroamtion()
 
-	if var_2_2 and var_2_3 and table.contains(arg_2_0.ignores, var_2_3.id) then
-		arg_2_1()
+	if slot4 and slot5 and table.contains(slot0.ignores, slot5.id) then
+		slot1()
 
 		return
 	end
 
-	if var_2_2 then
-		arg_2_0:Notify(arg_2_1)
-	elseif pg.TimeMgr.GetInstance():GetServerTime() - arg_2_0.refreshTime > 900 then
-		arg_2_0:RefreshEvent(var_2_1, false, arg_2_1)
+	if slot4 then
+		slot0:Notify(slot1)
+	elseif pg.TimeMgr.GetInstance():GetServerTime() - slot0.refreshTime > 900 then
+		slot0:RefreshEvent(slot3, false, slot1)
 	else
-		arg_2_0:Notify(arg_2_1)
+		slot0:Notify(slot1)
 	end
 end
 
-function var_0_0.RefreshEvent(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	local var_3_0 = arg_3_1:GetUnlockMission()
-
-	if var_3_0 and (not arg_3_2 or var_3_0.id ~= arg_3_2.id) then
+function slot0.RefreshEvent(slot0, slot1, slot2, slot3)
+	if slot1:GetUnlockMission() and (not slot2 or slot4.id ~= slot2.id) then
 		pg.m02:sendNotification(GAME.GUILD_REFRESH_MISSION, {
 			force = true,
-			id = var_3_0.id,
-			callback = function()
-				arg_3_0:RefreshEvent(arg_3_1, var_3_0, arg_3_3)
+			id = slot4.id,
+			callback = function ()
+				uv0:RefreshEvent(uv1, uv2, uv3)
 			end
 		})
 
-		arg_3_0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
+		slot0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
 	else
-		arg_3_0:Notify(arg_3_3)
+		slot0:Notify(slot3)
 	end
 end
 
-function var_0_0.Notify(arg_5_0, arg_5_1)
+function slot0.Notify(slot0, slot1)
 	pg.GuildMsgBoxMgr.GetInstance():Notification({
-		condition = function()
-			local var_6_0, var_6_1 = getProxy(GuildProxy):getRawData():GetActiveEvent():AnyMissionFirstFleetCanFroamtion()
+		condition = function ()
+			slot2, slot3 = getProxy(GuildProxy):getRawData():GetActiveEvent():AnyMissionFirstFleetCanFroamtion()
 
-			if var_6_0 and not table.contains(arg_5_0.ignores, var_6_1.id) then
-				table.insert(arg_5_0.ignores, var_6_1.id)
+			if slot2 and not table.contains(uv0.ignores, slot3.id) then
+				table.insert(uv0.ignores, slot3.id)
 
 				return true
 			end
@@ -71,18 +65,18 @@ function var_0_0.Notify(arg_5_0, arg_5_1)
 			return false
 		end,
 		content = i18n("guild_operation_event_occurrence"),
-		OnYes = function()
+		OnYes = function ()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.GUILD, {
 				page = "battle"
 			})
 		end,
-		OnNo = arg_5_1
+		OnNo = slot1
 	})
 end
 
-function var_0_0.Dispose(arg_8_0)
-	arg_8_0.ignores = {}
-	arg_8_0.refreshTime = nil
+function slot0.Dispose(slot0)
+	slot0.ignores = {}
+	slot0.refreshTime = nil
 end
 
-return var_0_0
+return slot0

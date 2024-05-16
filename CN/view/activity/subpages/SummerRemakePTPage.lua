@@ -1,1 +1,1 @@
-﻿return (class("SummerRemakePTPage", import(".TemplatePage.PtTemplatePage")))
+return class("SummerRemakePTPage", import(".TemplatePage.PtTemplatePage"))

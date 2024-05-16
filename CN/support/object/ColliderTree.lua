@@ -1,357 +1,300 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = math.max
+slot1 = math.min
+slot2 = pg
+slot3 = slot2.CldNode
+slot4 = table
+slot2.CldArea = class("CldArea")
 
-local var_0_0 = math.max
-local var_0_1 = math.min
-local var_0_2 = pg
-local var_0_3 = var_0_2.CldNode
-local var_0_4 = table
+function slot2.CldArea.Ctor(slot0, slot1, slot2, slot3)
+	slot0.min = slot1
+	slot0.max = slot2
+	slot0.center = (slot1 + slot2):Mul(0.5)
+	slot0.father = slot3
 
-var_0_2.CldArea = class("CldArea")
-
-function var_0_2.CldArea.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.min = arg_1_1
-	arg_1_0.max = arg_1_2
-	arg_1_0.center = (arg_1_1 + arg_1_2):Mul(0.5)
-	arg_1_0.father = arg_1_3
-
-	if arg_1_3 then
-		arg_1_0.level = arg_1_3.level + 1
+	if slot3 then
+		slot0.level = slot3.level + 1
 	else
-		arg_1_0.level = 1
+		slot0.level = 1
 	end
 
-	arg_1_0.isLeaf = true
-	arg_1_0.childs = {}
-	arg_1_0.nodes = {}
+	slot0.isLeaf = true
+	slot0.childs = {}
+	slot0.nodes = {}
 end
 
-function var_0_2.CldArea.AddNode(arg_2_0, arg_2_1)
-	var_0_4.insert(arg_2_0.nodes, arg_2_1)
+function slot2.CldArea.AddNode(slot0, slot1)
+	uv0.insert(slot0.nodes, slot1)
 
-	arg_2_1.area = arg_2_0
+	slot1.area = slot0
 end
 
-function var_0_2.CldArea.InArea(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_1.x < arg_3_0.min.x or arg_3_1.y < arg_3_0.min.y then
+function slot2.CldArea.InArea(slot0, slot1, slot2)
+	if slot1.x < slot0.min.x or slot1.y < slot0.min.y then
 		return false
 	end
 
-	if arg_3_2.x > arg_3_0.max.x or arg_3_2.y > arg_3_0.max.y then
+	if slot0.max.x < slot2.x or slot0.max.y < slot2.y then
 		return false
 	end
 
 	return true
 end
 
-function var_0_2.CldArea.GetAreaIndex(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_0.center
-	local var_4_1 = arg_4_1.x >= var_4_0.x and 0 or 2
-	local var_4_2 = arg_4_2.x >= var_4_0.x and 0 or 2
-
-	if var_4_1 ~= var_4_2 then
+function slot2.CldArea.GetAreaIndex(slot0, slot1, slot2)
+	if (slot0.center.x <= slot1.x and 0 or 2) ~= (slot3.x <= slot2.x and 0 or 2) then
 		return 0
 	end
 
-	local var_4_3 = var_4_1 + (arg_4_1.z >= var_4_0.z and 1 or 2)
+	slot4 = slot4 + (slot3.z <= slot1.z and 1 or 2)
 
-	return var_4_3 == var_4_2 + (arg_4_2.z >= var_4_0.z and 1 or 2) and var_4_3 or 0
+	return slot4 == slot5 + (slot3.z <= slot2.z and 1 or 2) and slot4 or 0
 end
 
-local var_0_5 = class("ColliderTree")
+slot5 = class("ColliderTree")
+slot2.ColliderTree = slot5
+slot5.MaxLayer = 3
+slot6 = 6
 
-var_0_2.ColliderTree = var_0_5
-var_0_5.MaxLayer = 3
-
-local var_0_6 = 6
-
-function var_0_5.Ctor(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
-	arg_5_0.name = arg_5_1
-	arg_5_0.root = var_0_2.CldArea.New(arg_5_2, arg_5_3, nil)
-	arg_5_0.MaxLayer = arg_5_4
-	arg_5_0.cldStack = {}
+function slot5.Ctor(slot0, slot1, slot2, slot3, slot4)
+	slot0.name = slot1
+	slot0.root = uv0.CldArea.New(slot2, slot3, nil)
+	slot0.MaxLayer = slot4
+	slot0.cldStack = {}
 end
 
-function var_0_5.Insert(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1.area
-
-	if var_6_0 then
-		var_0_4.removebyvalue(var_6_0.nodes, arg_6_1)
+function slot5.Insert(slot0, slot1)
+	if slot1.area then
+		uv0.removebyvalue(slot2.nodes, slot1)
 	end
 
-	arg_6_0:_insert(arg_6_1, arg_6_0:_findParent(arg_6_1, arg_6_0.root))
+	slot0:_insert(slot1, slot0:_findParent(slot1, slot0.root))
 end
 
-function var_0_5._findParent(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_1.min
-	local var_7_1 = arg_7_1.max
-	local var_7_2
+function slot5._findParent(slot0, slot1, slot2)
+	slot3 = slot1.min
+	slot4 = slot1.max
+	slot5 = nil
 
-	while not arg_7_2.isLeaf do
-		local var_7_3 = arg_7_2:GetAreaIndex(var_7_0, var_7_1)
-
-		if var_7_3 < 1 then
+	while not slot2.isLeaf do
+		if slot2:GetAreaIndex(slot3, slot4) < 1 then
 			break
 		end
 
-		arg_7_2 = arg_7_2.childs[var_7_3]
+		slot2 = slot2.childs[slot5]
 	end
 
-	return arg_7_2
+	return slot2
 end
 
-function var_0_5._insert(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0
+function slot5._insert(slot0, slot1, slot2)
+	slot3 = nil
 
-	if not arg_8_2.isLeaf or #arg_8_2.nodes < var_0_6 or arg_8_2.level >= arg_8_0.MaxLayer then
-		arg_8_2:AddNode(arg_8_1)
+	if not slot2.isLeaf or #slot2.nodes < uv0 or slot0.MaxLayer <= slot2.level then
+		slot2:AddNode(slot1)
 
 		return
 	end
 
-	arg_8_2.isLeaf = false
+	slot2.isLeaf = false
+	slot4 = slot2.center
+	slot5 = slot2.max
+	slot6 = slot2.min
+	slot2.childs[1] = uv1.CldArea.New(slot4, slot5, slot2)
+	slot2.childs[2] = uv1.CldArea.New(Vector3(slot4.x, 0, slot6.z), Vector3(slot5.x, 0, slot4.z), slot2)
+	slot2.childs[3] = uv1.CldArea.New(Vector3(slot6.x, 0, slot4.z), Vector3(slot4.x, 0, slot5.z), slot2)
+	slot10 = slot4
+	slot2.childs[4] = uv1.CldArea.New(slot6, slot10, slot2)
 
-	local var_8_1 = arg_8_2.center
-	local var_8_2 = arg_8_2.max
-	local var_8_3 = arg_8_2.min
+	for slot10 = #slot2.nodes, 1, -1 do
+		slot11 = slot2.nodes[slot10]
 
-	arg_8_2.childs[1] = var_0_2.CldArea.New(var_8_1, var_8_2, arg_8_2)
-	arg_8_2.childs[2] = var_0_2.CldArea.New(Vector3(var_8_1.x, 0, var_8_3.z), Vector3(var_8_2.x, 0, var_8_1.z), arg_8_2)
-	arg_8_2.childs[3] = var_0_2.CldArea.New(Vector3(var_8_3.x, 0, var_8_1.z), Vector3(var_8_1.x, 0, var_8_2.z), arg_8_2)
-	arg_8_2.childs[4] = var_0_2.CldArea.New(var_8_3, var_8_1, arg_8_2)
-
-	for iter_8_0 = #arg_8_2.nodes, 1, -1 do
-		local var_8_4 = arg_8_2.nodes[iter_8_0]
-		local var_8_5 = arg_8_2:GetAreaIndex(var_8_4.min, var_8_4.max)
-
-		if var_8_5 > 0 then
-			arg_8_2.childs[var_8_5]:AddNode(var_8_4)
-			var_0_4.remove(arg_8_2.nodes, iter_8_0)
+		if slot2:GetAreaIndex(slot11.min, slot11.max) > 0 then
+			slot2.childs[slot3]:AddNode(slot11)
+			uv2.remove(slot2.nodes, slot10)
 		end
 	end
 
-	local var_8_6 = arg_8_2:GetAreaIndex(arg_8_1.min, arg_8_1.max)
-
-	if var_8_6 > 0 then
-		arg_8_2.childs[var_8_6]:AddNode(arg_8_1)
+	if slot2:GetAreaIndex(slot1.min, slot1.max) > 0 then
+		slot2.childs[slot3]:AddNode(slot1)
 	else
-		arg_8_2:AddNode(arg_8_1)
+		slot2:AddNode(slot1)
 	end
 end
 
-function var_0_5.Update(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1.area
-
-	if var_9_0 == nil then
+function slot5.Update(slot0, slot1)
+	if slot1.area == nil then
 		return
 	end
 
-	local var_9_1 = arg_9_1.min
-	local var_9_2 = arg_9_1.max
+	slot3 = slot1.min
+	slot4 = slot1.max
 
-	while var_9_0.father do
-		if var_9_0:InArea(var_9_1, var_9_2) then
+	while slot2.father do
+		if slot2:InArea(slot3, slot4) then
 			break
 		end
 
-		var_9_0 = var_9_0.father
+		slot2 = slot2.father
 	end
 
-	local var_9_3 = arg_9_0:_findParent(arg_9_1, var_9_0)
-
-	if var_9_3 ~= arg_9_1.area then
-		var_0_4.removebyvalue(arg_9_1.area.nodes, arg_9_1)
-		arg_9_0:_insert(arg_9_1, var_9_3)
+	if slot0:_findParent(slot1, slot2) ~= slot1.area then
+		uv0.removebyvalue(slot1.area.nodes, slot1)
+		slot0:_insert(slot1, slot5)
 	end
 end
 
-function var_0_5.Remove(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_1.area
-
-	if not var_10_0 then
+function slot5.Remove(slot0, slot1)
+	if not slot1.area then
 		return
 	end
 
-	var_0_4.removebyvalue(var_10_0.nodes, arg_10_1)
+	uv0.removebyvalue(slot2.nodes, slot1)
 
-	arg_10_1.area = nil
+	slot1.area = nil
 end
 
-function var_0_5.Intersect(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	return arg_11_0.x <= arg_11_3.x and arg_11_1.x >= arg_11_2.x and arg_11_0.z <= arg_11_3.z and arg_11_1.z >= arg_11_2.z
+function slot5.Intersect(slot0, slot1, slot2, slot3)
+	return slot0.x <= slot3.x and slot2.x <= slot1.x and slot0.z <= slot3.z and slot2.z <= slot1.z
 end
 
-function var_0_5.CylinderCheck(arg_12_0, arg_12_1)
-	if not arg_12_0.cylinder and not arg_12_1.cylinder then
+function slot5.CylinderCheck(slot0, slot1)
+	if not slot0.cylinder and not slot1.cylinder then
 		return true
 	end
 
-	if arg_12_0.cylinder and arg_12_1.cylinder then
-		local var_12_0 = arg_12_0.center.x - arg_12_1.center.x
-		local var_12_1 = arg_12_0.center.z - arg_12_1.center.z
-		local var_12_2 = arg_12_0.range + arg_12_1.range
+	if slot0.cylinder and slot1.cylinder then
+		slot2 = slot0.center.x - slot1.center.x
+		slot3 = slot0.center.z - slot1.center.z
+		slot4 = slot0.range + slot1.range
 
-		return var_12_0 * var_12_0 + var_12_1 * var_12_1 <= var_12_2 * var_12_2
+		return slot2 * slot2 + slot3 * slot3 <= slot4 * slot4
 	end
 
-	local var_12_3 = arg_12_0.cylinder and arg_12_0 or arg_12_1
-	local var_12_4 = var_12_3.range
-	local var_12_5 = var_12_3.center.x
-	local var_12_6 = var_12_3.center.z
-	local var_12_7 = arg_12_0.cylinder and arg_12_1 or arg_12_0
+	slot2 = slot0.cylinder and slot0 or slot1
+	slot3 = slot2.range
+	slot5 = slot2.center.z
 
-	if var_12_5 >= var_12_7.min.x and var_12_5 <= var_12_7.max.x then
-		return var_12_6 >= var_12_7.min.z - var_12_4 and var_12_6 <= var_12_7.max.z + var_12_4
-	elseif var_12_6 >= var_12_7.min.z and var_12_6 <= var_12_7.max.z then
-		return var_12_5 >= var_12_7.min.x - var_12_4 and var_12_5 <= var_12_7.max.x + var_12_4
+	if (slot0.cylinder and slot1 or slot0).min.x <= slot2.center.x and slot4 <= slot6.max.x then
+		return slot5 >= slot6.min.z - slot3 and slot5 <= slot6.max.z + slot3
+	elseif slot6.min.z <= slot5 and slot5 <= slot6.max.z then
+		return slot4 >= slot6.min.x - slot3 and slot4 <= slot6.max.x + slot3
 	else
-		local var_12_8
-		local var_12_9
+		slot7, slot8 = nil
+		slot7 = slot4 < slot6.min.x and slot6.min.x - slot4 or slot6.max.x - slot4
+		slot8 = slot5 < slot6.min.z and slot6.min.z - slot5 or slot6.max.z - slot5
 
-		if var_12_5 < var_12_7.min.x then
-			var_12_8 = var_12_7.min.x - var_12_5
-		else
-			var_12_8 = var_12_7.max.x - var_12_5
-		end
-
-		if var_12_6 < var_12_7.min.z then
-			var_12_9 = var_12_7.min.z - var_12_6
-		else
-			var_12_9 = var_12_7.max.z - var_12_6
-		end
-
-		return var_12_8 * var_12_8 + var_12_9 * var_12_9 < var_12_4 * var_12_4
+		return slot7 * slot7 + slot8 * slot8 < slot3 * slot3
 	end
 end
 
-function var_0_5.getTime(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = 0
+function slot5.getTime(slot0, slot1, slot2)
+	slot3 = 0
 
-	if arg_13_2.x ~= 0 then
-		var_13_0 = var_0_0(0, (var_0_0(arg_13_0.min.x, arg_13_1.min.x) - var_0_1(arg_13_0.max.x, arg_13_1.max.x)) / arg_13_2.x)
+	if slot2.x ~= 0 then
+		slot3 = uv0(0, (uv0(slot0.min.x, slot1.min.x) - uv1(slot0.max.x, slot1.max.x)) / slot2.x)
 	end
 
-	if arg_13_2.z ~= 0 then
-		var_13_0 = var_0_0(var_13_0, (var_0_0(arg_13_0.min.z, arg_13_1.min.z) - var_0_1(arg_13_0.max.z, arg_13_1.max.z)) / arg_13_2.z)
+	if slot2.z ~= 0 then
+		slot3 = uv0(slot3, (uv0(slot0.min.z, slot1.min.z) - uv1(slot0.max.z, slot1.max.z)) / slot2.z)
 	end
 
-	return var_13_0
+	return slot3
 end
 
-function var_0_5.GetCldList(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_1.min
-	local var_14_1 = arg_14_1.max
-	local var_14_2
-	local var_14_3 = arg_14_0.root
-	local var_14_4 = {}
+function slot5.GetCldList(slot0, slot1, slot2)
+	slot3 = slot1.min
+	slot4 = slot1.max
+	slot5 = nil
+	slot6 = slot0.root
+	slot7 = {}
 
-	while not var_14_3.isLeaf do
-		local var_14_5 = var_14_3:GetAreaIndex(var_14_0, var_14_1)
-
-		if var_14_5 < 1 then
+	while not slot6.isLeaf do
+		if slot6:GetAreaIndex(slot3, slot4) < 1 then
 			break
 		end
 
-		for iter_14_0, iter_14_1 in ipairs(var_14_3.nodes) do
-			if var_0_5.Intersect(iter_14_1.min, iter_14_1.max, var_14_0, var_14_1) and var_0_5.CylinderCheck(arg_14_1, iter_14_1) then
-				var_0_4.insert(var_14_4, iter_14_1)
+		for slot11, slot12 in ipairs(slot6.nodes) do
+			if uv0.Intersect(slot12.min, slot12.max, slot3, slot4) and uv0.CylinderCheck(slot1, slot12) then
+				uv1.insert(slot7, slot12)
 			end
 		end
 
-		var_14_3 = var_14_3.childs[var_14_5]
+		slot6 = slot6.childs[slot5]
 	end
 
-	local var_14_6 = arg_14_0.cldStack
+	uv1.insert(slot0.cldStack, slot6)
 
-	var_0_4.insert(var_14_6, var_14_3)
-
-	while #var_14_6 > 0 do
-		local var_14_7 = var_0_4.remove(var_14_6)
-
-		for iter_14_2, iter_14_3 in ipairs(var_14_7.nodes) do
-			if var_0_5.Intersect(iter_14_3.min, iter_14_3.max, var_14_0, var_14_1) and var_0_5.CylinderCheck(arg_14_1, iter_14_3) then
-				var_0_4.insert(var_14_4, iter_14_3)
+	while #slot8 > 0 do
+		for slot13, slot14 in ipairs(uv1.remove(slot8).nodes) do
+			if uv0.Intersect(slot14.min, slot14.max, slot3, slot4) and uv0.CylinderCheck(slot1, slot14) then
+				uv1.insert(slot7, slot14)
 			end
 		end
 
-		for iter_14_4, iter_14_5 in pairs(var_14_7.childs) do
-			if iter_14_5 ~= null and var_0_5.Intersect(iter_14_5.min, iter_14_5.max, var_14_0, var_14_1) then
-				var_0_4.insert(var_14_6, iter_14_5)
+		for slot13, slot14 in pairs(slot9.childs) do
+			if slot14 ~= null and uv0.Intersect(slot14.min, slot14.max, slot3, slot4) then
+				uv1.insert(slot8, slot14)
 			end
 		end
 	end
 
-	return var_14_4
+	return slot7
 end
 
-function var_0_5.GetCldListGradient(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
-	local var_15_0 = Vector3(math.cos(arg_15_1), 0, math.sin(arg_15_1))
-	local var_15_1 = Vector3.Cross(var_15_0, Vector3.up)
-	local var_15_2 = {
+function slot5.GetCldListGradient(slot0, slot1, slot2, slot3, slot4)
+	slot5 = Vector3(math.cos(slot1), 0, math.sin(slot1))
+	slot6 = Vector3.Cross(slot5, Vector3.up)
+	slot7 = {
 		1,
 		2,
 		3,
-		4,
-		[1] = arg_15_4 + var_15_1 * (arg_15_2 * -0.5),
-		[2] = arg_15_4 + var_15_1 * (arg_15_2 * 0.5)
+		4
 	}
-	local var_15_3 = var_15_0 * arg_15_3
+	slot7[1] = slot4 + slot6 * slot2 * -0.5
+	slot7[2] = slot4 + slot6 * slot2 * 0.5
+	slot8 = slot5 * slot3
+	slot7[3] = slot7[2] + slot8
+	slot7[4] = slot7[1] + slot8
+	slot9 = uv0.CldNode.New()
 
-	var_15_2[3] = var_15_2[2] + var_15_3
-	var_15_2[4] = var_15_2[1] + var_15_3
+	slot9:UpdateStaticBox(Vector3(uv1(slot7[1].x, slot7[2].x, slot7[3].x, slot7[4].x), 0, uv1(slot7[1].z, slot7[2].z, slot7[3].z, slot7[4].z)), Vector3(uv2(slot7[1].x, slot7[2].x, slot7[3].x, slot7[4].x), 0, uv2(slot7[1].z, slot7[2].z, slot7[3].z, slot7[4].z)))
 
-	local var_15_4 = var_0_2.CldNode.New()
-	local var_15_5 = Vector3(var_0_1(var_15_2[1].x, var_15_2[2].x, var_15_2[3].x, var_15_2[4].x), 0, var_0_1(var_15_2[1].z, var_15_2[2].z, var_15_2[3].z, var_15_2[4].z))
-	local var_15_6 = Vector3(var_0_0(var_15_2[1].x, var_15_2[2].x, var_15_2[3].x, var_15_2[4].x), 0, var_0_0(var_15_2[1].z, var_15_2[2].z, var_15_2[3].z, var_15_2[4].z))
+	slot12 = slot0:GetCldList(slot9, nil)
 
-	var_15_4:UpdateStaticBox(var_15_5, var_15_6)
-
-	local var_15_7 = arg_15_0:GetCldList(var_15_4, nil)
-	local var_15_8 = var_15_0.x * var_15_0.z
-
-	if var_15_8 == 0 then
-		return var_15_7
+	if slot5.x * slot5.z == 0 then
+		return slot12
 	end
 
-	local var_15_9
-	local var_15_10
-	local var_15_11
-	local var_15_12
+	slot14, slot15, slot16, slot17 = nil
 
-	for iter_15_0 = #var_15_7, 1, -1 do
-		local var_15_13 = var_15_7[iter_15_0]
+	for slot21 = #slot12, 1, -1 do
+		slot22 = slot12[slot21]
 
-		if var_15_8 > 0 then
-			var_15_9 = var_15_13.min
-			var_15_10 = var_15_13.max
-			var_15_11 = Vector3(var_15_9.x, 0, var_15_10.z)
-			var_15_12 = Vector3(var_15_10.x, 0, var_15_9.z)
+		if slot13 > 0 then
+			slot14 = slot22.min
+			slot15 = slot22.max
+			slot16 = Vector3(slot14.x, 0, slot15.z)
+			slot17 = Vector3(slot15.x, 0, slot14.z)
 		else
-			var_15_11 = var_15_13.min
-			var_15_12 = var_15_13.max
-			var_15_9 = Vector3(var_15_11.x, 0, var_15_12.z)
-			var_15_10 = Vector3(var_15_12.x, 0, var_15_11.z)
+			slot16 = slot22.min
+			slot17 = slot22.max
+			slot14 = Vector3(slot16.x, 0, slot17.z)
+			slot15 = Vector3(slot17.x, 0, slot16.z)
 		end
 
-		repeat
-			local var_15_14 = Vector3.Dot(var_15_0, var_15_9 - var_15_2[1])
-			local var_15_15 = Vector3.Dot(var_15_0, var_15_10 - var_15_2[1])
+		slot24 = Vector3.Dot(slot5, slot15 - slot7[1])
 
-			if var_15_14 < 0 and var_15_15 < 0 or arg_15_3 < var_15_14 and arg_15_3 < var_15_15 then
-				var_0_4.remove(var_15_7, iter_15_0)
+		if Vector3.Dot(slot5, slot14 - slot7[1]) < 0 and slot24 < 0 or slot3 < slot23 and slot3 < slot24 then
+			uv3.remove(slot12, slot21)
+		else
+			slot26 = Vector3.Dot(slot6, slot17 - slot7[1])
 
-				break
+			if Vector3.Dot(slot6, slot16 - slot7[1]) < 0 and slot26 < 0 or slot2 < slot25 and slot2 < slot26 then
+				uv3.remove(slot12, slot21)
 			end
-
-			local var_15_16 = Vector3.Dot(var_15_1, var_15_11 - var_15_2[1])
-			local var_15_17 = Vector3.Dot(var_15_1, var_15_12 - var_15_2[1])
-
-			if var_15_16 < 0 and var_15_17 < 0 or arg_15_2 < var_15_16 and arg_15_2 < var_15_17 then
-				var_0_4.remove(var_15_7, iter_15_0)
-			end
-
-			break
-		until true
+		end
 	end
 
-	return var_15_7
+	return slot12
 end

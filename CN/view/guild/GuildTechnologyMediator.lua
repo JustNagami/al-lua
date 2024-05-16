@@ -1,36 +1,32 @@
-﻿local var_0_0 = class("GuildTechnologyMediator", import("..base.ContextMediator"))
+slot0 = class("GuildTechnologyMediator", import("..base.ContextMediator"))
+slot0.ON_UPGRADE = "GuildTechnologyMediator:ON_UPGRADE"
+slot0.ON_START = "GuildTechnologyMediator:ON_START"
+slot0.ON_CANCEL_TECH = "GuildTechnologyMediator:ON_CANCEL_TECH"
+slot0.ON_OPEN_OFFICE = "GuildTechnologyMediator:ON_OPEN_OFFICE"
 
-var_0_0.ON_UPGRADE = "GuildTechnologyMediator:ON_UPGRADE"
-var_0_0.ON_START = "GuildTechnologyMediator:ON_START"
-var_0_0.ON_CANCEL_TECH = "GuildTechnologyMediator:ON_CANCEL_TECH"
-var_0_0.ON_OPEN_OFFICE = "GuildTechnologyMediator:ON_OPEN_OFFICE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_OPEN_OFFICE, function()
-		arg_1_0:sendNotification(var_0_0.ON_OPEN_OFFICE)
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_OPEN_OFFICE, function ()
+		uv0:sendNotification(uv1.ON_OPEN_OFFICE)
 	end)
-	arg_1_0:bind(var_0_0.ON_CANCEL_TECH, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.GUILD_CANCEL_TECH, {
-			id = arg_3_1
+	slot0:bind(uv0.ON_CANCEL_TECH, function (slot0, slot1)
+		uv0:sendNotification(GAME.GUILD_CANCEL_TECH, {
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_UPGRADE, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.GUILD_START_TECH, {
-			id = arg_4_1
+	slot0:bind(uv0.ON_UPGRADE, function (slot0, slot1)
+		uv0:sendNotification(GAME.GUILD_START_TECH, {
+			id = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_START, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.GUILD_START_TECH_TASK, {
-			id = arg_5_1
+	slot0:bind(uv0.ON_START, function (slot0, slot1)
+		uv0:sendNotification(GAME.GUILD_START_TECH_TASK, {
+			id = slot1
 		})
 	end)
-
-	local var_1_0 = getProxy(GuildProxy):getData()
-
-	arg_1_0.viewComponent:setGuild(var_1_0)
+	slot0.viewComponent:setGuild(getProxy(GuildProxy):getData())
 end
 
-function var_0_0.listNotificationInterests(arg_6_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GuildProxy.GUILD_UPDATED,
 		GuildProxy.DONATE_UPDTAE,
@@ -41,19 +37,16 @@ function var_0_0.listNotificationInterests(arg_6_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1:getName()
-	local var_7_1 = arg_7_1:getBody()
-
-	if var_7_0 == GuildProxy.GUILD_UPDATED then
-		arg_7_0.viewComponent:UpdateGuild(var_7_1)
-	elseif var_7_0 == GAME.GUILD_START_TECH_DONE then
-		arg_7_0.viewComponent:UpdateUpgradeList()
-	elseif var_7_0 == GuildProxy.DONATE_UPDTAE or var_7_0 == GuildProxy.TECHNOLOGY_START or var_7_0 == GuildProxy.TECHNOLOGY_STOP then
-		arg_7_0.viewComponent:UpdateBreakOutList()
-	elseif var_7_0 == GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH_DONE then
-		arg_7_0.viewComponent:UpdateAll()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GuildProxy.GUILD_UPDATED then
+		slot0.viewComponent:UpdateGuild(slot1:getBody())
+	elseif slot2 == GAME.GUILD_START_TECH_DONE then
+		slot0.viewComponent:UpdateUpgradeList()
+	elseif slot2 == GuildProxy.DONATE_UPDTAE or slot2 == GuildProxy.TECHNOLOGY_START or slot2 == GuildProxy.TECHNOLOGY_STOP then
+		slot0.viewComponent:UpdateBreakOutList()
+	elseif slot2 == GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH_DONE then
+		slot0.viewComponent:UpdateAll()
 	end
 end
 
-return var_0_0
+return slot0

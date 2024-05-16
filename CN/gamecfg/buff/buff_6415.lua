@@ -1,20 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 6416,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				weapon_group = {
-					720
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -34,5 +18,21 @@
 	stack = 1,
 	id = 6415,
 	icon = 6410,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 6416,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				weapon_group = {
+					720
+				}
+			}
+		}
+	}
 }

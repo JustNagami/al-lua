@@ -1,85 +1,84 @@
-﻿local var_0_0 = class("EducateExtraAttrLayer", import(".base.EducateBaseUI"))
+slot0 = class("EducateExtraAttrLayer", import(".base.EducateBaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EducateExtraAttrUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
 end
 
-function var_0_0.initData(arg_3_0)
-	arg_3_0.char = getProxy(EducateProxy):GetCharData()
-	arg_3_0.attrList = arg_3_0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
-	arg_3_0.selectedIndex = 0
+function slot0.initData(slot0)
+	slot0.char = getProxy(EducateProxy):GetCharData()
+	slot0.attrList = slot0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
+	slot0.selectedIndex = 0
 end
 
-function var_0_0.findUI(arg_4_0)
-	arg_4_0.windowTF = arg_4_0:findTF("window")
-	arg_4_0.attrUIList = UIItemList.New(arg_4_0:findTF("content", arg_4_0.windowTF), arg_4_0:findTF("content/tpl", arg_4_0.windowTF))
-	arg_4_0.avatarTF = arg_4_0:findTF("avatar", arg_4_0.windowTF)
-	arg_4_0.curPersonalText = arg_4_0:findTF("Text", arg_4_0.avatarTF)
-	arg_4_0.sureBtn = arg_4_0:findTF("sure_btn", arg_4_0.windowTF)
+function slot0.findUI(slot0)
+	slot0.windowTF = slot0:findTF("window")
+	slot0.attrUIList = UIItemList.New(slot0:findTF("content", slot0.windowTF), slot0:findTF("content/tpl", slot0.windowTF))
+	slot0.avatarTF = slot0:findTF("avatar", slot0.windowTF)
+	slot0.curPersonalText = slot0:findTF("Text", slot0.avatarTF)
+	slot0.sureBtn = slot0:findTF("sure_btn", slot0.windowTF)
 end
 
-function var_0_0.addListener(arg_5_0)
-	onButton(arg_5_0, arg_5_0.sureBtn, function()
-		if arg_5_0.selectedIndex == 0 then
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.sureBtn, function ()
+		if uv0.selectedIndex == 0 then
 			return
 		end
 
-		arg_5_0:emit(var_0_0.EDUCATE_ON_MSG_TIP, {
+		uv0:emit(uv1.EDUCATE_ON_MSG_TIP, {
 			content = i18n("child_extraAttr_sure_tip"),
-			onYes = function()
-				arg_5_0:emit(EducateExtraAttrMediator.ON_ATTR_ADD, {
-					id = arg_5_0.attrList[arg_5_0.selectedIndex]
+			onYes = function ()
+				uv0:emit(EducateExtraAttrMediator.ON_ATTR_ADD, {
+					id = uv0.attrList[uv0.selectedIndex]
 				})
-				arg_5_0:emit(var_0_0.ON_CLOSE)
+				uv0:emit(uv1.ON_CLOSE)
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.didEnter(arg_8_0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_8_0._tf, {
-		groupName = arg_8_0:getGroupNameFromData(),
-		weight = arg_8_0:getWeightFromData() + 1
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+		groupName = slot0:getGroupNameFromData(),
+		weight = slot0:getWeightFromData() + 1
 	})
-	arg_8_0.attrUIList:make(function(arg_9_0, arg_9_1, arg_9_2)
-		if arg_9_0 == UIItemList.EventInit then
-			local var_9_0 = pg.child_attr[arg_8_0.attrList[arg_9_1 + 1]]
+	slot0.attrUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			slot3 = pg.child_attr[uv0.attrList[slot1 + 1]]
 
-			LoadImageSpriteAsync("educateprops/" .. var_9_0.icon, arg_8_0:findTF("icon", arg_9_2), true)
-			setText(arg_8_0:findTF("name", arg_9_2), var_9_0.name)
-			onButton(arg_8_0, arg_9_2, function()
-				if arg_8_0.selectedIndex == arg_9_1 + 1 then
+			LoadImageSpriteAsync("educateprops/" .. slot3.icon, uv0:findTF("icon", slot2), true)
+			setText(uv0:findTF("name", slot2), slot3.name)
+			onButton(uv0, slot2, function ()
+				if uv0.selectedIndex == uv1 + 1 then
 					return
 				end
 
-				arg_8_0.selectedIndex = arg_9_1 + 1
+				uv0.selectedIndex = uv1 + 1
 
-				arg_8_0:updateView()
+				uv0:updateView()
 			end, SFX_PANEL)
-		elseif arg_9_0 == UIItemList.EventUpdate then
-			setActive(arg_8_0:findTF("selected", arg_9_2), arg_8_0.selectedIndex == arg_9_1 + 1)
+		elseif slot0 == UIItemList.EventUpdate then
+			setActive(uv0:findTF("selected", slot2), uv0.selectedIndex == slot1 + 1)
 		end
 	end)
-	arg_8_0:updateView()
+	slot0:updateView()
 end
 
-function var_0_0.updateView(arg_11_0)
-	arg_11_0.attrUIList:align(#arg_11_0.attrList)
+function slot0.updateView(slot0)
+	slot0.attrUIList:align(#slot0.attrList)
 
-	local var_11_0 = arg_11_0.char:GetPaintingName()
-	local var_11_1 = arg_11_0.char:GetPersonalityId()
+	slot1 = slot0.char:GetPaintingName()
 
-	setText(arg_11_0.curPersonalText, "当前主导个性：" .. pg.child_attr[var_11_1].name)
+	setText(slot0.curPersonalText, "当前主导个性：" .. pg.child_attr[slot0.char:GetPersonalityId()].name)
 end
 
-function var_0_0.willExit(arg_12_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

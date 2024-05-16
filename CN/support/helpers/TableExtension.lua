@@ -1,92 +1,85 @@
-﻿function table.indexof(arg_1_0, arg_1_1, arg_1_2)
-	for iter_1_0 = arg_1_2 or 1, #arg_1_0 do
-		if arg_1_0[iter_1_0] == arg_1_1 then
-			return iter_1_0
+function table.indexof(slot0, slot1, slot2)
+	for slot6 = slot2 or 1, #slot0 do
+		if slot0[slot6] == slot1 then
+			return slot6
 		end
 	end
 
 	return false
 end
 
-function table.keyof(arg_2_0, arg_2_1)
-	for iter_2_0, iter_2_1 in pairs(arg_2_0) do
-		if iter_2_1 == arg_2_1 then
-			return iter_2_0
+function table.keyof(slot0, slot1)
+	for slot5, slot6 in pairs(slot0) do
+		if slot6 == slot1 then
+			return slot5
 		end
 	end
 
 	return nil
 end
 
-function table.removebyvalue(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = 0
-	local var_3_1 = 1
-	local var_3_2 = #arg_3_0
+function table.removebyvalue(slot0, slot1, slot2)
+	slot3 = 0
+	slot4 = 1
 
-	while var_3_1 <= var_3_2 do
-		if arg_3_0[var_3_1] == arg_3_1 then
-			table.remove(arg_3_0, var_3_1)
+	while slot4 <= #slot0 do
+		if slot0[slot4] == slot1 then
+			table.remove(slot0, slot4)
 
-			var_3_0 = var_3_0 + 1
-			var_3_1 = var_3_1 - 1
-			var_3_2 = var_3_2 - 1
+			slot3 = slot3 + 1
+			slot4 = slot4 - 1
+			slot5 = slot5 - 1
 
-			if not arg_3_2 then
+			if not slot2 then
 				break
 			end
 		end
 
-		var_3_1 = var_3_1 + 1
+		slot4 = slot4 + 1
 	end
 
-	return var_3_0
+	return slot3
 end
 
-function table.removebykey(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0[arg_4_1]
+function table.removebykey(slot0, slot1)
+	slot0[slot1] = nil
 
-	arg_4_0[arg_4_1] = nil
-
-	return var_4_0
+	return slot0[slot1]
 end
 
-function table.insertto(arg_5_0, arg_5_1, arg_5_2)
-	arg_5_2 = checkint(arg_5_2)
-
-	if arg_5_2 <= 0 then
-		arg_5_2 = #arg_5_0 + 1
+function table.insertto(slot0, slot1, slot2)
+	if checkint(slot2) <= 0 then
+		slot2 = #slot0 + 1
 	end
 
-	local var_5_0 = #arg_5_1
-
-	for iter_5_0 = 0, var_5_0 - 1 do
-		arg_5_0[iter_5_0 + arg_5_2] = arg_5_1[iter_5_0 + 1]
+	for slot7 = 0, #slot1 - 1 do
+		slot0[slot7 + slot2] = slot1[slot7 + 1]
 	end
 end
 
-function table.isEmpty(arg_6_0)
-	if type(arg_6_0) == "table" then
-		return next(arg_6_0) == nil
+function table.isEmpty(slot0)
+	if type(slot0) == "table" then
+		return next(slot0) == nil
 	end
 
 	return true
 end
 
-function table.clear(arg_7_0)
-	if arg_7_0 then
-		for iter_7_0, iter_7_1 in pairs(arg_7_0) do
-			arg_7_0[iter_7_0] = nil
+function table.clear(slot0)
+	if slot0 then
+		for slot4, slot5 in pairs(slot0) do
+			slot0[slot4] = nil
 		end
 	end
 end
 
-function table.contains(arg_8_0, arg_8_1)
-	if arg_8_0 == nil then
+function table.contains(slot0, slot1)
+	if slot0 == nil then
 		return false
 	end
 
-	for iter_8_0, iter_8_1 in pairs(arg_8_0) do
-		if iter_8_1 == arg_8_1 then
+	for slot5, slot6 in pairs(slot0) do
+		if slot6 == slot1 then
 			return true
 		end
 	end
@@ -94,27 +87,27 @@ function table.contains(arg_8_0, arg_8_1)
 	return false
 end
 
-function table.equal(arg_9_0, arg_9_1)
-	if type(arg_9_0) ~= type(arg_9_1) then
+function table.equal(slot0, slot1)
+	if type(slot0) ~= type(slot1) then
 		return false
 	end
 
-	if type(arg_9_0) ~= "table" then
-		return arg_9_0 == arg_9_1
+	if type(slot0) ~= "table" then
+		return slot0 == slot1
 	end
 
-	if arg_9_0 == arg_9_1 then
+	if slot0 == slot1 then
 		return true
 	end
 
-	for iter_9_0, iter_9_1 in pairs(arg_9_0) do
-		if not table.equal(iter_9_1, arg_9_1[iter_9_0]) then
+	for slot5, slot6 in pairs(slot0) do
+		if not table.equal(slot6, slot1[slot5]) then
 			return false
 		end
 	end
 
-	for iter_9_2, iter_9_3 in pairs(arg_9_1) do
-		if arg_9_0[iter_9_2] == nil then
+	for slot5, slot6 in pairs(slot1) do
+		if slot0[slot5] == nil then
 			return false
 		end
 	end
@@ -122,13 +115,13 @@ function table.equal(arg_9_0, arg_9_1)
 	return true
 end
 
-function table.containsData(arg_10_0, arg_10_1)
-	if arg_10_0 == nil then
+function table.containsData(slot0, slot1)
+	if slot0 == nil then
 		return false
 	end
 
-	for iter_10_0, iter_10_1 in pairs(arg_10_0) do
-		if table.equal(iter_10_1, arg_10_1) then
+	for slot5, slot6 in pairs(slot0) do
+		if table.equal(slot6, slot1) then
 			return true
 		end
 	end
@@ -136,195 +129,174 @@ function table.containsData(arg_10_0, arg_10_1)
 	return false
 end
 
-function table.Foreach(arg_11_0, arg_11_1)
-	for iter_11_0, iter_11_1 in pairs(arg_11_0) do
-		arg_11_1(iter_11_0, iter_11_1)
+function table.Foreach(slot0, slot1)
+	for slot5, slot6 in pairs(slot0) do
+		slot1(slot5, slot6)
 	end
 end
 
-function table.Ipairs(arg_12_0, arg_12_1)
-	for iter_12_0, iter_12_1 in ipairs(arg_12_0) do
-		arg_12_1(iter_12_0, iter_12_1)
+function table.Ipairs(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0) do
+		slot1(slot5, slot6)
 	end
 end
 
-function table.IpairsCArray(arg_13_0, arg_13_1)
-	for iter_13_0 = 0, arg_13_0.Length - 1 do
-		v = arg_13_0[iter_13_0]
+function table.IpairsCArray(slot0, slot1)
+	for slot5 = 0, slot0.Length - 1 do
+		v = slot0[slot5]
 
-		arg_13_1(iter_13_0, v)
+		slot1(slot5, v)
 	end
 end
 
-function table.SerialIpairsAsync(arg_14_0, arg_14_1, arg_14_2)
-	if type(arg_14_0) ~= "table" then
+function table.SerialIpairsAsync(slot0, slot1, slot2)
+	if type(slot0) ~= "table" then
 		return
 	end
 
-	local var_14_0
-	local var_14_1
-	local var_14_2
-	local var_14_3, var_14_4
+	slot3, slot4, slot5 = nil
+	slot5, slot0, slot3 = ipairs(slot0)
+	slot6 = nil
 
-	var_14_3, arg_14_0, var_14_4 = ipairs(arg_14_0)
+	function ()
+		uv0, uv1 = uv2(uv3, uv0)
 
-	local var_14_5
-
-	local function var_14_6()
-		var_14_4, var_14_1 = var_14_3(arg_14_0, var_14_4)
-
-		if var_14_4 == nil then
-			if arg_14_2 then
-				arg_14_2()
+		if uv0 == nil then
+			if uv4 then
+				uv4()
 			end
 		else
-			arg_14_1(var_14_4, var_14_1, var_14_6)
+			uv5(uv0, uv1, uv6)
 		end
-	end
-
-	var_14_6()
+	end()
 end
 
-function table.ParallelIpairsAsync(arg_16_0, arg_16_1, arg_16_2)
-	if type(arg_16_0) ~= "table" then
+function table.ParallelIpairsAsync(slot0, slot1, slot2)
+	if type(slot0) ~= "table" then
 		return
 	end
 
-	local var_16_0
-	local var_16_1
-	local var_16_2
-	local var_16_3, var_16_4
+	slot3, slot4, slot5 = nil
+	slot5, slot0, slot3 = ipairs(slot0)
+	slot6 = 0
+	slot7 = 1
 
-	var_16_3, arg_16_0, var_16_4 = ipairs(arg_16_0)
+	function slot8()
+		uv0 = uv0 + 1
 
-	local var_16_5 = 0
-	local var_16_6 = 1
-
-	local function var_16_7()
-		var_16_5 = var_16_5 + 1
-
-		if var_16_5 == var_16_6 then
-			existCall(arg_16_2)
+		if uv0 == uv1 then
+			existCall(uv2)
 		end
 	end
 
 	while true do
-		local var_16_8
+		slot9, slot4 = slot5(slot0, slot3)
 
-		var_16_4, var_16_8 = var_16_3(arg_16_0, var_16_4)
-
-		if var_16_4 == nil then
+		if slot9 == nil then
 			break
 		end
 
-		var_16_6 = var_16_6 + 1
+		slot7 = slot7 + 1
 
-		arg_16_1(var_16_4, var_16_8, var_16_7)
+		slot1(slot3, slot4, slot8)
 	end
 
-	var_16_7()
+	slot8()
 end
 
-function table.Find(arg_18_0, arg_18_1)
-	for iter_18_0, iter_18_1 in pairs(arg_18_0) do
-		if arg_18_1(iter_18_0, iter_18_1) then
-			return iter_18_1, iter_18_0
+function table.Find(slot0, slot1)
+	for slot5, slot6 in pairs(slot0) do
+		if slot1(slot5, slot6) then
+			return slot6, slot5
 		end
 	end
 end
 
-function table.Checkout(arg_19_0, arg_19_1)
-	for iter_19_0, iter_19_1 in pairs(arg_19_0) do
-		local var_19_0 = arg_19_1(iter_19_0, iter_19_1)
-
-		if var_19_0 ~= nil then
-			return var_19_0
+function table.Checkout(slot0, slot1)
+	for slot5, slot6 in pairs(slot0) do
+		if slot1(slot5, slot6) ~= nil then
+			return slot7
 		end
 	end
 end
 
-function table.getCount(arg_20_0)
-	local var_20_0 = 0
-
-	for iter_20_0, iter_20_1 in pairs(arg_20_0) do
-		var_20_0 = var_20_0 + 1
+function table.getCount(slot0)
+	for slot5, slot6 in pairs(slot0) do
+		slot1 = 0 + 1
 	end
 
-	return var_20_0
+	return slot1
 end
 
-function table.merge(arg_21_0, arg_21_1)
-	if not arg_21_1 or not arg_21_0 then
+function table.merge(slot0, slot1)
+	if not slot1 or not slot0 then
 		return
 	end
 
-	for iter_21_0, iter_21_1 in pairs(arg_21_1) do
-		arg_21_0[iter_21_0] = iter_21_1
+	for slot5, slot6 in pairs(slot1) do
+		slot0[slot5] = slot6
 	end
 
-	return arg_21_0
+	return slot0
 end
 
-function table.mergeArray(arg_22_0, arg_22_1, arg_22_2)
-	local var_22_0 = {}
-	local var_22_1 = {}
+function table.mergeArray(slot0, slot1, slot2)
+	slot3 = {}
 
-	local function var_22_2(arg_23_0)
-		for iter_23_0, iter_23_1 in ipairs(arg_23_0) do
-			if arg_22_2 and var_22_0[iter_23_1] then
-				-- block empty
-			else
-				table.insert(var_22_1, iter_23_1)
+	function slot5(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			if not uv0 or not uv1[slot5] then
+				table.insert(uv2, slot5)
 
-				var_22_0[iter_23_1] = true
+				uv1[slot5] = true
 			end
 		end
 	end
 
-	var_22_2(arg_22_0)
-	var_22_2(arg_22_1)
+	slot5(slot0)
+	slot5(slot1)
 
-	return var_22_1
+	return {}
 end
 
-function table.clean(arg_24_0)
-	for iter_24_0 = #arg_24_0, 1, -1 do
-		table.remove(arg_24_0, iter_24_0)
+function table.clean(slot0)
+	for slot4 = #slot0, 1, -1 do
+		table.remove(slot0, slot4)
 	end
 end
 
-function table.shallowCopy(arg_25_0)
-	if type(arg_25_0) ~= "table" then
-		return arg_25_0
+function table.shallowCopy(slot0)
+	if type(slot0) ~= "table" then
+		return slot0
 	end
 
-	local var_25_0 = {}
-
-	for iter_25_0, iter_25_1 in pairs(arg_25_0) do
-		var_25_0[iter_25_0] = iter_25_1
+	for slot5, slot6 in pairs(slot0) do
+		-- Nothing
 	end
 
-	return var_25_0
+	return {
+		[slot5] = slot6
+	}
 end
 
-function table.getIndex(arg_26_0, arg_26_1)
-	for iter_26_0, iter_26_1 in ipairs(arg_26_0) do
-		if arg_26_1(iter_26_1) then
-			return iter_26_0
+function table.getIndex(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0) do
+		if slot1(slot6) then
+			return slot5
 		end
 	end
 end
 
-function table.map(arg_27_0, arg_27_1)
-	local var_27_0 = {}
-
-	for iter_27_0, iter_27_1 in pairs(arg_27_0) do
-		var_27_0[iter_27_0] = arg_27_1(iter_27_1)
+function table.map(slot0, slot1)
+	for slot6, slot7 in pairs(slot0) do
+		-- Nothing
 	end
 
-	return var_27_0
+	return {
+		[slot6] = slot1(slot7)
+	}
 end
 
-function table.lastof(arg_28_0)
-	return arg_28_0[#arg_28_0]
+function table.lastof(slot0)
+	return slot0[#slot0]
 end

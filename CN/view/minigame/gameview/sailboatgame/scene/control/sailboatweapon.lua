@@ -1,80 +1,80 @@
-﻿local var_0_0 = class("SailBoatWeapon")
-local var_0_1
+slot0 = class("SailBoatWeapon")
+slot1 = nil
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_1 = SailBoatGameVo
-	arg_1_0._data = arg_1_1
-	arg_1_0._fireTime = nil
+function slot0.Ctor(slot0, slot1)
+	uv0 = SailBoatGameVo
+	slot0._data = slot1
+	slot0._fireTime = nil
 end
 
-function var_0_0.start(arg_2_0)
-	arg_2_0._fireTime = arg_2_0:getConfig("cd")
+function slot0.start(slot0)
+	slot0._fireTime = slot0:getConfig("cd")
 end
 
-function var_0_0.step(arg_3_0, arg_3_1)
-	if arg_3_0._fireTime and arg_3_0._fireTime > 0 then
-		arg_3_0._fireTime = arg_3_0._fireTime - arg_3_1
+function slot0.step(slot0, slot1)
+	if slot0._fireTime and slot0._fireTime > 0 then
+		slot0._fireTime = slot0._fireTime - slot1
 
-		if arg_3_0._fireTime < 0 then
-			arg_3_0._fireTime = 0
+		if slot0._fireTime < 0 then
+			slot0._fireTime = 0
 		end
 	else
-		arg_3_0._fireTime = 0
+		slot0._fireTime = 0
 	end
 end
 
-function var_0_0.skillStep(arg_4_0, arg_4_1)
-	arg_4_0._fireTime = arg_4_0._fireTime - arg_4_1
+function slot0.skillStep(slot0, slot1)
+	slot0._fireTime = slot0._fireTime - slot1
 end
 
-function var_0_0.getFireAble(arg_5_0)
-	if arg_5_0._fireTime and arg_5_0._fireTime > 0 then
+function slot0.getFireAble(slot0)
+	if slot0._fireTime and slot0._fireTime > 0 then
 		return false
 	end
 
 	return true
 end
 
-function var_0_0.fire(arg_6_0)
-	if not arg_6_0:getFireAble() then
+function slot0.fire(slot0)
+	if not slot0:getFireAble() then
 		return nil
 	end
 
-	arg_6_0._fireTime = arg_6_0:getConfig("cd")
+	slot0._fireTime = slot0:getConfig("cd")
 
-	return arg_6_0:getFireData()
+	return slot0:getFireData()
 end
 
-function var_0_0.getFireTime(arg_7_0)
-	return arg_7_0._fireTime or 0
+function slot0.getFireTime(slot0)
+	return slot0._fireTime or 0
 end
 
-function var_0_0.getFireData(arg_8_0)
-	return Clone(arg_8_0._data)
+function slot0.getFireData(slot0)
+	return Clone(slot0._data)
 end
 
-function var_0_0.getAngel(arg_9_0)
-	return arg_9_0:getConfig("angel")
+function slot0.getAngel(slot0)
+	return slot0:getConfig("angel")
 end
 
-function var_0_0.getDistance(arg_10_0)
-	return arg_10_0:getConfig("distance")
+function slot0.getDistance(slot0)
+	return slot0:getConfig("distance")
 end
 
-function var_0_0.getDamage(arg_11_0)
-	return arg_11_0:getConfig("damage")
+function slot0.getDamage(slot0)
+	return slot0:getConfig("damage")
 end
 
-function var_0_0.getFireFlag(arg_12_0)
-	return arg_12_0._fireTime == 0
+function slot0.getFireFlag(slot0)
+	return slot0._fireTime == 0
 end
 
-function var_0_0.getConfig(arg_13_0, arg_13_1)
-	return arg_13_0._data[arg_13_1]
+function slot0.getConfig(slot0, slot1)
+	return slot0._data[slot1]
 end
 
-function var_0_0.clear(arg_14_0)
-	arg_14_0._data = nil
+function slot0.clear(slot0)
+	slot0._data = nil
 end
 
-return var_0_0
+return slot0

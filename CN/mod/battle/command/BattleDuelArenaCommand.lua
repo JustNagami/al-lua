@@ -1,293 +1,263 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleEvent
+slot3 = class("BattleDuelArenaCommand", slot0.MVC.Command)
+slot0.Battle.BattleDuelArenaCommand = slot3
+slot3.__name = "BattleDuelArenaCommand"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = class("BattleDuelArenaCommand", var_0_0.MVC.Command)
-
-var_0_0.Battle.BattleDuelArenaCommand = var_0_3
-var_0_3.__name = "BattleDuelArenaCommand"
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.ConfigBattleData(arg_2_0, arg_2_1)
-	arg_2_0._battleInitData = arg_2_1
+function slot3.ConfigBattleData(slot0, slot1)
+	slot0._battleInitData = slot1
 end
 
-function var_0_3.Initialize(arg_3_0)
-	arg_3_0:Init()
-	var_0_3.super.Initialize(arg_3_0)
+function slot3.Initialize(slot0)
+	slot0:Init()
+	uv0.super.Initialize(slot0)
 
-	arg_3_0._dataProxy = arg_3_0._state:GetProxyByName(var_0_0.Battle.BattleDataProxy.__name)
-	arg_3_0._uiMediator = arg_3_0._state:GetMediatorByName(var_0_0.Battle.BattleUIMediator.__name)
+	slot0._dataProxy = slot0._state:GetProxyByName(uv1.Battle.BattleDataProxy.__name)
+	slot0._uiMediator = slot0._state:GetMediatorByName(uv1.Battle.BattleUIMediator.__name)
 
-	arg_3_0:InitProtocol()
-	arg_3_0:AddEvent()
+	slot0:InitProtocol()
+	slot0:AddEvent()
 end
 
-function var_0_3.DoPrologue(arg_4_0)
-	arg_4_0._dataProxy:InitUserShipsData(arg_4_0._battleInitData.RivalMainUnitList, arg_4_0._battleInitData.RivalVanguardUnitList, var_0_0.Battle.BattleConfig.FOE_CODE, {})
-	arg_4_0._userFleet:SnapShot()
-	arg_4_0._rivalFleet:SnapShot()
+function slot3.DoPrologue(slot0)
+	slot0._dataProxy:InitUserShipsData(slot0._battleInitData.RivalMainUnitList, slot0._battleInitData.RivalVanguardUnitList, uv0.Battle.BattleConfig.FOE_CODE, {})
+	slot0._userFleet:SnapShot()
+	slot0._rivalFleet:SnapShot()
 
-	arg_4_0._rivalWeaponBot = var_0_0.Battle.BattleManualWeaponAutoBot.New(arg_4_0._rivalFleet)
-	arg_4_0._rivalJoyStickBot = var_0_0.Battle.BattleJoyStickAutoBot.New(arg_4_0._dataProxy, arg_4_0._rivalFleet)
+	slot0._rivalWeaponBot = uv0.Battle.BattleManualWeaponAutoBot.New(slot0._rivalFleet)
+	slot0._rivalJoyStickBot = uv0.Battle.BattleJoyStickAutoBot.New(slot0._dataProxy, slot0._rivalFleet)
+	slot1 = slot0._uiMediator:InitDuelRateBar()
+	slot2 = getProxy(PlayerProxy):getData()
 
-	local var_4_0 = arg_4_0._uiMediator:InitDuelRateBar()
-	local var_4_1 = getProxy(PlayerProxy):getData()
-
-	var_4_0:SetFleetVO(arg_4_0._userFleet, {
-		name = var_4_1.name,
-		level = var_4_1.level
+	slot1:SetFleetVO(slot0._userFleet, {
+		name = slot2.name,
+		level = slot2.level
 	})
 
-	local var_4_2 = arg_4_0._dataProxy:GetInitData().RivalVO
+	slot3 = slot0._dataProxy:GetInitData().RivalVO
+	slot8 = slot3.level
 
-	var_4_0:SetFleetVO(arg_4_0._rivalFleet, {
-		name = var_4_2.name,
-		level = var_4_2.level
+	slot1:SetFleetVO(slot0._rivalFleet, {
+		name = slot3.name,
+		level = slot8
 	})
-	arg_4_0._uiMediator:OpeningEffect(function()
-		arg_4_0._state:ChangeState(var_0_0.Battle.BattleState.BATTLE_STATE_FIGHT)
-		arg_4_0._weaponCommand:ActiveBot(true, false)
-		arg_4_0._rivalWeaponBot:SetActive(true, false)
-		arg_4_0._rivalJoyStickBot:SetActive(true)
-		arg_4_0._uiMediator:InitCameraGestureSlider()
-		arg_4_0._uiMediator:ShowTimer()
-		arg_4_0._uiMediator:ShowDuelBar()
-		arg_4_0._uiMediator:EnableJoystick(false)
-		arg_4_0._uiMediator:EnableWeaponButton(false)
+	slot0._uiMediator:OpeningEffect(function ()
+		uv0._state:ChangeState(uv1.Battle.BattleState.BATTLE_STATE_FIGHT)
+		uv0._weaponCommand:ActiveBot(true, false)
+		uv0._rivalWeaponBot:SetActive(true, false)
+		uv0._rivalJoyStickBot:SetActive(true)
+		uv0._uiMediator:InitCameraGestureSlider()
+		uv0._uiMediator:ShowTimer()
+		uv0._uiMediator:ShowDuelBar()
+		uv0._uiMediator:EnableJoystick(false)
+		uv0._uiMediator:EnableWeaponButton(false)
 	end)
 
-	local var_4_3 = arg_4_0._dataProxy:GetFleetList()
+	for slot8, slot9 in pairs(slot0._dataProxy:GetFleetList()) do
+		slot9:FleetWarcry()
 
-	for iter_4_0, iter_4_1 in pairs(var_4_3) do
-		iter_4_1:FleetWarcry()
-
-		local var_4_4 = iter_4_1:GetUnitList()
-
-		for iter_4_2, iter_4_3 in ipairs(var_4_4) do
-			local var_4_5 = iter_4_3:GetTemplate().type
-			local var_4_6 = var_0_0.Battle.BattleDataFunction.GetArenaBuffByShipType(var_4_5)
-
-			for iter_4_4, iter_4_5 in ipairs(var_4_6) do
-				local var_4_7 = var_0_0.Battle.BattleBuffUnit.New(iter_4_5)
-
-				iter_4_3:AddBuff(var_4_7)
+		for slot14, slot15 in ipairs(slot9:GetUnitList()) do
+			for slot21, slot22 in ipairs(uv0.Battle.BattleDataFunction.GetArenaBuffByShipType(slot15:GetTemplate().type)) do
+				slot15:AddBuff(uv0.Battle.BattleBuffUnit.New(slot22))
 			end
 		end
 	end
 
-	arg_4_0._uiMediator:EnableWeaponButton(false)
-	arg_4_0._dataProxy:InitAllFleetUnitsWeaponCD()
-	arg_4_0._dataProxy:TirggerBattleStartBuffs()
+	slot0._uiMediator:EnableWeaponButton(false)
+	slot0._dataProxy:InitAllFleetUnitsWeaponCD()
+	slot0._dataProxy:TirggerBattleStartBuffs()
 
-	local var_4_8 = arg_4_0._userFleet:GetUnitList()
-
-	for iter_4_6, iter_4_7 in ipairs(var_4_8) do
-		local var_4_9 = var_0_0.Battle.BattleBuffUnit.New(var_0_0.Battle.BattleConfig.DULE_BALANCE_BUFF)
-
-		iter_4_7:AddBuff(var_4_9)
+	for slot9, slot10 in ipairs(slot0._userFleet:GetUnitList()) do
+		slot10:AddBuff(uv0.Battle.BattleBuffUnit.New(uv0.Battle.BattleConfig.DULE_BALANCE_BUFF))
 	end
 end
 
-function var_0_3.Update(arg_6_0)
-	arg_6_0._rivalWeaponBot:Update()
+function slot3.Update(slot0)
+	slot0._rivalWeaponBot:Update()
 end
 
-function var_0_3.Init(arg_7_0)
-	arg_7_0._unitDataList = {}
+function slot3.Init(slot0)
+	slot0._unitDataList = {}
 end
 
-function var_0_3.Clear(arg_8_0)
-	for iter_8_0, iter_8_1 in pairs(arg_8_0._unitDataList) do
-		arg_8_0:UnregisterUnitEvent(iter_8_1)
+function slot3.Clear(slot0)
+	for slot4, slot5 in pairs(slot0._unitDataList) do
+		slot0:UnregisterUnitEvent(slot5)
 
-		arg_8_0._unitDataList[iter_8_0] = nil
+		slot0._unitDataList[slot4] = nil
 	end
 end
 
-function var_0_3.Reinitialize(arg_9_0)
-	arg_9_0._state:Deactive()
-	arg_9_0:Clear()
-	arg_9_0:Init()
+function slot3.Reinitialize(slot0)
+	slot0._state:Deactive()
+	slot0:Clear()
+	slot0:Init()
 end
 
-function var_0_3.Dispose(arg_10_0)
-	arg_10_0:Clear()
-	arg_10_0:RemoveEvent()
-	var_0_3.super.Dispose(arg_10_0)
+function slot3.Dispose(slot0)
+	slot0:Clear()
+	slot0:RemoveEvent()
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_3.onInitBattle(arg_11_0)
-	arg_11_0._weaponCommand = arg_11_0._state:GetCommandByName(var_0_0.Battle.BattleControllerWeaponCommand.__name)
-	arg_11_0._userFleet = arg_11_0._dataProxy:GetFleetByIFF(var_0_0.Battle.BattleConfig.FRIENDLY_CODE)
-	arg_11_0._rivalFleet = arg_11_0._dataProxy:GetFleetByIFF(var_0_0.Battle.BattleConfig.FOE_CODE)
+function slot3.onInitBattle(slot0)
+	slot0._weaponCommand = slot0._state:GetCommandByName(uv0.Battle.BattleControllerWeaponCommand.__name)
+	slot0._userFleet = slot0._dataProxy:GetFleetByIFF(uv0.Battle.BattleConfig.FRIENDLY_CODE)
+	slot0._rivalFleet = slot0._dataProxy:GetFleetByIFF(uv0.Battle.BattleConfig.FOE_CODE)
 end
 
-function var_0_3.InitProtocol(arg_12_0)
-	return
+function slot3.InitProtocol(slot0)
 end
 
-function var_0_3.AddEvent(arg_13_0)
-	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_2.ADD_UNIT, arg_13_0.onAddUnit)
-	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_2.REMOVE_UNIT, arg_13_0.onRemoveUnit)
-	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_2.STAGE_DATA_INIT_FINISH, arg_13_0.onInitBattle)
-	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_2.SHUT_DOWN_PLAYER, arg_13_0.onPlayerShutDown)
-	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_2.UPDATE_COUNT_DOWN, arg_13_0.onUpdateCountDown)
+function slot3.AddEvent(slot0)
+	slot0._dataProxy:RegisterEventListener(slot0, uv0.ADD_UNIT, slot0.onAddUnit)
+	slot0._dataProxy:RegisterEventListener(slot0, uv0.REMOVE_UNIT, slot0.onRemoveUnit)
+	slot0._dataProxy:RegisterEventListener(slot0, uv0.STAGE_DATA_INIT_FINISH, slot0.onInitBattle)
+	slot0._dataProxy:RegisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER, slot0.onPlayerShutDown)
+	slot0._dataProxy:RegisterEventListener(slot0, uv0.UPDATE_COUNT_DOWN, slot0.onUpdateCountDown)
 end
 
-function var_0_3.RemoveEvent(arg_14_0)
-	arg_14_0._dataProxy:UnregisterEventListener(arg_14_0, var_0_2.ADD_UNIT)
-	arg_14_0._dataProxy:UnregisterEventListener(arg_14_0, var_0_2.REMOVE_UNIT)
-	arg_14_0._dataProxy:UnregisterEventListener(arg_14_0, var_0_2.STAGE_DATA_INIT_FINISH)
-	arg_14_0._dataProxy:UnregisterEventListener(arg_14_0, var_0_2.SHUT_DOWN_PLAYER)
-	arg_14_0._dataProxy:UnregisterEventListener(arg_14_0, var_0_2.UPDATE_COUNT_DOWN)
+function slot3.RemoveEvent(slot0)
+	slot0._dataProxy:UnregisterEventListener(slot0, uv0.ADD_UNIT)
+	slot0._dataProxy:UnregisterEventListener(slot0, uv0.REMOVE_UNIT)
+	slot0._dataProxy:UnregisterEventListener(slot0, uv0.STAGE_DATA_INIT_FINISH)
+	slot0._dataProxy:UnregisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER)
+	slot0._dataProxy:UnregisterEventListener(slot0, uv0.UPDATE_COUNT_DOWN)
 end
 
-function var_0_3.onAddUnit(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_1.Data.type
-	local var_15_1 = arg_15_1.Data.unit
+function slot3.onAddUnit(slot0, slot1)
+	slot2 = slot1.Data.type
+	slot3 = slot1.Data.unit
 
-	arg_15_0:RegisterUnitEvent(var_15_1)
+	slot0:RegisterUnitEvent(slot3)
 
-	arg_15_0._unitDataList[var_15_1:GetUniqueID()] = var_15_1
+	slot0._unitDataList[slot3:GetUniqueID()] = slot3
 end
 
-function var_0_3.RegisterUnitEvent(arg_16_0, arg_16_1)
-	arg_16_1:RegisterEventListener(arg_16_0, var_0_1.DYING, arg_16_0.onUnitDying)
-	arg_16_1:RegisterEventListener(arg_16_0, var_0_1.UPDATE_HP, arg_16_0.onUpdateUnitHP)
+function slot3.RegisterUnitEvent(slot0, slot1)
+	slot1:RegisterEventListener(slot0, uv0.DYING, slot0.onUnitDying)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_HP, slot0.onUpdateUnitHP)
 
-	if arg_16_1:GetUnitType() == var_0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
-		arg_16_1:RegisterEventListener(arg_16_0, var_0_1.SHUT_DOWN_PLAYER, arg_16_0.onShutDownPlayer)
+	if slot1:GetUnitType() == uv1.Battle.BattleConst.UnitType.PLAYER_UNIT then
+		slot1:RegisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER, slot0.onShutDownPlayer)
 	end
 end
 
-function var_0_3.UnregisterUnitEvent(arg_17_0, arg_17_1)
-	arg_17_1:UnregisterEventListener(arg_17_0, var_0_1.DYING)
-	arg_17_1:UnregisterEventListener(arg_17_0, var_0_1.UPDATE_HP)
+function slot3.UnregisterUnitEvent(slot0, slot1)
+	slot1:UnregisterEventListener(slot0, uv0.DYING)
+	slot1:UnregisterEventListener(slot0, uv0.UPDATE_HP)
 
-	if arg_17_1:GetUnitType() == var_0_0.Battle.BattleConst.UnitType.PLAYER_UNIT then
-		arg_17_1:UnregisterEventListener(arg_17_0, var_0_1.SHUT_DOWN_PLAYER)
+	if slot1:GetUnitType() == uv1.Battle.BattleConst.UnitType.PLAYER_UNIT then
+		slot1:UnregisterEventListener(slot0, uv0.SHUT_DOWN_PLAYER)
 	end
 end
 
-function var_0_3.onRemoveUnit(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_1.Data.UID
-	local var_18_1 = arg_18_0._unitDataList[var_18_0]
-
-	if var_18_1 == nil then
+function slot3.onRemoveUnit(slot0, slot1)
+	if slot0._unitDataList[slot1.Data.UID] == nil then
 		return
 	end
 
-	arg_18_0:UnregisterUnitEvent(var_18_1)
+	slot0:UnregisterUnitEvent(slot3)
 
-	arg_18_0._unitDataList[var_18_0] = nil
+	slot0._unitDataList[slot2] = nil
 end
 
-function var_0_3.onPlayerShutDown(arg_19_0, arg_19_1)
-	if arg_19_0._state:GetState() ~= arg_19_0._state.BATTLE_STATE_FIGHT then
+function slot3.onPlayerShutDown(slot0, slot1)
+	if slot0._state:GetState() ~= slot0._state.BATTLE_STATE_FIGHT then
 		return
 	end
 
-	if arg_19_0._failReason == nil then
-		var_0_0.Battle.BattleState.GenerateVertifyData(1)
+	if slot0._failReason == nil then
+		uv0.Battle.BattleState.GenerateVertifyData(1)
 
-		local var_19_0, var_19_1 = var_0_0.Battle.BattleState.Vertify()
+		slot2, slot3 = uv0.Battle.BattleState.Vertify()
 
-		if not var_19_0 then
-			arg_19_0._failReason = 900 + var_19_1
+		if not slot2 then
+			slot0._failReason = 900 + slot3
 		end
 	end
 
-	if #arg_19_0._userFleet:GetUnitList() == 0 or #arg_19_0._rivalFleet:GetUnitList() == 0 then
-		arg_19_0._dataProxy:CalcDuelScoreAtEnd(arg_19_0._userFleet, arg_19_0._rivalFleet)
+	if #slot0._userFleet:GetUnitList() == 0 or #slot0._rivalFleet:GetUnitList() == 0 then
+		slot0._dataProxy:CalcDuelScoreAtEnd(slot0._userFleet, slot0._rivalFleet)
 
-		if arg_19_0._failReason then
+		if slot0._failReason then
 			pg.m02:sendNotification(GAME.CHEATER_MARK, {
-				reason = arg_19_0._failReason
+				reason = slot0._failReason
 			})
 
 			return
 		end
 
-		arg_19_0._failReason = nil
+		slot0._failReason = nil
 
-		arg_19_0._state:BattleEnd()
+		slot0._state:BattleEnd()
 	end
 
-	local var_19_2 = #arg_19_0._userFleet:GetScoutList()
-	local var_19_3 = #arg_19_0._rivalFleet:GetScoutList()
+	slot3 = #slot0._rivalFleet:GetScoutList()
 
-	if var_19_2 == 0 and var_19_3 ~= 0 then
-		arg_19_0._dataProxy:ShiftFleetBound(arg_19_0._rivalFleet, var_0_0.Battle.BattleConfig.FRIENDLY_CODE)
-		arg_19_0._rivalJoyStickBot:UpdateFleetArea()
-		arg_19_0._rivalJoyStickBot:SwitchStrategy(var_0_0.Battle.BattleJoyStickAutoBot.COUNTER_MAIN)
+	if #slot0._userFleet:GetScoutList() == 0 and slot3 ~= 0 then
+		slot0._dataProxy:ShiftFleetBound(slot0._rivalFleet, uv0.Battle.BattleConfig.FRIENDLY_CODE)
+		slot0._rivalJoyStickBot:UpdateFleetArea()
+		slot0._rivalJoyStickBot:SwitchStrategy(uv0.Battle.BattleJoyStickAutoBot.COUNTER_MAIN)
 	end
 
-	if var_19_3 == 0 and var_19_2 ~= 0 then
-		arg_19_0._dataProxy:ShiftFleetBound(arg_19_0._userFleet, var_0_0.Battle.BattleConfig.FOE_CODE)
-		arg_19_0._weaponCommand:GetStickBot():UpdateFleetArea()
-		arg_19_0._weaponCommand:GetStickBot():SwitchStrategy(var_0_0.Battle.BattleJoyStickAutoBot.COUNTER_MAIN)
+	if slot3 == 0 and slot2 ~= 0 then
+		slot0._dataProxy:ShiftFleetBound(slot0._userFleet, uv0.Battle.BattleConfig.FOE_CODE)
+		slot0._weaponCommand:GetStickBot():UpdateFleetArea()
+		slot0._weaponCommand:GetStickBot():SwitchStrategy(uv0.Battle.BattleJoyStickAutoBot.COUNTER_MAIN)
 	end
 
-	if not arg_19_1.Data.unit:IsMainFleetUnit() and var_19_2 == 0 and var_19_3 == 0 then
-		local var_19_4 = arg_19_0._userFleet:GetMainList()
-		local var_19_5 = arg_19_0._rivalFleet:GetMainList()
+	if not slot1.Data.unit:IsMainFleetUnit() and slot2 == 0 and slot3 == 0 then
+		slot6 = slot0._rivalFleet:GetMainList()
 
-		for iter_19_0, iter_19_1 in ipairs(var_19_4) do
-			local var_19_6 = var_0_0.Battle.BattleBuffUnit.New(var_0_0.Battle.BattleConfig.DUEL_MAIN_RAGE_BUFF)
-
-			iter_19_1:AddBuff(var_19_6)
+		for slot10, slot11 in ipairs(slot0._userFleet:GetMainList()) do
+			slot11:AddBuff(uv0.Battle.BattleBuffUnit.New(uv0.Battle.BattleConfig.DUEL_MAIN_RAGE_BUFF))
 		end
 
-		for iter_19_2, iter_19_3 in ipairs(var_19_5) do
-			local var_19_7 = var_0_0.Battle.BattleBuffUnit.New(var_0_0.Battle.BattleConfig.DUEL_MAIN_RAGE_BUFF)
-
-			iter_19_3:AddBuff(var_19_7)
+		for slot10, slot11 in ipairs(slot6) do
+			slot11:AddBuff(uv0.Battle.BattleBuffUnit.New(uv0.Battle.BattleConfig.DUEL_MAIN_RAGE_BUFF))
 		end
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_duel_main_rage"))
 	end
 end
 
-function var_0_3.onUpdateCountDown(arg_20_0, arg_20_1)
-	if arg_20_0._dataProxy:GetCountDown() <= 0 then
-		local var_20_0, var_20_1 = arg_20_0._userFleet:GetDamageRatioResult()
-		local var_20_2, var_20_3 = arg_20_0._rivalFleet:GetDamageRatioResult()
+function slot3.onUpdateCountDown(slot0, slot1)
+	if slot0._dataProxy:GetCountDown() <= 0 then
+		slot2, slot3 = slot0._userFleet:GetDamageRatioResult()
+		slot4, slot5 = slot0._rivalFleet:GetDamageRatioResult()
 
-		arg_20_0._dataProxy:CalcDuelScoreAtTimesUp(var_20_0, var_20_2, var_20_1, var_20_3)
-		arg_20_0._state:BattleEnd()
+		slot0._dataProxy:CalcDuelScoreAtTimesUp(slot2, slot4, slot3, slot5)
+		slot0._state:BattleEnd()
 	end
 end
 
-function var_0_3.onUpdateUnitHP(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_1.Dispatcher:GetFleetVO()
-
-	if var_21_0 then
-		local var_21_1 = arg_21_1.Data.validDHP
-
-		var_21_0:UpdateFleetDamage(var_21_1)
+function slot3.onUpdateUnitHP(slot0, slot1)
+	if slot1.Dispatcher:GetFleetVO() then
+		slot3:UpdateFleetDamage(slot1.Data.validDHP)
 	end
 end
 
-function var_0_3.onUnitDying(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1.Dispatcher
-	local var_22_1 = var_22_0:GetUniqueID()
+function slot3.onUnitDying(slot0, slot1)
+	slot2 = slot1.Dispatcher
+	slot3 = slot2:GetUniqueID()
 
-	if var_22_0:GetUnitType() ~= var_0_0.Battle.BattleConst.UnitType.MINION_UNIT then
-		arg_22_0._dataProxy:CalcBattleScoreWhenDead(var_22_0)
+	if slot2:GetUnitType() ~= uv0.Battle.BattleConst.UnitType.MINION_UNIT then
+		slot0._dataProxy:CalcBattleScoreWhenDead(slot2)
 	end
 
-	arg_22_0._dataProxy:KillUnit(var_22_1)
+	slot0._dataProxy:KillUnit(slot3)
 end
 
-function var_0_3.onShutDownPlayer(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_1.Dispatcher
-	local var_23_1 = var_23_0:GetUniqueID()
+function slot3.onShutDownPlayer(slot0, slot1)
+	slot2 = slot1.Dispatcher
 
-	var_23_0:GetFleetVO():UpdateFleetOverDamage(var_23_0)
-	arg_23_0._dataProxy:ShutdownPlayerUnit(var_23_1)
+	slot2:GetFleetVO():UpdateFleetOverDamage(slot2)
+	slot0._dataProxy:ShutdownPlayerUnit(slot2:GetUniqueID())
 end

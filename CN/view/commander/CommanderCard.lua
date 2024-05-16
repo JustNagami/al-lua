@@ -1,160 +1,152 @@
-﻿local var_0_0 = class("CommanderCard")
+slot0 = class("CommanderCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = tf(arg_1_1)
-	arg_1_0.infoTF = arg_1_0._tf:Find("info")
-	arg_1_0.emptyTF = arg_1_0._tf:Find("empty")
-	arg_1_0.quitTF = arg_1_0._tf:Find("quit")
-	arg_1_0.scrollTxt = arg_1_0.infoTF:Find("name_bg/mask/Text"):GetComponent("ScrollText")
-	arg_1_0.levelTF = arg_1_0.infoTF:Find("level_bg/Text"):GetComponent(typeof(Text))
-	arg_1_0.iconTF = arg_1_0.infoTF:Find("icon")
-	arg_1_0.mark2 = arg_1_0.infoTF:Find("mark1")
-	arg_1_0.mark1 = arg_1_0.infoTF:Find("mark2")
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
+	slot0.infoTF = slot0._tf:Find("info")
+	slot0.emptyTF = slot0._tf:Find("empty")
+	slot0.quitTF = slot0._tf:Find("quit")
+	slot0.scrollTxt = slot0.infoTF:Find("name_bg/mask/Text"):GetComponent("ScrollText")
+	slot0.levelTF = slot0.infoTF:Find("level_bg/Text"):GetComponent(typeof(Text))
+	slot0.iconTF = slot0.infoTF:Find("icon")
+	slot0.mark2 = slot0.infoTF:Find("mark1")
+	slot0.mark1 = slot0.infoTF:Find("mark2")
 
-	setActive(arg_1_0.mark1, false)
-	setActive(arg_1_0.mark2, false)
+	setActive(slot0.mark1, false)
+	setActive(slot0.mark2, false)
 
-	arg_1_0.expUp = arg_1_0._tf:Find("up")
+	slot0.expUp = slot0._tf:Find("up")
 
-	setActive(arg_1_0.expUp, false)
+	setActive(slot0.expUp, false)
 
-	arg_1_0.formationTF = arg_1_0.infoTF:Find("formation")
-	arg_1_0.inbattleTF = arg_1_0.infoTF:Find("inbattle")
+	slot0.formationTF = slot0.infoTF:Find("formation")
+	slot0.inbattleTF = slot0.infoTF:Find("inbattle")
 
-	setActive(arg_1_0.inbattleTF, false)
-	setActive(arg_1_0.formationTF, false)
+	setActive(slot0.inbattleTF, false)
+	setActive(slot0.formationTF, false)
 
-	arg_1_0.tip = arg_1_0._tf:Find("tip")
+	slot0.tip = slot0._tf:Find("tip")
 
-	setActive(arg_1_0.tip, false)
+	setActive(slot0.tip, false)
 
-	arg_1_0.lockTr = arg_1_0._tf:Find("lock")
+	slot0.lockTr = slot0._tf:Find("lock")
 end
 
-function var_0_0.clearSelected(arg_2_0)
-	setActive(arg_2_0.mark1, false)
-	setActive(arg_2_0.mark2, false)
-	setActive(arg_2_0.expUp, false)
-	arg_2_0:UpdateCommanderName(arg_2_0.commanderVO, false)
+function slot0.clearSelected(slot0)
+	setActive(slot0.mark1, false)
+	setActive(slot0.mark2, false)
+	setActive(slot0.expUp, false)
+	slot0:UpdateCommanderName(slot0.commanderVO, false)
 end
 
-function var_0_0.selectedAnim(arg_3_0)
-	if LeanTween.isTweening(arg_3_0.infoTF) then
-		LeanTween.cancel(arg_3_0.infoTF)
+function slot0.selectedAnim(slot0)
+	if LeanTween.isTweening(slot0.infoTF) then
+		LeanTween.cancel(slot0.infoTF)
 	end
 
-	local var_3_0 = 20
-
-	LeanTween.moveY(rtf(arg_3_0.infoTF), var_3_0, 0.1):setOnComplete(System.Action(function()
-		LeanTween.moveY(rtf(arg_3_0.infoTF), 0, 0.1)
+	LeanTween.moveY(rtf(slot0.infoTF), 20, 0.1):setOnComplete(System.Action(function ()
+		LeanTween.moveY(rtf(uv0.infoTF), 0, 0.1)
 	end))
-	arg_3_0:UpdateCommanderName(arg_3_0.commanderVO, true)
+	slot0:UpdateCommanderName(slot0.commanderVO, true)
 end
 
-function var_0_0.update(arg_5_0, arg_5_1)
-	if not IsNil(arg_5_0.lockTr) then
-		setActive(arg_5_0.lockTr, false)
+function slot0.update(slot0, slot1)
+	if not IsNil(slot0.lockTr) then
+		setActive(slot0.lockTr, false)
 	end
 
-	if arg_5_1 then
-		arg_5_0.commanderVO = arg_5_1
+	if slot1 then
+		slot0.commanderVO = slot1
 
-		if arg_5_1.id ~= 0 then
-			arg_5_0:updateCommander()
+		if slot1.id ~= 0 then
+			slot0:updateCommander()
 		end
 	end
 
-	setActive(arg_5_0.formationTF, arg_5_1 and arg_5_1.inFleet and not arg_5_1.inBattle)
-	setActive(arg_5_0.inbattleTF, arg_5_1 and arg_5_1.inBattle)
-	setActive(arg_5_0.infoTF, arg_5_1 and arg_5_1.id ~= 0)
-	setActive(arg_5_0.emptyTF, not arg_5_1)
-	setActive(arg_5_0.quitTF, arg_5_1 and arg_5_1.id == 0)
-	setActive(arg_5_0.tip, arg_5_1 and arg_5_1.id ~= 0 and arg_5_1:getTalentPoint() > 0 and not LOCK_COMMANDER_TALENT_TIP)
+	setActive(slot0.formationTF, slot1 and slot1.inFleet and not slot1.inBattle)
+	setActive(slot0.inbattleTF, slot1 and slot1.inBattle)
+	setActive(slot0.infoTF, slot1 and slot1.id ~= 0)
+	setActive(slot0.emptyTF, not slot1)
+	setActive(slot0.quitTF, slot1 and slot1.id == 0)
+	setActive(slot0.tip, slot1 and slot1.id ~= 0 and slot1:getTalentPoint() > 0 and not LOCK_COMMANDER_TALENT_TIP)
 end
 
-function var_0_0.updateCommander(arg_6_0)
-	local var_6_0 = arg_6_0.commanderVO
+function slot0.updateCommander(slot0)
+	slot1 = slot0.commanderVO
 
-	arg_6_0:UpdateCommanderName(var_6_0, false)
+	slot0:UpdateCommanderName(slot1, false)
 
-	arg_6_0.levelTF.text = var_6_0.level
+	slot0.levelTF.text = slot1.level
 
-	GetImageSpriteFromAtlasAsync("commandericon/" .. var_6_0:getPainting(), "", arg_6_0.iconTF)
+	GetImageSpriteFromAtlasAsync("commandericon/" .. slot1:getPainting(), "", slot0.iconTF)
 
-	if not IsNil(arg_6_0.lockTr) then
-		setActive(arg_6_0.lockTr, var_6_0:isLocked())
+	if not IsNil(slot0.lockTr) then
+		setActive(slot0.lockTr, slot1:isLocked())
 	end
 end
 
-function var_0_0.UpdateCommanderName(arg_7_0, arg_7_1, arg_7_2)
-	if not arg_7_1 or arg_7_1.id == 0 then
+function slot0.UpdateCommanderName(slot0, slot1, slot2)
+	if not slot1 or slot1.id == 0 then
 		return
 	end
 
-	if arg_7_2 then
-		arg_7_0.scrollTxt:SetText(arg_7_1:getName())
+	if slot2 then
+		slot0.scrollTxt:SetText(slot1:getName())
 	else
-		arg_7_0.scrollTxt:SetText(arg_7_0:ShortenString(arg_7_1:getName(), 6))
+		slot0.scrollTxt:SetText(slot0:ShortenString(slot1:getName(), 6))
 	end
 end
 
-function var_0_0.ShortenString(arg_8_0, arg_8_1, arg_8_2)
-	local function var_8_0(arg_9_0)
-		if not arg_9_0 then
+function slot0.ShortenString(slot0, slot1, slot2)
+	function slot3(slot0)
+		if not slot0 then
 			return 0, 1
-		elseif arg_9_0 > 240 then
+		elseif slot0 > 240 then
 			return 4, 1
-		elseif arg_9_0 > 225 then
+		elseif slot0 > 225 then
 			return 3, 1
-		elseif arg_9_0 > 192 then
+		elseif slot0 > 192 then
 			return 2, 1
-		elseif arg_9_0 < 126 then
+		elseif slot0 < 126 then
 			return 1, 0.75
 		else
 			return 1, 1
 		end
 	end
 
-	local var_8_1 = 1
-	local var_8_2 = 0
-	local var_8_3 = 0
-	local var_8_4 = #arg_8_1
-	local var_8_5 = false
+	slot4 = 1
+	slot5 = 0
+	slot6 = 0
+	slot7 = #slot1
+	slot8 = false
 
-	while var_8_1 <= var_8_4 do
-		local var_8_6 = string.byte(arg_8_1, var_8_1)
-		local var_8_7, var_8_8 = var_8_0(var_8_6)
+	while slot4 <= slot7 do
+		slot10, slot11 = slot3(string.byte(slot1, slot4))
 
-		var_8_1 = var_8_1 + var_8_7
-		var_8_2 = var_8_2 + var_8_8
-
-		local var_8_9 = math.ceil(var_8_2)
-
-		if var_8_9 == arg_8_2 - 1 then
-			var_8_3 = var_8_1
-		elseif arg_8_2 < var_8_9 then
-			var_8_5 = true
+		if math.ceil(slot5 + slot11) == slot2 - 1 then
+			slot6 = slot4 + slot10
+		elseif slot2 < slot12 then
+			slot8 = true
 
 			break
 		end
 	end
 
-	if var_8_3 == 0 or var_8_4 < var_8_3 or not var_8_5 then
-		return arg_8_1
+	if slot6 == 0 or slot7 < slot6 or not slot8 then
+		return slot1
 	end
 
-	return string.sub(arg_8_1, 1, var_8_3 - 1) .. ".."
+	return string.sub(slot1, 1, slot6 - 1) .. ".."
 end
 
-function var_0_0.clear(arg_10_0)
-	if LeanTween.isTweening(arg_10_0.infoTF) then
-		LeanTween.cancel(arg_10_0.infoTF)
+function slot0.clear(slot0)
+	if LeanTween.isTweening(slot0.infoTF) then
+		LeanTween.cancel(slot0.infoTF)
 	end
 end
 
-function var_0_0.Dispose(arg_11_0)
-	arg_11_0:clear()
+function slot0.Dispose(slot0)
+	slot0:clear()
 end
 
-return var_0_0
+return slot0

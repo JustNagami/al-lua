@@ -1,148 +1,131 @@
-﻿ys = ys or {}
-
-local var_0_0 = ys
-local var_0_1 = require("Mgr/Pool/PoolUtil")
-local var_0_2 = var_0_0.Battle.BattleConst
-local var_0_3 = singletonClass("BattlePopNumManager")
-
-var_0_0.Battle.BattlePopNumManager = var_0_3
-var_0_3.__name = "BattlePopNumManager"
-var_0_3.CONTAINER_CHARACTER_HP = "HPTextCharacterContainer"
-var_0_3.POP_SCORE = "score"
-var_0_3.POP_MISS = "miss"
-var_0_3.POP_HEAL = "heal"
-var_0_3.POP_COMMON = "common"
-var_0_3.POP_UNBREAK = "unbreak"
-var_0_3.POP_NORMAL = "normal"
-var_0_3.POP_EXPLO = "explo"
-var_0_3.POP_PIERCE = "pierce"
-var_0_3.POP_CT_NORMAL = "critical_normal"
-var_0_3.POP_CT_EXPLO = "critical_explo"
-var_0_3.POP_CT_PIERCE = "critical_pierce"
-var_0_3.FontIndex = {
-	var_0_3.POP_NORMAL,
-	var_0_3.POP_PIERCE,
-	var_0_3.POP_EXPLO,
-	var_0_3.POP_UNBREAK
+ys = ys or {}
+slot0 = ys
+slot1 = require("Mgr/Pool/PoolUtil")
+slot2 = slot0.Battle.BattleConst
+slot3 = singletonClass("BattlePopNumManager")
+slot0.Battle.BattlePopNumManager = slot3
+slot3.__name = "BattlePopNumManager"
+slot3.CONTAINER_CHARACTER_HP = "HPTextCharacterContainer"
+slot3.POP_SCORE = "score"
+slot3.POP_MISS = "miss"
+slot3.POP_HEAL = "heal"
+slot3.POP_COMMON = "common"
+slot3.POP_UNBREAK = "unbreak"
+slot3.POP_NORMAL = "normal"
+slot3.POP_EXPLO = "explo"
+slot3.POP_PIERCE = "pierce"
+slot3.POP_CT_NORMAL = "critical_normal"
+slot3.POP_CT_EXPLO = "critical_explo"
+slot3.POP_CT_PIERCE = "critical_pierce"
+slot3.FontIndex = {
+	slot3.POP_NORMAL,
+	slot3.POP_PIERCE,
+	slot3.POP_EXPLO,
+	slot3.POP_UNBREAK
 }
-var_0_3.CTFontIndex = {
-	var_0_3.POP_CT_NORMAL,
-	var_0_3.POP_CT_PIERCE,
-	var_0_3.POP_CT_EXPLO,
-	var_0_3.POP_UNBREAK
+slot3.CTFontIndex = {
+	slot3.POP_CT_NORMAL,
+	slot3.POP_CT_PIERCE,
+	slot3.POP_CT_EXPLO,
+	slot3.POP_UNBREAK
 }
-var_0_3.AIR_UNIT_TYPE = {
-	var_0_2.UnitType.AIRCRAFT_UNIT,
-	var_0_2.UnitType.AIRFIGHTER_UNIT,
-	var_0_2.UnitType.FUNNEL_UNIT,
-	var_0_2.UnitType.UAV_UNIT
+slot3.AIR_UNIT_TYPE = {
+	slot2.UnitType.AIRCRAFT_UNIT,
+	slot2.UnitType.AIRFIGHTER_UNIT,
+	slot2.UnitType.FUNNEL_UNIT,
+	slot2.UnitType.UAV_UNIT
 }
 
-function var_0_3.Ctor(arg_1_0)
-	return
+function slot3.Ctor(slot0)
 end
 
-function var_0_3.Init(arg_2_0, arg_2_1)
-	arg_2_0._allBundlePool = {}
-	arg_2_0._activeList = {}
-	arg_2_0._popSkin = arg_2_1
+function slot3.Init(slot0, slot1)
+	slot0._allBundlePool = {}
+	slot0._activeList = {}
+	slot0._popSkin = slot1
 end
 
-function var_0_3.GetPopSkin(arg_3_0)
-	return arg_3_0._popSkin
+function slot3.GetPopSkin(slot0)
+	return slot0._popSkin
 end
 
-function var_0_3.InitialBundlePool(arg_4_0, arg_4_1)
-	arg_4_0._allBundlePool[var_0_0.Battle.BattlePopNumBundle.PRO] = pg.LuaObPool.New(var_0_0.Battle.BattlePopNumBundle, {
-		containerTpl = arg_4_1,
-		type = var_0_0.Battle.BattlePopNumBundle.PRO
+function slot3.InitialBundlePool(slot0, slot1)
+	slot0._allBundlePool[uv0.Battle.BattlePopNumBundle.PRO] = pg.LuaObPool.New(uv0.Battle.BattlePopNumBundle, {
+		containerTpl = slot1,
+		type = uv0.Battle.BattlePopNumBundle.PRO
 	}, 6)
-	arg_4_0._allBundlePool[var_0_0.Battle.BattlePopNumBundle.SLIM] = pg.LuaObPool.New(var_0_0.Battle.BattlePopNumBundle, {
-		containerTpl = arg_4_1,
-		type = var_0_0.Battle.BattlePopNumBundle.SLIM
+	slot0._allBundlePool[uv0.Battle.BattlePopNumBundle.SLIM] = pg.LuaObPool.New(uv0.Battle.BattlePopNumBundle, {
+		containerTpl = slot1,
+		type = uv0.Battle.BattlePopNumBundle.SLIM
 	}, 4)
 end
 
-function var_0_3.InitialScorePool(arg_5_0, arg_5_1)
-	arg_5_0._allBundlePool[var_0_0.Battle.BattlePopNumBundle.PRO] = pg.LuaObPool.New(var_0_0.Battle.BattlePopNumBundle, {
+function slot3.InitialScorePool(slot0, slot1)
+	slot0._allBundlePool[uv0.Battle.BattlePopNumBundle.PRO] = pg.LuaObPool.New(uv0.Battle.BattlePopNumBundle, {
 		score = true,
-		containerTpl = arg_5_1,
-		type = var_0_0.Battle.BattlePopNumBundle.PRO
+		containerTpl = slot1,
+		type = uv0.Battle.BattlePopNumBundle.PRO
 	}, 1)
-	arg_5_0._allBundlePool[var_0_0.Battle.BattlePopNumBundle.SLIM] = pg.LuaObPool.New(var_0_0.Battle.BattlePopNumBundle, {
+	slot0._allBundlePool[uv0.Battle.BattlePopNumBundle.SLIM] = pg.LuaObPool.New(uv0.Battle.BattlePopNumBundle, {
 		score = true,
-		containerTpl = arg_5_1,
-		type = var_0_0.Battle.BattlePopNumBundle.SLIM
+		containerTpl = slot1,
+		type = uv0.Battle.BattlePopNumBundle.SLIM
 	}, 2)
 end
 
-function var_0_3.Clear(arg_6_0)
-	for iter_6_0, iter_6_1 in pairs(arg_6_0._allBundlePool) do
-		iter_6_1:Dispose()
+function slot3.Clear(slot0)
+	for slot4, slot5 in pairs(slot0._allBundlePool) do
+		slot5:Dispose()
 	end
 
-	arg_6_0._popSkin = nil
-	arg_6_0._activeList = {}
+	slot0._popSkin = nil
+	slot0._activeList = {}
 end
 
-function var_0_3.GetBundle(arg_7_0, arg_7_1)
-	local var_7_0 = var_0_3.getBundleType(arg_7_1)
-
-	return (arg_7_0._allBundlePool[var_7_0]:GetObject())
+function slot3.GetBundle(slot0, slot1)
+	return slot0._allBundlePool[uv0.getBundleType(slot1)]:GetObject()
 end
 
-function var_0_3.getType(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = 1
-	local var_8_1
+function slot3.getType(slot0, slot1, slot2, slot3)
+	slot4 = 1
+	slot5 = nil
 
-	if arg_8_0 and not arg_8_2 then
-		var_8_1 = var_0_3.POP_HEAL
-	elseif arg_8_2 then
-		var_8_1 = var_0_3.POP_MISS
-	elseif arg_8_3 then
-		local var_8_2 = arg_8_3[1]
-		local var_8_3 = arg_8_3[2]
-
-		if arg_8_1 then
-			var_8_1 = var_0_3.CTFontIndex[var_8_2]
-		else
-			var_8_1 = var_0_3.FontIndex[var_8_2]
-		end
-
-		var_8_0 = arg_8_3[2]
-	elseif arg_8_1 then
-		var_8_1 = var_0_3.POP_CT_EXPLO
+	if slot0 and not slot2 then
+		slot5 = uv0.POP_HEAL
+	elseif slot2 then
+		slot5 = uv0.POP_MISS
+	elseif slot3 then
+		slot6 = slot3[1]
+		slot7 = slot3[2]
+		slot5 = (not slot1 or uv0.CTFontIndex[slot6]) and uv0.FontIndex[slot6]
+		slot4 = slot3[2]
 	else
-		var_8_1 = var_0_3.POP_COMMON
+		slot5 = (not slot1 or uv0.POP_CT_EXPLO) and uv0.POP_COMMON
 	end
 
-	return var_8_1, var_8_0
+	return slot5, slot4
 end
 
-function var_0_3.getBundleType(arg_9_0)
-	local var_9_0
+function slot3.getBundleType(slot0)
+	slot1 = nil
 
-	if table.contains(var_0_3.AIR_UNIT_TYPE, arg_9_0) then
-		var_9_0 = var_0_0.Battle.BattlePopNumBundle.SLIM
-	else
-		var_9_0 = var_0_0.Battle.BattlePopNumBundle.PRO
-	end
-
-	return var_9_0
+	return (not table.contains(uv0.AIR_UNIT_TYPE, slot0) or uv1.Battle.BattlePopNumBundle.SLIM) and uv1.Battle.BattlePopNumBundle.PRO
 end
 
-function var_0_3.generateTempPool(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4)
-	return pg.LuaObPool.New(var_0_0.Battle.BattlePopNum, {
-		template = arg_10_3.transform:Find(arg_10_1).gameObject,
-		parentTF = arg_10_2,
-		mgr = arg_10_0
-	}, arg_10_4)
+function slot3.generateTempPool(slot0, slot1, slot2, slot3, slot4)
+	return pg.LuaObPool.New(uv0.Battle.BattlePopNum, {
+		template = slot3.transform:Find(slot1).gameObject,
+		parentTF = slot2,
+		mgr = slot0
+	}, slot4)
 end
 
-function var_0_3.resetPopParent(arg_11_0, arg_11_1, arg_11_2)
-	arg_11_1:UpdateInfo("parentTF", arg_11_2)
+function slot3.resetPopParent(slot0, slot1, slot2)
+	slot6 = slot2
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_1.list) do
-		iter_11_1:SetParent(arg_11_2)
+	slot1:UpdateInfo("parentTF", slot6)
+
+	for slot6, slot7 in ipairs(slot1.list) do
+		slot7:SetParent(slot2)
 	end
 end

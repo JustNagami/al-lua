@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.expedition_daily_template = {
 	[101] = {
 		tips = "该副本暂未开放，敬请期待",

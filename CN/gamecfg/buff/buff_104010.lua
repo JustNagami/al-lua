@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "爱碳光波",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "战斗中，每20秒启用一个效果",
+	stack = 1,
+	id = 104010,
+	icon = 104010,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -21,25 +41,5 @@
 				time = 20
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "爱碳光波",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "战斗中，每20秒启用一个效果",
-	stack = 1,
-	id = 104010,
-	icon = 104010,
-	last_effect = ""
+	}
 }

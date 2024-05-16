@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "改变时代的炮声 +",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	stack = 1,
+	id = 1010510,
+	icon = 10510,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -20,24 +39,5 @@
 				skill_id = 1010511
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "改变时代的炮声 +",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	stack = 1,
-	id = 1010510,
-	icon = 10510,
-	last_effect = ""
+	}
 }

@@ -1,22 +1,21 @@
-﻿local var_0_0 = class("ChargeFailedCommand", pm.SimpleCommand)
+slot0 = class("ChargeFailedCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.payId
-	local var_1_2 = var_1_0.code
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.code
 
-	if not var_1_1 then
+	if not slot2.payId then
 		return
 	end
 
-	if not var_1_2 or type(var_1_2) ~= "number" then
+	if not slot4 or type(slot4) ~= "number" then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11510, {
-		pay_id = tostring(var_1_1),
-		code = math.abs(var_1_2)
+		pay_id = tostring(slot3),
+		code = math.abs(slot4)
 	})
 end
 
-return var_0_0
+return slot0

@@ -1,117 +1,103 @@
-﻿local var_0_0 = require("jit")
+assert(require("jit").version_num == 20100, "LuaJIT core/library version mismatch")
 
-assert(var_0_0.version_num == 20100, "LuaJIT core/library version mismatch")
+slot1 = require("jit.util")
+slot2 = require("jit.vmdef")
+slot3 = slot1.funcinfo
+slot4 = slot1.traceinfo
+slot5 = type
+slot6 = string.format
+slot7 = io.stdout
+slot8 = io.stderr
+slot9, slot10, slot11, slot12 = nil
 
-local var_0_1 = require("jit.util")
-local var_0_2 = require("jit.vmdef")
-local var_0_3 = var_0_1.funcinfo
-local var_0_4 = var_0_1.traceinfo
-local var_0_5 = type
-local var_0_6 = string.format
-local var_0_7 = io.stdout
-local var_0_8 = io.stderr
-local var_0_9
-local var_0_10
-local var_0_11
-local var_0_12
-
-local function var_0_13(arg_1_0, arg_1_1)
-	local var_1_0 = var_0_3(arg_1_0, arg_1_1)
-
-	if var_1_0.loc then
-		return var_1_0.loc
-	elseif var_1_0.ffid then
-		return var_0_2.ffnames[var_1_0.ffid]
-	elseif var_1_0.addr then
-		return var_0_6("C:%x", var_1_0.addr)
+function slot13(slot0, slot1)
+	if uv0(slot0, slot1).loc then
+		return slot2.loc
+	elseif slot2.ffid then
+		return uv1.ffnames[slot2.ffid]
+	elseif slot2.addr then
+		return uv2("C:%x", slot2.addr)
 	else
 		return "(?)"
 	end
 end
 
-local function var_0_14(arg_2_0, arg_2_1)
-	if var_0_5(arg_2_0) == "number" then
-		if var_0_5(arg_2_1) == "function" then
-			arg_2_1 = var_0_13(arg_2_1)
+function slot14(slot0, slot1)
+	if uv0(slot0) == "number" then
+		if uv0(slot1) == "function" then
+			slot1 = uv1(slot1)
 		end
 
-		arg_2_0 = var_0_6(var_0_2.traceerr[arg_2_0], arg_2_1)
+		slot0 = uv2(uv3.traceerr[slot0], slot1)
 	end
 
-	return arg_2_0
+	return slot0
 end
 
-local function var_0_15(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
-	if arg_3_0 == "start" then
-		var_0_11 = var_0_13(arg_3_2, arg_3_3)
-		var_0_12 = arg_3_4 and "(" .. arg_3_4 .. "/" .. (arg_3_5 == -1 and "stitch" or arg_3_5) .. ") " or ""
+function slot15(slot0, slot1, slot2, slot3, slot4, slot5)
+	if slot0 == "start" then
+		uv0 = uv1(slot2, slot3)
+		uv2 = slot4 and "(" .. slot4 .. "/" .. (slot5 == -1 and "stitch" or slot5) .. ") " or ""
 	else
-		if arg_3_0 == "abort" then
-			local var_3_0 = var_0_13(arg_3_2, arg_3_3)
-
-			if var_3_0 ~= var_0_11 then
-				print(var_0_6("[TRACE --- %s%s -- %s at %s]\n", var_0_12, var_0_11, var_0_14(arg_3_4, arg_3_5), var_3_0))
+		if slot0 == "abort" then
+			if uv1(slot2, slot3) ~= uv0 then
+				print(uv3("[TRACE --- %s%s -- %s at %s]\n", uv2, uv0, uv4(slot4, slot5), slot6))
 			else
-				print(var_0_6("[TRACE --- %s%s -- %s]\n", var_0_12, var_0_11, var_0_14(arg_3_4, arg_3_5)))
+				print(uv3("[TRACE --- %s%s -- %s]\n", uv2, uv0, uv4(slot4, slot5)))
 			end
-		elseif arg_3_0 == "stop" then
-			local var_3_1 = var_0_4(arg_3_1)
-			local var_3_2 = var_3_1.link
-			local var_3_3 = var_3_1.linktype
+		elseif slot0 == "stop" then
+			slot6 = uv5(slot1)
+			slot7 = slot6.link
 
-			if var_3_3 == "interpreter" then
-				print(var_0_6("[TRACE %3s %s%s -- fallback to interpreter]\n", arg_3_1, var_0_12, var_0_11))
-			elseif var_3_3 == "stitch" then
-				print(var_0_6("[TRACE %3s %s%s %s %s]\n", arg_3_1, var_0_12, var_0_11, var_3_3, var_0_13(arg_3_2, arg_3_3)))
-			elseif var_3_2 == arg_3_1 or var_3_2 == 0 then
-				print(var_0_6("[TRACE %3s %s%s %s]\n", arg_3_1, var_0_12, var_0_11, var_3_3))
-			elseif var_3_3 == "root" then
-				print(var_0_6("[TRACE %3s %s%s -> %d]\n", arg_3_1, var_0_12, var_0_11, var_3_2))
+			if slot6.linktype == "interpreter" then
+				print(uv3("[TRACE %3s %s%s -- fallback to interpreter]\n", slot1, uv2, uv0))
+			elseif slot8 == "stitch" then
+				print(uv3("[TRACE %3s %s%s %s %s]\n", slot1, uv2, uv0, slot8, uv1(slot2, slot3)))
+			elseif slot7 == slot1 or slot7 == 0 then
+				print(uv3("[TRACE %3s %s%s %s]\n", slot1, uv2, uv0, slot8))
+			elseif slot8 == "root" then
+				print(uv3("[TRACE %3s %s%s -> %d]\n", slot1, uv2, uv0, slot7))
 			else
-				print(var_0_6("[TRACE %3s %s%s -> %d %s]\n", arg_3_1, var_0_12, var_0_11, var_3_2, var_3_3))
+				print(uv3("[TRACE %3s %s%s -> %d %s]\n", slot1, uv2, uv0, slot7, slot8))
 			end
 		else
-			print(var_0_6("[TRACE %s]\n", arg_3_0))
+			print(uv3("[TRACE %s]\n", slot0))
 		end
 
-		var_0_10:flush()
+		uv6:flush()
 	end
 end
 
-local function var_0_16()
-	if var_0_9 then
-		var_0_9 = false
-
-		var_0_0.attach(var_0_15)
-
-		if var_0_10 and var_0_10 ~= var_0_7 and var_0_10 ~= var_0_8 then
-			var_0_10:close()
-		end
-
-		var_0_10 = nil
-	end
-end
-
-local function var_0_17(arg_5_0)
-	if var_0_9 then
-		var_0_16()
+function slot17(slot0)
+	if uv0 then
+		uv1()
 	end
 
-	arg_5_0 = arg_5_0 or os.getenv("LUAJIT_VERBOSEFILE")
-
-	if arg_5_0 then
-		var_0_10 = arg_5_0 == "-" and var_0_7 or assert(io.open(arg_5_0, "w"))
+	if slot0 or os.getenv("LUAJIT_VERBOSEFILE") then
+		uv2 = slot0 == "-" and uv3 or assert(io.open(slot0, "w"))
 	else
-		var_0_10 = var_0_8
+		uv2 = uv4
 	end
 
-	var_0_0.attach(var_0_15, "trace")
+	uv5.attach(uv6, "trace")
 
-	var_0_9 = true
+	uv0 = true
 end
 
 return {
-	on = var_0_17,
-	off = var_0_16,
-	start = var_0_17
+	on = slot17,
+	off = function ()
+		if uv0 then
+			uv0 = false
+
+			uv1.attach(uv2)
+
+			if uv3 and uv3 ~= uv4 and uv3 ~= uv5 then
+				uv3:close()
+			end
+
+			uv3 = nil
+		end
+	end,
+	start = slot17
 }

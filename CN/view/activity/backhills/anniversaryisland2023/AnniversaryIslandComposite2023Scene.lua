@@ -1,623 +1,540 @@
-﻿local var_0_0 = class("AnniversaryIslandComposite2023Scene", import("view.base.BaseUI"))
+slot0 = class("AnniversaryIslandComposite2023Scene", import("view.base.BaseUI"))
+slot0.FilterAll = bit.bor(1, 2)
 
-var_0_0.FilterAll = bit.bor(1, 2)
+function slot0.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-function var_0_0.Ctor(arg_1_0)
-	var_0_0.super.Ctor(arg_1_0)
-
-	arg_1_0.loader = AutoLoader.New()
+	slot0.loader = AutoLoader.New()
 end
 
-function var_0_0.getUIName(arg_2_0)
+function slot0.getUIName(slot0)
 	return "AnniversaryIslandComposite2023UI"
 end
 
-local var_0_1 = "ui/AnniversaryIslandComposite2023UI_atlas"
-local var_0_2 = "ui/AtelierCommonUI_atlas"
+slot1 = "ui/AnniversaryIslandComposite2023UI_atlas"
+slot2 = "ui/AtelierCommonUI_atlas"
 
-function var_0_0.preload(arg_3_0, arg_3_1)
+function slot0.preload(slot0, slot1)
 	table.ParallelIpairsAsync({
-		var_0_1,
-		var_0_2
-	}, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_3_0.loader:LoadBundle(arg_4_1, arg_4_2)
-	end, arg_3_1)
+		uv0,
+		uv1
+	}, function (slot0, slot1, slot2)
+		uv0.loader:LoadBundle(slot1, slot2)
+	end, slot1)
 end
 
-function var_0_0.init(arg_5_0)
-	arg_5_0.layerFormulaList = arg_5_0._tf:Find("Panel/FormulaList")
-	arg_5_0.layerFormulaDetail = arg_5_0._tf:Find("Panel/FormulaDetail")
-	arg_5_0.top = arg_5_0._tf:Find("Top")
-	arg_5_0.formulaRect = arg_5_0.layerFormulaList:Find("ScrollView"):GetComponent("LScrollRect")
+function slot0.init(slot0)
+	slot0.layerFormulaList = slot0._tf:Find("Panel/FormulaList")
+	slot0.layerFormulaDetail = slot0._tf:Find("Panel/FormulaDetail")
+	slot0.top = slot0._tf:Find("Top")
+	slot0.formulaRect = slot0.layerFormulaList:Find("ScrollView"):GetComponent("LScrollRect")
 
-	local var_5_0 = arg_5_0.layerFormulaList:Find("Item")
+	setActive(slot0.layerFormulaList:Find("Item"), false)
 
-	setActive(var_5_0, false)
-
-	function arg_5_0.formulaRect.onUpdateItem(arg_6_0, arg_6_1)
-		arg_5_0:UpdateFormulaListItem(arg_6_0 + 1, arg_6_1)
+	function slot0.formulaRect.onUpdateItem(slot0, slot1)
+		uv0:UpdateFormulaListItem(slot0 + 1, slot1)
 	end
 
-	arg_5_0.formulaFilterButtons = _.map({
+	slot0.formulaFilterButtons = _.map({
 		1,
 		2
-	}, function(arg_7_0)
-		return arg_5_0.layerFormulaList:Find("Tabs"):GetChild(arg_7_0 - 1)
+	}, function (slot0)
+		return uv0.layerFormulaList:Find("Tabs"):GetChild(slot0 - 1)
 	end)
-	arg_5_0.lastEnv = nil
-	arg_5_0.env = {}
-	arg_5_0.listeners = {}
+	slot0.lastEnv = nil
+	slot0.env = {}
+	slot0.listeners = {}
 
-	setText(arg_5_0.layerFormulaList:Find("Empty"), i18n("workbench_tips5"))
-	setText(arg_5_0.layerFormulaList:Find("Tabs/Furniture/UnSelected/Text"), i18n("word_furniture"))
-	setText(arg_5_0.layerFormulaList:Find("Tabs/Furniture/Selected/Text"), i18n("word_furniture"))
-	setText(arg_5_0.layerFormulaList:Find("Tabs/Item/UnSelected/Text"), i18n("workbench_tips7"))
-	setText(arg_5_0.layerFormulaList:Find("Tabs/Item/Selected/Text"), i18n("workbench_tips7"))
-	setText(arg_5_0.layerFormulaList:Find("Filter/Text"), i18n("workbench_tips10"))
-	setText(arg_5_0.layerFormulaDetail:Find("Counters/Text"), i18n("workbench_tips8"))
-	setText(arg_5_0.layerFormulaDetail:Find("MaterialsBG/MaterialsTitle"), i18n("workbench_tips9"))
+	setText(slot0.layerFormulaList:Find("Empty"), i18n("workbench_tips5"))
+	setText(slot0.layerFormulaList:Find("Tabs/Furniture/UnSelected/Text"), i18n("word_furniture"))
+	setText(slot0.layerFormulaList:Find("Tabs/Furniture/Selected/Text"), i18n("word_furniture"))
+	setText(slot0.layerFormulaList:Find("Tabs/Item/UnSelected/Text"), i18n("workbench_tips7"))
+	setText(slot0.layerFormulaList:Find("Tabs/Item/Selected/Text"), i18n("workbench_tips7"))
+	setText(slot0.layerFormulaList:Find("Filter/Text"), i18n("workbench_tips10"))
+	setText(slot0.layerFormulaDetail:Find("Counters/Text"), i18n("workbench_tips8"))
+	setText(slot0.layerFormulaDetail:Find("MaterialsBG/MaterialsTitle"), i18n("workbench_tips9"))
 end
 
-function var_0_0.didEnter(arg_8_0)
-	arg_8_0.contextData.filterType = arg_8_0.contextData.filterType or var_0_0.FilterAll
+function slot0.didEnter(slot0)
+	slot0.contextData.filterType = slot0.contextData.filterType or uv0.FilterAll
 
-	table.Foreach(arg_8_0.formulaFilterButtons, function(arg_9_0, arg_9_1)
-		onButton(arg_8_0, arg_9_1, function()
-			local var_10_0 = bit.lshift(1, arg_9_0 - 1)
-
-			if arg_8_0.contextData.filterType == var_0_0.FilterAll then
-				arg_8_0.contextData.filterType = var_10_0
-			elseif arg_8_0.contextData.filterType == var_10_0 then
-				arg_8_0.contextData.filterType = var_0_0.FilterAll
+	table.Foreach(slot0.formulaFilterButtons, function (slot0, slot1)
+		onButton(uv0, slot1, function ()
+			if uv1.contextData.filterType == uv2.FilterAll then
+				uv1.contextData.filterType = bit.lshift(1, uv0 - 1)
+			elseif uv1.contextData.filterType == slot0 then
+				uv1.contextData.filterType = uv2.FilterAll
 			else
-				arg_8_0.contextData.filterType = var_10_0
+				uv1.contextData.filterType = slot0
 			end
 
-			arg_8_0:UpdateFilterButtons()
-			arg_8_0:FilterFormulas()
-			arg_8_0:UpdateView()
+			uv1:UpdateFilterButtons()
+			uv1:FilterFormulas()
+			uv1:UpdateView()
 		end, SFX_PANEL)
 	end)
 
-	arg_8_0.showOnlyComposite = PlayerPrefs.GetInt("workbench_show_composite_avaliable", 0) == 1
+	slot0.showOnlyComposite = PlayerPrefs.GetInt("workbench_show_composite_avaliable", 0) == 1
 
-	triggerToggle(arg_8_0.layerFormulaList:Find("Filter/Toggle"), arg_8_0.showOnlyComposite)
-	onToggle(arg_8_0, arg_8_0.layerFormulaList:Find("Filter/Toggle"), function(arg_11_0)
-		arg_8_0.showOnlyComposite = arg_11_0
+	triggerToggle(slot0.layerFormulaList:Find("Filter/Toggle"), slot0.showOnlyComposite)
+	onToggle(slot0, slot0.layerFormulaList:Find("Filter/Toggle"), function (slot0)
+		uv0.showOnlyComposite = slot0
 
-		PlayerPrefs.SetInt("workbench_show_composite_avaliable", arg_11_0 and 1 or 0)
+		PlayerPrefs.SetInt("workbench_show_composite_avaliable", slot0 and 1 or 0)
 		PlayerPrefs.Save()
-		arg_8_0:FilterFormulas()
-		arg_8_0:UpdateView()
+		uv0:FilterFormulas()
+		uv0:UpdateView()
 	end)
-	onButton(arg_8_0, arg_8_0._tf:Find("BG"), function()
-		arg_8_0:onBackPressed()
+	onButton(slot0, slot0._tf:Find("BG"), function ()
+		uv0:onBackPressed()
 	end)
-	onButton(arg_8_0, arg_8_0._tf:Find("Top/Back"), function()
-		arg_8_0:onBackPressed()
+	onButton(slot0, slot0._tf:Find("Top/Back"), function ()
+		uv0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(arg_8_0, arg_8_0._tf:Find("Top/Home"), function()
-		arg_8_0:quickExitFunc()
+	onButton(slot0, slot0._tf:Find("Top/Home"), function ()
+		uv0:quickExitFunc()
 	end, SFX_CANCEL)
-	onButton(arg_8_0, arg_8_0._tf:Find("Top/Help"), function()
+	onButton(slot0, slot0._tf:Find("Top/Help"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("workbench_help")
 		})
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0._tf:Find("Top/Upgrade"), function()
-		arg_8_0:emit(AnniversaryIslandComposite2023Mediator.OPEN_UPGRADE_PANEL)
+	onButton(slot0, slot0._tf:Find("Top/Upgrade"), function ()
+		uv0:emit(AnniversaryIslandComposite2023Mediator.OPEN_UPGRADE_PANEL)
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0._tf:Find("Top/StoreHouse"), function()
-		arg_8_0:emit(AnniversaryIslandComposite2023Mediator.OPEN_STOREHOUSE)
+	onButton(slot0, slot0._tf:Find("Top/StoreHouse"), function ()
+		uv0:emit(AnniversaryIslandComposite2023Mediator.OPEN_STOREHOUSE)
 	end, SFX_PANEL)
-	arg_8_0:BindEnv({
+	slot0:BindEnv({
 		"filterFormulas",
 		"formulas",
 		"bagAct",
 		"formulaId"
-	}, function()
-		arg_8_0:UpdateFormulaList()
+	}, function ()
+		uv0:UpdateFormulaList()
 	end)
-	arg_8_0:BindEnv({
+	slot0:BindEnv({
 		"formulaId",
 		"formulas",
 		"bagAct"
-	}, function(arg_19_0, arg_19_1)
-		local var_19_0 = arg_19_0[1]
-
-		arg_8_0:UpdateFormulaDetail(var_19_0)
+	}, function (slot0, slot1)
+		uv0:UpdateFormulaDetail(slot0[1])
 	end)
-	arg_8_0:BindEnv({
+	slot0:BindEnv({
 		"BuildingLv"
-	}, function(arg_20_0)
-		local var_20_0 = arg_20_0[1]
-
-		arg_8_0.loader:GetSpriteQuiet("ui/AnniversaryIslandComposite2023UI_atlas", "title_" .. var_20_0, arg_8_0.top:Find("Title/Number"))
+	}, function (slot0)
+		uv0.loader:GetSpriteQuiet("ui/AnniversaryIslandComposite2023UI_atlas", "title_" .. slot0[1], uv0.top:Find("Title/Number"))
 	end)
-	arg_8_0:BindEnv({
+	slot0:BindEnv({
 		"tip"
-	}, function(arg_21_0)
-		setActive(arg_8_0._tf:Find("Top/Upgrade/Tip"), arg_21_0[1])
+	}, function (slot0)
+		setActive(uv0._tf:Find("Top/Upgrade/Tip"), slot0[1])
 	end)
 
-	arg_8_0.env.formulaId = arg_8_0.contextData.formulaId
+	slot0.env.formulaId = slot0.contextData.formulaId
 
-	arg_8_0:UpdateFilterButtons()
-	arg_8_0:BuildActivityEnv()
-	arg_8_0:UpdateView()
+	slot0:UpdateFilterButtons()
+	slot0:BuildActivityEnv()
+	slot0:UpdateView()
 end
 
-function var_0_0.InitCounter(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
-	arg_22_0:DisposeCounter()
+function slot0.InitCounter(slot0, slot1, slot2, slot3, slot4)
+	slot0:DisposeCounter()
 
-	arg_22_2[2] = math.max(arg_22_2[1], arg_22_2[2])
+	slot2[2] = math.max(slot2[1], slot2[2])
+	slot5 = slot1
+	slot6 = slot0.layerFormulaDetail:Find("Counters")
 
-	local var_22_0 = arg_22_1
-	local var_22_1 = arg_22_0.layerFormulaDetail:Find("Counters")
-
-	assert(var_22_1)
-
-	local function var_22_2()
-		local var_23_0 = var_22_0
-
-		if var_22_0 == 0 then
-			var_23_0 = setColorStr(var_23_0, "#f9c461")
+	assert(slot6)
+	function ()
+		if uv0 == 0 then
+			slot0 = setColorStr(uv0, "#f9c461")
 		end
 
-		setText(var_22_1:Find("Number"), var_23_0)
-		arg_22_3(var_22_0)
-	end
+		setText(uv1:Find("Number"), slot0)
+		uv2(uv0)
+	end()
 
-	var_22_2()
+	slot8, slot0._rightRemoveTimer = pressPersistTrigger(slot6:Find("Plus"), 0.5, function (slot0)
+		uv0 = uv0 + 1
+		uv0 = math.clamp(uv0, uv1[1], uv1[2])
 
-	local var_22_3, var_22_4 = pressPersistTrigger(var_22_1:Find("Plus"), 0.5, function(arg_24_0)
-		local var_24_0 = var_22_0
-
-		var_22_0 = var_22_0 + 1
-		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
-
-		if var_24_0 == var_22_0 then
+		if uv0 == uv0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips3"))
-			arg_24_0()
+			slot0()
 
 			return
 		end
 
-		var_22_2()
+		uv2()
 	end, nil, true, true, 0.1, SFX_PANEL)
+	slot10, slot0._leftRemoveTimer = pressPersistTrigger(slot6:Find("Minus"), 0.5, function (slot0)
+		uv0 = uv0 - 1
+		uv0 = math.clamp(uv0, uv1[1], uv1[2])
 
-	arg_22_0._rightRemoveTimer = var_22_4
-
-	local var_22_5, var_22_6 = pressPersistTrigger(var_22_1:Find("Minus"), 0.5, function(arg_25_0)
-		local var_25_0 = var_22_0
-
-		var_22_0 = var_22_0 - 1
-		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
-
-		if var_25_0 == var_22_0 then
-			arg_25_0()
+		if uv0 == uv0 then
+			slot0()
 
 			return
 		end
 
-		var_22_2()
+		uv2()
 	end, nil, true, true, 0.1, SFX_PANEL)
 
-	arg_22_0._leftRemoveTimer = var_22_6
+	onButton(slot0, slot6:Find("Plus10"), function ()
+		uv0 = uv0 + 10
+		uv0 = math.clamp(uv0, uv1[1], uv1[2])
 
-	onButton(arg_22_0, var_22_1:Find("Plus10"), function()
-		local var_26_0 = var_22_0
-
-		var_22_0 = var_22_0 + 10
-		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
-
-		if var_26_0 == var_22_0 then
+		if uv0 == uv0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips3"))
 
 			return
 		end
 
-		var_22_2()
+		uv2()
 	end)
-	onButton(arg_22_0, var_22_1:Find("Minus10"), function()
-		var_22_0 = var_22_0 - 10
-		var_22_0 = math.clamp(var_22_0, arg_22_2[1], arg_22_2[2])
+	onButton(slot0, slot6:Find("Minus10"), function ()
+		uv0 = uv0 - 10
+		uv0 = math.clamp(uv0, uv1[1], uv1[2])
 
-		var_22_2()
+		uv2()
 	end)
-	onButton(arg_22_0, arg_22_0.layerFormulaDetail:Find("Composite"), function()
-		existCall(arg_22_4, var_22_0)
+	onButton(slot0, slot0.layerFormulaDetail:Find("Composite"), function ()
+		existCall(uv0, uv1)
 	end, SFX_PANEL)
 end
 
-function var_0_0.DisposeCounter(arg_29_0)
-	if arg_29_0._leftRemoveTimer then
-		arg_29_0._leftRemoveTimer()
-		arg_29_0._rightRemoveTimer()
+function slot0.DisposeCounter(slot0)
+	if slot0._leftRemoveTimer then
+		slot0._leftRemoveTimer()
+		slot0._rightRemoveTimer()
 
-		arg_29_0._leftRemoveTimer = nil
-		arg_29_0._rightRemoveTimer = nil
+		slot0._leftRemoveTimer = nil
+		slot0._rightRemoveTimer = nil
 	end
 end
 
-local var_0_3 = {
+slot3 = {
 	[DROP_TYPE_FURNITURE] = "word_furniture",
 	[DROP_TYPE_WORKBENCH_DROP] = "workbench_tips7"
 }
 
-function var_0_0.UpdateFormulaListItem(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = tf(arg_30_2)
-	local var_30_1 = arg_30_0.env.filterFormulas[arg_30_1]
-	local var_30_2 = var_30_1:GetProduction()
-	local var_30_3 = var_30_0:Find("BG/Icon")
+function slot0.UpdateFormulaListItem(slot0, slot1, slot2)
+	slot3 = tf(slot2)
+	slot4 = slot0.env.filterFormulas[slot1]
+	slot5 = slot4:GetProduction()
+	slot6 = slot3:Find("BG/Icon")
 
-	assert(var_30_3)
-	arg_30_0:UpdateActivityDrop(var_30_3, {
-		type = var_30_2[1],
-		id = var_30_2[2]
+	assert(slot6)
+	slot0:UpdateActivityDrop(slot6, {
+		type = slot5[1],
+		id = slot5[2]
 	}, true)
 
-	local var_30_4 = var_0_3[var_30_2[1]]
-	local var_30_5 = not var_30_1:IsUnlock()
+	slot7 = uv0[slot5[1]]
+	slot8 = not slot4:IsUnlock()
 
-	setActive(var_30_0:Find("Lock"), var_30_5)
-	setActive(var_30_0:Find("BG"), not var_30_5)
+	setActive(slot3:Find("Lock"), slot8)
+	setActive(slot3:Find("BG"), not slot8)
 
-	if var_30_5 then
-		setText(var_30_0:Find("Lock/Text"), var_30_1:GetLockDesc())
+	if slot8 then
+		setText(slot3:Find("Lock/Text"), slot4:GetLockDesc())
 	end
 
-	setText(var_30_0:Find("BG/Type"), i18n(var_30_4))
-	setScrollText(var_30_0:Find("BG/Name/Text"), var_30_1:GetName())
-	setActive(var_30_0:Find("Selected"), var_30_1:GetConfigID() == arg_30_0.env.formulaId)
+	setText(slot3:Find("BG/Type"), i18n(slot7))
+	setScrollText(slot3:Find("BG/Name/Text"), slot4:GetName())
+	setActive(slot3:Find("Selected"), slot4:GetConfigID() == slot0.env.formulaId)
+	setActive(slot3:Find("Completed"), not slot4:IsAvaliable())
 
-	local var_30_6 = var_30_1:IsAvaliable()
+	slot10 = nil
 
-	setActive(var_30_0:Find("Completed"), not var_30_6)
-
-	local var_30_7
-
-	if var_30_1:GetMaxLimit() > 0 then
-		local var_30_8 = var_30_1:GetMaxLimit() - var_30_1:GetUsedCount()
-
-		var_30_7 = (var_30_8 <= 0 and setColorStr(var_30_8, "#bb6754") or var_30_8) .. "/" .. var_30_1:GetMaxLimit()
-	else
-		var_30_7 = "∞"
-	end
-
-	setText(var_30_0:Find("BG/Count"), var_30_7)
-	onButton(arg_30_0, var_30_0, function()
-		if not var_30_6 then
+	setText(slot3:Find("BG/Count"), slot4:GetMaxLimit() > 0 and (slot4:GetMaxLimit() - slot4:GetUsedCount() <= 0 and setColorStr(slot11, "#bb6754") or slot11) .. "/" .. slot4:GetMaxLimit() or "∞")
+	onButton(slot0, slot3, function ()
+		if not uv0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips1"))
 
 			return
 		end
 
-		if var_30_5 then
-			local var_31_0 = var_30_1:GetLockLimit()
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips4", var_31_0 and var_31_0[3]))
+		if uv1 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("workbench_tips4", uv2:GetLockLimit() and slot0[3]))
 
 			return
 		end
 
-		arg_30_0.env.formulaId = var_30_1:GetConfigID()
+		uv3.env.formulaId = uv2:GetConfigID()
 
-		arg_30_0:UpdateView()
+		uv3:UpdateView()
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateFilterButtons(arg_32_0)
-	table.Foreach(arg_32_0.formulaFilterButtons, function(arg_33_0, arg_33_1)
-		local var_33_0 = arg_32_0.contextData.filterType ~= var_0_0.FilterAll
+function slot0.UpdateFilterButtons(slot0)
+	table.Foreach(slot0.formulaFilterButtons, function (slot0, slot1)
+		slot2 = uv0.contextData.filterType ~= uv1.FilterAll and bit.band(uv0.contextData.filterType, bit.lshift(1, slot0 - 1)) > 0
 
-		var_33_0 = var_33_0 and bit.band(arg_32_0.contextData.filterType, bit.lshift(1, arg_33_0 - 1)) > 0
-
-		setActive(arg_33_1:Find("Selected"), var_33_0)
-		setActive(arg_33_1:Find("UnSelected"), not var_33_0)
+		setActive(slot1:Find("Selected"), slot2)
+		setActive(slot1:Find("UnSelected"), not slot2)
 	end)
 end
 
-function var_0_0.BuildActivityEnv(arg_34_0)
-	arg_34_0.env.formulas = _.map(pg.activity_workbench_recipe.all, function(arg_35_0)
-		local var_35_0 = WorkBenchFormula.New({
-			configId = arg_35_0
+function slot0.BuildActivityEnv(slot0)
+	slot0.env.formulas = _.map(pg.activity_workbench_recipe.all, function (slot0)
+		slot1 = WorkBenchFormula.New({
+			configId = slot0
 		})
 
-		var_35_0:BuildFromActivity()
+		slot1:BuildFromActivity()
 
-		return var_35_0
+		return slot1
 	end)
 
-	if arg_34_0.env.formulaId then
-		local var_34_0 = _.detect(arg_34_0.env.formulas, function(arg_36_0)
-			return arg_36_0:GetConfigID() == arg_34_0.env.formulaId
-		end)
-
-		if not var_34_0 or not var_34_0:IsAvaliable() then
-			arg_34_0.env.formulaId = nil
-		end
+	if slot0.env.formulaId and (not _.detect(slot0.env.formulas, function (slot0)
+		return slot0:GetConfigID() == uv0.env.formulaId
+	end) or not slot1:IsAvaliable()) then
+		slot0.env.formulaId = nil
 	end
 
-	local var_34_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	slot0.env.bagAct = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
+	slot0.env.BuildingLv = slot2:GetBuildingLevel(table.keyof(AnniversaryIsland2023Scene.Buildings, "craft"))
+	slot0.env.tip = AnniversaryIsland2023Scene.UpdateBuildingTip(nil, slot2, table.keyof(AnniversaryIsland2023Scene.Buildings, "craft"))
 
-	arg_34_0.env.bagAct = var_34_1
-
-	local var_34_2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
-
-	arg_34_0.env.BuildingLv = var_34_2:GetBuildingLevel(table.keyof(AnniversaryIsland2023Scene.Buildings, "craft"))
-	arg_34_0.env.tip = AnniversaryIsland2023Scene.UpdateBuildingTip(nil, var_34_2, table.keyof(AnniversaryIsland2023Scene.Buildings, "craft"))
-
-	arg_34_0:FilterFormulas()
+	slot0:FilterFormulas()
 end
 
-function var_0_0.FilterFormulas(arg_37_0)
-	local var_37_0 = {}
-	local var_37_1 = arg_37_0.contextData.filterType
+function slot0.FilterFormulas(slot0)
+	slot1 = {}
+	slot2 = slot0.contextData.filterType
 
-	local function var_37_2(arg_38_0)
-		if var_37_1 == var_0_0.FilterAll then
-			return true
-		end
-
-		return switch(arg_38_0:GetProduction()[1], {
-			[DROP_TYPE_WORKBENCH_DROP] = function()
-				return bit.band(var_37_1, 1) > 0
+	for slot7, slot8 in ipairs(_.values(slot0.env.formulas)) do
+		if function (slot0)
+			if uv0 == uv1.FilterAll then
+				return true
 			end
-		}, function()
-			return bit.band(var_37_1, 2) > 0
-		end)
-	end
 
-	for iter_37_0, iter_37_1 in ipairs(_.values(arg_37_0.env.formulas)) do
-		if var_37_2(iter_37_1) and (not arg_37_0.showOnlyComposite or iter_37_1:IsUnlock() and iter_37_1:IsAvaliable() and _.all(iter_37_1:GetMaterials(), function(arg_41_0)
-			local var_41_0 = arg_41_0[1]
-			local var_41_1 = arg_41_0[2]
+			return switch(slot0:GetProduction()[1], {
+				[DROP_TYPE_WORKBENCH_DROP] = function ()
+					return bit.band(uv0, 1) > 0
+				end
+			}, function ()
+				return bit.band(uv0, 2) > 0
+			end)
+		end(slot8) and (not slot0.showOnlyComposite or slot8:IsUnlock() and slot8:IsAvaliable() and _.all(slot8:GetMaterials(), function (slot0)
+			slot1 = slot0[1]
 
-			return arg_41_0[3] <= arg_37_0.env.bagAct:getVitemNumber(var_41_1)
+			return slot0[3] <= uv0.env.bagAct:getVitemNumber(slot0[2])
 		end)) then
-			table.insert(var_37_0, iter_37_1)
+			table.insert(slot1, slot8)
 		end
 	end
 
-	local var_37_3 = CompareFuncs({
-		function(arg_42_0)
-			return arg_42_0:IsAvaliable() and 0 or 1
+	table.sort(slot1, CompareFuncs({
+		function (slot0)
+			return slot0:IsAvaliable() and 0 or 1
 		end,
-		function(arg_43_0)
-			return arg_43_0:IsUnlock() and 0 or 1
+		function (slot0)
+			return slot0:IsUnlock() and 0 or 1
 		end,
-		function(arg_44_0)
-			return arg_44_0:GetConfigID()
+		function (slot0)
+			return slot0:GetConfigID()
 		end
-	})
+	}))
 
-	table.sort(var_37_0, var_37_3)
-
-	arg_37_0.env.filterFormulas = var_37_0
+	slot0.env.filterFormulas = slot1
 end
 
-function var_0_0.UpdateFormulaList(arg_45_0)
-	local var_45_0 = #arg_45_0.env.filterFormulas == 0
+function slot0.UpdateFormulaList(slot0)
+	slot1 = #slot0.env.filterFormulas == 0
 
-	setActive(arg_45_0.layerFormulaList:Find("Empty"), var_45_0)
-	setActive(arg_45_0.layerFormulaList:Find("ScrollView"), not var_45_0)
-	arg_45_0.formulaRect:SetTotalCount(#arg_45_0.env.filterFormulas)
+	setActive(slot0.layerFormulaList:Find("Empty"), slot1)
+	setActive(slot0.layerFormulaList:Find("ScrollView"), not slot1)
+	slot0.formulaRect:SetTotalCount(#slot0.env.filterFormulas)
 end
 
-function var_0_0.UpdateFormulaDetail(arg_46_0, arg_46_1)
-	arg_46_0.contextData.formulaId = arg_46_1
+function slot0.UpdateFormulaDetail(slot0, slot1)
+	slot0.contextData.formulaId = slot1
 
-	setActive(arg_46_0.layerFormulaDetail, arg_46_1)
+	setActive(slot0.layerFormulaDetail, slot1)
 
-	if not arg_46_1 then
+	if not slot1 then
 		return
 	end
 
-	local var_46_0 = _.detect(arg_46_0.env.formulas, function(arg_47_0)
-		return arg_47_0:GetConfigID() == arg_46_1
+	slot2 = _.detect(slot0.env.formulas, function (slot0)
+		return slot0:GetConfigID() == uv0
 	end)
 
-	assert(var_46_0)
+	assert(slot2)
 
-	local var_46_1 = var_46_0:GetProduction()
-	local var_46_2 = var_46_0:GetMaterials()
-	local var_46_3 = 100
+	slot3 = slot2:GetProduction()
 
-	;(function()
-		local var_48_0 = {
-			type = var_46_1[1],
-			id = var_46_1[2],
-			count = var_46_1[3]
+	function ()
+		slot0 = {
+			type = uv0[1],
+			id = uv0[2],
+			count = uv0[3]
 		}
-		local var_48_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
-		local var_48_2 = var_46_0:GetMaxLimit()
 
-		if var_48_2 > 0 then
-			var_46_3 = var_48_2 - var_48_1:GetFormulaUseCount(arg_46_1)
+		if uv1:GetMaxLimit() > 0 then
+			uv3 = slot2 - getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH):GetFormulaUseCount(uv2)
 		end
 
-		local var_48_3 = arg_46_0.layerFormulaDetail:Find("Icon")
+		slot3 = uv4.layerFormulaDetail:Find("Icon")
 
-		assert(var_48_3)
-		arg_46_0:UpdateActivityDrop(var_48_3, var_48_0)
-		onButton(arg_46_0, var_48_3, function()
-			if var_48_0.type == DROP_TYPE_WORKBENCH_DROP then
-				arg_46_0:emit(WorkBenchItemDetailMediator.SHOW_DETAIL, WorkBenchItem.New({
-					configId = var_48_0.id,
-					count = var_48_0.count
+		assert(slot3)
+		uv4:UpdateActivityDrop(slot3, slot0)
+		onButton(uv4, slot3, function ()
+			if uv0.type == DROP_TYPE_WORKBENCH_DROP then
+				uv1:emit(WorkBenchItemDetailMediator.SHOW_DETAIL, WorkBenchItem.New({
+					configId = uv0.id,
+					count = uv0.count
 				}))
 			else
-				arg_46_0:emit(BaseUI.ON_DROP, var_48_0)
+				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end)
-		setText(arg_46_0.layerFormulaDetail:Find("Name"), var_48_0:getConfig("name"))
-	end)()
+		setText(uv4.layerFormulaDetail:Find("Name"), slot0:getConfig("name"))
+	end()
 
-	local var_46_4 = var_46_3
-	local var_46_5 = arg_46_0.env.bagAct
+	slot7 = 100
+	slot8 = slot0.env.bagAct
 
-	UIItemList.StaticAlign(arg_46_0.layerFormulaDetail:Find("Materials"), arg_46_0.layerFormulaDetail:Find("Materials/Item"), #var_46_2, function(arg_50_0, arg_50_1, arg_50_2)
-		if arg_50_0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(slot0.layerFormulaDetail:Find("Materials"), slot0.layerFormulaDetail:Find("Materials/Item"), #slot2:GetMaterials(), function (slot0, slot1, slot2)
+		if slot0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var_50_0 = var_46_2[arg_50_1 + 1]
-		local var_50_1 = {
-			type = var_50_0[1],
-			id = var_50_0[2],
-			count = var_50_0[3]
-		}
+		slot3 = uv0[slot1 + 1]
 
-		arg_46_0:UpdateActivityDrop(arg_50_2:Find("Icon"), var_50_1)
-		onButton(arg_46_0, arg_50_2:Find("Icon"), function()
-			if var_50_1.type == DROP_TYPE_WORKBENCH_DROP then
-				arg_46_0:emit(WorkBenchItemDetailMediator.SHOW_DETAIL, WorkBenchItem.New({
-					configId = var_50_1.id,
-					count = var_50_1.count
+		uv1:UpdateActivityDrop(slot2:Find("Icon"), {
+			type = slot3[1],
+			id = slot3[2],
+			count = slot3[3]
+		})
+		onButton(uv1, slot2:Find("Icon"), function ()
+			if uv0.type == DROP_TYPE_WORKBENCH_DROP then
+				uv1:emit(WorkBenchItemDetailMediator.SHOW_DETAIL, WorkBenchItem.New({
+					configId = uv0.id,
+					count = uv0.count
 				}))
 			else
-				arg_46_0:emit(BaseUI.ON_DROP, var_50_1)
+				uv1:emit(BaseUI.ON_DROP, uv0)
 			end
 		end)
 
-		local var_50_2 = var_50_0[2]
-		local var_50_3 = var_50_0[3]
-		local var_50_4 = var_46_5:getVitemNumber(var_50_2)
-
-		if var_50_3 > 0 then
-			var_46_4 = math.min(var_46_4, math.floor(var_50_4 / var_50_3))
+		if slot3[3] > 0 then
+			uv3 = math.min(uv3, math.floor(uv2:getVitemNumber(slot3[2]) / slot6))
 		end
 	end)
 
-	local function var_46_6(arg_52_0)
-		UIItemList.StaticAlign(arg_46_0.layerFormulaDetail:Find("Materials"), arg_46_0.layerFormulaDetail:Find("Materials/Item"), #var_46_2, function(arg_53_0, arg_53_1, arg_53_2)
-			if arg_53_0 ~= UIItemList.EventUpdate then
+	function slot9(slot0)
+		UIItemList.StaticAlign(uv0.layerFormulaDetail:Find("Materials"), uv0.layerFormulaDetail:Find("Materials/Item"), #uv1, function (slot0, slot1, slot2)
+			if slot0 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			local var_53_0 = var_46_2[arg_53_1 + 1]
-			local var_53_1 = var_53_0[2]
-			local var_53_2 = var_53_0[3]
-			local var_53_3 = var_46_5:getVitemNumber(var_53_1)
+			slot3 = uv0[slot1 + 1]
+			slot6 = uv1:getVitemNumber(slot3[2])
+			uv2 = math.max(uv2, 1)
 
-			arg_52_0 = math.max(arg_52_0, 1)
-
-			local var_53_4 = var_53_2 * arg_52_0
-			local var_53_5 = setColorStr(var_53_3, var_53_3 < var_53_4 and "#bb6754" or "#6b5a48")
-
-			setText(arg_53_2:Find("Text"), var_53_5 .. "/" .. var_53_4)
+			setText(slot2:Find("Text"), setColorStr(slot6, slot6 < slot3[3] * uv2 and "#bb6754" or "#6b5a48") .. "/" .. slot7)
 		end)
 	end
 
-	local var_46_7 = math.min(1, var_46_4)
+	slot10 = math.min(1, slot7)
 
-	arg_46_0:InitCounter(var_46_7, {
+	slot0:InitCounter(slot10, {
 		0,
-		var_46_4
-	}, var_46_6, function(arg_54_0)
-		arg_46_0:emit(GAME.WORKBENCH_COMPOSITE, arg_46_1, arg_54_0)
+		slot7
+	}, slot9, function (slot0)
+		uv0:emit(GAME.WORKBENCH_COMPOSITE, uv1, slot0)
 	end)
-	var_46_6(var_46_7)
+	slot9(slot10)
 end
 
-function var_0_0.BindEnv(arg_55_0, arg_55_1, arg_55_2)
-	table.insert(arg_55_0.listeners, {
-		keys = arg_55_1,
-		func = arg_55_2
+function slot0.BindEnv(slot0, slot1, slot2)
+	table.insert(slot0.listeners, {
+		keys = slot1,
+		func = slot2
 	})
 end
 
-function var_0_0.RefreshData(arg_56_0)
-	arg_56_0.lastEnv = arg_56_0.lastEnv or {}
+function slot0.RefreshData(slot0)
+	slot0.lastEnv = slot0.lastEnv or {}
+	slot1 = {}
+	slot2 = nil
 
-	local var_56_0 = {}
-	local var_56_1
+	for slot7, slot8 in pairs(slot0.env) do
+		if slot8 ~= slot0.lastEnv[slot7] then
+			function (slot0, slot1)
+				if uv0[slot0] then
+					return
+				end
 
-	local function var_56_2(arg_57_0, arg_57_1)
-		if var_56_0[arg_57_0] then
-			return
-		end
+				uv0[slot0] = slot1
+				uv1 = uv1 or {}
 
-		var_56_0[arg_57_0] = arg_57_1
-		var_56_1 = var_56_1 or {}
-
-		local var_57_0 = _.select(arg_56_0.listeners, function(arg_58_0)
-			return table.contains(arg_58_0.keys, arg_57_0)
-		end)
-
-		_.each(var_57_0, function(arg_59_0)
-			var_56_1[arg_59_0] = true
-		end)
-	end
-
-	for iter_56_0, iter_56_1 in pairs(arg_56_0.env) do
-		if iter_56_1 ~= arg_56_0.lastEnv[iter_56_0] then
-			var_56_2(iter_56_0, iter_56_1)
+				_.each(_.select(uv2.listeners, function (slot0)
+					return table.contains(slot0.keys, uv0)
+				end), function (slot0)
+					uv0[slot0] = true
+				end)
+			end(slot7, slot8)
 		end
 	end
 
-	for iter_56_2, iter_56_3 in pairs(arg_56_0.lastEnv) do
-		local var_56_3 = arg_56_0.env[iter_56_2]
-
-		if iter_56_3 ~= var_56_3 then
-			var_56_2(iter_56_2, var_56_3)
+	for slot7, slot8 in pairs(slot0.lastEnv) do
+		if slot8 ~= slot0.env[slot7] then
+			slot3(slot7, slot9)
 		end
 	end
 
-	if var_56_1 then
-		table.Foreach(var_56_1, function(arg_60_0)
-			local var_60_0 = table.map(arg_60_0.keys, function(arg_61_0)
-				return arg_56_0.env[arg_61_0]
-			end)
-			local var_60_1 = table.map(arg_60_0.keys, function(arg_62_0)
-				return arg_56_0.lastEnv[arg_62_0]
-			end)
-
-			arg_60_0.func(var_60_0, var_60_1)
+	if slot2 then
+		table.Foreach(slot2, function (slot0)
+			slot0.func(table.map(slot0.keys, function (slot0)
+				return uv0.env[slot0]
+			end), table.map(slot0.keys, function (slot0)
+				return uv0.lastEnv[slot0]
+			end))
 		end)
 	end
 
-	arg_56_0.lastEnv = table.shallowCopy(arg_56_0.env)
+	slot0.lastEnv = table.shallowCopy(slot0.env)
 end
 
-function var_0_0.UpdateView(arg_63_0)
-	arg_63_0:RefreshData()
+function slot0.UpdateView(slot0)
+	slot0:RefreshData()
 	AnniversaryIsland2023Scene.PlayStory()
 end
 
-function var_0_0.OnReceiveFormualRequest(arg_64_0, arg_64_1)
-	arg_64_0.env.formulaId = arg_64_1
+function slot0.OnReceiveFormualRequest(slot0, slot1)
+	slot0.env.formulaId = slot1
 
-	arg_64_0:UpdateView()
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateActivityDrop(arg_65_0, arg_65_1, arg_65_2, arg_65_3)
-	updateDrop(arg_65_1, arg_65_2)
-	SetCompomentEnabled(arg_65_1:Find("icon_bg"), typeof(Image), false)
-	setActive(arg_65_1:Find("bg"), false)
-	setActive(arg_65_1:Find("icon_bg/frame"), false)
-	setActive(arg_65_1:Find("icon_bg/stars"), false)
+function slot0.UpdateActivityDrop(slot0, slot1, slot2, slot3)
+	updateDrop(slot1, slot2)
+	SetCompomentEnabled(slot1:Find("icon_bg"), typeof(Image), false)
+	setActive(slot1:Find("bg"), false)
+	setActive(slot1:Find("icon_bg/frame"), false)
+	setActive(slot1:Find("icon_bg/stars"), false)
 
-	local var_65_0 = arg_65_2:getConfig("rarity")
-
-	if arg_65_2.type == DROP_TYPE_EQUIP or arg_65_2.type == DROP_TYPE_EQUIPMENT_SKIN then
-		var_65_0 = var_65_0 - 1
+	if slot2.type == DROP_TYPE_EQUIP or slot2.type == DROP_TYPE_EQUIPMENT_SKIN then
+		slot4 = slot2:getConfig("rarity") - 1
 	end
 
-	local var_65_1 = "icon_frame_" .. var_65_0
-
-	if arg_65_3 then
-		var_65_1 = var_65_1 .. "_small"
+	if slot3 then
+		slot5 = "icon_frame_" .. slot4 .. "_small"
 	end
 
-	arg_65_0.loader:GetSpriteQuiet(var_0_2, var_65_1, arg_65_1)
+	slot0.loader:GetSpriteQuiet(uv0, slot5, slot1)
 end
 
-function var_0_0.willExit(arg_66_0)
-	arg_66_0:DisposeCounter()
-	arg_66_0.loader:Clear()
+function slot0.willExit(slot0)
+	slot0:DisposeCounter()
+	slot0.loader:Clear()
 end
 
-return var_0_0
+return slot0

@@ -1,136 +1,118 @@
-﻿local var_0_0 = class("IslandBuildPage")
+slot0 = class("IslandBuildPage")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.buildPanel = arg_1_1
-	arg_1_0.activityId = ActivityConst.ISLAND_TASK_ID
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.buildPanel = slot1
+	slot0.activityId = ActivityConst.ISLAND_TASK_ID
 
-	local var_1_0 = pg.activity_template[arg_1_0.activityId].config_client
-
-	if var_1_0.pt_id and var_1_0.pt_id > 0 then
-		arg_1_0.ptId = var_1_0.pt_id
-		arg_1_0.ptName = pg.player_resource[arg_1_0.ptId].name
+	if pg.activity_template[slot0.activityId].config_client.pt_id and slot3.pt_id > 0 then
+		slot0.ptId = slot3.pt_id
+		slot0.ptName = pg.player_resource[slot0.ptId].name
 	end
 
-	arg_1_0.buffs = var_1_0.buff
-	arg_1_0.maxNum = arg_1_0.buffs[#arg_1_0.buffs].pt[1]
+	slot0.buffs = slot3.buff
+	slot0.maxNum = slot0.buffs[#slot0.buffs].pt[1]
 
-	setActive(arg_1_0.buildPanel, false)
+	setActive(slot0.buildPanel, false)
 
-	arg_1_0.pointProgressText = findTF(arg_1_0.buildPanel, "progressContent/progress")
-	arg_1_0.pointProgressSlider = findTF(arg_1_0.buildPanel, "slider")
-	arg_1_0.pointStarTpl = findTF(arg_1_0.buildPanel, "levelStar/starTpl")
-	arg_1_0.pointAdd = findTF(arg_1_0.buildPanel, "add")
-	arg_1_0.pointLevelStar = findTF(arg_1_0.buildPanel, "levelStar")
-	arg_1_0.pointStarTfs = {}
+	slot0.pointProgressText = findTF(slot0.buildPanel, "progressContent/progress")
+	slot0.pointProgressSlider = findTF(slot0.buildPanel, "slider")
+	slot0.pointStarTpl = findTF(slot0.buildPanel, "levelStar/starTpl")
+	slot0.pointAdd = findTF(slot0.buildPanel, "add")
+	slot0.pointLevelStar = findTF(slot0.buildPanel, "levelStar")
+	slot0.pointStarTfs = {}
 
-	local var_1_1 = arg_1_0.pointLevelStar.sizeDelta.x
+	for slot8 = 1, #slot0.buffs do
+		slot9 = tf(Instantiate(slot0.pointStarTpl))
 
-	for iter_1_0 = 1, #arg_1_0.buffs do
-		local var_1_2 = tf(Instantiate(arg_1_0.pointStarTpl))
+		SetParent(slot9, slot0.pointLevelStar)
+		setActive(slot9, true)
+		setText(findTF(slot9, "bg/text"), slot8)
+		setImageSprite(findTF(slot9, "img"), LoadSprite(IslandTaskScene.ui_atlas, "img_level_" .. slot8))
 
-		SetParent(var_1_2, arg_1_0.pointLevelStar)
-		setActive(var_1_2, true)
-		setText(findTF(var_1_2, "bg/text"), iter_1_0)
-		setImageSprite(findTF(var_1_2, "img"), LoadSprite(IslandTaskScene.ui_atlas, "img_level_" .. iter_1_0))
+		slot9.anchoredPosition = Vector3(slot0.buffs[slot8].pt[1] / slot0.maxNum * slot0.pointLevelStar.sizeDelta.x, 0, 0)
 
-		local var_1_3 = arg_1_0.buffs[iter_1_0].pt[1]
+		table.insert(slot0.pointStarTfs, slot9)
 
-		var_1_2.anchoredPosition = Vector3(var_1_3 / arg_1_0.maxNum * var_1_1, 0, 0)
-
-		table.insert(arg_1_0.pointStarTfs, var_1_2)
-
-		if iter_1_0 == 1 then
-			setActive(var_1_2, false)
+		if slot8 == 1 then
+			setActive(slot9, false)
 		end
 	end
 
-	setText(findTF(arg_1_0.buildPanel, "levelNum/text"), i18n(IslandTaskScene.island_build_level))
-	setText(findTF(arg_1_0.buildPanel, "levelBuff/text"), i18n(IslandTaskScene.island_build_level))
-	setText(findTF(arg_1_0.buildPanel, "buildDesc"), i18n(IslandTaskScene.island_build_desc))
-	arg_1_0:updatePoint()
+	setText(findTF(slot0.buildPanel, "levelNum/text"), i18n(IslandTaskScene.island_build_level))
+	setText(findTF(slot0.buildPanel, "levelBuff/text"), i18n(IslandTaskScene.island_build_level))
+	setText(findTF(slot0.buildPanel, "buildDesc"), i18n(IslandTaskScene.island_build_desc))
+	slot0:updatePoint()
 end
 
-function var_0_0.updatePoint(arg_2_0)
-	local var_2_0 = 0
-	local var_2_1 = 1
+function slot0.updatePoint(slot0)
+	slot1 = 0
+	slot2 = 1
 
-	if arg_2_0.ptId then
-		var_2_0 = getProxy(PlayerProxy):getData()[arg_2_0.ptName] or 0
-	else
-		var_2_0 = arg_2_0:getNum()
+	if slot0.maxNum < (slot0.ptId and (getProxy(PlayerProxy):getData()[slot0.ptName] or 0) or slot0:getNum()) then
+		slot1 = slot0.maxNum
 	end
 
-	if var_2_0 > arg_2_0.maxNum then
-		var_2_0 = arg_2_0.maxNum
-	end
+	slot2 = slot0:getBuildLv(slot1)
 
-	local var_2_2 = arg_2_0:getBuildLv(var_2_0)
+	for slot6 = 1, #slot0.pointStarTfs do
+		slot7 = slot0.pointStarTfs[slot6]
 
-	for iter_2_0 = 1, #arg_2_0.pointStarTfs do
-		local var_2_3 = arg_2_0.pointStarTfs[iter_2_0]
+		if slot6 <= slot2 then
+			setActive(findTF(slot7, "img"), true)
+			setActive(findTF(slot7, "lock"), false)
 
-		if iter_2_0 <= var_2_2 then
-			setActive(findTF(var_2_3, "img"), true)
-			setActive(findTF(var_2_3, "lock"), false)
-
-			GetComponent(var_2_3, typeof(CanvasGroup)).alpha = 1
+			GetComponent(slot7, typeof(CanvasGroup)).alpha = 1
 		else
-			setActive(findTF(var_2_3, "img"), false)
-			setActive(findTF(var_2_3, "lock"), true)
+			setActive(findTF(slot7, "img"), false)
+			setActive(findTF(slot7, "lock"), true)
 
-			GetComponent(var_2_3, typeof(CanvasGroup)).alpha = 0.5
+			GetComponent(slot7, typeof(CanvasGroup)).alpha = 0.5
 		end
 	end
 
-	local var_2_4 = arg_2_0.buffs[var_2_2].benefit
-
-	for iter_2_1 = 1, #var_2_4 do
-		local var_2_5 = var_2_4[iter_2_1]
-		local var_2_6 = pg.benefit_buff_template[var_2_5].desc
-		local var_2_7 = findTF(arg_2_0.buildPanel, "add/" .. iter_2_1)
+	for slot7 = 1, #slot0.buffs[slot2].benefit do
+		slot10 = findTF(slot0.buildPanel, "add/" .. slot7)
 
 		if PLATFORM_CODE == PLATFORM_JP then
-			findTF(var_2_7, "img").sizeDelta = Vector2(450, 70)
+			findTF(slot10, "img").sizeDelta = Vector2(450, 70)
 
-			setText(findTF(var_2_7, "text_jp"), var_2_6)
+			setText(findTF(slot10, "text_jp"), pg.benefit_buff_template[slot3[slot7]].desc)
 		else
-			setText(findTF(var_2_7, "text"), var_2_6)
+			setText(findTF(slot10, "text"), slot9)
 		end
 	end
 
-	setSlider(arg_2_0.pointProgressSlider, 0, arg_2_0.maxNum, var_2_0)
-	setText(findTF(arg_2_0.buildPanel, "levelNum/num"), "Lv." .. var_2_2)
-	setText(findTF(arg_2_0.buildPanel, "levelBuff/num"), "Lv." .. var_2_2)
-	arg_2_0:setProgressText()
+	setSlider(slot0.pointProgressSlider, 0, slot0.maxNum, slot1)
+	setText(findTF(slot0.buildPanel, "levelNum/num"), "Lv." .. slot2)
+	setText(findTF(slot0.buildPanel, "levelBuff/num"), "Lv." .. slot2)
+	slot0:setProgressText()
 end
 
-function var_0_0.getBuildLv(arg_3_0, arg_3_1)
-	local var_3_0 = 1
+function slot0.getBuildLv(slot0, slot1)
+	slot2 = 1
 
-	for iter_3_0 = #arg_3_0.buffs, 1, -1 do
-		var_3_0 = arg_3_1 >= arg_3_0.buffs[iter_3_0].pt[1] and var_3_0 < iter_3_0 and iter_3_0 or var_3_0
+	for slot6 = #slot0.buffs, 1, -1 do
+		if slot0.buffs[slot6].pt[1] <= slot1 and slot2 < slot6 then
+			slot2 = slot6 or slot2
+		end
 	end
 
-	return var_3_0
+	return slot2
 end
 
-function var_0_0.setProgressText(arg_4_0)
-	local var_4_0 = arg_4_0:getNum()
-	local var_4_1 = arg_4_0.maxNum
-
-	setText(arg_4_0.pointProgressText, setColorStr(var_4_0, "#C2695B") .. setColorStr("/" .. var_4_1, "#9D6B59"))
+function slot0.setProgressText(slot0)
+	setText(slot0.pointProgressText, setColorStr(slot0:getNum(), "#C2695B") .. setColorStr("/" .. slot0.maxNum, "#9D6B59"))
 end
 
-function var_0_0.getNum(arg_5_0)
+function slot0.getNum(slot0)
 	return getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetBuildingLevelSum()
 end
 
-function var_0_0.setActive(arg_6_0, arg_6_1)
-	setActive(arg_6_0.buildPanel, arg_6_1)
+function slot0.setActive(slot0, slot1)
+	setActive(slot0.buildPanel, slot1)
 end
 
-function var_0_0.dispose(arg_7_0)
-	return
+function slot0.dispose(slot0)
 end
 
-return var_0_0
+return slot0

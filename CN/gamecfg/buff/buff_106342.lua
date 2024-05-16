@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach",
-				"onUpdate"
-			},
-			arg_list = {
-				quota = 2,
-				time = 0.8,
-				skill_id = 106331
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -183,5 +169,19 @@
 	stack = 1,
 	id = 106342,
 	icon = 106340,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach",
+				"onUpdate"
+			},
+			arg_list = {
+				quota = 2,
+				time = 0.8,
+				skill_id = 106331
+			}
+		}
+	}
 }

@@ -1,29 +1,27 @@
-﻿local var_0_0 = class("ServerNotice", import(".Notice"))
+slot0 = class("ServerNotice", import(".Notice"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.version = arg_1_1.version
-	arg_1_0.btnTitle = arg_1_1.btn_title
-	arg_1_0.titleImage = arg_1_1.title_image
-	arg_1_0.timeDes = arg_1_1.time_desc
-	arg_1_0.type = arg_1_1.tag_type
-	arg_1_0.icon = arg_1_1.icon
-	arg_1_0.track = arg_1_1.track
+	slot0.version = slot1.version
+	slot0.btnTitle = slot1.btn_title
+	slot0.titleImage = slot1.title_image
+	slot0.timeDes = slot1.time_desc
+	slot0.type = slot1.tag_type
+	slot0.icon = slot1.icon
+	slot0.track = slot1.track
 
-	local var_1_0 = string.split(arg_1_0.title, "&")
-
-	if #var_1_0 > 1 then
-		arg_1_0.title = var_1_0[1]
-		arg_1_0.pageTitle = var_1_0[2]
+	if #string.split(slot0.title, "&") > 1 then
+		slot0.title = slot2[1]
+		slot0.pageTitle = slot2[2]
 	else
-		arg_1_0.title = var_1_0[1]
-		arg_1_0.pageTitle = var_1_0[1]
+		slot0.title = slot2[1]
+		slot0.pageTitle = slot2[1]
 	end
 end
 
-function var_0_0.prefKey(arg_2_0)
-	return "ServerNotice" .. arg_2_0.id
+function slot0.prefKey(slot0)
+	return "ServerNotice" .. slot0.id
 end
 
-return var_0_0
+return slot0

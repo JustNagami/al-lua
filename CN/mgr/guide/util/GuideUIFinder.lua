@@ -1,82 +1,74 @@
-﻿local var_0_0 = class("GuideUIFinder")
+slot0 = class("GuideUIFinder")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.queue = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.queue = {}
 end
 
-function var_0_0.Search(arg_2_0, arg_2_1)
-	table.insert(arg_2_0.queue, arg_2_1)
+function slot0.Search(slot0, slot1)
+	table.insert(slot0.queue, slot1)
 
-	if #arg_2_0.queue == 1 then
-		arg_2_0:Start()
+	if #slot0.queue == 1 then
+		slot0:Start()
 	end
 end
 
-function var_0_0.Start(arg_3_0)
-	if #arg_3_0.queue <= 0 then
+function slot0.Start(slot0)
+	if #slot0.queue <= 0 then
 		return
 	end
 
-	local var_3_0 = arg_3_0.queue[1]
+	slot0:Clear()
 
-	arg_3_0:Clear()
-
-	local function var_3_1()
-		table.remove(arg_3_0.queue, 1)
-		arg_3_0:Start()
+	function slot2()
+		table.remove(uv0.queue, 1)
+		uv0:Start()
 	end
 
-	if (var_3_0.delay or 0) > 0 then
-		arg_3_0.delayTimer = Timer.New(function()
-			arg_3_0:AddSearchTimer(var_3_0, var_3_1)
-		end, var_3_0.delay)
+	if (slot0.queue[1].delay or 0) > 0 then
+		slot0.delayTimer = Timer.New(function ()
+			uv0:AddSearchTimer(uv1, uv2)
+		end, slot1.delay)
 
-		arg_3_0.delayTimer:Start()
+		slot0.delayTimer:Start()
 	else
-		arg_3_0:AddSearchTimer(var_3_0, var_3_1)
+		slot0:AddSearchTimer(slot1, slot2)
 	end
 end
 
-local function var_0_1(arg_6_0, arg_6_1)
-	local var_6_0 = {}
+function slot1(slot0, slot1)
+	slot2 = {}
 
-	for iter_6_0 = 0, arg_6_0.childCount - 1 do
-		local var_6_1 = arg_6_0:GetChild(iter_6_0)
-		local var_6_2 = var_6_1:GetComponent(typeof(LayoutElement))
+	for slot6 = 0, slot0.childCount - 1 do
+		slot7 = slot0:GetChild(slot6)
+		slot8 = slot7:GetComponent(typeof(LayoutElement))
 
-		if not IsNil(var_6_1) and go(var_6_1).activeInHierarchy and (not var_6_2 or not var_6_2.ignoreLayout) then
-			table.insert(var_6_0, var_6_1)
+		if not IsNil(slot7) and go(slot7).activeInHierarchy and (not slot8 or not slot8.ignoreLayout) then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return arg_6_1 and var_6_0[arg_6_1 + 1] or var_6_0[#var_6_0]
+	return slot1 and slot2[slot1 + 1] or slot2[#slot2]
 end
 
-local function var_0_2(arg_7_0)
-	local var_7_0 = GameObject.Find(arg_7_0.path)
-
-	if var_7_0 and arg_7_0.childIndex and arg_7_0.childIndex == "#" then
-		return var_0_1(var_7_0.transform)
-	elseif var_7_0 and arg_7_0.childIndex and arg_7_0.childIndex == -999 then
-		return var_0_1(var_7_0.transform, 0)
-	elseif var_7_0 and arg_7_0.childIndex and arg_7_0.childIndex >= 0 then
-		return var_0_1(var_7_0.transform, arg_7_0.childIndex)
-	elseif var_7_0 then
-		return var_7_0.transform
+function slot2(slot0)
+	if GameObject.Find(slot0.path) and slot0.childIndex and slot0.childIndex == "#" then
+		return uv0(slot1.transform)
+	elseif slot1 and slot0.childIndex and slot0.childIndex == -999 then
+		return uv0(slot1.transform, 0)
+	elseif slot1 and slot0.childIndex and slot0.childIndex >= 0 then
+		return uv0(slot1.transform, slot0.childIndex)
+	elseif slot1 then
+		return slot1.transform
 	end
 
 	return nil
 end
 
-local function var_0_3(arg_8_0)
-	local var_8_0 = var_0_2(arg_8_0)
-
-	if var_8_0 ~= nil then
-		for iter_8_0, iter_8_1 in ipairs(arg_8_0.conditionData) do
-			local var_8_1 = var_8_0:Find(iter_8_1)
-
-			if var_8_1 then
-				return var_8_1
+function slot3(slot0)
+	if uv0(slot0) ~= nil then
+		for slot5, slot6 in ipairs(slot0.conditionData) do
+			if slot1:Find(slot6) then
+				return slot7
 			end
 		end
 	end
@@ -84,69 +76,58 @@ local function var_0_3(arg_8_0)
 	return nil
 end
 
-local function var_0_4(arg_9_0)
-	local var_9_0
+function slot4(slot0)
+	slot1 = nil
 
-	if arg_9_0.conditionData then
-		var_9_0 = var_0_3(arg_9_0)
-	else
-		var_9_0 = var_0_2(arg_9_0)
-	end
-
-	if var_9_0 then
-		return var_9_0
+	if (not slot0.conditionData or uv0(slot0)) and uv1(slot0) then
+		return slot1
 	end
 
 	return nil
 end
 
-function var_0_0.AddSearchTimer(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = 20
+function slot0.AddSearchTimer(slot0, slot1, slot2)
+	slot3 = 20
+	slot0.timer = Timer.New(function ()
+		uv0 = uv0 - 1
 
-	arg_10_0.timer = Timer.New(function()
-		var_10_0 = var_10_0 - 1
-
-		if var_10_0 <= 0 then
-			arg_10_0:Clear()
-			arg_10_2()
-			print("should exist ui node : " .. arg_10_1.path)
-			arg_10_1.callback(nil)
+		if uv0 <= 0 then
+			uv1:Clear()
+			uv2()
+			print("should exist ui node : " .. uv3.path)
+			uv3.callback(nil)
 
 			return
 		end
 
-		local var_11_0 = var_0_4(arg_10_1)
-
-		if var_11_0 then
-			arg_10_0:Clear()
-			arg_10_2()
-			arg_10_1.callback(var_11_0)
+		if uv4(uv3) then
+			uv1:Clear()
+			uv2()
+			uv3.callback(slot0)
 		end
 	end, 0.5, -1)
 
-	arg_10_0.timer:Start()
-	arg_10_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.SearchWithoutDelay(arg_12_0, arg_12_1)
-	local var_12_0 = var_0_2(arg_12_1)
-
-	arg_12_0:Clear()
-	arg_12_1.callback(var_12_0)
+function slot0.SearchWithoutDelay(slot0, slot1)
+	slot0:Clear()
+	slot1.callback(uv0(slot1))
 end
 
-function var_0_0.Clear(arg_13_0)
-	if arg_13_0.delayTimer then
-		arg_13_0.delayTimer:Stop()
+function slot0.Clear(slot0)
+	if slot0.delayTimer then
+		slot0.delayTimer:Stop()
 
-		arg_13_0.delayTimer = nil
+		slot0.delayTimer = nil
 	end
 
-	if arg_13_0.timer then
-		arg_13_0.timer:Stop()
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_13_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,9 +1,7 @@
-﻿local var_0_0 = class("UpdateStoryCommand", pm.SimpleCommand)
+slot0 = class("UpdateStoryCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().storyId
-
-	assert(type(var_1_0) == "string")
+function slot0.execute(slot0, slot1)
+	assert(type(slot1:getBody().storyId) == "string")
 
 	if not pg.ConnectionMgr.GetInstance():getConnection() or not pg.ConnectionMgr.GetInstance():isConnected() then
 		return
@@ -13,62 +11,55 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	local var_1_1 = pg.NewStoryMgr.GetInstance()
-	local var_1_2 = {}
+	slot5 = {}
 
-	local function var_1_3(arg_2_0, arg_2_1)
+	function slot6(slot0, slot1)
 		pg.ConnectionMgr.GetInstance():Send(11017, {
-			story_id = arg_2_0
-		}, 11018, function(arg_3_0)
-			var_1_1:SetPlayedFlag(arg_2_0)
+			story_id = slot0
+		}, 11018, function (slot0)
+			uv0:SetPlayedFlag(uv1)
+			table.insertto(uv2, PlayerConst.addTranDrop(slot0.drop_list))
 
-			local var_3_0 = PlayerConst.addTranDrop(arg_3_0.drop_list)
-
-			table.insertto(var_1_2, var_3_0)
-
-			if arg_2_1 then
-				arg_2_1()
+			if uv3 then
+				uv3()
 			end
 		end)
 	end
 
-	local function var_1_4(arg_4_0, arg_4_1)
-		local var_4_0, var_4_1 = var_1_1:StoryName2StoryId(arg_4_0)
-		local var_4_2 = {}
+	function slot7(slot0, slot1)
+		slot2, slot3 = uv0:StoryName2StoryId(slot0)
 
-		if var_4_0 and var_4_0 > 0 and not var_1_1:GetPlayedFlag(var_4_0) then
-			table.insert(var_4_2, function(arg_5_0)
-				var_1_3(var_4_0, arg_5_0)
+		if slot2 and slot2 > 0 and not uv0:GetPlayedFlag(slot2) then
+			table.insert({}, function (slot0)
+				uv0(uv1, slot0)
 			end)
 		end
 
-		if var_4_1 and var_4_1 > 0 and not var_1_1:GetPlayedFlag(var_4_1) then
-			table.insert(var_4_2, function(arg_6_0)
-				var_1_3(var_4_1, arg_6_0)
+		if slot3 and slot3 > 0 and not uv0:GetPlayedFlag(slot3) then
+			table.insert(slot4, function (slot0)
+				uv0(uv1, slot0)
 			end)
 		end
 
-		parallelAsync(var_4_2, arg_4_1)
+		parallelAsync(slot4, slot1)
 	end
 
-	local var_1_5 = var_1_1:StoryLinkNames(var_1_0) or {}
+	table.insert(pg.NewStoryMgr.GetInstance():StoryLinkNames(slot3) or {}, slot3)
 
-	table.insert(var_1_5, var_1_0)
+	slot9 = {}
 
-	local var_1_6 = {}
-
-	for iter_1_0, iter_1_1 in ipairs(var_1_5) do
-		table.insert(var_1_6, function(arg_7_0)
-			var_1_4(iter_1_1, arg_7_0)
+	for slot13, slot14 in ipairs(slot8) do
+		table.insert(slot9, function (slot0)
+			uv0(uv1, slot0)
 		end)
 	end
 
-	seriesAsync(var_1_6, function()
-		arg_1_0:sendNotification(GAME.STORY_UPDATE_DONE, {
-			storyName = var_1_0,
-			awards = var_1_2
+	seriesAsync(slot9, function ()
+		uv0:sendNotification(GAME.STORY_UPDATE_DONE, {
+			storyName = uv1,
+			awards = uv2
 		})
 	end)
 end
 
-return var_0_0
+return slot0

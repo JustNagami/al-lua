@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10500
-			}
-		}
-	},
+return {
 	{
 		desc = "对重樱群岛单位造成伤害提高5.0%",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 10500,
 	icon = 10500,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10500
+			}
+		}
+	}
 }

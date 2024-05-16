@@ -1,4 +1,15 @@
-﻿return {
+return {
+	{},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 800811,
+	icon = 800810,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -12,16 +23,5 @@
 				skill_id = 800811
 			}
 		}
-	},
-	{},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 800811,
-	icon = 800810,
-	last_effect = ""
+	}
 }

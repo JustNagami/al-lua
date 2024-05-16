@@ -1,23 +1,19 @@
-﻿local var_0_0 = class("TimeSynchronizationCommand", pm.SimpleCommand)
+slot0 = class("TimeSynchronizationCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	pg.TimeMgr.GetInstance():SetServerTime(var_1_0.timestamp, var_1_0.monday_0oclock_timestamp)
+	pg.TimeMgr.GetInstance():SetServerTime(slot2.timestamp, slot2.monday_0oclock_timestamp)
 	getProxy(BuildShipProxy):setBuildShipState()
 
-	local var_1_1 = getProxy(PlayerProxy)
-
-	if var_1_1:getData() then
-		var_1_1:flushTimesListener()
+	if getProxy(PlayerProxy):getData() then
+		slot4:flushTimesListener()
 	end
 
-	local var_1_2 = getProxy(MilitaryExerciseProxy)
-
-	if var_1_2:getSeasonInfo() then
-		var_1_2:addRefreshCountTimer()
-		var_1_2:addSeasonOverTimer()
+	if getProxy(MilitaryExerciseProxy):getSeasonInfo() then
+		slot5:addRefreshCountTimer()
+		slot5:addSeasonOverTimer()
 	end
 end
 
-return var_0_0
+return slot0

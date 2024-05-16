@@ -1,57 +1,51 @@
-﻿function string.split(arg_1_0, arg_1_1)
-	arg_1_0 = tostring(arg_1_0)
-	arg_1_1 = tostring(arg_1_1)
+function string.split(slot0, slot1)
+	slot0 = tostring(slot0)
 
-	if arg_1_1 == "" then
+	if tostring(slot1) == "" then
 		return false
 	end
 
-	local var_1_0 = 0
-	local var_1_1 = {}
+	slot3 = {}
 
-	for iter_1_0, iter_1_1 in function()
-		return string.find(arg_1_0, arg_1_1, var_1_0, true)
-	end do
-		table.insert(var_1_1, string.sub(arg_1_0, var_1_0, iter_1_0 - 1))
+	for slot7, slot8 in function ()
+		return string.find(uv0, uv1, uv2, true)
+	end, nil,  do
+		table.insert(slot3, string.sub(slot0, 0, slot7 - 1))
 
-		var_1_0 = iter_1_1 + 1
+		slot2 = slot8 + 1
 	end
 
-	table.insert(var_1_1, string.sub(arg_1_0, var_1_0))
+	table.insert(slot3, string.sub(slot0, slot2))
 
-	return var_1_1
+	return slot3
 end
 
-function import(arg_3_0, arg_3_1)
-	local var_3_0
-	local var_3_1 = arg_3_0
-	local var_3_2 = 1
+function import(slot0, slot1)
+	slot2 = nil
+	slot3 = slot0
+	slot4 = 1
 
 	while true do
-		if string.byte(arg_3_0, var_3_2) ~= 46 then
-			var_3_1 = string.sub(arg_3_0, var_3_2)
-
-			if var_3_0 and #var_3_0 > 0 then
-				var_3_1 = table.concat(var_3_0, ".") .. "." .. var_3_1
+		if string.byte(slot0, slot4) ~= 46 then
+			if slot2 and #slot2 > 0 then
+				slot3 = table.concat(slot2, ".") .. "." .. string.sub(slot0, slot4)
 			end
 
 			break
 		end
 
-		var_3_2 = var_3_2 + 1
+		slot4 = slot4 + 1
 
-		if not var_3_0 then
-			if not arg_3_1 then
-				local var_3_3, var_3_4 = debug.getlocal(3, 1)
-
-				arg_3_1 = var_3_4
+		if not slot2 then
+			if not slot1 then
+				slot5, slot1 = debug.getlocal(3, 1)
 			end
 
-			var_3_0 = string.split(arg_3_1, ".")
+			slot2 = string.split(slot1, ".")
 		end
 
-		table.remove(var_3_0, #var_3_0)
+		table.remove(slot2, #slot2)
 	end
 
-	return require(var_3_1)
+	return require(slot3)
 end

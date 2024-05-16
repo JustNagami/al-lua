@@ -1,180 +1,162 @@
-﻿local var_0_0 = class("GuildShowAssultShipPage", import(".GuildEventBasePage"))
+slot0 = class("GuildShowAssultShipPage", import(".GuildEventBasePage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildShowAssultShipPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.scrollrect = arg_2_0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
-	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
-	arg_2_0.progress = arg_2_0:findTF("frame/progress"):GetComponent(typeof(Text))
+function slot0.OnLoaded(slot0)
+	slot0.scrollrect = slot0:findTF("frame/scrollrect"):GetComponent("LScrollRect")
+	slot0.closeBtn = slot0:findTF("frame/close")
+	slot0.progress = slot0:findTF("frame/progress"):GetComponent(typeof(Text))
 end
 
-function var_0_0.OnAssultShipBeRecommanded(arg_3_0, arg_3_1)
-	arg_3_0:InitList()
+function slot0.OnAssultShipBeRecommanded(slot0, slot1)
+	slot0:InitList()
 end
 
-function var_0_0.OnRefreshAll(arg_4_0)
-	arg_4_0:InitData()
+function slot0.OnRefreshAll(slot0)
+	slot0:InitData()
 
-	local var_4_0 = {}
+	slot1 = {
+		[slot6.ship.id] = slot6
+	}
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0.displays) do
-		var_4_0[iter_4_1.ship.id] = iter_4_1
+	for slot5, slot6 in ipairs(slot0.displays) do
+		-- Nothing
 	end
 
-	for iter_4_2, iter_4_3 in pairs(arg_4_0.cards) do
-		local var_4_1 = var_4_0[iter_4_3.ship.id]
-
-		if var_4_1 then
-			iter_4_3:Flush(var_4_1.member, var_4_1.ship)
+	for slot5, slot6 in pairs(slot0.cards) do
+		if slot1[slot6.ship.id] then
+			slot6:Flush(slot7.member, slot7.ship)
 		end
 	end
 end
 
-function var_0_0.OnInit(arg_5_0)
-	onButton(arg_5_0, arg_5_0.closeBtn, function()
-		arg_5_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 
-	arg_5_0.cards = {}
+	slot0.cards = {}
 
-	function arg_5_0.scrollrect.onInitItem(arg_7_0)
-		arg_5_0:OnInitItem(arg_7_0)
+	function slot0.scrollrect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_5_0.scrollrect.onUpdateItem(arg_8_0, arg_8_1)
-		arg_5_0:OnUpdateItem(arg_8_0, arg_8_1)
+	function slot0.scrollrect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 end
 
-function var_0_0.GetRecommandShipCnt(arg_9_0)
-	local var_9_0 = 0
-
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0.displays) do
-		if iter_9_1.ship.guildRecommand then
-			var_9_0 = var_9_0 + 1
+function slot0.GetRecommandShipCnt(slot0)
+	for slot5, slot6 in ipairs(slot0.displays) do
+		if slot6.ship.guildRecommand then
+			slot1 = 0 + 1
 		end
 	end
 
-	return var_9_0
+	return slot1
 end
 
-function var_0_0.OnInitItem(arg_10_0, arg_10_1)
-	local var_10_0 = GuildBossAssultCard.New(arg_10_1)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = GuildBossAssultCard.New(slot1)
 
-	onButton(arg_10_0, var_10_0.recommendBtn, function()
-		local var_11_0 = var_10_0.ship
-		local var_11_1 = var_11_0.guildRecommand and GuildConst.CANCEL_RECOMMAND_SHIP or GuildConst.RECOMMAND_SHIP
+	onButton(slot0, slot2.recommendBtn, function ()
+		slot1 = uv0.ship.guildRecommand and GuildConst.CANCEL_RECOMMAND_SHIP or GuildConst.RECOMMAND_SHIP
 
-		arg_10_0:emit(GuildEventMediator.REFRESH_RECOMMAND_SHIPS, function()
-			if var_11_1 == GuildConst.RECOMMAND_SHIP and arg_10_0:GetRecommandShipCnt() >= 9 then
+		uv1:emit(GuildEventMediator.REFRESH_RECOMMAND_SHIPS, function ()
+			if uv0 == GuildConst.RECOMMAND_SHIP and uv1:GetRecommandShipCnt() >= 9 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_recommend_limit"))
 
 				return
 			end
 
-			local var_12_0 = var_11_0.guildRecommand and GuildConst.RECOMMAND_SHIP or GuildConst.CANCEL_RECOMMAND_SHIP
-
-			if var_11_1 ~= var_12_0 then
-				arg_10_0:emit(GuildEventMediator.ON_RECOMM_ASSULT_SHIP, var_11_0.id, var_11_1)
-			elseif var_11_1 == GuildConst.RECOMMAND_SHIP then
+			if uv0 ~= (uv2.guildRecommand and GuildConst.RECOMMAND_SHIP or GuildConst.CANCEL_RECOMMAND_SHIP) then
+				uv1:emit(GuildEventMediator.ON_RECOMM_ASSULT_SHIP, uv2.id, uv0)
+			elseif uv0 == GuildConst.RECOMMAND_SHIP then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_assult_ship_recommend_conflict"))
-			elseif var_11_1 == GuildConst.CANCEL_RECOMMAND_SHIP then
+			elseif uv0 == GuildConst.CANCEL_RECOMMAND_SHIP then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_cancel_assult_ship_recommend_conflict"))
 			end
 		end)
 	end, SFX_PANEL)
 
-	local function var_10_1()
-		if IsNil(arg_10_0._tf) then
+	function slot3()
+		if IsNil(uv0._tf) then
 			return
 		end
 
-		pg.UIMgr:GetInstance():BlurPanel(arg_10_0._tf)
+		pg.UIMgr:GetInstance():BlurPanel(uv0._tf)
 	end
 
-	local function var_10_2()
-		if IsNil(arg_10_0._tf) then
+	function slot4()
+		if IsNil(uv0._tf) then
 			return
 		end
 
-		pg.UIMgr:GetInstance():UnblurPanel(arg_10_0._tf, arg_10_0._parentTf)
+		pg.UIMgr:GetInstance():UnblurPanel(uv0._tf, uv0._parentTf)
 	end
 
-	onButton(arg_10_0, var_10_0.viewEquipmentBtn, function()
-		local var_15_0 = var_10_0.ship
-		local var_15_1 = var_10_0.member
-
-		arg_10_0:emit(GuildEventLayer.SHOW_SHIP_EQUIPMENTS, var_15_0, var_15_1, var_10_1, var_10_2)
+	onButton(slot0, slot2.viewEquipmentBtn, function ()
+		uv1:emit(GuildEventLayer.SHOW_SHIP_EQUIPMENTS, uv0.ship, uv0.member, uv2, uv3)
 	end, SFX_PANEL)
 
-	arg_10_0.cards[arg_10_1] = var_10_0
+	slot0.cards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_16_0, arg_16_1, arg_16_2)
-	local var_16_0 = arg_16_0.cards[arg_16_2]
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot0:OnInitItem(slot2)
 
-	if not var_16_0 then
-		arg_16_0:OnInitItem(arg_16_2)
-
-		var_16_0 = arg_16_0.cards[arg_16_2]
+		slot3 = slot0.cards[slot2]
 	end
 
-	local var_16_1 = arg_16_0.displays[arg_16_1 + 1]
+	slot4 = slot0.displays[slot1 + 1]
 
-	var_16_0:Flush(var_16_1.member, var_16_1.ship)
+	slot3:Flush(slot4.member, slot4.ship)
 
-	local var_16_2 = arg_16_0.totalPageCnt
-	local var_16_3 = math.ceil((arg_16_0.scrollrect.value + 0.001) * var_16_2)
-
-	arg_16_0.progress.text = var_16_3 .. "/" .. var_16_2
+	slot5 = slot0.totalPageCnt
+	slot0.progress.text = math.ceil((slot0.scrollrect.value + 0.001) * slot5) .. "/" .. slot5
 end
 
-function var_0_0.OnShow(arg_17_0)
-	arg_17_0:emit(GuildEventMediator.ON_GET_ALL_ASSULT_FLEET, function()
-		arg_17_0:InitList()
+function slot0.OnShow(slot0)
+	slot0:emit(GuildEventMediator.ON_GET_ALL_ASSULT_FLEET, function ()
+		uv0:InitList()
 	end)
 end
 
-function var_0_0.InitData(arg_19_0)
-	local var_19_0 = arg_19_0.guild
-	local var_19_1 = arg_19_0.player
+function slot0.InitData(slot0)
+	slot2 = slot0.player
+	slot0.displays = {}
 
-	arg_19_0.displays = {}
-
-	local var_19_2 = var_19_0:GetMembers()
-
-	for iter_19_0, iter_19_1 in pairs(var_19_2) do
-		local var_19_3 = iter_19_1:GetAssaultFleet():GetShipList()
-
-		for iter_19_2, iter_19_3 in pairs(var_19_3) do
-			table.insert(arg_19_0.displays, {
-				ship = iter_19_3,
-				member = iter_19_1
+	for slot7, slot8 in pairs(slot0.guild:GetMembers()) do
+		for slot14, slot15 in pairs(slot8:GetAssaultFleet():GetShipList()) do
+			table.insert(slot0.displays, {
+				ship = slot15,
+				member = slot8
 			})
 		end
 	end
 
-	table.sort(arg_19_0.displays, function(arg_20_0, arg_20_1)
-		return (arg_20_0.ship.guildRecommand and 1 or 0) > (arg_20_1.ship.guildRecommand and 1 or 0)
+	table.sort(slot0.displays, function (slot0, slot1)
+		return (slot0.ship.guildRecommand and 1 or 0) > (slot1.ship.guildRecommand and 1 or 0)
 	end)
 end
 
-function var_0_0.InitList(arg_21_0)
-	arg_21_0:InitData()
+function slot0.InitList(slot0)
+	slot0:InitData()
 
-	arg_21_0.totalPageCnt = math.ceil(#arg_21_0.displays / 9)
+	slot0.totalPageCnt = math.ceil(#slot0.displays / 9)
 
-	arg_21_0.scrollrect:SetTotalCount(#arg_21_0.displays)
+	slot0.scrollrect:SetTotalCount(#slot0.displays)
 end
 
-function var_0_0.OnDestroy(arg_22_0)
-	var_0_0.super.OnDestroy(arg_22_0)
+function slot0.OnDestroy(slot0)
+	uv0.super.OnDestroy(slot0)
 
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.cards) do
-		iter_22_1:Dispose()
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:Dispose()
 	end
 end
 
-return var_0_0
+return slot0

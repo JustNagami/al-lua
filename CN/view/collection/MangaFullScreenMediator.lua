@@ -1,29 +1,23 @@
-﻿local var_0_0 = class("MangaFullScreenMediator", import("..base.ContextMediator"))
+slot0 = class("MangaFullScreenMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	return
+function slot0.register(slot0)
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.APPRECIATE_MANGA_READ_DONE,
 		GAME.APPRECIATE_MANGA_LIKE_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
-
-	if var_3_0 == GAME.APPRECIATE_MANGA_READ_DONE then
-		local var_3_2 = var_3_1.mangaID
-
-		if arg_3_0.contextData.mangaContext then
-			arg_3_0.contextData.mangaContext:updateLineAfterRead(var_3_2)
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.APPRECIATE_MANGA_READ_DONE then
+		if slot0.contextData.mangaContext then
+			slot0.contextData.mangaContext:updateLineAfterRead(slot1:getBody().mangaID)
 		end
-	elseif var_3_0 == GAME.APPRECIATE_MANGA_LIKE_DONE then
-		arg_3_0.viewComponent:updateLikeBtn()
+	elseif slot2 == GAME.APPRECIATE_MANGA_LIKE_DONE then
+		slot0.viewComponent:updateLikeBtn()
 	end
 end
 
-return var_0_0
+return slot0

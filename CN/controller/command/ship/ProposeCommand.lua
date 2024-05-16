@@ -1,57 +1,50 @@
-﻿local var_0_0 = class("ProposeCommand", pm.SimpleCommand)
+slot0 = class("ProposeCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().shipId
-	local var_1_1 = getProxy(BayProxy)
-	local var_1_2 = var_1_1:getShipById(var_1_0)
-
-	if not var_1_2 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_0))
+function slot0.execute(slot0, slot1)
+	if not getProxy(BayProxy):getShipById(slot1:getBody().shipId) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot3))
 
 		return
 	end
 
-	local var_1_3 = getProxy(BagProxy)
-	local var_1_4 = var_1_2:getProposeType() == "imas" and ITEM_ID_FOR_PROPOSE_IMAS or ITEM_ID_FOR_PROPOSE
-
-	if var_1_3:getItemCountById(var_1_4) < 1 then
+	if getProxy(BagProxy):getItemCountById(slot5:getProposeType() == "imas" and ITEM_ID_FOR_PROPOSE_IMAS or ITEM_ID_FOR_PROPOSE) < 1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(12032, {
-		ship_id = var_1_0
-	}, 12033, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			pg.TrackerMgr.GetInstance():Tracking(TRACKING_PROPOSE_SHIP, var_1_2.groupId)
-			var_1_3:removeItemById(var_1_4, 1)
+		ship_id = slot3
+	}, 12033, function (slot0)
+		if slot0.result == 0 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_PROPOSE_SHIP, uv0.groupId)
+			uv1:removeItemById(uv2, 1)
 
-			var_1_2.propose = true
-			var_1_2.proposeTime = arg_2_0.time
+			uv0.propose = true
+			uv0.proposeTime = slot0.time
 
-			if not var_1_2:IsLocked() then
-				var_1_2:SetLockState(Ship.LOCK_STATE_LOCK)
-				var_1_1:updateShip(var_1_2)
-				arg_1_0:sendNotification(GAME.UPDATE_LOCK_DONE, var_1_2)
+			if not uv0:IsLocked() then
+				uv0:SetLockState(Ship.LOCK_STATE_LOCK)
+				uv3:updateShip(uv0)
+				uv4:sendNotification(GAME.UPDATE_LOCK_DONE, uv0)
 			else
-				var_1_1:updateShip(var_1_2)
+				uv3:updateShip(uv0)
 			end
 
-			getProxy(CollectionProxy).shipGroups[var_1_2.groupId]:updateMarriedFlag()
+			getProxy(CollectionProxy).shipGroups[uv0.groupId]:updateMarriedFlag()
 
-			local var_2_0 = getProxy(PlayerProxy)
-			local var_2_1 = var_2_0:getData()
+			slot3 = getProxy(PlayerProxy)
+			slot4 = slot3:getData()
 
-			var_2_1:SetProposeShipId(var_1_0)
-			var_2_0:updatePlayer(var_2_1)
-			arg_1_0:sendNotification(GAME.PROPOSE_SHIP_DONE, {
-				ship = var_1_2
+			slot4:SetProposeShipId(uv5)
+			slot3:updatePlayer(slot4)
+			uv4:sendNotification(GAME.PROPOSE_SHIP_DONE, {
+				ship = uv0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_proposeShip", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_proposeShip", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

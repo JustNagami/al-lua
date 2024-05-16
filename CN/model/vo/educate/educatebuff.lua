@@ -1,88 +1,79 @@
-﻿local var_0_0 = class("EducateBuff", import("model.vo.BaseVO"))
+slot0 = class("EducateBuff", import("model.vo.BaseVO"))
+slot0.TYPE_ATTR = 1
+slot0.TYPE_RES = 2
+slot0.ADDITION_TYPE_RATIO = 1
+slot0.ADDITION_TYPE_NUMBER = 2
 
-var_0_0.TYPE_ATTR = 1
-var_0_0.TYPE_RES = 2
-var_0_0.ADDITION_TYPE_RATIO = 1
-var_0_0.ADDITION_TYPE_NUMBER = 2
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.configId = arg_1_0.id
-	arg_1_0.endTime = arg_1_1.time or EducateHelper.GetTimeAfterWeeks(getProxy(EducateProxy):GetCurTime(), arg_1_0:getConfig("during_time"))
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.endTime = slot1.time or EducateHelper.GetTimeAfterWeeks(getProxy(EducateProxy):GetCurTime(), slot0:getConfig("during_time"))
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.child_buff
 end
 
-function var_0_0.GetReaminTime(arg_3_0, arg_3_1)
-	arg_3_1 = arg_3_1 or getProxy(EducateProxy):GetCurTime()
-
-	return EducateHelper.GetDaysBetweenTimes(arg_3_1, arg_3_0.endTime)
+function slot0.GetReaminTime(slot0, slot1)
+	return EducateHelper.GetDaysBetweenTimes(slot1 or getProxy(EducateProxy):GetCurTime(), slot0.endTime)
 end
 
-function var_0_0.GetReaminWeek(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0:GetReaminTime(arg_4_1)
-
-	if var_4_0 == 0 then
+function slot0.GetReaminWeek(slot0, slot1)
+	if slot0:GetReaminTime(slot1) == 0 then
 		return 0
 	else
-		return var_4_0 / 7
+		return slot2 / 7
 	end
 end
 
-function var_0_0.ResetEndTime(arg_5_0, arg_5_1)
-	arg_5_1 = arg_5_1 or getProxy(EducateProxy):GetCurTime()
-	arg_5_0.endTime = EducateHelper.GetTimeAfterWeeks(arg_5_1, arg_5_0:getConfig("during_time"))
+function slot0.ResetEndTime(slot0, slot1)
+	slot0.endTime = EducateHelper.GetTimeAfterWeeks(slot1 or getProxy(EducateProxy):GetCurTime(), slot0:getConfig("during_time"))
 end
 
-function var_0_0.IsEnd(arg_6_0, arg_6_1)
-	return arg_6_0:GetReaminTime(arg_6_1) < 0
+function slot0.IsEnd(slot0, slot1)
+	return slot0:GetReaminTime(slot1) < 0
 end
 
-function var_0_0.IsAttrType(arg_7_0)
-	return arg_7_0:getConfig("effect")[1] == var_0_0.TYPE_ATTR
+function slot0.IsAttrType(slot0)
+	return slot0:getConfig("effect")[1] == uv0.TYPE_ATTR
 end
 
-function var_0_0.IsResType(arg_8_0)
-	return arg_8_0:getConfig("effect")[1] == var_0_0.TYPE_RES
+function slot0.IsResType(slot0)
+	return slot0:getConfig("effect")[1] == uv0.TYPE_RES
 end
 
-function var_0_0.IsId(arg_9_0, arg_9_1)
-	return arg_9_0:getConfig("effect")[2] == arg_9_1
+function slot0.IsId(slot0, slot1)
+	return slot0:getConfig("effect")[2] == slot1
 end
 
-function var_0_0.IsRatio(arg_10_0)
-	return arg_10_0:getConfig("effect")[3] == var_0_0.ADDITION_TYPE_RATIO
+function slot0.IsRatio(slot0)
+	return slot0:getConfig("effect")[3] == uv0.ADDITION_TYPE_RATIO
 end
 
-function var_0_0.IsNumber(arg_11_0)
-	return arg_11_0:getConfig("effect")[3] == var_0_0.ADDITION_TYPE_NUMBER
+function slot0.IsNumber(slot0)
+	return slot0:getConfig("effect")[3] == uv0.ADDITION_TYPE_NUMBER
 end
 
-function var_0_0.GetEffectValue(arg_12_0)
-	if arg_12_0:IsRatio() then
-		return arg_12_0:getConfig("effect")[4] / 10000
-	elseif arg_12_0:IsNumber() then
-		return arg_12_0:getConfig("effect")[4]
+function slot0.GetEffectValue(slot0)
+	if slot0:IsRatio() then
+		return slot0:getConfig("effect")[4] / 10000
+	elseif slot0:IsNumber() then
+		return slot0:getConfig("effect")[4]
 	end
 
 	return 0
 end
 
-function var_0_0.GetBuffEffects(arg_13_0)
-	local var_13_0 = 0
-	local var_13_1 = 0
-
-	underscore.each(arg_13_0, function(arg_14_0)
-		if arg_14_0:IsRatio() then
-			var_13_0 = var_13_0 + arg_14_0:GetEffectValue()
-		elseif arg_14_0:IsNumber() then
-			var_13_1 = var_13_1 + arg_14_0:GetEffectValue()
+function slot0.GetBuffEffects(slot0)
+	underscore.each(slot0, function (slot0)
+		if slot0:IsRatio() then
+			uv0 = uv0 + slot0:GetEffectValue()
+		elseif slot0:IsNumber() then
+			uv1 = uv1 + slot0:GetEffectValue()
 		end
 	end)
 
-	return var_13_0, var_13_1
+	return 0, 0
 end
 
-return var_0_0
+return slot0

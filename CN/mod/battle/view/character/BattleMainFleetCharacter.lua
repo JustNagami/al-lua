@@ -1,40 +1,35 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleConfig
+slot3 = class("BattleMainFleetCharacter", slot0.Battle.BattlePlayerCharacter)
+slot0.Battle.BattleMainFleetCharacter = slot3
+slot3.__name = "BattleMainFleetCharacter"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = class("BattleMainFleetCharacter", var_0_0.Battle.BattlePlayerCharacter)
-
-var_0_0.Battle.BattleMainFleetCharacter = var_0_3
-var_0_3.__name = "BattleMainFleetCharacter"
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.Update(arg_2_0)
-	var_0_3.super.Update(arg_2_0)
-	arg_2_0:UpdateArrowBarPostition()
+function slot3.Update(slot0)
+	uv0.super.Update(slot0)
+	slot0:UpdateArrowBarPostition()
 end
 
-function var_0_3.AddArrowBar(arg_3_0, arg_3_1)
-	var_0_3.super.AddArrowBar(arg_3_0, arg_3_1)
-
-	local var_3_0 = LoadSprite("qicon/" .. arg_3_0._unitData:GetTemplate().painting) or LoadSprite("heroicon/unknown")
-
-	setImageSprite(findTF(arg_3_0._arrowBar, "icon"), var_3_0)
+function slot3.AddArrowBar(slot0, slot1)
+	uv0.super.AddArrowBar(slot0, slot1)
+	setImageSprite(findTF(slot0._arrowBar, "icon"), LoadSprite("qicon/" .. slot0._unitData:GetTemplate().painting) or LoadSprite("heroicon/unknown"))
 end
 
-function var_0_3.UpdateHPBarPosition(arg_4_0)
-	if not arg_4_0._inViewArea then
-		var_0_3.super.UpdateHPBarPosition(arg_4_0)
+function slot3.UpdateHPBarPosition(slot0)
+	if not slot0._inViewArea then
+		uv0.super.UpdateHPBarPosition(slot0)
 	end
 end
 
-function var_0_3.GetReferenceVector(arg_5_0, arg_5_1)
-	if not arg_5_0._inViewArea then
-		return var_0_3.super.GetReferenceVector(arg_5_0, arg_5_1)
+function slot3.GetReferenceVector(slot0, slot1)
+	if not slot0._inViewArea then
+		return uv0.super.GetReferenceVector(slot0, slot1)
 	else
-		return arg_5_0._arrowVector
+		return slot0._arrowVector
 	end
 end

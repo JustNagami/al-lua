@@ -1,33 +1,32 @@
-﻿local var_0_0 = class("EducateTriggerSpecEventCommand", pm.SimpleCommand)
+slot0 = class("EducateTriggerSpecEventCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0 and var_1_0.callback
-	local var_1_2 = var_1_0.eventId
-	local var_1_3 = pg.child_event_special[var_1_2].type
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
+	slot4 = slot2.eventId
+	slot5 = pg.child_event_special[slot4].type
 
 	pg.ConnectionMgr.GetInstance():Send(27027, {
-		spec_events_id = var_1_2
-	}, 27028, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			EducateHelper.UpdateDropsData(arg_2_0.drops)
-			getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(var_1_2)
+		spec_events_id = slot4
+	}, 27028, function (slot0)
+		if slot0.result == 0 then
+			EducateHelper.UpdateDropsData(slot0.drops)
+			getProxy(EducateProxy):GetEventProxy():AddFinishSpecEvent(uv0)
 
-			if var_1_3 == EducateSpecialEvent.TYPE_BUBBLE_DISCOUNT then
-				getProxy(EducateProxy):GetShopProxy():AddDiscountEventById(var_1_2)
+			if uv1 == EducateSpecialEvent.TYPE_BUBBLE_DISCOUNT then
+				getProxy(EducateProxy):GetShopProxy():AddDiscountEventById(uv0)
 			end
 
-			arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE, {
-				siteId = var_1_0.siteId,
-				id = var_1_2,
-				type = var_1_3,
-				drops = arg_2_0.drops,
-				cb = var_1_1
+			uv2:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE, {
+				siteId = uv3.siteId,
+				id = uv0,
+				type = uv1,
+				drops = slot0.drops,
+				cb = uv4
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate trigger specEvent error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate trigger specEvent error: ", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

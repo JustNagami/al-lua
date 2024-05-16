@@ -1,37 +1,34 @@
-﻿local var_0_0 = class("UnlockCryptolaliaCommand", pm.SimpleCommand)
+slot0 = class("UnlockCryptolaliaCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.costType
-	local var_1_3 = getProxy(PlayerProxy):getRawData()
-	local var_1_4 = var_1_3:GetCryptolaliaList()
-	local var_1_5
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.costType
+	slot7 = nil
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_4) do
-		if iter_1_1.id == var_1_1 then
-			var_1_5 = iter_1_1
+	for slot11, slot12 in ipairs(getProxy(PlayerProxy):getRawData():GetCryptolaliaList()) do
+		if slot12.id == slot2.id then
+			slot7 = slot12
 
 			break
 		end
 	end
 
-	if not var_1_5 or not var_1_5:IsLock() then
+	if not slot7 or not slot7:IsLock() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	if not var_1_5:InTime() then
+	if not slot7:InTime() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	local var_1_6 = var_1_5:GetCost(var_1_2)
+	slot8 = slot7:GetCost(slot4)
 
-	if var_1_3:getResById(var_1_6.id) < var_1_6.count then
-		if var_1_2 == Cryptolalia.COST_TYPE_TICKET then
+	if slot5:getResById(slot8.id) < slot8.count then
+		if slot4 == Cryptolalia.COST_TYPE_TICKET then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cryptolalia_no_ticket"))
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
@@ -41,23 +38,23 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(16205, {
-		id = var_1_1,
-		cost_type = var_1_2
-	}, 16206, function(arg_2_0)
-		if arg_2_0.ret == 0 then
-			var_1_3:UnlockCryptolalia(var_1_1)
-			var_1_3:consume({
-				[id2res(var_1_6.id)] = var_1_6.count
+		id = slot3,
+		cost_type = slot4
+	}, 16206, function (slot0)
+		if slot0.ret == 0 then
+			uv0:UnlockCryptolalia(uv1)
+			uv0:consume({
+				[id2res(uv2.id)] = uv2.count
 			})
-			getProxy(PlayerProxy):updatePlayer(var_1_3)
+			getProxy(PlayerProxy):updatePlayer(uv0)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cryptolalia_exchange_success"))
-			arg_1_0:sendNotification(GAME.UNLOCK_CRYPTOLALIA_DONE, {
-				id = var_1_1
+			uv3:sendNotification(GAME.UNLOCK_CRYPTOLALIA_DONE, {
+				id = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.ret] .. arg_2_0.ret)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.ret] .. slot0.ret)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

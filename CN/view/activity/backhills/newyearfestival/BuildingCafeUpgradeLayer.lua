@@ -1,83 +1,73 @@
-﻿local var_0_0 = class("BuildingCafeUpgradeLayer", import(".BuildingUpgradeLayer"))
-local var_0_1 = {
+slot0 = class("BuildingCafeUpgradeLayer", import(".BuildingUpgradeLayer"))
+slot1 = {
 	17,
 	18
 }
 
-function var_0_0.Set(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_2 = arg_1_2 or arg_1_0.contextData.buildingID
+function slot0.Set(slot0, slot1, slot2)
+	slot2 = slot2 or slot0.contextData.buildingID
+	slot3 = pg.activity_event_building[slot2]
 
-	local var_1_0 = pg.activity_event_building[arg_1_2]
+	assert(slot3, "Can't Find activity_event_building Config ID: " .. slot2)
 
-	assert(var_1_0, "Can't Find activity_event_building Config ID: " .. arg_1_2)
+	slot0.contextData.buildingID = slot2
+	slot5 = slot1.data1KeyValueList[2][slot2] or 1
 
-	arg_1_0.contextData.buildingID = arg_1_2
+	assert(#slot3.material[slot5] == 1)
 
-	local var_1_1 = #var_1_0.buff
-	local var_1_2 = arg_1_1.data1KeyValueList[2][arg_1_2] or 1
-	local var_1_3 = var_1_0.material[var_1_2]
+	slot9 = #slot3.buff <= slot5
+	slot10 = slot9 or slot6[1][3] <= (slot1.data1KeyValueList[1][slot6[1][2]] or 0)
+	slot13 = slot1.data1KeyValueList[2][uv0[3 - table.indexof(uv0, slot2)]] or 1
+	slot14 = slot5 <= slot13
+	slot15 = slot5 + slot13
 
-	assert(#var_1_3 == 1)
+	setText(slot0:findTF("window/top/name"), slot3.name)
+	setText(slot0:findTF("window/top/name/lv"), "Lv." .. slot5)
+	setScrollText(slot0:findTF("window/frame/describe/text"), slot3.desc)
+	setText(slot0:findTF("window/frame/content/title/lv/current"), "Lv." .. slot5)
+	setActive(slot0:findTF("window/frame/content/title/lv/next"), not slot9)
 
-	local var_1_4 = var_1_3[1][2]
-	local var_1_5 = arg_1_1.data1KeyValueList[1][var_1_4] or 0
-	local var_1_6 = var_1_1 <= var_1_2
-	local var_1_7 = var_1_6 or var_1_5 >= var_1_3[1][3]
-	local var_1_8 = table.indexof(var_0_1, arg_1_2)
-	local var_1_9 = var_0_1[3 - var_1_8]
-	local var_1_10 = arg_1_1.data1KeyValueList[2][var_1_9] or 1
-	local var_1_11 = var_1_2 <= var_1_10
-	local var_1_12 = var_1_2 + var_1_10
-
-	setText(arg_1_0:findTF("window/top/name"), var_1_0.name)
-	setText(arg_1_0:findTF("window/top/name/lv"), "Lv." .. var_1_2)
-	setScrollText(arg_1_0:findTF("window/frame/describe/text"), var_1_0.desc)
-	setText(arg_1_0:findTF("window/frame/content/title/lv/current"), "Lv." .. var_1_2)
-	setActive(arg_1_0:findTF("window/frame/content/title/lv/next"), not var_1_6)
-
-	if not var_1_6 then
-		setText(arg_1_0:findTF("window/frame/content/title/lv/next"), "Lv." .. var_1_2 + 1)
+	if not slot9 then
+		setText(slot0:findTF("window/frame/content/title/lv/next"), "Lv." .. slot5 + 1)
 	end
 
-	local var_1_13 = var_1_0.buff[var_1_2]
-	local var_1_14 = pg.benefit_buff_template[var_1_13]
+	slot16 = slot3.buff[slot5]
+	slot17 = pg.benefit_buff_template[slot16]
 
-	assert(var_1_14, "Can't Find benefit_buff_template Config ID: " .. var_1_13)
-	setText(arg_1_0:findTF("window/frame/content/preview/current"), var_1_14.desc)
-	setActive(arg_1_0:findTF("window/frame/content/preview/arrow"), not var_1_6)
-	setActive(arg_1_0:findTF("window/frame/content/preview/next"), not var_1_6)
+	assert(slot17, "Can't Find benefit_buff_template Config ID: " .. slot16)
+	setText(slot0:findTF("window/frame/content/preview/current"), slot17.desc)
+	setActive(slot0:findTF("window/frame/content/preview/arrow"), not slot9)
+	setActive(slot0:findTF("window/frame/content/preview/next"), not slot9)
 
-	if not var_1_6 then
-		local var_1_15 = var_1_0.buff[var_1_2 + 1]
-		local var_1_16 = pg.benefit_buff_template[var_1_15]
+	if not slot9 then
+		slot18 = slot3.buff[slot5 + 1]
+		slot17 = pg.benefit_buff_template[slot18]
 
-		assert(var_1_16, "Can't Find benefit_buff_template Config ID: " .. var_1_15)
-		setText(arg_1_0:findTF("window/frame/content/preview/next"), var_1_16.desc)
+		assert(slot17, "Can't Find benefit_buff_template Config ID: " .. slot18)
+		setText(slot0:findTF("window/frame/content/preview/next"), slot17.desc)
 	end
 
-	arg_1_0.loader:GetSprite(Item.getConfigData(var_1_4).icon, "", arg_1_0:findTF("window/frame/costback/icon"))
-	setText(arg_1_0:findTF("window/frame/costback/cost"), var_1_0.material[var_1_2] or 0)
-	onButton(arg_1_0, arg_1_0.btnUpgrade, function()
-		if not var_1_11 then
-			local var_2_0 = pg.activity_event_building[var_1_9].name
-
-			pg.TipsMgr.GetInstance():ShowTips(i18n("backhill_cantupbuilding", var_2_0))
+	slot0.loader:GetSprite(Item.getConfigData(slot7).icon, "", slot0:findTF("window/frame/costback/icon"))
+	setText(slot0:findTF("window/frame/costback/cost"), slot3.material[slot5] or 0)
+	onButton(slot0, slot0.btnUpgrade, function ()
+		if not uv0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backhill_cantupbuilding", pg.activity_event_building[uv1].name))
 
 			return
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("building_upgrade_tip"),
-			onYes = function()
-				if var_1_6 then
+			onYes = function ()
+				if uv0 then
 					return
-				elseif var_1_7 then
-					arg_1_0:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
+				elseif uv1 then
+					uv2:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
 						cmd = 1,
-						activity_id = arg_1_0.activity.id,
-						arg1 = arg_1_2
+						activity_id = uv2.activity.id,
+						arg1 = uv3
 					})
-				elseif var_1_12 < 8 then
+				elseif uv4 < 8 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("backhill_notenoughbuilding"))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("building_tip"))
@@ -85,8 +75,8 @@ function var_0_0.Set(arg_1_0, arg_1_1, arg_1_2)
 			end
 		})
 	end)
-	setGray(arg_1_0.btnUpgrade, var_1_6 or not var_1_11)
-	setButtonEnabled(arg_1_0.btnUpgrade, not var_1_6)
+	setGray(slot0.btnUpgrade, slot9 or not slot14)
+	setButtonEnabled(slot0.btnUpgrade, not slot9)
 end
 
-return var_0_0
+return slot0

@@ -1,82 +1,76 @@
-﻿local var_0_0 = class("CommissionMetaBossBtn")
+slot0 = class("CommissionMetaBossBtn")
+slot0.STATE_LOCK = 1
+slot0.STATE_NORMAL = 2
+slot0.STATE_AUTO_BATTLE = 3
+slot0.STATE_FINSH_BATTLE = 4
+slot0.STATE_GET_AWARDS = 5
 
-var_0_0.STATE_LOCK = 1
-var_0_0.STATE_NORMAL = 2
-var_0_0.STATE_AUTO_BATTLE = 3
-var_0_0.STATE_FINSH_BATTLE = 4
-var_0_0.STATE_GET_AWARDS = 5
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+	slot0.event = slot2
+	slot0.tr = slot1
+	slot0.text = slot0.tr:Find("Text"):GetComponent(typeof(Text))
+	slot0.tip = slot0.tr:Find("tip")
+	slot0.timerIcon = slot0.tr:Find("timer")
+	slot0.finishIcon = slot0.tr:Find("finish")
 
-	arg_1_0.event = arg_1_2
-	arg_1_0.tr = arg_1_1
-	arg_1_0.text = arg_1_0.tr:Find("Text"):GetComponent(typeof(Text))
-	arg_1_0.tip = arg_1_0.tr:Find("tip")
-	arg_1_0.timerIcon = arg_1_0.tr:Find("timer")
-	arg_1_0.finishIcon = arg_1_0.tr:Find("finish")
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	return
+function slot0.Init(slot0)
 end
 
-function var_0_0.Flush(arg_3_0)
-	local var_3_0 = arg_3_0:GetBossState()
+function slot0.Flush(slot0)
+	slot0:RemoveTimer()
 
-	arg_3_0:RemoveTimer()
+	slot0.text.text = ""
 
-	arg_3_0.text.text = ""
-
-	if var_0_0.STATE_AUTO_BATTLE == var_3_0 then
-		arg_3_0:SetLeftTime()
+	if uv0.STATE_AUTO_BATTLE == slot0:GetBossState() then
+		slot0:SetLeftTime()
 	end
 
-	setActive(arg_3_0.timerIcon, var_0_0.STATE_AUTO_BATTLE == var_3_0)
-	setActive(arg_3_0.tip, var_0_0.STATE_GET_AWARDS == var_3_0 or var_0_0.STATE_FINSH_BATTLE == var_3_0)
-	setActive(arg_3_0.finishIcon, var_0_0.STATE_FINSH_BATTLE == var_3_0)
-	setActive(arg_3_0.tr, var_0_0.STATE_LOCK ~= var_3_0)
-	onButton(arg_3_0, arg_3_0.tr, function()
-		if var_3_0 ~= var_0_0.STATE_LOCK then
-			arg_3_0.event:emit(CommissionInfoMediator.GO_META_BOSS)
+	setActive(slot0.timerIcon, uv0.STATE_AUTO_BATTLE == slot1)
+	setActive(slot0.tip, uv0.STATE_GET_AWARDS == slot1 or uv0.STATE_FINSH_BATTLE == slot1)
+	setActive(slot0.finishIcon, uv0.STATE_FINSH_BATTLE == slot1)
+	setActive(slot0.tr, uv0.STATE_LOCK ~= slot1)
+	onButton(slot0, slot0.tr, function ()
+		if uv0 ~= uv1.STATE_LOCK then
+			uv2.event:emit(CommissionInfoMediator.GO_META_BOSS)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.SetLeftTime(arg_5_0)
-	arg_5_0:RemoveTimer()
+function slot0.SetLeftTime(slot0)
+	slot0:RemoveTimer()
 
-	arg_5_0.timer = Timer.New(function()
-		local var_6_0 = WorldBossConst.GetAutoBattleLeftTime()
-
-		if var_6_0 <= 0 then
-			arg_5_0:Flush()
+	slot0.timer = Timer.New(function ()
+		if WorldBossConst.GetAutoBattleLeftTime() <= 0 then
+			uv0:Flush()
 		end
 
-		arg_5_0.text.text = pg.TimeMgr.GetInstance():DescCDTimeForMinute(var_6_0)
+		uv0.text.text = pg.TimeMgr.GetInstance():DescCDTimeForMinute(slot0)
 	end, 1, -1)
 
-	arg_5_0.timer:Start()
-	arg_5_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.RemoveTimer(arg_7_0)
-	if arg_7_0.timer then
-		arg_7_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_7_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.GetBossState(arg_8_0)
+function slot0.GetBossState(slot0)
 	return WorldBossConst.GetCommissionSceneMetaBossBtnState()
 end
 
-function var_0_0.Dispose(arg_9_0)
-	pg.DelegateInfo.Dispose(arg_9_0)
-	arg_9_0:RemoveTimer()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:RemoveTimer()
 end
 
-return var_0_0
+return slot0

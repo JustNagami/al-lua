@@ -1,1 +1,1 @@
-﻿return (class("IDOLMPtPage", import(".TemplatePage.PtTemplatePage")))
+return class("IDOLMPtPage", import(".TemplatePage.PtTemplatePage"))

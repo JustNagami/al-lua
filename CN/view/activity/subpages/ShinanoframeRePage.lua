@@ -1,68 +1,57 @@
-﻿local var_0_0 = class("ShinanoframeRePage", import("...base.BaseActivityPage"))
+slot0 = class("ShinanoframeRePage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.goBtn = arg_1_0:findTF("GoBtn", arg_1_0.bg)
-	arg_1_0.getBtn = arg_1_0:findTF("GetBtn", arg_1_0.bg)
-	arg_1_0.gotBtn = arg_1_0:findTF("GotBtn", arg_1_0.bg)
-	arg_1_0.gotTag = arg_1_0:findTF("got", arg_1_0.bg)
-	arg_1_0.cur = arg_1_0:findTF("cur", arg_1_0.bg)
-	arg_1_0.max = arg_1_0:findTF("max", arg_1_0.bg)
-	arg_1_0.progressBar = arg_1_0:findTF("progress", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.goBtn = slot0:findTF("GoBtn", slot0.bg)
+	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
+	slot0.gotBtn = slot0:findTF("GotBtn", slot0.bg)
+	slot0.gotTag = slot0:findTF("got", slot0.bg)
+	slot0.cur = slot0:findTF("cur", slot0.bg)
+	slot0.max = slot0:findTF("max", slot0.bg)
+	slot0.progressBar = slot0:findTF("progress", slot0.bg)
 
-	setActive(arg_1_0.goBtn, false)
-	setActive(arg_1_0.getBtn, false)
-	setActive(arg_1_0.gotBtn, false)
-	setActive(arg_1_0.gotTag, false)
+	setActive(slot0.goBtn, false)
+	setActive(slot0.getBtn, false)
+	setActive(slot0.gotBtn, false)
+	setActive(slot0.gotTag, false)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	return
+function slot0.OnDataSetting(slot0)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	onButton(arg_3_0, arg_3_0.goBtn, function()
-		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {})
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.goBtn, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {})
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.getBtn, function()
-		arg_3_0:emit(ActivityMediator.EVENT_OPERATION, {
+	onButton(slot0, slot0.getBtn, function ()
+		uv0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = arg_3_0.activity.id
+			activity_id = uv0.activity.id
 		})
 	end, SFX_PANEL)
-
-	local var_3_0 = pg.activity_event_avatarframe[arg_3_0.activity:getConfig("config_id")].icon_frame
-	local var_3_1 = LoadAndInstantiateSync("IconFrame", var_3_0)
-
-	setParent(var_3_1, findTF(arg_3_0.bg, "icon"), false)
+	setParent(LoadAndInstantiateSync("IconFrame", pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].icon_frame), findTF(slot0.bg, "icon"), false)
 end
 
-function var_0_0.OnUpdateFlush(arg_6_0)
-	local var_6_0 = arg_6_0.activity.data1
-	local var_6_1 = pg.activity_event_avatarframe[arg_6_0.activity:getConfig("config_id")].target
-
-	if var_6_1 < var_6_0 then
-		var_6_0 = var_6_1
+function slot0.OnUpdateFlush(slot0)
+	if pg.activity_event_avatarframe[slot0.activity:getConfig("config_id")].target < slot0.activity.data1 then
+		slot1 = slot2
 	end
 
-	local var_6_2 = var_6_0 / var_6_1
+	setText(slot0.cur, slot1)
+	setText(slot0.max, "/" .. slot2)
+	setSlider(slot0.progressBar, 0, 1, slot1 / slot2)
+	setActive(slot0.progressBar, true)
 
-	setText(arg_6_0.cur, var_6_0)
-	setText(arg_6_0.max, "/" .. var_6_1)
-	setSlider(arg_6_0.progressBar, 0, 1, var_6_2)
-	setActive(arg_6_0.progressBar, true)
+	slot4 = slot2 <= slot1
+	slot5 = slot0.activity.data2 >= 1
 
-	local var_6_3 = var_6_1 <= var_6_0
-	local var_6_4 = arg_6_0.activity.data2 >= 1
-
-	setActive(arg_6_0.goBtn, not var_6_3)
-	setActive(arg_6_0.getBtn, not var_6_4 and var_6_3)
-	setActive(arg_6_0.gotBtn, var_6_4)
-	setActive(arg_6_0.gotTag, var_6_4)
+	setActive(slot0.goBtn, not slot4)
+	setActive(slot0.getBtn, not slot5 and slot4)
+	setActive(slot0.gotBtn, slot5)
+	setActive(slot0.gotTag, slot5)
 end
 
-function var_0_0.OnDestroy(arg_7_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

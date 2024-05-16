@@ -1,79 +1,66 @@
-﻿local var_0_0 = class("MetaCharacterTask")
+slot0 = class("MetaCharacterTask")
+slot0.STATE_EMPTY = 1
+slot0.STATE_START = 2
+slot0.STATE_FINISHED = 3
+slot0.STATE_SUBMITED = 4
 
-var_0_0.STATE_EMPTY = 1
-var_0_0.STATE_START = 2
-var_0_0.STATE_FINISHED = 3
-var_0_0.STATE_SUBMITED = 4
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.taskId = arg_1_1.taskId
-	arg_1_0.star = arg_1_1.star
-	arg_1_0.level = arg_1_1.level
-	arg_1_0.skillId = arg_1_1.skillId
-	arg_1_0.isLearned = false
-	arg_1_0.prevTask = arg_1_1.prev
-	arg_1_0.indexOfTaskList = arg_1_1.indexofList
+function slot0.Ctor(slot0, slot1)
+	slot0.taskId = slot1.taskId
+	slot0.star = slot1.star
+	slot0.level = slot1.level
+	slot0.skillId = slot1.skillId
+	slot0.isLearned = false
+	slot0.prevTask = slot1.prev
+	slot0.indexOfTaskList = slot1.indexofList
 end
 
-function var_0_0.setIsLearned(arg_2_0)
-	arg_2_0.isLearned = true
+function slot0.setIsLearned(slot0)
+	slot0.isLearned = true
 end
 
-function var_0_0.isLearnedTask(arg_3_0)
-	return arg_3_0.isLearned
+function slot0.isLearnedTask(slot0)
+	return slot0.isLearned
 end
 
-function var_0_0.CanFetch(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getConfig("star")
-	local var_4_1 = arg_4_1.level
-
-	return var_4_0 >= arg_4_0.star and var_4_1 >= arg_4_0.level
+function slot0.CanFetch(slot0, slot1)
+	return slot0.star <= slot1:getConfig("star") and slot0.level <= slot1.level
 end
 
-function var_0_0.GetTask(arg_5_0)
-	if arg_5_0:isLearnedTask() then
+function slot0.GetTask(slot0)
+	if slot0:isLearnedTask() then
 		return Task.New({
 			submitTime = 1,
-			id = arg_5_0.taskId
+			id = slot0.taskId
 		})
 	else
-		return getProxy(TaskProxy):getTaskById(arg_5_0.taskId) or Task.New({
-			id = arg_5_0.taskId
+		return getProxy(TaskProxy):getTaskById(slot0.taskId) or Task.New({
+			id = slot0.taskId
 		})
 	end
 end
 
-function var_0_0.GetDesc(arg_6_0)
-	local var_6_0 = pg.skill_data_template[arg_6_0.skillId]
-
-	if arg_6_0.isLearned then
-		return i18n("meta_learn_skill", var_6_0.name)
+function slot0.GetDesc(slot0)
+	if slot0.isLearned then
+		return i18n("meta_learn_skill", pg.skill_data_template[slot0.skillId].name)
 	else
-		return i18n1(var_6_0.name .. "Lv+1")
+		return i18n1(slot1.name .. "Lv+1")
 	end
 end
 
-function var_0_0.GetState(arg_7_0)
-	local var_7_0 = getProxy(TaskProxy):getTaskVO(arg_7_0.taskId)
-
-	if not var_7_0 then
-		if arg_7_0:isLearnedTask() then
+function slot0.GetState(slot0)
+	if not getProxy(TaskProxy):getTaskVO(slot0.taskId) then
+		if slot0:isLearnedTask() then
 			return MetaCharacterTask.STATE_SUBMITED
 		else
 			return MetaCharacterTask.STATE_EMPTY
 		end
+	elseif slot1:isFinish() and slot1:isReceive() then
+		return MetaCharacterTask.STATE_SUBMITED
+	elseif slot2 and not slot3 then
+		return MetaCharacterTask.STATE_FINISHED
 	else
-		local var_7_1 = var_7_0:isFinish()
-		local var_7_2 = var_7_0:isReceive()
-
-		if var_7_1 and var_7_2 then
-			return MetaCharacterTask.STATE_SUBMITED
-		elseif var_7_1 and not var_7_2 then
-			return MetaCharacterTask.STATE_FINISHED
-		else
-			return MetaCharacterTask.STATE_START
-		end
+		return MetaCharacterTask.STATE_START
 	end
 end
 
-return var_0_0
+return slot0

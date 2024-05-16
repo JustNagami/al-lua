@@ -1,9 +1,9 @@
-﻿local var_0_0 = class("StartupCommand", pm.MacroCommand)
+slot0 = class("StartupCommand", pm.MacroCommand)
 
-function var_0_0.initializeMacroCommand(arg_1_0)
-	arg_1_0:addSubCommand(PrepControllerCommand)
-	arg_1_0:addSubCommand(PrepModelCommand)
-	arg_1_0:addSubCommand(PrepViewCommand)
+function slot0.initializeMacroCommand(slot0)
+	slot0:addSubCommand(PrepControllerCommand)
+	slot0:addSubCommand(PrepModelCommand)
+	slot0:addSubCommand(PrepViewCommand)
 end
 
-return var_0_0
+return slot0

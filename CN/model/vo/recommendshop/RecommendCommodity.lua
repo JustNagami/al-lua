@@ -1,175 +1,152 @@
-﻿local var_0_0 = class("RecommendCommodity", import("model.vo.BaseVO"))
-local var_0_1 = 1
-local var_0_2 = 2
+slot0 = class("RecommendCommodity", import("model.vo.BaseVO"))
+slot1 = 1
+slot2 = 2
+slot0.PRICE_TYPE_RMB = 1
+slot0.PRICE_TYPE_RES = 2
 
-var_0_0.PRICE_TYPE_RMB = 1
-var_0_0.PRICE_TYPE_RES = 2
+function slot3(slot0)
+	slot1 = nil
 
-local function var_0_3(arg_1_0)
-	local var_1_0
-
-	if arg_1_0 == var_0_1 then
-		var_1_0 = Goods.TYPE_CHARGE
-	elseif arg_1_0 == var_0_2 then
-		var_1_0 = Goods.TYPE_GIFT_PACKAGE
+	if slot0 == uv0 then
+		slot1 = Goods.TYPE_CHARGE
+	elseif slot0 == uv1 then
+		slot1 = Goods.TYPE_GIFT_PACKAGE
 	end
 
-	assert(var_1_0)
+	assert(slot1)
 
-	return var_1_0
+	return slot1
 end
 
-local function var_0_4(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = {}
+function slot4(slot0, slot1, slot2, slot3)
+	slot4 = {}
 
-	if arg_2_0 == var_0_1 then
-		var_2_0 = arg_2_2
-	elseif arg_2_0 == var_0_2 then
-		var_2_0 = arg_2_3
+	if slot0 == uv0 then
+		slot4 = slot2
+	elseif slot0 == uv1 then
+		slot4 = slot3
 	end
 
-	return (ChargeConst.getBuyCount(var_2_0, arg_2_1))
+	return ChargeConst.getBuyCount(slot4, slot1)
 end
 
-local function var_0_5(arg_3_0, arg_3_1, arg_3_2)
-	if arg_3_0 == var_0_1 then
+function slot5(slot0, slot1, slot2)
+	if slot0 == uv0 then
 		return 0
-	elseif arg_3_0 == var_0_2 then
-		return (ChargeConst.getGroupLimit(arg_3_2, arg_3_1 or 0))
+	elseif slot0 == uv1 then
+		return ChargeConst.getGroupLimit(slot2, slot1 or 0)
 	end
 end
 
-function var_0_0.Ctor(arg_4_0, arg_4_1)
-	arg_4_0.id = arg_4_1.id
-	arg_4_0.configId = arg_4_0.id
-	arg_4_0.commodity = arg_4_0:GenCommodity(arg_4_1.chargedList, arg_4_1.normalList, arg_4_1.normalGroupList)
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot0.id
+	slot0.commodity = slot0:GenCommodity(slot1.chargedList, slot1.normalList, slot1.normalGroupList)
 end
 
-function var_0_0.GenCommodity(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	local var_5_0 = arg_5_0:getConfig("shop_type")
-	local var_5_1 = arg_5_0:getConfig("shop_id")
-	local var_5_2 = var_0_3(var_5_0)
-	local var_5_3 = Goods.Create({
-		id = var_5_1
-	}, var_5_2)
-	local var_5_4 = var_0_4(var_5_0, arg_5_0:getConfig("shop_id"), arg_5_1, arg_5_2)
+function slot0.GenCommodity(slot0, slot1, slot2, slot3)
+	slot4 = slot0:getConfig("shop_type")
+	slot7 = Goods.Create({
+		id = slot0:getConfig("shop_id")
+	}, uv0(slot4))
 
-	var_5_3:updateBuyCount(var_5_4)
+	slot7:updateBuyCount(uv1(slot4, slot0:getConfig("shop_id"), slot1, slot2))
 
-	if not var_5_3:isChargeType() then
-		local var_5_5 = var_0_5(var_5_0, var_5_3:getConfig("group"), arg_5_3)
-
-		var_5_3:updateGroupCount(var_5_5)
+	if not slot7:isChargeType() then
+		slot7:updateGroupCount(uv2(slot4, slot7:getConfig("group"), slot3))
 	end
 
-	return var_5_3
+	return slot7
 end
 
-function var_0_0.bindConfigTable(arg_6_0)
+function slot0.bindConfigTable(slot0)
 	return pg.recommend_shop
 end
 
-function var_0_0.GetName(arg_7_0)
-	return arg_7_0.commodity:GetName() or ""
+function slot0.GetName(slot0)
+	return slot0.commodity:GetName() or ""
 end
 
-function var_0_0.GetDesc(arg_8_0)
-	if arg_8_0.commodity:isChargeType() then
-		if arg_8_0.commodity:isMonthCard() then
+function slot0.GetDesc(slot0)
+	if slot0.commodity:isChargeType() then
+		if slot0.commodity:isMonthCard() then
 			return i18n("monthly_card_tip")
 		else
-			return arg_8_0.commodity:getConfig("descrip")
+			return slot0.commodity:getConfig("descrip")
 		end
 	else
-		return arg_8_0.commodity:getDropInfo():getConfig("display")
+		return slot0.commodity:getDropInfo():getConfig("display")
 	end
 end
 
-function var_0_0.GetDropList(arg_9_0)
-	if arg_9_0.commodity:isChargeType() and arg_9_0.commodity:isMonthCard() then
-		return arg_9_0.commodity:GetDropList()
+function slot0.GetDropList(slot0)
+	if slot0.commodity:isChargeType() and slot0.commodity:isMonthCard() then
+		return slot0.commodity:GetDropList()
 	else
 		return {}
 	end
 end
 
-function var_0_0.GetGem(arg_10_0)
-	if arg_10_0.commodity:isChargeType() then
-		return arg_10_0.commodity:GetGemCnt()
+function slot0.GetGem(slot0)
+	if slot0.commodity:isChargeType() then
+		return slot0.commodity:GetGemCnt()
 	else
 		return 0
 	end
 end
 
-function var_0_0.GetPrice(arg_11_0)
-	if arg_11_0.commodity:isChargeType() then
-		local var_11_0 = arg_11_0.commodity:getConfig("money")
-
-		return var_0_0.PRICE_TYPE_RMB, var_11_0
+function slot0.GetPrice(slot0)
+	if slot0.commodity:isChargeType() then
+		return uv0.PRICE_TYPE_RMB, slot0.commodity:getConfig("money")
 	else
-		local var_11_1 = arg_11_0.commodity:GetPrice()
-		local var_11_2 = arg_11_0.commodity:GetResType()
-
-		return var_0_0.PRICE_TYPE_RES, var_11_1, var_11_2
+		return uv0.PRICE_TYPE_RES, slot0.commodity:GetPrice(), slot0.commodity:GetResType()
 	end
 end
 
-function var_0_0.GetIcon(arg_12_0)
-	local var_12_0 = arg_12_0:getConfig("pic")
-
-	if var_12_0 and var_12_0 ~= "" then
-		return var_12_0
-	elseif arg_12_0.commodity:isChargeType() then
-		local var_12_1 = arg_12_0.commodity:getConfig("picture")
-
-		return "ChargeIcon/" .. var_12_1
+function slot0.GetIcon(slot0)
+	if slot0:getConfig("pic") and slot1 ~= "" then
+		return slot1
+	elseif slot0.commodity:isChargeType() then
+		return "ChargeIcon/" .. slot0.commodity:getConfig("picture")
 	else
-		return arg_12_0.commodity:getDropInfo():getIcon() or ""
+		return slot0.commodity:getDropInfo():getIcon() or ""
 	end
 end
 
-function var_0_0.InTime(arg_13_0)
-	local var_13_0 = arg_13_0:getConfig("time")
-
-	return pg.TimeMgr.GetInstance():inTime(var_13_0)
+function slot0.InTime(slot0)
+	return pg.TimeMgr.GetInstance():inTime(slot0:getConfig("time"))
 end
 
-function var_0_0.GetOrder(arg_14_0)
-	return arg_14_0:getConfig("order")
+function slot0.GetOrder(slot0)
+	return slot0:getConfig("order")
 end
 
-function var_0_0.CanPurchase(arg_15_0)
-	local function var_15_0(arg_16_0)
-		if arg_16_0:isChargeType() then
+function slot0.CanPurchase(slot0)
+	return slot0:InTime() and slot0.commodity:canPurchase() and slot0.commodity:inTime() and not function (slot0)
+		if slot0:isChargeType() then
 			return false
 		end
 
-		return arg_15_0.commodity:IsGroupLimit()
-	end
-
-	return arg_15_0:InTime() and arg_15_0.commodity:canPurchase() and arg_15_0.commodity:inTime() and not var_15_0(arg_15_0.commodity)
+		return uv0.commodity:IsGroupLimit()
+	end(slot0.commodity)
 end
 
-function var_0_0.CanShow(arg_17_0)
-	if arg_17_0:IsMonthCard() then
+function slot0.CanShow(slot0)
+	if slot0:IsMonthCard() then
 		return true
 	else
-		return arg_17_0:CanPurchase()
+		return slot0:CanPurchase()
 	end
 end
 
-function var_0_0.IsMonthCard(arg_18_0)
-	return arg_18_0.commodity:isChargeType() and arg_18_0.commodity:isMonthCard()
+function slot0.IsMonthCard(slot0)
+	return slot0.commodity:isChargeType() and slot0.commodity:isMonthCard()
 end
 
-function var_0_0.IsMonthCardAndCantPurchase(arg_19_0)
-	if arg_19_0:IsMonthCard() then
-		local var_19_0 = getProxy(PlayerProxy):getRawData():getCardById(VipCard.MONTH)
-
-		if var_19_0 and var_19_0:GetLeftDay() > (arg_19_0.commodity:getConfig("limit_arg") or 0) then
-			local var_19_1 = i18n("charge_menu_month_tip", var_19_0:GetLeftDay())
-
-			return true, var_19_1
+function slot0.IsMonthCardAndCantPurchase(slot0)
+	if slot0:IsMonthCard() then
+		if getProxy(PlayerProxy):getRawData():getCardById(VipCard.MONTH) and slot2:GetLeftDay() > (slot0.commodity:getConfig("limit_arg") or 0) then
+			return true, i18n("charge_menu_month_tip", slot2:GetLeftDay())
 		else
 			return false
 		end
@@ -178,8 +155,8 @@ function var_0_0.IsMonthCardAndCantPurchase(arg_19_0)
 	return false
 end
 
-function var_0_0.GetRealCommodity(arg_20_0)
-	return arg_20_0.commodity
+function slot0.GetRealCommodity(slot0)
+	return slot0.commodity
 end
 
-return var_0_0
+return slot0

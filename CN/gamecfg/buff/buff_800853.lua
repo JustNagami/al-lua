@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 2,
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 800853,
+	icon = 800850,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffOrb",
@@ -29,24 +48,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 2,
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 800853,
-	icon = 800850,
-	last_effect = ""
+	}
 }

@@ -1,146 +1,122 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleAttr
+slot2 = slot0.Battle.BattleFormulas
+slot3 = slot0.Battle.BattleConfig
+slot0.Battle.BattleBuffDOT = class("BattleBuffDOT", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffDOT.__name = "BattleBuffDOT"
+slot4 = slot0.Battle.BattleBuffDOT
+slot4.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_DOT
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleAttr
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = var_0_0.Battle.BattleConfig
-
-var_0_0.Battle.BattleBuffDOT = class("BattleBuffDOT", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffDOT.__name = "BattleBuffDOT"
-
-local var_0_4 = var_0_0.Battle.BattleBuffDOT
-
-var_0_4.FX_TYPE = var_0_0.Battle.BattleBuffEffect.FX_TYPE_DOT
-
-function var_0_4.Ctor(arg_1_0, arg_1_1)
-	var_0_4.super.Ctor(arg_1_0, arg_1_1)
+function slot4.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_4.GetEffectType(arg_2_0)
-	return var_0_0.Battle.BattleBuffEffect.FX_TYPE_DOT
+function slot4.GetEffectType(slot0)
+	return uv0.Battle.BattleBuffEffect.FX_TYPE_DOT
 end
 
-function var_0_4.SetArgs(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0._number = arg_3_0._tempData.arg_list.number or 0
-	arg_3_0._numberBase = arg_3_0._number
-	arg_3_0._time = arg_3_0._tempData.arg_list.time or 0
-	arg_3_0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + arg_3_0._time
-	arg_3_0._maxHPRatio = arg_3_0._tempData.arg_list.maxHPRatio or 0
-	arg_3_0._currentHPRatio = arg_3_0._tempData.arg_list.currentHPRatio or 0
-	arg_3_0._minRestHPRatio = arg_3_0._tempData.arg_list.minRestHPRatio or 0
-	arg_3_0._randExtraRange = arg_3_0._tempData.arg_list.randExtraRange or 0
-	arg_3_0._cloakExpose = arg_3_0._tempData.arg_list.cloakExpose or 0
-	arg_3_0._exposeGroup = arg_3_0._tempData.arg_list._exposeGroup or arg_3_2:GetID()
-	arg_3_0._level = arg_3_0._level or 0
-	arg_3_0._metaDot = arg_3_0._tempData.arg_list.metaDot
+function slot4.SetArgs(slot0, slot1, slot2)
+	slot0._number = slot0._tempData.arg_list.number or 0
+	slot0._numberBase = slot0._number
+	slot0._time = slot0._tempData.arg_list.time or 0
+	slot0._nextEffectTime = pg.TimeMgr.GetInstance():GetCombatTime() + slot0._time
+	slot0._maxHPRatio = slot0._tempData.arg_list.maxHPRatio or 0
+	slot0._currentHPRatio = slot0._tempData.arg_list.currentHPRatio or 0
+	slot0._minRestHPRatio = slot0._tempData.arg_list.minRestHPRatio or 0
+	slot0._randExtraRange = slot0._tempData.arg_list.randExtraRange or 0
+	slot0._cloakExpose = slot0._tempData.arg_list.cloakExpose or 0
+	slot0._exposeGroup = slot0._tempData.arg_list._exposeGroup or slot2:GetID()
+	slot0._level = slot0._level or 0
+	slot0._metaDot = slot0._tempData.arg_list.metaDot
+	slot4 = 0
 
-	local var_3_0 = 0
-
-	if not arg_3_0._metaDot then
-		var_3_0 = var_0_2.CaclulateDOTDuration(arg_3_0._tempData, arg_3_0._orb, arg_3_1)
+	if not slot0._metaDot then
+		slot4 = uv0.CaclulateDOTDuration(slot0._tempData, slot0._orb, slot1)
 	end
 
-	arg_3_2:SetOrbDuration(var_3_0)
+	slot2:SetOrbDuration(slot4)
 
-	if arg_3_0._tempData.arg_list.WorldBossDotDamage then
-		local var_3_1 = arg_3_0._tempData.arg_list.WorldBossDotDamage
-
-		arg_3_0._igniteDMG = (var_0_0.Battle.BattleDataProxy.GetInstance():GetInitData()[var_3_1.useGlobalAttr] or pg.bfConsts.NUM0) * (var_3_1.paramA or pg.bfConsts.NUM1)
-	elseif arg_3_0._orb then
-		arg_3_0._igniteAttr = arg_3_0._tempData.arg_list.attr
-		arg_3_0._igniteCoefficient = arg_3_0._tempData.arg_list.k
-		arg_3_0._igniteDMG = var_0_2.CalculateIgniteDamage(arg_3_0._orb, arg_3_0._igniteAttr, arg_3_0._igniteCoefficient)
+	if slot0._tempData.arg_list.WorldBossDotDamage then
+		slot0._igniteDMG = (uv1.Battle.BattleDataProxy.GetInstance():GetInitData()[slot0._tempData.arg_list.WorldBossDotDamage.useGlobalAttr] or pg.bfConsts.NUM0) * (slot5.paramA or pg.bfConsts.NUM1)
+	elseif slot0._orb then
+		slot0._igniteAttr = slot0._tempData.arg_list.attr
+		slot0._igniteCoefficient = slot0._tempData.arg_list.k
+		slot0._igniteDMG = uv0.CalculateIgniteDamage(slot0._orb, slot0._igniteAttr, slot0._igniteCoefficient)
 	else
-		arg_3_0._igniteDMG = 0
+		slot0._igniteDMG = 0
 	end
 
-	if arg_3_0._cloakExpose and arg_3_0._cloakExpose > 0 then
-		arg_3_1:CloakExpose(arg_3_0._cloakExpose)
+	if slot0._cloakExpose and slot0._cloakExpose > 0 then
+		slot1:CloakExpose(slot0._cloakExpose)
 	end
 end
 
-function var_0_4.onStack(arg_4_0, arg_4_1, arg_4_2)
-	return
+function slot4.onStack(slot0, slot1, slot2)
 end
 
-function var_0_4.onUpdate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	if arg_5_3.timeStamp >= arg_5_0._nextEffectTime then
-		local var_5_0 = arg_5_0:CalcNumber(arg_5_1, arg_5_2)
-		local var_5_1 = {
+function slot4.onUpdate(slot0, slot1, slot2, slot3)
+	if slot0._nextEffectTime <= slot3.timeStamp then
+		uv0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, slot1:GetAttrByName("id"), -slot1:UpdateHP(-slot0:CalcNumber(slot1, slot2), {
 			isMiss = false,
 			isCri = false,
 			isHeal = false
-		}
-		local var_5_2 = arg_5_1:UpdateHP(-var_5_0, var_5_1)
+		}))
 
-		var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, arg_5_1:GetAttrByName("id"), -var_5_2)
-
-		if arg_5_1:IsAlive() then
-			arg_5_0._nextEffectTime = arg_5_0._nextEffectTime + arg_5_0._time
+		if slot1:IsAlive() then
+			slot0._nextEffectTime = slot0._nextEffectTime + slot0._time
 		end
 	end
 end
 
-function var_0_4.onRemove(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0:CalcNumber(arg_6_1, arg_6_2)
-	local var_6_1 = {
+function slot4.onRemove(slot0, slot1, slot2)
+	uv0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, slot1:GetAttrByName("id"), -slot1:UpdateHP(-slot0:CalcNumber(slot1, slot2), {
 		isMiss = false,
 		isCri = false,
 		isHeal = false
-	}
-	local var_6_2 = arg_6_1:UpdateHP(-var_6_0, var_6_1)
-
-	var_0_0.Battle.BattleDataProxy.GetInstance():DamageStatistics(nil, arg_6_1:GetAttrByName("id"), -var_6_2)
+	}))
 end
 
-function var_0_4.CalcNumber(arg_7_0, arg_7_1, arg_7_2)
-	if arg_7_0._metaDot then
-		local var_7_0 = var_0_0.Battle.BattleDataProxy.GetInstance():GetInitData()
+function slot4.CalcNumber(slot0, slot1, slot2)
+	if slot0._metaDot then
+		slot4 = uv0.Battle.BattleDataProxy.GetInstance():GetInitData()
 
-		return (var_0_2.CaclulateMetaDotaDamage(var_7_0.bossConfigId, var_7_0.bossLevel))
+		return uv1.CaclulateMetaDotaDamage(slot4.bossConfigId, slot4.bossLevel)
 	else
-		local var_7_1 = var_0_2.CaclulateDOTDamageEnhanceRate(arg_7_0._tempData, arg_7_0._orb, arg_7_1)
-		local var_7_2, var_7_3 = arg_7_1:GetHP()
-		local var_7_4 = var_7_2 * arg_7_0._currentHPRatio + var_7_3 * arg_7_0._maxHPRatio + arg_7_0._number + arg_7_0._igniteDMG
+		slot3 = uv1.CaclulateDOTDamageEnhanceRate(slot0._tempData, slot0._orb, slot1)
+		slot4, slot5 = slot1:GetHP()
 
-		if arg_7_0._randExtraRange > 0 then
-			var_7_4 = var_7_4 + math.random(0, arg_7_0._randExtraRange)
+		if slot0._randExtraRange > 0 then
+			slot6 = slot4 * slot0._currentHPRatio + slot5 * slot0._maxHPRatio + slot0._number + slot0._igniteDMG + math.random(0, slot0._randExtraRange)
 		end
 
-		local var_7_5 = var_7_4 * (1 + var_7_1)
-
-		return math.max(0, math.floor(math.min(var_7_2 - var_7_3 * arg_7_0._minRestHPRatio, var_7_5 * arg_7_2._stack * var_0_1.GetCurrent(arg_7_1, "repressReduce"))))
+		return math.max(0, math.floor(math.min(slot4 - slot5 * slot0._minRestHPRatio, slot6 * (1 + slot3) * slot2._stack * uv2.GetCurrent(slot1, "repressReduce"))))
 	end
 end
 
-function var_0_4.SetOrb(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	arg_8_0._orb = arg_8_2
-	arg_8_0._level = arg_8_3
+function slot4.SetOrb(slot0, slot1, slot2, slot3)
+	slot0._orb = slot2
+	slot0._level = slot3
 
-	arg_8_1:SetOrbLevel(arg_8_0._level)
+	slot1:SetOrbLevel(slot0._level)
 end
 
-function var_0_4.UpdateCloakLock(arg_9_0)
-	local var_9_0 = arg_9_0:GetBuffList()
-	local var_9_1 = 0
-	local var_9_2 = {}
+function slot4.UpdateCloakLock(slot0)
+	slot2 = 0
+	slot3 = {}
 
-	for iter_9_0, iter_9_1 in pairs(var_9_0) do
-		for iter_9_2, iter_9_3 in ipairs(iter_9_1._effectList) do
-			if iter_9_3:GetEffectType() == var_0_4.FX_TYPE then
-				local var_9_3 = iter_9_3._cloakExpose
-				local var_9_4 = iter_9_3._exposeGroup
-				local var_9_5 = var_9_2[var_9_4] or 0
-
-				if var_9_5 < var_9_3 then
-					var_9_1 = var_9_1 + var_9_3 - var_9_5
-					var_9_5 = var_9_3
+	for slot7, slot8 in pairs(slot0:GetBuffList()) do
+		for slot12, slot13 in ipairs(slot8._effectList) do
+			if slot13:GetEffectType() == uv0.FX_TYPE then
+				if slot13._cloakExpose > (slot3[slot13._exposeGroup] or 0) then
+					slot2 = slot2 + slot14 - slot16
+					slot16 = slot14
 				end
 
-				var_9_2[var_9_4] = var_9_5
+				slot3[slot15] = slot16
 			end
 		end
 	end
 
-	arg_9_0:CloakOnFire(var_9_1)
+	slot0:CloakOnFire(slot2)
 end

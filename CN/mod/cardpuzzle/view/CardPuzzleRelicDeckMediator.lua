@@ -1,30 +1,26 @@
-﻿local var_0_0 = class("CardPuzzleRelicDeckMediator", ContextMediator)
+slot0 = class("CardPuzzleRelicDeckMediator", ContextMediator)
+slot0.SHOW_GIFT = "SHOW_GIFT"
+slot0.CLOSE_LAYER = "CLOSE_LAYER"
 
-var_0_0.SHOW_GIFT = "SHOW_GIFT"
-var_0_0.CLOSE_LAYER = "CLOSE_LAYER"
-
-function var_0_0.register(arg_1_0)
-	local var_1_0 = arg_1_0.contextData.relicList
-
-	arg_1_0.viewComponent:SetGifts(var_1_0)
-	arg_1_0:bind(var_0_0.SHOW_GIFT, function(arg_2_0, arg_2_1)
-		arg_1_0:addSubLayers(Context.New({
+function slot0.register(slot0)
+	slot0.viewComponent:SetGifts(slot0.contextData.relicList)
+	slot0:bind(uv0.SHOW_GIFT, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CardPuzzleRelicDetailMediator,
 			viewComponent = CardPuzzleRelicDetailLayer,
-			data = arg_2_1
+			data = slot1
 		}))
 	end)
-	arg_1_0:bind(var_0_0.CLOSE_LAYER, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.RESUME_BATTLE)
+	slot0:bind(uv0.CLOSE_LAYER, function (slot0, slot1)
+		uv0:sendNotification(GAME.RESUME_BATTLE)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {}
 end
 
-function var_0_0.remove(arg_5_0)
-	return
+function slot0.remove(slot0)
 end
 
-return var_0_0
+return slot0

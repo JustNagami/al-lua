@@ -1,22 +1,20 @@
-﻿local var_0_0 = class("TecSpeedUpMediator", import("..base.ContextMediator"))
+slot0 = class("TecSpeedUpMediator", import("..base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	return
+function slot0.register(slot0)
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.USE_TEC_SPEEDUP_ITEM_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_3_0 == GAME.USE_TEC_SPEEDUP_ITEM_DONE then
-		arg_3_0.viewComponent:closeView()
+	if slot1:getName() == GAME.USE_TEC_SPEEDUP_ITEM_DONE then
+		slot0.viewComponent:closeView()
 	end
 end
 
-return var_0_0
+return slot0

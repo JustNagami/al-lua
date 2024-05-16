@@ -1,25 +1,4 @@
-﻿return {
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				group = 13041,
-				attr = "perfectDodge",
-				number = 1
-			}
-		}
-	},
+return {
 	{
 		time = 5
 	},
@@ -58,5 +37,26 @@
 	stack = 1,
 	id = 13041,
 	icon = 13041,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				group = 13041,
+				attr = "perfectDodge",
+				number = 1
+			}
+		}
+	}
 }

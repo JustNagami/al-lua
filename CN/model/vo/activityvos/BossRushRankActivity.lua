@@ -1,18 +1,17 @@
-﻿local var_0_0 = class("BossRushRankActivity", import("model.vo.Activity"))
+slot0 = class("BossRushRankActivity", import("model.vo.Activity"))
 
-function var_0_0.GetScore(arg_1_0)
-	return arg_1_0.data1
+function slot0.GetScore(slot0)
+	return slot0.data1
 end
 
-function var_0_0.Record(arg_2_0, arg_2_1)
-	local var_2_0 = getProxy(ActivityProxy):GetBossRushRuntime(arg_2_0.id).record + arg_2_1
-
-	getProxy(ActivityProxy):GetBossRushRuntime(arg_2_0.id).record = var_2_0
-	arg_2_0.data1 = math.max(arg_2_0.data1, var_2_0)
+function slot0.Record(slot0, slot1)
+	slot2 = getProxy(ActivityProxy):GetBossRushRuntime(slot0.id).record + slot1
+	getProxy(ActivityProxy):GetBossRushRuntime(slot0.id).record = slot2
+	slot0.data1 = math.max(slot0.data1, slot2)
 end
 
-function var_0_0.ResetLast(arg_3_0)
-	getProxy(ActivityProxy):GetBossRushRuntime(arg_3_0.id).record = 0
+function slot0.ResetLast(slot0)
+	getProxy(ActivityProxy):GetBossRushRuntime(slot0.id).record = 0
 end
 
-return var_0_0
+return slot0

@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				count = 0,
-				delay = 1
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +20,17 @@
 	stack = 1,
 	id = 9035,
 	icon = 9031,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				count = 0,
+				delay = 1
+			}
+		}
+	}
 }

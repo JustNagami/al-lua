@@ -1,18 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				check_target = "TargetNationalityFriendly",
-				buff_id = 12071,
-				minTargetNumber = 3,
-				nationality = 3
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +18,19 @@
 	stack = 1,
 	id = 12070,
 	icon = 12070,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				check_target = "TargetNationalityFriendly",
+				buff_id = 12071,
+				minTargetNumber = 3,
+				nationality = 3
+			}
+		}
+	}
 }

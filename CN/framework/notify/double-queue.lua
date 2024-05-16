@@ -1,78 +1,75 @@
-﻿local var_0_0 = setmetatable
-local var_0_1 = {}
-local var_0_2 = {}
-local var_0_3 = {
-	__index = var_0_2
+slot0 = setmetatable
+slot2 = {}
+slot3 = {
+	__index = slot2
 }
 
-function var_0_1.New()
-	return var_0_0({
-		first = 1,
-		last = 0,
-		data = {},
-		data_position = {}
-	}, var_0_3)
-end
-
-local function var_0_4(arg_2_0)
-	while arg_2_0.first <= arg_2_0.last do
-		if arg_2_0.data[arg_2_0.first] then
+function slot4(slot0)
+	while slot0.first <= slot0.last do
+		if slot0.data[slot0.first] then
 			return true
 		end
 
-		arg_2_0.first = arg_2_0.first + 1
+		slot0.first = slot0.first + 1
 	end
 end
 
-function var_0_2.is_empty(arg_3_0)
-	return arg_3_0.first > arg_3_0.last
+function slot2.is_empty(slot0)
+	return slot0.last < slot0.first
 end
 
-function var_0_2.push_front(arg_4_0, arg_4_1)
-	if arg_4_0.data_position[arg_4_1] then
+function slot2.push_front(slot0, slot1)
+	if slot0.data_position[slot1] then
 		return
 	end
 
-	arg_4_0.first = arg_4_0.first - 1
-	arg_4_0.data[arg_4_0.first] = arg_4_1
-	arg_4_0.data_position[arg_4_1] = arg_4_0.first
+	slot0.first = slot0.first - 1
+	slot0.data[slot0.first] = slot1
+	slot0.data_position[slot1] = slot0.first
 end
 
-function var_0_2.push_back(arg_5_0, arg_5_1)
-	if arg_5_0.data_position[arg_5_1] then
+function slot2.push_back(slot0, slot1)
+	if slot0.data_position[slot1] then
 		return
 	end
 
-	arg_5_0.last = arg_5_0.last + 1
-	arg_5_0.data[arg_5_0.last] = arg_5_1
-	arg_5_0.data_position[arg_5_1] = arg_5_0.last
+	slot0.last = slot0.last + 1
+	slot0.data[slot0.last] = slot1
+	slot0.data_position[slot1] = slot0.last
 end
 
-function var_0_2.get_iterator(arg_6_0)
-	local var_6_0 = arg_6_0.first
+function slot2.get_iterator(slot0)
+	slot1 = slot0.first
 
-	return function()
-		while var_6_0 <= arg_6_0.last do
-			local var_7_0 = arg_6_0.data[var_6_0]
+	return function ()
+		while uv0 <= uv1.last do
+			uv0 = uv0 + 1
 
-			var_6_0 = var_6_0 + 1
-
-			if var_7_0 then
-				return var_7_0
+			if uv1.data[uv0] then
+				return slot0
 			end
 		end
 	end
 end
 
-function var_0_2.remove(arg_8_0, arg_8_1)
-	if not arg_8_0.data_position[arg_8_1] then
+function slot2.remove(slot0, slot1)
+	if not slot0.data_position[slot1] then
 		return
 	end
 
-	arg_8_0.data[arg_8_0.data_position[arg_8_1]] = nil
-	arg_8_0.data_position[arg_8_1] = nil
+	slot0.data[slot0.data_position[slot1]] = nil
+	slot0.data_position[slot1] = nil
 
-	var_0_4(arg_8_0)
+	uv0(slot0)
 end
 
-return var_0_1
+return {
+	New = function ()
+		return uv0({
+			first = 1,
+			last = 0,
+			data = {},
+			data_position = {}
+		}, uv1)
+	end
+}

@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "NG0041",
 	events = {
 		{
@@ -23,7 +23,7 @@
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/LevelFleetSelectView(Clone)/panel/ShipList/support/1/support/emptytpl(Clone)",
 				triggerType = {
-					3
+					8
 				}
 			}
 		},

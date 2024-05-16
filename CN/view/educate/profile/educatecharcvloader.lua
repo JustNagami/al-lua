@@ -1,53 +1,49 @@
-﻿local var_0_0 = class("EducateCharCvLoader")
+slot0 = class("EducateCharCvLoader")
 
-function var_0_0.Play(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	arg_1_0:Stop()
+function slot0.Play(slot0, slot1, slot2, slot3, slot4)
+	slot0:Stop()
 
-	local function var_1_0()
-		pg.CriMgr.GetInstance():PlayCV_V3(arg_1_2, arg_1_1, function(arg_3_0)
-			if arg_3_0 then
-				local var_3_0 = arg_3_0:GetLength() * 0.001
+	if (slot3 or 0) <= 0 then
+		function ()
+			pg.CriMgr.GetInstance():PlayCV_V3(uv0, uv1, function (slot0)
+				if slot0 then
+					uv0._currentVoice = slot0.playback
 
-				arg_1_0._currentVoice = arg_3_0.playback
-
-				arg_1_4(var_3_0)
-			else
-				arg_1_4(-1)
-			end
-		end)
-	end
-
-	if (arg_1_3 or 0) <= 0 then
-		var_1_0()
+					uv1(slot0:GetLength() * 0.001)
+				else
+					uv1(-1)
+				end
+			end)
+		end()
 	else
-		arg_1_0.timer = Timer.New(var_1_0, arg_1_3, 1)
+		slot0.timer = Timer.New(slot5, slot3, 1)
 
-		arg_1_0.timer:Start()
+		slot0.timer:Start()
 	end
 end
 
-function var_0_0.Stop(arg_4_0)
-	arg_4_0:RemoveTimer()
+function slot0.Stop(slot0)
+	slot0:RemoveTimer()
 
-	if arg_4_0._currentVoice then
-		arg_4_0._currentVoice:Stop(true)
+	if slot0._currentVoice then
+		slot0._currentVoice:Stop(true)
 	end
 end
 
-function var_0_0.Unload(arg_5_0)
-	arg_5_0:Stop()
+function slot0.Unload(slot0)
+	slot0:Stop()
 end
 
-function var_0_0.RemoveTimer(arg_6_0)
-	if arg_6_0.timer then
-		arg_6_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_6_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.Dispose(arg_7_0)
-	arg_7_0:Unload()
+function slot0.Dispose(slot0)
+	slot0:Unload()
 end
 
-return var_0_0
+return slot0

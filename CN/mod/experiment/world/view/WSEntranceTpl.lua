@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WSEntranceTpl", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WSEntranceTpl", import("...BaseEntity"))
+slot0.Fields = {
 	markSigns = "table",
 	portCamp = "number",
 	world = "table",
@@ -10,10 +9,10 @@ var_0_0.Fields = {
 	markTFs = "table",
 	tfArea = "userdata"
 }
-var_0_0.Listeners = {
+slot0.Listeners = {
 	onUpdateDisplayMarks = "OnUpdateDisplayMarks"
 }
-var_0_0.DisplayOrder = {
+slot0.DisplayOrder = {
 	"step",
 	"task_main",
 	"task_collecktion",
@@ -25,7 +24,7 @@ var_0_0.DisplayOrder = {
 	"task_following_boss",
 	"task_following"
 }
-var_0_0.prefabName = {
+slot0.prefabName = {
 	task_main = "DSJ_BX05_3D",
 	buff_a = "buff_a",
 	port_gray_2 = "mark_port_gray_2",
@@ -52,7 +51,7 @@ var_0_0.prefabName = {
 	buff_h2 = "buff_h2",
 	port_mark = "mark_port_tip"
 }
-var_0_0.offsetField = {
+slot0.offsetField = {
 	task_main = "offset_pos",
 	task = "offset_pos",
 	treasure_sairen = "offset_pos",
@@ -64,152 +63,142 @@ var_0_0.offsetField = {
 	task_following_boss = "offset_pos"
 }
 
-function var_0_0.Build(arg_1_0)
-	arg_1_0.transform = tf(GameObject.New())
+function slot0.Build(slot0)
+	slot0.transform = tf(GameObject.New())
 end
 
-function var_0_0.Setup(arg_2_0)
-	pg.DelegateInfo.New(arg_2_0)
-	arg_2_0:Init()
+function slot0.Setup(slot0)
+	pg.DelegateInfo.New(slot0)
+	slot0:Init()
 end
 
-function var_0_0.Dispose(arg_3_0)
-	pg.DelegateInfo.Dispose(arg_3_0)
-	arg_3_0:RemoveEntranceListener()
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
+	slot0:RemoveEntranceListener()
 
-	local var_3_0 = PoolMgr.GetInstance()
+	for slot5, slot6 in pairs(slot0.markTFs) do
+		slot6.localPosition = Vector3.zero
 
-	for iter_3_0, iter_3_1 in pairs(arg_3_0.markTFs) do
-		iter_3_1.localPosition = Vector3.zero
-
-		var_3_0:ReturnPrefab("world/mark/" .. var_0_0.prefabName[iter_3_0], var_0_0.prefabName[iter_3_0], go(iter_3_1), true)
+		PoolMgr.GetInstance():ReturnPrefab("world/mark/" .. uv0.prefabName[slot5], uv0.prefabName[slot5], go(slot6), true)
 	end
 
-	Destroy(arg_3_0.transform)
-	arg_3_0:Clear()
+	Destroy(slot0.transform)
+	slot0:Clear()
 end
 
-function var_0_0.Init(arg_4_0)
-	arg_4_0.markTFs = {}
+function slot0.Init(slot0)
+	slot0.markTFs = {}
 end
 
-function var_0_0.UpdateEntrance(arg_5_0, arg_5_1, arg_5_2)
-	if arg_5_2 or arg_5_0.entrance ~= arg_5_1 then
-		arg_5_0:RemoveEntranceListener()
-		_.each(arg_5_0.markTFs, function(arg_6_0)
-			setActive(arg_6_0, false)
+function slot0.UpdateEntrance(slot0, slot1, slot2)
+	if slot2 or slot0.entrance ~= slot1 then
+		slot0:RemoveEntranceListener()
+		_.each(slot0.markTFs, function (slot0)
+			setActive(slot0, false)
 		end)
 
-		arg_5_0.entrance = arg_5_1
-		arg_5_0.portCamp = arg_5_0.entrance:HasPort() and pg.world_port_data[arg_5_0.entrance.config.port_map_icon].port_camp or nil
+		slot0.entrance = slot1
+		slot0.portCamp = slot0.entrance:HasPort() and pg.world_port_data[slot0.entrance.config.port_map_icon].port_camp or nil
 
-		arg_5_0:AddEntranceListener()
-		arg_5_0:InitMarksValue()
+		slot0:AddEntranceListener()
+		slot0:InitMarksValue()
 
-		arg_5_0.transform.name = arg_5_0.portCamp and "port_" .. arg_5_1.id or arg_5_1:GetColormaskUniqueID()
+		slot0.transform.name = slot0.portCamp and "port_" .. slot1.id or slot1:GetColormaskUniqueID()
 
-		arg_5_0:DoUpdateMark(arg_5_0:GetShowMark(), true)
+		slot0:DoUpdateMark(slot0:GetShowMark(), true)
 	end
 end
 
-function var_0_0.InitMarksValue(arg_7_0)
-	arg_7_0.markSigns = {}
+function slot0.InitMarksValue(slot0)
+	slot0.markSigns = {}
 
-	local var_7_0 = arg_7_0.entrance:GetDisplayMarks()
-
-	for iter_7_0, iter_7_1 in pairs(var_7_0) do
-		arg_7_0.markSigns[iter_7_0] = iter_7_1 > 0
+	for slot5, slot6 in pairs(slot0.entrance:GetDisplayMarks()) do
+		slot0.markSigns[slot5] = slot6 > 0
 	end
 end
 
-function var_0_0.AddEntranceListener(arg_8_0)
-	if arg_8_0.entrance then
-		arg_8_0.entrance:AddListener(WorldEntrance.EventUpdateDisplayMarks, arg_8_0.onUpdateDisplayMarks)
+function slot0.AddEntranceListener(slot0)
+	if slot0.entrance then
+		slot0.entrance:AddListener(WorldEntrance.EventUpdateDisplayMarks, slot0.onUpdateDisplayMarks)
 	end
 end
 
-function var_0_0.RemoveEntranceListener(arg_9_0)
-	if arg_9_0.entrance then
-		arg_9_0.entrance:RemoveListener(WorldEntrance.EventUpdateDisplayMarks, arg_9_0.onUpdateDisplayMarks)
+function slot0.RemoveEntranceListener(slot0)
+	if slot0.entrance then
+		slot0.entrance:RemoveListener(WorldEntrance.EventUpdateDisplayMarks, slot0.onUpdateDisplayMarks)
 	end
 end
 
-function var_0_0.LoadPrefab(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = PoolMgr.GetInstance()
+function slot0.LoadPrefab(slot0, slot1, slot2)
+	PoolMgr.GetInstance():GetPrefab("world/mark/" .. uv0.prefabName[slot1], uv0.prefabName[slot1], true, function (slot0)
+		if uv0.markTFs and not uv0.markTFs[uv1] then
+			uv0.markTFs[uv1] = tf(slot0)
 
-	var_10_0:GetPrefab("world/mark/" .. var_0_0.prefabName[arg_10_1], var_0_0.prefabName[arg_10_1], true, function(arg_11_0)
-		if arg_10_0.markTFs and not arg_10_0.markTFs[arg_10_1] then
-			arg_10_0.markTFs[arg_10_1] = tf(arg_11_0)
+			SetParent(uv0.markTFs[uv1], uv0.transform, false)
 
-			SetParent(arg_10_0.markTFs[arg_10_1], arg_10_0.transform, false)
+			uv0.markTFs[uv1].localPosition = uv0:GetPrefabOffset(uv1)
 
-			arg_10_0.markTFs[arg_10_1].localPosition = arg_10_0:GetPrefabOffset(arg_10_1)
-
-			if arg_10_2 then
-				SetParent(arg_10_0.markTFs[arg_10_1], arg_10_2, true)
+			if uv2 then
+				SetParent(uv0.markTFs[uv1], uv2, true)
 			end
 
-			setActive(arg_10_0.markTFs[arg_10_1], true)
+			setActive(uv0.markTFs[uv1], true)
 		else
-			var_10_0:ReturnPrefab("world/mark/" .. var_0_0.prefabName[arg_10_1], var_0_0.prefabName[arg_10_1], arg_11_0, true)
+			uv3:ReturnPrefab("world/mark/" .. uv4.prefabName[uv1], uv4.prefabName[uv1], slot0, true)
 		end
 	end)
 end
 
-function var_0_0.GetPrefabOffset(arg_12_0, arg_12_1)
-	local var_12_0 = var_0_0.offsetField[arg_12_1] and arg_12_0.entrance.config[var_0_0.offsetField[arg_12_1]] or {
+function slot0.GetPrefabOffset(slot0, slot1)
+	slot2 = uv0.offsetField[slot1] and slot0.entrance.config[uv0.offsetField[slot1]] or {
 		0,
 		0
 	}
 
-	return Vector3(var_12_0[1] / PIXEL_PER_UNIT, 0, var_12_0[2] / PIXEL_PER_UNIT)
+	return Vector3(slot2[1] / PIXEL_PER_UNIT, 0, slot2[2] / PIXEL_PER_UNIT)
 end
 
-function var_0_0.UpdateMark(arg_13_0, arg_13_1, arg_13_2)
-	arg_13_0:DoUpdateMark(arg_13_0:GetShowMark(), false)
+function slot0.UpdateMark(slot0, slot1, slot2)
+	slot0:DoUpdateMark(slot0:GetShowMark(), false)
 
-	arg_13_0.markSigns[arg_13_1] = arg_13_2
+	slot0.markSigns[slot1] = slot2
 
-	arg_13_0:DoUpdateMark(arg_13_0:GetShowMark(), true)
+	slot0:DoUpdateMark(slot0:GetShowMark(), true)
 end
 
-function var_0_0.OnUpdateDisplayMarks(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
-	arg_14_0:UpdateMark(arg_14_3, arg_14_4)
+function slot0.OnUpdateDisplayMarks(slot0, slot1, slot2, slot3, slot4)
+	slot0:UpdateMark(slot3, slot4)
 end
 
-function var_0_0.DoUpdateMark(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	if arg_15_1 then
-		if arg_15_0.markTFs[arg_15_1] then
-			setActive(arg_15_0.markTFs[arg_15_1], arg_15_2)
-		elseif arg_15_2 then
-			arg_15_0:LoadPrefab(arg_15_1, arg_15_3)
+function slot0.DoUpdateMark(slot0, slot1, slot2, slot3)
+	if slot1 then
+		if slot0.markTFs[slot1] then
+			setActive(slot0.markTFs[slot1], slot2)
+		elseif slot2 then
+			slot0:LoadPrefab(slot1, slot3)
 		end
 	end
 end
 
-function var_0_0.GetShowMark(arg_16_0)
-	for iter_16_0, iter_16_1 in ipairs(var_0_0.DisplayOrder) do
-		if arg_16_0.markSigns[iter_16_1] then
-			return iter_16_1
+function slot0.GetShowMark(slot0)
+	for slot4, slot5 in ipairs(uv0.DisplayOrder) do
+		if slot0.markSigns[slot5] then
+			return slot5
 		end
 	end
 end
 
-function var_0_0.UpdatePort(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	arg_17_0:DoUpdateMark("port_" .. arg_17_0.portCamp, arg_17_1)
-	arg_17_0:DoUpdateMark("port_gray_" .. arg_17_0.portCamp, not arg_17_1)
-	arg_17_0:DoUpdateMark("port_mark", arg_17_2)
-	arg_17_0:DoUpdateMark("port_mark_new", arg_17_3)
+function slot0.UpdatePort(slot0, slot1, slot2, slot3)
+	slot0:DoUpdateMark("port_" .. slot0.portCamp, slot1)
+	slot0:DoUpdateMark("port_gray_" .. slot0.portCamp, not slot1)
+	slot0:DoUpdateMark("port_mark", slot2)
+	slot0:DoUpdateMark("port_mark_new", slot3)
 end
 
-function var_0_0.UpdatePressingAward(arg_18_0)
-	local var_18_0 = nowWorld():GetPressingAward(arg_18_0.entrance.id)
-
-	if var_18_0 then
-		local var_18_1 = pg.world_event_complete[var_18_0.id]
-
-		arg_18_0:DoUpdateMark(var_18_1.map_icon, var_18_0.flag, arg_18_0.tfMap)
+function slot0.UpdatePressingAward(slot0)
+	if nowWorld():GetPressingAward(slot0.entrance.id) then
+		slot0:DoUpdateMark(pg.world_event_complete[slot1.id].map_icon, slot1.flag, slot0.tfMap)
 	end
 end
 
-return var_0_0
+return slot0

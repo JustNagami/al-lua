@@ -1,26 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			target_choise = "TargetSelf",
-			type = "BattleSkillCLSArea",
-			arg_list = {
-				effect = "qingdan_yuanxing_shuixia05x",
-				life_time = 0.4,
-				move_type = 1,
-				range = 30,
-				speed_x = 0,
-				damage_param_a = 300,
-				damage_param_b = 0,
-				damage_tag_list = {
-					"Nubian"
-				},
-				bullet_type_list = {
-					1,
-					3
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -268,5 +246,27 @@
 	id = 17731,
 	picture = "0",
 	castCV = "",
-	desc = ""
+	desc = "",
+	effect_list = {
+		{
+			target_choise = "TargetSelf",
+			type = "BattleSkillCLSArea",
+			arg_list = {
+				effect = "qingdan_yuanxing_shuixia05x",
+				life_time = 0.4,
+				move_type = 1,
+				range = 30,
+				speed_x = 0,
+				damage_param_a = 300,
+				damage_param_b = 0,
+				damage_tag_list = {
+					"Nubian"
+				},
+				bullet_type_list = {
+					1,
+					3
+				}
+			}
+		}
+	}
 }

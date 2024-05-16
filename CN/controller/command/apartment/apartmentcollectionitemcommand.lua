@@ -1,40 +1,33 @@
-﻿local var_0_0 = class("ApartmentCollectionItemCommand", pm.SimpleCommand)
+slot0 = class("ApartmentCollectionItemCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.groupId
-	local var_1_2 = var_1_0.itemId
-	local var_1_3 = getProxy(ApartmentProxy)
-	local var_1_4 = var_1_3:getApartment(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if var_1_4.collectItemDic[var_1_2] then
+	if getProxy(ApartmentProxy):getApartment(slot2.groupId).collectItemDic[slot2.itemId] then
 		return
 	end
 
-	warning(var_1_1, var_1_2)
+	warning(slot3, slot4)
 	pg.ConnectionMgr.GetInstance():Send(28011, {
-		ship_group = var_1_1,
-		collection_id = var_1_2
-	}, 28012, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_4.collectItemDic[var_1_2] = true
+		ship_group = slot3,
+		collection_id = slot4
+	}, 28012, function (slot0)
+		if slot0.result == 0 then
+			uv0.collectItemDic[uv1] = true
 
-			var_1_3:updateApartment(var_1_4)
+			uv2:updateApartment(uv0)
 
-			local var_2_0 = pg.dorm3d_collection_template[var_1_2].award
+			uv0 = uv2:getApartment(uv3)
+			slot2 = uv0:addFavor(pg.dorm3d_collection_template[uv1].award)
 
-			var_1_4 = var_1_3:getApartment(var_1_1)
-
-			local var_2_1 = var_1_4:addFavor(var_2_0)
-
-			var_1_3:updateApartment(var_1_4)
-			arg_1_0:sendNotification(GAME.APARTMENT_COLLECTION_ITEM_DONE, {
-				itemId = var_1_2
+			uv2:updateApartment(uv0)
+			uv4:sendNotification(GAME.APARTMENT_COLLECTION_ITEM_DONE, {
+				itemId = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

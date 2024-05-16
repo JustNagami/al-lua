@@ -1,22 +1,21 @@
-﻿local var_0_0 = class("GuildGetUserInfoCommand", pm.SimpleCommand)
+slot0 = class("GuildGetUserInfoCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(GuildProxy)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if not var_1_1:getData() then
+	if not getProxy(GuildProxy):getData() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(60102, {
 		type = 0
-	}, 60103, function(arg_2_0)
-		local var_2_0 = var_1_1:getData()
+	}, 60103, function (slot0)
+		slot1 = uv0:getData()
 
-		var_2_0:updateUserInfo(arg_2_0)
-		var_1_1:updateGuild(var_2_0)
-		arg_1_0:sendNotification(GAME.GUILD_GET_USER_INFO_DONE)
+		slot1:updateUserInfo(slot0)
+		uv0:updateGuild(slot1)
+		uv1:sendNotification(GAME.GUILD_GET_USER_INFO_DONE)
 	end)
 end
 
-return var_0_0
+return slot0

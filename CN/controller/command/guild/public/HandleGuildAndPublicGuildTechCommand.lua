@@ -1,38 +1,34 @@
-﻿local var_0_0 = class("HandleGuildAndPublicGuildTechCommand", pm.SimpleCommand)
+slot0 = class("HandleGuildAndPublicGuildTechCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(GuildProxy)
-	local var_1_1 = var_1_0:GetPublicGuild()
+function slot0.execute(slot0, slot1)
+	slot2 = getProxy(GuildProxy)
 
-	assert(var_1_1)
+	assert(slot2:GetPublicGuild())
 
-	local var_1_2 = var_1_0:getData()
-
-	if not var_1_2 then
+	if not slot2:getData() then
 		return
 	end
 
-	local var_1_3 = false
-	local var_1_4 = var_1_1:GetTechnologyGroups()
+	slot5 = false
 
-	for iter_1_0, iter_1_1 in pairs(var_1_4) do
-		local var_1_5 = var_1_2:getTechnologyGroupById(iter_1_1.id)
+	for slot10, slot11 in pairs(slot3:GetTechnologyGroups()) do
+		slot12 = slot4:getTechnologyGroupById(slot11.id)
 
-		var_1_5:update({
-			id = var_1_5.pid,
-			state = var_1_5.state,
-			progress = var_1_5.progress,
-			fake_id = iter_1_1.pid
+		slot12:update({
+			id = slot12.pid,
+			state = slot12.state,
+			progress = slot12.progress,
+			fake_id = slot11.pid
 		})
 
-		var_1_3 = true
+		slot5 = true
 	end
 
-	if var_1_3 then
-		var_1_0:updateGuild(var_1_2)
+	if slot5 then
+		slot2:updateGuild(slot4)
 	end
 
-	arg_1_0:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH_DONE)
+	slot0:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH_DONE)
 end
 
-return var_0_0
+return slot0

@@ -1,109 +1,104 @@
-﻿local var_0_0 = class("FormationCard")
-local var_0_1 = 0
-local var_0_2 = 1
-local var_0_3 = 2
+slot0 = class("FormationCard")
+slot1 = 0
+slot2 = 1
+slot3 = 2
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.go = arg_1_1
-	arg_1_0.tr = arg_1_1.transform
-	arg_1_0.content = arg_1_0.tr:Find("content")
-	arg_1_0.bgImage = arg_1_0.content:Find("bg"):GetComponent(typeof(Image))
-	arg_1_0.paintingTr = arg_1_0.content:Find("ship_icon/painting")
-	arg_1_0.detailTF = arg_1_0.content:Find("detail")
-	arg_1_0.lvTxt = arg_1_0.detailTF:Find("top/level"):GetComponent(typeof(Text))
-	arg_1_0.shipType = arg_1_0.detailTF:Find("top/type")
-	arg_1_0.propsTr = arg_1_0.detailTF:Find("info")
-	arg_1_0.propsTr1 = arg_1_0.detailTF:Find("info1")
-	arg_1_0.nameTxt = arg_1_0.detailTF:Find("name_mask/name")
-	arg_1_0.frame = arg_1_0.content:Find("front/frame")
-	arg_1_0.UIlist = UIItemList.New(arg_1_0.content:Find("front/stars"), arg_1_0.content:Find("front/stars/star_tpl"))
-	arg_1_0.shipState = arg_1_0.content:Find("front/flag")
-	arg_1_0.otherBg = arg_1_0.content:Find("front/bg_other")
+function slot0.Ctor(slot0, slot1)
+	slot0.go = slot1
+	slot0.tr = slot1.transform
+	slot0.content = slot0.tr:Find("content")
+	slot0.bgImage = slot0.content:Find("bg"):GetComponent(typeof(Image))
+	slot0.paintingTr = slot0.content:Find("ship_icon/painting")
+	slot0.detailTF = slot0.content:Find("detail")
+	slot0.lvTxt = slot0.detailTF:Find("top/level"):GetComponent(typeof(Text))
+	slot0.shipType = slot0.detailTF:Find("top/type")
+	slot0.propsTr = slot0.detailTF:Find("info")
+	slot0.propsTr1 = slot0.detailTF:Find("info1")
+	slot0.nameTxt = slot0.detailTF:Find("name_mask/name")
+	slot0.frame = slot0.content:Find("front/frame")
+	slot0.UIlist = UIItemList.New(slot0.content:Find("front/stars"), slot0.content:Find("front/stars/star_tpl"))
+	slot0.shipState = slot0.content:Find("front/flag")
+	slot0.otherBg = slot0.content:Find("front/bg_other")
 
-	setActive(arg_1_0.propsTr1, false)
-	setActive(arg_1_0.shipState, false)
+	setActive(slot0.propsTr1, false)
+	setActive(slot0.shipState, false)
 
-	arg_1_0.loader = AutoLoader.New()
+	slot0.loader = AutoLoader.New()
 end
 
-function var_0_0.update(arg_2_0, arg_2_1)
-	if arg_2_1 then
-		setActive(arg_2_0.content, true)
+function slot0.update(slot0, slot1)
+	if slot1 then
+		setActive(slot0.content, true)
 
-		arg_2_0.shipVO = arg_2_1
+		slot0.shipVO = slot1
 
-		arg_2_0:flush()
+		slot0:flush()
 	else
-		setActive(arg_2_0.content, false)
+		setActive(slot0.content, false)
 	end
 end
 
-function var_0_0.flush(arg_3_0)
-	local var_3_0 = arg_3_0.shipVO
+function slot0.flush(slot0)
+	slot1 = slot0.shipVO
+	slot0.lvTxt.text = "Lv." .. slot1.level
+	slot3 = slot1:getStar()
 
-	arg_3_0.lvTxt.text = "Lv." .. var_3_0.level
-
-	local var_3_1 = var_3_0:getMaxStar()
-	local var_3_2 = var_3_0:getStar()
-
-	arg_3_0.UIlist:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventUpdate then
-			setActive(arg_4_2:Find("star"), arg_4_1 < var_3_2)
+	slot0.UIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setActive(slot2:Find("star"), slot1 < uv0)
 		end
 	end)
-	arg_3_0.UIlist:align(var_3_1)
-	setScrollText(arg_3_0.nameTxt, var_3_0:getName())
-	arg_3_0:updateProps({})
-	setPaintingPrefabAsync(arg_3_0.paintingTr, var_3_0:getPainting(), "biandui")
+	slot0.UIlist:align(slot1:getMaxStar())
+	setScrollText(slot0.nameTxt, slot1:getName())
+	slot0:updateProps({})
+	setPaintingPrefabAsync(slot0.paintingTr, slot1:getPainting(), "biandui")
 
-	local var_3_3 = arg_3_0.shipVO:rarity2bgPrint()
+	slot4 = slot0.shipVO:rarity2bgPrint()
 
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_3_3, "", arg_3_0.bgImage)
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot4, "", slot0.bgImage)
 
-	local var_3_4, var_3_5 = var_3_0:GetFrameAndEffect(true)
+	slot5, slot6 = slot1:GetFrameAndEffect(true)
 
-	setRectShipCardFrame(arg_3_0.frame, var_3_3, var_3_4)
-	setFrameEffect(arg_3_0.otherBg, var_3_5)
+	setRectShipCardFrame(slot0.frame, slot4, slot5)
+	setFrameEffect(slot0.otherBg, slot6)
 end
 
-function var_0_0.updateProps(arg_5_0, arg_5_1)
-	for iter_5_0 = 0, 2 do
-		local var_5_0 = arg_5_0.propsTr:GetChild(iter_5_0)
+function slot0.updateProps(slot0, slot1)
+	for slot5 = 0, 2 do
+		slot6 = slot0.propsTr:GetChild(slot5)
 
-		if iter_5_0 < #arg_5_1 then
-			var_5_0.gameObject:SetActive(true)
+		if slot5 < #slot1 then
+			slot6.gameObject:SetActive(true)
 
-			var_5_0:GetChild(0):GetComponent("Text").text = arg_5_1[iter_5_0 + 1][1]
-			var_5_0:GetChild(1):GetComponent("Text").text = arg_5_1[iter_5_0 + 1][2]
+			slot6:GetChild(0):GetComponent("Text").text = slot1[slot5 + 1][1]
+			slot6:GetChild(1):GetComponent("Text").text = slot1[slot5 + 1][2]
 		else
-			var_5_0.gameObject:SetActive(false)
+			slot6.gameObject:SetActive(false)
 		end
 	end
 end
 
-function var_0_0.updateProps1(arg_6_0, arg_6_1)
-	for iter_6_0 = 0, 2 do
-		local var_6_0 = arg_6_0.propsTr1:GetChild(iter_6_0)
+function slot0.updateProps1(slot0, slot1)
+	for slot5 = 0, 2 do
+		slot6 = slot0.propsTr1:GetChild(slot5)
 
-		if iter_6_0 < #arg_6_1 then
-			var_6_0.gameObject:SetActive(true)
+		if slot5 < #slot1 then
+			slot6.gameObject:SetActive(true)
 
-			var_6_0:GetChild(0):GetComponent("Text").text = arg_6_1[iter_6_0 + 1][1]
-			var_6_0:GetChild(1):GetComponent("Text").text = arg_6_1[iter_6_0 + 1][2]
+			slot6:GetChild(0):GetComponent("Text").text = slot1[slot5 + 1][1]
+			slot6:GetChild(1):GetComponent("Text").text = slot1[slot5 + 1][2]
 		else
-			var_6_0.gameObject:SetActive(false)
+			slot6.gameObject:SetActive(false)
 		end
 	end
 end
 
-function var_0_0.clear(arg_7_0)
-	local var_7_0 = arg_7_0.shipVO
-
-	if var_7_0 then
-		retPaintingPrefab(arg_7_0.paintingTr, var_7_0:getPainting())
+function slot0.clear(slot0)
+	if slot0.shipVO then
+		retPaintingPrefab(slot0.paintingTr, slot1:getPainting())
 	end
 
-	arg_7_0.loader:Clear()
+	slot0.loader:Clear()
 end
 
-return var_0_0
+return slot0

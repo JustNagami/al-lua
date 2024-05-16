@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.ship_l2d = {
 	[101] = {
 		ignore_react = 1,

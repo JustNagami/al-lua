@@ -1,19 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10230,
-				target = "TargetSelf"
-			}
-		}
-	},
-	ship_type = {
-		1
-	},
+return {
 	{
 		desc = "战斗后，队伍中驱逐获得经验值增加6.0%",
 		exp_ratio = 0.06,
@@ -145,5 +130,20 @@
 	stack = 1,
 	id = 10230,
 	icon = 10230,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10230,
+				target = "TargetSelf"
+			}
+		}
+	},
+	ship_type = {
+		1
+	}
 }

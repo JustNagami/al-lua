@@ -1,9 +1,8 @@
-﻿local var_0_0 = class("FleetType")
+slot0 = class("FleetType")
+slot0.Unknown = 0
+slot0.Normal = 1
+slot0.Submarine = 2
+slot0.Support = 3
+slot0.Transport = 101
 
-var_0_0.Unknown = 0
-var_0_0.Normal = 1
-var_0_0.Submarine = 2
-var_0_0.Support = 3
-var_0_0.Transport = 101
-
-return var_0_0
+return slot0

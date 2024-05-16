@@ -1,92 +1,71 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = singletonClass("BattleMinionCharacterFactory", slot0.Battle.BattleCharacterFactory)
+slot0.Battle.BattleMinionCharacterFactory = slot1
+slot1.__name = "BattleMinionCharacterFactory"
 
-local var_0_0 = ys
-local var_0_1 = singletonClass("BattleMinionCharacterFactory", var_0_0.Battle.BattleCharacterFactory)
-
-var_0_0.Battle.BattleMinionCharacterFactory = var_0_1
-var_0_1.__name = "BattleMinionCharacterFactory"
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_1.MakeCharacter(arg_2_0)
-	return var_0_0.Battle.BattleMinionCharacter.New()
+function slot1.MakeCharacter(slot0)
+	return uv0.Battle.BattleMinionCharacter.New()
 end
 
-function var_0_1.MakeModel(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:GetUnitData()
+function slot1.MakeModel(slot0, slot1)
+	slot2 = slot1:GetUnitData()
 
-	local function var_3_1(arg_4_0)
-		arg_3_1:AddModel(arg_4_0)
+	function slot3(slot0)
+		uv0:AddModel(slot0)
+		uv0:CameraOrthogonal(uv2.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		uv1:GetSceneMediator():AddEnemyCharacter(uv0)
+		uv1:MakeUIComponentContainer(uv0)
+		uv1:MakeFXContainer(uv0)
+		uv1:MakePopNumPool(uv0)
+		uv1:MakeBloodBar(uv0)
+		uv1:MakeWaveFX(uv0)
+		uv1:MakeSmokeFX(uv0)
+		uv0:UpdateDiveInvisible(true)
+		uv0:UpdateBlindInvisible()
 
-		local var_4_0 = arg_3_0:GetSceneMediator()
-
-		arg_3_1:CameraOrthogonal(var_0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		var_4_0:AddEnemyCharacter(arg_3_1)
-		arg_3_0:MakeUIComponentContainer(arg_3_1)
-		arg_3_0:MakeFXContainer(arg_3_1)
-		arg_3_0:MakePopNumPool(arg_3_1)
-		arg_3_0:MakeBloodBar(arg_3_1)
-		arg_3_0:MakeWaveFX(arg_3_1)
-		arg_3_0:MakeSmokeFX(arg_3_1)
-		arg_3_1:UpdateDiveInvisible(true)
-		arg_3_1:UpdateBlindInvisible()
-
-		local var_4_1 = var_3_0:GetTemplate().appear_fx
-
-		for iter_4_0, iter_4_1 in ipairs(var_4_1) do
-			arg_3_1:AddFX(iter_4_1)
+		for slot6, slot7 in ipairs(uv3:GetTemplate().appear_fx) do
+			uv0:AddFX(slot7)
 		end
 
-		if arg_3_1:GetUnitData():GetAimBias() then
-			arg_3_0:MakeAimBiasBar(arg_3_1)
+		if uv0:GetUnitData():GetAimBias() then
+			uv1:MakeAimBiasBar(uv0)
 		end
 	end
 
-	arg_3_0:GetCharacterPool():InstCharacter(arg_3_1:GetModleID(), function(arg_5_0)
-		var_3_1(arg_5_0)
+	slot0:GetCharacterPool():InstCharacter(slot1:GetModleID(), function (slot0)
+		uv0(slot0)
 	end)
 end
 
-function var_0_1.MakeBloodBar(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:GetUnitData()
-	local var_6_1
+function slot1.MakeBloodBar(slot0, slot1)
+	slot3 = nil
+	slot5 = slot2:GetTemplate().icon_type
 
-	if var_6_0:GetIFF() == var_0_0.Battle.BattleConfig.FRIENDLY_CODE then
-		var_6_1 = var_0_0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY
-	else
-		var_6_1 = var_0_0.Battle.BattleHPBarManager.HP_BAR_FOE
+	if findTF(slot0:GetHPBarPool():GetHPBar((slot1:GetUnitData():GetIFF() ~= uv0.Battle.BattleConfig.FRIENDLY_CODE or uv0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY) and uv0.Battle.BattleHPBarManager.HP_BAR_FOE), "type") then
+		SetActive(slot6, false)
 	end
 
-	local var_6_2 = arg_6_0:GetHPBarPool():GetHPBar(var_6_1)
-	local var_6_3 = var_6_0:GetTemplate().icon_type
-	local var_6_4 = findTF(var_6_2, "type")
-
-	if var_6_4 then
-		SetActive(var_6_4, false)
-	end
-
-	arg_6_1:AddHPBar(var_6_2)
-	arg_6_1:UpdateHPBarPosition()
+	slot1:AddHPBar(slot4)
+	slot1:UpdateHPBarPosition()
 end
 
-function var_0_1.MakeAimBiasBar(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1._HPBarTf:Find("biasBar")
-
-	arg_7_1:AddAimBiasBar(var_7_0)
-	arg_7_1:AddAimBiasFogFX()
+function slot1.MakeAimBiasBar(slot0, slot1)
+	slot1:AddAimBiasBar(slot1._HPBarTf:Find("biasBar"))
+	slot1:AddAimBiasFogFX()
 end
 
-function var_0_1.MakeWaveFX(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1:GetUnitData():GetTemplate().wave_fx
-
-	if var_8_0 ~= "" then
-		arg_8_1:AddWaveFX(var_8_0)
+function slot1.MakeWaveFX(slot0, slot1)
+	if slot1:GetUnitData():GetTemplate().wave_fx ~= "" then
+		slot1:AddWaveFX(slot2)
 	end
 end
 
-function var_0_1.RemoveCharacter(arg_9_0, arg_9_1)
-	var_0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var_0_0.Battle.BattleConst.ShakeType.UNIT_DIE])
-	var_0_1.super.RemoveCharacter(arg_9_0, arg_9_1)
+function slot1.RemoveCharacter(slot0, slot1)
+	uv0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[uv0.Battle.BattleConst.ShakeType.UNIT_DIE])
+	uv1.super.RemoveCharacter(slot0, slot1)
 end

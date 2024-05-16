@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeHit"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id = 800561
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -161,5 +149,17 @@
 	stack = 1,
 	id = 800561,
 	icon = 800560,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeHit"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id = 800561
+			}
+		}
+	}
 }

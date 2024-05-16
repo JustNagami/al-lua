@@ -1,992 +1,899 @@
-﻿function tf(arg_1_0)
-	return arg_1_0.transform
+function tf(slot0)
+	return slot0.transform
 end
 
-function go(arg_2_0)
-	return tf(arg_2_0).gameObject
+function go(slot0)
+	return tf(slot0).gameObject
 end
 
-function rtf(arg_3_0)
-	return arg_3_0.transform
+function rtf(slot0)
+	return slot0.transform
 end
 
-function findGO(arg_4_0, arg_4_1)
-	assert(arg_4_0, "object or transform should exist")
+function findGO(slot0, slot1)
+	assert(slot0, "object or transform should exist")
 
-	local var_4_0 = tf(arg_4_0):Find(arg_4_1)
-
-	return var_4_0 and var_4_0.gameObject
+	return tf(slot0):Find(slot1) and slot2.gameObject
 end
 
-function findTF(arg_5_0, arg_5_1)
-	assert(arg_5_0, "object or transform should exist " .. arg_5_1)
+function findTF(slot0, slot1)
+	assert(slot0, "object or transform should exist " .. slot1)
 
-	return (tf(arg_5_0):Find(arg_5_1))
+	return tf(slot0):Find(slot1)
 end
 
-function Instantiate(arg_6_0)
-	return Object.Instantiate(go(arg_6_0))
+function Instantiate(slot0)
+	return Object.Instantiate(go(slot0))
 end
 
 instantiate = Instantiate
 
-function Destroy(arg_7_0)
-	Object.Destroy(go(arg_7_0))
+function Destroy(slot0)
+	Object.Destroy(go(slot0))
 end
 
 destroy = Destroy
 
-function SetActive(arg_8_0, arg_8_1)
-	LuaHelper.SetActiveForLua(arg_8_0, tobool(arg_8_1))
+function SetActive(slot0, slot1)
+	LuaHelper.SetActiveForLua(slot0, tobool(slot1))
 end
 
 setActive = SetActive
 
-function isActive(arg_9_0)
-	return go(arg_9_0).activeSelf
+function isActive(slot0)
+	return go(slot0).activeSelf
 end
 
-function SetName(arg_10_0, arg_10_1)
-	arg_10_0.name = arg_10_1
+function SetName(slot0, slot1)
+	slot0.name = slot1
 end
 
 setName = SetName
 
-function SetParent(arg_11_0, arg_11_1, arg_11_2)
-	LuaHelper.SetParentForLua(arg_11_0, arg_11_1, tobool(arg_11_2))
+function SetParent(slot0, slot1, slot2)
+	LuaHelper.SetParentForLua(slot0, slot1, tobool(slot2))
 end
 
 setParent = SetParent
 
-function setText(arg_12_0, arg_12_1)
-	if not arg_12_1 then
+function setText(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	arg_12_0:GetComponent(typeof(Text)).text = tostring(arg_12_1)
+	slot0:GetComponent(typeof(Text)).text = tostring(slot1)
 end
 
-function setTextEN(arg_13_0, arg_13_1)
-	if not arg_13_1 then
+function setTextEN(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	arg_13_1 = splitByWordEN(arg_13_1, arg_13_0)
-	arg_13_0:GetComponent(typeof(Text)).text = tostring(arg_13_1)
+	slot0:GetComponent(typeof(Text)).text = tostring(splitByWordEN(slot1, slot0))
 end
 
-function setBestFitTextEN(arg_14_0, arg_14_1, arg_14_2)
-	if not arg_14_1 then
+function setBestFitTextEN(slot0, slot1, slot2)
+	if not slot1 then
 		return
 	end
 
-	local var_14_0 = arg_14_0:GetComponent(typeof(RectTransform))
-	local var_14_1 = arg_14_0:GetComponent(typeof(Text))
-	local var_14_2 = arg_14_2 or 20
-	local var_14_3 = var_14_0.rect.width
-	local var_14_4 = var_14_0.rect.height
+	slot3 = slot0:GetComponent(typeof(RectTransform))
+	slot4 = slot0:GetComponent(typeof(Text))
+	slot5 = slot2 or 20
+	slot6 = slot3.rect.width
+	slot7 = slot3.rect.height
 
-	while var_14_2 > 0 do
-		var_14_1.fontSize = var_14_2
+	while slot5 > 0 do
+		slot4.fontSize = slot5
+		slot4.text = tostring(splitByWordEN(slot1, slot0))
 
-		local var_14_5 = splitByWordEN(arg_14_1, arg_14_0)
-
-		var_14_1.text = tostring(var_14_5)
-
-		if var_14_3 >= var_14_1.preferredWidth and var_14_4 >= var_14_1.preferredHeight then
+		if slot4.preferredWidth <= slot6 and slot4.preferredHeight <= slot7 then
 			break
 		end
 
-		var_14_2 = var_14_2 - 1
+		slot5 = slot5 - 1
 	end
 end
 
-function setTextFont(arg_15_0, arg_15_1)
-	if not arg_15_1 then
+function setTextFont(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	arg_15_0:GetComponent(typeof(Text)).font = arg_15_1
+	slot0:GetComponent(typeof(Text)).font = slot1
 end
 
-function getText(arg_16_0)
-	return arg_16_0:GetComponent(typeof(Text)).text
+function getText(slot0)
+	return slot0:GetComponent(typeof(Text)).text
 end
 
-function setInputText(arg_17_0, arg_17_1)
-	if not arg_17_1 then
+function setInputText(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	arg_17_0:GetComponent(typeof(InputField)).text = arg_17_1
+	slot0:GetComponent(typeof(InputField)).text = slot1
 end
 
-function getInputText(arg_18_0)
-	return arg_18_0:GetComponent(typeof(InputField)).text
+function getInputText(slot0)
+	return slot0:GetComponent(typeof(InputField)).text
 end
 
-function onInputEndEdit(arg_19_0, arg_19_1, arg_19_2)
-	local var_19_0 = arg_19_1:GetComponent(typeof(InputField)).onEndEdit
+function onInputEndEdit(slot0, slot1, slot2)
+	slot3 = slot1:GetComponent(typeof(InputField)).onEndEdit
 
-	pg.DelegateInfo.Add(arg_19_0, var_19_0)
-	var_19_0:RemoveAllListeners()
-	var_19_0:AddListener(arg_19_2)
+	pg.DelegateInfo.Add(slot0, slot3)
+	slot3:RemoveAllListeners()
+	slot3:AddListener(slot2)
 end
 
-function activateInputField(arg_20_0)
-	arg_20_0:GetComponent(typeof(InputField)):ActivateInputField()
+function activateInputField(slot0)
+	slot0:GetComponent(typeof(InputField)):ActivateInputField()
 end
 
-function setButtonText(arg_21_0, arg_21_1, arg_21_2)
-	setWidgetText(arg_21_0, arg_21_1, arg_21_2)
+function setButtonText(slot0, slot1, slot2)
+	setWidgetText(slot0, slot1, slot2)
 end
 
-function setWidgetText(arg_22_0, arg_22_1, arg_22_2)
-	arg_22_2 = arg_22_2 or "Text"
-	arg_22_2 = findTF(arg_22_0, arg_22_2)
-
-	setText(arg_22_2, arg_22_1)
+function setWidgetText(slot0, slot1, slot2)
+	setText(findTF(slot0, slot2 or "Text"), slot1)
 end
 
-function setWidgetTextEN(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_2 = arg_23_2 or "Text"
-	arg_23_2 = findTF(arg_23_0, arg_23_2)
-
-	setTextEN(arg_23_2, arg_23_1)
+function setWidgetTextEN(slot0, slot1, slot2)
+	setTextEN(findTF(slot0, slot2 or "Text"), slot1)
 end
 
-local var_0_0
-local var_0_1 = true
-local var_0_2 = -1
+slot0 = nil
+slot1 = true
+slot2 = -1
 
-function onButton(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24_4)
-	local var_24_0 = GetOrAddComponent(arg_24_1, typeof(Button))
+function onButton(slot0, slot1, slot2, slot3, slot4)
+	slot5 = GetOrAddComponent(slot1, typeof(Button))
 
-	assert(var_24_0, "could not found Button component on " .. arg_24_1.name)
-	assert(arg_24_2, "callback should exist")
+	assert(slot5, "could not found Button component on " .. slot1.name)
+	assert(slot2, "callback should exist")
 
-	local var_24_1 = var_24_0.onClick
+	slot6 = slot5.onClick
 
-	pg.DelegateInfo.Add(arg_24_0, var_24_1)
-	var_24_1:RemoveAllListeners()
-	var_24_1:AddListener(function()
-		if var_0_2 == Time.frameCount and Input.touchCount > 1 then
+	pg.DelegateInfo.Add(slot0, slot6)
+	slot6:RemoveAllListeners()
+	slot6:AddListener(function ()
+		if uv0 == Time.frameCount and Input.touchCount > 1 then
 			return
 		end
 
-		var_0_2 = Time.frameCount
+		uv0 = Time.frameCount
 
-		if arg_24_3 and var_0_1 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_24_3)
+		if uv1 and uv2 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
 		end
 
-		arg_24_2()
+		uv3()
 	end)
 end
 
-function removeOnButton(arg_26_0)
-	local var_26_0 = arg_26_0:GetComponent(typeof(Button))
-
-	if var_26_0 ~= nil then
-		var_26_0.onClick:RemoveAllListeners()
+function removeOnButton(slot0)
+	if slot0:GetComponent(typeof(Button)) ~= nil then
+		slot1.onClick:RemoveAllListeners()
 	end
 end
 
-function removeAllOnButton(arg_27_0)
-	local var_27_0 = arg_27_0:GetComponentsInChildren(typeof(Button))
-
-	for iter_27_0 = 1, var_27_0.Length do
-		local var_27_1 = var_27_0[iter_27_0 - 1]
-
-		if var_27_1 ~= nil then
-			var_27_1.onClick:RemoveAllListeners()
+function removeAllOnButton(slot0)
+	for slot5 = 1, slot0:GetComponentsInChildren(typeof(Button)).Length do
+		if slot1[slot5 - 1] ~= nil then
+			slot6.onClick:RemoveAllListeners()
 		end
 	end
 end
 
-function ClearAllText(arg_28_0)
-	local var_28_0 = arg_28_0:GetComponentsInChildren(typeof(Text))
-
-	for iter_28_0 = 1, var_28_0.Length do
-		local var_28_1 = var_28_0[iter_28_0 - 1]
-
-		if var_28_1 ~= nil then
-			var_28_1.text = ""
+function ClearAllText(slot0)
+	for slot5 = 1, slot0:GetComponentsInChildren(typeof(Text)).Length do
+		if slot1[slot5 - 1] ~= nil then
+			slot6.text = ""
 		end
 	end
 end
 
-function onLongPressTrigger(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	local var_29_0 = GetOrAddComponent(arg_29_1, typeof(UILongPressTrigger))
+function onLongPressTrigger(slot0, slot1, slot2, slot3)
+	slot4 = GetOrAddComponent(slot1, typeof(UILongPressTrigger))
 
-	assert(var_29_0, "could not found UILongPressTrigger component on " .. arg_29_1.name)
-	assert(arg_29_2, "callback should exist")
+	assert(slot4, "could not found UILongPressTrigger component on " .. slot1.name)
+	assert(slot2, "callback should exist")
 
-	local var_29_1 = var_29_0.onLongPressed
+	slot5 = slot4.onLongPressed
 
-	pg.DelegateInfo.Add(arg_29_0, var_29_1)
-	var_29_1:RemoveAllListeners()
-	var_29_1:AddListener(function()
-		if arg_29_3 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_29_3)
+	pg.DelegateInfo.Add(slot0, slot5)
+	slot5:RemoveAllListeners()
+	slot5:AddListener(function ()
+		if uv0 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 		end
 
-		arg_29_2()
+		uv1()
 	end)
 end
 
-function removeOnLongPressTrigger(arg_31_0)
-	local var_31_0 = arg_31_0:GetComponent(typeof(UILongPressTrigger))
-
-	if var_31_0 ~= nil then
-		var_31_0.onLongPressed:RemoveAllListeners()
+function removeOnLongPressTrigger(slot0)
+	if slot0:GetComponent(typeof(UILongPressTrigger)) ~= nil then
+		slot1.onLongPressed:RemoveAllListeners()
 	end
 end
 
-function setButtonEnabled(arg_32_0, arg_32_1)
-	GetComponent(arg_32_0, typeof(Button)).interactable = arg_32_1
+function setButtonEnabled(slot0, slot1)
+	GetComponent(slot0, typeof(Button)).interactable = slot1
 end
 
-function setToggleEnabled(arg_33_0, arg_33_1)
-	GetComponent(arg_33_0, typeof(Toggle)).interactable = arg_33_1
+function setToggleEnabled(slot0, slot1)
+	GetComponent(slot0, typeof(Toggle)).interactable = slot1
 end
 
-function setSliderEnable(arg_34_0, arg_34_1)
-	GetComponent(arg_34_0, typeof(Slider)).interactable = arg_34_1
+function setSliderEnable(slot0, slot1)
+	GetComponent(slot0, typeof(Slider)).interactable = slot1
 end
 
-function triggerButton(arg_35_0)
-	local var_35_0 = GetComponent(arg_35_0, typeof(Button))
+function triggerButton(slot0)
+	uv0 = false
+	uv1 = -1
 
-	var_0_1 = false
-	var_0_2 = -1
+	GetComponent(slot0, typeof(Button)).onClick:Invoke()
 
-	var_35_0.onClick:Invoke()
-
-	var_0_1 = true
+	uv0 = true
 end
 
-local var_0_3 = true
+slot3 = true
 
-function onToggle(arg_36_0, arg_36_1, arg_36_2, arg_36_3, arg_36_4)
-	local var_36_0 = GetComponent(arg_36_1, typeof(Toggle))
+function onToggle(slot0, slot1, slot2, slot3, slot4)
+	assert(slot2, "callback should exist")
 
-	assert(arg_36_2, "callback should exist")
+	slot6 = GetComponent(slot1, typeof(Toggle)).onValueChanged
 
-	local var_36_1 = var_36_0.onValueChanged
+	slot6:RemoveAllListeners()
+	pg.DelegateInfo.Add(slot0, slot6)
+	slot6:AddListener(function (slot0)
+		if uv0 then
+			if slot0 and uv1 and uv2.isOn == slot0 then
+				uv1 = SFX_UI_TAG
 
-	var_36_1:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg_36_0, var_36_1)
-	var_36_1:AddListener(function(arg_37_0)
-		if var_0_3 then
-			if arg_37_0 and arg_36_3 and var_36_0.isOn == arg_37_0 then
-				arg_36_3 = SFX_UI_TAG
-
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_36_3)
-			elseif not arg_37_0 and arg_36_4 then
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_36_4)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
+			elseif not slot0 and uv3 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv3)
 			end
 		end
 
-		arg_36_2(arg_37_0)
+		uv4(slot0)
 	end)
 
-	local var_36_2 = GetComponent(arg_36_1, typeof(UIToggleEvent))
-
-	if not IsNil(var_36_2) then
-		var_36_2:Rebind()
+	if not IsNil(GetComponent(slot1, typeof(UIToggleEvent))) then
+		slot7:Rebind()
 	end
 end
 
-function removeOnToggle(arg_38_0)
-	local var_38_0 = GetComponent(arg_38_0, typeof(Toggle))
-
-	if var_38_0 ~= nil then
-		var_38_0.onValueChanged:RemoveAllListeners()
+function removeOnToggle(slot0)
+	if GetComponent(slot0, typeof(Toggle)) ~= nil then
+		slot1.onValueChanged:RemoveAllListeners()
 	end
 end
 
-function triggerToggle(arg_39_0, arg_39_1)
-	local var_39_0 = GetComponent(arg_39_0, typeof(Toggle))
+function triggerToggle(slot0, slot1)
+	uv0 = false
 
-	var_0_3 = false
-	arg_39_1 = tobool(arg_39_1)
-
-	if var_39_0.isOn ~= arg_39_1 then
-		var_39_0.isOn = arg_39_1
+	if GetComponent(slot0, typeof(Toggle)).isOn ~= tobool(slot1) then
+		slot2.isOn = slot1
 	else
-		var_39_0.onValueChanged:Invoke(arg_39_1)
+		slot2.onValueChanged:Invoke(slot1)
 	end
 
-	var_0_3 = true
+	uv0 = true
 end
 
-function triggerToggleWithoutNotify(arg_40_0, arg_40_1)
-	local var_40_0 = GetComponent(arg_40_0, typeof(Toggle))
+function triggerToggleWithoutNotify(slot0, slot1)
+	uv0 = false
 
-	var_0_3 = false
-	arg_40_1 = tobool(arg_40_1)
+	LuaHelper.ChangeToggleValueWithoutNotify(GetComponent(slot0, typeof(Toggle)), tobool(slot1))
 
-	LuaHelper.ChangeToggleValueWithoutNotify(var_40_0, arg_40_1)
-
-	var_0_3 = true
+	uv0 = true
 end
 
-function onSlider(arg_41_0, arg_41_1, arg_41_2)
-	local var_41_0 = GetComponent(arg_41_1, typeof(Slider)).onValueChanged
+function onSlider(slot0, slot1, slot2)
+	slot3 = GetComponent(slot1, typeof(Slider)).onValueChanged
 
-	assert(arg_41_2, "callback should exist")
-	var_41_0:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg_41_0, var_41_0)
-	var_41_0:AddListener(arg_41_2)
+	assert(slot2, "callback should exist")
+	slot3:RemoveAllListeners()
+	pg.DelegateInfo.Add(slot0, slot3)
+	slot3:AddListener(slot2)
 end
 
-function setSlider(arg_42_0, arg_42_1, arg_42_2, arg_42_3)
-	local var_42_0 = GetComponent(arg_42_0, typeof(Slider))
+function setSlider(slot0, slot1, slot2, slot3)
+	slot4 = GetComponent(slot0, typeof(Slider))
 
-	assert(var_42_0, "slider should exist")
+	assert(slot4, "slider should exist")
 
-	var_42_0.minValue = arg_42_1
-	var_42_0.maxValue = arg_42_2
-	var_42_0.value = arg_42_3
+	slot4.minValue = slot1
+	slot4.maxValue = slot2
+	slot4.value = slot3
 end
 
-function eachChild(arg_43_0, arg_43_1)
-	local var_43_0 = tf(arg_43_0)
-
-	for iter_43_0 = var_43_0.childCount - 1, 0, -1 do
-		arg_43_1(var_43_0:GetChild(iter_43_0))
+function eachChild(slot0, slot1)
+	for slot7 = tf(slot0).childCount - 1, 0, -1 do
+		slot1(slot2:GetChild(slot7))
 	end
 end
 
-function removeAllChildren(arg_44_0)
-	eachChild(arg_44_0, function(arg_45_0)
-		tf(arg_45_0).transform:SetParent(nil, false)
-		Destroy(arg_45_0)
+function removeAllChildren(slot0)
+	eachChild(slot0, function (slot0)
+		tf(slot0).transform:SetParent(nil, false)
+		Destroy(slot0)
 	end)
 end
 
-function scrollTo(arg_46_0, arg_46_1, arg_46_2)
+function scrollTo(slot0, slot1, slot2)
 	Canvas.ForceUpdateCanvases()
 
-	local var_46_0 = GetComponent(arg_46_0, typeof(ScrollRect))
-	local var_46_1 = Vector2(arg_46_1 or var_46_0.normalizedPosition.x, arg_46_2 or var_46_0.normalizedPosition.y)
+	slot3 = GetComponent(slot0, typeof(ScrollRect))
+	slot4 = Vector2(slot1 or slot3.normalizedPosition.x, slot2 or slot3.normalizedPosition.y)
 
-	onNextTick(function()
-		if not IsNil(arg_46_0) then
-			var_46_0.normalizedPosition = var_46_1
+	onNextTick(function ()
+		if not IsNil(uv0) then
+			uv1.normalizedPosition = uv2
 
-			var_46_0.onValueChanged:Invoke(var_46_1)
+			uv1.onValueChanged:Invoke(uv2)
 		end
 	end)
 end
 
-function scrollToBottom(arg_48_0)
-	scrollTo(arg_48_0, 0, 0)
+function scrollToBottom(slot0)
+	scrollTo(slot0, 0, 0)
 end
 
-function onScroll(arg_49_0, arg_49_1, arg_49_2)
-	local var_49_0 = GetComponent(arg_49_1, typeof(ScrollRect)).onValueChanged
+function onScroll(slot0, slot1, slot2)
+	slot3 = GetComponent(slot1, typeof(ScrollRect)).onValueChanged
 
-	assert(arg_49_2, "callback should exist")
-	var_49_0:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg_49_0, var_49_0)
-	var_49_0:AddListener(arg_49_2)
+	assert(slot2, "callback should exist")
+	slot3:RemoveAllListeners()
+	pg.DelegateInfo.Add(slot0, slot3)
+	slot3:AddListener(slot2)
 end
 
-function ClearEventTrigger(arg_50_0)
-	arg_50_0:RemovePointClickFunc()
-	arg_50_0:RemovePointDownFunc()
-	arg_50_0:RemovePointEnterFunc()
-	arg_50_0:RemovePointExitFunc()
-	arg_50_0:RemovePointUpFunc()
-	arg_50_0:RemoveCheckDragFunc()
-	arg_50_0:RemoveBeginDragFunc()
-	arg_50_0:RemoveDragFunc()
-	arg_50_0:RemoveDragEndFunc()
-	arg_50_0:RemoveDropFunc()
-	arg_50_0:RemoveScrollFunc()
-	arg_50_0:RemoveSelectFunc()
-	arg_50_0:RemoveUpdateSelectFunc()
-	arg_50_0:RemoveMoveFunc()
+function ClearEventTrigger(slot0)
+	slot0:RemovePointClickFunc()
+	slot0:RemovePointDownFunc()
+	slot0:RemovePointEnterFunc()
+	slot0:RemovePointExitFunc()
+	slot0:RemovePointUpFunc()
+	slot0:RemoveCheckDragFunc()
+	slot0:RemoveBeginDragFunc()
+	slot0:RemoveDragFunc()
+	slot0:RemoveDragEndFunc()
+	slot0:RemoveDropFunc()
+	slot0:RemoveScrollFunc()
+	slot0:RemoveSelectFunc()
+	slot0:RemoveUpdateSelectFunc()
+	slot0:RemoveMoveFunc()
 end
 
-function ClearLScrollrect(arg_51_0)
-	arg_51_0.onStart = nil
-	arg_51_0.onInitItem = nil
-	arg_51_0.onUpdateItem = nil
-	arg_51_0.onReturnItem = nil
+function ClearLScrollrect(slot0)
+	slot0.onStart = nil
+	slot0.onInitItem = nil
+	slot0.onUpdateItem = nil
+	slot0.onReturnItem = nil
 end
 
-function GetComponent(arg_52_0, arg_52_1)
-	return (arg_52_0:GetComponent(arg_52_1))
+function GetComponent(slot0, slot1)
+	return slot0:GetComponent(slot1)
 end
 
-function GetOrAddComponent(arg_53_0, arg_53_1)
-	assert(arg_53_0, "objectOrTransform not found: " .. debug.traceback())
+function GetOrAddComponent(slot0, slot1)
+	assert(slot0, "objectOrTransform not found: " .. debug.traceback())
 
-	local var_53_0 = arg_53_1
+	slot2 = slot1
 
-	if type(arg_53_1) == "string" then
-		assert(_G[arg_53_1], arg_53_1 .. " not exist in Global")
+	if type(slot1) == "string" then
+		assert(_G[slot1], slot1 .. " not exist in Global")
 
-		var_53_0 = typeof(_G[arg_53_1])
+		slot2 = typeof(_G[slot1])
 	end
 
-	return LuaHelper.GetOrAddComponentForLua(arg_53_0, var_53_0)
+	return LuaHelper.GetOrAddComponentForLua(slot0, slot2)
 end
 
-function RemoveComponent(arg_54_0, arg_54_1)
-	local var_54_0 = arg_54_0:GetComponent(arg_54_1)
-
-	if var_54_0 then
-		Object.Destroy(var_54_0)
+function RemoveComponent(slot0, slot1)
+	if slot0:GetComponent(slot1) then
+		Object.Destroy(slot2)
 	end
 end
 
-function SetCompomentEnabled(arg_55_0, arg_55_1, arg_55_2)
-	local var_55_0 = arg_55_0:GetComponent(arg_55_1)
+function SetCompomentEnabled(slot0, slot1, slot2)
+	slot3 = slot0:GetComponent(slot1)
 
-	assert(var_55_0, "compoment not found")
+	assert(slot3, "compoment not found")
 
-	var_55_0.enabled = tobool(arg_55_2)
+	slot3.enabled = tobool(slot2)
 end
 
-function GetInChildren(arg_56_0, arg_56_1)
-	local function var_56_0(arg_57_0, arg_57_1)
-		if not arg_57_0 then
+function GetInChildren(slot0, slot1)
+	return function (slot0, slot1)
+		if not slot0 then
 			return nil
 		end
 
-		if arg_57_0.name == arg_57_1 then
-			return arg_57_0
+		if slot0.name == slot1 then
+			return slot0
 		end
 
-		for iter_57_0 = 0, arg_57_0.childCount - 1 do
-			local var_57_0 = arg_57_0:GetChild(iter_57_0)
-
-			if arg_57_1 == var_57_0.name then
-				return var_57_0
+		for slot5 = 0, slot0.childCount - 1 do
+			if slot1 == slot0:GetChild(slot5).name then
+				return slot6
 			end
 
-			local var_57_1 = var_56_0(var_57_0, arg_57_1)
-
-			if var_57_1 then
-				return var_57_1
+			if uv0(slot6, slot1) then
+				return slot7
 			end
 		end
 
 		return nil
-	end
-
-	return var_56_0(arg_56_0, arg_56_1)
+	end(slot0, slot1)
 end
 
-function onNextTick(arg_58_0)
-	FrameTimer.New(arg_58_0, 1, 1):Start()
+function onNextTick(slot0)
+	FrameTimer.New(slot0, 1, 1):Start()
 end
 
-function onDelayTick(arg_59_0, arg_59_1)
-	Timer.New(arg_59_0, arg_59_1, 1):Start()
+function onDelayTick(slot0, slot1)
+	Timer.New(slot0, slot1, 1):Start()
 end
 
-function seriesAsync(arg_60_0, arg_60_1)
-	local var_60_0 = 0
-	local var_60_1 = #arg_60_0
-	local var_60_2
+function seriesAsync(slot0, slot1)
+	slot2 = 0
+	slot3 = #slot0
+	slot4 = nil
 
-	local function var_60_3(...)
-		var_60_0 = var_60_0 + 1
+	function (...)
+		uv0 = uv0 + 1
 
-		if var_60_0 <= var_60_1 then
-			arg_60_0[var_60_0](var_60_3, ...)
-		elseif var_60_0 == var_60_1 + 1 and arg_60_1 then
-			arg_60_1(...)
+		if uv0 <= uv1 then
+			uv2[uv0](uv3, ...)
+		elseif uv0 == uv1 + 1 and uv4 then
+			uv4(...)
+		end
+	end()
+end
+
+function seriesAsyncExtend(slot0, slot1)
+	slot2 = nil
+
+	function (...)
+		if #uv0 > 0 then
+			table.remove(uv0, 1)(uv1, ...)
+		elseif uv2 then
+			uv2(...)
+		end
+	end()
+end
+
+function parallelAsync(slot0, slot1)
+	function slot3()
+		uv0 = uv0 - 1
+
+		if uv0 == 0 and uv1 then
+			uv1()
 		end
 	end
 
-	var_60_3()
-end
-
-function seriesAsyncExtend(arg_62_0, arg_62_1)
-	local var_62_0
-
-	local function var_62_1(...)
-		if #arg_62_0 > 0 then
-			table.remove(arg_62_0, 1)(var_62_1, ...)
-		elseif arg_62_1 then
-			arg_62_1(...)
+	if #slot0 > 0 then
+		for slot7, slot8 in ipairs(slot0) do
+			slot8(slot3)
 		end
-	end
-
-	var_62_1()
-end
-
-function parallelAsync(arg_64_0, arg_64_1)
-	local var_64_0 = #arg_64_0
-
-	local function var_64_1()
-		var_64_0 = var_64_0 - 1
-
-		if var_64_0 == 0 and arg_64_1 then
-			arg_64_1()
-		end
-	end
-
-	if var_64_0 > 0 then
-		for iter_64_0, iter_64_1 in ipairs(arg_64_0) do
-			iter_64_1(var_64_1)
-		end
-	elseif arg_64_1 then
-		arg_64_1()
+	elseif slot1 then
+		slot1()
 	end
 end
 
-function limitedParallelAsync(arg_66_0, arg_66_1, arg_66_2)
-	local var_66_0 = #arg_66_0
-	local var_66_1 = var_66_0
-
-	if var_66_1 == 0 then
-		arg_66_2()
+function limitedParallelAsync(slot0, slot1, slot2)
+	if #slot0 == 0 then
+		slot2()
 
 		return
 	end
 
-	local var_66_2 = math.min(arg_66_1, var_66_0)
-	local var_66_3
+	slot6 = nil
 
-	local function var_66_4()
-		var_66_1 = var_66_1 - 1
+	for slot10 = 1, math.min(slot1, slot3) do
+		slot0[slot10](function ()
+			uv0 = uv0 - 1
 
-		if var_66_1 == 0 then
-			arg_66_2()
-		elseif var_66_2 + 1 <= var_66_0 then
-			var_66_2 = var_66_2 + 1
+			if uv0 == 0 then
+				uv1()
+			elseif uv2 + 1 <= uv3 then
+				uv2 = uv2 + 1
 
-			arg_66_0[var_66_2](var_66_4)
-		end
-	end
-
-	for iter_66_0 = 1, var_66_2 do
-		arg_66_0[iter_66_0](var_66_4)
+				uv4[uv2](uv5)
+			end
+		end)
 	end
 end
 
-function waitUntil(arg_68_0, arg_68_1)
-	local var_68_0
-
-	var_68_0 = FrameTimer.New(function()
-		if arg_68_0() then
-			arg_68_1()
-			var_68_0:Stop()
+function waitUntil(slot0, slot1)
+	slot2 = nil
+	slot2 = FrameTimer.New(function ()
+		if uv0() then
+			uv1()
+			uv2:Stop()
 
 			return
 		end
 	end, 1, -1)
 
-	var_68_0:Start()
+	slot2:Start()
 
-	return var_68_0
+	return slot2
 end
 
-function setImageSprite(arg_70_0, arg_70_1, arg_70_2)
-	if IsNil(arg_70_0) then
+function setImageSprite(slot0, slot1, slot2)
+	if IsNil(slot0) then
 		assert(false)
 
 		return
 	end
 
-	local var_70_0 = GetComponent(arg_70_0, typeof(Image))
-
-	if IsNil(var_70_0) then
+	if IsNil(GetComponent(slot0, typeof(Image))) then
 		return
 	end
 
-	var_70_0.sprite = arg_70_1
+	slot3.sprite = slot1
 
-	if arg_70_2 then
-		var_70_0:SetNativeSize()
+	if slot2 then
+		slot3:SetNativeSize()
 	end
 end
 
-function clearImageSprite(arg_71_0)
-	GetComponent(arg_71_0, typeof(Image)).sprite = nil
+function clearImageSprite(slot0)
+	GetComponent(slot0, typeof(Image)).sprite = nil
 end
 
-function getImageSprite(arg_72_0)
-	local var_72_0 = GetComponent(arg_72_0, typeof(Image))
-
-	return var_72_0 and var_72_0.sprite
+function getImageSprite(slot0)
+	return GetComponent(slot0, typeof(Image)) and slot1.sprite
 end
 
-function tex2sprite(arg_73_0)
-	return UnityEngine.Sprite.Create(arg_73_0, UnityEngine.Rect.New(0, 0, arg_73_0.width, arg_73_0.height), Vector2(0.5, 0.5), 100)
+function tex2sprite(slot0)
+	return UnityEngine.Sprite.Create(slot0, UnityEngine.Rect.New(0, 0, slot0.width, slot0.height), Vector2(0.5, 0.5), 100)
 end
 
-function setFillAmount(arg_74_0, arg_74_1)
-	GetComponent(arg_74_0, typeof(Image)).fillAmount = arg_74_1
+function setFillAmount(slot0, slot1)
+	GetComponent(slot0, typeof(Image)).fillAmount = slot1
 end
 
-function string2vector3(arg_75_0)
-	local var_75_0 = string.split(arg_75_0, ",")
+function string2vector3(slot0)
+	slot1 = string.split(slot0, ",")
 
-	return Vector3(var_75_0[1], var_75_0[2], var_75_0[3])
+	return Vector3(slot1[1], slot1[2], slot1[3])
 end
 
-function getToggleState(arg_76_0)
-	return arg_76_0:GetComponent(typeof(Toggle)).isOn
+function getToggleState(slot0)
+	return slot0:GetComponent(typeof(Toggle)).isOn
 end
 
-function setLocalPosition(arg_77_0, arg_77_1)
-	local var_77_0 = tf(arg_77_0).localPosition
-
-	arg_77_1.x = arg_77_1.x or var_77_0.x
-	arg_77_1.y = arg_77_1.y or var_77_0.y
-	arg_77_1.z = arg_77_1.z or var_77_0.z
-	tf(arg_77_0).localPosition = arg_77_1
+function setLocalPosition(slot0, slot1)
+	slot2 = tf(slot0).localPosition
+	slot1.x = slot1.x or slot2.x
+	slot1.y = slot1.y or slot2.y
+	slot1.z = slot1.z or slot2.z
+	tf(slot0).localPosition = slot1
 end
 
-function setAnchoredPosition(arg_78_0, arg_78_1)
-	local var_78_0 = rtf(arg_78_0)
-	local var_78_1 = var_78_0.anchoredPosition
-
-	arg_78_1.x = arg_78_1.x or var_78_1.x
-	arg_78_1.y = arg_78_1.y or var_78_1.y
-	var_78_0.anchoredPosition = arg_78_1
+function setAnchoredPosition(slot0, slot1)
+	slot3 = rtf(slot0).anchoredPosition
+	slot1.x = slot1.x or slot3.x
+	slot1.y = slot1.y or slot3.y
+	slot2.anchoredPosition = slot1
 end
 
-function setAnchoredPosition3D(arg_79_0, arg_79_1)
-	local var_79_0 = rtf(arg_79_0)
-	local var_79_1 = var_79_0.anchoredPosition3D
-
-	arg_79_1.x = arg_79_1.x or var_79_1.x
-	arg_79_1.y = arg_79_1.y or var_79_1.y
-	arg_79_1.z = arg_79_1.y or var_79_1.z
-	var_79_0.anchoredPosition3D = arg_79_1
+function setAnchoredPosition3D(slot0, slot1)
+	slot3 = rtf(slot0).anchoredPosition3D
+	slot1.x = slot1.x or slot3.x
+	slot1.y = slot1.y or slot3.y
+	slot1.z = slot1.y or slot3.z
+	slot2.anchoredPosition3D = slot1
 end
 
-function getAnchoredPosition(arg_80_0)
-	return rtf(arg_80_0).anchoredPosition
+function getAnchoredPosition(slot0)
+	return rtf(slot0).anchoredPosition
 end
 
-function setLocalScale(arg_81_0, arg_81_1)
-	local var_81_0 = tf(arg_81_0).localScale
-
-	arg_81_1.x = arg_81_1.x or var_81_0.x
-	arg_81_1.y = arg_81_1.y or var_81_0.y
-	arg_81_1.z = arg_81_1.z or var_81_0.z
-	tf(arg_81_0).localScale = arg_81_1
+function setLocalScale(slot0, slot1)
+	slot2 = tf(slot0).localScale
+	slot1.x = slot1.x or slot2.x
+	slot1.y = slot1.y or slot2.y
+	slot1.z = slot1.z or slot2.z
+	tf(slot0).localScale = slot1
 end
 
-function setLocalRotation(arg_82_0, arg_82_1)
-	local var_82_0 = tf(arg_82_0).localRotation
-
-	arg_82_1.x = arg_82_1.x or var_82_0.x
-	arg_82_1.y = arg_82_1.y or var_82_0.y
-	arg_82_1.z = arg_82_1.z or var_82_0.z
-	tf(arg_82_0).localRotation = arg_82_1
+function setLocalRotation(slot0, slot1)
+	slot2 = tf(slot0).localRotation
+	slot1.x = slot1.x or slot2.x
+	slot1.y = slot1.y or slot2.y
+	slot1.z = slot1.z or slot2.z
+	tf(slot0).localRotation = slot1
 end
 
-function setLocalEulerAngles(arg_83_0, arg_83_1)
-	local var_83_0 = tf(arg_83_0).localEulerAngles
-
-	arg_83_1.x = arg_83_1.x or var_83_0.x
-	arg_83_1.y = arg_83_1.y or var_83_0.y
-	arg_83_1.z = arg_83_1.z or var_83_0.z
-	tf(arg_83_0).localEulerAngles = arg_83_1
+function setLocalEulerAngles(slot0, slot1)
+	slot2 = tf(slot0).localEulerAngles
+	slot1.x = slot1.x or slot2.x
+	slot1.y = slot1.y or slot2.y
+	slot1.z = slot1.z or slot2.z
+	tf(slot0).localEulerAngles = slot1
 end
 
-function ActivateInputField(arg_84_0)
-	GetComponent(arg_84_0, typeof(InputField)):ActivateInputField()
+function ActivateInputField(slot0)
+	GetComponent(slot0, typeof(InputField)):ActivateInputField()
 end
 
-function onInputChanged(arg_85_0, arg_85_1, arg_85_2)
-	local var_85_0 = GetComponent(arg_85_1, typeof(InputField)).onValueChanged
+function onInputChanged(slot0, slot1, slot2)
+	slot3 = GetComponent(slot1, typeof(InputField)).onValueChanged
 
-	var_85_0:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg_85_0, var_85_0)
-	var_85_0:AddListener(arg_85_2)
+	slot3:RemoveAllListeners()
+	pg.DelegateInfo.Add(slot0, slot3)
+	slot3:AddListener(slot2)
 end
 
-function getImageColor(arg_86_0)
-	return GetComponent(arg_86_0, typeof(Image)).color
+function getImageColor(slot0)
+	return GetComponent(slot0, typeof(Image)).color
 end
 
-function setImageColor(arg_87_0, arg_87_1)
-	GetComponent(arg_87_0, typeof(Image)).color = arg_87_1
+function setImageColor(slot0, slot1)
+	GetComponent(slot0, typeof(Image)).color = slot1
 end
 
-function getImageAlpha(arg_88_0)
-	return GetComponent(arg_88_0, typeof(Image)).color.a
+function getImageAlpha(slot0)
+	return GetComponent(slot0, typeof(Image)).color.a
 end
 
-function setImageAlpha(arg_89_0, arg_89_1)
-	local var_89_0 = GetComponent(arg_89_0, typeof(Image))
-	local var_89_1 = var_89_0.color
-
-	var_89_1.a = arg_89_1
-	var_89_0.color = var_89_1
+function setImageAlpha(slot0, slot1)
+	slot2 = GetComponent(slot0, typeof(Image))
+	slot3 = slot2.color
+	slot3.a = slot1
+	slot2.color = slot3
 end
 
-function getImageRaycastTarget(arg_90_0)
-	return GetComponent(arg_90_0, typeof(Image)).raycastTarget
+function getImageRaycastTarget(slot0)
+	return GetComponent(slot0, typeof(Image)).raycastTarget
 end
 
-function setImageRaycastTarget(arg_91_0, arg_91_1)
-	GetComponent(arg_91_0, typeof(Image)).raycastTarget = tobool(arg_91_1)
+function setImageRaycastTarget(slot0, slot1)
+	GetComponent(slot0, typeof(Image)).raycastTarget = tobool(slot1)
 end
 
-function getCanvasGroupAlpha(arg_92_0)
-	return GetComponent(arg_92_0, typeof(CanvasGroup)).alpha
+function getCanvasGroupAlpha(slot0)
+	return GetComponent(slot0, typeof(CanvasGroup)).alpha
 end
 
-function setCanvasGroupAlpha(arg_93_0, arg_93_1)
-	GetComponent(arg_93_0, typeof(CanvasGroup)).alpha = arg_93_1
+function setCanvasGroupAlpha(slot0, slot1)
+	GetComponent(slot0, typeof(CanvasGroup)).alpha = slot1
 end
 
-function setActiveViaLayer(arg_94_0, arg_94_1)
-	UIUtil.SetUIActiveViaLayer(go(arg_94_0), arg_94_1)
+function setActiveViaLayer(slot0, slot1)
+	UIUtil.SetUIActiveViaLayer(go(slot0), slot1)
 end
 
-function setActiveViaCG(arg_95_0, arg_95_1)
-	UIUtil.SetUIActiveViaCG(go(arg_95_0), arg_95_1)
+function setActiveViaCG(slot0, slot1)
+	UIUtil.SetUIActiveViaCG(go(slot0), slot1)
 end
 
-function getTextColor(arg_96_0)
-	return GetComponent(arg_96_0, typeof(Text)).color
+function getTextColor(slot0)
+	return GetComponent(slot0, typeof(Text)).color
 end
 
-function setTextColor(arg_97_0, arg_97_1)
-	GetComponent(arg_97_0, typeof(Text)).color = arg_97_1
+function setTextColor(slot0, slot1)
+	GetComponent(slot0, typeof(Text)).color = slot1
 end
 
-function getTextAlpha(arg_98_0)
-	return GetComponent(arg_98_0, typeof(Text)).color.a
+function getTextAlpha(slot0)
+	return GetComponent(slot0, typeof(Text)).color.a
 end
 
-function setTextAlpha(arg_99_0, arg_99_1)
-	local var_99_0 = GetComponent(arg_99_0, typeof(Text))
-	local var_99_1 = var_99_0.color
-
-	var_99_1.a = arg_99_1
-	var_99_0.color = var_99_1
+function setTextAlpha(slot0, slot1)
+	slot2 = GetComponent(slot0, typeof(Text))
+	slot3 = slot2.color
+	slot3.a = slot1
+	slot2.color = slot3
 end
 
-function setSizeDelta(arg_100_0, arg_100_1)
-	local var_100_0 = GetComponent(arg_100_0, typeof(RectTransform))
-
-	if not var_100_0 then
+function setSizeDelta(slot0, slot1)
+	if not GetComponent(slot0, typeof(RectTransform)) then
 		return
 	end
 
-	local var_100_1 = var_100_0.sizeDelta
-
-	var_100_1.x = arg_100_1.x
-	var_100_1.y = arg_100_1.y
-	var_100_0.sizeDelta = var_100_1
+	slot3 = slot2.sizeDelta
+	slot3.x = slot1.x
+	slot3.y = slot1.y
+	slot2.sizeDelta = slot3
 end
 
-function getOutlineColor(arg_101_0)
-	return GetComponent(arg_101_0, typeof(Outline)).effectColor
+function getOutlineColor(slot0)
+	return GetComponent(slot0, typeof(Outline)).effectColor
 end
 
-function setOutlineColor(arg_102_0, arg_102_1)
-	GetComponent(arg_102_0, typeof(Outline)).effectColor = arg_102_1
+function setOutlineColor(slot0, slot1)
+	GetComponent(slot0, typeof(Outline)).effectColor = slot1
 end
 
-local var_0_4 = {}
+slot4 = {}
 
-function pressPersistTrigger(arg_103_0, arg_103_1, arg_103_2, arg_103_3, arg_103_4, arg_103_5, arg_103_6, arg_103_7)
-	arg_103_6 = defaultValue(arg_103_6, 0.25)
+function pressPersistTrigger(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
+	assert(defaultValue(slot6, 0.25) > 0, "maxSpeed less than zero")
+	assert(slot0, "should exist objectOrTransform")
 
-	assert(arg_103_6 > 0, "maxSpeed less than zero")
-	assert(arg_103_0, "should exist objectOrTransform")
+	slot8 = GetOrAddComponent(slot0, typeof(EventTriggerListener))
 
-	local var_103_0 = GetOrAddComponent(arg_103_0, typeof(EventTriggerListener))
+	assert(slot2, "should exist callback")
 
-	assert(arg_103_2, "should exist callback")
+	slot9 = uv0[slot0]
 
-	local var_103_1 = var_0_4[arg_103_0]
+	function slot10()
+		if uv0 then
+			uv0:Stop()
 
-	local function var_103_2()
-		if var_103_1 then
-			var_103_1:Stop()
-
-			var_103_1 = nil
-			var_0_4[arg_103_0] = nil
+			uv0 = nil
+			uv1[uv2] = nil
 		end
 	end
 
-	var_103_2()
-	var_103_0:AddPointDownFunc(function()
-		var_103_2()
+	slot10()
+	slot8:AddPointDownFunc(function ()
+		uv0()
 
-		var_103_1 = Timer.New(function()
-			if arg_103_5 then
-				local var_106_0 = math.max(var_103_1.duration - arg_103_1 / 10, arg_103_6)
-
-				var_103_1.duration = var_106_0
+		uv1 = Timer.New(function ()
+			if uv0 then
+				uv1.duration = math.max(uv1.duration - uv2 / 10, uv3)
 			end
 
-			existCall(arg_103_2, var_103_2)
-		end, arg_103_1, -1)
-		var_0_4[arg_103_0] = var_103_1
+			existCall(uv4, uv5)
+		end, uv3, -1)
+		uv6[uv7] = uv1
 
-		var_103_1:Start()
+		uv1:Start()
 
-		if arg_103_4 then
-			var_103_1.func()
+		if uv8 then
+			uv1.func()
 		end
 
-		if arg_103_7 and var_0_1 then
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_103_7)
-		end
-	end)
-	var_103_0:AddPointUpFunc(function()
-		var_103_2()
-
-		if arg_103_3 then
-			arg_103_3()
+		if uv9 and uv10 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv9)
 		end
 	end)
+	slot8:AddPointUpFunc(function ()
+		uv0()
 
-	return var_103_0, var_103_2
+		if uv1 then
+			uv1()
+		end
+	end)
+
+	return slot8, slot10
 end
 
-function getSpritePivot(arg_108_0)
-	local var_108_0 = arg_108_0.bounds
-	local var_108_1 = -var_108_0.center.x / var_108_0.extents.x / 2 + 0.5
-	local var_108_2 = -var_108_0.center.y / var_108_0.extents.y / 2 + 0.5
+function getSpritePivot(slot0)
+	slot1 = slot0.bounds
 
-	return Vector2(var_108_1, var_108_2)
+	return Vector2(-slot1.center.x / slot1.extents.x / 2 + 0.5, -slot1.center.y / slot1.extents.y / 2 + 0.5)
 end
 
-function resetAspectRatio(arg_109_0)
-	local var_109_0 = GetComponent(arg_109_0, "Image")
-
-	GetComponent(arg_109_0, "AspectRatioFitter").aspectRatio = var_109_0.preferredWidth / var_109_0.preferredHeight
+function resetAspectRatio(slot0)
+	slot1 = GetComponent(slot0, "Image")
+	GetComponent(slot0, "AspectRatioFitter").aspectRatio = slot1.preferredWidth / slot1.preferredHeight
 end
 
-function cloneTplTo(arg_110_0, arg_110_1, arg_110_2)
-	local var_110_0 = tf(Instantiate(arg_110_0))
+function cloneTplTo(slot0, slot1, slot2)
+	slot3 = tf(Instantiate(slot0))
 
-	var_110_0:SetParent(tf(arg_110_1), false)
-	SetActive(var_110_0, true)
+	slot3:SetParent(tf(slot1), false)
+	SetActive(slot3, true)
 
-	if arg_110_2 then
-		var_110_0.name = arg_110_2
+	if slot2 then
+		slot3.name = slot2
 	end
 
-	return var_110_0
+	return slot3
 end
 
-function setGray(arg_111_0, arg_111_1, arg_111_2)
-	if arg_111_1 then
-		local var_111_0 = GetOrAddComponent(arg_111_0, "UIGrayScale")
-
-		var_111_0.Recursive = defaultValue(arg_111_2, true)
-		var_111_0.enabled = true
+function setGray(slot0, slot1, slot2)
+	if slot1 then
+		slot3 = GetOrAddComponent(slot0, "UIGrayScale")
+		slot3.Recursive = defaultValue(slot2, true)
+		slot3.enabled = true
 	else
-		RemoveComponent(arg_111_0, "UIGrayScale")
+		RemoveComponent(slot0, "UIGrayScale")
 	end
 end
 
-function setBlackMask(arg_112_0, arg_112_1, arg_112_2)
-	if arg_112_1 then
-		arg_112_2 = arg_112_2 or {}
+function setBlackMask(slot0, slot1, slot2)
+	if slot1 then
+		slot2 = slot2 or {}
+		GetOrAddComponent(slot0, "UIMaterialAdjuster").Recursive = tobool(defaultValue(slot2.recursive, true))
+		slot4 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
 
-		local var_112_0 = GetOrAddComponent(arg_112_0, "UIMaterialAdjuster")
+		slot4:SetColor("_Color", slot2.color or Color(0, 0, 0, 0.2))
 
-		var_112_0.Recursive = tobool(defaultValue(arg_112_2.recursive, true))
-
-		local var_112_1 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
-
-		var_112_1:SetColor("_Color", arg_112_2.color or Color(0, 0, 0, 0.2))
-
-		var_112_0.AjusterMaterial = var_112_1
-		var_112_0.enabled = true
+		slot3.AjusterMaterial = slot4
+		slot3.enabled = true
 	else
-		RemoveComponent(arg_112_0, "UIMaterialAdjuster")
+		RemoveComponent(slot0, "UIMaterialAdjuster")
 	end
 end
 
-function blockBlackMask(arg_113_0, arg_113_1, arg_113_2)
-	if arg_113_1 then
-		local var_113_0 = GetOrAddComponent(arg_113_0, "UIMaterialAdjuster")
-
-		var_113_0.Recursive = tobool(defaultValue(arg_113_2, true))
-		var_113_0.enabled = false
+function blockBlackMask(slot0, slot1, slot2)
+	if slot1 then
+		slot3 = GetOrAddComponent(slot0, "UIMaterialAdjuster")
+		slot3.Recursive = tobool(defaultValue(slot2, true))
+		slot3.enabled = false
 	else
-		RemoveComponent(arg_113_0, "UIMaterialAdjuster")
+		RemoveComponent(slot0, "UIMaterialAdjuster")
 	end
 end
 
-function long2int(arg_114_0)
-	local var_114_0, var_114_1 = int64.tonum2(arg_114_0)
+function long2int(slot0)
+	slot1, slot2 = int64.tonum2(slot0)
 
-	return var_114_0
+	return slot1
 end
 
-function OnSliderWithButton(arg_115_0, arg_115_1, arg_115_2)
-	local var_115_0 = arg_115_1:GetComponent("Slider")
+function OnSliderWithButton(slot0, slot1, slot2)
+	slot3 = slot1:GetComponent("Slider")
 
-	var_115_0.onValueChanged:RemoveAllListeners()
-	pg.DelegateInfo.Add(arg_115_0, var_115_0.onValueChanged)
-	var_115_0.onValueChanged:AddListener(arg_115_2)
+	slot3.onValueChanged:RemoveAllListeners()
+	pg.DelegateInfo.Add(slot0, slot3.onValueChanged)
+	slot3.onValueChanged:AddListener(slot2)
 
-	local var_115_1 = (var_115_0.maxValue - var_115_0.minValue) * 0.1
+	slot4 = (slot3.maxValue - slot3.minValue) * 0.1
 
-	onButton(arg_115_0, arg_115_1:Find("up"), function()
-		var_115_0.value = math.clamp(var_115_0.value + var_115_1, var_115_0.minValue, var_115_0.maxValue)
+	onButton(slot0, slot1:Find("up"), function ()
+		uv0.value = math.clamp(uv0.value + uv1, uv0.minValue, uv0.maxValue)
 	end, SFX_PANEL)
-	onButton(arg_115_0, arg_115_1:Find("down"), function()
-		var_115_0.value = math.clamp(var_115_0.value - var_115_1, var_115_0.minValue, var_115_0.maxValue)
+	onButton(slot0, slot1:Find("down"), function ()
+		uv0.value = math.clamp(uv0.value - uv1, uv0.minValue, uv0.maxValue)
 	end, SFX_PANEL)
 end
 
-function addSlip(arg_118_0, arg_118_1, arg_118_2, arg_118_3, arg_118_4)
-	local var_118_0 = GetOrAddComponent(arg_118_1, "EventTriggerListener")
-	local var_118_1
-	local var_118_2 = 0
-	local var_118_3 = 50
+function addSlip(slot0, slot1, slot2, slot3, slot4)
+	slot5 = GetOrAddComponent(slot1, "EventTriggerListener")
+	slot6 = nil
+	slot7 = 0
+	slot8 = 50
 
-	var_118_0:AddPointDownFunc(function()
-		var_118_2 = 0
-		var_118_1 = nil
+	slot5:AddPointDownFunc(function ()
+		uv0 = 0
+		uv1 = nil
 	end)
-	var_118_0:AddDragFunc(function(arg_120_0, arg_120_1)
-		local var_120_0 = arg_120_1.position
-
-		if not var_118_1 then
-			var_118_1 = var_120_0
+	slot5:AddDragFunc(function (slot0, slot1)
+		if not uv0 then
+			uv0 = slot1.position
 		end
 
-		if arg_118_0 == SLIP_TYPE_HRZ then
-			var_118_2 = var_120_0.x - var_118_1.x
-		elseif arg_118_0 == SLIP_TYPE_VERT then
-			var_118_2 = var_120_0.y - var_118_1.y
+		if uv1 == SLIP_TYPE_HRZ then
+			uv2 = slot2.x - uv0.x
+		elseif uv1 == SLIP_TYPE_VERT then
+			uv2 = slot2.y - uv0.y
 		end
 	end)
-	var_118_0:AddPointUpFunc(function(arg_121_0, arg_121_1)
-		if var_118_2 < -var_118_3 then
-			if arg_118_3 then
-				arg_118_3()
+	slot5:AddPointUpFunc(function (slot0, slot1)
+		if uv0 < -uv1 then
+			if uv2 then
+				uv2()
 			end
-		elseif var_118_2 > var_118_3 then
-			if arg_118_2 then
-				arg_118_2()
+		elseif uv1 < uv0 then
+			if uv3 then
+				uv3()
 			end
-		elseif arg_118_4 then
-			arg_118_4()
+		elseif uv4 then
+			uv4()
 		end
 	end)
 end
 
 function getSizeRate()
-	local var_122_0 = pg.UIMgr.GetInstance().LevelMain.transform.rect
-	local var_122_1 = UnityEngine.Screen
+	slot0 = pg.UIMgr.GetInstance().LevelMain.transform.rect
+	slot1 = UnityEngine.Screen
 
-	return Vector2.New(var_122_0.width / var_122_1.width, var_122_0.height / var_122_1.height), var_122_0.width, var_122_0.height
+	return Vector2.New(slot0.width / slot1.width, slot0.height / slot1.height), slot0.width, slot0.height
 end
 
 function IsUsingWifi()

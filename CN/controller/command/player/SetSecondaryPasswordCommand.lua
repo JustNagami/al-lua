@@ -1,22 +1,22 @@
-﻿local var_0_0 = class("SetSecondaryPasswordCommand", pm.SimpleCommand)
+slot0 = class("SetSecondaryPasswordCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
 	pg.UIMgr.GetInstance():LoadingOn()
 	pg.ConnectionMgr.GetInstance():Send(11605, {
-		password = var_1_0.pwd,
-		notice = var_1_0.tip,
-		system_list = var_1_0.settings
-	}, 11606, function(arg_2_0)
+		password = slot2.pwd,
+		notice = slot2.tip,
+		system_list = slot2.settings
+	}, 11606, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if arg_2_0.result == 0 then
-			getProxy(SecondaryPWDProxy):OnFirstSet(var_1_0)
+		if slot0.result == 0 then
+			getProxy(SecondaryPWDProxy):OnFirstSet(uv0)
 		end
 
-		arg_1_0:sendNotification(GAME.SET_PASSWORD_DONE, arg_2_0)
+		uv1:sendNotification(GAME.SET_PASSWORD_DONE, slot0)
 	end)
 end
 
-return var_0_0
+return slot0

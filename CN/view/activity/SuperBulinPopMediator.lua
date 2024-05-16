@@ -1,16 +1,15 @@
-﻿local var_0_0 = class("SuperBulinPopMediator", import("..base.ContextMediator"))
+slot0 = class("SuperBulinPopMediator", import("..base.ContextMediator"))
+slot0.ON_SIMULATION_COMBAT = "event simulation combat"
 
-var_0_0.ON_SIMULATION_COMBAT = "event simulation combat"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_SIMULATION_COMBAT, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_SIMULATION_COMBAT, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.BEGIN_STAGE, {
 			system = SYSTEM_SIMULATION,
-			stageId = arg_2_1.stageId,
-			warnMsg = arg_2_1.warnMsg,
-			exitCallback = arg_2_2
+			stageId = slot1.stageId,
+			warnMsg = slot1.warnMsg,
+			exitCallback = slot2
 		})
 	end)
 end
 
-return var_0_0
+return slot0

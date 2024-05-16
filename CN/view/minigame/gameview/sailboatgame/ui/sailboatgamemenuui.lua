@@ -1,202 +1,184 @@
-﻿local var_0_0 = class("SailBoatGameMenuUI")
-local var_0_1
+slot0 = class("SailBoatGameMenuUI")
+slot1 = nil
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._tf = arg_1_1
-	var_0_1 = SailBoatGameVo
-	arg_1_0._event = arg_1_2
-	arg_1_0.menuUI = findTF(arg_1_0._tf, "ui/menuUI")
-	arg_1_0.battleScrollRect = GetComponent(findTF(arg_1_0.menuUI, "battList"), typeof(ScrollRect))
-	arg_1_0.totalTimes = var_0_1.total_times
-	arg_1_0.battleItems = {}
-	arg_1_0.dropItems = {}
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._tf = slot1
+	uv0 = SailBoatGameVo
+	slot0._event = slot2
+	slot0.menuUI = findTF(slot0._tf, "ui/menuUI")
+	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
+	slot0.totalTimes = uv0.total_times
+	slot0.battleItems = {}
+	slot0.dropItems = {}
 
-	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "rightPanelBg/arrowUp"), function()
-		local var_2_0 = arg_1_0.battleScrollRect.normalizedPosition.y + 1 / (arg_1_0.totalTimes - 4)
-
-		if var_2_0 > 1 then
-			var_2_0 = 1
+	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
+			slot0 = 1
 		end
 
-		scrollTo(arg_1_0.battleScrollRect, 0, var_2_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "rightPanelBg/arrowDown"), function()
-		local var_3_0 = arg_1_0.battleScrollRect.normalizedPosition.y - 1 / (arg_1_0.totalTimes - 4)
-
-		if var_3_0 < 0 then
-			var_3_0 = 0
+	onButton(slot0._event, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
+			slot0 = 0
 		end
 
-		scrollTo(arg_1_0.battleScrollRect, 0, var_3_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnBack"), function()
-		arg_1_0._event:emit(SailBoatGameView.CLOSE_GAME)
+	onButton(slot0._event, findTF(slot0.menuUI, "btnBack"), function ()
+		uv0._event:emit(SailBoatGameView.CLOSE_GAME)
 	end, SFX_CANCEL)
-	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnRule"), function()
-		arg_1_0._event:emit(SailBoatGameView.SHOW_RULE)
-	end, SFX_CANCEL)
-
-	arg_1_0.btnStart = findTF(arg_1_0.menuUI, "btnStart")
-
-	onButton(arg_1_0._event, findTF(arg_1_0.menuUI, "btnStart"), function()
-		arg_1_0._event:emit(SailBoatGameView.OPEN_EQUIP_UI)
+	onButton(slot0._event, findTF(slot0.menuUI, "btnRule"), function ()
+		uv0._event:emit(SailBoatGameView.SHOW_RULE)
 	end, SFX_CANCEL)
 
-	local var_1_0 = findTF(arg_1_0.menuUI, "tplBattleItem")
-	local var_1_1 = var_0_1.drop
+	slot0.btnStart = findTF(slot0.menuUI, "btnStart")
 
-	arg_1_0._chapters = {}
+	onButton(slot0._event, findTF(slot0.menuUI, "btnStart"), function ()
+		uv0._event:emit(SailBoatGameView.OPEN_EQUIP_UI)
+	end, SFX_CANCEL)
 
-	for iter_1_0 = 1, 7 do
-		local var_1_2 = iter_1_0
-		local var_1_3 = tf(instantiate(var_1_0))
+	slot4 = uv0.drop
+	slot0._chapters = {}
 
-		var_1_3.name = "battleItem_" .. iter_1_0
+	for slot8 = 1, 7 do
+		slot9 = slot8
+		slot10 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
+		slot10.name = "battleItem_" .. slot8
 
-		setParent(var_1_3, findTF(arg_1_0.menuUI, "battList/Viewport/Content"))
+		setParent(slot10, findTF(slot0.menuUI, "battList/Viewport/Content"))
 
-		local var_1_4 = iter_1_0
-		local var_1_5 = findTF(var_1_3, "icon")
-		local var_1_6 = {
-			type = var_1_1[iter_1_0][1],
-			id = var_1_1[iter_1_0][2],
-			amount = var_1_1[iter_1_0][3]
-		}
+		slot11 = slot8
+		slot12 = findTF(slot10, "icon")
 
-		updateDrop(var_1_5, var_1_6)
-		onButton(arg_1_0._event, var_1_5, function()
-			arg_1_0._event:emit(BaseUI.ON_DROP, var_1_6)
+		updateDrop(slot12, {
+			type = slot4[slot8][1],
+			id = slot4[slot8][2],
+			amount = slot4[slot8][3]
+		})
+		onButton(slot0._event, slot12, function ()
+			uv0._event:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
-		table.insert(arg_1_0.dropItems, var_1_5)
-		setActive(var_1_3, true)
-		table.insert(arg_1_0.battleItems, var_1_3)
+		table.insert(slot0.dropItems, slot12)
+		setActive(slot10, true)
+		table.insert(slot0.battleItems, slot10)
 
-		local var_1_7 = var_0_1.GetGameUseTimes()
-		local var_1_8 = var_0_1.GetGameTimes()
-		local var_1_9 = findTF(arg_1_0.menuUI, "chapter/" .. iter_1_0 .. "/icon_bg/icon")
-		local var_1_10 = {
-			type = var_1_1[iter_1_0][1],
-			id = var_1_1[iter_1_0][2],
-			amount = var_1_1[iter_1_0][3]
-		}
+		slot14 = uv0.GetGameUseTimes()
+		slot15 = uv0.GetGameTimes()
+		slot16 = findTF(slot0.menuUI, "chapter/" .. slot8 .. "/icon_bg/icon")
 
-		updateDrop(var_1_9, var_1_10)
-		onButton(arg_1_0._event, var_1_9, function()
-			arg_1_0._event:emit(BaseUI.ON_DROP, var_1_10)
+		updateDrop(slot16, {
+			type = slot4[slot8][1],
+			id = slot4[slot8][2],
+			amount = slot4[slot8][3]
+		})
+		onButton(slot0._event, slot16, function ()
+			uv0._event:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
 
-		local var_1_11 = findTF(arg_1_0.menuUI, "chapter/" .. iter_1_0)
+		slot18 = findTF(slot0.menuUI, "chapter/" .. slot8)
 
-		onButton(arg_1_0._event, var_1_11, function()
-			if var_1_7 == 7 and var_1_8 == 0 then
-				var_0_1.selectRound = var_1_4
+		onButton(slot0._event, slot18, function ()
+			if uv0 == 7 and uv1 == 0 then
+				uv2.selectRound = uv3
 
-				arg_1_0:update(arg_1_0.mgHubData)
+				uv4:update(uv4.mgHubData)
 			end
 		end, SFX_CONFIRM)
-		table.insert(arg_1_0._chapters, var_1_11)
+		table.insert(slot0._chapters, slot18)
 	end
 end
 
-function var_0_0.show(arg_10_0, arg_10_1)
-	setActive(arg_10_0.menuUI, arg_10_1)
+function slot0.show(slot0, slot1)
+	setActive(slot0.menuUI, slot1)
 end
 
-function var_0_0.update(arg_11_0, arg_11_1)
-	arg_11_0.mgHubData = arg_11_1
+function slot0.update(slot0, slot1)
+	slot0.mgHubData = slot1
+	slot2 = slot0:getGameUsedTimes(slot1)
+	slot3 = slot0:getGameTimes(slot1)
 
-	local var_11_0 = arg_11_0:getGameUsedTimes(arg_11_1)
-	local var_11_1 = arg_11_0:getGameTimes(arg_11_1)
+	for slot7 = 1, 7 do
+		setActive(findTF(slot0.battleItems[slot7], "state_open"), false)
+		setActive(findTF(slot0.battleItems[slot7], "state_closed"), false)
+		setActive(findTF(slot0.battleItems[slot7], "state_clear"), false)
+		setActive(findTF(slot0.battleItems[slot7], "state_current"), false)
 
-	for iter_11_0 = 1, 7 do
-		setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_open"), false)
-		setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_closed"), false)
-		setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_clear"), false)
-		setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_current"), false)
-
-		if iter_11_0 <= var_11_0 then
-			SetParent(arg_11_0.dropItems[iter_11_0], findTF(arg_11_0.battleItems[iter_11_0], "state_clear/icon"))
-			setActive(arg_11_0.dropItems[iter_11_0], true)
-			setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_clear"), true)
-		elseif iter_11_0 == var_11_0 + 1 and var_11_1 >= 1 then
-			setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_current"), true)
-			SetParent(arg_11_0.dropItems[iter_11_0], findTF(arg_11_0.battleItems[iter_11_0], "state_current/icon"))
-			setActive(arg_11_0.dropItems[iter_11_0], true)
-		elseif var_11_0 < iter_11_0 and iter_11_0 <= var_11_0 + var_11_1 then
-			setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_open"), true)
-			SetParent(arg_11_0.dropItems[iter_11_0], findTF(arg_11_0.battleItems[iter_11_0], "state_open/icon"))
-			setActive(arg_11_0.dropItems[iter_11_0], true)
+		if slot7 <= slot2 then
+			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_clear/icon"))
+			setActive(slot0.dropItems[slot7], true)
+			setActive(findTF(slot0.battleItems[slot7], "state_clear"), true)
+		elseif slot7 == slot2 + 1 and slot3 >= 1 then
+			setActive(findTF(slot0.battleItems[slot7], "state_current"), true)
+			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_current/icon"))
+			setActive(slot0.dropItems[slot7], true)
+		elseif slot2 < slot7 and slot7 <= slot2 + slot3 then
+			setActive(findTF(slot0.battleItems[slot7], "state_open"), true)
+			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_open/icon"))
+			setActive(slot0.dropItems[slot7], true)
 		else
-			setActive(findTF(arg_11_0.battleItems[iter_11_0], "state_closed"), true)
-			SetParent(arg_11_0.dropItems[iter_11_0], findTF(arg_11_0.battleItems[iter_11_0], "state_closed/icon"))
-			setActive(arg_11_0.dropItems[iter_11_0], true)
+			setActive(findTF(slot0.battleItems[slot7], "state_closed"), true)
+			SetParent(slot0.dropItems[slot7], findTF(slot0.battleItems[slot7], "state_closed/icon"))
+			setActive(slot0.dropItems[slot7], true)
 		end
 
-		setActive(findTF(arg_11_0._chapters[iter_11_0], "close"), false)
-		setActive(findTF(arg_11_0._chapters[iter_11_0], "got"), false)
-		setActive(findTF(arg_11_0._chapters[iter_11_0], "active"), false)
-		setActive(findTF(arg_11_0._chapters[iter_11_0], "icon_bg"), false)
+		setActive(findTF(slot0._chapters[slot7], "close"), false)
+		setActive(findTF(slot0._chapters[slot7], "got"), false)
+		setActive(findTF(slot0._chapters[slot7], "active"), false)
+		setActive(findTF(slot0._chapters[slot7], "icon_bg"), false)
 
-		if iter_11_0 <= var_11_0 then
-			setActive(findTF(arg_11_0._chapters[iter_11_0], "got"), true)
-		elseif iter_11_0 == var_11_0 + 1 and var_11_1 >= 1 then
-			setActive(findTF(arg_11_0._chapters[iter_11_0], "active"), true)
-			setActive(findTF(arg_11_0._chapters[iter_11_0], "icon_bg"), true)
-		elseif var_11_0 < iter_11_0 and iter_11_0 <= var_11_0 + var_11_1 then
-			-- block empty
-		else
-			setActive(findTF(arg_11_0._chapters[iter_11_0], "close"), true)
+		if slot7 <= slot2 then
+			setActive(findTF(slot0._chapters[slot7], "got"), true)
+		elseif slot7 == slot2 + 1 and slot3 >= 1 then
+			setActive(findTF(slot0._chapters[slot7], "active"), true)
+			setActive(findTF(slot0._chapters[slot7], "icon_bg"), true)
+		elseif slot2 >= slot7 or slot7 > slot2 + slot3 then
+			setActive(findTF(slot0._chapters[slot7], "close"), true)
 		end
 
-		if var_0_1.selectRound == iter_11_0 then
-			setActive(findTF(arg_11_0._chapters[iter_11_0], "active"), true)
+		if uv0.selectRound == slot7 then
+			setActive(findTF(slot0._chapters[slot7], "active"), true)
 		end
 	end
 
-	local var_11_2 = 1 - (var_11_0 - 3 < 0 and 0 or var_11_0 - 3) / (arg_11_0.totalTimes - 4)
-
-	if var_11_2 > 1 then
-		var_11_2 = 1
+	if 1 - (slot2 - 3 < 0 and 0 or slot2 - 3) / (slot0.totalTimes - 4) > 1 then
+		slot5 = 1
 	end
 
-	scrollTo(arg_11_0.battleScrollRect, 0, var_11_2)
+	scrollTo(slot0.battleScrollRect, 0, slot5)
 end
 
-function var_0_0.CheckGet(arg_12_0)
-	local var_12_0 = arg_12_0.mgHubData
+function slot0.CheckGet(slot0)
+	setActive(findTF(slot0.menuUI, "got"), false)
 
-	setActive(findTF(arg_12_0.menuUI, "got"), false)
-
-	local var_12_1 = arg_12_0:getUltimate(var_12_0)
-
-	if var_12_1 and var_12_1 ~= 0 then
-		setActive(findTF(arg_12_0.menuUI, "got"), true)
+	if slot0:getUltimate(slot0.mgHubData) and slot2 ~= 0 then
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 
-	if var_12_1 == 0 then
-		if var_0_1.total_times > arg_12_0:getGameUsedTimes(var_12_0) then
+	if slot2 == 0 then
+		if slot0:getGameUsedTimes(slot1) < uv0.total_times then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = var_12_0.id,
+			hubid = slot1.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg_12_0.menuUI, "got"), true)
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 end
 
-function var_0_0.getGameTimes(arg_13_0, arg_13_1)
-	return arg_13_1.count
+function slot0.getGameTimes(slot0, slot1)
+	return slot1.count
 end
 
-function var_0_0.getGameUsedTimes(arg_14_0, arg_14_1)
-	return arg_14_1.usedtime
+function slot0.getGameUsedTimes(slot0, slot1)
+	return slot1.usedtime
 end
 
-function var_0_0.getUltimate(arg_15_0, arg_15_1)
-	return arg_15_1.ultimate
+function slot0.getUltimate(slot0, slot1)
+	return slot1.ultimate
 end
 
-return var_0_0
+return slot0

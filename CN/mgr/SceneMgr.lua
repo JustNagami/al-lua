@@ -1,270 +1,241 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.SceneMgr = singletonClass("SceneMgr")
+slot1 = slot0.SceneMgr
 
-local var_0_0 = pg
-
-var_0_0.SceneMgr = singletonClass("SceneMgr")
-
-local var_0_1 = var_0_0.SceneMgr
-
-function var_0_1.Ctor(arg_1_0)
-	arg_1_0._cacheUI = {}
-	arg_1_0._gcLimit = 3
-	arg_1_0._gcCounter = 0
+function slot1.Ctor(slot0)
+	slot0._cacheUI = {}
+	slot0._gcLimit = 3
+	slot0._gcCounter = 0
 end
 
-function var_0_1.prepare(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = arg_2_2.mediator
-	local var_2_1 = arg_2_2.viewComponent
-	local var_2_2
-	local var_2_3
+function slot1.prepare(slot0, slot1, slot2, slot3)
+	slot5 = slot2.viewComponent
+	slot6, slot7 = nil
 
-	if arg_2_0._cacheUI[var_2_0.__cname] ~= nil then
-		var_2_3 = arg_2_0._cacheUI[var_2_0.__cname]
-		arg_2_0._cacheUI[var_2_0.__cname] = nil
-		var_2_2 = var_2_0.New(var_2_3)
+	if slot0._cacheUI[slot2.mediator.__cname] ~= nil then
+		slot0._cacheUI[slot4.__cname] = nil
+		slot6 = slot4.New(slot0._cacheUI[slot4.__cname])
 
-		var_2_2:setContextData(arg_2_2.data)
-		arg_2_1:registerMediator(var_2_2)
-		arg_2_3(var_2_2)
+		slot6:setContextData(slot2.data)
+		slot1:registerMediator(slot6)
+		slot3(slot6)
 	else
-		var_2_3 = var_2_1.New()
+		slot7 = slot5.New()
 
-		assert(isa(var_2_3, BaseUI), "should be an instance of BaseUI: " .. var_2_3.__cname)
-		var_2_3:setContextData(arg_2_2.data)
+		assert(isa(slot7, BaseUI), "should be an instance of BaseUI: " .. slot7.__cname)
+		slot7:setContextData(slot2.data)
 
-		local var_2_4
+		slot8 = nil
 
-		local function var_2_5()
-			var_2_3.event:disconnect(BaseUI.LOADED, var_2_5)
+		if slot7:isLoaded() then
+			function ()
+				uv0.event:disconnect(BaseUI.LOADED, uv1)
 
-			var_2_2 = var_2_0.New(var_2_3)
+				uv2 = uv3.New(uv0)
 
-			var_2_2:setContextData(arg_2_2.data)
-			arg_2_1:registerMediator(var_2_2)
-			arg_2_3(var_2_2)
-		end
-
-		if var_2_3:isLoaded() then
-			var_2_5()
+				uv2:setContextData(uv4.data)
+				uv5:registerMediator(uv2)
+				uv6(uv2)
+			end()
 		else
-			var_2_3.event:connect(BaseUI.LOADED, var_2_5)
-			var_2_3:load()
+			slot7.event:connect(BaseUI.LOADED, slot8)
+			slot7:load()
 		end
 	end
 end
 
-function var_0_1.prepareLayer(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
-	local var_4_0 = {}
-	local var_4_1 = {}
+function slot1.prepareLayer(slot0, slot1, slot2, slot3, slot4)
+	slot5 = {}
 
-	if arg_4_2 ~= nil then
-		if arg_4_2:getContextByMediator(arg_4_3.mediator) then
-			originalPrint("mediator already exist: " .. arg_4_3.mediator.__cname)
-			arg_4_4(var_4_1)
+	if slot2 ~= nil then
+		if slot2:getContextByMediator(slot3.mediator) then
+			originalPrint("mediator already exist: " .. slot3.mediator.__cname)
+			slot4({})
 
 			return
 		end
 
-		table.insert(var_4_0, arg_4_3)
-		arg_4_2:addChild(arg_4_3)
+		table.insert(slot5, slot3)
+		slot2:addChild(slot3)
 	else
-		for iter_4_0, iter_4_1 in ipairs(arg_4_3.children) do
-			table.insert(var_4_0, iter_4_1)
+		for slot10, slot11 in ipairs(slot3.children) do
+			table.insert(slot5, slot11)
 		end
 	end
 
-	local var_4_2
+	slot7 = nil
 
-	local function var_4_3()
-		if #var_4_0 > 0 then
-			local var_5_0 = table.remove(var_4_0, 1)
-
-			for iter_5_0, iter_5_1 in ipairs(var_5_0.children) do
-				table.insert(var_4_0, iter_5_1)
+	function ()
+		if #uv0 > 0 then
+			for slot4, slot5 in ipairs(table.remove(uv0, 1).children) do
+				table.insert(uv0, slot5)
 			end
 
-			local var_5_1 = var_5_0.parent
-			local var_5_2 = arg_4_1:retrieveMediator(var_5_1.mediator.__cname):getViewComponent()
+			slot3 = uv1:retrieveMediator(slot0.parent.mediator.__cname):getViewComponent()
 
-			arg_4_0:prepare(arg_4_1, var_5_0, function(arg_6_0)
-				arg_6_0.viewComponent:attach(var_5_2)
-				table.insert(var_4_1, arg_6_0)
-				var_4_3()
+			uv2:prepare(uv1, slot0, function (slot0)
+				slot0.viewComponent:attach(uv0)
+				table.insert(uv1, slot0)
+				uv2()
 			end)
-		else
-			arg_4_4(var_4_1)
-		end
-	end
 
-	var_4_3()
+			return
+		end
+
+		uv5(uv3)
+	end()
 end
 
-function var_0_1.enter(arg_7_0, arg_7_1, arg_7_2)
-	if #arg_7_1 == 0 then
-		arg_7_2()
+function slot1.enter(slot0, slot1, slot2)
+	if #slot1 == 0 then
+		slot2()
 	end
 
-	local var_7_0 = #arg_7_1
+	slot3 = #slot1
 
-	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
-		local var_7_1 = iter_7_1.viewComponent
-
-		if var_7_1._isCachedView then
-			var_7_1:setVisible(true)
+	for slot7, slot8 in ipairs(slot1) do
+		if slot8.viewComponent._isCachedView then
+			slot9:setVisible(true)
 		end
 
-		local var_7_2
+		slot10 = nil
 
-		local function var_7_3()
-			var_7_1.event:disconnect(BaseUI.AVALIBLE, var_7_3)
+		slot9.event:connect(BaseUI.AVALIBLE, function ()
+			uv0.event:disconnect(BaseUI.AVALIBLE, uv1)
 
-			var_7_0 = var_7_0 - 1
+			uv2 = uv2 - 1
 
-			if var_7_0 == 0 then
-				arg_7_2()
+			if uv2 == 0 then
+				uv3()
 			end
-		end
-
-		var_7_1.event:connect(BaseUI.AVALIBLE, var_7_3)
-		var_7_1:enter()
+		end)
+		slot9:enter()
 	end
 end
 
-function var_0_1.removeLayer(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0 = {
-		arg_9_2
+function slot1.removeLayer(slot0, slot1, slot2, slot3)
+	slot4 = {
+		slot2
 	}
-	local var_9_1 = {}
+	slot5 = {}
 
-	while #var_9_0 > 0 do
-		local var_9_2 = table.remove(var_9_0, 1)
-
-		if var_9_2.mediator then
-			table.insert(var_9_1, var_9_2)
+	while #slot4 > 0 do
+		if table.remove(slot4, 1).mediator then
+			table.insert(slot5, slot6)
 		end
 
-		for iter_9_0, iter_9_1 in ipairs(var_9_2.children) do
-			table.insert(var_9_0, iter_9_1)
+		for slot10, slot11 in ipairs(slot6.children) do
+			table.insert(slot4, slot11)
 		end
 	end
 
-	if arg_9_2.parent == nil then
-		table.remove(var_9_1, 1)
+	if slot2.parent == nil then
+		table.remove(slot5, 1)
 	else
-		arg_9_2.parent:removeChild(arg_9_2)
+		slot2.parent:removeChild(slot2)
 	end
 
-	local var_9_3 = {}
+	slot6 = {}
 
-	for iter_9_2 = #var_9_1, 1, -1 do
-		local var_9_4 = var_9_1[iter_9_2]
-		local var_9_5 = arg_9_1:removeMediator(var_9_4.mediator.__cname)
+	for slot10 = #slot5, 1, -1 do
+		slot12 = slot1:removeMediator(slot5[slot10].mediator.__cname)
 
-		table.insert(var_9_3, function(arg_10_0)
-			if var_9_5 then
-				arg_9_0:clearTempCache(var_9_5)
-				arg_9_0:remove(var_9_5, function()
-					var_9_4:onContextRemoved()
-					arg_10_0()
+		table.insert(slot6, function (slot0)
+			if uv0 then
+				uv1:clearTempCache(uv0)
+				uv1:remove(uv0, function ()
+					uv0:onContextRemoved()
+					uv1()
 				end)
 			else
-				arg_10_0()
+				slot0()
 			end
 		end)
 	end
 
-	seriesAsync(var_9_3, arg_9_3)
+	seriesAsync(slot6, slot3)
 end
 
-function var_0_1.removeLayerMediator(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	local var_12_0 = {
-		arg_12_2
+function slot1.removeLayerMediator(slot0, slot1, slot2, slot3)
+	slot4 = {
+		slot2
 	}
-	local var_12_1 = {}
+	slot5 = {}
 
-	while #var_12_0 > 0 do
-		local var_12_2 = table.remove(var_12_0, 1)
-
-		if var_12_2.mediator then
-			table.insert(var_12_1, var_12_2)
+	while #slot4 > 0 do
+		if table.remove(slot4, 1).mediator then
+			table.insert(slot5, slot6)
 		end
 
-		for iter_12_0, iter_12_1 in ipairs(var_12_2.children) do
-			table.insert(var_12_0, iter_12_1)
+		for slot10, slot11 in ipairs(slot6.children) do
+			table.insert(slot4, slot11)
 		end
 	end
 
-	if arg_12_2.parent ~= nil then
-		arg_12_2.parent:removeChild(arg_12_2)
+	if slot2.parent ~= nil then
+		slot2.parent:removeChild(slot2)
 	end
 
-	local var_12_3 = {}
+	slot6 = {}
 
-	for iter_12_2 = #var_12_1, 1, -1 do
-		local var_12_4 = var_12_1[iter_12_2]
-		local var_12_5 = arg_12_1:removeMediator(var_12_4.mediator.__cname)
-
-		if var_12_5 then
-			table.insert(var_12_3, {
-				mediator = var_12_5,
-				context = var_12_4
+	for slot10 = #slot5, 1, -1 do
+		if slot1:removeMediator(slot5[slot10].mediator.__cname) then
+			table.insert(slot6, {
+				mediator = slot12,
+				context = slot11
 			})
 		end
 	end
 
-	arg_12_3(var_12_3)
+	slot3(slot6)
 end
 
-function var_0_1.clearTempCache(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1:getViewComponent()
-
-	if var_13_0:tempCache() then
-		var_13_0:RemoveTempCache()
+function slot1.clearTempCache(slot0, slot1)
+	if slot1:getViewComponent():tempCache() then
+		slot2:RemoveTempCache()
 	end
 end
 
-function var_0_1.remove(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
-	local var_14_0 = arg_14_1:getViewComponent()
-	local var_14_1 = arg_14_0._cacheUI[arg_14_1.__cname]
+function slot1.remove(slot0, slot1, slot2, slot3)
+	slot4 = slot1:getViewComponent()
 
-	if var_14_1 ~= nil and var_14_1 ~= var_14_0 then
-		var_14_1.event:clear()
-		arg_14_0:gc(var_14_1)
+	if slot0._cacheUI[slot1.__cname] ~= nil and slot5 ~= slot4 then
+		slot5.event:clear()
+		slot0:gc(slot5)
 	end
 
-	if var_14_0 == nil then
-		arg_14_2()
-	elseif var_14_0:needCache() and not arg_14_3 then
-		var_14_0:setVisible(false)
+	if slot4 == nil then
+		slot2()
+	elseif slot4:needCache() and not slot3 then
+		slot4:setVisible(false)
 
-		arg_14_0._cacheUI[arg_14_1.__cname] = var_14_0
-		var_14_0._isCachedView = true
+		slot0._cacheUI[slot1.__cname] = slot4
+		slot4._isCachedView = true
 
-		arg_14_2()
+		slot2()
 	else
-		var_14_0._isCachedView = false
+		slot4._isCachedView = false
 
-		var_14_0.event:connect(BaseUI.DID_EXIT, function()
-			var_14_0.event:clear()
-			arg_14_0:gc(var_14_0)
-			arg_14_2()
+		slot4.event:connect(BaseUI.DID_EXIT, function ()
+			uv0.event:clear()
+			uv1:gc(uv0)
+			uv2()
 		end)
-		var_14_0:exit()
+		slot4:exit()
 	end
 end
 
-function var_0_1.gc(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_1:forceGC()
+function slot1.gc(slot0, slot1)
+	table.clear(slot1)
 
-	table.clear(arg_16_1)
-
-	arg_16_1.exited = true
+	slot1.exited = true
 
 	if not GCThread.GetInstance().running then
-		arg_16_0._gcCounter = arg_16_0._gcCounter + 1
+		slot0._gcCounter = slot0._gcCounter + 1
 
-		if arg_16_0._gcCounter >= arg_16_0._gcLimit or var_16_0 then
-			arg_16_0._gcCounter = 0
+		if slot0._gcLimit <= slot0._gcCounter or slot1:forceGC() then
+			slot0._gcCounter = 0
 
 			gcAll(false)
 		else

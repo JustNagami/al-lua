@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gallery_config = {
 	[2] = {
 		year = 1,

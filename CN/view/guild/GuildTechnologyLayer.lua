@@ -1,22 +1,22 @@
-﻿local var_0_0 = class("GuildTechnologyLayer", import("..base.BaseUI"))
+slot0 = class("GuildTechnologyLayer", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildEmptyUI"
 end
 
-function var_0_0.setGuild(arg_2_0, arg_2_1)
-	arg_2_0.guildVO = arg_2_1
+function slot0.setGuild(slot0, slot1)
+	slot0.guildVO = slot1
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.technologyPage = GuildTechnologyPage.New(arg_3_0._tf, arg_3_0.event)
-	arg_3_0.helpBtn = arg_3_0:findTF("frame/help")
+function slot0.init(slot0)
+	slot0.technologyPage = GuildTechnologyPage.New(slot0._tf, slot0.event)
+	slot0.helpBtn = slot0:findTF("frame/help")
 end
 
-function var_0_0.didEnter(arg_4_0)
-	arg_4_0:UpdatePainting()
-	arg_4_0.technologyPage:ExecuteAction("SetUp", arg_4_0.guildVO)
-	onButton(arg_4_0, arg_4_0.helpBtn, function()
+function slot0.didEnter(slot0)
+	slot0:UpdatePainting()
+	slot0.technologyPage:ExecuteAction("SetUp", slot0.guildVO)
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.guild_tech_tip.tip
@@ -24,49 +24,47 @@ function var_0_0.didEnter(arg_4_0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdatePainting(arg_6_0)
-	local var_6_0 = arg_6_0.guildVO:GetOfficePainting()
-
-	pg.GuildPaintingMgr:GetInstance():Update(var_6_0, Vector3(-737, -171, 0))
+function slot0.UpdatePainting(slot0)
+	pg.GuildPaintingMgr:GetInstance():Update(slot0.guildVO:GetOfficePainting(), Vector3(-737, -171, 0))
 end
 
-function var_0_0.UpdateUpgradeList(arg_7_0)
-	if arg_7_0.technologyPage:GetLoaded() then
-		arg_7_0.technologyPage:UpdateUpgradeList()
+function slot0.UpdateUpgradeList(slot0)
+	if slot0.technologyPage:GetLoaded() then
+		slot0.technologyPage:UpdateUpgradeList()
 	end
 end
 
-function var_0_0.UpdateBreakOutList(arg_8_0)
-	if arg_8_0.technologyPage:GetLoaded() then
-		arg_8_0.technologyPage:UpdateBreakOutList()
+function slot0.UpdateBreakOutList(slot0)
+	if slot0.technologyPage:GetLoaded() then
+		slot0.technologyPage:UpdateBreakOutList()
 	end
 end
 
-function var_0_0.UpdateGuild(arg_9_0, arg_9_1)
-	arg_9_0:setGuild(arg_9_1)
+function slot0.UpdateGuild(slot0, slot1)
+	slot0:setGuild(slot1)
 
-	if arg_9_0.technologyPage and arg_9_0.technologyPage:GetLoaded() then
-		arg_9_0.technologyPage:Update(arg_9_0.guildVO)
+	if slot0.technologyPage and slot0.technologyPage:GetLoaded() then
+		slot0.technologyPage:Update(slot0.guildVO)
 	end
 end
 
-function var_0_0.UpdateAll(arg_10_0)
-	if arg_10_0.technologyPage:GetLoaded() then
-		arg_10_0.technologyPage:Flush()
+function slot0.UpdateAll(slot0)
+	if slot0.technologyPage:GetLoaded() then
+		slot0.technologyPage:Flush()
 	end
 end
 
-function var_0_0.onBackPressed(arg_11_0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	arg_11_0:emit(var_0_0.ON_BACK)
+	slot0:emit(uv0.ON_BACK)
 end
 
-function var_0_0.willExit(arg_12_0)
-	arg_12_0.technologyPage:Destroy()
+function slot0.willExit(slot0)
+	slot0.technologyPage:Destroy()
 
 	if isActive(pg.MsgboxMgr:GetInstance()._go) then
 		triggerButton(pg.MsgboxMgr:GetInstance()._closeBtn)
 	end
 end
 
-return var_0_0
+return slot0

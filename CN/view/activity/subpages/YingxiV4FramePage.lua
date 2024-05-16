@@ -1,1 +1,1 @@
-﻿return (class("YingxiV4framePage", import(".TemplatePage.NewFrameTemplatePage")))
+return class("YingxiV4framePage", import(".TemplatePage.NewFrameTemplatePage"))

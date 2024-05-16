@@ -1,1 +1,1 @@
-﻿return (class("RyujoPtPage", import(".TemplatePage.PtTemplatePage")))
+return class("RyujoPtPage", import(".TemplatePage.PtTemplatePage"))

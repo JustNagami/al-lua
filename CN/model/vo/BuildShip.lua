@@ -1,159 +1,133 @@
-﻿local var_0_0 = class("BuildShip", import(".BaseVO"))
+slot0 = class("BuildShip", import(".BaseVO"))
+slot0.INACTIVE = 1
+slot0.ACTIVE = 2
+slot0.FINISH = 3
 
-var_0_0.INACTIVE = 1
-var_0_0.ACTIVE = 2
-var_0_0.FINISH = 3
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.type = arg_1_1.build_id
-	arg_1_0.time = arg_1_1.time
-	arg_1_0.finishTime = arg_1_1.finish_time
-	arg_1_0.state = arg_1_0.INACTIVE
+function slot0.Ctor(slot0, slot1)
+	slot0.type = slot1.build_id
+	slot0.time = slot1.time
+	slot0.finishTime = slot1.finish_time
+	slot0.state = slot0.INACTIVE
 end
 
-function var_0_0.setId(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1
+function slot0.setId(slot0, slot1)
+	slot0.id = slot1
 end
 
-function var_0_0.setState(arg_3_0, arg_3_1)
-	arg_3_0.state = arg_3_1
+function slot0.setState(slot0, slot1)
+	slot0.state = slot1
 end
 
-function var_0_0.isFinish(arg_4_0)
-	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_4_0.finishTime
+function slot0.isFinish(slot0)
+	return slot0.finishTime <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.finish(arg_5_0)
-	arg_5_0.time = 0
-	arg_5_0.finishTime = pg.TimeMgr.GetInstance():GetServerTime()
-	arg_5_0.state = arg_5_0.FINISH
+function slot0.finish(slot0)
+	slot0.time = 0
+	slot0.finishTime = pg.TimeMgr.GetInstance():GetServerTime()
+	slot0.state = slot0.FINISH
 end
 
-function var_0_0.active(arg_6_0)
-	arg_6_0.finishTime = pg.TimeMgr.GetInstance():GetServerTime() + arg_6_0.time
-	arg_6_0.state = arg_6_0.ACTIVE
+function slot0.active(slot0)
+	slot0.finishTime = pg.TimeMgr.GetInstance():GetServerTime() + slot0.time
+	slot0.state = slot0.ACTIVE
 end
 
-function var_0_0.setIsStart(arg_7_0, arg_7_1)
-	arg_7_0.isStart = arg_7_1
+function slot0.setIsStart(slot0, slot1)
+	slot0.isStart = slot1
 end
 
-function var_0_0.getLeftTime(arg_8_0)
-	return arg_8_0.finishTime - pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.getLeftTime(slot0)
+	return slot0.finishTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_0.getBuildConsume(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = pg.draw_data_template[arg_9_0]
-	local var_9_1
+function slot0.getBuildConsume(slot0, slot1, slot2)
+	slot3 = pg.draw_data_template[slot0]
+	slot4 = nil
 
-	if arg_9_1 == 1 then
-		arg_9_2 = math.min(arg_9_2 + 1, #var_9_0.use_gem_1)
-		var_9_1 = var_9_0.use_gem_1[arg_9_2]
-	else
-		arg_9_2 = math.min(arg_9_2 + 1, #var_9_0.use_gem_10)
-		var_9_1 = var_9_0.use_gem_10[arg_9_2]
+	return (slot1 ~= 1 or slot3.use_gem_1[math.min(slot2 + 1, #slot3.use_gem_1)]) and slot3.use_gem_10[math.min(slot2 + 1, #slot3.use_gem_10)]
+end
+
+function slot0.canBuildShipByBuildId(slot0, slot1, slot2)
+	slot1 = slot1 or 1
+
+	if not pg.ship_data_create_material[slot0] then
+		return false, i18n("ship_buildShip_error_noTemplate", slot0)
 	end
 
-	return var_9_1
-end
-
-function var_0_0.canBuildShipByBuildId(arg_10_0, arg_10_1, arg_10_2)
-	arg_10_1 = arg_10_1 or 1
-
-	local var_10_0 = pg.ship_data_create_material[arg_10_0]
-
-	if not var_10_0 then
-		return false, i18n("ship_buildShip_error_noTemplate", arg_10_0)
-	end
-
-	local var_10_1 = getProxy(BuildShipProxy):getData()
-
-	if table.getCount(var_10_1) + arg_10_1 > MAX_BUILD_WORK_COUNT then
+	if MAX_BUILD_WORK_COUNT < table.getCount(getProxy(BuildShipProxy):getData()) + slot1 then
 		return false, i18n("ship_buildShip_not_position")
 	end
 
-	if arg_10_2 then
-		local var_10_2 = getProxy(ActivityProxy):getBuildFreeActivityByBuildId(arg_10_0)
-		local var_10_3 = var_10_2:getConfig("config_client")[1]
-		local var_10_4 = Drop.New({
-			type = DROP_TYPE_VITEM,
-			id = var_10_3
-		}):getName()
+	if slot2 then
+		slot6 = getProxy(ActivityProxy):getBuildFreeActivityByBuildId(slot0)
 
-		if not var_10_2 or var_10_2:isEnd() then
-			return false, i18n("tip_build_ticket_expired", var_10_4)
-		elseif arg_10_1 > var_10_2.data1 then
-			return false, i18n("tip_build_ticket_not_enough", var_10_4)
+		if not slot6 or slot6:isEnd() then
+			return false, i18n("tip_build_ticket_expired", Drop.New({
+				type = DROP_TYPE_VITEM,
+				id = slot6:getConfig("config_client")[1]
+			}):getName())
+		elseif slot6.data1 < slot1 then
+			return false, i18n("tip_build_ticket_not_enough", slot8)
 		end
 	else
-		local var_10_5 = {}
-		local var_10_6 = getProxy(PlayerProxy):getData()
-
-		if var_10_6.gold < var_10_0.use_gold * arg_10_1 then
-			table.insert(var_10_5, {
+		if getProxy(PlayerProxy):getData().gold < slot3.use_gold * slot1 then
+			table.insert({}, {
 				59001,
-				var_10_0.use_gold * arg_10_1 - var_10_6.gold,
-				var_10_0.use_gold * arg_10_1
+				slot3.use_gold * slot1 - slot8.gold,
+				slot3.use_gold * slot1
 			})
 		end
 
-		local var_10_7 = getProxy(BagProxy):getData()
+		if not getProxy(BagProxy):getData()[slot3.use_item] or slot10[slot3.use_item].count < slot3.number_1 * slot1 then
+			slot11 = slot3.number_1 * slot1
+			slot12 = slot3.use_item
 
-		if not var_10_7[var_10_0.use_item] or var_10_7[var_10_0.use_item].count < var_10_0.number_1 * arg_10_1 then
-			local var_10_8 = var_10_0.number_1 * arg_10_1
-			local var_10_9 = var_10_0.use_item
-
-			if var_10_7[var_10_0.use_item] then
-				var_10_8 = var_10_0.number_1 * arg_10_1 - var_10_7[var_10_9].count
+			if slot10[slot3.use_item] then
+				slot11 = slot3.number_1 * slot1 - slot10[slot12].count
 			end
 
-			table.insert(var_10_5, {
-				var_10_9,
-				var_10_8,
-				var_10_0.number_1 * arg_10_1
+			table.insert(slot6, {
+				slot12,
+				slot11,
+				slot3.number_1 * slot1
 			})
 		end
 
-		if #var_10_5 > 0 then
-			return false, i18n("ship_buildShip_error_notEnoughItem"), var_10_5
+		if #slot6 > 0 then
+			return false, i18n("ship_buildShip_error_notEnoughItem"), slot6
 		end
 	end
 
 	return true
 end
 
-function var_0_0.canQuickBuildShip(arg_11_0)
-	local var_11_0 = getProxy(BuildShipProxy):getBuildShip(arg_11_0)
-
-	if not var_11_0 then
+function slot0.canQuickBuildShip(slot0)
+	if not getProxy(BuildShipProxy):getBuildShip(slot0) then
 		return false, i18n("ship_buildShipImmediately_error_noSHip")
 	end
 
-	if var_11_0:isFinish() then
+	if slot2:isFinish() then
 		return false, i18n("ship_buildShipImmediately_error_finished")
 	end
 
-	local var_11_1 = getProxy(BagProxy):getItemById(ITEM_ID_EQUIP_QUICK_FINISH) or {
+	if (getProxy(BagProxy):getItemById(ITEM_ID_EQUIP_QUICK_FINISH) or {
 		count = 0
-	}
-
-	if var_11_1.count <= 0 then
-		local var_11_2 = {
+	}).count <= 0 then
+		return false, i18n("ship_buildShip_error_notEnoughItem"), {
 			{
 				ITEM_ID_EQUIP_QUICK_FINISH,
-				1 - var_11_1.count,
+				1 - slot4.count,
 				1
 			}
 		}
-
-		return false, i18n("ship_buildShip_error_notEnoughItem"), var_11_2
 	end
 
 	return true
 end
 
-function var_0_0.getPageFromPoolType(arg_12_0)
-	local var_12_0 = {
+function slot0.getPageFromPoolType(slot0)
+	for slot5, slot6 in pairs({
 		[BuildShipScene.PAGE_BUILD] = {
 			1,
 			2,
@@ -169,13 +143,11 @@ function var_0_0.getPageFromPoolType(arg_12_0)
 		[BuildShipScene.PAGE_NEWSERVER] = {
 			11
 		}
-	}
-
-	for iter_12_0, iter_12_1 in pairs(var_12_0) do
-		if table.contains(iter_12_1, arg_12_0) then
-			return iter_12_0
+	}) do
+		if table.contains(slot6, slot0) then
+			return slot5
 		end
 	end
 end
 
-return var_0_0
+return slot0

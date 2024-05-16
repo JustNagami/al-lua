@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "自身炮击提高10.0%(满级20.0%)",
+	name = "火力覆盖",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "自身炮击提高$1",
+	stack = 1,
+	id = 1090180,
+	icon = 2070,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -29,26 +50,5 @@
 				rant = 5000
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "自身炮击提高10.0%(满级20.0%)",
-	name = "火力覆盖",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "自身炮击提高$1",
-	stack = 1,
-	id = 1090180,
-	icon = 2070,
-	last_effect = ""
+	}
 }

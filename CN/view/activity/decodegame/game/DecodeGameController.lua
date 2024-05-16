@@ -1,391 +1,380 @@
-﻿local var_0_0 = class("DecodeGameController")
+slot0 = class("DecodeGameController")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.model = DecodeGameModel.New(arg_1_0)
-	arg_1_0.view = DecodeGameView.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	slot0.model = DecodeGameModel.New(slot0)
+	slot0.view = DecodeGameView.New(slot0)
 end
 
-function var_0_0.SetCallback(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.exitCallBack = arg_2_1
-	arg_2_0.saveDataCallback = arg_2_2
-	arg_2_0.successCallback = arg_2_3
+function slot0.SetCallback(slot0, slot1, slot2, slot3)
+	slot0.exitCallBack = slot1
+	slot0.saveDataCallback = slot2
+	slot0.successCallback = slot3
 end
 
-function var_0_0.SetUp(arg_3_0, arg_3_1)
+function slot0.SetUp(slot0, slot1)
 	seriesAsync({
-		function(arg_4_0)
-			arg_3_0.isIniting = true
+		function (slot0)
+			uv0.isIniting = true
 
-			arg_3_0.model:SetData(arg_3_1)
-			arg_3_0:UpdateProgress()
-			arg_3_0.view:UpdateCanUseCnt(arg_3_0.model.canUseCnt)
-			arg_3_0:SwitchMap(arg_3_0.model.map.id, arg_4_0())
+			uv0.model:SetData(uv1)
+			uv0:UpdateProgress()
+			uv0.view:UpdateCanUseCnt(uv0.model.canUseCnt)
+			uv0:SwitchMap(uv0.model.map.id, slot0())
 		end,
-		function(arg_5_0)
-			arg_3_0:PlayVoice(DecodeGameConst.OPEN_DOOR_VOICE)
-			arg_3_0.view:DoEnterAnim(arg_5_0)
+		function (slot0)
+			uv0:PlayVoice(DecodeGameConst.OPEN_DOOR_VOICE)
+			uv0.view:DoEnterAnim(slot0)
 		end,
-		function(arg_6_0)
-			pg.NewStoryMgr.GetInstance():Play(DecodeGameConst.STORYID, arg_6_0)
+		function (slot0)
+			pg.NewStoryMgr.GetInstance():Play(DecodeGameConst.STORYID, slot0)
 		end,
-		function(arg_7_0)
-			arg_3_0.view:ShowHelper(1, arg_7_0)
+		function (slot0)
+			uv0.view:ShowHelper(1, slot0)
 		end,
-		function(arg_8_0)
-			arg_3_0.isIniting = nil
+		function (slot0)
+			uv0.isIniting = nil
 
-			arg_3_0:ShowTip()
-			arg_3_0.view:Inited(arg_3_0.model.isFinished)
+			uv0:ShowTip()
+			uv0.view:Inited(uv0.model.isFinished)
 		end
 	})
 end
 
-function var_0_0.ShowTip(arg_9_0)
-	local var_9_0 = arg_9_0.model:GetUnlockMapCnt()
-	local var_9_1
+function slot0.ShowTip(slot0)
+	slot1 = slot0.model:GetUnlockMapCnt()
+	slot2 = nil
 
-	if arg_9_0.model.isFinished then
-		var_9_1 = 0
-	elseif var_9_0 < DecodeGameConst.MAX_MAP_COUNT and arg_9_0.model.canUseCnt <= 0 then
-		var_9_1 = 1
-	elseif var_9_0 < DecodeGameConst.MAX_MAP_COUNT and arg_9_0.model.canUseCnt > 0 then
-		var_9_1 = 2
-	elseif not arg_9_0.isInDecodeMap and not arg_9_0.isInComparison and var_9_0 == DecodeGameConst.MAX_MAP_COUNT then
-		var_9_1 = 3
-	elseif arg_9_0.isInDecodeMap and not arg_9_0.isInComparison and var_9_0 == DecodeGameConst.MAX_MAP_COUNT then
-		var_9_1 = 4
-	elseif arg_9_0.isInDecodeMap and arg_9_0.isInComparison and var_9_0 == DecodeGameConst.MAX_MAP_COUNT then
-		var_9_1 = 5
+	if slot0.model.isFinished then
+		slot2 = 0
+	elseif slot1 < DecodeGameConst.MAX_MAP_COUNT and slot0.model.canUseCnt <= 0 then
+		slot2 = 1
+	elseif slot1 < DecodeGameConst.MAX_MAP_COUNT and slot0.model.canUseCnt > 0 then
+		slot2 = 2
+	elseif not slot0.isInDecodeMap and not slot0.isInComparison and slot1 == DecodeGameConst.MAX_MAP_COUNT then
+		slot2 = 3
+	elseif slot0.isInDecodeMap and not slot0.isInComparison and slot1 == DecodeGameConst.MAX_MAP_COUNT then
+		slot2 = 4
+	elseif slot0.isInDecodeMap and slot0.isInComparison and slot1 == DecodeGameConst.MAX_MAP_COUNT then
+		slot2 = 5
 	end
 
-	arg_9_0.view:ShowTip(var_9_1)
+	slot0.view:ShowTip(slot2)
 end
 
-function var_0_0.UpdateProgress(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.model:GetUnlockedCnt()
-	local var_10_1 = arg_10_0.model:GetUnlockMapCnt()
-	local var_10_2, var_10_3 = arg_10_0.model:GetPassWordProgress()
+function slot0.UpdateProgress(slot0, slot1)
+	slot2 = slot0.model:GetUnlockedCnt()
+	slot3 = slot0.model:GetUnlockMapCnt()
+	slot4, slot5 = slot0.model:GetPassWordProgress()
+	slot1 = slot1 or function ()
+	end
 
-	arg_10_1 = arg_10_1 or function()
+	if slot5 > (slot0.finishCnt or 0) and slot5 ~= #slot4 then
+		slot0.finishCnt = slot5
+
+		slot0:PlayVoice(DecodeGameConst.INCREASE_PASSWORD_PROGRESS_VOICE)
+	end
+
+	slot0.view:UpdateProgress(slot2, slot3, slot4, slot1)
+end
+
+function slot0.SwitchMap(slot0, slot1, slot2)
+	if slot0.inSwitching then
 		return
 	end
 
-	if var_10_3 > (arg_10_0.finishCnt or 0) and var_10_3 ~= #var_10_2 then
-		arg_10_0.finishCnt = var_10_3
-
-		arg_10_0:PlayVoice(DecodeGameConst.INCREASE_PASSWORD_PROGRESS_VOICE)
-	end
-
-	arg_10_0.view:UpdateProgress(var_10_0, var_10_1, var_10_2, arg_10_1)
-end
-
-function var_0_0.SwitchMap(arg_12_0, arg_12_1, arg_12_2)
-	if arg_12_0.inSwitching then
-		return
-	end
-
-	if arg_12_0.mapId ~= arg_12_1 then
-		local function var_12_0(arg_13_0)
+	if slot0.mapId ~= slot1 then
+		function slot3(slot0)
 			parallelAsync({
-				function(arg_14_0)
-					if not arg_12_0.isInDecodeMap then
-						arg_12_0.view:OnSwitchMap(arg_14_0)
+				function (slot0)
+					if not uv0.isInDecodeMap then
+						uv0.view:OnSwitchMap(slot0)
 					else
-						arg_14_0()
+						slot0()
 					end
 				end,
-				function(arg_15_0)
-					if not arg_12_0.mapId then
-						arg_15_0()
+				function (slot0)
+					if not uv0.mapId then
+						slot0()
 
 						return
 					end
 
-					arg_12_0.model:ExitMap()
-					arg_12_0.view:OnExitMap(arg_12_0.mapId, arg_12_0.isInDecodeMap, arg_15_0)
+					uv0.model:ExitMap()
+					uv0.view:OnExitMap(uv0.mapId, uv0.isInDecodeMap, slot0)
 				end,
-				function(arg_16_0)
-					arg_12_0.mapId = nil
+				function (slot0)
+					uv0.mapId = nil
 
-					arg_12_0.model:SwitchMap(arg_12_1)
-					arg_12_0.view:UpdateMap(arg_12_0.model.map)
-					arg_12_0.view:OnEnterMap(arg_12_1, arg_12_0.isInDecodeMap, arg_16_0)
+					uv0.model:SwitchMap(uv1)
+					uv0.view:UpdateMap(uv0.model.map)
+					uv0.view:OnEnterMap(uv1, uv0.isInDecodeMap, slot0)
 				end
-			}, arg_13_0)
+			}, slot0)
 		end
 
 		seriesAsync({
-			function(arg_17_0)
-				if not arg_12_0.isIniting then
-					arg_12_0:PlayVoice(DecodeGameConst.SWITCH_MAP_VOCIE)
+			function (slot0)
+				if not uv0.isIniting then
+					uv0:PlayVoice(DecodeGameConst.SWITCH_MAP_VOCIE)
 				end
 
-				arg_12_0.inSwitching = true
+				uv0.inSwitching = true
 
-				var_12_0(arg_17_0)
+				uv1(slot0)
 			end,
-			function(arg_18_0)
-				arg_12_0.mapId = arg_12_1
+			function (slot0)
+				uv0.mapId = uv1
 
-				if not arg_12_0.isInDecodeMap then
-					arg_18_0()
+				if not uv0.isInDecodeMap then
+					slot0()
 
 					return
 				end
 
-				arg_12_0.isInComparison = true
+				uv0.isInComparison = true
 
-				arg_12_0:PlayVoice(DecodeGameConst.SCAN_MAP_VOICE)
-				arg_12_0.view:OnDecodeMap(arg_12_0.model.map, arg_18_0)
+				uv0:PlayVoice(DecodeGameConst.SCAN_MAP_VOICE)
+				uv0.view:OnDecodeMap(uv0.model.map, slot0)
 			end,
-			function(arg_19_0)
-				arg_12_0.inSwitching = nil
+			function (slot0)
+				uv0.inSwitching = nil
 
-				if arg_12_0.isInDecodeMap then
-					arg_12_0:ShowTip()
-					arg_12_0.view:ShowHelper(3, arg_19_0)
+				if uv0.isInDecodeMap then
+					uv0:ShowTip()
+					uv0.view:ShowHelper(3, slot0)
 				else
-					arg_19_0()
+					slot0()
 				end
 			end
-		}, arg_12_2)
+		}, slot2)
 	end
 end
 
-function var_0_0.Unlock(arg_20_0, arg_20_1)
-	if arg_20_0.inSwitching then
+function slot0.Unlock(slot0, slot1)
+	if slot0.inSwitching then
 		return
 	end
 
-	if arg_20_0.isInDecodeMap then
-		arg_20_0:EnterPassWord(arg_20_1)
+	if slot0.isInDecodeMap then
+		slot0:EnterPassWord(slot1)
 	else
-		arg_20_0:UnlockMapItem(arg_20_1)
+		slot0:UnlockMapItem(slot1)
 	end
 end
 
-function var_0_0.EnterPassWord(arg_21_0, arg_21_1)
-	if not arg_21_0.model:IsMapKey(arg_21_1) then
+function slot0.EnterPassWord(slot0, slot1)
+	if not slot0.model:IsMapKey(slot1) then
 		return
 	end
 
-	if arg_21_0.model:IsUsedMapKey(arg_21_1) then
+	if slot0.model:IsUsedMapKey(slot1) then
 		return
 	end
 
-	if arg_21_0.model:CheckIndex(arg_21_1) then
-		arg_21_0.model:InsertMapKey(arg_21_1)
+	if slot0.model:CheckIndex(slot1) then
+		slot0.model:InsertMapKey(slot1)
+		slot0.view:OnRightCode(slot1, slot0.model:GetMapKeyStr(slot1), slot0.model:GetCurrMapKeyIndex(slot1))
 
-		local var_21_0 = arg_21_0.model:GetCurrMapKeyIndex(arg_21_1)
-		local var_21_1 = arg_21_0.model:GetMapKeyStr(arg_21_1)
-
-		arg_21_0.view:OnRightCode(arg_21_1, var_21_1, var_21_0)
-
-		if arg_21_0.model:IsSuccess() then
-			arg_21_0.model:Finish()
-			arg_21_0:PlayVoice(DecodeGameConst.GET_AWARD_DONE_VOICE)
-			arg_21_0.view:OnSuccess(function()
+		if slot0.model:IsSuccess() then
+			slot0.model:Finish()
+			slot0:PlayVoice(DecodeGameConst.GET_AWARD_DONE_VOICE)
+			slot0.view:OnSuccess(function ()
 				pg.NewStoryMgr.GetInstance():Play(DecodeGameConst.LAST_STORYID)
 
-				if arg_21_0.successCallback then
-					arg_21_0.successCallback()
+				if uv0.successCallback then
+					uv0.successCallback()
 				end
 			end)
 		else
-			arg_21_0:PlayVoice(DecodeGameConst.PASSWORD_IS_RIGHT_VOICE)
+			slot0:PlayVoice(DecodeGameConst.PASSWORD_IS_RIGHT_VOICE)
 		end
 
-		arg_21_0:UpdateProgress()
+		slot0:UpdateProgress()
 	else
-		arg_21_0:PlayVoice(DecodeGameConst.PASSWORD_IS_FALSE_VOICE)
-		arg_21_0.view:OnFalseCode(arg_21_1)
+		slot0:PlayVoice(DecodeGameConst.PASSWORD_IS_FALSE_VOICE)
+		slot0.view:OnFalseCode(slot1)
 	end
 end
 
-function var_0_0.UnlockMapItem(arg_23_0, arg_23_1)
-	if arg_23_0.model.canUseCnt > 0 and not arg_23_0.model:IsUnlock(arg_23_1) then
+function slot0.UnlockMapItem(slot0, slot1)
+	if slot0.model.canUseCnt > 0 and not slot0.model:IsUnlock(slot1) then
 		seriesAsync({
-			function(arg_24_0)
-				arg_23_0.inSwitching = true
+			function (slot0)
+				uv0.inSwitching = true
 
-				arg_23_0.model:UnlockMapItem(arg_23_1)
-				arg_23_0.view:UnlockMapItem(arg_23_1, arg_24_0)
+				uv0.model:UnlockMapItem(uv1)
+				uv0.view:UnlockMapItem(uv1, slot0)
 			end,
-			function(arg_25_0)
-				arg_23_0:PlayStory(arg_25_0)
+			function (slot0)
+				uv0:PlayStory(slot0)
 			end,
-			function(arg_26_0)
-				arg_23_0.view:UpdateCanUseCnt(arg_23_0.model.canUseCnt)
+			function (slot0)
+				uv0.view:UpdateCanUseCnt(uv0.model.canUseCnt)
 
-				if arg_23_0.model:IsUnlockMap(arg_23_0.model.map.id) then
-					arg_23_0:RepairMap()
+				if uv0.model:IsUnlockMap(uv0.model.map.id) then
+					uv0:RepairMap()
 				else
-					arg_23_0:PlayVoice(DecodeGameConst.INCREASE_PROGRESS_VOICE)
-					arg_23_0:UpdateProgress()
+					uv0:PlayVoice(DecodeGameConst.INCREASE_PROGRESS_VOICE)
+					uv0:UpdateProgress()
 
-					if arg_23_0.saveDataCallback then
-						arg_23_0.saveDataCallback()
+					if uv0.saveDataCallback then
+						uv0.saveDataCallback()
 					end
 
-					arg_23_0.inSwitching = nil
+					uv0.inSwitching = nil
 				end
 
-				arg_23_0:ShowTip()
-				arg_26_0()
+				uv0:ShowTip()
+				slot0()
 			end
 		})
 	end
 end
 
-function var_0_0.PlayStory(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_0.model:GetUnlockedCnt()
-	local var_27_1 = DecodeGameConst.UNLOCK_STORYID[var_27_0]
-
-	if var_27_1 then
-		pg.NewStoryMgr.GetInstance():Play(var_27_1, arg_27_1)
+function slot0.PlayStory(slot0, slot1)
+	if DecodeGameConst.UNLOCK_STORYID[slot0.model:GetUnlockedCnt()] then
+		pg.NewStoryMgr.GetInstance():Play(slot3, slot1)
 	else
-		arg_27_1()
+		slot1()
 	end
 end
 
-function var_0_0.RepairMap(arg_28_0)
+function slot0.RepairMap(slot0)
 	seriesAsync({
-		function(arg_29_0)
-			arg_28_0.model:OnRepairMap()
-			arg_28_0.view:OnMapRepairing(arg_29_0)
+		function (slot0)
+			uv0.model:OnRepairMap()
+			uv0.view:OnMapRepairing(slot0)
 		end,
-		function(arg_30_0)
-			if arg_28_0.saveDataCallback then
-				arg_28_0.saveDataCallback(arg_30_0)
+		function (slot0)
+			if uv0.saveDataCallback then
+				uv0.saveDataCallback(slot0)
 			else
-				arg_30_0()
+				slot0()
 			end
 		end,
-		function(arg_31_0)
-			arg_28_0:PlayVoice(DecodeGameConst.INCREASE_PROGRESS_VOICE)
-			arg_28_0.view:UpdateMap(arg_28_0.model.map)
-			arg_28_0:UpdateProgress(arg_31_0)
+		function (slot0)
+			uv0:PlayVoice(DecodeGameConst.INCREASE_PROGRESS_VOICE)
+			uv0.view:UpdateMap(uv0.model.map)
+			uv0:UpdateProgress(slot0)
 		end,
-		function(arg_32_0)
-			if arg_28_0.model:GetUnlockMapCnt() == DecodeGameConst.MAX_MAP_COUNT then
-				arg_28_0.view:ShowHelper(2, arg_32_0)
+		function (slot0)
+			if uv0.model:GetUnlockMapCnt() == DecodeGameConst.MAX_MAP_COUNT then
+				uv0.view:ShowHelper(2, slot0)
 			end
 
-			arg_28_0.inSwitching = nil
+			uv0.inSwitching = nil
 		end
 	})
 end
 
-function var_0_0.CanSwitch(arg_33_0)
-	return not arg_33_0.inSwitching
+function slot0.CanSwitch(slot0)
+	return not slot0.inSwitching
 end
 
-function var_0_0.SwitchToDecodeMap(arg_34_0, arg_34_1)
-	if arg_34_0.inSwitching then
+function slot0.SwitchToDecodeMap(slot0, slot1)
+	if slot0.inSwitching then
 		return
 	end
 
-	if arg_34_1 then
-		arg_34_0:EnterDecodeMap()
+	if slot1 then
+		slot0:EnterDecodeMap()
 	else
-		arg_34_0:ExitDeCodeMap()
+		slot0:ExitDeCodeMap()
 	end
 end
 
-function var_0_0.ExitDeCodeMap(arg_35_0)
-	arg_35_0.isFirstSwitch = false
+function slot0.ExitDeCodeMap(slot0)
+	slot0.isFirstSwitch = false
 
 	seriesAsync({
-		function(arg_36_0)
-			arg_35_0:PlayVoice(DecodeGameConst.PRESS_UP_PASSWORDBTN)
+		function (slot0)
+			uv0:PlayVoice(DecodeGameConst.PRESS_UP_PASSWORDBTN)
 
-			arg_35_0.finishCnt = 0
-			arg_35_0.isInComparison = nil
-			arg_35_0.inSwitching = true
+			uv0.finishCnt = 0
+			uv0.isInComparison = nil
+			uv0.inSwitching = true
 
-			arg_35_0.view:OnEnterNormalMapBefore(arg_36_0)
+			uv0.view:OnEnterNormalMapBefore(slot0)
 		end,
-		function(arg_37_0)
+		function (slot0)
 			parallelAsync({
-				function(arg_38_0)
-					arg_35_0.view:OnEnterNormalMap(arg_35_0.model.map, arg_38_0)
+				function (slot0)
+					uv0.view:OnEnterNormalMap(uv0.model.map, slot0)
 				end,
-				function(arg_39_0)
-					arg_35_0.mapId = arg_35_0.model.map.id
+				function (slot0)
+					uv0.mapId = uv0.model.map.id
 
-					arg_35_0.view:OnEnterMap(arg_35_0.mapId, false, arg_39_0)
+					uv0.view:OnEnterMap(uv0.mapId, false, slot0)
 				end
-			}, arg_37_0)
+			}, slot0)
 		end,
-		function()
-			arg_35_0.model:ClearMapKeys()
-			arg_35_0:UpdateProgress()
+		function ()
+			uv0.model:ClearMapKeys()
+			uv0:UpdateProgress()
 
-			arg_35_0.isInDecodeMap = nil
-			arg_35_0.inSwitching = nil
+			uv0.isInDecodeMap = nil
+			uv0.inSwitching = nil
 
-			arg_35_0:ShowTip()
+			uv0:ShowTip()
 		end
 	})
 end
 
-function var_0_0.EnterDecodeMap(arg_41_0)
-	arg_41_0.isInDecodeMap = true
-	arg_41_0.isFirstSwitch = true
+function slot0.EnterDecodeMap(slot0)
+	slot0.isInDecodeMap = true
+	slot0.isFirstSwitch = true
 
 	seriesAsync({
-		function(arg_42_0)
-			arg_41_0:PlayVoice(DecodeGameConst.PRESS_DOWN_PASSWORDBTN)
+		function (slot0)
+			uv0:PlayVoice(DecodeGameConst.PRESS_DOWN_PASSWORDBTN)
 
-			arg_41_0.inSwitching = true
+			uv0.inSwitching = true
 
 			parallelAsync({
-				function(arg_43_0)
-					arg_41_0.view:OnEnterDecodeMapBefore(arg_43_0)
+				function (slot0)
+					uv0.view:OnEnterDecodeMapBefore(slot0)
 				end,
-				function(arg_44_0)
-					arg_41_0.view:OnExitMap(arg_41_0.mapId, true, arg_44_0)
+				function (slot0)
+					uv0.view:OnExitMap(uv0.mapId, true, slot0)
 				end
-			}, arg_42_0)
+			}, slot0)
 		end,
-		function(arg_45_0)
-			arg_41_0.mapId = nil
+		function (slot0)
+			uv0.mapId = nil
 
-			local var_45_0 = arg_41_0.model:GetMapKeyStrs()
-
-			arg_41_0.view:OnEnterDecodeMap(var_45_0, arg_45_0)
+			uv0.view:OnEnterDecodeMap(uv0.model:GetMapKeyStrs(), slot0)
 		end,
-		function(arg_46_0)
-			arg_41_0:ShowTip()
+		function (slot0)
+			uv0:ShowTip()
 
-			arg_41_0.inSwitching = nil
+			uv0.inSwitching = nil
 		end
 	})
 end
 
-function var_0_0.ExitGame(arg_47_0)
-	if arg_47_0.inSwitching then
+function slot0.ExitGame(slot0)
+	if slot0.inSwitching then
 		return
 	end
 
-	if arg_47_0.exitCallBack then
-		arg_47_0.exitCallBack()
+	if slot0.exitCallBack then
+		slot0.exitCallBack()
 	end
 end
 
-function var_0_0.PlayVoice(arg_48_0, arg_48_1)
-	if arg_48_1 and arg_48_1 ~= "" then
-		arg_48_0.view:PlayVoice(arg_48_1)
+function slot0.PlayVoice(slot0, slot1)
+	if slot1 and slot1 ~= "" then
+		slot0.view:PlayVoice(slot1)
 	end
 end
 
-function var_0_0.GetSaveData(arg_49_0)
-	return arg_49_0.model.unlocks
+function slot0.GetSaveData(slot0)
+	return slot0.model.unlocks
 end
 
-function var_0_0.Dispose(arg_50_0)
-	arg_50_0.model:Dispose()
-	arg_50_0.view:Dispose()
+function slot0.Dispose(slot0)
+	slot0.model:Dispose()
+	slot0.view:Dispose()
 end
 
-return var_0_0
+return slot0

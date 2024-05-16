@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-埃姆登I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-埃姆登I",
+	name = "专属弹幕-埃姆登I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-埃姆登I",
+	stack = 1,
+	id = 29841,
+	icon = 29840,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 29840
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-埃姆登I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-埃姆登I",
-	name = "专属弹幕-埃姆登I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-埃姆登I",
-	stack = 1,
-	id = 29841,
-	icon = 29840,
-	last_effect = ""
+	}
 }

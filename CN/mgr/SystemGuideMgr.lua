@@ -1,134 +1,123 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SystemGuideMgr = singletonClass("SystemGuideMgr")
+slot0 = pg.SystemGuideMgr
+slot1 = nil
 
-local var_0_0 = pg.SystemGuideMgr
-local var_0_1
+function slot0.Init(slot0, slot1)
+	uv0 = require("GameCfg.guide.newguide.SSG001")
 
-function var_0_0.Init(arg_1_0, arg_1_1)
-	var_0_1 = require("GameCfg.guide.newguide.SSG001")
-
-	arg_1_1()
+	slot1()
 end
 
-local function var_0_2(arg_2_0)
+function slot2(slot0)
 	if getProxy(PlayerProxy) then
-		return pg.NewStoryMgr.GetInstance():IsPlayed(arg_2_0)
+		return pg.NewStoryMgr.GetInstance():IsPlayed(slot0)
 	end
 
 	return false
 end
 
-local function var_0_3(arg_3_0)
-	if arg_3_0 then
-		arg_3_0()
+function slot3(slot0)
+	if slot0 then
+		slot0()
 	end
 end
 
-local function var_0_4(arg_4_0, arg_4_1, arg_4_2)
+function slot4(slot0, slot1, slot2)
 	if pg.SeriesGuideMgr.GetInstance():isRunning() then
-		var_0_3(arg_4_2)
+		uv0(slot2)
 
 		return
 	end
 
-	if var_0_2(arg_4_0) then
-		var_0_3(arg_4_2)
+	if uv1(slot0) then
+		uv0(slot2)
 
 		return
 	end
 
 	if not pg.NewGuideMgr.GetInstance():CanPlay() then
-		var_0_3(arg_4_2)
+		uv0(slot2)
 
 		return
 	end
 
-	if arg_4_0 == "SYG001" then
+	if slot0 == "SYG001" then
 		pg.TrackerMgr.GetInstance():Tracking(TRACKING_TUTORIAL_COMPLETE_2)
-	elseif arg_4_0 == "SYG003" then
+	elseif slot0 == "SYG003" then
 		pg.TrackerMgr.GetInstance():Tracking(TRACKING_TUTORIAL_COMPLETE_3)
-	elseif arg_4_0 == "SYG006" then
+	elseif slot0 == "SYG006" then
 		pg.TrackerMgr.GetInstance():Tracking(TRACKING_TUTORIAL_COMPLETE_4)
 	end
 
 	pg.m02:sendNotification(GAME.STORY_UPDATE, {
-		storyId = arg_4_0
+		storyId = slot0
 	})
-	pg.NewGuideMgr.GetInstance():Play(arg_4_0, arg_4_1, arg_4_2)
+	pg.NewGuideMgr.GetInstance():Play(slot0, slot1, slot2)
 end
 
-function var_0_0.Play(arg_5_0, arg_5_1, arg_5_2)
+function slot0.Play(slot0, slot1, slot2)
 	if IsUnityEditor and not ENABLE_GUIDE then
-		if arg_5_2 then
-			arg_5_2()
+		if slot2 then
+			slot2()
 		end
 
 		return
 	end
 
-	if arg_5_1.exited then
+	if slot1.exited then
 		return
 	end
 
-	local var_5_0 = var_0_1[arg_5_1.__cname]
-
-	if not var_5_0 then
-		var_0_3(arg_5_2)
-
-		return
-	end
-
-	local var_5_1 = _.detect(var_5_0, function(arg_6_0)
-		local var_6_0 = arg_6_0.id
-		local var_6_1 = arg_6_0.condition
-
-		return not var_0_2(var_6_0) and var_6_1(arg_5_1)
-	end)
-
-	if not var_5_1 then
-		var_0_3(arg_5_2)
+	if not uv0[slot1.__cname] then
+		uv1(slot2)
 
 		return
 	end
 
-	local var_5_2 = var_5_1.id
-	local var_5_3 = var_5_1.args(arg_5_1)
+	if not _.detect(slot3, function (slot0)
+		return not uv0(slot0.id) and slot0.condition(uv1)
+	end) then
+		uv1(slot2)
 
-	var_0_4(var_5_2, var_5_3, arg_5_2)
+		return
+	end
+
+	uv3(slot4.id, slot4.args(slot1), slot2)
 end
 
-function var_0_0.PlayChapter(arg_7_0, arg_7_1, arg_7_2)
-	if arg_7_1.id == 1160002 then
-		arg_7_0:PlayByGuideId("NG0011", nil, arg_7_2)
-	elseif arg_7_1:isTypeDefence() then
-		arg_7_0:PlayByGuideId("NG0016", nil, arg_7_2)
+function slot0.PlayChapter(slot0, slot1, slot2)
+	if slot1.id == 1160002 then
+		slot0:PlayByGuideId("NG0011", nil, slot2)
+	elseif slot1:isTypeDefence() then
+		slot0:PlayByGuideId("NG0016", nil, slot2)
 	else
-		existCall(arg_7_2)
+		existCall(slot2)
 	end
 end
 
-function var_0_0.PlayByGuideId(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	var_0_4(arg_8_1, arg_8_2, arg_8_3)
+function slot0.PlayByGuideId(slot0, slot1, slot2, slot3)
+	uv0(slot1, slot2, slot3)
 end
 
-function var_0_0.FixGuide(arg_9_0, arg_9_1)
-	if not var_0_2("FixGuide") then
-		var_0_4("FixGuide")
-		arg_9_1()
+function slot0.FixGuide(slot0, slot1)
+	if not uv0("FixGuide") then
+		uv1("FixGuide")
+		slot1()
 	end
 end
 
-function var_0_0.PlayDailyLevel(arg_10_0, arg_10_1)
-	if not var_0_2("NG0015") then
+function slot0.PlayDailyLevel(slot0, slot1)
+	if not uv0("NG0015") then
 		pg.m02:sendNotification(GAME.STORY_UPDATE, {
 			storyId = "NG0015"
 		})
-		arg_10_1()
+		slot1()
 	end
 end
 
-function var_0_0.PlayCommander(arg_11_0)
-	local var_11_0 = {
+function slot0.PlayCommander(slot0)
+	slot1 = {
 		"ZHIHUIMIAO2",
 		"NG006",
 		"NG007",
@@ -139,45 +128,44 @@ function var_0_0.PlayCommander(arg_11_0)
 	}
 
 	if not LOCK_CATTERY then
-		table.insert(var_11_0, "NG0029")
+		table.insert(slot1, "NG0029")
 	end
 
-	local var_11_1 = _.select(var_11_0, function(arg_12_0)
-		return not var_0_2(arg_12_0)
-	end)
-	local var_11_2 = {}
-	local var_11_3
+	slot3 = {}
+	slot4 = nil
 
-	for iter_11_0, iter_11_1 in ipairs(var_11_1) do
-		table.insert(var_11_2, function(arg_13_0)
-			if iter_11_1 == "NG006" and table.getCount(getProxy(CommanderProxy):getData()) >= 1 or iter_11_1 == "NG007" and getProxy(BagProxy):getItemCountById(20012) < 1 or iter_11_1 == "NG008" and getProxy(CommanderProxy):getBoxes()[1]:getState() ~= CommanderBox.STATE_FINISHED or iter_11_1 == "NG009" and table.getCount(getProxy(CommanderProxy):getData()) ~= 1 then
+	for slot8, slot9 in ipairs(_.select(slot1, function (slot0)
+		return not uv0(slot0)
+	end)) do
+		table.insert(slot3, function (slot0)
+			if uv0 == "NG006" and table.getCount(getProxy(CommanderProxy):getData()) >= 1 or uv0 == "NG007" and getProxy(BagProxy):getItemCountById(20012) < 1 or uv0 == "NG008" and getProxy(CommanderProxy):getBoxes()[1]:getState() ~= CommanderBox.STATE_FINISHED or uv0 == "NG009" and table.getCount(getProxy(CommanderProxy):getData()) ~= 1 then
 				pg.m02:sendNotification(GAME.STORY_UPDATE, {
-					storyId = iter_11_1
+					storyId = uv0
 				})
-				arg_13_0()
-			elseif iter_11_1 == "ZHIHUIMIAO2" or iter_11_1 == "ZHIHUIMIAO3" or iter_11_1 == "ZHIHUIMIAO4" then
-				pg.NewStoryMgr.GetInstance():Play(iter_11_1, arg_13_0, true)
-			elseif iter_11_1 == "NG0029" then
-				if var_11_3 == "NG009" then
-					var_0_4(iter_11_1, {
+				slot0()
+			elseif uv0 == "ZHIHUIMIAO2" or uv0 == "ZHIHUIMIAO3" or uv0 == "ZHIHUIMIAO4" then
+				pg.NewStoryMgr.GetInstance():Play(uv0, slot0, true)
+			elseif uv0 == "NG0029" then
+				if uv1 == "NG009" then
+					uv2(uv0, {
 						1
-					}, arg_13_0)
+					}, slot0)
 				else
-					var_0_4(iter_11_1, {
+					uv2(uv0, {
 						2
-					}, arg_13_0)
+					}, slot0)
 				end
 			else
-				var_11_3 = iter_11_1
+				uv1 = uv0
 
-				var_0_4(iter_11_1, {}, arg_13_0)
+				uv2(uv0, {}, slot0)
 			end
 		end)
 	end
 
-	seriesAsync(var_11_2)
+	seriesAsync(slot3)
 end
 
-function var_0_0.PlayGuildAssaultFleet(arg_14_0, arg_14_1)
-	arg_14_0:PlayByGuideId("GNG001", {}, arg_14_1)
+function slot0.PlayGuildAssaultFleet(slot0, slot1)
+	slot0:PlayByGuideId("GNG001", {}, slot1)
 end

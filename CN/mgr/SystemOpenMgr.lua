@@ -1,84 +1,77 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.SystemOpenMgr = singletonClass("SystemOpenMgr")
+slot0 = pg.SystemOpenMgr
+slot1 = true
+slot2 = pg.open_systems_limited
 
-local var_0_0 = pg.SystemOpenMgr
-local var_0_1 = true
-local var_0_2 = pg.open_systems_limited
-
-function var_0_0.Init(arg_1_0, arg_1_1)
+function slot0.Init(slot0, slot1)
 	print("initializing SystemOpenMgr manager...")
-	arg_1_1()
+	slot1()
 end
 
-local var_0_3 = pm.Facade.sendNotification
+slot3 = pm.Facade.sendNotification
 
-function pm.Facade.sendNotification(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	if var_0_1 and arg_2_1 == GAME.LOAD_SCENE and arg_2_2.context.mediator then
-		local var_2_0 = getProxy(PlayerProxy)
-		local var_2_1 = arg_2_2.context.mediator.__cname
+function pm.Facade.sendNotification(slot0, slot1, slot2, slot3)
+	if uv0 and slot1 == GAME.LOAD_SCENE and slot2.context.mediator then
+		slot5 = slot2.context.mediator.__cname
 
-		if var_2_0 then
-			local var_2_2 = var_2_0:getRawData()
+		if getProxy(PlayerProxy) and slot4:getRawData() then
+			slot7, slot8 = pg.SystemOpenMgr.GetInstance():isOpenSystem(slot6.level, slot5)
 
-			if var_2_2 then
-				local var_2_3, var_2_4 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_2_2.level, var_2_1)
+			if not slot7 then
+				pg.TipsMgr.GetInstance():ShowTips(slot8)
 
-				if not var_2_3 then
-					pg.TipsMgr.GetInstance():ShowTips(var_2_4)
-
-					return
-				end
+				return
 			end
 		end
 
-		if HXSet.isHxSkin() and var_2_1 == "SkinShopMediator" then
+		if HXSet.isHxSkin() and slot5 == "SkinShopMediator" then
 			return
 		end
 
-		var_0_3(arg_2_0, GAME.CHECK_HOTFIX_VER, {
-			mediatorName = var_2_1
+		uv1(slot0, GAME.CHECK_HOTFIX_VER, {
+			mediatorName = slot5
 		})
 	end
 
-	if arg_2_1 == GAME.BEGIN_STAGE then
+	if slot1 == GAME.BEGIN_STAGE then
 		pg.GuildMsgBoxMgr.GetInstance():OnBeginBattle()
 	end
 
-	if arg_2_1 == GAME.FINISH_STAGE_DONE then
-		pg.GuildMsgBoxMgr.GetInstance():OnFinishBattle(arg_2_2)
+	if slot1 == GAME.FINISH_STAGE_DONE then
+		pg.GuildMsgBoxMgr.GetInstance():OnFinishBattle(slot2)
 	end
 
-	var_0_3(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	uv1(slot0, slot1, slot2, slot3)
 end
 
-local function var_0_4(arg_3_0)
-	local var_3_0 = var_0_2[14].level
-	local var_3_1 = var_0_2[14].name
+function slot4(slot0)
+	slot2 = uv0[14].name
 
-	if var_3_0 == arg_3_0 then
+	if uv0[14].level == slot0 then
 		if pg.NewStoryMgr.GetInstance():IsPlayed("ZHIHUIMIAO1") or IsUnityEditor then
 			return true
 		else
-			return false, i18n("no_open_system_tip", var_3_1, var_3_0)
+			return false, i18n("no_open_system_tip", slot2, slot1)
 		end
-	elseif var_3_0 < arg_3_0 then
+	elseif slot1 < slot0 then
 		return true
 	else
-		return false, i18n("no_open_system_tip", var_3_1, var_3_0)
+		return false, i18n("no_open_system_tip", slot2, slot1)
 	end
 end
 
-function var_0_0.isOpenSystem(arg_4_0, arg_4_1, arg_4_2)
-	if arg_4_2 == "EquipmentTransformTreeMediator" and LOCK_EQUIPMENT_TRANSFORM then
+function slot0.isOpenSystem(slot0, slot1, slot2)
+	if slot2 == "EquipmentTransformTreeMediator" and LOCK_EQUIPMENT_TRANSFORM then
 		return false
 	end
 
-	if arg_4_2 == "CommanderCatMediator" then
-		return var_0_4(arg_4_1)
+	if slot2 == "CommanderCatMediator" then
+		return uv0(slot1)
 	else
-		for iter_4_0, iter_4_1 in pairs(var_0_2.all) do
-			if var_0_2[iter_4_1].mediator == arg_4_2 and arg_4_1 < var_0_2[iter_4_1].level then
-				return false, i18n("no_open_system_tip", var_0_2[iter_4_1].name, var_0_2[iter_4_1].level)
+		for slot6, slot7 in pairs(uv1.all) do
+			if uv1[slot7].mediator == slot2 and slot1 < uv1[slot7].level then
+				return false, i18n("no_open_system_tip", uv1[slot7].name, uv1[slot7].level)
 			end
 		end
 
@@ -86,58 +79,49 @@ function var_0_0.isOpenSystem(arg_4_0, arg_4_1, arg_4_2)
 	end
 end
 
-local function var_0_5(arg_5_0)
-	local var_5_0 = _.sort(var_0_2.all, function(arg_6_0, arg_6_1)
-		return var_0_2[arg_6_0].level > var_0_2[arg_6_1].level
-	end)
-
-	for iter_5_0, iter_5_1 in pairs(var_5_0) do
-		local var_5_1 = var_0_2[iter_5_1]
-
-		if arg_5_0 >= var_5_1.level then
-			return var_5_1
+function slot5(slot0)
+	for slot5, slot6 in pairs(_.sort(uv0.all, function (slot0, slot1)
+		return uv0[slot1].level < uv0[slot0].level
+	end)) do
+		if uv0[slot6].level <= slot0 then
+			return slot7
 		end
 	end
 end
 
-function var_0_0.notification(arg_7_0, arg_7_1)
-	if not var_0_1 then
+function slot0.notification(slot0, slot1)
+	if not uv0 then
 		return
 	end
 
-	local var_7_0 = var_0_5(arg_7_1)
-
-	if var_7_0 and not pg.MsgboxMgr.GetInstance()._go.activeSelf and var_7_0.story_id and var_7_0.story_id ~= "" and not arg_7_0.active and not pg.NewStoryMgr.GetInstance():IsPlayed(var_7_0.story_id) and not pg.SeriesGuideMgr.GetInstance():isNotFinish() then
-		arg_7_0.active = true
+	if uv1(slot1) and not pg.MsgboxMgr.GetInstance()._go.activeSelf and slot2.story_id and slot2.story_id ~= "" and not slot0.active and not pg.NewStoryMgr.GetInstance():IsPlayed(slot2.story_id) and not pg.SeriesGuideMgr.GetInstance():isNotFinish() then
+		slot0.active = true
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideNo = true,
 			hideClose = true,
-			content = i18n("open_system_tip", var_7_0.name),
+			content = i18n("open_system_tip", slot2.name),
 			weight = LayerWeightConst.TOP_LAYER,
-			onYes = function()
-				arg_7_0:doSystemGuide(var_7_0.id)
+			onYes = function ()
+				uv0:doSystemGuide(uv1.id)
 			end
 		})
 	end
 end
 
-function var_0_0.doSystemGuide(arg_9_0, arg_9_1)
+function slot0.doSystemGuide(slot0, slot1)
 	if IsUnityEditor and not ENABLE_GUIDE then
 		return
 	end
 
-	local var_9_0 = pg.open_systems_limited[arg_9_1]
-	local var_9_1 = var_9_0.story_id
-
-	if var_9_1 and var_9_1 ~= "" then
-		if getProxy(ContextProxy):getCurrentContext().scene ~= SCENE[var_9_0.scene] then
-			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[var_9_0.scene])
+	if pg.open_systems_limited[slot1].story_id and slot3 ~= "" then
+		if getProxy(ContextProxy):getCurrentContext().scene ~= SCENE[slot2.scene] then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[slot2.scene])
 		end
 
-		pg.SystemGuideMgr.GetInstance():PlayByGuideId(var_9_1, {}, function()
-			arg_9_0.active = nil
+		pg.SystemGuideMgr.GetInstance():PlayByGuideId(slot3, {}, function ()
+			uv0.active = nil
 		end)
 	end
 end

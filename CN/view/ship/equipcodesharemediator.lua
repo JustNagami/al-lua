@@ -1,44 +1,40 @@
-﻿local var_0_0 = class("EquipCodeShareMediator", import("..base.ContextMediator"))
+slot0 = class("EquipCodeShareMediator", import("..base.ContextMediator"))
+slot0.OPEN_TAG_INDEX = "EquipCodeShareMediator.OPEN_TAG_INDEX"
+slot0.LIKE_EQUIP_CODE = "EquipCodeShareMediator.LIKE_EQUIP_CODE"
+slot0.IMPEACH_EQUIP_CODE = "EquipCodeShareMediator.IMPEACH_EQUIP_CODE"
 
-var_0_0.OPEN_TAG_INDEX = "EquipCodeShareMediator.OPEN_TAG_INDEX"
-var_0_0.LIKE_EQUIP_CODE = "EquipCodeShareMediator.LIKE_EQUIP_CODE"
-var_0_0.IMPEACH_EQUIP_CODE = "EquipCodeShareMediator.IMPEACH_EQUIP_CODE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.IMPEACH_EQUIP_CODE, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		arg_1_0:sendNotification(GAME.EQUIP_CODE_IMPEACH, {
-			groupId = arg_2_1,
-			shareId = arg_2_2,
-			type = arg_2_3
+function slot0.register(slot0)
+	slot0:bind(uv0.IMPEACH_EQUIP_CODE, function (slot0, slot1, slot2, slot3)
+		uv0:sendNotification(GAME.EQUIP_CODE_IMPEACH, {
+			groupId = slot1,
+			shareId = slot2,
+			type = slot3
 		})
 	end)
-	arg_1_0:bind(var_0_0.LIKE_EQUIP_CODE, function(arg_3_0, arg_3_1, arg_3_2)
-		arg_1_0:sendNotification(GAME.EQUIP_CODE_LIKE, {
-			groupId = arg_3_1,
-			shareId = arg_3_2
+	slot0:bind(uv0.LIKE_EQUIP_CODE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.EQUIP_CODE_LIKE, {
+			groupId = slot1,
+			shareId = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_TAG_INDEX, function(arg_4_0, arg_4_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.OPEN_TAG_INDEX, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = arg_4_1
+			data = slot1
 		}))
 	end)
-
-	local var_1_0 = getProxy(CollectionProxy):getShipGroup(arg_1_0.contextData.shipGroupId)
-
-	arg_1_0.viewComponent:setShipGroup(var_1_0)
+	slot0.viewComponent:setShipGroup(getProxy(CollectionProxy):getShipGroup(slot0.contextData.shipGroupId))
 end
 
-function var_0_0.initNotificationHandleDic(arg_5_0)
-	arg_5_0.handleDic = {
-		[GAME.EQUIP_CODE_LIKE_DONE] = function(arg_6_0, arg_6_1)
-			local var_6_0 = arg_6_1:getBody()
+function slot0.initNotificationHandleDic(slot0)
+	slot0.handleDic = {
+		[GAME.EQUIP_CODE_LIKE_DONE] = function (slot0, slot1)
+			slot2 = slot1:getBody()
 
-			arg_6_0.viewComponent:refreshLikeCommand(var_6_0.shareId, var_6_0.like)
+			slot0.viewComponent:refreshLikeCommand(slot2.shareId, slot2.like)
 		end
 	}
 end
 
-return var_0_0
+return slot0

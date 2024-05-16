@@ -1,21 +1,19 @@
-﻿local var_0_0 = class("NewTrackingCommand", pm.SimpleCommand)
+slot0 = class("NewTrackingCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.type
-	local var_1_2 = var_1_0.eventId
-	local var_1_3 = var_1_0.para1 or ""
-	local var_1_4 = var_1_0.para2 or ""
-	local var_1_5 = var_1_0.para3 or ""
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.type
+	slot4 = slot2.eventId
+	slot5 = slot2.para1 or ""
 
-	print(var_1_1, var_1_2, var_1_3)
+	print(slot3, slot4, slot5)
 	pg.ConnectionMgr.GetInstance():Send(10992, {
-		track_type = var_1_1,
-		event_id = var_1_2,
-		para1 = var_1_3,
-		para2 = var_1_4,
-		para3 = var_1_5
+		track_type = slot3,
+		event_id = slot4,
+		para1 = slot5,
+		para2 = slot2.para2 or "",
+		para3 = slot2.para3 or ""
 	})
 end
 
-return var_0_0
+return slot0

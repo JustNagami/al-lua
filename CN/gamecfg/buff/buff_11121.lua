@@ -1,38 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_T_5",
-				number = 0.1
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBulletHitBefore"
-			},
-			arg_list = {
-				buff_id = 11122,
-				target = "TargetSelf",
-				time = 0,
-				be_hit_condition = {
-					bullet_type = 2,
-					damage_type = 1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -331,5 +297,39 @@
 	stack = 1,
 	id = 11121,
 	icon = 11120,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_T_5",
+				number = 0.1
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBulletHitBefore"
+			},
+			arg_list = {
+				buff_id = 11122,
+				target = "TargetSelf",
+				time = 0,
+				be_hit_condition = {
+					bullet_type = 2,
+					damage_type = 1
+				}
+			}
+		}
+	}
 }

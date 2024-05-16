@@ -1,181 +1,175 @@
-﻿local var_0_0 = class("NewShopsMediator", import("..base.ContextMediator"))
+slot0 = class("NewShopsMediator", import("..base.ContextMediator"))
+slot0.ON_SHOPPING = "NewShopsMediator:ON_SHOPPING"
+slot0.REFRESH_STREET_SHOP = "NewShopsMediator:REFRESH_STREET_SHOP"
+slot0.REFRESH_MILITARY_SHOP = "NewShopsMediator:REFRESH_MILITARY_SHOP"
+slot0.ON_SHAM_SHOPPING = "NewShopsMediator:ON_SHAM_SHOPPING"
+slot0.ON_FRAGMENT_SHOPPING = "NewShopsMediator:ON_FRAGMENT_SHOPPING"
+slot0.ON_ACT_SHOPPING = "NewShopsMediator:ON_ACT_SHOPPING"
+slot0.SELL_BLUEPRINT = "NewShopsMediator:SELL_BLUEPRINT"
+slot0.GO_MALL = "NewShopsMediator:GO_MALL"
+slot0.ON_SKIN_SHOP = "NewShopsMediator:ON_SKIN_SHOP"
+slot0.SET_PLAYER_FLAG = "NewShopsMediator:SET_PLAYER_FLAG"
+slot0.ON_GUILD_SHOPPING = "NewShopsMediator:ON_GUILD_SHOPPING"
+slot0.ON_MEDAL_SHOPPING = "NewShopsMediator:ON_MEDAL_SHOPPING"
+slot0.REFRESH_GUILD_SHOP = "NewShopsMediator:REFRESH_GUILD_SHOP"
+slot0.REFRESH_MEDAL_SHOP = "NewShopsMediator:REFRESH_MEDAL_SHOP"
+slot0.ON_GUILD_PURCHASE = "NewShopsMediator:ON_GUILD_PURCHASE"
+slot0.ON_META_SHOP = "NewShopsMediator:ON_META_SHOP"
+slot0.ON_ESKIN_PREVIEW = "NewShopsMediator:ON_ESKIN_PREVIEW"
+slot0.ON_QUOTA_SHOPPING = "NewShopsMediator:ON_QUOTA_SHOPPING"
+slot0.ON_MINI_GAME_SHOP_BUY = "NewShopsMediator:ON_MINI_GAME_SHOP_BUY"
+slot0.ON_MINI_GAME_SHOP_FLUSH = "NewShopsMediator:ON_MINI_GAME_SHOP_FLUSH"
+slot0.MINI_GAME_SHOP_BUY_DONE = "NewShopsMediator:MINI_GAME_SHOP_BUY_DONE"
 
-var_0_0.ON_SHOPPING = "NewShopsMediator:ON_SHOPPING"
-var_0_0.REFRESH_STREET_SHOP = "NewShopsMediator:REFRESH_STREET_SHOP"
-var_0_0.REFRESH_MILITARY_SHOP = "NewShopsMediator:REFRESH_MILITARY_SHOP"
-var_0_0.ON_SHAM_SHOPPING = "NewShopsMediator:ON_SHAM_SHOPPING"
-var_0_0.ON_FRAGMENT_SHOPPING = "NewShopsMediator:ON_FRAGMENT_SHOPPING"
-var_0_0.ON_ACT_SHOPPING = "NewShopsMediator:ON_ACT_SHOPPING"
-var_0_0.SELL_BLUEPRINT = "NewShopsMediator:SELL_BLUEPRINT"
-var_0_0.GO_MALL = "NewShopsMediator:GO_MALL"
-var_0_0.ON_SKIN_SHOP = "NewShopsMediator:ON_SKIN_SHOP"
-var_0_0.SET_PLAYER_FLAG = "NewShopsMediator:SET_PLAYER_FLAG"
-var_0_0.ON_GUILD_SHOPPING = "NewShopsMediator:ON_GUILD_SHOPPING"
-var_0_0.ON_MEDAL_SHOPPING = "NewShopsMediator:ON_MEDAL_SHOPPING"
-var_0_0.REFRESH_GUILD_SHOP = "NewShopsMediator:REFRESH_GUILD_SHOP"
-var_0_0.REFRESH_MEDAL_SHOP = "NewShopsMediator:REFRESH_MEDAL_SHOP"
-var_0_0.ON_GUILD_PURCHASE = "NewShopsMediator:ON_GUILD_PURCHASE"
-var_0_0.ON_META_SHOP = "NewShopsMediator:ON_META_SHOP"
-var_0_0.ON_ESKIN_PREVIEW = "NewShopsMediator:ON_ESKIN_PREVIEW"
-var_0_0.ON_QUOTA_SHOPPING = "NewShopsMediator:ON_QUOTA_SHOPPING"
-var_0_0.ON_MINI_GAME_SHOP_BUY = "NewShopsMediator:ON_MINI_GAME_SHOP_BUY"
-var_0_0.ON_MINI_GAME_SHOP_FLUSH = "NewShopsMediator:ON_MINI_GAME_SHOP_FLUSH"
-var_0_0.MINI_GAME_SHOP_BUY_DONE = "NewShopsMediator:MINI_GAME_SHOP_BUY_DONE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_META_SHOP, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-		arg_1_0:sendNotification(GAME.ON_META_SHOPPING, {
-			activity_id = arg_2_1,
-			cmd = arg_2_2,
-			arg1 = arg_2_3,
-			arg2 = arg_2_4
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_META_SHOP, function (slot0, slot1, slot2, slot3, slot4)
+		uv0:sendNotification(GAME.ON_META_SHOPPING, {
+			activity_id = slot1,
+			cmd = slot2,
+			arg1 = slot3,
+			arg2 = slot4
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_GUILD_SHOPPING, function(arg_3_0, arg_3_1, arg_3_2)
-		arg_1_0:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE, {
-			goodsId = arg_3_1,
-			selectedId = arg_3_2
+	slot0:bind(uv0.ON_GUILD_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.ON_GUILD_SHOP_PURCHASE, {
+			goodsId = slot1,
+			selectedId = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_MINI_GAME_SHOP_BUY, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_1_0:sendNotification(GAME.MINI_GAME_SHOP_BUY, arg_4_1)
+	slot0:bind(uv0.ON_MINI_GAME_SHOP_BUY, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.MINI_GAME_SHOP_BUY, slot1)
 	end)
-	arg_1_0:bind(var_0_0.ON_MINI_GAME_SHOP_FLUSH, function(arg_5_0, arg_5_1, arg_5_2)
-		arg_1_0:sendNotification(GAME.MINI_GAME_SHOP_FLUSH, arg_5_1)
+	slot0:bind(uv0.ON_MINI_GAME_SHOP_FLUSH, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.MINI_GAME_SHOP_FLUSH, slot1)
 	end)
-	arg_1_0:bind(var_0_0.ON_MEDAL_SHOPPING, function(arg_6_0, arg_6_1, arg_6_2)
-		arg_1_0:sendNotification(GAME.ON_MEDAL_SHOP_PURCHASE, {
-			goodsId = arg_6_1,
-			selectedId = arg_6_2
+	slot0:bind(uv0.ON_MEDAL_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.ON_MEDAL_SHOP_PURCHASE, {
+			goodsId = slot1,
+			selectedId = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.REFRESH_GUILD_SHOP, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_7_1 and GuildConst.MANUAL_REFRESH or GuildConst.AUTO_REFRESH
-
-		arg_1_0:sendNotification(GAME.GET_GUILD_SHOP, {
-			type = var_7_0
+	slot0:bind(uv0.REFRESH_GUILD_SHOP, function (slot0, slot1)
+		uv0:sendNotification(GAME.GET_GUILD_SHOP, {
+			type = slot1 and GuildConst.MANUAL_REFRESH or GuildConst.AUTO_REFRESH
 		})
 	end)
-	arg_1_0:bind(var_0_0.REFRESH_MEDAL_SHOP, function(arg_8_0)
-		arg_1_0:sendNotification(GAME.GET_MEDALSHOP, {})
+	slot0:bind(uv0.REFRESH_MEDAL_SHOP, function (slot0)
+		uv0:sendNotification(GAME.GET_MEDALSHOP, {})
 	end)
-	arg_1_0:bind(var_0_0.ON_SKIN_SHOP, function(arg_9_0, arg_9_1)
-		arg_1_0:sendNotification(GAME.CHANGE_SCENE, SCENE.SKINSHOP)
+	slot0:bind(uv0.ON_SKIN_SHOP, function (slot0, slot1)
+		uv0:sendNotification(GAME.CHANGE_SCENE, SCENE.SKINSHOP)
 	end)
-	arg_1_0:bind(var_0_0.GO_MALL, function(arg_10_0, arg_10_1)
-		local var_10_0 = getProxy(ContextProxy)
-
-		if arg_1_0.contextData.fromMediatorName == ChargeMediator.__cname then
-			var_10_0:getContextByMediator(ChargeMediator):extendData({
-				wrap = arg_10_1
+	slot0:bind(uv0.GO_MALL, function (slot0, slot1)
+		if uv0.contextData.fromMediatorName == ChargeMediator.__cname then
+			getProxy(ContextProxy):getContextByMediator(ChargeMediator):extendData({
+				wrap = slot1
 			})
-			arg_1_0.viewComponent:closeView()
+			uv0.viewComponent:closeView()
 		else
 			pg.m02:sendNotification(GAME.CHANGE_SCENE, SCENE.CHARGE, {
-				wrap = arg_10_1
+				wrap = slot1
 			})
 		end
 	end)
-	arg_1_0:bind(var_0_0.SELL_BLUEPRINT, function(arg_11_0, arg_11_1)
-		arg_1_0:sendNotification(GAME.FRAG_SELL, arg_11_1)
+	slot0:bind(uv0.SELL_BLUEPRINT, function (slot0, slot1)
+		uv0:sendNotification(GAME.FRAG_SELL, slot1)
 	end)
-	arg_1_0:bind(var_0_0.ON_ACT_SHOPPING, function(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
-		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
-			activity_id = arg_12_1,
-			cmd = arg_12_2,
-			arg1 = arg_12_3,
-			arg2 = arg_12_4
+	slot0:bind(uv0.ON_ACT_SHOPPING, function (slot0, slot1, slot2, slot3, slot4)
+		uv0:sendNotification(GAME.ACTIVITY_OPERATION, {
+			activity_id = slot1,
+			cmd = slot2,
+			arg1 = slot3,
+			arg2 = slot4
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_FRAGMENT_SHOPPING, function(arg_13_0, arg_13_1, arg_13_2)
-		arg_1_0:sendNotification(GAME.FRAG_SHOPPING, {
-			id = arg_13_1,
-			count = arg_13_2
+	slot0:bind(uv0.ON_FRAGMENT_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.FRAG_SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SHAM_SHOPPING, function(arg_14_0, arg_14_1, arg_14_2)
-		arg_1_0:sendNotification(GAME.SHAM_SHOPPING, {
-			id = arg_14_1,
-			count = arg_14_2
+	slot0:bind(uv0.ON_SHAM_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SHAM_SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SHOPPING, function(arg_15_0, arg_15_1, arg_15_2)
-		arg_1_0:sendNotification(GAME.SHOPPING, {
-			id = arg_15_1,
-			count = arg_15_2
+	slot0:bind(uv0.ON_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.REFRESH_MILITARY_SHOP, function(arg_16_0, arg_16_1)
-		if not arg_16_1 then
-			arg_1_0:sendNotification(GAME.GET_MILITARY_SHOP)
+	slot0:bind(uv0.REFRESH_MILITARY_SHOP, function (slot0, slot1)
+		if not slot1 then
+			uv0:sendNotification(GAME.GET_MILITARY_SHOP)
 		else
-			arg_1_0:sendNotification(GAME.REFRESH_MILITARY_SHOP)
+			uv0:sendNotification(GAME.REFRESH_MILITARY_SHOP)
 		end
 	end)
-	arg_1_0:bind(var_0_0.REFRESH_STREET_SHOP, function(arg_17_0, arg_17_1)
-		if not arg_17_1 then
-			arg_1_0:sendNotification(GAME.GET_SHOPSTREET)
+	slot0:bind(uv0.REFRESH_STREET_SHOP, function (slot0, slot1)
+		if not slot1 then
+			uv0:sendNotification(GAME.GET_SHOPSTREET)
 		else
-			arg_1_0:sendNotification(GAME.SHOPPING, {
+			uv0:sendNotification(GAME.SHOPPING, {
 				count = 1,
-				id = arg_17_1
+				id = slot1
 			})
 		end
 	end)
-	arg_1_0:bind(var_0_0.SET_PLAYER_FLAG, function(arg_18_0, arg_18_1, arg_18_2)
-		if arg_18_2 then
-			arg_1_0:sendNotification(GAME.COMMON_FLAG, {
-				flagID = arg_18_1
+	slot0:bind(uv0.SET_PLAYER_FLAG, function (slot0, slot1, slot2)
+		if slot2 then
+			uv0:sendNotification(GAME.COMMON_FLAG, {
+				flagID = slot1
 			})
 		else
-			arg_1_0:sendNotification(GAME.CANCEL_COMMON_FLAG, {
-				flagID = arg_18_1
+			uv0:sendNotification(GAME.CANCEL_COMMON_FLAG, {
+				flagID = slot1
 			})
 		end
 	end)
-	arg_1_0:bind(var_0_0.ON_ESKIN_PREVIEW, function(arg_19_0, arg_19_1)
-		local var_19_0 = pg.equip_skin_template[arg_19_1]
-		local var_19_1 = Ship.New({
-			id = var_19_0.ship_config_id,
-			configId = var_19_0.ship_config_id,
-			skin_id = var_19_0.ship_skin_id
-		})
-		local var_19_2 = {}
+	slot0:bind(uv0.ON_ESKIN_PREVIEW, function (slot0, slot1)
+		slot2 = pg.equip_skin_template[slot1]
+		slot4 = {}
 
-		if var_19_0.ship_skin_id ~= 0 then
-			var_19_2 = {
+		if slot2.ship_skin_id ~= 0 then
+			slot4 = {
 				equipSkinId = 0,
-				shipVO = var_19_1,
+				shipVO = Ship.New({
+					id = slot2.ship_config_id,
+					configId = slot2.ship_config_id,
+					skin_id = slot2.ship_skin_id
+				}),
 				weaponIds = {},
-				weight = arg_1_0.contextData.weight and arg_1_0.contextData.weight + 1
+				weight = uv0.contextData.weight and uv0.contextData.weight + 1
 			}
 		else
-			var_19_2 = {
-				shipVO = var_19_1,
-				weaponIds = Clone(var_19_0.weapon_ids),
-				equipSkinId = arg_19_1,
-				weight = arg_1_0.contextData.weight and arg_1_0.contextData.weight + 1
+			slot5.weight = uv0.contextData.weight and uv0.contextData.weight + 1
+			slot4 = {
+				shipVO = slot3,
+				weaponIds = Clone(slot2.weapon_ids),
+				equipSkinId = slot1
 			}
 		end
 
-		arg_1_0:addSubLayers(Context.New({
+		uv0:addSubLayers(Context.New({
 			viewComponent = ShipPreviewLayer,
 			mediator = ShipPreviewMediator,
-			data = var_19_2
+			data = slot4
 		}))
 	end)
-	arg_1_0.viewComponent:SetShops(arg_1_0.contextData.shops)
-	arg_1_0:bind(var_0_0.ON_QUOTA_SHOPPING, function(arg_20_0, arg_20_1, arg_20_2)
-		arg_1_0:sendNotification(GAME.QUOTA_SHOPPING, {
-			id = arg_20_1,
-			count = arg_20_2
+	slot0.viewComponent:SetShops(slot0.contextData.shops)
+	slot0:bind(uv0.ON_QUOTA_SHOPPING, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.QUOTA_SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
-	arg_1_0.viewComponent:OnUpdateItems(getProxy(BagProxy):getRawData())
+	slot0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
+	slot0.viewComponent:OnUpdateItems(getProxy(BagProxy):getRawData())
 end
 
-function var_0_0.listNotificationInterests(arg_21_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.SHOPPING_DONE,
@@ -203,106 +197,85 @@ function var_0_0.listNotificationInterests(arg_21_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1:getName()
-	local var_22_1 = arg_22_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:SetPlayer(slot1:getBody())
+	elseif slot2 == ShopsProxy.SHOPPINGSTREET_UPDATE then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_SHOP_STREET, slot3.shopStreet)
+	elseif slot2 == GAME.SHOPPING_DONE then
+		slot4 = nil
 
-	if var_22_0 == PlayerProxy.UPDATED then
-		arg_22_0.viewComponent:SetPlayer(var_22_1)
-	elseif var_22_0 == ShopsProxy.SHOPPINGSTREET_UPDATE then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_SHOP_STREET, var_22_1.shopStreet)
-	elseif var_22_0 == GAME.SHOPPING_DONE then
-		local var_22_2
+		if slot3.shopType == ShopArgs.ShopStreet then
+			slot5 = getProxy(ShopsProxy):getShopStreet()
+			slot4 = slot5:getGoodsById(slot3.id)
 
-		if var_22_1.shopType == ShopArgs.ShopStreet then
-			local var_22_3 = getProxy(ShopsProxy):getShopStreet()
-			local var_22_4 = var_22_3:getGoodsById(var_22_1.id)
+			slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_SHOP_STREET, slot5, slot3.id)
+		elseif slot3.shopType == ShopArgs.MilitaryShop then
+			slot5 = getProxy(ShopsProxy):getMeritorousShop()
+			slot4 = slot5.goods[slot3.id]
 
-			arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_SHOP_STREET, var_22_3, var_22_1.id)
-		elseif var_22_1.shopType == ShopArgs.MilitaryShop then
-			local var_22_5 = getProxy(ShopsProxy):getMeritorousShop()
-			local var_22_6 = var_22_5.goods[var_22_1.id]
-
-			arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_MILITARY_SHOP, var_22_5, var_22_1.id)
+			slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_MILITARY_SHOP, slot5, slot3.id)
 		end
 
-		if var_22_1.awards and #var_22_1.awards > 0 then
-			arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
+		if slot3.awards and #slot3.awards > 0 then
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 		end
-	elseif var_22_0 == ShopsProxy.MERITOROUS_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MILITARY_SHOP, var_22_1)
-	elseif var_22_0 == ShopsProxy.SHAM_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_SHAM_SHOP, var_22_1)
-	elseif var_22_0 == GAME.SHAM_SHOPPING_DONE then
-		local var_22_7 = getProxy(ShopsProxy):getShamShop()
-
-		arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_SHAM_SHOP, var_22_7, var_22_1.id)
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == BagProxy.ITEM_UPDATED then
-		local var_22_8 = getProxy(BagProxy):getRawData()
-
-		arg_22_0.viewComponent:OnUpdateItems(var_22_8)
-	elseif var_22_0 == GAME.FRAG_SHOPPING_DONE then
-		local var_22_9 = getProxy(ShopsProxy):getFragmentShop()
-
-		arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_FRAGMENT, var_22_9, var_22_1.id)
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == ShopsProxy.FRAGMENT_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_FRAGMENT, var_22_1)
-	elseif var_22_0 == ShopsProxy.ACTIVITY_SHOP_GOODS_UPDATED then
-		local var_22_10 = getProxy(ShopsProxy):getActivityShopById(var_22_1.activityId)
-
-		arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_ACTIVITY, var_22_10, var_22_1.goodsId)
-	elseif var_22_0 == ShopsProxy.META_SHOP_GOODS_UPDATED then
-		local var_22_11 = getProxy(ShopsProxy):GetMetaShop()
-
-		arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_META, var_22_11, var_22_1.goodsId)
-	elseif var_22_0 == ShopsProxy.ACTIVITY_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_ACTIVITY, var_22_1.shop)
-	elseif var_22_0 == ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS then
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards, var_22_1.callback)
-	elseif var_22_0 == GAME.USE_ITEM_DONE then
-		if table.getCount(var_22_1) ~= 0 then
-			arg_22_0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var_22_1
+	elseif slot2 == ShopsProxy.MERITOROUS_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MILITARY_SHOP, slot3)
+	elseif slot2 == ShopsProxy.SHAM_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_SHAM_SHOP, slot3)
+	elseif slot2 == GAME.SHAM_SHOPPING_DONE then
+		slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_SHAM_SHOP, getProxy(ShopsProxy):getShamShop(), slot3.id)
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == BagProxy.ITEM_UPDATED then
+		slot0.viewComponent:OnUpdateItems(getProxy(BagProxy):getRawData())
+	elseif slot2 == GAME.FRAG_SHOPPING_DONE then
+		slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_FRAGMENT, getProxy(ShopsProxy):getFragmentShop(), slot3.id)
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == ShopsProxy.FRAGMENT_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_FRAGMENT, slot3)
+	elseif slot2 == ShopsProxy.ACTIVITY_SHOP_GOODS_UPDATED then
+		slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_ACTIVITY, getProxy(ShopsProxy):getActivityShopById(slot3.activityId), slot3.goodsId)
+	elseif slot2 == ShopsProxy.META_SHOP_GOODS_UPDATED then
+		slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_META, getProxy(ShopsProxy):GetMetaShop(), slot3.goodsId)
+	elseif slot2 == ShopsProxy.ACTIVITY_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_ACTIVITY, slot3.shop)
+	elseif slot2 == ActivityProxy.ACTIVITY_SHOP_SHOW_AWARDS then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+	elseif slot2 == GAME.USE_ITEM_DONE then
+		if table.getCount(slot3) ~= 0 then
+			slot0.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = slot3
 			})
 		end
-	elseif var_22_0 == GAME.FRAG_SELL_DONE then
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
+	elseif slot2 == GAME.FRAG_SELL_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
 
-		local var_22_12 = arg_22_0.viewComponent.pages[NewShopsScene.TYPE_FRAGMENT]
-
-		if arg_22_0.viewComponent.page == var_22_12 then
-			arg_22_0.viewComponent.page:OnFragmentSellUpdate()
+		if slot0.viewComponent.page == slot0.viewComponent.pages[NewShopsScene.TYPE_FRAGMENT] then
+			slot0.viewComponent.page:OnFragmentSellUpdate()
 		end
-	elseif var_22_0 == GAME.ON_GUILD_SHOP_PURCHASE_DONE then
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == GAME.ON_MEDAL_SHOP_PURCHASE_DONE then
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == ShopsProxy.GUILD_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_GUILD, var_22_1.shop)
-	elseif var_22_0 == ShopsProxy.MEDAL_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MEDAL, var_22_1)
-	elseif var_22_0 == GAME.ON_META_SHOPPING_DONE then
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == ShopsProxy.QUOTA_SHOP_UPDATED then
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_QUOTA, var_22_1.shop)
-	elseif var_22_0 == GAME.QUOTA_SHOPPING_DONE then
-		local var_22_13 = getProxy(ShopsProxy):getQuotaShop()
-
-		arg_22_0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_QUOTA_SHOP, var_22_13, var_22_1.id)
-		arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_1.awards)
-	elseif var_22_0 == GAME.MINI_GAME_SHOP_BUY_DONE then
-		local var_22_14 = var_22_1.list
-
-		if var_22_14 and #var_22_14 > 0 then
-			arg_22_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_22_14)
+	elseif slot2 == GAME.ON_GUILD_SHOP_PURCHASE_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == GAME.ON_MEDAL_SHOP_PURCHASE_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == ShopsProxy.GUILD_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_GUILD, slot3.shop)
+	elseif slot2 == ShopsProxy.MEDAL_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MEDAL, slot3)
+	elseif slot2 == GAME.ON_META_SHOPPING_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == ShopsProxy.QUOTA_SHOP_UPDATED then
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_QUOTA, slot3.shop)
+	elseif slot2 == GAME.QUOTA_SHOPPING_DONE then
+		slot0.viewComponent:OnUpdateCommodity(NewShopsScene.TYPE_QUOTA_SHOP, getProxy(ShopsProxy):getQuotaShop(), slot3.id)
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards)
+	elseif slot2 == GAME.MINI_GAME_SHOP_BUY_DONE then
+		if slot3.list and #slot4 > 0 then
+			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot4)
 		end
 
-		local var_22_15 = getProxy(ShopsProxy):getMiniShop()
-
-		arg_22_0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MINI_GAME, var_22_15)
+		slot0.viewComponent:OnUpdateShop(NewShopsScene.TYPE_MINI_GAME, getProxy(ShopsProxy):getMiniShop())
 	end
 end
 
-return var_0_0
+return slot0

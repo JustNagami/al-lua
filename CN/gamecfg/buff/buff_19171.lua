@@ -1,32 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffShiftBullet",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				bullet_id = 19850,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 0.05,
-				label = {
-					"IJN",
-					"DD",
-					"MG"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -336,5 +308,33 @@
 	stack = 1,
 	id = 19171,
 	icon = 19170,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffShiftBullet",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				bullet_id = 19850,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 0.05,
+				label = {
+					"IJN",
+					"DD",
+					"MG"
+				}
+			}
+		}
+	}
 }

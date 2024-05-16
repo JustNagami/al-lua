@@ -1,1573 +1,1430 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleEvent
+slot3 = slot0.Battle.BattleFormulas
+slot4 = slot0.Battle.BattleConst
+slot5 = slot0.Battle.BattleConfig
+slot6 = slot0.Battle.BattleAttr
+slot7 = slot0.Battle.BattleDataFunction
+slot8 = class("BattleFleetVO")
+slot0.Battle.BattleFleetVO = slot8
+slot8.__name = "BattleFleetVO"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = var_0_0.Battle.BattleFormulas
-local var_0_4 = var_0_0.Battle.BattleConst
-local var_0_5 = var_0_0.Battle.BattleConfig
-local var_0_6 = var_0_0.Battle.BattleAttr
-local var_0_7 = var_0_0.Battle.BattleDataFunction
-local var_0_8 = class("BattleFleetVO")
+function slot8.Ctor(slot0, slot1)
+	uv0.EventDispatcher.AttachEventDispatcher(slot0)
+	uv0.EventListener.AttachEventListener(slot0)
 
-var_0_0.Battle.BattleFleetVO = var_0_8
-var_0_8.__name = "BattleFleetVO"
+	slot0._IFF = slot1
+	slot0._lastDist = 0
 
-function var_0_8.Ctor(arg_1_0, arg_1_1)
-	var_0_0.EventDispatcher.AttachEventDispatcher(arg_1_0)
-	var_0_0.EventListener.AttachEventListener(arg_1_0)
-
-	arg_1_0._IFF = arg_1_1
-	arg_1_0._lastDist = 0
-
-	arg_1_0:init()
+	slot0:init()
 end
 
-function var_0_8.UpdateMotion(arg_2_0)
-	if arg_2_0._motionReferenceUnit then
-		arg_2_0._motionVO:UpdatePos(arg_2_0._motionReferenceUnit)
-		arg_2_0._motionVO:UpdateVelocityAndDirection(arg_2_0:GetFleetVelocity(), arg_2_0._motionSourceFunc())
+function slot8.UpdateMotion(slot0)
+	if slot0._motionReferenceUnit then
+		slot0._motionVO:UpdatePos(slot0._motionReferenceUnit)
+		slot0._motionVO:UpdateVelocityAndDirection(slot0:GetFleetVelocity(), slot0._motionSourceFunc())
 	end
 
-	local var_2_0 = math.max(arg_2_0._motionVO:GetPos().x - arg_2_0._rightBound, 0)
+	if math.max(slot0._motionVO:GetPos().x - slot0._rightBound, 0) >= 0 and slot1 ~= slot0._lastDist then
+		slot0._lastDist = slot1
 
-	if var_2_0 >= 0 and var_2_0 ~= arg_2_0._lastDist then
-		arg_2_0._lastDist = var_2_0
-
-		arg_2_0:DispatchEvent(var_0_0.Event.New(var_0_2.SHOW_BUFFER, {
-			dist = var_2_0
+		slot0:DispatchEvent(uv0.Event.New(uv1.SHOW_BUFFER, {
+			dist = slot1
 		}))
 	end
 end
 
-function var_0_8.UpdateAutoComponent(arg_3_0, arg_3_1)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0._scoutList) do
-		iter_3_1:UpdateWeapon(arg_3_1)
-		iter_3_1:UpdateAirAssist()
+function slot8.UpdateAutoComponent(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._scoutList) do
+		slot6:UpdateWeapon(slot1)
+		slot6:UpdateAirAssist()
 	end
 
-	for iter_3_2, iter_3_3 in ipairs(arg_3_0._mainList) do
-		iter_3_3:UpdateWeapon(arg_3_1)
-		iter_3_3:UpdateAirAssist()
+	for slot5, slot6 in ipairs(slot0._mainList) do
+		slot6:UpdateWeapon(slot1)
+		slot6:UpdateAirAssist()
 	end
 
-	for iter_3_4, iter_3_5 in ipairs(arg_3_0._supportList) do
-		iter_3_5:UpdateWeapon(arg_3_1)
+	for slot5, slot6 in ipairs(slot0._supportList) do
+		slot6:UpdateWeapon(slot1)
 	end
 
-	for iter_3_6, iter_3_7 in ipairs(arg_3_0._cloakList) do
-		iter_3_7:UpdateCloak(arg_3_1)
+	for slot5, slot6 in ipairs(slot0._cloakList) do
+		slot6:UpdateCloak(slot1)
 	end
 
-	for iter_3_8, iter_3_9 in ipairs(arg_3_0._subList) do
-		iter_3_9:UpdateWeapon(arg_3_1)
-		iter_3_9:UpdateOxygen(arg_3_1)
-		iter_3_9:UpdatePhaseSwitcher()
+	for slot5, slot6 in ipairs(slot0._subList) do
+		slot6:UpdateWeapon(slot1)
+		slot6:UpdateOxygen(slot1)
+		slot6:UpdatePhaseSwitcher()
 	end
 
-	for iter_3_10, iter_3_11 in ipairs(arg_3_0._manualSubList) do
-		iter_3_11:UpdateOxygen(arg_3_1)
+	for slot5, slot6 in ipairs(slot0._manualSubList) do
+		slot6:UpdateOxygen(slot1)
 	end
 
-	arg_3_0._fleetAntiAir:Update(arg_3_1)
-	arg_3_0._fleetRangeAntiAir:Update(arg_3_1)
-	arg_3_0._fleetStaticSonar:Update(arg_3_1)
+	slot0._fleetAntiAir:Update(slot1)
+	slot0._fleetRangeAntiAir:Update(slot1)
+	slot0._fleetStaticSonar:Update(slot1)
 
-	for iter_3_12, iter_3_13 in pairs(arg_3_0._indieSonarList) do
-		iter_3_12:Update(arg_3_1)
+	for slot5, slot6 in pairs(slot0._indieSonarList) do
+		slot5:Update(slot1)
 	end
 
-	arg_3_0:UpdateBuff(arg_3_1)
+	slot0:UpdateBuff(slot1)
 
-	if arg_3_0._cardPuzzleComponent then
-		arg_3_0._cardPuzzleComponent:Update(arg_3_1)
-	end
-end
-
-function var_0_8.UpdateBuff(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0._buffList
-
-	for iter_4_0, iter_4_1 in pairs(var_4_0) do
-		iter_4_1:Update(arg_4_0, arg_4_1)
+	if slot0._cardPuzzleComponent then
+		slot0._cardPuzzleComponent:Update(slot1)
 	end
 end
 
-function var_0_8.UpdateManualWeaponVO(arg_5_0, arg_5_1)
-	arg_5_0._chargeWeaponVO:Update(arg_5_1)
-	arg_5_0._torpedoWeaponVO:Update(arg_5_1)
-	arg_5_0._airAssistVO:Update(arg_5_1)
-	arg_5_0._submarineDiveVO:Update(arg_5_1)
-	arg_5_0._submarineFloatVO:Update(arg_5_1)
-	arg_5_0._submarineBoostVO:Update(arg_5_1)
-	arg_5_0._submarineShiftVO:Update(arg_5_1)
+function slot8.UpdateBuff(slot0, slot1)
+	for slot6, slot7 in pairs(slot0._buffList) do
+		slot7:Update(slot0, slot1)
+	end
 end
 
-function var_0_8.UpdateFleetDamage(arg_6_0, arg_6_1)
-	local var_6_0 = var_0_3.CalculateFleetDamage(arg_6_1)
-
-	arg_6_0._currentDMGRatio = arg_6_0._currentDMGRatio + var_6_0
-
-	arg_6_0:DispatchFleetDamageChange()
+function slot8.UpdateManualWeaponVO(slot0, slot1)
+	slot0._chargeWeaponVO:Update(slot1)
+	slot0._torpedoWeaponVO:Update(slot1)
+	slot0._airAssistVO:Update(slot1)
+	slot0._submarineDiveVO:Update(slot1)
+	slot0._submarineFloatVO:Update(slot1)
+	slot0._submarineBoostVO:Update(slot1)
+	slot0._submarineShiftVO:Update(slot1)
 end
 
-function var_0_8.UpdateFleetOverDamage(arg_7_0, arg_7_1)
-	local var_7_0 = var_0_3.CalculateFleetOverDamage(arg_7_0, arg_7_1)
+function slot8.UpdateFleetDamage(slot0, slot1)
+	slot0._currentDMGRatio = slot0._currentDMGRatio + uv0.CalculateFleetDamage(slot1)
 
-	arg_7_0._currentDMGRatio = arg_7_0._currentDMGRatio - var_7_0
-
-	arg_7_0:DispatchFleetDamageChange()
+	slot0:DispatchFleetDamageChange()
 end
 
-function var_0_8.DispatchFleetDamageChange(arg_8_0)
-	arg_8_0:DispatchEvent(var_0_0.Event.New(var_0_2.FLEET_DMG_CHANGE, {}))
+function slot8.UpdateFleetOverDamage(slot0, slot1)
+	slot0._currentDMGRatio = slot0._currentDMGRatio - uv0.CalculateFleetOverDamage(slot0, slot1)
+
+	slot0:DispatchFleetDamageChange()
 end
 
-function var_0_8.DispatchSonarScan(arg_9_0, arg_9_1)
-	arg_9_0:DispatchEvent(var_0_0.Event.New(var_0_2.SONAR_SCAN, {
-		indieSonar = arg_9_1
+function slot8.DispatchFleetDamageChange(slot0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.FLEET_DMG_CHANGE, {}))
+end
+
+function slot8.DispatchSonarScan(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.SONAR_SCAN, {
+		indieSonar = slot1
 	}))
 end
 
-function var_0_8.FleetBuffTrigger(arg_10_0, arg_10_1, arg_10_2)
-	for iter_10_0, iter_10_1 in ipairs(arg_10_0._unitList) do
-		iter_10_1:TriggerBuff(arg_10_1, arg_10_2)
+function slot8.FleetBuffTrigger(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs(slot0._unitList) do
+		slot7:TriggerBuff(slot1, slot2)
 	end
 end
 
-function var_0_8.FreeMainUnit(arg_11_0, arg_11_1)
-	if arg_11_0._mainUnitFree then
+function slot8.FreeMainUnit(slot0, slot1)
+	if slot0._mainUnitFree then
 		return
 	end
 
-	arg_11_0._mainUnitFree = true
+	slot0._mainUnitFree = true
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0._mainList) do
-		local var_11_0 = var_0_0.Battle.BattleBuffUnit.New(arg_11_1)
-
-		iter_11_1:AddBuff(var_11_0)
-		iter_11_1:SetMainUnitStatic(false)
+	for slot5, slot6 in ipairs(slot0._mainList) do
+		slot6:AddBuff(uv0.Battle.BattleBuffUnit.New(slot1))
+		slot6:SetMainUnitStatic(false)
 	end
 end
 
-function var_0_8.RandomMainVictim(arg_12_0, arg_12_1)
-	arg_12_1 = arg_12_1 or {}
+function slot8.RandomMainVictim(slot0, slot1)
+	slot1 = slot1 or {}
+	slot2 = {}
+	slot3 = nil
 
-	local var_12_0 = {}
-	local var_12_1
+	for slot7, slot8 in ipairs(slot0._mainList) do
+		slot9 = true
 
-	for iter_12_0, iter_12_1 in ipairs(arg_12_0._mainList) do
-		local var_12_2 = true
-
-		for iter_12_2, iter_12_3 in ipairs(arg_12_1) do
-			if iter_12_1:GetAttrByName(iter_12_3) >= 1 then
-				var_12_2 = false
+		for slot13, slot14 in ipairs(slot1) do
+			if slot8:GetAttrByName(slot14) >= 1 then
+				slot9 = false
 
 				break
 			end
 		end
 
-		if var_12_2 then
-			table.insert(var_12_0, iter_12_1)
+		if slot9 then
+			table.insert(slot2, slot8)
 		end
 	end
 
-	if #var_12_0 > 0 then
-		var_12_1 = var_12_0[math.random(#var_12_0)]
+	if #slot2 > 0 then
+		slot3 = slot2[math.random(#slot2)]
 	end
 
-	return var_12_1
+	return slot3
 end
 
-function var_0_8.NearestUnitByType(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = 999
-	local var_13_1
+function slot8.NearestUnitByType(slot0, slot1, slot2)
+	slot4 = nil
 
-	for iter_13_0, iter_13_1 in ipairs(arg_13_0._unitList) do
-		local var_13_2 = iter_13_1:GetTemplate().type
-
-		if table.contains(arg_13_2, var_13_2) then
-			local var_13_3 = iter_13_1:GetPosition()
-			local var_13_4 = Vector3.BattleDistance(var_13_3, arg_13_1)
-
-			if var_13_4 < var_13_0 then
-				var_13_0 = var_13_4
-				var_13_1 = iter_13_1
-			end
+	for slot8, slot9 in ipairs(slot0._unitList) do
+		if table.contains(slot2, slot9:GetTemplate().type) and Vector3.BattleDistance(slot9:GetPosition(), slot1) < 999 then
+			slot3 = slot12
+			slot4 = slot9
 		end
 	end
 
-	return var_13_1
+	return slot4
 end
 
-function var_0_8.SetMotionSource(arg_14_0, arg_14_1)
-	if arg_14_1 == nil then
-		function arg_14_0._motionSourceFunc()
-			local var_15_0 = pg.UIMgr.GetInstance()
+function slot8.SetMotionSource(slot0, slot1)
+	if slot1 == nil then
+		function slot0._motionSourceFunc()
+			slot0 = pg.UIMgr.GetInstance()
 
-			return var_15_0.hrz, var_15_0.vtc
+			return slot0.hrz, slot0.vtc
 		end
 	else
-		arg_14_0._motionSourceFunc = arg_14_1
+		slot0._motionSourceFunc = slot1
 	end
 end
 
-function var_0_8.SetSubAidData(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_0._submarineVO = var_0_0.Battle.BattleSubmarineAidVO.New()
+function slot8.SetSubAidData(slot0, slot1, slot2)
+	slot0._submarineVO = uv0.Battle.BattleSubmarineAidVO.New()
 
-	if arg_16_2 == var_0_4.SubAidFlag.AID_EMPTY or arg_16_2 == var_0_4.SubAidFlag.OIL_EMPTY then
-		arg_16_0._submarineVO:SetUseable(false)
+	if slot2 == uv1.SubAidFlag.AID_EMPTY or slot2 == uv1.SubAidFlag.OIL_EMPTY then
+		slot0._submarineVO:SetUseable(false)
 	else
-		arg_16_0._submarineVO:SetCount(arg_16_2)
-		arg_16_0._submarineVO:SetTotal(arg_16_1)
-		arg_16_0._submarineVO:SetUseable(true)
+		slot0._submarineVO:SetCount(slot2)
+		slot0._submarineVO:SetTotal(slot1)
+		slot0._submarineVO:SetUseable(true)
 	end
 end
 
-function var_0_8.SetAutobotBound(arg_17_0, arg_17_1, arg_17_2, arg_17_3, arg_17_4)
-	arg_17_0._upperBound = arg_17_1
-	arg_17_0._lowerBound = arg_17_2
-	arg_17_0._leftBound = arg_17_3
-	arg_17_0._rightBound = arg_17_4
+function slot8.SetAutobotBound(slot0, slot1, slot2, slot3, slot4)
+	slot0._upperBound = slot1
+	slot0._lowerBound = slot2
+	slot0._leftBound = slot3
+	slot0._rightBound = slot4
 end
 
-function var_0_8.SetTotalBound(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4)
-	arg_18_0._totalUpperBound = arg_18_1
-	arg_18_0._totalLowerBound = arg_18_2
-	arg_18_0._totalLeftBound = arg_18_3
-	arg_18_0._totalRightBound = arg_18_4
+function slot8.SetTotalBound(slot0, slot1, slot2, slot3, slot4)
+	slot0._totalUpperBound = slot1
+	slot0._totalLowerBound = slot2
+	slot0._totalLeftBound = slot3
+	slot0._totalRightBound = slot4
 end
 
-function var_0_8.SetUnitBound(arg_19_0, arg_19_1, arg_19_2)
-	arg_19_0._fleetUnitBound = var_0_0.Battle.BattleFleetBound.New(arg_19_0._IFF)
+function slot8.SetUnitBound(slot0, slot1, slot2)
+	slot0._fleetUnitBound = uv0.Battle.BattleFleetBound.New(slot0._IFF)
 
-	arg_19_0._fleetUnitBound:ConfigAreaData(arg_19_1, arg_19_2)
-	arg_19_0._fleetUnitBound:SwtichCommon()
+	slot0._fleetUnitBound:ConfigAreaData(slot1, slot2)
+	slot0._fleetUnitBound:SwtichCommon()
 end
 
-function var_0_8.UpdateScoutUnitBound(arg_20_0)
-	local var_20_0, var_20_1, var_20_2, var_20_3, var_20_4, var_20_5 = arg_20_0._fleetUnitBound:GetBound()
+function slot8.UpdateScoutUnitBound(slot0)
+	slot1, slot2, slot3, slot4, slot5, slot6 = slot0._fleetUnitBound:GetBound()
 
-	for iter_20_0, iter_20_1 in ipairs(arg_20_0._scoutList) do
-		iter_20_1:SetBound(var_20_0, var_20_1, var_20_2, var_20_3, var_20_4, var_20_5)
+	for slot10, slot11 in ipairs(slot0._scoutList) do
+		slot11:SetBound(slot1, slot2, slot3, slot4, slot5, slot6)
 	end
 
-	for iter_20_2, iter_20_3 in pairs(arg_20_0._freezeList) do
-		if not iter_20_2:IsMainFleetUnit() then
-			iter_20_2:SetBound(var_20_0, var_20_1, var_20_2, var_20_3, var_20_4, var_20_5)
+	for slot10, slot11 in pairs(slot0._freezeList) do
+		if not slot10:IsMainFleetUnit() then
+			slot10:SetBound(slot1, slot2, slot3, slot4, slot5, slot6)
 		end
 	end
 end
 
-function var_0_8.CalcSubmarineBaseLine(arg_21_0, arg_21_1)
-	local var_21_0 = (arg_21_0._totalRightBound + arg_21_0._totalLeftBound) * 0.5
+function slot8.CalcSubmarineBaseLine(slot0, slot1)
+	if slot0._IFF == uv0.FRIENDLY_CODE then
+		if slot1 ~= SYSTEM_DUEL then
+			slot0._subAttackBaseLine = (slot0._totalRightBound + slot0._totalLeftBound) * 0.5
+			slot0._subRetreatBaseLine = slot0._leftBound - 10
+		end
+	elseif slot0._IFF == uv0.FOE_CODE and slot1 == SYSTEM_DUEL then
+		-- Nothing
+	end
+end
 
-	if arg_21_0._IFF == var_0_5.FRIENDLY_CODE then
-		if arg_21_1 == SYSTEM_DUEL then
-			-- block empty
+function slot8.SetExposeLine(slot0, slot1, slot2)
+	slot0._visionLineX = slot1
+	slot0._exposeLineX = slot2
+end
+
+function slot8.AppendPlayerUnit(slot0, slot1)
+	slot0._unitList[#slot0._unitList + 1] = slot1
+	slot0._maxCount = slot0._maxCount + 1
+
+	if slot1:IsMainFleetUnit() then
+		slot0:appendMainUnit(slot1)
+	else
+		slot0:appendScoutUnit(slot1)
+	end
+
+	slot1:SetFleetVO(slot0)
+	slot1:SetMotion(slot0._motionVO)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_HP, slot0.onUnitUpdateHP)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_CLOAK_STATE, slot0.onUnitCloakUpdate)
+
+	if slot0._cardPuzzleComponent then
+		slot0._cardPuzzleComponent:AppendUnit(slot1)
+	end
+end
+
+function slot8.RemovePlayerUnit(slot0, slot1, slot2)
+	slot0._freezeList[slot1] = nil
+	slot3 = {}
+
+	for slot7, slot8 in ipairs(slot0._unitList) do
+		if slot8 ~= slot1 then
+			slot3[#slot3 + 1] = slot7
 		else
-			arg_21_0._subAttackBaseLine = var_21_0
-			arg_21_0._subRetreatBaseLine = arg_21_0._leftBound - 10
-		end
-	elseif arg_21_0._IFF == var_0_5.FOE_CODE and arg_21_1 == SYSTEM_DUEL then
-		-- block empty
-	end
-end
-
-function var_0_8.SetExposeLine(arg_22_0, arg_22_1, arg_22_2)
-	arg_22_0._visionLineX = arg_22_1
-	arg_22_0._exposeLineX = arg_22_2
-end
-
-function var_0_8.AppendPlayerUnit(arg_23_0, arg_23_1)
-	arg_23_0._unitList[#arg_23_0._unitList + 1] = arg_23_1
-	arg_23_0._maxCount = arg_23_0._maxCount + 1
-
-	if arg_23_1:IsMainFleetUnit() then
-		arg_23_0:appendMainUnit(arg_23_1)
-	else
-		arg_23_0:appendScoutUnit(arg_23_1)
-	end
-
-	arg_23_1:SetFleetVO(arg_23_0)
-	arg_23_1:SetMotion(arg_23_0._motionVO)
-	arg_23_1:RegisterEventListener(arg_23_0, var_0_1.UPDATE_HP, arg_23_0.onUnitUpdateHP)
-	arg_23_1:RegisterEventListener(arg_23_0, var_0_1.UPDATE_CLOAK_STATE, arg_23_0.onUnitCloakUpdate)
-
-	if arg_23_0._cardPuzzleComponent then
-		arg_23_0._cardPuzzleComponent:AppendUnit(arg_23_1)
-	end
-end
-
-function var_0_8.RemovePlayerUnit(arg_24_0, arg_24_1, arg_24_2)
-	arg_24_0._freezeList[arg_24_1] = nil
-
-	local var_24_0 = {}
-
-	for iter_24_0, iter_24_1 in ipairs(arg_24_0._unitList) do
-		if iter_24_1 ~= arg_24_1 then
-			var_24_0[#var_24_0 + 1] = iter_24_0
-		else
-			if not arg_24_2 then
-				iter_24_1:UnregisterEventListener(arg_24_0, var_0_1.UPDATE_HP)
-				iter_24_1:UnregisterEventListener(arg_24_0, var_0_1.UPDATE_CLOAK_STATE)
-				iter_24_1:DeactiveCldBox()
+			if not slot2 then
+				slot8:UnregisterEventListener(slot0, uv0.UPDATE_HP)
+				slot8:UnregisterEventListener(slot0, uv0.UPDATE_CLOAK_STATE)
+				slot8:DeactiveCldBox()
 			end
 
-			local var_24_1 = iter_24_1:GetChargeList()
-
-			for iter_24_2, iter_24_3 in ipairs(var_24_1) do
-				if iter_24_3:IsAttacking() then
-					arg_24_0._chargeWeaponVO:CancelFocus()
-					arg_24_0._chargeWeaponVO:ResetFocus()
-					arg_24_0:CancelChargeWeapon()
+			for slot13, slot14 in ipairs(slot8:GetChargeList()) do
+				if slot14:IsAttacking() then
+					slot0._chargeWeaponVO:CancelFocus()
+					slot0._chargeWeaponVO:ResetFocus()
+					slot0:CancelChargeWeapon()
 				end
 
-				arg_24_0._chargeWeaponVO:RemoveWeapon(iter_24_3)
+				slot0._chargeWeaponVO:RemoveWeapon(slot14)
 
-				if not arg_24_2 then
-					iter_24_3:Clear()
+				if not slot2 then
+					slot14:Clear()
 				end
 			end
 
-			arg_24_0._fleetAntiAir:RemoveCrewUnit(arg_24_1)
-			arg_24_0._fleetRangeAntiAir:RemoveCrewUnit(arg_24_1)
-			arg_24_0._fleetStaticSonar:RemoveCrewUnit(arg_24_1)
+			slot0._fleetAntiAir:RemoveCrewUnit(slot1)
+			slot0._fleetRangeAntiAir:RemoveCrewUnit(slot1)
+			slot0._fleetStaticSonar:RemoveCrewUnit(slot1)
 
-			local var_24_2 = iter_24_1:GetTorpedoList()
-
-			for iter_24_4, iter_24_5 in ipairs(var_24_2) do
-				arg_24_0:RemoveManunalTorpedo(iter_24_5, arg_24_2)
+			for slot14, slot15 in ipairs(slot8:GetTorpedoList()) do
+				slot0:RemoveManunalTorpedo(slot15, slot2)
 			end
 
-			local var_24_3 = iter_24_1:GetAirAssistList()
-
-			if var_24_3 then
-				for iter_24_6, iter_24_7 in ipairs(var_24_3) do
-					arg_24_0._airAssistVO:RemoveWeapon(iter_24_7)
+			if slot8:GetAirAssistList() then
+				for slot15, slot16 in ipairs(slot11) do
+					slot0._airAssistVO:RemoveWeapon(slot16)
 				end
 			end
 		end
 	end
 
-	for iter_24_8, iter_24_9 in ipairs(arg_24_0._scoutList) do
-		if iter_24_9 == arg_24_1 then
-			if #arg_24_0._scoutList == 1 then
-				arg_24_0:CancelChargeWeapon()
+	for slot7, slot8 in ipairs(slot0._scoutList) do
+		if slot8 == slot1 then
+			if #slot0._scoutList == 1 then
+				slot0:CancelChargeWeapon()
 			end
 
-			table.remove(arg_24_0._scoutList, iter_24_8)
+			table.remove(slot0._scoutList, slot7)
 
 			break
 		end
 	end
 
-	local function var_24_4(arg_25_0)
-		for iter_25_0, iter_25_1 in ipairs(arg_25_0) do
-			if iter_25_1 == arg_24_1 then
-				table.remove(arg_25_0, iter_25_0)
+	function slot4(slot0)
+		for slot4, slot5 in ipairs(slot0) do
+			if slot5 == uv0 then
+				table.remove(slot0, slot4)
 
 				break
 			end
 		end
 	end
 
-	var_24_4(arg_24_0._mainList)
-	var_24_4(arg_24_0._cloakList)
-	var_24_4(arg_24_0._subList)
-	var_24_4(arg_24_0._manualSubList)
+	slot4(slot0._mainList)
+	slot4(slot0._cloakList)
+	slot4(slot0._subList)
+	slot4(slot0._manualSubList)
 
-	if not arg_24_0._manualSubUnit then
-		arg_24_0:refreshFleetFormation(var_24_0)
+	if not slot0._manualSubUnit then
+		slot0:refreshFleetFormation(slot3)
 	end
 end
 
-function var_0_8.OverrideJoyStickAutoBot(arg_26_0, arg_26_1)
-	arg_26_0._autoBotAIID = arg_26_1
+function slot8.OverrideJoyStickAutoBot(slot0, slot1)
+	slot0._autoBotAIID = slot1
 
-	local var_26_0 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.OVERRIDE_AUTO_BOT)
-
-	arg_26_0:DispatchEvent(var_26_0)
+	slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleEvent.OVERRIDE_AUTO_BOT))
 end
 
-function var_0_8.SnapShot(arg_27_0)
-	arg_27_0._totalDMGRatio = var_0_3.GetFleetTotalHP(arg_27_0)
-	arg_27_0._currentDMGRatio = arg_27_0._totalDMGRatio
+function slot8.SnapShot(slot0)
+	slot0._totalDMGRatio = uv0.GetFleetTotalHP(slot0)
+	slot0._currentDMGRatio = slot0._totalDMGRatio
 end
 
-function var_0_8.GetIFF(arg_28_0)
-	return arg_28_0._IFF
+function slot8.GetIFF(slot0)
+	return slot0._IFF
 end
 
-function var_0_8.GetMaxCount(arg_29_0)
-	return arg_29_0._maxCount
+function slot8.GetMaxCount(slot0)
+	return slot0._maxCount
 end
 
-function var_0_8.GetFlagShip(arg_30_0)
-	return arg_30_0._flagShip
+function slot8.GetFlagShip(slot0)
+	return slot0._flagShip
 end
 
-function var_0_8.GetLeaderShip(arg_31_0)
-	return arg_31_0._scoutList[1]
+function slot8.GetLeaderShip(slot0)
+	return slot0._scoutList[1]
 end
 
-function var_0_8.GetUnitList(arg_32_0)
-	return arg_32_0._unitList
+function slot8.GetUnitList(slot0)
+	return slot0._unitList
 end
 
-function var_0_8.GetFreezeUnitList(arg_33_0)
-	return arg_33_0._freezeList
+function slot8.GetFreezeUnitList(slot0)
+	return slot0._freezeList
 end
 
-function var_0_8.GetMainList(arg_34_0)
-	return arg_34_0._mainList
+function slot8.GetMainList(slot0)
+	return slot0._mainList
 end
 
-function var_0_8.GetScoutList(arg_35_0)
-	return arg_35_0._scoutList
+function slot8.GetScoutList(slot0)
+	return slot0._scoutList
 end
 
-function var_0_8.GetFreezeShipByID(arg_36_0, arg_36_1)
-	for iter_36_0, iter_36_1 in pairs(arg_36_0._freezeList) do
-		if arg_36_1 == iter_36_0:GetAttrByName("id") then
-			return iter_36_0
+function slot8.GetFreezeShipByID(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._freezeList) do
+		if slot1 == slot5:GetAttrByName("id") then
+			return slot5
 		end
 	end
 end
 
-function var_0_8.GetShipByID(arg_37_0, arg_37_1)
-	for iter_37_0, iter_37_1 in ipairs(arg_37_0._unitList) do
-		if arg_37_1 == iter_37_1:GetAttrByName("id") then
-			return iter_37_1
+function slot8.GetShipByID(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._unitList) do
+		if slot1 == slot6:GetAttrByName("id") then
+			return slot6
 		end
 	end
 end
 
-function var_0_8.GetCloakList(arg_38_0)
-	return arg_38_0._cloakList
+function slot8.GetCloakList(slot0)
+	return slot0._cloakList
 end
 
-function var_0_8.GetSubBench(arg_39_0)
-	return arg_39_0._manualSubBench
+function slot8.GetSubBench(slot0)
+	return slot0._manualSubBench
 end
 
-function var_0_8.GetUnitBound(arg_40_0)
-	return arg_40_0._fleetUnitBound
+function slot8.GetUnitBound(slot0)
+	return slot0._fleetUnitBound
 end
 
-function var_0_8.GetMotion(arg_41_0)
-	return arg_41_0._motionVO
+function slot8.GetMotion(slot0)
+	return slot0._motionVO
 end
 
-function var_0_8.GetMotionReferenceUnit(arg_42_0)
-	return arg_42_0._motionReferenceUnit
+function slot8.GetMotionReferenceUnit(slot0)
+	return slot0._motionReferenceUnit
 end
 
-function var_0_8.GetAutoBotAIID(arg_43_0)
-	return arg_43_0._autoBotAIID
+function slot8.GetAutoBotAIID(slot0)
+	return slot0._autoBotAIID
 end
 
-function var_0_8.GetChargeWeaponVO(arg_44_0)
-	return arg_44_0._chargeWeaponVO
+function slot8.GetChargeWeaponVO(slot0)
+	return slot0._chargeWeaponVO
 end
 
-function var_0_8.GetTorpedoWeaponVO(arg_45_0)
-	return arg_45_0._torpedoWeaponVO
+function slot8.GetTorpedoWeaponVO(slot0)
+	return slot0._torpedoWeaponVO
 end
 
-function var_0_8.GetAirAssistVO(arg_46_0)
-	return arg_46_0._airAssistVO
+function slot8.GetAirAssistVO(slot0)
+	return slot0._airAssistVO
 end
 
-function var_0_8.GetSubAidVO(arg_47_0)
-	return arg_47_0._submarineVO
+function slot8.GetSubAidVO(slot0)
+	return slot0._submarineVO
 end
 
-function var_0_8.GetSubFreeDiveVO(arg_48_0)
-	return arg_48_0._submarineDiveVO
+function slot8.GetSubFreeDiveVO(slot0)
+	return slot0._submarineDiveVO
 end
 
-function var_0_8.GetSubFreeFloatVO(arg_49_0)
-	return arg_49_0._submarineFloatVO
+function slot8.GetSubFreeFloatVO(slot0)
+	return slot0._submarineFloatVO
 end
 
-function var_0_8.GetSubBoostVO(arg_50_0)
-	return arg_50_0._submarineBoostVO
+function slot8.GetSubBoostVO(slot0)
+	return slot0._submarineBoostVO
 end
 
-function var_0_8.GetSubSpecialVO(arg_51_0)
-	return arg_51_0._submarineSpecialVO
+function slot8.GetSubSpecialVO(slot0)
+	return slot0._submarineSpecialVO
 end
 
-function var_0_8.GetSubShiftVO(arg_52_0)
-	return arg_52_0._submarineShiftVO
+function slot8.GetSubShiftVO(slot0)
+	return slot0._submarineShiftVO
 end
 
-function var_0_8.GetFleetAntiAirWeapon(arg_53_0)
-	return arg_53_0._fleetAntiAir
+function slot8.GetFleetAntiAirWeapon(slot0)
+	return slot0._fleetAntiAir
 end
 
-function var_0_8.GetFleetRangeAntiAirWeapon(arg_54_0)
-	return arg_54_0._fleetRangeAntiAir
+function slot8.GetFleetRangeAntiAirWeapon(slot0)
+	return slot0._fleetRangeAntiAir
 end
 
-function var_0_8.GetFleetVelocity(arg_55_0)
-	return var_0_3.GetFleetVelocity(arg_55_0._scoutList)
+function slot8.GetFleetVelocity(slot0)
+	return uv0.GetFleetVelocity(slot0._scoutList)
 end
 
-function var_0_8.GetFleetBound(arg_56_0)
-	return arg_56_0._upperBound, arg_56_0._lowerBound, arg_56_0._leftBound, arg_56_0._rightBound
+function slot8.GetFleetBound(slot0)
+	return slot0._upperBound, slot0._lowerBound, slot0._leftBound, slot0._rightBound
 end
 
-function var_0_8.GetFleetUnitBound(arg_57_0)
-	return arg_57_0._totalUpperBound, arg_57_0._totalLowerBound
+function slot8.GetFleetUnitBound(slot0)
+	return slot0._totalUpperBound, slot0._totalLowerBound
 end
 
-function var_0_8.GetFleetExposeLine(arg_58_0)
-	return arg_58_0._exposeLineX
+function slot8.GetFleetExposeLine(slot0)
+	return slot0._exposeLineX
 end
 
-function var_0_8.GetFleetVisionLine(arg_59_0)
-	return arg_59_0._visionLineX
+function slot8.GetFleetVisionLine(slot0)
+	return slot0._visionLineX
 end
 
-function var_0_8.GetLeaderPersonality(arg_60_0)
-	return arg_60_0._motionReferenceUnit:GetAutoPilotPreference()
+function slot8.GetLeaderPersonality(slot0)
+	return slot0._motionReferenceUnit:GetAutoPilotPreference()
 end
 
-function var_0_8.GetDamageRatioResult(arg_61_0)
-	return string.format("%0.2f", arg_61_0._currentDMGRatio / arg_61_0._totalDMGRatio * 100), arg_61_0._totalDMGRatio
+function slot8.GetDamageRatioResult(slot0)
+	return string.format("%0.2f", slot0._currentDMGRatio / slot0._totalDMGRatio * 100), slot0._totalDMGRatio
 end
 
-function var_0_8.GetDamageRatio(arg_62_0)
-	return arg_62_0._currentDMGRatio / arg_62_0._totalDMGRatio
+function slot8.GetDamageRatio(slot0)
+	return slot0._currentDMGRatio / slot0._totalDMGRatio
 end
 
-function var_0_8.GetSubmarineBaseLine(arg_63_0)
-	return arg_63_0._fixedSubRefLine or arg_63_0._subAttackBaseLine, arg_63_0._subRetreatBaseLine
+function slot8.GetSubmarineBaseLine(slot0)
+	return slot0._fixedSubRefLine or slot0._subAttackBaseLine, slot0._subRetreatBaseLine
 end
 
-function var_0_8.GetFleetSonar(arg_64_0)
-	return arg_64_0._fleetStaticSonar
+function slot8.GetFleetSonar(slot0)
+	return slot0._fleetStaticSonar
 end
 
-function var_0_8.Dispose(arg_65_0)
-	var_0_0.EventDispatcher.DetachEventDispatcher(arg_65_0)
-	var_0_0.EventListener.DetachEventListener(arg_65_0)
+function slot8.Dispose(slot0)
+	uv0.EventDispatcher.DetachEventDispatcher(slot0)
+	uv0.EventListener.DetachEventListener(slot0)
 
-	arg_65_0._leaderUnit = nil
+	slot0._leaderUnit = nil
 
-	arg_65_0._fleetAntiAir:Dispose()
-	arg_65_0._fleetRangeAntiAir:Dispose()
-	arg_65_0._fleetStaticSonar:Dispose()
+	slot0._fleetAntiAir:Dispose()
+	slot0._fleetRangeAntiAir:Dispose()
+	slot0._fleetStaticSonar:Dispose()
 
-	arg_65_0._fleetStaticSonar = nil
-	arg_65_0._buffList = nil
-	arg_65_0._indieSonarList = nil
-	arg_65_0._scoutAimBias = nil
+	slot0._fleetStaticSonar = nil
+	slot0._buffList = nil
+	slot0._indieSonarList = nil
+	slot0._scoutAimBias = nil
 
-	arg_65_0._fleetAttr:Dispose()
+	slot0._fleetAttr:Dispose()
 
-	arg_65_0._fleetAttr = nil
-	arg_65_0._freezeList = nil
+	slot0._fleetAttr = nil
+	slot0._freezeList = nil
 end
 
-function var_0_8.refreshFleetFormation(arg_66_0, arg_66_1)
-	local var_66_0 = var_0_7.GetFormationTmpDataFromID(var_0_5.FORMATION_ID).pos_offset
+function slot8.refreshFleetFormation(slot0, slot1)
+	slot2 = uv0.GetFormationTmpDataFromID(uv1.FORMATION_ID).pos_offset
+	slot0._unitList = uv0.SortFleetList(slot1, slot0._unitList)
+	slot3 = uv1.BornOffset
 
-	arg_66_0._unitList = var_0_7.SortFleetList(arg_66_1, arg_66_0._unitList)
+	if not slot0._mainUnitFree then
+		for slot7, slot8 in ipairs(slot0._unitList) do
+			if not table.contains(slot0._subList, slot8) then
+				slot9 = slot2[slot7] or slot2[#slot2]
 
-	local var_66_1 = var_0_5.BornOffset
-
-	if not arg_66_0._mainUnitFree then
-		for iter_66_0, iter_66_1 in ipairs(arg_66_0._unitList) do
-			if not table.contains(arg_66_0._subList, iter_66_1) then
-				local var_66_2 = var_66_0[iter_66_0] or var_66_0[#var_66_0]
-
-				iter_66_1:UpdateFormationOffset(Vector3(var_66_2.x, var_66_2.y, var_66_2.z) + var_66_1 * (iter_66_0 - 1))
+				slot8:UpdateFormationOffset(Vector3(slot9.x, slot9.y, slot9.z) + slot3 * (slot7 - 1))
 			end
 		end
 	end
 
-	if #arg_66_0._scoutList > 0 then
-		arg_66_0._motionReferenceUnit = arg_66_0._scoutList[1]
-		arg_66_0._leaderUnit = arg_66_0._scoutList[1]
+	if #slot0._scoutList > 0 then
+		slot0._motionReferenceUnit = slot0._scoutList[1]
+		slot0._leaderUnit = slot0._scoutList[1]
 
-		arg_66_0._leaderUnit:LeaderSetting()
-		arg_66_0._fleetAntiAir:SwitchHost(arg_66_0._motionReferenceUnit)
-		arg_66_0._fleetStaticSonar:SwitchHost(arg_66_0._motionReferenceUnit)
+		slot0._leaderUnit:LeaderSetting()
+		slot0._fleetAntiAir:SwitchHost(slot0._motionReferenceUnit)
+		slot0._fleetStaticSonar:SwitchHost(slot0._motionReferenceUnit)
 
-		for iter_66_2, iter_66_3 in pairs(arg_66_0._indieSonarList) do
-			iter_66_2:SwitchHost(arg_66_0._motionReferenceUnit)
+		for slot7, slot8 in pairs(slot0._indieSonarList) do
+			slot7:SwitchHost(slot0._motionReferenceUnit)
 		end
 
-		arg_66_0._motionVO:UpdatePos(arg_66_0._motionReferenceUnit)
-	elseif arg_66_0._fleetAntiAir:GetCurrentState() ~= arg_66_0._fleetAntiAir.STATE_DISABLE then
-		local var_66_3 = arg_66_0._fleetAntiAir:GetCrewUnitList()
+		slot0._motionVO:UpdatePos(slot0._motionReferenceUnit)
+	elseif slot0._fleetAntiAir:GetCurrentState() ~= slot0._fleetAntiAir.STATE_DISABLE then
+		for slot8, slot9 in pairs(slot0._fleetAntiAir:GetCrewUnitList()) do
+			slot0._motionReferenceUnit = slot8
 
-		for iter_66_4, iter_66_5 in pairs(var_66_3) do
-			arg_66_0._motionReferenceUnit = iter_66_4
-
-			arg_66_0._fleetAntiAir:SwitchHost(iter_66_4)
+			slot0._fleetAntiAir:SwitchHost(slot8)
 
 			break
 		end
 	else
-		arg_66_0._motionReferenceUnit = arg_66_0._mainList[1]
-		arg_66_0._leaderUnit = nil
+		slot0._motionReferenceUnit = slot0._mainList[1]
+		slot0._leaderUnit = nil
 	end
 
-	if #arg_66_0:GetUnitList() == 0 then
+	if #slot0:GetUnitList() == 0 then
 		return
 	end
 
-	local var_66_4 = var_0_0.Event.New(var_0_0.Battle.BattleEvent.REFRESH_FLEET_FORMATION)
-
-	arg_66_0:DispatchEvent(var_66_4)
+	slot0:DispatchEvent(uv2.Event.New(uv2.Battle.BattleEvent.REFRESH_FLEET_FORMATION))
 end
 
-function var_0_8.init(arg_67_0)
-	arg_67_0._chargeWeaponVO = var_0_0.Battle.BattleChargeWeaponVO.New()
-	arg_67_0._torpedoWeaponVO = var_0_0.Battle.BattleTorpedoWeaponVO.New()
-	arg_67_0._airAssistVO = var_0_0.Battle.BattleAllInStrikeVO.New()
-	arg_67_0._submarineDiveVO = var_0_0.Battle.BattleSubmarineFuncVO.New(var_0_5.SR_CONFIG.DIVE_CD)
-	arg_67_0._submarineFloatVO = var_0_0.Battle.BattleSubmarineFuncVO.New(var_0_5.SR_CONFIG.FLOAT_CD)
-	arg_67_0._submarineVOList = {
-		arg_67_0._submarineDiveVO,
-		arg_67_0._submarineFloatVO
+function slot8.init(slot0)
+	slot0._chargeWeaponVO = uv0.Battle.BattleChargeWeaponVO.New()
+	slot0._torpedoWeaponVO = uv0.Battle.BattleTorpedoWeaponVO.New()
+	slot0._airAssistVO = uv0.Battle.BattleAllInStrikeVO.New()
+	slot0._submarineDiveVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.DIVE_CD)
+	slot0._submarineFloatVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.FLOAT_CD)
+	slot0._submarineVOList = {
+		slot0._submarineDiveVO,
+		slot0._submarineFloatVO
 	}
-	arg_67_0._submarineBoostVO = var_0_0.Battle.BattleSubmarineFuncVO.New(var_0_5.SR_CONFIG.BOOST_CD)
-	arg_67_0._submarineShiftVO = var_0_0.Battle.BattleSubmarineFuncVO.New(var_0_5.SR_CONFIG.SHIFT_CD)
-	arg_67_0._submarineSpecialVO = var_0_0.Battle.BattleSubmarineAidVO.New()
+	slot0._submarineBoostVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.BOOST_CD)
+	slot0._submarineShiftVO = uv0.Battle.BattleSubmarineFuncVO.New(uv1.SR_CONFIG.SHIFT_CD)
+	slot0._submarineSpecialVO = uv0.Battle.BattleSubmarineAidVO.New()
 
-	arg_67_0._submarineSpecialVO:SetCount(1)
-	arg_67_0._submarineSpecialVO:SetTotal(1)
+	slot0._submarineSpecialVO:SetCount(1)
+	slot0._submarineSpecialVO:SetTotal(1)
 
-	arg_67_0._fleetAntiAir = var_0_0.Battle.BattleFleetAntiAirUnit.New()
-	arg_67_0._fleetRangeAntiAir = var_0_0.Battle.BattleFleetRangeAntiAirUnit.New()
-	arg_67_0._motionVO = var_0_0.Battle.BattleFleetMotionVO.New()
-	arg_67_0._fleetStaticSonar = var_0_0.Battle.BattleFleetStaticSonar.New(arg_67_0)
-	arg_67_0._indieSonarList = {}
-	arg_67_0._scoutList = {}
-	arg_67_0._mainList = {}
-	arg_67_0._subList = {}
-	arg_67_0._supportList = {}
-	arg_67_0._cloakList = {}
-	arg_67_0._manualSubList = {}
-	arg_67_0._manualSubBench = {}
-	arg_67_0._unitList = {}
-	arg_67_0._maxCount = 0
-	arg_67_0._freezeList = {}
-	arg_67_0._blockCast = 0
-	arg_67_0._buffList = {}
+	slot0._fleetAntiAir = uv0.Battle.BattleFleetAntiAirUnit.New()
+	slot0._fleetRangeAntiAir = uv0.Battle.BattleFleetRangeAntiAirUnit.New()
+	slot0._motionVO = uv0.Battle.BattleFleetMotionVO.New()
+	slot0._fleetStaticSonar = uv0.Battle.BattleFleetStaticSonar.New(slot0)
+	slot0._indieSonarList = {}
+	slot0._scoutList = {}
+	slot0._mainList = {}
+	slot0._subList = {}
+	slot0._supportList = {}
+	slot0._cloakList = {}
+	slot0._manualSubList = {}
+	slot0._manualSubBench = {}
+	slot0._unitList = {}
+	slot0._maxCount = 0
+	slot0._freezeList = {}
+	slot0._blockCast = 0
+	slot0._buffList = {}
 
-	arg_67_0:AttachFleetAttr()
-	arg_67_0:SetMotionSource()
+	slot0:AttachFleetAttr()
+	slot0:SetMotionSource()
 end
 
-function var_0_8.appendScoutUnit(arg_68_0, arg_68_1)
-	arg_68_0._scoutList[#arg_68_0._scoutList + 1] = arg_68_1
+function slot8.appendScoutUnit(slot0, slot1)
+	slot0._scoutList[#slot0._scoutList + 1] = slot1
 
-	local var_68_0 = arg_68_1:GetTorpedoList()
-
-	for iter_68_0, iter_68_1 in ipairs(var_68_0) do
-		arg_68_0._torpedoWeaponVO:AppendWeapon(iter_68_1)
+	for slot6, slot7 in ipairs(slot1:GetTorpedoList()) do
+		slot0._torpedoWeaponVO:AppendWeapon(slot7)
 	end
 
-	if #arg_68_1:GetHiveList() > 0 then
-		local var_68_1 = var_0_7.CreateAllInStrike(arg_68_1)
-
-		for iter_68_2, iter_68_3 in ipairs(var_68_1) do
-			arg_68_0._airAssistVO:AppendWeapon(iter_68_3)
+	if #slot1:GetHiveList() > 0 then
+		for slot8, slot9 in ipairs(uv0.CreateAllInStrike(slot1)) do
+			slot0._airAssistVO:AppendWeapon(slot9)
 		end
 
-		arg_68_1:SetAirAssistList(var_68_1)
+		slot1:SetAirAssistList(slot4)
 	end
 
-	arg_68_0._fleetAntiAir:AppendCrewUnit(arg_68_1)
-	arg_68_0._fleetStaticSonar:AppendCrewUnit(arg_68_1)
+	slot0._fleetAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetStaticSonar:AppendCrewUnit(slot1)
 
-	local var_68_2 = 1
-	local var_68_3 = #arg_68_0._unitList
-	local var_68_4 = {}
+	slot4 = 1
+	slot6 = {}
 
-	while var_68_2 < var_68_3 do
-		table.insert(var_68_4, var_68_2)
+	while slot4 < #slot0._unitList do
+		table.insert(slot6, slot4)
 
-		var_68_2 = var_68_2 + 1
+		slot4 = slot4 + 1
 	end
 
-	table.insert(var_68_4, #arg_68_0._scoutList, var_68_2)
-	arg_68_0:refreshFleetFormation(var_68_4)
+	table.insert(slot6, #slot0._scoutList, slot4)
+	slot0:refreshFleetFormation(slot6)
 end
 
-function var_0_8.appendMainUnit(arg_69_0, arg_69_1)
-	if #arg_69_0._mainList == 0 then
-		arg_69_0._flagShip = arg_69_1
+function slot8.appendMainUnit(slot0, slot1)
+	if #slot0._mainList == 0 then
+		slot0._flagShip = slot1
 	end
 
-	arg_69_0._mainList[#arg_69_0._mainList + 1] = arg_69_1
+	slot0._mainList[#slot0._mainList + 1] = slot1
 
-	arg_69_1:SetMainUnitIndex(#arg_69_0._mainList)
+	slot1:SetMainUnitIndex(#slot0._mainList)
 
-	if ShipType.CloakShipType(arg_69_1:GetTemplate().type) then
-		arg_69_0:AttachCloak(arg_69_1)
+	if ShipType.CloakShipType(slot1:GetTemplate().type) then
+		slot0:AttachCloak(slot1)
 	end
 
-	local var_69_0 = arg_69_1:GetChargeList()
-
-	for iter_69_0, iter_69_1 in ipairs(var_69_0) do
-		arg_69_0._chargeWeaponVO:AppendWeapon(iter_69_1)
+	for slot6, slot7 in ipairs(slot1:GetChargeList()) do
+		slot0._chargeWeaponVO:AppendWeapon(slot7)
 	end
 
-	local var_69_1 = arg_69_1:GetTorpedoList()
-
-	for iter_69_2, iter_69_3 in ipairs(var_69_1) do
-		arg_69_0._torpedoWeaponVO:AppendWeapon(iter_69_3)
+	for slot7, slot8 in ipairs(slot1:GetTorpedoList()) do
+		slot0._torpedoWeaponVO:AppendWeapon(slot8)
 	end
 
-	if #arg_69_1:GetHiveList() > 0 then
-		local var_69_2 = var_0_7.CreateAllInStrike(arg_69_1)
-
-		for iter_69_4, iter_69_5 in ipairs(var_69_2) do
-			arg_69_0._airAssistVO:AppendWeapon(iter_69_5)
+	if #slot1:GetHiveList() > 0 then
+		for slot9, slot10 in ipairs(uv0.CreateAllInStrike(slot1)) do
+			slot0._airAssistVO:AppendWeapon(slot10)
 		end
 
-		arg_69_1:SetAirAssistList(var_69_2)
+		slot1:SetAirAssistList(slot5)
 	end
 
-	arg_69_0._fleetAntiAir:AppendCrewUnit(arg_69_1)
-	arg_69_0._fleetRangeAntiAir:AppendCrewUnit(arg_69_1)
-	arg_69_0._fleetStaticSonar:AppendCrewUnit(arg_69_1)
+	slot0._fleetAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetRangeAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetStaticSonar:AppendCrewUnit(slot1)
 
-	local var_69_3 = {}
+	slot5 = {}
 
-	for iter_69_6, iter_69_7 in ipairs(arg_69_0._unitList) do
-		table.insert(var_69_3, iter_69_6)
+	for slot9, slot10 in ipairs(slot0._unitList) do
+		table.insert(slot5, slot9)
 	end
 
-	arg_69_0:refreshFleetFormation(var_69_3)
+	slot0:refreshFleetFormation(slot5)
 end
 
-function var_0_8.appendSubUnit(arg_70_0, arg_70_1)
-	arg_70_0._subList[#arg_70_0._subList + 1] = arg_70_1
+function slot8.appendSubUnit(slot0, slot1)
+	slot0._subList[#slot0._subList + 1] = slot1
 
-	arg_70_1:SetMainUnitIndex(#arg_70_0._subList)
+	slot1:SetMainUnitIndex(#slot0._subList)
 end
 
-function var_0_8.FleetWarcry(arg_71_0)
-	local var_71_0
-	local var_71_1 = math.random(0, 1)
-	local var_71_2 = arg_71_0:GetScoutList()[1]
-	local var_71_3 = arg_71_0:GetMainList()[1]
+function slot8.FleetWarcry(slot0)
+	slot1 = nil
 
-	if var_71_3 == nil or var_71_1 == 0 then
-		var_71_0 = var_71_2
-	elseif var_71_1 == 1 then
-		var_71_0 = var_71_3
+	if slot0:GetMainList()[1] == nil or math.random(0, 1) == 0 then
+		slot1 = slot0:GetScoutList()[1]
+	elseif slot2 == 1 then
+		slot1 = slot4
 	end
 
-	local var_71_4 = "battle"
-	local var_71_5 = var_71_0:GetIntimacy()
-	local var_71_6 = var_0_0.Battle.BattleDataFunction.GetWords(var_71_0:GetSkinID(), var_71_4, var_71_5)
+	slot5 = "battle"
 
-	var_71_0:DispatchVoice(var_71_4)
-	var_71_0:DispatchChat(var_71_6, 2.5, var_71_4)
+	slot1:DispatchVoice(slot5)
+	slot1:DispatchChat(uv0.Battle.BattleDataFunction.GetWords(slot1:GetSkinID(), slot5, slot1:GetIntimacy()), 2.5, slot5)
 end
 
-function var_0_8.FleetUnitSpwanFinish(arg_72_0)
-	local var_72_0 = 0
-
-	for iter_72_0, iter_72_1 in ipairs(arg_72_0._unitList) do
-		var_72_0 = var_72_0 + iter_72_1:GetGearScore()
+function slot8.FleetUnitSpwanFinish(slot0)
+	for slot5, slot6 in ipairs(slot0._unitList) do
+		slot1 = 0 + slot6:GetGearScore()
 	end
 
-	for iter_72_2, iter_72_3 in ipairs(arg_72_0._unitList) do
-		var_0_6.SetCurrent(iter_72_3, "fleetGS", var_72_0)
+	for slot5, slot6 in ipairs(slot0._unitList) do
+		uv0.SetCurrent(slot6, "fleetGS", slot1)
 	end
 end
 
-function var_0_8.SubWarcry(arg_73_0)
-	local var_73_0 = arg_73_0:GetSubList()[1]
-	local var_73_1 = "battle"
-	local var_73_2 = var_73_0:GetIntimacy()
-	local var_73_3 = var_0_0.Battle.BattleDataFunction.GetWords(var_73_0:GetSkinID(), var_73_1, var_73_2)
+function slot8.SubWarcry(slot0)
+	slot1 = slot0:GetSubList()[1]
+	slot2 = "battle"
 
-	var_73_0:DispatchVoice(var_73_1)
-	var_73_0:DispatchChat(var_73_3, 2.5, var_73_1)
+	slot1:DispatchVoice(slot2)
+	slot1:DispatchChat(uv0.Battle.BattleDataFunction.GetWords(slot1:GetSkinID(), slot2, slot1:GetIntimacy()), 2.5, slot2)
 end
 
-function var_0_8.SetWeaponBlock(arg_74_0, arg_74_1)
-	arg_74_0._blockCast = arg_74_0._blockCast + arg_74_1
+function slot8.SetWeaponBlock(slot0, slot1)
+	slot0._blockCast = slot0._blockCast + slot1
 end
 
-function var_0_8.GetWeaponBlock(arg_75_0)
-	return arg_75_0._blockCast > 0
+function slot8.GetWeaponBlock(slot0)
+	return slot0._blockCast > 0
 end
 
-function var_0_8.CastChargeWeapon(arg_76_0)
-	if arg_76_0:GetWeaponBlock() then
+function slot8.CastChargeWeapon(slot0)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	local var_76_0 = arg_76_0._chargeWeaponVO:GetCurrentWeapon()
-
-	if var_76_0 ~= nil and var_76_0:GetCurrentState() == var_76_0.STATE_READY then
-		var_76_0:Charge()
-
-		local var_76_1 = {}
-		local var_76_2 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.POINT_HIT_CHARGE, var_76_1)
-
-		arg_76_0:DispatchEvent(var_76_2)
+	if slot0._chargeWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_READY then
+		slot1:Charge()
+		slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.POINT_HIT_CHARGE, {}))
 	end
 end
 
-function var_0_8.CancelChargeWeapon(arg_77_0)
-	local var_77_0 = arg_77_0._chargeWeaponVO:GetCurrentWeapon()
-
-	if var_77_0 ~= nil and var_77_0:GetCurrentState() == var_77_0.STATE_PRECAST then
-		local var_77_1 = {}
-		local var_77_2 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.POINT_HIT_CANCEL, var_77_1)
-
-		arg_77_0:DispatchEvent(var_77_2)
-		var_77_0:CancelCharge()
+function slot8.CancelChargeWeapon(slot0)
+	if slot0._chargeWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_PRECAST then
+		slot0:DispatchEvent(uv0.Event.New(uv0.Battle.BattleUnitEvent.POINT_HIT_CANCEL, {}))
+		slot1:CancelCharge()
 	end
 end
 
-function var_0_8.UnleashChrageWeapon(arg_78_0)
-	if arg_78_0:GetWeaponBlock() then
-		arg_78_0:CancelChargeWeapon()
+function slot8.UnleashChrageWeapon(slot0)
+	if slot0:GetWeaponBlock() then
+		slot0:CancelChargeWeapon()
 
 		return
 	end
 
-	local var_78_0 = arg_78_0._chargeWeaponVO:GetCurrentWeapon()
-
-	if var_78_0 ~= nil and var_78_0:GetCurrentState() == var_78_0.STATE_PRECAST then
-		if var_78_0:IsStrikeMode() then
-			local var_78_1 = arg_78_0._motionVO:GetPos().x + var_0_5.ChargeWeaponConfig.SIGHT_C
-			local var_78_2 = math.min(var_78_1, arg_78_0._totalRightBound)
-
-			arg_78_0:fireChargeWeapon(var_78_0, true, Vector3.New(var_78_2, 0, arg_78_0._motionVO:GetPos().z))
+	if slot0._chargeWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_PRECAST then
+		if slot1:IsStrikeMode() then
+			slot0:fireChargeWeapon(slot1, true, Vector3.New(math.min(slot0._motionVO:GetPos().x + uv0.ChargeWeaponConfig.SIGHT_C, slot0._totalRightBound), 0, slot0._motionVO:GetPos().z))
 		else
-			var_78_0:CancelCharge()
+			slot1:CancelCharge()
 		end
 
-		local var_78_3 = {}
-		local var_78_4 = var_0_0.Event.New(var_0_0.Battle.BattleUnitEvent.POINT_HIT_CANCEL, var_78_3)
-
-		arg_78_0:DispatchEvent(var_78_4)
+		slot0:DispatchEvent(uv1.Event.New(uv1.Battle.BattleUnitEvent.POINT_HIT_CANCEL, {}))
 	end
 end
 
-function var_0_8.QuickTagChrageWeapon(arg_79_0, arg_79_1)
-	if arg_79_0:GetWeaponBlock() then
+function slot8.QuickTagChrageWeapon(slot0, slot1)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	local var_79_0 = arg_79_0._chargeWeaponVO:GetCurrentWeapon()
+	if slot0._chargeWeaponVO:GetCurrentWeapon() ~= nil and slot2:GetCurrentState() == slot2.STATE_READY then
+		slot2:QuickTag()
 
-	if var_79_0 ~= nil and var_79_0:GetCurrentState() == var_79_0.STATE_READY then
-		var_79_0:QuickTag()
-
-		if #var_79_0:GetLockList() <= 0 then
-			var_79_0:CancelQuickTag()
+		if #slot2:GetLockList() <= 0 then
+			slot2:CancelQuickTag()
 		else
-			arg_79_0:fireChargeWeapon(var_79_0, arg_79_1)
+			slot0:fireChargeWeapon(slot2, slot1)
 		end
 	end
 end
 
-function var_0_8.fireChargeWeapon(arg_80_0, arg_80_1, arg_80_2, arg_80_3)
-	local var_80_0 = arg_80_1:GetHost()
+function slot8.fireChargeWeapon(slot0, slot1, slot2, slot3)
+	slot4 = slot1:GetHost()
 
-	local function var_80_1()
-		local function var_81_0()
-			arg_80_1:Fire(arg_80_3)
-		end
-
-		arg_80_1:DispatchBlink(var_81_0)
+	function slot5()
+		uv0:DispatchBlink(function ()
+			uv0:Fire(uv1)
+		end)
 	end
 
-	if arg_80_2 then
-		if arg_80_0._IFF == var_0_5.FRIENDLY_CODE then
-			arg_80_0._chargeWeaponVO:PlayCutIn(var_80_0, 1 / var_0_5.FOCUS_MAP_RATE)
+	if slot2 then
+		if slot0._IFF == uv0.FRIENDLY_CODE then
+			slot0._chargeWeaponVO:PlayCutIn(slot4, 1 / uv0.FOCUS_MAP_RATE)
 		end
 
-		arg_80_0._chargeWeaponVO:PlayFocus(var_80_0, var_80_1)
+		slot0._chargeWeaponVO:PlayFocus(slot4, slot5)
 	else
-		if arg_80_0._IFF == var_0_5.FRIENDLY_CODE then
-			arg_80_0._chargeWeaponVO:PlayCutIn(var_80_0, 1)
+		if slot0._IFF == uv0.FRIENDLY_CODE then
+			slot0._chargeWeaponVO:PlayCutIn(slot4, 1)
 		end
 
-		var_80_1()
+		slot5()
 	end
 end
 
-function var_0_8.UnleashAllInStrike(arg_83_0)
-	if arg_83_0:GetWeaponBlock() then
+function slot8.UnleashAllInStrike(slot0)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	local var_83_0 = arg_83_0._airAssistVO:GetCurrentWeapon()
+	if slot0._airAssistVO:GetCurrentWeapon() and slot1:GetCurrentState() == slot1.STATE_READY then
+		slot2 = slot1:GetHost()
 
-	if var_83_0 and var_83_0:GetCurrentState() == var_83_0.STATE_READY then
-		local var_83_1 = var_83_0:GetHost()
-
-		if arg_83_0._IFF == var_0_5.FRIENDLY_CODE and var_83_1:IsMainFleetUnit() then
-			arg_83_0._airAssistVO:PlayCutIn(var_83_1, 1)
+		if slot0._IFF == uv0.FRIENDLY_CODE and slot2:IsMainFleetUnit() then
+			slot0._airAssistVO:PlayCutIn(slot2, 1)
 		end
 
-		var_83_0:CLSBullet()
-		var_83_0:DispatchBlink()
-		var_83_0:Fire()
+		slot1:CLSBullet()
+		slot1:DispatchBlink()
+		slot1:Fire()
 	end
 end
 
-function var_0_8.CastTorpedo(arg_84_0)
-	if arg_84_0:GetWeaponBlock() then
+function slot8.CastTorpedo(slot0)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	local var_84_0 = arg_84_0._torpedoWeaponVO:GetCurrentWeapon()
-
-	if var_84_0 ~= nil and var_84_0:GetCurrentState() == var_84_0.STATE_READY then
-		var_84_0:Prepar()
-		arg_84_0:FleetBuffTrigger(var_0_4.BuffEffectType.ON_TORPEDO_BUTTON_PUSH)
+	if slot0._torpedoWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_READY then
+		slot1:Prepar()
+		slot0:FleetBuffTrigger(uv0.BuffEffectType.ON_TORPEDO_BUTTON_PUSH)
 	end
 end
 
-function var_0_8.CancelTorpedo(arg_85_0)
-	local var_85_0 = arg_85_0._torpedoWeaponVO:GetCurrentWeapon()
-
-	if var_85_0 ~= nil and var_85_0:GetCurrentState() == var_85_0.STATE_PRECAST then
-		var_85_0:Cancel()
+function slot8.CancelTorpedo(slot0)
+	if slot0._torpedoWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_PRECAST then
+		slot1:Cancel()
 	end
 end
 
-function var_0_8.UnleashTorpedo(arg_86_0)
-	if arg_86_0:GetWeaponBlock() then
-		arg_86_0:CancelTorpedo()
+function slot8.UnleashTorpedo(slot0)
+	if slot0:GetWeaponBlock() then
+		slot0:CancelTorpedo()
 
 		return
 	end
 
-	local var_86_0 = arg_86_0._torpedoWeaponVO:GetCurrentWeapon()
-
-	if var_86_0 ~= nil and var_86_0:GetCurrentState() == var_86_0.STATE_PRECAST then
-		var_86_0:Fire()
+	if slot0._torpedoWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_PRECAST then
+		slot1:Fire()
 	end
 end
 
-function var_0_8.QuickCastTorpedo(arg_87_0)
-	if arg_87_0:GetWeaponBlock() then
+function slot8.QuickCastTorpedo(slot0)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	local var_87_0 = arg_87_0._torpedoWeaponVO:GetCurrentWeapon()
-
-	if var_87_0 ~= nil and var_87_0:GetCurrentState() == var_87_0.STATE_READY then
-		var_87_0:Fire(true)
+	if slot0._torpedoWeaponVO:GetCurrentWeapon() ~= nil and slot1:GetCurrentState() == slot1.STATE_READY then
+		slot1:Fire(true)
 	end
 end
 
-function var_0_8.RemoveManunalTorpedo(arg_88_0, arg_88_1, arg_88_2)
-	if arg_88_1:IsAttacking() then
-		arg_88_0:CancelTorpedo()
+function slot8.RemoveManunalTorpedo(slot0, slot1, slot2)
+	if slot1:IsAttacking() then
+		slot0:CancelTorpedo()
 	end
 
-	arg_88_0._torpedoWeaponVO:RemoveWeapon(arg_88_1)
+	slot0._torpedoWeaponVO:RemoveWeapon(slot1)
 
-	if not arg_88_2 then
-		arg_88_1:Clear()
+	if not slot2 then
+		slot1:Clear()
 	end
 end
 
-function var_0_8.CoupleEncourage(arg_89_0)
-	local var_89_0 = {}
-	local var_89_1 = {}
+function slot8.CoupleEncourage(slot0)
+	slot2 = {}
 
-	for iter_89_0, iter_89_1 in ipairs(arg_89_0._unitList) do
-		local var_89_2 = iter_89_1:GetIntimacy()
-		local var_89_3 = var_0_7.GetWords(iter_89_1:GetSkinID(), "couple_encourage", var_89_2)
-
-		if #var_89_3 > 0 then
-			var_89_0[iter_89_1] = var_89_3
+	for slot6, slot7 in ipairs(slot0._unitList) do
+		if #uv0.GetWords(slot7:GetSkinID(), "couple_encourage", slot7:GetIntimacy()) > 0 then
+			-- Nothing
 		end
 	end
 
-	local var_89_4 = var_0_4.CPChatType
-	local var_89_5 = var_0_4.CPChatTargetFunc
+	slot3 = uv1.CPChatType
+	slot4 = uv1.CPChatTargetFunc
 
-	local function var_89_6(arg_90_0, arg_90_1)
-		local var_90_0 = {}
-
-		if arg_90_0 == var_89_4.GROUP_ID then
-			var_90_0.groupIDList = arg_90_1
-		elseif arg_90_0 == var_89_4.SHIP_TYPE then
-			var_90_0.ship_type_list = arg_90_1
-		elseif arg_90_0 == var_89_4.RARE then
-			var_90_0.rarity = arg_90_1[1]
-		elseif arg_90_0 == var_89_4.NATIONALITY then
-			var_90_0.nationality = arg_90_1[1]
-		elseif arg_90_0 == var_89_4.ILLUSTRATOR then
-			var_90_0.illustrator = arg_90_1[1]
-		elseif arg_90_0 == var_89_4.TEAM then
-			var_90_0.teamIndex = arg_90_1[1]
+	function slot5(slot0, slot1)
+		if slot0 == uv0.GROUP_ID then
+			-- Nothing
+		elseif slot0 == uv0.SHIP_TYPE then
+			slot2.ship_type_list = slot1
+		elseif slot0 == uv0.RARE then
+			slot2.rarity = slot1[1]
+		elseif slot0 == uv0.NATIONALITY then
+			slot2.nationality = slot1[1]
+		elseif slot0 == uv0.ILLUSTRATOR then
+			slot2.illustrator = slot1[1]
+		elseif slot0 == uv0.TEAM then
+			slot2.teamIndex = slot1[1]
 		end
 
-		return var_90_0
+		return {
+			groupIDList = slot1
+		}
 	end
 
-	for iter_89_2, iter_89_3 in pairs(var_89_0) do
-		for iter_89_4, iter_89_5 in ipairs(iter_89_3) do
-			local var_89_7 = iter_89_5[1]
-			local var_89_8 = iter_89_5[2]
-			local var_89_9 = iter_89_5[4] or var_89_4.GROUP_ID
-			local var_89_10 = var_0_0.Battle.BattleTargetChoise.TargetAllHelp(iter_89_2)
+	for slot9, slot10 in pairs({
+		[slot7] = slot9
+	}) do
+		for slot14, slot15 in ipairs(slot10) do
+			slot16 = slot15[1]
+			slot17 = slot15[2]
+			slot19 = uv2.Battle.BattleTargetChoise.TargetAllHelp(slot9)
 
-			if type(var_89_9) == "table" then
-				for iter_89_6, iter_89_7 in ipairs(var_89_9) do
-					local var_89_11 = var_89_6(iter_89_7, var_89_7[iter_89_6])
-
-					var_89_10 = var_0_0.Battle.BattleTargetChoise[var_89_5[iter_89_7]](iter_89_2, var_89_11, var_89_10)
+			if type(slot15[4] or slot3.GROUP_ID) == "table" then
+				for slot23, slot24 in ipairs(slot18) do
+					slot19 = uv2.Battle.BattleTargetChoise[slot4[slot24]](slot9, slot5(slot24, slot16[slot23]), slot19)
 				end
-			elseif type(var_89_9) == "number" then
-				local var_89_12 = var_89_6(var_89_9, var_89_7)
-
-				var_89_10 = var_0_0.Battle.BattleTargetChoise[var_89_5[var_89_9]](iter_89_2, var_89_12, var_89_10)
+			elseif type(slot18) == "number" then
+				slot19 = uv2.Battle.BattleTargetChoise[slot4[slot18]](slot9, slot5(slot18, slot16), slot19)
 			end
 
-			if var_89_8 <= #var_89_10 then
-				local var_89_13 = {
-					cp = iter_89_2,
-					content = iter_89_5[3],
-					linkIndex = iter_89_4
+			if slot17 <= #slot19 then
+				slot2[#slot2 + 1] = {
+					cp = slot9,
+					content = slot15[3],
+					linkIndex = slot14
 				}
-
-				var_89_1[#var_89_1 + 1] = var_89_13
 			end
 		end
 	end
 
-	if #var_89_1 > 0 then
-		local var_89_14 = var_89_1[math.random(#var_89_1)]
-		local var_89_15 = "link" .. var_89_14.linkIndex
+	if #slot2 > 0 then
+		slot7 = slot2[math.random(#slot2)]
+		slot8 = "link" .. slot7.linkIndex
 
-		var_89_14.cp:DispatchVoice(var_89_15)
-		var_89_14.cp:DispatchChat(var_89_14.content, 3, var_89_15)
+		slot7.cp:DispatchVoice(slot8)
+		slot7.cp:DispatchChat(slot7.content, 3, slot8)
 	end
 end
 
-function var_0_8.onUnitUpdateHP(arg_91_0, arg_91_1)
-	local var_91_0 = arg_91_1.Dispatcher
-	local var_91_1 = arg_91_1.Data.dHP
+function slot8.onUnitUpdateHP(slot0, slot1)
+	slot2 = slot1.Dispatcher
+	slot3 = slot1.Data.dHP
 
-	for iter_91_0, iter_91_1 in ipairs(arg_91_0._unitList) do
-		iter_91_1:TriggerBuff(var_0_4.BuffEffectType.ON_FRIENDLY_HP_RATIO_UPDATE, {
-			unit = var_91_0,
-			dHP = var_91_1
+	for slot7, slot8 in ipairs(slot0._unitList) do
+		slot8:TriggerBuff(uv0.BuffEffectType.ON_FRIENDLY_HP_RATIO_UPDATE, {
+			unit = slot2,
+			dHP = slot3
 		})
 
-		if iter_91_1 ~= var_91_0 then
-			iter_91_1:TriggerBuff(var_0_4.BuffEffectType.ON_TEAMMATE_HP_RATIO_UPDATE, {
-				unit = var_91_0,
-				dHP = var_91_1
+		if slot8 ~= slot2 then
+			slot8:TriggerBuff(uv0.BuffEffectType.ON_TEAMMATE_HP_RATIO_UPDATE, {
+				unit = slot2,
+				dHP = slot3
 			})
 		end
 	end
 end
 
-function var_0_8.onUnitCloakUpdate(arg_92_0, arg_92_1)
-	local var_92_0 = arg_92_1.Dispatcher
-	local var_92_1 = var_0_6.GetCurrent(var_92_0, "isCloak")
+function slot8.onUnitCloakUpdate(slot0, slot1)
+	slot3 = uv0.GetCurrent(slot1.Dispatcher, "isCloak")
 
-	for iter_92_0, iter_92_1 in ipairs(arg_92_0._unitList) do
-		iter_92_1:TriggerBuff(var_0_4.BuffEffectType.ON_CLOAK_UPDATE, {
-			cloakState = var_92_1
+	for slot7, slot8 in ipairs(slot0._unitList) do
+		slot8:TriggerBuff(uv1.BuffEffectType.ON_CLOAK_UPDATE, {
+			cloakState = slot3
 		})
 
-		if iter_92_1 ~= var_92_0 then
-			iter_92_1:TriggerBuff(var_0_4.BuffEffectType.ON_TEAMMATE_CLOAK_UPDATE, {
-				cloakState = var_92_1
+		if slot8 ~= slot2 then
+			slot8:TriggerBuff(uv1.BuffEffectType.ON_TEAMMATE_CLOAK_UPDATE, {
+				cloakState = slot3
 			})
 		end
 	end
 end
 
-function var_0_8.SetSubUnitData(arg_93_0, arg_93_1)
-	arg_93_0._subUntiDataList = arg_93_1
+function slot8.SetSubUnitData(slot0, slot1)
+	slot0._subUntiDataList = slot1
 end
 
-function var_0_8.GetSubUnitData(arg_94_0)
-	return arg_94_0._subUntiDataList
+function slot8.GetSubUnitData(slot0)
+	return slot0._subUntiDataList
 end
 
-function var_0_8.AddSubMarine(arg_95_0, arg_95_1)
-	arg_95_1:InitOxygen()
+function slot8.AddSubMarine(slot0, slot1)
+	slot1:InitOxygen()
 
-	local var_95_0 = arg_95_1:GetTemplate()
-	local var_95_1 = var_0_0.Battle.BattleUnitPhaseSwitcher.New(arg_95_1)
+	slot2 = slot1:GetTemplate()
 
-	local function var_95_2()
-		return arg_95_1:GetRaidDuration()
-	end
+	uv0.Battle.BattleUnitPhaseSwitcher.New(slot1):SetTemplateData(uv1.GeneratePlayerSubmarinPhase(slot0._fixedSubRefLine or slot0._subAttackBaseLine, slot0._subRetreatBaseLine, slot1:GetAttrByName("raidDist"), function ()
+		return uv0:GetRaidDuration()
+	end, slot1:GetAttrByName("oxyAtkDuration")))
 
-	local var_95_3 = arg_95_0._fixedSubRefLine or arg_95_0._subAttackBaseLine
+	slot0._unitList[#slot0._unitList + 1] = slot1
+	slot0._subList[#slot0._subList + 1] = slot1
 
-	var_95_1:SetTemplateData(var_0_7.GeneratePlayerSubmarinPhase(var_95_3, arg_95_0._subRetreatBaseLine, arg_95_1:GetAttrByName("raidDist"), var_95_2, arg_95_1:GetAttrByName("oxyAtkDuration")))
-
-	arg_95_0._unitList[#arg_95_0._unitList + 1] = arg_95_1
-	arg_95_0._subList[#arg_95_0._subList + 1] = arg_95_1
-
-	arg_95_1:SetFleetVO(arg_95_0)
-	arg_95_1:RegisterEventListener(arg_95_0, var_0_1.UPDATE_HP, arg_95_0.onUnitUpdateHP)
-	arg_95_1:RegisterEventListener(arg_95_0, var_0_1.UPDATE_CLOAK_STATE, arg_95_0.onUnitCloakUpdate)
+	slot1:SetFleetVO(slot0)
+	slot1:RegisterEventListener(slot0, uv2.UPDATE_HP, slot0.onUnitUpdateHP)
+	slot1:RegisterEventListener(slot0, uv2.UPDATE_CLOAK_STATE, slot0.onUnitCloakUpdate)
 end
 
-function var_0_8.AddManualSubmarine(arg_97_0, arg_97_1)
-	arg_97_0._unitList[#arg_97_0._unitList + 1] = arg_97_1
-	arg_97_0._manualSubList[#arg_97_0._manualSubList + 1] = arg_97_1
-	arg_97_0._manualSubBench[#arg_97_0._manualSubBench + 1] = arg_97_1
-	arg_97_0._maxCount = arg_97_0._maxCount + 1
+function slot8.AddManualSubmarine(slot0, slot1)
+	slot0._unitList[#slot0._unitList + 1] = slot1
+	slot0._manualSubList[#slot0._manualSubList + 1] = slot1
+	slot0._manualSubBench[#slot0._manualSubBench + 1] = slot1
+	slot0._maxCount = slot0._maxCount + 1
 
-	arg_97_1:InitOxygen()
-	arg_97_1:SetFleetVO(arg_97_0)
-	arg_97_1:SetMotion(arg_97_0._motionVO)
-	arg_97_1:RegisterEventListener(arg_97_0, var_0_1.UPDATE_HP, arg_97_0.onUnitUpdateHP)
-	arg_97_1:RegisterEventListener(arg_97_0, var_0_1.UPDATE_CLOAK_STATE, arg_97_0.onUnitCloakUpdate)
+	slot1:InitOxygen()
+	slot1:SetFleetVO(slot0)
+	slot1:SetMotion(slot0._motionVO)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_HP, slot0.onUnitUpdateHP)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_CLOAK_STATE, slot0.onUnitCloakUpdate)
 end
 
-function var_0_8.GetSubList(arg_98_0)
-	return arg_98_0._subList
+function slot8.GetSubList(slot0)
+	return slot0._subList
 end
 
-function var_0_8.ShiftManualSub(arg_99_0)
-	local var_99_0
+function slot8.ShiftManualSub(slot0)
+	slot1 = nil
 
-	if arg_99_0._manualSubUnit then
-		local var_99_1 = arg_99_0._manualSubUnit:GetTorpedoList()
-
-		for iter_99_0, iter_99_1 in ipairs(var_99_1) do
-			if iter_99_1:IsAttacking() then
-				arg_99_0:CancelTorpedo()
+	if slot0._manualSubUnit then
+		for slot6, slot7 in ipairs(slot0._manualSubUnit:GetTorpedoList()) do
+			if slot7:IsAttacking() then
+				slot0:CancelTorpedo()
 			end
 
-			arg_99_0._torpedoWeaponVO:RemoveWeapon(iter_99_1)
+			slot0._torpedoWeaponVO:RemoveWeapon(slot7)
 		end
 
-		if arg_99_0._manualSubUnit:IsAlive() then
-			table.insert(arg_99_0._manualSubBench, arg_99_0._manualSubUnit)
+		if slot0._manualSubUnit:IsAlive() then
+			table.insert(slot0._manualSubBench, slot0._manualSubUnit)
 		end
 
-		var_99_0 = arg_99_0._motionVO:GetPos():Clone()
+		slot1 = slot0._motionVO:GetPos():Clone()
 	else
-		var_99_0 = arg_99_0._manualSubList[1]:GetPosition():Clone()
+		slot1 = slot0._manualSubList[1]:GetPosition():Clone()
 	end
 
-	arg_99_0._manualSubUnit = table.remove(arg_99_0._manualSubBench, 1)
-	arg_99_0._scoutList[1] = arg_99_0._manualSubUnit
+	slot0._manualSubUnit = table.remove(slot0._manualSubBench, 1)
+	slot0._scoutList[1] = slot0._manualSubUnit
+	slot2 = {}
 
-	local var_99_2 = {}
-
-	for iter_99_2, iter_99_3 in ipairs(arg_99_0._manualSubBench) do
-		for iter_99_4, iter_99_5 in ipairs(arg_99_0._unitList) do
-			if iter_99_5 == iter_99_3 then
-				table.insert(var_99_2, iter_99_4)
+	for slot6, slot7 in ipairs(slot0._manualSubBench) do
+		for slot11, slot12 in ipairs(slot0._unitList) do
+			if slot12 == slot7 then
+				table.insert(slot2, slot11)
 
 				break
 			end
 		end
 	end
 
-	for iter_99_6, iter_99_7 in ipairs(arg_99_0._unitList) do
-		if iter_99_7 == arg_99_0._manualSubUnit then
-			table.insert(var_99_2, 1, iter_99_6)
+	for slot6, slot7 in ipairs(slot0._unitList) do
+		if slot7 == slot0._manualSubUnit then
+			table.insert(slot2, 1, slot6)
 
 			break
 		end
 	end
 
-	arg_99_0:refreshFleetFormation(var_99_2)
-	arg_99_0._manualSubUnit:SetMainUnitStatic(false)
-	arg_99_0._manualSubUnit:SetPosition(var_99_0)
-	arg_99_0:UpdateMotion()
-	arg_99_0._submarineSpecialVO:SetUseable(false)
+	slot0:refreshFleetFormation(slot2)
+	slot0._manualSubUnit:SetMainUnitStatic(false)
+	slot0._manualSubUnit:SetPosition(slot1)
+	slot0:UpdateMotion()
+	slot0._submarineSpecialVO:SetUseable(false)
 
-	local var_99_3 = arg_99_0._manualSubUnit:GetBuffList()
-
-	for iter_99_8, iter_99_9 in pairs(var_99_3) do
-		if iter_99_9:IsSubmarineSpecial() then
-			arg_99_0._submarineSpecialVO:SetCount(1)
-			arg_99_0._submarineSpecialVO:SetUseable(true)
+	for slot7, slot8 in pairs(slot0._manualSubUnit:GetBuffList()) do
+		if slot8:IsSubmarineSpecial() then
+			slot0._submarineSpecialVO:SetCount(1)
+			slot0._submarineSpecialVO:SetUseable(true)
 
 			break
 		end
 	end
 
-	arg_99_0:ChangeSubmarineState(var_0_0.Battle.OxyState.STATE_FREE_DIVE)
-	arg_99_0._torpedoWeaponVO:Reset()
+	slot0:ChangeSubmarineState(uv0.Battle.OxyState.STATE_FREE_DIVE)
+	slot0._torpedoWeaponVO:Reset()
 
-	local var_99_4 = arg_99_0._manualSubUnit:GetTorpedoList()
-
-	for iter_99_10, iter_99_11 in ipairs(var_99_4) do
-		if iter_99_11:GetCurrentState() ~= iter_99_11.STATE_OVER_HEAT then
-			arg_99_0._torpedoWeaponVO:AppendWeapon(iter_99_11)
+	for slot8, slot9 in ipairs(slot0._manualSubUnit:GetTorpedoList()) do
+		if slot9:GetCurrentState() ~= slot9.STATE_OVER_HEAT then
+			slot0._torpedoWeaponVO:AppendWeapon(slot9)
 		end
 	end
 
-	for iter_99_12, iter_99_13 in ipairs(var_99_4) do
-		if iter_99_13:GetCurrentState() == iter_99_13.STATE_OVER_HEAT then
-			arg_99_0._torpedoWeaponVO:AppendWeapon(iter_99_13)
+	for slot8, slot9 in ipairs(slot4) do
+		if slot9:GetCurrentState() == slot9.STATE_OVER_HEAT then
+			slot0._torpedoWeaponVO:AppendWeapon(slot9)
 		end
 	end
 
-	if var_0_6.GetCurrent(arg_99_0._manualSubUnit, "oxyMax") <= 0 then
-		arg_99_0._submarineDiveVO:SetActive(false)
-		arg_99_0._submarineFloatVO:SetActive(false)
+	if uv1.GetCurrent(slot0._manualSubUnit, "oxyMax") <= 0 then
+		slot0._submarineDiveVO:SetActive(false)
+		slot0._submarineFloatVO:SetActive(false)
 	else
-		arg_99_0._submarineDiveVO:SetActive(true)
-		arg_99_0._submarineFloatVO:SetActive(true)
+		slot0._submarineDiveVO:SetActive(true)
+		slot0._submarineFloatVO:SetActive(true)
 	end
 
-	for iter_99_14, iter_99_15 in ipairs(arg_99_0._manualSubBench) do
-		iter_99_15:SetPosition(var_0_5.SUB_BENCH_POS[iter_99_14])
-		iter_99_15:SetMainUnitStatic(true)
-		iter_99_15:ChangeOxygenState(var_0_0.Battle.OxyState.STATE_FREE_BENCH)
+	for slot8, slot9 in ipairs(slot0._manualSubBench) do
+		slot9:SetPosition(uv2.SUB_BENCH_POS[slot8])
+		slot9:SetMainUnitStatic(true)
+		slot9:ChangeOxygenState(uv0.Battle.OxyState.STATE_FREE_BENCH)
 	end
 
-	arg_99_0._submarineShiftVO:ResetCurrent()
+	slot0._submarineShiftVO:ResetCurrent()
 
-	if #arg_99_0._manualSubBench == 0 then
-		arg_99_0._submarineShiftVO:SetActive(false)
+	if #slot0._manualSubBench == 0 then
+		slot0._submarineShiftVO:SetActive(false)
 	end
 end
 
-function var_0_8.ChangeSubmarineState(arg_100_0, arg_100_1, arg_100_2)
-	if not arg_100_0._manualSubUnit then
+function slot8.ChangeSubmarineState(slot0, slot1, slot2)
+	if not slot0._manualSubUnit then
 		return
 	end
 
-	arg_100_0._manualSubUnit:ChangeOxygenState(arg_100_1)
+	slot0._manualSubUnit:ChangeOxygenState(slot1)
 
-	if arg_100_2 then
-		for iter_100_0, iter_100_1 in ipairs(arg_100_0._submarineVOList) do
-			iter_100_1:ResetCurrent()
+	if slot2 then
+		for slot6, slot7 in ipairs(slot0._submarineVOList) do
+			slot7:ResetCurrent()
 		end
 
-		local var_100_0 = arg_100_0._submarineShiftVO:GetMax() - arg_100_0._submarineShiftVO:GetCurrent()
-
-		if arg_100_0._submarineShiftVO:IsOverLoad() and var_100_0 > var_0_5.SR_CONFIG.DIVE_CD then
-			-- block empty
-		else
-			arg_100_0._submarineShiftVO:SetMax(var_0_5.SR_CONFIG.DIVE_CD)
-			arg_100_0._submarineShiftVO:ResetCurrent()
+		if not slot0._submarineShiftVO:IsOverLoad() or uv0.SR_CONFIG.DIVE_CD >= slot0._submarineShiftVO:GetMax() - slot0._submarineShiftVO:GetCurrent() then
+			slot0._submarineShiftVO:SetMax(uv0.SR_CONFIG.DIVE_CD)
+			slot0._submarineShiftVO:ResetCurrent()
 		end
 	end
 
-	arg_100_0:DispatchEvent(var_0_0.Event.New(var_0_2.MANUAL_SUBMARINE_SHIFT, {
-		state = arg_100_1
+	slot0:DispatchEvent(uv1.Event.New(uv2.MANUAL_SUBMARINE_SHIFT, {
+		state = slot1
 	}))
 end
 
-function var_0_8.SubmarinBoost(arg_101_0)
-	arg_101_0._manualSubUnit:Boost(Vector3.right, var_0_5.SR_CONFIG.BOOST_SPEED, var_0_5.SR_CONFIG.BOOST_DECAY, var_0_5.SR_CONFIG.BOOST_DURATION, var_0_5.SR_CONFIG.BOOST_DECAY_STAMP)
-	arg_101_0._submarineBoostVO:ResetCurrent()
+function slot8.SubmarinBoost(slot0)
+	slot0._manualSubUnit:Boost(Vector3.right, uv0.SR_CONFIG.BOOST_SPEED, uv0.SR_CONFIG.BOOST_DECAY, uv0.SR_CONFIG.BOOST_DURATION, uv0.SR_CONFIG.BOOST_DECAY_STAMP)
+	slot0._submarineBoostVO:ResetCurrent()
 end
 
-function var_0_8.UnleashSubmarineSpecial(arg_102_0)
-	if arg_102_0:GetWeaponBlock() then
+function slot8.UnleashSubmarineSpecial(slot0)
+	if slot0:GetWeaponBlock() then
 		return
 	end
 
-	arg_102_0._submarineSpecialVO:Cast()
-	arg_102_0._manualSubUnit:TriggerBuff(var_0_4.BuffEffectType.ON_SUBMARINE_FREE_SPECIAL)
+	slot0._submarineSpecialVO:Cast()
+	slot0._manualSubUnit:TriggerBuff(uv0.BuffEffectType.ON_SUBMARINE_FREE_SPECIAL)
 end
 
-function var_0_8.FixSubRefLine(arg_103_0, arg_103_1)
-	arg_103_0._fixedSubRefLine = arg_103_1
+function slot8.FixSubRefLine(slot0, slot1)
+	slot0._fixedSubRefLine = slot1
 end
 
-function var_0_8.AppendIndieSonar(arg_104_0, arg_104_1, arg_104_2)
-	local var_104_0 = var_0_0.Battle.BattleIndieSonar.New(arg_104_0, arg_104_1, arg_104_2)
+function slot8.AppendIndieSonar(slot0, slot1, slot2)
+	slot3 = uv0.Battle.BattleIndieSonar.New(slot0, slot1, slot2)
 
-	var_104_0:SwitchHost(arg_104_0._motionReferenceUnit)
+	slot3:SwitchHost(slot0._motionReferenceUnit)
 
-	arg_104_0._indieSonarList[var_104_0] = true
+	slot0._indieSonarList[slot3] = true
 
-	var_104_0:Detect()
+	slot3:Detect()
 end
 
-function var_0_8.RemoveIndieSonar(arg_105_0, arg_105_1)
-	for iter_105_0, iter_105_1 in pairs(arg_105_0._indieSonarList) do
-		if arg_105_1 == iter_105_0 then
-			arg_105_0._indieSonarList[iter_105_0] = nil
+function slot8.RemoveIndieSonar(slot0, slot1)
+	for slot5, slot6 in pairs(slot0._indieSonarList) do
+		if slot1 == slot5 then
+			slot0._indieSonarList[slot5] = nil
 
 			break
 		end
 	end
 end
 
-function var_0_8.AttachFleetBuff(arg_106_0, arg_106_1)
-	local var_106_0 = arg_106_1:GetID()
-	local var_106_1 = arg_106_0:GetFleetBuff(var_106_0)
-
-	if var_106_1 then
-		var_106_1:Stack(arg_106_0)
+function slot8.AttachFleetBuff(slot0, slot1)
+	if slot0:GetFleetBuff(slot1:GetID()) then
+		slot3:Stack(slot0)
 	else
-		arg_106_0._buffList[var_106_0] = arg_106_1
+		slot0._buffList[slot2] = slot1
 
-		arg_106_1:Attach(arg_106_0)
+		slot1:Attach(slot0)
 	end
 end
 
-function var_0_8.RemoveFleetBuff(arg_107_0, arg_107_1)
-	local var_107_0 = arg_107_0:GetFleetBuff(arg_107_1)
-
-	if var_107_0 then
-		var_107_0:Remove()
+function slot8.RemoveFleetBuff(slot0, slot1)
+	if slot0:GetFleetBuff(slot1) then
+		slot2:Remove()
 	end
 end
 
-function var_0_8.GetFleetBuff(arg_108_0, arg_108_1)
-	return arg_108_0._buffList[arg_108_1]
+function slot8.GetFleetBuff(slot0, slot1)
+	return slot0._buffList[slot1]
 end
 
-function var_0_8.GetFleetBuffList(arg_109_0)
-	return arg_109_0._buffList
+function slot8.GetFleetBuffList(slot0)
+	return slot0._buffList
 end
 
-function var_0_8.AttachFleetAttr(arg_110_0)
-	arg_110_0._fleetAttr = var_0_0.Battle.BattleFleetAttrComponent.New(arg_110_0)
+function slot8.AttachFleetAttr(slot0)
+	slot0._fleetAttr = uv0.Battle.BattleFleetAttrComponent.New(slot0)
 end
 
-function var_0_8.GetFleetAttr(arg_111_0)
-	return arg_111_0._fleetAttr
+function slot8.GetFleetAttr(slot0)
+	return slot0._fleetAttr
 end
 
-function var_0_8.Jamming(arg_112_0, arg_112_1)
-	if arg_112_1 then
-		arg_112_0._chargeWeaponVO:StartJamming()
-		arg_112_0._torpedoWeaponVO:StartJamming()
-		arg_112_0._airAssistVO:StartJamming()
+function slot8.Jamming(slot0, slot1)
+	if slot1 then
+		slot0._chargeWeaponVO:StartJamming()
+		slot0._torpedoWeaponVO:StartJamming()
+		slot0._airAssistVO:StartJamming()
 	else
-		arg_112_0._chargeWeaponVO:JammingEliminate()
-		arg_112_0._torpedoWeaponVO:JammingEliminate()
-		arg_112_0._airAssistVO:JammingEliminate()
+		slot0._chargeWeaponVO:JammingEliminate()
+		slot0._torpedoWeaponVO:JammingEliminate()
+		slot0._airAssistVO:JammingEliminate()
 	end
 end
 
-function var_0_8.Blinding(arg_113_0, arg_113_1)
-	arg_113_0:DispatchEvent(var_0_0.Event.New(var_0_2.FLEET_BLIND, {
-		isBlind = arg_113_1
+function slot8.Blinding(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.FLEET_BLIND, {
+		isBlind = slot1
 	}))
 end
 
-function var_0_8.UpdateHorizon(arg_114_0)
-	arg_114_0:DispatchEvent(var_0_0.Event.New(var_0_2.FLEET_HORIZON_UPDATE, {}))
+function slot8.UpdateHorizon(slot0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.FLEET_HORIZON_UPDATE, {}))
 end
 
-function var_0_8.AutoBotUpdated(arg_115_0, arg_115_1)
-	local var_115_0 = arg_115_1 and var_0_4.BuffEffectType.ON_AUTOBOT or var_0_4.BuffEffectType.ON_MANUAL
-
-	arg_115_0:FleetBuffTrigger(var_115_0)
+function slot8.AutoBotUpdated(slot0, slot1)
+	slot0:FleetBuffTrigger(slot1 and uv0.BuffEffectType.ON_AUTOBOT or uv0.BuffEffectType.ON_MANUAL)
 end
 
-function var_0_8.CloakFatalExpose(arg_116_0)
-	for iter_116_0, iter_116_1 in ipairs(arg_116_0._cloakList) do
-		iter_116_1:GetCloak():ForceToMax()
+function slot8.CloakFatalExpose(slot0)
+	for slot4, slot5 in ipairs(slot0._cloakList) do
+		slot5:GetCloak():ForceToMax()
 	end
 end
 
-function var_0_8.CloakInVision(arg_117_0, arg_117_1)
-	for iter_117_0, iter_117_1 in ipairs(arg_117_0._cloakList) do
-		iter_117_1:GetCloak():AppendExposeSpeed(arg_117_1)
+function slot8.CloakInVision(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._cloakList) do
+		slot6:GetCloak():AppendExposeSpeed(slot1)
 	end
 end
 
-function var_0_8.CloakOutVision(arg_118_0)
-	for iter_118_0, iter_118_1 in ipairs(arg_118_0._cloakList) do
-		iter_118_1:GetCloak():AppendExposeSpeed(0)
+function slot8.CloakOutVision(slot0)
+	for slot4, slot5 in ipairs(slot0._cloakList) do
+		slot5:GetCloak():AppendExposeSpeed(0)
 	end
 end
 
-function var_0_8.AttachCloak(arg_119_0, arg_119_1)
-	if not arg_119_1:GetCloak() then
-		arg_119_1:InitCloak()
+function slot8.AttachCloak(slot0, slot1)
+	if not slot1:GetCloak() then
+		slot1:InitCloak()
 
-		arg_119_0._cloakList[#arg_119_0._cloakList + 1] = arg_119_1
+		slot0._cloakList[#slot0._cloakList + 1] = slot1
 	end
 end
 
-function var_0_8.AttachNightCloak(arg_120_0)
-	arg_120_0._scoutAimBias = var_0_0.Battle.BattleUnitAimBiasComponent.New()
+function slot8.AttachNightCloak(slot0)
+	slot0._scoutAimBias = uv0.Battle.BattleUnitAimBiasComponent.New()
 
-	arg_120_0._scoutAimBias:ConfigRangeFormula(var_0_3.CalculateMaxAimBiasRange, var_0_3.CalculateBiasDecay)
-	arg_120_0._scoutAimBias:Active(arg_120_0._scoutAimBias.STATE_ACTIVITING)
-	arg_120_0:DispatchEvent(var_0_0.Event.New(var_0_2.ADD_AIM_BIAS, {
-		aimBias = arg_120_0._scoutAimBias
+	slot0._scoutAimBias:ConfigRangeFormula(uv1.CalculateMaxAimBiasRange, uv1.CalculateBiasDecay)
+	slot0._scoutAimBias:Active(slot0._scoutAimBias.STATE_ACTIVITING)
+	slot0:DispatchEvent(uv0.Event.New(uv2.ADD_AIM_BIAS, {
+		aimBias = slot0._scoutAimBias
 	}))
 end
 
-function var_0_8.GetFleetBias(arg_121_0)
-	return arg_121_0._scoutAimBias
+function slot8.GetFleetBias(slot0)
+	return slot0._scoutAimBias
 end
 
-function var_0_8.FreezeUnit(arg_122_0, arg_122_1)
-	arg_122_0:RemovePlayerUnit(arg_122_1, true)
+function slot8.FreezeUnit(slot0, slot1)
+	slot0:RemovePlayerUnit(slot1, true)
 
-	arg_122_0._freezeList[arg_122_1] = true
+	slot0._freezeList[slot1] = true
 end
 
-function var_0_8.ActiveFreezeUnit(arg_123_0, arg_123_1)
-	arg_123_0._freezeList[arg_123_1] = nil
-	arg_123_0._unitList[#arg_123_0._unitList + 1] = arg_123_1
-	arg_123_0._maxCount = arg_123_0._maxCount + 1
+function slot8.ActiveFreezeUnit(slot0, slot1)
+	slot0._freezeList[slot1] = nil
+	slot0._unitList[#slot0._unitList + 1] = slot1
+	slot0._maxCount = slot0._maxCount + 1
 
-	if arg_123_1:IsMainFleetUnit() then
-		arg_123_0:appendFreezeMainUnit(arg_123_1)
+	if slot1:IsMainFleetUnit() then
+		slot0:appendFreezeMainUnit(slot1)
 	else
-		arg_123_0:activeFreezeScoutUnit(arg_123_1)
+		slot0:activeFreezeScoutUnit(slot1)
 	end
 
-	arg_123_1:SetFleetVO(arg_123_0)
-	arg_123_1:SetMotion(arg_123_0._motionVO)
-	arg_123_1:RegisterEventListener(arg_123_0, var_0_1.UPDATE_HP, arg_123_0.onUnitUpdateHP)
-	arg_123_1:RegisterEventListener(arg_123_0, var_0_1.UPDATE_CLOAK_STATE, arg_123_0.onUnitCloakUpdate)
+	slot1:SetFleetVO(slot0)
+	slot1:SetMotion(slot0._motionVO)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_HP, slot0.onUnitUpdateHP)
+	slot1:RegisterEventListener(slot0, uv0.UPDATE_CLOAK_STATE, slot0.onUnitCloakUpdate)
 end
 
-function var_0_8.UndoFusion(arg_124_0)
-	for iter_124_0, iter_124_1 in pairs(arg_124_0._freezeList) do
-		arg_124_0._unitList[#arg_124_0._unitList + 1] = iter_124_0
-		arg_124_0._maxCount = arg_124_0._maxCount + 1
+function slot8.UndoFusion(slot0)
+	for slot4, slot5 in pairs(slot0._freezeList) do
+		slot0._unitList[#slot0._unitList + 1] = slot4
+		slot0._maxCount = slot0._maxCount + 1
 
-		if iter_124_0:IsMainFleetUnit() then
-			arg_124_0:appendFreezeMainUnit(iter_124_0)
+		if slot4:IsMainFleetUnit() then
+			slot0:appendFreezeMainUnit(slot4)
 		else
-			arg_124_0:activeFreezeScoutUnit(iter_124_0)
+			slot0:activeFreezeScoutUnit(slot4)
 		end
 	end
 
-	local var_124_0 = {}
+	slot1 = {}
 
-	for iter_124_2, iter_124_3 in ipairs(arg_124_0._unitList) do
-		local var_124_1 = iter_124_3:GetAttrByName("hpProvideRate")
+	for slot5, slot6 in ipairs(slot0._unitList) do
+		if slot6:GetAttrByName("hpProvideRate") ~= 0 then
+			table.insert(slot1, slot6)
 
-		if var_124_1 ~= 0 then
-			table.insert(var_124_0, iter_124_3)
+			slot8, slot9 = slot6:GetHP()
+			slot10 = slot9 - slot8
+			slot11 = 0
 
-			local var_124_2, var_124_3 = iter_124_3:GetHP()
-			local var_124_4 = var_124_3 - var_124_2
-			local var_124_5 = 0
-
-			for iter_124_4, iter_124_5 in pairs(var_124_1) do
-				local var_124_6 = arg_124_0:GetFreezeShipByID(iter_124_4)
-
-				if not var_124_6 then
-					arg_124_0:GetShipByID(iter_124_4)
+			for slot15, slot16 in pairs(slot7) do
+				if not slot0:GetFreezeShipByID(slot15) then
+					slot0:GetShipByID(slot15)
 				end
 
-				local var_124_7 = math.floor(iter_124_5 * var_124_4)
-
-				var_124_6:UpdateHP(var_124_7 * -1, {})
+				slot17:UpdateHP(math.floor(slot16 * slot10) * -1, {})
 			end
 		end
 	end
 
-	for iter_124_6, iter_124_7 in ipairs(var_124_0) do
-		arg_124_0:RemovePlayerUnit(iter_124_7)
+	for slot5, slot6 in ipairs(slot1) do
+		slot0:RemovePlayerUnit(slot6)
 	end
 end
 
-function var_0_8.appendFreezeMainUnit(arg_125_0, arg_125_1)
-	arg_125_0._mainList[#arg_125_0._mainList + 1] = arg_125_1
+function slot8.appendFreezeMainUnit(slot0, slot1)
+	slot0._mainList[#slot0._mainList + 1] = slot1
 
-	arg_125_1:SetMainUnitIndex(#arg_125_0._mainList)
+	slot1:SetMainUnitIndex(#slot0._mainList)
 
-	if ShipType.CloakShipType(arg_125_1:GetTemplate().type) then
-		table.insert(arg_125_0._cloakList, arg_125_1)
+	if ShipType.CloakShipType(slot1:GetTemplate().type) then
+		table.insert(slot0._cloakList, slot1)
 	end
 
-	local var_125_0 = arg_125_1:GetChargeList()
-
-	for iter_125_0, iter_125_1 in ipairs(var_125_0) do
-		arg_125_0._chargeWeaponVO:AppendFreezeWeapon(iter_125_1)
+	for slot6, slot7 in ipairs(slot1:GetChargeList()) do
+		slot0._chargeWeaponVO:AppendFreezeWeapon(slot7)
 	end
 
-	local var_125_1 = arg_125_1:GetTorpedoList()
-
-	for iter_125_2, iter_125_3 in ipairs(var_125_1) do
-		arg_125_0._torpedoWeaponVO:AppendFreezeWeapon(iter_125_3)
+	for slot7, slot8 in ipairs(slot1:GetTorpedoList()) do
+		slot0._torpedoWeaponVO:AppendFreezeWeapon(slot8)
 	end
 
-	if arg_125_1:GetAirAssistList() then
-		local var_125_2 = arg_125_1:GetAirAssistList()
-
-		for iter_125_4, iter_125_5 in ipairs(var_125_2) do
-			arg_125_0._airAssistVO:AppendFreezeWeapon(iter_125_5)
+	if slot1:GetAirAssistList() then
+		for slot8, slot9 in ipairs(slot1:GetAirAssistList()) do
+			slot0._airAssistVO:AppendFreezeWeapon(slot9)
 		end
 	end
 
-	arg_125_0._fleetAntiAir:AppendCrewUnit(arg_125_1)
-	arg_125_0._fleetRangeAntiAir:AppendCrewUnit(arg_125_1)
-	arg_125_0._fleetStaticSonar:AppendCrewUnit(arg_125_1)
+	slot0._fleetAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetRangeAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetStaticSonar:AppendCrewUnit(slot1)
 
-	local var_125_3 = {}
+	slot4 = {}
 
-	for iter_125_6, iter_125_7 in ipairs(arg_125_0._unitList) do
-		table.insert(var_125_3, iter_125_6)
+	for slot8, slot9 in ipairs(slot0._unitList) do
+		table.insert(slot4, slot8)
 	end
 
-	arg_125_0:refreshFleetFormation(var_125_3)
+	slot0:refreshFleetFormation(slot4)
 end
 
-function var_0_8.activeFreezeScoutUnit(arg_126_0, arg_126_1)
-	arg_126_0._scoutList[#arg_126_0._scoutList + 1] = arg_126_1
+function slot8.activeFreezeScoutUnit(slot0, slot1)
+	slot0._scoutList[#slot0._scoutList + 1] = slot1
 
-	local var_126_0 = arg_126_1:GetTorpedoList()
-
-	for iter_126_0, iter_126_1 in ipairs(var_126_0) do
-		arg_126_0._torpedoWeaponVO:AppendFreezeWeapon(iter_126_1)
+	for slot6, slot7 in ipairs(slot1:GetTorpedoList()) do
+		slot0._torpedoWeaponVO:AppendFreezeWeapon(slot7)
 	end
 
-	if arg_126_1:GetAirAssistList() then
-		local var_126_1 = arg_126_1:GetAirAssistList()
-
-		for iter_126_2, iter_126_3 in ipairs(var_126_1) do
-			arg_126_0._airAssistVO:AppendFreezeWeapon(iter_126_3)
+	if slot1:GetAirAssistList() then
+		for slot7, slot8 in ipairs(slot1:GetAirAssistList()) do
+			slot0._airAssistVO:AppendFreezeWeapon(slot8)
 		end
 	end
 
-	arg_126_0._fleetAntiAir:AppendCrewUnit(arg_126_1)
-	arg_126_0._fleetStaticSonar:AppendCrewUnit(arg_126_1)
+	slot0._fleetAntiAir:AppendCrewUnit(slot1)
+	slot0._fleetStaticSonar:AppendCrewUnit(slot1)
 
-	local var_126_2 = 1
-	local var_126_3 = #arg_126_0._unitList
-	local var_126_4 = {}
+	slot3 = 1
+	slot5 = {}
 
-	while var_126_2 < var_126_3 do
-		table.insert(var_126_4, var_126_2)
+	while slot3 < #slot0._unitList do
+		table.insert(slot5, slot3)
 
-		var_126_2 = var_126_2 + 1
+		slot3 = slot3 + 1
 	end
 
-	table.insert(var_126_4, #arg_126_0._scoutList, var_126_2)
-	arg_126_0:refreshFleetFormation(var_126_4)
+	table.insert(slot5, #slot0._scoutList, slot3)
+	slot0:refreshFleetFormation(slot5)
 end
 
-function var_0_8.AttachCardPuzzleComponent(arg_127_0)
-	arg_127_0._cardPuzzleComponent = var_0_0.Battle.BattleFleetCardPuzzleComponent.New(arg_127_0)
+function slot8.AttachCardPuzzleComponent(slot0)
+	slot0._cardPuzzleComponent = uv0.Battle.BattleFleetCardPuzzleComponent.New(slot0)
 
-	return arg_127_0._cardPuzzleComponent
+	return slot0._cardPuzzleComponent
 end
 
-function var_0_8.GetCardPuzzleComponent(arg_128_0)
-	return arg_128_0._cardPuzzleComponent
+function slot8.GetCardPuzzleComponent(slot0)
+	return slot0._cardPuzzleComponent
 end
 
-function var_0_8.AppendSupportUnit(arg_129_0, arg_129_1)
-	arg_129_0._supportList[#arg_129_0._supportList + 1] = arg_129_1
+function slot8.AppendSupportUnit(slot0, slot1)
+	slot0._supportList[#slot0._supportList + 1] = slot1
 end
 
-function var_0_8.GetSupportUnitList(arg_130_0)
-	return arg_130_0._supportList
+function slot8.GetSupportUnitList(slot0)
+	return slot0._supportList
 end

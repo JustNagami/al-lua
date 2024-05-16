@@ -1,44 +1,44 @@
-﻿local var_0_0 = class("LoadBundleRequesetPackage", import(".RequestPackage"))
+slot0 = class("LoadBundleRequesetPackage", import(".RequestPackage"))
 
-function var_0_0.__call(arg_1_0)
-	if arg_1_0.stopped then
+function slot0.__call(slot0)
+	if slot0.stopped then
 		return
 	end
 
 	seriesAsync({
-		function(arg_2_0)
+		function (slot0)
 			pg.UIMgr.GetInstance():LoadingOn()
 
-			local var_2_0 = arg_1_0.path
+			slot1 = uv0.path
 
-			xpcall(function()
-				buildTempAB(var_2_0, function(arg_4_0)
+			xpcall(function ()
+				buildTempAB(uv0, function (slot0)
 					pg.UIMgr.GetInstance():LoadingOff()
 
-					if arg_1_0.stopped then
-						ResourceMgr.Inst:ClearBundleRef(var_2_0, false, false)
+					if uv0.stopped then
+						ResourceMgr.Inst:ClearBundleRef(uv1, false, false)
 
 						return
 					end
 
-					arg_2_0(arg_4_0)
+					uv2(slot0)
 				end)
-			end, function(...)
+			end, function (...)
 				debug.traceback(...)
 				pg.UIMgr.GetInstance():LoadingOff()
 			end)
 		end,
-		function(arg_6_0, arg_6_1)
-			existCall(arg_1_0.onLoaded, arg_6_1)
+		function (slot0, slot1)
+			existCall(uv0.onLoaded, slot1)
 		end
 	})
 
-	return arg_1_0
+	return slot0
 end
 
-function var_0_0.Ctor(arg_7_0, arg_7_1, arg_7_2)
-	arg_7_0.path = arg_7_1
-	arg_7_0.onLoaded = arg_7_2
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.path = slot1
+	slot0.onLoaded = slot2
 end
 
-return var_0_0
+return slot0

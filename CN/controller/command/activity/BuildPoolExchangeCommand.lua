@@ -1,10 +1,7 @@
-﻿local var_0_0 = class("BuildPoolExchangeCommand", pm.SimpleCommand)
+slot0 = class("BuildPoolExchangeCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().activity_id
-	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0)
-
-	if not var_1_1 or var_1_1:isEnd() then
+function slot0.execute(slot0, slot1)
+	if not getProxy(ActivityProxy):getActivityById(slot1:getBody().activity_id) or slot4:isEnd() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
@@ -14,23 +11,20 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		arg1 = 0,
 		arg2 = 0,
 		cmd = 2,
-		activity_id = var_1_0,
+		activity_id = slot3,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_1.data2 = var_1_1.data2 + 1
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			uv0.data2 = uv0.data2 + 1
 
-			getProxy(ActivityProxy):updateActivity(var_1_1)
-
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
-
-			arg_1_0:sendNotification(GAME.ACTIVITY_BUILD_POOL_EXCHANGE_DONE, {
-				awards = var_2_0
+			getProxy(ActivityProxy):updateActivity(uv0)
+			uv1:sendNotification(GAME.ACTIVITY_BUILD_POOL_EXCHANGE_DONE, {
+				awards = PlayerConst.addTranDrop(slot0.award_list)
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

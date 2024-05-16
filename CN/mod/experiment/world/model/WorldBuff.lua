@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("WorldBuff", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WorldBuff", import("...BaseEntity"))
+slot0.Fields = {
 	config = "table",
 	floor = "number",
 	time = "number",
@@ -8,71 +7,71 @@ var_0_0.Fields = {
 	round = "number",
 	step = "number"
 }
-var_0_0.TrapCompassInterference = 1
-var_0_0.TrapVortex = 2
-var_0_0.TrapFire = 3
-var_0_0.TrapDisturbance = 4
-var_0_0.TrapCripple = 5
-var_0_0.TrapFrozen = 6
+slot0.TrapCompassInterference = 1
+slot0.TrapVortex = 2
+slot0.TrapFire = 3
+slot0.TrapDisturbance = 4
+slot0.TrapCripple = 5
+slot0.TrapFrozen = 6
 
-function var_0_0.GetTemplate(arg_1_0)
-	assert(pg.world_SLGbuff_data[arg_1_0], "without this buff " .. arg_1_0)
+function slot0.GetTemplate(slot0)
+	assert(pg.world_SLGbuff_data[slot0], "without this buff " .. slot0)
 
-	return pg.world_SLGbuff_data[arg_1_0]
+	return pg.world_SLGbuff_data[slot0]
 end
 
-function var_0_0.Setup(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.id
-	arg_2_0.config = var_0_0.GetTemplate(arg_2_0.id)
+function slot0.Setup(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.config = uv0.GetTemplate(slot0.id)
 
-	assert(arg_2_0.config, "world_SLGbuff_data not exist: " .. arg_2_0.id)
+	assert(slot0.config, "world_SLGbuff_data not exist: " .. slot0.id)
 
-	arg_2_0.floor = math.min(arg_2_1.floor, arg_2_0:GetMaxFloor())
-	arg_2_0.time = arg_2_1.time ~= 0 and arg_2_1.time or nil
-	arg_2_0.round = arg_2_1.round ~= 0 and arg_2_1.round or nil
-	arg_2_0.step = arg_2_1.step ~= 0 and arg_2_1.step or nil
+	slot0.floor = math.min(slot1.floor, slot0:GetMaxFloor())
+	slot0.time = slot1.time ~= 0 and slot1.time or nil
+	slot0.round = slot1.round ~= 0 and slot1.round or nil
+	slot0.step = slot1.step ~= 0 and slot1.step or nil
 end
 
-function var_0_0.IsValid(arg_3_0)
-	return not arg_3_0.time or arg_3_0.time > pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.IsValid(slot0)
+	return not slot0.time or pg.TimeMgr.GetInstance():GetServerTime() < slot0.time
 end
 
-function var_0_0.CheckValid(arg_4_0)
-	if not arg_4_0:IsValid() then
-		arg_4_0.floor = 0
+function slot0.CheckValid(slot0)
+	if not slot0:IsValid() then
+		slot0.floor = 0
 	end
 end
 
-function var_0_0.GetMaxFloor(arg_5_0)
-	return arg_5_0.config.buff_maxfloor
+function slot0.GetMaxFloor(slot0)
+	return slot0.config.buff_maxfloor
 end
 
-function var_0_0.GetTrapType(arg_6_0)
-	return arg_6_0.config.trap_type
+function slot0.GetTrapType(slot0)
+	return slot0.config.trap_type
 end
 
-function var_0_0.GetTrapParams(arg_7_0)
-	return arg_7_0.config.trap_parameter
+function slot0.GetTrapParams(slot0)
+	return slot0.config.trap_parameter
 end
 
-function var_0_0.GetLost(arg_8_0)
-	if arg_8_0.step and arg_8_0.round then
-		return math.min(arg_8_0.step, arg_8_0.round)
+function slot0.GetLost(slot0)
+	if slot0.step and slot0.round then
+		return math.min(slot0.step, slot0.round)
 	else
-		return arg_8_0.step or arg_8_0.round
+		return slot0.step or slot0.round
 	end
 end
 
-function var_0_0.AddFloor(arg_9_0, arg_9_1)
-	arg_9_0:CheckValid()
+function slot0.AddFloor(slot0, slot1)
+	slot0:CheckValid()
 
-	arg_9_0.floor = math.clamp(arg_9_0.floor + arg_9_1, 0, 999)
+	slot0.floor = math.clamp(slot0.floor + slot1, 0, 999)
 end
 
-function var_0_0.GetFloor(arg_10_0)
-	arg_10_0:CheckValid()
+function slot0.GetFloor(slot0)
+	slot0:CheckValid()
 
-	return math.min(arg_10_0.floor, arg_10_0:GetMaxFloor())
+	return math.min(slot0.floor, slot0:GetMaxFloor())
 end
 
-return var_0_0
+return slot0

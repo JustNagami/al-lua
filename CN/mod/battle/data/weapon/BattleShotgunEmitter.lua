@@ -1,39 +1,28 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = math
+slot3 = class("BattleShotgunEmitter", slot0.Battle.BattleBulletEmitter)
+slot0.Battle.BattleShotgunEmitter = slot3
+slot3.__name = "BattleShotgunEmitter"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = math
-local var_0_3 = class("BattleShotgunEmitter", var_0_0.Battle.BattleBulletEmitter)
+function slot3.Ctor(slot0, slot1, slot2, slot3)
+	uv0.Battle.BattleShotgunEmitter.super.Ctor(slot0, slot1, slot2, slot3)
 
-var_0_0.Battle.BattleShotgunEmitter = var_0_3
-var_0_3.__name = "BattleShotgunEmitter"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	var_0_0.Battle.BattleShotgunEmitter.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-
-	arg_1_0.PrimalIteration = arg_1_0._nonDelayPrimalIteration
+	slot0.PrimalIteration = slot0._nonDelayPrimalIteration
 end
 
-function var_0_3.Fire(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0._angleRange = arg_2_3
+function slot3.Fire(slot0, slot1, slot2, slot3)
+	slot0._angleRange = slot3
 
-	var_0_0.Battle.BattleShotgunEmitter.super.Fire(arg_2_0, arg_2_1, arg_2_2)
+	uv0.Battle.BattleShotgunEmitter.super.Fire(slot0, slot1, slot2)
 end
 
-function var_0_3.GenerateBullet(arg_3_0)
-	local var_3_0 = arg_3_0._convertedDirBarrage[arg_3_0._primalCounter]
-	local var_3_1 = var_3_0.OffsetX
+function slot3.GenerateBullet(slot0)
+	slot1 = slot0._convertedDirBarrage[slot0._primalCounter]
+	slot0._delay = slot1.Delay
+	slot3 = nil
 
-	arg_3_0._delay = var_3_0.Delay
-
-	local var_3_2
-
-	if arg_3_0._isRandomAngle then
-		var_3_2 = (var_0_2.random() - 0.5) * var_0_2.random(arg_3_0._angleRange) - arg_3_0._angleRange / 2
-	else
-		var_3_2 = var_0_2.random(arg_3_0._angleRange) - arg_3_0._angleRange / 2
-	end
-
-	arg_3_0._spawnFunc(var_3_1, var_3_0.OffsetZ, var_3_2, arg_3_0._offsetPriority, arg_3_0._target, arg_3_0._primalCounter)
-	arg_3_0:Interation()
+	slot0._spawnFunc(slot1.OffsetX, slot1.OffsetZ, slot0._isRandomAngle and (uv0.random() - 0.5) * uv0.random(slot0._angleRange) - slot0._angleRange / 2 or uv0.random(slot0._angleRange) - slot0._angleRange / 2, slot0._offsetPriority, slot0._target, slot0._primalCounter)
+	slot0:Interation()
 end

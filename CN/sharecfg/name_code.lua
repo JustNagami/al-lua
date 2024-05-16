@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.name_code = {
 	{
 		name = "峰风",
@@ -2707,6 +2707,13 @@ pg.name_code = {
 		type = 1,
 		id = 533,
 		code = "树城(μ兵装)",
+		nation = 0
+	},
+	[534] = {
+		name = "小信浓",
+		type = 1,
+		id = 534,
+		code = "小鵗",
 		nation = 0
 	},
 	[10000] = {

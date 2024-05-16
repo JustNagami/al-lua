@@ -1,156 +1,139 @@
-﻿local var_0_0 = class("MangaFullScreenLayer", import("..base.BaseUI"))
+slot0 = class("MangaFullScreenLayer", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "MangaViewUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:findUI()
-	arg_2_0:initData()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:findUI()
+	slot0:initData()
+	slot0:addListener()
 end
 
-function var_0_0.didEnter(arg_3_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
-	arg_3_0:readManga()
-	arg_3_0:updatePicImg()
-	arg_3_0:updateLikeBtn()
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	slot0:readManga()
+	slot0:updatePicImg()
+	slot0:updateLikeBtn()
 end
 
-function var_0_0.willExit(arg_4_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
-	arg_4_0.resLoader:Clear()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	slot0.resLoader:Clear()
 
-	if arg_4_0.contextData.mangaContext then
-		local var_4_0 = arg_4_0.mangaIDLIst[arg_4_0.curMangaIndex]
-
-		arg_4_0.contextData.mangaContext:updateToMangaID(var_4_0)
+	if slot0.contextData.mangaContext then
+		slot0.contextData.mangaContext:updateToMangaID(slot0.mangaIDLIst[slot0.curMangaIndex])
 	end
 end
 
-function var_0_0.onBackPressed(arg_5_0)
-	if not arg_5_0.isShowing then
-		arg_5_0:closeView()
+function slot0.onBackPressed(slot0)
+	if not slot0.isShowing then
+		slot0:closeView()
 	end
 end
 
-function var_0_0.findUI(arg_6_0)
-	arg_6_0.bg = arg_6_0:findTF("BG")
-	arg_6_0.picImg = arg_6_0:findTF("Manga/Pic")
-	arg_6_0.indexText = arg_6_0:findTF("Manga/Index")
-	arg_6_0.preBtn = arg_6_0:findTF("LeftBtn")
-	arg_6_0.rightBtn = arg_6_0:findTF("RightBtn")
-	arg_6_0.tipText = arg_6_0:findTF("Tip")
-	arg_6_0.likeOnBtn = arg_6_0:findTF("Manga/LikeOn")
-	arg_6_0.likeOffBtn = arg_6_0:findTF("Manga/LikeOff")
+function slot0.findUI(slot0)
+	slot0.bg = slot0:findTF("BG")
+	slot0.picImg = slot0:findTF("Manga/Pic")
+	slot0.indexText = slot0:findTF("Manga/Index")
+	slot0.preBtn = slot0:findTF("LeftBtn")
+	slot0.rightBtn = slot0:findTF("RightBtn")
+	slot0.tipText = slot0:findTF("Tip")
+	slot0.likeOnBtn = slot0:findTF("Manga/LikeOn")
+	slot0.likeOffBtn = slot0:findTF("Manga/LikeOff")
 
-	setText(arg_6_0.tipText, i18n("world_collection_back"))
+	setText(slot0.tipText, i18n("world_collection_back"))
 end
 
-function var_0_0.initData(arg_7_0)
-	arg_7_0.resLoader = AutoLoader.New()
-	arg_7_0.curMangaIndex = arg_7_0.contextData.mangaIndex
-	arg_7_0.mangaIDLIst = arg_7_0.contextData.mangaIDLIst
+function slot0.initData(slot0)
+	slot0.resLoader = AutoLoader.New()
+	slot0.curMangaIndex = slot0.contextData.mangaIndex
+	slot0.mangaIDLIst = slot0.contextData.mangaIDLIst
 end
 
-function var_0_0.addListener(arg_8_0)
-	onButton(arg_8_0, arg_8_0.bg, function()
-		if not arg_8_0.isShowing then
-			arg_8_0:closeView()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.bg, function ()
+		if not uv0.isShowing then
+			uv0:closeView()
 		end
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.preBtn, function()
-		if arg_8_0.curMangaIndex > 1 then
-			arg_8_0.curMangaIndex = arg_8_0.curMangaIndex - 1
+	onButton(slot0, slot0.preBtn, function ()
+		if uv0.curMangaIndex > 1 then
+			uv0.curMangaIndex = uv0.curMangaIndex - 1
 
-			arg_8_0:readManga()
-			arg_8_0:updatePicImg()
-			arg_8_0:updateLikeBtn()
+			uv0:readManga()
+			uv0:updatePicImg()
+			uv0:updateLikeBtn()
 		end
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.rightBtn, function()
-		if arg_8_0.curMangaIndex < #arg_8_0.mangaIDLIst then
-			arg_8_0.curMangaIndex = arg_8_0.curMangaIndex + 1
+	onButton(slot0, slot0.rightBtn, function ()
+		if uv0.curMangaIndex < #uv0.mangaIDLIst then
+			uv0.curMangaIndex = uv0.curMangaIndex + 1
 
-			arg_8_0:readManga()
-			arg_8_0:updatePicImg()
-			arg_8_0:updateLikeBtn()
+			uv0:readManga()
+			uv0:updatePicImg()
+			uv0:updateLikeBtn()
 		end
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.likeOnBtn, function()
-		local var_12_0 = arg_8_0.mangaIDLIst[arg_8_0.curMangaIndex]
-
+	onButton(slot0, slot0.likeOnBtn, function ()
 		pg.m02:sendNotification(GAME.APPRECIATE_MANGA_LIKE, {
-			mangaID = var_12_0,
+			mangaID = uv0.mangaIDLIst[uv0.curMangaIndex],
 			action = MangaConst.CANCEL_MANGA_LIKE
 		})
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.likeOffBtn, function()
-		local var_13_0 = arg_8_0.mangaIDLIst[arg_8_0.curMangaIndex]
-
+	onButton(slot0, slot0.likeOffBtn, function ()
 		pg.m02:sendNotification(GAME.APPRECIATE_MANGA_LIKE, {
-			mangaID = var_13_0,
+			mangaID = uv0.mangaIDLIst[uv0.curMangaIndex],
 			action = MangaConst.SET_MANGA_LIKE
 		})
 	end, SFX_PANEL)
-	addSlip(SLIP_TYPE_HRZ, arg_8_0.picImg, function()
-		triggerButton(arg_8_0.preBtn)
-	end, function()
-		triggerButton(arg_8_0.rightBtn)
+	addSlip(SLIP_TYPE_HRZ, slot0.picImg, function ()
+		triggerButton(uv0.preBtn)
+	end, function ()
+		triggerButton(uv0.rightBtn)
 	end)
-	addSlip(SLIP_TYPE_HRZ, arg_8_0.bg, function()
-		triggerButton(arg_8_0.preBtn)
-	end, function()
-		triggerButton(arg_8_0.rightBtn)
+	addSlip(SLIP_TYPE_HRZ, slot0.bg, function ()
+		triggerButton(uv0.preBtn)
+	end, function ()
+		triggerButton(uv0.rightBtn)
 	end)
 end
 
-function var_0_0.updatePicImg(arg_18_0)
-	local var_18_0 = arg_18_0.mangaIDLIst[arg_18_0.curMangaIndex]
-	local var_18_1 = pg.cartoon[var_18_0].resource
-	local var_18_2 = MangaConst.MANGA_PATH_PREFIX .. var_18_1
+function slot0.updatePicImg(slot0)
+	slot2 = pg.cartoon[slot0.mangaIDLIst[slot0.curMangaIndex]].resource
 
-	arg_18_0.resLoader:LoadSprite(var_18_2, var_18_1, arg_18_0.picImg, false)
+	slot0.resLoader:LoadSprite(MangaConst.MANGA_PATH_PREFIX .. slot2, slot2, slot0.picImg, false)
 
-	local var_18_3
+	slot4 = nil
 
-	if arg_18_0.contextData.isShowingNotRead then
-		var_18_3 = "#" .. pg.cartoon[var_18_0].cartoon_id
-	else
-		var_18_3 = "#" .. pg.cartoon[var_18_0].cartoon_id .. "/" .. #arg_18_0.mangaIDLIst
-	end
+	setText(slot0.indexText, slot0.contextData.isShowingNotRead and "#" .. pg.cartoon[slot1].cartoon_id or "#" .. pg.cartoon[slot1].cartoon_id .. "/" .. #slot0.mangaIDLIst)
 
-	setText(arg_18_0.indexText, var_18_3)
+	slot0.isShowing = true
 
-	arg_18_0.isShowing = true
+	slot0:managedTween(LeanTween.value, nil, go(slot0.picImg), 0, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		setImageAlpha(uv0.picImg, slot0)
+	end)):setOnComplete(System.Action(function ()
+		uv0.isShowing = false
 
-	arg_18_0:managedTween(LeanTween.value, nil, go(arg_18_0.picImg), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg_19_0)
-		setImageAlpha(arg_18_0.picImg, arg_19_0)
-	end)):setOnComplete(System.Action(function()
-		arg_18_0.isShowing = false
-
-		setImageAlpha(arg_18_0.picImg, 1)
+		setImageAlpha(uv0.picImg, 1)
 	end))
-	setActive(arg_18_0.preBtn, arg_18_0.curMangaIndex > 1)
-	setActive(arg_18_0.rightBtn, arg_18_0.curMangaIndex < #arg_18_0.mangaIDLIst)
+	setActive(slot0.preBtn, slot0.curMangaIndex > 1)
+	setActive(slot0.rightBtn, slot0.curMangaIndex < #slot0.mangaIDLIst)
 end
 
-function var_0_0.updateLikeBtn(arg_21_0)
-	local var_21_0 = arg_21_0.mangaIDLIst[arg_21_0.curMangaIndex]
-	local var_21_1 = MangaConst.isMangaLikeByID(var_21_0)
+function slot0.updateLikeBtn(slot0)
+	slot2 = MangaConst.isMangaLikeByID(slot0.mangaIDLIst[slot0.curMangaIndex])
 
-	setActive(arg_21_0.likeOnBtn, var_21_1)
-	setActive(arg_21_0.likeOffBtn, not var_21_1)
+	setActive(slot0.likeOnBtn, slot2)
+	setActive(slot0.likeOffBtn, not slot2)
 end
 
-function var_0_0.readManga(arg_22_0)
-	local var_22_0 = arg_22_0.mangaIDLIst[arg_22_0.curMangaIndex]
-
-	if not MangaConst.isMangaEverReadByID(var_22_0) then
+function slot0.readManga(slot0)
+	if not MangaConst.isMangaEverReadByID(slot0.mangaIDLIst[slot0.curMangaIndex]) then
 		pg.m02:sendNotification(GAME.APPRECIATE_MANGA_READ, {
-			mangaID = var_22_0
+			mangaID = slot1
 		})
 	end
 end
 
-return var_0_0
+return slot0

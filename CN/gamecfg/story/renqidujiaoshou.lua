@@ -1,4 +1,4 @@
-﻿return {
+return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "RENQIDUJIAOSHOU",
@@ -225,16 +225,6 @@
 					content = "稍微有些紧张，没把握好时间……",
 					flag = 1
 				}
-			}
-		},
-		action = {
-			{
-				type = "shake",
-				y = 45,
-				delay = 0,
-				dur = 0.15,
-				x = 0,
-				number = 2
 			}
 		},
 		{
@@ -972,6 +962,16 @@
 			painting = {
 				alpha = 0.3,
 				time = 1
+			}
+		},
+		action = {
+			{
+				type = "shake",
+				y = 45,
+				delay = 0,
+				dur = 0.15,
+				x = 0,
+				number = 2
 			}
 		}
 	}

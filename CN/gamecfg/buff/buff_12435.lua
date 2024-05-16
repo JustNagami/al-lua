@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "Lucky A",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 12435,
+	icon = 12430,
+	last_effect = "",
 	limit = {
 		SYSTEM_SCENARIO,
 		SYSTEM_ROUTINE,
@@ -28,26 +49,5 @@
 				time = 20
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "Lucky A",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 12435,
-	icon = 12430,
-	last_effect = ""
+	}
 }

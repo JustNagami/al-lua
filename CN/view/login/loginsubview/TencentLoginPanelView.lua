@@ -1,36 +1,34 @@
-﻿local var_0_0 = class("TencentLoginPanelView", import("...base.BaseSubView"))
+slot0 = class("TencentLoginPanelView", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "TencentLoginPanelView"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	return
+function slot0.OnLoaded(slot0)
 end
 
-function var_0_0.SetShareData(arg_3_0, arg_3_1)
-	arg_3_0.shareData = arg_3_1
+function slot0.SetShareData(slot0, slot1)
+	slot0.shareData = slot1
 end
 
-function var_0_0.OnInit(arg_4_0)
-	arg_4_0.tencentPanel = arg_4_0._tf
-	arg_4_0.wxLoginBtn = arg_4_0:findTF("wx_login", arg_4_0.tencentPanel)
-	arg_4_0.qqLoginBtn = arg_4_0:findTF("qq_login", arg_4_0.tencentPanel)
+function slot0.OnInit(slot0)
+	slot0.tencentPanel = slot0._tf
+	slot0.wxLoginBtn = slot0:findTF("wx_login", slot0.tencentPanel)
+	slot0.qqLoginBtn = slot0:findTF("qq_login", slot0.tencentPanel)
 
-	arg_4_0:InitEvent()
+	slot0:InitEvent()
 end
 
-function var_0_0.InitEvent(arg_5_0)
-	onButton(arg_5_0, arg_5_0.qqLoginBtn, function()
+function slot0.InitEvent(slot0)
+	onButton(slot0, slot0.qqLoginBtn, function ()
 		pg.SdkMgr.GetInstance():LoginSdk(1)
 	end)
-	onButton(arg_5_0, arg_5_0.wxLoginBtn, function()
+	onButton(slot0, slot0.wxLoginBtn, function ()
 		pg.SdkMgr.GetInstance():LoginSdk(2)
 	end)
 end
 
-function var_0_0.OnDestroy(arg_8_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

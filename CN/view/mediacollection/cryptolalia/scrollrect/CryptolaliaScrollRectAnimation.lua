@@ -1,124 +1,119 @@
-﻿local var_0_0 = class("CryptolaliaScrollRectAnimation")
+slot0 = class("CryptolaliaScrollRectAnimation")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0.isInit = false
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0.isInit = false
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.animation = arg_2_0._tf:GetComponent(typeof(Animation))
-	arg_2_0.dftAniEvent = arg_2_0._tf:GetComponent(typeof(DftAniEvent))
+function slot0.Init(slot0)
+	slot0.animation = slot0._tf:GetComponent(typeof(Animation))
+	slot0.dftAniEvent = slot0._tf:GetComponent(typeof(DftAniEvent))
 
-	arg_2_0.dftAniEvent:SetTriggerEvent(function()
-		if arg_2_0.onTrigger then
-			arg_2_0.onTrigger()
+	slot0.dftAniEvent:SetTriggerEvent(function ()
+		if uv0.onTrigger then
+			uv0.onTrigger()
 		end
 
-		arg_2_0.onTrigger = nil
+		uv0.onTrigger = nil
 	end)
-	arg_2_0.dftAniEvent:SetEndEvent(function()
-		if arg_2_0.callback then
-			arg_2_0.callback()
-		end
-	end)
-
-	arg_2_0.subAnim = arg_2_0._tf:Find("Main/anim")
-	arg_2_0.subAnimation = arg_2_0.subAnim:GetComponent(typeof(Animation))
-	arg_2_0.subDftAniEvent = arg_2_0.subAnim:GetComponent(typeof(DftAniEvent))
-
-	arg_2_0.subDftAniEvent:SetStartEvent(function()
-		arg_2_0.playing = true
-	end)
-	arg_2_0.subDftAniEvent:SetEndEvent(function()
-		arg_2_0.playing = false
-
-		if arg_2_0.onLastUpdate then
-			arg_2_0.onLastUpdate()
-
-			arg_2_0.onLastUpdate = nil
+	slot0.dftAniEvent:SetEndEvent(function ()
+		if uv0.callback then
+			uv0.callback()
 		end
 	end)
 
-	arg_2_0.playing = false
+	slot0.subAnim = slot0._tf:Find("Main/anim")
+	slot0.subAnimation = slot0.subAnim:GetComponent(typeof(Animation))
+	slot0.subDftAniEvent = slot0.subAnim:GetComponent(typeof(DftAniEvent))
 
-	if not arg_2_0.handle then
-		arg_2_0.handle = UpdateBeat:CreateListener(arg_2_0.Update, arg_2_0)
+	slot0.subDftAniEvent:SetStartEvent(function ()
+		uv0.playing = true
+	end)
+	slot0.subDftAniEvent:SetEndEvent(function ()
+		uv0.playing = false
+
+		if uv0.onLastUpdate then
+			uv0.onLastUpdate()
+
+			uv0.onLastUpdate = nil
+		end
+	end)
+
+	slot0.playing = false
+
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	UpdateBeat:AddListener(arg_2_0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 
-	arg_2_0.isInit = true
+	slot0.isInit = true
 end
 
-function var_0_0.Update(arg_7_0)
-	if arg_7_0.playing and arg_7_0.onUpdate then
-		local var_7_0 = arg_7_0:Evaluate()
-
-		arg_7_0.onUpdate(var_7_0)
-	elseif not arg_7_0.playing and arg_7_0.onUpdate then
-		arg_7_0.onUpdate = nil
-	end
-end
-
-function var_0_0.Play(arg_8_0, arg_8_1)
-	if not arg_8_0.isInit then
-		arg_8_0:Init()
-	end
-
-	arg_8_0:Stop()
-	arg_8_0.animation:Play("anim_Cryptolalia_change")
-
-	local var_8_0 = arg_8_1 <= 0 and "anim_Cryptolalia_listup" or "anim_Cryptolalia_listdown"
-
-	arg_8_0.subAnimation:Play(var_8_0)
-
-	return var_0_0
-end
-
-function var_0_0.OnUpdate(arg_9_0, arg_9_1)
-	arg_9_0.onUpdate = arg_9_1
-
-	return var_0_0
-end
-
-function var_0_0.OnLastUpdate(arg_10_0, arg_10_1)
-	arg_10_0.onLastUpdate = arg_10_1
-
-	return var_0_0
-end
-
-function var_0_0.OnTrigger(arg_11_0, arg_11_1)
-	arg_11_0.onTrigger = arg_11_1
-
-	return var_0_0
-end
-
-function var_0_0.OnComplete(arg_12_0, arg_12_1)
-	arg_12_0.callback = arg_12_1
-
-	return var_0_0
-end
-
-function var_0_0.Evaluate(arg_13_0)
-	return arg_13_0.subAnim.localPosition
-end
-
-function var_0_0.Stop(arg_14_0)
-	arg_14_0.playing = false
-
-	arg_14_0.animation:Stop()
-	arg_14_0.subAnimation:Stop()
-end
-
-function var_0_0.Dispose(arg_15_0)
-	arg_15_0.dftAniEvent:SetTriggerEvent(nil)
-	arg_15_0.dftAniEvent:SetEndEvent(nil)
-	arg_15_0.subDftAniEvent:SetStartEvent(nil)
-	arg_15_0.subDftAniEvent:SetEndEvent(nil)
-
-	if arg_15_0.handle then
-		UpdateBeat:RemoveListener(arg_15_0.handle)
+function slot0.Update(slot0)
+	if slot0.playing and slot0.onUpdate then
+		slot0.onUpdate(slot0:Evaluate())
+	elseif not slot0.playing and slot0.onUpdate then
+		slot0.onUpdate = nil
 	end
 end
 
-return var_0_0
+function slot0.Play(slot0, slot1)
+	if not slot0.isInit then
+		slot0:Init()
+	end
+
+	slot0:Stop()
+	slot0.animation:Play("anim_Cryptolalia_change")
+	slot0.subAnimation:Play(slot1 <= 0 and "anim_Cryptolalia_listup" or "anim_Cryptolalia_listdown")
+
+	return uv0
+end
+
+function slot0.OnUpdate(slot0, slot1)
+	slot0.onUpdate = slot1
+
+	return uv0
+end
+
+function slot0.OnLastUpdate(slot0, slot1)
+	slot0.onLastUpdate = slot1
+
+	return uv0
+end
+
+function slot0.OnTrigger(slot0, slot1)
+	slot0.onTrigger = slot1
+
+	return uv0
+end
+
+function slot0.OnComplete(slot0, slot1)
+	slot0.callback = slot1
+
+	return uv0
+end
+
+function slot0.Evaluate(slot0)
+	return slot0.subAnim.localPosition
+end
+
+function slot0.Stop(slot0)
+	slot0.playing = false
+
+	slot0.animation:Stop()
+	slot0.subAnimation:Stop()
+end
+
+function slot0.Dispose(slot0)
+	slot0.dftAniEvent:SetTriggerEvent(nil)
+	slot0.dftAniEvent:SetEndEvent(nil)
+	slot0.subDftAniEvent:SetStartEvent(nil)
+	slot0.subDftAniEvent:SetEndEvent(nil)
+
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
+	end
+end
+
+return slot0

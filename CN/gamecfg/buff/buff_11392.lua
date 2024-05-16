@@ -1,37 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffOrb",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				buff_id = 313,
-				rant = 500,
-				level = 3,
-				type = 3,
-				index = {
-					1,
-					2
-				}
-			}
-		},
-		{
-			type = "BattleBuffOrb",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				buff_id = 313,
-				rant = 500,
-				level = 1,
-				type = 3,
-				index = {
-					-1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -390,5 +357,38 @@
 	stack = 1,
 	id = 11392,
 	icon = 11390,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffOrb",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				buff_id = 313,
+				rant = 500,
+				level = 3,
+				type = 3,
+				index = {
+					1,
+					2
+				}
+			}
+		},
+		{
+			type = "BattleBuffOrb",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				buff_id = 313,
+				rant = 500,
+				level = 1,
+				type = 3,
+				index = {
+					-1
+				}
+			}
+		}
+	}
 }

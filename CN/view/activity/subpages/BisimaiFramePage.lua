@@ -1,1 +1,1 @@
-﻿return (class("YidaliV3FramePage", import(".TemplatePage.NewFrameTemplatePage")))
+return class("YidaliV3FramePage", import(".TemplatePage.NewFrameTemplatePage"))

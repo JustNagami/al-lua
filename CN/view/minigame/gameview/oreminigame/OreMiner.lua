@@ -1,59 +1,59 @@
-﻿local var_0_0 = class("OreMiner")
+slot0 = class("OreMiner")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.binder = arg_1_1
-	arg_1_0._tf = arg_1_2
-	arg_1_0.interval = arg_1_3
-	arg_1_0.animator = findTF(arg_1_0._tf, "Image"):GetComponent(typeof(Animator))
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.binder = slot1
+	slot0._tf = slot2
+	slot0.interval = slot3
+	slot0.animator = findTF(slot0._tf, "Image"):GetComponent(typeof(Animator))
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.AddListener(arg_2_0)
-	arg_2_0.binder:bind(OreGameConfig.EVENT_ORE_EF_MINED, function(arg_3_0, arg_3_1)
-		arg_2_0:PlayEFMined(arg_3_1.index)
+function slot0.AddListener(slot0)
+	slot0.binder:bind(OreGameConfig.EVENT_ORE_EF_MINED, function (slot0, slot1)
+		uv0:PlayEFMined(slot1.index)
 	end)
 end
 
-function var_0_0.AddDftAniEvent(arg_4_0)
-	findTF(arg_4_0._tf, "Image"):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function()
-		arg_4_0.binder:emit(OreGameConfig.EVENT_ORE_NEW, {
-			index = arg_4_0.index,
-			pos = arg_4_0._tf.parent.anchoredPosition
+function slot0.AddDftAniEvent(slot0)
+	findTF(slot0._tf, "Image"):GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
+		uv0.binder:emit(OreGameConfig.EVENT_ORE_NEW, {
+			index = uv0.index,
+			pos = uv0._tf.parent.anchoredPosition
 		})
 	end)
-	findTF(arg_4_0._tf, "EF"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-		setActive(findTF(arg_4_0._tf, "EF"), false)
+	findTF(slot0._tf, "EF"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+		setActive(findTF(uv0._tf, "EF"), false)
 	end)
 end
 
-function var_0_0.Init(arg_7_0)
-	arg_7_0:AddListener()
-	arg_7_0:AddDftAniEvent()
+function slot0.Init(slot0)
+	slot0:AddListener()
+	slot0:AddDftAniEvent()
 
-	arg_7_0.time = 1.5
-	arg_7_0.index = arg_7_0._tf.name
+	slot0.time = 1.5
+	slot0.index = slot0._tf.name
 end
 
-function var_0_0.Reset(arg_8_0)
-	arg_8_0.interval = 1.5 + math.random()
-	arg_8_0.time = 1.5
+function slot0.Reset(slot0)
+	slot0.interval = 1.5 + math.random()
+	slot0.time = 1.5
 end
 
-function var_0_0.PlayEFMined(arg_9_0, arg_9_1)
-	if arg_9_0.index == arg_9_1 then
-		setActive(findTF(arg_9_0._tf, "EF"), true)
+function slot0.PlayEFMined(slot0, slot1)
+	if slot0.index == slot1 then
+		setActive(findTF(slot0._tf, "EF"), true)
 	end
 end
 
-function var_0_0.OnTimer(arg_10_0, arg_10_1)
-	if arg_10_0.time >= arg_10_0.interval then
-		arg_10_0.animator:Play("Mining")
+function slot0.OnTimer(slot0, slot1)
+	if slot0.interval <= slot0.time then
+		slot0.animator:Play("Mining")
 
-		arg_10_0.time = 0
+		slot0.time = 0
 	end
 
-	arg_10_0.time = arg_10_0.time + arg_10_1
+	slot0.time = slot0.time + slot1
 end
 
-return var_0_0
+return slot0

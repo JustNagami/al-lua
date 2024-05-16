@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 10330,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "空中支援使用剑鱼式进行一轮航空鱼雷攻击，使敌方全体减速30.0%，持续8秒",
 		addition = {
@@ -91,5 +79,17 @@
 	stack = 1,
 	id = 10330,
 	icon = 10330,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 10330,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

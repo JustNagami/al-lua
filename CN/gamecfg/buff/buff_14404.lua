@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "烟雾弹",
+	init_effect = "",
+	time = 15,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 14404,
+	icon = 14404,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -30,26 +51,5 @@
 				buff_id = 14400
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "烟雾弹",
-	init_effect = "",
-	time = 15,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 14404,
-	icon = 14404,
-	last_effect = ""
+	}
 }

@@ -1,82 +1,81 @@
-﻿local var_0_0 = class("CrusingDisplayActPage", import("view.base.BaseActivityPage"))
+slot0 = class("CrusingDisplayActPage", import("view.base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bgBase = arg_1_0._tf:Find("bg_base")
-	arg_1_0.bgPay = arg_1_0._tf:Find("bg_pay")
-	arg_1_0.btnGoBase = arg_1_0._tf:Find("AD/btn_go_base")
+function slot0.OnInit(slot0)
+	slot0.bgBase = slot0._tf:Find("bg_base")
+	slot0.bgPay = slot0._tf:Find("bg_pay")
+	slot0.btnGoBase = slot0._tf:Find("AD/btn_go_base")
 
-	onButton(arg_1_0, arg_1_0.btnGoBase, function()
-		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CRUSING)
+	onButton(slot0, slot0.btnGoBase, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CRUSING)
 	end, SFX_CONFIRM)
 
-	arg_1_0.btnGoPay = arg_1_0._tf:Find("AD/btn_go_pay")
+	slot0.btnGoPay = slot0._tf:Find("AD/btn_go_pay")
 
-	onButton(arg_1_0, arg_1_0.btnGoPay, function()
-		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CRUSING)
+	onButton(slot0, slot0.btnGoPay, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CRUSING)
 	end, SFX_CONFIRM)
 
-	local var_1_0 = arg_1_0._tf:Find("AD/info_panel")
+	slot1 = slot0._tf:Find("AD/info_panel")
+	slot0.toggleBase = slot1:Find("toggle_base")
 
-	arg_1_0.toggleBase = var_1_0:Find("toggle_base")
-
-	onToggle(arg_1_0, arg_1_0.toggleBase, function(arg_4_0)
-		if arg_1_0.LTBase then
-			LeanTween.cancel(arg_1_0.LTBase)
+	onToggle(slot0, slot0.toggleBase, function (slot0)
+		if uv0.LTBase then
+			LeanTween.cancel(uv0.LTBase)
 		end
 
-		arg_1_0.LTBase = LeanTween.alpha(arg_1_0.bgBase, arg_4_0 and 1 or 0, 0.5).uniqueId
+		uv0.LTBase = LeanTween.alpha(uv0.bgBase, slot0 and 1 or 0, 0.5).uniqueId
 	end, SFX_PANEL)
 
-	arg_1_0.togglePay = var_1_0:Find("toggle_pay")
+	slot0.togglePay = slot1:Find("toggle_pay")
 
-	onToggle(arg_1_0, arg_1_0.togglePay, function(arg_5_0)
-		if arg_1_0.LTPay then
-			LeanTween.cancel(arg_1_0.LTPay)
+	onToggle(slot0, slot0.togglePay, function (slot0)
+		if uv0.LTPay then
+			LeanTween.cancel(uv0.LTPay)
 		end
 
-		arg_1_0.LTPay = LeanTween.alpha(arg_1_0.bgPay, arg_5_0 and 1 or 0, 0.5).uniqueId
+		uv0.LTPay = LeanTween.alpha(uv0.bgPay, slot0 and 1 or 0, 0.5).uniqueId
 	end, SFX_PANEL)
 
-	arg_1_0.btnPay = var_1_0:Find("unlock_panel/btn_unlock")
+	slot0.btnPay = slot1:Find("unlock_panel/btn_unlock")
 
-	onButton(arg_1_0, arg_1_0.btnPay, function()
-		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+	onButton(slot0, slot0.btnPay, function ()
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
 			wrap = ChargeScene.TYPE_GIFT
 		})
 	end, SFX_CONFIRM)
 
-	arg_1_0.markPay = var_1_0:Find("unlock_panel/mark_unlocked")
-	arg_1_0.textPay = var_1_0:Find("text_pay")
+	slot0.markPay = slot1:Find("unlock_panel/mark_unlocked")
+	slot0.textPay = slot1:Find("text_pay")
 end
 
-function var_0_0.OnDataSetting(arg_7_0)
-	arg_7_0.isPay = arg_7_0.activity.data2 == 1
+function slot0.OnDataSetting(slot0)
+	slot0.isPay = slot0.activity.data2 == 1
 end
 
-function var_0_0.OnUpdateFlush(arg_8_0)
-	setActive(arg_8_0.textPay:Find("before"), not arg_8_0.isPay)
-	setActive(arg_8_0.textPay:Find("after"), arg_8_0.isPay)
-	setActive(arg_8_0.btnPay, not arg_8_0.isPay)
-	setActive(arg_8_0.markPay, arg_8_0.isPay)
+function slot0.OnUpdateFlush(slot0)
+	setActive(slot0.textPay:Find("before"), not slot0.isPay)
+	setActive(slot0.textPay:Find("after"), slot0.isPay)
+	setActive(slot0.btnPay, not slot0.isPay)
+	setActive(slot0.markPay, slot0.isPay)
 
-	local var_8_0 = #arg_8_0.activity:GetCrusingUnreceiveAward() > 0
+	slot1 = #slot0.activity:GetCrusingUnreceiveAward() > 0
 
-	setActive(arg_8_0.btnGoBase:Find("tip"), var_8_0)
-	setActive(arg_8_0.btnGoPay:Find("tip"), var_8_0)
-	onNextTick(function()
-		if arg_8_0.isPay then
-			triggerToggle(arg_8_0.togglePay, true)
+	setActive(slot0.btnGoBase:Find("tip"), slot1)
+	setActive(slot0.btnGoPay:Find("tip"), slot1)
+	onNextTick(function ()
+		if uv0.isPay then
+			triggerToggle(uv0.togglePay, true)
 		else
-			triggerToggle(arg_8_0.toggleBase, true)
+			triggerToggle(uv0.toggleBase, true)
 
-			if PlayerPrefs.GetInt("first_crusing_page_display:" .. arg_8_0.activity.id, 0) == 0 then
-				PlayerPrefs.SetInt("first_crusing_page_display:" .. arg_8_0.activity.id, 1)
+			if PlayerPrefs.GetInt("first_crusing_page_display:" .. uv0.activity.id, 0) == 0 then
+				PlayerPrefs.SetInt("first_crusing_page_display:" .. uv0.activity.id, 1)
 
-				arg_8_0.LTFirst = LeanTween.delayedCall(3, System.Action(function()
-					triggerToggle(arg_8_0.togglePay, true)
+				uv0.LTFirst = LeanTween.delayedCall(3, System.Action(function ()
+					triggerToggle(uv0.togglePay, true)
 
-					arg_8_0.LTFirst = LeanTween.delayedCall(3, System.Action(function()
-						triggerToggle(arg_8_0.toggleBase, true)
+					uv0.LTFirst = LeanTween.delayedCall(3, System.Action(function ()
+						triggerToggle(uv0.toggleBase, true)
 					end)).uniqueId
 				end)).uniqueId
 			end
@@ -84,32 +83,32 @@ function var_0_0.OnUpdateFlush(arg_8_0)
 	end)
 end
 
-function var_0_0.OnHideFlush(arg_12_0)
-	if arg_12_0.LTFirst then
-		LeanTween.cancel(arg_12_0.LTFirst)
+function slot0.OnHideFlush(slot0)
+	if slot0.LTFirst then
+		LeanTween.cancel(slot0.LTFirst)
 
-		arg_12_0.LTFirst = nil
+		slot0.LTFirst = nil
 	end
 end
 
-function var_0_0.OnDestroy(arg_13_0)
-	if arg_13_0.LTFirst then
-		LeanTween.cancel(arg_13_0.LTFirst)
+function slot0.OnDestroy(slot0)
+	if slot0.LTFirst then
+		LeanTween.cancel(slot0.LTFirst)
 
-		arg_13_0.LTFirst = nil
+		slot0.LTFirst = nil
 	end
 
-	if arg_13_0.LTBase then
-		LeanTween.cancel(arg_13_0.LTBase)
+	if slot0.LTBase then
+		LeanTween.cancel(slot0.LTBase)
 
-		arg_13_0.LTBase = nil
+		slot0.LTBase = nil
 	end
 
-	if arg_13_0.LTPay then
-		LeanTween.cancel(arg_13_0.LTPay)
+	if slot0.LTPay then
+		LeanTween.cancel(slot0.LTPay)
 
-		arg_13_0.LTPay = nil
+		slot0.LTPay = nil
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,34 +1,33 @@
-﻿local var_0_0 = class("EquipmentTraceBackMediator", import("view.base.ContextMediator"))
+slot0 = class("EquipmentTraceBackMediator", import("view.base.ContextMediator"))
+slot0.TRANSFORM_EQUIP = "transform equip"
 
-var_0_0.TRANSFORM_EQUIP = "transform equip"
+function slot0.register(slot0)
+	slot0:BindEvent()
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:BindEvent()
+	slot0.env = {}
 
-	arg_1_0.env = {}
+	slot0:getViewComponent():SetEnv(slot0.env)
+	assert(slot0.contextData.TargetEquipmentId, "Should Set TargetEquipment First")
 
-	arg_1_0:getViewComponent():SetEnv(arg_1_0.env)
-	assert(arg_1_0.contextData.TargetEquipmentId, "Should Set TargetEquipment First")
+	slot0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
 
-	arg_1_0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
+	slot0:getViewComponent():UpdatePlayer(getProxy(PlayerProxy):getData())
 
-	arg_1_0:getViewComponent():UpdatePlayer(getProxy(PlayerProxy):getData())
-
-	arg_1_0.stopUpdateView = false
+	slot0.stopUpdateView = false
 end
 
-function var_0_0.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_0.TRANSFORM_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
-		arg_2_0.stopUpdateView = true
+function slot0.BindEvent(slot0)
+	slot0:bind(uv0.TRANSFORM_EQUIP, function (slot0, slot1, slot2)
+		uv0.stopUpdateView = true
 
-		arg_2_0:sendNotification(GAME.TRANSFORM_EQUIPMENT, {
-			candicate = arg_3_1,
-			formulaIds = arg_3_2
+		uv0:sendNotification(GAME.TRANSFORM_EQUIPMENT, {
+			candicate = slot1,
+			formulaIds = slot2
 		})
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		BagProxy.ITEM_UPDATED,
@@ -40,73 +39,66 @@ function var_0_0.listNotificationInterests(arg_4_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
-
-	if var_5_0 == PlayerProxy.UPDATED then
-		arg_5_0:getViewComponent():UpdatePlayer(var_5_1)
-	elseif var_5_0 == BagProxy.ITEM_UPDATED then
-		if arg_5_0.stopUpdateView then
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0:getViewComponent():UpdatePlayer(slot1:getBody())
+	elseif slot2 == BagProxy.ITEM_UPDATED then
+		if slot0.stopUpdateView then
 			return
 		end
 
-		local var_5_2 = arg_5_0:getViewComponent()
+		slot4 = slot0:getViewComponent()
 
-		var_5_2:UpdateSort()
-		var_5_2:UpdateSourceList()
-		var_5_2:UpdateFormula()
-	elseif var_5_0 == EquipmentProxy.EQUIPMENT_UPDATED then
-		if arg_5_0.stopUpdateView then
+		slot4:UpdateSort()
+		slot4:UpdateSourceList()
+		slot4:UpdateFormula()
+	elseif slot2 == EquipmentProxy.EQUIPMENT_UPDATED then
+		if slot0.stopUpdateView then
 			return
 		end
 
-		if arg_5_0.contextData.sourceEquipmentInstance then
-			local var_5_3 = var_5_1.count == 0
-			local var_5_4 = arg_5_0.contextData.sourceEquipmentInstance
+		if slot0.contextData.sourceEquipmentInstance then
+			slot5 = slot0.contextData.sourceEquipmentInstance
 
-			if var_5_3 and var_5_4.type == DROP_TYPE_EQUIP and EquipmentProxy.SameEquip(var_5_1, var_5_4.template) then
-				arg_5_0.contextData.sourceEquipmentInstance = nil
+			if slot3.count == 0 and slot5.type == DROP_TYPE_EQUIP and EquipmentProxy.SameEquip(slot3, slot5.template) then
+				slot0.contextData.sourceEquipmentInstance = nil
 			end
 		end
 
-		local var_5_5 = arg_5_0:getViewComponent()
+		slot4 = slot0:getViewComponent()
 
-		var_5_5:UpdateSourceEquipmentPaths()
-		var_5_5:UpdateSort()
-		var_5_5:UpdateSourceList()
-		var_5_5:UpdateFormula()
-	elseif var_5_0 == GAME.UNEQUIP_FROM_SHIP_DONE or var_5_0 == GAME.EQUIP_TO_SHIP_DONE then
-		if arg_5_0.stopUpdateView then
+		slot4:UpdateSourceEquipmentPaths()
+		slot4:UpdateSort()
+		slot4:UpdateSourceList()
+		slot4:UpdateFormula()
+	elseif slot2 == GAME.UNEQUIP_FROM_SHIP_DONE or slot2 == GAME.EQUIP_TO_SHIP_DONE then
+		if slot0.stopUpdateView then
 			return
 		end
 
-		local var_5_6 = arg_5_0.contextData.sourceEquipmentInstance
+		if slot0.contextData.sourceEquipmentInstance and slot4.type == DROP_TYPE_EQUIP then
+			slot5 = slot3:getEquip(slot4.template.shipPos)
 
-		if var_5_6 and var_5_6.type == DROP_TYPE_EQUIP then
-			local var_5_7 = var_5_1:getEquip(var_5_6.template.shipPos)
-
-			if var_5_6.template.shipId == var_5_1.id and (not var_5_7 or var_5_7.id ~= var_5_6.id) then
-				arg_5_0.contextData.sourceEquipmentInstance = nil
+			if slot4.template.shipId == slot3.id and (not slot5 or slot5.id ~= slot4.id) then
+				slot0.contextData.sourceEquipmentInstance = nil
 			end
 		end
 
-		local var_5_8 = arg_5_0:getViewComponent()
+		slot5 = slot0:getViewComponent()
 
-		var_5_8:UpdateSourceEquipmentPaths()
-		var_5_8:UpdateSort()
-		var_5_8:UpdateSourceList()
-		var_5_8:UpdateFormula()
-	elseif var_5_0 == GAME.TRANSFORM_EQUIPMENT_DONE or var_5_0 == GAME.TRANSFORM_EQUIPMENT_FAIL then
-		arg_5_0.stopUpdateView = false
+		slot5:UpdateSourceEquipmentPaths()
+		slot5:UpdateSort()
+		slot5:UpdateSourceList()
+		slot5:UpdateFormula()
+	elseif slot2 == GAME.TRANSFORM_EQUIPMENT_DONE or slot2 == GAME.TRANSFORM_EQUIPMENT_FAIL then
+		slot0.stopUpdateView = false
+		slot4 = slot0:getViewComponent()
 
-		local var_5_9 = arg_5_0:getViewComponent()
-
-		var_5_9:UpdateSourceEquipmentPaths()
-		var_5_9:UpdateSort()
-		var_5_9:UpdateSourceList()
-		var_5_9:UpdateFormula()
+		slot4:UpdateSourceEquipmentPaths()
+		slot4:UpdateSort()
+		slot4:UpdateSourceList()
+		slot4:UpdateFormula()
 	end
 end
 
-return var_0_0
+return slot0

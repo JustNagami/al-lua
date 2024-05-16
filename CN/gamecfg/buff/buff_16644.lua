@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAntiAirWeaponFireNear"
-			},
-			arg_list = {
-				time = 20,
-				target = "TargetSelf",
-				skill_id = 16642
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 16644,
 	icon = 16640,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAntiAirWeaponFireNear"
+			},
+			arg_list = {
+				time = 20,
+				target = "TargetSelf",
+				skill_id = 16642
+			}
+		}
+	}
 }

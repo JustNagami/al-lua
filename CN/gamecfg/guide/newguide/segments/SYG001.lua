@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"让我们打开<color=#ff7d36>生活区</color>",
 	"<color=#ff7d36>后宅</color>从这里进入哟",
 	"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
@@ -37,13 +37,13 @@ return {
 				mode = 2,
 				posY = -269.6,
 				posX = 0,
-				text = var_0_0[1]
+				text = slot0[1]
 			}
 		},
 		{
 			alpha = 0.4,
 			ui = {
-				dynamicPath = function()
+				dynamicPath = function ()
 					if USE_OLD_MAIN_LIVE_AREA_UI then
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaOldUI(Clone)/backyard_btn"
 					else
@@ -63,7 +63,7 @@ return {
 				mode = 2,
 				posY = 328.3,
 				posX = 23.2,
-				text = var_0_0[2]
+				text = slot0[2]
 			}
 		},
 		{
@@ -74,7 +74,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -85,7 +85,7 @@ return {
 				mode = 2,
 				posY = -98.9,
 				posX = -595.6,
-				text = var_0_0[4],
+				text = slot0[4],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomleft/train_btn",
 					lineMode = 1
@@ -99,7 +99,7 @@ return {
 				mode = 2,
 				posY = 396.81,
 				posX = 348.85,
-				text = var_0_0[5],
+				text = slot0[5],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/topPanel/btns/topright/comfortable",
 					lineMode = 1
@@ -113,7 +113,7 @@ return {
 				mode = 2,
 				posY = -238.4,
 				posX = 562.01,
-				text = var_0_0[6],
+				text = slot0[6],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomright/shop_btn",
 					lineMode = 1
@@ -127,7 +127,7 @@ return {
 				mode = 2,
 				posY = -222.4,
 				posX = 395.2,
-				text = var_0_0[7],
+				text = slot0[7],
 				ui = {
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomright/decorate_btn",
 					lineMode = 1
@@ -151,7 +151,7 @@ return {
 				mode = 2,
 				posY = -284.9,
 				posX = -327.5,
-				text = var_0_0[8]
+				text = slot0[8]
 			}
 		},
 		{
@@ -161,7 +161,7 @@ return {
 				mode = 2,
 				posY = -331.3,
 				posX = 0,
-				text = var_0_0[9]
+				text = slot0[9]
 			}
 		},
 		{
@@ -171,7 +171,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 200,
-				text = var_0_0[10]
+				text = slot0[10]
 			},
 			ui = {
 				scale = 0.13,
@@ -198,7 +198,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[11]
+				text = slot0[11]
 			}
 		},
 		{
@@ -208,7 +208,7 @@ return {
 				mode = 2,
 				posY = -108.2,
 				posX = -628.9,
-				text = var_0_0[12]
+				text = slot0[12]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomleft/train_btn",
@@ -224,7 +224,7 @@ return {
 				mode = 2,
 				posY = -1.63,
 				posX = -317.61,
-				text = var_0_0[13]
+				text = slot0[13]
 			},
 			ui = {
 				scale = 1.5,
@@ -252,7 +252,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[14]
+				text = slot0[14]
 			}
 		},
 		{
@@ -273,7 +273,7 @@ return {
 				mode = 2,
 				posY = -198.94,
 				posX = 475.1,
-				text = var_0_0[15]
+				text = slot0[15]
 			}
 		},
 		{
@@ -283,7 +283,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[16]
+				text = slot0[16]
 			}
 		}
 	}

@@ -1,16 +1,15 @@
-﻿local var_0_0 = class("KwxyKrTracker")
+slot0 = class("KwxyKrTracker")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	return
+function slot0.Ctor(slot0, slot1)
 end
 
-function var_0_0.Tracking(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-	if arg_2_1 == TRACKING_TUTORIAL_COMPLETE_1 then
+function slot0.Tracking(slot0, slot1, slot2, slot3, slot4)
+	if slot1 == TRACKING_TUTORIAL_COMPLETE_1 then
 		pg.SdkMgr.GetInstance():CompletedTutorial()
 		pg.SdkMgr.GetInstance():UnlockAchievement()
-	elseif arg_2_1 == TRACKING_USER_LEVELUP then
-		pg.SdkMgr.GetInstance():SdkLevelUp(arg_2_4, arg_2_3)
+	elseif slot1 == TRACKING_USER_LEVELUP then
+		pg.SdkMgr.GetInstance():SdkLevelUp(slot4, slot3)
 	end
 end
 
-return var_0_0
+return slot0

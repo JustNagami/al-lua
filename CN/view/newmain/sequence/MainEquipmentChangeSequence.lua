@@ -1,20 +1,16 @@
-﻿local var_0_0 = class("MainEquipmentChangeSequence")
+slot0 = class("MainEquipmentChangeSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = ItemShowPanel.ConfigData
-
-	if not var_1_0.isOpen then
-		arg_1_1()
+function slot0.Execute(slot0, slot1)
+	if not ItemShowPanel.ConfigData.isOpen then
+		slot1()
 
 		return
 	end
 
-	local var_1_1 = var_1_0.equipID
-
-	if PlayerPrefs.GetInt("ItemIconChange_" .. var_1_1, 0) == 0 then
-		local function var_1_2()
-			arg_1_1()
-			PlayerPrefs.SetInt("ItemIconChange_" .. var_1_1, 1)
+	if PlayerPrefs.GetInt("ItemIconChange_" .. slot2.equipID, 0) == 0 then
+		function slot5()
+			uv0()
+			PlayerPrefs.SetInt("ItemIconChange_" .. uv1, 1)
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -24,12 +20,12 @@ function var_0_0.Execute(arg_1_0, arg_1_1)
 			type = MSGBOX_TYPE_JUST_FOR_SHOW,
 			title = pg.MsgboxMgr.TITLE_INFORMATION,
 			weight = LayerWeightConst.TOP_LAYER,
-			onClose = var_1_2,
-			onYes = var_1_2
+			onClose = slot5,
+			onYes = slot5
 		})
 	else
-		arg_1_1()
+		slot1()
 	end
 end
 
-return var_0_0
+return slot0

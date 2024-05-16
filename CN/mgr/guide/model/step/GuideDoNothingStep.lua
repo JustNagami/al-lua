@@ -1,17 +1,17 @@
-﻿local var_0_0 = class("GuideDoNothingStep", import(".GuideStep"))
+slot0 = class("GuideDoNothingStep", import(".GuideStep"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.eventFlag = arg_1_1.doNothing
+	slot0.eventFlag = slot1.doNothing
 end
 
-function var_0_0.GetType(arg_2_0)
+function slot0.GetType(slot0)
 	return GuideStep.TYPE_DONOTHING
 end
 
-function var_0_0.ExistTrigger(arg_3_0)
-	return arg_3_0.eventFlag
+function slot0.ExistTrigger(slot0)
+	return slot0.eventFlag
 end
 
-return var_0_0
+return slot0

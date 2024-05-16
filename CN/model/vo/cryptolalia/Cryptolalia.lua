@@ -1,325 +1,285 @@
-﻿local var_0_0 = class("Cryptolalia", import("model.vo.BaseVO"))
+slot0 = class("Cryptolalia", import("model.vo.BaseVO"))
+slot0.STATE_LOCK = 1
+slot0.STATE_DOWNLOADABLE = 2
+slot0.STATE_PLAYABLE = 3
+slot0.STATE_DOWNLOADING = 4
+slot0.COST_TYPE_GEM = 1
+slot0.COST_TYPE_TICKET = 2
+slot0.LANG_TYPE_JP = 0
+slot0.LANG_TYPE_CH = 1
 
-var_0_0.STATE_LOCK = 1
-var_0_0.STATE_DOWNLOADABLE = 2
-var_0_0.STATE_PLAYABLE = 3
-var_0_0.STATE_DOWNLOADING = 4
-var_0_0.COST_TYPE_GEM = 1
-var_0_0.COST_TYPE_TICKET = 2
-var_0_0.LANG_TYPE_JP = 0
-var_0_0.LANG_TYPE_CH = 1
-
-function var_0_0.GetAssetBundlePath(arg_1_0)
-	local var_1_0 = var_0_0.BuildCpkPath(arg_1_0)
-
-	return PathMgr.getAssetBundle(var_1_0)
+function slot0.GetAssetBundlePath(slot0)
+	return PathMgr.getAssetBundle(uv0.BuildCpkPath(slot0))
 end
 
-function var_0_0.GetSubtitleAssetBundlePath(arg_2_0)
-	local var_2_0 = var_0_0.BuildSubtitlePath(arg_2_0)
-
-	return PathMgr.getAssetBundle(var_2_0)
+function slot0.GetSubtitleAssetBundlePath(slot0)
+	return PathMgr.getAssetBundle(uv0.BuildSubtitlePath(slot0))
 end
 
-function var_0_0.BuildCpkPath(arg_3_0)
-	return "originsource/cipher/" .. string.lower(arg_3_0) .. ".cpk"
+function slot0.BuildCpkPath(slot0)
+	return "originsource/cipher/" .. string.lower(slot0) .. ".cpk"
 end
 
-function var_0_0.BuildSubtitlePath(arg_4_0)
-	return "originsource/cipher/" .. string.lower(arg_4_0) .. ".txt"
+function slot0.BuildSubtitlePath(slot0)
+	return "originsource/cipher/" .. string.lower(slot0) .. ".txt"
 end
 
-function var_0_0.Ctor(arg_5_0, arg_5_1)
-	arg_5_0.id = arg_5_1.id
-	arg_5_0.configId = arg_5_1.id
-	arg_5_0.lock = true
-	arg_5_0.sizes = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot1.id
+	slot0.lock = true
+	slot0.sizes = {}
 end
 
-function var_0_0.GetState(arg_6_0, arg_6_1)
-	if not arg_6_0:IsLock() then
-		if arg_6_0:IsDownloadRes(arg_6_1) then
-			return var_0_0.STATE_PLAYABLE
+function slot0.GetState(slot0, slot1)
+	if not slot0:IsLock() then
+		if slot0:IsDownloadRes(slot1) then
+			return uv0.STATE_PLAYABLE
 		else
-			return var_0_0.STATE_DOWNLOADABLE
+			return uv0.STATE_DOWNLOADABLE
 		end
 	else
-		return var_0_0.STATE_LOCK
+		return uv0.STATE_LOCK
 	end
 end
 
-function var_0_0.IsEmpty(arg_7_0)
-	return arg_7_0 == nil or arg_7_0 == ""
+function slot0.IsEmpty(slot0)
+	return slot0 == nil or slot0 == ""
 end
 
-function var_0_0.GetDefaultLangType(arg_8_0)
-	if not var_0_0.IsEmpty(arg_8_0:GetJpCpkName()) then
-		return var_0_0.LANG_TYPE_JP
+function slot0.GetDefaultLangType(slot0)
+	if not uv0.IsEmpty(slot0:GetJpCpkName()) then
+		return uv0.LANG_TYPE_JP
 	end
 
-	if not var_0_0.IsEmpty(arg_8_0:GetCnCpkName()) then
-		return var_0_0.LANG_TYPE_CH
-	end
-end
-
-function var_0_0.IsDownloadableState(arg_9_0, arg_9_1)
-	return arg_9_0:GetState(arg_9_1) == var_0_0.STATE_DOWNLOADABLE
-end
-
-function var_0_0.IsPlayableState(arg_10_0, arg_10_1)
-	return arg_10_0:GetState(arg_10_1) == var_0_0.STATE_PLAYABLE
-end
-
-function var_0_0.IsDownloadRes(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0:GetCpkName(arg_11_1)
-	local var_11_1 = var_0_0.BuildCpkPath(var_11_0)
-
-	return pg.CipherGroupMgr.GetInstance():isCipherExist(var_11_1)
-end
-
-function var_0_0.IsDownloadAllRes(arg_12_0)
-	if arg_12_0:IsMultiVersion() then
-		return arg_12_0:IsDownloadRes(var_0_0.LANG_TYPE_CH) and arg_12_0:IsDownloadRes(var_0_0.LANG_TYPE_JP)
-	elseif arg_12_0:OnlyChVersion() then
-		return arg_12_0:IsDownloadRes(var_0_0.LANG_TYPE_CH)
-	elseif arg_12_0:OnlyJpVersion() then
-		return arg_12_0:IsDownloadRes(var_0_0.LANG_TYPE_JP)
+	if not uv0.IsEmpty(slot0:GetCnCpkName()) then
+		return uv0.LANG_TYPE_CH
 	end
 end
 
-function var_0_0.IsLockState(arg_13_0, arg_13_1)
-	return arg_13_0:GetState(arg_13_1) == var_0_0.STATE_LOCK
+function slot0.IsDownloadableState(slot0, slot1)
+	return slot0:GetState(slot1) == uv0.STATE_DOWNLOADABLE
 end
 
-function var_0_0.Unlock(arg_14_0)
-	arg_14_0.lock = false
+function slot0.IsPlayableState(slot0, slot1)
+	return slot0:GetState(slot1) == uv0.STATE_PLAYABLE
 end
 
-function var_0_0.IsLock(arg_15_0)
-	return arg_15_0.lock
+function slot0.IsDownloadRes(slot0, slot1)
+	return pg.CipherGroupMgr.GetInstance():isCipherExist(uv0.BuildCpkPath(slot0:GetCpkName(slot1)))
 end
 
-function var_0_0.bindConfigTable(arg_16_0)
+function slot0.IsDownloadAllRes(slot0)
+	if slot0:IsMultiVersion() then
+		return slot0:IsDownloadRes(uv0.LANG_TYPE_CH) and slot0:IsDownloadRes(uv0.LANG_TYPE_JP)
+	elseif slot0:OnlyChVersion() then
+		return slot0:IsDownloadRes(uv0.LANG_TYPE_CH)
+	elseif slot0:OnlyJpVersion() then
+		return slot0:IsDownloadRes(uv0.LANG_TYPE_JP)
+	end
+end
+
+function slot0.IsLockState(slot0, slot1)
+	return slot0:GetState(slot1) == uv0.STATE_LOCK
+end
+
+function slot0.Unlock(slot0)
+	slot0.lock = false
+end
+
+function slot0.IsLock(slot0)
+	return slot0.lock
+end
+
+function slot0.bindConfigTable(slot0)
 	return pg.soundstory_template
 end
 
-function var_0_0.GetName(arg_17_0)
-	return arg_17_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetDescription(arg_18_0)
-	return arg_18_0:getConfig("overview")
+function slot0.GetDescription(slot0)
+	return slot0:getConfig("overview")
 end
 
-function var_0_0.GetCnCvAuthor(arg_19_0)
-	return arg_19_0:getConfig("CV_CN")
+function slot0.GetCnCvAuthor(slot0)
+	return slot0:getConfig("CV_CN")
 end
 
-function var_0_0.GetJpCvAuthor(arg_20_0)
-	return arg_20_0:getConfig("CV_JP")
+function slot0.GetJpCvAuthor(slot0)
+	return slot0:getConfig("CV_JP")
 end
 
-function var_0_0.GetCvAuthor(arg_21_0, arg_21_1)
-	if arg_21_1 == var_0_0.LANG_TYPE_CH then
-		return arg_21_0:GetCnCvAuthor()
-	elseif arg_21_1 == var_0_0.LANG_TYPE_JP then
-		return arg_21_0:GetJpCvAuthor()
+function slot0.GetCvAuthor(slot0, slot1)
+	if slot1 == uv0.LANG_TYPE_CH then
+		return slot0:GetCnCvAuthor()
+	elseif slot1 == uv0.LANG_TYPE_JP then
+		return slot0:GetJpCvAuthor()
 	end
 end
 
-function var_0_0.GetShipGroupId(arg_22_0)
-	return arg_22_0:getConfig("ship_id")
+function slot0.GetShipGroupId(slot0)
+	return slot0:getConfig("ship_id")
 end
 
-function var_0_0.IsSameGroup(arg_23_0, arg_23_1)
-	return arg_23_0:GetShipGroupId() == arg_23_1
+function slot0.IsSameGroup(slot0, slot1)
+	return slot0:GetShipGroupId() == slot1
 end
 
-function var_0_0.GetShipName(arg_24_0)
-	local var_24_0 = arg_24_0:GetShipGroupId()
-	local var_24_1 = ShipGroup.getDefaultShipConfig(var_24_0)
-
-	return (HXSet.hxLan(var_24_1.name))
+function slot0.GetShipName(slot0)
+	return HXSet.hxLan(ShipGroup.getDefaultShipConfig(slot0:GetShipGroupId()).name)
 end
 
-function var_0_0.ShipIcon(arg_25_0)
-	local var_25_0 = arg_25_0:GetShipGroupId()
-	local var_25_1 = ShipGroup.getDefaultShipConfig(var_25_0)
-
-	return pg.ship_skin_template[var_25_1.skin_id].prefab
+function slot0.ShipIcon(slot0)
+	return pg.ship_skin_template[ShipGroup.getDefaultShipConfig(slot0:GetShipGroupId()).skin_id].prefab
 end
 
-function var_0_0.GetCnAudition(arg_26_0)
-	return arg_26_0:getConfig("audition_resource_CN")
+function slot0.GetCnAudition(slot0)
+	return slot0:getConfig("audition_resource_CN")
 end
 
-function var_0_0.GetJpAudition(arg_27_0)
-	return arg_27_0:getConfig("audition_resource_JP")
+function slot0.GetJpAudition(slot0)
+	return slot0:getConfig("audition_resource_JP")
 end
 
-function var_0_0.GetAudition(arg_28_0, arg_28_1)
-	if arg_28_1 == var_0_0.LANG_TYPE_CH then
-		return arg_28_0:GetCnAudition()
-	elseif arg_28_1 == var_0_0.LANG_TYPE_JP then
-		return arg_28_0:GetJpAudition()
+function slot0.GetAudition(slot0, slot1)
+	if slot1 == uv0.LANG_TYPE_CH then
+		return slot0:GetCnAudition()
+	elseif slot1 == uv0.LANG_TYPE_JP then
+		return slot0:GetJpAudition()
 	end
 end
 
-function var_0_0.GetAuditionVoice(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_0:GetAudition(arg_29_1)
-
-	if arg_29_1 == var_0_0.LANG_TYPE_CH then
-		return var_29_0 .. "-CN"
-	elseif arg_29_1 == var_0_0.LANG_TYPE_JP then
-		return var_29_0 .. "-JP"
+function slot0.GetAuditionVoice(slot0, slot1)
+	if slot1 == uv0.LANG_TYPE_CH then
+		return slot0:GetAudition(slot1) .. "-CN"
+	elseif slot1 == uv0.LANG_TYPE_JP then
+		return slot2 .. "-JP"
 	end
 end
 
-function var_0_0.GetAuditionTitle(arg_30_0)
-	return arg_30_0:getConfig("audition_text")
+function slot0.GetAuditionTitle(slot0)
+	return slot0:getConfig("audition_text")
 end
 
-function var_0_0.GetCnCpkName(arg_31_0)
-	return arg_31_0:getConfig("story_resource_CN")
+function slot0.GetCnCpkName(slot0)
+	return slot0:getConfig("story_resource_CN")
 end
 
-function var_0_0.GetJpCpkName(arg_32_0)
-	return arg_32_0:getConfig("story_resource_JP")
+function slot0.GetJpCpkName(slot0)
+	return slot0:getConfig("story_resource_JP")
 end
 
-function var_0_0.GetCpkName(arg_33_0, arg_33_1)
-	if arg_33_1 == var_0_0.LANG_TYPE_CH then
-		return arg_33_0:GetCnCpkName()
-	elseif arg_33_1 == var_0_0.LANG_TYPE_JP then
-		return arg_33_0:GetJpCpkName()
+function slot0.GetCpkName(slot0, slot1)
+	if slot1 == uv0.LANG_TYPE_CH then
+		return slot0:GetCnCpkName()
+	elseif slot1 == uv0.LANG_TYPE_JP then
+		return slot0:GetJpCpkName()
 	end
 end
 
-function var_0_0.IsMultiVersion(arg_34_0)
-	return not var_0_0.IsEmpty(arg_34_0:GetCnCpkName()) and not var_0_0.IsEmpty(arg_34_0:GetJpCpkName())
+function slot0.IsMultiVersion(slot0)
+	return not uv0.IsEmpty(slot0:GetCnCpkName()) and not uv0.IsEmpty(slot0:GetJpCpkName())
 end
 
-function var_0_0.OnlyChVersion(arg_35_0)
-	return not var_0_0.IsEmpty(arg_35_0:GetCnCpkName()) and var_0_0.IsEmpty(arg_35_0:GetJpCpkName())
+function slot0.OnlyChVersion(slot0)
+	return not uv0.IsEmpty(slot0:GetCnCpkName()) and uv0.IsEmpty(slot0:GetJpCpkName())
 end
 
-function var_0_0.OnlyJpVersion(arg_36_0)
-	return not var_0_0.IsEmpty(arg_36_0:GetJpCpkName()) and var_0_0.IsEmpty(arg_36_0:GetCnCpkName())
+function slot0.OnlyJpVersion(slot0)
+	return not uv0.IsEmpty(slot0:GetJpCpkName()) and uv0.IsEmpty(slot0:GetCnCpkName())
 end
 
-function var_0_0.ExistLang(arg_37_0, arg_37_1)
-	local var_37_0 = arg_37_0:GetCpkName(arg_37_1)
-
-	return not var_0_0.IsEmpty(var_37_0)
+function slot0.ExistLang(slot0, slot1)
+	return not uv0.IsEmpty(slot0:GetCpkName(slot1))
 end
 
-function var_0_0.GetIcon(arg_38_0)
-	return arg_38_0:getConfig("story_pic")
+function slot0.GetIcon(slot0)
+	return slot0:getConfig("story_pic")
 end
 
-function var_0_0.GetCost(arg_39_0, arg_39_1)
-	return arg_39_0:GetCostList()[arg_39_1]
+function slot0.GetCost(slot0, slot1)
+	return slot0:GetCostList()[slot1]
 end
 
-function var_0_0.GetCostList(arg_40_0)
-	local var_40_0 = arg_40_0:getConfig("cost" .. var_0_0.COST_TYPE_GEM)
-	local var_40_1 = arg_40_0:getConfig("cost" .. var_0_0.COST_TYPE_TICKET)
+function slot0.GetCostList(slot0)
+	slot1 = slot0:getConfig("cost" .. uv0.COST_TYPE_GEM)
+	slot2 = slot0:getConfig("cost" .. uv0.COST_TYPE_TICKET)
 
 	return {
-		[var_0_0.COST_TYPE_GEM] = {
-			type = var_40_0[1],
-			id = var_40_0[2],
-			count = var_40_0[3]
+		[uv0.COST_TYPE_GEM] = {
+			type = slot1[1],
+			id = slot1[2],
+			count = slot1[3]
 		},
-		[var_0_0.COST_TYPE_TICKET] = {
-			type = var_40_1[1],
-			id = var_40_1[2],
-			count = var_40_1[3]
+		[uv0.COST_TYPE_TICKET] = {
+			type = slot2[1],
+			id = slot2[2],
+			count = slot2[3]
 		}
 	}
 end
 
-function var_0_0.InTime(arg_41_0)
-	local var_41_0 = arg_41_0:getConfig("time")
-
-	return pg.TimeMgr.GetInstance():inTime(var_41_0)
+function slot0.InTime(slot0)
+	return pg.TimeMgr.GetInstance():inTime(slot0:getConfig("time"))
 end
 
-function var_0_0.IsExpired(arg_42_0)
-	return not arg_42_0:InTime()
+function slot0.IsExpired(slot0)
+	return not slot0:InTime()
 end
 
-function var_0_0.GetSortIndex(arg_43_0)
-	return arg_43_0:getConfig("order")
+function slot0.GetSortIndex(slot0)
+	return slot0:getConfig("order")
 end
 
-function var_0_0.IsForever(arg_44_0)
-	local var_44_0 = arg_44_0:getConfig("time")
-
-	return type(var_44_0) == "string" and var_44_0 == "always"
+function slot0.IsForever(slot0)
+	return type(slot0:getConfig("time")) == "string" and slot1 == "always"
 end
 
-function var_0_0.GetExpiredTimeStr(arg_45_0)
-	if arg_45_0:InTime() and not arg_45_0:IsForever() then
-		local var_45_0 = pg.TimeMgr.GetInstance():GetServerTime()
-		local var_45_1 = arg_45_0:getConfig("time")[3]
-		local var_45_2 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_45_1) - var_45_0
-
-		return var_45_2 <= 0 and "" or skinTimeStamp(var_45_2)
+function slot0.GetExpiredTimeStr(slot0)
+	if slot0:InTime() and not slot0:IsForever() then
+		return pg.TimeMgr.GetInstance():parseTimeFromConfig(slot0:getConfig("time")[3]) - pg.TimeMgr.GetInstance():GetServerTime() <= 0 and "" or skinTimeStamp(slot5)
 	else
 		return ""
 	end
 end
 
-local function var_0_1(arg_46_0)
-	local var_46_0 = io.open(arg_46_0, "rb")
+function slot1(slot0)
+	if io.open(slot0, "rb") then
+		slot1:close()
 
-	if var_46_0 then
-		local var_46_1 = var_46_0:seek("end")
-
-		var_46_0:close()
-
-		return var_46_1
+		return slot1:seek("end")
 	else
 		return nil
 	end
 end
 
-function var_0_0.ExistLocalFile(arg_47_0, arg_47_1)
-	local var_47_0 = arg_47_0:GetCpkName(arg_47_1)
-	local var_47_1 = var_0_0.GetAssetBundlePath(var_47_0)
-
-	return PathMgr.FileExists(var_47_1)
+function slot0.ExistLocalFile(slot0, slot1)
+	return PathMgr.FileExists(uv0.GetAssetBundlePath(slot0:GetCpkName(slot1)))
 end
 
-function var_0_0.ExistLocalSubtitleFile(arg_48_0, arg_48_1)
-	local var_48_0 = arg_48_0:GetCpkName(arg_48_1)
-	local var_48_1 = var_0_0.GetSubtitleAssetBundlePath(var_48_0)
-
-	return PathMgr.FileExists(var_48_1)
+function slot0.ExistLocalSubtitleFile(slot0, slot1)
+	return PathMgr.FileExists(uv0.GetSubtitleAssetBundlePath(slot0:GetCpkName(slot1)))
 end
 
-function var_0_0.GetResSize(arg_49_0, arg_49_1)
-	if not arg_49_0:IsDownloadRes(arg_49_1) then
+function slot0.GetResSize(slot0, slot1)
+	if not slot0:IsDownloadRes(slot1) then
 		return ""
 	end
 
-	if not arg_49_0.sizes[arg_49_1] and arg_49_0:ExistLocalFile(arg_49_1) then
-		local var_49_0 = arg_49_0:GetCpkName(arg_49_1)
-		local var_49_1 = var_0_0.GetAssetBundlePath(var_49_0)
-		local var_49_2 = var_0_1(var_49_1)
-		local var_49_3 = 0
+	if not slot0.sizes[slot1] and slot0:ExistLocalFile(slot1) then
+		slot4 = uv1(uv0.GetAssetBundlePath(slot0:GetCpkName(slot1)))
+		slot5 = 0
 
-		if arg_49_0:ExistLocalSubtitleFile(arg_49_1) then
-			local var_49_4 = var_0_0.GetSubtitleAssetBundlePath(var_49_0)
-
-			var_49_3 = var_0_1(var_49_4)
+		if slot0:ExistLocalSubtitleFile(slot1) then
+			slot5 = uv1(uv0.GetSubtitleAssetBundlePath(slot2))
 		end
 
-		arg_49_0.sizes[arg_49_1] = HashUtil.BytesToString(var_49_2 + var_49_3)
+		slot0.sizes[slot1] = HashUtil.BytesToString(slot4 + slot5)
 	end
 
-	return arg_49_0.sizes[arg_49_1] or 0
+	return slot0.sizes[slot1] or 0
 end
 
-return var_0_0
+return slot0

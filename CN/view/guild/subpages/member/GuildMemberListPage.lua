@@ -1,123 +1,121 @@
-﻿local var_0_0 = class("GuildMemberListPage", import("...base.GuildBasePage"))
+slot0 = class("GuildMemberListPage", import("...base.GuildBasePage"))
 
-function var_0_0.getTargetUI(arg_1_0)
+function slot0.getTargetUI(slot0)
 	return "GuildMemberListBlueUI", "GuildMemberListRedUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.rectView = arg_2_0:findTF("scroll")
-	arg_2_0.rectRect = arg_2_0.rectView:GetComponent("LScrollRect")
-	arg_2_0.rankBtn = arg_2_0:findTF("rank")
-	arg_2_0.blurBg = arg_2_0:findTF("blur_bg", arg_2_0._tf)
+function slot0.OnLoaded(slot0)
+	slot0.rectView = slot0:findTF("scroll")
+	slot0.rectRect = slot0.rectView:GetComponent("LScrollRect")
+	slot0.rankBtn = slot0:findTF("rank")
+	slot0.blurBg = slot0:findTF("blur_bg", slot0._tf)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.rankBtn, function()
-		arg_3_0.contextData.rankPage:ExecuteAction("Flush", arg_3_0.ranks)
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.rankBtn, function ()
+		uv0.contextData.rankPage:ExecuteAction("Flush", uv0.ranks)
 	end, SFX_PANEL)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_3_0._tf, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0._tf, {
 		pbList = {
-			arg_3_0.blurBg
+			slot0.blurBg
 		},
 		overlayType = LayerWeightConst.OVERLAY_UI_ADAPT
 	})
 
-	arg_3_0.items = {}
+	slot0.items = {}
 
-	function arg_3_0.rectRect.onInitItem(arg_5_0)
-		arg_3_0:OnInitItem(arg_5_0)
+	function slot0.rectRect.onInitItem(slot0)
+		uv0:OnInitItem(slot0)
 	end
 
-	function arg_3_0.rectRect.onUpdateItem(arg_6_0, arg_6_1)
-		arg_3_0:OnUpdateItem(arg_6_0, arg_6_1)
+	function slot0.rectRect.onUpdateItem(slot0, slot1)
+		uv0:OnUpdateItem(slot0, slot1)
 	end
 end
 
-function var_0_0.SetUp(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	arg_7_0:Show()
-	arg_7_0:Flush(arg_7_1, arg_7_2, arg_7_3)
+function slot0.SetUp(slot0, slot1, slot2, slot3)
+	slot0:Show()
+	slot0:Flush(slot1, slot2, slot3)
 end
 
-function var_0_0.Flush(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	arg_8_0.ranks = arg_8_3
-	arg_8_0.memberVOs = arg_8_2
-	arg_8_0.guildVO = arg_8_1
+function slot0.Flush(slot0, slot1, slot2, slot3)
+	slot0.ranks = slot3
+	slot0.memberVOs = slot2
+	slot0.guildVO = slot1
 
-	arg_8_0:SetTotalCount()
+	slot0:SetTotalCount()
 end
 
-function var_0_0.SetTotalCount(arg_9_0)
-	table.sort(arg_9_0.memberVOs, function(arg_10_0, arg_10_1)
-		if arg_10_0.duty ~= arg_10_1.duty then
-			return arg_10_0.duty < arg_10_1.duty
+function slot0.SetTotalCount(slot0)
+	table.sort(slot0.memberVOs, function (slot0, slot1)
+		if slot0.duty ~= slot1.duty then
+			return slot0.duty < slot1.duty
 		else
-			return arg_10_0.liveness > arg_10_1.liveness
+			return slot1.liveness < slot0.liveness
 		end
 	end)
-	arg_9_0.rectRect:SetTotalCount(#arg_9_0.memberVOs, 0)
+	slot0.rectRect:SetTotalCount(#slot0.memberVOs, 0)
 end
 
-function var_0_0.OnInitItem(arg_11_0, arg_11_1)
-	local var_11_0 = GuildMemberCard.New(arg_11_1)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = GuildMemberCard.New(slot1)
 
-	onButton(arg_11_0, var_11_0.tf, function()
-		if arg_11_0.selected == var_11_0 then
+	onButton(slot0, slot2.tf, function ()
+		if uv0.selected == uv1 then
 			return
 		end
 
-		if arg_11_0.selected then
-			arg_11_0.selected:SetSelected(false)
+		if uv0.selected then
+			uv0.selected:SetSelected(false)
 		end
 
-		arg_11_0.selected = var_11_0
+		uv0.selected = uv1
 
-		arg_11_0.selected:SetSelected(true)
+		uv0.selected:SetSelected(true)
 
-		arg_11_0.selectedId = var_11_0.memberVO.id
+		uv0.selectedId = uv1.memberVO.id
 
-		if arg_11_0.OnClickMember then
-			arg_11_0.OnClickMember(var_11_0.memberVO)
+		if uv0.OnClickMember then
+			uv0.OnClickMember(uv1.memberVO)
 		end
 	end, SFX_PANEL)
 
-	arg_11_0.items[arg_11_1] = var_11_0
+	slot0.items[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_0.items[arg_13_2]
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.items[slot2] then
+		slot0:OnInitItem(slot2)
 
-	if not var_13_0 then
-		arg_13_0:OnInitItem(arg_13_2)
-
-		var_13_0 = arg_13_0.items[arg_13_2]
+		slot3 = slot0.items[slot2]
 	end
 
-	local var_13_1 = arg_13_0.memberVOs[arg_13_1 + 1]
+	slot3:Update(slot0.memberVOs[slot1 + 1], slot0.guildVO)
+	slot3:SetSelected(slot0.selectedId and slot0.selectedId == slot4.id)
 
-	var_13_0:Update(var_13_1, arg_13_0.guildVO)
-	var_13_0:SetSelected(arg_13_0.selectedId and arg_13_0.selectedId == var_13_1.id)
-
-	if not arg_13_0.selected and arg_13_1 == 0 then
-		triggerButton(var_13_0.tf)
+	if not slot0.selected and slot1 == 0 then
+		triggerButton(slot3.tf)
 	end
 end
 
-function var_0_0.TriggerFirstCard(arg_14_0)
-	for iter_14_0, iter_14_1 in pairs(arg_14_0.items) do
-		if iter_14_1.memberVO.id == arg_14_0.memberVOs[1].id then
-			triggerButton(iter_14_1.tf)
+function slot0.TriggerFirstCard(slot0)
+	for slot4, slot5 in pairs(slot0.items) do
+		if slot5.memberVO.id == slot0.memberVOs[1].id then
+			triggerButton(slot5.tf)
 
 			break
 		end
 	end
 end
 
-function var_0_0.OnDestroy(arg_15_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_15_0._tf, arg_15_0._parentTf)
+function slot0.OnDestroy(slot0)
+	slot4 = slot0._parentTf
 
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.items) do
-		iter_15_1:Dispose()
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf, slot4)
+
+	for slot4, slot5 in pairs(slot0.items) do
+		slot5:Dispose()
 	end
 end
 
-return var_0_0
+return slot0

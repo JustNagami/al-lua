@@ -1,38 +1,35 @@
-﻿local var_0_0 = class("RoyalFortunePage", import(".TemplatePage.SkinTemplatePage"))
+slot0 = class("RoyalFortunePage", import(".TemplatePage.SkinTemplatePage"))
 
-function var_0_0.OnInit(arg_1_0)
-	var_0_0.super.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_1_0.painting = arg_1_0:findTF("painting", arg_1_0.bg)
+	slot0.painting = slot0:findTF("painting", slot0.bg)
 end
 
-function var_0_0.OnUpdateFlush(arg_2_0)
-	var_0_0.super.OnUpdateFlush(arg_2_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 
-	if arg_2_0:IsLastTaskFinish() then
-		local var_2_0 = math.random(#arg_2_0.taskGroup)
-
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/royalfortunepage_atlas", var_2_0, arg_2_0.painting)
+	if slot0:IsLastTaskFinish() then
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/royalfortunepage_atlas", math.random(#slot0.taskGroup), slot0.painting)
 	else
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/royalfortunepage_atlas", arg_2_0.nday, arg_2_0.painting)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/royalfortunepage_atlas", slot0.nday, slot0.painting)
 	end
 end
 
-function var_0_0.IsLastTaskFinish(arg_3_0)
-	if arg_3_0.nday ~= #arg_3_0.taskGroup then
+function slot0.IsLastTaskFinish(slot0)
+	if slot0.nday ~= #slot0.taskGroup then
 		return false
 	end
 
-	local var_3_0 = arg_3_0.taskGroup[#arg_3_0.taskGroup]
-	local var_3_1 = true
+	slot2 = true
 
-	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-		if arg_3_0.taskProxy:getTaskVO(iter_3_1):getTaskStatus() ~= 2 then
-			var_3_1 = false
+	for slot6, slot7 in ipairs(slot0.taskGroup[#slot0.taskGroup]) do
+		if slot0.taskProxy:getTaskVO(slot7):getTaskStatus() ~= 2 then
+			slot2 = false
 		end
 	end
 
-	return var_3_1
+	return slot2
 end
 
-return var_0_0
+return slot0

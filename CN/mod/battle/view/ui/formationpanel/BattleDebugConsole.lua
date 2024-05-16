@@ -1,379 +1,347 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleConfig
+slot0.Battle.BattleDebugConsole = class("BattleDebugConsole")
+slot0.Battle.BattleDebugConsole.__name = "BattleDebugConsole"
+slot3 = slot0.Battle.BattleDebugConsole
+slot3.ProxyUpdateNormal = slot0.Battle.BattleDataProxy.Update
+slot3.ProxyUpdateAutoComponentNormal = slot0.Battle.BattleDataProxy.UpdateAutoComponent
+slot3.UPDATE_PLAYER_WEAPON = "updatePlayerWeapon"
+slot3.UPDATE_MONSTER_WEAPON = "updateMonsterWeapon"
+slot3.UPDATE_MONSTER_AI = "updateMonsterAI"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleConfig
+function slot3.Ctor(slot0, slot1, slot2)
+	slot0._go = slot1
+	slot0._state = slot2
+	slot0._dataProxy = slot0._state:GetProxyByName(uv0.Battle.BattleDataProxy.__name)
 
-var_0_0.Battle.BattleDebugConsole = class("BattleDebugConsole")
-var_0_0.Battle.BattleDebugConsole.__name = "BattleDebugConsole"
+	slot0:initComponent()
 
-local var_0_3 = var_0_0.Battle.BattleDebugConsole
-
-var_0_3.ProxyUpdateNormal = var_0_0.Battle.BattleDataProxy.Update
-var_0_3.ProxyUpdateAutoComponentNormal = var_0_0.Battle.BattleDataProxy.UpdateAutoComponent
-var_0_3.UPDATE_PLAYER_WEAPON = "updatePlayerWeapon"
-var_0_3.UPDATE_MONSTER_WEAPON = "updateMonsterWeapon"
-var_0_3.UPDATE_MONSTER_AI = "updateMonsterAI"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._go = arg_1_1
-	arg_1_0._state = arg_1_2
-	arg_1_0._dataProxy = arg_1_0._state:GetProxyByName(var_0_0.Battle.BattleDataProxy.__name)
-
-	arg_1_0:initComponent()
-
-	if arg_1_0._dataProxy:GetInitData().battleType == SYSTEM_DEBUG or arg_1_0._dataProxy:GetInitData().battleType == SYSTEM_CARDPUZZLE then
-		arg_1_0:initData()
-		arg_1_0:initDebug()
+	if slot0._dataProxy:GetInitData().battleType == SYSTEM_DEBUG or slot0._dataProxy:GetInitData().battleType == SYSTEM_CARDPUZZLE then
+		slot0:initData()
+		slot0:initDebug()
 	else
-		SetActive(arg_1_0._debug, false)
+		SetActive(slot0._debug, false)
 	end
 end
 
-function var_0_3.initDebug(arg_2_0)
-	arg_2_0._randomEngage = arg_2_0._debug:Find("spawn_enemy")
+function slot3.initDebug(slot0)
+	slot0._randomEngage = slot0._debug:Find("spawn_enemy")
 
-	onButton(nil, arg_2_0._randomEngage, function()
-		local var_3_0 = math.random(#arg_2_0._monsterArray)
-
-		arg_2_0:spawnEnemy(arg_2_0._monsterArray[var_3_0], 15, 25, 25, 65)
+	onButton(nil, slot0._randomEngage, function ()
+		uv0:spawnEnemy(uv0._monsterArray[math.random(#uv0._monsterArray)], 15, 25, 25, 65)
 	end, SFX_PANEL)
 
-	arg_2_0._summon = arg_2_0._debug:Find("summon_enemy")
-	arg_2_0._summonID = arg_2_0._debug:Find("model_id"):GetComponent("InputField")
-	arg_2_0._minX = arg_2_0._debug:Find("x_min"):GetComponent("InputField")
-	arg_2_0._manX = arg_2_0._debug:Find("x_max"):GetComponent("InputField")
-	arg_2_0._minZ = arg_2_0._debug:Find("z_min"):GetComponent("InputField")
-	arg_2_0._manZ = arg_2_0._debug:Find("z_max"):GetComponent("InputField")
+	slot0._summon = slot0._debug:Find("summon_enemy")
+	slot0._summonID = slot0._debug:Find("model_id"):GetComponent("InputField")
+	slot0._minX = slot0._debug:Find("x_min"):GetComponent("InputField")
+	slot0._manX = slot0._debug:Find("x_max"):GetComponent("InputField")
+	slot0._minZ = slot0._debug:Find("z_min"):GetComponent("InputField")
+	slot0._manZ = slot0._debug:Find("z_max"):GetComponent("InputField")
 
-	onButton(nil, arg_2_0._summon, function()
-		local var_4_0 = tonumber(arg_2_0._summonID.text)
-		local var_4_1 = tonumber(arg_2_0._minX.text)
-		local var_4_2 = tonumber(arg_2_0._manX.text)
-		local var_4_3 = tonumber(arg_2_0._minZ.text)
-		local var_4_4 = tonumber(arg_2_0._manZ.text)
-
-		arg_2_0:spawnEnemy(var_4_0, var_4_1, var_4_2, var_4_3, var_4_4)
+	onButton(nil, slot0._summon, function ()
+		uv0:spawnEnemy(tonumber(uv0._summonID.text), tonumber(uv0._minX.text), tonumber(uv0._manX.text), tonumber(uv0._minZ.text), tonumber(uv0._manZ.text))
 	end, SFX_PANEL)
 
-	arg_2_0._killAllEnemy = arg_2_0._debug:Find("clear_enemy")
+	slot0._killAllEnemy = slot0._debug:Find("clear_enemy")
 
-	onButton(nil, arg_2_0._killAllEnemy, function()
-		arg_2_0._dataProxy:KillAllEnemy()
+	onButton(nil, slot0._killAllEnemy, function ()
+		uv0._dataProxy:KillAllEnemy()
 	end, SFX_PANEL)
 
-	arg_2_0._summonStrike = arg_2_0._debug:Find("spawn_strike")
-	arg_2_0._summonStrikeID = arg_2_0._debug:Find("air_model_id"):GetComponent("InputField")
-	arg_2_0._summonStrikeTotal = arg_2_0._debug:Find("total"):GetComponent("InputField")
-	arg_2_0._summonStrikeSingular = arg_2_0._debug:Find("once"):GetComponent("InputField")
-	arg_2_0._summonStrikeInterval = arg_2_0._debug:Find("interval"):GetComponent("InputField")
+	slot0._summonStrike = slot0._debug:Find("spawn_strike")
+	slot0._summonStrikeID = slot0._debug:Find("air_model_id"):GetComponent("InputField")
+	slot0._summonStrikeTotal = slot0._debug:Find("total"):GetComponent("InputField")
+	slot0._summonStrikeSingular = slot0._debug:Find("once"):GetComponent("InputField")
+	slot0._summonStrikeInterval = slot0._debug:Find("interval"):GetComponent("InputField")
 
-	onButton(nil, arg_2_0._summonStrike, function()
-		local var_6_0 = tonumber(arg_2_0._summonStrikeID.text)
-		local var_6_1 = tonumber(arg_2_0._summonStrikeTotal.text)
-		local var_6_2 = tonumber(arg_2_0._summonStrikeSingular.text)
-		local var_6_3 = tonumber(arg_2_0._summonStrikeInterval.text)
-
-		arg_2_0:spawnStrike(var_6_0, var_6_1, var_6_2, var_6_3)
+	onButton(nil, slot0._summonStrike, function ()
+		uv0:spawnStrike(tonumber(uv0._summonStrikeID.text), tonumber(uv0._summonStrikeTotal.text), tonumber(uv0._summonStrikeSingular.text), tonumber(uv0._summonStrikeInterval.text))
 	end, SFX_PANEL)
 
-	arg_2_0._killAllStrike = arg_2_0._debug:Find("clear_strike")
+	slot0._killAllStrike = slot0._debug:Find("clear_strike")
 
-	onButton(nil, arg_2_0._killAllStrike, function()
-		arg_2_0._dataProxy:KillAllAirStrike()
+	onButton(nil, slot0._killAllStrike, function ()
+		uv0._dataProxy:KillAllAirStrike()
 	end, SFX_PANEL)
 
-	arg_2_0._blockCld = arg_2_0._debug:Find("all_cld")
-	arg_2_0._blockPlayerWeapon = arg_2_0._debug:Find("player_weapon")
-	arg_2_0._blockMonsterWeapon = arg_2_0._debug:Find("monster_weapon")
-	arg_2_0._blockMonsterAI = arg_2_0._debug:Find("monster_motion")
+	slot0._blockCld = slot0._debug:Find("all_cld")
+	slot0._blockPlayerWeapon = slot0._debug:Find("player_weapon")
+	slot0._blockMonsterWeapon = slot0._debug:Find("monster_weapon")
+	slot0._blockMonsterAI = slot0._debug:Find("monster_motion")
 
-	onToggle(nil, arg_2_0._blockCld, function(arg_8_0)
-		if arg_8_0 then
-			arg_2_0._dataProxy.Update = var_0_3.ProxyUpdateNormal
+	onToggle(nil, slot0._blockCld, function (slot0)
+		if slot0 then
+			uv0._dataProxy.Update = uv1.ProxyUpdateNormal
 		else
-			arg_2_0._dataProxy.Update = arg_2_0._dataProxy.__debug__BlockCldUpdate__
+			uv0._dataProxy.Update = uv0._dataProxy.__debug__BlockCldUpdate__
 		end
 	end, SFX_PANEL)
-	onToggle(nil, arg_2_0._blockPlayerWeapon, function(arg_9_0)
-		if arg_9_0 then
-			arg_2_0._autoComponentFuncList.updatePlayerWeapon = arg_2_0._updatePlayerWeapon
+	onToggle(nil, slot0._blockPlayerWeapon, function (slot0)
+		if slot0 then
+			uv0._autoComponentFuncList.updatePlayerWeapon = uv0._updatePlayerWeapon
 		else
-			arg_2_0._autoComponentFuncList.updatePlayerWeapon = nil
+			uv0._autoComponentFuncList.updatePlayerWeapon = nil
 		end
 	end, SFX_PANEL)
-	onToggle(nil, arg_2_0._blockMonsterWeapon, function(arg_10_0)
-		if arg_10_0 then
-			arg_2_0._autoComponentFuncList.updateMonsterWeapon = arg_2_0._updateMonsterWeapon
+	onToggle(nil, slot0._blockMonsterWeapon, function (slot0)
+		if slot0 then
+			uv0._autoComponentFuncList.updateMonsterWeapon = uv0._updateMonsterWeapon
 		else
-			arg_2_0._autoComponentFuncList.updateMonsterWeapon = nil
+			uv0._autoComponentFuncList.updateMonsterWeapon = nil
 		end
 	end, SFX_PANEL)
-	onToggle(nil, arg_2_0._blockMonsterAI, function(arg_11_0)
-		if arg_11_0 then
-			arg_2_0._autoComponentFuncList.updateMonsterAI = arg_2_0._updateMonsterAI
+	onToggle(nil, slot0._blockMonsterAI, function (slot0)
+		if slot0 then
+			uv0._autoComponentFuncList.updateMonsterAI = uv0._updateMonsterAI
 		else
-			arg_2_0._autoComponentFuncList.updateMonsterAI = nil
+			uv0._autoComponentFuncList.updateMonsterAI = nil
 		end
 	end, SFX_PANEL)
 
-	arg_2_0._setDungeonLevel = arg_2_0._debug:Find("dungeon_level")
-	arg_2_0._dungeonLevel = arg_2_0._debug:Find("level_input"):GetComponent("InputField")
+	slot0._setDungeonLevel = slot0._debug:Find("dungeon_level")
+	slot0._dungeonLevel = slot0._debug:Find("level_input"):GetComponent("InputField")
 
-	onButton(nil, arg_2_0._setDungeonLevel, function()
-		arg_2_0._dataProxy:SetDungeonLevel(tonumber(arg_2_0._dungeonLevel.text))
+	onButton(nil, slot0._setDungeonLevel, function ()
+		uv0._dataProxy:SetDungeonLevel(tonumber(uv0._dungeonLevel.text))
 	end, SFX_PANEL)
 
-	arg_2_0._clsBullet = arg_2_0._debug:Find("cls_bullet")
+	slot0._clsBullet = slot0._debug:Find("cls_bullet")
 
-	onButton(nil, arg_2_0._clsBullet, function()
-		arg_2_0._dataProxy:CLSBullet(var_0_2.FRIENDLY_CODE)
-		arg_2_0._dataProxy:CLSBullet(var_0_2.FOE_CODE)
+	onButton(nil, slot0._clsBullet, function ()
+		uv0._dataProxy:CLSBullet(uv1.FRIENDLY_CODE)
+		uv0._dataProxy:CLSBullet(uv1.FOE_CODE)
 	end, SFX_PANEL)
 end
 
-function var_0_3.initData(arg_14_0)
-	arg_14_0._fleetList = arg_14_0._dataProxy:GetFleetList()
-	arg_14_0._freeShipList = arg_14_0._dataProxy:GetFreeShipList()
-	arg_14_0._monsterArray = {}
+function slot3.initData(slot0)
+	slot0._fleetList = slot0._dataProxy:GetFleetList()
+	slot0._freeShipList = slot0._dataProxy:GetFreeShipList()
+	slot0._monsterArray = {}
 
-	for iter_14_0, iter_14_1 in ipairs(pg.enemy_data_statistics.all) do
-		if type(iter_14_1) == "number" and iter_14_1 <= 10000000 then
-			table.insert(arg_14_0._monsterArray, iter_14_1)
+	for slot4, slot5 in ipairs(pg.enemy_data_statistics.all) do
+		if type(slot5) == "number" and slot5 <= 10000000 then
+			table.insert(slot0._monsterArray, slot5)
 		end
 	end
 
-	function arg_14_0._updatePlayerWeapon(arg_15_0)
-		for iter_15_0, iter_15_1 in pairs(arg_14_0._fleetList) do
-			iter_15_1:UpdateAutoComponent(arg_15_0)
+	function slot0._updatePlayerWeapon(slot0)
+		for slot4, slot5 in pairs(uv0._fleetList) do
+			slot5:UpdateAutoComponent(slot0)
 		end
 	end
 
-	function arg_14_0._updateMonsterWeapon(arg_16_0)
-		for iter_16_0, iter_16_1 in pairs(arg_14_0._freeShipList) do
-			iter_16_1:UpdateWeapon(arg_16_0)
+	function slot0._updateMonsterWeapon(slot0)
+		for slot4, slot5 in pairs(uv0._freeShipList) do
+			slot5:UpdateWeapon(slot0)
 		end
 	end
 
-	function arg_14_0._updateMonsterAI(arg_17_0)
-		for iter_17_0, iter_17_1 in pairs(arg_14_0._dataProxy._teamList) do
-			if iter_17_1:IsFatalDamage() then
-				arg_14_0._dataProxy:KillNPCTeam(iter_17_0)
+	function slot0._updateMonsterAI(slot0)
+		for slot4, slot5 in pairs(uv0._dataProxy._teamList) do
+			if slot5:IsFatalDamage() then
+				uv0._dataProxy:KillNPCTeam(slot4)
 			else
-				iter_17_1:UpdateMotion()
+				slot5:UpdateMotion()
 			end
 		end
 	end
 
-	arg_14_0._autoComponentFuncList = {}
-	arg_14_0._autoComponentFuncList.updatePlayerWeapon = arg_14_0._updatePlayerWeapon
-	arg_14_0._autoComponentFuncList.updateMonsterWeapon = arg_14_0._updateMonsterWeapon
-	arg_14_0._autoComponentFuncList.updateMonsterAI = arg_14_0._updateMonsterAI
+	slot0._autoComponentFuncList = {
+		updatePlayerWeapon = slot0._updatePlayerWeapon,
+		updateMonsterWeapon = slot0._updateMonsterWeapon,
+		updateMonsterAI = slot0._updateMonsterAI
+	}
 
-	local function var_14_0(arg_18_0, arg_18_1)
-		for iter_18_0, iter_18_1 in pairs(arg_14_0._autoComponentFuncList) do
-			iter_18_1(arg_18_1)
+	function slot0._dataProxy.UpdateAutoComponent(slot0, slot1)
+		for slot5, slot6 in pairs(uv0._autoComponentFuncList) do
+			slot6(slot1)
 		end
 	end
-
-	arg_14_0._dataProxy.UpdateAutoComponent = var_14_0
 end
 
-function var_0_3.initComponent(arg_19_0)
-	arg_19_0._base = arg_19_0._go:Find("bg")
-	arg_19_0._common = arg_19_0._base:Find("common")
-	arg_19_0._debug = arg_19_0._base:Find("debug")
-	arg_19_0._exitBtn = arg_19_0._common:Find("close")
+function slot3.initComponent(slot0)
+	slot0._base = slot0._go:Find("bg")
+	slot0._common = slot0._base:Find("common")
+	slot0._debug = slot0._base:Find("debug")
+	slot0._exitBtn = slot0._common:Find("close")
 
-	onButton(nil, arg_19_0._exitBtn, function()
-		arg_19_0:SetActive(false)
+	onButton(nil, slot0._exitBtn, function ()
+		uv0:SetActive(false)
 	end, SFX_PANEL)
 
-	arg_19_0._activeReference = arg_19_0._common:Find("reference_switch")
+	slot0._activeReference = slot0._common:Find("reference_switch")
 
-	onButton(nil, arg_19_0._activeReference, function()
-		arg_19_0:activeReference()
+	onButton(nil, slot0._activeReference, function ()
+		uv0:activeReference()
 	end, SFX_PANEL)
 
-	arg_19_0._lockCommonDMG = arg_19_0._common:Find("common_damage")
-	arg_19_0._lockS2MDMG = arg_19_0._common:Find("ship2main_damage")
-	arg_19_0._lockA2MDMG = arg_19_0._common:Find("aircraft2main_damage")
-	arg_19_0._lockCrushDMG = arg_19_0._common:Find("crush_damage")
+	slot0._lockCommonDMG = slot0._common:Find("common_damage")
+	slot0._lockS2MDMG = slot0._common:Find("ship2main_damage")
+	slot0._lockA2MDMG = slot0._common:Find("aircraft2main_damage")
+	slot0._lockCrushDMG = slot0._common:Find("crush_damage")
 
-	onToggle(nil, arg_19_0._lockCommonDMG, function(arg_22_0)
-		arg_19_0._dataProxy:SetupCalculateDamage(arg_22_0 and var_0_0.Battle.BattleFormulas.CalcDamageLock or nil)
+	onToggle(nil, slot0._lockCommonDMG, function (slot0)
+		uv0._dataProxy:SetupCalculateDamage(slot0 and uv1.Battle.BattleFormulas.CalcDamageLock or nil)
 	end, SFX_PANEL)
-	onToggle(nil, arg_19_0._lockS2MDMG, function(arg_23_0)
-		arg_19_0._dataProxy:SetupDamageKamikazeAir(arg_23_0 and var_0_0.Battle.BattleFormulas.CalcDamageLockA2M or nil)
+	onToggle(nil, slot0._lockS2MDMG, function (slot0)
+		uv0._dataProxy:SetupDamageKamikazeAir(slot0 and uv1.Battle.BattleFormulas.CalcDamageLockA2M or nil)
 	end, SFX_PANEL)
-	onToggle(nil, arg_19_0._lockA2MDMG, function(arg_24_0)
-		arg_19_0._dataProxy:SetupDamageKamikazeShip(arg_24_0 and var_0_0.Battle.BattleFormulas.CalcDamageLockS2M or nil)
+	onToggle(nil, slot0._lockA2MDMG, function (slot0)
+		uv0._dataProxy:SetupDamageKamikazeShip(slot0 and uv1.Battle.BattleFormulas.CalcDamageLockS2M or nil)
 	end, SFX_PANEL)
-	onToggle(nil, arg_19_0._lockCrushDMG, function(arg_25_0)
-		arg_19_0._dataProxy:SetupDamageCrush(arg_25_0 and var_0_0.Battle.BattleFormulas.CalcDamageLockCrush or nil)
+	onToggle(nil, slot0._lockCrushDMG, function (slot0)
+		uv0._dataProxy:SetupDamageCrush(slot0 and uv1.Battle.BattleFormulas.CalcDamageLockCrush or nil)
 	end, SFX_PANEL)
 
-	arg_19_0._triggerWave = arg_19_0._common:Find("wave_trigger")
-	arg_19_0._waveIndex = arg_19_0._common:Find("wave_input"):GetComponent("InputField")
+	slot0._triggerWave = slot0._common:Find("wave_trigger")
+	slot0._waveIndex = slot0._common:Find("wave_input"):GetComponent("InputField")
 
-	if arg_19_0._dataProxy:GetInitData().battleType ~= SYSTEM_SCENARIO and arg_19_0._dataProxy:GetInitData().battleType ~= SYSTEM_ROUTINE and arg_19_0._dataProxy:GetInitData().battleType ~= SYSTEM_ACT_BOSS then
-		SetActive(arg_19_0._triggerWave, false)
-		SetActive(arg_19_0._waveIndex, false)
+	if slot0._dataProxy:GetInitData().battleType ~= SYSTEM_SCENARIO and slot0._dataProxy:GetInitData().battleType ~= SYSTEM_ROUTINE and slot0._dataProxy:GetInitData().battleType ~= SYSTEM_ACT_BOSS then
+		SetActive(slot0._triggerWave, false)
+		SetActive(slot0._waveIndex, false)
 	else
-		onButton(nil, arg_19_0._triggerWave, function()
-			arg_19_0:forceTrigger(tonumber(arg_19_0._waveIndex.text))
+		onButton(nil, slot0._triggerWave, function ()
+			uv0:forceTrigger(tonumber(uv0._waveIndex.text))
 		end)
 	end
 
-	arg_19_0._triggerWeather = arg_19_0._common:Find("weather_trigger")
-	arg_19_0._weatherInput = arg_19_0._common:Find("weather_input"):GetComponent("InputField")
+	slot0._triggerWeather = slot0._common:Find("weather_trigger")
+	slot0._weatherInput = slot0._common:Find("weather_input"):GetComponent("InputField")
 
-	onButton(nil, arg_19_0._triggerWeather, function()
-		arg_19_0._dataProxy:AddWeather(tonumber(arg_19_0._weatherInput.text))
+	onButton(nil, slot0._triggerWeather, function ()
+		uv0._dataProxy:AddWeather(tonumber(uv0._weatherInput.text))
 	end)
 
-	arg_19_0._antiSubDetailRange = arg_19_0._common:Find("anti_sub_detail")
+	slot0._antiSubDetailRange = slot0._common:Find("anti_sub_detail")
 
-	onButton(nil, arg_19_0._antiSubDetailRange, function()
-		arg_19_0._state:GetMediatorByName("BattleSceneMediator"):InitDetailAntiSubArea()
+	onButton(nil, slot0._antiSubDetailRange, function ()
+		uv0._state:GetMediatorByName("BattleSceneMediator"):InitDetailAntiSubArea()
 	end)
 
-	arg_19_0._instantReload = arg_19_0._common:Find("instant_reload")
+	slot0._instantReload = slot0._common:Find("instant_reload")
 
-	onButton(nil, arg_19_0._instantReload, function()
-		local var_29_0 = arg_19_0._dataProxy._fleetList[1]
+	onButton(nil, slot0._instantReload, function ()
+		slot0 = uv0._dataProxy._fleetList[1]
 
-		local function var_29_1(arg_30_0)
-			local var_30_0 = arg_30_0:GetWeaponList()
-
-			for iter_30_0, iter_30_1 in ipairs(var_30_0) do
-				iter_30_1:QuickCoolDown()
+		function slot1(slot0)
+			for slot5, slot6 in ipairs(slot0:GetWeaponList()) do
+				slot6:QuickCoolDown()
 			end
 		end
 
-		var_29_1(var_29_0:GetChargeWeaponVO())
-		var_29_1(var_29_0:GetTorpedoWeaponVO())
-		var_29_1(var_29_0:GetAirAssistVO())
+		slot1(slot0:GetChargeWeaponVO())
+		slot1(slot0:GetTorpedoWeaponVO())
+		slot1(slot0:GetAirAssistVO())
 	end)
 
-	arg_19_0._white = arg_19_0._base:Find("white_button")
+	slot0._white = slot0._base:Find("white_button")
 
-	onButton(nil, arg_19_0._white, function()
-		arg_19_0._dataProxy._fleetList[1]._scoutList[1]:UpdateHP(-20, {})
+	onButton(nil, slot0._white, function ()
+		uv0._dataProxy._fleetList[1]._scoutList[1]:UpdateHP(-20, {})
 	end, SFX_PANEL)
-	SetActive(arg_19_0._white, true)
+	SetActive(slot0._white, true)
 end
 
-function var_0_3.SetActive(arg_32_0, arg_32_1)
-	SetActive(arg_32_0._go, arg_32_1)
+function slot3.SetActive(slot0, slot1)
+	SetActive(slot0._go, slot1)
 end
 
-function var_0_3.spawnEnemy(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4, arg_33_5)
-	local var_33_0 = {
-		monsterTemplateID = arg_33_1,
+function slot3.spawnEnemy(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0._dataProxy:SpawnMonster({
+		monsterTemplateID = slot1,
 		corrdinate = {
-			math.random(arg_33_2, arg_33_3),
+			math.random(slot2, slot3),
 			0,
-			math.random(arg_33_4, arg_33_5)
+			math.random(slot4, slot5)
+		},
+		delay = 0,
+		moveCast = true,
+		score = 0,
+		buffList = {
+			8001
 		}
-	}
-
-	var_33_0.delay = 0
-	var_33_0.moveCast = true
-	var_33_0.score = 0
-	var_33_0.buffList = {
-		8001
-	}
-
-	arg_33_0._dataProxy:SpawnMonster(var_33_0, 1, var_0_1.UnitType.ENEMY_UNIT, var_0_2.FOE_CODE)
+	}, 1, uv0.UnitType.ENEMY_UNIT, uv1.FOE_CODE)
 end
 
-function var_0_3.spawnStrike(arg_34_0, arg_34_1, arg_34_2, arg_34_3, arg_34_4)
-	local var_34_0 = {
-		templateID = arg_34_1,
+function slot3.spawnStrike(slot0, slot1, slot2, slot3, slot4)
+	slot0._dataProxy:SpawnAirFighter({
+		templateID = slot1,
 		weaponID = {},
 		attr = {},
-		totalNumber = arg_34_2,
-		onceNumber = arg_34_3
-	}
-
-	var_34_0.formation = 10006
-	var_34_0.delay = 0
-	var_34_0.interval = 0.1
-	var_34_0.score = 0
-
-	arg_34_0._dataProxy:SpawnAirFighter(var_34_0)
+		totalNumber = slot2,
+		onceNumber = slot3,
+		formation = 10006,
+		delay = 0,
+		interval = 0.1,
+		score = 0
+	})
 end
 
-function var_0_3.activeReference(arg_35_0)
-	arg_35_0._state:ActiveReference()
+function slot3.activeReference(slot0)
+	slot0._state:ActiveReference()
 
-	local var_35_0 = arg_35_0._state:GetMediatorByName(var_0_0.Battle.BattleReferenceBoxMediator.__name) or arg_35_0._state:AddMediator(var_0_0.Battle.BattleReferenceBoxMediator.New())
+	slot1 = slot0._state:GetMediatorByName(uv0.Battle.BattleReferenceBoxMediator.__name) or slot0._state:AddMediator(uv0.Battle.BattleReferenceBoxMediator.New())
 
 	pg.TipsMgr.GetInstance():ShowTips("┏━━━━━━━━━━━━━━━━━━━┓")
 	pg.TipsMgr.GetInstance():ShowTips("┃ヽ(•̀ω•́ )ゝ战斗调试模块初始化成功！(ง •̀_•́)ง┃")
 	pg.TipsMgr.GetInstance():ShowTips("┗━━━━━━━━━━━━━━━━━━━┛")
 
-	arg_35_0._activeReference.transform:GetComponent("Button").enabled = false
-	arg_35_0._activeReference:Find("text"):GetComponent(typeof(Text)).text = "(ﾉ･ω･)ﾉﾞ"
-	arg_35_0._referenceConsole = arg_35_0._common:Find("reference_btns")
+	slot0._activeReference.transform:GetComponent("Button").enabled = false
+	slot0._activeReference:Find("text"):GetComponent(typeof(Text)).text = "(ﾉ･ω･)ﾉﾞ"
+	slot0._referenceConsole = slot0._common:Find("reference_btns")
 
-	SetActive(arg_35_0._referenceConsole, true)
+	SetActive(slot0._referenceConsole, true)
 
-	arg_35_0._speedUp = arg_35_0._referenceConsole:Find("speed_up")
-	arg_35_0._speedDown = arg_35_0._referenceConsole:Find("speed_down")
-	arg_35_0._speedLevel = arg_35_0._referenceConsole:Find("speed")
+	slot0._speedUp = slot0._referenceConsole:Find("speed_up")
+	slot0._speedDown = slot0._referenceConsole:Find("speed_down")
+	slot0._speedLevel = slot0._referenceConsole:Find("speed")
 
-	onButton(nil, arg_35_0._speedUp, function()
-		local var_36_0 = var_0_0.Battle.BattleConfig.BASIC_TIME_SCALE
-
-		if var_36_0 < 1 then
-			var_0_0.Battle.BattleControllerCommand.removeSpeed(2)
-		elseif var_36_0 >= 1 then
-			var_0_0.Battle.BattleControllerCommand.addSpeed(2)
+	onButton(nil, slot0._speedUp, function ()
+		if uv0.Battle.BattleConfig.BASIC_TIME_SCALE < 1 then
+			uv0.Battle.BattleControllerCommand.removeSpeed(2)
+		elseif slot0 >= 1 then
+			uv0.Battle.BattleControllerCommand.addSpeed(2)
 		end
 
-		arg_35_0._speedLevel:GetComponent(typeof(Text)).text = var_0_0.Battle.BattleConfig.BASIC_TIME_SCALE
+		uv1._speedLevel:GetComponent(typeof(Text)).text = uv0.Battle.BattleConfig.BASIC_TIME_SCALE
 
-		arg_35_0._state:ScaleTimer()
+		uv1._state:ScaleTimer()
 	end, SFX_PANEL)
-	onButton(nil, arg_35_0._speedDown, function()
-		local var_37_0 = var_0_0.Battle.BattleConfig.BASIC_TIME_SCALE
-
-		if var_37_0 > 1 then
-			var_0_0.Battle.BattleControllerCommand.removeSpeed(0.5)
-		elseif var_37_0 <= 1 then
-			var_0_0.Battle.BattleControllerCommand.addSpeed(0.5)
+	onButton(nil, slot0._speedDown, function ()
+		if uv0.Battle.BattleConfig.BASIC_TIME_SCALE > 1 then
+			uv0.Battle.BattleControllerCommand.removeSpeed(0.5)
+		elseif slot0 <= 1 then
+			uv0.Battle.BattleControllerCommand.addSpeed(0.5)
 		end
 
-		arg_35_0._speedLevel:GetComponent(typeof(Text)).text = var_0_0.Battle.BattleConfig.BASIC_TIME_SCALE
+		uv1._speedLevel:GetComponent(typeof(Text)).text = uv0.Battle.BattleConfig.BASIC_TIME_SCALE
 
-		arg_35_0._state:ScaleTimer()
+		uv1._state:ScaleTimer()
 	end, SFX_PANEL)
 
-	arg_35_0._shipBox = arg_35_0._referenceConsole:Find("ship_box")
-	arg_35_0._bulletBox = arg_35_0._referenceConsole:Find("bullet_box")
-	arg_35_0._pp = arg_35_0._referenceConsole:Find("property_panel")
+	slot0._shipBox = slot0._referenceConsole:Find("ship_box")
+	slot0._bulletBox = slot0._referenceConsole:Find("bullet_box")
+	slot0._pp = slot0._referenceConsole:Find("property_panel")
 
-	onToggle(nil, arg_35_0._shipBox, function(arg_38_0)
-		var_35_0:ActiveUnitBoxes(arg_38_0)
+	onToggle(nil, slot0._shipBox, function (slot0)
+		uv0:ActiveUnitBoxes(slot0)
 	end, SFX_PANEL)
-	onToggle(nil, arg_35_0._bulletBox, function(arg_39_0)
-		var_35_0:ActiveBulletBoxes(arg_39_0)
+	onToggle(nil, slot0._bulletBox, function (slot0)
+		uv0:ActiveBulletBoxes(slot0)
 	end, SFX_PANEL)
-	onToggle(nil, arg_35_0._pp, function(arg_40_0)
-		var_35_0:ActiveUnitDetail(arg_40_0)
+	onToggle(nil, slot0._pp, function (slot0)
+		uv0:ActiveUnitDetail(slot0)
 	end, SFX_PANEL)
 end
 
-function var_0_3.forceTrigger(arg_41_0, arg_41_1)
-	local var_41_0 = arg_41_0._state:GetCommandByName("BattleSingleDungeonCommand")._waveUpdater._waveInfoList[arg_41_1]
-
-	if var_41_0 == nil then
+function slot3.forceTrigger(slot0, slot1)
+	if slot0._state:GetCommandByName("BattleSingleDungeonCommand")._waveUpdater._waveInfoList[slot1] == nil then
 		pg.TipsMgr.GetInstance():ShowTips("查无次波")
-	elseif var_41_0:GetState() ~= var_41_0.STATE_DEACTIVE then
+	elseif slot3:GetState() ~= slot3.STATE_DEACTIVE then
 		pg.TipsMgr.GetInstance():ShowTips("该触发器已经触发")
 	else
-		var_41_0:DoWave()
+		slot3:DoWave()
 	end
 end

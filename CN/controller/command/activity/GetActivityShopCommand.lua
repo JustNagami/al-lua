@@ -1,27 +1,20 @@
-﻿local var_0_0 = class("GetActivityShopCommand", pm.SimpleCommand)
+slot0 = class("GetActivityShopCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0 and var_1_0.callback
-	local var_1_2 = ActivityConst.ACTIVITY_TYPE_SHOP
-	local var_1_3 = getProxy(ActivityProxy):getActivitiesByType(var_1_2)
-	local var_1_4 = getProxy(ShopsProxy)
-	local var_1_5 = {}
+function slot0.execute(slot0, slot1)
+	slot7 = getProxy(ShopsProxy)
 
-	_.each(var_1_3, function(arg_2_0)
-		if arg_2_0 and not arg_2_0:isEnd() and arg_2_0:getConfig("config_id") == 0 then
-			local var_2_0 = ActivityShop.New(arg_2_0)
+	_.each(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
+		if slot0 and not slot0:isEnd() and slot0:getConfig("config_id") == 0 then
+			uv0[slot0.id] = ActivityShop.New(slot0)
 
-			var_1_5[arg_2_0.id] = var_2_0
-
-			var_1_4:addActivityShops(var_1_5)
+			uv1:addActivityShops(uv0)
 		end
 	end)
-	arg_1_0:sendNotification(GAME.GET_ACTIVITY_SHOP_DONE)
+	slot0:sendNotification(GAME.GET_ACTIVITY_SHOP_DONE)
 
-	if var_1_1 then
-		var_1_1(var_1_5)
+	if slot1:getBody() and slot2.callback then
+		slot3({})
 	end
 end
 
-return var_0_0
+return slot0

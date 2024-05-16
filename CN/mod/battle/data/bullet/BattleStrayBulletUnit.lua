@@ -1,20 +1,17 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleStrayBulletUnit = class("BattleStrayBulletUnit", slot0.Battle.BattleBulletUnit)
+slot0.Battle.BattleStrayBulletUnit.__name = "BattleStrayBulletUnit"
+slot1 = slot0.Battle.BattleStrayBulletUnit
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleStrayBulletUnit = class("BattleStrayBulletUnit", var_0_0.Battle.BattleBulletUnit)
-var_0_0.Battle.BattleStrayBulletUnit.__name = "BattleStrayBulletUnit"
-
-local var_0_1 = var_0_0.Battle.BattleStrayBulletUnit
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot1.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 end
 
-function var_0_1.SetExplodePosition(arg_2_0, arg_2_1)
-	arg_2_0._explodePos = arg_2_1
+function slot1.SetExplodePosition(slot0, slot1)
+	slot0._explodePos = slot1
 end
 
-function var_0_1.GetExplodePostion(arg_3_0)
-	return arg_3_0._explodePos
+function slot1.GetExplodePostion(slot0)
+	return slot0._explodePos
 end

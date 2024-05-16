@@ -1,15 +1,14 @@
-﻿local var_0_0 = class("TowerClimbingGameSettings")
-
-var_0_0.BLOCK_NAME = "block"
-var_0_0.STAB_NAME = "stab"
-var_0_0.STAB_HURT_AREA = "stab_hurt_area"
-var_0_0.FIRE_NAME = "fire"
-var_0_0.GROUND_NAME = "manjuu"
-var_0_0.HEAD_BLOCK_TYPE = {
+slot0 = class("TowerClimbingGameSettings")
+slot0.BLOCK_NAME = "block"
+slot0.STAB_NAME = "stab"
+slot0.STAB_HURT_AREA = "stab_hurt_area"
+slot0.FIRE_NAME = "fire"
+slot0.GROUND_NAME = "manjuu"
+slot0.HEAD_BLOCK_TYPE = {
 	"TowerClimbingBlock",
 	375
 }
-var_0_0.MapId2BlockType = {
+slot0.MapId2BlockType = {
 	{
 		{
 			{
@@ -171,7 +170,7 @@ var_0_0.MapId2BlockType = {
 		}
 	}
 }
-var_0_0.MAPID2EFFECT = {
+slot0.MAPID2EFFECT = {
 	[3] = {
 		{
 			"pata_feng",
@@ -189,33 +188,33 @@ var_0_0.MAPID2EFFECT = {
 		}
 	}
 }
-var_0_0.AWARDEFFECT = "pata_huodedaoju_tuowei"
-var_0_0.AWARDEFFECT1 = "pata_huodedaoju_baodian"
-var_0_0.JUMP_VELOCITY = 31.7
-var_0_0.MOVE_VELOCITY = 8.68
-var_0_0.BEINJURED_VELOCITY = Vector2(0, 0)
-var_0_0.BLOCK_START_POSITION = Vector2(-60, 385)
-var_0_0.BLOCK_INTERVAL_HEIGHT = 150
-var_0_0.BLOCK_MAX_INTERVAL_WIDTH = {
+slot0.AWARDEFFECT = "pata_huodedaoju_tuowei"
+slot0.AWARDEFFECT1 = "pata_huodedaoju_baodian"
+slot0.JUMP_VELOCITY = 31.7
+slot0.MOVE_VELOCITY = 8.68
+slot0.BEINJURED_VELOCITY = Vector2(0, 0)
+slot0.BLOCK_START_POSITION = Vector2(-60, 385)
+slot0.BLOCK_INTERVAL_HEIGHT = 150
+slot0.BLOCK_MAX_INTERVAL_WIDTH = {
 	-55,
 	150
 }
-var_0_0.SINK_DISTANCE = var_0_0.BLOCK_INTERVAL_HEIGHT
-var_0_0.BOUNDS = {
+slot0.SINK_DISTANCE = slot0.BLOCK_INTERVAL_HEIGHT
+slot0.BOUNDS = {
 	-520,
 	520
 }
-var_0_0.INVINCEIBLE_TIME = 3
-var_0_0.GROUND_RISE_UP_LEVEL = 50
-var_0_0.GROUND_SLEEP_TIME = 3
-var_0_0.GROUND_SLIDE_DOWNWARD_DISTANCE = 130
-var_0_0.FIRE_TIME = {
+slot0.INVINCEIBLE_TIME = 3
+slot0.GROUND_RISE_UP_LEVEL = 50
+slot0.GROUND_SLEEP_TIME = 3
+slot0.GROUND_SLIDE_DOWNWARD_DISTANCE = 130
+slot0.FIRE_TIME = {
 	3,
 	5
 }
-var_0_0.MANJUU_START_POS = Vector2(4, -92.7)
-var_0_0.MANJUU_HEIGHT = 230
-var_0_0.GROUND_RISE_UP_SPEED = {
+slot0.MANJUU_START_POS = Vector2(4, -92.7)
+slot0.MANJUU_HEIGHT = 230
+slot0.GROUND_RISE_UP_SPEED = {
 	{
 		50,
 		110
@@ -262,10 +261,8 @@ var_0_0.GROUND_RISE_UP_SPEED = {
 	}
 }
 
-function var_0_0.GetBlockInitCnt(arg_1_0)
-	local var_1_0 = arg_1_0 - var_0_0.BLOCK_START_POSITION.y
-
-	return math.ceil(var_1_0 / var_0_0.BLOCK_INTERVAL_HEIGHT) + 2
+function slot0.GetBlockInitCnt(slot0)
+	return math.ceil((slot0 - uv0.BLOCK_START_POSITION.y) / uv0.BLOCK_INTERVAL_HEIGHT) + 2
 end
 
-return var_0_0
+return slot0

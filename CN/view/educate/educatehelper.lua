@@ -1,130 +1,120 @@
-﻿local var_0_0 = class("EducateHelper")
+slot0 = class("EducateHelper")
 
-function var_0_0.GetItemAddDrops(arg_1_0)
-	local var_1_0 = pg.child_item[arg_1_0.id].display
-	local var_1_1 = {}
-
-	underscore.each(var_1_0, function(arg_2_0)
-		assert(arg_2_0[1] == EducateConst.DROP_TYPE_ATTR or arg_2_0[1] == EducateConst.DROP_TYPE_RES, "非法道具增益, item id:" .. arg_1_0.id)
-		table.insert(var_1_1, {
-			type = arg_2_0[1],
-			id = arg_2_0[2],
-			number = arg_2_0[3] * arg_1_0.number
+function slot0.GetItemAddDrops(slot0)
+	underscore.each(pg.child_item[slot0.id].display, function (slot0)
+		assert(slot0[1] == EducateConst.DROP_TYPE_ATTR or slot0[1] == EducateConst.DROP_TYPE_RES, "非法道具增益, item id:" .. uv0.id)
+		table.insert(uv1, {
+			type = slot0[1],
+			id = slot0[2],
+			number = slot0[3] * uv0.number
 		})
 	end)
 
-	return var_1_1
+	return {}
 end
 
-function var_0_0.UpdateDropsData(arg_3_0)
-	local var_3_0 = getProxy(EducateProxy)
+function slot0.UpdateDropsData(slot0)
+	slot1 = getProxy(EducateProxy)
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0) do
-		switch(iter_3_1.type, {
-			[EducateConst.DROP_TYPE_ATTR] = function()
-				var_3_0:UpdateAttr(iter_3_1.id, iter_3_1.number)
+	for slot5, slot6 in ipairs(slot0) do
+		switch(slot6.type, {
+			[EducateConst.DROP_TYPE_ATTR] = function ()
+				uv0:UpdateAttr(uv1.id, uv1.number)
 			end,
-			[EducateConst.DROP_TYPE_RES] = function()
-				var_3_0:UpdateRes(iter_3_1.id, iter_3_1.number)
+			[EducateConst.DROP_TYPE_RES] = function ()
+				uv0:UpdateRes(uv1.id, uv1.number)
 			end,
-			[EducateConst.DROP_TYPE_ITEM] = function()
-				var_3_0:AddItem(iter_3_1.id, iter_3_1.number)
-
-				local var_6_0 = var_0_0.GetItemAddDrops(iter_3_1)
-
-				var_0_0.UpdateDropsData(var_6_0)
+			[EducateConst.DROP_TYPE_ITEM] = function ()
+				uv0:AddItem(uv1.id, uv1.number)
+				uv2.UpdateDropsData(uv2.GetItemAddDrops(uv1))
 			end,
-			[EducateConst.DROP_TYPE_MEMORY] = function()
-				var_3_0:AddMemory(iter_3_1.id, iter_3_1.number)
+			[EducateConst.DROP_TYPE_MEMORY] = function ()
+				uv0:AddMemory(uv1.id, uv1.number)
 			end,
-			[EducateConst.DROP_TYPE_POLAROID] = function()
-				var_3_0:AddPolaroid(iter_3_1.id)
+			[EducateConst.DROP_TYPE_POLAROID] = function ()
+				uv0:AddPolaroid(uv1.id)
 			end,
-			[EducateConst.DROP_TYPE_BUFF] = function()
-				var_3_0:AddBuff(iter_3_1.id)
+			[EducateConst.DROP_TYPE_BUFF] = function ()
+				uv0:AddBuff(uv1.id)
 			end
 		})
 	end
 end
 
-function var_0_0.UpdateDropShow(arg_10_0, arg_10_1)
-	if arg_10_1.type == EducateConst.DROP_TYPE_MEMORY or arg_10_1.type == EducateConst.DROP_TYPE_POLAROID then
-		pg.TipsMgr.GetInstance():ShowTips(string.format("不支持的掉落展示for Item,请检查配置！type:%d, id:%d", arg_10_1.type, arg_10_1.id))
+function slot0.UpdateDropShow(slot0, slot1)
+	if slot1.type == EducateConst.DROP_TYPE_MEMORY or slot1.type == EducateConst.DROP_TYPE_POLAROID then
+		pg.TipsMgr.GetInstance():ShowTips(string.format("不支持的掉落展示for Item,请检查配置！type:%d, id:%d", slot1.type, slot1.id))
 
 		return
 	end
 
-	local var_10_0 = var_0_0.GetDropConfig(arg_10_1)
+	slot2 = uv0.GetDropConfig(slot1)
 
-	LoadImageSpriteAsync("educateprops/" .. var_10_0.icon, findTF(arg_10_0, "frame/icon"))
-	setText(findTF(arg_10_0, "frame/count_bg/count"), "x" .. arg_10_1.number)
-	setText(findTF(arg_10_0, "name_bg/name"), shortenString(var_10_0.name, 5))
+	LoadImageSpriteAsync("educateprops/" .. slot2.icon, findTF(slot0, "frame/icon"))
+	setText(findTF(slot0, "frame/count_bg/count"), "x" .. slot1.number)
+	setText(findTF(slot0, "name_bg/name"), shortenString(slot2.name, 5))
 
-	if arg_10_1.type == EducateConst.DROP_TYPE_ITEM then
-		local var_10_1 = EducateItem.RARITY2FRAME[var_10_0.rarity]
-
-		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", var_10_1, findTF(arg_10_0, "frame"))
+	if slot1.type == EducateConst.DROP_TYPE_ITEM then
+		GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", EducateItem.RARITY2FRAME[slot2.rarity], findTF(slot0, "frame"))
 	end
 end
 
-function var_0_0.GetDropConfig(arg_11_0)
-	return switch(arg_11_0.type, {
-		[EducateConst.DROP_TYPE_ATTR] = function()
-			local var_12_0 = pg.child_attr[arg_11_0.id]
+function slot0.GetDropConfig(slot0)
+	return switch(slot0.type, {
+		[EducateConst.DROP_TYPE_ATTR] = function ()
+			slot0 = pg.child_attr[uv0.id]
 
-			assert(var_12_0, "找不到child_attr配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_attr配置, id: " .. uv0.id)
 
-			return var_12_0
+			return slot0
 		end,
-		[EducateConst.DROP_TYPE_RES] = function()
-			local var_13_0 = pg.child_resource[arg_11_0.id]
+		[EducateConst.DROP_TYPE_RES] = function ()
+			slot0 = pg.child_resource[uv0.id]
 
-			assert(var_13_0, "找不到child_resource配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_resource配置, id: " .. uv0.id)
 
-			return var_13_0
+			return slot0
 		end,
-		[EducateConst.DROP_TYPE_ITEM] = function()
-			local var_14_0 = pg.child_item[arg_11_0.id]
+		[EducateConst.DROP_TYPE_ITEM] = function ()
+			slot0 = pg.child_item[uv0.id]
 
-			assert(var_14_0, "找不到child_item配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_item配置, id: " .. uv0.id)
 
-			return var_14_0
+			return slot0
 		end,
-		[EducateConst.DROP_TYPE_MEMORY] = function()
-			local var_15_0 = pg.child_memory[arg_11_0.id]
+		[EducateConst.DROP_TYPE_MEMORY] = function ()
+			slot0 = pg.child_memory[uv0.id]
 
-			assert(var_15_0, "找不到child_memory配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_memory配置, id: " .. uv0.id)
 
-			return var_15_0
+			return slot0
 		end,
-		[EducateConst.DROP_TYPE_POLAROID] = function()
-			local var_16_0 = pg.child_polaroid[arg_11_0.id]
+		[EducateConst.DROP_TYPE_POLAROID] = function ()
+			slot0 = pg.child_polaroid[uv0.id]
 
-			assert(var_16_0, "找不到child_polaroid配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_polaroid配置, id: " .. uv0.id)
 
-			return var_16_0
+			return slot0
 		end,
-		[EducateConst.DROP_TYPE_BUFF] = function()
-			local var_17_0 = pg.child_buff[arg_11_0.id]
+		[EducateConst.DROP_TYPE_BUFF] = function ()
+			slot0 = pg.child_buff[uv0.id]
 
-			assert(var_17_0, "找不到child_buff配置, id: " .. arg_11_0.id)
+			assert(slot0, "找不到child_buff配置, id: " .. uv0.id)
 
-			return var_17_0
+			return slot0
 		end
 	})
 end
 
-function var_0_0.GetColorForAttrDrop(arg_18_0)
-	if arg_18_0.type == EducateConst.DROP_TYPE_RES then
+function slot0.GetColorForAttrDrop(slot0)
+	if slot0.type == EducateConst.DROP_TYPE_RES then
 		return Color.NewHex("6FD9C4")
-	elseif arg_18_0.type == EducateConst.DROP_TYPE_ATTR then
-		local var_18_0 = getProxy(EducateProxy):GetCharData():GetAttrTypeById(arg_18_0.id)
-
-		if var_18_0 == EducateChar.ATTR_TYPE_MAJOR then
+	elseif slot0.type == EducateConst.DROP_TYPE_ATTR then
+		if getProxy(EducateProxy):GetCharData():GetAttrTypeById(slot0.id) == EducateChar.ATTR_TYPE_MAJOR then
 			return Color.NewHex("5DC9FD")
-		elseif var_18_0 == EducateChar.ATTR_TYPE_PERSONALITY then
+		elseif slot1 == EducateChar.ATTR_TYPE_PERSONALITY then
 			return Color.NewHex("6FD9C4")
-		elseif var_18_0 == EducateChar.ATTR_TYPE_MINOR then
+		elseif slot1 == EducateChar.ATTR_TYPE_MINOR then
 			return Color.NewHex("8CA1EE")
 		end
 	end
@@ -132,262 +122,252 @@ function var_0_0.GetColorForAttrDrop(arg_18_0)
 	return Color.NewHex("39BFFF")
 end
 
-function var_0_0.UpdateDropShowForAttr(arg_19_0, arg_19_1)
-	if arg_19_1.type ~= EducateConst.DROP_TYPE_ATTR and arg_19_1.type ~= EducateConst.DROP_TYPE_RES then
-		pg.TipsMgr.GetInstance():ShowTips(string.format("不支持的掉落展示for Attr,请检查配置！type:%d, id:%d", arg_19_1.type, arg_19_1.id))
+function slot0.UpdateDropShowForAttr(slot0, slot1)
+	if slot1.type ~= EducateConst.DROP_TYPE_ATTR and slot1.type ~= EducateConst.DROP_TYPE_RES then
+		pg.TipsMgr.GetInstance():ShowTips(string.format("不支持的掉落展示for Attr,请检查配置！type:%d, id:%d", slot1.type, slot1.id))
 
 		return
 	end
 
-	setImageColor(arg_19_0, var_0_0.GetColorForAttrDrop(arg_19_1))
-
-	local var_19_0 = arg_19_1.type == EducateConst.DROP_TYPE_ATTR and "attr_" or "res_"
-	local var_19_1 = arg_19_1.number > 0 and "+" or ""
-	local var_19_2 = var_0_0.GetDropConfig(arg_19_1)
-
-	setActive(findTF(arg_19_0, "icon"), true)
-	GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", var_19_0 .. arg_19_1.id, findTF(arg_19_0, "icon"))
-	setText(findTF(arg_19_0, "name"), var_19_2.name)
-	setText(findTF(arg_19_0, "value"), var_19_1 .. arg_19_1.number)
+	setImageColor(slot0, uv0.GetColorForAttrDrop(slot1))
+	setActive(findTF(slot0, "icon"), true)
+	GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", (slot1.type == EducateConst.DROP_TYPE_ATTR and "attr_" or "res_") .. slot1.id, findTF(slot0, "icon"))
+	setText(findTF(slot0, "name"), uv0.GetDropConfig(slot1).name)
+	setText(findTF(slot0, "value"), (slot1.number > 0 and "+" or "") .. slot1.number)
 end
 
-function var_0_0.FilterDropByTypes(arg_20_0, arg_20_1)
-	return underscore.select(arg_20_0, function(arg_21_0)
-		return table.contains(arg_20_1, arg_21_0.type)
+function slot0.FilterDropByTypes(slot0, slot1)
+	return underscore.select(slot0, function (slot0)
+		return table.contains(uv0, slot0.type)
 	end)
 end
 
-function var_0_0.GetDialogueShowDrops(arg_22_0)
-	return var_0_0.FilterDropByTypes(arg_22_0, {
+function slot0.GetDialogueShowDrops(slot0)
+	return uv0.FilterDropByTypes(slot0, {
 		EducateConst.DROP_TYPE_ATTR,
 		EducateConst.DROP_TYPE_RES,
 		EducateConst.DROP_TYPE_BUFF
 	})
 end
 
-function var_0_0.GetCommonShowDrops(arg_23_0)
-	return var_0_0.FilterDropByTypes(arg_23_0, {
+function slot0.GetCommonShowDrops(slot0)
+	return uv0.FilterDropByTypes(slot0, {
 		EducateConst.DROP_TYPE_ITEM,
 		EducateConst.DROP_TYPE_POLAROID
 	})
 end
 
-function var_0_0.UpdateAvatarShow(arg_24_0, arg_24_1, arg_24_2)
-	setImageSprite(findTF(arg_24_0, "mask/Image"), LoadSprite("squareicon/" .. arg_24_2), true)
+function slot0.UpdateAvatarShow(slot0, slot1, slot2)
+	slot7 = slot2
 
-	local var_24_0 = 0
+	setImageSprite(findTF(slot0, "mask/Image"), LoadSprite("squareicon/" .. slot7), true)
 
-	for iter_24_0, iter_24_1 in ipairs(arg_24_1) do
-		local var_24_1 = findTF(arg_24_0, "progress/" .. iter_24_1[1])
-		local var_24_2 = iter_24_1[2] - 0.005
+	slot3 = 0
 
-		setFillAmount(var_24_1, var_24_2)
-		setLocalEulerAngles(var_24_1, Vector3(0, 0, -360 * var_24_0))
+	for slot7, slot8 in ipairs(slot1) do
+		slot9 = findTF(slot0, "progress/" .. slot8[1])
+		slot10 = slot8[2] - 0.005
 
-		var_24_0 = var_24_0 + var_24_2 + 0.005
+		setFillAmount(slot9, slot10)
+		setLocalEulerAngles(slot9, Vector3(0, 0, -360 * slot3))
+
+		slot3 = slot3 + slot10 + 0.005
 	end
 end
 
-function var_0_0.GetTimeFromCfg(arg_25_0)
+function slot0.GetTimeFromCfg(slot0)
 	return {
-		month = arg_25_0[1],
-		week = arg_25_0[2],
-		day = arg_25_0[3]
+		month = slot0[1],
+		week = slot0[2],
+		day = slot0[3]
 	}
 end
 
-function var_0_0.IsSameDay(arg_26_0, arg_26_1)
-	return arg_26_0.month == arg_26_1.month and arg_26_0.week == arg_26_1.week and arg_26_0.day == arg_26_1.day
+function slot0.IsSameDay(slot0, slot1)
+	return slot0.month == slot1.month and slot0.week == slot1.week and slot0.day == slot1.day
 end
 
-function var_0_0.CfgTime2Time(arg_27_0)
+function slot0.CfgTime2Time(slot0)
 	return {
-		month = arg_27_0[1][1],
-		week = arg_27_0[1][2] or 1,
-		day = arg_27_0[1][3] or 1
+		month = slot0[1][1],
+		week = slot0[1][2] or 1,
+		day = slot0[1][3] or 1
 	}, {
-		month = arg_27_0[2][1],
-		week = arg_27_0[2][2] or 4,
-		day = arg_27_0[2][3] or 7
+		month = slot0[2][1],
+		week = slot0[2][2] or 4,
+		day = slot0[2][3] or 7
 	}
 end
 
-function var_0_0.IsBeforeTime(arg_28_0, arg_28_1)
-	if arg_28_0.month < arg_28_1.month then
+function slot0.IsBeforeTime(slot0, slot1)
+	if slot0.month < slot1.month then
 		return true
 	end
 
-	if arg_28_0.month == arg_28_1.month and arg_28_0.week < arg_28_1.week then
+	if slot0.month == slot1.month and slot0.week < slot1.week then
 		return true
 	end
 
-	if arg_28_0.month == arg_28_1.month and arg_28_0.week == arg_28_1.week and arg_28_0.day < arg_28_1.day then
+	if slot0.month == slot1.month and slot0.week == slot1.week and slot0.day < slot1.day then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.IsAfterTime(arg_29_0, arg_29_1)
-	if arg_29_0.month > arg_29_1.month then
+function slot0.IsAfterTime(slot0, slot1)
+	if slot1.month < slot0.month then
 		return true
 	end
 
-	if arg_29_0.month == arg_29_1.month and arg_29_0.week > arg_29_1.week then
+	if slot0.month == slot1.month and slot1.week < slot0.week then
 		return true
 	end
 
-	if arg_29_0.month == arg_29_1.month and arg_29_0.week == arg_29_1.week and arg_29_0.day > arg_29_1.day then
+	if slot0.month == slot1.month and slot0.week == slot1.week and slot1.day < slot0.day then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.InTime(arg_30_0, arg_30_1, arg_30_2)
-	return not var_0_0.IsBeforeTime(arg_30_0, arg_30_1) and not var_0_0.IsAfterTime(arg_30_0, arg_30_2)
+function slot0.InTime(slot0, slot1, slot2)
+	return not uv0.IsBeforeTime(slot0, slot1) and not uv0.IsAfterTime(slot0, slot2)
 end
 
-function var_0_0.GetTimeAfterDays(arg_31_0, arg_31_1)
-	local var_31_0 = {
-		month = arg_31_0.month,
-		week = arg_31_0.week,
-		day = arg_31_0.day,
-		day = arg_31_0.day + arg_31_1
+function slot0.GetTimeAfterDays(slot0, slot1)
+	slot2 = {
+		month = slot0.month,
+		week = slot0.week,
+		day = slot0.day,
+		day = slot0.day + slot1
 	}
 
-	while var_31_0.day > 7 or var_31_0.week > 4 do
-		if var_31_0.day > 7 then
-			var_31_0.day = var_31_0.day - 7
-			var_31_0.week = var_31_0.week + 1
+	while slot2.day > 7 or slot2.week > 4 do
+		if slot2.day > 7 then
+			slot2.day = slot2.day - 7
+			slot2.week = slot2.week + 1
 		end
 
-		if var_31_0.week > 4 then
-			var_31_0.week = var_31_0.week - 4
-			var_31_0.month = var_31_0.month + 1
+		if slot2.week > 4 then
+			slot2.week = slot2.week - 4
+			slot2.month = slot2.month + 1
 		end
 	end
 
-	return var_31_0
+	return slot2
 end
 
-function var_0_0.GetTimeAfterWeeks(arg_32_0, arg_32_1)
-	local var_32_0 = {
-		month = arg_32_0.month,
-		week = arg_32_0.week,
-		day = arg_32_0.day
+function slot0.GetTimeAfterWeeks(slot0, slot1)
+	slot2 = {
+		month = slot0.month,
+		week = slot0.week,
+		day = slot0.day
 	}
+	slot2.week = slot2.week + slot1
 
-	var_32_0.week = var_32_0.week + arg_32_1
-
-	while var_32_0.week > 4 do
-		var_32_0.week = var_32_0.week - 4
-		var_32_0.month = var_32_0.month + 1
+	while slot2.week > 4 do
+		slot2.week = slot2.week - 4
+		slot2.month = slot2.month + 1
 	end
 
-	return var_32_0
+	return slot2
 end
 
-function var_0_0.GetDaysBetweenTimes(arg_33_0, arg_33_1)
-	return (arg_33_1.month - arg_33_0.month) * 28 + (arg_33_1.week - arg_33_0.week) * 7 + (arg_33_1.day - arg_33_0.day)
+function slot0.GetDaysBetweenTimes(slot0, slot1)
+	return (slot1.month - slot0.month) * 28 + (slot1.week - slot0.week) * 7 + slot1.day - slot0.day
 end
 
-function var_0_0.GetWeekIdxWithTime(arg_34_0)
-	return (arg_34_0.month - 1) * 4 + arg_34_0.week
+function slot0.GetWeekIdxWithTime(slot0)
+	return (slot0.month - 1) * 4 + slot0.week
 end
 
-function var_0_0.GetShowMonthNumber(arg_35_0)
-	return arg_35_0 > 12 and arg_35_0 - 12 or arg_35_0
+function slot0.GetShowMonthNumber(slot0)
+	return slot0 > 12 and slot0 - 12 or slot0
 end
 
-function var_0_0.GetWeekByNumber(arg_36_0)
-	if arg_36_0 == 7 then
+function slot0.GetWeekByNumber(slot0)
+	if slot0 == 7 then
 		return i18n("word_day")
 	else
-		return i18n("number_" .. arg_36_0)
+		return i18n("number_" .. slot0)
 	end
 end
 
-function var_0_0.GetWeekStrByNumber(arg_37_0)
-	return i18n("word_week_day" .. arg_37_0)
+function slot0.GetWeekStrByNumber(slot0)
+	return i18n("word_week_day" .. slot0)
 end
 
-function var_0_0.InUnlockTime(arg_38_0, arg_38_1)
-	if arg_38_0.month > arg_38_1[1] then
+function slot0.InUnlockTime(slot0, slot1)
+	if slot1[1] < slot0.month then
 		return true
 	end
 
-	if arg_38_0.month == arg_38_1[1] and arg_38_0.week > arg_38_1[2] then
+	if slot0.month == slot1[1] and slot1[2] < slot0.week then
 		return true
 	end
 
-	if arg_38_0.month == arg_38_1[1] and arg_38_0.week == arg_38_1[2] and arg_38_0.day >= arg_38_1[3] then
+	if slot0.month == slot1[1] and slot0.week == slot1[2] and slot1[3] <= slot0.day then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.IsSystemUnlock(arg_39_0)
-	local var_39_0 = getProxy(EducateProxy):IsFirstGame()
-	local var_39_1 = EducateConst.SYSTEM_UNLOCK_CONFIG[arg_39_0]
+function slot0.IsSystemUnlock(slot0)
+	slot2 = EducateConst.SYSTEM_UNLOCK_CONFIG[slot0]
 
-	if not var_39_0 and var_39_1[2] then
+	if not getProxy(EducateProxy):IsFirstGame() and slot2[2] then
 		return true
 	end
 
-	local var_39_2 = getProxy(EducateProxy):GetCurTime()
-	local var_39_3 = pg.gameset[var_39_1[1]].description
-
-	return var_0_0.InUnlockTime(var_39_2, var_39_3)
+	return uv0.InUnlockTime(getProxy(EducateProxy):GetCurTime(), pg.gameset[slot2[1]].description)
 end
 
-function var_0_0.IsShowNature()
-	local var_40_0, var_40_1 = var_0_0.CfgTime2Time(pg.gameset.child_charactor_time.description)
+function slot0.IsShowNature()
+	slot0, slot1 = uv0.CfgTime2Time(pg.gameset.child_charactor_time.description)
 
-	return var_0_0.InTime(getProxy(EducateProxy):GetCurTime(), var_40_0, var_40_1)
+	return uv0.InTime(getProxy(EducateProxy):GetCurTime(), slot0, slot1)
 end
 
-function var_0_0.IsSiteUnlock(arg_41_0, arg_41_1)
-	local var_41_0 = pg.child_site[arg_41_0]
-	local var_41_1 = getProxy(EducateProxy):GetCurTime()
-	local var_41_2 = arg_41_1 and var_41_0.unlock_time_1 or var_41_0.unlock_time_2
+function slot0.IsSiteUnlock(slot0, slot1)
+	slot2 = pg.child_site[slot0]
 
-	return var_0_0.InUnlockTime(var_41_1, var_41_2)
+	return uv0.InUnlockTime(getProxy(EducateProxy):GetCurTime(), slot1 and slot2.unlock_time_1 or slot2.unlock_time_2)
 end
 
-function var_0_0.IsMatchSubType(arg_42_0, arg_42_1)
-	if arg_42_0 == "" then
+function slot0.IsMatchSubType(slot0, slot1)
+	if slot0 == "" then
 		return false
 	end
 
-	if type(arg_42_0) == "table" then
-		return table.contains(arg_42_0, arg_42_1)
-	elseif type(arg_42_0) == "string" then
-		return arg_42_1 == tonumber(arg_42_0)
+	if type(slot0) == "table" then
+		return table.contains(slot0, slot1)
+	elseif type(slot0) == "string" then
+		return slot1 == tonumber(slot0)
 	end
 
 	return false
 end
 
-function var_0_0.ReqEducateDataCheck(arg_43_0)
+function slot0.ReqEducateDataCheck(slot0)
 	if LOCK_EDUCATE_SYSTEM then
-		arg_43_0()
+		slot0()
 
 		return
 	end
 
-	local var_43_0 = {}
+	slot1 = {}
 
 	if not getProxy(EducateProxy):CheckDataRequestEnd() then
-		table.insert(var_43_0, function(arg_44_0)
+		table.insert(slot1, function (slot0)
 			pg.m02:sendNotification(GAME.EDUCATE_REQUEST, {
-				callback = arg_44_0
+				callback = slot0
 			})
 		end)
 	end
 
-	seriesAsync(var_43_0, arg_43_0)
+	seriesAsync(slot1, slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,429 +1,369 @@
-﻿local var_0_0 = class("CommanderDetailPage", import("...base.BaseSubView"))
+slot0 = class("CommanderDetailPage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderDetailUI"
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	var_0_0.super.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0:Load()
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	uv0.super.Ctor(slot0, slot1, slot2, slot3)
+	slot0:Load()
 end
 
-function var_0_0.RegisterEvent(arg_3_0)
-	arg_3_0:bind(CommanderCatScene.EVENT_CLOSE_DESC, function(arg_4_0)
-		triggerToggle(arg_3_0.skillBtn, false)
-		triggerToggle(arg_3_0.additionBtn, false)
-		triggerToggle(arg_3_0.otherBtn, false)
+function slot0.RegisterEvent(slot0)
+	slot0:bind(CommanderCatScene.EVENT_CLOSE_DESC, function (slot0)
+		triggerToggle(uv0.skillBtn, false)
+		triggerToggle(uv0.additionBtn, false)
+		triggerToggle(uv0.otherBtn, false)
 	end)
-	arg_3_0:bind(CommanderCatScene.EVENT_FOLD, function(arg_5_0, arg_5_1)
-		triggerToggle(arg_3_0.skillBtn, false)
-		triggerToggle(arg_3_0.additionBtn, false)
-		triggerToggle(arg_3_0.otherBtn, false)
+	slot0:bind(CommanderCatScene.EVENT_FOLD, function (slot0, slot1)
+		triggerToggle(uv0.skillBtn, false)
+		triggerToggle(uv0.additionBtn, false)
+		triggerToggle(uv0.otherBtn, false)
 
-		if arg_5_1 then
-			LeanTween.moveY(rtf(arg_3_0.commanderInfo), -400, 0.5)
+		if slot1 then
+			LeanTween.moveY(rtf(uv0.commanderInfo), -400, 0.5)
 		else
-			LeanTween.moveY(rtf(arg_3_0.commanderInfo), 71, 0.5)
+			LeanTween.moveY(rtf(uv0.commanderInfo), 71, 0.5)
 		end
 	end)
-	arg_3_0:bind(CommanderCatScene.EVENT_PREVIEW, function(arg_6_0, arg_6_1)
-		arg_3_0:UpdatePreView(arg_6_1)
+	slot0:bind(CommanderCatScene.EVENT_PREVIEW, function (slot0, slot1)
+		uv0:UpdatePreView(slot1)
 	end)
-	arg_3_0:bind(CommanderCatScene.EVENT_PREVIEW_PLAY, function(arg_7_0, arg_7_1, arg_7_2)
-		triggerToggle(arg_3_0.skillBtn, true)
-
-		local var_7_0 = not arg_7_1 or #arg_7_1 <= 0 or arg_7_2
-
-		triggerToggle(arg_3_0.otherBtn, not var_7_0)
-		triggerToggle(arg_3_0.additionBtn, false)
-		setToggleEnabled(arg_3_0.additionBtn, false)
-		arg_3_0:UpdatePreViewWithOther(arg_7_1)
+	slot0:bind(CommanderCatScene.EVENT_PREVIEW_PLAY, function (slot0, slot1, slot2)
+		triggerToggle(uv0.skillBtn, true)
+		triggerToggle(uv0.otherBtn, not (not slot1 or #slot1 <= 0 or slot2))
+		triggerToggle(uv0.additionBtn, false)
+		setToggleEnabled(uv0.additionBtn, false)
+		uv0:UpdatePreViewWithOther(slot1)
 	end)
-	arg_3_0:bind(CommanderCatScene.EVENT_PREVIEW_ADDITION, function(arg_8_0, arg_8_1)
-		triggerToggle(arg_3_0.skillBtn, true)
-		triggerToggle(arg_3_0.additionBtn, true)
-		arg_3_0:UpdatePreviewAddition(arg_8_1)
+	slot0:bind(CommanderCatScene.EVENT_PREVIEW_ADDITION, function (slot0, slot1)
+		triggerToggle(uv0.skillBtn, true)
+		triggerToggle(uv0.additionBtn, true)
+		uv0:UpdatePreviewAddition(slot1)
 	end)
-	arg_3_0:bind(CommanderCatDockPage.ON_SORT, function(arg_9_0, arg_9_1)
-		arg_3_0:OnSort(arg_9_1)
+	slot0:bind(CommanderCatDockPage.ON_SORT, function (slot0, slot1)
+		uv0:OnSort(slot1)
 	end)
 end
 
-function var_0_0.OnLoaded(arg_10_0)
-	arg_10_0.statement = arg_10_0:findTF("detail/statement")
-	arg_10_0.statement.localScale = Vector3(1, 0, 1)
-	arg_10_0.talentSkill = arg_10_0:findTF("detail/talent_skill")
+function slot0.OnLoaded(slot0)
+	slot0.statement = slot0:findTF("detail/statement")
+	slot0.statement.localScale = Vector3(1, 0, 1)
+	slot0.talentSkill = slot0:findTF("detail/talent_skill")
+	slot1 = slot0:findTF("talent/content", slot0.talentSkill)
+	slot0.talentList = UIItemList.New(slot1, slot1:GetChild(0))
+	slot0.abilityAdditionTF = slot0:findTF("atttrs/content", slot0.statement)
+	slot0.talentAdditionTF = slot0:findTF("talents/scroll/content", slot0.statement)
+	slot0.talentAdditionList = UIItemList.New(slot0.talentAdditionTF, slot0.talentAdditionTF:GetChild(0))
+	slot0.skillIcon = slot0:findTF("skill/icon/Image", slot0.talentSkill)
+	slot0.lockTF = slot0:findTF("info/lock")
+	slot0.commanderInfo = slot0:findTF("info")
+	slot0.expPanel = slot0:findTF("exp", slot0.commanderInfo)
+	slot0.commanderLevelTxt = slot0:findTF("exp/level", slot0.commanderInfo):GetComponent(typeof(Text))
+	slot0.commanderExpImg = slot0:findTF("exp/Image", slot0.commanderInfo):GetComponent(typeof(Image))
+	slot0.commanderNameTxt = slot0:findTF("name_bg/mask/Text", slot0.commanderInfo):GetComponent("ScrollText")
+	slot0.modifyNameBtn = slot0:findTF("name_bg/modify", slot0.commanderInfo)
 
-	local var_10_0 = arg_10_0:findTF("talent/content", arg_10_0.talentSkill)
+	setActive(slot0.modifyNameBtn, pg.gameset.commander_rename_open.key_value == 1)
 
-	arg_10_0.talentList = UIItemList.New(var_10_0, var_10_0:GetChild(0))
-	arg_10_0.abilityAdditionTF = arg_10_0:findTF("atttrs/content", arg_10_0.statement)
-	arg_10_0.talentAdditionTF = arg_10_0:findTF("talents/scroll/content", arg_10_0.statement)
-	arg_10_0.talentAdditionList = UIItemList.New(arg_10_0.talentAdditionTF, arg_10_0.talentAdditionTF:GetChild(0))
-	arg_10_0.skillIcon = arg_10_0:findTF("skill/icon/Image", arg_10_0.talentSkill)
-	arg_10_0.lockTF = arg_10_0:findTF("info/lock")
-	arg_10_0.commanderInfo = arg_10_0:findTF("info")
-	arg_10_0.expPanel = arg_10_0:findTF("exp", arg_10_0.commanderInfo)
-	arg_10_0.commanderLevelTxt = arg_10_0:findTF("exp/level", arg_10_0.commanderInfo):GetComponent(typeof(Text))
-	arg_10_0.commanderExpImg = arg_10_0:findTF("exp/Image", arg_10_0.commanderInfo):GetComponent(typeof(Image))
-	arg_10_0.commanderNameTxt = arg_10_0:findTF("name_bg/mask/Text", arg_10_0.commanderInfo):GetComponent("ScrollText")
-	arg_10_0.modifyNameBtn = arg_10_0:findTF("name_bg/modify", arg_10_0.commanderInfo)
+	slot0.line = slot0:findTF("line", slot0.commanderInfo)
+	slot0.fleetnums = slot0:findTF("line/numbers", slot0.commanderInfo)
+	slot0.fleetTF = slot0:findTF("line/fleet", slot0.commanderInfo)
+	slot0.subTF = slot0:findTF("line/sub_fleet", slot0.commanderInfo)
+	slot0.leisureTF = slot0:findTF("line/leisure", slot0.commanderInfo)
+	slot0.labelInBattleTF = slot0:findTF("line/inbattle", slot0.commanderInfo)
+	slot0.rarityImg = slot0:findTF("rarity", slot0.commanderInfo):GetComponent(typeof(Image))
+	slot0.abilityTF = slot0:findTF("ablitys", slot0.commanderInfo)
+	slot0.skillBtn = slot0:findTF("skill_btn", slot0.commanderInfo)
+	slot0.additionBtn = slot0:findTF("addition_btn", slot0.commanderInfo)
+	slot0.otherBtn = slot0:findTF("other_btn", slot0.commanderInfo)
+	slot0.otherCommanderNameTxt = slot0:findTF("detail/other/name/Text"):GetComponent(typeof(Text))
+	slot0.otherCommanderSkillImg = slot0:findTF("detail/other/skill/Image")
+	slot0.otherCommanderTalentList = UIItemList.New(slot0:findTF("detail/other/talent"), slot0:findTF("detail/other/talent/tpl"))
+	slot0.otherCommanderDescTxt = slot0:findTF("detail/other/desc/mask/Text"):GetComponent(typeof(ScrollText))
+	slot0.blurPanel = slot0._parentTf.parent
+	slot0.blurPanelParent = slot0.blurPanel.parent
+	slot0.renamePanel = CommanderRenamePage.New(pg.UIMgr.GetInstance().OverlayMain, slot0.event)
 
-	local var_10_1 = pg.gameset.commander_rename_open.key_value == 1
-
-	setActive(arg_10_0.modifyNameBtn, var_10_1)
-
-	arg_10_0.line = arg_10_0:findTF("line", arg_10_0.commanderInfo)
-	arg_10_0.fleetnums = arg_10_0:findTF("line/numbers", arg_10_0.commanderInfo)
-	arg_10_0.fleetTF = arg_10_0:findTF("line/fleet", arg_10_0.commanderInfo)
-	arg_10_0.subTF = arg_10_0:findTF("line/sub_fleet", arg_10_0.commanderInfo)
-	arg_10_0.leisureTF = arg_10_0:findTF("line/leisure", arg_10_0.commanderInfo)
-	arg_10_0.labelInBattleTF = arg_10_0:findTF("line/inbattle", arg_10_0.commanderInfo)
-	arg_10_0.rarityImg = arg_10_0:findTF("rarity", arg_10_0.commanderInfo):GetComponent(typeof(Image))
-	arg_10_0.abilityTF = arg_10_0:findTF("ablitys", arg_10_0.commanderInfo)
-	arg_10_0.skillBtn = arg_10_0:findTF("skill_btn", arg_10_0.commanderInfo)
-	arg_10_0.additionBtn = arg_10_0:findTF("addition_btn", arg_10_0.commanderInfo)
-	arg_10_0.otherBtn = arg_10_0:findTF("other_btn", arg_10_0.commanderInfo)
-	arg_10_0.otherCommanderNameTxt = arg_10_0:findTF("detail/other/name/Text"):GetComponent(typeof(Text))
-	arg_10_0.otherCommanderSkillImg = arg_10_0:findTF("detail/other/skill/Image")
-	arg_10_0.otherCommanderTalentList = UIItemList.New(arg_10_0:findTF("detail/other/talent"), arg_10_0:findTF("detail/other/talent/tpl"))
-	arg_10_0.otherCommanderDescTxt = arg_10_0:findTF("detail/other/desc/mask/Text"):GetComponent(typeof(ScrollText))
-	arg_10_0.blurPanel = arg_10_0._parentTf.parent
-	arg_10_0.blurPanelParent = arg_10_0.blurPanel.parent
-	arg_10_0.renamePanel = CommanderRenamePage.New(pg.UIMgr.GetInstance().OverlayMain, arg_10_0.event)
-
-	setText(arg_10_0:findTF("detail/statement/atttrs/title/Text"), i18n("commander_subtile_ablity"))
-	setText(arg_10_0:findTF("detail/statement/talents/title/Text"), i18n("commander_subtile_talent"))
+	setText(slot0:findTF("detail/statement/atttrs/title/Text"), i18n("commander_subtile_ablity"))
+	setText(slot0:findTF("detail/statement/talents/title/Text"), i18n("commander_subtile_talent"))
 end
 
-function var_0_0.OnInit(arg_11_0)
-	arg_11_0:RegisterEvent()
+function slot0.OnInit(slot0)
+	slot0:RegisterEvent()
 
-	arg_11_0.isOnAddition = false
-	arg_11_0.isOnSkill = false
+	slot0.isOnAddition = false
+	slot0.isOnSkill = false
 
-	onToggle(arg_11_0, arg_11_0.skillBtn, function(arg_12_0)
-		arg_11_0.isOnSkill = arg_12_0
+	onToggle(slot0, slot0.skillBtn, function (slot0)
+		uv0.isOnSkill = slot0
 
-		arg_11_0:Blur()
+		uv0:Blur()
 
-		if arg_12_0 then
-			arg_11_0:emit(CommanderCatScene.EVENT_OPEN_DESC)
+		if slot0 then
+			uv0:emit(CommanderCatScene.EVENT_OPEN_DESC)
 		end
 	end, SFX_PANEL)
-	onToggle(arg_11_0, arg_11_0.additionBtn, function(arg_13_0)
-		arg_11_0.isOnAddition = arg_13_0
-		arg_11_0.statement.localScale = arg_13_0 and Vector3(1, 1, 1) or Vector3(1, 0, 1)
+	onToggle(slot0, slot0.additionBtn, function (slot0)
+		uv0.isOnAddition = slot0
+		uv0.statement.localScale = slot0 and Vector3(1, 1, 1) or Vector3(1, 0, 1)
 
-		arg_11_0:Blur()
+		uv0:Blur()
 
-		if arg_13_0 then
-			arg_11_0:emit(CommanderCatScene.EVENT_OPEN_DESC)
+		if slot0 then
+			uv0:emit(CommanderCatScene.EVENT_OPEN_DESC)
 		end
 	end, SFX_PANEL)
-	onToggle(arg_11_0, arg_11_0.otherBtn, function(arg_14_0)
-		arg_11_0.isOnOther = arg_14_0
+	onToggle(slot0, slot0.otherBtn, function (slot0)
+		uv0.isOnOther = slot0
 
-		arg_11_0:Blur()
+		uv0:Blur()
 
-		if arg_14_0 then
-			arg_11_0:emit(CommanderCatScene.EVENT_OPEN_DESC)
+		if slot0 then
+			uv0:emit(CommanderCatScene.EVENT_OPEN_DESC)
 		end
 	end, SFX_PANEL)
-	onButton(arg_11_0, arg_11_0.modifyNameBtn, function()
-		local var_15_0 = arg_11_0.commanderVO
-
-		if not var_15_0:canModifyName() then
-			local var_15_1 = var_15_0:getRenameTimeDesc()
-
-			arg_11_0.contextData.msgBox:ExecuteAction("Show", {
-				content = i18n("commander_rename_coldtime_tip", var_15_1)
+	onButton(slot0, slot0.modifyNameBtn, function ()
+		if not uv0.commanderVO:canModifyName() then
+			uv0.contextData.msgBox:ExecuteAction("Show", {
+				content = i18n("commander_rename_coldtime_tip", slot0:getRenameTimeDesc())
 			})
 		else
-			arg_11_0.renamePanel:ExecuteAction("Show", var_15_0)
+			uv0.renamePanel:ExecuteAction("Show", slot0)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.Update(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_0.commanderVO = arg_16_1
+function slot0.Update(slot0, slot1, slot2)
+	slot0.commanderVO = slot1
 
-	arg_16_0:UpdateInfo()
-	arg_16_0:UpdateTalents()
-	arg_16_0:UpdateSkills()
-	arg_16_0:UpdateAbilityAddition()
-	arg_16_0:UpdateTalentAddition()
-	arg_16_0:UpdateAbilitys()
-	arg_16_0:UpdateLockState()
-	arg_16_0:UpdateLevel()
-	arg_16_0:UpdateStyle(arg_16_2)
-	arg_16_0._tf:SetAsFirstSibling()
-	arg_16_0:Show()
+	slot0:UpdateInfo()
+	slot0:UpdateTalents()
+	slot0:UpdateSkills()
+	slot0:UpdateAbilityAddition()
+	slot0:UpdateTalentAddition()
+	slot0:UpdateAbilitys()
+	slot0:UpdateLockState()
+	slot0:UpdateLevel()
+	slot0:UpdateStyle(slot2)
+	slot0._tf:SetAsFirstSibling()
+	slot0:Show()
 end
 
-function var_0_0.UpdateLockState(arg_17_0)
-	local var_17_0 = arg_17_0.commanderVO:getLock()
-
-	setActive(arg_17_0.lockTF:Find("image"), var_17_0 == 0)
-	onButton(arg_17_0, arg_17_0.lockTF, function()
-		local var_18_0 = 1 - var_17_0
-
-		arg_17_0:emit(CommanderCatMediator.LOCK, arg_17_0.commanderVO.id, var_18_0)
+function slot0.UpdateLockState(slot0)
+	setActive(slot0.lockTF:Find("image"), slot0.commanderVO:getLock() == 0)
+	onButton(slot0, slot0.lockTF, function ()
+		uv1:emit(CommanderCatMediator.LOCK, uv1.commanderVO.id, 1 - uv0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.UpdateStyle(arg_19_0, arg_19_1)
-	if arg_19_1 then
-		triggerToggle(arg_19_0.skillBtn, true)
-		triggerToggle(arg_19_0.additionBtn, true)
-		setActive(arg_19_0.lockTF, false)
+function slot0.UpdateStyle(slot0, slot1)
+	if slot1 then
+		triggerToggle(slot0.skillBtn, true)
+		triggerToggle(slot0.additionBtn, true)
+		setActive(slot0.lockTF, false)
 	end
 
-	setButtonEnabled(arg_19_0.modifyNameBtn, not arg_19_1)
+	setButtonEnabled(slot0.modifyNameBtn, not slot1)
 end
 
-function var_0_0.UpdateInfo(arg_20_0)
-	local var_20_0 = arg_20_0.commanderVO
-	local var_20_1 = Commander.rarity2Print(var_20_0:getRarity())
+function slot0.UpdateInfo(slot0)
+	if slot0.rarityPrint ~= Commander.rarity2Print(slot0.commanderVO:getRarity()) then
+		LoadImageSpriteAsync("CommanderRarity/" .. slot2, slot0.rarityImg, true)
 
-	if arg_20_0.rarityPrint ~= var_20_1 then
-		LoadImageSpriteAsync("CommanderRarity/" .. var_20_1, arg_20_0.rarityImg, true)
-
-		arg_20_0.rarityPrint = var_20_1
+		slot0.rarityPrint = slot2
 	end
 
-	eachChild(arg_20_0.fleetnums, function(arg_21_0)
-		setActive(arg_21_0, go(arg_21_0).name == tostring(var_20_0.fleetId or ""))
+	eachChild(slot0.fleetnums, function (slot0)
+		setActive(slot0, go(slot0).name == tostring(uv0.fleetId or ""))
 	end)
 
-	local var_20_2 = var_20_0.fleetId and not var_20_0.inBattle and var_20_0.sub
-	local var_20_3 = var_20_2 and 260 or 200
+	slot3 = slot1.fleetId and not slot1.inBattle and slot1.sub
+	slot0.line.sizeDelta = Vector2(slot3 and 260 or 200, slot0.line.sizeDelta.y)
 
-	arg_20_0.line.sizeDelta = Vector2(var_20_3, arg_20_0.line.sizeDelta.y)
-
-	setActive(arg_20_0.subTF, var_20_2)
-	setActive(arg_20_0.fleetTF, var_20_0.fleetId and not var_20_0.inBattle and not var_20_0.sub)
-	setActive(arg_20_0.leisureTF, not var_20_0.inFleet and not var_20_0.inBattle)
-	setActive(arg_20_0.labelInBattleTF, var_20_0.inBattle)
-
-	local var_20_4 = arg_20_0.commanderVO
-	local var_20_5 = defaultValue(arg_20_0.forceDefaultName, false)
-
-	arg_20_0.commanderNameTxt:SetText(var_20_4:getName(var_20_5))
+	setActive(slot0.subTF, slot3)
+	setActive(slot0.fleetTF, slot1.fleetId and not slot1.inBattle and not slot1.sub)
+	setActive(slot0.leisureTF, not slot1.inFleet and not slot1.inBattle)
+	setActive(slot0.labelInBattleTF, slot1.inBattle)
+	slot0.commanderNameTxt:SetText(slot0.commanderVO:getName(defaultValue(slot0.forceDefaultName, false)))
 end
 
-function var_0_0.OnSort(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0.commanderVO
-	local var_22_1 = not arg_22_1
+function slot0.OnSort(slot0, slot1)
+	slot3 = not slot1
+	slot0.forceDefaultName = slot3
 
-	arg_22_0.forceDefaultName = var_22_1
-
-	arg_22_0.commanderNameTxt:SetText(var_22_0:getName(var_22_1))
+	slot0.commanderNameTxt:SetText(slot0.commanderVO:getName(slot3))
 end
 
-function var_0_0.UpdatePreView(arg_23_0, arg_23_1)
-	arg_23_0:UpdateAbilitys(arg_23_1)
-	arg_23_0:UpdatePreviewAddition(arg_23_1)
-	arg_23_0:UpdateLevel(arg_23_1)
+function slot0.UpdatePreView(slot0, slot1)
+	slot0:UpdateAbilitys(slot1)
+	slot0:UpdatePreviewAddition(slot1)
+	slot0:UpdateLevel(slot1)
 end
 
-function var_0_0.UpdatePreViewWithOther(arg_24_0, arg_24_1)
-	if not arg_24_1 or #arg_24_1 <= 0 then
+function slot0.UpdatePreViewWithOther(slot0, slot1)
+	if not slot1 or #slot1 <= 0 then
 		return
 	end
 
-	local var_24_0 = Clone(arg_24_0.commanderVO)
-	local var_24_1 = CommanderCatUtil.GetSkillExpAndCommanderExp(var_24_0, arg_24_1)
+	slot2 = Clone(slot0.commanderVO)
 
-	var_24_0:addExp(var_24_1)
-
-	local var_24_2 = arg_24_1[#arg_24_1]
-	local var_24_3 = getProxy(CommanderProxy):getCommanderById(var_24_2)
-
-	arg_24_0:UpdateOtherCommander(var_24_3)
-	arg_24_0:UpdateLevel(var_24_0)
-	arg_24_0:UpdateAbilitys(var_24_0)
+	slot2:addExp(CommanderCatUtil.GetSkillExpAndCommanderExp(slot2, slot1))
+	slot0:UpdateOtherCommander(getProxy(CommanderProxy):getCommanderById(slot1[#slot1]))
+	slot0:UpdateLevel(slot2)
+	slot0:UpdateAbilitys(slot2)
 end
 
-function var_0_0.UpdatePreviewAddition(arg_25_0, arg_25_1)
-	arg_25_0:UpdateAbilityAddition(arg_25_1)
-	arg_25_0:UpdateTalentAddition()
+function slot0.UpdatePreviewAddition(slot0, slot1)
+	slot0:UpdateAbilityAddition(slot1)
+	slot0:UpdateTalentAddition()
 end
 
-function var_0_0.UpdateOtherCommander(arg_26_0, arg_26_1)
-	arg_26_0.otherCommanderNameTxt.text = arg_26_1:getName()
+function slot0.UpdateOtherCommander(slot0, slot1)
+	slot0.otherCommanderNameTxt.text = slot1:getName()
+	slot4 = slot1:GetDisplayTalents()
 
-	local var_26_0 = arg_26_1:getSkills()[1]
-	local var_26_1 = arg_26_1:GetDisplayTalents()
+	GetImageSpriteFromAtlasAsync("commanderskillicon/" .. slot1:getSkills()[1]:getConfig("icon"), "", slot0.otherCommanderSkillImg)
+	slot0.otherCommanderTalentList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			setText(slot2:Find("Text"), "")
 
-	GetImageSpriteFromAtlasAsync("commanderskillicon/" .. var_26_0:getConfig("icon"), "", arg_26_0.otherCommanderSkillImg)
-	arg_26_0.otherCommanderTalentList:make(function(arg_27_0, arg_27_1, arg_27_2)
-		if arg_27_0 == UIItemList.EventUpdate then
-			setText(arg_27_2:Find("Text"), "")
-
-			local var_27_0 = var_26_1[arg_27_1 + 1]
-
-			if var_27_0 then
-				arg_26_0:UpdateTalent(arg_26_1, var_27_0, arg_27_2)
-				onToggle(arg_26_0, arg_27_2, function(arg_28_0)
-					if arg_28_0 then
-						arg_26_0.otherCommanderDescTxt:SetText(var_27_0:getConfig("desc"))
+			if uv0[slot1 + 1] then
+				uv1:UpdateTalent(uv2, slot3, slot2)
+				onToggle(uv1, slot2, function (slot0)
+					if slot0 then
+						uv0.otherCommanderDescTxt:SetText(uv1:getConfig("desc"))
 					end
 				end, SFX_PANEL)
 
-				if arg_27_1 == 0 then
-					triggerToggle(arg_27_2, true)
+				if slot1 == 0 then
+					triggerToggle(slot2, true)
 				end
 			end
 
-			setActive(arg_27_2:Find("empty"), var_27_0 == nil)
+			setActive(slot2:Find("empty"), slot3 == nil)
 
-			arg_27_2:GetComponent(typeof(Image)).enabled = var_27_0 ~= nil
+			slot2:GetComponent(typeof(Image)).enabled = slot3 ~= nil
 
-			setActive(arg_27_2:Find("lock"), var_27_0 and not arg_26_1:IsLearnedTalent(var_27_0.id))
+			setActive(slot2:Find("lock"), slot3 and not uv2:IsLearnedTalent(slot3.id))
 		end
 	end)
-	arg_26_0.otherCommanderTalentList:align(5)
+	slot0.otherCommanderTalentList:align(5)
 end
 
-function var_0_0.UpdateLevel(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_1 or arg_29_0.commanderVO
-	local var_29_1 = arg_29_1 and arg_29_1.level > arg_29_0.commanderVO.level and COLOR_GREEN or COLOR_WHITE
-	local var_29_2 = setColorStr("LV." .. var_29_0.level, var_29_1)
+function slot0.UpdateLevel(slot0, slot1)
+	slot2 = slot1 or slot0.commanderVO
+	slot0.commanderLevelTxt.text = setColorStr("LV." .. slot2.level, slot1 and slot0.commanderVO.level < slot1.level and COLOR_GREEN or COLOR_WHITE)
 
-	arg_29_0.commanderLevelTxt.text = var_29_2
-
-	if var_29_0:isMaxLevel() then
-		arg_29_0.commanderExpImg.fillAmount = 1
+	if slot2:isMaxLevel() then
+		slot0.commanderExpImg.fillAmount = 1
 	else
-		arg_29_0.commanderExpImg.fillAmount = var_29_0.exp / var_29_0:getNextLevelExp()
+		slot0.commanderExpImg.fillAmount = slot2.exp / slot2:getNextLevelExp()
 	end
 end
 
-function var_0_0.UpdateAbilitys(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_0.commanderVO:getAbilitys()
-	local var_30_1
+function slot0.UpdateAbilitys(slot0, slot1)
+	slot3 = slot0.commanderVO:getAbilitys()
+	slot4 = nil
 
-	if arg_30_1 then
-		var_30_1 = arg_30_1:getAbilitys()
+	if slot1 then
+		slot4 = slot1:getAbilitys()
 	end
 
-	for iter_30_0, iter_30_1 in pairs(var_30_0) do
-		local var_30_2 = arg_30_0.abilityTF:Find(iter_30_0)
-		local var_30_3
+	for slot8, slot9 in pairs(slot3) do
+		slot10 = slot0.abilityTF:Find(slot8)
+		slot11 = nil
 
-		if var_30_1 then
-			var_30_3 = var_30_1[iter_30_0].value - iter_30_1.value
-
-			if var_30_3 <= 0 then
-				var_30_3 = nil
-			end
+		if slot4 and slot4[slot8].value - slot9.value <= 0 then
+			slot11 = nil
 		end
 
-		local var_30_4 = var_30_3 and setColorStr("+" .. var_30_3, COLOR_GREEN) or " "
-		local var_30_5 = var_30_2:Find("add/base")
-
-		setText(var_30_5, iter_30_1.value)
-
-		local var_30_6 = var_30_2:Find("add")
-
-		setText(var_30_6, var_30_4)
+		setText(slot10:Find("add/base"), slot9.value)
+		setText(slot10:Find("add"), slot11 and setColorStr("+" .. slot11, COLOR_GREEN) or " ")
 	end
 end
 
-function var_0_0.UpdateAbilityAddition(arg_31_0, arg_31_1)
-	local var_31_0 = arg_31_0.commanderVO:getAbilitysAddition()
-	local var_31_1
+function slot0.UpdateAbilityAddition(slot0, slot1)
+	slot3 = slot0.commanderVO:getAbilitysAddition()
+	slot4 = nil
 
-	if arg_31_1 then
-		var_31_1 = arg_31_1:getAbilitysAddition()
+	if slot1 then
+		slot4 = slot1:getAbilitysAddition()
 	end
 
-	local var_31_2 = 0
+	slot5 = 0
 
-	for iter_31_0, iter_31_1 in pairs(var_31_0) do
-		if iter_31_1 > 0 then
-			local var_31_3 = arg_31_0.abilityAdditionTF:GetChild(var_31_2)
+	for slot9, slot10 in pairs(slot3) do
+		if slot10 > 0 then
+			slot11 = slot0.abilityAdditionTF:GetChild(slot5)
 
-			GetImageSpriteFromAtlasAsync("attricon", iter_31_0, var_31_3:Find("bg/icon"), false)
-			setText(var_31_3:Find("bg/name"), AttributeType.Type2Name(iter_31_0))
+			GetImageSpriteFromAtlasAsync("attricon", slot9, slot11:Find("bg/icon"), false)
+			setText(slot11:Find("bg/name"), AttributeType.Type2Name(slot9))
 
-			local var_31_4 = string.format("%0.3f", iter_31_1)
+			slot12 = string.format("%0.3f", slot10)
 
-			setText(var_31_3:Find("bg/value"), ("+" .. math.floor(iter_31_1 * 1000) / 1000) .. "%")
+			setText(slot11:Find("bg/value"), "+" .. math.floor(slot10 * 1000) / 1000 .. "%")
 
-			local var_31_5 = var_31_1 and var_31_1[iter_31_0] or iter_31_1
+			slot13 = slot4 and slot4[slot9] or slot10
 
-			setActive(var_31_3:Find("up"), var_31_5 < iter_31_1)
-			setActive(var_31_3:Find("down"), iter_31_1 < var_31_5)
+			setActive(slot11:Find("up"), slot13 < slot10)
+			setActive(slot11:Find("down"), slot10 < slot13)
 
-			var_31_2 = var_31_2 + 1
+			slot5 = slot5 + 1
 		end
 	end
 end
 
-function var_0_0.UpdateTalents(arg_32_0)
-	local var_32_0 = arg_32_0.commanderVO
-	local var_32_1 = var_32_0:GetDisplayTalents()
-
-	arg_32_0.talentList:make(function(arg_33_0, arg_33_1, arg_33_2)
-		if arg_33_0 == UIItemList.EventUpdate then
-			local var_33_0 = var_32_1[arg_33_1 + 1]
-
-			arg_32_0:UpdateTalent(var_32_0, var_33_0, arg_33_2)
+function slot0.UpdateTalents(slot0)
+	slot0.talentList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv1:UpdateTalent(uv2, uv0[slot1 + 1], slot2)
 		end
 	end)
-	arg_32_0.talentList:align(#var_32_1)
+	slot0.talentList:align(#slot0.commanderVO:GetDisplayTalents())
 end
 
-function var_0_0.UpdateTalent(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
-	setText(arg_34_3:Find("Text"), arg_34_2:getConfig("name"))
-	GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg_34_2:getConfig("icon"), "", arg_34_3)
+function slot0.UpdateTalent(slot0, slot1, slot2, slot3)
+	setText(slot3:Find("Text"), slot2:getConfig("name"))
+	GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot2:getConfig("icon"), "", slot3)
 
-	if arg_34_3:GetComponent(typeof(Button)) then
-		onButton(arg_34_0, arg_34_3, function()
-			arg_34_0.contextData.treePanel:ExecuteAction("Show", arg_34_2)
+	if slot3:GetComponent(typeof(Button)) then
+		onButton(slot0, slot3, function ()
+			uv0.contextData.treePanel:ExecuteAction("Show", uv1)
 		end, SFX_PANEL)
 	end
 
-	setActive(arg_34_3:Find("lock"), not arg_34_1:IsLearnedTalent(arg_34_2.id))
+	setActive(slot3:Find("lock"), not slot1:IsLearnedTalent(slot2.id))
 end
 
-function var_0_0.UpdateTalentAddition(arg_36_0)
-	local var_36_0 = arg_36_0.commanderVO
-	local var_36_1
-	local var_36_2 = _.values(var_36_0:getTalentsDesc())
+function slot0.UpdateTalentAddition(slot0)
+	slot2 = nil
 
-	arg_36_0.talentAdditionList:make(function(arg_37_0, arg_37_1, arg_37_2)
-		if arg_37_0 == UIItemList.EventUpdate then
-			local var_37_0 = var_36_2[arg_37_1 + 1]
+	slot0.talentAdditionList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			setScrollText(findTF(arg_37_2, "bg/name_mask/name"), var_37_0.name)
+			setScrollText(findTF(slot2, "bg/name_mask/name"), slot3.name)
+			setText(slot2:Find("bg/value"), (slot3.value > 0 and "+" or "") .. slot3.value .. (slot3.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""))
+			setActive(slot2:Find("up"), false)
+			setActive(slot2:Find("down"), false)
 
-			local var_37_1 = var_37_0.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
-
-			setText(arg_37_2:Find("bg/value"), (var_37_0.value > 0 and "+" or "") .. var_37_0.value .. var_37_1)
-			setActive(arg_37_2:Find("up"), false)
-			setActive(arg_37_2:Find("down"), false)
-
-			arg_37_2:Find("bg"):GetComponent(typeof(Image)).enabled = arg_37_1 % 2 ~= 0
+			slot2:Find("bg"):GetComponent(typeof(Image)).enabled = slot1 % 2 ~= 0
 		end
 	end)
-	arg_36_0.talentAdditionList:align(#var_36_2)
+	slot0.talentAdditionList:align(#_.values(slot0.commanderVO:getTalentsDesc()))
 end
 
-function var_0_0.UpdateSkills(arg_38_0)
-	local var_38_0 = arg_38_0.commanderVO:getSkills()[1]
-
-	GetImageSpriteFromAtlasAsync("commanderskillicon/" .. var_38_0:getConfig("icon"), "", arg_38_0.skillIcon)
-	onButton(arg_38_0, arg_38_0.skillIcon, function()
-		arg_38_0:emit(CommanderCatMediator.SKILL_INFO, var_38_0)
+function slot0.UpdateSkills(slot0)
+	GetImageSpriteFromAtlasAsync("commanderskillicon/" .. slot0.commanderVO:getSkills()[1]:getConfig("icon"), "", slot0.skillIcon)
+	onButton(slot0, slot0.skillIcon, function ()
+		uv0:emit(CommanderCatMediator.SKILL_INFO, uv1)
 	end, SFX_PANEL)
 end
 
-function var_0_0.CanBack(arg_40_0)
-	if arg_40_0.renamePanel and arg_40_0.renamePanel:GetLoaded() and arg_40_0.renamePanel:isShowing() then
-		arg_40_0.renamePanel:Hide()
+function slot0.CanBack(slot0)
+	if slot0.renamePanel and slot0.renamePanel:GetLoaded() and slot0.renamePanel:isShowing() then
+		slot0.renamePanel:Hide()
 
 		return false
 	end
@@ -431,28 +371,28 @@ function var_0_0.CanBack(arg_40_0)
 	return true
 end
 
-function var_0_0.OnDestroy(arg_41_0)
-	if arg_41_0.isBlur then
-		pg.UIMgr.GetInstance():UnblurPanel(arg_41_0.blurPanel, arg_41_0.blurPanelParent)
+function slot0.OnDestroy(slot0)
+	if slot0.isBlur then
+		pg.UIMgr.GetInstance():UnblurPanel(slot0.blurPanel, slot0.blurPanelParent)
 	end
 
-	if arg_41_0.renamePanel then
-		arg_41_0.renamePanel:Destroy()
+	if slot0.renamePanel then
+		slot0.renamePanel:Destroy()
 
-		arg_41_0.renamePanel = nil
+		slot0.renamePanel = nil
 	end
 end
 
-function var_0_0.Blur(arg_42_0)
-	if arg_42_0.isOnAddition or arg_42_0.isOnSkill or arg_42_0.isOnOther then
-		arg_42_0.isBlur = true
+function slot0.Blur(slot0)
+	if slot0.isOnAddition or slot0.isOnSkill or slot0.isOnOther then
+		slot0.isBlur = true
 
-		pg.UIMgr.GetInstance():BlurPanel(arg_42_0.blurPanel)
+		pg.UIMgr.GetInstance():BlurPanel(slot0.blurPanel)
 	else
-		arg_42_0.isBlur = false
+		slot0.isBlur = false
 
-		pg.UIMgr.GetInstance():UnblurPanel(arg_42_0.blurPanel, arg_42_0.blurPanelParent)
+		pg.UIMgr.GetInstance():UnblurPanel(slot0.blurPanel, slot0.blurPanelParent)
 	end
 end
 
-return var_0_0
+return slot0

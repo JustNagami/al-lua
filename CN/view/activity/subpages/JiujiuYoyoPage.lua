@@ -1,358 +1,339 @@
-﻿local var_0_0 = class("JiujiuYoyoPage", import("...base.BaseActivityPage"))
-local var_0_1 = PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_CHT
+slot0 = class("JiujiuYoyoPage", import("...base.BaseActivityPage"))
+slot1 = PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_CHT
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.helpBtn = arg_1_0:findTF("help_btn", arg_1_0.bg)
-	arg_1_0.taskBtn = arg_1_0:findTF("task_btn", arg_1_0.bg)
-	arg_1_0.taskRedDot = arg_1_0:findTF("red_dot", arg_1_0.taskBtn)
-	arg_1_0.ticketNumTF = arg_1_0:findTF("ticket_num", arg_1_0.bg)
-	arg_1_0.rollingCountTF = arg_1_0:findTF("rolling_count", arg_1_0.bg)
-	arg_1_0.rollingBlink = arg_1_0:findTF("blink", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.helpBtn = slot0:findTF("help_btn", slot0.bg)
+	slot0.taskBtn = slot0:findTF("task_btn", slot0.bg)
+	slot0.taskRedDot = slot0:findTF("red_dot", slot0.taskBtn)
+	slot0.ticketNumTF = slot0:findTF("ticket_num", slot0.bg)
+	slot0.rollingCountTF = slot0:findTF("rolling_count", slot0.bg)
+	slot0.rollingBlink = slot0:findTF("blink", slot0.bg)
 
-	if var_0_1 then
-		arg_1_0.awardTpl = arg_1_0:findTF("item_jp", arg_1_0.bg)
-		arg_1_0.awardContainter = arg_1_0:findTF("award_list_jp", arg_1_0.bg)
+	if uv0 then
+		slot0.awardTpl = slot0:findTF("item_jp", slot0.bg)
+		slot0.awardContainter = slot0:findTF("award_list_jp", slot0.bg)
 	else
-		arg_1_0.awardTpl = arg_1_0:findTF("item", arg_1_0.bg)
-		arg_1_0.awardContainter = arg_1_0:findTF("award_list", arg_1_0.bg)
+		slot0.awardTpl = slot0:findTF("item", slot0.bg)
+		slot0.awardContainter = slot0:findTF("award_list", slot0.bg)
 	end
 
-	arg_1_0.awardUIList = UIItemList.New(arg_1_0.awardContainter, arg_1_0.awardTpl)
-	arg_1_0.finalGot = arg_1_0:findTF("final_got_jp", arg_1_0.bg)
-	arg_1_0.rollingAni = arg_1_0:findTF("rolling_mask", arg_1_0.bg)
-	arg_1_0.rollingSpine = arg_1_0:findTF("rolling", arg_1_0.rollingAni):GetComponent("SpineAnimUI")
-	arg_1_0.rollingGraphic = arg_1_0:findTF("rolling", arg_1_0.rollingAni):GetComponent("SkeletonGraphic")
-	arg_1_0.forbidMask = arg_1_0:findTF("forbid_mask", arg_1_0.bg)
-	arg_1_0.taskWindow = arg_1_0:findTF("TaskWindow")
-	arg_1_0.closeBtn = arg_1_0:findTF("panel/close_btn", arg_1_0.taskWindow)
-	arg_1_0.taskTpl = arg_1_0:findTF("panel/scrollview/item", arg_1_0.taskWindow)
-	arg_1_0.taskContainter = arg_1_0:findTF("panel/scrollview/items", arg_1_0.taskWindow)
-	arg_1_0.taskUIList = UIItemList.New(arg_1_0.taskContainter, arg_1_0.taskTpl)
+	slot0.awardUIList = UIItemList.New(slot0.awardContainter, slot0.awardTpl)
+	slot0.finalGot = slot0:findTF("final_got_jp", slot0.bg)
+	slot0.rollingAni = slot0:findTF("rolling_mask", slot0.bg)
+	slot0.rollingSpine = slot0:findTF("rolling", slot0.rollingAni):GetComponent("SpineAnimUI")
+	slot0.rollingGraphic = slot0:findTF("rolling", slot0.rollingAni):GetComponent("SkeletonGraphic")
+	slot0.forbidMask = slot0:findTF("forbid_mask", slot0.bg)
+	slot0.taskWindow = slot0:findTF("TaskWindow")
+	slot0.closeBtn = slot0:findTF("panel/close_btn", slot0.taskWindow)
+	slot0.taskTpl = slot0:findTF("panel/scrollview/item", slot0.taskWindow)
+	slot0.taskContainter = slot0:findTF("panel/scrollview/items", slot0.taskWindow)
+	slot0.taskUIList = UIItemList.New(slot0.taskContainter, slot0.taskTpl)
 
-	arg_1_0:register()
+	slot0:register()
 end
 
-function var_0_0.register(arg_2_0)
-	arg_2_0:bind(ActivityMediator.ON_SHAKE_BEADS_RESULT, function(arg_3_0, arg_3_1)
-		arg_2_0:displayResult(arg_3_1.awards, arg_3_1.number, function()
-			arg_3_1.callback()
+function slot0.register(slot0)
+	slot0:bind(ActivityMediator.ON_SHAKE_BEADS_RESULT, function (slot0, slot1)
+		uv0:displayResult(slot1.awards, slot1.number, function ()
+			uv0.callback()
 		end)
 	end)
 end
 
-function var_0_0.OnDataSetting(arg_5_0)
-	arg_5_0.taskProxy = getProxy(TaskProxy)
+function slot0.OnDataSetting(slot0)
+	slot0.taskProxy = getProxy(TaskProxy)
+	slot0.taskList = pg.activity_template[slot0.activity:getConfig("config_client").taskActID].config_data
+	slot0.startTime = slot0.activity:getStartTime()
+	slot0.totalNumList = {}
+	slot0.remainNumList = {}
+	slot0.remainTotalNum = 0
+	slot0.awardList = {}
+	slot0.finalAward = slot0.activity:getConfig("config_client").finalAward
+	slot0.awardConifg = slot0.activity:getConfig("config_client").award
+	slot0.beadsConfig = slot0.activity:getConfig("config_data")[1]
 
-	local var_5_0 = arg_5_0.activity:getConfig("config_client").taskActID
-
-	arg_5_0.taskList = pg.activity_template[var_5_0].config_data
-	arg_5_0.startTime = arg_5_0.activity:getStartTime()
-	arg_5_0.totalNumList = {}
-	arg_5_0.remainNumList = {}
-	arg_5_0.remainTotalNum = 0
-	arg_5_0.awardList = {}
-	arg_5_0.finalAward = arg_5_0.activity:getConfig("config_client").finalAward
-	arg_5_0.awardConifg = arg_5_0.activity:getConfig("config_client").award
-	arg_5_0.beadsConfig = arg_5_0.activity:getConfig("config_data")[1]
-
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.beadsConfig) do
-		local var_5_1 = iter_5_1[1]
-
-		arg_5_0.awardList[var_5_1] = arg_5_0.awardConifg[var_5_1]
-		arg_5_0.totalNumList[var_5_1] = iter_5_1[2]
+	for slot5, slot6 in ipairs(slot0.beadsConfig) do
+		slot7 = slot6[1]
+		slot0.awardList[slot7] = slot0.awardConifg[slot7]
+		slot0.totalNumList[slot7] = slot6[2]
 	end
 end
 
-function var_0_0.OnFirstFlush(arg_6_0)
-	onButton(arg_6_0, arg_6_0.helpBtn, function()
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("tips_shakebeads")
 		})
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.taskBtn, function()
-		arg_6_0:openTask()
+	onButton(slot0, slot0.taskBtn, function ()
+		uv0:openTask()
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.closeBtn, function()
-		arg_6_0:closeTask()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:closeTask()
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0:findTF("mask", arg_6_0.taskWindow), function()
-		arg_6_0:closeTask()
+	onButton(slot0, slot0:findTF("mask", slot0.taskWindow), function ()
+		uv0:closeTask()
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.rollingBlink, function()
-		if arg_6_0.ticketNum <= 0 then
+	onButton(slot0, slot0.rollingBlink, function ()
+		if uv0.ticketNum <= 0 then
 			return
 		end
 
-		arg_6_0:emit(ActivityMediator.EVENT_OPERATION, {
+		uv0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = arg_6_0.activity.id
+			activity_id = uv0.activity.id
 		})
 	end, SFX_PANEL)
-	setActive(arg_6_0.taskRedDot, false)
+	setActive(slot0.taskRedDot, false)
 
-	if LeanTween.isTweening(arg_6_0.rollingBlink) then
-		LeanTween.cancel(arg_6_0.rollingBlink)
+	if LeanTween.isTweening(slot0.rollingBlink) then
+		LeanTween.cancel(slot0.rollingBlink)
 	end
 
-	setImageAlpha(arg_6_0.rollingBlink, 1)
-	blinkAni(arg_6_0.rollingBlink, 0.5)
+	setImageAlpha(slot0.rollingBlink, 1)
+	blinkAni(slot0.rollingBlink, 0.5)
 end
 
-function var_0_0.OnUpdateFlush(arg_12_0)
-	arg_12_0.curDay = pg.TimeMgr.GetInstance():DiffDay(arg_12_0.startTime, pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	arg_12_0.ticketNum = arg_12_0.activity.data1
-	arg_12_0.hasNumList = arg_12_0.activity.data1KeyValueList[1]
-	arg_12_0.remainTotalNum = 0
+function slot0.OnUpdateFlush(slot0)
+	slot4 = pg.TimeMgr.GetInstance()
+	slot5 = slot4
+	slot4 = slot4.GetServerTime
+	slot0.curDay = pg.TimeMgr.GetInstance():DiffDay(slot0.startTime, slot4(slot5)) + 1
+	slot0.ticketNum = slot0.activity.data1
+	slot0.hasNumList = slot0.activity.data1KeyValueList[1]
+	slot0.remainTotalNum = 0
 
-	for iter_12_0, iter_12_1 in ipairs(arg_12_0.beadsConfig) do
-		local var_12_0 = iter_12_1[1]
-
-		if not arg_12_0.hasNumList[var_12_0] then
-			arg_12_0.hasNumList[var_12_0] = 0
+	for slot4, slot5 in ipairs(slot0.beadsConfig) do
+		if not slot0.hasNumList[slot5[1]] then
+			slot0.hasNumList[slot6] = 0
 		end
 
-		arg_12_0.remainNumList[var_12_0] = arg_12_0.totalNumList[var_12_0] - arg_12_0.hasNumList[var_12_0]
-		arg_12_0.remainTotalNum = arg_12_0.remainTotalNum + arg_12_0.remainNumList[var_12_0]
+		slot0.remainNumList[slot6] = slot0.totalNumList[slot6] - slot0.hasNumList[slot6]
+		slot0.remainTotalNum = slot0.remainTotalNum + slot0.remainNumList[slot6]
 	end
 
-	setText(arg_12_0.ticketNumTF, arg_12_0.ticketNum)
-	setText(arg_12_0.rollingCountTF, arg_12_0.remainTotalNum)
-	setActive(arg_12_0.rollingBlink, arg_12_0.ticketNum > 0)
-	arg_12_0:initAwardList()
-	arg_12_0:initTaskWindow()
+	setText(slot0.ticketNumTF, slot0.ticketNum)
+	setText(slot0.rollingCountTF, slot0.remainTotalNum)
+	setActive(slot0.rollingBlink, slot0.ticketNum > 0)
+	slot0:initAwardList()
+	slot0:initTaskWindow()
 
-	arg_12_0.isFirst = PlayerPrefs.GetInt("jiujiuyoyo_first_" .. getProxy(PlayerProxy):getData().id)
+	slot0.isFirst = PlayerPrefs.GetInt("jiujiuyoyo_first_" .. getProxy(PlayerProxy):getData().id)
 
-	if arg_12_0.isFirst == 0 then
-		setActive(arg_12_0.taskRedDot, true)
+	if slot0.isFirst == 0 then
+		setActive(slot0.taskRedDot, true)
 	end
 
-	if #arg_12_0.finishItemList > 0 then
-		arg_12_0:openTask()
+	if #slot0.finishItemList > 0 then
+		slot0:openTask()
 	end
 
-	setActive(arg_12_0.finalGot, var_0_1 and arg_12_0.activity.data2 == 1)
-	arg_12_0:CheckFinalAward()
+	setActive(slot0.finalGot, uv0 and slot0.activity.data2 == 1)
+	slot0:CheckFinalAward()
 end
 
-function var_0_0.initAwardList(arg_13_0)
-	arg_13_0.awardUIList:make(function(arg_14_0, arg_14_1, arg_14_2)
-		if arg_14_0 == UIItemList.EventUpdate then
-			local var_14_0 = arg_14_1 + 1
-			local var_14_1 = arg_13_0.totalNumList[var_14_0]
-			local var_14_2 = arg_13_0.remainNumList[var_14_0]
+function slot0.initAwardList(slot0)
+	slot0.awardUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = slot1 + 1
+			slot4 = uv0.totalNumList[slot3]
 
-			if var_14_2 == 0 then
-				setTextColor(arg_13_0:findTF("num", arg_14_2), Color.New(0.55, 0.55, 0.55, 1))
-				setOutlineColor(arg_13_0:findTF("num", arg_14_2), Color.New(0.26, 0.26, 0.26, 1))
+			if uv0.remainNumList[slot3] == 0 then
+				setTextColor(uv0:findTF("num", slot2), Color.New(0.55, 0.55, 0.55, 1))
+				setOutlineColor(uv0:findTF("num", slot2), Color.New(0.26, 0.26, 0.26, 1))
 			end
 
-			setText(arg_13_0:findTF("num", arg_14_2), var_14_2 .. "/" .. var_14_1)
-			setActive(arg_13_0:findTF("got", arg_14_2), var_14_2 == 0)
+			setText(uv0:findTF("num", slot2), slot5 .. "/" .. slot4)
+			setActive(uv0:findTF("got", slot2), slot5 == 0)
 
-			local var_14_3 = arg_13_0:findTF("award_mask/award", arg_14_2)
-			local var_14_4 = arg_13_0.awardList[var_14_0]
-			local var_14_5 = {
-				type = var_14_4[1],
-				id = var_14_4[2],
-				count = var_14_4[3] * var_14_2
-			}
+			slot6 = uv0:findTF("award_mask/award", slot2)
+			slot7 = uv0.awardList[slot3]
 
-			updateDrop(var_14_3, var_14_5)
-			onButton(arg_13_0, var_14_3, function()
-				arg_13_0:emit(BaseUI.ON_DROP, var_14_5)
+			updateDrop(slot6, {
+				type = slot7[1],
+				id = slot7[2],
+				count = slot7[3] * slot5
+			})
+			onButton(uv0, slot6, function ()
+				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 		end
 	end)
-	arg_13_0.awardUIList:align(#arg_13_0.awardList)
+	slot0.awardUIList:align(#slot0.awardList)
 end
 
-function var_0_0.initTaskWindow(arg_16_0)
-	arg_16_0.finishItemList = {}
-	arg_16_0.finishTaskVOList = {}
+function slot0.initTaskWindow(slot0)
+	slot0.finishItemList = {}
+	slot0.finishTaskVOList = {}
 
-	arg_16_0.taskUIList:make(function(arg_17_0, arg_17_1, arg_17_2)
-		if arg_17_0 == UIItemList.EventUpdate then
-			local var_17_0 = arg_17_1 + 1
-			local var_17_1 = arg_16_0:findTF("award/award", arg_17_2)
-			local var_17_2 = arg_16_0.taskList[var_17_0]
-			local var_17_3 = arg_16_0.taskProxy:getTaskById(var_17_2) or arg_16_0.taskProxy:getFinishTaskById(var_17_2)
+	slot0.taskUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot6 = uv0.taskProxy:getTaskById(uv0.taskList[slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot5)
 
-			assert(var_17_3, "without this task by id: " .. var_17_2)
+			assert(slot6, "without this task by id: " .. slot5)
 
-			local var_17_4 = var_17_3:getProgress()
-			local var_17_5 = var_17_3:getConfig("target_num")
-			local var_17_6 = var_17_3:getTaskStatus()
-			local var_17_7 = var_17_3:getConfig("desc")
-			local var_17_8 = var_17_3:getConfig("award_display")[1]
-			local var_17_9 = var_17_0 > arg_16_0.curDay
+			slot7 = slot6:getProgress()
+			slot8 = slot6:getConfig("target_num")
+			slot9 = slot6:getTaskStatus()
+			slot11 = slot6:getConfig("award_display")[1]
+			slot12 = uv0.curDay < slot3
 
-			setText(arg_16_0:findTF("description", arg_17_2), var_17_7)
-			setText(arg_16_0:findTF("progress/progressText", arg_17_2), var_17_4 .. "/" .. var_17_5)
-			setSlider(arg_16_0:findTF("progress", arg_17_2), 0, var_17_5, var_17_4)
-
-			local var_17_10 = {
-				type = var_17_8[1],
-				id = var_17_8[2],
-				count = var_17_8[3]
-			}
-
-			updateDrop(var_17_1, var_17_10)
-			onButton(arg_16_0, arg_16_0:findTF("award/Image", arg_17_2), function()
-				arg_16_0:emit(BaseUI.ON_DROP, var_17_10)
+			setText(uv0:findTF("description", slot2), slot6:getConfig("desc"))
+			setText(uv0:findTF("progress/progressText", slot2), slot7 .. "/" .. slot8)
+			setSlider(uv0:findTF("progress", slot2), 0, slot8, slot7)
+			updateDrop(uv0:findTF("award/award", slot2), {
+				type = slot11[1],
+				id = slot11[2],
+				count = slot11[3]
+			})
+			onButton(uv0, uv0:findTF("award/Image", slot2), function ()
+				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 
-			local var_17_11 = arg_16_0:findTF("go_btn", arg_17_2)
-			local var_17_12 = arg_16_0:findTF("get_btn", arg_17_2)
+			slot15 = uv0:findTF("get_btn", slot2)
 
-			setActive(var_17_11, var_17_6 == 0)
-			setActive(var_17_12, var_17_6 == 1)
-			onButton(arg_16_0, var_17_11, function()
-				arg_16_0:emit(ActivityMediator.ON_TASK_GO, var_17_3)
+			setActive(uv0:findTF("go_btn", slot2), slot9 == 0)
+			setActive(slot15, slot9 == 1)
+			onButton(uv0, slot14, function ()
+				uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
 			end, SFX_PANEL)
-			onButton(arg_16_0, var_17_12, function()
-				arg_16_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_17_3)
+			onButton(uv0, slot15, function ()
+				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
 			end, SFX_PANEL)
-			setActive(arg_16_0:findTF("finnal", arg_17_2), var_17_6 == 2 and not var_17_9)
-			setText(arg_16_0:findTF("lock/tip", arg_17_2), i18n("unlock_tips", var_17_0))
-			setActive(arg_16_0:findTF("lock", arg_17_2), var_17_9)
+			setActive(uv0:findTF("finnal", slot2), slot9 == 2 and not slot12)
+			setText(uv0:findTF("lock/tip", slot2), i18n("unlock_tips", slot3))
+			setActive(uv0:findTF("lock", slot2), slot12)
 
-			if var_17_6 == 1 and not var_17_9 then
-				table.insert(arg_16_0.finishItemList, arg_17_2)
-				table.insert(arg_16_0.finishTaskVOList, var_17_3)
+			if slot9 == 1 and not slot12 then
+				table.insert(uv0.finishItemList, slot2)
+				table.insert(uv0.finishTaskVOList, slot6)
 			end
 		end
 	end)
-	arg_16_0.taskUIList:align(#arg_16_0.taskList)
+	slot0.taskUIList:align(#slot0.taskList)
 end
 
-function var_0_0.closeTask(arg_21_0)
-	setActive(arg_21_0.taskWindow, false)
+function slot0.closeTask(slot0)
+	setActive(slot0.taskWindow, false)
 end
 
-function var_0_0.openTask(arg_22_0)
-	setActive(arg_22_0.taskWindow, true)
+function slot0.openTask(slot0)
+	setActive(slot0.taskWindow, true)
 
-	if arg_22_0.isFirst == 0 then
+	if slot0.isFirst == 0 then
 		PlayerPrefs.SetInt("jiujiuyoyo_first_" .. getProxy(PlayerProxy):getData().id, 1)
-		setActive(arg_22_0.taskRedDot, false)
+		setActive(slot0.taskRedDot, false)
 	end
 
-	arg_22_0.hasClickTask = true
+	slot0.hasClickTask = true
 
-	eachChild(arg_22_0.taskContainter, function(arg_23_0)
-		if isActive(arg_22_0:findTF("finnal", arg_23_0)) then
-			arg_23_0:SetAsLastSibling()
+	eachChild(slot0.taskContainter, function (slot0)
+		if isActive(uv0:findTF("finnal", slot0)) then
+			slot0:SetAsLastSibling()
 		end
 	end)
 
-	if #arg_22_0.finishItemList > 0 then
-		arg_22_0:autoFinishTask()
+	if #slot0.finishItemList > 0 then
+		slot0:autoFinishTask()
 	end
 end
 
-function var_0_0.autoFinishTask(arg_24_0)
-	local var_24_0 = 0.01
-	local var_24_1 = 0.5
+function slot0.autoFinishTask(slot0)
+	slot1 = 0.01
 
-	for iter_24_0, iter_24_1 in ipairs(arg_24_0.finishItemList) do
-		local var_24_2 = GetOrAddComponent(iter_24_1, typeof(CanvasGroup))
+	for slot6, slot7 in ipairs(slot0.finishItemList) do
+		slot8 = GetOrAddComponent(slot7, typeof(CanvasGroup))
 
-		arg_24_0:managedTween(LeanTween.delayedCall, function()
-			iter_24_1:SetAsFirstSibling()
-			LeanTween.value(go(iter_24_1), 1, 0, var_24_1):setOnUpdate(System.Action_float(function(arg_26_0)
-				var_24_2.alpha = arg_26_0
-			end)):setOnComplete(System.Action(function()
-				var_24_2.alpha = 1
+		slot0:managedTween(LeanTween.delayedCall, function ()
+			uv0:SetAsFirstSibling()
+			LeanTween.value(go(uv0), 1, 0, uv1):setOnUpdate(System.Action_float(function (slot0)
+				uv0.alpha = slot0
+			end)):setOnComplete(System.Action(function ()
+				uv0.alpha = 1
 
-				setActive(arg_24_0:findTF("finnal", iter_24_1), true)
-				iter_24_1:SetAsLastSibling()
+				setActive(uv1:findTF("finnal", uv2), true)
+				uv2:SetAsLastSibling()
 			end))
-		end, var_24_0, nil)
+		end, slot1, nil)
 
-		var_24_0 = var_24_0 + var_24_1 + 0.1
+		slot1 = slot1 + 0.5 + 0.1
 	end
 
-	arg_24_0:managedTween(LeanTween.delayedCall, function()
+	slot0:managedTween(LeanTween.delayedCall, function ()
 		pg.m02:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
-			resultList = arg_24_0.finishTaskVOList
+			resultList = uv0.finishTaskVOList
 		})
-	end, var_24_0, nil)
+	end, slot1, nil)
 end
 
-function var_0_0.CheckFinalAward(arg_29_0)
-	if var_0_1 and arg_29_0.activity.data2 == 0 and arg_29_0.remainTotalNum == 0 then
-		arg_29_0:emit(ActivityMediator.EVENT_OPERATION, {
+function slot0.CheckFinalAward(slot0)
+	if uv0 and slot0.activity.data2 == 0 and slot0.remainTotalNum == 0 then
+		slot0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 2,
-			activity_id = arg_29_0.activity.id
+			activity_id = slot0.activity.id
 		})
 	end
 end
 
-function var_0_0.displayResult(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
-	arg_30_0:setForbidMaskStatus(true)
-	setActive(arg_30_0.rollingAni, true)
+function slot0.displayResult(slot0, slot1, slot2, slot3)
+	slot0:setForbidMaskStatus(true)
+	setActive(slot0.rollingAni, true)
 
-	function arg_30_0.aniCallback()
-		arg_30_3()
+	function slot0.aniCallback()
+		uv0()
 	end
 
-	arg_30_0.rollingSpine:SetActionCallBack(function(arg_32_0)
-		if arg_32_0 == "finish" then
-			setActive(arg_30_0.rollingAni, false)
-			arg_30_3()
+	slot0.rollingSpine:SetActionCallBack(function (slot0)
+		if slot0 == "finish" then
+			setActive(uv0.rollingAni, false)
+			uv1()
 
-			arg_30_0.aniCallback = nil
+			uv0.aniCallback = nil
 
-			arg_30_0:setForbidMaskStatus(false)
+			uv0:setForbidMaskStatus(false)
 		end
 	end)
-	arg_30_0.rollingSpine:SetAction(tostring(arg_30_2), 0)
+	slot0.rollingSpine:SetAction(tostring(slot2), 0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/zhuanzhu")
-	arg_30_0:managedTween(LeanTween.delayedCall, function()
+	slot0:managedTween(LeanTween.delayedCall, function ()
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/zhengque")
 	end, 4, nil)
 end
 
-function var_0_0.setForbidMaskStatus(arg_34_0, arg_34_1)
-	if arg_34_1 then
-		setActive(arg_34_0.forbidMask, true)
-		pg.UIMgr.GetInstance():OverlayPanel(arg_34_0.forbidMask)
+function slot0.setForbidMaskStatus(slot0, slot1)
+	if slot1 then
+		setActive(slot0.forbidMask, true)
+		pg.UIMgr.GetInstance():OverlayPanel(slot0.forbidMask)
 	else
-		setActive(arg_34_0.forbidMask, false)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg_34_0.forbidMask, arg_34_0.bg)
+		setActive(slot0.forbidMask, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(slot0.forbidMask, slot0.bg)
 	end
 end
 
-function var_0_0.canFinishTask()
-	local var_35_0 = pg.activity_template[ActivityConst.JIUJIU_YOYO_ID]
-	local var_35_1 = var_35_0.config_client.taskActID
-	local var_35_2 = pg.activity_template[var_35_1].config_data
-	local var_35_3 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_35_0.time[2])
-	local var_35_4 = pg.TimeMgr.GetInstance():DiffDay(var_35_3, pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	local var_35_5 = false
-	local var_35_6 = getProxy(TaskProxy)
+function slot0.canFinishTask()
+	slot0 = pg.activity_template[ActivityConst.JIUJIU_YOYO_ID]
+	slot5 = false
+	slot6 = getProxy(TaskProxy)
 
-	for iter_35_0, iter_35_1 in pairs(var_35_2) do
-		local var_35_7 = var_35_4 < iter_35_0
-		local var_35_8 = var_35_6:getTaskById(iter_35_1) or var_35_6:getFinishTaskById(iter_35_1)
+	for slot10, slot11 in pairs(pg.activity_template[slot0.config_client.taskActID].config_data) do
+		slot13 = slot6:getTaskById(slot11) or slot6:getFinishTaskById(slot11)
 
-		assert(var_35_8, "without this task by id: " .. iter_35_1)
+		assert(slot13, "without this task by id: " .. slot11)
 
-		if var_35_8:getTaskStatus() == 1 and not var_35_7 then
-			var_35_5 = true
+		if slot13:getTaskStatus() == 1 and not (pg.TimeMgr.GetInstance():DiffDay(pg.TimeMgr.GetInstance():parseTimeFromConfig(slot0.time[2]), pg.TimeMgr.GetInstance():GetServerTime()) + 1 < slot10) then
+			slot5 = true
 
 			break
 		end
 	end
 
-	return var_35_5
+	return slot5
 end
 
-function var_0_0.IsShowRed()
-	return getProxy(ActivityProxy):getActivityById(ActivityConst.JIUJIU_YOYO_ID).data1 > 0 or var_0_0.canFinishTask()
+function slot0.IsShowRed()
+	return getProxy(ActivityProxy):getActivityById(ActivityConst.JIUJIU_YOYO_ID).data1 > 0 or uv0.canFinishTask()
 end
 
-return var_0_0
+return slot0

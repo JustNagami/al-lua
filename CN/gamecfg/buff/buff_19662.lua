@@ -1,33 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAircraftOrb",
-			trigger = {
-				"onAircraftCreate"
-			},
-			arg_list = {
-				rant = 5000,
-				buff_id = 19663,
-				index = {
-					2
-				}
-			}
-		},
-		{
-			type = "BattleBuffOrb",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				rant = 5000,
-				buff_id = 19666,
-				level = 1,
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -348,5 +319,34 @@
 	stack = 1,
 	id = 19662,
 	icon = 19662,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddAircraftOrb",
+			trigger = {
+				"onAircraftCreate"
+			},
+			arg_list = {
+				rant = 5000,
+				buff_id = 19663,
+				index = {
+					2
+				}
+			}
+		},
+		{
+			type = "BattleBuffOrb",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				rant = 5000,
+				buff_id = 19666,
+				level = 1,
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

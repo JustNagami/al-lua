@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "白鹰之泪 +",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1010140,
+	icon = 10140,
+	last_effect = "Health",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -21,26 +42,5 @@
 				skill_id = 1010140
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "白鹰之泪 +",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1010140,
-	icon = 10140,
-	last_effect = "Health"
+	}
 }

@@ -1,65 +1,55 @@
-﻿local var_0_0 = class("MetaQuickTacticsCommand", pm.SimpleCommand)
+slot0 = class("MetaQuickTacticsCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipID
-	local var_1_2 = var_1_0.skillID
-	local var_1_3 = var_1_0.useCountDict
-	local var_1_4 = ""
-	local var_1_5 = {
-		ship_id = var_1_1,
-		skill_id = var_1_2,
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot7 = {
+		ship_id = slot2.shipID,
+		skill_id = slot2.skillID,
 		books = {}
 	}
 
-	for iter_1_0, iter_1_1 in pairs(var_1_3) do
-		local var_1_6 = {
-			id = iter_1_0,
-			num = iter_1_1
-		}
+	for slot11, slot12 in pairs(slot2.useCountDict) do
+		table.insert(slot7.books, {
+			id = slot11,
+			num = slot12
+		})
 
-		table.insert(var_1_5.books, var_1_6)
-
-		var_1_4 = var_1_4 .. iter_1_0 .. "-" .. iter_1_1 .. ","
+		slot6 = "" .. slot11 .. "-" .. slot12 .. ","
 	end
 
-	print("63319 send qucik tactics data", var_1_1, var_1_2, var_1_4)
-	pg.ConnectionMgr.GetInstance():Send(63319, var_1_5, 63320, function(arg_2_0)
-		print("63320 qucik tactics done:", arg_2_0.ret)
+	print("63319 send qucik tactics data", slot3, slot4, slot6)
+	pg.ConnectionMgr.GetInstance():Send(63319, slot7, 63320, function (slot0)
+		print("63320 qucik tactics done:", slot0.ret)
 
-		if arg_2_0.ret == 0 then
-			print("after quick", arg_2_0.level, arg_2_0.exp)
+		if slot0.ret == 0 then
+			print("after quick", slot0.level, slot0.exp)
 
-			local var_2_0 = getProxy(BayProxy)
-			local var_2_1 = getProxy(BagProxy)
-			local var_2_2 = getProxy(MetaCharacterProxy)
-			local var_2_3 = var_2_0:getShipById(var_1_1)
-			local var_2_4 = var_2_3:getMetaSkillLevelBySkillID(var_1_2) < arg_2_0.level
+			slot6 = getProxy(BayProxy):getShipById(uv0):getMetaSkillLevelBySkillID(uv1) < slot0.level
 
-			var_2_3:updateSkill({
-				skill_id = var_1_2,
-				skill_lv = arg_2_0.level,
-				skill_exp = arg_2_0.exp
+			slot4:updateSkill({
+				skill_id = uv1,
+				skill_lv = slot0.level,
+				skill_exp = slot0.exp
 			})
-			var_2_0:updateShip(var_2_3)
-			var_2_2:getMetaTacticsInfoByShipID(var_1_1):setNewExp(var_1_2, arg_2_0.exp)
+			slot1:updateShip(slot4)
+			getProxy(MetaCharacterProxy):getMetaTacticsInfoByShipID(uv0):setNewExp(uv1, slot0.exp)
 
-			for iter_2_0, iter_2_1 in pairs(var_1_3) do
-				if iter_2_1 > 0 then
-					var_2_1:removeItemById(iter_2_0, iter_2_1)
+			for slot10, slot11 in pairs(uv2) do
+				if slot11 > 0 then
+					getProxy(BagProxy):removeItemById(slot10, slot11)
 				end
 			end
 
-			arg_1_0:sendNotification(GAME.META_QUICK_TACTICS_DONE, {
-				skillID = var_1_2,
-				skillLevel = arg_2_0.level,
-				skillExp = arg_2_0.exp,
-				isLevelUp = var_2_4
+			uv3:sendNotification(GAME.META_QUICK_TACTICS_DONE, {
+				skillID = uv1,
+				skillLevel = slot0.level,
+				skillExp = slot0.exp,
+				isLevelUp = slot6
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.ret))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.ret))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

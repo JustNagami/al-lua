@@ -1,47 +1,44 @@
-﻿local var_0_0 = class("SkirmishVO", import(".BaseVO"))
+slot0 = class("SkirmishVO", import(".BaseVO"))
+slot0.TypeStoryOrExpedition = 1
+slot0.TypeChapter = 2
+slot0.StateInactive = 0
+slot0.StateActive = 1
+slot0.StateWorking = 2
+slot0.StateClear = 3
 
-var_0_0.TypeStoryOrExpedition = 1
-var_0_0.TypeChapter = 2
-var_0_0.StateInactive = 0
-var_0_0.StateActive = 1
-var_0_0.StateWorking = 2
-var_0_0.StateClear = 3
-
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_skirmish_event
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1
-	arg_2_0.configId = arg_2_1
-	arg_2_0.state = var_0_0.StateInactive
-	arg_2_0.flagNew = nil
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1
+	slot0.configId = slot1
+	slot0.state = uv0.StateInactive
+	slot0.flagNew = nil
 end
 
-function var_0_0.SetState(arg_3_0, arg_3_1)
-	arg_3_1 = arg_3_1 or 0
-
-	if arg_3_1 == arg_3_0.state then
+function slot0.SetState(slot0, slot1)
+	if (slot1 or 0) == slot0.state then
 		return
 	end
 
-	if arg_3_0.state ~= nil and arg_3_1 == SkirmishVO.StateWorking then
-		arg_3_0.flagNew = true
+	if slot0.state ~= nil and slot1 == SkirmishVO.StateWorking then
+		slot0.flagNew = true
 	end
 
-	arg_3_0.state = arg_3_1
+	slot0.state = slot1
 end
 
-function var_0_0.GetState(arg_4_0)
-	return arg_4_0.state
+function slot0.GetState(slot0)
+	return slot0.state
 end
 
-function var_0_0.GetType(arg_5_0)
-	return arg_5_0:getConfig("type")
+function slot0.GetType(slot0)
+	return slot0:getConfig("type")
 end
 
-function var_0_0.GetEvent(arg_6_0)
-	return arg_6_0:getConfig("event")
+function slot0.GetEvent(slot0)
+	return slot0:getConfig("event")
 end
 
-return var_0_0
+return slot0

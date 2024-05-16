@@ -1,114 +1,112 @@
-﻿local var_0_0 = require
-local var_0_1 = setmetatable
-local var_0_2 = var_0_0("Framework.notify.double-queue")
-local var_0_3 = {}
-local var_0_4 = {}
-local var_0_5 = {
-	__index = var_0_4
+slot1 = setmetatable
+slot2 = require("Framework.notify.double-queue")
+slot4 = {}
+slot5 = {
+	__index = slot4
 }
 
-function var_0_4.disconnect(arg_1_0, arg_1_1)
-	arg_1_0.handlers:remove(arg_1_1)
+function slot4.disconnect(slot0, slot1)
+	slot0.handlers:remove(slot1)
 
-	arg_1_0.handlers_block[arg_1_1] = nil
+	slot0.handlers_block[slot1] = nil
 end
 
-function var_0_4.connect(arg_2_0, arg_2_1)
-	if not arg_2_0.handlers_block[arg_2_1] then
-		arg_2_0.handlers_block[arg_2_1] = 0
+function slot4.connect(slot0, slot1)
+	if not slot0.handlers_block[slot1] then
+		slot0.handlers_block[slot1] = 0
 
-		arg_2_0.handlers:push_back(arg_2_1)
+		slot0.handlers:push_back(slot1)
 	end
 end
 
-function var_0_4.block(arg_3_0, arg_3_1)
-	if arg_3_0.handlers_block[arg_3_1] then
-		arg_3_0.handlers_block[arg_3_1] = arg_3_0.handlers_block[arg_3_1] + 1
+function slot4.block(slot0, slot1)
+	if slot0.handlers_block[slot1] then
+		slot0.handlers_block[slot1] = slot0.handlers_block[slot1] + 1
 	end
 end
 
-function var_0_4.unblock(arg_4_0, arg_4_1)
-	if arg_4_0.handlers_block[arg_4_1] and arg_4_0.handlers_block[arg_4_1] > 0 then
-		arg_4_0.handlers_block[arg_4_1] = arg_4_0.handlers_block[arg_4_1] - 1
+function slot4.unblock(slot0, slot1)
+	if slot0.handlers_block[slot1] and slot0.handlers_block[slot1] > 0 then
+		slot0.handlers_block[slot1] = slot0.handlers_block[slot1] - 1
 	end
 end
 
-function var_0_4.emit(arg_5_0, ...)
-	arg_5_0.signal_stopped = false
+function slot4.emit(slot0, ...)
+	slot0.signal_stopped = false
 
-	for iter_5_0 in arg_5_0.pre_emit_funcs:get_iterator() do
-		iter_5_0()
+	for slot4 in slot0.pre_emit_funcs:get_iterator() do
+		slot4()
 	end
 
-	for iter_5_1 in arg_5_0.handlers:get_iterator() do
-		if arg_5_0.signal_stopped then
+	for slot4 in slot0.handlers:get_iterator() do
+		if slot0.signal_stopped then
 			break
 		end
 
-		if arg_5_0.handlers_block[iter_5_1] == 0 then
-			iter_5_1(...)
+		if slot0.handlers_block[slot4] == 0 then
+			slot4(...)
 		end
 	end
 
-	for iter_5_2 in arg_5_0.post_emit_funcs:get_iterator() do
-		iter_5_2()
+	for slot4 in slot0.post_emit_funcs:get_iterator() do
+		slot4()
 	end
 end
 
-function var_0_4.emit_with_accumulator(arg_6_0, arg_6_1, ...)
-	arg_6_0.signal_stopped = false
+function slot4.emit_with_accumulator(slot0, slot1, ...)
+	slot0.signal_stopped = false
 
-	for iter_6_0 in arg_6_0.pre_emit_funcs:get_iterator() do
-		iter_6_0()
+	for slot5 in slot0.pre_emit_funcs:get_iterator() do
+		slot5()
 	end
 
-	for iter_6_1 in arg_6_0.handlers:get_iterator() do
-		if arg_6_0.signal_stopped then
+	for slot5 in slot0.handlers:get_iterator() do
+		if slot0.signal_stopped then
 			break
 		end
 
-		if arg_6_0.handlers_block[iter_6_1] == 0 then
-			arg_6_1(iter_6_1(...))
+		if slot0.handlers_block[slot5] == 0 then
+			slot1(slot5(...))
 		end
 	end
 
-	for iter_6_2 in arg_6_0.post_emit_funcs:get_iterator() do
-		iter_6_2()
+	for slot5 in slot0.post_emit_funcs:get_iterator() do
+		slot5()
 	end
 end
 
-function var_0_4.add_pre_emit(arg_7_0, arg_7_1)
-	arg_7_0.pre_emit_funcs:push_back(arg_7_1)
+function slot4.add_pre_emit(slot0, slot1)
+	slot0.pre_emit_funcs:push_back(slot1)
 end
 
-function var_0_4.remove_pre_emit(arg_8_0, arg_8_1)
-	arg_8_0.pre_emit_funcs:remove(arg_8_1)
+function slot4.remove_pre_emit(slot0, slot1)
+	slot0.pre_emit_funcs:remove(slot1)
 end
 
-function var_0_4.add_post_emit(arg_9_0, arg_9_1)
-	arg_9_0.post_emit_funcs:push_front(arg_9_1)
+function slot4.add_post_emit(slot0, slot1)
+	slot0.post_emit_funcs:push_front(slot1)
 end
 
-function var_0_4.remove_post_emit(arg_10_0, arg_10_1)
-	arg_10_0.post_emit_funcs:remove(arg_10_1)
+function slot4.remove_post_emit(slot0, slot1)
+	slot0.post_emit_funcs:remove(slot1)
 end
 
-function var_0_4.stop(arg_11_0)
-	arg_11_0.signal_stopped = true
+function slot4.stop(slot0)
+	slot0.signal_stopped = true
 end
 
-function var_0_3.New()
-	local var_12_0 = {}
+return {
+	New = function ()
+		slot0 = {}
 
-	var_0_1(var_12_0, var_0_5)
+		uv0(slot0, uv1)
 
-	var_12_0.handlers_block = {}
-	var_12_0.handlers = var_0_2.New()
-	var_12_0.pre_emit_funcs = var_0_2.New()
-	var_12_0.post_emit_funcs = var_0_2.New()
-	var_12_0.signal_stopped = false
+		slot0.handlers_block = {}
+		slot0.handlers = uv2.New()
+		slot0.pre_emit_funcs = uv2.New()
+		slot0.post_emit_funcs = uv2.New()
+		slot0.signal_stopped = false
 
-	return var_12_0
-end
-
-return var_0_3
+		return slot0
+	end
+}

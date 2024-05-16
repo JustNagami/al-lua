@@ -1,117 +1,106 @@
-﻿local var_0_0 = class("LevelStageAutoFightPanel", BaseSubView)
+slot0 = class("LevelStageAutoFightPanel", BaseSubView)
 
-function var_0_0.Ctor(arg_1_0, ...)
-	var_0_0.super.Ctor(arg_1_0, ...)
+function slot0.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0, ...)
 
-	arg_1_0.buffer = setmetatable({}, {
-		__index = function(arg_2_0, arg_2_1)
-			return function(arg_3_0, ...)
-				arg_1_0:ActionInvoke(arg_2_1, ...)
+	slot0.buffer = setmetatable({}, {
+		__index = function (slot0, slot1)
+			return function (slot0, ...)
+				uv0:ActionInvoke(uv1, ...)
 			end
 		end,
-		__newindex = function()
+		__newindex = function ()
 			errorMsg("Cant write Data in ActionInvoke buffer")
 		end
 	})
-	arg_1_0.isFrozen = nil
+	slot0.isFrozen = nil
 
-	arg_1_0:bind(LevelUIConst.ON_FROZEN, function()
-		arg_1_0.isFrozen = true
+	slot0:bind(LevelUIConst.ON_FROZEN, function ()
+		uv0.isFrozen = true
 	end)
-	arg_1_0:bind(LevelUIConst.ON_UNFROZEN, function()
-		arg_1_0.isFrozen = nil
+	slot0:bind(LevelUIConst.ON_UNFROZEN, function ()
+		uv0.isFrozen = nil
 	end)
 
-	arg_1_0.loader = AutoLoader.New()
-	arg_1_0.isCO = false
+	slot0.loader = AutoLoader.New()
+	slot0.isCO = false
 end
 
-function var_0_0.getUIName(arg_7_0)
+function slot0.getUIName(slot0)
 	return "LevelStageAutoFightPanel"
 end
 
-function var_0_0.OnInit(arg_8_0)
-	arg_8_0.btnOn = arg_8_0._tf:Find("On")
-	arg_8_0.btnOff = arg_8_0._tf:Find("Off")
+function slot0.OnInit(slot0)
+	slot0.btnOn = slot0._tf:Find("On")
+	slot0.btnOff = slot0._tf:Find("Off")
 
-	onButton(arg_8_0, arg_8_0.btnOn, function()
-		local var_9_0 = getProxy(ChapterProxy)
-		local var_9_1 = "chapter_autofight_flag_" .. arg_8_0.contextData.chapterVO.id
-
-		var_9_0:SetChapterAutoFlag(arg_8_0.contextData.chapterVO.id, false, ChapterConst.AUTOFIGHT_STOP_REASON.MANUAL)
-		PlayerPrefs.SetInt(var_9_1, 0)
+	onButton(slot0, slot0.btnOn, function ()
+		getProxy(ChapterProxy):SetChapterAutoFlag(uv0.contextData.chapterVO.id, false, ChapterConst.AUTOFIGHT_STOP_REASON.MANUAL)
+		PlayerPrefs.SetInt("chapter_autofight_flag_" .. uv0.contextData.chapterVO.id, 0)
 		PlayerPrefs.Save()
-		arg_8_0:UpdateAutoFightMark()
+		uv0:UpdateAutoFightMark()
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.btnOff, function()
-		local var_10_0 = getProxy(ChapterProxy)
-		local var_10_1 = "chapter_autofight_flag_" .. arg_8_0.contextData.chapterVO.id
-
-		var_10_0:SetChapterAutoFlag(arg_8_0.contextData.chapterVO.id, true)
-		PlayerPrefs.SetInt(var_10_1, 1)
+	onButton(slot0, slot0.btnOff, function ()
+		getProxy(ChapterProxy):SetChapterAutoFlag(uv0.contextData.chapterVO.id, true)
+		PlayerPrefs.SetInt("chapter_autofight_flag_" .. uv0.contextData.chapterVO.id, 1)
 		PlayerPrefs.Save()
-		arg_8_0:UpdateAutoFightMark()
+		uv0:UpdateAutoFightMark()
 
-		if not arg_8_0.isFrozen then
-			arg_8_0:emit(LevelUIConst.TRIGGER_ACTION)
+		if not uv0.isFrozen then
+			uv0:emit(LevelUIConst.TRIGGER_ACTION)
 		end
 	end, SFX_PANEL)
 
-	arg_8_0.restTime = arg_8_0.btnOn:Find("Rest")
+	slot0.restTime = slot0.btnOn:Find("Rest")
+	slot2 = string.split(i18n("multiple_sorties_rest_time"), "$1/$2")
 
-	local var_8_0 = i18n("multiple_sorties_rest_time")
-	local var_8_1 = string.split(var_8_0, "$1/$2")
-
-	setText(arg_8_0.restTime:Find("Text"), var_8_1[1])
-	setText(arg_8_0.restTime:Find("Text (2)"), var_8_1[2])
-	arg_8_0.loader:LoadBundle("ui/levelstageview_atlas")
+	setText(slot0.restTime:Find("Text"), slot2[1])
+	setText(slot0.restTime:Find("Text (2)"), slot2[2])
+	slot0.loader:LoadBundle("ui/levelstageview_atlas")
 end
 
-function var_0_0.UpdateAutoFightMark(arg_11_0)
-	local var_11_0 = getProxy(ChapterProxy):GetChapterAutoFlag(arg_11_0.contextData.chapterVO.id) == 1
+function slot0.UpdateAutoFightMark(slot0)
+	slot1 = getProxy(ChapterProxy):GetChapterAutoFlag(slot0.contextData.chapterVO.id) == 1
 
-	setActive(arg_11_0.btnOn, var_11_0)
-	setActive(arg_11_0.btnOff, not var_11_0)
-	arg_11_0:UpdateContinuousOperation()
-	arg_11_0:emit(LevelUIConst.STRATEGY_PANEL_AUTOFIGHT_ACTIVE, var_11_0)
+	setActive(slot0.btnOn, slot1)
+	setActive(slot0.btnOff, not slot1)
+	slot0:UpdateContinuousOperation()
+	slot0:emit(LevelUIConst.STRATEGY_PANEL_AUTOFIGHT_ACTIVE, slot1)
 end
 
-function var_0_0.UpdateContinuousOperation(arg_12_0)
-	local var_12_0 = getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO)
+function slot0.UpdateContinuousOperation(slot0)
+	if getProxy(ChapterProxy):GetContinuousData(SYSTEM_SCENARIO) and slot1:IsActive() then
+		slot7 = slot1
 
-	if var_12_0 and var_12_0:IsActive() then
-		local var_12_1 = var_12_0:GetTotalBattleTime() - var_12_0:GetRestBattleTime() + 1
-		local var_12_2 = "$1/$2"
-
-		for iter_12_0, iter_12_1 in ipairs({
-			var_12_1,
-			var_12_0:GetTotalBattleTime()
+		for slot7, slot8 in ipairs({
+			slot1:GetTotalBattleTime() - slot1:GetRestBattleTime() + 1,
+			slot1.GetTotalBattleTime(slot7)
 		}) do
-			var_12_2 = string.gsub(var_12_2, "$" .. iter_12_0, iter_12_1)
+			slot3 = string.gsub("$1/$2", "$" .. slot7, slot8)
 		end
 
-		setText(arg_12_0.restTime:Find("Count"), var_12_2)
-		setActive(arg_12_0.restTime, true)
+		setText(slot0.restTime:Find("Count"), slot3)
+		setActive(slot0.restTime, true)
 
-		if not arg_12_0.isCO then
-			setImageSprite(arg_12_0.btnOn, LoadSprite("ui/levelstageview_atlas", "continuous_operation_on"))
+		if not slot0.isCO then
+			setImageSprite(slot0.btnOn, LoadSprite("ui/levelstageview_atlas", "continuous_operation_on"))
 
-			arg_12_0.isCO = true
+			slot0.isCO = true
 		end
 	else
-		setActive(arg_12_0.restTime, false)
+		setActive(slot0.restTime, false)
 
-		if arg_12_0.isCO then
-			setImageSprite(arg_12_0.btnOn, LoadSprite("ui/levelstageview_atlas", "auto_fight_on"))
+		if slot0.isCO then
+			setImageSprite(slot0.btnOn, LoadSprite("ui/levelstageview_atlas", "auto_fight_on"))
 
-			arg_12_0.isCO = false
+			slot0.isCO = false
 		end
 	end
 end
 
-function var_0_0.OnDestroy(arg_13_0)
-	arg_13_0.loader:Clear()
-	var_0_0.super.OnDestroy(arg_13_0)
+function slot0.OnDestroy(slot0)
+	slot0.loader:Clear()
+	uv0.super.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

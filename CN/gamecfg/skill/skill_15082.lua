@@ -1,65 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFireSupport",
-			casterAniEffect = "",
-			target_choise = "TargetHarmNearest",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 63531,
-				supportTarget = {
-					targetChoice = {
-						"TargetPlayerAidUnit",
-						"TargetShipTag"
-					},
-					arg_list = {
-						ship_tag_list = {
-							"H39"
-						}
-					}
-				}
-			}
-		},
-		{
-			type = "BattleSkillFireSupport",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 63521,
-				supportTarget = {
-					targetChoice = {
-						"TargetPlayerAidUnit",
-						"TargetShipTag"
-					},
-					arg_list = {
-						ship_tag_list = {
-							"H39"
-						}
-					}
-				}
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				buff_id = 15083
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -616,5 +555,66 @@
 	painting = "wuerlixi",
 	id = 15082,
 	picture = "0",
-	desc = "H39弹幕"
+	desc = "H39弹幕",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFireSupport",
+			casterAniEffect = "",
+			target_choise = "TargetHarmNearest",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 63531,
+				supportTarget = {
+					targetChoice = {
+						"TargetPlayerAidUnit",
+						"TargetShipTag"
+					},
+					arg_list = {
+						ship_tag_list = {
+							"H39"
+						}
+					}
+				}
+			}
+		},
+		{
+			type = "BattleSkillFireSupport",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 63521,
+				supportTarget = {
+					targetChoice = {
+						"TargetPlayerAidUnit",
+						"TargetShipTag"
+					},
+					arg_list = {
+						ship_tag_list = {
+							"H39"
+						}
+					}
+				}
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				buff_id = 15083
+			}
+		}
+	}
 }

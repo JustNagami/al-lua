@@ -1,21 +1,19 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConfig.TorpedoCFG
+slot2 = class("BattleTorpedoWeaponVO", slot0.Battle.BattlePlayerWeaponVO)
+slot0.Battle.BattleTorpedoWeaponVO = slot2
+slot2.__name = "BattleTorpedoWeaponVO"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConfig.TorpedoCFG
-local var_0_2 = class("BattleTorpedoWeaponVO", var_0_0.Battle.BattlePlayerWeaponVO)
-
-var_0_0.Battle.BattleTorpedoWeaponVO = var_0_2
-var_0_2.__name = "BattleTorpedoWeaponVO"
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0, var_0_1.GCD)
+function slot2.Ctor(slot0)
+	uv0.super.Ctor(slot0, uv1.GCD)
 end
 
-function var_0_2.AppendWeapon(arg_2_0, arg_2_1)
-	var_0_2.super.AppendWeapon(arg_2_0, arg_2_1)
-	arg_2_1:SetPlayerTorpedoWeaponVO(arg_2_0)
+function slot2.AppendWeapon(slot0, slot1)
+	uv0.super.AppendWeapon(slot0, slot1)
+	slot1:SetPlayerTorpedoWeaponVO(slot0)
 end
 
-function var_0_2.GetCurrentWeaponIconIndex(arg_3_0)
+function slot2.GetCurrentWeaponIconIndex(slot0)
 	return 2
 end

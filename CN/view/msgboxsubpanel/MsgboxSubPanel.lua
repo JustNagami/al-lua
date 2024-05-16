@@ -1,52 +1,48 @@
-﻿local var_0_0 = class("MsgboxSubPanel", BaseSubPanel)
+slot0 = class("MsgboxSubPanel", BaseSubPanel)
 
-function var_0_0.Load(arg_1_0)
-	if arg_1_0._state ~= var_0_0.STATES.NONE then
+function slot0.Load(slot0)
+	if slot0._state ~= uv0.STATES.NONE then
 		return
 	end
 
-	arg_1_0._state = var_0_0.STATES.LOADING
+	slot0._state = uv0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
-
-	local var_1_0 = PoolMgr.GetInstance()
-
-	var_1_0:GetUI(arg_1_0:getUIName(), false, function(arg_2_0)
-		if arg_1_0._state == var_0_0.STATES.DESTROY then
+	PoolMgr.GetInstance():GetUI(slot0:getUIName(), false, function (slot0)
+		if uv0._state == uv1.STATES.DESTROY then
 			pg.UIMgr.GetInstance():LoadingOff()
-			var_1_0:ReturnUI(arg_1_0:getUIName(), arg_2_0)
+			uv2:ReturnUI(uv0:getUIName(), slot0)
 		else
-			arg_1_0:Loaded(arg_2_0)
-			arg_1_0:Init()
+			uv0:Loaded(slot0)
+			uv0:Init()
 		end
 	end)
 end
 
-function var_0_0.SetWindowSize(arg_3_0, arg_3_1)
-	setSizeDelta(arg_3_0.viewParent._window, arg_3_1)
+function slot0.SetWindowSize(slot0, slot1)
+	setSizeDelta(slot0.viewParent._window, slot1)
 end
 
-function var_0_0.UpdateView(arg_4_0, arg_4_1)
-	arg_4_0:PreRefresh(arg_4_1)
-	arg_4_0:OnRefresh(arg_4_1)
-	arg_4_0:PostRefresh(arg_4_1)
+function slot0.UpdateView(slot0, slot1)
+	slot0:PreRefresh(slot1)
+	slot0:OnRefresh(slot1)
+	slot0:PostRefresh(slot1)
 end
 
-function var_0_0.PreRefresh(arg_5_0, arg_5_1)
-	arg_5_0.viewParent:commonSetting(arg_5_1)
-	arg_5_0:Show()
+function slot0.PreRefresh(slot0, slot1)
+	slot0.viewParent:commonSetting(slot1)
+	slot0:Show()
 end
 
-function var_0_0.PostRefresh(arg_6_0, arg_6_1)
-	arg_6_0.viewParent:Loaded(arg_6_1)
+function slot0.PostRefresh(slot0, slot1)
+	slot0.viewParent:Loaded(slot1)
 end
 
-function var_0_0.OnRefresh(arg_7_0, arg_7_1)
-	return
+function slot0.OnRefresh(slot0, slot1)
 end
 
-function var_0_0.closeView(arg_8_0)
+function slot0.closeView(slot0)
 	pg.MsgboxMgr.GetInstance():hide()
 end
 
-return var_0_0
+return slot0

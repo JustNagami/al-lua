@@ -1,27 +1,24 @@
-﻿local var_0_0 = class("GetMilitaryShopCommand", pm.SimpleCommand)
+slot0 = class("GetMilitaryShopCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0 and var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(18100, {
 		type = 0
-	}, 18101, function(arg_2_0)
-		local var_2_0 = MeritorousShop.New({
+	}, 18101, function (slot0)
+		getProxy(ShopsProxy):addMeritorousShop(MeritorousShop.New({
 			id = 1,
-			good_list = arg_2_0.arena_shop_list,
-			refreshCount = arg_2_0.flash_count,
-			nextTime = arg_2_0.next_flash_time
-		})
+			good_list = slot0.arena_shop_list,
+			refreshCount = slot0.flash_count,
+			nextTime = slot0.next_flash_time
+		}))
 
-		getProxy(ShopsProxy):addMeritorousShop(var_2_0)
-
-		if var_1_1 then
-			var_1_1(var_2_0)
+		if uv0 then
+			uv0(slot1)
 		end
 
-		arg_1_0:sendNotification(GAME.GET_MILITARY_SHOP_DONE, Clone(var_2_0))
+		uv1:sendNotification(GAME.GET_MILITARY_SHOP_DONE, Clone(slot1))
 	end)
 end
 
-return var_0_0
+return slot0

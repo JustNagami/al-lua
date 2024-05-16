@@ -1,20 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAircraftAttr",
-			trigger = {
-				"onAircraftCreate",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "GCT",
-				number = 1,
-				index = {
-					16460
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -203,5 +187,21 @@
 	stack = 1,
 	id = 16464,
 	icon = 16460,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddAircraftAttr",
+			trigger = {
+				"onAircraftCreate",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "GCT",
+				number = 1,
+				index = {
+					16460
+				}
+			}
+		}
+	}
 }

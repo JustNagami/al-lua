@@ -1,18 +1,18 @@
-﻿local var_0_0 = class("EquipBoxVictoryPtPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("EquipBoxVictoryPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
-	onButton(arg_1_0, arg_1_0.battleBtn, function()
-		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_3_0)
-	var_0_0.super.OnUpdateFlush(arg_3_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 
-	local var_3_0, var_3_1, var_3_2 = arg_3_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
 
-	setText(arg_3_0.progress, setColorStr(var_3_0, "#bff192") .. "/" .. var_3_1)
+	setText(slot0.progress, setColorStr(slot1, "#bff192") .. "/" .. slot2)
 end
 
-return var_0_0
+return slot0

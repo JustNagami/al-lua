@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10650
-			}
-		}
-	},
+return {
 	{
 		desc = "提高对驱逐舰和轻巡洋舰的伤害15.0%",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 10650,
 	icon = 10650,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10650
+			}
+		}
+	}
 }

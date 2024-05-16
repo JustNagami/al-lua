@@ -1,158 +1,146 @@
-﻿local var_0_0 = class("FormationMediator", import("..base.ContextMediator"))
+slot0 = class("FormationMediator", import("..base.ContextMediator"))
+slot0.OPEN_SHIP_INFO = "FormationMediator:OPEN_SHIP_INFO"
+slot0.ON_CHANGE_FLEET = "FormationMediator:ON_CHANGE_FLEET"
+slot0.CHANGE_FLEET_NAME = "FormationMediator:CHANGE_FLEET_NAME"
+slot0.CHANGE_FLEET_SHIP = "FormationMediator:CHANGE_FLEET_SHIP"
+slot0.REMOVE_SHIP = "FormationMediator:REMOVE_SHIP"
+slot0.CHANGE_FLEET_FORMATION = "FormationMediator:CHANGE_FLEET_FORMATION"
+slot0.CHANGE_FLEET_SHIPS_ORDER = "FormationMediator:CHANGE_FLEET_SHIPS_ORDER"
+slot0.COMMIT_FLEET = "FormationMediator:COMMIT_FLEET"
+slot0.ON_SELECT_COMMANDER = "FormationMediator:ON_SELECT_COMMANDER"
+slot0.ON_CMD_SKILL = "FormationMediator:ON_CMD_SKILL"
+slot0.COMMANDER_FORMATION_OP = "FormationMediator:COMMANDER_FORMATION_OP"
 
-var_0_0.OPEN_SHIP_INFO = "FormationMediator:OPEN_SHIP_INFO"
-var_0_0.ON_CHANGE_FLEET = "FormationMediator:ON_CHANGE_FLEET"
-var_0_0.CHANGE_FLEET_NAME = "FormationMediator:CHANGE_FLEET_NAME"
-var_0_0.CHANGE_FLEET_SHIP = "FormationMediator:CHANGE_FLEET_SHIP"
-var_0_0.REMOVE_SHIP = "FormationMediator:REMOVE_SHIP"
-var_0_0.CHANGE_FLEET_FORMATION = "FormationMediator:CHANGE_FLEET_FORMATION"
-var_0_0.CHANGE_FLEET_SHIPS_ORDER = "FormationMediator:CHANGE_FLEET_SHIPS_ORDER"
-var_0_0.COMMIT_FLEET = "FormationMediator:COMMIT_FLEET"
-var_0_0.ON_SELECT_COMMANDER = "FormationMediator:ON_SELECT_COMMANDER"
-var_0_0.ON_CMD_SKILL = "FormationMediator:ON_CMD_SKILL"
-var_0_0.COMMANDER_FORMATION_OP = "FormationMediator:COMMANDER_FORMATION_OP"
+function slot0.register(slot0)
+	slot0.ships = getProxy(BayProxy):getRawData()
 
-function var_0_0.register(arg_1_0)
-	arg_1_0.ships = getProxy(BayProxy):getRawData()
+	slot0.viewComponent:setShips(slot0.ships)
 
-	arg_1_0.viewComponent:setShips(arg_1_0.ships)
+	slot2 = getProxy(FleetProxy)
+	slot3 = slot2:GetRegularFleets()
 
-	local var_1_0 = getProxy(FleetProxy)
-	local var_1_1 = var_1_0:GetRegularFleets()
-
-	if var_1_0.EdittingFleet ~= nil then
-		var_1_1[var_1_0.EdittingFleet.id] = var_1_0.EdittingFleet
+	if slot2.EdittingFleet ~= nil then
+		slot3[slot2.EdittingFleet.id] = slot2.EdittingFleet
 	end
 
-	arg_1_0.viewComponent:SetFleets(var_1_1)
-
-	local var_1_2 = getProxy(CommanderProxy)
-
-	arg_1_0.viewComponent:setCommanderPrefabFleet(var_1_2:getPrefabFleet())
-	arg_1_0:bind(var_0_0.ON_CMD_SKILL, function(arg_2_0, arg_2_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0.viewComponent:SetFleets(slot3)
+	slot0.viewComponent:setCommanderPrefabFleet(getProxy(CommanderProxy):getPrefabFleet())
+	slot0:bind(uv0.ON_CMD_SKILL, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = CommanderSkillMediator,
 			viewComponent = CommanderSkillLayer,
 			data = {
-				skill = arg_2_1
+				skill = slot1
 			}
 		}))
 	end)
-	arg_1_0:bind(var_0_0.COMMIT_FLEET, function(arg_3_0, arg_3_1)
-		arg_1_0.commitEdit(arg_3_1)
+	slot0:bind(uv0.COMMIT_FLEET, function (slot0, slot1)
+		uv0.commitEdit(slot1)
 	end)
-	arg_1_0:bind(var_0_0.CHANGE_FLEET_NAME, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_1_0.commitEdit(function()
-			arg_1_0:sendNotification(GAME.RENAME_FLEET, {
-				id = arg_4_1,
-				name = arg_4_2
+	slot0:bind(uv0.CHANGE_FLEET_NAME, function (slot0, slot1, slot2)
+		uv0.commitEdit(function ()
+			uv0:sendNotification(GAME.RENAME_FLEET, {
+				id = uv1,
+				name = uv2
 			})
 		end)
 	end)
-	arg_1_0:bind(var_0_0.OPEN_SHIP_INFO, function(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-		local function var_6_0()
-			arg_1_0.contextData.number = arg_6_2.id
-			arg_1_0.contextData.toggle = arg_6_3
+	slot0:bind(uv0.OPEN_SHIP_INFO, function (slot0, slot1, slot2, slot3)
+		uv0.commitEdit(function ()
+			uv0.contextData.number = uv1.id
+			uv0.contextData.toggle = uv2
+			slot0 = {}
 
-			local var_7_0 = {}
-
-			for iter_7_0, iter_7_1 in ipairs(arg_6_2:getShipIds()) do
-				table.insert(var_7_0, arg_1_0.ships[iter_7_1])
+			for slot4, slot5 in ipairs(uv1:getShipIds()) do
+				table.insert(slot0, uv0.ships[slot5])
 			end
 
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-				shipId = arg_6_1,
-				shipVOs = var_7_0
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
+				shipId = uv3,
+				shipVOs = slot0
 			})
-		end
-
-		arg_1_0.commitEdit(var_6_0)
-	end)
-	arg_1_0:bind(var_0_0.ON_CHANGE_FLEET, function(arg_8_0, arg_8_1)
-		arg_1_0.commitEdit(function()
-			arg_1_0.viewComponent:SetFleets(var_1_0:GetRegularFleets())
-			arg_1_0.viewComponent:SetCurrentFleetID(arg_8_1)
-			arg_1_0.viewComponent:UpdateFleetView(true)
 		end)
 	end)
-	arg_1_0:bind(var_0_0.CHANGE_FLEET_FORMATION, function(arg_10_0, arg_10_1, arg_10_2)
-		arg_10_2.formation = arg_10_1
-
-		arg_1_0:refreshEdit(arg_10_2)
+	slot0:bind(uv0.ON_CHANGE_FLEET, function (slot0, slot1)
+		uv0.commitEdit(function ()
+			uv0.viewComponent:SetFleets(uv1:GetRegularFleets())
+			uv0.viewComponent:SetCurrentFleetID(uv2)
+			uv0.viewComponent:UpdateFleetView(true)
+		end)
 	end)
-	arg_1_0:bind(var_0_0.CHANGE_FLEET_SHIPS_ORDER, function(arg_11_0, arg_11_1)
-		arg_1_0:refreshEdit(arg_11_1)
+	slot0:bind(uv0.CHANGE_FLEET_FORMATION, function (slot0, slot1, slot2)
+		slot2.formation = slot1
+
+		uv0:refreshEdit(slot2)
 	end)
-	arg_1_0:bind(var_0_0.REMOVE_SHIP, function(arg_12_0, arg_12_1, arg_12_2)
-		var_0_0.removeShipFromFleet(arg_12_2, arg_12_1)
-		arg_1_0:refreshEdit(arg_12_2)
+	slot0:bind(uv0.CHANGE_FLEET_SHIPS_ORDER, function (slot0, slot1)
+		uv0:refreshEdit(slot1)
 	end)
-	arg_1_0:bind(var_0_0.CHANGE_FLEET_SHIP, function(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
-		arg_1_0.contextData.number = arg_13_2.id
-		arg_1_0.contextData.toggle = arg_13_3
+	slot0:bind(uv0.REMOVE_SHIP, function (slot0, slot1, slot2)
+		uv0.removeShipFromFleet(slot2, slot1)
+		uv1:refreshEdit(slot2)
+	end)
+	slot0:bind(uv0.CHANGE_FLEET_SHIP, function (slot0, slot1, slot2, slot3, slot4)
+		uv0.contextData.number = slot2.id
+		uv0.contextData.toggle = slot3
 
-		arg_1_0.saveEdit()
+		uv0.saveEdit()
 
-		local var_13_0 = 0
+		slot5 = 0
 
-		if arg_13_2.id == 1 and #arg_13_2.ships <= 1 and arg_13_1 ~= nil then
-			var_13_0 = 1
+		if slot2.id == 1 and #slot2.ships <= 1 and slot1 ~= nil then
+			slot5 = 1
 		end
 
-		local var_13_1 = {}
+		slot6 = {}
 
-		for iter_13_0, iter_13_1 in ipairs(arg_13_2.ships) do
-			if not arg_13_1 or iter_13_1 ~= arg_13_1.id then
-				table.insert(var_13_1, iter_13_1)
+		for slot10, slot11 in ipairs(slot2.ships) do
+			if not slot1 or slot11 ~= slot1.id then
+				table.insert(slot6, slot11)
 			end
 		end
 
-		local var_13_2, var_13_3, var_13_4 = var_0_0.getDockCallbackFuncs(arg_1_0, arg_13_1, arg_13_2, arg_13_4)
-		local var_13_5 = arg_1_0.commitEdit
+		slot7, slot8, slot9 = uv1.getDockCallbackFuncs(uv0, slot1, slot2, slot4)
 
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMax = 1,
 			energyDisplay = true,
 			useBlackBlock = true,
-			selectedMin = var_13_0,
+			selectedMin = slot5,
 			leastLimitMsg = i18n("ship_formationMediator_leastLimit"),
-			quitTeam = arg_13_1 ~= nil,
-			teamFilter = arg_13_4,
+			quitTeam = slot1 ~= nil,
+			teamFilter = slot4,
 			leftTopInfo = i18n("word_formation"),
-			onShip = var_13_2,
-			confirmSelect = var_13_3,
-			onSelected = var_13_4,
-			onQuickHome = var_13_5,
+			onShip = slot7,
+			confirmSelect = slot8,
+			onSelected = slot9,
+			onQuickHome = uv0.commitEdit,
 			hideTagFlags = ShipStatus.TAG_HIDE_FORMATION,
-			otherSelectedIds = var_13_1,
-			preView = arg_1_0.viewComponent.__cname
+			otherSelectedIds = slot6,
+			preView = uv0.viewComponent.__cname
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SELECT_COMMANDER, function(arg_14_0, arg_14_1, arg_14_2)
-		arg_1_0.contextData.toggle = FormationUI.TOGGLE_FORMATION
-		arg_1_0.contextData.number = arg_14_2
+	slot0:bind(uv0.ON_SELECT_COMMANDER, function (slot0, slot1, slot2)
+		uv0.contextData.toggle = FormationUI.TOGGLE_FORMATION
+		uv0.contextData.number = slot2
 
-		var_0_0.onSelectCommander(arg_14_1, arg_14_2)
+		uv1.onSelectCommander(slot1, slot2)
 	end)
-	arg_1_0:bind(var_0_0.COMMANDER_FORMATION_OP, function(arg_15_0, arg_15_1)
-		arg_1_0:sendNotification(GAME.COMMANDER_FORMATION_OP, {
-			data = arg_15_1
+	slot0:bind(uv0.COMMANDER_FORMATION_OP, function (slot0, slot1)
+		uv0:sendNotification(GAME.COMMANDER_FORMATION_OP, {
+			data = slot1
 		})
 	end)
-
-	local var_1_3 = getProxy(PlayerProxy):getData()
-
-	arg_1_0.viewComponent:setPlayer(var_1_3)
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 end
 
-function var_0_0.onSelectCommander(arg_16_0, arg_16_1)
-	local var_16_0 = getProxy(FleetProxy)
-	local var_16_1 = getProxy(FleetProxy):getFleetById(arg_16_1):getCommanderByPos(arg_16_0)
-	local var_16_2 = {}
+function slot0.onSelectCommander(slot0, slot1)
+	slot2 = getProxy(FleetProxy)
+	slot4 = getProxy(FleetProxy):getFleetById(slot1):getCommanderByPos(slot0)
 
-	for iter_16_0, iter_16_1 in ipairs(var_16_2) do
-		if var_16_1 and iter_16_1 == var_16_1.id then
-			table.remove(var_16_2, iter_16_0)
+	for slot9, slot10 in ipairs({}) do
+		if slot4 and slot10 == slot4.id then
+			table.remove(slot5, slot9)
 
 			break
 		end
@@ -162,89 +150,77 @@ function var_0_0.onSelectCommander(arg_16_0, arg_16_1)
 		maxCount = 1,
 		mode = CommanderCatScene.MODE_SELECT,
 		fleetType = CommanderCatScene.FLEET_TYPE_COMMON,
-		activeCommander = var_16_1,
-		ignoredIds = var_16_2,
-		onCommander = function(arg_17_0)
+		activeCommander = slot4,
+		ignoredIds = slot5,
+		onCommander = function (slot0)
 			return true
 		end,
-		onSelected = function(arg_18_0, arg_18_1)
-			local var_18_0 = arg_18_0[1]
-
+		onSelected = function (slot0, slot1)
 			pg.m02:sendNotification(GAME.SELECT_FLEET_COMMANDER, {
-				fleetId = arg_16_1,
-				pos = arg_16_0,
-				commanderId = var_18_0,
-				callback = function()
-					if var_16_0.EdittingFleet then
-						local var_19_0 = getProxy(FleetProxy):getFleetById(var_16_0.EdittingFleet.id)
-
-						var_16_0.EdittingFleet.commanderIds = var_19_0.commanderIds
+				fleetId = uv0,
+				pos = uv1,
+				commanderId = slot0[1],
+				callback = function ()
+					if uv0.EdittingFleet then
+						uv0.EdittingFleet.commanderIds = getProxy(FleetProxy):getFleetById(uv0.EdittingFleet.id).commanderIds
 					end
 
-					arg_18_1()
+					uv1()
 				end
 			})
 		end,
-		onQuit = function(arg_20_0)
+		onQuit = function (slot0)
 			pg.m02:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET, {
 				commanderId = 0,
-				fleetId = arg_16_1,
-				pos = arg_16_0,
-				callback = function(arg_21_0)
-					if var_16_0.EdittingFleet then
-						var_16_0.EdittingFleet.commanderIds = arg_21_0.commanderIds
+				fleetId = uv0,
+				pos = uv1,
+				callback = function (slot0)
+					if uv0.EdittingFleet then
+						uv0.EdittingFleet.commanderIds = slot0.commanderIds
 					end
 
-					arg_20_0()
+					uv1()
 				end
 			})
 		end
 	})
 end
 
-function var_0_0.refreshEdit(arg_22_0, arg_22_1)
-	local var_22_0 = getProxy(FleetProxy)
+function slot0.refreshEdit(slot0, slot1)
+	slot2 = getProxy(FleetProxy)
+	slot2.EdittingFleet = slot1
+	slot3 = slot2:GetRegularFleets()
+	slot3[slot1.id] = slot1
 
-	var_22_0.EdittingFleet = arg_22_1
-
-	local var_22_1 = var_22_0:GetRegularFleets()
-
-	var_22_1[arg_22_1.id] = arg_22_1
-
-	arg_22_0.viewComponent:SetFleets(var_22_1)
-	arg_22_0.viewComponent:UpdateFleetView(false)
+	slot0.viewComponent:SetFleets(slot3)
+	slot0.viewComponent:UpdateFleetView(false)
 end
 
-function var_0_0.commitEdit(arg_23_0)
-	local var_23_0 = getProxy(FleetProxy)
-	local var_23_1 = var_23_0.EdittingFleet
-
-	if var_23_1 == nil or var_23_1:isFirstFleet() or var_23_1:isLegalToFight() == true or #var_23_1.ships == 0 then
-		var_23_0:commitEdittingFleet(arg_23_0)
+function slot0.commitEdit(slot0)
+	if getProxy(FleetProxy).EdittingFleet == nil or slot2:isFirstFleet() or slot2:isLegalToFight() == true or #slot2.ships == 0 then
+		slot1:commitEdittingFleet(slot0)
 	else
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("ship_formationMediaror_trash_warning", var_23_1.defaultName),
-			onYes = function()
-				local var_24_0 = getProxy(BayProxy):getRawData()
-				local var_24_1 = var_23_1.ships
-				local var_24_2 = #var_24_1
+			content = i18n("ship_formationMediaror_trash_warning", slot2.defaultName),
+			onYes = function ()
+				slot2 = uv0.ships
+				slot3 = #slot2
 
-				for iter_24_0 = #var_24_1, 1, -1 do
-					var_23_1:removeShip(var_24_0[var_24_1[iter_24_0]])
+				for slot7 = #slot2, 1, -1 do
+					uv0:removeShip(getProxy(BayProxy):getRawData()[slot2[slot7]])
 				end
 
-				var_23_0:commitEdittingFleet(arg_23_0)
+				uv1:commitEdittingFleet(uv2)
 
 				getProxy(PlayerProxy).combatFleetId = 1
 			end,
-			onNo = function()
-				return
+			onNo = function ()
 			end
 		})
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_26_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		FleetProxy.FLEET_UPDATED,
 		FleetProxy.FLEET_RENAMED,
@@ -255,42 +231,31 @@ function var_0_0.listNotificationInterests(arg_26_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_1:getName()
-	local var_27_1 = arg_27_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_27_0 == FleetProxy.FLEET_UPDATED then
-		local var_27_2 = getProxy(FleetProxy):GetRegularFleets()
-
-		arg_27_0.viewComponent:SetFleets(var_27_2)
-	elseif var_27_0 == FleetProxy.FLEET_RENAMED then
+	if slot1:getName() == FleetProxy.FLEET_UPDATED then
+		slot0.viewComponent:SetFleets(getProxy(FleetProxy):GetRegularFleets())
+	elseif slot2 == FleetProxy.FLEET_RENAMED then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationMediator_changeNameSuccess"))
-
-		local var_27_3 = getProxy(FleetProxy):GetRegularFleets()
-
-		arg_27_0.viewComponent:SetFleets(var_27_3)
-		arg_27_0.viewComponent:UpdateFleetView(true)
-		arg_27_0.viewComponent:DisplayRenamePanel(false)
-	elseif var_27_0 == CommanderProxy.PREFAB_FLEET_UPDATE then
-		local var_27_4 = getProxy(CommanderProxy)
-
-		arg_27_0.viewComponent:setCommanderPrefabFleet(var_27_4:getPrefabFleet())
-		arg_27_0.viewComponent:updateCommanderFormation()
-	elseif var_27_0 == GAME.COOMMANDER_EQUIP_TO_FLEET_DONE then
-		arg_27_0.viewComponent:updateCommanderFormation()
+		slot0.viewComponent:SetFleets(getProxy(FleetProxy):GetRegularFleets())
+		slot0.viewComponent:UpdateFleetView(true)
+		slot0.viewComponent:DisplayRenamePanel(false)
+	elseif slot2 == CommanderProxy.PREFAB_FLEET_UPDATE then
+		slot0.viewComponent:setCommanderPrefabFleet(getProxy(CommanderProxy):getPrefabFleet())
+		slot0.viewComponent:updateCommanderFormation()
+	elseif slot2 == GAME.COOMMANDER_EQUIP_TO_FLEET_DONE then
+		slot0.viewComponent:updateCommanderFormation()
 	end
 end
 
-function var_0_0.checkChangeShip(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = getProxy(BayProxy)
-	local var_28_1 = getProxy(FleetProxy)
-	local var_28_2 = var_28_0:getRawData()
-	local var_28_3 = arg_28_2.configId
-	local var_28_4 = var_28_1:GetRegularFleetByShip(arg_28_2)
+function slot0.checkChangeShip(slot0, slot1, slot2)
+	slot5 = getProxy(BayProxy):getRawData()
+	slot6 = slot2.configId
 
-	if not (var_28_4 and var_28_4.id == arg_28_0.id) and (not arg_28_1 or not arg_28_1:isSameKind(arg_28_2)) then
-		for iter_28_0, iter_28_1 in ipairs(arg_28_0.ships) do
-			if var_28_2[iter_28_1]:isSameKind(arg_28_2) then
+	if not (getProxy(FleetProxy):GetRegularFleetByShip(slot2) and slot7.id == slot0.id) and (not slot1 or not slot1:isSameKind(slot2)) then
+		for slot12, slot13 in ipairs(slot0.ships) do
+			if slot5[slot13]:isSameKind(slot2) then
 				return false, i18n("ship_formationMediator_changeNameError_sameShip")
 			end
 		end
@@ -299,208 +264,190 @@ function var_0_0.checkChangeShip(arg_28_0, arg_28_1, arg_28_2)
 	return true
 end
 
-function var_0_0.removeShipFromFleet(arg_29_0, arg_29_1)
-	if not arg_29_0:canRemove(arg_29_1) then
-		local var_29_0, var_29_1 = arg_29_0:getShipPos(arg_29_1)
+function slot0.removeShipFromFleet(slot0, slot1)
+	if not slot0:canRemove(slot1) then
+		slot2, slot3 = slot0:getShipPos(slot1)
 
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationUI_removeError_onlyShip", arg_29_1:getConfigTable().name, arg_29_0.name, Fleet.C_TEAM_NAME[var_29_1]))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationUI_removeError_onlyShip", slot1:getConfigTable().name, slot0.name, Fleet.C_TEAM_NAME[slot3]))
 
 		return false
 	end
 
-	arg_29_0:removeShip(arg_29_1)
+	slot0:removeShip(slot1)
 
-	getProxy(FleetProxy).EdittingFleet = arg_29_0
+	getProxy(FleetProxy).EdittingFleet = slot0
 
 	return true
 end
 
-function var_0_0.saveEdit()
+function slot0.saveEdit()
 	getProxy(FleetProxy):saveEdittingFleet()
 end
 
-function var_0_0.getDockCallbackFuncs(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
-	local var_31_0 = getProxy(FleetProxy)
-	local var_31_1 = getProxy(BayProxy)
-	local var_31_2 = getProxy(ChapterProxy)
+function slot0.getDockCallbackFuncs(slot0, slot1, slot2, slot3)
+	slot4 = getProxy(FleetProxy)
+	slot5 = getProxy(BayProxy)
+	slot6 = getProxy(ChapterProxy)
 
-	local function var_31_3(arg_32_0, arg_32_1)
-		local var_32_0, var_32_1 = ShipStatus.ShipStatusCheck("inFleet", arg_32_0, arg_32_1)
+	return function (slot0, slot1)
+		slot2, slot3 = ShipStatus.ShipStatusCheck("inFleet", slot0, slot1)
 
-		if not var_32_0 then
-			return var_32_0, var_32_1
+		if not slot2 then
+			return slot2, slot3
 		end
 
-		local var_32_2, var_32_3 = var_0_0.checkChangeShip(arg_31_2, arg_31_1, arg_32_0)
+		slot4, slot5 = uv0.checkChangeShip(uv1, uv2, slot0)
 
-		if not var_32_2 then
-			return false, var_32_3
+		if not slot4 then
+			return false, slot5
 		end
 
-		local var_32_4 = var_31_0:GetRegularFleetByShip(arg_32_0)
+		if uv3:GetRegularFleetByShip(slot0) ~= nil and slot6.id ~= uv1.id then
+			if uv2 == nil and not slot6:canRemove(slot0) then
+				slot7, slot8 = slot6:getShipPos(slot0)
 
-		if var_32_4 ~= nil and var_32_4.id ~= arg_31_2.id then
-			if arg_31_1 == nil and not var_32_4:canRemove(arg_32_0) then
-				local var_32_5, var_32_6 = var_32_4:getShipPos(arg_32_0)
-
-				return false, i18n("ship_formationMediator_replaceError_onlyShip", var_32_4.defaultName, Fleet.C_TEAM_NAME[var_32_6])
+				return false, i18n("ship_formationMediator_replaceError_onlyShip", slot6.defaultName, Fleet.C_TEAM_NAME[slot8])
 			end
 
-			if arg_31_1 == nil then
+			if uv2 == nil then
 				return true
 			else
-				local var_32_7, var_32_8 = var_0_0.checkChangeShip(var_32_4, arg_32_0, arg_31_1)
-				local var_32_9 = var_32_8
+				slot7, slot5 = uv0.checkChangeShip(slot6, slot0, uv2)
 
-				if not var_32_7 then
-					return false, var_32_9
+				if not slot7 then
+					return false, slot5
 				end
 			end
 		end
 
 		return true
-	end
-
-	local function var_31_4(arg_33_0, arg_33_1, arg_33_2)
-		local var_33_0 = var_31_1:getShipById(arg_33_0[1])
-
-		if not var_33_0 then
-			arg_33_1()
+	end, function (slot0, slot1, slot2)
+		if not uv0:getShipById(slot0[1]) then
+			slot1()
 
 			return
 		end
 
-		local var_33_1 = var_31_0:GetRegularFleetByShip(var_33_0)
-
-		if var_33_1 and var_33_1.id ~= arg_31_2.id then
+		if uv1:GetRegularFleetByShip(slot3) and slot4.id ~= uv2.id then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = false,
-				content = i18n("ship_formationMediator_quest_replace", var_33_1.defaultName),
-				onYes = arg_33_1
+				content = i18n("ship_formationMediator_quest_replace", slot4.defaultName),
+				onYes = slot1
 			})
-		elseif var_31_2:CheckUnitInSupportFleet(var_33_0) then
+		elseif uv3:CheckUnitInSupportFleet(slot3) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = false,
 				content = i18n("ship_formationMediator_request_replace_support"),
-				onYes = arg_33_1
+				onYes = slot1
 			})
 		else
-			arg_33_1()
+			slot1()
 
 			return
 		end
-	end
-
-	local function var_31_5(arg_34_0)
-		local var_34_0 = var_31_1:getShipById(arg_34_0[1])
-
-		if not var_34_0 then
-			if arg_31_1 == nil then
+	end, function (slot0)
+		if not uv0:getShipById(slot0[1]) then
+			if uv1 == nil then
 				return
 			end
 
-			var_0_0.removeShipFromFleet(arg_31_2, arg_31_1)
+			uv2.removeShipFromFleet(uv3, uv1)
 
 			return
 		end
 
-		local function var_34_1()
-			local var_35_0 = var_31_0:GetRegularFleetByShip(var_34_0)
-			local var_35_1 = arg_31_2:getShipPos(arg_31_1)
+		if uv7:CheckUnitInSupportFleet(slot1) then
+			uv6:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
+				shipId = slot1.id,
+				callback = function ()
+					slot1 = uv2:getShipPos(uv3)
 
-			if var_35_0 == nil then
-				if arg_31_1 == nil then
-					arg_31_2:insertShip(var_34_0, nil, arg_31_3)
-				else
-					arg_31_2:removeShip(arg_31_1)
-					arg_31_2:insertShip(var_34_0, var_35_1, arg_31_3)
+					if uv0:GetRegularFleetByShip(uv1) == nil then
+						if uv3 == nil then
+							uv2:insertShip(uv1, nil, uv4)
+						else
+							uv2:removeShip(uv3)
+							uv2:insertShip(uv1, slot1, uv4)
+						end
+
+						uv0.EdittingFleet = uv2
+
+						return
+					end
+
+					slot2 = slot0:getShipPos(uv1)
+
+					if slot0.id == uv2.id then
+						if uv3 == nil then
+							uv2:removeShip(uv1)
+							uv2:insertShip(uv1, nil, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							return
+						end
+
+						if uv3.id == uv1.id then
+							return
+						end
+
+						uv2:removeShip(uv3)
+						uv2:removeShip(uv1)
+
+						if slot2 < slot1 then
+							uv2:insertShip(uv3, slot2, uv4)
+							uv2:insertShip(uv1, slot1, uv4)
+						else
+							uv2:insertShip(uv1, slot1, uv4)
+							uv2:insertShip(uv3, slot2, uv4)
+						end
+
+						uv0.EdittingFleet = uv2
+
+						return
+					end
+
+					if not slot0:canRemove(uv1) and uv3 == nil then
+						slot3, slot4 = slot0:getShipPos(uv1)
+
+						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationMediator_replaceError_onlyShip", slot0.defaultName, Fleet.C_TEAM_NAME[slot4]))
+					else
+						slot0:removeShip(uv1)
+
+						if uv3 then
+							slot0:insertShip(uv3, slot2, uv4)
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = slot0
+							})
+							uv2:removeShip(uv3)
+							uv2:insertShip(uv1, slot1, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							uv6.saveEdit()
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = uv2
+							})
+						else
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = slot0
+							})
+							uv2:insertShip(uv1, nil, uv4)
+
+							uv0.EdittingFleet = uv2
+
+							uv6.saveEdit()
+							uv5:sendNotification(GAME.UPDATE_FLEET, {
+								fleet = uv2
+							})
+						end
+					end
 				end
-
-				var_31_0.EdittingFleet = arg_31_2
-
-				return
-			end
-
-			local var_35_2 = var_35_0:getShipPos(var_34_0)
-
-			if var_35_0.id == arg_31_2.id then
-				if arg_31_1 == nil then
-					arg_31_2:removeShip(var_34_0)
-					arg_31_2:insertShip(var_34_0, nil, arg_31_3)
-
-					var_31_0.EdittingFleet = arg_31_2
-
-					return
-				end
-
-				if arg_31_1.id == var_34_0.id then
-					return
-				end
-
-				arg_31_2:removeShip(arg_31_1)
-				arg_31_2:removeShip(var_34_0)
-
-				if var_35_2 < var_35_1 then
-					arg_31_2:insertShip(arg_31_1, var_35_2, arg_31_3)
-					arg_31_2:insertShip(var_34_0, var_35_1, arg_31_3)
-				else
-					arg_31_2:insertShip(var_34_0, var_35_1, arg_31_3)
-					arg_31_2:insertShip(arg_31_1, var_35_2, arg_31_3)
-				end
-
-				var_31_0.EdittingFleet = arg_31_2
-
-				return
-			end
-
-			if not var_35_0:canRemove(var_34_0) and arg_31_1 == nil then
-				local var_35_3, var_35_4 = var_35_0:getShipPos(var_34_0)
-
-				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_formationMediator_replaceError_onlyShip", var_35_0.defaultName, Fleet.C_TEAM_NAME[var_35_4]))
-			else
-				var_35_0:removeShip(var_34_0)
-
-				if arg_31_1 then
-					var_35_0:insertShip(arg_31_1, var_35_2, arg_31_3)
-					arg_31_0:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = var_35_0
-					})
-					arg_31_2:removeShip(arg_31_1)
-					arg_31_2:insertShip(var_34_0, var_35_1, arg_31_3)
-
-					var_31_0.EdittingFleet = arg_31_2
-
-					var_0_0.saveEdit()
-					arg_31_0:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = arg_31_2
-					})
-				else
-					arg_31_0:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = var_35_0
-					})
-					arg_31_2:insertShip(var_34_0, nil, arg_31_3)
-
-					var_31_0.EdittingFleet = arg_31_2
-
-					var_0_0.saveEdit()
-					arg_31_0:sendNotification(GAME.UPDATE_FLEET, {
-						fleet = arg_31_2
-					})
-				end
-			end
-		end
-
-		if var_31_2:CheckUnitInSupportFleet(var_34_0) then
-			arg_31_0:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
-				shipId = var_34_0.id,
-				callback = var_34_1
 			})
 		else
-			var_34_1()
+			slot2()
 		end
 	end
-
-	return var_31_3, var_31_4, var_31_5
 end
 
-return var_0_0
+return slot0

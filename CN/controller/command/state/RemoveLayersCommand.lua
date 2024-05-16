@@ -1,14 +1,13 @@
-﻿local var_0_0 = class("RemoveLayersCommand", pm.SimpleCommand)
+slot0 = class("RemoveLayersCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.context
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().context
 
-	assert(isa(var_1_1, Context), "should be an instance of Context")
-	pg.SceneMgr.GetInstance():removeLayer(arg_1_0.facade, var_1_1, function()
-		arg_1_0:sendNotification(GAME.REMOVE_LAYER_DONE, var_1_1)
-		existCall(var_1_0.callback)
+	assert(isa(slot3, Context), "should be an instance of Context")
+	pg.SceneMgr.GetInstance():removeLayer(slot0.facade, slot3, function ()
+		uv0:sendNotification(GAME.REMOVE_LAYER_DONE, uv1)
+		existCall(uv2.callback)
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,61 +1,50 @@
-﻿local var_0_0 = class("HalloweenSkinPage", import("...base.BaseActivityPage"))
+slot0 = class("HalloweenSkinPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.stage = arg_1_0:findTF("AD/Text"):GetComponent(typeof(Text))
-	arg_1_0.goBtn = arg_1_0:findTF("AD/go_btn")
-	arg_1_0.gotBtn = arg_1_0:findTF("AD/got_btn")
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.stage = slot0:findTF("AD/Text"):GetComponent(typeof(Text))
+	slot0.goBtn = slot0:findTF("AD/go_btn")
+	slot0.gotBtn = slot0:findTF("AD/got_btn")
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	arg_2_0.tasks = _.flatten(arg_2_0.activity:getConfig("config_data"))
+function slot0.OnFirstFlush(slot0)
+	slot0.tasks = _.flatten(slot0.activity:getConfig("config_data"))
 
-	onButton(arg_2_0, arg_2_0.goBtn, function()
-		if arg_2_0:LastTaskBeFinished() then
+	onButton(slot0, slot0.goBtn, function ()
+		if uv0:LastTaskBeFinished() then
 			return
 		end
 
-		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE)
 	end, SFX_PANEL)
 end
 
-function var_0_0.LastTaskBeFinished(arg_4_0)
-	local var_4_0 = getProxy(TaskProxy)
-	local var_4_1 = arg_4_0.tasks[#arg_4_0.tasks]
-	local var_4_2 = var_4_0:getTaskVO(var_4_1)
-
-	if var_4_2 and var_4_2:isReceive() then
+function slot0.LastTaskBeFinished(slot0)
+	if getProxy(TaskProxy):getTaskVO(slot0.tasks[#slot0.tasks]) and slot3:isReceive() then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.OnUpdateFlush(arg_5_0)
-	local var_5_0 = arg_5_0.activity
-	local var_5_1 = 0
-	local var_5_2 = getProxy(TaskProxy)
+function slot0.OnUpdateFlush(slot0)
+	slot1 = slot0.activity
+	slot2 = 0
 
-	for iter_5_0 = #arg_5_0.tasks, 1, -1 do
-		local var_5_3 = arg_5_0.tasks[iter_5_0]
-		local var_5_4 = var_5_2:getTaskVO(var_5_3)
-
-		if var_5_4 and var_5_4:isReceive() then
-			var_5_1 = iter_5_0
-		elseif var_5_4 and not var_5_4:isReceive() then
-			var_5_1 = iter_5_0 - 1
+	for slot7 = #slot0.tasks, 1, -1 do
+		if getProxy(TaskProxy):getTaskVO(slot0.tasks[slot7]) and slot9:isReceive() then
+			slot2 = slot7
+		elseif slot9 and not slot9:isReceive() then
+			slot2 = slot7 - 1
 		end
 	end
 
-	arg_5_0.stage.text = var_5_1 .. "/" .. #arg_5_0.tasks
+	slot0.stage.text = slot2 .. "/" .. #slot0.tasks
 
-	local var_5_5 = arg_5_0:LastTaskBeFinished()
-
-	setActive(arg_5_0.gotBtn, var_5_5)
+	setActive(slot0.gotBtn, slot0:LastTaskBeFinished())
 end
 
-function var_0_0.OnDestroy(arg_6_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

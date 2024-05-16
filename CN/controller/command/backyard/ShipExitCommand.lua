@@ -1,50 +1,43 @@
-﻿local var_0_0 = class("ShipExitCommand", pm.SimpleCommand)
+slot0 = class("ShipExitCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(DormProxy)
-	local var_1_2 = var_1_0.shipId
-	local var_1_3 = getProxy(BayProxy)
-	local var_1_4 = var_1_3:getShipById(var_1_2)
-	local var_1_5 = var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.shipId
+	slot6 = getProxy(BayProxy):getShipById(slot4)
+	slot7 = slot2.callback
 
-	if not var_1_1:getShipById(var_1_2) then
+	if not getProxy(DormProxy):getShipById(slot4) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_no_ship_tip"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19004, {
-		ship_id = var_1_2
-	}, 19005, function(arg_2_0)
-		local var_2_0 = 0
+		ship_id = slot4
+	}, 19005, function (slot0)
+		slot1 = 0
 
-		if arg_2_0.result == 0 then
-			local var_2_1 = var_1_4.state
-
-			if var_2_1 == Ship.STATE_REST then
-				-- block empty
-			elseif var_2_1 == Ship.STATE_TRAIN then
-				var_1_4.state_info_2 = var_1_4:getTotalExp()
+		if slot0.result == 0 then
+			if uv0.state == Ship.STATE_REST then
+				-- Nothing
+			elseif slot2 == Ship.STATE_TRAIN then
+				uv0.state_info_2 = uv0:getTotalExp()
 			end
 
-			var_1_4:updateStateInfo34(0, 0)
-			var_1_1:exitYardById(var_1_2)
-			var_1_4:updateState(Ship.STATE_NORMAL)
-
-			var_2_0 = arg_2_0.exp
-
-			var_1_4:addExp(var_2_0)
-			var_1_3:updateShip(var_1_4)
-			arg_1_0:sendNotification(GAME.EXIT_SHIP_DONE, var_1_4)
+			uv0:updateStateInfo34(0, 0)
+			uv1:exitYardById(uv2)
+			uv0:updateState(Ship.STATE_NORMAL)
+			uv0:addExp(slot0.exp)
+			uv3:updateShip(uv0)
+			uv4:sendNotification(GAME.EXIT_SHIP_DONE, uv0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipExit", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipExit", slot0.result))
 		end
 
-		if var_1_5 ~= nil then
-			var_1_5(var_2_0)
+		if uv5 ~= nil then
+			uv5(slot1)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

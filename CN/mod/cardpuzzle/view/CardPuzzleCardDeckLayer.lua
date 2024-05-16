@@ -1,55 +1,54 @@
-﻿local var_0_0 = class("CardPuzzleCardDeckLayer", BaseUI)
+slot0 = class("CardPuzzleCardDeckLayer", BaseUI)
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CardTowerCardDeckUI"
 end
 
-function var_0_0.isLayer(arg_2_0)
+function slot0.isLayer(slot0)
 	return false
 end
 
-function var_0_0.init(arg_3_0)
-	arg_3_0.cardListRect = arg_3_0:findTF("Container")
-	arg_3_0.cardListComp = arg_3_0.cardListRect:GetComponent("LScrollRect")
+function slot0.init(slot0)
+	slot0.cardListRect = slot0:findTF("Container")
+	slot0.cardListComp = slot0.cardListRect:GetComponent("LScrollRect")
 
-	function arg_3_0.cardListComp.onUpdateItem(arg_4_0, arg_4_1)
-		local var_4_0 = tf(arg_4_1):GetChild(0)
-		local var_4_1 = CardPuzzleCardView.New(var_4_0)
+	function slot0.cardListComp.onUpdateItem(slot0, slot1)
+		slot3 = CardPuzzleCardView.New(tf(slot1):GetChild(0))
 
-		var_4_1:SetData(arg_3_0.cards[arg_4_0 + 1])
-		var_4_1:UpdateView()
-		onButton(arg_3_0, arg_4_1, function()
-			arg_3_0:ShowCardDetail(arg_4_0)
+		slot3:SetData(uv0.cards[slot0 + 1])
+		slot3:UpdateView()
+		onButton(uv0, slot1, function ()
+			uv0:ShowCardDetail(uv1)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.ShowCardDetail(arg_6_0, arg_6_1)
-	arg_6_0:emit(CardPuzzleCardDeckMediator.SHOW_CARD, {
-		cardData = arg_6_0.cards[arg_6_1 + 1]
+function slot0.ShowCardDetail(slot0, slot1)
+	slot0:emit(CardPuzzleCardDeckMediator.SHOW_CARD, {
+		cardData = slot0.cards[slot1 + 1]
 	})
 end
 
-function var_0_0.SetCards(arg_7_0, arg_7_1)
-	arg_7_0.cards = arg_7_1
+function slot0.SetCards(slot0, slot1)
+	slot0.cards = slot1
 end
 
-function var_0_0.didEnter(arg_8_0)
-	arg_8_0:RefreshCards()
+function slot0.didEnter(slot0)
+	slot0:RefreshCards()
 end
 
-function var_0_0.RefreshCards(arg_9_0)
-	arg_9_0.cardListComp:SetTotalCount(#arg_9_0.cards)
+function slot0.RefreshCards(slot0)
+	slot0.cardListComp:SetTotalCount(#slot0.cards)
 end
 
-function var_0_0.OnBackward(arg_10_0)
-	arg_10_0:closeView()
+function slot0.OnBackward(slot0)
+	slot0:closeView()
 
 	return true
 end
 
-function var_0_0.willExit(arg_11_0)
-	pg.m02:sendNotification(CardTowerStageMediator.CARDTOWER_STAGE_REMOVE_SUBVIEW, arg_11_0._tf)
+function slot0.willExit(slot0)
+	pg.m02:sendNotification(CardTowerStageMediator.CARDTOWER_STAGE_REMOVE_SUBVIEW, slot0._tf)
 end
 
-return var_0_0
+return slot0

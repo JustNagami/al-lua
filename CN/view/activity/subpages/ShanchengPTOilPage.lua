@@ -1,31 +1,29 @@
-﻿local var_0_0 = class("ShanchengPTOilPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("ShanchengPTOilPage", import(".TemplatePage.PtTemplatePage"))
 
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
 
-	var_0_0.scrolltext = arg_1_0:findTF("name", arg_1_0.awardTF)
+	uv0.scrolltext = slot0:findTF("name", slot0.awardTF)
 end
 
-function var_0_0.OnUpdateFlush(arg_2_0)
-	var_0_0.super.OnUpdateFlush(arg_2_0)
-	onButton(arg_2_0, arg_2_0.battleBtn, function()
-		arg_2_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	arg_2_0:SetAwardName()
+	slot0:SetAwardName()
 
-	local var_2_0, var_2_1, var_2_2 = arg_2_0.ptData:GetResProgress()
+	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
 
-	setText(arg_2_0.progress, (var_2_2 >= 1 and setColorStr(var_2_0, "#A2A2A2FF") or var_2_0) .. "/" .. var_2_1)
+	setText(slot0.progress, (slot3 >= 1 and setColorStr(slot1, "#A2A2A2FF") or slot1) .. "/" .. slot2)
 end
 
-function var_0_0.SetAwardName(arg_4_0)
-	local var_4_0 = arg_4_0.ptData:GetAward()
-
-	if Item.getConfigData(var_4_0.id) then
-		changeToScrollText(var_0_0.scrolltext, var_4_0:getName())
+function slot0.SetAwardName(slot0)
+	if Item.getConfigData(slot0.ptData:GetAward().id) then
+		changeToScrollText(uv0.scrolltext, slot1:getName())
 	else
-		setActive(arg_4_0:findTF("name", arg_4_0.awardTF), false)
+		setActive(slot0:findTF("name", slot0.awardTF), false)
 	end
 end
 
-return var_0_0
+return slot0

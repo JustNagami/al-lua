@@ -1,33 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1081
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 1080,
-				shipType = 6,
-				target = "TargetPlayerByType"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 1080,
-				shipType = 7,
-				target = "TargetPlayerByType"
-			}
-		}
-	},
+return {
 	{
 		desc = "在队伍中(存活)时增加轻航、正航空袭造成的伤害5.0%，同技能效果不叠加",
 		addition = {
@@ -98,5 +69,34 @@
 	stack = 1,
 	id = 1081,
 	icon = 1080,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1081
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 1080,
+				shipType = 6,
+				target = "TargetPlayerByType"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 1080,
+				shipType = 7,
+				target = "TargetPlayerByType"
+			}
+		}
+	}
 }

@@ -1,86 +1,81 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleEvent
+slot3 = slot0.Battle.BattleCardPuzzleEvent
+slot4 = slot0.Battle.BattleFormulas
+slot5 = slot0.Battle.BattleConst
+slot6 = slot0.Battle.BattleConfig
+slot7 = slot0.Battle.BattleCardPuzzleConfig
+slot8 = slot0.Battle.BattleAttr
+slot9 = slot0.Battle.BattleDataFunction
+slot10 = slot0.Battle.BattleAttr
+slot11 = class("BattleFleetCardPuzzleMoveDeck")
+slot0.Battle.BattleFleetCardPuzzleMoveDeck = slot11
+slot11.__name = "BattleFleetCardPuzzleMoveDeck"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleEvent
-local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
-local var_0_4 = var_0_0.Battle.BattleFormulas
-local var_0_5 = var_0_0.Battle.BattleConst
-local var_0_6 = var_0_0.Battle.BattleConfig
-local var_0_7 = var_0_0.Battle.BattleCardPuzzleConfig
-local var_0_8 = var_0_0.Battle.BattleAttr
-local var_0_9 = var_0_0.Battle.BattleDataFunction
-local var_0_10 = var_0_0.Battle.BattleAttr
-local var_0_11 = class("BattleFleetCardPuzzleMoveDeck")
+function slot11.Ctor(slot0, slot1, slot2)
+	slot0._cardPuzzleComponent = slot1
+	slot0._indexID = slot2
 
-var_0_0.Battle.BattleFleetCardPuzzleMoveDeck = var_0_11
-var_0_11.__name = "BattleFleetCardPuzzleMoveDeck"
-
-function var_0_11.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._cardPuzzleComponent = arg_1_1
-	arg_1_0._indexID = arg_1_2
-
-	arg_1_0:init()
+	slot0:init()
 end
 
-function var_0_11.CustomConfig(arg_2_0, arg_2_1)
-	arg_2_0._generateRate = var_0_9.GetPuzzleDungeonTemplate(arg_2_1).move_recovery
+function slot11.CustomConfig(slot0, slot1)
+	slot0._generateRate = uv0.GetPuzzleDungeonTemplate(slot1).move_recovery
 end
 
-function var_0_11.GetIndexID(arg_3_0)
-	return arg_3_0._indexID
+function slot11.GetIndexID(slot0)
+	return slot0._indexID
 end
 
-function var_0_11.Dispose(arg_4_0)
-	return
+function slot11.Dispose(slot0)
 end
 
-function var_0_11.GetCardList(arg_5_0)
-	return arg_5_0._moveCardList
+function slot11.GetCardList(slot0)
+	return slot0._moveCardList
 end
 
-function var_0_11.Update(arg_6_0, arg_6_1)
-	arg_6_0:update(arg_6_1)
+function slot11.Update(slot0, slot1)
+	slot0:update(slot1)
 end
 
-function var_0_11.init(arg_7_0)
-	arg_7_0._moveCardList = {}
+function slot11.init(slot0)
+	slot0._moveCardList = {}
 
-	var_0_0.EventDispatcher.AttachEventDispatcher(arg_7_0)
-	var_0_0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg_7_0)
+	uv0.EventDispatcher.AttachEventDispatcher(slot0)
+	uv0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(slot0)
 
-	arg_7_0._attrManager = arg_7_0._cardPuzzleComponent:GetAttrManager()
-	arg_7_0._generateRate = var_0_7.moveCardGenerateSpeedPerSecond
-	arg_7_0._maxMoveCard = var_0_7.BASE_MAX_MOVE
-	arg_7_0._generating = 0
+	slot0._attrManager = slot0._cardPuzzleComponent:GetAttrManager()
+	slot0._generateRate = uv1.moveCardGenerateSpeedPerSecond
+	slot0._maxMoveCard = uv1.BASE_MAX_MOVE
+	slot0._generating = 0
 
-	arg_7_0:updateTimeStamp()
+	slot0:updateTimeStamp()
 end
 
-function var_0_11.updateTimeStamp(arg_8_0)
-	arg_8_0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
+function slot11.updateTimeStamp(slot0)
+	slot0._lastUpdateTimeStamp = pg.TimeMgr.GetInstance():GetCombatTime()
 end
 
-function var_0_11.update(arg_9_0, arg_9_1)
-	if arg_9_0:GetLength() < arg_9_0._maxMoveCard + arg_9_0._attrManager:GetCurrent("MoveExtra") then
-		arg_9_0._generating = (arg_9_1 - arg_9_0._lastUpdateTimeStamp) * arg_9_0._generateRate + arg_9_0._generating
+function slot11.update(slot0, slot1)
+	if slot0:GetLength() < slot0._maxMoveCard + slot0._attrManager:GetCurrent("MoveExtra") then
+		slot0._generating = (slot1 - slot0._lastUpdateTimeStamp) * slot0._generateRate + slot0._generating
 	end
 
-	arg_9_0:updateTimeStamp()
+	slot0:updateTimeStamp()
 end
 
-function var_0_11.GetGeneratePorcess(arg_10_0)
-	return arg_10_0._generating
+function slot11.GetGeneratePorcess(slot0)
+	return slot0._generating
 end
 
-function var_0_11.TryPlayTopMoveCard(arg_11_0)
-	local var_11_0 = arg_11_0:GetLength()
-
-	if var_11_0 > 0 then
-		return arg_11_0:GetCardList()[var_11_0]
+function slot11.TryPlayTopMoveCard(slot0)
+	if slot0:GetLength() > 0 then
+		return slot0:GetCardList()[slot1]
 	end
 end
 
-function var_0_11.RestartGenrate(arg_12_0)
-	arg_12_0._generating = 0
+function slot11.RestartGenrate(slot0)
+	slot0._generating = 0
 end

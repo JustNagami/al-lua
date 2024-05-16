@@ -1,62 +1,49 @@
-﻿local var_0_0 = class("RemouldShipCommand", pm.SimpleCommand)
+slot0 = class("RemouldShipCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.shipId
-	local var_1_2 = var_1_0.remouldId
-	local var_1_3 = var_1_0.materialIds or {}
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.remouldId
+	slot5 = slot2.materialIds or {}
 
-	if not var_1_1 or not var_1_2 then
+	if not slot2.shipId or not slot4 then
 		return
 	end
 
-	local var_1_4 = getProxy(PlayerProxy):getData()
-	local var_1_5 = pg.transform_data_template[var_1_2]
+	slot8 = pg.transform_data_template[slot4]
 
-	assert(var_1_5, "transform_data_template>>>." .. var_1_2)
+	assert(slot8, "transform_data_template>>>." .. slot4)
 
-	if var_1_5.use_gold > var_1_4.gold then
+	if getProxy(PlayerProxy):getData().gold < slot8.use_gold then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	local var_1_6 = getProxy(BayProxy)
-	local var_1_7 = var_1_6:getShipById(var_1_1)
-	local var_1_8 = var_1_7.transforms[var_1_2]
-	local var_1_9 = 0
+	slot13 = 0
 
-	if var_1_8 then
-		var_1_9 = var_1_7.transforms[var_1_2].level
+	if getProxy(BayProxy):getShipById(slot3).transforms[slot4] and slot11.transforms[slot4].level == #slot8.effect then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_max_level"))
 
-		if var_1_9 == #var_1_5.effect then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_max_level"))
-
-			return
-		end
+		return
 	end
 
-	local var_1_10 = var_1_9 + 1
-	local var_1_11 = var_1_5.use_item[var_1_10] or {}
-	local var_1_12 = getProxy(BagProxy)
-
-	for iter_1_0, iter_1_1 in ipairs(var_1_11) do
-		if var_1_12:getItemCountById(iter_1_1[1]) < iter_1_1[2] then
+	for slot19, slot20 in ipairs(slot8.use_item[slot13 + 1] or {}) do
+		if getProxy(BagProxy):getItemCountById(slot20[1]) < slot20[2] then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 			return
 		end
 	end
 
-	if var_1_5.use_ship ~= 0 then
-		if table.getCount(var_1_3) ~= var_1_5.use_ship then
+	if slot8.use_ship ~= 0 then
+		if table.getCount(slot5) ~= slot8.use_ship then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_ship_no_enough"))
 
 			return
 		end
 
-		for iter_1_2, iter_1_3 in ipairs(var_1_3) do
-			if not var_1_6:getShipById(iter_1_3) then
+		for slot19, slot20 in ipairs(slot5) do
+			if not slot10:getShipById(slot20) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_ship_on_exist"))
 
 				return
@@ -64,14 +51,13 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		end
 	end
 
-	for iter_1_4, iter_1_5 in ipairs(var_1_5.ship_id) do
-		if iter_1_5[1] == var_1_7.configId and getProxy(EquipmentProxy):getCapacity() >= var_1_4:getMaxEquipmentBag() then
-			local var_1_13 = Clone(var_1_7)
+	for slot19, slot20 in ipairs(slot8.ship_id) do
+		if slot20[1] == slot11.configId and slot7:getMaxEquipmentBag() <= getProxy(EquipmentProxy):getCapacity() then
+			slot22 = Clone(slot11)
+			slot22.configId = slot20[2]
 
-			var_1_13.configId = iter_1_5[2]
-
-			for iter_1_6, iter_1_7 in ipairs(var_1_13.equipments) do
-				if iter_1_7 and var_1_13:isForbiddenAtPos(iter_1_7, iter_1_6) then
+			for slot26, slot27 in ipairs(slot22.equipments) do
+				if slot27 and slot22:isForbiddenAtPos(slot27, slot26) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_cant_unload"))
 
 					return
@@ -80,70 +66,66 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		end
 	end
 
-	local var_1_14
-	local var_1_15
-	local var_1_16
+	slot16, slot17, slot18 = nil
 
-	for iter_1_8, iter_1_9 in ipairs(var_1_5.ship_id) do
-		if var_1_7.configId == iter_1_9[1] then
-			var_1_14, var_1_15 = unpack(iter_1_9)
+	for slot22, slot23 in ipairs(slot8.ship_id) do
+		if slot11.configId == slot23[1] then
+			slot16, slot17 = unpack(slot23)
 
 			break
 		end
 	end
 
-	if var_1_14 and var_1_15 then
-		var_1_16 = TeamType.GetTeamFromShipType(pg.ship_data_statistics[var_1_14].type) ~= TeamType.GetTeamFromShipType(pg.ship_data_statistics[var_1_15].type)
+	if slot16 and slot17 then
+		slot18 = TeamType.GetTeamFromShipType(pg.ship_data_statistics[slot16].type) ~= TeamType.GetTeamFromShipType(pg.ship_data_statistics[slot17].type)
 	end
 
-	local var_1_17 = {}
+	slot19 = {}
 
-	if var_1_16 then
-		if var_1_7:getFlag("inFleet") and not getProxy(FleetProxy):GetRegularFleetByShip(var_1_7):canRemove(var_1_7) then
+	if slot18 then
+		if slot11:getFlag("inFleet") and not getProxy(FleetProxy):GetRegularFleetByShip(slot11):canRemove(slot11) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				yesText = "text_forward",
 				content = i18n("shipmodechange_reject_1stfleet_only"),
-				onYes = function()
-					arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.BIANDUI)
+				onYes = function ()
+					uv0:sendNotification(GAME.GO_SCENE, SCENE.BIANDUI)
 				end
 			})
 
 			return
 		end
 
-		table.insert(var_1_17, function(arg_3_0)
-			local var_3_0
+		table.insert(slot19, function (slot0)
+			slot1 = nil
 
-			local function var_3_1()
-				local var_4_0, var_4_1 = ShipStatus.ShipStatusCheck("onTeamChange", var_1_7, var_3_1)
+			function ()
+				slot0, slot1 = ShipStatus.ShipStatusCheck("onTeamChange", uv0, uv1)
 
-				if var_4_0 then
-					arg_3_0()
-				elseif var_4_1 then
-					pg.TipsMgr.GetInstance():ShowTips(var_4_1)
+				if slot0 then
+					uv2()
+				elseif slot1 then
+					pg.TipsMgr.GetInstance():ShowTips(slot1)
 				end
-			end
-
-			var_3_1()
+			end()
 		end)
 
-		if var_1_7:getFlag("inWorld") then
-			table.insert(var_1_17, function(arg_5_0)
+		if slot11:getFlag("inWorld") then
+			table.insert(slot19, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("shipchange_alert_inworld"),
-					onYes = arg_5_0
+					onYes = slot0
 				})
 			end)
 		end
 
-		if var_1_7:getFlag("inElite") then
-			table.insert(var_1_17, function(arg_6_0)
+		if slot11:getFlag("inElite") then
+			table.insert(slot19, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("shipchange_alert_indiff"),
-					onYes = function()
-						arg_1_0:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
-							shipId = var_1_7.id,
-							callback = arg_6_0
+					onYes = function ()
+						uv0:sendNotification(GAME.REMOVE_ELITE_TARGET_SHIP, {
+							shipId = uv1.id,
+							callback = uv2
 						})
 					end
 				})
@@ -151,222 +133,192 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 		end
 	end
 
-	table.insert(var_1_17, function(arg_8_0)
-		local var_8_0 = {}
-		local var_8_1 = var_1_5.skin_id
+	table.insert(slot19, function (slot0)
+		slot1 = {}
 
-		if var_8_1 and var_8_1 ~= 0 then
-			PaintingGroupConst.AddPaintingNameBySkinID(var_8_0, var_8_1)
+		if uv0.skin_id and slot2 ~= 0 then
+			PaintingGroupConst.AddPaintingNameBySkinID(slot1, slot2)
 		end
 
-		local var_8_2 = {
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
-			paintingNameList = var_8_0,
-			finishFunc = arg_8_0
-		}
-
-		PaintingGroupConst.PaintingDownload(var_8_2)
+			paintingNameList = slot1,
+			finishFunc = slot0
+		})
 	end)
-	seriesAsync(var_1_17, function()
+	seriesAsync(slot19, function ()
 		pg.ConnectionMgr.GetInstance():Send(12011, {
-			ship_id = var_1_1,
-			remould_id = var_1_2,
-			material_id = var_1_3
-		}, 12012, function(arg_10_0)
-			if arg_10_0.result == 0 then
-				pg.TrackerMgr.GetInstance():Tracking(TRACKING_REMOULD_SHIP, var_1_7.groupId)
+			ship_id = uv0,
+			remould_id = uv1,
+			material_id = uv2
+		}, 12012, function (slot0)
+			if slot0.result == 0 then
+				pg.TrackerMgr.GetInstance():Tracking(TRACKING_REMOULD_SHIP, uv0.groupId)
 
-				if var_1_16 and var_1_7:getFlag("inWorld") then
-					local var_10_0 = nowWorld()
-					local var_10_1 = var_10_0:GetFleet(var_10_0:GetShip(var_1_7.id).fleetId)
-					local var_10_2 = underscore.filter(var_10_1:GetShips(true), function(arg_11_0)
-						return arg_11_0.id ~= var_1_7.id
-					end)
+				if uv1 and uv0:getFlag("inWorld") then
+					slot1 = nowWorld()
+					slot2 = slot1:GetFleet(slot1:GetShip(uv0.id).fleetId)
 
-					var_10_1:UpdateShips(var_10_2)
+					slot2:UpdateShips(underscore.filter(slot2:GetShips(true), function (slot0)
+						return slot0.id ~= uv0.id
+					end))
 					pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inWorld")
 				end
 
-				if var_1_8 then
-					local var_10_3 = var_1_7.transforms[var_1_2].level
-
-					var_1_7.transforms[var_1_2].level = var_10_3 + 1
+				if uv2 then
+					uv0.transforms[uv3].level = uv0.transforms[uv3].level + 1
 				else
-					var_1_7.transforms[var_1_2] = {
+					uv0.transforms[uv3] = {
 						level = 1,
-						id = var_1_2
+						id = uv3
 					}
 				end
 
-				for iter_10_0, iter_10_1 in ipairs(var_1_5.edit_trans) do
-					if var_1_7.transforms[iter_10_1] then
-						var_1_7.transforms[iter_10_1] = nil
+				for slot4, slot5 in ipairs(uv4.edit_trans) do
+					if uv0.transforms[slot5] then
+						uv0.transforms[slot5] = nil
 					end
 				end
 
-				local var_10_4 = getProxy(NavalAcademyProxy)
-				local var_10_5 = var_10_4:getStudentByShipId(var_1_1)
-				local var_10_6 = var_10_5 and var_10_5:getSkillId(var_1_7)
+				slot3 = getProxy(NavalAcademyProxy):getStudentByShipId(uv5) and slot2:getSkillId(uv0)
 
-				if var_1_14 and var_1_15 then
-					var_1_7.configId = var_1_15
+				if uv6 and uv7 then
+					uv0.configId = uv7
+					slot9 = #pg.ship_data_template[uv7].buff_list
 
-					local var_10_7 = pg.ship_data_template[var_1_14].buff_list
-					local var_10_8 = pg.ship_data_template[var_1_15].buff_list
+					for slot9 = 1, math.max(#pg.ship_data_template[uv6].buff_list, slot9) do
+						if slot4[slot9] ~= slot5[slot9] then
+							slot12 = nil
 
-					for iter_10_2 = 1, math.max(#var_10_7, #var_10_8) do
-						local var_10_9 = var_10_7[iter_10_2]
-						local var_10_10 = var_10_8[iter_10_2]
-
-						if var_10_9 == var_10_10 then
-							-- block empty
-						else
-							local var_10_11
-
-							if var_10_9 then
-								var_10_11 = var_1_7.skills[var_10_9]
-								var_10_11.id = var_10_10
-								var_1_7.skills[var_10_9] = nil
+							if slot10 then
+								uv0.skills[slot10].id = slot11
+								uv0.skills[slot10] = nil
 							else
-								var_10_11 = {
+								slot12 = {
 									exp = 0,
 									level = 1,
-									id = var_10_10
+									id = slot11
 								}
 							end
 
-							var_1_7.skills[var_10_10] = var_10_11
+							uv0.skills[slot11] = slot12
 
-							pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_unlock_skill", pg.skill_data_template[var_10_10].name))
+							pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_unlock_skill", pg.skill_data_template[slot11].name))
 
-							if var_10_5 and var_10_6 == var_10_9 then
-								var_10_5:updateSkillId(var_10_10)
-								var_10_4:updateStudent(var_10_5)
+							if slot2 and slot3 == slot10 then
+								slot2:updateSkillId(slot11)
+								slot1:updateStudent(slot2)
 							end
 						end
 					end
 				end
 
-				_.each(var_1_5.ship_id, function(arg_12_0)
-					if arg_12_0[1] == var_1_7.configId then
-						-- block empty
+				_.each(uv4.ship_id, function (slot0)
+					if slot0[1] == uv0.configId then
+						-- Nothing
 					end
 				end)
 
-				for iter_10_3, iter_10_4 in pairs(var_1_5.use_item[var_1_10] or {}) do
-					var_1_12:removeItemById(iter_10_4[1], iter_10_4[2])
+				for slot7, slot8 in pairs(uv4.use_item[uv8] or {}) do
+					uv9:removeItemById(slot8[1], slot8[2])
 				end
 
-				local var_10_12 = getProxy(PlayerProxy)
-				local var_10_13 = var_10_12:getData()
+				slot4 = getProxy(PlayerProxy)
+				slot5 = slot4:getData()
 
-				var_10_13:consume({
-					gold = var_1_5.use_gold
+				slot5:consume({
+					gold = uv4.use_gold
 				})
-				var_10_12:updatePlayer(var_10_13)
+				slot4:updatePlayer(slot5)
 
-				local var_10_14 = {}
-
-				if var_1_5.skin_id ~= 0 then
-					var_1_7:updateSkinId(var_1_5.skin_id)
-					table.insert(var_10_14, {
+				if uv4.skin_id ~= 0 then
+					uv0:updateSkinId(uv4.skin_id)
+					table.insert({}, {
 						count = 1,
 						type = DROP_TYPE_SKIN,
-						id = var_1_5.skin_id
+						id = uv4.skin_id
 					})
 
-					local var_10_15 = getProxy(CollectionProxy)
-					local var_10_16 = var_10_15:getShipGroup(var_1_7.groupId)
+					if getProxy(CollectionProxy):getShipGroup(uv0.groupId) and not slot8.trans then
+						slot8.trans = true
 
-					if var_10_16 and not var_10_16.trans then
-						var_10_16.trans = true
-
-						var_10_15:updateShipGroup(var_10_16)
+						slot7:updateShipGroup(slot8)
 					end
 				end
 
-				if var_1_5.skill_id ~= 0 and not var_1_7.skills[var_1_5.skill_id] then
-					var_1_7.skills[var_1_5.skill_id] = {
+				if uv4.skill_id ~= 0 and not uv0.skills[uv4.skill_id] then
+					uv0.skills[uv4.skill_id] = {
 						exp = 0,
 						level = 1,
-						id = var_1_5.skill_id
+						id = uv4.skill_id
 					}
 
-					local var_10_17 = pg.skill_data_template[var_1_5.skill_id].name
-
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_unlock_skill", var_10_17))
+					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_material_unlock_skill", pg.skill_data_template[uv4.skill_id].name))
 				end
 
-				var_1_7:updateName()
+				uv0:updateName()
 
-				local var_10_18 = var_1_7:GetSpWeapon()
-
-				if var_10_18 and not var_1_7:CanEquipSpWeapon(var_10_18) then
-					var_1_7:UpdateSpWeapon(nil)
-					getProxy(EquipmentProxy):AddSpWeapon(var_10_18)
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_unequipFromShip_ok", var_10_18:GetName()), "red")
+				if uv0:GetSpWeapon() and not uv0:CanEquipSpWeapon(slot7) then
+					uv0:UpdateSpWeapon(nil)
+					getProxy(EquipmentProxy):AddSpWeapon(slot7)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_unequipFromShip_ok", slot7:GetName()), "red")
 				end
 
-				var_1_6:updateShip(var_1_7)
+				uv10:updateShip(uv0)
 
-				local var_10_19 = getProxy(EquipmentProxy)
+				slot8 = getProxy(EquipmentProxy)
 
-				for iter_10_5, iter_10_6 in ipairs(var_1_3 or {}) do
-					local var_10_20 = var_1_6:getShipById(iter_10_6)
-
-					for iter_10_7, iter_10_8 in ipairs(var_10_20.equipments) do
-						if iter_10_8 then
-							var_10_19:addEquipment(iter_10_8)
+				for slot12, slot13 in ipairs(uv11 or {}) do
+					for slot18, slot19 in ipairs(uv10:getShipById(slot13).equipments) do
+						if slot19 then
+							slot8:addEquipment(slot19)
 						end
 
-						if var_10_20:getEquipSkin(iter_10_7) ~= 0 then
-							var_10_19:addEquipmentSkin(var_10_20:getEquipSkin(iter_10_7), 1)
+						if slot14:getEquipSkin(slot18) ~= 0 then
+							slot8:addEquipmentSkin(slot14:getEquipSkin(slot18), 1)
 							pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 						end
 					end
 
-					local var_10_21 = var_10_20:GetSpWeapon()
-
-					if var_10_21 then
-						var_10_20:UpdateSpWeapon(nil)
-						var_10_19:AddSpWeapon(var_10_21)
+					if slot14:GetSpWeapon() then
+						slot14:UpdateSpWeapon(nil)
+						slot8:AddSpWeapon(slot15)
 					end
 
-					var_1_6:removeShipById(iter_10_6)
+					uv10:removeShipById(slot13)
 				end
 
-				local var_10_22 = {}
+				slot9 = {}
 
-				for iter_10_9, iter_10_10 in ipairs(var_1_7.equipments) do
-					if iter_10_10 and not var_1_7:canEquipAtPos(iter_10_10, iter_10_9) then
-						table.insert(var_10_22, function(arg_13_0)
-							arg_1_0:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
-								shipId = var_1_7.id,
-								pos = iter_10_9,
-								callback = arg_13_0
+				for slot13, slot14 in ipairs(uv0.equipments) do
+					if slot14 and not uv0:canEquipAtPos(slot14, slot13) then
+						table.insert(slot9, function (slot0)
+							uv0:sendNotification(GAME.UNEQUIP_FROM_SHIP, {
+								shipId = uv1.id,
+								pos = uv2,
+								callback = slot0
 							})
 						end)
 					end
 				end
 
-				seriesAsync(var_10_22, function()
-					arg_1_0:sendNotification(GAME.REMOULD_SHIP_DONE, {
-						ship = var_1_6:getShipById(var_1_1),
-						awards = var_10_14
+				seriesAsync(slot9, function ()
+					uv0:sendNotification(GAME.REMOULD_SHIP_DONE, {
+						ship = uv1:getShipById(uv2),
+						awards = uv3
 					})
 
-					local var_14_0 = nowWorld()
-					local var_14_1 = var_14_0 and var_14_0:GetBossProxy()
-
-					if var_14_1 and var_14_1.isSetup then
-						var_14_1:CheckRemouldShip()
+					if nowWorld() and slot0:GetBossProxy() and slot1.isSetup then
+						slot1:CheckRemouldShip()
 					end
 				end)
-			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_remouldShip", arg_10_0.result))
+
+				return
 			end
+
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_remouldShip", slot0.result))
 		end)
 	end)
 end
 
-return var_0_0
+return slot0

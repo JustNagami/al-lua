@@ -1,1 +1,1 @@
-﻿return (class("JapanesePTPage", import(".TemplatePage.PtTemplatePage")))
+return class("JapanesePTPage", import(".TemplatePage.PtTemplatePage"))

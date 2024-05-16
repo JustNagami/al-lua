@@ -1,165 +1,144 @@
-﻿local var_0_0 = class("FuShunEnemySpawner")
-local var_0_1 = 1
-local var_0_2 = 2
+slot0 = class("FuShunEnemySpawner")
+slot1 = 1
+slot2 = 2
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.parent = arg_1_1
-	arg_1_0.index = 0
-	arg_1_0.score = 0
-	arg_1_0.changeTime = -1
-	arg_1_0.mode = var_0_1
-	arg_1_0.OnSpawn = arg_1_2
-	arg_1_0.targetTime = 0
-	arg_1_0.delta = 0
-	arg_1_0.starting = false
-	arg_1_0.fushunLoader = arg_1_3
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.parent = slot1
+	slot0.index = 0
+	slot0.score = 0
+	slot0.changeTime = -1
+	slot0.mode = uv0
+	slot0.OnSpawn = slot2
+	slot0.targetTime = 0
+	slot0.delta = 0
+	slot0.starting = false
+	slot0.fushunLoader = slot3
 end
 
-function var_0_0.Start(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.delta = 0
-	arg_2_0.changeTime = -1
+function slot0.Start(slot0, slot1, slot2, slot3)
+	slot0.delta = 0
+	slot0.changeTime = -1
 
-	if arg_2_3 then
-		arg_2_0.delta = arg_2_2
+	if slot3 then
+		slot0.delta = slot2
 	end
 
-	arg_2_0.targetTime = arg_2_2
-	arg_2_0.mode = arg_2_1
-	arg_2_0.starting = true
+	slot0.targetTime = slot2
+	slot0.mode = slot1
+	slot0.starting = true
 
-	FushunAdventureGame.LOG(" spawner time  :", arg_2_2)
+	FushunAdventureGame.LOG(" spawner time  :", slot2)
 end
 
-function var_0_0.Update(arg_3_0)
-	if not arg_3_0.starting then
+function slot0.Update(slot0)
+	if not slot0.starting then
 		return
 	end
 
-	arg_3_0.delta = arg_3_0.delta + Time.deltaTime
+	slot0.delta = slot0.delta + Time.deltaTime
 
-	if arg_3_0.delta >= arg_3_0.targetTime then
-		arg_3_0.delta = 0
+	if slot0.targetTime <= slot0.delta then
+		slot0.delta = 0
 
-		arg_3_0:Spawn()
+		slot0:Spawn()
 
-		if arg_3_0.changeTime ~= -1 then
-			arg_3_0:Start(arg_3_0.mode, arg_3_0.changeTime, false)
+		if slot0.changeTime ~= -1 then
+			slot0:Start(slot0.mode, slot0.changeTime, false)
 		end
 	end
 end
 
-function var_0_0.NormalMode(arg_4_0)
-	local var_4_0 = arg_4_0:CalcTime(arg_4_0.score)
-
-	arg_4_0:Start(var_0_1, var_4_0, true)
+function slot0.NormalMode(slot0)
+	slot0:Start(uv0, slot0:CalcTime(slot0.score), true)
 end
 
-function var_0_0.CarzyMode(arg_5_0)
-	local var_5_0 = FushunAdventureGameConst.EX_ENEMY_SPAWN_TIME
-
-	arg_5_0:Start(var_0_2, var_5_0, true)
+function slot0.CarzyMode(slot0)
+	slot0:Start(uv0, FushunAdventureGameConst.EX_ENEMY_SPAWN_TIME, true)
 end
 
-function var_0_0.Spawn(arg_6_0)
-	local var_6_0 = arg_6_0.mode
+function slot0.Spawn(slot0)
+	slot1 = slot0.mode
+	slot0.index = slot0.index + 1
+	slot2 = slot0.index
+	slot3 = slot0:GetConfigByScore(slot0.score)
 
-	arg_6_0.index = arg_6_0.index + 1
+	assert(slot3)
+	slot0.fushunLoader:GetPrefab("FushunAdventure/" .. slot3.name, "", function (slot0)
+		slot0.transform:SetParent(uv0.parent, false)
 
-	local var_6_1 = arg_6_0.index
-	local var_6_2 = arg_6_0:GetConfigByScore(arg_6_0.score)
-
-	assert(var_6_2)
-	arg_6_0.fushunLoader:GetPrefab("FushunAdventure/" .. var_6_2.name, "", function(arg_7_0)
-		arg_7_0.transform:SetParent(arg_6_0.parent, false)
-
-		if arg_6_0.OnSpawn then
-			arg_6_0.OnSpawn({
-				go = arg_7_0,
-				config = var_6_2,
-				speed = var_6_0 == var_0_1 and var_6_2.speed or var_6_2.crazy_speed,
-				index = var_6_1
+		if uv0.OnSpawn then
+			uv0.OnSpawn({
+				go = slot0,
+				config = uv1,
+				speed = uv2 == uv3 and uv1.speed or uv1.crazy_speed,
+				index = uv4
 			})
 		end
-	end, var_6_2.name)
+	end, slot3.name)
 end
 
-function var_0_0.GetConfigByScore(arg_8_0, arg_8_1)
-	local var_8_0 = FushunAdventureGameConst.PROPABILITES
-	local var_8_1
+function slot0.GetConfigByScore(slot0, slot1)
+	slot3 = nil
 
-	for iter_8_0, iter_8_1 in ipairs(var_8_0) do
-		local var_8_2 = iter_8_1[1][1]
-		local var_8_3 = iter_8_1[1][2]
-
-		if var_8_2 <= arg_8_1 and arg_8_1 <= var_8_3 then
-			var_8_1 = iter_8_1
+	for slot7, slot8 in ipairs(FushunAdventureGameConst.PROPABILITES) do
+		if slot8[1][1] <= slot1 and slot1 <= slot8[1][2] then
+			slot3 = slot8
 
 			break
 		end
 	end
 
-	var_8_1 = var_8_1 or var_8_0[#var_8_0]
+	slot3 = slot3 or slot2[#slot2]
+	slot4 = slot3[2]
+	slot7 = math.random(1, 100)
 
-	local var_8_4 = var_8_1[2]
-	local var_8_5 = var_8_1[3]
-	local var_8_6 = var_8_1[4]
-	local var_8_7 = math.random(1, 100)
+	FushunAdventureGame.LOG("rate :", slot4, slot3[3], slot3[4], " r :", slot7)
 
-	FushunAdventureGame.LOG("rate :", var_8_4, var_8_5, var_8_6, " r :", var_8_7)
+	slot8 = 1
 
-	local var_8_8 = 1
-
-	if var_8_4 < var_8_7 and var_8_7 <= var_8_4 + var_8_5 then
-		var_8_8 = 2
-	elseif var_8_7 > var_8_4 + var_8_5 and var_8_7 <= 100 then
-		var_8_8 = 3
+	if slot4 < slot7 and slot7 <= slot4 + slot5 then
+		slot8 = 2
+	elseif slot7 > slot4 + slot5 and slot7 <= 100 then
+		slot8 = 3
 	end
 
-	return FushunAdventureGameConst.ENEMYS[var_8_8]
+	return FushunAdventureGameConst.ENEMYS[slot8]
 end
 
-function var_0_0.UpdateScore(arg_9_0, arg_9_1)
-	arg_9_0.score = arg_9_1
+function slot0.UpdateScore(slot0, slot1)
+	slot0.score = slot1
 
-	if arg_9_0.mode == var_0_2 then
+	if slot0.mode == uv0 then
 		return
 	end
 
-	local var_9_0 = arg_9_0:CalcTime(arg_9_1)
-
-	if arg_9_0.targetTime ~= var_9_0 then
-		arg_9_0.changeTime = var_9_0
+	if slot0.targetTime ~= slot0:CalcTime(slot1) then
+		slot0.changeTime = slot2
 	end
 end
 
-function var_0_0.CalcTime(arg_10_0, arg_10_1)
-	local var_10_0 = FushunAdventureGameConst.ENEMY_SPAWN_TIME_ADDITION
-	local var_10_1
+function slot0.CalcTime(slot0, slot1)
+	slot3 = nil
 
-	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
-		local var_10_2 = iter_10_1[1][1]
-		local var_10_3 = iter_10_1[1][2]
-
-		if var_10_2 <= arg_10_1 and arg_10_1 <= var_10_3 then
-			var_10_1 = iter_10_1
+	for slot7, slot8 in ipairs(FushunAdventureGameConst.ENEMY_SPAWN_TIME_ADDITION) do
+		if slot8[1][1] <= slot1 and slot1 <= slot8[1][2] then
+			slot3 = slot8
 
 			break
 		end
 	end
 
-	var_10_1 = var_10_1 or var_10_0[#var_10_0]
+	slot4 = (slot3 or slot2[#slot2])[2]
 
-	local var_10_4 = var_10_1[2]
-
-	return (math.random(var_10_4[1], var_10_4[2]))
+	return math.random(slot4[1], slot4[2])
 end
 
-function var_0_0.Stop(arg_11_0)
-	arg_11_0.starting = false
+function slot0.Stop(slot0)
+	slot0.starting = false
 end
 
-function var_0_0.Dispose(arg_12_0)
-	arg_12_0:Stop()
+function slot0.Dispose(slot0)
+	slot0:Stop()
 end
 
-return var_0_0
+return slot0

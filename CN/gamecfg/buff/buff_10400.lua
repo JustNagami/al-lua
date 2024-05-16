@@ -1,23 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10400
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 10401,
-				target = "TargetPlayerFlagShip"
-			}
-		}
-	},
+return {
 	{
 		desc = "在队伍中时降低旗舰受到的伤害15.0%",
 		addition = {
@@ -88,5 +69,24 @@
 	stack = 1,
 	id = 10400,
 	icon = 10400,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10400
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 10401,
+				target = "TargetPlayerFlagShip"
+			}
+		}
+	}
 }

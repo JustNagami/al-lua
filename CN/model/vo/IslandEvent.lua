@@ -1,30 +1,32 @@
-﻿local var_0_0 = class("IslandEvent", import(".BaseVO"))
+slot0 = class("IslandEvent", import(".BaseVO"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_map_event_data
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.id
-	arg_2_0.configId = arg_2_1.id
+function slot0.Ctor(slot0, slot1)
+	slot0.id = slot1.id
+	slot0.configId = slot1.id
 end
 
-function var_0_0.CheckTrigger(arg_3_0, arg_3_1)
-	if arg_3_0:getConfig("type") == 2 then
-		local var_3_0 = underscore.detect(arg_3_0:getConfig("params"), function(arg_4_0)
-			return arg_4_0[1] == arg_3_1
+function slot0.CheckTrigger(slot0, slot1)
+	if slot0:getConfig("type") == 2 then
+		slot2 = underscore.detect(slot0:getConfig("params"), function (slot0)
+			return slot0[1] == uv0
 		end)
 
-		assert(var_3_0, string.format("event_%d without params option_%d", arg_3_0.id, arg_3_1))
+		assert(slot2, string.format("event_%d without params option_%d", slot0.id, slot1))
 
-		if var_3_0[2] then
-			local var_3_1 = {}
+		if slot2[2] then
+			slot4, slot5, slot6 = unpack(slot2[2])
 
-			var_3_1.type, var_3_1.id, var_3_1.count = unpack(var_3_0[2])
+			assert(({
+				count = slot6,
+				id = slot5,
+				type = slot4
+			}).type == DROP_TYPE_RESOURCE or slot3.type == DROP_TYPE_ITEM or DROP_TYPE_USE_ACTIVITY_DROP < slot3.type, "error config cosume type")
 
-			assert(var_3_1.type == DROP_TYPE_RESOURCE or var_3_1.type == DROP_TYPE_ITEM or var_3_1.type > DROP_TYPE_USE_ACTIVITY_DROP, "error config cosume type")
-
-			if var_3_1:getOwnedCount() < var_3_1.count then
+			if slot3:getOwnedCount() < slot3.count then
 				return false, i18n("common_no_item_1")
 			end
 		end
@@ -33,39 +35,35 @@ function var_0_0.CheckTrigger(arg_3_0, arg_3_1)
 	return true
 end
 
-function var_0_0.AfterTrigger(arg_5_0, arg_5_1)
-	if arg_5_0:getConfig("type") == 2 then
-		local var_5_0 = underscore.detect(arg_5_0:getConfig("params"), function(arg_6_0)
-			return arg_6_0[1] == arg_5_1
+function slot0.AfterTrigger(slot0, slot1)
+	if slot0:getConfig("type") == 2 and underscore.detect(slot0:getConfig("params"), function (slot0)
+		return slot0[1] == uv0
+	end)[2] then
+		slot3, slot4, slot5 = unpack(slot2[2])
+
+		switch(slot3, {
+			[DROP_TYPE_RESOURCE] = function ()
+				slot0 = getProxy(PlayerProxy)
+				slot1 = slot0:getData()
+
+				slot1:consume({
+					[id2res(uv0)] = uv1
+				})
+				slot0:updatePlayer(slot1)
+			end,
+			[DROP_TYPE_ITEM] = function ()
+				getProxy(BagProxy):removeItemById(uv0, uv1)
+			end
+		}, function ()
+			assert(DROP_TYPE_USE_ACTIVITY_DROP < uv0)
+
+			slot0 = getProxy(ActivityProxy)
+			slot1 = slot0:getActivityById(pg.activity_drop_type[uv0].activity_id)
+
+			slot1:addVitemNumber(uv1, -uv2)
+			slot0:updateActivity(slot1)
 		end)
-
-		if var_5_0[2] then
-			local var_5_1, var_5_2, var_5_3 = unpack(var_5_0[2])
-
-			switch(var_5_1, {
-				[DROP_TYPE_RESOURCE] = function()
-					local var_7_0 = getProxy(PlayerProxy)
-					local var_7_1 = var_7_0:getData()
-
-					var_7_1:consume({
-						[id2res(var_5_2)] = var_5_3
-					})
-					var_7_0:updatePlayer(var_7_1)
-				end,
-				[DROP_TYPE_ITEM] = function()
-					getProxy(BagProxy):removeItemById(var_5_2, var_5_3)
-				end
-			}, function()
-				assert(var_5_1 > DROP_TYPE_USE_ACTIVITY_DROP)
-
-				local var_9_0 = getProxy(ActivityProxy)
-				local var_9_1 = var_9_0:getActivityById(pg.activity_drop_type[var_5_1].activity_id)
-
-				var_9_1:addVitemNumber(var_5_2, -var_5_3)
-				var_9_0:updateActivity(var_9_1)
-			end)
-		end
 	end
 end
 
-return var_0_0
+return slot0

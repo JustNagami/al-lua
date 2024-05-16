@@ -1,107 +1,107 @@
-﻿local var_0_0 = class("SixthAnniversaryIslandShopWindowLayer", import("..base.BaseUI"))
+slot0 = class("SixthAnniversaryIslandShopWindowLayer", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandGoodsWindow"
 end
 
-function var_0_0.setGoods(arg_2_0, arg_2_1)
-	arg_2_0.goods = arg_2_1
-	arg_2_0.singleCost = arg_2_1:getConfig("resource_num")
-	arg_2_0.max = math.floor(Drop.New({
-		type = arg_2_1:getConfig("resource_category"),
-		id = arg_2_1:getConfig("resource_type")
-	}):getOwnedCount() / arg_2_0.singleCost)
+function slot0.setGoods(slot0, slot1)
+	slot0.goods = slot1
+	slot0.singleCost = slot1:getConfig("resource_num")
+	slot0.max = math.floor(Drop.New({
+		type = slot1:getConfig("resource_category"),
+		id = slot1:getConfig("resource_type")
+	}):getOwnedCount() / slot0.singleCost)
 
-	if arg_2_1:getConfig("num_limit") ~= 0 then
-		arg_2_0.max = math.min(arg_2_0.max, math.max(arg_2_1:GetPurchasableCnt(), 0))
+	if slot1:getConfig("num_limit") ~= 0 then
+		slot0.max = math.min(slot0.max, math.max(slot1:GetPurchasableCnt(), 0))
 	end
 end
 
-function var_0_0.init(arg_3_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+function slot0.init(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	local var_3_0 = arg_3_0._tf:Find("content/calc")
+	slot1 = slot0._tf:Find("content/calc")
 
-	setText(var_3_0:Find("cost/Text"), i18n("islandshop_tips3"))
+	setText(slot1:Find("cost/Text"), i18n("islandshop_tips3"))
 
-	arg_3_0.rtCost = var_3_0:Find("cost/number")
-	arg_3_0.rtCount = var_3_0:Find("dashboard/view/Text")
+	slot0.rtCost = slot1:Find("cost/number")
+	slot0.rtCount = slot1:Find("dashboard/view/Text")
 
-	onButton(arg_3_0, var_3_0:Find("dashboard/minus_10"), function()
-		arg_3_0:updateCount(-10)
+	onButton(slot0, slot1:Find("dashboard/minus_10"), function ()
+		uv0:updateCount(-10)
 	end, SFX_PANEL)
-	onButton(arg_3_0, var_3_0:Find("dashboard/plus_10"), function()
-		arg_3_0:updateCount(10)
+	onButton(slot0, slot1:Find("dashboard/plus_10"), function ()
+		uv0:updateCount(10)
 	end, SFX_PANEL)
-	onButton(arg_3_0, var_3_0:Find("dashboard/view/minus"), function()
-		arg_3_0:updateCount(-1)
+	onButton(slot0, slot1:Find("dashboard/view/minus"), function ()
+		uv0:updateCount(-1)
 	end, SFX_PANEL)
-	onButton(arg_3_0, var_3_0:Find("dashboard/view/plus"), function()
-		arg_3_0:updateCount(1)
+	onButton(slot0, slot1:Find("dashboard/view/plus"), function ()
+		uv0:updateCount(1)
 	end, SFX_PANEL)
-	onButton(arg_3_0, var_3_0:Find("dashboard/plus_max"), function()
-		arg_3_0:updateCount(arg_3_0.max - arg_3_0.count)
+	onButton(slot0, slot1:Find("dashboard/plus_max"), function ()
+		uv0:updateCount(uv0.max - uv0.count)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
-		arg_3_0:closeView()
+	onButton(slot0, slot0._tf:Find("bg"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, arg_3_0._tf:Find("content/bottom/btn_cancel"), function()
-		arg_3_0:closeView()
+	onButton(slot0, slot0._tf:Find("content/bottom/btn_cancel"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, arg_3_0._tf:Find("content/bottom/btn_confirm"), function()
-		if arg_3_0.count > arg_3_0.max then
+	onButton(slot0, slot0._tf:Find("content/bottom/btn_confirm"), function ()
+		if uv0.max < uv0.count then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", Drop.New({
-				type = arg_3_0.goods:getConfig("resource_category"),
-				id = arg_3_0.goods:getConfig("resource_type")
+				type = uv0.goods:getConfig("resource_category"),
+				id = uv0.goods:getConfig("resource_type")
 			}):getName()))
 
 			return
 		end
 
-		arg_3_0:emit(SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM, arg_3_0.count)
+		uv0:emit(SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM, uv0.count)
 	end, SFX_CANCEL)
 end
 
-function var_0_0.updateCount(arg_12_0, arg_12_1)
-	arg_12_0.count = math.clamp(arg_12_0.count + arg_12_1, 1, math.max(arg_12_0.max, 1))
+function slot0.updateCount(slot0, slot1)
+	slot0.count = math.clamp(slot0.count + slot1, 1, math.max(slot0.max, 1))
 
-	setText(arg_12_0.rtCount, arg_12_0.count)
-	setText(arg_12_0.rtCost, arg_12_0.count * arg_12_0.singleCost)
+	setText(slot0.rtCount, slot0.count)
+	setText(slot0.rtCost, slot0.count * slot0.singleCost)
 end
 
-function var_0_0.didEnter(arg_13_0)
-	local var_13_0 = arg_13_0.goods
-	local var_13_1 = {
-		type = var_13_0:getConfig("commodity_type"),
-		id = var_13_0:getConfig("commodity_id"),
-		count = var_13_0:getConfig("num")
+function slot0.didEnter(slot0)
+	slot1 = slot0.goods
+	slot2 = {
+		type = slot1:getConfig("commodity_type"),
+		id = slot1:getConfig("commodity_id"),
+		count = slot1:getConfig("num")
 	}
-	local var_13_2 = arg_13_0._tf:Find("content/main")
+	slot3 = slot0._tf:Find("content/main")
 
-	updateDrop(var_13_2:Find("icon/IconTpl"), var_13_1)
+	updateDrop(slot3:Find("icon/IconTpl"), slot2)
 
-	local var_13_3, var_13_4 = var_13_1:getOwnedCount()
+	slot4, slot5 = slot2:getOwnedCount()
 
-	setActive(var_13_2:Find("owner"), var_13_4)
+	setActive(slot3:Find("owner"), slot5)
 
-	if var_13_4 then
-		setText(var_13_2:Find("owner"), i18n("word_own1") .. var_13_3)
+	if slot5 then
+		setText(slot3:Find("owner"), i18n("word_own1") .. slot4)
 	end
 
-	setText(var_13_2:Find("line/name"), var_13_1:getConfig("name"))
-	setText(var_13_2:Find("line/content/Text"), string.gsub(var_13_1.desc or var_13_1:getConfig("desc"), "<[^>]+>", ""))
+	setText(slot3:Find("line/name"), slot2:getConfig("name"))
+	setText(slot3:Find("line/content/Text"), string.gsub(slot2.desc or slot2:getConfig("desc"), "<[^>]+>", ""))
 	GetImageSpriteFromAtlasAsync(Drop.New({
-		type = var_13_0:getConfig("resource_category"),
-		id = var_13_0:getConfig("resource_type")
-	}):getIcon(), "", arg_13_0._tf:Find("content/calc/cost/icon"))
+		type = slot1:getConfig("resource_category"),
+		id = slot1:getConfig("resource_type")
+	}):getIcon(), "", slot0._tf:Find("content/calc/cost/icon"))
 
-	arg_13_0.count = 1
+	slot0.count = 1
 
-	arg_13_0:updateCount(0)
+	slot0:updateCount(0)
 end
 
-function var_0_0.willExit(arg_14_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_14_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

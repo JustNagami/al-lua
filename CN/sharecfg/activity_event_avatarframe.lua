@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.activity_event_avatarframe = {
 	{
 		id = 1,
@@ -1828,6 +1828,17 @@ pg.activity_event_avatarframe = {
 			}
 		}
 	},
+	{
+		task_level = "",
+		start_time = "stop",
+		icon_frame = 330,
+		link_event = 0,
+		award_display = "",
+		target = 2800,
+		task_ship = "",
+		id = 18,
+		pt_id = 59577
+	},
 	all = {
 		1,
 		2,
@@ -1845,6 +1856,7 @@ pg.activity_event_avatarframe = {
 		14,
 		15,
 		16,
-		17
+		17,
+		18
 	}
 }

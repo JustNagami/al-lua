@@ -1,23 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 10980
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 10981,
-				target = "TargetPlayerMainFleet"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -38,5 +19,24 @@
 	stack = 1,
 	id = 10980,
 	icon = 10980,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 10980
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 10981,
+				target = "TargetPlayerMainFleet"
+			}
+		}
+	}
 }

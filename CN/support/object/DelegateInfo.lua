@@ -1,50 +1,47 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot1 = class("DelegateInfo")
+pg.DelegateInfo = slot1
+slot1.ClientsInfo = {}
 
-local var_0_0 = pg
-local var_0_1 = class("DelegateInfo")
-
-var_0_0.DelegateInfo = var_0_1
-var_0_1.ClientsInfo = {}
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.ClientsInfo[arg_1_1] = arg_1_0
-	arg_1_0.events = {}
+function slot1.Ctor(slot0, slot1)
+	uv0.ClientsInfo[slot1] = slot0
+	slot0.events = {}
 end
 
-function var_0_1.Add(arg_2_0, arg_2_1)
-	if arg_2_0 == nil then
+function slot1.Add(slot0, slot1)
+	if slot0 == nil then
 		return
 	end
 
-	local var_2_0 = var_0_1.ClientsInfo[arg_2_0]
+	slot2 = uv0.ClientsInfo[slot0]
 
-	assert(var_2_0, "没有初始化委托处理" .. arg_2_0.__cname)
+	assert(slot2, "没有初始化委托处理" .. slot0.__cname)
 
-	if var_2_0 then
-		var_2_0:AddEventOb(arg_2_1)
+	if slot2 then
+		slot2:AddEventOb(slot1)
 	end
 end
 
-function var_0_1.AddEventOb(arg_3_0, arg_3_1)
-	arg_3_0.events[arg_3_1] = true
+function slot1.AddEventOb(slot0, slot1)
+	slot0.events[slot1] = true
 end
 
-function var_0_1.Dispose(arg_4_0)
-	local var_4_0 = var_0_1.ClientsInfo[arg_4_0]
+function slot1.Dispose(slot0)
+	slot1 = uv0.ClientsInfo[slot0]
 
-	assert(var_4_0, "没有初始化委托处理" .. arg_4_0.__cname)
+	assert(slot1, "没有初始化委托处理" .. slot0.__cname)
 
-	if var_4_0 then
-		var_4_0:Clear()
+	if slot1 then
+		slot1:Clear()
 	end
 
-	var_0_1.ClientsInfo[arg_4_0] = nil
+	uv0.ClientsInfo[slot0] = nil
 end
 
-function var_0_1.Clear(arg_5_0)
-	for iter_5_0, iter_5_1 in pairs(arg_5_0.events) do
-		iter_5_0:RemoveAllListeners()
+function slot1.Clear(slot0)
+	for slot4, slot5 in pairs(slot0.events) do
+		slot4:RemoveAllListeners()
 	end
 
-	arg_5_0.events = nil
+	slot0.events = nil
 end

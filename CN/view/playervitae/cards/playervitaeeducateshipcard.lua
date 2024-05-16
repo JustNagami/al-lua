@@ -1,33 +1,32 @@
-﻿local var_0_0 = class("PlayerVitaeEducateShipCard", import(".PlayerVitaeEducateBaseCard"))
+slot0 = class("PlayerVitaeEducateShipCard", import(".PlayerVitaeEducateBaseCard"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0.paintingTr = arg_1_1:Find("ship_icon/painting")
-	arg_1_0.nameTxt = arg_1_1:Find("detail/name_bg/name_mask/name"):GetComponent("ScrollText")
+	slot0.paintingTr = slot1:Find("ship_icon/painting")
+	slot0.nameTxt = slot1:Find("detail/name_bg/name_mask/name"):GetComponent("ScrollText")
 end
 
-function var_0_0.Flush(arg_2_0)
-	arg_2_0:Clear()
-	onButton(arg_2_0, arg_2_0._tf, function()
-		arg_2_0:emit(PlayerVitaeMediator.ON_SEL_EDUCATE_CHAR)
+function slot0.Flush(slot0)
+	slot0:Clear()
+	onButton(slot0, slot0._tf, function ()
+		uv0:emit(PlayerVitaeMediator.ON_SEL_EDUCATE_CHAR)
 	end, SFX_PANEL)
 
-	local var_2_0 = getProxy(PlayerProxy):getRawData()
-	local var_2_1 = VirtualEducateCharShip.New(var_2_0:GetEducateCharacter())
+	slot2 = VirtualEducateCharShip.New(getProxy(PlayerProxy):getRawData():GetEducateCharacter())
 
-	setPaintingPrefabAsync(arg_2_0.paintingTr, var_2_1:getPainting(), "biandui")
-	arg_2_0.nameTxt:SetText(i18n("secretary_special_name"))
+	setPaintingPrefabAsync(slot0.paintingTr, slot2:getPainting(), "biandui")
+	slot0.nameTxt:SetText(i18n("secretary_special_name"))
 
-	arg_2_0.ship = var_2_1
+	slot0.ship = slot2
 end
 
-function var_0_0.Clear(arg_4_0)
-	if arg_4_0.ship then
-		retPaintingPrefab(arg_4_0.paintingTr, arg_4_0.ship:getPainting())
+function slot0.Clear(slot0)
+	if slot0.ship then
+		retPaintingPrefab(slot0.paintingTr, slot0.ship:getPainting())
 	end
 
-	removeOnButton(arg_4_0._tf)
+	removeOnButton(slot0._tf)
 end
 
-return var_0_0
+return slot0

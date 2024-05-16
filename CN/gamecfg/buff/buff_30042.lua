@@ -1,4 +1,15 @@
-﻿return {
+return {
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-舒尔茨I",
+	stack = 1,
+	id = 30042,
+	icon = 30040,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,16 +35,5 @@
 				countType = 30040
 			}
 		}
-	},
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-舒尔茨I",
-	stack = 1,
-	id = 30042,
-	icon = 30040,
-	last_effect = ""
+	}
 }

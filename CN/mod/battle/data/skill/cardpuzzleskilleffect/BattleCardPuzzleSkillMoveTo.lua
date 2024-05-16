@@ -1,29 +1,26 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleDataFunction
+slot2 = slot0.Battle.BattleConst
+slot3 = class("BattleCardPuzzleSkillMoveTo", slot0.Battle.BattleCardPuzzleSkillEffect)
+slot0.Battle.BattleCardPuzzleSkillMoveTo = slot3
+slot3.__name = "BattleCardPuzzleSkillMoveTo"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleDataFunction
-local var_0_2 = var_0_0.Battle.BattleConst
-local var_0_3 = class("BattleCardPuzzleSkillMoveTo", var_0_0.Battle.BattleCardPuzzleSkillEffect)
-
-var_0_0.Battle.BattleCardPuzzleSkillMoveTo = var_0_3
-var_0_3.__name = "BattleCardPuzzleSkillMoveTo"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
-	var_0_3.super.Ctor(arg_1_0, arg_1_1)
+function slot3.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_3.HoldForInput(arg_2_0)
+function slot3.HoldForInput(slot0)
 	return false
 end
 
-function var_0_3.SkillEffectHandler(arg_3_0)
-	local var_3_0 = arg_3_0._card:GetInputPoint()
-	local var_3_1 = arg_3_0:GetCardPuzzleComponent():TakeoverMovecontroller(var_3_0, function()
-		arg_3_0:Finale()
+function slot3.SkillEffectHandler(slot0)
+	slot3 = slot0:GetCardPuzzleComponent():TakeoverMovecontroller(slot0._card:GetInputPoint(), function ()
+		uv0:Finale()
 	end)
 end
 
-function var_0_3.Finale(arg_5_0)
-	var_0_3.super.Finale(arg_5_0)
-	arg_5_0:GetCardPuzzleComponent():ReturnMovecontroller()
+function slot3.Finale(slot0)
+	uv0.super.Finale(slot0)
+	slot0:GetCardPuzzleComponent():ReturnMovecontroller()
 end

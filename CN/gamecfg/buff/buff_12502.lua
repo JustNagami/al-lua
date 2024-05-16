@@ -1,5 +1,4 @@
-﻿return {
-	effect_list = {},
+return {
 	{
 		effect_list = {
 			{
@@ -159,5 +158,6 @@
 	stack = 1,
 	id = 12502,
 	icon = 12500,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {}
 }

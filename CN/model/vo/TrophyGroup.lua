@@ -1,139 +1,122 @@
-﻿local var_0_0 = class("TrophyGroup")
+slot0 = class("TrophyGroup")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._trophyGroupID = arg_1_1
-	arg_1_0._trophyList = {}
+function slot0.Ctor(slot0, slot1)
+	slot0._trophyGroupID = slot1
+	slot0._trophyList = {}
 end
 
-function var_0_0.getGroupID(arg_2_0)
-	return arg_2_0._trophyGroupID
+function slot0.getGroupID(slot0)
+	return slot0._trophyGroupID
 end
 
-function var_0_0.getTrophyList(arg_3_0)
-	return arg_3_0._trophyList
+function slot0.getTrophyList(slot0)
+	return slot0._trophyList
 end
 
-function var_0_0.getDisplayTrophy(arg_4_0)
-	local var_4_0 = #arg_4_0._trophyList
-	local var_4_1
+function slot0.getDisplayTrophy(slot0)
+	slot1 = #slot0._trophyList
+	slot2 = nil
 
-	while var_4_0 > 0 do
-		var_4_1 = arg_4_0._trophyList[var_4_0]
-
-		if var_4_1:isClaimed() then
+	while slot1 > 0 do
+		if slot0._trophyList[slot1]:isClaimed() then
 			break
 		end
 
-		var_4_0 = var_4_0 - 1
+		slot1 = slot1 - 1
 	end
 
-	return var_4_1
+	return slot2
 end
 
-function var_0_0.getProgressTrophy(arg_5_0)
-	local var_5_0 = 1
-	local var_5_1 = #arg_5_0._trophyList
-	local var_5_2
+function slot0.getProgressTrophy(slot0)
+	slot1 = 1
+	slot3 = nil
 
-	while var_5_0 <= var_5_1 do
-		var_5_2 = arg_5_0._trophyList[var_5_0]
-
-		if not var_5_2:isClaimed() then
+	while slot1 <= #slot0._trophyList do
+		if not slot0._trophyList[slot1]:isClaimed() then
 			break
 		end
 
-		var_5_0 = var_5_0 + 1
+		slot1 = slot1 + 1
 	end
 
-	return var_5_2
+	return slot3
 end
 
-function var_0_0.getTrophyIndex(arg_6_0, arg_6_1)
-	local var_6_0
+function slot0.getTrophyIndex(slot0, slot1)
+	slot2 = nil
 
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0._trophyList) do
-		if iter_6_1.id == arg_6_1.id then
-			var_6_0 = iter_6_0
+	for slot6, slot7 in ipairs(slot0._trophyList) do
+		if slot7.id == slot1.id then
+			slot2 = slot6
 
 			break
 		end
 	end
 
-	return var_6_0
+	return slot2
 end
 
-function var_0_0.getMaxClaimedTrophy(arg_7_0)
-	local var_7_0 = #arg_7_0._trophyList
+function slot0.getMaxClaimedTrophy(slot0)
+	slot1 = #slot0._trophyList
 
-	while var_7_0 > 0 do
-		local var_7_1 = arg_7_0._trophyList[var_7_0]
-
-		if var_7_1:isClaimed() then
-			return var_7_1
+	while slot1 > 0 do
+		if slot0._trophyList[slot1]:isClaimed() then
+			return slot2
 		end
 
-		var_7_0 = var_7_0 - 1
+		slot1 = slot1 - 1
 	end
 end
 
-function var_0_0.getTrophyCount(arg_8_0)
-	return #arg_8_0._trophyList
+function slot0.getTrophyCount(slot0)
+	return #slot0._trophyList
 end
 
-function var_0_0.getPostTrophy(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0:getTrophyIndex(arg_9_1)
-
-	if not var_9_0 then
+function slot0.getPostTrophy(slot0, slot1)
+	if not slot0:getTrophyIndex(slot1) then
 		return nil
 	end
 
-	local var_9_1 = var_9_0 + 1
-
-	if var_9_1 > #arg_9_0._trophyList then
+	if slot2 + 1 > #slot0._trophyList then
 		return nil
 	end
 
-	return arg_9_0._trophyList[var_9_1]
+	return slot0._trophyList[slot2]
 end
 
-function var_0_0.getPreTrophy(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0:getTrophyIndex(arg_10_1)
-
-	if not var_10_0 then
+function slot0.getPreTrophy(slot0, slot1)
+	if not slot0:getTrophyIndex(slot1) then
 		return nil
 	end
 
-	local var_10_1 = var_10_0 - 1
-
-	if var_10_1 < 1 then
+	if slot2 - 1 < 1 then
 		return nil
 	end
 
-	return arg_10_0._trophyList[var_10_1]
+	return slot0._trophyList[slot2]
 end
 
-function var_0_0.addTrophy(arg_11_0, arg_11_1)
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0._trophyList) do
-		if iter_11_1.id == arg_11_1.id then
-			arg_11_0._trophyList[iter_11_0] = arg_11_1
+function slot0.addTrophy(slot0, slot1)
+	for slot5, slot6 in ipairs(slot0._trophyList) do
+		if slot6.id == slot1.id then
+			slot0._trophyList[slot5] = slot1
 
 			return
 		end
 	end
 
-	arg_11_0._trophyList[#arg_11_0._trophyList + 1] = arg_11_1
+	slot0._trophyList[#slot0._trophyList + 1] = slot1
 end
 
-function var_0_0.addDummyTrophy(arg_12_0, arg_12_1)
-	local var_12_0 = Trophy.generateDummyTrophy(arg_12_1)
-
-	arg_12_0:addTrophy(var_12_0)
+function slot0.addDummyTrophy(slot0, slot1)
+	slot0:addTrophy(Trophy.generateDummyTrophy(slot1))
 end
 
-function var_0_0.sortGroup(arg_13_0)
-	table.sort(arg_13_0._trophyList, function(arg_14_0, arg_14_1)
-		return arg_14_0.id < arg_14_1.id
+function slot0.sortGroup(slot0)
+	table.sort(slot0._trophyList, function (slot0, slot1)
+		return slot0.id < slot1.id
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,31 +1,31 @@
-﻿local var_0_0 = class("CourtYardSoundAgent", import(".CourtYardAgent"))
+slot0 = class("CourtYardSoundAgent", import(".CourtYardAgent"))
 
-function var_0_0.Play(arg_1_0, arg_1_1)
-	if not arg_1_1 then
+function slot0.Play(slot0, slot1)
+	if not slot1 then
 		return
 	end
 
-	arg_1_0:Stop()
+	slot0:Stop()
 
-	arg_1_0.curVoiceKey = arg_1_1
+	slot0.curVoiceKey = slot1
 
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_1_0.curVoiceKey)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot0.curVoiceKey)
 end
 
-function var_0_0.Stop(arg_2_0)
-	if arg_2_0.curVoiceKey ~= nil then
-		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg_2_0.curVoiceKey)
+function slot0.Stop(slot0)
+	if slot0.curVoiceKey ~= nil then
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(slot0.curVoiceKey)
 	end
 
-	arg_2_0.curVoiceKey = nil
+	slot0.curVoiceKey = nil
 end
 
-function var_0_0.Clear(arg_3_0)
-	arg_3_0:Stop()
+function slot0.Clear(slot0)
+	slot0:Stop()
 end
 
-function var_0_0.Dispose(arg_4_0)
-	arg_4_0:Stop()
+function slot0.Dispose(slot0)
+	slot0:Stop()
 end
 
-return var_0_0
+return slot0

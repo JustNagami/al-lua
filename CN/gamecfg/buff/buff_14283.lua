@@ -1,22 +1,4 @@
-﻿return {
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffNewWeapon",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				weapon_id = 65861
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -156,5 +138,23 @@
 	stack = 1,
 	id = 14281,
 	icon = 14280,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffNewWeapon",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				weapon_id = 65861
+			}
+		}
+	}
 }

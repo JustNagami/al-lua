@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 30,
-				target = "TargetSelf",
-				skill_id = 10150
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔30秒，降低敌方造成的伤害5.0%，持续8秒",
 		addition = {
@@ -82,5 +69,18 @@
 	stack = 1,
 	id = 10150,
 	icon = 10150,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 30,
+				target = "TargetSelf",
+				skill_id = 10150
+			}
+		}
+	}
 }

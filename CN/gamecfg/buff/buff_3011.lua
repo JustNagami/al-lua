@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrikeSteady"
-			},
-			arg_list = {
-				rant = 1500,
-				target = "TargetSelf",
-				skill_id = 3011
-			}
-		}
-	},
+return {
 	{
 		desc = "空中支援时有15.0%概率造成2倍伤害",
 		addition = {
@@ -212,5 +199,18 @@
 	stack = 1,
 	id = 3011,
 	icon = 3010,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrikeSteady"
+			},
+			arg_list = {
+				rant = 1500,
+				target = "TargetSelf",
+				skill_id = 3011
+			}
+		}
+	}
 }

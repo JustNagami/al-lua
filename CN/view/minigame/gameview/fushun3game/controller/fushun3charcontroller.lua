@@ -1,254 +1,236 @@
-﻿local var_0_0 = class("Fushun3CharController")
-local var_0_1 = 3
+slot0 = class("Fushun3CharController")
+slot1 = 3
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	arg_1_0._rectCollider = arg_1_1
-	arg_1_0._charTf = arg_1_2
-	arg_1_0._anim = findTF(arg_1_0._charTf, "anim")
-	arg_1_0._pos = findTF(arg_1_0._charTf, "pos")
-	arg_1_0._itemPos = findTF(arg_1_0._charTf, "itemPos")
-	arg_1_0._dftEvent = GetOrAddComponent(arg_1_0._anim, typeof(DftAniEvent))
-	arg_1_0._effectPos = findTF(arg_1_0._charTf, "effectPos")
-	arg_1_0._effectFrPos = findTF(arg_1_0._charTf, "effectFrPos")
-	arg_1_0._effectBkPos = findTF(arg_1_0._charTf, "effectBkPos")
-	arg_1_0._powerSlider = arg_1_4
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot0._rectCollider = slot1
+	slot0._charTf = slot2
+	slot0._anim = findTF(slot0._charTf, "anim")
+	slot0._pos = findTF(slot0._charTf, "pos")
+	slot0._itemPos = findTF(slot0._charTf, "itemPos")
+	slot0._dftEvent = GetOrAddComponent(slot0._anim, typeof(DftAniEvent))
+	slot0._effectPos = findTF(slot0._charTf, "effectPos")
+	slot0._effectFrPos = findTF(slot0._charTf, "effectFrPos")
+	slot0._effectBkPos = findTF(slot0._charTf, "effectBkPos")
+	slot0._powerSlider = slot4
 
-	arg_1_0._dftEvent:SetTriggerEvent(function()
-		local var_2_0
-		local var_2_1 = arg_1_0._animator:GetCurrentAnimatorClipInfo(0)
+	slot0._dftEvent:SetTriggerEvent(function ()
+		slot0 = nil
 
-		if var_2_1 and var_2_1.Length > 0 then
-			var_2_0 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.AnimatorClipInfo"), "clip", var_2_1[0])
+		if uv0._animator:GetCurrentAnimatorClipInfo(0) and slot1.Length > 0 then
+			slot0 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.AnimatorClipInfo"), "clip", slot1[0])
 		end
 
-		if var_2_0 then
-			arg_1_0._event:emit(Fushun3GameEvent.add_anim_effect_call, {
-				clipName = var_2_0.name,
-				targetTf = arg_1_0._effectPos
+		if slot0 then
+			uv0._event:emit(Fushun3GameEvent.add_anim_effect_call, {
+				clipName = slot0.name,
+				targetTf = uv0._effectPos
 			})
 		end
 	end)
 
-	arg_1_0._charItemCatchTf = findTF(arg_1_0._effectPos, "charItem")
-	arg_1_0._charItemCatch = GetComponent(findTF(arg_1_0._charItemCatchTf, "catch"), typeof(Animator))
-	arg_1_0._charShieldTf = findTF(arg_1_0._effectPos, "shield")
-	arg_1_0._collisionInfo = arg_1_3
-	arg_1_0._event = arg_1_5
-	arg_1_0._animator = GetComponent(arg_1_0._anim, typeof(Animator))
-	arg_1_0._powerScript = arg_1_0._rectCollider:getScript(FuShunPowerSpeedScript)
-	arg_1_0._jumpScript = arg_1_0._rectCollider:getScript(FuShunJumpScript)
-	arg_1_0._damageScript = arg_1_0._rectCollider:getScript(FuShunDamageScript)
-	arg_1_0._attackScript = arg_1_0._rectCollider:getScript(FuShunAttakeScript)
-	arg_1_0._monsterLayer = LayerMask.NameToLayer("Character")
-	arg_1_0._damageTf = findTF(arg_1_0._charTf, "damage")
-	arg_1_0._damageCollider = GetComponent(arg_1_0._damageTf, typeof(BoxCollider2D))
-	arg_1_0._attackCd = nil
+	slot0._charItemCatchTf = findTF(slot0._effectPos, "charItem")
+	slot0._charItemCatch = GetComponent(findTF(slot0._charItemCatchTf, "catch"), typeof(Animator))
+	slot0._charShieldTf = findTF(slot0._effectPos, "shield")
+	slot0._collisionInfo = slot3
+	slot0._event = slot5
+	slot0._animator = GetComponent(slot0._anim, typeof(Animator))
+	slot0._powerScript = slot0._rectCollider:getScript(FuShunPowerSpeedScript)
+	slot0._jumpScript = slot0._rectCollider:getScript(FuShunJumpScript)
+	slot0._damageScript = slot0._rectCollider:getScript(FuShunDamageScript)
+	slot0._attackScript = slot0._rectCollider:getScript(FuShunAttakeScript)
+	slot0._monsterLayer = LayerMask.NameToLayer("Character")
+	slot0._damageTf = findTF(slot0._charTf, "damage")
+	slot0._damageCollider = GetComponent(slot0._damageTf, typeof(BoxCollider2D))
+	slot0._attackCd = nil
 
-	arg_1_0._event:bind(Fushun3GameEvent.script_jump_event, function()
-		if arg_1_0._attackCd == 0 and arg_1_0.damageCd == 0 and arg_1_0._animator then
-			arg_1_0._animator:SetTrigger("jump")
+	slot0._event:bind(Fushun3GameEvent.script_jump_event, function ()
+		if uv0._attackCd == 0 and uv0.damageCd == 0 and uv0._animator then
+			uv0._animator:SetTrigger("jump")
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_JUMP)
 		end
 	end)
-	arg_1_0._event:bind(Fushun3GameEvent.script_attack_event, function()
-		if arg_1_0._attackCd == 0 and arg_1_0.damageCd == 0 then
-			arg_1_0._animator:SetTrigger("attack")
+	slot0._event:bind(Fushun3GameEvent.script_attack_event, function ()
+		if uv0._attackCd == 0 and uv0.damageCd == 0 then
+			uv0._animator:SetTrigger("attack")
 
-			arg_1_0._attackCd = Fushun3GameConst.attack_cd
+			uv0._attackCd = Fushun3GameConst.attack_cd
 
-			if arg_1_0:getBuff(Fushun3GameConst.buff_weapon) then
-				local var_4_0 = math.random(1, 30) == 1 and "tamachan" or "rocket"
-
-				arg_1_0._event:emit(Fushun3GameEvent.create_item_call, {
-					name = var_4_0,
-					pos = arg_1_0._itemPos.position
+			if uv0:getBuff(Fushun3GameConst.buff_weapon) then
+				uv0._event:emit(Fushun3GameEvent.create_item_call, {
+					name = math.random(1, 30) == 1 and "tamachan" or "rocket",
+					pos = uv0._itemPos.position
 				})
-				arg_1_0._charItemCatch:SetTrigger("attack")
+				uv0._charItemCatch:SetTrigger("attack")
 			else
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_ATTACK)
 
-				arg_1_0._attackTime = Fushun3GameConst.attack_time
+				uv0._attackTime = Fushun3GameConst.attack_time
 			end
 		end
 	end)
-	arg_1_0._event:bind(Fushun3GameEvent.script_power_event, function(arg_5_0, arg_5_1, arg_5_2)
-		arg_1_0._animator:SetTrigger("ex")
-		arg_1_0._charItemCatch:SetTrigger("ex")
+	slot0._event:bind(Fushun3GameEvent.script_power_event, function (slot0, slot1, slot2)
+		uv0._animator:SetTrigger("ex")
+		uv0._charItemCatch:SetTrigger("ex")
 	end)
 
-	arg_1_0.damageCd = 0
-	arg_1_0.buffList = {}
+	slot0.damageCd = 0
+	slot0.buffList = {}
 
 	if Application.isEditor then
-		if not arg_1_0.handle then
-			arg_1_0.handle = UpdateBeat:CreateListener(function()
+		if not slot0.handle then
+			slot0.handle = UpdateBeat:CreateListener(function ()
 				if Input.GetKeyDown(KeyCode.Y) then
-					local var_6_0 = 1
-
-					if arg_1_0:getBuffById(Fushun3GameConst.buff_data[var_6_0].id) then
-						arg_1_0:removeBuff(Clone(Fushun3GameConst.buff_data[var_6_0]))
+					if uv0:getBuffById(Fushun3GameConst.buff_data[1].id) then
+						uv0:removeBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					else
-						arg_1_0:addBuff(Clone(Fushun3GameConst.buff_data[var_6_0]))
+						uv0:addBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					end
 				elseif Input.GetKeyDown(KeyCode.U) then
-					local var_6_1 = 2
-					local var_6_2 = Fushun3GameConst.buff_data[var_6_1]
-
-					if arg_1_0:getBuffById(var_6_2.id) then
-						arg_1_0:removeBuff(Clone(Fushun3GameConst.buff_data[var_6_1]))
+					if uv0:getBuffById(Fushun3GameConst.buff_data[2].id) then
+						uv0:removeBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					else
-						arg_1_0:addBuff(Clone(Fushun3GameConst.buff_data[var_6_1]))
+						uv0:addBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					end
 				elseif Input.GetKeyDown(KeyCode.I) then
-					local var_6_3 = 4
-
-					if arg_1_0:getBuffById(Fushun3GameConst.buff_data[var_6_3].id) then
-						arg_1_0:removeBuff(Clone(Fushun3GameConst.buff_data[var_6_3]))
+					if uv0:getBuffById(Fushun3GameConst.buff_data[4].id) then
+						uv0:removeBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					else
-						arg_1_0:addBuff(Clone(Fushun3GameConst.buff_data[var_6_3]))
+						uv0:addBuff(Clone(Fushun3GameConst.buff_data[slot0]))
 					end
 				elseif Input.GetKeyDown(KeyCode.O) then
-					local var_6_4 = 5
-
-					arg_1_0:addBuff(Clone(Fushun3GameConst.buff_data[var_6_4]))
+					uv0:addBuff(Clone(Fushun3GameConst.buff_data[5]))
 				end
-			end, arg_1_0)
+			end, slot0)
 		end
 
-		UpdateBeat:AddListener(arg_1_0.handle, arg_1_0)
+		UpdateBeat:AddListener(slot0.handle, slot0)
 	end
 end
 
-function var_0_0.start(arg_7_0)
-	arg_7_0._animator:SetBool("la", false)
-	arg_7_0._animator:SetBool("s", false)
-	arg_7_0._animator:SetBool("below", arg_7_0._collisionInfo.below)
+function slot0.start(slot0)
+	slot0._animator:SetBool("la", false)
+	slot0._animator:SetBool("s", false)
+	slot0._animator:SetBool("below", slot0._collisionInfo.below)
 
-	arg_7_0._attackCd = Fushun3GameConst.attack_cd
-	arg_7_0._charTf.anchoredPosition = Fushun3GameConst.char_init_pos
-	arg_7_0.buffList = {}
-	arg_7_0._attackTime = 0
-	arg_7_0.power = 0
-	arg_7_0._powerTime = 0
-	arg_7_0.powerFlag = false
-	arg_7_0.shieldNum = 0
+	slot0._attackCd = Fushun3GameConst.attack_cd
+	slot0._charTf.anchoredPosition = Fushun3GameConst.char_init_pos
+	slot0.buffList = {}
+	slot0._attackTime = 0
+	slot0.power = 0
+	slot0._powerTime = 0
+	slot0.powerFlag = false
+	slot0.shieldNum = 0
 
-	arg_7_0:updateBuffShow(Fushun3GameConst.buff_shield)
+	slot0:updateBuffShow(Fushun3GameConst.buff_shield)
 
-	arg_7_0.heart = Fushun3GameConst.heart_num
+	slot0.heart = Fushun3GameConst.heart_num
 
-	setActive(arg_7_0._charItemCatchTf, false)
+	setActive(slot0._charItemCatchTf, false)
 end
 
-function var_0_0.step(arg_8_0)
-	if arg_8_0._charTf.anchoredPosition.y >= 1200 or arg_8_0._charTf.anchoredPosition.y <= -200 then
-		if arg_8_0._powerTime > 0 then
-			arg_8_0._charTf.anchoredPosition = Vector2(arg_8_0._charTf.anchoredPosition.x + 100, 1000)
+function slot0.step(slot0)
+	if slot0._charTf.anchoredPosition.y >= 1200 or slot0._charTf.anchoredPosition.y <= -200 then
+		if slot0._powerTime > 0 then
+			slot0._charTf.anchoredPosition = Vector2(slot0._charTf.anchoredPosition.x + 100, 1000)
 		else
-			arg_8_0._event:emit(Fushun3GameEvent.game_over_call)
+			slot0._event:emit(Fushun3GameEvent.game_over_call)
 		end
 
 		return
 	end
 
-	arg_8_0._powerSlider.value = arg_8_0.power / Fushun3GameConst.power_max_num
+	slot0._powerSlider.value = slot0.power / Fushun3GameConst.power_max_num
 
-	arg_8_0._animator:SetBool("below", arg_8_0._collisionInfo.below)
+	slot0._animator:SetBool("below", slot0._collisionInfo.below)
 
-	local var_8_0 = arg_8_0._collisionInfo:getVelocity()
+	slot1 = slot0._collisionInfo:getVelocity()
 
-	arg_8_0._animator:SetFloat("moveAmountX", var_8_0.x)
-	arg_8_0._animator:SetFloat("moveAmountY", var_8_0.y)
+	slot0._animator:SetFloat("moveAmountX", slot1.x)
+	slot0._animator:SetFloat("moveAmountY", slot1.y)
 
-	if arg_8_0._attackCd > 0 then
-		arg_8_0._attackCd = arg_8_0._attackCd - Time.deltaTime
-		arg_8_0._attackCd = arg_8_0._attackCd < 0 and 0 or arg_8_0._attackCd
+	if slot0._attackCd > 0 then
+		slot0._attackCd = slot0._attackCd - Time.deltaTime
+		slot0._attackCd = slot0._attackCd < 0 and 0 or slot0._attackCd
 	end
 
-	if arg_8_0._powerTime > 0 then
-		arg_8_0._powerTime = arg_8_0._powerTime - Time.deltaTime
+	if slot0._powerTime > 0 then
+		slot0._powerTime = slot0._powerTime - Time.deltaTime
 
-		if arg_8_0._powerTime < 0 then
-			arg_8_0._powerTime = 0
+		if slot0._powerTime < 0 then
+			slot0._powerTime = 0
 		end
 	end
 
-	for iter_8_0 = #arg_8_0.buffList, 1, -1 do
-		local var_8_1 = arg_8_0.buffList[iter_8_0]
+	for slot5 = #slot0.buffList, 1, -1 do
+		if slot0.buffList[slot5].time then
+			slot6.time = slot6.time - Time.deltaTime
 
-		if var_8_1.time then
-			var_8_1.time = var_8_1.time - Time.deltaTime
-
-			if var_8_1.time <= 0 then
-				arg_8_0:removeBuff(var_8_1)
+			if slot6.time <= 0 then
+				slot0:removeBuff(slot6)
 			end
 		end
 	end
 
-	local var_8_2 = {}
-
-	for iter_8_1, iter_8_2 in pairs(arg_8_0._collisionInfo.horizontalLeftTfs) do
-		table.insert(var_8_2, iter_8_2)
+	for slot6, slot7 in pairs(slot0._collisionInfo.horizontalLeftTfs) do
+		table.insert({}, slot7)
 	end
 
-	for iter_8_3, iter_8_4 in pairs(arg_8_0._collisionInfo.horizontalRightTfs) do
-		table.insert(var_8_2, iter_8_4)
+	for slot6, slot7 in pairs(slot0._collisionInfo.horizontalRightTfs) do
+		table.insert(slot2, slot7)
 	end
 
-	local var_8_3 = {}
-
-	for iter_8_5, iter_8_6 in pairs(arg_8_0._collisionInfo.verticalBottomTfs) do
-		table.insert(var_8_3, iter_8_6)
+	for slot7, slot8 in pairs(slot0._collisionInfo.verticalBottomTfs) do
+		table.insert({}, slot8)
 	end
 
-	if #var_8_2 > 0 then
-		if arg_8_0:getBuff(Fushun3GameConst.buff_power_speed) then
-			for iter_8_7 = 1, #var_8_2 do
-				if go(var_8_2[iter_8_7]).layer == arg_8_0._monsterLayer then
-					arg_8_0._event:emit(Fushun3GameEvent.power_damage_monster_call, {
-						tf = var_8_2[iter_8_7]
+	if #slot2 > 0 then
+		if slot0:getBuff(Fushun3GameConst.buff_power_speed) then
+			for slot7 = 1, #slot2 do
+				if go(slot2[slot7]).layer == slot0._monsterLayer then
+					slot0._event:emit(Fushun3GameEvent.power_damage_monster_call, {
+						tf = slot2[slot7]
 					})
 				end
 			end
 		else
-			for iter_8_8 = 1, #var_8_2 do
-				if arg_8_0._powerTime == 0 and go(var_8_2[iter_8_8]).layer == arg_8_0._monsterLayer and arg_8_0.damageCd == 0 then
-					arg_8_0._event:emit(Fushun3GameEvent.check_player_damage, {
-						tf = var_8_2[iter_8_8],
-						callback = function(arg_9_0)
-							if not arg_9_0 then
-								arg_8_0:damageChar()
+			for slot7 = 1, #slot2 do
+				if slot0._powerTime == 0 and go(slot2[slot7]).layer == slot0._monsterLayer and slot0.damageCd == 0 then
+					slot0._event:emit(Fushun3GameEvent.check_player_damage, {
+						tf = slot2[slot7],
+						callback = function (slot0)
+							if not slot0 then
+								uv0:damageChar()
 							end
 						end
 					})
-				elseif findTF(var_8_2[iter_8_8], "high_roof") then
-					setActive(findTF(var_8_2[iter_8_8], "high_roof"), false)
-					arg_8_0._collisionInfo:changeVelocity(0, arg_8_0._collisionInfo.config.minJumpVelocity, nil)
+				elseif findTF(slot2[slot7], "high_roof") then
+					setActive(findTF(slot2[slot7], "high_roof"), false)
+					slot0._collisionInfo:changeVelocity(0, slot0._collisionInfo.config.minJumpVelocity, nil)
 
-					if arg_8_0._powerTime == 0 and arg_8_0.damageCd == 0 then
-						arg_8_0:damageChar()
+					if slot0._powerTime == 0 and slot0.damageCd == 0 then
+						slot0:damageChar()
 					end
 				end
 			end
 		end
-	elseif var_8_3 and #var_8_3 > 0 then
-		for iter_8_9 = 1, #var_8_3 do
-			if go(var_8_3[iter_8_9]).layer == arg_8_0._monsterLayer then
-				if arg_8_0:getBuff(Fushun3GameConst.buff_speed) then
-					arg_8_0._event:emit(Fushun3GameEvent.kick_damage_monster_call, {
-						tf = var_8_3[iter_8_9],
-						callback = function(arg_10_0)
-							if arg_10_0 then
-								arg_8_0._collisionInfo:changeVelocity(nil, arg_8_0._collisionInfo.config.minJumpVelocity, nil)
+	elseif slot3 and #slot3 > 0 then
+		for slot7 = 1, #slot3 do
+			if go(slot3[slot7]).layer == slot0._monsterLayer then
+				if slot0:getBuff(Fushun3GameConst.buff_speed) then
+					slot0._event:emit(Fushun3GameEvent.kick_damage_monster_call, {
+						tf = slot3[slot7],
+						callback = function (slot0)
+							if slot0 then
+								uv0._collisionInfo:changeVelocity(nil, uv0._collisionInfo.config.minJumpVelocity, nil)
 							end
 						end
 					})
 				else
-					arg_8_0._event:emit(Fushun3GameEvent.check_player_damage, {
-						tf = var_8_2[iter_8_9],
-						callback = function(arg_11_0)
-							if not arg_11_0 then
-								arg_8_0:damageChar()
+					slot0._event:emit(Fushun3GameEvent.check_player_damage, {
+						tf = slot2[slot7],
+						callback = function (slot0)
+							if not slot0 then
+								uv0:damageChar()
 							end
 						end
 					})
@@ -257,160 +239,159 @@ function var_0_0.step(arg_8_0)
 		end
 	end
 
-	arg_8_0:flushBuff()
+	slot0:flushBuff()
 
-	if arg_8_0.damageCd > 0 then
-		arg_8_0.damageCd = arg_8_0.damageCd - Time.deltaTime
-		arg_8_0.damageCd = arg_8_0.damageCd <= 0 and 0 or arg_8_0.damageCd
+	if slot0.damageCd > 0 then
+		slot0.damageCd = slot0.damageCd - Time.deltaTime
+		slot0.damageCd = slot0.damageCd <= 0 and 0 or slot0.damageCd
 	end
 
-	if arg_8_0._attackTime > 0 then
-		arg_8_0._event:emit(Fushun3GameEvent.player_attack_call, {
-			collider = arg_8_0._damageCollider,
-			callback = function(arg_12_0)
-				if arg_12_0 then
-					arg_8_0._event:emit(Fushun3GameEvent.add_effect_call, {
+	if slot0._attackTime > 0 then
+		slot0._event:emit(Fushun3GameEvent.player_attack_call, {
+			collider = slot0._damageCollider,
+			callback = function (slot0)
+				if slot0 then
+					uv0._event:emit(Fushun3GameEvent.add_effect_call, {
 						effectName = "EF_fr_Attack",
-						targetTf = arg_8_0._effectPos
+						targetTf = uv0._effectPos
 					})
 				end
 			end
 		})
 
-		arg_8_0._attackTime = arg_8_0._attackTime - Time.deltaTime
-		arg_8_0._attackTime = arg_8_0._attackTime <= 0 and 0 or arg_8_0._attackTime
+		slot0._attackTime = slot0._attackTime - Time.deltaTime
+		slot0._attackTime = slot0._attackTime <= 0 and 0 or slot0._attackTime
 	end
 
-	if arg_8_0.power == Fushun3GameConst.power_max_num and not arg_8_0.powerFlag and arg_8_0._charTf.anchoredPosition.y >= 200 then
-		arg_8_0.powerFlag = true
+	if slot0.power == Fushun3GameConst.power_max_num and not slot0.powerFlag and slot0._charTf.anchoredPosition.y >= 200 then
+		slot0.powerFlag = true
 
-		arg_8_0._event:emit(Fushun3GameEvent.power_speed_call)
+		slot0._event:emit(Fushun3GameEvent.power_speed_call)
 
-		if not arg_8_0.powerBuff then
-			for iter_8_10 = 1, #Fushun3GameConst.buff_data do
-				if Fushun3GameConst.buff_data[iter_8_10].buff == Fushun3GameConst.buff_power_speed then
-					arg_8_0.powerBuff = Clone(Fushun3GameConst.buff_data[iter_8_10])
+		if not slot0.powerBuff then
+			for slot7 = 1, #Fushun3GameConst.buff_data do
+				if Fushun3GameConst.buff_data[slot7].buff == Fushun3GameConst.buff_power_speed then
+					slot0.powerBuff = Clone(Fushun3GameConst.buff_data[slot7])
 				end
 			end
 		end
 
-		arg_8_0:addBuff(Clone(arg_8_0.powerBuff))
+		slot0:addBuff(Clone(slot0.powerBuff))
 	end
 
-	if arg_8_0.powerFlag then
-		arg_8_0.power = arg_8_0.power - Fushun3GameConst.power_sub_time * Time.deltaTime
+	if slot0.powerFlag then
+		slot0.power = slot0.power - Fushun3GameConst.power_sub_time * Time.deltaTime
 
-		if arg_8_0.power <= 0 then
-			arg_8_0.power = 0
-			arg_8_0.powerFlag = false
+		if slot0.power <= 0 then
+			slot0.power = 0
+			slot0.powerFlag = false
 
-			arg_8_0:removeBuff(Clone(arg_8_0.powerBuff))
+			slot0:removeBuff(Clone(slot0.powerBuff))
 		end
-	elseif arg_8_0.power >= Fushun3GameConst.power_max_num then
-		arg_8_0.power = Fushun3GameConst.power_max_num
+	elseif Fushun3GameConst.power_max_num <= slot0.power then
+		slot0.power = Fushun3GameConst.power_max_num
 	end
 end
 
-function var_0_0.jump(arg_13_0)
-	if arg_13_0._jumpScript:checkScirptApply() then
-		arg_13_0._jumpScript:active(true)
+function slot0.jump(slot0)
+	if slot0._jumpScript:checkScirptApply() then
+		slot0._jumpScript:active(true)
 	end
 end
 
-function var_0_0.attack(arg_14_0)
-	if arg_14_0._attackScript:checkScirptApply() then
-		arg_14_0._attackScript:active(true)
+function slot0.attack(slot0)
+	if slot0._attackScript:checkScirptApply() then
+		slot0._attackScript:active(true)
 	end
 end
 
-function var_0_0.damageChar(arg_15_0)
-	if arg_15_0._damageScript:checkScirptApply() then
-		arg_15_0._damageScript:active(true)
+function slot0.damageChar(slot0)
+	if slot0._damageScript:checkScirptApply() then
+		slot0._damageScript:active(true)
 
-		if arg_15_0.damageCd == 0 then
-			if arg_15_0.shieldNum > 0 then
-				arg_15_0.shieldNum = arg_15_0.shieldNum - 1
+		if slot0.damageCd == 0 then
+			if slot0.shieldNum > 0 then
+				slot0.shieldNum = slot0.shieldNum - 1
 
-				arg_15_0._animator:SetTrigger("damage")
-				arg_15_0:updateBuffShow(Fushun3GameConst.buff_shield)
-				arg_15_0._event:emit(Fushun3GameEvent.add_effect_call, {
+				slot0._animator:SetTrigger("damage")
+				slot0:updateBuffShow(Fushun3GameConst.buff_shield)
+				slot0._event:emit(Fushun3GameEvent.add_effect_call, {
 					effectName = "EF_Barrier_Break",
-					targetTf = arg_15_0._effectPos
+					targetTf = slot0._effectPos
 				})
 			else
-				arg_15_0.heart = arg_15_0.heart - 1
+				slot0.heart = slot0.heart - 1
 
-				if arg_15_0.heart <= 0 then
-					arg_15_0.heart = 0
+				if slot0.heart <= 0 then
+					slot0.heart = 0
 				end
 
-				if arg_15_0.heart == 0 then
-					arg_15_0._animator:SetTrigger("down")
-				elseif #arg_15_0.buffList > 0 then
-					arg_15_0:removeBuff(arg_15_0.buffList[math.random(1, #arg_15_0.buffList)], true)
-					arg_15_0._animator:SetTrigger("respawn")
+				if slot0.heart == 0 then
+					slot0._animator:SetTrigger("down")
+				elseif #slot0.buffList > 0 then
+					slot0:removeBuff(slot0.buffList[math.random(1, #slot0.buffList)], true)
+					slot0._animator:SetTrigger("respawn")
 				else
-					arg_15_0._animator:SetTrigger("damage")
+					slot0._animator:SetTrigger("damage")
 				end
 			end
 
-			arg_15_0.damageCd = Fushun3GameConst.damage_cd
+			slot0.damageCd = Fushun3GameConst.damage_cd
 
-			if arg_15_0._attackTime > 0 then
-				arg_15_0._attackTime = 0
+			if slot0._attackTime > 0 then
+				slot0._attackTime = 0
 			end
 
-			arg_15_0._event:emit(Fushun3GameEvent.char_damaged_call)
+			slot0._event:emit(Fushun3GameEvent.char_damaged_call)
 		end
 	end
 end
 
-function var_0_0.addPower(arg_16_0, arg_16_1)
-	if not arg_16_0.powerFlag then
-		arg_16_0.power = arg_16_0.power + arg_16_1
+function slot0.addPower(slot0, slot1)
+	if not slot0.powerFlag then
+		slot0.power = slot0.power + slot1
 	end
 end
 
-function var_0_0.getBuff(arg_17_0, arg_17_1)
-	for iter_17_0 = 1, #arg_17_0.buffList do
-		if arg_17_0.buffList[iter_17_0].buff == arg_17_1 then
-			return arg_17_0.buffList[iter_17_0]
-		end
-	end
-
-	return nil
-end
-
-function var_0_0.getBuffById(arg_18_0, arg_18_1)
-	for iter_18_0 = 1, #arg_18_0.buffList do
-		if arg_18_0.buffList[iter_18_0].id == arg_18_1 then
-			return arg_18_0.buffList[iter_18_0]
+function slot0.getBuff(slot0, slot1)
+	for slot5 = 1, #slot0.buffList do
+		if slot0.buffList[slot5].buff == slot1 then
+			return slot0.buffList[slot5]
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.setBuff(arg_19_0, arg_19_1)
-	local var_19_0 = arg_19_1.buff_id
-	local var_19_1
-
-	for iter_19_0 = 1, #Fushun3GameConst.buff_data do
-		if Fushun3GameConst.buff_data[iter_19_0].id == var_19_0 then
-			var_19_1 = Fushun3GameConst.buff_data[iter_19_0]
+function slot0.getBuffById(slot0, slot1)
+	for slot5 = 1, #slot0.buffList do
+		if slot0.buffList[slot5].id == slot1 then
+			return slot0.buffList[slot5]
 		end
 	end
 
-	if var_19_1 then
-		arg_19_0:addBuff(Clone(var_19_1))
+	return nil
+end
+
+function slot0.setBuff(slot0, slot1)
+	slot3 = nil
+
+	for slot7 = 1, #Fushun3GameConst.buff_data do
+		if Fushun3GameConst.buff_data[slot7].id == slot1.buff_id then
+			slot3 = Fushun3GameConst.buff_data[slot7]
+		end
+	end
+
+	if slot3 then
+		slot0:addBuff(Clone(slot3))
 	end
 end
 
-function var_0_0.addBuff(arg_20_0, arg_20_1)
-	for iter_20_0 = 1, #arg_20_0.buffList do
-		if arg_20_0.buffList[iter_20_0].id == arg_20_1.id then
-			if arg_20_1.buff == Fushun3GameConst.buff_shield then
-				if arg_20_0.shieldNum == var_0_1 then
+function slot0.addBuff(slot0, slot1)
+	for slot5 = 1, #slot0.buffList do
+		if slot0.buffList[slot5].id == slot1.id then
+			if slot1.buff == Fushun3GameConst.buff_shield then
+				if slot0.shieldNum == uv0 then
 					return
 				end
 			else
@@ -419,131 +400,121 @@ function var_0_0.addBuff(arg_20_0, arg_20_1)
 		end
 	end
 
-	local var_20_0 = arg_20_0:getItemTriggerFlag()
+	if slot1.buff == Fushun3GameConst.buff_speed then
+		slot0._animator:SetBool("s", true)
 
-	if arg_20_1.buff == Fushun3GameConst.buff_speed then
-		arg_20_0._animator:SetBool("s", true)
+		slot0._collisionInfo.config.moveSpeed = Fushun3GameConst.move_speed_shoose
 
-		arg_20_0._collisionInfo.config.moveSpeed = Fushun3GameConst.move_speed_shoose
-
-		if not var_20_0 then
-			arg_20_0._animator:SetTrigger("item")
+		if not slot0:getItemTriggerFlag() then
+			slot0._animator:SetTrigger("item")
 		end
-	elseif arg_20_1.buff == Fushun3GameConst.buff_power_speed then
-		if arg_20_0._powerScript:checkScirptApply() then
-			arg_20_0._powerScript:active(true)
-			arg_20_0._animator:SetTrigger("ex_on")
-			arg_20_0._charItemCatch:SetTrigger("ex_on")
+	elseif slot1.buff == Fushun3GameConst.buff_power_speed then
+		if slot0._powerScript:checkScirptApply() then
+			slot0._powerScript:active(true)
+			slot0._animator:SetTrigger("ex_on")
+			slot0._charItemCatch:SetTrigger("ex_on")
 		end
-	elseif arg_20_1.buff == Fushun3GameConst.buff_weapon then
-		arg_20_0._animator:SetBool("la", true)
+	elseif slot1.buff == Fushun3GameConst.buff_weapon then
+		slot0._animator:SetBool("la", true)
 
-		if not var_20_0 then
-			arg_20_0._animator:SetTrigger("item")
+		if not slot2 then
+			slot0._animator:SetTrigger("item")
 		end
-	elseif arg_20_1.buff == Fushun3GameConst.buff_catch then
-		setActive(arg_20_0._charItemCatchTf, true)
-		arg_20_0._charItemCatch:SetTrigger("ride")
-	elseif arg_20_1.buff == Fushun3GameConst.buff_shield then
-		arg_20_0.shieldNum = arg_20_0.shieldNum + 1
+	elseif slot1.buff == Fushun3GameConst.buff_catch then
+		setActive(slot0._charItemCatchTf, true)
+		slot0._charItemCatch:SetTrigger("ride")
+	elseif slot1.buff == Fushun3GameConst.buff_shield then
+		slot0.shieldNum = slot0.shieldNum + 1
 
-		if arg_20_0.shieldNum > var_0_1 then
-			arg_20_0.shieldNum = var_0_1
+		if uv0 < slot0.shieldNum then
+			slot0.shieldNum = uv0
 		end
 
-		arg_20_0:updateBuffShow(Fushun3GameConst.buff_shield)
-		arg_20_0._event:emit(Fushun3GameEvent.add_effect_call, {
+		slot0:updateBuffShow(Fushun3GameConst.buff_shield)
+		slot0._event:emit(Fushun3GameEvent.add_effect_call, {
 			effectName = "EF_Barrier_Get",
-			targetTf = arg_20_0._effectPos
+			targetTf = slot0._effectPos
 		})
 	end
 
-	table.insert(arg_20_0.buffList, arg_20_1)
+	table.insert(slot0.buffList, slot1)
 end
 
-function var_0_0.updateBuffShow(arg_21_0, arg_21_1)
-	if arg_21_1 == Fushun3GameConst.buff_shield then
-		for iter_21_0 = 1, var_0_1 do
-			local var_21_0 = iter_21_0
-			local var_21_1 = findTF(arg_21_0._charShieldTf, tostring(var_21_0))
+function slot0.updateBuffShow(slot0, slot1)
+	if slot1 == Fushun3GameConst.buff_shield then
+		for slot5 = 1, uv0 do
+			slot6 = slot5
 
-			setActive(var_21_1, var_21_0 <= arg_21_0.shieldNum)
-			setActive(findTF(arg_21_0._effectFrPos, "Barrier/" .. tostring(var_21_0)), arg_21_0.shieldNum == var_21_0)
-			setActive(findTF(arg_21_0._effectBkPos, "Barrier/" .. tostring(var_21_0)), arg_21_0.shieldNum == var_21_0)
+			setActive(findTF(slot0._charShieldTf, tostring(slot6)), slot6 <= slot0.shieldNum)
+			setActive(findTF(slot0._effectFrPos, "Barrier/" .. tostring(slot6)), slot0.shieldNum == slot6)
+			setActive(findTF(slot0._effectBkPos, "Barrier/" .. tostring(slot6)), slot0.shieldNum == slot6)
 		end
 
-		setActive(arg_21_0._charShieldTf, false)
-		setActive(arg_21_0._charShieldTf, true)
+		setActive(slot0._charShieldTf, false)
+		setActive(slot0._charShieldTf, true)
 	end
 end
 
-function var_0_0.removeBuff(arg_22_0, arg_22_1, arg_22_2)
-	for iter_22_0 = 1, #arg_22_0.buffList do
-		local var_22_0 = arg_22_0.buffList[iter_22_0]
+function slot0.removeBuff(slot0, slot1, slot2)
+	for slot6 = 1, #slot0.buffList do
+		if slot0.buffList[slot6].buff == slot1.buff then
+			if slot7.buff == Fushun3GameConst.buff_speed then
+				slot0._animator:SetBool("s", false)
 
-		if var_22_0.buff == arg_22_1.buff then
-			local var_22_1 = arg_22_0:getItemTriggerFlag()
+				slot0._collisionInfo.config.moveSpeed = Fushun3GameConst.move_speed
 
-			if var_22_0.buff == Fushun3GameConst.buff_speed then
-				arg_22_0._animator:SetBool("s", false)
-
-				arg_22_0._collisionInfo.config.moveSpeed = Fushun3GameConst.move_speed
-
-				if not var_22_1 and not arg_22_2 then
-					arg_22_0._animator:SetTrigger("item")
+				if not slot0:getItemTriggerFlag() and not slot2 then
+					slot0._animator:SetTrigger("item")
 				end
-			elseif var_22_0.buff == Fushun3GameConst.buff_power_speed then
-				arg_22_0._powerScript:active(false)
-				arg_22_0._animator:SetTrigger("ex_off")
-				arg_22_0._charItemCatch:SetTrigger("ex_off")
+			elseif slot7.buff == Fushun3GameConst.buff_power_speed then
+				slot0._powerScript:active(false)
+				slot0._animator:SetTrigger("ex_off")
+				slot0._charItemCatch:SetTrigger("ex_off")
 
-				arg_22_0._powerTime = Fushun3GameConst.power_time
-			elseif var_22_0.buff == Fushun3GameConst.buff_weapon then
-				arg_22_0._animator:SetBool("la", false)
+				slot0._powerTime = Fushun3GameConst.power_time
+			elseif slot7.buff == Fushun3GameConst.buff_weapon then
+				slot0._animator:SetBool("la", false)
 
-				if not var_22_1 and not arg_22_2 then
-					arg_22_0._animator:SetTrigger("item")
+				if not slot8 and not slot2 then
+					slot0._animator:SetTrigger("item")
 				end
-			elseif var_22_0.buff == Fushun3GameConst.buff_catch then
-				setActive(arg_22_0._charItemCatchTf, false)
+			elseif slot7.buff == Fushun3GameConst.buff_catch then
+				setActive(slot0._charItemCatchTf, false)
 			end
 
-			table.remove(arg_22_0.buffList, iter_22_0)
+			table.remove(slot0.buffList, slot6)
 
 			return
 		end
 	end
 end
 
-function var_0_0.flushBuff(arg_23_0)
-	for iter_23_0 = 1, #arg_23_0.buffList do
-		local var_23_0 = arg_23_0.buffList[iter_23_0]
+function slot0.flushBuff(slot0)
+	for slot4 = 1, #slot0.buffList do
+		if slot0.buffList[slot4].buff == Fushun3GameConst.buff_speed then
+			-- Nothing
+		elseif slot5.buff == Fushun3GameConst.buff_power_speed then
+			-- Nothing
+		elseif slot5.buff == Fushun3GameConst.buff_weapon then
+			-- Nothing
+		elseif slot5.buff == Fushun3GameConst.buff_catch then
+			slot6 = slot0._charTf.anchoredPosition
+			slot6.y = slot6.y + slot0._itemPos.anchoredPosition.y
 
-		if var_23_0.buff == Fushun3GameConst.buff_speed then
-			-- block empty
-		elseif var_23_0.buff == Fushun3GameConst.buff_power_speed then
-			-- block empty
-		elseif var_23_0.buff == Fushun3GameConst.buff_weapon then
-			-- block empty
-		elseif var_23_0.buff == Fushun3GameConst.buff_catch then
-			local var_23_1 = arg_23_0._charTf.anchoredPosition
-
-			var_23_1.y = var_23_1.y + arg_23_0._itemPos.anchoredPosition.y
-
-			arg_23_0._event:emit(Fushun3GameEvent.item_follow_call, {
-				anchoredPos = var_23_1
+			slot0._event:emit(Fushun3GameEvent.item_follow_call, {
+				anchoredPos = slot6
 			})
 		end
 	end
 end
 
-function var_0_0.getHeart(arg_24_0)
-	return arg_24_0.heart
+function slot0.getHeart(slot0)
+	return slot0.heart
 end
 
-function var_0_0.getItemTriggerFlag(arg_25_0)
-	for iter_25_0 = 1, #arg_25_0.buffList do
-		if arg_25_0.buffList[iter_25_0].lock_item then
+function slot0.getItemTriggerFlag(slot0)
+	for slot4 = 1, #slot0.buffList do
+		if slot0.buffList[slot4].lock_item then
 			return true
 		end
 	end
@@ -551,12 +522,12 @@ function var_0_0.getItemTriggerFlag(arg_25_0)
 	return false
 end
 
-function var_0_0.dispose(arg_26_0)
+function slot0.dispose(slot0)
 	if Application.isEditor then
-		UpdateBeat:RemoveListener(arg_26_0.handle)
+		UpdateBeat:RemoveListener(slot0.handle)
 
-		arg_26_0.handle = nil
+		slot0.handle = nil
 	end
 end
 
-return var_0_0
+return slot0

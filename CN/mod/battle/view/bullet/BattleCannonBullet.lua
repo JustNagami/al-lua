@@ -1,11 +1,9 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleResourceManager
+slot0.Battle.BattleCannonBullet = class("BattleCannonBullet", slot0.Battle.BattleBullet)
+slot0.Battle.BattleCannonBullet.__name = "BattleCannonBullet"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleResourceManager
-
-var_0_0.Battle.BattleCannonBullet = class("BattleCannonBullet", var_0_0.Battle.BattleBullet)
-var_0_0.Battle.BattleCannonBullet.__name = "BattleCannonBullet"
-
-function var_0_0.Battle.BattleCannonBullet.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.Battle.BattleCannonBullet.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Battle.BattleCannonBullet.Ctor(slot0, slot1, slot2)
+	uv0.Battle.BattleCannonBullet.super.Ctor(slot0, slot1, slot2)
 end

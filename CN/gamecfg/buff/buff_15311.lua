@@ -1,27 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 1,
-				target = "TargetSelf",
-				skill_id = 15311
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 15312,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		time = 1
 	},
@@ -60,5 +37,28 @@
 	stack = 1,
 	id = 15311,
 	icon = 15310,
-	last_effect = "Health"
+	last_effect = "Health",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 1,
+				target = "TargetSelf",
+				skill_id = 15311
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 15312,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

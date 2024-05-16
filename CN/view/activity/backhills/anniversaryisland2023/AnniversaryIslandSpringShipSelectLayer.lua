@@ -1,7 +1,7 @@
-﻿local var_0_0 = class("AnniversaryIslandSpringShipSelectLayer", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectLayer"))
+slot0 = class("AnniversaryIslandSpringShipSelectLayer", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectLayer"))
 
-function var_0_0.SetActivity(arg_1_0, arg_1_1)
-	arg_1_0.activity = arg_1_1
+function slot0.SetActivity(slot0, slot1)
+	slot0.activity = slot1
 end
 
-return var_0_0
+return slot0

@@ -1,25 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSubmarineRaid"
-			},
-			arg_list = {
-				skill_id = 17420
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSubLeader"
-			},
-			arg_list = {
-				skill_id = 17421,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -40,5 +19,26 @@
 	stack = 1,
 	id = 17420,
 	icon = 17420,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSubmarineRaid"
+			},
+			arg_list = {
+				skill_id = 17420
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSubLeader"
+			},
+			arg_list = {
+				skill_id = 17421,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

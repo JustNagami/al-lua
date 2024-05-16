@@ -1,92 +1,83 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = class("BattleCldComponent")
+slot0.Battle.BattleCldComponent = slot2
+slot2.__name = "BattleCldComponent"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = class("BattleCldComponent")
-
-var_0_0.Battle.BattleCldComponent = var_0_2
-var_0_2.__name = "BattleCldComponent"
-
-function var_0_2.Ctor(arg_1_0)
-	return
+function slot2.Ctor(slot0)
 end
 
-function var_0_2.SetActive(arg_2_0, arg_2_1)
-	arg_2_0._cldData.Active = arg_2_1
+function slot2.SetActive(slot0, slot1)
+	slot0._cldData.Active = slot1
 end
 
-function var_0_2.SetCldData(arg_3_0, arg_3_1)
-	arg_3_0._cldData = arg_3_1
-	arg_3_0._cldData.distList = {}
-	arg_3_0._cldData.Active = false
-	arg_3_0._cldData.FriendlyCld = false
-	arg_3_0._cldData.Surface = var_0_1.OXY_STATE.FLOAT
-	arg_3_0._box.data = arg_3_1
+function slot2.SetCldData(slot0, slot1)
+	slot0._cldData = slot1
+	slot0._cldData.distList = {}
+	slot0._cldData.Active = false
+	slot0._cldData.FriendlyCld = false
+	slot0._cldData.Surface = uv0.OXY_STATE.FLOAT
+	slot0._box.data = slot1
 end
 
-function var_0_2.ActiveFriendlyCld(arg_4_0)
-	arg_4_0._cldData.FriendlyCld = true
+function slot2.ActiveFriendlyCld(slot0)
+	slot0._cldData.FriendlyCld = true
 end
 
-function var_0_2.GetCldData(arg_5_0)
-	return arg_5_0._cldData
+function slot2.GetCldData(slot0)
+	return slot0._cldData
 end
 
-function var_0_2.GetCldBox(arg_6_0, arg_6_1)
+function slot2.GetCldBox(slot0, slot1)
 	assert(false, "BattleCldComponent.GetCldBox:重写这个方法啦！")
 end
 
-function var_0_2.GetCldBoxSize(arg_7_0)
+function slot2.GetCldBoxSize(slot0)
 	assert(false, "BattleCldComponent.GetCldBoxSize:重写这个方法啦！")
 
 	return nil
 end
 
-function var_0_2.FixSpeed(arg_8_0, arg_8_1)
-	if not arg_8_0._cldData.FriendlyCld then
+function slot2.FixSpeed(slot0, slot1)
+	if not slot0._cldData.FriendlyCld then
 		return
 	end
 
-	if #arg_8_0._cldData.distList == 0 then
+	if #slot0._cldData.distList == 0 then
 		return
 	end
 
-	if arg_8_1.x == 0 and arg_8_1.z == 0 then
-		arg_8_0:HandleStaticCld(arg_8_1)
+	if slot1.x == 0 and slot1.z == 0 then
+		slot0:HandleStaticCld(slot1)
 	else
-		arg_8_0:HandleDynamicCld(arg_8_1)
+		slot0:HandleDynamicCld(slot1)
 	end
 end
 
-function var_0_2.HandleDynamicCld(arg_9_0, arg_9_1)
-	local var_9_0 = false
-	local var_9_1 = false
+function slot2.HandleDynamicCld(slot0, slot1)
+	slot3 = false
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0._cldData.distList) do
-		local var_9_2 = iter_9_1.x
-
-		if not var_9_0 and var_9_2 * math.abs(arg_9_1.x) / arg_9_1.x < 0 then
-			arg_9_1.x = 0
-			var_9_0 = true
+	for slot7, slot8 in ipairs(slot0._cldData.distList) do
+		if not false and slot8.x * math.abs(slot1.x) / slot1.x < 0 then
+			slot1.x = 0
+			slot2 = true
 		end
 
-		local var_9_3 = iter_9_1.z
-
-		if not var_9_1 and var_9_3 * math.abs(arg_9_1.z) / arg_9_1.z < 0 then
-			arg_9_1.z = 0
-			var_9_1 = true
+		if not slot3 and slot8.z * math.abs(slot1.z) / slot1.z < 0 then
+			slot1.z = 0
+			slot3 = true
 		end
 
-		if var_9_0 and var_9_1 then
+		if slot2 and slot3 then
 			return
 		end
 	end
 end
 
-function var_0_2.HandleStaticCld(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0._cldData.distList[1]
-	local var_10_1 = Vector3(var_10_0.x, 0, var_10_0.z).normalized
-
-	arg_10_1.x = var_0_0.Battle.BattleFormulas.ConvertShipSpeed(var_10_1.x)
-	arg_10_1.z = var_0_0.Battle.BattleFormulas.ConvertShipSpeed(var_10_1.z)
+function slot2.HandleStaticCld(slot0, slot1)
+	slot2 = slot0._cldData.distList[1]
+	slot3 = Vector3(slot2.x, 0, slot2.z).normalized
+	slot1.x = uv0.Battle.BattleFormulas.ConvertShipSpeed(slot3.x)
+	slot1.z = uv0.Battle.BattleFormulas.ConvertShipSpeed(slot3.z)
 end

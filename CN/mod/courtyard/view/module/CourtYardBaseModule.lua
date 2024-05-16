@@ -1,104 +1,97 @@
-﻿local var_0_0 = class("CourtYardBaseModule")
-local var_0_1 = 0
-local var_0_2 = 1
-local var_0_3 = 2
+slot0 = class("CourtYardBaseModule")
+slot1 = 0
+slot2 = 1
+slot3 = 2
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.state = var_0_1
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.state = uv0
 
-	pg.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._go = arg_1_2
-	arg_1_0._tf = arg_1_2.transform
-	arg_1_0.data = arg_1_1
-	arg_1_0.callbacks = {}
+	slot0._go = slot2
+	slot0._tf = slot2.transform
+	slot0.data = slot1
+	slot0.callbacks = {}
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	if arg_2_0.state == var_0_1 then
-		arg_2_0.state = var_0_2
+function slot0.Init(slot0)
+	if slot0.state == uv0 then
+		slot0.state = uv1
 
-		arg_2_0:OnInit()
-		arg_2_0:AddListeners()
+		slot0:OnInit()
+		slot0:AddListeners()
 	end
 end
 
-function var_0_0.IsInit(arg_3_0)
-	return arg_3_0.state == var_0_2
+function slot0.IsInit(slot0)
+	return slot0.state == uv0
 end
 
-function var_0_0.AddListener(arg_4_0, arg_4_1, arg_4_2)
-	local function var_4_0(arg_5_0, arg_5_1, ...)
-		arg_4_2(arg_4_0, ...)
+function slot0.AddListener(slot0, slot1, slot2)
+	function slot3(slot0, slot1, ...)
+		uv0(uv1, ...)
 	end
 
-	arg_4_0.callbacks[arg_4_2] = var_4_0
+	slot0.callbacks[slot2] = slot3
 
-	arg_4_0.data:AddListener(arg_4_1, var_4_0)
+	slot0.data:AddListener(slot1, slot3)
 end
 
-function var_0_0.RemoveListener(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0.callbacks[arg_6_2]
+function slot0.RemoveListener(slot0, slot1, slot2)
+	if slot0.callbacks[slot2] then
+		slot0.data:RemoveListener(slot1, slot3)
 
-	if var_6_0 then
-		arg_6_0.data:RemoveListener(arg_6_1, var_6_0)
-
-		arg_6_0.callbacks[var_6_0] = nil
+		slot0.callbacks[slot3] = nil
 	end
 end
 
-function var_0_0.GetController(arg_7_0)
-	return arg_7_0.data:GetHost()
+function slot0.GetController(slot0)
+	return slot0.data:GetHost()
 end
 
-function var_0_0.GetView(arg_8_0)
-	return arg_8_0:GetController():GetBridge():GetView()
+function slot0.GetView(slot0)
+	return slot0:GetController():GetBridge():GetView()
 end
 
-function var_0_0.Emit(arg_9_0, arg_9_1, ...)
-	arg_9_0:GetController():Receive(arg_9_1, ...)
+function slot0.Emit(slot0, slot1, ...)
+	slot0:GetController():Receive(slot1, ...)
 end
 
-function var_0_0.Dispose(arg_10_0)
-	pg.DelegateInfo.Dispose(arg_10_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 
-	if arg_10_0.state == var_0_2 then
-		arg_10_0:RemoveListeners()
-		arg_10_0:OnDispose()
+	if slot0.state == uv0 then
+		slot0:RemoveListeners()
+		slot0:OnDispose()
 	end
 
-	arg_10_0.state = var_0_3
+	slot0.state = uv1
 
-	arg_10_0:OnDestroy()
+	slot0:OnDestroy()
 
-	arg_10_0._go = nil
-	arg_10_0.callbacks = nil
+	slot0._go = nil
+	slot0.callbacks = nil
 end
 
-function var_0_0.IsExit(arg_11_0)
-	return arg_11_0.state == var_0_3 or IsNil(arg_11_0._go) or IsNil(arg_11_0._tf)
+function slot0.IsExit(slot0)
+	return slot0.state == uv0 or IsNil(slot0._go) or IsNil(slot0._tf)
 end
 
-function var_0_0.OnInit(arg_12_0)
-	return
+function slot0.OnInit(slot0)
 end
 
-function var_0_0.AddListeners(arg_13_0)
-	return
+function slot0.AddListeners(slot0)
 end
 
-function var_0_0.RemoveListeners(arg_14_0)
-	return
+function slot0.RemoveListeners(slot0)
 end
 
-function var_0_0.OnDispose(arg_15_0)
-	return
+function slot0.OnDispose(slot0)
 end
 
-function var_0_0.OnDestroy(arg_16_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

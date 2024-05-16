@@ -1,72 +1,66 @@
-﻿local var_0_0 = class("ChapterAIAction")
+slot0 = class("ChapterAIAction")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.line = {
-		row = arg_1_1.ai_pos.row,
-		column = arg_1_1.ai_pos.column
+function slot0.Ctor(slot0, slot1)
+	slot0.line = {
+		row = slot1.ai_pos.row,
+		column = slot1.ai_pos.column
 	}
-	arg_1_0.stgId = arg_1_1.strategy_id
+	slot0.stgId = slot1.strategy_id
 
-	if arg_1_1.target_pos then
-		arg_1_0.stgTarget = {
-			row = arg_1_1.target_pos.row,
-			column = arg_1_1.target_pos.column
+	if slot1.target_pos then
+		slot0.stgTarget = {
+			row = slot1.target_pos.row,
+			column = slot1.target_pos.column
 		}
 	end
 
-	arg_1_0.movePath = _.map(arg_1_1.move_path, function(arg_2_0)
+	slot0.movePath = _.map(slot1.move_path, function (slot0)
 		return {
-			row = arg_2_0.row,
-			column = arg_2_0.column
+			row = slot0.row,
+			column = slot0.column
 		}
 	end)
-	arg_1_0.shipUpdate = _.map(arg_1_1.ship_update, function(arg_3_0)
+	slot0.shipUpdate = _.map(slot1.ship_update, function (slot0)
 		return {
-			id = arg_3_0.id,
-			hpRant = arg_3_0.hp_rant
+			id = slot0.id,
+			hpRant = slot0.hp_rant
 		}
 	end)
-	arg_1_0.cellUpdates = {}
+	slot0.cellUpdates = {}
 
-	_.each(arg_1_1.map_update, function(arg_4_0)
-		if arg_4_0.item_type ~= ChapterConst.AttachNone and arg_4_0.item_type ~= ChapterConst.AttachBorn and arg_4_0.item_type ~= ChapterConst.AttachBorn_Sub and (arg_4_0.item_type ~= ChapterConst.AttachStory or arg_4_0.item_data ~= ChapterConst.StoryTrigger) then
-			local var_4_0 = arg_4_0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(arg_4_0) or ChapterCell.New(arg_4_0)
-
-			table.insert(arg_1_0.cellUpdates, var_4_0)
+	_.each(slot1.map_update, function (slot0)
+		if slot0.item_type ~= ChapterConst.AttachNone and slot0.item_type ~= ChapterConst.AttachBorn and slot0.item_type ~= ChapterConst.AttachBorn_Sub and (slot0.item_type ~= ChapterConst.AttachStory or slot0.item_data ~= ChapterConst.StoryTrigger) then
+			table.insert(uv0.cellUpdates, slot0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(slot0) or ChapterCell.New(slot0))
 		end
 	end)
 
-	arg_1_0.actType = arg_1_1.act_type
-	arg_1_0.hp_del = arg_1_1.hp_del
+	slot0.actType = slot1.act_type
+	slot0.hp_del = slot1.hp_del
 end
 
-function var_0_0.PlayAIAction(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	local var_5_0 = arg_5_1:getChapterCell(arg_5_0.line.row, arg_5_0.line.column)
-
-	if var_5_0 and var_5_0.attachment == ChapterConst.AttachLandbase and not table.equal(arg_5_0.stgTarget, {
+function slot0.PlayAIAction(slot0, slot1, slot2, slot3)
+	if slot1:getChapterCell(slot0.line.row, slot0.line.column) and slot4.attachment == ChapterConst.AttachLandbase and not table.equal(slot0.stgTarget, {
 		row = 9999,
 		columns = 9999
 	}) then
-		local var_5_1 = pg.land_based_template[var_5_0.attachmentId]
-
-		if var_5_1.type == ChapterConst.LBCoastalGun then
-			arg_5_2.viewComponent:doPlayAnim("coastalgun", function(arg_6_0)
-				setActive(arg_6_0, false)
-				arg_5_3()
+		if pg.land_based_template[slot4.attachmentId].type == ChapterConst.LBCoastalGun then
+			slot2.viewComponent:doPlayAnim("coastalgun", function (slot0)
+				setActive(slot0, false)
+				uv0()
 			end)
-		elseif var_5_1.type == ChapterConst.LBHarbor then
-			if not arg_5_0.hp_del or arg_5_0.hp_del <= 0 then
-				arg_5_3()
+		elseif slot5.type == ChapterConst.LBHarbor then
+			if not slot0.hp_del or slot0.hp_del <= 0 then
+				slot3()
 			end
 
-			arg_5_2.viewComponent.grid:PlayAttachmentEffect(var_5_0.row, var_5_0.column, "huoqiubaozha", Vector2.zero)
-			arg_5_3()
-		elseif var_5_1.type == ChapterConst.LBDock then
-			arg_5_3()
-		elseif var_5_1.type == ChapterConst.LBAntiAir then
-			arg_5_2.viewComponent:doPlayAnim("AntiAirFire", function(arg_7_0)
-				setActive(arg_7_0, false)
-				arg_5_2.viewComponent.grid:PlayAttachmentEffect(arg_5_0.stgTarget.row, arg_5_0.stgTarget.column, "huoqiubaozha", Vector2.zero, arg_5_3)
+			slot2.viewComponent.grid:PlayAttachmentEffect(slot4.row, slot4.column, "huoqiubaozha", Vector2.zero)
+			slot3()
+		elseif slot5.type == ChapterConst.LBDock then
+			slot3()
+		elseif slot5.type == ChapterConst.LBAntiAir then
+			slot2.viewComponent:doPlayAnim("AntiAirFire", function (slot0)
+				setActive(slot0, false)
+				uv0.viewComponent.grid:PlayAttachmentEffect(uv1.stgTarget.row, uv1.stgTarget.column, "huoqiubaozha", Vector2.zero, uv2)
 			end)
 		else
 			assert(false)
@@ -75,62 +69,59 @@ function var_0_0.PlayAIAction(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 		return
 	end
 
-	if arg_5_0.stgId > 0 then
-		if arg_5_0.stgId == ChapterConst.StrategySonarDetect then
-			local var_5_2 = {}
-
-			_.each(arg_5_0.cellUpdates, function(arg_8_0)
-				if isa(arg_8_0, ChapterChampionPackage) then
-					table.insert(var_5_2, arg_8_0)
+	if slot0.stgId > 0 then
+		if slot0.stgId == ChapterConst.StrategySonarDetect then
+			_.each(slot0.cellUpdates, function (slot0)
+				if isa(slot0, ChapterChampionPackage) then
+					table.insert(uv0, slot0)
 				end
 			end)
-			arg_5_2.viewComponent.grid:PlaySonarDetectAnim(var_5_2, arg_5_3)
-		else
-			assert(false)
+			slot2.viewComponent.grid:PlaySonarDetectAnim({}, slot3)
+
+			return
 		end
 
-		return
+		assert(false)
 	end
 
-	local var_5_3 = arg_5_1:getChampion(arg_5_0.line.row, arg_5_0.line.column)
-	local var_5_4 = arg_5_1:getChampionIndex(arg_5_0.line.row, arg_5_0.line.column)
-	local var_5_5 = arg_5_0.movePath[#arg_5_0.movePath] or arg_5_0.line
+	slot5 = slot1:getChampion(slot0.line.row, slot0.line.column)
+	slot7 = slot0.movePath[#slot0.movePath] or slot0.line
 
-	if var_5_4 then
+	if slot1:getChampionIndex(slot0.line.row, slot0.line.column) then
 		seriesAsync({
-			function(arg_9_0)
-				if #arg_5_0.movePath > 0 then
-					arg_5_2.viewComponent.grid:moveChampion(var_5_4, arg_5_0.movePath, Clone(arg_5_0.movePath), arg_9_0)
+			function (slot0)
+				if #uv0.movePath > 0 then
+					uv1.viewComponent.grid:moveChampion(uv2, uv0.movePath, Clone(uv0.movePath), slot0)
 				else
-					arg_9_0()
+					slot0()
 				end
 			end,
-			function(arg_10_0)
-				if #arg_5_0.shipUpdate > 0 then
-					arg_5_2.viewComponent:doPlayEnemyAnim(var_5_3, "SubSairenTorpedoUI", arg_10_0)
+			function (slot0)
+				if #uv0.shipUpdate > 0 then
+					uv1.viewComponent:doPlayEnemyAnim(uv2, "SubSairenTorpedoUI", slot0)
 				else
-					arg_10_0()
+					slot0()
 				end
 			end,
-			function(arg_11_0)
-				local var_11_0 = false
+			function (slot0)
+				slot1 = false
 
-				if arg_5_0.actType == ChapterConst.ActType_SubmarineHunting and #arg_5_0.cellUpdates > 0 then
-					_.each(arg_5_0.cellUpdates, function(arg_12_0)
-						if var_5_5.row == arg_12_0.row and var_5_5.column == arg_12_0.column and isa(arg_12_0, ChapterChampionPackage) then
-							arg_5_0:TryPlayChampionSubAnim(arg_5_2, arg_12_0, var_5_3, arg_11_0)
+				if uv0.actType == ChapterConst.ActType_SubmarineHunting and #uv0.cellUpdates > 0 then
+					_.each(uv0.cellUpdates, function (slot0)
+						if uv0.row == slot0.row and uv0.column == slot0.column and isa(slot0, ChapterChampionPackage) then
+							uv1:TryPlayChampionSubAnim(uv2, slot0, uv3, uv4)
 
-							var_11_0 = true
+							uv5 = true
 						end
 					end)
 				end
 
-				if not var_11_0 then
-					arg_11_0()
+				if not slot1 then
+					slot0()
 				end
 			end,
-			function(arg_13_0)
-				arg_5_3()
+			function (slot0)
+				uv0()
 			end
 		})
 
@@ -140,294 +131,274 @@ function var_0_0.PlayAIAction(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	assert(false)
 end
 
-function var_0_0.TryPlayChampionSubAnim(arg_14_0, arg_14_1, arg_14_2, arg_14_3, arg_14_4)
-	if (arg_14_2.flag == ChapterConst.CellFlagDiving or arg_14_3.flag == ChapterConst.CellFlagDiving) and (arg_14_2.flag == ChapterConst.CellFlagActive or arg_14_3.flag == ChapterConst.CellFlagActive) then
-		local var_14_0 = arg_14_2.flag == ChapterConst.CellFlagDiving
-
-		arg_14_1.viewComponent.grid:PlayChampionSubmarineAnimation(arg_14_3, var_14_0, arg_14_4)
+function slot0.TryPlayChampionSubAnim(slot0, slot1, slot2, slot3, slot4)
+	if (slot2.flag == ChapterConst.CellFlagDiving or slot3.flag == ChapterConst.CellFlagDiving) and (slot2.flag == ChapterConst.CellFlagActive or slot3.flag == ChapterConst.CellFlagActive) then
+		slot1.viewComponent.grid:PlayChampionSubmarineAnimation(slot3, slot2.flag == ChapterConst.CellFlagDiving, slot4)
 
 		return
 	end
 
-	arg_14_4()
+	slot4()
 end
 
-function var_0_0.applyTo(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = arg_15_1:getChapterCell(arg_15_0.line.row, arg_15_0.line.column)
-
-	if var_15_0 and var_15_0.attachment == ChapterConst.AttachLandbase and not table.equal(arg_15_0.stgTarget, {
+function slot0.applyTo(slot0, slot1, slot2)
+	if slot1:getChapterCell(slot0.line.row, slot0.line.column) and slot3.attachment == ChapterConst.AttachLandbase and not table.equal(slot0.stgTarget, {
 		row = 9999,
 		column = 9999
 	}) then
-		local var_15_1 = pg.land_based_template[var_15_0.attachmentId]
-
-		if var_15_1.type == ChapterConst.LBCoastalGun then
-			return arg_15_0:applyToCoastalGun(arg_15_1, var_15_0, arg_15_2)
-		elseif var_15_1.type == ChapterConst.LBHarbor then
-			return arg_15_0:applyToHarbor(arg_15_1, var_15_0, arg_15_2)
-		elseif var_15_1.type == ChapterConst.LBDock then
-			return arg_15_0:applyToDock(arg_15_1, var_15_0, arg_15_2)
-		elseif var_15_1.type == ChapterConst.LBAntiAir then
-			return arg_15_0:applyToAntiAir(arg_15_1, var_15_0, arg_15_2)
+		if pg.land_based_template[slot3.attachmentId].type == ChapterConst.LBCoastalGun then
+			return slot0:applyToCoastalGun(slot1, slot3, slot2)
+		elseif slot4.type == ChapterConst.LBHarbor then
+			return slot0:applyToHarbor(slot1, slot3, slot2)
+		elseif slot4.type == ChapterConst.LBDock then
+			return slot0:applyToDock(slot1, slot3, slot2)
+		elseif slot4.type == ChapterConst.LBAntiAir then
+			return slot0:applyToAntiAir(slot1, slot3, slot2)
 		else
 			return false, "Trouble with Attach LandBased"
 		end
 	end
 
-	if arg_15_0.stgId > 0 then
-		return arg_15_0:applyToStrategy(arg_15_1, arg_15_0.stgId, arg_15_2)
+	if slot0.stgId > 0 then
+		return slot0:applyToStrategy(slot1, slot0.stgId, slot2)
 	end
 
-	local var_15_2 = arg_15_1:getChampion(arg_15_0.line.row, arg_15_0.line.column)
-
-	if var_15_2 then
-		return arg_15_0:applyToChampion(arg_15_1, var_15_2, arg_15_2)
+	if slot1:getChampion(slot0.line.row, slot0.line.column) then
+		return slot0:applyToChampion(slot1, slot4, slot2)
 	end
 
-	return false, "can not find any object at: [" .. arg_15_0.line.row .. ", " .. arg_15_0.line.column .. "]"
+	return false, "can not find any object at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 end
 
-function var_0_0.applyToChampion(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
-	if arg_16_2.flag == ChapterConst.CellFlagDisabled then
-		return false, "can not apply ai to dead champion at: [" .. arg_16_0.line.row .. ", " .. arg_16_0.line.column .. "]"
+function slot0.applyToChampion(slot0, slot1, slot2, slot3)
+	if slot2.flag == ChapterConst.CellFlagDisabled then
+		return false, "can not apply ai to dead champion at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	local var_16_0 = 0
-	local var_16_1 = 0
-	local var_16_2 = arg_16_0.line
+	slot4 = 0
+	slot5 = 0
+	slot6 = slot0.line
 
-	if arg_16_0.stgId > 0 and not pg.strategy_data_template[arg_16_0.stgId] then
-		return false, "can not find strategy: " .. arg_16_0.stgId
+	if slot0.stgId > 0 and not pg.strategy_data_template[slot0.stgId] then
+		return false, "can not find strategy: " .. slot0.stgId
 	end
 
-	if #arg_16_0.movePath > 0 then
-		var_16_2 = arg_16_0.movePath[#arg_16_0.movePath]
+	if #slot0.movePath > 0 then
+		slot6 = slot0.movePath[#slot0.movePath]
 
-		if _.any(arg_16_0.movePath, function(arg_17_0)
-			local var_17_0 = arg_16_1:getChapterCell(arg_17_0.row, arg_17_0.column)
-
-			return not var_17_0 or not var_17_0:IsWalkable()
+		if _.any(slot0.movePath, function (slot0)
+			return not uv0:getChapterCell(slot0.row, slot0.column) or not slot1:IsWalkable()
 		end) then
 			return false, "invalide move path"
 		end
 	end
 
-	if #arg_16_0.shipUpdate > 0 and not arg_16_1:getFleet(FleetType.Normal, var_16_2.row, var_16_2.column) then
-		return false, "can not find fleet at: [" .. arg_16_0.line.row .. ", " .. arg_16_0.line.column .. "]"
+	if #slot0.shipUpdate > 0 and not slot1:getFleet(FleetType.Normal, slot6.row, slot6.column) then
+		return false, "can not find fleet at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	if not arg_16_3 then
-		if #arg_16_0.movePath > 0 then
-			arg_16_2.row = var_16_2.row
-			arg_16_2.column = var_16_2.column
-			var_16_0 = bit.bor(var_16_0, ChapterConst.DirtyChampionPosition)
+	if not slot3 then
+		if #slot0.movePath > 0 then
+			slot2.row = slot6.row
+			slot2.column = slot6.column
+			slot4 = bit.bor(slot4, ChapterConst.DirtyChampionPosition)
 		end
 
-		if arg_16_1:existFleet(FleetType.Submarine, arg_16_2.row, arg_16_2.column) then
-			var_16_0 = bit.bor(var_16_0, ChapterConst.DirtyFleet)
+		if slot1:existFleet(FleetType.Submarine, slot2.row, slot2.column) then
+			slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 		end
 
-		if arg_16_0.actType == ChapterConst.ActType_SubmarineHunting then
-			local var_16_3 = arg_16_1:getChapterCell(var_16_2.row, var_16_2.column)
+		if slot0.actType == ChapterConst.ActType_SubmarineHunting and slot1:getChapterCell(slot6.row, slot6.column) and slot7.attachment == ChapterConst.AttachBarrier then
+			slot7.flag = ChapterConst.CellFlagDisabled
 
-			if var_16_3 and var_16_3.attachment == ChapterConst.AttachBarrier then
-				var_16_3.flag = ChapterConst.CellFlagDisabled
+			slot1:mergeChapterCell(slot7)
 
-				arg_16_1:mergeChapterCell(var_16_3)
-
-				var_16_0 = bit.bor(var_16_0, ChapterConst.DirtyAttachment)
-			end
+			slot4 = bit.bor(slot4, ChapterConst.DirtyAttachment)
 		end
 
-		if #arg_16_0.shipUpdate > 0 then
-			_.each(arg_16_0.shipUpdate, function(arg_18_0)
-				arg_16_1:updateFleetShipHp(arg_18_0.id, arg_18_0.hpRant)
+		if #slot0.shipUpdate > 0 then
+			_.each(slot0.shipUpdate, function (slot0)
+				uv0:updateFleetShipHp(slot0.id, slot0.hpRant)
 			end)
 
-			var_16_0 = bit.bor(var_16_0, ChapterConst.DirtyFleet)
+			slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 		end
 
-		if #arg_16_0.cellUpdates > 0 then
-			_.each(arg_16_0.cellUpdates, function(arg_19_0)
-				if isa(arg_19_0, ChapterChampionPackage) then
-					local var_19_0 = arg_16_1:mergeChampion(arg_19_0) and ChapterConst.DirtyChampionPosition or ChapterConst.DirtyChampion
-
-					var_16_0 = bit.bor(var_16_0, var_19_0)
+		if #slot0.cellUpdates > 0 then
+			_.each(slot0.cellUpdates, function (slot0)
+				if isa(slot0, ChapterChampionPackage) then
+					uv1 = bit.bor(uv1, uv0:mergeChampion(slot0) and ChapterConst.DirtyChampionPosition or ChapterConst.DirtyChampion)
 				else
-					arg_16_1:mergeChapterCell(arg_19_0)
+					uv0:mergeChapterCell(slot0)
 
-					var_16_0 = bit.bor(var_16_0, ChapterConst.DirtyAttachment)
+					uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 				end
 			end)
 
-			var_16_1 = bit.bor(var_16_1, ChapterConst.DirtyAutoAction)
+			slot5 = bit.bor(slot5, ChapterConst.DirtyAutoAction)
 		end
 	end
 
-	return true, var_16_0, var_16_1
+	return true, slot4, slot5
 end
 
-function var_0_0.applyToStrategy(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
-	if not pg.strategy_data_template[arg_20_2] then
-		return false, "can not find strategy: " .. arg_20_2
+function slot0.applyToStrategy(slot0, slot1, slot2, slot3)
+	if not pg.strategy_data_template[slot2] then
+		return false, "can not find strategy: " .. slot2
 	end
 
-	local var_20_0 = 0
+	slot5 = 0
 
-	if not arg_20_3 and arg_20_0.stgId == ChapterConst.StrategySonarDetect then
-		_.each(arg_20_0.cellUpdates, function(arg_21_0)
-			if isa(arg_21_0, ChapterChampionPackage) then
-				arg_20_1:mergeChampion(arg_21_0)
+	if not slot3 and slot0.stgId == ChapterConst.StrategySonarDetect then
+		_.each(slot0.cellUpdates, function (slot0)
+			if isa(slot0, ChapterChampionPackage) then
+				uv0:mergeChampion(slot0)
 
-				var_20_0 = bit.bor(var_20_0, ChapterConst.DirtyChampion)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyChampion)
 			else
-				arg_20_1:mergeChapterCell(arg_21_0)
+				uv0:mergeChapterCell(slot0)
 
-				var_20_0 = bit.bor(var_20_0, ChapterConst.DirtyAttachment)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 			end
 		end)
 	end
 
-	return true, var_20_0
+	return true, slot5
 end
 
-function var_0_0.applyToCoastalGun(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
-	if arg_22_2.flag == ChapterConst.CellFlagDisabled then
-		return false, "can not apply ai to dead coastalgun at: [" .. arg_22_0.line.row .. ", " .. arg_22_0.line.column .. "]"
+function slot0.applyToCoastalGun(slot0, slot1, slot2, slot3)
+	if slot2.flag == ChapterConst.CellFlagDisabled then
+		return false, "can not apply ai to dead coastalgun at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	local var_22_0 = 0
-	local var_22_1 = 0
-	local var_22_2 = arg_22_1:getFleet(FleetType.Normal, arg_22_0.stgTarget.row, arg_22_0.stgTarget.column)
+	slot4 = 0
+	slot5 = 0
 
-	if not var_22_2 then
-		return false, "can not find fleet at: [" .. arg_22_0.stgTarget.row .. ", " .. arg_22_0.stgTarget.column .. "]"
+	if not slot1:getFleet(FleetType.Normal, slot0.stgTarget.row, slot0.stgTarget.column) then
+		return false, "can not find fleet at: [" .. slot0.stgTarget.row .. ", " .. slot0.stgTarget.column .. "]"
 	end
 
-	if not arg_22_3 then
-		var_22_2:increaseSlowSpeedFactor()
+	if not slot3 then
+		slot6:increaseSlowSpeedFactor()
 
-		var_22_0 = bit.bor(var_22_0, ChapterConst.DirtyFleet)
+		slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 
-		_.each(arg_22_0.cellUpdates, function(arg_23_0)
-			if isa(arg_23_0, ChapterChampionPackage) then
-				arg_22_1:mergeChampion(arg_23_0)
+		_.each(slot0.cellUpdates, function (slot0)
+			if isa(slot0, ChapterChampionPackage) then
+				uv0:mergeChampion(slot0)
 
-				var_22_0 = bit.bor(var_22_0, ChapterConst.DirtyChampion)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyChampion)
 			else
-				arg_22_1:mergeChapterCell(arg_23_0)
+				uv0:mergeChapterCell(slot0)
 
-				var_22_0 = bit.bor(var_22_0, ChapterConst.DirtyAttachment)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 			end
 		end)
 
-		if #arg_22_0.cellUpdates > 0 then
-			var_22_1 = bit.bor(var_22_1, ChapterConst.DirtyAutoAction)
+		if #slot0.cellUpdates > 0 then
+			slot5 = bit.bor(slot5, ChapterConst.DirtyAutoAction)
 		end
 	end
 
-	return true, var_22_0, var_22_1
+	return true, slot4, slot5
 end
 
-function var_0_0.applyToHarbor(arg_24_0, arg_24_1, arg_24_2, arg_24_3)
-	if arg_24_2.flag == ChapterConst.CellFlagDisabled then
-		return false, "can not apply ai to dead Harbor at: [" .. arg_24_0.line.row .. ", " .. arg_24_0.line.column .. "]"
+function slot0.applyToHarbor(slot0, slot1, slot2, slot3)
+	if slot2.flag == ChapterConst.CellFlagDisabled then
+		return false, "can not apply ai to dead Harbor at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	local var_24_0 = 0
-	local var_24_1 = 0
-	local var_24_2 = arg_24_1:getChampion(arg_24_0.stgTarget.row, arg_24_0.stgTarget.column)
+	slot4 = 0
+	slot5 = 0
 
-	if not var_24_2 then
-		return false, "can not find champion at: [" .. arg_24_0.stgTarget.row .. ", " .. arg_24_0.stgTarget.column .. "]"
+	if not slot1:getChampion(slot0.stgTarget.row, slot0.stgTarget.column) then
+		return false, "can not find champion at: [" .. slot0.stgTarget.row .. ", " .. slot0.stgTarget.column .. "]"
 	end
 
-	if not arg_24_3 then
-		arg_24_1.BaseHP = math.max(arg_24_1.BaseHP - arg_24_0.hp_del, 0)
+	if not slot3 then
+		slot1.BaseHP = math.max(slot1.BaseHP - slot0.hp_del, 0)
 
-		arg_24_1:RemoveChampion(var_24_2)
+		slot1:RemoveChampion(slot6)
 
-		var_24_0 = bit.bor(var_24_0, ChapterConst.DirtyBase, ChapterConst.DirtyChampion)
-		var_24_1 = bit.bor(var_24_1, ChapterConst.DirtyAutoAction)
+		slot4 = bit.bor(slot4, ChapterConst.DirtyBase, ChapterConst.DirtyChampion)
+		slot5 = bit.bor(slot5, ChapterConst.DirtyAutoAction)
 
-		if #arg_24_0.cellUpdates > 0 then
-			_.each(arg_24_0.cellUpdates, function(arg_25_0)
-				if isa(arg_25_0, ChapterChampionPackage) then
-					local var_25_0 = arg_24_1:mergeChampion(arg_25_0)
-
-					var_24_0 = bit.bor(var_24_0, ChapterConst.DirtyChampion)
+		if #slot0.cellUpdates > 0 then
+			_.each(slot0.cellUpdates, function (slot0)
+				if isa(slot0, ChapterChampionPackage) then
+					slot1 = uv0:mergeChampion(slot0)
+					uv1 = bit.bor(uv1, ChapterConst.DirtyChampion)
 				else
-					arg_24_1:mergeChapterCell(arg_25_0)
+					uv0:mergeChapterCell(slot0)
 
-					var_24_0 = bit.bor(var_24_0, ChapterConst.DirtyAttachment)
+					uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 				end
 			end)
 		end
 	end
 
-	return true, var_24_0, var_24_1
+	return true, slot4, slot5
 end
 
-function var_0_0.applyToDock(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
-	if arg_26_2.flag == ChapterConst.CellFlagDisabled then
-		return false, "can not apply ai to dead Dock at: [" .. arg_26_0.line.row .. ", " .. arg_26_0.line.column .. "]"
+function slot0.applyToDock(slot0, slot1, slot2, slot3)
+	if slot2.flag == ChapterConst.CellFlagDisabled then
+		return false, "can not apply ai to dead Dock at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	local var_26_0 = 0
-	local var_26_1 = 0
+	slot4 = 0
+	slot5 = 0
 
-	if not arg_26_1:getFleet(FleetType.Normal, arg_26_0.stgTarget.row, arg_26_0.stgTarget.column) then
-		return false, "can not find fleet at: [" .. arg_26_0.stgTarget.row .. ", " .. arg_26_0.stgTarget.column .. "]"
+	if not slot1:getFleet(FleetType.Normal, slot0.stgTarget.row, slot0.stgTarget.column) then
+		return false, "can not find fleet at: [" .. slot0.stgTarget.row .. ", " .. slot0.stgTarget.column .. "]"
 	end
 
-	if not arg_26_3 then
-		_.each(arg_26_0.cellUpdates, function(arg_27_0)
-			if isa(arg_27_0, ChapterCell) then
-				arg_26_1:mergeChapterCell(arg_27_0)
+	if not slot3 then
+		_.each(slot0.cellUpdates, function (slot0)
+			if isa(slot0, ChapterCell) then
+				uv0:mergeChapterCell(slot0)
 
-				var_26_0 = bit.bor(var_26_0, ChapterConst.DirtyAttachment)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 			end
 		end)
-		_.each(arg_26_0.shipUpdate, function(arg_28_0)
-			arg_26_1:updateFleetShipHp(arg_28_0.id, arg_28_0.hpRant)
+		_.each(slot0.shipUpdate, function (slot0)
+			uv0:updateFleetShipHp(slot0.id, slot0.hpRant)
 		end)
 
-		var_26_0 = bit.bor(var_26_0, ChapterConst.DirtyFleet)
+		slot4 = bit.bor(slot4, ChapterConst.DirtyFleet)
 	end
 
-	return true, var_26_0
+	return true, slot4
 end
 
-function var_0_0.applyToAntiAir(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	if arg_29_2.flag == ChapterConst.CellFlagDisabled then
-		return false, "can not apply ai to dead antiairGun at: [" .. arg_29_0.line.row .. ", " .. arg_29_0.line.column .. "]"
+function slot0.applyToAntiAir(slot0, slot1, slot2, slot3)
+	if slot2.flag == ChapterConst.CellFlagDisabled then
+		return false, "can not apply ai to dead antiairGun at: [" .. slot0.line.row .. ", " .. slot0.line.column .. "]"
 	end
 
-	local var_29_0 = 0
-	local var_29_1 = 0
-	local var_29_2 = arg_29_1:getChampion(arg_29_0.stgTarget.row, arg_29_0.stgTarget.column)
+	slot4 = 0
+	slot5 = 0
 
-	if not var_29_2 then
-		return false, "can not find champion at: [" .. arg_29_0.stgTarget.row .. ", " .. arg_29_0.stgTarget.column .. "]"
+	if not slot1:getChampion(slot0.stgTarget.row, slot0.stgTarget.column) then
+		return false, "can not find champion at: [" .. slot0.stgTarget.row .. ", " .. slot0.stgTarget.column .. "]"
 	end
 
-	if not arg_29_3 then
-		arg_29_1:RemoveChampion(var_29_2)
+	if not slot3 then
+		slot1:RemoveChampion(slot6)
 
-		var_29_0 = bit.bor(var_29_0, ChapterConst.DirtyChampion, ChapterConst.DirtyAttachment)
+		slot4 = bit.bor(slot4, ChapterConst.DirtyChampion, ChapterConst.DirtyAttachment)
 
-		_.each(arg_29_0.cellUpdates, function(arg_30_0)
-			if isa(arg_30_0, ChapterChampionPackage) then
-				local var_30_0 = arg_29_1:mergeChampion(arg_30_0)
+		_.each(slot0.cellUpdates, function (slot0)
+			if isa(slot0, ChapterChampionPackage) then
+				slot1 = uv0:mergeChampion(slot0)
 			else
-				arg_29_1:mergeChapterCell(arg_30_0)
+				uv0:mergeChapterCell(slot0)
 
-				var_29_0 = bit.bor(var_29_0, ChapterConst.DirtyAttachment)
+				uv1 = bit.bor(uv1, ChapterConst.DirtyAttachment)
 			end
 		end)
 	end
 
-	return true, var_29_0, var_29_1
+	return true, slot4, slot5
 end
 
-return var_0_0
+return slot0

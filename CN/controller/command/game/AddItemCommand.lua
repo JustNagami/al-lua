@@ -1,34 +1,28 @@
-﻿local var_0_0 = class("AddItemCommand", pm.SimpleCommand)
+slot0 = class("AddItemCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	assert(isa(var_1_0, Drop), "should be an instance of Drop")
-	var_1_0:AddItemOperation()
-	arg_1_0:UpdateLinkActivity(var_1_0)
+	assert(isa(slot2, Drop), "should be an instance of Drop")
+	slot2:AddItemOperation()
+	slot0:UpdateLinkActivity(slot2)
 end
 
-function var_0_0.UpdateLinkActivity(arg_2_0, arg_2_1)
-	local var_2_0 = getProxy(ActivityProxy)
-	local var_2_1 = var_2_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_COLLECT)
+function slot0.UpdateLinkActivity(slot0, slot1)
+	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINK_COLLECT) and not slot3:isEnd() then
+		slot4 = pg.activity_limit_item_guide.get_id_list_by_activity[slot3.id]
+		slot8 = slot3.id
 
-	if var_2_1 and not var_2_1:isEnd() then
-		local var_2_2 = pg.activity_limit_item_guide.get_id_list_by_activity[var_2_1.id]
+		assert(slot4, "activity_limit_item_guide not exist activity id: " .. slot8)
 
-		assert(var_2_2, "activity_limit_item_guide not exist activity id: " .. var_2_1.id)
-
-		for iter_2_0, iter_2_1 in ipairs(var_2_2) do
-			local var_2_3 = pg.activity_limit_item_guide[iter_2_1]
-
-			if arg_2_1.type == var_2_3.type and arg_2_1.id == var_2_3.drop_id then
-				local var_2_4 = var_2_1:getKVPList(1, var_2_3.id) + arg_2_1.count
-
-				var_2_1:updateKVPList(1, var_2_3.id, var_2_4)
+		for slot8, slot9 in ipairs(slot4) do
+			if slot1.type == pg.activity_limit_item_guide[slot9].type and slot1.id == slot10.drop_id then
+				slot3:updateKVPList(1, slot10.id, slot3:getKVPList(1, slot10.id) + slot1.count)
 			end
 		end
 
-		var_2_0:updateActivity(var_2_1)
+		slot2:updateActivity(slot3)
 	end
 end
 
-return var_0_0
+return slot0

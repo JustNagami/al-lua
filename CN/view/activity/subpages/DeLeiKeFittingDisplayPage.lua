@@ -1,5 +1,4 @@
-﻿local var_0_0 = class("DeLeiKeFittingDisplayPage", import("view.activity.subPages.WuQiFittingDisplayPage"))
+slot0 = class("DeLeiKeFittingDisplayPage", import("view.activity.subPages.WuQiFittingDisplayPage"))
+slot0.blueprintGroupId = 29904
 
-var_0_0.blueprintGroupId = 29904
-
-return var_0_0
+return slot0

@@ -1,32 +1,32 @@
-﻿local var_0_0 = class("SettingsWorldPanle", import(".SettingsNotificationPanel"))
+slot0 = class("SettingsWorldPanle", import(".SettingsNotificationPanel"))
 
-function var_0_0.GetUIName(arg_1_0)
+function slot0.GetUIName(slot0)
 	return "SettingsWorld"
 end
 
-function var_0_0.GetTitle(arg_2_0)
+function slot0.GetTitle(slot0)
 	return i18n("world_setting_title")
 end
 
-function var_0_0.GetTitleEn(arg_3_0)
+function slot0.GetTitleEn(slot0)
 	return "  / OPERATION SETTINGS"
 end
 
-function var_0_0.OnInit(arg_4_0)
-	var_0_0.super.OnInit(arg_4_0)
+function slot0.OnInit(slot0)
+	uv0.super.OnInit(slot0)
 
-	arg_4_0.worldbossProgressTip = findTF(arg_4_0._tf, "world_boss")
+	slot0.worldbossProgressTip = findTF(slot0._tf, "world_boss")
 end
 
-function var_0_0.OnItemSwitch(arg_5_0, arg_5_1, arg_5_2)
-	getProxy(SettingsProxy):SetWorldFlag(arg_5_1.key, arg_5_2)
+function slot0.OnItemSwitch(slot0, slot1, slot2)
+	getProxy(SettingsProxy):SetWorldFlag(slot1.key, slot2)
 end
 
-function var_0_0.GetDefaultValue(arg_6_0, arg_6_1)
-	return getProxy(SettingsProxy):GetWorldFlag(arg_6_1.key)
+function slot0.GetDefaultValue(slot0, slot1)
+	return getProxy(SettingsProxy):GetWorldFlag(slot1.key)
 end
 
-function var_0_0.GetList(arg_7_0)
+function slot0.GetList(slot0)
 	return {
 		{
 			key = "story_tips",
@@ -46,67 +46,60 @@ function var_0_0.GetList(arg_7_0)
 	}
 end
 
-function var_0_0.DisplayWorldBossProgressTipSettings(arg_8_0)
-	local var_8_0 = pg.NewStoryMgr.GetInstance():IsPlayed("WorldG190")
+function slot0.DisplayWorldBossProgressTipSettings(slot0)
+	slot1 = pg.NewStoryMgr.GetInstance():IsPlayed("WorldG190")
 
-	setActive(arg_8_0.worldbossProgressTip, var_8_0)
+	setActive(slot0.worldbossProgressTip, slot1)
 
-	if var_8_0 then
-		arg_8_0:InitWorldBossProgressTipSettings()
+	if slot1 then
+		slot0:InitWorldBossProgressTipSettings()
 	end
 end
 
-function var_0_0.InitWorldBossProgressTipSettings(arg_9_0)
-	local var_9_0 = arg_9_0.worldbossProgressTip
-	local var_9_1 = arg_9_0:GetWorldBossProgressTipConfig()
-	local var_9_2 = getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
+function slot0.InitWorldBossProgressTipSettings(slot0)
+	slot3 = getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
+	slot10 = "world_boss_progress_tip_title"
 
-	local function var_9_3(arg_10_0, arg_10_1)
-		local var_10_0 = tostring(var_9_1[arg_10_0])
+	slot0.worldbossProgressTip:Find("notify_tpl"):Find("mask/Text"):GetComponent("ScrollText"):SetText(i18n(slot10))
 
-		onToggle(arg_9_0, arg_10_1, function(arg_11_0)
-			if arg_11_0 then
-				getProxy(SettingsProxy):WorldBossProgressTipFlag(var_10_0)
+	for slot10 = 1, #slot0:GetWorldBossProgressTipConfig() do
+		function (slot0, slot1)
+			onToggle(uv1, slot1, function (slot0)
+				if slot0 then
+					getProxy(SettingsProxy):WorldBossProgressTipFlag(uv0)
+				end
+			end, SFX_PANEL)
+
+			if tostring(uv0[slot0]) == uv2 then
+				triggerToggle(slot1, true)
 			end
-		end, SFX_PANEL)
-
-		if var_10_0 == var_9_2 then
-			triggerToggle(arg_10_1, true)
-		end
+		end(slot10, slot5:Find(tostring(slot10)))
 	end
 
-	local var_9_4 = var_9_0:Find("notify_tpl")
-
-	var_9_4:Find("mask/Text"):GetComponent("ScrollText"):SetText(i18n("world_boss_progress_tip_title"))
-
-	for iter_9_0 = 1, #var_9_1 do
-		var_9_3(iter_9_0, var_9_4:Find(tostring(iter_9_0)))
-	end
-
-	onButton(arg_9_0, var_9_4:Find("mask/Text"), function()
+	onButton(slot0, slot5:Find("mask/Text"), function ()
 		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, {
 			desc = i18n("world_boss_progress_tip_desc")
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.GetWorldBossProgressTipConfig(arg_13_0)
-	local var_13_0 = pg.gameset.joint_boss_ticket.description
-	local var_13_1 = {}
+function slot0.GetWorldBossProgressTipConfig(slot0)
+	slot1 = pg.gameset.joint_boss_ticket.description
+	slot2 = {}
 
-	table.insert(var_13_1, "")
+	table.insert(slot2, "")
 
-	local var_13_2 = var_13_0[1] + var_13_0[2]
+	slot3 = slot1[1] + slot1[2]
 
-	table.insert(var_13_1, var_13_0[1] .. "&" .. var_13_2)
-	table.insert(var_13_1, var_13_2)
+	table.insert(slot2, slot1[1] .. "&" .. slot3)
+	table.insert(slot2, slot3)
 
-	return var_13_1
+	return slot2
 end
 
-function var_0_0.OnUpdate(arg_14_0)
-	var_0_0.super.OnUpdate(arg_14_0)
-	arg_14_0:DisplayWorldBossProgressTipSettings()
+function slot0.OnUpdate(slot0)
+	uv0.super.OnUpdate(slot0)
+	slot0:DisplayWorldBossProgressTipSettings()
 end
 
-return var_0_0
+return slot0

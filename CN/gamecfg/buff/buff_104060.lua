@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				buff_id = 104063,
-				minTargetNumber = 2,
-				target = "TargetSelf",
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"KizunaAI"
-				}
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -38,5 +18,25 @@
 	stack = 1,
 	id = 104060,
 	icon = 104060,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				buff_id = 104063,
+				minTargetNumber = 2,
+				target = "TargetSelf",
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"KizunaAI"
+				}
+			}
+		}
+	}
 }

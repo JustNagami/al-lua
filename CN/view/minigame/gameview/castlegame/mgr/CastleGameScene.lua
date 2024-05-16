@@ -1,96 +1,88 @@
-﻿local var_0_0 = class("CastleGameScene")
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
+slot0 = class("CastleGameScene")
+slot1 = 1
+slot2 = 2
+slot3 = 3
+slot4 = 4
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._event = arg_1_2
-	arg_1_0.sceneMask = findTF(arg_1_0._tf, "sceneMask")
-	arg_1_0.tplContent = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl")
-	arg_1_0.floorTpl = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl/floorTpl")
-	arg_1_0.charTpl = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl/charTpl")
-	arg_1_0.carriageTpl = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl/carriageTpl")
-	arg_1_0.bubbleTpl = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl/bubbleTpl")
-	arg_1_0.scoreTpl = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl/scoreTpl")
-	arg_1_0.contentBack = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene_background/content")
-	arg_1_0.contentMid = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/content")
-	arg_1_0.contentTop = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene_front/content")
-	arg_1_0.contentEF = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/effect_front")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._tf = slot1
+	slot0._event = slot2
+	slot0.sceneMask = findTF(slot0._tf, "sceneMask")
+	slot0.tplContent = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl")
+	slot0.floorTpl = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl/floorTpl")
+	slot0.charTpl = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl/charTpl")
+	slot0.carriageTpl = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl/carriageTpl")
+	slot0.bubbleTpl = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl/bubbleTpl")
+	slot0.scoreTpl = findTF(slot0._tf, "sceneMask/sceneContainer/scene/tpl/scoreTpl")
+	slot0.contentBack = findTF(slot0._tf, "sceneMask/sceneContainer/scene_background/content")
+	slot0.contentMid = findTF(slot0._tf, "sceneMask/sceneContainer/scene/content")
+	slot0.contentTop = findTF(slot0._tf, "sceneMask/sceneContainer/scene_front/content")
+	slot0.contentEF = findTF(slot0._tf, "sceneMask/sceneContainer/scene/effect_front")
+	slot3 = CastleGameVo.GetRotationPosByWH(0, -1)
+	slot0.gameFloor = CastleGameFloor.New(slot0.floorTpl, slot0._event)
+	slot0.gameChar = CastleGameChar.New(slot0.charTpl, slot0._event)
+	slot0.gameItem = CastleGameItem.New(slot0.tplContent, slot0._event)
+	slot0.gameRemind = CastleGameRemind.New(slot0.tplContent, slot0._event)
+	slot0.gameScore = CastleGameScore.New(slot0.scoreTpl, slot0._event)
 
-	local var_1_0 = CastleGameVo.GetRotationPosByWH(0, -1)
-
-	arg_1_0.gameFloor = CastleGameFloor.New(arg_1_0.floorTpl, arg_1_0._event)
-	arg_1_0.gameChar = CastleGameChar.New(arg_1_0.charTpl, arg_1_0._event)
-	arg_1_0.gameItem = CastleGameItem.New(arg_1_0.tplContent, arg_1_0._event)
-	arg_1_0.gameRemind = CastleGameRemind.New(arg_1_0.tplContent, arg_1_0._event)
-	arg_1_0.gameScore = CastleGameScore.New(arg_1_0.scoreTpl, arg_1_0._event)
-
-	arg_1_0.gameFloor:setContent(arg_1_0:getContent(var_0_2))
-	arg_1_0.gameChar:setContent(arg_1_0:getContent(var_0_3))
-	arg_1_0.gameItem:setContent(arg_1_0:getContent(var_0_3))
-	arg_1_0.gameRemind:setContent(arg_1_0:getContent(var_0_4))
-	arg_1_0.gameScore:setContent(arg_1_0:getContent(var_0_3))
-	arg_1_0.gameFloor:setFloorFallCallback(function(arg_2_0)
-		arg_1_0:addRemindItems(arg_2_0)
+	slot0.gameFloor:setContent(slot0:getContent(uv0))
+	slot0.gameChar:setContent(slot0:getContent(uv1))
+	slot0.gameItem:setContent(slot0:getContent(uv1))
+	slot0.gameRemind:setContent(slot0:getContent(uv2))
+	slot0.gameScore:setContent(slot0:getContent(uv1))
+	slot0.gameFloor:setFloorFallCallback(function (slot0)
+		uv0:addRemindItems(slot0)
 	end)
+	slot0.gameChar:setOutLandPoint(slot0.gameFloor:getOutLandPoint())
 
-	local var_1_1 = arg_1_0.gameFloor:getOutLandPoint()
+	slot0.floorItems = {}
 
-	arg_1_0.gameChar:setOutLandPoint(var_1_1)
+	slot0:insertFloorItem(slot0.gameFloor:getFloors())
 
-	arg_1_0.floorItems = {}
+	slot0.items = {}
 
-	arg_1_0:insertFloorItem(arg_1_0.gameFloor:getFloors())
-
-	arg_1_0.items = {}
-
-	table.insert(arg_1_0.items, arg_1_0.gameChar:getChar())
-	arg_1_0.gameItem:setItemRemindCallback(function(arg_3_0)
-		arg_1_0:addRemindItems(arg_3_0)
+	table.insert(slot0.items, slot0.gameChar:getChar())
+	slot0.gameItem:setItemRemindCallback(function (slot0)
+		uv0:addRemindItems(slot0)
 	end)
-	arg_1_0.gameItem:setItemChange(function(arg_4_0, arg_4_1)
-		arg_1_0:itemChange(arg_4_0, arg_4_1)
+	slot0.gameItem:setItemChange(function (slot0, slot1)
+		uv0:itemChange(slot0, slot1)
 	end)
-	arg_1_0.gameItem:setFloorBroken(function(arg_5_0, arg_5_1)
-		for iter_5_0, iter_5_1 in ipairs(arg_5_0) do
-			arg_1_0.gameFloor:setBroken(iter_5_1, arg_5_1)
+	slot0.gameItem:setFloorBroken(function (slot0, slot1)
+		for slot5, slot6 in ipairs(slot0) do
+			uv0.gameFloor:setBroken(slot6, slot1)
 		end
 	end)
-	arg_1_0.gameScore:setItemChange(function(arg_6_0, arg_6_1)
-		arg_1_0:itemChange(arg_6_0, arg_6_1)
+	slot0.gameScore:setItemChange(function (slot0, slot1)
+		uv0:itemChange(slot0, slot1)
 	end)
-	arg_1_0.gameItem:setBubbleBroken(function(arg_7_0)
-		if arg_7_0 and arg_7_0.char then
-			arg_1_0:returnPlayerBubble(arg_7_0, arg_7_0.char)
+	slot0.gameItem:setBubbleBroken(function (slot0)
+		if slot0 and slot0.char then
+			uv0:returnPlayerBubble(slot0, slot0.char)
 		end
 	end)
-	arg_1_0:sortItems(arg_1_0.floorItems)
+	slot0:sortItems(slot0.floorItems)
 end
 
-function var_0_0.addRemindItems(arg_8_0, arg_8_1)
-	for iter_8_0 = 1, #arg_8_1 do
-		local var_8_0 = arg_8_1[iter_8_0]
-		local var_8_1 = var_8_0.w
-		local var_8_2 = var_8_0.h
-		local var_8_3 = var_8_0.type and var_8_0.type or CastleGameRemind.remind_type_1
+function slot0.addRemindItems(slot0, slot1)
+	for slot5 = 1, #slot1 do
+		slot6 = slot1[slot5]
 
-		arg_8_0.gameRemind:addRemind(var_8_1, var_8_2, var_8_3)
+		slot0.gameRemind:addRemind(slot6.w, slot6.h, slot6.type and slot6.type or CastleGameRemind.remind_type_1)
 	end
 end
 
-function var_0_0.itemChange(arg_9_0, arg_9_1, arg_9_2)
-	if arg_9_2 then
-		if table.contains(arg_9_0.items, arg_9_1) then
+function slot0.itemChange(slot0, slot1, slot2)
+	if slot2 then
+		if table.contains(slot0.items, slot1) then
 			return
 		end
 
-		table.insert(arg_9_0.items, arg_9_1)
+		table.insert(slot0.items, slot1)
 	else
-		for iter_9_0 = 1, #arg_9_0.items do
-			if arg_9_0.items[iter_9_0] == arg_9_1 then
-				table.remove(arg_9_0.items, iter_9_0)
+		for slot6 = 1, #slot0.items do
+			if slot0.items[slot6] == slot1 then
+				table.remove(slot0.items, slot6)
 
 				return
 			end
@@ -98,83 +90,70 @@ function var_0_0.itemChange(arg_9_0, arg_9_1, arg_9_2)
 	end
 end
 
-function var_0_0.start(arg_10_0)
-	arg_10_0:prepareScene()
-	arg_10_0.gameFloor:start()
-	arg_10_0.gameChar:start()
-	arg_10_0.gameItem:start()
-	arg_10_0.gameRemind:start()
-	arg_10_0.gameScore:start()
+function slot0.start(slot0)
+	slot0:prepareScene()
+	slot0.gameFloor:start()
+	slot0.gameChar:start()
+	slot0.gameItem:start()
+	slot0.gameRemind:start()
+	slot0.gameScore:start()
 end
 
-function var_0_0.step(arg_11_0)
-	arg_11_0.gameFloor:step()
-	arg_11_0.gameChar:step()
-	arg_11_0.gameItem:step()
-	arg_11_0.gameRemind:step()
-	arg_11_0.gameScore:step()
-	arg_11_0:sortItems(arg_11_0.items)
-	arg_11_0:updateActiveFloor()
-	arg_11_0:checkPlayerInFloor()
-	arg_11_0:checkPlayerInBubble()
-	arg_11_0:checkPlayerCarriage()
-	arg_11_0:checkPlayerInScore()
+function slot0.step(slot0)
+	slot0.gameFloor:step()
+	slot0.gameChar:step()
+	slot0.gameItem:step()
+	slot0.gameRemind:step()
+	slot0.gameScore:step()
+	slot0:sortItems(slot0.items)
+	slot0:updateActiveFloor()
+	slot0:checkPlayerInFloor()
+	slot0:checkPlayerInBubble()
+	slot0:checkPlayerCarriage()
+	slot0:checkPlayerInScore()
 end
 
-function var_0_0.clear(arg_12_0)
-	arg_12_0.gameFloor:clear()
-	arg_12_0.gameChar:clear()
-	arg_12_0.gameItem:clear()
-	arg_12_0.gameRemind:clear()
+function slot0.clear(slot0)
+	slot0.gameFloor:clear()
+	slot0.gameChar:clear()
+	slot0.gameItem:clear()
+	slot0.gameRemind:clear()
 end
 
-function var_0_0.stop(arg_13_0)
-	return
+function slot0.stop(slot0)
 end
 
-function var_0_0.resume(arg_14_0)
-	return
+function slot0.resume(slot0)
 end
 
-function var_0_0.dispose(arg_15_0)
-	return
+function slot0.dispose(slot0)
 end
 
-function var_0_0.prepareScene(arg_16_0)
-	arg_16_0:showContainer(true)
-	arg_16_0:sortItems(arg_16_0.floorItems)
-	arg_16_0.gameChar:setContent(arg_16_0:getContent(var_0_3))
+function slot0.prepareScene(slot0)
+	slot0:showContainer(true)
+	slot0:sortItems(slot0.floorItems)
+	slot0.gameChar:setContent(slot0:getContent(uv0))
 	CastleGameVo.PointFootLine(Vector2(0, 0), Vector2(0, 100), Vector2(100, 0))
 end
 
-function var_0_0.updateActiveFloor(arg_17_0)
-	local var_17_0 = arg_17_0.gameFloor:getActiveIndexs()
-
-	arg_17_0.gameItem:setFloorIndexs(var_17_0)
-
-	local var_17_1 = arg_17_0.gameFloor:getFloors()
-
-	arg_17_0.gameScore:setFloor(var_17_1)
+function slot0.updateActiveFloor(slot0)
+	slot0.gameItem:setFloorIndexs(slot0.gameFloor:getActiveIndexs())
+	slot0.gameScore:setFloor(slot0.gameFloor:getFloors())
 end
 
-function var_0_0.checkPlayerInScore(arg_18_0)
-	if arg_18_0.gameChar:getActionAble() then
-		local var_18_0 = arg_18_0.gameChar:getChar()
-		local var_18_1 = var_18_0.tf.anchoredPosition
-		local var_18_2 = arg_18_0.gameScore:getScores()
+function slot0.checkPlayerInScore(slot0)
+	if slot0.gameChar:getActionAble() then
+		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
 
-		for iter_18_0 = 1, #var_18_2 do
-			local var_18_3 = var_18_2[iter_18_0]
+		for slot7 = 1, #slot0.gameScore:getScores() do
+			if slot3[slot7].ready == 0 then
+				slot9 = slot8.tf.anchoredPosition
+				slot10 = slot8.bmin
+				slot11 = slot8.bmax
+				slot13 = Vector2(slot9.x + slot11.x, slot9.y + slot11.y)
 
-			if var_18_3.ready == 0 then
-				local var_18_4 = var_18_3.tf.anchoredPosition
-				local var_18_5 = var_18_3.bmin
-				local var_18_6 = var_18_3.bmax
-				local var_18_7 = Vector2(var_18_4.x + var_18_5.x, var_18_4.y + var_18_5.y)
-				local var_18_8 = Vector2(var_18_4.x + var_18_6.x, var_18_4.y + var_18_6.y)
-
-				if var_18_1.x >= var_18_7.x and var_18_1.y >= var_18_7.y and var_18_1.x <= var_18_8.x and var_18_1.y <= var_18_8.y then
-					arg_18_0:setPlayerScore(var_18_3, var_18_0)
+				if Vector2(slot9.x + slot10.x, slot9.y + slot10.y).x <= slot2.x and slot12.y <= slot2.y and slot2.x <= slot13.x and slot2.y <= slot13.y then
+					slot0:setPlayerScore(slot8, slot1)
 
 					return
 				end
@@ -183,24 +162,19 @@ function var_0_0.checkPlayerInScore(arg_18_0)
 	end
 end
 
-function var_0_0.checkPlayerInBubble(arg_19_0)
-	if arg_19_0.gameChar:getActionAble() then
-		local var_19_0 = arg_19_0.gameChar:getChar()
-		local var_19_1 = var_19_0.tf.anchoredPosition
-		local var_19_2 = arg_19_0.gameItem:getBubbles()
+function slot0.checkPlayerInBubble(slot0)
+	if slot0.gameChar:getActionAble() then
+		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
 
-		for iter_19_0 = 1, #var_19_2 do
-			local var_19_3 = var_19_2[iter_19_0]
+		for slot7 = 1, #slot0.gameItem:getBubbles() do
+			if slot3[slot7].ready == 0 and not slot8.broken and isActive(slot8.tf) and slot8.hit then
+				slot9 = slot8.tf.anchoredPosition
+				slot10 = slot8.bmin
+				slot11 = slot8.bmax
+				slot13 = Vector2(slot9.x + slot11.x, slot9.y + slot11.y)
 
-			if var_19_3.ready == 0 and not var_19_3.broken and isActive(var_19_3.tf) and var_19_3.hit then
-				local var_19_4 = var_19_3.tf.anchoredPosition
-				local var_19_5 = var_19_3.bmin
-				local var_19_6 = var_19_3.bmax
-				local var_19_7 = Vector2(var_19_4.x + var_19_5.x, var_19_4.y + var_19_5.y)
-				local var_19_8 = Vector2(var_19_4.x + var_19_6.x, var_19_4.y + var_19_6.y)
-
-				if var_19_1.x >= var_19_7.x and var_19_1.y >= var_19_7.y and var_19_1.x <= var_19_8.x and var_19_1.y <= var_19_8.y then
-					arg_19_0:setPlayerBubble(var_19_3, var_19_0)
+				if Vector2(slot9.x + slot10.x, slot9.y + slot10.y).x <= slot2.x and slot12.y <= slot2.y and slot2.x <= slot13.x and slot2.y <= slot13.y then
+					slot0:setPlayerBubble(slot8, slot1)
 
 					return
 				end
@@ -209,31 +183,26 @@ function var_0_0.checkPlayerInBubble(arg_19_0)
 	end
 end
 
-function var_0_0.checkPlayerBoom(arg_20_0)
-	if arg_20_0.gameChar:getActionAble() then
-		local var_20_0 = arg_20_0.gameChar:getChar().tf.anchoredPosition
-		local var_20_1 = arg_20_0.gameItem:getBooms()
-		local var_20_2 = false
+function slot0.checkPlayerBoom(slot0)
+	if slot0.gameChar:getActionAble() then
+		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
 
-		for iter_20_0 = 1, #var_20_1 do
-			local var_20_3 = var_20_1[iter_20_0]
+		for slot8 = 1, #slot0.gameItem:getBooms() do
+			if slot3[slot8].ready and slot9.ready == 0 and not slot9.broken and slot9.brokenTime < 1 then
+				slot10 = slot9.boundPoints
 
-			if var_20_3.ready and var_20_3.ready == 0 and not var_20_3.broken and var_20_3.brokenTime < 1 then
-				local var_20_4 = var_20_3.boundPoints
+				if not false then
+					slot12 = CastleGameVo.PointInTriangle(slot2, slot10[3], slot10[4], slot10[1])
 
-				if not var_20_2 then
-					local var_20_5 = CastleGameVo.PointInTriangle(var_20_0, var_20_4[1], var_20_4[2], var_20_4[3])
-					local var_20_6 = CastleGameVo.PointInTriangle(var_20_0, var_20_4[3], var_20_4[4], var_20_4[1])
-
-					if var_20_5 then
-						var_20_2 = true
-					elseif var_20_6 then
-						var_20_2 = true
+					if CastleGameVo.PointInTriangle(slot2, slot10[1], slot10[2], slot10[3]) then
+						slot4 = true
+					elseif slot12 then
+						slot4 = true
 					end
 				end
 
-				if var_20_2 then
-					arg_20_0.gameChar:setPlayerFail()
+				if slot4 then
+					slot0.gameChar:setPlayerFail()
 
 					return
 				end
@@ -242,21 +211,19 @@ function var_0_0.checkPlayerBoom(arg_20_0)
 	end
 end
 
-function var_0_0.checkPlayerCarriage(arg_21_0)
-	if arg_21_0.gameChar:getActionAble() then
-		local var_21_0 = arg_21_0.gameChar:getChar().tf.anchoredPosition
-		local var_21_1 = arg_21_0.gameItem:getCarriages()
+function slot0.checkPlayerCarriage(slot0)
+	if slot0.gameChar:getActionAble() then
+		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
 
-		for iter_21_0 = 1, #var_21_1 do
-			local var_21_2 = var_21_1[iter_21_0]
-			local var_21_3 = var_21_2.bmin
-			local var_21_4 = var_21_2.bmax
-			local var_21_5 = var_21_2.tf.anchoredPosition
-			local var_21_6 = Vector2(var_21_5.x + var_21_3.x, var_21_5.y + var_21_3.y)
-			local var_21_7 = Vector2(var_21_5.x + var_21_4.x, var_21_5.y + var_21_4.y)
+		for slot7 = 1, #slot0.gameItem:getCarriages() do
+			slot8 = slot3[slot7]
+			slot9 = slot8.bmin
+			slot10 = slot8.bmax
+			slot11 = slot8.tf.anchoredPosition
+			slot13 = Vector2(slot11.x + slot10.x, slot11.y + slot10.y)
 
-			if var_21_0.x >= var_21_6.x and var_21_0.y >= var_21_6.y and var_21_0.x <= var_21_7.x and var_21_0.y <= var_21_7.y then
-				arg_21_0.gameChar:setPlayerFail()
+			if Vector2(slot11.x + slot9.x, slot11.y + slot9.y).x <= slot2.x and slot12.y <= slot2.y and slot2.x <= slot13.x and slot2.y <= slot13.y then
+				slot0.gameChar:setPlayerFail()
 
 				return
 			end
@@ -264,61 +231,54 @@ function var_0_0.checkPlayerCarriage(arg_21_0)
 	end
 end
 
-function var_0_0.setPlayerScore(arg_22_0, arg_22_1, arg_22_2)
-	local var_22_0 = arg_22_0.gameChar:getChar()
-
-	arg_22_0.gameChar:setScore(arg_22_1)
-	arg_22_0.gameScore:hitScore(arg_22_1)
-	arg_22_0._event:emit(CastleGameView.ADD_SCORE, {
-		num = arg_22_1.data.score,
-		pos = var_22_0.tf.position,
-		id = arg_22_1.id
+function slot0.setPlayerScore(slot0, slot1, slot2)
+	slot0.gameChar:setScore(slot1)
+	slot0.gameScore:hitScore(slot1)
+	slot0._event:emit(CastleGameView.ADD_SCORE, {
+		num = slot1.data.score,
+		pos = slot0.gameChar:getChar().tf.position,
+		id = slot1.id
 	})
 end
 
-function var_0_0.returnPlayerBubble(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_0.gameChar:setContent(arg_23_0.contentTop)
-	arg_23_0.gameChar:setInBubble(false)
+function slot0.returnPlayerBubble(slot0, slot1, slot2)
+	slot0.gameChar:setContent(slot0.contentTop)
+	slot0.gameChar:setInBubble(false)
 
-	arg_23_1.char = nil
+	slot1.char = nil
 end
 
-function var_0_0.setPlayerBubble(arg_24_0, arg_24_1, arg_24_2)
-	arg_24_0.gameChar:setInBubble(true)
-	arg_24_0.gameChar:setContent(arg_24_1.pos, Vector3(0, 0, 0))
+function slot0.setPlayerBubble(slot0, slot1, slot2)
+	slot0.gameChar:setInBubble(true)
+	slot0.gameChar:setContent(slot1.pos, Vector3(0, 0, 0))
 
-	arg_24_1.char = arg_24_2
+	slot1.char = slot2
 
-	arg_24_0.gameItem:playerInBubble(arg_24_1, arg_24_2)
+	slot0.gameItem:playerInBubble(slot1, slot2)
 end
 
-function var_0_0.checkPlayerInFloor(arg_25_0)
-	if arg_25_0.gameChar:getActionAble() then
-		local var_25_0 = arg_25_0.gameChar:getChar()
-		local var_25_1 = var_25_0.tf.anchoredPosition
-		local var_25_2 = arg_25_0.gameFloor:getFloors()
-		local var_25_3 = false
+function slot0.checkPlayerInFloor(slot0)
+	if slot0.gameChar:getActionAble() then
+		slot2 = slot0.gameChar:getChar().tf.anchoredPosition
 
-		for iter_25_0 = 1, #var_25_2 do
-			local var_25_4 = var_25_2[iter_25_0]
-			local var_25_5 = var_25_4.bound
+		for slot8 = 1, #slot0.gameFloor:getFloors() do
+			slot10 = slot3[slot8].bound
 
-			if not var_25_3 then
-				local var_25_6 = CastleGameVo.PointInTriangle(var_25_1, var_25_5[1], var_25_5[2], var_25_5[3])
-				local var_25_7 = CastleGameVo.PointInTriangle(var_25_1, var_25_5[3], var_25_5[4], var_25_5[1])
+			if not false then
+				slot12 = CastleGameVo.PointInTriangle(slot2, slot10[3], slot10[4], slot10[1])
 
-				if var_25_6 then
-					var_25_3 = true
-				elseif var_25_7 then
-					var_25_3 = true
+				if CastleGameVo.PointInTriangle(slot2, slot10[1], slot10[2], slot10[3]) then
+					slot4 = true
+				elseif slot12 then
+					slot4 = true
 				end
 			end
 
-			if var_25_3 then
-				var_25_0.floor = var_25_2[iter_25_0]
+			if slot4 then
+				slot1.floor = slot3[slot8]
 
-				if var_25_4.fall == true then
-					arg_25_0:setCharFall()
+				if slot9.fall == true then
+					slot0:setCharFall()
 				end
 
 				return
@@ -327,75 +287,68 @@ function var_0_0.checkPlayerInFloor(arg_25_0)
 	end
 end
 
-function var_0_0.setCharFall(arg_26_0)
-	arg_26_0.gameChar:setInGround(false)
+function slot0.setCharFall(slot0)
+	slot0.gameChar:setInGround(false)
 end
 
-function var_0_0.insertFloorItem(arg_27_0, arg_27_1)
-	for iter_27_0 = 1, #arg_27_1 do
-		table.insert(arg_27_0.floorItems, arg_27_1[iter_27_0])
+function slot0.insertFloorItem(slot0, slot1)
+	for slot5 = 1, #slot1 do
+		table.insert(slot0.floorItems, slot1[slot5])
 	end
 end
 
-function var_0_0.getContent(arg_28_0, arg_28_1)
-	local var_28_0
+function slot0.getContent(slot0, slot1)
+	slot2 = nil
 
-	if arg_28_1 == var_0_1 then
-		var_28_0 = arg_28_0.contentBack
-	elseif arg_28_1 == var_0_2 then
-		var_28_0 = arg_28_0.contentMid
-	elseif arg_28_1 == var_0_3 then
-		var_28_0 = arg_28_0.contentTop
-	elseif arg_28_1 == var_0_4 then
-		var_28_0 = arg_28_0.contentEF
+	if slot1 == uv0 then
+		slot2 = slot0.contentBack
+	elseif slot1 == uv1 then
+		slot2 = slot0.contentMid
+	elseif slot1 == uv2 then
+		slot2 = slot0.contentTop
+	elseif slot1 == uv3 then
+		slot2 = slot0.contentEF
 	end
 
-	return var_28_0
+	return slot2
 end
 
-function var_0_0.sortItems(arg_29_0, arg_29_1)
-	table.sort(arg_29_1, function(arg_30_0, arg_30_1)
-		local var_30_0 = arg_30_0.tf.anchoredPosition
-		local var_30_1 = arg_30_1.tf.anchoredPosition
-
-		if var_30_0.y > var_30_1.y then
+function slot0.sortItems(slot0, slot1)
+	table.sort(slot1, function (slot0, slot1)
+		if slot1.tf.anchoredPosition.y < slot0.tf.anchoredPosition.y then
 			return false
-		elseif var_30_0.y < var_30_1.y then
+		elseif slot2.y < slot3.y then
 			return true
 		end
 
-		if var_30_0.x > var_30_1.x then
+		if slot3.x < slot2.x then
 			return false
-		elseif var_30_0.x < var_30_1.x then
+		elseif slot2.x < slot3.x then
 			return true
 		end
 
 		return false
 	end)
 
-	for iter_29_0 = 1, #arg_29_1 do
-		arg_29_1[iter_29_0].tf:SetSiblingIndex(0)
+	for slot5 = 1, #slot1 do
+		slot1[slot5].tf:SetSiblingIndex(0)
 	end
 end
 
-function var_0_0.compareByPosition(arg_31_0, arg_31_1, arg_31_2)
-	return
+function slot0.compareByPosition(slot0, slot1, slot2)
 end
 
-function var_0_0.compareWithPosBound(arg_32_0, arg_32_1, arg_32_2)
-	local var_32_0 = arg_32_2[1]
-	local var_32_1 = arg_32_2[4]
-
-	return CastleGameVo.PointLeftLine(arg_32_1, var_32_0, var_32_1)
+function slot0.compareWithPosBound(slot0, slot1, slot2)
+	return CastleGameVo.PointLeftLine(slot1, slot2[1], slot2[4])
 end
 
-function var_0_0.showContainer(arg_33_0, arg_33_1)
-	setActive(arg_33_0.sceneMask, arg_33_1)
+function slot0.showContainer(slot0, slot1)
+	setActive(slot0.sceneMask, slot1)
 end
 
-function var_0_0.press(arg_34_0, arg_34_1)
-	arg_34_0.gameFloor:press(arg_34_1)
-	arg_34_0:sortItems(arg_34_0.floorItems)
+function slot0.press(slot0, slot1)
+	slot0.gameFloor:press(slot1)
+	slot0:sortItems(slot0.floorItems)
 end
 
-return var_0_0
+return slot0

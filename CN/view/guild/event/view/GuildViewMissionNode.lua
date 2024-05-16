@@ -1,383 +1,330 @@
-﻿local var_0_0 = class("GuildViewMissionNode")
-local var_0_1 = 200
-local var_0_2 = 150
-local var_0_3 = 100
+slot0 = class("GuildViewMissionNode")
+slot1 = 200
+slot2 = 150
+slot3 = 100
+slot0.LINE_LEFT = 1
+slot0.LINE_RIGHT = 2
+slot0.TOP_LINK = 3
+slot0.BOTTOM_LINK = 4
+slot0.CENTER_LINK = 5
+slot0.TOP_HRZ_LINK = 6
+slot0.BOTTOM_HRZ_LINK = 7
 
-var_0_0.LINE_LEFT = 1
-var_0_0.LINE_RIGHT = 2
-var_0_0.TOP_LINK = 3
-var_0_0.BOTTOM_LINK = 4
-var_0_0.CENTER_LINK = 5
-var_0_0.TOP_HRZ_LINK = 6
-var_0_0.BOTTOM_HRZ_LINK = 7
-
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1.go
-	arg_1_0._tf = tf(arg_1_0._go)
-	arg_1_0.slot = arg_1_1.slot
-	arg_1_0.data = arg_1_1.data
-	arg_1_0.parent = arg_1_1.parent
-	arg_1_0.childs = {}
-	arg_1_0.offset = 0
-	arg_1_0.lineContainer = arg_1_0._tf:Find("lines")
-	arg_1_0.lines = {}
-	arg_1_0.subLockBg = arg_1_0._tf:Find("sub_lock")
-	arg_1_0.subUnlockBg = arg_1_0._tf:Find("sub_unlock")
-	arg_1_0.unlockBg = arg_1_0._tf:Find("unlock")
-	arg_1_0.lockBg = arg_1_0._tf:Find("lock")
-	arg_1_0.nameTxt = arg_1_0._tf:Find("Text"):GetComponent(typeof(Text))
-	arg_1_0.selected = arg_1_0._tf:Find("selected")
-	arg_1_0.tip = arg_1_0._tf:Find("tip")
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1.go
+	slot0._tf = tf(slot0._go)
+	slot0.slot = slot1.slot
+	slot0.data = slot1.data
+	slot0.parent = slot1.parent
+	slot0.childs = {}
+	slot0.offset = 0
+	slot0.lineContainer = slot0._tf:Find("lines")
+	slot0.lines = {}
+	slot0.subLockBg = slot0._tf:Find("sub_lock")
+	slot0.subUnlockBg = slot0._tf:Find("sub_unlock")
+	slot0.unlockBg = slot0._tf:Find("unlock")
+	slot0.lockBg = slot0._tf:Find("lock")
+	slot0.nameTxt = slot0._tf:Find("Text"):GetComponent(typeof(Text))
+	slot0.selected = slot0._tf:Find("selected")
+	slot0.tip = slot0._tf:Find("tip")
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0:UpdateStyle()
-	arg_2_0:CalcOffset()
-	arg_2_0:SetPosition()
+function slot0.Init(slot0)
+	slot0:UpdateStyle()
+	slot0:CalcOffset()
+	slot0:SetPosition()
 end
 
-function var_0_0.IsFinish(arg_3_0)
-	return arg_3_0.data:IsFinish()
+function slot0.IsFinish(slot0)
+	return slot0.data:IsFinish()
 end
 
-function var_0_0.IsUnLock(arg_4_0)
-	if not arg_4_0.parent then
+function slot0.IsUnLock(slot0)
+	if not slot0.parent then
 		return true
 	else
-		return arg_4_0:ParentIFinish() and arg_4_0:IsActive()
+		return slot0:ParentIFinish() and slot0:IsActive()
 	end
 end
 
-function var_0_0.ParentIFinish(arg_5_0)
-	if not arg_5_0.parent then
+function slot0.ParentIFinish(slot0)
+	if not slot0.parent then
 		return false
 	end
 
-	return arg_5_0.parent:IsFinish()
+	return slot0.parent:IsFinish()
 end
 
-function var_0_0.ParentIsFinishByServer(arg_6_0)
-	if not arg_6_0.parent then
+function slot0.ParentIsFinishByServer(slot0)
+	if not slot0.parent then
 		return false
 	end
 
-	return arg_6_0.parent.data:IsFinishedByServer()
+	return slot0.parent.data:IsFinishedByServer()
 end
 
-function var_0_0.IsActive(arg_7_0)
-	return arg_7_0.data:IsActive()
+function slot0.IsActive(slot0)
+	return slot0.data:IsActive()
 end
 
-function var_0_0.GetParentId(arg_8_0)
-	if not arg_8_0.parent then
+function slot0.GetParentId(slot0)
+	if not slot0.parent then
 		return 0
 	end
 
-	return arg_8_0.parent.data.id
+	return slot0.parent.data.id
 end
 
-function var_0_0.UpdateData(arg_9_0, arg_9_1)
-	arg_9_0.data = arg_9_1
+function slot0.UpdateData(slot0, slot1)
+	slot0.data = slot1
 
-	arg_9_0:UpdateStyle()
-	arg_9_0:UpdateLineStyle()
+	slot0:UpdateStyle()
+	slot0:UpdateLineStyle()
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0.childs) do
-		iter_9_1:UpdateStyle()
-		iter_9_1:UpdateLineStyle()
+	for slot5, slot6 in ipairs(slot0.childs) do
+		slot6:UpdateStyle()
+		slot6:UpdateLineStyle()
 	end
 end
 
-function var_0_0.UpdateStyle(arg_10_0)
-	local var_10_0 = arg_10_0:IsFinish()
-	local var_10_1 = not arg_10_0:IsUnLock()
-	local var_10_2 = arg_10_0:IsMain()
+function slot0.UpdateStyle(slot0)
+	slot2 = not slot0:IsUnLock()
+	slot3 = slot0:IsMain()
 
-	setActive(arg_10_0.subLockBg, not var_10_0 and not var_10_2 and var_10_1)
-	setActive(arg_10_0.subUnlockBg, not var_10_0 and not var_10_2 and not var_10_1)
-	setActive(arg_10_0.unlockBg, not var_10_0 and var_10_2 and not var_10_1)
-	setActive(arg_10_0.lockBg, not var_10_0 and var_10_2 and var_10_1)
+	setActive(slot0.subLockBg, not slot0:IsFinish() and not slot3 and slot2)
+	setActive(slot0.subUnlockBg, not slot1 and not slot3 and not slot2)
+	setActive(slot0.unlockBg, not slot1 and slot3 and not slot2)
+	setActive(slot0.lockBg, not slot1 and slot3 and slot2)
 
-	arg_10_0.nameTxt.text = var_10_1 and "" or arg_10_0.data:GetName()
+	slot0.nameTxt.text = slot2 and "" or slot0.data:GetName()
 
-	arg_10_0:UpdateTip()
+	slot0:UpdateTip()
 end
 
-function var_0_0.UpdateTip(arg_11_0)
-	local var_11_0 = arg_11_0:IsUnLock() and arg_11_0.data:CanFormation() and not arg_11_0:IsFinish()
-
-	setActive(arg_11_0.tip, var_11_0)
+function slot0.UpdateTip(slot0)
+	setActive(slot0.tip, slot0:IsUnLock() and slot0.data:CanFormation() and not slot0:IsFinish())
 end
 
-local var_0_4 = {
+slot4 = {
 	"blue",
 	"gray",
 	"yellow"
 }
 
-function var_0_0.UpdateLineStyle(arg_12_0)
-	local var_12_0
+function slot0.UpdateLineStyle(slot0)
+	slot1 = nil
 
-	local function var_12_1(arg_13_0, arg_13_1)
-		if arg_13_0.gameObject.name == "line" then
-			arg_13_0:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/guildmissionui_atlas", arg_13_1 .. "_line")
-		elseif arg_13_0.gameObject.name == "head" then
-			arg_13_0:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/guildmissionui_atlas", arg_13_1)
-		elseif arg_13_0.gameObject.name == "adapter" then
-			eachChild(arg_13_0, function(arg_14_0)
-				var_12_1(arg_14_0, arg_13_1)
+	function slot1(slot0, slot1)
+		if slot0.gameObject.name == "line" then
+			slot0:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/guildmissionui_atlas", slot1 .. "_line")
+		elseif slot0.gameObject.name == "head" then
+			slot0:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/guildmissionui_atlas", slot1)
+		elseif slot0.gameObject.name == "adapter" then
+			eachChild(slot0, function (slot0)
+				uv0(slot0, uv1)
 			end)
 		end
 	end
 
-	local var_12_2 = arg_12_0:IsFinish()
+	slot2 = slot0:IsFinish()
 
-	for iter_12_0, iter_12_1 in ipairs(arg_12_0.childs) do
-		local var_12_3 = arg_12_0.lines[iter_12_1]
-		local var_12_4 = iter_12_1:IsMain()
-
-		for iter_12_2, iter_12_3 in ipairs(var_12_3) do
-			local var_12_5 = var_12_2 and var_0_4[2] or var_12_4 and var_0_4[3] or var_0_4[1]
-
-			var_12_1(iter_12_3.tf, var_12_5)
+	for slot6, slot7 in ipairs(slot0.childs) do
+		for slot13, slot14 in ipairs(slot0.lines[slot7]) do
+			slot1(slot14.tf, slot2 and uv0[2] or slot7:IsMain() and uv0[3] or uv0[1])
 		end
 	end
 
-	local var_12_6 = arg_12_0.lines[arg_12_0] or {}
-	local var_12_7 = arg_12_0:IsMain()
-	local var_12_8 = true
+	slot3 = slot0.lines[slot0] or {}
+	slot4 = slot0:IsMain()
+	slot5 = true
 
-	if arg_12_0.parent then
-		var_12_8 = arg_12_0.parent:IsFinish()
+	if slot0.parent then
+		slot5 = slot0.parent:IsFinish()
 	end
 
-	for iter_12_4, iter_12_5 in ipairs(var_12_6) do
-		local var_12_9
+	for slot9, slot10 in ipairs(slot3) do
+		slot11 = nil
 
-		if iter_12_5.type == var_0_0.LINE_LEFT then
-			var_12_9 = (var_12_2 or var_12_8) and var_0_4[2] or var_12_7 and var_0_4[3] or var_0_4[1]
-		else
-			var_12_9 = var_12_2 and var_0_4[2] or var_12_7 and var_0_4[3] or var_0_4[1]
-		end
-
-		var_12_1(iter_12_5.tf, var_12_9)
+		slot1(slot10.tf, slot10.type == uv1.LINE_LEFT and ((slot2 or slot5) and uv0[2] or slot4 and uv0[3] or uv0[1]) or slot2 and uv0[2] or slot4 and uv0[3] or uv0[1])
 	end
 end
 
-function var_0_0.Selected(arg_15_0, arg_15_1)
-	setActive(arg_15_0.selected, arg_15_1)
+function slot0.Selected(slot0, slot1)
+	setActive(slot0.selected, slot1)
 end
 
-function var_0_0.CalcOffset(arg_16_0)
-	if not arg_16_0.parent then
-		arg_16_0.offset = 0
+function slot0.CalcOffset(slot0)
+	if not slot0.parent then
+		slot0.offset = 0
 
 		return
 	end
 
-	if #arg_16_0.parent.childs == 2 then
-		local var_16_0 = arg_16_0:IsMain()
-		local var_16_1 = arg_16_0:GetParentOffset()
-		local var_16_2 = 1
-		local var_16_3 = -1
-		local var_16_4 = math.abs(var_16_1 + var_16_2)
-		local var_16_5 = math.abs(var_16_1 + var_16_3)
+	if #slot0.parent.childs == 2 then
+		slot2 = slot0:GetParentOffset()
 
-		if var_16_5 <= var_16_4 then
-			arg_16_0.offset = var_16_0 and var_16_3 or var_16_2
-		elseif var_16_4 < var_16_5 then
-			arg_16_0.offset = var_16_0 and var_16_2 or var_16_3
+		if math.abs(slot2 + -1) <= math.abs(slot2 + 1) then
+			slot0.offset = slot0:IsMain() and slot4 or slot3
+		elseif slot5 < slot6 then
+			slot0.offset = slot1 and slot3 or slot4
 		end
-	elseif #arg_16_0.parent.childs == 1 then
-		arg_16_0.offset = 0 - arg_16_0.parent:GetFirstNodeOffset()
+	elseif #slot0.parent.childs == 1 then
+		slot0.offset = 0 - slot0.parent:GetFirstNodeOffset()
 	end
 end
 
-function var_0_0.GetLocalPosition(arg_17_0)
-	if arg_17_0.parent then
-		local var_17_0 = arg_17_0:GetOffset()
-		local var_17_1 = (arg_17_0.slot - 1) * (var_0_1 + arg_17_0._tf.sizeDelta.x)
-		local var_17_2 = arg_17_0.parent:GetLocalPosition()
-		local var_17_3 = arg_17_0:IsMain() and 0 or var_0_3
-		local var_17_4 = var_17_2.y + var_17_0 * var_0_2 + (var_17_0 > 0 and var_17_3 or -var_17_3)
+function slot0.GetLocalPosition(slot0)
+	if slot0.parent then
+		slot1 = slot0:GetOffset()
+		slot4 = slot0:IsMain() and 0 or uv1
 
-		return Vector3(var_17_1, var_17_4, 0)
+		return Vector3((slot0.slot - 1) * (uv0 + slot0._tf.sizeDelta.x), slot0.parent:GetLocalPosition().y + slot1 * uv2 + (slot1 > 0 and slot4 or -slot4), 0)
 	else
 		return Vector3(0, 0, 0)
 	end
 end
 
-function var_0_0.SetPosition(arg_18_0)
-	local var_18_0 = arg_18_0:GetLocalPosition()
-
-	arg_18_0._tf.anchoredPosition = var_18_0
+function slot0.SetPosition(slot0)
+	slot0._tf.anchoredPosition = slot0:GetLocalPosition()
 end
 
-function var_0_0.AddChild(arg_19_0, arg_19_1)
-	table.insert(arg_19_0.childs, arg_19_1)
+function slot0.AddChild(slot0, slot1)
+	table.insert(slot0.childs, slot1)
 end
 
-function var_0_0.GetChilds(arg_20_0)
-	return arg_20_0.childs
+function slot0.GetChilds(slot0)
+	return slot0.childs
 end
 
-function var_0_0.HasParent(arg_21_0)
-	return arg_21_0.parent ~= nil
+function slot0.HasParent(slot0)
+	return slot0.parent ~= nil
 end
 
-function var_0_0.HasChild(arg_22_0)
-	return #arg_22_0.childs > 0
+function slot0.HasChild(slot0)
+	return #slot0.childs > 0
 end
 
-function var_0_0.IsMain(arg_23_0)
-	return arg_23_0.data:IsMain()
+function slot0.IsMain(slot0)
+	return slot0.data:IsMain()
 end
 
-function var_0_0.GetOffset(arg_24_0)
-	return arg_24_0.offset
+function slot0.GetOffset(slot0)
+	return slot0.offset
 end
 
-function var_0_0.GetParentOffset(arg_25_0)
-	assert(arg_25_0.parent)
+function slot0.GetParentOffset(slot0)
+	assert(slot0.parent)
 
-	return arg_25_0.parent:GetOffset()
+	return slot0.parent:GetOffset()
 end
 
-function var_0_0.GetFirstNodeOffset(arg_26_0)
-	local var_26_0 = 0
-	local var_26_1 = arg_26_0
+function slot0.GetFirstNodeOffset(slot0)
+	slot1 = 0
+	slot2 = slot0
 
-	while var_26_1.parent ~= nil do
-		var_26_0 = var_26_0 + var_26_1:GetOffset()
-		var_26_1 = var_26_1.parent
+	while slot2.parent ~= nil do
+		slot1 = slot1 + slot2:GetOffset()
+		slot2 = slot2.parent
 	end
 
-	return var_26_0
+	return slot1
 end
 
-function var_0_0.AddLine(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	arg_27_1 = tf(arg_27_1)
+function slot0.AddLine(slot0, slot1, slot2, slot3)
+	SetParent(tf(slot1), slot0.lineContainer)
 
-	SetParent(arg_27_1, arg_27_0.lineContainer)
-
-	if arg_27_2 == var_0_0.LINE_LEFT then
-		if arg_27_0:IsMain() then
-			arg_27_1.anchorMax = Vector2(0, 0.5)
-			arg_27_1.anchorMin = Vector2(0, 0.5)
-			arg_27_1.pivot = Vector2(1, 0.5)
-			arg_27_1.anchoredPosition = Vector2(0, 0)
+	if slot2 == uv0.LINE_LEFT then
+		if slot0:IsMain() then
+			slot1.anchorMax = Vector2(0, 0.5)
+			slot1.anchorMin = Vector2(0, 0.5)
+			slot1.pivot = Vector2(1, 0.5)
+			slot1.anchoredPosition = Vector2(0, 0)
 		else
-			arg_27_1.pivot = Vector2(1, 0.5)
+			slot1.pivot = Vector2(1, 0.5)
 
-			if arg_27_0:GetOffset() > 0 then
-				arg_27_1.anchorMax = Vector2(0.5, 0)
-				arg_27_1.anchorMin = Vector2(0.5, 0)
-				arg_27_1.eulerAngles = Vector3(0, 0, 90)
-				arg_27_1.anchoredPosition = Vector2(0, 0)
+			if slot0:GetOffset() > 0 then
+				slot1.anchorMax = Vector2(0.5, 0)
+				slot1.anchorMin = Vector2(0.5, 0)
+				slot1.eulerAngles = Vector3(0, 0, 90)
+				slot1.anchoredPosition = Vector2(0, 0)
 			else
-				arg_27_1.anchorMax = Vector2(0.5, 1)
-				arg_27_1.anchorMin = Vector2(0.5, 1)
-				arg_27_1.eulerAngles = Vector3(0, 0, -90)
-				arg_27_1.anchoredPosition = Vector2(0, 0)
+				slot1.anchorMax = Vector2(0.5, 1)
+				slot1.anchorMin = Vector2(0.5, 1)
+				slot1.eulerAngles = Vector3(0, 0, -90)
+				slot1.anchoredPosition = Vector2(0, 0)
 			end
 		end
-	elseif arg_27_2 == var_0_0.LINE_RIGHT then
-		arg_27_1.anchorMax = Vector2(1, 0.5)
-		arg_27_1.anchorMin = Vector2(1, 0.5)
-		arg_27_1.pivot = Vector2(0, 0.5)
-		arg_27_1.anchoredPosition = Vector2(0, 0)
-	elseif arg_27_2 == var_0_0.TOP_LINK then
-		arg_27_1.anchorMax = Vector2(1, 0.5)
-		arg_27_1.anchorMin = Vector2(1, 0.5)
-		arg_27_1.pivot = Vector2(1, 0.5)
+	elseif slot2 == uv0.LINE_RIGHT then
+		slot1.anchorMax = Vector2(1, 0.5)
+		slot1.anchorMin = Vector2(1, 0.5)
+		slot1.pivot = Vector2(0, 0.5)
+		slot1.anchoredPosition = Vector2(0, 0)
+	elseif slot2 == uv0.TOP_LINK then
+		slot1.anchorMax = Vector2(1, 0.5)
+		slot1.anchorMin = Vector2(1, 0.5)
+		slot1.pivot = Vector2(1, 0.5)
+		slot1.anchoredPosition = Vector2(slot0.lines[slot0][1].tf.sizeDelta.x, 0)
+		slot1.eulerAngles = Vector3(0, 0, -90)
 
-		local var_27_0 = arg_27_0.lines[arg_27_0][1].tf.sizeDelta.x
-
-		arg_27_1.anchoredPosition = Vector2(var_27_0, 0)
-		arg_27_1.eulerAngles = Vector3(0, 0, -90)
-
-		local var_27_1 = arg_27_3:GetLocalPosition().y - arg_27_0:GetLocalPosition().y
-
-		if arg_27_3:IsMain() then
-			arg_27_1.sizeDelta = Vector2(var_27_1, arg_27_1.sizeDelta.y)
+		if slot3:IsMain() then
+			slot1.sizeDelta = Vector2(slot3:GetLocalPosition().y - slot0:GetLocalPosition().y, slot1.sizeDelta.y)
 		else
-			arg_27_1.sizeDelta = Vector2(var_27_1 - var_27_0 - arg_27_0._tf.sizeDelta.y / 2, arg_27_1.sizeDelta.y)
+			slot1.sizeDelta = Vector2(slot6 - slot5 - slot0._tf.sizeDelta.y / 2, slot1.sizeDelta.y)
 		end
-	elseif arg_27_2 == var_0_0.BOTTOM_LINK then
-		arg_27_1.anchorMax = Vector2(1, 0.5)
-		arg_27_1.anchorMin = Vector2(1, 0.5)
-		arg_27_1.pivot = Vector2(1, 0.5)
+	elseif slot2 == uv0.BOTTOM_LINK then
+		slot1.anchorMax = Vector2(1, 0.5)
+		slot1.anchorMin = Vector2(1, 0.5)
+		slot1.pivot = Vector2(1, 0.5)
+		slot1.anchoredPosition = Vector2(slot0.lines[slot0][1].tf.sizeDelta.x, 0)
+		slot1.eulerAngles = Vector3(0, 0, 90)
 
-		local var_27_2 = arg_27_0.lines[arg_27_0][1].tf.sizeDelta.x
-
-		arg_27_1.anchoredPosition = Vector2(var_27_2, 0)
-		arg_27_1.eulerAngles = Vector3(0, 0, 90)
-
-		local var_27_3 = arg_27_3:GetLocalPosition().y - arg_27_0:GetLocalPosition().y
-
-		if arg_27_3:IsMain() then
-			arg_27_1.sizeDelta = Vector2(-var_27_3, arg_27_1.sizeDelta.y)
+		if slot3:IsMain() then
+			slot1.sizeDelta = Vector2(-(slot3:GetLocalPosition().y - slot0:GetLocalPosition().y), slot1.sizeDelta.y)
 		else
-			arg_27_1.sizeDelta = Vector2(-var_27_3 - var_27_2 - arg_27_0._tf.sizeDelta.y / 2, arg_27_1.sizeDelta.y)
+			slot1.sizeDelta = Vector2(-slot6 - slot5 - slot0._tf.sizeDelta.y / 2, slot1.sizeDelta.y)
 		end
-	elseif arg_27_2 == var_0_0.TOP_HRZ_LINK then
-		local var_27_4 = arg_27_0.lines[arg_27_3][1].tf
-		local var_27_5 = arg_27_0.lines[arg_27_0][1].tf.sizeDelta.x
-		local var_27_6 = var_27_4.sizeDelta.x + var_27_4.anchoredPosition.y
+	elseif slot2 == uv0.TOP_HRZ_LINK then
+		slot4 = slot0.lines[slot3][1].tf
+		slot1.anchoredPosition = Vector2(slot4.anchoredPosition.x, slot4.sizeDelta.x + slot4.anchoredPosition.y)
+		slot10 = nil
 
-		arg_27_1.anchoredPosition = Vector2(var_27_4.anchoredPosition.x, var_27_6)
-
-		local var_27_7 = arg_27_3:GetLocalPosition()
-		local var_27_8 = arg_27_0:GetLocalPosition()
-		local var_27_9
-
-		if arg_27_3:IsMain() then
-			var_27_9 = var_27_7.x - var_27_8.x - 2 * var_27_5 - arg_27_0._tf.sizeDelta.x
+		if slot3:IsMain() then
+			slot10 = slot3:GetLocalPosition().x - slot0:GetLocalPosition().x - 2 * slot0.lines[slot0][1].tf.sizeDelta.x - slot0._tf.sizeDelta.x
 		else
-			nextNodeLposX = var_27_7.x + arg_27_0._tf.sizeDelta.x / 2
-			var_27_9 = nextNodeLposX - var_27_8.x - arg_27_0._tf.sizeDelta.x - var_27_5
+			nextNodeLposX = slot8.x + slot0._tf.sizeDelta.x / 2
+			slot10 = nextNodeLposX - slot9.x - slot0._tf.sizeDelta.x - slot6
 		end
 
-		arg_27_1.sizeDelta = Vector2(var_27_9, arg_27_1.sizeDelta.y)
-	elseif arg_27_2 == var_0_0.BOTTOM_HRZ_LINK then
-		local var_27_10 = arg_27_0.lines[arg_27_3][1].tf
-		local var_27_11 = arg_27_0.lines[arg_27_0][1].tf.sizeDelta.x
-		local var_27_12 = var_27_10.anchoredPosition.y - var_27_10.sizeDelta.x
+		slot1.sizeDelta = Vector2(slot10, slot1.sizeDelta.y)
+	elseif slot2 == uv0.BOTTOM_HRZ_LINK then
+		slot4 = slot0.lines[slot3][1].tf
+		slot1.anchoredPosition = Vector2(slot4.anchoredPosition.x, slot4.anchoredPosition.y - slot4.sizeDelta.x)
+		slot10 = nil
 
-		arg_27_1.anchoredPosition = Vector2(var_27_10.anchoredPosition.x, var_27_12)
-
-		local var_27_13 = arg_27_3:GetLocalPosition()
-		local var_27_14 = arg_27_0:GetLocalPosition()
-		local var_27_15
-
-		if arg_27_3:IsMain() then
-			var_27_15 = var_27_13.x - var_27_14.x - 2 * var_27_11 - arg_27_0._tf.sizeDelta.x
+		if slot3:IsMain() then
+			slot10 = slot3:GetLocalPosition().x - slot0:GetLocalPosition().x - 2 * slot0.lines[slot0][1].tf.sizeDelta.x - slot0._tf.sizeDelta.x
 		else
-			nextNodeLposX = var_27_13.x + arg_27_0._tf.sizeDelta.x / 2
-			var_27_15 = nextNodeLposX - var_27_14.x - arg_27_0._tf.sizeDelta.x - var_27_11
+			nextNodeLposX = slot8.x + slot0._tf.sizeDelta.x / 2
+			slot10 = nextNodeLposX - slot9.x - slot0._tf.sizeDelta.x - slot6
 		end
 
-		arg_27_1.sizeDelta = Vector2(var_27_15, arg_27_1.sizeDelta.y)
-	elseif arg_27_2 == var_0_0.CENTER_LINK then
-		local var_27_16 = arg_27_3:GetLocalPosition()
-		local var_27_17 = arg_27_0:GetLocalPosition()
-		local var_27_18 = arg_27_0.lines[arg_27_0][1].tf.sizeDelta.x
-		local var_27_19 = var_27_16.x - var_27_17.x - arg_27_0._tf.sizeDelta.x - 2 * var_27_18
-
-		arg_27_1.anchorMax = Vector2(1, 0.5)
-		arg_27_1.anchorMin = Vector2(1, 0.5)
-		arg_27_1.anchoredPosition = Vector2(var_27_18, 0)
-		arg_27_1.sizeDelta = Vector2(var_27_19, arg_27_1.sizeDelta.y)
+		slot1.sizeDelta = Vector2(slot10, slot1.sizeDelta.y)
+	elseif slot2 == uv0.CENTER_LINK then
+		slot7 = slot0.lines[slot0][1].tf.sizeDelta.x
+		slot1.anchorMax = Vector2(1, 0.5)
+		slot1.anchorMin = Vector2(1, 0.5)
+		slot1.anchoredPosition = Vector2(slot7, 0)
+		slot1.sizeDelta = Vector2(slot3:GetLocalPosition().x - slot0:GetLocalPosition().x - slot0._tf.sizeDelta.x - 2 * slot7, slot1.sizeDelta.y)
 	end
 
-	if not arg_27_0.lines[arg_27_3] then
-		arg_27_0.lines[arg_27_3] = {}
+	if not slot0.lines[slot3] then
+		slot0.lines[slot3] = {}
 	end
 
-	table.insert(arg_27_0.lines[arg_27_3], {
-		tf = arg_27_1,
-		type = arg_27_2
+	table.insert(slot0.lines[slot3], {
+		tf = slot1,
+		type = slot2
 	})
 end
 
-return var_0_0
+return slot0

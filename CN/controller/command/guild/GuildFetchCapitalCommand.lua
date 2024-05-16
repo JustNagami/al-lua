@@ -1,23 +1,23 @@
-﻿local var_0_0 = class("GuildFetchCapitalCommand", pm.SimpleCommand)
+slot0 = class("GuildFetchCapitalCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(62024, {
 		type = 0
-	}, 62025, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(GuildProxy)
-			local var_2_1 = var_2_0:getData()
+	}, 62025, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(GuildProxy)
+			slot2 = slot1:getData()
 
-			var_2_1:setRefreshCaptialTime()
-			var_2_1:updateCapital(arg_2_0.capital)
-			var_2_0:updateGuild(var_2_1)
-			arg_1_0:sendNotification(GAME.GUILD_REFRESH_CAPITAL_DONE)
+			slot2:setRefreshCaptialTime()
+			slot2:updateCapital(slot0.capital)
+			slot1:updateGuild(slot2)
+			uv0:sendNotification(GAME.GUILD_REFRESH_CAPITAL_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

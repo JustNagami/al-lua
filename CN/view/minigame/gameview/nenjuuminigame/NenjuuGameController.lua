@@ -1,154 +1,151 @@
-﻿local var_0_0 = class("NenjuuGameController")
+slot0 = class("NenjuuGameController")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.binder = arg_1_1
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.binder = slot1
 
-	arg_1_0:InitTimer()
-	arg_1_0:InitGameUI(arg_1_2)
+	slot0:InitTimer()
+	slot0:InitGameUI(slot2)
 end
 
-local function var_0_1(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0:GetComponentsInChildren(typeof(Animator), true)
-
-	for iter_2_0 = 0, var_2_0.Length - 1 do
-		var_2_0[iter_2_0].speed = arg_2_1
+function slot1(slot0, slot1)
+	for slot6 = 0, slot0:GetComponentsInChildren(typeof(Animator), true).Length - 1 do
+		slot2[slot6].speed = slot1
 	end
 end
 
-function var_0_0.InitTimer(arg_3_0)
-	arg_3_0.timer = Timer.New(function()
-		arg_3_0:OnTimer(NenjuuGameConfig.TIME_INTERVAL)
+function slot0.InitTimer(slot0)
+	slot0.timer = Timer.New(function ()
+		uv0:OnTimer(NenjuuGameConfig.TIME_INTERVAL)
 	end, NenjuuGameConfig.TIME_INTERVAL, -1)
 
-	if not arg_3_0.handle then
-		arg_3_0.handle = UpdateBeat:CreateListener(arg_3_0.Update, arg_3_0)
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	UpdateBeat:AddListener(arg_3_0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 end
 
-function var_0_0.InitGameUI(arg_5_0, arg_5_1)
-	arg_5_0.rtViewport = arg_5_1:Find("Viewport")
-	arg_5_0.rtMainContent = arg_5_0.rtViewport:Find("MainContent")
-	arg_5_0.rtResource = arg_5_1:Find("Resource")
-	arg_5_0.rtJoyStick = arg_5_1:Find("Controller/bottom/joy_stick")
-
-	local var_5_0 = {
+function slot0.InitGameUI(slot0, slot1)
+	slot0.rtViewport = slot1:Find("Viewport")
+	slot0.rtMainContent = slot0.rtViewport:Find("MainContent")
+	slot0.rtResource = slot1:Find("Resource")
+	slot0.rtJoyStick = slot1:Find("Controller/bottom/joy_stick")
+	slot2 = {
 		"E",
 		"S",
 		"W",
 		"N"
 	}
 
-	for iter_5_0, iter_5_1 in ipairs({
+	for slot6, slot7 in ipairs({
 		"right",
 		"down",
 		"left",
 		"up"
 	}) do
-		local var_5_1 = arg_5_0.rtJoyStick:Find(iter_5_1):GetComponent(typeof(EventTriggerListener))
+		slot8 = slot0.rtJoyStick:Find(slot7):GetComponent(typeof(EventTriggerListener))
 
-		var_5_1:AddPointDownFunc(function()
-			arg_5_0.cacheInput = var_5_0[iter_5_0]
+		slot8:AddPointDownFunc(function ()
+			uv0.cacheInput = uv1[uv2]
 		end)
-		var_5_1:AddPointEnterFunc(function()
-			if arg_5_0.cacheInput and arg_5_0.cacheInput ~= var_5_0[iter_5_0] then
-				arg_5_0.cacheInput = var_5_0[iter_5_0]
+		slot8:AddPointEnterFunc(function ()
+			if uv0.cacheInput and uv0.cacheInput ~= uv1[uv2] then
+				uv0.cacheInput = uv1[uv2]
 			end
 		end)
-		var_5_1:AddPointUpFunc(function()
-			if arg_5_0.cacheInput then
-				arg_5_0.cacheInput = nil
+		slot8:AddPointUpFunc(function ()
+			if uv0.cacheInput then
+				uv0.cacheInput = nil
 			end
 		end)
 	end
 
-	arg_5_0.inPress = {}
-	arg_5_0.rtSkillButton = arg_5_1:Find("Controller/bottom/skill_button")
+	slot0.inPress = {}
+	slot0.rtSkillButton = slot1:Find("Controller/bottom/skill_button")
 
-	for iter_5_2 = 0, 3 do
-		local var_5_2 = "Skill_" .. iter_5_2
-		local var_5_3 = arg_5_0.rtSkillButton:Find(var_5_2):GetComponent(typeof(EventTriggerListener))
+	for slot6 = 0, 3 do
+		slot8 = slot0.rtSkillButton:Find("Skill_" .. slot6):GetComponent(typeof(EventTriggerListener))
 
-		var_5_3:AddPointDownFunc(function()
-			arg_5_0.inPress[var_5_2] = true
+		slot8:AddPointDownFunc(function ()
+			uv0.inPress[uv1] = true
 		end)
-		var_5_3:AddPointUpFunc(function()
-			arg_5_0.inPress[var_5_2] = false
+		slot8:AddPointUpFunc(function ()
+			uv0.inPress[uv1] = false
 		end)
 	end
 
-	arg_5_0.textTime = arg_5_1:Find("Controller/top/panel/time/Text")
-	arg_5_0.textPoint = arg_5_1:Find("Controller/top/panel/point/Text")
-	arg_5_0.rtCollection = arg_5_1:Find("Controller/top/target")
+	slot0.textTime = slot1:Find("Controller/top/panel/time/Text")
+	slot0.textPoint = slot1:Find("Controller/top/panel/point/Text")
+	slot0.rtCollection = slot1:Find("Controller/top/target")
 end
 
-function var_0_0.Update(arg_11_0)
-	arg_11_0:AddDebugInput()
+function slot0.Update(slot0)
+	slot0:AddDebugInput()
 end
 
-function var_0_0.AddDebugInput(arg_12_0)
+function slot0.AddDebugInput(slot0)
 	if IsUnityEditor then
-		local var_12_0 = {
+		slot1 = {
 			"E",
 			"S",
 			"W",
 			"N"
 		}
-		local var_12_1 = {
+
+		for slot6, slot7 in ipairs({
 			"D",
 			"S",
 			"A",
 			"W"
-		}
-
-		for iter_12_0, iter_12_1 in ipairs(var_12_1) do
-			if Input.GetKeyDown(KeyCode[iter_12_1]) then
-				arg_12_0.cacheInput = var_12_0[iter_12_0]
+		}) do
+			if Input.GetKeyDown(KeyCode[slot7]) then
+				slot0.cacheInput = slot1[slot6]
 			end
 
-			if Input.GetKeyUp(KeyCode[iter_12_1]) and arg_12_0.cacheInput == var_12_0[iter_12_0] then
-				arg_12_0.cacheInput = nil
+			if Input.GetKeyUp(KeyCode[slot7]) and slot0.cacheInput == slot1[slot6] then
+				slot0.cacheInput = nil
 			end
 		end
 	end
 end
 
-function var_0_0.InitMapConfig(arg_13_0, arg_13_1)
-	arg_13_0.pointRate = arg_13_1.rate
-	arg_13_0.config = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. arg_13_1.index)
+function slot0.InitMapConfig(slot0, slot1)
+	slot0.pointRate = slot1.rate
+	slot0.config = NenjuuGameConfig.GetStageConfig("Spring23Level_" .. slot1.index)
+	slot2 = {
+		[slot7.name] = slot7
+	}
+	slot6 = "Spring23Game"
+	slot7 = "Spring23Level_" .. slot1.index
 
-	local var_13_0 = {}
-
-	for iter_13_0, iter_13_1 in ipairs(pg.MiniGameTileMgr.GetInstance():getDataLayers("Spring23Game", "Spring23Level_" .. arg_13_1.index)) do
-		var_13_0[iter_13_1.name] = iter_13_1
+	for slot6, slot7 in ipairs(pg.MiniGameTileMgr.GetInstance():getDataLayers(slot6, slot7)) do
+		-- Nothing
 	end
 
-	arg_13_0.timeCount = arg_13_0.config.extra_time[1]
-	arg_13_0.point = 0
+	slot0.timeCount = slot0.config.extra_time[1]
+	slot0.point = 0
 
-	setText(arg_13_0.textTime, string.format("%02d:%02ds", math.floor(arg_13_0.timeCount / 60), math.floor(arg_13_0.timeCount % 60)))
-	setText(arg_13_0.textPoint, arg_13_0.point)
-	eachChild(arg_13_0.rtCollection, function(arg_14_0)
-		setActive(arg_14_0, false)
+	setText(slot0.textTime, string.format("%02d:%02ds", math.floor(slot0.timeCount / 60), math.floor(slot0.timeCount % 60)))
+	setText(slot0.textPoint, slot0.point)
+	eachChild(slot0.rtCollection, function (slot0)
+		setActive(slot0, false)
 	end)
 
-	arg_13_0.mapSize = NewPos(var_13_0.floor.width, var_13_0.floor.height)
+	slot0.mapSize = NewPos(slot2.floor.width, slot2.floor.height)
 
-	setSizeDelta(arg_13_0.rtMainContent, arg_13_0.mapSize * 32)
+	setSizeDelta(slot0.rtMainContent, slot0.mapSize * 32)
 
-	local var_13_1 = arg_13_0.rtViewport.rect
-	local var_13_2 = arg_13_0.rtMainContent.rect
+	slot3 = slot0.rtViewport.rect
+	slot4 = slot0.rtMainContent.rect
+	slot8 = slot4.height + 160 - slot3.height
+	slot9 = 0
+	slot0.buffer = NewPos(math.max(slot4.width + 192 - slot3.width, 0), math.max(slot8, slot9)) * 0.5
 
-	arg_13_0.buffer = NewPos(math.max(var_13_2.width + 192 - var_13_1.width, 0), math.max(var_13_2.height + 160 - var_13_1.height, 0)) * 0.5
-
-	for iter_13_2, iter_13_3 in ipairs(var_13_0.floor.layer) do
-		local var_13_3 = NewPos((iter_13_3.index - 1) % arg_13_0.mapSize.x, math.floor((iter_13_3.index - 1) / arg_13_0.mapSize.x))
-
-		arg_13_0.plane[tostring(var_13_3)] = iter_13_3.item
+	for slot8, slot9 in ipairs(slot2.floor.layer) do
+		slot0.plane[tostring(NewPos((slot9.index - 1) % slot0.mapSize.x, math.floor((slot9.index - 1) / slot0.mapSize.x)))] = slot9.item
 	end
 
-	local var_13_4 = {
+	slot5 = {
 		["1_0"] = 0,
 		["1_1"] = 5,
 		["-1_0"] = 2,
@@ -159,28 +156,23 @@ function var_0_0.InitMapConfig(arg_13_0, arg_13_1)
 		["-1_1"] = 6
 	}
 
-	for iter_13_4 = 0, arg_13_0.mapSize.y - 1 do
-		for iter_13_5 = 0, arg_13_0.mapSize.x - 1 do
-			local var_13_5 = arg_13_0.plane[iter_13_5 .. "_" .. iter_13_4] or "Snow"
-			local var_13_6 = arg_13_0.rtResource:Find("plane/" .. var_13_5)
-
-			if not var_13_6 then
-				var_13_6 = cloneTplTo(arg_13_0.rtResource:Find("plane/Road"), arg_13_0.rtMainContent:Find("plane"))
-
-				setImageSprite(var_13_6:Find("scale/Image"), getImageSprite(arg_13_0.rtResource:Find("plane_sprite/" .. var_13_5)))
+	for slot9 = 0, slot0.mapSize.y - 1 do
+		for slot13 = 0, slot0.mapSize.x - 1 do
+			if not slot0.rtResource:Find("plane/" .. (slot0.plane[slot13 .. "_" .. slot9] or "Snow")) then
+				setImageSprite(cloneTplTo(slot0.rtResource:Find("plane/Road"), slot0.rtMainContent:Find("plane")):Find("scale/Image"), getImageSprite(slot0.rtResource:Find("plane_sprite/" .. slot14)))
 			else
-				var_13_6 = cloneTplTo(var_13_6, arg_13_0.rtMainContent:Find("plane"))
+				slot15 = cloneTplTo(slot15, slot0.rtMainContent:Find("plane"))
 			end
 
-			if var_13_6:Find("scale/Snow") then
-				local function var_13_7(arg_15_0, arg_15_1)
-					return not arg_13_0:InRange(NewPos(arg_15_0, arg_15_1)) or not arg_13_0.plane[arg_15_0 .. "_" .. arg_15_1] or arg_13_0.plane[arg_15_0 .. "_" .. arg_15_1] == "Snow"
+			if slot15:Find("scale/Snow") then
+				function slot16(slot0, slot1)
+					return not uv0:InRange(NewPos(slot0, slot1)) or not uv0.plane[slot0 .. "_" .. slot1] or uv0.plane[slot0 .. "_" .. slot1] == "Snow"
 				end
 
-				for iter_13_6 = -1, 1 do
-					for iter_13_7 = -1, 1 do
-						if var_13_7(iter_13_5 + iter_13_6, iter_13_4 + iter_13_7) and (iter_13_6 == 0 or iter_13_7 == 0 or not var_13_7(iter_13_5, iter_13_4 + iter_13_7) and not var_13_7(iter_13_5 + iter_13_6, iter_13_4)) then
-							setActive(var_13_6:Find("scale/Snow/" .. var_13_4[iter_13_6 .. "_" .. iter_13_7]), true)
+				for slot20 = -1, 1 do
+					for slot24 = -1, 1 do
+						if slot16(slot13 + slot20, slot9 + slot24) and (slot20 == 0 or slot24 == 0 or not slot16(slot13, slot9 + slot24) and not slot16(slot13 + slot20, slot9)) then
+							setActive(slot15:Find("scale/Snow/" .. slot5[slot20 .. "_" .. slot24]), true)
 						end
 					end
 				end
@@ -188,407 +180,370 @@ function var_0_0.InitMapConfig(arg_13_0, arg_13_1)
 		end
 	end
 
-	for iter_13_8, iter_13_9 in ipairs(var_13_0.item.layer) do
-		local var_13_8 = NewPos((iter_13_9.index - 1) % arg_13_0.mapSize.x, math.floor((iter_13_9.index - 1) / arg_13_0.mapSize.x))
-		local var_13_9 = arg_13_0:CreateTarget({
-			name = iter_13_9.item,
-			pos = var_13_8
+	for slot9, slot10 in ipairs(slot2.item.layer) do
+		slot12 = slot0:CreateTarget({
+			name = slot10.item,
+			pos = NewPos((slot10.index - 1) % slot0.mapSize.x, math.floor((slot10.index - 1) / slot0.mapSize.x))
 		})
 	end
 
-	for iter_13_10, iter_13_11 in ipairs(var_13_0.character.layer) do
-		local var_13_10 = NewPos((iter_13_11.index - 1) % arg_13_0.mapSize.x, math.floor((iter_13_11.index - 1) / arg_13_0.mapSize.x))
-		local var_13_11 = {
-			name = iter_13_11.item,
-			pos = var_13_10
-		}
-
-		switch(var_13_11.name, {
-			FuShun = function()
-				var_13_11.level = arg_13_1.FuShun.level
-				var_13_11.itemType = arg_13_1.FuShun.item
-				arg_13_0.moveFuShun = arg_13_0:CreateTarget(var_13_11)
+	for slot9, slot10 in ipairs(slot2.character.layer) do
+		switch(({
+			name = slot10.item,
+			pos = NewPos((slot10.index - 1) % slot0.mapSize.x, math.floor((slot10.index - 1) / slot0.mapSize.x))
+		}).name, {
+			FuShun = function ()
+				uv0.level = uv1.FuShun.level
+				uv0.itemType = uv1.FuShun.item
+				uv2.moveFuShun = uv2:CreateTarget(uv0)
 			end,
-			Nenjuu = function()
-				var_13_11.abilitys = arg_13_1.Nenjuu
-				arg_13_0.moveNenjuu = arg_13_0:CreateTarget(var_13_11)
+			Nenjuu = function ()
+				uv0.abilitys = uv1.Nenjuu
+				uv2.moveNenjuu = uv2:CreateTarget(uv0)
 			end
 		})
 	end
 
-	arg_13_0.wave = 0
-	arg_13_0.itemCount = 0
+	slot0.wave = 0
+	slot0.itemCount = 0
 end
 
-function var_0_0.CheckWave(arg_18_0)
-	if arg_18_0.itemCount > 0 then
+function slot0.CheckWave(slot0)
+	if slot0.itemCount > 0 then
 		return
 	end
 
-	if arg_18_0.wave < #arg_18_0.config.wave then
-		arg_18_0.wave = arg_18_0.wave + 1
+	if slot0.wave < #slot0.config.wave then
+		slot0.wave = slot0.wave + 1
+		slot0.itemType, slot0.itemCount, slot3 = unpack(slot0.config.wave[slot0.wave])
+		slot4 = {}
 
-		local var_18_0, var_18_1, var_18_2 = unpack(arg_18_0.config.wave[arg_18_0.wave])
-
-		arg_18_0.itemType = var_18_0
-		arg_18_0.itemCount = var_18_1
-
-		local var_18_3 = {}
-
-		for iter_18_0 = 0, arg_18_0.mapSize.x - 1 do
-			for iter_18_1 = 0, arg_18_0.mapSize.y - 1 do
-				local var_18_4 = NewPos(iter_18_0, iter_18_1)
-
-				if arg_18_0:Moveable(var_18_4, true) and not arg_18_0.hideMap[tostring(var_18_4)] then
-					table.insert(var_18_3, var_18_4)
+		for slot8 = 0, slot0.mapSize.x - 1 do
+			for slot12 = 0, slot0.mapSize.y - 1 do
+				if slot0:Moveable(NewPos(slot8, slot12), true) and not slot0.hideMap[tostring(slot13)] then
+					table.insert(slot4, slot13)
 				end
 			end
 		end
 
-		for iter_18_2 = 1, arg_18_0.itemCount do
-			local var_18_5
+		for slot8 = 1, slot0.itemCount do
+			slot9 = nil
 
 			repeat
-				var_18_5 = math.random(#var_18_3)
+				slot9 = math.random(#slot4)
+				slot10 = 0
 
-				local var_18_6 = 0
-
-				for iter_18_3 = -1, 1 do
-					for iter_18_4 = -1, 1 do
-						local var_18_7 = var_18_3[var_18_5] + NewPos(iter_18_3, iter_18_4)
-
-						if arg_18_0:InRange(var_18_7) and underscore.any(arg_18_0.map[tostring(var_18_7)], function(arg_19_0)
-							return arg_19_0.class == NenjuuGameNameSpace.TargetItem
+				for slot14 = -1, 1 do
+					for slot18 = -1, 1 do
+						if slot0:InRange(slot4[slot9] + NewPos(slot14, slot18)) and underscore.any(slot0.map[tostring(slot19)], function (slot0)
+							return slot0.class == NenjuuGameNameSpace.TargetItem
 						end) then
-							var_18_6 = var_18_6 + 1
+							slot10 = slot10 + 1
 						end
 					end
 				end
-			until var_18_6 < 7
+			until slot10 < 7
 
-			local var_18_8 = table.remove(var_18_3, var_18_5)
-
-			arg_18_0:CreateTarget({
-				name = var_18_0,
-				pos = var_18_8,
-				point = var_18_2
+			slot0:CreateTarget({
+				name = slot1,
+				pos = table.remove(slot4, slot9),
+				point = slot3
 			})
 		end
 
-		eachChild(arg_18_0.rtCollection, function(arg_20_0)
-			setActive(arg_20_0, arg_20_0.name == arg_18_0.itemType)
+		eachChild(slot0.rtCollection, function (slot0)
+			setActive(slot0, slot0.name == uv0.itemType)
 		end)
 	else
-		arg_18_0.point = arg_18_0.point + arg_18_0.config.extra_time[2] * arg_18_0.pointRate
+		slot0.point = slot0.point + slot0.config.extra_time[2] * slot0.pointRate
 
-		setText(arg_18_0.textPoint, arg_18_0.point)
-		arg_18_0:EndGame(true)
+		setText(slot0.textPoint, slot0.point)
+		slot0:EndGame(true)
 	end
 end
 
-function var_0_0.InRange(arg_21_0, arg_21_1)
-	return arg_21_1.x >= 0 and arg_21_1.x < arg_21_0.mapSize.x and arg_21_1.y >= 0 and arg_21_1.y < arg_21_0.mapSize.y
+function slot0.InRange(slot0, slot1)
+	return slot1.x >= 0 and slot1.x < slot0.mapSize.x and slot1.y >= 0 and slot1.y < slot0.mapSize.y
 end
 
-function var_0_0.Moveable(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
-	if not arg_22_0:InRange(arg_22_1) then
+function slot0.Moveable(slot0, slot1, slot2, slot3)
+	if not slot0:InRange(slot1) then
 		return false
 	else
-		return underscore.all(arg_22_0.map[tostring(arg_22_1)], function(arg_23_0)
-			return arg_23_0:Moveable() or arg_22_2 and arg_23_0:BreakMoveable() or arg_22_3 and isa(arg_23_0, NenjuuGameNameSpace.TargetMove)
+		return underscore.all(slot0.map[tostring(slot1)], function (slot0)
+			return slot0:Moveable() or uv0 and slot0:BreakMoveable() or uv1 and isa(slot0, NenjuuGameNameSpace.TargetMove)
 		end)
 	end
 end
 
-function var_0_0.CreateTarget(arg_24_0, arg_24_1)
-	local var_24_0, var_24_1, var_24_2 = NenjuuGameConfig.GetCreateConfig(arg_24_1)
+function slot0.CreateTarget(slot0, slot1)
+	slot2, slot3, slot4 = NenjuuGameConfig.GetCreateConfig(slot1)
 
-	if not var_24_0 then
+	if not slot2 then
 		return
 	end
 
-	local var_24_3
+	slot5 = nil
 
-	if arg_24_1.parent then
-		var_24_3 = cloneTplTo(arg_24_0.rtResource:Find(var_24_1), arg_24_1.parent)
-	else
-		var_24_3 = cloneTplTo(arg_24_0.rtResource:Find(var_24_1), arg_24_0.rtMainContent:Find(var_24_2))
+	if slot2.New(slot0, (not slot1.parent or cloneTplTo(slot0.rtResource:Find(slot3), slot1.parent)) and cloneTplTo(slot0.rtResource:Find(slot3), slot0.rtMainContent:Find(slot4)), slot1):InTimeLine() then
+		table.insert(slot0.timeFlow, slot6)
 	end
 
-	local var_24_4 = var_24_0.New(arg_24_0, var_24_3, arg_24_1)
-
-	if var_24_4:InTimeLine() then
-		table.insert(arg_24_0.timeFlow, var_24_4)
-	end
-
-	return var_24_4
+	return slot6
 end
 
-function var_0_0.DestoryTarget(arg_25_0, arg_25_1)
-	arg_25_0.dirtyMap = true
+function slot0.DestoryTarget(slot0, slot1)
+	slot0.dirtyMap = true
 
-	table.removebyvalue(arg_25_0.map[tostring(arg_25_1.pos)], arg_25_1)
+	table.removebyvalue(slot0.map[tostring(slot1.pos)], slot1)
 
-	if arg_25_1:InTimeLine() then
-		table.removebyvalue(arg_25_0.timeFlow, arg_25_1)
+	if slot1:InTimeLine() then
+		table.removebyvalue(slot0.timeFlow, slot1)
 	end
 
-	Destroy(arg_25_1._tf)
+	Destroy(slot1._tf)
 
-	arg_25_1 = nil
+	slot1 = nil
 end
 
-function var_0_0.ResetGame(arg_26_0)
-	for iter_26_0, iter_26_1 in ipairs({
+function slot0.ResetGame(slot0)
+	for slot4, slot5 in ipairs({
 		"plane",
 		"object",
 		"effect",
 		"character"
 	}) do
-		eachChild(arg_26_0.rtMainContent:Find(iter_26_1), function(arg_27_0)
-			Destroy(arg_27_0)
+		eachChild(slot0.rtMainContent:Find(slot5), function (slot0)
+			Destroy(slot0)
 		end)
 	end
 
-	arg_26_0.map = setmetatable({}, {
-		__index = function(arg_28_0, arg_28_1)
-			arg_28_0[arg_28_1] = {}
+	slot0.map = setmetatable({}, {
+		__index = function (slot0, slot1)
+			slot0[slot1] = {}
 
-			return arg_28_0[arg_28_1]
+			return slot0[slot1]
 		end
 	})
-	arg_26_0.hideMap = {}
-	arg_26_0.plane = {}
-	arg_26_0.cacheInput = nil
-	arg_26_0.timeQueue = {}
-	arg_26_0.timeFlow = {}
-	arg_26_0.moveFuShun = nil
-	arg_26_0.moveNenjuu = nil
-	arg_26_0.moveDoppel = nil
-	arg_26_0.wayfindCache = {}
+	slot0.hideMap = {}
+	slot0.plane = {}
+	slot0.cacheInput = nil
+	slot0.timeQueue = {}
+	slot0.timeFlow = {}
+	slot0.moveFuShun = nil
+	slot0.moveNenjuu = nil
+	slot0.moveDoppel = nil
+	slot0.wayfindCache = {}
 end
 
-function var_0_0.ReadyGame(arg_29_0, arg_29_1)
-	arg_29_0:InitMapConfig(arg_29_1)
-	arg_29_0:UpdateSkillButtons()
-	arg_29_0:PauseGame()
+function slot0.ReadyGame(slot0, slot1)
+	slot0:InitMapConfig(slot1)
+	slot0:UpdateSkillButtons()
+	slot0:PauseGame()
 end
 
-function var_0_0.StartGame(arg_30_0)
-	arg_30_0.isStart = true
+function slot0.StartGame(slot0)
+	slot0.isStart = true
 
-	arg_30_0:CheckWave()
-	arg_30_0:ResumeGame()
+	slot0:CheckWave()
+	slot0:ResumeGame()
 end
 
-function var_0_0.EndGame(arg_31_0, arg_31_1)
-	arg_31_0.isStart = false
+function slot0.EndGame(slot0, slot1)
+	slot0.isStart = false
 
-	arg_31_0:PauseGame()
-	arg_31_0.binder:openUI("result")
+	slot0:PauseGame()
+	slot0.binder:openUI("result")
 end
 
-function var_0_0.ResumeGame(arg_32_0)
-	arg_32_0.isPause = false
+function slot0.ResumeGame(slot0)
+	slot0.isPause = false
 
-	arg_32_0.timer:Start()
-	var_0_1(arg_32_0.rtMainContent, 1)
+	slot0.timer:Start()
+	uv0(slot0.rtMainContent, 1)
 end
 
-function var_0_0.PauseGame(arg_33_0)
-	arg_33_0.isPause = true
+function slot0.PauseGame(slot0)
+	slot0.isPause = true
 
-	arg_33_0.timer:Stop()
-	var_0_1(arg_33_0.rtMainContent, 0)
+	slot0.timer:Stop()
+	uv0(slot0.rtMainContent, 0)
 end
 
-function var_0_0.OnTimer(arg_34_0, arg_34_1)
-	arg_34_0.timeCount = arg_34_0.timeCount - arg_34_1
+function slot0.OnTimer(slot0, slot1)
+	slot0.timeCount = slot0.timeCount - slot1
 
-	setText(arg_34_0.textTime, string.format("%02d:%02ds", math.floor(arg_34_0.timeCount / 60), math.floor(arg_34_0.timeCount % 60)))
+	setText(slot0.textTime, string.format("%02d:%02ds", math.floor(slot0.timeCount / 60), math.floor(slot0.timeCount % 60)))
 
-	if arg_34_0.timeCount <= 0 then
-		arg_34_0:EndGame()
+	if slot0.timeCount <= 0 then
+		slot0:EndGame()
 
 		return
 	end
 
-	for iter_34_0, iter_34_1 in ipairs(arg_34_0.timeFlow) do
-		iter_34_1:OnTimerUpdate(arg_34_1)
+	for slot5, slot6 in ipairs(slot0.timeFlow) do
+		slot6:OnTimerUpdate(slot1)
 	end
 
-	for iter_34_2, iter_34_3 in ipairs(arg_34_0.timeQueue) do
-		iter_34_3.time = iter_34_3.time - arg_34_1
+	for slot5, slot6 in ipairs(slot0.timeQueue) do
+		slot6.time = slot6.time - slot1
 	end
 
-	table.sort(arg_34_0.timeQueue, CompareFuncs({
-		function(arg_35_0)
-			return -arg_35_0.time
+	table.sort(slot0.timeQueue, CompareFuncs({
+		function (slot0)
+			return -slot0.time
 		end
 	}))
 
-	while #arg_34_0.timeQueue > 0 and arg_34_0.timeQueue[#arg_34_0.timeQueue].time <= 0 do
-		table.remove(arg_34_0.timeQueue).func()
+	while #slot0.timeQueue > 0 and slot0.timeQueue[#slot0.timeQueue].time <= 0 do
+		table.remove(slot0.timeQueue).func()
 	end
 
-	arg_34_0:UpdateSkillButtons()
+	slot0:UpdateSkillButtons()
 end
 
-function var_0_0.UpdateSkillButtons(arg_36_0)
-	for iter_36_0, iter_36_1 in ipairs(arg_36_0.moveFuShun:CalcSkillCDs()) do
-		local var_36_0 = arg_36_0.rtSkillButton:Find("Skill_" .. iter_36_0 - 1)
+function slot0.UpdateSkillButtons(slot0)
+	for slot4, slot5 in ipairs(slot0.moveFuShun:CalcSkillCDs()) do
+		slot6 = slot0.rtSkillButton:Find("Skill_" .. slot4 - 1)
 
-		eachChild(var_36_0:Find("icon"), function(arg_37_0)
-			setActive(arg_37_0, arg_37_0.name == iter_36_1.icon)
+		eachChild(slot6:Find("icon"), function (slot0)
+			setActive(slot0, slot0.name == uv0.icon)
 		end)
 
-		if not iter_36_1.cd then
-			setActive(var_36_0:Find("cd"), false)
-			setActive(var_36_0:Find("lock"), true)
-		elseif iter_36_1.cd == true then
-			setActive(var_36_0:Find("cd"), true)
-			setFillAmount(var_36_0:Find("cd"), 1)
-			setText(var_36_0:Find("cd/Text"), "")
-			setActive(var_36_0:Find("lock"), false)
-		elseif iter_36_1.cd > 0 then
-			setActive(var_36_0:Find("cd"), true)
-			setFillAmount(var_36_0:Find("cd"), iter_36_1.rate)
-			setText(var_36_0:Find("cd/Text"), math.ceil(iter_36_1.cd) .. "s")
-			setActive(var_36_0:Find("lock"), false)
+		if not slot5.cd then
+			setActive(slot6:Find("cd"), false)
+			setActive(slot6:Find("lock"), true)
+		elseif slot5.cd == true then
+			setActive(slot6:Find("cd"), true)
+			setFillAmount(slot6:Find("cd"), 1)
+			setText(slot6:Find("cd/Text"), "")
+			setActive(slot6:Find("lock"), false)
+		elseif slot5.cd > 0 then
+			setActive(slot6:Find("cd"), true)
+			setFillAmount(slot6:Find("cd"), slot5.rate)
+			setText(slot6:Find("cd/Text"), math.ceil(slot5.cd) .. "s")
+			setActive(slot6:Find("lock"), false)
 		else
-			setActive(var_36_0:Find("cd"), false)
-			setActive(var_36_0:Find("lock"), false)
+			setActive(slot6:Find("cd"), false)
+			setActive(slot6:Find("lock"), false)
 		end
 	end
 end
 
-function var_0_0.GetCacheInput(arg_38_0, arg_38_1)
-	if arg_38_1 then
-		local var_38_0 = arg_38_0.cacheInput
+function slot0.GetCacheInput(slot0, slot1)
+	if slot1 then
+		slot0.cacheInput = nil
 
-		arg_38_0.cacheInput = nil
-
-		return var_38_0
+		return slot0.cacheInput
 	else
-		return arg_38_0.cacheInput
+		return slot0.cacheInput
 	end
 end
 
-function var_0_0.GetPressInput(arg_39_0, arg_39_1)
-	return arg_39_0.inPress[arg_39_1]
+function slot0.GetPressInput(slot0, slot1)
+	return slot0.inPress[slot1]
 end
 
-function var_0_0.UpdateTargetPos(arg_40_0, arg_40_1, arg_40_2, arg_40_3)
-	arg_40_0.dirtyMap = true
+function slot0.UpdateTargetPos(slot0, slot1, slot2, slot3)
+	slot0.dirtyMap = true
 
-	local var_40_0 = arg_40_1:GetSize()
+	for slot8 = 0, slot1:GetSize().x - 1 do
+		for slot12 = 0, slot4.y - 1 do
+			slot13 = NewPos(slot8, slot12)
 
-	for iter_40_0 = 0, var_40_0.x - 1 do
-		for iter_40_1 = 0, var_40_0.y - 1 do
-			local var_40_1 = NewPos(iter_40_0, iter_40_1)
-
-			if arg_40_2 then
-				table.removebyvalue(arg_40_0.map[tostring(arg_40_2 + var_40_1)], arg_40_1)
+			if slot2 then
+				table.removebyvalue(slot0.map[tostring(slot2 + slot13)], slot1)
 			end
 
-			table.insert(arg_40_0.map[tostring(arg_40_3 + var_40_1)], arg_40_1)
+			table.insert(slot0.map[tostring(slot3 + slot13)], slot1)
 		end
 	end
 
-	if arg_40_1.canHide then
-		for iter_40_2 = 0, var_40_0.x - 1 do
-			local var_40_2 = arg_40_3 + NewPos(iter_40_2, -1)
-
-			if arg_40_0:InRange(var_40_2) then
-				arg_40_0.hideMap[tostring(var_40_2)] = true
+	if slot1.canHide then
+		for slot8 = 0, slot4.x - 1 do
+			if slot0:InRange(slot3 + NewPos(slot8, -1)) then
+				slot0.hideMap[tostring(slot9)] = true
 			end
 		end
 	end
 end
 
-function var_0_0.WindowFocrus(arg_41_0, arg_41_1)
-	setAnchoredPosition(arg_41_0.rtMainContent, {
-		x = math.clamp(-arg_41_1.x, -arg_41_0.buffer.x, arg_41_0.buffer.x),
-		y = math.clamp(-arg_41_1.y, -arg_41_0.buffer.y - 16, arg_41_0.buffer.y - 16)
+function slot0.WindowFocrus(slot0, slot1)
+	setAnchoredPosition(slot0.rtMainContent, {
+		x = math.clamp(-slot1.x, -slot0.buffer.x, slot0.buffer.x),
+		y = math.clamp(-slot1.y, -slot0.buffer.y - 16, slot0.buffer.y - 16)
 	})
 end
 
-function var_0_0.CheckIce(arg_42_0, arg_42_1)
-	if not arg_42_0:InRange(arg_42_1) then
+function slot0.CheckIce(slot0, slot1)
+	if not slot0:InRange(slot1) then
 		return false
 	else
-		return underscore.detect(arg_42_0.map[tostring(arg_42_1)], function(arg_43_0)
-			return arg_43_0.class == NenjuuGameNameSpace.TargetIce
+		return underscore.detect(slot0.map[tostring(slot1)], function (slot0)
+			return slot0.class == NenjuuGameNameSpace.TargetIce
 		end)
 	end
 end
 
-function var_0_0.BuildIce(arg_44_0, arg_44_1)
-	local var_44_0
+function slot0.BuildIce(slot0, slot1)
+	slot2 = nil
 
-	local function var_44_1()
-		arg_44_1.pos = arg_44_1.pos + arg_44_1.dirPos
+	table.insert(slot0.timeQueue, {
+		time = 0,
+		func = function ()
+			uv0.pos = uv0.pos + uv0.dirPos
 
-		if arg_44_0:Moveable(arg_44_1.pos) then
-			arg_44_0:CreateTarget({
-				name = "Ice",
-				create = true,
-				pos = arg_44_1.pos
-			})
-
-			arg_44_1.power = arg_44_1.power - 1
-
-			if arg_44_1.power > 0 then
-				table.insert(arg_44_0.timeQueue, {
-					time = 0.035,
-					func = var_44_1
+			if uv1:Moveable(uv0.pos) then
+				uv1:CreateTarget({
+					name = "Ice",
+					create = true,
+					pos = uv0.pos
 				})
+
+				uv0.power = uv0.power - 1
+
+				if uv0.power > 0 then
+					table.insert(uv1.timeQueue, {
+						time = 0.035,
+						func = uv2
+					})
+				end
 			end
 		end
-	end
-
-	table.insert(arg_44_0.timeQueue, {
-		time = 0,
-		func = var_44_1
 	})
 end
 
-function var_0_0.BreakIce(arg_46_0, arg_46_1)
-	arg_46_1.power = arg_46_1.power or math.max(arg_46_0.mapSize.x, arg_46_0.mapSize.y)
+function slot0.BreakIce(slot0, slot1)
+	slot1.power = slot1.power or math.max(slot0.mapSize.x, slot0.mapSize.y)
+	slot2 = nil
 
-	local var_46_0
+	table.insert(slot0.timeQueue, {
+		time = 0,
+		func = function ()
+			uv0.pos = uv0.pos + uv0.dirPos
 
-	local function var_46_1()
-		arg_46_1.pos = arg_46_1.pos + arg_46_1.dirPos
-
-		if arg_46_0:OnlyBreakIce(arg_46_1.pos) then
-			arg_46_0:CreateTarget({
-				name = "EF_Break_" .. arg_46_1.dir,
-				pos = arg_46_1.pos
-			})
-
-			arg_46_1.power = arg_46_1.power - 1
-
-			if arg_46_1.power > 0 then
-				table.insert(arg_46_0.timeQueue, {
-					time = 0.035,
-					func = var_46_1
+			if uv1:OnlyBreakIce(uv0.pos) then
+				uv1:CreateTarget({
+					name = "EF_Break_" .. uv0.dir,
+					pos = uv0.pos
 				})
+
+				uv0.power = uv0.power - 1
+
+				if uv0.power > 0 then
+					table.insert(uv1.timeQueue, {
+						time = 0.035,
+						func = uv2
+					})
+				end
 			end
 		end
-	end
-
-	table.insert(arg_46_0.timeQueue, {
-		time = 0,
-		func = var_46_1
 	})
 end
 
-function var_0_0.OnlyBreakIce(arg_48_0, arg_48_1)
-	local var_48_0 = arg_48_0:CheckIce(arg_48_1)
-
-	if var_48_0 and not var_48_0.isLost then
-		var_48_0:Break()
+function slot0.OnlyBreakIce(slot0, slot1)
+	if slot0:CheckIce(slot1) and not slot2.isLost then
+		slot2:Break()
 
 		return true
 	else
@@ -596,7 +551,7 @@ function var_0_0.OnlyBreakIce(arg_48_0, arg_48_1)
 	end
 end
 
-local var_0_2 = {
+slot2 = {
 	{
 		1,
 		-1
@@ -614,36 +569,33 @@ local var_0_2 = {
 		-1
 	}
 }
-local var_0_3 = {
+slot3 = {
 	E = 2,
 	S = 3,
 	N = 1,
 	W = 4
 }
 
-function var_0_0.BuildBomb(arg_49_0, arg_49_1)
-	local var_49_0 = 0
+function slot0.BuildBomb(slot0, slot1)
+	slot2 = 0
 
-	for iter_49_0 = 1, 2 do
-		for iter_49_1 = 1, 4 do
-			local var_49_1 = var_0_2[(var_0_3[arg_49_1.dir] + iter_49_1 + 2) % 4 + 1]
+	for slot6 = 1, 2 do
+		for slot10 = 1, 4 do
+			slot11 = uv0[(uv1[slot1.dir] + slot10 + 2) % 4 + 1]
 
-			for iter_49_2 = -iter_49_0, iter_49_0 - 1 do
-				var_49_0 = var_49_0 + 1
-
-				local var_49_2 = {
-					iter_49_0,
-					iter_49_2
+			for slot15 = -slot6, slot6 - 1 do
+				slot16 = {
+					slot6,
+					slot15
 				}
-				local var_49_3 = arg_49_1.pos + NewPos(var_49_1[1] * var_49_2[iter_49_1 % 2 + 1], var_49_1[2] * var_49_2[(iter_49_1 + 1) % 2 + 1])
 
-				if arg_49_0:Moveable(var_49_3, false, true) then
-					table.insert(arg_49_0.timeQueue, {
-						time = (var_49_0 - 1) * 0.015,
-						func = function()
-							arg_49_0:CreateTarget({
+				if slot0:Moveable(slot1.pos + NewPos(slot11[1] * slot16[slot10 % 2 + 1], slot11[2] * slot16[(slot10 + 1) % 2 + 1]), false, true) then
+					table.insert(slot0.timeQueue, {
+						time = (slot2 + 1 - 1) * 0.015,
+						func = function ()
+							uv0:CreateTarget({
 								name = "Bomb",
-								pos = var_49_3
+								pos = uv1
 							})
 						end
 					})
@@ -653,74 +605,72 @@ function var_0_0.BuildBomb(arg_49_0, arg_49_1)
 	end
 end
 
-function var_0_0.CheckMelt(arg_51_0, arg_51_1)
-	return string.split(arg_51_0.plane[tostring(arg_51_1)], "_")[2] == "warm"
+function slot0.CheckMelt(slot0, slot1)
+	return string.split(slot0.plane[tostring(slot1)], "_")[2] == "warm"
 end
 
-function var_0_0.ScareEnemy(arg_52_0, arg_52_1)
-	for iter_52_0, iter_52_1 in ipairs({
-		arg_52_0.moveNenjuu,
-		arg_52_0.moveDoppel
+function slot0.ScareEnemy(slot0, slot1)
+	for slot5, slot6 in ipairs({
+		slot0.moveNenjuu,
+		slot0.moveDoppel
 	}) do
-		local var_52_0 = arg_52_1.pos - iter_52_1.realPos
+		slot7 = slot1.pos - slot6.realPos
 
-		if math.abs(var_52_0.x) + math.abs(var_52_0.y) <= arg_52_1.range then
-			iter_52_1:BeScare()
+		if math.abs(slot7.x) + math.abs(slot7.y) <= slot1.range then
+			slot6:BeScare()
 		end
 	end
 end
 
-function var_0_0.AttackCheck(arg_53_0, arg_53_1)
-	local var_53_0 = NewPos(-0.5, -0.5)
-	local var_53_1 = NewPos(0.5, 0.5)
-	local var_53_2 = arg_53_1.dirPos.x + arg_53_1.dirPos.y
+function slot0.AttackCheck(slot0, slot1)
+	slot2 = NewPos(-0.5, -0.5)
+	slot3 = NewPos(0.5, 0.5)
+	slot4 = slot1.dirPos.x + slot1.dirPos.y
 
-	if arg_53_1.dirPos.x == 0 then
-		var_53_0.y = var_53_0.y + var_53_2 * 0.5 + (var_53_2 - 1) * 0
-		var_53_1.y = var_53_1.y + var_53_2 * 0.5 + (var_53_2 + 1) * 0
-	elseif arg_53_1.dirPos.y == 0 then
-		var_53_0.x = var_53_0.x + var_53_2 * 0.5 + (var_53_2 - 1) * 0
-		var_53_1.x = var_53_1.x + var_53_2 * 0.5 + (var_53_2 + 1) * 0
+	if slot1.dirPos.x == 0 then
+		slot2.y = slot2.y + slot4 * 0.5 + (slot4 - 1) * 0
+		slot3.y = slot3.y + slot4 * 0.5 + (slot4 + 1) * 0
+	elseif slot1.dirPos.y == 0 then
+		slot2.x = slot2.x + slot4 * 0.5 + (slot4 - 1) * 0
+		slot3.x = slot3.x + slot4 * 0.5 + (slot4 + 1) * 0
 	else
 		assert(false)
 	end
 
-	local var_53_3 = arg_53_0.moveFuShun.realPos - arg_53_1.pos
+	slot5 = slot0.moveFuShun.realPos - slot1.pos
 
-	return math.clamp(var_53_3.x, var_53_0.x, var_53_1.x) == var_53_3.x and math.clamp(var_53_3.y, var_53_0.y, var_53_1.y) == var_53_3.y
+	return math.clamp(slot5.x, slot2.x, slot3.x) == slot5.x and math.clamp(slot5.y, slot2.y, slot3.y) == slot5.y
 end
 
-function var_0_0.EnemyAttack(arg_54_0, arg_54_1)
-	if arg_54_0:AttackCheck(arg_54_1) then
-		arg_54_0.moveFuShun:EnemyHit(arg_54_1.pos)
+function slot0.EnemyAttack(slot0, slot1)
+	if slot0:AttackCheck(slot1) then
+		slot0.moveFuShun:EnemyHit(slot1.pos)
 	end
 end
 
-function var_0_0.GetDecoyPos(arg_55_0, arg_55_1, arg_55_2)
-	local var_55_0 = {}
-	local var_55_1 = NenjuuGameConfig.DECOY_RANGE
+function slot0.GetDecoyPos(slot0, slot1, slot2)
+	slot3 = {}
+	slot4 = NenjuuGameConfig.DECOY_RANGE
 
-	for iter_55_0 = -var_55_1, var_55_1 do
-		for iter_55_1 = -var_55_1, var_55_1 do
-			local var_55_2 = arg_55_1 + NewPos(iter_55_0, iter_55_1)
-
-			if arg_55_0:Moveable(var_55_2) then
-				table.insert(var_55_0, var_55_2)
+	for slot8 = -slot4, slot4 do
+		for slot12 = -slot4, slot4 do
+			if slot0:Moveable(slot1 + NewPos(slot8, slot12)) then
+				table.insert(slot3, slot13)
 			end
 		end
 	end
 
-	return var_55_0[math.random(#var_55_0)]
+	return slot3[math.random(#slot3)]
 end
 
-function var_0_0.BuildDecoy(arg_56_0, arg_56_1)
-	arg_56_0:CreateTarget({
+function slot0.BuildDecoy(slot0, slot1)
+	slot0:CreateTarget({
 		name = "Decoy",
-		pos = arg_56_1
+		pos = slot1
 	})
 end
 
-local var_0_4 = {
+slot4 = {
 	{
 		1,
 		0
@@ -739,171 +689,150 @@ local var_0_4 = {
 	}
 }
 
-function var_0_0.GetWayfindingMap(arg_57_0, arg_57_1, arg_57_2)
-	if not arg_57_0.dirtyMap and arg_57_0.wayfindCache[arg_57_2] and (arg_57_0.wayfindCache[arg_57_2].inLantern and arg_57_0.wayfindCache[arg_57_2].inLantern > 0 or false) == (arg_57_0.moveFuShun.inLantern and arg_57_0.moveFuShun.inLantern > 0 or false) and arg_57_0.wayfindCache[arg_57_2].pos == arg_57_0.moveFuShun.pos and arg_57_0.wayfindCache[arg_57_2].basePos == arg_57_1 then
-		return arg_57_0.wayfindCache[arg_57_2].map
+function slot0.GetWayfindingMap(slot0, slot1, slot2)
+	if not slot0.dirtyMap and slot0.wayfindCache[slot2] and (slot0.wayfindCache[slot2].inLantern and slot0.wayfindCache[slot2].inLantern > 0 or false) == (slot0.moveFuShun.inLantern and slot0.moveFuShun.inLantern > 0 or false) and slot0.wayfindCache[slot2].pos == slot0.moveFuShun.pos and slot0.wayfindCache[slot2].basePos == slot1 then
+		return slot0.wayfindCache[slot2].map
 	end
 
-	arg_57_0.dirtyMap = false
+	slot0.dirtyMap = false
+	slot4 = slot0.moveFuShun.pos + slot0.moveFuShun:GetDirPos()
 
-	local var_57_0 = {}
-	local var_57_1 = arg_57_0.moveFuShun.pos + arg_57_0.moveFuShun:GetDirPos()
-
-	if arg_57_2 and arg_57_0:InRange(var_57_1) then
-		table.insert(var_57_0, var_57_1)
+	if slot2 and slot0:InRange(slot4) then
+		table.insert({}, slot4)
 	else
-		table.insert(var_57_0, arg_57_0.moveFuShun.pos)
+		table.insert(slot3, slot0.moveFuShun.pos)
 	end
 
-	local var_57_2 = {
-		[tostring(var_57_0[1])] = {
+	slot5 = {
+		[tostring(slot3[1])] = {
 			value = 0,
-			pos = var_57_0[1]
+			pos = slot3[1]
 		}
 	}
-	local var_57_3 = 0
+	slot6 = 0
 
-	while var_57_3 < #var_57_0 do
-		var_57_3 = var_57_3 + 1
-
-		local var_57_4 = var_57_0[var_57_3]
-		local var_57_5 = var_57_2[tostring(var_57_4)].value + 1
-
-		for iter_57_0, iter_57_1 in ipairs(var_0_4) do
-			local var_57_6 = var_57_4 + NewPos(unpack(iter_57_1))
-
-			if var_57_6 == arg_57_1 or arg_57_0:Moveable(var_57_6, not arg_57_2) then
-				local var_57_7 = tostring(var_57_6)
-
-				if not var_57_2[var_57_7] then
-					var_57_2[var_57_7] = {
-						pos = var_57_6,
-						value = var_57_5,
-						last = var_57_4
+	while slot6 < #slot3 do
+		for slot12, slot13 in ipairs(uv0) do
+			if slot7 + NewPos(unpack(slot13)) == slot1 or slot0:Moveable(slot14, not slot2) then
+				if not slot5[tostring(slot14)] then
+					slot5[slot15] = {
+						pos = slot14,
+						value = slot5[tostring(slot3[slot6 + 1])].value + 1,
+						last = slot7
 					}
 
-					table.insert(var_57_0, var_57_6)
-				elseif var_57_5 < var_57_2[var_57_7].value then
-					var_57_2[var_57_7].value = var_57_5
-					var_57_2[var_57_7].last = var_57_4
+					table.insert(slot3, slot14)
+				elseif slot8 < slot5[slot15].value then
+					slot5[slot15].value = slot8
+					slot5[slot15].last = slot7
 				end
 			end
 		end
 	end
 
-	if arg_57_0.moveFuShun.inLantern then
-		local var_57_8 = NenjuuGameConfig.LANTERN_RANGE
+	if slot0.moveFuShun.inLantern then
+		slot7 = NenjuuGameConfig.LANTERN_RANGE
 
-		for iter_57_2 = -var_57_8, var_57_8 do
-			for iter_57_3 = -var_57_8, var_57_8 do
-				local var_57_9 = var_57_2[tostring(arg_57_0.moveFuShun.pos + NewPos(iter_57_2, iter_57_3))]
-
-				if var_57_9 then
-					var_57_9.lightValue = 1000 - var_57_9.value
+		for slot11 = -slot7, slot7 do
+			for slot15 = -slot7, slot7 do
+				if slot5[tostring(slot0.moveFuShun.pos + NewPos(slot11, slot15))] then
+					slot16.lightValue = 1000 - slot16.value
 				end
 			end
 		end
 	end
 
-	arg_57_0.wayfindCache[arg_57_2] = {
-		pos = arg_57_0.moveFuShun.pos,
-		inLantern = arg_57_0.moveFuShun.inLantern,
-		basePos = arg_57_1,
-		map = var_57_2
+	slot0.wayfindCache[slot2] = {
+		pos = slot0.moveFuShun.pos,
+		inLantern = slot0.moveFuShun.inLantern,
+		basePos = slot1,
+		map = slot5
 	}
 
-	return var_57_2
+	return slot5
 end
 
-function var_0_0.GetTeleportTargetPos(arg_58_0, arg_58_1, arg_58_2)
-	local var_58_0 = arg_58_0.moveFuShun.pos - arg_58_2
-	local var_58_1 = math.random(4)
-	local var_58_2 = {}
+function slot0.GetTeleportTargetPos(slot0, slot1, slot2)
+	slot3 = slot0.moveFuShun.pos - slot2
+	slot4 = math.random(4)
+	slot5 = {}
 
-	for iter_58_0, iter_58_1 in pairs(arg_58_1) do
-		local var_58_3 = iter_58_1.pos - arg_58_2
+	for slot9, slot10 in pairs(slot1) do
+		slot11 = slot10.pos - slot2
 
-		table.insert(var_58_2, {
-			pos = iter_58_1.pos,
-			value = iter_58_1.value,
-			mDis = math.abs(var_58_3.x) + math.abs(var_58_3.y)
+		table.insert(slot5, {
+			pos = slot10.pos,
+			value = slot10.value,
+			mDis = math.abs(slot11.x) + math.abs(slot11.y)
 		})
 	end
 
-	table.sort(var_58_2, CompareFuncs({
-		function(arg_59_0)
-			return math.abs(arg_59_0.value - var_58_1)
+	table.sort(slot5, CompareFuncs({
+		function (slot0)
+			return math.abs(slot0.value - uv0)
 		end,
-		function(arg_60_0)
-			return arg_60_0.mDis
+		function (slot0)
+			return slot0.mDis
 		end
 	}))
 
-	return var_58_2[1].pos
+	return slot5[1].pos
 end
 
-function var_0_0.StealthCheck(arg_61_0, arg_61_1)
-	local var_61_0 = arg_61_0.moveFuShun.pos - arg_61_1
+function slot0.StealthCheck(slot0, slot1)
+	slot2 = slot0.moveFuShun.pos - slot1
 
-	return math.abs(var_61_0.x) + math.abs(var_61_0.y) < 10
+	return math.abs(slot2.x) + math.abs(slot2.y) < 10
 end
 
-function var_0_0.BuildTeleportSign(arg_62_0, arg_62_1)
-	arg_62_0:CreateTarget({
+function slot0.BuildTeleportSign(slot0, slot1)
+	slot0:CreateTarget({
 		name = "SignWarp",
-		pos = arg_62_1.pos,
-		time = arg_62_1.time
+		pos = slot1.pos,
+		time = slot1.time
 	})
 end
 
-function var_0_0.GetEnemyEffect(arg_63_0, arg_63_1)
-	return arg_63_0.moveNenjuu:CheckAbility(arg_63_1)
+function slot0.GetEnemyEffect(slot0, slot1)
+	return slot0.moveNenjuu:CheckAbility(slot1)
 end
 
-function var_0_0.BuildBlackHole(arg_64_0)
-	local var_64_0 = {}
+function slot0.BuildBlackHole(slot0)
+	slot1 = {}
 
-	for iter_64_0 = 1, arg_64_0.mapSize.x do
-		for iter_64_1 = 1, arg_64_0.mapSize.y do
-			local var_64_1 = NewPos(iter_64_0 - 1, iter_64_1 - 1)
-
-			if arg_64_0:Moveable(var_64_1, true) then
-				table.insert(var_64_0, var_64_1)
+	for slot5 = 1, slot0.mapSize.x do
+		for slot9 = 1, slot0.mapSize.y do
+			if slot0:Moveable(NewPos(slot5 - 1, slot9 - 1), true) then
+				table.insert(slot1, slot10)
 			end
 		end
 	end
 
-	local var_64_2 = var_64_0[math.random(#var_64_0)]
-
-	arg_64_0:CreateTarget({
+	slot0:CreateTarget({
 		time = 20,
 		name = "BlackHole",
-		pos = var_64_2
+		pos = slot1[math.random(#slot1)]
 	})
 end
 
-function var_0_0.InBlackHoleRange(arg_65_0, arg_65_1, arg_65_2)
-	if arg_65_2 then
-		local var_65_0 = arg_65_0:InRange(arg_65_1) and underscore.detect(arg_65_0.map[tostring(arg_65_1)], function(arg_66_0)
-			return arg_66_0.class == NenjuuGameNameSpace.TargetBlackHole
-		end)
-
-		if var_65_0 and not var_65_0.isLost then
-			var_65_0:BeTrigger()
+function slot0.InBlackHoleRange(slot0, slot1, slot2)
+	if slot2 then
+		if slot0:InRange(slot1) and underscore.detect(slot0.map[tostring(slot1)], function (slot0)
+			return slot0.class == NenjuuGameNameSpace.TargetBlackHole
+		end) and not slot3.isLost then
+			slot3:BeTrigger()
 
 			return true
 		else
 			return false
 		end
 	else
-		local var_65_1 = NenjuuGameConfig.BLACK_HOLE_RANGE
+		slot3 = NenjuuGameConfig.BLACK_HOLE_RANGE
 
-		for iter_65_0 = -var_65_1, var_65_1 do
-			for iter_65_1 = -var_65_1, var_65_1 do
-				local var_65_2 = arg_65_1 + NewPos(iter_65_0, iter_65_1)
-
-				if arg_65_0:InRange(var_65_2) and underscore.any(arg_65_0.map[tostring(var_65_2)], function(arg_67_0)
-					return arg_67_0.class == NenjuuGameNameSpace.TargetBlackHole
+		for slot7 = -slot3, slot3 do
+			for slot11 = -slot3, slot3 do
+				if slot0:InRange(slot1 + NewPos(slot7, slot11)) and underscore.any(slot0.map[tostring(slot12)], function (slot0)
+					return slot0.class == NenjuuGameNameSpace.TargetBlackHole
 				end) then
 					return true
 				end
@@ -912,16 +841,14 @@ function var_0_0.InBlackHoleRange(arg_65_0, arg_65_1, arg_65_2)
 	end
 end
 
-function var_0_0.BuildDoppelgangers(arg_68_0, arg_68_1)
-	for iter_68_0 = -2, 2 do
-		for iter_68_1 = -2, 2 do
-			local var_68_0 = arg_68_1 + NewPos(iter_68_0, iter_68_1)
-
-			if arg_68_0:Moveable(var_68_0) then
-				arg_68_0.moveDoppel = arg_68_0:CreateTarget({
+function slot0.BuildDoppelgangers(slot0, slot1)
+	for slot5 = -2, 2 do
+		for slot9 = -2, 2 do
+			if slot0:Moveable(slot1 + NewPos(slot5, slot9)) then
+				slot0.moveDoppel = slot0:CreateTarget({
 					isDoppel = true,
 					name = "Nenjuu_Doppelgangers",
-					pos = var_68_0,
+					pos = slot10,
 					abilitys = {}
 				})
 
@@ -931,22 +858,24 @@ function var_0_0.BuildDoppelgangers(arg_68_0, arg_68_1)
 	end
 end
 
-function var_0_0.EatItem(arg_69_0, arg_69_1)
-	for iter_69_0, iter_69_1 in ipairs(arg_69_0.map[tostring(arg_69_1)]) do
-		if iter_69_1.class == NenjuuGameNameSpace.TargetItem then
-			arg_69_0:DestoryTarget(iter_69_1)
+function slot0.EatItem(slot0, slot1)
+	slot5 = slot1
 
-			arg_69_0.itemCount = arg_69_0.itemCount - 1
-			arg_69_0.point = arg_69_0.point + iter_69_1.point * arg_69_0.pointRate
+	for slot5, slot6 in ipairs(slot0.map[tostring(slot5)]) do
+		if slot6.class == NenjuuGameNameSpace.TargetItem then
+			slot0:DestoryTarget(slot6)
 
-			setText(arg_69_0.textPoint, arg_69_0.point)
-			arg_69_0.moveFuShun:PopPoint(iter_69_1.point * arg_69_0.pointRate)
+			slot0.itemCount = slot0.itemCount - 1
+			slot0.point = slot0.point + slot6.point * slot0.pointRate
 
-			if arg_69_0.itemCount == 0 then
-				arg_69_0:CheckWave()
+			setText(slot0.textPoint, slot0.point)
+			slot0.moveFuShun:PopPoint(slot6.point * slot0.pointRate)
+
+			if slot0.itemCount == 0 then
+				slot0:CheckWave()
 			end
 		end
 	end
 end
 
-return var_0_0
+return slot0

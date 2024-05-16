@@ -1,28 +1,21 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleBuffManualTorpedoCoolDown = class("BattleBuffManualTorpedoCoolDown", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffManualTorpedoCoolDown.__name = "BattleBuffManualTorpedoCoolDown"
+slot1 = slot0.Battle.BattleBuffManualTorpedoCoolDown
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleBuffManualTorpedoCoolDown = class("BattleBuffManualTorpedoCoolDown", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffManualTorpedoCoolDown.__name = "BattleBuffManualTorpedoCoolDown"
-
-local var_0_1 = var_0_0.Battle.BattleBuffManualTorpedoCoolDown
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._rant = arg_2_0._tempData.arg_list.rant or 10000
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._rant = slot0._tempData.arg_list.rant or 10000
 end
 
-function var_0_1.onTrigger(arg_3_0, arg_3_1)
-	var_0_1.super.onTrigger(arg_3_0, arg_3_1, buff, attach)
+function slot1.onTrigger(slot0, slot1)
+	uv0.super.onTrigger(slot0, slot1, buff, attach)
 
-	if var_0_0.Battle.BattleFormulas.IsHappen(arg_3_0._rant) then
-		local var_3_0 = arg_3_1:GetTorpedoQueue():GetQueueHead()
-
-		if var_3_0 then
-			var_3_0:QuickCoolDown()
-		end
+	if uv1.Battle.BattleFormulas.IsHappen(slot0._rant) and slot1:GetTorpedoQueue():GetQueueHead() then
+		slot2:QuickCoolDown()
 	end
 end

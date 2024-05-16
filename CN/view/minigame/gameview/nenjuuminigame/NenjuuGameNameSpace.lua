@@ -1,1175 +1,4 @@
-﻿local var_0_0 = {}
-local var_0_1 = {
-	TargetObject = function()
-		local var_1_0 = class("TargetObject")
-
-		function var_1_0.GetSize(arg_2_0)
-			return arg_2_0.size
-		end
-
-		function var_1_0.InTimeLine(arg_3_0)
-			return false
-		end
-
-		function var_1_0.Moveable(arg_4_0)
-			return false
-		end
-
-		function var_1_0.BreakMoveable(arg_5_0)
-			return false
-		end
-
-		function var_1_0.GetBaseOrder(arg_6_0)
-			return 3
-		end
-
-		function var_1_0.Ctor(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-			arg_7_0._tf = arg_7_2
-			arg_7_0.controller = arg_7_1
-
-			arg_7_0:Init(arg_7_3)
-		end
-
-		function var_1_0.Init(arg_8_0, arg_8_1)
-			arg_8_0.name = arg_8_1.name
-			arg_8_0.size = arg_8_1.size or NewPos(1, 1)
-			arg_8_0.canHide = arg_8_1.hide
-
-			setCanvasOverrideSorting(arg_8_0._tf, true)
-			arg_8_0:UpdatePos(arg_8_1.pos - NewPos(0, arg_8_0:GetSize().y - 1))
-
-			arg_8_0.realPos = arg_8_1.realPos or arg_8_0.pos
-
-			arg_8_0:UpdatePosition()
-			arg_8_0:InitUI(arg_8_1)
-		end
-
-		function var_1_0.InitUI(arg_9_0, arg_9_1)
-			return
-		end
-
-		function var_1_0.UpdatePos(arg_10_0, arg_10_1)
-			arg_10_0._tf:GetComponent(typeof(Canvas)).sortingOrder = (arg_10_1.y + arg_10_0:GetSize().y) * 10 + arg_10_0:GetBaseOrder()
-
-			arg_10_0.controller:UpdateTargetPos(arg_10_0, arg_10_0.pos, arg_10_1)
-
-			arg_10_0.pos = arg_10_1
-		end
-
-		function var_1_0.UpdatePosition(arg_11_0)
-			setAnchoredPosition(arg_11_0._tf, {
-				x = arg_11_0.realPos.x * 32,
-				y = arg_11_0.realPos.y * -32
-			})
-		end
-
-		function var_1_0.PlayAnim(arg_12_0, arg_12_1)
-			if arg_12_0.status ~= arg_12_1 then
-				arg_12_0.status = arg_12_1
-
-				arg_12_0.mainTarget:GetComponent(typeof(Animator)):Play(arg_12_1, -1, 0)
-			end
-		end
-
-		return var_1_0
-	end,
-	TargetIce = function()
-		local var_13_0 = class("TargetIce", var_0_0.TargetObject)
-
-		function var_13_0.BreakMoveable(arg_14_0)
-			return true
-		end
-
-		function var_13_0.InitUI(arg_15_0, arg_15_1)
-			arg_15_0.mainTarget = arg_15_0._tf:Find("scale/Image")
-
-			arg_15_0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-				arg_15_0.controller:DestoryTarget(arg_15_0)
-			end)
-
-			if arg_15_1.create then
-				if arg_15_0.controller:CheckMelt(arg_15_0.pos) then
-					arg_15_0.isLost = true
-
-					arg_15_0:PlayAnim("Ice_Spawn_Melt")
-				else
-					arg_15_0:PlayAnim("Ice_Spawn")
-				end
-			end
-		end
-
-		function var_13_0.Break(arg_17_0)
-			if arg_17_0.isLost then
-				return
-			else
-				arg_17_0.isLost = true
-
-				arg_17_0:PlayAnim("Ice_Break")
-			end
-		end
-
-		return var_13_0
-	end,
-	TargetItem = function()
-		local var_18_0 = class("TargetItem", var_0_0.TargetObject)
-
-		function var_18_0.Moveable(arg_19_0)
-			return true
-		end
-
-		function var_18_0.GetBaseOrder(arg_20_0)
-			return 2
-		end
-
-		function var_18_0.InitUI(arg_21_0, arg_21_1)
-			arg_21_0.point = arg_21_1.point
-
-			eachChild(arg_21_0._tf:Find("scale/type"), function(arg_22_0)
-				setActive(arg_22_0, arg_22_0.name == arg_21_0.name)
-			end)
-		end
-
-		return var_18_0
-	end,
-	TargetArbor = function()
-		local var_23_0 = class("TargetArbor", var_0_0.TargetObject)
-
-		function var_23_0.InitUI(arg_24_0, arg_24_1)
-			local var_24_0 = string.split(arg_24_0.name, "_")
-
-			eachChild(arg_24_0._tf:Find("scale/Image"), function(arg_25_0)
-				setActive(arg_25_0, arg_25_0.name == var_24_0[#var_24_0])
-			end)
-		end
-
-		return var_23_0
-	end,
-	TargetMove = function()
-		local var_26_0 = class("TargetMove", var_0_0.TargetObject)
-
-		function var_26_0.InTimeLine(arg_27_0)
-			return true
-		end
-
-		function var_26_0.GetBaseOrder(arg_28_0)
-			return 4
-		end
-
-		function var_26_0.InitUI(arg_29_0, arg_29_1)
-			arg_29_0.rtScale = arg_29_0._tf:Find("scale")
-			arg_29_0.mainTarget = arg_29_0.rtScale:Find("main")
-
-			local var_29_0 = arg_29_0.mainTarget:GetComponent(typeof(DftAniEvent))
-
-			var_29_0:SetStartEvent(function()
-				arg_29_0:EventAnim("start")
-			end)
-			var_29_0:SetTriggerEvent(function()
-				arg_29_0:EventAnim("trigger")
-			end)
-			var_29_0:SetEndEvent(function()
-				arg_29_0.inLock = false
-
-				arg_29_0:EventAnim("end")
-			end)
-			arg_29_0:PlayIdle()
-		end
-
-		function var_26_0.EventAnim(arg_33_0, arg_33_1)
-			return
-		end
-
-		function var_26_0.RushCheck(arg_34_0)
-			return
-		end
-
-		function var_26_0.PlayIdle(arg_35_0, arg_35_1)
-			arg_35_0:PlayAnim(string.format("Idle_%s%s", arg_35_1 or arg_35_0:GetDirMark(), arg_35_0.inLantern and "_Lantern" or ""))
-		end
-
-		function var_26_0.PlayMove(arg_36_0, arg_36_1)
-			arg_36_0:PlayAnim(string.format("Move_%s%s", arg_36_1 or arg_36_0:GetDirMark(), arg_36_0.inLantern and "_Lantern" or ""))
-		end
-
-		local var_26_1 = {
-			E = {
-				1,
-				0
-			},
-			S = {
-				0,
-				1
-			},
-			W = {
-				-1,
-				0
-			},
-			N = {
-				0,
-				-1
-			}
-		}
-
-		function var_26_0.GetDirMark(arg_37_0, arg_37_1)
-			if arg_37_1 then
-				for iter_37_0, iter_37_1 in pairs(var_26_1) do
-					if iter_37_1[1] == arg_37_1.x and iter_37_1[2] == arg_37_1.y then
-						return iter_37_0
-					end
-				end
-			else
-				local var_37_0 = string.split(arg_37_0.status, "_")[2]
-
-				return var_26_1[var_37_0] and var_37_0 or "S"
-			end
-		end
-
-		function var_26_0.GetDirPos(arg_38_0, arg_38_1)
-			return NewPos(unpack(var_26_1[arg_38_1 or arg_38_0:GetDirMark()]))
-		end
-
-		function var_26_0.GetStatusMark(arg_39_0, arg_39_1)
-			return string.split(arg_39_1 or arg_39_0.status, "_")[1]
-		end
-
-		function var_26_0.OnTimerUpdate(arg_40_0, arg_40_1)
-			return
-		end
-
-		var_26_0.loopAnimDic = {
-			Fear = true,
-			Idle = true,
-			Move = true
-		}
-
-		function var_26_0.PlayAnim(arg_41_0, arg_41_1)
-			local var_41_0 = tobool(arg_41_0.loopAnimDic[arg_41_0:GetStatusMark(arg_41_1)])
-
-			if var_41_0 and arg_41_0.status == arg_41_1 then
-				-- block empty
-			else
-				arg_41_0.inLock = not var_41_0
-				arg_41_0.status = arg_41_1
-
-				arg_41_0.mainTarget:GetComponent(typeof(Animator)):Play(arg_41_1, -1, 0)
-				arg_41_0:RushCheck()
-			end
-		end
-
-		return var_26_0
-	end,
-	TargetFuShun = function()
-		local var_42_0 = class("TargetFuShun", var_0_0.TargetMove)
-
-		function var_42_0.GetSpeed(arg_43_0)
-			return arg_43_0.speed * (arg_43_0.controller:GetEnemyEffect("gravity") and 0.85 or 1) * (arg_43_0.inRush and NenjuuGameConfig.GetSkillParam("rush", arg_43_0.level.rush)[2] or 1) * (arg_43_0.controller:InBlackHoleRange(arg_43_0.pos) and 0.75 or 1) * (NenjuuGameConfig.GetSkillParam("blessing", arg_43_0.level.blessing) or 1)
-		end
-
-		local var_42_1 = 0.1
-		local var_42_2 = 0.1
-		local var_42_3 = 5
-		local var_42_4 = {
-			ice = 1,
-			flash = 30,
-			item = 0,
-			rush = 20
-		}
-
-		function var_42_0.CheckSkill(arg_44_0, arg_44_1)
-			if arg_44_1 == "item" then
-				return arg_44_0.itemType and arg_44_0.itemCount > 0
-			else
-				return arg_44_0.level[arg_44_1] > 0 and arg_44_0.skillCDs[arg_44_1] <= 0
-			end
-		end
-
-		function var_42_0.ReloadSkill(arg_45_0, arg_45_1)
-			arg_45_0.skillCDs[arg_45_1] = (arg_45_1 == "flash" and NenjuuGameConfig.GetSkillParam("flash", arg_45_0.level.flash) or var_42_4[arg_45_1]) * (arg_45_0.controller:GetEnemyEffect("delay") and 1.2 or 1)
-		end
-
-		function var_42_0.InitUI(arg_46_0, arg_46_1)
-			var_42_0.super.InitUI(arg_46_0, arg_46_1)
-
-			arg_46_0.level = arg_46_1.level
-			arg_46_0.skillCDs = {
-				ice = 0,
-				flash = 0,
-				item = 0,
-				rush = 0
-			}
-			arg_46_0.itemType = arg_46_1.itemType
-			arg_46_0.speed = 4.5
-			arg_46_0.icePower = NenjuuGameConfig.GetSkillParam("ice", arg_46_0.level.ice)
-			arg_46_0.flashPower = 4
-			arg_46_0.decoyCount = arg_46_0.level.decoy
-			arg_46_0.rushTime = checkExist(NenjuuGameConfig.GetSkillParam("rush", arg_46_0.level.rush), {
-				1
-			})
-			arg_46_0.itemCount = 1
-		end
-
-		function var_42_0.CalcSkillCDs(arg_47_0)
-			local var_47_0 = {}
-
-			for iter_47_0, iter_47_1 in ipairs({
-				"ice",
-				"flash",
-				"rush",
-				"item"
-			}) do
-				local var_47_1 = arg_47_0.skillCDs[iter_47_1]
-				local var_47_2 = (iter_47_1 == "flash" and NenjuuGameConfig.GetSkillParam("flash", arg_47_0.level.flash) or var_42_4[iter_47_1]) * (arg_47_0.controller:GetEnemyEffect("delay") and 1.2 or 1)
-
-				if iter_47_1 == "item" then
-					if not arg_47_0.itemType then
-						table.insert(var_47_0, {})
-					elseif arg_47_0.itemCount > 0 then
-						table.insert(var_47_0, {
-							cd = var_47_1,
-							icon = arg_47_0.itemType
-						})
-					else
-						table.insert(var_47_0, {
-							cd = true,
-							icon = arg_47_0.itemType
-						})
-					end
-				elseif arg_47_0.level[iter_47_1] > 0 then
-					table.insert(var_47_0, {
-						cd = var_47_1,
-						rate = var_47_2 == 0 and 0 or var_47_1 / var_47_2,
-						icon = iter_47_1 == "ice" and arg_47_0.controller:CheckIce(arg_47_0.pos + arg_47_0:GetDirPos()) and "attack" or iter_47_1
-					})
-				else
-					table.insert(var_47_0, {})
-				end
-			end
-
-			return var_47_0
-		end
-
-		function var_42_0.EventAnim(arg_48_0, arg_48_1)
-			local var_48_0 = arg_48_0:GetDirMark()
-
-			if arg_48_1 == "start" then
-				-- block empty
-			elseif arg_48_1 == "trigger" then
-				switch(arg_48_0.status, {
-					["Freeze_" .. var_48_0 .. "_3_Shot"] = function()
-						arg_48_0.controller:CreateTarget({
-							name = "EF_bk_Freeze",
-							parent = arg_48_0.rtScale:Find("bk")
-						})
-						arg_48_0.controller:BuildIce({
-							pos = arg_48_0.pos,
-							dirPos = arg_48_0:GetDirPos(),
-							power = arg_48_0.icePower
-						})
-					end,
-					["Attack_" .. var_48_0] = function()
-						switch(var_48_0, {
-							N = function()
-								arg_48_0.controller:CreateTarget({
-									name = "EF_Attack_Hit_" .. var_48_0,
-									parent = arg_48_0.rtScale:Find("bk")
-								})
-							end,
-							S = function()
-								arg_48_0.controller:CreateTarget({
-									name = "EF_Attack_Hit_" .. var_48_0,
-									parent = arg_48_0.rtScale:Find("fr")
-								})
-							end
-						}, function()
-							arg_48_0.controller:CreateTarget({
-								name = "EF_Attack_Hit_" .. var_48_0 .. "_fr",
-								parent = arg_48_0.rtScale:Find("fr")
-							})
-							arg_48_0.controller:CreateTarget({
-								name = "EF_Attack_Hit_" .. var_48_0 .. "_bk",
-								parent = arg_48_0.rtScale:Find("bk")
-							})
-						end)
-						arg_48_0.controller:BreakIce({
-							pos = arg_48_0.pos,
-							dir = arg_48_0:GetDirMark(),
-							dirPos = arg_48_0:GetDirPos()
-						})
-					end,
-					Lantern_Activate = function()
-						arg_48_0:ReloadSkill("item")
-
-						arg_48_0.itemCount = arg_48_0.itemCount - 1
-						arg_48_0.inLantern = var_42_3
-						arg_48_0.effectLantern = arg_48_0.controller:CreateTarget({
-							name = "EF_bk_overlay_Lantern",
-							parent = arg_48_0.rtScale:Find("bk"),
-							time = var_42_3
-						})
-					end
-				})
-			elseif arg_48_1 == "end" then
-				switch(arg_48_0.status, {
-					["Bomb_" .. var_48_0 .. "_1_Start"] = function()
-						arg_48_0:ReloadSkill("item")
-
-						arg_48_0.itemCount = arg_48_0.itemCount - 1
-
-						arg_48_0:PlayAnim("Bomb_" .. var_48_0 .. "_3_End")
-						arg_48_0.controller:BuildBomb({
-							pos = arg_48_0.pos,
-							dir = var_48_0
-						})
-					end,
-					Dead = function()
-						if arg_48_0.isDead then
-							arg_48_0.controller:EndGame()
-						end
-					end
-				})
-			else
-				assert(false)
-			end
-		end
-
-		local var_42_5 = {
-			E = {
-				"EF_Ghost_E_bk"
-			},
-			N = {
-				"EF_Ghost_N_bk",
-				"EF_Ghost_N_fr"
-			},
-			S = {
-				"EF_Ghost_S_bk"
-			},
-			W = {
-				"EF_Ghost_W_bk"
-			}
-		}
-
-		function var_42_0.RushCheck(arg_57_0)
-			if arg_57_0.rushEffects then
-				for iter_57_0, iter_57_1 in ipairs(arg_57_0.rushEffects) do
-					iter_57_1:Remove()
-				end
-
-				arg_57_0.rushEffects = nil
-			end
-
-			if arg_57_0.inRush and arg_57_0.loopAnimDic[arg_57_0:GetStatusMark(arg_57_0.status)] then
-				arg_57_0.rushEffects = {}
-
-				for iter_57_2, iter_57_3 in ipairs(var_42_5[arg_57_0:GetDirMark()]) do
-					local var_57_0 = string.split(iter_57_3, "_")
-
-					table.insert(arg_57_0.rushEffects, arg_57_0.controller:CreateTarget({
-						name = iter_57_3,
-						parent = arg_57_0.rtScale:Find(var_57_0[#var_57_0])
-					}))
-				end
-			end
-		end
-
-		function var_42_0.OnTimerUpdate(arg_58_0, arg_58_1)
-			for iter_58_0, iter_58_1 in pairs(arg_58_0.skillCDs) do
-				arg_58_0.skillCDs[iter_58_0] = iter_58_1 - arg_58_1
-			end
-
-			if arg_58_0.inRush then
-				arg_58_0.inRush = arg_58_0.inRush - arg_58_1
-
-				if arg_58_0.inRush <= 0 then
-					arg_58_0.inRush = nil
-				end
-			end
-
-			if arg_58_0.inLantern then
-				arg_58_0.inLantern = arg_58_0.inLantern - arg_58_1
-			end
-
-			if arg_58_0.inShock then
-				arg_58_0.inShock = arg_58_0.inShock - arg_58_1
-
-				if arg_58_0.inShock <= 0 then
-					arg_58_0.inShock = nil
-				end
-
-				return
-			end
-
-			if arg_58_0.inCharge then
-				arg_58_0.inCharge = arg_58_0.inCharge + arg_58_1
-
-				if arg_58_0.inCharge > var_42_2 then
-					arg_58_0.inCharge = nil
-
-					arg_58_0:PlayAnim(string.format("Freeze_%s_3_Shot", arg_58_0:GetDirMark()))
-				end
-			elseif arg_58_0.inMove then
-				arg_58_0.inMove = arg_58_0.inMove - arg_58_1 * arg_58_0:GetSpeed()
-
-				if arg_58_0.inMove > 0 then
-					arg_58_0.realPos = arg_58_0.pos - arg_58_0:GetDirPos() * arg_58_0.inMove
-				else
-					arg_58_0.inMove = nil
-					arg_58_0.realPos = arg_58_0.pos
-				end
-
-				arg_58_0:UpdatePosition()
-			elseif arg_58_0.inLock then
-				return
-			elseif arg_58_0.controller:InBlackHoleRange(arg_58_0.pos, true) then
-				arg_58_0.inShock = 1
-
-				arg_58_0:PlayAnim("Dead")
-			elseif arg_58_0.inLantern and arg_58_0.inLantern <= 0 then
-				arg_58_0.inLantern = nil
-
-				arg_58_0.effectLantern:PlayAnim("EF_bk_overlay_Lantern_Finish")
-
-				arg_58_0.effectLantern = nil
-			elseif arg_58_0:CheckSkill("ice") and arg_58_0.controller:GetPressInput("Skill_0") then
-				arg_58_0:ReloadSkill("ice")
-
-				if arg_58_0.controller:CheckIce(arg_58_0.pos + arg_58_0:GetDirPos()) then
-					arg_58_0:PlayAnim(string.format("Attack_%s", arg_58_0:GetDirMark()))
-				else
-					arg_58_0.inCharge = 0
-
-					arg_58_0:PlayAnim(string.format("Freeze_%s_1_Start", arg_58_0:GetDirMark()))
-				end
-			elseif arg_58_0:CheckSkill("flash") and arg_58_0.controller:GetPressInput("Skill_1") then
-				arg_58_0:ReloadSkill("flash")
-
-				local var_58_0 = arg_58_0:GetDirPos()
-
-				for iter_58_2 = arg_58_0.flashPower, 0, -1 do
-					if arg_58_0.controller:Moveable(arg_58_0.pos + var_58_0 * iter_58_2) then
-						arg_58_0.controller:CreateTarget({
-							name = "EF_bk_Flash_Jump",
-							pos = arg_58_0.pos
-						})
-						arg_58_0:UpdatePos(arg_58_0.pos + var_58_0 * iter_58_2)
-
-						arg_58_0.realPos = arg_58_0.pos
-
-						arg_58_0:UpdatePosition()
-						arg_58_0.controller:CreateTarget({
-							name = "EF_bk_Flash_Land",
-							parent = arg_58_0.rtScale:Find("bk")
-						})
-						arg_58_0:PlayAnim(string.format("Flash_%s", arg_58_0:GetDirMark()))
-
-						break
-					end
-				end
-			elseif arg_58_0:CheckSkill("rush") and arg_58_0.controller:GetPressInput("Skill_2") then
-				arg_58_0:ReloadSkill("rush")
-
-				arg_58_0.inRush = arg_58_0.rushTime
-
-				arg_58_0:RushCheck()
-			elseif arg_58_0.itemType and arg_58_0:CheckSkill("item") and arg_58_0.controller:GetPressInput("Skill_3") and (arg_58_0.itemType ~= "lantern" or not arg_58_0.inLantern) then
-				if arg_58_0.itemType == "lantern" then
-					arg_58_0:PlayAnim("Lantern_Activate")
-				elseif arg_58_0.itemType == "bomb" then
-					arg_58_0:PlayAnim(string.format("Bomb_%s_1_Start", arg_58_0:GetDirMark()))
-				else
-					assert(false)
-				end
-			else
-				local var_58_1 = arg_58_0.controller:GetCacheInput()
-
-				if not var_58_1 then
-					arg_58_0.idleTime = defaultValue(arg_58_0.idleTime, 0) - arg_58_1
-
-					arg_58_0:PlayIdle()
-				elseif arg_58_0:GetStatusMark() == "Move" then
-					if arg_58_0.controller:Moveable(arg_58_0.pos + arg_58_0:GetDirPos(var_58_1)) then
-						arg_58_0.inMove = 1
-
-						arg_58_0:UpdatePos(arg_58_0.pos + arg_58_0:GetDirPos(var_58_1))
-						arg_58_0:PlayMove(var_58_1)
-					else
-						arg_58_0:PlayIdle(var_58_1)
-					end
-				elseif var_58_1 == arg_58_0:GetDirMark() then
-					if defaultValue(arg_58_0.idleTime, 0) <= 0 and arg_58_0.controller:Moveable(arg_58_0.pos + arg_58_0:GetDirPos()) then
-						arg_58_0.inMove = 1
-
-						arg_58_0:UpdatePos(arg_58_0.pos + arg_58_0:GetDirPos())
-						arg_58_0:PlayMove()
-					else
-						arg_58_0.idleTime = defaultValue(arg_58_0.idleTime, 0) - arg_58_1
-
-						arg_58_0:PlayIdle()
-					end
-				else
-					arg_58_0.idleTime = var_42_1
-
-					arg_58_0:PlayIdle(var_58_1)
-				end
-			end
-		end
-
-		function var_42_0.PopPoint(arg_59_0, arg_59_1)
-			local var_59_0 = arg_59_0._tf:Find("top/pop")
-
-			setText(var_59_0:Find("Text"), "+" .. arg_59_1)
-			setActive(var_59_0, false)
-			setActive(var_59_0, true)
-		end
-
-		function var_42_0.EnemyHit(arg_60_0, arg_60_1)
-			if arg_60_0.isDead then
-				return
-			end
-
-			if arg_60_0.decoyCount > 0 then
-				arg_60_0.decoyCount = arg_60_0.decoyCount - 1
-				arg_60_0.inCharge = nil
-				arg_60_0.inMove = nil
-
-				arg_60_0.controller:BuildDecoy(arg_60_0.pos)
-
-				local var_60_0 = arg_60_0.controller:GetDecoyPos(arg_60_0.pos, arg_60_1)
-
-				arg_60_0:UpdatePos(var_60_0)
-
-				arg_60_0.realPos = arg_60_0.pos
-
-				arg_60_0:UpdatePosition()
-				arg_60_0:PlayAnim("Decoy_2")
-			else
-				arg_60_0.isDead = true
-				arg_60_0.inCharge = nil
-				arg_60_0.inMove = nil
-
-				arg_60_0:PlayAnim("Dead")
-			end
-		end
-
-		function var_42_0.UpdatePosition(arg_61_0)
-			var_42_0.super.UpdatePosition(arg_61_0)
-			arg_61_0.controller:WindowFocrus(arg_61_0._tf.localPosition)
-
-			if arg_61_0.realPos == arg_61_0.pos then
-				arg_61_0.controller:EatItem(arg_61_0.pos)
-			end
-		end
-
-		return var_42_0
-	end,
-	TargetNenjuu = function()
-		local var_62_0 = class("TargetNenjuu", var_0_0.TargetMove)
-
-		function var_62_0.GetSpeed(arg_63_0)
-			return arg_63_0.speed * (arg_63_0:CheckAbility("rush") and 1.2 or 1) * (arg_63_0.inStealth and 1.3 or 1) * (arg_63_0.isDoppel and 0.8 or 1)
-		end
-
-		local var_62_1 = 1.5
-		local var_62_2 = 5
-		local var_62_3 = 5
-		local var_62_4 = 12
-		local var_62_5 = {
-			gravity = 0,
-			teleport = 7,
-			doppelgangers = 0,
-			delay = 0,
-			blackhole = 20,
-			stealth = 10,
-			rush = 0,
-			attack = 2,
-			breakpassable = 0
-		}
-
-		function var_62_0.CheckAbility(arg_64_0, arg_64_1)
-			return arg_64_0.featuresAbility[arg_64_1] and arg_64_0.abilityCDs[arg_64_1] <= 0
-		end
-
-		function var_62_0.ReloadAbility(arg_65_0, arg_65_1)
-			arg_65_0.abilityCDs[arg_65_1] = var_62_5[arg_65_1]
-		end
-
-		function var_62_0.InitUI(arg_66_0, arg_66_1)
-			var_62_0.super.InitUI(arg_66_0, arg_66_1)
-
-			arg_66_0.isDoppel = arg_66_1.isDoppel
-			arg_66_0.speed = 1.5
-			arg_66_0.featuresAbility = {
-				attack = true
-			}
-
-			for iter_66_0, iter_66_1 in ipairs(NenjuuGameConfig.ABILITY_LIST) do
-				arg_66_0.featuresAbility[iter_66_1] = tobool(arg_66_1.abilitys[iter_66_1])
-			end
-
-			arg_66_0.abilityCDs = {
-				gravity = 0,
-				teleport = 10,
-				doppelgangers = 0,
-				delay = 0,
-				blackhole = 0,
-				stealth = 0,
-				rush = 0,
-				attack = 0,
-				breakpassable = 0
-			}
-		end
-
-		function var_62_0.EventAnim(arg_67_0, arg_67_1)
-			local var_67_0 = arg_67_0:GetDirMark()
-
-			if arg_67_1 == "start" then
-				-- block empty
-			elseif arg_67_1 == "trigger" then
-				switch(arg_67_0.status, {
-					["Attack_" .. var_67_0] = function()
-						arg_67_0.controller:CreateTarget({
-							name = "EF_Attack_" .. var_67_0,
-							parent = arg_67_0.rtScale:Find(var_67_0 == "N" and "bk" or "fr")
-						})
-
-						if not arg_67_0.isDoppel then
-							arg_67_0.controller:BreakIce({
-								pos = arg_67_0.pos,
-								dir = arg_67_0:GetDirMark(),
-								dirPos = arg_67_0:GetDirPos(),
-								power = arg_67_0:CheckAbility("breakpassable") and 3 or 1
-							})
-						end
-
-						arg_67_0.controller:EnemyAttack({
-							pos = arg_67_0.pos,
-							dirPos = arg_67_0:GetDirPos()
-						})
-					end
-				})
-			elseif arg_67_1 == "end" then
-				switch(arg_67_0.status, {
-					Warp_1_Jump = function()
-						arg_67_0:UpdatePos(arg_67_0.telePos)
-
-						arg_67_0.realPos = arg_67_0.pos
-
-						arg_67_0:UpdatePosition()
-
-						arg_67_0.telePos = nil
-
-						arg_67_0:PlayAnim("Warp_2_Land")
-						arg_67_0.controller:OnlyBreakIce(arg_67_0.pos)
-					end
-				})
-			else
-				assert(false)
-			end
-		end
-
-		local var_62_6 = {
-			E = {
-				"EF_Nenjuu_Ghost_E_bk"
-			},
-			N = {
-				"EF_Nenjuu_Ghost_N_bk",
-				"EF_Nenjuu_Ghost_N_fr"
-			},
-			S = {
-				"EF_Nenjuu_Ghost_S_bk"
-			},
-			W = {
-				"EF_Nenjuu_Ghost_W_bk"
-			}
-		}
-
-		function var_62_0.RushCheck(arg_70_0)
-			if arg_70_0.rushEffects then
-				for iter_70_0, iter_70_1 in ipairs(arg_70_0.rushEffects) do
-					iter_70_1:Remove()
-				end
-
-				arg_70_0.rushEffects = nil
-			end
-
-			if arg_70_0.inStealth and arg_70_0.loopAnimDic[arg_70_0:GetStatusMark(arg_70_0.status)] then
-				arg_70_0.rushEffects = {}
-
-				for iter_70_2, iter_70_3 in ipairs(var_62_6[arg_70_0:GetDirMark()]) do
-					local var_70_0 = string.split(iter_70_3, "_")
-
-					table.insert(arg_70_0.rushEffects, arg_70_0.controller:CreateTarget({
-						name = iter_70_3,
-						parent = arg_70_0.rtScale:Find(var_70_0[#var_70_0])
-					}))
-				end
-			end
-		end
-
-		function var_62_0.OnTimerUpdate(arg_71_0, arg_71_1)
-			for iter_71_0, iter_71_1 in pairs(arg_71_0.featuresAbility) do
-				if iter_71_1 and var_62_5[iter_71_0] > 0 then
-					arg_71_0.abilityCDs[iter_71_0] = arg_71_0.abilityCDs[iter_71_0] - arg_71_1
-				end
-			end
-
-			if arg_71_0.inStealth then
-				arg_71_0.inStealth = arg_71_0.inStealth - arg_71_1
-
-				if arg_71_0.inStealth <= 0 then
-					arg_71_0.inStealth = nil
-				end
-			end
-
-			if arg_71_0.inScare then
-				arg_71_0.inScare = arg_71_0.inScare - arg_71_1
-
-				if arg_71_0.inScare <= 0 then
-					arg_71_0.inScare = nil
-				end
-			end
-
-			if arg_71_0:CheckAbility("doppelgangers") and not arg_71_0.isSummon then
-				arg_71_0.isSummon = true
-
-				arg_71_0.controller:BuildDoppelgangers(arg_71_0.pos)
-			end
-
-			if arg_71_0.inCharge then
-				arg_71_0.inCharge = arg_71_0.inCharge + arg_71_1
-
-				if arg_71_0.inCharge > var_62_1 then
-					arg_71_0.inCharge = nil
-
-					arg_71_0:PlayAnim("Warp_1_Jump")
-				end
-			elseif arg_71_0.inMove then
-				arg_71_0.inMove = arg_71_0.inMove - arg_71_1 * arg_71_0:GetSpeed()
-
-				if arg_71_0.inMove > 0 then
-					arg_71_0.realPos = arg_71_0.pos - arg_71_0:GetDirPos() * arg_71_0.inMove
-				else
-					arg_71_0.inMove = nil
-					arg_71_0.realPos = arg_71_0.pos
-				end
-
-				arg_71_0:UpdatePosition()
-			elseif arg_71_0.inLock then
-				return
-			else
-				if arg_71_0:CheckAbility("blackhole") then
-					arg_71_0:ReloadAbility("blackhole")
-					arg_71_0.controller:BuildBlackHole()
-				end
-
-				if arg_71_0:CheckAbility("stealth") and arg_71_0.controller:StealthCheck(arg_71_0.pos) and not arg_71_0.inScare then
-					arg_71_0:ReloadAbility("stealth")
-
-					arg_71_0.inStealth = var_62_2
-
-					arg_71_0:RushCheck()
-				end
-
-				if arg_71_0:CheckAbility("attack") and not arg_71_0.inScare then
-					for iter_71_2, iter_71_3 in ipairs({
-						"E",
-						"S",
-						"W",
-						"N"
-					}) do
-						if arg_71_0.controller:AttackCheck({
-							pos = arg_71_0.pos,
-							dirPos = arg_71_0:GetDirPos(iter_71_3)
-						}) then
-							arg_71_0:DoAttack(iter_71_3)
-
-							return
-						end
-					end
-				end
-
-				local var_71_0 = arg_71_0.controller:GetWayfindingMap(arg_71_0.pos, tobool(arg_71_0.isDoppel))
-				local var_71_1 = arg_71_0.pos
-
-				for iter_71_4, iter_71_5 in ipairs({
-					"E",
-					"S",
-					"W",
-					"N"
-				}) do
-					local var_71_2 = var_71_0[tostring(arg_71_0.pos + arg_71_0:GetDirPos(iter_71_5))]
-
-					if var_71_2 then
-						local var_71_3 = var_71_0[tostring(var_71_1)]
-
-						if arg_71_0.inScare then
-							if not var_71_3 or var_71_3.value < var_71_2.value then
-								var_71_1 = arg_71_0.pos + arg_71_0:GetDirPos(iter_71_5)
-							end
-						elseif not var_71_3 or (var_71_3.lightValue or var_71_3.value) > (var_71_2.lightValue or var_71_2.value) then
-							var_71_1 = arg_71_0.pos + arg_71_0:GetDirPos(iter_71_5)
-						end
-					end
-				end
-
-				if arg_71_0:CheckAbility("teleport") and not arg_71_0.inScare then
-					if var_71_1 == arg_71_0.pos then
-						if not arg_71_0.lostTime then
-							arg_71_0.lostTime = 3 - arg_71_1
-						elseif arg_71_1 >= arg_71_0.lostTime and arg_71_0.controller.timeCount > 5 then
-							arg_71_0.lostTime = nil
-
-							arg_71_0:DoTeleport(var_71_0)
-						else
-							arg_71_0.lostTime = arg_71_0.lostTime - arg_71_1
-						end
-
-						arg_71_0:PlayIdle()
-
-						return
-					else
-						arg_71_0.lostTime = nil
-
-						if var_71_0[tostring(var_71_1)] and var_71_0[tostring(var_71_1)].value > var_62_4 then
-							arg_71_0:DoTeleport(var_71_0)
-							arg_71_0:PlayIdle()
-
-							return
-						end
-					end
-				end
-
-				if not arg_71_0.isDoppel and arg_71_0:CheckAbility("attack") and arg_71_0.controller:CheckIce(var_71_1) then
-					arg_71_0:DoAttack(arg_71_0:GetDirMark(var_71_1 - arg_71_0.pos))
-				elseif arg_71_0.controller:Moveable(var_71_1) then
-					local var_71_4 = arg_71_0:GetDirMark(var_71_1 - arg_71_0.pos)
-
-					arg_71_0.inMove = 1
-
-					arg_71_0:UpdatePos(var_71_1)
-
-					if arg_71_0.inScare then
-						arg_71_0:PlayAnim("Fear_" .. var_71_4)
-					else
-						arg_71_0:PlayMove(var_71_4)
-					end
-				elseif arg_71_0.inScare then
-					arg_71_0:PlayAnim("Fear_" .. arg_71_0:GetDirMark())
-				else
-					arg_71_0:PlayIdle()
-				end
-			end
-		end
-
-		function var_62_0.DoAttack(arg_72_0, arg_72_1)
-			if arg_72_0.inStealth then
-				arg_72_0.inStealth = nil
-			end
-
-			arg_72_0:ReloadAbility("attack")
-			arg_72_0:PlayAnim(string.format("Attack_%s", arg_72_1))
-		end
-
-		function var_62_0.DoTeleport(arg_73_0, arg_73_1)
-			if arg_73_0.inStealth then
-				arg_73_0.inStealth = nil
-			end
-
-			arg_73_0:ReloadAbility("teleport")
-
-			arg_73_0.inCharge = 0
-			arg_73_0.telePos = arg_73_0.controller:GetTeleportTargetPos(arg_73_1, arg_73_0.pos)
-
-			arg_73_0.controller:BuildTeleportSign({
-				pos = arg_73_0.telePos,
-				time = var_62_1
-			})
-		end
-
-		function var_62_0.BeScare(arg_74_0)
-			arg_74_0.inCharge = nil
-			arg_74_0.inStealth = nil
-			arg_74_0.inScare = var_62_3
-
-			if not arg_74_0.inMove then
-				arg_74_0:PlayIdle()
-			end
-		end
-
-		return var_62_0
-	end,
-	TargetEffect = function()
-		local var_75_0 = class("TargetEffect", var_0_0.TargetObject)
-
-		function var_75_0.Moveable(arg_76_0)
-			return true
-		end
-
-		function var_75_0.GetBaseOrder(arg_77_0)
-			return 5
-		end
-
-		function var_75_0.InitUI(arg_78_0, arg_78_1)
-			arg_78_0.mainTarget = arg_78_0._tf:Find("scale/Image")
-
-			arg_78_0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-				arg_78_0.controller:DestoryTarget(arg_78_0)
-			end)
-		end
-
-		return var_75_0
-	end,
-	TargetBomb = function()
-		local var_80_0 = class("TargetBomb", var_0_0.TargetEffect)
-
-		function var_80_0.InTimeLine(arg_81_0)
-			return true
-		end
-
-		function var_80_0.GetBaseOrder(arg_82_0)
-			return 1
-		end
-
-		function var_80_0.OnTimerUpdate(arg_83_0, arg_83_1)
-			arg_83_0.controller:ScareEnemy({
-				range = 1,
-				pos = arg_83_0.pos
-			})
-		end
-
-		return var_80_0
-	end,
-	TargetTimeEffect = function()
-		local var_84_0 = class("TargetTimeEffect", var_0_0.TargetEffect)
-
-		function var_84_0.GetBaseOrder(arg_85_0)
-			return 1
-		end
-
-		function var_84_0.InTimeLine(arg_86_0)
-			return true
-		end
-
-		function var_84_0.InitUI(arg_87_0, arg_87_1)
-			arg_87_0.time = arg_87_1.time
-		end
-
-		function var_84_0.OnTimerUpdate(arg_88_0, arg_88_1)
-			if arg_88_1 < arg_88_0.time then
-				arg_88_0.time = arg_88_0.time - arg_88_1
-			else
-				arg_88_0.controller:DestoryTarget(arg_88_0)
-			end
-		end
-
-		return var_84_0
-	end,
-	TargetBlackHole = function()
-		local var_89_0 = class("TargetBlackHole", var_0_0.TargetEffect)
-
-		function var_89_0.InTimeLine(arg_90_0)
-			return true
-		end
-
-		function var_89_0.GetBaseOrder(arg_91_0)
-			return 3
-		end
-
-		function var_89_0.InitUI(arg_92_0, arg_92_1)
-			var_89_0.super.InitUI(arg_92_0, arg_92_1)
-
-			arg_92_0.time = arg_92_1.time
-		end
-
-		function var_89_0.OnTimerUpdate(arg_93_0, arg_93_1)
-			if arg_93_0.isLost then
-				return
-			end
-
-			arg_93_0.controller:OnlyBreakIce(arg_93_0.pos)
-
-			if arg_93_1 < arg_93_0.time then
-				arg_93_0.time = arg_93_0.time - arg_93_1
-			else
-				arg_93_0.isLost = true
-
-				arg_93_0:PlayAnim("BlackHole_3_Despawn")
-			end
-		end
-
-		function var_89_0.BeTrigger(arg_94_0)
-			if arg_94_0.isLost then
-				return
-			else
-				arg_94_0.isLost = true
-
-				arg_94_0:PlayAnim("BlackHole_3_Despawn")
-			end
-		end
-
-		return var_89_0
-	end,
-	TargetSubEffect = function()
-		local var_95_0 = class("TargetSubEffect", var_0_0.TargetObject)
-
-		function var_95_0.Init(arg_96_0, arg_96_1)
-			arg_96_0.name = arg_96_1.name
-
-			arg_96_0:InitUI(arg_96_1)
-		end
-
-		function var_95_0.InitUI(arg_97_0, arg_97_1)
-			arg_97_0.mainTarget = arg_97_0._tf:Find("scale/Image")
-
-			arg_97_0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-				Destroy(arg_97_0._tf)
-			end)
-		end
-
-		return var_95_0
-	end,
-	TargetRushEffect = function()
-		local var_99_0 = class("TargetRushEffect", var_0_0.TargetSubEffect)
-
-		function var_99_0.InTimeLine(arg_100_0)
-			return true
-		end
-
-		function var_99_0.InitUI(arg_101_0, arg_101_1)
-			arg_101_0.rtScale = arg_101_0._tf:Find("scale")
-
-			GetOrAddComponent(arg_101_0.rtScale, typeof(CanvasGroup))
-
-			arg_101_0.alpha = 0
-
-			setCanvasGroupAlpha(arg_101_0.rtScale, arg_101_0.alpha)
-		end
-
-		local var_99_1 = 0.01
-
-		function var_99_0.OnTimerUpdate(arg_102_0, arg_102_1)
-			if arg_102_0.inRemove then
-				arg_102_0.alpha = arg_102_0.alpha - arg_102_1 / var_99_1
-
-				if arg_102_0.alpha <= 0 then
-					table.removebyvalue(arg_102_0.controller.timeFlow, arg_102_0)
-					Destroy(arg_102_0._tf)
-				end
-			elseif arg_102_0.alpha < 1 then
-				arg_102_0.alpha = math.max(1, arg_102_0.alpha + arg_102_1 / var_99_1)
-
-				setCanvasGroupAlpha(arg_102_0.rtScale, arg_102_0.alpha)
-			end
-		end
-
-		function var_99_0.Remove(arg_103_0)
-			arg_103_0.inRemove = true
-		end
-
-		return var_99_0
-	end
-}
-
-for iter_0_0, iter_0_1 in ipairs({
+for slot5, slot6 in ipairs({
 	"TargetObject",
 	"TargetIce",
 	"TargetMove",
@@ -1184,7 +13,1156 @@ for iter_0_0, iter_0_1 in ipairs({
 	"TargetRushEffect",
 	"TargetArbor"
 }) do
-	var_0_0[iter_0_1] = var_0_1[iter_0_1]()
+	-- Nothing
 end
 
-return var_0_0
+return {
+	[slot6] = ({
+		TargetObject = function ()
+			slot0 = class("TargetObject")
+
+			function slot0.GetSize(slot0)
+				return slot0.size
+			end
+
+			function slot0.InTimeLine(slot0)
+				return false
+			end
+
+			function slot0.Moveable(slot0)
+				return false
+			end
+
+			function slot0.BreakMoveable(slot0)
+				return false
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 3
+			end
+
+			function slot0.Ctor(slot0, slot1, slot2, slot3)
+				slot0._tf = slot2
+				slot0.controller = slot1
+
+				slot0:Init(slot3)
+			end
+
+			function slot0.Init(slot0, slot1)
+				slot0.name = slot1.name
+				slot0.size = slot1.size or NewPos(1, 1)
+				slot0.canHide = slot1.hide
+
+				setCanvasOverrideSorting(slot0._tf, true)
+				slot0:UpdatePos(slot1.pos - NewPos(0, slot0:GetSize().y - 1))
+
+				slot0.realPos = slot1.realPos or slot0.pos
+
+				slot0:UpdatePosition()
+				slot0:InitUI(slot1)
+			end
+
+			function slot0.InitUI(slot0, slot1)
+			end
+
+			function slot0.UpdatePos(slot0, slot1)
+				slot0._tf:GetComponent(typeof(Canvas)).sortingOrder = (slot1.y + slot0:GetSize().y) * 10 + slot0:GetBaseOrder()
+
+				slot0.controller:UpdateTargetPos(slot0, slot0.pos, slot1)
+
+				slot0.pos = slot1
+			end
+
+			function slot0.UpdatePosition(slot0)
+				setAnchoredPosition(slot0._tf, {
+					x = slot0.realPos.x * 32,
+					y = slot0.realPos.y * -32
+				})
+			end
+
+			function slot0.PlayAnim(slot0, slot1)
+				if slot0.status ~= slot1 then
+					slot0.status = slot1
+
+					slot0.mainTarget:GetComponent(typeof(Animator)):Play(slot1, -1, 0)
+				end
+			end
+
+			return slot0
+		end,
+		TargetIce = function ()
+			slot0 = class("TargetIce", uv0.TargetObject)
+
+			function slot0.BreakMoveable(slot0)
+				return true
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.mainTarget = slot0._tf:Find("scale/Image")
+
+				slot0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+					uv0.controller:DestoryTarget(uv0)
+				end)
+
+				if slot1.create then
+					if slot0.controller:CheckMelt(slot0.pos) then
+						slot0.isLost = true
+
+						slot0:PlayAnim("Ice_Spawn_Melt")
+					else
+						slot0:PlayAnim("Ice_Spawn")
+					end
+				end
+			end
+
+			function slot0.Break(slot0)
+				if slot0.isLost then
+					return
+				else
+					slot0.isLost = true
+
+					slot0:PlayAnim("Ice_Break")
+				end
+			end
+
+			return slot0
+		end,
+		TargetItem = function ()
+			slot0 = class("TargetItem", uv0.TargetObject)
+
+			function slot0.Moveable(slot0)
+				return true
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 2
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.point = slot1.point
+
+				eachChild(slot0._tf:Find("scale/type"), function (slot0)
+					setActive(slot0, slot0.name == uv0.name)
+				end)
+			end
+
+			return slot0
+		end,
+		TargetArbor = function ()
+			slot0 = class("TargetArbor", uv0.TargetObject)
+
+			function slot0.InitUI(slot0, slot1)
+				slot2 = string.split(slot0.name, "_")
+
+				eachChild(slot0._tf:Find("scale/Image"), function (slot0)
+					setActive(slot0, slot0.name == uv0[#uv0])
+				end)
+			end
+
+			return slot0
+		end,
+		TargetMove = function ()
+			slot0 = class("TargetMove", uv0.TargetObject)
+
+			function slot0.InTimeLine(slot0)
+				return true
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 4
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.rtScale = slot0._tf:Find("scale")
+				slot0.mainTarget = slot0.rtScale:Find("main")
+				slot2 = slot0.mainTarget:GetComponent(typeof(DftAniEvent))
+
+				slot2:SetStartEvent(function ()
+					uv0:EventAnim("start")
+				end)
+				slot2:SetTriggerEvent(function ()
+					uv0:EventAnim("trigger")
+				end)
+				slot2:SetEndEvent(function ()
+					uv0.inLock = false
+
+					uv0:EventAnim("end")
+				end)
+				slot0:PlayIdle()
+			end
+
+			function slot0.EventAnim(slot0, slot1)
+			end
+
+			function slot0.RushCheck(slot0)
+			end
+
+			function slot0.PlayIdle(slot0, slot1)
+				slot0:PlayAnim(string.format("Idle_%s%s", slot1 or slot0:GetDirMark(), slot0.inLantern and "_Lantern" or ""))
+			end
+
+			function slot0.PlayMove(slot0, slot1)
+				slot0:PlayAnim(string.format("Move_%s%s", slot1 or slot0:GetDirMark(), slot0.inLantern and "_Lantern" or ""))
+			end
+
+			slot1 = {
+				E = {
+					1,
+					0
+				},
+				S = {
+					0,
+					1
+				},
+				W = {
+					-1,
+					0
+				},
+				N = {
+					0,
+					-1
+				}
+			}
+
+			function slot0.GetDirMark(slot0, slot1)
+				if slot1 then
+					for slot5, slot6 in pairs(uv0) do
+						if slot6[1] == slot1.x and slot6[2] == slot1.y then
+							return slot5
+						end
+					end
+				else
+					return uv0[string.split(slot0.status, "_")[2]] and slot2 or "S"
+				end
+			end
+
+			function slot0.GetDirPos(slot0, slot1)
+				return NewPos(unpack(uv0[slot1 or slot0:GetDirMark()]))
+			end
+
+			function slot0.GetStatusMark(slot0, slot1)
+				return string.split(slot1 or slot0.status, "_")[1]
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+			end
+
+			slot0.loopAnimDic = {
+				Fear = true,
+				Idle = true,
+				Move = true
+			}
+
+			function slot0.PlayAnim(slot0, slot1)
+				if not tobool(slot0.loopAnimDic[slot0:GetStatusMark(slot1)]) or slot0.status ~= slot1 then
+					slot0.inLock = not slot2
+					slot0.status = slot1
+
+					slot0.mainTarget:GetComponent(typeof(Animator)):Play(slot1, -1, 0)
+					slot0:RushCheck()
+				end
+			end
+
+			return slot0
+		end,
+		TargetFuShun = function ()
+			slot0 = class("TargetFuShun", uv0.TargetMove)
+
+			function slot0.GetSpeed(slot0)
+				return slot0.speed * (slot0.controller:GetEnemyEffect("gravity") and 0.85 or 1) * (slot0.inRush and NenjuuGameConfig.GetSkillParam("rush", slot0.level.rush)[2] or 1) * (slot0.controller:InBlackHoleRange(slot0.pos) and 0.75 or 1) * (NenjuuGameConfig.GetSkillParam("blessing", slot0.level.blessing) or 1)
+			end
+
+			slot1 = 0.1
+			slot2 = 0.1
+			slot3 = 5
+			slot4 = {
+				ice = 1,
+				flash = 30,
+				item = 0,
+				rush = 20
+			}
+
+			function slot0.CheckSkill(slot0, slot1)
+				if slot1 == "item" then
+					return slot0.itemType and slot0.itemCount > 0
+				else
+					return slot0.level[slot1] > 0 and slot0.skillCDs[slot1] <= 0
+				end
+			end
+
+			function slot0.ReloadSkill(slot0, slot1)
+				slot0.skillCDs[slot1] = (slot1 == "flash" and NenjuuGameConfig.GetSkillParam("flash", slot0.level.flash) or uv0[slot1]) * (slot0.controller:GetEnemyEffect("delay") and 1.2 or 1)
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				uv0.super.InitUI(slot0, slot1)
+
+				slot0.level = slot1.level
+				slot0.skillCDs = {
+					ice = 0,
+					flash = 0,
+					item = 0,
+					rush = 0
+				}
+				slot0.itemType = slot1.itemType
+				slot0.speed = 4.5
+				slot0.icePower = NenjuuGameConfig.GetSkillParam("ice", slot0.level.ice)
+				slot0.flashPower = 4
+				slot0.decoyCount = slot0.level.decoy
+				slot0.rushTime = checkExist(NenjuuGameConfig.GetSkillParam("rush", slot0.level.rush), {
+					1
+				})
+				slot0.itemCount = 1
+			end
+
+			function slot0.CalcSkillCDs(slot0)
+				slot1 = {}
+
+				for slot5, slot6 in ipairs({
+					"ice",
+					"flash",
+					"rush",
+					"item"
+				}) do
+					slot7 = slot0.skillCDs[slot6]
+					slot8 = (slot6 == "flash" and NenjuuGameConfig.GetSkillParam("flash", slot0.level.flash) or uv0[slot6]) * (slot0.controller:GetEnemyEffect("delay") and 1.2 or 1)
+
+					if slot6 == "item" then
+						if not slot0.itemType then
+							table.insert(slot1, {})
+						elseif slot0.itemCount > 0 then
+							table.insert(slot1, {
+								cd = slot7,
+								icon = slot0.itemType
+							})
+						else
+							table.insert(slot1, {
+								cd = true,
+								icon = slot0.itemType
+							})
+						end
+					elseif slot0.level[slot6] > 0 then
+						table.insert(slot1, {
+							cd = slot7,
+							rate = slot8 == 0 and 0 or slot7 / slot8,
+							icon = slot6 == "ice" and slot0.controller:CheckIce(slot0.pos + slot0:GetDirPos()) and "attack" or slot6
+						})
+					else
+						table.insert(slot1, {})
+					end
+				end
+
+				return slot1
+			end
+
+			function slot0.EventAnim(slot0, slot1)
+				slot2 = slot0:GetDirMark()
+
+				if slot1 == "start" then
+					-- Nothing
+				elseif slot1 == "trigger" then
+					switch(slot0.status, {
+						["Freeze_" .. slot2 .. "_3_Shot"] = function ()
+							uv0.controller:CreateTarget({
+								name = "EF_bk_Freeze",
+								parent = uv0.rtScale:Find("bk")
+							})
+							uv0.controller:BuildIce({
+								pos = uv0.pos,
+								dirPos = uv0:GetDirPos(),
+								power = uv0.icePower
+							})
+						end,
+						["Attack_" .. slot2] = function ()
+							switch(uv0, {
+								N = function ()
+									uv0.controller:CreateTarget({
+										name = "EF_Attack_Hit_" .. uv1,
+										parent = uv0.rtScale:Find("bk")
+									})
+								end,
+								S = function ()
+									uv0.controller:CreateTarget({
+										name = "EF_Attack_Hit_" .. uv1,
+										parent = uv0.rtScale:Find("fr")
+									})
+								end
+							}, function ()
+								uv0.controller:CreateTarget({
+									name = "EF_Attack_Hit_" .. uv1 .. "_fr",
+									parent = uv0.rtScale:Find("fr")
+								})
+								uv0.controller:CreateTarget({
+									name = "EF_Attack_Hit_" .. uv1 .. "_bk",
+									parent = uv0.rtScale:Find("bk")
+								})
+							end)
+							uv1.controller:BreakIce({
+								pos = uv1.pos,
+								dir = uv1:GetDirMark(),
+								dirPos = uv1:GetDirPos()
+							})
+						end,
+						Lantern_Activate = function ()
+							uv0:ReloadSkill("item")
+
+							uv0.itemCount = uv0.itemCount - 1
+							uv0.inLantern = uv1
+							uv0.effectLantern = uv0.controller:CreateTarget({
+								name = "EF_bk_overlay_Lantern",
+								parent = uv0.rtScale:Find("bk"),
+								time = uv1
+							})
+						end
+					})
+				elseif slot1 == "end" then
+					switch(slot0.status, {
+						["Bomb_" .. slot2 .. "_1_Start"] = function ()
+							uv0:ReloadSkill("item")
+
+							uv0.itemCount = uv0.itemCount - 1
+
+							uv0:PlayAnim("Bomb_" .. uv1 .. "_3_End")
+							uv0.controller:BuildBomb({
+								pos = uv0.pos,
+								dir = uv1
+							})
+						end,
+						Dead = function ()
+							if uv0.isDead then
+								uv0.controller:EndGame()
+							end
+						end
+					})
+				else
+					assert(false)
+				end
+			end
+
+			slot5 = {
+				E = {
+					"EF_Ghost_E_bk"
+				},
+				N = {
+					"EF_Ghost_N_bk",
+					"EF_Ghost_N_fr"
+				},
+				S = {
+					"EF_Ghost_S_bk"
+				},
+				W = {
+					"EF_Ghost_W_bk"
+				}
+			}
+
+			function slot0.RushCheck(slot0)
+				if slot0.rushEffects then
+					for slot4, slot5 in ipairs(slot0.rushEffects) do
+						slot5:Remove()
+					end
+
+					slot0.rushEffects = nil
+				end
+
+				if slot0.inRush and slot0.loopAnimDic[slot0:GetStatusMark(slot0.status)] then
+					slot0.rushEffects = {}
+					slot4 = slot0
+
+					for slot4, slot5 in ipairs(uv0[slot0.GetDirMark(slot4)]) do
+						slot6 = string.split(slot5, "_")
+
+						table.insert(slot0.rushEffects, slot0.controller:CreateTarget({
+							name = slot5,
+							parent = slot0.rtScale:Find(slot6[#slot6])
+						}))
+					end
+				end
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				for slot5, slot6 in pairs(slot0.skillCDs) do
+					slot0.skillCDs[slot5] = slot6 - slot1
+				end
+
+				if slot0.inRush then
+					slot0.inRush = slot0.inRush - slot1
+
+					if slot0.inRush <= 0 then
+						slot0.inRush = nil
+					end
+				end
+
+				if slot0.inLantern then
+					slot0.inLantern = slot0.inLantern - slot1
+				end
+
+				if slot0.inShock then
+					slot0.inShock = slot0.inShock - slot1
+
+					if slot0.inShock <= 0 then
+						slot0.inShock = nil
+					end
+
+					return
+				end
+
+				if slot0.inCharge then
+					slot0.inCharge = slot0.inCharge + slot1
+
+					if uv0 < slot0.inCharge then
+						slot0.inCharge = nil
+
+						slot0:PlayAnim(string.format("Freeze_%s_3_Shot", slot0:GetDirMark()))
+					end
+				elseif slot0.inMove then
+					slot0.inMove = slot0.inMove - slot1 * slot0:GetSpeed()
+
+					if slot0.inMove > 0 then
+						slot0.realPos = slot0.pos - slot0:GetDirPos() * slot0.inMove
+					else
+						slot0.inMove = nil
+						slot0.realPos = slot0.pos
+					end
+
+					slot0:UpdatePosition()
+				elseif slot0.inLock then
+					return
+				elseif slot0.controller:InBlackHoleRange(slot0.pos, true) then
+					slot0.inShock = 1
+
+					slot0:PlayAnim("Dead")
+				elseif slot0.inLantern and slot0.inLantern <= 0 then
+					slot0.inLantern = nil
+
+					slot0.effectLantern:PlayAnim("EF_bk_overlay_Lantern_Finish")
+
+					slot0.effectLantern = nil
+				elseif slot0:CheckSkill("ice") and slot0.controller:GetPressInput("Skill_0") then
+					slot0:ReloadSkill("ice")
+
+					if slot0.controller:CheckIce(slot0.pos + slot0:GetDirPos()) then
+						slot0:PlayAnim(string.format("Attack_%s", slot0:GetDirMark()))
+					else
+						slot0.inCharge = 0
+
+						slot0:PlayAnim(string.format("Freeze_%s_1_Start", slot0:GetDirMark()))
+					end
+				elseif slot0:CheckSkill("flash") and slot0.controller:GetPressInput("Skill_1") then
+					slot0:ReloadSkill("flash")
+
+					slot2 = slot0:GetDirPos()
+
+					for slot6 = slot0.flashPower, 0, -1 do
+						if slot0.controller:Moveable(slot0.pos + slot2 * slot6) then
+							slot0.controller:CreateTarget({
+								name = "EF_bk_Flash_Jump",
+								pos = slot0.pos
+							})
+							slot0:UpdatePos(slot0.pos + slot2 * slot6)
+
+							slot0.realPos = slot0.pos
+
+							slot0:UpdatePosition()
+							slot0.controller:CreateTarget({
+								name = "EF_bk_Flash_Land",
+								parent = slot0.rtScale:Find("bk")
+							})
+							slot0:PlayAnim(string.format("Flash_%s", slot0:GetDirMark()))
+
+							break
+						end
+					end
+				elseif slot0:CheckSkill("rush") and slot0.controller:GetPressInput("Skill_2") then
+					slot0:ReloadSkill("rush")
+
+					slot0.inRush = slot0.rushTime
+
+					slot0:RushCheck()
+				elseif slot0.itemType and slot0:CheckSkill("item") and slot0.controller:GetPressInput("Skill_3") and (slot0.itemType ~= "lantern" or not slot0.inLantern) then
+					if slot0.itemType == "lantern" then
+						slot0:PlayAnim("Lantern_Activate")
+					elseif slot0.itemType == "bomb" then
+						slot0:PlayAnim(string.format("Bomb_%s_1_Start", slot0:GetDirMark()))
+					else
+						assert(false)
+					end
+				elseif not slot0.controller:GetCacheInput() then
+					slot0.idleTime = defaultValue(slot0.idleTime, 0) - slot1
+
+					slot0:PlayIdle()
+				elseif slot0:GetStatusMark() == "Move" then
+					if slot0.controller:Moveable(slot0.pos + slot0:GetDirPos(slot2)) then
+						slot0.inMove = 1
+
+						slot0:UpdatePos(slot0.pos + slot0:GetDirPos(slot2))
+						slot0:PlayMove(slot2)
+					else
+						slot0:PlayIdle(slot2)
+					end
+				elseif slot2 == slot0:GetDirMark() then
+					if defaultValue(slot0.idleTime, 0) <= 0 and slot0.controller:Moveable(slot0.pos + slot0:GetDirPos()) then
+						slot0.inMove = 1
+
+						slot0:UpdatePos(slot0.pos + slot0:GetDirPos())
+						slot0:PlayMove()
+					else
+						slot0.idleTime = defaultValue(slot0.idleTime, 0) - slot1
+
+						slot0:PlayIdle()
+					end
+				else
+					slot0.idleTime = uv1
+
+					slot0:PlayIdle(slot2)
+				end
+			end
+
+			function slot0.PopPoint(slot0, slot1)
+				slot2 = slot0._tf:Find("top/pop")
+
+				setText(slot2:Find("Text"), "+" .. slot1)
+				setActive(slot2, false)
+				setActive(slot2, true)
+			end
+
+			function slot0.EnemyHit(slot0, slot1)
+				if slot0.isDead then
+					return
+				end
+
+				if slot0.decoyCount > 0 then
+					slot0.decoyCount = slot0.decoyCount - 1
+					slot0.inCharge = nil
+					slot0.inMove = nil
+
+					slot0.controller:BuildDecoy(slot0.pos)
+					slot0:UpdatePos(slot0.controller:GetDecoyPos(slot0.pos, slot1))
+
+					slot0.realPos = slot0.pos
+
+					slot0:UpdatePosition()
+					slot0:PlayAnim("Decoy_2")
+				else
+					slot0.isDead = true
+					slot0.inCharge = nil
+					slot0.inMove = nil
+
+					slot0:PlayAnim("Dead")
+				end
+			end
+
+			function slot0.UpdatePosition(slot0)
+				uv0.super.UpdatePosition(slot0)
+				slot0.controller:WindowFocrus(slot0._tf.localPosition)
+
+				if slot0.realPos == slot0.pos then
+					slot0.controller:EatItem(slot0.pos)
+				end
+			end
+
+			return slot0
+		end,
+		TargetNenjuu = function ()
+			slot0 = class("TargetNenjuu", uv0.TargetMove)
+
+			function slot0.GetSpeed(slot0)
+				return slot0.speed * (slot0:CheckAbility("rush") and 1.2 or 1) * (slot0.inStealth and 1.3 or 1) * (slot0.isDoppel and 0.8 or 1)
+			end
+
+			slot1 = 1.5
+			slot2 = 5
+			slot3 = 5
+			slot4 = 12
+			slot5 = {
+				gravity = 0,
+				teleport = 7,
+				doppelgangers = 0,
+				delay = 0,
+				blackhole = 20,
+				stealth = 10,
+				rush = 0,
+				attack = 2,
+				breakpassable = 0
+			}
+
+			function slot0.CheckAbility(slot0, slot1)
+				return slot0.featuresAbility[slot1] and slot0.abilityCDs[slot1] <= 0
+			end
+
+			function slot0.ReloadAbility(slot0, slot1)
+				slot0.abilityCDs[slot1] = uv0[slot1]
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				uv0.super.InitUI(slot0, slot1)
+
+				slot0.isDoppel = slot1.isDoppel
+				slot0.speed = 1.5
+				slot0.featuresAbility = {
+					attack = true
+				}
+
+				for slot5, slot6 in ipairs(NenjuuGameConfig.ABILITY_LIST) do
+					slot0.featuresAbility[slot6] = tobool(slot1.abilitys[slot6])
+				end
+
+				slot0.abilityCDs = {
+					gravity = 0,
+					teleport = 10,
+					doppelgangers = 0,
+					delay = 0,
+					blackhole = 0,
+					stealth = 0,
+					rush = 0,
+					attack = 0,
+					breakpassable = 0
+				}
+			end
+
+			function slot0.EventAnim(slot0, slot1)
+				slot2 = slot0:GetDirMark()
+
+				if slot1 == "start" then
+					-- Nothing
+				elseif slot1 == "trigger" then
+					switch(slot0.status, {
+						["Attack_" .. slot2] = function ()
+							uv0.controller:CreateTarget({
+								name = "EF_Attack_" .. uv1,
+								parent = uv0.rtScale:Find(uv1 == "N" and "bk" or "fr")
+							})
+
+							if not uv0.isDoppel then
+								uv0.controller:BreakIce({
+									pos = uv0.pos,
+									dir = uv0:GetDirMark(),
+									dirPos = uv0:GetDirPos(),
+									power = uv0:CheckAbility("breakpassable") and 3 or 1
+								})
+							end
+
+							uv0.controller:EnemyAttack({
+								pos = uv0.pos,
+								dirPos = uv0:GetDirPos()
+							})
+						end
+					})
+				elseif slot1 == "end" then
+					switch(slot0.status, {
+						Warp_1_Jump = function ()
+							uv0:UpdatePos(uv0.telePos)
+
+							uv0.realPos = uv0.pos
+
+							uv0:UpdatePosition()
+
+							uv0.telePos = nil
+
+							uv0:PlayAnim("Warp_2_Land")
+							uv0.controller:OnlyBreakIce(uv0.pos)
+						end
+					})
+				else
+					assert(false)
+				end
+			end
+
+			slot6 = {
+				E = {
+					"EF_Nenjuu_Ghost_E_bk"
+				},
+				N = {
+					"EF_Nenjuu_Ghost_N_bk",
+					"EF_Nenjuu_Ghost_N_fr"
+				},
+				S = {
+					"EF_Nenjuu_Ghost_S_bk"
+				},
+				W = {
+					"EF_Nenjuu_Ghost_W_bk"
+				}
+			}
+
+			function slot0.RushCheck(slot0)
+				if slot0.rushEffects then
+					for slot4, slot5 in ipairs(slot0.rushEffects) do
+						slot5:Remove()
+					end
+
+					slot0.rushEffects = nil
+				end
+
+				if slot0.inStealth and slot0.loopAnimDic[slot0:GetStatusMark(slot0.status)] then
+					slot0.rushEffects = {}
+					slot4 = slot0
+
+					for slot4, slot5 in ipairs(uv0[slot0.GetDirMark(slot4)]) do
+						slot6 = string.split(slot5, "_")
+
+						table.insert(slot0.rushEffects, slot0.controller:CreateTarget({
+							name = slot5,
+							parent = slot0.rtScale:Find(slot6[#slot6])
+						}))
+					end
+				end
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				for slot5, slot6 in pairs(slot0.featuresAbility) do
+					if slot6 and uv0[slot5] > 0 then
+						slot0.abilityCDs[slot5] = slot0.abilityCDs[slot5] - slot1
+					end
+				end
+
+				if slot0.inStealth then
+					slot0.inStealth = slot0.inStealth - slot1
+
+					if slot0.inStealth <= 0 then
+						slot0.inStealth = nil
+					end
+				end
+
+				if slot0.inScare then
+					slot0.inScare = slot0.inScare - slot1
+
+					if slot0.inScare <= 0 then
+						slot0.inScare = nil
+					end
+				end
+
+				if slot0:CheckAbility("doppelgangers") and not slot0.isSummon then
+					slot0.isSummon = true
+
+					slot0.controller:BuildDoppelgangers(slot0.pos)
+				end
+
+				if slot0.inCharge then
+					slot0.inCharge = slot0.inCharge + slot1
+
+					if uv1 < slot0.inCharge then
+						slot0.inCharge = nil
+
+						slot0:PlayAnim("Warp_1_Jump")
+					end
+				elseif slot0.inMove then
+					slot0.inMove = slot0.inMove - slot1 * slot0:GetSpeed()
+
+					if slot0.inMove > 0 then
+						slot0.realPos = slot0.pos - slot0:GetDirPos() * slot0.inMove
+					else
+						slot0.inMove = nil
+						slot0.realPos = slot0.pos
+					end
+
+					slot0:UpdatePosition()
+				elseif slot0.inLock then
+					return
+				else
+					if slot0:CheckAbility("blackhole") then
+						slot0:ReloadAbility("blackhole")
+						slot0.controller:BuildBlackHole()
+					end
+
+					if slot0:CheckAbility("stealth") and slot0.controller:StealthCheck(slot0.pos) and not slot0.inScare then
+						slot0:ReloadAbility("stealth")
+
+						slot0.inStealth = uv2
+
+						slot0:RushCheck()
+					end
+
+					if slot0:CheckAbility("attack") and not slot0.inScare then
+						for slot5, slot6 in ipairs({
+							"E",
+							"S",
+							"W",
+							"N"
+						}) do
+							if slot0.controller:AttackCheck({
+								pos = slot0.pos,
+								dirPos = slot0:GetDirPos(slot6)
+							}) then
+								slot0:DoAttack(slot6)
+
+								return
+							end
+						end
+					end
+
+					slot2 = slot0.controller:GetWayfindingMap(slot0.pos, tobool(slot0.isDoppel))
+
+					for slot7, slot8 in ipairs({
+						"E",
+						"S",
+						"W",
+						"N"
+					}) do
+						if slot2[tostring(slot0.pos + slot0:GetDirPos(slot8))] then
+							slot10 = slot2[tostring(slot0.pos)]
+
+							if slot0.inScare then
+								if not slot10 or slot10.value < slot9.value then
+									slot3 = slot0.pos + slot0:GetDirPos(slot8)
+								end
+							elseif not slot10 or (slot9.lightValue or slot9.value) < (slot10.lightValue or slot10.value) then
+								slot3 = slot0.pos + slot0:GetDirPos(slot8)
+							end
+						end
+					end
+
+					if slot0:CheckAbility("teleport") and not slot0.inScare then
+						if slot3 == slot0.pos then
+							if not slot0.lostTime then
+								slot0.lostTime = 3 - slot1
+							elseif slot0.lostTime <= slot1 and slot0.controller.timeCount > 5 then
+								slot0.lostTime = nil
+
+								slot0:DoTeleport(slot2)
+							else
+								slot0.lostTime = slot0.lostTime - slot1
+							end
+
+							slot0:PlayIdle()
+
+							return
+						else
+							slot0.lostTime = nil
+
+							if slot2[tostring(slot3)] and uv3 < slot2[tostring(slot3)].value then
+								slot0:DoTeleport(slot2)
+								slot0:PlayIdle()
+
+								return
+							end
+						end
+					end
+
+					if not slot0.isDoppel and slot0:CheckAbility("attack") and slot0.controller:CheckIce(slot3) then
+						slot0:DoAttack(slot0:GetDirMark(slot3 - slot0.pos))
+					elseif slot0.controller:Moveable(slot3) then
+						slot0.inMove = 1
+
+						slot0:UpdatePos(slot3)
+
+						if slot0.inScare then
+							slot0:PlayAnim("Fear_" .. slot0:GetDirMark(slot3 - slot0.pos))
+						else
+							slot0:PlayMove(slot4)
+						end
+					elseif slot0.inScare then
+						slot0:PlayAnim("Fear_" .. slot0:GetDirMark())
+					else
+						slot0:PlayIdle()
+					end
+				end
+			end
+
+			function slot0.DoAttack(slot0, slot1)
+				if slot0.inStealth then
+					slot0.inStealth = nil
+				end
+
+				slot0:ReloadAbility("attack")
+				slot0:PlayAnim(string.format("Attack_%s", slot1))
+			end
+
+			function slot0.DoTeleport(slot0, slot1)
+				if slot0.inStealth then
+					slot0.inStealth = nil
+				end
+
+				slot0:ReloadAbility("teleport")
+
+				slot0.inCharge = 0
+				slot0.telePos = slot0.controller:GetTeleportTargetPos(slot1, slot0.pos)
+
+				slot0.controller:BuildTeleportSign({
+					pos = slot0.telePos,
+					time = uv0
+				})
+			end
+
+			function slot0.BeScare(slot0)
+				slot0.inCharge = nil
+				slot0.inStealth = nil
+				slot0.inScare = uv0
+
+				if not slot0.inMove then
+					slot0:PlayIdle()
+				end
+			end
+
+			return slot0
+		end,
+		TargetEffect = function ()
+			slot0 = class("TargetEffect", uv0.TargetObject)
+
+			function slot0.Moveable(slot0)
+				return true
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 5
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.mainTarget = slot0._tf:Find("scale/Image")
+
+				slot0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+					uv0.controller:DestoryTarget(uv0)
+				end)
+			end
+
+			return slot0
+		end,
+		TargetBomb = function ()
+			slot0 = class("TargetBomb", uv0.TargetEffect)
+
+			function slot0.InTimeLine(slot0)
+				return true
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 1
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				slot0.controller:ScareEnemy({
+					range = 1,
+					pos = slot0.pos
+				})
+			end
+
+			return slot0
+		end,
+		TargetTimeEffect = function ()
+			slot0 = class("TargetTimeEffect", uv0.TargetEffect)
+
+			function slot0.GetBaseOrder(slot0)
+				return 1
+			end
+
+			function slot0.InTimeLine(slot0)
+				return true
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.time = slot1.time
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				if slot1 < slot0.time then
+					slot0.time = slot0.time - slot1
+				else
+					slot0.controller:DestoryTarget(slot0)
+				end
+			end
+
+			return slot0
+		end,
+		TargetBlackHole = function ()
+			slot0 = class("TargetBlackHole", uv0.TargetEffect)
+
+			function slot0.InTimeLine(slot0)
+				return true
+			end
+
+			function slot0.GetBaseOrder(slot0)
+				return 3
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				uv0.super.InitUI(slot0, slot1)
+
+				slot0.time = slot1.time
+			end
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				if slot0.isLost then
+					return
+				end
+
+				slot0.controller:OnlyBreakIce(slot0.pos)
+
+				if slot1 < slot0.time then
+					slot0.time = slot0.time - slot1
+				else
+					slot0.isLost = true
+
+					slot0:PlayAnim("BlackHole_3_Despawn")
+				end
+			end
+
+			function slot0.BeTrigger(slot0)
+				if slot0.isLost then
+					return
+				else
+					slot0.isLost = true
+
+					slot0:PlayAnim("BlackHole_3_Despawn")
+				end
+			end
+
+			return slot0
+		end,
+		TargetSubEffect = function ()
+			slot0 = class("TargetSubEffect", uv0.TargetObject)
+
+			function slot0.Init(slot0, slot1)
+				slot0.name = slot1.name
+
+				slot0:InitUI(slot1)
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.mainTarget = slot0._tf:Find("scale/Image")
+
+				slot0.mainTarget:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+					Destroy(uv0._tf)
+				end)
+			end
+
+			return slot0
+		end,
+		TargetRushEffect = function ()
+			slot0 = class("TargetRushEffect", uv0.TargetSubEffect)
+
+			function slot0.InTimeLine(slot0)
+				return true
+			end
+
+			function slot0.InitUI(slot0, slot1)
+				slot0.rtScale = slot0._tf:Find("scale")
+
+				GetOrAddComponent(slot0.rtScale, typeof(CanvasGroup))
+
+				slot0.alpha = 0
+
+				setCanvasGroupAlpha(slot0.rtScale, slot0.alpha)
+			end
+
+			slot1 = 0.01
+
+			function slot0.OnTimerUpdate(slot0, slot1)
+				if slot0.inRemove then
+					slot0.alpha = slot0.alpha - slot1 / uv0
+
+					if slot0.alpha <= 0 then
+						table.removebyvalue(slot0.controller.timeFlow, slot0)
+						Destroy(slot0._tf)
+					end
+				elseif slot0.alpha < 1 then
+					slot0.alpha = math.max(1, slot0.alpha + slot1 / uv0)
+
+					setCanvasGroupAlpha(slot0.rtScale, slot0.alpha)
+				end
+			end
+
+			function slot0.Remove(slot0)
+				slot0.inRemove = true
+			end
+
+			return slot0
+		end
+	})[slot6]()
+}

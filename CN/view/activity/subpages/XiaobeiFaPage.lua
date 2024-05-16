@@ -1,134 +1,120 @@
-﻿local var_0_0 = class("XiaobeiFaPage", import("...base.BaseActivityPage"))
+slot0 = class("XiaobeiFaPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.layer = arg_1_0:findTF("layer")
-	arg_1_0.btn = arg_1_0:findTF("btn", arg_1_0.layer)
-	arg_1_0.bonusList = arg_1_0:findTF("bonus_list", arg_1_0.layer)
-	arg_1_0.progress = arg_1_0:findTF("progress", arg_1_0.layer)
-	arg_1_0.progressTxt = arg_1_0:findTF("progressText", arg_1_0.layer)
-	arg_1_0.phaseTxt = arg_1_0:findTF("phase/Text", arg_1_0.layer)
-	arg_1_0.award = arg_1_0:findTF("award", arg_1_0.layer)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.layer = slot0:findTF("layer")
+	slot0.btn = slot0:findTF("btn", slot0.layer)
+	slot0.bonusList = slot0:findTF("bonus_list", slot0.layer)
+	slot0.progress = slot0:findTF("progress", slot0.layer)
+	slot0.progressTxt = slot0:findTF("progressText", slot0.layer)
+	slot0.phaseTxt = slot0:findTF("phase/Text", slot0.layer)
+	slot0.award = slot0:findTF("award", slot0.layer)
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	local var_2_0 = arg_2_0.activity
+function slot0.OnFirstFlush(slot0)
+	slot1 = slot0.activity
 
-	onButton(arg_2_0, arg_2_0.bonusList, function()
-		local var_3_0 = var_2_0:getConfig("config_data")
-		local var_3_1 = var_2_0:getConfig("config_client").pt_id
-		local var_3_2 = getProxy(ActivityProxy):getActivityById(var_2_0:getConfig("config_client").rank_act_id).data1
-
-		arg_2_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtTaskAwardWindow, {
-			tasklist = var_3_0,
-			ptId = var_3_1,
-			totalPt = var_3_2
+	onButton(slot0, slot0.bonusList, function ()
+		uv1:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtTaskAwardWindow, {
+			tasklist = uv0:getConfig("config_data"),
+			ptId = uv0:getConfig("config_client").pt_id,
+			totalPt = getProxy(ActivityProxy):getActivityById(uv0:getConfig("config_client").rank_act_id).data1
 		})
 	end)
 end
 
-function var_0_0.OnUpdateFlush(arg_4_0)
-	arg_4_0:flush_task_list_pt_xiaobeifa()
+function slot0.OnUpdateFlush(slot0)
+	slot0:flush_task_list_pt_xiaobeifa()
 end
 
-function var_0_0.flush_task_list_pt_xiaobeifa(arg_5_0)
-	arg_5_0:flush_task_list_pt()
+function slot0.flush_task_list_pt_xiaobeifa(slot0)
+	slot0:flush_task_list_pt()
 
-	local var_5_0 = arg_5_0.activity
-	local var_5_1, var_5_2, var_5_3 = arg_5_0:getDoingTask(var_5_0)
+	slot1 = slot0.activity
+	slot2, slot3, slot4 = slot0:getDoingTask(slot1)
 
-	if var_5_0:getConfig("config_client").main_task then
-		local var_5_4 = var_5_3 and var_5_1 or var_5_1 - 1
-
-		arg_5_0:setImportantProgress(var_5_0, arg_5_0:findTF("progress_important"), var_5_4, var_5_0:getConfig("config_client").main_task, var_5_0:getConfig("config_data"))
+	if slot1:getConfig("config_client").main_task then
+		slot0:setImportantProgress(slot1, slot0:findTF("progress_important"), slot4 and slot2 or slot2 - 1, slot1:getConfig("config_client").main_task, slot1:getConfig("config_data"))
 	end
 end
 
-function var_0_0.getDoingTask(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = getProxy(TaskProxy)
-	local var_6_1 = _.flatten(arg_6_1:getConfig("config_data"))
-	local var_6_2
-	local var_6_3
+function slot0.getDoingTask(slot0, slot1, slot2)
+	slot3 = getProxy(TaskProxy)
+	slot4 = _.flatten(slot1:getConfig("config_data"))
+	slot5, slot6 = nil
 
-	if arg_6_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASKS then
-		for iter_6_0 = #var_6_1, 1, -1 do
-			local var_6_4 = var_6_0:getFinishTaskById(var_6_1[iter_6_0])
-
-			if var_6_4 then
-				if not var_6_3 then
-					var_6_2 = var_6_1[iter_6_0]
-					var_6_3 = var_6_4
+	if slot1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASKS then
+		for slot10 = #slot4, 1, -1 do
+			if slot3:getFinishTaskById(slot4[slot10]) then
+				if not slot6 then
+					slot5 = slot4[slot10]
+					slot6 = slot11
 				end
 
 				break
 			end
 
-			var_6_2 = var_6_1[iter_6_0]
-			var_6_3 = var_6_0:getTaskById(var_6_1[iter_6_0])
+			slot5 = slot4[slot10]
+			slot6 = slot3:getTaskById(slot4[slot10])
 		end
 	else
-		var_6_2, var_6_3 = getActivityTask(arg_6_1)
+		slot5, slot6 = getActivityTask(slot1)
 	end
 
-	if not arg_6_2 then
-		assert(var_6_3, "without taskVO " .. var_6_2 .. " from server")
+	if not slot2 then
+		assert(slot6, "without taskVO " .. slot5 .. " from server")
 	end
 
-	return table.indexof(var_6_1, var_6_2), var_6_2, var_6_3
+	return table.indexof(slot4, slot5), slot5, slot6
 end
 
-function var_0_0.flush_task_list_pt(arg_7_0)
-	local var_7_0 = arg_7_0.activity
-	local var_7_1 = _.flatten(var_7_0:getConfig("config_data"))
-	local var_7_2, var_7_3, var_7_4 = arg_7_0:getDoingTask(var_7_0)
-	local var_7_5 = getProxy(ActivityProxy):getActivityById(var_7_0:getConfig("config_client").rank_act_id).data1
+function slot0.flush_task_list_pt(slot0)
+	slot1 = slot0.activity
+	slot3, slot4, slot5 = slot0:getDoingTask(slot1)
+	slot7 = getProxy(ActivityProxy):getActivityById(slot1:getConfig("config_client").rank_act_id).data1
 
-	setText(arg_7_0.phaseTxt, var_7_2 .. "/" .. #var_7_1)
+	setText(slot0.phaseTxt, slot3 .. "/" .. #_.flatten(slot1:getConfig("config_data")))
 
-	if var_7_4 then
-		local var_7_6 = var_7_4:getConfig("target_num")
-		local var_7_7 = setColorStr(math.min(var_7_5, var_7_6), var_7_5 < var_7_6 and COLOR_RED or COLOR_GREEN) .. "/" .. var_7_6
+	if slot5 then
+		slot8 = slot5:getConfig("target_num")
 
-		setText(arg_7_0.progressTxt, var_7_7)
-		setSlider(arg_7_0.progress, 0, var_7_6, math.min(var_7_5, var_7_6))
+		setText(slot0.progressTxt, setColorStr(math.min(slot7, slot8), slot7 < slot8 and COLOR_RED or COLOR_GREEN) .. "/" .. slot8)
+		setSlider(slot0.progress, 0, slot8, math.min(slot7, slot8))
 
-		local var_7_8 = var_7_4:getConfig("award_display")[1]
-		local var_7_9 = {
-			type = var_7_8[1],
-			id = var_7_8[2],
-			count = var_7_8[3]
-		}
+		slot10 = slot5:getConfig("award_display")[1]
 
-		updateDrop(arg_7_0.award, var_7_9)
-		onButton(arg_7_0, arg_7_0.award, function()
-			arg_7_0:emit(BaseUI.ON_DROP, var_7_9)
+		updateDrop(slot0.award, {
+			type = slot10[1],
+			id = slot10[2],
+			count = slot10[3]
+		})
+		onButton(slot0, slot0.award, function ()
+			uv0:emit(BaseUI.ON_DROP, uv1)
 		end, SFX_PANEL)
 
-		arg_7_0.btn:GetComponent(typeof(Image)).enabled = not var_7_4:isFinish()
+		slot0.btn:GetComponent(typeof(Image)).enabled = not slot5:isFinish()
 
-		setActive(arg_7_0.btn:Find("get"), var_7_4:isFinish() and not var_7_4:isReceive())
-		setActive(arg_7_0.btn:Find("achieved"), var_7_4:isReceive())
-		onButton(arg_7_0, arg_7_0.btn, function()
-			if not var_7_4:isFinish() then
-				arg_7_0:emit(ActivityMediator.ON_TASK_GO, var_7_4)
+		setActive(slot0.btn:Find("get"), slot5:isFinish() and not slot5:isReceive())
+		setActive(slot0.btn:Find("achieved"), slot5:isReceive())
+		onButton(slot0, slot0.btn, function ()
+			if not uv0:isFinish() then
+				uv1:emit(ActivityMediator.ON_TASK_GO, uv0)
 			else
-				if not arg_7_0:TaskSubmitCheck(var_7_4) then
+				if not uv1:TaskSubmitCheck(uv0) then
 					return
 				end
 
-				arg_7_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_7_4)
+				uv1:emit(ActivityMediator.ON_TASK_SUBMIT, uv0)
 			end
 		end, SFX_PANEL)
-		setButtonEnabled(arg_7_0.btn, not var_7_4:isReceive())
+		setButtonEnabled(slot0.btn, not slot5:isReceive())
 	end
 end
 
-function var_0_0.TaskSubmitCheck(arg_10_0, arg_10_1)
-	if var_0_0.checkList[arg_10_1.id] then
-		local var_10_0 = getProxy(BayProxy):getShips()
-
-		for iter_10_0, iter_10_1 in ipairs(var_10_0) do
-			if iter_10_1:getGroupId() == var_0_0.checkList[arg_10_1.id] and iter_10_1:isActivityNpc() then
+function slot0.TaskSubmitCheck(slot0, slot1)
+	if uv0.checkList[slot1.id] then
+		for slot6, slot7 in ipairs(getProxy(BayProxy):getShips()) do
+			if slot7:getGroupId() == uv0.checkList[slot1.id] and slot7:isActivityNpc() then
 				return true
 			end
 		end
@@ -141,51 +127,44 @@ function var_0_0.TaskSubmitCheck(arg_10_0, arg_10_1)
 	return true
 end
 
-function var_0_0.setImportantProgress(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5)
-	local var_11_0 = arg_11_2:Find("award_display")
-	local var_11_1 = arg_11_2:Find("important_task_tpl")
-	local var_11_2 = getProxy(TaskProxy)
-	local var_11_3 = pg.task_data_template[arg_11_5[#arg_11_5]].target_num
-	local var_11_4 = getProxy(ActivityProxy):getActivityById(arg_11_1:getConfig("config_client").rank_act_id).data1
+function slot0.setImportantProgress(slot0, slot1, slot2, slot3, slot4, slot5)
+	slot6 = slot2:Find("award_display")
+	slot8 = getProxy(TaskProxy)
 
-	setSlider(arg_11_2, 0, var_11_3, var_11_4)
+	setSlider(slot2, 0, pg.task_data_template[slot5[#slot5]].target_num, getProxy(ActivityProxy):getActivityById(slot1:getConfig("config_client").rank_act_id).data1)
 
-	local var_11_5
-	local var_11_6 = var_11_0:GetComponent(typeof(RectTransform)).rect.width
-	local var_11_7
+	slot12 = nil
+	slot13 = slot6:GetComponent(typeof(RectTransform)).rect.width
+	slot14 = nil
 
-	removeAllChildren(var_11_0)
-	setActive(var_11_1, false)
+	removeAllChildren(slot6)
+	setActive(slot2:Find("important_task_tpl"), false)
 
-	for iter_11_0, iter_11_1 in ipairs(arg_11_4) do
-		for iter_11_2, iter_11_3 in ipairs(arg_11_5) do
-			if iter_11_1 == iter_11_3 then
-				local var_11_8 = Instantiate(var_11_1)
+	for slot18, slot19 in ipairs(slot4) do
+		for slot23, slot24 in ipairs(slot5) do
+			if slot19 == slot24 then
+				slot14 = Instantiate(slot7)
 
-				SetParent(var_11_8, var_11_0)
-				setActive(var_11_8, true)
-				setAnchoredPosition(var_11_8, {
-					x = pg.task_data_template[arg_11_5[iter_11_2]].target_num / var_11_3 * var_11_6
+				SetParent(slot14, slot6)
+				setActive(slot14, true)
+				setAnchoredPosition(slot14, {
+					x = pg.task_data_template[slot5[slot23]].target_num / slot9 * slot13
 				})
 
-				local var_11_9 = pg.task_data_template[iter_11_1]
-				local var_11_10 = var_11_9.award_display[1]
-				local var_11_11 = arg_11_0:findTF("award", var_11_8)
-				local var_11_12 = {
-					type = var_11_10[1],
-					id = var_11_10[2],
-					count = var_11_10[3]
-				}
+				slot25 = pg.task_data_template[slot19]
+				slot26 = slot25.award_display[1]
+				slot27 = slot0:findTF("award", slot14)
 
-				updateDrop(var_11_11, var_11_12)
-				onButton(arg_11_0, var_11_11, function()
-					arg_11_0:emit(BaseUI.ON_DROP, var_11_12)
+				updateDrop(slot27, {
+					type = slot26[1],
+					id = slot26[2],
+					count = slot26[3]
+				})
+				onButton(slot0, slot27, function ()
+					uv0:emit(BaseUI.ON_DROP, uv1)
 				end, SFX_PANEL)
-				setText(arg_11_0:findTF("Text", var_11_8), var_11_9.target_num)
-
-				local var_11_13 = arg_11_0:findTF("mask", var_11_11)
-
-				setActive(var_11_13, iter_11_2 <= arg_11_3)
+				setText(slot0:findTF("Text", slot14), slot25.target_num)
+				setActive(slot0:findTF("mask", slot27), slot23 <= slot3)
 
 				break
 			end
@@ -193,8 +172,7 @@ function var_0_0.setImportantProgress(arg_11_0, arg_11_1, arg_11_2, arg_11_3, ar
 	end
 end
 
-function var_0_0.OnDestroy(arg_13_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

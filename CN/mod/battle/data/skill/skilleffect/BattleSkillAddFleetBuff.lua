@@ -1,23 +1,18 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot0.Battle.BattleSkillAddFleetBuff = class("BattleSkillAddFleetBuff", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillAddFleetBuff.__name = "BattleSkillAddFleetBuff"
+slot2 = slot0.Battle.BattleSkillAddFleetBuff
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
+function slot2.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-var_0_0.Battle.BattleSkillAddFleetBuff = class("BattleSkillAddFleetBuff", var_0_0.Battle.BattleSkillEffect)
-var_0_0.Battle.BattleSkillAddFleetBuff.__name = "BattleSkillAddFleetBuff"
-
-local var_0_2 = var_0_0.Battle.BattleSkillAddFleetBuff
-
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	arg_1_0._fleetBuffID = arg_1_0._tempData.arg_list.fleet_buff_id
+	slot0._fleetBuffID = slot0._tempData.arg_list.fleet_buff_id
 end
 
-function var_0_2.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_2:IsAlive() and arg_2_2:GetUnitType() == var_0_1.UnitType.PLAYER_UNIT then
-		local var_2_0 = var_0_0.Battle.BattleFleetBuffUnit.New(arg_2_0._fleetBuffID)
-
-		arg_2_2:GetFleetVO():AttachFleetBuff(var_2_0)
+function slot2.DoDataEffect(slot0, slot1, slot2)
+	if slot2:IsAlive() and slot2:GetUnitType() == uv0.UnitType.PLAYER_UNIT then
+		slot2:GetFleetVO():AttachFleetBuff(uv1.Battle.BattleFleetBuffUnit.New(slot0._fleetBuffID))
 	end
 end

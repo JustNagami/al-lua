@@ -1,41 +1,37 @@
-﻿local var_0_0 = class("ApartmentDoTalkCommand", pm.SimpleCommand)
+slot0 = class("ApartmentDoTalkCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.talkId
-	local var_1_2 = var_1_0.callback
-	local var_1_3 = pg.dorm3d_dialogue_group[var_1_1].char_id
-	local var_1_4 = getProxy(ApartmentProxy)
-	local var_1_5 = var_1_4:getApartment(var_1_3)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.talkId
 
-	if var_1_5.talkDic[var_1_1] then
-		existCall(var_1_2)
-		arg_1_0:sendNotification(GAME.APARTMENT_DO_TALK_DONE, {
-			talkId = var_1_1
+	if getProxy(ApartmentProxy):getApartment(pg.dorm3d_dialogue_group[slot3].char_id).talkDic[slot3] then
+		existCall(slot2.callback)
+		slot0:sendNotification(GAME.APARTMENT_DO_TALK_DONE, {
+			talkId = slot3
 		})
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(28015, {
-		dialog_id = var_1_1
-	}, 28016, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_5.talkDic[var_1_1] = true
+		dialog_id = slot3
+	}, 28016, function (slot0)
+		if slot0.result == 0 then
+			uv0.talkDic[uv1] = true
 
-			var_1_4:updateApartment(var_1_5)
+			uv2:updateApartment(uv0)
 
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			slot1 = PlayerConst.addTranDrop(slot0.drop_list)
 
-			existCall(var_1_2, var_2_0)
-			arg_1_0:sendNotification(GAME.APARTMENT_DO_TALK_DONE, {
-				talkId = var_1_1,
-				awards = var_2_0
+			existCall(uv3, slot1)
+			uv4:sendNotification(GAME.APARTMENT_DO_TALK_DONE, {
+				talkId = uv1,
+				awards = slot1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,54 +1,50 @@
-﻿local var_0_0 = class("SkinIndexLayer", import("...common.CustomIndexLayer"))
-
-var_0_0.ExtraL2D = bit.lshift(1, 0)
-var_0_0.ExtraDBG = bit.lshift(1, 1)
-var_0_0.ExtraBG = bit.lshift(1, 2)
-var_0_0.ExtraBGM = bit.lshift(1, 3)
-var_0_0.ExtraIndexs = {
-	var_0_0.ExtraL2D,
-	var_0_0.ExtraDBG,
-	var_0_0.ExtraBG,
-	var_0_0.ExtraBGM
+slot0 = class("SkinIndexLayer", import("...common.CustomIndexLayer"))
+slot0.ExtraL2D = bit.lshift(1, 0)
+slot0.ExtraDBG = bit.lshift(1, 1)
+slot0.ExtraBG = bit.lshift(1, 2)
+slot0.ExtraBGM = bit.lshift(1, 3)
+slot0.ExtraIndexs = {
+	slot0.ExtraL2D,
+	slot0.ExtraDBG,
+	slot0.ExtraBG,
+	slot0.ExtraBGM
 }
-var_0_0.ExtraALL = IndexConst.BitAll(var_0_0.ExtraIndexs)
+slot0.ExtraALL = IndexConst.BitAll(slot0.ExtraIndexs)
 
-table.insert(var_0_0.ExtraIndexs, 1, var_0_0.ExtraALL)
+table.insert(slot0.ExtraIndexs, 1, slot0.ExtraALL)
 
-var_0_0.ExtraNames = {
+slot0.ExtraNames = {
 	"index_all",
 	"index_L2D",
 	"index_DBG",
 	"index_BG",
 	"index_BGM"
 }
-
-local var_0_1 = {
-	function()
+slot1 = {
+	function ()
 		return true
 	end,
-	function(arg_2_0)
-		return arg_2_0:IsLive2d()
+	function (slot0)
+		return slot0:IsLive2d()
 	end,
-	function(arg_3_0)
-		return arg_3_0:IsDbg()
+	function (slot0)
+		return slot0:IsDbg()
 	end,
-	function(arg_4_0)
-		return arg_4_0:IsBG()
+	function (slot0)
+		return slot0:IsBG()
 	end,
-	function(arg_5_0)
-		return arg_5_0:isBgm()
+	function (slot0)
+		return slot0:isBgm()
 	end
 }
 
-function var_0_0.filterByExtra(arg_6_0, arg_6_1)
-	if not arg_6_1 or arg_6_1 == var_0_0.ExtraALL then
+function slot0.filterByExtra(slot0, slot1)
+	if not slot1 or slot1 == uv0.ExtraALL then
 		return true
 	end
 
-	for iter_6_0 = 2, #var_0_1 do
-		local var_6_0 = bit.lshift(1, iter_6_0 - 2)
-
-		if bit.band(var_6_0, arg_6_1) > 0 and var_0_1[iter_6_0](arg_6_0) then
+	for slot5 = 2, #uv1 do
+		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and uv1[slot5](slot0) then
 			return true
 		end
 	end
@@ -56,30 +52,29 @@ function var_0_0.filterByExtra(arg_6_0, arg_6_1)
 	return false
 end
 
-function var_0_0.init(arg_7_0)
-	var_0_0.super.init(arg_7_0)
+function slot0.init(slot0)
+	uv0.super.init(slot0)
 
-	local var_7_0 = arg_7_0.contextData
-
-	arg_7_0.OnFilter = var_7_0.OnFilter
-	arg_7_0.indexDatas = var_7_0.defaultIndex or {}
+	slot1 = slot0.contextData
+	slot0.OnFilter = slot1.OnFilter
+	slot0.indexDatas = slot1.defaultIndex or {}
 end
 
-function var_0_0.didEnter(arg_8_0)
-	arg_8_0.contextData = arg_8_0:InitData()
+function slot0.didEnter(slot0)
+	slot0.contextData = slot0:InitData()
 
-	var_0_0.super.didEnter(arg_8_0)
+	uv0.super.didEnter(slot0)
 end
 
-function var_0_0.BlurPanel(arg_9_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_9_0._tf, false, {
+function slot0.BlurPanel(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
-function var_0_0.InitData(arg_10_0)
+function slot0.InitData(slot0)
 	return {
-		indexDatas = Clone(arg_10_0.indexDatas),
+		indexDatas = Clone(slot0.indexDatas),
 		customPanels = {
 			minHeight = 650,
 			typeIndex = {
@@ -103,8 +98,8 @@ function var_0_0.InitData(arg_10_0)
 			extraIndex = {
 				blueSeleted = true,
 				mode = CustomIndexLayer.Mode.AND,
-				options = var_0_0.ExtraIndexs,
-				names = var_0_0.ExtraNames
+				options = uv0.ExtraIndexs,
+				names = uv0.ExtraNames
 			},
 			layoutPos = Vector2(0, -25)
 		},
@@ -142,10 +137,10 @@ function var_0_0.InitData(arg_10_0)
 				}
 			}
 		},
-		callback = function(arg_11_0)
-			arg_10_0.OnFilter(arg_11_0)
+		callback = function (slot0)
+			uv0.OnFilter(slot0)
 		end
 	}
 end
 
-return var_0_0
+return slot0

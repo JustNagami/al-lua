@@ -1,76 +1,75 @@
-﻿local var_0_0 = class("LevelStrategyView", import("..base.BaseSubView"))
+slot0 = class("LevelStrategyView", import("..base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "LevelStrategyView"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:InitUI()
-	setActive(arg_2_0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
+function slot0.OnInit(slot0)
+	slot0:InitUI()
+	setActive(slot0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	arg_3_0.onConfirm = nil
-	arg_3_0.onCancel = nil
+function slot0.OnDestroy(slot0)
+	slot0.onConfirm = nil
+	slot0.onCancel = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(arg_3_0._tf, arg_3_0._parentTf)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
 end
 
-function var_0_0.setCBFunc(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0.onConfirm = arg_4_1
-	arg_4_0.onCancel = arg_4_2
+function slot0.setCBFunc(slot0, slot1, slot2)
+	slot0.onConfirm = slot1
+	slot0.onCancel = slot2
 end
 
-function var_0_0.InitUI(arg_5_0)
-	arg_5_0.icon = arg_5_0:findTF("window/panel/item/icon_bg/icon")
-	arg_5_0.count = arg_5_0:findTF("window/panel/item/icon_bg/count")
-	arg_5_0.name = arg_5_0:findTF("window/panel/item/name")
-	arg_5_0.desc = arg_5_0:findTF("window/panel/item/desc")
-	arg_5_0.btnCancel = arg_5_0:findTF("window/panel/actions/cancel_button")
-	arg_5_0.btnUse = arg_5_0:findTF("window/panel/actions/use_button")
-	arg_5_0.btnBack = arg_5_0:findTF("top/btnBack")
-	arg_5_0.tips = arg_5_0:findTF("window/panel/tips")
-	arg_5_0.txSwitch = findTF(arg_5_0.btnUse, "switch")
-	arg_5_0.txUse = findTF(arg_5_0.btnUse, "use")
+function slot0.InitUI(slot0)
+	slot0.icon = slot0:findTF("window/panel/item/icon_bg/icon")
+	slot0.count = slot0:findTF("window/panel/item/icon_bg/count")
+	slot0.name = slot0:findTF("window/panel/item/name")
+	slot0.desc = slot0:findTF("window/panel/item/desc")
+	slot0.btnCancel = slot0:findTF("window/panel/actions/cancel_button")
+	slot0.btnUse = slot0:findTF("window/panel/actions/use_button")
+	slot0.btnBack = slot0:findTF("top/btnBack")
+	slot0.tips = slot0:findTF("window/panel/tips")
+	slot0.txSwitch = findTF(slot0.btnUse, "switch")
+	slot0.txUse = findTF(slot0.btnUse, "use")
 end
 
-function var_0_0.set(arg_6_0, arg_6_1)
-	arg_6_0.strategy = arg_6_1
+function slot0.set(slot0, slot1)
+	slot0.strategy = slot1
+	slot2 = pg.strategy_data_template[slot1.id]
 
-	local var_6_0 = pg.strategy_data_template[arg_6_1.id]
+	GetImageSpriteFromAtlasAsync("strategyicon/" .. slot2.icon, "", slot0.icon)
 
-	GetImageSpriteFromAtlasAsync("strategyicon/" .. var_6_0.icon, "", arg_6_0.icon)
-
-	if var_6_0.type == 1 then
-		setText(arg_6_0.count, "")
-		setActive(arg_6_0.tips, true)
-		setActive(arg_6_0.txSwitch, true)
-		setActive(arg_6_0.txUse, false)
+	if slot2.type == 1 then
+		setText(slot0.count, "")
+		setActive(slot0.tips, true)
+		setActive(slot0.txSwitch, true)
+		setActive(slot0.txUse, false)
 	else
-		setText(arg_6_0.count, arg_6_1.count)
-		setActive(arg_6_0.tips, false)
-		setActive(arg_6_0.txSwitch, false)
-		setActive(arg_6_0.txUse, true)
+		setText(slot0.count, slot1.count)
+		setActive(slot0.tips, false)
+		setActive(slot0.txSwitch, false)
+		setActive(slot0.txUse, true)
 	end
 
-	setText(arg_6_0.name, var_6_0.name)
-	setText(arg_6_0.desc, var_6_0.desc)
-	onButton(arg_6_0, arg_6_0.btnBack, function()
-		if arg_6_0.onCancel then
-			arg_6_0.onCancel()
+	setText(slot0.name, slot2.name)
+	setText(slot0.desc, slot2.desc)
+	onButton(slot0, slot0.btnBack, function ()
+		if uv0.onCancel then
+			uv0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg_6_0, arg_6_0.btnCancel, function()
-		if arg_6_0.onCancel then
-			arg_6_0.onCancel()
+	onButton(slot0, slot0.btnCancel, function ()
+		if uv0.onCancel then
+			uv0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(arg_6_0, arg_6_0.btnUse, function()
-		if arg_6_0.onConfirm then
-			arg_6_0.onConfirm()
+	onButton(slot0, slot0.btnUse, function ()
+		if uv0.onConfirm then
+			uv0.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end
 
-return var_0_0
+return slot0

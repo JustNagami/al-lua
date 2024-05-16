@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 2,
-				target = "TargetSelf",
-				skill_id = 10620,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Division 6"
-				}
-			}
-		}
-	},
+return {
 	{
 		desc = "与任意第六驱逐舰队成员({namecode:11}、{namecode:12}、{namecode:14})同时出击时，炮击、雷击、装填提升5.0%，效果不叠加",
 		addition = {
@@ -89,5 +69,25 @@
 	stack = 1,
 	id = 10620,
 	icon = 10620,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 2,
+				target = "TargetSelf",
+				skill_id = 10620,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Division 6"
+				}
+			}
+		}
+	}
 }

@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 11910,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		shipInfoScene = {
 			equip = {
@@ -151,5 +139,17 @@
 	stack = 1,
 	id = 11910,
 	icon = 11910,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 11910,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

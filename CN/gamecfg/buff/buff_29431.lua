@@ -1,4 +1,15 @@
-﻿return {
+return {
+	{},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "进入战斗后，触发专属弹幕-U101I",
+	stack = 1,
+	id = 29431,
+	icon = 29430,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -12,16 +23,5 @@
 				skill_id = 29431
 			}
 		}
-	},
-	{},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "进入战斗后，触发专属弹幕-U101I",
-	stack = 1,
-	id = 29431,
-	icon = 29430,
-	last_effect = ""
+	}
 }

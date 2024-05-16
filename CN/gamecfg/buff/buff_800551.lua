@@ -1,26 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddReloadRequirement",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				type = 23,
-				number = -0.3
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onChargeWeaponReady"
-			},
-			arg_list = {
-				count = 2
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -269,5 +247,27 @@
 	stack = 1,
 	id = 800551,
 	icon = 800550,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddReloadRequirement",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				type = 23,
+				number = -0.3
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onChargeWeaponReady"
+			},
+			arg_list = {
+				count = 2
+			}
+		}
+	}
 }

@@ -1,65 +1,66 @@
-﻿local var_0_0 = class("FleetProxy", import(".NetProxy"))
+slot0 = class("FleetProxy", import(".NetProxy"))
+slot0.FLEET_ADDED = "fleet added"
+slot0.FLEET_UPDATED = "fleet updated"
+slot0.FLEET_RENAMED = "fleet renamed"
+slot0.PVP_FLEET_ID = 101
+slot0.CHALLENGE_FLEET_ID = 102
+slot0.CHALLENGE_SUB_FLEET_ID = 103
 
-var_0_0.FLEET_ADDED = "fleet added"
-var_0_0.FLEET_UPDATED = "fleet updated"
-var_0_0.FLEET_RENAMED = "fleet renamed"
-var_0_0.PVP_FLEET_ID = 101
-var_0_0.CHALLENGE_FLEET_ID = 102
-var_0_0.CHALLENGE_SUB_FLEET_ID = 103
+function slot0.register(slot0)
+	slot0.extraFleets = {}
+	slot0.activityFleetData = {}
 
-function var_0_0.register(arg_1_0)
-	arg_1_0.extraFleets = {}
-	arg_1_0.activityFleetData = {}
+	slot0:on(12101, function (slot0)
+		uv0.data = {}
 
-	arg_1_0:on(12101, function(arg_2_0)
-		arg_1_0.data = {}
+		for slot4, slot5 in ipairs(slot0.group_list) do
+			slot6 = uv1.CreateFleet(slot5)
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.group_list) do
-			local var_2_0 = var_0_0.CreateFleet(iter_2_1)
+			slot6:display("loaded")
 
-			var_2_0:display("loaded")
-
-			arg_1_0.data[var_2_0.id] = var_2_0
+			uv0.data[slot6.id] = slot6
 		end
 
-		for iter_2_2 = 1, FormationUI.MAX_FLEET_NUM do
-			if not arg_1_0.data[iter_2_2] then
-				arg_1_0.data[iter_2_2] = var_0_0.CreateFleet({
+		for slot4 = 1, FormationUI.MAX_FLEET_NUM do
+			if not uv0.data[slot4] then
+				uv0.data[slot4] = uv1.CreateFleet({
 					name = "",
-					id = iter_2_2,
+					id = slot4,
 					ship_list = {},
 					commanders = {}
 				})
 			end
 		end
 
-		for iter_2_3, iter_2_4 in pairs({
-			[var_0_0.PVP_FLEET_ID] = "",
-			[var_0_0.CHALLENGE_FLEET_ID] = "",
-			[var_0_0.CHALLENGE_SUB_FLEET_ID] = ""
+		slot4 = ""
+
+		for slot4, slot5 in pairs({
+			[uv1.PVP_FLEET_ID] = "",
+			[uv1.CHALLENGE_FLEET_ID] = "",
+			[uv1.CHALLENGE_SUB_FLEET_ID] = slot4
 		}) do
-			if not arg_1_0.data[iter_2_3] then
-				arg_1_0.data[iter_2_3] = var_0_0.CreateFleet({
-					id = iter_2_3,
-					name = iter_2_4,
+			if not uv0.data[slot4] then
+				uv0.data[slot4] = uv1.CreateFleet({
+					id = slot4,
+					name = slot5,
 					ship_list = {},
 					commanders = {}
 				})
 			end
 		end
 
-		for iter_2_5, iter_2_6 in ipairs({
-			var_0_0.CHALLENGE_FLEET_ID,
-			var_0_0.CHALLENGE_SUB_FLEET_ID
+		for slot4, slot5 in ipairs({
+			uv1.CHALLENGE_FLEET_ID,
+			uv1.CHALLENGE_SUB_FLEET_ID
 		}) do
-			arg_1_0.extraFleets[iter_2_6] = arg_1_0.data[iter_2_6]
-			arg_1_0.data[iter_2_6] = nil
+			uv0.extraFleets[slot5] = uv0.data[slot5]
+			uv0.data[slot5] = nil
 		end
 
 		if LOCK_SUBMARINE then
-			for iter_2_7, iter_2_8 in pairs(arg_1_0.data) do
-				if iter_2_8.id == 11 or iter_2_8.id == 12 then
-					arg_1_0.data[iter_2_7] = nil
+			for slot4, slot5 in pairs(uv0.data) do
+				if slot5.id == 11 or slot5.id == 12 then
+					uv0.data[slot4] = nil
 				end
 			end
 		end
@@ -68,400 +69,370 @@ function var_0_0.register(arg_1_0)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inPvP")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inChallenge")
 	end)
-	arg_1_0:on(12106, function(arg_3_0)
-		local var_3_0 = var_0_0.CreateFleet(arg_3_0.group)
-
-		if arg_1_0.data[var_3_0.id] then
-			arg_1_0:updateFleet(var_3_0)
+	slot0:on(12106, function (slot0)
+		if uv1.data[uv0.CreateFleet(slot0.group).id] then
+			uv1:updateFleet(slot1)
 		else
-			arg_1_0:addFleet(var_3_0)
+			uv1:addFleet(slot1)
 		end
 	end)
 end
 
-function var_0_0.CreateFleet(arg_4_0)
-	local var_4_0 = arg_4_0.id
-	local var_4_1 = CreateShell(arg_4_0)
+function slot0.CreateFleet(slot0)
+	CreateShell(slot0).fleetType = FleetType.Normal
 
-	var_4_1.fleetType = FleetType.Normal
-
-	if var_4_0 >= Fleet.REGULAR_FLEET_ID and var_4_0 < Fleet.REGULAR_FLEET_ID + Fleet.REGULAR_FLEET_NUMS then
-		if var_4_0 == Fleet.REGULAR_FLEET_ID then
-			var_4_1.saveLastShipFlag = true
+	if Fleet.REGULAR_FLEET_ID <= slot0.id and slot1 < Fleet.REGULAR_FLEET_ID + Fleet.REGULAR_FLEET_NUMS then
+		if slot1 == Fleet.REGULAR_FLEET_ID then
+			slot2.saveLastShipFlag = true
 		end
-	elseif var_4_0 >= Fleet.SUBMARINE_FLEET_ID and var_4_0 < Fleet.SUBMARINE_FLEET_ID + Fleet.SUBMARINE_FLEET_NUMS then
-		var_4_1.fleetType = FleetType.Submarine
-	elseif var_4_0 == FleetProxy.PVP_FLEET_ID then
-		var_4_1.saveLastShipFlag = true
-	elseif var_4_0 == FleetProxy.CHALLENGE_FLEET_ID then
-		-- block empty
-	elseif var_4_0 == FleetProxy.CHALLENGE_SUB_FLEET_ID then
-		var_4_1.fleetType = FleetType.Submarine
+	elseif Fleet.SUBMARINE_FLEET_ID <= slot1 and slot1 < Fleet.SUBMARINE_FLEET_ID + Fleet.SUBMARINE_FLEET_NUMS then
+		slot2.fleetType = FleetType.Submarine
+	elseif slot1 == FleetProxy.PVP_FLEET_ID then
+		slot2.saveLastShipFlag = true
+	elseif slot1 == FleetProxy.CHALLENGE_FLEET_ID then
+		-- Nothing
+	elseif slot1 == FleetProxy.CHALLENGE_SUB_FLEET_ID then
+		slot2.fleetType = FleetType.Submarine
 	end
 
-	return (TypedFleet.New(var_4_1))
+	return TypedFleet.New(slot2)
 end
 
-function var_0_0.addFleet(arg_5_0, arg_5_1)
-	assert(isa(arg_5_1, Fleet), "should be an instance of Fleet")
-	assert(arg_5_0.data[arg_5_1.id] == nil, "fleet already exist, use updateFleet() instead")
+function slot0.addFleet(slot0, slot1)
+	assert(isa(slot1, Fleet), "should be an instance of Fleet")
+	assert(slot0.data[slot1.id] == nil, "fleet already exist, use updateFleet() instead")
 
-	arg_5_0.data[arg_5_1.id] = arg_5_1:clone()
+	slot0.data[slot1.id] = slot1:clone()
 
-	arg_5_0.data[arg_5_1.id]:display("added")
+	slot0.data[slot1.id]:display("added")
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inFleet")
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inPvP")
-	arg_5_0.facade:sendNotification(var_0_0.FLEET_ADDED, arg_5_1:clone())
+	slot0.facade:sendNotification(uv0.FLEET_ADDED, slot1:clone())
 end
 
-function var_0_0.updateFleet(arg_6_0, arg_6_1)
-	assert(isa(arg_6_1, Fleet), "should be an instance of Fleet")
+function slot0.updateFleet(slot0, slot1)
+	assert(isa(slot1, Fleet), "should be an instance of Fleet")
 
-	if arg_6_0.data[arg_6_1.id] ~= nil then
-		arg_6_0.data[arg_6_1.id] = arg_6_1:clone()
+	if slot0.data[slot1.id] ~= nil then
+		slot0.data[slot1.id] = slot1:clone()
 
-		arg_6_0.data[arg_6_1.id]:display("updated")
+		slot0.data[slot1.id]:display("updated")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inFleet")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inPvP")
-	elseif arg_6_0.extraFleets[arg_6_1.id] ~= nil then
-		arg_6_0.extraFleets[arg_6_1.id] = arg_6_1
+	elseif slot0.extraFleets[slot1.id] ~= nil then
+		slot0.extraFleets[slot1.id] = slot1
 
-		arg_6_0.extraFleets[arg_6_1.id]:display("updated")
+		slot0.extraFleets[slot1.id]:display("updated")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inChallenge")
 	else
 		assert(false, "fleet should exist")
 	end
 
-	arg_6_0.facade:sendNotification(var_0_0.FLEET_UPDATED, arg_6_1.id)
+	slot0.facade:sendNotification(uv0.FLEET_UPDATED, slot1.id)
 end
 
-function var_0_0.saveEdittingFleet(arg_7_0)
-	if arg_7_0.editSrcCache == nil then
-		arg_7_0.editSrcCache = Clone(arg_7_0.data)
+function slot0.saveEdittingFleet(slot0)
+	if slot0.editSrcCache == nil then
+		slot0.editSrcCache = Clone(slot0.data)
 	end
 
-	if arg_7_0.EdittingFleet ~= nil then
-		arg_7_0.data[arg_7_0.EdittingFleet.id] = arg_7_0.EdittingFleet
+	if slot0.EdittingFleet ~= nil then
+		slot0.data[slot0.EdittingFleet.id] = slot0.EdittingFleet
 
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inFleet")
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inPvP")
 	end
 end
 
-function var_0_0.commitEdittingFleet(arg_8_0, arg_8_1)
-	local var_8_0 = {}
+function slot0.commitEdittingFleet(slot0, slot1)
+	slot2 = {}
 
-	if arg_8_0.EdittingFleet ~= nil then
-		table.insert(var_8_0, function(arg_9_0)
-			arg_8_0.facade:sendNotification(GAME.UPDATE_FLEET, {
-				fleet = arg_8_0.EdittingFleet,
-				callback = function()
-					arg_8_0.editSrcCache = nil
-					arg_8_0.EdittingFleet = nil
+	if slot0.EdittingFleet ~= nil then
+		table.insert(slot2, function (slot0)
+			uv0.facade:sendNotification(GAME.UPDATE_FLEET, {
+				fleet = uv0.EdittingFleet,
+				callback = function ()
+					uv0.editSrcCache = nil
+					uv0.EdittingFleet = nil
 
-					arg_9_0()
+					uv1()
 				end
 			})
 		end)
 	end
 
-	seriesAsync(var_8_0, function()
-		if arg_8_1 then
-			arg_8_1()
+	seriesAsync(slot2, function ()
+		if uv0 then
+			uv0()
 		end
 	end)
 end
 
-function var_0_0.abortEditting(arg_12_0)
-	if arg_12_0.editSrcCache then
-		arg_12_0.data = arg_12_0.editSrcCache
-		arg_12_0.editSrcCache = nil
+function slot0.abortEditting(slot0)
+	if slot0.editSrcCache then
+		slot0.data = slot0.editSrcCache
+		slot0.editSrcCache = nil
 	end
 
-	arg_12_0.EdittingFleet = nil
+	slot0.EdittingFleet = nil
 end
 
-function var_0_0.syncFleet(arg_13_0)
-	for iter_13_0, iter_13_1 in ipairs(arg_13_0.data) do
-		arg_13_0.facade:sendNotification(GAME.UPDATE_FLEET, {
-			fleet = iter_13_1
+function slot0.syncFleet(slot0)
+	for slot4, slot5 in ipairs(slot0.data) do
+		slot0.facade:sendNotification(GAME.UPDATE_FLEET, {
+			fleet = slot5
 		})
 	end
 end
 
-function var_0_0.getCount(arg_14_0)
-	return table.getCount(arg_14_0.data)
+function slot0.getCount(slot0)
+	return table.getCount(slot0.data)
 end
 
-function var_0_0.getFleetById(arg_15_0, arg_15_1)
-	if arg_15_0.data[arg_15_1] ~= nil then
-		return arg_15_0.data[arg_15_1]:clone()
+function slot0.getFleetById(slot0, slot1)
+	if slot0.data[slot1] ~= nil then
+		return slot0.data[slot1]:clone()
 	end
 
-	if arg_15_0.extraFleets[arg_15_1] then
-		return arg_15_0.extraFleets[arg_15_1]
+	if slot0.extraFleets[slot1] then
+		return slot0.extraFleets[slot1]
 	end
 
 	return nil
 end
 
-function var_0_0.getAllShipIds(arg_16_0, arg_16_1)
-	local var_16_0 = {}
+function slot0.getAllShipIds(slot0, slot1)
+	slot2 = {}
 
-	for iter_16_0, iter_16_1 in pairs(arg_16_0.data) do
-		if arg_16_1 and not iter_16_1:isRegularFleet() then
-			-- block empty
-		else
-			for iter_16_2, iter_16_3 in ipairs(iter_16_1.ships) do
-				table.insert(var_16_0, iter_16_3)
+	for slot6, slot7 in pairs(slot0.data) do
+		if not slot1 or slot7:isRegularFleet() then
+			for slot11, slot12 in ipairs(slot7.ships) do
+				table.insert(slot2, slot12)
 			end
 		end
 	end
 
-	return var_16_0
+	return slot2
 end
 
-function var_0_0.getFirstFleetShipCount(arg_17_0)
-	local var_17_0 = 0
-
-	for iter_17_0, iter_17_1 in ipairs(arg_17_0.data[1].ships) do
-		var_17_0 = var_17_0 + 1
+function slot0.getFirstFleetShipCount(slot0)
+	for slot5, slot6 in ipairs(slot0.data[1].ships) do
+		slot1 = 0 + 1
 	end
 
-	return var_17_0
+	return slot1
 end
 
-function var_0_0.GetRegularFleets(arg_18_0)
-	local var_18_0 = {}
-
-	for iter_18_0, iter_18_1 in pairs(arg_18_0.data) do
-		if iter_18_1:isRegularFleet() then
-			var_18_0[iter_18_0] = Clone(iter_18_1)
+function slot0.GetRegularFleets(slot0)
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6:isRegularFleet() then
+			-- Nothing
 		end
 	end
 
-	return var_18_0
+	return {
+		[slot5] = Clone(slot6)
+	}
 end
 
-function var_0_0.inPvPFleet(arg_19_0, arg_19_1)
-	if arg_19_0.data[FleetProxy.PVP_FLEET_ID]:containShip(arg_19_1) then
+function slot0.inPvPFleet(slot0, slot1)
+	if slot0.data[FleetProxy.PVP_FLEET_ID]:containShip(slot1) then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.GetRegularFleetByShip(arg_20_0, arg_20_1)
-	assert(isa(arg_20_1, Ship), "should be an instance of Ship")
+function slot0.GetRegularFleetByShip(slot0, slot1)
+	slot5 = Ship
 
-	for iter_20_0, iter_20_1 in pairs(arg_20_0.data) do
-		if iter_20_1:isRegularFleet() and iter_20_1:containShip(arg_20_1) then
-			return iter_20_1:clone()
+	assert(isa(slot1, slot5), "should be an instance of Ship")
+
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6:isRegularFleet() and slot6:containShip(slot1) then
+			return slot6:clone()
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.renameFleet(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0 = arg_21_0:getFleetById(arg_21_1)
+function slot0.renameFleet(slot0, slot1, slot2)
+	assert(slot0:getFleetById(slot1) ~= nil, "fleet should exist")
 
-	assert(var_21_0 ~= nil, "fleet should exist")
+	slot3.name = slot2
 
-	var_21_0.name = arg_21_2
-
-	arg_21_0:updateFleet(var_21_0)
-	arg_21_0.facade:sendNotification(var_0_0.FLEET_RENAMED, var_21_0:clone())
+	slot0:updateFleet(slot3)
+	slot0.facade:sendNotification(uv0.FLEET_RENAMED, slot3:clone())
 end
 
-function var_0_0.getCommandersInFleet(arg_22_0)
-	local var_22_0 = {}
+function slot0.getCommandersInFleet(slot0)
+	slot1 = {}
 
-	for iter_22_0, iter_22_1 in pairs(arg_22_0.data) do
-		if iter_22_1:isRegularFleet() then
-			for iter_22_2, iter_22_3 in pairs(iter_22_1:getCommanders()) do
-				table.insert(var_22_0, iter_22_3.id)
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6:isRegularFleet() then
+			for slot10, slot11 in pairs(slot6:getCommanders()) do
+				table.insert(slot1, slot11.id)
 			end
 		end
 	end
 
-	return var_22_0
+	return slot1
 end
 
-function var_0_0.getCommanders(arg_23_0)
-	local var_23_0 = {}
+function slot0.getCommanders(slot0)
+	slot1 = {}
 
-	for iter_23_0, iter_23_1 in pairs(arg_23_0.data) do
-		if iter_23_1:isRegularFleet() then
-			for iter_23_2, iter_23_3 in pairs(iter_23_1:getCommanders()) do
-				table.insert(var_23_0, {
-					fleetId = iter_23_1.id,
-					pos = iter_23_2,
-					commanderId = iter_23_3.id
+	for slot5, slot6 in pairs(slot0.data) do
+		if slot6:isRegularFleet() then
+			for slot10, slot11 in pairs(slot6:getCommanders()) do
+				table.insert(slot1, {
+					fleetId = slot6.id,
+					pos = slot10,
+					commanderId = slot11.id
 				})
 			end
 		end
 	end
 
-	return var_23_0
+	return slot1
 end
 
-function var_0_0.GetExtraCommanders(arg_24_0)
-	local var_24_0 = {}
+function slot0.GetExtraCommanders(slot0)
+	slot1 = {}
 
-	for iter_24_0, iter_24_1 in pairs(arg_24_0.extraFleets) do
-		for iter_24_2, iter_24_3 in pairs(iter_24_1:getCommanders()) do
-			table.insert(var_24_0, {
-				fleetId = iter_24_1.id,
-				pos = iter_24_2,
-				commanderId = iter_24_3.id
+	for slot5, slot6 in pairs(slot0.extraFleets) do
+		for slot10, slot11 in pairs(slot6:getCommanders()) do
+			table.insert(slot1, {
+				fleetId = slot6.id,
+				pos = slot10,
+				commanderId = slot11.id
 			})
 		end
 	end
 
-	return var_24_0
+	return slot1
 end
 
-function var_0_0.getActivityFleets(arg_25_0)
-	return arg_25_0.activityFleetData
+function slot0.getActivityFleets(slot0)
+	return slot0.activityFleetData
 end
 
-function var_0_0.addActivityFleet(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = arg_26_1.id
-
-	if not arg_26_0.activityFleetData[var_26_0] then
-		arg_26_0.activityFleetData[var_26_0] = {}
+function slot0.addActivityFleet(slot0, slot1, slot2)
+	if not slot0.activityFleetData[slot1.id] then
+		slot0.activityFleetData[slot3] = {}
 	end
 
-	local var_26_1 = arg_26_0.activityFleetData[var_26_0]
-	local var_26_2 = getProxy(BayProxy)
-	local var_26_3
-	local var_26_4
+	slot4 = slot0.activityFleetData[slot3]
+	slot5 = getProxy(BayProxy)
+	slot6, slot7 = nil
 
-	local function var_26_5()
-		if var_26_4 then
-			return var_26_4
-		end
+	for slot13, slot14 in ipairs(slot2) do
+		if pg.activity_template[slot3].type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+			CreateShell(slot14).fleetType = table.contains(function ()
+				if uv0 then
+					return uv0
+				end
 
-		local var_27_0 = arg_26_1:GetActiveSeriesIds()
+				uv0 = _.map(uv1:GetActiveSeriesIds(), function (slot0)
+					return table.lastof(BossRushSeriesData.New({
+						id = slot0,
+						actId = uv0.id
+					}):GetFleetIds())
+				end)
 
-		var_26_4 = _.map(var_27_0, function(arg_28_0)
-			return table.lastof(BossRushSeriesData.New({
-				id = arg_28_0,
-				actId = arg_26_1.id
-			}):GetFleetIds())
-		end)
-
-		return var_26_4
-	end
-
-	local var_26_6 = pg.activity_template[var_26_0]
-
-	for iter_26_0, iter_26_1 in ipairs(arg_26_2) do
-		local var_26_7 = CreateShell(iter_26_1)
-
-		if var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
-			var_26_7.fleetType = table.contains(var_26_5(), iter_26_1.id) and FleetType.Submarine or FleetType.Normal
-		elseif var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
-			var_26_7.fleetType = iter_26_1.id >= Fleet.SUBMARINE_FLEET_ID and FleetType.Submarine or FleetType.Normal
-		elseif var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
-			var_26_7.fleetType = iter_26_1.id >= Fleet.SUBMARINE_FLEET_ID and FleetType.Submarine or FleetType.Normal
+				return uv0
+			end(), slot14.id) and FleetType.Submarine or FleetType.Normal
+		elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+			slot15.fleetType = Fleet.SUBMARINE_FLEET_ID <= slot14.id and FleetType.Submarine or FleetType.Normal
+		elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+			slot15.fleetType = Fleet.SUBMARINE_FLEET_ID <= slot14.id and FleetType.Submarine or FleetType.Normal
 		else
-			local var_26_8 = {
-				id = iter_26_1.id
-			}
-
-			var_26_7.fleetType = Fleet.isSubmarineFleet(var_26_8) and FleetType.Submarine or FleetType.Normal
+			slot15.fleetType = Fleet.isSubmarineFleet({
+				id = slot14.id
+			}) and FleetType.Submarine or FleetType.Normal
 		end
 
-		local var_26_9 = TypedFleet.New(var_26_7)
+		slot16 = TypedFleet.New(slot15)
+		slot4[slot16.id] = slot16
 
-		var_26_1[var_26_9.id] = var_26_9
-
-		for iter_26_2, iter_26_3 in ipairs(iter_26_1.ship_list) do
-			if not var_26_2:RawGetShipById(iter_26_3) then
-				var_26_3 = true
+		for slot20, slot21 in ipairs(slot14.ship_list) do
+			if not slot5:RawGetShipById(slot21) then
+				slot6 = true
 
 				break
 			end
 		end
 	end
 
-	if var_26_3 then
-		arg_26_0:commitActivityFleet(var_26_0)
+	if slot6 then
+		slot0:commitActivityFleet(slot3)
 	end
 
-	local var_26_10
-	local var_26_11
+	slot10, slot11 = nil
 
-	if var_26_6.type == ActivityConst.ACTIVITY_TYPE_CHALLENGE then
-		var_26_10 = 2
-		var_26_11 = 2
-	elseif var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
-		var_26_10 = 0
-		var_26_11 = 0
-	elseif var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
-		var_26_10 = 0
-		var_26_11 = 0
-	elseif var_26_6.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
-		var_26_10 = 0
-		var_26_11 = 0
+	if slot9.type == ActivityConst.ACTIVITY_TYPE_CHALLENGE then
+		slot10 = 2
+		slot11 = 2
+	elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+		slot10 = 0
+		slot11 = 0
+	elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSRUSH then
+		slot10 = 0
+		slot11 = 0
+	elseif slot9.type == ActivityConst.ACTIVITY_TYPE_BOSSSINGLE then
+		slot10 = 0
+		slot11 = 0
 	end
 
-	local var_26_12 = 0
+	slot12 = 0
 
-	while var_26_12 < var_26_10 do
-		var_26_12 = var_26_12 + 1
-
-		if var_26_1[var_26_12] == nil then
-			var_26_1[var_26_12] = TypedFleet.New({
-				id = var_26_12,
+	while slot10 > slot12 do
+		if slot4[slot12 + 1] == nil then
+			slot4[slot12] = TypedFleet.New({
+				id = slot12,
 				ship_list = {},
 				fleetType = FleetType.Normal
 			})
 		end
 	end
 
-	local var_26_13 = 0
+	slot12 = 0
 
-	while var_26_13 < var_26_11 do
-		local var_26_14 = Fleet.SUBMARINE_FLEET_ID + var_26_13
-
-		if var_26_1[var_26_14] == nil then
-			var_26_1[var_26_14] = TypedFleet.New({
-				id = var_26_14,
+	while slot11 > slot12 do
+		if slot4[Fleet.SUBMARINE_FLEET_ID + slot12] == nil then
+			slot4[slot13] = TypedFleet.New({
+				id = slot13,
 				ship_list = {},
 				fleetType = FleetType.Submarine
 			})
 		end
 
-		var_26_13 = var_26_13 + 1
+		slot12 = slot12 + 1
 	end
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inActivity")
 end
 
-function var_0_0.updateActivityFleet(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	arg_29_0.activityFleetData[arg_29_1][arg_29_2] = arg_29_3
+function slot0.updateActivityFleet(slot0, slot1, slot2, slot3)
+	slot0.activityFleetData[slot1][slot2] = slot3
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inActivity")
 end
 
-function var_0_0.commitActivityFleet(arg_30_0, arg_30_1)
-	arg_30_0.editSrcCache = nil
-	arg_30_0.EdittingFleet = nil
+function slot0.commitActivityFleet(slot0, slot1)
+	slot0.editSrcCache = nil
+	slot0.EdittingFleet = nil
 
-	arg_30_0.facade:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
-		actID = arg_30_1,
-		fleets = arg_30_0.activityFleetData[arg_30_1]
+	slot0.facade:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
+		actID = slot1,
+		fleets = slot0.activityFleetData[slot1]
 	})
 end
 
-function var_0_0.checkActivityFleet(arg_31_0, arg_31_1)
-	local var_31_0 = arg_31_0.activityFleetData[arg_31_1]
-
-	for iter_31_0, iter_31_1 in pairs(var_31_0) do
-		if iter_31_0 < Fleet.SUBMARINE_FLEET_ID and iter_31_1:isLegalToFight() == true then
+function slot0.checkActivityFleet(slot0, slot1)
+	for slot6, slot7 in pairs(slot0.activityFleetData[slot1]) do
+		if slot6 < Fleet.SUBMARINE_FLEET_ID and slot7:isLegalToFight() == true then
 			return true
 		end
 	end
@@ -469,90 +440,81 @@ function var_0_0.checkActivityFleet(arg_31_0, arg_31_1)
 	return false
 end
 
-function var_0_0.removeActivityFleetCommander(arg_32_0, arg_32_1)
-	for iter_32_0, iter_32_1 in pairs(arg_32_0.activityFleetData) do
-		for iter_32_2, iter_32_3 in pairs(iter_32_1) do
-			local var_32_0 = false
-			local var_32_1 = iter_32_3:GetRawCommanderIds()
+function slot0.removeActivityFleetCommander(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.activityFleetData) do
+		for slot10, slot11 in pairs(slot6) do
+			slot12 = false
 
-			for iter_32_4, iter_32_5 in pairs(var_32_1) do
-				if arg_32_1 == iter_32_5 then
-					iter_32_3:updateCommanderByPos(iter_32_4, nil)
-					iter_32_3:updateCommanderSkills()
-					arg_32_0:updateActivityFleet(iter_32_0, iter_32_2, iter_32_3)
-					arg_32_0:commitActivityFleet(iter_32_0)
+			for slot17, slot18 in pairs(slot11:GetRawCommanderIds()) do
+				if slot1 == slot18 then
+					slot11:updateCommanderByPos(slot17, nil)
+					slot11:updateCommanderSkills()
+					slot0:updateActivityFleet(slot5, slot10, slot11)
+					slot0:commitActivityFleet(slot5)
 
-					var_32_0 = true
+					slot12 = true
 
 					break
 				end
 			end
 
-			if var_32_0 then
+			if slot12 then
 				break
 			end
 		end
 	end
 end
 
-function var_0_0.recommendActivityFleet(arg_33_0, arg_33_1, arg_33_2)
-	local var_33_0 = arg_33_0:getActivityFleets()[arg_33_1][arg_33_2]
-	local var_33_1 = getProxy(BayProxy)
+function slot0.recommendActivityFleet(slot0, slot1, slot2)
+	slot4 = slot0:getActivityFleets()[slot1][slot2]
+	slot5 = getProxy(BayProxy)
 
-	local function var_33_2(arg_34_0, arg_34_1)
-		local var_34_0 = TeamType.GetShipTypeListFromTeam(arg_34_0)
-		local var_34_1 = var_33_1:getActivityRecommendShips(var_34_0, var_33_0.ships, arg_34_1, arg_33_1)
+	if Fleet.SUBMARINE_FLEET_ID <= slot2 then
+		if not slot4:isFull() then
+			function (slot0, slot1)
+				slot7 = slot1
+				slot8 = uv2
 
-		for iter_34_0, iter_34_1 in ipairs(var_34_1) do
-			var_33_0:insertShip(iter_34_1, nil, arg_34_0)
-		end
-	end
-
-	if arg_33_2 >= Fleet.SUBMARINE_FLEET_ID then
-		if not var_33_0:isFull() then
-			var_33_2(TeamType.Submarine, TeamType.SubmarineMax - #var_33_0.subShips)
+				for slot7, slot8 in ipairs(uv0:getActivityRecommendShips(TeamType.GetShipTypeListFromTeam(slot0), uv1.ships, slot7, slot8)) do
+					uv1:insertShip(slot8, nil, slot0)
+				end
+			end(TeamType.Submarine, TeamType.SubmarineMax - #slot4.subShips)
 		end
 	else
-		local var_33_3 = TeamType.VanguardMax - #var_33_0.vanguardShips
-		local var_33_4 = TeamType.MainMax - #var_33_0.mainShips
+		slot8 = TeamType.MainMax - #slot4.mainShips
 
-		if var_33_3 > 0 then
-			var_33_2(TeamType.Vanguard, var_33_3)
+		if TeamType.VanguardMax - #slot4.vanguardShips > 0 then
+			slot6(TeamType.Vanguard, slot7)
 		end
 
-		if var_33_4 > 0 then
-			var_33_2(TeamType.Main, var_33_4)
+		if slot8 > 0 then
+			slot6(TeamType.Main, slot8)
 		end
 	end
 
-	arg_33_0:updateActivityFleet(arg_33_1, arg_33_2, var_33_0)
+	slot0:updateActivityFleet(slot1, slot2, slot4)
 end
 
-function var_0_0.GetBossRushFleets(arg_35_0, arg_35_1, arg_35_2)
-	local var_35_0 = {}
-	local var_35_1 = arg_35_0:getActivityFleets()[arg_35_1]
+function slot0.GetBossRushFleets(slot0, slot1, slot2)
+	slot4 = slot0:getActivityFleets()[slot1]
 
-	table.Foreach(arg_35_2, function(arg_36_0, arg_36_1)
-		local var_36_0 = arg_36_0 == #arg_35_2
-
-		if not var_35_1[arg_36_1] then
-			local var_36_1 = var_36_0 and FleetType.Submarine or FleetType.Normal
-
-			var_35_1[arg_36_1] = TypedFleet.New({
-				id = arg_36_1,
+	table.Foreach(slot2, function (slot0, slot1)
+		if not uv1[slot1] then
+			uv1[slot1] = TypedFleet.New({
+				id = slot1,
 				ship_list = {},
-				fleetType = var_36_1
+				fleetType = slot0 == #uv0 and FleetType.Submarine or FleetType.Normal
 			})
 		end
 
-		local var_36_2 = var_35_1[arg_36_1]
+		slot3 = uv1[slot1]
 
-		var_36_2:RemoveUnusedItems()
+		slot3:RemoveUnusedItems()
 
-		var_35_0[arg_36_0] = var_36_2
+		uv2[slot0] = slot3
 	end)
 
-	return var_35_0
+	return {}
 end
 
-return var_0_0
+return slot0

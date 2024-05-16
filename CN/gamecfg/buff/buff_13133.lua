@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "库珀",
+	time = 0,
+	picture = "",
+	desc = "敌方效果",
+	stack = 1,
+	id = 13133,
+	icon = 13130,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -21,24 +40,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "库珀",
-	time = 0,
-	picture = "",
-	desc = "敌方效果",
-	stack = 1,
-	id = 13133,
-	icon = 13130,
-	last_effect = ""
+	}
 }

@@ -1,135 +1,130 @@
-﻿local var_0_0 = class("BeachGuardGrid")
+slot0 = class("BeachGuardGrid")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._gridTf = arg_1_1
-	arg_1_0._event = arg_1_2
-	arg_1_0.preIcon = findTF(arg_1_0._gridTf, "charPos/preIcon")
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._gridTf = slot1
+	slot0._event = slot2
+	slot0.preIcon = findTF(slot0._gridTf, "charPos/preIcon")
 
-	setActive(arg_1_0.preIcon, false)
+	setActive(slot0.preIcon, false)
 
-	arg_1_0.collider = findTF(arg_1_0._gridTf, "gridCollider")
-	arg_1_0.minX = arg_1_0.collider.rect.min.x
-	arg_1_0.minY = arg_1_0.collider.rect.min.y
-	arg_1_0.maxX = arg_1_0.collider.rect.max.x
-	arg_1_0.maxY = arg_1_0.collider.rect.max.y
-	arg_1_0.select = findTF(arg_1_0._gridTf, "select")
+	slot0.collider = findTF(slot0._gridTf, "gridCollider")
+	slot0.minX = slot0.collider.rect.min.x
+	slot0.minY = slot0.collider.rect.min.y
+	slot0.maxX = slot0.collider.rect.max.x
+	slot0.maxY = slot0.collider.rect.max.y
+	slot0.select = findTF(slot0._gridTf, "select")
 
-	setActive(arg_1_0.select, false)
+	setActive(slot0.select, false)
 
-	arg_1_0.char = nil
-	arg_1_0.range = findTF(arg_1_0._gridTf, "range")
+	slot0.char = nil
+	slot0.range = findTF(slot0._gridTf, "range")
 
-	setActive(arg_1_0.range, false)
+	setActive(slot0.range, false)
 
-	arg_1_0.full = findTF(arg_1_0._gridTf, "full")
+	slot0.full = findTF(slot0._gridTf, "full")
 
-	setActive(arg_1_0.full, false)
+	setActive(slot0.full, false)
 
-	arg_1_0.recycle = findTF(arg_1_0._gridTf, "recycle")
+	slot0.recycle = findTF(slot0._gridTf, "recycle")
 
-	setActive(arg_1_0.recycle, false)
+	setActive(slot0.recycle, false)
 
-	arg_1_0.pos = findTF(arg_1_0._gridTf, "charPos")
+	slot0.pos = findTF(slot0._gridTf, "charPos")
 end
 
-function var_0_0.setLineIndex(arg_2_0, arg_2_1)
-	arg_2_0._lineIndex = arg_2_1
+function slot0.setLineIndex(slot0, slot1)
+	slot0._lineIndex = slot1
 end
 
-function var_0_0.getLineIndex(arg_3_0)
-	return arg_3_0._lineIndex
+function slot0.getLineIndex(slot0)
+	return slot0._lineIndex
 end
 
-function var_0_0.setIndex(arg_4_0, arg_4_1)
-	arg_4_0._index = arg_4_1
+function slot0.setIndex(slot0, slot1)
+	slot0._index = slot1
 end
 
-function var_0_0.getIndex(arg_5_0)
-	return arg_5_0._index
+function slot0.getIndex(slot0)
+	return slot0._index
 end
 
-function var_0_0.getPos(arg_6_0)
-	return arg_6_0.pos
+function slot0.getPos(slot0)
+	return slot0.pos
 end
 
-function var_0_0.active(arg_7_0, arg_7_1)
-	setActive(arg_7_0._lineTf, arg_7_1)
+function slot0.active(slot0, slot1)
+	setActive(slot0._lineTf, slot1)
 end
 
-function var_0_0.prechar(arg_8_0, arg_8_1)
-	local var_8_0 = GetComponent(arg_8_0.preIcon, typeof(Image))
-	local var_8_1 = BeachGuardConst.chars[arg_8_1].name
+function slot0.prechar(slot0, slot1)
+	slot2 = GetComponent(slot0.preIcon, typeof(Image))
+	slot2.sprite = BeachGuardAsset.getCardIcon(BeachGuardConst.chars[slot1].name)
 
-	var_8_0.sprite = BeachGuardAsset.getCardIcon(var_8_1)
-
-	var_8_0:SetNativeSize()
-	setActive(arg_8_0.preIcon, true)
-	setActive(arg_8_0.select, true)
+	slot2:SetNativeSize()
+	setActive(slot0.preIcon, true)
+	setActive(slot0.select, true)
 end
 
-function var_0_0.unPreChar(arg_9_0)
-	setActive(arg_9_0.preIcon, false)
-	setActive(arg_9_0.select, false)
+function slot0.unPreChar(slot0)
+	setActive(slot0.preIcon, false)
+	setActive(slot0.select, false)
 end
 
-function var_0_0.inGridWorld(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0._gridTf:InverseTransformPoint(arg_10_1)
-
-	if var_10_0.x > arg_10_0.minX and var_10_0.x < arg_10_0.maxX and var_10_0.y > arg_10_0.minY and var_10_0.y < arg_10_0.maxY then
+function slot0.inGridWorld(slot0, slot1)
+	if slot0.minX < slot0._gridTf:InverseTransformPoint(slot1).x and slot2.x < slot0.maxX and slot0.minY < slot2.y and slot2.y < slot0.maxY then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.setChar(arg_11_0, arg_11_1)
-	if arg_11_0.char then
+function slot0.setChar(slot0, slot1)
+	if slot0.char then
 		return
 	end
 
-	arg_11_0.char = arg_11_1
+	slot0.char = slot1
 end
 
-function var_0_0.getChar(arg_12_0)
-	return arg_12_0.char
+function slot0.getChar(slot0)
+	return slot0.char
 end
 
-function var_0_0.removeChar(arg_13_0)
-	arg_13_0.char = nil
+function slot0.removeChar(slot0)
+	slot0.char = nil
 
-	setActive(arg_13_0.full, false)
+	setActive(slot0.full, false)
 end
 
-function var_0_0.isEmpty(arg_14_0)
-	return arg_14_0.char == nil
+function slot0.isEmpty(slot0)
+	return slot0.char == nil
 end
 
-function var_0_0.start(arg_15_0)
-	return
+function slot0.start(slot0)
 end
 
-function var_0_0.step(arg_16_0, arg_16_1)
-	if arg_16_0.char and arg_16_0.char:getRecycleFlag() then
-		setActive(arg_16_0.recycle, true)
+function slot0.step(slot0, slot1)
+	if slot0.char and slot0.char:getRecycleFlag() then
+		setActive(slot0.recycle, true)
 	else
-		setActive(arg_16_0.recycle, false)
+		setActive(slot0.recycle, false)
 	end
 end
 
-function var_0_0.clear(arg_17_0)
-	setActive(arg_17_0.select, false)
-	setActive(arg_17_0.preIcon, false)
-	setActive(arg_17_0.full, false)
+function slot0.clear(slot0)
+	setActive(slot0.select, false)
+	setActive(slot0.preIcon, false)
+	setActive(slot0.full, false)
 
-	arg_17_0.char = nil
+	slot0.char = nil
 end
 
-function var_0_0.preDistance(arg_18_0)
-	setActive(arg_18_0.range, true)
+function slot0.preDistance(slot0)
+	setActive(slot0.range, true)
 end
 
-function var_0_0.unPreDistance(arg_19_0)
-	setActive(arg_19_0.range, false)
+function slot0.unPreDistance(slot0)
+	setActive(slot0.range, false)
 end
 
-return var_0_0
+return slot0

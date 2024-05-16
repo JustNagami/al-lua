@@ -1,21 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				buff_id = 800853,
-				rant = 1500,
-				time = 5,
-				target = "TargetSelf",
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		desc = "主炮攻击时有15.0%的概率额外发射1组炮弹",
 		addition = {
@@ -256,5 +239,22 @@
 	stack = 1,
 	id = 800852,
 	icon = 800852,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				buff_id = 800853,
+				rant = 1500,
+				time = 5,
+				target = "TargetSelf",
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

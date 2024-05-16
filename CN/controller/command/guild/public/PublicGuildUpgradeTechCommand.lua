@@ -1,56 +1,52 @@
-﻿local var_0_0 = class("PublicGuildUpgradeTechCommand", pm.SimpleCommand)
+slot0 = class("PublicGuildUpgradeTechCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = getProxy(PlayerProxy)
-	local var_1_2 = getProxy(GuildProxy):GetPublicGuild()
-	local var_1_3 = var_1_1:getData()
-	local var_1_4 = var_1_2:GetTechnologyById(var_1_0)
+function slot0.execute(slot0, slot1)
+	slot7 = getProxy(PlayerProxy):getData()
 
-	if not var_1_4 then
+	if not getProxy(GuildProxy):GetPublicGuild():GetTechnologyById(slot1:getBody().id) then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_tech"))
 
 		return
 	end
 
-	if var_1_4:isMaxLevel() then
+	if slot8:isMaxLevel() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_is_max_level"))
 
 		return
 	end
 
-	local var_1_5, var_1_6 = var_1_4:GetConsume()
+	slot9, slot10 = slot8:GetConsume()
 
-	if var_1_6 > var_1_3.gold then
+	if slot7.gold < slot10 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_gold_no_enough"))
 
 		return
 	end
 
-	if var_1_5 > var_1_3.guildCoin then
+	if slot7.guildCoin < slot9 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_guildgold_no_enough"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(62015, {
-		id = var_1_4.id
-	}, 62016, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_3:consume({
-				gold = var_1_6,
-				guildCoin = var_1_5
+		id = slot8.id
+	}, 62016, function (slot0)
+		if slot0.result == 0 then
+			uv0:consume({
+				gold = uv1,
+				guildCoin = uv2
 			})
-			var_1_1:updatePlayer(var_1_3)
-			var_1_4:levelUp()
-			arg_1_0:sendNotification(GAME.PULIC_GUILD_UPGRADE_TECH_DONE, {
-				id = var_1_0
+			uv3:updatePlayer(uv0)
+			uv4:levelUp()
+			uv5:sendNotification(GAME.PULIC_GUILD_UPGRADE_TECH_DONE, {
+				id = uv6
 			})
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_upgrade_done"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

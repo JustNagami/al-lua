@@ -1,82 +1,82 @@
-﻿local var_0_0 = _G
-local var_0_1 = require("ltn12")
-local var_0_2 = require("mime.core")
-local var_0_3 = require("io")
-local var_0_4 = require("string")
-local var_0_5 = var_0_2
-local var_0_6 = {}
-local var_0_7 = {}
-local var_0_8 = {}
+slot0 = _G
+slot1 = require("ltn12")
+slot3 = require("io")
+slot4 = require("string")
+slot5 = require("mime.core")
+slot6 = {}
+slot7 = {}
+slot8 = {}
+slot5.encodet = slot6
+slot5.decodet = slot7
+slot5.wrapt = slot8
 
-var_0_5.encodet = var_0_6
-var_0_5.decodet = var_0_7
-var_0_5.wrapt = var_0_8
-
-local function var_0_9(arg_1_0)
-	return function(arg_2_0, arg_2_1, arg_2_2)
-		if var_0_0.type(arg_2_0) ~= "string" then
-			arg_2_0, arg_2_1, arg_2_2 = "default", arg_2_0, arg_2_1
+function slot9(slot0)
+	return function (slot0, slot1, slot2)
+		if uv0.type(slot0) ~= "string" then
+			slot2 = slot1
+			slot1 = slot0
+			slot0 = "default"
 		end
 
-		local var_2_0 = arg_1_0[arg_2_0 or "nil"]
-
-		if not var_2_0 then
-			var_0_0.error("unknown key (" .. var_0_0.tostring(arg_2_0) .. ")", 3)
+		if not uv1[slot0 or "nil"] then
+			uv0.error("unknown key (" .. uv0.tostring(slot0) .. ")", 3)
 		else
-			return var_2_0(arg_2_1, arg_2_2)
+			return slot3(slot1, slot2)
 		end
 	end
 end
 
-function var_0_6.base64()
-	return var_0_1.filter.cycle(var_0_5.b64, "")
+function slot6.base64()
+	return uv0.filter.cycle(uv1.b64, "")
 end
 
-var_0_6["quoted-printable"] = function(arg_4_0)
-	return var_0_1.filter.cycle(var_0_5.qp, "", arg_4_0 == "binary" and "=0D=0A" or "\r\n")
+slot6["quoted-printable"] = function (slot0)
+	return uv0.filter.cycle(uv1.qp, "", slot0 == "binary" and "=0D=0A" or "\r\n")
 end
 
-function var_0_7.base64()
-	return var_0_1.filter.cycle(var_0_5.unb64, "")
+function slot7.base64()
+	return uv0.filter.cycle(uv1.unb64, "")
 end
 
-var_0_7["quoted-printable"] = function()
-	return var_0_1.filter.cycle(var_0_5.unqp, "")
+slot7["quoted-printable"] = function ()
+	return uv0.filter.cycle(uv1.unqp, "")
 end
 
-local function var_0_10(arg_7_0)
-	if arg_7_0 then
-		if arg_7_0 == "" then
+function slot10(slot0)
+	if slot0 then
+		if slot0 == "" then
 			return "''"
 		else
-			return var_0_4.len(arg_7_0)
+			return uv0.len(slot0)
 		end
 	else
 		return "nil"
 	end
 end
 
-function var_0_8.text(arg_8_0)
-	arg_8_0 = arg_8_0 or 76
+function slot8.text(slot0)
+	slot0 = slot0 or 76
 
-	return var_0_1.filter.cycle(var_0_5.wrp, arg_8_0, arg_8_0)
+	return uv0.filter.cycle(uv1.wrp, slot0, slot0)
 end
 
-var_0_8.base64 = var_0_8.text
-var_0_8.default = var_0_8.text
-var_0_8["quoted-printable"] = function()
-	return var_0_1.filter.cycle(var_0_5.qpwrp, 76, 76)
-end
-var_0_5.encode = var_0_9(var_0_6)
-var_0_5.decode = var_0_9(var_0_7)
-var_0_5.wrap = var_0_9(var_0_8)
+slot8.base64 = slot8.text
+slot8.default = slot8.text
 
-function var_0_5.normalize(arg_10_0)
-	return var_0_1.filter.cycle(var_0_5.eol, 0, arg_10_0)
+slot8["quoted-printable"] = function ()
+	return uv0.filter.cycle(uv1.qpwrp, 76, 76)
 end
 
-function var_0_5.stuff()
-	return var_0_1.filter.cycle(var_0_5.dot, 2)
+slot5.encode = slot9(slot6)
+slot5.decode = slot9(slot7)
+slot5.wrap = slot9(slot8)
+
+function slot5.normalize(slot0)
+	return uv0.filter.cycle(uv1.eol, 0, slot0)
 end
 
-return var_0_5
+function slot5.stuff()
+	return uv0.filter.cycle(uv1.dot, 2)
+end
+
+return slot5

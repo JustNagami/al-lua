@@ -1,351 +1,339 @@
-﻿local var_0_0 = class("NewBackYardThemeTemplateLayer", import("...base.BaseUI"))
+slot0 = class("NewBackYardThemeTemplateLayer", import("...base.BaseUI"))
 
-local function var_0_1(arg_1_0, arg_1_1, arg_1_2)
-	local function var_1_0(arg_2_0, arg_2_1)
-		setActive(arg_2_0:Find("sel"), arg_2_1)
-		setActive(arg_2_0:Find("unsel"), not arg_2_1)
-	end
-
-	onButton(arg_1_0, arg_1_1, function()
-		if not arg_1_2() then
+function slot1(slot0, slot1, slot2)
+	onButton(slot0, slot1, function ()
+		if not uv0() then
 			return
 		end
 
-		if arg_1_0.btn then
-			var_1_0(arg_1_0.btn, false)
+		if uv1.btn then
+			uv2(uv1.btn, false)
 		end
 
-		var_1_0(arg_1_1, true)
+		uv2(uv3, true)
 
-		arg_1_0.btn = arg_1_1
+		uv1.btn = uv3
 	end, SFX_PANEL)
-	var_1_0(arg_1_1, false)
+	function (slot0, slot1)
+		setActive(slot0:Find("sel"), slot1)
+		setActive(slot0:Find("unsel"), not slot1)
+	end(slot1, false)
 end
 
-function var_0_0.forceGC(arg_4_0)
+function slot0.forceGC(slot0)
 	return true
 end
 
-function var_0_0.getUIName(arg_5_0)
+function slot0.getUIName(slot0)
 	return "NewBackYardTemplateUI"
 end
 
-function var_0_0.preload(arg_6_0, arg_6_1)
+function slot0.preload(slot0, slot1)
 	_backYardThemeTemplateMsgbox = BackyardMsgBoxMgr.New()
 
-	_backYardThemeTemplateMsgbox:Init(arg_6_0, arg_6_1)
+	_backYardThemeTemplateMsgbox:Init(slot0, slot1)
 end
 
-function var_0_0.init(arg_7_0)
-	arg_7_0.tpl = arg_7_0:findTF("adpter/tag/list/tpl")
-	arg_7_0.container = arg_7_0:findTF("adpter/tag/list")
-	arg_7_0.pageContainer = arg_7_0:findTF("pages")
-	arg_7_0.backBtn = arg_7_0:findTF("adpter/top/fanhui")
-	arg_7_0.homeBtn = arg_7_0:findTF("adpter/top/help")
-	arg_7_0.goldTxt = arg_7_0:findTF("adpter/top/res_gold/Text"):GetComponent(typeof(Text))
-	arg_7_0.gemTxt = arg_7_0:findTF("adpter/top/res_gem/Text"):GetComponent(typeof(Text))
-	arg_7_0.gemAddBtn = arg_7_0:findTF("adpter/top/res_gem/jiahao")
-	arg_7_0.goldAddBtn = arg_7_0:findTF("adpter/top/res_gold/jiahao")
-	arg_7_0.tags = {
+function slot0.init(slot0)
+	slot0.tpl = slot0:findTF("adpter/tag/list/tpl")
+	slot0.container = slot0:findTF("adpter/tag/list")
+	slot0.pageContainer = slot0:findTF("pages")
+	slot0.backBtn = slot0:findTF("adpter/top/fanhui")
+	slot0.homeBtn = slot0:findTF("adpter/top/help")
+	slot0.goldTxt = slot0:findTF("adpter/top/res_gold/Text"):GetComponent(typeof(Text))
+	slot0.gemTxt = slot0:findTF("adpter/top/res_gem/Text"):GetComponent(typeof(Text))
+	slot0.gemAddBtn = slot0:findTF("adpter/top/res_gem/jiahao")
+	slot0.goldAddBtn = slot0:findTF("adpter/top/res_gold/jiahao")
+	slot0.tags = {
 		[BackYardConst.THEME_TEMPLATE_TYPE_SHOP] = i18n("backyard_theme_shop_title"),
 		[BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM] = i18n("backyard_theme_mine_title"),
 		[BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION] = i18n("backyard_theme_collection_title")
 	}
-	arg_7_0.listPage = BackYardThemeTemplateListPage.New(arg_7_0.pageContainer, arg_7_0.event, arg_7_0.contextData)
-	arg_7_0.contextData.msgBox = BackYardThemeTemplateMsgBox.New(arg_7_0._tf, arg_7_0.event, arg_7_0.contextData)
+	slot0.listPage = BackYardThemeTemplateListPage.New(slot0.pageContainer, slot0.event, slot0.contextData)
+	slot0.contextData.msgBox = BackYardThemeTemplateMsgBox.New(slot0._tf, slot0.event, slot0.contextData)
 end
 
-function var_0_0.SetShopThemeTemplate(arg_8_0, arg_8_1)
-	arg_8_0.shopThemeTemplate = arg_8_1
+function slot0.SetShopThemeTemplate(slot0, slot1)
+	slot0.shopThemeTemplate = slot1
 end
 
-function var_0_0.ShopThemeTemplateUpdate(arg_9_0, arg_9_1)
-	for iter_9_0, iter_9_1 in pairs(arg_9_0.shopThemeTemplate) do
-		if iter_9_1.id == arg_9_1.id then
-			arg_9_0.shopThemeTemplate[iter_9_0] = arg_9_1
+function slot0.ShopThemeTemplateUpdate(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.shopThemeTemplate) do
+		if slot6.id == slot1.id then
+			slot0.shopThemeTemplate[slot5] = slot1
 
 			break
 		end
 	end
 
-	if arg_9_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		arg_9_0.listPage:ExecuteAction("ThemeTemplateUpdate", arg_9_1)
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("ThemeTemplateUpdate", slot1)
 	end
 end
 
-function var_0_0.OnShopTemplatesUpdated(arg_10_0, arg_10_1)
-	arg_10_0:SetShopThemeTemplate(arg_10_1)
+function slot0.OnShopTemplatesUpdated(slot0, slot1)
+	slot0:SetShopThemeTemplate(slot1)
 
-	if arg_10_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		local var_10_0 = arg_10_0:GetDataForType(arg_10_0.pageType)
-
-		arg_10_0.listPage:ExecuteAction("ThemeTemplatesUpdate", var_10_0)
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("ThemeTemplatesUpdate", slot0:GetDataForType(slot0.pageType))
 	end
 end
 
-function var_0_0.OnShopTemplatesErro(arg_11_0)
-	if arg_11_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		local var_11_0 = arg_11_0:GetDataForType(arg_11_0.pageType)
-
-		arg_11_0.listPage:ExecuteAction("ThemeTemplatesErro", var_11_0)
+function slot0.OnShopTemplatesErro(slot0)
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("ThemeTemplatesErro", slot0:GetDataForType(slot0.pageType))
 	end
 end
 
-function var_0_0.SetCustomThemeTemplate(arg_12_0, arg_12_1)
-	arg_12_0.customThemeTemplate = arg_12_1
+function slot0.SetCustomThemeTemplate(slot0, slot1)
+	slot0.customThemeTemplate = slot1
 end
 
-function var_0_0.CustomThemeTemplateUpdate(arg_13_0, arg_13_1)
-	for iter_13_0, iter_13_1 in pairs(arg_13_0.customThemeTemplate) do
-		if iter_13_1.id == arg_13_1.id then
-			arg_13_0.customThemeTemplate[iter_13_0] = arg_13_1
+function slot0.CustomThemeTemplateUpdate(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.customThemeTemplate) do
+		if slot6.id == slot1.id then
+			slot0.customThemeTemplate[slot5] = slot1
 
 			break
 		end
 	end
 
-	if arg_13_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		arg_13_0.listPage:ExecuteAction("ThemeTemplateUpdate", arg_13_1)
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		slot0.listPage:ExecuteAction("ThemeTemplateUpdate", slot1)
 	end
 end
 
-function var_0_0.SetCollectionThemeTemplate(arg_14_0, arg_14_1)
-	arg_14_0.collectionThemeTemplate = arg_14_1
+function slot0.SetCollectionThemeTemplate(slot0, slot1)
+	slot0.collectionThemeTemplate = slot1
 end
 
-function var_0_0.CollectionThemeTemplateUpdate(arg_15_0, arg_15_1)
-	for iter_15_0, iter_15_1 in pairs(arg_15_0.collectionThemeTemplate) do
-		if iter_15_1.id == arg_15_1.id then
-			arg_15_0.collectionThemeTemplate[iter_15_0] = arg_15_1
+function slot0.CollectionThemeTemplateUpdate(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.collectionThemeTemplate) do
+		if slot6.id == slot1.id then
+			slot0.collectionThemeTemplate[slot5] = slot1
 
 			break
 		end
 	end
 
-	if arg_15_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		arg_15_0.listPage:ExecuteAction("ThemeTemplateUpdate", arg_15_1)
+	if slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot0.listPage:ExecuteAction("ThemeTemplateUpdate", slot1)
 	end
 end
 
-function var_0_0.SetDorm(arg_16_0, arg_16_1)
-	arg_16_0.dorm = arg_16_1
+function slot0.SetDorm(slot0, slot1)
+	slot0.dorm = slot1
 end
 
-function var_0_0.UpdateDorm(arg_17_0, arg_17_1)
-	arg_17_0:SetDorm(arg_17_1)
+function slot0.UpdateDorm(slot0, slot1)
+	slot0:SetDorm(slot1)
 
-	if arg_17_0.pageType then
-		arg_17_0.listPage:ExecuteAction("UpdateDorm", arg_17_1)
+	if slot0.pageType then
+		slot0.listPage:ExecuteAction("UpdateDorm", slot1)
 	end
 end
 
-function var_0_0.SetPlayer(arg_18_0, arg_18_1)
-	arg_18_0.player = arg_18_1
+function slot0.SetPlayer(slot0, slot1)
+	slot0.player = slot1
 end
 
-function var_0_0.PlayerUpdated(arg_19_0, arg_19_1)
-	arg_19_0:SetPlayer(arg_19_1)
-	arg_19_0:UpdateRes()
+function slot0.PlayerUpdated(slot0, slot1)
+	slot0:SetPlayer(slot1)
+	slot0:UpdateRes()
 
-	if arg_19_0.pageType then
-		arg_19_0.listPage:ExecuteAction("PlayerUpdated", arg_19_1)
+	if slot0.pageType then
+		slot0.listPage:ExecuteAction("PlayerUpdated", slot1)
 	end
 end
 
-function var_0_0.FurnituresUpdated(arg_20_0, arg_20_1)
-	if arg_20_0.pageType then
-		arg_20_0.listPage:ExecuteAction("FurnituresUpdated", arg_20_1)
+function slot0.FurnituresUpdated(slot0, slot1)
+	if slot0.pageType then
+		slot0.listPage:ExecuteAction("FurnituresUpdated", slot1)
 	end
 end
 
-function var_0_0.SearchKeyChange(arg_21_0, arg_21_1)
-	if arg_21_0.pageType and (arg_21_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM or arg_21_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION) then
-		arg_21_0.listPage:ExecuteAction("SearchKeyChange", arg_21_1)
+function slot0.SearchKeyChange(slot0, slot1)
+	if slot0.pageType and (slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM or slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION) then
+		slot0.listPage:ExecuteAction("SearchKeyChange", slot1)
 	end
 end
 
-function var_0_0.ShopSearchKeyChange(arg_22_0, arg_22_1)
-	if arg_22_0.pageType and arg_22_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		arg_22_0.listPage:ExecuteAction("ShopSearchKeyChange", arg_22_1)
+function slot0.ShopSearchKeyChange(slot0, slot1)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("ShopSearchKeyChange", slot1)
 	end
 end
 
-function var_0_0.ClearShopSearchKey(arg_23_0)
-	if arg_23_0.pageType and arg_23_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		arg_23_0.listPage:ExecuteAction("ClearShopSearchKey")
+function slot0.ClearShopSearchKey(slot0)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("ClearShopSearchKey")
 	end
 end
 
-function var_0_0.DeleteCustomThemeTemplate(arg_24_0, arg_24_1)
-	if not arg_24_0.customThemeTemplate then
+function slot0.DeleteCustomThemeTemplate(slot0, slot1)
+	if not slot0.customThemeTemplate then
 		return
 	end
 
-	for iter_24_0, iter_24_1 in pairs(arg_24_0.customThemeTemplate) do
-		if iter_24_1.id == arg_24_1 then
-			arg_24_0.customThemeTemplate[iter_24_0] = nil
+	for slot5, slot6 in pairs(slot0.customThemeTemplate) do
+		if slot6.id == slot1 then
+			slot0.customThemeTemplate[slot5] = nil
 
 			break
 		end
 	end
 
-	if arg_24_0.pageType and arg_24_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		arg_24_0.listPage:ExecuteAction("DeleteCustomThemeTemplate", arg_24_1)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		slot0.listPage:ExecuteAction("DeleteCustomThemeTemplate", slot1)
 	end
 end
 
-function var_0_0.DeleteCollectionThemeTemplate(arg_25_0, arg_25_1)
-	if not arg_25_0.collectionThemeTemplate then
+function slot0.DeleteCollectionThemeTemplate(slot0, slot1)
+	if not slot0.collectionThemeTemplate then
 		return
 	end
 
-	for iter_25_0, iter_25_1 in pairs(arg_25_0.collectionThemeTemplate) do
-		if iter_25_1.id == arg_25_1 then
-			arg_25_0.collectionThemeTemplate[iter_25_0] = nil
+	for slot5, slot6 in pairs(slot0.collectionThemeTemplate) do
+		if slot6.id == slot1 then
+			slot0.collectionThemeTemplate[slot5] = nil
 
 			break
 		end
 	end
 
-	if arg_25_0.pageType and arg_25_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		arg_25_0.listPage:ExecuteAction("DeleteCollectionThemeTemplate", arg_25_1)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot0.listPage:ExecuteAction("DeleteCollectionThemeTemplate", slot1)
 	end
 end
 
-function var_0_0.DeleteShopThemeTemplate(arg_26_0, arg_26_1)
-	if not arg_26_0.shopThemeTemplate then
+function slot0.DeleteShopThemeTemplate(slot0, slot1)
+	if not slot0.shopThemeTemplate then
 		return
 	end
 
-	for iter_26_0, iter_26_1 in pairs(arg_26_0.shopThemeTemplate) do
-		if iter_26_1.id == arg_26_1 then
-			arg_26_0.shopThemeTemplate[iter_26_0] = nil
+	for slot5, slot6 in pairs(slot0.shopThemeTemplate) do
+		if slot6.id == slot1 then
+			slot0.shopThemeTemplate[slot5] = nil
 
 			break
 		end
 	end
 
-	if arg_26_0.pageType and arg_26_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		arg_26_0.listPage:ExecuteAction("DeleteShopThemeTemplate", arg_26_1)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot0.listPage:ExecuteAction("DeleteShopThemeTemplate", slot1)
 	end
 end
 
-function var_0_0.AddCollectionThemeTemplate(arg_27_0, arg_27_1)
-	arg_27_0.collectionThemeTemplate[arg_27_1.id] = arg_27_1
+function slot0.AddCollectionThemeTemplate(slot0, slot1)
+	slot0.collectionThemeTemplate[slot1.id] = slot1
 
-	if arg_27_0.pageType and arg_27_0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		arg_27_0.listPage:ExecuteAction("AddCollectionThemeTemplate", arg_27_1.id)
+	if slot0.pageType and slot0.pageType == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot0.listPage:ExecuteAction("AddCollectionThemeTemplate", slot1.id)
 	end
 end
 
-function var_0_0.didEnter(arg_28_0)
-	onButton(arg_28_0, arg_28_0.backBtn, function()
-		arg_28_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(arg_28_0, arg_28_0.homeBtn, function()
-		arg_28_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0.homeBtn, function ()
+		uv0:emit(uv1.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg_28_0, arg_28_0.gemAddBtn, function()
-		arg_28_0:emit(NewBackYardThemeTemplateMediator.ON_CHARGE, PlayerConst.ResDiamond)
+	onButton(slot0, slot0.gemAddBtn, function ()
+		uv0:emit(NewBackYardThemeTemplateMediator.ON_CHARGE, PlayerConst.ResDiamond)
 	end, SFX_PANEL)
-	onButton(arg_28_0, arg_28_0.goldAddBtn, function()
-		arg_28_0:emit(NewBackYardThemeTemplateMediator.ON_CHARGE, PlayerConst.ResDormMoney)
+	onButton(slot0, slot0.goldAddBtn, function ()
+		uv0:emit(NewBackYardThemeTemplateMediator.ON_CHARGE, PlayerConst.ResDormMoney)
 	end, SFX_PANEL)
 	seriesAsync({
-		function(arg_33_0)
-			arg_28_0:emit(NewBackYardThemeTemplateMediator.FETCH_ALL_THEME, arg_33_0)
+		function (slot0)
+			uv0:emit(NewBackYardThemeTemplateMediator.FETCH_ALL_THEME, slot0)
 		end
-	}, function()
-		arg_28_0:InitPages()
-		arg_28_0:UpdateRes()
-		arg_28_0:ActiveDefaultPage()
+	}, function ()
+		uv0:InitPages()
+		uv0:UpdateRes()
+		uv0:ActiveDefaultPage()
 	end)
 end
 
-function var_0_0.InitPages(arg_35_0)
-	arg_35_0.btns = {}
+function slot0.InitPages(slot0)
+	slot0.btns = {}
 
-	for iter_35_0, iter_35_1 in pairs(arg_35_0.tags) do
-		local var_35_0 = cloneTplTo(arg_35_0.tpl, arg_35_0.container)
-		local var_35_1 = var_35_0:Find("unsel"):GetComponent(typeof(Image))
+	for slot4, slot5 in pairs(slot0.tags) do
+		slot6 = cloneTplTo(slot0.tpl, slot0.container)
+		slot7 = slot6:Find("unsel"):GetComponent(typeof(Image))
+		slot7.sprite = GetSpriteFromAtlas("ui/NewBackYardShopUI_atlas", "text_tp_" .. slot4)
 
-		var_35_1.sprite = GetSpriteFromAtlas("ui/NewBackYardShopUI_atlas", "text_tp_" .. iter_35_0)
+		slot7:SetNativeSize()
 
-		var_35_1:SetNativeSize()
+		slot8 = slot6:Find("sel/Text"):GetComponent(typeof(Image))
+		slot8.sprite = GetSpriteFromAtlas("ui/NewBackYardShopUI_atlas", "text_tp_" .. slot4)
 
-		local var_35_2 = var_35_0:Find("sel/Text"):GetComponent(typeof(Image))
+		slot8:SetNativeSize()
+		setActive(slot6:Find("line"), slot4 ~= BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION)
+		uv0(slot0, slot6, function ()
+			uv0.listPage:ExecuteAction("SetUp", uv1, uv0:GetDataForType(uv1), uv0.dorm, uv0.player)
 
-		var_35_2.sprite = GetSpriteFromAtlas("ui/NewBackYardShopUI_atlas", "text_tp_" .. iter_35_0)
-
-		var_35_2:SetNativeSize()
-		setActive(var_35_0:Find("line"), iter_35_0 ~= BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION)
-		var_0_1(arg_35_0, var_35_0, function()
-			local var_36_0 = arg_35_0:GetDataForType(iter_35_0)
-
-			arg_35_0.listPage:ExecuteAction("SetUp", iter_35_0, var_36_0, arg_35_0.dorm, arg_35_0.player)
-
-			arg_35_0.pageType = iter_35_0
+			uv0.pageType = uv1
 
 			return true
 		end)
 
-		arg_35_0.btns[iter_35_0] = var_35_0
+		slot0.btns[slot4] = slot6
 	end
 
-	setActive(arg_35_0.tpl, false)
+	setActive(slot0.tpl, false)
 end
 
-function var_0_0.ActiveDefaultPage(arg_37_0)
-	local var_37_0 = arg_37_0.contextData.page or BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM
-
-	triggerButton(arg_37_0.btns[var_37_0])
+function slot0.ActiveDefaultPage(slot0)
+	triggerButton(slot0.btns[slot0.contextData.page or BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM])
 end
 
-function var_0_0.GetDataForType(arg_38_0, arg_38_1)
-	if arg_38_1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
-		local var_38_0 = {}
+function slot0.GetDataForType(slot0, slot1)
+	if slot1 == BackYardConst.THEME_TEMPLATE_TYPE_SHOP then
+		slot2 = {}
 
-		for iter_38_0, iter_38_1 in pairs(arg_38_0.shopThemeTemplate) do
-			table.insert(var_38_0, iter_38_1)
+		for slot6, slot7 in pairs(slot0.shopThemeTemplate) do
+			table.insert(slot2, slot7)
 		end
 
-		return var_38_0 or {}
-	elseif arg_38_1 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
-		local var_38_1 = {}
+		return slot2 or {}
+	elseif slot1 == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		slot2 = {}
 
-		for iter_38_2, iter_38_3 in pairs(arg_38_0.customThemeTemplate) do
-			if iter_38_3:CanDispaly() then
-				table.insert(var_38_1, iter_38_3)
+		for slot6, slot7 in pairs(slot0.customThemeTemplate) do
+			if slot7:CanDispaly() then
+				table.insert(slot2, slot7)
 			end
 		end
 
-		return var_38_1
-	elseif arg_38_1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
-		local var_38_2 = {}
+		return slot2
+	elseif slot1 == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		slot2 = {}
 
-		for iter_38_4, iter_38_5 in pairs(arg_38_0.collectionThemeTemplate) do
-			table.insert(var_38_2, iter_38_5)
+		for slot6, slot7 in pairs(slot0.collectionThemeTemplate) do
+			table.insert(slot2, slot7)
 		end
 
-		return var_38_2 or {}
+		return slot2 or {}
 	end
 
 	assert(false)
 end
 
-function var_0_0.UpdateRes(arg_39_0)
-	arg_39_0.goldTxt.text = arg_39_0.player:getResource(PlayerConst.ResDormMoney)
-	arg_39_0.gemTxt.text = arg_39_0.player:getTotalGem()
+function slot0.UpdateRes(slot0)
+	slot0.goldTxt.text = slot0.player:getResource(PlayerConst.ResDormMoney)
+	slot0.gemTxt.text = slot0.player:getTotalGem()
 end
 
-function var_0_0.willExit(arg_40_0)
+function slot0.willExit(slot0)
 	_backYardThemeTemplateMsgbox:Destroy()
 
 	_backYardThemeTemplateMsgbox = nil
 
-	arg_40_0.listPage:Destroy()
-	arg_40_0.contextData.msgBox:Destroy()
+	slot0.listPage:Destroy()
+	slot0.contextData.msgBox:Destroy()
 	BackYardThemeTempalteUtil.ClearAllCache()
 end
 
-return var_0_0
+return slot0

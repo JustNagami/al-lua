@@ -1,34 +1,27 @@
-﻿local var_0_0 = class("ShopBgView")
+slot0 = class("ShopBgView")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._bg = arg_1_1
-	arg_1_0.img = arg_1_0._bg:GetComponent(typeof(Image))
+function slot0.Ctor(slot0, slot1)
+	slot0._bg = slot1
+	slot0.img = slot0._bg:GetComponent(typeof(Image))
 
-	setActive(arg_1_1, false)
+	setActive(slot1, false)
 
-	arg_1_0.bgs = {}
+	slot0.bgs = {}
 end
 
-function var_0_0.Init(arg_2_0, arg_2_1)
-	setActive(arg_2_0._bg, arg_2_1 ~= nil)
+function slot0.Init(slot0, slot1)
+	setActive(slot0._bg, slot1 ~= nil)
 
-	if arg_2_1 then
-		local var_2_0
-
-		if arg_2_0.bgs[arg_2_1] then
-			var_2_0 = arg_2_0.bgs[arg_2_1]
-		else
-			var_2_0 = GetSpriteFromAtlas(arg_2_1, "")
-		end
-
-		arg_2_0.img.sprite = var_2_0
+	if slot1 then
+		slot2 = nil
+		slot0.img.sprite = (not slot0.bgs[slot1] or slot0.bgs[slot1]) and GetSpriteFromAtlas(slot1, "")
 	end
 end
 
-function var_0_0.Dispose(arg_3_0)
-	UIUtil.ClearImageSprite(arg_3_0._bg.gameObject)
+function slot0.Dispose(slot0)
+	UIUtil.ClearImageSprite(slot0._bg.gameObject)
 
-	arg_3_0.bgs = nil
+	slot0.bgs = nil
 end
 
-return var_0_0
+return slot0

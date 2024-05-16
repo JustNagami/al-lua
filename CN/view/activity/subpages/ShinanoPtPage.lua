@@ -1,1 +1,1 @@
-﻿return (class("ShinanoPtPage", import(".TemplatePage.PtTemplatePage")))
+return class("ShinanoPtPage", import(".TemplatePage.PtTemplatePage"))

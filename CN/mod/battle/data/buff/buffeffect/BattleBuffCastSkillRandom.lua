@@ -1,89 +1,70 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleAttr
+slot0.Battle.BattleBuffCastSkillRandom = class("BattleBuffCastSkillRandom", slot0.Battle.BattleBuffCastSkill)
+slot0.Battle.BattleBuffCastSkillRandom.__name = "BattleBuffCastSkillRandom"
+slot2 = slot0.Battle.BattleBuffCastSkillRandom
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleAttr
+function slot2.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-var_0_0.Battle.BattleBuffCastSkillRandom = class("BattleBuffCastSkillRandom", var_0_0.Battle.BattleBuffCastSkill)
-var_0_0.Battle.BattleBuffCastSkillRandom.__name = "BattleBuffCastSkillRandom"
-
-local var_0_2 = var_0_0.Battle.BattleBuffCastSkillRandom
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0._skillList = {}
+	slot0._skillList = {}
 end
 
-function var_0_2.spell(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0._tempData.arg_list
-
-	if var_2_0.skill_id_list then
-		local var_2_1 = {}
-		local var_2_2 = var_2_0.range
-
-		for iter_2_0, iter_2_1 in ipairs(var_2_0.skill_id_list) do
-			var_2_1[iter_2_1] = var_2_2[iter_2_0]
+function slot2.spell(slot0, slot1, slot2)
+	if slot0._tempData.arg_list.skill_id_list then
+		for slot9, slot10 in ipairs(slot3.skill_id_list) do
+			-- Nothing
 		end
 
-		local var_2_3 = math.random()
+		slot6 = math.random()
 
-		for iter_2_2, iter_2_3 in pairs(var_2_1) do
-			local var_2_4 = iter_2_3[1]
-			local var_2_5 = iter_2_3[2]
+		for slot10, slot11 in pairs({
+			[slot10] = slot3.range[slot9]
+		}) do
+			if slot11[1] <= slot6 and slot6 < slot11[2] then
+				slot0._skillList[slot10] = slot0._skillList[slot10] or uv0.Battle.BattleSkillUnit.GenerateSpell(slot10, slot0._level, slot1, attData)
+				slot14 = slot0._skillList[slot10]
 
-			if var_2_4 <= var_2_3 and var_2_3 < var_2_5 then
-				arg_2_0._skillList[iter_2_2] = arg_2_0._skillList[iter_2_2] or var_0_0.Battle.BattleSkillUnit.GenerateSpell(iter_2_2, arg_2_0._level, arg_2_1, attData)
-
-				local var_2_6 = arg_2_0._skillList[iter_2_2]
-
-				if arg_2_2 and arg_2_2.target then
-					var_2_6:SetTarget({
-						arg_2_2.target
+				if slot2 and slot2.target then
+					slot14:SetTarget({
+						slot2.target
 					})
 				end
 
-				var_2_6:Cast(arg_2_1, arg_2_0._commander)
+				slot14:Cast(slot1, slot0._commander)
 			end
 		end
-	elseif var_2_0.random_skill_tag then
-		local var_2_7 = var_2_0.random_skill_tag
-		local var_2_8 = arg_2_1:GetLabelTag()
-		local var_2_9 = {}
+	elseif slot3.random_skill_tag then
+		slot6 = {}
 
-		for iter_2_4, iter_2_5 in ipairs(var_2_8) do
-			local var_2_10, var_2_11 = string.find(iter_2_5, var_2_7)
+		for slot10, slot11 in ipairs(slot1:GetLabelTag()) do
+			slot12, slot13 = string.find(slot11, slot3.random_skill_tag)
 
-			if var_2_10 then
-				local var_2_12 = tonumber(string.sub(iter_2_5, var_2_11 + 1, #iter_2_5))
-
-				if not table.contains(var_2_9, var_2_12) then
-					table.insert(var_2_9, var_2_12)
-				end
+			if slot12 and not table.contains(slot6, tonumber(string.sub(slot11, slot13 + 1, #slot11))) then
+				table.insert(slot6, slot14)
 			end
 		end
 
-		if #var_2_9 > 0 then
-			local var_2_13 = var_2_9[math.random(#var_2_9)]
+		if #slot6 > 0 then
+			slot0._skillList[slot7] = slot0._skillList[slot6[math.random(#slot6)]] or uv0.Battle.BattleSkillUnit.GenerateSpell(slot7, slot0._level, slot1, attData)
+			slot8 = slot0._skillList[slot7]
 
-			arg_2_0._skillList[var_2_13] = arg_2_0._skillList[var_2_13] or var_0_0.Battle.BattleSkillUnit.GenerateSpell(var_2_13, arg_2_0._level, arg_2_1, attData)
-
-			local var_2_14 = arg_2_0._skillList[var_2_13]
-
-			if arg_2_2 and arg_2_2.target then
-				var_2_14:SetTarget({
-					arg_2_2.target
+			if slot2 and slot2.target then
+				slot8:SetTarget({
+					slot2.target
 				})
 			end
 
-			var_2_14:Cast(arg_2_1, arg_2_0._commander)
+			slot8:Cast(slot1, slot0._commander)
 		end
 	end
 end
 
-function var_0_2.Clear(arg_3_0)
-	var_0_2.super.Clear(arg_3_0)
+function slot2.Clear(slot0)
+	uv0.super.Clear(slot0)
 
-	for iter_3_0, iter_3_1 in pairs(arg_3_0._skillList) do
-		iter_3_1:Clear()
+	for slot4, slot5 in pairs(slot0._skillList) do
+		slot5:Clear()
 	end
 end

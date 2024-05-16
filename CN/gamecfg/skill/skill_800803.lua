@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 161051
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -148,5 +137,16 @@
 	desc = "弹幕",
 	painting = 0,
 	id = 800803,
-	castCV = "skill"
+	castCV = "skill",
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 161051
+			}
+		}
+	}
 }

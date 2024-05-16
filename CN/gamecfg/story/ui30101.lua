@@ -1,4 +1,4 @@
-﻿return {
+return {
 	id = "UI30101",
 	mode = 2,
 	once = true,
@@ -207,7 +207,12 @@
 			},
 			sequence = {
 				{
-					"          第三章   命运的五分钟 <size=34.5>Five minutes of fate</size> \n\n\n\n",
+					[[
+          第三章   命运的五分钟 <size=34.5>Five minutes of fate</size> 
+
+
+
+]],
 					2
 				}
 			}

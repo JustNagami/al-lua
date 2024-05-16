@@ -1,25 +1,22 @@
-﻿local var_0_0 = class("CatteryStyleCard")
+slot0 = class("CatteryStyleCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = arg_1_1.transform
-	arg_1_0.styleIcon = arg_1_0._tf:Find("mask/icon"):GetComponent(typeof(Image))
-	arg_1_0.lockTF = findTF(arg_1_0._tf, "lock")
-	arg_1_0.mark = findTF(arg_1_0._tf, "mark")
+function slot0.Ctor(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = slot1.transform
+	slot0.styleIcon = slot0._tf:Find("mask/icon"):GetComponent(typeof(Image))
+	slot0.lockTF = findTF(slot0._tf, "lock")
+	slot0.mark = findTF(slot0._tf, "mark")
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.style = arg_2_1
-	arg_2_0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. arg_2_1:getConfig("name"), "")
+function slot0.Update(slot0, slot1, slot2)
+	slot0.style = slot1
+	slot0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. slot1:getConfig("name"), "")
 
-	local var_2_0 = arg_2_1:IsOwn()
-
-	setActive(arg_2_0.lockTF, not var_2_0)
-	setActive(arg_2_0.mark, arg_2_2)
+	setActive(slot0.lockTF, not slot1:IsOwn())
+	setActive(slot0.mark, slot2)
 end
 
-function var_0_0.Dispose(arg_3_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

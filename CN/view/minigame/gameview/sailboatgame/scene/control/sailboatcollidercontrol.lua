@@ -1,58 +1,54 @@
-﻿local var_0_0 = class("SailBoatColliderControl")
-local var_0_1
+slot0 = class("SailBoatColliderControl")
+slot1 = nil
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1 = SailBoatGameVo
-	arg_1_0._tf = arg_1_1
-	arg_1_0._eventCall = arg_1_2
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0 = SailBoatGameVo
+	slot0._tf = slot1
+	slot0._eventCall = slot2
 end
 
-function var_0_0.start(arg_2_0)
-	arg_2_0._itemMoveSpeed = var_0_1.item_move_speed
+function slot0.start(slot0)
+	slot0._itemMoveSpeed = uv0.item_move_speed
 end
 
-function var_0_0.step(arg_3_0, arg_3_1)
-	local var_3_0 = var_0_1.GetGameChar()
-	local var_3_1 = var_0_1.GetGameItems()
-	local var_3_2 = var_0_1.GetGameEnemys()
-	local var_3_3, var_3_4 = var_3_0:getWorldColliderData()
-	local var_3_5 = var_3_0:getPosition()
-	local var_3_6 = false
+function slot0.step(slot0, slot1)
+	slot2 = uv0.GetGameChar()
+	slot4 = uv0.GetGameEnemys()
+	slot5, slot6 = slot2:getWorldColliderData()
+	slot7 = slot2:getPosition()
+	slot8 = false
 
-	for iter_3_0 = 1, #var_3_1 do
-		local var_3_7 = var_3_1[iter_3_0]
-		local var_3_8, var_3_9 = var_3_7:getWorldColliderData()
+	for slot12 = 1, #uv0.GetGameItems() do
+		slot14, slot15 = slot3[slot12]:getWorldColliderData()
 
-		if var_0_1.CheckRectCollider(var_3_3, var_3_8, var_3_4, var_3_9) then
-			if var_3_7:getConfig("type") == SailBoatGameConst.item_static then
-				local var_3_10 = var_3_7:getSpeed()
+		if uv0.CheckRectCollider(slot5, slot14, slot6, slot15) then
+			if slot13:getConfig("type") == SailBoatGameConst.item_static then
+				slot16 = slot13:getSpeed()
 
-				var_3_0:move(var_3_10.x, var_3_10.y)
-			elseif var_3_7:getConfig("type") == SailBoatGameConst.item_used then
-				arg_3_0._eventCall(SailBoatGameEvent.USE_ITEM, var_3_7:getUseData())
-				var_3_7:setRemoveFlag(true)
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_ITEM)
+				slot2:move(slot16.x, slot16.y)
+			elseif slot13:getConfig("type") == SailBoatGameConst.item_used then
+				slot0._eventCall(SailBoatGameEvent.USE_ITEM, slot13:getUseData())
+				slot13:setRemoveFlag(true)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0.SFX_SOUND_ITEM)
 			end
 		end
 	end
 
-	for iter_3_1 = 1, #var_3_2 do
-		local var_3_11 = var_3_2[iter_3_1]
+	for slot12 = 1, #slot4 do
+		if slot4[slot12]:getLife() then
+			slot14, slot15 = slot13:getWorldColliderData()
 
-		if var_3_11:getLife() then
-			local var_3_12, var_3_13 = var_3_11:getWorldColliderData()
-
-			if var_0_1.CheckRectCollider(var_3_3, var_3_12, var_3_4, var_3_13) then
-				if var_3_11:getConfig("boom") and var_3_11:getConfig("boom") > 0 then
-					if var_3_11:damage({
+			if uv0.CheckRectCollider(slot5, slot14, slot6, slot15) then
+				if slot13:getConfig("boom") and slot13:getConfig("boom") > 0 then
+					if slot13:damage({
 						num = 999
 					}) then
-						arg_3_0._eventCall(SailBoatGameEvent.DESTROY_ENEMY, var_3_11:getDestroyData())
+						slot0._eventCall(SailBoatGameEvent.DESTROY_ENEMY, slot13:getDestroyData())
 					end
-				elseif var_3_0:checkColliderDamage() then
-					var_3_0:flash()
-					var_3_0:damage({
-						num = var_0_1.colliderDamage
+				elseif slot2:checkColliderDamage() then
+					slot2:flash()
+					slot2:damage({
+						num = uv0.colliderDamage
 					})
 				end
 			end
@@ -60,12 +56,10 @@ function var_0_0.step(arg_3_0, arg_3_1)
 	end
 end
 
-function var_0_0.dispose(arg_4_0)
-	return
+function slot0.dispose(slot0)
 end
 
-function var_0_0.clear(arg_5_0)
-	return
+function slot0.clear(slot0)
 end
 
-return var_0_0
+return slot0

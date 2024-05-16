@@ -1,46 +1,41 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot1 = class("CldNode")
+pg.CldNode = slot1
 
-local var_0_0 = pg
-local var_0_1 = class("CldNode")
-
-var_0_0.CldNode = var_0_1
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.cylinder = false
+function slot1.Ctor(slot0, slot1)
+	slot0.cylinder = false
 end
 
-function var_0_1.UpdateBox(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	arg_2_0.min = arg_2_1:Copy2(arg_2_0.min)
-	arg_2_0.max = arg_2_2:Copy2(arg_2_0.max)
+function slot1.UpdateBox(slot0, slot1, slot2, slot3)
+	slot0.min = slot1:Copy2(slot0.min)
+	slot0.max = slot2:Copy2(slot0.max)
 
-	if arg_2_3 then
-		arg_2_0.min:Add(arg_2_3)
-		arg_2_0.max:Add(arg_2_3)
+	if slot3 then
+		slot0.min:Add(slot3)
+		slot0.max:Add(slot3)
 	end
 
-	return arg_2_0
+	return slot0
 end
 
-function var_0_1.UpdateStaticBox(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0.min = arg_3_1
-	arg_3_0.max = arg_3_2
+function slot1.UpdateStaticBox(slot0, slot1, slot2)
+	slot0.min = slot1
+	slot0.max = slot2
 
-	return arg_3_0
+	return slot0
 end
 
-function var_0_1.UpdateCylinder(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	if arg_4_3 < 0 then
-		arg_4_3 = -arg_4_3
+function slot1.UpdateCylinder(slot0, slot1, slot2, slot3)
+	if slot3 < 0 then
+		slot3 = -slot3
 	end
 
-	arg_4_0.center = arg_4_1:Copy2(arg_4_0.center)
-	arg_4_0.range = arg_4_3
+	slot0.center = slot1:Copy2(slot0.center)
+	slot0.range = slot3
+	slot4 = Vector3(slot3, slot2, slot3)
+	slot0.min = slot1 - slot4
+	slot0.max = slot1 + slot4
+	slot0.cylinder = true
 
-	local var_4_0 = Vector3(arg_4_3, arg_4_2, arg_4_3)
-
-	arg_4_0.min = arg_4_1 - var_4_0
-	arg_4_0.max = arg_4_1 + var_4_0
-	arg_4_0.cylinder = true
-
-	return arg_4_0
+	return slot0
 end

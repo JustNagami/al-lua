@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 30,
-				target = "TargetSelf",
-				skill_id = 31502
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔30秒，释放1次技能鱼雷",
 		effect_list = {
@@ -36,5 +23,18 @@
 	stack = 1,
 	id = 31502,
 	icon = 31502,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 30,
+				target = "TargetSelf",
+				skill_id = 31502
+			}
+		}
+	}
 }

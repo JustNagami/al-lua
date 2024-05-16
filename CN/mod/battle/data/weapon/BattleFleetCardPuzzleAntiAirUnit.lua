@@ -1,184 +1,167 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleEvent
+slot2 = slot0.Battle.BattleFormulas
+slot3 = slot0.Battle.BattleConst
+slot4 = slot0.Battle.BattleConfig
+slot5 = slot0.Battle.BattleDataFunction
+slot6 = slot0.Battle.BattleAttr
+slot7 = slot0.Battle.BattleVariable
+slot8 = class("BattleFleetCardPuzzleAntiAirUnit")
+slot0.Battle.BattleFleetCardPuzzleAntiAirUnit = slot8
+slot8.__name = "BattleFleetCardPuzzleAntiAirUnit"
+slot8.STATE_DISABLE = "DISABLE"
+slot8.STATE_READY = "READY"
+slot8.STATE_PRECAST = "PRECAST"
+slot8.STATE_PRECAST_FINISH = "STATE_PRECAST_FINISH"
+slot8.STATE_ATTACK = "ATTACK"
+slot8.STATE_OVER_HEAT = "OVER_HEAT"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleEvent
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = var_0_0.Battle.BattleConst
-local var_0_4 = var_0_0.Battle.BattleConfig
-local var_0_5 = var_0_0.Battle.BattleDataFunction
-local var_0_6 = var_0_0.Battle.BattleAttr
-local var_0_7 = var_0_0.Battle.BattleVariable
-local var_0_8 = class("BattleFleetCardPuzzleAntiAirUnit")
+function slot8.Ctor(slot0, slot1)
+	slot0._client = slot1
 
-var_0_0.Battle.BattleFleetCardPuzzleAntiAirUnit = var_0_8
-var_0_8.__name = "BattleFleetCardPuzzleAntiAirUnit"
-var_0_8.STATE_DISABLE = "DISABLE"
-var_0_8.STATE_READY = "READY"
-var_0_8.STATE_PRECAST = "PRECAST"
-var_0_8.STATE_PRECAST_FINISH = "STATE_PRECAST_FINISH"
-var_0_8.STATE_ATTACK = "ATTACK"
-var_0_8.STATE_OVER_HEAT = "OVER_HEAT"
-
-function var_0_8.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._client = arg_1_1
-
-	arg_1_0:init()
+	slot0:init()
 end
 
-function var_0_8.init(arg_2_0)
-	arg_2_0._crewUnitList = {}
-	arg_2_0._hitFXResIDList = {}
-	arg_2_0._currentState = var_0_8.STATE_DISABLE
-	arg_2_0._dataProxy = var_0_0.Battle.BattleDataProxy.GetInstance()
-	arg_2_0._range = 0
+function slot8.init(slot0)
+	slot0._crewUnitList = {}
+	slot0._hitFXResIDList = {}
+	slot0._currentState = uv0.STATE_DISABLE
+	slot0._dataProxy = uv1.Battle.BattleDataProxy.GetInstance()
+	slot0._range = 0
 end
 
-function var_0_8.AppendCrewUnit(arg_3_0, arg_3_1)
-	arg_3_0._crewUnitList[arg_3_1] = true
-	arg_3_0._currentState = var_0_8.STATE_READY
+function slot8.AppendCrewUnit(slot0, slot1)
+	slot0._crewUnitList[slot1] = true
+	slot0._currentState = uv0.STATE_READY
 
-	arg_3_0:flush()
+	slot0:flush()
 end
 
-function var_0_8.RemoveCrewUnit(arg_4_0, arg_4_1)
-	arg_4_0._crewUnitList[arg_4_1] = nil
+function slot8.RemoveCrewUnit(slot0, slot1)
+	slot0._crewUnitList[slot1] = nil
 
-	arg_4_0:flush()
+	slot0:flush()
 end
 
-function var_0_8.SwitchHost(arg_5_0, arg_5_1)
-	arg_5_0._host = arg_5_1
+function slot8.SwitchHost(slot0, slot1)
+	slot0._host = slot1
 end
 
-function var_0_8.GetCrewUnitList(arg_6_0)
-	return arg_6_0._crewUnitList
+function slot8.GetCrewUnitList(slot0)
+	return slot0._crewUnitList
 end
 
-function var_0_8.GetRange(arg_7_0)
-	return arg_7_0._range
+function slot8.GetRange(slot0)
+	return slot0._range
 end
 
-function var_0_8.flush(arg_8_0)
-	arg_8_0._range = 0
-	arg_8_0._interval = 0
+function slot8.flush(slot0)
+	slot0._range = 0
+	slot0._interval = 0
 
-	local var_8_0 = 0
-
-	for iter_8_0, iter_8_1 in pairs(arg_8_0._crewUnitList) do
-		arg_8_0._range = arg_8_0._range + iter_8_0:GetTemplate().AA_range
-		arg_8_0._interval = arg_8_0._interval + iter_8_0:GetTemplate().AA_CD
-		var_8_0 = var_8_0 + 1
+	for slot5, slot6 in pairs(slot0._crewUnitList) do
+		slot0._range = slot0._range + slot5:GetTemplate().AA_range
+		slot0._interval = slot0._interval + slot5:GetTemplate().AA_CD
+		slot1 = 0 + 1
 	end
 
-	arg_8_0._range = arg_8_0._range / var_8_0
-	arg_8_0._interval = arg_8_0._interval / var_8_0
+	slot0._range = slot0._range / slot1
+	slot0._interval = slot0._interval / slot1
 end
 
-function var_0_8.Update(arg_9_0)
-	if arg_9_0._client:IsAAActive() and arg_9_0._currentState == var_0_8.STATE_READY then
-		local var_9_0 = arg_9_0:FilterTarget()
-		local var_9_1 = arg_9_0:FilterRange(var_9_0)
-		local var_9_2 = arg_9_0:CompareDistance(var_9_1)
-
-		if var_9_2 then
-			arg_9_0:Fire(var_9_2)
-		end
+function slot8.Update(slot0)
+	if slot0._client:IsAAActive() and slot0._currentState == uv0.STATE_READY and slot0:CompareDistance(slot0:FilterRange(slot0:FilterTarget())) then
+		slot0:Fire(slot2)
 	end
 end
 
-function var_0_8.FilterTarget(arg_10_0)
-	local var_10_0 = arg_10_0._dataProxy:GetAircraftList()
-	local var_10_1 = {}
-	local var_10_2 = arg_10_0._host:GetIFF()
-	local var_10_3 = 1
+function slot8.FilterTarget(slot0)
+	slot4 = 1
 
-	for iter_10_0, iter_10_1 in pairs(var_10_0) do
-		if iter_10_1:GetIFF() ~= var_10_2 and iter_10_1:IsVisitable() then
-			var_10_1[var_10_3] = iter_10_1
-			var_10_3 = var_10_3 + 1
+	for slot8, slot9 in pairs(slot0._dataProxy:GetAircraftList()) do
+		if slot9:GetIFF() ~= slot0._host:GetIFF() and slot9:IsVisitable() then
+			slot4 = slot4 + 1
 		end
 	end
 
-	return var_10_1
+	return {
+		[slot4] = slot9
+	}
 end
 
-function var_0_8.FilterRange(arg_11_0, arg_11_1)
-	for iter_11_0 = #arg_11_1, 1, -1 do
-		if arg_11_0:IsOutOfRange(arg_11_1[iter_11_0]) then
-			table.remove(arg_11_1, iter_11_0)
+function slot8.FilterRange(slot0, slot1)
+	for slot5 = #slot1, 1, -1 do
+		if slot0:IsOutOfRange(slot1[slot5]) then
+			table.remove(slot1, slot5)
 		end
 	end
 
-	return arg_11_1
+	return slot1
 end
 
-function var_0_8.IsOutOfRange(arg_12_0, arg_12_1)
-	return arg_12_0:getTrackingHost():GetDistance(arg_12_1) > arg_12_0._range
+function slot8.IsOutOfRange(slot0, slot1)
+	return slot0._range < slot0:getTrackingHost():GetDistance(slot1)
 end
 
-function var_0_8.CompareDistance(arg_13_0, arg_13_1)
-	local var_13_0 = 999999
-	local var_13_1
+function slot8.CompareDistance(slot0, slot1)
+	slot3 = nil
 
-	for iter_13_0, iter_13_1 in ipairs(arg_13_1) do
-		if var_13_0 > iter_13_1:GetPosition().x then
-			var_13_1 = iter_13_1
-			var_13_0 = iter_13_1:GetPosition().x
+	for slot7, slot8 in ipairs(slot1) do
+		if slot8:GetPosition().x < 999999 then
+			slot3 = slot8
+			slot2 = slot8:GetPosition().x
 		end
 	end
 
-	return var_13_1
+	return slot3
 end
 
-function var_0_8.getTrackingHost(arg_14_0)
-	return arg_14_0._host
+function slot8.getTrackingHost(slot0)
+	return slot0._host
 end
 
-function var_0_8.Fire(arg_15_0, arg_15_1)
-	if arg_15_0._currentState == arg_15_0.DISABLE then
+function slot8.Fire(slot0, slot1)
+	if slot0._currentState == slot0.DISABLE then
 		return
 	end
 
-	local var_15_0 = arg_15_1:GetUniqueID()
-
-	arg_15_0._dataProxy:KillAircraft(var_15_0)
-	arg_15_0:EnterCoolDown()
-	arg_15_0._client:ConsumeAACounter()
+	slot0._dataProxy:KillAircraft(slot1:GetUniqueID())
+	slot0:EnterCoolDown()
+	slot0._client:ConsumeAACounter()
 end
 
-function var_0_8.EnterCoolDown(arg_16_0)
-	arg_16_0._currentState = arg_16_0.STATE_OVER_HEAT
+function slot8.EnterCoolDown(slot0)
+	slot0._currentState = slot0.STATE_OVER_HEAT
 
-	arg_16_0:AddCDTimer(arg_16_0._interval)
+	slot0:AddCDTimer(slot0._interval)
 end
 
-function var_0_8.GetCurrentState(arg_17_0)
-	return arg_17_0._currentState
+function slot8.GetCurrentState(slot0)
+	return slot0._currentState
 end
 
-function var_0_8.AddCDTimer(arg_18_0, arg_18_1)
-	local function var_18_0()
-		arg_18_0._currentState = arg_18_0.STATE_READY
+function slot8.AddCDTimer(slot0, slot1)
+	slot0:RemoveCDTimer()
 
-		arg_18_0:RemoveCDTimer()
-	end
+	slot0._cdTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponTimer", -1, slot1, function ()
+		uv0._currentState = uv0.STATE_READY
 
-	arg_18_0:RemoveCDTimer()
-
-	arg_18_0._cdTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponTimer", -1, arg_18_1, var_18_0, true)
+		uv0:RemoveCDTimer()
+	end, true)
 end
 
-function var_0_8.RemoveCDTimer(arg_20_0)
-	pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_20_0._cdTimer)
+function slot8.RemoveCDTimer(slot0)
+	pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._cdTimer)
 
-	arg_20_0._cdTimer = nil
+	slot0._cdTimer = nil
 end
 
-function var_0_8.Dispose(arg_21_0)
-	arg_21_0:RemoveCDTimer()
+function slot8.Dispose(slot0)
+	slot0:RemoveCDTimer()
 
-	arg_21_0._crewUnitList = nil
-	arg_21_0._hitFXResIDList = nil
-	arg_21_0._dataProxy = nil
-	arg_21_0._SFXID = nil
+	slot0._crewUnitList = nil
+	slot0._hitFXResIDList = nil
+	slot0._dataProxy = nil
+	slot0._SFXID = nil
 end

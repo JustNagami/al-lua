@@ -1,34 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffFixRange",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				bulletRange = 80,
-				weaponRange = 80,
-				index = {
-					3
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 0.25,
-				label = {
-					"MG"
-				},
-				index = {
-					3
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -358,5 +328,35 @@
 	stack = 1,
 	id = 13522,
 	icon = 13520,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffFixRange",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				bulletRange = 80,
+				weaponRange = 80,
+				index = {
+					3
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 0.25,
+				label = {
+					"MG"
+				},
+				index = {
+					3
+				}
+			}
+		}
+	}
 }

@@ -1,20 +1,19 @@
-﻿local var_0_0 = class("ReturnAwardPage", import("...base.BaseActivityPage"))
+slot0 = class("ReturnAwardPage", import("...base.BaseActivityPage"))
+slot0.INVITER = 1
+slot0.RETURNER = 2
 
-var_0_0.INVITER = 1
-var_0_0.RETURNER = 2
-
-function var_0_0.OnFirstFlush(arg_1_0)
-	local var_1_0 = {
+function slot0.OnFirstFlush(slot0)
+	slot1 = {
 		InviterPage,
 		ReturnerPage
 	}
-	local var_1_1 = arg_1_0.activity
+	slot2 = slot0.activity
 
-	assert(var_1_0[var_1_1.data1], var_1_1.data1)
+	assert(slot1[slot2.data1], slot2.data1)
 
-	arg_1_0.page = var_1_0[var_1_1.data1].New(arg_1_0._tf, arg_1_0.event)
+	slot0.page = slot1[slot2.data1].New(slot0._tf, slot0.event)
 
-	onButton(arg_1_0, arg_1_0.page.help, function()
+	onButton(slot0, slot0.page.help, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.returner_help.tip
@@ -22,20 +21,18 @@ function var_0_0.OnFirstFlush(arg_1_0)
 	end)
 end
 
-function var_0_0.OnUpdateFlush(arg_3_0)
-	local var_3_0 = arg_3_0.activity
-
-	assert(arg_3_0.page)
-	arg_3_0.page:Update(var_3_0)
+function slot0.OnUpdateFlush(slot0)
+	assert(slot0.page)
+	slot0.page:Update(slot0.activity)
 end
 
-function var_0_0.OnDestroy(arg_4_0)
-	assert(arg_4_0.page)
-	arg_4_0.page:Dispose()
+function slot0.OnDestroy(slot0)
+	assert(slot0.page)
+	slot0.page:Dispose()
 end
 
-function var_0_0.UseSecondPage(arg_5_0, arg_5_1)
-	return arg_5_1.data1 > 1
+function slot0.UseSecondPage(slot0, slot1)
+	return slot1.data1 > 1
 end
 
-return var_0_0
+return slot0

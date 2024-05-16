@@ -1,29 +1,27 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleConfig
+slot3 = class("BattleEnvironmentBehaviourShakeScreen", slot0.Battle.BattleEnvironmentBehaviour)
+slot0.Battle.BattleEnvironmentBehaviourShakeScreen = slot3
+slot3.__name = "BattleEnvironmentBehaviourShakeScreen"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = class("BattleEnvironmentBehaviourShakeScreen", var_0_0.Battle.BattleEnvironmentBehaviour)
-
-var_0_0.Battle.BattleEnvironmentBehaviourShakeScreen = var_0_3
-var_0_3.__name = "BattleEnvironmentBehaviourShakeScreen"
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.SetTemplate(arg_2_0, arg_2_1)
-	var_0_3.super.SetTemplate(arg_2_0, arg_2_1)
+function slot3.SetTemplate(slot0, slot1)
+	uv0.super.SetTemplate(slot0, slot1)
 
-	arg_2_0._shakeID = arg_2_0._tmpData.shake_ID
+	slot0._shakeID = slot0._tmpData.shake_ID
 end
 
-function var_0_3.doBehaviour(arg_3_0)
-	var_0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[arg_3_0._shakeID])
+function slot3.doBehaviour(slot0)
+	uv0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[slot0._shakeID])
 
-	arg_3_0._state = var_0_3.STATE_OVERHEAT
+	slot0._state = uv1.STATE_OVERHEAT
 
-	if arg_3_0._tmpData.reload_time then
-		arg_3_0._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	if slot0._tmpData.reload_time then
+		slot0._CDstartTime = pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 end

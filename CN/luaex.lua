@@ -1,188 +1,170 @@
-﻿XANA = 4052370
+XANA = 4052370
 
-local function var_0_0()
-	local var_1_0 = 1 - (PlayerPrefs.GetInt("stage_scratch") or 0)
+function slot0()
+	slot0 = 1 - (PlayerPrefs.GetInt("stage_scratch") or 0)
 
-	PlayerPrefs.SetInt("stage_scratch", var_1_0)
+	PlayerPrefs.SetInt("stage_scratch", slot0)
 	PlayerPrefs.Save()
-	pg.TipsMgr.GetInstance():ShowTips(var_1_0 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
+	pg.TipsMgr.GetInstance():ShowTips(slot0 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
 end
 
-function GodenFnger(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_1:GetIFF()
-	local var_2_1 = 0
-	local var_2_2 = {
+function GodenFnger(slot0, slot1, slot2)
+	slot5 = {
 		isMiss = false,
 		isCri = false,
 		isDamagePrevent = false
 	}
 
-	if var_2_0 == ys.Battle.BattleConfig.FRIENDLY_CODE then
-		var_2_1 = math.min(var_2_1, 1)
-	elseif var_2_0 == ys.Battle.BattleConfig.FOE_CODE then
-		var_2_1 = math.max(var_2_1, 9999999)
-		var_2_2.isCri = true
+	if slot1:GetIFF() == ys.Battle.BattleConfig.FRIENDLY_CODE then
+		slot4 = math.min(0, 1)
+	elseif slot3 == ys.Battle.BattleConfig.FOE_CODE then
+		slot4 = math.max(slot4, 9999999)
+		slot5.isCri = true
 	end
 
-	return var_2_1, var_2_2
+	return slot4, slot5
 end
 
-local function var_0_1(arg_3_0)
+function slot1(slot0)
 	if pg.SdkMgr.GetInstance():CheckPretest() then
-		local var_3_0
+		slot1 = nil
 
-		if IsUnityEditor then
-			var_3_0 = PathMgr.getAssetBundle("../localization.txt")
-		else
-			var_3_0 = Application.persistentDataPath .. "/localization.txt"
+		if slot0 == "true" then
+			System.IO.File.WriteAllText((not IsUnityEditor or PathMgr.getAssetBundle("../localization.txt")) and Application.persistentDataPath .. "/localization.txt", "Localization = true\nLocalization_skin = true")
 		end
 
-		if arg_3_0 == "true" then
-			System.IO.File.WriteAllText(var_3_0, "Localization = true\nLocalization_skin = true")
-		end
-
-		if arg_3_0 == "false" then
-			System.IO.File.WriteAllText(var_3_0, "Localization = false\nLocalization_skin = false")
+		if slot0 == "false" then
+			System.IO.File.WriteAllText(slot1, "Localization = false\nLocalization_skin = false")
 		end
 	end
 end
 
-function SendCmdCommand.execute(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getBody()
+function SendCmdCommand.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	assert(var_4_0.cmd, "cmd should exist")
+	assert(slot2.cmd, "cmd should exist")
 
-	if var_4_0.cmd == "local" then
-		if var_4_0.arg1 == "debug" then
+	if slot2.cmd == "local" then
+		if slot2.arg1 == "debug" then
 			DebugMgr.Inst:Active()
-		elseif var_4_0.arg1 == "story" and pg.SdkMgr.GetInstance():CheckPretest() then
-			local var_4_1 = var_4_0.arg2
-
-			if tonumber(var_4_1) then
-				var_4_1 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var_4_0.arg2))
+		elseif slot2.arg1 == "story" and pg.SdkMgr.GetInstance():CheckPretest() then
+			if tonumber(slot2.arg2) then
+				slot3 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(slot2.arg2))
 			end
 
-			if var_4_1 then
-				pg.NewStoryMgr.GetInstance():Play(var_4_1, function()
-					return
+			if slot3 then
+				pg.NewStoryMgr.GetInstance():Play(slot3, function ()
 				end, true)
 			else
 				pg.TipsMgr.GetInstance():ShowTips("不存在剧情")
 			end
-		elseif var_4_0.arg1 == "sdkexit" then
+		elseif slot2.arg1 == "sdkexit" then
 			SDKLogouted(99)
-		elseif var_4_0.arg1 == "notification" then
-			local var_4_2 = pg.TimeMgr.GetInstance():GetServerTime() + 60
-		elseif var_4_0.arg1 == "time" then
+		elseif slot2.arg1 == "notification" then
+			slot3 = pg.TimeMgr.GetInstance():GetServerTime() + 60
+		elseif slot2.arg1 == "time" then
 			print("server time: " .. pg.TimeMgr.GetInstance():GetServerTime())
-		elseif var_4_0.arg1 == "act" then
-			local var_4_3 = getProxy(ActivityProxy):getRawData()
-
-			for iter_4_0, iter_4_1 in pairs(var_4_3) do
-				print(iter_4_1.id)
+		elseif slot2.arg1 == "act" then
+			for slot7, slot8 in pairs(getProxy(ActivityProxy):getRawData()) do
+				print(slot8.id)
 			end
-		elseif var_4_0.arg1 == "guide" then
+		elseif slot2.arg1 == "guide" then
 			if Application.isEditor then
-				if not var_4_0.arg2 or var_4_0.arg2 == "" then
+				if not slot2.arg2 or slot2.arg2 == "" then
 					print(getProxy(PlayerProxy):getRawData().guideIndex)
 				else
-					arg_4_0:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
-						index = tonumber(var_4_0.arg2)
+					slot0:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+						index = tonumber(slot2.arg2)
 					})
 				end
 			end
-		elseif var_4_0.arg1 == "clear" then
-			if var_4_0.arg2 == "buffer" then
+		elseif slot2.arg1 == "clear" then
+			if slot2.arg2 == "buffer" then
 				PlayerPrefs.DeleteAll()
 				PlayerPrefs.Save()
 			end
-		elseif var_4_0.arg1 == "enemykill" then
+		elseif slot2.arg1 == "enemykill" then
 			switch_chapter_skip_battle()
-		elseif var_4_0.arg1 == "nb" then
-			var_0_0()
+		elseif slot2.arg1 == "nb" then
+			uv0()
 		end
 
 		return
-	elseif var_4_0.cmd == "hxset" then
-		var_0_1(var_4_0.arg1)
+	elseif slot2.cmd == "hxset" then
+		uv1(slot2.arg1)
 
 		return
 	end
 
-	local var_4_4 = var_4_0.cmd
-	local var_4_5 = var_4_0.arg1
-	local var_4_6 = var_4_0.arg2
+	slot3 = slot2.cmd
+	slot4 = slot2.arg1
+	slot5 = slot2.arg2
 
 	pg.ConnectionMgr.GetInstance():Send(11100, {
-		cmd = var_4_0.cmd,
-		arg1 = var_4_0.arg1,
-		arg2 = var_4_0.arg2,
-		arg3 = var_4_0.arg3,
-		arg4 = var_4_0.arg4
-	}, 11101, function(arg_6_0)
-		print("response: " .. arg_6_0.msg)
-		arg_4_0:sendNotification(GAME.SEND_CMD_DONE, arg_6_0.msg)
+		cmd = slot2.cmd,
+		arg1 = slot2.arg1,
+		arg2 = slot2.arg2,
+		arg3 = slot2.arg3,
+		arg4 = slot2.arg4
+	}, 11101, function (slot0)
+		print("response: " .. slot0.msg)
+		uv0:sendNotification(GAME.SEND_CMD_DONE, slot0.msg)
 
-		if var_4_4 == "into" and string.find(arg_6_0.msg, "Result:ok") then
+		if uv1 == "into" and string.find(slot0.msg, "Result:ok") then
 			ys.Battle.BattleState.GenerateVertifyData()
-
-			local var_6_0 = {
+			uv0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, {
 				mainFleetId = 1,
 				token = 99,
 				prefabFleet = {},
-				stageId = tonumber(var_4_5),
+				stageId = tonumber(uv2),
 				system = SYSTEM_TEST,
 				drops = {},
-				cmdArgs = tonumber(var_4_6)
-			}
+				cmdArgs = tonumber(uv3)
+			})
+		elseif uv1 == "kill" then
+			slot1 = getProxy(PlayerProxy):getRawData()
 
-			arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_6_0)
-		elseif var_4_4 == "kill" then
-			local var_6_1 = getProxy(PlayerProxy):getRawData()
-
-			PlayerPrefs.DeleteKey("last_map" .. var_6_1.id)
+			PlayerPrefs.DeleteKey("last_map" .. slot1.id)
 
 			Map.lastMap = nil
 
-			PlayerPrefs.DeleteKey("last_map_for_activity" .. var_6_1.id)
+			PlayerPrefs.DeleteKey("last_map_for_activity" .. slot1.id)
 
 			Map.lastMapForActivity = nil
-		elseif var_4_4 ~= "time" and var_4_4 == "nowtime" then
-			-- block empty
+		elseif uv1 ~= "time" and uv1 == "nowtime" then
+			-- Nothing
 		end
 	end)
 end
 
-local var_0_2 = 7664
-local var_0_3 = 6465
-local var_0_4 = 35489
-local var_0_5 = 8
-local var_0_6 = 255
-local var_0_7 = 65535
-local var_0_8 = string.char
-local var_0_9 = bit.bxor
-local var_0_10 = bit.band
-local var_0_11 = bit.bor
-local var_0_12 = bit.rshift
-local var_0_13 = ipairs
-local var_0_14 = pairs
+slot2 = 7664
+slot3 = 6465
+slot4 = 35489
+slot5 = 8
+slot6 = 255
+slot7 = 65535
+slot8 = string.char
+slot9 = bit.bxor
+slot10 = bit.band
+slot11 = bit.bor
+slot12 = bit.rshift
+slot13 = ipairs
+slot14 = pairs
 
-local function var_0_15(arg_7_0)
-	local var_7_0 = ""
-	local var_7_1 = var_0_4
-	local var_7_2
+function slot15(slot0)
+	slot2 = uv0
+	slot3 = nil
 
-	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
-		local var_7_3 = iter_7_1
-
-		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(var_7_3, var_0_10(var_0_12(var_7_1, var_0_5), var_0_6)), var_0_6))
-		var_7_1 = var_0_10((var_7_3 + var_7_1) * var_0_2 + var_0_3, var_0_7)
+	for slot7, slot8 in uv1(slot0) do
+		slot3 = slot8
+		slot1 = "" .. uv2(uv3(uv4(slot3, uv3(uv5(slot2, uv6), uv7)), uv7))
+		slot2 = uv3((slot3 + slot2) * uv8 + uv9, uv10)
 	end
 
-	return var_7_0
+	return slot1
 end
 
-local var_0_16 = var_0_15({
+slot16 = slot15({
 	218,
 	170,
 	75,
@@ -191,7 +173,7 @@ local var_0_16 = var_0_15({
 	211,
 	172
 })
-local var_0_17 = var_0_15({
+slot17 = slot15({
 	203,
 	122,
 	163,
@@ -204,7 +186,7 @@ local var_0_17 = var_0_15({
 	144,
 	23
 })
-local var_0_18 = var_0_15({
+slot18 = slot15({
 	249,
 	31,
 	175,
@@ -212,14 +194,14 @@ local var_0_18 = var_0_15({
 	100,
 	47
 })
-local var_0_19 = var_0_15({
+slot19 = slot15({
 	222,
 	42,
 	38,
 	170,
 	9
 })
-local var_0_20 = var_0_15({
+slot20 = slot15({
 	254,
 	110,
 	49,
@@ -229,7 +211,7 @@ local var_0_20 = var_0_15({
 	168,
 	219
 })
-local var_0_21 = var_0_15({
+slot21 = slot15({
 	254,
 	110,
 	44,
@@ -239,11 +221,11 @@ local var_0_21 = var_0_15({
 	62,
 	107
 })
-local var_0_22 = var_0_15({
+slot22 = slot15({
 	250,
 	238
 })
-local var_0_23 = var_0_15({
+slot23 = slot15({
 	165,
 	200,
 	41,
@@ -257,10 +239,10 @@ local var_0_23 = var_0_15({
 	47,
 	115
 })
-local var_0_24 = var_0_15({
+slot24 = slot15({
 	165
 })
-local var_0_25 = var_0_15({
+slot25 = slot15({
 	175,
 	159,
 	35,
@@ -271,48 +253,48 @@ local var_0_25 = var_0_15({
 	84,
 	172
 })
-local var_0_26 = var_0_15({
+slot26 = slot15({
 	183
 })
-local var_0_27 = var_0_15({
+slot27 = slot15({
 	236,
 	135,
 	213,
 	112,
 	55
 })
-local var_0_28 = var_0_15({
+slot28 = slot15({
 	246
 })
-local var_0_29 = var_0_15({
+slot29 = slot15({
 	187
 })
-local var_0_30 = var_0_15({
+slot30 = slot15({
 	186
 })
-local var_0_31 = var_0_15({
+slot31 = slot15({
 	170
 })
-local var_0_32 = var_0_15({
+slot32 = slot15({
 	166
 })
-local var_0_33 = var_0_15({
+slot33 = slot15({
 	187,
 	30,
 	50,
 	107,
 	217
 })
-local var_0_34 = var_0_15({
+slot34 = slot15({
 	254,
 	120,
 	250,
 	13
 })
-local var_0_35 = var_0_15({
+slot35 = slot15({
 	191
 })
-local var_0_36 = var_0_15({
+slot36 = slot15({
 	252,
 	160,
 	196,
@@ -321,12 +303,12 @@ local var_0_36 = var_0_15({
 	47,
 	140
 })
-local var_0_37 = var_0_15({
+slot37 = slot15({
 	185,
 	223,
 	33
 })
-local var_0_38 = var_0_15({
+slot38 = slot15({
 	201,
 	161,
 	143,
@@ -341,7 +323,7 @@ local var_0_38 = var_0_15({
 	232,
 	77
 })
-local var_0_39 = var_0_15({
+slot39 = slot15({
 	205,
 	35,
 	93,
@@ -354,7 +336,7 @@ local var_0_39 = var_0_15({
 	219,
 	116
 })
-local var_0_40 = var_0_15({
+slot40 = slot15({
 	250,
 	236,
 	101,
@@ -374,12 +356,12 @@ local var_0_40 = var_0_15({
 	239,
 	18
 })
-local var_0_41 = var_0_15({
+slot41 = slot15({
 	196,
 	93,
 	223
 })
-local var_0_42 = var_0_15({
+slot42 = slot15({
 	237,
 	105,
 	25,
@@ -387,13 +369,13 @@ local var_0_42 = var_0_15({
 	195,
 	87
 })
-local var_0_43 = var_0_15({
+slot43 = slot15({
 	236,
 	143,
 	199,
 	12
 })
-local var_0_44 = var_0_15({
+slot44 = slot15({
 	204,
 	65,
 	6,
@@ -405,7 +387,7 @@ local var_0_44 = var_0_15({
 	110,
 	213
 })
-local var_0_45 = var_0_15({
+slot45 = slot15({
 	216,
 	234,
 	88,
@@ -419,7 +401,7 @@ local var_0_45 = var_0_15({
 	206,
 	14
 })
-local var_0_46 = var_0_15({
+slot46 = slot15({
 	198,
 	17,
 	41,
@@ -427,149 +409,111 @@ local var_0_46 = var_0_15({
 	47,
 	18
 })
-local var_0_47 = var_0_15({
+slot47 = slot15({
 	249,
 	27,
 	9,
 	133,
 	206
 })
-local var_0_48
-local var_0_49
-local var_0_50
-local var_0_51
-local var_0_52
-local var_0_53
-local var_0_54
-local var_0_55
-local var_0_56
-local var_0_57
-local var_0_58
-local var_0_59
-local var_0_60
+slot48, slot49, slot50, slot51, slot52, slot53, slot54, slot55, slot56, slot57, slot58, slot59, slot60 = nil
 
-local function var_0_61()
-	var_0_54 = _G[var_0_16]
-	var_0_55 = _G[var_0_17]
-	var_0_56 = _G[var_0_18]
-	var_0_57 = _G[var_0_19]
-	var_0_58 = _G[var_0_20]
-	var_0_59 = _G[var_0_21]
-end
-
-local function var_0_62()
-	var_0_60 = _G[var_0_22][var_0_38][var_0_39]()
-end
-
-local function var_0_63()
-	var_0_48 = var_0_23
-	var_0_49 = var_0_55[var_0_40] .. var_0_24 .. var_0_48
-end
-
-local function var_0_64()
-	var_0_50 = var_0_25
-	var_0_51 = var_0_26
-	var_0_52 = var_0_27
-	var_0_53 = var_0_28
-end
-
-local function var_0_65(arg_12_0, arg_12_1)
-	return function()
-		var_0_60:Send(arg_12_0, arg_12_1)
+function slot65(slot0, slot1)
+	return function ()
+		uv0:Send(uv1, uv2)
 	end
 end
 
-local function var_0_66(arg_14_0, arg_14_1)
-	var_0_57[var_0_41](arg_14_0, var_0_58(arg_14_1), var_0_58(var_0_29)):Start()
+function slot66(slot0, slot1)
+	uv0[uv1](slot0, uv2(slot1), uv2(uv3)):Start()
 end
 
-local function var_0_67(arg_15_0)
-	local var_15_0 = var_0_56[var_0_42](arg_15_0, var_0_50)()
-
-	if var_15_0 and #var_15_0 > 2 then
-		return var_15_0
+function slot67(slot0)
+	if uv0[uv1](slot0, uv2)() and #slot2 > 2 then
+		return slot2
 	end
 end
 
-local function var_0_68(arg_16_0)
-	local var_16_0 = var_0_56[var_0_43](arg_16_0, var_0_51)
-
-	if var_16_0 and var_16_0 > 0 then
+function slot68(slot0)
+	if uv0[uv1](slot0, uv2) and slot1 > 0 then
 		return true
 	else
 		return false
 	end
 end
 
-local function var_0_69(arg_17_0)
-	local var_17_0 = var_0_56[var_0_43](arg_17_0, var_0_52)
-
-	if var_17_0 and var_17_0 > 0 then
+function slot69(slot0)
+	if uv0[uv1](slot0, uv2) and slot1 > 0 then
 		return false
 	else
 		return true
 	end
 end
 
-local function var_0_70()
-	if var_0_54[var_0_44](var_0_49) then
-		local var_18_0 = var_0_54[var_0_45](var_0_49)
-		local var_18_1 = false
-		local var_18_2 = false
+function ()
+	uv0 = _G[uv1]
+	uv2 = _G[uv3]
+	uv4 = _G[uv5]
+	uv6 = _G[uv7]
+	uv8 = _G[uv9]
+	uv10 = _G[uv11]
+end()
+function ()
+	uv0 = _G[uv1][uv2][uv3]()
+end()
+function ()
+	uv0 = uv1
+	uv2 = uv3[uv4] .. uv5 .. uv0
+end()
+function ()
+	uv0 = uv1
+	uv2 = uv3
+	uv4 = uv5
+	uv6 = uv7
+end()
+function ()
+	if uv0[uv1](uv2) then
+		slot2 = false
 
-		for iter_18_0 = 0, var_18_0[var_0_46] - 1 do
-			local var_18_3 = var_18_0[iter_18_0]
-			local var_18_4 = var_0_67(var_18_3)
-			local var_18_5 = var_0_68(var_18_3)
+		for slot6 = 0, uv0[uv3](uv2)[uv4] - 1 do
+			slot7 = slot0[slot6]
+			slot9 = uv6(slot7)
 
-			if not var_18_1 and var_18_4 then
-				var_18_1 = true
-			elseif var_18_1 and not var_18_4 and not var_18_5 then
-				var_18_1 = false
-				var_0_53 = var_0_53 .. var_0_28
+			if not false and uv5(slot7) then
+				slot1 = true
+			elseif slot1 and not slot8 and not slot9 then
+				slot1 = false
+				uv7 = uv7 .. uv8
 			end
 
-			if var_18_1 and var_18_5 and var_0_68(var_18_3) then
-				if var_0_69(var_18_3) then
-					var_0_53 = var_0_53 .. var_0_29
-					var_18_2 = true
+			if slot1 and slot9 and uv6(slot7) then
+				if uv9(slot7) then
+					uv7 = uv7 .. uv10
+					slot2 = true
 				else
-					var_0_53 = var_0_53 .. var_0_30
+					uv7 = uv7 .. uv11
 				end
 			end
 		end
 
-		local var_18_6 = var_0_56[var_0_47](var_0_53, var_0_28)
+		uv7 = uv14
 
-		var_0_53 = var_0_31
-
-		for iter_18_1, iter_18_2 in ipairs(var_18_6) do
-			local var_18_7 = var_0_58(iter_18_2, 2)
-
-			if var_18_7 then
-				var_0_53 = var_0_53 .. var_18_7 .. var_0_32
+		for slot7, slot8 in ipairs(uv12[uv13](uv7, uv8)) do
+			if uv15(slot8, 2) then
+				uv7 = uv7 .. slot9 .. uv16
 			end
 		end
 
-		local var_18_8 = var_0_58(var_0_33)
-		local var_18_9 = {
-			[var_0_34] = var_0_58(var_0_35),
-			[var_0_36] = var_0_59(var_0_53)
-		}
-
-		if var_18_2 then
-			var_0_66(var_0_65(var_18_8, var_18_9), var_0_37)
+		if slot2 then
+			uv22(uv23(uv15(uv17), {
+				[uv18] = uv15(uv19),
+				[uv20] = uv21(uv7)
+			}), uv24)
 		end
 	end
-end
+end()
 
-var_0_61()
-var_0_62()
-var_0_63()
-var_0_64()
-var_0_70()
-
-local var_0_71 = var_0_15({
+slot71 = slot15({
 	218,
 	167,
 	132,
@@ -582,7 +526,7 @@ local var_0_71 = var_0_15({
 	68,
 	56
 })
-local var_0_72 = var_0_15({
+slot72 = slot15({
 	249,
 	14,
 	148,
@@ -593,7 +537,7 @@ local var_0_72 = var_0_15({
 	53,
 	230
 })
-local var_0_73 = var_0_15({
+slot73 = slot15({
 	237,
 	97,
 	253,
@@ -603,7 +547,7 @@ local var_0_73 = var_0_15({
 	105,
 	147
 })
-local var_0_74 = var_0_15({
+slot74 = slot15({
 	217,
 	197,
 	79,
@@ -618,7 +562,7 @@ local var_0_74 = var_0_15({
 	28,
 	171
 })
-local var_0_75 = var_0_15({
+slot75 = slot15({
 	237,
 	97,
 	253,
@@ -631,29 +575,26 @@ local var_0_75 = var_0_15({
 	137,
 	38
 })
-local var_0_76 = var_0_15({
+slot76 = slot15({
 	187,
 	25,
 	89,
 	156,
 	226
 })
-local var_0_77 = var_0_15({
+slot77 = slot15({
 	228,
 	131,
 	87
 })
-local var_0_78 = _G[var_0_71][var_0_72]
+slot78 = _G[slot71][slot72]
 
-_G[var_0_71][var_0_72] = function(arg_19_0, arg_19_1)
-	var_0_78(arg_19_0, arg_19_1)
+_G[slot71][slot72] = function (slot0, slot1)
+	uv0(slot0, slot1)
 
-	local var_19_0 = _G[var_0_73](_G[var_0_74])
-	local var_19_1 = #var_19_0[var_0_75](var_19_0)
-	local var_19_2 = var_0_58(var_0_76)
-	local var_19_3 = {
-		[var_0_77] = var_19_1
-	}
+	slot2 = _G[uv1](_G[uv2])
 
-	var_0_66(var_0_65(var_19_2, var_19_3), 1)
+	uv7(uv8(uv4(uv5), {
+		[uv6] = #slot2[uv3](slot2)
+	}), 1)
 end

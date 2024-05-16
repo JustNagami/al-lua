@@ -1,151 +1,121 @@
-﻿local var_0_0 = class("ShipEquipAllChangeCommand", pm.SimpleCommand)
+slot0 = class("ShipEquipAllChangeCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(BayProxy)
-	local var_1_2 = getProxy(EquipmentProxy)
+function slot0.execute(slot0, slot1)
+	slot4 = getProxy(EquipmentProxy)
 
-	local function var_1_3(arg_2_0, arg_2_1, arg_2_2)
-		return function(arg_3_0)
+	function slot5(slot0, slot1, slot2)
+		return function (slot0)
 			pg.ConnectionMgr.GetInstance():Send(12006, {
 				type = 0,
-				ship_id = arg_2_0,
-				equip_id = arg_2_1,
-				pos = arg_2_2
-			}, 12007, function(arg_4_0)
-				if arg_4_0.result == 0 then
-					local var_4_0 = var_1_1:getShipById(arg_2_0)
-					local var_4_1 = var_4_0:getEquip(arg_2_2)
-
-					if var_4_1 then
-						var_1_2:addEquipment(var_4_1)
+				ship_id = uv0,
+				equip_id = uv1,
+				pos = uv2
+			}, 12007, function (slot0)
+				if slot0.result == 0 then
+					if uv0:getShipById(uv1):getEquip(uv2) then
+						uv3:addEquipment(slot2)
 					end
 
-					local var_4_2 = arg_2_1 > 0 and var_1_2:getEquipmentById(arg_2_1) or nil
+					if uv4 > 0 and uv3:getEquipmentById(uv4) or nil then
+						slot3.count = 1
 
-					if var_4_2 then
-						var_4_2.count = 1
-
-						var_1_2:removeEquipmentById(arg_2_1, 1)
+						uv3:removeEquipmentById(uv4, 1)
 					end
 
-					var_4_0:updateEquip(arg_2_2, var_4_2)
-					var_1_1:updateShip(var_4_0)
-					existCall(arg_3_0)
+					slot1:updateEquip(uv2, slot3)
+					uv0:updateShip(slot1)
+					existCall(uv5)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", arg_4_0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", slot0.result))
 				end
 			end)
 		end
 	end
 
-	local function var_1_4(arg_5_0, arg_5_1)
-		return function(arg_6_0)
+	function slot6(slot0, slot1)
+		return function (slot0)
 			pg.ConnectionMgr.GetInstance():Send(14201, {
-				spweapon_id = arg_5_1,
-				ship_id = arg_5_0
-			}, 14202, function(arg_7_0)
-				if arg_7_0.result == 0 then
-					local var_7_0 = var_1_1:getShipById(arg_5_0)
-					local var_7_1 = var_7_0:GetSpWeapon()
-
-					if var_7_1 then
-						var_1_2:AddSpWeapon(var_7_1)
+				spweapon_id = uv0,
+				ship_id = uv1
+			}, 14202, function (slot0)
+				if slot0.result == 0 then
+					if uv0:getShipById(uv1):GetSpWeapon() then
+						uv2:AddSpWeapon(slot2)
 					end
 
-					local var_7_2 = arg_5_1 > 0 and var_1_2:GetSpWeaponByUid(arg_5_1) or nil
-
-					if var_7_2 then
-						var_1_2:RemoveSpWeapon(var_7_2)
+					if uv3 > 0 and uv2:GetSpWeaponByUid(uv3) or nil then
+						uv2:RemoveSpWeapon(slot3)
 					end
 
-					var_7_0:UpdateSpWeapon(var_7_2)
-					var_1_1:updateShip(var_7_0)
-					existCall(arg_6_0)
+					slot1:UpdateSpWeapon(slot3)
+					uv0:updateShip(slot1)
+					existCall(uv4)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", arg_7_0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", slot0.result))
 				end
 			end)
 		end
 	end
 
-	local var_1_5 = var_1_0.shipId
-	local var_1_6 = var_1_1:getShipById(var_1_5)
-
-	if not var_1_6 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_5))
+	if not getProxy(BayProxy):getShipById(slot1:getBody().shipId) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot7))
 
 		return
 	end
 
-	local var_1_7 = {}
-	local var_1_8 = {}
-	local var_1_9 = var_1_0.equipData
-	local var_1_10 = 0
-	local var_1_11 = 0
+	slot9 = {}
+	slot10 = {}
+	slot12 = 0
+	slot13 = 0
 
-	for iter_1_0, iter_1_1 in ipairs(var_1_9) do
-		local var_1_12 = false
+	for slot17, slot18 in ipairs(slot2.equipData) do
+		slot19 = false
 
-		if iter_1_0 == 6 then
-			if iter_1_1 then
-				var_1_12 = iter_1_1 and iter_1_1.shipId == var_1_5
-			else
-				var_1_12 = not var_1_6.spWeapon
-			end
-
-			if not var_1_12 then
-				if iter_1_1 and iter_1_1.shipId then
-					table.insert(var_1_8, var_1_4(iter_1_1.shipId, 0))
+		if slot17 == 6 then
+			if not (slot18 and slot18 and slot18.shipId == slot7 or not slot8.spWeapon) then
+				if slot18 and slot18.shipId then
+					table.insert(slot10, slot6(slot18.shipId, 0))
 				end
 
-				table.insert(var_1_8, var_1_4(var_1_5, iter_1_1 and iter_1_1.uid or 0))
+				table.insert(slot10, slot6(slot7, slot18 and slot18.uid or 0))
 
-				if var_1_6.spWeapon or iter_1_1 and iter_1_1.shipId then
-					var_1_11 = var_1_11 + 1
+				if slot8.spWeapon or slot18 and slot18.shipId then
+					slot13 = slot13 + 1
 				end
 			end
-		else
-			if iter_1_1 then
-				var_1_12 = iter_1_1 and iter_1_1.shipId == var_1_5 and iter_1_1.shipPos == iter_1_0
-			else
-				var_1_12 = not var_1_6.equipments[iter_1_0]
+		elseif not (slot18 and slot18 and slot18.shipId == slot7 and slot18.shipPos == slot17 or not slot8.equipments[slot17]) then
+			if slot8.equipments[slot17] then
+				table.insert(slot9, slot5(slot7, 0, slot17))
 			end
 
-			if not var_1_12 then
-				if var_1_6.equipments[iter_1_0] then
-					table.insert(var_1_7, var_1_3(var_1_5, 0, iter_1_0))
-				end
+			if slot18 and slot18.shipId and slot18.shipId ~= slot7 then
+				table.insert(slot10, slot5(slot18.shipId, 0, slot18.shipPos))
+			end
 
-				if iter_1_1 and iter_1_1.shipId and iter_1_1.shipId ~= var_1_5 then
-					table.insert(var_1_8, var_1_3(iter_1_1.shipId, 0, iter_1_1.shipPos))
-				end
+			table.insert(slot10, slot5(slot7, slot18 and slot18.id or 0, slot17))
 
-				table.insert(var_1_8, var_1_3(var_1_5, iter_1_1 and iter_1_1.id or 0, iter_1_0))
-
-				if var_1_6.equipments[iter_1_0] or iter_1_1 and iter_1_1.shipId then
-					var_1_10 = var_1_10 + 1
-				end
+			if slot8.equipments[slot17] or slot18 and slot18.shipId then
+				slot12 = slot12 + 1
 			end
 		end
 	end
 
-	if var_1_10 > 0 and getProxy(PlayerProxy):getData():getMaxEquipmentBag() < var_1_2:getCapacity() + var_1_10 then
+	if slot12 > 0 and getProxy(PlayerProxy):getData():getMaxEquipmentBag() < slot4:getCapacity() + slot12 then
 		NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
 
 		return
 	end
 
-	if var_1_11 > 0 and var_1_2:GetSpWeaponCapacity() < var_1_2:GetSpWeaponCount() + var_1_11 then
+	if slot13 > 0 and slot4:GetSpWeaponCapacity() < slot4:GetSpWeaponCount() + slot13 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_bag_no_enough"))
 
 		return
 	end
 
-	seriesAsync(table.mergeArray(var_1_7, var_1_8), function()
-		arg_1_0:sendNotification(GAME.SHIP_EQUIP_ALL_CHANGE_DONE, var_1_5)
+	seriesAsync(table.mergeArray(slot9, slot10), function ()
+		uv0:sendNotification(GAME.SHIP_EQUIP_ALL_CHANGE_DONE, uv1)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_import_success"))
 	end)
 end
 
-return var_0_0
+return slot0

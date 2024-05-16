@@ -1,213 +1,192 @@
-﻿local var_0_0 = class("NewNavalTacticsSelLessonPage", import("....base.BaseSubView"))
+slot0 = class("NewNavalTacticsSelLessonPage", import("....base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "NewNavalTacticsLessonPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.skillPanel = arg_2_0:findTF("skill")
-	arg_2_0.cancelBtn = arg_2_0:findTF("cancel_btn")
-	arg_2_0.confirmBtn = arg_2_0:findTF("confirm_btn")
-	arg_2_0.toggleGroup = arg_2_0:findTF("items"):GetComponent(typeof(ToggleGroup))
-	arg_2_0.lessonNameTxt = arg_2_0:findTF("introl/name"):GetComponent(typeof(Text))
-	arg_2_0.lessonDescTxt = arg_2_0:findTF("introl/desc"):GetComponent(typeof(Text))
-	arg_2_0.lessonExpTxt = arg_2_0:findTF("introl/exp_Text"):GetComponent(typeof(Text))
-	arg_2_0.lessonTimeTxt = arg_2_0:findTF("introl/timer_Text"):GetComponent(typeof(Text))
-	arg_2_0.skillCard = NewNavalTacticsAdditionSkillCard.New(arg_2_0:findTF("skill/info"))
-	arg_2_0.itemTpls = {
-		arg_2_0:findTF("items/scorll/content/item")
+function slot0.OnLoaded(slot0)
+	slot0.skillPanel = slot0:findTF("skill")
+	slot0.cancelBtn = slot0:findTF("cancel_btn")
+	slot0.confirmBtn = slot0:findTF("confirm_btn")
+	slot0.toggleGroup = slot0:findTF("items"):GetComponent(typeof(ToggleGroup))
+	slot0.lessonNameTxt = slot0:findTF("introl/name"):GetComponent(typeof(Text))
+	slot0.lessonDescTxt = slot0:findTF("introl/desc"):GetComponent(typeof(Text))
+	slot0.lessonExpTxt = slot0:findTF("introl/exp_Text"):GetComponent(typeof(Text))
+	slot0.lessonTimeTxt = slot0:findTF("introl/timer_Text"):GetComponent(typeof(Text))
+	slot0.skillCard = NewNavalTacticsAdditionSkillCard.New(slot0:findTF("skill/info"))
+	slot0.itemTpls = {
+		slot0:findTF("items/scorll/content/item")
 	}
-	arg_2_0.startPos = arg_2_0.itemTpls[1].anchoredPosition
-	arg_2_0.space = Vector2(60, 30)
-	arg_2_0.cloumnCnt = 6
+	slot0.startPos = slot0.itemTpls[1].anchoredPosition
+	slot0.space = Vector2(60, 30)
+	slot0.cloumnCnt = 6
 
-	setText(arg_2_0:findTF("introl/exp_label"), i18n("tactics_class_get_exp"))
-	setText(arg_2_0:findTF("introl/timer_label"), i18n("tactics_class_spend_time"))
-	setText(arg_2_0.confirmBtn:Find("Image"), i18n("tactics_class_start"))
-	setText(arg_2_0.cancelBtn:Find("Image"), i18n("tactics_class_cancel"))
+	setText(slot0:findTF("introl/exp_label"), i18n("tactics_class_get_exp"))
+	setText(slot0:findTF("introl/timer_label"), i18n("tactics_class_spend_time"))
+	setText(slot0.confirmBtn:Find("Image"), i18n("tactics_class_start"))
+	setText(slot0.cancelBtn:Find("Image"), i18n("tactics_class_cancel"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.cancelBtn, function()
-		arg_3_0:Cancel()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.cancelBtn, function ()
+		uv0:Cancel()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.confirmBtn, function()
-		if not arg_3_0.selLessonId or not arg_3_0.spendTime then
+	onButton(slot0, slot0.confirmBtn, function ()
+		if not uv0.selLessonId or not uv0.spendTime then
 			return
 		end
 
-		arg_3_0.student:setLesson(arg_3_0.selLessonId)
-		arg_3_0.student:setTime(arg_3_0.spendTime)
-		arg_3_0:emit(NewNavalTacticsLayer.ON_LESSON_SELECTED, arg_3_0.student)
+		uv0.student:setLesson(uv0.selLessonId)
+		uv0.student:setTime(uv0.spendTime)
+		uv0:emit(NewNavalTacticsLayer.ON_LESSON_SELECTED, uv0.student)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.skillPanel, function()
-		if not arg_3_0.canBack then
+	onButton(slot0, slot0.skillPanel, function ()
+		if not uv0.canBack then
 			return
 		end
 
-		arg_3_0:emit(NewNavalTacticsLayer.ON_RESEL_SKILL, arg_3_0.student)
+		uv0:emit(NewNavalTacticsLayer.ON_RESEL_SKILL, uv0.student)
 	end, SFX_PANEL)
 end
 
-function var_0_0.SetHideCallback(arg_7_0, arg_7_1)
-	arg_7_0.hideCallback = arg_7_1
+function slot0.SetHideCallback(slot0, slot1)
+	slot0.hideCallback = slot1
 end
 
-function var_0_0.Show(arg_8_0, arg_8_1, arg_8_2)
-	var_0_0.super.Show(arg_8_0)
+function slot0.Show(slot0, slot1, slot2)
+	uv0.super.Show(slot0)
 
-	arg_8_0.canBack = defaultValue(arg_8_2, true)
+	slot0.canBack = defaultValue(slot2, true)
 
-	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 
-	if arg_8_1 ~= arg_8_0.student then
-		arg_8_0.selLessonId = nil
-		arg_8_0.spendTime = nil
-		arg_8_0.student = arg_8_1
+	if slot1 ~= slot0.student then
+		slot0.selLessonId = nil
+		slot0.spendTime = nil
+		slot0.student = slot1
 
-		arg_8_0:Flush()
+		slot0:Flush()
 	else
-		arg_8_0:Flush()
+		slot0:Flush()
 	end
 end
 
-function var_0_0.Cancel(arg_9_0)
-	arg_9_0:emit(NewNavalTacticsMediator.ON_CANCEL_ADD_STUDENT)
+function slot0.Cancel(slot0)
+	slot0:emit(NewNavalTacticsMediator.ON_CANCEL_ADD_STUDENT)
 end
 
-function var_0_0.Hide(arg_10_0)
-	var_0_0.super.Hide(arg_10_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf, pg.UIMgr.GetInstance().UIMain)
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, pg.UIMgr.GetInstance().UIMain)
 
-	if arg_10_0.hideCallback then
-		arg_10_0.hideCallback()
+	if slot0.hideCallback then
+		slot0.hideCallback()
 
-		arg_10_0.hideCallback = nil
+		slot0.hideCallback = nil
 	end
 end
 
-function var_0_0.Flush(arg_11_0)
-	local var_11_0 = arg_11_0.student
-	local var_11_1 = getProxy(BayProxy):RawGetShipById(var_11_0.shipId)
-	local var_11_2 = var_11_0:getSkillId(var_11_1)
+function slot0.Flush(slot0)
+	slot1 = slot0.student
+	slot2 = getProxy(BayProxy):RawGetShipById(slot1.shipId)
 
-	arg_11_0:UpdateLessons(var_11_2, var_11_1)
+	slot0:UpdateLessons(slot1:getSkillId(slot2), slot2)
 end
 
-function var_0_0.GetLessons(arg_12_0)
-	local var_12_0 = getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE)
+function slot0.GetLessons(slot0)
+	slot1 = getProxy(BagProxy):getItemsByType(Item.LESSON_TYPE)
 
-	table.sort(var_12_0, function(arg_13_0, arg_13_1)
-		local var_13_0 = arg_13_0:getConfig("rarity")
-		local var_13_1 = arg_13_1:getConfig("rarity")
-
-		if var_13_0 == var_13_1 then
-			return arg_13_0.id < arg_13_1.id
+	table.sort(slot1, function (slot0, slot1)
+		if slot0:getConfig("rarity") == slot1:getConfig("rarity") then
+			return slot0.id < slot1.id
 		else
-			return var_13_1 < var_13_0
+			return slot3 < slot2
 		end
 	end)
 
-	return var_12_0
+	return slot1
 end
 
-function var_0_0.UpdateLessons(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_0:GetLessons()
-
-	for iter_14_0 = 1, #var_14_0 do
-		local var_14_1 = arg_14_0.itemTpls[iter_14_0]
-
-		if not var_14_1 then
-			local var_14_2 = arg_14_0.itemTpls[1]
-
-			var_14_1 = Object.Instantiate(var_14_2.gameObject, var_14_2.parent).transform
-			arg_14_0.itemTpls[iter_14_0] = var_14_1
+function slot0.UpdateLessons(slot0, slot1, slot2)
+	for slot7 = 1, #slot0:GetLessons() do
+		if not slot0.itemTpls[slot7] then
+			slot9 = slot0.itemTpls[1]
+			slot0.itemTpls[slot7] = Object.Instantiate(slot9.gameObject, slot9.parent).transform
 		end
 
-		setActive(var_14_1, true)
-		arg_14_0:UpdateLesson(var_14_1, var_14_0[iter_14_0], arg_14_1, arg_14_2)
+		setActive(slot8, true)
+		slot0:UpdateLesson(slot8, slot3[slot7], slot1, slot2)
 	end
 
-	for iter_14_1 = #arg_14_0.itemTpls, #var_14_0 + 1, -1 do
-		setActive(arg_14_0.itemTpls[iter_14_1], false)
+	for slot7 = #slot0.itemTpls, #slot3 + 1, -1 do
+		setActive(slot0.itemTpls[slot7], false)
 	end
 
-	if #var_14_0 > 0 then
-		arg_14_0.toggleGroup:SetAllTogglesOff()
-		triggerToggle(arg_14_0.itemTpls[1], true)
+	if #slot3 > 0 then
+		slot0.toggleGroup:SetAllTogglesOff()
+		triggerToggle(slot0.itemTpls[1], true)
 	end
 end
 
-function var_0_0.UpdateLesson(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
-	updateItem(arg_15_1, Item.New({
-		id = arg_15_2.id,
-		count = arg_15_2.count
+function slot0.UpdateLesson(slot0, slot1, slot2, slot3, slot4)
+	updateItem(slot1, Item.New({
+		id = slot2.id,
+		count = slot2.count
 	}))
-	setText(arg_15_1:Find("icon_bg/count"), arg_15_2.count)
+	setText(slot1:Find("icon_bg/count"), slot2.count)
 
-	local var_15_0 = Item.getConfigData(arg_15_2.id)
-	local var_15_1 = var_15_0.usage_arg[1]
-	local var_15_2 = 100
+	slot5 = Item.getConfigData(slot2.id)
+	slot6 = slot5.usage_arg[1]
 
-	if pg.skill_data_template[arg_15_3].type == var_15_0.usage_arg[3] then
-		var_15_2 = var_15_2 + var_15_0.usage_arg[4]
+	if pg.skill_data_template[slot3].type == slot5.usage_arg[3] then
+		slot7 = 100 + slot5.usage_arg[4]
 	end
 
-	local var_15_3 = var_15_0.usage_arg[2] * (var_15_2 / 100)
+	slot9 = slot5.usage_arg[2] * slot7 / 100
 
-	onToggle(arg_15_0, arg_15_1, function(arg_16_0)
-		if arg_16_0 then
-			arg_15_0.selLessonId = arg_15_2.id
-			arg_15_0.spendTime = var_15_1
+	onToggle(slot0, slot1, function (slot0)
+		if slot0 then
+			uv0.selLessonId = uv1.id
+			uv0.spendTime = uv2
 
-			arg_15_0:UpdateLessonDesc(arg_15_2.id, var_15_3, var_15_1)
-			arg_15_0:UpdateSkill(arg_15_3, var_15_3, arg_15_4)
+			uv0:UpdateLessonDesc(uv1.id, uv3, uv2)
+			uv0:UpdateSkill(uv4, uv3, uv5)
 		end
 	end, SFX_PANEL)
-
-	local var_15_4 = var_15_2 == 100 and "" or "EXP" .. var_15_2 .. "%"
-
-	setText(arg_15_1:Find("addition"), var_15_4)
+	setText(slot1:Find("addition"), slot7 == 100 and "" or "EXP" .. slot7 .. "%")
 end
 
-function var_0_0.UpdatePosition(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = math.ceil(arg_17_2 / arg_17_0.cloumnCnt)
-	local var_17_1 = arg_17_2 % arg_17_0.cloumnCnt
+function slot0.UpdatePosition(slot0, slot1, slot2)
+	slot3 = math.ceil(slot2 / slot0.cloumnCnt)
 
-	if var_17_1 == 0 then
-		var_17_1 = arg_17_0.cloumnCnt
+	if slot2 % slot0.cloumnCnt == 0 then
+		slot4 = slot0.cloumnCnt
 	end
 
-	local var_17_2 = arg_17_0.startPos.y - (var_17_0 - 1) * (arg_17_1.sizeDelta.y + arg_17_0.space.y)
-	local var_17_3 = arg_17_0.startPos.x + (var_17_1 - 1) * (arg_17_1.sizeDelta.x + arg_17_0.space.x)
-
-	arg_17_1.anchoredPosition = Vector2(var_17_3, var_17_2)
+	slot1.anchoredPosition = Vector2(slot0.startPos.x + (slot4 - 1) * (slot1.sizeDelta.x + slot0.space.x), slot0.startPos.y - (slot3 - 1) * (slot1.sizeDelta.y + slot0.space.y))
 end
 
-function var_0_0.UpdateLessonDesc(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	local var_18_0 = Item.getConfigData(arg_18_1)
-
-	arg_18_0.lessonNameTxt.text = var_18_0.name .. "   -"
-	arg_18_0.lessonDescTxt.text = var_18_0.display
-	arg_18_0.lessonExpTxt.text = arg_18_2
-	arg_18_0.lessonTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(arg_18_3)
+function slot0.UpdateLessonDesc(slot0, slot1, slot2, slot3)
+	slot4 = Item.getConfigData(slot1)
+	slot0.lessonNameTxt.text = slot4.name .. "   -"
+	slot0.lessonDescTxt.text = slot4.display
+	slot0.lessonExpTxt.text = slot2
+	slot0.lessonTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot3)
 end
 
-function var_0_0.UpdateSkill(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	local var_19_0 = ShipSkill.New(arg_19_3.skills[arg_19_1], arg_19_3.id)
-
-	arg_19_0.skillCard:Update(var_19_0, arg_19_2)
+function slot0.UpdateSkill(slot0, slot1, slot2, slot3)
+	slot0.skillCard:Update(ShipSkill.New(slot3.skills[slot1], slot3.id), slot2)
 end
 
-function var_0_0.OnDestroy(arg_20_0)
-	if arg_20_0:isShowing() then
-		arg_20_0:Hide()
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 
-	arg_20_0.skillCard:Dispose()
+	slot0.skillCard:Dispose()
 
-	arg_20_0.skillCard = nil
+	slot0.skillCard = nil
 end
 
-return var_0_0
+return slot0

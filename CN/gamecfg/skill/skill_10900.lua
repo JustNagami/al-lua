@@ -1,42 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.035
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetAllHelp",
-			targetAniEffect = "",
-			arg_list = {
-				exceptCaster = true,
-				maxHPRatio = 0.012
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetAllHelp",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 10902
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -364,5 +326,43 @@
 	id = 10900,
 	picture = "0",
 	castCV = "skill",
-	desc = "自身耐久回复3.5%（8.0%）"
+	desc = "自身耐久回复3.5%（8.0%）",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.035
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetAllHelp",
+			targetAniEffect = "",
+			arg_list = {
+				exceptCaster = true,
+				maxHPRatio = 0.012
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetAllHelp",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 10902
+			}
+		}
+	}
 }

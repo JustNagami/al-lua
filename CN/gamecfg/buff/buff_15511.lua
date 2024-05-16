@@ -1,22 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 0.15,
-				label = {
-					"MG"
-				},
-				index = {
-					1,
-					2
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -226,5 +208,23 @@
 	stack = 1,
 	id = 15511,
 	icon = 15510,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 0.15,
+				label = {
+					"MG"
+				},
+				index = {
+					1,
+					2
+				}
+			}
+		}
+	}
 }

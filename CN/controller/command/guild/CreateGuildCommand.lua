@@ -1,71 +1,63 @@
-﻿local var_0_0 = class("CreateGuildCommand", pm.SimpleCommand)
+slot0 = class("CreateGuildCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0:getName()
-	local var_1_2 = pg.gameset.create_guild_cost.key_value
-	local var_1_3 = getProxy(PlayerProxy)
-	local var_1_4 = var_1_3:getData()
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody():getName()
 
-	if var_1_2 > var_1_4:getTotalGem() then
+	if getProxy(PlayerProxy):getData():getTotalGem() < pg.gameset.create_guild_cost.key_value then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_error_nomoney"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(60001, {
-		faction = var_1_0:getFaction(),
-		policy = var_1_0:getPolicy(),
-		name = var_1_1,
-		manifesto = var_1_0:getManifesto()
-	}, 60002, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = Guild.New({
-				base = var_1_0
+		faction = slot2:getFaction(),
+		policy = slot2:getPolicy(),
+		name = slot3,
+		manifesto = slot2:getManifesto()
+	}, 60002, function (slot0)
+		if slot0.result == 0 then
+			slot1 = Guild.New({
+				base = uv0
 			})
 
-			var_2_0:setId(arg_2_0.id)
+			slot1:setId(slot0.id)
 
-			local var_2_1 = getProxy(GuildProxy)
-			local var_2_2 = GuildMember.New({
+			slot3 = GuildMember.New({
 				online = 1,
 				liveness = 0,
-				id = var_1_4.id,
-				name = var_1_4.name,
-				lv = var_1_4.level,
-				adv = var_1_4.manifesto,
+				id = uv1.id,
+				name = uv1.name,
+				lv = uv1.level,
+				adv = uv1.manifesto,
 				display = {
-					icon = var_1_4.icon,
-					character = var_1_4.character,
-					icon_theme = var_1_4.iconTheme,
-					transform_flag = var_1_4.transformFlag,
-					skin = var_1_4.skinId,
-					marry_flag = var_1_4.proposeTime
+					icon = uv1.icon,
+					character = uv1.character,
+					icon_theme = uv1.iconTheme,
+					transform_flag = uv1.transformFlag,
+					skin = uv1.skinId,
+					marry_flag = uv1.proposeTime
 				},
 				join_time = pg.TimeMgr.GetInstance():GetServerTime()
 			})
 
-			var_2_2:setDuty(GuildConst.DUTY_COMMANDER)
-			var_2_0:addMember(var_2_2)
-
-			local var_2_3 = pg.guildset.guild_tech_default.key_value
-
-			var_2_0:StartTech(var_2_3)
-			var_2_1:addGuild(var_2_0)
-			var_1_4:consume({
-				gem = var_1_2
+			slot3:setDuty(GuildConst.DUTY_COMMANDER)
+			slot1:addMember(slot3)
+			slot1:StartTech(pg.guildset.guild_tech_default.key_value)
+			getProxy(GuildProxy):addGuild(slot1)
+			uv1:consume({
+				gem = uv2
 			})
-			var_1_3:updatePlayer(var_1_4)
-			arg_1_0:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
-			arg_1_0:sendNotification(GAME.CREATE_GUILD_DONE)
-			arg_1_0:sendNotification(GAME.GUILD_GET_USER_INFO)
+			uv3:updatePlayer(uv1)
+			uv4:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
+			uv4:sendNotification(GAME.CREATE_GUILD_DONE)
+			uv4:sendNotification(GAME.GUILD_GET_USER_INFO)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_create_sucess"))
-		elseif arg_2_0.result == 2015 then
+		elseif slot0.result == 2015 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_name_invaild"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_create_error", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_create_error", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

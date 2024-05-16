@@ -1,27 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetRandom"
-			},
-			arg_list = {
-				buff_id = 15181,
-				randomCount = 1
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -199,5 +176,28 @@
 	id = 15182,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetRandom"
+			},
+			arg_list = {
+				buff_id = 15181,
+				randomCount = 1
+			}
+		}
+	}
 }

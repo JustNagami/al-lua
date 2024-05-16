@@ -1,6 +1,6 @@
-﻿local var_0_0 = class("NewSystemSubmarineRunResultGradePage", import("..dodgem.NewDodgemResultGradePage"))
+slot0 = class("NewSystemSubmarineRunResultGradePage", import("..dodgem.NewDodgemResultGradePage"))
 
-function var_0_0.GetFlagShip(arg_1_0)
+function slot0.GetFlagShip(slot0)
 	return Ship.New({
 		id = 9999,
 		configId = 900180,
@@ -8,23 +8,23 @@ function var_0_0.GetFlagShip(arg_1_0)
 	})
 end
 
-function var_0_0.RegisterEvent(arg_2_0, arg_2_1)
+function slot0.RegisterEvent(slot0, slot1)
 	seriesAsync({
-		function(arg_3_0)
-			arg_2_0:LoadPainitingContainer(arg_3_0)
+		function (slot0)
+			uv0:LoadPainitingContainer(slot0)
 		end,
-		function(arg_4_0)
-			arg_2_0:MovePainting(arg_4_0)
+		function (slot0)
+			uv0:MovePainting(slot0)
 		end
-	}, function()
-		onButton(arg_2_0, arg_2_0._tf, function()
-			arg_2_1()
+	}, function ()
+		onButton(uv0, uv0._tf, function ()
+			uv0()
 		end, SFX_PANEL)
 	end)
 end
 
-function var_0_0.GetGetObjectives(arg_7_0)
+function slot0.GetGetObjectives(slot0)
 	return {}
 end
 
-return var_0_0
+return slot0

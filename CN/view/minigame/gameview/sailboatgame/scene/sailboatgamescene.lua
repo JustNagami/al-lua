@@ -1,11 +1,10 @@
-﻿local var_0_0 = class("SailBoatGameScene")
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5
-
-var_0_0.random_scene_imgs = {
+slot0 = class("SailBoatGameScene")
+slot1 = 1
+slot2 = 2
+slot3 = 3
+slot4 = 4
+slot5 = nil
+slot0.random_scene_imgs = {
 	{
 		content = "scene_background/content/bg_6",
 		icon = {
@@ -20,298 +19,265 @@ var_0_0.random_scene_imgs = {
 	}
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_5 = SailBoatGameVo
-	arg_1_0._tf = arg_1_1
-	arg_1_0._event = arg_1_2
-	arg_1_0.sceneMask = findTF(arg_1_0._tf, "sceneMask")
-	arg_1_0.sceneContent = findTF(arg_1_0._tf, "sceneMask/sceneContainer")
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0 = SailBoatGameVo
+	slot0._tf = slot1
+	slot0._event = slot2
+	slot0.sceneMask = findTF(slot0._tf, "sceneMask")
+	slot0.sceneContent = findTF(slot0._tf, "sceneMask/sceneContainer")
 
-	local function var_1_0(arg_2_0, arg_2_1)
-		if arg_2_0 == SailBoatGameEvent.DESTROY_ENEMY then
-			arg_1_0:destroyEnemy(arg_2_1)
-		elseif arg_2_0 == SailBoatGameEvent.USE_ITEM then
-			arg_1_0._event:emit(SailBoatGameView.ADD_SCORE, {
-				num = arg_2_1.score
+	function slot3(slot0, slot1)
+		if slot0 == SailBoatGameEvent.DESTROY_ENEMY then
+			uv0:destroyEnemy(slot1)
+		elseif slot0 == SailBoatGameEvent.USE_ITEM then
+			uv0._event:emit(SailBoatGameView.ADD_SCORE, {
+				num = slot1.score
 			})
 
-			if arg_2_1.skill then
-				var_0_5.AddSkill()
+			if slot1.skill then
+				uv1.AddSkill()
 			end
-		elseif arg_2_0 == SailBoatGameEvent.PLAYER_DEAD then
-			arg_1_0._event:emit(SailBoatGameView.GAME_OVER)
+		elseif slot0 == SailBoatGameEvent.PLAYER_DEAD then
+			uv0._event:emit(SailBoatGameView.GAME_OVER)
 		end
 
-		arg_1_0:onSceneEventCall(arg_2_0, arg_2_1)
+		uv0:onSceneEventCall(slot0, slot1)
 	end
 
-	arg_1_0.charControl = SailBoatCharControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.bgControl = SailBoatBgControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.itemControl = SailBoatItemControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.colliderControl = SailBoatColliderControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.enemyControl = SailBoatEnemyControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.bulletControl = SailBoatBulletsControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.effectControl = SailBoatEffectControl.New(arg_1_0.sceneContent, var_1_0)
-	arg_1_0.bgRules = {}
-	arg_1_0.bgTfs = {}
-	arg_1_0.bgTfPool = {}
+	slot0.charControl = SailBoatCharControl.New(slot0.sceneContent, slot3)
+	slot0.bgControl = SailBoatBgControl.New(slot0.sceneContent, slot3)
+	slot0.itemControl = SailBoatItemControl.New(slot0.sceneContent, slot3)
+	slot0.colliderControl = SailBoatColliderControl.New(slot0.sceneContent, slot3)
+	slot0.enemyControl = SailBoatEnemyControl.New(slot0.sceneContent, slot3)
+	slot0.bulletControl = SailBoatBulletsControl.New(slot0.sceneContent, slot3)
+	slot0.effectControl = SailBoatEffectControl.New(slot0.sceneContent, slot3)
+	slot0.bgRules = {}
+	slot0.bgTfs = {}
+	slot0.bgTfPool = {}
 
-	for iter_1_0 = 1, #var_0_0.random_scene_imgs do
-		local var_1_1 = var_0_0.random_scene_imgs[iter_1_0]
-
-		table.insert(arg_1_0.bgRules, {
+	for slot7 = 1, #uv1.random_scene_imgs do
+		table.insert(slot0.bgRules, {
 			time = 0,
-			ruleData = var_1_1
+			ruleData = uv1.random_scene_imgs[slot7]
 		})
 	end
 end
 
-function var_0_0.start(arg_3_0)
-	arg_3_0:showContainer(true)
-	arg_3_0.charControl:start()
-	arg_3_0.bgControl:start()
-	arg_3_0.itemControl:start()
-	arg_3_0.colliderControl:start()
-	arg_3_0.enemyControl:start()
-	arg_3_0.bulletControl:start()
-	arg_3_0.effectControl:start()
+function slot0.start(slot0)
+	slot0:showContainer(true)
+	slot0.charControl:start()
+	slot0.bgControl:start()
+	slot0.itemControl:start()
+	slot0.colliderControl:start()
+	slot0.enemyControl:start()
+	slot0.bulletControl:start()
+	slot0.effectControl:start()
 
-	arg_3_0.sortIndex = 10
-	arg_3_0.bgImgTpl = var_0_5.GetGameBgTf("bgs/bg_other")
+	slot0.sortIndex = 10
+	slot0.bgImgTpl = uv0.GetGameBgTf("bgs/bg_other")
 
-	for iter_3_0 = #arg_3_0.bgTfs, 1, -1 do
-		local var_3_0 = table.remove(arg_3_0.bgTfs, iter_3_0)
+	for slot4 = #slot0.bgTfs, 1, -1 do
+		slot5 = table.remove(slot0.bgTfs, slot4)
 
-		setActive(var_3_0, false)
-		table.insert(arg_3_0.bgTfPool, var_3_0)
+		setActive(slot5, false)
+		table.insert(slot0.bgTfPool, slot5)
 	end
 
-	for iter_3_1 = 1, #arg_3_0.bgRules do
-		arg_3_0.bgRules[iter_3_1].time = 0
+	for slot4 = 1, #slot0.bgRules do
+		slot0.bgRules[slot4].time = 0
 	end
 end
 
-function var_0_0.step(arg_4_0, arg_4_1)
-	local var_4_0
-	local var_4_1
-	local var_4_2
-	local var_4_3
-	local var_4_4
-	local var_4_5
-	local var_4_6
-	local var_4_7 = os.clock()
+function slot0.step(slot0, slot1)
+	slot2, slot3, slot4, slot5, slot6, slot7, slot8 = nil
 
-	arg_4_0.charControl:step(arg_4_1)
+	slot0.charControl:step(slot1)
 
-	local var_4_8 = (os.clock() - var_4_7) * 1000
-	local var_4_9 = os.clock()
+	slot2 = (os.clock() - os.clock()) * 1000
 
-	arg_4_0.bgControl:step(arg_4_1)
+	slot0.bgControl:step(slot1)
 
-	local var_4_10 = (os.clock() - var_4_9) * 1000
-	local var_4_11 = os.clock()
+	slot3 = (os.clock() - os.clock()) * 1000
 
-	arg_4_0.itemControl:step(arg_4_1)
+	slot0.itemControl:step(slot1)
 
-	local var_4_12 = (os.clock() - var_4_11) * 1000
-	local var_4_13 = os.clock()
+	slot4 = (os.clock() - os.clock()) * 1000
 
-	arg_4_0.colliderControl:step(arg_4_1)
+	slot0.colliderControl:step(slot1)
 
-	local var_4_14 = (os.clock() - var_4_13) * 1000
-	local var_4_15 = os.clock()
+	slot5 = (os.clock() - os.clock()) * 1000
 
-	arg_4_0.enemyControl:step(arg_4_1)
+	slot0.enemyControl:step(slot1)
 
-	local var_4_16 = (os.clock() - var_4_15) * 1000
-	local var_4_17 = os.clock()
+	slot6 = (os.clock() - os.clock()) * 1000
 
-	arg_4_0.bulletControl:step(arg_4_1)
+	slot0.bulletControl:step(slot1)
 
-	local var_4_18 = tostring((os.clock() - var_4_17) * 1000, 2)
-	local var_4_19 = os.clock()
+	slot7 = tostring((os.clock() - os.clock()) * 1000, 2)
 
-	arg_4_0.effectControl:step(arg_4_1)
+	slot0.effectControl:step(slot1)
 
-	local var_4_20 = (os.clock() - var_4_19) * 1000
-	local var_4_21 = os.clock()
-	local var_4_22 = var_0_5.GetGameEnemys()
-	local var_4_23 = var_0_5.GetGameChar()
-	local var_4_24 = var_0_5.GetGameItems()
+	slot8 = (os.clock() - os.clock()) * 1000
+	slot9 = os.clock()
+	slot10 = uv0.GetGameEnemys()
+	slot11 = uv0.GetGameChar()
+	slot12 = uv0.GetGameItems()
 
-	if not arg_4_0.sortTfs or #arg_4_0.sortTfs ~= #var_4_22 + 1 + #var_4_24 then
-		arg_4_0.sortTfs = {}
+	if not slot0.sortTfs or #slot0.sortTfs ~= #slot10 + 1 + #slot12 then
+		slot0.sortTfs = {}
 
-		for iter_4_0 = 1, #var_4_22 do
-			table.insert(arg_4_0.sortTfs, var_4_22[iter_4_0]:getTf())
+		for slot16 = 1, #slot10 do
+			table.insert(slot0.sortTfs, slot10[slot16]:getTf())
 		end
 
-		for iter_4_1 = 1, #var_4_24 do
-			table.insert(arg_4_0.sortTfs, var_4_24[iter_4_1]:getTf())
+		for slot16 = 1, #slot12 do
+			table.insert(slot0.sortTfs, slot12[slot16]:getTf())
 		end
 
-		table.insert(arg_4_0.sortTfs, var_4_23:getTf())
+		table.insert(slot0.sortTfs, slot11:getTf())
 	end
 
-	if arg_4_0.sortIndex and arg_4_0.sortIndex == 0 then
-		arg_4_0:sortItems(arg_4_0.sortTfs)
+	if slot0.sortIndex and slot0.sortIndex == 0 then
+		slot0:sortItems(slot0.sortTfs)
 
-		arg_4_0.sortIndex = 10
+		slot0.sortIndex = 10
 	else
-		arg_4_0.sortIndex = arg_4_0.sortIndex - 1
+		slot0.sortIndex = slot0.sortIndex - 1
 	end
 
-	for iter_4_2 = 1, #arg_4_0.bgRules do
-		if arg_4_0.bgRules[iter_4_2].time <= 0 then
-			arg_4_0.bgRules[iter_4_2].time = math.random(30, 45)
+	for slot16 = 1, #slot0.bgRules do
+		if slot0.bgRules[slot16].time <= 0 then
+			slot0.bgRules[slot16].time = math.random(30, 45)
+			slot17 = slot0.bgRules[slot16].ruleData.icon
+			slot18 = slot17[math.random(1, #slot17)]
+			slot19 = nil
 
-			local var_4_25 = arg_4_0.bgRules[iter_4_2].ruleData.icon
-			local var_4_26 = var_4_25[math.random(1, #var_4_25)]
-			local var_4_27
-
-			if #arg_4_0.bgTfPool > 0 then
-				var_4_27 = table.remove(arg_4_0.bgTfPool, 1)
+			if #slot0.bgTfPool > 0 then
+				slot19 = table.remove(slot0.bgTfPool, 1)
 			else
-				var_4_27 = tf(instantiate(arg_4_0.bgImgTpl))
-
-				SetParent(var_4_27, findTF(arg_4_0.sceneContent, arg_4_0.bgRules[iter_4_2].ruleData.content))
+				SetParent(tf(instantiate(slot0.bgImgTpl)), findTF(slot0.sceneContent, slot0.bgRules[slot16].ruleData.content))
 			end
 
-			setImageSprite(findTF(var_4_27, "img"), var_0_5.GetBgIcon(var_4_26), true)
-			setActive(var_4_27, true)
-			table.insert(arg_4_0.bgTfs, var_4_27)
+			setImageSprite(findTF(slot19, "img"), uv0.GetBgIcon(slot18), true)
+			setActive(slot19, true)
+			table.insert(slot0.bgTfs, slot19)
 
-			var_4_27.anchoredPosition = Vector2(math.random(-300, 300), 2000)
-			var_4_27.localEulerAngles = Vector3(0, 0, math.random(1, 360))
+			slot19.anchoredPosition = Vector2(math.random(-300, 300), 2000)
+			slot19.localEulerAngles = Vector3(0, 0, math.random(1, 360))
 		end
 
-		arg_4_0.bgRules[iter_4_2].time = arg_4_0.bgRules[iter_4_2].time - arg_4_1
+		slot0.bgRules[slot16].time = slot0.bgRules[slot16].time - slot1
 	end
 
-	local var_4_28 = var_0_5.GetSceneSpeed()
+	slot13 = uv0.GetSceneSpeed()
 
-	for iter_4_3 = #arg_4_0.bgTfs, 1, -1 do
-		local var_4_29 = arg_4_0.bgTfs[iter_4_3]
-
-		if var_4_29.anchoredPosition.y < -2000 then
-			setActive(var_4_29, false)
-			table.insert(arg_4_0.bgTfPool, var_4_29)
-			table.remove(arg_4_0.bgTfs, iter_4_3)
+	for slot17 = #slot0.bgTfs, 1, -1 do
+		if slot0.bgTfs[slot17].anchoredPosition.y < -2000 then
+			setActive(slot18, false)
+			table.insert(slot0.bgTfPool, slot18)
+			table.remove(slot0.bgTfs, slot17)
 		else
-			local var_4_30 = var_4_29.anchoredPosition
-
-			var_4_30.y = var_4_30.y + var_4_28.y
-			var_4_29.anchoredPosition = var_4_30
+			slot19 = slot18.anchoredPosition
+			slot19.y = slot19.y + slot13.y
+			slot18.anchoredPosition = slot19
 		end
 	end
 end
 
-function var_0_0.destroyEnemy(arg_5_0, arg_5_1)
-	arg_5_0._event:emit(SailBoatGameView.ADD_SCORE, {
-		num = arg_5_1.score
+function slot0.destroyEnemy(slot0, slot1)
+	slot0._event:emit(SailBoatGameView.ADD_SCORE, {
+		num = slot1.score
 	})
 
-	if arg_5_1.boom then
-		arg_5_0:checkBoomDamage(arg_5_1)
+	if slot1.boom then
+		slot0:checkBoomDamage(slot1)
 	end
 end
 
-function var_0_0.checkBoomDamage(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1.boom
-	local var_6_1 = arg_6_1.position
-	local var_6_2 = arg_6_1.range
-	local var_6_3 = var_0_5.GetGameChar()
-	local var_6_4 = var_0_5.GetGameEnemys()
-	local var_6_5 = var_6_3:getPosition()
-	local var_6_6 = var_6_3:getConfig("range")
+function slot0.checkBoomDamage(slot0, slot1)
+	slot5 = uv0.GetGameChar()
+	slot6 = uv0.GetGameEnemys()
 
-	if math.abs(var_6_1.x - var_6_5.x) < var_6_2.x + var_6_6.x / 2 and math.abs(var_6_1.y - var_6_5.y) < var_6_2.y + var_6_6.y / 2 then
-		var_6_3:damage({
-			num = var_6_0,
-			position = var_6_1
+	if math.abs(slot1.position.x - slot5:getPosition().x) < slot1.range.x + slot5:getConfig("range").x / 2 and math.abs(slot3.y - slot7.y) < slot4.y + slot8.y / 2 then
+		slot5:damage({
+			num = slot1.boom,
+			position = slot3
 		})
 	end
 
-	for iter_6_0 = 1, #var_6_4 do
-		local var_6_7 = var_6_4[iter_6_0]
-		local var_6_8 = var_6_7:getPosition()
-		local var_6_9 = var_6_7:getConfig("range")
+	for slot12 = 1, #slot6 do
+		slot13 = slot6[slot12]
+		slot14 = slot13:getPosition()
+		slot15 = slot13:getConfig("range")
 
-		if math.abs(var_6_1.x - var_6_8.x) < var_6_2.x + var_6_8.x / 2 and math.abs(var_6_1.y - var_6_8.y) < var_6_2.y + var_6_8.y / 2 and var_6_7:damage({
-			num = var_6_0,
-			position = var_6_1
+		if math.abs(slot3.x - slot14.x) < slot4.x + slot14.x / 2 and math.abs(slot3.y - slot14.y) < slot4.y + slot14.y / 2 and slot13:damage({
+			num = slot2,
+			position = slot3
 		}) then
-			arg_6_0:destroyEnemy(var_6_7:getDestroyData())
+			slot0:destroyEnemy(slot13:getDestroyData())
 		end
 	end
 end
 
-function var_0_0.sortItems(arg_7_0, arg_7_1)
-	table.sort(arg_7_1, function(arg_8_0, arg_8_1)
-		local var_8_0 = arg_8_0.anchoredPosition
-		local var_8_1 = arg_8_1.anchoredPosition
-
-		if var_8_0.y > var_8_1.y then
+function slot0.sortItems(slot0, slot1)
+	table.sort(slot1, function (slot0, slot1)
+		if slot1.anchoredPosition.y < slot0.anchoredPosition.y then
 			return false
-		elseif var_8_0.y < var_8_1.y then
+		elseif slot2.y < slot3.y then
 			return true
 		end
 
-		if var_8_0.x > var_8_1.x then
+		if slot3.x < slot2.x then
 			return false
-		elseif var_8_0.x < var_8_1.x then
+		elseif slot2.x < slot3.x then
 			return true
 		end
 
 		return false
 	end)
 
-	for iter_7_0 = 1, #arg_7_1 do
-		arg_7_1[iter_7_0]:SetSiblingIndex(0)
+	for slot5 = 1, #slot1 do
+		slot1[slot5]:SetSiblingIndex(0)
 	end
 end
 
-function var_0_0.useSkill(arg_9_0)
-	arg_9_0.charControl:useSkill()
+function slot0.useSkill(slot0)
+	slot0.charControl:useSkill()
 end
 
-function var_0_0.clear(arg_10_0)
-	return
+function slot0.clear(slot0)
 end
 
-function var_0_0.stop(arg_11_0)
-	return
+function slot0.stop(slot0)
 end
 
-function var_0_0.resume(arg_12_0)
-	return
+function slot0.resume(slot0)
 end
 
-function var_0_0.onSceneEventCall(arg_13_0, arg_13_1, arg_13_2)
-	arg_13_0.charControl:onEventCall(arg_13_1, arg_13_2)
-	arg_13_0.bulletControl:onEventCall(arg_13_1, arg_13_2)
-	arg_13_0.effectControl:onEventCall(arg_13_1, arg_13_2)
+function slot0.onSceneEventCall(slot0, slot1, slot2)
+	slot0.charControl:onEventCall(slot1, slot2)
+	slot0.bulletControl:onEventCall(slot1, slot2)
+	slot0.effectControl:onEventCall(slot1, slot2)
 end
 
-function var_0_0.dispose(arg_14_0)
-	arg_14_0.charControl:dispose()
-	arg_14_0.bgControl:dispose()
-	arg_14_0.itemControl:dispose()
-	arg_14_0.enemyControl:dispose()
+function slot0.dispose(slot0)
+	slot0.charControl:dispose()
+	slot0.bgControl:dispose()
+	slot0.itemControl:dispose()
+	slot0.enemyControl:dispose()
 end
 
-function var_0_0.showContainer(arg_15_0, arg_15_1)
-	setActive(arg_15_0.sceneMask, arg_15_1)
+function slot0.showContainer(slot0, slot1)
+	setActive(slot0.sceneMask, slot1)
 end
 
-function var_0_0.press(arg_16_0, arg_16_1, arg_16_2)
-	if arg_16_1 == KeyCode.J and arg_16_2 then
-		arg_16_0.charControl:ableFire()
+function slot0.press(slot0, slot1, slot2)
+	if slot1 == KeyCode.J and slot2 then
+		slot0.charControl:ableFire()
 	end
 end
 
-function var_0_0.joystickActive(arg_17_0, arg_17_1)
-	return
+function slot0.joystickActive(slot0, slot1)
 end
 
-return var_0_0
+return slot0

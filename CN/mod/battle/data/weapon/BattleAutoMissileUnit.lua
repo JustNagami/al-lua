@@ -1,61 +1,48 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleUnitEvent
+slot3 = slot0.Battle.BattleTargetChoise
+slot4 = class("BattleAutoMissileUnit", slot0.Battle.BattleWeaponUnit)
+slot0.Battle.BattleAutoMissileUnit = slot4
+slot4.__name = "BattleAutoMissileUnit"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleUnitEvent
-local var_0_3 = var_0_0.Battle.BattleTargetChoise
-local var_0_4 = class("BattleAutoMissileUnit", var_0_0.Battle.BattleWeaponUnit)
-
-var_0_0.Battle.BattleAutoMissileUnit = var_0_4
-var_0_4.__name = "BattleAutoMissileUnit"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_4.super.Ctor(arg_1_0)
+function slot4.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_4.createMajorEmitter(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local function var_2_0(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-		local var_3_0 = arg_2_0._emitBulletIDList[arg_2_2]
-		local var_3_1 = arg_2_0:Spawn(var_3_0, arg_3_4, var_0_4.INTERNAL)
+function slot4.createMajorEmitter(slot0, slot1, slot2, slot3)
+	slot6 = uv2.Battle[slot3 or uv0.EMITTER_NORMAL].New(function (slot0, slot1, slot2, slot3, slot4)
+		slot6 = uv0:Spawn(uv0._emitBulletIDList[uv1], slot4, uv2.INTERNAL)
 
-		var_3_1:SetOffsetPriority(arg_3_3)
-		var_3_1:SetShiftInfo(arg_3_0, arg_3_1)
+		slot6:SetOffsetPriority(slot3)
+		slot6:SetShiftInfo(slot0, slot1)
 
-		if arg_2_0._tmpData.aim_type == var_0_1.WeaponAimType.AIM and arg_3_4 ~= nil then
-			var_3_1:SetRotateInfo(arg_3_4:GetBeenAimedPosition(), arg_2_0:GetBaseAngle(), arg_3_2)
+		if uv0._tmpData.aim_type == uv3.WeaponAimType.AIM and slot4 ~= nil then
+			slot6:SetRotateInfo(slot4:GetBeenAimedPosition(), uv0:GetBaseAngle(), slot2)
 		else
-			var_3_1:SetRotateInfo(nil, arg_2_0:GetBaseAngle(), arg_3_2)
+			slot6:SetRotateInfo(nil, uv0:GetBaseAngle(), slot2)
 		end
 
-		var_3_1:setTrackingTarget(arg_3_4)
+		slot6:setTrackingTarget(slot4)
+		slot6:SetTrackingFXData({})
+		uv0:DispatchBulletEvent(slot6)
 
-		local var_3_2 = {}
-
-		var_3_1:SetTrackingFXData(var_3_2)
-		arg_2_0:DispatchBulletEvent(var_3_1)
-
-		return var_3_1
-	end
-
-	local function var_2_1()
-		for iter_4_0, iter_4_1 in ipairs(arg_2_0._majorEmitterList) do
-			if iter_4_1:GetState() ~= iter_4_1.STATE_STOP then
+		return slot6
+	end, function ()
+		for slot3, slot4 in ipairs(uv0._majorEmitterList) do
+			if slot4:GetState() ~= slot4.STATE_STOP then
 				return
 			end
 		end
 
-		arg_2_0:EnterCoolDown()
-	end
+		uv0:EnterCoolDown()
+	end, slot1)
+	slot0._majorEmitterList[#slot0._majorEmitterList + 1] = slot6
 
-	arg_2_3 = arg_2_3 or var_0_4.EMITTER_NORMAL
-
-	local var_2_2 = var_0_0.Battle[arg_2_3].New(var_2_0, var_2_1, arg_2_1)
-
-	arg_2_0._majorEmitterList[#arg_2_0._majorEmitterList + 1] = var_2_2
-
-	return var_2_2
+	return slot6
 end
 
-function var_0_4.Tracking(arg_5_0)
-	return var_0_3.TargetWeightiest(arg_5_0, nil, arg_5_0:GetFilteredList())[1]
+function slot4.Tracking(slot0)
+	return uv0.TargetWeightiest(slot0, nil, slot0:GetFilteredList())[1]
 end

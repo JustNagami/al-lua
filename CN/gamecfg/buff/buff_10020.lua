@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 10021,
-				time = 10,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "每10秒有20.0%几率触发，自身机动上升30.0%，持续8秒",
 		addition = {
@@ -92,5 +79,18 @@
 	stack = 1,
 	id = 10020,
 	icon = 10020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 10021,
+				time = 10,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

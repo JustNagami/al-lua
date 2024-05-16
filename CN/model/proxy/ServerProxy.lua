@@ -1,75 +1,62 @@
-﻿local var_0_0 = class("ServerProxy", import(".NetProxy"))
+slot0 = class("ServerProxy", import(".NetProxy"))
+slot0.SERVERS_UPDATED = "ServerProxy:SERVERS_UPDATED"
 
-var_0_0.SERVERS_UPDATED = "ServerProxy:SERVERS_UPDATED"
+function slot0.setServers(slot0, slot1, slot2)
+	slot0.data = {}
+	slot0.lastServer = nil
+	slot0.firstServer = nil
+	slot3 = {}
 
-function var_0_0.setServers(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.data = {}
-	arg_1_0.lastServer = nil
-	arg_1_0.firstServer = nil
+	for slot8, slot9 in ipairs(slot1) do
+		assert(isa(slot9, Server), "should be an instance of Server")
 
-	local var_1_0 = {}
-	local var_1_1 = arg_1_0:getLoginedServer(arg_1_2)
-
-	for iter_1_0, iter_1_1 in ipairs(arg_1_1) do
-		assert(isa(iter_1_1, Server), "should be an instance of Server")
-
-		if table.contains(var_1_1, tostring(iter_1_1.id)) then
-			iter_1_1.isLogined = true
+		if table.contains(slot0:getLoginedServer(slot2), tostring(slot9.id)) then
+			slot9.isLogined = true
 		end
 
-		arg_1_0.data[iter_1_1.id] = iter_1_1
+		slot0.data[slot9.id] = slot9
 
-		if iter_1_0 == #arg_1_1 then
-			arg_1_0.lastServer = iter_1_1
+		if slot8 == #slot1 then
+			slot0.lastServer = slot9
 		end
 
-		if iter_1_1.sortIndex == 0 then
-			table.insert(var_1_0, iter_1_1)
+		if slot9.sortIndex == 0 then
+			table.insert(slot3, slot9)
 		end
 	end
 
-	if #var_1_0 > 0 then
-		arg_1_0.firstServer = var_1_0[math.random(1, #var_1_0)]
+	if #slot3 > 0 then
+		slot0.firstServer = slot3[math.random(1, #slot3)]
 	end
 
-	arg_1_0.facade:sendNotification(var_0_0.SERVERS_UPDATED, arg_1_0:getData())
+	slot0.facade:sendNotification(uv0.SERVERS_UPDATED, slot0:getData())
 end
 
-function var_0_0.setLastServer(arg_2_0, arg_2_1, arg_2_2)
-	PlayerPrefs.SetInt("server.id" .. arg_2_2, arg_2_1)
+function slot0.setLastServer(slot0, slot1, slot2)
+	PlayerPrefs.SetInt("server.id" .. slot2, slot1)
 end
 
-function var_0_0.getLastServer(arg_3_0, arg_3_1)
-	local var_3_0 = PlayerPrefs.GetInt("server.id" .. arg_3_1)
-
-	return arg_3_0.data[var_3_0] or arg_3_0.firstServer or arg_3_0.lastServer
+function slot0.getLastServer(slot0, slot1)
+	return slot0.data[PlayerPrefs.GetInt("server.id" .. slot1)] or slot0.firstServer or slot0.lastServer
 end
 
-function var_0_0.recordLoginedServer(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_0:getLoginedServer(arg_4_1)
+function slot0.recordLoginedServer(slot0, slot1, slot2)
+	if not table.contains(slot0:getLoginedServer(slot1), tostring(slot2)) then
+		slot0.data[slot2].isLogined = true
 
-	if not table.contains(var_4_0, tostring(arg_4_2)) then
-		arg_4_0.data[arg_4_2].isLogined = true
-
-		table.insert(var_4_0, tostring(arg_4_2))
-
-		local var_4_1 = table.concat(var_4_0, ":")
-
-		PlayerPrefs.SetString("loginedServer_" .. arg_4_1, var_4_1)
+		table.insert(slot3, tostring(slot2))
+		PlayerPrefs.SetString("loginedServer_" .. slot1, table.concat(slot3, ":"))
 		PlayerPrefs.Save()
 	end
 end
 
-function var_0_0.getLoginedServer(arg_5_0, arg_5_1)
-	if not arg_5_0.loginedServerIds or arg_5_0.recordUid and arg_5_0.recordUid ~= arg_5_1 then
-		arg_5_0.recordUid = arg_5_1
-
-		local var_5_0 = PlayerPrefs.GetString("loginedServer_" .. arg_5_1)
-
-		arg_5_0.loginedServerIds = string.split(var_5_0, ":")
+function slot0.getLoginedServer(slot0, slot1)
+	if not slot0.loginedServerIds or slot0.recordUid and slot0.recordUid ~= slot1 then
+		slot0.recordUid = slot1
+		slot0.loginedServerIds = string.split(PlayerPrefs.GetString("loginedServer_" .. slot1), ":")
 	end
 
-	return arg_5_0.loginedServerIds
+	return slot0.loginedServerIds
 end
 
-return var_0_0
+return slot0

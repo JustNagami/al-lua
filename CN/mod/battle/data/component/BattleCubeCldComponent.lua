@@ -1,53 +1,50 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleCubeCldComponent", slot0.Battle.BattleCldComponent)
+slot0.Battle.BattleCubeCldComponent = slot1
+slot1.__name = "BattleCubeCldComponent"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleCubeCldComponent", var_0_0.Battle.BattleCldComponent)
+function slot1.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
+	uv0.Battle.BattleCubeCldComponent.super.Ctor(slot0)
 
-var_0_0.Battle.BattleCubeCldComponent = var_0_1
-var_0_1.__name = "BattleCubeCldComponent"
+	slot0._offsetX = slot4
+	slot0._offsetZ = slot5
+	slot0._offset = Vector3(slot4, 0, slot5)
+	slot0._boxSize = Vector3.zero
+	slot0._min = Vector3.zero
+	slot0._max = Vector3.zero
 
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	var_0_0.Battle.BattleCubeCldComponent.super.Ctor(arg_1_0)
+	slot0:ResetSize(slot1, slot2, slot3)
 
-	arg_1_0._offsetX = arg_1_4
-	arg_1_0._offsetZ = arg_1_5
-	arg_1_0._offset = Vector3(arg_1_4, 0, arg_1_5)
-	arg_1_0._boxSize = Vector3.zero
-	arg_1_0._min = Vector3.zero
-	arg_1_0._max = Vector3.zero
-
-	arg_1_0:ResetSize(arg_1_1, arg_1_2, arg_1_3)
-
-	arg_1_0._box = pg.CldNode.New()
+	slot0._box = pg.CldNode.New()
 end
 
-function var_0_1.ResetSize(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = arg_2_1 * 0.5
-	local var_2_1 = arg_2_2 * 0.5
-	local var_2_2 = arg_2_3 * 0.5
-
-	arg_2_0._boxSize.x = var_2_0
-	arg_2_0._boxSize.y = var_2_1
-	arg_2_0._boxSize.z = var_2_2
-	arg_2_0._min.x = arg_2_0._offsetX - var_2_0
-	arg_2_0._min.y = -var_2_1
-	arg_2_0._min.z = arg_2_0._offsetZ - var_2_2
-	arg_2_0._max.x = arg_2_0._offsetX + var_2_0
-	arg_2_0._max.y = var_2_1
-	arg_2_0._max.z = arg_2_0._offsetZ + var_2_2
+function slot1.ResetSize(slot0, slot1, slot2, slot3)
+	slot4 = slot1 * 0.5
+	slot5 = slot2 * 0.5
+	slot6 = slot3 * 0.5
+	slot0._boxSize.x = slot4
+	slot0._boxSize.y = slot5
+	slot0._boxSize.z = slot6
+	slot0._min.x = slot0._offsetX - slot4
+	slot0._min.y = -slot5
+	slot0._min.z = slot0._offsetZ - slot6
+	slot0._max.x = slot0._offsetX + slot4
+	slot0._max.y = slot5
+	slot0._max.z = slot0._offsetZ + slot6
 end
 
-function var_0_1.GetCldBox(arg_3_0, arg_3_1)
-	if arg_3_1 then
-		arg_3_0._cldData.LeftBound = arg_3_1.x - math.abs(arg_3_0._min.x)
-		arg_3_0._cldData.RightBound = arg_3_1.x + math.abs(arg_3_0._max.x)
-		arg_3_0._cldData.LowerBound = arg_3_1.z - math.abs(arg_3_0._min.z)
-		arg_3_0._cldData.UpperBound = arg_3_1.z + math.abs(arg_3_0._max.z)
+function slot1.GetCldBox(slot0, slot1)
+	if slot1 then
+		slot0._cldData.LeftBound = slot1.x - math.abs(slot0._min.x)
+		slot0._cldData.RightBound = slot1.x + math.abs(slot0._max.x)
+		slot0._cldData.LowerBound = slot1.z - math.abs(slot0._min.z)
+		slot0._cldData.UpperBound = slot1.z + math.abs(slot0._max.z)
 	end
 
-	return arg_3_0._box:UpdateBox(arg_3_0._min, arg_3_0._max, arg_3_1)
+	return slot0._box:UpdateBox(slot0._min, slot0._max, slot1)
 end
 
-function var_0_1.GetCldBoxSize(arg_4_0)
-	return arg_4_0._boxSize
+function slot1.GetCldBoxSize(slot0)
+	return slot0._boxSize
 end

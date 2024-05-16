@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10760,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Ning Hai-Class"
-				}
-			}
-		}
-	},
+return {
 	{
 		desc = "与宁海、平海同时出击时，队伍中逸仙、宁海、平海受到伤害降低8.0%，回避率提高15.0%",
 		addition = {
@@ -99,5 +79,25 @@
 	stack = 1,
 	id = 10760,
 	icon = 10760,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10760,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Ning Hai-Class"
+				}
+			}
+		}
+	}
 }

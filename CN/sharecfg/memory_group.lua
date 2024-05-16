@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.memory_group = setmetatable({
 	__name = "memory_group",
 	all = {
@@ -192,6 +192,8 @@ pg.memory_group = setmetatable({
 		283,
 		284,
 		285,
+		286,
+		287,
 		501,
 		502,
 		503,
@@ -4535,6 +4537,38 @@ pg.base.memory_group = {
 			3520,
 			3521,
 			3522
+		}
+	},
+	[286] = {
+		id = 286,
+		subtype = 2,
+		icon = "title_event",
+		type = 2,
+		link_event = 5324,
+		title = "于启航之前",
+		memories = {
+			3541,
+			3542,
+			3543,
+			3544,
+			3545
+		}
+	},
+	[287] = {
+		id = 287,
+		subtype = 1,
+		icon = "title_event",
+		type = 2,
+		link_event = 5341,
+		title = "彼方之音",
+		memories = {
+			3551,
+			3552,
+			3553,
+			3554,
+			3555,
+			3556,
+			3557
 		}
 	},
 	[501] = {

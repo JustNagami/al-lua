@@ -1,12 +1,11 @@
-﻿local var_0_0 = class("AkibaStreetScene", import("..TemplateMV.BackHillTemplate"))
-
-var_0_0.UIName = "AkibaStreetUI"
-var_0_0.edge2area = {
+slot0 = class("AkibaStreetScene", import("..TemplateMV.BackHillTemplate"))
+slot0.UIName = "AkibaStreetUI"
+slot0.edge2area = {
 	["4_5"] = "_bottom",
 	default = "_middle",
 	["5_6"] = "_bottom"
 }
-var_0_0.Buildings = {
+slot0.Buildings = {
 	nil,
 	nil,
 	nil,
@@ -17,83 +16,75 @@ var_0_0.Buildings = {
 	"kafeiting"
 }
 
-function var_0_0.init(arg_1_0)
-	arg_1_0.loader = AutoLoader.New()
-	arg_1_0.top = arg_1_0:findTF("top")
-	arg_1_0._map = arg_1_0:findTF("map")
+function slot0.init(slot0)
+	slot0.loader = AutoLoader.New()
+	slot0.top = slot0:findTF("top")
+	slot0._map = slot0:findTF("map")
 
-	for iter_1_0 = 0, arg_1_0._map.childCount - 1 do
-		local var_1_0 = arg_1_0._map:GetChild(iter_1_0)
-		local var_1_1 = go(var_1_0).name
-
-		arg_1_0["map_" .. var_1_1] = var_1_0
+	for slot4 = 0, slot0._map.childCount - 1 do
+		slot5 = slot0._map:GetChild(slot4)
+		slot0["map_" .. go(slot5).name] = slot5
 	end
 
-	arg_1_0._upper = arg_1_0:findTF("upper")
+	slot0._upper = slot0:findTF("upper")
 
-	for iter_1_1 = 0, arg_1_0._upper.childCount - 1 do
-		local var_1_2 = arg_1_0._upper:GetChild(iter_1_1)
-		local var_1_3 = go(var_1_2).name
-
-		arg_1_0["upper_" .. var_1_3] = var_1_2
+	for slot4 = 0, slot0._upper.childCount - 1 do
+		slot5 = slot0._upper:GetChild(slot4)
+		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	arg_1_0._front = arg_1_0._map:Find("top")
-	arg_1_0._middle = arg_1_0._map:Find("middle")
-	arg_1_0._bottom = arg_1_0._map:Find("bottom")
-	arg_1_0.containers = {
-		arg_1_0._front,
-		arg_1_0._middle,
-		arg_1_0._bottom
+	slot0._front = slot0._map:Find("top")
+	slot0._middle = slot0._map:Find("middle")
+	slot0._bottom = slot0._map:Find("bottom")
+	slot0.containers = {
+		slot0._front,
+		slot0._middle,
+		slot0._bottom
 	}
-	arg_1_0._shipTpl = arg_1_0._map:Find("ship")
-	arg_1_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.AkibaGraph"))
-	arg_1_0.usableTxt = arg_1_0.top:Find("usable_count/text"):GetComponent(typeof(Text))
-	arg_1_0.materialTxt = arg_1_0.top:Find("material/text"):GetComponent(typeof(Text))
+	slot0._shipTpl = slot0._map:Find("ship")
+	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.AkibaGraph"))
+	slot0.usableTxt = slot0.top:Find("usable_count/text"):GetComponent(typeof(Text))
+	slot0.materialTxt = slot0.top:Find("material/text"):GetComponent(typeof(Text))
 
-	arg_1_0:RegisterDataResponse()
+	slot0:RegisterDataResponse()
 
 	if PLATFORM_CODE ~= PLATFORM_JP then
-		setActive(arg_1_0._upper:Find("shujvhuigu"), false)
+		setActive(slot0._upper:Find("shujvhuigu"), false)
 
-		GetOrAddComponent(arg_1_0._map:Find("shujvhuigu"), typeof(Button)).enabled = false
+		GetOrAddComponent(slot0._map:Find("shujvhuigu"), typeof(Button)).enabled = false
 	end
 end
 
-function var_0_0.RegisterDataResponse(arg_2_0)
-	arg_2_0.Respones = ResponsableTree.CreateShell({})
+function slot0.RegisterDataResponse(slot0)
+	slot0.Respones = ResponsableTree.CreateShell({})
 
-	arg_2_0.Respones:SetRawData("view", arg_2_0)
+	slot0.Respones:SetRawData("view", slot0)
 
-	local var_2_0 = {
+	for slot5, slot6 in ipairs({
 		"shudian",
 		"youxidian",
 		"moxingdian",
 		"kafeiting"
-	}
-
-	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-		arg_2_0.Respones:AddRawListener({
+	}) do
+		slot0.Respones:AddRawListener({
 			"view",
-			iter_2_1
-		}, function(arg_3_0, arg_3_1)
-			if not arg_3_1 then
+			slot6
+		}, function (slot0, slot1)
+			if not slot1 then
 				return
 			end
 
-			arg_3_0.loader:GetSpriteQuiet("ui/AkibaStreetUI_atlas", iter_2_1 .. arg_3_1, arg_3_0["map_" .. iter_2_1])
+			slot0.loader:GetSpriteQuiet("ui/AkibaStreetUI_atlas", uv0 .. slot1, slot0["map_" .. uv0])
 
-			local var_3_0 = arg_3_0["upper_" .. iter_2_1]
-
-			if not var_3_0 or IsNil(var_3_0:Find("level")) then
+			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("level")) then
 				return
 			end
 
-			setText(var_3_0:Find("level"), "LV." .. arg_3_1)
+			setText(slot2:Find("level"), "LV." .. slot1)
 		end)
 	end
 
-	local var_2_1 = {
+	for slot6, slot7 in ipairs({
 		"shudian",
 		"youxidian",
 		"moxingdian",
@@ -102,153 +93,140 @@ function var_0_0.RegisterDataResponse(arg_2_0)
 		"huanzhuangshandian",
 		"shujvhuigu",
 		"xianshijianzao"
-	}
-
-	for iter_2_2, iter_2_3 in ipairs(var_2_1) do
-		arg_2_0.Respones:AddRawListener({
+	}) do
+		slot0.Respones:AddRawListener({
 			"view",
-			iter_2_3 .. "Tip"
-		}, function(arg_4_0, arg_4_1)
-			local var_4_0 = arg_4_0["upper_" .. iter_2_3]
-
-			if not var_4_0 or IsNil(var_4_0:Find("tip")) then
+			slot7 .. "Tip"
+		}, function (slot0, slot1)
+			if not slot0["upper_" .. uv0] or IsNil(slot2:Find("tip")) then
 				return
 			end
 
-			setActive(var_4_0:Find("tip"), arg_4_1)
+			setActive(slot2:Find("tip"), slot1)
 		end)
 	end
 
-	arg_2_0.Respones.hubData = {}
+	slot0.Respones.hubData = {}
 
-	arg_2_0.Respones:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"hubData"
-	}, function(arg_5_0, arg_5_1)
-		arg_5_0.usableTxt.text = "X" .. arg_5_1.count
+	}, function (slot0, slot1)
+		slot0.usableTxt.text = "X" .. slot1.count
 	end, {
 		strict = true
 	})
-	arg_2_0.Respones:AddRawListener({
+	slot0.Respones:AddRawListener({
 		"view",
 		"materialCount"
-	}, function(arg_6_0, arg_6_1)
-		arg_6_0.materialTxt.text = arg_6_1
+	}, function (slot0, slot1)
+		slot0.materialTxt.text = slot1
 	end)
 end
 
-function var_0_0.didEnter(arg_7_0)
-	onButton(arg_7_0, arg_7_0:findTF("top/return_btn"), function()
-		arg_7_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0:findTF("top/return_btn"), function ()
+		uv0:emit(uv1.ON_BACK)
 	end)
-	onButton(arg_7_0, arg_7_0.top:Find("daka_count"), function()
-		local var_9_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CLIENT_DISPLAY)
-
-		if var_9_0 and not var_9_0:isEnd() then
-			arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.ACTIVITY, {
-				id = var_9_0.id
+	onButton(slot0, slot0.top:Find("daka_count"), function ()
+		if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CLIENT_DISPLAY) and not slot0:isEnd() then
+			uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.ACTIVITY, {
+				id = slot0.id
 			})
 		end
 	end)
-	onButton(arg_7_0, arg_7_0:findTF("top/return_main_btn"), function()
-		arg_7_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()
+		uv0:emit(uv1.ON_HOME)
 	end)
-	onButton(arg_7_0, arg_7_0:findTF("top/help_btn"), function()
+
+	slot5 = "top/help_btn"
+
+	function slot4()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.qingdianguangchang_help.tip
 		})
-	end)
+	end
 
-	for iter_7_0, iter_7_1 in pairs(arg_7_0.Buildings) do
-		arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, iter_7_1, function()
-			arg_7_0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+	onButton(slot0, slot0:findTF(slot5), slot4)
+
+	for slot4, slot5 in pairs(slot0.Buildings) do
+		slot0:InitFacilityCross(slot0._map, slot0._upper, slot5, function ()
+			uv0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
 				mediator = BuildingUpgradeMediator,
 				viewComponent = BuildingUpgradeLayer,
 				data = {
-					buildingID = iter_7_0
+					buildingID = uv1
 				}
 			}))
 		end)
 	end
 
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "jiejiting", function()
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "jiejiting", function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 14)
 	end)
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "shujvhuigu", function()
-		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SUMMARY)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "shujvhuigu", function ()
+		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SUMMARY)
 	end)
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "xianshijianzao", function()
-		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.GETBOAT, {
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "xianshijianzao", function ()
+		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
 	end)
-	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "huanzhuangshandian", function()
-		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "huanzhuangshandian", function ()
+		uv0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
 	end)
-	arg_7_0.loader:GetPrefab("ui/zhuanzhu_caidai", "zhuanzhu_caidai", function(arg_17_0)
-		setParent(arg_17_0, arg_7_0._map)
-
-		local var_17_0 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder
-
-		pg.ViewUtils.SetSortingOrder(tf(arg_17_0), var_17_0 + 1)
+	slot0.loader:GetPrefab("ui/zhuanzhu_caidai", "zhuanzhu_caidai", function (slot0)
+		setParent(slot0, uv0._map)
+		pg.ViewUtils.SetSortingOrder(tf(slot0), GameObject.Find("UICamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder + 1)
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0.top, false)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, false)
 end
 
-function var_0_0.UpdateActivity(arg_18_0, arg_18_1)
-	arg_18_0.activity = arg_18_1
-	arg_18_0.Respones.shudian = arg_18_1.data1KeyValueList[2][5] or 1
-	arg_18_0.Respones.youxidian = arg_18_1.data1KeyValueList[2][6] or 1
-	arg_18_0.Respones.moxingdian = arg_18_1.data1KeyValueList[2][7] or 1
-	arg_18_0.Respones.kafeiting = arg_18_1.data1KeyValueList[2][8] or 1
+function slot0.UpdateActivity(slot0, slot1)
+	slot0.activity = slot1
+	slot0.Respones.shudian = slot1.data1KeyValueList[2][5] or 1
+	slot0.Respones.youxidian = slot1.data1KeyValueList[2][6] or 1
+	slot0.Respones.moxingdian = slot1.data1KeyValueList[2][7] or 1
+	slot0.Respones.kafeiting = slot1.data1KeyValueList[2][8] or 1
+	slot0.Respones.materialCount = slot1.data1KeyValueList[1][next(slot1.data1KeyValueList[1])] or 0
 
-	local var_18_0 = next(arg_18_1.data1KeyValueList[1])
-
-	arg_18_0.Respones.materialCount = arg_18_1.data1KeyValueList[1][var_18_0] or 0
-
-	arg_18_0:UpdateView()
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateView(arg_19_0)
-	local var_19_0 = getProxy(ActivityProxy)
+function slot0.UpdateView(slot0)
+	slot0.Respones.shudianTip = slot0:UpdateBuildingTip(slot0.activity, 5)
+	slot0.Respones.youxidianTip = slot0:UpdateBuildingTip(slot0.activity, 6)
+	slot0.Respones.moxingdianTip = slot0:UpdateBuildingTip(slot0.activity, 7)
+	slot0.Respones.kafeitingTip = slot0:UpdateBuildingTip(slot0.activity, 8)
+	slot0.Respones.shujvhuiguTip = false
+	slot0.Respones.jiejitingTip = getProxy(MiniGameProxy):GetHubByHubId(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME):getConfig("config_id")).count > 0
 
-	arg_19_0.Respones.shudianTip = arg_19_0:UpdateBuildingTip(arg_19_0.activity, 5)
-	arg_19_0.Respones.youxidianTip = arg_19_0:UpdateBuildingTip(arg_19_0.activity, 6)
-	arg_19_0.Respones.moxingdianTip = arg_19_0:UpdateBuildingTip(arg_19_0.activity, 7)
-	arg_19_0.Respones.kafeitingTip = arg_19_0:UpdateBuildingTip(arg_19_0.activity, 8)
-	arg_19_0.Respones.shujvhuiguTip = false
+	slot0:UpdateHubData(slot4)
 
-	local var_19_1 = var_19_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-	local var_19_2 = getProxy(MiniGameProxy):GetHubByHubId(var_19_1:getConfig("config_id"))
+	if not slot0.InitStudentBegin then
+		slot0:InitStudents(slot2.id, 3, 4)
 
-	arg_19_0.Respones.jiejitingTip = var_19_2.count > 0
-
-	arg_19_0:UpdateHubData(var_19_2)
-
-	if not arg_19_0.InitStudentBegin then
-		arg_19_0:InitStudents(var_19_1.id, 3, 4)
-
-		arg_19_0.InitStudentBegin = true
+		slot0.InitStudentBegin = true
 	end
 end
 
-function var_0_0.UpdateHubData(arg_20_0, arg_20_1)
-	arg_20_0.Respones.hubData.count = arg_20_1.count
-	arg_20_0.Respones.hubData.usedtime = arg_20_1.usedtime
-	arg_20_0.Respones.hubData.id = arg_20_1.id
+function slot0.UpdateHubData(slot0, slot1)
+	slot0.Respones.hubData.count = slot1.count
+	slot0.Respones.hubData.usedtime = slot1.usedtime
+	slot0.Respones.hubData.id = slot1.id
 
-	arg_20_0.Respones:PropertyChange("hubData")
+	slot0.Respones:PropertyChange("hubData")
 end
 
-function var_0_0.willExit(arg_21_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_21_0.top, arg_21_0._tf)
-	arg_21_0:clearStudents()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
+	slot0:clearStudents()
 
-	arg_21_0.Respones = nil
+	slot0.Respones = nil
 
-	var_0_0.super.willExit(arg_21_0)
+	uv0.super.willExit(slot0)
 end
 
-return var_0_0
+return slot0

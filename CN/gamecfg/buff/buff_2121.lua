@@ -1,26 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 2121
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				buff_id = 2120,
-				weaponType = 16,
-				rant = 700
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -271,5 +249,27 @@
 	stack = 1,
 	id = 2121,
 	icon = 2120,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 2121
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				buff_id = 2120,
+				weaponType = 16,
+				rant = 700
+			}
+		}
+	}
 }

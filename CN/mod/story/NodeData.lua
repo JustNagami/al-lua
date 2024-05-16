@@ -1,20 +1,19 @@
-﻿ys = ys or {}
+ys = ys or {}
 ys.Story = ys.Story or {}
 ys.Story.NodeData = class("NodeData")
+slot0 = ys.Story.NodeData
 
-local var_0_0 = ys.Story.NodeData
-
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._data = arg_1_1 or {}
-	arg_1_0._allSeq = {
-		arg_1_2
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0._data = slot1 or {}
+	slot0._allSeq = {
+		slot2
 	}
 end
 
-function var_0_0.AddSeq(arg_2_0, arg_2_1)
-	table.insert(arg_2_0._allSeq, arg_2_1)
+function slot0.AddSeq(slot0, slot1)
+	table.insert(slot0._allSeq, slot1)
 end
 
-function var_0_0.GetAllSeq(arg_3_0)
-	return arg_3_0._allSeq
+function slot0.GetAllSeq(slot0)
+	return slot0._allSeq
 end

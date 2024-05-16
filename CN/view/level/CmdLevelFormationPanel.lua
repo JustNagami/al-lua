@@ -1,153 +1,143 @@
-﻿local var_0_0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
+slot0 = class("CmdLevelFormationPanel", import("..base.BasePanel"))
 
-function var_0_0.init(arg_1_0)
-	arg_1_0.descPanel = arg_1_0:findTF("desc")
-	arg_1_0.descFrameTF = arg_1_0:findTF("desc/frame")
-	arg_1_0.descPos1 = arg_1_0:findTF("commander1/frame/info", arg_1_0.descFrameTF)
-	arg_1_0.descPos2 = arg_1_0:findTF("commander2/frame/info", arg_1_0.descFrameTF)
-	arg_1_0.skillTFPos1 = arg_1_0:findTF("commander1/skill_info", arg_1_0.descFrameTF)
-	arg_1_0.skillTFPos2 = arg_1_0:findTF("commander2/skill_info", arg_1_0.descFrameTF)
-	arg_1_0.abilitysTF = UIItemList.New(arg_1_0:findTF("atttr_panel/abilitys/mask/content", arg_1_0.descFrameTF), arg_1_0:findTF("atttr_panel/abilitys/mask/content/attr", arg_1_0.descFrameTF))
-	arg_1_0.talentsTF = UIItemList.New(arg_1_0:findTF("atttr_panel/talents/mask/content", arg_1_0.descFrameTF), arg_1_0:findTF("atttr_panel/talents/mask/content/attr", arg_1_0.descFrameTF))
-	arg_1_0.abilityArr = arg_1_0:findTF("desc/frame/atttr_panel/abilitys/arr")
-	arg_1_0.talentsArr = arg_1_0:findTF("desc/frame/atttr_panel/talents/arr")
-	arg_1_0.animtion = arg_1_0.descPanel:GetComponent("Animation")
-	arg_1_0.animtionEvent = arg_1_0:findTF("desc"):GetComponent(typeof(DftAniEvent))
+function slot0.init(slot0)
+	slot0.descPanel = slot0:findTF("desc")
+	slot0.descFrameTF = slot0:findTF("desc/frame")
+	slot0.descPos1 = slot0:findTF("commander1/frame/info", slot0.descFrameTF)
+	slot0.descPos2 = slot0:findTF("commander2/frame/info", slot0.descFrameTF)
+	slot0.skillTFPos1 = slot0:findTF("commander1/skill_info", slot0.descFrameTF)
+	slot0.skillTFPos2 = slot0:findTF("commander2/skill_info", slot0.descFrameTF)
+	slot0.abilitysTF = UIItemList.New(slot0:findTF("atttr_panel/abilitys/mask/content", slot0.descFrameTF), slot0:findTF("atttr_panel/abilitys/mask/content/attr", slot0.descFrameTF))
+	slot0.talentsTF = UIItemList.New(slot0:findTF("atttr_panel/talents/mask/content", slot0.descFrameTF), slot0:findTF("atttr_panel/talents/mask/content/attr", slot0.descFrameTF))
+	slot0.abilityArr = slot0:findTF("desc/frame/atttr_panel/abilitys/arr")
+	slot0.talentsArr = slot0:findTF("desc/frame/atttr_panel/talents/arr")
+	slot0.animtion = slot0.descPanel:GetComponent("Animation")
+	slot0.animtionEvent = slot0:findTF("desc"):GetComponent(typeof(DftAniEvent))
 end
 
-function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0.callback = arg_2_2
+function slot0.update(slot0, slot1, slot2)
+	slot0.callback = slot2
 
-	assert(arg_2_1)
+	assert(slot1)
 
-	arg_2_0.fleet = arg_2_1
+	slot0.fleet = slot1
 
-	arg_2_0:updateDesc()
+	slot0:updateDesc()
 end
 
-function var_0_0.attach(arg_3_0, arg_3_1)
-	var_0_0.super.attach(arg_3_0, arg_3_1)
-	setActive(arg_3_0._go, false)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:close()
+function slot0.attach(slot0, slot1)
+	uv0.super.attach(slot0, slot1)
+	setActive(slot0._go, false)
+	onButton(slot0, slot0._tf, function ()
+		uv0:close()
 	end, SFX_PANEL)
 end
 
-function var_0_0.playAnim(arg_5_0, arg_5_1)
-	arg_5_0.animtion:Play(arg_5_1)
+function slot0.playAnim(slot0, slot1)
+	slot0.animtion:Play(slot1)
 end
 
-function var_0_0.open(arg_6_0)
-	arg_6_0:playAnim("cmdopen")
-	setActive(arg_6_0._go, true)
-	setParent(arg_6_0._go, pg.UIMgr.GetInstance().OverlayMain)
-	arg_6_0._tf:SetAsLastSibling()
+function slot0.open(slot0)
+	slot0:playAnim("cmdopen")
+	setActive(slot0._go, true)
+	setParent(slot0._go, pg.UIMgr.GetInstance().OverlayMain)
+	slot0._tf:SetAsLastSibling()
 end
 
-function var_0_0.close(arg_7_0)
-	arg_7_0:playAnim("cmdclose")
-	setActive(arg_7_0._go, false)
+function slot0.close(slot0)
+	slot0:playAnim("cmdclose")
+	setActive(slot0._go, false)
 end
 
-function var_0_0.updateDesc(arg_8_0)
-	local var_8_0 = arg_8_0.fleet:getCommanders()
+function slot0.updateDesc(slot0)
+	for slot5 = 1, CommanderConst.MAX_FORMATION_POS do
+		slot6 = slot0.fleet:getCommanders()[slot5]
 
-	for iter_8_0 = 1, CommanderConst.MAX_FORMATION_POS do
-		local var_8_1 = var_8_0[iter_8_0]
-
-		arg_8_0:updateCommander(arg_8_0["descPos" .. iter_8_0], iter_8_0, var_8_1)
-		arg_8_0:updateSkillTF(var_8_1, arg_8_0["skillTFPos" .. iter_8_0])
+		slot0:updateCommander(slot0["descPos" .. slot5], slot5, slot6)
+		slot0:updateSkillTF(slot6, slot0["skillTFPos" .. slot5])
 	end
 
-	arg_8_0:updateAdditions()
+	slot0:updateAdditions()
 end
 
-function var_0_0.updateAdditions(arg_9_0)
-	local var_9_0 = arg_9_0.fleet
-	local var_9_1 = _.values(var_9_0:getCommandersTalentDesc())
-	local var_9_2, var_9_3 = var_9_0:getCommandersAddition()
+function slot0.updateAdditions(slot0)
+	slot1 = slot0.fleet
+	slot2 = _.values(slot1:getCommandersTalentDesc())
+	slot3, slot4 = slot1:getCommandersAddition()
 
-	arg_9_0.abilitysTF:make(function(arg_10_0, arg_10_1, arg_10_2)
-		if arg_10_0 == UIItemList.EventUpdate then
-			local var_10_0 = var_9_2[arg_10_1 + 1]
+	slot0.abilitysTF:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			setText(arg_10_2:Find("name"), AttributeType.Type2Name(var_10_0.attrName))
-			setText(arg_10_2:Find("Text"), string.format("%0.3f", var_10_0.value) .. "%")
-			GetImageSpriteFromAtlasAsync("attricon", var_10_0.attrName, arg_10_2:Find("icon"), false)
-			setActive(arg_10_2:Find("bg"), arg_10_1 % 2 ~= 0)
+			setText(slot2:Find("name"), AttributeType.Type2Name(slot3.attrName))
+			setText(slot2:Find("Text"), string.format("%0.3f", slot3.value) .. "%")
+			GetImageSpriteFromAtlasAsync("attricon", slot3.attrName, slot2:Find("icon"), false)
+			setActive(slot2:Find("bg"), slot1 % 2 ~= 0)
 		end
 	end)
-	arg_9_0.abilitysTF:align(#var_9_2)
-	setActive(arg_9_0.abilityArr, #var_9_2 > 4)
-	arg_9_0.talentsTF:make(function(arg_11_0, arg_11_1, arg_11_2)
-		if arg_11_0 == UIItemList.EventUpdate then
-			local var_11_0 = var_9_1[arg_11_1 + 1]
+	slot0.abilitysTF:align(#slot3)
+	setActive(slot0.abilityArr, #slot3 > 4)
+	slot0.talentsTF:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			setScrollText(findTF(arg_11_2, "name_mask/name"), var_11_0.name)
-
-			local var_11_1 = var_11_0.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
-
-			setText(arg_11_2:Find("Text"), var_11_0.value .. var_11_1)
-			setActive(arg_11_2:Find("bg"), arg_11_1 % 2 ~= 0)
+			setScrollText(findTF(slot2, "name_mask/name"), slot3.name)
+			setText(slot2:Find("Text"), slot3.value .. (slot3.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""))
+			setActive(slot2:Find("bg"), slot1 % 2 ~= 0)
 		end
 	end)
-	arg_9_0.talentsTF:align(#var_9_1)
-	setActive(arg_9_0.talentsArr, #var_9_1 > 4)
+	slot0.talentsTF:align(#slot2)
+	setActive(slot0.talentsArr, #slot2 > 4)
 end
 
-function var_0_0.updateSkillTF(arg_12_0, arg_12_1, arg_12_2)
-	setActive(arg_12_2, arg_12_1)
+function slot0.updateSkillTF(slot0, slot1, slot2)
+	setActive(slot2, slot1)
 
-	if arg_12_1 then
-		local var_12_0 = arg_12_1:getSkills()[1]
+	if slot1 then
+		slot3 = slot1:getSkills()[1]
 
-		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var_12_0:getConfig("icon"), "", arg_12_2:Find("icon"))
-		setText(arg_12_2:Find("level"), "Lv." .. var_12_0:getLevel())
+		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. slot3:getConfig("icon"), "", slot2:Find("icon"))
+		setText(slot2:Find("level"), "Lv." .. slot3:getLevel())
 	end
 end
 
-function var_0_0.updateCommander(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0 = arg_13_1:Find("add")
-	local var_13_1 = arg_13_1:Find("info")
+function slot0.updateCommander(slot0, slot1, slot2, slot3)
+	slot4 = slot1:Find("add")
+	slot5 = slot1:Find("info")
 
-	if arg_13_3 then
-		local var_13_2 = arg_13_1:Find("info/mask/icon")
-		local var_13_3 = arg_13_1:Find("info/frame")
+	if slot3 then
+		slot7 = slot1:Find("info/frame")
 
-		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg_13_3:getPainting(), "", var_13_2)
+		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. slot3:getPainting(), "", slot1:Find("info/mask/icon"))
 
-		local var_13_4 = arg_13_1:Find("info/name")
-
-		if var_13_4 then
-			setText(var_13_4, arg_13_3:getName())
+		if slot1:Find("info/name") then
+			setText(slot8, slot3:getName())
 		end
 
-		local var_13_5 = Commander.rarity2Frame(arg_13_3:getRarity())
-
-		setImageSprite(var_13_3, GetSpriteFromAtlas("weaponframes", "commander_" .. var_13_5))
+		setImageSprite(slot7, GetSpriteFromAtlas("weaponframes", "commander_" .. Commander.rarity2Frame(slot3:getRarity())))
 	end
 
-	onButton(arg_13_0, var_13_1, function()
-		if arg_13_0.callback then
-			arg_13_0.callback(arg_13_2)
+	onButton(slot0, slot5, function ()
+		if uv0.callback then
+			uv0.callback(uv1)
 		end
 	end, SFX_PANEL)
-	onButton(arg_13_0, var_13_0, function()
-		if arg_13_0.callback then
-			arg_13_0.callback(arg_13_2)
+	onButton(slot0, slot4, function ()
+		if uv0.callback then
+			uv0.callback(uv1)
 		end
 	end, SFX_PANEL)
-	setActive(var_13_0, not arg_13_3)
-	setActive(var_13_1, arg_13_3)
+	setActive(slot4, not slot3)
+	setActive(slot5, slot3)
 end
 
-function var_0_0.enable(arg_16_0, arg_16_1)
-	setActive(arg_16_0._go, arg_16_1)
+function slot0.enable(slot0, slot1)
+	setActive(slot0._go, slot1)
 end
 
-function var_0_0.clear(arg_17_0)
-	setActive(arg_17_0._go, false)
-	setParent(arg_17_0._go, arg_17_0.parent.topPanel)
+function slot0.clear(slot0)
+	setActive(slot0._go, false)
+	setParent(slot0._go, slot0.parent.topPanel)
 end
 
-return var_0_0
+return slot0

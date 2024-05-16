@@ -1,65 +1,53 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleTriggerBulletFactory = singletonClass("BattleTriggerBulletFactory", slot0.Battle.BattleBombBulletFactory)
+slot0.Battle.BattleTriggerBulletFactory.__name = "BattleTriggerBulletFactory"
+slot1 = slot0.Battle.BattleTriggerBulletFactory
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleTriggerBulletFactory = singletonClass("BattleTriggerBulletFactory", var_0_0.Battle.BattleBombBulletFactory)
-var_0_0.Battle.BattleTriggerBulletFactory.__name = "BattleTriggerBulletFactory"
-
-local var_0_1 = var_0_0.Battle.BattleTriggerBulletFactory
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
+function slot1.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_1.OutRangeFunc(arg_2_0)
-	local var_2_0 = arg_2_0:GetTemplate()
-	local var_2_1 = var_2_0.hit_type
-	local var_2_2 = var_2_0.extra_param.multy or 1
-	local var_2_3 = var_0_1.GetDataProxy()
-	local var_2_4 = arg_2_0:GetDiveFilter()
-	local var_2_5
+function slot1.OutRangeFunc(slot0)
+	slot1 = slot0:GetTemplate()
+	slot2 = slot1.hit_type
+	slot3 = slot1.extra_param.multy or 1
+	slot4 = uv0.GetDataProxy()
+	slot6 = nil
 
-	local function var_2_6(arg_3_0)
-		local var_3_0 = var_2_1.decay
-
-		if var_3_0 then
-			var_2_5:UpdateDistanceInfo()
+	slot4:SpawnTriggerColumnArea(slot0:GetEffectField(), slot0:GetIFF(), slot0:GetExplodePostion(), slot2.range, slot2.time, false, slot1.miss_fx, function (slot0)
+		if uv0.decay then
+			uv1:UpdateDistanceInfo()
 		end
 
-		for iter_3_0, iter_3_1 in ipairs(arg_3_0) do
-			if iter_3_1.Active then
-				local var_3_1 = iter_3_1.UID
-				local var_3_2 = 0
+		for slot5, slot6 in ipairs(slot0) do
+			if slot6.Active then
+				slot7 = slot6.UID
+				slot8 = 0
 
-				if var_3_0 then
-					var_3_2 = var_2_5:GetDistance(var_3_1) / (var_2_1.range * 0.5) * var_3_0
+				if slot1 then
+					slot8 = uv1:GetDistance(slot7) / (uv0.range * 0.5) * slot1
 				end
 
-				local var_3_3 = var_0_1.GetSceneMediator():GetCharacter(var_3_1):GetUnitData()
-				local var_3_4 = 0
+				slot9 = uv2.GetSceneMediator():GetCharacter(slot7):GetUnitData()
+				slot10 = 0
 
-				while var_3_3:IsAlive() and var_3_4 < var_2_2 do
-					var_2_3:HandleDamage(arg_2_0, var_3_3, var_3_2)
+				while slot9:IsAlive() and slot10 < uv3 do
+					uv4:HandleDamage(uv5, slot9, slot8)
 
-					var_3_4 = var_3_4 + 1
+					slot10 = slot10 + 1
 				end
 			end
 		end
 
-		var_0_0.Battle.PlayBattleSFX(arg_2_0:GetHitSFX())
-		var_2_3:SpawnEffect(var_2_0.hit_fx, arg_2_0:GetExplodePostion())
-	end
-
-	var_2_5 = var_2_3:SpawnTriggerColumnArea(arg_2_0:GetEffectField(), arg_2_0:GetIFF(), arg_2_0:GetExplodePostion(), var_2_1.range, var_2_1.time, false, var_2_0.miss_fx, var_2_6)
-
-	var_2_5:SetDiveFilter(var_2_4)
-	var_2_3:RemoveBulletUnit(arg_2_0:GetUniqueID())
+		uv6.Battle.PlayBattleSFX(uv5:GetHitSFX())
+		uv4:SpawnEffect(uv7.hit_fx, uv5:GetExplodePostion())
+	end):SetDiveFilter(slot0:GetDiveFilter())
+	slot4:RemoveBulletUnit(slot0:GetUniqueID())
 end
 
-function var_0_1.onBulletHitFunc(arg_4_0, arg_4_1, arg_4_2)
-	return
+function slot1.onBulletHitFunc(slot0, slot1, slot2)
 end
 
-function var_0_1.CreateBulletAlert(arg_5_0)
-	return
+function slot1.CreateBulletAlert(slot0)
 end

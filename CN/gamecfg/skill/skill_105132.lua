@@ -1,55 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandomByWeight",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 105134
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHarm",
-				"TargetShipTag"
-			},
-			arg_list = {
-				delay = 0.1,
-				weapon_id = 999,
-				ship_tag_list = {
-					"EXPLOSION"
-				}
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHarm",
-				"TargetShipTag"
-			},
-			arg_list = {
-				delay = 0.1,
-				weapon_id = 68941,
-				ship_tag_list = {
-					"EXPLOSION"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -507,5 +456,56 @@
 	id = 105132,
 	picture = "0",
 	castCV = "",
-	desc = "buff"
+	desc = "buff",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandomByWeight",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 105134
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHarm",
+				"TargetShipTag"
+			},
+			arg_list = {
+				delay = 0.1,
+				weapon_id = 999,
+				ship_tag_list = {
+					"EXPLOSION"
+				}
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHarm",
+				"TargetShipTag"
+			},
+			arg_list = {
+				delay = 0.1,
+				weapon_id = 68941,
+				ship_tag_list = {
+					"EXPLOSION"
+				}
+			}
+		}
+	}
 }

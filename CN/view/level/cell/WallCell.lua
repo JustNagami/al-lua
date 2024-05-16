@@ -1,47 +1,47 @@
-﻿local var_0_0 = class("WallCell", StereoCellView)
+slot0 = class("WallCell", StereoCellView)
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-	arg_1_0.direction = arg_1_3
-	arg_1_0.anchor = arg_1_4
-	arg_1_0.BanCount = 0
-	arg_1_0.WallPrefabs = nil
-	arg_1_0.girdParent = nil
+	slot0.direction = slot3
+	slot0.anchor = slot4
+	slot0.BanCount = 0
+	slot0.WallPrefabs = nil
+	slot0.girdParent = nil
 end
 
-function var_0_0.GetOrder(arg_2_0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityFleet
 end
 
-function var_0_0.OverrideCanvas(arg_3_0)
-	pg.ViewUtils.SetLayer(tf(arg_3_0.go), Layer.UI)
+function slot0.OverrideCanvas(slot0)
+	pg.ViewUtils.SetLayer(tf(slot0.go), Layer.UI)
 end
 
-function var_0_0.ResetCanvasOrder(arg_4_0)
-	pg.ViewUtils.SetSortingOrder(arg_4_0.tf, math.floor(arg_4_0.line.row * 0.5) * ChapterConst.PriorityPerRow + arg_4_0:GetOrder())
+function slot0.ResetCanvasOrder(slot0)
+	pg.ViewUtils.SetSortingOrder(slot0.tf, math.floor(slot0.line.row * 0.5) * ChapterConst.PriorityPerRow + slot0:GetOrder())
 end
 
-function var_0_0.RefreshDirection(arg_5_0)
-	setParent(arg_5_0.tf, arg_5_0.girdParent.cellRoot)
+function slot0.RefreshDirection(slot0)
+	setParent(slot0.tf, slot0.girdParent.cellRoot)
 
-	arg_5_0.tf.localRotation = Quaternion.Euler(arg_5_0.direction and 0.1 or -90, 90, -90)
-	arg_5_0.tf.anchoredPosition3D = arg_5_0.anchor
+	slot0.tf.localRotation = Quaternion.Euler(slot0.direction and 0.1 or -90, 90, -90)
+	slot0.tf.anchoredPosition3D = slot0.anchor
 end
 
-function var_0_0.SetAsset(arg_6_0, arg_6_1)
-	if not arg_6_1 or #arg_6_1 == 0 then
+function slot0.SetAsset(slot0, slot1)
+	if not slot1 or #slot1 == 0 then
 		return
 	end
 
-	arg_6_0.assetName = arg_6_1
+	slot0.assetName = slot1
 
-	arg_6_0:UpdateView()
+	slot0:UpdateView()
 end
 
-function var_0_0.UpdateView(arg_7_0)
-	arg_7_0:UpdateGO("effect/" .. arg_7_0.assetName, arg_7_0.assetName)
-	arg_7_0.buffer:RefreshDirection()
+function slot0.UpdateView(slot0)
+	slot0:UpdateGO("effect/" .. slot0.assetName, slot0.assetName)
+	slot0.buffer:RefreshDirection()
 end
 
-return var_0_0
+return slot0

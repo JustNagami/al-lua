@@ -1,64 +1,56 @@
-﻿local var_0_0 = class("MainReplaceFoodSequence")
+slot0 = class("MainReplaceFoodSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(ActivityProxy):getActiveBannerByType(GAMEUI_BANNER_10)
-
-	if var_1_0 then
-		arg_1_0:Repalce(var_1_0, arg_1_1)
+function slot0.Execute(slot0, slot1)
+	if getProxy(ActivityProxy):getActiveBannerByType(GAMEUI_BANNER_10) then
+		slot0:Repalce(slot2, slot1)
 	else
-		arg_1_0:Revert()
-		arg_1_1()
+		slot0:Revert()
+		slot1()
 	end
 end
 
-function var_0_0.Repalce(arg_2_0, arg_2_1, arg_2_2)
-	if var_0_0.backUp then
-		arg_2_2()
+function slot0.Repalce(slot0, slot1, slot2)
+	if uv0.backUp then
+		slot2()
 
 		return
 	end
 
-	local var_2_0
+	slot3 = nil
 
-	var_2_0 = coroutine.wrap(function()
-		onNextTick(var_2_0)
+	coroutine.wrap(function ()
+		onNextTick(uv0)
 		coroutine.yield()
 
-		local var_3_0 = pg.item_data_statistics[50004]
-
-		var_0_0.backUp = {
-			icon = var_3_0.icon,
-			name = var_3_0.name,
-			display = var_3_0.display
+		slot0 = pg.item_data_statistics[50004]
+		uv1.backUp = {
+			icon = slot0.icon,
+			name = slot0.name,
+			display = slot0.display
 		}
 
-		onNextTick(var_2_0)
+		onNextTick(uv0)
 		coroutine.yield()
 
-		var_3_0.icon = "Props/" .. arg_2_1.pic
+		slot0.icon = "Props/" .. uv2.pic
+		slot1 = string.split(uv2.param, "|")
+		slot0.name = slot1[1]
+		slot0.display = slot1[2]
+		pg.benefit_buff_template[1].icon = "Props/" .. uv2.pic
 
-		local var_3_1 = string.split(arg_2_1.param, "|")
-
-		var_3_0.name = var_3_1[1]
-		var_3_0.display = var_3_1[2]
-		pg.benefit_buff_template[1].icon = "Props/" .. arg_2_1.pic
-
-		arg_2_2()
-	end)
-
-	var_2_0()
+		uv3()
+	end)()
 end
 
-function var_0_0.Revert(arg_4_0)
-	if var_0_0.backUp then
-		local var_4_0 = pg.item_data_statistics[50004]
-
-		var_4_0.icon = var_0_0.backUp.icon
-		var_4_0.name = var_0_0.backUp.name
-		var_4_0.display = var_0_0.backUp.display
-		pg.benefit_buff_template[1].icon = var_0_0.backUp.icon
-		var_0_0.backUp = nil
+function slot0.Revert(slot0)
+	if uv0.backUp then
+		slot1 = pg.item_data_statistics[50004]
+		slot1.icon = uv0.backUp.icon
+		slot1.name = uv0.backUp.name
+		slot1.display = uv0.backUp.display
+		pg.benefit_buff_template[1].icon = uv0.backUp.icon
+		uv0.backUp = nil
 	end
 end
 
-return var_0_0
+return slot0

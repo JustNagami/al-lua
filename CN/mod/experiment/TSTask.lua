@@ -1,19 +1,17 @@
-﻿local var_0_0 = class("TSTask")
+slot0 = class("TSTask")
 
-function var_0_0.SetJob(arg_1_0, arg_1_1)
-	arg_1_0.job = arg_1_1
+function slot0.SetJob(slot0, slot1)
+	slot0.job = slot1
 end
 
-function var_0_0.Execute(arg_2_0)
-	local var_2_0 = os.clock()
+function slot0.Execute(slot0)
+	slot0.job()
 
-	arg_2_0.job()
-
-	return os.clock() - var_2_0
+	return os.clock() - os.clock()
 end
 
-function var_0_0.Clear(arg_3_0)
-	arg_3_0.job = nil
+function slot0.Clear(slot0)
+	slot0.job = nil
 end
 
-return var_0_0
+return slot0

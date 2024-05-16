@@ -1,43 +1,40 @@
-﻿local var_0_0 = class("SixthAnniversaryIslandItemWindowLayer", import("..base.BaseUI"))
+slot0 = class("SixthAnniversaryIslandItemWindowLayer", import("..base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SixthAnniversaryIslandItemWindow"
 end
 
-function var_0_0.init(arg_2_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
-	setText(arg_2_0._tf:Find("content/bottom/Text"), arg_2_0.contextData.text)
-	onButton(arg_2_0, arg_2_0._tf:Find("bg"), function()
-		arg_2_0:closeView()
+function slot0.init(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	setText(slot0._tf:Find("content/bottom/Text"), slot0.contextData.text)
+	onButton(slot0, slot0._tf:Find("bg"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
 end
 
-function var_0_0.didEnter(arg_4_0)
-	local var_4_0 = arg_4_0.contextData.drop
-	local var_4_1 = arg_4_0._tf:Find("content/main")
-	local var_4_2 = var_4_0.count and {
-		var_4_0.count,
+function slot0.didEnter(slot0)
+	slot4, slot5 = unpack(slot0.contextData.drop.count and {
+		slot1.count,
 		true
 	} or {
-		var_4_0:getOwnedCount()
-	}
-	local var_4_3, var_4_4 = unpack(var_4_2)
+		slot1:getOwnedCount()
+	})
 
-	setActive(var_4_1:Find("owner"), var_4_4)
+	setActive(slot0._tf:Find("content/main"):Find("owner"), slot5)
 
-	if var_4_4 then
-		setText(var_4_1:Find("owner"), i18n("word_own1") .. var_4_3)
+	if slot5 then
+		setText(slot2:Find("owner"), i18n("word_own1") .. slot4)
 	end
 
-	var_4_0.count = nil
+	slot1.count = nil
 
-	updateDrop(var_4_1:Find("icon/IconTpl"), var_4_0)
-	setText(var_4_1:Find("line/name"), var_4_0:getConfig("name"))
-	setText(var_4_1:Find("line/content/Text"), var_4_0.desc or var_4_0:getConfig("desc"))
+	updateDrop(slot2:Find("icon/IconTpl"), slot1)
+	setText(slot2:Find("line/name"), slot1:getConfig("name"))
+	setText(slot2:Find("line/content/Text"), slot1.desc or slot1:getConfig("desc"))
 end
 
-function var_0_0.willExit(arg_5_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_5_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 end
 
-return var_0_0
+return slot0

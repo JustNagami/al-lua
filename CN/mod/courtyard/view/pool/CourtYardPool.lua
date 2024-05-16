@@ -1,65 +1,64 @@
-﻿local var_0_0 = class("CourtYardPool")
+slot0 = class("CourtYardPool")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	arg_1_0.prefab = arg_1_2
-	arg_1_0.parentTF = arg_1_1
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	slot0.prefab = slot2
+	slot0.parentTF = slot1
 
-	GetOrAddComponent(arg_1_0.prefab, typeof(CanvasGroup))
-	arg_1_0.prefab.transform:SetParent(arg_1_0.parentTF, false)
+	GetOrAddComponent(slot0.prefab, typeof(CanvasGroup))
+	slot0.prefab.transform:SetParent(slot0.parentTF, false)
 
-	arg_1_0.layer = arg_1_0.parentTF.gameObject.layer
-	arg_1_0.items = {}
-	arg_1_0.max = arg_1_4
-	arg_1_0.initCnt = arg_1_3
+	slot0.layer = slot0.parentTF.gameObject.layer
+	slot0.items = {}
+	slot0.max = slot4
+	slot0.initCnt = slot3
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	for iter_2_0 = 1, arg_2_0.initCnt do
-		arg_2_0:NewItem()
+function slot0.Init(slot0)
+	for slot4 = 1, slot0.initCnt do
+		slot0:NewItem()
 	end
 end
 
-function var_0_0.Enqueue(arg_3_0, arg_3_1)
-	if #arg_3_0.items >= arg_3_0.max then
-		Object.Destroy(arg_3_1)
+function slot0.Enqueue(slot0, slot1)
+	if slot0.max <= #slot0.items then
+		Object.Destroy(slot1)
 	else
-		arg_3_1.transform.localPosition = Vector3.one
+		slot1.transform.localPosition = Vector3.one
 
-		setActiveViaLayer(arg_3_1.transform, false)
-		arg_3_1.transform:SetParent(arg_3_0.parentTF, true)
-		table.insert(arg_3_0.items, arg_3_1)
+		setActiveViaLayer(slot1.transform, false)
+		slot1.transform:SetParent(slot0.parentTF, true)
+		table.insert(slot0.items, slot1)
 	end
 end
 
-function var_0_0.Dequeue(arg_4_0)
-	if #arg_4_0.items <= 0 then
-		arg_4_0:NewItem()
+function slot0.Dequeue(slot0)
+	if #slot0.items <= 0 then
+		slot0:NewItem()
 	end
 
-	local var_4_0 = table.remove(arg_4_0.items, 1)
+	slot1 = table.remove(slot0.items, 1)
 
-	setActiveViaLayer(var_4_0.transform, true)
+	setActiveViaLayer(slot1.transform, true)
 
-	return var_4_0
+	return slot1
 end
 
-function var_0_0.NewItem(arg_5_0)
-	local var_5_0 = Object.Instantiate(arg_5_0.prefab)
+function slot0.NewItem(slot0)
+	slot1 = Object.Instantiate(slot0.prefab)
+	slot1.transform.localScale = Vector3.one
 
-	var_5_0.transform.localScale = Vector3.one
-
-	arg_5_0:Enqueue(var_5_0)
+	slot0:Enqueue(slot1)
 end
 
-function var_0_0.Dispose(arg_6_0)
-	for iter_6_0, iter_6_1 in ipairs(arg_6_0.items) do
-		Object.Destroy(iter_6_1)
+function slot0.Dispose(slot0)
+	for slot4, slot5 in ipairs(slot0.items) do
+		Object.Destroy(slot5)
 	end
 
-	arg_6_0.items = nil
-	arg_6_0.prefab = nil
+	slot0.items = nil
+	slot0.prefab = nil
 end
 
-return var_0_0
+return slot0

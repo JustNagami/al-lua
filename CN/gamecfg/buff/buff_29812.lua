@@ -1,16 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onManualMissileFire"
-			},
-			arg_list = {
-				buff_id = 29816,
-				target = "TargetSelf"
-			}
-		}
-	},
+return {
 	{
 		desc = "主炮每进行10次攻击，触发全弹发射-鞍山级III"
 	},
@@ -23,5 +11,17 @@
 	stack = 1,
 	id = 29812,
 	icon = 20000,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onManualMissileFire"
+			},
+			arg_list = {
+				buff_id = 29816,
+				target = "TargetSelf"
+			}
+		}
+	}
 }

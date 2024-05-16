@@ -1,21 +1,18 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleSkillConsumeBuff = class("BattleSkillConsumeBuff", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillConsumeBuff.__name = "BattleSkillConsumeBuff"
+slot1 = slot0.Battle.BattleSkillConsumeBuff
 
-local var_0_0 = ys
+function slot1.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-var_0_0.Battle.BattleSkillConsumeBuff = class("BattleSkillConsumeBuff", var_0_0.Battle.BattleSkillEffect)
-var_0_0.Battle.BattleSkillConsumeBuff.__name = "BattleSkillConsumeBuff"
-
-local var_0_1 = var_0_0.Battle.BattleSkillConsumeBuff
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	arg_1_0._buffID = arg_1_0._tempData.arg_list.buff_id
-	arg_1_0._count = arg_1_0._tempData.arg_list.consume_count
+	slot0._buffID = slot0._tempData.arg_list.buff_id
+	slot0._count = slot0._tempData.arg_list.consume_count
 end
 
-function var_0_1.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_2:IsAlive() then
-		arg_2_2:ConsumeBuffStack(arg_2_0._buffID, arg_2_0._count)
+function slot1.DoDataEffect(slot0, slot1, slot2)
+	if slot2:IsAlive() then
+		slot2:ConsumeBuffStack(slot0._buffID, slot0._count)
 	end
 end

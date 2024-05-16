@@ -1,146 +1,138 @@
-﻿local var_0_0 = class("CardPuzzlePage", import("view.base.BaseActivityPage"))
+slot0 = class("CardPuzzlePage", import("view.base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.titleTF = arg_1_0:findTF("title", arg_1_0.bg)
-	arg_1_0.progressTF = arg_1_0:findTF("progress", arg_1_0.bg)
-	arg_1_0.descTF = arg_1_0:findTF("desc", arg_1_0.bg)
-	arg_1_0.startBtn = arg_1_0:findTF("start_btn", arg_1_0.bg)
-	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
-	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
-	arg_1_0.item = arg_1_0:findTF("levels/tpl", arg_1_0.bg)
-	arg_1_0.items = arg_1_0:findTF("levels", arg_1_0.bg)
-	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0.item)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.titleTF = slot0:findTF("title", slot0.bg)
+	slot0.progressTF = slot0:findTF("progress", slot0.bg)
+	slot0.descTF = slot0:findTF("desc", slot0.bg)
+	slot0.startBtn = slot0:findTF("start_btn", slot0.bg)
+	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
+	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
+	slot0.item = slot0:findTF("levels/tpl", slot0.bg)
+	slot0.items = slot0:findTF("levels", slot0.bg)
+	slot0.uilist = UIItemList.New(slot0.items, slot0.item)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	arg_2_0.levelList = arg_2_0.activity:getConfig("config_data")[1]
-	arg_2_0.awardList = arg_2_0.activity:getConfig("config_data")[2]
+function slot0.OnDataSetting(slot0)
+	slot0.levelList = slot0.activity:getConfig("config_data")[1]
+	slot0.awardList = slot0.activity:getConfig("config_data")[2]
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	arg_3_0.uilist:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventInit then
-			arg_3_0:InitItem(arg_4_1, arg_4_2)
-		elseif arg_4_0 == UIItemList.EventUpdate then
-			arg_3_0:UpdateItem(arg_4_1, arg_4_2)
+function slot0.OnFirstFlush(slot0)
+	slot0.uilist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			uv0:InitItem(slot1, slot2)
+		elseif slot0 == UIItemList.EventUpdate then
+			uv0:UpdateItem(slot1, slot2)
 		end
 	end)
-	onButton(arg_3_0, arg_3_0.startBtn, function()
-		if not arg_3_0.selectedId then
+	onButton(slot0, slot0.startBtn, function ()
+		if not uv0.selectedId then
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.GO_CARDPUZZLE_COMBAT, arg_3_0.selectedId)
+		uv0:emit(ActivityMediator.GO_CARDPUZZLE_COMBAT, uv0.selectedId)
 	end, SFX_PANEL)
 
-	arg_3_0.selectedId = arg_3_0:GetCurLevel()
+	slot0.selectedId = slot0:GetCurLevel()
 
-	arg_3_0:UpdateLevelInfo()
+	slot0:UpdateLevelInfo()
 end
 
-function var_0_0.InitItem(arg_6_0, arg_6_1, arg_6_2)
-	GetImageSpriteFromAtlasAsync("ui/activityuipage/cardpuzzlepage_atlas", arg_6_1 + 1, arg_6_0:findTF("normal/num", arg_6_2), true)
-	GetImageSpriteFromAtlasAsync("ui/activityuipage/cardpuzzlepage_atlas", arg_6_1 + 1, arg_6_0:findTF("selected/num", arg_6_2), true)
+function slot0.InitItem(slot0, slot1, slot2)
+	GetImageSpriteFromAtlasAsync("ui/activityuipage/cardpuzzlepage_atlas", slot1 + 1, slot0:findTF("normal/num", slot2), true)
+	GetImageSpriteFromAtlasAsync("ui/activityuipage/cardpuzzlepage_atlas", slot1 + 1, slot0:findTF("selected/num", slot2), true)
 end
 
-function var_0_0.UpdateItem(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_1 + 1
-	local var_7_1 = arg_7_0.levelList[var_7_0]
+function slot0.UpdateItem(slot0, slot1, slot2)
+	setActive(slot0:findTF("selected", slot2), slot0.selectedId == slot0.levelList[slot1 + 1])
 
-	setActive(arg_7_0:findTF("selected", arg_7_2), arg_7_0.selectedId == var_7_1)
+	slot5 = table.contains(slot0.finishList, slot4)
 
-	local var_7_2 = table.contains(arg_7_0.finishList, var_7_1)
+	setActive(slot0:findTF("finish", slot2), slot5)
+	setActive(slot0:findTF("normal", slot2), not slot5 and slot0.selectedId ~= slot4)
+	onButton(slot0, slot2, function ()
+		uv0.selectedId = uv1
 
-	setActive(arg_7_0:findTF("finish", arg_7_2), var_7_2)
-	setActive(arg_7_0:findTF("normal", arg_7_2), not var_7_2 and arg_7_0.selectedId ~= var_7_1)
-	onButton(arg_7_0, arg_7_2, function()
-		arg_7_0.selectedId = var_7_1
-
-		arg_7_0.uilist:align(#arg_7_0.levelList)
-		arg_7_0:UpdateLevelInfo()
+		uv0.uilist:align(#uv0.levelList)
+		uv0:UpdateLevelInfo()
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_9_0)
-	arg_9_0.gotList = arg_9_0.activity:getData1List()
-	arg_9_0.finishList = arg_9_0.activity.data2_list
+function slot0.OnUpdateFlush(slot0)
+	slot0.gotList = slot0.activity:getData1List()
+	slot0.finishList = slot0.activity.data2_list
 
-	arg_9_0.uilist:align(#arg_9_0.levelList)
+	slot0.uilist:align(#slot0.levelList)
 
-	if arg_9_0:CheckAward() then
-		setActive(arg_9_0.getBtn, true)
-		onButton(arg_9_0, arg_9_0.getBtn, function()
-			arg_9_0:emit(ActivityMediator.EVENT_OPERATION, {
+	if slot0:CheckAward() then
+		setActive(slot0.getBtn, true)
+		onButton(slot0, slot0.getBtn, function ()
+			uv0:emit(ActivityMediator.EVENT_OPERATION, {
 				cmd = 2,
-				activity_id = arg_9_0.activity.id,
-				arg1 = arg_9_0:CheckAward()
+				activity_id = uv0.activity.id,
+				arg1 = uv0:CheckAward()
 			})
 		end, SFX_PANEL)
 	else
-		setActive(arg_9_0.getBtn, false)
+		setActive(slot0.getBtn, false)
 	end
 
-	setActive(arg_9_0.gotBtn, #arg_9_0.gotList == #arg_9_0.awardList)
-	setText(arg_9_0.progressTF, setColorStr(#arg_9_0.finishList, "#C2FFF3") .. "/" .. #arg_9_0.levelList)
-	arg_9_0:UpdateEveryDayTip()
+	setActive(slot0.gotBtn, #slot0.gotList == #slot0.awardList)
+	setText(slot0.progressTF, setColorStr(#slot0.finishList, "#C2FFF3") .. "/" .. #slot0.levelList)
+	slot0:UpdateEveryDayTip()
 end
 
-function var_0_0.CheckAward(arg_11_0)
-	if #arg_11_0.gotList == #arg_11_0.awardList then
+function slot0.CheckAward(slot0)
+	if #slot0.gotList == #slot0.awardList then
 		return nil
 	end
 
-	local var_11_0 = #arg_11_0.finishList
-
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0.awardList) do
-		if not table.contains(arg_11_0.gotList, iter_11_1[1]) and var_11_0 >= iter_11_1[1] then
-			return iter_11_1[1]
+	for slot5, slot6 in ipairs(slot0.awardList) do
+		if not table.contains(slot0.gotList, slot6[1]) and slot6[1] <= #slot0.finishList then
+			return slot6[1]
 		end
 	end
 
 	return nil
 end
 
-function var_0_0.UpdateLevelInfo(arg_12_0)
-	local var_12_0 = pg.puzzle_combat_template[arg_12_0.selectedId]
+function slot0.UpdateLevelInfo(slot0)
+	slot1 = pg.puzzle_combat_template[slot0.selectedId]
 
-	setText(arg_12_0.titleTF, "·" .. var_12_0.name)
-	setText(arg_12_0.descTF, var_12_0.description)
+	setText(slot0.titleTF, "·" .. slot1.name)
+	setText(slot0.descTF, slot1.description)
 end
 
-function var_0_0.GetCurLevel(arg_13_0)
-	arg_13_0.finishList = arg_13_0.activity.data2_list
+function slot0.GetCurLevel(slot0)
+	slot0.finishList = slot0.activity.data2_list
 
-	for iter_13_0, iter_13_1 in ipairs(arg_13_0.levelList) do
-		if not table.contains(arg_13_0.finishList, iter_13_1) then
-			return iter_13_1, iter_13_0
+	for slot4, slot5 in ipairs(slot0.levelList) do
+		if not table.contains(slot0.finishList, slot5) then
+			return slot5, slot4
 		end
 	end
 
-	return arg_13_0.levelList[#arg_13_0.levelList], #arg_13_0.levelList
+	return slot0.levelList[#slot0.levelList], #slot0.levelList
 end
 
-function var_0_0.UpdateEveryDayTip(arg_14_0)
-	if #arg_14_0.gotList == #arg_14_0.awardList then
+function slot0.UpdateEveryDayTip(slot0)
+	if #slot0.gotList == #slot0.awardList then
 		return
 	end
 
-	if arg_14_0:CheckAward() then
+	if slot0:CheckAward() then
 		return
 	end
 
-	local var_14_0, var_14_1 = arg_14_0:GetCurLevel()
-	local var_14_2 = arg_14_0:findTF("tip", arg_14_0.items:GetChild(var_14_1 - 1))
-	local var_14_3 = getProxy(PlayerProxy):getData().id
-	local var_14_4 = "DAY_TIP_" .. arg_14_0.activity.id .. "_" .. var_14_3 .. "_" .. arg_14_0.activity:getDayIndex()
+	slot1, slot2 = slot0:GetCurLevel()
 
-	if PlayerPrefs.GetInt(var_14_4) == 0 then
-		setActive(var_14_2, true)
-		PlayerPrefs.SetInt(var_14_4, 1)
+	if PlayerPrefs.GetInt("DAY_TIP_" .. slot0.activity.id .. "_" .. getProxy(PlayerProxy):getData().id .. "_" .. slot0.activity:getDayIndex()) == 0 then
+		setActive(slot0:findTF("tip", slot0.items:GetChild(slot2 - 1)), true)
+		PlayerPrefs.SetInt(slot5, 1)
 	else
-		setActive(var_14_2, false)
+		setActive(slot3, false)
 	end
 end
 
-return var_0_0
+return slot0

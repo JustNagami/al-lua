@@ -1,49 +1,44 @@
-﻿local var_0_0 = class("CollectionEventPtPage", import("view.base.BaseActivityPage"))
+slot0 = class("CollectionEventPtPage", import("view.base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.helpBtn = arg_1_0:findTF("help", arg_1_0.bg)
-	arg_1_0.shopBtn = arg_1_0:findTF("shop", arg_1_0.bg)
-	arg_1_0.eventBtn = arg_1_0:findTF("event", arg_1_0.bg)
-	arg_1_0.resTF = arg_1_0:findTF("res", arg_1_0.bg)
-	arg_1_0.resIcon = arg_1_0:findTF("icon", arg_1_0.resTF):GetComponent(typeof(Image))
-	arg_1_0.resNum = arg_1_0:findTF("num", arg_1_0.resTF):GetComponent(typeof(Text))
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.helpBtn = slot0:findTF("help", slot0.bg)
+	slot0.shopBtn = slot0:findTF("shop", slot0.bg)
+	slot0.eventBtn = slot0:findTF("event", slot0.bg)
+	slot0.resTF = slot0:findTF("res", slot0.bg)
+	slot0.resIcon = slot0:findTF("icon", slot0.resTF):GetComponent(typeof(Image))
+	slot0.resNum = slot0:findTF("num", slot0.resTF):GetComponent(typeof(Text))
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	arg_2_0.shopId = arg_2_0.activity:getConfig("config_client").shopActID
+function slot0.OnDataSetting(slot0)
+	slot0.shopId = slot0.activity:getConfig("config_client").shopActID
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	onButton(arg_3_0, arg_3_0.helpBtn, function()
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.commission_event_tip.tip
 		})
 	end)
-	onButton(arg_3_0, arg_3_0.shopBtn, function()
-		arg_3_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
+	onButton(slot0, slot0.shopBtn, function ()
+		uv0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = arg_3_0.shopId
+			actId = uv0.shopId
 		})
 	end)
-	onButton(arg_3_0, arg_3_0.eventBtn, function()
+	onButton(slot0, slot0.eventBtn, function ()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 	end)
 
-	local var_3_0 = getProxy(PlayerProxy):getData().id
-
-	if PlayerPrefs.GetInt("ACTIVITY_TYPE_EVENT_" .. arg_3_0.activity.id .. "_" .. var_3_0) == 0 then
-		PlayerPrefs.SetInt("ACTIVITY_TYPE_EVENT_" .. arg_3_0.activity.id .. "_" .. var_3_0, 1)
-		getProxy(ActivityProxy):updateActivity(arg_3_0.activity)
+	if PlayerPrefs.GetInt("ACTIVITY_TYPE_EVENT_" .. slot0.activity.id .. "_" .. getProxy(PlayerProxy):getData().id) == 0 then
+		PlayerPrefs.SetInt("ACTIVITY_TYPE_EVENT_" .. slot0.activity.id .. "_" .. slot1, 1)
+		getProxy(ActivityProxy):updateActivity(slot0.activity)
 	end
 end
 
-function var_0_0.OnUpdateFlush(arg_7_0)
-	local var_7_0 = pg.activity_template[arg_7_0.shopId].config_client.pt_id
-	local var_7_1 = getProxy(PlayerProxy):getData()
-
-	arg_7_0.resNum.text = var_7_1:getResource(var_7_0)
+function slot0.OnUpdateFlush(slot0)
+	slot0.resNum.text = getProxy(PlayerProxy):getData():getResource(pg.activity_template[slot0.shopId].config_client.pt_id)
 end
 
-return var_0_0
+return slot0

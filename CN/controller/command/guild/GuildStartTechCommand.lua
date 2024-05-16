@@ -1,70 +1,65 @@
-﻿local var_0_0 = class("GuildStartTechCommand", pm.SimpleCommand)
+slot0 = class("GuildStartTechCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = getProxy(PlayerProxy)
-	local var_1_2 = getProxy(GuildProxy)
-	local var_1_3 = var_1_2:getData()
-	local var_1_4 = var_1_1:getData()
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().id
+	slot7 = getProxy(PlayerProxy):getData()
 
-	if not var_1_3 then
+	if not getProxy(GuildProxy):getData() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
-	local var_1_5 = var_1_3:getTechnologyById(var_1_0)
-
-	if not var_1_5 then
+	if not slot6:getTechnologyById(slot3) then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_tech"))
 
 		return
 	end
 
-	if not var_1_5:CanUpgrade() then
+	if not slot8:CanUpgrade() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_is_max_level"))
 
 		return
 	end
 
-	local var_1_6, var_1_7 = var_1_5:GetConsume()
+	slot9, slot10 = slot8:GetConsume()
 
-	if var_1_7 > var_1_4.gold then
+	if slot7.gold < slot10 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_gold_no_enough"))
 
 		return
 	end
 
-	if var_1_6 > var_1_4.guildCoin then
+	if slot7.guildCoin < slot9 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_tech_guildgold_no_enough"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(62015, {
-		id = var_1_5.id
-	}, 62016, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_2:getData()
+		id = slot8.id
+	}, 62016, function (slot0)
+		if slot0.result == 0 then
+			slot1 = uv0:getData()
 
-			var_1_4:consume({
-				gold = var_1_7,
-				guildCoin = var_1_6
+			uv1:consume({
+				gold = uv2,
+				guildCoin = uv3
 			})
-			var_1_1:updatePlayer(var_1_4)
+			uv4:updatePlayer(uv1)
 
-			var_1_5 = var_2_0:getTechnologyById(var_1_0)
+			uv5 = slot1:getTechnologyById(uv6)
 
-			var_1_5:levelUp()
-			var_1_2:updateGuild(var_2_0)
-			arg_1_0:sendNotification(GAME.GUILD_START_TECH_DONE)
+			uv5:levelUp()
+			uv0:updateGuild(slot1)
+			uv7:sendNotification(GAME.GUILD_START_TECH_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_tech_upgrade_done"))
-		elseif arg_2_0.result == 4305 then
+		elseif slot0.result == 4305 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_is_frozen_when_start_tech"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,8 +1,8 @@
-﻿local var_0_0 = class("GuideDoFunctionPlayer", import(".GuidePlayer"))
+slot0 = class("GuideDoFunctionPlayer", import(".GuidePlayer"))
 
-function var_0_0.OnExecution(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_1:GetFunction()()
-	arg_1_2()
+function slot0.OnExecution(slot0, slot1, slot2)
+	slot1:GetFunction()()
+	slot2()
 end
 
-return var_0_0
+return slot0

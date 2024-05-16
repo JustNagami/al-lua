@@ -1,274 +1,223 @@
-﻿local var_0_0 = class("PileGameModel")
+slot0 = class("PileGameModel")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.controller = arg_1_1
-	arg_1_0.items = {}
-	arg_1_0.level = 0
-	arg_1_0.score = 0
-	arg_1_0.failedCnt = 0
-	arg_1_0.deathLine = Vector2(0, 0)
-	arg_1_0.safeLine = Vector2(0, 0)
-	arg_1_0.highestScore = 0
-	arg_1_0.screen = Vector2(0, 0)
-	arg_1_0.maxFailedCnt = PileGameConst.MAX_FAILED_CNT
+function slot0.Ctor(slot0, slot1)
+	slot0.controller = slot1
+	slot0.items = {}
+	slot0.level = 0
+	slot0.score = 0
+	slot0.failedCnt = 0
+	slot0.deathLine = Vector2(0, 0)
+	slot0.safeLine = Vector2(0, 0)
+	slot0.highestScore = 0
+	slot0.screen = Vector2(0, 0)
+	slot0.maxFailedCnt = PileGameConst.MAX_FAILED_CNT
 end
 
-function var_0_0.NetData(arg_2_0, arg_2_1)
-	arg_2_0.highestScore = arg_2_1.highestScore or 0
-	arg_2_0.screen = Vector2(arg_2_1.screen.x, arg_2_1.screen.y)
+function slot0.NetData(slot0, slot1)
+	slot0.highestScore = slot1.highestScore or 0
+	slot0.screen = Vector2(slot1.screen.x, slot1.screen.y)
 end
 
-function var_0_0.UpdateHighestScore(arg_3_0)
-	if arg_3_0.score > arg_3_0.highestScore then
-		arg_3_0.highestScore = arg_3_0.score
+function slot0.UpdateHighestScore(slot0)
+	if slot0.highestScore < slot0.score then
+		slot0.highestScore = slot0.score
 	end
 end
 
-function var_0_0.RandomPile(arg_4_0)
-	local var_4_0 = math.random(1, #PileGameConst.Prefabs)
-
-	return PileGameConst.Prefabs[var_4_0]
+function slot0.RandomPile(slot0)
+	return PileGameConst.Prefabs[math.random(1, #PileGameConst.Prefabs)]
 end
 
-function var_0_0.AddHeadPile(arg_5_0)
-	local var_5_0 = PileGameConst.HEAD
-
-	return arg_5_0:AddPile(var_5_0)
+function slot0.AddHeadPile(slot0)
+	return slot0:AddPile(PileGameConst.HEAD)
 end
 
-function var_0_0.AddPileByRandom(arg_6_0)
-	local var_6_0 = arg_6_0:RandomPile()
-
-	return arg_6_0:AddPile(var_6_0)
+function slot0.AddPileByRandom(slot0)
+	return slot0:AddPile(slot0:RandomPile())
 end
 
-function var_0_0.AddPile(arg_7_0, arg_7_1)
-	arg_7_0.level = arg_7_0.level + 1
-
-	local var_7_0 = arg_7_0:GetSpeed()
-	local var_7_1 = {
+function slot0.AddPile(slot0, slot1)
+	slot0.level = slot0.level + 1
+	slot3 = {
 		onTheMove = false,
-		gname = arg_7_1.name,
-		name = arg_7_0.level,
+		gname = slot1.name,
+		name = slot0.level,
 		position = Vector3(0, PileGameConst.START_Y, 0),
 		leftMaxPosition = Vector3(-PileGameConst.MAX_SLIDE_DISTANCE, PileGameConst.START_Y, 0),
 		rightMaxPosition = Vector3(PileGameConst.MAX_SLIDE_DISTANCE, PileGameConst.START_Y, 0),
-		speed = var_7_0,
+		speed = slot0:GetSpeed(),
 		dropSpeed = PileGameConst.DROP_SPEED,
-		sizeDelta = Vector2(arg_7_1.size[1], arg_7_1.size[2]),
+		sizeDelta = Vector2(slot1.size[1], slot1.size[2]),
 		pivot = PileGameConst.ITEM_PIVOT,
 		collider = {
-			offset = Vector2(arg_7_1.boundary[1], arg_7_1.boundary[2]),
-			sizeDelta = Vector2(arg_7_1.boundary[3], arg_7_1.boundary[4])
+			offset = Vector2(slot1.boundary[1], slot1.boundary[2]),
+			sizeDelta = Vector2(slot1.boundary[3], slot1.boundary[4])
 		},
-		speActionCount = arg_7_1.speActionCount or 0
+		speActionCount = slot1.speActionCount or 0
 	}
 
-	table.insert(arg_7_0.items, var_7_1)
+	table.insert(slot0.items, slot3)
 
-	return var_7_1
+	return slot3
 end
 
-function var_0_0.GetSpeed(arg_8_0)
-	local var_8_0 = PileGameConst.SLIDE_SPEED
-	local var_8_1 = PileGameConst.SLIDE_GROWTH[1]
-	local var_8_2 = PileGameConst.SLIDE_GROWTH[2]
-
-	return var_8_0 * (1 + math.floor(arg_8_0.level / var_8_1) * var_8_2)
+function slot0.GetSpeed(slot0)
+	return PileGameConst.SLIDE_SPEED * (1 + math.floor(slot0.level / PileGameConst.SLIDE_GROWTH[1]) * PileGameConst.SLIDE_GROWTH[2])
 end
 
-function var_0_0.AddGround(arg_9_0)
-	arg_9_0.ground = {
-		position = Vector3(0, -arg_9_0.screen.y / 2, 0),
+function slot0.AddGround(slot0)
+	slot0.ground = {
+		position = Vector3(0, -slot0.screen.y / 2, 0),
 		pivot = PileGameConst.GROUND_PIVOT,
 		sizeDelta = PileGameConst.GROUND_SIZE
 	}
 end
 
-function var_0_0.AddDeathLineRight(arg_10_0)
-	arg_10_0.deathLine.x = -PileGameConst.DEATH_LINE_DISTANCE
+function slot0.AddDeathLineRight(slot0)
+	slot0.deathLine.x = -PileGameConst.DEATH_LINE_DISTANCE
 end
 
-function var_0_0.AddDeathLineLeft(arg_11_0)
-	arg_11_0.deathLine.y = PileGameConst.DEATH_LINE_DISTANCE
+function slot0.AddDeathLineLeft(slot0)
+	slot0.deathLine.y = PileGameConst.DEATH_LINE_DISTANCE
 end
 
-function var_0_0.AddSafeLineRight(arg_12_0)
-	arg_12_0.safeLine.x = -PileGameConst.SAFE_LINE_DISTANCE
+function slot0.AddSafeLineRight(slot0)
+	slot0.safeLine.x = -PileGameConst.SAFE_LINE_DISTANCE
 end
 
-function var_0_0.AddSafeLineLeft(arg_13_0)
-	arg_13_0.safeLine.y = PileGameConst.SAFE_LINE_DISTANCE
+function slot0.AddSafeLineLeft(slot0)
+	slot0.safeLine.y = PileGameConst.SAFE_LINE_DISTANCE
 end
 
-function var_0_0.IsStopDrop(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_0:IsOnGround(arg_14_1)
-	local var_14_1 = arg_14_0:OnPrevItem(arg_14_1)
-
-	return var_14_0 or var_14_1
+function slot0.IsStopDrop(slot0, slot1)
+	return slot0:IsOnGround(slot1) or slot0:OnPrevItem(slot1)
 end
 
-function var_0_0.IsOnGround(arg_15_0, arg_15_1)
-	return arg_15_1.position.y <= arg_15_0.ground.position.y
+function slot0.IsOnGround(slot0, slot1)
+	return slot1.position.y <= slot0.ground.position.y
 end
 
-function var_0_0.GetIndex(arg_16_0)
-	return #arg_16_0.items
+function slot0.GetIndex(slot0)
+	return #slot0.items
 end
 
-function var_0_0.OnPrevItem(arg_17_0, arg_17_1)
-	local var_17_0 = #arg_17_0.items - 1
-
-	if var_17_0 > 0 then
-		local var_17_1 = arg_17_0.items[var_17_0]
-
-		return arg_17_0:IsOverlap(arg_17_1, var_17_1)
+function slot0.OnPrevItem(slot0, slot1)
+	if #slot0.items - 1 > 0 then
+		return slot0:IsOverlap(slot1, slot0.items[slot3])
 	end
 end
 
-function var_0_0.IsOverTailItem(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0.items[#arg_18_0.items - 1]
-
-	if var_18_0 then
-		return arg_18_0:IsOverItem(arg_18_1, var_18_0)
+function slot0.IsOverTailItem(slot0, slot1)
+	if slot0.items[#slot0.items - 1] then
+		return slot0:IsOverItem(slot1, slot2)
 	end
 
 	return false
 end
 
-function var_0_0.IsOverItem(arg_19_0, arg_19_1, arg_19_2)
-	local var_19_0 = Vector2(arg_19_1.position.x + (0.5 - arg_19_1.pivot.x) * arg_19_1.sizeDelta.x + arg_19_1.collider.offset.x, arg_19_1.position.y + (0.5 - arg_19_1.pivot.y) * arg_19_1.sizeDelta.y + arg_19_1.collider.offset.y)
-
-	return arg_19_2.position.y + (0.5 - arg_19_2.pivot.y) * arg_19_2.sizeDelta.y + arg_19_2.collider.offset.y + arg_19_2.collider.sizeDelta.y / 2 >= var_19_0.y - arg_19_1.collider.sizeDelta.y / 2
+function slot0.IsOverItem(slot0, slot1, slot2)
+	return slot2.position.y + (0.5 - slot2.pivot.y) * slot2.sizeDelta.y + slot2.collider.offset.y + slot2.collider.sizeDelta.y / 2 >= Vector2(slot1.position.x + (0.5 - slot1.pivot.x) * slot1.sizeDelta.x + slot1.collider.offset.x, slot1.position.y + (0.5 - slot1.pivot.y) * slot1.sizeDelta.y + slot1.collider.offset.y).y - slot1.collider.sizeDelta.y / 2
 end
 
-function var_0_0.IsOverlap(arg_20_0, arg_20_1, arg_20_2)
-	if arg_20_0:IsOverItem(arg_20_1, arg_20_2) then
-		local var_20_0 = Vector2(arg_20_1.position.x + (0.5 - arg_20_1.pivot.x) * arg_20_1.sizeDelta.x + arg_20_1.collider.offset.x, arg_20_1.position.y + (0.5 - arg_20_1.pivot.y) * arg_20_1.sizeDelta.y + arg_20_1.collider.offset.y)
-		local var_20_1 = arg_20_2.position.x + (0.5 - arg_20_2.pivot.x) * arg_20_2.sizeDelta.x + arg_20_2.collider.offset.x
-		local var_20_2 = Vector2(var_20_1 - arg_20_2.collider.sizeDelta.x / 2, var_20_1 + arg_20_2.collider.sizeDelta.x / 2)
+function slot0.IsOverlap(slot0, slot1, slot2)
+	if slot0:IsOverItem(slot1, slot2) then
+		slot4 = slot2.position.x + (0.5 - slot2.pivot.x) * slot2.sizeDelta.x + slot2.collider.offset.x
 
-		return var_20_0.x >= var_20_2.x and var_20_0.x <= var_20_2.y
+		return Vector2(slot4 - slot2.collider.sizeDelta.x / 2, slot4 + slot2.collider.sizeDelta.x / 2).x <= Vector2(slot1.position.x + (0.5 - slot1.pivot.x) * slot1.sizeDelta.x + slot1.collider.offset.x, slot1.position.y + (0.5 - slot1.pivot.y) * slot1.sizeDelta.y + slot1.collider.offset.y).x and slot3.x <= slot5.y
 	end
 end
 
-function var_0_0.CanDropOnPrev(arg_21_0, arg_21_1)
-	local var_21_0 = #arg_21_0.items - 1
+function slot0.CanDropOnPrev(slot0, slot1)
+	if #slot0.items - 1 > 0 then
+		slot5 = slot0.items[slot3]
+		slot6 = slot5.position.x + (0.5 - slot5.pivot.x) * slot5.sizeDelta.x + slot5.collider.offset.x
 
-	if var_21_0 > 0 then
-		local var_21_1 = Vector2(arg_21_1.position.x + (0.5 - arg_21_1.pivot.x) * arg_21_1.sizeDelta.x + arg_21_1.collider.offset.x, arg_21_1.position.y + (0.5 - arg_21_1.pivot.y) * arg_21_1.sizeDelta.y + arg_21_1.collider.offset.y)
-		local var_21_2 = arg_21_0.items[var_21_0]
-		local var_21_3 = var_21_2.position.x + (0.5 - var_21_2.pivot.x) * var_21_2.sizeDelta.x + var_21_2.collider.offset.x
-		local var_21_4 = Vector2(var_21_3 - var_21_2.collider.sizeDelta.x / 2, var_21_3 + var_21_2.collider.sizeDelta.x / 2)
-
-		return var_21_1.x >= var_21_4.x and var_21_1.x <= var_21_4.y
+		return Vector2(slot6 - slot5.collider.sizeDelta.x / 2, slot6 + slot5.collider.sizeDelta.x / 2).x <= Vector2(slot1.position.x + (0.5 - slot1.pivot.x) * slot1.sizeDelta.x + slot1.collider.offset.x, slot1.position.y + (0.5 - slot1.pivot.y) * slot1.sizeDelta.y + slot1.collider.offset.y).x and slot4.x <= slot7.y
 	end
 end
 
-function var_0_0.AddFailedCnt(arg_22_0)
-	arg_22_0.failedCnt = arg_22_0.failedCnt + 1
+function slot0.AddFailedCnt(slot0)
+	slot0.failedCnt = slot0.failedCnt + 1
 end
 
-function var_0_0.RemoveTailItem(arg_23_0)
-	table.remove(arg_23_0.items, #arg_23_0.items)
+function slot0.RemoveTailItem(slot0)
+	table.remove(slot0.items, #slot0.items)
 end
 
-function var_0_0.AddScore(arg_24_0)
-	arg_24_0.score = arg_24_0.score + 1
+function slot0.AddScore(slot0)
+	slot0.score = slot0.score + 1
 end
 
-function var_0_0.IsMaxfailedCnt(arg_25_0)
-	return arg_25_0.maxFailedCnt == arg_25_0.failedCnt
+function slot0.IsMaxfailedCnt(slot0)
+	return slot0.maxFailedCnt == slot0.failedCnt
 end
 
-function var_0_0.IsOverDeathLine(arg_26_0, arg_26_1)
-	local var_26_0 = arg_26_1.position.x
-	local var_26_1 = var_26_0 - arg_26_1.collider.sizeDelta.x / 2 <= arg_26_0.deathLine.x
-	local var_26_2 = var_26_0 + arg_26_1.collider.sizeDelta.x / 2 >= arg_26_0.deathLine.y
-
-	return var_26_1 or var_26_2
+function slot0.IsOverDeathLine(slot0, slot1)
+	return slot1.position.x - slot1.collider.sizeDelta.x / 2 <= slot0.deathLine.x or slot0.deathLine.y <= slot2 + slot1.collider.sizeDelta.x / 2
 end
 
-function var_0_0.ShouldSink(arg_27_0)
-	return arg_27_0:GetIndex() == PileGameConst.SINK_LEVEL + 1
+function slot0.ShouldSink(slot0)
+	return slot0:GetIndex() == PileGameConst.SINK_LEVEL + 1
 end
 
-function var_0_0.GetPrevItem(arg_28_0, arg_28_1)
-	arg_28_1 = arg_28_1 - 1
-
-	return arg_28_0.items[arg_28_1]
+function slot0.GetPrevItem(slot0, slot1)
+	return slot0.items[slot1 - 1]
 end
 
-function var_0_0.GetNextPos(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_0.items[arg_29_1]
-	local var_29_1 = arg_29_0:GetPrevItem(arg_29_1)
-	local var_29_2 = 0
+function slot0.GetNextPos(slot0, slot1)
+	slot2 = slot0.items[slot1]
+	slot4 = 0
 
-	if var_29_1 then
-		var_29_2 = var_29_1.position.y + var_29_1.sizeDelta.y
-	else
-		var_29_2 = var_29_0.position.y - var_29_0.sizeDelta.y
-	end
-
-	return Vector3(var_29_0.position.x, var_29_2, 0)
+	return Vector3(slot2.position.x, slot0:GetPrevItem(slot1) and slot3.position.y + slot3.sizeDelta.y or slot2.position.y - slot2.sizeDelta.y, 0)
 end
 
-function var_0_0.IsExceedingTheHighestScore(arg_30_0)
-	return arg_30_0.score - arg_30_0.highestScore == 1
+function slot0.IsExceedingTheHighestScore(slot0)
+	return slot0.score - slot0.highestScore == 1
 end
 
-function var_0_0.RemoveFirstItem(arg_31_0)
-	return table.remove(arg_31_0.items, 1)
+function slot0.RemoveFirstItem(slot0)
+	return table.remove(slot0.items, 1)
 end
 
-function var_0_0.GetFirstItem(arg_32_0)
-	return arg_32_0.items[1]
+function slot0.GetFirstItem(slot0)
+	return slot0.items[1]
 end
 
-function var_0_0.GetTailItem(arg_33_0)
-	return arg_33_0.items[#arg_33_0.items]
+function slot0.GetTailItem(slot0)
+	return slot0.items[#slot0.items]
 end
 
-function var_0_0.GetDropArea(arg_34_0, arg_34_1)
-	local var_34_0
-	local var_34_1 = arg_34_1.position.x - arg_34_1.collider.sizeDelta.x / 2
-	local var_34_2 = arg_34_1.position.x + arg_34_1.collider.sizeDelta.x / 2
+function slot0.GetDropArea(slot0, slot1)
+	slot2 = nil
+	slot4 = slot1.position.x + slot1.collider.sizeDelta.x / 2
 
-	if var_34_1 <= arg_34_0.deathLine.x or var_34_2 >= arg_34_0.deathLine.y then
-		var_34_0 = PileGameController.DROP_AREA_DANGER
-	elseif var_34_1 <= arg_34_0.safeLine.x or var_34_2 >= arg_34_0.safeLine.y then
-		var_34_0 = PileGameController.DROP_AREA_WARN
-	else
-		var_34_0 = PileGameController.DROP_AREA_SAFE
-	end
-
-	return var_34_0
+	return (slot1.position.x - slot1.collider.sizeDelta.x / 2 > slot0.deathLine.x and slot0.deathLine.y > slot4 or PileGameController.DROP_AREA_DANGER) and (slot3 > slot0.safeLine.x and slot0.safeLine.y > slot4 or PileGameController.DROP_AREA_WARN) and PileGameController.DROP_AREA_SAFE
 end
 
-function var_0_0.GetInitPos(arg_35_0)
-	local var_35_0 = {}
-	local var_35_1 = PileGameConst.SHAKE_DIS + arg_35_0.score * PileGameConst.SHAKE_DIS_RATIO
+function slot0.GetInitPos(slot0)
+	slot1 = {}
+	slot2 = PileGameConst.SHAKE_DIS + slot0.score * PileGameConst.SHAKE_DIS_RATIO
 
-	for iter_35_0, iter_35_1 in ipairs(arg_35_0.items) do
-		table.insert(var_35_0, {
-			iter_35_1,
-			iter_35_1.position.x - var_35_1,
-			iter_35_1.position.x + var_35_1
+	for slot6, slot7 in ipairs(slot0.items) do
+		table.insert(slot1, {
+			slot7,
+			slot7.position.x - slot2,
+			slot7.position.x + slot2
 		})
 	end
 
-	return var_35_0
+	return slot1
 end
 
-function var_0_0.Clear(arg_36_0)
-	arg_36_0.level = 0
-	arg_36_0.score = 0
-	arg_36_0.failedCnt = 0
-	arg_36_0.items = {}
+function slot0.Clear(slot0)
+	slot0.level = 0
+	slot0.score = 0
+	slot0.failedCnt = 0
+	slot0.items = {}
 end
 
-function var_0_0.Dispose(arg_37_0)
-	arg_37_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Clear()
 end
 
-return var_0_0
+return slot0

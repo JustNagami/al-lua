@@ -1,346 +1,312 @@
-﻿local var_0_0 = class("ShipExpItemUsagePage", import("...base.BaseSubView"))
+slot0 = class("ShipExpItemUsagePage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ShipExpItemUsagePage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.backBtn = arg_2_0:findTF("frame/top/btnBack")
-	arg_2_0.confirmBtn = arg_2_0:findTF("frame/buttons/confirm")
-	arg_2_0.recomBtn = arg_2_0:findTF("frame/buttons/recom")
-	arg_2_0.clearBtn = arg_2_0:findTF("frame/buttons/clear")
-	arg_2_0.levelTxt = arg_2_0:findTF("frame/content/level/Text"):GetComponent(typeof(Text))
-	arg_2_0.expTxt = arg_2_0:findTF("frame/content/level/exp"):GetComponent(typeof(Text))
-	arg_2_0.currentProgress = arg_2_0:findTF("frame/content/level/y"):GetComponent(typeof(Slider))
-	arg_2_0.tipProgress = arg_2_0:findTF("frame/content/level/w"):GetComponent(typeof(Slider))
-	arg_2_0.previewProgress = arg_2_0:findTF("frame/content/level/g"):GetComponent(typeof(Slider))
-	arg_2_0.itemIds = arg_2_0:GetAllItemIDs()
+function slot0.OnLoaded(slot0)
+	slot0.backBtn = slot0:findTF("frame/top/btnBack")
+	slot0.confirmBtn = slot0:findTF("frame/buttons/confirm")
+	slot0.recomBtn = slot0:findTF("frame/buttons/recom")
+	slot0.clearBtn = slot0:findTF("frame/buttons/clear")
+	slot0.levelTxt = slot0:findTF("frame/content/level/Text"):GetComponent(typeof(Text))
+	slot0.expTxt = slot0:findTF("frame/content/level/exp"):GetComponent(typeof(Text))
+	slot0.currentProgress = slot0:findTF("frame/content/level/y"):GetComponent(typeof(Slider))
+	slot0.tipProgress = slot0:findTF("frame/content/level/w"):GetComponent(typeof(Slider))
+	slot0.previewProgress = slot0:findTF("frame/content/level/g"):GetComponent(typeof(Slider))
+	slot0.itemIds = slot0:GetAllItemIDs()
 
-	local var_2_0 = #arg_2_0.itemIds <= 3
-
-	if var_2_0 then
-		arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("frame/content/items"), arg_2_0:findTF("frame/content/items/tpl"))
+	if #slot0.itemIds <= 3 then
+		slot0.uiItemList = UIItemList.New(slot0:findTF("frame/content/items"), slot0:findTF("frame/content/items/tpl"))
 	else
-		arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("frame/content/scrollrect/content"), arg_2_0:findTF("frame/content/items/tpl"))
+		slot0.uiItemList = UIItemList.New(slot0:findTF("frame/content/scrollrect/content"), slot0:findTF("frame/content/items/tpl"))
 	end
 
-	setActive(arg_2_0:findTF("frame/content/items"), var_2_0)
-	setActive(arg_2_0:findTF("frame/content/scrollrect"), not var_2_0)
-	setText(arg_2_0:findTF("frame/top/bg/infomation/title"), i18n("ship_exp_item_title"))
-	setText(arg_2_0:findTF("frame/content/label"), i18n("coures_level_tip"))
-	setText(arg_2_0.confirmBtn:Find("pic"), i18n("ship_exp_item_label_confirm"))
-	setText(arg_2_0.recomBtn:Find("pic"), i18n("ship_exp_item_label_recom"))
-	setText(arg_2_0.clearBtn:Find("pic"), i18n("ship_exp_item_label_clear"))
+	setActive(slot0:findTF("frame/content/items"), slot1)
+	setActive(slot0:findTF("frame/content/scrollrect"), not slot1)
+	setText(slot0:findTF("frame/top/bg/infomation/title"), i18n("ship_exp_item_title"))
+	setText(slot0:findTF("frame/content/label"), i18n("coures_level_tip"))
+	setText(slot0.confirmBtn:Find("pic"), i18n("ship_exp_item_label_confirm"))
+	setText(slot0.recomBtn:Find("pic"), i18n("ship_exp_item_label_recom"))
+	setText(slot0.clearBtn:Find("pic"), i18n("ship_exp_item_label_clear"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	arg_3_0.cards = {}
+function slot0.OnInit(slot0)
+	slot0.cards = {}
 
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, arg_3_0.backBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:Hide()
 	end, SFX_CANCEL)
-	onButton(arg_3_0, arg_3_0.recomBtn, function()
-		triggerButton(arg_3_0.clearBtn)
+	onButton(slot0, slot0.recomBtn, function ()
+		triggerButton(uv0.clearBtn)
 
-		local var_6_0 = arg_3_0:Recommand()
+		for slot4, slot5 in pairs(uv0.cards) do
+			slot5.value = uv0:Recommand()[slot5.item.id] or 0
 
-		for iter_6_0, iter_6_1 in pairs(arg_3_0.cards) do
-			iter_6_1.value = var_6_0[iter_6_1.item.id] or 0
-
-			iter_6_1:UpdateValue()
+			slot5:UpdateValue()
 		end
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.clearBtn, function()
-		for iter_7_0, iter_7_1 in pairs(arg_3_0.cards) do
-			iter_7_1.value = 0
+	onButton(slot0, slot0.clearBtn, function ()
+		for slot3, slot4 in pairs(uv0.cards) do
+			slot4.value = 0
 
-			iter_7_1:UpdateValue()
+			slot4:UpdateValue()
 		end
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.confirmBtn, function()
-		if _.all(_.values(arg_3_0.itemCnts), function(arg_9_0)
-			return arg_9_0 == 0
+	onButton(slot0, slot0.confirmBtn, function ()
+		if _.all(_.values(uv0.itemCnts), function (slot0)
+			return slot0 == 0
 		end) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_remould_no_material"))
 
 			return
 		end
 
-		local function var_8_0(arg_10_0)
-			arg_3_0:emit(ShipMainMediator.ON_ADD_SHIP_EXP, arg_3_0.shipVO.id, arg_3_0.itemCnts)
+		function slot0(slot0)
+			uv0:emit(ShipMainMediator.ON_ADD_SHIP_EXP, uv0.shipVO.id, uv0.itemCnts)
 
-			if arg_10_0 then
-				arg_3_0:Hide()
+			if slot0 then
+				uv0:Hide()
 			else
-				arg_3_0:Flush(arg_3_0.shipVO)
+				uv0:Flush(uv0.shipVO)
 			end
 		end
 
-		local var_8_1 = arg_3_0:GetAdditionExp()
-		local var_8_2 = Clone(arg_3_0.shipVO)
-		local var_8_3 = var_8_2:getMaxLevel()
+		slot2 = Clone(uv0.shipVO)
+		slot3 = slot2:getMaxLevel()
+		slot2.exp = slot2.exp + uv0:GetAdditionExp()
+		slot4 = false
 
-		var_8_2.exp = var_8_2.exp + var_8_1
-
-		local var_8_4 = false
-
-		while var_8_2:canLevelUp() do
-			var_8_2.exp = var_8_2.exp - var_8_2:getLevelExpConfig().exp_interval
-			var_8_2.level = math.min(var_8_2.level + 1, var_8_3)
-			var_8_4 = true
+		while slot2:canLevelUp() do
+			slot2.exp = slot2.exp - slot2:getLevelExpConfig().exp_interval
+			slot2.level = math.min(slot2.level + 1, slot3)
+			slot4 = true
 		end
 
-		local var_8_5 = var_8_2.maxLevel <= var_8_2.level
+		slot5 = slot2.maxLevel <= slot2.level
 
-		if var_8_4 and (var_8_2.maxLevel == var_8_2.level and var_8_2.exp > 0 or var_8_2.maxLevel < var_8_2.level) then
+		if slot4 and (slot2.maxLevel == slot2.level and slot2.exp > 0 or slot2.maxLevel < slot2.level) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = i18n("coures_exp_overflow_tip", var_8_2.exp),
-				onYes = function()
-					var_8_0(var_8_5)
+				content = i18n("coures_exp_overflow_tip", slot2.exp),
+				onYes = function ()
+					uv0(uv1)
 				end
 			})
 		else
-			var_8_0(var_8_5)
+			slot0(slot5)
 		end
 	end, SFX_PANEL)
-	arg_3_0.uiItemList:make(function(arg_12_0, arg_12_1, arg_12_2)
-		if arg_12_0 == UIItemList.EventUpdate then
-			local var_12_0 = arg_3_0.itemIds[arg_12_1 + 1]
-
-			arg_3_0:UpdateItemPanel(var_12_0, arg_12_2)
+	slot0.uiItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:UpdateItemPanel(uv0.itemIds[slot1 + 1], slot2)
 		end
 	end)
 end
 
-function var_0_0.GetItem(arg_13_0, arg_13_1)
-	return getProxy(BagProxy):getItemById(arg_13_1) or Drop.New({
+function slot0.GetItem(slot0, slot1)
+	return getProxy(BagProxy):getItemById(slot1) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
-		id = arg_13_1
+		id = slot1
 	})
 end
 
-function var_0_0.Recommand(arg_14_0)
-	local var_14_0 = {}
-	local var_14_1 = Clone(arg_14_0.shipVO)
-	local var_14_2 = underscore.map(arg_14_0:GetAllItemIDs(), function(arg_15_0)
-		return arg_14_0:GetItem(arg_15_0)
+function slot0.Recommand(slot0)
+	slot2 = Clone(slot0.shipVO)
+	slot3 = underscore.map(slot0:GetAllItemIDs(), function (slot0)
+		return uv0:GetItem(slot0)
 	end)
+	slot7 = {
+		slot8
+	}
 
-	table.sort(var_14_2, CompareFuncs({
-		function(arg_16_0)
-			return -arg_16_0.id
-		end
-	}))
+	function slot8(slot0)
+		return -slot0.id
+	end
 
-	for iter_14_0, iter_14_1 in ipairs(var_14_2) do
-		var_14_0[iter_14_1.id] = 0
+	table.sort(slot3, CompareFuncs(slot7))
 
-		local var_14_3 = iter_14_1:getConfig("usage_arg")
-		local var_14_4 = iter_14_0 < #var_14_2 and var_14_2[iter_14_0 + 1]:getConfig("usage_arg") or 0
-
-		for iter_14_2 = 1, iter_14_1.count do
-			if iter_14_0 ~= #var_14_2 and arg_14_0:PreCalcExpOverFlow(var_14_1, tonumber(var_14_3), tonumber(var_14_4)) then
+	for slot7, slot8 in ipairs(slot3) do
+		for slot14 = 1, slot8.count do
+			if slot7 ~= #slot3 and slot0:PreCalcExpOverFlow(slot2, tonumber(slot8:getConfig("usage_arg")), tonumber(slot7 < #slot3 and slot3[slot7 + 1]:getConfig("usage_arg") or 0)) then
 				break
 			else
-				var_14_1:addExp(tonumber(var_14_3))
+				slot2:addExp(tonumber(slot9))
 
-				var_14_0[iter_14_1.id] = var_14_0[iter_14_1.id] + 1
+				slot1[slot8.id] = slot1[slot8.id] + 1
 
-				if var_14_1.maxLevel == var_14_1.level then
-					return var_14_0
+				if slot2.maxLevel == slot2.level then
+					return slot1
 				end
 			end
 		end
 	end
 
-	return var_14_0
+	return {
+		[slot8.id] = 0
+	}
 end
 
-function var_0_0.PreCalcExpOverFlow(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	local var_17_0 = arg_17_1.exp
-	local var_17_1 = arg_17_1.level
+function slot0.PreCalcExpOverFlow(slot0, slot1, slot2, slot3)
+	slot4 = slot1.exp
+	slot5 = slot1.level
+	slot1.exp = slot1.exp + slot2
+	slot6 = slot1:getMaxLevel()
 
-	arg_17_1.exp = arg_17_1.exp + arg_17_2
-
-	local var_17_2 = arg_17_1:getMaxLevel()
-
-	while arg_17_1:canLevelUp() do
-		arg_17_1.exp = arg_17_1.exp - arg_17_1:getLevelExpConfig().exp_interval
-		arg_17_1.level = math.min(arg_17_1.level + 1, var_17_2)
+	while slot1:canLevelUp() do
+		slot1.exp = slot1.exp - slot1:getLevelExpConfig().exp_interval
+		slot1.level = math.min(slot1.level + 1, slot6)
 	end
 
-	local var_17_3 = var_17_2 <= arg_17_1.level and arg_17_3 < arg_17_1.exp
+	slot1.exp = slot4
+	slot1.level = slot5
 
-	arg_17_1.exp = var_17_0
-	arg_17_1.level = var_17_1
-
-	return var_17_3
+	return slot6 <= slot1.level and slot3 < slot1.exp
 end
 
-function var_0_0.GetAllItemIDs(arg_18_0)
-	local var_18_0 = pg.gameset.ship_exp_books.description
-	local var_18_1 = {}
+function slot0.GetAllItemIDs(slot0)
+	slot2 = {}
 
-	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
-		if Item.getConfigData(iter_18_1) then
-			table.insert(var_18_1, iter_18_1)
+	for slot6, slot7 in ipairs(pg.gameset.ship_exp_books.description) do
+		if Item.getConfigData(slot7) then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return var_18_1
+	return slot2
 end
 
-function var_0_0.Show(arg_19_0, arg_19_1)
-	pg.UIMgr.GetInstance():BlurPanel(arg_19_0._tf, false, {
+function slot0.Show(slot0, slot1)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.BASE_LAYER + 2
 	})
-	var_0_0.super.Show(arg_19_0)
-	arg_19_0:Flush(arg_19_1)
+	uv0.super.Show(slot0)
+	slot0:Flush(slot1)
 end
 
-function var_0_0.Flush(arg_20_0, arg_20_1)
-	arg_20_0.itemCnts = {}
-	arg_20_0.shipVO = arg_20_1
+function slot0.Flush(slot0, slot1)
+	slot0.itemCnts = {}
+	slot0.shipVO = slot1
 
-	arg_20_0:InitItems()
-	arg_20_0:UpdateLevelInfo()
+	slot0:InitItems()
+	slot0:UpdateLevelInfo()
 end
 
-function var_0_0.Hide(arg_21_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_21_0._tf, arg_21_0._parentTf)
-	var_0_0.super.Hide(arg_21_0)
+function slot0.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+	uv0.super.Hide(slot0)
 end
 
-function var_0_0.InitItems(arg_22_0)
-	table.sort(arg_22_0.itemIds, function(arg_23_0, arg_23_1)
-		return arg_23_0 < arg_23_1
+function slot0.InitItems(slot0)
+	table.sort(slot0.itemIds, function (slot0, slot1)
+		return slot0 < slot1
 	end)
-	arg_22_0.uiItemList:align(#arg_22_0.itemIds)
+	slot0.uiItemList:align(#slot0.itemIds)
 end
 
-function var_0_0.UpdateItemPanel(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = arg_24_0.cards[arg_24_2]
+function slot0.UpdateItemPanel(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot3 = ShipExpItemUsageCard.New(slot2)
 
-	if not var_24_0 then
-		var_24_0 = ShipExpItemUsageCard.New(arg_24_2)
-
-		var_24_0:SetCallBack(function(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-			arg_24_0:OnAddItem(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+		slot3:SetCallBack(function (slot0, slot1, slot2, slot3)
+			uv0:OnAddItem(slot0, slot1, slot2, slot3)
 		end)
 
-		arg_24_0.cards[arg_24_2] = var_24_0
+		slot0.cards[slot2] = slot3
 	end
 
-	var_24_0:Update(arg_24_1)
+	slot3:Update(slot1)
 end
 
-function var_0_0.OnAddItem(arg_26_0, arg_26_1, arg_26_2, arg_26_3, arg_26_4)
-	if arg_26_0.shipVO.maxLevel == arg_26_0.shipVO.level then
-		arg_26_1:ForceUpdateValue(arg_26_0.itemCnts[arg_26_2])
+function slot0.OnAddItem(slot0, slot1, slot2, slot3, slot4)
+	if slot0.shipVO.maxLevel == slot0.shipVO.level then
+		slot1:ForceUpdateValue(slot0.itemCnts[slot2])
 		pg.TipsMgr.GetInstance():ShowTips(i18n("coures_tip_exceeded_lv"))
 
 		return
 	end
 
-	local var_26_0 = Clone(arg_26_0.shipVO)
-	local var_26_1 = 0
+	slot5 = Clone(slot0.shipVO)
 
-	for iter_26_0, iter_26_1 in pairs(arg_26_0.itemCnts) do
-		if iter_26_0 ~= arg_26_2 then
-			local var_26_2 = Item.getConfigData(iter_26_0).usage_arg
-
-			var_26_1 = var_26_1 + tonumber(var_26_2) * iter_26_1
+	for slot10, slot11 in pairs(slot0.itemCnts) do
+		if slot10 ~= slot2 then
+			slot6 = 0 + tonumber(Item.getConfigData(slot10).usage_arg) * slot11
 		end
 	end
 
-	var_26_0:addExp(var_26_1)
+	slot5:addExp(slot6)
 
-	local var_26_3 = Item.getConfigData(arg_26_2).usage_arg
-	local var_26_4 = 0
+	slot7 = Item.getConfigData(slot2).usage_arg
+	slot8 = 0
 
-	if arg_26_4 then
-		var_26_4 = arg_26_3
-	elseif var_26_0.level ~= var_26_0.maxLevel then
-		for iter_26_2 = 1, arg_26_3 do
-			var_26_0:addExp(tonumber(var_26_3))
+	if slot4 then
+		slot8 = slot3
+	elseif slot5.level ~= slot5.maxLevel then
+		for slot12 = 1, slot3 do
+			slot5:addExp(tonumber(slot7))
 
-			var_26_4 = var_26_4 + 1
+			slot8 = slot8 + 1
 
-			if var_26_0.maxLevel == var_26_0.level then
+			if slot5.maxLevel == slot5.level then
 				break
 			end
 		end
 	end
 
-	if arg_26_3 > (arg_26_0.itemCnts[arg_26_2] or 0) then
-		var_26_4 = math.max(arg_26_0.itemCnts[arg_26_2] or 0, var_26_4)
+	if slot3 > (slot0.itemCnts[slot2] or 0) then
+		slot8 = math.max(slot0.itemCnts[slot2] or 0, slot8)
 	end
 
-	if arg_26_3 ~= var_26_4 then
-		arg_26_1:ForceUpdateValue(var_26_4)
+	if slot3 ~= slot8 then
+		slot1:ForceUpdateValue(slot8)
 
-		arg_26_3 = var_26_4
+		slot3 = slot8
 	end
 
-	arg_26_0.itemCnts[arg_26_2] = arg_26_3
+	slot0.itemCnts[slot2] = slot3
 
-	arg_26_0:UpdateLevelInfo()
+	slot0:UpdateLevelInfo()
 end
 
-function var_0_0.GetTempShipVO(arg_27_0, arg_27_1, arg_27_2)
-	if arg_27_2 > 0 then
-		local var_27_0 = Clone(arg_27_1)
+function slot0.GetTempShipVO(slot0, slot1, slot2)
+	if slot2 > 0 then
+		slot3 = Clone(slot1)
 
-		var_27_0:addExp(arg_27_2)
+		slot3:addExp(slot2)
 
-		return var_27_0
+		return slot3
 	end
 
-	return arg_27_1
+	return slot1
 end
 
-function var_0_0.GetAdditionExp(arg_28_0)
-	local var_28_0 = 0
-
-	for iter_28_0, iter_28_1 in pairs(arg_28_0.itemCnts) do
-		local var_28_1 = Item.getConfigData(iter_28_0).usage_arg
-
-		var_28_0 = var_28_0 + tonumber(var_28_1) * iter_28_1
+function slot0.GetAdditionExp(slot0)
+	for slot5, slot6 in pairs(slot0.itemCnts) do
+		slot1 = 0 + tonumber(Item.getConfigData(slot5).usage_arg) * slot6
 	end
 
-	return var_28_0
+	return slot1
 end
 
-function var_0_0.UpdateLevelInfo(arg_29_0)
-	local var_29_0 = arg_29_0.shipVO
-	local var_29_1 = arg_29_0:GetAdditionExp()
-	local var_29_2 = arg_29_0:GetTempShipVO(var_29_0, var_29_1)
-	local var_29_3 = var_29_2.level - var_29_0.level
-	local var_29_4 = var_29_3 <= 0 and (var_29_1 > 0 and "+0" or "") or "<color=" .. COLOR_GREEN .. ">+" .. var_29_3 .. "</color>"
-
-	arg_29_0.levelTxt.text = var_29_0.level .. var_29_4
-
-	local var_29_5 = var_29_0:getLevelExpConfig().exp_interval
-
-	arg_29_0.expTxt.text = string.format("%d<color=%s>(+%d)</color>/%d", var_29_0.exp, COLOR_GREEN, var_29_1, var_29_5)
-
-	local var_29_6 = var_29_0.exp / var_29_5
-
-	arg_29_0.currentProgress.value = var_29_6
-	arg_29_0.tipProgress.value = var_29_1 <= 0 and var_29_6 or var_29_6 + 0.003
-	arg_29_0.previewProgress.value = var_29_1 <= 0 and 0 or var_29_3 >= 1 and 1 or var_29_2.exp / var_29_5
+function slot0.UpdateLevelInfo(slot0)
+	slot1 = slot0.shipVO
+	slot0.levelTxt.text = slot1.level .. (slot0:GetTempShipVO(slot1, slot0:GetAdditionExp()).level - slot1.level <= 0 and (slot2 > 0 and "+0" or "") or "<color=" .. COLOR_GREEN .. ">+" .. slot4 .. "</color>")
+	slot7 = slot1:getLevelExpConfig().exp_interval
+	slot0.expTxt.text = string.format("%d<color=%s>(+%d)</color>/%d", slot1.exp, COLOR_GREEN, slot2, slot7)
+	slot0.currentProgress.value = slot1.exp / slot7
+	slot0.tipProgress.value = slot2 <= 0 and slot8 or slot8 + 0.003
+	slot0.previewProgress.value = slot2 <= 0 and 0 or slot4 >= 1 and 1 or slot3.exp / slot7
 end
 
-function var_0_0.OnDestroy(arg_30_0)
-	for iter_30_0, iter_30_1 in pairs(arg_30_0.cards) do
-		iter_30_1:Dispose()
+function slot0.OnDestroy(slot0)
+	for slot4, slot5 in pairs(slot0.cards) do
+		slot5:Dispose()
 	end
 
-	arg_30_0.cards = nil
+	slot0.cards = nil
 end
 
-return var_0_0
+return slot0

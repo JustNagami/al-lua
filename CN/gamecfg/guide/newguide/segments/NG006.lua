@@ -1,7 +1,3 @@
-﻿local var_0_0 = {
-	"首先通过“预订”从{namecode:98}的商店获取喵箱！"
-}
-
 return {
 	id = "NG006",
 	events = {
@@ -12,7 +8,9 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"首先通过“预订”从{namecode:98}的商店获取喵箱！"
+				})[1]
 			}
 		},
 		{

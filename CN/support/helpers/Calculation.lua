@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	p = pg.gameset.air_dominance_p.key_value,
 	q = pg.gameset.air_dominance_q.key_value,
 	s = pg.gameset.air_dominance_s.key_value,
@@ -9,262 +9,245 @@
 	y = pg.gameset.air_dominance_y.key_value
 }
 
-function calcAirDominanceValue(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0:getAircraftCount()
-	local var_1_1 = arg_1_0:getEquipmentProperties()
+function calcAirDominanceValue(slot0, slot1)
+	slot2 = slot0:getAircraftCount()
 
-	return defaultValue(arg_1_0:getProperties(arg_1_1)[AttributeType.Air], 0) * (defaultValue(var_1_0[EquipType.FighterAircraft], 0) * var_0_0.p + defaultValue(var_1_0[EquipType.TorpedoAircraft], 0) * var_0_0.q + defaultValue(var_1_0[EquipType.BomberAircraft], 0) * var_0_0.s + defaultValue(var_1_0[EquipType.SeaPlane], 0) * var_0_0.t) * (0.8 + arg_1_0.level * var_0_0.r / 100) / 100 + defaultValue(var_1_1[AttributeType.AirDominate], 0)
+	return defaultValue(slot0:getProperties(slot1)[AttributeType.Air], 0) * (defaultValue(slot2[EquipType.FighterAircraft], 0) * uv0.p + defaultValue(slot2[EquipType.TorpedoAircraft], 0) * uv0.q + defaultValue(slot2[EquipType.BomberAircraft], 0) * uv0.s + defaultValue(slot2[EquipType.SeaPlane], 0) * uv0.t) * (0.8 + slot0.level * uv0.r / 100) / 100 + defaultValue(slot0:getEquipmentProperties()[AttributeType.AirDominate], 0)
 end
 
-function calcAirDominanceStatus(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_1 = arg_2_1 * (var_0_0.a / (arg_2_2 + var_0_0.a))
-
-	if arg_2_0 == 0 then
-		if arg_2_1 <= var_0_0.x then
+function calcAirDominanceStatus(slot0, slot1, slot2)
+	if slot0 == 0 then
+		if slot1 * uv0.a / (slot2 + uv0.a) <= uv0.x then
 			return 0
-		elseif arg_2_1 <= var_0_0.y then
+		elseif slot1 <= uv0.y then
 			return 2
 		else
 			return 1
 		end
-	elseif arg_2_0 <= var_0_0.x then
-		if arg_2_1 == 0 then
+	elseif slot0 <= uv0.x then
+		if slot1 == 0 then
 			return 0
-		elseif arg_2_1 <= var_0_0.x then
+		elseif slot1 <= uv0.x then
 			return 0
-		elseif arg_2_1 <= var_0_0.y then
-			if arg_2_0 <= arg_2_1 * 0.75 then
+		elseif slot1 <= uv0.y then
+			if slot0 <= slot1 * 0.75 then
 				return 2
-			elseif arg_2_0 <= arg_2_1 * 1.3 then
+			elseif slot0 <= slot1 * 1.3 then
 				return 3
 			else
 				return 4
 			end
-		elseif arg_2_0 <= arg_2_1 * 0.5 then
+		elseif slot0 <= slot1 * 0.5 then
 			return 1
-		elseif arg_2_0 <= arg_2_1 * 0.75 then
+		elseif slot0 <= slot1 * 0.75 then
 			return 2
-		elseif arg_2_0 <= arg_2_1 * 1.3 then
+		elseif slot0 <= slot1 * 1.3 then
 			return 3
 		else
 			return 4
 		end
-	elseif arg_2_0 <= var_0_0.y then
-		if arg_2_1 == 0 then
+	elseif slot0 <= uv0.y then
+		if slot1 == 0 then
 			return 4
-		elseif arg_2_1 <= var_0_0.y then
-			if arg_2_0 <= arg_2_1 * 0.75 then
+		elseif slot1 <= uv0.y then
+			if slot0 <= slot1 * 0.75 then
 				return 2
-			elseif arg_2_0 <= arg_2_1 * 1.3 then
+			elseif slot0 <= slot1 * 1.3 then
 				return 3
 			else
 				return 4
 			end
-		elseif arg_2_0 <= arg_2_1 * 0.5 then
+		elseif slot0 <= slot1 * 0.5 then
 			return 1
-		elseif arg_2_0 <= arg_2_1 * 0.75 then
+		elseif slot0 <= slot1 * 0.75 then
 			return 2
-		elseif arg_2_0 <= arg_2_1 * 1.3 then
+		elseif slot0 <= slot1 * 1.3 then
 			return 3
 		else
 			return 4
 		end
-	elseif arg_2_1 == 0 then
+	elseif slot1 == 0 then
 		return 5
-	elseif arg_2_0 <= arg_2_1 * 0.5 then
+	elseif slot0 <= slot1 * 0.5 then
 		return 1
-	elseif arg_2_0 <= arg_2_1 * 0.75 then
+	elseif slot0 <= slot1 * 0.75 then
 		return 2
-	elseif arg_2_0 <= arg_2_1 * 1.3 then
+	elseif slot0 <= slot1 * 1.3 then
 		return 3
-	elseif arg_2_0 <= arg_2_1 * 2 then
+	elseif slot0 <= slot1 * 2 then
 		return 4
 	else
 		return 5
 	end
 end
 
-function calcPositionAngle(arg_3_0, arg_3_1)
-	local var_3_0 = Vector3(arg_3_0, arg_3_1, 0)
-	local var_3_1 = Vector3.up
-	local var_3_2 = Vector2.Angle(var_3_0, var_3_1)
+function calcPositionAngle(slot0, slot1)
+	slot2 = Vector3(slot0, slot1, 0)
+	slot3 = Vector3.up
+	slot4 = Vector2.Angle(slot2, slot3)
 
-	return Vector3.Cross(var_3_0, var_3_1).z > 0 and var_3_2 or -var_3_2
+	return Vector3.Cross(slot2, slot3).z > 0 and slot4 or -slot4
 end
 
-function DOAParabolaCalc(arg_4_0, arg_4_1, arg_4_2)
-	assert(arg_4_2 < arg_4_1 * arg_4_1 * arg_4_0 / 2, "x is unreal")
+function DOAParabolaCalc(slot0, slot1, slot2)
+	assert(slot2 < slot1 * slot1 * slot0 / 2, "x is unreal")
 
-	local var_4_0 = arg_4_0 * math.sqrt(arg_4_1 / 2)
-	local var_4_1 = 0
-	local var_4_2 = var_4_0 * var_4_0
-	local var_4_3
+	slot3 = slot0 * math.sqrt(slot1 / 2)
+	slot4 = 0
+	slot5 = slot3 * slot3
+	slot6 = nil
 
-	while var_4_2 - var_4_1 > 0.01 do
-		local var_4_4 = (var_4_1 + var_4_2) / 2
+	while slot5 - slot4 > 0.01 do
+		slot6 = (slot4 + slot5) / 2
 
-		if var_4_0 > math.sqrt(var_4_4) + math.sqrt(var_4_4 + arg_4_2) then
-			var_4_1 = var_4_4
+		if slot3 > math.sqrt(slot6) + math.sqrt(slot6 + slot2) then
+			slot4 = slot6
 		else
-			var_4_2 = var_4_4
+			slot5 = slot6
 		end
 	end
 
-	return var_4_1
+	return slot4
 end
 
-function mergeSort(arg_5_0, arg_5_1)
-	arg_5_1 = arg_5_1 or function(arg_6_0, arg_6_1)
-		return arg_6_0 <= arg_6_1
+function mergeSort(slot0, slot1)
+	slot1 = slot1 or function (slot0, slot1)
+		return slot0 <= slot1
 	end
+	slot2 = {}
 
-	local var_5_0 = {}
-
-	local function var_5_1(arg_7_0, arg_7_1)
-		if arg_7_1 <= arg_7_0 then
+	function (slot0, slot1)
+		if slot1 <= slot0 then
 			return
 		end
 
-		local var_7_0 = math.floor((arg_7_0 + arg_7_1) / 2)
+		slot2 = math.floor((slot0 + slot1) / 2)
 
-		var_5_1(arg_7_0, var_7_0)
-		var_5_1(var_7_0 + 1, arg_7_1)
+		uv0(slot0, slot2)
+		uv0(slot2 + 1, slot1)
 
-		local var_7_1 = arg_7_0
-		local var_7_2 = var_7_0 + 1
+		slot3 = slot0
+		slot4 = slot2 + 1
 
-		while var_7_1 <= var_7_0 and var_7_2 <= arg_7_1 do
-			if arg_5_1(arg_5_0[var_7_1], arg_5_0[var_7_2]) then
-				var_5_0[var_7_1 + var_7_2 - var_7_0 - 1] = arg_5_0[var_7_1]
-				var_7_1 = var_7_1 + 1
+		while slot3 <= slot2 and slot4 <= slot1 do
+			if uv1(uv2[slot3], uv2[slot4]) then
+				uv3[slot3 + slot4 - slot2 - 1] = uv2[slot3]
+				slot3 = slot3 + 1
 			else
-				var_5_0[var_7_1 + var_7_2 - var_7_0 - 1] = arg_5_0[var_7_2]
-				var_7_2 = var_7_2 + 1
+				uv3[slot3 + slot4 - slot2 - 1] = uv2[slot4]
+				slot4 = slot4 + 1
 			end
 		end
 
-		while var_7_1 <= var_7_0 do
-			var_5_0[var_7_1 + var_7_2 - var_7_0 - 1] = arg_5_0[var_7_1]
-			var_7_1 = var_7_1 + 1
+		while slot3 <= slot2 do
+			uv3[slot3 + slot4 - slot2 - 1] = uv2[slot3]
+			slot3 = slot3 + 1
 		end
 
-		while var_7_2 <= arg_7_1 do
-			var_5_0[var_7_1 + var_7_2 - var_7_0 - 1] = arg_5_0[var_7_2]
-			var_7_2 = var_7_2 + 1
+		while slot4 <= slot1 do
+			uv3[slot3 + slot4 - slot2 - 1] = uv2[slot4]
+			slot4 = slot4 + 1
 		end
 
-		for iter_7_0 = arg_7_0, arg_7_1 do
-			arg_5_0[iter_7_0] = var_5_0[iter_7_0]
+		for slot8 = slot0, slot1 do
+			uv2[slot8] = uv3[slot8]
+		end
+	end(1, #slot0)
+end
+
+function LineLine(slot0, slot1, slot2, slot3)
+	slot4 = false
+	slot5, slot6 = nil
+
+	if (slot3.y - slot2.y) * (slot1.x - slot0.x) - (slot3.x - slot2.x) * (slot1.y - slot0.y) ~= 0 then
+		slot6 = ((slot1.x - slot0.x) * (slot0.y - slot2.y) - (slot1.y - slot0.y) * (slot0.x - slot2.x)) / slot7
+
+		if ((slot3.x - slot2.x) * (slot0.y - slot2.y) - (slot3.y - slot2.y) * (slot0.x - slot2.x)) / slot7 >= 0 and slot5 <= 1 and slot6 >= 0 and slot6 <= 1 then
+			slot4 = true
 		end
 	end
 
-	var_5_1(1, #arg_5_0)
+	return slot4, slot5, slot6
 end
 
-function LineLine(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = false
-	local var_8_1
-	local var_8_2
-	local var_8_3 = (arg_8_3.y - arg_8_2.y) * (arg_8_1.x - arg_8_0.x) - (arg_8_3.x - arg_8_2.x) * (arg_8_1.y - arg_8_0.y)
-
-	if var_8_3 ~= 0 then
-		var_8_1 = ((arg_8_3.x - arg_8_2.x) * (arg_8_0.y - arg_8_2.y) - (arg_8_3.y - arg_8_2.y) * (arg_8_0.x - arg_8_2.x)) / var_8_3
-		var_8_2 = ((arg_8_1.x - arg_8_0.x) * (arg_8_0.y - arg_8_2.y) - (arg_8_1.y - arg_8_0.y) * (arg_8_0.x - arg_8_2.x)) / var_8_3
-
-		if var_8_1 >= 0 and var_8_1 <= 1 and var_8_2 >= 0 and var_8_2 <= 1 then
-			var_8_0 = true
-		end
-	end
-
-	return var_8_0, var_8_1, var_8_2
-end
-
-function ConversionBase(arg_9_0, arg_9_1)
-	local var_9_0 = {
+function ConversionBase(slot0, slot1)
+	slot2 = {
 		0
 	}
-	local var_9_1 = 0
+	slot3 = 0
 
-	while arg_9_1 > 0 do
-		var_9_1 = var_9_1 + 1
-		var_9_0[var_9_1] = arg_9_1 % arg_9_0
+	while slot1 > 0 do
+		slot3 = slot3 + 1
+		slot2[slot3] = slot1 % slot0
 
-		if var_9_0[var_9_1] < 10 then
-			var_9_0[var_9_1] = string.format("%c", var_9_0[var_9_1] + 48)
+		if slot2[slot3] < 10 then
+			slot2[slot3] = string.format("%c", slot2[slot3] + 48)
 		else
-			var_9_0[var_9_1] = string.format("%c", var_9_0[var_9_1] + 55)
+			slot2[slot3] = string.format("%c", slot2[slot3] + 55)
 		end
 
-		arg_9_1 = math.floor(arg_9_1 / arg_9_0)
+		slot1 = math.floor(slot1 / slot0)
 	end
 
-	for iter_9_0 = 1, math.floor(#var_9_0 / 2) do
-		var_9_0[iter_9_0], var_9_0[#var_9_0 - iter_9_0 + 1] = var_9_0[#var_9_0 - iter_9_0 + 1], var_9_0[iter_9_0]
+	for slot7 = 1, math.floor(#slot2 / 2) do
+		slot2[#slot2 - slot7 + 1] = slot2[slot7]
+		slot2[slot7] = slot2[#slot2 - slot7 + 1]
 	end
 
-	return table.concat(var_9_0)
+	return table.concat(slot2)
 end
 
 base64 = {}
+slot1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-local var_0_1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+function base64.enc(slot0)
+	return (slot0:gsub(".", function (slot0)
+		slot2 = slot0:byte()
 
-function base64.enc(arg_10_0)
-	return (arg_10_0:gsub(".", function(arg_11_0)
-		local var_11_0 = ""
-		local var_11_1 = arg_11_0:byte()
-
-		for iter_11_0 = 8, 1, -1 do
-			var_11_0 = var_11_0 .. (var_11_1 % 2^iter_11_0 - var_11_1 % 2^(iter_11_0 - 1) > 0 and "1" or "0")
+		for slot6 = 8, 1, -1 do
+			slot1 = "" .. (slot2 % 2^slot6 - slot2 % 2^(slot6 - 1) > 0 and "1" or "0")
 		end
 
-		return var_11_0
-	end) .. "0000"):gsub("%d%d%d?%d?%d?%d?", function(arg_12_0)
-		if #arg_12_0 < 6 then
+		return slot1
+	end) .. "0000"):gsub("%d%d%d?%d?%d?%d?", function (slot0)
+		if #slot0 < 6 then
 			return ""
 		end
 
-		local var_12_0 = 0
-
-		for iter_12_0 = 1, 6 do
-			var_12_0 = var_12_0 + (arg_12_0:sub(iter_12_0, iter_12_0) == "1" and 2^(6 - iter_12_0) or 0)
+		for slot5 = 1, 6 do
+			slot1 = 0 + (slot0:sub(slot5, slot5) == "1" and 2^(6 - slot5) or 0)
 		end
 
-		return var_0_1:sub(var_12_0 + 1, var_12_0 + 1)
+		return uv0:sub(slot1 + 1, slot1 + 1)
 	end) .. ({
 		"",
 		"==",
 		"="
-	})[#arg_10_0 % 3 + 1]
+	})[#slot0 % 3 + 1]
 end
 
-function base64.dec(arg_13_0)
-	arg_13_0 = string.gsub(arg_13_0, "[^" .. var_0_1 .. "=]", "")
-
-	return (arg_13_0:gsub(".", function(arg_14_0)
-		if arg_14_0 == "=" then
+function base64.dec(slot0)
+	return string.gsub(slot0, "[^" .. uv0 .. "=]", ""):gsub(".", function (slot0)
+		if slot0 == "=" then
 			return ""
 		end
 
-		local var_14_0 = ""
-		local var_14_1 = var_0_1:find(arg_14_0) - 1
+		slot2 = uv0:find(slot0) - 1
 
-		for iter_14_0 = 6, 1, -1 do
-			var_14_0 = var_14_0 .. (var_14_1 % 2^iter_14_0 - var_14_1 % 2^(iter_14_0 - 1) > 0 and "1" or "0")
+		for slot6 = 6, 1, -1 do
+			slot1 = "" .. (slot2 % 2^slot6 - slot2 % 2^(slot6 - 1) > 0 and "1" or "0")
 		end
 
-		return var_14_0
-	end):gsub("%d%d%d?%d?%d?%d?%d?%d?", function(arg_15_0)
-		if #arg_15_0 ~= 8 then
+		return slot1
+	end):gsub("%d%d%d?%d?%d?%d?%d?%d?", function (slot0)
+		if #slot0 ~= 8 then
 			return ""
 		end
 
-		local var_15_0 = 0
-
-		for iter_15_0 = 1, 8 do
-			var_15_0 = var_15_0 + (arg_15_0:sub(iter_15_0, iter_15_0) == "1" and 2^(8 - iter_15_0) or 0)
+		for slot5 = 1, 8 do
+			slot1 = 0 + (slot0:sub(slot5, slot5) == "1" and 2^(8 - slot5) or 0)
 		end
 
-		return string.char(var_15_0)
-	end))
+		return string.char(slot1)
+	end)
 end

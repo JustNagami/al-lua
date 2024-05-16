@@ -1,39 +1,38 @@
-﻿local var_0_0 = class("TowerClimbingMediator", import("...base.ContextMediator"))
+slot0 = class("TowerClimbingMediator", import("...base.ContextMediator"))
+slot0.ON_FINISH = "TowerClimbingMediator:ON_FINISH"
+slot0.ON_MODIFY_DATA = "TowerClimbingMediator:ON_MODIFY_DATA"
+slot0.ON_COLLECTION = "TowerClimbingMediator:ON_COLLECTION"
+slot0.ON_RECORD_MAP_SCORE = "TowerClimbingMediator:ON_RECORD_MAP_SCORE"
 
-var_0_0.ON_FINISH = "TowerClimbingMediator:ON_FINISH"
-var_0_0.ON_MODIFY_DATA = "TowerClimbingMediator:ON_MODIFY_DATA"
-var_0_0.ON_COLLECTION = "TowerClimbingMediator:ON_COLLECTION"
-var_0_0.ON_RECORD_MAP_SCORE = "TowerClimbingMediator:ON_RECORD_MAP_SCORE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_RECORD_MAP_SCORE, function(arg_2_0, arg_2_1, arg_2_2)
-		arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_RECORD_MAP_SCORE, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = 9,
 			cmd = MiniGameOPCommand.CMD_SPECIAL_GAME,
 			args1 = {
 				MiniGameDataCreator.TowerClimbingGameID,
 				4,
-				arg_2_2,
-				arg_2_1
+				slot2,
+				slot1
 			}
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_COLLECTION, function(arg_3_0)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.ON_COLLECTION, function (slot0)
+		uv0:addSubLayers(Context.New({
 			viewComponent = TowerClimbingCollectionLayer,
 			mediator = TowerClimbingCollectionMediator
 		}))
 	end)
-	arg_1_0:bind(var_0_0.ON_FINISH, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-		if arg_4_3 < arg_4_1 then
-			arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+	slot0:bind(uv0.ON_FINISH, function (slot0, slot1, slot2, slot3)
+		if slot3 < slot1 then
+			uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 				hubid = 9,
 				cmd = MiniGameOPCommand.CMD_SPECIAL_GAME,
 				args1 = {
 					MiniGameDataCreator.TowerClimbingGameID,
 					3,
-					arg_4_1,
-					arg_4_2
+					slot1,
+					slot2
 				}
 			})
 		end
@@ -42,24 +41,22 @@ function var_0_0.register(arg_1_0)
 			return
 		end
 
-		arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+		uv0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = 9,
 			cmd = MiniGameOPCommand.CMD_COMPLETE,
 			args1 = {},
 			id = MiniGameDataCreator.TowerClimbingGameID
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_MODIFY_DATA, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
+	slot0:bind(uv0.ON_MODIFY_DATA, function (slot0, slot1)
+		uv0:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
 			id = MiniGameDataCreator.TowerClimbingGameID,
-			map = arg_5_1
+			map = slot1
 		})
 	end)
 
-	local var_1_0 = getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.TowerClimbingGameID)
-
-	if var_1_0 and not var_1_0:GetRuntimeData("isInited") then
-		arg_1_0:sendNotification(GAME.SEND_MINI_GAME_OP, {
+	if getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.TowerClimbingGameID) and not slot1:GetRuntimeData("isInited") then
+		slot0:sendNotification(GAME.SEND_MINI_GAME_OP, {
 			hubid = 9,
 			cmd = MiniGameOPCommand.CMD_SPECIAL_GAME,
 			args1 = {
@@ -68,39 +65,32 @@ function var_0_0.register(arg_1_0)
 			}
 		})
 	else
-		arg_1_0.viewComponent:Start()
+		slot0.viewComponent:Start()
 	end
 end
 
-function var_0_0.listNotificationInterests(arg_6_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		GAME.REMOVE_LAYERS
 	}
 end
 
-function var_0_0.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1:getName()
-	local var_7_1 = arg_7_1:getBody()
-
-	if var_7_0 == GAME.SEND_MINI_GAME_OP_DONE then
-		local var_7_2 = {
-			function(arg_8_0)
-				local var_8_0 = var_7_1.awards
-
-				if #var_8_0 > 0 then
-					arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_8_0, arg_8_0)
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then
+		seriesAsync({
+			function (slot0)
+				if #uv0.awards > 0 then
+					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
 				else
-					arg_8_0()
+					slot0()
 				end
 			end
-		}
-
-		seriesAsync(var_7_2)
-		arg_7_0.viewComponent:OnSendMiniGameOPDone(var_7_1)
-	elseif var_7_0 == GAME.REMOVE_LAYERS and var_7_1.context.mediator == TowerClimbingCollectionMediator then
-		arg_7_0.viewComponent:UpdateTip()
+		})
+		slot0.viewComponent:OnSendMiniGameOPDone(slot1:getBody())
+	elseif slot2 == GAME.REMOVE_LAYERS and slot3.context.mediator == TowerClimbingCollectionMediator then
+		slot0.viewComponent:UpdateTip()
 	end
 end
 
-return var_0_0
+return slot0

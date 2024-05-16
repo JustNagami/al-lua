@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
 	"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
 	"哎呀~规避失败啦，只能硬着头皮上啦！",
@@ -17,7 +17,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -38,7 +38,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/normal/func_button",
@@ -64,7 +64,7 @@ return {
 				mode = 2,
 				posY = -295,
 				posX = -297,
-				text = var_0_0[3]
+				text = slot0[3]
 			}
 		},
 		{
@@ -75,7 +75,7 @@ return {
 				mode = 2,
 				posY = -295,
 				posX = -297,
-				text = var_0_0[4]
+				text = slot0[4]
 			}
 		},
 		{
@@ -85,7 +85,7 @@ return {
 				mode = 2,
 				posY = -68.93,
 				posX = 241.87,
-				text = var_0_0[5]
+				text = slot0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/ChapterPreCombatUI(Clone)/right/start",

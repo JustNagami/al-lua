@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "盘之占卜师",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "开场占卜一次",
+	stack = 1,
+	id = 105155,
+	icon = 105150,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkillRandom",
@@ -33,25 +53,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "盘之占卜师",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "开场占卜一次",
-	stack = 1,
-	id = 105155,
-	icon = 105150,
-	last_effect = ""
+	}
 }

@@ -1,5 +1,4 @@
-﻿return {
-	effect_list = {},
+return {
 	{
 		effect_list = {
 			{
@@ -601,5 +600,6 @@
 	id = 200823,
 	picture = "0",
 	aniEffect = "",
-	desc = ""
+	desc = "",
+	effect_list = {}
 }

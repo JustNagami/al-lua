@@ -1,29 +1,28 @@
-﻿local var_0_0 = class("UpdateGuideIndexCommand", pm.SimpleCommand)
+slot0 = class("UpdateGuideIndexCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.index
-	local var_1_2 = var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.index
+	slot4 = slot2.callback
 
-	print("update index.....", var_1_1)
+	print("update index.....", slot3)
 	pg.ConnectionMgr.GetInstance():Send(11016, {
-		guide_index = var_1_1
+		guide_index = slot3
 	})
 
-	local var_1_3 = getProxy(PlayerProxy):getData()
+	slot5 = getProxy(PlayerProxy):getData()
+	slot5.guideIndex = slot3
 
-	var_1_3.guideIndex = var_1_1
-
-	getProxy(PlayerProxy):updatePlayer(var_1_3)
-	pg.SeriesGuideMgr.GetInstance():setPlayer(var_1_3)
+	getProxy(PlayerProxy):updatePlayer(slot5)
+	pg.SeriesGuideMgr.GetInstance():setPlayer(slot5)
 
 	if pg.SeriesGuideMgr.GetInstance():isEnd() then
 		pg.TrackerMgr.GetInstance():Tracking(TRACKING_TUTORIAL_COMPLETE_1)
 	end
 
-	if var_1_2 then
-		var_1_2()
+	if slot4 then
+		slot4()
 	end
 end
 
-return var_0_0
+return slot0

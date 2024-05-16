@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.gametip = setmetatable({
 	__name = "gametip"
 }, confMT)
@@ -24549,6 +24549,16 @@ cs.gametip = {
 	dorm3d_gift_owner_num = {
 		889175,
 		94,
+		true
+	},
+	liner_sign_cnt_tip = {
+		889269,
+		106,
+		true
+	},
+	liner_sign_unlock_tip = {
+		889375,
+		104,
 		true
 	}
 }

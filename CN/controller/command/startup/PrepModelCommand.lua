@@ -1,11 +1,11 @@
-﻿local var_0_0 = class("PrepModelCommand", pm.SimpleCommand)
+slot0 = class("PrepModelCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	arg_1_0.facade:registerProxy(ContextProxy.New({}))
-	arg_1_0.facade:registerProxy(ServerProxy.New({}))
-	arg_1_0.facade:registerProxy(UserProxy.New())
-	arg_1_0.facade:registerProxy(GatewayNoticeProxy.New())
-	arg_1_0.facade:registerProxy(SettingsProxy.New())
+function slot0.execute(slot0, slot1)
+	slot0.facade:registerProxy(ContextProxy.New({}))
+	slot0.facade:registerProxy(ServerProxy.New({}))
+	slot0.facade:registerProxy(UserProxy.New())
+	slot0.facade:registerProxy(GatewayNoticeProxy.New())
+	slot0.facade:registerProxy(SettingsProxy.New())
 end
 
-return var_0_0
+return slot0

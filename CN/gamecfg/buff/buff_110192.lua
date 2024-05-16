@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "属性变更",
+	init_effect = "jinengchufared",
+	picture = "",
+	desc = "装填提升",
+	stack = 3,
+	id = 110192,
+	icon = 110190,
+	last_effect = "",
 	blink = {
 		1,
 		0,
@@ -52,24 +71,5 @@
 				countType = 110192
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "属性变更",
-	init_effect = "jinengchufared",
-	picture = "",
-	desc = "装填提升",
-	stack = 3,
-	id = 110192,
-	icon = 110190,
-	last_effect = ""
+	}
 }

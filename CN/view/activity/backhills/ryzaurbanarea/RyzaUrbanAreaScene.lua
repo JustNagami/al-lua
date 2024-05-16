@@ -1,157 +1,124 @@
-﻿local var_0_0 = class("RyzaUrbanAreaScene", import("..TemplateMV.BackHillTemplate"))
+slot0 = class("RyzaUrbanAreaScene", import("..TemplateMV.BackHillTemplate"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "RyzaUrbanAreaUI"
 end
 
-var_0_0.edge2area = {
+slot0.edge2area = {
 	default = "map_middle",
 	["2_3"] = "map_front",
 	["1_2"] = "map_front",
 	["3_4"] = "map_front"
 }
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.top = arg_2_0:findTF("top")
-	arg_2_0._map = arg_2_0:findTF("map")
+function slot0.init(slot0)
+	slot0.top = slot0:findTF("top")
+	slot0._map = slot0:findTF("map")
 
-	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
-		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
-		local var_2_1 = go(var_2_0).name
-
-		arg_2_0["map_" .. var_2_1] = var_2_0
+	for slot4 = 0, slot0._map.childCount - 1 do
+		slot5 = slot0._map:GetChild(slot4)
+		slot0["map_" .. go(slot5).name] = slot5
 	end
 
-	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
-	arg_2_0._upper = arg_2_0:findTF("upper")
+	slot0._shipTpl = slot0._map:Find("ship")
+	slot0._upper = slot0:findTF("upper")
 
-	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
-		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
-		local var_2_3 = go(var_2_2).name
-
-		arg_2_0["upper_" .. var_2_3] = var_2_2
+	for slot4 = 0, slot0._upper.childCount - 1 do
+		slot5 = slot0._upper:GetChild(slot4)
+		slot0["upper_" .. go(slot5).name] = slot5
 	end
 
-	arg_2_0.containers = {
-		arg_2_0.map_front,
-		arg_2_0.map_middle
+	slot0.containers = {
+		slot0.map_front,
+		slot0.map_middle
 	}
-	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.RyzaUrbanAreaGraph"))
-	arg_2_0.minigameCount = arg_2_0.top:Find("minigame/count")
-	arg_2_0.puniAnim = arg_2_0._map:Find("huodongye/puni"):GetComponent("SpineAnimUI")
+	slot0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.RyzaUrbanAreaGraph"))
+	slot0.minigameCount = slot0.top:Find("minigame/count")
+	slot0.puniAnim = slot0._map:Find("huodongye/puni"):GetComponent("SpineAnimUI")
 end
 
-function var_0_0.didEnter(arg_3_0)
-	onButton(arg_3_0, arg_3_0:findTF("top/return_btn"), function()
-		arg_3_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0:findTF("top/return_btn"), function ()
+		uv0:emit(uv1.ON_BACK)
 	end)
-	onButton(arg_3_0, arg_3_0:findTF("top/return_main_btn"), function()
-		arg_3_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0:findTF("top/return_main_btn"), function ()
+		uv0:emit(uv1.ON_HOME)
 	end)
-	onButton(arg_3_0, arg_3_0:findTF("top/help_btn"), function()
+	onButton(slot0, slot0:findTF("top/help_btn"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.ryza_tip_main.tip
 		})
 	end)
-	arg_3_0:BindItemActivityShop()
-	arg_3_0:BindItemSkinShop()
-	arg_3_0:BindItemBuildShip()
-	arg_3_0:BindItemBattle()
-
-	local var_3_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-
-	arg_3_0:InitStudents(var_3_0 and var_3_0.id, 3, 4)
-	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "xiaoyouxi", function()
+	slot0:BindItemActivityShop()
+	slot0:BindItemSkinShop()
+	slot0:BindItemBuildShip()
+	slot0:BindItemBattle()
+	slot0:InitStudents(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and slot1.id, 3, 4)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "xiaoyouxi", function ()
 		pg.m02:sendNotification(GAME.GO_MINI_GAME, 43)
 	end)
 
-	local var_3_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_PT)
+	slot2 = getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_PT)
 
-	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "huodongye", function()
-		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
-			id = var_3_1 and var_3_1.id
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "huodongye", function ()
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ACTIVITY, {
+			id = uv1 and uv1.id
 		})
 	end)
-	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "lianjingongfang", function()
-		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ATELIER_COMPOSITE)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "lianjingongfang", function ()
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.ATELIER_COMPOSITE)
 	end)
-	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "weituoban", function()
-		arg_3_0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.RYZA_TASK)
+	slot0:InitFacilityCross(slot0._map, slot0._upper, "weituoban", function ()
+		uv0:emit(BackHillMediatorTemplate.GO_SCENE, SCENE.RYZA_TASK)
 	end)
-	arg_3_0:UpdateView()
-	arg_3_0:AutoFitScreen()
+	slot0:UpdateView()
+	slot0:AutoFitScreen()
 end
 
-function var_0_0.UpdateView(arg_11_0)
-	local var_11_0 = getProxy(ActivityProxy)
-	local var_11_1 = getProxy(ActivityTaskProxy)
-	local var_11_2
-	local var_11_3 = var_11_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
-	local var_11_4 = var_0_0.IsMiniActNeedTip(var_11_3 and var_11_3.id)
-	local var_11_5 = arg_11_0.upper_xiaoyouxi:Find("tip")
+function slot0.UpdateView(slot0)
+	slot3 = nil
 
-	setActive(var_11_5, var_11_4)
+	setActive(slot0.upper_xiaoyouxi:Find("tip"), uv0.IsMiniActNeedTip(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and slot4.id))
 
-	local var_11_6 = var_11_3 and getProxy(MiniGameProxy):GetHubByHubId(var_11_3:getConfig("config_id"))
+	slot6 = slot4 and getProxy(MiniGameProxy):GetHubByHubId(slot4:getConfig("config_id"))
 
-	setText(arg_11_0.minigameCount, var_11_6.usedtime .. "/" .. var_11_6:getConfig("reward_need"))
-
-	local var_11_7 = var_11_0:getActivityById(ActivityConst.RYZA_PT)
-	local var_11_8 = arg_11_0.upper_huodongye:Find("tip")
-	local var_11_9 = var_11_7 and var_11_7:readyToAchieve()
-
-	setActive(var_11_8, var_11_9)
-	arg_11_0:UpdatePuniAnim(var_11_7)
-
-	local var_11_10 = var_11_1:getActTaskTip(ActivityConst.RYZA_TASK)
-	local var_11_11 = arg_11_0.upper_weituoban:Find("tip")
-
-	setActive(var_11_11, var_11_10)
+	setText(slot0.minigameCount, slot6.usedtime .. "/" .. slot6:getConfig("reward_need"))
+	setActive(slot0.upper_huodongye:Find("tip"), slot1:getActivityById(ActivityConst.RYZA_PT) and slot7:readyToAchieve())
+	slot0:UpdatePuniAnim(slot7)
+	setActive(slot0.upper_weituoban:Find("tip"), getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK))
 end
 
-function var_0_0.UpdatePuniAnim(arg_12_0, arg_12_1)
-	if not arg_12_1 then
-		arg_12_0.puniAnim:SetAction("normal_" .. math.random(9), 0)
+function slot0.UpdatePuniAnim(slot0, slot1)
+	if not slot1 then
+		slot0.puniAnim:SetAction("normal_" .. math.random(9), 0)
 	else
-		local var_12_0 = arg_12_1:getConfig("config_client").puni_phase
-		local var_12_1 = ActivityPtData.New(arg_12_1):GetLevelProgress()
-		local var_12_2 = 1
-
-		for iter_12_0, iter_12_1 in ipairs(var_12_0) do
-			if iter_12_1 < var_12_1 then
-				var_12_2 = var_12_2 + 1
+		for slot9, slot10 in ipairs(slot1:getConfig("config_client").puni_phase) do
+			if slot10 < ActivityPtData.New(slot1):GetLevelProgress() then
+				slot5 = 1 + 1
 			end
 		end
 
-		if var_12_2 == #var_12_0 then
-			var_12_2 = math.random(#var_12_0)
+		if slot5 == #slot2 then
+			slot5 = math.random(#slot2)
 		end
 
-		arg_12_0.puniAnim:SetAction("normal_" .. var_12_2, 0)
+		slot0.puniAnim:SetAction("normal_" .. slot5, 0)
 	end
 end
 
-function var_0_0.IsShowMainTip(arg_13_0)
-	local function var_13_0()
+function slot0.IsShowMainTip(slot0)
+	return function ()
 		return BackHillTemplate.IsMiniActNeedTip(ActivityConst.MINIGAME_RYZA)
-	end
-
-	local function var_13_1()
-		local var_15_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_PT)
-
-		return Activity.IsActivityReady(var_15_0)
-	end
-
-	local function var_13_2()
+	end() or function ()
+		return Activity.IsActivityReady(getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_PT))
+	end() or function ()
 		return getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK)
-	end
-
-	return var_13_0() or var_13_1() or var_13_2()
+	end()
 end
 
-function var_0_0.willExit(arg_17_0)
-	arg_17_0:clearStudents()
+function slot0.willExit(slot0)
+	slot0:clearStudents()
 end
 
-return var_0_0
+return slot0

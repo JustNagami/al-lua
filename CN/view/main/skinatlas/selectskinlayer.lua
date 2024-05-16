@@ -1,117 +1,106 @@
-﻿local var_0_0 = class("SelectSkinLayer", import(".SkinAtlasScene"))
+slot0 = class("SelectSkinLayer", import(".SkinAtlasScene"))
+slot0.MODE_SELECT = 1
+slot0.MODE_VIEW = 2
 
-var_0_0.MODE_SELECT = 1
-var_0_0.MODE_VIEW = 2
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SelectSkinUI"
 end
 
-function var_0_0.init(arg_2_0)
-	var_0_0.super.init(arg_2_0)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_2_0._tf, {
+function slot0.init(slot0)
+	uv0.super.init(slot0)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	arg_2_0.msgBox = SelectSkinMsgbox.New(arg_2_0._tf, arg_2_0.event)
+	slot0.msgBox = SelectSkinMsgbox.New(slot0._tf, slot0.event)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	var_0_0.super.didEnter(arg_3_0)
+function slot0.didEnter(slot0)
+	uv0.super.didEnter(slot0)
 end
 
-function var_0_0.GetSkinList(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_0.contextData.selectableSkinList or {}
-	local var_4_1 = {}
+function slot0.GetSkinList(slot0, slot1, slot2)
+	slot4 = {}
 
-	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
-		local var_4_2 = iter_4_1:ToShipSkin()
+	for slot8, slot9 in ipairs(slot0.contextData.selectableSkinList or {}) do
+		slot10 = slot9:ToShipSkin()
 
-		if (arg_4_1 == var_0_0.PAGE_ALL or var_4_2:IsType(arg_4_1)) and not var_4_2:IsDefault() and var_4_2:IsMatchKey(arg_4_2) and arg_4_0:MatchIndex(var_4_2) then
-			table.insert(var_4_1, iter_4_1)
+		if (slot1 == uv0.PAGE_ALL or slot10:IsType(slot1)) and not slot10:IsDefault() and slot10:IsMatchKey(slot2) and slot0:MatchIndex(slot10) then
+			table.insert(slot4, slot9)
 		end
 	end
 
-	return var_4_1
+	return slot4
 end
 
-function var_0_0.SortDisplay(arg_5_0, arg_5_1)
-	table.sort(arg_5_1, function(arg_6_0, arg_6_1)
-		local var_6_0 = arg_6_0:GetTimeLimitWeight()
-		local var_6_1 = arg_6_1:GetTimeLimitWeight()
-
-		if var_6_0 == var_6_1 then
-			local var_6_2 = arg_6_0:GetOwnWeight()
-			local var_6_3 = arg_6_1:GetOwnWeight()
-
-			if var_6_2 == var_6_3 then
-				return arg_6_0.skinId > arg_6_1.skinId
+function slot0.SortDisplay(slot0, slot1)
+	table.sort(slot1, function (slot0, slot1)
+		if slot0:GetTimeLimitWeight() == slot1:GetTimeLimitWeight() then
+			if slot0:GetOwnWeight() == slot1:GetOwnWeight() then
+				return slot1.skinId < slot0.skinId
 			else
-				return var_6_3 < var_6_2
+				return slot5 < slot4
 			end
 		else
-			return var_6_1 < var_6_0
+			return slot3 < slot2
 		end
 	end)
 end
 
-function var_0_0.OnInitItem(arg_7_0, arg_7_1)
-	local var_7_0 = SelectSkinCard.New(arg_7_1)
+function slot0.OnInitItem(slot0, slot1)
+	slot2 = SelectSkinCard.New(slot1)
 
-	onButton(arg_7_0, var_7_0._tf, function()
-		if arg_7_0.contextData.mode == var_0_0.MODE_VIEW then
+	onButton(slot0, slot2._tf, function ()
+		if uv0.contextData.mode == uv1.MODE_VIEW then
 			return
 		end
 
-		arg_7_0:Check(var_7_0.skin)
+		uv0:Check(uv2.skin)
 	end, SFX_PANEL)
 
-	arg_7_0.cards[arg_7_1] = var_7_0
+	slot0.cards[slot1] = slot2
 end
 
-function var_0_0.OnUpdateItem(arg_9_0, arg_9_1, arg_9_2)
-	if not arg_9_0.cards[arg_9_2] then
-		arg_9_0:OnInitItem(arg_9_2)
+function slot0.OnUpdateItem(slot0, slot1, slot2)
+	if not slot0.cards[slot2] then
+		slot0:OnInitItem(slot2)
 	end
 
-	local var_9_0 = arg_9_0.cards[arg_9_2]
-	local var_9_1 = arg_9_0.displays[arg_9_1 + 1]
-	local var_9_2 = var_9_1:ToShipSkin()
+	slot4 = slot0.displays[slot1 + 1]
 
-	var_9_0:Update(var_9_2, arg_9_1 + 1, var_9_1:IsTimeLimit(), var_9_1:OwnSkin())
+	slot0.cards[slot2]:Update(slot4:ToShipSkin(), slot1 + 1, slot4:IsTimeLimit(), slot4:OwnSkin())
 end
 
-function var_0_0.Check(arg_10_0, arg_10_1)
-	if getProxy(ShipSkinProxy):hasSkin(arg_10_1.id) then
+function slot0.Check(slot0, slot1)
+	if getProxy(ShipSkinProxy):hasSkin(slot1.id) then
 		return
 	end
 
-	local var_10_0 = arg_10_0.contextData.itemId
-	local var_10_1 = Item.getConfigData(var_10_0).name
+	slot3 = slot0.contextData.itemId
 
-	arg_10_0.msgBox:ExecuteAction("Show", {
-		content = i18n("skin_exchange_confirm", var_10_1, arg_10_1.skinName),
+	slot0.msgBox:ExecuteAction("Show", {
+		content = i18n("skin_exchange_confirm", Item.getConfigData(slot3).name, slot1.skinName),
 		leftDrop = {
 			count = 1,
 			type = DROP_TYPE_ITEM,
-			id = var_10_0
+			id = slot3
 		},
 		rightDrop = {
 			count = 1,
 			type = DROP_TYPE_SKIN,
-			id = arg_10_1.id
+			id = slot1.id
 		},
-		onYes = function()
-			arg_10_0.contextData.OnConfirm(arg_10_1.id)
-			arg_10_0:closeView()
+		onYes = function ()
+			uv0.contextData.OnConfirm(uv1.id)
+			uv0:closeView()
 		end
 	})
 end
 
-function var_0_0.willExit(arg_12_0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf)
-	arg_12_0.msgBox:Destroy()
-	var_0_0.super.willExit(arg_12_0)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+	slot0.msgBox:Destroy()
+	uv0.super.willExit(slot0)
 end
 
-return var_0_0
+return slot0

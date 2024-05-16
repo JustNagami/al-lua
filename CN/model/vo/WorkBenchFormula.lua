@@ -1,80 +1,77 @@
-﻿local var_0_0 = class("WorkBenchFormula", import("model.vo.BaseVO"))
+slot0 = class("WorkBenchFormula", import("model.vo.BaseVO"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_workbench_recipe
 end
 
-function var_0_0.Ctor(arg_2_0, ...)
-	var_0_0.super.Ctor(arg_2_0, ...)
+function slot0.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0, ...)
 
-	arg_2_0.times = arg_2_0.times or 0
-	arg_2_0.unlock = true
+	slot0.times = slot0.times or 0
+	slot0.unlock = true
 end
 
-function var_0_0.GetName(arg_3_0)
-	return arg_3_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetIconPath(arg_4_0)
-	return arg_4_0:getConfig("icon")
+function slot0.GetIconPath(slot0)
+	return slot0:getConfig("icon")
 end
 
-function var_0_0.GetLockLimit(arg_5_0)
-	return FilterVarchar(arg_5_0:getConfig("recipe_lock"))
+function slot0.GetLockLimit(slot0)
+	return FilterVarchar(slot0:getConfig("recipe_lock"))
 end
 
-function var_0_0.GetLockDesc(arg_6_0)
-	return (arg_6_0:getConfig("lock_display"))
+function slot0.GetLockDesc(slot0)
+	return slot0:getConfig("lock_display")
 end
 
-function var_0_0.BuildFromActivity(arg_7_0)
-	arg_7_0.unlock = (function()
-		local var_8_0 = arg_7_0:GetLockLimit()
+function slot0.BuildFromActivity(slot0)
+	slot0.unlock = function ()
+		if uv0:GetLockLimit() and slot0[1] == 1 then
+			slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
 
-		if var_8_0 and var_8_0[1] == 1 then
-			local var_8_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2)
+			assert(slot1)
 
-			assert(var_8_1)
-
-			return var_8_1:GetBuildingLevel(var_8_0[2]) >= var_8_0[3]
+			return slot0[3] <= slot1:GetBuildingLevel(slot0[2])
 		end
 
 		return true
-	end)()
+	end()
+	slot2 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
 
-	local var_7_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_WORKBENCH)
+	assert(slot2)
 
-	assert(var_7_0)
-
-	arg_7_0.times = var_7_0:GetFormulaUseCount(arg_7_0:GetConfigID())
+	slot0.times = slot2:GetFormulaUseCount(slot0:GetConfigID())
 end
 
-function var_0_0.IsUnlock(arg_9_0)
-	return arg_9_0.unlock
+function slot0.IsUnlock(slot0)
+	return slot0.unlock
 end
 
-function var_0_0.GetMaxLimit(arg_10_0)
-	return arg_10_0:getConfig("item_num")
+function slot0.GetMaxLimit(slot0)
+	return slot0:getConfig("item_num")
 end
 
-function var_0_0.SetUsedCount(arg_11_0, arg_11_1)
-	arg_11_0.times = arg_11_1
+function slot0.SetUsedCount(slot0, slot1)
+	slot0.times = slot1
 end
 
-function var_0_0.GetUsedCount(arg_12_0)
-	return arg_12_0.times
+function slot0.GetUsedCount(slot0)
+	return slot0.times
 end
 
-function var_0_0.IsAvaliable(arg_13_0)
-	return arg_13_0:GetMaxLimit() <= 0 or arg_13_0:GetUsedCount() < arg_13_0:GetMaxLimit()
+function slot0.IsAvaliable(slot0)
+	return slot0:GetMaxLimit() <= 0 or slot0:GetUsedCount() < slot0:GetMaxLimit()
 end
 
-function var_0_0.GetProduction(arg_14_0)
-	return arg_14_0:getConfig("item_id")
+function slot0.GetProduction(slot0)
+	return slot0:getConfig("item_id")
 end
 
-function var_0_0.GetMaterials(arg_15_0)
-	return arg_15_0:getConfig("recipe")
+function slot0.GetMaterials(slot0)
+	return slot0:getConfig("recipe")
 end
 
-return var_0_0
+return slot0

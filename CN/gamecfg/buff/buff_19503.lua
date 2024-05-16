@@ -1,4 +1,4 @@
-﻿return {
+return {
 	desc_get = "鱼雷防御盾",
 	name = "鱼雷防御盾",
 	init_effect = "",
@@ -36,10 +36,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_1_0)
+				centerPosFun = function (slot0)
 					return Vector3(2, -1.8, -1.2)
 				end,
-				rotationFun = function(arg_2_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 230, 0)
 				end
 			}
@@ -69,10 +69,10 @@
 						}
 					}
 				},
-				centerPosFun = function(arg_3_0)
+				centerPosFun = function (slot0)
 					return Vector3(2, -1.8, 2.8)
 				end,
-				rotationFun = function(arg_4_0)
+				rotationFun = function (slot0)
 					return Vector3(0, 130, 0)
 				end
 			}

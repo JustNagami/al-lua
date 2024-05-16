@@ -1,26 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetPlayerVanguardFleet"
-			},
-			arg_list = {
-				maxHPRatio = 0.005
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -188,5 +166,27 @@
 	id = 13540,
 	picture = "0",
 	castCV = "",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetPlayerVanguardFleet"
+			},
+			arg_list = {
+				maxHPRatio = 0.005
+			}
+		}
+	}
 }

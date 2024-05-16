@@ -1,4 +1,25 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "战意检查3",
+	name = "",
+	init_effect = "",
+	time = 2,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 17438,
+	icon = 17430,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -36,26 +57,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "战意检查3",
-	name = "",
-	init_effect = "",
-	time = 2,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 17438,
-	icon = 17430,
-	last_effect = ""
+	}
 }

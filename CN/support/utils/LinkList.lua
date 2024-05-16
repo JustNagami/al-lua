@@ -1,235 +1,226 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.LinkList = class("LinkList")
+slot1 = slot0.LinkList
+slot1.Head = nil
+slot1.Tail = nil
+slot1.Count = 0
 
-local var_0_0 = ys
-
-var_0_0.LinkList = class("LinkList")
-
-local var_0_1 = var_0_0.LinkList
-
-var_0_1.Head = nil
-var_0_1.Tail = nil
-var_0_1.Count = 0
-
-function var_0_1.Ctor(arg_1_0)
-	return
+function slot1.Ctor(slot0)
 end
 
-function var_0_1.Clear(arg_2_0)
-	arg_2_0.Head = nil
-	arg_2_0.Tail = nil
-	arg_2_0.Count = 0
+function slot1.Clear(slot0)
+	slot0.Head = nil
+	slot0.Tail = nil
+	slot0.Count = 0
 end
 
-function var_0_1.NewNode(arg_3_0, arg_3_1)
+function slot1.NewNode(slot0, slot1)
 	return {
-		Data = arg_3_1
+		Data = slot1
 	}
 end
 
-function var_0_1.IsEmpty(arg_4_0)
-	return arg_4_0.Count == 0
+function slot1.IsEmpty(slot0)
+	return slot0.Count == 0
 end
 
-function var_0_1.AddBefore(arg_5_0, arg_5_1, arg_5_2)
-	if arg_5_1 == nil then
+function slot1.AddBefore(slot0, slot1, slot2)
+	if slot1 == nil then
 		return nil
 	end
 
-	local var_5_0 = arg_5_0:NewNode(arg_5_2)
+	slot3 = slot0:NewNode(slot2)
 
-	if arg_5_1.Before ~= nil then
-		arg_5_1.Before.Next = var_5_0
+	if slot1.Before ~= nil then
+		slot1.Before.Next = slot3
 	end
 
-	var_5_0.Before = arg_5_1.Before
-	var_5_0.Next = arg_5_1
-	arg_5_1.Before = var_5_0
+	slot3.Before = slot1.Before
+	slot3.Next = slot1
+	slot1.Before = slot3
 
-	if arg_5_0.Head == arg_5_1 then
-		arg_5_0.Head = var_5_0
+	if slot0.Head == slot1 then
+		slot0.Head = slot3
 	end
 
-	arg_5_0.Count = arg_5_0.Count + 1
+	slot0.Count = slot0.Count + 1
 
-	return var_5_0
+	return slot3
 end
 
-function var_0_1.AddAfter(arg_6_0, arg_6_1, arg_6_2)
-	if arg_6_1 == nil then
+function slot1.AddAfter(slot0, slot1, slot2)
+	if slot1 == nil then
 		return nil
 	end
 
-	local var_6_0 = arg_6_0:NewNode(arg_6_2)
+	slot3 = slot0:NewNode(slot2)
 
-	if arg_6_1.Next ~= nil then
-		arg_6_1.Next.Before = var_6_0
+	if slot1.Next ~= nil then
+		slot1.Next.Before = slot3
 	end
 
-	var_6_0.Next = arg_6_1.Next
-	arg_6_1.Next = var_6_0
-	var_6_0.Before = arg_6_1
+	slot3.Next = slot1.Next
+	slot1.Next = slot3
+	slot3.Before = slot1
 
-	if arg_6_0.Tail == arg_6_1 then
-		arg_6_0.Tail = var_6_0
+	if slot0.Tail == slot1 then
+		slot0.Tail = slot3
 	end
 
-	arg_6_0.Count = arg_6_0.Count + 1
+	slot0.Count = slot0.Count + 1
 
-	return var_6_0
+	return slot3
 end
 
-function var_0_1.AddFirst(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_0:NewNode(arg_7_1)
-
-	return arg_7_0:AddNodeFirst(var_7_0)
+function slot1.AddFirst(slot0, slot1)
+	return slot0:AddNodeFirst(slot0:NewNode(slot1))
 end
 
-function var_0_1.AddNodeFirst(arg_8_0, arg_8_1)
-	if arg_8_0.Head ~= nil then
-		arg_8_0.Head.Before = arg_8_1
+function slot1.AddNodeFirst(slot0, slot1)
+	if slot0.Head ~= nil then
+		slot0.Head.Before = slot1
 	end
 
-	arg_8_1.Next = arg_8_0.Head
-	arg_8_1.Before = nil
-	arg_8_0.Head = arg_8_1
+	slot1.Next = slot0.Head
+	slot1.Before = nil
+	slot0.Head = slot1
 
-	if arg_8_0.Tail == nil then
-		arg_8_0.Tail = arg_8_1
+	if slot0.Tail == nil then
+		slot0.Tail = slot1
 	end
 
-	arg_8_0.Count = arg_8_0.Count + 1
+	slot0.Count = slot0.Count + 1
 
-	return arg_8_1
+	return slot1
 end
 
-function var_0_1.AddLast(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0:NewNode(arg_9_1)
-
-	return arg_9_0:AddNodeLast(var_9_0)
+function slot1.AddLast(slot0, slot1)
+	return slot0:AddNodeLast(slot0:NewNode(slot1))
 end
 
-function var_0_1.AddNodeLast(arg_10_0, arg_10_1)
-	if arg_10_0.Tail ~= nil then
-		arg_10_0.Tail.Next = arg_10_1
+function slot1.AddNodeLast(slot0, slot1)
+	if slot0.Tail ~= nil then
+		slot0.Tail.Next = slot1
 	end
 
-	arg_10_1.Before = arg_10_0.Tail
-	arg_10_1.Next = nil
-	arg_10_0.Tail = arg_10_1
+	slot1.Before = slot0.Tail
+	slot1.Next = nil
+	slot0.Tail = slot1
 
-	if arg_10_0.Head == nil then
-		arg_10_0.Head = arg_10_1
+	if slot0.Head == nil then
+		slot0.Head = slot1
 	end
 
-	arg_10_0.Count = arg_10_0.Count + 1
+	slot0.Count = slot0.Count + 1
 
-	return arg_10_1
+	return slot1
 end
 
-function var_0_1.CopyTo(arg_11_0, arg_11_1, arg_11_2)
-	if arg_11_1 == nil then
+function slot1.CopyTo(slot0, slot1, slot2)
+	if slot1 == nil then
 		return
 	end
 
-	if arg_11_2 == nil then
-		arg_11_2 = 1
+	if slot2 == nil then
+		slot2 = 1
 	end
 
-	local var_11_0 = arg_11_0.Head
+	slot3 = slot0.Head
 
-	for iter_11_0 = 1, arg_11_0.Count do
-		table.insert(arg_11_1, arg_11_2, var_11_0.Data)
+	for slot7 = 1, slot0.Count do
+		table.insert(slot1, slot2, slot3.Data)
 
-		var_11_0 = var_11_0.Next
-		arg_11_2 = arg_11_2 + 1
+		slot3 = slot3.Next
+		slot2 = slot2 + 1
 	end
 end
 
-function var_0_1.Find(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0.Head
+function slot1.Find(slot0, slot1)
+	slot2 = slot0.Head
 
-	for iter_12_0 = 1, arg_12_0.Count do
-		if var_12_0.Data == arg_12_1 then
-			return var_12_0
+	for slot6 = 1, slot0.Count do
+		if slot2.Data == slot1 then
+			return slot2
 		end
 
-		var_12_0 = var_12_0.Next
+		slot2 = slot2.Next
 	end
 
 	return nil
 end
 
-function var_0_1.FindLast(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.Tail
+function slot1.FindLast(slot0, slot1)
+	slot2 = slot0.Tail
 
-	for iter_13_0 = 1, arg_13_0.Count do
-		if var_13_0.Data == arg_13_1 then
-			return var_13_0
+	for slot6 = 1, slot0.Count do
+		if slot2.Data == slot1 then
+			return slot2
 		end
 
-		var_13_0 = var_13_0.Before
+		slot2 = slot2.Before
 	end
 
 	return nil
 end
 
-function var_0_1.RemoveFirst(arg_14_0)
-	arg_14_0:Remove(arg_14_0.Head)
+function slot1.RemoveFirst(slot0)
+	slot0:Remove(slot0.Head)
 end
 
-function var_0_1.RemoveLast(arg_15_0)
-	arg_15_0:Remove(arg_15_0.Tail)
+function slot1.RemoveLast(slot0)
+	slot0:Remove(slot0.Tail)
 end
 
-function var_0_1.Remove(arg_16_0, arg_16_1)
-	if arg_16_1 == nil then
+function slot1.Remove(slot0, slot1)
+	if slot1 == nil then
 		return
 	end
 
-	if arg_16_0.Head == arg_16_1 then
-		arg_16_0.Head = arg_16_1.Next
+	if slot0.Head == slot1 then
+		slot0.Head = slot1.Next
 	end
 
-	if arg_16_0.Tail == arg_16_1 then
-		arg_16_0.Tail = arg_16_1.Before
+	if slot0.Tail == slot1 then
+		slot0.Tail = slot1.Before
 	end
 
-	if arg_16_1.Next ~= nil then
-		arg_16_1.Next.Before = arg_16_1.Before
+	if slot1.Next ~= nil then
+		slot1.Next.Before = slot1.Before
 	end
 
-	if arg_16_1.Before ~= nil then
-		arg_16_1.Before.Next = arg_16_1.Next
+	if slot1.Before ~= nil then
+		slot1.Before.Next = slot1.Next
 	end
 
-	arg_16_0.Count = arg_16_0.Count - 1
+	slot0.Count = slot0.Count - 1
 end
 
-function var_0_1.RemoveData(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0:Find(arg_17_1)
+function slot1.RemoveData(slot0, slot1)
+	slot2 = slot0:Find(slot1)
 
-	arg_17_0:Remove(var_17_0)
+	slot0:Remove(slot2)
 
-	return var_17_0
+	return slot2
 end
 
-local function var_0_2(arg_18_0, arg_18_1)
-	if arg_18_1 == nil then
-		return arg_18_0.Head
+function slot2(slot0, slot1)
+	if slot1 == nil then
+		return slot0.Head
 	else
-		return arg_18_1.Next
+		return slot1.Next
 	end
 end
 
-function var_0_1.Iterator(arg_19_0)
-	return var_0_2, arg_19_0
+function slot1.Iterator(slot0)
+	return uv0, slot0
 end
 
-function var_0_1.Show(arg_20_0)
+function slot1.Show(slot0)
 	print("-------- list ++ begin --------")
 
-	for iter_20_0 in arg_20_0:Iterator() do
-		print(iter_20_0.Data)
+	for slot4 in slot0:Iterator() do
+		print(slot4.Data)
 	end
 
 	print("-------- list -- end ----------")

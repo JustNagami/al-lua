@@ -1,1 +1,1 @@
-﻿return (class("ClemenceauMainPage", import(".TemplatePage.PreviewTemplatePage")))
+return class("ClemenceauMainPage", import(".TemplatePage.PreviewTemplatePage"))

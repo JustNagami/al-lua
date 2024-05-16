@@ -1,40 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetPlayerMainFleet",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				buff_id = 11231
-			}
-		},
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetPlayerMainFleet",
-				"TargetHelpLeastHPRatio"
-			},
-			arg_list = {
-				maxHPRatio = 0.04
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -343,5 +307,41 @@
 	id = 11230,
 	picture = "0",
 	castCV = "skill",
-	desc = "自身耐久回复"
+	desc = "自身耐久回复",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetPlayerMainFleet",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				buff_id = 11231
+			}
+		},
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetPlayerMainFleet",
+				"TargetHelpLeastHPRatio"
+			},
+			arg_list = {
+				maxHPRatio = 0.04
+			}
+		}
+	}
 }

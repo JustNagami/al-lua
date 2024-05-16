@@ -1,160 +1,149 @@
-﻿local var_0_0 = class("CourtyardInteractionPreview", import("view.base.BaseSubView"))
+slot0 = class("CourtyardInteractionPreview", import("view.base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "BackYardInterActionPreview"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
-	arg_2_0.mask = arg_2_0:findTF("frame/mask")
+function slot0.OnLoaded(slot0)
+	slot0.closeBtn = slot0:findTF("frame/close")
+	slot0.mask = slot0:findTF("frame/mask")
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Destroy()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:Destroy()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.closeBtn, function()
-		arg_3_0:Destroy()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Destroy()
 	end, SFX_PANEL)
-	setText(arg_3_0:findTF("frame/title"), i18n("word_preview"))
+	setText(slot0:findTF("frame/title"), i18n("word_preview"))
 end
 
-function var_0_0.Show(arg_6_0, arg_6_1, arg_6_2)
-	var_0_0.super.Show(arg_6_0)
+function slot0.Show(slot0, slot1, slot2)
+	uv0.super.Show(slot0)
 
-	arg_6_0.storeyId = 999
-	arg_6_0.furnitureId = arg_6_1
+	slot0.storeyId = 999
+	slot0.furnitureId = slot1
+	slot0.shipId = ShipGroup.getDefaultShipConfig(pg.ship_skin_template[slot2].ship_group).id
+	slot0.shipSkinId = slot2
+	slot0.furniturePosition = Vector2(0, 0)
+	slot0.step = 0
+	slot0.instance = nil
 
-	local var_6_0 = pg.ship_skin_template[arg_6_2]
-
-	arg_6_0.shipId = ShipGroup.getDefaultShipConfig(var_6_0.ship_group).id
-	arg_6_0.shipSkinId = arg_6_2
-	arg_6_0.furniturePosition = Vector2(0, 0)
-	arg_6_0.step = 0
-	arg_6_0.instance = nil
-
-	arg_6_0:SetUp()
+	slot0:SetUp()
 end
 
-function var_0_0.SetUp(arg_7_0)
-	setActive(arg_7_0.mask, false)
+function slot0.SetUp(slot0)
+	setActive(slot0.mask, false)
 
-	arg_7_0.instance = CourtYardBridge.New(arg_7_0:GenCourtYardData(id))
+	slot0.instance = CourtYardBridge.New(slot0:GenCourtYardData(id))
+	slot1 = slot0.instance:GetController()
+	slot2 = slot0.instance:GetView()
+	slot3 = slot0:GetPutFurniture()
+	slot4 = 0
+	slot0.timer = Timer.New(function ()
+		if uv0.step == 2 and uv1:GetStorey():GetFurniture(uv2.id) and not slot0:AnySlotIsLoop() and not slot0:IsInteractionState() then
+			GetOrAddComponent(uv3:GetRect(), typeof(CanvasGroup)).alpha = 0
 
-	local var_7_0 = arg_7_0.instance:GetController()
-	local var_7_1 = arg_7_0.instance:GetView()
-	local var_7_2 = arg_7_0:GetPutFurniture()
-	local var_7_3 = 0
+			setActive(uv0.mask, true)
+			onButton(uv0, uv0.mask, function ()
+				uv0.step = 1
 
-	arg_7_0.timer = Timer.New(function()
-		if arg_7_0.step == 2 then
-			local var_8_0 = var_7_0:GetStorey():GetFurniture(var_7_2.id)
+				setActive(uv0.mask, false)
+			end, SFX_PANEL)
 
-			if var_8_0 and not var_8_0:AnySlotIsLoop() and not var_8_0:IsInteractionState() then
-				GetOrAddComponent(var_7_1:GetRect(), typeof(CanvasGroup)).alpha = 0
-
-				setActive(arg_7_0.mask, true)
-				onButton(arg_7_0, arg_7_0.mask, function()
-					arg_7_0.step = 1
-
-					setActive(arg_7_0.mask, false)
-				end, SFX_PANEL)
-
-				arg_7_0.step = 3
-			end
+			uv0.step = 3
 		end
 
-		if arg_7_0.step == 1 and var_7_1:GetCurrStorey():ItemsIsLoaded() then
-			arg_7_0:StartInteraction(var_7_0)
+		if uv0.step == 1 and uv3:GetCurrStorey():ItemsIsLoaded() then
+			uv0:StartInteraction(uv1)
 
-			GetOrAddComponent(var_7_1:GetRect(), typeof(CanvasGroup)).alpha = 1
-			arg_7_0.step = 2
+			GetOrAddComponent(uv3:GetRect(), typeof(CanvasGroup)).alpha = 1
+			uv0.step = 2
 		end
 
-		if var_7_1:IsInit() and var_7_0:IsLoaed() and arg_7_0.step == 0 then
-			arg_7_0.step = 1
-			GetOrAddComponent(var_7_1:GetRect(), typeof(CanvasGroup)).alpha = 0
+		if uv3:IsInit() and uv1:IsLoaed() and uv0.step == 0 then
+			uv0.step = 1
+			GetOrAddComponent(uv3:GetRect(), typeof(CanvasGroup)).alpha = 0
 
-			var_7_0:AddFurniture(var_7_2)
-			var_7_0:AddShip(arg_7_0:GetPutShip())
+			uv1:AddFurniture(uv2)
+			uv1:AddShip(uv0:GetPutShip())
 		end
 	end, 0.01, -1)
 
-	arg_7_0.timer:Start()
+	slot0.timer:Start()
 end
 
-function var_0_0.RemoveTimer(arg_10_0)
-	if arg_10_0.timer then
-		arg_10_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_10_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.StartInteraction(arg_11_0, arg_11_1)
-	if arg_11_0.shipId then
-		arg_11_1:DragShip(arg_11_0.shipId)
-		arg_11_1:DragShipEnd(arg_11_0.shipId, arg_11_0.furniturePosition)
+function slot0.StartInteraction(slot0, slot1)
+	if slot0.shipId then
+		slot1:DragShip(slot0.shipId)
+		slot1:DragShipEnd(slot0.shipId, slot0.furniturePosition)
 	end
 end
 
-function var_0_0.Hide(arg_12_0)
-	var_0_0.super.Hide(arg_12_0)
-	arg_12_0:RemoveTimer()
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	slot0:RemoveTimer()
 
-	if arg_12_0.instance then
-		arg_12_0.instance:Dispose()
+	if slot0.instance then
+		slot0.instance:Dispose()
 	end
 
-	arg_12_0.instance = nil
+	slot0.instance = nil
 end
 
-function var_0_0.GenCourtYardData(arg_13_0)
-	local var_13_0 = arg_13_0.storeyId
-	local var_13_1 = 4
-	local var_13_2 = {
-		[var_13_0] = {
-			id = var_13_0,
-			level = var_13_1,
-			furnitures = {},
-			ships = {}
-		}
-	}
-	local var_13_3 = Dorm.StaticGetMapSize(var_13_1)
+function slot0.GenCourtYardData(slot0)
+	slot1 = slot0.storeyId
+	slot2 = 4
 
 	return {
 		system = CourtYardConst.SYSTEM_VISIT,
-		storeys = var_13_2,
-		storeyId = var_13_0,
+		storeys = {
+			[slot1] = {
+				id = slot1,
+				level = slot2,
+				furnitures = {},
+				ships = {}
+			}
+		},
+		storeyId = slot1,
 		style = CourtYardConst.STYLE_PREVIEW,
-		mapSize = var_13_3,
-		name = arg_13_0:getUIName()
+		mapSize = Dorm.StaticGetMapSize(slot2),
+		name = slot0:getUIName()
 	}
 end
 
-function var_0_0.GetPutFurniture(arg_14_0)
-	return (BackyardThemeFurniture.New({
+function slot0.GetPutFurniture(slot0)
+	return BackyardThemeFurniture.New({
 		id = 9999,
 		isNewStyle = true,
-		configId = arg_14_0.furnitureId,
-		position = arg_14_0.furniturePosition
-	}))
+		configId = slot0.furnitureId,
+		position = slot0.furniturePosition
+	})
 end
 
-function var_0_0.GetPutShip(arg_15_0)
-	if not arg_15_0.shipId or arg_15_0.shipId <= 0 then
+function slot0.GetPutShip(slot0)
+	if not slot0.shipId or slot0.shipId <= 0 then
 		return {}
 	end
 
-	return (Ship.New({
-		id = arg_15_0.shipId,
-		template_id = arg_15_0.shipId,
-		skin_id = arg_15_0.shipSkinId
-	}))
+	return Ship.New({
+		id = slot0.shipId,
+		template_id = slot0.shipId,
+		skin_id = slot0.shipSkinId
+	})
 end
 
-function var_0_0.OnDestroy(arg_16_0)
-	arg_16_0:Hide()
+function slot0.OnDestroy(slot0)
+	slot0:Hide()
 end
 
-return var_0_0
+return slot0

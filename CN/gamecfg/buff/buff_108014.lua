@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 10,
+	color = "red",
+	picture = "",
+	desc = "TWIN-检查是否带MAX",
+	stack = 1,
+	id = 108014,
+	icon = 108010,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -34,25 +54,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 10,
-	color = "red",
-	picture = "",
-	desc = "TWIN-检查是否带MAX",
-	stack = 1,
-	id = 108014,
-	icon = 108010,
-	last_effect = ""
+	}
 }

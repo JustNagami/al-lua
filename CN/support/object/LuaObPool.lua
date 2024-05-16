@@ -1,74 +1,66 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot1 = require("Mgr/Pool/PoolUtil")
+slot2 = class("LuaObPool")
+pg.LuaObPool = slot2
 
-local var_0_0 = pg
-local var_0_1 = require("Mgr/Pool/PoolUtil")
-local var_0_2 = class("LuaObPool")
+function slot2.Ctor(slot0, slot1, slot2, slot3)
+	assert(slot1.Init, "template should have func Init")
+	assert(slot1.Recycle, "template should have func Recycle")
+	assert(slot1.Dispose, "template should have func Dispose")
 
-var_0_0.LuaObPool = var_0_2
+	slot0.baseClass = slot1
+	slot0.info = slot2
+	slot0.list = {}
+	slot0.ob2index = {}
 
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	assert(arg_1_1.Init, "template should have func Init")
-	assert(arg_1_1.Recycle, "template should have func Recycle")
-	assert(arg_1_1.Dispose, "template should have func Dispose")
-
-	arg_1_0.baseClass = arg_1_1
-	arg_1_0.info = arg_1_2
-	arg_1_0.list = {}
-	arg_1_0.ob2index = {}
-
-	for iter_1_0 = 1, arg_1_3 do
-		arg_1_0.list[iter_1_0] = arg_1_1.New(arg_1_0, arg_1_2)
+	for slot7 = 1, slot3 do
+		slot0.list[slot7] = slot1.New(slot0, slot2)
 	end
 
-	arg_1_0.usedEnd = 0
+	slot0.usedEnd = 0
 end
 
-function var_0_2.GetObject(arg_2_0)
-	local var_2_0 = arg_2_0.list
-	local var_2_1 = arg_2_0.usedEnd
-	local var_2_2
+function slot2.GetObject(slot0)
+	slot3 = nil
 
-	if var_2_1 >= #var_2_0 then
-		var_2_0[#var_2_0 + 1] = arg_2_0.baseClass.New(arg_2_0, arg_2_0.info)
+	if slot0.usedEnd >= #slot0.list then
+		slot1[#slot1 + 1] = slot0.baseClass.New(slot0, slot0.info)
 	end
 
-	local var_2_3 = var_2_1 + 1
-	local var_2_4 = var_2_0[var_2_3]
+	slot2 = slot2 + 1
+	slot3 = slot1[slot2]
+	slot0.ob2index[slot3] = slot2
+	slot0.usedEnd = slot2
 
-	arg_2_0.ob2index[var_2_4] = var_2_3
-	arg_2_0.usedEnd = var_2_3
+	slot3:Init()
 
-	var_2_4:Init()
-
-	return var_2_4
+	return slot3
 end
 
-function var_0_2.Recycle(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0.ob2index[arg_3_1]
-	local var_3_1 = arg_3_0.usedEnd
-	local var_3_2 = arg_3_0.list
+function slot2.Recycle(slot0, slot1)
+	slot4 = slot0.list
 
-	arg_3_1:Recycle()
+	slot1:Recycle()
 
-	if var_3_1 ~= var_3_0 then
-		local var_3_3 = var_3_2[var_3_1]
-
-		arg_3_0.ob2index[var_3_3] = var_3_0
-		var_3_2[var_3_1], var_3_2[var_3_0] = arg_3_1, var_3_3
+	if slot0.usedEnd ~= slot0.ob2index[slot1] then
+		slot5 = slot4[slot3]
+		slot0.ob2index[slot5] = slot2
+		slot4[slot2] = slot5
+		slot4[slot3] = slot1
 	end
 
-	arg_3_0.ob2index[arg_3_1] = nil
-	arg_3_0.usedEnd = var_3_1 - 1
+	slot0.ob2index[slot1] = nil
+	slot0.usedEnd = slot3 - 1
 end
 
-function var_0_2.UpdateInfo(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0.info[arg_4_1] = arg_4_2
+function slot2.UpdateInfo(slot0, slot1, slot2)
+	slot0.info[slot1] = slot2
 end
 
-function var_0_2.Dispose(arg_5_0)
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.list) do
-		iter_5_1:Dispose()
+function slot2.Dispose(slot0)
+	for slot4, slot5 in ipairs(slot0.list) do
+		slot5:Dispose()
 	end
 
-	arg_5_0.ob2index = nil
+	slot0.ob2index = nil
 end

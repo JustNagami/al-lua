@@ -1,129 +1,116 @@
-﻿local var_0_0 = class("TaskGoCommand", pm.SimpleCommand)
+slot0 = class("TaskGoCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().taskVO
-	local var_1_1 = getProxy(ChapterProxy)
-	local var_1_2 = var_1_0:getConfig("scene")
+function slot0.execute(slot0, slot1)
+	slot4 = getProxy(ChapterProxy)
 
-	if var_1_2 and #var_1_2 > 0 then
-		if var_1_2[1] == "ACTIVITY_MAP" then
-			local var_1_3 = {}
+	if slot1:getBody().taskVO:getConfig("scene") and #slot5 > 0 then
+		if slot5[1] == "ACTIVITY_MAP" then
+			slot6 = {}
 
-			if var_1_2[2] then
-				table.insert(var_1_3, function(arg_2_0)
-					local var_2_0 = getProxy(ActivityProxy)
+			if slot5[2] then
+				table.insert(slot6, function (slot0)
+					slot1 = getProxy(ActivityProxy)
 
-					if underscore.any(var_1_2[2], function(arg_3_0)
-						local var_3_0 = var_2_0:getActivityById(arg_3_0)
-
-						return var_3_0 and not var_3_0:isEnd()
+					if underscore.any(uv0[2], function (slot0)
+						return uv0:getActivityById(slot0) and not slot1:isEnd()
 					end) then
-						arg_2_0()
+						slot0()
 					else
 						pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_notStartOrEnd"))
 					end
 				end)
 			end
 
-			table.insert(var_1_3, function(arg_4_0)
-				local var_4_0, var_4_1 = var_1_1:getLastMapForActivity()
+			table.insert(slot6, function (slot0)
+				slot1, slot2 = uv0:getLastMapForActivity()
 
-				if var_4_0 and var_1_1:getMapById(var_4_0):isUnlock() then
-					arg_4_0(var_4_0, var_4_1)
+				if slot1 and uv0:getMapById(slot1):isUnlock() then
+					slot0(slot1, slot2)
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_notStartOrEnd"))
 				end
 			end)
-			seriesAsync(var_1_3, function(arg_5_0, arg_5_1)
+			seriesAsync(slot6, function (slot0, slot1)
 				pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-					chapterId = arg_5_1,
-					mapIdx = arg_5_0
+					chapterId = slot1,
+					mapIdx = slot0
 				})
 			end)
-		elseif var_1_2[1] == "HARD_MAP" then
-			local var_1_4 = var_1_1:getUseableMaxEliteMap()
-
+		elseif slot5[1] == "HARD_MAP" then
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
-				mapIdx = var_1_4 and var_1_4.id
+				mapIdx = slot4:getUseableMaxEliteMap() and slot6.id
 			})
-		elseif SCENE[var_1_2[1]] == SCENE.LEVEL and var_1_2[2] then
-			local var_1_5 = {}
+		elseif SCENE[slot5[1]] == SCENE.LEVEL and slot5[2] then
+			if slot5[2].mapIdx then
+				table.insert({}, function (slot0)
+					slot2, slot3 = uv0:getMapById(uv1[2].mapIdx):isUnlock()
 
-			if var_1_2[2].mapIdx then
-				table.insert(var_1_5, function(arg_6_0)
-					local var_6_0, var_6_1 = var_1_1:getMapById(var_1_2[2].mapIdx):isUnlock()
-
-					if var_6_0 then
-						arg_6_0()
+					if slot2 then
+						slot0()
 					else
-						pg.TipsMgr.GetInstance():ShowTips(var_6_1)
+						pg.TipsMgr.GetInstance():ShowTips(slot3)
 					end
 				end)
 			end
 
-			if var_1_2[2].chapterId then
-				table.insert(var_1_5, function(arg_7_0)
-					if var_1_1:getChapterById(var_1_2[2].chapterId):isUnlock() then
-						arg_7_0()
+			if slot5[2].chapterId then
+				table.insert(slot6, function (slot0)
+					if uv0:getChapterById(uv1[2].chapterId):isUnlock() then
+						slot0()
 					else
 						pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_chapter_lock"))
 					end
 				end)
 			end
 
-			seriesAsync(var_1_5, function()
-				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE[var_1_2[1]], var_1_2[2])
+			seriesAsync(slot6, function ()
+				uv0:sendNotification(GAME.GO_SCENE, SCENE[uv1[1]], uv1[2])
 			end)
 		else
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE[var_1_2[1]], var_1_2[2])
+			slot0:sendNotification(GAME.GO_SCENE, SCENE[slot5[1]], slot5[2])
 		end
 
 		return
 	end
 
-	if isa(var_1_0, AvatarFrameTask) then
+	if isa(slot3, AvatarFrameTask) then
 		return
 	end
 
-	local var_1_6 = var_1_0:getConfig("sub_type")
-	local var_1_7 = var_1_1:getActiveChapter()
-	local var_1_8 = {
-		chapterId = var_1_7 and var_1_7.id,
-		mapIdx = var_1_7 and var_1_7:getConfig("map")
-	}
-	local var_1_9 = math.modf(var_1_6 / 10)
-	local var_1_10 = math.fmod(var_1_6, 10)
+	slot6 = slot3:getConfig("sub_type")
+	slot10 = math.fmod(slot6, 10)
 
-	if var_1_9 == 0 then
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-	elseif var_1_9 == 1 then
-		if var_1_10 == 9 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
+	if math.modf(slot6 / 10) == 0 then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+			chapterId = slot4:getActiveChapter() and slot7.id,
+			mapIdx = slot7 and slot7:getConfig("map")
+		})
+	elseif slot9 == 1 then
+		if slot10 == 9 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
 		else
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
 		end
-	elseif var_1_9 == 2 then
-		if var_1_10 == 6 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
-		elseif var_1_10 == 7 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.MILITARYEXERCISE)
-		elseif var_1_10 == 8 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-		elseif var_1_10 == 9 then
-			local var_1_11 = tonumber(var_1_0:getConfig("target_id"))
-
-			arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
+	elseif slot9 == 2 then
+		if slot10 == 6 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
+		elseif slot10 == 7 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.MILITARYEXERCISE)
+		elseif slot10 == 8 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+		elseif slot10 == 9 then
+			slot0:sendNotification(GAME.BEGIN_STAGE, {
 				system = SYSTEM_PERFORM,
-				stageId = tonumber(var_1_11)
+				stageId = tonumber(tonumber(slot3:getConfig("target_id")))
 			})
 		else
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
 		end
-	elseif var_1_9 == 3 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.GETBOAT)
-		elseif var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+	elseif slot9 == 3 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.GETBOAT)
+		elseif slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				blockLock = true,
 				mode = DockyardScene.MODE_DESTROY,
 				onShip = ShipStatus.canDestroyShip,
@@ -133,166 +120,162 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 					isActivityNpc = true
 				})
 			})
-		elseif var_1_10 == 7 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
+		elseif slot10 == 7 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
 				warp = NavalAcademyScene.WARP_TO_TACTIC
 			})
 		else
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				mode = DockyardScene.MODE_OVERVIEW
 			})
 		end
-	elseif var_1_9 == 4 then
-		if var_1_10 == 2 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
+	elseif slot9 == 4 then
+		if slot10 == 2 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				warp = StoreHouseConst.WARP_TO_DESIGN
 			})
-		elseif var_1_10 == 3 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+		elseif slot10 == 3 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				mode = DockyardScene.MODE_OVERVIEW
 			})
 		else
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				warp = StoreHouseConst.WARP_TO_WEAPON
 			})
 		end
-	elseif var_1_9 == 5 then
-		if var_1_10 == 0 or var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
+	elseif slot9 == 5 then
+		if slot10 == 0 or slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.EQUIPSCENE, {
 				warp = StoreHouseConst.WARP_TO_MATERIAL
 			})
 		end
-	elseif var_1_9 == 6 then
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
-	elseif var_1_9 == 7 then
-		local var_1_12
+	elseif slot9 == 6 then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
+	elseif slot9 == 7 then
+		slot11 = nil
 
-		if var_1_10 == 1 then
-			var_1_12 = NavalAcademyScene.WARP_TO_TACTIC
+		if slot10 == 1 then
+			slot11 = NavalAcademyScene.WARP_TO_TACTIC
 		end
 
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
-			warp = var_1_12
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE, {
+			warp = slot11
 		})
-	elseif var_1_9 == 8 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
-		elseif var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE)
+	elseif slot9 == 8 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
+		elseif slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.NAVALACADEMYSCENE)
 		end
-	elseif var_1_9 == 9 then
-		if var_1_10 == 2 then
-			arg_1_0:sendNotification(TaskMediator.TASK_FILTER, "weekly")
+	elseif slot9 == 9 then
+		if slot10 == 2 then
+			slot0:sendNotification(TaskMediator.TASK_FILTER, "weekly")
 		end
-	elseif var_1_9 == 10 then
-		if var_1_10 == 4 or var_1_10 == 5 then
-			local var_1_13 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM)
-
-			if var_1_13 and not var_1_13:isEnd() then
-				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI, {
-					subContext = Context.New({
-						viewComponent = InstagramLayer,
-						mediator = InstagramMediator,
-						data = {
-							id = var_1_13.id
-						}
-					})
+	elseif slot9 == 10 then
+		if (slot10 == 4 or slot10 == 5) and getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_INSTAGRAM) and not slot11:isEnd() then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI, {
+				subContext = Context.New({
+					viewComponent = InstagramLayer,
+					mediator = InstagramMediator,
+					data = {
+						id = slot11.id
+					}
 				})
-			end
+			})
 		end
-	elseif var_1_9 == 11 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
+	elseif slot9 == 11 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
 		end
-	elseif var_1_9 == 12 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	elseif slot9 == 12 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_SHAM_SHOP
 			})
-		elseif var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-		elseif var_1_10 == 2 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+		elseif slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+		elseif slot10 == 2 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_SHOP_STREET
 			})
 		end
-	elseif var_1_9 == 13 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
+	elseif slot9 == 13 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
 		end
-	elseif var_1_9 == 14 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
+	elseif slot9 == 14 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DAILYLEVEL)
 		end
-	elseif var_1_9 == 15 then
-		if var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	elseif slot9 == 15 then
+		if slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 				warp = NewShopsScene.TYPE_GUILD
 			})
-		elseif var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP)
+		elseif slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.SHOP)
 		end
-	elseif var_1_9 == 17 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+	elseif slot9 == 17 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
 				fleetType = CommanderCatScene.FLEET_TYPE_COMMON
 			})
 		end
-	elseif var_1_9 == 18 then
-		if var_1_10 == 2 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
+	elseif slot9 == 18 then
+		if slot10 == 2 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
 		end
-	elseif var_1_9 == 30 then
-		if var_1_10 == 4 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.WORLD)
+	elseif slot9 == 30 then
+		if slot10 == 4 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.WORLD)
 		end
-	elseif var_1_9 == 40 then
-		if var_1_10 == 2 then
+	elseif slot9 == 40 then
+		if slot10 == 2 then
 			if getProxy(GuildProxy):getData() then
-				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.GUILD, {
+				slot0:sendNotification(GAME.GO_SCENE, SCENE.GUILD, {
 					page = "office"
 				})
 			else
-				arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.PUBLIC_GUILD)
+				slot0:sendNotification(GAME.GO_SCENE, SCENE.PUBLIC_GUILD)
 			end
 		end
-	elseif var_1_9 == 41 then
-		if var_1_10 == 7 then
+	elseif slot9 == 41 then
+		if slot10 == 7 then
 			pg.m02:sendNotification(GAME.GO_MINI_GAME, 56)
 		end
-	elseif var_1_9 == 43 then
-		if var_1_10 == 0 or var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.FEAST)
-		elseif var_1_10 == 2 or var_1_10 == 3 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.FEAST, {
+	elseif slot9 == 43 then
+		if slot10 == 0 or slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.FEAST)
+		elseif slot10 == 2 or slot10 == 3 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.FEAST, {
 				page = 1
 			})
-		elseif var_1_10 == 4 then
+		elseif slot10 == 4 then
 			pg.m02:sendNotification(GAME.GO_MINI_GAME, 56)
 		end
-	elseif var_1_9 == 100 then
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-	elseif var_1_9 == 101 then
-		if var_1_10 == 3 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-		elseif var_1_10 == 5 or var_1_10 == 8 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
+	elseif slot9 == 100 then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+	elseif slot9 == 101 then
+		if slot10 == 3 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+		elseif slot10 == 5 or slot10 == 8 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 				mode = DockyardScene.MODE_OVERVIEW
 			})
 		end
-	elseif var_1_9 == 102 then
-		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, var_1_8)
-	elseif var_1_9 == 200 then
-		if var_1_10 == 1 or var_1_10 == 2 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.BIANDUI)
+	elseif slot9 == 102 then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, slot8)
+	elseif slot9 == 200 then
+		if slot10 == 1 or slot10 == 2 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.BIANDUI)
 		end
-	elseif var_1_9 == 201 then
-		if var_1_10 == 0 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
-		elseif var_1_10 == 1 then
-			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
+	elseif slot9 == 201 then
+		if slot10 == 0 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD)
+		elseif slot10 == 1 then
+			slot0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 		end
 	end
 end
 
-return var_0_0
+return slot0

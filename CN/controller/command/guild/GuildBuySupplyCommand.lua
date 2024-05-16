@@ -1,22 +1,21 @@
-﻿local var_0_0 = class("GuildBuySupplyCommand", pm.SimpleCommand)
+slot0 = class("GuildBuySupplyCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = getProxy(GuildProxy):getData()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	if not var_1_1 then
+	if not getProxy(GuildProxy):getData() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
-	if not GuildMember.IsAdministrator(var_1_1:getSelfDuty()) then
+	if not GuildMember.IsAdministrator(slot4:getSelfDuty()) then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_op_only_administrator"))
 
 		return
 	end
 
-	if var_1_1:getSupplyConsume() > var_1_1:getCapital() then
+	if slot4:getCapital() < slot4:getSupplyConsume() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
@@ -24,13 +23,13 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 
 	pg.ConnectionMgr.GetInstance():Send(62007, {
 		type = 0
-	}, 62008, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			arg_1_0:sendNotification(GAME.GUILD_BUY_SUPPLY_DONE)
+	}, 62008, function (slot0)
+		if slot0.result == 0 then
+			uv0:sendNotification(GAME.GUILD_BUY_SUPPLY_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,328 +1,306 @@
-﻿local var_0_0 = class("CommanderFormationPage", import("...base.BaseSubView"))
+slot0 = class("CommanderFormationPage", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderFormationUI"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0.samllTF = arg_2_0:findTF("small")
+function slot0.OnInit(slot0)
+	slot0.samllTF = slot0:findTF("small")
 
-	setActive(arg_2_0.samllTF, true)
+	setActive(slot0.samllTF, true)
 
-	arg_2_0.pos1 = arg_2_0:findTF("small/commander1", arg_2_0.topPanel)
-	arg_2_0.pos2 = arg_2_0:findTF("small/commander2", arg_2_0.topPanel)
-	arg_2_0.descPanel = arg_2_0:findTF("desc")
+	slot0.pos1 = slot0:findTF("small/commander1", slot0.topPanel)
+	slot0.pos2 = slot0:findTF("small/commander2", slot0.topPanel)
+	slot0.descPanel = slot0:findTF("desc")
 
-	setActive(arg_2_0.descPanel, false)
+	setActive(slot0.descPanel, false)
 
-	arg_2_0.descFrameTF = arg_2_0:findTF("desc/frame")
-	arg_2_0.descPos1 = arg_2_0:findTF("commander1/frame/info", arg_2_0.descFrameTF)
-	arg_2_0.descPos2 = arg_2_0:findTF("commander2/frame/info", arg_2_0.descFrameTF)
-	arg_2_0.skillTFPos1 = arg_2_0:findTF("commander1/skill_info", arg_2_0.descFrameTF)
-	arg_2_0.skillTFPos2 = arg_2_0:findTF("commander2/skill_info", arg_2_0.descFrameTF)
-	arg_2_0.abilitysTF = UIItemList.New(arg_2_0:findTF("atttr_panel/abilitys/mask/content", arg_2_0.descFrameTF), arg_2_0:findTF("atttr_panel/abilitys/mask/content/attr", arg_2_0.descFrameTF))
-	arg_2_0.talentsTF = UIItemList.New(arg_2_0:findTF("atttr_panel/talents/mask/content", arg_2_0.descFrameTF), arg_2_0:findTF("atttr_panel/talents/mask/content/attr", arg_2_0.descFrameTF))
-	arg_2_0.abilityArr = arg_2_0:findTF("desc/frame/atttr_panel/abilitys/arr")
-	arg_2_0.talentsArr = arg_2_0:findTF("desc/frame/atttr_panel/talents/arr")
-	arg_2_0.restAllBtn = arg_2_0:findTF("rest_all", arg_2_0.descFrameTF)
-	arg_2_0.quickBtn = arg_2_0:findTF("quick_btn", arg_2_0.descFrameTF)
-	arg_2_0.recordPanel = arg_2_0:findTF("record_panel")
-	arg_2_0.recordCommanders = {
-		arg_2_0.recordPanel:Find("current/commanders/commander1/frame/info"),
-		arg_2_0.recordPanel:Find("current/commanders/commander2/frame/info")
+	slot0.descFrameTF = slot0:findTF("desc/frame")
+	slot0.descPos1 = slot0:findTF("commander1/frame/info", slot0.descFrameTF)
+	slot0.descPos2 = slot0:findTF("commander2/frame/info", slot0.descFrameTF)
+	slot0.skillTFPos1 = slot0:findTF("commander1/skill_info", slot0.descFrameTF)
+	slot0.skillTFPos2 = slot0:findTF("commander2/skill_info", slot0.descFrameTF)
+	slot0.abilitysTF = UIItemList.New(slot0:findTF("atttr_panel/abilitys/mask/content", slot0.descFrameTF), slot0:findTF("atttr_panel/abilitys/mask/content/attr", slot0.descFrameTF))
+	slot0.talentsTF = UIItemList.New(slot0:findTF("atttr_panel/talents/mask/content", slot0.descFrameTF), slot0:findTF("atttr_panel/talents/mask/content/attr", slot0.descFrameTF))
+	slot0.abilityArr = slot0:findTF("desc/frame/atttr_panel/abilitys/arr")
+	slot0.talentsArr = slot0:findTF("desc/frame/atttr_panel/talents/arr")
+	slot0.restAllBtn = slot0:findTF("rest_all", slot0.descFrameTF)
+	slot0.quickBtn = slot0:findTF("quick_btn", slot0.descFrameTF)
+	slot0.recordPanel = slot0:findTF("record_panel")
+	slot0.recordCommanders = {
+		slot0.recordPanel:Find("current/commanders/commander1/frame/info"),
+		slot0.recordPanel:Find("current/commanders/commander2/frame/info")
 	}
-	arg_2_0.reocrdSkills = {
-		arg_2_0.recordPanel:Find("current/commanders/commander1/skill_info"),
-		arg_2_0.recordPanel:Find("current/commanders/commander2/skill_info")
+	slot0.reocrdSkills = {
+		slot0.recordPanel:Find("current/commanders/commander1/skill_info"),
+		slot0.recordPanel:Find("current/commanders/commander2/skill_info")
 	}
-	arg_2_0.recordList = UIItemList.New(arg_2_0.recordPanel:Find("record/content"), arg_2_0.recordPanel:Find("record/content/commanders"))
+	slot0.recordList = UIItemList.New(slot0.recordPanel:Find("record/content"), slot0.recordPanel:Find("record/content/commanders"))
 
-	onButton(arg_2_0, arg_2_0.samllTF, function()
-		arg_2_0:openDescPanel()
+	onButton(slot0, slot0.samllTF, function ()
+		uv0:openDescPanel()
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.descPanel, function()
-		arg_2_0:closeDescPanel()
+	onButton(slot0, slot0.descPanel, function ()
+		uv0:closeDescPanel()
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.restAllBtn, function()
-		arg_2_0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
+	onButton(slot0, slot0.restAllBtn, function ()
+		uv0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
 			FleetType = LevelUIConst.FLEET_TYPE_SELECT,
 			data = {
 				type = LevelUIConst.COMMANDER_OP_REST_ALL
 			},
-			fleetId = arg_2_0.fleet.id
+			fleetId = uv0.fleet.id
 		})
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.quickBtn, function()
-		arg_2_0:OpenRecordPanel()
+	onButton(slot0, slot0.quickBtn, function ()
+		uv0:OpenRecordPanel()
 	end, SFX_PANEL)
-	onButton(arg_2_0, arg_2_0.recordPanel:Find("back"), function()
-		arg_2_0:CloseRecordPanel()
+	onButton(slot0, slot0.recordPanel:Find("back"), function ()
+		uv0:CloseRecordPanel()
 	end, SFX_PANEL)
-	setText(arg_2_0:findTF("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
-	setText(arg_2_0:findTF("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
-	setText(arg_2_0:findTF("record_panel/current/title/Text"), i18n("commander_formation_prefab_fleet"))
+	setText(slot0:findTF("desc/frame/atttr_panel/abilitys/title/Text"), i18n("commander_subtile_ablity"))
+	setText(slot0:findTF("desc/frame/atttr_panel/talents/title/Text"), i18n("commander_subtile_talent"))
+	setText(slot0:findTF("record_panel/current/title/Text"), i18n("commander_formation_prefab_fleet"))
 end
 
-function var_0_0.Update(arg_8_0, arg_8_1, arg_8_2)
-	arg_8_0.fleet = arg_8_1
-	arg_8_0.prefabFleets = arg_8_2
+function slot0.Update(slot0, slot1, slot2)
+	slot0.fleet = slot1
+	slot0.prefabFleets = slot2
 
-	local var_8_0 = arg_8_0.fleet:getCommanders()
-
-	for iter_8_0 = 1, CommanderConst.MAX_FORMATION_POS do
-		local var_8_1 = var_8_0[iter_8_0]
-
-		assert(arg_8_0["pos" .. iter_8_0], "pos tf can not nil")
-		arg_8_0:updateCommander(arg_8_0["pos" .. iter_8_0], iter_8_0, var_8_1)
+	for slot7 = 1, CommanderConst.MAX_FORMATION_POS do
+		assert(slot0["pos" .. slot7], "pos tf can not nil")
+		slot0:updateCommander(slot0["pos" .. slot7], slot7, slot0.fleet:getCommanders()[slot7])
 	end
 
-	arg_8_0:updateDesc()
-	arg_8_0:updateRecordPanel()
+	slot0:updateDesc()
+	slot0:updateRecordPanel()
 end
 
-function var_0_0.openDescPanel(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1 or 0.2
+function slot0.openDescPanel(slot0, slot1)
+	slot2 = slot1 or 0.2
 
-	if LeanTween.isTweening(go(arg_9_0.samllTF)) or LeanTween.isTweening(go(arg_9_0.descFrameTF)) then
+	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
 		return
 	end
 
-	setAnchoredPosition(arg_9_0.samllTF, {
+	setAnchoredPosition(slot0.samllTF, {
 		x = 0
 	})
-	LeanTween.moveX(arg_9_0.samllTF, 800, var_9_0):setOnComplete(System.Action(function()
-		setActive(arg_9_0.descPanel, true)
-		pg.UIMgr.GetInstance():OverlayPanel(arg_9_0._tf)
-		setAnchoredPosition(arg_9_0.descFrameTF, {
+	LeanTween.moveX(slot0.samllTF, 800, slot2):setOnComplete(System.Action(function ()
+		setActive(uv0.descPanel, true)
+		pg.UIMgr.GetInstance():OverlayPanel(uv0._tf)
+		setAnchoredPosition(uv0.descFrameTF, {
 			x = 800
 		})
-		LeanTween.moveX(arg_9_0.descFrameTF, 0, var_9_0)
+		LeanTween.moveX(uv0.descFrameTF, 0, uv1)
 	end))
 
-	arg_9_0.contextData.inDescPage = true
+	slot0.contextData.inDescPage = true
 
-	arg_9_0._tf:SetAsLastSibling()
+	slot0._tf:SetAsLastSibling()
 end
 
-function var_0_0.closeDescPanel(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1 or 0.2
+function slot0.closeDescPanel(slot0, slot1)
+	slot2 = slot1 or 0.2
 
-	if LeanTween.isTweening(go(arg_11_0.samllTF)) or LeanTween.isTweening(go(arg_11_0.descFrameTF)) then
+	if LeanTween.isTweening(go(slot0.samllTF)) or LeanTween.isTweening(go(slot0.descFrameTF)) then
 		return
 	end
 
-	setAnchoredPosition(arg_11_0.descFrameTF, {
+	setAnchoredPosition(slot0.descFrameTF, {
 		x = 0
 	})
-	LeanTween.moveX(arg_11_0.descFrameTF, 800, var_11_0):setOnComplete(System.Action(function()
-		setActive(arg_11_0.descPanel, false)
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg_11_0._tf, arg_11_0._parentTf)
-		setAnchoredPosition(arg_11_0.samllTF, {
+	LeanTween.moveX(slot0.descFrameTF, 800, slot2):setOnComplete(System.Action(function ()
+		setActive(uv0.descPanel, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(uv0._tf, uv0._parentTf)
+		setAnchoredPosition(uv0.samllTF, {
 			x = 800
 		})
-		LeanTween.moveX(arg_11_0.samllTF, 0, var_11_0)
+		LeanTween.moveX(uv0.samllTF, 0, uv1)
 	end))
 
-	arg_11_0.contextData.inDescPage = false
+	slot0.contextData.inDescPage = false
 end
 
-function var_0_0.updateDesc(arg_13_0)
-	local var_13_0 = arg_13_0.fleet:getCommanders()
+function slot0.updateDesc(slot0)
+	for slot5 = 1, CommanderConst.MAX_FORMATION_POS do
+		slot6 = slot0.fleet:getCommanders()[slot5]
 
-	for iter_13_0 = 1, CommanderConst.MAX_FORMATION_POS do
-		local var_13_1 = var_13_0[iter_13_0]
-
-		assert(arg_13_0["pos" .. iter_13_0], "pos tf can not nil")
-		arg_13_0:updateCommander(arg_13_0["descPos" .. iter_13_0], iter_13_0, var_13_1, true)
-		arg_13_0:updateSkillTF(var_13_1, arg_13_0["skillTFPos" .. iter_13_0])
+		assert(slot0["pos" .. slot5], "pos tf can not nil")
+		slot0:updateCommander(slot0["descPos" .. slot5], slot5, slot6, true)
+		slot0:updateSkillTF(slot6, slot0["skillTFPos" .. slot5])
 	end
 
-	arg_13_0:updateAdditions()
+	slot0:updateAdditions()
 end
 
-function var_0_0.updateAdditions(arg_14_0)
-	local var_14_0 = arg_14_0.fleet
-	local var_14_1 = _.values(var_14_0:getCommandersTalentDesc())
-	local var_14_2, var_14_3 = var_14_0:getCommandersAddition()
+function slot0.updateAdditions(slot0)
+	slot1 = slot0.fleet
+	slot2 = _.values(slot1:getCommandersTalentDesc())
+	slot3, slot4 = slot1:getCommandersAddition()
 
-	arg_14_0.abilitysTF:make(function(arg_15_0, arg_15_1, arg_15_2)
-		if arg_15_0 == UIItemList.EventUpdate then
-			local var_15_0 = var_14_2[arg_15_1 + 1]
+	slot0.abilitysTF:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			setText(arg_15_2:Find("name"), AttributeType.Type2Name(var_15_0.attrName))
-			setText(arg_15_2:Find("Text"), ("+" .. math.floor(var_15_0.value * 1000) / 1000) .. "%")
-			GetImageSpriteFromAtlasAsync("attricon", var_15_0.attrName, arg_15_2:Find("icon"), false)
-			setImageAlpha(arg_15_2:Find("bg"), arg_15_1 % 2)
+			setText(slot2:Find("name"), AttributeType.Type2Name(slot3.attrName))
+			setText(slot2:Find("Text"), "+" .. math.floor(slot3.value * 1000) / 1000 .. "%")
+			GetImageSpriteFromAtlasAsync("attricon", slot3.attrName, slot2:Find("icon"), false)
+			setImageAlpha(slot2:Find("bg"), slot1 % 2)
 		end
 	end)
-	arg_14_0.abilitysTF:align(#var_14_2)
-	setActive(arg_14_0.abilityArr, #var_14_2 > 4)
-	arg_14_0.talentsTF:make(function(arg_16_0, arg_16_1, arg_16_2)
-		if arg_16_0 == UIItemList.EventUpdate then
-			local var_16_0 = var_14_1[arg_16_1 + 1]
+	slot0.abilitysTF:align(#slot3)
+	setActive(slot0.abilityArr, #slot3 > 4)
+	slot0.talentsTF:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			setScrollText(findTF(arg_16_2, "name_mask/name"), var_16_0.name)
-
-			local var_16_1 = var_16_0.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""
-
-			setText(arg_16_2:Find("Text"), (var_16_0.value > 0 and "+" or "") .. var_16_0.value .. var_16_1)
-			setImageAlpha(arg_16_2:Find("bg"), arg_16_1 % 2)
+			setScrollText(findTF(slot2, "name_mask/name"), slot3.name)
+			setText(slot2:Find("Text"), (slot3.value > 0 and "+" or "") .. slot3.value .. (slot3.type == CommanderConst.TALENT_ADDITION_RATIO and "%" or ""))
+			setImageAlpha(slot2:Find("bg"), slot1 % 2)
 		end
 	end)
-	arg_14_0.talentsTF:align(#var_14_1)
-	setActive(arg_14_0.talentsArr, #var_14_1 > 4)
+	slot0.talentsTF:align(#slot2)
+	setActive(slot0.talentsArr, #slot2 > 4)
 	Canvas.ForceUpdateCanvases()
 end
 
-function var_0_0.updateSkillTF(arg_17_0, arg_17_1, arg_17_2)
-	setActive(arg_17_2, arg_17_1)
+function slot0.updateSkillTF(slot0, slot1, slot2)
+	setActive(slot2, slot1)
 
-	if arg_17_1 then
-		local var_17_0 = arg_17_1:getSkills()[1]
+	if slot1 then
+		slot3 = slot1:getSkills()[1]
 
-		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. var_17_0:getConfig("icon"), "", arg_17_2:Find("icon"))
-		setText(arg_17_2:Find("level"), "Lv." .. var_17_0:getLevel())
-		onButton(arg_17_0, arg_17_2, function()
-			arg_17_0:emit(FormationMediator.ON_CMD_SKILL, var_17_0)
+		GetImageSpriteFromAtlasAsync("CommanderSkillIcon/" .. slot3:getConfig("icon"), "", slot2:Find("icon"))
+		setText(slot2:Find("level"), "Lv." .. slot3:getLevel())
+		onButton(slot0, slot2, function ()
+			uv0:emit(FormationMediator.ON_CMD_SKILL, uv1)
 		end, SFX_PANEL)
-	else
-		removeOnButton(arg_17_2)
+
+		return
 	end
+
+	removeOnButton(slot2)
 end
 
-function var_0_0.updateCommander(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4)
-	local var_19_0 = arg_19_1:Find("add")
-	local var_19_1 = arg_19_1:Find("info")
+function slot0.updateCommander(slot0, slot1, slot2, slot3, slot4)
+	slot5 = slot1:Find("add")
+	slot6 = slot1:Find("info")
 
-	if arg_19_3 then
-		local var_19_2 = arg_19_1:Find("info/mask/icon")
-		local var_19_3 = arg_19_1:Find("info/frame")
+	if slot3 then
+		slot8 = slot1:Find("info/frame")
 
-		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. arg_19_3:getPainting(), "", var_19_2)
+		GetImageSpriteFromAtlasAsync("CommanderHrz/" .. slot3:getPainting(), "", slot1:Find("info/mask/icon"))
 
-		local var_19_4 = arg_19_1:Find("info/name")
-
-		if var_19_4 then
-			setText(var_19_4, arg_19_3:getName())
+		if slot1:Find("info/name") then
+			setText(slot9, slot3:getName())
 		end
 
-		local var_19_5 = Commander.rarity2Frame(arg_19_3:getRarity())
-
-		setImageSprite(var_19_3, GetSpriteFromAtlas("weaponframes", "commander_" .. var_19_5))
+		setImageSprite(slot8, GetSpriteFromAtlas("weaponframes", "commander_" .. Commander.rarity2Frame(slot3:getRarity())))
 	end
 
-	if arg_19_4 then
-		onButton(arg_19_0, var_19_1, function()
-			arg_19_0:emit(FormationMediator.ON_SELECT_COMMANDER, arg_19_2, arg_19_0.fleet.id)
+	if slot4 then
+		onButton(slot0, slot6, function ()
+			uv0:emit(FormationMediator.ON_SELECT_COMMANDER, uv1, uv0.fleet.id)
 		end, SFX_PANEL)
-		onButton(arg_19_0, var_19_0, function()
-			arg_19_0:emit(FormationMediator.ON_SELECT_COMMANDER, arg_19_2, arg_19_0.fleet.id)
+		onButton(slot0, slot5, function ()
+			uv0:emit(FormationMediator.ON_SELECT_COMMANDER, uv1, uv0.fleet.id)
 		end, SFX_PANEL)
 	end
 
-	setActive(var_19_0, not arg_19_3)
-	setActive(var_19_1, arg_19_3)
+	setActive(slot5, not slot3)
+	setActive(slot6, slot3)
 end
 
-function var_0_0.OpenRecordPanel(arg_22_0)
-	setActive(arg_22_0.descFrameTF, false)
-	setActive(arg_22_0.recordPanel, true)
+function slot0.OpenRecordPanel(slot0)
+	setActive(slot0.descFrameTF, false)
+	setActive(slot0.recordPanel, true)
 end
 
-function var_0_0.updateRecordPanel(arg_23_0)
-	local var_23_0 = arg_23_0.fleet:getCommanders()
+function slot0.updateRecordPanel(slot0)
+	for slot5, slot6 in ipairs(slot0.recordCommanders) do
+		slot7 = slot0.fleet:getCommanders()[slot5]
 
-	for iter_23_0, iter_23_1 in ipairs(arg_23_0.recordCommanders) do
-		local var_23_1 = var_23_0[iter_23_0]
-
-		arg_23_0:updateCommander(iter_23_1, iter_23_0, var_23_1)
-		arg_23_0:updateSkillTF(var_23_1, arg_23_0.reocrdSkills[iter_23_0])
+		slot0:updateCommander(slot6, slot5, slot7)
+		slot0:updateSkillTF(slot7, slot0.reocrdSkills[slot5])
 	end
 
-	arg_23_0.recordList:make(function(arg_24_0, arg_24_1, arg_24_2)
-		if arg_24_0 == UIItemList.EventUpdate then
-			local var_24_0 = arg_23_0.prefabFleets[arg_24_1 + 1]
-
-			arg_23_0:UpdatePrefabFleet(var_24_0, arg_24_2, var_23_0)
+	slot0.recordList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:UpdatePrefabFleet(uv0.prefabFleets[slot1 + 1], slot2, uv1)
 		end
 	end)
-	arg_23_0.recordList:align(#arg_23_0.prefabFleets)
+	slot0.recordList:align(#slot0.prefabFleets)
 end
 
-function var_0_0.UpdatePrefabFleet(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-	local var_25_0 = arg_25_2:Find("fleet_name")
-	local var_25_1 = arg_25_1:getName()
+function slot0.UpdatePrefabFleet(slot0, slot1, slot2, slot3)
+	slot4 = slot2:Find("fleet_name")
 
-	onInputEndEdit(arg_25_0, var_25_0, function()
-		local var_26_0 = getInputText(var_25_0)
-
-		arg_25_0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
+	onInputEndEdit(slot0, slot4, function ()
+		uv1:emit(FormationMediator.COMMANDER_FORMATION_OP, {
 			FleetType = LevelUIConst.FLEET_TYPE_SELECT,
 			data = {
 				type = LevelUIConst.COMMANDER_OP_RENAME,
-				id = arg_25_1.id,
-				str = var_26_0,
-				onFailed = function()
-					setInputText(var_25_0, var_25_1)
+				id = uv2.id,
+				str = getInputText(uv0),
+				onFailed = function ()
+					setInputText(uv0, uv1)
 				end
 			},
-			fleetId = arg_25_0.fleet.id
+			fleetId = uv1.fleet.id
 		})
 	end)
-	setInputText(var_25_0, var_25_1)
-	onButton(arg_25_0, arg_25_2:Find("use_btn"), function()
-		arg_25_0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
+	setInputText(slot4, slot1:getName())
+	onButton(slot0, slot2:Find("use_btn"), function ()
+		uv0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
 			FleetType = LevelUIConst.FLEET_TYPE_SELECT,
 			data = {
 				type = LevelUIConst.COMMANDER_OP_USE_PREFAB,
-				id = arg_25_1.id
+				id = uv1.id
 			},
-			fleetId = arg_25_0.fleet.id
+			fleetId = uv0.fleet.id
 		})
-		arg_25_0:CloseRecordPanel()
+		uv0:CloseRecordPanel()
 	end, SFX_PANEL)
-	onButton(arg_25_0, arg_25_2:Find("record_btn"), function()
-		arg_25_0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
+	onButton(slot0, slot2:Find("record_btn"), function ()
+		uv0:emit(FormationMediator.COMMANDER_FORMATION_OP, {
 			FleetType = LevelUIConst.FLEET_TYPE_SELECT,
 			data = {
 				type = LevelUIConst.COMMANDER_OP_RECORD_PREFAB,
-				id = arg_25_1.id
+				id = uv1.id
 			},
-			fleetId = arg_25_0.fleet.id
+			fleetId = uv0.fleet.id
 		})
 	end, SFX_PANEL)
 
-	local var_25_2 = {
-		arg_25_2:Find("commander1/frame/info"),
-		arg_25_2:Find("commander2/frame/info")
-	}
-	local var_25_3 = {
-		arg_25_2:Find("commander1/skill_info"),
-		arg_25_2:Find("commander2/skill_info")
-	}
+	for slot11, slot12 in ipairs({
+		slot2:Find("commander1/frame/info"),
+		slot2:Find("commander2/frame/info")
+	}) do
+		slot13 = slot1:getCommanderByPos(slot11)
 
-	for iter_25_0, iter_25_1 in ipairs(var_25_2) do
-		local var_25_4 = arg_25_1:getCommanderByPos(iter_25_0)
-
-		arg_25_0:updateCommander(iter_25_1, iter_25_0, var_25_4)
-		arg_25_0:updateSkillTF(var_25_4, var_25_3[iter_25_0])
+		slot0:updateCommander(slot12, slot11, slot13)
+		slot0:updateSkillTF(slot13, ({
+			slot2:Find("commander1/skill_info"),
+			slot2:Find("commander2/skill_info")
+		})[slot11])
 	end
 end
 
-function var_0_0.CloseRecordPanel(arg_30_0)
-	setActive(arg_30_0.descFrameTF, true)
-	setActive(arg_30_0.recordPanel, false)
+function slot0.CloseRecordPanel(slot0)
+	setActive(slot0.descFrameTF, true)
+	setActive(slot0.recordPanel, false)
 end
 
-function var_0_0.OnDestroy(arg_31_0)
-	if arg_31_0:isShowing() then
-		LeanTween.cancel(go(arg_31_0.samllTF))
-		LeanTween.cancel(go(arg_31_0.descFrameTF))
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		LeanTween.cancel(go(slot0.samllTF))
+		LeanTween.cancel(go(slot0.descFrameTF))
 
-		if isActive(arg_31_0.descPanel) then
-			pg.UIMgr.GetInstance():UnOverlayPanel(arg_31_0._tf, arg_31_0._parentTf)
+		if isActive(slot0.descPanel) then
+			pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf, slot0._parentTf)
 		end
 	end
 end
 
-return var_0_0
+return slot0

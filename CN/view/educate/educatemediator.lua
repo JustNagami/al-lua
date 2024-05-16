@@ -1,66 +1,65 @@
-﻿local var_0_0 = class("EducateMediator", import(".base.EducateContextMediator"))
+slot0 = class("EducateMediator", import(".base.EducateContextMediator"))
+slot0.ON_DEFAULT_TARGET_SET = "EducateMediator:ON_DEFAULT_TARGET_SET"
+slot0.ON_UPGRADE_FAVOR = "EducateMediator:ON_UPGRADE_FAVOR"
+slot0.ON_SPECIAL_EVENT_TRIGGER = "EducateMediator:ON_SPECIAL_EVENT_TRIGGER"
+slot0.ON_EVENT_TRIGGER = "EducateMediator:ON_EVENT_TRIGGER"
+slot0.ON_GET_EVENT = "EducateMediator:ON_GET_EVENT"
+slot0.ON_EXECTUE_PLANS = "EducateMediator:ON_EXECTUE_PLANS"
+slot0.ON_ENDING_TRIGGER = "EducateMediator:ON_ENDING_TRIGGER"
+slot0.ON_GAME_RESET = "EducateMediator:ON_GAME_RESET"
+slot0.ENTER_VIRTUAL_STAGE = "EducateMediator.ENTER_VIRTUAL_STAGE"
 
-var_0_0.ON_DEFAULT_TARGET_SET = "EducateMediator:ON_DEFAULT_TARGET_SET"
-var_0_0.ON_UPGRADE_FAVOR = "EducateMediator:ON_UPGRADE_FAVOR"
-var_0_0.ON_SPECIAL_EVENT_TRIGGER = "EducateMediator:ON_SPECIAL_EVENT_TRIGGER"
-var_0_0.ON_EVENT_TRIGGER = "EducateMediator:ON_EVENT_TRIGGER"
-var_0_0.ON_GET_EVENT = "EducateMediator:ON_GET_EVENT"
-var_0_0.ON_EXECTUE_PLANS = "EducateMediator:ON_EXECTUE_PLANS"
-var_0_0.ON_ENDING_TRIGGER = "EducateMediator:ON_ENDING_TRIGGER"
-var_0_0.ON_GAME_RESET = "EducateMediator:ON_GAME_RESET"
-var_0_0.ENTER_VIRTUAL_STAGE = "EducateMediator.ENTER_VIRTUAL_STAGE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_DEFAULT_TARGET_SET, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_SET_TARGET, {
-			id = arg_2_1.id,
-			callback = arg_2_1.callback
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_DEFAULT_TARGET_SET, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_SET_TARGET, {
+			id = slot1.id,
+			callback = slot1.callback
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_UPGRADE_FAVOR, function(arg_3_0, arg_3_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_UPGRADE_FAVOR, {
-			callback = arg_3_1
+	slot0:bind(uv0.ON_UPGRADE_FAVOR, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_UPGRADE_FAVOR, {
+			callback = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_SPECIAL_EVENT_TRIGGER, function(arg_4_0, arg_4_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT, {
-			eventId = arg_4_1.id,
-			callback = arg_4_1.callback
+	slot0:bind(uv0.ON_SPECIAL_EVENT_TRIGGER, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_TRIGGER_SPEC_EVENT, {
+			eventId = slot1.id,
+			callback = slot1.callback
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_EVENT_TRIGGER, function(arg_5_0, arg_5_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_EVENT, {
-			eventId = arg_5_1.id,
-			callback = arg_5_1.callback
+	slot0:bind(uv0.ON_EVENT_TRIGGER, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_TRIGGER_EVENT, {
+			eventId = slot1.id,
+			callback = slot1.callback
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_GET_EVENT, function(arg_6_0, arg_6_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_GET_EVENTS, {
-			callback = arg_6_1
+	slot0:bind(uv0.ON_GET_EVENT, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_GET_EVENTS, {
+			callback = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_EXECTUE_PLANS, function(arg_7_0, arg_7_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_EXECUTE_PLANS, {
-			callback = arg_7_1
+	slot0:bind(uv0.ON_EXECTUE_PLANS, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_EXECUTE_PLANS, {
+			callback = slot1
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_ENDING_TRIGGER, function(arg_8_0, arg_8_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_END, {
+	slot0:bind(uv0.ON_ENDING_TRIGGER, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_TRIGGER_END, {
 			id = getProxy(EducateProxy):GetEndingResult()
 		})
 	end)
-	arg_1_0:bind(var_0_0.ON_GAME_RESET, function(arg_9_0, arg_9_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_RESET)
+	slot0:bind(uv0.ON_GAME_RESET, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_RESET)
 	end)
-	arg_1_0:bind(var_0_0.ENTER_VIRTUAL_STAGE, function(arg_10_0, arg_10_1)
-		arg_1_0.viewComponent:updateResPanel()
-		arg_1_0.viewComponent:updatePaintingUI()
-		arg_1_0.viewComponent:updateArchivePanel()
-		arg_1_0.viewComponent:PlayBGM()
+	slot0:bind(uv0.ENTER_VIRTUAL_STAGE, function (slot0, slot1)
+		uv0.viewComponent:updateResPanel()
+		uv0.viewComponent:updatePaintingUI()
+		uv0.viewComponent:updateArchivePanel()
+		uv0.viewComponent:PlayBGM()
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_11_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		EducateProxy.RESOURCE_UPDATED,
 		EducateProxy.ATTR_UPDATED,
@@ -88,131 +87,126 @@ function var_0_0.listNotificationInterests(arg_11_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_1:getName()
-	local var_12_1 = arg_12_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_12_0 == EducateProxy.RESOURCE_UPDATED then
-		arg_12_0.viewComponent:updateResPanel()
-		arg_12_0.viewComponent:updateTargetPanel()
-	elseif var_12_0 == EducateProxy.ATTR_UPDATED then
-		arg_12_0.viewComponent:updateArchivePanel()
-		arg_12_0.viewComponent:updateTargetPanel()
-	elseif var_12_0 == EducateProxy.TIEM_UPDATED then
-		arg_12_0.viewComponent:updateDatePanel()
-		arg_12_0.viewComponent:updateTargetPanel()
-		arg_12_0.viewComponent:updatePaintingData()
-	elseif var_12_0 == EducateProxy.TIME_WEEKDAY_UPDATED then
-		arg_12_0.viewComponent:updateWeekDay(var_12_1.weekDay)
-	elseif var_12_0 == EducateProxy.BUFF_ADDED then
-		arg_12_0.viewComponent:updateArchivePanel()
+	if slot1:getName() == EducateProxy.RESOURCE_UPDATED then
+		slot0.viewComponent:updateResPanel()
+		slot0.viewComponent:updateTargetPanel()
+	elseif slot2 == EducateProxy.ATTR_UPDATED then
+		slot0.viewComponent:updateArchivePanel()
+		slot0.viewComponent:updateTargetPanel()
+	elseif slot2 == EducateProxy.TIEM_UPDATED then
+		slot0.viewComponent:updateDatePanel()
+		slot0.viewComponent:updateTargetPanel()
+		slot0.viewComponent:updatePaintingData()
+	elseif slot2 == EducateProxy.TIME_WEEKDAY_UPDATED then
+		slot0.viewComponent:updateWeekDay(slot3.weekDay)
+	elseif slot2 == EducateProxy.BUFF_ADDED then
+		slot0.viewComponent:updateArchivePanel()
 
 		if not pg.NewStoryMgr.GetInstance():IsPlayed("tb_10") then
-			arg_12_0.viewComponent:showArchivePanel()
+			slot0.viewComponent:showArchivePanel()
 		end
 
-		arg_12_0.viewComponent:OnCheckGuide()
-	elseif var_12_0 == EducateTaskProxy.TASK_UPDATED then
-		arg_12_0.viewComponent:updateTargetPanel()
-	elseif var_12_0 == GAME.EDUCATE_UPGRADE_FAVOR_DONE then
-		arg_12_0.viewComponent:ShowFavorUpgrade(var_12_1.drops, var_12_1.performs, var_12_1.cb)
-	elseif var_12_0 == GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE then
-		if var_12_1.type == EducateSpecialEvent.TYPE_BUBBLE_MIND or var_12_1.type == EducateSpecialEvent.TYPE_BUBBLE_DISCOUNT then
-			arg_12_0.viewComponent:ShowSpecialEvent(var_12_1.id, var_12_1.drops, var_12_1.cb)
+		slot0.viewComponent:OnCheckGuide()
+	elseif slot2 == EducateTaskProxy.TASK_UPDATED then
+		slot0.viewComponent:updateTargetPanel()
+	elseif slot2 == GAME.EDUCATE_UPGRADE_FAVOR_DONE then
+		slot0.viewComponent:ShowFavorUpgrade(slot3.drops, slot3.performs, slot3.cb)
+	elseif slot2 == GAME.EDUCATE_TRIGGER_SPEC_EVENT_DONE then
+		if slot3.type == EducateSpecialEvent.TYPE_BUBBLE_MIND or slot3.type == EducateSpecialEvent.TYPE_BUBBLE_DISCOUNT then
+			slot0.viewComponent:ShowSpecialEvent(slot3.id, slot3.drops, slot3.cb)
 		end
-	elseif var_12_0 == GAME.EDUCATE_TRIGGER_EVENT_DONE then
-		if pg.child_event[var_12_1.id].type == EducateEvent.TYPE_BUBBLE then
-			arg_12_0.viewComponent:ShowEvent(var_12_1.id, var_12_1.drops, var_12_1.cb)
+	elseif slot2 == GAME.EDUCATE_TRIGGER_EVENT_DONE then
+		if pg.child_event[slot3.id].type == EducateEvent.TYPE_BUBBLE then
+			slot0.viewComponent:ShowEvent(slot3.id, slot3.drops, slot3.cb)
 		end
-	elseif var_12_0 == GAME.EDUCATE_SET_TARGET_DONE then
-		arg_12_0:addSubLayers(Context.New({
+	elseif slot2 == GAME.EDUCATE_SET_TARGET_DONE then
+		slot0:addSubLayers(Context.New({
 			mediator = EducateTargetMediator,
 			viewComponent = EducateTargetLayer
 		}))
-		arg_12_0.viewComponent:updateBottomPanel()
-		arg_12_0.viewComponent:updateDatePanel()
-		arg_12_0.viewComponent:updateTargetPanel()
-		arg_12_0.viewComponent:updateMindTip()
-		arg_12_0.viewComponent:OnCheckGuide()
-	elseif var_12_0 == GAME.EDUCATE_TRIGGER_END_DONE then
-		arg_12_0.viewComponent:updateBottomPanel()
-		arg_12_0.viewComponent:updateDatePanel()
-		arg_12_0.viewComponent:updateTargetPanel()
-		arg_12_0.viewComponent:updateMindTip()
-		arg_12_0.viewComponent:OnCheckGuide()
-	elseif var_12_0 == GAME.EDUCATE_RESET_DONE or var_12_0 == GAME.EDUCATE_REFRESH_DONE then
-		arg_12_0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
-	elseif var_12_0 == GAME.EDUCATE_EXECUTE_PLANS_DONE then
-		local var_12_2 = var_12_1.isSkip
-
-		arg_12_0:playPlansPerform(var_12_2, var_12_1)
-	elseif var_12_0 == GAME.EDUCATE_SUBMIT_TASK_DONE then
-		arg_12_0.viewComponent:updateTargetPanel()
-		arg_12_0.viewComponent:updateMindTip()
-	elseif var_12_0 == GAME.EDUCATE_GET_TARGET_AWARD_DONE then
-		arg_12_0.viewComponent:updateTargetPanel()
-	elseif var_12_0 == EducateProxy.GUIDE_CHECK then
-		if var_12_1.view == arg_12_0.viewComponent.__cname then
-			arg_12_0.viewComponent:OnCheckGuide()
+		slot0.viewComponent:updateBottomPanel()
+		slot0.viewComponent:updateDatePanel()
+		slot0.viewComponent:updateTargetPanel()
+		slot0.viewComponent:updateMindTip()
+		slot0.viewComponent:OnCheckGuide()
+	elseif slot2 == GAME.EDUCATE_TRIGGER_END_DONE then
+		slot0.viewComponent:updateBottomPanel()
+		slot0.viewComponent:updateDatePanel()
+		slot0.viewComponent:updateTargetPanel()
+		slot0.viewComponent:updateMindTip()
+		slot0.viewComponent:OnCheckGuide()
+	elseif slot2 == GAME.EDUCATE_RESET_DONE or slot2 == GAME.EDUCATE_REFRESH_DONE then
+		slot0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
+	elseif slot2 == GAME.EDUCATE_EXECUTE_PLANS_DONE then
+		slot0:playPlansPerform(slot3.isSkip, slot3)
+	elseif slot2 == GAME.EDUCATE_SUBMIT_TASK_DONE then
+		slot0.viewComponent:updateTargetPanel()
+		slot0.viewComponent:updateMindTip()
+	elseif slot2 == GAME.EDUCATE_GET_TARGET_AWARD_DONE then
+		slot0.viewComponent:updateTargetPanel()
+	elseif slot2 == EducateProxy.GUIDE_CHECK then
+		if slot3.view == slot0.viewComponent.__cname then
+			slot0.viewComponent:OnCheckGuide()
 		end
-	elseif var_12_0 == EducateProxy.MAIN_SCENE_ADD_LAYER then
-		arg_12_0:addSubLayers(var_12_1)
-	elseif var_12_0 == EducateProxy.POLAROID_ADDED or var_12_0 == EducateProxy.MEMORY_ADDED then
-		arg_12_0.viewComponent:updateBookNewTip()
-	elseif var_12_0 == EducateTaskProxy.TASK_ADDED or var_12_0 == EducateTaskProxy.TASK_REMOVED then
-		arg_12_0.viewComponent:updateMindNewTip()
-		arg_12_0.viewComponent:updateTargetPanel()
-	elseif var_12_0 == EducateProxy.CLEAR_NEW_TIP then
-		if var_12_1.index == EducateTipHelper.NEW_MEMORY or var_12_1.index == EducateTipHelper.NEW_POLAROID then
-			arg_12_0.viewComponent:updateBookNewTip()
-		elseif var_12_1.index == EducateTipHelper.NEW_MIND_TASK then
-			arg_12_0.viewComponent:updateMindNewTip()
+	elseif slot2 == EducateProxy.MAIN_SCENE_ADD_LAYER then
+		slot0:addSubLayers(slot3)
+	elseif slot2 == EducateProxy.POLAROID_ADDED or slot2 == EducateProxy.MEMORY_ADDED then
+		slot0.viewComponent:updateBookNewTip()
+	elseif slot2 == EducateTaskProxy.TASK_ADDED or slot2 == EducateTaskProxy.TASK_REMOVED then
+		slot0.viewComponent:updateMindNewTip()
+		slot0.viewComponent:updateTargetPanel()
+	elseif slot2 == EducateProxy.CLEAR_NEW_TIP then
+		if slot3.index == EducateTipHelper.NEW_MEMORY or slot3.index == EducateTipHelper.NEW_POLAROID then
+			slot0.viewComponent:updateBookNewTip()
+		elseif slot3.index == EducateTipHelper.NEW_MIND_TASK then
+			slot0.viewComponent:updateMindNewTip()
 		end
 	end
 end
 
-function var_0_0.playPlansPerform(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = {}
-
-	table.insert(var_13_0, function(arg_14_0)
-		arg_13_0:addSubLayers(Context.New({
+function slot0.playPlansPerform(slot0, slot1, slot2)
+	table.insert({}, function (slot0)
+		uv0:addSubLayers(Context.New({
 			viewComponent = EducateCalendarLayer,
 			mediator = EducateCalendarMediator,
 			data = {
-				onExit = arg_14_0
+				onExit = slot0
 			}
 		}))
 	end)
 
 	if not EducateConst.FORCE_SKIP_PLAN_PERFORM then
-		table.insert(var_13_0, function(arg_15_0)
-			arg_13_0:addSubLayers(Context.New({
+		table.insert(slot3, function (slot0)
+			uv0:addSubLayers(Context.New({
 				viewComponent = EducateSchedulePerformLayer,
 				mediator = EducateSchedulePerformMediator,
 				data = {
-					gridData = arg_13_2.gridData,
-					plan_results = arg_13_2.plan_results,
-					events = arg_13_2.events,
-					skip = arg_13_1,
-					onExit = arg_15_0
+					gridData = uv1.gridData,
+					plan_results = uv1.plan_results,
+					events = uv1.events,
+					skip = uv2,
+					onExit = slot0
 				}
 			}))
 		end)
 	end
 
-	table.insert(var_13_0, function(arg_16_0)
-		arg_13_0:addSubLayers(Context.New({
+	table.insert(slot3, function (slot0)
+		uv0:addSubLayers(Context.New({
 			viewComponent = EducateScheduleResultLayer,
 			mediator = EducateScheduleResultMediator,
 			data = {
-				plan_results = arg_13_2.plan_results,
-				onExit = arg_16_0
+				plan_results = uv1.plan_results,
+				onExit = slot0
 			}
 		}))
 	end)
-	seriesAsync(var_13_0, function()
-		arg_13_0.viewComponent:FlushView()
+	seriesAsync(slot3, function ()
+		uv0.viewComponent:FlushView()
 	end)
 end
 
-return var_0_0
+return slot0

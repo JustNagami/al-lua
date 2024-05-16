@@ -1,298 +1,284 @@
-﻿local var_0_0 = class("SkinAtlasPreviewPage", import("....base.BaseSubView"))
+slot0 = class("SkinAtlasPreviewPage", import("....base.BaseSubView"))
+slot0.ON_BG_SWITCH_DONE = "SkinAtlasScene:ON_BG_SWITCH_DONE"
+slot0.ON_L2D_SWITCH_DONE = "SkinAtlasScene:ON_L2D_SWITCH_DONE"
 
-var_0_0.ON_BG_SWITCH_DONE = "SkinAtlasScene:ON_BG_SWITCH_DONE"
-var_0_0.ON_L2D_SWITCH_DONE = "SkinAtlasScene:ON_L2D_SWITCH_DONE"
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SkinAtlasPreviewPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.paintingTr = arg_2_0:findTF("paint")
-	arg_2_0.live2dContainer = arg_2_0:findTF("paint/live2d")
-	arg_2_0.mainImg = arg_2_0:findTF("main"):GetComponent(typeof(UnityEngine.UI.Graphic))
-	arg_2_0.backBtn = arg_2_0:findTF("main/left/back")
-	arg_2_0.nameTxt = arg_2_0:findTF("main/left/name_bg/skin_name"):GetComponent(typeof(Text))
-	arg_2_0.shipnameTxt = arg_2_0:findTF("main/left/name_bg/name"):GetComponent(typeof(Text))
-	arg_2_0.charParent = arg_2_0:findTF("main/right/char")
-	arg_2_0.viewBtn = arg_2_0:findTF("main/right/view_btn")
-	arg_2_0.changeBtn = arg_2_0:findTF("main/right/change_btn")
-	arg_2_0.changeBtnDis = arg_2_0.changeBtn:Find("dis")
-	arg_2_0.changeBtnEn = arg_2_0.changeBtn:Find("en")
-	arg_2_0.obtainBtn = arg_2_0:findTF("main/right/obtain_btn")
-	arg_2_0.bgFlag = true
-	arg_2_0.l2dFlag = false
-
-	local var_2_0 = arg_2_0:findTF("main/left/tpl")
-
-	arg_2_0.btns = {
-		ShipAtlasBgBtn.New(var_2_0, PlayerVitaeBaseBtn.HRZ_TYPE, arg_2_0.event, arg_2_0.bgFlag),
-		ShipAtlasLive2dBtn.New(var_2_0, PlayerVitaeBaseBtn.HRZ_TYPE, arg_2_0.event, arg_2_0.l2dFlag)
+function slot0.OnLoaded(slot0)
+	slot0.paintingTr = slot0:findTF("paint")
+	slot0.live2dContainer = slot0:findTF("paint/live2d")
+	slot0.mainImg = slot0:findTF("main"):GetComponent(typeof(UnityEngine.UI.Graphic))
+	slot0.backBtn = slot0:findTF("main/left/back")
+	slot0.nameTxt = slot0:findTF("main/left/name_bg/skin_name"):GetComponent(typeof(Text))
+	slot0.shipnameTxt = slot0:findTF("main/left/name_bg/name"):GetComponent(typeof(Text))
+	slot0.charParent = slot0:findTF("main/right/char")
+	slot0.viewBtn = slot0:findTF("main/right/view_btn")
+	slot0.changeBtn = slot0:findTF("main/right/change_btn")
+	slot0.changeBtnDis = slot0.changeBtn:Find("dis")
+	slot0.changeBtnEn = slot0.changeBtn:Find("en")
+	slot0.obtainBtn = slot0:findTF("main/right/obtain_btn")
+	slot0.bgFlag = true
+	slot0.l2dFlag = false
+	slot1 = slot0:findTF("main/left/tpl")
+	slot0.btns = {
+		ShipAtlasBgBtn.New(slot1, PlayerVitaeBaseBtn.HRZ_TYPE, slot0.event, slot0.bgFlag),
+		ShipAtlasLive2dBtn.New(slot1, PlayerVitaeBaseBtn.HRZ_TYPE, slot0.event, slot0.l2dFlag)
 	}
-	arg_2_0.bgView = SkinAtlasBgView.New(arg_2_0:findTF("bg/bg"))
-	arg_2_0.paintingView = SkinAtlasPaintingView.New(arg_2_0:findTF("paint"))
-	arg_2_0.selectShipPage = ChangeShipSkinPage.New(arg_2_0._parentTf, arg_2_0.event)
+	slot0.bgView = SkinAtlasBgView.New(slot0:findTF("bg/bg"))
+	slot0.paintingView = SkinAtlasPaintingView.New(slot0:findTF("paint"))
+	slot0.selectShipPage = ChangeShipSkinPage.New(slot0._parentTf, slot0.event)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.backBtn, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.viewBtn, function()
-		arg_3_0.mainImg.enabled = false
+	onButton(slot0, slot0.viewBtn, function ()
+		uv0.mainImg.enabled = false
 
-		arg_3_0.paintingView:Enter()
+		uv0.paintingView:Enter()
 
-		if arg_3_0.live2d then
-			arg_3_0.live2d:OpenClick()
+		if uv0.live2d then
+			uv0.live2d:OpenClick()
 		end
 	end, SFX_PANEL)
 
-	local var_3_0 = arg_3_0._tf:GetComponent(typeof(PinchZoom))
+	slot1 = slot0._tf:GetComponent(typeof(PinchZoom))
 
-	onButton(arg_3_0, arg_3_0._tf, function()
-		if var_3_0.processing then
+	onButton(slot0, slot0._tf, function ()
+		if uv0.processing then
 			return
 		end
 
-		arg_3_0.mainImg.enabled = true
+		uv1.mainImg.enabled = true
 
-		arg_3_0.paintingView:Exit()
+		uv1.paintingView:Exit()
 
-		if arg_3_0.live2d then
-			arg_3_0.live2d:CloseClick()
+		if uv1.live2d then
+			uv1.live2d:CloseClick()
 		end
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.changeBtn, function()
-		if arg_3_0.skin:CantUse() then
+	onButton(slot0, slot0.changeBtn, function ()
+		if uv0.skin:CantUse() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("without_ship_to_wear"))
 
 			return
 		end
 
-		arg_3_0.selectShipPage:ExecuteAction("Show", arg_3_0.skin)
+		uv0.selectShipPage:ExecuteAction("Show", uv0.skin)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.obtainBtn, function()
-		local var_8_0 = arg_3_0.skin:getConfig("ship_group")
-		local var_8_1 = ShipGroup.New({
-			id = var_8_0
+	onButton(slot0, slot0.obtainBtn, function ()
+		slot1 = ShipGroup.New({
+			id = uv0.skin:getConfig("ship_group")
 		})
-		local var_8_2 = {
+
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_OBTAIN,
-			shipId = var_8_1:getShipConfigId(),
-			list = var_8_1.groupConfig.description,
+			shipId = slot1:getShipConfigId(),
+			list = slot1.groupConfig.description,
 			mediatorName = SkinAtlasMediator.__cname
-		}
-
-		pg.MsgboxMgr.GetInstance():ShowMsgBox(var_8_2)
+		})
 	end, SFX_PANEL)
-	arg_3_0:bind(var_0_0.ON_BG_SWITCH_DONE, function(arg_9_0, arg_9_1)
-		arg_3_0.bgFlag = arg_9_1
+	slot0:bind(uv0.ON_BG_SWITCH_DONE, function (slot0, slot1)
+		uv0.bgFlag = slot1
 
-		arg_3_0.bgView:Init(arg_3_0.ship, arg_3_0.bgFlag)
+		uv0.bgView:Init(uv0.ship, uv0.bgFlag)
 	end)
-	arg_3_0:bind(var_0_0.ON_L2D_SWITCH_DONE, function(arg_10_0, arg_10_1)
-		arg_3_0.l2dFlag = arg_10_1
+	slot0:bind(uv0.ON_L2D_SWITCH_DONE, function (slot0, slot1)
+		uv0.l2dFlag = slot1
 
-		arg_3_0:UpdatePainting(arg_3_0.ship)
+		uv0:UpdatePainting(uv0.ship)
 	end)
-	addSlip(SLIP_TYPE_HRZ, arg_3_0:findTF("main"), function()
-		arg_3_0:OnPrev()
-	end, function()
-		arg_3_0:OnNext()
+	addSlip(SLIP_TYPE_HRZ, slot0:findTF("main"), function ()
+		uv0:OnPrev()
+	end, function ()
+		uv0:OnNext()
 	end)
 end
 
-function var_0_0.OnNext(arg_13_0)
-	if arg_13_0.loading then
+function slot0.OnNext(slot0)
+	if slot0.loading then
 		return
 	end
 
-	arg_13_0:emit(SkinAtlasScene.ON_NEXT_SKIN, arg_13_0.index)
+	slot0:emit(SkinAtlasScene.ON_NEXT_SKIN, slot0.index)
 end
 
-function var_0_0.OnPrev(arg_14_0)
-	if arg_14_0.loading then
+function slot0.OnPrev(slot0)
+	if slot0.loading then
 		return
 	end
 
-	arg_14_0:emit(SkinAtlasScene.ON_PREV_SKIN, arg_14_0.index)
+	slot0:emit(SkinAtlasScene.ON_PREV_SKIN, slot0.index)
 end
 
-function var_0_0.Show(arg_15_0, arg_15_1, arg_15_2)
-	var_0_0.super.Show(arg_15_0)
+function slot0.Show(slot0, slot1, slot2)
+	uv0.super.Show(slot0)
 
-	arg_15_0.index = arg_15_2
-	arg_15_0.skin = arg_15_1
-	arg_15_0.bgFlag = true
-	arg_15_0.l2dFlag = false
+	slot0.index = slot2
+	slot0.skin = slot1
+	slot0.bgFlag = true
+	slot0.l2dFlag = false
+	slot3 = slot0.skin:ToShip()
 
-	local var_15_0 = arg_15_0.skin:ToShip()
+	assert(slot3)
 
-	assert(var_15_0)
+	slot0.ship = slot3
 
-	arg_15_0.ship = var_15_0
+	slot0:UpdateMain(slot3)
 
-	arg_15_0:UpdateMain(var_15_0)
+	slot4 = slot0.skin:CantUse()
 
-	local var_15_1 = arg_15_0.skin:CantUse()
-
-	setActive(arg_15_0.changeBtnDis, var_15_1)
-	setActive(arg_15_0.changeBtnEn, not var_15_1)
-	setActive(arg_15_0.obtainBtn, not arg_15_0.skin:OwnShip())
+	setActive(slot0.changeBtnDis, slot4)
+	setActive(slot0.changeBtnEn, not slot4)
+	setActive(slot0.obtainBtn, not slot0.skin:OwnShip())
 end
 
-function var_0_0.Flush(arg_16_0, arg_16_1, arg_16_2)
-	arg_16_0:Clear()
-	arg_16_0:Show(arg_16_1, arg_16_2)
+function slot0.Flush(slot0, slot1, slot2)
+	slot0:Clear()
+	slot0:Show(slot1, slot2)
 end
 
-function var_0_0.UpdateMain(arg_17_0, arg_17_1)
-	local var_17_0 = 0
-
-	for iter_17_0, iter_17_1 in ipairs(arg_17_0.btns) do
-		local var_17_1 = iter_17_1:IsActive(arg_17_1)
-
-		if var_17_1 then
-			var_17_0 = var_17_0 + 1
+function slot0.UpdateMain(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.btns) do
+		if slot7:IsActive(slot1) then
+			slot2 = 0 + 1
 		end
 
-		iter_17_1:Update(var_17_1, var_17_0, arg_17_1)
+		slot7:Update(slot8, slot2, slot1)
 	end
 
-	arg_17_0.nameTxt.text = arg_17_0.skin:getConfig("name")
-	arg_17_0.shipnameTxt.text = arg_17_1:getName()
-	arg_17_0.loading = true
+	slot0.nameTxt.text = slot0.skin:getConfig("name")
+	slot0.shipnameTxt.text = slot1:getName()
+	slot0.loading = true
 
 	parallelAsync({
-		function(arg_18_0)
-			arg_17_0.bgView:Init(arg_17_1, arg_17_0.bgFlag, arg_18_0)
+		function (slot0)
+			uv0.bgView:Init(uv1, uv0.bgFlag, slot0)
 		end,
-		function(arg_19_0)
-			arg_17_0:UpdatePainting(arg_17_1, arg_19_0)
+		function (slot0)
+			uv0:UpdatePainting(uv1, slot0)
 		end,
-		function(arg_20_0)
-			arg_17_0:UpdateChar(arg_17_1, arg_20_0)
+		function (slot0)
+			uv0:UpdateChar(uv1, slot0)
 		end
-	}, function()
-		arg_17_0.loading = false
+	}, function ()
+		uv0.loading = false
 	end)
 end
 
-function var_0_0.UpdatePainting(arg_22_0, arg_22_1, arg_22_2)
-	if arg_22_0.l2dFlag then
-		arg_22_0:InitL2D(arg_22_1, arg_22_2)
+function slot0.UpdatePainting(slot0, slot1, slot2)
+	if slot0.l2dFlag then
+		slot0:InitL2D(slot1, slot2)
 	else
-		arg_22_0:InitPainting(arg_22_1, arg_22_2)
+		slot0:InitPainting(slot1, slot2)
 	end
 end
 
-function var_0_0.InitPainting(arg_23_0, arg_23_1, arg_23_2)
-	arg_23_0:ClearPainting(arg_23_1)
-	setActive(arg_23_0.live2dContainer, false)
+function slot0.InitPainting(slot0, slot1, slot2)
+	slot0:ClearPainting(slot1)
+	setActive(slot0.live2dContainer, false)
 
-	arg_23_0.painting = arg_23_1:getPainting()
+	slot0.painting = slot1:getPainting()
 
-	setPaintingPrefabAsync(arg_23_0.paintingTr, arg_23_0.painting, "chuanwu", arg_23_2)
+	setPaintingPrefabAsync(slot0.paintingTr, slot0.painting, "chuanwu", slot2)
 end
 
-function var_0_0.InitL2D(arg_24_0, arg_24_1, arg_24_2)
-	arg_24_0:ClearPainting(arg_24_1)
+function slot0.InitL2D(slot0, slot1, slot2)
+	slot0:ClearPainting(slot1)
 
-	arg_24_0.live2d = SkinAtlasLive2dView.New(arg_24_1, arg_24_0.live2dContainer, arg_24_2)
+	slot0.live2d = SkinAtlasLive2dView.New(slot1, slot0.live2dContainer, slot2)
 
-	arg_24_0.live2d.live2dChar:changeTriggerFlag(false)
+	slot0.live2d.live2dChar:changeTriggerFlag(false)
 end
 
-function var_0_0.UpdateChar(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = arg_25_1:getPrefab()
+function slot0.UpdateChar(slot0, slot1, slot2)
+	PoolMgr.GetInstance():GetSpineChar(slot1:getPrefab(), true, function (slot0)
+		uv0.modelTf = tf(slot0)
+		uv0.modelTf.localScale = Vector3(0.9, 0.9, 1)
+		uv0.modelTf.localPosition = Vector3(0, -135, 0)
 
-	PoolMgr.GetInstance():GetSpineChar(var_25_0, true, function(arg_26_0)
-		arg_25_0.modelTf = tf(arg_26_0)
-		arg_25_0.modelTf.localScale = Vector3(0.9, 0.9, 1)
-		arg_25_0.modelTf.localPosition = Vector3(0, -135, 0)
-
-		pg.ViewUtils.SetLayer(arg_25_0.modelTf, Layer.UI)
-		setParent(arg_25_0.modelTf, arg_25_0.charParent)
-		arg_26_0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
-		arg_25_2()
+		pg.ViewUtils.SetLayer(uv0.modelTf, Layer.UI)
+		setParent(uv0.modelTf, uv0.charParent)
+		slot0:GetComponent("SpineAnimUI"):SetAction("normal", 0)
+		uv1()
 	end)
 end
 
-function var_0_0.ClearPainting(arg_27_0, arg_27_1)
-	if arg_27_0.live2d then
-		arg_27_0.live2d:Dispose()
+function slot0.ClearPainting(slot0, slot1)
+	if slot0.live2d then
+		slot0.live2d:Dispose()
 
-		arg_27_0.live2d = nil
-	elseif arg_27_0.painting then
-		retPaintingPrefab(arg_27_0.paintingTr, arg_27_0.painting)
+		slot0.live2d = nil
+	elseif slot0.painting then
+		retPaintingPrefab(slot0.paintingTr, slot0.painting)
 
-		arg_27_0.painting = nil
+		slot0.painting = nil
 	end
 end
 
-function var_0_0.ClearChar(arg_28_0, arg_28_1)
-	if arg_28_0.modelTf then
-		PoolMgr.GetInstance():ReturnSpineChar(arg_28_1:getPrefab(), arg_28_0.modelTf.gameObject)
+function slot0.ClearChar(slot0, slot1)
+	if slot0.modelTf then
+		PoolMgr.GetInstance():ReturnSpineChar(slot1:getPrefab(), slot0.modelTf.gameObject)
 
-		arg_28_0.modelTf = nil
+		slot0.modelTf = nil
 	end
 end
 
-function var_0_0.Clear(arg_29_0)
-	local var_29_0 = arg_29_0.ship
+function slot0.Clear(slot0)
+	if slot0.ship then
+		slot0:ClearPainting(slot1)
+		slot0:ClearChar(slot1)
 
-	if var_29_0 then
-		arg_29_0:ClearPainting(var_29_0)
-		arg_29_0:ClearChar(var_29_0)
-
-		arg_29_0.ship = nil
+		slot0.ship = nil
 	end
 end
 
-function var_0_0.Hide(arg_30_0)
-	var_0_0.super.Hide(arg_30_0)
-	arg_30_0:Clear()
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	slot0:Clear()
 
-	arg_30_0.skin = nil
+	slot0.skin = nil
 
-	arg_30_0.bgView:Clear()
+	slot0.bgView:Clear()
 
-	if arg_30_0.paintingView:IsEnter() then
-		arg_30_0.paintingView:Exit()
+	if slot0.paintingView:IsEnter() then
+		slot0.paintingView:Exit()
 	end
 end
 
-function var_0_0.IsShowSelectShipView(arg_31_0)
-	return arg_31_0.selectShipPage and arg_31_0.selectShipPage:GetLoaded() and arg_31_0.selectShipPage:isShowing()
+function slot0.IsShowSelectShipView(slot0)
+	return slot0.selectShipPage and slot0.selectShipPage:GetLoaded() and slot0.selectShipPage:isShowing()
 end
 
-function var_0_0.CloseSelectShipView(arg_32_0)
-	arg_32_0.selectShipPage:Hide()
+function slot0.CloseSelectShipView(slot0)
+	slot0.selectShipPage:Hide()
 end
 
-function var_0_0.OnDestroy(arg_33_0)
-	if arg_33_0:isShowing() then
-		arg_33_0:Hide()
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 
-	for iter_33_0, iter_33_1 in ipairs(arg_33_0.btns) do
-		iter_33_1:Dispose()
+	for slot4, slot5 in ipairs(slot0.btns) do
+		slot5:Dispose()
 	end
 
-	arg_33_0.btns = nil
+	slot0.btns = nil
 
-	arg_33_0.bgView:Dispose()
+	slot0.bgView:Dispose()
 
-	arg_33_0.bgView = nil
+	slot0.bgView = nil
 
-	arg_33_0.selectShipPage:Destroy()
+	slot0.selectShipPage:Destroy()
 
-	arg_33_0.selectShipPage = nil
+	slot0.selectShipPage = nil
 
-	arg_33_0.paintingView:Dispose()
+	slot0.paintingView:Dispose()
 
-	arg_33_0.paintingView = nil
+	slot0.paintingView = nil
 end
 
-return var_0_0
+return slot0

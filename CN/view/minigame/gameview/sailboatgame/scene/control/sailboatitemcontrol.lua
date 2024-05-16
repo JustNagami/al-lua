@@ -1,137 +1,119 @@
-﻿local var_0_0 = class("SailBoatItemControl")
-local var_0_1
+slot0 = class("SailBoatItemControl")
+slot1 = nil
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1 = SailBoatGameVo
-	arg_1_0._tf = arg_1_1
-	arg_1_0._event = arg_1_2
-	arg_1_0._items = {}
-	arg_1_0._itemsPool = {}
-	arg_1_0._content = findTF(arg_1_0._tf, "scene/content")
+function slot0.Ctor(slot0, slot1, slot2)
+	uv0 = SailBoatGameVo
+	slot0._tf = slot1
+	slot0._event = slot2
+	slot0._items = {}
+	slot0._itemsPool = {}
+	slot0._content = findTF(slot0._tf, "scene/content")
 end
 
-function var_0_0.start(arg_2_0)
-	arg_2_0:clear()
+function slot0.start(slot0)
+	slot0:clear()
 
-	arg_2_0._rules = {}
+	slot0._rules = {}
 
-	local var_2_0 = var_0_1.GetRoundData().item_rule
-
-	for iter_2_0 = 1, #var_2_0 do
-		local var_2_1 = SailBoatGameConst.item_rule[var_2_0[iter_2_0]]
-
-		table.insert(arg_2_0._rules, {
+	for slot5 = 1, #uv0.GetRoundData().item_rule do
+		table.insert(slot0._rules, {
 			time = 0,
-			data = var_2_1
+			data = SailBoatGameConst.item_rule[slot1[slot5]]
 		})
 	end
 
-	var_0_1.SetGameItems(arg_2_0._items)
+	uv0.SetGameItems(slot0._items)
 end
 
-function var_0_0.step(arg_3_0, arg_3_1)
-	local var_3_0 = var_0_1.gameTime
+function slot0.step(slot0, slot1)
+	slot2 = uv0.gameTime
 
-	for iter_3_0 = 1, #arg_3_0._rules do
-		local var_3_1 = arg_3_0._rules[iter_3_0]
-		local var_3_2 = var_3_1.data.create_time
+	for slot6 = 1, #slot0._rules do
+		if slot0._rules[slot6].data.create_time[1] < slot2 and slot2 < slot8[2] and slot7.time and slot7.time >= 0 then
+			slot7.time = slot7.time - slot1
 
-		if var_3_0 > var_3_2[1] and var_3_0 < var_3_2[2] and var_3_1.time and var_3_1.time >= 0 then
-			var_3_1.time = var_3_1.time - arg_3_1
+			if slot7.time <= 0 then
+				slot7.time = math.random(slot7.data.time[1], slot7.data.time[2])
 
-			if var_3_1.time <= 0 then
-				var_3_1.time = math.random(var_3_1.data.time[1], var_3_1.data.time[2])
-
-				arg_3_0:applyRule(var_3_1)
+				slot0:applyRule(slot7)
 			end
 		end
 	end
 
-	for iter_3_1 = #arg_3_0._items, 1, -1 do
-		local var_3_3 = arg_3_0._items[iter_3_1]
+	for slot6 = #slot0._items, 1, -1 do
+		slot7 = slot0._items[slot6]
 
-		var_3_3:step(arg_3_1)
+		slot7:step(slot1)
 
-		if var_3_3:getRemoveFlag() then
-			table.remove(arg_3_0._items, iter_3_1)
-			arg_3_0:returnItem(var_3_3)
+		if slot7:getRemoveFlag() then
+			table.remove(slot0._items, slot6)
+			slot0:returnItem(slot7)
 		end
 	end
 
-	for iter_3_2 = #arg_3_0._rules, 1, -1 do
-		local var_3_4 = arg_3_0._rules[iter_3_2].data
-
-		if var_0_1.gameTime <= var_3_4.create_time[1] then
-			table.remove(arg_3_0._rules, iter_3_2)
+	for slot6 = #slot0._rules, 1, -1 do
+		if uv0.gameTime <= slot0._rules[slot6].data.create_time[1] then
+			table.remove(slot0._rules, slot6)
 		end
 	end
 end
 
-function var_0_0.dispose(arg_4_0)
-	return
+function slot0.dispose(slot0)
 end
 
-function var_0_0.applyRule(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1.data
-	local var_5_1 = var_5_0.items
-	local var_5_2 = var_5_0.screen_pos_x
-	local var_5_3 = var_5_0.screen_pos_y
-	local var_5_4 = var_5_1[math.random(1, #var_5_1)]
-	local var_5_5 = var_0_1.GetRangePos(var_5_2, var_5_3)
+function slot0.applyRule(slot0, slot1)
+	slot2 = slot1.data
+	slot3 = slot2.items
 
-	if var_5_5 then
-		local var_5_6 = arg_5_0:getOrCreateItem(var_5_4, var_5_5)
-
-		table.insert(arg_5_0._items, var_5_6)
+	if uv0.GetRangePos(slot2.screen_pos_x, slot2.screen_pos_y) then
+		table.insert(slot0._items, slot0:getOrCreateItem(slot3[math.random(1, #slot3)], slot7))
 	end
 end
 
-function var_0_0.getOrCreateItem(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0
+function slot0.getOrCreateItem(slot0, slot1, slot2)
+	slot3 = nil
 
-	if #arg_6_0._itemsPool > 0 then
-		for iter_6_0 = 1, #arg_6_0._itemsPool do
-			if arg_6_0._itemsPool[iter_6_0]:getId() == arg_6_1 then
-				var_6_0 = table.remove(arg_6_0._itemsPool, 1)
+	if #slot0._itemsPool > 0 then
+		for slot7 = 1, #slot0._itemsPool do
+			if slot0._itemsPool[slot7]:getId() == slot1 then
+				slot3 = table.remove(slot0._itemsPool, 1)
 
 				break
 			end
 		end
 	end
 
-	if not var_6_0 then
-		local var_6_1 = SailBoatGameConst.game_item[arg_6_1]
-		local var_6_2 = var_0_1.GetGameItemTf(var_6_1.tpl)
+	if not slot3 then
+		slot4 = SailBoatGameConst.game_item[slot1]
+		slot3 = SailBoatItem.New(uv0.GetGameItemTf(slot4.tpl), slot0._event)
 
-		var_6_0 = SailBoatItem.New(var_6_2, arg_6_0._event)
-
-		var_6_0:setData(var_6_1)
-		var_6_0:setContent(arg_6_0._content)
+		slot3:setData(slot4)
+		slot3:setContent(slot0._content)
 	end
 
-	var_6_0:start()
+	slot3:start()
 
-	if arg_6_2 then
-		var_6_0:setPosition(arg_6_2)
+	if slot2 then
+		slot3:setPosition(slot2)
 	end
 
-	return var_6_0
+	return slot3
 end
 
-function var_0_0.returnItem(arg_7_0, arg_7_1)
-	arg_7_1:clear()
-	table.insert(arg_7_0._itemsPool, arg_7_1)
+function slot0.returnItem(slot0, slot1)
+	slot1:clear()
+	table.insert(slot0._itemsPool, slot1)
 end
 
-function var_0_0.clear(arg_8_0)
-	for iter_8_0 = #arg_8_0._items, 1, -1 do
-		local var_8_0 = table.remove(arg_8_0._items, iter_8_0)
+function slot0.clear(slot0)
+	for slot4 = #slot0._items, 1, -1 do
+		slot5 = table.remove(slot0._items, slot4)
 
-		var_8_0:clear()
-		table.insert(arg_8_0._itemsPool, var_8_0)
+		slot5:clear()
+		table.insert(slot0._itemsPool, slot5)
 	end
 
-	arg_8_0._rules = {}
+	slot0._rules = {}
 end
 
-return var_0_0
+return slot0

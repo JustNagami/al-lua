@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				buff_id = 600000,
-				target = "TargetSelf",
-				countType = 600000
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 600005,
 	icon = 600005,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				buff_id = 600000,
+				target = "TargetSelf",
+				countType = 600000
+			}
+		}
+	}
 }

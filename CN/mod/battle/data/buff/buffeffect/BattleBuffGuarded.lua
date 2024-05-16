@@ -1,23 +1,21 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleBuffGuarded", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffGuarded = slot1
+slot1.__name = "BattleBuffGuarded"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleBuffGuarded", var_0_0.Battle.BattleBuffEffect)
-
-var_0_0.Battle.BattleBuffGuarded = var_0_1
-var_0_1.__name = "BattleBuffGuarded"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._casterUID = arg_2_2:GetCaster():GetUniqueID()
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._casterUID = slot2:GetCaster():GetUniqueID()
 end
 
-function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
-	var_0_0.Battle.BattleAttr.AddGuardianID(arg_3_1, arg_3_0._casterUID)
+function slot1.onAttach(slot0, slot1, slot2)
+	uv0.Battle.BattleAttr.AddGuardianID(slot1, slot0._casterUID)
 end
 
-function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2)
-	var_0_0.Battle.BattleAttr.RemoveGuardianID(arg_4_1, arg_4_0._casterUID)
+function slot1.onRemove(slot0, slot1, slot2)
+	uv0.Battle.BattleAttr.RemoveGuardianID(slot1, slot0._casterUID)
 end

@@ -1,48 +1,48 @@
-﻿local var_0_0 = class("RectCollisionData")
+slot0 = class("RectCollisionData")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.maxSlopeAngle = 45
-	arg_1_0.downMaxSlopeSpeed = 8
-	arg_1_0.gravity = -50
-	arg_1_0.maxJumpHeight = 4
-	arg_1_0.minJumpHeight = 2
-	arg_1_0.accelerationTimeAirborne = 0.05
-	arg_1_0.accelerationTimeGrounded = 0.05
-	arg_1_0.moveSpeed = 8
-	arg_1_0.wallJumpClimb = 10
-	arg_1_0.wallJumpOff = 10
-	arg_1_0.wallLeap = 10
-	arg_1_0.wallSlideSpeedMax = 3
-	arg_1_0.wallStickTime = 0.25
-	arg_1_0.jumpStickTime = 0.01
-	arg_1_0.jumpTimes = 0
-	arg_1_0.jumpHeights = {
+function slot0.Ctor(slot0, slot1)
+	slot0.maxSlopeAngle = 45
+	slot0.downMaxSlopeSpeed = 8
+	slot0.gravity = -50
+	slot0.maxJumpHeight = 4
+	slot0.minJumpHeight = 2
+	slot0.accelerationTimeAirborne = 0.05
+	slot0.accelerationTimeGrounded = 0.05
+	slot0.moveSpeed = 8
+	slot0.wallJumpClimb = 10
+	slot0.wallJumpOff = 10
+	slot0.wallLeap = 10
+	slot0.wallSlideSpeedMax = 3
+	slot0.wallStickTime = 0.25
+	slot0.jumpStickTime = 0.01
+	slot0.jumpTimes = 0
+	slot0.jumpHeights = {
 		50,
 		30
 	}
-	arg_1_0.useSprint = false
-	arg_1_0.sprintDistance = 5
-	arg_1_0.sprintSpeed = 0
-	arg_1_0.sprintDirect = true
-	arg_1_0.sprintStopWithCollision = false
-	arg_1_0.sprintStickTime = 0
-	arg_1_0.holdInSlider = false
+	slot0.useSprint = false
+	slot0.sprintDistance = 5
+	slot0.sprintSpeed = 0
+	slot0.sprintDirect = true
+	slot0.sprintStopWithCollision = false
+	slot0.sprintStickTime = 0
+	slot0.holdInSlider = false
 
-	if arg_1_0.gravity ~= 0 then
-		arg_1_0.timeToJumpApex = math.sqrt(-(2 * arg_1_0.maxJumpHeight) / arg_1_0.gravity)
-		arg_1_0.maxJumpVelocity = math.abs(arg_1_0.gravity) * arg_1_0.timeToJumpApex
-		arg_1_0.minJumpVelocity = math.sqrt(2 * Mathf.Abs(arg_1_0.gravity) * arg_1_0.minJumpHeight)
-		arg_1_0.jumpVelocitys = {}
-		arg_1_0.jumpTimes = arg_1_0.jumpTimes <= 0 and 1 or arg_1_0.jumpTimes
+	if slot0.gravity ~= 0 then
+		slot0.timeToJumpApex = math.sqrt(-(2 * slot0.maxJumpHeight) / slot0.gravity)
+		slot0.maxJumpVelocity = math.abs(slot0.gravity) * slot0.timeToJumpApex
+		slot0.minJumpVelocity = math.sqrt(2 * Mathf.Abs(slot0.gravity) * slot0.minJumpHeight)
+		slot0.jumpVelocitys = {}
+		slot0.jumpTimes = slot0.jumpTimes <= 0 and 1 or slot0.jumpTimes
 
-		if arg_1_0.jumpHeights ~= nil then
-			for iter_1_0 = 1, #arg_1_0.jumpHeights do
-				arg_1_0.timeToJumpApex = math.sqrt(-(2 * arg_1_0.jumpHeights[iter_1_0]) / arg_1_0.gravity)
+		if slot0.jumpHeights ~= nil then
+			for slot5 = 1, #slot0.jumpHeights do
+				slot0.timeToJumpApex = math.sqrt(-(2 * slot0.jumpHeights[slot5]) / slot0.gravity)
 
-				table.insert(arg_1_0.jumpVelocitys, math.abs(arg_1_0.gravity) * arg_1_0.timeToJumpApex)
+				table.insert(slot0.jumpVelocitys, math.abs(slot0.gravity) * slot0.timeToJumpApex)
 			end
 		end
 	end
 end
 
-return var_0_0
+return slot0

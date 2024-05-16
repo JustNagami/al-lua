@@ -1,165 +1,155 @@
-﻿function Clone_Copy(arg_1_0, arg_1_1)
-	if type(arg_1_0) ~= "table" then
-		return arg_1_0
-	elseif arg_1_1[arg_1_0] then
-		return arg_1_1[arg_1_0]
+function Clone_Copy(slot0, slot1)
+	if type(slot0) ~= "table" then
+		return slot0
+	elseif slot1[slot0] then
+		return slot1[slot0]
 	end
 
-	local var_1_0 = {}
+	slot1[slot0] = {}
 
-	arg_1_1[arg_1_0] = var_1_0
-
-	local var_1_1 = type(arg_1_0) == "table" and arg_1_0.__ctype == 2
-
-	for iter_1_0, iter_1_1 in pairs(arg_1_0) do
-		if var_1_1 and iter_1_0 == "class" then
-			var_1_0[iter_1_0] = iter_1_1
+	for slot7, slot8 in pairs(slot0) do
+		if type(slot0) == "table" and slot0.__ctype == 2 and slot7 == "class" then
+			slot2[slot7] = slot8
 		else
-			var_1_0[Clone_Copy(iter_1_0, arg_1_1)] = Clone_Copy(iter_1_1, arg_1_1)
+			slot2[Clone_Copy(slot7, slot1)] = Clone_Copy(slot8, slot1)
 		end
 	end
 
-	return setmetatable(var_1_0, getmetatable(arg_1_0))
+	return setmetatable(slot2, getmetatable(slot0))
 end
 
-function Clone(arg_2_0)
-	return Clone_Copy(arg_2_0, {})
+function Clone(slot0)
+	return Clone_Copy(slot0, {})
 end
 
-function class(arg_3_0, arg_3_1)
-	local var_3_0 = type(arg_3_1)
-	local var_3_1
+function class(slot0, slot1)
+	slot3 = nil
 
-	if var_3_0 ~= "function" and var_3_0 ~= "table" then
-		var_3_0 = nil
-		arg_3_1 = nil
+	if type(slot1) ~= "function" and slot2 ~= "table" then
+		slot2 = nil
+		slot1 = nil
 	end
 
-	if var_3_0 == "function" or arg_3_1 and arg_3_1.__ctype == 1 then
-		var_3_1 = {}
+	if slot2 == "function" or slot1 and slot1.__ctype == 1 then
+		slot3 = {}
 
-		if var_3_0 == "table" then
-			for iter_3_0, iter_3_1 in pairs(arg_3_1) do
-				var_3_1[iter_3_0] = iter_3_1
+		if slot2 == "table" then
+			for slot7, slot8 in pairs(slot1) do
+				slot3[slot7] = slot8
 			end
 
-			var_3_1.__create = arg_3_1.__create
-			var_3_1.super = arg_3_1
+			slot3.__create = slot1.__create
+			slot3.super = slot1
 		else
-			var_3_1.__create = arg_3_1
+			slot3.__create = slot1
 		end
 
-		function var_3_1.Ctor()
-			return
+		function slot3.Ctor()
 		end
 
-		var_3_1.__cname = arg_3_0
-		var_3_1.__ctype = 1
+		slot3.__cname = slot0
+		slot3.__ctype = 1
 
-		function var_3_1.New(...)
-			local var_5_0 = var_3_1.__create(...)
+		function slot3.New(...)
+			slot0 = uv0.__create(...)
 
-			for iter_5_0, iter_5_1 in pairs(var_3_1) do
-				var_5_0[iter_5_0] = iter_5_1
+			for slot4, slot5 in pairs(uv0) do
+				slot0[slot4] = slot5
 			end
 
-			var_5_0.class = var_3_1
+			slot0.class = uv0
 
-			var_5_0:Ctor(...)
+			slot0:Ctor(...)
 
-			return var_5_0
+			return slot0
 		end
 	else
-		if arg_3_1 then
-			var_3_1 = setmetatable({}, arg_3_1)
-			var_3_1.super = arg_3_1
+		if slot1 then
+			setmetatable({}, slot1).super = slot1
 		else
-			var_3_1 = {
-				Ctor = function()
-					return
+			slot3 = {
+				Ctor = function ()
 				end
 			}
 		end
 
-		var_3_1.__cname = arg_3_0
-		var_3_1.__ctype = 2
-		var_3_1.__index = var_3_1
+		slot3.__cname = slot0
+		slot3.__ctype = 2
+		slot3.__index = slot3
 
-		function var_3_1.New(...)
-			local var_7_0 = setmetatable({}, var_3_1)
+		function slot3.New(...)
+			slot0 = setmetatable({}, uv0)
+			slot0.class = uv0
 
-			var_7_0.class = var_3_1
+			slot0:Ctor(...)
 
-			var_7_0:Ctor(...)
-
-			return var_7_0
+			return slot0
 		end
 	end
 
-	return var_3_1
+	return slot3
 end
 
-function isa(arg_8_0, arg_8_1)
-	local var_8_0 = getmetatable(arg_8_0)
+function isa(slot0, slot1)
+	slot2 = getmetatable(slot0)
 
-	while var_8_0 ~= nil do
-		if var_8_0 == arg_8_1 then
+	while slot2 ~= nil do
+		if slot2 == slot1 then
 			return true
 		else
-			assert(var_8_0 ~= getmetatable(var_8_0), "Loop metatable")
+			assert(slot2 ~= getmetatable(slot2), "Loop metatable")
 
-			var_8_0 = getmetatable(var_8_0)
+			slot2 = getmetatable(slot2)
 		end
 	end
 
 	return false
 end
 
-function instanceof(arg_9_0, arg_9_1)
-	return superof(arg_9_0.class, arg_9_1)
+function instanceof(slot0, slot1)
+	return superof(slot0.class, slot1)
 end
 
-function superof(arg_10_0, arg_10_1)
-	while arg_10_0 ~= nil do
-		if arg_10_0 == arg_10_1 then
+function superof(slot0, slot1)
+	while slot0 ~= nil do
+		if slot0 == slot1 then
 			return true
 		else
-			arg_10_0 = arg_10_0.super
+			slot0 = slot0.super
 		end
 	end
 
 	return false
 end
 
-function singletonClass(arg_11_0, arg_11_1)
-	local var_11_0 = class(arg_11_0, arg_11_1)
+function singletonClass(slot0, slot1)
+	slot2 = class(slot0, slot1)
+	slot2._new = slot2.New
 
-	var_11_0._new = var_11_0.New
+	rawset(slot2, "_singletonInstance", nil)
 
-	rawset(var_11_0, "_singletonInstance", nil)
-
-	function var_11_0.New()
-		if not var_11_0._singletonInstance then
-			return var_11_0.GetInstance()
+	function slot2.New()
+		if not uv0._singletonInstance then
+			return uv0.GetInstance()
 		end
 
-		error("singleton class can not new. Please use " .. arg_11_0 .. ".GetInstance() to get it", 2)
+		error("singleton class can not new. Please use " .. uv1 .. ".GetInstance() to get it", 2)
 	end
 
-	function var_11_0.GetInstance()
-		if rawget(var_11_0, "_singletonInstance") == nil then
-			rawset(var_11_0, "_singletonInstance", var_11_0._new())
+	function slot2.GetInstance()
+		if rawget(uv0, "_singletonInstance") == nil then
+			rawset(uv0, "_singletonInstance", uv0._new())
 		end
 
-		return var_11_0._singletonInstance
+		return uv0._singletonInstance
 	end
 
-	return var_11_0
+	return slot2
 end
 
-function removeSingletonInstance(arg_14_0)
-	if arg_14_0 and rawget(arg_14_0, "_singletonInstance") then
-		rawset(arg_14_0, "_singletonInstance", nil)
+function removeSingletonInstance(slot0)
+	if slot0 and rawget(slot0, "_singletonInstance") then
+		rawset(slot0, "_singletonInstance", nil)
 
 		return true
 	end
@@ -168,101 +158,88 @@ function removeSingletonInstance(arg_14_0)
 end
 
 function tracebackex()
-	local var_15_0 = ""
-	local var_15_1 = 2
-	local var_15_2 = var_15_0 .. "stack traceback:\n"
+	slot1 = 2
+	slot0 = "" .. "stack traceback:\n"
 
 	while true do
-		local var_15_3 = debug.getinfo(var_15_1, "Sln")
-
-		if not var_15_3 then
+		if not debug.getinfo(slot1, "Sln") then
 			break
 		end
 
-		if var_15_3.what == "C" then
-			var_15_2 = var_15_2 .. tostring(var_15_1) .. "\tC function\n"
-		else
-			var_15_2 = var_15_2 .. string.format("\t[%s]:%d in function `%s`\n", var_15_3.short_src, var_15_3.currentline, var_15_3.name or "")
-		end
-
-		local var_15_4 = 1
+		slot0 = slot2.what == "C" and slot0 .. tostring(slot1) .. "\tC function\n" or slot0 .. string.format("\t[%s]:%d in function `%s`\n", slot2.short_src, slot2.currentline, slot2.name or "")
+		slot3 = 1
 
 		while true do
-			local var_15_5, var_15_6 = debug.getlocal(var_15_1, var_15_4)
+			slot4, slot5 = debug.getlocal(slot1, slot3)
 
-			if not var_15_5 then
+			if not slot4 then
 				break
 			end
 
-			var_15_2 = var_15_2 .. "\t\t" .. var_15_5 .. " =\t" .. tostringex(var_15_6, 3) .. "\n"
-			var_15_4 = var_15_4 + 1
+			slot0 = slot0 .. "\t\t" .. slot4 .. " =\t" .. tostringex(slot5, 3) .. "\n"
+			slot3 = slot3 + 1
 		end
 
-		var_15_1 = var_15_1 + 1
+		slot1 = slot1 + 1
 	end
 
-	return var_15_2
+	return slot0
 end
 
-function tostringex(arg_16_0, arg_16_1)
-	if arg_16_1 == nil then
-		arg_16_1 = 0
+function tostringex(slot0, slot1)
+	if slot1 == nil then
+		slot1 = 0
 	end
 
-	local var_16_0 = string.rep("\t", arg_16_1)
-	local var_16_1 = ""
+	slot2 = string.rep("\t", slot1)
+	slot3 = ""
 
-	if type(arg_16_0) == "table" then
-		if arg_16_1 > 5 then
+	if type(slot0) == "table" then
+		if slot1 > 5 then
 			return "\t{ ... }"
 		end
 
-		local var_16_2 = ""
-
-		for iter_16_0, iter_16_1 in pairs(arg_16_0) do
-			var_16_2 = var_16_2 .. "\n\t" .. var_16_0 .. tostring(iter_16_0) .. ":"
-			var_16_2 = var_16_2 .. tostringex(iter_16_1, arg_16_1 + 1)
+		for slot8, slot9 in pairs(slot0) do
+			slot4 = "" .. "\n\t" .. slot2 .. tostring(slot8) .. ":" .. tostringex(slot9, slot1 + 1)
 		end
 
-		if var_16_2 == "" then
-			var_16_1 = var_16_1 .. var_16_0 .. "{ }\t(" .. tostring(arg_16_0) .. ")"
+		if slot4 == "" then
+			slot3 = slot3 .. slot2 .. "{ }\t(" .. tostring(slot0) .. ")"
 		else
-			if arg_16_1 > 0 then
-				var_16_1 = var_16_1 .. "\t(" .. tostring(arg_16_0) .. ")\n"
+			if slot1 > 0 then
+				slot3 = slot3 .. "\t(" .. tostring(slot0) .. ")\n"
 			end
 
-			var_16_1 = var_16_1 .. var_16_0 .. "{" .. var_16_2 .. "\n" .. var_16_0 .. "}"
+			slot3 = slot3 .. slot2 .. "{" .. slot4 .. "\n" .. slot2 .. "}"
 		end
 	else
-		var_16_1 = var_16_1 .. var_16_0 .. tostring(arg_16_0) .. "\t(" .. type(arg_16_0) .. ")"
+		slot3 = slot3 .. slot2 .. tostring(slot0) .. "\t(" .. type(slot0) .. ")"
 	end
 
-	return var_16_1
+	return slot3
 end
 
-function DecorateClass(arg_17_0, arg_17_1)
-	assert(arg_17_0, "Need a Base Class")
+function DecorateClass(slot0, slot1)
+	assert(slot0, "Need a Base Class")
 
-	local var_17_0 = setmetatable({}, {
-		__index = function(arg_18_0, arg_18_1)
-			return arg_17_0[arg_18_1] or arg_17_1[arg_18_1]
+	slot2 = setmetatable({}, {
+		__index = function (slot0, slot1)
+			return uv0[slot1] or uv1[slot1]
 		end
 	})
+	slot2.super = slot0
+	slot2.__cname = slot0.__cname .. " feat." .. slot1.__cname
+	slot2.__ctype = 2
+	slot2.__index = slot2
 
-	var_17_0.super = arg_17_0
-	var_17_0.__cname = arg_17_0.__cname .. " feat." .. arg_17_1.__cname
-	var_17_0.__ctype = 2
-	var_17_0.__index = var_17_0
+	function slot2.New(...)
+		slot0 = setmetatable({}, uv0)
+		slot0.class = uv0
 
-	function var_17_0.New(...)
-		local var_19_0 = setmetatable({}, var_17_0)
+		slot0:Ctor(...)
 
-		var_19_0.class = var_17_0
-
-		var_19_0:Ctor(...)
-
-		return var_19_0
+		return slot0
 	end
 
-	return var_17_0
+	return slot2
 end

@@ -1,87 +1,80 @@
-﻿local var_0_0 = class("MainActSummaryBtn", import(".MainBaseActivityBtn"))
+slot0 = class("MainActSummaryBtn", import(".MainBaseActivityBtn"))
 
-function var_0_0.GetEventName(arg_1_0)
+function slot0.GetEventName(slot0)
 	return "event_all"
 end
 
-function var_0_0.GetTipImage(arg_2_0)
+function slot0.GetTipImage(slot0)
 	return "tip_1920"
 end
 
-function var_0_0.NewGameObject(arg_3_0)
-	return arg_3_0.tpl
+function slot0.NewGameObject(slot0)
+	return slot0.tpl
 end
 
-function var_0_0.GetActivityID(arg_4_0)
+function slot0.GetActivityID(slot0)
 	return nil
 end
 
-function var_0_0.OnInit(arg_5_0)
-	arg_5_0:PickPriortyActAsyn(function(arg_6_0, arg_6_1)
-		arg_5_0.priority = arg_6_0
+function slot0.OnInit(slot0)
+	slot0:PickPriortyActAsyn(function (slot0, slot1)
+		uv0.priority = slot0
 
-		if arg_6_1 > 0 then
-			arg_5_0.tipTxt.text = arg_6_1
+		if slot1 > 0 then
+			uv0.tipTxt.text = slot1
 		end
 
-		setActive(arg_5_0.tipTr.gameObject, arg_6_1 > 0)
+		setActive(uv0.tipTr.gameObject, slot1 > 0)
 	end)
 end
 
-function var_0_0.PickPriortyActAsyn(arg_7_0, arg_7_1)
-	local var_7_0 = {}
-	local var_7_1 = 0
-	local var_7_2
+function slot0.PickPriortyActAsyn(slot0, slot1)
+	slot2 = {}
+	slot3 = 0
+	slot4 = nil
 
-	table.insert(var_7_0, function(arg_8_0)
-		local var_8_0, var_8_1 = arg_7_0:CollectActivity()
+	table.insert(slot2, function (slot0)
+		slot1, uv1 = uv0:CollectActivity()
+		uv2 = uv2 + slot1
 
-		var_7_2 = var_8_1
-		var_7_1 = var_7_1 + var_8_0
-
-		onNextTick(arg_8_0)
+		onNextTick(slot0)
 	end)
-	table.insert(var_7_0, function(arg_9_0)
-		local var_9_0 = arg_7_0:CollectActEntrance()
+	table.insert(slot2, function (slot0)
+		uv1 = uv1 + uv0:CollectActEntrance()
 
-		var_7_1 = var_7_1 + var_9_0
-
-		onNextTick(arg_9_0)
+		onNextTick(slot0)
 	end)
-	seriesAsync(var_7_0, function()
-		arg_7_1(var_7_2, var_7_1)
+	seriesAsync(slot2, function ()
+		uv0(uv1, uv2)
 	end)
 end
 
-function var_0_0.CollectActivity(arg_11_0)
-	local var_11_0 = 0
-	local var_11_1
-	local var_11_2 = getProxy(ActivityProxy):getRawData()
+function slot0.CollectActivity(slot0)
+	slot2 = nil
 
-	for iter_11_0, iter_11_1 in pairs(var_11_2) do
-		if not iter_11_1:isEnd() and iter_11_1:isShow() and iter_11_1:readyToAchieve() then
-			var_11_0 = var_11_0 + 1
+	for slot8, slot9 in pairs(getProxy(ActivityProxy):getRawData()) do
+		if not slot9:isEnd() and slot9:isShow() and slot9:readyToAchieve() then
+			slot1 = 0 + 1
 
-			if not var_11_1 or var_11_1 and var_11_1.id > iter_11_1.id then
-				var_11_1 = iter_11_1
+			if not slot2 or slot2 and slot9.id < slot2.id then
+				slot2 = slot9
 			end
 		end
 	end
 
-	return var_11_0, var_11_1
+	return slot1, slot2
 end
 
-function var_0_0.CollectActEntrance(arg_12_0)
-	local var_12_0 = 0
-	local var_12_1 = ActivityMainScene.GetOnShowEntranceData()
+function slot0.CollectActEntrance(slot0)
+	slot1 = 0
 
-	return #_.filter(var_12_1, function(arg_13_0)
-		return arg_13_0.isTip and arg_13_0.isTip()
+	return #_.filter(ActivityMainScene.GetOnShowEntranceData(), function (slot0)
+		return slot0.isTip and slot0.isTip()
 	end)
 end
 
-function var_0_0.CustomOnClick(arg_14_0)
+function slot0.CustomOnClick(slot0)
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CARD_TOWER_MODE_SELECT)
 end
 
-return var_0_0
+return slot0

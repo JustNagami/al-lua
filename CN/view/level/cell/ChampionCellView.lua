@@ -1,81 +1,74 @@
-﻿local var_0_0 = import(".EnemyCellView")
-local var_0_1 = import(".SpineCellView")
-local var_0_2 = class("ChampionCellView", DecorateClass(var_0_0, var_0_1))
+slot2 = class("ChampionCellView", DecorateClass(import(".EnemyCellView"), import(".SpineCellView")))
 
-function var_0_2.Ctor(arg_1_0)
-	var_0_0.Ctor(arg_1_0)
-	var_0_1.Ctor(arg_1_0)
+function slot2.Ctor(slot0)
+	uv0.Ctor(slot0)
+	uv1.Ctor(slot0)
 
-	arg_1_0.autoLoader = AutoLoader.New()
+	slot0.autoLoader = AutoLoader.New()
 end
 
-function var_0_2.InitChampionCellTransform(arg_2_0)
-	var_0_1.InitCellTransform(arg_2_0)
+function slot2.InitChampionCellTransform(slot0)
+	uv0.InitCellTransform(slot0)
 
-	arg_2_0.tfEffectFound = arg_2_0.tf:Find("effect_found")
-	arg_2_0.tfFighting = arg_2_0.tf:Find("fighting")
+	slot0.tfEffectFound = slot0.tf:Find("effect_found")
+	slot0.tfFighting = slot0.tf:Find("fighting")
 
-	setText(findTF(arg_2_0.tfFighting, "Text"), i18n("ui_word_levelui2_inevent"))
+	setText(findTF(slot0.tfFighting, "Text"), i18n("ui_word_levelui2_inevent"))
 
-	arg_2_0.tfDamageCount = arg_2_0.tf:Find("damage_count")
-	arg_2_0.tfBufficons = arg_2_0.tf:Find("random_buff_container")
+	slot0.tfDamageCount = slot0.tf:Find("damage_count")
+	slot0.tfBufficons = slot0.tf:Find("random_buff_container")
 end
 
-function var_0_2.UpdateChampionCell(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	local var_3_0 = arg_3_2.trait ~= ChapterConst.TraitLurk and arg_3_2.flag == ChapterConst.CellFlagActive and not arg_3_1:existFleet(FleetType.Transport, arg_3_2.row, arg_3_2.column)
-	local var_3_1 = arg_3_1:existEnemy(ChapterConst.SubjectChampion, arg_3_2.row, arg_3_2.column)
+function slot2.UpdateChampionCell(slot0, slot1, slot2, slot3)
+	slot4 = slot2.trait ~= ChapterConst.TraitLurk and slot2.flag == ChapterConst.CellFlagActive and not slot1:existFleet(FleetType.Transport, slot2.row, slot2.column)
 
-	setActive(arg_3_0.tfFighting, var_3_0 and var_3_1)
-	setActive(arg_3_0.tfEffectFound, var_3_0 and arg_3_2.trait == ChapterConst.TraitVirgin)
-	setActive(arg_3_0.tfDamageCount, var_3_0 and arg_3_2.data > 0)
-	setActive(arg_3_0.tf:Find("huoqiubaozha"), false)
+	setActive(slot0.tfFighting, slot4 and slot1:existEnemy(ChapterConst.SubjectChampion, slot2.row, slot2.column))
+	setActive(slot0.tfEffectFound, slot4 and slot2.trait == ChapterConst.TraitVirgin)
+	setActive(slot0.tfDamageCount, slot4 and slot2.data > 0)
+	setActive(slot0.tf:Find("huoqiubaozha"), false)
 
-	if arg_3_2.trait == ChapterConst.TraitVirgin then
+	if slot2.trait == ChapterConst.TraitVirgin then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 	end
 
-	arg_3_0.tfShadow.localEulerAngles = Vector3(arg_3_1.theme.angle, 0, 0)
+	slot0.tfShadow.localEulerAngles = Vector3(slot1.theme.angle, 0, 0)
 
-	if var_3_0 then
-		var_0_0.RefreshEnemyTplIcons(arg_3_0, arg_3_2:getConfigTable(), arg_3_1)
+	if slot4 then
+		uv0.RefreshEnemyTplIcons(slot0, slot2:getConfigTable(), slot1)
 	end
 
-	arg_3_0:SetActive(var_3_0)
-	existCall(arg_3_3)
+	slot0:SetActive(slot4)
+	existCall(slot3)
 end
 
-function var_0_2.LoadSpine(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
-	var_0_1.LoadSpine(arg_4_0, arg_4_1, arg_4_2, nil, function()
-		existCall(arg_4_4)
-		arg_4_0.LoadExtraEffects(arg_4_0, arg_4_3)
+function slot2.LoadSpine(slot0, slot1, slot2, slot3, slot4)
+	uv0.LoadSpine(slot0, slot1, slot2, nil, function ()
+		existCall(uv0)
+		uv1:LoadExtraEffects(uv2)
 	end)
 end
 
-function var_0_2.LoadExtraEffects(arg_6_0, arg_6_1)
-	if arg_6_1 and #arg_6_1 > 0 then
-		local var_6_0 = "effect/" .. arg_6_1
+function slot2.LoadExtraEffects(slot0, slot1)
+	if slot1 and #slot1 > 0 then
+		slot0.autoLoader:LoadPrefab("effect/" .. slot1, slot1, function (slot0)
+			uv0._extraEffectList[uv1] = slot0
 
-		arg_6_0.autoLoader:LoadPrefab(var_6_0, arg_6_1, function(arg_7_0)
-			arg_6_0._extraEffectList[var_6_0] = arg_7_0
+			setParent(slot0, uv0.tf, false)
 
-			local var_7_0 = arg_7_0.transform.localScale
+			slot0.transform.localScale = slot0.transform.localScale
 
-			setParent(arg_7_0, arg_6_0.tf, false)
-
-			arg_7_0.transform.localScale = var_7_0
-
-			arg_6_0:ResetCanvasOrder()
+			uv0:ResetCanvasOrder()
 		end)
 	end
 end
 
-function var_0_2.Clear(arg_8_0)
-	var_0_1.ClearSpine(arg_8_0)
-	var_0_0.Clear(arg_8_0)
+function slot2.Clear(slot0)
+	uv0.ClearSpine(slot0)
+	uv1.Clear(slot0)
 
-	if arg_8_0.autoLoader then
-		arg_8_0.autoLoader:ClearRequests()
+	if slot0.autoLoader then
+		slot0.autoLoader:ClearRequests()
 	end
 end
 
-return var_0_2
+return slot2

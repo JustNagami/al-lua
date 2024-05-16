@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-Z23II"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-Z23II",
+	name = "专属弹幕-Z23II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-Z23II",
+	stack = 1,
+	id = 29202,
+	icon = 29200,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -25,19 +39,5 @@
 				countType = 29200
 			}
 		}
-	},
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-Z23II"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-Z23II",
-	name = "专属弹幕-Z23II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-Z23II",
-	stack = 1,
-	id = 29202,
-	icon = 29200,
-	last_effect = ""
+	}
 }

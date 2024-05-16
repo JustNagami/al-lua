@@ -1,39 +1,36 @@
-﻿local var_0_0 = class("BackyardFeedMediator", import("...base.ContextMediator"))
+slot0 = class("BackyardFeedMediator", import("...base.ContextMediator"))
+slot0.USE_FOOD = "BackyardFeedMediator:USE_FOOD"
+slot0.BUY_FOOD = "BackyardFeedMediator:BUY_FOOD"
+slot0.EXTEND = "BackyardFeedMediator:EXTEND"
 
-var_0_0.USE_FOOD = "BackyardFeedMediator:USE_FOOD"
-var_0_0.BUY_FOOD = "BackyardFeedMediator:BUY_FOOD"
-var_0_0.EXTEND = "BackyardFeedMediator:EXTEND"
-
-function var_0_0.register(arg_1_0)
-	local var_1_0 = getProxy(SettingsProxy)
-
-	arg_1_0:bind(var_0_0.USE_FOOD, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		if arg_2_3 then
-			var_1_0:setBackyardRemind()
-			arg_1_0.viewComponent:SetIsRemind(var_1_0:getBackyardRemind())
+function slot0.register(slot0)
+	slot0:bind(uv0.USE_FOOD, function (slot0, slot1, slot2, slot3)
+		if slot3 then
+			uv0:setBackyardRemind()
+			uv1.viewComponent:SetIsRemind(uv0:getBackyardRemind())
 		end
 
-		arg_1_0:sendNotification(GAME.USE_ITEM, {
-			id = arg_2_1,
-			count = arg_2_2
+		uv1:sendNotification(GAME.USE_ITEM, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.BUY_FOOD, function(arg_3_0, arg_3_1, arg_3_2)
-		arg_1_0:sendNotification(GAME.SHOPPING, {
-			id = arg_3_1,
-			count = arg_3_2
+	slot0:bind(uv0.BUY_FOOD, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0:bind(var_0_0.EXTEND, function(arg_4_0, arg_4_1, arg_4_2)
-		arg_1_0:sendNotification(GAME.SHOPPING, {
-			id = arg_4_1,
-			count = arg_4_2
+	slot0:bind(uv0.EXTEND, function (slot0, slot1, slot2)
+		uv0:sendNotification(GAME.SHOPPING, {
+			id = slot1,
+			count = slot2
 		})
 	end)
-	arg_1_0.viewComponent:SetIsRemind(var_1_0:getBackyardRemind())
+	slot0.viewComponent:SetIsRemind(getProxy(SettingsProxy):getBackyardRemind())
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.ADD_FOOD_DONE,
 		DormProxy.DORM_UPDATEED,
@@ -41,18 +38,16 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
-	local var_6_2 = arg_6_1:getType()
+function slot0.handleNotification(slot0, slot1)
+	slot4 = slot1:getType()
 
-	if var_6_0 == GAME.ADD_FOOD_DONE then
-		arg_6_0.viewComponent:OnUsageItem(var_6_1.id)
-	elseif var_6_0 == DormProxy.DORM_UPDATEED and var_6_2 == BackYardConst.DORM_UPDATE_TYPE_USEFOOD then
-		arg_6_0.viewComponent:OnDormUpdated()
-	elseif var_6_0 == GAME.SHOPPING_DONE then
-		arg_6_0.viewComponent:OnShopDone()
+	if slot1:getName() == GAME.ADD_FOOD_DONE then
+		slot0.viewComponent:OnUsageItem(slot1:getBody().id)
+	elseif slot2 == DormProxy.DORM_UPDATEED and slot4 == BackYardConst.DORM_UPDATE_TYPE_USEFOOD then
+		slot0.viewComponent:OnDormUpdated()
+	elseif slot2 == GAME.SHOPPING_DONE then
+		slot0.viewComponent:OnShopDone()
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,66 +1,53 @@
-﻿local var_0_0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
+slot0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
 
-function var_0_0.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	var_0_0.super.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+function slot0.Init(slot0, slot1, slot2, slot3, slot4, slot5)
+	uv0.super.Init(slot0, slot1, slot2, slot3, slot4)
 
-	arg_1_0.favor = arg_1_5
+	slot0.favor = slot5
+	slot7, slot8 = nil
 
-	local var_1_0 = arg_1_4.key
-	local var_1_1
-	local var_1_2
-
-	if string.find(var_1_0, ShipWordHelper.WORD_TYPE_MAIN) then
-		local var_1_3 = string.gsub(var_1_0, ShipWordHelper.WORD_TYPE_MAIN, "")
-
-		mainIndex = tonumber(var_1_3)
-		var_1_1, var_1_2 = ShipWordHelper.ExistExCv(arg_1_2.id, ShipWordHelper.WORD_TYPE_MAIN, mainIndex, arg_1_5)
+	if string.find(slot4.key, ShipWordHelper.WORD_TYPE_MAIN) then
+		mainIndex = tonumber(string.gsub(slot6, ShipWordHelper.WORD_TYPE_MAIN, ""))
+		slot7, slot8 = ShipWordHelper.ExistExCv(slot2.id, ShipWordHelper.WORD_TYPE_MAIN, mainIndex, slot5)
 	else
-		var_1_1, var_1_2 = ShipWordHelper.ExistExCv(arg_1_2.id, var_1_0, nil, arg_1_5)
+		slot7, slot8 = ShipWordHelper.ExistExCv(slot2.id, slot6, nil, slot5)
 	end
 
-	if arg_1_0.wordData.cvPath and var_1_2 then
-		arg_1_0.wordData.cvPath = arg_1_0.wordData.cvPath .. "_ex" .. var_1_2
+	if slot0.wordData.cvPath and slot8 then
+		slot0.wordData.cvPath = slot0.wordData.cvPath .. "_ex" .. slot8
 	end
 
-	arg_1_0.wordData.matchFavor = var_1_2
-	arg_1_0.wordData.textContent = var_1_1
-	arg_1_0.wordData.maxfavor = arg_1_5
+	slot0.wordData.matchFavor = slot8
+	slot0.wordData.textContent = slot7
+	slot0.wordData.maxfavor = slot5
 end
 
-function var_0_0.Update(arg_2_0)
-	local var_2_0 = arg_2_0.voice.unlock_condition[1] < 0
-	local var_2_1 = arg_2_0.wordData.textContent == nil or arg_2_0.wordData.textContent == "nil" or arg_2_0.wordData.textContent == ""
+function slot0.Update(slot0)
+	slot2 = slot0.voice.unlock_condition[1] < 0 or (slot0.wordData.textContent == nil or slot0.wordData.textContent == "nil" or slot0.wordData.textContent == "")
 
-	var_2_0 = var_2_0 or var_2_1
+	setActive(slot0._tf, not slot2)
 
-	setActive(arg_2_0._tf, not var_2_0)
-
-	if not var_2_0 then
-		arg_2_0:UpdateCvBtn()
-		arg_2_0:UpdateIcon()
+	if not slot2 then
+		slot0:UpdateCvBtn()
+		slot0:UpdateIcon()
 	end
 end
 
-function var_0_0.UpdateCvBtn(arg_3_0)
-	local var_3_0 = arg_3_0.voice
-	local var_3_1, var_3_2 = arg_3_0.shipGroup:VoiceReplayCodition(var_3_0)
-	local var_3_3 = var_3_1 and var_3_0.voice_name .. "Ex" or "???"
+function slot0.UpdateCvBtn(slot0)
+	slot3, slot4 = slot0.shipGroup:VoiceReplayCodition(slot0.voice)
+	slot0.nameTxt.text = slot3 and slot1.voice_name .. "Ex" or "???"
 
-	arg_3_0.nameTxt.text = var_3_3
+	setActive(slot0.tagDiff, ShipWordHelper.ExistDifferentExWord(slot0.skin.id, slot1.key, slot0.wordData.mainIndex, slot0.favor))
 
-	local var_3_4 = ShipWordHelper.ExistDifferentExWord(arg_3_0.skin.id, var_3_0.key, arg_3_0.wordData.mainIndex, arg_3_0.favor)
-
-	setActive(arg_3_0.tagDiff, var_3_4)
-
-	if not var_3_1 then
-		onButton(nil, arg_3_0._tf, function()
-			pg.TipsMgr.GetInstance():ShowTips(var_3_2)
+	if not slot3 then
+		onButton(nil, slot0._tf, function ()
+			pg.TipsMgr.GetInstance():ShowTips(uv0)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.isEx(arg_5_0)
-	return arg_5_0.shipGroup:VoiceReplayCodition(arg_5_0.voice)
+function slot0.isEx(slot0)
+	return slot0.shipGroup:VoiceReplayCodition(slot0.voice)
 end
 
-return var_0_0
+return slot0

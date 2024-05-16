@@ -1,10 +1,8 @@
-﻿local var_0_0 = class("MainOpenSystemSequence")
+slot0 = class("MainOpenSystemSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(PlayerProxy):getRawData()
-
-	pg.SystemOpenMgr.GetInstance():notification(var_1_0.level)
-	arg_1_1()
+function slot0.Execute(slot0, slot1)
+	pg.SystemOpenMgr.GetInstance():notification(getProxy(PlayerProxy):getRawData().level)
+	slot1()
 end
 
-return var_0_0
+return slot0

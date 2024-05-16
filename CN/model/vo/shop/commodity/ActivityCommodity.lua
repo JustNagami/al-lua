@@ -1,189 +1,154 @@
-﻿local var_0_0 = class("ActivityCommodity", import(".BaseCommodity"))
+slot0 = class("ActivityCommodity", import(".BaseCommodity"))
 
-function var_0_0.bindConfigTable(arg_1_0)
+function slot0.bindConfigTable(slot0)
 	return pg.activity_shop_template
 end
 
-function var_0_0.CheckCntLimit(arg_2_0)
-	if arg_2_0:getConfig("num_limit") == 0 then
+function slot0.CheckCntLimit(slot0)
+	if slot0:getConfig("num_limit") == 0 then
 		return true
 	end
 
-	return arg_2_0:GetPurchasableCnt() > 0
+	return slot0:GetPurchasableCnt() > 0
 end
 
-function var_0_0.CheckArgLimit(arg_3_0)
-	local var_3_0 = arg_3_0:getConfig("limit_args")
-
-	if not var_3_0 or var_3_0 == "" or #var_3_0 == 0 then
+function slot0.CheckArgLimit(slot0)
+	if not slot0:getConfig("limit_args") or slot1 == "" or #slot1 == 0 then
 		return true
 	end
 
-	local var_3_1 = false
+	slot2 = false
 
-	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
-		local var_3_2 = iter_3_1[1]
-		local var_3_3 = iter_3_1[2]
-		local var_3_4 = iter_3_1[3]
+	for slot6, slot7 in ipairs(slot1) do
+		slot9 = slot7[2]
 
-		if (var_3_2 == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE or var_3_2 == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL) and (var_3_4 or 1) == 1 then
-			var_3_1 = getProxy(BayProxy):getMetaShipByGroupId(var_3_3) ~= nil
-
-			if not var_3_1 then
-				return var_3_1, var_3_2, i18n("meta_shop_exchange_limit"), var_3_3
+		if (slot7[1] == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE or slot8 == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL) and (slot7[3] or 1) == 1 then
+			if not (getProxy(BayProxy):getMetaShipByGroupId(slot9) ~= nil) then
+				return slot2, slot8, i18n("meta_shop_exchange_limit"), slot9
 			end
-		elseif var_3_2 == ShopArgs.LIMIT_ARGS_SALE_START_TIME then
-			var_3_1 = pg.TimeMgr.GetInstance():passTime(var_3_3)
-
-			if not var_3_1 then
-				return var_3_1, var_3_2, i18n("meta_shop_exchange_limit_2"), var_3_3
+		elseif slot8 == ShopArgs.LIMIT_ARGS_SALE_START_TIME then
+			if not pg.TimeMgr.GetInstance():passTime(slot9) then
+				return slot2, slot8, i18n("meta_shop_exchange_limit_2"), slot9
 			end
-		elseif var_3_2 == "pass" then
-			local var_3_5 = getProxy(ChapterProxy):getChapterById(var_3_3)
-
-			var_3_1 = var_3_5 and var_3_5:isClear()
-
-			if not var_3_1 then
-				return var_3_1, var_3_2, var_3_4, var_3_3
-			end
+		elseif slot8 == "pass" and not (getProxy(ChapterProxy):getChapterById(slot9) and slot11:isClear()) then
+			return slot2, slot8, slot10, slot9
 		end
 	end
 
-	return var_3_1
+	return slot2
 end
 
-local function var_0_1(arg_4_0, arg_4_1)
-	local var_4_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_4_1)
+function slot1(slot0, slot1)
+	if getProxy(BayProxy):getMetaShipByGroupId(slot1) then
+		slot4 = slot2:getMetaCharacter():getSpecialMaterialInfoToMaxStar()
+		slot5 = getProxy(BagProxy):getItemCountById(slot4.itemID)
 
-	if var_4_0 then
-		local var_4_1 = var_4_0:getMetaCharacter():getSpecialMaterialInfoToMaxStar()
-		local var_4_2 = getProxy(BagProxy):getItemCountById(var_4_1.itemID)
+		print(slot4, slot5)
 
-		print(var_4_1, var_4_2)
-
-		return math.max(var_4_1.count - var_4_2, 0)
+		return math.max(slot4.count - slot5, 0)
 	else
-		return arg_4_0:getConfig("num_limit") - arg_4_0.buyCount
+		return slot0:getConfig("num_limit") - slot0.buyCount
 	end
 
 	return 0
 end
 
-function var_0_0.GetTranCntWhenFull(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_0:getConfig("limit_args")
-	local var_5_1 = 0
-	local var_5_2
+function slot0.GetTranCntWhenFull(slot0, slot1)
+	slot3 = 0
+	slot4 = nil
 
-	if not var_5_0 or var_5_0 == "" or #var_5_0 == 0 then
-		-- block empty
-	else
-		for iter_5_0, iter_5_1 in ipairs(var_5_0) do
-			local var_5_3 = iter_5_1[1]
-			local var_5_4 = iter_5_1[2]
-			local var_5_5 = iter_5_1[3]
-			local var_5_6 = iter_5_1[4]
+	if slot0:getConfig("limit_args") and slot2 ~= "" then
+		if #slot2 ~= 0 then
+			for slot8, slot9 in ipairs(slot2) do
+				slot12 = slot9[3]
 
-			if var_5_3 == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL then
-				local var_5_7 = var_0_1(arg_5_0, var_5_4) - arg_5_1
-
-				if var_5_7 < 0 then
-					var_5_1 = math.abs(var_5_7)
-					var_5_2 = Drop.Create(var_5_6)
+				if slot9[1] == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL and uv0(slot0, slot9[2]) - slot1 < 0 then
+					slot3 = math.abs(slot15)
+					slot4 = Drop.Create(slot9[4])
 				end
 			end
 		end
 	end
 
-	return var_5_1, var_5_2
+	return slot3, slot4
 end
 
-function var_0_0.CheckTimeLimit(arg_6_0)
-	local var_6_0 = false
-	local var_6_1 = false
-	local var_6_2 = false
-	local var_6_3 = arg_6_0:getConfig("commodity_type")
-	local var_6_4 = arg_6_0:getConfig("commodity_id")
-	local var_6_5 = Item.getConfigData(var_6_4)
+function slot0.CheckTimeLimit(slot0)
+	slot1 = false
+	slot2 = false
+	slot3 = false
+	slot6 = Item.getConfigData(slot0:getConfig("commodity_id"))
 
-	if var_6_3 == DROP_TYPE_VITEM and var_6_5.virtual_type == 22 then
-		var_6_0 = true
-		var_6_2 = true
+	if slot0:getConfig("commodity_type") == DROP_TYPE_VITEM and slot6.virtual_type == 22 then
+		slot1 = true
+		slot3 = true
 
-		local var_6_6 = getProxy(ActivityProxy):getActivityById(var_6_5.link_id)
-
-		if var_6_6 and not var_6_6:isEnd() then
-			var_6_1 = true
+		if getProxy(ActivityProxy):getActivityById(slot6.link_id) and not slot8:isEnd() then
+			slot2 = true
 		end
-	elseif var_6_3 == DROP_TYPE_ITEM and var_6_5.time_limit == 1 then
-		var_6_0 = false
-		var_6_1 = true
+	elseif slot4 == DROP_TYPE_ITEM and slot6.time_limit == 1 then
+		slot1 = false
+		slot2 = true
 	end
 
-	return var_6_0, var_6_1, var_6_2
+	return slot1, slot2, slot3
 end
 
-function var_0_0.canPurchase(arg_7_0)
-	local var_7_0, var_7_1, var_7_2 = arg_7_0:CheckCntLimit()
-	local var_7_3, var_7_4, var_7_5 = arg_7_0:CheckArgLimit()
+function slot0.canPurchase(slot0)
+	slot1, slot2, slot3 = slot0:CheckCntLimit()
+	slot4, slot5, slot6 = slot0:CheckArgLimit()
 
-	if not var_7_0 then
-		return false, var_7_1, var_7_2
+	if not slot1 then
+		return false, slot2, slot3
 	end
 
-	if not var_7_3 then
-		return false, var_7_4, var_7_5
+	if not slot4 then
+		return false, slot5, slot6
 	end
 
 	return true
 end
 
-function var_0_0.getSkinId(arg_8_0)
-	if arg_8_0:getConfig("commodity_type") == DROP_TYPE_SKIN then
-		return arg_8_0:getConfig("commodity_id")
+function slot0.getSkinId(slot0)
+	if slot0:getConfig("commodity_type") == DROP_TYPE_SKIN then
+		return slot0:getConfig("commodity_id")
 	end
 
 	return nil
 end
 
-function var_0_0.checkCommodityType(arg_9_0, arg_9_1)
-	return arg_9_0:getConfig("commodity_type") == arg_9_1
+function slot0.checkCommodityType(slot0, slot1)
+	return slot0:getConfig("commodity_type") == slot1
 end
 
-function var_0_0.GetPurchasableCnt(arg_10_0)
-	local var_10_0 = arg_10_0:getConfig("commodity_type")
-	local var_10_1 = arg_10_0:getConfig("commodity_id")
-
-	if var_10_0 == DROP_TYPE_SKIN then
-		return getProxy(ShipSkinProxy):hasSkin(var_10_1) and 0 or 1
-	elseif var_10_0 == DROP_TYPE_FURNITURE then
-		local var_10_2 = getProxy(DormProxy):getRawData():GetOwnFurnitureCount(var_10_1)
-		local var_10_3 = pg.furniture_data_template[var_10_1]
-
-		return math.min(var_10_3.count - var_10_2, arg_10_0:getConfig("num_limit") - arg_10_0.buyCount)
+function slot0.GetPurchasableCnt(slot0)
+	if slot0:getConfig("commodity_type") == DROP_TYPE_SKIN then
+		return getProxy(ShipSkinProxy):hasSkin(slot0:getConfig("commodity_id")) and 0 or 1
+	elseif slot1 == DROP_TYPE_FURNITURE then
+		return math.min(pg.furniture_data_template[slot2].count - getProxy(DormProxy):getRawData():GetOwnFurnitureCount(slot2), slot0:getConfig("num_limit") - slot0.buyCount)
 	else
-		local var_10_4 = arg_10_0:getConfig("limit_args")
-		local var_10_5
+		slot4 = nil
 
-		if type(var_10_4) == "table" then
-			var_10_5 = _.detect(var_10_4, function(arg_11_0)
-				return arg_11_0[1] == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE
+		if type(slot0:getConfig("limit_args")) == "table" then
+			slot4 = _.detect(slot3, function (slot0)
+				return slot0[1] == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE
 			end)
 		end
 
-		if var_10_5 then
-			return var_0_1(arg_10_0, var_10_5[2])
+		if slot4 then
+			return uv0(slot0, slot4[2])
 		else
-			return arg_10_0:getConfig("num_limit") - arg_10_0.buyCount
+			return slot0:getConfig("num_limit") - slot0.buyCount
 		end
 	end
 end
 
-function var_0_0.GetConsume(arg_12_0)
+function slot0.GetConsume(slot0)
 	return Drop.New({
-		type = arg_12_0:getConfig("resource_category"),
-		id = arg_12_0:getConfig("resource_type"),
-		count = arg_12_0:getConfig("resource_num")
+		type = slot0:getConfig("resource_category"),
+		id = slot0:getConfig("resource_type"),
+		count = slot0:getConfig("resource_num")
 	})
 end
 
-return var_0_0
+return slot0

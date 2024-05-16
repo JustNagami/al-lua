@@ -1,458 +1,407 @@
-﻿local var_0_0 = require("socket")
-local var_0_1 = require("socket.url")
-local var_0_2 = require("ltn12")
-local var_0_3 = require("mime")
-local var_0_4 = require("string")
-local var_0_5 = require("socket.headers")
-local var_0_6 = _G
-local var_0_7 = require("table")
-
-var_0_0.http = {}
-
-local var_0_8 = var_0_0.http
-
-var_0_8.TIMEOUT = 60
-var_0_8.USERAGENT = var_0_0._VERSION
-
-local var_0_9 = {
+slot0 = require("socket")
+slot1 = require("socket.url")
+slot2 = require("ltn12")
+slot3 = require("mime")
+slot4 = require("string")
+slot5 = require("socket.headers")
+slot6 = _G
+slot7 = require("table")
+slot0.http = {}
+slot8 = slot0.http
+slot8.TIMEOUT = 60
+slot8.USERAGENT = slot0._VERSION
+slot9 = {
 	http = true
 }
-local var_0_10 = 80
 
-local function var_0_11(arg_1_0, arg_1_1)
-	local var_1_0
-	local var_1_1
-	local var_1_2
-	local var_1_3
+function slot11(slot0, slot1)
+	slot2, slot3, slot4, slot5 = nil
+	slot1 = slot1 or {}
+	slot2, slot7 = slot0:receive()
 
-	arg_1_1 = arg_1_1 or {}
-
-	local var_1_4, var_1_5 = arg_1_0:receive()
-
-	if var_1_5 then
-		return nil, var_1_5
+	if slot7 then
+		return nil, slot5
 	end
 
-	while var_1_4 ~= "" do
-		local var_1_6, var_1_7 = var_0_0.skip(2, var_0_4.find(var_1_4, "^(.-):%s*(.*)"))
+	while slot2 ~= "" do
+		slot6, slot4 = uv0.skip(2, uv1.find(slot2, "^(.-):%s*(.*)"))
 
-		if not var_1_6 or not var_1_7 then
+		if not slot6 or not slot4 then
 			return nil, "malformed reponse headers"
 		end
 
-		local var_1_8 = var_0_4.lower(var_1_6)
-		local var_1_9
+		slot3 = uv1.lower(slot3)
+		slot2, slot7 = slot0:receive()
 
-		var_1_4, var_1_9 = arg_1_0:receive()
-
-		if var_1_9 then
-			return nil, var_1_9
+		if slot7 then
+			return nil, slot5
 		end
 
-		while var_0_4.find(var_1_4, "^%s") do
-			var_1_7 = var_1_7 .. var_1_4
+		while uv1.find(slot2, "^%s") do
+			slot4 = slot4 .. slot2
+			slot2 = slot0:receive()
 
-			local var_1_10 = arg_1_0:receive()
-
-			if var_1_9 then
-				return nil, var_1_9
+			if slot5 then
+				return nil, slot5
 			end
 		end
 
-		if arg_1_1[var_1_8] then
-			arg_1_1[var_1_8] = arg_1_1[var_1_8] .. ", " .. var_1_7
+		if slot1[slot3] then
+			slot1[slot3] = slot1[slot3] .. ", " .. slot4
 		else
-			arg_1_1[var_1_8] = var_1_7
+			slot1[slot3] = slot4
 		end
 	end
 
-	return arg_1_1
+	return slot1
 end
 
-var_0_0.sourcet["http-chunked"] = function(arg_2_0, arg_2_1)
-	return var_0_6.setmetatable({
-		getfd = function()
-			return arg_2_0:getfd()
+slot0.sourcet["http-chunked"] = function (slot0, slot1)
+	return uv0.setmetatable({
+		getfd = function ()
+			return uv0:getfd()
 		end,
-		dirty = function()
-			return arg_2_0:dirty()
+		dirty = function ()
+			return uv0:dirty()
 		end
 	}, {
-		__call = function()
-			local var_5_0, var_5_1 = arg_2_0:receive()
+		__call = function ()
+			slot0, slot1 = uv0:receive()
 
-			if var_5_1 then
-				return nil, var_5_1
+			if slot1 then
+				return nil, slot1
 			end
 
-			local var_5_2 = var_0_6.tonumber(var_0_4.gsub(var_5_0, ";.*", ""), 16)
-
-			if not var_5_2 then
+			if not uv1.tonumber(uv2.gsub(slot0, ";.*", ""), 16) then
 				return nil, "invalid chunk size"
 			end
 
-			if var_5_2 > 0 then
-				local var_5_3, var_5_4, var_5_5 = arg_2_0:receive(var_5_2)
+			if slot2 > 0 then
+				slot3, slot4, slot5 = uv0:receive(slot2)
 
-				if var_5_3 then
-					arg_2_0:receive()
+				if slot3 then
+					uv0:receive()
 				end
 
-				return var_5_3, var_5_4
+				return slot3, slot4
 			else
-				local var_5_6
+				uv3, slot1 = uv4(uv0, uv3)
 
-				arg_2_1, var_5_6 = var_0_11(arg_2_0, arg_2_1)
-
-				if not arg_2_1 then
-					return nil, var_5_6
+				if not uv3 then
+					return nil, slot1
 				end
 			end
 		end
 	})
 end
-var_0_0.sinkt["http-chunked"] = function(arg_6_0)
-	return var_0_6.setmetatable({
-		getfd = function()
-			return arg_6_0:getfd()
+
+slot0.sinkt["http-chunked"] = function (slot0)
+	return uv0.setmetatable({
+		getfd = function ()
+			return uv0:getfd()
 		end,
-		dirty = function()
-			return arg_6_0:dirty()
+		dirty = function ()
+			return uv0:dirty()
 		end
 	}, {
-		__call = function(arg_9_0, arg_9_1, arg_9_2)
-			if not arg_9_1 then
-				return arg_6_0:send("0\r\n\r\n")
+		__call = function (slot0, slot1, slot2)
+			if not slot1 then
+				return uv0:send("0\r\n\r\n")
 			end
 
-			local var_9_0 = var_0_4.format("%X\r\n", var_0_4.len(arg_9_1))
-
-			return arg_6_0:send(var_9_0 .. arg_9_1 .. "\r\n")
+			return uv0:send(uv1.format("%X\r\n", uv1.len(slot1)) .. slot1 .. "\r\n")
 		end
 	})
 end
 
-local var_0_12 = {
+slot12 = {
 	__index = {}
 }
 
-function var_0_8.open(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = var_0_0.try((arg_10_2 or var_0_0.tcp)())
-	local var_10_1 = var_0_6.setmetatable({
-		c = var_10_0
-	}, var_0_12)
-
-	var_10_1.try = var_0_0.newtry(function()
-		var_10_1:close()
+function slot8.open(slot0, slot1, slot2)
+	slot3 = uv0.try(slot2 or uv0.tcp())
+	slot4 = uv1.setmetatable({
+		c = slot3
+	}, uv2)
+	slot4.try = uv0.newtry(function ()
+		uv0:close()
 	end)
 
-	var_10_1.try(var_10_0:settimeout(var_0_8.TIMEOUT))
-	var_10_1.try(var_10_0:connect(arg_10_0, arg_10_1 or var_0_10))
+	slot4.try(slot3:settimeout(uv3.TIMEOUT))
+	slot4.try(slot3:connect(slot0, slot1 or uv4))
 
-	return var_10_1
+	return slot4
 end
 
-function var_0_12.__index.sendrequestline(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = var_0_4.format("%s %s HTTP/1.1\r\n", arg_12_1 or "GET", arg_12_2)
-
-	return arg_12_0.try(arg_12_0.c:send(var_12_0))
+function slot12.__index.sendrequestline(slot0, slot1, slot2)
+	return slot0.try(slot0.c:send(uv0.format("%s %s HTTP/1.1\r\n", slot1 or "GET", slot2)))
 end
 
-function var_0_12.__index.sendheaders(arg_13_0, arg_13_1)
-	local var_13_0 = var_0_5.canonic
-	local var_13_1 = "\r\n"
-
-	for iter_13_0, iter_13_1 in var_0_6.pairs(arg_13_1) do
-		var_13_1 = (var_13_0[iter_13_0] or iter_13_0) .. ": " .. iter_13_1 .. "\r\n" .. var_13_1
+function slot12.__index.sendheaders(slot0, slot1)
+	for slot7, slot8 in uv1.pairs(slot1) do
+		slot3 = (uv0.canonic[slot7] or slot7) .. ": " .. slot8 .. "\r\n" .. "\r\n"
 	end
 
-	arg_13_0.try(arg_13_0.c:send(var_13_1))
+	slot0.try(slot0.c:send(slot3))
 
 	return 1
 end
 
-function var_0_12.__index.sendbody(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
-	arg_14_2 = arg_14_2 or var_0_2.source.empty()
-	arg_14_3 = arg_14_3 or var_0_2.pump.step
+function slot12.__index.sendbody(slot0, slot1, slot2, slot3)
+	slot2 = slot2 or uv0.source.empty()
+	slot3 = slot3 or uv0.pump.step
+	slot4 = "http-chunked"
 
-	local var_14_0 = "http-chunked"
-
-	if arg_14_1["content-length"] then
-		var_14_0 = "keep-open"
+	if slot1["content-length"] then
+		slot4 = "keep-open"
 	end
 
-	return arg_14_0.try(var_0_2.pump.all(arg_14_2, var_0_0.sink(var_14_0, arg_14_0.c), arg_14_3))
+	return slot0.try(uv0.pump.all(slot2, uv1.sink(slot4, slot0.c), slot3))
 end
 
-function var_0_12.__index.receivestatusline(arg_15_0)
-	local var_15_0 = arg_15_0.try(arg_15_0.c:receive(5))
-
-	if var_15_0 ~= "HTTP/" then
-		return nil, var_15_0
+function slot12.__index.receivestatusline(slot0)
+	if slot0.try(slot0.c:receive(5)) ~= "HTTP/" then
+		return nil, slot1
 	end
 
-	local var_15_1 = arg_15_0.try(arg_15_0.c:receive("*l", var_15_0))
-	local var_15_2 = var_0_0.skip(2, var_0_4.find(var_15_1, "HTTP/%d*%.%d* (%d%d%d)"))
+	slot1 = slot0.try(slot0.c:receive("*l", slot1))
 
-	return arg_15_0.try(var_0_6.tonumber(var_15_2), var_15_1)
+	return slot0.try(uv2.tonumber(uv0.skip(2, uv1.find(slot1, "HTTP/%d*%.%d* (%d%d%d)"))), slot1)
 end
 
-function var_0_12.__index.receiveheaders(arg_16_0)
-	return arg_16_0.try(var_0_11(arg_16_0.c))
+function slot12.__index.receiveheaders(slot0)
+	return slot0.try(uv0(slot0.c))
 end
 
-function var_0_12.__index.receivebody(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	arg_17_2 = arg_17_2 or var_0_2.sink.null()
-	arg_17_3 = arg_17_3 or var_0_2.pump.step
+function slot12.__index.receivebody(slot0, slot1, slot2, slot3)
+	slot2 = slot2 or uv0.sink.null()
+	slot3 = slot3 or uv0.pump.step
+	slot4 = uv1.tonumber(slot1["content-length"])
+	slot6 = "default"
 
-	local var_17_0 = var_0_6.tonumber(arg_17_1["content-length"])
-	local var_17_1 = arg_17_1["transfer-encoding"]
-	local var_17_2 = "default"
-
-	if var_17_1 and var_17_1 ~= "identity" then
-		var_17_2 = "http-chunked"
-	elseif var_0_6.tonumber(arg_17_1["content-length"]) then
-		var_17_2 = "by-length"
+	if slot1["transfer-encoding"] and slot5 ~= "identity" then
+		slot6 = "http-chunked"
+	elseif uv1.tonumber(slot1["content-length"]) then
+		slot6 = "by-length"
 	end
 
-	return arg_17_0.try(var_0_2.pump.all(var_0_0.source(var_17_2, arg_17_0.c, var_17_0), arg_17_2, arg_17_3))
+	return slot0.try(uv0.pump.all(uv2.source(slot6, slot0.c, slot4), slot2, slot3))
 end
 
-function var_0_12.__index.receive09body(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	local var_18_0 = var_0_2.source.rewind(var_0_0.source("until-closed", arg_18_0.c))
+function slot12.__index.receive09body(slot0, slot1, slot2, slot3)
+	slot4 = uv0.source.rewind(uv1.source("until-closed", slot0.c))
 
-	var_18_0(arg_18_1)
+	slot4(slot1)
 
-	return arg_18_0.try(var_0_2.pump.all(var_18_0, arg_18_2, arg_18_3))
+	return slot0.try(uv0.pump.all(slot4, slot2, slot3))
 end
 
-function var_0_12.__index.close(arg_19_0)
-	return arg_19_0.c:close()
+function slot12.__index.close(slot0)
+	return slot0.c:close()
 end
 
-local function var_0_13(arg_20_0)
-	local var_20_0 = arg_20_0
+function slot13(slot0)
+	slot1 = slot0
 
-	if not arg_20_0.proxy and not var_0_8.PROXY then
-		var_20_0 = {
-			path = var_0_0.try(arg_20_0.path, "invalid path 'nil'"),
-			params = arg_20_0.params,
-			query = arg_20_0.query,
-			fragment = arg_20_0.fragment
+	if not slot0.proxy and not uv0.PROXY then
+		slot1 = {
+			path = uv1.try(slot0.path, "invalid path 'nil'"),
+			params = slot0.params,
+			query = slot0.query,
+			fragment = slot0.fragment
 		}
 	end
 
-	return var_0_1.build(var_20_0)
+	return uv2.build(slot1)
 end
 
-local function var_0_14(arg_21_0)
-	local var_21_0 = arg_21_0.proxy or var_0_8.PROXY
+function slot14(slot0)
+	if slot0.proxy or uv0.PROXY then
+		slot1 = uv1.parse(slot1)
 
-	if var_21_0 then
-		local var_21_1 = var_0_1.parse(var_21_0)
-
-		return var_21_1.host, var_21_1.port or 3128
+		return slot1.host, slot1.port or 3128
 	else
-		return arg_21_0.host, arg_21_0.port
+		return slot0.host, slot0.port
 	end
 end
 
-local function var_0_15(arg_22_0)
-	local var_22_0 = var_0_4.gsub(arg_22_0.authority, "^.-@", "")
-	local var_22_1 = {
+function slot15(slot0)
+	slot2 = {
 		connection = "close, TE",
 		te = "trailers",
-		["user-agent"] = var_0_8.USERAGENT,
-		host = var_22_0
+		["user-agent"] = uv1.USERAGENT,
+		host = uv0.gsub(slot0.authority, "^.-@", ""),
+		authorization = "Basic " .. uv2.b64(slot0.user .. ":" .. slot0.password)
 	}
 
-	if arg_22_0.user and arg_22_0.password then
-		var_22_1.authorization = "Basic " .. var_0_3.b64(arg_22_0.user .. ":" .. arg_22_0.password)
+	if slot0.user and slot0.password then
+		-- Nothing
 	end
 
-	local var_22_2 = arg_22_0.proxy or var_0_8.PROXY
-
-	if var_22_2 then
-		local var_22_3 = var_0_1.parse(var_22_2)
-
-		if var_22_3.user and var_22_3.password then
-			var_22_1["proxy-authorization"] = "Basic " .. var_0_3.b64(var_22_3.user .. ":" .. var_22_3.password)
-		end
+	if (slot0.proxy or uv1.PROXY) and uv3.parse(slot3).user and slot3.password then
+		slot2["proxy-authorization"] = "Basic " .. uv2.b64(slot3.user .. ":" .. slot3.password)
 	end
 
-	for iter_22_0, iter_22_1 in var_0_6.pairs(arg_22_0.headers or var_22_1) do
-		var_22_1[var_0_4.lower(iter_22_0)] = iter_22_1
+	for slot7, slot8 in uv4.pairs(slot0.headers or slot2) do
+		slot2[uv0.lower(slot7)] = slot8
 	end
 
-	return var_22_1
+	return slot2
 end
 
-local var_0_16 = {
+slot16 = {
 	host = "",
 	scheme = "http",
 	path = "/",
-	port = var_0_10
+	port = 80
 }
 
-local function var_0_17(arg_23_0)
-	local var_23_0 = arg_23_0.url and var_0_1.parse(arg_23_0.url, var_0_16) or {}
+function slot17(slot0)
+	slot1 = slot0.url and uv0.parse(slot0.url, uv1) or {}
 
-	for iter_23_0, iter_23_1 in var_0_6.pairs(arg_23_0) do
-		var_23_0[iter_23_0] = iter_23_1
+	for slot5, slot6 in uv2.pairs(slot0) do
+		slot1[slot5] = slot6
 	end
 
-	if var_23_0.port == "" then
-		var_23_0.port = var_0_10
+	if slot1.port == "" then
+		slot1.port = uv3
 	end
 
-	if not var_23_0.host or var_23_0.host == "" then
-		var_0_0.try(nil, "invalid host '" .. var_0_6.tostring(var_23_0.host) .. "'")
+	if not slot1.host or slot1.host == "" then
+		uv4.try(nil, "invalid host '" .. uv2.tostring(slot1.host) .. "'")
 	end
 
-	var_23_0.uri = arg_23_0.uri or var_0_13(var_23_0)
-	var_23_0.headers = var_0_15(var_23_0)
-	var_23_0.host, var_23_0.port = var_0_14(var_23_0)
+	slot1.uri = slot0.uri or uv5(slot1)
+	slot1.headers = uv6(slot1)
+	slot1.host, slot1.port = uv7(slot1)
 
-	return var_23_0
+	return slot1
 end
 
-local function var_0_18(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = arg_24_2.location
-
-	if not var_24_0 then
+function slot18(slot0, slot1, slot2)
+	if not slot2.location then
 		return false
 	end
 
-	local var_24_1 = var_0_4.gsub(var_24_0, "%s", "")
-
-	if var_24_1 == "" then
+	if uv0.gsub(slot3, "%s", "") == "" then
 		return false
 	end
 
-	local var_24_2 = var_0_4.match(var_24_1, "^([%w][%w%+%-%.]*)%:")
-
-	if var_24_2 and not var_0_9[var_24_2] then
+	if uv0.match(slot3, "^([%w][%w%+%-%.]*)%:") and not uv1[slot4] then
 		return false
 	end
 
-	return arg_24_0.redirect ~= false and (arg_24_1 == 301 or arg_24_1 == 302 or arg_24_1 == 303 or arg_24_1 == 307) and (not arg_24_0.method or arg_24_0.method == "GET" or arg_24_0.method == "HEAD") and (not arg_24_0.nredirects or arg_24_0.nredirects < 5)
+	return slot0.redirect ~= false and (slot1 == 301 or slot1 == 302 or slot1 == 303 or slot1 == 307) and (not slot0.method or slot0.method == "GET" or slot0.method == "HEAD") and (not slot0.nredirects or slot0.nredirects < 5)
 end
 
-local function var_0_19(arg_25_0, arg_25_1)
-	if arg_25_0.method == "HEAD" then
+function slot19(slot0, slot1)
+	if slot0.method == "HEAD" then
 		return nil
 	end
 
-	if arg_25_1 == 204 or arg_25_1 == 304 then
+	if slot1 == 204 or slot1 == 304 then
 		return nil
 	end
 
-	if arg_25_1 >= 100 and arg_25_1 < 200 then
+	if slot1 >= 100 and slot1 < 200 then
 		return nil
 	end
 
 	return 1
 end
 
-local var_0_20
-local var_0_21
+slot20, slot21 = nil
 
-local function var_0_22(arg_26_0, arg_26_1)
-	local var_26_0, var_26_1, var_26_2, var_26_3 = var_0_20({
-		url = var_0_1.absolute(arg_26_0.url, arg_26_1),
-		source = arg_26_0.source,
-		sink = arg_26_0.sink,
-		headers = arg_26_0.headers,
-		proxy = arg_26_0.proxy,
-		nredirects = (arg_26_0.nredirects or 0) + 1,
-		create = arg_26_0.create
+function slot21(slot0, slot1)
+	slot2, slot3, slot4, slot5 = uv0({
+		url = uv1.absolute(slot0.url, slot1),
+		source = slot0.source,
+		sink = slot0.sink,
+		headers = slot0.headers,
+		proxy = slot0.proxy,
+		nredirects = (slot0.nredirects or 0) + 1,
+		create = slot0.create
 	})
+	slot4 = slot4 or {}
+	slot4.location = slot4.location or slot1
 
-	var_26_2 = var_26_2 or {}
-	var_26_2.location = var_26_2.location or arg_26_1
-
-	return var_26_0, var_26_1, var_26_2, var_26_3
+	return slot2, slot3, slot4, slot5
 end
 
-function var_0_20(arg_27_0)
-	local var_27_0 = var_0_17(arg_27_0)
-	local var_27_1 = var_0_8.open(var_27_0.host, var_27_0.port, var_27_0.create)
+function slot20(slot0)
+	slot1 = uv0(slot0)
+	slot2 = uv1.open(slot1.host, slot1.port, slot1.create)
 
-	var_27_1:sendrequestline(var_27_0.method, var_27_0.uri)
-	var_27_1:sendheaders(var_27_0.headers)
+	slot2:sendrequestline(slot1.method, slot1.uri)
+	slot2:sendheaders(slot1.headers)
 
-	if var_27_0.source then
-		var_27_1:sendbody(var_27_0.headers, var_27_0.source, var_27_0.step)
+	if slot1.source then
+		slot2:sendbody(slot1.headers, slot1.source, slot1.step)
 	end
 
-	local var_27_2, var_27_3 = var_27_1:receivestatusline()
+	slot3, slot4 = slot2:receivestatusline()
 
-	if not var_27_2 then
-		var_27_1:receive09body(var_27_3, var_27_0.sink, var_27_0.step)
+	if not slot3 then
+		slot2:receive09body(slot4, slot1.sink, slot1.step)
 
 		return 1, 200
 	end
 
-	local var_27_4
+	slot5 = nil
 
-	while var_27_2 == 100 do
-		local var_27_5 = var_27_1:receiveheaders()
-
-		var_27_2, var_27_3 = var_27_1:receivestatusline()
+	while slot3 == 100 do
+		slot5 = slot2:receiveheaders()
+		slot3, slot4 = slot2:receivestatusline()
 	end
 
-	local var_27_6 = var_27_1:receiveheaders()
+	if uv2(slot1, slot3, slot2:receiveheaders()) and not slot1.source then
+		slot2:close()
 
-	if var_0_18(var_27_0, var_27_2, var_27_6) and not var_27_0.source then
-		var_27_1:close()
-
-		return var_0_22(arg_27_0, var_27_6.location)
+		return uv3(slot0, slot5.location)
 	end
 
-	if var_0_19(var_27_0, var_27_2) then
-		var_27_1:receivebody(var_27_6, var_27_0.sink, var_27_0.step)
+	if uv4(slot1, slot3) then
+		slot2:receivebody(slot5, slot1.sink, slot1.step)
 	end
 
-	var_27_1:close()
+	slot2:close()
 
-	return 1, var_27_2, var_27_6, var_27_3
+	return 1, slot3, slot5, slot4
 end
 
-local function var_0_23(arg_28_0, arg_28_1)
-	local var_28_0 = {}
-	local var_28_1 = {
-		url = arg_28_0,
-		sink = var_0_2.sink.table(var_28_0),
-		target = var_28_0
-	}
+function slot8.genericform(slot0, slot1)
+	slot2 = {}
 
-	if arg_28_1 then
-		var_28_1.source = var_0_2.source.string(arg_28_1)
-		var_28_1.headers = {
+	if slot1 then
+		-- Nothing
+	end
+
+	return {
+		url = slot0,
+		sink = uv0.sink.table(slot2),
+		target = slot2,
+		source = uv0.source.string(slot1),
+		headers = {
 			["content-type"] = "application/x-www-form-urlencoded",
-			["content-length"] = var_0_4.len(arg_28_1)
-		}
-		var_28_1.method = "POST"
-	end
-
-	return var_28_1
+			["content-length"] = uv1.len(slot1)
+		},
+		method = "POST"
+	}
 end
 
-var_0_8.genericform = var_0_23
+function slot23(slot0, slot1)
+	slot2 = uv0(slot0, slot1)
+	slot3, slot4, slot5, slot6 = uv1(slot2)
 
-local function var_0_24(arg_29_0, arg_29_1)
-	local var_29_0 = var_0_23(arg_29_0, arg_29_1)
-	local var_29_1, var_29_2, var_29_3, var_29_4 = var_0_20(var_29_0)
-
-	return var_0_7.concat(var_29_0.target), var_29_2, var_29_3, var_29_4
+	return uv2.concat(slot2.target), slot4, slot5, slot6
 end
 
-var_0_8.request = var_0_0.protect(function(arg_30_0, arg_30_1)
-	if var_0_6.type(arg_30_0) == "string" then
-		return var_0_24(arg_30_0, arg_30_1)
+slot8.request = slot0.protect(function (slot0, slot1)
+	if uv0.type(slot0) == "string" then
+		return uv1(slot0, slot1)
 	else
-		return var_0_20(arg_30_0)
+		return uv2(slot0)
 	end
 end)
 
-return var_0_8
+return slot8

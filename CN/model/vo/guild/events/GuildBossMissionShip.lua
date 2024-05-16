@@ -1,37 +1,31 @@
-﻿local var_0_0 = class("GuildBossMissionShip")
+slot0 = class("GuildBossMissionShip")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0.super = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0.super = slot1
 
-	setmetatable(arg_1_0, {
-		__index = function(arg_2_0, arg_2_1)
-			local var_2_0 = rawget(arg_2_0, "class")
-
-			return var_2_0[arg_2_1] and var_2_0[arg_2_1] or arg_1_1[arg_2_1]
+	setmetatable(slot0, {
+		__index = function (slot0, slot1)
+			return rawget(slot0, "class")[slot1] and slot2[slot1] or uv0[slot1]
 		end
 	})
 end
 
-function var_0_0.IsOwner(arg_3_0)
-	return tonumber(GuildAssaultFleet.GetUserId(arg_3_0.id)) == getProxy(PlayerProxy):getRawData().id
+function slot0.IsOwner(slot0)
+	return tonumber(GuildAssaultFleet.GetUserId(slot0.id)) == getProxy(PlayerProxy):getRawData().id
 end
 
-function var_0_0.GetUniqueId(arg_4_0)
-	return GuildAssaultFleet.GetRealId(arg_4_0.id)
+function slot0.GetUniqueId(slot0)
+	return GuildAssaultFleet.GetRealId(slot0.id)
 end
 
-function var_0_0.getProperties(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = getProxy(GuildProxy):getRawData()
-	local var_5_1 = {}
-	local var_5_2 = arg_5_0.super:getProperties(arg_5_1, arg_5_2)
-
-	for iter_5_0, iter_5_1 in pairs(var_5_2) do
-		local var_5_3 = var_5_0:getShipAddition(iter_5_0, arg_5_0:getShipType())
-
-		var_5_1[iter_5_0] = (var_5_2[iter_5_0] or 0) + var_5_3
+function slot0.getProperties(slot0, slot1, slot2)
+	for slot9, slot10 in pairs(slot0.super:getProperties(slot1, slot2)) do
+		-- Nothing
 	end
 
-	return var_5_1
+	return {
+		[slot9] = (slot5[slot9] or 0) + getProxy(GuildProxy):getRawData():getShipAddition(slot9, slot0:getShipType())
+	}
 end
 
-return var_0_0
+return slot0

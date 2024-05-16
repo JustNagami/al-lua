@@ -1,112 +1,111 @@
-﻿local var_0_0 = class("OreAkashiControl")
+slot0 = class("OreAkashiControl")
+slot0.STATUS_NULL = 0
+slot0.STATUS_WOOD_BOX = 1
+slot0.STATUS_IRON_BOX = 2
+slot0.STATUS_CART = 3
+slot0.HIT_DELTA = 15
+slot0.HIT_MOVE_TIME = 0.5
 
-var_0_0.STATUS_NULL = 0
-var_0_0.STATUS_WOOD_BOX = 1
-var_0_0.STATUS_IRON_BOX = 2
-var_0_0.STATUS_CART = 3
-var_0_0.HIT_DELTA = 15
-var_0_0.HIT_MOVE_TIME = 0.5
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.binder = slot1
+	slot0._tf = slot2
+	slot0.collisionMgr = slot3
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.binder = arg_1_1
-	arg_1_0._tf = arg_1_2
-	arg_1_0.collisionMgr = arg_1_3
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.uiMgr = pg.UIMgr.GetInstance()
+function slot0.Init(slot0)
+	slot0.uiMgr = pg.UIMgr.GetInstance()
 
-	arg_2_0.collisionMgr:SetAkashiObject(arg_2_0)
+	slot0.collisionMgr:SetAkashiObject(slot0)
 
-	arg_2_0.oreTpl = arg_2_0._tf:Find("oreTpl")
+	slot0.oreTpl = slot0._tf:Find("oreTpl")
 
-	arg_2_0:AddListener()
-	arg_2_0:AddDftAniEvent()
-	arg_2_0:Reset()
+	slot0:AddListener()
+	slot0:AddDftAniEvent()
+	slot0:Reset()
 
-	arg_2_0.aabbTF = arg_2_0._tf:Find("aabb")
+	slot0.aabbTF = slot0._tf:Find("aabb")
 
-	setActive(arg_2_0.aabbTF, OreGameConfig.SHOW_AABB)
+	setActive(slot0.aabbTF, OreGameConfig.SHOW_AABB)
 
-	arg_2_0.aabb = OreGameHelper.GetAABBWithTF(arg_2_0.aabbTF)
+	slot0.aabb = OreGameHelper.GetAABBWithTF(slot0.aabbTF)
 end
 
-function var_0_0.AddListener(arg_3_0)
-	arg_3_0.binder:bind(OreGameConfig.EVENT_DO_CARRY, function(arg_4_0, arg_4_1)
-		arg_3_0.weight = arg_3_0.weight + arg_4_1.weight
-		arg_3_0.point = arg_3_0.point + arg_4_1.point
+function slot0.AddListener(slot0)
+	slot0.binder:bind(OreGameConfig.EVENT_DO_CARRY, function (slot0, slot1)
+		uv0.weight = uv0.weight + slot1.weight
+		uv0.point = uv0.point + slot1.point
 
-		arg_3_0:CheckStatus()
-		arg_3_0:AddOre(arg_4_1.type)
+		uv0:CheckStatus()
+		uv0:AddOre(slot1.type)
 	end)
-	arg_3_0.binder:bind(OreGameConfig.EVENT_AKASHI_HIT, function(arg_5_0, arg_5_1)
-		if arg_3_0.invincible then
+	slot0.binder:bind(OreGameConfig.EVENT_AKASHI_HIT, function (slot0, slot1)
+		if uv0.invincible then
 			return
 		end
 
-		arg_3_0:PlayHitAnim(arg_5_1.dir, arg_5_1.class, arg_5_1.y)
+		uv0:PlayHitAnim(slot1.dir, slot1.class, slot1.y)
 	end)
 end
 
-function var_0_0.AddDftAniEvent(arg_6_0)
-	eachChild(arg_6_0._tf:Find("main"), function(arg_7_0)
-		arg_7_0:Find("main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-			if arg_6_0.isDeliver then
-				arg_6_0:ResetData()
+function slot0.AddDftAniEvent(slot0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		slot0:Find("main/Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+			if uv0.isDeliver then
+				uv0:ResetData()
 			else
-				arg_6_0:ResetData()
-				arg_6_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Idle_S_Sad")
+				uv0:ResetData()
+				uv0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Idle_S_Sad")
 
-				arg_6_0.mainAnimName = "Idle_S_Sad"
+				uv0.mainAnimName = "Idle_S_Sad"
 			end
 		end)
 	end)
-	eachChild(arg_6_0._tf:Find("effect"), function(arg_9_0)
-		arg_9_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
-			setActive(arg_9_0, false)
+	eachChild(slot0._tf:Find("effect"), function (slot0)
+		slot0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
+			setActive(uv0, false)
 		end)
 	end)
 end
 
-function var_0_0.Reset(arg_11_0)
-	setAnchoredPosition(arg_11_0._tf, Vector2(0, -100))
+function slot0.Reset(slot0)
+	setAnchoredPosition(slot0._tf, Vector2(0, -100))
 
-	arg_11_0.invincible = nil
+	slot0.invincible = nil
 
-	arg_11_0:ResetData()
-	arg_11_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Idle_S_0")
+	slot0:ResetData()
+	slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Idle_S_0")
 end
 
-function var_0_0.ResetData(arg_12_0)
-	arg_12_0.mainAnimName, arg_12_0.toolAnimName, arg_12_0.oreAnimName = "", "", ""
+function slot0.ResetData(slot0)
+	slot0.oreAnimName = ""
+	slot0.toolAnimName = ""
+	slot0.mainAnimName = ""
 
-	arg_12_0:SetAnimDir("S")
+	slot0:SetAnimDir("S")
 
-	arg_12_0.weight = 0
-	arg_12_0.point = 0
-	arg_12_0.isDeliver = false
-	arg_12_0.playHitAnim = nil
+	slot0.weight = 0
+	slot0.point = 0
+	slot0.isDeliver = false
+	slot0.playHitAnim = nil
 
-	arg_12_0:ResetStatus()
+	slot0:ResetStatus()
 end
 
-function var_0_0.ResetStatus(arg_13_0)
-	arg_13_0:SetStatus(var_0_0.STATUS_NULL)
+function slot0.ResetStatus(slot0)
+	slot0:SetStatus(uv0.STATUS_NULL)
 
-	arg_13_0.oreList = {}
+	slot0.oreList = {}
 
-	eachChild(arg_13_0._tf:Find("main"), function(arg_14_0)
-		for iter_14_0 = 1, 3 do
-			local var_14_0 = arg_14_0:Find("ore/Image/" .. iter_14_0 .. "/oreTF")
-
-			removeAllChildren(var_14_0)
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		for slot4 = 1, 3 do
+			removeAllChildren(slot0:Find("ore/Image/" .. slot4 .. "/oreTF"))
 		end
 	end)
 end
 
-local var_0_1 = {
+slot1 = {
 	S = {
 		EF_Get = {
 			Vector2(0, 0),
@@ -142,276 +141,263 @@ local var_0_1 = {
 	}
 }
 
-function var_0_0.PlayEffect(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0.animDir
-
-	if var_15_0 == "N" then
+function slot0.PlayEffect(slot0, slot1)
+	if slot0.animDir == "N" then
 		return
 	end
 
-	local var_15_1 = arg_15_0._tf:Find("effect/" .. arg_15_1)
-	local var_15_2 = arg_15_0.status
+	slot3 = slot0._tf:Find("effect/" .. slot1)
+	slot4 = slot0.status
 
-	if arg_15_1 == "EF_Upgrade" then
-		var_15_2 = arg_15_0.status == var_0_0.STATUS_IRON_BOX and 2 or 1
+	if slot1 == "EF_Upgrade" then
+		slot4 = slot0.status == uv0.STATUS_IRON_BOX and 2 or 1
 	end
 
-	local var_15_3 = var_0_1[var_15_0][arg_15_1][var_15_2]
-
-	setAnchoredPosition(var_15_1, var_15_3)
-	setActive(var_15_1, true)
+	setAnchoredPosition(slot3, uv1[slot2][slot1][slot4])
+	setActive(slot3, true)
 end
 
-function var_0_0.AddOre(arg_16_0, arg_16_1)
-	if arg_16_0.status == var_0_0.STATUS_WOOD_BOX and #arg_16_0.oreList >= 6 then
+function slot0.AddOre(slot0, slot1)
+	if slot0.status == uv0.STATUS_WOOD_BOX and #slot0.oreList >= 6 then
 		return
 	end
 
-	if (arg_16_0.status == var_0_0.STATUS_IRON_BOX or arg_16_0.status == var_0_0.STATUS_CART) and #arg_16_0.oreList >= 8 then
+	if (slot0.status == uv0.STATUS_IRON_BOX or slot0.status == uv0.STATUS_CART) and #slot0.oreList >= 8 then
 		return
 	end
 
-	table.insert(arg_16_0.oreList, arg_16_1)
-	eachChild(arg_16_0._tf:Find("main"), function(arg_17_0)
-		if arg_17_0.name == "N" and arg_16_0.status ~= var_0_0.STATUS_CART then
+	table.insert(slot0.oreList, slot1)
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		if slot0.name == "N" and uv0.status ~= uv1.STATUS_CART then
 			return
 		end
 
-		local var_17_0 = arg_17_0:Find("ore/Image/" .. arg_16_0.status .. "/oreTF")
-		local var_17_1 = arg_17_0:Find("ore/Image/" .. arg_16_0.status .. "/pos/" .. "num_" .. #arg_16_0.oreList)
+		slot2 = slot0:Find("ore/Image/" .. uv0.status .. "/pos/" .. "num_" .. #uv0.oreList)
 
-		if var_17_0.childCount < #arg_16_0.oreList - 1 then
-			for iter_17_0, iter_17_1 in ipairs(arg_16_0.oreList) do
-				local var_17_2 = arg_16_0.oreTpl:Find(iter_17_1)
-				local var_17_3 = cloneTplTo(var_17_2, var_17_0, iter_17_0)
+		if slot0:Find("ore/Image/" .. uv0.status .. "/oreTF").childCount < #uv0.oreList - 1 then
+			for slot6, slot7 in ipairs(uv0.oreList) do
+				slot9 = cloneTplTo(uv0.oreTpl:Find(slot7), slot1, slot6)
 			end
 		else
-			local var_17_4 = arg_16_0.oreTpl:Find(arg_16_1)
-			local var_17_5 = cloneTplTo(var_17_4, var_17_0, #arg_16_0.oreList)
+			slot4 = cloneTplTo(uv0.oreTpl:Find(uv2), slot1, #uv0.oreList)
 		end
 
-		eachChild(var_17_1, function(arg_18_0)
-			setAnchoredPosition(var_17_0:Find(arg_18_0.name), arg_18_0.anchoredPosition)
+		eachChild(slot2, function (slot0)
+			setAnchoredPosition(uv0:Find(slot0.name), slot0.anchoredPosition)
 		end)
 	end)
 end
 
-function var_0_0.CheckStatus(arg_19_0)
-	local var_19_0 = false
+function slot0.CheckStatus(slot0)
+	slot1 = false
 
-	if arg_19_0.status == var_0_0.STATUS_NULL then
-		var_19_0 = arg_19_0.weight >= 0
-	elseif arg_19_0.status == var_0_0.STATUS_WOOD_BOX then
-		var_19_0 = arg_19_0.weight >= OreGameConfig.CAPACITY.WOOD_BOX
-	elseif arg_19_0.status == var_0_0.STATUS_IRON_BOX then
-		var_19_0 = arg_19_0.weight >= OreGameConfig.CAPACITY.IRON_BOX
+	if slot0.status == uv0.STATUS_NULL then
+		slot1 = slot0.weight >= 0
+	elseif slot0.status == uv0.STATUS_WOOD_BOX then
+		slot1 = OreGameConfig.CAPACITY.WOOD_BOX <= slot0.weight
+	elseif slot0.status == uv0.STATUS_IRON_BOX then
+		slot1 = OreGameConfig.CAPACITY.IRON_BOX <= slot0.weight
 	end
 
-	if var_19_0 then
-		arg_19_0:PlayEffect("EF_Upgrade")
-		arg_19_0:SetStatus(arg_19_0.status + 1)
+	if slot1 then
+		slot0:PlayEffect("EF_Upgrade")
+		slot0:SetStatus(slot0.status + 1)
 	else
-		arg_19_0:PlayEffect("EF_Get")
+		slot0:PlayEffect("EF_Get")
 	end
 end
 
-function var_0_0.SetStatus(arg_20_0, arg_20_1)
-	arg_20_0.status = arg_20_1
+function slot0.SetStatus(slot0, slot1)
+	slot0.status = slot1
 
-	eachChild(arg_20_0._tf:Find("main"), function(arg_21_0)
-		setActive(arg_21_0:Find("tool"), arg_20_0.status ~= var_0_0.STATUS_NULL)
-		setActive(arg_21_0:Find("ore"), arg_20_0.status ~= var_0_0.STATUS_NULL)
-		eachChild(arg_21_0:Find("ore/Image"), function(arg_22_0)
-			setActive(arg_22_0, arg_20_0.status == tonumber(arg_22_0.name))
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		setActive(slot0:Find("tool"), uv0.status ~= uv1.STATUS_NULL)
+		setActive(slot0:Find("ore"), uv0.status ~= uv1.STATUS_NULL)
+		eachChild(slot0:Find("ore/Image"), function (slot0)
+			setActive(slot0, uv0.status == tonumber(slot0.name))
 		end)
 	end)
 
-	arg_20_0.speed = OreGameConfig.SPEED[arg_20_0.status]
+	slot0.speed = OreGameConfig.SPEED[slot0.status]
 end
 
-function var_0_0.SetAnimDir(arg_23_0, arg_23_1)
-	arg_23_0.animDir = arg_23_1
+function slot0.SetAnimDir(slot0, slot1)
+	slot0.animDir = slot1
 
-	eachChild(arg_23_0._tf:Find("main"), function(arg_24_0)
-		if arg_24_0.name == arg_23_0.animDir then
-			setActive(arg_24_0, true)
+	eachChild(slot0._tf:Find("main"), function (slot0)
+		if slot0.name == uv0.animDir then
+			setActive(slot0, true)
 
-			arg_23_0.mainTF = arg_24_0
+			uv0.mainTF = slot0
 		else
-			setActive(arg_24_0, false)
+			setActive(slot0, false)
 		end
 	end)
 end
 
-function var_0_0.PlayHitAnim(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-	arg_25_0.invincible = 0
+function slot0.PlayHitAnim(slot0, slot1, slot2, slot3)
+	slot0.invincible = 0
 
-	setActive(arg_25_0._tf:Find("effect/EF_Clash_" .. arg_25_1), true)
+	setActive(slot0._tf:Find("effect/EF_Clash_" .. slot1), true)
 
-	local var_25_0 = ""
-	local var_25_1 = arg_25_2 < 4 and "Light" or "Heavy"
-
-	arg_25_0.hitPos = {
+	slot4 = ""
+	slot5 = slot2 < 4 and "Light" or "Heavy"
+	slot0.hitPos = {
 		x = 0,
-		y = 0
+		y = 0,
+		x = slot1 == "W" and -uv0.HIT_DELTA or uv0.HIT_DELTA
 	}
-	arg_25_0.hitPos.x = arg_25_1 == "W" and -var_0_0.HIT_DELTA or var_0_0.HIT_DELTA
 
-	if arg_25_3 <= arg_25_0._tf.anchoredPosition.y then
-		var_25_0 = arg_25_1 == "W" and "CW" or "CCW"
-		arg_25_0.hitPos.y = var_0_0.HIT_DELTA
+	if slot3 <= slot0._tf.anchoredPosition.y then
+		slot4 = slot1 == "W" and "CW" or "CCW"
+		slot0.hitPos.y = uv0.HIT_DELTA
 	else
-		var_25_0 = arg_25_1 == "W" and "CCW" or "CW"
-		arg_25_0.hitPos.y = -var_0_0.HIT_DELTA
+		slot4 = slot1 == "W" and "CCW" or "CW"
+		slot0.hitPos.y = -uv0.HIT_DELTA
 	end
 
-	arg_25_0.hitTime = 0
-	arg_25_0.hitAnimName = "Stun_" .. var_25_1 .. "_" .. var_25_0
+	slot0.hitTime = 0
+	slot0.hitAnimName = "Stun_" .. slot5 .. "_" .. slot4
 
-	arg_25_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Clash_" .. arg_25_1)
-	arg_25_0.binder:emit(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, {
-		pos = arg_25_0._tf.anchoredPosition,
-		hitPos = arg_25_0.hitPos,
-		status = arg_25_0.status,
-		oreTF = arg_25_0.mainTF:Find("ore/Image/" .. tostring(arg_25_0.status))
+	slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Clash_" .. slot1)
+	slot0.binder:emit(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, {
+		pos = slot0._tf.anchoredPosition,
+		hitPos = slot0.hitPos,
+		status = slot0.status,
+		oreTF = slot0.mainTF:Find("ore/Image/" .. tostring(slot0.status))
 	})
-	arg_25_0:ResetStatus()
+	slot0:ResetStatus()
 end
 
-function var_0_0.PlayDeliver(arg_26_0)
-	arg_26_0.isDeliver = true
+function slot0.PlayDeliver(slot0)
+	slot0.isDeliver = true
 
-	setActive(arg_26_0.mainTF:Find("tool"), false)
-	setActive(arg_26_0.mainTF:Find("ore"), false)
-	arg_26_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Deliver")
+	setActive(slot0.mainTF:Find("tool"), false)
+	setActive(slot0.mainTF:Find("ore"), false)
+	slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Deliver")
 end
 
-function var_0_0.CheckDeliver(arg_27_0)
-	if arg_27_0._tf.anchoredPosition.y < OreGameConfig.RANGE_Y[1] + 2 and arg_27_0._tf.anchoredPosition.x > -100 and arg_27_0._tf.anchoredPosition.x < 100 and arg_27_0.animDir == "S" and arg_27_0.weight > 0 then
-		arg_27_0:PlayDeliver()
-		arg_27_0.binder:emit(OreGameConfig.EVENT_DELIVER, {
-			point = arg_27_0.point,
-			status = arg_27_0.status,
-			pos = arg_27_0._tf.anchoredPosition,
-			oreTF = arg_27_0.mainTF:Find("ore/Image/" .. tostring(arg_27_0.status))
+function slot0.CheckDeliver(slot0)
+	if slot0._tf.anchoredPosition.y < OreGameConfig.RANGE_Y[1] + 2 and slot0._tf.anchoredPosition.x > -100 and slot0._tf.anchoredPosition.x < 100 and slot0.animDir == "S" and slot0.weight > 0 then
+		slot0:PlayDeliver()
+		slot0.binder:emit(OreGameConfig.EVENT_DELIVER, {
+			point = slot0.point,
+			status = slot0.status,
+			pos = slot0._tf.anchoredPosition,
+			oreTF = slot0.mainTF:Find("ore/Image/" .. tostring(slot0.status))
 		})
 	end
 end
 
-function var_0_0.OnTimer(arg_28_0, arg_28_1)
-	if arg_28_0.invincible then
-		arg_28_0.invincible = arg_28_0.invincible + arg_28_1
+function slot0.OnTimer(slot0, slot1)
+	if slot0.invincible then
+		slot0.invincible = slot0.invincible + slot1
 
-		if arg_28_0.invincible >= OreGameConfig.INVINCIBLE_TIME then
-			arg_28_0.invincible = nil
+		if OreGameConfig.INVINCIBLE_TIME <= slot0.invincible then
+			slot0.invincible = nil
 		end
 	end
 
-	if arg_28_0.hitTime then
-		if arg_28_1 * 5 < arg_28_0.hitTime and arg_28_0.hitTime <= arg_28_1 * 6 then
-			arg_28_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play(arg_28_0.hitAnimName)
+	if slot0.hitTime then
+		if slot1 * 5 < slot0.hitTime and slot0.hitTime <= slot1 * 6 then
+			slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play(slot0.hitAnimName)
 
-			arg_28_0.playHitAnim = true
-		elseif arg_28_0.hitTime > arg_28_1 * 6 then
-			local var_28_0 = {
-				x = arg_28_0._tf.anchoredPosition.x + arg_28_0.hitPos.x * arg_28_1 / var_0_0.HIT_MOVE_TIME,
-				y = arg_28_0._tf.anchoredPosition.y + arg_28_0.hitPos.y * arg_28_1 / var_0_0.HIT_MOVE_TIME
-			}
-
-			arg_28_0:SetPosition(var_28_0)
+			slot0.playHitAnim = true
+		elseif slot0.hitTime > slot1 * 6 then
+			slot0:SetPosition({
+				x = slot0._tf.anchoredPosition.x + slot0.hitPos.x * slot1 / uv0.HIT_MOVE_TIME,
+				y = slot0._tf.anchoredPosition.y + slot0.hitPos.y * slot1 / uv0.HIT_MOVE_TIME
+			})
 		end
 
-		arg_28_0.hitTime = arg_28_0.hitTime + arg_28_1
+		slot0.hitTime = slot0.hitTime + slot1
 
-		if arg_28_0.hitTime >= var_0_0.HIT_MOVE_TIME then
-			arg_28_0.hitTime = nil
+		if uv0.HIT_MOVE_TIME <= slot0.hitTime then
+			slot0.hitTime = nil
 		end
 
 		return
 	end
 
-	if not arg_28_0.isDeliver and not arg_28_0.playHitAnim then
-		local var_28_1 = Vector2(arg_28_0.uiMgr.hrz, arg_28_0.uiMgr.vtc)
+	if not slot0.isDeliver and not slot0.playHitAnim then
+		slot2 = Vector2(slot0.uiMgr.hrz, slot0.uiMgr.vtc)
 
-		arg_28_0:UpdateAnim(var_28_1)
-		arg_28_0:UpdatePosition(var_28_1)
-		arg_28_0:CheckDeliver()
+		slot0:UpdateAnim(slot2)
+		slot0:UpdatePosition(slot2)
+		slot0:CheckDeliver()
 	end
 end
 
-function var_0_0.UpdateAnim(arg_29_0, arg_29_1)
-	local var_29_0 = OreGameHelper.GetFourDirLabel(arg_29_1)
-	local var_29_1 = false
+function slot0.UpdateAnim(slot0, slot1)
+	slot3 = false
 
-	if var_29_0 == "STAND" then
-		var_29_0 = arg_29_0.animDir
-		var_29_1 = true
+	if OreGameHelper.GetFourDirLabel(slot1) == "STAND" then
+		slot2 = slot0.animDir
+		slot3 = true
 	end
 
-	arg_29_0:SetAnimDir(var_29_0)
+	slot0:SetAnimDir(slot2)
 
-	local var_29_2 = ""
-	local var_29_3 = ""
-	local var_29_4 = ""
+	slot4 = ""
+	slot5 = ""
+	slot6 = ""
 
-	if var_29_1 then
-		if arg_29_0.mainAnimName ~= "Idle_S_Sad" then
-			var_29_2 = "Idle_" .. var_29_0 .. "_" .. arg_29_0.status
+	if slot3 then
+		if slot0.mainAnimName ~= "Idle_S_Sad" then
+			slot4 = "Idle_" .. slot2 .. "_" .. slot0.status
 
-			if arg_29_0.status ~= var_0_0.STATUS_NULL then
-				var_29_3 = var_29_2
-				var_29_4 = var_29_2
+			if slot0.status ~= uv0.STATUS_NULL then
+				slot5 = slot4
+				slot6 = slot4
 			end
 		else
-			var_29_2 = "Idle_S_Sad"
-			var_29_3 = "Idle_S_1"
-			var_29_4 = "Idle_S_1"
+			slot4 = "Idle_S_Sad"
+			slot5 = "Idle_S_1"
+			slot6 = "Idle_S_1"
 		end
 	else
-		var_29_2 = "Move_" .. var_29_0 .. "_" .. arg_29_0.status
+		slot4 = "Move_" .. slot2 .. "_" .. slot0.status
 
-		if arg_29_0.status ~= var_0_0.STATUS_NULL then
-			var_29_3 = var_29_2
-			var_29_4 = var_29_2
+		if slot0.status ~= uv0.STATUS_NULL then
+			slot5 = slot4
+			slot6 = slot4
 		end
 	end
 
-	if var_29_2 ~= "" and arg_29_0.mainAnimName ~= var_29_2 then
-		arg_29_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play(var_29_2)
+	if slot4 ~= "" and slot0.mainAnimName ~= slot4 then
+		slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play(slot4)
 
-		arg_29_0.mainAnimName = var_29_2
+		slot0.mainAnimName = slot4
 	end
 
-	if arg_29_0.status ~= var_0_0.STATUS_NULL then
-		if var_29_4 ~= "" and var_29_4 ~= arg_29_0.toolAnimName then
-			if string.find(var_29_4, "N_1") or string.find(var_29_4, "N_2") then
-				arg_29_0.mainTF:Find("tool/Image"):GetComponent(typeof(Image)).enabled = false
+	if slot0.status ~= uv0.STATUS_NULL then
+		if slot6 ~= "" and slot6 ~= slot0.toolAnimName then
+			if string.find(slot6, "N_1") or string.find(slot6, "N_2") then
+				slot0.mainTF:Find("tool/Image"):GetComponent(typeof(Image)).enabled = false
 			else
-				arg_29_0.mainTF:Find("tool/Image"):GetComponent(typeof(Image)).enabled = true
+				slot0.mainTF:Find("tool/Image"):GetComponent(typeof(Image)).enabled = true
 
-				arg_29_0.mainTF:Find("tool/Image"):GetComponent(typeof(Animator)):Play(var_29_4)
+				slot0.mainTF:Find("tool/Image"):GetComponent(typeof(Animator)):Play(slot6)
 			end
 
-			arg_29_0.toolAnimName = var_29_4
+			slot0.toolAnimName = slot6
 		end
 
-		if var_29_3 ~= "" and var_29_3 ~= arg_29_0.oreAnimName then
-			arg_29_0.mainTF:Find("ore/Image"):GetComponent(typeof(Animator)):Play(var_29_3)
+		if slot5 ~= "" and slot5 ~= slot0.oreAnimName then
+			slot0.mainTF:Find("ore/Image"):GetComponent(typeof(Animator)):Play(slot5)
 
-			arg_29_0.oreAnimName = var_29_3
+			slot0.oreAnimName = slot5
 
-			local var_29_5 = arg_29_0.mainTF:Find("ore/Image/" .. arg_29_0.status .. "/oreTF")
-
-			if not var_29_1 and var_0_0.oreAnimOffset[arg_29_0.status][arg_29_0.animDir] then
-				setAnchoredPosition(var_29_5, var_0_0.oreAnimOffset[arg_29_0.status][arg_29_0.animDir])
+			if not slot3 and uv0.oreAnimOffset[slot0.status][slot0.animDir] then
+				setAnchoredPosition(slot0.mainTF:Find("ore/Image/" .. slot0.status .. "/oreTF"), uv0.oreAnimOffset[slot0.status][slot0.animDir])
 			else
-				setAnchoredPosition(var_29_5, Vector2(0, 0))
+				setAnchoredPosition(slot7, Vector2(0, 0))
 			end
 		end
 	end
 end
 
-var_0_0.oreAnimOffset = {
+slot0.oreAnimOffset = {
 	{
 		S = Vector2(0, -2),
 		W = Vector2(1, -2)
@@ -425,52 +411,51 @@ var_0_0.oreAnimOffset = {
 	}
 }
 
-function var_0_0.UpdatePosition(arg_30_0, arg_30_1)
-	local var_30_0 = OreGameHelper.GetEightDirVector(arg_30_1) * OreGameConfig.TIME_INTERVAL * arg_30_0.speed
-	local var_30_1 = {
-		x = arg_30_0._tf.anchoredPosition.x + var_30_0.x,
-		y = arg_30_0._tf.anchoredPosition.y + var_30_0.y
-	}
+function slot0.UpdatePosition(slot0, slot1)
+	slot3 = OreGameHelper.GetEightDirVector(slot1) * OreGameConfig.TIME_INTERVAL * slot0.speed
 
-	arg_30_0:SetPosition(var_30_1)
+	slot0:SetPosition({
+		x = slot0._tf.anchoredPosition.x + slot3.x,
+		y = slot0._tf.anchoredPosition.y + slot3.y
+	})
 end
 
-function var_0_0.SetPosition(arg_31_0, arg_31_1)
-	if OreGameHelper.CheckRemovable(arg_31_1) then
-		setAnchoredPosition(arg_31_0._tf, arg_31_1)
+function slot0.SetPosition(slot0, slot1)
+	if OreGameHelper.CheckRemovable(slot1) then
+		setAnchoredPosition(slot0._tf, slot1)
 
-		arg_31_0._tf:GetComponent(typeof(Canvas)).sortingOrder = -arg_31_1.y + 320
+		slot0._tf:GetComponent(typeof(Canvas)).sortingOrder = -slot1.y + 320
 	end
 end
 
-function var_0_0.IsInvincible(arg_32_0)
-	return arg_32_0.invincible
+function slot0.IsInvincible(slot0)
+	return slot0.invincible
 end
 
-function var_0_0.GetAnimDirLabel(arg_33_0)
-	return arg_33_0.animDir
+function slot0.GetAnimDirLabel(slot0)
+	return slot0.animDir
 end
 
-function var_0_0.GetAABB(arg_34_0)
-	return arg_34_0.aabb
+function slot0.GetAABB(slot0)
+	return slot0.aabb
 end
 
-function var_0_0.GetCarryTriggerOffset(arg_35_0)
+function slot0.GetCarryTriggerOffset(slot0)
 	return {
 		0,
 		10
 	}
 end
 
-function var_0_0.GetCollisionInfo(arg_36_0)
+function slot0.GetCollisionInfo(slot0)
 	return {
 		pos = {
-			x = arg_36_0._tf.anchoredPosition.x + arg_36_0.aabbTF.anchoredPosition.x,
-			y = arg_36_0._tf.anchoredPosition.y + arg_36_0.aabbTF.anchoredPosition.y
+			x = slot0._tf.anchoredPosition.x + slot0.aabbTF.anchoredPosition.x,
+			y = slot0._tf.anchoredPosition.y + slot0.aabbTF.anchoredPosition.y
 		},
-		aabb = arg_36_0:GetAABB(),
-		carryOffset = arg_36_0:GetCarryTriggerOffset()
+		aabb = slot0:GetAABB(),
+		carryOffset = slot0:GetCarryTriggerOffset()
 	}
 end
 
-return var_0_0
+return slot0

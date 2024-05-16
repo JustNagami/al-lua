@@ -1,132 +1,109 @@
-﻿local var_0_0 = class("BeachPacketLayer", import("view.base.BaseUI"))
+slot0 = class("BeachPacketLayer", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "BeachPacketUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
 end
 
-function var_0_0.didEnter(arg_3_0)
-	arg_3_0:updateUI()
+function slot0.didEnter(slot0)
+	slot0:updateUI()
 end
 
-function var_0_0.willExit(arg_4_0)
-	return
+function slot0.willExit(slot0)
 end
 
-function var_0_0.initData(arg_5_0)
-	arg_5_0.activityProxy = getProxy(ActivityProxy)
+function slot0.initData(slot0)
+	slot0.activityProxy = getProxy(ActivityProxy)
+	slot1 = slot0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
+	slot0.activityID = slot1.id
+	slot0.awardList = {}
+	slot0.awardListMap = {}
 
-	local var_5_0 = arg_5_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
+	if slot1:getConfig("config_client") then
+		for slot6, slot7 in ipairs(slot2) do
+			slot8 = slot7[1]
+			slot9 = slot7[2][2]
+			slot10 = slot7[2][1]
+			slot11 = slot7[3]
 
-	arg_5_0.activityID = var_5_0.id
-	arg_5_0.awardList = {}
-	arg_5_0.awardListMap = {}
-
-	local var_5_1 = var_5_0:getConfig("config_client")
-
-	if var_5_1 then
-		for iter_5_0, iter_5_1 in ipairs(var_5_1) do
-			local var_5_2 = iter_5_1[1]
-			local var_5_3 = iter_5_1[2][2]
-			local var_5_4 = iter_5_1[2][1]
-			local var_5_5 = iter_5_1[3]
-			local var_5_6 = iter_5_1[4]
-
-			if not arg_5_0.awardListMap[var_5_6] then
-				arg_5_0.awardListMap[var_5_6] = {}
+			if not slot0.awardListMap[slot7[4]] then
+				slot0.awardListMap[slot12] = {}
 			end
 
-			local var_5_7 = {
-				id = var_5_3,
-				type = var_5_4,
-				count = var_5_5,
-				awardID = var_5_2
+			slot13 = {
+				id = slot9,
+				type = slot10,
+				count = slot11,
+				awardID = slot8
 			}
 
-			table.insert(arg_5_0.awardListMap[var_5_6], var_5_7)
+			table.insert(slot0.awardListMap[slot12], slot13)
 
-			arg_5_0.awardList[var_5_2] = var_5_7
+			slot0.awardList[slot8] = slot13
 		end
 	end
 
-	arg_5_0:updateActData()
+	slot0:updateActData()
 end
 
-function var_0_0.findUI(arg_6_0)
-	local var_6_0 = arg_6_0:findTF("Adapt")
+function slot0.findUI(slot0)
+	slot1 = slot0:findTF("Adapt")
+	slot0.backBtn = slot0:findTF("BackBtn", slot1)
+	slot0.homeBtn = slot0:findTF("HomeBtn", slot1)
+	slot0.helpBtn = slot0:findTF("HelpBtn", slot1)
+	slot2 = slot0:findTF("PacketPanel")
+	slot0.countText = slot0:findTF("Count/CountText", slot2)
+	slot0.packetTFList = {}
 
-	arg_6_0.backBtn = arg_6_0:findTF("BackBtn", var_6_0)
-	arg_6_0.homeBtn = arg_6_0:findTF("HomeBtn", var_6_0)
-	arg_6_0.helpBtn = arg_6_0:findTF("HelpBtn", var_6_0)
-
-	local var_6_1 = arg_6_0:findTF("PacketPanel")
-
-	arg_6_0.countText = arg_6_0:findTF("Count/CountText", var_6_1)
-	arg_6_0.packetTFList = {}
-
-	local var_6_2 = arg_6_0:findTF("ContainerBehide", var_6_1)
-
-	for iter_6_0 = 1, 5 do
-		local var_6_3 = var_6_2:GetChild(iter_6_0 - 1)
-
-		table.insert(arg_6_0.packetTFList, var_6_3)
+	for slot7 = 1, 5 do
+		table.insert(slot0.packetTFList, slot0:findTF("ContainerBehide", slot2):GetChild(slot7 - 1))
 	end
 
-	local var_6_4 = arg_6_0:findTF("ContainerFront", var_6_1)
-
-	for iter_6_1 = 1, 5 do
-		local var_6_5 = var_6_4:GetChild(iter_6_1 - 1)
-
-		table.insert(arg_6_0.packetTFList, var_6_5)
+	for slot8 = 1, 5 do
+		table.insert(slot0.packetTFList, slot0:findTF("ContainerFront", slot2):GetChild(slot8 - 1))
 	end
 
-	local var_6_6 = arg_6_0:findTF("AwardPanel")
+	slot5 = slot0:findTF("AwardPanel")
+	slot0.awardTpl = slot0:findTF("AwardTpl", slot5)
+	slot0.iconTpl = Instantiate(slot0._tf:GetComponent(typeof(ItemList)).prefabItem[0])
 
-	arg_6_0.awardTpl = arg_6_0:findTF("AwardTpl", var_6_6)
-	arg_6_0.iconTpl = Instantiate(arg_6_0._tf:GetComponent(typeof(ItemList)).prefabItem[0])
-
-	setLocalScale(arg_6_0.iconTpl, {
+	setLocalScale(slot0.iconTpl, {
 		x = 0.4,
 		y = 0.4
 	})
-	setParent(arg_6_0.iconTpl, arg_6_0:findTF("Icon", arg_6_0.awardTpl))
+	setParent(slot0.iconTpl, slot0:findTF("Icon", slot0.awardTpl))
 
-	arg_6_0.awardTFList = {}
+	slot0.awardTFList = {}
 
-	local function var_6_7(arg_7_0, arg_7_1, arg_7_2)
-		local var_7_0 = arg_6_0:getAwardListByLevel(arg_7_0)
-
-		for iter_7_0, iter_7_1 in ipairs(var_7_0) do
-			local var_7_1 = cloneTplTo(arg_7_1, arg_7_2)
-			local var_7_2 = iter_7_1.awardID
-
-			arg_6_0.awardTFList[var_7_2] = var_7_1
+	function slot6(slot0, slot1, slot2)
+		for slot7, slot8 in ipairs(uv0:getAwardListByLevel(slot0)) do
+			uv0.awardTFList[slot8.awardID] = cloneTplTo(slot1, slot2)
 		end
 	end
 
-	var_6_7(1, arg_6_0.awardTpl, arg_6_0:findTF("Container_1", var_6_6))
-	var_6_7(2, arg_6_0.awardTpl, arg_6_0:findTF("Container_2", var_6_6))
-	var_6_7(3, arg_6_0.awardTpl, arg_6_0:findTF("Container_3", var_6_6))
-	var_6_7(4, arg_6_0.awardTpl, arg_6_0:findTF("Container_4", var_6_6))
+	slot6(1, slot0.awardTpl, slot0:findTF("Container_1", slot5))
+	slot6(2, slot0.awardTpl, slot0:findTF("Container_2", slot5))
+	slot6(3, slot0.awardTpl, slot0:findTF("Container_3", slot5))
+	slot6(4, slot0.awardTpl, slot0:findTF("Container_4", slot5))
 
-	arg_6_0.aniPanel = arg_6_0:findTF("AniPanel")
-	arg_6_0.aniTF = arg_6_0:findTF("Ani", arg_6_0.aniPanel)
-	arg_6_0.aniSC = GetComponent(arg_6_0.aniTF, "SpineAnimUI")
+	slot0.aniPanel = slot0:findTF("AniPanel")
+	slot0.aniTF = slot0:findTF("Ani", slot0.aniPanel)
+	slot0.aniSC = GetComponent(slot0.aniTF, "SpineAnimUI")
 end
 
-function var_0_0.addListener(arg_8_0)
-	onButton(arg_8_0, arg_8_0.backBtn, function()
-		arg_8_0:closeView()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeView()
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.homeBtn, function()
-		arg_8_0:emit(var_0_0.ON_HOME)
+	onButton(slot0, slot0.homeBtn, function ()
+		uv0:emit(uv1.ON_HOME)
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.tips_yuandanhuoyue2023.tip
@@ -134,147 +111,135 @@ function var_0_0.addListener(arg_8_0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.updateActData(arg_12_0)
-	local var_12_0 = arg_12_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
-	local var_12_1 = pg.TimeMgr.GetInstance()
-	local var_12_2 = var_12_0.data1
-	local var_12_3 = var_12_0.data2
-	local var_12_4 = var_12_1:GetServerTime()
+function slot0.updateActData(slot0)
+	slot1 = slot0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
+	slot2 = pg.TimeMgr.GetInstance()
+	slot10 = slot1.data2
+	slot11 = slot2:GetServerTime()
+	slot0.curCount = math.min(10, slot2:DiffDay(slot10, slot11) + 1) - slot1.data1
+	slot0.gotIndexList = {}
 
-	arg_12_0.curCount = math.min(10, var_12_1:DiffDay(var_12_3, var_12_4) + 1) - var_12_2
-	arg_12_0.gotIndexList = {}
-
-	for iter_12_0, iter_12_1 in pairs(var_12_0.data2_list) do
-		if not table.contains(arg_12_0.gotIndexList, iter_12_1) then
-			table.insert(arg_12_0.gotIndexList, iter_12_1)
+	for slot10, slot11 in pairs(slot1.data2_list) do
+		if not table.contains(slot0.gotIndexList, slot11) then
+			table.insert(slot0.gotIndexList, slot11)
 		end
 	end
 
-	arg_12_0.gotIDList = {}
+	slot0.gotIDList = {}
 
-	for iter_12_2, iter_12_3 in pairs(var_12_0.data1_list) do
-		if not table.contains(arg_12_0.gotIDList, iter_12_3) then
-			table.insert(arg_12_0.gotIDList, iter_12_3)
+	for slot10, slot11 in pairs(slot1.data1_list) do
+		if not table.contains(slot0.gotIDList, slot11) then
+			table.insert(slot0.gotIDList, slot11)
 		end
 	end
 end
 
-function var_0_0.updatePacketTpl(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_0:findTF("Normal", arg_13_2)
-	local var_13_1 = arg_13_0:findTF("Got", arg_13_2)
-	local var_13_2 = arg_13_0:findTF("Selected", arg_13_2)
-	local var_13_3 = arg_13_0:isPacketIndexGot(arg_13_1)
+function slot0.updatePacketTpl(slot0, slot1, slot2)
+	slot5 = slot0:findTF("Selected", slot2)
+	slot6 = slot0:isPacketIndexGot(slot1)
 
-	setActive(var_13_1, var_13_3)
-	setActive(var_13_0, not var_13_3)
-	onButton(arg_13_0, arg_13_2, function()
-		if not var_13_3 and arg_13_0.curCount > 0 then
+	setActive(slot0:findTF("Got", slot2), slot6)
+	setActive(slot0:findTF("Normal", slot2), not slot6)
+	onButton(slot0, slot2, function ()
+		if not uv0 and uv1.curCount > 0 then
 			pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 				cmd = 1,
-				activity_id = arg_13_0.activityID,
-				arg1 = arg_13_1
+				activity_id = uv1.activityID,
+				arg1 = uv2
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.updatePacketList(arg_15_0)
-	for iter_15_0, iter_15_1 in ipairs(arg_15_0.packetTFList) do
-		arg_15_0:updatePacketTpl(iter_15_0, iter_15_1)
+function slot0.updatePacketList(slot0)
+	for slot4, slot5 in ipairs(slot0.packetTFList) do
+		slot0:updatePacketTpl(slot4, slot5)
 	end
 end
 
-function var_0_0.updateAwardTpl(arg_16_0, arg_16_1, arg_16_2)
-	local var_16_0 = arg_16_0:findTF("Icon/IconTpl(Clone)", arg_16_2)
-	local var_16_1 = arg_16_0:findTF("Got", arg_16_2)
-	local var_16_2 = arg_16_0.awardList[arg_16_1]
-
-	updateDrop(var_16_0, var_16_2)
-
-	local var_16_3 = arg_16_0:isAwardGot(arg_16_1)
-
-	setActive(var_16_1, var_16_3)
-	onButton(arg_16_0, arg_16_2, function()
-		if not var_16_3 then
+function slot0.updateAwardTpl(slot0, slot1, slot2)
+	updateDrop(slot0:findTF("Icon/IconTpl(Clone)", slot2), slot0.awardList[slot1])
+	setActive(slot0:findTF("Got", slot2), slot0:isAwardGot(slot1))
+	onButton(slot0, slot2, function ()
+		if not uv0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_SINGLE_ITEM,
-				drop = var_16_2
+				drop = uv1
 			})
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.updateAwardList(arg_18_0)
-	for iter_18_0, iter_18_1 in ipairs(arg_18_0.awardTFList) do
-		arg_18_0:updateAwardTpl(iter_18_0, iter_18_1)
+function slot0.updateAwardList(slot0)
+	for slot4, slot5 in ipairs(slot0.awardTFList) do
+		slot0:updateAwardTpl(slot4, slot5)
 	end
 end
 
-function var_0_0.updateUI(arg_19_0)
-	arg_19_0:updatePacketList()
-	arg_19_0:updateAwardList()
-	setText(arg_19_0.countText, arg_19_0.curCount)
+function slot0.updateUI(slot0)
+	slot0:updatePacketList()
+	slot0:updateAwardList()
+	setText(slot0.countText, slot0.curCount)
 end
 
-function var_0_0.playAni(arg_20_0, arg_20_1)
-	arg_20_0.isPlaying = true
+function slot0.playAni(slot0, slot1)
+	slot0.isPlaying = true
 
-	setActive(arg_20_0.aniPanel, true)
-	arg_20_0.aniSC:SetActionCallBack(nil)
+	setActive(slot0.aniPanel, true)
+	slot0.aniSC:SetActionCallBack(nil)
 
-	local var_20_0 = 0
+	slot2 = 0
 
-	arg_20_0.aniSC:SetActionCallBack(function(arg_21_0)
-		if arg_21_0 == "action" then
-			var_20_0 = var_20_0 + 1
+	slot0.aniSC:SetActionCallBack(function (slot0)
+		if slot0 == "action" then
+			uv0 = uv0 + 1
 
-			if var_20_0 == 2 then
-				arg_20_0.aniSC:SetActionCallBack(nil)
-				setActive(arg_20_0.aniPanel, false)
+			if uv0 == 2 then
+				uv1.aniSC:SetActionCallBack(nil)
+				setActive(uv1.aniPanel, false)
 
-				arg_20_0.isPlaying = false
+				uv1.isPlaying = false
 
-				if arg_20_1 then
-					arg_20_1()
+				if uv2 then
+					uv2()
 				end
 
-				var_20_0 = 0
+				uv0 = 0
 			end
 		end
 	end)
-	arg_20_0.aniSC:SetAction("4", 0)
+	slot0.aniSC:SetAction("4", 0)
 end
 
-function var_0_0.isPacketIndexGot(arg_22_0, arg_22_1)
-	return table.contains(arg_22_0.gotIndexList, arg_22_1)
+function slot0.isPacketIndexGot(slot0, slot1)
+	return table.contains(slot0.gotIndexList, slot1)
 end
 
-function var_0_0.isAwardGot(arg_23_0, arg_23_1)
-	return table.contains(arg_23_0.gotIDList, arg_23_1)
+function slot0.isAwardGot(slot0, slot1)
+	return table.contains(slot0.gotIDList, slot1)
 end
 
-function var_0_0.getAwardCountByLevel(arg_24_0, arg_24_1)
-	return #arg_24_0:getAwardListByLevel(arg_24_1)
+function slot0.getAwardCountByLevel(slot0, slot1)
+	return #slot0:getAwardListByLevel(slot1)
 end
 
-function var_0_0.getAwardListByLevel(arg_25_0, arg_25_1)
-	return arg_25_0.awardListMap[arg_25_1]
+function slot0.getAwardListByLevel(slot0, slot1)
+	return slot0.awardListMap[slot1]
 end
 
-function var_0_0.onSubmitFinished(arg_26_0)
-	arg_26_0:updateActData()
-	arg_26_0:updateUI()
+function slot0.onSubmitFinished(slot0)
+	slot0:updateActData()
+	slot0:updateUI()
 end
 
-function var_0_0.isShowRedPoint()
-	local var_27_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
-	local var_27_1 = pg.TimeMgr.GetInstance()
-	local var_27_2 = var_27_0.data1
-	local var_27_3 = var_27_0.data2
-	local var_27_4 = var_27_1:GetServerTime()
-	local var_27_5 = var_27_1:DiffDay(var_27_3, var_27_4) + 1
+function slot0.isShowRedPoint()
+	slot0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_RED_PACKET_LOTTER)
+	slot1 = pg.TimeMgr.GetInstance()
+	slot3 = slot0.data2
+	slot4 = slot1:GetServerTime()
+	slot5 = slot1:DiffDay(slot3, slot4) + 1
 
-	return math.min(10, var_27_1:DiffDay(var_27_3, var_27_4) + 1) - var_27_2 > 0
+	return math.min(10, slot1:DiffDay(slot3, slot4) + 1) - slot0.data1 > 0
 end
 
-return var_0_0
+return slot0

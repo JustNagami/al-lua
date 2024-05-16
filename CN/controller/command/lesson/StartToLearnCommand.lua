@@ -1,24 +1,21 @@
-﻿local var_0_0 = class("StartToLearnCommand", pm.SimpleCommand)
+slot0 = class("StartToLearnCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().students
-
+function slot0.execute(slot0, slot1)
 	pg.ConnectionMgr.GetInstance():Send(22002, {
-		students = var_1_0
-	}, 22003, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(NavalAcademyProxy)
-			local var_2_1 = var_2_0:getCourse()
+		students = slot1:getBody().students
+	}, 22003, function (slot0)
+		if slot0.result == 0 then
+			slot1 = getProxy(NavalAcademyProxy)
+			slot2 = slot1:getCourse()
+			slot2.students = uv0
+			slot2.timestamp = pg.TimeMgr.GetInstance():GetServerTime()
 
-			var_2_1.students = var_1_0
-			var_2_1.timestamp = pg.TimeMgr.GetInstance():GetServerTime()
-
-			var_2_0:setCourse(var_2_1)
-			arg_1_0:sendNotification(GAME.CLASS_START_COURSE_DONE)
+			slot1:setCourse(slot2)
+			uv1:sendNotification(GAME.CLASS_START_COURSE_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_startToLearn", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_startToLearn", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

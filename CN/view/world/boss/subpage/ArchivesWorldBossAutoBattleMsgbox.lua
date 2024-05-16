@@ -1,105 +1,98 @@
-﻿local var_0_0 = class("ArchivesWorldBossAutoBattleMsgbox", import("view.base.BaseSubView"))
+slot0 = class("ArchivesWorldBossAutoBattleMsgbox", import("view.base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "ArchivesWorldBossAutoBattleMsgUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.contentTxt = arg_2_0:findTF("window/msg_panel/content/time"):GetComponent(typeof(Text))
-	arg_2_0.startBtn = arg_2_0:findTF("window/btns/start")
-	arg_2_0.startTxt = arg_2_0.startBtn:Find("pic"):GetComponent(typeof(Text))
-	arg_2_0.cancelBtn = arg_2_0:findTF("window/btns/cancel")
-	arg_2_0.cancelTxt = arg_2_0.cancelBtn:Find("pic"):GetComponent(typeof(Text))
-	arg_2_0.closeBtn = arg_2_0:findTF("window/top/close")
-	arg_2_0.titleTxt = arg_2_0:findTF("window/top/title"):GetComponent(typeof(Text))
+function slot0.OnLoaded(slot0)
+	slot0.contentTxt = slot0:findTF("window/msg_panel/content/time"):GetComponent(typeof(Text))
+	slot0.startBtn = slot0:findTF("window/btns/start")
+	slot0.startTxt = slot0.startBtn:Find("pic"):GetComponent(typeof(Text))
+	slot0.cancelBtn = slot0:findTF("window/btns/cancel")
+	slot0.cancelTxt = slot0.cancelBtn:Find("pic"):GetComponent(typeof(Text))
+	slot0.closeBtn = slot0:findTF("window/top/close")
+	slot0.titleTxt = slot0:findTF("window/top/title"):GetComponent(typeof(Text))
 
-	setText(arg_2_0:findTF("window/msg_panel/content/label"), i18n("world_boss_archives_stop_auto_battle_tip"))
-	setText(arg_2_0:findTF("window/msg_panel/label1"), i18n("world_boss_archives_stop_auto_battle_tip1"))
+	setText(slot0:findTF("window/msg_panel/content/label"), i18n("world_boss_archives_stop_auto_battle_tip"))
+	setText(slot0:findTF("window/msg_panel/label1"), i18n("world_boss_archives_stop_auto_battle_tip1"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.closeBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.cancelBtn, function()
-		if arg_3_0.OnNo then
-			arg_3_0.OnNo()
+	onButton(slot0, slot0.cancelBtn, function ()
+		if uv0.OnNo then
+			uv0.OnNo()
 		end
 
-		arg_3_0:Hide()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.startBtn, function()
-		if arg_3_0.OnYes then
-			arg_3_0.OnYes()
+	onButton(slot0, slot0.startBtn, function ()
+		if uv0.OnYes then
+			uv0.OnYes()
 		end
 
-		arg_3_0:Hide()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Show(arg_8_0, arg_8_1)
-	var_0_0.super.Show(arg_8_0)
-	arg_8_0:RemoveTimer()
+function slot0.Show(slot0, slot1)
+	uv0.super.Show(slot0)
+	slot0:RemoveTimer()
 
-	if arg_8_1.onContent then
-		arg_8_0:AddTimer(arg_8_1)
+	if slot1.onContent then
+		slot0:AddTimer(slot1)
 	else
-		arg_8_0.contentTxt.text = arg_8_1.content
+		slot0.contentTxt.text = slot1.content
 	end
 
-	arg_8_0.titleTxt.text = arg_8_1.title
-	arg_8_0.OnYes = arg_8_1.onYes
-	arg_8_0.OnNo = arg_8_1.onNo
+	slot0.titleTxt.text = slot1.title
+	slot0.OnYes = slot1.onYes
+	slot0.OnNo = slot1.onNo
 
-	setActive(arg_8_0.cancelBtn, not arg_8_1.noNo)
+	setActive(slot0.cancelBtn, not slot1.noNo)
 
-	local var_8_0 = arg_8_1.yesText or i18n("word_ok")
-
-	arg_8_0.startTxt.text = var_8_0
-
-	local var_8_1 = arg_8_1.noText or i18n("word_cancel")
-
-	arg_8_0.cancelTxt.text = var_8_1
+	slot0.startTxt.text = slot1.yesText or i18n("word_ok")
+	slot0.cancelTxt.text = slot1.noText or i18n("word_cancel")
 end
 
-function var_0_0.AddTimer(arg_9_0, arg_9_1)
-	arg_9_0.timer = Timer.New(function()
-		local var_10_0 = arg_9_1.onContent()
-
-		if var_10_0 == nil then
-			arg_9_0:Hide()
+function slot0.AddTimer(slot0, slot1)
+	slot0.timer = Timer.New(function ()
+		if uv0.onContent() == nil then
+			uv1:Hide()
 		end
 
-		arg_9_0.contentTxt.text = var_10_0
+		uv1.contentTxt.text = slot0
 	end, 1, -1)
 
-	arg_9_0.timer:Start()
-	arg_9_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.RemoveTimer(arg_11_0)
-	if arg_11_0.timer then
-		arg_11_0.timer:Stop()
+function slot0.RemoveTimer(slot0)
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_11_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.Hide(arg_12_0)
-	var_0_0.super.Hide(arg_12_0)
-	arg_12_0:RemoveTimer()
+function slot0.Hide(slot0)
+	uv0.super.Hide(slot0)
+	slot0:RemoveTimer()
 
-	arg_12_0.OnYes = nil
-	arg_12_0.OnNo = nil
+	slot0.OnYes = nil
+	slot0.OnNo = nil
 end
 
-function var_0_0.OnDestroy(arg_13_0)
-	if arg_13_0:isShowing() then
-		arg_13_0:Hide()
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 end
 
-return var_0_0
+return slot0

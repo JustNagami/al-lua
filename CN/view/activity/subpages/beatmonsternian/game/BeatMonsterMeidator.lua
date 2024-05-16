@@ -1,69 +1,67 @@
-﻿local var_0_0 = class("BeatMonsterMeidator")
-local var_0_1 = 1
-local var_0_2 = 0.1
-local var_0_3 = 1
+slot0 = class("BeatMonsterMeidator")
+slot1 = 1
+slot2 = 0.1
+slot3 = 1
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.controller = arg_1_1
+	slot0.controller = slot1
 end
 
-function var_0_0.SetUI(arg_2_0, arg_2_1)
-	arg_2_0._go = arg_2_1
-	arg_2_0._tf = tf(arg_2_1)
-	arg_2_0.monsterNian = arg_2_0:findTF("AD/monster")
-	arg_2_0.fushun = arg_2_0:findTF("AD/fushun")
-	arg_2_0.hpTF = arg_2_0:findTF("AD/hp"):GetComponent(typeof(Slider))
-	arg_2_0.attackCntTF = arg_2_0:findTF("AD/attack_count/Text"):GetComponent(typeof(Text))
-	arg_2_0.actions = arg_2_0:findTF("AD/actions")
-	arg_2_0.actionKeys = {
-		arg_2_0.actions:Find("content/1"),
-		arg_2_0.actions:Find("content/2"),
-		arg_2_0.actions:Find("content/3")
+function slot0.SetUI(slot0, slot1)
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
+	slot0.monsterNian = slot0:findTF("AD/monster")
+	slot0.fushun = slot0:findTF("AD/fushun")
+	slot0.hpTF = slot0:findTF("AD/hp"):GetComponent(typeof(Slider))
+	slot0.attackCntTF = slot0:findTF("AD/attack_count/Text"):GetComponent(typeof(Text))
+	slot0.actions = slot0:findTF("AD/actions")
+	slot0.actionKeys = {
+		slot0.actions:Find("content/1"),
+		slot0.actions:Find("content/2"),
+		slot0.actions:Find("content/3")
 	}
-	arg_2_0.curtainTF = arg_2_0:findTF("AD/curtain")
-	arg_2_0.startLabel = arg_2_0.curtainTF:Find("start_label")
-	arg_2_0.ABtn = arg_2_0:findTF("AD/A_btn")
-	arg_2_0.BBtn = arg_2_0:findTF("AD/B_btn")
-	arg_2_0.joyStick = arg_2_0:findTF("AD/joyStick")
+	slot0.curtainTF = slot0:findTF("AD/curtain")
+	slot0.startLabel = slot0.curtainTF:Find("start_label")
+	slot0.ABtn = slot0:findTF("AD/A_btn")
+	slot0.BBtn = slot0:findTF("AD/B_btn")
+	slot0.joyStick = slot0:findTF("AD/joyStick")
 end
 
-function var_0_0.DoCurtainUp(arg_3_0, arg_3_1)
-	local var_3_0 = getProxy(SettingsProxy)
-
-	if var_3_0:IsShowBeatMonseterNianCurtain() then
-		var_3_0:SetBeatMonseterNianFlag()
-		arg_3_0:StartCurtainUp(arg_3_1)
+function slot0.DoCurtainUp(slot0, slot1)
+	if getProxy(SettingsProxy):IsShowBeatMonseterNianCurtain() then
+		slot2:SetBeatMonseterNianFlag()
+		slot0:StartCurtainUp(slot1)
 	else
-		arg_3_1()
+		slot1()
 	end
 end
 
-function var_0_0.StartCurtainUp(arg_4_0, arg_4_1)
-	setActive(arg_4_0.curtainTF, true)
-	LeanTween.color(arg_4_0.curtainTF, Color.white, var_0_1):setFromColor(Color.black):setOnComplete(System.Action(function()
-		setActive(arg_4_0.startLabel, true)
-		blinkAni(arg_4_0.startLabel, var_0_2, 2):setOnComplete(System.Action(function()
-			LeanTween.alpha(arg_4_0.curtainTF, 0, var_0_3):setFrom(1)
-			LeanTween.alpha(arg_4_0.startLabel, 0, var_0_3):setFrom(1):setOnComplete(System.Action(arg_4_1))
+function slot0.StartCurtainUp(slot0, slot1)
+	setActive(slot0.curtainTF, true)
+	LeanTween.color(slot0.curtainTF, Color.white, uv0):setFromColor(Color.black):setOnComplete(System.Action(function ()
+		setActive(uv0.startLabel, true)
+		blinkAni(uv0.startLabel, uv1, 2):setOnComplete(System.Action(function ()
+			LeanTween.alpha(uv0.curtainTF, 0, uv1):setFrom(1)
+			LeanTween.alpha(uv0.startLabel, 0, uv1):setFrom(1):setOnComplete(System.Action(uv2))
 		end))
 	end))
 end
 
-function var_0_0.OnInited(arg_7_0)
-	local function var_7_0()
-		if arg_7_0.attackCnt <= 0 then
+function slot0.OnInited(slot0)
+	function slot1()
+		if uv0.attackCnt <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("activity_hit_monster_nocount"))
 
 			return false
 		end
 
-		if arg_7_0.hp <= 0 then
+		if uv0.hp <= 0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("activity_hit_monster_reset_tip"),
-				onYes = function()
-					arg_7_0.controller:ReStartGame()
+				onYes = function ()
+					uv0.controller:ReStartGame()
 				end
 			})
 
@@ -73,171 +71,162 @@ function var_0_0.OnInited(arg_7_0)
 		return true
 	end
 
-	arg_7_0:OnTrigger(arg_7_0.ABtn, var_7_0, function()
-		arg_7_0.controller:Input(BeatMonsterNianConst.ACTION_NAME_A)
+	slot0:OnTrigger(slot0.ABtn, slot1, function ()
+		uv0.controller:Input(BeatMonsterNianConst.ACTION_NAME_A)
 	end)
-	arg_7_0:OnTrigger(arg_7_0.BBtn, var_7_0, function()
-		arg_7_0.controller:Input(BeatMonsterNianConst.ACTION_NAME_B)
+	slot0:OnTrigger(slot0.BBtn, slot1, function ()
+		uv0.controller:Input(BeatMonsterNianConst.ACTION_NAME_B)
 	end)
-	arg_7_0:OnJoyStickTrigger(arg_7_0.joyStick, var_7_0, function(arg_12_0)
-		if arg_12_0 > 0 then
-			arg_7_0.controller:Input(BeatMonsterNianConst.ACTION_NAME_R)
-		elseif arg_12_0 < 0 then
-			arg_7_0.controller:Input(BeatMonsterNianConst.ACTION_NAME_L)
+	slot0:OnJoyStickTrigger(slot0.joyStick, slot1, function (slot0)
+		if slot0 > 0 then
+			uv0.controller:Input(BeatMonsterNianConst.ACTION_NAME_R)
+		elseif slot0 < 0 then
+			uv0.controller:Input(BeatMonsterNianConst.ACTION_NAME_L)
 		end
 	end)
 end
 
-function var_0_0.OnAttackCntUpdate(arg_13_0, arg_13_1, arg_13_2)
-	arg_13_0.attackCnt = arg_13_1
-	arg_13_0.attackCntTF.text = arg_13_2 and "-" or arg_13_1
+function slot0.OnAttackCntUpdate(slot0, slot1, slot2)
+	slot0.attackCnt = slot1
+	slot0.attackCntTF.text = slot2 and "-" or slot1
 end
 
-function var_0_0.OnMonsterHpUpdate(arg_14_0, arg_14_1)
-	arg_14_0.hp = arg_14_1
+function slot0.OnMonsterHpUpdate(slot0, slot1)
+	slot0.hp = slot1
 
-	arg_14_0.fuShun:SetInteger("hp", arg_14_1)
-	arg_14_0.nian:SetInteger("hp", arg_14_1)
+	slot0.fuShun:SetInteger("hp", slot1)
+	slot0.nian:SetInteger("hp", slot1)
 end
 
-function var_0_0.OnUIHpUpdate(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	local var_15_0 = arg_15_0.hpTF.value
-	local var_15_1 = arg_15_1 / arg_15_2
-
-	LeanTween.value(arg_15_0.hpTF.gameObject, var_15_0, var_15_1, 0.3):setOnUpdate(System.Action_float(function(arg_16_0)
-		arg_15_0.hpTF.value = arg_16_0
-	end)):setOnComplete(System.Action(function()
-		if arg_15_3 then
-			arg_15_3()
+function slot0.OnUIHpUpdate(slot0, slot1, slot2, slot3)
+	LeanTween.value(slot0.hpTF.gameObject, slot0.hpTF.value, slot1 / slot2, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0.hpTF.value = slot0
+	end)):setOnComplete(System.Action(function ()
+		if uv0 then
+			uv0()
 		end
 	end))
 end
 
-function var_0_0.OnAddFuShun(arg_18_0, arg_18_1)
-	arg_18_0.fuShun = arg_18_0.fushun:GetComponent(typeof(Animator))
+function slot0.OnAddFuShun(slot0, slot1)
+	slot0.fuShun = slot0.fushun:GetComponent(typeof(Animator))
 
-	arg_18_0.fuShun:SetInteger("hp", arg_18_1)
+	slot0.fuShun:SetInteger("hp", slot1)
 end
 
-function var_0_0.OnAddMonsterNian(arg_19_0, arg_19_1, arg_19_2)
-	arg_19_0.hp = arg_19_1
-	arg_19_0.nian = arg_19_0.monsterNian:GetComponent(typeof(Animator))
-	arg_19_0.hpTF.value = arg_19_1 / arg_19_2
+function slot0.OnAddMonsterNian(slot0, slot1, slot2)
+	slot0.hp = slot1
+	slot0.nian = slot0.monsterNian:GetComponent(typeof(Animator))
+	slot0.hpTF.value = slot1 / slot2
 
-	arg_19_0.nian:SetInteger("hp", arg_19_1)
+	slot0.nian:SetInteger("hp", slot1)
 end
 
-function var_0_0.OnChangeFuShunAction(arg_20_0, arg_20_1)
-	arg_20_0.fuShun:SetTrigger(arg_20_1)
+function slot0.OnChangeFuShunAction(slot0, slot1)
+	slot0.fuShun:SetTrigger(slot1)
 end
 
-function var_0_0.OnChangeNianAction(arg_21_0, arg_21_1)
-	arg_21_0.nian:SetTrigger(arg_21_1)
+function slot0.OnChangeNianAction(slot0, slot1)
+	slot0.nian:SetTrigger(slot1)
 end
 
-function var_0_0.BanJoyStick(arg_22_0, arg_22_1)
-	setActive(arg_22_0.joyStick:Find("ban"), arg_22_1)
+function slot0.BanJoyStick(slot0, slot1)
+	setActive(slot0.joyStick:Find("ban"), slot1)
 
-	GetOrAddComponent(arg_22_0.joyStick, typeof(EventTriggerListener)).enabled = not arg_22_1
+	GetOrAddComponent(slot0.joyStick, typeof(EventTriggerListener)).enabled = not slot1
 end
 
-function var_0_0.OnInputChange(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_1 and arg_23_1 ~= ""
+function slot0.OnInputChange(slot0, slot1)
+	if slot1 and slot1 ~= "" then
+		for slot6, slot7 in ipairs(slot0.actionKeys) do
+			slot8 = string.sub(slot1, slot6, slot6) or ""
 
-	if var_23_0 then
-		for iter_23_0, iter_23_1 in ipairs(arg_23_0.actionKeys) do
-			local var_23_1 = string.sub(arg_23_1, iter_23_0, iter_23_0) or ""
-
-			setActive(iter_23_1:Find("A"), var_23_1 == BeatMonsterNianConst.ACTION_NAME_A)
-			setActive(iter_23_1:Find("L"), var_23_1 == BeatMonsterNianConst.ACTION_NAME_L)
-			setActive(iter_23_1:Find("R"), var_23_1 == BeatMonsterNianConst.ACTION_NAME_R)
-			setActive(iter_23_1:Find("B"), var_23_1 == BeatMonsterNianConst.ACTION_NAME_B)
+			setActive(slot7:Find("A"), slot8 == BeatMonsterNianConst.ACTION_NAME_A)
+			setActive(slot7:Find("L"), slot8 == BeatMonsterNianConst.ACTION_NAME_L)
+			setActive(slot7:Find("R"), slot8 == BeatMonsterNianConst.ACTION_NAME_R)
+			setActive(slot7:Find("B"), slot8 == BeatMonsterNianConst.ACTION_NAME_B)
 		end
 	end
 
-	setActive(arg_23_0.actions, var_23_0)
-	arg_23_0:BanJoyStick(#arg_23_1 == 2)
+	setActive(slot0.actions, slot2)
+	slot0:BanJoyStick(#slot1 == 2)
 end
 
-function var_0_0.PlayStory(arg_24_0, arg_24_1, arg_24_2)
-	pg.NewStoryMgr.GetInstance():Play(arg_24_1, arg_24_2)
+function slot0.PlayStory(slot0, slot1, slot2)
+	pg.NewStoryMgr.GetInstance():Play(slot1, slot2)
 end
 
-function var_0_0.DisplayAwards(arg_25_0, arg_25_1, arg_25_2)
+function slot0.DisplayAwards(slot0, slot1, slot2)
 	pg.m02:sendNotification(ActivityProxy.ACTIVITY_SHOW_AWARDS, {
-		awards = arg_25_1,
-		callback = arg_25_2
+		awards = slot1,
+		callback = slot2
 	})
 end
 
-function var_0_0.Dispose(arg_26_0)
-	pg.DelegateInfo.Dispose(arg_26_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-function var_0_0.OnTrigger(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	local var_27_0 = arg_27_1:Find("off")
-	local var_27_1 = true
-	local var_27_2 = GetOrAddComponent(arg_27_1, typeof(EventTriggerListener))
+function slot0.OnTrigger(slot0, slot1, slot2, slot3)
+	slot4 = slot1:Find("off")
+	slot5 = true
+	slot6 = GetOrAddComponent(slot1, typeof(EventTriggerListener))
 
-	var_27_2:AddPointDownFunc(function(arg_28_0, arg_28_1)
-		var_27_1 = arg_27_2()
+	slot6:AddPointDownFunc(function (slot0, slot1)
+		uv0 = uv1()
 
-		if var_27_1 then
-			setActive(var_27_0, false)
+		if uv0 then
+			setActive(uv2, false)
 		end
 	end)
-	var_27_2:AddPointUpFunc(function(arg_29_0, arg_29_1)
-		if var_27_1 then
-			setActive(var_27_0, true)
+	slot6:AddPointUpFunc(function (slot0, slot1)
+		if uv0 then
+			setActive(uv1, true)
 
-			if arg_27_3 then
-				arg_27_3()
+			if uv2 then
+				uv2()
 			end
 		end
 	end)
 end
 
-function var_0_0.OnJoyStickTrigger(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
-	local var_30_0 = arg_30_1:Find("m")
-	local var_30_1 = arg_30_1:Find("l")
-	local var_30_2 = arg_30_1:Find("r")
-	local var_30_3 = GetOrAddComponent(arg_30_1, typeof(EventTriggerListener))
-	local var_30_4
-	local var_30_5 = false
+function slot0.OnJoyStickTrigger(slot0, slot1, slot2, slot3)
+	slot4 = slot1:Find("m")
+	slot5 = slot1:Find("l")
+	slot6 = slot1:Find("r")
+	slot7 = GetOrAddComponent(slot1, typeof(EventTriggerListener))
+	slot8 = nil
+	slot9 = false
 
-	var_30_3:AddBeginDragFunc(function(arg_31_0, arg_31_1)
-		var_30_5 = arg_30_2()
-		var_30_4 = arg_31_1.position
+	slot7:AddBeginDragFunc(function (slot0, slot1)
+		uv0 = uv1()
+		uv2 = slot1.position
 	end)
-	var_30_3:AddDragFunc(function(arg_32_0, arg_32_1)
-		if not var_30_5 then
+	slot7:AddDragFunc(function (slot0, slot1)
+		if not uv0 then
 			return
 		end
 
-		local var_32_0 = arg_32_1.position.x - var_30_4.x
-
-		setActive(var_30_0, var_32_0 == 0)
-		setActive(var_30_1, var_32_0 < 0)
-		setActive(var_30_2, var_32_0 > 0)
+		setActive(uv2, slot1.position.x - uv1.x == 0)
+		setActive(uv3, slot2 < 0)
+		setActive(uv4, slot2 > 0)
 	end)
-	var_30_3:AddDragEndFunc(function(arg_33_0, arg_33_1)
-		if not var_30_5 then
+	slot7:AddDragEndFunc(function (slot0, slot1)
+		if not uv0 then
 			return
 		end
 
-		local var_33_0 = arg_33_1.position.x - var_30_4.x
-
-		arg_30_3(var_33_0)
-		setActive(var_30_0, true)
-		setActive(var_30_1, false)
-		setActive(var_30_2, false)
+		uv2(slot1.position.x - uv1.x)
+		setActive(uv3, true)
+		setActive(uv4, false)
+		setActive(uv5, false)
 	end)
 end
 
-function var_0_0.findTF(arg_34_0, arg_34_1, arg_34_2)
-	assert(arg_34_0._tf, "transform should exist")
+function slot0.findTF(slot0, slot1, slot2)
+	assert(slot0._tf, "transform should exist")
 
-	return findTF(arg_34_2 or arg_34_0._tf, arg_34_1)
+	return findTF(slot2 or slot0._tf, slot1)
 end
 
-return var_0_0
+return slot0

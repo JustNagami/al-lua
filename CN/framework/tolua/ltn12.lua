@@ -1,349 +1,322 @@
-﻿local var_0_0 = require("string")
-local var_0_1 = require("table")
-local var_0_2 = unpack or var_0_1.unpack
-local var_0_3 = _G
-local var_0_4 = {}
+slot0 = require("string")
+slot2 = unpack or require("table").unpack
+slot3 = _G
+slot4 = {}
 
 if module then
-	ltn12 = var_0_4
+	ltn12 = slot4
 end
 
-local var_0_5 = {}
-local var_0_6 = {}
-local var_0_7 = {}
-local var_0_8 = {}
+slot4.filter = {}
+slot4.source = {}
+slot4.sink = {}
+slot4.pump = {}
+slot9 = slot2 or slot1.unpack
+slot10 = slot3.select
+slot4.BLOCKSIZE = 2048
+slot4._VERSION = "LTN12 1.0.3"
 
-var_0_4.filter = var_0_5
-var_0_4.source = var_0_6
-var_0_4.sink = var_0_7
-var_0_4.pump = var_0_8
+function slot5.cycle(slot0, slot1, slot2)
+	uv0.assert(slot0)
 
-local var_0_9 = var_0_2 or var_0_1.unpack
-local var_0_10 = var_0_3.select
+	return function (slot0)
+		slot1 = nil
+		slot2, uv0 = uv1(uv0, slot0, uv2)
 
-var_0_4.BLOCKSIZE = 2048
-var_0_4._VERSION = "LTN12 1.0.3"
-
-function var_0_5.cycle(arg_1_0, arg_1_1, arg_1_2)
-	var_0_3.assert(arg_1_0)
-
-	return function(arg_2_0)
-		local var_2_0
-		local var_2_1, var_2_2 = arg_1_0(arg_1_1, arg_2_0, arg_1_2)
-
-		arg_1_1 = var_2_2
-
-		return var_2_1
+		return slot2
 	end
 end
 
-function var_0_5.chain(...)
-	local var_3_0 = {
+function slot5.chain(...)
+	slot0 = {
 		...
 	}
-	local var_3_1 = var_0_3.select("#", ...)
-	local var_3_2 = 1
-	local var_3_3 = 1
-	local var_3_4 = ""
+	slot1 = uv0.select("#", ...)
+	slot2 = 1
+	slot3 = 1
+	slot4 = ""
 
-	return function(arg_4_0)
-		var_3_4 = arg_4_0 and var_3_4
+	return function (slot0)
+		uv0 = slot0 and uv0
 
 		while true do
-			if var_3_3 == var_3_2 then
-				arg_4_0 = var_3_0[var_3_3](arg_4_0)
-
-				if arg_4_0 == "" or var_3_2 == var_3_1 then
-					return arg_4_0
-				elseif arg_4_0 then
-					var_3_3 = var_3_3 + 1
+			if uv1 == uv2 then
+				if uv3[uv1](slot0) == "" or uv2 == uv4 then
+					return slot0
+				elseif slot0 then
+					uv1 = uv1 + 1
 				else
-					var_3_2 = var_3_2 + 1
-					var_3_3 = var_3_2
+					uv2 = uv2 + 1
+					uv1 = uv2
+				end
+			elseif uv3[uv1](slot0 or "") == "" then
+				uv1 = uv1 - 1
+				slot0 = uv0
+			elseif slot0 then
+				if uv1 == uv4 then
+					return slot0
+				else
+					uv1 = uv1 + 1
 				end
 			else
-				arg_4_0 = var_3_0[var_3_3](arg_4_0 or "")
-
-				if arg_4_0 == "" then
-					var_3_3 = var_3_3 - 1
-					arg_4_0 = var_3_4
-				elseif arg_4_0 then
-					if var_3_3 == var_3_1 then
-						return arg_4_0
-					else
-						var_3_3 = var_3_3 + 1
-					end
-				else
-					var_0_3.error("filter returned inappropriate nil")
-				end
+				uv5.error("filter returned inappropriate nil")
 			end
 		end
 	end
 end
 
-local function var_0_11()
+function slot11()
 	return nil
 end
 
-function var_0_6.empty()
-	return var_0_11
+function slot6.empty()
+	return uv0
 end
 
-function var_0_6.error(arg_7_0)
-	return function()
-		return nil, arg_7_0
+function slot6.error(slot0)
+	return function ()
+		return nil, uv0
 	end
 end
 
-function var_0_6.file(arg_9_0, arg_9_1)
-	if arg_9_0 then
-		return function()
-			local var_10_0 = arg_9_0:read(var_0_4.BLOCKSIZE)
-
-			if not var_10_0 then
-				arg_9_0:close()
+function slot6.file(slot0, slot1)
+	if slot0 then
+		return function ()
+			if not uv0:read(uv1.BLOCKSIZE) then
+				uv0:close()
 			end
 
-			return var_10_0
+			return slot0
 		end
 	else
-		return var_0_6.error(arg_9_1 or "unable to open file")
+		return uv1.error(slot1 or "unable to open file")
 	end
 end
 
-function var_0_6.simplify(arg_11_0)
-	var_0_3.assert(arg_11_0)
+function slot6.simplify(slot0)
+	uv0.assert(slot0)
 
-	return function()
-		local var_12_0, var_12_1 = arg_11_0()
+	return function ()
+		slot0, slot1 = uv0()
+		uv0 = slot1 or uv0
 
-		arg_11_0 = var_12_1 or arg_11_0
-
-		if not var_12_0 then
-			return nil, var_12_1
+		if not slot0 then
+			return nil, slot1
 		else
-			return var_12_0
+			return slot0
 		end
 	end
 end
 
-function var_0_6.string(arg_13_0)
-	if arg_13_0 then
-		local var_13_0 = 1
+function slot6.string(slot0)
+	if slot0 then
+		slot1 = 1
 
-		return function()
-			local var_14_0 = var_0_0.sub(arg_13_0, var_13_0, var_13_0 + var_0_4.BLOCKSIZE - 1)
+		return function ()
+			uv2 = uv2 + uv3.BLOCKSIZE
 
-			var_13_0 = var_13_0 + var_0_4.BLOCKSIZE
-
-			if var_14_0 ~= "" then
-				return var_14_0
+			if uv0.sub(uv1, uv2, uv2 + uv3.BLOCKSIZE - 1) ~= "" then
+				return slot0
 			else
 				return nil
 			end
 		end
 	else
-		return var_0_6.empty()
+		return uv2.empty()
 	end
 end
 
-function var_0_6.rewind(arg_15_0)
-	var_0_3.assert(arg_15_0)
+function slot6.rewind(slot0)
+	uv0.assert(slot0)
 
-	local var_15_0 = {}
+	slot1 = {}
 
-	return function(arg_16_0)
-		if not arg_16_0 then
-			arg_16_0 = var_0_1.remove(var_15_0)
-
-			if not arg_16_0 then
-				return arg_15_0()
+	return function (slot0)
+		if not slot0 then
+			if not uv0.remove(uv1) then
+				return uv2()
 			else
-				return arg_16_0
+				return slot0
 			end
 		else
-			var_0_1.insert(var_15_0, arg_16_0)
+			uv0.insert(uv1, slot0)
 		end
 	end
 end
 
-function var_0_6.chain(arg_17_0, arg_17_1, ...)
+function slot6.chain(slot0, slot1, ...)
 	if ... then
-		arg_17_1 = var_0_5.chain(arg_17_1, ...)
+		slot1 = uv0.chain(slot1, ...)
 	end
 
-	var_0_3.assert(arg_17_0 and arg_17_1)
+	uv1.assert(slot0 and slot1)
 
-	local var_17_0 = ""
-	local var_17_1 = ""
-	local var_17_2 = "feeding"
-	local var_17_3
+	slot2 = ""
+	slot3 = ""
+	slot4 = "feeding"
+	slot5 = nil
 
-	return function()
-		if not var_17_1 then
-			var_0_3.error("source is empty!", 2)
+	return function ()
+		if not uv0 then
+			uv1.error("source is empty!", 2)
 		end
 
 		while true do
-			if var_17_2 == "feeding" then
-				var_17_0, var_17_3 = arg_17_0()
+			if uv2 == "feeding" then
+				uv3, uv4 = uv5()
 
-				if var_17_3 then
-					return nil, var_17_3
+				if uv4 then
+					return nil, uv4
 				end
 
-				var_17_1 = arg_17_1(var_17_0)
+				uv0 = uv6(uv3)
 
-				if not var_17_1 then
-					if var_17_0 then
-						var_0_3.error("filter returned inappropriate nil")
+				if not uv0 then
+					if uv3 then
+						uv1.error("filter returned inappropriate nil")
 					else
 						return nil
 					end
-				elseif var_17_1 ~= "" then
-					var_17_2 = "eating"
+				elseif uv0 ~= "" then
+					uv2 = "eating"
 
-					if var_17_0 then
-						var_17_0 = ""
+					if uv3 then
+						uv3 = ""
 					end
 
-					return var_17_1
+					return uv0
 				end
 			else
-				var_17_1 = arg_17_1(var_17_0)
+				uv0 = uv6(uv3)
 
-				if var_17_1 == "" then
-					if var_17_0 == "" then
-						var_17_2 = "feeding"
+				if uv0 == "" then
+					if uv3 == "" then
+						uv2 = "feeding"
 					else
-						var_0_3.error("filter returned \"\"")
+						uv1.error("filter returned \"\"")
 					end
-				elseif not var_17_1 then
-					if var_17_0 then
-						var_0_3.error("filter returned inappropriate nil")
+				elseif not uv0 then
+					if uv3 then
+						uv1.error("filter returned inappropriate nil")
 					else
 						return nil
 					end
 				else
-					return var_17_1
+					return uv0
 				end
 			end
 		end
 	end
 end
 
-function var_0_6.cat(...)
-	local var_19_0 = {
+function slot6.cat(...)
+	slot1 = uv0.remove({
 		...
-	}
-	local var_19_1 = var_0_1.remove(var_19_0, 1)
+	}, 1)
 
-	return function()
-		while var_19_1 do
-			local var_20_0, var_20_1 = var_19_1()
+	return function ()
+		while uv0 do
+			slot0, slot1 = uv0()
 
-			if var_20_0 then
-				return var_20_0
+			if slot0 then
+				return slot0
 			end
 
-			if var_20_1 then
-				return nil, var_20_1
+			if slot1 then
+				return nil, slot1
 			end
 
-			var_19_1 = var_0_1.remove(var_19_0, 1)
+			uv0 = uv1.remove(uv2, 1)
 		end
 	end
 end
 
-function var_0_7.table(arg_21_0)
-	arg_21_0 = arg_21_0 or {}
-
-	return function(arg_22_0, arg_22_1)
-		if arg_22_0 then
-			var_0_1.insert(arg_21_0, arg_22_0)
+function slot7.table(slot0)
+	return function (slot0, slot1)
+		if slot0 then
+			uv0.insert(uv1, slot0)
 		end
 
 		return 1
-	end, arg_21_0
+	end, slot0 or {}
 end
 
-function var_0_7.simplify(arg_23_0)
-	var_0_3.assert(arg_23_0)
+function slot7.simplify(slot0)
+	uv0.assert(slot0)
 
-	return function(arg_24_0, arg_24_1)
-		local var_24_0, var_24_1 = arg_23_0(arg_24_0, arg_24_1)
+	return function (slot0, slot1)
+		slot2, slot3 = uv0(slot0, slot1)
 
-		if not var_24_0 then
-			return nil, var_24_1
+		if not slot2 then
+			return nil, slot3
 		end
 
-		arg_23_0 = var_24_1 or arg_23_0
+		uv0 = slot3 or uv0
 
 		return 1
 	end
 end
 
-function var_0_7.file(arg_25_0, arg_25_1)
-	if arg_25_0 then
-		return function(arg_26_0, arg_26_1)
-			if not arg_26_0 then
-				arg_25_0:close()
+function slot7.file(slot0, slot1)
+	if slot0 then
+		return function (slot0, slot1)
+			if not slot0 then
+				uv0:close()
 
 				return 1
 			else
-				return arg_25_0:write(arg_26_0)
+				return uv0:write(slot0)
 			end
 		end
 	else
-		return var_0_7.error(arg_25_1 or "unable to open file")
+		return uv0.error(slot1 or "unable to open file")
 	end
 end
 
-local function var_0_12()
+function slot12()
 	return 1
 end
 
-function var_0_7.null()
-	return var_0_12
+function slot7.null()
+	return uv0
 end
 
-function var_0_7.error(arg_29_0)
-	return function()
-		return nil, arg_29_0
+function slot7.error(slot0)
+	return function ()
+		return nil, uv0
 	end
 end
 
-function var_0_7.chain(arg_31_0, arg_31_1, ...)
+function slot7.chain(slot0, slot1, ...)
 	if ... then
-		local var_31_0 = {
-			arg_31_0,
-			arg_31_1,
+		slot2 = {
+			slot0,
+			slot1,
 			...
 		}
-
-		arg_31_1 = var_0_1.remove(var_31_0, #var_31_0)
-		arg_31_0 = var_0_5.chain(var_0_9(var_31_0))
+		slot1 = uv0.remove(slot2, #slot2)
+		slot0 = uv1.chain(uv2(slot2))
 	end
 
-	var_0_3.assert(arg_31_0 and arg_31_1)
+	uv3.assert(slot0 and slot1)
 
-	return function(arg_32_0, arg_32_1)
-		if arg_32_0 ~= "" then
-			local var_32_0 = arg_31_0(arg_32_0)
-			local var_32_1 = arg_32_0 and ""
+	return function (slot0, slot1)
+		if slot0 ~= "" then
+			slot2 = uv0(slot0)
+			slot3 = slot0 and ""
 
 			while true do
-				local var_32_2, var_32_3 = arg_31_1(var_32_0, arg_32_1)
+				slot4, slot5 = uv1(slot2, slot1)
 
-				if not var_32_2 then
-					return nil, var_32_3
+				if not slot4 then
+					return nil, slot5
 				end
 
-				if var_32_0 == var_32_1 then
+				if slot2 == slot3 then
 					return 1
 				end
 
-				var_32_0 = arg_31_0(var_32_1)
+				slot2 = uv0(slot3)
 			end
 		else
 			return 1
@@ -351,28 +324,26 @@ function var_0_7.chain(arg_31_0, arg_31_1, ...)
 	end
 end
 
-function var_0_8.step(arg_33_0, arg_33_1)
-	local var_33_0, var_33_1 = arg_33_0()
-	local var_33_2, var_33_3 = arg_33_1(var_33_0, var_33_1)
+function slot8.step(slot0, slot1)
+	slot2, slot3 = slot0()
+	slot4, slot5 = slot1(slot2, slot3)
 
-	if var_33_0 and var_33_2 then
+	if slot2 and slot4 then
 		return 1
 	else
-		return nil, var_33_1 or var_33_3
+		return nil, slot3 or slot5
 	end
 end
 
-function var_0_8.all(arg_34_0, arg_34_1, arg_34_2)
-	var_0_3.assert(arg_34_0 and arg_34_1)
-
-	arg_34_2 = arg_34_2 or var_0_8.step
+function slot8.all(slot0, slot1, slot2)
+	uv0.assert(slot0 and slot1)
 
 	while true do
-		local var_34_0, var_34_1 = arg_34_2(arg_34_0, arg_34_1)
+		slot3, slot4 = slot2 or uv1.step(slot0, slot1)
 
-		if not var_34_0 then
-			if var_34_1 then
-				return nil, var_34_1
+		if not slot3 then
+			if slot4 then
+				return nil, slot4
 			else
 				return 1
 			end
@@ -380,4 +351,4 @@ function var_0_8.all(arg_34_0, arg_34_1, arg_34_2)
 	end
 end
 
-return var_0_4
+return slot4

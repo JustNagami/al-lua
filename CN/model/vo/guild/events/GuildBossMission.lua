@@ -1,221 +1,203 @@
-﻿local var_0_0 = class("GuildBossMission", import("...BaseVO"))
+slot0 = class("GuildBossMission", import("...BaseVO"))
+slot0.MAIN_FLEET_ID = 1
+slot0.SUB_FLEET_ID = 11
 
-var_0_0.MAIN_FLEET_ID = 1
-var_0_0.SUB_FLEET_ID = 11
-
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	arg_1_0.position = arg_1_1
-	arg_1_0.dailyCount = arg_1_2 or 0
-	arg_1_0.fleets = {
-		[var_0_0.MAIN_FLEET_ID] = GuildBossMissionFleet.New({
-			fleet_id = var_0_0.MAIN_FLEET_ID
+function slot0.Ctor(slot0, slot1, slot2, slot3)
+	slot0.position = slot1
+	slot0.dailyCount = slot2 or 0
+	slot8 = uv0.SUB_FLEET_ID
+	slot0.fleets = {
+		[uv0.MAIN_FLEET_ID] = GuildBossMissionFleet.New({
+			fleet_id = uv0.MAIN_FLEET_ID
 		}),
-		[var_0_0.SUB_FLEET_ID] = GuildBossMissionFleet.New({
-			fleet_id = var_0_0.SUB_FLEET_ID
+		[uv0.SUB_FLEET_ID] = GuildBossMissionFleet.New({
+			fleet_id = slot8
 		})
 	}
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_3) do
-		local var_1_0 = arg_1_0.fleets[iter_1_1.fleet_id]
-
-		if var_1_0 then
-			var_1_0:Flush(iter_1_1)
+	for slot7, slot8 in ipairs(slot3) do
+		if slot0.fleets[slot8.fleet_id] then
+			slot9:Flush(slot8)
 		end
 	end
 
-	arg_1_0.active = false
-	arg_1_0.rankUpdateTime = 0
+	slot0.active = false
+	slot0.rankUpdateTime = 0
 end
 
-function var_0_0.Flush(arg_2_0, arg_2_1)
-	arg_2_0.id = arg_2_1.boss_id
-	arg_2_0.configId = arg_2_0.id
-	arg_2_0.damage = arg_2_1.damage or 0
-	arg_2_0.totalHp = arg_2_1.hp or 1
-	arg_2_0.active = true
+function slot0.Flush(slot0, slot1)
+	slot0.id = slot1.boss_id
+	slot0.configId = slot0.id
+	slot0.damage = slot1.damage or 0
+	slot0.totalHp = slot1.hp or 1
+	slot0.active = true
 end
 
-function var_0_0.GetPosition(arg_3_0)
-	return arg_3_0.position
+function slot0.GetPosition(slot0)
+	return slot0.position
 end
 
-function var_0_0.bindConfigTable(arg_4_0)
+function slot0.bindConfigTable(slot0)
 	return pg.guild_boss_event
 end
 
-function var_0_0.GetIcon(arg_5_0)
-	return arg_5_0:getConfig("pic") or arg_5_0.configId
+function slot0.GetIcon(slot0)
+	return slot0:getConfig("pic") or slot0.configId
 end
 
-function var_0_0.GetFleetByIndex(arg_6_0, arg_6_1)
-	return arg_6_0.fleets[arg_6_1]
+function slot0.GetFleetByIndex(slot0, slot1)
+	return slot0.fleets[slot1]
 end
 
-function var_0_0.GetMainFleet(arg_7_0)
-	return arg_7_0.fleets[var_0_0.MAIN_FLEET_ID]
+function slot0.GetMainFleet(slot0)
+	return slot0.fleets[uv0.MAIN_FLEET_ID]
 end
 
-function var_0_0.GetSubFleet(arg_8_0)
-	return arg_8_0.fleets[var_0_0.SUB_FLEET_ID]
+function slot0.GetSubFleet(slot0)
+	return slot0.fleets[uv0.SUB_FLEET_ID]
 end
 
-function var_0_0.UpdateFleet(arg_9_0, arg_9_1)
-	arg_9_0.fleets[arg_9_1.id] = arg_9_1
+function slot0.UpdateFleet(slot0, slot1)
+	slot0.fleets[slot1.id] = slot1
 end
 
-function var_0_0.GetFleets(arg_10_0)
-	return arg_10_0.fleets
+function slot0.GetFleets(slot0)
+	return slot0.fleets
 end
 
-function var_0_0.GetAllShipIds(arg_11_0)
-	local var_11_0 = {}
+function slot0.GetAllShipIds(slot0)
+	slot1 = {}
 
-	for iter_11_0, iter_11_1 in pairs(arg_11_0.fleets) do
-		local var_11_1 = iter_11_1:GetShips()
-
-		for iter_11_2, iter_11_3 in ipairs(var_11_1) do
-			local var_11_2 = GuildAssaultFleet.GetRealId(iter_11_3.ship.id)
-
-			table.insert(var_11_0, var_11_2)
+	for slot5, slot6 in pairs(slot0.fleets) do
+		for slot11, slot12 in ipairs(slot6:GetShips()) do
+			table.insert(slot1, GuildAssaultFleet.GetRealId(slot12.ship.id))
 		end
 	end
 
-	return var_11_0
+	return slot1
 end
 
-function var_0_0.GetMyShipIds(arg_12_0)
-	local var_12_0 = {}
+function slot0.GetMyShipIds(slot0)
+	slot1 = {}
 
-	for iter_12_0, iter_12_1 in pairs(arg_12_0.fleets) do
-		local var_12_1 = iter_12_1:GetMyShipIds()
-
-		for iter_12_2, iter_12_3 in ipairs(var_12_1) do
-			table.insert(var_12_0, iter_12_3)
+	for slot5, slot6 in pairs(slot0.fleets) do
+		for slot11, slot12 in ipairs(slot6:GetMyShipIds()) do
+			table.insert(slot1, slot12)
 		end
 	end
 
-	return var_12_0
+	return slot1
 end
 
-function var_0_0.GetShipsSplitByUserID(arg_13_0)
-	local var_13_0 = {}
-	local var_13_1 = getProxy(PlayerProxy):getRawData().id
+function slot0.GetShipsSplitByUserID(slot0)
+	slot1 = {}
+	slot2 = getProxy(PlayerProxy):getRawData().id
 
-	for iter_13_0, iter_13_1 in pairs(arg_13_0.fleets) do
-		local var_13_2 = iter_13_1:GetShips()
-
-		for iter_13_2, iter_13_3 in ipairs(var_13_2) do
-			local var_13_3 = iter_13_3.member.id
-
-			if var_13_3 ~= var_13_1 then
-				local var_13_4 = GuildAssaultFleet.GetRealId(iter_13_3.ship.id)
-
-				table.insert(var_13_0, {
-					shipID = var_13_4,
-					userID = var_13_3
+	for slot6, slot7 in pairs(slot0.fleets) do
+		for slot12, slot13 in ipairs(slot7:GetShips()) do
+			if slot13.member.id ~= slot2 then
+				table.insert(slot1, {
+					shipID = GuildAssaultFleet.GetRealId(slot13.ship.id),
+					userID = slot14
 				})
 			end
 		end
 	end
 
-	return var_13_0
+	return slot1
 end
 
-function var_0_0.GetTotalHp(arg_14_0)
-	return arg_14_0.totalHp
+function slot0.GetTotalHp(slot0)
+	return slot0.totalHp
 end
 
-function var_0_0.GetHp(arg_15_0)
-	return arg_15_0:GetTotalHp() - arg_15_0.damage
+function slot0.GetHp(slot0)
+	return slot0:GetTotalHp() - slot0.damage
 end
 
-function var_0_0.IsDeath(arg_16_0)
-	return arg_16_0.damage >= arg_16_0:GetTotalHp()
+function slot0.IsDeath(slot0)
+	return slot0:GetTotalHp() <= slot0.damage
 end
 
-function var_0_0.GetStageID(arg_17_0)
-	return arg_17_0:getConfig("expedition_id")[1]
+function slot0.GetStageID(slot0)
+	return slot0:getConfig("expedition_id")[1]
 end
 
-function var_0_0.IsMain(arg_18_0)
+function slot0.IsMain(slot0)
 	return true
 end
 
-function var_0_0.IsFinish(arg_19_0)
+function slot0.IsFinish(slot0)
 	return false
 end
 
-function var_0_0.GetName(arg_20_0)
-	return arg_20_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetSubType(arg_21_0)
+function slot0.GetSubType(slot0)
 	return 1
 end
 
-function var_0_0.IsActive(arg_22_0)
-	return arg_22_0.active
+function slot0.IsActive(slot0)
+	return slot0.active
 end
 
-function var_0_0.IsBoss(arg_23_0)
+function slot0.IsBoss(slot0)
 	return true
 end
 
-function var_0_0.GetTag(arg_24_0)
+function slot0.GetTag(slot0)
 	return 3
 end
 
-function var_0_0.GetCanUsageCnt(arg_25_0)
-	return GuildConst.MISSION_BOSS_MAX_CNT() - arg_25_0.dailyCount
+function slot0.GetCanUsageCnt(slot0)
+	return GuildConst.MISSION_BOSS_MAX_CNT() - slot0.dailyCount
 end
 
-function var_0_0.ReduceDailyCnt(arg_26_0)
-	arg_26_0.dailyCount = arg_26_0.dailyCount + 1
+function slot0.ReduceDailyCnt(slot0)
+	slot0.dailyCount = slot0.dailyCount + 1
 end
 
-function var_0_0.ResetDailyCnt(arg_27_0)
-	arg_27_0.dailyCount = 0
+function slot0.ResetDailyCnt(slot0)
+	slot0.dailyCount = 0
 end
 
-function var_0_0.GetAwards(arg_28_0)
-	return arg_28_0:getConfig("award")
+function slot0.GetAwards(slot0)
+	return slot0:getConfig("award")
 end
 
-function var_0_0.CanEnterBattle(arg_29_0)
-	local var_29_0 = not arg_29_0:IsReachDailyCnt()
-	local var_29_1 = not arg_29_0:IsDeath()
-
-	return var_29_0 and var_29_1
+function slot0.CanEnterBattle(slot0)
+	return slot0:IsReachDailyCnt() or not slot0:IsDeath()
 end
 
-function var_0_0.IsReachDailyCnt(arg_30_0)
-	return arg_30_0.dailyCount >= GuildConst.MISSION_BOSS_MAX_CNT()
+function slot0.IsReachDailyCnt(slot0)
+	return GuildConst.MISSION_BOSS_MAX_CNT() <= slot0.dailyCount
 end
 
-function var_0_0.GetPainting(arg_31_0)
-	return arg_31_0:getConfig("painting")
+function slot0.GetPainting(slot0)
+	return slot0:getConfig("painting")
 end
 
-function var_0_0.GetPrefab(arg_32_0)
-	local var_32_0 = arg_32_0:getConfig("expedition_id")[2][1]
-	local var_32_1 = pg.enemy_data_statistics[var_32_0]
+function slot0.GetPrefab(slot0)
+	slot2 = pg.enemy_data_statistics[slot0:getConfig("expedition_id")[2][1]]
 
-	assert(var_32_1)
+	assert(slot2)
 
-	return var_32_1.prefab
+	return slot2.prefab
 end
 
-function var_0_0.GetEmenyId(arg_33_0)
-	return arg_33_0:getConfig("expedition_id")[2][1]
+function slot0.GetEmenyId(slot0)
+	return slot0:getConfig("expedition_id")[2][1]
 end
 
-function var_0_0.CanFormation(arg_34_0)
+function slot0.CanFormation(slot0)
 	return false
 end
 
-function var_0_0.ExistCommander(arg_35_0, arg_35_1)
-	for iter_35_0, iter_35_1 in pairs(arg_35_0.fleets) do
-		if iter_35_1:ExistCommander(arg_35_1) then
+function slot0.ExistCommander(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.fleets) do
+		if slot6:ExistCommander(slot1) then
 			return true
 		end
 	end
@@ -223,24 +205,24 @@ function var_0_0.ExistCommander(arg_35_0, arg_35_1)
 	return false
 end
 
-function var_0_0.GetFleetUserId(arg_36_0, arg_36_1, arg_36_2)
-	for iter_36_0, iter_36_1 in pairs(arg_36_0.fleets) do
-		if iter_36_1:ContainShip(arg_36_1, arg_36_2) then
-			return iter_36_1
+function slot0.GetFleetUserId(slot0, slot1, slot2)
+	for slot6, slot7 in pairs(slot0.fleets) do
+		if slot7:ContainShip(slot1, slot2) then
+			return slot7
 		end
 	end
 
 	return false
 end
 
-function var_0_0.GetFleetCommanderId(arg_37_0, arg_37_1)
-	for iter_37_0, iter_37_1 in pairs(arg_37_0.fleets) do
-		if iter_37_1:ExistCommander(arg_37_1) then
-			return iter_37_1
+function slot0.GetFleetCommanderId(slot0, slot1)
+	for slot5, slot6 in pairs(slot0.fleets) do
+		if slot6:ExistCommander(slot1) then
+			return slot6
 		end
 	end
 
 	return false
 end
 
-return var_0_0
+return slot0

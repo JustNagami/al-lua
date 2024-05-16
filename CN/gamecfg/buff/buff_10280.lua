@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 1,
-				skill_id = 10280,
-				time = 8
-			}
-		}
-	},
+return {
 	{
 		desc = "受到攻击后，自身装填提高30.0%，持续8秒，不可叠加",
 		addition = {
@@ -82,5 +69,18 @@
 	stack = 1,
 	id = 10280,
 	icon = 10280,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 1,
+				skill_id = 10280,
+				time = 8
+			}
+		}
+	}
 }

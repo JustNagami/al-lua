@@ -1,94 +1,83 @@
-﻿local var_0_0 = class("TaskAwardWindow", import(".PtAwardWindow"))
+slot0 = class("TaskAwardWindow", import(".PtAwardWindow"))
 
-local function var_0_1(arg_1_0)
-	local var_1_0 = _.flatten(arg_1_0.tasklist)
-
-	local function var_1_1(arg_2_0)
-		for iter_2_0, iter_2_1 in ipairs(arg_1_0.tasklist) do
-			if type(iter_2_1) == "table" then
-				for iter_2_2, iter_2_3 in ipairs(iter_2_1) do
-					if iter_2_3 == arg_2_0 then
-						return iter_2_0
+function slot1(slot0)
+	function slot2(slot0)
+		for slot4, slot5 in ipairs(uv0.tasklist) do
+			if type(slot5) == "table" then
+				for slot9, slot10 in ipairs(slot5) do
+					if slot10 == slot0 then
+						return slot4
 					end
 				end
-			elseif arg_2_0 == iter_2_1 then
-				return iter_2_0
+			elseif slot0 == slot5 then
+				return slot4
 			end
 		end
 	end
 
-	local var_1_2 = getProxy(TaskProxy)
-	local var_1_3
+	slot4 = nil
 
-	for iter_1_0 = #var_1_0, 1, -1 do
-		local var_1_4 = var_1_0[iter_1_0]
-		local var_1_5 = var_1_2:getFinishTaskById(var_1_4)
-
-		if var_1_5 and var_1_5:isReceive() then
-			var_1_3 = var_1_4
+	for slot8 = #_.flatten(slot0.tasklist), 1, -1 do
+		if getProxy(TaskProxy):getFinishTaskById(slot1[slot8]) and slot10:isReceive() then
+			slot4 = slot9
 		end
 	end
 
-	var_1_3 = var_1_3 or var_1_0[(arg_1_0.index - 1) * 2 + 1]
+	slot4 = slot4 or slot1[(slot0.index - 1) * 2 + 1]
 
-	arg_1_0.UIlist:make(function(arg_3_0, arg_3_1, arg_3_2)
-		if arg_3_0 == UIItemList.EventUpdate then
-			local var_3_0 = var_1_0[arg_3_1 + 1]
-			local var_3_1 = var_1_2:getTaskById(var_3_0) or var_1_2:getFinishTaskById(var_3_0) or Task.New({
-				id = var_3_0
+	slot0.UIlist:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot4 = uv1:getTaskById(uv0[slot1 + 1]) or uv1:getFinishTaskById(slot3) or Task.New({
+				id = slot3
 			})
-			local var_3_2 = GetPerceptualSize(var_3_1:getConfig("name"))
+			slot5 = GetPerceptualSize(slot4:getConfig("name"))
 
-			setText(arg_3_2:Find("title/Text"), "PHASE " .. var_1_1(var_3_0))
-			setText(arg_3_2:Find("target/title"), var_3_1:getConfig("name"))
-			setText(arg_3_2:Find("target/Text"), "")
+			setText(slot2:Find("title/Text"), "PHASE " .. uv2(slot3))
+			setText(slot2:Find("target/title"), slot4:getConfig("name"))
+			setText(slot2:Find("target/Text"), "")
 
-			if arg_3_2:Find("target/icon") then
-				if arg_1_0.resIcon == "" then
-					arg_1_0.resIcon = nil
+			if slot2:Find("target/icon") then
+				if uv3.resIcon == "" then
+					uv3.resIcon = nil
 				end
 
-				if arg_1_0.resIcon then
-					LoadImageSpriteAsync(arg_1_0.resIcon, arg_3_2:Find("target/icon"), false)
+				if uv3.resIcon then
+					LoadImageSpriteAsync(uv3.resIcon, slot2:Find("target/icon"), false)
 				end
 
-				setActive(arg_3_2:Find("target/icon"), arg_1_0.resIcon)
-				setActive(arg_3_2:Find("target/mark"), arg_1_0.resIcon)
+				setActive(slot2:Find("target/icon"), uv3.resIcon)
+				setActive(slot2:Find("target/mark"), uv3.resIcon)
 			end
 
-			local var_3_3 = var_3_1:getConfig("award_display")[1]
-			local var_3_4 = {
-				type = var_3_3[1],
-				id = var_3_3[2],
-				count = var_3_3[3]
-			}
+			slot6 = slot4:getConfig("award_display")[1]
 
-			updateDrop(arg_3_2:Find("award"), var_3_4)
-			onButton(arg_1_0.binder, arg_3_2:Find("award"), function()
-				arg_1_0.binder:emit(BaseUI.ON_DROP, var_3_4)
+			updateDrop(slot2:Find("award"), {
+				type = slot6[1],
+				id = slot6[2],
+				count = slot6[3]
+			})
+			onButton(uv3.binder, slot2:Find("award"), function ()
+				uv0.binder:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-
-			local var_3_5 = var_1_3 and var_3_0 < var_1_3
-
-			setActive(arg_3_2:Find("award/mask"), var_3_1:isReceive() or var_3_5)
+			setActive(slot2:Find("award/mask"), slot4:isReceive() or uv4 and slot3 < uv4)
 		end
 	end)
-	arg_1_0.UIlist:align(#var_1_0)
+	slot0.UIlist:align(#slot1)
 end
 
-function var_0_0.Show(arg_5_0, arg_5_1)
-	arg_5_0.tasklist = arg_5_1.tasklist
-	arg_5_0.ptId = arg_5_1.ptId
-	arg_5_0.totalPt = arg_5_1.totalPt
-	arg_5_0.index = arg_5_1.index or 1
+function slot0.Show(slot0, slot1)
+	slot0.tasklist = slot1.tasklist
+	slot0.ptId = slot1.ptId
+	slot0.totalPt = slot1.totalPt
+	slot0.index = slot1.index or 1
 
-	arg_5_0:updateResIcon(arg_5_1.resId, arg_5_1.resIcon, arg_5_1.type)
-	var_0_1(arg_5_0)
+	slot0:updateResIcon(slot1.resId, slot1.resIcon, slot1.type)
+	uv0(slot0)
 
-	arg_5_0.totalTxt.text = arg_5_0.totalPt
-	arg_5_0.totalTitleTxt.text = i18n("award_window_pt_title")
+	slot0.totalTxt.text = slot0.totalPt
+	slot0.totalTitleTxt.text = i18n("award_window_pt_title")
 
-	setActive(arg_5_0._tf, true)
+	setActive(slot0._tf, true)
 end
 
-return var_0_0
+return slot0

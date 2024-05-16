@@ -1,7 +1,7 @@
-﻿local var_0_0 = class("BossSingleTotalRewardPanelMediator", import("view.activity.worldboss.ActivityBossTotalRewardPanelMediator"))
+slot0 = class("BossSingleTotalRewardPanelMediator", import("view.activity.worldboss.ActivityBossTotalRewardPanelMediator"))
 
-function var_0_0.register(arg_1_0)
+function slot0.register(slot0)
 	getProxy(SettingsProxy):ResetContinuousOperationAutoSub()
 end
 
-return var_0_0
+return slot0

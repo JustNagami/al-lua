@@ -1,21 +1,8 @@
-﻿if System.Reflection == nil then
+if System.Reflection == nil then
 	System.Reflection = {}
 end
 
-local function var_0_0(...)
-	local var_1_0 = {
-		...
-	}
-	local var_1_1 = 0
-
-	for iter_1_0 = 1, #var_1_0 do
-		var_1_1 = var_1_1 + var_1_0[iter_1_0]
-	end
-
-	return var_1_1
-end
-
-local var_0_1 = {
+slot1 = {
 	Default = 0,
 	SetField = 2048,
 	Static = 8,
@@ -37,8 +24,16 @@ local var_0_1 = {
 	PutDispProperty = 16384,
 	IgnoreCase = 1
 }
+System.Reflection.BindingFlags = slot1
 
-System.Reflection.BindingFlags = var_0_1
-System.Reflection.BindingFlags.GetMask = var_0_0
+function System.Reflection.BindingFlags.GetMask(...)
+	for slot5 = 1, #{
+		...
+	} do
+		slot1 = 0 + slot0[slot5]
+	end
 
-return var_0_1
+	return slot1
+end
+
+return slot1

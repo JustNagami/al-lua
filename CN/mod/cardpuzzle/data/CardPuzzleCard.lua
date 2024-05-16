@@ -1,56 +1,55 @@
-﻿local var_0_0 = class("CardPuzzleCard", BaseVO)
-
-var_0_0.CARD_TYPE = {
+slot0 = class("CardPuzzleCard", BaseVO)
+slot0.CARD_TYPE = {
 	ATTACK = 1,
 	ABILITY = 3,
 	TACTIC = 2
 }
 
-function var_0_0.CreateByNetData(arg_1_0)
-	local var_1_0 = {}
+function slot0.CreateByNetData(slot0)
+	slot1 = {}
 
-	for iter_1_0 = 1, arg_1_0.num do
-		table.insert(var_1_0, var_0_0.New({
-			configId = arg_1_0.id
+	for slot5 = 1, slot0.num do
+		table.insert(slot1, uv0.New({
+			configId = slot0.id
 		}))
 	end
 
-	return var_1_0
+	return slot1
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.card_template
 end
 
-function var_0_0.GetIconPath(arg_3_0)
-	return var_0_0.GetCardIconPath(arg_3_0:getConfig("icon"))
+function slot0.GetIconPath(slot0)
+	return uv0.GetCardIconPath(slot0:getConfig("icon"))
 end
 
-function var_0_0.GetConfigId(arg_4_0)
-	return arg_4_0.configId
+function slot0.GetConfigId(slot0)
+	return slot0.configId
 end
 
-function var_0_0.GetName(arg_5_0)
-	return arg_5_0:getConfig("name")
+function slot0.GetName(slot0)
+	return slot0:getConfig("name")
 end
 
-function var_0_0.GetCost(arg_6_0)
-	return arg_6_0:getConfig("cost")
+function slot0.GetCost(slot0)
+	return slot0:getConfig("cost")
 end
 
-function var_0_0.GetType(arg_7_0)
-	return arg_7_0:getConfig("card_type")
+function slot0.GetType(slot0)
+	return slot0:getConfig("card_type")
 end
 
-function var_0_0.GetDesc(arg_8_0)
-	return arg_8_0:getConfig("discript")
+function slot0.GetDesc(slot0)
+	return slot0:getConfig("discript")
 end
 
-function var_0_0.GetRarity(arg_9_0)
-	return arg_9_0:getConfig("rarity")
+function slot0.GetRarity(slot0)
+	return slot0:getConfig("rarity")
 end
 
-function var_0_0.GetEffects(arg_10_0)
+function slot0.GetEffects(slot0)
 	return {
 		{
 			keywords = {}
@@ -58,18 +57,18 @@ function var_0_0.GetEffects(arg_10_0)
 	}
 end
 
-function var_0_0.GetKeywords(arg_11_0)
-	return var_0_0.GetCardKeyWord(arg_11_0:getConfig("label"))
+function slot0.GetKeywords(slot0)
+	return uv0.GetCardKeyWord(slot0:getConfig("label"))
 end
 
-function var_0_0.GetCardKeyWord(arg_12_0)
-	return _.map(arg_12_0, function(arg_13_0)
-		return pg.puzzle_card_affix[arg_13_0]
+function slot0.GetCardKeyWord(slot0)
+	return _.map(slot0, function (slot0)
+		return pg.puzzle_card_affix[slot0]
 	end)
 end
 
-function var_0_0.GetCardIconPath(arg_14_0)
-	return "RogueCards/" .. arg_14_0
+function slot0.GetCardIconPath(slot0)
+	return "RogueCards/" .. slot0
 end
 
-return var_0_0
+return slot0

@@ -1,78 +1,68 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleFleetCardPuzzleCardManageComponent
+slot2 = class("BattleCardPuzzleSkillMoveCard", slot0.Battle.BattleCardPuzzleSkillEffect)
+slot0.Battle.BattleCardPuzzleSkillMoveCard = slot2
+slot2.__name = "BattleCardPuzzleSkillMoveCard"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleFleetCardPuzzleCardManageComponent
-local var_0_2 = class("BattleCardPuzzleSkillMoveCard", var_0_0.Battle.BattleCardPuzzleSkillEffect)
+function slot2.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-var_0_0.Battle.BattleCardPuzzleSkillMoveCard = var_0_2
-var_0_2.__name = "BattleCardPuzzleSkillMoveCard"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
-
-	arg_1_0._moveFrom = arg_1_0._tempData.arg_list.move_from or 0
-	arg_1_0._moveTo = arg_1_0._tempData.arg_list.move_to
-	arg_1_0._moveID = arg_1_0._tempData.arg_list.move_ID_list
-	arg_1_0._moveLabel = arg_1_0._tempData.arg_list.move_label_list
-	arg_1_0._moveOP = arg_1_0._tempData.arg_list.move_op or var_0_1.FUNC_NAME_ADD
-	arg_1_0._moveOther = arg_1_0._tempData.arg_list.move_other
-	arg_1_0._moveAll = arg_1_0._tempData.arg_list.move_all
-	arg_1_0._op = arg_1_0._tempData.arg_list.shuffle or 1
+	slot0._moveFrom = slot0._tempData.arg_list.move_from or 0
+	slot0._moveTo = slot0._tempData.arg_list.move_to
+	slot0._moveID = slot0._tempData.arg_list.move_ID_list
+	slot0._moveLabel = slot0._tempData.arg_list.move_label_list
+	slot0._moveOP = slot0._tempData.arg_list.move_op or uv1.FUNC_NAME_ADD
+	slot0._moveOther = slot0._tempData.arg_list.move_other
+	slot0._moveAll = slot0._tempData.arg_list.move_all
+	slot0._op = slot0._tempData.arg_list.shuffle or 1
 end
 
-function var_0_2.MoveCardAfterCast(arg_2_0)
-	if arg_2_0._moveID or arg_2_0._moveLabel then
-		return var_0_2.super.MoveCardAfterCast(arg_2_0)
+function slot2.MoveCardAfterCast(slot0)
+	if slot0._moveID or slot0._moveLabel then
+		return uv0.super.MoveCardAfterCast(slot0)
 	else
-		return arg_2_0._moveTo
+		return slot0._moveTo
 	end
 end
 
-function var_0_2.SkillEffectHandler(arg_3_0)
-	local var_3_0 = arg_3_0._card:GetClient()
-	local var_3_1 = var_3_0:GetCardPileByIndex(arg_3_0._moveTo)
-	local var_3_2 = var_3_0:GetCardPileByIndex(arg_3_0._moveFrom)
+function slot2.SkillEffectHandler(slot0)
+	slot1 = slot0._card:GetClient()
+	slot2 = slot1:GetCardPileByIndex(slot0._moveTo)
+	slot3 = slot1:GetCardPileByIndex(slot0._moveFrom)
 
-	if arg_3_0._moveID then
-		local var_3_3 = {
-			value = arg_3_0._moveID,
-			type = var_0_1.SEARCH_BY_ID,
-			total = arg_3_0._moveAll
-		}
-		local var_3_4 = var_3_2:Search(var_3_3)
-
-		for iter_3_0, iter_3_1 in ipairs(var_3_4) do
-			var_3_1[arg_3_0._moveOP](var_3_1, iter_3_1)
-			var_3_2:Remove(iter_3_1, arg_3_0._moveTo)
+	if slot0._moveID then
+		for slot9, slot10 in ipairs(slot3:Search({
+			value = slot0._moveID,
+			type = uv0.SEARCH_BY_ID,
+			total = slot0._moveAll
+		})) do
+			slot2[slot0._moveOP](slot2, slot10)
+			slot3:Remove(slot10, slot0._moveTo)
 		end
-	elseif arg_3_0._moveLabel then
-		local var_3_5 = {
-			value = arg_3_0._moveLabel,
-			type = var_0_1.SEARCH_BY_LABEL,
-			total = arg_3_0._moveAll
-		}
-		local var_3_6 = var_3_2:Search(var_3_5)
-
-		for iter_3_2, iter_3_3 in ipairs(var_3_6) do
-			var_3_1[arg_3_0._moveOP](var_3_1, iter_3_3)
-			var_3_2:Remove(iter_3_3, arg_3_0._moveTo)
+	elseif slot0._moveLabel then
+		for slot9, slot10 in ipairs(slot3:Search({
+			value = slot0._moveLabel,
+			type = uv0.SEARCH_BY_LABEL,
+			total = slot0._moveAll
+		})) do
+			slot2[slot0._moveOP](slot2, slot10)
+			slot3:Remove(slot10, slot0._moveTo)
 		end
-	elseif arg_3_0._moveOther then
-		local var_3_7 = var_3_2:GetCardList()
-
-		for iter_3_4, iter_3_5 in ipairs(var_3_7) do
-			if iter_3_5 ~= arg_3_0._card then
-				var_3_1[arg_3_0._moveOP](var_3_1, iter_3_5)
-				var_3_2:Remove(iter_3_5, arg_3_0._moveTo)
+	elseif slot0._moveOther then
+		for slot8, slot9 in ipairs(slot3:GetCardList()) do
+			if slot9 ~= slot0._card then
+				slot2[slot0._moveOP](slot2, slot9)
+				slot3:Remove(slot9, slot0._moveTo)
 			end
 		end
 	else
-		var_3_1[arg_3_0._moveOP](var_3_1, arg_3_0._card)
+		slot2[slot0._moveOP](slot2, slot0._card)
 	end
 
-	if arg_3_0._op == 1 then
-		var_3_1:Shuffle()
+	if slot0._op == 1 then
+		slot2:Shuffle()
 	end
 
-	arg_3_0:Finale()
+	slot0:Finale()
 end

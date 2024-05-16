@@ -1,93 +1,86 @@
-﻿local var_0_0 = class("SleeplessCityPage", import(".TemplatePage.PtTemplatePage"))
+slot0 = class("SleeplessCityPage", import(".TemplatePage.PtTemplatePage"))
+slot0.COLOR = "#BD3F40"
 
-var_0_0.COLOR = "#BD3F40"
-
-function var_0_0.OnFirstFlush(arg_1_0)
-	var_0_0.super.OnFirstFlush(arg_1_0)
-	onButton(arg_1_0, arg_1_0.getBtn, function()
-		local var_2_0 = {}
-		local var_2_1 = arg_1_0.ptData:GetAward()
-		local var_2_2 = getProxy(PlayerProxy):getRawData()
-		local var_2_3 = pg.gameset.urpt_chapter_max.description[1]
-		local var_2_4 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_2_3)
-		local var_2_5, var_2_6 = Task.StaticJudgeOverflow(var_2_2.gold, var_2_2.oil, var_2_4, true, true, {
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
+	onButton(slot0, slot0.getBtn, function ()
+		slot0 = {}
+		slot1 = uv0.ptData:GetAward()
+		slot3 = getProxy(PlayerProxy):getRawData()
+		slot6, slot7 = Task.StaticJudgeOverflow(slot3.gold, slot3.oil, LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]), true, true, {
 			{
-				var_2_1.type,
-				var_2_1.id,
-				var_2_1.count
+				slot1.type,
+				slot1.id,
+				slot1.count
 			}
 		})
 
-		if var_2_5 then
-			table.insert(var_2_0, function(arg_3_0)
+		if slot6 then
+			table.insert(slot0, function (slot0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					type = MSGBOX_TYPE_ITEM_BOX,
 					content = i18n("award_max_warning"),
-					items = var_2_6,
-					onYes = arg_3_0
+					items = uv0,
+					onYes = slot0
 				})
 			end)
 		end
 
-		seriesAsync(var_2_0, function()
-			local var_4_0, var_4_1 = arg_1_0.ptData:GetResProgress()
+		seriesAsync(slot0, function ()
+			slot0, slot1 = uv0.ptData:GetResProgress()
 
-			arg_1_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = arg_1_0.ptData:GetId(),
-				arg1 = var_4_1,
-				callback = function()
-					arg_1_0:OnUpdateFlush()
+				activity_id = uv0.ptData:GetId(),
+				arg1 = slot1,
+				callback = function ()
+					uv0:OnUpdateFlush()
 				end
 			})
 		end)
 	end, SFX_PANEL)
-	arg_1_0:OnUpdateFlush()
+	slot0:OnUpdateFlush()
 end
 
-function var_0_0.OnUpdateFlush(arg_6_0)
-	local var_6_0 = arg_6_0.activity:getConfig("config_client").story
+function slot0.OnUpdateFlush(slot0)
+	slot1 = slot0.activity:getConfig("config_client").story
 
-	if arg_6_0.level and checkExist(var_6_0, {
-		arg_6_0.level
+	if slot0.level and checkExist(slot1, {
+		slot0.level
 	}, {
 		1
 	}) then
-		pg.NewStoryMgr.GetInstance():Play(var_6_0[arg_6_0.level][1])
+		pg.NewStoryMgr.GetInstance():Play(slot1[slot0.level][1])
 	end
 
-	arg_6_0.level = arg_6_0.ptData:getTargetLevel()
+	slot0.level = slot0.ptData:getTargetLevel()
 
-	if arg_6_0.step then
-		local var_6_1, var_6_2, var_6_3 = arg_6_0.ptData:GetLevelProgress()
+	if slot0.step then
+		slot2, slot3, slot4 = slot0.ptData:GetLevelProgress()
 
-		setText(arg_6_0.step, var_6_1 .. "/" .. var_6_2)
+		setText(slot0.step, slot2 .. "/" .. slot3)
 	end
 
-	local var_6_4, var_6_5, var_6_6 = arg_6_0.ptData:GetResProgress()
+	slot2, slot3, slot4 = slot0.ptData:GetResProgress()
 
-	setText(arg_6_0.progress, (var_6_6 >= 1 and setColorStr(var_6_4, COLOR_GREEN) or setColorStr(var_6_4, var_0_0.COLOR)) .. "/" .. var_6_5)
-	setSlider(arg_6_0.slider, 0, 1, var_6_6)
+	setText(slot0.progress, (slot4 >= 1 and setColorStr(slot2, COLOR_GREEN) or setColorStr(slot2, uv0.COLOR)) .. "/" .. slot3)
+	setSlider(slot0.slider, 0, 1, slot4)
 
-	local var_6_7 = arg_6_0.ptData:CanGetAward()
-	local var_6_8 = arg_6_0.ptData:CanGetNextAward()
-	local var_6_9 = arg_6_0.ptData:CanGetMorePt()
+	slot5 = slot0.ptData:CanGetAward()
+	slot6 = slot0.ptData:CanGetNextAward()
 
-	setActive(arg_6_0.battleBtn, var_6_9 and not var_6_7 and var_6_8)
-	setActive(arg_6_0.getBtn, var_6_7)
-	setActive(arg_6_0.gotBtn, not var_6_8)
-
-	local var_6_10 = arg_6_0.ptData:GetAward()
-
-	updateDrop(arg_6_0.awardTF, var_6_10)
-	onButton(arg_6_0, arg_6_0.awardTF, function()
-		arg_6_0:emit(BaseUI.ON_DROP, var_6_10)
+	setActive(slot0.battleBtn, slot0.ptData:CanGetMorePt() and not slot5 and slot6)
+	setActive(slot0.getBtn, slot5)
+	setActive(slot0.gotBtn, not slot6)
+	updateDrop(slot0.awardTF, slot0.ptData:GetAward())
+	onButton(slot0, slot0.awardTF, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-	setText(arg_6_0:findTF("description", arg_6_0.bg), i18n("activity_victory"))
+	setText(slot0:findTF("description", slot0.bg), i18n("activity_victory"))
 
-	if not var_6_8 and var_6_6 >= 1 and not var_6_7 then
-		arg_6_0.level = arg_6_0.level + 1
+	if not slot6 and slot4 >= 1 and not slot5 then
+		slot0.level = slot0.level + 1
 	end
 end
 
-return var_0_0
+return slot0

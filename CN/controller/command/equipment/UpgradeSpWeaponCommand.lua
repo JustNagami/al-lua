@@ -1,146 +1,124 @@
-﻿local var_0_0 = class("UpgradeSpWeaponCommand", pm.SimpleCommand)
+slot0 = class("UpgradeSpWeaponCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.uid or 0
-	local var_1_2 = var_1_0.shipId or 0
-	local var_1_3 = var_1_0.items
-	local var_1_4 = var_1_0.consumes
-	local var_1_5 = getProxy(BagProxy)
-	local var_1_6 = getProxy(PlayerProxy)
-	local var_1_7 = getProxy(BayProxy)
-	local var_1_8 = getProxy(EquipmentProxy)
-	local var_1_9
-	local var_1_10 = 0
-	local var_1_11 = 0
-	local var_1_12 = 0
-	local var_1_13 = 0
-	local var_1_14 = {}
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().uid or 0
+	slot4 = slot2.shipId or 0
+	slot5 = slot2.items
+	slot6 = slot2.consumes
+	slot7 = getProxy(BagProxy)
+	slot8 = getProxy(PlayerProxy)
+	slot9 = getProxy(BayProxy)
+	slot10 = getProxy(EquipmentProxy)
+	slot11 = nil
+	slot12 = 0
+	slot13 = 0
+	slot14 = 0
+	slot15 = 0
+	slot16 = {}
 
 	seriesAsync({
-		function(arg_2_0)
-			local var_2_0, var_2_1 = EquipmentProxy.StaticGetSpWeapon(var_1_2, var_1_1)
+		function (slot0)
+			slot1, slot2 = EquipmentProxy.StaticGetSpWeapon(uv0, uv1)
+			uv2 = slot1:GetPt()
+			uv2 = uv2 + SpWeapon.CalculateHistoryPt(uv3, uv4)
+			slot4 = 0
 
-			var_1_10 = var_2_0:GetPt()
-
-			local var_2_2 = SpWeapon.CalculateHistoryPt(var_1_3, var_1_4)
-
-			var_1_10 = var_1_10 + var_2_2
-
-			local var_2_3 = 0
-
-			local function var_2_4(arg_3_0)
-				for iter_3_0, iter_3_1 in ipairs(arg_3_0) do
-					local var_3_0 = iter_3_1[1]
-					local var_3_1 = underscore.detect(var_1_14, function(arg_4_0)
-						return arg_4_0.id == var_3_0
-					end)
-
-					if not var_3_1 then
-						var_3_1 = Item.New({
-							id = var_3_0
+			function slot5(slot0)
+				for slot4, slot5 in ipairs(slot0) do
+					if not underscore.detect(uv0, function (slot0)
+						return slot0.id == uv0
+					end) then
+						slot7 = Item.New({
+							id = slot5[1]
 						})
-						var_3_1.count = 0
+						slot7.count = 0
 
-						table.insert(var_1_14, var_3_1)
+						table.insert(uv0, slot7)
 					end
 
-					var_3_1.count = var_3_1.count + iter_3_1[2]
+					slot7.count = slot7.count + slot5[2]
 				end
 			end
 
-			var_1_9 = var_2_0:GetConfigID()
+			uv6 = slot1:GetConfigID()
 
 			while true do
-				local var_2_5 = SpWeapon.New({
-					id = var_1_9
-				})
-				local var_2_6 = var_2_5:GetNextUpgradeID()
-
-				if var_2_6 == 0 then
+				if SpWeapon.New({
+					id = uv6
+				}):GetNextUpgradeID() == 0 then
 					break
 				end
 
-				local var_2_7 = var_2_5:GetUpgradeConfig()
+				uv7 = uv8
+				uv8 = uv8 + slot6:GetUpgradeConfig().upgrade_use_pt
 
-				var_1_11 = var_1_12
-				var_1_12 = var_1_12 + var_2_7.upgrade_use_pt
-
-				local var_2_8 = SpWeapon.New({
-					id = var_2_6
-				})
-
-				if var_2_3 > 0 and var_2_8:GetRarity() > var_2_5:GetRarity() then
+				if slot4 > 0 and slot6:GetRarity() < SpWeapon.New({
+					id = slot7
+				}):GetRarity() then
 					break
 				end
 
-				if var_1_10 < var_1_12 then
+				if uv2 < uv8 then
 					break
 				end
 
-				var_2_4(var_2_7.upgrade_use_item)
+				slot5(slot8.upgrade_use_item)
 
-				var_1_13 = var_1_13 + var_2_7.upgrade_use_gold
-				var_2_3 = var_2_3 + 1
-				var_1_9 = var_2_6
+				uv9 = uv9 + slot8.upgrade_use_gold
+				slot4 = slot4 + 1
+				uv6 = slot7
 
-				if var_2_8:GetRarity() > var_2_5:GetRarity() then
-					var_1_11 = var_1_12
+				if slot6:GetRarity() < slot9:GetRarity() then
+					uv7 = uv8
 
 					break
 				end
 			end
 
-			local var_2_9 = var_1_10 - var_1_12
+			slot6 = uv2 - uv8
+			uv2 = math.min(uv2, uv8)
 
-			var_1_10 = math.min(var_1_10, var_1_12)
-
-			if var_2_2 == 0 and var_2_3 == 0 then
+			if slot3 == 0 and slot4 == 0 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_pt_no_enough"))
 
 				return
 			end
 
-			local var_2_10 = var_1_5:getRawData()
-			local var_2_11 = var_1_6:getRawData()
+			slot7 = uv10:getRawData()
 
-			if var_2_11.gold < var_1_13 then
+			if uv11:getRawData().gold < uv9 then
 				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 					{
 						59001,
-						var_1_13 - var_2_11.gold,
-						var_1_13
+						uv9 - slot8.gold,
+						uv9
 					}
 				})
 
 				return
 			end
 
-			if not _.all(var_1_14, function(arg_5_0)
-				return arg_5_0.count <= (var_2_10[arg_5_0.id] and var_2_10[arg_5_0.id].count or 0)
+			if not _.all(uv5, function (slot0)
+				return slot0.count <= (uv0[slot0.id] and uv0[slot0.id].count or 0)
 			end) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_materal_no_enough"))
 
 				return
 			end
 
-			if not _.all(var_1_3, function(arg_6_0)
-				return arg_6_0.count <= (var_2_10[arg_6_0.id] and var_2_10[arg_6_0.id].count or 0)
+			if not _.all(uv3, function (slot0)
+				return slot0.count <= (uv0[slot0.id] and uv0[slot0.id].count or 0)
 			end) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_materal_no_enough"))
 
 				return
 			end
 
-			if not _.all(var_1_4, function(arg_7_0)
-				local var_7_0 = arg_7_0:GetShipId()
-
-				if var_7_0 then
-					local var_7_1 = var_1_7:getShipById(var_7_0):GetSpWeapon()
-
-					return var_7_1 and var_7_1:GetUID() == arg_7_0:GetUID()
+			if not _.all(uv4, function (slot0)
+				if slot0:GetShipId() then
+					return uv0:getShipById(slot1):GetSpWeapon() and slot3:GetUID() == slot0:GetUID()
 				else
-					return var_1_8:GetSpWeaponByUid(arg_7_0:GetUID())
+					return uv1:GetSpWeaponByUid(slot0:GetUID())
 				end
 			end) then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("spweapon_tip_materal_no_enough"))
@@ -148,78 +126,73 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 				return
 			end
 
-			if var_2_9 > 0 and var_2_2 > 0 then
+			if slot6 > 0 and slot3 > 0 then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("spweapon_tip_breakout_overflow", var_2_9),
-					onYes = arg_2_0
+					content = i18n("spweapon_tip_breakout_overflow", slot6),
+					onYes = slot0
 				})
 			else
-				arg_2_0()
+				slot0()
 			end
 		end,
-		function(arg_8_0)
-			local var_8_0 = _.reduce(var_1_3, {}, function(arg_9_0, arg_9_1)
-				for iter_9_0 = 1, arg_9_1.count do
-					table.insert(arg_9_0, arg_9_1.id)
-				end
-
-				return arg_9_0
-			end)
-			local var_8_1 = _.map(var_1_4, function(arg_10_0)
-				return arg_10_0:GetUID()
-			end)
-
+		function (slot0)
 			pg.ConnectionMgr.GetInstance():Send(14203, {
-				ship_id = var_1_2,
-				spweapon_id = var_1_1,
-				item_id_list = var_8_0,
-				spweapon_id_list = var_8_1
-			}, 14204, function(arg_11_0)
-				if arg_11_0.result == 0 then
-					local var_11_0, var_11_1 = EquipmentProxy.StaticGetSpWeapon(var_1_2, var_1_1)
-					local var_11_2 = var_11_0:MigrateTo(var_1_9)
+				ship_id = uv2,
+				spweapon_id = uv3,
+				item_id_list = _.reduce(uv0, {}, function (slot0, slot1)
+					for slot5 = 1, slot1.count do
+						table.insert(slot0, slot1.id)
+					end
 
-					var_11_2:SetPt(math.floor(var_1_10 - var_1_11))
-					_.each(var_1_14, function(arg_12_0)
-						var_1_5:removeItemById(arg_12_0.id, arg_12_0.count)
+					return slot0
+				end),
+				spweapon_id_list = _.map(uv1, function (slot0)
+					return slot0:GetUID()
+				end)
+			}, 14204, function (slot0)
+				if slot0.result == 0 then
+					slot1, slot2 = EquipmentProxy.StaticGetSpWeapon(uv0, uv1)
+					slot3 = slot1:MigrateTo(uv2)
+
+					slot3:SetPt(math.floor(uv3 - uv4))
+					_.each(uv5, function (slot0)
+						uv0:removeItemById(slot0.id, slot0.count)
 					end)
 
-					local var_11_3 = var_1_6:getData()
+					slot4 = uv7:getData()
 
-					var_11_3:consume({
-						gold = var_1_13
+					slot4:consume({
+						gold = uv8
 					})
-					var_1_6:updatePlayer(var_11_3)
-					_.each(var_1_3, function(arg_13_0)
-						var_1_5:removeItemById(arg_13_0.id, arg_13_0.count)
+					uv7:updatePlayer(slot4)
+					_.each(uv9, function (slot0)
+						uv0:removeItemById(slot0.id, slot0.count)
 					end)
-					_.each(var_1_4, function(arg_14_0)
-						local var_14_0 = arg_14_0:GetShipId()
+					_.each(uv10, function (slot0)
+						if slot0:GetShipId() then
+							slot2 = uv0:getShipById(slot1)
 
-						if var_14_0 then
-							local var_14_1 = var_1_7:getShipById(var_14_0)
-
-							var_14_1:UpdateSpWeapon(nil)
-							var_1_7:updateShip(var_14_1)
+							slot2:UpdateSpWeapon(nil)
+							uv0:updateShip(slot2)
 						else
-							var_1_8:RemoveSpWeapon(arg_14_0)
+							uv1:RemoveSpWeapon(slot0)
 						end
 					end)
 
-					if var_11_1 then
-						var_11_1:UpdateSpWeapon(var_11_2)
-						getProxy(BayProxy):updateShip(var_11_1)
+					if slot2 then
+						slot2:UpdateSpWeapon(slot3)
+						getProxy(BayProxy):updateShip(slot2)
 					else
-						getProxy(EquipmentProxy):AddSpWeapon(var_11_2)
+						getProxy(EquipmentProxy):AddSpWeapon(slot3)
 					end
 
-					arg_1_0:sendNotification(GAME.UPGRADE_SPWEAPON_DONE, var_11_2)
+					uv13:sendNotification(GAME.UPGRADE_SPWEAPON_DONE, slot3)
 				else
-					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_upgrade_erro", arg_11_0.result))
+					pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_upgrade_erro", slot0.result))
 				end
 			end)
 		end
 	})
 end
 
-return var_0_0
+return slot0

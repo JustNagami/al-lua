@@ -1,1 +1,1 @@
-﻿return (class("DexiV3LoginPage", import(".TemplatePage.LightLoginTemplatePage")))
+return class("DexiV3LoginPage", import(".TemplatePage.LightLoginTemplatePage"))

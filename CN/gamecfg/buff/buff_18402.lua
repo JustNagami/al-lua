@@ -1,28 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddProficiency",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				number = 0.01,
-				label = {
-					"CV"
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			pop = {},
-			arg_list = {
-				buff_id = 18403
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -292,5 +268,29 @@
 	stack = 1,
 	id = 18402,
 	icon = 18400,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffAddProficiency",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				number = 0.01,
+				label = {
+					"CV"
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			pop = {},
+			arg_list = {
+				buff_id = 18403
+			}
+		}
+	}
 }

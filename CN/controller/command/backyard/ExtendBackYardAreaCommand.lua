@@ -1,13 +1,13 @@
-﻿local var_0_0 = class("ExtendBackYardAreaCommand", pm.SimpleCommand)
+slot0 = class("ExtendBackYardAreaCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(DormProxy)
-	local var_1_1 = var_1_0:getData()
+function slot0.execute(slot0, slot1)
+	slot2 = getProxy(DormProxy)
+	slot3 = slot2:getData()
 
-	var_1_1:levelUp()
-	var_1_0:updateDrom(var_1_1, BackYardConst.DORM_UPDATE_TYPE_LEVEL)
-	arg_1_0:sendNotification(GAME.EXTEND_BACKYARD_AREA_DONE)
+	slot3:levelUp()
+	slot2:updateDrom(slot3, BackYardConst.DORM_UPDATE_TYPE_LEVEL)
+	slot0:sendNotification(GAME.EXTEND_BACKYARD_AREA_DONE)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_extendArea_ok"))
 end
 
-return var_0_0
+return slot0

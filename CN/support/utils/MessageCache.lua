@@ -1,188 +1,163 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.MessageCache = class("MessageCache")
+slot0.MessageCache.DEFAULT_QUEUE_LENGTH = 10000
+slot0.MessageCache.CMD_KILL = "CMD_KILL"
+slot0.MessageCache.CMD_PUSH = "CMD_PUSH"
+slot0.MessageCache.CMD_POP = "CMD_POP"
+slot0.MessageCache.CMD_FLUSH = "CMD_FLUSH"
+slot0.MessageCache.OK = "OK"
+slot0.MessageCache.QUEUE_FULL = "QUEUE_FULL"
+slot0.MessageCache.EXCEPTION = "EXCEPTION"
 
-local var_0_0 = pg
-
-var_0_0.MessageCache = class("MessageCache")
-var_0_0.MessageCache.DEFAULT_QUEUE_LENGTH = 10000
-var_0_0.MessageCache.CMD_KILL = "CMD_KILL"
-var_0_0.MessageCache.CMD_PUSH = "CMD_PUSH"
-var_0_0.MessageCache.CMD_POP = "CMD_POP"
-var_0_0.MessageCache.CMD_FLUSH = "CMD_FLUSH"
-var_0_0.MessageCache.OK = "OK"
-var_0_0.MessageCache.QUEUE_FULL = "QUEUE_FULL"
-var_0_0.MessageCache.EXCEPTION = "EXCEPTION"
-
-local function var_0_1(...)
+function slot1(...)
 	return coroutine.yield(...)
 end
 
-local function var_0_2(arg_2_0, arg_2_1, arg_2_2)
-	if arg_2_1 == var_0_0.MessageCache.CMD_PUSH then
-		local var_2_0 = #arg_2_0.cacheQueue_ + (arg_2_0.curRQLen_ - arg_2_0.curRQPos_)
-
-		if var_2_0 >= arg_2_0.cacheQueueLenLimit_ then
-			return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.QUEUE_FULL, string.format("                    the cache limit length is set with %s, the coming message will be ignored.\n                ", arg_2_0.cacheQueueLenLimit_)))
+function slot2(slot0, slot1, slot2)
+	if slot1 == uv0.MessageCache.CMD_PUSH then
+		if slot0.cacheQueueLenLimit_ <= #slot0.cacheQueue_ + slot0.curRQLen_ - slot0.curRQPos_ then
+			return uv1(slot0, uv2(uv0.MessageCache.QUEUE_FULL, string.format("                    the cache limit length is set with %s, the coming message will be ignored.\n                ", slot0.cacheQueueLenLimit_)))
 		else
-			table.insert(arg_2_0.cacheQueue_, arg_2_2)
+			table.insert(slot0.cacheQueue_, slot2)
 
-			return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.OK, var_2_0 + 1))
+			return uv1(slot0, uv2(uv0.MessageCache.OK, slot3 + 1))
 		end
-	elseif arg_2_1 == var_0_0.MessageCache.CMD_POP then
-		if arg_2_0.curRQPos_ < arg_2_0.curRQLen_ then
-			arg_2_0.curRQPos_ = arg_2_0.curRQPos_ + 1
+	elseif slot1 == uv0.MessageCache.CMD_POP then
+		if slot0.curRQPos_ < slot0.curRQLen_ then
+			slot0.curRQPos_ = slot0.curRQPos_ + 1
+			slot0.retrieveQueue_[slot0.curRQPos_] = nil
 
-			local var_2_1 = arg_2_0.retrieveQueue_[arg_2_0.curRQPos_]
-
-			arg_2_0.retrieveQueue_[arg_2_0.curRQPos_] = nil
-
-			return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.OK, var_2_1))
+			return uv1(slot0, uv2(uv0.MessageCache.OK, slot0.retrieveQueue_[slot0.curRQPos_]))
 		else
-			assert(arg_2_0.curRQPos_ >= arg_2_0.curRQLen_)
+			assert(slot0.curRQLen_ <= slot0.curRQPos_)
 
-			if arg_2_0.cacheQueue_[1] then
-				arg_2_0.cacheQueue_, arg_2_0.retrieveQueue_ = arg_2_0.retrieveQueue_, arg_2_0.cacheQueue_
-				arg_2_0.curRQPos_ = 1
-				arg_2_0.curRQLen_ = #arg_2_0.retrieveQueue_
+			if slot0.cacheQueue_[1] then
+				slot0.retrieveQueue_ = slot0.cacheQueue_
+				slot0.cacheQueue_ = slot0.retrieveQueue_
+				slot0.curRQPos_ = 1
+				slot0.curRQLen_ = #slot0.retrieveQueue_
+				slot0.retrieveQueue_[slot0.curRQPos_] = nil
 
-				local var_2_2 = arg_2_0.retrieveQueue_[arg_2_0.curRQPos_]
-
-				arg_2_0.retrieveQueue_[arg_2_0.curRQPos_] = nil
-
-				return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.OK, var_2_2))
+				return uv1(slot0, uv2(uv0.MessageCache.OK, slot0.retrieveQueue_[slot0.curRQPos_]))
 			else
-				return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.OK))
+				return uv1(slot0, uv2(uv0.MessageCache.OK))
 			end
 		end
-	elseif arg_2_1 == var_0_0.MessageCache.CMD_KILL then
-		local var_2_3 = arg_2_0.curRQPos_
-		local var_2_4 = arg_2_0.curRQLen_
-		local var_2_5 = 1
+	elseif slot1 == uv0.MessageCache.CMD_KILL then
+		slot3 = slot0.curRQPos_
+		slot5 = 1
 
-		while var_2_3 < var_2_4 do
-			table.insert(arg_2_0.cacheQueue_, var_2_5, arg_2_0.retrieveQueue_[var_2_3])
+		while slot3 < slot0.curRQLen_ do
+			table.insert(slot0.cacheQueue_, slot5, slot0.retrieveQueue_[slot3])
 
-			arg_2_0.retrieveQueue_[var_2_3] = nil
-			var_2_5 = var_2_5 + 1
-			var_2_3 = var_2_3 + 1
+			slot0.retrieveQueue_[slot3] = nil
+			slot5 = slot5 + 1
+			slot3 = slot3 + 1
 		end
 
-		arg_2_0.curRQPos_ = 0
-		arg_2_0.curRQLen_ = 0
+		slot0.curRQPos_ = 0
+		slot0.curRQLen_ = 0
 
-		return var_0_0.MessageCache.OK, arg_2_0.cacheQueue_
-	elseif arg_2_1 == var_0_0.MessageCache.CMD_FLUSH then
-		local var_2_6 = arg_2_0.curRQPos_
-		local var_2_7 = arg_2_0.curRQLen_
-		local var_2_8 = 1
+		return uv0.MessageCache.OK, slot0.cacheQueue_
+	elseif slot1 == uv0.MessageCache.CMD_FLUSH then
+		slot3 = slot0.curRQPos_
+		slot5 = 1
 
-		while var_2_6 < var_2_7 do
-			table.insert(arg_2_0.cacheQueue_, var_2_8, arg_2_0.retrieveQueue_[var_2_6])
+		while slot3 < slot0.curRQLen_ do
+			table.insert(slot0.cacheQueue_, slot5, slot0.retrieveQueue_[slot3])
 
-			arg_2_0.retrieveQueue_[var_2_6] = nil
-			var_2_8 = var_2_8 + 1
-			var_2_6 = var_2_6 + 1
+			slot0.retrieveQueue_[slot3] = nil
+			slot5 = slot5 + 1
+			slot3 = slot3 + 1
 		end
 
-		arg_2_0.curRQPos_ = 0
-		arg_2_0.curRQLen_ = 0
+		slot0.curRQPos_ = 0
+		slot0.curRQLen_ = 0
+		slot0.cacheQueue_ = {}
 
-		local var_2_9 = arg_2_0.cacheQueue_
-
-		arg_2_0.cacheQueue_ = {}
-
-		return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.OK, var_2_9))
+		return uv1(slot0, uv2(uv0.MessageCache.OK, slot0.cacheQueue_))
 	else
-		return var_0_2(arg_2_0, var_0_1(var_0_0.MessageCache.EXCEPTION, string.format("unknown cmd type received %s", tostring(arg_2_1))))
+		return uv1(slot0, uv2(uv0.MessageCache.EXCEPTION, string.format("unknown cmd type received %s", tostring(slot1))))
 	end
 end
 
-local function var_0_3(arg_3_0)
-	local var_3_0 = {
+function slot3(slot0)
+	return uv1({
 		curRQLen_ = 0,
 		curRQPos_ = 0,
 		cacheQueue_ = {},
 		retrieveQueue_ = {},
-		cacheQueueLenLimit_ = arg_3_0 or var_0_0.MessageCache.DEFAULT_QUEUE_LENGTH
-	}
-
-	return var_0_2(var_3_0, var_0_1(var_0_0.MessageCache.OK))
+		cacheQueueLenLimit_ = slot0 or uv0.MessageCache.DEFAULT_QUEUE_LENGTH
+	}, uv2(uv0.MessageCache.OK))
 end
 
-function var_0_0.MessageCache.Ctor(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0._name = arg_4_1
-	arg_4_0._thread = coroutine.create(var_0_3)
+function slot0.MessageCache.Ctor(slot0, slot1, slot2)
+	slot0._name = slot1
+	slot0._thread = coroutine.create(uv0)
+	slot3, slot4 = coroutine.resume(slot0._thread, slot2)
 
-	local var_4_0, var_4_1 = coroutine.resume(arg_4_0._thread, arg_4_2)
-
-	assert(var_4_1 == var_0_0.MessageCache.OK)
+	assert(slot4 == uv1.MessageCache.OK)
 end
 
-function var_0_0.MessageCache.Push(arg_5_0, ...)
-	local var_5_0 = coroutine.status(arg_5_0._thread)
-
-	if var_5_0 == "suspended" then
-		local var_5_1, var_5_2, var_5_3 = coroutine.resume(arg_5_0._thread, var_0_0.MessageCache.CMD_PUSH, {
+function slot0.MessageCache.Push(slot0, ...)
+	if coroutine.status(slot0._thread) == "suspended" then
+		slot2, slot3, slot4 = coroutine.resume(slot0._thread, uv0.MessageCache.CMD_PUSH, {
 			...
 		})
 
-		if var_5_1 then
-			return var_5_2, var_5_3
+		if slot2 then
+			return slot3, slot4
 		else
-			return var_0_0.MessageCache.EXCEPTION, var_5_2
+			return uv0.MessageCache.EXCEPTION, slot3
 		end
 	else
-		return var_0_0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Push operation.", var_5_0)
+		return uv0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Push operation.", slot1)
 	end
 end
 
-function var_0_0.MessageCache.Pop(arg_6_0)
-	local var_6_0 = coroutine.status(arg_6_0._thread)
+function slot0.MessageCache.Pop(slot0)
+	if coroutine.status(slot0._thread) == "suspended" then
+		slot2, slot3, slot4 = coroutine.resume(slot0._thread, uv0.MessageCache.CMD_POP)
 
-	if var_6_0 == "suspended" then
-		local var_6_1, var_6_2, var_6_3 = coroutine.resume(arg_6_0._thread, var_0_0.MessageCache.CMD_POP)
-
-		if var_6_1 then
-			if var_6_2 == var_0_0.MessageCache.OK and var_6_3 ~= nil then
-				return var_6_2, unpack(var_6_3)
+		if slot2 then
+			if slot3 == uv0.MessageCache.OK and slot4 ~= nil then
+				return slot3, unpack(slot4)
 			else
-				return var_6_2, var_6_3
+				return slot3, slot4
 			end
 		else
-			return var_0_0.MessageCache.EXCEPTION, var_6_2
+			return uv0.MessageCache.EXCEPTION, slot3
 		end
 	else
-		return var_0_0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Pop operation.", var_6_0)
+		return uv0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Pop operation.", slot1)
 	end
 end
 
-function var_0_0.MessageCache.Flush(arg_7_0)
-	local var_7_0 = coroutine.status(arg_7_0._thread)
+function slot0.MessageCache.Flush(slot0)
+	if coroutine.status(slot0._thread) == "suspended" then
+		slot2, slot3, slot4 = coroutine.resume(slot0._thread, uv0.MessageCache.CMD_FLUSH)
 
-	if var_7_0 == "suspended" then
-		local var_7_1, var_7_2, var_7_3 = coroutine.resume(arg_7_0._thread, var_0_0.MessageCache.CMD_FLUSH)
-
-		if var_7_1 then
-			return var_7_2, var_7_3
+		if slot2 then
+			return slot3, slot4
 		else
-			return var_0_0.MessageCache.EXCEPTION, var_7_2
+			return uv0.MessageCache.EXCEPTION, slot3
 		end
 	else
-		return var_0_0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Destroy operation.", var_7_0)
+		return uv0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Destroy operation.", slot1)
 	end
 end
 
-function var_0_0.MessageCache.Destroy(arg_8_0)
-	local var_8_0 = coroutine.status(arg_8_0._thread)
+function slot0.MessageCache.Destroy(slot0)
+	if coroutine.status(slot0._thread) == "suspended" then
+		slot2, slot3, slot4 = coroutine.resume(slot0._thread, uv0.MessageCache.CMD_KILL)
 
-	if var_8_0 == "suspended" then
-		local var_8_1, var_8_2, var_8_3 = coroutine.resume(arg_8_0._thread, var_0_0.MessageCache.CMD_KILL)
-
-		if var_8_1 then
-			return var_8_2, var_8_3
+		if slot2 then
+			return slot3, slot4
 		else
-			return var_0_0.MessageCache.EXCEPTION, var_8_2
+			return uv0.MessageCache.EXCEPTION, slot3
 		end
 	else
-		return var_0_0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Destroy operation.", var_8_0)
+		return uv0.MessageCache.EXCEPTION, string.format("current thread status %s,\n            maybe the MessageCache:Destroy() is called before the Destroy operation.", slot1)
 	end
 end

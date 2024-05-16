@@ -1,19 +1,18 @@
-﻿local var_0_0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
+slot0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
+slot0.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
+slot0.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"
 
-var_0_0.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
-var_0_0.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.RETREAT_FLEET, function()
-		arg_1_0:sendNotification(GAME.WORLD_RETREAT_FLEET)
+function slot0.register(slot0)
+	slot0:bind(uv0.RETREAT_FLEET, function ()
+		uv0:sendNotification(GAME.WORLD_RETREAT_FLEET)
 	end)
-	arg_1_0:bind(var_0_0.OnOpenSublayer, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-		arg_1_0:addSubLayers(arg_3_1, arg_3_2, arg_3_3)
+	slot0:bind(uv0.OnOpenSublayer, function (slot0, slot1, slot2, slot3)
+		uv0:addSubLayers(slot1, slot2, slot3)
 	end)
-	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		PlayerProxy.UPDATED,
 		GAME.WORLD_MAP_OP_DONE,
@@ -21,17 +20,16 @@ function var_0_0.listNotificationInterests(arg_4_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == PlayerProxy.UPDATED then
-		arg_5_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
-	elseif var_5_0 == GAME.WORLD_MAP_OP_DONE then
-		-- block empty
-	elseif var_5_0 == GAME.BEGIN_STAGE_DONE then
-		arg_5_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_5_1)
+	if slot1:getName() == PlayerProxy.UPDATED then
+		slot0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	elseif slot2 == GAME.WORLD_MAP_OP_DONE then
+		-- Nothing
+	elseif slot2 == GAME.BEGIN_STAGE_DONE then
+		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
 	end
 end
 
-return var_0_0
+return slot0

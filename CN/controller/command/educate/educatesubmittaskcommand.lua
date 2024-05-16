@@ -1,31 +1,26 @@
-﻿local var_0_0 = class("EducateSubmitTaskCommand", pm.SimpleCommand)
+slot0 = class("EducateSubmitTaskCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1
-
-	var_1_1 = var_1_0 and var_1_0.callback
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
 
 	pg.ConnectionMgr.GetInstance():Send(27023, {
-		id = var_1_0.id,
-		system = var_1_0.system
-	}, 27024, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			local var_2_0 = getProxy(EducateProxy)
-
-			if var_1_0.id == var_2_0:GetUnlockSecretaryTaskId() then
-				var_2_0:SetSecretaryUnlock()
+		id = slot2.id,
+		system = slot2.system
+	}, 27024, function (slot0)
+		if slot0.result == 0 then
+			if uv0.id == getProxy(EducateProxy):GetUnlockSecretaryTaskId() then
+				slot1:SetSecretaryUnlock()
 			end
 
-			EducateHelper.UpdateDropsData(arg_2_0.awards)
-			var_2_0:GetTaskProxy():RemoveTaskById(var_1_0.id)
-			arg_1_0:sendNotification(GAME.EDUCATE_SUBMIT_TASK_DONE, {
-				awards = arg_2_0.awards
+			EducateHelper.UpdateDropsData(slot0.awards)
+			slot1:GetTaskProxy():RemoveTaskById(uv0.id)
+			uv1:sendNotification(GAME.EDUCATE_SUBMIT_TASK_DONE, {
+				awards = slot0.awards
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate submit task error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate submit task error: ", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

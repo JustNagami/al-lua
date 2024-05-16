@@ -1,16 +1,14 @@
-﻿local var_0_0 = class("WorldMapPortShop", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("WorldMapPortShop", import("...BaseEntity"))
+slot0.Fields = {
 	items = "table",
 	expiredTime = "number"
 }
 
-function var_0_0.Setup(arg_1_0)
-	return
+function slot0.Setup(slot0)
 end
 
-function var_0_0.IsValid(arg_2_0)
-	return arg_2_0.expiredTime >= pg.TimeMgr.GetInstance():GetServerTime()
+function slot0.IsValid(slot0)
+	return pg.TimeMgr.GetInstance():GetServerTime() <= slot0.expiredTime
 end
 
-return var_0_0
+return slot0

@@ -1,6 +1,5 @@
-﻿local var_0_0 = class("UIAnim", import("...BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("UIAnim", import("...BaseEntity"))
+slot0.Fields = {
 	transform = "userdata",
 	aniEvent = "userdata",
 	onEnd = "function",
@@ -9,89 +8,86 @@ var_0_0.Fields = {
 	onTrigger = "function",
 	onStart = "function"
 }
-var_0_0.EventLoaded = "UIAnim.EventLoaded"
+slot0.EventLoaded = "UIAnim.EventLoaded"
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	arg_1_0.prefab = arg_1_1
+function slot0.Setup(slot0, slot1)
+	slot0.prefab = slot1
 end
 
-function var_0_0.Dispose(arg_2_0)
-	arg_2_0:Unload()
-	arg_2_0:Clear()
+function slot0.Dispose(slot0)
+	slot0:Unload()
+	slot0:Clear()
 end
 
-function var_0_0.Load(arg_3_0)
-	local var_3_0 = arg_3_0.prefab
-	local var_3_1 = PoolMgr.GetInstance()
+function slot0.Load(slot0)
+	PoolMgr.GetInstance():GetUI(slot0.prefab, true, function (slot0)
+		if uv0 == uv1.prefab then
+			uv1.transform = slot0.transform
 
-	var_3_1:GetUI(var_3_0, true, function(arg_4_0)
-		if var_3_0 == arg_3_0.prefab then
-			arg_3_0.transform = arg_4_0.transform
-
-			arg_3_0:Init()
-			arg_3_0:DispatchEvent(var_0_0.EventLoaded)
+			uv1:Init()
+			uv1:DispatchEvent(uv2.EventLoaded)
 		else
-			var_3_1:ReturnUI(var_3_0, arg_4_0)
+			uv3:ReturnUI(uv0, slot0)
 		end
 	end)
 end
 
-function var_0_0.Unload(arg_5_0)
-	if arg_5_0.prefab and arg_5_0.transform then
-		PoolMgr.GetInstance():ReturnUI(arg_5_0.prefab, arg_5_0.transform.gameObject)
+function slot0.Unload(slot0)
+	if slot0.prefab and slot0.transform then
+		PoolMgr.GetInstance():ReturnUI(slot0.prefab, slot0.transform.gameObject)
 	end
 
-	arg_5_0.prefab = nil
-	arg_5_0.transform = nil
+	slot0.prefab = nil
+	slot0.transform = nil
 end
 
-function var_0_0.Play(arg_6_0, arg_6_1)
-	arg_6_0.playing = true
-	arg_6_0.onStart = nil
-	arg_6_0.onTrigger = nil
-	arg_6_0.onEnd = arg_6_1
+function slot0.Play(slot0, slot1)
+	slot0.playing = true
+	slot0.onStart = nil
+	slot0.onTrigger = nil
+	slot0.onEnd = slot1
 
-	arg_6_0:Update()
+	slot0:Update()
 end
 
-function var_0_0.Stop(arg_7_0)
-	arg_7_0.playing = false
+function slot0.Stop(slot0)
+	slot0.playing = false
 
-	arg_7_0:Update()
+	slot0:Update()
 end
 
-function var_0_0.Init(arg_8_0)
-	setActive(arg_8_0.transform, false)
+function slot0.Init(slot0)
+	setActive(slot0.transform, false)
 
-	arg_8_0.aniEvent = arg_8_0.transform:GetComponent("DftAniEvent")
+	slot0.aniEvent = slot0.transform:GetComponent("DftAniEvent")
 
-	arg_8_0:Update()
+	slot0:Update()
 end
 
-function var_0_0.Update(arg_9_0)
-	if arg_9_0.aniEvent then
-		setActive(arg_9_0.transform, arg_9_0.playing)
+function slot0.Update(slot0)
+	if slot0.aniEvent then
+		setActive(slot0.transform, slot0.playing)
 
-		if arg_9_0.playing then
-			arg_9_0.aniEvent:SetStartEvent(function()
-				if arg_9_0.onStart then
-					arg_9_0.onStart()
+		if slot0.playing then
+			slot0.aniEvent:SetStartEvent(function ()
+				if uv0.onStart then
+					uv0.onStart()
 				end
 			end)
-			arg_9_0.aniEvent:SetTriggerEvent(function()
-				if arg_9_0.onTrigger then
-					arg_9_0.onTrigger()
+			slot0.aniEvent:SetTriggerEvent(function ()
+				if uv0.onTrigger then
+					uv0.onTrigger()
 				end
 			end)
-			arg_9_0.aniEvent:SetEndEvent(function(arg_12_0)
-				arg_9_0:Stop()
+			slot0.aniEvent:SetEndEvent(function (slot0)
+				uv0:Stop()
 
-				if arg_9_0.onEnd then
-					arg_9_0.onEnd()
+				if uv0.onEnd then
+					uv0.onEnd()
 				end
 			end)
 		end
 	end
 end
 
-return var_0_0
+return slot0

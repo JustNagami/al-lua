@@ -1,89 +1,74 @@
-﻿local var_0_0 = class("NewOrleansMapPage", import("...base.BaseActivityPage"))
+slot0 = class("NewOrleansMapPage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.item = arg_1_0:findTF("item", arg_1_0.bg)
-	arg_1_0.itemMask = arg_1_0:findTF("icon_mask", arg_1_0.item)
-	arg_1_0.gotaskBtn = arg_1_0:findTF("gotask", arg_1_0.bg)
-	arg_1_0.gobattleBtn = arg_1_0:findTF("gobattle", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.item = slot0:findTF("item", slot0.bg)
+	slot0.itemMask = slot0:findTF("icon_mask", slot0.item)
+	slot0.gotaskBtn = slot0:findTF("gotask", slot0.bg)
+	slot0.gobattleBtn = slot0:findTF("gobattle", slot0.bg)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity:getConfig("config_data")
-
-	arg_2_0.taskIDList = _.flatten(var_2_0)
-	arg_2_0.taskProxy = getProxy(TaskProxy)
+function slot0.OnDataSetting(slot0)
+	slot0.taskIDList = _.flatten(slot0.activity:getConfig("config_data"))
+	slot0.taskProxy = getProxy(TaskProxy)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	onButton(arg_3_0, arg_3_0.gobattleBtn, function()
-		local var_4_0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
-
-		if not var_4_0 or var_4_0:isEnd() then
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.gobattleBtn, function ()
+		if not getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id) or slot0:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.gotaskBtn, function()
-		local var_5_0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id)
-
-		if not var_5_0 or var_5_0:isEnd() then
+	onButton(slot0, slot0.gotaskBtn, function ()
+		if not getProxy(ActivityProxy):getActivityById(pg.activity_const.NEW_ORLEANS_Map_BATTLE.act_id) or slot0:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end)
 end
 
-function var_0_0.OnUpdateFlush(arg_6_0)
-	local var_6_0 = arg_6_0:findCurTaskIndex()
-	local var_6_1 = arg_6_0.taskIDList[var_6_0]
-	local var_6_2 = arg_6_0.taskProxy:getTaskVO(var_6_1)
+function slot0.OnUpdateFlush(slot0)
+	slot3 = slot0.taskProxy:getTaskVO(slot0.taskIDList[slot0:findCurTaskIndex()])
+	slot0.curTaskVO = slot3
+	slot4 = slot3:getConfig("award_display")[1]
 
-	arg_6_0.curTaskVO = var_6_2
-
-	local var_6_3 = var_6_2:getConfig("award_display")[1]
-	local var_6_4 = {
-		type = var_6_3[1],
-		id = var_6_3[2],
-		count = var_6_3[3]
-	}
-
-	updateDrop(arg_6_0.item, var_6_4)
-	onButton(arg_6_0, arg_6_0.item, function()
-		arg_6_0:emit(BaseUI.ON_DROP, var_6_4)
+	updateDrop(slot0.item, {
+		type = slot4[1],
+		id = slot4[2],
+		count = slot4[3]
+	})
+	onButton(slot0, slot0.item, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-
-	local var_6_5 = var_6_2:getTaskStatus()
-
-	setActive(arg_6_0.itemMask, var_6_5 == 2)
+	setActive(slot0.itemMask, slot3:getTaskStatus() == 2)
 end
 
-function var_0_0.OnDestroy(arg_8_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.findCurTaskIndex(arg_9_0)
-	local var_9_0
+function slot0.findCurTaskIndex(slot0)
+	slot1 = nil
 
-	for iter_9_0, iter_9_1 in ipairs(arg_9_0.taskIDList) do
-		if arg_9_0.taskProxy:getTaskVO(iter_9_1):getTaskStatus() <= 1 then
-			var_9_0 = iter_9_0
+	for slot5, slot6 in ipairs(slot0.taskIDList) do
+		if slot0.taskProxy:getTaskVO(slot6):getTaskStatus() <= 1 then
+			slot1 = slot5
 
 			break
-		elseif iter_9_0 == #arg_9_0.taskIDList then
-			var_9_0 = iter_9_0
+		elseif slot5 == #slot0.taskIDList then
+			slot1 = slot5
 		end
 	end
 
-	return var_9_0
+	return slot1
 end
 
-return var_0_0
+return slot0

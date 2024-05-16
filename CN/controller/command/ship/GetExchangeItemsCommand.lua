@@ -1,37 +1,36 @@
-﻿local var_0_0 = class("GetExchangeItemsCommand", pm.SimpleCommand)
+slot0 = class("GetExchangeItemsCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().type
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody().type
 
 	pg.ConnectionMgr.GetInstance():Send(16106, {
 		type = 0
-	}, 16107, function(arg_2_0)
-		local var_2_0 = getProxy(BuildShipProxy)
-		local var_2_1 = {}
+	}, 16107, function (slot0)
+		slot1 = getProxy(BuildShipProxy)
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.item_shop_id_list) do
-			table.insert(var_2_1, {
+		for slot6, slot7 in ipairs(slot0.item_shop_id_list) do
+			table.insert({}, {
 				isFetched = false,
-				id = iter_2_1
+				id = slot7
 			})
 		end
 
-		for iter_2_2, iter_2_3 in ipairs(arg_2_0.item_fetch_list) do
-			for iter_2_4, iter_2_5 in pairs(var_2_1) do
-				if iter_2_5.id == iter_2_3 then
-					var_2_1[iter_2_4].isFetched = true
+		for slot6, slot7 in ipairs(slot0.item_fetch_list) do
+			for slot11, slot12 in pairs(slot2) do
+				if slot12.id == slot7 then
+					slot2[slot11].isFetched = true
 				end
 			end
 		end
 
-		var_2_0:updateExchangeItemList(arg_2_0.item_flash_time, var_2_1)
+		slot1:updateExchangeItemList(slot0.item_flash_time, slot2)
 
-		if var_1_0 and var_1_0 == 1 then
-			var_2_0:addExChangeItemTimer()
+		if uv0 and uv0 == 1 then
+			slot1:addExChangeItemTimer()
 		end
 
-		arg_1_0:sendNotification(GAME.GET_EXCHANGE_ITEMS_DONE)
+		uv1:sendNotification(GAME.GET_EXCHANGE_ITEMS_DONE)
 	end)
 end
 
-return var_0_0
+return slot0

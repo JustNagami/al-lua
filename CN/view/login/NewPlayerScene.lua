@@ -1,75 +1,75 @@
-﻿local var_0_0 = class("NewPlayerScene", import("..base.BaseUI"))
-local var_0_1 = 0.5
-local var_0_2 = -300
-local var_0_3 = Vector3(-380, 265, 0)
-local var_0_4 = 19
-local var_0_5 = {
+slot0 = class("NewPlayerScene", import("..base.BaseUI"))
+slot1 = 0.5
+slot2 = -300
+slot3 = Vector3(-380, 265, 0)
+slot4 = 19
+slot5 = {
 	101171,
 	201211,
 	401231
 }
-local var_0_6 = {
-	[401231] = "z23",
-	[101171] = "lafei",
-	[301051] = "lingbo",
-	[201211] = "biaoqiang"
+slot6 = {
+	[401231.0] = "z23",
+	[101171.0] = "lafei",
+	[301051.0] = "lingbo",
+	[201211.0] = "biaoqiang"
 }
-local var_0_7 = {
+slot7 = {
 	[101171] = i18n("login_newPlayerScene_word_laFei"),
 	[201211] = i18n("login_newPlayerScene_word_biaoqiang"),
 	[401231] = i18n("login_newPlayerScene_word_z23")
 }
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "NewPlayerUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.eventTriggers = {}
-	arg_2_0.characters = arg_2_0:findTF("select_character/characters")
-	arg_2_0.propPanel = arg_2_0:findTF("prop_panel")
-	arg_2_0.selectPanel = arg_2_0:findTF("select_character")
+function slot0.init(slot0)
+	slot0.eventTriggers = {}
+	slot0.characters = slot0:findTF("select_character/characters")
+	slot0.propPanel = slot0:findTF("prop_panel")
+	slot0.selectPanel = slot0:findTF("select_character")
 
-	setActive(arg_2_0.propPanel, false)
-	setActive(arg_2_0.selectPanel, true)
+	setActive(slot0.propPanel, false)
+	setActive(slot0.selectPanel, true)
 
-	arg_2_0.confirmBtn = arg_2_0:findTF("bg/qr_btn", arg_2_0.propPanel)
-	arg_2_0.tip = arg_2_0:findTF("select_character/tip")
-	arg_2_0.skillPanel = arg_2_0:findTF("bg/skill_panel", arg_2_0.propPanel)
-	arg_2_0.skillTpl = arg_2_0:getTpl("bg/skill_panel/frame/skilltpl", arg_2_0.propPanel)
-	arg_2_0.skillContainer = arg_2_0:findTF("bg/skill_panel/frame", arg_2_0.propPanel)
-	arg_2_0.namedPanel = arg_2_0:findTF("named_panel")
+	slot0.confirmBtn = slot0:findTF("bg/qr_btn", slot0.propPanel)
+	slot0.tip = slot0:findTF("select_character/tip")
+	slot0.skillPanel = slot0:findTF("bg/skill_panel", slot0.propPanel)
+	slot0.skillTpl = slot0:getTpl("bg/skill_panel/frame/skilltpl", slot0.propPanel)
+	slot0.skillContainer = slot0:findTF("bg/skill_panel/frame", slot0.propPanel)
+	slot0.namedPanel = slot0:findTF("named_panel")
 
-	setActive(arg_2_0.namedPanel, false)
+	setActive(slot0.namedPanel, false)
 
-	arg_2_0.info = arg_2_0.namedPanel:Find("info")
-	arg_2_0.nickname = arg_2_0.info:Find("nickname")
-	arg_2_0.qChar = arg_2_0.propPanel:Find("q_char")
-	arg_2_0.chat = arg_2_0:findTF("info/tip/chatbgtop0/Text", arg_2_0.namedPanel)
-	arg_2_0.propertyPanel = PropertyPanel.New(arg_2_0.propPanel:Find("bg/property_panel/frame"))
-	arg_2_0.paintTF = arg_2_0:findTF("prop_panel/bg/paint")
-	arg_2_0.nameTF = arg_2_0:findTF("prop_panel/bg/name")
-	arg_2_0.nameEnTF = arg_2_0:findTF("prop_panel/bg/english_name_bg")
-	arg_2_0.titleShipinfoTF = arg_2_0:findTF("lines/hori/shipinfo_text")
-	arg_2_0.titleShipchooseTF = arg_2_0:findTF("lines/hori/shipchoose_text")
+	slot0.info = slot0.namedPanel:Find("info")
+	slot0.nickname = slot0.info:Find("nickname")
+	slot0.qChar = slot0.propPanel:Find("q_char")
+	slot0.chat = slot0:findTF("info/tip/chatbgtop0/Text", slot0.namedPanel)
+	slot0.propertyPanel = PropertyPanel.New(slot0.propPanel:Find("bg/property_panel/frame"))
+	slot0.paintTF = slot0:findTF("prop_panel/bg/paint")
+	slot0.nameTF = slot0:findTF("prop_panel/bg/name")
+	slot0.nameEnTF = slot0:findTF("prop_panel/bg/english_name_bg")
+	slot0.titleShipinfoTF = slot0:findTF("lines/hori/shipinfo_text")
+	slot0.titleShipchooseTF = slot0:findTF("lines/hori/shipchoose_text")
 
-	setImageAlpha(arg_2_0.titleShipinfoTF, 1)
-	setImageAlpha(arg_2_0.titleShipchooseTF, 0)
+	setImageAlpha(slot0.titleShipinfoTF, 1)
+	setImageAlpha(slot0.titleShipchooseTF, 0)
 
-	arg_2_0.randBtn = findTF(arg_2_0.info, "random_button")
+	slot0.randBtn = findTF(slot0.info, "random_button")
 
-	setActive(arg_2_0.randBtn, PLATFORM_CODE == PLATFORM_CH)
+	setActive(slot0.randBtn, PLATFORM_CODE == PLATFORM_CH)
 end
 
-function var_0_0.onBackPressed(arg_3_0)
-	if LeanTween.isTweening(go(arg_3_0.propPanel)) then
+function slot0.onBackPressed(slot0)
+	if LeanTween.isTweening(go(slot0.propPanel)) then
 		return
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(arg_3_0.namedPanel) then
-		arg_3_0:closeNamedPanel()
+	if isActive(slot0.namedPanel) then
+		slot0:closeNamedPanel()
 
 		return
 	end
@@ -77,114 +77,104 @@ function var_0_0.onBackPressed(arg_3_0)
 	pg.SdkMgr.GetInstance():OnAndoridBackPress()
 end
 
-function var_0_0.switchPanel(arg_4_0)
-	setActive(arg_4_0.propPanel, true)
+function slot0.switchPanel(slot0)
+	setActive(slot0.propPanel, true)
 
-	local var_4_0 = arg_4_0.propPanel:GetComponent(typeof(CanvasGroup))
-	local var_4_1 = arg_4_0.selectPanel:GetComponent(typeof(CanvasGroup))
+	slot1 = slot0.propPanel:GetComponent(typeof(CanvasGroup))
+	slot2 = slot0.selectPanel:GetComponent(typeof(CanvasGroup))
 
-	LeanTween.value(go(arg_4_0.propPanel), 0, 1, 0.5):setOnUpdate(System.Action_float(function(arg_5_0)
-		var_4_0.alpha = arg_5_0
-		var_4_1.alpha = 1 - arg_5_0
-	end)):setOnComplete(System.Action(function()
-		setActive(arg_4_0.selectPanel, false)
+	LeanTween.value(go(slot0.propPanel), 0, 1, 0.5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.alpha = slot0
+		uv1.alpha = 1 - slot0
+	end)):setOnComplete(System.Action(function ()
+		setActive(uv0.selectPanel, false)
 	end))
 
-	arg_4_0.skillPanel.localPosition = Vector3.New(-1000, arg_4_0.skillPanel.localPosition.y, arg_4_0.skillPanel.localPosition.z)
+	slot0.skillPanel.localPosition = Vector3.New(-1000, slot0.skillPanel.localPosition.y, slot0.skillPanel.localPosition.z)
 
-	LeanTween.moveX(arg_4_0.skillPanel, 339, 0.2)
+	LeanTween.moveX(slot0.skillPanel, 339, 0.2)
+	LeanTween.moveY(slot0:findTF("lines/line"), -328, 0.2)
 
-	local var_4_2 = arg_4_0:findTF("lines/line")
-	local var_4_3 = arg_4_0:findTF("lines/hori")
+	slot8 = 0.2
 
-	LeanTween.moveY(var_4_2, -328, 0.2)
-	LeanTween.moveX(var_4_3, -820, 0.2)
+	LeanTween.moveX(slot0:findTF("lines/hori"), -820, slot8)
 
-	for iter_4_0 = 1, 3 do
-		local var_4_4 = arg_4_0:findTF("character_" .. iter_4_0, arg_4_0.characters)
-		local var_4_5 = arg_4_0:findTF("bg/characters/character_" .. iter_4_0, arg_4_0.propPanel)
+	for slot8 = 1, 3 do
+		slot9 = slot0:findTF("character_" .. slot8, slot0.characters)
 
-		setImageAlpha(var_4_4, 1)
-		LeanTween.alpha(var_4_4, 0, 0.25)
-		LeanTween.move(go(var_4_4), var_4_5.position, 0.3)
-		setImageAlpha(arg_4_0.titleShipinfoTF, 0)
-		setImageAlpha(arg_4_0.titleShipchooseTF, 1)
-		LeanTween.alpha(arg_4_0.titleShipinfoTF, 1, 0.25)
-		LeanTween.alpha(arg_4_0.titleShipchooseTF, 0, 0.25)
+		setImageAlpha(slot9, 1)
+		LeanTween.alpha(slot9, 0, 0.25)
+		LeanTween.move(go(slot9), slot0:findTF("bg/characters/character_" .. slot8, slot0.propPanel).position, 0.3)
+		setImageAlpha(slot0.titleShipinfoTF, 0)
+		setImageAlpha(slot0.titleShipchooseTF, 1)
+		LeanTween.alpha(slot0.titleShipinfoTF, 1, 0.25)
+		LeanTween.alpha(slot0.titleShipchooseTF, 0, 0.25)
 	end
 end
 
-function var_0_0.initCharacters(arg_7_0)
-	arg_7_0.charInitPos = {}
+function slot0.initCharacters(slot0)
+	slot0.charInitPos = {}
 
-	for iter_7_0 = 1, 3 do
-		local var_7_0 = arg_7_0:findTF("prop_panel/bg/characters/character_" .. iter_7_0)
+	for slot4 = 1, 3 do
+		onToggle(slot0, slot0:findTF("prop_panel/bg/characters/character_" .. slot4), function (slot0)
+			if slot0 then
+				uv0:selectCharacterByIdx(uv1, uv2[uv3])
+				setActive(uv0:findTF("selected", uv1), true)
 
-		onToggle(arg_7_0, var_7_0, function(arg_8_0)
-			if arg_8_0 then
-				arg_7_0:selectCharacterByIdx(var_7_0, var_0_5[iter_7_0])
-				setActive(arg_7_0:findTF("selected", var_7_0), true)
-
-				var_7_0:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(196, 196)
+				uv1:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(196, 196)
 			else
-				setActive(arg_7_0:findTF("selected", var_7_0), false)
+				setActive(uv0:findTF("selected", uv1), false)
 
-				var_7_0:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(140, 140)
+				uv1:GetComponent(typeof(RectTransform)).sizeDelta = Vector2(140, 140)
 			end
 		end)
 	end
 
-	local var_7_1 = {
+	slot1 = {
 		0.2,
 		0.3,
 		0.1
 	}
 
-	for iter_7_1 = 1, 3 do
-		local var_7_2 = arg_7_0:findTF("character_" .. iter_7_1, arg_7_0.characters)
+	for slot5 = 1, 3 do
+		slot6 = slot0:findTF("character_" .. slot5, slot0.characters)
 
-		onButton(arg_7_0, var_7_2, function()
-			arg_7_0:switchPanel()
-			triggerToggle(arg_7_0:findTF("prop_panel/bg/characters/character_" .. iter_7_1), true)
+		onButton(slot0, slot6, function ()
+			uv0:switchPanel()
+			triggerToggle(uv0:findTF("prop_panel/bg/characters/character_" .. uv1), true)
 		end)
 
-		var_7_2.localPosition = Vector3.New(var_7_2.localPosition.x, 912, var_7_2.localPosition.z)
+		slot6.localPosition = Vector3.New(slot6.localPosition.x, 912, slot6.localPosition.z)
 
-		setImageAlpha(var_7_2, 0)
-		LeanTween.alpha(var_7_2, 1, 0.3):setDelay(var_7_1[iter_7_1])
-		LeanTween.moveY(var_7_2, 0, 0.2):setDelay(var_7_1[iter_7_1])
+		setImageAlpha(slot6, 0)
+		LeanTween.alpha(slot6, 1, 0.3):setDelay(slot1[slot5])
+		LeanTween.moveY(slot6, 0, 0.2):setDelay(slot1[slot5])
 	end
 end
 
-function var_0_0.didEnter(arg_10_0)
-	onButton(arg_10_0, arg_10_0.confirmBtn, function()
-		arg_10_0:showNamedPanel()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.confirmBtn, function ()
+		uv0:showNamedPanel()
 	end, SFX_PANEL)
-	onButton(arg_10_0, findTF(arg_10_0.info, "random_button"), function()
-		local var_12_0 = require("GameCfg.names")
-		local var_12_1 = var_12_0[1][math.random(#var_12_0[1])]
-		local var_12_2 = var_12_0[2][math.random(#var_12_0[2])]
-		local var_12_3 = var_12_0[3][math.random(#var_12_0[3])]
-		local var_12_4 = var_12_0[4][math.random(#var_12_0[4])]
+	onButton(slot0, findTF(slot0.info, "random_button"), function ()
+		slot0 = require("GameCfg.names")
 
-		setInputText(arg_10_0.nickname, var_12_1 .. var_12_2 .. var_12_3 .. var_12_4)
+		setInputText(uv0.nickname, slot0[1][math.random(#slot0[1])] .. slot0[2][math.random(#slot0[2])] .. slot0[3][math.random(#slot0[3])] .. slot0[4][math.random(#slot0[4])])
 	end, SFX_MAIN)
-	onButton(arg_10_0, findTF(arg_10_0.info, "btn_container/enter_button"), function()
-		if not arg_10_0.contextData.configId then
+	onButton(slot0, findTF(slot0.info, "btn_container/enter_button"), function ()
+		if not uv0.contextData.configId then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_newPlayerScene_error_notChoiseShip"))
 
 			return
 		end
 
-		local var_13_0 = getInputText(arg_10_0.nickname)
-
-		if var_13_0 == "" then
+		if getInputText(uv0.nickname) == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_newPlayerScene_inputName"))
 
 			return
 		end
 
-		if not nameValidityCheck(var_13_0, 4, 14, {
+		if not nameValidityCheck(slot0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -193,109 +183,103 @@ function var_0_0.didEnter(arg_10_0)
 			return
 		end
 
-		arg_10_0.event:emit(NewPlayerMediator.ON_CREATE, var_13_0, arg_10_0.contextData.configId)
+		uv0.event:emit(NewPlayerMediator.ON_CREATE, slot0, uv0.contextData.configId)
 	end, SFX_CONFIRM)
-	onButton(arg_10_0, findTF(arg_10_0.info, "btn_container/cancel_button"), function()
-		arg_10_0:closeNamedPanel()
+	onButton(slot0, findTF(slot0.info, "btn_container/cancel_button"), function ()
+		uv0:closeNamedPanel()
 	end)
-	arg_10_0:initCharacters()
+	slot0:initCharacters()
 end
 
-local var_0_8 = 0.3
-local var_0_9 = -47
+slot8 = 0.3
+slot9 = -47
 
-function var_0_0.selectCharacterByIdx(arg_15_0, arg_15_1, arg_15_2)
-	arg_15_0.inProp = true
-	arg_15_0.contextData.configId = arg_15_2
+function slot0.selectCharacterByIdx(slot0, slot1, slot2)
+	slot0.inProp = true
+	slot0.contextData.configId = slot2
 
-	arg_15_0.propertyPanel:initProperty(arg_15_2)
-	arg_15_0:initSkills()
+	slot0.propertyPanel:initProperty(slot2)
+	slot0:initSkills()
 
-	local var_15_0 = pg.ship_data_statistics[arg_15_2]
+	slot3 = pg.ship_data_statistics[slot2]
 
-	setPaintingPrefab(arg_15_0.paintTF, var_0_6[arg_15_2], "chuanwu")
-	setText(arg_15_0:findTF("name_mask/Text", arg_15_0.nameTF), var_15_0.name)
-	setText(arg_15_0:findTF("english_name", arg_15_0.nameTF), var_15_0.english_name)
-	setText(arg_15_0.nameEnTF, string.upper(var_15_0.english_name))
+	setPaintingPrefab(slot0.paintTF, uv0[slot2], "chuanwu")
+	setText(slot0:findTF("name_mask/Text", slot0.nameTF), slot3.name)
+	setText(slot0:findTF("english_name", slot0.nameTF), slot3.english_name)
+	setText(slot0.nameEnTF, string.upper(slot3.english_name))
 
-	local var_15_1 = Ship.New({
-		configId = arg_15_0.contextData.configId
-	}):getPrefab()
-
-	if var_15_1 == arg_15_0.shipPrefab then
+	if Ship.New({
+		configId = slot0.contextData.configId
+	}):getPrefab() == slot0.shipPrefab then
 		return
 	end
 
-	arg_15_0:recycleSpineChar()
+	slot0:recycleSpineChar()
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar(var_15_1, true, function(arg_16_0)
+	PoolMgr.GetInstance():GetSpineChar(slot5, true, function (slot0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		arg_15_0.shipPrefab = var_15_1
-		arg_15_0.shipModel = arg_16_0
+		uv0.shipPrefab = uv1
+		uv0.shipModel = slot0
 
-		arg_16_0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
+		slot0:GetComponent("SpineAnimUI"):SetAction("stand", 0)
 
-		tf(arg_16_0).localScale = Vector3(0.5, 0.5, 1)
-		tf(arg_16_0).localPosition = Vector3(15, -95, 0)
+		tf(slot0).localScale = Vector3(0.5, 0.5, 1)
+		tf(slot0).localPosition = Vector3(15, -95, 0)
 
-		pg.ViewUtils.SetLayer(tf(arg_16_0), Layer.UI)
-		removeAllChildren(arg_15_0.qChar)
-		SetParent(arg_16_0, arg_15_0.qChar, false)
+		pg.ViewUtils.SetLayer(tf(slot0), Layer.UI)
+		removeAllChildren(uv0.qChar)
+		SetParent(slot0, uv0.qChar, false)
 	end)
 end
 
-function var_0_0.initSkills(arg_17_0)
-	local var_17_0 = pg.ship_data_template[arg_17_0.contextData.configId]
+function slot0.initSkills(slot0)
+	removeAllChildren(slot0.skillContainer)
 
-	removeAllChildren(arg_17_0.skillContainer)
+	for slot5, slot6 in ipairs(pg.ship_data_template[slot0.contextData.configId].buff_list_display) do
+		slot9 = cloneTplTo(slot0.skillTpl, slot0.skillContainer)
 
-	for iter_17_0, iter_17_1 in ipairs(var_17_0.buff_list_display) do
-		local var_17_1 = getSkillConfig(iter_17_1)
-		local var_17_2 = table.contains(var_17_0.buff_list, iter_17_1)
-		local var_17_3 = cloneTplTo(arg_17_0.skillTpl, arg_17_0.skillContainer)
-
-		setActive(var_17_3:Find("mask"), not var_17_2)
-		onButton(arg_17_0, var_17_3, function()
-			arg_17_0:emit(NewPlayerMediator.ON_SKILLINFO, var_17_1.id)
+		setActive(slot9:Find("mask"), not table.contains(slot1.buff_list, slot6))
+		onButton(slot0, slot9, function ()
+			uv0:emit(NewPlayerMediator.ON_SKILLINFO, uv1.id)
 		end, SFX_PANEL)
-		LoadImageSpriteAsync("skillicon/" .. var_17_1.icon, findTF(var_17_3, "icon"))
+		LoadImageSpriteAsync("skillicon/" .. getSkillConfig(slot6).icon, findTF(slot9, "icon"))
 	end
 end
 
-function var_0_0.showNamedPanel(arg_19_0)
-	arg_19_0.qChar:SetParent(arg_19_0.info)
-	pg.UIMgr.GetInstance():BlurPanel(arg_19_0.namedPanel)
-	setActive(arg_19_0.namedPanel, true)
-	setInputText(arg_19_0.nickname, "")
-	setText(arg_19_0.chat, var_0_7[arg_19_0.contextData.configId])
+function slot0.showNamedPanel(slot0)
+	slot0.qChar:SetParent(slot0.info)
+	pg.UIMgr.GetInstance():BlurPanel(slot0.namedPanel)
+	setActive(slot0.namedPanel, true)
+	setInputText(slot0.nickname, "")
+	setText(slot0.chat, uv0[slot0.contextData.configId])
 end
 
-function var_0_0.closeNamedPanel(arg_20_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_20_0.namedPanel, arg_20_0._tf)
-	setActive(arg_20_0.namedPanel, false)
-	arg_20_0.qChar:SetParent(arg_20_0.propPanel)
+function slot0.closeNamedPanel(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0.namedPanel, slot0._tf)
+	setActive(slot0.namedPanel, false)
+	slot0.qChar:SetParent(slot0.propPanel)
 end
 
-function var_0_0.recycleSpineChar(arg_21_0)
-	if arg_21_0.shipPrefab and arg_21_0.shipModel then
-		PoolMgr.GetInstance():ReturnSpineChar(arg_21_0.shipPrefab, arg_21_0.shipModel)
+function slot0.recycleSpineChar(slot0)
+	if slot0.shipPrefab and slot0.shipModel then
+		PoolMgr.GetInstance():ReturnSpineChar(slot0.shipPrefab, slot0.shipModel)
 
-		arg_21_0.shipPrefab = nil
-		arg_21_0.shipModel = nil
+		slot0.shipPrefab = nil
+		slot0.shipModel = nil
 	end
 end
 
-function var_0_0.willExit(arg_22_0)
-	if arg_22_0.eventTriggers then
-		for iter_22_0, iter_22_1 in pairs(arg_22_0.eventTriggers) do
-			ClearEventTrigger(iter_22_0)
+function slot0.willExit(slot0)
+	if slot0.eventTriggers then
+		for slot4, slot5 in pairs(slot0.eventTriggers) do
+			ClearEventTrigger(slot4)
 		end
 
-		arg_22_0.eventTriggers = nil
+		slot0.eventTriggers = nil
 	end
 
-	arg_22_0:closeNamedPanel()
+	slot0:closeNamedPanel()
 end
 
-return var_0_0
+return slot0

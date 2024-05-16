@@ -1,5 +1,5 @@
-﻿local var_0_0 = class("EducateSchedulePlanCard")
-local var_0_1 = {
+slot0 = class("EducateSchedulePlanCard")
+slot1 = {
 	top = 0,
 	spacing = 8,
 	size = {
@@ -7,7 +7,7 @@ local var_0_1 = {
 		y = 142
 	}
 }
-local var_0_2 = {
+slot2 = {
 	top = 4,
 	spacing = 14,
 	size = {
@@ -15,207 +15,194 @@ local var_0_2 = {
 		y = 328
 	}
 }
-local var_0_3 = {
+slot3 = {
 	x = 0,
 	y = 87
 }
-local var_0_4 = {
+slot4 = {
 	x = 0,
 	y = 110
 }
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1, slot2)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = tf(arg_1_0._go)
-	arg_1_0.viewComponent = arg_1_2
-	arg_1_0.selectedTF = arg_1_0._tf:Find("selected")
-	arg_1_0.iconBgTF = arg_1_0._tf:Find("icon_bg")
-	arg_1_0.iconTF = arg_1_0.iconBgTF:Find("icon")
-	arg_1_0.progressTF = arg_1_0._tf:Find("progress")
-	arg_1_0.sliderTF = arg_1_0._tf:Find("slider")
-	arg_1_0.nameTF = arg_1_0._tf:Find("name_mask")
-	arg_1_0.nameTextTF = arg_1_0.nameTF:Find("name")
-	arg_1_0.enNameTF = arg_1_0._tf:Find("name_en")
-	arg_1_0.limitTF = arg_1_0._tf:Find("limit")
-	arg_1_0.limitUIList = UIItemList.New(arg_1_0.limitTF, arg_1_0.limitTF:Find("tpl"))
+	slot0._go = slot1
+	slot0._tf = tf(slot0._go)
+	slot0.viewComponent = slot2
+	slot0.selectedTF = slot0._tf:Find("selected")
+	slot0.iconBgTF = slot0._tf:Find("icon_bg")
+	slot0.iconTF = slot0.iconBgTF:Find("icon")
+	slot0.progressTF = slot0._tf:Find("progress")
+	slot0.sliderTF = slot0._tf:Find("slider")
+	slot0.nameTF = slot0._tf:Find("name_mask")
+	slot0.nameTextTF = slot0.nameTF:Find("name")
+	slot0.enNameTF = slot0._tf:Find("name_en")
+	slot0.limitTF = slot0._tf:Find("limit")
+	slot0.limitUIList = UIItemList.New(slot0.limitTF, slot0.limitTF:Find("tpl"))
 
-	arg_1_0.limitUIList:make(function(arg_2_0, arg_2_1, arg_2_2)
-		if arg_2_0 == UIItemList.EventUpdate then
-			arg_1_0:updateLimitItem(arg_2_1, arg_2_2)
+	slot0.limitUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:updateLimitItem(slot1, slot2)
 		end
 	end)
 
-	arg_1_0.costTF = arg_1_0._tf:Find("cost")
-	arg_1_0.costEmptyTF = arg_1_0._tf:Find("cost_empty")
+	slot0.costTF = slot0._tf:Find("cost")
+	slot0.costEmptyTF = slot0._tf:Find("cost_empty")
 
-	setText(arg_1_0.costEmptyTF:Find("Text"), i18n("child_plan_no_cost"))
+	setText(slot0.costEmptyTF:Find("Text"), i18n("child_plan_no_cost"))
 
-	arg_1_0.costUIList = UIItemList.New(arg_1_0.costTF, arg_1_0.costTF:Find("tpl"))
+	slot0.costUIList = UIItemList.New(slot0.costTF, slot0.costTF:Find("tpl"))
 
-	arg_1_0.costUIList:make(function(arg_3_0, arg_3_1, arg_3_2)
-		if arg_3_0 == UIItemList.EventUpdate then
-			arg_1_0:updateCostItem(arg_3_1, arg_3_2)
+	slot0.costUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:updateCostItem(slot1, slot2)
 		end
 	end)
 
-	arg_1_0.awardTF = arg_1_0._tf:Find("award")
-	arg_1_0.awardUIList = UIItemList.New(arg_1_0.awardTF:Find("content"), arg_1_0.awardTF:Find("content/tpl"))
+	slot0.awardTF = slot0._tf:Find("award")
+	slot0.awardUIList = UIItemList.New(slot0.awardTF:Find("content"), slot0.awardTF:Find("content/tpl"))
 
-	arg_1_0.awardUIList:make(function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_4_0 == UIItemList.EventUpdate then
-			arg_1_0:updateAwardItem(arg_4_1, arg_4_2)
+	slot0.awardUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:updateAwardItem(slot1, slot2)
 		end
 	end)
 
-	arg_1_0.foldBtn = arg_1_0.awardTF:Find("fold_btn")
-	arg_1_0.unfoldBtn = arg_1_0.awardTF:Find("unfold_btn")
-	arg_1_0.awardLayouCom = arg_1_0.awardTF:Find("content"):GetComponent(typeof(VerticalLayoutGroup))
-	arg_1_0.char = getProxy(EducateProxy):GetCharData()
+	slot0.foldBtn = slot0.awardTF:Find("fold_btn")
+	slot0.unfoldBtn = slot0.awardTF:Find("unfold_btn")
+	slot0.awardLayouCom = slot0.awardTF:Find("content"):GetComponent(typeof(VerticalLayoutGroup))
+	slot0.char = getProxy(EducateProxy):GetCharData()
 end
 
-function var_0_0.updateLimitItem(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_0.limitCfg[arg_5_1 + 1]
-	local var_5_1 = var_5_0[2]
+function slot0.updateLimitItem(slot0, slot1, slot2)
+	slot3 = slot0.limitCfg[slot1 + 1]
+	slot4 = slot3[2]
 
-	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var_5_1, findTF(arg_5_2, "icon_bg/icon"), true)
-	setText(findTF(arg_5_2, "value"), var_5_0[3])
-	setText(findTF(arg_5_2, "name"), pg.child_attr[var_5_1].name)
+	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "attr_" .. slot4, findTF(slot2, "icon_bg/icon"), true)
+	setText(findTF(slot2, "value"), slot3[3])
+	setText(findTF(slot2, "name"), pg.child_attr[slot4].name)
 
-	local var_5_2 = var_5_0[4] and "606064" or "ed7373"
+	slot5 = slot3[4] and "606064" or "ed7373"
 
-	setTextColor(findTF(arg_5_2, "value"), Color.NewHex(var_5_2))
-	setTextColor(findTF(arg_5_2, "name"), Color.NewHex(var_5_2))
+	setTextColor(findTF(slot2, "value"), Color.NewHex(slot5))
+	setTextColor(findTF(slot2, "name"), Color.NewHex(slot5))
 end
 
-function var_0_0.updateCostItem(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0.costCfg[arg_6_1 + 1]
+function slot0.updateCostItem(slot0, slot1, slot2)
+	slot3 = slot0.costCfg[slot1 + 1]
 
-	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "res_" .. var_6_0.id, findTF(arg_6_2, "icon"), true)
-	setText(findTF(arg_6_2, "value"), "-" .. var_6_0.num)
-	setText(findTF(arg_6_2, "name"), pg.child_resource[var_6_0.id].name)
+	LoadImageSpriteAtlasAsync("ui/educatecommonui_atlas", "res_" .. slot3.id, findTF(slot2, "icon"), true)
+	setText(findTF(slot2, "value"), "-" .. slot3.num)
+	setText(findTF(slot2, "name"), pg.child_resource[slot3.id].name)
 end
 
-function var_0_0.updateAwardItem(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_0.awardCfg[arg_7_1 + 1]
-	local var_7_1 = {
-		type = var_7_0[1],
-		id = var_7_0[2],
-		number = var_7_0[3]
-	}
+function slot0.updateAwardItem(slot0, slot1, slot2)
+	slot3 = slot0.awardCfg[slot1 + 1]
 
-	EducateHelper.UpdateDropShowForAttr(arg_7_2, var_7_1)
+	EducateHelper.UpdateDropShowForAttr(slot2, {
+		type = slot3[1],
+		id = slot3[2],
+		number = slot3[3]
+	})
 end
 
-function var_0_0.update(arg_8_0, arg_8_1, arg_8_2)
-	setActive(arg_8_0.selectedTF, arg_8_1.id == arg_8_2)
-	GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", arg_8_1:GetIconBgName(), arg_8_0.iconBgTF, true)
-	LoadImageSpriteAsync("educateprops/" .. arg_8_1:getConfig("icon"), arg_8_0.iconTF, true)
+function slot0.update(slot0, slot1, slot2)
+	setActive(slot0.selectedTF, slot1.id == slot2)
+	GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot1:GetIconBgName(), slot0.iconBgTF, true)
+	LoadImageSpriteAsync("educateprops/" .. slot1:getConfig("icon"), slot0.iconTF, true)
+	setActive(slot0.progressTF, slot1:getConfig("pre_next") ~= 0)
+	setActive(slot0.sliderTF, slot3 ~= 0)
+	setActive(slot0.enNameTF, slot3 == 0)
 
-	local var_8_0 = arg_8_1:getConfig("pre_next")
+	if slot3 ~= 0 then
+		assert(pg.child_plan[slot3], "no exist next plan id" .. slot3)
 
-	setActive(arg_8_0.progressTF, var_8_0 ~= 0)
-	setActive(arg_8_0.sliderTF, var_8_0 ~= 0)
-	setActive(arg_8_0.enNameTF, var_8_0 == 0)
+		slot6 = getProxy(EducateProxy):GetPlanProxy():GetHistoryCntById(slot1.id) / pg.child_plan[slot3].pre[2]
 
-	if var_8_0 ~= 0 then
-		assert(pg.child_plan[var_8_0], "no exist next plan id" .. var_8_0)
-
-		local var_8_1 = pg.child_plan[var_8_0].pre[2]
-		local var_8_2 = getProxy(EducateProxy):GetPlanProxy():GetHistoryCntById(arg_8_1.id)
-		local var_8_3 = var_8_2 / var_8_1
-
-		setSlider(arg_8_0.sliderTF, 0, 1, var_8_3)
-		setText(arg_8_0.progressTF, var_8_3 >= 1 and "MAX" or var_8_2 .. "/" .. var_8_1)
+		setSlider(slot0.sliderTF, 0, 1, slot6)
+		setText(slot0.progressTF, slot6 >= 1 and "MAX" or slot5 .. "/" .. slot4)
 	end
 
-	setScrollText(arg_8_0.nameTextTF, arg_8_1:getConfig("name"))
-	setLocalPosition(arg_8_0.nameTF, var_8_0 == 0 and var_0_4 or var_0_3)
+	setScrollText(slot0.nameTextTF, slot1:getConfig("name"))
+	setLocalPosition(slot0.nameTF, slot3 == 0 and uv0 or uv1)
+	setActive(slot0.limitTF, not slot1:IsMatchAttr(slot0.char))
 
-	local var_8_4 = not arg_8_1:IsMatchAttr(arg_8_0.char)
+	slot0.limitCfg = {}
 
-	setActive(arg_8_0.limitTF, var_8_4)
+	for slot9 = 1, #slot1:getConfig("ability") do
+		slot10 = Clone(slot5[slot9])
 
-	local var_8_5 = arg_8_1:getConfig("ability")
-
-	arg_8_0.limitCfg = {}
-
-	for iter_8_0 = 1, #var_8_5 do
-		local var_8_6 = Clone(var_8_5[iter_8_0])
-		local var_8_7 = arg_8_0.char:GetAttrById(var_8_6[2]) >= var_8_6[3]
-
-		table.insert(var_8_6, var_8_7)
-		table.insert(arg_8_0.limitCfg, var_8_6)
+		table.insert(slot10, slot10[3] <= slot0.char:GetAttrById(slot10[2]))
+		table.insert(slot0.limitCfg, slot10)
 	end
 
-	table.sort(arg_8_0.limitCfg, CompareFuncs({
-		function(arg_9_0)
-			return arg_9_0[4] and 1 or 0
+	table.sort(slot0.limitCfg, CompareFuncs({
+		function (slot0)
+			return slot0[4] and 1 or 0
 		end
 	}))
-	arg_8_0.limitUIList:align(#arg_8_0.limitCfg)
+	slot0.limitUIList:align(#slot0.limitCfg)
 
-	arg_8_0.costCfg = {}
+	slot0.costCfg = {}
+	slot6, slot7 = slot1:GetCost()
 
-	local var_8_8, var_8_9 = arg_8_1:GetCost()
-
-	if var_8_8 > 0 then
-		table.insert(arg_8_0.costCfg, {
+	if slot6 > 0 then
+		table.insert(slot0.costCfg, {
 			id = EducateChar.RES_MONEY_ID,
-			num = var_8_8
+			num = slot6
 		})
 	end
 
-	if var_8_9 > 0 then
-		table.insert(arg_8_0.costCfg, {
+	if slot7 > 0 then
+		table.insert(slot0.costCfg, {
 			id = EducateChar.RES_MOOD_ID,
-			num = var_8_9
+			num = slot7
 		})
 	end
 
-	setActive(arg_8_0.costTF, not var_8_4)
-	setActive(arg_8_0.costEmptyTF, not var_8_4 and #arg_8_0.costCfg == 0)
-	arg_8_0.costUIList:align(#arg_8_0.costCfg)
+	setActive(slot0.costTF, not slot4)
+	setActive(slot0.costEmptyTF, not slot4 and #slot0.costCfg == 0)
+	slot0.costUIList:align(#slot0.costCfg)
 
-	arg_8_0.awardCfg = arg_8_1:GetResult()
+	slot0.awardCfg = slot1:GetResult()
 
-	arg_8_0:setAwardParam(var_0_1)
-	arg_8_0.awardUIList:align(#arg_8_0.awardCfg > 2 and 2 or #arg_8_0.awardCfg)
-	setActive(arg_8_0.unfoldBtn, #arg_8_0.awardCfg > 2)
-	setActive(arg_8_0.foldBtn, false)
-	onButton(arg_8_0, arg_8_0.unfoldBtn, function()
-		arg_8_0:setAwardParam(var_0_2)
-		setActive(arg_8_0.foldBtn, true)
-		setActive(arg_8_0.unfoldBtn, false)
-		setActive(arg_8_0.limitTF, false)
-		setActive(arg_8_0.costTF, false)
-		setActive(arg_8_0.costEmptyTF, false)
-		arg_8_0.awardUIList:align(#arg_8_0.awardCfg)
+	slot0:setAwardParam(uv2)
+	slot0.awardUIList:align(#slot0.awardCfg > 2 and 2 or #slot0.awardCfg)
+	setActive(slot0.unfoldBtn, #slot0.awardCfg > 2)
+	setActive(slot0.foldBtn, false)
+	onButton(slot0, slot0.unfoldBtn, function ()
+		uv0:setAwardParam(uv1)
+		setActive(uv0.foldBtn, true)
+		setActive(uv0.unfoldBtn, false)
+		setActive(uv0.limitTF, false)
+		setActive(uv0.costTF, false)
+		setActive(uv0.costEmptyTF, false)
+		uv0.awardUIList:align(#uv0.awardCfg)
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0.foldBtn, function()
-		arg_8_0:setAwardParam(var_0_1)
-		setActive(arg_8_0.foldBtn, false)
-		setActive(arg_8_0.unfoldBtn, true)
-		setActive(arg_8_0.limitTF, var_8_4)
-		setActive(arg_8_0.costTF, not var_8_4)
-		setActive(arg_8_0.costEmptyTF, not var_8_4 and #arg_8_0.costCfg == 0)
-		arg_8_0.awardUIList:align(#arg_8_0.awardCfg > 2 and 2 or #arg_8_0.awardCfg)
+	onButton(slot0, slot0.foldBtn, function ()
+		uv0:setAwardParam(uv1)
+		setActive(uv0.foldBtn, false)
+		setActive(uv0.unfoldBtn, true)
+		setActive(uv0.limitTF, uv2)
+		setActive(uv0.costTF, not uv2)
+		setActive(uv0.costEmptyTF, not uv2 and #uv0.costCfg == 0)
+		uv0.awardUIList:align(#uv0.awardCfg > 2 and 2 or #uv0.awardCfg)
 	end, SFX_PANEL)
-	onButton(arg_8_0, arg_8_0._tf, function()
-		arg_8_0.viewComponent:OnPlanCardClick(arg_8_1)
+	onButton(slot0, slot0._tf, function ()
+		uv0.viewComponent:OnPlanCardClick(uv1)
 	end, SFX_PANEL)
 end
 
-function var_0_0.setAwardParam(arg_13_0, arg_13_1)
-	setSizeDelta(arg_13_0.awardTF, arg_13_1.size)
+function slot0.setAwardParam(slot0, slot1)
+	setSizeDelta(slot0.awardTF, slot1.size)
 
-	arg_13_0.awardLayouCom.spacing = arg_13_1.spacing
-	arg_13_0.awardLayouCom.padding.top = arg_13_1.top
+	slot0.awardLayouCom.spacing = slot1.spacing
+	slot0.awardLayouCom.padding.top = slot1.top
 end
 
-function var_0_0.dispose(arg_14_0)
-	pg.DelegateInfo.Dispose(arg_14_0)
+function slot0.dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

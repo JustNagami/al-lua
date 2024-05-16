@@ -1,198 +1,182 @@
-﻿local var_0_0 = class("CommanderBuildPoolPanel", import("...base.BaseSubView"))
+slot0 = class("CommanderBuildPoolPanel", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommanderBuildPoolUI"
 end
 
-local var_0_1 = 10
+slot1 = 10
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.buildPoolList = UIItemList.New(arg_2_0._tf:Find("frame/bg/content/list"), arg_2_0._tf:Find("frame/bg/content/list/1"))
-
-	local var_2_0 = arg_2_0._tf:Find("frame/bg/content/queue/list1/pos")
-
-	arg_2_0.posListTop = UIItemList.New(arg_2_0._tf:Find("frame/bg/content/queue/list1"), var_2_0)
-	arg_2_0.posListBottom = UIItemList.New(arg_2_0._tf:Find("frame/bg/content/queue/list2"), var_2_0)
-	arg_2_0.autoBtn = arg_2_0._tf:Find("frame/bg/auto_btn")
-	arg_2_0.startBtn = arg_2_0._tf:Find("frame/bg/start_btn")
-	arg_2_0.selectedTxt = arg_2_0._tf:Find("statistics/Text"):GetComponent(typeof(Text))
-	arg_2_0.sprites = {
-		arg_2_0._tf:Find("frame/bg/content/list/1/icon/iconImg"):GetComponent(typeof(Image)).sprite,
-		arg_2_0._tf:Find("frame/bg/content/list/2/icon/iconImg"):GetComponent(typeof(Image)).sprite,
-		arg_2_0._tf:Find("frame/bg/content/list/3/icon/iconImg"):GetComponent(typeof(Image)).sprite
+function slot0.OnLoaded(slot0)
+	slot0.buildPoolList = UIItemList.New(slot0._tf:Find("frame/bg/content/list"), slot0._tf:Find("frame/bg/content/list/1"))
+	slot1 = slot0._tf:Find("frame/bg/content/queue/list1/pos")
+	slot0.posListTop = UIItemList.New(slot0._tf:Find("frame/bg/content/queue/list1"), slot1)
+	slot0.posListBottom = UIItemList.New(slot0._tf:Find("frame/bg/content/queue/list2"), slot1)
+	slot0.autoBtn = slot0._tf:Find("frame/bg/auto_btn")
+	slot0.startBtn = slot0._tf:Find("frame/bg/start_btn")
+	slot0.selectedTxt = slot0._tf:Find("statistics/Text"):GetComponent(typeof(Text))
+	slot0.sprites = {
+		slot0._tf:Find("frame/bg/content/list/1/icon/iconImg"):GetComponent(typeof(Image)).sprite,
+		slot0._tf:Find("frame/bg/content/list/2/icon/iconImg"):GetComponent(typeof(Image)).sprite,
+		slot0._tf:Find("frame/bg/content/list/3/icon/iconImg"):GetComponent(typeof(Image)).sprite
 	}
 
-	setText(arg_2_0:findTF("frame/bg/content/Text"), i18n("commander_use_box_tip"))
-	setText(arg_2_0:findTF("frame/bg/content/queue/title/Text"), i18n("commander_use_box_queue"))
+	setText(slot0:findTF("frame/bg/content/Text"), i18n("commander_use_box_tip"))
+	setText(slot0:findTF("frame/bg/content/queue/title/Text"), i18n("commander_use_box_queue"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0._tf:Find("frame/bg/close_btn"), function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0._tf:Find("frame/bg/close_btn"), function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.autoBtn, function()
-		if #arg_3_0.selected >= var_0_1 then
+	onButton(slot0, slot0.autoBtn, function ()
+		if uv1 <= #uv0.selected then
 			return
 		end
 
-		arg_3_0:AutoSelect()
-		arg_3_0:UpdatePos()
+		uv0:AutoSelect()
+		uv0:UpdatePos()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.startBtn, function()
-		if #arg_3_0.selected == 0 then
+	onButton(slot0, slot0.startBtn, function ()
+		if #uv0.selected == 0 then
 			return
 		end
 
-		arg_3_0.contextData.msgBox:ExecuteAction("Show", {
-			content = i18n("commander_select_box_tip", #arg_3_0.selected),
-			onYes = function()
-				arg_3_0:emit(CommanderCatMediator.BATCH_BUILD, arg_3_0.selected)
-				arg_3_0:Hide()
+		uv0.contextData.msgBox:ExecuteAction("Show", {
+			content = i18n("commander_select_box_tip", #uv0.selected),
+			onYes = function ()
+				uv0:emit(CommanderCatMediator.BATCH_BUILD, uv0.selected)
+				uv0:Hide()
 			end
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.AutoSelect(arg_9_0)
-	local var_9_0 = arg_9_0.pools
+function slot0.AutoSelect(slot0)
+	slot1 = slot0.pools
 
-	local function var_9_1()
-		local var_10_0
+	for slot7 = 1, uv0 - #slot0.selected do
+		if function ()
+			slot0 = nil
 
-		for iter_10_0, iter_10_1 in pairs(arg_9_0.counts) do
-			if iter_10_1 > 0 then
-				var_10_0 = iter_10_0
-			end
-		end
-
-		return var_10_0
-	end
-
-	local var_9_2 = var_0_1 - #arg_9_0.selected
-
-	for iter_9_0 = 1, var_9_2 do
-		local var_9_3 = var_9_1()
-
-		if var_9_3 then
-			arg_9_0:ReduceCount(var_9_3, -1)
-		end
-	end
-end
-
-function var_0_0.Show(arg_11_0, arg_11_1, arg_11_2)
-	var_0_1 = arg_11_2
-	arg_11_0.selected = {}
-	arg_11_0.pools = arg_11_1
-
-	local var_11_0 = arg_11_0.pools
-
-	arg_11_0.counts = {}
-
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0.pools) do
-		arg_11_0.counts[iter_11_1.id] = iter_11_1:getItemCount()
-	end
-
-	arg_11_0.boxesTxt = {}
-
-	table.sort(var_11_0, function(arg_12_0, arg_12_1)
-		return arg_12_0.id < arg_12_1.id
-	end)
-	arg_11_0.buildPoolList:make(function(arg_13_0, arg_13_1, arg_13_2)
-		if arg_13_0 == UIItemList.EventUpdate then
-			local var_13_0 = var_11_0[arg_13_1 + 1]
-
-			local function var_13_1(arg_14_0)
-				if #arg_11_0.selected < var_0_1 and arg_11_0.counts[var_13_0.id] > 0 then
-					arg_11_0:ReduceCount(var_13_0.id, -1)
-				else
-					arg_14_0()
+			for slot4, slot5 in pairs(uv0.counts) do
+				if slot5 > 0 then
+					slot0 = slot4
 				end
 			end
 
-			pressPersistTrigger(arg_13_2:Find("icon"), 0.5, var_13_1, nil, true, true, 0.15, SFX_PANEL)
-			setText(arg_13_2:Find("name"), var_13_0:getName())
-
-			arg_11_0.boxesTxt[var_13_0.id] = arg_13_2:Find("Text")
-
-			arg_11_0:ReduceCount(var_13_0.id, 0)
+			return slot0
+		end() then
+			slot0:ReduceCount(slot8, -1)
 		end
-	end)
-	arg_11_0.buildPoolList:align(#var_11_0)
-	arg_11_0:UpdatePos()
-	setActive(arg_11_0._tf, true)
-
-	arg_11_0.isShow = true
-end
-
-function var_0_0.ReduceCount(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	assert(arg_15_2 == 1 or arg_15_2 == 0 or arg_15_2 == -1)
-
-	local var_15_0 = arg_15_0.boxesTxt[arg_15_1]
-	local var_15_1 = arg_15_0.counts[arg_15_1] + arg_15_2
-
-	arg_15_0.counts[arg_15_1] = var_15_1
-
-	setText(var_15_0, var_15_1)
-
-	if arg_15_2 < 0 then
-		table.insert(arg_15_0.selected, arg_15_1)
-		arg_15_0:UpdatePos()
-	elseif arg_15_2 > 0 then
-		table.remove(arg_15_0.selected, arg_15_3)
-		arg_15_0:UpdatePos()
 	end
 end
 
-function var_0_0.poolId2Sprite(arg_16_0, arg_16_1)
-	return arg_16_0.sprites[arg_16_1]
+function slot0.Show(slot0, slot1, slot2)
+	uv0 = slot2
+	slot0.selected = {}
+	slot0.pools = slot1
+	slot3 = slot0.pools
+	slot0.counts = {}
+
+	for slot7, slot8 in ipairs(slot0.pools) do
+		slot0.counts[slot8.id] = slot8:getItemCount()
+	end
+
+	slot0.boxesTxt = {}
+
+	table.sort(slot3, function (slot0, slot1)
+		return slot0.id < slot1.id
+	end)
+	slot0.buildPoolList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
+
+			pressPersistTrigger(slot2:Find("icon"), 0.5, function (slot0)
+				if #uv0.selected < uv1 and uv0.counts[uv2.id] > 0 then
+					uv0:ReduceCount(uv2.id, -1)
+				else
+					slot0()
+				end
+			end, nil, true, true, 0.15, SFX_PANEL)
+			setText(slot2:Find("name"), slot3:getName())
+
+			uv1.boxesTxt[slot3.id] = slot2:Find("Text")
+
+			uv1:ReduceCount(slot3.id, 0)
+		end
+	end)
+	slot0.buildPoolList:align(#slot3)
+	slot0:UpdatePos()
+	setActive(slot0._tf, true)
+
+	slot0.isShow = true
 end
 
-function var_0_0.UpdatePos(arg_17_0)
-	local function var_17_0(arg_18_0, arg_18_1)
-		local var_18_0 = arg_17_0.selected[arg_18_0]
-		local var_18_1 = arg_18_1:Find("icon")
+function slot0.ReduceCount(slot0, slot1, slot2, slot3)
+	assert(slot2 == 1 or slot2 == 0 or slot2 == -1)
 
-		if var_18_0 then
-			var_18_1:GetComponent(typeof(Image)).sprite = arg_17_0:poolId2Sprite(var_18_0)
+	slot5 = slot0.counts[slot1] + slot2
+	slot0.counts[slot1] = slot5
 
-			onButton(arg_17_0, var_18_1, function()
-				arg_17_0:ReduceCount(var_18_0, 1, arg_18_0)
+	setText(slot0.boxesTxt[slot1], slot5)
+
+	if slot2 < 0 then
+		table.insert(slot0.selected, slot1)
+		slot0:UpdatePos()
+	elseif slot2 > 0 then
+		table.remove(slot0.selected, slot3)
+		slot0:UpdatePos()
+	end
+end
+
+function slot0.poolId2Sprite(slot0, slot1)
+	return slot0.sprites[slot1]
+end
+
+function slot0.UpdatePos(slot0)
+	function slot1(slot0, slot1)
+		slot3 = slot1:Find("icon")
+
+		if uv0.selected[slot0] then
+			slot3:GetComponent(typeof(Image)).sprite = uv0:poolId2Sprite(slot2)
+
+			onButton(uv0, slot3, function ()
+				uv0:ReduceCount(uv1, 1, uv2)
 			end, SFX_PANEL)
 		else
-			setText(arg_18_1:Find("empty/Text"), arg_18_0)
+			setText(slot1:Find("empty/Text"), slot0)
 		end
 
-		setActive(arg_18_1:Find("empty"), not var_18_0)
-		setActive(var_18_1, var_18_0)
+		setActive(slot1:Find("empty"), not slot2)
+		setActive(slot3, slot2)
 	end
 
-	arg_17_0.posListTop:make(function(arg_20_0, arg_20_1, arg_20_2)
-		if arg_20_0 == UIItemList.EventUpdate then
-			var_17_0(arg_20_1 + 1, arg_20_2)
+	slot0.posListTop:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0(slot1 + 1, slot2)
 		end
 	end)
-	arg_17_0.posListTop:align(math.min(5, var_0_1))
-	arg_17_0.posListBottom:make(function(arg_21_0, arg_21_1, arg_21_2)
-		if arg_21_0 == UIItemList.EventUpdate then
-			var_17_0(arg_21_1 + 6, arg_21_2)
+	slot0.posListTop:align(math.min(5, uv0))
+	slot0.posListBottom:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0(slot1 + 6, slot2)
 		end
 	end)
-	arg_17_0.posListBottom:align(math.max(0, math.min(5, var_0_1 - 5)))
+	slot0.posListBottom:align(math.max(0, math.min(5, uv0 - 5)))
 
-	arg_17_0.selectedTxt.text = #arg_17_0.selected .. "/" .. var_0_1
+	slot0.selectedTxt.text = #slot0.selected .. "/" .. uv0
 end
 
-function var_0_0.Hide(arg_22_0)
-	setActive(arg_22_0._tf, false)
+function slot0.Hide(slot0)
+	setActive(slot0._tf, false)
 
-	arg_22_0.isShow = false
+	slot0.isShow = false
 end
 
-function var_0_0.OnDestroy(arg_23_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

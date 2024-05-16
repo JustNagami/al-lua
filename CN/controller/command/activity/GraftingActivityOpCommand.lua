@@ -1,63 +1,52 @@
-﻿local var_0_0 = class("GraftingActivityOpCommand", pm.SimpleCommand)
+slot0 = class("GraftingActivityOpCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = getProxy(ActivityProxy)
-	local var_1_3 = var_1_2:getActivityById(var_1_1)
-
-	if not var_1_3 or var_1_3:isEnd() then
+function slot0.execute(slot0, slot1)
+	if not getProxy(ActivityProxy):getActivityById(slot1:getBody().id) or slot5:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 		return
 	end
 
-	local var_1_4 = var_1_3:getConfig("config_id")
-	local var_1_5 = var_1_2:getActivityById(var_1_4)
-
-	if var_1_5 and not var_1_5:isEnd() then
+	if slot4:getActivityById(slot5:getConfig("config_id")) and not slot7:isEnd() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_not_start"))
 
 		return
 	end
 
-	local var_1_6 = pg.activity_template[var_1_4].type
+	slot8 = pg.activity_template[slot6].type
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = var_1_1,
-		cmd = var_1_0.cmd or 0,
-		arg1 = var_1_0.arg1 or 0,
-		arg2 = var_1_0.arg2 or 0,
+		activity_id = slot3,
+		cmd = slot2.cmd or 0,
+		arg1 = slot2.arg1 or 0,
+		arg2 = slot2.arg2 or 0,
 		arg_list = {}
-	}, 11203, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			if arg_1_0:IsBuildShipType(var_1_6) then
-				arg_1_0:UpdateActivityForBuildShip(var_1_1)
+	}, 11203, function (slot0)
+		if slot0.result == 0 then
+			if uv0:IsBuildShipType(uv1) then
+				uv0:UpdateActivityForBuildShip(uv2)
 			end
 
-			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
-
-			arg_1_0:sendNotification(GAME.GRAFTING_ACT_OP_DONE, {
-				linkActType = var_1_6,
-				awards = var_2_0
+			uv0:sendNotification(GAME.GRAFTING_ACT_OP_DONE, {
+				linkActType = uv1,
+				awards = PlayerConst.addTranDrop(slot0.award_list)
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-function var_0_0.IsBuildShipType(arg_3_0, arg_3_1)
-	return arg_3_1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or arg_3_1 == ActivityConst.ACTIVITY_TYPE_BUILD or arg_3_1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
+function slot0.IsBuildShipType(slot0, slot1)
+	return slot1 == ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1 or slot1 == ActivityConst.ACTIVITY_TYPE_BUILD or slot1 == ActivityConst.ACTIVITY_TYPE_NEWSERVER_BUILD
 end
 
-function var_0_0.UpdateActivityForBuildShip(arg_4_0, arg_4_1)
-	local var_4_0 = getProxy(ActivityProxy)
-	local var_4_1 = var_4_0:getActivityById(arg_4_1)
+function slot0.UpdateActivityForBuildShip(slot0, slot1)
+	slot2 = getProxy(ActivityProxy)
+	slot3 = slot2:getActivityById(slot1)
+	slot3.data2 = slot3.data2 + 1
 
-	var_4_1.data2 = var_4_1.data2 + 1
-
-	var_4_0:updateActivity(var_4_1)
+	slot2:updateActivity(slot3)
 end
 
-return var_0_0
+return slot0

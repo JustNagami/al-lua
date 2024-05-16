@@ -1,77 +1,71 @@
-﻿local var_0_0 = class("GuildReportCard")
+slot0 = class("GuildReportCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.viewComponent = arg_1_2
-	arg_1_0._go = arg_1_1
-	arg_1_0._tf = tf(arg_1_1)
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.viewComponent = slot2
+	slot0._go = slot1
+	slot0._tf = tf(slot1)
 
-	pg.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0.bg = arg_1_0._tf:GetComponent(typeof(Image))
-	arg_1_0.label = arg_1_0._tf:Find("label"):GetComponent(typeof(Image))
-	arg_1_0.titleTxt = arg_1_0._tf:Find("title/name"):GetComponent(typeof(Text))
-	arg_1_0.descTxt = arg_1_0._tf:Find("desc"):GetComponent(typeof(Text))
-	arg_1_0.awardList = UIItemList.New(arg_1_0._tf:Find("awards/content"), arg_1_0._tf:Find("awards/content/item"))
-	arg_1_0.getBtn = arg_1_0._tf:Find("get")
-	arg_1_0.gotBtn = arg_1_0._tf:Find("got")
-	arg_1_0.rankBtn = arg_1_0._tf:Find("rank")
+	slot0.bg = slot0._tf:GetComponent(typeof(Image))
+	slot0.label = slot0._tf:Find("label"):GetComponent(typeof(Image))
+	slot0.titleTxt = slot0._tf:Find("title/name"):GetComponent(typeof(Text))
+	slot0.descTxt = slot0._tf:Find("desc"):GetComponent(typeof(Text))
+	slot0.awardList = UIItemList.New(slot0._tf:Find("awards/content"), slot0._tf:Find("awards/content/item"))
+	slot0.getBtn = slot0._tf:Find("get")
+	slot0.gotBtn = slot0._tf:Find("got")
+	slot0.rankBtn = slot0._tf:Find("rank")
 
-	onButton(arg_1_0, arg_1_0.rankBtn, function()
-		arg_1_0.viewComponent:ShowReportRank(arg_1_0.report.id)
+	onButton(slot0, slot0.rankBtn, function ()
+		uv0.viewComponent:ShowReportRank(uv0.report.id)
 	end, SFX_PANEL)
 end
 
-function var_0_0.Update(arg_3_0, arg_3_1)
-	arg_3_0.report = arg_3_1
+function slot0.Update(slot0, slot1)
+	slot0.report = slot1
+	slot2 = slot1:GetType()
+	slot0.bg.sprite = GetSpriteFromAtlas("ui/GuildEventReportUI_atlas", "bg_" .. slot2)
+	slot0.label.sprite = GetSpriteFromAtlas("ui/GuildEventReportUI_atlas", "text_" .. slot2)
+	slot3 = slot1:IsSubmited()
 
-	local var_3_0 = arg_3_1:GetType()
+	setActive(slot0.getBtn, not slot3)
+	setActive(slot0.gotBtn, slot3)
 
-	arg_3_0.bg.sprite = GetSpriteFromAtlas("ui/GuildEventReportUI_atlas", "bg_" .. var_3_0)
-	arg_3_0.label.sprite = GetSpriteFromAtlas("ui/GuildEventReportUI_atlas", "text_" .. var_3_0)
-
-	local var_3_1 = arg_3_1:IsSubmited()
-
-	setActive(arg_3_0.getBtn, not var_3_1)
-	setActive(arg_3_0.gotBtn, var_3_1)
-
-	if not var_3_1 then
-		setGray(arg_3_0.getBtn, arg_3_1:IsLock(), true)
+	if not slot3 then
+		setGray(slot0.getBtn, slot1:IsLock(), true)
 	end
 
-	arg_3_0:UpdateAwards()
+	slot0:UpdateAwards()
 
-	arg_3_0.titleTxt.text = arg_3_1:getConfig("name")
-	arg_3_0.descTxt.text = arg_3_1:GetReportDesc()
+	slot0.titleTxt.text = slot1:getConfig("name")
+	slot0.descTxt.text = slot1:GetReportDesc()
 
-	local var_3_2 = arg_3_1:IsBoss()
-
-	setActive(arg_3_0.rankBtn, var_3_2)
+	setActive(slot0.rankBtn, slot1:IsBoss())
 end
 
-function var_0_0.UpdateAwards(arg_4_0)
-	local var_4_0, var_4_1 = arg_4_0.report:GetDrop()
+function slot0.UpdateAwards(slot0)
+	slot2, slot3 = slot0.report:GetDrop()
 
-	arg_4_0.awardList:make(function(arg_5_0, arg_5_1, arg_5_2)
-		if arg_5_0 == UIItemList.EventUpdate then
-			local var_5_0 = var_4_0[arg_5_1 + 1]
-			local var_5_1 = {
-				type = var_5_0[1],
-				id = var_5_0[2],
-				count = var_5_0[3]
-			}
+	slot0.awardList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-			updateDrop(arg_5_2, var_5_1)
-			onButton(arg_4_0, arg_5_2, function()
-				arg_4_0.viewComponent:emit(BaseUI.ON_DROP, var_5_1)
+			updateDrop(slot2, {
+				type = slot3[1],
+				id = slot3[2],
+				count = slot3[3]
+			})
+			onButton(uv1, slot2, function ()
+				uv0.viewComponent:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
-			setActive(arg_5_2:Find("icon_bg/bouns"), arg_5_1 + 1 <= var_4_1)
+			setActive(slot2:Find("icon_bg/bouns"), slot1 + 1 <= uv2)
 		end
 	end)
-	arg_4_0.awardList:align(#var_4_0)
+	slot0.awardList:align(#slot2)
 end
 
-function var_0_0.Dispose(arg_7_0)
-	pg.DelegateInfo.Dispose(arg_7_0)
+function slot0.Dispose(slot0)
+	pg.DelegateInfo.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,763 +1,709 @@
-﻿local var_0_0 = class("Fushun3GameView", import("..BaseMiniGameView"))
-local var_0_1 = "event:/ui/ddldaoshu2"
-local var_0_2 = "fushun_game3_tip"
-local var_0_3 = "event:/ui/taosheng"
-local var_0_4 = "event:/ui/tiji"
-local var_0_5 = "event:/ui/baozha1"
-local var_0_6 = "event:/ui/break_out_full"
+slot0 = class("Fushun3GameView", import("..BaseMiniGameView"))
+slot1 = "event:/ui/ddldaoshu2"
+slot2 = "fushun_game3_tip"
+slot3 = "event:/ui/taosheng"
+slot4 = "event:/ui/tiji"
+slot5 = "event:/ui/baozha1"
+slot6 = "event:/ui/break_out_full"
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "Fushun3GameView"
 end
 
-function var_0_0.didEnter(arg_2_0)
-	arg_2_0:initEvent()
-	arg_2_0:initData()
-	arg_2_0:initUI()
-	arg_2_0:initGameUI()
-	arg_2_0:initController()
-	arg_2_0:updateMenuUI()
-	arg_2_0:openMenuUI()
+function slot0.didEnter(slot0)
+	slot0:initEvent()
+	slot0:initData()
+	slot0:initUI()
+	slot0:initGameUI()
+	slot0:initController()
+	slot0:updateMenuUI()
+	slot0:openMenuUI()
 end
 
-function var_0_0.initEvent(arg_3_0)
-	arg_3_0:bind(Fushun3GameEvent.create_item_call, function(arg_4_0, arg_4_1, arg_4_2)
-		if arg_3_0.itemController then
-			arg_3_0.itemController:createItem(arg_4_1.name, arg_4_1.pos)
+function slot0.initEvent(slot0)
+	slot0:bind(Fushun3GameEvent.create_item_call, function (slot0, slot1, slot2)
+		if uv0.itemController then
+			uv0.itemController:createItem(slot1.name, slot1.pos)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.create_platform_item_call, function(arg_5_0, arg_5_1, arg_5_2)
-		if arg_3_0.itemController then
-			arg_3_0.itemController:createPlatformItem(arg_5_1.pos, arg_5_1.id)
+	slot0:bind(Fushun3GameEvent.create_platform_item_call, function (slot0, slot1, slot2)
+		if uv0.itemController then
+			uv0.itemController:createPlatformItem(slot1.pos, slot1.id)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.item_follow_call, function(arg_6_0, arg_6_1, arg_6_2)
-		if arg_3_0.itemController then
-			arg_3_0.itemController:itemFollow(arg_6_1.anchoredPos)
+	slot0:bind(Fushun3GameEvent.item_follow_call, function (slot0, slot1, slot2)
+		if uv0.itemController then
+			uv0.itemController:itemFollow(slot1.anchoredPos)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.create_monster_call, function(arg_7_0, arg_7_1, arg_7_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:createMonster(arg_7_1.pos)
+	slot0:bind(Fushun3GameEvent.create_monster_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:createMonster(slot1.pos)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.player_attack_call, function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:checkMonsterDamage(arg_8_1.collider, arg_8_1.callback, Fushun3GameEvent.attack_damdage_monster_call)
+	slot0:bind(Fushun3GameEvent.player_attack_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:checkMonsterDamage(slot1.collider, slot1.callback, Fushun3GameEvent.attack_damdage_monster_call)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.char_damaged_call, function(arg_9_0, arg_9_1, arg_9_2)
-		local var_9_0 = arg_3_0.charController:getHeart()
+	slot0:bind(Fushun3GameEvent.char_damaged_call, function (slot0, slot1, slot2)
+		uv0:updateGameUI()
 
-		arg_3_0:updateGameUI()
-
-		if var_9_0 == 0 then
-			arg_3_0:onGameOver()
+		if uv0.charController:getHeart() == 0 then
+			uv0:onGameOver()
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.check_item_damage, function(arg_10_0, arg_10_1, arg_10_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:checkMonsterDamage(arg_10_1.collider, arg_10_1.callback, Fushun3GameEvent.shot_damage_monster_call)
+	slot0:bind(Fushun3GameEvent.check_item_damage, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:checkMonsterDamage(slot1.collider, slot1.callback, Fushun3GameEvent.shot_damage_monster_call)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.check_player_damage, function(arg_11_0, arg_11_1, arg_11_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:checkPlayerDamage(arg_11_1.tf, arg_11_1.callback)
+	slot0:bind(Fushun3GameEvent.check_player_damage, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:checkPlayerDamage(slot1.tf, slot1.callback)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.power_damage_monster_call, function(arg_12_0, arg_12_1, arg_12_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:damageMonster(arg_12_1.tf, Fushun3GameEvent.power_damage_monster_call)
+	slot0:bind(Fushun3GameEvent.power_damage_monster_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:damageMonster(slot1.tf, Fushun3GameEvent.power_damage_monster_call)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.shot_damage_monster_call, function(arg_13_0, arg_13_1, arg_13_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:damageMonster(arg_13_1.tf, Fushun3GameEvent.shot_damage_monster_call)
+	slot0:bind(Fushun3GameEvent.shot_damage_monster_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:damageMonster(slot1.tf, Fushun3GameEvent.shot_damage_monster_call)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.attack_damdage_monster_call, function(arg_14_0, arg_14_1, arg_14_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:damageMonster(arg_14_1.tf, Fushun3GameEvent.attack_damdage_monster_call)
+	slot0:bind(Fushun3GameEvent.attack_damdage_monster_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:damageMonster(slot1.tf, Fushun3GameEvent.attack_damdage_monster_call)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.kick_damage_monster_call, function(arg_15_0, arg_15_1, arg_15_2)
-		if arg_3_0.monsterController then
-			arg_3_0.monsterController:damageMonster(arg_15_1.tf, Fushun3GameEvent.kick_damage_monster_call, arg_15_1.callback)
+	slot0:bind(Fushun3GameEvent.kick_damage_monster_call, function (slot0, slot1, slot2)
+		if uv0.monsterController then
+			uv0.monsterController:damageMonster(slot1.tf, Fushun3GameEvent.kick_damage_monster_call, slot1.callback)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.add_anim_effect_call, function(arg_16_0, arg_16_1, arg_16_2)
-		if arg_3_0.effectController and arg_16_1 then
-			arg_3_0.effectController:addEffectByAnim(arg_16_1.clipName, arg_16_1.targetTf)
+	slot0:bind(Fushun3GameEvent.add_anim_effect_call, function (slot0, slot1, slot2)
+		if uv0.effectController and slot1 then
+			uv0.effectController:addEffectByAnim(slot1.clipName, slot1.targetTf)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.add_effect_call, function(arg_17_0, arg_17_1, arg_17_2)
-		if arg_3_0.effectController and arg_17_1 then
-			arg_3_0.effectController:addEffectByName(arg_17_1.effectName, arg_17_1.targetTf)
+	slot0:bind(Fushun3GameEvent.add_effect_call, function (slot0, slot1, slot2)
+		if uv0.effectController and slot1 then
+			uv0.effectController:addEffectByName(slot1.effectName, slot1.targetTf)
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.power_speed_call, function(arg_18_0, arg_18_1, arg_18_2)
-		if arg_3_0.platformController then
-			arg_3_0.platformController:onPlayerPower()
+	slot0:bind(Fushun3GameEvent.power_speed_call, function (slot0, slot1, slot2)
+		if uv0.platformController then
+			uv0.platformController:onPlayerPower()
 		end
 	end)
-	arg_3_0:bind(Fushun3GameEvent.add_monster_score_call, function(arg_19_0, arg_19_1, arg_19_2)
-		arg_3_0.charController:addPower(Fushun3GameConst.monster_score)
-		arg_3_0:addScore(Fushun3GameConst.monster_score)
+	slot0:bind(Fushun3GameEvent.add_monster_score_call, function (slot0, slot1, slot2)
+		uv0.charController:addPower(Fushun3GameConst.monster_score)
+		uv0:addScore(Fushun3GameConst.monster_score)
 	end)
-	arg_3_0:bind(Fushun3GameEvent.game_over_call, function(arg_20_0, arg_20_1, arg_20_2)
-		arg_3_0:onGameOver()
+	slot0:bind(Fushun3GameEvent.game_over_call, function (slot0, slot1, slot2)
+		uv0:onGameOver()
 	end)
-	arg_3_0:bind(Fushun3GameEvent.day_night_change, function(arg_21_0, arg_21_1, arg_21_2)
-		if arg_3_0.platformController then
-			arg_3_0.platformController:updateDayNight()
+	slot0:bind(Fushun3GameEvent.day_night_change, function (slot0, slot1, slot2)
+		if uv0.platformController then
+			uv0.platformController:updateDayNight()
 		end
 	end)
 end
 
-function var_0_0.onEventHandle(arg_22_0, arg_22_1)
-	return
+function slot0.onEventHandle(slot0, slot1)
 end
 
-function var_0_0.initData(arg_23_0)
+function slot0.initData(slot0)
 	Fushun3GameVo.ChangeTimeType(math.random() < 0.5 and Fushun3GameConst.day_type or Fushun3GameConst.night_type)
 
-	arg_23_0.dayTimeFlag = Fushun3GameVo.GetTimeFlag()
+	slot0.dayTimeFlag = Fushun3GameVo.GetTimeFlag()
 
-	local var_23_0 = Application.targetFrameRate or 60
-
-	if var_23_0 > 60 then
-		var_23_0 = 60
+	if (Application.targetFrameRate or 60) > 60 then
+		slot1 = 60
 	end
 
-	arg_23_0.timer = Timer.New(function()
-		arg_23_0:onTimer()
-	end, 1 / var_23_0, -1)
+	slot0.timer = Timer.New(function ()
+		uv0:onTimer()
+	end, 1 / slot1, -1)
 end
 
-function var_0_0.initController(arg_25_0)
-	arg_25_0.charTf = findTF(arg_25_0._tf, "sceneContainer/scene/char")
-	arg_25_0.rectCollider = RectCollider.New(arg_25_0.charTf, {}, arg_25_0)
+function slot0.initController(slot0)
+	slot0.charTf = findTF(slot0._tf, "sceneContainer/scene/char")
+	slot0.rectCollider = RectCollider.New(slot0.charTf, {}, slot0)
 
-	arg_25_0.rectCollider:addScript(FuShunMovementScript.New())
-	arg_25_0.rectCollider:addScript(FuShunAttakeScript.New())
-	arg_25_0.rectCollider:addScript(FuShunJumpScript.New())
-	arg_25_0.rectCollider:addScript(FuShunPowerSpeedScript.New())
-	arg_25_0.rectCollider:addScript(FuShunDamageScript.New())
+	slot0.rectCollider:addScript(FuShunMovementScript.New())
+	slot0.rectCollider:addScript(FuShunAttakeScript.New())
+	slot0.rectCollider:addScript(FuShunJumpScript.New())
+	slot0.rectCollider:addScript(FuShunPowerSpeedScript.New())
+	slot0.rectCollider:addScript(FuShunDamageScript.New())
 
-	local var_25_0 = findTF(arg_25_0._tf, "tpls/platformTpls")
-	local var_25_1 = findTF(arg_25_0.sceneTf, "platform/content")
+	slot0.platformController = Fushun3PlatformControll.New(slot0.sceneTf, findTF(slot0._tf, "tpls/platformTpls"), findTF(slot0.sceneTf, "platform/content"), slot0)
+	slot0.sceneController = Fushun3SceneController.New(slot0.backSceneTf, slot0.sceneTf, slot0.charTf)
+	slot0.charController = Fushun3CharController.New(slot0.rectCollider, slot0.charTf, slot0.rectCollider:getCollisionInfo(), slot0.powerProgressSlider, slot0)
+	slot0.itemController = Fushun3ItemController.New(slot0.sceneTf, slot0.charTf, findTF(slot0._tf, "tpls/itemTpls"), slot0)
 
-	arg_25_0.platformController = Fushun3PlatformControll.New(arg_25_0.sceneTf, var_25_0, var_25_1, arg_25_0)
-	arg_25_0.sceneController = Fushun3SceneController.New(arg_25_0.backSceneTf, arg_25_0.sceneTf, arg_25_0.charTf)
-
-	local var_25_2 = arg_25_0.rectCollider:getCollisionInfo()
-
-	arg_25_0.charController = Fushun3CharController.New(arg_25_0.rectCollider, arg_25_0.charTf, var_25_2, arg_25_0.powerProgressSlider, arg_25_0)
-
-	local var_25_3 = findTF(arg_25_0._tf, "tpls/itemTpls")
-
-	arg_25_0.itemController = Fushun3ItemController.New(arg_25_0.sceneTf, arg_25_0.charTf, var_25_3, arg_25_0)
-
-	arg_25_0.itemController:setCallback(function(arg_26_0, arg_26_1)
-		arg_25_0:onControllerCallback(arg_26_0, arg_26_1)
+	slot0.itemController:setCallback(function (slot0, slot1)
+		uv0:onControllerCallback(slot0, slot1)
 	end)
 
-	local var_25_4 = findTF(arg_25_0._tf, "tpls/bgTpls")
-	local var_25_5 = findTF(arg_25_0._tf, "tpls/fireTpls")
-	local var_25_6 = findTF(arg_25_0._tf, "tpls/petalTpl")
-
-	arg_25_0.bgController = Fushun3BgController.New(var_25_4, var_25_5, var_25_6, arg_25_0.backSceneTf, arg_25_0)
-
-	local var_25_7 = findTF(arg_25_0._tf, "tpls/monsterTpls")
-	local var_25_8 = findTF(arg_25_0.sceneTf, "monster")
-
-	arg_25_0.monsterController = Fushun3MonsterController.New(var_25_7, var_25_8, arg_25_0.sceneTf, arg_25_0)
-
-	local var_25_9 = findTF(arg_25_0._tf, "tpls/efTpls")
-	local var_25_10 = findTF(arg_25_0.sceneTf, "effect")
-
-	arg_25_0.effectController = Fushun3EffectController.New(var_25_9, var_25_10, arg_25_0)
+	slot0.bgController = Fushun3BgController.New(findTF(slot0._tf, "tpls/bgTpls"), findTF(slot0._tf, "tpls/fireTpls"), findTF(slot0._tf, "tpls/petalTpl"), slot0.backSceneTf, slot0)
+	slot0.monsterController = Fushun3MonsterController.New(findTF(slot0._tf, "tpls/monsterTpls"), findTF(slot0.sceneTf, "monster"), slot0.sceneTf, slot0)
+	slot0.effectController = Fushun3EffectController.New(findTF(slot0._tf, "tpls/efTpls"), findTF(slot0.sceneTf, "effect"), slot0)
 end
 
-function var_0_0.initUI(arg_27_0)
-	arg_27_0.backSceneTf = findTF(arg_27_0._tf, "sceneContainer/scene_background")
-	arg_27_0.frontSceneTf = findTF(arg_27_0._tf, "sceneContainer/scene_front")
-	arg_27_0.sceneTf = findTF(arg_27_0._tf, "sceneContainer/scene")
-	arg_27_0.clickMask = findTF(arg_27_0._tf, "clickMask")
-	arg_27_0.countUI = findTF(arg_27_0._tf, "pop/CountUI")
-	arg_27_0.countAnimator = GetComponent(findTF(arg_27_0.countUI, "count"), typeof(Animator))
-	arg_27_0.countDft = GetOrAddComponent(findTF(arg_27_0.countUI, "count"), typeof(DftAniEvent))
+function slot0.initUI(slot0)
+	slot0.backSceneTf = findTF(slot0._tf, "sceneContainer/scene_background")
+	slot0.frontSceneTf = findTF(slot0._tf, "sceneContainer/scene_front")
+	slot0.sceneTf = findTF(slot0._tf, "sceneContainer/scene")
+	slot0.clickMask = findTF(slot0._tf, "clickMask")
+	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
+	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
+	slot0.countDft = GetOrAddComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
 
-	arg_27_0.countDft:SetTriggerEvent(function()
-		return
+	slot0.countDft:SetTriggerEvent(function ()
 	end)
-	arg_27_0.countDft:SetEndEvent(function()
-		setActive(arg_27_0.countUI, false)
-		arg_27_0:gameStart()
+	slot0.countDft:SetEndEvent(function ()
+		setActive(uv0.countUI, false)
+		uv0:gameStart()
 	end)
-	SetActive(arg_27_0.countUI, false)
+	SetActive(slot0.countUI, false)
 
-	arg_27_0.leaveUI = findTF(arg_27_0._tf, "pop/LeaveUI")
+	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
 
-	onButton(arg_27_0, findTF(arg_27_0.leaveUI, "ad/btnOk"), function()
-		arg_27_0:resumeGame()
-		arg_27_0:onGameOver()
+	onButton(slot0, findTF(slot0.leaveUI, "ad/btnOk"), function ()
+		uv0:resumeGame()
+		uv0:onGameOver()
 	end, SFX_CANCEL)
-	onButton(arg_27_0, findTF(arg_27_0.leaveUI, "ad/btnCancel"), function()
-		arg_27_0:resumeGame()
+	onButton(slot0, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
+		uv0:resumeGame()
 	end, SFX_CANCEL)
-	SetActive(arg_27_0.leaveUI, false)
+	SetActive(slot0.leaveUI, false)
 
-	arg_27_0.pauseUI = findTF(arg_27_0._tf, "pop/pauseUI")
+	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
 
-	onButton(arg_27_0, findTF(arg_27_0.pauseUI, "ad/btnOk"), function()
-		setActive(arg_27_0.pauseUI, false)
-		arg_27_0:resumeGame()
+	onButton(slot0, findTF(slot0.pauseUI, "ad/btnOk"), function ()
+		setActive(uv0.pauseUI, false)
+		uv0:resumeGame()
 	end, SFX_CANCEL)
-	SetActive(arg_27_0.pauseUI, false)
+	SetActive(slot0.pauseUI, false)
 
-	arg_27_0.settlementUI = findTF(arg_27_0._tf, "pop/SettleMentUI")
+	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
 
-	onButton(arg_27_0, findTF(arg_27_0.settlementUI, "ad/btnOver"), function()
-		setActive(arg_27_0.settlementUI, false)
-		arg_27_0:openMenuUI()
+	onButton(slot0, findTF(slot0.settlementUI, "ad/btnOver"), function ()
+		setActive(uv0.settlementUI, false)
+		uv0:openMenuUI()
 	end, SFX_CANCEL)
-	SetActive(arg_27_0.settlementUI, false)
+	SetActive(slot0.settlementUI, false)
 
-	arg_27_0.menuUI = findTF(arg_27_0._tf, "pop/menuUI")
-	arg_27_0.battleScrollRect = GetComponent(findTF(arg_27_0.menuUI, "battList"), typeof(ScrollRect))
-	arg_27_0.totalTimes = arg_27_0:getGameTotalTime()
+	slot0.menuUI = findTF(slot0._tf, "pop/menuUI")
+	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
+	slot0.totalTimes = slot0:getGameTotalTime()
 
-	local var_27_0 = arg_27_0:getGameUsedTimes() - 4 < 0 and 0 or arg_27_0:getGameUsedTimes() - 4
-
-	scrollTo(arg_27_0.battleScrollRect, 0, 1 - var_27_0 / (arg_27_0.totalTimes - 4))
-	onButton(arg_27_0, findTF(arg_27_0.menuUI, "rightPanelBg/arrowUp"), function()
-		local var_34_0 = arg_27_0.battleScrollRect.normalizedPosition.y + 1 / (arg_27_0.totalTimes - 4)
-
-		if var_34_0 > 1 then
-			var_34_0 = 1
+	scrollTo(slot0.battleScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
+	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
+			slot0 = 1
 		end
 
-		scrollTo(arg_27_0.battleScrollRect, 0, var_34_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_27_0, findTF(arg_27_0.menuUI, "rightPanelBg/arrowDown"), function()
-		local var_35_0 = arg_27_0.battleScrollRect.normalizedPosition.y - 1 / (arg_27_0.totalTimes - 4)
-
-		if var_35_0 < 0 then
-			var_35_0 = 0
+	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
+		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
+			slot0 = 0
 		end
 
-		scrollTo(arg_27_0.battleScrollRect, 0, var_35_0)
+		scrollTo(uv0.battleScrollRect, 0, slot0)
 	end, SFX_CANCEL)
-	onButton(arg_27_0, findTF(arg_27_0.menuUI, "btnBack"), function()
-		arg_27_0:closeView()
+	onButton(slot0, findTF(slot0.menuUI, "btnBack"), function ()
+		uv0:closeView()
 	end, SFX_CANCEL)
-	onButton(arg_27_0, findTF(arg_27_0.menuUI, "btnRule"), function()
+	onButton(slot0, findTF(slot0.menuUI, "btnRule"), function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip[var_0_2].tip
+			helps = pg.gametip[uv0].tip
 		})
 	end, SFX_CANCEL)
-	onButton(arg_27_0, findTF(arg_27_0.menuUI, "btnStart"), function()
-		setActive(arg_27_0.menuUI, false)
-		arg_27_0:readyStart()
+	onButton(slot0, findTF(slot0.menuUI, "btnStart"), function ()
+		setActive(uv0.menuUI, false)
+		uv0:readyStart()
 	end, SFX_CANCEL)
 
-	local var_27_1 = findTF(arg_27_0.menuUI, "tplBattleItem")
+	slot0.battleItems = {}
+	slot0.dropItems = {}
 
-	arg_27_0.battleItems = {}
-	arg_27_0.dropItems = {}
+	for slot6 = 1, 7 do
+		slot7 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
+		slot7.name = "battleItem_" .. slot6
 
-	for iter_27_0 = 1, 7 do
-		local var_27_2 = tf(instantiate(var_27_1))
-
-		var_27_2.name = "battleItem_" .. iter_27_0
-
-		setParent(var_27_2, findTF(arg_27_0.menuUI, "battList/Viewport/Content"))
-
-		local var_27_3 = iter_27_0
-
-		GetSpriteFromAtlasAsync("ui/minigameui/fushun3gameui_atlas", "battleDesc" .. var_27_3, function(arg_39_0)
-			setImageSprite(findTF(var_27_2, "state_open/buttomDesc"), arg_39_0, true)
-			setImageSprite(findTF(var_27_2, "state_clear/buttomDesc"), arg_39_0, true)
-			setImageSprite(findTF(var_27_2, "state_current/buttomDesc"), arg_39_0, true)
-			setImageSprite(findTF(var_27_2, "state_closed/buttomDesc"), arg_39_0, true)
+		setParent(slot7, findTF(slot0.menuUI, "battList/Viewport/Content"))
+		GetSpriteFromAtlasAsync("ui/minigameui/fushun3gameui_atlas", "battleDesc" .. slot6, function (slot0)
+			setImageSprite(findTF(uv0, "state_open/buttomDesc"), slot0, true)
+			setImageSprite(findTF(uv0, "state_clear/buttomDesc"), slot0, true)
+			setImageSprite(findTF(uv0, "state_current/buttomDesc"), slot0, true)
+			setImageSprite(findTF(uv0, "state_closed/buttomDesc"), slot0, true)
 		end)
-		setActive(var_27_2, true)
-		table.insert(arg_27_0.battleItems, var_27_2)
+		setActive(slot7, true)
+		table.insert(slot0.battleItems, slot7)
 	end
 
-	if not arg_27_0.handle then
-		arg_27_0.handle = UpdateBeat:CreateListener(arg_27_0.Update, arg_27_0)
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
 	end
 
-	UpdateBeat:AddListener(arg_27_0.handle)
+	UpdateBeat:AddListener(slot0.handle)
 end
 
-function var_0_0.initGameUI(arg_40_0)
-	arg_40_0.gameUI = findTF(arg_40_0._tf, "ui/gameUI")
-	arg_40_0.powerProgress = findTF(arg_40_0.gameUI, "top/powerProgress")
-	arg_40_0.powerProgressSlider = GetComponent(arg_40_0.powerProgress, typeof(Slider))
+function slot0.initGameUI(slot0)
+	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
+	slot0.powerProgress = findTF(slot0.gameUI, "top/powerProgress")
+	slot0.powerProgressSlider = GetComponent(slot0.powerProgress, typeof(Slider))
 
-	onButton(arg_40_0, findTF(arg_40_0.gameUI, "topRight/btnStop"), function()
-		arg_40_0:stopGame()
-		setActive(arg_40_0.pauseUI, true)
-	end)
-	onButton(arg_40_0, findTF(arg_40_0.gameUI, "btnLeave"), function()
-		arg_40_0:stopGame()
-		setActive(arg_40_0.leaveUI, true)
+	onButton(slot0, findTF(slot0.gameUI, "topRight/btnStop"), function ()
+		uv0:stopGame()
+		setActive(uv0.pauseUI, true)
 	end)
 
-	arg_40_0.gameTimeS = findTF(arg_40_0.gameUI, "top/time/s")
-	arg_40_0.scoreTf = findTF(arg_40_0.gameUI, "top/score")
-	arg_40_0.hearts = {}
-
-	for iter_40_0 = 1, Fushun3GameConst.heart_num do
-		table.insert(arg_40_0.hearts, findTF(arg_40_0.gameUI, "top/heart" .. iter_40_0 .. "/full"))
+	function slot4()
+		uv0:stopGame()
+		setActive(uv0.leaveUI, true)
 	end
 
-	arg_40_0.atkDelegate = GetOrAddComponent(findTF(arg_40_0.gameUI, "btnAtk"), "EventTriggerListener")
-	arg_40_0.atkDelegate.enabled = true
+	onButton(slot0, findTF(slot0.gameUI, "btnLeave"), slot4)
 
-	arg_40_0.atkDelegate:AddPointDownFunc(function(arg_43_0, arg_43_1)
-		if arg_40_0.charController then
-			arg_40_0.charController:attack()
+	slot0.gameTimeS = findTF(slot0.gameUI, "top/time/s")
+	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
+	slot0.hearts = {}
+
+	for slot4 = 1, Fushun3GameConst.heart_num do
+		table.insert(slot0.hearts, findTF(slot0.gameUI, "top/heart" .. slot4 .. "/full"))
+	end
+
+	slot0.atkDelegate = GetOrAddComponent(findTF(slot0.gameUI, "btnAtk"), "EventTriggerListener")
+	slot0.atkDelegate.enabled = true
+
+	slot0.atkDelegate:AddPointDownFunc(function (slot0, slot1)
+		if uv0.charController then
+			uv0.charController:attack()
 		end
 	end)
 
-	arg_40_0.jumpDelegate = GetOrAddComponent(findTF(arg_40_0.gameUI, "btnJump"), "EventTriggerListener")
-	arg_40_0.jumpDelegate.enabled = true
+	slot0.jumpDelegate = GetOrAddComponent(findTF(slot0.gameUI, "btnJump"), "EventTriggerListener")
+	slot0.jumpDelegate.enabled = true
 
-	arg_40_0.jumpDelegate:AddPointDownFunc(function(arg_44_0, arg_44_1)
-		if arg_40_0.charController then
-			arg_40_0.charController:jump()
+	slot0.jumpDelegate:AddPointDownFunc(function (slot0, slot1)
+		if uv0.charController then
+			uv0.charController:jump()
 		end
 	end)
-	setText(findTF(arg_40_0._tf, "pop/LeaveUI/ad/desc/n"), i18n(Fushun3GameConst.mini_game_leave))
-	setText(findTF(arg_40_0._tf, "pop/pauseUI/ad/desc/n"), i18n(Fushun3GameConst.mini_game_pause))
+	setText(findTF(slot0._tf, "pop/LeaveUI/ad/desc/n"), i18n(Fushun3GameConst.mini_game_leave))
+	setText(findTF(slot0._tf, "pop/pauseUI/ad/desc/n"), i18n(Fushun3GameConst.mini_game_pause))
 end
 
-function var_0_0.Update(arg_45_0)
-	arg_45_0:AddDebugInput()
+function slot0.Update(slot0)
+	slot0:AddDebugInput()
 end
 
-function var_0_0.AddDebugInput(arg_46_0)
-	if arg_46_0.gameStop or arg_46_0.settlementFlag then
+function slot0.AddDebugInput(slot0)
+	if slot0.gameStop or slot0.settlementFlag then
 		return
 	end
 
 	if Application.isEditor then
-		-- block empty
+		-- Nothing
 	end
 end
 
-function var_0_0.updateMenuUI(arg_47_0)
-	local var_47_0 = arg_47_0:getGameUsedTimes()
-	local var_47_1 = arg_47_0:getGameTimes()
+function slot0.updateMenuUI(slot0)
+	slot2 = slot0:getGameTimes()
 
-	for iter_47_0 = 1, #arg_47_0.battleItems do
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "bg/n"), not arg_47_0.dayTimeFlag)
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "bg/d"), arg_47_0.dayTimeFlag)
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_open"), false)
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_closed"), false)
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_clear"), false)
-		setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_current"), false)
+	for slot6 = 1, #slot0.battleItems do
+		setActive(findTF(slot0.battleItems[slot6], "bg/n"), not slot0.dayTimeFlag)
+		setActive(findTF(slot0.battleItems[slot6], "bg/d"), slot0.dayTimeFlag)
+		setActive(findTF(slot0.battleItems[slot6], "state_open"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_closed"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_clear"), false)
+		setActive(findTF(slot0.battleItems[slot6], "state_current"), false)
 
-		if iter_47_0 <= var_47_0 then
-			setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_clear"), true)
-		elseif iter_47_0 == var_47_0 + 1 and var_47_1 >= 1 then
-			setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_current"), true)
-		elseif var_47_0 < iter_47_0 and iter_47_0 <= var_47_0 + var_47_1 then
-			setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_open"), true)
+		if slot6 <= slot0:getGameUsedTimes() then
+			setActive(findTF(slot0.battleItems[slot6], "state_clear"), true)
+		elseif slot6 == slot1 + 1 and slot2 >= 1 then
+			setActive(findTF(slot0.battleItems[slot6], "state_current"), true)
+		elseif slot1 < slot6 and slot6 <= slot1 + slot2 then
+			setActive(findTF(slot0.battleItems[slot6], "state_open"), true)
 		else
-			setActive(findTF(arg_47_0.battleItems[iter_47_0], "state_closed"), true)
+			setActive(findTF(slot0.battleItems[slot6], "state_closed"), true)
 		end
 	end
 
-	arg_47_0.totalTimes = arg_47_0:getGameTotalTime()
+	slot0.totalTimes = slot0:getGameTotalTime()
 
-	local var_47_2 = 1 - (arg_47_0:getGameUsedTimes() - 3 < 0 and 0 or arg_47_0:getGameUsedTimes() - 3) / (arg_47_0.totalTimes - 4)
-
-	if var_47_2 > 1 then
-		var_47_2 = 1
+	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
+		slot4 = 1
 	end
 
-	scrollTo(arg_47_0.battleScrollRect, 0, var_47_2)
-	setActive(findTF(arg_47_0.menuUI, "btnStart/tip"), var_47_1 > 0)
-	arg_47_0:CheckGet()
-	arg_47_0:updateDayNightUI()
+	scrollTo(slot0.battleScrollRect, 0, slot4)
+	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot2 > 0)
+	slot0:CheckGet()
+	slot0:updateDayNightUI()
 end
 
-function var_0_0.CheckGet(arg_48_0)
-	setActive(findTF(arg_48_0.menuUI, "got"), false)
+function slot0.CheckGet(slot0)
+	setActive(findTF(slot0.menuUI, "got"), false)
 
-	if arg_48_0:getUltimate() and arg_48_0:getUltimate() ~= 0 then
-		setActive(findTF(arg_48_0.menuUI, "got"), true)
+	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 
-	if arg_48_0:getUltimate() == 0 then
-		if arg_48_0:getGameTotalTime() > arg_48_0:getGameUsedTimes() then
+	if slot0:getUltimate() == 0 then
+		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = arg_48_0:GetMGHubData().id,
+			hubid = slot0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(arg_48_0.menuUI, "got"), true)
+		setActive(findTF(slot0.menuUI, "got"), true)
 	end
 end
 
-function var_0_0.openMenuUI(arg_49_0)
-	setActive(findTF(arg_49_0._tf, "sceneContainer/scene_front"), false)
-	setActive(findTF(arg_49_0._tf, "sceneContainer/scene_background"), false)
-	setActive(findTF(arg_49_0._tf, "sceneContainer/scene"), false)
-	setActive(findTF(arg_49_0._tf, "bg"), true)
-	setActive(arg_49_0.gameUI, false)
-	setActive(arg_49_0.menuUI, true)
-	arg_49_0:updateMenuUI()
+function slot0.openMenuUI(slot0)
+	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), false)
+	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), false)
+	setActive(findTF(slot0._tf, "sceneContainer/scene"), false)
+	setActive(findTF(slot0._tf, "bg"), true)
+	setActive(slot0.gameUI, false)
+	setActive(slot0.menuUI, true)
+	slot0:updateMenuUI()
 end
 
-function var_0_0.clearUI(arg_50_0)
-	setActive(arg_50_0.sceneTf, false)
-	setActive(arg_50_0.settlementUI, false)
-	setActive(arg_50_0.countUI, false)
-	setActive(arg_50_0.menuUI, false)
-	setActive(arg_50_0.gameUI, false)
+function slot0.clearUI(slot0)
+	setActive(slot0.sceneTf, false)
+	setActive(slot0.settlementUI, false)
+	setActive(slot0.countUI, false)
+	setActive(slot0.menuUI, false)
+	setActive(slot0.gameUI, false)
 end
 
-function var_0_0.readyStart(arg_51_0)
-	setActive(arg_51_0.countUI, true)
-	arg_51_0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1)
+function slot0.readyStart(slot0)
+	setActive(slot0.countUI, true)
+	slot0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
 end
 
-function var_0_0.gameStart(arg_52_0)
-	setActive(findTF(arg_52_0._tf, "sceneContainer/scene_front"), true)
-	setActive(findTF(arg_52_0._tf, "sceneContainer/scene_background"), true)
-	setActive(findTF(arg_52_0._tf, "sceneContainer/scene"), true)
-	setActive(arg_52_0.gameUI, true)
-	setActive(findTF(arg_52_0._tf, "bg"), false)
+function slot0.gameStart(slot0)
+	setActive(findTF(slot0._tf, "sceneContainer/scene_front"), true)
+	setActive(findTF(slot0._tf, "sceneContainer/scene_background"), true)
+	setActive(findTF(slot0._tf, "sceneContainer/scene"), true)
+	setActive(slot0.gameUI, true)
+	setActive(findTF(slot0._tf, "bg"), false)
 
-	arg_52_0.gameStartFlag = true
-	arg_52_0.scoreNum = 0
-	arg_52_0.playerPosIndex = 2
-	arg_52_0.gameStepTime = 0
-	arg_52_0.gameOverTime = 0
-	arg_52_0.gameTime = Fushun3GameConst.game_time
-	arg_52_0.gameLevelTime = Fushun3GameConst.level_time
-	arg_52_0.rectCollider:getCollisionInfo().config.moveSpeed = Fushun3GameConst.move_speed
+	slot0.gameStartFlag = true
+	slot0.scoreNum = 0
+	slot0.playerPosIndex = 2
+	slot0.gameStepTime = 0
+	slot0.gameOverTime = 0
+	slot0.gameTime = Fushun3GameConst.game_time
+	slot0.gameLevelTime = Fushun3GameConst.level_time
+	slot0.rectCollider:getCollisionInfo().config.moveSpeed = Fushun3GameConst.move_speed
 
-	arg_52_0.rectCollider:start()
-	arg_52_0.platformController:start()
-	arg_52_0.sceneController:start()
-	arg_52_0.charController:start()
-	arg_52_0.itemController:start()
-	arg_52_0.bgController:start()
-	arg_52_0.monsterController:start()
-	arg_52_0.effectController:start()
-	arg_52_0:updateGameUI()
-	arg_52_0:timerStart()
+	slot0.rectCollider:start()
+	slot0.platformController:start()
+	slot0.sceneController:start()
+	slot0.charController:start()
+	slot0.itemController:start()
+	slot0.bgController:start()
+	slot0.monsterController:start()
+	slot0.effectController:start()
+	slot0:updateGameUI()
+	slot0:timerStart()
 end
 
-function var_0_0.getGameTimes(arg_53_0)
-	return arg_53_0:GetMGHubData().count
+function slot0.getGameTimes(slot0)
+	return slot0:GetMGHubData().count
 end
 
-function var_0_0.getGameUsedTimes(arg_54_0)
-	return arg_54_0:GetMGHubData().usedtime
+function slot0.getGameUsedTimes(slot0)
+	return slot0:GetMGHubData().usedtime
 end
 
-function var_0_0.getUltimate(arg_55_0)
-	return arg_55_0:GetMGHubData().ultimate
+function slot0.getUltimate(slot0)
+	return slot0:GetMGHubData().ultimate
 end
 
-function var_0_0.getGameTotalTime(arg_56_0)
-	return (arg_56_0:GetMGHubData():getConfig("reward_need"))
+function slot0.getGameTotalTime(slot0)
+	return slot0:GetMGHubData():getConfig("reward_need")
 end
 
-function var_0_0.updateDayNightUI(arg_57_0)
-	arg_57_0.dayTimeFlag = Fushun3GameVo.GetTimeFlag()
+function slot0.updateDayNightUI(slot0)
+	slot0.dayTimeFlag = Fushun3GameVo.GetTimeFlag()
 
-	setActive(findTF(arg_57_0._tf, "bg/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0._tf, "bg/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "bg/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "bg/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "btnBack/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "btnBack/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "title/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "title/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "desc/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "desc/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "got/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "got/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "btnRule/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "btnRule/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "rightPanelBg/arrowUp/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "rightPanelBg/arrowUp/d"), arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "rightPanelBg/arrowDown/n"), not arg_57_0.dayTimeFlag)
-	setActive(findTF(arg_57_0.menuUI, "rightPanelBg/arrowDown/d"), arg_57_0.dayTimeFlag)
+	setActive(findTF(slot0._tf, "bg/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0._tf, "bg/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "bg/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "bg/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "btnBack/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "btnBack/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "title/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "title/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "desc/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "desc/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "got/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "got/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "btnRule/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "btnRule/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "rightPanelBg/arrowUp/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "rightPanelBg/arrowUp/d"), slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "rightPanelBg/arrowDown/n"), not slot0.dayTimeFlag)
+	setActive(findTF(slot0.menuUI, "rightPanelBg/arrowDown/d"), slot0.dayTimeFlag)
 
-	local var_57_0 = true
+	slot1 = true
 
-	setActive(findTF(arg_57_0.countUI, "bgCount/n"), not var_57_0)
-	setActive(findTF(arg_57_0.countUI, "bgCount/d"), var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/img/n"), not var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/img/d"), var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/btnOk/n"), not var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/btnOk/d"), var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/desc/n"), not var_57_0)
-	setActive(findTF(arg_57_0.leaveUI, "ad/desc/d"), var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/img/n"), not var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/img/d"), var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/btnOk/n"), not var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/btnOk/d"), var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/desc/n"), not var_57_0)
-	setActive(findTF(arg_57_0.pauseUI, "ad/desc/d"), var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/img/n"), not var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/img/d"), var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/imgScore/n"), not var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/imgScore/d"), var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/imgHigh/n"), not var_57_0)
-	setActive(findTF(arg_57_0.settlementUI, "ad/bg/imgHigh/d"), var_57_0)
+	setActive(findTF(slot0.countUI, "bgCount/n"), not slot1)
+	setActive(findTF(slot0.countUI, "bgCount/d"), slot1)
+	setActive(findTF(slot0.leaveUI, "ad/img/n"), not slot1)
+	setActive(findTF(slot0.leaveUI, "ad/img/d"), slot1)
+	setActive(findTF(slot0.leaveUI, "ad/btnOk/n"), not slot1)
+	setActive(findTF(slot0.leaveUI, "ad/btnOk/d"), slot1)
+	setActive(findTF(slot0.leaveUI, "ad/desc/n"), not slot1)
+	setActive(findTF(slot0.leaveUI, "ad/desc/d"), slot1)
+	setActive(findTF(slot0.pauseUI, "ad/img/n"), not slot1)
+	setActive(findTF(slot0.pauseUI, "ad/img/d"), slot1)
+	setActive(findTF(slot0.pauseUI, "ad/btnOk/n"), not slot1)
+	setActive(findTF(slot0.pauseUI, "ad/btnOk/d"), slot1)
+	setActive(findTF(slot0.pauseUI, "ad/desc/n"), not slot1)
+	setActive(findTF(slot0.pauseUI, "ad/desc/d"), slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/img/n"), not slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/img/d"), slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/imgScore/n"), not slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/imgScore/d"), slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/imgHigh/n"), not slot1)
+	setActive(findTF(slot0.settlementUI, "ad/bg/imgHigh/d"), slot1)
 
-	local var_57_1 = var_57_0 and Color.New(1, 0.9686274509803922, 0.9215686274509803, 1) or Color.New(0.8549019607843137, 0.807843137254902, 1, 1)
+	slot2 = slot1 and Color.New(1, 0.9686274509803922, 0.9215686274509803, 1) or Color.New(0.8549019607843137, 0.807843137254902, 1, 1)
 
-	setTextColor(findTF(arg_57_0.settlementUI, "ad/currentText"), var_57_1)
-	setTextColor(findTF(arg_57_0.settlementUI, "ad/highText"), var_57_1)
-	setActive(findTF(arg_57_0.gameUI, "top/powerProgress/content/bg/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/powerProgress/content/bg/d"), var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/powerProgress/full/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/powerProgress/full/d"), var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/split/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/split/d"), var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/scoreImg/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "top/scoreImg/d"), var_57_0)
+	setTextColor(findTF(slot0.settlementUI, "ad/currentText"), slot2)
+	setTextColor(findTF(slot0.settlementUI, "ad/highText"), slot2)
+	setActive(findTF(slot0.gameUI, "top/powerProgress/content/bg/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "top/powerProgress/content/bg/d"), slot1)
+	setActive(findTF(slot0.gameUI, "top/powerProgress/full/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "top/powerProgress/full/d"), slot1)
+	setActive(findTF(slot0.gameUI, "top/split/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "top/split/d"), slot1)
+	setActive(findTF(slot0.gameUI, "top/scoreImg/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "top/scoreImg/d"), slot1)
+	setTextColor(findTF(slot0.gameUI, "top/score"), slot1 and Color.New(0.9215686274509803, 0.8745098039215686, 0.7725490196078432, 1) or Color.New(0.8, 0.7372549019607844, 0.8392156862745098, 1))
+	setActive(findTF(slot0.gameUI, "topRight/btnStop/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "topRight/btnStop/d"), slot1)
+	setActive(findTF(slot0.gameUI, "btnLeave/n"), not slot1)
+	setActive(findTF(slot0.gameUI, "btnLeave/d"), slot1)
 
-	local var_57_2 = var_57_0 and Color.New(0.9215686274509803, 0.8745098039215686, 0.7725490196078432, 1) or Color.New(0.8, 0.7372549019607844, 0.8392156862745098, 1)
+	for slot7 = 1, Fushun3GameConst.heart_num do
+		slot8 = findTF(slot0.gameUI, "top/heart" .. slot7 .. "")
 
-	setTextColor(findTF(arg_57_0.gameUI, "top/score"), var_57_2)
-	setActive(findTF(arg_57_0.gameUI, "topRight/btnStop/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "topRight/btnStop/d"), var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "btnLeave/n"), not var_57_0)
-	setActive(findTF(arg_57_0.gameUI, "btnLeave/d"), var_57_0)
-
-	for iter_57_0 = 1, Fushun3GameConst.heart_num do
-		local var_57_3 = findTF(arg_57_0.gameUI, "top/heart" .. iter_57_0 .. "")
-
-		setActive(findTF(var_57_3, "img/n"), not var_57_0)
-		setActive(findTF(var_57_3, "img/d"), var_57_0)
-		setActive(findTF(var_57_3, "full/n"), not var_57_0)
-		setActive(findTF(var_57_3, "full/d"), var_57_0)
+		setActive(findTF(slot8, "img/n"), not slot1)
+		setActive(findTF(slot8, "img/d"), slot1)
+		setActive(findTF(slot8, "full/n"), not slot1)
+		setActive(findTF(slot8, "full/d"), slot1)
 	end
 end
 
-function var_0_0.onTimer(arg_58_0)
-	arg_58_0:gameStep()
+function slot0.onTimer(slot0)
+	slot0:gameStep()
 end
 
-function var_0_0.gameStep(arg_59_0)
-	arg_59_0.gameOverTime = arg_59_0.gameOverTime + Time.deltaTime
-	arg_59_0.gameTime = arg_59_0.gameTime - Time.deltaTime
+function slot0.gameStep(slot0)
+	slot0.gameOverTime = slot0.gameOverTime + Time.deltaTime
+	slot0.gameTime = slot0.gameTime - Time.deltaTime
 
-	if arg_59_0.gameTime < 0 then
-		arg_59_0.gameTime = 0
+	if slot0.gameTime < 0 then
+		slot0.gameTime = 0
 	end
 
-	arg_59_0.gameStepTime = arg_59_0.gameStepTime + Time.deltaTime
+	slot0.gameStepTime = slot0.gameStepTime + Time.deltaTime
 
-	if arg_59_0.gameLevelTime > 0 then
-		arg_59_0.gameLevelTime = arg_59_0.gameLevelTime - Time.deltaTime
+	if slot0.gameLevelTime > 0 then
+		slot0.gameLevelTime = slot0.gameLevelTime - Time.deltaTime
 
-		if arg_59_0.gameLevelTime <= 0 then
-			arg_59_0.gameLevelTime = Fushun3GameConst.level_time
+		if slot0.gameLevelTime <= 0 then
+			slot0.gameLevelTime = Fushun3GameConst.level_time
 
-			arg_59_0.platformController:levelUp()
+			slot0.platformController:levelUp()
 		end
 	end
 
-	arg_59_0.rectCollider:step()
-	arg_59_0.platformController:step()
-	arg_59_0.sceneController:step()
-	arg_59_0.charController:step()
-	arg_59_0.itemController:step()
-	arg_59_0.bgController:step()
-	arg_59_0.monsterController:step()
-	arg_59_0.effectController:step()
-	arg_59_0:updateGameUI()
+	slot0.rectCollider:step()
+	slot0.platformController:step()
+	slot0.sceneController:step()
+	slot0.charController:step()
+	slot0.itemController:step()
+	slot0.bgController:step()
+	slot0.monsterController:step()
+	slot0.effectController:step()
+	slot0:updateGameUI()
 
-	if arg_59_0.gameTime <= 0 then
-		arg_59_0:onGameOver()
+	if slot0.gameTime <= 0 then
+		slot0:onGameOver()
 
 		return
 	end
 end
 
-function var_0_0.timerStart(arg_60_0)
-	if not arg_60_0.timer.running then
-		arg_60_0.timer:Start()
+function slot0.timerStart(slot0)
+	if not slot0.timer.running then
+		slot0.timer:Start()
 	end
 end
 
-function var_0_0.timerStop(arg_61_0)
-	if arg_61_0.timer.running then
-		arg_61_0.timer:Stop()
+function slot0.timerStop(slot0)
+	if slot0.timer.running then
+		slot0.timer:Stop()
 	end
 end
 
-function var_0_0.updateGameUI(arg_62_0)
-	local var_62_0 = arg_62_0.charController:getHeart()
-
-	for iter_62_0 = 1, #arg_62_0.hearts do
-		local var_62_1 = arg_62_0.hearts[iter_62_0]
-
-		if iter_62_0 <= var_62_0 then
-			setActive(var_62_1, true)
+function slot0.updateGameUI(slot0)
+	for slot5 = 1, #slot0.hearts do
+		if slot5 <= slot0.charController:getHeart() then
+			setActive(slot0.hearts[slot5], true)
 		else
-			setActive(var_62_1, false)
+			setActive(slot6, false)
 		end
 	end
 
-	setText(arg_62_0.scoreTf, arg_62_0.scoreNum)
-	setText(arg_62_0.gameTimeS, math.ceil(arg_62_0.gameTime))
+	setText(slot0.scoreTf, slot0.scoreNum)
+	setText(slot0.gameTimeS, math.ceil(slot0.gameTime))
 end
 
-function var_0_0.addScore(arg_63_0, arg_63_1)
-	arg_63_0.scoreNum = arg_63_0.scoreNum + arg_63_1
+function slot0.addScore(slot0, slot1)
+	slot0.scoreNum = slot0.scoreNum + slot1
 
-	if arg_63_0.scoreNum < 0 then
-		arg_63_0.scoreNum = 0
+	if slot0.scoreNum < 0 then
+		slot0.scoreNum = 0
 	end
 end
 
-function var_0_0.onControllerCallback(arg_64_0, arg_64_1, arg_64_2)
-	if arg_64_1 == Fushun3GameEvent.catch_item_call then
-		local var_64_0 = arg_64_2.data
-
-		if var_64_0.type == Fushun3GameConst.item_type_score then
-			arg_64_0:addScore(var_64_0.score)
-			arg_64_0.charController:addPower(var_64_0.score)
+function slot0.onControllerCallback(slot0, slot1, slot2)
+	if slot1 == Fushun3GameEvent.catch_item_call then
+		if slot2.data.type == Fushun3GameConst.item_type_score then
+			slot0:addScore(slot3.score)
+			slot0.charController:addPower(slot3.score)
 		else
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_6)
-			arg_64_0.charController:setBuff(var_64_0)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+			slot0.charController:setBuff(slot3)
 		end
 	end
 end
 
-function var_0_0.onGameOver(arg_65_0)
-	if arg_65_0.settlementFlag then
+function slot0.onGameOver(slot0)
+	if slot0.settlementFlag then
 		return
 	end
 
-	arg_65_0:timerStop()
+	slot0:timerStop()
 
-	arg_65_0.settlementFlag = true
+	slot0.settlementFlag = true
 
-	setActive(arg_65_0.clickMask, true)
-	LeanTween.delayedCall(go(arg_65_0._tf), 1, System.Action(function()
-		arg_65_0.settlementFlag = false
-		arg_65_0.gameStartFlag = false
+	setActive(slot0.clickMask, true)
+	LeanTween.delayedCall(go(slot0._tf), 1, System.Action(function ()
+		uv0.settlementFlag = false
+		uv0.gameStartFlag = false
 
-		setActive(arg_65_0.clickMask, false)
-		arg_65_0:showSettlement()
+		setActive(uv0.clickMask, false)
+		uv0:showSettlement()
 	end))
 	pg.m02:sendNotification(GAME.MINI_GAME_TIME, {
-		id = arg_65_0:GetMGData().id,
-		time = math.ceil(arg_65_0.gameOverTime)
+		id = slot0:GetMGData().id,
+		time = math.ceil(slot0.gameOverTime)
 	})
 end
 
-function var_0_0.showSettlement(arg_67_0)
-	setActive(arg_67_0.settlementUI, true)
-	GetComponent(findTF(arg_67_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function slot0.showSettlement(slot0)
+	setActive(slot0.settlementUI, true)
+	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	local var_67_0 = arg_67_0:GetMGData():GetRuntimeData("elements")
-	local var_67_1 = arg_67_0.scoreNum
-	local var_67_2 = var_67_0 and #var_67_0 > 0 and var_67_0[1] or 0
+	slot3 = slot0.scoreNum
+	slot4 = slot0:GetMGData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0
 
-	setActive(findTF(arg_67_0.settlementUI, "ad/new"), var_67_2 < var_67_1)
+	setActive(findTF(slot0.settlementUI, "ad/new"), slot4 < slot3)
 
-	if var_67_2 <= var_67_1 then
-		var_67_2 = var_67_1
-
-		arg_67_0:StoreDataToServer({
-			var_67_2
+	if slot4 <= slot3 then
+		slot0:StoreDataToServer({
+			slot3
 		})
 	end
 
-	local var_67_3 = findTF(arg_67_0.settlementUI, "ad/highText")
-	local var_67_4 = findTF(arg_67_0.settlementUI, "ad/currentText")
+	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
+	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
 
-	setText(var_67_3, var_67_2)
-	setText(var_67_4, var_67_1)
+	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
+		slot0.sendSuccessFlag = true
 
-	if arg_67_0:getGameTimes() and arg_67_0:getGameTimes() > 0 then
-		arg_67_0.sendSuccessFlag = true
-
-		arg_67_0:SendSuccess(0)
+		slot0:SendSuccess(0)
 	end
 end
 
-function var_0_0.resumeGame(arg_68_0)
-	arg_68_0.gameStop = false
+function slot0.resumeGame(slot0)
+	slot0.gameStop = false
 
-	setActive(arg_68_0.leaveUI, false)
-	arg_68_0:timerStart()
+	setActive(slot0.leaveUI, false)
+	slot0:timerStart()
 end
 
-function var_0_0.stopGame(arg_69_0)
-	arg_69_0.gameStop = true
+function slot0.stopGame(slot0)
+	slot0.gameStop = true
 
-	arg_69_0:timerStop()
+	slot0:timerStop()
 end
 
-function var_0_0.onBackPressed(arg_70_0)
-	if not arg_70_0.gameStartFlag then
-		arg_70_0:emit(var_0_0.ON_BACK_PRESSED)
+function slot0.onBackPressed(slot0)
+	if not slot0.gameStartFlag then
+		slot0:emit(uv0.ON_BACK_PRESSED)
 	else
-		if arg_70_0.settlementFlag then
+		if slot0.settlementFlag then
 			return
 		end
 
-		if isActive(arg_70_0.pauseUI) then
-			setActive(arg_70_0.pauseUI, false)
+		if isActive(slot0.pauseUI) then
+			setActive(slot0.pauseUI, false)
 		end
 
-		arg_70_0:stopGame()
-		setActive(arg_70_0.leaveUI, true)
+		slot0:stopGame()
+		setActive(slot0.leaveUI, true)
 	end
 end
 
-function var_0_0.willExit(arg_71_0)
-	if arg_71_0.charController then
-		arg_71_0.charController:dispose()
+function slot0.willExit(slot0)
+	if slot0.charController then
+		slot0.charController:dispose()
 	end
 
-	if arg_71_0.handle then
-		UpdateBeat:RemoveListener(arg_71_0.handle)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 
-	if arg_71_0._tf and LeanTween.isTweening(go(arg_71_0._tf)) then
-		LeanTween.cancel(go(arg_71_0._tf))
+	if slot0._tf and LeanTween.isTweening(go(slot0._tf)) then
+		LeanTween.cancel(go(slot0._tf))
 	end
 
-	if arg_71_0.timer and arg_71_0.timer.running then
-		arg_71_0.timer:Stop()
+	if slot0.timer and slot0.timer.running then
+		slot0.timer:Stop()
 	end
 
-	if arg_71_0.atkDelegate then
-		ClearEventTrigger(arg_71_0.atkDelegate)
+	if slot0.atkDelegate then
+		ClearEventTrigger(slot0.atkDelegate)
 	end
 
-	if arg_71_0.jumpDelegate then
-		ClearEventTrigger(arg_71_0.jumpDelegate)
+	if slot0.jumpDelegate then
+		ClearEventTrigger(slot0.jumpDelegate)
 	end
 
 	Time.timeScale = 1
-	arg_71_0.timer = nil
+	slot0.timer = nil
 
-	arg_71_0.rectCollider:clear()
+	slot0.rectCollider:clear()
 end
 
-return var_0_0
+return slot0

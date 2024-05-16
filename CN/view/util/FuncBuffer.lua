@@ -1,51 +1,51 @@
-﻿local var_0_0 = class("FuncBuffer")
+slot0 = class("FuncBuffer")
 
-function var_0_0.Ctor(arg_1_0)
-	arg_1_0.buffers = {}
-	arg_1_0.notifier = false
+function slot0.Ctor(slot0)
+	slot0.buffers = {}
+	slot0.notifier = false
 end
 
-function var_0_0.SetNotifier(arg_2_0, arg_2_1)
-	arg_2_0.notifier = defaultValue(arg_2_1, false)
+function slot0.SetNotifier(slot0, slot1)
+	slot0.notifier = defaultValue(slot1, false)
 end
 
-function var_0_0.IsEmpty(arg_3_0)
-	return #arg_3_0.buffers <= 0
+function slot0.IsEmpty(slot0)
+	return #slot0.buffers <= 0
 end
 
-function var_0_0.Pop(arg_4_0)
-	return table.remove(arg_4_0.buffers, 1)
+function slot0.Pop(slot0)
+	return table.remove(slot0.buffers, 1)
 end
 
-function var_0_0.Push(arg_5_0, arg_5_1, ...)
-	table.insert(arg_5_0.buffers, {
-		funcName = arg_5_1,
+function slot0.Push(slot0, slot1, ...)
+	table.insert(slot0.buffers, {
+		funcName = slot1,
 		params = {
 			...
 		},
 		paramLength = select("#", ...)
 	})
-	arg_5_0:ExcuteAll()
+	slot0:ExcuteAll()
 end
 
-function var_0_0.ExcuteAll(arg_6_0)
-	if arg_6_0.notifier then
-		while not arg_6_0:IsEmpty() do
-			local var_6_0 = arg_6_0:Pop()
+function slot0.ExcuteAll(slot0)
+	if slot0.notifier then
+		while not slot0:IsEmpty() do
+			slot1 = slot0:Pop()
 
-			arg_6_0.notifier[var_6_0.funcName](arg_6_0.notifier, unpack(var_6_0.params, 1, var_6_0.paramLength))
+			slot0.notifier[slot1.funcName](slot0.notifier, unpack(slot1.params, 1, slot1.paramLength))
 		end
 	end
 end
 
-function var_0_0.Clear(arg_7_0)
-	table.clear(arg_7_0.buffers)
+function slot0.Clear(slot0)
+	table.clear(slot0.buffers)
 end
 
-function var_0_0.__index(arg_8_0, arg_8_1)
-	return rawget(arg_8_0, arg_8_1) or var_0_0[arg_8_1] or function(arg_9_0, ...)
-		arg_8_0:Push(arg_8_1, ...)
+function slot0.__index(slot0, slot1)
+	return rawget(slot0, slot1) or uv0[slot1] or function (slot0, ...)
+		uv0:Push(uv1, ...)
 	end
 end
 
-return var_0_0
+return slot0

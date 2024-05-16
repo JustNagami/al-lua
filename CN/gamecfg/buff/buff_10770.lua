@@ -1,24 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 2,
-				target = "TargetSelf",
-				skill_id = 10770,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Division 6"
-				}
-			}
-		}
-	},
+return {
 	{
 		desc = "六驱精锐·{namecode:11}"
 	},
@@ -59,5 +39,25 @@
 	stack = 1,
 	id = 10770,
 	icon = 10770,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 2,
+				target = "TargetSelf",
+				skill_id = 10770,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Division 6"
+				}
+			}
+		}
+	}
 }

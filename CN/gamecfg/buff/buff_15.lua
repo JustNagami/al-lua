@@ -1,5 +1,4 @@
-﻿return {
-	effect_list = {},
+return {
 	{
 		desc = "可替代金色舰娘作为改造材料使用",
 		effect_list = {}
@@ -14,5 +13,6 @@
 	stack = 1,
 	id = 15,
 	icon = 15,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {}
 }

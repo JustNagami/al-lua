@@ -1,105 +1,102 @@
-﻿local var_0_0 = class("CourtYardBottomPanel", import(".CourtYardBasePanel"))
+slot0 = class("CourtYardBottomPanel", import(".CourtYardBasePanel"))
 
-function var_0_0.GetUIName(arg_1_0)
+function slot0.GetUIName(slot0)
 	return "main/bottomPanel"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.granaryBtn = arg_2_0:findTF("bottomleft/feed_btn")
-	arg_2_0.stockBar = arg_2_0:findTF("progress", arg_2_0.granaryBtn):GetComponent(typeof(Slider))
-	arg_2_0.stockTimeTxt = arg_2_0:findTF("time", arg_2_0.granaryBtn):GetComponent(typeof(Text))
-	arg_2_0.stockTxt = arg_2_0:findTF("Text", arg_2_0.granaryBtn):GetComponent(typeof(Text))
-	arg_2_0.stampBtn = arg_2_0:findTF("stamp")
-	arg_2_0.shopBtn = arg_2_0:findTF("bottomright/shop_btn")
-	arg_2_0.decorateBtn = arg_2_0:findTF("bottomright/decorate_btn")
-	arg_2_0.templateBtn = arg_2_0:findTF("bottomright/theme_template_btn")
-	arg_2_0.shareBtn = arg_2_0:findTF("bottomright/share_btn")
-	arg_2_0.shopTip = arg_2_0.shopBtn:Find("tip")
-	arg_2_0.trainBtn = arg_2_0:findTF("bottomleft/train_btn")
-	arg_2_0.trainBtnTxt = arg_2_0.trainBtn:Find("Text"):GetComponent(typeof(Text))
-	arg_2_0.trainBtnLabel = arg_2_0.trainBtn:Find("label"):GetComponent(typeof(Text))
-	arg_2_0.icon1 = arg_2_0:findTF("bottomleft/train_btn/icon")
-	arg_2_0.icon2 = arg_2_0:findTF("bottomleft/train_btn/icon_1")
+function slot0.init(slot0)
+	slot0.granaryBtn = slot0:findTF("bottomleft/feed_btn")
+	slot0.stockBar = slot0:findTF("progress", slot0.granaryBtn):GetComponent(typeof(Slider))
+	slot0.stockTimeTxt = slot0:findTF("time", slot0.granaryBtn):GetComponent(typeof(Text))
+	slot0.stockTxt = slot0:findTF("Text", slot0.granaryBtn):GetComponent(typeof(Text))
+	slot0.stampBtn = slot0:findTF("stamp")
+	slot0.shopBtn = slot0:findTF("bottomright/shop_btn")
+	slot0.decorateBtn = slot0:findTF("bottomright/decorate_btn")
+	slot0.templateBtn = slot0:findTF("bottomright/theme_template_btn")
+	slot0.shareBtn = slot0:findTF("bottomright/share_btn")
+	slot0.shopTip = slot0.shopBtn:Find("tip")
+	slot0.trainBtn = slot0:findTF("bottomleft/train_btn")
+	slot0.trainBtnTxt = slot0.trainBtn:Find("Text"):GetComponent(typeof(Text))
+	slot0.trainBtnLabel = slot0.trainBtn:Find("label"):GetComponent(typeof(Text))
+	slot0.icon1 = slot0:findTF("bottomleft/train_btn/icon")
+	slot0.icon2 = slot0:findTF("bottomleft/train_btn/icon_1")
 
-	setText(arg_2_0.granaryBtn:Find("label"), i18n("courtyard_label_capacity"))
-	setText(arg_2_0.shareBtn:Find("Text"), i18n("courtyard_label_share"))
-	setText(arg_2_0.shopBtn:Find("Text"), i18n("courtyard_label_shop"))
-	setText(arg_2_0.decorateBtn:Find("Text"), i18n("courtyard_label_decoration"))
-	setText(arg_2_0.templateBtn:Find("Text"), i18n("courtyard_label_template"))
+	setText(slot0.granaryBtn:Find("label"), i18n("courtyard_label_capacity"))
+	setText(slot0.shareBtn:Find("Text"), i18n("courtyard_label_share"))
+	setText(slot0.shopBtn:Find("Text"), i18n("courtyard_label_shop"))
+	setText(slot0.decorateBtn:Find("Text"), i18n("courtyard_label_decoration"))
+	setText(slot0.templateBtn:Find("Text"), i18n("courtyard_label_template"))
 end
 
-function var_0_0.OnRegister(arg_3_0)
-	onButton(arg_3_0, arg_3_0.stampBtn, function()
+function slot0.OnRegister(slot0)
+	onButton(slot0, slot0.stampBtn, function ()
 		getProxy(TaskProxy):dealMingshiTouchFlag(7)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.shareBtn, function()
+	onButton(slot0, slot0.shareBtn, function ()
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeBackyard, pg.ShareMgr.PANEL_TYPE_PINK)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.granaryBtn, function()
-		arg_3_0:emit(CourtYardMediator.GO_GRANARY)
+	onButton(slot0, slot0.granaryBtn, function ()
+		uv0:emit(CourtYardMediator.GO_GRANARY)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.shopBtn, function()
-		arg_3_0:emit(CourtYardMediator.GO_SHOP)
+	onButton(slot0, slot0.shopBtn, function ()
+		uv0:emit(CourtYardMediator.GO_SHOP)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.decorateBtn, function()
-		arg_3_0:emit(CourtYardMediator.OPEN_DECORATION)
+	onButton(slot0, slot0.decorateBtn, function ()
+		uv0:emit(CourtYardMediator.OPEN_DECORATION)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.templateBtn, function()
+	onButton(slot0, slot0.templateBtn, function ()
 		if LOCK_BACKYARD_TEMPLATE then
 			return
 		end
 
-		arg_3_0:emit(CourtYardMediator.GO_THEME_TEMPLATE)
+		uv0:emit(CourtYardMediator.GO_THEME_TEMPLATE)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.trainBtn, function()
-		if arg_3_0.contextData.floor == 1 then
-			arg_3_0:emit(CourtYardMediator.SEL_TRAIN_SHIP)
-		elseif arg_3_0.contextData.floor == 2 then
-			arg_3_0:emit(CourtYardMediator.SEL_REST_SHIP)
+	onButton(slot0, slot0.trainBtn, function ()
+		if uv0.contextData.floor == 1 then
+			uv0:emit(CourtYardMediator.SEL_TRAIN_SHIP)
+		elseif uv0.contextData.floor == 2 then
+			uv0:emit(CourtYardMediator.SEL_REST_SHIP)
 		end
 	end, SFX_PANEL)
-	arg_3_0:SetActive(arg_3_0.stampBtn, not LOCK_CLICK_MINGSHI and getProxy(TaskProxy):mingshiTouchFlagEnabled())
-	arg_3_0:UpdateShopTip()
+	slot0:SetActive(slot0.stampBtn, not LOCK_CLICK_MINGSHI and getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	slot0:UpdateShopTip()
 end
 
-function var_0_0.OnVisitRegister(arg_11_0)
-	setActive(arg_11_0._tf, false)
+function slot0.OnVisitRegister(slot0)
+	setActive(slot0._tf, false)
 end
 
-function var_0_0.OnFlush(arg_12_0, arg_12_1)
-	arg_12_1 = arg_12_1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD, BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_SHIP, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD)
+function slot0.OnFlush(slot0, slot1)
+	slot2 = slot0.dorm
 
-	local var_12_0 = arg_12_0.dorm
-
-	if bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD) > 0 or bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 or bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD) > 0 then
-		arg_12_0:CalcStockLeftTime()
+	if bit.band(slot1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD, BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_SHIP, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD), BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD) > 0 or bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 or bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD) > 0 then
+		slot0:CalcStockLeftTime()
 	end
 
-	if bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
-		arg_12_0:CalcStockLeftTime()
-		arg_12_0:UpdateTrainBtn()
+	if bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
+		slot0:CalcStockLeftTime()
+		slot0:UpdateTrainBtn()
 	end
 
-	if bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_LEVEL) > 0 then
-		SetActive(arg_12_0.templateBtn, not LOCK_BACKYARD_TEMPLATE)
+	if bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_LEVEL) > 0 then
+		SetActive(slot0.templateBtn, not LOCK_BACKYARD_TEMPLATE)
 
 		if not LOCK_BACKYARD_TEMPLATE then
-			arg_12_0:PlayBackYardThemeTemplate()
-			SetActive(arg_12_0.templateBtn, var_12_0:IsMaxLevel() and arg_12_0:IsInner())
+			slot0:PlayBackYardThemeTemplate()
+			SetActive(slot0.templateBtn, slot2:IsMaxLevel() and slot0:IsInner())
 		end
 	end
 
-	if bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD) > 0 or bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_LEVEL) > 0 or bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 or bit.band(arg_12_1, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD) > 0 then
-		local var_12_1 = pg.dorm_data_template[var_12_0.id].capacity
-
-		arg_12_0.stockBar.value = var_12_0.food / (var_12_1 + var_12_0.dorm_food_max)
-		arg_12_0.stockTxt.text = math.ceil(var_12_0.food) .. "/" .. var_12_1 + var_12_0.dorm_food_max
+	if bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_UPDATEFOOD) > 0 or bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_LEVEL) > 0 or bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 or bit.band(slot1, BackYardConst.DORM_UPDATE_TYPE_EXTENDFOOD) > 0 then
+		slot3 = pg.dorm_data_template[slot2.id].capacity
+		slot0.stockBar.value = slot2.food / (slot3 + slot2.dorm_food_max)
+		slot0.stockTxt.text = math.ceil(slot2.food) .. "/" .. slot3 + slot2.dorm_food_max
 	end
 
-	arg_12_0:UpdateFloor()
+	slot0:UpdateFloor()
 end
 
-function var_0_0.PlayBackYardThemeTemplate(arg_13_0)
+function slot0.PlayBackYardThemeTemplate(slot0)
 	if getProxy(DormProxy):getRawData():IsMaxLevel() and not pg.NewStoryMgr.GetInstance():GetPlayedFlag(90021) then
 		_BackyardMsgBoxMgr:Show({
 			modal = true,
@@ -114,81 +111,77 @@ function var_0_0.PlayBackYardThemeTemplate(arg_13_0)
 	end
 end
 
-function var_0_0.UpdateTrainBtn(arg_14_0)
-	if arg_14_0.contextData.floor == 1 then
-		arg_14_0.trainBtnLabel.text = i18n("courtyard_label_train")
-		arg_14_0.trainBtnTxt.text = arg_14_0.dorm:GetStateShipCnt(Ship.STATE_TRAIN) .. "/" .. arg_14_0.dorm.exp_pos
-	elseif arg_14_0.contextData.floor == 2 then
-		arg_14_0.trainBtnLabel.text = i18n("courtyard_label_rest")
-		arg_14_0.trainBtnTxt.text = arg_14_0.dorm:GetStateShipCnt(Ship.STATE_REST) .. "/" .. arg_14_0.dorm.rest_pos
+function slot0.UpdateTrainBtn(slot0)
+	if slot0.contextData.floor == 1 then
+		slot0.trainBtnLabel.text = i18n("courtyard_label_train")
+		slot0.trainBtnTxt.text = slot0.dorm:GetStateShipCnt(Ship.STATE_TRAIN) .. "/" .. slot0.dorm.exp_pos
+	elseif slot0.contextData.floor == 2 then
+		slot0.trainBtnLabel.text = i18n("courtyard_label_rest")
+		slot0.trainBtnTxt.text = slot0.dorm:GetStateShipCnt(Ship.STATE_REST) .. "/" .. slot0.dorm.rest_pos
 	end
 end
 
-function var_0_0.UpdateShopTip(arg_15_0)
-	setActive(arg_15_0.shopTip, getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
+function slot0.UpdateShopTip(slot0)
+	setActive(slot0.shopTip, getProxy(SettingsProxy):IsTipNewTheme() or getProxy(SettingsProxy):IsTipNewGemFurniture())
 end
 
-function var_0_0.OnRemoveLayer(arg_16_0, arg_16_1)
-	if arg_16_1 == NewBackYardShopMediator then
-		arg_16_0:UpdateShopTip()
+function slot0.OnRemoveLayer(slot0, slot1)
+	if slot1 == NewBackYardShopMediator then
+		slot0:UpdateShopTip()
 	end
 end
 
-function var_0_0.CalcStockLeftTime(arg_17_0)
-	local var_17_0 = arg_17_0.dorm
+function slot0.CalcStockLeftTime(slot0)
+	slot0:RemoveTimer()
 
-	arg_17_0:RemoveTimer()
+	slot0.stockTimeTxt.text = ""
 
-	arg_17_0.stockTimeTxt.text = ""
-
-	if var_17_0:GetStateShipCnt(Ship.STATE_TRAIN) <= 0 or var_17_0.food <= 0 then
+	if slot0.dorm:GetStateShipCnt(Ship.STATE_TRAIN) <= 0 or slot1.food <= 0 then
 		return
 	end
 
-	local var_17_1 = var_17_0:getFoodLeftTime()
+	slot2 = slot1:getFoodLeftTime()
+	slot0.timer = Timer.New(function ()
+		slot0 = math.floor(uv0) - pg.TimeMgr.GetInstance():GetServerTime()
+		uv1.stockTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
 
-	arg_17_0.timer = Timer.New(function()
-		local var_18_0 = math.floor(var_17_1) - pg.TimeMgr.GetInstance():GetServerTime()
-
-		arg_17_0.stockTimeTxt.text = pg.TimeMgr.GetInstance():DescCDTime(var_18_0)
-
-		if var_18_0 <= 0 then
-			arg_17_0:RemoveTimer()
+		if slot0 <= 0 then
+			uv1:RemoveTimer()
 		end
 	end, 1, -1)
 
-	arg_17_0.timer:Start()
-	arg_17_0.timer.func()
+	slot0.timer:Start()
+	slot0.timer.func()
 end
 
-function var_0_0.RemoveTimer(arg_19_0)
-	arg_19_0.stockTimeTxt.text = ""
+function slot0.RemoveTimer(slot0)
+	slot0.stockTimeTxt.text = ""
 
-	if arg_19_0.timer then
-		arg_19_0.timer:Stop()
+	if slot0.timer then
+		slot0.timer:Stop()
 
-		arg_19_0.timer = nil
+		slot0.timer = nil
 	end
 end
 
-function var_0_0.GetMoveY(arg_20_0)
+function slot0.GetMoveY(slot0)
 	return {
 		{
-			arg_20_0._tf,
+			slot0._tf,
 			-1
 		}
 	}
 end
 
-function var_0_0.UpdateFloor(arg_21_0, arg_21_1)
-	SetActive(arg_21_0.granaryBtn, arg_21_0:IsInner() and getProxy(DormProxy).floor == 1)
-	arg_21_0:UpdateTrainBtn()
-	setActive(arg_21_0.icon1, getProxy(DormProxy).floor == 1)
-	setActive(arg_21_0.icon2, getProxy(DormProxy).floor == 2)
+function slot0.UpdateFloor(slot0, slot1)
+	SetActive(slot0.granaryBtn, slot0:IsInner() and getProxy(DormProxy).floor == 1)
+	slot0:UpdateTrainBtn()
+	setActive(slot0.icon1, getProxy(DormProxy).floor == 1)
+	setActive(slot0.icon2, getProxy(DormProxy).floor == 2)
 end
 
-function var_0_0.OnDispose(arg_22_0)
-	arg_22_0:RemoveTimer()
+function slot0.OnDispose(slot0)
+	slot0:RemoveTimer()
 end
 
-return var_0_0
+return slot0

@@ -1,37 +1,33 @@
-﻿local var_0_0 = class("Dorm3dFurnitureSelectMediator", import("view.base.ContextMediator"))
+slot0 = class("Dorm3dFurnitureSelectMediator", import("view.base.ContextMediator"))
+slot0.SHOW_CONFIRM_WINDOW = "SHOW_CONFIRM_WINDOW"
+slot0.SHOW_FURNITURE_ACESSES = "SHOW_FURNITURE_ACESSES"
 
-var_0_0.SHOW_CONFIRM_WINDOW = "SHOW_CONFIRM_WINDOW"
-var_0_0.SHOW_FURNITURE_ACESSES = "SHOW_FURNITURE_ACESSES"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(GAME.APARTMENT_REPLACE_FURNITURE, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.APARTMENT_REPLACE_FURNITURE, arg_2_1)
+function slot0.register(slot0)
+	slot0:bind(GAME.APARTMENT_REPLACE_FURNITURE, function (slot0, slot1)
+		uv0:sendNotification(GAME.APARTMENT_REPLACE_FURNITURE, slot1)
 	end)
-	arg_1_0:bind(var_0_0.SHOW_CONFIRM_WINDOW, function(arg_3_0, arg_3_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.SHOW_CONFIRM_WINDOW, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = Dorm3dFurnitureConfirmWindowMediator,
 			viewComponent = Dorm3dFurnitureConfirmWindow,
-			data = arg_3_1
+			data = slot1
 		}))
 	end)
-	arg_1_0:bind(var_0_0.SHOW_FURNITURE_ACESSES, function(arg_4_0, arg_4_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.SHOW_FURNITURE_ACESSES, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			mediator = Dorm3dFurnitureAcessesWindowMediator,
 			viewComponent = Dorm3dFurnitureAcessesWindow,
-			data = arg_4_1
+			data = slot1
 		}))
 	end)
 
-	local var_1_0 = pg.m02:retrieveMediator(Dorm3dSceneMediator.__cname):getViewComponent()
+	slot2 = pg.m02:retrieveMediator(Dorm3dSceneMediator.__cname):getViewComponent()
 
-	arg_1_0.viewComponent:SetSceneRoot(var_1_0)
-
-	local var_1_1 = var_1_0:GetApartment()
-
-	arg_1_0.viewComponent:SetApartment(var_1_1)
+	slot0.viewComponent:SetSceneRoot(slot2)
+	slot0.viewComponent:SetApartment(slot2:GetApartment())
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		Dorm3dSceneMediator.ON_CLICK_FURNITURE_SLOT,
 		GAME.APARTMENT_REPLACE_FURNITURE_DONE,
@@ -39,23 +35,21 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == ApartmentProxy.UPDATE_APARTMENT then
-		-- block empty
-	elseif var_6_0 == Dorm3dSceneMediator.ON_CLICK_FURNITURE_SLOT then
-		arg_6_0.viewComponent:OnClickFurnitureSlot(var_6_1)
-	elseif var_6_0 == GAME.APARTMENT_REPLACE_FURNITURE_DONE then
-		arg_6_0.viewComponent:OnReplaceFurnitureDone()
-	elseif var_6_0 == GAME.APARTMENT_REPLACE_FURNITURE_ERROR then
-		arg_6_0.viewComponent:OnReplaceFurnitureError()
+	if slot1:getName() == ApartmentProxy.UPDATE_APARTMENT then
+		-- Nothing
+	elseif slot2 == Dorm3dSceneMediator.ON_CLICK_FURNITURE_SLOT then
+		slot0.viewComponent:OnClickFurnitureSlot(slot3)
+	elseif slot2 == GAME.APARTMENT_REPLACE_FURNITURE_DONE then
+		slot0.viewComponent:OnReplaceFurnitureDone()
+	elseif slot2 == GAME.APARTMENT_REPLACE_FURNITURE_ERROR then
+		slot0.viewComponent:OnReplaceFurnitureError()
 	end
 end
 
-function var_0_0.remove(arg_7_0)
-	return
+function slot0.remove(slot0)
 end
 
-return var_0_0
+return slot0

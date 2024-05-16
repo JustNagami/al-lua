@@ -1,28 +1,28 @@
-﻿local var_0_0 = class("GuildsRefreshCommand", pm.SimpleCommand)
+slot0 = class("GuildsRefreshCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(60024, {
 		type = 0
-	}, 60025, function(arg_2_0)
-		local var_2_0 = {}
+	}, 60025, function (slot0)
+		slot1 = {}
 
-		for iter_2_0, iter_2_1 in ipairs(arg_2_0.guild_list) do
-			local var_2_1 = Guild.New(iter_2_1)
+		for slot5, slot6 in ipairs(slot0.guild_list) do
+			slot7 = Guild.New(slot6)
 
-			var_2_1:SetMaxMemberCntAddition(iter_2_1.tech_seat)
+			slot7:SetMaxMemberCntAddition(slot6.tech_seat)
 
-			local var_2_2 = GuildMember.New(iter_2_1.leader)
+			slot8 = GuildMember.New(slot6.leader)
 
-			var_2_2:setDuty(GuildConst.DUTY_COMMANDER)
-			var_2_1:addMember(var_2_2)
-			table.insert(var_2_0, var_2_1)
+			slot8:setDuty(GuildConst.DUTY_COMMANDER)
+			slot7:addMember(slot8)
+			table.insert(slot1, slot7)
 		end
 
-		arg_1_0:sendNotification(GAME.GUILD_LIST_REFRESH_DONE, var_2_0)
+		uv0:sendNotification(GAME.GUILD_LIST_REFRESH_DONE, slot1)
 		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_list_refresh_sucess"))
 	end)
 end
 
-return var_0_0
+return slot0

@@ -1,299 +1,275 @@
-﻿local var_0_0 = class("EducateScheduleScene", import(".base.EducateBaseUI"))
+slot0 = class("EducateScheduleScene", import(".base.EducateBaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EducateScheduleUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
 end
 
-function var_0_0.initData(arg_3_0)
-	arg_3_0.playerID = getProxy(PlayerProxy):getRawData().id
-	arg_3_0.educateProxy = getProxy(EducateProxy)
-	arg_3_0.char = arg_3_0.educateProxy:GetCharData()
-	arg_3_0.curTime = arg_3_0.educateProxy:GetCurTime()
-	arg_3_0.planProxy = arg_3_0.educateProxy:GetPlanProxy()
-	arg_3_0.buffList = arg_3_0.educateProxy:GetBuffList()
-	arg_3_0.natureIds = arg_3_0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
-	arg_3_0.majorIds = arg_3_0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MAJOR)
-	arg_3_0.minorIds = arg_3_0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MINOR)
+function slot0.initData(slot0)
+	slot0.playerID = getProxy(PlayerProxy):getRawData().id
+	slot0.educateProxy = getProxy(EducateProxy)
+	slot0.char = slot0.educateProxy:GetCharData()
+	slot0.curTime = slot0.educateProxy:GetCurTime()
+	slot0.planProxy = slot0.educateProxy:GetPlanProxy()
+	slot0.buffList = slot0.educateProxy:GetBuffList()
+	slot0.natureIds = slot0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_PERSONALITY)
+	slot0.majorIds = slot0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MAJOR)
+	slot0.minorIds = slot0.char:GetAttrIdsByType(EducateChar.ATTR_TYPE_MINOR)
 
-	arg_3_0:getLocalGridData()
+	slot0:getLocalGridData()
 
-	arg_3_0.contextData.indexDatas = arg_3_0.contextData.indexDatas or {}
+	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
 end
 
-function var_0_0.clearLocalPlans(arg_4_0)
+function slot0.clearLocalPlans(slot0)
 	getProxy(EducateProxy):GetPlanProxy():ClearLocalPlansData()
-	arg_4_0:getLocalGridData()
-	arg_4_0:updateResultPanel()
-	arg_4_0:closeSelectPanel()
+	slot0:getLocalGridData()
+	slot0:updateResultPanel()
+	slot0:closeSelectPanel()
 end
 
-function var_0_0.getLocalGridData(arg_5_0)
-	local var_5_0 = arg_5_0.char:GetNextWeekPlanCnt()
+function slot0.getLocalGridData(slot0)
+	slot1 = slot0.char:GetNextWeekPlanCnt()
+	slot0.gridData = {}
 
-	arg_5_0.gridData = {}
+	for slot5 = 1, 6 do
+		slot0.gridData[slot5] = {}
 
-	for iter_5_0 = 1, 6 do
-		arg_5_0.gridData[iter_5_0] = {}
-
-		for iter_5_1 = 1, 3 do
-			local var_5_1 = iter_5_1 <= var_5_0 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK
-
-			arg_5_0.gridData[iter_5_0][iter_5_1] = EducateGrid.New({
-				type = var_5_1
+		for slot9 = 1, 3 do
+			slot0.gridData[slot5][slot9] = EducateGrid.New({
+				type = slot9 <= slot1 and EducateGrid.TYPE_EMPTY or EducateGrid.TYPE_LOCK
 			})
 		end
 	end
 
-	for iter_5_2 = 1, 6 do
-		arg_5_0.selectDay = iter_5_2
+	for slot5 = 1, 6 do
+		slot0.selectDay = slot5
 
-		for iter_5_3 = 1, var_5_0 do
-			arg_5_0.selectIndex = iter_5_3
+		for slot9 = 1, slot1 do
+			slot0.selectIndex = slot9
 
-			local var_5_2 = PlayerPrefs.GetString(EducateConst.PLANS_DATA_KEY .. arg_5_0.playerID .. "_" .. iter_5_2 .. "_" .. iter_5_3)
+			if PlayerPrefs.GetString(EducateConst.PLANS_DATA_KEY .. slot0.playerID .. "_" .. slot5 .. "_" .. slot9) ~= "" then
+				slot11 = string.split(slot10, "_")
 
-			if var_5_2 ~= "" then
-				local var_5_3 = string.split(var_5_2, "_")
-				local var_5_4 = tonumber(var_5_3[1])
-				local var_5_5 = tonumber(var_5_3[2])
-
-				if arg_5_0:checkLocalPlan(var_5_4, var_5_5) then
-					arg_5_0.gridData[iter_5_2][iter_5_3] = EducateGrid.New({
-						id = var_5_4,
-						type = var_5_5
+				if slot0:checkLocalPlan(tonumber(slot11[1]), tonumber(slot11[2])) then
+					slot0.gridData[slot5][slot9] = EducateGrid.New({
+						id = slot12,
+						type = slot13
 					})
 				end
 			end
 		end
 	end
 
-	arg_5_0.selectDay = nil
-	arg_5_0.selectIndex = nil
+	slot0.selectDay = nil
+	slot0.selectIndex = nil
 
-	arg_5_0:recoverSpecEventForPlans()
+	slot0:recoverSpecEventForPlans()
 end
 
-function var_0_0.checkLocalPlan(arg_6_0, arg_6_1, arg_6_2)
-	if arg_6_2 == EducateGrid.TYPE_PLAN or arg_6_2 == EducateGrid.TYPE_PLAN_OCCUPY then
-		local var_6_0 = EducatePlan.New(arg_6_1)
-		local var_6_1 = var_6_0:getConfig("pre_next")
+function slot0.checkLocalPlan(slot0, slot1, slot2)
+	if slot2 == EducateGrid.TYPE_PLAN or slot2 == EducateGrid.TYPE_PLAN_OCCUPY then
+		slot3 = EducatePlan.New(slot1)
+		slot4 = slot3:getConfig("pre_next")
 
-		return arg_6_0:CheckCondition(var_6_0) and not var_6_0:ExistNextPlanCanFill(arg_6_0.char)
+		return slot0:CheckCondition(slot3) and not slot3:ExistNextPlanCanFill(slot0.char)
 	end
 
 	return false
 end
 
-function var_0_0.recoverSpecEventForPlans(arg_7_0)
-	local var_7_0 = arg_7_0.educateProxy:GetEventProxy():GetPlanSpecEvents()
-
-	for iter_7_0, iter_7_1 in ipairs(var_7_0) do
-		local var_7_1 = iter_7_1:GetGridIndexs()
-
-		for iter_7_2, iter_7_3 in ipairs(var_7_1) do
-			local var_7_2 = iter_7_2 == 1 and EducateGrid.TYPE_EVENT or EducateGrid.TYPE_EVENT_OCCUPY
-			local var_7_3 = EducateGrid.New({
-				type = var_7_2,
-				id = iter_7_1.id
-			})
-
-			arg_7_0:setGridDataForPlan(iter_7_3[1], iter_7_3[2], var_7_3)
+function slot0.recoverSpecEventForPlans(slot0)
+	for slot5, slot6 in ipairs(slot0.educateProxy:GetEventProxy():GetPlanSpecEvents()) do
+		for slot11, slot12 in ipairs(slot6:GetGridIndexs()) do
+			slot0:setGridDataForPlan(slot12[1], slot12[2], EducateGrid.New({
+				type = slot11 == 1 and EducateGrid.TYPE_EVENT or EducateGrid.TYPE_EVENT_OCCUPY,
+				id = slot6.id
+			}))
 		end
 	end
 end
 
-function var_0_0.saveGridLocalData(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = arg_8_3.id .. "_" .. arg_8_3.type
-
-	PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. arg_8_0.playerID .. "_" .. arg_8_1 .. "_" .. arg_8_2, var_8_0)
+function slot0.saveGridLocalData(slot0, slot1, slot2, slot3)
+	PlayerPrefs.SetString(EducateConst.PLANS_DATA_KEY .. slot0.playerID .. "_" .. slot1 .. "_" .. slot2, slot3.id .. "_" .. slot3.type)
 end
 
-function var_0_0.setGridDataForPlan(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	if not arg_9_0.gridData[arg_9_1][arg_9_2]:IsEmpty() then
-		arg_9_0:clearGridData(arg_9_1, arg_9_2)
+function slot0.setGridDataForPlan(slot0, slot1, slot2, slot3)
+	if not slot0.gridData[slot1][slot2]:IsEmpty() then
+		slot0:clearGridData(slot1, slot2)
 	end
 
-	local var_9_0 = arg_9_3:GetOccupyGridCnt()
-
-	if var_9_0 > 1 then
-		for iter_9_0 = 1, var_9_0 - 1 do
-			arg_9_0.gridData[arg_9_1][arg_9_2 + iter_9_0] = EducateGrid.New({
+	if slot3:GetOccupyGridCnt() > 1 then
+		for slot9 = 1, slot5 - 1 do
+			slot0.gridData[slot1][slot2 + slot9] = EducateGrid.New({
 				type = EducateGrid.TYPE_PLAN_OCCUPY,
-				id = arg_9_3.id
+				id = slot3.id
 			})
 
-			arg_9_0:saveGridLocalData(arg_9_1, arg_9_2 + iter_9_0, arg_9_0.gridData[arg_9_1][arg_9_2 + iter_9_0])
+			slot0:saveGridLocalData(slot1, slot2 + slot9, slot0.gridData[slot1][slot2 + slot9])
 		end
 	end
 
-	arg_9_0.gridData[arg_9_1][arg_9_2] = arg_9_3
+	slot0.gridData[slot1][slot2] = slot3
 
-	arg_9_0:saveGridLocalData(arg_9_1, arg_9_2, arg_9_3)
+	slot0:saveGridLocalData(slot1, slot2, slot3)
 end
 
-function var_0_0.clearGridData(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = arg_10_0.gridData[arg_10_1][arg_10_2]
-
-	if var_10_0:GetOccupyGridCnt() > 1 then
-		for iter_10_0, iter_10_1 in pairs(arg_10_0.gridData[arg_10_1]) do
-			if (iter_10_1:IsPlanOccupy() or iter_10_1:IsPlan()) and iter_10_1.id == var_10_0.id then
-				arg_10_0.gridData[arg_10_1][iter_10_0] = EducateGrid.New({
+function slot0.clearGridData(slot0, slot1, slot2)
+	if slot0.gridData[slot1][slot2]:GetOccupyGridCnt() > 1 then
+		for slot8, slot9 in pairs(slot0.gridData[slot1]) do
+			if (slot9:IsPlanOccupy() or slot9:IsPlan()) and slot9.id == slot3.id then
+				slot0.gridData[slot1][slot8] = EducateGrid.New({
 					type = EducateGrid.TYPE_EMPTY
 				})
 
-				arg_10_0:saveGridLocalData(arg_10_1, iter_10_0, arg_10_0.gridData[arg_10_1][iter_10_0])
+				slot0:saveGridLocalData(slot1, slot8, slot0.gridData[slot1][slot8])
 			end
 		end
 	end
 
-	arg_10_0.gridData[arg_10_1][arg_10_2] = EducateGrid.New({
+	slot0.gridData[slot1][slot2] = EducateGrid.New({
 		type = EducateGrid.TYPE_EMPTY
 	})
 
-	arg_10_0:saveGridLocalData(arg_10_1, arg_10_2, arg_10_0.gridData[arg_10_1][arg_10_2])
+	slot0:saveGridLocalData(slot1, slot2, slot0.gridData[slot1][slot2])
 end
 
-function var_0_0.findUI(arg_11_0)
-	arg_11_0.bgTF = arg_11_0:findTF("anim_root/bg")
-	arg_11_0.topTF = arg_11_0:findTF("anim_root/top")
-	arg_11_0.returnBtn = arg_11_0:findTF("return_btn/return_btn", arg_11_0.topTF)
-	arg_11_0.mainTF = arg_11_0:findTF("anim_root/main")
-	arg_11_0.leftPanelTF = arg_11_0:findTF("schedule_left", arg_11_0.mainTF)
-	arg_11_0.targetTF = arg_11_0:findTF("target", arg_11_0.leftPanelTF)
+function slot0.findUI(slot0)
+	slot0.bgTF = slot0:findTF("anim_root/bg")
+	slot0.topTF = slot0:findTF("anim_root/top")
+	slot0.returnBtn = slot0:findTF("return_btn/return_btn", slot0.topTF)
+	slot0.mainTF = slot0:findTF("anim_root/main")
+	slot0.leftPanelTF = slot0:findTF("schedule_left", slot0.mainTF)
+	slot0.targetTF = slot0:findTF("target", slot0.leftPanelTF)
 
-	setText(arg_11_0:findTF("title", arg_11_0.targetTF), i18n("child_btn_target") .. ":")
+	setText(slot0:findTF("title", slot0.targetTF), i18n("child_btn_target") .. ":")
 
-	arg_11_0.scheduleTF = arg_11_0:findTF("schedule", arg_11_0.leftPanelTF)
-	arg_11_0.dayList = UIItemList.New(arg_11_0.scheduleTF, arg_11_0:findTF("schedule/day_tpl", arg_11_0.leftPanelTF))
-	arg_11_0.monthText = arg_11_0:findTF("title/month", arg_11_0.leftPanelTF)
+	slot0.scheduleTF = slot0:findTF("schedule", slot0.leftPanelTF)
+	slot0.dayList = UIItemList.New(slot0.scheduleTF, slot0:findTF("schedule/day_tpl", slot0.leftPanelTF))
+	slot0.monthText = slot0:findTF("title/month", slot0.leftPanelTF)
 
-	setText(arg_11_0:findTF("title/right/content/month", arg_11_0.leftPanelTF), i18n("word_month"))
+	setText(slot0:findTF("title/right/content/month", slot0.leftPanelTF), i18n("word_month"))
 
-	arg_11_0.weekText = arg_11_0:findTF("title/right/content/week", arg_11_0.leftPanelTF)
-	arg_11_0.skipToggle = arg_11_0:findTF("skip_toggle", arg_11_0.leftPanelTF)
-	arg_11_0.skipToggleCom = arg_11_0.skipToggle:GetComponent(typeof(Toggle))
+	slot0.weekText = slot0:findTF("title/right/content/week", slot0.leftPanelTF)
+	slot0.skipToggle = slot0:findTF("skip_toggle", slot0.leftPanelTF)
+	slot0.skipToggleCom = slot0.skipToggle:GetComponent(typeof(Toggle))
 
-	local var_11_0 = PlayerPrefs.GetInt(EducateConst.SKIP_PLANS_ANIM_KEY .. "_" .. arg_11_0.playerID)
+	triggerToggle(slot0.skipToggle, PlayerPrefs.GetInt(EducateConst.SKIP_PLANS_ANIM_KEY .. "_" .. slot0.playerID) == 1)
+	setActive(slot0.skipToggle, true)
+	setText(slot0:findTF("Text", slot0.skipToggle), i18n("child_plan_skip"))
 
-	triggerToggle(arg_11_0.skipToggle, var_11_0 == 1)
-	setActive(arg_11_0.skipToggle, true)
-	setText(arg_11_0:findTF("Text", arg_11_0.skipToggle), i18n("child_plan_skip"))
+	slot0.selectPanelTF = slot0:findTF("select_panel", slot0.leftPanelTF)
 
-	arg_11_0.selectPanelTF = arg_11_0:findTF("select_panel", arg_11_0.leftPanelTF)
+	setActive(slot0.selectPanelTF, false)
 
-	setActive(arg_11_0.selectPanelTF, false)
+	slot0.selectCloseBtn = slot0:findTF("fold_btn", slot0.selectPanelTF)
+	slot0.plansView = slot0:findTF("scrollview", slot0.selectPanelTF)
+	slot0.rightPanelTF = slot0:findTF("result_right", slot0.mainTF)
+	slot0.rightEmptyTF = slot0:findTF("empty", slot0.rightPanelTF)
 
-	arg_11_0.selectCloseBtn = arg_11_0:findTF("fold_btn", arg_11_0.selectPanelTF)
-	arg_11_0.plansView = arg_11_0:findTF("scrollview", arg_11_0.selectPanelTF)
-	arg_11_0.rightPanelTF = arg_11_0:findTF("result_right", arg_11_0.mainTF)
-	arg_11_0.rightEmptyTF = arg_11_0:findTF("empty", arg_11_0.rightPanelTF)
+	setText(slot0:findTF("Text", slot0.rightEmptyTF), i18n("child_schedule_empty_tip"))
 
-	setText(arg_11_0:findTF("Text", arg_11_0.rightEmptyTF), i18n("child_schedule_empty_tip"))
+	slot0.rightContentTF = slot0:findTF("content", slot0.rightPanelTF)
+	slot0.buffUIList = UIItemList.New(slot0:findTF("buff_list", slot0.rightContentTF), slot0:findTF("buff_list/tpl", slot0.rightContentTF))
+	slot0.avatarTF = slot0:findTF("avatar", slot0.rightContentTF)
+	slot0.avatarImage = slot0:findTF("mask/Image", slot0.avatarTF)
+	slot0.natureTF = slot0:findTF("nature/unlock", slot0.rightContentTF)
+	slot0.natureLockTF = slot0:findTF("nature/lock", slot0.rightContentTF)
 
-	arg_11_0.rightContentTF = arg_11_0:findTF("content", arg_11_0.rightPanelTF)
-	arg_11_0.buffUIList = UIItemList.New(arg_11_0:findTF("buff_list", arg_11_0.rightContentTF), arg_11_0:findTF("buff_list/tpl", arg_11_0.rightContentTF))
-	arg_11_0.avatarTF = arg_11_0:findTF("avatar", arg_11_0.rightContentTF)
-	arg_11_0.avatarImage = arg_11_0:findTF("mask/Image", arg_11_0.avatarTF)
-	arg_11_0.natureTF = arg_11_0:findTF("nature/unlock", arg_11_0.rightContentTF)
-	arg_11_0.natureLockTF = arg_11_0:findTF("nature/lock", arg_11_0.rightContentTF)
+	setText(slot0:findTF("major_title/Text", slot0.rightContentTF), i18n("child_attr_name1"))
+	setText(slot0:findTF("minor_title/Text", slot0.rightContentTF), i18n("child_attr_name2"))
 
-	setText(arg_11_0:findTF("major_title/Text", arg_11_0.rightContentTF), i18n("child_attr_name1"))
-	setText(arg_11_0:findTF("minor_title/Text", arg_11_0.rightContentTF), i18n("child_attr_name2"))
+	slot0.majorUIList = UIItemList.New(slot0:findTF("major", slot0.rightContentTF), slot0:findTF("major/tpl", slot0.rightContentTF))
+	slot0.minorUIList = UIItemList.New(slot0:findTF("minor", slot0.rightContentTF), slot0:findTF("minor/tpl", slot0.rightContentTF))
+	slot0.nextBtn = slot0:findTF("next_btn", slot0.rightPanelTF)
+	slot0.topPanel = EducateTopPanel.New(slot0:findTF("top_right", slot0.topTF), slot0.event)
 
-	arg_11_0.majorUIList = UIItemList.New(arg_11_0:findTF("major", arg_11_0.rightContentTF), arg_11_0:findTF("major/tpl", arg_11_0.rightContentTF))
-	arg_11_0.minorUIList = UIItemList.New(arg_11_0:findTF("minor", arg_11_0.rightContentTF), arg_11_0:findTF("minor/tpl", arg_11_0.rightContentTF))
-	arg_11_0.nextBtn = arg_11_0:findTF("next_btn", arg_11_0.rightPanelTF)
-	arg_11_0.topPanel = EducateTopPanel.New(arg_11_0:findTF("top_right", arg_11_0.topTF), arg_11_0.event)
+	slot0.topPanel:Load()
 
-	arg_11_0.topPanel:Load()
+	slot0.resPanel = EducateResPanel.New(slot0:findTF("res", slot0.topTF), slot0.event)
 
-	arg_11_0.resPanel = EducateResPanel.New(arg_11_0:findTF("res", arg_11_0.topTF), arg_11_0.event)
-
-	arg_11_0.resPanel:Load()
+	slot0.resPanel:Load()
 end
 
-function var_0_0.addListener(arg_12_0)
-	setActive(arg_12_0:findTF("clear_btn", arg_12_0.topTF), false)
-	onButton(arg_12_0, arg_12_0:findTF("clear_btn", arg_12_0.topTF), function()
-		arg_12_0:clearLocalPlans()
-		arg_12_0.resPanel:Flush()
+function slot0.addListener(slot0)
+	setActive(slot0:findTF("clear_btn", slot0.topTF), false)
+	onButton(slot0, slot0:findTF("clear_btn", slot0.topTF), function ()
+		uv0:clearLocalPlans()
+		uv0.resPanel:Flush()
 	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0:findTF("index_btn", arg_12_0.selectPanelTF), function()
-		local var_14_0 = {
-			indexDatas = Clone(arg_12_0.contextData.indexDatas) or {},
-			callback = function(arg_15_0)
-				arg_12_0.typeIndex = arg_15_0.typeIndex
-				arg_12_0.costIndex = arg_15_0.costIndex
-				arg_12_0.awardResIndex = arg_15_0.awardResIndex
-				arg_12_0.awardNatureIndex = arg_15_0.awardNatureIndex
-				arg_12_0.awardAttr1Index = arg_15_0.awardAttr1Index
-				arg_12_0.awardAttr2Index = arg_15_0.awardAttr2Index
+	onButton(slot0, slot0:findTF("index_btn", slot0.selectPanelTF), function ()
+		uv0:emit(EducateScheduleMediator.OPEN_FILTER_LAYER, {
+			indexDatas = Clone(uv0.contextData.indexDatas) or {},
+			callback = function (slot0)
+				uv0.typeIndex = slot0.typeIndex
+				uv0.costIndex = slot0.costIndex
+				uv0.awardResIndex = slot0.awardResIndex
+				uv0.awardNatureIndex = slot0.awardNatureIndex
+				uv0.awardAttr1Index = slot0.awardAttr1Index
+				uv0.awardAttr2Index = slot0.awardAttr2Index
 
-				arg_12_0:updateIndexDatas()
-				arg_12_0:updatePlanList()
+				uv0:updateIndexDatas()
+				uv0:updatePlanList()
 			end
-		}
+		})
+	end, SFX_PANEL)
+	onButton(slot0, slot0.returnBtn, function ()
+		uv0:onBackPressed()
+	end, SFX_PANEL)
+	onButton(slot0, slot0.selectCloseBtn, function ()
+		uv0:closeSelectPanel()
+	end, SFX_PANEL)
+	onButton(slot0, slot0.nextBtn, function ()
+		slot0 = {}
+		slot1 = nil
 
-		arg_12_0:emit(EducateScheduleMediator.OPEN_FILTER_LAYER, var_14_0)
-	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.returnBtn, function()
-		arg_12_0:onBackPressed()
-	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.selectCloseBtn, function()
-		arg_12_0:closeSelectPanel()
-	end, SFX_PANEL)
-	onButton(arg_12_0, arg_12_0.nextBtn, function()
-		local var_18_0 = {}
-		local var_18_1
-
-		table.insert(var_18_0, function(arg_19_0)
-			if arg_12_0:haveEmpty() then
-				arg_12_0:emit(var_0_0.EDUCATE_ON_MSG_TIP, {
+		table.insert(slot0, function (slot0)
+			if uv0:haveEmpty() then
+				uv0:emit(uv1.EDUCATE_ON_MSG_TIP, {
 					content = i18n("child_schedule_sure_tip"),
-					onYes = function()
-						var_18_1 = true
+					onYes = function ()
+						uv0 = true
 					end,
-					onExit = function()
-						if var_18_1 then
-							arg_19_0()
+					onExit = function ()
+						if uv0 then
+							uv1()
 						end
 					end
 				})
 			else
-				arg_19_0()
+				slot0()
 			end
 		end)
-		table.insert(var_18_0, function(arg_22_0)
+		table.insert(slot0, function (slot0)
 			if getProxy(EducateProxy):GetCharData().site > 0 then
-				arg_12_0:emit(var_0_0.EDUCATE_ON_MSG_TIP, {
+				uv0:emit(uv1.EDUCATE_ON_MSG_TIP, {
 					content = i18n("child_schedule_sure_tip2"),
-					onYes = function()
-						arg_22_0()
+					onYes = function ()
+						uv0()
 					end
 				})
 			else
-				arg_22_0()
+				slot0()
 			end
 		end)
-		seriesAsync(var_18_0, function()
-			arg_12_0:executePlans(arg_12_0.skipToggleCom.isOn)
+		seriesAsync(slot0, function ()
+			uv0:executePlans(uv0.skipToggleCom.isOn)
 		end)
 	end, SFX_PANEL)
-	onToggle(arg_12_0, arg_12_0.skipToggle, function(arg_25_0)
-		PlayerPrefs.SetInt(EducateConst.SKIP_PLANS_ANIM_KEY .. "_" .. arg_12_0.playerID, arg_25_0 and 1 or 0)
+	onToggle(slot0, slot0.skipToggle, function (slot0)
+		PlayerPrefs.SetInt(EducateConst.SKIP_PLANS_ANIM_KEY .. "_" .. uv0.playerID, slot0 and 1 or 0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.haveEmpty(arg_26_0)
-	for iter_26_0 = 1, 6 do
-		for iter_26_1 = 1, 3 do
-			if arg_26_0.gridData[iter_26_0][iter_26_1]:IsEmpty() then
+function slot0.haveEmpty(slot0)
+	for slot4 = 1, 6 do
+		for slot8 = 1, 3 do
+			if slot0.gridData[slot4][slot8]:IsEmpty() then
 				return true
 			end
 		end
@@ -302,12 +278,10 @@ function var_0_0.haveEmpty(arg_26_0)
 	return false
 end
 
-function var_0_0.allEmpty(arg_27_0)
-	for iter_27_0 = 1, 6 do
-		for iter_27_1 = 1, 3 do
-			local var_27_0 = arg_27_0.gridData[iter_27_0][iter_27_1]
-
-			if not var_27_0:IsEmpty() and not var_27_0:IsLock() then
+function slot0.allEmpty(slot0)
+	for slot4 = 1, 6 do
+		for slot8 = 1, 3 do
+			if not slot0.gridData[slot4][slot8]:IsEmpty() and not slot9:IsLock() then
 				return false
 			end
 		end
@@ -316,369 +290,323 @@ function var_0_0.allEmpty(arg_27_0)
 	return true
 end
 
-function var_0_0.executePlans(arg_28_0, arg_28_1)
-	arg_28_0:emit(EducateScheduleMediator.GET_PLANS, {
-		gridData = arg_28_0.gridData,
-		isSkip = arg_28_1
+function slot0.executePlans(slot0, slot1)
+	slot0:emit(EducateScheduleMediator.GET_PLANS, {
+		gridData = slot0.gridData,
+		isSkip = slot1
 	})
 end
 
-function var_0_0.didEnter(arg_29_0)
-	arg_29_0:updateBg()
-	arg_29_0:initTimeTitle()
-	arg_29_0:initTargetText()
-	arg_29_0:updateIndexDatas()
-	arg_29_0:initSchedulePanel()
-	arg_29_0:initSelectPlans()
-	arg_29_0:initResultPanel()
-	arg_29_0:checkTips()
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_29_0.mainTF, {
+function slot0.didEnter(slot0)
+	slot0:updateBg()
+	slot0:initTimeTitle()
+	slot0:initTargetText()
+	slot0:updateIndexDatas()
+	slot0:initSchedulePanel()
+	slot0:initSelectPlans()
+	slot0:initResultPanel()
+	slot0:checkTips()
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.mainTF, {
 		pbList = {
-			arg_29_0:findTF("bg", arg_29_0.mainTF)
+			slot0:findTF("bg", slot0.mainTF)
 		},
 		groupName = LayerWeightConst.GROUP_EDUCATE
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(arg_29_0.topTF, {
+	pg.UIMgr.GetInstance():OverlayPanel(slot0.topTF, {
 		groupName = LayerWeightConst.GROUP_EDUCATE,
 		weight = LayerWeightConst.BASE_LAYER + 1
 	})
 end
 
-function var_0_0.checkTips(arg_30_0)
-	arg_30_0.newUnlcokPlanIds = EducateTipHelper.GetPlanUnlockTipIds()
+function slot0.checkTips(slot0)
+	slot0.newUnlcokPlanIds = EducateTipHelper.GetPlanUnlockTipIds()
 
-	if #arg_30_0.newUnlcokPlanIds > 0 then
-		arg_30_0:emit(var_0_0.EDUCATE_ON_UNLOCK_TIP, {
+	if #slot0.newUnlcokPlanIds > 0 then
+		slot0:emit(uv0.EDUCATE_ON_UNLOCK_TIP, {
 			type = EducateUnlockTipLayer.UNLOCK_TYPE_PLAN,
-			list = arg_30_0.newUnlcokPlanIds
+			list = slot0.newUnlcokPlanIds
 		})
 	end
 end
 
-function var_0_0.updateBg(arg_31_0)
-	local var_31_0 = LoadSprite("bg/" .. arg_31_0.char:GetBGName())
-
-	setImageSprite(arg_31_0.bgTF, var_31_0, false)
+function slot0.updateBg(slot0)
+	setImageSprite(slot0.bgTF, LoadSprite("bg/" .. slot0.char:GetBGName()), false)
 end
 
-function var_0_0.initTimeTitle(arg_32_0)
-	local var_32_0 = EducateHelper.GetTimeAfterWeeks(arg_32_0.curTime, 1)
-	local var_32_1 = EducateHelper.GetShowMonthNumber(var_32_0.month)
+function slot0.initTimeTitle(slot0)
+	slot1 = EducateHelper.GetTimeAfterWeeks(slot0.curTime, 1)
 
-	setText(arg_32_0.monthText, var_32_1)
-
-	local var_32_2 = i18n("number_" .. var_32_0.week)
-
-	setText(arg_32_0.weekText, i18n("word_which_week", var_32_2))
+	setText(slot0.monthText, EducateHelper.GetShowMonthNumber(slot1.month))
+	setText(slot0.weekText, i18n("word_which_week", i18n("number_" .. slot1.week)))
 end
 
-function var_0_0.initTargetText(arg_33_0)
-	arg_33_0.showAttrSubtype = 0
+function slot0.initTargetText(slot0)
+	slot0.showAttrSubtype = 0
 
-	local var_33_0 = arg_33_0.educateProxy:GetTaskProxy()
-
-	if not var_33_0:CanGetTargetAward() then
-		setText(arg_33_0:findTF("Text", arg_33_0.targetTF), i18n("child_task_finish_all"))
-		setActive(arg_33_0:findTF("icon", arg_33_0.targetTF), false)
+	if not slot0.educateProxy:GetTaskProxy():CanGetTargetAward() then
+		setText(slot0:findTF("Text", slot0.targetTF), i18n("child_task_finish_all"))
+		setActive(slot0:findTF("icon", slot0.targetTF), false)
 	else
-		local var_33_1 = var_33_0:FilterByGroup(var_33_0:GetTargetTasksForShow())[1]
-
-		if not var_33_1 then
-			setActive(arg_33_0.targetTF, false)
+		if not slot1:FilterByGroup(slot1:GetTargetTasksForShow())[1] then
+			setActive(slot0.targetTF, false)
 		end
 
-		setText(arg_33_0:findTF("Text", arg_33_0.targetTF), var_33_1:getConfig("name"))
+		setText(slot0:findTF("Text", slot0.targetTF), slot2:getConfig("name"))
 
-		if var_33_1:GetType() == EducateTask.TYPE_ATTR then
-			setActive(arg_33_0:findTF("icon", arg_33_0.targetTF), true)
+		if slot2:GetType() == EducateTask.TYPE_ATTR then
+			setActive(slot0:findTF("icon", slot0.targetTF), true)
 
-			arg_33_0.showAttrSubtype = var_33_1:getConfig("sub_type")
+			slot0.showAttrSubtype = slot2:getConfig("sub_type")
 
-			local var_33_2 = type(arg_33_0.showAttrSubtype) == "string" and arg_33_0.showAttrSubtype or arg_33_0.showAttrSubtype[1]
-
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var_33_2, arg_33_0:findTF("icon", arg_33_0.targetTF))
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. (type(slot0.showAttrSubtype) == "string" and slot0.showAttrSubtype or slot0.showAttrSubtype[1]), slot0:findTF("icon", slot0.targetTF))
 		else
-			setActive(arg_33_0:findTF("icon", arg_33_0.targetTF), false)
+			setActive(slot0:findTF("icon", slot0.targetTF), false)
 		end
 	end
 end
 
-function var_0_0.updateIndexDatas(arg_34_0)
-	arg_34_0.contextData.indexDatas = arg_34_0.contextData.indexDatas or {}
-	arg_34_0.contextData.indexDatas.typeIndex = arg_34_0.typeIndex
-	arg_34_0.contextData.indexDatas.costIndex = arg_34_0.costIndex
-	arg_34_0.contextData.indexDatas.awardResIndex = arg_34_0.awardResIndex
-	arg_34_0.contextData.indexDatas.awardNatureIndex = arg_34_0.awardNatureIndex
-	arg_34_0.contextData.indexDatas.awardAttr1Index = arg_34_0.awardAttr1Index
-	arg_34_0.contextData.indexDatas.awardAttr2Index = arg_34_0.awardAttr2Index
+function slot0.updateIndexDatas(slot0)
+	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
+	slot0.contextData.indexDatas.typeIndex = slot0.typeIndex
+	slot0.contextData.indexDatas.costIndex = slot0.costIndex
+	slot0.contextData.indexDatas.awardResIndex = slot0.awardResIndex
+	slot0.contextData.indexDatas.awardNatureIndex = slot0.awardNatureIndex
+	slot0.contextData.indexDatas.awardAttr1Index = slot0.awardAttr1Index
+	slot0.contextData.indexDatas.awardAttr2Index = slot0.awardAttr2Index
 end
 
-function var_0_0.initSchedulePanel(arg_35_0)
-	arg_35_0.dayList:make(function(arg_36_0, arg_36_1, arg_36_2)
-		if arg_36_0 == UIItemList.EventInit then
-			local var_36_0 = arg_36_1 + 1
+function slot0.initSchedulePanel(slot0)
+	slot0.dayList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			slot3 = slot1 + 1
+			slot2.name = tostring(slot3)
+			slot7 = uv0:findTF("title", slot2)
 
-			arg_36_2.name = tostring(var_36_0)
+			GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot3, slot7, true)
 
-			GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var_36_0, arg_35_0:findTF("title", arg_36_2), true)
+			for slot7 = 1, 3 do
+				slot8 = uv0:findTF("cells", slot2):GetChild(slot7 - 1)
+				slot9 = uv0.planProxy:GetGridBgName(slot3, slot7)
 
-			for iter_36_0 = 1, 3 do
-				local var_36_1 = arg_35_0:findTF("cells", arg_36_2):GetChild(iter_36_0 - 1)
-				local var_36_2 = arg_35_0.planProxy:GetGridBgName(var_36_0, iter_36_0)
-
-				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var_36_2[1], arg_35_0:findTF("empty", var_36_1), true)
-				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var_36_2[2], arg_35_0:findTF("plan/name_bg", var_36_1), true)
-				onButton(arg_35_0, var_36_1, function()
-					local var_37_0 = arg_35_0.gridData[var_36_0][iter_36_0]
-
-					if var_37_0:IsEvent() or var_37_0:IsEventOccupy() then
+				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot9[1], uv0:findTF("empty", slot8), true)
+				GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot9[2], uv0:findTF("plan/name_bg", slot8), true)
+				onButton(uv0, slot8, function ()
+					if uv0.gridData[uv1][uv2]:IsEvent() or slot0:IsEventOccupy() then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("child_schedule_event_tip"))
 					else
-						arg_35_0:openSelectPanel(var_36_0, iter_36_0)
+						uv0:openSelectPanel(uv1, uv2)
 					end
 				end, SFX_PANEL)
 			end
 		end
 
-		if arg_36_0 == UIItemList.EventUpdate then
-			arg_35_0:updateDayGrids(arg_36_1, arg_36_2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:updateDayGrids(slot1, slot2)
 		end
 	end)
-	arg_35_0.dayList:align(6)
+	slot0.dayList:align(6)
 end
 
-function var_0_0._updateGrid(arg_38_0, arg_38_1, arg_38_2)
-	setActive(arg_38_1, not arg_38_2:IsLock())
+function slot0._updateGrid(slot0, slot1, slot2)
+	setActive(slot1, not slot2:IsLock())
 
-	if not arg_38_2:IsLock() then
-		setActive(arg_38_0:findTF("empty", arg_38_1), arg_38_2:IsEmpty())
+	if not slot2:IsLock() then
+		setActive(slot0:findTF("empty", slot1), slot2:IsEmpty())
 
-		arg_38_1:GetComponent(typeof(Image)).enabled = not arg_38_2:IsEmpty()
+		slot1:GetComponent(typeof(Image)).enabled = not slot2:IsEmpty()
 
-		setActive(arg_38_0:findTF("plan", arg_38_1), not arg_38_2:IsEmpty())
+		setActive(slot0:findTF("plan", slot1), not slot2:IsEmpty())
 
-		if arg_38_2:IsPlan() or arg_38_2:IsPlanOccupy() then
-			LoadImageSpriteAsync("educateprops/" .. arg_38_2.data:getConfig("icon"), arg_38_0:findTF("plan/icon", arg_38_1), true)
-			setScrollText(arg_38_0:findTF("plan/name_bg/Text", arg_38_1), arg_38_2.data:getConfig("name"))
+		if slot2:IsPlan() or slot2:IsPlanOccupy() then
+			LoadImageSpriteAsync("educateprops/" .. slot2.data:getConfig("icon"), slot0:findTF("plan/icon", slot1), true)
+			setScrollText(slot0:findTF("plan/name_bg/Text", slot1), slot2.data:getConfig("name"))
 		end
 
-		if arg_38_2:IsEvent() or arg_38_2:IsEventOccupy() then
-			local var_38_0 = arg_38_2.data:getConfig("type_param")[1] or ""
-
-			LoadImageSpriteAsync("educateprops/" .. var_38_0, arg_38_0:findTF("plan/icon", arg_38_1), true)
-			setScrollText(arg_38_0:findTF("plan/name_bg/Text", arg_38_1), i18n("child_plan_event"))
+		if slot2:IsEvent() or slot2:IsEventOccupy() then
+			LoadImageSpriteAsync("educateprops/" .. (slot2.data:getConfig("type_param")[1] or ""), slot0:findTF("plan/icon", slot1), true)
+			setScrollText(slot0:findTF("plan/name_bg/Text", slot1), i18n("child_plan_event"))
 		end
-	end
-end
-
-function var_0_0.updateDayGrids(arg_39_0, arg_39_1, arg_39_2)
-	local var_39_0 = arg_39_1 + 1
-
-	for iter_39_0 = 1, 3 do
-		local var_39_1 = arg_39_0:findTF("cells", arg_39_2):GetChild(iter_39_0 - 1)
-
-		var_39_1.name = tostring(iter_39_0)
-
-		local var_39_2 = arg_39_0.gridData[var_39_0][iter_39_0]
-
-		arg_39_0:_updateGrid(var_39_1, var_39_2)
 	end
 end
 
-function var_0_0.initSelectPlans(arg_40_0)
-	arg_40_0.plansRect = arg_40_0.plansView:GetComponent("LScrollRect")
-	arg_40_0.planCards = {}
+function slot0.updateDayGrids(slot0, slot1, slot2)
+	for slot7 = 1, 3 do
+		slot8 = slot0:findTF("cells", slot2):GetChild(slot7 - 1)
+		slot8.name = tostring(slot7)
 
-	function arg_40_0.plansRect.onInitItem(arg_41_0)
-		local var_41_0 = EducateSchedulePlanCard.New(arg_41_0, arg_40_0)
+		slot0:_updateGrid(slot8, slot0.gridData[slot1 + 1][slot7])
+	end
+end
 
-		arg_40_0.planCards[arg_41_0] = var_41_0
+function slot0.initSelectPlans(slot0)
+	slot0.plansRect = slot0.plansView:GetComponent("LScrollRect")
+	slot0.planCards = {}
+
+	function slot0.plansRect.onInitItem(slot0)
+		uv0.planCards[slot0] = EducateSchedulePlanCard.New(slot0, uv0)
 	end
 
-	function arg_40_0.plansRect.onUpdateItem(arg_42_0, arg_42_1)
-		local var_42_0 = arg_40_0.planCards[arg_42_1]
-
-		if not var_42_0 then
-			local var_42_1 = EducateSchedulePlanCard.New(arg_42_1, arg_40_0)
-
-			arg_40_0.planCards[arg_42_1] = var_42_1
+	function slot0.plansRect.onUpdateItem(slot0, slot1)
+		if not uv0.planCards[slot1] then
+			uv0.planCards[slot1] = EducateSchedulePlanCard.New(slot1, uv0)
 		end
 
-		local var_42_2 = arg_40_0.showPlans[arg_42_0 + 1]
-		local var_42_3 = 0
-		local var_42_4 = arg_40_0.gridData[arg_40_0.selectDay][arg_40_0.selectIndex]
+		slot3 = uv0.showPlans[slot0 + 1]
+		slot4 = 0
 
-		if var_42_4 and var_42_4:IsPlanOccupy() or var_42_4:IsPlan() then
-			var_42_3 = var_42_4.id
+		if uv0.gridData[uv0.selectDay][uv0.selectIndex] and slot5:IsPlanOccupy() or slot5:IsPlan() then
+			slot4 = slot5.id
 		end
 
-		var_42_0:update(var_42_2, var_42_3)
+		slot2:update(slot3, slot4)
 	end
 
-	function arg_40_0.plansRect.onReturnItem(arg_43_0, arg_43_1)
-		return
+	function slot0.plansRect.onReturnItem(slot0, slot1)
 	end
 
-	for iter_40_0 = 1, 3 do
-		local var_40_0 = arg_40_0:findTF("day/cells", arg_40_0.selectPanelTF):GetChild(iter_40_0 - 1)
-
-		onButton(arg_40_0, var_40_0, function()
-			local var_44_0 = arg_40_0.gridData[arg_40_0.selectDay][iter_40_0]
-
-			if var_44_0:IsEvent() or var_44_0:IsEventOccupy() then
+	for slot4 = 1, 3 do
+		onButton(slot0, slot0:findTF("day/cells", slot0.selectPanelTF):GetChild(slot4 - 1), function ()
+			if uv0.gridData[uv0.selectDay][uv1]:IsEvent() or slot0:IsEventOccupy() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("child_schedule_event_tip"))
 			else
-				arg_40_0.selectIndex = iter_40_0
+				uv0.selectIndex = uv1
 
-				arg_40_0:updateSelectdDay()
-				arg_40_0:updatePlanList()
+				uv0:updateSelectdDay()
+				uv0:updatePlanList()
 			end
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.openSelectPanel(arg_45_0, arg_45_1, arg_45_2)
-	LoadImageSpriteAtlasAsync("ui/educatescheduleui_atlas", arg_45_1, arg_45_0:findTF("day/title", arg_45_0.selectPanelTF), true)
-	setActive(arg_45_0.selectPanelTF, true)
-	setActive(arg_45_0.scheduleTF, false)
+function slot0.openSelectPanel(slot0, slot1, slot2)
+	LoadImageSpriteAtlasAsync("ui/educatescheduleui_atlas", slot1, slot0:findTF("day/title", slot0.selectPanelTF), true)
+	setActive(slot0.selectPanelTF, true)
+	setActive(slot0.scheduleTF, false)
 
-	arg_45_0.selectDay = arg_45_1
-	arg_45_0.selectIndex = arg_45_2
+	slot0.selectDay = slot1
+	slot0.selectIndex = slot2
 
-	arg_45_0:updateSelectdDay()
-	arg_45_0:updatePlanList()
+	slot0:updateSelectdDay()
+	slot0:updatePlanList()
 end
 
-function var_0_0.updateSelectdDay(arg_46_0)
-	for iter_46_0 = 1, 3 do
-		local var_46_0 = arg_46_0:findTF("day/cells", arg_46_0.selectPanelTF):GetChild(iter_46_0 - 1)
-		local var_46_1 = arg_46_0.gridData[arg_46_0.selectDay][iter_46_0]
-		local var_46_2 = arg_46_0.planProxy:GetGridBgName(arg_46_0.selectDay, iter_46_0)
+function slot0.updateSelectdDay(slot0)
+	for slot4 = 1, 3 do
+		slot5 = slot0:findTF("day/cells", slot0.selectPanelTF):GetChild(slot4 - 1)
+		slot7 = slot0.planProxy:GetGridBgName(slot0.selectDay, slot4)
 
-		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var_46_2[1], arg_46_0:findTF("empty", var_46_0), true)
-		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", var_46_2[2], arg_46_0:findTF("plan/name_bg", var_46_0), true)
-		setActive(arg_46_0:findTF("selected", var_46_0), arg_46_0.selectIndex == iter_46_0)
-		arg_46_0:_updateGrid(var_46_0, var_46_1)
+		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot7[1], slot0:findTF("empty", slot5), true)
+		GetImageSpriteFromAtlasAsync("ui/educatescheduleui_atlas", slot7[2], slot0:findTF("plan/name_bg", slot5), true)
+		setActive(slot0:findTF("selected", slot5), slot0.selectIndex == slot4)
+		slot0:_updateGrid(slot5, slot0.gridData[slot0.selectDay][slot4])
 	end
 end
 
-function var_0_0.updatePlanList(arg_47_0)
-	if arg_47_0.selectIndex ~= 0 then
-		arg_47_0.showPlans = arg_47_0:filter(arg_47_0.planProxy:GetShowPlans(arg_47_0.char:GetNextWeekStage(), arg_47_0.selectDay, arg_47_0.selectIndex))
+function slot0.updatePlanList(slot0)
+	if slot0.selectIndex ~= 0 then
+		slot0.showPlans = slot0:filter(slot0.planProxy:GetShowPlans(slot0.char:GetNextWeekStage(), slot0.selectDay, slot0.selectIndex))
 
-		arg_47_0:sortPlans()
-		arg_47_0.plansRect:SetTotalCount(#arg_47_0.showPlans, -1)
+		slot0:sortPlans()
+		slot0.plansRect:SetTotalCount(#slot0.showPlans, -1)
 	end
 end
 
-function var_0_0.sortPlans(arg_48_0)
-	table.sort(arg_48_0.showPlans, CompareFuncs({
-		function(arg_49_0)
-			return table.contains(arg_48_0.newUnlcokPlanIds, arg_49_0.id) and 0 or 1
+function slot0.sortPlans(slot0)
+	table.sort(slot0.showPlans, CompareFuncs({
+		function (slot0)
+			return table.contains(uv0.newUnlcokPlanIds, slot0.id) and 0 or 1
 		end,
-		function(arg_50_0)
-			return arg_50_0:IsMatchAttr(arg_48_0.char) and 0 or 1
+		function (slot0)
+			return slot0:IsMatchAttr(uv0.char) and 0 or 1
 		end,
-		function(arg_51_0)
-			return arg_51_0:CheckResultBySubType(EducateConst.DROP_TYPE_ATTR, arg_48_0.showAttrSubtype) and 0 or 1
+		function (slot0)
+			return slot0:CheckResultBySubType(EducateConst.DROP_TYPE_ATTR, uv0.showAttrSubtype) and 0 or 1
 		end,
-		function(arg_52_0)
-			return -arg_52_0:getConfig("rare")
+		function (slot0)
+			return -slot0:getConfig("rare")
 		end,
-		function(arg_53_0)
-			return arg_53_0.id
+		function (slot0)
+			return slot0.id
 		end
 	}))
 
-	arg_48_0.newUnlcokPlanIds = {}
+	slot0.newUnlcokPlanIds = {}
 end
 
-function var_0_0.OnPlanCardClick(arg_54_0, arg_54_1)
-	local var_54_0, var_54_1 = arg_54_0:CheckCondition(arg_54_1)
+function slot0.OnPlanCardClick(slot0, slot1)
+	slot2, slot3 = slot0:CheckCondition(slot1)
 
-	if var_54_0 then
-		local var_54_2 = EducateGrid.New({
+	if slot2 then
+		slot0:setGridDataForPlan(slot0.selectDay, slot0.selectIndex, EducateGrid.New({
 			type = EducateGrid.TYPE_PLAN,
-			id = arg_54_1.id
-		})
-
-		arg_54_0:setGridDataForPlan(arg_54_0.selectDay, arg_54_0.selectIndex, var_54_2)
-		arg_54_0:updateSelectdDay()
-		arg_54_0:updateResultPanel()
-		arg_54_0:closeSelectPanel()
+			id = slot1.id
+		}))
+		slot0:updateSelectdDay()
+		slot0:updateResultPanel()
+		slot0:closeSelectPanel()
 	else
-		pg.TipsMgr.GetInstance():ShowTips(var_54_1)
+		pg.TipsMgr.GetInstance():ShowTips(slot3)
 	end
 end
 
-function var_0_0.filter(arg_55_0, arg_55_1)
-	return underscore.select(arg_55_1, function(arg_56_0)
-		return EducatePlanIndexConst.filterByType(arg_56_0, arg_55_0.typeIndex) and EducatePlanIndexConst.filterByCost(arg_56_0, arg_55_0.costIndex) and EducatePlanIndexConst.filterByAwardRes(arg_56_0, arg_55_0.awardResIndex) and EducatePlanIndexConst.filterByAwardNature(arg_56_0, arg_55_0.awardNatureIndex) and EducatePlanIndexConst.filterByAwardAttr1(arg_56_0, arg_55_0.awardAttr1Index) and EducatePlanIndexConst.filterByAwardAttr2(arg_56_0, arg_55_0.awardAttr2Index)
+function slot0.filter(slot0, slot1)
+	return underscore.select(slot1, function (slot0)
+		return EducatePlanIndexConst.filterByType(slot0, uv0.typeIndex) and EducatePlanIndexConst.filterByCost(slot0, uv0.costIndex) and EducatePlanIndexConst.filterByAwardRes(slot0, uv0.awardResIndex) and EducatePlanIndexConst.filterByAwardNature(slot0, uv0.awardNatureIndex) and EducatePlanIndexConst.filterByAwardAttr1(slot0, uv0.awardAttr1Index) and EducatePlanIndexConst.filterByAwardAttr2(slot0, uv0.awardAttr2Index)
 	end)
 end
 
-function var_0_0.closeSelectPanel(arg_57_0)
-	setActive(arg_57_0.selectPanelTF, false)
-	setActive(arg_57_0.scheduleTF, true)
-	arg_57_0.dayList:align(6)
+function slot0.closeSelectPanel(slot0)
+	setActive(slot0.selectPanelTF, false)
+	setActive(slot0.scheduleTF, true)
+	slot0.dayList:align(6)
 end
 
-function var_0_0.CheckCondition(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_0.gridData[arg_58_0.selectDay][arg_58_0.selectIndex]
-
-	if var_58_0:IsEvent() or var_58_0:IsEventOccupy() then
+function slot0.CheckCondition(slot0, slot1)
+	if slot0.gridData[slot0.selectDay][slot0.selectIndex]:IsEvent() or slot2:IsEventOccupy() then
 		return false, i18n("child_schedule_event_tip")
 	end
 
-	local var_58_1 = var_58_0.data
-	local var_58_2, var_58_3, var_58_4 = arg_58_1:GetCost()
+	slot3 = slot2.data
+	slot4, slot5, slot6 = slot1:GetCost()
 
-	if var_58_4 > 1 and not arg_58_0:CheckRemainGrid(var_58_4, var_58_0.id) then
+	if slot6 > 1 and not slot0:CheckRemainGrid(slot6, slot2.id) then
 		return false, i18n("child_plan_check_tip1")
 	end
 
-	if not arg_58_1:IsMatchAttr(arg_58_0.char) then
+	if not slot1:IsMatchAttr(slot0.char) then
 		return false, i18n("child_plan_check_tip2")
 	end
 
-	if not arg_58_1:IsInStage(arg_58_0.char:GetNextWeekStage()) then
+	if not slot1:IsInStage(slot0.char:GetNextWeekStage()) then
 		return false, i18n("child_plan_check_tip6")
 	end
 
-	local var_58_5 = arg_58_1:getConfig("pre")[1]
-
-	if not arg_58_1:IsMatchPre(arg_58_0.planProxy:GetHistoryCntById(var_58_5)) then
+	if not slot1:IsMatchPre(slot0.planProxy:GetHistoryCntById(slot1:getConfig("pre")[1])) then
 		return false, i18n("child_plan_check_tip3")
 	end
 
-	local var_58_6, var_58_7 = arg_58_0:getPlansCost()
-	local var_58_8 = 0
-	local var_58_9 = 0
+	slot8, slot9 = slot0:getPlansCost()
+	slot10 = 0
+	slot11 = 0
 
-	if var_58_0:IsPlan() or var_58_0:IsPlanOccupy() then
-		local var_58_10
-
-		var_58_8, var_58_10 = var_58_1:GetCost()
+	if slot2:IsPlan() or slot2:IsPlanOccupy() then
+		slot10, slot11 = slot3:GetCost()
 	end
 
-	if arg_58_0.char.money < var_58_6 + var_58_2 - var_58_8 then
+	if slot0.char.money < slot8 + slot4 - slot10 then
 		return false, i18n("child_plan_check_tip4")
 	end
 
 	return true
 end
 
-function var_0_0.CheckRemainGrid(arg_59_0, arg_59_1, arg_59_2)
-	local var_59_0 = arg_59_0.selectIndex + arg_59_1 - 1
-
-	if var_59_0 > 3 then
+function slot0.CheckRemainGrid(slot0, slot1, slot2)
+	if slot0.selectIndex + slot1 - 1 > 3 then
 		return false
 	end
 
-	for iter_59_0 = arg_59_0.selectIndex + 1, var_59_0 do
-		local var_59_1 = arg_59_0.gridData[arg_59_0.selectDay][iter_59_0]
-
-		if not var_59_1:IsEmpty() and (not var_59_1:IsPlanOccupy() or var_59_1.id ~= arg_59_2) then
+	for slot7 = slot0.selectIndex + 1, slot3 do
+		if not slot0.gridData[slot0.selectDay][slot7]:IsEmpty() and (not slot8:IsPlanOccupy() or slot8.id ~= slot2) then
 			return false
 		end
 	end
@@ -686,258 +614,232 @@ function var_0_0.CheckRemainGrid(arg_59_0, arg_59_1, arg_59_2)
 	return true
 end
 
-function var_0_0.showBuffBox(arg_60_0, arg_60_1)
-	arg_60_0:emit(var_0_0.EDUCATE_ON_ITEM, {
+function slot0.showBuffBox(slot0, slot1)
+	slot0:emit(uv0.EDUCATE_ON_ITEM, {
 		drop = {
 			number = 1,
 			type = EducateConst.DROP_TYPE_BUFF,
-			id = arg_60_1
+			id = slot1
 		}
 	})
 end
 
-function var_0_0.initResultPanel(arg_61_0)
-	arg_61_0.resPanel:FlushAddValue("", "")
-	arg_61_0.buffUIList:make(function(arg_62_0, arg_62_1, arg_62_2)
-		if arg_62_0 == UIItemList.EventUpdate then
-			onButton(arg_61_0, arg_62_2, function()
-				arg_61_0:showBuffBox(arg_61_0.buffList[arg_62_1 + 1].id)
+function slot0.initResultPanel(slot0)
+	slot0.resPanel:FlushAddValue("", "")
+	slot0.buffUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			onButton(uv0, slot2, function ()
+				uv0:showBuffBox(uv0.buffList[uv1 + 1].id)
 			end, SFX_PANEL)
 		end
 	end)
-	arg_61_0.buffUIList:align(#arg_61_0.buffList)
+	slot0.buffUIList:align(#slot0.buffList)
 
-	local var_61_0 = arg_61_0:findTF("content", arg_61_0.natureTF)
-	local var_61_1 = arg_61_0:findTF("progress", arg_61_0.avatarTF)
-	local var_61_2 = arg_61_0.char:GetPaintingName()
+	slot2 = slot0:findTF("progress", slot0.avatarTF)
+	slot8 = slot0.char:GetPaintingName()
+	slot7 = true
 
-	setImageSprite(arg_61_0:findTF("mask/Image", arg_61_0.avatarTF), LoadSprite("squareicon/" .. var_61_2), true)
+	setImageSprite(slot0:findTF("mask/Image", slot0.avatarTF), LoadSprite("squareicon/" .. slot8), slot7)
 
-	for iter_61_0, iter_61_1 in ipairs(arg_61_0.natureIds) do
-		local var_61_3 = var_61_0:GetChild(iter_61_0 - 1)
+	for slot7, slot8 in ipairs(slot0.natureIds) do
+		slot9 = slot0:findTF("content", slot0.natureTF):GetChild(slot7 - 1)
 
-		setActive(arg_61_0:findTF("tip", var_61_3), false)
+		setActive(slot0:findTF("tip", slot9), false)
 
-		var_61_3.name = iter_61_1
+		slot9.name = slot8
 
-		setScrollText(arg_61_0:findTF("mask/Text", var_61_3), pg.child_attr[iter_61_1].name .. " " .. arg_61_0.char:GetAttrById(iter_61_1))
+		setScrollText(slot0:findTF("mask/Text", slot9), pg.child_attr[slot8].name .. " " .. slot0.char:GetAttrById(slot8))
 	end
 
-	arg_61_0.majorUIList:make(function(arg_64_0, arg_64_1, arg_64_2)
-		if arg_64_0 == UIItemList.EventInit then
-			local var_64_0 = arg_61_0.majorIds[arg_64_1 + 1]
+	slot0.majorUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			slot3 = uv0.majorIds[slot1 + 1]
+			slot2.name = slot3
 
-			arg_64_2.name = var_64_0
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. slot3, uv0:findTF("icon", slot2), true)
+			setScrollText(uv0:findTF("name_mask/name", slot2), pg.child_attr[slot3].name)
 
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var_64_0, arg_61_0:findTF("icon", arg_64_2), true)
-			setScrollText(arg_61_0:findTF("name_mask/name", arg_64_2), pg.child_attr[var_64_0].name)
+			slot4 = uv0.char:GetAttrInfo(slot3)
 
-			local var_64_1 = arg_61_0.char:GetAttrInfo(var_64_0)
-
-			setText(arg_61_0:findTF("grade/Text", arg_64_2), var_64_1)
-			setText(arg_61_0:findTF("before_value", arg_64_2), arg_61_0.char:GetAttrById(var_64_0))
-
-			local var_64_2 = EducateConst.GRADE_2_COLOR[var_64_1][2]
-
-			setActive(arg_61_0:findTF("gradient", arg_64_2), false)
-			setImageColor(arg_61_0:findTF("grade", arg_64_2), Color.NewHex(var_64_2))
-		elseif arg_64_0 == UIItemList.EventUpdate then
-			local var_64_3 = tonumber(arg_64_2.name)
-			local var_64_4 = arg_61_0.char:GetAttrById(var_64_3)
-
-			if arg_61_0.attrResults and arg_61_0.attrResults[var_64_3] then
-				var_64_4 = var_64_4 + arg_61_0.attrResults[var_64_3]
-
-				setActive(arg_61_0:findTF("gradient", arg_64_2), true)
-				setImageColor(arg_61_0:findTF("arrow", arg_64_2), Color.NewHex("9efffe"))
-				setText(arg_61_0:findTF("after_value", arg_64_2), setColorStr(var_64_4, "#9efffe"))
+			setText(uv0:findTF("grade/Text", slot2), slot4)
+			setText(uv0:findTF("before_value", slot2), uv0.char:GetAttrById(slot3))
+			setActive(uv0:findTF("gradient", slot2), false)
+			setImageColor(uv0:findTF("grade", slot2), Color.NewHex(EducateConst.GRADE_2_COLOR[slot4][2]))
+		elseif slot0 == UIItemList.EventUpdate then
+			if uv0.attrResults and uv0.attrResults[slot3] then
+				setActive(uv0:findTF("gradient", slot2), true)
+				setImageColor(uv0:findTF("arrow", slot2), Color.NewHex("9efffe"))
+				setText(uv0:findTF("after_value", slot2), setColorStr(uv0.char:GetAttrById(tonumber(slot2.name)) + uv0.attrResults[slot3], "#9efffe"))
 			else
-				setActive(arg_61_0:findTF("gradient", arg_64_2), false)
-				setImageColor(arg_61_0:findTF("arrow", arg_64_2), Color.NewHex("dddedf"))
-				setText(arg_61_0:findTF("after_value", arg_64_2), setColorStr(var_64_4, "#ffffff"))
+				setActive(uv0:findTF("gradient", slot2), false)
+				setImageColor(uv0:findTF("arrow", slot2), Color.NewHex("dddedf"))
+				setText(uv0:findTF("after_value", slot2), setColorStr(slot4, "#ffffff"))
 			end
 		end
 	end)
-	arg_61_0.minorUIList:make(function(arg_65_0, arg_65_1, arg_65_2)
-		if arg_65_0 == UIItemList.EventInit then
-			local var_65_0 = arg_61_0.minorIds[arg_65_1 + 1]
+	slot0.minorUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			slot3 = uv0.minorIds[slot1 + 1]
+			slot2.name = slot3
 
-			arg_65_2.name = var_65_0
+			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. slot3, uv0:findTF("icon", slot2), true)
+			setText(uv0:findTF("value", slot2), uv0.char:GetAttrById(slot3))
+		elseif slot0 == UIItemList.EventUpdate then
+			slot3 = tonumber(slot2.name)
 
-			GetImageSpriteFromAtlasAsync("ui/educatecommonui_atlas", "attr_" .. var_65_0, arg_61_0:findTF("icon", arg_65_2), true)
-			setText(arg_61_0:findTF("value", arg_65_2), arg_61_0.char:GetAttrById(var_65_0))
-		elseif arg_65_0 == UIItemList.EventUpdate then
-			local var_65_1 = tonumber(arg_65_2.name)
-			local var_65_2 = arg_61_0.char:GetAttrById(var_65_1)
+			setText(uv0:findTF("name", slot2), pg.child_attr[slot3].name)
 
-			setText(arg_61_0:findTF("name", arg_65_2), pg.child_attr[var_65_1].name)
-
-			if arg_61_0.attrResults and arg_61_0.attrResults[var_65_1] then
-				var_65_2 = var_65_2 .. setColorStr("+" .. arg_61_0.attrResults[var_65_1], "#9efffe")
+			if uv0.attrResults and uv0.attrResults[slot3] then
+				slot4 = uv0.char:GetAttrById(slot3) .. setColorStr("+" .. uv0.attrResults[slot3], "#9efffe")
 			end
 
-			setText(arg_61_0:findTF("value", arg_65_2), var_65_2)
+			setText(uv0:findTF("value", slot2), slot4)
 		end
 	end)
 
-	arg_61_0.attrResults, arg_61_0.resResult = {}, {}
+	slot0.resResult = {}
+	slot0.attrResults = {}
 
-	arg_61_0:updateResultPanel()
+	slot0:updateResultPanel()
 end
 
-function var_0_0.updateResultPanel(arg_66_0)
-	local var_66_0 = arg_66_0:allEmpty()
+function slot0.updateResultPanel(slot0)
+	slot1 = slot0:allEmpty()
 
-	setActive(arg_66_0.rightEmptyTF, var_66_0)
-	setActive(arg_66_0.rightContentTF, not var_66_0)
+	setActive(slot0.rightEmptyTF, slot1)
+	setActive(slot0.rightContentTF, not slot1)
 
-	if not var_66_0 then
-		arg_66_0.attrResults, arg_66_0.resResult = arg_66_0:getPlansResult()
+	if not slot1 then
+		slot0.attrResults, slot0.resResult = slot0:getPlansResult()
 
-		arg_66_0.majorUIList:align(#arg_66_0.majorIds)
-		arg_66_0.minorUIList:align(#arg_66_0.minorIds)
+		slot0.majorUIList:align(#slot0.majorIds)
+		slot0.minorUIList:align(#slot0.minorIds)
 
-		local var_66_1, var_66_2 = arg_66_0:getPlansCost()
-		local var_66_3 = arg_66_0.resResult[EducateChar.RES_MONEY_ID] or 0
-		local var_66_4 = arg_66_0.resResult[EducateChar.RES_MOOD_ID] or 0
-		local var_66_5 = var_66_3 - var_66_1 >= 0 and "+" .. var_66_3 - var_66_1 or var_66_3 - var_66_1
-		local var_66_6 = var_66_4 - var_66_2 >= 0 and "+" .. var_66_4 - var_66_2 or var_66_4 - var_66_2
+		slot2, slot3 = slot0:getPlansCost()
+		slot4 = slot0.resResult[EducateChar.RES_MONEY_ID] or 0
+		slot5 = slot0.resResult[EducateChar.RES_MOOD_ID] or 0
 
-		arg_66_0.resPanel:FlushAddValue(var_66_6, var_66_5)
+		slot0.resPanel:FlushAddValue(slot5 - slot3 >= 0 and "+" .. slot5 - slot3 or slot5 - slot3, slot4 - slot2 >= 0 and "+" .. slot4 - slot2 or slot4 - slot2)
 
-		local var_66_7 = EducateHelper.IsShowNature()
+		slot8 = EducateHelper.IsShowNature()
 
-		setActive(arg_66_0.natureTF, var_66_7)
-		setActive(arg_66_0.natureLockTF, not var_66_7)
+		setActive(slot0.natureTF, slot8)
+		setActive(slot0.natureLockTF, not slot8)
 
-		if var_66_7 then
-			local var_66_8 = arg_66_0:findTF("content", arg_66_0.natureTF)
+		if slot8 then
+			eachChild(slot0:findTF("content", slot0.natureTF), function (slot0)
+				slot1 = tonumber(slot0.name)
 
-			eachChild(var_66_8, function(arg_67_0)
-				local var_67_0 = tonumber(arg_67_0.name)
-
-				if arg_66_0.attrResults and arg_66_0.attrResults[var_67_0] and arg_66_0.attrResults[var_67_0] ~= 0 then
-					local var_67_1 = arg_66_0.attrResults[var_67_0]
-					local var_67_2 = var_67_1 > 0 and "+" or ""
-					local var_67_3 = var_67_1 > 0 and "39bfff" or "a9a9a9"
-
-					setActive(arg_66_0:findTF("tip", arg_67_0), true)
-					setImageColor(arg_66_0:findTF("tip", arg_67_0), Color.NewHex(var_67_3))
-					setText(arg_66_0:findTF("tip/Text", arg_67_0), var_67_2 .. var_67_1)
+				if uv0.attrResults and uv0.attrResults[slot1] and uv0.attrResults[slot1] ~= 0 then
+					setActive(uv0:findTF("tip", slot0), true)
+					setImageColor(uv0:findTF("tip", slot0), Color.NewHex(slot2 > 0 and "39bfff" or "a9a9a9"))
+					setText(uv0:findTF("tip/Text", slot0), (uv0.attrResults[slot1] > 0 and "+" or "") .. slot2)
 				else
-					setActive(arg_66_0:findTF("tip", arg_67_0), false)
+					setActive(uv0:findTF("tip", slot0), false)
 				end
 			end)
 		end
 	end
 end
 
-function var_0_0.getPlansResult(arg_68_0)
-	local var_68_0 = {}
-	local var_68_1 = {}
+function slot0.getPlansResult(slot0)
+	slot1 = {}
+	slot2 = {}
 
-	for iter_68_0, iter_68_1 in ipairs(arg_68_0.gridData) do
-		for iter_68_2, iter_68_3 in ipairs(iter_68_1) do
-			if iter_68_3:IsPlan() then
-				for iter_68_4, iter_68_5 in ipairs(iter_68_3.data:GetResult()) do
-					if iter_68_5[1] == EducateConst.DROP_TYPE_ATTR then
-						local var_68_2 = var_68_0[iter_68_5[2]] or 0
-
-						var_68_0[iter_68_5[2]] = var_68_2 + iter_68_5[3]
-					elseif iter_68_5[1] == EducateConst.DROP_TYPE_RES then
-						local var_68_3 = var_68_1[iter_68_5[2]] or 0
-
-						var_68_1[iter_68_5[2]] = var_68_3 + iter_68_5[3]
+	for slot6, slot7 in ipairs(slot0.gridData) do
+		for slot11, slot12 in ipairs(slot7) do
+			if slot12:IsPlan() then
+				for slot16, slot17 in ipairs(slot12.data:GetResult()) do
+					if slot17[1] == EducateConst.DROP_TYPE_ATTR then
+						slot1[slot17[2]] = (slot1[slot17[2]] or 0) + slot17[3]
+					elseif slot17[1] == EducateConst.DROP_TYPE_RES then
+						slot2[slot17[2]] = (slot2[slot17[2]] or 0) + slot17[3]
 					end
 				end
 			end
 		end
 	end
 
-	return var_68_0, var_68_1
+	return slot1, slot2
 end
 
-function var_0_0.getPlansCost(arg_69_0)
-	local var_69_0 = 0
-	local var_69_1 = 0
-	local var_69_2 = {}
+function slot0.getPlansCost(slot0)
+	slot1 = 0
+	slot2 = 0
+	slot3 = {}
 
-	for iter_69_0, iter_69_1 in pairs(arg_69_0.gridData) do
-		for iter_69_2, iter_69_3 in pairs(iter_69_1) do
-			if iter_69_3:IsPlan() then
-				local var_69_3, var_69_4 = iter_69_3.data:GetCost()
-
-				var_69_0 = var_69_0 + var_69_3
-				var_69_1 = var_69_1 + var_69_4
+	for slot7, slot8 in pairs(slot0.gridData) do
+		for slot12, slot13 in pairs(slot8) do
+			if slot13:IsPlan() then
+				slot14, slot15 = slot13.data:GetCost()
+				slot1 = slot1 + slot14
+				slot2 = slot2 + slot15
 			end
 		end
 	end
 
-	return var_69_0, var_69_1
+	return slot1, slot2
 end
 
-function var_0_0.getRemainGridCnt(arg_70_0, arg_70_1, arg_70_2)
-	local var_70_0 = arg_70_0.gridData[arg_70_1]
-	local var_70_1 = 1
-
-	for iter_70_0, iter_70_1 in pairs(var_70_0) do
-		if arg_70_2 < iter_70_0 and iter_70_1:IsEmpty() then
-			var_70_1 = var_70_1 + 1
+function slot0.getRemainGridCnt(slot0, slot1, slot2)
+	for slot8, slot9 in pairs(slot0.gridData[slot1]) do
+		if slot2 < slot8 and slot9:IsEmpty() then
+			slot4 = 1 + 1
 		end
 	end
 
-	return var_70_1
+	return slot4
 end
 
-function var_0_0.DoRecommend(arg_71_0)
-	local var_71_0 = arg_71_0.char:GetAttrSortIds()
+function slot0.DoRecommend(slot0)
+	slot1 = slot0.char:GetAttrSortIds()
 
-	for iter_71_0, iter_71_1 in pairs(arg_71_0.gridData) do
-		for iter_71_2, iter_71_3 in pairs(iter_71_1) do
-			if iter_71_3:IsEmpty() then
-				local var_71_1, var_71_2 = arg_71_0:getPlansCost()
-				local var_71_3 = arg_71_0:getRemainGridCnt(iter_71_0, iter_71_2)
-				local var_71_4 = arg_71_0.planProxy:GetRecommendPlan(iter_71_0, iter_71_2, arg_71_0.char, var_71_1, var_71_2, var_71_3, var_71_0)
+	for slot5, slot6 in pairs(slot0.gridData) do
+		for slot10, slot11 in pairs(slot6) do
+			if slot11:IsEmpty() then
+				slot12, slot13 = slot0:getPlansCost()
 
-				if var_71_4 then
-					local var_71_5 = EducateGrid.New({
+				if slot0.planProxy:GetRecommendPlan(slot5, slot10, slot0.char, slot12, slot13, slot0:getRemainGridCnt(slot5, slot10), slot1) then
+					slot0:setGridDataForPlan(slot5, slot10, EducateGrid.New({
 						type = EducateGrid.TYPE_PLAN,
-						id = var_71_4.id
-					})
-
-					arg_71_0:setGridDataForPlan(iter_71_0, iter_71_2, var_71_5)
+						id = slot15.id
+					}))
 				end
 			end
 		end
 	end
 
-	arg_71_0:updateResultPanel()
-	arg_71_0:closeSelectPanel()
+	slot0:updateResultPanel()
+	slot0:closeSelectPanel()
 end
 
-function var_0_0.onBackPressed(arg_72_0)
-	if isActive(arg_72_0.selectPanelTF) then
-		arg_72_0:closeSelectPanel()
+function slot0.onBackPressed(slot0)
+	if isActive(slot0.selectPanelTF) then
+		slot0:closeSelectPanel()
 	else
-		var_0_0.super.onBackPressed(arg_72_0)
+		uv0.super.onBackPressed(slot0)
 	end
 end
 
-function var_0_0.willExit(arg_73_0)
-	arg_73_0.topPanel:Destroy()
+function slot0.willExit(slot0)
+	slot0.topPanel:Destroy()
 
-	arg_73_0.topPanel = nil
+	slot0.topPanel = nil
 
-	arg_73_0.resPanel:Destroy()
+	slot0.resPanel:Destroy()
 
-	arg_73_0.resPanel = nil
+	slot0.resPanel = nil
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_73_0.mainTF, arg_73_0:findTF("anim_root"))
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_73_0.topTF, arg_73_0:findTF("anim_root"))
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.mainTF, slot0:findTF("anim_root"))
 
-	for iter_73_0, iter_73_1 in pairs(arg_73_0.planCards) do
-		iter_73_1:dispose()
+	slot5 = slot0
+	slot4 = slot0.findTF
+
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.topTF, slot4(slot5, "anim_root"))
+
+	for slot4, slot5 in pairs(slot0.planCards) do
+		slot5:dispose()
 	end
 end
 
-return var_0_0
+return slot0

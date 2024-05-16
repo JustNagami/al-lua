@@ -1,4 +1,18 @@
-﻿return {
+return {
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I"
+	},
+	desc_get = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I",
+	name = "专属弹幕-英格拉罕I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I",
+	stack = 1,
+	id = 29751,
+	icon = 29750,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -24,19 +38,5 @@
 				countType = 29750
 			}
 		}
-	},
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I"
-	},
-	desc_get = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I",
-	name = "专属弹幕-英格拉罕I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发专属弹幕-英格拉罕I",
-	stack = 1,
-	id = 29751,
-	icon = 29750,
-	last_effect = ""
+	}
 }

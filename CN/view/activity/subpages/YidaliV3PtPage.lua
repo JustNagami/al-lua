@@ -1,1 +1,1 @@
-﻿return (class("YidaliV3PtPage", import(".TemplatePage.PtTemplatePage")))
+return class("YidaliV3PtPage", import(".TemplatePage.PtTemplatePage"))

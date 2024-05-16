@@ -1,21 +1,21 @@
-﻿local var_0_0 = class("TWCelebrationPage1", import("...base.BaseActivityPage"))
+slot0 = class("TWCelebrationPage1", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.shop = arg_1_0:findTF("go", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.shop = slot0:findTF("go", slot0.bg)
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	local var_2_0 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_3_0)
-		return arg_3_0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
+function slot0.OnFirstFlush(slot0)
+	slot1 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
+		return slot0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
 	end)
 
-	onButton(arg_2_0, arg_2_0.shop, function()
-		arg_2_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
+	onButton(slot0, slot0.shop, function ()
+		uv0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = var_2_0 and var_2_0.id
+			actId = uv1 and uv1.id
 		})
 	end)
 end
 
-return var_0_0
+return slot0

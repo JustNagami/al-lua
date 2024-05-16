@@ -1,179 +1,148 @@
-﻿local var_0_0 = class("TowerClimbingGameView", import("..BaseMiniGameView"))
+slot0 = class("TowerClimbingGameView", import("..BaseMiniGameView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "TowerClimbingUI"
 end
 
-function var_0_0.GetMGData(arg_2_0)
-	local var_2_0 = arg_2_0.contextData.miniGameId
-
-	return getProxy(MiniGameProxy):GetMiniGameData(var_2_0):clone()
+function slot0.GetMGData(slot0)
+	return getProxy(MiniGameProxy):GetMiniGameData(slot0.contextData.miniGameId):clone()
 end
 
-function var_0_0.GetMGHubData(arg_3_0)
-	local var_3_0 = arg_3_0.contextData.miniGameId
-
-	return getProxy(MiniGameProxy):GetHubByGameId(var_3_0)
+function slot0.GetMGHubData(slot0)
+	return getProxy(MiniGameProxy):GetHubByGameId(slot0.contextData.miniGameId)
 end
 
-function var_0_0.didEnter(arg_4_0)
-	onButton(arg_4_0, arg_4_0:findTF("overview/back"), function()
-		arg_4_0:emit(var_0_0.ON_BACK)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0:findTF("overview/back"), function ()
+		uv0:emit(uv1.ON_BACK)
 	end, SFX_PANEL)
-	onButton(arg_4_0, arg_4_0:findTF("overview/collection"), function()
-		arg_4_0:emit(TowerClimbingMediator.ON_COLLECTION)
+	onButton(slot0, slot0:findTF("overview/collection"), function ()
+		uv0:emit(TowerClimbingMediator.ON_COLLECTION)
 	end, SFX_PANEL)
 
 	if LOCK_TOWERCLIMBING_AWARD then
-		setActive(arg_4_0:findTF("overview/collection"), false)
+		setActive(slot0:findTF("overview/collection"), false)
 	end
 end
 
-function var_0_0.UpdateTip(arg_7_0)
-	local var_7_0 = arg_7_0:GetMGData()
-	local var_7_1 = TowerClimbingCollectionLayer.New()
-
-	var_7_1:SetData(var_7_0)
-
-	local var_7_2 = _.any({
+function slot0.UpdateTip(slot0)
+	TowerClimbingCollectionLayer.New():SetData(slot0:GetMGData())
+	setActive(slot0:findTF("overview/collection/tip"), _.any({
 		1,
 		2,
 		3
-	}, function(arg_8_0)
-		return var_7_1:GetAwardState(arg_8_0) == 1
+	}, function (slot0)
+		return uv0:GetAwardState(slot0) == 1
+	end))
+end
+
+function slot0.Start(slot0)
+	slot0.controller = TowerClimbingController.New()
+
+	slot0.controller.view:SetUI(slot0._go)
+	slot0.controller:SetCallBack(function (slot0, slot1, slot2)
+		uv0:emit(TowerClimbingMediator.ON_FINISH, slot0, slot2, slot1)
+	end, function (slot0, slot1)
+		print("record map score:", slot0, slot1)
+		uv0:emit(TowerClimbingMediator.ON_RECORD_MAP_SCORE, slot0, slot1)
 	end)
-
-	setActive(arg_7_0:findTF("overview/collection/tip"), var_7_2)
+	slot0.controller:SetUp(slot0:PackData())
+	slot0:UpdateTip()
 end
 
-function var_0_0.Start(arg_9_0)
-	arg_9_0.controller = TowerClimbingController.New()
-
-	arg_9_0.controller.view:SetUI(arg_9_0._go)
-
-	local function var_9_0(arg_10_0, arg_10_1, arg_10_2)
-		arg_9_0:emit(TowerClimbingMediator.ON_FINISH, arg_10_0, arg_10_2, arg_10_1)
-	end
-
-	local function var_9_1(arg_11_0, arg_11_1)
-		print("record map score:", arg_11_0, arg_11_1)
-		arg_9_0:emit(TowerClimbingMediator.ON_RECORD_MAP_SCORE, arg_11_0, arg_11_1)
-	end
-
-	arg_9_0.controller:SetCallBack(var_9_0, var_9_1)
-
-	local var_9_2 = arg_9_0:PackData()
-
-	arg_9_0.controller:SetUp(var_9_2)
-	arg_9_0:UpdateTip()
-end
-
-function var_0_0.OnSendMiniGameOPDone(arg_12_0, arg_12_1)
-	if arg_12_1.hubid == 9 and arg_12_1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and arg_12_1.argList[1] == MiniGameDataCreator.TowerClimbingGameID and arg_12_1.argList[2] == 1 then
-		arg_12_0:Start()
-	elseif arg_12_1.hubid == 9 and arg_12_1.cmd == MiniGameOPCommand.CMD_COMPLETE or arg_12_1.hubid == 9 and arg_12_1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and (arg_12_1.argList[2] == 3 or arg_12_1.argList[2] == 4) then
-		local var_12_0 = arg_12_0:PackData()
-
-		arg_12_0.controller:NetUpdateData(var_12_0)
-		arg_12_0:UpdateTip()
+function slot0.OnSendMiniGameOPDone(slot0, slot1)
+	if slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and slot1.argList[1] == MiniGameDataCreator.TowerClimbingGameID and slot1.argList[2] == 1 then
+		slot0:Start()
+	elseif slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_COMPLETE or slot1.hubid == 9 and slot1.cmd == MiniGameOPCommand.CMD_SPECIAL_GAME and (slot1.argList[2] == 3 or slot1.argList[2] == 4) then
+		slot0.controller:NetUpdateData(slot0:PackData())
+		slot0:UpdateTip()
 	end
 end
 
-function var_0_0.GetTowerClimbingPageAndScore(arg_13_0)
-	local var_13_0 = arg_13_0[1] or {}
-	local var_13_1 = 3
+function slot0.GetTowerClimbingPageAndScore(slot0)
+	slot1 = slot0[1] or {}
 
-	for iter_13_0 = #var_13_0 + 1, var_13_1 do
-		table.insert(var_13_0, {
+	for slot6 = #slot1 + 1, 3 do
+		table.insert(slot1, {
 			value = 0,
 			value2 = 0,
-			key = iter_13_0
+			key = slot6
 		})
 	end
 
-	table.sort(var_13_0, function(arg_14_0, arg_14_1)
-		return arg_14_0.key < arg_14_1.key
+	table.sort(slot1, function (slot0, slot1)
+		return slot0.key < slot1.key
 	end)
 
-	local var_13_2 = var_0_0.GetAwardScores()
-	local var_13_3 = 0
-	local var_13_4 = 1
+	slot4 = 0
+	slot5 = 1
 
-	for iter_13_1, iter_13_2 in ipairs(var_13_0) do
-		local var_13_5 = var_13_2[iter_13_2.key]
-		local var_13_6 = var_13_5[#var_13_5]
+	for slot9, slot10 in ipairs(slot1) do
+		slot11 = uv0.GetAwardScores()[slot10.key]
 
-		if var_13_6 > iter_13_2.value2 or iter_13_1 == #var_13_0 and var_13_6 <= iter_13_2.value2 then
-			var_13_3 = iter_13_2.value2
-			var_13_4 = iter_13_2.key
+		if slot10.value2 < slot11[#slot11] or slot9 == #slot1 and slot12 <= slot10.value2 then
+			slot4 = slot10.value2
+			slot5 = slot10.key
 
 			break
 		end
 	end
 
-	local var_13_7 = {}
-	local var_13_8 = arg_13_0[2] or {}
-	local var_13_9 = 3
+	slot6 = {}
+	slot7 = slot0[2] or {}
 
-	for iter_13_3 = #var_13_8 + 1, var_13_9 do
-		table.insert(var_13_8, {
+	for slot12 = #slot7 + 1, 3 do
+		table.insert(slot7, {
 			value = 0,
-			key = iter_13_3
+			key = slot12
 		})
 	end
 
-	table.sort(var_13_8, function(arg_15_0, arg_15_1)
-		return arg_15_0.key < arg_15_1.key
+	table.sort(slot7, function (slot0, slot1)
+		return slot0.key < slot1.key
 	end)
 
-	for iter_13_4, iter_13_5 in ipairs(var_13_8) do
-		var_13_7[iter_13_5.key] = iter_13_5.value
+	for slot12, slot13 in ipairs(slot7) do
+		slot6[slot13.key] = slot13.value
 	end
 
-	return var_13_3, var_13_4, var_13_7
+	return slot4, slot5, slot6
 end
 
-function var_0_0.GetAwardScores()
-	local var_16_0 = pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data
-
-	return (_.map(var_16_0, function(arg_17_0)
-		return arg_17_0[1]
-	end))
+function slot0.GetAwardScores()
+	return _.map(pg.mini_game[MiniGameDataCreator.TowerClimbingGameID].simple_config_data, function (slot0)
+		return slot0[1]
+	end)
 end
 
-function var_0_0.PackData(arg_18_0)
-	local var_18_0 = arg_18_0._tf.rect.width
-	local var_18_1 = arg_18_0._tf.rect.height
-	local var_18_2 = arg_18_0:GetMGData():GetRuntimeData("kvpElements")
-	local var_18_3, var_18_4, var_18_5 = var_0_0.GetTowerClimbingPageAndScore(var_18_2)
+function slot0.PackData(slot0)
+	slot4, slot5, slot6 = uv0.GetTowerClimbingPageAndScore(slot0:GetMGData():GetRuntimeData("kvpElements"))
 
-	print(var_18_3, "-", var_18_4)
-
-	local var_18_6 = var_0_0.GetAwardScores()
+	print(slot4, "-", slot5)
 
 	return {
 		shipId = 107031,
 		npcName = "TowerClimbingManjuu",
 		life = 3,
-		screenWidth = var_18_0,
-		screenHeight = var_18_1,
-		higestscore = var_18_3,
-		pageIndex = var_18_4,
-		mapScores = var_18_5,
-		awards = var_18_6
+		screenWidth = slot0._tf.rect.width,
+		screenHeight = slot0._tf.rect.height,
+		higestscore = slot4,
+		pageIndex = slot5,
+		mapScores = slot6,
+		awards = uv0.GetAwardScores()
 	}
 end
 
-function var_0_0.onBackPressed(arg_19_0)
-	if arg_19_0.controller:onBackPressed() then
+function slot0.onBackPressed(slot0)
+	if slot0.controller:onBackPressed() then
 		return
 	end
 
-	arg_19_0:emit(var_0_0.ON_BACK)
+	slot0:emit(uv0.ON_BACK)
 end
 
-function var_0_0.willExit(arg_20_0)
-	arg_20_0.controller:Dispose()
+function slot0.willExit(slot0)
+	slot0.controller:Dispose()
 end
 
-return var_0_0
+return slot0

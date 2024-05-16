@@ -1,33 +1,33 @@
-﻿local var_0_0 = class("ChapterChampionSubmarine", import(".ChapterChampionNormal"))
+slot0 = class("ChapterChampionSubmarine", import(".ChapterChampionNormal"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot1)
 end
 
-function var_0_0.bindConfigTable(arg_2_0)
+function slot0.bindConfigTable(slot0)
 	return pg.expedition_data_template
 end
 
-function var_0_0.getPrefab(arg_3_0)
-	return arg_3_0:getConfig("icon")
+function slot0.getPrefab(slot0)
+	return slot0:getConfig("icon")
 end
 
-function var_0_0.getFleetType(arg_4_0)
+function slot0.getFleetType(slot0)
 	return FleetType.Submarine
 end
 
-function var_0_0.getPoolType(arg_5_0)
+function slot0.getPoolType(slot0)
 	return "tpl_enemy"
 end
 
-function var_0_0.getScale(arg_6_0)
-	return arg_6_0:getConfig("scale")
+function slot0.getScale(slot0)
+	return slot0:getConfig("scale")
 end
 
-function var_0_0.inAlertRange(arg_7_0, arg_7_1, arg_7_2)
-	return _.any(arg_7_0:getConfig("alert_range"), function(arg_8_0)
-		return arg_8_0[1] + arg_7_0.row == arg_7_1 and arg_8_0[2] + arg_7_0.column == arg_7_2
+function slot0.inAlertRange(slot0, slot1, slot2)
+	return _.any(slot0:getConfig("alert_range"), function (slot0)
+		return slot0[1] + uv0.row == uv1 and slot0[2] + uv0.column == uv2
 	end)
 end
 
-return var_0_0
+return slot0

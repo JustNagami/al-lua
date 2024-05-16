@@ -1,786 +1,744 @@
-﻿local var_0_0 = class("Live2dDrag")
-local var_0_1 = 4
+slot0 = class("Live2dDrag")
+slot1 = 4
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.live2dData = arg_1_2
-	arg_1_0.frameRate = Application.targetFrameRate or 60
-	arg_1_0.id = arg_1_1.id
-	arg_1_0.drawAbleName = arg_1_1.draw_able_name or ""
-	arg_1_0.parameterName = arg_1_1.parameter
-	arg_1_0.mode = arg_1_1.mode
-	arg_1_0.startValue = arg_1_1.start_value or 0
-	arg_1_0.range = arg_1_1.range
-	arg_1_0.offsetX = arg_1_1.offset_x
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.live2dData = slot2
+	slot0.frameRate = Application.targetFrameRate or 60
+	slot0.id = slot1.id
+	slot0.drawAbleName = slot1.draw_able_name or ""
+	slot0.parameterName = slot1.parameter
+	slot0.mode = slot1.mode
+	slot0.startValue = slot1.start_value or 0
+	slot0.range = slot1.range
+	slot0.offsetX = slot1.offset_x
 
-	if arg_1_0.offsetX == 0 then
-		arg_1_0.offsetX = nil
+	if slot0.offsetX == 0 then
+		slot0.offsetX = nil
 	end
 
-	arg_1_0.offsetY = arg_1_1.offset_y
+	slot0.offsetY = slot1.offset_y
 
-	if arg_1_0.offsetY == 0 then
-		arg_1_0.offsetY = nil
+	if slot0.offsetY == 0 then
+		slot0.offsetY = nil
 	end
 
-	arg_1_0.smooth = arg_1_1.smooth / 1000
-	arg_1_0.smoothRevert = arg_1_1.revert_smooth / 1000
-	arg_1_0.revert = arg_1_1.revert
-	arg_1_0.ignoreReact = arg_1_1.ignore_react == 1
-	arg_1_0.gyro = arg_1_1.gyro == 1 or nil
-	arg_1_0.gyroX = arg_1_1.gyro_x == 1
-	arg_1_0.gyroY = arg_1_1.gyro_y == 1
-	arg_1_0.gyroZ = arg_1_1.gyro_z == 1
-	arg_1_0.ignoreAction = arg_1_1.ignore_action == 1
-	arg_1_0.dragDirect = arg_1_1.drag_direct
-	arg_1_0.rangeAbs = arg_1_1.range_abs == 1
-	arg_1_0.partsData = arg_1_1.parts_data
-	arg_1_0.actionTrigger = arg_1_1.action_trigger
-	arg_1_0.reactX = arg_1_1.react_pos_x ~= 0 and arg_1_1.react_pos_x or nil
-	arg_1_0.reactY = arg_1_1.react_pos_y ~= 0 and arg_1_1.react_pos_y or nil
-	arg_1_0.actionTriggerActive = arg_1_1.action_trigger_active
-	arg_1_0.relationParameter = arg_1_1.relation_parameter
-	arg_1_0.limitTime = arg_1_1.limit_time > 0 and arg_1_1.limit_time or var_0_1
-	arg_1_0.revertIdleIndex = arg_1_1.revert_idle_index == 1 and true or false
-	arg_1_0.revertActionIndex = arg_1_1.revert_action_index == 1 and true or false
-	arg_1_0.randomAttitudeIndex = L2D_RANDOM_PARAM
-	arg_1_0._active = false
-	arg_1_0._parameterCom = nil
-	arg_1_0.parameterValue = arg_1_0.startValue
-	arg_1_0.parameterTargetValue = arg_1_0.startValue
-	arg_1_0.parameterSmooth = 0
-	arg_1_0.parameterSmoothTime = arg_1_0.smooth
-	arg_1_0.mouseInputDown = Vector2(0, 0)
-	arg_1_0.nextTriggerTime = 0
-	arg_1_0.triggerActionTime = 0
-	arg_1_0.sensitive = 4
-	arg_1_0.l2dIdleIndex = 0
-	arg_1_0.reactPos = Vector2(0, 0)
-	arg_1_0.actionListIndex = 1
-	arg_1_0._relationParameterList = {}
-	arg_1_0.offsetDragX = arg_1_0.startValue
-	arg_1_0.offsetDragY = arg_1_0.startValue
-	arg_1_0.offsetDragTargetX = arg_1_0.startValue
-	arg_1_0.offsetDragTargetY = arg_1_0.startValue
-	arg_1_0.parameterComAdd = true
+	slot0.smooth = slot1.smooth / 1000
+	slot0.smoothRevert = slot1.revert_smooth / 1000
+	slot0.revert = slot1.revert
+	slot0.ignoreReact = slot1.ignore_react == 1
+	slot0.gyro = slot1.gyro == 1 or nil
+	slot0.gyroX = slot1.gyro_x == 1
+	slot0.gyroY = slot1.gyro_y == 1
+	slot0.gyroZ = slot1.gyro_z == 1
+	slot0.ignoreAction = slot1.ignore_action == 1
+	slot0.dragDirect = slot1.drag_direct
+	slot0.rangeAbs = slot1.range_abs == 1
+	slot0.partsData = slot1.parts_data
+	slot0.actionTrigger = slot1.action_trigger
+	slot0.reactX = slot1.react_pos_x ~= 0 and slot1.react_pos_x or nil
+	slot0.reactY = slot1.react_pos_y ~= 0 and slot1.react_pos_y or nil
+	slot0.actionTriggerActive = slot1.action_trigger_active
+	slot0.relationParameter = slot1.relation_parameter
+	slot0.limitTime = slot1.limit_time > 0 and slot1.limit_time or uv0
+	slot0.revertIdleIndex = slot1.revert_idle_index == 1 and true or false
+	slot0.revertActionIndex = slot1.revert_action_index == 1 and true or false
+	slot0.randomAttitudeIndex = L2D_RANDOM_PARAM
+	slot0._active = false
+	slot0._parameterCom = nil
+	slot0.parameterValue = slot0.startValue
+	slot0.parameterTargetValue = slot0.startValue
+	slot0.parameterSmooth = 0
+	slot0.parameterSmoothTime = slot0.smooth
+	slot0.mouseInputDown = Vector2(0, 0)
+	slot0.nextTriggerTime = 0
+	slot0.triggerActionTime = 0
+	slot0.sensitive = 4
+	slot0.l2dIdleIndex = 0
+	slot0.reactPos = Vector2(0, 0)
+	slot0.actionListIndex = 1
+	slot0._relationParameterList = {}
+	slot0.offsetDragX = slot0.startValue
+	slot0.offsetDragY = slot0.startValue
+	slot0.offsetDragTargetX = slot0.startValue
+	slot0.offsetDragTargetY = slot0.startValue
+	slot0.parameterComAdd = true
 end
 
-function var_0_0.startDrag(arg_2_0)
-	if arg_2_0.ignoreAction and arg_2_0.l2dIsPlaying then
+function slot0.startDrag(slot0)
+	if slot0.ignoreAction and slot0.l2dIsPlaying then
 		return
 	end
 
-	if not arg_2_0._active then
-		arg_2_0._active = true
-		arg_2_0.mouseInputDown = Input.mousePosition
-		arg_2_0.mouseInputDownTime = Time.time
-		arg_2_0.triggerActionTime = 0
+	if not slot0._active then
+		slot0._active = true
+		slot0.mouseInputDown = Input.mousePosition
+		slot0.mouseInputDownTime = Time.time
+		slot0.triggerActionTime = 0
 
-		if arg_2_0.actionTrigger.type == Live2D.DRAG_DOWN_ACTION then
-			arg_2_0.actionListIndex = 1
+		if slot0.actionTrigger.type == Live2D.DRAG_DOWN_ACTION then
+			slot0.actionListIndex = 1
 		end
 
-		arg_2_0.parameterSmoothTime = arg_2_0.smooth
+		slot0.parameterSmoothTime = slot0.smooth
 	end
 end
 
-function var_0_0.stopDrag(arg_3_0)
-	if arg_3_0._active then
-		arg_3_0._active = false
+function slot0.stopDrag(slot0)
+	if slot0._active then
+		slot0._active = false
 
-		if arg_3_0.revert > 0 then
-			arg_3_0.parameterToStart = arg_3_0.revert / 1000
-			arg_3_0.parameterSmoothTime = arg_3_0.smoothRevert
+		if slot0.revert > 0 then
+			slot0.parameterToStart = slot0.revert / 1000
+			slot0.parameterSmoothTime = slot0.smoothRevert
 		end
 
-		if arg_3_0.offsetDragX then
-			arg_3_0.offsetDragTargetX = arg_3_0:fixParameterTargetValue(arg_3_0.offsetDragX, arg_3_0.range, arg_3_0.rangeAbs, arg_3_0.dragDirect)
+		if slot0.offsetDragX then
+			slot0.offsetDragTargetX = slot0:fixParameterTargetValue(slot0.offsetDragX, slot0.range, slot0.rangeAbs, slot0.dragDirect)
 		end
 
-		if arg_3_0.offsetDragY then
-			arg_3_0.offsetDragTargetY = arg_3_0:fixParameterTargetValue(arg_3_0.offsetDragY, arg_3_0.range, arg_3_0.rangeAbs, arg_3_0.dragDirect)
+		if slot0.offsetDragY then
+			slot0.offsetDragTargetY = slot0:fixParameterTargetValue(slot0.offsetDragY, slot0.range, slot0.rangeAbs, slot0.dragDirect)
 		end
 
-		if type(arg_3_0.partsData) == "table" then
-			local var_3_0 = arg_3_0.partsData.parts
+		if type(slot0.partsData) == "table" then
+			slot1 = slot0.partsData.parts
 
-			if arg_3_0.offsetX or arg_3_0.offsetY then
-				local var_3_1 = arg_3_0.parameterTargetValue
-				local var_3_2
-				local var_3_3
+			if slot0.offsetX or slot0.offsetY then
+				slot3, slot4 = nil
 
-				for iter_3_0 = 1, #var_3_0 do
-					local var_3_4 = var_3_0[iter_3_0]
-					local var_3_5 = math.abs(var_3_1 - var_3_4)
+				for slot8 = 1, #slot1 do
+					slot10 = math.abs(slot0.parameterTargetValue - slot1[slot8])
 
-					if not var_3_2 or var_3_5 < var_3_2 then
-						var_3_2 = var_3_5
-						var_3_3 = iter_3_0
+					if not slot3 or slot10 < slot3 then
+						slot3 = slot10
+						slot4 = slot8
 					end
 				end
 
-				if var_3_3 then
-					arg_3_0:setTargetValue(var_3_0[var_3_3])
+				if slot4 then
+					slot0:setTargetValue(slot1[slot4])
 				end
 			end
 		end
 
-		arg_3_0.mouseInputUp = Input.mousePosition
-		arg_3_0.mouseInputUpTime = Time.time
+		slot0.mouseInputUp = Input.mousePosition
+		slot0.mouseInputUpTime = Time.time
 
-		arg_3_0:saveData()
+		slot0:saveData()
 	end
 end
 
-function var_0_0.getIgnoreReact(arg_4_0)
-	return arg_4_0.ignoreReact
+function slot0.getIgnoreReact(slot0)
+	return slot0.ignoreReact
 end
 
-function var_0_0.setParameterCom(arg_5_0, arg_5_1)
-	if not arg_5_1 then
-		print("live2dDrag id:" .. tostring(arg_5_0.id) .. "设置了null的组件(该打印非报错)")
+function slot0.setParameterCom(slot0, slot1)
+	if not slot1 then
+		print("live2dDrag id:" .. tostring(slot0.id) .. "设置了null的组件(该打印非报错)")
 	end
 
-	arg_5_0._parameterCom = arg_5_1
+	slot0._parameterCom = slot1
 end
 
-function var_0_0.getParameterCom(arg_6_0)
-	return arg_6_0._parameterCom
+function slot0.getParameterCom(slot0)
+	return slot0._parameterCom
 end
 
-function var_0_0.addRelationComData(arg_7_0, arg_7_1, arg_7_2)
-	table.insert(arg_7_0._relationParameterList, {
-		com = arg_7_1,
-		data = arg_7_2
+function slot0.addRelationComData(slot0, slot1, slot2)
+	table.insert(slot0._relationParameterList, {
+		com = slot1,
+		data = slot2
 	})
 end
 
-function var_0_0.getRelationParameterList(arg_8_0)
-	return arg_8_0._relationParameterList
+function slot0.getRelationParameterList(slot0)
+	return slot0._relationParameterList
 end
 
-function var_0_0.getActive(arg_9_0)
-	return arg_9_0._active
+function slot0.getActive(slot0)
+	return slot0._active
 end
 
-function var_0_0.getParameterUpdateFlag(arg_10_0)
-	return arg_10_0._parameterUpdateFlag
+function slot0.getParameterUpdateFlag(slot0)
+	return slot0._parameterUpdateFlag
 end
 
-function var_0_0.setEventCallback(arg_11_0, arg_11_1)
-	arg_11_0._eventCallback = arg_11_1
+function slot0.setEventCallback(slot0, slot1)
+	slot0._eventCallback = slot1
 end
 
-function var_0_0.onEventCallback(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	if arg_12_1 == Live2D.EVENT_ACTION_APPLY then
-		local var_12_0 = {}
-		local var_12_1
-		local var_12_2 = false
-		local var_12_3
-		local var_12_4
-		local var_12_5
+function slot0.onEventCallback(slot0, slot1, slot2, slot3)
+	if slot1 == Live2D.EVENT_ACTION_APPLY then
+		slot4 = {}
+		slot5 = nil
+		slot6 = false
+		slot7, slot8, slot9 = nil
 
-		if arg_12_0.actionTrigger.action then
-			var_12_1 = arg_12_0:fillterAction(arg_12_0.actionTrigger.action)
-			var_12_0 = arg_12_0.actionTriggerActive
-			var_12_2 = arg_12_0.actionTrigger.focus or false
-			var_12_3 = arg_12_0.actionTrigger.target or nil
+		if slot0.actionTrigger.action then
+			slot5 = slot0:fillterAction(slot0.actionTrigger.action)
+			slot4 = slot0.actionTriggerActive
+			slot6 = slot0.actionTrigger.focus or false
+			slot7 = slot0.actionTrigger.target or nil
 
-			if (arg_12_0.actionTrigger.circle or nil) and var_12_3 and var_12_3 == arg_12_0.parameterTargetValue then
-				var_12_3 = arg_12_0.startValue
+			if (slot0.actionTrigger.circle or nil) and slot7 and slot7 == slot0.parameterTargetValue then
+				slot7 = slot0.startValue
 			end
 
-			var_12_4 = arg_12_0.actionTrigger.react or nil
+			slot8 = slot0.actionTrigger.react or nil
 
-			arg_12_0:triggerAction()
-			arg_12_0:stopDrag()
-		elseif arg_12_0.actionTrigger.action_list then
-			local var_12_6 = arg_12_0.actionTrigger.action_list[arg_12_0.actionListIndex]
+			slot0:triggerAction()
+			slot0:stopDrag()
+		elseif slot0.actionTrigger.action_list then
+			slot5 = slot0:fillterAction(slot0.actionTrigger.action_list[slot0.actionListIndex].action)
 
-			var_12_1 = arg_12_0:fillterAction(var_12_6.action)
-
-			if arg_12_0.actionTriggerActive.active_list and arg_12_0.actionListIndex <= #arg_12_0.actionTriggerActive.active_list then
-				var_12_0 = arg_12_0.actionTriggerActive.active_list[arg_12_0.actionListIndex]
+			if slot0.actionTriggerActive.active_list and slot0.actionListIndex <= #slot0.actionTriggerActive.active_list then
+				slot4 = slot0.actionTriggerActive.active_list[slot0.actionListIndex]
 			end
 
-			var_12_2 = var_12_6.focus or true
-			var_12_3 = var_12_6.target or nil
-			var_12_4 = var_12_6.react or nil
+			slot6 = slot10.focus or true
+			slot7 = slot10.target or nil
+			slot8 = slot10.react or nil
 
-			if arg_12_0.actionListIndex == #arg_12_0.actionTrigger.action_list then
-				arg_12_0:triggerAction()
-				arg_12_0:stopDrag()
+			if slot0.actionListIndex == #slot0.actionTrigger.action_list then
+				slot0:triggerAction()
+				slot0:stopDrag()
 
-				arg_12_0.actionListIndex = 1
+				slot0.actionListIndex = 1
 			else
-				arg_12_0.actionListIndex = arg_12_0.actionListIndex + 1
+				slot0.actionListIndex = slot0.actionListIndex + 1
 			end
 
-			print("id = " .. arg_12_0.id .. " action list index = " .. arg_12_0.actionListIndex)
-		elseif not arg_12_0.actionTrigger.action then
-			var_12_1 = arg_12_0:fillterAction(arg_12_0.actionTrigger.action)
-			var_12_0 = arg_12_0.actionTriggerActive
-			var_12_2 = arg_12_0.actionTrigger.focus or false
-			var_12_3 = arg_12_0.actionTrigger.target or nil
+			print("id = " .. slot0.id .. " action list index = " .. slot0.actionListIndex)
+		elseif not slot0.actionTrigger.action then
+			slot5 = slot0:fillterAction(slot0.actionTrigger.action)
+			slot4 = slot0.actionTriggerActive
+			slot6 = slot0.actionTrigger.focus or false
+			slot7 = slot0.actionTrigger.target or nil
 
-			if (arg_12_0.actionTrigger.circle or nil) and var_12_3 and var_12_3 == arg_12_0.parameterTargetValue then
-				var_12_3 = arg_12_0.startValue
+			if (slot0.actionTrigger.circle or nil) and slot7 and slot7 == slot0.parameterTargetValue then
+				slot7 = slot0.startValue
 			end
 
-			var_12_4 = arg_12_0.actionTrigger.react or nil
+			slot8 = slot0.actionTrigger.react or nil
 
-			arg_12_0:triggerAction()
-			arg_12_0:stopDrag()
+			slot0:triggerAction()
+			slot0:stopDrag()
 		end
 
-		if var_12_0.idle then
-			if type(var_12_0.idle) == "number" then
-				if var_12_0.idle == arg_12_0.l2dIdleIndex and not var_12_0.repeatFlag then
+		if slot4.idle then
+			if type(slot4.idle) == "number" then
+				if slot4.idle == slot0.l2dIdleIndex and not slot4.repeatFlag then
 					return
 				end
-			elseif type(var_12_0.idle) == "table" and #var_12_0.idle == 1 and var_12_0.idle[1] == arg_12_0.l2dIdleIndex and not var_12_0.repeatFlag then
+			elseif type(slot4.idle) == "table" and #slot4.idle == 1 and slot4.idle[1] == slot0.l2dIdleIndex and not slot4.repeatFlag then
 				return
 			end
 		end
 
-		if var_12_3 then
-			arg_12_0:setTargetValue(var_12_3)
+		if slot7 then
+			slot0:setTargetValue(slot7)
 
-			if not var_12_1 then
-				arg_12_0.revertResetFlag = true
+			if not slot5 then
+				slot0.revertResetFlag = true
 			end
 		end
 
-		arg_12_2 = {
-			id = arg_12_0.id,
-			action = var_12_1,
-			activeData = var_12_0,
-			focus = var_12_2,
-			react = var_12_4,
-			function()
-				arg_12_0:actionApplyFinish()
-			end
+		slot2 = {
+			function ()
+				uv0:actionApplyFinish()
+			end,
+			id = slot0.id,
+			action = slot5,
+			activeData = slot4,
+			focus = slot6,
+			react = slot8
 		}
-	elseif arg_12_1 == Live2D.EVENT_ACTION_ABLE then
-		-- block empty
+	elseif slot1 == Live2D.EVENT_ACTION_ABLE then
+		-- Nothing
 	end
 
-	arg_12_0._eventCallback(arg_12_1, arg_12_2, arg_12_3)
+	slot0._eventCallback(slot1, slot2, slot3)
 end
 
-function var_0_0.fillterAction(arg_14_0, arg_14_1)
-	if type(arg_14_1) == "table" then
-		return arg_14_1[math.random(1, #arg_14_0.actionTrigger.action)]
+function slot0.fillterAction(slot0, slot1)
+	if type(slot1) == "table" then
+		return slot1[math.random(1, #slot0.actionTrigger.action)]
 	else
-		return arg_14_1
+		return slot1
 	end
 end
 
-function var_0_0.setTargetValue(arg_15_0, arg_15_1)
-	arg_15_0.parameterTargetValue = arg_15_1
+function slot0.setTargetValue(slot0, slot1)
+	slot0.parameterTargetValue = slot1
 end
 
-function var_0_0.getParameter(arg_16_0)
-	return arg_16_0.parameterValue
+function slot0.getParameter(slot0)
+	return slot0.parameterValue
 end
 
-function var_0_0.getParameToTargetFlag(arg_17_0)
-	if arg_17_0.parameterValue ~= arg_17_0.parameterTargetValue then
+function slot0.getParameToTargetFlag(slot0)
+	if slot0.parameterValue ~= slot0.parameterTargetValue then
 		return true
 	end
 
-	if arg_17_0.parameterToStart and arg_17_0.parameterToStart > 0 then
+	if slot0.parameterToStart and slot0.parameterToStart > 0 then
 		return true
 	end
 
 	return false
 end
 
-function var_0_0.actionApplyFinish(arg_18_0)
-	return
+function slot0.actionApplyFinish(slot0)
 end
 
-function var_0_0.stepParameter(arg_19_0)
-	arg_19_0:updateState()
-	arg_19_0:updateTrigger()
-	arg_19_0:updateParameterUpdateFlag()
-	arg_19_0:updateGyro()
-	arg_19_0:updateDrag()
-	arg_19_0:updateReactValue()
-	arg_19_0:updateParameterValue()
-	arg_19_0:updateRelationValue()
-	arg_19_0:checkReset()
+function slot0.stepParameter(slot0)
+	slot0:updateState()
+	slot0:updateTrigger()
+	slot0:updateParameterUpdateFlag()
+	slot0:updateGyro()
+	slot0:updateDrag()
+	slot0:updateReactValue()
+	slot0:updateParameterValue()
+	slot0:updateRelationValue()
+	slot0:checkReset()
 end
 
-function var_0_0.updateParameterUpdateFlag(arg_20_0)
-	if arg_20_0.actionTrigger.type == Live2D.DRAG_CLICK_ACTION then
-		arg_20_0._parameterUpdateFlag = true
-	elseif arg_20_0.actionTrigger.type == Live2D.DRAG_RELATION_IDLE then
-		if not arg_20_0._parameterUpdateFlag then
-			if not arg_20_0.l2dIsPlaying then
-				arg_20_0._parameterUpdateFlag = true
+function slot0.updateParameterUpdateFlag(slot0)
+	if slot0.actionTrigger.type == Live2D.DRAG_CLICK_ACTION then
+		slot0._parameterUpdateFlag = true
+	elseif slot0.actionTrigger.type == Live2D.DRAG_RELATION_IDLE then
+		if not slot0._parameterUpdateFlag then
+			if not slot0.l2dIsPlaying then
+				slot0._parameterUpdateFlag = true
 
-				arg_20_0:changeParameComAble(true)
-			elseif not table.contains(arg_20_0.actionTrigger.remove_com_list, arg_20_0.l2dPlayActionName) then
-				arg_20_0._parameterUpdateFlag = true
+				slot0:changeParameComAble(true)
+			elseif not table.contains(slot0.actionTrigger.remove_com_list, slot0.l2dPlayActionName) then
+				slot0._parameterUpdateFlag = true
 
-				arg_20_0:changeParameComAble(true)
+				slot0:changeParameComAble(true)
 			end
-		elseif arg_20_0._parameterUpdateFlag == true and arg_20_0.l2dIsPlaying and table.contains(arg_20_0.actionTrigger.remove_com_list, arg_20_0.l2dPlayActionName) then
-			arg_20_0._parameterUpdateFlag = false
+		elseif slot0._parameterUpdateFlag == true and slot0.l2dIsPlaying and table.contains(slot0.actionTrigger.remove_com_list, slot0.l2dPlayActionName) then
+			slot0._parameterUpdateFlag = false
 
-			arg_20_0:changeParameComAble(false)
+			slot0:changeParameComAble(false)
 		end
 	else
-		arg_20_0._parameterUpdateFlag = false
+		slot0._parameterUpdateFlag = false
 	end
 end
 
-function var_0_0.changeParameComAble(arg_21_0, arg_21_1)
-	if arg_21_0.parameterComAdd == arg_21_1 then
+function slot0.changeParameComAble(slot0, slot1)
+	if slot0.parameterComAdd == slot1 then
 		return
 	end
 
-	arg_21_0.parameterComAdd = arg_21_1
+	slot0.parameterComAdd = slot1
 
-	if arg_21_1 then
-		arg_21_0:onEventCallback(Live2D.EVENT_ADD_PARAMETER_COM, {
-			com = arg_21_0._parameterCom,
-			start = arg_21_0.startValue,
-			mode = arg_21_0.mode
+	if slot1 then
+		slot0:onEventCallback(Live2D.EVENT_ADD_PARAMETER_COM, {
+			com = slot0._parameterCom,
+			start = slot0.startValue,
+			mode = slot0.mode
 		})
 	else
-		arg_21_0:onEventCallback(Live2D.EVENT_REMOVE_PARAMETER_COM, {
-			com = arg_21_0._parameterCom,
-			mode = arg_21_0.mode
+		slot0:onEventCallback(Live2D.EVENT_REMOVE_PARAMETER_COM, {
+			com = slot0._parameterCom,
+			mode = slot0.mode
 		})
 	end
 end
 
-function var_0_0.updateDrag(arg_22_0)
-	if not arg_22_0.offsetX and not arg_22_0.offsetY then
+function slot0.updateDrag(slot0)
+	if not slot0.offsetX and not slot0.offsetY then
 		return
 	end
 
-	local var_22_0
+	slot1 = nil
 
-	if arg_22_0._active then
-		local var_22_1 = Input.mousePosition
-
-		if arg_22_0.offsetX and arg_22_0.offsetX ~= 0 then
-			local var_22_2 = var_22_1.x - arg_22_0.mouseInputDown.x
-
-			var_22_0 = arg_22_0.offsetDragTargetX + var_22_2 / arg_22_0.offsetX
-			arg_22_0.offsetDragX = var_22_0
+	if slot0._active then
+		if slot0.offsetX and slot0.offsetX ~= 0 then
+			slot0.offsetDragX = slot0.offsetDragTargetX + (Input.mousePosition.x - slot0.mouseInputDown.x) / slot0.offsetX
 		end
 
-		if arg_22_0.offsetY and arg_22_0.offsetY ~= 0 then
-			local var_22_3 = var_22_1.y - arg_22_0.mouseInputDown.y
-
-			var_22_0 = arg_22_0.offsetDragTargetY + var_22_3 / arg_22_0.offsetY
-			arg_22_0.offsetDragY = var_22_0
+		if slot0.offsetY and slot0.offsetY ~= 0 then
+			slot0.offsetDragY = slot0.offsetDragTargetY + (slot2.y - slot0.mouseInputDown.y) / slot0.offsetY
 		end
 
-		if var_22_0 then
-			arg_22_0:setTargetValue(arg_22_0:fixParameterTargetValue(var_22_0, arg_22_0.range, arg_22_0.rangeAbs, arg_22_0.dragDirect))
+		if slot1 then
+			slot0:setTargetValue(slot0:fixParameterTargetValue(slot1, slot0.range, slot0.rangeAbs, slot0.dragDirect))
 		end
 	end
 
-	arg_22_0._parameterUpdateFlag = true
+	slot0._parameterUpdateFlag = true
 end
 
-function var_0_0.updateGyro(arg_23_0)
-	if not arg_23_0.gyro then
+function slot0.updateGyro(slot0)
+	if not slot0.gyro then
 		return
 	end
 
 	if not Input.gyro.enabled then
-		arg_23_0:setTargetValue(0)
+		slot0:setTargetValue(0)
 
-		arg_23_0._parameterUpdateFlag = true
+		slot0._parameterUpdateFlag = true
 
 		return
 	end
 
-	local var_23_0 = Input.gyro and Input.gyro.attitude or Vector3.zero
-	local var_23_1 = 0
+	slot1 = Input.gyro and Input.gyro.attitude or Vector3.zero
+	slot2 = 0
 
-	if arg_23_0.gyroX and not math.isnan(var_23_0.y) then
-		var_23_1 = Mathf.Clamp(var_23_0.y * arg_23_0.sensitive, -0.5, 0.5)
-	elseif arg_23_0.gyroY and not math.isnan(var_23_0.x) then
-		var_23_1 = Mathf.Clamp(var_23_0.x * arg_23_0.sensitive, -0.5, 0.5)
-	elseif arg_23_0.gyroZ and not math.isnan(var_23_0.z) then
-		var_23_1 = Mathf.Clamp(var_23_0.z * arg_23_0.sensitive, -0.5, 0.5)
+	if slot0.gyroX and not math.isnan(slot1.y) then
+		slot2 = Mathf.Clamp(slot1.y * slot0.sensitive, -0.5, 0.5)
+	elseif slot0.gyroY and not math.isnan(slot1.x) then
+		slot2 = Mathf.Clamp(slot1.x * slot0.sensitive, -0.5, 0.5)
+	elseif slot0.gyroZ and not math.isnan(slot1.z) then
+		slot2 = Mathf.Clamp(slot1.z * slot0.sensitive, -0.5, 0.5)
 	end
 
 	if IsUnityEditor then
 		if L2D_USE_RANDOM_ATTI then
-			if arg_23_0.randomAttitudeIndex == 0 then
-				var_23_1 = math.random() - 0.5
+			if slot0.randomAttitudeIndex == 0 then
+				slot0:setTargetValue((math.random() - 0.5 + 0.5) * (slot0.range[2] - slot0.range[1]) + slot0.range[1])
 
-				local var_23_2 = (var_23_1 + 0.5) * (arg_23_0.range[2] - arg_23_0.range[1]) + arg_23_0.range[1]
-
-				arg_23_0:setTargetValue(var_23_2)
-
-				arg_23_0.randomAttitudeIndex = L2D_RANDOM_PARAM
-			elseif arg_23_0.randomAttitudeIndex > 0 then
-				arg_23_0.randomAttitudeIndex = arg_23_0.randomAttitudeIndex - 1
+				slot0.randomAttitudeIndex = L2D_RANDOM_PARAM
+			elseif slot0.randomAttitudeIndex > 0 then
+				slot0.randomAttitudeIndex = slot0.randomAttitudeIndex - 1
 			end
 		end
 	else
-		local var_23_3 = (var_23_1 + 0.5) * (arg_23_0.range[2] - arg_23_0.range[1]) + arg_23_0.range[1]
-
-		arg_23_0:setTargetValue(var_23_3)
+		slot0:setTargetValue((slot2 + 0.5) * (slot0.range[2] - slot0.range[1]) + slot0.range[1])
 	end
 
-	arg_23_0._parameterUpdateFlag = true
+	slot0._parameterUpdateFlag = true
 end
 
-function var_0_0.updateReactValue(arg_24_0)
-	if not arg_24_0.reactX and not arg_24_0.reactY then
+function slot0.updateReactValue(slot0)
+	if not slot0.reactX and not slot0.reactY then
 		return
 	end
 
-	local var_24_0
-	local var_24_1 = false
+	slot1 = nil
+	slot2 = false
 
-	if arg_24_0.l2dIgnoreReact then
-		var_24_0 = arg_24_0.parameterTargetValue
-	elseif arg_24_0.reactX then
-		var_24_0 = arg_24_0.reactPos.x * arg_24_0.reactX
-		var_24_1 = true
+	if slot0.l2dIgnoreReact then
+		slot1 = slot0.parameterTargetValue
+	elseif slot0.reactX then
+		slot1 = slot0.reactPos.x * slot0.reactX
+		slot2 = true
 	else
-		var_24_0 = arg_24_0.reactPos.y * arg_24_0.reactY
-		var_24_1 = true
+		slot1 = slot0.reactPos.y * slot0.reactY
+		slot2 = true
 	end
 
-	if var_24_1 then
-		arg_24_0:setTargetValue(arg_24_0:fixParameterTargetValue(var_24_0, arg_24_0.range, arg_24_0.rangeAbs, arg_24_0.dragDirect))
+	if slot2 then
+		slot0:setTargetValue(slot0:fixParameterTargetValue(slot1, slot0.range, slot0.rangeAbs, slot0.dragDirect))
 	end
 
-	arg_24_0._parameterUpdateFlag = true
+	slot0._parameterUpdateFlag = true
 end
 
-function var_0_0.updateParameterValue(arg_25_0)
-	if arg_25_0._parameterUpdateFlag and arg_25_0.parameterValue ~= arg_25_0.parameterTargetValue then
-		if math.abs(arg_25_0.parameterValue - arg_25_0.parameterTargetValue) < 0.01 then
-			arg_25_0:setParameterValue(arg_25_0.parameterTargetValue)
-		elseif arg_25_0.parameterSmoothTime and arg_25_0.parameterSmoothTime > 0 then
-			local var_25_0, var_25_1 = Mathf.SmoothDamp(arg_25_0.parameterValue, arg_25_0.parameterTargetValue, arg_25_0.parameterSmooth, arg_25_0.parameterSmoothTime)
+function slot0.updateParameterValue(slot0)
+	if slot0._parameterUpdateFlag and slot0.parameterValue ~= slot0.parameterTargetValue then
+		if math.abs(slot0.parameterValue - slot0.parameterTargetValue) < 0.01 then
+			slot0:setParameterValue(slot0.parameterTargetValue)
+		elseif slot0.parameterSmoothTime and slot0.parameterSmoothTime > 0 then
+			slot1, slot2 = Mathf.SmoothDamp(slot0.parameterValue, slot0.parameterTargetValue, slot0.parameterSmooth, slot0.parameterSmoothTime)
 
-			arg_25_0:setParameterValue(var_25_0, var_25_1)
+			slot0:setParameterValue(slot1, slot2)
 		else
-			arg_25_0:setParameterValue(arg_25_0.parameterTargetValue, 0)
+			slot0:setParameterValue(slot0.parameterTargetValue, 0)
 		end
 	end
 end
 
-function var_0_0.updateRelationValue(arg_26_0)
-	for iter_26_0, iter_26_1 in ipairs(arg_26_0._relationParameterList) do
-		local var_26_0 = iter_26_1.data
-		local var_26_1 = var_26_0.type
-		local var_26_2 = var_26_0.relation_value
-		local var_26_3
-		local var_26_4
-		local var_26_5
+function slot0.updateRelationValue(slot0)
+	for slot4, slot5 in ipairs(slot0._relationParameterList) do
+		slot6 = slot5.data
+		slot8 = slot6.relation_value
+		slot9, slot10 = nil
 
-		if var_26_1 == Live2D.relation_type_drag_x then
-			var_26_3 = arg_26_0.offsetDragX or iter_26_1.start or arg_26_0.startValue or 0
-			var_26_5 = true
-		elseif var_26_1 == Live2D.relation_type_drag_y then
-			var_26_3 = arg_26_0.offsetDragY or iter_26_1.start or arg_26_0.startValue or 0
-			var_26_5 = true
-		elseif var_26_1 == Live2D.relation_type_action_index then
-			var_26_3 = var_26_2[arg_26_0.actionListIndex]
-			var_26_3 = var_26_3 or 0
-			var_26_5 = true
+		if slot6.type == Live2D.relation_type_drag_x then
+			slot9 = slot0.offsetDragX or slot5.start or slot0.startValue or 0
+			slot10 = true
+		elseif slot7 == Live2D.relation_type_drag_y then
+			slot9 = slot0.offsetDragY or slot5.start or slot0.startValue or 0
+			slot10 = true
+		elseif slot7 == Live2D.relation_type_action_index then
+			slot9 = slot8[slot0.actionListIndex] or 0
+			slot10 = true
 		else
-			var_26_3 = arg_26_0.parameterTargetValue
-			var_26_5 = false
+			slot9 = slot0.parameterTargetValue
+			slot10 = false
 		end
 
-		local var_26_6 = iter_26_1.value or arg_26_0.startValue
-		local var_26_7 = arg_26_0:fixRelationParameter(var_26_3, var_26_0)
-		local var_26_8 = iter_26_1.parameterSmooth or 0
-		local var_26_9 = 0.1
-		local var_26_10, var_26_11 = Mathf.SmoothDamp(var_26_6, var_26_7, var_26_8, var_26_9)
-
-		iter_26_1.value = var_26_10
-		iter_26_1.parameterSmooth = var_26_11
-		iter_26_1.enable = var_26_5
-		iter_26_1.comId = arg_26_0.id
+		slot5.value, slot5.parameterSmooth = Mathf.SmoothDamp(slot5.value or slot0.startValue, slot0:fixRelationParameter(slot9, slot6), slot5.parameterSmooth or 0, 0.1)
+		slot5.enable = slot10
+		slot5.comId = slot0.id
 	end
 end
 
-function var_0_0.fixRelationParameter(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = arg_27_2.range or arg_27_0.range
-	local var_27_1 = arg_27_2.rangeAbs and arg_27_2.rangeAbs == 1 or arg_27_0.rangeAbs
-	local var_27_2 = arg_27_2.dragDirect and arg_27_2.dragDirect or arg_27_0.dragDirect
-
-	return arg_27_0:fixParameterTargetValue(arg_27_1, var_27_0, var_27_1, var_27_2)
+function slot0.fixRelationParameter(slot0, slot1, slot2)
+	return slot0:fixParameterTargetValue(slot1, slot2.range or slot0.range, slot2.rangeAbs and slot2.rangeAbs == 1 or slot0.rangeAbs, slot2.dragDirect and slot2.dragDirect or slot0.dragDirect)
 end
 
-function var_0_0.fixParameterTargetValue(arg_28_0, arg_28_1, arg_28_2, arg_28_3, arg_28_4)
-	if arg_28_1 < 0 and arg_28_4 == 1 then
-		arg_28_1 = 0
-	elseif arg_28_1 > 0 and arg_28_4 == 2 then
-		arg_28_1 = 0
+function slot0.fixParameterTargetValue(slot0, slot1, slot2, slot3, slot4)
+	if slot1 < 0 and slot4 == 1 then
+		slot1 = 0
+	elseif slot1 > 0 and slot4 == 2 then
+		slot1 = 0
 	end
 
-	arg_28_1 = arg_28_3 and math.abs(arg_28_1) or arg_28_1
-
-	if arg_28_1 < arg_28_2[1] then
-		arg_28_1 = arg_28_2[1]
-	elseif arg_28_1 > arg_28_2[2] then
-		arg_28_1 = arg_28_2[2]
+	if slot3 then
+		slot1 = math.abs(slot1) or slot1
 	end
 
-	return arg_28_1
+	if slot1 < slot2[1] then
+		slot1 = slot2[1]
+	elseif slot2[2] < slot1 then
+		slot1 = slot2[2]
+	end
+
+	return slot1
 end
 
-function var_0_0.checkReset(arg_29_0)
-	if not arg_29_0._active and arg_29_0.parameterToStart then
-		if arg_29_0.parameterToStart > 0 then
-			arg_29_0.parameterToStart = arg_29_0.parameterToStart - Time.deltaTime
+function slot0.checkReset(slot0)
+	if not slot0._active and slot0.parameterToStart then
+		if slot0.parameterToStart > 0 then
+			slot0.parameterToStart = slot0.parameterToStart - Time.deltaTime
 		end
 
-		if arg_29_0.parameterToStart <= 0 then
-			arg_29_0:setTargetValue(arg_29_0.startValue)
+		if slot0.parameterToStart <= 0 then
+			slot0:setTargetValue(slot0.startValue)
 
-			arg_29_0.parameterToStart = nil
+			slot0.parameterToStart = nil
 
-			if arg_29_0.revertResetFlag then
-				arg_29_0:setTriggerActionFlag(false)
+			if slot0.revertResetFlag then
+				slot0:setTriggerActionFlag(false)
 
-				arg_29_0.revertResetFlag = false
+				slot0.revertResetFlag = false
 			end
 
-			if arg_29_0.offsetDragX then
-				arg_29_0.offsetDragX = arg_29_0.startValue
-				arg_29_0.offsetDragTargetX = arg_29_0.startValue
+			if slot0.offsetDragX then
+				slot0.offsetDragX = slot0.startValue
+				slot0.offsetDragTargetX = slot0.startValue
 			end
 
-			if arg_29_0.offsetDragY then
-				arg_29_0.offsetDragY = arg_29_0.startValue
-				arg_29_0.offsetDragTargetY = arg_29_0.startValue
+			if slot0.offsetDragY then
+				slot0.offsetDragY = slot0.startValue
+				slot0.offsetDragTargetY = slot0.startValue
 			end
 		end
 	end
 end
 
-function var_0_0.changeReactValue(arg_30_0, arg_30_1)
-	arg_30_0.reactPos = arg_30_1
+function slot0.changeReactValue(slot0, slot1)
+	slot0.reactPos = slot1
 end
 
-function var_0_0.setParameterValue(arg_31_0, arg_31_1, arg_31_2)
-	if arg_31_1 then
-		arg_31_0.parameterValue = arg_31_1
+function slot0.setParameterValue(slot0, slot1, slot2)
+	if slot1 then
+		slot0.parameterValue = slot1
 	end
 
-	if arg_31_2 then
-		arg_31_0.parameterSmooth = arg_31_2
+	if slot2 then
+		slot0.parameterSmooth = slot2
 	end
 end
 
-function var_0_0.updateState(arg_32_0)
-	if not arg_32_0.lastFrameActive and arg_32_0._active then
-		arg_32_0.firstActive = true
+function slot0.updateState(slot0)
+	if not slot0.lastFrameActive and slot0._active then
+		slot0.firstActive = true
 	else
-		arg_32_0.firstActive = false
+		slot0.firstActive = false
 	end
 
-	if arg_32_0.lastFrameActive and not arg_32_0._active then
-		arg_32_0.firstStop = true
+	if slot0.lastFrameActive and not slot0._active then
+		slot0.firstStop = true
 	else
-		arg_32_0.firstStop = false
+		slot0.firstStop = false
 	end
 
-	arg_32_0.lastFrameActive = arg_32_0._active
+	slot0.lastFrameActive = slot0._active
 end
 
-function var_0_0.updateTrigger(arg_33_0)
-	if not arg_33_0:isActionTriggerAble() then
+function slot0.updateTrigger(slot0)
+	if not slot0:isActionTriggerAble() then
 		return
 	end
 
-	local var_33_0 = arg_33_0.actionTrigger.type
-	local var_33_1 = arg_33_0.actionTrigger.action
-	local var_33_2
+	slot1 = slot0.actionTrigger.type
+	slot2 = slot0.actionTrigger.action
+	slot3 = nil
 
-	if arg_33_0.actionTrigger.time then
-		var_33_2 = arg_33_0.actionTrigger.time
-	elseif arg_33_0.actionTrigger.action_list and arg_33_0.actionListIndex > 0 then
-		var_33_2 = arg_33_0.actionTrigger.action_list[arg_33_0.actionListIndex].time
+	if slot0.actionTrigger.time then
+		slot3 = slot0.actionTrigger.time
+	elseif slot0.actionTrigger.action_list and slot0.actionListIndex > 0 then
+		slot3 = slot0.actionTrigger.action_list[slot0.actionListIndex].time
 	end
 
-	local var_33_3
+	slot4 = nil
 
-	if arg_33_0.actionTrigger.num then
-		var_33_3 = arg_33_0.actionTrigger.num
-	elseif arg_33_0.actionTrigger.action_list and arg_33_0.actionTrigger.action_list[arg_33_0.actionListIndex].num and arg_33_0.actionListIndex > 0 then
-		var_33_3 = arg_33_0.actionTrigger.action_list[arg_33_0.actionListIndex].num
+	if slot0.actionTrigger.num then
+		slot4 = slot0.actionTrigger.num
+	elseif slot0.actionTrigger.action_list and slot0.actionTrigger.action_list[slot0.actionListIndex].num and slot0.actionListIndex > 0 then
+		slot4 = slot0.actionTrigger.action_list[slot0.actionListIndex].num
 	end
 
-	if var_33_0 == Live2D.DRAG_TIME_ACTION then
-		if arg_33_0._active then
-			if math.abs(arg_33_0.parameterValue - var_33_3) < math.abs(var_33_3) * 0.25 then
-				arg_33_0.triggerActionTime = arg_33_0.triggerActionTime + Time.deltaTime
+	if slot1 == Live2D.DRAG_TIME_ACTION then
+		if slot0._active then
+			if math.abs(slot0.parameterValue - slot4) < math.abs(slot4) * 0.25 then
+				slot0.triggerActionTime = slot0.triggerActionTime + Time.deltaTime
 
-				if var_33_2 < arg_33_0.triggerActionTime and not arg_33_0.l2dIsPlaying then
-					arg_33_0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+				if slot3 < slot0.triggerActionTime and not slot0.l2dIsPlaying then
+					slot0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
 				end
 			else
-				arg_33_0.triggerActionTime = arg_33_0.triggerActionTime + 0
+				slot0.triggerActionTime = slot0.triggerActionTime + 0
 			end
 		end
-	elseif var_33_0 == Live2D.DRAG_CLICK_ACTION then
-		if arg_33_0:checkClickAction() then
-			arg_33_0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+	elseif slot1 == Live2D.DRAG_CLICK_ACTION then
+		if slot0:checkClickAction() then
+			slot0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
 		end
-	elseif var_33_0 == Live2D.DRAG_DOWN_ACTION then
-		if arg_33_0._active then
-			if arg_33_0.firstActive then
-				arg_33_0.ableFalg = true
+	elseif slot1 == Live2D.DRAG_DOWN_ACTION then
+		if slot0._active then
+			if slot0.firstActive then
+				slot0.ableFalg = true
 
-				arg_33_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+				slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 					ableFlag = true
 				})
 			end
 
-			if var_33_2 <= Time.time - arg_33_0.mouseInputDownTime then
-				arg_33_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+			if slot3 <= Time.time - slot0.mouseInputDownTime then
+				slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 					ableFlag = false
 				})
 
-				arg_33_0.ableFalg = false
+				slot0.ableFalg = false
 
-				arg_33_0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+				slot0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
 
-				arg_33_0.mouseInputDownTime = Time.time
+				slot0.mouseInputDownTime = Time.time
 			end
-		elseif arg_33_0.ableFalg then
-			arg_33_0.ableFalg = false
+		elseif slot0.ableFalg then
+			slot0.ableFalg = false
 
-			arg_33_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+			slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 				ableFlag = false
 			})
 		end
-	elseif var_33_0 == Live2D.DRAG_RELATION_XY then
-		if arg_33_0._active then
-			local var_33_4 = arg_33_0:fixParameterTargetValue(arg_33_0.offsetDragX, arg_33_0.range, arg_33_0.rangeAbs, arg_33_0.dragDirect)
-			local var_33_5 = arg_33_0:fixParameterTargetValue(arg_33_0.offsetDragY, arg_33_0.range, arg_33_0.rangeAbs, arg_33_0.dragDirect)
-			local var_33_6 = var_33_3[1]
-			local var_33_7 = var_33_3[2]
+	elseif slot1 == Live2D.DRAG_RELATION_XY then
+		if slot0._active then
+			slot7 = slot4[1]
+			slot8 = slot4[2]
 
-			if math.abs(var_33_4 - var_33_6) < math.abs(var_33_6) * 0.25 and math.abs(var_33_5 - var_33_7) < math.abs(var_33_7) * 0.25 then
-				arg_33_0.triggerActionTime = arg_33_0.triggerActionTime + Time.deltaTime
+			if math.abs(slot0:fixParameterTargetValue(slot0.offsetDragX, slot0.range, slot0.rangeAbs, slot0.dragDirect) - slot7) < math.abs(slot7) * 0.25 and math.abs(slot0:fixParameterTargetValue(slot0.offsetDragY, slot0.range, slot0.rangeAbs, slot0.dragDirect) - slot8) < math.abs(slot8) * 0.25 then
+				slot0.triggerActionTime = slot0.triggerActionTime + Time.deltaTime
 
-				if var_33_2 < arg_33_0.triggerActionTime and not arg_33_0.l2dIsPlaying then
-					arg_33_0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+				if slot3 < slot0.triggerActionTime and not slot0.l2dIsPlaying then
+					slot0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
 				end
 			else
-				arg_33_0.triggerActionTime = arg_33_0.triggerActionTime + 0
+				slot0.triggerActionTime = slot0.triggerActionTime + 0
 			end
 		end
-	elseif var_33_0 == Live2D.DRAG_RELATION_IDLE then
-		if arg_33_0.actionTrigger.const_fit then
-			for iter_33_0 = 1, #arg_33_0.actionTrigger.const_fit do
-				local var_33_8 = arg_33_0.actionTrigger.const_fit[iter_33_0]
-
-				if arg_33_0.l2dIdleIndex == var_33_8.idle and not arg_33_0.l2dIsPlaying then
-					arg_33_0:setTargetValue(var_33_8.target)
+	elseif slot1 == Live2D.DRAG_RELATION_IDLE then
+		if slot0.actionTrigger.const_fit then
+			for slot8 = 1, #slot0.actionTrigger.const_fit do
+				if slot0.l2dIdleIndex == slot0.actionTrigger.const_fit[slot8].idle and not slot0.l2dIsPlaying then
+					slot0:setTargetValue(slot9.target)
 				end
 			end
 		end
-	elseif var_33_0 == Live2D.DRAG_CLICK_MANY and arg_33_0:checkClickAction() then
-		print("id = " .. arg_33_0.id .. "被按下了")
-		arg_33_0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
+	elseif slot1 == Live2D.DRAG_CLICK_MANY and slot0:checkClickAction() then
+		print("id = " .. slot0.id .. "被按下了")
+		slot0:onEventCallback(Live2D.EVENT_ACTION_APPLY)
 	end
 end
 
-function var_0_0.triggerAction(arg_34_0)
-	print("set limit time = " .. arg_34_0.limitTime)
+function slot0.triggerAction(slot0)
+	print("set limit time = " .. slot0.limitTime)
 
-	arg_34_0.nextTriggerTime = arg_34_0.limitTime
+	slot0.nextTriggerTime = slot0.limitTime
 
-	arg_34_0:setTriggerActionFlag(true)
+	slot0:setTriggerActionFlag(true)
 end
 
-function var_0_0.isActionTriggerAble(arg_35_0)
-	if arg_35_0.actionTrigger.type == nil then
+function slot0.isActionTriggerAble(slot0)
+	if slot0.actionTrigger.type == nil then
 		return false
 	end
 
-	if not arg_35_0.actionTrigger or arg_35_0.actionTrigger == "" then
+	if not slot0.actionTrigger or slot0.actionTrigger == "" then
 		return
 	end
 
-	if arg_35_0.nextTriggerTime - Time.deltaTime >= 0 then
-		arg_35_0.nextTriggerTime = arg_35_0.nextTriggerTime - Time.deltaTime
+	if slot0.nextTriggerTime - Time.deltaTime >= 0 then
+		slot0.nextTriggerTime = slot0.nextTriggerTime - Time.deltaTime
 
 		return false
 	end
 
-	if arg_35_0.isTriggerAtion then
+	if slot0.isTriggerAtion then
 		return false
 	end
 
 	return true
 end
 
-function var_0_0.updateStateData(arg_36_0, arg_36_1)
-	if arg_36_0.revertIdleIndex and arg_36_0.l2dIdleIndex ~= arg_36_1.idleIndex then
-		arg_36_0:setTargetValue(arg_36_0.startValue)
+function slot0.updateStateData(slot0, slot1)
+	if slot0.revertIdleIndex and slot0.l2dIdleIndex ~= slot1.idleIndex then
+		slot0:setTargetValue(slot0.startValue)
 	end
 
-	arg_36_0.lastActionIndex = arg_36_0.actionListIndex
+	slot0.lastActionIndex = slot0.actionListIndex
 
-	if arg_36_1.isPlaying and arg_36_0.actionTrigger.reset_index_action and arg_36_1.actionName and table.contains(arg_36_0.actionTrigger.reset_index_action, arg_36_1.actionName) then
-		arg_36_0.actionListIndex = 1
+	if slot1.isPlaying and slot0.actionTrigger.reset_index_action and slot1.actionName and table.contains(slot0.actionTrigger.reset_index_action, slot1.actionName) then
+		slot0.actionListIndex = 1
 	end
 
-	if arg_36_0.revertActionIndex and arg_36_0.lastActionIndex ~= arg_36_0.actionListIndex then
-		arg_36_0:setTargetValue(arg_36_0.startValue)
+	if slot0.revertActionIndex and slot0.lastActionIndex ~= slot0.actionListIndex then
+		slot0:setTargetValue(slot0.startValue)
 	end
 
-	arg_36_0.l2dIdleIndex = arg_36_1.idleIndex
-	arg_36_0.l2dIsPlaying = arg_36_1.isPlaying
-	arg_36_0.l2dIgnoreReact = arg_36_1.ignoreReact
-	arg_36_0.l2dPlayActionName = arg_36_1.actionName
+	slot0.l2dIdleIndex = slot1.idleIndex
+	slot0.l2dIsPlaying = slot1.isPlaying
+	slot0.l2dIgnoreReact = slot1.ignoreReact
+	slot0.l2dPlayActionName = slot1.actionName
 
-	if not arg_36_0.l2dIsPlaying and arg_36_0.isTriggerAtion then
-		arg_36_0:setTriggerActionFlag(false)
+	if not slot0.l2dIsPlaying and slot0.isTriggerAtion then
+		slot0:setTriggerActionFlag(false)
 	end
 end
 
-function var_0_0.checkClickAction(arg_37_0)
-	if arg_37_0.firstActive then
-		arg_37_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+function slot0.checkClickAction(slot0)
+	if slot0.firstActive then
+		slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 			ableFlag = true
 		})
-	elseif arg_37_0.firstStop then
-		local var_37_0 = math.abs(arg_37_0.mouseInputUp.x - arg_37_0.mouseInputDown.x) < 30 and math.abs(arg_37_0.mouseInputUp.y - arg_37_0.mouseInputDown.y) < 30
-		local var_37_1 = arg_37_0.mouseInputUpTime - arg_37_0.mouseInputDownTime < 0.5
-
-		if var_37_0 and var_37_1 and not arg_37_0.l2dIsPlaying then
-			arg_37_0.clickTriggerTime = 0.01
-			arg_37_0.clickApplyFlag = true
+	elseif slot0.firstStop then
+		if math.abs(slot0.mouseInputUp.x - slot0.mouseInputDown.x) < 30 and math.abs(slot0.mouseInputUp.y - slot0.mouseInputDown.y) < 30 and slot0.mouseInputUpTime - slot0.mouseInputDownTime < 0.5 and not slot0.l2dIsPlaying then
+			slot0.clickTriggerTime = 0.01
+			slot0.clickApplyFlag = true
 		else
-			arg_37_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+			slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 				ableFlag = false
 			})
 		end
-	elseif arg_37_0.clickTriggerTime and arg_37_0.clickTriggerTime > 0 then
-		arg_37_0.clickTriggerTime = arg_37_0.clickTriggerTime - Time.deltaTime
+	elseif slot0.clickTriggerTime and slot0.clickTriggerTime > 0 then
+		slot0.clickTriggerTime = slot0.clickTriggerTime - Time.deltaTime
 
-		if arg_37_0.clickTriggerTime <= 0 then
-			arg_37_0.clickTriggerTime = nil
+		if slot0.clickTriggerTime <= 0 then
+			slot0.clickTriggerTime = nil
 
-			arg_37_0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
+			slot0:onEventCallback(Live2D.EVENT_ACTION_ABLE, {
 				ableFlag = false
 			})
 
-			if arg_37_0.clickApplyFlag then
-				arg_37_0.clickApplyFlag = false
+			if slot0.clickApplyFlag then
+				slot0.clickApplyFlag = false
 
 				return true
 			end
@@ -790,50 +748,46 @@ function var_0_0.checkClickAction(arg_37_0)
 	return false
 end
 
-function var_0_0.saveData(arg_38_0)
-	if arg_38_0.revert == -1 then
-		Live2dConst.SaveDragData(arg_38_0.id, arg_38_0.live2dData:GetShipSkinConfig().id, arg_38_0.live2dData.ship.id, arg_38_0.parameterTargetValue)
+function slot0.saveData(slot0)
+	if slot0.revert == -1 then
+		Live2dConst.SaveDragData(slot0.id, slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id, slot0.parameterTargetValue)
 	end
 
-	if arg_38_0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
-		Live2dConst.SetDragActionIndex(arg_38_0.id, arg_38_0.live2dData:GetShipSkinConfig().id, arg_38_0.live2dData.ship.id, arg_38_0.actionListIndex)
-	end
-end
-
-function var_0_0.loadData(arg_39_0)
-	if arg_39_0.revert == -1 then
-		local var_39_0 = Live2dConst.GetDragData(arg_39_0.id, arg_39_0.live2dData:GetShipSkinConfig().id, arg_39_0.live2dData.ship.id)
-
-		if var_39_0 then
-			arg_39_0:setParameterValue(var_39_0)
-			arg_39_0:setTargetValue(var_39_0)
-		end
-	end
-
-	if arg_39_0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
-		arg_39_0.actionListIndex = Live2dConst.GetDragActionIndex(arg_39_0.id, arg_39_0.live2dData:GetShipSkinConfig().id, arg_39_0.live2dData.ship.id) or 1
+	if slot0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+		Live2dConst.SetDragActionIndex(slot0.id, slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id, slot0.actionListIndex)
 	end
 end
 
-function var_0_0.clearData(arg_40_0)
-	if arg_40_0.revert == -1 then
-		arg_40_0:setParameterValue(arg_40_0.startValue)
-		arg_40_0:setTargetValue(arg_40_0.startValue)
+function slot0.loadData(slot0)
+	if slot0.revert == -1 and Live2dConst.GetDragData(slot0.id, slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id) then
+		slot0:setParameterValue(slot1)
+		slot0:setTargetValue(slot1)
+	end
+
+	if slot0.actionTrigger.type == Live2D.DRAG_CLICK_MANY then
+		slot0.actionListIndex = Live2dConst.GetDragActionIndex(slot0.id, slot0.live2dData:GetShipSkinConfig().id, slot0.live2dData.ship.id) or 1
 	end
 end
 
-function var_0_0.setTriggerActionFlag(arg_41_0, arg_41_1)
-	arg_41_0.isTriggerAtion = arg_41_1
+function slot0.clearData(slot0)
+	if slot0.revert == -1 then
+		slot0:setParameterValue(slot0.startValue)
+		slot0:setTargetValue(slot0.startValue)
+	end
 end
 
-function var_0_0.dispose(arg_42_0)
-	arg_42_0._active = false
-	arg_42_0._parameterCom = nil
-	arg_42_0.parameterValue = arg_42_0.startValue
-	arg_42_0.parameterTargetValue = 0
-	arg_42_0.parameterSmooth = 0
-	arg_42_0.mouseInputDown = Vector2(0, 0)
-	arg_42_0.live2dData = nil
+function slot0.setTriggerActionFlag(slot0, slot1)
+	slot0.isTriggerAtion = slot1
 end
 
-return var_0_0
+function slot0.dispose(slot0)
+	slot0._active = false
+	slot0._parameterCom = nil
+	slot0.parameterValue = slot0.startValue
+	slot0.parameterTargetValue = 0
+	slot0.parameterSmooth = 0
+	slot0.mouseInputDown = Vector2(0, 0)
+	slot0.live2dData = nil
+end
+
+return slot0

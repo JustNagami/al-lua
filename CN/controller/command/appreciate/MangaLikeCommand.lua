@@ -1,36 +1,35 @@
-﻿local var_0_0 = class("MangaLikeCommand", pm.SimpleCommand)
+slot0 = class("MangaLikeCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.mangaID
-	local var_1_2 = var_1_0.action
-	local var_1_3 = var_1_0.mangaCB
-	local var_1_4 = getProxy(AppreciateProxy)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot3 = slot2.mangaID
+	slot5 = slot2.mangaCB
+	slot6 = getProxy(AppreciateProxy)
 
-	print("17511 Send Manga ID", var_1_1)
+	print("17511 Send Manga ID", slot3)
 	pg.ConnectionMgr.GetInstance():Send(17511, {
-		id = var_1_1,
-		action = var_1_2
-	}, 17512, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			if var_1_2 == MangaConst.SET_MANGA_LIKE then
-				var_1_4:addMangaIDToLikeList(var_1_1)
+		id = slot3,
+		action = slot2.action
+	}, 17512, function (slot0)
+		if slot0.result == 0 then
+			if uv0 == MangaConst.SET_MANGA_LIKE then
+				uv1:addMangaIDToLikeList(uv2)
 			else
-				var_1_4:removeMangaIDFromLikeList(var_1_1)
+				uv1:removeMangaIDFromLikeList(uv2)
 			end
 
-			if var_1_3 then
-				var_1_3()
+			if uv3 then
+				uv3()
 			end
 
-			arg_1_0:sendNotification(GAME.APPRECIATE_MANGA_LIKE_DONE, {
-				mangaID = var_1_1,
-				action = var_1_2
+			uv4:sendNotification(GAME.APPRECIATE_MANGA_LIKE_DONE, {
+				mangaID = uv2,
+				action = uv0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips("17512 Manga Like Fail:" .. tostring(arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips("17512 Manga Like Fail:" .. tostring(slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

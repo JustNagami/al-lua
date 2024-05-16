@@ -1,79 +1,78 @@
-﻿local var_0_0 = class("CourtYardRandomControllerSlot", import(".CourtYardFurnitureBaseSlot"))
+slot0 = class("CourtYardRandomControllerSlot", import(".CourtYardFurnitureBaseSlot"))
 
-function var_0_0.OnInit(arg_1_0, arg_1_1)
-	arg_1_0.name = arg_1_1[1][1]
-	arg_1_0.defaultAction = arg_1_1[1][2]
-	arg_1_0.mask = arg_1_1[2] and arg_1_1[2][1]
+function slot0.OnInit(slot0, slot1)
+	slot0.name = slot1[1][1]
+	slot0.defaultAction = slot1[1][2]
+	slot0.mask = slot1[2] and slot1[2][1]
 
-	if arg_1_0.mask then
-		arg_1_0.maskDefaultAction = arg_1_1[2][2]
+	if slot0.mask then
+		slot0.maskDefaultAction = slot1[2][2]
 	end
 
-	arg_1_0.actions = {}
+	slot0.actions = {}
 
-	for iter_1_0, iter_1_1 in ipairs(arg_1_1[3][2]) do
-		table.insert(arg_1_0.actions, {
-			userAction = iter_1_1[3],
-			controller = iter_1_1[2],
-			ownerAction = iter_1_1[1]
+	for slot5, slot6 in ipairs(slot1[3][2]) do
+		table.insert(slot0.actions, {
+			userAction = slot6[3],
+			controller = slot6[2],
+			ownerAction = slot6[1]
 		})
 	end
 end
 
-function var_0_0.SetAnimators(arg_2_0, arg_2_1)
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1[1]) do
-		table.insert(arg_2_0.animators, {
-			key = arg_2_0.id .. "_" .. iter_2_0,
-			value = iter_2_1
+function slot0.SetAnimators(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1[1]) do
+		table.insert(slot0.animators, {
+			key = slot0.id .. "_" .. slot5,
+			value = slot6
 		})
 	end
 end
 
-function var_0_0.GetSpineDefaultAction(arg_3_0)
-	return arg_3_0.defaultAction
+function slot0.GetSpineDefaultAction(slot0)
+	return slot0.defaultAction
 end
 
-function var_0_0.GetSpineMaskDefaultAcation(arg_4_0)
-	return arg_4_0.maskDefaultAction
+function slot0.GetSpineMaskDefaultAcation(slot0)
+	return slot0.maskDefaultAction
 end
 
-function var_0_0.OnAwake(arg_5_0)
-	local var_5_0 = arg_5_0.actions[math.random(1, #arg_5_0.actions)]
+function slot0.OnAwake(slot0)
+	slot1 = slot0.actions[math.random(1, #slot0.actions)]
+	slot0.animatorIndex = 0
 
-	arg_5_0.animatorIndex = 0
-
-	for iter_5_0, iter_5_1 in ipairs(arg_5_0.animators) do
-		if iter_5_1.value == var_5_0.controller then
-			arg_5_0.animatorIndex = iter_5_0
+	for slot5, slot6 in ipairs(slot0.animators) do
+		if slot6.value == slot1.controller then
+			slot0.animatorIndex = slot5
 		end
 	end
 
-	arg_5_0.actionData = var_5_0
+	slot0.actionData = slot1
 end
 
-function var_0_0.OnStart(arg_6_0)
-	local var_6_0 = arg_6_0.actionData
+function slot0.OnStart(slot0)
+	slot1 = slot0.actionData
 
-	arg_6_0.user:UpdateInteraction({
-		action = var_6_0.userAction,
-		slot = arg_6_0
+	slot0.user:UpdateInteraction({
+		action = slot1.userAction,
+		slot = slot0
 	})
-	arg_6_0.owner:UpdateInteraction({
-		action = var_6_0.ownerAction,
-		slot = arg_6_0
+	slot0.owner:UpdateInteraction({
+		action = slot1.ownerAction,
+		slot = slot0
 	})
 end
 
-function var_0_0.OnContinue(arg_7_0, arg_7_1)
-	if arg_7_1 == arg_7_0.owner then
-		arg_7_0:End()
+function slot0.OnContinue(slot0, slot1)
+	if slot1 == slot0.owner then
+		slot0:End()
 	end
 end
 
-function var_0_0.Clear(arg_8_0, arg_8_1)
-	var_0_0.super.Clear(arg_8_0, arg_8_1)
+function slot0.Clear(slot0, slot1)
+	uv0.super.Clear(slot0, slot1)
 
-	arg_8_0.actionData = nil
+	slot0.actionData = nil
 end
 
-return var_0_0
+return slot0

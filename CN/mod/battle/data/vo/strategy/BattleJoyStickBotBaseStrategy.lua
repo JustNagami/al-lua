@@ -1,56 +1,51 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleJoyStickBotBaseStrategy = class("BattleJoyStickBotBaseStrategy")
+slot1 = slot0.Battle.BattleJoyStickBotBaseStrategy
+slot1.__name = "BattleJoyStickBotBaseStrategy"
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleJoyStickBotBaseStrategy = class("BattleJoyStickBotBaseStrategy")
-
-local var_0_1 = var_0_0.Battle.BattleJoyStickBotBaseStrategy
-
-var_0_1.__name = "BattleJoyStickBotBaseStrategy"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._hrz = 0
-	arg_1_0._vtc = 0
-	arg_1_0._fleetVO = arg_1_1
-	arg_1_0._motionVO = arg_1_1:GetMotion()
+function slot1.Ctor(slot0, slot1)
+	slot0._hrz = 0
+	slot0._vtc = 0
+	slot0._fleetVO = slot1
+	slot0._motionVO = slot1:GetMotion()
 end
 
-function var_0_1.GetStrategyType(arg_2_0)
+function slot1.GetStrategyType(slot0)
 	return nil
 end
 
-function var_0_1.SetBoardBound(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-	arg_3_0._upperBound = arg_3_1
-	arg_3_0._lowerBound = arg_3_2
-	arg_3_0._leftBound = arg_3_3
-	arg_3_0._rightBound = arg_3_4
-	arg_3_0._totalWidth = arg_3_4 - arg_3_3
-	arg_3_0._totalHeight = arg_3_1 - arg_3_2
+function slot1.SetBoardBound(slot0, slot1, slot2, slot3, slot4)
+	slot0._upperBound = slot1
+	slot0._lowerBound = slot2
+	slot0._leftBound = slot3
+	slot0._rightBound = slot4
+	slot0._totalWidth = slot4 - slot3
+	slot0._totalHeight = slot1 - slot2
 end
 
-function var_0_1.Input(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0._foeShipList = arg_4_1
-	arg_4_0._foeAircraftList = arg_4_2
+function slot1.Input(slot0, slot1, slot2)
+	slot0._foeShipList = slot1
+	slot0._foeAircraftList = slot2
 end
 
-function var_0_1.Output(arg_5_0)
-	arg_5_0:analysis()
+function slot1.Output(slot0)
+	slot0:analysis()
 
-	return arg_5_0._hrz, arg_5_0._vtc
+	return slot0._hrz, slot0._vtc
 end
 
-function var_0_1.Dispose(arg_6_0)
-	arg_6_0._foeShipList = nil
-	arg_6_0._foeAircraftList = nil
-	arg_6_0._motionVO = nil
+function slot1.Dispose(slot0)
+	slot0._foeShipList = nil
+	slot0._foeAircraftList = nil
+	slot0._motionVO = nil
 end
 
-function var_0_1.analysis(arg_7_0)
-	return
+function slot1.analysis(slot0)
 end
 
-function var_0_1.getDirection(arg_8_0, arg_8_1)
-	local var_8_0 = (arg_8_1 - arg_8_0).normalized
+function slot1.getDirection(slot0, slot1)
+	slot2 = (slot1 - slot0).normalized
 
-	return var_8_0.x, var_8_0.z
+	return slot2.x, slot2.z
 end

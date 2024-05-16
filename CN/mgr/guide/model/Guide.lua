@@ -1,47 +1,47 @@
-﻿local var_0_0 = class("Guide")
+slot0 = class("Guide")
 
-function var_0_0.Data2GuideStep(arg_1_0, arg_1_1)
-	if arg_1_1.hideui then
-		return GuideHideUIStep.New(arg_1_1)
-	elseif arg_1_1.stories then
-		return GuideStoryStep.New(arg_1_1)
-	elseif arg_1_1.notifies then
-		return GuideSendNotifiesStep.New(arg_1_1)
-	elseif arg_1_1.showSign then
-		return GuideShowSignStep.New(arg_1_1)
-	elseif arg_1_1.doFunc then
-		return GuideDoFunctionStep.New(arg_1_1)
-	elseif arg_1_1.ui then
-		return GuideFindUIStep.New(arg_1_1)
+function slot0.Data2GuideStep(slot0, slot1)
+	if slot1.hideui then
+		return GuideHideUIStep.New(slot1)
+	elseif slot1.stories then
+		return GuideStoryStep.New(slot1)
+	elseif slot1.notifies then
+		return GuideSendNotifiesStep.New(slot1)
+	elseif slot1.showSign then
+		return GuideShowSignStep.New(slot1)
+	elseif slot1.doFunc then
+		return GuideDoFunctionStep.New(slot1)
+	elseif slot1.ui then
+		return GuideFindUIStep.New(slot1)
 	else
-		return GuideDoNothingStep.New(arg_1_1)
+		return GuideDoNothingStep.New(slot1)
 	end
 end
 
-function var_0_0.Ctor(arg_2_0, arg_2_1)
-	arg_2_0.steps = {}
+function slot0.Ctor(slot0, slot1)
+	slot0.steps = {}
 
-	for iter_2_0, iter_2_1 in ipairs(arg_2_1.events) do
-		local var_2_0 = arg_2_0:Data2GuideStep(iter_2_1)
+	for slot5, slot6 in ipairs(slot1.events) do
+		slot7 = slot0:Data2GuideStep(slot6)
 
-		if arg_2_1.isWorld ~= nil then
-			var_2_0:UpdateIsWorld(arg_2_1.isWorld)
+		if slot1.isWorld ~= nil then
+			slot7:UpdateIsWorld(slot1.isWorld)
 		end
 
-		table.insert(arg_2_0.steps, var_2_0)
+		table.insert(slot0.steps, slot7)
 	end
 end
 
-function var_0_0.GetStepsWithCode(arg_3_0, arg_3_1)
-	local var_3_0 = {}
+function slot0.GetStepsWithCode(slot0, slot1)
+	slot2 = {}
 
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0.steps) do
-		if not arg_3_1 or iter_3_1:IsMatchWithCode(arg_3_1) then
-			table.insert(var_3_0, iter_3_1)
+	for slot6, slot7 in ipairs(slot0.steps) do
+		if not slot1 or slot7:IsMatchWithCode(slot1) then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return var_3_0
+	return slot2
 end
 
-return var_0_0
+return slot0

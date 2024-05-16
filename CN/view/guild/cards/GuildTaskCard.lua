@@ -1,27 +1,26 @@
-﻿local var_0_0 = class("GuildTaskCard")
+slot0 = class("GuildTaskCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0._go = go(arg_1_1)
-	arg_1_0.acceptBtn = arg_1_0._tf:Find("accept")
-	arg_1_0.icon = arg_1_0._tf:Find("icon"):GetComponent(typeof(Image))
-	arg_1_0.descTxt = arg_1_0._tf:Find("desc/Text"):GetComponent(typeof(Text))
-	arg_1_0.publicResTxt = arg_1_0._tf:Find("res_1/Text"):GetComponent(typeof(Text))
-	arg_1_0.privateResTxt = arg_1_0._tf:Find("res_2/Text"):GetComponent(typeof(Text))
-	arg_1_0._tf:Find("res_1/label"):GetComponent(typeof(Text)).text = i18n("guild_public_awards")
-	arg_1_0._tf:Find("res_2/label"):GetComponent(typeof(Text)).text = i18n("guild_private_awards")
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0._go = go(slot1)
+	slot0.acceptBtn = slot0._tf:Find("accept")
+	slot0.icon = slot0._tf:Find("icon"):GetComponent(typeof(Image))
+	slot0.descTxt = slot0._tf:Find("desc/Text"):GetComponent(typeof(Text))
+	slot0.publicResTxt = slot0._tf:Find("res_1/Text"):GetComponent(typeof(Text))
+	slot0.privateResTxt = slot0._tf:Find("res_2/Text"):GetComponent(typeof(Text))
+	slot0._tf:Find("res_1/label"):GetComponent(typeof(Text)).text = i18n("guild_public_awards")
+	slot0._tf:Find("res_2/label"):GetComponent(typeof(Text)).text = i18n("guild_private_awards")
 end
 
-function var_0_0.Update(arg_2_0, arg_2_1)
-	arg_2_0.task = arg_2_1
-	arg_2_0.icon.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "frame_" .. arg_2_1:GetScale())
-	arg_2_0.descTxt.text = arg_2_1:GetDesc()
-	arg_2_0.publicResTxt.text = arg_2_1:GetCaptailAward()
-	arg_2_0.privateResTxt.text = arg_2_1:GetPrivateAward()
+function slot0.Update(slot0, slot1)
+	slot0.task = slot1
+	slot0.icon.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "frame_" .. slot1:GetScale())
+	slot0.descTxt.text = slot1:GetDesc()
+	slot0.publicResTxt.text = slot1:GetCaptailAward()
+	slot0.privateResTxt.text = slot1:GetPrivateAward()
 end
 
-function var_0_0.Destroy(arg_3_0)
-	return
+function slot0.Destroy(slot0)
 end
 
-return var_0_0
+return slot0

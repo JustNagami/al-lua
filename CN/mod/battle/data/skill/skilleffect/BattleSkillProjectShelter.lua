@@ -1,45 +1,36 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleEvent
+slot2 = slot0.Battle.BattleConfig
+slot3 = class("BattleSkillProjectShelter", slot0.Battle.BattleSkillEffect)
+slot0.Battle.BattleSkillProjectShelter = slot3
+slot3.__name = "BattleSkillProjectShelter"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleEvent
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = class("BattleSkillProjectShelter", var_0_0.Battle.BattleSkillEffect)
+function slot3.Ctor(slot0, slot1, slot2)
+	uv0.super.Ctor(slot0, slot1, slot2)
 
-var_0_0.Battle.BattleSkillProjectShelter = var_0_3
-var_0_3.__name = "BattleSkillProjectShelter"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_3.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	arg_1_0._duration = arg_1_0._tempData.arg_list.duration
-	arg_1_0._offset = arg_1_0._tempData.arg_list.offset
-	arg_1_0._fxID = arg_1_0._tempData.arg_list.effect
-	arg_1_0._box = arg_1_0._tempData.arg_list.box
-	arg_1_0._count = arg_1_0._tempData.arg_list.count
+	slot0._duration = slot0._tempData.arg_list.duration
+	slot0._offset = slot0._tempData.arg_list.offset
+	slot0._fxID = slot0._tempData.arg_list.effect
+	slot0._box = slot0._tempData.arg_list.box
+	slot0._count = slot0._tempData.arg_list.count
 end
 
-function var_0_3.DoDataEffect(arg_2_0, arg_2_1)
-	local var_2_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
-	local var_2_1 = var_2_0:SpawnShelter(arg_2_0._box, arg_2_0._duration)
-	local var_2_2 = arg_2_1:GetIFF()
+function slot3.DoDataEffect(slot0, slot1)
+	slot3 = uv0.Battle.BattleDataProxy.GetInstance():SpawnShelter(slot0._box, slot0._duration)
 
-	if var_2_2 == var_0_2.FOE_CODE then
-		arg_2_0._offset[1] = arg_2_0._offset[1] * -1
+	if slot1:GetIFF() == uv1.FOE_CODE then
+		slot0._offset[1] = slot0._offset[1] * -1
 	end
 
-	local var_2_3 = arg_2_1:GetPosition() + BuildVector3(arg_2_0._offset)
-
-	var_2_1:SetIFF(var_2_2)
-	var_2_1:SetArgs(arg_2_0._count, arg_2_0._duration, arg_2_0._box, var_2_3, arg_2_0._fxID)
-	var_2_1:SetStartTimeStamp(pg.TimeMgr.GetInstance():GetCombatTime())
-
-	local var_2_4 = {
-		shelter = var_2_1
-	}
-
-	var_2_0:DispatchEvent(var_0_0.Event.New(var_0_1.ADD_SHELTER, var_2_4))
+	slot3:SetIFF(slot4)
+	slot3:SetArgs(slot0._count, slot0._duration, slot0._box, slot1:GetPosition() + BuildVector3(slot0._offset), slot0._fxID)
+	slot3:SetStartTimeStamp(pg.TimeMgr.GetInstance():GetCombatTime())
+	slot2:DispatchEvent(uv0.Event.New(uv2.ADD_SHELTER, {
+		shelter = slot3
+	}))
 end
 
-function var_0_3.DataEffectWithoutTarget(arg_3_0, arg_3_1)
-	arg_3_0:DoDataEffect(arg_3_1)
+function slot3.DataEffectWithoutTarget(slot0, slot1)
+	slot0:DoDataEffect(slot1)
 end

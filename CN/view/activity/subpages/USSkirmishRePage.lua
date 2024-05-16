@@ -1,51 +1,47 @@
-﻿local var_0_0 = class("USSkirmishRePage", import("...base.BaseActivityPage"))
+slot0 = class("USSkirmishRePage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0:initUI()
-	arg_1_0:initData()
-	arg_1_0:addListener()
+function slot0.OnInit(slot0)
+	slot0:initUI()
+	slot0:initData()
+	slot0:addListener()
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	return
+function slot0.OnFirstFlush(slot0)
 end
 
-function var_0_0.OnUpdateFlush(arg_3_0)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0.taskVOList) do
-		local var_3_0 = iter_3_1.state
-		local var_3_1 = arg_3_0.progress:GetChild(iter_3_0 - 1)
-		local var_3_2 = arg_3_0:findTF("Empty", var_3_1)
-		local var_3_3 = arg_3_0:findTF("Full", var_3_1)
+function slot0.OnUpdateFlush(slot0)
+	for slot4, slot5 in ipairs(slot0.taskVOList) do
+		slot7 = slot0.progress:GetChild(slot4 - 1)
 
-		if var_3_0 < SkirmishVO.StateClear then
-			setActive(var_3_2, true)
-			setActive(var_3_3, false)
+		if slot5.state < SkirmishVO.StateClear then
+			setActive(slot0:findTF("Empty", slot7), true)
+			setActive(slot0:findTF("Full", slot7), false)
 		else
-			setActive(var_3_2, false)
-			setActive(var_3_3, true)
+			setActive(slot8, false)
+			setActive(slot9, true)
 		end
 	end
 end
 
-function var_0_0.initUI(arg_4_0)
-	arg_4_0.bg = arg_4_0:findTF("AD")
-	arg_4_0.progress = arg_4_0:findTF("Progress")
-	arg_4_0.helpBtn = arg_4_0:findTF("HelpBtn")
-	arg_4_0.battleBtn = arg_4_0:findTF("BattleBtn")
+function slot0.initUI(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.progress = slot0:findTF("Progress")
+	slot0.helpBtn = slot0:findTF("HelpBtn")
+	slot0.battleBtn = slot0:findTF("BattleBtn")
 end
 
-function var_0_0.initData(arg_5_0)
-	arg_5_0.taskGroup = Clone(pg.activity_template[ActivityConst.ACTIVITY_ID_US_SKIRMISH_RE].config_data)
-	arg_5_0.taskCount = #arg_5_0.taskGroup
-	arg_5_0.skirmishProxy = getProxy(SkirmishProxy)
+function slot0.initData(slot0)
+	slot0.taskGroup = Clone(pg.activity_template[ActivityConst.ACTIVITY_ID_US_SKIRMISH_RE].config_data)
+	slot0.taskCount = #slot0.taskGroup
+	slot0.skirmishProxy = getProxy(SkirmishProxy)
 
-	arg_5_0.skirmishProxy:UpdateSkirmishProgress()
+	slot0.skirmishProxy:UpdateSkirmishProgress()
 
-	arg_5_0.taskVOList = Clone(arg_5_0.skirmishProxy.data)
+	slot0.taskVOList = Clone(slot0.skirmishProxy.data)
 end
 
-function var_0_0.addListener(arg_6_0)
-	onButton(arg_6_0, arg_6_0.helpBtn, function()
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.helpBtn, function ()
 		if pg.gametip.help_tempesteve then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
@@ -54,11 +50,11 @@ function var_0_0.addListener(arg_6_0)
 			})
 		end
 	end, SFX_PANEL)
-	onButton(arg_6_0, arg_6_0.battleBtn, function()
+	onButton(slot0, slot0.battleBtn, function ()
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
 			mapIdx = SkirmishProxy.SkirmishMap
 		})
 	end, SFX_PANEL)
 end
 
-return var_0_0
+return slot0

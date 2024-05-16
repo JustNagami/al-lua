@@ -1,36 +1,34 @@
-﻿local var_0_0 = class("MainRefundSequence")
+slot0 = class("MainRefundSequence")
 
-function var_0_0.Execute(arg_1_0, arg_1_1)
-	local var_1_0 = getProxy(UserProxy)
-
-	if var_1_0.data.limitServerIds and #var_1_0.data.limitServerIds > 0 then
+function slot0.Execute(slot0, slot1)
+	if getProxy(UserProxy).data.limitServerIds and #slot2.data.limitServerIds > 0 then
 		pg.m02:sendNotification(GAME.GET_REFUND_INFO, {
-			callback = function()
-				arg_1_0:ShowTip(arg_1_1)
+			callback = function ()
+				uv0:ShowTip(uv1)
 			end
 		})
 	else
-		arg_1_1()
+		slot1()
 	end
 end
 
-function var_0_0.ShowTip(arg_3_0, arg_3_1)
+function slot0.ShowTip(slot0, slot1)
 	if getProxy(PlayerProxy):getRefundInfo() then
-		local var_3_0 = getProxy(ServerProxy)
-		local var_3_1 = true
+		slot3 = getProxy(ServerProxy)
+		slot4 = true
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			modal = true,
 			hideClose = true,
 			content = i18n("Supplement_pay1"),
-			onYes = function()
-				if var_3_1 then
+			onYes = function ()
+				if uv0 then
 					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.BACK_CHARGE)
 				else
 					Application.Quit()
 				end
 			end,
-			onNo = function()
+			onNo = function ()
 				pg.m02:sendNotification(GAME.LOGOUT, {
 					code = 0
 				})
@@ -38,9 +36,11 @@ function var_0_0.ShowTip(arg_3_0, arg_3_1)
 			yesText = i18n("Supplement_pay4"),
 			noText = i18n("word_back")
 		})
-	else
-		arg_3_1()
+
+		return
 	end
+
+	slot1()
 end
 
-return var_0_0
+return slot0

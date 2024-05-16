@@ -1,26 +1,24 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleColumnCldComponent", slot0.Battle.BattleCldComponent)
+slot0.Battle.BattleColumnCldComponent = slot1
+slot1.__name = "BattleColumnCldComponent"
 
-local var_0_0 = ys
-local var_0_1 = class("BattleColumnCldComponent", var_0_0.Battle.BattleCldComponent)
+function slot1.Ctor(slot0, slot1, slot2)
+	uv0.Battle.BattleColumnCldComponent.super.Ctor(slot0)
 
-var_0_0.Battle.BattleColumnCldComponent = var_0_1
-var_0_1.__name = "BattleColumnCldComponent"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_0.Battle.BattleColumnCldComponent.super.Ctor(arg_1_0)
-
-	arg_1_0._range = arg_1_1 * 0.5
-	arg_1_0._tickness = arg_1_2 * 0.5
-	arg_1_0._box = pg.CldNode.New()
+	slot0._range = slot1 * 0.5
+	slot0._tickness = slot2 * 0.5
+	slot0._box = pg.CldNode.New()
 end
 
-function var_0_1.GetCldBox(arg_2_0, arg_2_1)
-	return arg_2_0._box:UpdateCylinder(arg_2_1, arg_2_0._tickness, arg_2_0._range)
+function slot1.GetCldBox(slot0, slot1)
+	return slot0._box:UpdateCylinder(slot1, slot0._tickness, slot0._range)
 end
 
-function var_0_1.GetCldBoxSize(arg_3_0)
+function slot1.GetCldBoxSize(slot0)
 	return {
-		range = arg_3_0._range,
-		tickness = arg_3_0._tickness
+		range = slot0._range,
+		tickness = slot0._tickness
 	}
 end

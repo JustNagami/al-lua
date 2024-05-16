@@ -1,36 +1,30 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleBulletEvent
+slot2 = slot0.Battle.BattleFormulas
+slot3 = Vector3.up
+slot4 = slot0.Battle.BattleVariable
+slot5 = slot0.Battle.BattleConfig
+slot7 = slot0.Battle.BattleTargetChoise
+slot8 = class("BattleColumnAreaBulletUnit", slot0.Battle.BattleAreaBulletUnit)
+slot8.__name = "BattleColumnAreaBulletUnit"
+slot0.Battle.BattleColumnAreaBulletUnit = slot8
+slot8.AreaType = slot0.Battle.BattleConst.AreaType.COLUMN
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleBulletEvent
-local var_0_2 = var_0_0.Battle.BattleFormulas
-local var_0_3 = Vector3.up
-local var_0_4 = var_0_0.Battle.BattleVariable
-local var_0_5 = var_0_0.Battle.BattleConfig
-local var_0_6 = var_0_0.Battle.BattleConst
-local var_0_7 = var_0_0.Battle.BattleTargetChoise
-local var_0_8 = class("BattleColumnAreaBulletUnit", var_0_0.Battle.BattleAreaBulletUnit)
+function slot8.InitCldComponent(slot0)
+	slot1 = slot0:GetTemplate().cld_box
+	slot2 = slot0:GetTemplate().cld_offset
+	slot0._cldComponent = uv0.Battle.BattleColumnCldComponent.New(slot1[1], slot1[3])
 
-var_0_8.__name = "BattleColumnAreaBulletUnit"
-var_0_0.Battle.BattleColumnAreaBulletUnit = var_0_8
-var_0_8.AreaType = var_0_6.AreaType.COLUMN
-
-function var_0_8.InitCldComponent(arg_1_0)
-	local var_1_0 = arg_1_0:GetTemplate().cld_box
-	local var_1_1 = arg_1_0:GetTemplate().cld_offset
-
-	arg_1_0._cldComponent = var_0_0.Battle.BattleColumnCldComponent.New(var_1_0[1], var_1_0[3])
-
-	local var_1_2 = {
-		type = var_0_6.CldType.AOE,
-		UID = arg_1_0:GetUniqueID(),
-		IFF = arg_1_0:GetIFF()
-	}
-
-	arg_1_0._cldComponent:SetCldData(var_1_2)
+	slot0._cldComponent:SetCldData({
+		type = uv1.CldType.AOE,
+		UID = slot0:GetUniqueID(),
+		IFF = slot0:GetIFF()
+	})
 end
 
-function var_0_8.GetBoxSize(arg_2_0)
-	local var_2_0 = arg_2_0._cldComponent:GetCldBoxSize()
+function slot8.GetBoxSize(slot0)
+	slot1 = slot0._cldComponent:GetCldBoxSize()
 
-	return Vector3(var_2_0.range, var_2_0.range, var_2_0.tickness)
+	return Vector3(slot1.range, slot1.range, slot1.tickness)
 end

@@ -1,118 +1,104 @@
-﻿local var_0_0 = class("DecodeGamePage", import(".TemplatePage.SkinTemplatePage"))
-local var_0_1
+slot0 = class("DecodeGamePage", import(".TemplatePage.SkinTemplatePage"))
+slot1 = nil
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.dayTF = arg_1_0:findTF("Text", arg_1_0.bg):GetComponent(typeof(Text))
-	arg_1_0.item = arg_1_0:findTF("items/item", arg_1_0.bg)
-	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.bg)
-	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0.item)
-	arg_1_0.start = arg_1_0:findTF("AD/start")
-	arg_1_0.itemIcon = arg_1_0:findTF("AD/ring/icon")
-	arg_1_0.itemLock = arg_1_0:findTF("AD/ring/lock")
-	arg_1_0.itemGot = arg_1_0:findTF("AD/ring/got")
-	arg_1_0.itemProgressG = arg_1_0:findTF("AD/ring/bar_g")
-	arg_1_0.itemProgressB = arg_1_0:findTF("AD/ring/bar_b")
-	arg_1_0.red = arg_1_0:findTF("AD/red")
-	arg_1_0.number1 = arg_1_0:findTF("AD/1"):GetComponent(typeof(Image))
-	arg_1_0.number2 = arg_1_0:findTF("AD/2"):GetComponent(typeof(Image))
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.dayTF = slot0:findTF("Text", slot0.bg):GetComponent(typeof(Text))
+	slot0.item = slot0:findTF("items/item", slot0.bg)
+	slot0.items = slot0:findTF("items", slot0.bg)
+	slot0.uilist = UIItemList.New(slot0.items, slot0.item)
+	slot0.start = slot0:findTF("AD/start")
+	slot0.itemIcon = slot0:findTF("AD/ring/icon")
+	slot0.itemLock = slot0:findTF("AD/ring/lock")
+	slot0.itemGot = slot0:findTF("AD/ring/got")
+	slot0.itemProgressG = slot0:findTF("AD/ring/bar_g")
+	slot0.itemProgressB = slot0:findTF("AD/ring/bar_b")
+	slot0.red = slot0:findTF("AD/red")
+	slot0.number1 = slot0:findTF("AD/1"):GetComponent(typeof(Image))
+	slot0.number2 = slot0:findTF("AD/2"):GetComponent(typeof(Image))
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	var_0_0.super.OnFirstFlush(arg_2_0)
+function slot0.OnFirstFlush(slot0)
+	uv0.super.OnFirstFlush(slot0)
 
-	var_0_1 = arg_2_0.activity:getConfig("config_client").decodeGameId
+	uv1 = slot0.activity:getConfig("config_client").decodeGameId
 
-	onButton(arg_2_0, arg_2_0.start, function()
+	onButton(slot0, slot0.start, function ()
 		pg.m02:sendNotification(GAME.REQUEST_MINI_GAME, {
 			type = MiniGameRequestCommand.REQUEST_HUB_DATA,
-			callback = function()
-				pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_1)
+			callback = function ()
+				pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0)
 			end
 		})
 	end, SFX_PANEL)
-
-	local var_2_0 = Equipment.New({
+	GetImageSpriteFromAtlasAsync("equips/" .. Equipment.New({
 		id = DecodeGameConst.AWARD[2]
-	})
-
-	GetImageSpriteFromAtlasAsync("equips/" .. var_2_0:getConfig("icon"), "", arg_2_0.itemIcon)
+	}):getConfig("icon"), "", slot0.itemIcon)
 end
 
-function var_0_0.GetProgressColor(arg_5_0)
+function slot0.GetProgressColor(slot0)
 	return "#E6F9FD", "#738285"
 end
 
-function var_0_0.OnUpdateFlush(arg_6_0)
-	var_0_0.super.OnUpdateFlush(arg_6_0)
+function slot0.OnUpdateFlush(slot0)
+	uv0.super.OnUpdateFlush(slot0)
 
-	arg_6_0.dayTF.text = arg_6_0.nday .. "/7"
+	slot0.dayTF.text = slot0.nday .. "/7"
 
 	pg.m02:sendNotification(GAME.REQUEST_MINI_GAME, {
 		type = MiniGameRequestCommand.REQUEST_HUB_DATA,
-		callback = function()
-			arg_6_0:UpdateGameProgress()
+		callback = function ()
+			uv0:UpdateGameProgress()
 		end
 	})
 end
 
-function var_0_0.UpdateGameProgress(arg_8_0)
-	local var_8_0 = getProxy(MiniGameProxy)
-	local var_8_1 = var_8_0:GetHubByGameId(var_0_1)
-	local var_8_2 = var_8_0:GetMiniGameData(var_0_1)
-	local var_8_3 = DecodeMiniGameView.GetData(var_8_1, var_8_2)
-	local var_8_4 = DecodeGameModel.New()
+function slot0.UpdateGameProgress(slot0)
+	slot1 = getProxy(MiniGameProxy)
+	slot5 = DecodeGameModel.New()
 
-	var_8_4:SetData(var_8_3)
+	slot5:SetData(DecodeMiniGameView.GetData(slot1:GetHubByGameId(uv0), slot1:GetMiniGameData(uv0)))
 
-	local var_8_5 = var_8_4:GetUnlockedCnt()
-
-	if var_8_5 < DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN * DecodeGameConst.MAX_MAP_COUNT then
-		setFillAmount(arg_8_0.itemProgressB, var_8_5 * DecodeGameConst.PROGRESS2FILLAMOUMT)
+	if slot5:GetUnlockedCnt() < DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN * DecodeGameConst.MAX_MAP_COUNT then
+		setFillAmount(slot0.itemProgressB, slot6 * DecodeGameConst.PROGRESS2FILLAMOUMT)
 	else
-		setFillAmount(arg_8_0.itemProgressB, 1)
+		setFillAmount(slot0.itemProgressB, 1)
 	end
 
-	local var_8_6 = {
+	slot7 = {
 		0.212,
 		0.538,
 		1
 	}
-	local var_8_7 = var_8_4:GetPassWordProgress()
-	local var_8_8 = 0
 
-	for iter_8_0, iter_8_1 in ipairs(var_8_7) do
-		if iter_8_1 then
-			var_8_8 = var_8_8 + 1
+	for slot13, slot14 in ipairs(slot5:GetPassWordProgress()) do
+		if slot14 then
+			slot9 = 0 + 1
 		end
 	end
 
-	setFillAmount(arg_8_0.itemProgressG, var_8_8 == 0 and 0 or var_8_6[var_8_8])
+	setFillAmount(slot0.itemProgressG, slot9 == 0 and 0 or slot7[slot9])
 
-	local var_8_9 = var_8_4.isFinished
+	slot10 = slot5.isFinished
 
-	setActive(arg_8_0.itemLock, not var_8_9)
-	setActive(arg_8_0.itemGot, var_8_9)
-	arg_8_0:UpdateCanUseCnt(var_8_4.canUseCnt)
-	setActive(arg_8_0.red, not var_8_9 and arg_8_0:IsFinishAllTasks())
+	setActive(slot0.itemLock, not slot10)
+	setActive(slot0.itemGot, slot10)
+	slot0:UpdateCanUseCnt(slot5.canUseCnt)
+	setActive(slot0.red, not slot10 and slot0:IsFinishAllTasks())
 end
 
-function var_0_0.IsFinishAllTasks(arg_9_0)
-	local var_9_0 = arg_9_0.taskGroup[#arg_9_0.taskGroup]
-
-	return _.all(var_9_0, function(arg_10_0)
-		return getProxy(TaskProxy):getFinishTaskById(arg_10_0) ~= nil
+function slot0.IsFinishAllTasks(slot0)
+	return _.all(slot0.taskGroup[#slot0.taskGroup], function (slot0)
+		return getProxy(TaskProxy):getFinishTaskById(slot0) ~= nil
 	end)
 end
 
-function var_0_0.UpdateCanUseCnt(arg_11_0, arg_11_1)
-	local var_11_0 = math.floor(arg_11_1 / 10)
-	local var_11_1 = arg_11_1 % 10
-
-	arg_11_0.number1.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", var_11_0)
-	arg_11_0.number2.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", var_11_1)
-	tf(arg_11_0.number1).localPosition = var_11_0 == 1 and Vector3(571, 221.6) or Vector3(551.7, 221.6)
-	tf(arg_11_0.number2).localPosition = var_11_1 == 1 and Vector3(644, 221.6) or Vector3(625.5, 221.6)
+function slot0.UpdateCanUseCnt(slot0, slot1)
+	slot2 = math.floor(slot1 / 10)
+	slot0.number1.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", slot2)
+	slot0.number2.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", slot1 % 10)
+	tf(slot0.number1).localPosition = slot2 == 1 and Vector3(571, 221.6) or Vector3(551.7, 221.6)
+	tf(slot0.number2).localPosition = slot3 == 1 and Vector3(644, 221.6) or Vector3(625.5, 221.6)
 end
 
-return var_0_0
+return slot0

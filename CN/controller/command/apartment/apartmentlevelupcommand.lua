@@ -1,29 +1,26 @@
-﻿local var_0_0 = class("ApartmentLevelUpCommand", pm.SimpleCommand)
+slot0 = class("ApartmentLevelUpCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.groupId
-	local var_1_2 = var_1_0.triggerId
-	local var_1_3 = getProxy(ApartmentProxy)
-	local var_1_4 = var_1_3:getApartment(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.triggerId
 
-	if var_1_4.level >= getDorm3dGameset("favor_level")[1] or var_1_4.favor < var_1_4:getNextExp() then
+	if getDorm3dGameset("favor_level")[1] <= getProxy(ApartmentProxy):getApartment(slot2.groupId).level or slot6.favor < slot6:getNextExp() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(28005, {
-		ship_group = var_1_1
-	}, 28006, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_4 = var_1_3:getApartment(var_1_1)
+		ship_group = slot3
+	}, 28006, function (slot0)
+		if slot0.result == 0 then
+			uv0 = uv1:getApartment(uv2)
 
-			var_1_4:addLevel()
-			var_1_3:updateApartment(var_1_4)
-			arg_1_0:sendNotification(GAME.APARTMENT_LEVEL_UP_DONE, var_1_4)
+			uv0:addLevel()
+			uv1:updateApartment(uv0)
+			uv3:sendNotification(GAME.APARTMENT_LEVEL_UP_DONE, uv0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
 		end
 	end)
 end
 
-return var_0_0
+return slot0

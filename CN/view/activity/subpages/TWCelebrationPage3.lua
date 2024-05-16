@@ -1,54 +1,49 @@
-﻿local var_0_0 = class("TWCelebrationPage3", import("...base.BaseActivityPage"))
+slot0 = class("TWCelebrationPage3", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.getBtn = arg_1_0:findTF("AD/get")
-	arg_1_0.gotBtn = arg_1_0:findTF("AD/got")
-	arg_1_0.share = arg_1_0:findTF("AD/share")
-	arg_1_0.mask = arg_1_0:findTF("AD/mask")
-	arg_1_0.finished = arg_1_0:findTF("AD/finished")
-	arg_1_0.unfinished = arg_1_0:findTF("AD/unfinished")
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.getBtn = slot0:findTF("AD/get")
+	slot0.gotBtn = slot0:findTF("AD/got")
+	slot0.share = slot0:findTF("AD/share")
+	slot0.mask = slot0:findTF("AD/mask")
+	slot0.finished = slot0:findTF("AD/finished")
+	slot0.unfinished = slot0:findTF("AD/unfinished")
 end
 
-function var_0_0.OnFirstFlush(arg_2_0)
-	return
+function slot0.OnFirstFlush(slot0)
 end
 
-function var_0_0.OnUpdateFlush(arg_3_0)
-	local var_3_0 = arg_3_0.activity:getConfig("config_data")[1]
-	local var_3_1 = getProxy(TaskProxy)
-	local var_3_2 = var_3_1:getTaskById(var_3_0) or var_3_1:getFinishTaskById(var_3_0) or Task.New({
-		id = var_3_0
+function slot0.OnUpdateFlush(slot0)
+	slot3 = getProxy(TaskProxy):getTaskById(slot0.activity:getConfig("config_data")[1]) or slot2:getFinishTaskById(slot1) or Task.New({
+		id = slot1
 	})
-	local var_3_3 = var_3_2:isFinish()
-	local var_3_4 = var_3_2:isReceive()
+	slot4 = slot3:isFinish()
+	slot5 = slot3:isReceive()
 
-	setActive(arg_3_0.getBtn, var_3_2 and var_3_3 and not var_3_4)
-	setActive(arg_3_0.gotBtn, var_3_2 and var_3_4)
-	setActive(arg_3_0.mark, var_3_2 and var_3_4)
-	setActive(arg_3_0.share, var_3_2 and not var_3_3)
-	setActive(arg_3_0.finished, var_3_2 and var_3_3)
-	setActive(arg_3_0.unfinished, var_3_2 and not var_3_3)
-	onButton(arg_3_0, arg_3_0.share, function()
-		arg_3_0:share()
+	setActive(slot0.getBtn, slot3 and slot4 and not slot5)
+	setActive(slot0.gotBtn, slot3 and slot5)
+	setActive(slot0.mark, slot3 and slot5)
+	setActive(slot0.share, slot3 and not slot4)
+	setActive(slot0.finished, slot3 and slot4)
+	setActive(slot0.unfinished, slot3 and not slot4)
+	onButton(slot0, slot0.share, function ()
+		uv0:share()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.getBtn, function()
-		if var_3_2 and var_3_3 and not var_3_4 then
-			arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_3_2)
+	onButton(slot0, slot0.getBtn, function ()
+		if uv0 and uv1 and not uv2 then
+			uv3:emit(ActivityMediator.ON_TASK_SUBMIT, uv0)
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.share(arg_6_0)
-	arg_6_0:initShare()
+function slot0.share(slot0)
+	slot0:initShare()
 end
 
-function var_0_0.initShare(arg_7_0)
-	PoolMgr.GetInstance():GetUI("TWCelebrationShare", false, function(arg_8_0)
-		local var_8_0 = GameObject.Find("UICamera"):GetComponent(typeof(Camera)).transform:GetChild(0)
-
-		SetParent(arg_8_0, var_8_0, false)
+function slot0.initShare(slot0)
+	PoolMgr.GetInstance():GetUI("TWCelebrationShare", false, function (slot0)
+		SetParent(slot0, GameObject.Find("UICamera"):GetComponent(typeof(Camera)).transform:GetChild(0), false)
 	end)
 end
 
-return var_0_0
+return slot0

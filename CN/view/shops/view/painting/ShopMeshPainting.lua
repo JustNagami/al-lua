@@ -1,20 +1,19 @@
-﻿local var_0_0 = class("ShopMeshPainting")
+slot0 = class("ShopMeshPainting")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._painting = arg_1_1
+function slot0.Ctor(slot0, slot1)
+	slot0._painting = slot1
 end
 
-function var_0_0.Load(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	setShopPaintingPrefab(arg_2_0._painting, arg_2_1, arg_2_2 or "chuanwu")
-	arg_2_3()
+function slot0.Load(slot0, slot1, slot2, slot3)
+	setShopPaintingPrefab(slot0._painting, slot1, slot2 or "chuanwu")
+	slot3()
 end
 
-function var_0_0.Action(arg_3_0, arg_3_1)
-	return
+function slot0.Action(slot0, slot1)
 end
 
-function var_0_0.UnLoad(arg_4_0, arg_4_1)
-	retShopPaintingPrefab(arg_4_0._painting, arg_4_1)
+function slot0.UnLoad(slot0, slot1)
+	retShopPaintingPrefab(slot0._painting, slot1)
 end
 
-return var_0_0
+return slot0

@@ -1,69 +1,64 @@
-﻿local var_0_0 = class("SVAchievement", import("view.base.BaseSubView"))
+slot0 = class("SVAchievement", import("view.base.BaseSubView"))
+slot0.HideView = "SVAchievement.HideView"
 
-var_0_0.HideView = "SVAchievement.HideView"
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SVAchievement"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	return
+function slot0.OnLoaded(slot0)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	local var_3_0 = arg_3_0._tf:Find("display")
-	local var_3_1 = arg_3_0._tf.rect.width / var_3_0.rect.width
+function slot0.OnInit(slot0)
+	slot1 = slot0._tf:Find("display")
+	slot2 = slot0._tf.rect.width / slot1.rect.width
+	slot1.localScale = Vector3.New(slot2, slot2, 0)
+	slot0.rtDesc = slot1:Find("desc")
+	slot0.rtStar = slot0.rtDesc:Find("star")
 
-	var_3_0.localScale = Vector3.New(var_3_1, var_3_1, 0)
-	arg_3_0.rtDesc = var_3_0:Find("desc")
-	arg_3_0.rtStar = arg_3_0.rtDesc:Find("star")
-
-	onButton(arg_3_0, arg_3_0._tf, function()
-		if arg_3_0.isClosing then
+	onButton(slot0, slot0._tf, function ()
+		if uv0.isClosing then
 			return
 		end
 
-		arg_3_0:Hide()
+		uv0:Hide()
 	end, SFX_CANCEL)
 end
 
-function var_0_0.OnDestroy(arg_5_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.Show(arg_6_0)
-	setAnchoredPosition(arg_6_0.rtStar, Vector2.New(100, 0))
-	setActive(arg_6_0.rtStar:Find("SVAstar"), false)
-	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0._tf)
-	setActive(arg_6_0._tf, true)
+function slot0.Show(slot0)
+	setAnchoredPosition(slot0.rtStar, Vector2.New(100, 0))
+	setActive(slot0.rtStar:Find("SVAstar"), false)
+	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
+	setActive(slot0._tf, true)
 end
 
-function var_0_0.Hide(arg_7_0)
-	arg_7_0.isClosing = true
+function slot0.Hide(slot0)
+	slot0.isClosing = true
+	slot1 = slot0.rtDesc:InverseTransformPoint(slot0.starWorldPos)
+	slot2 = {}
 
-	local var_7_0 = arg_7_0.rtDesc:InverseTransformPoint(arg_7_0.starWorldPos)
-	local var_7_1 = {}
-
-	table.insert(var_7_1, function(arg_8_0)
-		setActive(arg_7_0.rtStar:Find("SVAstar"), true)
-		LeanTween.moveLocal(go(arg_7_0.rtStar), Vector3.New(var_7_0.x, var_7_0.y, 0), 0.5):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_8_0))
+	table.insert(slot2, function (slot0)
+		setActive(uv0.rtStar:Find("SVAstar"), true)
+		LeanTween.moveLocal(go(uv0.rtStar), Vector3.New(uv1.x, uv1.y, 0), 0.5):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(slot0))
 	end)
-	table.insert(var_7_1, function(arg_9_0)
-		Timer.New(arg_9_0, 1.1):Start()
+	table.insert(slot2, function (slot0)
+		Timer.New(slot0, 1.1):Start()
 	end)
-	seriesAsync(var_7_1, function()
-		arg_7_0.isClosing = false
+	seriesAsync(slot2, function ()
+		uv0.isClosing = false
 
-		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0._tf, arg_7_0._parentTf)
-		setActive(arg_7_0._tf, false)
-		arg_7_0:emit(var_0_0.HideView)
+		pg.UIMgr.GetInstance():UnOverlayPanel(uv0._tf, uv0._parentTf)
+		setActive(uv0._tf, false)
+		uv0:emit(uv1.HideView)
 	end)
 end
 
-function var_0_0.Setup(arg_11_0, arg_11_1, arg_11_2)
-	setText(arg_11_0.rtDesc, arg_11_1.config.target_desc)
+function slot0.Setup(slot0, slot1, slot2)
+	setText(slot0.rtDesc, slot1.config.target_desc)
 
-	arg_11_0.starWorldPos = arg_11_2
+	slot0.starWorldPos = slot2
 end
 
-return var_0_0
+return slot0

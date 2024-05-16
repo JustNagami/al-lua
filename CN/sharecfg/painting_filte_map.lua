@@ -1,4 +1,4 @@
-﻿pg = pg or {}
+pg = pg or {}
 pg.painting_filte_map = {
 	["22"] = {
 		key = "22",
@@ -672,6 +672,7 @@ pg.painting_filte_map = {
 			"painting/aimudeng_rw_tex",
 			"painting/aimudeng_n_tex",
 			"painting/aimudeng_n",
+			"painting/aimudeng_4_rw_tex",
 			"painting/aimudeng"
 		}
 	},
@@ -690,6 +691,12 @@ pg.painting_filte_map = {
 		res_list = {
 			"painting/aimudeng_3_tex",
 			"painting/aimudeng_3"
+		}
+	},
+	aimudeng_4_npc = {
+		key = "aimudeng_4_npc",
+		res_list = {
+			"painting/aimudeng_4_npc"
 		}
 	},
 	aisaikesi = {
@@ -2584,6 +2591,15 @@ pg.painting_filte_map = {
 		res_list = {
 			"painting/changdao_3_tex",
 			"painting/changdao_3"
+		}
+	},
+	changdao_4 = {
+		key = "changdao_4",
+		res_list = {
+			"painting/changdao_4_tex",
+			"painting/changdao_4_n_tex",
+			"painting/changdao_4_n",
+			"painting/changdao_4"
 		}
 	},
 	changdao_g = {
@@ -13137,6 +13153,13 @@ pg.painting_filte_map = {
 		res_list = {
 			"painting/unknown5_shadow_tex",
 			"painting/unknown5_shadow"
+		}
+	},
+	unknown6 = {
+		key = "unknown6",
+		res_list = {
+			"painting/unknown6_tex",
+			"painting/unknown6"
 		}
 	},
 	vtuber_aqua = {

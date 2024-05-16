@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.1
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -148,5 +137,16 @@
 	desc = "",
 	painting = 1,
 	id = 15912,
-	castCV = "skill"
+	castCV = "skill",
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.1
+			}
+		}
+	}
 }

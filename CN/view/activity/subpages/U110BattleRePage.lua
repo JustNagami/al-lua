@@ -1,114 +1,93 @@
-﻿local var_0_0 = class("U110BattleRePage", import("...base.BaseActivityPage"))
+slot0 = class("U110BattleRePage", import("...base.BaseActivityPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	arg_1_0.bg = arg_1_0:findTF("AD")
-	arg_1_0.slider = arg_1_0:findTF("slider", arg_1_0.bg)
-	arg_1_0.step = arg_1_0:findTF("step", arg_1_0.bg)
-	arg_1_0.progress = arg_1_0:findTF("progress", arg_1_0.bg)
-	arg_1_0.desc = arg_1_0:findTF("desc", arg_1_0.bg)
-	arg_1_0.awardTF = arg_1_0:findTF("award", arg_1_0.bg)
-	arg_1_0.battleBtn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
-	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
-	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
-	arg_1_0.buildBtn = arg_1_0:findTF("build_btn", arg_1_0.bg)
+function slot0.OnInit(slot0)
+	slot0.bg = slot0:findTF("AD")
+	slot0.slider = slot0:findTF("slider", slot0.bg)
+	slot0.step = slot0:findTF("step", slot0.bg)
+	slot0.progress = slot0:findTF("progress", slot0.bg)
+	slot0.desc = slot0:findTF("desc", slot0.bg)
+	slot0.awardTF = slot0:findTF("award", slot0.bg)
+	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
+	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
+	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
+	slot0.buildBtn = slot0:findTF("build_btn", slot0.bg)
 end
 
-function var_0_0.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity:getConfig("config_data")
-
-	arg_2_0.taskIDList = _.flatten(var_2_0)
-	arg_2_0.taskProxy = getProxy(TaskProxy)
+function slot0.OnDataSetting(slot0)
+	slot0.taskIDList = _.flatten(slot0.activity:getConfig("config_data"))
+	slot0.taskProxy = getProxy(TaskProxy)
 end
 
-function var_0_0.OnFirstFlush(arg_3_0)
-	onButton(arg_3_0, arg_3_0.battleBtn, function()
-		local var_4_0 = arg_3_0.activity:getConfig("config_client").fightLinkActID
-		local var_4_1 = var_4_0 and getProxy(ActivityProxy):getActivityById(var_4_0)
-
-		if not var_4_1 or var_4_1:isEnd() then
+function slot0.OnFirstFlush(slot0)
+	onButton(slot0, slot0.battleBtn, function ()
+		if not uv0.activity:getConfig("config_client").fightLinkActID or not getProxy(ActivityProxy):getActivityById(slot0) or slot1:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
+		uv0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.getBtn, function()
-		arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, arg_3_0.curTaskVO)
+	onButton(slot0, slot0.getBtn, function ()
+		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv0.curTaskVO)
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.buildBtn, function()
-		local var_6_0 = arg_3_0.activity:getConfig("config_client").buildLinkActID
-		local var_6_1 = var_6_0 and getProxy(ActivityProxy):getActivityById(var_6_0)
-
-		if not var_6_1 or var_6_1:isEnd() then
+	onButton(slot0, slot0.buildBtn, function ()
+		if not uv0.activity:getConfig("config_client").buildLinkActID or not getProxy(ActivityProxy):getActivityById(slot0) or slot1:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 
 			return
 		end
 
-		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = BuildShipScene.PROJECTS.SPECIAL
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_0.OnUpdateFlush(arg_7_0)
-	local var_7_0 = arg_7_0:findCurTaskIndex()
+function slot0.OnUpdateFlush(slot0)
+	slot1 = slot0:findCurTaskIndex()
 
-	setText(arg_7_0.step, var_7_0 .. "/" .. #arg_7_0.taskIDList)
+	setText(slot0.step, slot1 .. "/" .. #slot0.taskIDList)
 
-	local var_7_1 = arg_7_0.taskIDList[var_7_0]
-	local var_7_2 = arg_7_0.taskProxy:getTaskVO(var_7_1)
+	slot3 = slot0.taskProxy:getTaskVO(slot0.taskIDList[slot1])
+	slot0.curTaskVO = slot3
 
-	arg_7_0.curTaskVO = var_7_2
+	setText(slot0.progress, (slot3:getConfig("target_num") <= slot3:getProgress() and setColorStr(slot4, COLOR_GREEN) or slot4) .. "/" .. slot5)
+	setSlider(slot0.slider, 0, slot5, slot4)
 
-	local var_7_3 = var_7_2:getProgress()
-	local var_7_4 = var_7_2:getConfig("target_num")
+	slot6 = slot3:getConfig("award_display")[1]
 
-	setText(arg_7_0.progress, (var_7_4 <= var_7_3 and setColorStr(var_7_3, COLOR_GREEN) or var_7_3) .. "/" .. var_7_4)
-	setSlider(arg_7_0.slider, 0, var_7_4, var_7_3)
-
-	local var_7_5 = var_7_2:getConfig("award_display")[1]
-	local var_7_6 = {
-		type = var_7_5[1],
-		id = var_7_5[2],
-		count = var_7_5[3]
-	}
-
-	updateDrop(arg_7_0.awardTF, var_7_6)
-	onButton(arg_7_0, arg_7_0.awardTF, function()
-		arg_7_0:emit(BaseUI.ON_DROP, var_7_6)
+	updateDrop(slot0.awardTF, {
+		type = slot6[1],
+		id = slot6[2],
+		count = slot6[3]
+	})
+	onButton(slot0, slot0.awardTF, function ()
+		uv0:emit(BaseUI.ON_DROP, uv1)
 	end, SFX_PANEL)
-
-	local var_7_7 = pg.task_data_template[var_7_1].desc
-
-	setText(arg_7_0.desc, var_7_7)
-
-	local var_7_8 = var_7_2:getTaskStatus()
-
-	setActive(arg_7_0.battleBtn, var_7_8 == 0)
-	setActive(arg_7_0.getBtn, var_7_8 == 1)
-	setActive(arg_7_0.gotBtn, var_7_8 == 2)
+	setText(slot0.desc, pg.task_data_template[slot2].desc)
+	setActive(slot0.battleBtn, slot3:getTaskStatus() == 0)
+	setActive(slot0.getBtn, slot9 == 1)
+	setActive(slot0.gotBtn, slot9 == 2)
 end
 
-function var_0_0.OnDestroy(arg_9_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-function var_0_0.findCurTaskIndex(arg_10_0)
-	local var_10_0
+function slot0.findCurTaskIndex(slot0)
+	slot1 = nil
 
-	for iter_10_0, iter_10_1 in ipairs(arg_10_0.taskIDList) do
-		if arg_10_0.taskProxy:getTaskVO(iter_10_1):getTaskStatus() <= 1 then
-			var_10_0 = iter_10_0
+	for slot5, slot6 in ipairs(slot0.taskIDList) do
+		if slot0.taskProxy:getTaskVO(slot6):getTaskStatus() <= 1 then
+			slot1 = slot5
 
 			break
-		elseif iter_10_0 == #arg_10_0.taskIDList then
-			var_10_0 = iter_10_0
+		elseif slot5 == #slot0.taskIDList then
+			slot1 = slot5
 		end
 	end
 
-	return var_10_0
+	return slot1
 end
 
-return var_0_0
+return slot0

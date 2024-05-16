@@ -1,117 +1,103 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleBuffFixVelocity", slot0.Battle.BattleBuffAddAttr)
+slot0.Battle.BattleBuffFixVelocity = slot1
+slot1.__name = "BattleBuffFixVelocity"
+slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
 
-local var_0_0 = ys
-local var_0_1 = class("BattleBuffFixVelocity", var_0_0.Battle.BattleBuffAddAttr)
-
-var_0_0.Battle.BattleBuffFixVelocity = var_0_1
-var_0_1.__name = "BattleBuffFixVelocity"
-var_0_1.FX_TYPE = var_0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.GetEffectType(arg_2_0)
-	return var_0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
+function slot1.GetEffectType(slot0)
+	return uv0.Battle.BattleBuffEffect.FX_TYPE_MOD_VELOCTIY
 end
 
-function var_0_1.SetArgs(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0._group = arg_3_0._tempData.arg_list.group or arg_3_2:GetID()
-
-	local var_3_0 = arg_3_0._tempData.arg_list.add or 0
-
-	arg_3_0._baseAdd = var_0_0.Battle.BattleFormulas.ConvertShipSpeed(var_3_0)
-	arg_3_0._addValue = arg_3_0._baseAdd
-	arg_3_0._baseMul = (arg_3_0._tempData.arg_list.mul or 0) * 0.0001
-	arg_3_0._mulValue = arg_3_0._baseMul
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._group = slot0._tempData.arg_list.group or slot2:GetID()
+	slot0._baseAdd = uv0.Battle.BattleFormulas.ConvertShipSpeed(slot0._tempData.arg_list.add or 0)
+	slot0._addValue = slot0._baseAdd
+	slot0._baseMul = (slot0._tempData.arg_list.mul or 0) * 0.0001
+	slot0._mulValue = slot0._baseMul
 end
 
-function var_0_1.onStack(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_0._addValue = arg_4_0._baseAdd * arg_4_2._stack
-	arg_4_0._mulValue = arg_4_0._baseMul * arg_4_2._stack
+function slot1.onStack(slot0, slot1, slot2)
+	slot0._addValue = slot0._baseAdd * slot2._stack
+	slot0._mulValue = slot0._baseMul * slot2._stack
 
-	arg_4_0:UpdateAttr(arg_4_1)
+	slot0:UpdateAttr(slot1)
 end
 
-function var_0_1.onRemove(arg_5_0, arg_5_1, arg_5_2)
-	arg_5_0._addValue = 0
-	arg_5_0._mulValue = 0
+function slot1.onRemove(slot0, slot1, slot2)
+	slot0._addValue = 0
+	slot0._mulValue = 0
 
-	arg_5_0:UpdateAttr(arg_5_1)
+	slot0:UpdateAttr(slot1)
 end
 
-function var_0_1.UpdateAttr(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0:calcMulValue(arg_6_1)
-	local var_6_1 = arg_6_0:calcAddValue(arg_6_1)
-
-	var_0_0.Battle.BattleAttr.FlashVelocity(arg_6_1, var_6_0, var_6_1)
+function slot1.UpdateAttr(slot0, slot1)
+	uv0.Battle.BattleAttr.FlashVelocity(slot1, slot0:calcMulValue(slot1), slot0:calcAddValue(slot1))
 end
 
-function var_0_1.calcMulValue(arg_7_0, arg_7_1)
-	local var_7_0 = 1
-	local var_7_1 = 1
-	local var_7_2 = {}
-	local var_7_3 = {}
-	local var_7_4 = arg_7_1:GetBuffList()
+function slot1.calcMulValue(slot0, slot1)
+	slot2 = 1
+	slot3 = 1
+	slot4 = {}
+	slot5 = {}
 
-	for iter_7_0, iter_7_1 in pairs(var_7_4) do
-		for iter_7_2, iter_7_3 in ipairs(iter_7_1._effectList) do
-			if iter_7_3:GetEffectType() == var_0_1.FX_TYPE then
-				local var_7_5 = iter_7_3._mulValue
-				local var_7_6 = iter_7_3._group
-				local var_7_7 = var_7_2[var_7_6] or 1
-				local var_7_8 = var_7_3[var_7_6] or 1
-				local var_7_9 = 1 + var_7_5
+	for slot10, slot11 in pairs(slot1:GetBuffList()) do
+		for slot15, slot16 in ipairs(slot11._effectList) do
+			if slot16:GetEffectType() == uv0.FX_TYPE then
+				slot17 = slot16._mulValue
+				slot19 = slot4[slot16._group] or 1
+				slot20 = slot5[slot18] or 1
+				slot21 = 1 + slot17
 
-				if var_7_5 > 0 and var_7_7 < var_7_9 then
-					var_7_0 = var_7_0 / var_7_7 * var_7_9
-					var_7_7 = var_7_9
+				if slot17 > 0 and slot19 < slot21 then
+					slot2 = slot2 / slot19 * slot21
+					slot19 = slot21
 				end
 
-				if var_7_5 < 0 and var_7_9 < var_7_8 then
-					var_7_1 = var_7_1 / var_7_8 * var_7_9
-					var_7_8 = var_7_9
+				if slot17 < 0 and slot21 < slot20 then
+					slot3 = slot3 / slot20 * slot21
+					slot20 = slot21
 				end
 
-				var_7_2[var_7_6] = var_7_7
-				var_7_3[var_7_6] = var_7_8
+				slot4[slot18] = slot19
+				slot5[slot18] = slot20
 			end
 		end
 	end
 
-	return var_7_0 * var_7_1
+	return slot2 * slot3
 end
 
-function var_0_1.calcAddValue(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1:GetBuffList()
-	local var_8_1 = 0
-	local var_8_2 = 0
-	local var_8_3 = {}
-	local var_8_4 = {}
+function slot1.calcAddValue(slot0, slot1)
+	slot3 = 0
+	slot4 = 0
+	slot5 = {}
+	slot6 = {}
 
-	for iter_8_0, iter_8_1 in pairs(var_8_0) do
-		for iter_8_2, iter_8_3 in ipairs(iter_8_1._effectList) do
-			if iter_8_3:GetEffectType() == var_0_1.FX_TYPE then
-				local var_8_5 = iter_8_3._addValue
-				local var_8_6 = iter_8_3._group
-				local var_8_7 = var_8_3[var_8_6] or 0
-				local var_8_8 = var_8_4[var_8_6] or 0
+	for slot10, slot11 in pairs(slot1:GetBuffList()) do
+		for slot15, slot16 in ipairs(slot11._effectList) do
+			if slot16:GetEffectType() == uv0.FX_TYPE then
+				slot20 = slot6[slot18] or 0
 
-				if var_8_7 < var_8_5 and var_8_5 > 0 then
-					var_8_1 = var_8_1 + var_8_5 - var_8_7
-					var_8_7 = var_8_5
+				if (slot5[slot16._group] or 0) < slot16._addValue and slot17 > 0 then
+					slot3 = slot3 + slot17 - slot19
+					slot19 = slot17
 				end
 
-				if var_8_5 < var_8_8 and var_8_5 < 0 then
-					var_8_2 = var_8_2 + var_8_5 - var_8_8
-					var_8_8 = var_8_5
+				if slot17 < slot20 and slot17 < 0 then
+					slot4 = slot4 + slot17 - slot20
+					slot20 = slot17
 				end
 
-				var_8_3[var_8_6] = var_8_7
-				var_8_4[var_8_6] = var_8_8
+				slot5[slot18] = slot19
+				slot6[slot18] = slot20
 			end
 		end
 	end
 
-	return var_8_1 + var_8_2
+	return slot3 + slot4
 end

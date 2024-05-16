@@ -1,4 +1,4 @@
-﻿return {
+return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "ZHUNUO10",
@@ -82,23 +82,6 @@
 				time = 1
 			}
 		},
-		flashout = {
-			black = true,
-			dur = 0.75,
-			alpha = {
-				0,
-				1
-			}
-		},
-		flashin = {
-			delay = 1,
-			dur = 0.75,
-			black = true,
-			alpha = {
-				1,
-				0
-			}
-		},
 		{
 			actor = 403010,
 			side = 2,
@@ -176,6 +159,23 @@
 			painting = {
 				alpha = 0.3,
 				time = 1
+			}
+		},
+		flashout = {
+			black = true,
+			dur = 0.75,
+			alpha = {
+				0,
+				1
+			}
+		},
+		flashin = {
+			delay = 1,
+			dur = 0.75,
+			black = true,
+			alpha = {
+				1,
+				0
 			}
 		}
 	}

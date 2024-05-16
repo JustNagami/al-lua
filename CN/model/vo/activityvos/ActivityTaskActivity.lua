@@ -1,11 +1,11 @@
-﻿local var_0_0 = class("ActivityTaskActivity", import("model.vo.ActivityVOs.ITaskActivity"))
+slot0 = class("ActivityTaskActivity", import("model.vo.ActivityVOs.ITaskActivity"))
 
-function var_0_0.GetFinishedTaskIds(arg_1_0)
-	return arg_1_0:getData1List()
+function slot0.GetFinishedTaskIds(slot0)
+	return slot0:getData1List()
 end
 
-function var_0_0.GetTaskIdsByDay(arg_2_0)
-	return arg_2_0:getConfig("config_data")
+function slot0.GetTaskIdsByDay(slot0)
+	return slot0:getConfig("config_data")
 end
 
-return var_0_0
+return slot0

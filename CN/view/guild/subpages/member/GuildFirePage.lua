@@ -1,99 +1,87 @@
-﻿local var_0_0 = class("GuildFirePage", import(".GuildMemberBasePage"))
+slot0 = class("GuildFirePage", import(".GuildMemberBasePage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildFirePage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	var_0_0.super.OnLoaded(arg_2_0)
+function slot0.OnLoaded(slot0)
+	uv0.super.OnLoaded(slot0)
 
-	arg_2_0.fireconfirmBtn = arg_2_0:findTF("frame/confirm_btn")
-	arg_2_0.firecancelBtn = arg_2_0:findTF("frame/cancel_btn")
-	arg_2_0.firenameTF = arg_2_0:findTF("frame/info/name/Text", arg_2_0._tf):GetComponent(typeof(Text))
-	arg_2_0.fireiconTF = arg_2_0:findTF("frame/info/shipicon/icon", arg_2_0._tf):GetComponent(typeof(Image))
-	arg_2_0.fireduty = arg_2_0:findTF("frame/duty"):GetComponent(typeof(Image))
-	arg_2_0.firestarsTF = arg_2_0:findTF("frame/info/shipicon/stars", arg_2_0._tf)
-	arg_2_0.firestarTF = arg_2_0:findTF("frame/info/shipicon/stars/star", arg_2_0._tf)
-	arg_2_0.firelevelTF = arg_2_0:findTF("frame/info/level/Text", arg_2_0._tf):GetComponent(typeof(Text))
-	arg_2_0.circle = arg_2_0:findTF("frame/info/shipicon/frame", arg_2_0._tf)
+	slot0.fireconfirmBtn = slot0:findTF("frame/confirm_btn")
+	slot0.firecancelBtn = slot0:findTF("frame/cancel_btn")
+	slot0.firenameTF = slot0:findTF("frame/info/name/Text", slot0._tf):GetComponent(typeof(Text))
+	slot0.fireiconTF = slot0:findTF("frame/info/shipicon/icon", slot0._tf):GetComponent(typeof(Image))
+	slot0.fireduty = slot0:findTF("frame/duty"):GetComponent(typeof(Image))
+	slot0.firestarsTF = slot0:findTF("frame/info/shipicon/stars", slot0._tf)
+	slot0.firestarTF = slot0:findTF("frame/info/shipicon/stars/star", slot0._tf)
+	slot0.firelevelTF = slot0:findTF("frame/info/level/Text", slot0._tf):GetComponent(typeof(Text))
+	slot0.circle = slot0:findTF("frame/info/shipicon/frame", slot0._tf)
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.firecancelBtn, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.firecancelBtn, function ()
+		uv0:Hide()
 	end, SFX_CONFIRM)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_CONFIRM)
 end
 
-function var_0_0.OnShow(arg_6_0)
-	local var_6_0 = arg_6_0.guildVO
-	local var_6_1 = arg_6_0.playerVO
-	local var_6_2 = arg_6_0.memberVO
+function slot0.OnShow(slot0)
+	slot1 = slot0.guildVO
+	slot2 = slot0.playerVO
+	slot3 = slot0.memberVO
+	slot0.firenameTF.text = slot3.name
+	slot4 = AttireFrame.attireFrameRes(slot3, slot3.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, slot3.propose)
 
-	arg_6_0.firenameTF.text = var_6_2.name
-
-	local var_6_3 = AttireFrame.attireFrameRes(var_6_2, var_6_2.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, var_6_2.propose)
-
-	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_6_3, var_6_3, true, function(arg_7_0)
-		if IsNil(arg_6_0._tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot4, slot4, true, function (slot0)
+		if IsNil(uv0._tf) then
 			return
 		end
 
-		if arg_6_0.circle then
-			arg_7_0.name = var_6_3
-			findTF(arg_7_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		if uv0.circle then
+			slot0.name = uv1
+			findTF(slot0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			setParent(arg_7_0, arg_6_0.circle, false)
+			setParent(slot0, uv0.circle, false)
 		else
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_6_3, var_6_3, arg_7_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
+		end
+	end)
+	LoadSpriteAsync("qicon/" .. Ship.New({
+		configId = slot3.icon,
+		skin_id = slot3.skinId
+	}):getPainting(), function (slot0)
+		if not IsNil(uv0.fireiconTF) then
+			uv0.fireiconTF.sprite = slot0
 		end
 	end)
 
-	local var_6_4 = pg.ship_data_statistics[var_6_2.icon]
-	local var_6_5 = Ship.New({
-		configId = var_6_2.icon,
-		skin_id = var_6_2.skinId
-	})
+	slot0.fireduty.sprite = GetSpriteFromAtlas("dutyicon", "icon_" .. slot3.duty)
 
-	LoadSpriteAsync("qicon/" .. var_6_5:getPainting(), function(arg_8_0)
-		if not IsNil(arg_6_0.fireiconTF) then
-			arg_6_0.fireiconTF.sprite = arg_8_0
-		end
-	end)
-
-	local var_6_6 = GetSpriteFromAtlas("dutyicon", "icon_" .. var_6_2.duty)
-
-	arg_6_0.fireduty.sprite = var_6_6
-
-	local var_6_7 = arg_6_0.firestarsTF.childCount
-
-	for iter_6_0 = var_6_7, var_6_4.star - 1 do
-		cloneTplTo(arg_6_0.firestarTF, arg_6_0.firestarsTF)
+	for slot12 = slot0.firestarsTF.childCount, pg.ship_data_statistics[slot3.icon].star - 1 do
+		cloneTplTo(slot0.firestarTF, slot0.firestarsTF)
 	end
 
-	for iter_6_1 = 1, var_6_7 do
-		local var_6_8 = arg_6_0.firestarsTF:GetChild(iter_6_1 - 1)
-
-		setActive(var_6_8, iter_6_1 <= var_6_4.star)
+	for slot12 = 1, slot8 do
+		setActive(slot0.firestarsTF:GetChild(slot12 - 1), slot12 <= slot5.star)
 	end
 
-	arg_6_0.firelevelTF.text = "Lv." .. var_6_2.level
+	slot0.firelevelTF.text = "Lv." .. slot3.level
 
-	onButton(arg_6_0, arg_6_0.fireconfirmBtn, function()
-		if var_6_2.id == var_6_1.id then
+	onButton(slot0, slot0.fireconfirmBtn, function ()
+		if uv0.id == uv1.id then
 			return
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("guild_fire_tip"),
-			onYes = function()
-				arg_6_0:emit(GuildMemberMediator.FIRE, var_6_2.id)
-				arg_6_0:Hide()
+			onYes = function ()
+				uv0:emit(GuildMemberMediator.FIRE, uv1.id)
+				uv0:Hide()
 			end
 		})
 	end, SFX_CONFIRM)
 end
 
-return var_0_0
+return slot0

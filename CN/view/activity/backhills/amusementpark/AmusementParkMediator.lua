@@ -1,69 +1,63 @@
-﻿local var_0_0 = class("AmusementParkMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+slot0 = class("AmusementParkMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+slot0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
+slot0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
 
-var_0_0.MINIGAME_OPERATION = "MINIGAME_OPERATION"
-var_0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+function slot0.register(slot0)
+	slot0:BindEvent()
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:BindEvent()
+	slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
 
-	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF)
+	assert(slot1, "Building Activity Not Found")
 
-	assert(var_1_0, "Building Activity Not Found")
+	slot0.activity = slot1
 
-	arg_1_0.activity = var_1_0
-
-	arg_1_0.viewComponent:UpdateActivity(var_1_0)
+	slot0.viewComponent:UpdateActivity(slot1)
 end
 
-function var_0_0.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_0.ACTIVITY_OPERATION, function(arg_3_0, arg_3_1)
-		assert(arg_2_0.activity, "Cant Initialize Activity")
+function slot0.BindEvent(slot0)
+	slot0:bind(uv0.ACTIVITY_OPERATION, function (slot0, slot1)
+		assert(uv0.activity, "Cant Initialize Activity")
 
-		arg_3_1.activity_id = arg_2_0.activity.id
+		slot1.activity_id = uv0.activity.id
 
-		arg_2_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_3_1)
+		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_4_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function var_0_0.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:getName()
-	local var_5_1 = arg_5_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_5_0 == GAME.SEND_MINI_GAME_OP_DONE then
-		local var_5_2 = {
-			function(arg_6_0)
-				local var_6_0 = var_5_1.awards
-
-				if #var_6_0 > 0 then
-					arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_0, arg_6_0)
+	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then
+		seriesAsync({
+			function (slot0)
+				if #uv0.awards > 0 then
+					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
 				else
-					arg_6_0()
+					slot0()
 				end
 			end,
-			function(arg_7_0)
-				arg_5_0.viewComponent:UpdateView()
+			function (slot0)
+				uv0.viewComponent:UpdateView()
 			end
-		}
+		})
+	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED then
+		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
+			slot0.activity = slot3
 
-		seriesAsync(var_5_2)
-	elseif var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
-		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF then
-			arg_5_0.activity = var_5_1
+			slot0.viewComponent:UpdateActivity(slot3)
+		elseif slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
+			slot4 = slot3
 
-			arg_5_0.viewComponent:UpdateActivity(var_5_1)
-		elseif var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
-			local var_5_3 = var_5_1
-
-			arg_5_0.viewComponent:UpdateView()
+			slot0.viewComponent:UpdateView()
 		end
 	end
 end
 
-return var_0_0
+return slot0

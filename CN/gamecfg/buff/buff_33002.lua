@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				time = 30,
-				target = "TargetSelf",
-				skill_id = 33002
-			}
-		}
-	},
+return {
 	{
 		desc = "每隔30秒回复全队耐久1次",
 		effect_list = {
@@ -36,5 +23,18 @@
 	stack = 1,
 	id = 33002,
 	icon = 33002,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				time = 30,
+				target = "TargetSelf",
+				skill_id = 33002
+			}
+		}
+	}
 }

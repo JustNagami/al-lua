@@ -1,11 +1,11 @@
-﻿local var_0_0 = class("MedalShopPurchasePanel", import(".GuildShopPurchasePanel"))
+slot0 = class("MedalShopPurchasePanel", import(".GuildShopPurchasePanel"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "MedalShopPurchaseMsgUI"
 end
 
-function var_0_0.OnConfirm(arg_2_0)
-	arg_2_0:emit(NewShopsMediator.ON_MEDAL_SHOPPING, arg_2_0.data.id, arg_2_0.selectedList)
+function slot0.OnConfirm(slot0)
+	slot0:emit(NewShopsMediator.ON_MEDAL_SHOPPING, slot0.data.id, slot0.selectedList)
 end
 
-return var_0_0
+return slot0

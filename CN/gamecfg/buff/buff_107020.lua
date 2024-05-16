@@ -1,31 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				countTarget = 3,
-				countType = 107020,
-				index = {
-					2
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				skill_id = 107020,
-				countType = 107020
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -325,5 +298,32 @@
 	stack = 1,
 	id = 107020,
 	icon = 107020,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				countTarget = 3,
+				countType = 107020,
+				index = {
+					2
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				skill_id = 107020,
+				countType = 107020
+			}
+		}
+	}
 }

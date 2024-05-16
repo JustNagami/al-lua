@@ -1,29 +1,29 @@
-﻿local var_0_0 = class("CourtYardFurnitureSlot", import(".CourtYardFurnitureBaseSlot"))
+slot0 = class("CourtYardFurnitureSlot", import(".CourtYardFurnitureBaseSlot"))
 
-function var_0_0.OnInit(arg_1_0, arg_1_1)
-	arg_1_0.actionName = arg_1_1[1]
-	arg_1_0.offset = arg_1_1[2] and Vector3(arg_1_1[2][1], arg_1_1[2][2], 0) or Vector3.zero
-	arg_1_0.scale = arg_1_1[3] and Vector3(arg_1_1[3][1], arg_1_1[3][2], 1) or Vector3.one
-	arg_1_0.mask = arg_1_1[4]
-	arg_1_0.bodyMask = arg_1_1[6] and {
-		offset = arg_1_1[6][1] and Vector2(arg_1_1[6][1][1], arg_1_1[6][1][2]) or Vector3.zero,
-		size = arg_1_1[6][2] and Vector2(arg_1_1[6][2][1], arg_1_1[6][2][2]) or Vector3.zero,
-		img = arg_1_1[6][3]
+function slot0.OnInit(slot0, slot1)
+	slot0.actionName = slot1[1]
+	slot0.offset = slot1[2] and Vector3(slot1[2][1], slot1[2][2], 0) or Vector3.zero
+	slot0.scale = slot1[3] and Vector3(slot1[3][1], slot1[3][2], 1) or Vector3.one
+	slot0.mask = slot1[4]
+	slot0.bodyMask = slot1[6] and {
+		offset = slot1[6][1] and Vector2(slot1[6][1][1], slot1[6][1][2]) or Vector3.zero,
+		size = slot1[6][2] and Vector2(slot1[6][2][1], slot1[6][2][2]) or Vector3.zero,
+		img = slot1[6][3]
 	}
 end
 
-function var_0_0.GetMask(arg_2_0)
-	if arg_2_0.mask == "" then
+function slot0.GetMask(slot0)
+	if slot0.mask == "" then
 		return nil
 	end
 
-	return arg_2_0.mask
+	return slot0.mask
 end
 
-function var_0_0.OnStart(arg_3_0)
-	arg_3_0.user:UpdateInteraction({
-		action = arg_3_0.actionName
+function slot0.OnStart(slot0)
+	slot0.user:UpdateInteraction({
+		action = slot0.actionName
 	})
 end
 
-return var_0_0
+return slot0

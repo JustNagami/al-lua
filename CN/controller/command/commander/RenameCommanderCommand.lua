@@ -1,29 +1,26 @@
-﻿local var_0_0 = class("RenameCommanderCommand", pm.SimpleCommand)
+slot0 = class("RenameCommanderCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.commanderId
-	local var_1_2 = var_1_0.name
-	local var_1_3 = getProxy(CommanderProxy)
-	local var_1_4 = var_1_3:getCommanderById(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot4 = slot2.name
 
-	if not var_1_4 then
+	if not getProxy(CommanderProxy):getCommanderById(slot2.commanderId) then
 		return
 	end
 
-	if not var_1_4:canModifyName() then
+	if not slot6:canModifyName() then
 		return
 	end
 
-	if not var_1_2 or var_1_2 == "" then
+	if not slot4 or slot4 == "" then
 		return
 	end
 
-	if var_1_4:getName() == var_1_2 then
+	if slot6:getName() == slot4 then
 		return
 	end
 
-	if not nameValidityCheck(var_1_2, 0, 20, {
+	if not nameValidityCheck(slot4, 0, 20, {
 		"spece_illegal_tip",
 		"login_newPlayerScene_name_tooShort",
 		"login_newPlayerScene_name_tooLong",
@@ -33,25 +30,21 @@ function var_0_0.execute(arg_1_0, arg_1_1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(25020, {
-		commanderid = var_1_1,
-		name = var_1_2
-	}, 25021, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_4:setName(var_1_2)
-
-			local var_2_0 = pg.gameset.commander_rename_coldtime.key_value
-			local var_2_1 = pg.TimeMgr.GetInstance():GetServerTime() + var_2_0
-
-			var_1_4:setRenameTime(var_2_1)
-			var_1_3:updateCommander(var_1_4)
-			arg_1_0:sendNotification(GAME.COMMANDER_RENAME_DONE, {
-				id = var_1_4.id,
-				name = var_1_2
+		commanderid = slot3,
+		name = slot4
+	}, 25021, function (slot0)
+		if slot0.result == 0 then
+			uv0:setName(uv1)
+			uv0:setRenameTime(pg.TimeMgr.GetInstance():GetServerTime() + pg.gameset.commander_rename_coldtime.key_value)
+			uv2:updateCommander(uv0)
+			uv3:sendNotification(GAME.COMMANDER_RENAME_DONE, {
+				id = uv0.id,
+				name = uv1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("rename_commander_erro", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("rename_commander_erro", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

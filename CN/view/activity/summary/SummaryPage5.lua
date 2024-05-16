@@ -1,56 +1,43 @@
-﻿local var_0_0 = class("SummaryPage5", import(".SummaryAnimationPage"))
+slot0 = class("SummaryPage5", import(".SummaryAnimationPage"))
 
-function var_0_0.OnInit(arg_1_0)
-	local var_1_0 = findTF(arg_1_0._go, "share")
-
-	onButton(arg_1_0, var_1_0, function()
-		if arg_1_0:inAnim() then
+function slot0.OnInit(slot0)
+	onButton(slot0, findTF(slot0._go, "share"), function ()
+		if uv0:inAnim() then
 			return
 		end
 
 		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeSummary)
 	end, SFX_PANEL)
+	setText(findTF(findTF(slot0._go, "frame/name"), "Text"), slot0.summaryInfoVO.name)
 
-	local var_1_1 = findTF(arg_1_0._go, "frame/name")
-	local var_1_2 = findTF(var_1_1, "Text")
+	slot0.textTFs = {}
 
-	setText(var_1_2, arg_1_0.summaryInfoVO.name)
+	for slot8 = 1, findTF(slot0._go, "frame/texts").childCount do
+		if go(slot4:GetChild(slot8 - 1)).name == "list" or slot10 == "list1" then
+			for slot14 = 1, slot9.childCount do
+				slot15 = slot9:GetChild(slot14 - 1)
 
-	local var_1_3 = findTF(arg_1_0._go, "frame/texts")
+				setActive(slot15, (go(slot15).name ~= "guildName" or slot0.summaryInfoVO:hasGuild()) and (slot16 ~= "medalCount" or not not slot0.summaryInfoVO:hasMedal()))
 
-	arg_1_0.textTFs = {}
-
-	for iter_1_0 = 1, var_1_3.childCount do
-		local var_1_4 = var_1_3:GetChild(iter_1_0 - 1)
-		local var_1_5 = go(var_1_4).name
-
-		if var_1_5 == "list" or var_1_5 == "list1" then
-			for iter_1_1 = 1, var_1_4.childCount do
-				local var_1_6 = var_1_4:GetChild(iter_1_1 - 1)
-				local var_1_7 = go(var_1_6).name
-
-				setActive(var_1_6, (var_1_7 ~= "guildName" or not not arg_1_0.summaryInfoVO:hasGuild()) and (var_1_7 ~= "medalCount" or not not arg_1_0.summaryInfoVO:hasMedal()))
-
-				if go(var_1_6).name ~= "label" then
-					if var_1_7 == "guildName" or var_1_7 == "chapterName" then
-						setText(var_1_6:Find("image/Text"), "「" .. string.gsub(arg_1_0.summaryInfoVO[go(var_1_6).name] .. "」", "–", "-"))
+				if go(slot15).name ~= "label" then
+					if slot16 == "guildName" or slot16 == "chapterName" then
+						setText(slot15:Find("image/Text"), "「" .. string.gsub(slot0.summaryInfoVO[go(slot15).name] .. "」", "–", "-"))
 					else
-						setText(var_1_6:Find("image/Text"), arg_1_0.summaryInfoVO[go(var_1_6).name])
+						setText(slot15:Find("image/Text"), slot0.summaryInfoVO[go(slot15).name])
 					end
 				end
 			end
-		elseif var_1_5 ~= "label" then
-			setText(var_1_4:Find("Text"), arg_1_0.summaryInfoVO[var_1_5])
+		elseif slot10 ~= "label" then
+			setText(slot9:Find("Text"), slot0.summaryInfoVO[slot10])
 		end
 
-		table.insert(arg_1_0.textTFs, var_1_4)
+		table.insert(slot0.textTFs, slot9)
 	end
 
-	setActive(arg_1_0._go, false)
+	setActive(slot0._go, false)
 end
 
-function var_0_0.Clear(arg_3_0)
-	return
+function slot0.Clear(slot0)
 end
 
-return var_0_0
+return slot0

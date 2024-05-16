@@ -1,56 +1,51 @@
-﻿pg = pg or {}
+pg = pg or {}
+slot0 = pg
+slot0.YongshiDeepLinkingMgr = singletonClass("YongshiDeepLinkingMgr")
+slot1 = slot0.YongshiDeepLinkingMgr
+slot2 = true
 
-local var_0_0 = pg
-
-var_0_0.YongshiDeepLinkingMgr = singletonClass("YongshiDeepLinkingMgr")
-
-local var_0_1 = var_0_0.YongshiDeepLinkingMgr
-local var_0_2 = true
-
-local function var_0_3(arg_1_0)
-	if var_0_2 then
-		originalPrint(arg_1_0)
+function slot3(slot0)
+	if uv0 then
+		originalPrint(slot0)
 	end
 end
 
-function var_0_1.SetData(arg_2_0, arg_2_1)
-	var_0_3("SetData......")
+function slot1.SetData(slot0, slot1)
+	uv0("SetData......")
 
-	arg_2_0.deepLinking = arg_2_1
+	slot0.deepLinking = slot1
 
-	arg_2_0:SwitchScene()
+	slot0:SwitchScene()
 end
 
-function var_0_1.ShouldSwitchScene(arg_3_0)
-	if arg_3_0.deepLinking == nil or arg_3_0.deepLinking:IsEmpty() then
-		var_0_3("deepLinking is empty")
+function slot1.ShouldSwitchScene(slot0)
+	if slot0.deepLinking == nil or slot0.deepLinking:IsEmpty() then
+		uv0("deepLinking is empty")
 
 		return false
 	end
 
-	if not var_0_0.m02 then
-		var_0_3("game is not start")
+	if not uv1.m02 then
+		uv0("game is not start")
 
 		return false
 	end
 
-	local var_3_0 = getProxy(ContextProxy):getCurrentContext()
-
-	if not var_3_0 then
-		var_0_3("game is not start")
+	if not getProxy(ContextProxy):getCurrentContext() then
+		uv0("game is not start")
 
 		return false
 	end
 
-	if var_3_0.mediator == LoginMediator then
-		var_0_3("player is not created")
+	if slot2.mediator == LoginMediator then
+		uv0("player is not created")
 
 		return false
 	end
 
-	if var_3_0.mediator == CombatLoadMediator or var_3_0.mediator == BattleMediator then
-		var_0_3("game is in battle")
-		arg_3_0:Clear()
+	if slot2.mediator == CombatLoadMediator or slot2.mediator == BattleMediator then
+		uv0("game is in battle")
+		slot0:Clear()
 
 		return false
 	end
@@ -58,29 +53,26 @@ function var_0_1.ShouldSwitchScene(arg_3_0)
 	return true
 end
 
-local function var_0_4(arg_4_0, arg_4_1)
-	var_0_3("Switch......" .. arg_4_0 .. "-" .. arg_4_1)
+function slot4(slot0, slot1)
+	uv0("Switch......" .. slot0 .. "-" .. slot1)
 
-	if arg_4_0 == "1" then
-		var_0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD)
+	if slot0 == "1" then
+		uv1.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD)
 	end
 end
 
-function var_0_1.SwitchScene(arg_5_0)
-	var_0_3("SwitchScene......")
+function slot1.SwitchScene(slot0)
+	uv0("SwitchScene......")
 
-	if arg_5_0:ShouldSwitchScene() then
-		local var_5_0 = arg_5_0.deepLinking.page
-		local var_5_1 = arg_5_0.deepLinking.arg
-
-		var_0_4(var_5_0, var_5_1)
-		arg_5_0:Clear()
+	if slot0:ShouldSwitchScene() then
+		uv1(slot0.deepLinking.page, slot0.deepLinking.arg)
+		slot0:Clear()
 	end
 end
 
-function var_0_1.Clear(arg_6_0)
-	var_0_3("Clear......")
-	arg_6_0.deepLinking:Clear()
+function slot1.Clear(slot0)
+	uv0("Clear......")
+	slot0.deepLinking:Clear()
 
-	arg_6_0.deepLinking = nil
+	slot0.deepLinking = nil
 end

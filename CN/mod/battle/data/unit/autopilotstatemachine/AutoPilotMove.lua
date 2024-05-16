@@ -1,40 +1,37 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("AutoPilotMove", slot0.Battle.IPilot)
+slot0.Battle.AutoPilotMove = slot1
+slot1.__name = "AutoPilotMove"
 
-local var_0_0 = ys
-local var_0_1 = class("AutoPilotMove", var_0_0.Battle.IPilot)
-
-var_0_0.Battle.AutoPilotMove = var_0_1
-var_0_1.__name = "AutoPilotMove"
-
-function var_0_1.Ctor(arg_1_0, ...)
-	var_0_1.super.Ctor(arg_1_0, ...)
+function slot1.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0, ...)
 end
 
-function var_0_1.SetParameter(arg_2_0, arg_2_1, arg_2_2)
-	var_0_1.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+function slot1.SetParameter(slot0, slot1, slot2)
+	uv0.super.SetParameter(slot0, slot1, slot2)
 
-	arg_2_0._distX = arg_2_1.x
-	arg_2_0._distZ = arg_2_1.z
+	slot0._distX = slot1.x
+	slot0._distZ = slot1.z
 end
 
-function var_0_1.Active(arg_3_0, arg_3_1)
-	arg_3_0._targetPos = Vector3(arg_3_0._distX, 0, arg_3_0._distZ):Add(arg_3_1:GetPosition())
+function slot1.Active(slot0, slot1)
+	slot0._targetPos = Vector3(slot0._distX, 0, slot0._distZ):Add(slot1:GetPosition())
 
-	var_0_1.super.Active(arg_3_0, arg_3_1)
+	uv0.super.Active(slot0, slot1)
 end
 
-function var_0_1.GetDirection(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0._targetPos - arg_4_1
+function slot1.GetDirection(slot0, slot1)
+	slot2 = slot0._targetPos - slot1
+	slot2.y = 0
 
-	var_4_0.y = 0
+	if slot2.magnitude < slot0._valve then
+		slot2 = Vector3.zero
 
-	if var_4_0.magnitude < arg_4_0._valve then
-		var_4_0 = Vector3.zero
-
-		if arg_4_0._duration == -1 or arg_4_0:IsExpired() then
-			arg_4_0:Finish()
+		if slot0._duration == -1 or slot0:IsExpired() then
+			slot0:Finish()
 		end
 	end
 
-	return var_4_0:SetNormalize()
+	return slot2:SetNormalize()
 end

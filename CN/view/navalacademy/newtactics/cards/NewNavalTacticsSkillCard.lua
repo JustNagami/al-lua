@@ -1,44 +1,39 @@
-﻿local var_0_0 = class("NewNavalTacticsSkillCard")
+slot0 = class("NewNavalTacticsSkillCard")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tf = arg_1_1
-	arg_1_0.icon = findTF(arg_1_0._tf, "icon"):GetComponent(typeof(Image))
-	arg_1_0.descTxt = findTF(arg_1_0._tf, "descView/desc"):GetComponent(typeof(Text))
-	arg_1_0.nextTxt = findTF(arg_1_0._tf, "next"):GetComponent(typeof(Text))
+function slot0.Ctor(slot0, slot1)
+	slot0._tf = slot1
+	slot0.icon = findTF(slot0._tf, "icon"):GetComponent(typeof(Image))
+	slot0.descTxt = findTF(slot0._tf, "descView/desc"):GetComponent(typeof(Text))
+	slot0.nextTxt = findTF(slot0._tf, "next"):GetComponent(typeof(Text))
 end
 
-function var_0_0.Enable(arg_2_0)
-	setActive(arg_2_0._tf, true)
+function slot0.Enable(slot0)
+	setActive(slot0._tf, true)
 end
 
-function var_0_0.Disable(arg_3_0)
-	setActive(arg_3_0._tf, false)
+function slot0.Disable(slot0)
+	setActive(slot0._tf, false)
 end
 
-function var_0_0.Update(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_1:GetName()
+function slot0.Update(slot0, slot1, slot2)
+	changeToScrollText(slot0._tf:Find("name/Text"), slot1:GetName())
 
-	changeToScrollText(arg_4_0._tf:Find("name/Text"), var_4_0)
+	slot0.descTxt.text = slot1:GetTacticsDesc()
 
-	arg_4_0.descTxt.text = arg_4_1:GetTacticsDesc()
+	setText(slot0._tf:Find("name/level"), "Lv." .. slot1.level .. (slot2 and slot2 > 0 and "  <color=#A9F548FF>+" .. slot2 .. "</color>" or ""))
 
-	local var_4_1 = "Lv." .. arg_4_1.level .. (arg_4_2 and arg_4_2 > 0 and "  <color=#A9F548FF>+" .. arg_4_2 .. "</color>" or "")
-
-	setText(arg_4_0._tf:Find("name/level"), var_4_1)
-
-	if arg_4_1:IsMaxLevel() then
-		arg_4_0.nextTxt.text = "MAX"
+	if slot1:IsMaxLevel() then
+		slot0.nextTxt.text = "MAX"
 	else
-		arg_4_0.nextTxt.text = "<color=#A9F548FF>" .. arg_4_1.exp .. "</color>/" .. arg_4_1:GetNextLevelExp()
+		slot0.nextTxt.text = "<color=#A9F548FF>" .. slot1.exp .. "</color>/" .. slot1:GetNextLevelExp()
 	end
 
-	LoadSpriteAsync("skillicon/" .. arg_4_1:GetIcon(), function(arg_5_0)
-		arg_4_0.icon.sprite = arg_5_0
+	LoadSpriteAsync("skillicon/" .. slot1:GetIcon(), function (slot0)
+		uv0.icon.sprite = slot0
 	end)
 end
 
-function var_0_0.Dispose(arg_6_0)
-	return
+function slot0.Dispose(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,186 +1,161 @@
-﻿local var_0_0 = class("GuildEventInfoPage", import(".GuildEventBasePage"))
+slot0 = class("GuildEventInfoPage", import(".GuildEventBasePage"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildEventInfoPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
-	arg_2_0.icon = arg_2_0:findTF("frame/icon"):GetComponent(typeof(Image))
-	arg_2_0.goBtn = arg_2_0:findTF("frame/go_btn")
-	arg_2_0.joinBtn = arg_2_0:findTF("frame/join_btn")
-	arg_2_0.descTxt = arg_2_0:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg_2_0.consumeTF = arg_2_0:findTF("frame/consume")
-	arg_2_0.consumeTxt = arg_2_0:findTF("frame/consume/Text"):GetComponent(typeof(Text))
-	arg_2_0.cntTF = arg_2_0:findTF("frame/cnt")
-	arg_2_0.cntTxt = arg_2_0:findTF("frame/cnt/Text"):GetComponent(typeof(Text))
-	arg_2_0.nameTxt = arg_2_0:findTF("frame/title/Text"):GetComponent(typeof(Text))
-	arg_2_0.scaleTxt = arg_2_0:findTF("frame/title/scale"):GetComponent(typeof(Text))
-	arg_2_0.scaleCntTxt = arg_2_0:findTF("frame/title/scale/Text"):GetComponent(typeof(Text))
-	arg_2_0.progressTF = arg_2_0:findTF("frame/cnt/progress")
-	arg_2_0.progressTxt = arg_2_0:findTF("frame/cnt/progress/Text"):GetComponent(typeof(Text))
-	arg_2_0.missionList = UIItemList.New(arg_2_0:findTF("frame/events/icons"), arg_2_0:findTF("frame/events/icons/tpl"))
-	arg_2_0.awardList = UIItemList.New(arg_2_0:findTF("frame/award/displays"), arg_2_0:findTF("frame/award/displays/item"))
+function slot0.OnLoaded(slot0)
+	slot0.closeBtn = slot0:findTF("frame/close")
+	slot0.icon = slot0:findTF("frame/icon"):GetComponent(typeof(Image))
+	slot0.goBtn = slot0:findTF("frame/go_btn")
+	slot0.joinBtn = slot0:findTF("frame/join_btn")
+	slot0.descTxt = slot0:findTF("frame/desc"):GetComponent(typeof(Text))
+	slot0.consumeTF = slot0:findTF("frame/consume")
+	slot0.consumeTxt = slot0:findTF("frame/consume/Text"):GetComponent(typeof(Text))
+	slot0.cntTF = slot0:findTF("frame/cnt")
+	slot0.cntTxt = slot0:findTF("frame/cnt/Text"):GetComponent(typeof(Text))
+	slot0.nameTxt = slot0:findTF("frame/title/Text"):GetComponent(typeof(Text))
+	slot0.scaleTxt = slot0:findTF("frame/title/scale"):GetComponent(typeof(Text))
+	slot0.scaleCntTxt = slot0:findTF("frame/title/scale/Text"):GetComponent(typeof(Text))
+	slot0.progressTF = slot0:findTF("frame/cnt/progress")
+	slot0.progressTxt = slot0:findTF("frame/cnt/progress/Text"):GetComponent(typeof(Text))
+	slot0.missionList = UIItemList.New(slot0:findTF("frame/events/icons"), slot0:findTF("frame/events/icons/tpl"))
+	slot0.awardList = UIItemList.New(slot0:findTF("frame/award/displays"), slot0:findTF("frame/award/displays/item"))
 
-	setText(arg_2_0:findTF("frame/events/Text"), i18n("guild_word_may_happen_event"))
-	setText(arg_2_0:findTF("frame/award/Text"), i18n("guild_battle_award"))
-	setText(arg_2_0:findTF("frame/consume/label"), i18n("guild_word_consume"))
-	setText(arg_2_0:findTF("frame/cnt/label"), i18n("guild_join_event_cnt_label"))
-	setText(arg_2_0:findTF("frame/cnt/progress/label"), i18n("guild_join_event_progress_label"))
+	setText(slot0:findTF("frame/events/Text"), i18n("guild_word_may_happen_event"))
+	setText(slot0:findTF("frame/award/Text"), i18n("guild_battle_award"))
+	setText(slot0:findTF("frame/consume/label"), i18n("guild_word_consume"))
+	setText(slot0:findTF("frame/cnt/label"), i18n("guild_join_event_cnt_label"))
+	setText(slot0:findTF("frame/cnt/progress/label"), i18n("guild_join_event_progress_label"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0.closeBtn, function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0._tf, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.goBtn, function()
-		if not GuildMember.IsAdministrator(arg_3_0.guild:getSelfDuty()) then
+	onButton(slot0, slot0.goBtn, function ()
+		if not GuildMember.IsAdministrator(uv0.guild:getSelfDuty()) then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_commander_and_sub_op"))
 
 			return
 		end
 
-		local var_6_0 = arg_3_0.gevent:GetName()
-		local var_6_1 = arg_3_0.gevent:GetConsume()
-		local var_6_2 = arg_3_0.guild:ShouldTipActiveEvent() and i18n("guild_start_event_consume_tip", var_6_1, var_6_0) or i18n("guild_start_event_consume_tip_extra", var_6_1, var_6_0, arg_3_0.guild:GetActiveEventCnt())
+		slot1 = uv0.gevent:GetName()
+		slot2 = uv0.gevent:GetConsume()
 
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
-			content = var_6_2,
-			onYes = function()
-				arg_3_0:emit(GuildEventMediator.ON_ACTIVE_EVENT, arg_3_0.gevent.id)
+			content = uv0.guild:ShouldTipActiveEvent() and i18n("guild_start_event_consume_tip", slot2, slot1) or i18n("guild_start_event_consume_tip_extra", slot2, slot1, uv0.guild:GetActiveEventCnt()),
+			onYes = function ()
+				uv0:emit(GuildEventMediator.ON_ACTIVE_EVENT, uv0.gevent.id)
 			end
 		})
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.joinBtn, function()
-		if not arg_3_0.activeEvent then
+	onButton(slot0, slot0.joinBtn, function ()
+		if not uv0.activeEvent then
 			return
 		end
 
-		if arg_3_0.activeEvent:IsLimitedJoin() then
+		if uv0.activeEvent:IsLimitedJoin() then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("guild_join_event_max_cnt_tip"))
 
 			return
 		end
 
-		arg_3_0:JoinEvent()
+		uv0:JoinEvent()
 	end, SFX_PANEL)
 end
 
-function var_0_0.JoinEvent(arg_9_0)
-	local function var_9_0()
-		local var_10_0, var_10_1 = arg_9_0.activeEvent:GetMainMissionCntAndFinishCnt()
-
-		if var_10_1 ~= 0 then
-			pg.MsgboxMgr:GetInstance():ShowMsgBox({
-				content = i18n("guild_join_event_exist_finished_mission_tip"),
-				onYes = function()
-					arg_9_0:emit(GuildEventMediator.ON_JOIN_EVENT)
-				end
-			})
-		else
-			arg_9_0:emit(GuildEventMediator.ON_JOIN_EVENT)
-		end
-	end
-
-	if arg_9_0.activeEvent:GetLeftTime() <= 604800 then
+function slot0.JoinEvent(slot0)
+	if slot0.activeEvent:GetLeftTime() <= 604800 then
 		pg.MsgboxMgr:GetInstance():ShowMsgBox({
 			content = i18n("guild_tip_operation_time_is_not_ample"),
-			onYes = var_9_0
+			onYes = function ()
+				slot0, slot1 = uv0.activeEvent:GetMainMissionCntAndFinishCnt()
+
+				if slot1 ~= 0 then
+					pg.MsgboxMgr:GetInstance():ShowMsgBox({
+						content = i18n("guild_join_event_exist_finished_mission_tip"),
+						onYes = function ()
+							uv0:emit(GuildEventMediator.ON_JOIN_EVENT)
+						end
+					})
+				else
+					uv0:emit(GuildEventMediator.ON_JOIN_EVENT)
+				end
+			end
 		})
 	else
-		var_9_0()
+		slot1()
 	end
 end
 
-function var_0_0.Refresh(arg_12_0, arg_12_1, arg_12_2)
-	arg_12_0:UpdateData(arg_12_1, arg_12_2, arg_12_0.extraData)
-	arg_12_0:UpdateBtnState()
+function slot0.Refresh(slot0, slot1, slot2)
+	slot0:UpdateData(slot1, slot2, slot0.extraData)
+	slot0:UpdateBtnState()
 end
 
-function var_0_0.OnShow(arg_13_0)
-	arg_13_0.gevent = arg_13_0.extraData.gevent
+function slot0.OnShow(slot0)
+	slot0.gevent = slot0.extraData.gevent
+	slot1 = slot0.gevent
+	slot0.icon.sprite = GetSpriteFromAtlas("guildevent/i_" .. slot1.id, "")
 
-	local var_13_0 = arg_13_0.gevent
+	setActive(slot0.icon.gameObject, true)
 
-	arg_13_0.icon.sprite = GetSpriteFromAtlas("guildevent/i_" .. var_13_0.id, "")
+	slot0.descTxt.text = slot1:GetDesc()
+	slot0.consumeTxt.text = "<color=" .. (slot0.guild:getCapital() < slot1:GetConsume() and COLOR_RED or COLOR_GREEN) .. ">" .. slot2 .. "</color>/" .. slot3
+	slot0.nameTxt.text = slot1:GetName()
+	slot0.scaleTxt.text = slot1:GetScaleDesc()
+	slot0.scaleCntTxt.text = ""
 
-	setActive(arg_13_0.icon.gameObject, true)
-
-	arg_13_0.descTxt.text = var_13_0:GetDesc()
-
-	local var_13_1 = arg_13_0.guild:getCapital()
-	local var_13_2 = var_13_0:GetConsume()
-	local var_13_3 = var_13_1 < var_13_2 and COLOR_RED or COLOR_GREEN
-
-	arg_13_0.consumeTxt.text = "<color=" .. var_13_3 .. ">" .. var_13_1 .. "</color>/" .. var_13_2
-	arg_13_0.nameTxt.text = var_13_0:GetName()
-	arg_13_0.scaleTxt.text = var_13_0:GetScaleDesc()
-	arg_13_0.scaleCntTxt.text = ""
-
-	arg_13_0:UpdateMissions(var_13_0)
-	arg_13_0:UpdateAwards(var_13_0)
-	arg_13_0:UpdateBtnState()
+	slot0:UpdateMissions(slot1)
+	slot0:UpdateAwards(slot1)
+	slot0:UpdateBtnState()
 end
 
-function var_0_0.UpdateBtnState(arg_14_0)
-	arg_14_0.activeEvent = arg_14_0.guild:GetActiveEvent()
+function slot0.UpdateBtnState(slot0)
+	slot0.activeEvent = slot0.guild:GetActiveEvent()
 
-	setActive(arg_14_0.goBtn, not arg_14_0.activeEvent)
-	setActive(arg_14_0.consumeTF, not arg_14_0.activeEvent)
-	setActive(arg_14_0.joinBtn, arg_14_0.activeEvent)
-	setActive(arg_14_0.cntTF, arg_14_0.activeEvent)
-	setActive(arg_14_0.progressTF, arg_14_0.activeEvent)
+	setActive(slot0.goBtn, not slot0.activeEvent)
+	setActive(slot0.consumeTF, not slot0.activeEvent)
+	setActive(slot0.joinBtn, slot0.activeEvent)
+	setActive(slot0.cntTF, slot0.activeEvent)
+	setActive(slot0.progressTF, slot0.activeEvent)
 
-	if arg_14_0.activeEvent then
-		local var_14_0 = arg_14_0.activeEvent:GetJoinCnt()
-		local var_14_1 = arg_14_0.activeEvent:GetMaxJoinCnt()
-		local var_14_2 = var_14_1 - var_14_0 + arg_14_0.activeEvent:GetExtraJoinCnt()
-		local var_14_3 = var_14_2 <= 0 and COLOR_RED or COLOR_WHITE
-		local var_14_4 = string.format("<color=%s>%d</color>/%d", var_14_3, var_14_2, var_14_1)
-
-		arg_14_0.cntTxt.text = var_14_4
-
-		local var_14_5, var_14_6 = arg_14_0.activeEvent:GetMainMissionCntAndFinishCnt()
-
-		arg_14_0.progressTxt.text = var_14_6 .. "/" .. var_14_5 + 1
+	if slot0.activeEvent then
+		slot0.cntTxt.text = string.format("<color=%s>%d</color>/%d", slot0.activeEvent:GetMaxJoinCnt() - slot0.activeEvent:GetJoinCnt() + slot0.activeEvent:GetExtraJoinCnt() <= 0 and COLOR_RED or COLOR_WHITE, slot3, slot2)
+		slot6, slot7 = slot0.activeEvent:GetMainMissionCntAndFinishCnt()
+		slot0.progressTxt.text = slot7 .. "/" .. slot6 + 1
 	end
 end
 
-function var_0_0.UpdateAwards(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_1:GetDisplayAward()
+function slot0.UpdateAwards(slot0, slot1)
+	slot0.awardList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0[slot1 + 1]
 
-	arg_15_0.awardList:make(function(arg_16_0, arg_16_1, arg_16_2)
-		if arg_16_0 == UIItemList.EventUpdate then
-			local var_16_0 = var_15_0[arg_16_1 + 1]
-			local var_16_1 = {
-				id = var_16_0[2],
-				type = var_16_0[1],
-				count = var_16_0[3]
-			}
-
-			updateDrop(arg_16_2, var_16_1)
-			onButton(arg_15_0, arg_16_2, function()
-				arg_15_0:emit(BaseUI.ON_DROP, var_16_1)
+			updateDrop(slot2, {
+				id = slot3[2],
+				type = slot3[1],
+				count = slot3[3]
+			})
+			onButton(uv1, slot2, function ()
+				uv0:emit(BaseUI.ON_DROP, uv1)
 			end, SFX_PANEL)
 		end
 	end)
-	arg_15_0.awardList:align(#var_15_0)
+	slot0.awardList:align(#slot1:GetDisplayAward())
 end
 
-function var_0_0.UpdateMissions(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_1:GetDisplayMission()
-
-	arg_18_0.missionList:make(function(arg_19_0, arg_19_1, arg_19_2)
-		if arg_19_0 == UIItemList.EventUpdate then
-			local var_19_0 = var_18_0[arg_19_1 + 1]
-
-			arg_19_2:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildEventIcon", var_19_0)
+function slot0.UpdateMissions(slot0, slot1)
+	slot0.missionList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot2:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("GuildEventIcon", uv0[slot1 + 1])
 		end
 	end)
-	arg_18_0.missionList:align(#var_18_0)
+	slot0.missionList:align(#slot1:GetDisplayMission())
 end
 
-return var_0_0
+return slot0

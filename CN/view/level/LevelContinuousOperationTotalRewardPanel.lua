@@ -1,93 +1,80 @@
-﻿local var_0_0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
+slot0 = class("LevelContinuousOperationTotalRewardPanel", import("view.level.LevelStageTotalRewardPanel"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "LevelContinuousOperationTotalRewardPanel"
 end
 
-function var_0_0.init(arg_2_0)
-	var_0_0.super.init(arg_2_0)
+function slot0.init(slot0)
+	uv0.super.init(slot0)
 end
 
-function var_0_0.didEnter(arg_3_0)
-	var_0_0.super.didEnter(arg_3_0)
+function slot0.didEnter(slot0)
+	uv0.super.didEnter(slot0)
 end
 
-function var_0_0.UpdateView(arg_4_0)
-	var_0_0.super.UpdateView(arg_4_0)
-	setActive(arg_4_0.boxView, true)
-	setActive(arg_4_0.emptyTip, false)
+function slot0.UpdateView(slot0)
+	uv0.super.UpdateView(slot0)
+	setActive(slot0.boxView, true)
+	setActive(slot0.emptyTip, false)
 
-	local var_4_0 = arg_4_0.contextData.continuousData
-	local var_4_1 = var_4_0:GetTotalBattleTime()
-	local var_4_2 = arg_4_0.contextData.chapter:GetMaxBattleCount()
-	local var_4_3 = math.min(var_4_1, var_4_2)
-	local var_4_4 = var_4_3 > 0 and var_4_0:IsActive()
+	slot5 = math.min(slot0.contextData.continuousData:GetTotalBattleTime(), slot0.contextData.chapter:GetMaxBattleCount()) > 0 and slot1:IsActive()
 
-	onButton(arg_4_0, arg_4_0.window:Find("Fixed/ButtonGO"), function()
-		if arg_4_0.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
+	onButton(slot0, slot0.window:Find("Fixed/ButtonGO"), function ()
+		if uv0.contextData.spItemID and not (PlayerPrefs.GetInt("autoFight_firstUse_sp", 0) == 1) then
 			PlayerPrefs.SetInt("autoFight_firstUse_sp", 1)
 			PlayerPrefs.Save()
 
-			local function var_5_0()
-				arg_4_0.contextData.spItemID = nil
+			function slot2()
+				uv0.contextData.spItemID = nil
 
-				arg_4_0:UpdateSPItem()
+				uv0:UpdateSPItem()
 			end
 
-			arg_4_0:HandleShowMsgBox({
+			uv0:HandleShowMsgBox({
 				hideNo = true,
 				content = i18n("autofight_special_operation_tip"),
-				onYes = var_5_0,
-				onNo = var_5_0
+				onYes = slot2,
+				onNo = slot2
 			})
 
 			return
 		end
 
-		local var_5_1 = Chapter.GetSPOperationItemCacheKey(arg_4_0.contextData.chapter.id)
+		PlayerPrefs.SetInt(Chapter.GetSPOperationItemCacheKey(uv0.contextData.chapter.id), uv0.contextData.spItemID or 0)
 
-		PlayerPrefs.SetInt(var_5_1, arg_4_0.contextData.spItemID or 0)
-
-		if var_4_4 then
-			getProxy(ChapterProxy):InitContinuousTime(SYSTEM_SCENARIO, var_4_3)
+		if uv1 then
+			getProxy(ChapterProxy):InitContinuousTime(SYSTEM_SCENARIO, uv2)
 		end
 
-		local var_5_2 = true
-
-		arg_4_0:emit(LevelMediator2.ON_RETRACKING, arg_4_0.contextData.chapter, var_5_2)
-		arg_4_0:closeView()
+		uv0:emit(LevelMediator2.ON_RETRACKING, uv0.contextData.chapter, true)
+		uv0:closeView()
 	end, SFX_CONFIRM)
 
-	local var_4_5 = {}
-	local var_4_6 = var_4_0:IsActive()
-
-	if var_4_6 then
-		table.insert(var_4_5, i18n("multiple_sorties_finish"))
+	if slot1:IsActive() then
+		table.insert({}, i18n("multiple_sorties_finish"))
 	else
-		table.insert(var_4_5, i18n("multiple_sorties_stop"))
+		table.insert(slot6, i18n("multiple_sorties_stop"))
 	end
 
-	setActive(arg_4_0.boxView:Find("Content/TextArea2/Title/Sucess"), var_4_6)
-	setActive(arg_4_0.boxView:Find("Content/TextArea2/Title/Failure"), not var_4_6)
-	table.insert(var_4_5, i18n("multiple_sorties_main_end", var_4_1, var_4_1 - var_4_0:GetRestBattleTime()))
+	setActive(slot0.boxView:Find("Content/TextArea2/Title/Sucess"), slot7)
+	setActive(slot0.boxView:Find("Content/TextArea2/Title/Failure"), not slot7)
+	table.insert(slot6, i18n("multiple_sorties_main_end", slot2, slot2 - slot1:GetRestBattleTime()))
 
-	if #var_4_5 > 0 then
-		setText(arg_4_0.boxView:Find("Content/TextArea2/Title/Text"), var_4_5[1])
-		setText(arg_4_0.boxView:Find("Content/TextArea2/Detail"), var_4_5[2])
+	if #slot6 > 0 then
+		setText(slot0.boxView:Find("Content/TextArea2/Title/Text"), slot6[1])
+		setText(slot0.boxView:Find("Content/TextArea2/Detail"), slot6[2])
 	end
 
-	if var_4_4 then
-		local var_4_7 = arg_4_0.contextData.chapter:GetRestDailyBonus()
-
-		setActive(arg_4_0.spList, go(arg_4_0.spList).activeSelf and var_4_7 < var_4_3)
+	if slot5 then
+		setActive(slot0.spList, go(slot0.spList).activeSelf and slot0.contextData.chapter:GetRestDailyBonus() < slot4)
 	end
 
-	setActive(arg_4_0.window:Find("RetryTimes"), var_4_4)
-	setText(arg_4_0.window:Find("RetryTimes/Text"), i18n("multiple_sorties_retry_desc", var_4_3))
+	setActive(slot0.window:Find("RetryTimes"), slot5)
+	setText(slot0.window:Find("RetryTimes/Text"), i18n("multiple_sorties_retry_desc", slot4))
 end
 
-function var_0_0.willExit(arg_7_0)
-	var_0_0.super.willExit(arg_7_0)
+function slot0.willExit(slot0)
+	uv0.super.willExit(slot0)
 end
 
-return var_0_0
+return slot0

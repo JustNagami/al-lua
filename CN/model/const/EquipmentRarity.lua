@@ -1,16 +1,15 @@
-﻿local var_0_0 = class("EquipmentRarity")
+slot0 = class("EquipmentRarity")
+slot0.Gray = 2
+slot0.Blue = 3
+slot0.Purple = 4
+slot0.Gold = 5
+slot0.SSR = 6
 
-var_0_0.Gray = 2
-var_0_0.Blue = 3
-var_0_0.Purple = 4
-var_0_0.Gold = 5
-var_0_0.SSR = 6
-
-function var_0_0.Rarity2Print(arg_1_0)
-	return ItemRarity.Rarity2Print(arg_1_0 - 1)
+function slot0.Rarity2Print(slot0)
+	return ItemRarity.Rarity2Print(slot0 - 1)
 end
 
-var_0_0.correctedLevel = {
+slot0.correctedLevel = {
 	{
 		0
 	},
@@ -39,19 +38,18 @@ var_0_0.correctedLevel = {
 	}
 }
 
-function var_0_0.Rarity2CorrectedLevel(arg_2_0, arg_2_1)
-	local var_2_0 = var_0_0.correctedLevel[arg_2_0]
-	local var_2_1
+function slot0.Rarity2CorrectedLevel(slot0, slot1)
+	slot3 = nil
 
-	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
-		if iter_2_1 > arg_2_1 - 1 then
+	for slot7, slot8 in ipairs(uv0.correctedLevel[slot0]) do
+		if slot8 > slot1 - 1 then
 			break
 		else
-			var_2_1 = iter_2_0 - 1
+			slot3 = slot7 - 1
 		end
 	end
 
-	return i18n("equip_info_extralevel_" .. var_2_1)
+	return i18n("equip_info_extralevel_" .. slot3)
 end
 
-return var_0_0
+return slot0

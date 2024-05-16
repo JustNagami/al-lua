@@ -1,29 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHarm",
-				"TargetShipTag"
-			},
-			arg_list = {
-				weapon_id = 161091,
-				ship_tag_list = {
-					"leigensibao"
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -221,5 +196,30 @@
 	id = 16713,
 	picture = "0",
 	castCV = "skill",
-	desc = ""
+	desc = "",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHarm",
+				"TargetShipTag"
+			},
+			arg_list = {
+				weapon_id = 161091,
+				ship_tag_list = {
+					"leigensibao"
+				}
+			}
+		}
+	}
 }

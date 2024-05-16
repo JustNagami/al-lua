@@ -1,33 +1,30 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("AutoPilotMoveTo", slot0.Battle.IPilot)
+slot0.Battle.AutoPilotMoveTo = slot1
+slot1.__name = "AutoPilotMoveTo"
 
-local var_0_0 = ys
-local var_0_1 = class("AutoPilotMoveTo", var_0_0.Battle.IPilot)
-
-var_0_0.Battle.AutoPilotMoveTo = var_0_1
-var_0_1.__name = "AutoPilotMoveTo"
-
-function var_0_1.Ctor(arg_1_0, ...)
-	var_0_1.super.Ctor(arg_1_0, ...)
+function slot1.Ctor(slot0, ...)
+	uv0.super.Ctor(slot0, ...)
 end
 
-function var_0_1.SetParameter(arg_2_0, arg_2_1, arg_2_2)
-	var_0_1.super.SetParameter(arg_2_0, arg_2_1, arg_2_2)
+function slot1.SetParameter(slot0, slot1, slot2)
+	uv0.super.SetParameter(slot0, slot1, slot2)
 
-	arg_2_0._targetPos = Vector3(arg_2_1.x, 0, arg_2_1.z)
+	slot0._targetPos = Vector3(slot1.x, 0, slot1.z)
 end
 
-function var_0_1.GetDirection(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0._targetPos - arg_3_1
+function slot1.GetDirection(slot0, slot1)
+	slot2 = slot0._targetPos - slot1
+	slot2.y = 0
 
-	var_3_0.y = 0
+	if slot2.magnitude < slot0._valve then
+		slot2 = Vector3.zero
 
-	if var_3_0.magnitude < arg_3_0._valve then
-		var_3_0 = Vector3.zero
-
-		if arg_3_0._duration == -1 or arg_3_0:IsExpired() then
-			arg_3_0:Finish()
+		if slot0._duration == -1 or slot0:IsExpired() then
+			slot0:Finish()
 		end
 	end
 
-	return var_3_0.normalized
+	return slot2.normalized
 end

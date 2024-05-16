@@ -1,153 +1,147 @@
-﻿local var_0_0 = class("OreContainerControl")
+slot0 = class("OreContainerControl")
+slot0.BREAK_MOVE_TIME = 0.5
 
-var_0_0.BREAK_MOVE_TIME = 0.5
+function slot0.Ctor(slot0, slot1, slot2)
+	slot0.binder = slot1
+	slot0._tf = slot2
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0.binder = arg_1_1
-	arg_1_0._tf = arg_1_2
-
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0:AddListener()
+function slot0.Init(slot0)
+	slot0:AddListener()
 
-	arg_2_0.deliverSpeed = 50
-	arg_2_0.mainTF = arg_2_0._tf:Find("Container_1/break")
+	slot0.deliverSpeed = 50
+	slot0.mainTF = slot0._tf:Find("Container_1/break")
 end
 
-function var_0_0.AddListener(arg_3_0)
-	arg_3_0.binder:bind(OreGameConfig.EVENT_DELIVER, function(arg_4_0, arg_4_1)
-		arg_3_0:PlayDeliverAnim(arg_4_1.status, arg_4_1.pos, arg_4_1.oreTF)
+function slot0.AddListener(slot0)
+	slot0.binder:bind(OreGameConfig.EVENT_DELIVER, function (slot0, slot1)
+		uv0:PlayDeliverAnim(slot1.status, slot1.pos, slot1.oreTF)
 	end)
-	arg_3_0.binder:bind(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, function(arg_5_0, arg_5_1)
-		arg_3_0:PlayHitAnim(arg_5_1.status, arg_5_1.pos, arg_5_1.hitPos, arg_5_1.oreTF)
+	slot0.binder:bind(OreGameConfig.EVENT_PLAY_CONTAINER_HIT, function (slot0, slot1)
+		uv0:PlayHitAnim(slot1.status, slot1.pos, slot1.hitPos, slot1.oreTF)
 	end)
 end
 
-var_0_0.DeliveOffsetY = {
+slot0.DeliveOffsetY = {
 	-7,
 	-7,
 	-16
 }
 
-function var_0_0.PlayDeliverAnim(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	arg_6_0.mainTF = arg_6_0._tf:Find("Container_" .. arg_6_1 .. "/deliver")
+function slot0.PlayDeliverAnim(slot0, slot1, slot2, slot3)
+	slot0.mainTF = slot0._tf:Find("Container_" .. slot1 .. "/deliver")
 
-	setAnchoredPosition(arg_6_0.mainTF, {
-		x = arg_6_2.x,
-		y = arg_6_2.y + var_0_0.DeliveOffsetY[arg_6_1]
+	setAnchoredPosition(slot0.mainTF, {
+		x = slot2.x,
+		y = slot2.y + uv0.DeliveOffsetY[slot1]
 	})
-	setActive(arg_6_0.mainTF, true)
+	setActive(slot0.mainTF, true)
 
-	local var_6_0 = arg_6_0.mainTF:Find("ore/pos")
+	slot4 = slot0.mainTF:Find("ore/pos")
 
-	removeAllChildren(var_6_0)
-	cloneTplTo(arg_6_3, var_6_0)
-	arg_6_0.mainTF:Find("BK/Image"):GetComponent(typeof(Animator)):Play("Deliver_2_Lift_BK")
-	arg_6_0.mainTF:Find("FR/Image"):GetComponent(typeof(Animator)):Play("Deliver_2_Lift_FR")
+	removeAllChildren(slot4)
+	cloneTplTo(slot3, slot4)
+	slot0.mainTF:Find("BK/Image"):GetComponent(typeof(Animator)):Play("Deliver_2_Lift_BK")
+	slot0.mainTF:Find("FR/Image"):GetComponent(typeof(Animator)):Play("Deliver_2_Lift_FR")
 
-	arg_6_0.deliverTime = 0
+	slot0.deliverTime = 0
 end
 
-var_0_0.moveRata = {
+slot0.moveRata = {
 	1,
 	1.2,
 	1.5
 }
 
-function var_0_0.PlayHitAnim(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
-	if arg_7_1 == OreAkashiControl.STATUS_NULL then
+function slot0.PlayHitAnim(slot0, slot1, slot2, slot3, slot4)
+	if slot1 == OreAkashiControl.STATUS_NULL then
 		return
 	end
 
-	arg_7_0.mainTF = arg_7_0._tf:Find("Container_" .. arg_7_1 .. "/break")
+	slot0.mainTF = slot0._tf:Find("Container_" .. slot1 .. "/break")
 
-	setAnchoredPosition(arg_7_0.mainTF, arg_7_2)
-	setActive(arg_7_0.mainTF, true)
+	setAnchoredPosition(slot0.mainTF, slot2)
+	setActive(slot0.mainTF, true)
 
-	local var_7_0 = arg_7_0.mainTF.parent:Find("ore/pos")
+	slot5 = slot0.mainTF.parent:Find("ore/pos")
 
-	removeAllChildren(var_7_0)
+	removeAllChildren(slot5)
 
-	arg_7_0.orePosList = {}
-	arg_7_0.oreTFs = cloneTplTo(arg_7_4, var_7_0):Find("oreTF")
-	arg_7_0.hitPos = {
-		x = -arg_7_3.x * var_0_0.moveRata[arg_7_1],
-		y = -arg_7_3.y * var_0_0.moveRata[arg_7_1]
+	slot0.orePosList = {}
+	slot0.oreTFs = cloneTplTo(slot4, slot5):Find("oreTF")
+	slot0.hitPos = {
+		x = -slot3.x * uv0.moveRata[slot1],
+		y = -slot3.y * uv0.moveRata[slot1]
 	}
 
-	setAnchoredPosition(var_7_0, Vector2(arg_7_2.x + arg_7_0.hitPos.x, arg_7_2.y + arg_7_0.hitPos.y))
-	arg_7_0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Break")
+	setAnchoredPosition(slot5, Vector2(slot2.x + slot0.hitPos.x, slot2.y + slot0.hitPos.y))
+	slot0.mainTF:Find("main/Image"):GetComponent(typeof(Animator)):Play("Break")
 
-	arg_7_0.breakTime = 0
+	slot0.breakTime = 0
 
-	eachChild(arg_7_0.oreTFs, function(arg_8_0)
-		arg_7_0.orePosList[arg_8_0.name] = {
+	eachChild(slot0.oreTFs, function (slot0)
+		uv0.orePosList[slot0.name] = {
 			x = math.random(50) - 25,
 			y = math.random(50) - 25
 		}
 	end)
 end
 
-function var_0_0.Reset(arg_9_0)
-	arg_9_0.deliverTime = nil
-	arg_9_0.breakTime = nil
-	arg_9_0.oreTFs = nil
+function slot0.Reset(slot0)
+	slot0.deliverTime = nil
+	slot0.breakTime = nil
+	slot0.oreTFs = nil
 
-	setActive(arg_9_0.mainTF, false)
-	setActive(arg_9_0.mainTF.parent:Find("ore/pos"), false)
-	removeAllChildren(arg_9_0.mainTF.parent:Find("ore/pos"))
-	setAnchoredPosition(arg_9_0.mainTF, Vector2(0, 0))
+	setActive(slot0.mainTF, false)
+	setActive(slot0.mainTF.parent:Find("ore/pos"), false)
+	removeAllChildren(slot0.mainTF.parent:Find("ore/pos"))
+	setAnchoredPosition(slot0.mainTF, Vector2(0, 0))
 end
 
-function var_0_0.OnTimer(arg_10_0, arg_10_1)
-	if arg_10_0.deliverTime then
-		local var_10_0 = arg_10_1 * arg_10_0.deliverSpeed
-
-		setAnchoredPosition(arg_10_0.mainTF, {
-			x = arg_10_0.mainTF.anchoredPosition.x,
-			y = arg_10_0.mainTF.anchoredPosition.y - var_10_0
+function slot0.OnTimer(slot0, slot1)
+	if slot0.deliverTime then
+		setAnchoredPosition(slot0.mainTF, {
+			x = slot0.mainTF.anchoredPosition.x,
+			y = slot0.mainTF.anchoredPosition.y - slot1 * slot0.deliverSpeed
 		})
 
-		arg_10_0.deliverTime = arg_10_0.deliverTime + arg_10_1
+		slot0.deliverTime = slot0.deliverTime + slot1
 
-		if arg_10_0.mainTF.anchoredPosition.y < -230 then
-			removeAllChildren(arg_10_0.mainTF:Find("ore/pos"))
-			arg_10_0:Reset()
+		if slot0.mainTF.anchoredPosition.y < -230 then
+			removeAllChildren(slot0.mainTF:Find("ore/pos"))
+			slot0:Reset()
 		end
 	end
 
-	if arg_10_0.breakTime then
-		local var_10_1 = {
-			x = arg_10_0.mainTF.anchoredPosition.x + arg_10_0.hitPos.x * arg_10_1 / var_0_0.BREAK_MOVE_TIME,
-			y = arg_10_0.mainTF.anchoredPosition.y + arg_10_0.hitPos.y * arg_10_1 / var_0_0.BREAK_MOVE_TIME
-		}
+	if slot0.breakTime then
+		setAnchoredPosition(slot0.mainTF, {
+			x = slot0.mainTF.anchoredPosition.x + slot0.hitPos.x * slot1 / uv0.BREAK_MOVE_TIME,
+			y = slot0.mainTF.anchoredPosition.y + slot0.hitPos.y * slot1 / uv0.BREAK_MOVE_TIME
+		})
 
-		setAnchoredPosition(arg_10_0.mainTF, var_10_1)
+		slot0.breakTime = slot0.breakTime + slot1
 
-		arg_10_0.breakTime = arg_10_0.breakTime + arg_10_1
-
-		if arg_10_0.breakTime >= var_0_0.BREAK_MOVE_TIME / 3 then
-			if not isActive(arg_10_0.mainTF.parent:Find("ore/pos")) then
-				setActive(arg_10_0.mainTF.parent:Find("ore/pos"), true)
+		if slot0.breakTime >= uv0.BREAK_MOVE_TIME / 3 then
+			if not isActive(slot0.mainTF.parent:Find("ore/pos")) then
+				setActive(slot0.mainTF.parent:Find("ore/pos"), true)
 			end
 
-			eachChild(arg_10_0.oreTFs, function(arg_11_0)
-				local var_11_0 = arg_10_0.orePosList[arg_11_0.name]
-				local var_11_1 = {
-					x = arg_11_0.anchoredPosition.x + var_11_0.x * arg_10_1 / (var_0_0.BREAK_MOVE_TIME * 2 / 3),
-					y = arg_11_0.anchoredPosition.y + var_11_0.y * arg_10_1 / (var_0_0.BREAK_MOVE_TIME * 2 / 3)
-				}
+			eachChild(slot0.oreTFs, function (slot0)
+				slot1 = uv0.orePosList[slot0.name]
 
-				setAnchoredPosition(arg_11_0, var_11_1)
+				setAnchoredPosition(slot0, {
+					x = slot0.anchoredPosition.x + slot1.x * uv1 / (uv2.BREAK_MOVE_TIME * 2 / 3),
+					y = slot0.anchoredPosition.y + slot1.y * uv1 / (uv2.BREAK_MOVE_TIME * 2 / 3)
+				})
 			end)
 		end
 
-		if arg_10_0.breakTime >= var_0_0.BREAK_MOVE_TIME then
-			arg_10_0:Reset()
+		if uv0.BREAK_MOVE_TIME <= slot0.breakTime then
+			slot0:Reset()
 		end
 	end
 end
 
-return var_0_0
+return slot0

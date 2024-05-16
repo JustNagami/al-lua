@@ -1,36 +1,4 @@
-﻿return {
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				emitter = "BattleBulletEmitter",
-				delay = 0.5,
-				weapon_id = 67981
-			}
-		},
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				emitter = "BattleBulletEmitter",
-				delay = 0.5,
-				weapon_id = 67991
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -298,5 +266,37 @@
 	id = 11960,
 	picture = "0",
 	castCV = "skill",
-	desc = "鱼雷发射额外弹幕"
+	desc = "鱼雷发射额外弹幕",
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				emitter = "BattleBulletEmitter",
+				delay = 0.5,
+				weapon_id = 67981
+			}
+		},
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				emitter = "BattleBulletEmitter",
+				delay = 0.5,
+				weapon_id = 67991
+			}
+		}
+	}
 }

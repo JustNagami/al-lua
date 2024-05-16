@@ -1,50 +1,45 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleLockTag = class("BattleLockTag")
+slot0.Battle.BattleLockTag.__name = "BattleLockTag"
+slot1 = slot0.Battle.BattleLockTag
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleLockTag = class("BattleLockTag")
-var_0_0.Battle.BattleLockTag.__name = "BattleLockTag"
-
-local var_0_1 = var_0_0.Battle.BattleLockTag
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	arg_1_0._markGO = arg_1_1
-	arg_1_0._markTF = arg_1_1.transform
-	arg_1_0._controller = arg_1_0._markTF:GetComponent("LockTag")
-	arg_1_0._flag = true
+function slot1.Ctor(slot0, slot1, slot2)
+	slot0._markGO = slot1
+	slot0._markTF = slot1.transform
+	slot0._controller = slot0._markTF:GetComponent("LockTag")
+	slot0._flag = true
 end
 
-function var_0_1.Mark(arg_2_0, arg_2_1)
-	arg_2_0._markTime = pg.TimeMgr.GetInstance():GetCombatTime()
-	arg_2_0._requiredTime = arg_2_1
+function slot1.Mark(slot0, slot1)
+	slot0._markTime = pg.TimeMgr.GetInstance():GetCombatTime()
+	slot0._requiredTime = slot1
 
-	SetActive(arg_2_0._markGO, true)
+	SetActive(slot0._markGO, true)
 
-	arg_2_0._controller.enabled = true
+	slot0._controller.enabled = true
 end
 
-function var_0_1.Update(arg_3_0, arg_3_1)
-	local var_3_0 = (arg_3_1 - arg_3_0._markTime) / arg_3_0._requiredTime
+function slot1.Update(slot0, slot1)
+	if (slot1 - slot0._markTime) / slot0._requiredTime >= 1 and slot0._flag then
+		slot0._controller:SetRate(1)
 
-	if var_3_0 >= 1 and arg_3_0._flag then
-		arg_3_0._controller:SetRate(1)
-
-		arg_3_0._controller.enabled = false
-		arg_3_0._markTF:GetComponent(typeof(Animator)).enabled = true
-		arg_3_0._flag = false
-	elseif arg_3_0._flag then
-		arg_3_0._controller:SetRate(var_3_0)
+		slot0._controller.enabled = false
+		slot0._markTF:GetComponent(typeof(Animator)).enabled = true
+		slot0._flag = false
+	elseif slot0._flag then
+		slot0._controller:SetRate(slot3)
 	end
 end
 
-function var_0_1.SetPosition(arg_4_0, arg_4_1)
-	arg_4_0._markTF.position = arg_4_1
+function slot1.SetPosition(slot0, slot1)
+	slot0._markTF.position = slot1
 end
 
-function var_0_1.SetTagCount(arg_5_0, arg_5_1)
-	arg_5_0._controller.count = arg_5_1
+function slot1.SetTagCount(slot0, slot1)
+	slot0._controller.count = slot1
 end
 
-function var_0_1.Dispose(arg_6_0)
-	Object.Destroy(arg_6_0._markGO)
+function slot1.Dispose(slot0)
+	Object.Destroy(slot0._markGO)
 end

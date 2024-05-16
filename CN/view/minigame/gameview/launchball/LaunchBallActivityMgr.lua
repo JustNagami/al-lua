@@ -1,167 +1,149 @@
-﻿local var_0_0 = class("LaunchBallActivityMgr")
+slot0 = class("LaunchBallActivityMgr")
 
-function var_0_0.GetRoundCount(arg_1_0)
-	local var_1_0 = LaunchBallActivityMgr.GetActivityById(arg_1_0)
-
-	if not var_1_0 then
+function slot0.GetRoundCount(slot0)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	if var_1_0.data1 and var_1_0.data1 > 0 then
-		return var_1_0.data1
+	if slot1.data1 and slot1.data1 > 0 then
+		return slot1.data1
 	end
 
 	return 0
 end
 
-function var_0_0.GetRoundCountMax(arg_2_0)
-	local var_2_0 = LaunchBallActivityMgr.GetActivityById(arg_2_0)
-
-	if not var_2_0 then
+function slot0.GetRoundCountMax(slot0)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return #var_2_0:getConfig("config_data")[1]
+	return #slot1:getConfig("config_data")[1]
 end
 
-function var_0_0.GotInvitationFlag(arg_3_0)
-	return LaunchBallActivityMgr.GetActivityById(arg_3_0).data3 == 1
+function slot0.GotInvitationFlag(slot0)
+	return LaunchBallActivityMgr.GetActivityById(slot0).data3 == 1
 end
 
-function var_0_0.GetActivityDay(arg_4_0)
-	local var_4_0 = LaunchBallActivityMgr.GetActivityById(arg_4_0)
-
-	if var_4_0 then
-		return var_4_0:getDayIndex()
+function slot0.GetActivityDay(slot0)
+	if LaunchBallActivityMgr.GetActivityById(slot0) then
+		return slot1:getDayIndex()
 	end
 
 	return 0
 end
 
-function var_0_0.GetRemainCount(arg_5_0)
-	return LaunchBallActivityMgr.GetActivityDay(arg_5_0) - LaunchBallActivityMgr.GetRoundCount(arg_5_0)
+function slot0.GetRemainCount(slot0)
+	return LaunchBallActivityMgr.GetActivityDay(slot0) - LaunchBallActivityMgr.GetRoundCount(slot0)
 end
 
-function var_0_0.IsTip(arg_6_0)
-	return LaunchBallActivityMgr.GetRemainCount(arg_6_0) > 0
+function slot0.IsTip(slot0)
+	return LaunchBallActivityMgr.GetRemainCount(slot0) > 0
 end
 
-function var_0_0.GetInvitationAble(arg_7_0)
-	if LaunchBallActivityMgr.GotInvitationFlag(arg_7_0) then
+function slot0.GetInvitationAble(slot0)
+	if LaunchBallActivityMgr.GotInvitationFlag(slot0) then
 		return false
 	end
 
-	return LaunchBallActivityMgr.GetRoundCount(arg_7_0) >= LaunchBallActivityMgr.GetRoundCountMax(arg_7_0)
+	return LaunchBallActivityMgr.GetRoundCountMax(slot0) <= LaunchBallActivityMgr.GetRoundCount(slot0)
 end
 
-function var_0_0.GetInvitation(arg_8_0)
-	if LaunchBallActivityMgr.GetInvitationAble(arg_8_0) then
+function slot0.GetInvitation(slot0)
+	if LaunchBallActivityMgr.GetInvitationAble(slot0) then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
-			activity_id = arg_8_0
+			activity_id = slot0
 		})
 	end
 end
 
-function var_0_0.GetInvitationDropId(arg_9_0)
-	return LaunchBallActivityMgr.GetActivityById(arg_9_0):getConfig("config_data")[6]
+function slot0.GetInvitationDropId(slot0)
+	return LaunchBallActivityMgr.GetActivityById(slot0):getConfig("config_data")[6]
 end
 
-function var_0_0.GetActivityById(arg_10_0)
-	return getProxy(ActivityProxy):getActivityById(arg_10_0)
+function slot0.GetActivityById(slot0)
+	return getProxy(ActivityProxy):getActivityById(slot0)
 end
 
-function var_0_0.GetZhuanShuCount(arg_11_0)
-	local var_11_0 = LaunchBallActivityMgr.GetActivityById(arg_11_0)
-
-	if not var_11_0 then
+function slot0.GetZhuanShuCount(slot0)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return var_11_0.data1_list or {}
+	return slot1.data1_list or {}
 end
 
-function var_0_0.GetZhuanShuItems(arg_12_0, arg_12_1)
-	local var_12_0 = LaunchBallActivityMgr.GetActivityById(arg_12_0)
-
-	if not var_12_0 then
+function slot0.GetZhuanShuItems(slot0, slot1)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return var_12_0:getConfig("config_data")[4][1][arg_12_1]
+	return slot2:getConfig("config_data")[4][1][slot1]
 end
 
-function var_0_0.IsFinishZhuanShu(arg_13_0, arg_13_1)
-	if not LaunchBallActivityMgr.GetActivityById(arg_13_0) then
+function slot0.IsFinishZhuanShu(slot0, slot1)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	local var_13_0 = LaunchBallActivityMgr.GetZhuanShuCount(arg_13_0)
-
-	return var_13_0 and table.contains(var_13_0, arg_13_1)
+	return LaunchBallActivityMgr.GetZhuanShuCount(slot0) and table.contains(slot3, slot1)
 end
 
-function var_0_0.CheckZhuanShuAble(arg_14_0, arg_14_1)
-	local var_14_0 = LaunchBallActivityMgr.GetZhuanShuItems(arg_14_0, arg_14_1)
-	local var_14_1
+function slot0.CheckZhuanShuAble(slot0, slot1)
+	slot3 = nil
 
-	if var_14_0 then
-		var_14_1 = getProxy(BagProxy):getItemById(var_14_0)
+	if LaunchBallActivityMgr.GetZhuanShuItems(slot0, slot1) then
+		slot3 = getProxy(BagProxy):getItemById(slot2)
 	end
 
-	return var_14_1 ~= nil
+	return slot3 ~= nil
 end
 
-function var_0_0.GetPlayerZhuanshuIndex(arg_15_0)
-	if arg_15_0 > 1 then
-		return arg_15_0 - 1
+function slot0.GetPlayerZhuanshuIndex(slot0)
+	if slot0 > 1 then
+		return slot0 - 1
 	end
 
 	return nil
 end
 
-function var_0_0.GetGameScore(arg_16_0, arg_16_1)
-	local var_16_0 = LaunchBallActivityMgr.GetActivityById(arg_16_0)
-
-	if not var_16_0 then
+function slot0.GetGameScore(slot0, slot1)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return var_16_0.data2 or 0
+	return slot2.data2 or 0
 end
 
-function var_0_0.OpenGame(arg_17_0, arg_17_1)
-	LaunchBallGameVo.initRoundData(arg_17_0, arg_17_1)
+function slot0.OpenGame(slot0, slot1)
+	LaunchBallGameVo.initRoundData(slot0, slot1)
 	pg.m02:sendNotification(GAME.GO_MINI_GAME, 57)
 end
 
-function var_0_0.GetGameAward(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	local var_18_0 = LaunchBallActivityMgr.GetActivityById(arg_18_0)
-
-	if not var_18_0 then
+function slot0.GetGameAward(slot0, slot1, slot2, slot3)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return
 	end
 
-	local var_18_1 = LaunchBallActivityMgr.GetRoundCount(arg_18_0)
-	local var_18_2 = LaunchBallActivityMgr.GetActivityDay(arg_18_0)
-	local var_18_3 = LaunchBallActivityMgr.GetRoundCountMax(arg_18_0)
-	local var_18_4 = var_18_0.data2
-	local var_18_5 = LaunchBallActivityMgr.GetGameScores(arg_18_0)
+	slot5 = LaunchBallActivityMgr.GetRoundCount(slot0)
+	slot7 = LaunchBallActivityMgr.GetRoundCountMax(slot0)
+	slot8 = slot4.data2
+	slot9 = LaunchBallActivityMgr.GetGameScores(slot0)
 
-	if arg_18_1 == LaunchBallGameConst.round_type_juqing then
-		if var_18_2 <= var_18_1 then
+	if slot1 == LaunchBallGameConst.round_type_juqing then
+		if LaunchBallActivityMgr.GetActivityDay(slot0) <= slot5 then
 			print("活动天数不足")
 
 			return
 		end
 
-		if var_18_1 < var_18_3 and arg_18_2 <= var_18_1 then
+		if slot5 < slot7 and slot2 <= slot5 then
 			print("已经领过剧情关奖励")
 
 			return
 		end
 
-		if arg_18_2 > var_18_1 + 1 then
+		if slot2 > slot5 + 1 then
 			print("上一关还未解锁")
 
 			return
@@ -169,43 +151,41 @@ function var_0_0.GetGameAward(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
 
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = arg_18_0,
-			arg1 = arg_18_1,
-			arg2 = arg_18_2,
+			activity_id = slot0,
+			arg1 = slot1,
+			arg2 = slot2,
 			arg3 = math.floor(LaunchBallGameVo.gameStepTime)
 		})
-	elseif arg_18_1 == LaunchBallGameConst.round_type_wuxian then
-		if var_18_1 < var_18_3 then
+	elseif slot1 == LaunchBallGameConst.round_type_wuxian then
+		if slot5 < slot7 then
 			print("还没有完全通关剧情关卡")
 
 			return
 		end
 
-		if arg_18_3 <= var_18_4 then
+		if slot3 <= slot8 then
 			print("没有超过往期的最大分数")
 
 			return
 		end
 
-		local var_18_6 = false
-
-		for iter_18_0 = 1, #var_18_5 do
-			if not var_18_6 and arg_18_3 >= var_18_5[iter_18_0][1] and var_18_4 < var_18_5[iter_18_0][1] then
-				var_18_6 = true
+		for slot14 = 1, #slot9 do
+			if not false and slot9[slot14][1] <= slot3 and slot8 < slot9[slot14][1] then
+				slot10 = true
 			end
 		end
 
-		if var_18_6 then
+		if slot10 then
 			pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 				cmd = 1,
-				activity_id = arg_18_0,
-				arg1 = arg_18_1,
-				arg2 = arg_18_3,
+				activity_id = slot0,
+				arg1 = slot1,
+				arg2 = slot3,
 				arg3 = math.floor(LaunchBallGameVo.gameStepTime)
 			})
 		end
 	else
-		if not LaunchBallActivityMgr.CheckZhuanShuAble(arg_18_0, arg_18_2) then
+		if not LaunchBallActivityMgr.CheckZhuanShuAble(slot0, slot2) then
 			print("专属关卡没有解锁")
 
 			return
@@ -213,32 +193,28 @@ function var_0_0.GetGameAward(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
 
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = arg_18_0,
-			arg1 = arg_18_1,
-			arg2 = arg_18_2,
+			activity_id = slot0,
+			arg1 = slot1,
+			arg2 = slot2,
 			arg3 = math.floor(LaunchBallGameVo.gameStepTime)
 		})
 	end
 end
 
-function var_0_0.GetGameScores(arg_19_0)
-	local var_19_0 = LaunchBallActivityMgr.GetActivityById(arg_19_0)
-
-	if not var_19_0 then
+function slot0.GetGameScores(slot0)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return var_19_0:getConfig("config_data")[5]
+	return slot1:getConfig("config_data")[5]
 end
 
-function var_0_0.GetGamePtId(arg_20_0)
-	local var_20_0 = LaunchBallActivityMgr.GetActivityById(arg_20_0)
-
-	if not var_20_0 then
+function slot0.GetGamePtId(slot0)
+	if not LaunchBallActivityMgr.GetActivityById(slot0) then
 		return 0
 	end
 
-	return var_20_0:getConfig("config_data")[2]
+	return slot1:getConfig("config_data")[2]
 end
 
-return var_0_0
+return slot0

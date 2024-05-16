@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmRandom",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163121
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -150,5 +139,16 @@
 	stack = 1,
 	id = 1090173,
 	icon = 1090170,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmRandom",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163121
+			}
+		}
+	}
 }

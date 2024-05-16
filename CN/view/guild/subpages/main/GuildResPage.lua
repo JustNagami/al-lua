@@ -1,57 +1,50 @@
-﻿local var_0_0 = class("GuildResPage", import("....base.BaseSubView"))
+slot0 = class("GuildResPage", import("....base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "GuildResPanel"
 end
 
-function var_0_0.Load(arg_2_0)
-	if arg_2_0._state ~= var_0_0.STATES.NONE then
+function slot0.Load(slot0)
+	if slot0._state ~= uv0.STATES.NONE then
 		return
 	end
 
-	arg_2_0._state = var_0_0.STATES.LOADING
+	slot0._state = uv0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
-
-	local var_2_0 = LoadAndInstantiateSync("UI", arg_2_0:getUIName(), true, false)
-
-	arg_2_0:Loaded(var_2_0)
-	arg_2_0:Init()
+	slot0:Loaded(LoadAndInstantiateSync("UI", slot0:getUIName(), true, false))
+	slot0:Init()
 end
 
-function var_0_0.OnLoaded(arg_3_0)
-	arg_3_0.captailBg = arg_3_0:findTF("captail"):GetComponent(typeof(Image))
-	arg_3_0.contributionBg = arg_3_0:findTF("contribution"):GetComponent(typeof(Image))
-	arg_3_0.resCaptailTxt = arg_3_0:findTF("captail/Text"):GetComponent(typeof(Text))
-	arg_3_0.resContributionTxt = arg_3_0:findTF("contribution/Text"):GetComponent(typeof(Text))
-	arg_3_0.resourceLogBtn = arg_3_0:findTF("captail/log")
+function slot0.OnLoaded(slot0)
+	slot0.captailBg = slot0:findTF("captail"):GetComponent(typeof(Image))
+	slot0.contributionBg = slot0:findTF("contribution"):GetComponent(typeof(Image))
+	slot0.resCaptailTxt = slot0:findTF("captail/Text"):GetComponent(typeof(Text))
+	slot0.resContributionTxt = slot0:findTF("contribution/Text"):GetComponent(typeof(Text))
+	slot0.resourceLogBtn = slot0:findTF("captail/log")
 
-	setActive(arg_3_0._tf, true)
+	setActive(slot0._tf, true)
 end
 
-function var_0_0.OnInit(arg_4_0)
-	onButton(arg_4_0, arg_4_0.resourceLogBtn, function()
-		arg_4_0:emit(GuildMainMediator.ON_FETCH_CAPITAL_LOG)
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0.resourceLogBtn, function ()
+		uv0:emit(GuildMainMediator.ON_FETCH_CAPITAL_LOG)
 	end, SFX_PANEL)
 end
 
-function var_0_0.Update(arg_6_0, arg_6_1, arg_6_2)
-	arg_6_0.resCaptailTxt.text = arg_6_2:getCapital()
-	arg_6_0.resContributionTxt.text = arg_6_1:getResource(8)
+function slot0.Update(slot0, slot1, slot2)
+	slot0.resCaptailTxt.text = slot2:getCapital()
+	slot0.resContributionTxt.text = slot1:getResource(8)
 
-	local var_6_0 = arg_6_2:getFaction()
-
-	if arg_6_0.faction ~= var_6_0 then
-		local var_6_1 = var_6_0 == GuildConst.FACTION_TYPE_BLHX and "blue" or "red"
-
-		arg_6_0.contributionBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var_6_1)
-		arg_6_0.captailBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. var_6_1)
-		arg_6_0.faction = var_6_0
+	if slot0.faction ~= slot2:getFaction() then
+		slot4 = slot3 == GuildConst.FACTION_TYPE_BLHX and "blue" or "red"
+		slot0.contributionBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. slot4)
+		slot0.captailBg.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "res_" .. slot4)
+		slot0.faction = slot3
 	end
 end
 
-function var_0_0.OnDestroy(arg_7_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

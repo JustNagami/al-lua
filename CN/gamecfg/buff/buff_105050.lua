@@ -1,4 +1,24 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "室内系女仆",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "氧气存量降低，造成伤害提高",
+	stack = 1,
+	id = 105050,
+	icon = 105050,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -31,25 +51,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "室内系女仆",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "氧气存量降低，造成伤害提高",
-	stack = 1,
-	id = 105050,
-	icon = 105050,
-	last_effect = ""
+	}
 }

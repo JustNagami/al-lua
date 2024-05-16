@@ -1,50 +1,45 @@
-﻿local var_0_0 = class("ResolveEquipmentMediator", import("..base.ContextMediator"))
+slot0 = class("ResolveEquipmentMediator", import("..base.ContextMediator"))
+slot0.ON_RESOLVE = "ResolveEquipmentMediator:ON_RESOLVE"
 
-var_0_0.ON_RESOLVE = "ResolveEquipmentMediator:ON_RESOLVE"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.ON_RESOLVE, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.DESTROY_EQUIPMENTS, {
-			equipments = arg_2_1
+function slot0.register(slot0)
+	slot0:bind(uv0.ON_RESOLVE, function (slot0, slot1)
+		uv0:sendNotification(GAME.DESTROY_EQUIPMENTS, {
+			equipments = slot1
 		})
 	end)
+	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
 
-	local var_1_0 = getProxy(PlayerProxy):getData()
+	slot2 = slot0.contextData.Equipments
 
-	arg_1_0.viewComponent:setPlayer(var_1_0)
-
-	local var_1_1 = arg_1_0.contextData.Equipments
-
-	assert(var_1_1, "equipmentVOs can not be nil")
-	arg_1_0.viewComponent:setEquipments(var_1_1)
+	assert(slot2, "equipmentVOs can not be nil")
+	slot0.viewComponent:setEquipments(slot2)
 end
 
-function var_0_0.listNotificationInterests(arg_3_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.DESTROY_EQUIPMENTS_DONE,
 		GAME.CANCEL_LIMITED_OPERATION
 	}
 end
 
-function var_0_0.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:getName()
-	local var_4_1 = arg_4_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_4_0 == GAME.DESTROY_EQUIPMENTS_DONE then
-		arg_4_0.viewComponent:OnResolveEquipDone()
+	if slot1:getName() == GAME.DESTROY_EQUIPMENTS_DONE then
+		slot0.viewComponent:OnResolveEquipDone()
 
-		if table.getCount(var_4_1) ~= 0 then
-			arg_4_0.viewComponent:emit(BaseUI.ON_AWARD, {
-				items = var_4_1,
+		if table.getCount(slot3) ~= 0 then
+			slot0.viewComponent:emit(BaseUI.ON_AWARD, {
+				items = slot3,
 				title = AwardInfoLayer.TITLE.ITEM,
-				removeFunc = function()
-					arg_4_0.viewComponent:emit(BaseUI.ON_CLOSE)
+				removeFunc = function ()
+					uv0.viewComponent:emit(BaseUI.ON_CLOSE)
 				end
 			})
 		end
-	elseif var_4_0 == GAME.CANCEL_LIMITED_OPERATION then
-		-- block empty
+	elseif slot2 == GAME.CANCEL_LIMITED_OPERATION then
+		-- Nothing
 	end
 end
 
-return var_0_0
+return slot0

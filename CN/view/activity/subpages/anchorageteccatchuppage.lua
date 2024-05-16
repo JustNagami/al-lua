@@ -1,1 +1,1 @@
-﻿return (class("AnchorageTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))
+return class("AnchorageTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage"))

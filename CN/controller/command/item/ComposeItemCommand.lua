@@ -1,46 +1,42 @@
-﻿local var_0_0 = class("ComposeItemCommand", pm.SimpleCommand)
+slot0 = class("ComposeItemCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.count
-	local var_1_3 = getProxy(BagProxy)
-	local var_1_4 = var_1_3:getItemById(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
+	slot6 = getProxy(BagProxy):getItemById(slot2.id)
 
-	if var_1_2 == 0 then
+	if slot2.count == 0 then
 		return
 	end
 
-	local var_1_5 = var_1_4:getConfig("target_id")
-	local var_1_6 = var_1_4:getConfig("compose_number")
+	slot7 = slot6:getConfig("target_id")
 
-	if var_1_2 > var_1_4.count / var_1_6 then
+	if slot4 > slot6.count / slot6:getConfig("compose_number") then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(15006, {
-		id = var_1_1,
-		num = var_1_2
-	}, 15007, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			var_1_3:removeItemById(var_1_1, var_1_2 * var_1_6)
+		id = slot3,
+		num = slot4
+	}, 15007, function (slot0)
+		if slot0.result == 0 then
+			uv0:removeItemById(uv1, uv2 * uv3)
 
-			local var_2_0 = Drop.New({
+			slot1 = Drop.New({
 				type = DROP_TYPE_ITEM,
-				id = var_1_5,
-				count = var_1_2
+				id = uv4,
+				count = uv2
 			})
 
-			arg_1_0:sendNotification(GAME.ADD_ITEM, var_2_0)
-			arg_1_0:sendNotification(GAME.USE_ITEM_DONE, {
-				var_2_0
+			uv5:sendNotification(GAME.ADD_ITEM, slot1)
+			uv5:sendNotification(GAME.USE_ITEM_DONE, {
+				slot1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

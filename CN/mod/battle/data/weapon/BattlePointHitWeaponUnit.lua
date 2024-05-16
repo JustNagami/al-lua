@@ -1,347 +1,304 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleUnitEvent
+slot3 = slot0.Battle.BattleAttr
+slot4 = class("BattlePointHitWeaponUnit", slot0.Battle.BattleWeaponUnit)
+slot0.Battle.BattlePointHitWeaponUnit = slot4
+slot4.__name = "BattlePointHitWeaponUnit"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleUnitEvent
-local var_0_3 = var_0_0.Battle.BattleAttr
-local var_0_4 = class("BattlePointHitWeaponUnit", var_0_0.Battle.BattleWeaponUnit)
+function slot4.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-var_0_0.Battle.BattlePointHitWeaponUnit = var_0_4
-var_0_4.__name = "BattlePointHitWeaponUnit"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_4.super.Ctor(arg_1_0)
-
-	var_0_4._strikePoint = nil
-	var_0_4._strikeRequire = 1
-	var_0_4._strikeMode = false
+	uv0._strikePoint = nil
+	uv0._strikeRequire = 1
+	uv0._strikeMode = false
 end
 
-function var_0_4.DispatchBlink(arg_2_0, arg_2_1)
-	local var_2_0 = {
-		callbackFunc = arg_2_1,
-		timeScale = var_0_0.Battle.BattleConfig.FOCUS_MAP_RATE
-	}
-	local var_2_1 = var_0_0.Event.New(var_0_2.CHARGE_WEAPON_FINISH, var_2_0)
-
-	arg_2_0:DispatchEvent(var_2_1)
+function slot4.DispatchBlink(slot0, slot1)
+	slot0:DispatchEvent(uv0.Event.New(uv1.CHARGE_WEAPON_FINISH, {
+		callbackFunc = slot1,
+		timeScale = uv0.Battle.BattleConfig.FOCUS_MAP_RATE
+	}))
 end
 
-function var_0_4.RemoveAllLock(arg_3_0)
-	arg_3_0._lockList = {}
+function slot4.RemoveAllLock(slot0)
+	slot0._lockList = {}
 end
 
-function var_0_4.createMajorEmitter(arg_4_0, arg_4_1, arg_4_2)
-	local function var_4_0(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-		local var_5_0
-		local var_5_1
-		local var_5_2 = arg_4_0._emitBulletIDList[arg_4_2]
+function slot4.createMajorEmitter(slot0, slot1, slot2)
+	uv1.super.createMajorEmitter(slot0, slot1, slot2, uv1.EMITTER_NORMAL, function (slot0, slot1, slot2, slot3)
+		slot4, slot5 = nil
 
-		if arg_4_0._strikePoint then
-			var_5_1 = arg_4_0._strikePoint
-			var_5_0 = arg_4_0:SpawnPointBullet(var_5_2, arg_4_0._strikePoint)
+		if uv0._strikePoint then
+			slot5 = uv0._strikePoint
+			slot4 = uv0:SpawnPointBullet(uv0._emitBulletIDList[uv1], uv0._strikePoint)
 		else
-			local var_5_3 = arg_4_0._lockList[1]
-
-			var_5_0 = arg_4_0:Spawn(var_5_2, var_5_3, arg_4_0.INTERNAL)
-			var_5_1 = var_5_3:GetBeenAimedPosition() or var_5_3:GetPosition()
+			slot7 = uv0._lockList[1]
+			slot4 = uv0:Spawn(slot6, slot7, uv0.INTERNAL)
+			slot5 = slot7:GetBeenAimedPosition() or slot7:GetPosition()
 		end
 
-		var_5_0:SetOffsetPriority(arg_5_3)
-		var_5_0:SetShiftInfo(arg_5_0, arg_5_1)
-		var_5_0:SetRotateInfo(var_5_1, 0, 0)
-		var_0_0.Battle.BattleVariable.AddExempt(var_5_0:GetSpeedExemptKey(), var_5_0:GetIFF(), var_0_0.Battle.BattleConfig.SPEED_FACTOR_FOCUS_CHARACTER)
-		arg_4_0:DispatchBulletEvent(var_5_0)
-	end
+		slot4:SetOffsetPriority(slot3)
+		slot4:SetShiftInfo(slot0, slot1)
+		slot4:SetRotateInfo(slot5, 0, 0)
+		uv2.Battle.BattleVariable.AddExempt(slot4:GetSpeedExemptKey(), slot4:GetIFF(), uv2.Battle.BattleConfig.SPEED_FACTOR_FOCUS_CHARACTER)
+		uv0:DispatchBulletEvent(slot4)
+	end, function ()
+		uv0._strikePoint = nil
 
-	local function var_4_1()
-		arg_4_0._strikePoint = nil
-
-		arg_4_0:RemoveAllLock()
-	end
-
-	var_0_4.super.createMajorEmitter(arg_4_0, arg_4_1, arg_4_2, var_0_4.EMITTER_NORMAL, var_4_0, var_4_1)
+		uv0:RemoveAllLock()
+	end)
 end
 
-function var_0_4.SetPlayerChargeWeaponVO(arg_7_0, arg_7_1)
-	arg_7_0._playerChargeWeaponVo = arg_7_1
+function slot4.SetPlayerChargeWeaponVO(slot0, slot1)
+	slot0._playerChargeWeaponVo = slot1
 end
 
-function var_0_4.Charge(arg_8_0)
-	arg_8_0._currentState = arg_8_0.STATE_PRECAST
-	arg_8_0._lockList = {}
+function slot4.Charge(slot0)
+	slot0._currentState = slot0.STATE_PRECAST
+	slot0._lockList = {}
 
-	local var_8_0 = {}
-	local var_8_1 = var_0_0.Event.New(var_0_2.POINT_HIT_CHARGE, var_8_0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.POINT_HIT_CHARGE, {}))
 
-	arg_8_0:DispatchEvent(var_8_1)
-
-	arg_8_0._strikeMode = true
+	slot0._strikeMode = true
 end
 
-function var_0_4.CancelCharge(arg_9_0)
-	if arg_9_0._currentState ~= arg_9_0.STATE_PRECAST then
+function slot4.CancelCharge(slot0)
+	if slot0._currentState ~= slot0.STATE_PRECAST then
 		return
 	end
 
-	arg_9_0:RemoveAllLock()
+	slot0:RemoveAllLock()
 
-	arg_9_0._currentState = arg_9_0.STATE_READY
+	slot0._currentState = slot0.STATE_READY
 
-	local var_9_0 = {}
-	local var_9_1 = var_0_0.Event.New(var_0_2.POINT_HIT_CANCEL, var_9_0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.POINT_HIT_CANCEL, {}))
 
-	arg_9_0:DispatchEvent(var_9_1)
-
-	arg_9_0._strikeMode = nil
+	slot0._strikeMode = nil
 end
 
-function var_0_4.QuickTag(arg_10_0)
-	arg_10_0._currentState = arg_10_0.STATE_PRECAST
-	arg_10_0._lockList = {}
+function slot4.QuickTag(slot0)
+	slot0._currentState = slot0.STATE_PRECAST
+	slot0._lockList = {}
 
-	arg_10_0:updateMovementInfo()
+	slot0:updateMovementInfo()
 
-	local var_10_0 = arg_10_0:Tracking()
-
-	arg_10_0._lockList[#arg_10_0._lockList + 1] = var_10_0
+	slot0._lockList[#slot0._lockList + 1] = slot0:Tracking()
 end
 
-function var_0_4.CancelQuickTag(arg_11_0)
-	arg_11_0._currentState = arg_11_0.STATE_READY
-	arg_11_0._lockList = {}
+function slot4.CancelQuickTag(slot0)
+	slot0._currentState = slot0.STATE_READY
+	slot0._lockList = {}
 end
 
-function var_0_4.Update(arg_12_0, arg_12_1)
-	arg_12_0:UpdateReload()
+function slot4.Update(slot0, slot1)
+	slot0:UpdateReload()
 end
 
-function var_0_4.Fire(arg_13_0, arg_13_1)
-	if arg_13_0._currentState ~= arg_13_0.STATE_PRECAST then
+function slot4.Fire(slot0, slot1)
+	if slot0._currentState ~= slot0.STATE_PRECAST then
 		return
 	end
 
-	arg_13_0._strikePoint = arg_13_1
+	slot0._strikePoint = slot1
 
-	arg_13_0._host:CloakExpose(var_0_0.Battle.BattleConfig.CLOAK_BOMBARD_BASE_EXPOSE)
-	arg_13_0._host:BombardExpose()
+	slot0._host:CloakExpose(uv0.Battle.BattleConfig.CLOAK_BOMBARD_BASE_EXPOSE)
+	slot0._host:BombardExpose()
 
-	arg_13_0._strikeMode = false
+	slot0._strikeMode = false
 
-	var_0_4.super.Fire(arg_13_0)
+	uv1.super.Fire(slot0)
 end
 
-function var_0_4.DoAttack(arg_14_0, arg_14_1)
-	var_0_0.Battle.PlayBattleSFX(arg_14_0._tmpData.fire_sfx)
+function slot4.DoAttack(slot0, slot1)
+	uv0.Battle.PlayBattleSFX(slot0._tmpData.fire_sfx)
+	slot0:DispatchEvent(uv0.Event.New(uv1.CHARGE_WEAPON_FIRE, {
+		weapon = slot0
+	}))
+	slot0:cacheBulletID()
+	slot0:TriggerBuffOnSteday()
 
-	local var_14_0 = var_0_0.Event.New(var_0_2.CHARGE_WEAPON_FIRE, {
-		weapon = arg_14_0
-	})
-
-	arg_14_0:DispatchEvent(var_14_0)
-	arg_14_0:cacheBulletID()
-	arg_14_0:TriggerBuffOnSteday()
-
-	for iter_14_0, iter_14_1 in ipairs(arg_14_0._majorEmitterList) do
-		iter_14_1:Ready()
+	for slot6, slot7 in ipairs(slot0._majorEmitterList) do
+		slot7:Ready()
 	end
 
-	for iter_14_2, iter_14_3 in ipairs(arg_14_0._majorEmitterList) do
-		iter_14_3:Fire(arg_14_1, arg_14_0:GetDirection(), arg_14_0:GetAttackAngle())
-		iter_14_3:SetTimeScale(false)
+	for slot6, slot7 in ipairs(slot0._majorEmitterList) do
+		slot7:Fire(slot1, slot0:GetDirection(), slot0:GetAttackAngle())
+		slot7:SetTimeScale(false)
 	end
 
-	arg_14_0:DispatchEvent(var_0_0.Event.New(var_0_2.MANUAL_WEAPON_FIRE, {}))
-	arg_14_0:TriggerBuffOnFire()
-	var_0_0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[var_0_1.ShakeType.FIRE])
+	slot0:DispatchEvent(uv0.Event.New(uv1.MANUAL_WEAPON_FIRE, {}))
+	slot0:TriggerBuffOnFire()
+	uv0.Battle.BattleCameraUtil.GetInstance():StartShake(pg.shake_template[uv2.ShakeType.FIRE])
 end
 
-function var_0_4.TriggerBuffOnReady(arg_15_0)
-	if arg_15_0._tmpData.type == var_0_1.EquipmentType.MANUAL_MISSILE then
-		arg_15_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_MANUAL_MISSILE_READY, {})
+function slot4.TriggerBuffOnReady(slot0)
+	if slot0._tmpData.type == uv0.EquipmentType.MANUAL_MISSILE then
+		slot0._host:TriggerBuff(uv1.Battle.BattleConst.BuffEffectType.ON_MANUAL_MISSILE_READY, {})
 	else
-		arg_15_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_CHARGE_READY, {})
+		slot0._host:TriggerBuff(uv1.Battle.BattleConst.BuffEffectType.ON_CHARGE_READY, {})
 	end
 end
 
-function var_0_4.Spawn(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
-	local var_16_0
+function slot4.Spawn(slot0, slot1, slot2, slot3)
+	slot4 = nil
 
-	if arg_16_2 == nil then
-		arg_16_0:updateMovementInfo()
+	if slot2 == nil then
+		slot0:updateMovementInfo()
 
-		arg_16_2 = arg_16_0:TrackingRandom(arg_16_0:GetFilteredList())
-
-		if arg_16_2 == nil then
-			var_16_0 = Vector3.zero
+		if slot0:TrackingRandom(slot0:GetFilteredList()) == nil then
+			slot4 = Vector3.zero
 		else
-			var_16_0 = arg_16_2:GetBeenAimedPosition() or arg_16_2:GetPosition()
+			slot4 = slot2:GetBeenAimedPosition() or slot2:GetPosition()
 		end
+	elseif not slot2:GetBeenAimedPosition() then
+		slot4 = slot2:GetPosition()
+	end
+
+	slot5 = slot0._dataProxy:CreateBulletUnit(slot1, slot0._host, slot0, slot4)
+
+	slot0:setBulletSkin(slot5, slot1)
+	slot0:TriggerBuffWhenSpawn(slot5)
+
+	if slot3 == slot0.INTERNAL then
+		slot5:SetDamageEnhance(1 + slot0._host:GetAttrByName("initialEnhancement"))
+		slot0:TriggerBuffWhenSpawn(slot5, uv0.BuffEffectType.ON_INTERNAL_BULLET_CREATE)
+	end
+
+	return slot5
+end
+
+function slot4.SpawnPointBullet(slot0, slot1, slot2)
+	slot3 = slot0._dataProxy:CreateBulletUnit(slot1, slot0._host, slot0, slot2)
+
+	slot0:TriggerBuffWhenSpawn(slot3, uv0.BuffEffectType.ON_MANUAL_BULLET_CREATE)
+	slot0:setBulletSkin(slot3, slot1)
+	slot3:SetDamageEnhance(uv1.Battle.BattleConfig.ChargeWeaponConfig.Enhance + slot0._host:GetAttrByName("initialEnhancement") + slot0._host:GetAttrByName("manualEnhancement"))
+	slot0:TriggerBuffWhenSpawn(slot3)
+	slot0:TriggerBuffWhenSpawn(slot3, uv0.BuffEffectType.ON_INTERNAL_BULLET_CREATE)
+
+	return slot3
+end
+
+function slot4.TriggerBuffOnFire(slot0)
+	if slot0._tmpData.type == uv0.EquipmentType.MANUAL_MISSILE then
+		slot0._host:TriggerBuff(uv1.Battle.BattleConst.BuffEffectType.ON_MANUAL_MISSILE_FIRE, {})
 	else
-		var_16_0 = arg_16_2:GetBeenAimedPosition() or arg_16_2:GetPosition()
-	end
-
-	local var_16_1 = arg_16_0._dataProxy:CreateBulletUnit(arg_16_1, arg_16_0._host, arg_16_0, var_16_0)
-
-	arg_16_0:setBulletSkin(var_16_1, arg_16_1)
-	arg_16_0:TriggerBuffWhenSpawn(var_16_1)
-
-	if arg_16_3 == arg_16_0.INTERNAL then
-		local var_16_2 = arg_16_0._host:GetAttrByName("initialEnhancement")
-
-		var_16_1:SetDamageEnhance(1 + var_16_2)
-		arg_16_0:TriggerBuffWhenSpawn(var_16_1, var_0_1.BuffEffectType.ON_INTERNAL_BULLET_CREATE)
-	end
-
-	return var_16_1
-end
-
-function var_0_4.SpawnPointBullet(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_0._dataProxy:CreateBulletUnit(arg_17_1, arg_17_0._host, arg_17_0, arg_17_2)
-
-	arg_17_0:TriggerBuffWhenSpawn(var_17_0, var_0_1.BuffEffectType.ON_MANUAL_BULLET_CREATE)
-	arg_17_0:setBulletSkin(var_17_0, arg_17_1)
-
-	local var_17_1 = arg_17_0._host:GetAttrByName("initialEnhancement") + arg_17_0._host:GetAttrByName("manualEnhancement")
-
-	var_17_0:SetDamageEnhance(var_0_0.Battle.BattleConfig.ChargeWeaponConfig.Enhance + var_17_1)
-	arg_17_0:TriggerBuffWhenSpawn(var_17_0)
-	arg_17_0:TriggerBuffWhenSpawn(var_17_0, var_0_1.BuffEffectType.ON_INTERNAL_BULLET_CREATE)
-
-	return var_17_0
-end
-
-function var_0_4.TriggerBuffOnFire(arg_18_0)
-	if arg_18_0._tmpData.type == var_0_1.EquipmentType.MANUAL_MISSILE then
-		arg_18_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_MANUAL_MISSILE_FIRE, {})
-	else
-		arg_18_0._host:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_CHARGE_FIRE, {})
+		slot0._host:TriggerBuff(uv1.Battle.BattleConst.BuffEffectType.ON_CHARGE_FIRE, {})
 	end
 end
 
-function var_0_4.InitialCD(arg_19_0)
-	var_0_4.super.InitialCD(arg_19_0)
-	arg_19_0._playerChargeWeaponVo:Deduct(arg_19_0)
-	arg_19_0._playerChargeWeaponVo:Charge(arg_19_0)
+function slot4.InitialCD(slot0)
+	uv0.super.InitialCD(slot0)
+	slot0._playerChargeWeaponVo:Deduct(slot0)
+	slot0._playerChargeWeaponVo:Charge(slot0)
 end
 
-function var_0_4.EnterCoolDown(arg_20_0)
-	var_0_4.super.EnterCoolDown(arg_20_0)
-	arg_20_0._playerChargeWeaponVo:Charge(arg_20_0)
+function slot4.EnterCoolDown(slot0)
+	uv0.super.EnterCoolDown(slot0)
+	slot0._playerChargeWeaponVo:Charge(slot0)
 end
 
-function var_0_4.OverHeat(arg_21_0)
-	var_0_4.super.OverHeat(arg_21_0)
-	arg_21_0._playerChargeWeaponVo:Deduct(arg_21_0)
+function slot4.OverHeat(slot0)
+	uv0.super.OverHeat(slot0)
+	slot0._playerChargeWeaponVo:Deduct(slot0)
 end
 
-function var_0_4.GetMinAngle(arg_22_0)
-	return arg_22_0:GetAttackAngle()
+function slot4.GetMinAngle(slot0)
+	return slot0:GetAttackAngle()
 end
 
-function var_0_4.GetLockList(arg_23_0)
-	return arg_23_0._lockList
+function slot4.GetLockList(slot0)
+	return slot0._lockList
 end
 
-function var_0_4.GetFilteredList(arg_24_0)
-	local var_24_0 = var_0_4.super.GetFilteredList(arg_24_0)
-
-	return (arg_24_0:filterEnemyUnitType(var_24_0))
+function slot4.GetFilteredList(slot0)
+	return slot0:filterEnemyUnitType(uv0.super.GetFilteredList(slot0))
 end
 
-function var_0_4.filterEnemyUnitType(arg_25_0, arg_25_1)
-	local var_25_0 = {}
-	local var_25_1 = {}
-	local var_25_2 = -9999
+function slot4.filterEnemyUnitType(slot0, slot1)
+	slot2 = {}
+	slot3 = {}
+	slot4 = -9999
 
-	for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
-		local var_25_3 = iter_25_1:GetTargetedPriority()
-
-		if var_25_3 == nil then
-			var_25_1[#var_25_1 + 1] = iter_25_1
-		elseif var_25_2 < var_25_3 then
-			var_25_2 = var_25_3
-			var_25_0 = {}
-			var_25_0[#var_25_0 + 1] = iter_25_1
-		elseif var_25_2 == var_25_3 then
-			var_25_0[#var_25_0 + 1] = iter_25_1
+	for slot8, slot9 in ipairs(slot1) do
+		if slot9:GetTargetedPriority() == nil then
+			slot3[#slot3 + 1] = slot9
+		elseif slot4 < slot10 then
+			slot4 = slot10
+			slot2 = {
+				[#slot2 + 1] = slot9
+			}
+		elseif slot4 == slot10 then
+			slot2[#slot2 + 1] = slot9
 		end
 	end
 
-	for iter_25_2, iter_25_3 in ipairs(var_25_1) do
-		var_25_0[#var_25_0 + 1] = iter_25_3
+	for slot8, slot9 in ipairs(slot3) do
+		slot2[#slot2 + 1] = slot9
 	end
 
-	return var_25_0
+	return slot2
 end
 
-function var_0_4.handleCoolDown(arg_26_0)
-	arg_26_0._currentState = arg_26_0.STATE_READY
+function slot4.handleCoolDown(slot0)
+	slot0._currentState = slot0.STATE_READY
 
-	arg_26_0._playerChargeWeaponVo:Plus(arg_26_0)
-	arg_26_0:DispatchEvent(var_0_0.Event.New(var_0_2.MANUAL_WEAPON_READY, {}))
-	arg_26_0:TriggerBuffOnReady()
+	slot0._playerChargeWeaponVo:Plus(slot0)
+	slot0:DispatchEvent(uv0.Event.New(uv1.MANUAL_WEAPON_READY, {}))
+	slot0:TriggerBuffOnReady()
 
-	arg_26_0._CDstartTime = nil
-	arg_26_0._reloadBoostList = {}
+	slot0._CDstartTime = nil
+	slot0._reloadBoostList = {}
 end
 
-function var_0_4.FlushReloadMax(arg_27_0, arg_27_1)
-	if var_0_4.super.FlushReloadMax(arg_27_0, arg_27_1) then
+function slot4.FlushReloadMax(slot0, slot1)
+	if uv0.super.FlushReloadMax(slot0, slot1) then
 		return true
 	end
 
-	arg_27_0._playerChargeWeaponVo:RefreshReloadingBar()
+	slot0._playerChargeWeaponVo:RefreshReloadingBar()
 end
 
-function var_0_4.FlushReloadRequire(arg_28_0)
-	if var_0_4.super.FlushReloadRequire(arg_28_0) then
+function slot4.FlushReloadRequire(slot0)
+	if uv0.super.FlushReloadRequire(slot0) then
 		return true
 	end
 
-	arg_28_0._playerChargeWeaponVo:RefreshReloadingBar()
+	slot0._playerChargeWeaponVo:RefreshReloadingBar()
 end
 
-function var_0_4.QuickCoolDown(arg_29_0)
-	if arg_29_0._currentState == arg_29_0.STATE_OVER_HEAT then
-		arg_29_0._currentState = arg_29_0.STATE_READY
+function slot4.QuickCoolDown(slot0)
+	if slot0._currentState == slot0.STATE_OVER_HEAT then
+		slot0._currentState = slot0.STATE_READY
 
-		arg_29_0._playerChargeWeaponVo:InstantCoolDown(arg_29_0)
-		arg_29_0:DispatchEvent(var_0_0.Event.New(var_0_2.MANUAL_WEAPON_INSTANT_READY, {}))
+		slot0._playerChargeWeaponVo:InstantCoolDown(slot0)
+		slot0:DispatchEvent(uv0.Event.New(uv1.MANUAL_WEAPON_INSTANT_READY, {}))
 
-		arg_29_0._CDstartTime = nil
-		arg_29_0._reloadBoostList = {}
+		slot0._CDstartTime = nil
+		slot0._reloadBoostList = {}
 	end
 end
 
-function var_0_4.ReloadBoost(arg_30_0, arg_30_1)
-	local var_30_0 = 0
-
-	for iter_30_0, iter_30_1 in ipairs(arg_30_0._reloadBoostList) do
-		var_30_0 = var_30_0 + iter_30_1
+function slot4.ReloadBoost(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0._reloadBoostList) do
+		slot2 = 0 + slot7
 	end
 
-	local var_30_1 = var_30_0 + arg_30_1
-	local var_30_2 = pg.TimeMgr.GetInstance():GetCombatTime() - arg_30_0._jammingTime - arg_30_0._CDstartTime
-	local var_30_3
+	slot4 = pg.TimeMgr.GetInstance():GetCombatTime() - slot0._jammingTime - slot0._CDstartTime
+	slot5 = nil
+	fixValue = ((slot2 + slot1 >= 0 or math.max(slot2, (slot0._reloadRequire - slot4) * -1)) and math.min(slot2, slot4)) - slot2 + slot1
 
-	if var_30_1 < 0 then
-		var_30_3 = math.max(var_30_1, (arg_30_0._reloadRequire - var_30_2) * -1)
-	else
-		var_30_3 = math.min(var_30_1, var_30_2)
-	end
-
-	fixValue = var_30_3 - var_30_1 + arg_30_1
-
-	table.insert(arg_30_0._reloadBoostList, fixValue)
+	table.insert(slot0._reloadBoostList, fixValue)
 end
 
-function var_0_4.AppendReloadBoost(arg_31_0, arg_31_1)
-	if arg_31_0._currentState == arg_31_0.STATE_OVER_HEAT then
-		arg_31_0._playerChargeWeaponVo:ReloadBoost(arg_31_0, arg_31_1)
+function slot4.AppendReloadBoost(slot0, slot1)
+	if slot0._currentState == slot0.STATE_OVER_HEAT then
+		slot0._playerChargeWeaponVo:ReloadBoost(slot0, slot1)
 	end
 end
 
-function var_0_4.IsStrikeMode(arg_32_0)
-	return arg_32_0._strikeMode
+function slot4.IsStrikeMode(slot0)
+	return slot0._strikeMode
 end

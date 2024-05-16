@@ -1,96 +1,79 @@
-﻿local var_0_0 = class("Live2dConst")
+slot0 = class("Live2dConst")
 
-function var_0_0.SaveL2dIdle(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = var_0_0.GetL2dIdleSaveName(arg_1_0, arg_1_1)
-
-	PlayerPrefs.SetInt(var_1_0, arg_1_2)
+function slot0.SaveL2dIdle(slot0, slot1, slot2)
+	PlayerPrefs.SetInt(uv0.GetL2dIdleSaveName(slot0, slot1), slot2)
 end
 
-function var_0_0.SaveL2dAction(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = var_0_0.GetL2dActionSaveName(arg_2_0, arg_2_1)
-
-	PlayerPrefs.SetInt(var_2_0, arg_2_2)
+function slot0.SaveL2dAction(slot0, slot1, slot2)
+	PlayerPrefs.SetInt(uv0.GetL2dActionSaveName(slot0, slot1), slot2)
 end
 
-function var_0_0.GetL2dIdleSaveName(arg_3_0, arg_3_1)
-	return "l2d_" .. tostring(arg_3_0) .. "_" .. tostring(arg_3_1) .. "_idle_index"
+function slot0.GetL2dIdleSaveName(slot0, slot1)
+	return "l2d_" .. tostring(slot0) .. "_" .. tostring(slot1) .. "_idle_index"
 end
 
-function var_0_0.GetL2dActionSaveName(arg_4_0, arg_4_1)
-	return "l2d_" .. tostring(arg_4_0) .. "_" .. tostring(arg_4_1) .. "_action_id"
+function slot0.GetL2dActionSaveName(slot0, slot1)
+	return "l2d_" .. tostring(slot0) .. "_" .. tostring(slot1) .. "_action_id"
 end
 
-function var_0_0.GetL2dSaveData(arg_5_0, arg_5_1)
-	local var_5_0 = var_0_0.GetL2dIdleSaveName(arg_5_0, arg_5_1)
-	local var_5_1 = var_0_0.GetL2dActionSaveName(arg_5_0, arg_5_1)
-
-	return PlayerPrefs.GetInt(var_5_0), PlayerPrefs.GetInt(var_5_1)
+function slot0.GetL2dSaveData(slot0, slot1)
+	return PlayerPrefs.GetInt(uv0.GetL2dIdleSaveName(slot0, slot1)), PlayerPrefs.GetInt(uv0.GetL2dActionSaveName(slot0, slot1))
 end
 
-function var_0_0.SaveDragData(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	local var_6_0 = var_0_0.GetDragSaveName(arg_6_0, arg_6_1, arg_6_2)
-
-	PlayerPrefs.SetFloat(var_6_0, arg_6_3)
+function slot0.SaveDragData(slot0, slot1, slot2, slot3)
+	PlayerPrefs.SetFloat(uv0.GetDragSaveName(slot0, slot1, slot2), slot3)
 end
 
-function var_0_0.GetDragData(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = var_0_0.GetDragSaveName(arg_7_0, arg_7_1, arg_7_2)
-
-	return PlayerPrefs.GetFloat(var_7_0)
+function slot0.GetDragData(slot0, slot1, slot2)
+	return PlayerPrefs.GetFloat(uv0.GetDragSaveName(slot0, slot1, slot2))
 end
 
-function var_0_0.GetDragSaveName(arg_8_0, arg_8_1, arg_8_2)
-	return "l2d_drag_" .. tostring(arg_8_0) .. "_" .. tostring(arg_8_1) .. "_" .. tostring(arg_8_2) .. "_target"
+function slot0.GetDragSaveName(slot0, slot1, slot2)
+	return "l2d_drag_" .. tostring(slot0) .. "_" .. tostring(slot1) .. "_" .. tostring(slot2) .. "_target"
 end
 
-function var_0_0.SetDragActionIndex(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
-	local var_9_0 = var_0_0.GetDragActionIndexName(arg_9_0, arg_9_1, arg_9_2)
-
-	PlayerPrefs.SetInt(var_9_0, arg_9_3)
+function slot0.SetDragActionIndex(slot0, slot1, slot2, slot3)
+	PlayerPrefs.SetInt(uv0.GetDragActionIndexName(slot0, slot1, slot2), slot3)
 end
 
-function var_0_0.GetDragActionIndex(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = var_0_0.GetDragActionIndexName(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_1 = PlayerPrefs.GetInt(var_10_0)
-
-	if not var_10_1 or var_10_1 <= 0 then
-		var_10_1 = 1
+function slot0.GetDragActionIndex(slot0, slot1, slot2)
+	if not PlayerPrefs.GetInt(uv0.GetDragActionIndexName(slot0, slot1, slot2)) or slot4 <= 0 then
+		slot4 = 1
 	end
 
-	return var_10_1
+	return slot4
 end
 
-function var_0_0.GetDragActionIndexName(arg_11_0, arg_11_1, arg_11_2)
-	return "l2d_drag_" .. tostring(arg_11_0) .. "_" .. tostring(arg_11_1) .. "_" .. tostring(arg_11_2) .. "_action_index"
+function slot0.GetDragActionIndexName(slot0, slot1, slot2)
+	return "l2d_drag_" .. tostring(slot0) .. "_" .. tostring(slot1) .. "_" .. tostring(slot2) .. "_action_index"
 end
 
-function var_0_0.ClearLive2dSave(arg_12_0, arg_12_1)
-	if not arg_12_0 or not arg_12_1 then
+function slot0.ClearLive2dSave(slot0, slot1)
+	if not slot0 or not slot1 then
 		warning("skinId 或 shipId 不能为空")
 
 		return
 	end
 
-	if not pg.ship_skin_template[arg_12_0] then
-		warning("找不到skinId" .. tostring(arg_12_0) .. " 清理失败")
+	if not pg.ship_skin_template[slot0] then
+		warning("找不到skinId" .. tostring(slot0) .. " 清理失败")
 
 		return
 	end
 
-	local var_12_0 = pg.ship_skin_template[arg_12_0].ship_l2d_id
+	if pg.ship_skin_template[slot0].ship_l2d_id and #slot2 > 0 then
+		Live2dConst.SaveL2dIdle(slot0, slot1, 0)
 
-	if var_12_0 and #var_12_0 > 0 then
-		Live2dConst.SaveL2dIdle(arg_12_0, arg_12_1, 0)
-		Live2dConst.SaveL2dAction(arg_12_0, arg_12_1, 0)
+		slot6 = 0
 
-		for iter_12_0, iter_12_1 in ipairs(var_12_0) do
-			if pg.ship_l2d[iter_12_1] then
-				local var_12_1 = pg.ship_l2d[iter_12_1].start_value or 0
+		Live2dConst.SaveL2dAction(slot0, slot1, slot6)
 
-				Live2dConst.SaveDragData(iter_12_1, arg_12_0, arg_12_1, var_12_1)
-				Live2dConst.SetDragActionIndex(iter_12_1, arg_12_0, arg_12_1, 1)
+		for slot6, slot7 in ipairs(slot2) do
+			if pg.ship_l2d[slot7] then
+				Live2dConst.SaveDragData(slot7, slot0, slot1, pg.ship_l2d[slot7].start_value or 0)
+				Live2dConst.SetDragActionIndex(slot7, slot0, slot1, 1)
 			else
-				warning(tostring(iter_12_1) .. "不存在，不清理该dragid")
+				warning(tostring(slot7) .. "不存在，不清理该dragid")
 			end
 		end
 	end
@@ -98,4 +81,4 @@ function var_0_0.ClearLive2dSave(arg_12_0, arg_12_1)
 	pg.TipsMgr.GetInstance():ShowTips(i18n("live2d_reset_desc"))
 end
 
-return var_0_0
+return slot0

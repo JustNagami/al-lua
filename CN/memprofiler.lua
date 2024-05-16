@@ -1,91 +1,77 @@
-﻿local var_0_0 = {}
-local var_0_1 = 0
-local var_0_2 = true
+slot0 = {}
+slot1 = 0
+slot2 = true
 
-local function var_0_3(arg_1_0, arg_1_1)
-	local var_1_0 = collectgarbage("count") - var_0_1
-
-	if var_1_0 <= 1e-06 then
-		var_0_1 = collectgarbage("count")
+function slot3(slot0, slot1)
+	if collectgarbage("count") - uv0 <= 1e-06 then
+		uv0 = collectgarbage("count")
 
 		return
 	end
 
-	local var_1_1 = debug.getinfo(2, "S").source
-
-	if var_0_2 then
-		var_1_1 = string.format("%s__%d", var_1_1, arg_1_1 - 1)
+	if uv1 then
+		slot3 = string.format("%s__%d", debug.getinfo(2, "S").source, slot1 - 1)
 	end
 
-	local var_1_2 = var_0_0[var_1_1]
-
-	if not var_1_2 then
-		var_0_0[var_1_1] = {
-			var_1_1,
+	if not uv2[slot3] then
+		uv2[slot3] = {
+			slot3,
 			1,
-			var_1_0
+			slot2
 		}
 	else
-		var_1_2[2] = var_1_2[2] + 1
-		var_1_2[3] = var_1_2[3] + var_1_0
+		slot4[2] = slot4[2] + 1
+		slot4[3] = slot4[3] + slot2
 	end
 
-	var_0_1 = collectgarbage("count")
-end
-
-local function var_0_4(arg_2_0)
-	if debug.gethook() then
-		SC_MemLeakDetector.SC_StopRecordAllocAndDumpStat()
-
-		return
-	end
-
-	var_0_0 = {}
-	var_0_1 = collectgarbage("count")
-	var_0_2 = not arg_2_0
-
-	debug.sethook(var_0_3, "l")
-end
-
-local function var_0_5(arg_3_0)
-	debug.sethook()
-
-	if not var_0_0 then
-		return
-	end
-
-	local var_3_0 = {}
-
-	for iter_3_0, iter_3_1 in pairs(var_0_0) do
-		table.insert(var_3_0, iter_3_1)
-	end
-
-	table.sort(var_3_0, function(arg_4_0, arg_4_1)
-		return arg_4_0[3] > arg_4_1[3]
-	end)
-
-	arg_3_0 = arg_3_0 or "memAlloc.csv"
-
-	local var_3_1 = io.open(arg_3_0, "w")
-
-	if not var_3_1 then
-		logw.error("can't open file:", arg_3_0)
-
-		return
-	end
-
-	var_3_1:write("fileLine, count, mem K, avg K\n")
-
-	for iter_3_2, iter_3_3 in ipairs(var_3_0) do
-		var_3_1:write(string.format("%s, %d, %f, %f\n", iter_3_3[1], iter_3_3[2], iter_3_3[3], iter_3_3[3] / iter_3_3[2]))
-	end
-
-	var_3_1:close()
-
-	var_0_0 = nil
+	uv0 = collectgarbage("count")
 end
 
 return {
-	StartRecordAlloc = var_0_4,
-	StopRecordAllocAndDumpStat = var_0_5
+	StartRecordAlloc = function (slot0)
+		if debug.gethook() then
+			SC_MemLeakDetector.SC_StopRecordAllocAndDumpStat()
+
+			return
+		end
+
+		uv0 = {}
+		uv1 = collectgarbage("count")
+		uv2 = not slot0
+
+		debug.sethook(uv3, "l")
+	end,
+	StopRecordAllocAndDumpStat = function (slot0)
+		debug.sethook()
+
+		if not uv0 then
+			return
+		end
+
+		slot1 = {}
+
+		for slot5, slot6 in pairs(uv0) do
+			table.insert(slot1, slot6)
+		end
+
+		table.sort(slot1, function (slot0, slot1)
+			return slot1[3] < slot0[3]
+		end)
+
+		if not io.open(slot0 or "memAlloc.csv", "w") then
+			logw.error("can't open file:", slot0)
+
+			return
+		end
+
+		slot2:write("fileLine, count, mem K, avg K\n")
+
+		for slot6, slot7 in ipairs(slot1) do
+			slot2:write(string.format("%s, %d, %f, %f\n", slot7[1], slot7[2], slot7[3], slot7[3] / slot7[2]))
+		end
+
+		slot2:close()
+
+		uv0 = nil
+	end
 }

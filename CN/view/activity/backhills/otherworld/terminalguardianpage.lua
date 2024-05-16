@@ -1,199 +1,187 @@
-﻿local var_0_0 = class("TerminalGuardianPage", import("view.base.BaseSubView"))
+slot0 = class("TerminalGuardianPage", import("view.base.BaseSubView"))
+slot0.BIND_LOTTERY_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID
+slot0.config = pg.guardian_template
+slot0.GUARDIAN_SELECT_CNT = 4
 
-var_0_0.BIND_LOTTERY_ACT_ID = ActivityConst.OTHER_WORLD_TERMINAL_LOTTERY_ID
-var_0_0.config = pg.guardian_template
-var_0_0.GUARDIAN_SELECT_CNT = 4
-
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "TerminalGuardianPage"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0._tf.name = tostring(OtherworldTerminalLayer.PAGE_GUARDIAN)
-	arg_2_0.mainViewTF = arg_2_0:findTF("frame/view")
-	arg_2_0.mainViewUIList = UIItemList.New(arg_2_0:findTF("content", arg_2_0.mainViewTF), arg_2_0:findTF("content/tpl", arg_2_0.mainViewTF))
-	arg_2_0.selectViewTF = arg_2_0:findTF("frame/select_view")
-	arg_2_0.selectBackBtn = arg_2_0:findTF("top/back_btn", arg_2_0.selectViewTF)
+function slot0.OnLoaded(slot0)
+	slot0._tf.name = tostring(OtherworldTerminalLayer.PAGE_GUARDIAN)
+	slot0.mainViewTF = slot0:findTF("frame/view")
+	slot0.mainViewUIList = UIItemList.New(slot0:findTF("content", slot0.mainViewTF), slot0:findTF("content/tpl", slot0.mainViewTF))
+	slot0.selectViewTF = slot0:findTF("frame/select_view")
+	slot0.selectBackBtn = slot0:findTF("top/back_btn", slot0.selectViewTF)
 
-	setText(arg_2_0:findTF("top/Text", arg_2_0.selectViewTF), i18n("guardian_select_title"))
+	setText(slot0:findTF("top/Text", slot0.selectViewTF), i18n("guardian_select_title"))
 
-	arg_2_0.selectMainTF = arg_2_0:findTF("left", arg_2_0.selectViewTF)
-	arg_2_0.selectdIcon = arg_2_0:findTF("icon_bg/Image", arg_2_0.selectMainTF)
-	arg_2_0.selectdUnknown = arg_2_0:findTF("icon_bg/unknown", arg_2_0.selectMainTF)
-	arg_2_0.selectdName = arg_2_0:findTF("name", arg_2_0.selectMainTF)
-	arg_2_0.selectdDesc = arg_2_0:findTF("desc/content/Text", arg_2_0.selectMainTF)
-	arg_2_0.selectdSureBtn = arg_2_0:findTF("sure_btn", arg_2_0.selectMainTF)
+	slot0.selectMainTF = slot0:findTF("left", slot0.selectViewTF)
+	slot0.selectdIcon = slot0:findTF("icon_bg/Image", slot0.selectMainTF)
+	slot0.selectdUnknown = slot0:findTF("icon_bg/unknown", slot0.selectMainTF)
+	slot0.selectdName = slot0:findTF("name", slot0.selectMainTF)
+	slot0.selectdDesc = slot0:findTF("desc/content/Text", slot0.selectMainTF)
+	slot0.selectdSureBtn = slot0:findTF("sure_btn", slot0.selectMainTF)
 
-	setText(arg_2_0:findTF("Text", arg_2_0.selectdSureBtn), i18n("guardian_sure_btn"))
+	setText(slot0:findTF("Text", slot0.selectdSureBtn), i18n("guardian_sure_btn"))
 
-	arg_2_0.selectdCancelBtn = arg_2_0:findTF("cancel_btn", arg_2_0.selectMainTF)
+	slot0.selectdCancelBtn = slot0:findTF("cancel_btn", slot0.selectMainTF)
 
-	setText(arg_2_0:findTF("Text", arg_2_0.selectdCancelBtn), i18n("guardian_cancel_btn"))
+	setText(slot0:findTF("Text", slot0.selectdCancelBtn), i18n("guardian_cancel_btn"))
 
-	arg_2_0.selectdCondition = arg_2_0:findTF("condition", arg_2_0.selectMainTF)
-	arg_2_0.selectViewUIList = UIItemList.New(arg_2_0:findTF("right/content", arg_2_0.selectViewTF), arg_2_0:findTF("right/content/tpl", arg_2_0.selectViewTF))
+	slot0.selectdCondition = slot0:findTF("condition", slot0.selectMainTF)
+	slot0.selectViewUIList = UIItemList.New(slot0:findTF("right/content", slot0.selectViewTF), slot0:findTF("right/content/tpl", slot0.selectViewTF))
 
-	setText(arg_2_0:findTF("right/content/tpl/active/Text", arg_2_0.selectViewTF), i18n("guardian_active_tip"))
+	setText(slot0:findTF("right/content/tpl/active/Text", slot0.selectViewTF), i18n("guardian_active_tip"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	arg_3_0.activity = getProxy(ActivityProxy):getActivityById(var_0_0.BIND_LOTTERY_ACT_ID)
+function slot0.OnInit(slot0)
+	slot0.activity = getProxy(ActivityProxy):getActivityById(uv0.BIND_LOTTERY_ACT_ID)
 
-	assert(arg_3_0.activity, "not exist bind lottery act, id" .. var_0_0.BIND_LOTTERY_ACT_ID)
-	onButton(arg_3_0, arg_3_0.selectBackBtn, function()
-		arg_3_0:CloseSelectView()
+	assert(slot0.activity, "not exist bind lottery act, id" .. uv0.BIND_LOTTERY_ACT_ID)
+	onButton(slot0, slot0.selectBackBtn, function ()
+		uv0:CloseSelectView()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.selectdSureBtn, function()
-		if #arg_3_0.activeIds >= var_0_0.GUARDIAN_SELECT_CNT then
+	onButton(slot0, slot0.selectdSureBtn, function ()
+		if uv1.GUARDIAN_SELECT_CNT <= #uv0.activeIds then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("guardian_sure_limit_tip"))
 
 			return
 		end
 
-		table.insert(arg_3_0.activeIds, arg_3_0.selectedId)
-		arg_3_0:ChangeActiveIds()
+		table.insert(uv0.activeIds, uv0.selectedId)
+		uv0:ChangeActiveIds()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.selectdCancelBtn, function()
-		table.removebyvalue(arg_3_0.activeIds, arg_3_0.selectedId)
-		arg_3_0:ChangeActiveIds()
+	onButton(slot0, slot0.selectdCancelBtn, function ()
+		table.removebyvalue(uv0.activeIds, uv0.selectedId)
+		uv0:ChangeActiveIds()
 	end, SFX_PANEL)
-	arg_3_0:InitMainViewUI()
-	arg_3_0:InitSelectViewUI()
-	arg_3_0:UpdateView()
-	arg_3_0:CloseSelectView()
+	slot0:InitMainViewUI()
+	slot0:InitSelectViewUI()
+	slot0:UpdateView()
+	slot0:CloseSelectView()
 end
 
-function var_0_0.ChangeActiveIds(arg_7_0)
-	arg_7_0:emit(OtherworldTerminalMediator.ON_BUFF_LIST_CHANGE, {
-		actId = var_0_0.BIND_LOTTERY_ACT_ID,
-		ids = arg_7_0.activeIds
+function slot0.ChangeActiveIds(slot0)
+	slot0:emit(OtherworldTerminalMediator.ON_BUFF_LIST_CHANGE, {
+		actId = uv0.BIND_LOTTERY_ACT_ID,
+		ids = slot0.activeIds
 	})
 end
 
-function var_0_0.InitMainViewUI(arg_8_0)
-	arg_8_0.mainViewUIList:make(function(arg_9_0, arg_9_1, arg_9_2)
-		if arg_9_0 == UIItemList.EventUpdate then
-			local var_9_0 = arg_8_0.activeIds[arg_9_1 + 1]
-			local var_9_1 = var_9_0 ~= nil
+function slot0.InitMainViewUI(slot0)
+	slot0.mainViewUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot4 = uv0.activeIds[slot1 + 1] ~= nil
 
-			setActive(arg_8_0:findTF("content", arg_9_2), var_9_1)
-			setActive(arg_8_0:findTF("empty", arg_9_2), not var_9_1)
+			setActive(uv0:findTF("content", slot2), slot4)
+			setActive(uv0:findTF("empty", slot2), not slot4)
 
-			if var_9_1 then
-				local var_9_2 = var_0_0.config[var_9_0]
+			if slot4 then
+				slot5 = uv1.config[slot3]
 
-				setText(arg_8_0:findTF("content/name", arg_9_2), var_9_2.guardian_name)
-				setText(arg_8_0:findTF("content/desc/content/Text", arg_9_2), var_9_2.guardian_desc)
-
-				local var_9_3 = arg_8_0:findTF("content/icon_mask/Image", arg_9_2)
-
-				GetImageSpriteFromAtlasAsync("shipyardicon/" .. var_9_2.guardian_painting, "", var_9_3, false)
+				setText(uv0:findTF("content/name", slot2), slot5.guardian_name)
+				setText(uv0:findTF("content/desc/content/Text", slot2), slot5.guardian_desc)
+				GetImageSpriteFromAtlasAsync("shipyardicon/" .. slot5.guardian_painting, "", uv0:findTF("content/icon_mask/Image", slot2), false)
 			end
 
-			onButton(arg_8_0, arg_9_2, function()
-				arg_8_0.selectedId = var_9_0 or underscore.detect(arg_8_0.allIds, function(arg_11_0)
-					return not table.contains(arg_8_0.activeIds, arg_11_0)
+			onButton(uv0, slot2, function ()
+				uv0.selectedId = uv1 or underscore.detect(uv0.allIds, function (slot0)
+					return not table.contains(uv0.activeIds, slot0)
 				end)
 
-				arg_8_0:OpenSelectView()
+				uv0:OpenSelectView()
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function var_0_0.UpdateMainView(arg_12_0)
-	arg_12_0.mainViewUIList:align(var_0_0.GUARDIAN_SELECT_CNT)
+function slot0.UpdateMainView(slot0)
+	slot0.mainViewUIList:align(uv0.GUARDIAN_SELECT_CNT)
 end
 
-function var_0_0.InitSelectViewUI(arg_13_0)
-	arg_13_0.selectViewUIList:make(function(arg_14_0, arg_14_1, arg_14_2)
-		if arg_14_0 == UIItemList.EventInit then
-			local var_14_0 = arg_13_0.allIds[arg_14_1 + 1]
-			local var_14_1 = var_0_0.config[var_14_0]
-			local var_14_2 = arg_13_0:findTF("icon_mask/Image", arg_14_2)
+function slot0.InitSelectViewUI(slot0)
+	slot0.selectViewUIList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventInit then
+			GetImageSpriteFromAtlasAsync("shipyardicon/" .. uv1.config[uv0.allIds[slot1 + 1]].guardian_painting, "", uv0:findTF("icon_mask/Image", slot2), true)
+			onButton(uv0, slot2, function ()
+				uv0.selectedId = uv1
 
-			GetImageSpriteFromAtlasAsync("shipyardicon/" .. var_14_1.guardian_painting, "", var_14_2, true)
-			onButton(arg_13_0, arg_14_2, function()
-				arg_13_0.selectedId = var_14_0
-
-				arg_13_0:UpdateSelectViewUI()
+				uv0:UpdateSelectViewUI()
 			end, SFX_PANEL)
-		elseif arg_14_0 == UIItemList.EventUpdate then
-			local var_14_3 = arg_13_0.allIds[arg_14_1 + 1]
-			local var_14_4 = var_0_0.config[var_14_3]
-			local var_14_5 = table.contains(arg_13_0.unlcokIds, var_14_3)
-			local var_14_6 = table.contains(arg_13_0.activeIds, var_14_3)
-			local var_14_7 = var_14_4.type == 2 and not var_14_5
 
-			setActive(arg_13_0:findTF("icon_mask/Image", arg_14_2), not var_14_7)
-			setActive(arg_13_0:findTF("unknown", arg_14_2), var_14_7)
-			setActive(arg_13_0:findTF("lock", arg_14_2), not var_14_5 and not var_14_7)
-			setActive(arg_13_0:findTF("active", arg_14_2), var_14_6)
-			setActive(arg_13_0:findTF("selected", arg_14_2), var_14_3 == arg_13_0.selectedId)
+			return
+		end
+
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = uv0.allIds[slot1 + 1]
+			slot5 = table.contains(uv0.unlcokIds, slot3)
+			slot7 = uv1.config[slot3].type == 2 and not slot5
+
+			setActive(uv0:findTF("icon_mask/Image", slot2), not slot7)
+			setActive(uv0:findTF("unknown", slot2), slot7)
+			setActive(uv0:findTF("lock", slot2), not slot5 and not slot7)
+			setActive(uv0:findTF("active", slot2), table.contains(uv0.activeIds, slot3))
+			setActive(uv0:findTF("selected", slot2), slot3 == uv0.selectedId)
 		end
 	end)
 end
 
-function var_0_0.UpdateSelectViewUI(arg_16_0)
-	local var_16_0 = arg_16_0.selectedId or arg_16_0.allIds[1]
-	local var_16_1 = var_0_0.config[var_16_0]
-	local var_16_2 = table.contains(arg_16_0.unlcokIds, var_16_0)
-	local var_16_3 = table.contains(arg_16_0.activeIds, var_16_0)
-	local var_16_4 = var_16_1.type == 2 and not var_16_2
+function slot0.UpdateSelectViewUI(slot0)
+	slot1 = slot0.selectedId or slot0.allIds[1]
+	slot4 = table.contains(slot0.activeIds, slot1)
+	slot5 = uv0.config[slot1].type == 2 and not table.contains(slot0.unlcokIds, slot1)
 
-	GetImageSpriteFromAtlasAsync("shipyardicon/" .. var_16_1.guardian_painting, "", arg_16_0.selectdIcon, true)
-	setActive(arg_16_0.selectdIcon, not var_16_4)
-	setActive(arg_16_0.selectdUnknown, var_16_4)
-	setText(arg_16_0.selectdName, var_16_4 and "???" or var_16_1.guardian_name)
-	setText(arg_16_0.selectdDesc, var_16_4 and "???" or var_16_1.guardian_desc)
+	GetImageSpriteFromAtlasAsync("shipyardicon/" .. slot2.guardian_painting, "", slot0.selectdIcon, true)
+	setActive(slot0.selectdIcon, not slot5)
+	setActive(slot0.selectdUnknown, slot5)
+	setText(slot0.selectdName, slot5 and "???" or slot2.guardian_name)
+	setText(slot0.selectdDesc, slot5 and "???" or slot2.guardian_desc)
 
-	local var_16_5 = ""
+	slot6 = ""
 
-	if var_16_1.type == 1 then
-		local var_16_6, var_16_7 = ActivityItemPool.GetGuardianLastCount(var_0_0.BIND_LOTTERY_ACT_ID, var_16_0)
-		local var_16_8 = var_16_1.guardian_gain[2] - var_16_7
-
-		var_16_5 = string.gsub(var_16_1.guardian_gain_desc, "$1", math.min(var_16_8, var_16_1.guardian_gain[2]))
-	elseif var_16_1.type == 2 then
-		var_16_5 = var_16_1.guardian_gain_desc
+	if slot2.type == 1 then
+		slot7, slot8 = ActivityItemPool.GetGuardianLastCount(uv0.BIND_LOTTERY_ACT_ID, slot1)
+		slot6 = string.gsub(slot2.guardian_gain_desc, "$1", math.min(slot2.guardian_gain[2] - slot8, slot2.guardian_gain[2]))
+	elseif slot2.type == 2 then
+		slot6 = slot2.guardian_gain_desc
 	end
 
-	setText(arg_16_0:findTF("Text", arg_16_0.selectdCondition), var_16_5)
-	setActive(arg_16_0.selectdSureBtn, var_16_2 and not var_16_3)
-	setActive(arg_16_0.selectdCancelBtn, var_16_2 and var_16_3)
-	setActive(arg_16_0.selectdCondition, not var_16_2)
-	arg_16_0.selectViewUIList:align(#arg_16_0.allIds)
+	setText(slot0:findTF("Text", slot0.selectdCondition), slot6)
+	setActive(slot0.selectdSureBtn, slot3 and not slot4)
+	setActive(slot0.selectdCancelBtn, slot3 and slot4)
+	setActive(slot0.selectdCondition, not slot3)
+	slot0.selectViewUIList:align(#slot0.allIds)
 end
 
-function var_0_0.UpdateView(arg_17_0, arg_17_1)
-	if arg_17_1 then
-		arg_17_0.activity = arg_17_1
+function slot0.UpdateView(slot0, slot1)
+	if slot1 then
+		slot0.activity = slot1
 	end
 
-	arg_17_0.activeIds = _.map(arg_17_0.activity.data2_list, function(arg_18_0)
-		return arg_18_0
+	slot0.activeIds = _.map(slot0.activity.data2_list, function (slot0)
+		return slot0
 	end)
-	arg_17_0.unlcokIds = ActivityItemPool.GetAllGuardianIdsStatus(var_0_0.BIND_LOTTERY_ACT_ID)
-	arg_17_0.allIds = ActivityItemPool.GetAllGuardianIds(var_0_0.BIND_LOTTERY_ACT_ID)
+	slot0.unlcokIds = ActivityItemPool.GetAllGuardianIdsStatus(uv0.BIND_LOTTERY_ACT_ID)
+	slot0.allIds = ActivityItemPool.GetAllGuardianIds(uv0.BIND_LOTTERY_ACT_ID)
 
-	arg_17_0:UpdateMainView()
-	arg_17_0:UpdateSelectViewUI()
+	slot0:UpdateMainView()
+	slot0:UpdateSelectViewUI()
 end
 
-function var_0_0.OpenSelectView(arg_19_0)
-	setActive(arg_19_0.mainViewTF, false)
-	setActive(arg_19_0.selectViewTF, true)
-	arg_19_0:UpdateSelectViewUI()
+function slot0.OpenSelectView(slot0)
+	setActive(slot0.mainViewTF, false)
+	setActive(slot0.selectViewTF, true)
+	slot0:UpdateSelectViewUI()
 end
 
-function var_0_0.CloseSelectView(arg_20_0)
-	setActive(arg_20_0.mainViewTF, true)
-	setActive(arg_20_0.selectViewTF, false)
-	arg_20_0:UpdateMainView()
+function slot0.CloseSelectView(slot0)
+	setActive(slot0.mainViewTF, true)
+	setActive(slot0.selectViewTF, false)
+	slot0:UpdateMainView()
 end
 
-function var_0_0.OnDestroy(arg_21_0)
-	return
+function slot0.OnDestroy(slot0)
 end
 
-return var_0_0
+return slot0

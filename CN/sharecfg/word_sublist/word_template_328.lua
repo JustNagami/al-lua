@@ -1,14 +1,11 @@
-﻿pg = pg or {}
-
-local var_0_0 = pg
-
-var_0_0.word_template_328 = {}
-
-local var_0_1 = var_0_0.word_template_328
+pg = pg or {}
+slot0 = pg
+slot0.word_template_328 = {}
+slot1 = slot0.word_template_328
 
 function temp()
-	var_0_1.勒 = {
-		索 = {
+	uv0["勒"] = {
+		["索"] = {
 			this = true
 		}
 	}
@@ -17,13 +14,13 @@ end
 temp()
 
 function temp()
-	var_0_1.檑 = {
-		管 = {
+	uv0["檑"] = {
+		["管"] = {
 			this = true
 		},
-		涫 = {
-			炸 = {
-				药 = {
+		["涫"] = {
+			["炸"] = {
+				["药"] = {
 					this = true
 				}
 			}
@@ -34,9 +31,9 @@ end
 temp()
 
 function temp()
-	var_0_1.鐳 = {
-		射 = {
-			槍 = {
+	uv0["鐳"] = {
+		["射"] = {
+			["槍"] = {
 				this = true
 			}
 		}
@@ -46,18 +43,18 @@ end
 temp()
 
 function temp()
-	var_0_1.耒 = {
-		阳 = {
-			冰 = {
-				毒 = {
+	uv0["耒"] = {
+		["阳"] = {
+			["冰"] = {
+				["毒"] = {
 					this = true
 				}
 			},
-			海 = {
-				洛 = {
-					因 = {
-						四 = {
-							号 = {
+			["海"] = {
+				["洛"] = {
+					["因"] = {
+						["四"] = {
+							["号"] = {
 								this = true
 							}
 						}
@@ -71,11 +68,11 @@ end
 temp()
 
 function temp()
-	var_0_1.擂 = {
-		台 = {
-			管 = {
-				理 = {
-					员 = {
+	uv0["擂"] = {
+		["台"] = {
+			["管"] = {
+				["理"] = {
+					["员"] = {
 						this = true
 					}
 				}
@@ -87,10 +84,10 @@ end
 temp()
 
 function temp()
-	var_0_1.梨 = {
-		尘 = {
-			王 = {
-				者 = {
+	uv0["梨"] = {
+		["尘"] = {
+			["王"] = {
+				["者"] = {
 					["2"] = {
 						["."] = {
 							["0"] = {
@@ -101,12 +98,12 @@ function temp()
 				}
 			}
 		},
-		可 = {
-			枪 = {
+		["可"] = {
+			["枪"] = {
 				this = true
 			}
 		},
-		克 = {
+		["克"] = {
 			q = {
 				this = true,
 				i = {
@@ -126,8 +123,8 @@ end
 temp()
 
 function temp()
-	var_0_1.悡 = {
-		趚 = {
+	uv0["悡"] = {
+		["趚"] = {
 			this = true
 		}
 	}
@@ -136,17 +133,17 @@ end
 temp()
 
 function temp()
-	var_0_1.離 = {
-		孒 = {
-			颩 = {
-				槍 = {
+	uv0["離"] = {
+		["孒"] = {
+			["颩"] = {
+				["槍"] = {
 					this = true
 				}
 			}
 		},
-		子 = {
-			風 = {
-				槍 = {
+		["子"] = {
+			["風"] = {
+				["槍"] = {
 					this = true
 				}
 			}
@@ -157,13 +154,13 @@ end
 temp()
 
 function temp()
-	var_0_1.豊 = {
-		満 = {
-			母 = {
-				ち = {
-					ゃ = {
-						ん = {
-							の = {
+	uv0["豊"] = {
+		["満"] = {
+			["母"] = {
+				["ち"] = {
+					["ゃ"] = {
+						["ん"] = {
+							["の"] = {
 								this = true
 							}
 						}
@@ -177,9 +174,9 @@ end
 temp()
 
 function temp()
-	var_0_1.厉 = {
-		天 = {
-			佑 = {
+	uv0["厉"] = {
+		["天"] = {
+			["佑"] = {
 				this = true
 			}
 		}

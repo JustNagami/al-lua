@@ -1,8 +1,7 @@
-﻿local var_0_0 = class("EnemyChaser", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
-
-var_0_0.WeaponName = "Bullet"
-var_0_0.ConfigSkillCD = 10
-var_0_0.StatusOffset = {
+slot0 = class("EnemyChaser", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
+slot0.WeaponName = "Bullet"
+slot0.ConfigSkillCD = 10
+slot0.StatusOffset = {
 	Attack_E = {
 		1,
 		0
@@ -21,56 +20,50 @@ var_0_0.StatusOffset = {
 	}
 }
 
-function var_0_0.InitUI(arg_1_0, arg_1_1)
-	var_0_0.super.InitUI(arg_1_0, arg_1_1)
+function slot0.InitUI(slot0, slot1)
+	uv0.super.InitUI(slot0, slot1)
 
-	arg_1_0.hp = arg_1_1.hp or 1
-	arg_1_0.hpMax = arg_1_0.hp
-	arg_1_0.speed = arg_1_1.speed or 2
-	arg_1_0.skillCD = 0
+	slot0.hp = slot1.hp or 1
+	slot0.hpMax = slot0.hp
+	slot0.speed = slot1.speed or 2
+	slot0.skillCD = 0
 
-	arg_1_0.mainTarget:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function()
-		local var_2_0 = arg_1_0.StatusOffset[arg_1_0.status]
+	slot0.mainTarget:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function ()
+		slot0 = uv0.StatusOffset[uv0.status]
 
-		arg_1_0.responder:Create({
-			name = arg_1_0.WeaponName,
+		uv0.responder:Create({
+			name = uv0.WeaponName,
 			pos = {
-				arg_1_0.pos.x + var_2_0[1],
-				arg_1_0.pos.y + var_2_0[2]
+				uv0.pos.x + slot0[1],
+				uv0.pos.y + slot0[2]
 			},
 			realPos = {
-				arg_1_0.realPos.x + var_2_0[1],
-				arg_1_0.realPos.y + var_2_0[2]
+				uv0.realPos.x + slot0[1],
+				uv0.realPos.y + slot0[2]
 			},
-			mark = string.split(arg_1_0.status, "_")[2]
+			mark = string.split(uv0.status, "_")[2]
 		})
 	end)
 end
 
-function var_0_0.TimeTrigger(arg_3_0, arg_3_1)
-	var_0_0.super.TimeTrigger(arg_3_0, arg_3_1)
+function slot0.TimeTrigger(slot0, slot1)
+	uv0.super.TimeTrigger(slot0, slot1)
 
-	arg_3_0.skillCD = arg_3_0.skillCD - arg_3_1
+	slot0.skillCD = slot0.skillCD - slot1
 
-	if not arg_3_0.lock and arg_3_0.skillCD <= 0 and arg_3_0.responder:SearchRyza(arg_3_0, arg_3_0.search) then
-		local var_3_0 = arg_3_0.responder.reactorRyza.pos
-
-		if (var_3_0.x == arg_3_0.pos.x or var_3_0.y == arg_3_0.pos.y) and (var_3_0 - arg_3_0.pos):SqrMagnitude() >= 9 then
-			local var_3_1 = var_3_0 - arg_3_0.pos
-
-			if var_3_1.x > 0 then
-				arg_3_0:PlayAnim("Attack_E")
-			elseif var_3_1.x < 0 then
-				arg_3_0:PlayAnim("Attack_W")
-			elseif var_3_1.y > 0 then
-				arg_3_0:PlayAnim("Attack_S")
-			elseif var_3_1.y < 0 then
-				arg_3_0:PlayAnim("Attack_N")
-			end
-
-			arg_3_0.skillCD = arg_3_0.ConfigSkillCD
+	if not slot0.lock and slot0.skillCD <= 0 and slot0.responder:SearchRyza(slot0, slot0.search) and (slot0.responder.reactorRyza.pos.x == slot0.pos.x or slot2.y == slot0.pos.y) and (slot2 - slot0.pos):SqrMagnitude() >= 9 then
+		if (slot2 - slot0.pos).x > 0 then
+			slot0:PlayAnim("Attack_E")
+		elseif slot3.x < 0 then
+			slot0:PlayAnim("Attack_W")
+		elseif slot3.y > 0 then
+			slot0:PlayAnim("Attack_S")
+		elseif slot3.y < 0 then
+			slot0:PlayAnim("Attack_N")
 		end
+
+		slot0.skillCD = slot0.ConfigSkillCD
 	end
 end
 
-return var_0_0
+return slot0

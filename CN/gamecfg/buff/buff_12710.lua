@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFoeAircraftDying"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				inside = 1,
-				skill_id = 12710
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -172,5 +159,18 @@
 	stack = 1,
 	id = 12710,
 	icon = 12710,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFoeAircraftDying"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				inside = 1,
+				skill_id = 12710
+			}
+		}
+	}
 }

@@ -1,42 +1,39 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleBulletEvent
+slot2 = slot0.Battle.BattleResourceManager
+slot3 = slot0.Battle.BattleConfig
+slot4 = class("BattleBombBullet", slot0.Battle.BattleBullet)
+slot0.Battle.BattleBombBullet = slot4
+slot4.__name = "BattleBombBullet"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleBulletEvent
-local var_0_2 = var_0_0.Battle.BattleResourceManager
-local var_0_3 = var_0_0.Battle.BattleConfig
-local var_0_4 = class("BattleBombBullet", var_0_0.Battle.BattleBullet)
-
-var_0_0.Battle.BattleBombBullet = var_0_4
-var_0_4.__name = "BattleBombBullet"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_4.super.Ctor(arg_1_0)
+function slot4.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_4.Dispose(arg_2_0)
-	if arg_2_0._alert then
-		arg_2_0._alert:Dispose()
+function slot4.Dispose(slot0)
+	if slot0._alert then
+		slot0._alert:Dispose()
 	end
 
-	var_0_4.super.Dispose(arg_2_0)
+	uv0.super.Dispose(slot0)
 end
 
-function var_0_4.AddBulletEvent(arg_3_0)
-	arg_3_0._bulletData:RegisterEventListener(arg_3_0, var_0_1.EXPLODE, arg_3_0.onBulletExplode)
+function slot4.AddBulletEvent(slot0)
+	slot0._bulletData:RegisterEventListener(slot0, uv0.EXPLODE, slot0.onBulletExplode)
 end
 
-function var_0_4.RemoveBulletEvent(arg_4_0)
-	arg_4_0._bulletData:UnregisterEventListener(arg_4_0, var_0_1.EXPLODE)
+function slot4.RemoveBulletEvent(slot0)
+	slot0._bulletData:UnregisterEventListener(slot0, uv0.EXPLODE)
 end
 
-function var_0_4.onBulletExplode(arg_5_0, arg_5_1)
-	arg_5_0._bulletHitFunc(arg_5_0)
+function slot4.onBulletExplode(slot0, slot1)
+	slot0:_bulletHitFunc()
 end
 
-function var_0_4.UpdatePosition(arg_6_0)
-	local var_6_0 = Vector3.Lerp(arg_6_0._tf.localPosition, arg_6_0:GetPosition(), var_0_3.BulletMotionRate)
+function slot4.UpdatePosition(slot0)
+	slot1 = Vector3.Lerp(slot0._tf.localPosition, slot0:GetPosition(), uv0.BulletMotionRate)
+	slot0._tf.localPosition = slot1
 
-	arg_6_0._tf.localPosition = var_6_0
-
-	arg_6_0._cacheTFPos:Set(var_6_0.x, var_6_0.y, var_6_0.z)
+	slot0._cacheTFPos:Set(slot1.x, slot1.y, slot1.z)
 end

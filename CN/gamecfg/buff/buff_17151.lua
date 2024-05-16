@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "回复效果",
+	time = 3,
+	picture = "",
+	desc = "回复效果",
+	stack = 1,
+	id = 17151,
+	icon = 17150,
+	last_effect = "Health",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -33,24 +52,5 @@
 				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "回复效果",
-	time = 3,
-	picture = "",
-	desc = "回复效果",
-	stack = 1,
-	id = 17151,
-	icon = 17150,
-	last_effect = "Health"
+	}
 }

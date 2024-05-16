@@ -1,199 +1,188 @@
-﻿local var_0_0 = class("CommissionInfoLayer", import("...base.BaseUI"))
+slot0 = class("CommissionInfoLayer", import("...base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "CommissionInfoUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.frame = arg_2_0:findTF("frame")
-	arg_2_0.resourcesTF = arg_2_0:findTF("resources", arg_2_0.frame)
-	arg_2_0.oilTF = arg_2_0:findTF("canteen/bubble/Text", arg_2_0.resourcesTF):GetComponent(typeof(Text))
-	arg_2_0.goldTF = arg_2_0:findTF("merchant/bubble/Text", arg_2_0.resourcesTF):GetComponent(typeof(Text))
-	arg_2_0.classTF = arg_2_0:findTF("class/bubble/Text", arg_2_0.resourcesTF):GetComponent(typeof(Text))
-	arg_2_0.oilbubbleTF = arg_2_0:findTF("canteen/bubble", arg_2_0.resourcesTF)
-	arg_2_0.goldbubbleTF = arg_2_0:findTF("merchant/bubble", arg_2_0.resourcesTF)
-	arg_2_0.classbubbleTF = arg_2_0:findTF("class/bubble", arg_2_0.resourcesTF)
-
-	local var_2_0 = getProxy(NavalAcademyProxy):GetClassVO():GetResourceType()
-	local var_2_1 = Item.getConfigData(var_2_0).icon
-
-	arg_2_0.classbubbleTF:Find("icon"):GetComponent(typeof(Image)).sprite = LoadSprite(var_2_1)
-	arg_2_0.projectContainer = arg_2_0:findTF("main/content", arg_2_0.frame)
-	arg_2_0.items = {
-		CommissionInfoEventItem.New(arg_2_0:findTF("frame/main/content/event"), arg_2_0),
-		CommissionInfoClassItem.New(arg_2_0:findTF("frame/main/content/class"), arg_2_0),
-		CommissionInfoTechnologyItem.New(arg_2_0:findTF("frame/main/content/technology"), arg_2_0)
+function slot0.init(slot0)
+	slot0.frame = slot0:findTF("frame")
+	slot0.resourcesTF = slot0:findTF("resources", slot0.frame)
+	slot0.oilTF = slot0:findTF("canteen/bubble/Text", slot0.resourcesTF):GetComponent(typeof(Text))
+	slot0.goldTF = slot0:findTF("merchant/bubble/Text", slot0.resourcesTF):GetComponent(typeof(Text))
+	slot0.classTF = slot0:findTF("class/bubble/Text", slot0.resourcesTF):GetComponent(typeof(Text))
+	slot0.oilbubbleTF = slot0:findTF("canteen/bubble", slot0.resourcesTF)
+	slot0.goldbubbleTF = slot0:findTF("merchant/bubble", slot0.resourcesTF)
+	slot0.classbubbleTF = slot0:findTF("class/bubble", slot0.resourcesTF)
+	slot0.classbubbleTF:Find("icon"):GetComponent(typeof(Image)).sprite = LoadSprite(Item.getConfigData(getProxy(NavalAcademyProxy):GetClassVO():GetResourceType()).icon)
+	slot0.projectContainer = slot0:findTF("main/content", slot0.frame)
+	slot0.items = {
+		CommissionInfoEventItem.New(slot0:findTF("frame/main/content/event"), slot0),
+		CommissionInfoClassItem.New(slot0:findTF("frame/main/content/class"), slot0),
+		CommissionInfoTechnologyItem.New(slot0:findTF("frame/main/content/technology"), slot0)
 	}
 
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	arg_2_0.linkBtnPanel = arg_2_0:findTF("frame/link_btns/btns")
-	arg_2_0.activityInsBtn = arg_2_0:findTF("frame/link_btns/btns/ins")
-	arg_2_0.activtyUrExchangeBtn = arg_2_0:findTF("frame/link_btns/btns/urEx")
-	arg_2_0.activtyUrExchangeTxt = arg_2_0:findTF("frame/link_btns/btns/urEx/Text"):GetComponent(typeof(Text))
-	arg_2_0.activtyUrExchangeCG = arg_2_0.activtyUrExchangeBtn:GetComponent(typeof(CanvasGroup))
-	arg_2_0.activtyUrExchangeTip = arg_2_0:findTF("frame/link_btns/btns/urEx/tip")
-	arg_2_0.activityCrusingBtn = arg_2_0:findTF("frame/link_btns/btns/crusing")
-	arg_2_0.metaBossBtn = CommissionMetaBossBtn.New(arg_2_0:findTF("frame/link_btns/btns/meta_boss"), arg_2_0.event)
+	slot0.linkBtnPanel = slot0:findTF("frame/link_btns/btns")
+	slot0.activityInsBtn = slot0:findTF("frame/link_btns/btns/ins")
+	slot0.activtyUrExchangeBtn = slot0:findTF("frame/link_btns/btns/urEx")
+	slot0.activtyUrExchangeTxt = slot0:findTF("frame/link_btns/btns/urEx/Text"):GetComponent(typeof(Text))
+	slot0.activtyUrExchangeCG = slot0.activtyUrExchangeBtn:GetComponent(typeof(CanvasGroup))
+	slot0.activtyUrExchangeTip = slot0:findTF("frame/link_btns/btns/urEx/tip")
+	slot0.activityCrusingBtn = slot0:findTF("frame/link_btns/btns/crusing")
+	slot0.metaBossBtn = CommissionMetaBossBtn.New(slot0:findTF("frame/link_btns/btns/meta_boss"), slot0.event)
 end
 
-function var_0_0.UpdateUrItemEntrance(arg_3_0)
+function slot0.UpdateUrItemEntrance(slot0)
 	if not LOCK_UR_SHIP then
-		local var_3_0 = pg.gameset.urpt_chapter_max.description
-		local var_3_1 = var_3_0[1]
-		local var_3_2 = var_3_0[2]
-		local var_3_3 = getProxy(BagProxy):GetLimitCntById(var_3_1)
+		slot1 = pg.gameset.urpt_chapter_max.description
+		slot3 = slot1[2]
+		slot4 = getProxy(BagProxy):GetLimitCntById(slot1[1])
+		slot0.activtyUrExchangeTxt.text = slot4 .. "/" .. slot3
+		slot0.activtyUrExchangeCG.alpha = slot4 == slot3 and 0.6 or 1
 
-		arg_3_0.activtyUrExchangeTxt.text = var_3_3 .. "/" .. var_3_2
-
-		local var_3_4 = var_3_3 == var_3_2
-
-		arg_3_0.activtyUrExchangeCG.alpha = var_3_4 and 0.6 or 1
-
-		setActive(arg_3_0.activtyUrExchangeTip, NotifyTipHelper.ShouldShowUrTip())
-		onButton(arg_3_0, arg_3_0.activtyUrExchangeBtn, function()
-			arg_3_0:emit(CommissionInfoMediator.ON_UR_ACTIVITY)
+		setActive(slot0.activtyUrExchangeTip, NotifyTipHelper.ShouldShowUrTip())
+		onButton(slot0, slot0.activtyUrExchangeBtn, function ()
+			uv0:emit(CommissionInfoMediator.ON_UR_ACTIVITY)
 		end, SFX_PANEL)
 	else
-		setActive(arg_3_0.activtyUrExchangeBtn, false)
+		setActive(slot0.activtyUrExchangeBtn, false)
 	end
 end
 
-function var_0_0.updateCrusingEntrance(arg_5_0)
-	local var_5_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
+function slot0.updateCrusingEntrance(slot0)
+	if getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING) and not slot1:isEnd() then
+		setActive(slot0.activityCrusingBtn, true)
 
-	if var_5_0 and not var_5_0:isEnd() then
-		setActive(arg_5_0.activityCrusingBtn, true)
+		slot2 = slot1:GetCrusingInfo()
 
-		local var_5_1 = var_5_0:GetCrusingInfo()
-
-		setText(arg_5_0.activityCrusingBtn:Find("Text"), var_5_1.phase .. "/" .. #var_5_1.awardList)
-		setActive(arg_5_0.activityCrusingBtn:Find("tip"), #var_5_0:GetCrusingUnreceiveAward() > 0)
+		setText(slot0.activityCrusingBtn:Find("Text"), slot2.phase .. "/" .. #slot2.awardList)
+		setActive(slot0.activityCrusingBtn:Find("tip"), #slot1:GetCrusingUnreceiveAward() > 0)
 	else
-		setActive(arg_5_0.activityCrusingBtn, false)
+		setActive(slot0.activityCrusingBtn, false)
 	end
 
-	onButton(arg_5_0, arg_5_0.activityCrusingBtn, function()
-		arg_5_0:emit(CommissionInfoMediator.ON_CRUSING)
+	onButton(slot0, slot0.activityCrusingBtn, function ()
+		uv0:emit(CommissionInfoMediator.ON_CRUSING)
 	end, SFX_PANEL)
 end
 
-function var_0_0.NotifyIns(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_1:ExistMsg() and (not arg_7_2 or arg_7_2:isEnd())
+function slot0.NotifyIns(slot0, slot1, slot2)
+	slot3 = slot1:ExistMsg() and (not slot2 or slot2:isEnd())
 
-	setActive(arg_7_0.activityInsBtn, var_7_0)
+	setActive(slot0.activityInsBtn, slot3)
 
-	if var_7_0 then
-		onButton(arg_7_0, arg_7_0.activityInsBtn, function()
-			arg_7_0:emit(CommissionInfoMediator.ON_INS)
+	if slot3 then
+		onButton(slot0, slot0.activityInsBtn, function ()
+			uv0:emit(CommissionInfoMediator.ON_INS)
 		end, SFX_PANEL)
 	end
 end
 
-function var_0_0.UpdateLinkPanel(arg_9_0)
-	local var_9_0 = false
+function slot0.UpdateLinkPanel(slot0)
+	slot1 = false
 
-	for iter_9_0 = 1, arg_9_0.linkBtnPanel.childCount do
-		if isActive(arg_9_0.linkBtnPanel:GetChild(iter_9_0 - 1)) then
-			var_9_0 = true
+	for slot5 = 1, slot0.linkBtnPanel.childCount do
+		if isActive(slot0.linkBtnPanel:GetChild(slot5 - 1)) then
+			slot1 = true
 
 			break
 		end
 	end
 
-	setActive(arg_9_0.linkBtnPanel.parent, var_9_0)
+	setActive(slot0.linkBtnPanel.parent, slot1)
 end
 
-function var_0_0.didEnter(arg_10_0)
-	onButton(arg_10_0, arg_10_0.oilbubbleTF, function()
-		if LeanTween.isTweening(go(arg_10_0.frame)) then
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0.oilbubbleTF, function ()
+		if LeanTween.isTweening(go(uv0.frame)) then
 			return
 		end
 
-		arg_10_0:emit(CommissionInfoMediator.GET_OIL_RES)
+		uv0:emit(CommissionInfoMediator.GET_OIL_RES)
 	end, SFX_PANEL)
-	onButton(arg_10_0, arg_10_0.goldbubbleTF, function()
-		if LeanTween.isTweening(go(arg_10_0.frame)) then
+	onButton(slot0, slot0.goldbubbleTF, function ()
+		if LeanTween.isTweening(go(uv0.frame)) then
 			return
 		end
 
-		arg_10_0:emit(CommissionInfoMediator.GET_GOLD_RES)
+		uv0:emit(CommissionInfoMediator.GET_GOLD_RES)
 	end, SFX_PANEL)
-	onButton(arg_10_0, arg_10_0._tf, function()
-		if LeanTween.isTweening(go(arg_10_0.frame)) then
+	onButton(slot0, slot0._tf, function ()
+		if LeanTween.isTweening(go(uv0.frame)) then
 			return
 		end
 
-		if arg_10_0.contextData.inFinished then
+		if uv0.contextData.inFinished then
 			return
 		end
 
-		arg_10_0:emit(var_0_0.ON_CLOSE)
+		uv0:emit(uv1.ON_CLOSE)
 	end, SOUND_BACK)
-	onButton(arg_10_0, arg_10_0.classbubbleTF, function()
-		arg_10_0:emit(CommissionInfoMediator.GET_CLASS_RES)
+	onButton(slot0, slot0.classbubbleTF, function ()
+		uv0:emit(CommissionInfoMediator.GET_CLASS_RES)
 	end, SFX_PANEL)
-	arg_10_0:InitItems()
-	arg_10_0:UpdateUrItemEntrance()
-	arg_10_0:updateCrusingEntrance()
-	arg_10_0.metaBossBtn:Flush()
+	slot0:InitItems()
+	slot0:UpdateUrItemEntrance()
+	slot0:updateCrusingEntrance()
+	slot0.metaBossBtn:Flush()
 end
 
-function var_0_0.InitItems(arg_15_0)
-	for iter_15_0, iter_15_1 in ipairs(arg_15_0.items) do
-		iter_15_1:Init()
+function slot0.InitItems(slot0)
+	for slot4, slot5 in ipairs(slot0.items) do
+		slot5:Init()
 	end
 end
 
-function var_0_0.OnUpdateEventInfo(arg_16_0)
-	arg_16_0.items[1]:Update()
+function slot0.OnUpdateEventInfo(slot0)
+	slot0.items[1]:Update()
 end
 
-function var_0_0.OnUpdateClass(arg_17_0)
-	arg_17_0.items[2]:Update()
+function slot0.OnUpdateClass(slot0)
+	slot0.items[2]:Update()
 end
 
-function var_0_0.OnUpdateTechnology(arg_18_0)
-	arg_18_0.items[3]:Update()
+function slot0.OnUpdateTechnology(slot0)
+	slot0.items[3]:Update()
 end
 
-function var_0_0.setPlayer(arg_19_0, arg_19_1)
-	arg_19_0.playerVO = arg_19_1
+function slot0.setPlayer(slot0, slot1)
+	slot0.playerVO = slot1
 
-	arg_19_0:updateResource(arg_19_1)
+	slot0:updateResource(slot1)
 end
 
-function var_0_0.updateResource(arg_20_0, arg_20_1)
-	local var_20_0 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
+function slot0.updateResource(slot0, slot1)
+	slot3 = getProxy(NavalAcademyProxy):GetClassVO():GetGenResCnt()
 
-	setActive(arg_20_0.oilbubbleTF, arg_20_1.oilField ~= 0)
-	setActive(arg_20_0.goldbubbleTF, arg_20_1.goldField ~= 0)
-	setActive(arg_20_0.classbubbleTF, var_20_0 > 0)
+	setActive(slot0.oilbubbleTF, slot1.oilField ~= 0)
+	setActive(slot0.goldbubbleTF, slot1.goldField ~= 0)
+	setActive(slot0.classbubbleTF, slot3 > 0)
 
-	arg_20_0.oilTF.text = arg_20_1.oilField
-	arg_20_0.goldTF.text = arg_20_1.goldField
-	arg_20_0.classTF.text = var_20_0
+	slot0.oilTF.text = slot1.oilField
+	slot0.goldTF.text = slot1.goldField
+	slot0.classTF.text = slot3
 end
 
-function var_0_0.onBackPressed(arg_21_0)
+function slot0.onBackPressed(slot0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	triggerButton(arg_21_0._tf)
+	triggerButton(slot0._tf)
 end
 
-function var_0_0.willExit(arg_22_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_22_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 
-	for iter_22_0, iter_22_1 in ipairs(arg_22_0.items) do
-		iter_22_1:Dispose()
+	for slot4, slot5 in ipairs(slot0.items) do
+		slot5:Dispose()
 	end
 
-	arg_22_0.items = nil
+	slot0.items = nil
 
-	arg_22_0.metaBossBtn:Dispose()
+	slot0.metaBossBtn:Dispose()
 
-	arg_22_0.metaBossBtn = nil
+	slot0.metaBossBtn = nil
 end
 
-return var_0_0
+return slot0

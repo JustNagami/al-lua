@@ -1,24 +1,24 @@
-﻿local var_0_0 = class("ResourceFieldProductAttr", import(".ResourceFieldAttr"))
+slot0 = class("ResourceFieldProductAttr", import(".ResourceFieldAttr"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
+	uv0.super.Ctor(slot0, slot1, slot2, slot3)
 
-	arg_1_0.multiple = arg_1_4
+	slot0.multiple = slot4
 end
 
-function var_0_0.ReCalcValue(arg_2_0)
-	arg_2_0.value = arg_2_0.config[arg_2_0.level][arg_2_0.attrName] * arg_2_0.multiple
-	arg_2_0.nextValue = arg_2_0.config[arg_2_0.nextLevel][arg_2_0.attrName] * arg_2_0.multiple
-	arg_2_0.maxValue = arg_2_0.config[#arg_2_0.config][arg_2_0.attrName] * arg_2_0.multiple
-	arg_2_0.addition = arg_2_0.nextValue - arg_2_0.value
+function slot0.ReCalcValue(slot0)
+	slot0.value = slot0.config[slot0.level][slot0.attrName] * slot0.multiple
+	slot0.nextValue = slot0.config[slot0.nextLevel][slot0.attrName] * slot0.multiple
+	slot0.maxValue = slot0.config[#slot0.config][slot0.attrName] * slot0.multiple
+	slot0.addition = slot0.nextValue - slot0.value
 end
 
-function var_0_0.GetAdditionDesc(arg_3_0)
-	return arg_3_0.addition .. "/h"
+function slot0.GetAdditionDesc(slot0)
+	return slot0.addition .. "/h"
 end
 
-function var_0_0.GetProgressDesc(arg_4_0)
-	return arg_4_0.value .. "/h" .. "/" .. arg_4_0.maxValue .. "/h"
+function slot0.GetProgressDesc(slot0)
+	return slot0.value .. "/h" .. "/" .. slot0.maxValue .. "/h"
 end
 
-return var_0_0
+return slot0

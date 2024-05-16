@@ -1,66 +1,59 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot0.Battle.BattleBuffShiftWeapon = class("BattleBuffShiftWeapon", slot0.Battle.BattleBuffEffect)
+slot0.Battle.BattleBuffShiftWeapon.__name = "BattleBuffShiftWeapon"
+slot1 = slot0.Battle.BattleBuffShiftWeapon
 
-local var_0_0 = ys
-
-var_0_0.Battle.BattleBuffShiftWeapon = class("BattleBuffShiftWeapon", var_0_0.Battle.BattleBuffEffect)
-var_0_0.Battle.BattleBuffShiftWeapon.__name = "BattleBuffShiftWeapon"
-
-local var_0_1 = var_0_0.Battle.BattleBuffShiftWeapon
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function slot1.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 end
 
-function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_0._detachID = arg_2_0._tempData.arg_list.detach_id
-	arg_2_0._attachID = arg_2_0._tempData.arg_list.weapon_id
-	arg_2_0._detachLabel = arg_2_0._tempData.arg_list.detach_labelList
-	arg_2_0._fixedEnabled = arg_2_0._tempData.arg_list.fixed
-	arg_2_0._initCD = arg_2_0._tempData.arg_list.initial_over_heat
+function slot1.SetArgs(slot0, slot1, slot2)
+	slot0._detachID = slot0._tempData.arg_list.detach_id
+	slot0._attachID = slot0._tempData.arg_list.weapon_id
+	slot0._detachLabel = slot0._tempData.arg_list.detach_labelList
+	slot0._fixedEnabled = slot0._tempData.arg_list.fixed
+	slot0._initCD = slot0._tempData.arg_list.initial_over_heat
 end
 
-function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
-	arg_3_0:shiftWeapon(arg_3_1)
+function slot1.onAttach(slot0, slot1, slot2)
+	slot0:shiftWeapon(slot1)
 end
 
-function var_0_1.shiftWeapon(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0:removeWeapon(arg_4_1)
-
-	if not var_4_0 or var_4_0:IsFixedWeapon() and not arg_4_0._fixedEnabled then
+function slot1.shiftWeapon(slot0, slot1)
+	if not slot0:removeWeapon(slot1) or slot2:IsFixedWeapon() and not slot0._fixedEnabled then
 		return
 	end
 
-	local var_4_1 = var_4_0:GetEquipmentLabel()
-	local var_4_2 = var_4_0:GetSkinID()
-	local var_4_3 = var_4_0:GetPotential()
-	local var_4_4 = var_4_0:GetEquipmentIndex()
-	local var_4_5 = 0
-	local var_4_6 = {}
+	slot3 = slot2:GetEquipmentLabel()
+	slot4 = slot2:GetSkinID()
+	slot5 = slot2:GetPotential()
+	slot6 = slot2:GetEquipmentIndex()
+	slot7 = 0
+	slot8 = {}
 
-	while var_4_0 ~= nil do
-		table.insert(var_4_6, var_4_0:GetModifyInitialCD())
+	while slot2 ~= nil do
+		table.insert(slot8, slot2:GetModifyInitialCD())
 
-		var_4_5 = var_4_5 + 1
-		var_4_0 = arg_4_0:removeWeapon(arg_4_1)
+		slot7 = slot7 + 1
+		slot2 = slot0:removeWeapon(slot1)
 	end
 
-	for iter_4_0 = 1, var_4_5 do
-		local var_4_7 = arg_4_1:AddWeapon(arg_4_0._attachID, var_4_1, var_4_2, var_4_3, var_4_4)
-
-		if var_4_6[iter_4_0] then
-			var_4_7:SetModifyInitialCD()
+	for slot12 = 1, slot7 do
+		if slot8[slot12] then
+			slot1:AddWeapon(slot0._attachID, slot3, slot4, slot5, slot6):SetModifyInitialCD()
 		end
 	end
 end
 
-function var_0_1.removeWeapon(arg_5_0, arg_5_1)
-	local var_5_0
+function slot1.removeWeapon(slot0, slot1)
+	slot2 = nil
 
-	if arg_5_0._detachID then
-		var_5_0 = arg_5_1:RemoveWeapon(arg_5_0._detachID)
-	elseif arg_5_0._detachLabel then
-		var_5_0 = arg_5_1:RemoveWeaponByLabel(arg_5_0._detachLabel)
+	if slot0._detachID then
+		slot2 = slot1:RemoveWeapon(slot0._detachID)
+	elseif slot0._detachLabel then
+		slot2 = slot1:RemoveWeaponByLabel(slot0._detachLabel)
 	end
 
-	return var_5_0
+	return slot2
 end

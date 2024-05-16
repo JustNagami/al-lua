@@ -1,68 +1,68 @@
-﻿local var_0_0 = class("SelectSkinMsgbox", import("view.base.BaseSubView"))
+slot0 = class("SelectSkinMsgbox", import("view.base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "SelectSkinMsgboxUI"
 end
 
-function var_0_0.OnLoaded(arg_2_0)
-	arg_2_0.closeBtn = arg_2_0:findTF("window/top/btnBack")
-	arg_2_0.cancelBtn = arg_2_0:findTF("window/button_container/cancel")
-	arg_2_0.confirmBtn = arg_2_0:findTF("window/button_container/confirm")
-	arg_2_0.contentTxt = arg_2_0:findTF("window/frame/content"):GetComponent(typeof(Text))
-	arg_2_0.leftItemTr = arg_2_0:findTF("window/frame/left")
-	arg_2_0.rightItemTr = arg_2_0:findTF("window/frame/right")
-	arg_2_0.leftNameTxt = arg_2_0.leftItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
-	arg_2_0.rightNameTxt = arg_2_0.rightItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
+function slot0.OnLoaded(slot0)
+	slot0.closeBtn = slot0:findTF("window/top/btnBack")
+	slot0.cancelBtn = slot0:findTF("window/button_container/cancel")
+	slot0.confirmBtn = slot0:findTF("window/button_container/confirm")
+	slot0.contentTxt = slot0:findTF("window/frame/content"):GetComponent(typeof(Text))
+	slot0.leftItemTr = slot0:findTF("window/frame/left")
+	slot0.rightItemTr = slot0:findTF("window/frame/right")
+	slot0.leftNameTxt = slot0.leftItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
+	slot0.rightNameTxt = slot0.rightItemTr:Find("name_bg/Text"):GetComponent(typeof(Text))
 
-	setText(arg_2_0.cancelBtn:Find("pic"), i18n("msgbox_text_cancel"))
-	setText(arg_2_0.confirmBtn:Find("pic"), i18n("msgbox_text_confirm"))
-	setText(arg_2_0._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
+	setText(slot0.cancelBtn:Find("pic"), i18n("msgbox_text_cancel"))
+	setText(slot0.confirmBtn:Find("pic"), i18n("msgbox_text_confirm"))
+	setText(slot0._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
 end
 
-function var_0_0.OnInit(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
-		arg_3_0:Hide()
+function slot0.OnInit(slot0)
+	onButton(slot0, slot0._tf:Find("bg"), function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.closeBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.closeBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
-	onButton(arg_3_0, arg_3_0.cancelBtn, function()
-		arg_3_0:Hide()
+	onButton(slot0, slot0.cancelBtn, function ()
+		uv0:Hide()
 	end, SFX_PANEL)
 end
 
-function var_0_0.Show(arg_7_0, arg_7_1)
-	var_0_0.super.Show(arg_7_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf, nil, {
+function slot0.Show(slot0, slot1)
+	uv0.super.Show(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, nil, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 
-	arg_7_0.contentTxt.text = arg_7_1.content
+	slot0.contentTxt.text = slot1.content
 
-	updateDrop(arg_7_0.leftItemTr, arg_7_1.leftDrop)
-	updateDrop(arg_7_0.rightItemTr, arg_7_1.rightDrop)
+	updateDrop(slot0.leftItemTr, slot1.leftDrop)
+	updateDrop(slot0.rightItemTr, slot1.rightDrop)
 
-	arg_7_0.leftNameTxt.text = arg_7_1.leftDrop:getConfig("name")
-	arg_7_0.rightNameTxt.text = arg_7_1.rightDrop:getConfig("name")
+	slot0.leftNameTxt.text = slot1.leftDrop:getConfig("name")
+	slot0.rightNameTxt.text = slot1.rightDrop:getConfig("name")
 
-	onButton(arg_7_0, arg_7_0.confirmBtn, function()
-		arg_7_0:Hide()
+	onButton(slot0, slot0.confirmBtn, function ()
+		uv0:Hide()
 
-		if arg_7_1.onYes then
-			arg_7_1.onYes()
+		if uv1.onYes then
+			uv1.onYes()
 		end
 	end, SFX_PANEL)
 end
 
-function var_0_0.Hide(arg_9_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_9_0._tf, arg_9_0._parentTf)
-	var_0_0.super.Hide(arg_9_0)
+function slot0.Hide(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+	uv0.super.Hide(slot0)
 end
 
-function var_0_0.OnDestroy(arg_10_0)
-	if arg_10_0:isShowing() then
-		arg_10_0:Hide()
+function slot0.OnDestroy(slot0)
+	if slot0:isShowing() then
+		slot0:Hide()
 	end
 end
 
-return var_0_0
+return slot0

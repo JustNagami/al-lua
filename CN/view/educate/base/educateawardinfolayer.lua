@@ -1,161 +1,145 @@
-﻿local var_0_0 = class("EducateAwardInfoLayer", import("..base.EducateBaseUI"))
-local var_0_1 = {
+slot0 = class("EducateAwardInfoLayer", import("..base.EducateBaseUI"))
+slot1 = {
 	Vector2(0, 115),
 	Vector2(0, 162)
 }
-local var_0_2 = {
+slot2 = {
 	Vector2(0, -280),
 	Vector2(0, -315)
 }
-local var_0_3 = 0.4
+slot3 = 0.4
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EducateAwardInfoUI"
 end
 
-function var_0_0.init(arg_2_0)
-	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf, false, {
+function slot0.init(slot0)
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 
-	arg_2_0.drops = arg_2_0.contextData.items or {}
-	arg_2_0.awardWindow = arg_2_0:findTF("award_window")
-	arg_2_0.anim = arg_2_0.awardWindow:GetComponent(typeof(Animation))
-	arg_2_0.animEvent = arg_2_0.awardWindow:GetComponent(typeof(DftAniEvent))
+	slot0.drops = slot0.contextData.items or {}
+	slot0.awardWindow = slot0:findTF("award_window")
+	slot0.anim = slot0.awardWindow:GetComponent(typeof(Animation))
+	slot0.animEvent = slot0.awardWindow:GetComponent(typeof(DftAniEvent))
 
-	arg_2_0.animEvent:SetEndEvent(function()
-		if #arg_2_0.showPolaroidDrops > 0 then
-			setActive(arg_2_0.awardWindow, false)
-			setActive(arg_2_0.polaroidWindow, true)
+	slot0.animEvent:SetEndEvent(function ()
+		if #uv0.showPolaroidDrops > 0 then
+			setActive(uv0.awardWindow, false)
+			setActive(uv0.polaroidWindow, true)
 
-			arg_2_0.polaroidIndex = 1
+			uv0.polaroidIndex = 1
 
-			arg_2_0:showPolaroidAnim()
+			uv0:showPolaroidAnim()
 		else
-			arg_2_0:emit(var_0_0.ON_CLOSE)
+			uv0:emit(uv1.ON_CLOSE)
 		end
 	end)
 
-	arg_2_0.tipTF = arg_2_0:findTF("tip", arg_2_0.awardWindow)
+	slot0.tipTF = slot0:findTF("tip", slot0.awardWindow)
 
-	setText(arg_2_0.tipTF, i18n("child_close_tip"))
+	setText(slot0.tipTF, i18n("child_close_tip"))
 
-	arg_2_0.itemContent = arg_2_0:findTF("content/items", arg_2_0.awardWindow)
-	arg_2_0.itemContainer = arg_2_0:findTF("items_scroll/content", arg_2_0.itemContent)
-	arg_2_0.itemTpl = arg_2_0:findTF("item_tpl", arg_2_0.awardWindow)
+	slot0.itemContent = slot0:findTF("content/items", slot0.awardWindow)
+	slot0.itemContainer = slot0:findTF("items_scroll/content", slot0.itemContent)
+	slot0.itemTpl = slot0:findTF("item_tpl", slot0.awardWindow)
 
-	setActive(arg_2_0.itemTpl, false)
+	setActive(slot0.itemTpl, false)
 
-	arg_2_0.attrContent = arg_2_0:findTF("content/attrs", arg_2_0.awardWindow)
-	arg_2_0.attrContainer = arg_2_0:findTF("attrs_scroll/content", arg_2_0.attrContent)
-	arg_2_0.attrTpl = arg_2_0:findTF("attr_tpl", arg_2_0.awardWindow)
+	slot0.attrContent = slot0:findTF("content/attrs", slot0.awardWindow)
+	slot0.attrContainer = slot0:findTF("attrs_scroll/content", slot0.attrContent)
+	slot0.attrTpl = slot0:findTF("attr_tpl", slot0.awardWindow)
 
-	setActive(arg_2_0.attrTpl, false)
+	setActive(slot0.attrTpl, false)
 
-	arg_2_0.polaroidWindow = arg_2_0:findTF("polaroid_window")
-	arg_2_0.polaroidIconTF = arg_2_0:findTF("content/mask/icon", arg_2_0.polaroidWindow)
-	arg_2_0.polaroidDescTF = arg_2_0:findTF("content/desc", arg_2_0.polaroidWindow)
+	slot0.polaroidWindow = slot0:findTF("polaroid_window")
+	slot0.polaroidIconTF = slot0:findTF("content/mask/icon", slot0.polaroidWindow)
+	slot0.polaroidDescTF = slot0:findTF("content/desc", slot0.polaroidWindow)
 
-	setActive(arg_2_0.awardWindow, false)
-	setActive(arg_2_0.polaroidWindow, false)
-	arg_2_0._tf:SetAsLastSibling()
+	setActive(slot0.awardWindow, false)
+	setActive(slot0.polaroidWindow, false)
+	slot0._tf:SetAsLastSibling()
 end
 
-function var_0_0.didEnter(arg_4_0)
-	onButton(arg_4_0, arg_4_0:findTF("close", arg_4_0.awardWindow), function()
-		arg_4_0:_close()
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0:findTF("close", slot0.awardWindow), function ()
+		uv0:_close()
 	end, SFX_CANCEL)
-	onButton(arg_4_0, arg_4_0.polaroidWindow, function()
-		if arg_4_0.playing then
+	onButton(slot0, slot0.polaroidWindow, function ()
+		if uv0.playing then
 			return
 		end
 
 		pg.TipsMgr.GetInstance():ShowTips(i18n("child_polaroid_get_tip"))
 
-		if arg_4_0.polaroidIndex <= #arg_4_0.showPolaroidDrops then
-			arg_4_0:showPolaroidAnim()
+		if uv0.polaroidIndex <= #uv0.showPolaroidDrops then
+			uv0:showPolaroidAnim()
 		else
-			arg_4_0:emit(var_0_0.ON_CLOSE)
+			uv0:emit(uv1.ON_CLOSE)
 		end
 	end, SFX_CANCEL)
 
-	arg_4_0.showAwardDrops = arg_4_0:getAwardDrops()
-	arg_4_0.showAttrDrops = arg_4_0:getAttrDrops()
-	arg_4_0.showPolaroidDrops = arg_4_0:getPolaroidDrops()
+	slot0.showAwardDrops = slot0:getAwardDrops()
+	slot0.showAttrDrops = slot0:getAttrDrops()
+	slot0.showPolaroidDrops = slot0:getPolaroidDrops()
 
-	local var_4_0 = #arg_4_0.showAttrDrops > 0
-
-	setActive(arg_4_0.attrContent, var_4_0)
-	arg_4_0:showWindow()
+	setActive(slot0.attrContent, #slot0.showAttrDrops > 0)
+	slot0:showWindow()
 end
 
-function var_0_0.showWindow(arg_7_0)
-	if #arg_7_0.showAwardDrops > 0 then
-		arg_7_0.inAnimPlaying = true
+function slot0.showWindow(slot0)
+	if #slot0.showAwardDrops > 0 then
+		slot0.inAnimPlaying = true
 
-		setActive(arg_7_0.awardWindow, true)
-
-		local var_7_0 = #arg_7_0.showAttrDrops > 0 and "anim_educate_awardinfo_awardattr_in" or "anim_educate_awardinfo_award_in"
-
-		arg_7_0.anim:Play(var_7_0)
-
-		local var_7_1 = {}
-
-		table.insert(var_7_1, function(arg_8_0)
-			arg_7_0:managedTween(LeanTween.delayedCall, function()
-				arg_8_0()
+		setActive(slot0.awardWindow, true)
+		slot0.anim:Play(#slot0.showAttrDrops > 0 and "anim_educate_awardinfo_awardattr_in" or "anim_educate_awardinfo_award_in")
+		table.insert({}, function (slot0)
+			uv0:managedTween(LeanTween.delayedCall, function ()
+				uv0()
 			end, 0.33, nil)
 		end)
 
-		local var_7_2 = math.max(#arg_7_0.showAttrDrops, #arg_7_0.showAwardDrops)
+		for slot7 = 1, math.max(#slot0.showAttrDrops, #slot0.showAwardDrops) do
+			table.insert(slot2, function (slot0)
+				if uv0.showAwardDrops[uv1] then
+					slot2 = cloneTplTo(uv0.itemTpl, uv0.itemContainer)
 
-		for iter_7_0 = 1, var_7_2 do
-			table.insert(var_7_1, function(arg_10_0)
-				local var_10_0 = arg_7_0.showAwardDrops[iter_7_0]
-
-				if var_10_0 then
-					local var_10_1 = cloneTplTo(arg_7_0.itemTpl, arg_7_0.itemContainer)
-
-					EducateHelper.UpdateDropShow(var_10_1, var_10_0)
-					onButton(arg_7_0, var_10_1, function()
-						arg_7_0:emit(var_0_0.EDUCATE_ON_ITEM, {
-							drop = var_10_0
+					EducateHelper.UpdateDropShow(slot2, slot1)
+					onButton(uv0, slot2, function ()
+						uv0:emit(uv1.EDUCATE_ON_ITEM, {
+							drop = uv2
 						})
 					end)
 				end
 
-				local var_10_2 = arg_7_0.showAttrDrops[iter_7_0]
-
-				if var_10_2 then
-					local var_10_3 = cloneTplTo(arg_7_0.attrTpl, arg_7_0.attrContainer)
-
-					EducateHelper.UpdateDropShowForAttr(var_10_3, var_10_2)
+				if uv0.showAttrDrops[uv1] then
+					EducateHelper.UpdateDropShowForAttr(cloneTplTo(uv0.attrTpl, uv0.attrContainer), slot2)
 				end
 
-				arg_7_0:managedTween(LeanTween.delayedCall, function()
-					arg_10_0()
+				uv0:managedTween(LeanTween.delayedCall, function ()
+					uv0()
 				end, 0.066, nil)
 			end)
 		end
 
-		seriesAsync(var_7_1, function()
-			arg_7_0:managedTween(LeanTween.delayedCall, function()
-				arg_7_0.inAnimPlaying = false
+		seriesAsync(slot2, function ()
+			uv0:managedTween(LeanTween.delayedCall, function ()
+				uv0.inAnimPlaying = false
 			end, 0.066, nil)
 		end)
-	elseif #arg_7_0.showPolaroidDrops > 0 then
-		setActive(arg_7_0.polaroidWindow, true)
+	elseif #slot0.showPolaroidDrops > 0 then
+		setActive(slot0.polaroidWindow, true)
 
-		arg_7_0.polaroidIndex = 1
+		slot0.polaroidIndex = 1
 
-		arg_7_0:showPolaroidAnim()
+		slot0:showPolaroidAnim()
 	else
 		assert(nil, "不合法掉落, award/polaroid都为空, 请检查对应配置~")
 	end
 end
 
-function var_0_0.getAwardDrops(arg_15_0)
-	return EducateHelper.FilterDropByTypes(arg_15_0.drops, {
+function slot0.getAwardDrops(slot0)
+	return EducateHelper.FilterDropByTypes(slot0.drops, {
 		EducateConst.DROP_TYPE_ATTR,
 		EducateConst.DROP_TYPE_RES,
 		EducateConst.DROP_TYPE_ITEM,
@@ -163,89 +147,81 @@ function var_0_0.getAwardDrops(arg_15_0)
 	})
 end
 
-function var_0_0.getAttrDrops(arg_16_0)
-	local var_16_0 = EducateHelper.FilterDropByTypes(arg_16_0.drops, {
+function slot0.getAttrDrops(slot0)
+	underscore.each(EducateHelper.FilterDropByTypes(slot0.drops, {
 		EducateConst.DROP_TYPE_ITEM
-	})
-	local var_16_1 = {}
-
-	underscore.each(var_16_0, function(arg_17_0)
-		var_16_1 = table.mergeArray(var_16_1, EducateHelper.GetItemAddDrops(arg_17_0))
+	}), function (slot0)
+		uv0 = table.mergeArray(uv0, EducateHelper.GetItemAddDrops(slot0))
 	end)
 
-	return var_16_1
+	return {}
 end
 
-function var_0_0.getPolaroidDrops(arg_18_0)
-	return EducateHelper.FilterDropByTypes(arg_18_0.drops, {
+function slot0.getPolaroidDrops(slot0)
+	return EducateHelper.FilterDropByTypes(slot0.drops, {
 		EducateConst.DROP_TYPE_POLAROID
 	})
 end
 
-function var_0_0.showPolaroidAnim(arg_19_0)
-	arg_19_0.playing = true
+function slot0.showPolaroidAnim(slot0)
+	slot0.playing = true
 
-	local var_19_0 = arg_19_0.showPolaroidDrops[arg_19_0.polaroidIndex]
+	setActive(slot0.polaroidDescTF, false)
 
-	setActive(arg_19_0.polaroidDescTF, false)
+	slot2 = pg.child_polaroid[slot0.showPolaroidDrops[slot0.polaroidIndex].id]
 
-	local var_19_1 = pg.child_polaroid[var_19_0.id]
-
-	LoadImageSpriteAsync("educatepolaroid/" .. var_19_1.pic, arg_19_0.polaroidIconTF)
-	setText(arg_19_0.polaroidDescTF, var_19_1.title)
-
-	local var_19_2 = {}
-
-	table.insert(var_19_2, function(arg_20_0)
-		arg_19_0:managedTween(LeanTween.delayedCall, function()
-			setActive(arg_19_0.polaroidDescTF, true)
-			arg_20_0()
-		end, var_0_3, nil)
+	LoadImageSpriteAsync("educatepolaroid/" .. slot2.pic, slot0.polaroidIconTF)
+	setText(slot0.polaroidDescTF, slot2.title)
+	table.insert({}, function (slot0)
+		uv0:managedTween(LeanTween.delayedCall, function ()
+			setActive(uv0.polaroidDescTF, true)
+			uv1()
+		end, uv1, nil)
 	end)
 
 	if getProxy(EducateProxy):CheckNewSecretaryTip() then
-		table.insert(var_19_2, function(arg_22_0)
-			arg_19_0:emit(var_0_0.EDUCATE_ON_UNLOCK_TIP, {
+		table.insert(slot3, function (slot0)
+			uv0:emit(uv1.EDUCATE_ON_UNLOCK_TIP, {
 				type = EducateUnlockTipLayer.UNLOCK_NEW_SECRETARY,
-				onExit = arg_22_0
+				onExit = slot0
 			})
 		end)
 	end
 
-	seriesAsync(var_19_2, function()
-		arg_19_0.playing = false
-		arg_19_0.polaroidIndex = arg_19_0.polaroidIndex + 1
+	seriesAsync(slot3, function ()
+		uv0.playing = false
+		uv0.polaroidIndex = uv0.polaroidIndex + 1
 	end)
 end
 
-function var_0_0._close(arg_24_0)
+function slot0._close(slot0)
 	if pg.NewGuideMgr.GetInstance():IsBusy() then
-		arg_24_0:emit(var_0_0.ON_CLOSE)
+		slot0:emit(uv0.ON_CLOSE)
 
 		return
 	end
 
-	if arg_24_0.inAnimPlaying or arg_24_0.isCloseAnim then
+	if slot0.inAnimPlaying or slot0.isCloseAnim then
 		return
 	end
 
-	arg_24_0.anim:Play("anim_educate_awardinfo_award_out")
+	slot0.anim:Play("anim_educate_awardinfo_award_out")
 
-	arg_24_0.isCloseAnim = true
+	slot0.isCloseAnim = true
 end
 
-function var_0_0.onBackPressed(arg_25_0)
-	arg_25_0:_close()
+function slot0.onBackPressed(slot0)
+	slot0:_close()
 end
 
-function var_0_0.willExit(arg_26_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_26_0._tf)
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
 
-	if arg_26_0.contextData.removeFunc then
-		arg_26_0.contextData.removeFunc()
+	if slot0.contextData.removeFunc then
+		slot0.contextData.removeFunc()
 
-		arg_26_0.contextData.removeFunc = nil
+		slot0.contextData.removeFunc = nil
 	end
 end
 
-return var_0_0
+return slot0

@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "accuracyRateExtra",
-				number = -0.5
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -50,5 +37,18 @@
 	stack = 1,
 	id = 7402,
 	icon = 7402,
-	last_effect = "Darkness"
+	last_effect = "Darkness",
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "accuracyRateExtra",
+				number = -0.5
+			}
+		}
+	}
 }

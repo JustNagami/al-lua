@@ -1,4 +1,23 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "破盾监听--永久",
+	time = 0,
+	picture = "",
+	desc = "监听器",
+	stack = 1,
+	id = 15514,
+	icon = 15514,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -22,24 +41,5 @@
 				}
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "破盾监听--永久",
-	time = 0,
-	picture = "",
-	desc = "监听器",
-	stack = 1,
-	id = 15514,
-	icon = 15514,
-	last_effect = ""
+	}
 }

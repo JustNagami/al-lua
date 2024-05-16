@@ -1,42 +1,38 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleConst
+slot2 = slot0.Battle.BattleConfig
+slot3 = class("BattleEnvironmentBehaviourDamage", slot0.Battle.BattleEnvironmentBehaviour)
+slot0.Battle.BattleEnvironmentBehaviourDamage = slot3
+slot3.__name = "BattleEnvironmentBehaviourDamage"
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleConst
-local var_0_2 = var_0_0.Battle.BattleConfig
-local var_0_3 = class("BattleEnvironmentBehaviourDamage", var_0_0.Battle.BattleEnvironmentBehaviour)
-
-var_0_0.Battle.BattleEnvironmentBehaviourDamage = var_0_3
-var_0_3.__name = "BattleEnvironmentBehaviourDamage"
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 end
 
-function var_0_3.SetTemplate(arg_2_0, arg_2_1)
-	var_0_3.super.SetTemplate(arg_2_0, arg_2_1)
+function slot3.SetTemplate(slot0, slot1)
+	uv0.super.SetTemplate(slot0, slot1)
 
-	arg_2_0._rate = arg_2_0._tmpData.hp_rate or 0
-	arg_2_0._damage = arg_2_0._tmpData.damage or 0
-	arg_2_0._offset = arg_2_0._tmpData.offset or 0
+	slot0._rate = slot0._tmpData.hp_rate or 0
+	slot0._damage = slot0._tmpData.damage or 0
+	slot0._offset = slot0._tmpData.offset or 0
 end
 
-function var_0_3.doBehaviour(arg_3_0)
-	for iter_3_0, iter_3_1 in ipairs(arg_3_0._cldUnitList) do
-		local var_3_0 = {
+function slot3.doBehaviour(slot0)
+	for slot4, slot5 in ipairs(slot0._cldUnitList) do
+		slot7, slot8 = slot5:GetHP()
+
+		slot5:UpdateHP(-math.max(0, math.floor(slot8 * slot0._rate) + slot0._damage + math.random(-slot0._offset, slot0._offset)), {
 			isMiss = false,
 			isCri = false,
 			isHeal = false
-		}
-		local var_3_1, var_3_2 = iter_3_1:GetHP()
-		local var_3_3 = math.max(0, math.floor(var_3_2 * arg_3_0._rate) + arg_3_0._damage + math.random(-arg_3_0._offset, arg_3_0._offset))
+		})
 
-		iter_3_1:UpdateHP(-var_3_3, var_3_0)
-
-		if not iter_3_1:IsAlive() then
-			var_0_0.Battle.BattleAttr.Spirit(iter_3_1)
-			var_0_0.Battle.BattleAttr.AppendInvincible(iter_3_1)
+		if not slot5:IsAlive() then
+			uv0.Battle.BattleAttr.Spirit(slot5)
+			uv0.Battle.BattleAttr.AppendInvincible(slot5)
 		end
 	end
 
-	var_0_3.super.doBehaviour(arg_3_0)
+	uv1.super.doBehaviour(slot0)
 end

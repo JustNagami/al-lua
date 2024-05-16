@@ -1,15 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 2071
-			}
-		}
-	},
+return {
 	{
 		desc = "自身炮击提高10.0%",
 		addition = {
@@ -80,5 +69,16 @@
 	stack = 1,
 	id = 2071,
 	icon = 2070,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 2071
+			}
+		}
+	}
 }

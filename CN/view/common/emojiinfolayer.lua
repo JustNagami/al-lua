@@ -1,73 +1,70 @@
-﻿local var_0_0 = class("EmojiInfoLayer", import("view.base.BaseUI"))
+slot0 = class("EmojiInfoLayer", import("view.base.BaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EmojiInfoUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0.nameTxt = arg_2_0:findTF("frame/name"):GetComponent(typeof(Text))
-	arg_2_0.descTxt = arg_2_0:findTF("frame/desc"):GetComponent(typeof(Text))
-	arg_2_0.emojiContainer = arg_2_0:findTF("frame/icon_bg")
+function slot0.init(slot0)
+	slot0.nameTxt = slot0:findTF("frame/name"):GetComponent(typeof(Text))
+	slot0.descTxt = slot0:findTF("frame/desc"):GetComponent(typeof(Text))
+	slot0.emojiContainer = slot0:findTF("frame/icon_bg")
 
-	setText(arg_2_0:findTF("frame/tip"), i18n("word_click_to_close"))
+	setText(slot0:findTF("frame/tip"), i18n("word_click_to_close"))
 end
 
-function var_0_0.didEnter(arg_3_0)
-	onButton(arg_3_0, arg_3_0._tf, function()
-		arg_3_0:emit(var_0_0.ON_CLOSE)
+function slot0.didEnter(slot0)
+	onButton(slot0, slot0._tf, function ()
+		uv0:emit(uv1.ON_CLOSE)
 	end, SFX_PANEL)
-	arg_3_0:Flush()
-	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+	slot0:Flush()
+	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
 end
 
-function var_0_0.Flush(arg_5_0)
-	local var_5_0 = arg_5_0.contextData.id
+function slot0.Flush(slot0)
+	slot1 = slot0.contextData.id
 
-	assert(var_5_0)
+	assert(slot1)
 
-	local var_5_1 = pg.emoji_template[var_5_0]
+	slot2 = pg.emoji_template[slot1]
+	slot0.nameTxt.text = slot2.item_name
+	slot0.descTxt.text = slot2.item_desc
 
-	arg_5_0.nameTxt.text = var_5_1.item_name
-	arg_5_0.descTxt.text = var_5_1.item_desc
-
-	arg_5_0:ReturnEmoji()
-	arg_5_0:LoadEmoji(var_5_1)
+	slot0:ReturnEmoji()
+	slot0:LoadEmoji(slot2)
 end
 
-function var_0_0.LoadEmoji(arg_6_0, arg_6_1)
-	PoolMgr.GetInstance():GetPrefab("emoji/" .. arg_6_1.pic, arg_6_1.pic, true, function(arg_7_0)
-		local var_7_0 = arg_7_0:GetComponent("Animator")
-
-		if var_7_0 then
-			var_7_0.enabled = true
+function slot0.LoadEmoji(slot0, slot1)
+	PoolMgr.GetInstance():GetPrefab("emoji/" .. slot1.pic, slot1.pic, true, function (slot0)
+		if slot0:GetComponent("Animator") then
+			slot1.enabled = true
 		end
 
-		setParent(arg_7_0, arg_6_0.emojiContainer, false)
+		setParent(slot0, uv0.emojiContainer, false)
 
-		arg_6_0.emoji = arg_7_0
+		uv0.emoji = slot0
 	end)
 
-	arg_6_0.template = arg_6_1
+	slot0.template = slot1
 end
 
-function var_0_0.ReturnEmoji(arg_8_0)
-	if arg_8_0.template and arg_8_0.emoji then
-		local var_8_0 = arg_8_0.template
+function slot0.ReturnEmoji(slot0)
+	if slot0.template and slot0.emoji then
+		slot1 = slot0.template
 
-		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var_8_0.pic, var_8_0.pic, arg_8_0.emoji)
+		PoolMgr.GetInstance():ReturnPrefab("emoji/" .. slot1.pic, slot1.pic, slot0.emoji)
 
-		arg_8_0.template = nil
-		arg_8_0.emoji = nil
+		slot0.template = nil
+		slot0.emoji = nil
 	end
 end
 
-function var_0_0.onBackPressed(arg_9_0)
-	var_0_0.super.onBackPressed(arg_9_0)
+function slot0.onBackPressed(slot0)
+	uv0.super.onBackPressed(slot0)
 end
 
-function var_0_0.willExit(arg_10_0)
-	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf)
-	arg_10_0:ReturnEmoji()
+function slot0.willExit(slot0)
+	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	slot0:ReturnEmoji()
 end
 
-return var_0_0
+return slot0

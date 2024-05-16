@@ -1,15 +1,14 @@
-﻿local var_0_0 = class("NetFleetAttachUpdate", import("....BaseEntity"))
-
-var_0_0.Fields = {
+slot0 = class("NetFleetAttachUpdate", import("....BaseEntity"))
+slot0.Fields = {
 	row = "number",
 	column = "number",
 	id = "number"
 }
 
-function var_0_0.Setup(arg_1_0, arg_1_1)
-	arg_1_0.id = arg_1_1.item_id
-	arg_1_0.row = arg_1_1.pos.row
-	arg_1_0.column = arg_1_1.pos.column
+function slot0.Setup(slot0, slot1)
+	slot0.id = slot1.item_id
+	slot0.row = slot1.pos.row
+	slot0.column = slot1.pos.column
 end
 
-return var_0_0
+return slot0

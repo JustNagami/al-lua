@@ -1,75 +1,63 @@
-﻿local var_0_0 = class("MapEventStoryTriggerCellView", import(".StaticCellView"))
+slot0 = class("MapEventStoryTriggerCellView", import(".StaticCellView"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0, arg_1_1)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0, slot1)
 
-	arg_1_0.chapter = nil
-	arg_1_0.triggerUpper = nil
+	slot0.chapter = nil
+	slot0.triggerUpper = nil
 end
 
-function var_0_0.GetOrder(arg_2_0)
+function slot0.GetOrder(slot0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function var_0_0.Update(arg_3_0)
-	local var_3_0 = arg_3_0.info
-	local var_3_1 = var_3_0.flag == ChapterConst.CellFlagTriggerActive and var_3_0.trait ~= ChapterConst.TraitLurk
+function slot0.Update(slot0)
+	slot2 = slot0.info.flag == ChapterConst.CellFlagTriggerActive and slot1.trait ~= ChapterConst.TraitLurk
 
-	if IsNil(arg_3_0.go) then
-		local var_3_2 = var_3_0.row
-		local var_3_3 = var_3_0.column
-		local var_3_4 = "story_" .. var_3_2 .. "_" .. var_3_3 .. "_" .. var_3_0.attachmentId
+	if IsNil(slot0.go) then
+		slot0:PrepareBase("story_" .. slot1.row .. "_" .. slot1.column .. "_" .. slot1.attachmentId)
 
-		arg_3_0:PrepareBase(var_3_4)
+		slot7 = pg.map_event_template[slot1.attachmentId].icon
 
-		local var_3_5 = pg.map_event_template[var_3_0.attachmentId].icon
+		if IsNil(slot0.triggerUpper) and slot7 and #slot7 > 0 and PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. slot7 .. "_1shangceng")) then
+			slot0.triggerUpper = HaloAttachmentView.New(slot0.parent, slot3, slot4)
 
-		if IsNil(arg_3_0.triggerUpper) and var_3_5 and #var_3_5 > 0 and PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. var_3_5 .. "_1shangceng")) then
-			arg_3_0.triggerUpper = HaloAttachmentView.New(arg_3_0.parent, var_3_2, var_3_3)
-
-			arg_3_0.triggerUpper:SetLoader(arg_3_0.loader)
+			slot0.triggerUpper:SetLoader(slot0.loader)
 		end
 	end
 
-	local var_3_6 = pg.map_event_template[var_3_0.attachmentId].icon
-	local var_3_7
+	if slot0.assetName ~= ItemCell.TransformItemAsset(slot0.chapter, pg.map_event_template[slot1.attachmentId].icon and #slot4 > 0 and slot4 .. "_1" or nil) then
+		if slot4 == nil then
+			slot0:GetLoader():ClearRequest("ItemAsset")
 
-	var_3_7 = var_3_6 and #var_3_6 > 0 and var_3_6 .. "_1" or nil
-
-	local var_3_8 = ItemCell.TransformItemAsset(arg_3_0.chapter, var_3_7)
-
-	if arg_3_0.assetName ~= var_3_8 then
-		if var_3_8 == nil then
-			arg_3_0:GetLoader():ClearRequest("ItemAsset")
-
-			arg_3_0.assetName = var_3_8
+			slot0.assetName = slot4
 		else
-			arg_3_0:GetLoader():GetPrefab("ui/" .. var_3_8, var_3_8, function(arg_4_0)
-				setParent(arg_4_0, arg_3_0.tf)
-				arg_3_0:ResetCanvasOrder()
+			slot0:GetLoader():GetPrefab("ui/" .. slot4, slot4, function (slot0)
+				setParent(slot0, uv0.tf)
+				uv0:ResetCanvasOrder()
 
-				arg_3_0.assetName = var_3_8
+				uv0.assetName = uv1
 			end, "ItemAsset")
 		end
 	end
 
-	setActive(arg_3_0.tf, var_3_1)
+	setActive(slot0.tf, slot2)
 
-	if arg_3_0.triggerUpper then
-		arg_3_0.triggerUpper.info = arg_3_0.info
+	if slot0.triggerUpper then
+		slot0.triggerUpper.info = slot0.info
 
-		arg_3_0.triggerUpper:Update()
+		slot0.triggerUpper:Update()
 	end
 end
 
-function var_0_0.DestroyGO(arg_5_0)
-	if arg_5_0.triggerUpper then
-		arg_5_0.triggerUpper:Clear()
+function slot0.DestroyGO(slot0)
+	if slot0.triggerUpper then
+		slot0.triggerUpper:Clear()
 	end
 
-	arg_5_0.triggerUpper = nil
+	slot0.triggerUpper = nil
 
-	var_0_0.super.DestroyGO(arg_5_0)
+	uv0.super.DestroyGO(slot0)
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,21 @@
-﻿return {
+return {
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "2023黑阿尔及利亚 特殊点燃",
+	time = 0,
+	id = 200461,
+	picture = "",
+	desc = "",
+	stack = 1,
+	color = "red",
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -43,22 +60,5 @@
 				time = 0.3
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "2023黑阿尔及利亚 特殊点燃",
-	time = 0,
-	id = 200461,
-	picture = "",
-	desc = "",
-	stack = 1,
-	color = "red",
-	last_effect = ""
+	}
 }

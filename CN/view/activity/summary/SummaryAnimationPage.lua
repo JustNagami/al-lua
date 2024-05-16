@@ -1,27 +1,25 @@
-﻿local var_0_0 = class("SummaryAnimationPage", import(".SummaryPage"))
+slot0 = class("SummaryAnimationPage", import(".SummaryPage"))
 
-function var_0_0.OnInit(arg_1_0)
+function slot0.OnInit(slot0)
 	assert(false, "must be overwrite")
 end
 
-function var_0_0.Show(arg_2_0, arg_2_1, arg_2_2)
-	arg_2_2 = arg_2_2 or arg_2_0._tf
+function slot0.Show(slot0, slot1, slot2)
+	setActive(slot0._tf, true)
 
-	setActive(arg_2_0._tf, true)
+	slot0.inAniming = true
 
-	arg_2_0.inAniming = true
+	(slot2 or slot0._tf):GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
+		uv0.inAniming = nil
 
-	arg_2_2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_3_0)
-		arg_2_0.inAniming = nil
-
-		if arg_2_1 then
-			arg_2_1()
+		if uv1 then
+			uv1()
 		end
 	end)
 end
 
-function var_0_0.inAnim(arg_4_0)
-	return arg_4_0.inAniming
+function slot0.inAnim(slot0)
+	return slot0.inAniming
 end
 
-return var_0_0
+return slot0

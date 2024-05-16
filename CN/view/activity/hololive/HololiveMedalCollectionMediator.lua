@@ -1,21 +1,21 @@
-﻿local var_0_0 = class("HololiveMedalCollectionMediator", import("view.base.ContextMediator"))
+slot0 = class("HololiveMedalCollectionMediator", import("view.base.ContextMediator"))
 
-function var_0_0.register(arg_1_0)
-	arg_1_0:BindEvent()
+function slot0.register(slot0)
+	slot0:BindEvent()
 end
 
-function var_0_0.BindEvent(arg_2_0)
-	arg_2_0:bind(ActivityMediator.ON_TASK_SUBMIT, function(arg_3_0, arg_3_1)
-		arg_2_0:sendNotification(GAME.SUBMIT_TASK, arg_3_1.id)
+function slot0.BindEvent(slot0)
+	slot0:bind(ActivityMediator.ON_TASK_SUBMIT, function (slot0, slot1)
+		uv0:sendNotification(GAME.SUBMIT_TASK, slot1.id)
 	end)
-	arg_2_0:bind(ActivityMediator.ON_TASK_GO, function(arg_4_0, arg_4_1)
-		arg_2_0:sendNotification(GAME.TASK_GO, {
-			taskVO = arg_4_1
+	slot0:bind(ActivityMediator.ON_TASK_GO, function (slot0, slot1)
+		uv0:sendNotification(GAME.TASK_GO, {
+			taskVO = slot1
 		})
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.MEMORYBOOK_UNLOCK_DONE,
 		ActivityProxy.ACTIVITY_SHOW_AWARDS,
@@ -24,23 +24,22 @@ function var_0_0.listNotificationInterests(arg_5_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == GAME.MEMORYBOOK_UNLOCK_DONE then
-		arg_6_0.viewComponent:UpdateView()
-	elseif var_6_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		arg_6_0.viewComponent:PlayStory(function()
-			arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.awards, var_6_1.callback)
+	if slot1:getName() == GAME.MEMORYBOOK_UNLOCK_DONE then
+		slot0.viewComponent:UpdateView()
+	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		slot0.viewComponent:PlayStory(function ()
+			uv0.viewComponent:emit(BaseUI.ON_ACHIEVE, uv1.awards, uv1.callback)
 		end)
-	elseif var_6_0 == GAME.SUBMIT_TASK_DONE then
-		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1, function()
-			arg_6_0.viewComponent:UpdateView()
+	elseif slot2 == GAME.SUBMIT_TASK_DONE then
+		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3, function ()
+			uv0.viewComponent:UpdateView()
 		end)
-	elseif var_6_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
-		arg_6_0.viewComponent:UpdateView()
+	elseif slot2 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		slot0.viewComponent:UpdateView()
 	end
 end
 
-return var_0_0
+return slot0

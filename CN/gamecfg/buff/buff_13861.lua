@@ -1,26 +1,4 @@
-﻿return {
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffShiftBullet",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				bullet_id = 19201,
-				index = {
-					1
-				}
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -200,5 +178,27 @@
 	stack = 1,
 	id = 13861,
 	icon = 13860,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffShiftBullet",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				bullet_id = 19201,
+				index = {
+					1
+				}
+			}
+		}
+	}
 }

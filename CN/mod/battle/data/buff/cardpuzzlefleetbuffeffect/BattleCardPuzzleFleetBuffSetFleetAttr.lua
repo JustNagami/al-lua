@@ -1,60 +1,56 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = class("BattleCardPuzzleFleetBuffSetFleetAttr", slot0.Battle.BattleFleetBuffEffect)
+slot0.Battle.BattleCardPuzzleFleetBuffSetFleetAttr = slot1
+slot1.__name = "BattleCardPuzzleFleetBuffSetFleetAttr"
+slot1.FX_TYPE = slot0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
 
-local var_0_0 = ys
-local var_0_1 = class("BattleCardPuzzleFleetBuffSetFleetAttr", var_0_0.Battle.BattleFleetBuffEffect)
+function slot1.Ctor(slot0, slot1)
+	slot0._tempData = Clone(slot1)
+	slot0._type = slot0._tempData.type
 
-var_0_0.Battle.BattleCardPuzzleFleetBuffSetFleetAttr = var_0_1
-var_0_1.__name = "BattleCardPuzzleFleetBuffSetFleetAttr"
-var_0_1.FX_TYPE = var_0_0.Battle.BattleBuffEffect.FX_TYPE_MOD_ATTR
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	arg_1_0._tempData = Clone(arg_1_1)
-	arg_1_0._type = arg_1_0._tempData.type
-
-	arg_1_0:SetActive()
+	slot0:SetActive()
 end
 
-function var_0_1.GetEffectType(arg_2_0)
-	return var_0_1.FX_TYPE
+function slot1.GetEffectType(slot0)
+	return uv0.FX_TYPE
 end
 
-function var_0_1.SetArgs(arg_3_0, arg_3_1, arg_3_2)
-	var_0_1.super.SetArgs(arg_3_0, arg_3_1, arg_3_2)
+function slot1.SetArgs(slot0, slot1, slot2)
+	uv0.super.SetArgs(slot0, slot1, slot2)
 
-	arg_3_0._group = arg_3_0._tempData.arg_list.group or arg_3_0._fleetBuff:GetID()
-	arg_3_0._attr = arg_3_0._tempData.arg_list.attr
-	arg_3_0._number = arg_3_0._tempData.arg_list.number
+	slot0._group = slot0._tempData.arg_list.group or slot0._fleetBuff:GetID()
+	slot0._attr = slot0._tempData.arg_list.attr
+	slot0._number = slot0._tempData.arg_list.number
 
-	if arg_3_0._tempData.arg_list.enhance_formula then
-		local var_3_0 = arg_3_0._tempData.arg_list.enhance_formula
-
-		arg_3_0._number = DBGformula.parseFormula(var_3_0, arg_3_1:GetAttrManager()) + arg_3_0._number
+	if slot0._tempData.arg_list.enhance_formula then
+		slot0._number = DBGformula.parseFormula(slot0._tempData.arg_list.enhance_formula, slot1:GetAttrManager()) + slot0._number
 	end
 
-	arg_3_0._cache = arg_3_0._tempData.arg_list.maintain
-	arg_3_0._numberBase = arg_3_0._number
+	slot0._cache = slot0._tempData.arg_list.maintain
+	slot0._numberBase = slot0._number
 end
 
-function var_0_1.onRemove(arg_4_0)
-	if arg_4_0._cache then
-		arg_4_0._number = 0
+function slot1.onRemove(slot0)
+	if slot0._cache then
+		slot0._number = 0
 	end
 
-	arg_4_0:onTrigger()
+	slot0:onTrigger()
 end
 
-function var_0_1.GetGroup(arg_5_0)
-	return arg_5_0._group
+function slot1.GetGroup(slot0)
+	return slot0._group
 end
 
-function var_0_1.GetNumber(arg_6_0)
-	return arg_6_0._number * arg_6_0._fleetBuff:GetStack()
+function slot1.GetNumber(slot0)
+	return slot0._number * slot0._fleetBuff:GetStack()
 end
 
-function var_0_1.IsSameAttr(arg_7_0, arg_7_1)
-	return arg_7_0._attr == arg_7_1
+function slot1.IsSameAttr(slot0, slot1)
+	return slot0._attr == slot1
 end
 
-function var_0_1.onTrigger(arg_8_0)
-	arg_8_0._cardPuzzleComponent:UpdateAttrBySet(arg_8_0._attr, arg_8_0:GetNumber())
+function slot1.onTrigger(slot0)
+	slot0._cardPuzzleComponent:UpdateAttrBySet(slot0._attr, slot0:GetNumber())
 end

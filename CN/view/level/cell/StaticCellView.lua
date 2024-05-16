@@ -1,49 +1,49 @@
-﻿local var_0_0 = class("StaticCellView", import("view.level.cell.LevelCellView"))
+slot0 = class("StaticCellView", import("view.level.cell.LevelCellView"))
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	var_0_0.super.Ctor(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	uv0.super.Ctor(slot0)
 
-	arg_1_0.parent = arg_1_1
-	arg_1_0.go = nil
-	arg_1_0.tf = nil
-	arg_1_0.info = nil
+	slot0.parent = slot1
+	slot0.go = nil
+	slot0.tf = nil
+	slot0.info = nil
 end
 
-function var_0_0.PrepareBase(arg_2_0, arg_2_1)
-	arg_2_0.go = GameObject.New(arg_2_1)
+function slot0.PrepareBase(slot0, slot1)
+	slot0.go = GameObject.New(slot1)
 
-	arg_2_0.go:AddComponent(typeof(RectTransform))
-	setParent(arg_2_0.go, arg_2_0.parent)
+	slot0.go:AddComponent(typeof(RectTransform))
+	setParent(slot0.go, slot0.parent)
 
-	arg_2_0.tf = tf(arg_2_0.go)
-	arg_2_0.tf.sizeDelta = arg_2_0.parent.sizeDelta
+	slot0.tf = tf(slot0.go)
+	slot0.tf.sizeDelta = slot0.parent.sizeDelta
 
-	arg_2_0:OverrideCanvas()
-	arg_2_0:ResetCanvasOrder()
+	slot0:OverrideCanvas()
+	slot0:ResetCanvasOrder()
 end
 
-function var_0_0.DestroyGO(arg_3_0)
-	if arg_3_0.loader then
-		arg_3_0.loader:ClearRequests()
+function slot0.DestroyGO(slot0)
+	if slot0.loader then
+		slot0.loader:ClearRequests()
 	end
 
-	if not IsNil(arg_3_0.go) then
-		Destroy(arg_3_0.go)
+	if not IsNil(slot0.go) then
+		Destroy(slot0.go)
 
-		arg_3_0.go = nil
-		arg_3_0.tf = nil
+		slot0.go = nil
+		slot0.tf = nil
 	end
 end
 
-function var_0_0.Update(arg_4_0)
+function slot0.Update(slot0)
 	assert(false, "not implemented")
 end
 
-function var_0_0.Clear(arg_5_0)
-	arg_5_0.parent = nil
-	arg_5_0.info = nil
+function slot0.Clear(slot0)
+	slot0.parent = nil
+	slot0.info = nil
 
-	arg_5_0:DestroyGO()
+	slot0:DestroyGO()
 end
 
-return var_0_0
+return slot0

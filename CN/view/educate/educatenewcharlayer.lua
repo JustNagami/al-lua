@@ -1,39 +1,37 @@
-﻿local var_0_0 = class("EducateNewCharLayer", import(".base.EducateBaseUI"))
+slot0 = class("EducateNewCharLayer", import(".base.EducateBaseUI"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "EducateNewCharUI"
 end
 
-function var_0_0.init(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:findUI()
-	arg_2_0:addListener()
+function slot0.init(slot0)
+	slot0:initData()
+	slot0:findUI()
+	slot0:addListener()
 end
 
-function var_0_0.initData(arg_3_0)
-	arg_3_0.char = getProxy(EducateProxy):GetCharData()
-	arg_3_0.defaultName = i18n("child_default_callname")
+function slot0.initData(slot0)
+	slot0.char = getProxy(EducateProxy):GetCharData()
+	slot0.defaultName = i18n("child_default_callname")
 end
 
-function var_0_0.findUI(arg_4_0)
-	arg_4_0.blurPanel = arg_4_0:findTF("bg")
-	arg_4_0.namedPanelTF = arg_4_0:findTF("named_panel")
-	arg_4_0.callInput = arg_4_0:findTF("bg/panel/input/nickname")
-	arg_4_0.sureBtn = arg_4_0:findTF("bg/panel/sure_button")
+function slot0.findUI(slot0)
+	slot0.blurPanel = slot0:findTF("bg")
+	slot0.namedPanelTF = slot0:findTF("named_panel")
+	slot0.callInput = slot0:findTF("bg/panel/input/nickname")
+	slot0.sureBtn = slot0:findTF("bg/panel/sure_button")
 
-	setText(arg_4_0:findTF("Image", arg_4_0.sureBtn), i18n("word_ok"))
-	setText(arg_4_0:findTF("Placeholder", arg_4_0.callInput), i18n("child_callname_tip"))
+	setText(slot0:findTF("Image", slot0.sureBtn), i18n("word_ok"))
+	setText(slot0:findTF("Placeholder", slot0.callInput), i18n("child_callname_tip"))
 end
 
-function var_0_0.addListener(arg_5_0)
-	onButton(arg_5_0, arg_5_0.sureBtn, function()
-		local var_6_0 = getInputText(arg_5_0.callInput)
-
-		if var_6_0 == "" then
+function slot0.addListener(slot0)
+	onButton(slot0, slot0.sureBtn, function ()
+		if getInputText(uv0.callInput) == "" then
 			return
 		end
 
-		if not nameValidityCheck(var_6_0, 4, 14, {
+		if not nameValidityCheck(slot0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -42,33 +40,30 @@ function var_0_0.addListener(arg_5_0)
 			return
 		end
 
-		arg_5_0:emit(EducateNewCharMediator.ON_SET_CALL, var_6_0)
+		uv0:emit(EducateNewCharMediator.ON_SET_CALL, slot0)
 	end, SFX_PANEL)
 end
 
-function var_0_0.didEnter(arg_7_0)
-	pg.UIMgr.GetInstance():OverlayPanelPB(arg_7_0.blurPanel, {
+function slot0.didEnter(slot0)
+	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.blurPanel, {
 		pbList = {
-			arg_7_0.blurPanel
+			slot0.blurPanel
 		},
 		groupName = LayerWeightConst.GROUP_EDUCATE,
-		weight = arg_7_0:getWeightFromData() + 1
+		weight = slot0:getWeightFromData() + 1
 	})
-	setInputText(arg_7_0.callInput, arg_7_0.defaultName)
+	setInputText(slot0.callInput, slot0.defaultName)
 end
 
-function var_0_0.onBackPressed(arg_8_0)
-	return
+function slot0.onBackPressed(slot0)
 end
 
-function var_0_0.willExit(arg_9_0)
-	local var_9_0 = arg_9_0.contextData.callback
-
-	if var_9_0 then
-		var_9_0()
+function slot0.willExit(slot0)
+	if slot0.contextData.callback then
+		slot1()
 	end
 
-	pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0.blurPanel, arg_9_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.blurPanel, slot0._tf)
 end
 
-return var_0_0
+return slot0

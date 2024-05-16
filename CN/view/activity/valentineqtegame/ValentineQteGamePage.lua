@@ -1,214 +1,198 @@
-﻿local var_0_0 = class("ValentineQteGamePage")
+slot0 = class("ValentineQteGamePage")
 
-function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg.DelegateInfo.New(arg_1_0)
+function slot0.Ctor(slot0, slot1)
+	pg.DelegateInfo.New(slot0)
 
-	arg_1_0._tf = arg_1_1
+	slot0._tf = slot1
 
-	arg_1_0:Init()
+	slot0:Init()
 end
 
-function var_0_0.Init(arg_2_0)
-	arg_2_0.root = findTF(arg_2_0._tf, "root")
-	arg_2_0.slideWay = findTF(arg_2_0._tf, "slideway")
-	arg_2_0.slider = findTF(arg_2_0._tf, "slider")
-	arg_2_0.goodArea = findTF(arg_2_0._tf, "good")
-	arg_2_0.greatArea = findTF(arg_2_0._tf, "great")
-	arg_2_0.perfectArea = findTF(arg_2_0._tf, "perfect")
-	arg_2_0.scoreTxt = findTF(arg_2_0._tf, "score/Text"):GetComponent(typeof(Text))
-	arg_2_0.comboTxt = findTF(arg_2_0._tf, "score/combo"):GetComponent(typeof(Text))
-	arg_2_0.refrigerator = findTF(arg_2_0._tf, "bg/refrigerator"):GetComponent(typeof(SpineAnimUI))
-	arg_2_0.char = findTF(arg_2_0._tf, "bg/char"):GetComponent(typeof(SpineAnimUI))
-	arg_2_0.backBtn = findTF(arg_2_0._tf, "back")
-	arg_2_0.puaseBtn = findTF(arg_2_0._tf, "pause")
-	arg_2_0.timeTxt = findTF(arg_2_0._tf, "time/Text"):GetComponent(typeof(Text))
-	arg_2_0.lineTr = findTF(arg_2_0._tf, "slideway/line")
+function slot0.Init(slot0)
+	slot0.root = findTF(slot0._tf, "root")
+	slot0.slideWay = findTF(slot0._tf, "slideway")
+	slot0.slider = findTF(slot0._tf, "slider")
+	slot0.goodArea = findTF(slot0._tf, "good")
+	slot0.greatArea = findTF(slot0._tf, "great")
+	slot0.perfectArea = findTF(slot0._tf, "perfect")
+	slot0.scoreTxt = findTF(slot0._tf, "score/Text"):GetComponent(typeof(Text))
+	slot0.comboTxt = findTF(slot0._tf, "score/combo"):GetComponent(typeof(Text))
+	slot0.refrigerator = findTF(slot0._tf, "bg/refrigerator"):GetComponent(typeof(SpineAnimUI))
+	slot0.char = findTF(slot0._tf, "bg/char"):GetComponent(typeof(SpineAnimUI))
+	slot0.backBtn = findTF(slot0._tf, "back")
+	slot0.puaseBtn = findTF(slot0._tf, "pause")
+	slot0.timeTxt = findTF(slot0._tf, "time/Text"):GetComponent(typeof(Text))
+	slot0.lineTr = findTF(slot0._tf, "slideway/line")
 
-	setActive(arg_2_0.lineTr, false)
+	setActive(slot0.lineTr, false)
 
-	arg_2_0.itemContainer = findTF(arg_2_0._tf, "items")
-	arg_2_0.effectContainer = findTF(arg_2_0._tf, "effects")
-	arg_2_0.finger = findTF(arg_2_0._tf, "finger")
-	arg_2_0.gearTr = findTF(arg_2_0._tf, "gear"):GetComponent(typeof(Image))
-	arg_2_0.gearTrPos = arg_2_0.gearTr.transform.localPosition.y
-	arg_2_0.gearSps = {
+	slot0.itemContainer = findTF(slot0._tf, "items")
+	slot0.effectContainer = findTF(slot0._tf, "effects")
+	slot0.finger = findTF(slot0._tf, "finger")
+	slot0.gearTr = findTF(slot0._tf, "gear"):GetComponent(typeof(Image))
+	slot0.gearTrPos = slot0.gearTr.transform.localPosition.y
+	slot0.gearSps = {
 		[ValentineQteGameConst.OP_SCORE_GEAR_PERFECT] = GetSpriteFromAtlas("ui/valentineqtegame_atlas", "Perfect"),
 		[ValentineQteGameConst.OP_SCORE_GEAR_GREAT] = GetSpriteFromAtlas("ui/valentineqtegame_atlas", "Great"),
 		[ValentineQteGameConst.OP_SCORE_GEAR_GOOD] = GetSpriteFromAtlas("ui/valentineqtegame_atlas", "Good"),
 		[ValentineQteGameConst.OP_SCORE_GEAR_MISS] = GetSpriteFromAtlas("ui/valentineqtegame_atlas", "Miss")
 	}
-	arg_2_0.msgBox = ValentineQteGameMsgBox.New(arg_2_0._tf:Find("msgbox"))
-	arg_2_0.itemPoolMgr = ValentineQteGamePoolMgr.New(arg_2_0._tf:Find("root/item"), 2, 4)
-	arg_2_0.resultWindow = ValentineQteGameResultWindow.New(arg_2_0._tf:Find("result_panel"))
-	arg_2_0.countDownWindow = findTF(arg_2_0._tf, "countdown")
-	arg_2_0.countDown1 = findTF(arg_2_0._tf, "countdown/1")
-	arg_2_0.countDown2 = findTF(arg_2_0._tf, "countdown/2")
-	arg_2_0.countDown3 = findTF(arg_2_0._tf, "countdown/3")
-	arg_2_0.effectPools = {}
+	slot0.msgBox = ValentineQteGameMsgBox.New(slot0._tf:Find("msgbox"))
+	slot0.itemPoolMgr = ValentineQteGamePoolMgr.New(slot0._tf:Find("root/item"), 2, 4)
+	slot0.resultWindow = ValentineQteGameResultWindow.New(slot0._tf:Find("result_panel"))
+	slot0.countDownWindow = findTF(slot0._tf, "countdown")
+	slot0.countDown1 = findTF(slot0._tf, "countdown/1")
+	slot0.countDown2 = findTF(slot0._tf, "countdown/2")
+	slot0.countDown3 = findTF(slot0._tf, "countdown/3")
+	slot0.effectPools = {}
 end
 
-function var_0_0.SetUp(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	arg_3_0.onComplete = arg_3_1
-	arg_3_0.onExist = arg_3_2
-	arg_3_0.isClick = not arg_3_3
+function slot0.SetUp(slot0, slot1, slot2, slot3)
+	slot0.onComplete = slot1
+	slot0.onExist = slot2
+	slot0.isClick = not slot3
 
-	arg_3_0:Show()
+	slot0:Show()
 end
 
-function var_0_0.Show(arg_4_0)
-	arg_4_0:UpdateFinger()
+function slot0.Show(slot0)
+	slot0:UpdateFinger()
 	parallelAsync({
-		function(arg_5_0)
-			arg_4_0:CountDown(arg_5_0)
+		function (slot0)
+			uv0:CountDown(slot0)
 		end,
-		function(arg_6_0)
+		function (slot0)
 			seriesAsync({
-				function(arg_7_0)
-					arg_4_0:LoadEffects(arg_7_0)
+				function (slot0)
+					uv0:LoadEffects(slot0)
 				end,
-				function(arg_8_0)
-					arg_4_0:InitGame(arg_8_0)
+				function (slot0)
+					uv0:InitGame(slot0)
 				end,
-				function(arg_9_0)
-					arg_4_0:Reset(arg_9_0)
+				function (slot0)
+					uv0:Reset(slot0)
 				end
-			}, arg_6_0)
+			}, slot0)
 		end
-	}, function()
-		arg_4_0:StartGame()
+	}, function ()
+		uv0:StartGame()
 	end)
 end
 
-function var_0_0.CountDown(arg_11_0, arg_11_1)
-	local function var_11_0(arg_12_0)
-		setActive(arg_11_0.countDown1, arg_12_0 == 3)
-		setActive(arg_11_0.countDown2, arg_12_0 == 2)
-		setActive(arg_11_0.countDown3, arg_12_0 == 1)
-	end
+function slot0.CountDown(slot0, slot1)
+	setActive(slot0.countDownWindow, true)
 
-	setActive(arg_11_0.countDownWindow, true)
+	slot0.countDownTimer = Timer.New(function ()
+		uv0 = uv0 + 1
 
-	local var_11_1 = 1
+		uv1(uv0)
 
-	arg_11_0.countDownTimer = Timer.New(function()
-		var_11_1 = var_11_1 + 1
-
-		var_11_0(var_11_1)
-
-		if var_11_1 == 4 then
-			setActive(arg_11_0.countDownWindow, false)
-			arg_11_1()
+		if uv0 == 4 then
+			setActive(uv2.countDownWindow, false)
+			uv3()
 		end
 	end, 1, 3)
 
-	arg_11_0.countDownTimer:Start()
-	var_11_0(var_11_1)
+	slot0.countDownTimer:Start()
+	function (slot0)
+		setActive(uv0.countDown1, slot0 == 3)
+		setActive(uv0.countDown2, slot0 == 2)
+		setActive(uv0.countDown3, slot0 == 1)
+	end(1)
 end
 
-function var_0_0.LoadEffects(arg_14_0, arg_14_1)
+function slot0.LoadEffects(slot0, slot1)
 	parallelAsync({
-		function(arg_15_0)
-			LoadAndInstantiateAsync("ui", "chufang_Prefect", function(arg_16_0)
-				SetParent(arg_16_0, arg_14_0.root)
+		function (slot0)
+			LoadAndInstantiateAsync("ui", "chufang_Prefect", function (slot0)
+				SetParent(slot0, uv0.root)
 
-				local var_16_0 = ValentineQteGamePoolMgr.New(arg_16_0, 1, 2)
+				uv0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_PERFECT] = ValentineQteGamePoolMgr.New(slot0, 1, 2)
 
-				arg_14_0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_PERFECT] = var_16_0
-
-				arg_15_0()
+				uv1()
 			end)
 		end,
-		function(arg_17_0)
-			LoadAndInstantiateAsync("ui", "chufang_Great", function(arg_18_0)
-				SetParent(arg_18_0, arg_14_0.root)
+		function (slot0)
+			LoadAndInstantiateAsync("ui", "chufang_Great", function (slot0)
+				SetParent(slot0, uv0.root)
 
-				local var_18_0 = ValentineQteGamePoolMgr.New(arg_18_0, 1, 2)
+				uv0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_GREAT] = ValentineQteGamePoolMgr.New(slot0, 1, 2)
 
-				arg_14_0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_GREAT] = var_18_0
-
-				arg_17_0()
+				uv1()
 			end)
 		end,
-		function(arg_19_0)
-			LoadAndInstantiateAsync("ui", "chufang_Good", function(arg_20_0)
-				SetParent(arg_20_0, arg_14_0.root)
+		function (slot0)
+			LoadAndInstantiateAsync("ui", "chufang_Good", function (slot0)
+				SetParent(slot0, uv0.root)
 
-				local var_20_0 = ValentineQteGamePoolMgr.New(arg_20_0, 1, 2)
+				uv0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_GOOD] = ValentineQteGamePoolMgr.New(slot0, 1, 2)
 
-				arg_14_0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_GOOD] = var_20_0
-
-				arg_19_0()
+				uv1()
 			end)
 		end,
-		function(arg_21_0)
-			LoadAndInstantiateAsync("ui", "chufang_Miss", function(arg_22_0)
-				SetParent(arg_22_0, arg_14_0.root)
+		function (slot0)
+			LoadAndInstantiateAsync("ui", "chufang_Miss", function (slot0)
+				SetParent(slot0, uv0.root)
 
-				local var_22_0 = ValentineQteGamePoolMgr.New(arg_22_0, 1, 2)
+				uv0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_MISS] = ValentineQteGamePoolMgr.New(slot0, 1, 2)
 
-				arg_14_0.effectPools[ValentineQteGameConst.OP_SCORE_GEAR_MISS] = var_22_0
-
-				arg_21_0()
+				uv1()
 			end)
 		end,
-		function(arg_23_0)
-			LoadAndInstantiateAsync("ui", "chufang_shiqu", function(arg_24_0)
-				SetParent(arg_24_0, arg_14_0.root)
+		function (slot0)
+			LoadAndInstantiateAsync("ui", "chufang_shiqu", function (slot0)
+				SetParent(slot0, uv0.root)
 
-				local var_24_0 = ValentineQteGamePoolMgr.New(arg_24_0, 1, 2)
+				uv0.pickPool = ValentineQteGamePoolMgr.New(slot0, 1, 2)
 
-				arg_14_0.pickPool = var_24_0
-
-				arg_23_0()
+				uv1()
 			end)
 		end
-	}, arg_14_1)
+	}, slot1)
 end
 
-function var_0_0.InitGame(arg_25_0, arg_25_1)
-	arg_25_0.slideWay.sizeDelta = Vector2(ValentineQteGameConst.SLIDEWAY_WIDTH, arg_25_0.slideWay.sizeDelta.y)
-	arg_25_0.slider.sizeDelta = Vector2(ValentineQteGameConst.SLIDER_WIDTH, arg_25_0.slider.sizeDelta.y)
-	arg_25_0.goodArea.sizeDelta = Vector2(ValentineQteGameConst.GOOD_WIDTH, arg_25_0.goodArea.sizeDelta.y)
-	arg_25_0.greatArea.sizeDelta = Vector2(ValentineQteGameConst.GREAT_WIDTH, arg_25_0.greatArea.sizeDelta.y)
-	arg_25_0.perfectArea.sizeDelta = Vector2(ValentineQteGameConst.PERFECT_WIDTH, arg_25_0.perfectArea.sizeDelta.y)
-	arg_25_0.scoreTxt.text = 0
-	arg_25_0.comboTxt.text = 0
-	arg_25_0.slideWay.localPosition = Vector3(0, arg_25_0.slideWay.localPosition.y, 0)
-	arg_25_0.goodArea.localPosition = Vector3(0, arg_25_0.goodArea.localPosition.y, 0)
-	arg_25_0.greatArea.localPosition = Vector3(0, arg_25_0.greatArea.localPosition.y, 0)
-	arg_25_0.perfectArea.localPosition = Vector3(0, arg_25_0.perfectArea.localPosition.y, 0)
-
-	local var_25_0 = arg_25_0.slider.sizeDelta.x * 0.5
-
-	arg_25_0.missMinPosX, arg_25_0.missMaxPosX = arg_25_0:CalcGearArea(arg_25_0.slideWay, var_25_0)
-	arg_25_0.goodMinPosX, arg_25_0.goodMaxPosX = arg_25_0:CalcGearArea(arg_25_0.goodArea, var_25_0)
-	arg_25_0.greatMinPosX, arg_25_0.greatMaxPosX = arg_25_0:CalcGearArea(arg_25_0.greatArea, var_25_0)
-	arg_25_0.prefectMinPosX, arg_25_0.prefectMaxPosX = arg_25_0:CalcGearArea(arg_25_0.perfectArea, var_25_0)
-	arg_25_0.slider.localPosition = Vector3(arg_25_0.missMinPosX, arg_25_0.slideWay.localPosition.y, 0)
-	arg_25_0.itemGenMinArea = Vector2(arg_25_0.missMinPosX - var_25_0 + 40, arg_25_0.goodMinPosX - var_25_0 - 40)
-	arg_25_0.itemGenMaxArea = Vector2(arg_25_0.goodMaxPosX + var_25_0 + 40, arg_25_0.missMaxPosX + var_25_0 - 40)
+function slot0.InitGame(slot0, slot1)
+	slot0.slideWay.sizeDelta = Vector2(ValentineQteGameConst.SLIDEWAY_WIDTH, slot0.slideWay.sizeDelta.y)
+	slot0.slider.sizeDelta = Vector2(ValentineQteGameConst.SLIDER_WIDTH, slot0.slider.sizeDelta.y)
+	slot0.goodArea.sizeDelta = Vector2(ValentineQteGameConst.GOOD_WIDTH, slot0.goodArea.sizeDelta.y)
+	slot0.greatArea.sizeDelta = Vector2(ValentineQteGameConst.GREAT_WIDTH, slot0.greatArea.sizeDelta.y)
+	slot0.perfectArea.sizeDelta = Vector2(ValentineQteGameConst.PERFECT_WIDTH, slot0.perfectArea.sizeDelta.y)
+	slot0.scoreTxt.text = 0
+	slot0.comboTxt.text = 0
+	slot0.slideWay.localPosition = Vector3(0, slot0.slideWay.localPosition.y, 0)
+	slot0.goodArea.localPosition = Vector3(0, slot0.goodArea.localPosition.y, 0)
+	slot0.greatArea.localPosition = Vector3(0, slot0.greatArea.localPosition.y, 0)
+	slot0.perfectArea.localPosition = Vector3(0, slot0.perfectArea.localPosition.y, 0)
+	slot2 = slot0.slider.sizeDelta.x * 0.5
+	slot0.missMinPosX, slot0.missMaxPosX = slot0:CalcGearArea(slot0.slideWay, slot2)
+	slot0.goodMinPosX, slot0.goodMaxPosX = slot0:CalcGearArea(slot0.goodArea, slot2)
+	slot0.greatMinPosX, slot0.greatMaxPosX = slot0:CalcGearArea(slot0.greatArea, slot2)
+	slot0.prefectMinPosX, slot0.prefectMaxPosX = slot0:CalcGearArea(slot0.perfectArea, slot2)
+	slot0.slider.localPosition = Vector3(slot0.missMinPosX, slot0.slideWay.localPosition.y, 0)
+	slot0.itemGenMinArea = Vector2(slot0.missMinPosX - slot2 + 40, slot0.goodMinPosX - slot2 - 40)
+	slot0.itemGenMaxArea = Vector2(slot0.goodMaxPosX + slot2 + 40, slot0.missMaxPosX + slot2 - 40)
 
 	if ValentineQteGameConst.DEBUG then
-		arg_25_0:InitDebugView()
+		slot0:InitDebugView()
 	end
 
-	arg_25_1()
+	slot1()
 end
 
-function var_0_0.Reset(arg_26_0, arg_26_1)
-	arg_26_0.speedX = ValentineQteGameConst.INIT_SPEED
-	arg_26_0.time = ValentineQteGameConst.GMAE_TIME
-	arg_26_0.comboCnt = 0
-	arg_26_0.score = 0
-	arg_26_0.opCdTime = 0
-	arg_26_0.elapseTimes = {}
-	arg_26_0.accelerated = 0
-	arg_26_0.items = {}
-	arg_26_0.genItemTime = 0
-	arg_26_0.gearShowTime = 0
-	arg_26_0.timers = {}
-	arg_26_0.startFlag = false
-	arg_26_0.statistics = {
+function slot0.Reset(slot0, slot1)
+	slot0.speedX = ValentineQteGameConst.INIT_SPEED
+	slot0.time = ValentineQteGameConst.GMAE_TIME
+	slot0.comboCnt = 0
+	slot0.score = 0
+	slot0.opCdTime = 0
+	slot0.elapseTimes = {}
+	slot0.accelerated = 0
+	slot0.items = {}
+	slot0.genItemTime = 0
+	slot0.gearShowTime = 0
+	slot0.timers = {}
+	slot0.startFlag = false
+	slot0.statistics = {
 		Score = 0,
 		Combo = 0,
 		Great = 0,
@@ -217,187 +201,175 @@ function var_0_0.Reset(arg_26_0, arg_26_1)
 		Miss = 0
 	}
 
-	arg_26_1()
+	slot1()
 end
 
-function var_0_0.InitDebugView(arg_27_0)
-	arg_27_0:CreateDebugLinePos("missMinPosX")
-	arg_27_0:CreateDebugLinePos("missMaxPosX")
-	arg_27_0:CreateDebugLinePos("goodMinPosX")
-	arg_27_0:CreateDebugLinePos("goodMaxPosX")
-	arg_27_0:CreateDebugLinePos("greatMinPosX")
-	arg_27_0:CreateDebugLinePos("greatMaxPosX")
-	arg_27_0:CreateDebugLinePos("prefectMinPosX")
-	arg_27_0:CreateDebugLinePos("prefectMaxPosX")
-	arg_27_0:CreateDebugArea("itemGenMinArea")
-	arg_27_0:CreateDebugArea("itemGenMaxArea")
+function slot0.InitDebugView(slot0)
+	slot0:CreateDebugLinePos("missMinPosX")
+	slot0:CreateDebugLinePos("missMaxPosX")
+	slot0:CreateDebugLinePos("goodMinPosX")
+	slot0:CreateDebugLinePos("goodMaxPosX")
+	slot0:CreateDebugLinePos("greatMinPosX")
+	slot0:CreateDebugLinePos("greatMaxPosX")
+	slot0:CreateDebugLinePos("prefectMinPosX")
+	slot0:CreateDebugLinePos("prefectMaxPosX")
+	slot0:CreateDebugArea("itemGenMinArea")
+	slot0:CreateDebugArea("itemGenMaxArea")
 end
 
-function var_0_0.CreateDebugArea(arg_28_0, arg_28_1)
-	local var_28_0 = cloneTplTo(arg_28_0.lineTr, arg_28_0.lineTr.parent, arg_28_1 .. "01")
+function slot0.CreateDebugArea(slot0, slot1)
+	slot2 = cloneTplTo(slot0.lineTr, slot0.lineTr.parent, slot1 .. "01")
+	slot2.localPosition = Vector3(slot0[slot1].x, slot2.localPosition.y, 0)
 
-	var_28_0.localPosition = Vector3(arg_28_0[arg_28_1].x, var_28_0.localPosition.y, 0)
+	setActive(slot2, true)
 
-	setActive(var_28_0, true)
+	slot3 = cloneTplTo(slot0.lineTr, slot0.lineTr.parent, slot1 .. "02")
+	slot3.localPosition = Vector3(slot0[slot1].y, slot3.localPosition.y, 0)
 
-	local var_28_1 = cloneTplTo(arg_28_0.lineTr, arg_28_0.lineTr.parent, arg_28_1 .. "02")
-
-	var_28_1.localPosition = Vector3(arg_28_0[arg_28_1].y, var_28_1.localPosition.y, 0)
-
-	setActive(var_28_1, true)
+	setActive(slot3, true)
 end
 
-function var_0_0.CreateDebugLinePos(arg_29_0, arg_29_1)
-	local var_29_0 = cloneTplTo(arg_29_0.lineTr, arg_29_0.lineTr.parent, arg_29_1)
+function slot0.CreateDebugLinePos(slot0, slot1)
+	slot2 = cloneTplTo(slot0.lineTr, slot0.lineTr.parent, slot1)
+	slot2.localPosition = Vector3(slot0[slot1], slot2.localPosition.y, 0)
 
-	var_29_0.localPosition = Vector3(arg_29_0[arg_29_1], var_29_0.localPosition.y, 0)
-
-	setActive(var_29_0, true)
+	setActive(slot2, true)
 end
 
-function var_0_0.CalcGearArea(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = -arg_30_1.sizeDelta.x * 0.5 + arg_30_2
-	local var_30_1 = arg_30_1.sizeDelta.x * 0.5 - arg_30_2
-
-	return var_30_0, var_30_1
+function slot0.CalcGearArea(slot0, slot1, slot2)
+	return -slot1.sizeDelta.x * 0.5 + slot2, slot1.sizeDelta.x * 0.5 - slot2
 end
 
-function var_0_0.StartGame(arg_31_0)
-	arg_31_0.startFlag = true
+function slot0.StartGame(slot0)
+	slot0.startFlag = true
 
-	if not arg_31_0.handle then
-		arg_31_0.handle = UpdateBeat:CreateListener(arg_31_0.UpdateGame, arg_31_0)
+	if not slot0.handle then
+		slot0.handle = UpdateBeat:CreateListener(slot0.UpdateGame, slot0)
 	end
 
-	UpdateBeat:AddListener(arg_31_0.handle)
-	arg_31_0.char:SetAction("1", 0)
-	onButton(arg_31_0, arg_31_0.puaseBtn, function()
-		if not arg_31_0.puaseGameFlag then
-			arg_31_0:PuaseGame()
-			arg_31_0.msgBox:Show({
+	UpdateBeat:AddListener(slot0.handle)
+	slot0.char:SetAction("1", 0)
+	onButton(slot0, slot0.puaseBtn, function ()
+		if not uv0.puaseGameFlag then
+			uv0:PuaseGame()
+			uv0.msgBox:Show({
 				noNo = true,
 				content = ValentineQteGameMsgBox.PAUSE_TXT,
-				onYes = function()
-					arg_31_0:ResumeGame()
+				onYes = function ()
+					uv0:ResumeGame()
 				end,
-				onNo = function()
-					arg_31_0:ResumeGame()
+				onNo = function ()
+					uv0:ResumeGame()
 				end
 			})
 		else
-			arg_31_0:ResumeGame()
+			uv0:ResumeGame()
 		end
 	end, SFX_PANEL)
-	onButton(arg_31_0, arg_31_0.backBtn, function()
-		arg_31_0:PuaseGame()
-		arg_31_0.msgBox:Show({
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:PuaseGame()
+		uv0.msgBox:Show({
 			content = ValentineQteGameMsgBox.EXIT_TXT,
-			onYes = function()
-				arg_31_0:EndGame(true)
+			onYes = function ()
+				uv0:EndGame(true)
 			end,
-			onNo = function()
-				arg_31_0:ResumeGame()
+			onNo = function ()
+				uv0:ResumeGame()
 			end
 		})
 	end, SFX_PANEL)
 
-	arg_31_0.dragDelegate = GetOrAddComponent(arg_31_0._tf, "EventTriggerListener")
+	slot0.dragDelegate = GetOrAddComponent(slot0._tf, "EventTriggerListener")
 
-	arg_31_0.dragDelegate:AddPointDownFunc(function()
-		arg_31_0.isClick = true
+	slot0.dragDelegate:AddPointDownFunc(function ()
+		uv0.isClick = true
 
-		if arg_31_0.opCdTime <= 0 and not arg_31_0.puaseGameFlag then
-			arg_31_0:Snap()
+		if uv0.opCdTime <= 0 and not uv0.puaseGameFlag then
+			uv0:Snap()
 
-			arg_31_0.opCdTime = ValentineQteGameConst.OP_INTERVAL
+			uv0.opCdTime = ValentineQteGameConst.OP_INTERVAL
 		end
 
-		arg_31_0:UpdateFinger()
+		uv0:UpdateFinger()
 	end)
 end
 
-function var_0_0.UpdateFinger(arg_39_0)
-	setActive(arg_39_0.finger, not arg_39_0.isClick)
+function slot0.UpdateFinger(slot0)
+	setActive(slot0.finger, not slot0.isClick)
 end
 
-function var_0_0.UpdateGame(arg_40_0)
-	if arg_40_0.puaseGameFlag then
+function slot0.UpdateGame(slot0)
+	if slot0.puaseGameFlag then
 		return
 	end
 
-	arg_40_0:HideGear()
-	arg_40_0:CheckDisapperItems()
-	arg_40_0:UpdateSlider()
-	arg_40_0:UpdateSpeed()
-	arg_40_0:UpdateTime()
-	arg_40_0:UpdateOpCdTime()
-	arg_40_0:CheckAndGenItem()
-	arg_40_0:CheckInteraction()
+	slot0:HideGear()
+	slot0:CheckDisapperItems()
+	slot0:UpdateSlider()
+	slot0:UpdateSpeed()
+	slot0:UpdateTime()
+	slot0:UpdateOpCdTime()
+	slot0:CheckAndGenItem()
+	slot0:CheckInteraction()
 end
 
-function var_0_0.CheckInteraction(arg_41_0)
-	local function var_41_0()
-		return arg_41_0.time <= ValentineQteGameConst.OPEN_DOOR_TIME
-	end
+function slot0.CheckInteraction(slot0)
+	if not slot0.isInteraction and function ()
+		return uv0.time <= ValentineQteGameConst.OPEN_DOOR_TIME
+	end() then
+		slot0.isInteraction = true
 
-	if not arg_41_0.isInteraction and var_41_0() then
-		arg_41_0.isInteraction = true
-
-		arg_41_0.refrigerator:SetActionCallBack(function(arg_43_0)
-			if arg_43_0 == "finish" then
-				arg_41_0.refrigerator:SetActionCallBack(nil)
-				arg_41_0.refrigerator:SetAction("3", 0)
+		slot0.refrigerator:SetActionCallBack(function (slot0)
+			if slot0 == "finish" then
+				uv0.refrigerator:SetActionCallBack(nil)
+				uv0.refrigerator:SetAction("3", 0)
 			end
 		end)
-		arg_41_0.refrigerator:SetAction("2", 0)
+		slot0.refrigerator:SetAction("2", 0)
 	end
 end
 
-function var_0_0.HideGear(arg_44_0)
-	if arg_44_0.gearShowTime <= 0 then
+function slot0.HideGear(slot0)
+	if slot0.gearShowTime <= 0 then
 		return
 	end
 
-	if arg_44_0.gearShowTime - arg_44_0.time >= ValentineQteGameConst.GEAR_SHOW_TIME then
-		arg_44_0.gearShowTime = 0
+	if ValentineQteGameConst.GEAR_SHOW_TIME <= slot0.gearShowTime - slot0.time then
+		slot0.gearShowTime = 0
 
-		setActive(arg_44_0.gearTr.gameObject, false)
+		setActive(slot0.gearTr.gameObject, false)
 	end
 end
 
-function var_0_0.CheckDisapperItems(arg_45_0)
-	for iter_45_0 = #arg_45_0.items, 1, -1 do
-		local var_45_0 = arg_45_0.items[iter_45_0]
-
-		if var_45_0:ShouldDisapper(arg_45_0.time) then
-			var_45_0:Destroy()
-			arg_45_0.itemPoolMgr:Enqueue(var_45_0._go)
-			table.remove(arg_45_0.items, iter_45_0)
+function slot0.CheckDisapperItems(slot0)
+	for slot4 = #slot0.items, 1, -1 do
+		if slot0.items[slot4]:ShouldDisapper(slot0.time) then
+			slot5:Destroy()
+			slot0.itemPoolMgr:Enqueue(slot5._go)
+			table.remove(slot0.items, slot4)
 		end
 	end
 end
 
-function var_0_0.CheckAndGenItem(arg_46_0)
-	if #arg_46_0.items >= ValentineQteGameConst.MAX_ITEM_COUNT then
+function slot0.CheckAndGenItem(slot0)
+	if ValentineQteGameConst.MAX_ITEM_COUNT <= #slot0.items then
 		return
 	end
 
-	local var_46_0 = false
+	slot1 = false
 
-	if arg_46_0.genItemTime == 0 and arg_46_0.time <= ValentineQteGameConst.GMAE_TIME - ValentineQteGameConst.GEN_ITEM_FIRST_TIME or arg_46_0.genItemTime > 0 and arg_46_0.genItemTime - arg_46_0.time > ValentineQteGameConst.GEN_ITEM_INTERVAL then
-		var_46_0 = true
+	if slot0.genItemTime == 0 and slot0.time <= ValentineQteGameConst.GMAE_TIME - ValentineQteGameConst.GEN_ITEM_FIRST_TIME or slot0.genItemTime > 0 and ValentineQteGameConst.GEN_ITEM_INTERVAL < slot0.genItemTime - slot0.time then
+		slot1 = true
 	end
 
-	if var_46_0 then
-		arg_46_0:RandomItemPosition(0)
+	if slot1 then
+		slot0:RandomItemPosition(0)
 	end
 end
 
-function var_0_0.IsVaildItemPos(arg_47_0, arg_47_1)
-	local var_47_0 = arg_47_0.slider.sizeDelta.x + 80
-
-	for iter_47_0, iter_47_1 in ipairs(arg_47_0.items) do
-		if not iter_47_1:IsSufficientLength(arg_47_1, var_47_0) then
+function slot0.IsVaildItemPos(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.items) do
+		if not slot7:IsSufficientLength(slot1, slot0.slider.sizeDelta.x + 80) then
 			return false
 		end
 	end
@@ -405,318 +377,293 @@ function var_0_0.IsVaildItemPos(arg_47_0, arg_47_1)
 	return true
 end
 
-function var_0_0.RandomItemPosition(arg_48_0, arg_48_1)
-	if arg_48_1 > 10 then
+function slot0.RandomItemPosition(slot0, slot1)
+	if slot1 > 10 then
 		return
 	end
 
-	local var_48_0 = math.random(1, 2) % 2 == 0 and arg_48_0.itemGenMinArea or arg_48_0.itemGenMaxArea
-	local var_48_1 = math.random(var_48_0.x, var_48_0.y)
+	slot3 = math.random(1, 2) % 2 == 0 and slot0.itemGenMinArea or slot0.itemGenMaxArea
 
-	if arg_48_0:IsVaildItemPos(var_48_1) then
-		arg_48_0.genItemTime = arg_48_0.time
+	if slot0:IsVaildItemPos(math.random(slot3.x, slot3.y)) then
+		slot0.genItemTime = slot0.time
+		slot5 = slot0.itemPoolMgr:Dequeue()
 
-		local var_48_2 = arg_48_0.itemPoolMgr:Dequeue()
-
-		SetParent(var_48_2, arg_48_0.itemContainer)
-
-		local var_48_3 = ValentineQteGameItem.New(var_48_2, Vector2(var_48_1, arg_48_0.slider.localPosition.y), arg_48_0.time)
-
-		table.insert(arg_48_0.items, var_48_3)
+		SetParent(slot5, slot0.itemContainer)
+		table.insert(slot0.items, ValentineQteGameItem.New(slot5, Vector2(slot4, slot0.slider.localPosition.y), slot0.time))
 	else
-		arg_48_0:RandomItemPosition(arg_48_1 + 1)
+		slot0:RandomItemPosition(slot1 + 1)
 	end
 end
 
-function var_0_0.UpdateSlider(arg_49_0)
-	local var_49_0 = arg_49_0.slider.localPosition
-
-	if var_49_0.x == arg_49_0.missMinPosX or var_49_0.x == arg_49_0.missMaxPosX then
-		arg_49_0.speedX = -arg_49_0.speedX
+function slot0.UpdateSlider(slot0)
+	if slot0.slider.localPosition.x == slot0.missMinPosX or slot1.x == slot0.missMaxPosX then
+		slot0.speedX = -slot0.speedX
 	end
 
-	local var_49_1 = math.clamp(var_49_0.x + arg_49_0.speedX * Time.deltaTime, arg_49_0.missMinPosX, arg_49_0.missMaxPosX)
-
-	arg_49_0.slider.localPosition = Vector3(var_49_1, var_49_0.y, 0)
+	slot0.slider.localPosition = Vector3(math.clamp(slot1.x + slot0.speedX * Time.deltaTime, slot0.missMinPosX, slot0.missMaxPosX), slot1.y, 0)
 end
 
-function var_0_0.UpdateTime(arg_50_0)
-	arg_50_0.time = arg_50_0.time - Time.deltaTime
+function slot0.UpdateTime(slot0)
+	slot0.time = slot0.time - Time.deltaTime
 
-	if arg_50_0.time <= 0 then
-		arg_50_0:EndGame(true)
+	if slot0.time <= 0 then
+		slot0:EndGame(true)
 	end
 
-	arg_50_0:UpdateTimeText(arg_50_0.time)
+	slot0:UpdateTimeText(slot0.time)
 end
 
-function var_0_0.UpdateSpeed(arg_51_0)
-	local var_51_0 = math.floor(math.ceil(ValentineQteGameConst.GMAE_TIME - arg_51_0.time) / 5)
+function slot0.UpdateSpeed(slot0)
+	if math.floor(math.ceil(ValentineQteGameConst.GMAE_TIME - slot0.time) / 5) > 0 and not slot0.elapseTimes[slot1] and slot0.accelerated + ValentineQteGameConst.INIT_SPEED < ValentineQteGameConst.MAX_SPEED then
+		slot0.elapseTimes[slot1] = true
+		slot0.accelerated = slot0.accelerated + ValentineQteGameConst.SPEED_UP
 
-	if var_51_0 > 0 and not arg_51_0.elapseTimes[var_51_0] and arg_51_0.accelerated + ValentineQteGameConst.INIT_SPEED < ValentineQteGameConst.MAX_SPEED then
-		arg_51_0.elapseTimes[var_51_0] = true
-		arg_51_0.accelerated = arg_51_0.accelerated + ValentineQteGameConst.SPEED_UP
-
-		if arg_51_0.speedX < 0 then
-			arg_51_0.speedX = arg_51_0.speedX - arg_51_0.accelerated
+		if slot0.speedX < 0 then
+			slot0.speedX = slot0.speedX - slot0.accelerated
 		else
-			arg_51_0.speedX = arg_51_0.speedX + arg_51_0.accelerated
+			slot0.speedX = slot0.speedX + slot0.accelerated
 		end
 	end
 end
 
-function var_0_0.UpdateOpCdTime(arg_52_0)
-	if arg_52_0.opCdTime > 0 then
-		arg_52_0.opCdTime = math.max(0, arg_52_0.opCdTime - Time.deltaTime)
+function slot0.UpdateOpCdTime(slot0)
+	if slot0.opCdTime > 0 then
+		slot0.opCdTime = math.max(0, slot0.opCdTime - Time.deltaTime)
 	end
 end
 
-function var_0_0.Snap(arg_53_0)
-	local var_53_0 = arg_53_0.slider.localPosition.x
-	local var_53_1 = arg_53_0:GetScoreGear(var_53_0)
-	local var_53_2 = {}
-	local var_53_3 = false
+function slot0.Snap(slot0)
+	slot3 = {}
+	slot4 = false
 
-	if var_53_1 == ValentineQteGameConst.OP_SCORE_GEAR_GREAT then
-		arg_53_0.comboCnt = arg_53_0.comboCnt + 1
-		arg_53_0.statistics.Great = arg_53_0.statistics.Great + 1
-	elseif var_53_1 == ValentineQteGameConst.OP_SCORE_GEAR_PERFECT then
-		arg_53_0.comboCnt = arg_53_0.comboCnt + 1
-		arg_53_0.statistics.Perfect = arg_53_0.statistics.Perfect + 1
-	elseif arg_53_0:CanPickItem(var_53_0, var_53_2) then
-		arg_53_0.comboCnt = arg_53_0.comboCnt + 1
-		var_53_1 = ValentineQteGameConst.OP_SCORE_GEAR_PERFECT
-		arg_53_0.statistics.Perfect = arg_53_0.statistics.Perfect + 1
+	if slot0:GetScoreGear(slot0.slider.localPosition.x) == ValentineQteGameConst.OP_SCORE_GEAR_GREAT then
+		slot0.comboCnt = slot0.comboCnt + 1
+		slot0.statistics.Great = slot0.statistics.Great + 1
+	elseif slot2 == ValentineQteGameConst.OP_SCORE_GEAR_PERFECT then
+		slot0.comboCnt = slot0.comboCnt + 1
+		slot0.statistics.Perfect = slot0.statistics.Perfect + 1
+	elseif slot0:CanPickItem(slot1, slot3) then
+		slot0.comboCnt = slot0.comboCnt + 1
+		slot2 = ValentineQteGameConst.OP_SCORE_GEAR_PERFECT
+		slot0.statistics.Perfect = slot0.statistics.Perfect + 1
 
-		arg_53_0:PickItems(var_53_2)
+		slot0:PickItems(slot3)
 
-		var_53_3 = true
-	elseif var_53_1 == ValentineQteGameConst.OP_SCORE_GEAR_MISS then
-		arg_53_0.comboCnt = 0
-		arg_53_0.statistics.Miss = arg_53_0.statistics.Miss + 1
-	elseif var_53_1 == ValentineQteGameConst.OP_SCORE_GEAR_GOOD then
-		arg_53_0.comboCnt = 0
-		arg_53_0.statistics.Good = arg_53_0.statistics.Good + 1
+		slot4 = true
+	elseif slot2 == ValentineQteGameConst.OP_SCORE_GEAR_MISS then
+		slot0.comboCnt = 0
+		slot0.statistics.Miss = slot0.statistics.Miss + 1
+	elseif slot2 == ValentineQteGameConst.OP_SCORE_GEAR_GOOD then
+		slot0.comboCnt = 0
+		slot0.statistics.Good = slot0.statistics.Good + 1
 	end
 
-	local var_53_4 = arg_53_0:GetScore(var_53_1, arg_53_0.comboCnt)
+	slot0.score = slot0.score + slot0:GetScore(slot2, slot0.comboCnt)
 
-	arg_53_0.score = arg_53_0.score + var_53_4
+	slot0:UpdateScoreText(slot0.score)
+	slot0:UpdateComboText(slot0.comboCnt)
 
-	arg_53_0:UpdateScoreText(arg_53_0.score)
-	arg_53_0:UpdateComboText(arg_53_0.comboCnt)
-
-	if arg_53_0.comboCnt > arg_53_0.statistics.Combo then
-		arg_53_0.statistics.Combo = arg_53_0.comboCnt
+	if slot0.statistics.Combo < slot0.comboCnt then
+		slot0.statistics.Combo = slot0.comboCnt
 	end
 
-	arg_53_0:UpdateGear(var_53_1, var_53_3)
+	slot0:UpdateGear(slot2, slot4)
 end
 
-function var_0_0.UpdateGear(arg_54_0, arg_54_1, arg_54_2)
-	if LeanTween.isTweening(arg_54_0.gearTr.gameObject) then
-		LeanTween.cancel(arg_54_0.gearTr.gameObject)
+function slot0.UpdateGear(slot0, slot1, slot2)
+	if LeanTween.isTweening(slot0.gearTr.gameObject) then
+		LeanTween.cancel(slot0.gearTr.gameObject)
 	end
 
-	arg_54_0.gearTr.sprite = arg_54_0.gearSps[arg_54_1]
+	slot0.gearTr.sprite = slot0.gearSps[slot1]
 
-	arg_54_0.gearTr:SetNativeSize()
+	slot0.gearTr:SetNativeSize()
 
-	arg_54_0.gearShowTime = arg_54_0.time
+	slot0.gearShowTime = slot0.time
 
-	setActive(arg_54_0.gearTr.gameObject, true)
+	setActive(slot0.gearTr.gameObject, true)
 
-	if arg_54_2 then
-		setActive(arg_54_0.gearTr.gameObject, false)
-		arg_54_0:GenEffect(ValentineQteGameConst.OP_SCORE_GEAR_GREAT)
-		arg_54_0:PlaySound(ValentineQteGameConst.SOUND_PICK_ITEM)
+	if slot2 then
+		setActive(slot0.gearTr.gameObject, false)
+		slot0:GenEffect(ValentineQteGameConst.OP_SCORE_GEAR_GREAT)
+		slot0:PlaySound(ValentineQteGameConst.SOUND_PICK_ITEM)
 	else
-		arg_54_0:GenEffect(arg_54_1)
-		arg_54_0:GearAnim()
-		arg_54_0:PlaySound(ValentineQteGameConst.GEAR_SOUND[arg_54_1])
+		slot0:GenEffect(slot1)
+		slot0:GearAnim()
+		slot0:PlaySound(ValentineQteGameConst.GEAR_SOUND[slot1])
 	end
 end
 
-function var_0_0.PlaySound(arg_55_0, arg_55_1)
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_55_1)
+function slot0.PlaySound(slot0, slot1)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot1)
 end
 
-function var_0_0.GearAnim(arg_56_0)
-	arg_56_0.gearTr.gameObject.transform.localPosition = Vector3(arg_56_0.gearTr.gameObject.transform.localPosition.x, arg_56_0.gearTrPos, 0)
+function slot0.GearAnim(slot0)
+	slot0.gearTr.gameObject.transform.localPosition = Vector3(slot0.gearTr.gameObject.transform.localPosition.x, slot0.gearTrPos, 0)
 
-	LeanTween.value(arg_56_0.gearTr.gameObject, arg_56_0.gearTrPos, arg_56_0.gearTrPos + 50, 0.3):setOnUpdate(System.Action_float(function(arg_57_0)
-		arg_56_0.gearTr.gameObject.transform.localPosition = Vector3(arg_56_0.gearTr.gameObject.transform.localPosition.x, arg_57_0, 0)
-	end)):setOnComplete(System.Action(function()
-		setActive(arg_56_0.gearTr.gameObject, false)
+	LeanTween.value(slot0.gearTr.gameObject, slot0.gearTrPos, slot0.gearTrPos + 50, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0.gearTr.gameObject.transform.localPosition = Vector3(uv0.gearTr.gameObject.transform.localPosition.x, slot0, 0)
+	end)):setOnComplete(System.Action(function ()
+		setActive(uv0.gearTr.gameObject, false)
 	end))
 end
 
-function var_0_0.GenEffect(arg_59_0, arg_59_1)
-	local var_59_0 = arg_59_0.effectPools[arg_59_1]
-	local var_59_1 = var_59_0:Dequeue()
+function slot0.GenEffect(slot0, slot1)
+	slot3 = slot0.effectPools[slot1]:Dequeue()
 
-	SetParent(var_59_1, arg_59_0.effectContainer)
+	SetParent(slot3, slot0.effectContainer)
 
-	var_59_1.transform.localPosition = Vector3(arg_59_0.slider.localPosition.x, arg_59_0.slider.localPosition.y, -100)
-
-	local var_59_2 = Timer.New(function()
-		var_59_0:Enqueue(var_59_1)
+	slot3.transform.localPosition = Vector3(slot0.slider.localPosition.x, slot0.slider.localPosition.y, -100)
+	slot4 = Timer.New(function ()
+		uv0:Enqueue(uv1)
 	end, 2, 1)
 
-	var_59_2:Start()
-	table.insert(arg_59_0.timers, var_59_2)
+	slot4:Start()
+	table.insert(slot0.timers, slot4)
 end
 
-function var_0_0.CanPickItem(arg_61_0, arg_61_1, arg_61_2)
-	for iter_61_0, iter_61_1 in ipairs(arg_61_0.items) do
-		if iter_61_1:IsOverlap(arg_61_0.slider) then
-			table.insert(arg_61_2, iter_61_1)
+function slot0.CanPickItem(slot0, slot1, slot2)
+	for slot6, slot7 in ipairs(slot0.items) do
+		if slot7:IsOverlap(slot0.slider) then
+			table.insert(slot2, slot7)
 		end
 	end
 
-	return #arg_61_2 > 0
+	return #slot2 > 0
 end
 
-function var_0_0.PickItems(arg_62_0, arg_62_1)
-	for iter_62_0, iter_62_1 in ipairs(arg_62_1) do
-		arg_62_0:PlayPickAnim(iter_62_1, function()
-			iter_62_1:Destroy()
-			arg_62_0.itemPoolMgr:Enqueue(iter_62_1._tf)
+function slot0.PickItems(slot0, slot1)
+	for slot5, slot6 in ipairs(slot1) do
+		slot0:PlayPickAnim(slot6, function ()
+			uv0:Destroy()
+			uv1.itemPoolMgr:Enqueue(uv0._tf)
 		end)
-		table.removebyvalue(arg_62_0.items, iter_62_1)
+		table.removebyvalue(slot0.items, slot6)
 	end
 end
 
-function var_0_0.PlayPickAnim(arg_64_0, arg_64_1, arg_64_2)
-	local var_64_0 = arg_64_1._tf.localPosition.y
+function slot0.PlayPickAnim(slot0, slot1, slot2)
+	slot3 = slot1._tf.localPosition.y
 
-	LeanTween.value(arg_64_1._go, var_64_0, var_64_0 + 70, 0.3):setOnUpdate(System.Action_float(function(arg_65_0)
-		arg_64_1._tf.localPosition = Vector3(arg_64_1._tf.localPosition.x, arg_65_0, 0)
-	end)):setOnComplete(System.Action(function()
-		local var_66_0 = arg_64_0.pickPool:Dequeue()
+	LeanTween.value(slot1._go, slot3, slot3 + 70, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0._tf.localPosition = Vector3(uv0._tf.localPosition.x, slot0, 0)
+	end)):setOnComplete(System.Action(function ()
+		slot0 = uv0.pickPool:Dequeue()
 
-		SetParent(var_66_0, arg_64_0.effectContainer)
+		SetParent(slot0, uv0.effectContainer)
 
-		var_66_0.transform.localPosition = Vector3(arg_64_1._tf.localPosition.x, arg_64_1._tf.localPosition.y, -100)
-
-		local var_66_1 = Timer.New(function()
-			arg_64_0.pickPool:Enqueue(var_66_0)
+		slot0.transform.localPosition = Vector3(uv1._tf.localPosition.x, uv1._tf.localPosition.y, -100)
+		slot1 = Timer.New(function ()
+			uv0.pickPool:Enqueue(uv1)
 		end, 2, 1)
 
-		var_66_1:Start()
-		table.insert(arg_64_0.timers, var_66_1)
-		arg_64_2()
+		slot1:Start()
+		table.insert(uv0.timers, slot1)
+		uv2()
 	end))
 end
 
-function var_0_0.UpdateTimeText(arg_68_0, arg_68_1)
-	local var_68_0 = math.ceil(arg_68_1)
-
-	if var_68_0 <= 0 then
-		arg_68_0.timeTxt.text = "0"
+function slot0.UpdateTimeText(slot0, slot1)
+	if math.ceil(slot1) <= 0 then
+		slot0.timeTxt.text = "0"
 	else
-		arg_68_0.timeTxt.text = math.max(0, var_68_0)
+		slot0.timeTxt.text = math.max(0, slot2)
 	end
 end
 
-function var_0_0.UpdateScoreText(arg_69_0, arg_69_1)
-	arg_69_0.scoreTxt.text = arg_69_1
+function slot0.UpdateScoreText(slot0, slot1)
+	slot0.scoreTxt.text = slot1
 end
 
-function var_0_0.UpdateComboText(arg_70_0, arg_70_1)
-	arg_70_0.comboTxt.text = arg_70_1
+function slot0.UpdateComboText(slot0, slot1)
+	slot0.comboTxt.text = slot1
 end
 
-function var_0_0.GetScoreGear(arg_71_0, arg_71_1)
-	if arg_71_1 >= arg_71_0.prefectMinPosX and arg_71_1 <= arg_71_0.prefectMaxPosX then
+function slot0.GetScoreGear(slot0, slot1)
+	if slot0.prefectMinPosX <= slot1 and slot1 <= slot0.prefectMaxPosX then
 		return ValentineQteGameConst.OP_SCORE_GEAR_PERFECT
 	end
 
-	if arg_71_1 >= arg_71_0.greatMinPosX and arg_71_1 <= arg_71_0.greatMaxPosX then
+	if slot0.greatMinPosX <= slot1 and slot1 <= slot0.greatMaxPosX then
 		return ValentineQteGameConst.OP_SCORE_GEAR_GREAT
 	end
 
-	if arg_71_1 >= arg_71_0.goodMinPosX and arg_71_1 <= arg_71_0.goodMaxPosX then
+	if slot0.goodMinPosX <= slot1 and slot1 <= slot0.goodMaxPosX then
 		return ValentineQteGameConst.OP_SCORE_GEAR_GOOD
 	end
 
 	return ValentineQteGameConst.OP_SCORE_GEAR_MISS
 end
 
-function var_0_0.GetScore(arg_72_0, arg_72_1, arg_72_2)
-	local var_72_0 = ValentineQteGameConst.OP_SCORE[arg_72_1]
-	local var_72_1 = ValentineQteGameConst.BASE_OP_SCORE * var_72_0
-	local var_72_2 = 0
+function slot0.GetScore(slot0, slot1, slot2)
+	slot4 = ValentineQteGameConst.BASE_OP_SCORE * ValentineQteGameConst.OP_SCORE[slot1]
+	slot5 = 0
 
-	for iter_72_0, iter_72_1 in ipairs(ValentineQteGameConst.COMBO_EXTRA_SCORE_RATIO) do
-		local var_72_3 = iter_72_1[1]
-		local var_72_4 = iter_72_1[2]
-		local var_72_5 = iter_72_1[3]
-
-		if var_72_3 <= arg_72_2 and arg_72_2 <= var_72_4 then
-			var_72_2 = var_72_5
+	for slot9, slot10 in ipairs(ValentineQteGameConst.COMBO_EXTRA_SCORE_RATIO) do
+		if slot10[1] <= slot2 and slot2 <= slot10[2] then
+			slot5 = slot10[3]
 
 			break
 		end
 	end
 
-	return var_72_1 + ValentineQteGameConst.BASE_OP_SCORE * var_72_2 * 0.01
+	return slot4 + ValentineQteGameConst.BASE_OP_SCORE * slot5 * 0.01
 end
 
-function var_0_0.PuaseGame(arg_73_0)
-	arg_73_0.puaseGameFlag = true
+function slot0.PuaseGame(slot0)
+	slot0.puaseGameFlag = true
 
-	arg_73_0.char:Pause()
+	slot0.char:Pause()
 end
 
-function var_0_0.ResumeGame(arg_74_0)
-	arg_74_0.puaseGameFlag = false
+function slot0.ResumeGame(slot0)
+	slot0.puaseGameFlag = false
 
-	arg_74_0.char:Resume()
+	slot0.char:Resume()
 end
 
-function var_0_0.EndGame(arg_75_0, arg_75_1)
-	if arg_75_0.handle then
-		UpdateBeat:RemoveListener(arg_75_0.handle)
+function slot0.EndGame(slot0, slot1)
+	if slot0.handle then
+		UpdateBeat:RemoveListener(slot0.handle)
 	end
 
-	ClearEventTrigger(arg_75_0.dragDelegate)
-	removeOnButton(arg_75_0.puaseBtn)
+	ClearEventTrigger(slot0.dragDelegate)
+	removeOnButton(slot0.puaseBtn)
 
-	if arg_75_1 then
-		arg_75_0.statistics.Score = arg_75_0.score
+	if slot1 then
+		slot0.statistics.Score = slot0.score
 
-		arg_75_0.resultWindow:Show(arg_75_0.statistics, function()
-			arg_75_0:Destroy()
+		slot0.resultWindow:Show(slot0.statistics, function ()
+			uv0:Destroy()
 		end)
 	end
 
-	if arg_75_0.onComplete and arg_75_1 then
-		arg_75_0.onComplete()
+	if slot0.onComplete and slot1 then
+		slot0.onComplete()
 	end
 
-	arg_75_0.onComplete = nil
+	slot0.onComplete = nil
 end
 
-function var_0_0.ExitGame(arg_77_0)
-	arg_77_0:EndGame(false)
+function slot0.ExitGame(slot0)
+	slot0:EndGame(false)
 
-	if arg_77_0.onExist then
-		arg_77_0.onExist()
+	if slot0.onExist then
+		slot0.onExist()
 
-		arg_77_0.onExist = nil
+		slot0.onExist = nil
 	end
 end
 
-function var_0_0.onBackPressed(arg_78_0)
-	if arg_78_0.startFlag and not arg_78_0.puaseGameFlag then
-		triggerButton(arg_78_0.puaseBtn)
+function slot0.onBackPressed(slot0)
+	if slot0.startFlag and not slot0.puaseGameFlag then
+		triggerButton(slot0.puaseBtn)
 
 		return true
 	end
 
-	if isActive(arg_78_0.msgBox._tf) then
-		triggerButton(arg_78_0.msgBox.cancelBtn)
+	if isActive(slot0.msgBox._tf) then
+		triggerButton(slot0.msgBox.cancelBtn)
 
 		return true
 	end
@@ -724,53 +671,53 @@ function var_0_0.onBackPressed(arg_78_0)
 	return false
 end
 
-function var_0_0.Destroy(arg_79_0)
-	if arg_79_0.countDownTimer then
-		arg_79_0.countDownTimer:Stop()
+function slot0.Destroy(slot0)
+	if slot0.countDownTimer then
+		slot0.countDownTimer:Stop()
 
-		arg_79_0.countDownTimer = nil
+		slot0.countDownTimer = nil
 	end
 
-	if LeanTween.isTweening(arg_79_0.gearTr.gameObject) then
-		LeanTween.cancel(arg_79_0.gearTr.gameObject)
+	if LeanTween.isTweening(slot0.gearTr.gameObject) then
+		LeanTween.cancel(slot0.gearTr.gameObject)
 	end
 
-	for iter_79_0, iter_79_1 in ipairs(arg_79_0.timers) do
-		iter_79_1:Stop()
+	for slot4, slot5 in ipairs(slot0.timers) do
+		slot5:Stop()
 	end
 
-	arg_79_0.timers = nil
+	slot0.timers = nil
 
-	for iter_79_2, iter_79_3 in pairs(arg_79_0.effectPools) do
-		iter_79_3:Destroy()
+	for slot4, slot5 in pairs(slot0.effectPools) do
+		slot5:Destroy()
 	end
 
-	arg_79_0.effectPools = nil
+	slot0.effectPools = nil
 
-	arg_79_0.refrigerator:SetActionCallBack(nil)
+	slot0.refrigerator:SetActionCallBack(nil)
 
-	if arg_79_0.msgBox then
-		arg_79_0.msgBox:Destroy()
+	if slot0.msgBox then
+		slot0.msgBox:Destroy()
 
-		arg_79_0.msgBox = nil
+		slot0.msgBox = nil
 	end
 
-	if arg_79_0.resultWindow then
-		arg_79_0.resultWindow:Destroy()
+	if slot0.resultWindow then
+		slot0.resultWindow:Destroy()
 
-		arg_79_0.resultWindow = nil
+		slot0.resultWindow = nil
 	end
 
-	arg_79_0:ExitGame()
-	pg.DelegateInfo.Dispose(arg_79_0)
+	slot0:ExitGame()
+	pg.DelegateInfo.Dispose(slot0)
 
-	if arg_79_0.itemPoolMgr then
-		arg_79_0.itemPoolMgr:Destroy()
+	if slot0.itemPoolMgr then
+		slot0.itemPoolMgr:Destroy()
 
-		arg_79_0.itemPoolMgr = nil
+		slot0.itemPoolMgr = nil
 	end
 
-	arg_79_0.gearSps = nil
+	slot0.gearSps = nil
 end
 
-return var_0_0
+return slot0

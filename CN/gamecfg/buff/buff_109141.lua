@@ -1,33 +1,4 @@
-﻿return {
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_1_ITEMHIT",
-				number = -0.01
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "DMG_FROM_TAG_2_ITEMHIT",
-				number = -0.01
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -277,5 +248,34 @@
 	stack = 1,
 	id = 109141,
 	icon = 109140,
-	last_effect = ""
+	last_effect = "",
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_1_ITEMHIT",
+				number = -0.01
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "DMG_FROM_TAG_2_ITEMHIT",
+				number = -0.01
+			}
+		}
+	}
 }

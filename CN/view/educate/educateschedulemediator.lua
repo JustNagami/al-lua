@@ -1,40 +1,37 @@
-﻿local var_0_0 = class("EducateScheduleMediator", import(".base.EducateContextMediator"))
+slot0 = class("EducateScheduleMediator", import(".base.EducateContextMediator"))
+slot0.GET_PLANS = "GET_PLANS"
+slot0.OPEN_FILTER_LAYER = "OPEN_FILTER_LAYER"
 
-var_0_0.GET_PLANS = "GET_PLANS"
-var_0_0.OPEN_FILTER_LAYER = "OPEN_FILTER_LAYER"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:bind(var_0_0.GET_PLANS, function(arg_2_0, arg_2_1)
-		arg_1_0:sendNotification(GAME.EDUCATE_GET_PLANS, {
-			plans = EducatePlanProxy.GridData2ProtData(arg_2_1.gridData),
-			isSkip = arg_2_1.isSkip,
-			callback = function()
-				return
+function slot0.register(slot0)
+	slot0:bind(uv0.GET_PLANS, function (slot0, slot1)
+		uv0:sendNotification(GAME.EDUCATE_GET_PLANS, {
+			plans = EducatePlanProxy.GridData2ProtData(slot1.gridData),
+			isSkip = slot1.isSkip,
+			callback = function ()
 			end
 		})
 	end)
-	arg_1_0:bind(var_0_0.OPEN_FILTER_LAYER, function(arg_4_0, arg_4_1)
-		arg_1_0:addSubLayers(Context.New({
+	slot0:bind(uv0.OPEN_FILTER_LAYER, function (slot0, slot1)
+		uv0:addSubLayers(Context.New({
 			viewComponent = EducateScheduleFilterLayer,
 			mediator = EducateScheduleFilterMediator,
-			data = arg_4_1
+			data = slot1
 		}))
 	end)
 end
 
-function var_0_0.listNotificationInterests(arg_5_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.EDUCATE_REFRESH_DONE
 	}
 end
 
-function var_0_0.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	slot3 = slot1:getBody()
 
-	if var_6_0 == GAME.EDUCATE_REFRESH_DONE then
-		arg_6_0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
+	if slot1:getName() == GAME.EDUCATE_REFRESH_DONE then
+		slot0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
 	end
 end
 
-return var_0_0
+return slot0

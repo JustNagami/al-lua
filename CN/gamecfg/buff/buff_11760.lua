@@ -1,17 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAirAssistReady"
-			},
-			arg_list = {
-				quota = 2,
-				target = "TargetSelf",
-				skill_id = 11761
-			}
-		}
-	},
+return {
 	{},
 	{},
 	{},
@@ -32,5 +19,18 @@
 	stack = 1,
 	id = 11760,
 	icon = 11760,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAirAssistReady"
+			},
+			arg_list = {
+				quota = 2,
+				target = "TargetSelf",
+				skill_id = 11761
+			}
+		}
+	}
 }

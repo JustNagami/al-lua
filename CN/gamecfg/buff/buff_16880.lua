@@ -1,41 +1,4 @@
-﻿return {
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 16880,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 16882,
-				target = {
-					"TargetAllHelp",
-					"TargetNationality"
-				},
-				nationality = {
-					8,
-					9
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				skill_id = 16881,
-				time = 40
-			}
-		}
-	},
+return {
 	{
 		effect_list = {
 			{
@@ -435,5 +398,42 @@
 	stack = 1,
 	id = 16880,
 	icon = 16880,
-	last_effect = ""
+	last_effect = "",
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 16880,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 16882,
+				target = {
+					"TargetAllHelp",
+					"TargetNationality"
+				},
+				nationality = {
+					8,
+					9
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				skill_id = 16881,
+				time = 40
+			}
+		}
+	}
 }

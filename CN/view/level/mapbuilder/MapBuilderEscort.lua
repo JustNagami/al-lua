@@ -1,149 +1,127 @@
-﻿local var_0_0 = import(".MapBuilder")
-local var_0_1 = class("MapBuilderEscort", var_0_0)
+slot1 = class("MapBuilderEscort", import(".MapBuilder"))
 
-function var_0_1.GetType(arg_1_0)
-	return var_0_0.TYPEESCORT
+function slot1.GetType(slot0)
+	return uv0.TYPEESCORT
 end
 
-function var_0_1.getUIName(arg_2_0)
+function slot1.getUIName(slot0)
 	return "escort_levels"
 end
 
-function var_0_1.OnInit(arg_3_0)
-	arg_3_0.tpl = arg_3_0._tf:Find("escort_level_tpl")
-	arg_3_0.itemHolder = arg_3_0._tf:Find("items")
+function slot1.OnInit(slot0)
+	slot0.tpl = slot0._tf:Find("escort_level_tpl")
+	slot0.itemHolder = slot0._tf:Find("items")
 end
 
-function var_0_1.Update(arg_4_0, arg_4_1)
-	arg_4_0.map.pivot = Vector2(0.5, 0.5)
-	arg_4_0.float.pivot = Vector2(0.5, 0.5)
+function slot1.Update(slot0, slot1)
+	slot0.map.pivot = Vector2(0.5, 0.5)
+	slot0.float.pivot = Vector2(0.5, 0.5)
+	slot4 = 1
 
-	local var_4_0 = arg_4_0.map.rect.width / arg_4_0.map.rect.height
-	local var_4_1 = arg_4_0._parentTf.rect.width / arg_4_0._parentTf.rect.height
-	local var_4_2 = 1
-
-	if var_4_0 < var_4_1 then
-		var_4_2 = arg_4_0._parentTf.rect.width / 1280
-		arg_4_0._tf.localScale = Vector3(var_4_2, var_4_2, 1)
+	if slot0.map.rect.width / slot0.map.rect.height < slot0._parentTf.rect.width / slot0._parentTf.rect.height then
+		slot4 = slot0._parentTf.rect.width / 1280
+		slot0._tf.localScale = Vector3(slot4, slot4, 1)
 	else
-		var_4_2 = arg_4_0._parentTf.rect.height / 720
-		arg_4_0._tf.localScale = Vector3(var_4_2, var_4_2, 1)
+		slot4 = slot0._parentTf.rect.height / 720
+		slot0._tf.localScale = Vector3(slot4, slot4, 1)
 	end
 
-	arg_4_0.scaleRatio = var_4_2
+	slot0.scaleRatio = slot4
 
-	local var_4_3 = string.split(arg_4_1:getConfig("name"), "||")
-
-	setText(arg_4_0.sceneParent.chapterName, var_4_3[1])
-	arg_4_0.sceneParent.loader:GetSprite("chapterno", "chapterex", arg_4_0.sceneParent.chapterNoTitle, true)
-	var_0_1.super.Update(arg_4_0, arg_4_1)
+	setText(slot0.sceneParent.chapterName, string.split(slot1:getConfig("name"), "||")[1])
+	slot0.sceneParent.loader:GetSprite("chapterno", "chapterex", slot0.sceneParent.chapterNoTitle, true)
+	uv0.super.Update(slot0, slot1)
 end
 
-function var_0_1.UpdateButtons(arg_5_0)
-	arg_5_0.sceneParent:updateDifficultyBtns()
-	arg_5_0.sceneParent:updateActivityBtns()
+function slot1.UpdateButtons(slot0)
+	slot0.sceneParent:updateDifficultyBtns()
+	slot0.sceneParent:updateActivityBtns()
 end
 
-function var_0_1.UpdateEscortInfo(arg_6_0)
-	local var_6_0 = getProxy(ChapterProxy)
-	local var_6_1 = var_6_0:getMaxEscortChallengeTimes()
+function slot1.UpdateEscortInfo(slot0)
+	slot1 = getProxy(ChapterProxy)
+	slot2 = slot1:getMaxEscortChallengeTimes()
 
-	setText(arg_6_0.sceneParent.escortBar:Find("times/text"), var_6_1 - var_6_0.escortChallengeTimes .. "/" .. var_6_1)
-	onButton(arg_6_0.sceneParent, arg_6_0.sceneParent.mapHelpBtn, function()
-		arg_6_0:InvokeParent("HandleShowMsgBox", {
+	setText(slot0.sceneParent.escortBar:Find("times/text"), slot2 - slot1.escortChallengeTimes .. "/" .. slot2)
+	onButton(slot0.sceneParent, slot0.sceneParent.mapHelpBtn, function ()
+		uv0:InvokeParent("HandleShowMsgBox", {
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("levelScene_escort_help_tip")
 		})
 	end, SFX_PANEL)
 end
 
-function var_0_1.UpdateMapItems(arg_8_0)
-	var_0_1.super.UpdateMapItems(arg_8_0)
-	arg_8_0:UpdateEscortInfo()
+function slot1.UpdateMapItems(slot0)
+	uv0.super.UpdateMapItems(slot0)
+	slot0:UpdateEscortInfo()
+	setActive(slot0.sceneParent.escortBar, true)
+	setActive(slot0.sceneParent.mapHelpBtn, true)
 
-	local var_8_0 = arg_8_0.data
+	slot2 = getProxy(ChapterProxy)
+	slot3 = getProxy(ChapterProxy):getEscortChapterIds()
+	slot5 = UIItemList.New(slot0.itemHolder, slot0.tpl)
 
-	setActive(arg_8_0.sceneParent.escortBar, true)
-	setActive(arg_8_0.sceneParent.mapHelpBtn, true)
-
-	local var_8_1 = getProxy(ChapterProxy)
-	local var_8_2 = getProxy(ChapterProxy):getEscortChapterIds()
-	local var_8_3 = _.filter(var_8_0:getChapters(), function(arg_9_0)
-		return table.contains(var_8_2, arg_9_0.id)
-	end)
-	local var_8_4 = UIItemList.New(arg_8_0.itemHolder, arg_8_0.tpl)
-
-	var_8_4:make(function(arg_10_0, arg_10_1, arg_10_2)
-		if arg_10_0 == UIItemList.EventUpdate then
-			arg_8_0:UpdateEscortItem(arg_10_2, var_8_3[arg_10_1 + 1].id, var_8_3[arg_10_1 + 1])
+	slot5:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			uv0:UpdateEscortItem(slot2, uv1[slot1 + 1].id, uv1[slot1 + 1])
 		end
 	end)
-	var_8_4:align(#var_8_3)
+	slot5:align(#_.filter(slot0.data:getChapters(), function (slot0)
+		return table.contains(uv0, slot0.id)
+	end))
 end
 
-function var_0_1.UpdateEscortItem(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	local var_11_0 = pg.escort_template[arg_11_2]
+function slot1.UpdateEscortItem(slot0, slot1, slot2, slot3)
+	slot4 = pg.escort_template[slot2]
 
-	assert(var_11_0, "escort template not exist: " .. arg_11_2)
+	assert(slot4, "escort template not exist: " .. slot2)
 
-	local var_11_1 = getProxy(ChapterProxy):getActiveChapter(true)
+	slot1.name = "chapter_" .. slot3.id
+	slot6 = slot0.map.rect
+	slot1.anchoredPosition = Vector2(slot6.width / slot0.scaleRatio * (tonumber(slot4.pos_x) - 0.5), slot6.height / slot0.scaleRatio * (tonumber(slot4.pos_y) - 0.5))
+	slot8 = getProxy(ChapterProxy):getActiveChapter(true) and slot5.id == slot3.id
 
-	arg_11_1.name = "chapter_" .. arg_11_3.id
+	setActive(slot1:Find("fighting"), slot8)
+	slot0:DeleteTween("fighting" .. slot3.id)
 
-	local var_11_2 = arg_11_0.map.rect
-
-	arg_11_1.anchoredPosition = Vector2(var_11_2.width / arg_11_0.scaleRatio * (tonumber(var_11_0.pos_x) - 0.5), var_11_2.height / arg_11_0.scaleRatio * (tonumber(var_11_0.pos_y) - 0.5))
-
-	local var_11_3 = arg_11_1:Find("fighting")
-	local var_11_4 = var_11_1 and var_11_1.id == arg_11_3.id
-
-	setActive(var_11_3, var_11_4)
-	arg_11_0:DeleteTween("fighting" .. arg_11_3.id)
-
-	if var_11_4 then
-		setImageAlpha(var_11_3, 1)
-		arg_11_0:RecordTween("fighting" .. arg_11_3.id, LeanTween.alpha(var_11_3, 0, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
+	if slot8 then
+		setImageAlpha(slot7, 1)
+		slot0:RecordTween("fighting" .. slot3.id, LeanTween.alpha(slot7, 0, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	GetImageSpriteFromAtlasAsync("levelmap/mapquad/" .. var_11_0.pic, "", arg_11_1, true)
+	GetImageSpriteFromAtlasAsync("levelmap/mapquad/" .. slot4.pic, "", slot1, true)
 
-	local var_11_5 = arg_11_1:Find("anim")
-	local var_11_6 = getProxy(ChapterProxy):getEscortChapterIds()
-	local var_11_7 = table.indexof(var_11_6, arg_11_2)
-	local var_11_8 = ({
+	slot13 = ({
 		Color.green,
 		Color.yellow,
 		Color.red
-	})[var_11_7 or 1]
-	local var_11_9 = var_11_5:GetComponentsInChildren(typeof(Image))
+	})[table.indexof(getProxy(ChapterProxy):getEscortChapterIds(), slot2) or 1]
 
-	for iter_11_0 = 0, var_11_9.Length - 1 do
-		var_11_9[iter_11_0].color = var_11_8
+	for slot18 = 0, slot1:Find("anim"):GetComponentsInChildren(typeof(Image)).Length - 1 do
+		slot14[slot18].color = slot13
 	end
 
-	setImageColor(arg_11_1, var_11_8)
+	setImageColor(slot1, slot13)
 
-	local var_11_10 = arg_11_3.id
+	slot15 = slot3.id
 
-	onButton(arg_11_0.sceneParent, arg_11_1, function()
-		local var_12_0 = getProxy(ChapterProxy):getChapterById(var_11_10)
-
-		arg_11_0:InvokeParent("TrySwitchChapter", var_12_0)
+	onButton(slot0.sceneParent, slot1, function ()
+		uv1:InvokeParent("TrySwitchChapter", getProxy(ChapterProxy):getChapterById(uv0))
 	end, SFX_PANEL)
 end
 
-function var_0_1.OnShow(arg_13_0)
-	setActive(arg_13_0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
-	setActive(arg_13_0.sceneParent.topChapter:Find("title_chapter"), true)
-	setActive(arg_13_0.sceneParent.topChapter:Find("type_escort"), true)
+function slot1.OnShow(slot0)
+	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
+	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), true)
+	setActive(slot0.sceneParent.topChapter:Find("type_escort"), true)
 end
 
-function var_0_1.OnHide(arg_14_0)
-	setActive(arg_14_0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
-	setActive(arg_14_0.sceneParent.topChapter:Find("title_chapter"), false)
-	setActive(arg_14_0.sceneParent.topChapter:Find("type_escort"), false)
-	setActive(arg_14_0.sceneParent.escortBar, false)
-	setActive(arg_14_0.sceneParent.mapHelpBtn, false)
+function slot1.OnHide(slot0)
+	setActive(slot0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
+	setActive(slot0.sceneParent.topChapter:Find("title_chapter"), false)
+	setActive(slot0.sceneParent.topChapter:Find("type_escort"), false)
+	setActive(slot0.sceneParent.escortBar, false)
+	setActive(slot0.sceneParent.mapHelpBtn, false)
 end
 
-return var_0_1
+return slot1

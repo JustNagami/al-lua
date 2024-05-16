@@ -1,9 +1,8 @@
-﻿local var_0_0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
-
-var_0_0.WeaponName = "Laser"
-var_0_0.ConfigSkillCD = 10
-var_0_0.StatusOffset = setmetatable({}, {
-	__index = function(arg_1_0, arg_1_1)
+slot0 = class("EnemyBossChaser", import("view.miniGame.gameView.RyzaMiniGame.character.EnemyChaser"))
+slot0.WeaponName = "Laser"
+slot0.ConfigSkillCD = 10
+slot0.StatusOffset = setmetatable({}, {
+	__index = function (slot0, slot1)
 		return {
 			0,
 			0
@@ -11,33 +10,34 @@ var_0_0.StatusOffset = setmetatable({}, {
 	end
 })
 
-function var_0_0.InitUI(arg_2_0, arg_2_1)
-	var_0_0.super.InitUI(arg_2_0, arg_2_1)
+function slot0.InitUI(slot0, slot1)
+	uv0.super.InitUI(slot0, slot1)
 
-	arg_2_0.hp = arg_2_1.hp or 4
-	arg_2_0.hpMax = arg_2_0.hp
-	arg_2_0.speed = arg_2_1.speed or 3
-	arg_2_0.damageDic = {}
+	slot0.hp = slot1.hp or 4
+	slot0.hpMax = slot0.hp
+	slot0.speed = slot1.speed or 3
+	slot0.damageDic = {}
 end
 
-function var_0_0.InitRegister(arg_3_0, arg_3_1)
-	return
+function slot0.InitRegister(slot0, slot1)
 end
 
-function var_0_0.TimeTrigger(arg_4_0, arg_4_1)
-	var_0_0.super.TimeTrigger(arg_4_0, arg_4_1)
+function slot0.TimeTrigger(slot0, slot1)
+	uv0.super.TimeTrigger(slot0, slot1)
 
-	for iter_4_0, iter_4_1 in ipairs(arg_4_0.responder:CollideFire(arg_4_0)) do
-		if not arg_4_0.damageDic[iter_4_1] then
-			arg_4_0.damageDic[iter_4_1] = true
+	slot5 = slot0
 
-			arg_4_0:Hurt(1)
+	for slot5, slot6 in ipairs(slot0.responder:CollideFire(slot5)) do
+		if not slot0.damageDic[slot6] then
+			slot0.damageDic[slot6] = true
+
+			slot0:Hurt(1)
 		end
 	end
 end
 
-function var_0_0.GetUIHeight(arg_5_0)
+function slot0.GetUIHeight(slot0)
 	return 192
 end
 
-return var_0_0
+return slot0

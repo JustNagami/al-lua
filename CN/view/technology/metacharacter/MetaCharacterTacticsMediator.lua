@@ -1,17 +1,16 @@
-﻿local var_0_0 = class("MetaCharacterTacticsMediator", import("...base.ContextMediator"))
+slot0 = class("MetaCharacterTacticsMediator", import("...base.ContextMediator"))
+slot0.GO_TASK = "MetaCharacterTacticsMediator:GO_TASK"
+slot0.ON_SUBMIT = "MetaCharacterTacticsMediator:ON_SUBMIT"
+slot0.ON_TRIGGER = "MetaCharacterTacticsMediator:ON_TRIGGER"
+slot0.ON_SKILL = "MetaCharacterTacticsMediator:ON_SKILL"
+slot0.ON_QUICK = "MetaCharacterTacticsMediator:ON_QUICK"
 
-var_0_0.GO_TASK = "MetaCharacterTacticsMediator:GO_TASK"
-var_0_0.ON_SUBMIT = "MetaCharacterTacticsMediator:ON_SUBMIT"
-var_0_0.ON_TRIGGER = "MetaCharacterTacticsMediator:ON_TRIGGER"
-var_0_0.ON_SKILL = "MetaCharacterTacticsMediator:ON_SKILL"
-var_0_0.ON_QUICK = "MetaCharacterTacticsMediator:ON_QUICK"
-
-function var_0_0.register(arg_1_0)
-	arg_1_0:requestTacticsData()
-	arg_1_0:bindEvent()
+function slot0.register(slot0)
+	slot0:requestTacticsData()
+	slot0:bindEvent()
 end
 
-function var_0_0.listNotificationInterests(arg_2_0)
+function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.TACTICS_META_INFO_REQUEST_DONE,
 		GAME.TACTICS_META_UNLOCK_SKILL_DONE,
@@ -21,80 +20,71 @@ function var_0_0.listNotificationInterests(arg_2_0)
 	}
 end
 
-function var_0_0.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function slot0.handleNotification(slot0, slot1)
+	if slot1:getName() == GAME.TACTICS_META_INFO_REQUEST_DONE then
+		slot0.viewComponent:setTacticsData(slot1:getBody())
+		slot0.viewComponent:updateTacticsRedTag()
+		slot0.viewComponent:updateExpPanel()
+		slot0.viewComponent:updateMain()
+		slot0.viewComponent:updateSkillTFLearning()
+	elseif slot2 == GAME.TACTICS_META_UNLOCK_SKILL_DONE then
+		slot0.viewComponent:updateData()
+		slot0.viewComponent:updateSkillListPanel()
+		slot0.viewComponent:updateMain()
 
-	if var_3_0 == GAME.TACTICS_META_INFO_REQUEST_DONE then
-		local var_3_2 = var_3_1
-
-		arg_3_0.viewComponent:setTacticsData(var_3_2)
-		arg_3_0.viewComponent:updateTacticsRedTag()
-		arg_3_0.viewComponent:updateExpPanel()
-		arg_3_0.viewComponent:updateMain()
-		arg_3_0.viewComponent:updateSkillTFLearning()
-	elseif var_3_0 == GAME.TACTICS_META_UNLOCK_SKILL_DONE then
-		local var_3_3 = arg_3_0.viewComponent:isAllSkillLock()
-
-		arg_3_0.viewComponent:updateData()
-		arg_3_0.viewComponent:updateSkillListPanel()
-		arg_3_0.viewComponent:updateMain()
-
-		if var_3_3 then
-			arg_3_0.viewComponent:tryLearnSkillAfterFirstUnlock()
+		if slot0.viewComponent:isAllSkillLock() then
+			slot0.viewComponent:tryLearnSkillAfterFirstUnlock()
 		end
 
-		arg_3_0.viewComponent:closeUnlockSkillPanel()
-	elseif var_3_0 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
-		local var_3_4 = var_3_1.skillID
-		local var_3_5 = var_3_1.leftSwitchCount
+		slot0.viewComponent:closeUnlockSkillPanel()
+	elseif slot2 == GAME.TACTICS_META_SWITCH_SKILL_DONE then
+		slot4 = slot3.skillID
 
-		arg_3_0.viewComponent:switchTacticsSkillData(var_3_4, var_3_5)
-		arg_3_0.viewComponent:updateExpPanel()
-		arg_3_0.viewComponent:updateTaskPanel(var_3_4)
-		arg_3_0.viewComponent:updateSkillTFLearning()
-	elseif var_3_0 == GAME.TACTICS_META_LEVELUP_SKILL_DONE then
-		local var_3_6 = var_3_1.skillID
-		local var_3_7 = var_3_1.leftSwitchCount
+		slot0.viewComponent:switchTacticsSkillData(slot4, slot3.leftSwitchCount)
+		slot0.viewComponent:updateExpPanel()
+		slot0.viewComponent:updateTaskPanel(slot4)
+		slot0.viewComponent:updateSkillTFLearning()
+	elseif slot2 == GAME.TACTICS_META_LEVELUP_SKILL_DONE then
+		slot4 = slot3.skillID
 
-		arg_3_0.viewComponent:updateData()
-		arg_3_0.viewComponent:levelupTacticsSkillData(var_3_6, var_3_7)
-		arg_3_0.viewComponent:updateTacticsRedTag()
-		arg_3_0.viewComponent:updateSkillListPanel()
-		arg_3_0.viewComponent:updateTaskPanel(var_3_6)
-	elseif var_3_0 == GAME.META_QUICK_TACTICS_DONE then
-		local var_3_8 = var_3_1.skillID
-		local var_3_9 = var_3_1.skillExp
+		slot0.viewComponent:updateData()
+		slot0.viewComponent:levelupTacticsSkillData(slot4, slot3.leftSwitchCount)
+		slot0.viewComponent:updateTacticsRedTag()
+		slot0.viewComponent:updateSkillListPanel()
+		slot0.viewComponent:updateTaskPanel(slot4)
+	elseif slot2 == GAME.META_QUICK_TACTICS_DONE then
+		slot4 = slot3.skillID
+		slot5 = slot3.skillExp
 
-		if var_3_1.isLevelUp then
-			arg_3_0.viewComponent:clearTaskInfo(var_3_8)
+		if slot3.isLevelUp then
+			slot0.viewComponent:clearTaskInfo(slot4)
 		end
 
-		arg_3_0.viewComponent:updateSkillExp(var_3_8, var_3_9)
-		arg_3_0.viewComponent:updateData()
-		arg_3_0.viewComponent:updateTacticsRedTag()
-		arg_3_0.viewComponent:updateSkillListPanel()
-		arg_3_0.viewComponent:updateTaskPanel(var_3_8)
+		slot0.viewComponent:updateSkillExp(slot4, slot5)
+		slot0.viewComponent:updateData()
+		slot0.viewComponent:updateTacticsRedTag()
+		slot0.viewComponent:updateSkillListPanel()
+		slot0.viewComponent:updateTaskPanel(slot4)
 	end
 end
 
-function var_0_0.bindEvent(arg_4_0)
-	arg_4_0:bind(var_0_0.ON_QUICK, function(arg_5_0, arg_5_1, arg_5_2)
-		arg_4_0:addSubLayers(Context.New({
+function slot0.bindEvent(slot0)
+	slot0:bind(uv0.ON_QUICK, function (slot0, slot1, slot2)
+		uv0:addSubLayers(Context.New({
 			mediator = MetaQuickTacticsMediator,
 			viewComponent = MetaQuickTacticsLayer,
 			data = {
-				shipID = arg_5_1,
-				skillID = arg_5_2
+				shipID = slot1,
+				skillID = slot2
 			}
 		}))
 	end)
 end
 
-function var_0_0.requestTacticsData(arg_6_0)
-	arg_6_0:sendNotification(GAME.TACTICS_META_INFO_REQUEST, {
-		id = arg_6_0.contextData.shipID
+function slot0.requestTacticsData(slot0)
+	slot0:sendNotification(GAME.TACTICS_META_INFO_REQUEST, {
+		id = slot0.contextData.shipID
 	})
 end
 
-return var_0_0
+return slot0

@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+slot0 = {
 	"让我们打开<color=#ff7d36>任务日志</color>",
 	"领取<color=#ff7d36>任务奖励</color>"
 }
@@ -13,7 +13,7 @@ return {
 				mode = 2,
 				posY = -123,
 				posX = 87.7,
-				text = var_0_0[1]
+				text = slot0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/taskButton",
@@ -50,7 +50,7 @@ return {
 				mode = 2,
 				posY = 183,
 				posX = 474,
-				text = var_0_0[2]
+				text = slot0[2]
 			},
 			ui = {
 				delay = 1,

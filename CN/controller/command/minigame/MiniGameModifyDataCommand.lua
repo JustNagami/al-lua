@@ -1,19 +1,16 @@
-﻿local var_0_0 = class("MiniGameModifyDataCommand", pm.SimpleCommand)
+slot0 = class("MiniGameModifyDataCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1 = var_1_0.id
-	local var_1_2 = var_1_0.map
-	local var_1_3 = getProxy(MiniGameProxy):GetMiniGameData(var_1_1)
+function slot0.execute(slot0, slot1)
+	slot2 = slot1:getBody()
 
-	for iter_1_0, iter_1_1 in pairs(var_1_2) do
-		var_1_3:SetRuntimeData(iter_1_0, iter_1_1)
+	for slot10, slot11 in pairs(slot2.map) do
+		getProxy(MiniGameProxy):GetMiniGameData(slot2.id):SetRuntimeData(slot10, slot11)
 	end
 
-	arg_1_0:sendNotification(GAME.MODIFY_MINI_GAME_DATA_DONE, {
-		id = var_1_1,
-		map = var_1_2
+	slot0:sendNotification(GAME.MODIFY_MINI_GAME_DATA_DONE, {
+		id = slot3,
+		map = slot4
 	})
 end
 
-return var_0_0
+return slot0

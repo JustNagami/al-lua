@@ -1,98 +1,88 @@
-﻿local var_0_0 = class("WorldProxy", import(".NetProxy"))
+slot0 = class("WorldProxy", import(".NetProxy"))
 
-function var_0_0.register(arg_1_0)
+function slot0.register(slot0)
 	WPool = BaseEntityPool.New()
 	WBank = BaseEntityBank.New()
 
-	arg_1_0:BuildTestFunc()
-	arg_1_0:on(33114, function(arg_2_0)
-		arg_1_0.isProtoLock = arg_2_0.is_world_open == 0
+	slot0:BuildTestFunc()
+	slot0:on(33114, function (slot0)
+		uv0.isProtoLock = slot0.is_world_open == 0
 
-		arg_1_0:BuildWorld(World.TypeBase)
+		uv0:BuildWorld(World.TypeBase)
 
-		arg_1_0.world.baseShipIds = underscore.rest(arg_2_0.ship_id_list, 1)
-		arg_1_0.world.baseCmdIds = underscore.rest(arg_2_0.cmd_id_list, 1)
+		uv0.world.baseShipIds = underscore.rest(slot0.ship_id_list, 1)
+		uv0.world.baseCmdIds = underscore.rest(slot0.cmd_id_list, 1)
 
-		arg_1_0.world:UpdateProgress(arg_2_0.progress)
+		uv0.world:UpdateProgress(slot0.progress)
 		pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inWorld")
-		arg_1_0:sendNotification(GAME.WORLD_GET_BOSS)
+		uv0:sendNotification(GAME.WORLD_GET_BOSS)
 	end)
-	arg_1_0:on(33105, function(arg_3_0)
-		local var_3_0 = arg_1_0.world:GetActiveMap()
+	slot0:on(33105, function (slot0)
+		slot1 = uv0.world:GetActiveMap()
 
-		assert(var_3_0, "active map not exist.")
+		assert(slot1, "active map not exist.")
+		uv0:UpdateMapAttachmentCells(slot1.id, uv0:NetBuildMapAttachmentCells(slot0.pos_list))
 
-		local var_3_1 = arg_1_0:NetBuildMapAttachmentCells(arg_3_0.pos_list)
+		slot3 = uv0:NetBuildFleetAttachUpdate(slot0.pos_list)
 
-		arg_1_0:UpdateMapAttachmentCells(var_3_0.id, var_3_1)
-
-		local var_3_2 = arg_1_0:NetBuildFleetAttachUpdate(arg_3_0.pos_list)
-
-		arg_1_0:ApplyFleetAttachUpdate(var_3_0.id, var_3_2)
-		WPool:ReturnArray(var_3_2)
+		uv0:ApplyFleetAttachUpdate(slot1.id, slot3)
+		WPool:ReturnArray(slot3)
 	end)
-	arg_1_0:on(33203, function(arg_4_0)
-		local var_4_0 = arg_1_0.world:GetTaskProxy()
+	slot0:on(33203, function (slot0)
+		slot1 = uv0.world:GetTaskProxy()
 
-		for iter_4_0, iter_4_1 in ipairs(arg_4_0.update_list) do
-			local var_4_1 = WorldTask.New(iter_4_1)
-
-			if var_4_0:getTaskById(var_4_1.id) then
-				var_4_0:updateTask(var_4_1)
+		for slot5, slot6 in ipairs(slot0.update_list) do
+			if slot1:getTaskById(WorldTask.New(slot6).id) then
+				slot1:updateTask(slot7)
 			else
-				var_4_0:addTask(var_4_1)
-				arg_1_0:sendNotification(GAME.WORLD_TRIGGER_TASK_DONE, {
-					task = var_4_1
+				slot1:addTask(slot7)
+				uv0:sendNotification(GAME.WORLD_TRIGGER_TASK_DONE, {
+					task = slot7
 				})
 			end
 		end
 	end)
-	arg_1_0:on(33204, function(arg_5_0)
-		local var_5_0 = arg_1_0.world:GetTaskProxy()
-
-		for iter_5_0, iter_5_1 in ipairs(arg_5_0.delete_list) do
-			var_5_0:deleteTask(iter_5_1)
+	slot0:on(33204, function (slot0)
+		for slot5, slot6 in ipairs(slot0.delete_list) do
+			uv0.world:GetTaskProxy():deleteTask(slot6)
 		end
 	end)
-	arg_1_0:on(33601, function(arg_6_0)
-		arg_1_0:NetUpdateAchievements(arg_6_0.target_list)
+	slot0:on(33601, function (slot0)
+		uv0:NetUpdateAchievements(slot0.target_list)
 	end)
-	arg_1_0:on(34507, function(arg_7_0)
-		if arg_1_0.world then
-			local var_7_0 = arg_1_0.world:GetBossProxy()
-			local var_7_1 = WorldBoss.New()
+	slot0:on(34507, function (slot0)
+		if uv0.world then
+			slot2 = WorldBoss.New()
 
-			var_7_1:Setup(arg_7_0.boss_info, Player.New(arg_7_0.user_info))
-			var_7_1:UpdateBossType(arg_7_0.type)
-			var_7_1:SetJoinTime(pg.TimeMgr.GetInstance():GetServerTime())
+			slot2:Setup(slot0.boss_info, Player.New(slot0.user_info))
+			slot2:UpdateBossType(slot0.type)
+			slot2:SetJoinTime(pg.TimeMgr.GetInstance():GetServerTime())
 
-			if var_7_0.isSetup then
-				var_7_0:ClearRank(var_7_1.id)
-				var_7_0:UpdateCacheBoss(var_7_1)
+			if uv0.world:GetBossProxy().isSetup then
+				slot1:ClearRank(slot2.id)
+				slot1:UpdateCacheBoss(slot2)
 			end
 
-			if not var_7_0:IsSelfBoss(var_7_1) and arg_1_0.world:IsSystemOpen(WorldConst.SystemWorldBoss) then
-				pg.WorldBossTipMgr.GetInstance():Show(var_7_1)
+			if not slot1:IsSelfBoss(slot2) and uv0.world:IsSystemOpen(WorldConst.SystemWorldBoss) then
+				pg.WorldBossTipMgr.GetInstance():Show(slot2)
 			end
 		end
 	end)
-	arg_1_0:on(34508, function(arg_8_0)
-		local var_8_0 = arg_1_0.world:GetBossProxy()
-
-		if var_8_0.isSetup then
-			arg_1_0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
-				bossId = arg_8_0.boss_id,
-				callback = function()
-					var_8_0:updateBossHp(arg_8_0.boss_id, arg_8_0.hp)
+	slot0:on(34508, function (slot0)
+		if uv0.world:GetBossProxy().isSetup then
+			uv0:sendNotification(GAME.WORLD_GET_BOSS_RANK, {
+				bossId = slot0.boss_id,
+				callback = function ()
+					uv0:updateBossHp(uv1.boss_id, uv1.hp)
 				end
 			})
 		end
 	end)
 end
 
-function var_0_0.remove(arg_10_0)
-	if arg_10_0.world then
-		arg_10_0.world:GetBossProxy():Dispose()
+function slot0.remove(slot0)
+	if slot0.world then
+		slot0.world:GetBossProxy():Dispose()
 	end
 
 	removeWorld()
@@ -105,7 +95,7 @@ function var_0_0.remove(arg_10_0)
 	WBank = nil
 end
 
-function var_0_0.BuildTestFunc(arg_11_0)
+function slot0.BuildTestFunc(slot0)
 	world_skip_battle = PlayerPrefs.GetInt("world_skip_battle") or 0
 
 	function switch_world_skip_battle()
@@ -120,557 +110,517 @@ function var_0_0.BuildTestFunc(arg_11_0)
 
 	if IsUnityEditor then
 		function display_world_debug_panel()
-			local var_13_0 = pg.m02:retrieveMediator(WorldMediator.__cname)
-
-			if var_13_0 then
-				var_13_0.viewComponent:ShowSubView("DebugPanel")
+			if pg.m02:retrieveMediator(WorldMediator.__cname) then
+				slot0.viewComponent:ShowSubView("DebugPanel")
 			end
 		end
 
-		pg.UIMgr.GetInstance():AddWorldTestButton("WorldDebug", function()
+		pg.UIMgr.GetInstance():AddWorldTestButton("WorldDebug", function ()
 			WorldConst.Debug = true
 		end)
 	end
 end
 
-function var_0_0.BuildWorld(arg_15_0, arg_15_1, arg_15_2)
-	arg_15_0.world = World.New(arg_15_1, arg_15_0.world and arg_15_0.world:Dispose(tobool(arg_15_2)))
+function slot0.BuildWorld(slot0, slot1, slot2)
+	slot0.world = World.New(slot1, slot0.world and slot0.world:Dispose(tobool(slot2)))
 
 	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inWorld")
 end
 
-function var_0_0.NetFullUpdate(arg_16_0, arg_16_1)
-	arg_16_0.isProtoLock = arg_16_1.is_world_open == 0
+function slot0.NetFullUpdate(slot0, slot1)
+	slot0.isProtoLock = slot1.is_world_open == 0
 
-	arg_16_0:NetUpdateWorld(arg_16_1.world, arg_16_1.global_flag_list, arg_16_1.camp)
-	arg_16_0:NetUpdateWorldDefaultFleets(arg_16_1.fleet_list)
-	arg_16_0:NetUpdateWorldAchievements(arg_16_1.target_list, arg_16_1.target_fetch_list)
-	arg_16_0:NetUpdateWorldCountInfo(arg_16_1.count_info)
-	arg_16_0:NetUpdateWorldMapPressing(arg_16_1.clean_chapter)
-	arg_16_0:NetUpdateWorldPressingAward(arg_16_1.chapter_award)
-	arg_16_0:NetUpdateWorldShopGoods(arg_16_1.out_shop_buy_list)
-	arg_16_0:NetUpdateWorldPortShopMark(arg_16_1.port_list, arg_16_1.new_flag_port_list)
+	slot0:NetUpdateWorld(slot1.world, slot1.global_flag_list, slot1.camp)
+	slot0:NetUpdateWorldDefaultFleets(slot1.fleet_list)
+	slot0:NetUpdateWorldAchievements(slot1.target_list, slot1.target_fetch_list)
+	slot0:NetUpdateWorldCountInfo(slot1.count_info)
+	slot0:NetUpdateWorldMapPressing(slot1.clean_chapter)
+	slot0:NetUpdateWorldPressingAward(slot1.chapter_award)
+	slot0:NetUpdateWorldShopGoods(slot1.out_shop_buy_list)
+	slot0:NetUpdateWorldPortShopMark(slot1.port_list, slot1.new_flag_port_list)
 end
 
-function var_0_0.NetUpdateWorld(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	local var_17_0 = arg_17_0.world
+function slot0.NetUpdateWorld(slot0, slot1, slot2, slot3)
+	slot4 = slot0.world
 
-	var_17_0:SetRealm(arg_17_3)
+	slot4:SetRealm(slot3)
 
-	var_17_0.activateTime = arg_17_1.time
-	var_17_0.expiredTime = arg_17_1.last_change_group_timestamp
-	var_17_0.roundIndex = arg_17_1.round
-	var_17_0.submarineSupport = arg_17_1.submarine_state == 1
+	slot4.activateTime = slot1.time
+	slot4.expiredTime = slot1.last_change_group_timestamp
+	slot4.roundIndex = slot1.round
+	slot4.submarineSupport = slot1.submarine_state == 1
 
-	var_17_0.staminaMgr:Setup({
-		arg_17_1.action_power,
-		arg_17_1.action_power_extra,
-		arg_17_1.last_recover_timestamp,
-		arg_17_1.action_power_fetch_count
+	slot4.staminaMgr:Setup({
+		slot1.action_power,
+		slot1.action_power_extra,
+		slot1.last_recover_timestamp,
+		slot1.action_power_fetch_count
 	})
 
-	var_17_0.gobalFlag = underscore.map(arg_17_2, function(arg_18_0)
-		return arg_18_0 > 0
+	slot4.gobalFlag = underscore.map(slot2, function (slot0)
+		return slot0 > 0
+	end)
+	slot5 = slot4:GetAtlas()
+
+	slot5:SetCostMapList(_.rest(slot1.chapter_list, 1))
+	slot5:SetSairenEntranceList(_.rest(slot1.sairen_chapter, 1))
+	slot5:InitWorldNShopGoods(slot1.goods_list)
+	slot4:SetFleets(slot0:NetBuildMapFleetList(slot1.group_list))
+
+	slot6 = slot1.map_id > 0 and _.detect(slot1.chapter_list, function (slot0)
+		return slot0.random_id == uv0.map_id
 	end)
 
-	local var_17_1 = var_17_0:GetAtlas()
+	assert(slot1.map_id > 0 == tobool(slot6), "error active map info:" .. slot1.map_id)
 
-	var_17_1:SetCostMapList(_.rest(arg_17_1.chapter_list, 1))
-	var_17_1:SetSairenEntranceList(_.rest(arg_17_1.sairen_chapter, 1))
-	var_17_1:InitWorldNShopGoods(arg_17_1.goods_list)
-	var_17_0:SetFleets(arg_17_0:NetBuildMapFleetList(arg_17_1.group_list))
+	if slot6 then
+		slot7 = slot1.enter_map_id
+		slot8 = slot6.random_id
+		slot9 = slot6.template_id
 
-	local var_17_2 = arg_17_1.map_id > 0 and _.detect(arg_17_1.chapter_list, function(arg_19_0)
-		return arg_19_0.random_id == arg_17_1.map_id
-	end)
+		assert(slot4:GetEntrance(slot7), "entrance not exist: " .. slot7)
+		assert(slot4:GetMap(slot8), "map not exist: " .. slot8)
+		assert(pg.world_chapter_template[slot9], "world_chapter_template not exist: " .. slot9)
+		assert(#slot1.group_list > 0, "amount of group_list is not enough.")
+		slot10:UpdateActive(true)
+		slot11:UpdateGridId(slot9)
 
-	assert(arg_17_1.map_id > 0 == tobool(var_17_2), "error active map info:" .. arg_17_1.map_id)
+		slot11.findex = table.indexof(slot4.fleets, slot4:GetFleet(slot1.group_list[1].id))
 
-	if var_17_2 then
-		local var_17_3 = arg_17_1.enter_map_id
-		local var_17_4 = var_17_2.random_id
-		local var_17_5 = var_17_2.template_id
-		local var_17_6 = var_17_0:GetEntrance(var_17_3)
-		local var_17_7 = var_17_0:GetMap(var_17_4)
-
-		assert(var_17_6, "entrance not exist: " .. var_17_3)
-		assert(var_17_7, "map not exist: " .. var_17_4)
-		assert(pg.world_chapter_template[var_17_5], "world_chapter_template not exist: " .. var_17_5)
-		assert(#arg_17_1.group_list > 0, "amount of group_list is not enough.")
-		var_17_6:UpdateActive(true)
-		var_17_7:UpdateGridId(var_17_5)
-
-		local var_17_8 = arg_17_1.group_list[1].id
-
-		var_17_7.findex = table.indexof(var_17_0.fleets, var_17_0:GetFleet(var_17_8))
-
-		var_17_7:BindFleets(var_17_0.fleets)
-		var_17_7:UpdateActive(true)
+		slot11:BindFleets(slot4.fleets)
+		slot11:UpdateActive(true)
 	end
 
-	var_17_0:GetInventoryProxy():Setup(arg_17_1.item_list)
+	slot4:GetInventoryProxy():Setup(slot1.item_list)
 
-	local var_17_9 = var_17_0:GetTaskProxy()
+	slot8 = slot4:GetTaskProxy()
 
-	var_17_9:Setup(arg_17_1.task_list)
+	slot8:Setup(slot1.task_list)
 
-	var_17_9.taskFinishCount = arg_17_1.task_finish_count
+	slot8.taskFinishCount = slot1.task_finish_count
 
-	_.each(arg_17_1.cd_list, function(arg_20_0)
-		var_17_0.cdTimeList[arg_20_0.id] = arg_20_0.time
+	_.each(slot1.cd_list, function (slot0)
+		uv0.cdTimeList[slot0.id] = slot0.time
 	end)
-	_.each(arg_17_1.buff_list, function(arg_21_0)
-		var_17_0.globalBuffDic[arg_21_0.id] = WorldBuff.New()
+	_.each(slot1.buff_list, function (slot0)
+		uv0.globalBuffDic[slot0.id] = WorldBuff.New()
 
-		var_17_0.globalBuffDic[arg_21_0.id]:Setup({
-			id = arg_21_0.id,
-			floor = arg_21_0.stack
+		uv0.globalBuffDic[slot0.id]:Setup({
+			id = slot0.id,
+			floor = slot0.stack
 		})
 	end)
-	underscore.each(arg_17_1.month_boss, function(arg_22_0)
-		var_17_0.lowestHP[arg_22_0.key] = arg_22_0.value
+	underscore.each(slot1.month_boss, function (slot0)
+		uv0.lowestHP[slot0.key] = slot0.value
 	end)
 end
 
-function var_0_0.NetUpdateWorldDefaultFleets(arg_23_0, arg_23_1)
-	local var_23_0 = {}
+function slot0.NetUpdateWorldDefaultFleets(slot0, slot1)
+	slot2 = {}
 
-	_.each(arg_23_1, function(arg_24_0)
-		local var_24_0 = WorldBaseFleet.New()
+	_.each(slot1, function (slot0)
+		slot1 = WorldBaseFleet.New()
 
-		var_24_0:Setup(arg_24_0)
-		table.insert(var_23_0, var_24_0)
+		slot1:Setup(slot0)
+		table.insert(uv0, slot1)
 	end)
-	table.sort(var_23_0, function(arg_25_0, arg_25_1)
-		return arg_25_0.id < arg_25_1.id
+	table.sort(slot2, function (slot0, slot1)
+		return slot0.id < slot1.id
 	end)
-	arg_23_0.world:SetDefaultFleets(var_23_0)
+	slot0.world:SetDefaultFleets(slot2)
 end
 
-function var_0_0.NetUpdateWorldAchievements(arg_26_0, arg_26_1, arg_26_2)
-	arg_26_0.world.achievements = {}
+function slot0.NetUpdateWorldAchievements(slot0, slot1, slot2)
+	slot0.world.achievements = {}
 
-	arg_26_0:NetUpdateAchievements(arg_26_1)
+	slot0:NetUpdateAchievements(slot1)
 
-	arg_26_0.world.achieveEntranceStar = {}
+	slot0.world.achieveEntranceStar = {}
 
-	_.each(arg_26_2, function(arg_27_0)
-		for iter_27_0, iter_27_1 in ipairs(arg_27_0.star_list) do
-			arg_26_0.world:SetAchieveSuccess(arg_27_0.id, iter_27_1)
+	_.each(slot2, function (slot0)
+		for slot4, slot5 in ipairs(slot0.star_list) do
+			uv0.world:SetAchieveSuccess(slot0.id, slot5)
 		end
 	end)
 end
 
-function var_0_0.NetUpdateWorldCountInfo(arg_28_0, arg_28_1)
-	arg_28_0.world.stepCount = arg_28_1.step_count
-	arg_28_0.world.treasureCount = arg_28_1.treasure_count
-	arg_28_0.world.activateCount = arg_28_1.activate_count
+function slot0.NetUpdateWorldCountInfo(slot0, slot1)
+	slot0.world.stepCount = slot1.step_count
+	slot0.world.treasureCount = slot1.treasure_count
+	slot0.world.activateCount = slot1.activate_count
 
-	arg_28_0.world:GetCollectionProxy():Setup(arg_28_1.collection_list)
-	arg_28_0.world:UpdateProgress(arg_28_1.task_progress)
+	slot0.world:GetCollectionProxy():Setup(slot1.collection_list)
+	slot0.world:UpdateProgress(slot1.task_progress)
 end
 
-function var_0_0.NetUpdateActiveMap(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	local var_29_0 = arg_29_0.world:GetActiveEntrance()
-	local var_29_1 = arg_29_0.world:GetActiveMap()
+function slot0.NetUpdateActiveMap(slot0, slot1, slot2, slot3)
+	slot4 = slot0.world:GetActiveEntrance()
 
-	if var_29_1:NeedClear() and var_29_0.becomeSairen and var_29_0:GetSairenMapId() == var_29_1.id then
-		arg_29_0.world:GetAtlas():RemoveSairenEntrance(var_29_0)
+	if slot0.world:GetActiveMap():NeedClear() and slot4.becomeSairen and slot4:GetSairenMapId() == slot5.id then
+		slot0.world:GetAtlas():RemoveSairenEntrance(slot4)
 	end
 
-	local var_29_2 = arg_29_0.world:GetEntrance(arg_29_1)
+	slot6 = slot0.world:GetEntrance(slot1)
 
-	assert(var_29_2, "entrance not exist: " .. arg_29_1)
+	assert(slot6, "entrance not exist: " .. slot1)
 
-	if var_29_0.id ~= var_29_2.id then
-		var_29_0:UpdateActive(false)
-		var_29_2:UpdateActive(true)
+	if slot4.id ~= slot6.id then
+		slot4:UpdateActive(false)
+		slot6:UpdateActive(true)
 	end
 
-	local var_29_3 = arg_29_0.world:GetMap(arg_29_2)
+	slot7 = slot0.world:GetMap(slot2)
 
-	assert(var_29_3, "map not exist: " .. arg_29_2)
+	assert(slot7, "map not exist: " .. slot2)
 
-	if var_29_1.id ~= var_29_3.id then
-		var_29_1:UpdateActive(false)
-		var_29_1:RemoveFleetsCarries()
-		var_29_1:UnbindFleets()
+	if slot5.id ~= slot7.id then
+		slot5:UpdateActive(false)
+		slot5:RemoveFleetsCarries()
+		slot5:UnbindFleets()
 
-		var_29_3.findex = var_29_1.findex
-		var_29_1.findex = nil
+		slot7.findex = slot5.findex
+		slot5.findex = nil
 
-		var_29_3:UpdateGridId(arg_29_3)
-		var_29_3:BindFleets(arg_29_0.world.fleets)
-		var_29_3:UpdateActive(true)
+		slot7:UpdateGridId(slot3)
+		slot7:BindFleets(slot0.world.fleets)
+		slot7:UpdateActive(true)
 	end
 
-	arg_29_0.world:OnSwitchMap()
+	slot0.world:OnSwitchMap()
 end
 
-function var_0_0.NetUpdateMap(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_1.id.random_id
-	local var_30_1 = arg_30_1.id.template_id
+function slot0.NetUpdateMap(slot0, slot1)
+	slot2 = slot1.id.random_id
+	slot3 = slot1.id.template_id
 
-	assert(pg.world_chapter_random[var_30_0], "world_chapter_random not exist: " .. var_30_0)
-	assert(pg.world_chapter_template[var_30_1], "world_chapter_template not exist: " .. var_30_1)
+	assert(pg.world_chapter_random[slot2], "world_chapter_random not exist: " .. slot2)
+	assert(pg.world_chapter_template[slot3], "world_chapter_template not exist: " .. slot3)
 
-	local var_30_2 = {}
+	slot4 = {}
 
-	_.each(arg_30_1.state_flag, function(arg_31_0)
-		var_30_2[arg_31_0] = true
+	_.each(slot1.state_flag, function (slot0)
+		uv0[slot0] = true
 	end)
 
-	local var_30_3 = arg_30_0.world:GetMap(var_30_0)
+	slot5 = slot0.world:GetMap(slot2)
 
-	var_30_3:UpdateClearFlag(var_30_2[1])
-	var_30_3:UpdateVisionFlag(var_30_2[2] or arg_30_0.world:IsMapVisioned(var_30_0))
-	arg_30_0:NetUpdateMapDiscoveredCells(var_30_3.id, var_30_2[3], arg_30_1.cell_list)
+	slot5:UpdateClearFlag(slot4[1])
+	slot5:UpdateVisionFlag(slot4[2] or slot0.world:IsMapVisioned(slot2))
+	slot0:NetUpdateMapDiscoveredCells(slot5.id, slot4[3], slot1.cell_list)
+	slot0:UpdateMapAttachmentCells(slot5.id, slot0:NetBuildMapAttachmentCells(slot1.pos_list))
 
-	local var_30_4 = arg_30_0:NetBuildMapAttachmentCells(arg_30_1.pos_list)
+	slot7 = slot0:NetBuildFleetAttachUpdate(slot1.pos_list)
 
-	arg_30_0:UpdateMapAttachmentCells(var_30_3.id, var_30_4)
+	slot0:ApplyFleetAttachUpdate(slot5.id, slot7)
+	WPool:ReturnArray(slot7)
 
-	local var_30_5 = arg_30_0:NetBuildFleetAttachUpdate(arg_30_1.pos_list)
+	slot8 = slot0:NetBulidTerrainUpdate(slot1.land_list)
 
-	arg_30_0:ApplyFleetAttachUpdate(var_30_3.id, var_30_5)
-	WPool:ReturnArray(var_30_5)
-
-	local var_30_6 = arg_30_0:NetBulidTerrainUpdate(arg_30_1.land_list)
-
-	arg_30_0:ApplyTerrainUpdate(var_30_3.id, var_30_6)
-	WPool:ReturnArray(var_30_6)
-	var_30_3:SetValid(true)
+	slot0:ApplyTerrainUpdate(slot5.id, slot8)
+	WPool:ReturnArray(slot8)
+	slot5:SetValid(true)
 end
 
-function var_0_0.NetUpdateMapDiscoveredCells(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
-	local var_32_0 = arg_32_0.world:GetMap(arg_32_1)
+function slot0.NetUpdateMapDiscoveredCells(slot0, slot1, slot2, slot3)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
 
-	assert(var_32_0, "map not exist: " .. arg_32_1)
-
-	if arg_32_2 then
-		for iter_32_0, iter_32_1 in pairs(var_32_0.cells) do
-			iter_32_1:UpdateDiscovered(true)
+	if slot2 then
+		for slot8, slot9 in pairs(slot4.cells) do
+			slot9:UpdateDiscovered(true)
 		end
 	else
-		_.each(arg_32_3, function(arg_33_0)
-			local var_33_0 = var_32_0:GetCell(arg_33_0.pos.row, arg_33_0.pos.column)
+		_.each(slot3, function (slot0)
+			slot1 = uv0:GetCell(slot0.pos.row, slot0.pos.column)
 
-			assert(var_33_0, "cell not exist: " .. arg_33_0.pos.row .. ", " .. arg_33_0.pos.column)
-			var_33_0:UpdateDiscovered(true)
+			assert(slot1, "cell not exist: " .. slot0.pos.row .. ", " .. slot0.pos.column)
+			slot1:UpdateDiscovered(true)
 		end)
 	end
 end
 
-function var_0_0.NetUpdateMapPort(arg_34_0, arg_34_1, arg_34_2)
-	local var_34_0 = arg_34_0.world:GetMap(arg_34_1)
+function slot0.NetUpdateMapPort(slot0, slot1, slot2)
+	slot3 = slot0.world:GetMap(slot1)
 
-	assert(var_34_0, "map not exist: " .. arg_34_1)
+	assert(slot3, "map not exist: " .. slot1)
 
-	local var_34_1 = var_34_0:GetPort(arg_34_2.port_id)
+	slot4 = slot3:GetPort(slot2.port_id)
 
-	assert(var_34_1, "port not exist: " .. arg_34_2.port_id)
-	var_34_1:UpdateTaskIds(_.rest(arg_34_2.task_list, 1))
-	var_34_1:UpdateGoods(_.map(arg_34_2.goods_list, function(arg_35_0)
-		local var_35_0 = WPool:Get(WorldGoods)
+	assert(slot4, "port not exist: " .. slot2.port_id)
+	slot4:UpdateTaskIds(_.rest(slot2.task_list, 1))
+	slot4:UpdateGoods(_.map(slot2.goods_list, function (slot0)
+		slot1 = WPool:Get(WorldGoods)
 
-		var_35_0:Setup(arg_35_0)
+		slot1:Setup(slot0)
 
-		return var_35_0
+		return slot1
 	end))
-	var_34_1:UpdateExpiredTime(arg_34_2.next_refresh_time)
+	slot4:UpdateExpiredTime(slot2.next_refresh_time)
 end
 
-function var_0_0.NetUpdateAchievements(arg_36_0, arg_36_1)
-	_.each(arg_36_1, function(arg_37_0)
-		local var_37_0 = arg_36_0.world:GetAchievement(arg_37_0.id)
-
-		arg_36_0.world:DispatchEvent(World.EventAchieved, var_37_0:NetUpdate(arg_37_0.process_list))
+function slot0.NetUpdateAchievements(slot0, slot1)
+	_.each(slot1, function (slot0)
+		uv0.world:DispatchEvent(World.EventAchieved, uv0.world:GetAchievement(slot0.id):NetUpdate(slot0.process_list))
 	end)
 end
 
-function var_0_0.NetBuildMapFleetList(arg_38_0, arg_38_1)
-	local var_38_0 = {}
+function slot0.NetBuildMapFleetList(slot0, slot1)
+	slot2 = {}
 
-	if arg_38_1 and #arg_38_1 > 0 then
-		_.each(arg_38_1, function(arg_39_0)
-			local var_39_0 = WorldMapFleet.New()
+	if slot1 and #slot1 > 0 then
+		_.each(slot1, function (slot0)
+			slot1 = WorldMapFleet.New()
 
-			var_39_0:Setup(arg_39_0)
-			table.insert(var_38_0, var_39_0)
+			slot1:Setup(slot0)
+			table.insert(uv0, slot1)
 		end)
-		table.sort(var_38_0, function(arg_40_0, arg_40_1)
-			return arg_40_0.id < arg_40_1.id
+		table.sort(slot2, function (slot0, slot1)
+			return slot0.id < slot1.id
 		end)
 
-		local var_38_1 = {
+		slot3 = {
 			[FleetType.Normal] = 1,
 			[FleetType.Submarine] = 1
 		}
 
-		_.each(var_38_0, function(arg_41_0)
-			local var_41_0 = arg_41_0:GetFleetType()
-
-			arg_41_0.index = var_38_1[var_41_0]
-			var_38_1[var_41_0] = var_38_1[var_41_0] + 1
+		_.each(slot2, function (slot0)
+			slot1 = slot0:GetFleetType()
+			slot0.index = uv0[slot1]
+			uv0[slot1] = uv0[slot1] + 1
 		end)
 	end
 
-	return var_38_0
+	return slot2
 end
 
-function var_0_0.NetBuildPortShipList(arg_42_0, arg_42_1)
-	return _.map(arg_42_1, function(arg_43_0)
-		local var_43_0 = WPool:Get(WorldMapShip)
+function slot0.NetBuildPortShipList(slot0, slot1)
+	return _.map(slot1, function (slot0)
+		slot1 = WPool:Get(WorldMapShip)
 
-		var_43_0:Setup(arg_43_0)
+		slot1:Setup(slot0)
 
-		return var_43_0
+		return slot1
 	end)
 end
 
-function var_0_0.NetResetWorld(arg_44_0)
-	arg_44_0:sendNotification(GAME.SEND_CMD, {
+function slot0.NetResetWorld(slot0)
+	slot0:sendNotification(GAME.SEND_CMD, {
 		cmd = "world",
 		arg1 = "reset"
 	})
-	arg_44_0:sendNotification(GAME.SEND_CMD, {
+	slot0:sendNotification(GAME.SEND_CMD, {
 		cmd = "kick"
 	})
 end
 
-function var_0_0.NetBuildMapAttachmentCells(arg_45_0, arg_45_1)
-	local var_45_0 = {}
-
-	_.each(arg_45_1, function(arg_46_0)
-		var_45_0[WorldMapCell.GetName(arg_46_0.pos.row, arg_46_0.pos.column)] = {
+function slot0.NetBuildMapAttachmentCells(slot0, slot1)
+	_.each(slot1, function (slot0)
+		uv0[WorldMapCell.GetName(slot0.pos.row, slot0.pos.column)] = {
 			pos = {
-				row = arg_46_0.pos.row,
-				column = arg_46_0.pos.column
+				row = slot0.pos.row,
+				column = slot0.pos.column
 			},
-			attachmentList = arg_46_0.item_list
+			attachmentList = slot0.item_list
 		}
 	end)
 
-	for iter_45_0, iter_45_1 in pairs(var_45_0) do
-		local var_45_1 = {}
+	for slot6, slot7 in pairs({}) do
+		_.each(slot7.attachmentList, function (slot0)
+			slot1 = WPool:Get(WorldMapAttachment)
 
-		_.each(iter_45_1.attachmentList, function(arg_47_0)
-			local var_47_0 = WPool:Get(WorldMapAttachment)
-
-			var_47_0:Setup(setmetatable({
-				pos = iter_45_1.pos
+			slot1:Setup(setmetatable({
+				pos = uv0.pos
 			}, {
-				__index = arg_47_0
+				__index = slot0
 			}))
-			table.insert(var_45_1, var_47_0)
+			table.insert(uv1, slot1)
 		end)
 
-		iter_45_1.attachmentList = var_45_1
+		slot7.attachmentList = {}
 	end
 
-	return var_45_0
+	return slot2
 end
 
-function var_0_0.UpdateMapAttachmentCells(arg_48_0, arg_48_1, arg_48_2)
-	local var_48_0 = arg_48_0.world:GetMap(arg_48_1)
+function slot0.UpdateMapAttachmentCells(slot0, slot1, slot2)
+	slot7 = slot1
 
-	assert(var_48_0, "map not exist: " .. arg_48_1)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot7)
 
-	for iter_48_0, iter_48_1 in pairs(arg_48_2) do
-		local var_48_1 = var_48_0:GetCell(iter_48_1.pos.row, iter_48_1.pos.column)
-		local var_48_2 = var_48_1.attachments
+	for slot7, slot8 in pairs(slot2) do
+		for slot14 = #slot3:GetCell(slot8.pos.row, slot8.pos.column).attachments, 1, -1 do
+			slot15 = slot10[slot14]
 
-		for iter_48_2 = #var_48_2, 1, -1 do
-			local var_48_3 = var_48_2[iter_48_2]
-
-			if not WorldMapAttachment.IsFakeType(var_48_2[iter_48_2].type) and not _.any(iter_48_1.attachmentList, function(arg_49_0)
-				return var_48_3.type == arg_49_0.type and var_48_3.id == arg_49_0.id
+			if not WorldMapAttachment.IsFakeType(slot10[slot14].type) and not _.any(slot8.attachmentList, function (slot0)
+				return uv0.type == slot0.type and uv0.id == slot0.id
 			end) then
-				var_48_1:RemoveAttachment(iter_48_2)
+				slot9:RemoveAttachment(slot14)
 			end
 		end
 
-		_.each(iter_48_1.attachmentList, function(arg_50_0)
-			if arg_50_0.type ~= WorldMapAttachment.TypeFleet then
-				local var_50_0 = _.detect(var_48_1.attachments, function(arg_51_0)
-					return arg_51_0.type == arg_50_0.type and arg_51_0.id == arg_50_0.id
-				end)
-
-				if var_50_0 then
-					var_50_0:UpdateFlag(arg_50_0.flag)
-					var_50_0:UpdateData(arg_50_0.data, arg_50_0.effects)
-					var_48_0:AddPhaseDisplay(var_50_0:UpdateBuffList(arg_50_0.buffList))
+		_.each(slot8.attachmentList, function (slot0)
+			if slot0.type ~= WorldMapAttachment.TypeFleet then
+				if _.detect(uv0.attachments, function (slot0)
+					return slot0.type == uv0.type and slot0.id == uv0.id
+				end) then
+					slot1:UpdateFlag(slot0.flag)
+					slot1:UpdateData(slot0.data, slot0.effects)
+					uv1:AddPhaseDisplay(slot1:UpdateBuffList(slot0.buffList))
 				else
-					var_48_1:AddAttachment(arg_50_0)
+					uv0:AddAttachment(slot0)
 				end
 			end
 		end)
 	end
 end
 
-function var_0_0.NetBuildFleetAttachUpdate(arg_52_0, arg_52_1)
-	local var_52_0 = {}
-
-	_.each(arg_52_1, function(arg_53_0)
-		local var_53_0 = {
-			row = arg_53_0.pos.row,
-			column = arg_53_0.pos.column
+function slot0.NetBuildFleetAttachUpdate(slot0, slot1)
+	_.each(slot1, function (slot0)
+		slot1 = {
+			row = slot0.pos.row,
+			column = slot0.pos.column
 		}
 
-		_.each(arg_53_0.item_list, function(arg_54_0)
-			if arg_54_0.item_type == WorldMapAttachment.TypeFleet then
-				local var_54_0 = WPool:Get(NetFleetAttachUpdate)
+		_.each(slot0.item_list, function (slot0)
+			if slot0.item_type == WorldMapAttachment.TypeFleet then
+				slot1 = WPool:Get(NetFleetAttachUpdate)
 
-				var_54_0:Setup(setmetatable({
-					pos = var_53_0
+				slot1:Setup(setmetatable({
+					pos = uv0
 				}, {
-					__index = arg_54_0
+					__index = slot0
 				}))
-				table.insert(var_52_0, var_54_0)
+				table.insert(uv1, slot1)
 			end
 		end)
 	end)
 
-	return var_52_0
+	return {}
 end
 
-function var_0_0.ApplyFleetAttachUpdate(arg_55_0, arg_55_1, arg_55_2)
-	local var_55_0 = arg_55_0.world:GetMap(arg_55_1)
-
-	assert(var_55_0, "map not exist: " .. arg_55_1)
-	_.each(arg_55_2, function(arg_56_0)
-		var_55_0:UpdateFleetLocation(arg_56_0.id, arg_56_0.row, arg_56_0.column)
+function slot0.ApplyFleetAttachUpdate(slot0, slot1, slot2)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
+	_.each(slot2, function (slot0)
+		uv0:UpdateFleetLocation(slot0.id, slot0.row, slot0.column)
 	end)
 end
 
-function var_0_0.NetBulidTerrainUpdate(arg_57_0, arg_57_1)
-	return _.map(arg_57_1, function(arg_58_0)
-		local var_58_0 = WPool:Get(NetTerrainUpdate)
+function slot0.NetBulidTerrainUpdate(slot0, slot1)
+	return _.map(slot1, function (slot0)
+		slot1 = WPool:Get(NetTerrainUpdate)
 
-		var_58_0:Setup(arg_58_0)
+		slot1:Setup(slot0)
 
-		return var_58_0
+		return slot1
 	end)
 end
 
-function var_0_0.ApplyTerrainUpdate(arg_59_0, arg_59_1, arg_59_2)
-	local var_59_0 = arg_59_0.world:GetMap(arg_59_1)
+function slot0.ApplyTerrainUpdate(slot0, slot1, slot2)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
+	_.each(slot2, function (slot0)
+		slot1 = uv0:GetCell(slot0.row, slot0.column)
 
-	assert(var_59_0, "map not exist: " .. arg_59_1)
-	_.each(arg_59_2, function(arg_60_0)
-		local var_60_0 = var_59_0:GetCell(arg_60_0.row, arg_60_0.column)
-		local var_60_1 = var_59_0:FindFleet(var_60_0.row, var_60_0.column)
-
-		if var_60_1 then
-			var_59_0:CheckFleetUpdateFOV(var_60_1, function()
-				var_60_0:UpdateTerrain(arg_60_0:GetTerrain(), arg_60_0.terrainDir, arg_60_0.terrainStrong)
+		if uv0:FindFleet(slot1.row, slot1.column) then
+			uv0:CheckFleetUpdateFOV(slot2, function ()
+				uv0:UpdateTerrain(uv1:GetTerrain(), uv1.terrainDir, uv1.terrainStrong)
 			end)
 		else
-			var_60_0:UpdateTerrain(arg_60_0:GetTerrain(), arg_60_0.terrainDir, arg_60_0.terrainStrong)
+			slot1:UpdateTerrain(slot0:GetTerrain(), slot0.terrainDir, slot0.terrainStrong)
 		end
 	end)
 end
 
-function var_0_0.NetBuildFleetUpdate(arg_62_0, arg_62_1)
-	return _.map(arg_62_1, function(arg_63_0)
-		local var_63_0 = WPool:Get(NetFleetUpdate)
+function slot0.NetBuildFleetUpdate(slot0, slot1)
+	return _.map(slot1, function (slot0)
+		slot1 = WPool:Get(NetFleetUpdate)
 
-		var_63_0:Setup(arg_63_0)
+		slot1:Setup(slot0)
 
-		return var_63_0
+		return slot1
 	end)
 end
 
-function var_0_0.ApplyFleetUpdate(arg_64_0, arg_64_1, arg_64_2)
-	local var_64_0 = arg_64_0.world:GetMap(arg_64_1)
+function slot0.ApplyFleetUpdate(slot0, slot1, slot2)
+	assert(slot0.world:GetMap(slot1), "map not exist: " .. slot1)
+	_.each(slot2, function (slot0)
+		slot1 = uv0:GetFleet(slot0.id)
 
-	assert(var_64_0, "map not exist: " .. arg_64_1)
-	_.each(arg_64_2, function(arg_65_0)
-		local var_65_0 = var_64_0:GetFleet(arg_65_0.id)
-
-		assert(var_65_0, "fleet not exist: " .. arg_65_0.id)
-		var_64_0:CheckFleetUpdateFOV(var_65_0, function()
-			var_65_0:UpdateBuffs(arg_65_0.buffs)
+		assert(slot1, "fleet not exist: " .. slot0.id)
+		uv0:CheckFleetUpdateFOV(slot1, function ()
+			uv0:UpdateBuffs(uv1.buffs)
 		end)
 	end)
 end
 
-function var_0_0.NetBuildShipUpdate(arg_67_0, arg_67_1)
-	return _.map(arg_67_1, function(arg_68_0)
-		local var_68_0 = WPool:Get(NetShipUpdate)
+function slot0.NetBuildShipUpdate(slot0, slot1)
+	return _.map(slot1, function (slot0)
+		slot1 = WPool:Get(NetShipUpdate)
 
-		var_68_0:Setup(arg_68_0)
+		slot1:Setup(slot0)
 
-		return var_68_0
+		return slot1
 	end)
 end
 
-function var_0_0.ApplyShipUpdate(arg_69_0, arg_69_1)
-	_.each(arg_69_1, function(arg_70_0)
-		local var_70_0 = arg_69_0.world:GetShip(arg_70_0.id)
+function slot0.ApplyShipUpdate(slot0, slot1)
+	_.each(slot1, function (slot0)
+		slot1 = uv0.world:GetShip(slot0.id)
 
-		assert(var_70_0, "ship not exist: " .. arg_70_0.id)
-		var_70_0:UpdateHpRant(arg_70_0.hpRant)
+		assert(slot1, "ship not exist: " .. slot0.id)
+		slot1:UpdateHpRant(slot0.hpRant)
 	end)
 end
 
-function var_0_0.NetUpdateWorldSairenChapter(arg_71_0, arg_71_1)
-	local var_71_0 = _.rest(arg_71_1, 1)
-
-	arg_71_0.world:GetAtlas():SetSairenEntranceList(var_71_0)
+function slot0.NetUpdateWorldSairenChapter(slot0, slot1)
+	slot0.world:GetAtlas():SetSairenEntranceList(_.rest(slot1, 1))
 end
 
-function var_0_0.NetUpdateWorldMapPressing(arg_72_0, arg_72_1)
-	local var_72_0 = _.rest(arg_72_1, 1)
-
-	arg_72_0.world:GetAtlas():SetPressingMarkList(var_72_0)
-	arg_72_0.world:GetAtlas():InitPortMarkNShopList()
+function slot0.NetUpdateWorldMapPressing(slot0, slot1)
+	slot0.world:GetAtlas():SetPressingMarkList(_.rest(slot1, 1))
+	slot0.world:GetAtlas():InitPortMarkNShopList()
 end
 
-function var_0_0.NetUpdateWorldShopGoods(arg_73_0, arg_73_1)
-	arg_73_0.world:InitWorldShopGoods()
-	arg_73_0.world:UpdateWorldShopGoods(arg_73_1)
+function slot0.NetUpdateWorldShopGoods(slot0, slot1)
+	slot0.world:InitWorldShopGoods()
+	slot0.world:UpdateWorldShopGoods(slot1)
 end
 
-function var_0_0.NetUpdateWorldPressingAward(arg_74_0, arg_74_1)
-	local var_74_0 = arg_74_0.world:GetAtlas()
+function slot0.NetUpdateWorldPressingAward(slot0, slot1)
+	slot2 = slot0.world:GetAtlas()
 
-	_.each(arg_74_1, function(arg_75_0)
-		local var_75_0 = arg_75_0.id
-		local var_75_1 = {
-			id = arg_75_0.award,
-			flag = arg_75_0.flag == 1
+	_.each(slot1, function (slot0)
+		slot2 = {
+			id = slot0.award,
+			flag = slot0.flag == 1
 		}
+		uv0.world.pressingAwardDic[slot0.id] = slot2
 
-		arg_74_0.world.pressingAwardDic[var_75_0] = var_75_1
-
-		if not var_75_1.flag then
-			var_74_0:MarkMapTransport(var_75_0)
+		if not slot2.flag then
+			uv1:MarkMapTransport(slot1)
 		end
 	end)
 end
 
-function var_0_0.NetUpdateWorldPortShopMark(arg_76_0, arg_76_1, arg_76_2)
-	arg_76_0.world:GetAtlas():SetPortMarkList(arg_76_1, arg_76_2)
+function slot0.NetUpdateWorldPortShopMark(slot0, slot1, slot2)
+	slot0.world:GetAtlas():SetPortMarkList(slot1, slot2)
 end
 
-function var_0_0.NetBuildSalvageUpdate(arg_77_0, arg_77_1)
-	return _.map(arg_77_1, function(arg_78_0)
-		local var_78_0 = WPool:Get(NetSalvageUpdate)
+function slot0.NetBuildSalvageUpdate(slot0, slot1)
+	return _.map(slot1, function (slot0)
+		slot1 = WPool:Get(NetSalvageUpdate)
 
-		var_78_0:Setup(arg_78_0)
+		slot1:Setup(slot0)
 
-		return var_78_0
+		return slot1
 	end)
 end
 
-function var_0_0.ApplySalvageUpdate(arg_79_0, arg_79_1)
-	_.each(arg_79_1, function(arg_80_0)
-		local var_80_0 = arg_79_0.world:GetFleet(arg_80_0.id)
+function slot0.ApplySalvageUpdate(slot0, slot1)
+	_.each(slot1, function (slot0)
+		slot1 = uv0.world:GetFleet(slot0.id)
 
-		assert(var_80_0, "fleet not exit: " .. arg_80_0.id)
-		var_80_0:UpdateCatSalvage(arg_80_0.step, arg_80_0.list, arg_80_0.mapId)
+		assert(slot1, "fleet not exit: " .. slot0.id)
+		slot1:UpdateCatSalvage(slot0.step, slot0.list, slot0.mapId)
 	end)
 end
 
-return var_0_0
+return slot0

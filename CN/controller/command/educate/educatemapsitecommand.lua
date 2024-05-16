@@ -1,55 +1,50 @@
-﻿local var_0_0 = class("EducateMapSiteCommand", pm.SimpleCommand)
+slot0 = class("EducateMapSiteCommand", pm.SimpleCommand)
 
-function var_0_0.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-	local var_1_1
+function slot0.execute(slot0, slot1)
+	slot3 = slot1:getBody() and slot2.callback
+	slot4 = slot2.optionVO
+	slot5 = slot4.id
+	slot7 = getProxy(EducateProxy):GetCharData()
+	slot8 = {}
 
-	var_1_1 = var_1_0 and var_1_0.callback
+	if #slot4:GetCost() > 0 then
+		for slot12, slot13 in ipairs(slot6) do
+			assert(slot13[1] == EducateConst.DROP_TYPE_RES, "child_site_option的cost只支持资源类型，请检查id:" .. slot5)
 
-	local var_1_2 = var_1_0.optionVO
-	local var_1_3 = var_1_2.id
-	local var_1_4 = var_1_2:GetCost()
-	local var_1_5 = getProxy(EducateProxy):GetCharData()
-	local var_1_6 = {}
-
-	if #var_1_4 > 0 then
-		for iter_1_0, iter_1_1 in ipairs(var_1_4) do
-			assert(iter_1_1[1] == EducateConst.DROP_TYPE_RES, "child_site_option的cost只支持资源类型，请检查id:" .. var_1_3)
-
-			if var_1_5[EducateChar.RES_ID_2_NAME[iter_1_1[2]]] < iter_1_1[3] then
+			if slot7[EducateChar.RES_ID_2_NAME[slot13[2]]] < slot13[3] then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("child_no_resource"))
 
 				return
 			end
 
-			table.insert(var_1_6, {
-				id = iter_1_1[2],
-				num = iter_1_1[3]
+			table.insert(slot8, {
+				id = slot13[2],
+				num = slot13[3]
 			})
 		end
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(27004, {
-		siteid = var_1_0.siteId,
-		optionid = var_1_3
-	}, 27005, function(arg_2_0)
-		if arg_2_0.result == 0 then
-			EducateHelper.UpdateDropsData(arg_2_0.drops)
-			EducateHelper.UpdateDropsData(arg_2_0.event_drops)
-			getProxy(EducateProxy):ReduceResForCosts(var_1_6)
-			var_1_2:ReduceCnt()
-			getProxy(EducateProxy):UpdateOptionData(var_1_2)
-			arg_1_0:sendNotification(GAME.EDUCATE_MAP_SITE_DONE, {
-				optionId = var_1_3,
-				drops = arg_2_0.drops,
-				eventDrops = arg_2_0.event_drops,
-				events = arg_2_0.events,
-				branchId = arg_2_0.branch_id
+		siteid = slot2.siteId,
+		optionid = slot5
+	}, 27005, function (slot0)
+		if slot0.result == 0 then
+			EducateHelper.UpdateDropsData(slot0.drops)
+			EducateHelper.UpdateDropsData(slot0.event_drops)
+			getProxy(EducateProxy):ReduceResForCosts(uv0)
+			uv1:ReduceCnt()
+			getProxy(EducateProxy):UpdateOptionData(uv1)
+			uv2:sendNotification(GAME.EDUCATE_MAP_SITE_DONE, {
+				optionId = uv3,
+				drops = slot0.drops,
+				eventDrops = slot0.event_drops,
+				events = slot0.events,
+				branchId = slot0.branch_id
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate map site error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate map site error: ", slot0.result))
 		end
 	end)
 end
 
-return var_0_0
+return slot0

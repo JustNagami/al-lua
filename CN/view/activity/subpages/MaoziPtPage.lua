@@ -1,1 +1,1 @@
-﻿return (class("MaoziPtPage", import(".TemplatePage.FrameReTemplatePage")))
+return class("MaoziPtPage", import(".TemplatePage.FrameReTemplatePage"))

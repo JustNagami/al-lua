@@ -1,23 +1,23 @@
-﻿local var_0_0 = class("Shrine2022SelectShipView", import("...base.BaseSubView"))
+slot0 = class("Shrine2022SelectShipView", import("...base.BaseSubView"))
 
-function var_0_0.getUIName(arg_1_0)
+function slot0.getUIName(slot0)
 	return "Shrine2022SelectShipUI"
 end
 
-function var_0_0.OnInit(arg_2_0)
-	arg_2_0:initData()
-	arg_2_0:initUI()
-	arg_2_0:updateCardList()
-	arg_2_0:Show()
-	arg_2_0:playEnterAni(true)
+function slot0.OnInit(slot0)
+	slot0:initData()
+	slot0:initUI()
+	slot0:updateCardList()
+	slot0:Show()
+	slot0:playEnterAni(true)
 end
 
-function var_0_0.OnDestroy(arg_3_0)
-	arg_3_0:cleanManagedTween()
+function slot0.OnDestroy(slot0)
+	slot0:cleanManagedTween()
 end
 
-function var_0_0.initData(arg_4_0)
-	arg_4_0.cardPosList = {
+function slot0.initData(slot0)
+	slot0.cardPosList = {
 		{
 			x = -80,
 			y = 240
@@ -47,7 +47,7 @@ function var_0_0.initData(arg_4_0)
 			y = -210
 		}
 	}
-	arg_4_0.confirmPosList = {
+	slot0.confirmPosList = {
 		{
 			x = -452,
 			y = -34
@@ -77,154 +77,141 @@ function var_0_0.initData(arg_4_0)
 			y = -400
 		}
 	}
-	arg_4_0.onCloseFunc = arg_4_0.contextData.onClose
-	arg_4_0.onSelectFunc = arg_4_0.contextData.onSelect
-	arg_4_0.onConfirmFunc = arg_4_0.contextData.onConfirm
-	arg_4_0.shipGameID = arg_4_0.contextData.shipGameID
-	arg_4_0.shipGameData = getProxy(MiniGameProxy):GetMiniGameData(arg_4_0.shipGameID)
-	arg_4_0.selectingCardIndex = arg_4_0.contextData.selectingCardIndex
-	arg_4_0.curSelectIndex = nil
+	slot0.onCloseFunc = slot0.contextData.onClose
+	slot0.onSelectFunc = slot0.contextData.onSelect
+	slot0.onConfirmFunc = slot0.contextData.onConfirm
+	slot0.shipGameID = slot0.contextData.shipGameID
+	slot0.shipGameData = getProxy(MiniGameProxy):GetMiniGameData(slot0.shipGameID)
+	slot0.selectingCardIndex = slot0.contextData.selectingCardIndex
+	slot0.curSelectIndex = nil
 end
 
-function var_0_0.initUI(arg_5_0)
-	arg_5_0.bg = arg_5_0:findTF("BG")
-	arg_5_0.cardTpl = arg_5_0:findTF("CardTpl")
-	arg_5_0.backBtn = arg_5_0:findTF("Adapt/BackBtn")
-	arg_5_0.helpBtn = arg_5_0:findTF("Adapt/HelpBtn")
-	arg_5_0.panelTF = arg_5_0:findTF("Adapt/Panel")
-	arg_5_0.tipTF = arg_5_0:findTF("Adapt/Tip")
-	arg_5_0.cardContainer = arg_5_0:findTF("CardContainer", arg_5_0.panelTF)
-	arg_5_0.cardUIItemList = UIItemList.New(arg_5_0.cardContainer, arg_5_0.cardTpl)
-	arg_5_0.confirmBtn = arg_5_0:findTF("ConfirmBtn")
+function slot0.initUI(slot0)
+	slot0.bg = slot0:findTF("BG")
+	slot0.cardTpl = slot0:findTF("CardTpl")
+	slot0.backBtn = slot0:findTF("Adapt/BackBtn")
+	slot0.helpBtn = slot0:findTF("Adapt/HelpBtn")
+	slot0.panelTF = slot0:findTF("Adapt/Panel")
+	slot0.tipTF = slot0:findTF("Adapt/Tip")
+	slot0.cardContainer = slot0:findTF("CardContainer", slot0.panelTF)
+	slot0.cardUIItemList = UIItemList.New(slot0.cardContainer, slot0.cardTpl)
+	slot0.confirmBtn = slot0:findTF("ConfirmBtn")
 
-	onButton(arg_5_0, arg_5_0.bg, function()
-		arg_5_0:closeSelf()
+	onButton(slot0, slot0.bg, function ()
+		uv0:closeSelf()
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.backBtn, function()
-		arg_5_0:closeSelf()
+	onButton(slot0, slot0.backBtn, function ()
+		uv0:closeSelf()
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.helpBtn, function()
+	onButton(slot0, slot0.helpBtn, function ()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.Pray_activity_tips1.tip
 		})
 	end, SFX_PANEL)
-	onButton(arg_5_0, arg_5_0.confirmBtn, function()
-		if arg_5_0.onConfirmFunc then
-			arg_5_0.onConfirmFunc(arg_5_0.curSelectIndex)
+	onButton(slot0, slot0.confirmBtn, function ()
+		if uv0.onConfirmFunc then
+			uv0.onConfirmFunc(uv0.curSelectIndex)
 		end
 
-		arg_5_0:closeSelf()
+		uv0:closeSelf()
 	end, SFX_PANEL)
-	arg_5_0.cardUIItemList:make(function(arg_10_0, arg_10_1, arg_10_2)
-		if arg_10_0 == UIItemList.EventUpdate then
-			local var_10_0 = arg_10_1 + 1
-			local var_10_1 = "cardselect_" .. var_10_0
-			local var_10_2 = "Shrine2022/" .. var_10_1
+	slot0.cardUIItemList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			slot3 = slot1 + 1
+			slot4 = "cardselect_" .. slot3
 
-			setImageSprite(arg_10_2, LoadSprite(var_10_2, var_10_1), true)
+			setImageSprite(slot2, LoadSprite("Shrine2022/" .. slot4, slot4), true)
 
-			local var_10_3 = arg_5_0:findTF("Name", arg_10_2)
-			local var_10_4 = "cardselectname_" .. var_10_0
-			local var_10_5 = "Shrine2022/" .. var_10_4
+			slot6 = uv0:findTF("Name", slot2)
+			slot7 = "cardselectname_" .. slot3
 
-			setImageSprite(var_10_3, LoadSprite(var_10_5, var_10_4), true)
-			setLocalPosition(arg_10_2, arg_5_0.cardPosList[var_10_0])
+			setImageSprite(slot6, LoadSprite("Shrine2022/" .. slot7, slot7), true)
+			setLocalPosition(slot2, uv0.cardPosList[slot3])
 
-			local var_10_6 = arg_5_0:findTF("Selected", arg_10_2)
-			local var_10_7 = arg_5_0:isSelected(var_10_0)
+			slot10 = uv0:isSelected(slot3)
 
-			setActive(var_10_6, var_10_7)
-			setActive(var_10_3, not var_10_7)
+			setActive(uv0:findTF("Selected", slot2), slot10)
+			setActive(slot6, not slot10)
 
-			GetComponent(arg_10_2, "Toggle").enabled = not var_10_7
+			GetComponent(slot2, "Toggle").enabled = not slot10
 
-			if not var_10_7 then
-				onToggle(arg_5_0, arg_10_2, function(arg_11_0)
-					if arg_11_0 then
-						arg_5_0.curSelectIndex = var_10_0
+			if not slot10 then
+				onToggle(uv0, slot2, function (slot0)
+					if slot0 then
+						uv0.curSelectIndex = uv1
 
-						if arg_5_0.onSelectFunc then
-							arg_5_0.onSelectFunc(var_10_0)
+						if uv0.onSelectFunc then
+							uv0.onSelectFunc(uv1)
 						end
 					end
 
-					arg_5_0:updateConfirmBtn(arg_11_0)
+					uv0:updateConfirmBtn(slot0)
 				end, SFX_PANEL)
 			end
 		end
 	end)
 end
 
-function var_0_0.closeSelf(arg_12_0)
-	if arg_12_0.isPlaying then
+function slot0.closeSelf(slot0)
+	if slot0.isPlaying then
 		return
 	end
 
-	if arg_12_0.onCloseFunc then
-		arg_12_0.onCloseFunc()
+	if slot0.onCloseFunc then
+		slot0.onCloseFunc()
 	end
 
-	arg_12_0:playEnterAni(false, function()
-		arg_12_0:Destroy()
+	slot0:playEnterAni(false, function ()
+		uv0:Destroy()
 	end)
 end
 
-function var_0_0.updateConfirmBtn(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_0.confirmPosList[arg_14_0.selectingCardIndex]
-
-	setLocalPosition(arg_14_0.confirmBtn, var_14_0)
-	setActive(arg_14_0.confirmBtn, arg_14_1)
+function slot0.updateConfirmBtn(slot0, slot1)
+	setLocalPosition(slot0.confirmBtn, slot0.confirmPosList[slot0.selectingCardIndex])
+	setActive(slot0.confirmBtn, slot1)
 end
 
-function var_0_0.updateCardList(arg_15_0)
-	local var_15_0 = 7
-
-	arg_15_0.cardUIItemList:align(var_15_0)
+function slot0.updateCardList(slot0)
+	slot0.cardUIItemList:align(7)
 end
 
-function var_0_0.playEnterAni(arg_16_0, arg_16_1, arg_16_2)
-	local var_16_0 = arg_16_1 and -1000 or 0
-	local var_16_1 = arg_16_1 and 0 or -1000
-	local var_16_2 = 0.3
-	local var_16_3 = {
-		x = var_16_0,
-		y = rtf(arg_16_0.panelTF).anchoredPosition.y
+function slot0.playEnterAni(slot0, slot1, slot2)
+	slot3 = slot1 and -1000 or 0
+	slot6 = {
+		x = slot3,
+		y = rtf(slot0.panelTF).anchoredPosition.y
 	}
+	slot0.isPlaying = true
 
-	arg_16_0.isPlaying = true
+	slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), slot3, slot1 and 0 or -1000, 0.3):setOnUpdate(System.Action_float(function (slot0)
+		uv0.x = slot0
 
-	arg_16_0:managedTween(LeanTween.value, nil, go(arg_16_0.panelTF), var_16_0, var_16_1, var_16_2):setOnUpdate(System.Action_float(function(arg_17_0)
-		var_16_3.x = arg_17_0
+		setAnchoredPosition(uv1.panelTF, uv0)
+	end)):setOnComplete(System.Action(function ()
+		uv0.isPlaying = false
 
-		setAnchoredPosition(arg_16_0.panelTF, var_16_3)
-	end)):setOnComplete(System.Action(function()
-		arg_16_0.isPlaying = false
-
-		if arg_16_2 then
-			arg_16_2()
+		if uv1 then
+			uv1()
 		end
 	end))
 
-	local var_16_4 = arg_16_1 and -100 or 38
-	local var_16_5 = arg_16_1 and 38 or -100
-	local var_16_6 = {
-		x = rtf(arg_16_0.tipTF).anchoredPosition.x,
-		y = var_16_4
+	slot7 = slot1 and -100 or 38
+	slot9 = {
+		x = rtf(slot0.tipTF).anchoredPosition.x,
+		y = slot7
 	}
 
-	arg_16_0:managedTween(LeanTween.value, nil, go(arg_16_0.tipTF), var_16_4, var_16_5, var_16_2):setOnUpdate(System.Action_float(function(arg_19_0)
-		var_16_6.y = arg_19_0
+	slot0:managedTween(LeanTween.value, nil, go(slot0.tipTF), slot7, slot1 and 38 or -100, slot5):setOnUpdate(System.Action_float(function (slot0)
+		uv0.y = slot0
 
-		setAnchoredPosition(arg_16_0.tipTF, var_16_6)
+		setAnchoredPosition(uv1.tipTF, uv0)
 	end))
 end
 
-function var_0_0.isSelected(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_0.shipGameData:GetRuntimeData("kvpElements")[1]
-
-	for iter_20_0, iter_20_1 in ipairs(var_20_0) do
-		if iter_20_1.value == arg_20_1 then
+function slot0.isSelected(slot0, slot1)
+	for slot6, slot7 in ipairs(slot0.shipGameData:GetRuntimeData("kvpElements")[1]) do
+		if slot7.value == slot1 then
 			return true
 		end
 	end
@@ -232,4 +219,4 @@ function var_0_0.isSelected(arg_20_0, arg_20_1)
 	return false
 end
 
-return var_0_0
+return slot0

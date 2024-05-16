@@ -1,92 +1,85 @@
-﻿ys = ys or {}
+ys = ys or {}
+slot0 = ys
+slot1 = slot0.Battle.BattleUnitEvent
+slot2 = slot0.Battle.BattleAirFighterUnit
+slot0.Battle.BattleAirFighterCharacter = class("BattleAirFighterCharacter", slot0.Battle.BattleAircraftCharacter)
+slot0.Battle.BattleAirFighterCharacter.__name = "BattleAirFighterCharacter"
+slot3 = slot0.Battle.BattleAirFighterCharacter
 
-local var_0_0 = ys
-local var_0_1 = var_0_0.Battle.BattleUnitEvent
-local var_0_2 = var_0_0.Battle.BattleAirFighterUnit
+function slot3.Ctor(slot0)
+	uv0.super.Ctor(slot0)
 
-var_0_0.Battle.BattleAirFighterCharacter = class("BattleAirFighterCharacter", var_0_0.Battle.BattleAircraftCharacter)
-var_0_0.Battle.BattleAirFighterCharacter.__name = "BattleAirFighterCharacter"
-
-local var_0_3 = var_0_0.Battle.BattleAirFighterCharacter
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
-
-	arg_1_0._scaleVector = Vector3(1, 1, 1)
+	slot0._scaleVector = Vector3(1, 1, 1)
 end
 
-function var_0_3.SetUnitData(arg_2_0, arg_2_1)
-	arg_2_0._unitData = arg_2_1
+function slot3.SetUnitData(slot0, slot1)
+	slot0._unitData = slot1
 
-	arg_2_0:AddUnitEvent()
-	arg_2_1:SetUnVisitable()
+	slot0:AddUnitEvent()
+	slot1:SetUnVisitable()
 end
 
-function var_0_3.AddModel(arg_3_0, arg_3_1)
-	arg_3_0:SetGO(arg_3_1)
-	arg_3_0:SetBoneList()
-	arg_3_0._unitData:ActiveCldBox()
+function slot3.AddModel(slot0, slot1)
+	slot0:SetGO(slot1)
+	slot0:SetBoneList()
+	slot0._unitData:ActiveCldBox()
 end
 
-function var_0_3.Update(arg_4_0)
-	arg_4_0:UpdateMatrix()
-	arg_4_0:UpdateUIComponentPosition()
-	arg_4_0:UpdateHPPop()
-	arg_4_0:UpdateHPPopContainerPosition()
-	arg_4_0:UpdateHPBarPosition()
-	arg_4_0:UpdatePosition()
-	arg_4_0:UpdateHpBar()
+function slot3.Update(slot0)
+	slot0:UpdateMatrix()
+	slot0:UpdateUIComponentPosition()
+	slot0:UpdateHPPop()
+	slot0:UpdateHPPopContainerPosition()
+	slot0:UpdateHPBarPosition()
+	slot0:UpdatePosition()
+	slot0:UpdateHpBar()
 
-	local var_4_0 = arg_4_0._unitData:GetStrikeState()
-
-	if var_4_0 == var_0_2.STRIKE_STATE_DOWN or var_4_0 == var_0_2.STRIKE_STATE_ATTACK or var_4_0 == var_0_2.STRIKE_STATE_UP then
-		arg_4_0:UpdateShadow()
+	if slot0._unitData:GetStrikeState() == uv0.STRIKE_STATE_DOWN or slot1 == uv0.STRIKE_STATE_ATTACK or slot1 == uv0.STRIKE_STATE_UP then
+		slot0:UpdateShadow()
 	end
 end
 
-function var_0_3.AddUnitEvent(arg_5_0)
-	var_0_3.super.AddUnitEvent(arg_5_0)
-	arg_5_0._unitData:RegisterEventListener(arg_5_0, var_0_1.AIR_STRIKE_STATE_CHANGE, arg_5_0.onStrikeStateChange)
+function slot3.AddUnitEvent(slot0)
+	uv0.super.AddUnitEvent(slot0)
+	slot0._unitData:RegisterEventListener(slot0, uv1.AIR_STRIKE_STATE_CHANGE, slot0.onStrikeStateChange)
 end
 
-function var_0_3.RemoveUnitEvent(arg_6_0)
-	var_0_3.super.RemoveUnitEvent(arg_6_0)
-	arg_6_0._unitData:UnregisterEventListener(arg_6_0, var_0_1.AIR_STRIKE_STATE_CHANGE)
+function slot3.RemoveUnitEvent(slot0)
+	uv0.super.RemoveUnitEvent(slot0)
+	slot0._unitData:UnregisterEventListener(slot0, uv1.AIR_STRIKE_STATE_CHANGE)
 end
 
-function var_0_3.onStrikeStateChange(arg_7_0)
-	local var_7_0 = arg_7_0._unitData:GetStrikeState()
+function slot3.onStrikeStateChange(slot0)
+	if slot0._unitData:GetStrikeState() == uv0.STRIKE_STATE_FLY then
+		slot2 = (12 / (slot0._unitData:GetFormationIndex() + 3) + 1) * slot0._unitData:GetSize()
 
-	if var_7_0 == var_0_2.STRIKE_STATE_FLY then
-		local var_7_1 = (12 / (arg_7_0._unitData:GetFormationIndex() + 3) + 1) * arg_7_0._unitData:GetSize()
+		slot0._scaleVector:Set(slot2, slot2, slot2)
 
-		arg_7_0._scaleVector:Set(var_7_1, var_7_1, var_7_1)
+		slot0._tf.localScale = slot0._scaleVector
 
-		arg_7_0._tf.localScale = arg_7_0._scaleVector
+		slot0._shadow:SetActive(false)
+	elseif slot1 == uv0.STRIKE_STATE_BACK then
+		slot2 = slot0._unitData:GetSize()
 
-		arg_7_0._shadow:SetActive(false)
-	elseif var_7_0 == var_0_2.STRIKE_STATE_BACK then
-		local var_7_2 = arg_7_0._unitData:GetSize()
+		slot0._scaleVector:Set(-slot2, slot2, slot2)
 
-		arg_7_0._scaleVector:Set(-var_7_2, var_7_2, var_7_2)
+		slot0._tf.localScale = slot0._scaleVector
 
-		arg_7_0._tf.localScale = arg_7_0._scaleVector
+		slot0._HPBar:SetActive(true)
+		slot0._shadow:SetActive(true)
+	elseif slot1 == uv0.STRIKE_STATE_DOWN then
+		-- Nothing
+	elseif slot1 == uv0.STRIKE_STATE_ATTACK then
+		-- Nothing
+	elseif slot1 == uv0.STRIKE_STATE_UP then
+		-- Nothing
+	elseif slot1 == uv0.STRIKE_STATE_FREE then
+		-- Nothing
+	elseif slot1 == uv0.STRIKE_STATE_BACKWARD then
+		slot2 = slot0._unitData:GetSize()
 
-		arg_7_0._HPBar:SetActive(true)
-		arg_7_0._shadow:SetActive(true)
-	elseif var_7_0 == var_0_2.STRIKE_STATE_DOWN then
-		-- block empty
-	elseif var_7_0 == var_0_2.STRIKE_STATE_ATTACK then
-		-- block empty
-	elseif var_7_0 == var_0_2.STRIKE_STATE_UP then
-		-- block empty
-	elseif var_7_0 == var_0_2.STRIKE_STATE_FREE then
-		-- block empty
-	elseif var_7_0 == var_0_2.STRIKE_STATE_BACKWARD then
-		local var_7_3 = arg_7_0._unitData:GetSize()
+		slot0._scaleVector:Set(slot2, slot2, slot2)
 
-		arg_7_0._scaleVector:Set(var_7_3, var_7_3, var_7_3)
-
-		arg_7_0._tf.localScale = arg_7_0._scaleVector
+		slot0._tf.localScale = slot0._scaleVector
 	end
 end
