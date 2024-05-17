@@ -252,7 +252,7 @@ function slot6.SetMotherUnit(slot0, slot1)
 	if slot0._motherUnit:GetWeaponBoundBone().remote then
 		slot4 = slot3.remote
 		slot5 = Vector3(slot4[1], slot4[2], slot4[3])
-		slot5.x = slot5.x * slot2 --The IFF
+		slot5.x = slot5.x * slot2
 		slot7 = nil
 
 		slot0:SetPosition(((not slot0._battleProxy:GetStageInfo().mainUnitPosition or not slot6[slot2] or slot6[slot2][1]) and uv0.MAIN_UNIT_POS[slot2][1]) + slot5)
