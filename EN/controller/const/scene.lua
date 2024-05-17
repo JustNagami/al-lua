@@ -32,63 +32,65 @@ SCENE = {
 	MUSIC_FESTIVAL = "music festival",
 	HARBOR_BACKHILL = "HARBOR_BACKHILL",
 	TEMPESTA_MEDAL_COLLECTION = "tempesta medal collection",
-	SPRING_FESTIVAL_BACKHILL_2024 = "SPRING_FESTIVAL_BACKHILL_2024",
+	DORM3D = "dorm 3d",
 	SHIP_PROFILE = "ship profile",
 	SIXTH_ANNIVERSARY_JP_HOTSPRING = "SIXTH_ANNIVERSARY_JP_HOTSPRING",
-	EDUCATE_DOCK = "EDUCATE_DOCK",
+	SPRING_FESTIVAL_BACKHILL_2024 = "SPRING_FESTIVAL_BACKHILL_2024",
 	TECHNOLOGY = "technology",
 	BACKHILL_FIFTH_ANNIVERSARY = "BACKHILL FIFTH ANNIVERSARY",
-	TRANSITION = "scene transition",
+	EDUCATE_DOCK = "EDUCATE_DOCK",
 	EQUIP_CODE = "equip code",
+	TRANSITION = "scene transition",
 	SPWEAPON_STOREHOUSE = "spweapon storehouse",
-	CARD_TOWER_DIFFICULTY_SELECT = "CARD_TOWER_DIFFICULTY_SELECT",
 	EVENT = "scene event",
 	REFLUX = "reflux",
+	CARD_TOWER_DIFFICULTY_SELECT = "CARD_TOWER_DIFFICULTY_SELECT",
 	OTHERWORLD_MAP = "OTHERWORLD_MAP",
-	MUSIC_FESTIVAL3 = "music festival 3",
 	BATTLE = "scene battle",
 	PROPINFO = "scene prop info",
-	SINGLE_ACTIVITY = "single activity",
+	MUSIC_FESTIVAL3 = "music festival 3",
 	OTHER_WORLD_TEMPLE_SCENE = "other world temple scene",
+	SINGLE_ACTIVITY = "single activity",
 	BACKYARD_THEME_TEMPLATE = "backyard theme template",
 	CHUZHENG = "scene chuzheng",
-	NEWYEAR_BACKHILL_2022 = "scene NEWYEAR BACKHILL 2022",
 	MAINUI = "scene mainUI",
+	NEWYEAR_BACKHILL_2022 = "scene NEWYEAR BACKHILL 2022",
 	ACT_BOSS_SPF = "act boss spf",
-	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
 	ACTIVITY = "scene activity",
 	REDPACKEYLOTTERY = "scene RED PACKEY LOTTERY",
 	BULLETINBOARD = "scene bulletinboard",
-	RYZA_TASK = "ryza task scene",
+	ATELIER_COMPOSITE = "ATELIER_COMPOSITE",
 	IDOL_MEDAL_COLLECTION_SCENE = "idol medal collection scene",
-	ANNIVERSARY_ISLAND_WORKBENCH = "anniversary island workbench",
+	RYZA_TASK = "ryza task scene",
 	BACKYARD = "scene court yard",
-	FRIEND = "scene friend",
+	ANNIVERSARY_ISLAND_WORKBENCH = "anniversary island workbench",
 	RYZA_URBAN_AREA = "RYZA_URBAN_AREA",
+	FRIEND = "scene friend",
 	RANDOM_DOCKYARD = "random dockyard",
 	HOLOLIVE_MEDAL = "hololive medal",
-	BACKHILL_SUMMERPARK_2022 = "BACKHILL_SUMMERPARK_2022",
 	NEWYEAR_BACKHILL = "scene NEWYEAR BACKHILL",
-	IDOLMASTER_MEDAL_COLLECTION_SCENE = "idolmaster medal collection scent",
+	BACKHILL_SUMMERPARK_2022 = "BACKHILL_SUMMERPARK_2022",
 	WORLD_FLEET_SELECT = "world fleet select",
-	PUBLIC_GUILD = "public guild",
+	IDOLMASTER_MEDAL_COLLECTION_SCENE = "idolmaster medal collection scent",
 	SPRING_FESTIVAL_BACKHILL_2023 = "SPRING FESTIVAL BackHill 2023",
-	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
+	PUBLIC_GUILD = "public guild",
 	SECRET_SHIPYARD = "SECRET_SHIPYARD",
+	DOA2_MEDAL_COLLECTION_SCENE = "scene doa2 medal collection",
 	DOALINK_ISLAND = "scene DOALink Island",
-	RESOLVESHIPS = "scene resolve ships",
 	RESOLVEEQUIP = "scene resolve equip",
 	DOCKYARD = "scene dockyard",
 	TASK = "scene task",
 	JIUJIU_EXPEDITION = "jiujiu expedition ",
+	RESOLVESHIPS = "scene resolve ships",
 	SIXTH_ANNIVERSARY_JP_DARK = "SIXTH_ANNIVERSARY_JP_DARK",
-	WORLD = "scene world",
-	SENRANKAGURA_TRAIN = "SENRANKAGURA_TRAIN",
+	SENRANKAGURA_TRAIN = "senrankagura train",
 	CHALLENGE_MAIN_SCENE = "challenge main scene",
 	OTHERWORLD_BACKHILL = "OTHERWORLD_BACKHILL",
+	WORLD = "scene world",
 	SELECT_SKIN = "scene select skin",
 	WORLD_COLLECTION = "world collection",
 	SNAPSHOT = "snapshot",
+	DORM3D_AR = "DORM3D_AR",
 	SELTECHNOLOGY = "seltechnology",
 	INVITATION = "scene invitation",
 	UPGRADESTAR = "scene upgrade star",
@@ -112,7 +114,7 @@ SCENE = {
 	PROBABILITY_SKINSHOP = "scene probability skinshop",
 	BOSSRUSH_MAIN = "bossrush main",
 	EDUCATE_SCHEDULE = "EDUCATE_SCHEDULE",
-	SENRANKAGURA_MEDAL = "SENRANKAGURA_MEDAL",
+	SENRANKAGURA_MEDAL = "senrankagura medal",
 	GETBOAT = "scene get boat",
 	NAVALACADEMYSCENE = "naval academy scene",
 	ANNIVERSARY = "anniversary",
@@ -125,6 +127,7 @@ SCENE = {
 	NEWYEAR_SQUARE = "newyear square",
 	MONOPOLY_WORLD = "MONOPOLY WORLD",
 	DAILYLEVEL = "scene dailylevel",
+	DORM3DSELECT = "dorm 3d select",
 	TRAININGCAMP = "trainingcamp",
 	LINK_LINK = "link link",
 	HOTSPRING_SHOP = "hotSpring shop",
@@ -792,6 +795,10 @@ slot0 = {
 		slot0.mediator = BackHillMediatorTemplate
 		slot0.viewComponent = SenrankaguraBackHillScene
 	end,
+	[SCENE.DORM3D] = function (slot0, slot1)
+		slot0.mediator = Dorm3dSceneMediator
+		slot0.viewComponent = Dorm3dScene
+	end,
 	[SCENE.NEWYEAR_BACKHILL_2024] = function (slot0, slot1)
 		slot0.mediator = BackHillMediatorTemplate
 		slot0.viewComponent = NewYearFestival2024Scene
@@ -827,6 +834,14 @@ slot0 = {
 	[SCENE.OTHERWORLD_MAP] = function (slot0, slot1)
 		slot0.mediator = OtherworldMapMediator
 		slot0.viewComponent = OtherworldMapScene
+	end,
+	[SCENE.DORM3DSELECT] = function (slot0, slot1)
+		slot0.mediator = SelectDorm3DMediator
+		slot0.viewComponent = SelectDorm3DScene
+	end,
+	[SCENE.DORM3D_AR] = function (slot0, slot1)
+		slot0.mediator = Dorm3dARMediator
+		slot0.viewComponent = Dorm3dARScene
 	end
 }
 
@@ -880,7 +895,7 @@ slot1 = {
 			end
 
 			table.insert(slot3, function (slot0)
-				PaintingConst.PaintingDownload({
+				PaintingGroupConst.PaintingDownload({
 					isShowBox = true,
 					paintingNameList = WorldConst.WorldStoryPaintingList,
 					finishFunc = slot0
@@ -1020,24 +1035,24 @@ slot1 = {
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ANNIVERSARY_ISLAND_SEA)
 	end,
 	ShipBluePrintMediator = function (slot0, slot1)
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
-			paintingNameList = PaintingConst.GetPaintingNameListForTec(),
+			paintingNameList = PaintingGroupConst.GetPaintingNameListForTec(),
 			finishFunc = slot1
 		})
 	end,
 	SwichSkinMediator = function (slot0, slot1)
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
-			paintingNameList = PaintingConst.GetPaintingNameListByShipVO(slot0.context.data.shipVO),
+			paintingNameList = PaintingGroupConst.GetPaintingNameListByShipVO(slot0.context.data.shipVO),
 			finishFunc = slot1
 		})
 	end,
 	NewShipMediator = function (slot0, slot1)
 		slot3 = {}
 
-		PaintingConst.AddPaintingNameByShipConfigID(slot3, slot0.context.data.ship.configId)
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.AddPaintingNameByShipConfigID(slot3, slot0.context.data.ship.configId)
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = false,
 			paintingNameList = slot3,
 			finishFunc = slot1
@@ -1058,10 +1073,10 @@ slot1 = {
 		slot2 = {}
 
 		for slot6, slot7 in ipairs(pg.ship_data_create_exchange[REGULAR_BUILD_POOL_EXCHANGE_ID].exchange_ship_id) do
-			PaintingConst.AddPaintingNameByShipConfigID(slot2, slot7)
+			PaintingGroupConst.AddPaintingNameByShipConfigID(slot2, slot7)
 		end
 
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = false,
 			paintingNameList = slot2,
 			finishFunc = slot1
@@ -1078,6 +1093,38 @@ slot1 = {
 		end
 
 		slot1()
+	end,
+	Dorm3dSceneMediator = function (slot0, slot1)
+		slot2 = {}
+
+		if not slot0.context.data.timeIndex then
+			table.insert(slot2, function (slot0)
+				if PlayerPrefs.GetInt("DORM3D_SCENE_LOCK_TIME", 0) == 0 then
+					slot1 = ApartmentProxy.GetTimeIndex(tonumber(pg.TimeMgr.GetInstance():CurrentSTimeDesc("%H")))
+				end
+
+				uv0.timeIndex = slot1
+
+				slot0()
+			end)
+		end
+
+		table.insert(slot2, function (slot0)
+			uv0.sceneData = getProxy(ApartmentProxy):getApartment(uv0.groupId):GetSceneData(uv0.timeIndex)
+
+			if not uv0.hasEnterCheck then
+				uv0.enterType = math.random(2)
+
+				if uv0.enterType == 2 then
+					slot2 = slot1:getZoneNames()
+					uv0.enterZone = slot2[math.random(#slot2)]
+					uv0.charFurnitureName = uv0.enterZone
+				end
+			end
+
+			slot0()
+		end)
+		seriesAsync(slot2, slot1)
 	end
 }
 

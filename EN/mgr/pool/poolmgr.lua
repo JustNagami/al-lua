@@ -40,25 +40,34 @@ function slot0.Ctor(slot0)
 			"1",
 			"2",
 			"3",
-			"04",
 			"4",
-			"05",
+			"4_0",
+			"4_1",
 			"5",
+			"5_0",
+			"5_1",
+			"prop",
+			"prop4_0",
+			"prop4_1",
+			"prop5_0"
+		},
+		shipframeb = {
 			"b1",
 			"b2",
 			"b3",
-			"b04",
+			"b3_1",
 			"b4",
-			"b05",
+			"b4_0",
+			"b4_1",
 			"b5",
+			"b5_0",
+			"b5_1",
 			"ba",
 			"bl",
-			"prop",
-			"prop04",
-			"prop05",
 			"bprop",
-			"bprop04",
-			"bprop05"
+			"bprop4_0",
+			"bprop4_1",
+			"bprop5_0"
 		},
 		["shipyardicon/unknown"] = {
 			""
@@ -72,21 +81,30 @@ function slot0.Ctor(slot0)
 			"bg1",
 			"bg2",
 			"bg3",
-			"bg04",
+			"bg3_1",
 			"bg4",
-			"bg05",
+			"bg4_0",
+			"bg4_1",
 			"bg5",
+			"bg5_0",
+			"bg5_1",
+			"bg7",
 			"bg8",
 			"bg9",
+			"bg_skin",
 			"frame",
-			"frame04",
-			"frame05",
-			"frame6",
-			"frame7",
+			"frame3_1",
+			"frame4_0",
+			"frame4_1",
+			"frame5_0",
 			"frame8",
 			"frame9",
+			"frame_design",
+			"frame_design_owned",
 			"frame_npc",
-			"frame_prop"
+			"frame_prop",
+			"frame_prop_meta",
+			"frame_skin"
 		},
 		energy = {
 			"express_1",
@@ -117,19 +135,36 @@ function slot0.Init(slot0, slot1)
 
 	for slot8, slot9 in pairs(slot0.preloads) do
 		if #slot9 > 0 then
-			slot10 = 0
+			slot10 = typeof(Sprite)
+			slot11 = false
 
-			for slot14, slot15 in ipairs(slot9) do
-				slot0:GetSprite(slot8, slot15, true, function (slot0)
-					uv0 = uv0 + 1
-
-					if uv0 == #uv1 then
-						uv2()
-					end
-				end)
+			function slot12(slot0)
 			end
+
+			buildTempAB(slot8, function (slot0)
+				for slot4, slot5 in ipairs(uv0) do
+					slot6 = slot0:LoadAssetSync(slot5, uv1, uv2, false)
+					slot8 = slot5
+
+					if uv4.pools_pack[uv3] and uv4.pools_pack[slot7]:Get(slot8) then
+						uv5(uv4.pools_pack[slot7]:Get(slot8))
+					else
+						if not uv4.pools_pack[slot7] then
+							uv4.pools_pack[slot7] = uv6.New(uv1)
+						end
+
+						if not uv4.pools_pack[slot7]:Get(slot8) then
+							uv4.pools_pack[slot7]:Set(slot8, slot6)
+						end
+
+						uv5(slot6)
+					end
+				end
+
+				uv7()
+			end)
 		else
-			uv0:loadAssetBundleAsync(slot8, function (slot0)
+			buildTempAB(slot8, function (slot0)
 				uv0()
 			end)
 		end
@@ -256,9 +291,7 @@ slot7 = {
 	"Loading",
 	"WorldUI"
 }
-slot8 = {
-	"WorldAllocateUI"
-}
+slot8 = {}
 
 function slot0.GetUI(slot0, slot1, slot2, slot3)
 	slot0:FromPlural("ui/" .. slot1, slot1, slot2, table.contains(uv0, slot1) and 3 or 1, function (slot0)

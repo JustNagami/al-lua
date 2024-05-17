@@ -1040,5 +1040,14 @@ pg.activity_const = {
 	},
 	MUSIC_FESTIVAL_PT_ID_3 = {
 		act_id = 5308
+	},
+	LINER_SIGN_ID = {
+		act_id = 5324
+	},
+	LINER_NAMED_ID = {
+		act_id = 5322
+	},
+	LINER_ID = {
+		act_id = 5335
 	}
 }

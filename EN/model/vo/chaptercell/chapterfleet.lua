@@ -163,7 +163,7 @@ function slot0.ResortShips(slot0)
 		slot1 = uv0[slot0]
 		slot2 = {}
 
-		table.Ipars(slot1, function (slot0, slot1)
+		table.Ipairs(slot1, function (slot0, slot1)
 			uv0[slot1] = slot0
 		end)
 		table.sort(slot1, CompareFuncs({

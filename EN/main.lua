@@ -30,6 +30,8 @@ if not IsUnityEditor then
 	end
 end
 
+QualitySettings.vSyncCount = 0
+
 ReflectionHelp.RefSetField(typeof("ResourceMgr"), "_asyncMax", ResourceMgr.Inst, 30)
 
 tf(GameObject.Find("EventSystem")):GetComponent(typeof(EventSystem)).sendNavigationEvents = false
@@ -273,6 +275,9 @@ seriesAsync({
 			end,
 			function (slot0)
 				pg.RepairResMgr.GetInstance():Init(slot0)
+			end,
+			function (slot0)
+				pg.NodeCanvasMgr.GetInstance():Init(slot0)
 			end,
 			function (slot0)
 				pg.SceneAnimMgr.GetInstance():Init(slot0)

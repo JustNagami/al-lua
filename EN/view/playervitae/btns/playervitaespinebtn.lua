@@ -2,7 +2,7 @@ slot0 = class("PlayerVitaeSpineBtn", import(".PlayerVitaeBaseBtn"))
 
 function slot0.GetBgName(slot0)
 	if slot0:IsHrzType() then
-		return "commonUI_atlas", "spine_painting_bg"
+		return "share/btn_l2d_atlas", "spine_painting_bg"
 	else
 		return "AdmiralUI_atlas", "sp"
 	end

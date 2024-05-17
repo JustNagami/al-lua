@@ -34,17 +34,23 @@ end
 function AiriLogin(slot0)
 	pg.UIMgr.GetInstance():LoadingOff()
 
-	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
-		function ()
-			pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
-				user = User.New({
-					type = 1,
-					arg1 = PLATFORM_AIRIUS,
-					arg2 = uv0.UID,
-					arg3 = uv0.ACCESS_TOKEN
-				})
+	function slot1()
+		pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+			user = User.New({
+				type = 1,
+				arg1 = PLATFORM_AIRIUS,
+				arg2 = uv0.UID,
+				arg3 = uv0.ACCESS_TOKEN
 			})
-		end()
+		})
+	end
+
+	if uv0.AiriYoStarPassMigrateHandler(slot0) then
+		return
+	end
+
+	if uv0.AiriResultCodeHandler(slot0.R_CODE) then
+		slot1()
 	else
 		if uv0.AiriPGSResultCodeHandler(slot0.R_CODE, function ()
 			uv0()
@@ -56,7 +62,7 @@ function AiriLogin(slot0)
 			if pg.TimeMgr.GetInstance():GetServerTime() < tonumber(string.sub(slot0.R_DELETETIME, 1, string.len(slot0.R_DELETETIME) - 3)) then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					modal = true,
-					content = i18n("box_account_reborn_content", pg.TimeMgr.GetInstance():CTimeDescC(slot5, "%Y-%m-%d %H:%M:%S")),
+					content = i18n("box_account_reborn_content", pg.TimeMgr.GetInstance():CTimeDescC(slot6, "%Y-%m-%d %H:%M:%S")),
 					weight = LayerWeightConst.TOP_LAYER,
 					onYes = function ()
 						uv0.AccountReborn()
@@ -183,6 +189,16 @@ function AccountRebornResult(slot0, slot1)
 		end
 	}) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("tip_account_del_reborn"))
+	end
+end
+
+function BindYostarPassResult(slot0, slot1)
+	if uv0.AiriResultCodeHandler({
+		ToInt = function ()
+			return uv0
+		end
+	}) then
+		pg.TipsMgr.GetInstance():ShowTips("Bind Success.")
 	end
 end
 
@@ -407,6 +423,9 @@ return {
 	ConfirmUnLinkGooglePlayGame = function ()
 		uv0:ConfirmUnLinkGooglePlayGame()
 	end,
+	BindYostarPass = function ()
+		uv0:BindYostarPassReq()
+	end,
 	AiriResultCodeHandler = function (slot0)
 		slot1 = slot0:ToInt()
 		slot2 = ":" .. slot1
@@ -500,6 +519,15 @@ return {
 					uv0.ConfirmUnLinkGooglePlayGame()
 				end
 			})
+
+			return true
+		else
+			return false
+		end
+	end,
+	AiriYoStarPassMigrateHandler = function (slot0)
+		if slot0.SHOW_MIGRATE_PAGE == 1 then
+			uv0.BindYostarPass()
 
 			return true
 		else

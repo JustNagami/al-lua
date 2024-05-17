@@ -7,13 +7,18 @@ slot1.ps = nil
 function slot1.Ctor(slot0)
 	slot0._protocols = {}
 	uv0.ps = PackStream.New()
+	slot0.defaultBuffSize = 8192
 end
 
 function slot1.Pack(slot0, slot1, slot2, slot3)
-	slot4 = slot3:SerializeToString()
 	slot5 = ""
+	slot6 = slot0.ps
 
-	if slot0.ps.Length ~= 0 then
+	if #slot3:SerializeToString() > slot0.defaultBuffSize - 7 then
+		slot6 = PackStream.New(#slot4 + 7)
+	end
+
+	if slot6.Length ~= 0 then
 		print("### pack string error !!!!!!!!!!!")
 	end
 

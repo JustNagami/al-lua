@@ -171,8 +171,12 @@ function slot4.GrayScale(slot0)
 end
 
 function slot4.NewHex(slot0)
+	if string.sub(slot0, 1, 1) == "#" then
+		slot0 = string.sub(slot0, 2)
+	end
+
 	for slot5 = 1, 4 do
-		if slot5 + slot5 > #slot0 then
+		if slot5 + slot5 > #string.upper(slot0) then
 			-- Nothing
 		else
 			slot1[slot5] = tonumber(string.sub(slot0, slot5 + slot5 - 1, slot5 + slot5), 16) / 255

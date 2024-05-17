@@ -232,7 +232,7 @@ function SetActionCallback(slot0, slot1)
 end
 
 function emojiText(slot0, slot1)
-	slot2 = ResourceMgr.Inst:loadAssetBundleSync("emojis")
+	slot2 = buildTempAB("emojis", false)
 	slot4 = GetComponent(slot0, "MeshRenderer")
 	slot5 = Shader.Find("UI/Unlit/Transparent")
 	slot8 = {}
@@ -241,7 +241,7 @@ function emojiText(slot0, slot1)
 		if not uv0[slot0] then
 			uv1 = uv1 + 1
 			slot2 = Material.New(uv2)
-			slot2.mainTexture = ResourceMgr.Inst:LoadAssetSync(uv3, "emoji" .. slot0, false, false)
+			slot2.mainTexture = uv3:LoadAssetSync("emoji" .. slot0, false, false)
 
 			table.insert(uv4, slot2)
 
@@ -700,31 +700,31 @@ function slot3(slot0, slot1)
 end
 
 slot4 = {
-	frame04 = {
+	frame4_0 = {
 		-8,
 		-8.5,
 		-8,
 		-8
 	},
-	frame05 = {
+	frame5_0 = {
 		-8,
 		-8.5,
 		-8,
 		-8
 	},
-	frame14 = {
+	frame4_1 = {
 		-8,
 		-8.5,
 		-8,
 		-8
 	},
-	frame6 = {
+	frame_design = {
 		-16.5,
 		-2.5,
 		-3.5,
 		-16.5
 	},
-	frame7 = {
+	frame_skin = {
 		-16.5,
 		-2.5,
 		-3.5,
@@ -757,28 +757,28 @@ slot4 = {
 }
 
 function setFrame(slot0, slot1, slot2)
-	slot1 = tostring(slot1)
+	slot3, slot4 = unpack(string.split(tostring(slot1), "_"))
 
-	if slot2 or #slot1 > 1 or #slot1 == 1 and tonumber(slot1) > 5 then
+	if slot4 or tonumber(slot3) > 5 then
 		slot2 = slot2 or "frame" .. slot1
 	end
 
 	GetImageSpriteFromAtlasAsync("weaponframes", "frame", slot0)
-	setImageColor(slot0, slot2 and Color.white or shipRarity2FrameColor(tonumber(slot1) + 1))
+	setImageColor(slot0, slot2 and Color.white or Color.NewHex(ItemRarity.Rarity2FrameHexColor(slot3 and tonumber(slot3) or ItemRarity.Gray)))
 
-	slot3 = findTF(slot0, "specialFrame")
+	slot6 = findTF(slot0, "specialFrame")
 
 	if slot2 then
-		if slot3 then
-			setActive(slot3, true)
+		if slot6 then
+			setActive(slot6, true)
 		else
 			removeAllChildren(cloneTplTo(slot0, slot0, "specialFrame"))
 		end
 
-		uv0(slot3, uv1[slot2] or uv1.other)
-		GetImageSpriteFromAtlasAsync("weaponframes", slot2, slot3)
-	elseif slot3 then
-		setActive(slot3, false)
+		uv0(slot6, uv1[slot2] or uv1.other)
+		GetImageSpriteFromAtlasAsync("weaponframes", slot2, slot6)
+	elseif slot6 then
+		setActive(slot6, false)
 	end
 end
 
@@ -786,10 +786,10 @@ function setIconColorful(slot0, slot1, slot2, slot3)
 	slot4 = findTF(slot0, "icon_bg/frame")
 
 	for slot8, slot9 in pairs(slot3 or {
-		[6] = {
+		[ItemRarity.SSR] = {
 			name = "IconColorful",
 			active = function (slot0, slot1)
-				return not slot1.noIconColorful and slot0 == 6
+				return not slot1.noIconColorful and slot0 == ItemRarity.SSR
 			end
 		}
 	}) do
@@ -872,7 +872,7 @@ function updateEquipment(slot0, slot1, slot2)
 	uv1(slot0, slot1:getConfig("level") - 1)
 	setIconName(slot0, slot1:getConfig("name"), slot2)
 	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
+	setIconColorful(slot0, slot1:getConfig("rarity") - 1, slot2)
 end
 
 function updateItem(slot0, slot1, slot2)
@@ -883,7 +883,7 @@ function updateItem(slot0, slot1, slot2)
 	slot4 = nil
 
 	if slot1:getConfig("type") == 9 then
-		slot4 = "frame6"
+		slot4 = "frame_design"
 	end
 
 	setFrame(findTF(slot0, "icon_bg/frame"), slot3, slot4)
@@ -900,38 +900,34 @@ function updateItem(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync(slot6, "", slot5)
 	setIconStars(slot0, false)
 	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot1:getConfig("rarity") + 1, slot2)
+	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
 end
 
 function updateWorldItem(slot0, slot1, slot2)
 	slot2 = slot2 or {}
-	slot3 = pg.world_item_data_template[slot1.id]
+	slot3 = ItemRarity.Rarity2Print(slot1:getConfig("rarity"))
 
-	assert(slot3, "找不到大世界道具配置: " .. slot1.id)
-
-	slot4 = ItemRarity.Rarity2Print(slot3.rarity)
-
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync(slot1.icon or slot3.icon, "", findTF(slot0, "icon_bg/icon"))
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
+	GetImageSpriteFromAtlasAsync(slot1.icon or slot1:getConfig("icon"), "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
-	setIconName(slot0, slot3.name, slot2)
-	setIconColorful(slot0, slot3.rarity + 1, slot2)
+	setIconName(slot0, slot1:getConfig("name"), slot2)
+	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
 end
 
 function updateWorldCollection(slot0, slot1, slot2)
 	slot2 = slot2 or {}
 
-	assert(WorldCollectionProxy.GetCollectionTemplate(slot1.id), "world_collection_file_template 和 world_collection_record_template 表中找不到配置: " .. slot1.id)
+	assert(slot1:getConfigTable(), "world_collection_file_template 和 world_collection_record_template 表中找不到配置: " .. slot1.id)
 
-	slot5 = ItemRarity.Rarity2Print(4)
+	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity())
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot5, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot5)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
 	GetImageSpriteFromAtlasAsync("props/" .. (WorldCollectionProxy.GetCollectionType(slot1.id) == WorldCollectionProxy.WorldCollectionType.FILE and "shoucangguangdie" or "shoucangjiaojuan"), "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
-	setIconName(slot0, slot3.name, slot2)
-	setIconColorful(slot0, slot4, slot2)
+	setIconName(slot0, slot1:getName(), slot2)
+	setIconColorful(slot0, slot3, slot2)
 end
 
 function updateWorldBuff(slot0, slot1, slot2)
@@ -984,7 +980,7 @@ function updateShip(slot0, slot1, slot2)
 		setActive(slot6, slot2.isTimeLimit)
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot3), findTF(slot0, "icon_bg"))
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "_skin" or slot3), findTF(slot0, "icon_bg"))
 
 	slot8 = findTF(slot0, "icon_bg/frame")
 	slot9 = nil
@@ -993,12 +989,10 @@ function updateShip(slot0, slot1, slot2)
 		slot9 = "frame_npc"
 	elseif slot1:ShowPropose() then
 		if slot1:isMetaShip() then
-			slot9 = "frame_prop_meta"
-		else
-			slot9 = "frame_prop"
+			slot9 = "frame_prop" .. "_meta"
 		end
 	elseif slot2.isSkin then
-		slot9 = "frame7"
+		slot9 = "frame_skin"
 	end
 
 	setFrame(slot8, slot3, slot9)
@@ -1036,29 +1030,28 @@ function updateShip(slot0, slot1, slot2)
 
 	setIconStars(slot0, slot2.initStar, slot1:getStar())
 	setIconName(slot0, slot2.isSkin and slot1:GetSkinConfig().name or slot1:getName(), slot2)
-	setIconColorful(slot0, slot2.isSkin and 5 or slot1:getRarity(), slot2)
+	setIconColorful(slot0, slot2.isSkin and ItemRarity.Gold or slot1:getRarity() - 1, slot2)
 end
 
 function updateCommander(slot0, slot1, slot2)
-	slot3 = pg.commander_data_template[slot1]
-	slot5 = ShipRarity.Rarity2Print(slot3.rarity)
-	slot6 = slot3.painting
+	slot4 = ShipRarity.Rarity2Print(slot1:getDropRarity())
+	slot5 = slot1:getConfig("painting")
 
 	if (slot2 or {}).anonymous then
-		slot5 = 1
-		slot6 = "unknown"
+		slot4 = 1
+		slot5 = "unknown"
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot5), findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot5)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot4), findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
 
 	if slot2.gray then
-		setGray(slot7, true, true)
+		setGray(slot6, true, true)
 	end
 
-	GetImageSpriteFromAtlasAsync("CommanderIcon/" .. slot6, "", findTF(slot0, "icon_bg/icon"))
+	GetImageSpriteFromAtlasAsync("CommanderIcon/" .. slot5, "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, slot2.initStar, 0)
-	setIconName(slot0, slot3.name, slot2)
+	setIconName(slot0, slot1:getName(), slot2)
 end
 
 function updateStrategy(slot0, slot1, slot2)
@@ -1070,19 +1063,20 @@ function updateStrategy(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync((slot1.isWorldBuff and "world/buff/" or "strategyicon/") .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
 	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, 1, slot2)
+	setIconColorful(slot0, ItemRarity.Gray, slot2)
 end
 
 function updateFurniture(slot0, slot1, slot2)
 	slot2 = slot2 or {}
-	slot4 = ItemRarity.Rarity2Print(pg.furniture_data_template[slot1].rarity) or ItemRarity.Gray
+	slot3 = slot1:getDropRarity()
+	slot4 = ItemRarity.Rarity2Print(slot3)
 
 	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
 	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot3.icon, "", findTF(slot0, "icon_bg/icon"))
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
-	setIconName(slot0, slot3.name, slot2)
-	setIconColorful(slot0, slot3.rarity + 1, slot2)
+	setIconName(slot0, slot1:getName(), slot2)
+	setIconColorful(slot0, slot3, slot2)
 end
 
 function updateSpWeapon(slot0, slot1, slot2)
@@ -1126,6 +1120,54 @@ function UpdateSpWeaponSlot(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync(slot1:GetIconPath(), "", slot4)
 	setActive(findTF(slot0, "Icon/LV"), slot1:GetLevel() - 1 > 0)
 	setText(findTF(slot6, "Text"), slot5)
+end
+
+function updateDorm3dFurniture(slot0, slot1, slot2)
+	slot2 = slot2 or {}
+	slot3 = slot1:getDropRarity()
+	slot4 = ItemRarity.Rarity2Print(slot3)
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
+	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
+	setIconStars(slot0, false)
+	setIconName(slot0, slot1:getName(), slot2)
+	setIconColorful(slot0, slot3, slot2)
+end
+
+function updateDorm3dGift(slot0, slot1, slot2)
+	slot2 = slot2 or {}
+	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity()) or ItemRarity.Gray
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, slot0:Find("icon_bg"))
+	setFrame(slot0:Find("icon_bg/frame"), slot4)
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", slot0:Find("icon_bg/icon"))
+	setIconStars(slot0, false)
+	setIconName(slot0, slot1:getName(), slot2)
+	setIconColorful(slot0, slot3, slot2)
+end
+
+function updateDorm3dSkin(slot0, slot1, slot2)
+	slot2 = slot2 or {}
+	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity()) or ItemRarity.Gray
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, slot0:Find("icon_bg"))
+	setFrame(slot0:Find("icon_bg/frame"), slot4)
+
+	slot5 = slot0:Find("icon_bg/icon")
+
+	setIconStars(slot0, false)
+	setIconName(slot0, slot1:getName(), slot2)
+	setIconColorful(slot0, slot3, slot2)
+end
+
+function updateDorm3dIcon(slot0, slot1)
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(slot1:getConfig("rarity")), slot0)
+
+	slot3 = slot0:Find("icon")
+
+	setText(slot0:Find("count/Text"), "x" .. slot1.count)
+	setText(slot0:Find("name/Text"), slot1:getName())
 end
 
 slot6 = nil
@@ -1217,10 +1259,10 @@ function updateDrop(slot0, slot1, slot2)
 	slot0:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
 
 	setIconColorful(slot0, slot1:getDropRarity(), slot2, {
-		[5] = {
+		[ItemRarity.Gold] = {
 			name = "Item_duang5",
 			active = function (slot0, slot1)
-				return slot1.fromAwardLayer and slot0 >= 5
+				return slot1.fromAwardLayer and ItemRarity.Gold <= slot0
 			end
 		}
 	})
@@ -1247,7 +1289,7 @@ function updateBuff(slot0, slot1, slot2)
 	GetImageSpriteFromAtlasAsync(slot4.icon, "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
 	setIconName(slot0, slot4.name, slot2)
-	setIconColorful(slot0, ItemRarity.Gold + 1, slot2)
+	setIconColorful(slot0, ItemRarity.Gold, slot2)
 end
 
 function updateAttire(slot0, slot1, slot2, slot3)
@@ -1284,12 +1326,12 @@ function updateEquipmentSkin(slot0, slot1, slot2)
 	slot3 = EquipmentRarity.Rarity2Print(slot1.rarity)
 
 	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3, "frame7")
+	setFrame(findTF(slot0, "icon_bg/frame"), slot3, "frame_skin")
 	GetImageSpriteFromAtlasAsync("equips/" .. slot1.icon, "", findTF(slot0, "icon_bg/icon"))
 	setIconStars(slot0, false)
 	setIconName(slot0, slot1.name, slot2)
 	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1.rarity, slot2)
+	setIconColorful(slot0, slot1.rarity - 1, slot2)
 end
 
 function NoPosMsgBox(slot0, slot1, slot2, slot3)
@@ -2422,7 +2464,7 @@ function setRectShipCardFrame(slot0, slot1, slot2)
 	slot0.anchorMin = Vector2.zero
 	slot0.anchorMax = Vector2.one
 
-	setImageSprite(slot0, GetSpriteFromAtlas("shipframe", "b" .. (slot2 or slot1)))
+	setImageSprite(slot0, GetSpriteFromAtlas("shipframeb", "b" .. (slot2 or slot1)))
 
 	if pg.frame_resource["b" .. (slot2 or slot1)] then
 		slot4 = slot4.param
@@ -2882,7 +2924,11 @@ function GetServerState(slot0)
 	slot3 = 1
 	slot4 = 2
 
-	VersionMgr.Inst:WebRequest(NetConst.GetServerStateUrl(), function (slot0, slot1)
+	if PLATFORM_CODE == PLATFORM_CH then
+		slot5 = string.gsub(NetConst.GetServerStateUrl(), "https", "http")
+	end
+
+	VersionMgr.Inst:WebRequest(slot5, function (slot0, slot1)
 		slot2 = true
 		slot3 = false
 
@@ -3468,6 +3514,17 @@ function getGameset(slot0)
 	}
 end
 
+function getDorm3dGameset(slot0)
+	slot1 = pg.dorm3d_set[slot0]
+
+	assert(slot1)
+
+	return {
+		slot1.key_value_int,
+		slot1.key_value_varchar
+	}
+end
+
 function GetItemsOverflowDic(slot0)
 	slot0 = slot0 or {}
 	slot1 = {
@@ -3650,6 +3707,18 @@ function UpdateOwnDisplay(slot0, slot1)
 	end
 end
 
+function Damp(slot0, slot1, slot2)
+	if Mathf.Max(1, slot1) < Mathf.Epsilon or Mathf.Abs(slot0) < slot3 then
+		return slot0
+	end
+
+	if slot2 < slot3 then
+		return 0
+	end
+
+	return slot0 * (1 - Mathf.Exp(-4.605170186 * slot2 / slot1))
+end
+
 function checkCullResume(slot0)
 	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(slot0, "CanvasRenderer"), {
 		typeof("System.Int32")
@@ -3699,4 +3768,67 @@ function buildEquipCode(slot0)
 			"id"
 		}) or 0)
 	}, "\\"))
+end
+
+function setDirectorSpeed(slot0, slot1)
+	GetComponent(slot0, "TimelineSpeed"):SetTimelineSpeed(slot1)
+end
+
+function envFunc(slot0, slot1)
+	assert(not getmetatable(slot1), "table has error metatable")
+	setfenv(slot0, setmetatable(slot1, {
+		__index = _G
+	}))
+	slot0()
+	setfenv(slot0, _G)
+
+	return setmetatable(slot1, nil)
+end
+
+function setDefaultZeroMetatable(slot0)
+	return setmetatable(slot0, {
+		__index = function (slot0, slot1)
+			if rawget(slot0, slot1) == nil then
+				slot0[slot1] = 0
+			end
+
+			return slot0[slot1]
+		end
+	})
+end
+
+slot24 = {
+	__index = {
+		LoadAssetSync = function (slot0, ...)
+			if EDITOR_TOOL then
+				return ResourceMgr.Inst:getAssetSync(slot0.path, ...)
+			else
+				return ResourceMgr.Inst:LoadAssetSync(slot0.ab, ...)
+			end
+		end
+	}
+}
+
+function buildTempAB(slot0, slot1)
+	slot2 = setmetatable({
+		path = slot0
+	}, uv0)
+
+	if EDITOR_TOOL then
+		if slot1 then
+			onNextTick(function ()
+				uv0(uv1)
+			end)
+		end
+	elseif slot1 then
+		ResourceMgr.Inst:loadAssetBundleAsync(slot0, function (slot0)
+			uv0.ab = slot0
+
+			uv1(uv0)
+		end)
+	else
+		slot2.ab = ResourceMgr.Inst:loadAssetBundleSync(slot0)
+	end
+
+	return slot2
 end

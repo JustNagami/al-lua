@@ -458,7 +458,7 @@ function slot0.ShiftSkin(slot0, slot1)
 
 	slot2 = nil
 
-	LoadSpriteAtlasAsync("ui/commonUI_atlas", slot1 and slot1.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg", function (slot0)
+	LoadSpriteAtlasAsync("ui/share/btn_l2d_atlas", slot1 and slot1.spine_use_live2d == 1 and "spine_painting_bg" or "live2d_bg", function (slot0)
 		GetComponent(uv0:findTF("L2D_btn", uv0.blurPanel), typeof(Image)).sprite = slot0
 		GetComponent(uv0:findTF("L2D_btn/img", uv0.blurPanel), typeof(Image)).sprite = slot0
 
@@ -543,6 +543,10 @@ function slot0.CreateLive2D(slot0)
 		setAnchoredPosition(slot0.l2dRoot, {
 			y = 0
 		})
+	end
+
+	if Live2dConst.UnLoadL2dPating then
+		Live2dConst.UnLoadL2dPating()
 	end
 end
 

@@ -49,7 +49,7 @@ function slot0.update(slot0, slot1, slot2)
 	end
 
 	setActive(slot0.specialFrame, not slot1:IsReal())
-	GetImageSpriteFromAtlasAsync("weaponframes", slot1.owned and "frame6_owned" or "frame6", slot0.specialFrame)
+	GetImageSpriteFromAtlasAsync("weaponframes", slot1.owned and "frame_design_owned" or "frame_design", slot0.specialFrame)
 end
 
 function slot0.clear(slot0)

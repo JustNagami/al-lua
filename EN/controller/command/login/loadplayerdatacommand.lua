@@ -59,6 +59,7 @@ function slot0.execute(slot0, slot1)
 		slot0.facade:registerProxy(EducateProxy.New())
 	end
 
+	slot0.facade:registerProxy(ApartmentProxy.New())
 	pg.ConnectionMgr.GetInstance():setPacketIdx(1)
 	pg.ConnectionMgr.GetInstance():Send(11001, {
 		timestamp = 0

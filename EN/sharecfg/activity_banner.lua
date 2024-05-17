@@ -1,42 +1,131 @@
 pg = pg or {}
 pg.activity_banner = {
 	{
+		param = "5324",
 		id = 1,
 		pic = "temp3",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene skinshop",
-			{}
-		}
-	},
-	{
-		id = 2,
-		pic = "temp7",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene get boat",
+		type = 3,
+		time = {
 			{
-				projectName = "new",
-				page = 1
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	},
 	{
-		param = "5301",
-		time = "stop",
+		param = "5341",
+		id = 2,
+		pic = "temp2",
 		type = 3,
-		id = 3,
-		pic = "temp2"
+		time = {
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
 	},
 	{
-		id = 4,
+		param = "5318",
+		id = 3,
 		pic = "temp6",
-		time = "stop",
-		type = 2,
-		param = {
-			"scene Cryptolalia"
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	{
+		param = "5340",
+		id = 4,
+		pic = "temp7",
+		type = 3,
+		time = {
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					20
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
 		}
 	},
 	{
@@ -185,18 +274,18 @@ pg.activity_banner = {
 		pic = "spring"
 	},
 	get_id_list_by_type = {
-		[2] = {
+		[3] = {
 			1,
 			2,
+			3,
 			4,
+			5,
+			8
+		},
+		[2] = {
 			6,
 			7,
 			9
-		},
-		[3] = {
-			3,
-			5,
-			8
 		},
 		[9] = {
 			90,

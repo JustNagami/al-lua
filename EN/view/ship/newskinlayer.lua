@@ -12,7 +12,7 @@ function slot0.preload(slot0, slot1)
 	slot7 = nil
 	slot7 = (not slot3.bg_sp or slot3.bg_sp == "" or slot3.bg_sp) and (slot3.bg and #slot3.bg > 0 and slot3.bg or slot3.rarity_bg and #slot3.rarity_bg > 0 and slot3.rarity_bg)
 
-	GetSpriteFromAtlasAsync(slot7 and "bg/star_level_bg_" .. slot7 or "newshipbg/bg_" .. (ShipGroup.IsBluePrintGroup(slot4) and "0" or "") .. ShipRarity.Rarity2Print(pg.ship_data_statistics[slot3.ship_group * 10 + 1].rarity), "", slot1)
+	GetSpriteFromAtlasAsync(slot7 and "bg/star_level_bg_" .. slot7 or "newshipbg/bg_" .. shipRarity2bgPrint(pg.ship_data_statistics[slot3.ship_group * 10 + 1].rarity, ShipGroup.IsBluePrintGroup(slot4), ShipGroup.IsMetaGroup(slot4)), "", slot1)
 end
 
 function slot0.setShipVOs(slot0, slot1)
@@ -122,7 +122,7 @@ function slot0.setSkinPri(slot0, slot1)
 			uv0.isLoadBg = true
 		end)
 	else
-		GetSpriteFromAtlasAsync("newshipbg/bg_" .. (ShipGroup.IsBluePrintGroup(slot3) and "0" or "") .. ShipRarity.Rarity2Print(slot4.rarity), "", function (slot0)
+		GetSpriteFromAtlasAsync("newshipbg/bg_" .. shipRarity2bgPrint(slot4.rarity, ShipGroup.IsBluePrintGroup(slot3), ShipGroup.IsMetaGroup(slot3)), "", function (slot0)
 			setImageSprite(uv0._staticBg, slot0, true)
 
 			uv0.isLoadBg = true

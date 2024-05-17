@@ -70,22 +70,6 @@ function skinId2bgPrint(slot0)
 	end
 end
 
-function shipRarity2bgPrint(slot0, slot1, slot2)
-	slot3 = ""
-
-	if slot1 then
-		slot3 = "0"
-	elseif slot2 then
-		slot3 = "1"
-	end
-
-	return slot3 .. ShipRarity.Rarity2Print(slot0)
-end
-
-function shipRarity2FrameColor(slot0)
-	return ShipRarity.Rarity2FrameColor(slot0)
-end
-
 function slot0.rarity2bgPrint(slot0)
 	return shipRarity2bgPrint(slot0:getRarity(), slot0:isBluePrintShip(), slot0:isMetaShip())
 end
@@ -2505,33 +2489,17 @@ function slot0.GetColorName(slot0, slot1)
 end
 
 slot9 = {
-	[false] = {
-		effect = {
-			"duang_meta_jiehun",
-			"duang_meta_%s",
-			"duang_6_jiehun_tuzhi",
-			"duang_6_jiehun",
-			"duang_6"
-		},
-		frame = {
-			"prop14",
-			"prop%s",
-			"prop"
-		}
+	effect = {
+		"duang_meta_jiehun",
+		"duang_6_jiehun_tuzhi",
+		"duang_6_jiehun",
+		"duang_meta_%s",
+		"duang_6"
 	},
-	[true] = {
-		effect = {
-			"duang_meta_jiehun_1",
-			"duang_meta_b%s",
-			"duang_6_jiehun_tuzhi_1",
-			"duang_6_jiehun_1",
-			"duang_6_1"
-		},
-		frame = {
-			"prop14",
-			"prop%s",
-			"prop"
-		}
+	frame = {
+		"prop4_1",
+		"prop%s",
+		"prop"
 	}
 }
 
@@ -2539,28 +2507,29 @@ function slot0.GetFrameAndEffect(slot0, slot1)
 	slot1 = tobool(slot1)
 	slot2, slot3 = nil
 
-	if slot0:isMetaShip() then
-		slot3 = (not slot0.propose or string.format(uv0[slot1].effect[1])) and string.format(uv0[slot1].effect[2], slot0:rarity2bgPrint())
+	if slot0.propose then
+		if slot0:isMetaShip() then
+			slot3 = string.format(uv0.effect[1])
+			slot2 = string.format(uv0.frame[1])
+		elseif slot0:isBluePrintShip() then
+			slot3 = string.format(uv0.effect[2])
+			slot2 = string.format(uv0.frame[2], slot0:rarity2bgPrint())
+		else
+			slot3 = string.format(uv0.effect[3])
+			slot2 = string.format(uv0.frame[3])
+		end
 
-		if slot0:ShowPropose() then
-			slot2 = string.format(uv0[slot1].frame[1])
+		if not slot0:ShowPropose() then
+			slot2 = nil
 		end
-	elseif slot0:isBluePrintShip() then
-		if slot0.propose then
-			slot3 = string.format(uv0[slot1].effect[3])
-		end
+	elseif slot0:isMetaShip() then
+		slot3 = string.format(uv0.effect[4], slot0:rarity2bgPrint())
+	elseif slot0:getRarity() == ShipRarity.SSR then
+		slot3 = string.format(uv0.effect[5])
+	end
 
-		if slot0:ShowPropose() then
-			slot2 = string.format(uv0[slot1].frame[2], slot0:rarity2bgPrint())
-		end
-	elseif slot0.propose then
-		slot3 = string.format(uv0[slot1].effect[4])
-
-		if slot0:ShowPropose() then
-			slot2 = string.format(uv0[slot1].frame[3])
-		end
-	elseif slot0:getRarity() == 6 then
-		slot3 = string.format(uv0[slot1].effect[5])
+	if slot1 then
+		slot3 = slot3 and slot3 .. "_1"
 	end
 
 	return slot2, slot3

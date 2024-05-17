@@ -101,6 +101,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.live2d = slot1.live2d
 	slot0.live2dIdleIndex = slot1.live2dIdleIndex
 	slot0.spine = slot1.spine
+	slot0.spineOrderIndex = slot1.spineOrderIndex
 	slot0.live2dOffset = slot1.live2dOffset
 	slot0.contentBGAlpha = slot1.dialogueBgAlpha or 1
 	slot0.canMarkNode = slot1.canMarkNode
@@ -398,18 +399,8 @@ end
 function slot0.GetPaintingIcon(slot0)
 	slot1 = nil
 
-	if slot0.actor == uv0.ACTOR_TYPE_FLAGSHIP then
-		slot1 = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character):getPrefab()
-	elseif slot0.actor == uv0.ACTOR_TYPE_PLAYER then
-		slot1 = nil
-	elseif slot0.actor == uv0.ACTOR_TYPE_TB then
-		slot1 = nil
-	elseif not slot0.actor then
-		slot1 = nil
-	elseif slot0.hideRecordIco then
-		return nil
-	else
-		slot1 = uv1[slot0.actor].prefab
+	if ((slot0.actor ~= uv0.ACTOR_TYPE_FLAGSHIP or getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getRawData().character):getPrefab()) and (slot0.actor ~= uv0.ACTOR_TYPE_PLAYER or nil) and (slot0.actor ~= uv0.ACTOR_TYPE_TB or nil) and (slot0.actor or nil) and (not slot0.hideRecordIco or nil) and uv1[slot0.actor].prefab) == nil and slot0:ExistPortrait() then
+		slot1 = slot0:GetPortrait()
 	end
 
 	return slot1
@@ -535,6 +526,14 @@ function slot0.IsHideSpineBg(slot0)
 	return slot0.spine == 1
 end
 
+function slot0.GetSpineOrderIndex(slot0)
+	if slot0:IsSpinePainting() then
+		return slot0.spineOrderIndex
+	else
+		return nil
+	end
+end
+
 function slot0.IsLive2dPainting(slot0)
 	return tobool(slot0:GetPainting() ~= nil and slot0.live2d)
 end
@@ -579,7 +578,9 @@ function slot0.GetSubActorName(slot0)
 end
 
 function slot0.IsSamePainting(slot0, slot1)
-	return slot0:GetPainting() == slot1:GetPainting() and slot0:IsLive2dPainting() == slot1:IsLive2dPainting() and slot0:IsSpinePainting() == slot1:IsSpinePainting() and not function ()
+	return function ()
+		return uv0:GetPainting() == uv1:GetPainting() and uv0:IsShowNPainting() == uv1:IsShowNPainting() and uv0:IsShowWJZPainting() == uv1:IsShowWJZPainting()
+	end() and slot0:IsLive2dPainting() == slot1:IsLive2dPainting() and slot0:IsSpinePainting() == slot1:IsSpinePainting() and not function ()
 		return uv0:ShouldAddGlitchArtEffect() or uv1:ShouldAddGlitchArtEffect()
 	end()
 end
@@ -613,9 +614,7 @@ function slot3(slot0)
 end
 
 function slot0.GetUsingPaintingNames(slot0)
-	slot2 = slot0:GetPainting()
-
-	if not slot0:IsLive2dPainting() and not slot0:IsSpinePainting() and slot2 ~= nil and uv0(slot2) then
+	if slot0:GetPainting() ~= nil and uv0(slot2) then
 		table.insert({}, slot2)
 	end
 

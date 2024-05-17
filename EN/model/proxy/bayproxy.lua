@@ -102,19 +102,7 @@ function slot0.register(slot0)
 		uv1:updateShip(slot2)
 	end)
 
-	slot0.handbookTypeAssign = {}
-
-	slot0:buildHandbookTypeAssign()
-
 	slot0.shipHighestLevel = 0
-end
-
-function slot0.buildHandbookTypeAssign(slot0)
-	for slot5, slot6 in ipairs(_.filter(pg.ship_data_group.all, function (slot0)
-		return pg.ship_data_group[slot0].handbook_type ~= 0
-	end)) do
-		slot0.handbookTypeAssign[pg.ship_data_group[slot6].group_type] = pg.ship_data_group[slot6].handbook_type
-	end
 end
 
 function slot0.recoverAllShipEnergy(slot0)
@@ -598,7 +586,7 @@ function slot0.getBayPower(slot0)
 		slot8 = slot7.configId
 		slot9 = slot7:getShipCombatPower()
 
-		if defaultValue(slot0.handbookTypeAssign[slot7:getGroupId()], 0) ~= 1 and (not slot1[slot8] or slot1[slot8] < slot9) then
+		if ShipGroup.GetGroupConfig(slot7:getGroupId()).handbook_type ~= 1 and (not slot1[slot8] or slot1[slot8] < slot9) then
 			slot1[slot8] = slot9
 			slot2 = 0 - defaultValue(slot1[slot8], 0) + slot9
 		end
@@ -618,7 +606,7 @@ function slot0.GetBayPowerRootedAsyn(slot0, slot1)
 			slot8 = slot7.configId
 			slot9 = slot7:getShipCombatPower()
 
-			if defaultValue(uv0.handbookTypeAssign[slot7:getGroupId()], 0) ~= 1 and (not slot0[slot8] or slot0[slot8] < slot9) then
+			if ShipGroup.GetGroupConfig(slot7:getGroupId()).handbook_type ~= 1 and (not slot0[slot8] or slot0[slot8] < slot9) then
 				slot0[slot8] = slot9
 				slot1 = 0 - defaultValue(slot0[slot8], 0) + slot9
 			end

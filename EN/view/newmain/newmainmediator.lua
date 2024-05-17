@@ -15,6 +15,7 @@ slot0.SKIP_INS = "NewMainMediator:SKIP_INS"
 slot0.SKIP_LOTTERY = "NewMainMediator:SKIP_LOTTERY"
 slot0.GO_SINGLE_ACTIVITY = "NewMainMediator:GO_SINGLE_ACTIVITY"
 slot0.REFRESH_VIEW = "NewMainMediator:REFRESH_VIEW"
+slot0.OPEN_DORM_SELECT_LAYER = "NewMainMediator.OPEN_DORM_SELECT_LAYER"
 
 function slot0.register(slot0)
 	slot0:bind(uv0.GO_SINGLE_ACTIVITY, function (slot0, slot1)
@@ -135,13 +136,13 @@ function slot0.register(slot0)
 			}
 		}))
 	end)
+	slot0:bind(uv0.OPEN_DORM_SELECT_LAYER, function (slot0)
+		uv0:sendNotification(GAME.GO_SCENE, SCENE.DORM3DSELECT)
+	end)
 end
 
 function slot0.listNotificationInterests(slot0)
 	slot1 = {
-		PERMISSION_GRANTED,
-		PERMISSION_REJECT,
-		PERMISSION_NEVER_REMIND,
 		GAME.REMOVE_LAYERS,
 		PlayerProxy.UPDATED,
 		GAME.ON_OPEN_INS_LAYER,
@@ -184,26 +185,8 @@ function slot0.handleNotification(slot0, slot1)
 
 	pg.redDotHelper:Notify(slot2)
 
-	if PERMISSION_GRANTED == slot2 and slot1:getBody() == ANDROID_CAMERA_PERMISSION then
-		slot0.viewComponent:emit(uv0.GO_SNAPSHOT)
-	elseif PERMISSION_REJECT == slot2 and slot3 == ANDROID_CAMERA_PERMISSION then
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("apply_permission_camera_tip3"),
-			onYes = function ()
-				ApplyPermission({
-					ANDROID_CAMERA_PERMISSION
-				})
-			end
-		})
-	elseif PERMISSION_NEVER_REMIND == slot2 and slot3 == ANDROID_CAMERA_PERMISSION then
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("apply_permission_camera_tip2"),
-			onYes = function ()
-				OpenDetailSetting()
-			end
-		})
-	elseif slot2 == GAME.REMOVE_LAYERS then
-		slot0.viewComponent:emit(NewMainScene.ON_REMOVE_LAYER, slot3.context)
+	if slot2 == GAME.REMOVE_LAYERS then
+		slot0.viewComponent:emit(NewMainScene.ON_REMOVE_LAYER, slot1:getBody().context)
 	elseif slot2 == PlayerProxy.UPDATED then
 		slot0.viewComponent:emit(NewMainScene.ON_PLAYER_UPDATE)
 	elseif slot2 == GAME.ON_OPEN_INS_LAYER then

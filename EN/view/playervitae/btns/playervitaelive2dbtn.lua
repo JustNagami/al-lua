@@ -12,7 +12,7 @@ end
 function slot0.GetBgName(slot0)
 	slot1, slot2 = nil
 
-	return slot0:IsHrzType() and "commonUI_atlas" or "admiralui_atlas", slot0.ship and slot0.ship:GetSkinConfig().spine_use_live2d == 1 and (slot0:IsHrzType() and "spine_painting_bg" or "sp") or slot0:IsHrzType() and "live2d_bg" or "l2d"
+	return slot0:IsHrzType() and "share/btn_l2d_atlas" or "admiralui_atlas", slot0.ship and slot0.ship:GetSkinConfig().spine_use_live2d == 1 and (slot0:IsHrzType() and "spine_painting_bg" or "sp") or slot0:IsHrzType() and "live2d_bg" or "l2d"
 end
 
 function slot0.IsActive(slot0)

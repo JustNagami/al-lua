@@ -58,6 +58,29 @@ function slot0.init(slot0)
 	onButton(slot0, slot0.permanentFinshMask:Find("piece/arrow/Image"), function ()
 		uv0:emit(ActivityMediator.FINISH_ACTIVITY_PERMANENT)
 	end, SFX_PANEL)
+
+	slot0.tabsList = UIItemList.New(slot0.tabs, slot0.tab)
+
+	slot0.tabsList:make(function (slot0, slot1, slot2)
+		if slot0 == UIItemList.EventUpdate then
+			if uv0.pageDic[uv0.activities[slot1 + 1].id] ~= nil then
+				if slot3:getConfig("title_res_tag") then
+					setImageSprite(uv0:findTF("off/text", slot2), GetSpriteFromAtlas("activityuitable/" .. slot5 .. "_text", "") or GetSpriteFromAtlas("activityuitable/activity_text", ""), true)
+					setImageSprite(uv0:findTF("on/text", slot2), GetSpriteFromAtlas("activityuitable/" .. slot5 .. "_text_selected", "") or GetSpriteFromAtlas("activityuitable/activity_text_selected", ""), true)
+					setActive(uv0:findTF("red", slot2), slot3:readyToAchieve())
+					onToggle(uv0, slot2, function (slot0)
+						if slot0 then
+							uv0:selectActivity(uv1)
+						end
+					end, SFX_PANEL)
+				else
+					onToggle(uv0, slot2, function (slot0)
+						uv0:loadActivityPanel(slot0, uv1)
+					end, SFX_PANEL)
+				end
+			end
+		end
+	end)
 end
 
 function slot0.didEnter(slot0)
@@ -244,40 +267,7 @@ function slot0.updateEntrances(slot0)
 end
 
 function slot0.flushTabs(slot0)
-	if not slot0.tabsList then
-		slot0.tabsList = UIItemList.New(slot0.tabs, slot0.tab)
-
-		slot0.tabsList:make(function (slot0, slot1, slot2)
-			if slot0 == UIItemList.EventUpdate then
-				if uv0.pageDic[uv0.activities[slot1 + 1].id] ~= nil then
-					if slot3:getConfig("title_res_tag") then
-						setImageSprite(uv0:findTF("off/text", slot2), GetSpriteFromAtlas("activityuitable/" .. slot5 .. "_text", "") or GetSpriteFromAtlas("activityuitable/activity_text", ""), true)
-						setImageSprite(uv0:findTF("on/text", slot2), GetSpriteFromAtlas("activityuitable/" .. slot5 .. "_text_selected", "") or GetSpriteFromAtlas("activityuitable/activity_text_selected", ""), true)
-						setActive(uv0:findTF("red", slot2), slot3:readyToAchieve())
-						onToggle(uv0, slot2, function (slot0)
-							if slot0 then
-								uv0:selectActivity(uv1)
-							end
-						end, SFX_PANEL)
-					else
-						onToggle(uv0, slot2, function (slot0)
-							uv0:loadActivityPanel(slot0, uv1)
-						end, SFX_PANEL)
-					end
-
-					triggerToggle(slot2, false)
-				end
-			end
-		end)
-	end
-
-	setActive(slot0.tabs, false)
 	slot0.tabsList:align(#slot0.activities)
-	setActive(slot0.tabs, true)
-
-	if slot0.activity and slot0:getActivityIndex(slot0.activity.id) then
-		triggerToggle(slot0.tabs:GetChild(slot1 - 1), true)
-	end
 end
 
 function slot0.selectActivity(slot0, slot1)

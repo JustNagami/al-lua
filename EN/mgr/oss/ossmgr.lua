@@ -3,8 +3,15 @@ pg.OSSMgr = singletonClass("OSSMgr")
 slot0 = pg.OSSMgr
 
 function slot0.Ctor(slot0)
-	slot0.instance = OSSStarter.ins
+	if PLATFORM_CODE == PLATFORM_CH then
+		slot0.instance = OSSStarter.ins
+	end
+
 	slot0.isIninted = false
+
+	if slot0.instance then
+		ReflectionHelp.RefSetField(typeof("OSSStarter"), "debug", slot0.instance, false)
+	end
 end
 
 function slot0.InitConfig(slot0)
@@ -57,6 +64,10 @@ function slot0.Init(slot0)
 end
 
 function slot0.InitClinet(slot0, slot1)
+	if not slot0.instance then
+		return
+	end
+
 	pg.m02:sendNotification(GAME.GET_OSS_ARGS, {
 		mode = slot0.instance.initMode,
 		callback = function (slot0, slot1)
@@ -67,23 +78,52 @@ function slot0.InitClinet(slot0, slot1)
 end
 
 function slot0.UpdateLoad(slot0, slot1, slot2, slot3)
+	if not slot0.instance then
+		slot3()
+
+		return
+	end
+
 	slot0.instance:UpdateLoad(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3)
 end
 
 function slot0.AsynUpdateLoad(slot0, slot1, slot2, slot3)
+	if not slot0.instance then
+		slot3()
+
+		return
+	end
+
 	slot0.instance:AsynUpdateLoad(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3)
 end
 
 function slot0.DeleteObject(slot0, slot1, slot2)
-	print(slot0.instance)
+	if not slot0.instance then
+		slot2()
+
+		return
+	end
+
 	slot0.instance:DeleteObject(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2)
 end
 
 function slot0.GetSprite(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	if not slot0.instance then
+		slot6()
+
+		return
+	end
+
 	slot0.instance:GetSprite(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3, slot4, slot5, slot6)
 end
 
 function slot0.GetTexture2D(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
+	if not slot0.instance then
+		slot6()
+
+		return
+	end
+
 	slot0.instance:GetTexture(OSSBUCKETNAME, FOLDERNAME .. slot1, slot2, slot3, slot4, slot5, slot6)
 end
 

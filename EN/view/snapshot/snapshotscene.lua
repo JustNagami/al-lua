@@ -76,6 +76,8 @@ function slot0.init(slot0)
 	slot0.stopRecBtn = slot0:findTF("stopRec")
 	slot0.snapshot = slot0:findTF("snapshot")
 	slot0.webcam = slot0.snapshot:GetComponent(typeof(WebCam))
+	slot0.ysScreenShoter = slot0.snapshot:GetComponent(typeof(YSTool.YSScreenShoter))
+	slot0.ysScreenRecorder = slot0.snapshot:GetComponent(typeof(YSTool.YSScreenRecorder))
 	slot0.paint = slot0:findTF("container/paint")
 	slot0.live2d = slot0:findTF("live2d", slot0.paint)
 	slot0.spine = slot0:findTF("spine", slot0.paint)
@@ -147,7 +149,10 @@ function slot0.didEnter(slot0)
 	onButton(slot0, slot0.takeBtn, function ()
 		if uv0.state == uv1.STATE_TAKE_PHOTO then
 			setActive(uv0.ui, false)
-			uv0.webcam:Take(function (slot0)
+			uv0.ysScreenShoter:TakeScreenShotData(function (slot0)
+				warning("截图结果：" .. tostring(slot0))
+				setActive(uv0.ui, true)
+			end, function (slot0)
 				slot1 = UnityEngine.Texture2D.New(Screen.width, Screen.height)
 
 				Tex2DExtension.LoadImage(slot1, slot0)
@@ -159,24 +164,36 @@ function slot0.didEnter(slot0)
 				end
 			end)
 		elseif uv0.state == uv1.STATE_TAKE_VIDEO then
-			slot0 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t")
-			slot1 = "azur" .. slot0.year .. slot0.month .. slot0.day .. slot0.hour .. slot0.min .. slot0.sec
-
 			setActive(uv0.ui, false)
 
-			if not PlayerPrefs.GetInt("hadShowForVideoTip") or slot2 <= 0 then
+			function slot0(slot0)
+				if slot0 ~= -1 then
+					setActive(uv0.ui, true)
+					LeanTween.moveX(uv0.stopRecBtn, uv0.stopRecBtn.rect.width, 0.15)
+				end
+			end
+
+			function slot1(slot0)
+				warning("开始录屏结果：" .. tostring(slot0))
+			end
+
+			function slot2()
+				setActive(uv0.stopRecBtn, true)
+				LeanTween.moveX(uv0.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function ()
+					uv0:SetMute(true)
+					uv0.ysScreenRecorder:BeforeStart()
+					uv0.ysScreenRecorder:StartRecord(uv1, uv2)
+				end))
+			end
+
+			if not PlayerPrefs.GetInt("hadShowForVideoTip") or slot3 <= 0 then
 				PlayerPrefs.SetInt("hadShowForVideoTip", 1)
 
 				uv0:findTF("Text", uv0.videoTipPanel):GetComponent("Text").text = i18n("word_take_video_tip")
 
 				onButton(uv0, uv0.videoTipPanel, function ()
 					setActive(uv0.videoTipPanel, false)
-					setActive(uv0.stopRecBtn, true)
-					LeanTween.moveX(uv0.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function ()
-						uv0:SetMute(true)
-						YARecorder.Inst:SetVideoFilename(uv1)
-						YARecorder.Inst:StartRecording()
-					end))
+					uv1()
 
 					if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
 						print("start recording : play sound")
@@ -185,12 +202,7 @@ function slot0.didEnter(slot0)
 				end)
 				setActive(uv0.videoTipPanel, true)
 			else
-				setActive(uv0.stopRecBtn, true)
-				LeanTween.moveX(uv0.stopRecBtn, 0, 0.15):setOnComplete(System.Action(function ()
-					uv0:SetMute(true)
-					YARecorder.Inst:SetVideoFilename(uv1)
-					YARecorder.Inst:StartRecording()
-				end))
+				slot2()
 			end
 		end
 	end)
@@ -255,17 +267,27 @@ function slot0.didEnter(slot0)
 	end)
 	slot1()
 	onButton(slot0, slot0.stopRecBtn, function ()
+		function slot0(slot0)
+			warning("结束录屏结果：" .. tostring(slot0))
+		end
+
 		if not LeanTween.isTweening(go(uv0.stopRecBtn)) then
 			LeanTween.moveX(uv0.stopRecBtn, uv0.stopRecBtn.rect.width, 0.15):setOnComplete(System.Action(function ()
 				setActive(uv0.ui, true)
 				setActive(uv0.stopRecBtn, false)
-				YARecorder.Inst:StopRecording()
+				uv0.ysScreenRecorder:StopRecord(uv1)
 
 				if PLATFORM == PLATFORM_ANDROID then
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("word_save_video"),
 						onNo = function ()
-							YARecorder.Inst:DiscardVideo()
+							uv0.ysScreenRecorder:DiscardVideo()
+						end,
+						onYes = function ()
+							slot0 = uv0.ysScreenRecorder:GetVideoFilePath()
+
+							warning("源录像路径：" .. tostring(slot0))
+							MediaSaver.SaveVideoWithPath(slot0)
 						end
 					})
 				end

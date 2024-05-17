@@ -43,10 +43,10 @@ function slot0.execute(slot0, slot1)
 		slot2 = {}
 
 		for slot6, slot7 in ipairs(slot1) do
-			PaintingConst.AddPaintingNameByShipConfigID(slot2, slot7)
+			PaintingGroupConst.AddPaintingNameByShipConfigID(slot2, slot7)
 		end
 
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
 			paintingNameList = slot2,
 			finishFunc = slot0

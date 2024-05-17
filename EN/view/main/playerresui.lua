@@ -129,9 +129,11 @@ function slot0.Disable(slot0)
 
 		slot0:Enable(slot1)
 	elseif slot0:IsLoaded() then
-		slot0.state = uv0
+		if slot0:IsLoaded() then
+			setActive(slot0._go, false)
+		end
 
-		setActive(slot0._go, false)
+		slot0.state = uv0
 	end
 end
 

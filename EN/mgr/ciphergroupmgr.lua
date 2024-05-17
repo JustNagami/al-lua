@@ -69,6 +69,17 @@ function slot0.IsAnyFileInProgress(slot0)
 end
 
 function slot0.DelFile(slot0, slot1)
+	slot2 = #slot1
+	slot3 = System.Array.CreateInstance(typeof(System.String), slot2)
+
+	for slot7 = 0, slot2 - 1 do
+		slot3[slot7] = slot1[slot7 + 1]
+	end
+
+	slot0.group:DelFile(slot3)
+end
+
+function slot0.DelFile_Old(slot0, slot1)
 	for slot5, slot6 in ipairs(slot1) do
 		slot7 = PathMgr.getAssetBundle(slot6)
 

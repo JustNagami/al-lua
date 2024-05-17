@@ -331,9 +331,9 @@ function slot0.updateSpriteMaskScale(slot0)
 end
 
 function slot0.checkPaintingRes(slot0, slot1)
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = false,
-		paintingNameList = PaintingConst.GetPaintingNameListForAwardList(slot0.awards),
+		paintingNameList = PaintingGroupConst.GetPaintingNameListForAwardList(slot0.awards),
 		finishFunc = slot1
 	})
 end

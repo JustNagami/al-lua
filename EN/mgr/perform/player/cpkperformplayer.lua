@@ -58,11 +58,14 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 				uv0._anim:Play()
 			end
 
-			uv0.player.maxFrameDrop = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+MaxFrameDrop"), "Infinite", nil)
+			uv0.player:SetMaxFrameDrop(CriManaMovieMaterial.MaxFrameDrop.Infinite)
+			uv0.player:SetCpkTotalTimeCallback(function (slot0)
+				uv0.time = slot0
 
+				uv0:onCpkStart(slot0)
+			end)
 			uv0.player:PlayerManualUpdate()
 			uv0.player:PlayCpk()
-			uv0:onCpkStart(uv1)
 
 			if not IsNil(slot2) then
 				Destroy(slot2)

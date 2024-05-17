@@ -1185,10 +1185,10 @@ function slot0.checkPaintingRes(slot0, slot1, slot2)
 	slot3 = {}
 
 	if slot1:getProposeSkin() and slot4.id > 0 then
-		PaintingConst.AddPaintingNameBySkinID(slot3, slot4.id)
+		PaintingGroupConst.AddPaintingNameBySkinID(slot3, slot4.id)
 	end
 
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
 		paintingNameList = slot3,
 		finishFunc = slot2

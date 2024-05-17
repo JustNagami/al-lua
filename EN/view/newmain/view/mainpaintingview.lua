@@ -43,6 +43,14 @@ function slot0.Register(slot0)
 			uv0.painting:TriggerEventAtFirstTime()
 		end
 	end)
+
+	function Live2dConst.UnLoadL2dPating()
+		if not uv0.reloadOnResume and uv0.painting and isa(uv0.painting, MainLive2dPainting) then
+			uv0.painting:SetContainerVisible(false)
+
+			uv0.reloadOnResume = true
+		end
+	end
 end
 
 function slot0.OnChatStateChange(slot0, slot1)
@@ -89,10 +97,14 @@ function slot0.Init(slot0, slot1)
 end
 
 function slot0.Refresh(slot0, slot1)
-	if slot1.skinId == slot0.ship.skinId and slot1.id == slot0.ship.id and slot0.state == uv0.GetAssistantStatus(slot1) and slot0.bgToggle == PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.painting.paintingName, 0) and slot1:GetRecordPosKey() == slot0.ship:GetRecordPosKey() then
+	if slot1.skinId == slot0.ship.skinId and slot1.id == slot0.ship.id and slot0.state == uv0.GetAssistantStatus(slot1) and slot0.bgToggle == PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot0.painting.paintingName, 0) and slot1:GetRecordPosKey() == slot0.ship:GetRecordPosKey() and not slot0.reloadOnResume then
 		slot0.painting:Resume()
 		slot0.painting:updateShip(slot1)
 	else
+		if slot0.reloadOnResume then
+			slot0.reloadOnResume = false
+		end
+
 		slot0:Init(slot1)
 	end
 

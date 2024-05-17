@@ -136,7 +136,7 @@ function slot0.init(slot0)
 	slot0.backBtn = slot0:findTF("back_btn", slot0.content)
 	slot0.autoLoader = AutoLoader.New()
 
-	slot0.autoLoader:LoadSprite("ui/minigameui/qtegameuiasync/backgroud", "background", slot0.gameBg, false)
+	slot0.autoLoader:LoadSprite("ui/minigameui/qtegameuiasync_atlas", "background", slot0.gameBg, false)
 end
 
 function slot0.didEnter(slot0)
@@ -588,7 +588,7 @@ function slot0.loadXGM(slot0, slot1)
 	if slot0.xgm then
 		slot1()
 	else
-		slot0.autoLoader:LoadPrefab("ui/minigameui/qtegameuiasync/xiongguimao", nil, function (slot0)
+		slot0.autoLoader:LoadPrefab("ui/minigameui/qtegameuiasync_atlas", "xiongguimao", function (slot0)
 			uv0.xgm = tf(slot0)
 			uv0.xgmSpine = uv0.xgm:GetComponent("SpineAnimUI")
 			uv0.xgmSklGraphic = uv0.xgm:GetComponent("SkeletonGraphic")

@@ -122,7 +122,7 @@ function slot0.InitTipImage(slot0)
 		return
 	end
 
-	LoadSpriteAtlasAsync("ui/mainui_atlas", slot1, function (slot0)
+	LoadSpriteAtlasAsync("ui/mainui_atlas", string.format("Assets/ArtResource/UI/MainUI/%s.png", slot1), function (slot0)
 		uv0.tipImageName = uv1
 		uv0.tipTr.sprite = slot0
 

@@ -18,6 +18,8 @@ function slot0.OnInit(slot0)
 
 	onToggle(slot0, slot0.fps30Toggle, function (slot0)
 		if slot0 then
+			QualitySettings.vSyncCount = 0
+
 			PlayerPrefs.SetInt("fps_limit", 30)
 
 			Application.targetFrameRate = 30
@@ -25,6 +27,8 @@ function slot0.OnInit(slot0)
 	end, SFX_UI_TAG, SFX_UI_TAG)
 	onToggle(slot0, slot0.fps60Toggle, function (slot0)
 		if slot0 then
+			QualitySettings.vSyncCount = 0
+
 			PlayerPrefs.SetInt("fps_limit", 60)
 
 			Application.targetFrameRate = 60

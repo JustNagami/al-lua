@@ -211,13 +211,9 @@ function slot0.showTrianPanel(slot0)
 		uv0:showMsgBox()
 	end, SFX_PANEL)
 
-	slot2 = underscore.detect(slot1, function (slot0)
+	if underscore.detect(slot1, function (slot0)
 		return slot0.next
-	end)
-
-	warning(slot2.group)
-
-	if slot2 then
+	end) then
 		triggerButton(slot0.trainSkillBtns[slot2.group])
 	end
 end

@@ -14564,7 +14564,7 @@ pg.activity_template = {
 		type = 74,
 		login_pop = 0,
 		config_id = 5308,
-		is_show = 48,
+		is_show = 40,
 		config_data = {},
 		time = {
 			"timer",
@@ -14652,6 +14652,7 @@ pg.activity_template = {
 			}
 		},
 		config_client = {
+			scene = "IDOL_MEDAL_COLLECTION_SCENE3",
 			unlock_desc = {
 				"Clear SP5 10 times",
 				"Clear SP4 with 3 stars",
@@ -15067,6 +15068,50 @@ pg.activity_template = {
 			bgm = "song-Alizarin-full-inst"
 		}
 	},
+	[5318] = {
+		mark = 20240516,
+		id = 5318,
+		title_res_tag = "Georgia_catchup",
+		type = 69,
+		login_pop = 0,
+		config_id = 26,
+		is_show = 45,
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "BrestTecCatchupPage",
+			ui_name = "BrestTecCatchupPage"
+		},
+		config_client = {
+			itemid = 42045
+		}
+	},
 	[5320] = {
 		mark = 20240509,
 		title_res_tag = "",
@@ -15120,7 +15165,7 @@ pg.activity_template = {
 		type = 74,
 		login_pop = 0,
 		config_id = 5321,
-		is_show = 40,
+		is_show = 44,
 		config_data = {},
 		time = {
 			"timer",
@@ -15166,6 +15211,329 @@ pg.activity_template = {
 				{},
 				{},
 				{}
+			}
+		}
+	},
+	[5324] = {
+		mark = 20240516,
+		id = 5324,
+		title_res_tag = "liner_sign",
+		type = 18,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 48,
+		config_data = {
+			{
+				20071
+			},
+			{
+				20072
+			},
+			{
+				20073
+			},
+			{
+				20074
+			},
+			{
+				20075
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "LinerSignPage",
+			ui_name = "LinerSignPage"
+		},
+		config_client = {
+			story = {
+				{
+					"YUQIHANGZHIQIAN1"
+				},
+				{
+					"YUQIHANGZHIQIAN2"
+				},
+				{
+					"YUQIHANGZHIQIAN3"
+				},
+				{
+					"YUQIHANGZHIQIAN4"
+				},
+				{
+					"YUQIHANGZHIQIAN5"
+				}
+			}
+		}
+	},
+	[5322] = {
+		mark = 20240516,
+		title_res_tag = "",
+		page_info = "",
+		type = 113,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 5322,
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5323] = {
+		mark = 20240516,
+		title_res_tag = "",
+		page_info = "",
+		type = 60,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		id = 5323,
+		config_data = {
+			466,
+			467
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					12
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	},
+	[5340] = {
+		mark = 20240516,
+		config_client = "",
+		title_res_tag = "activity3",
+		type = 87,
+		login_pop = 0,
+		config_id = 18,
+		is_show = 46,
+		id = 5340,
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					20
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "FaxiV4FramePage",
+			ui_name = "FaxiV4FramePage"
+		}
+	},
+	[5341] = {
+		mark = 20240516,
+		id = 5341,
+		title_res_tag = "bifangzhiyin",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 47,
+		config_data = {
+			{
+				20020,
+				20021
+			},
+			{
+				20022,
+				20024
+			},
+			{
+				20026,
+				20027
+			},
+			{
+				20028,
+				20029
+			},
+			{
+				20030,
+				20033
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					6,
+					19
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "LuodeniTaskPage",
+			ui_name = "LuodeniTaskPage"
+		},
+		config_client = {
+			firstStory = "BIFANGZHIYIN1",
+			story = {
+				{
+					"BIFANGZHIYIN2"
+				},
+				{
+					"BIFANGZHIYIN3"
+				},
+				{
+					"BIFANGZHIYIN4"
+				},
+				{
+					"BIFANGZHIYIN5"
+				},
+				{
+					"BIFANGZHIYIN6"
+				},
+				{
+					"BIFANGZHIYIN7"
+				}
+			}
+		}
+	},
+	[5342] = {
+		mark = 20240516,
+		title_res_tag = "",
+		page_info = "",
+		type = 58,
+		login_pop = 0,
+		config_id = 29,
+		is_show = 0,
+		config_client = "",
+		id = 5342,
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2024,
+					5,
+					16
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2024,
+					5,
+					20
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	},
@@ -39703,8 +40071,15 @@ pg.activity_template = {
 		5315,
 		5316,
 		5317,
+		5318,
 		5320,
 		5321,
+		5324,
+		5322,
+		5323,
+		5340,
+		5341,
+		5342,
 		7011,
 		7012,
 		7013,

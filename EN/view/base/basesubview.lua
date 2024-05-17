@@ -19,6 +19,11 @@ function slot0.Ctor(slot0, slot1, slot2, slot3)
 	slot0._funcQueue = {}
 end
 
+function slot0.SetExtra(slot0, slot1)
+	slot0.extraGameObject = go(slot1)
+	slot0._parentTf = slot1.parent
+end
+
 function slot0.Load(slot0)
 	if slot0._state ~= uv0.STATES.NONE then
 		return
@@ -27,8 +32,19 @@ function slot0.Load(slot0)
 	slot0._state = uv0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetUI(slot0:getUIName(), true, function (slot0)
-		if uv0._state == uv1.STATES.DESTROY then
+
+	slot1 = PoolMgr.GetInstance()
+
+	seriesAsync({
+		function (slot0)
+			if uv0.extraGameObject then
+				slot0(uv0.extraGameObject)
+			else
+				uv1:GetUI(uv0:getUIName(), true, slot0)
+			end
+		end
+	}, function (slot0)
+		if uv0._state == uv1.STATES.DESTROY and uv0:getUIName() then
 			pg.UIMgr.GetInstance():LoadingOff()
 			uv2:ReturnUI(uv0:getUIName(), slot0)
 		else
@@ -85,10 +101,10 @@ function slot0.Destroy(slot0)
 	slot0:cleanManagedTween()
 
 	slot0._tf = nil
-	slot2 = slot0:getUIName()
+	slot1 = slot0:getUIName()
 
-	if slot0._go ~= nil and slot2 then
-		PoolMgr.GetInstance():ReturnUI(slot2, slot0._go)
+	if slot0._go ~= nil and slot1 then
+		PoolMgr.GetInstance():ReturnUI(slot1, slot0._go)
 
 		slot0._go = nil
 	end

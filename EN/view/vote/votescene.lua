@@ -177,10 +177,10 @@ function slot0.CheckPaintingRes(slot0, slot1, slot2)
 	for slot9, slot10 in ipairs({
 		slot1.voteShip:getPainting()
 	}) do
-		PaintingConst.AddPaintingNameWithFilteMap(slot5, slot10)
+		PaintingGroupConst.AddPaintingNameWithFilteMap(slot5, slot10)
 	end
 
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
 		paintingNameList = slot5,
 		finishFunc = slot2

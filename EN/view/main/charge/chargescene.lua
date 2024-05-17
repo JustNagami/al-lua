@@ -145,7 +145,7 @@ function slot0.didEnter(slot0)
 
 	onButton(slot0, slot0.switchBtn, function ()
 		uv0:emit(ChargeMediator.SWITCH_TO_SHOP, {
-			chargePage = uv0.curSubViewNum
+			warp = NewShopsScene.TYPE_SHOP_STREET
 		})
 		uv0:stopCV()
 	end, SFX_PANEL)

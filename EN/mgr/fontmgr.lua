@@ -8,7 +8,7 @@ function slot0.FontMgr.Init(slot0, slot1)
 
 	slot2 = {}
 
-	for slot6, slot7 in ipairs({
+	for slot6, slot7 in pairs({
 		crifont = "crifont",
 		remfont = "remfont",
 		heiti = "zhunyuan",
@@ -27,7 +27,7 @@ function slot0.FontMgr.Init(slot0, slot1)
 		sourcehanserifcn = "sourcehanserifcn-bold_0"
 	}) do
 		table.insert(slot2, function (slot0)
-			ResourceMgr.Inst:getAssetAsync("font/treatfont", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
+			ResourceMgr.Inst:getAssetAsync("font/" .. uv0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
 				uv0.fonts[uv1] = slot0
 
 				uv2()

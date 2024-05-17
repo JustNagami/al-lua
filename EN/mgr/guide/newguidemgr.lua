@@ -178,13 +178,12 @@ function slot0.Stop(slot0)
 			slot0.OnFailed()
 		end
 
-		slot0:Clear()
-
 		slot0.state = uv0
 
 		slot0.uiFinder:Clear()
 		slot0.uiDuplicator:Clear()
 		slot0.uiLoader:Clear()
+		slot0:Clear()
 	end
 end
 
@@ -202,7 +201,6 @@ function slot0.Clear(slot0)
 	slot0.OnFailed = nil
 	slot0.sceneRecords = {}
 
-	pg.m02:sendNotification(GAME.END_GUIDE)
 	slot0._go:SetActive(false)
 
 	for slot4, slot5 in ipairs(slot0.players) do
@@ -212,6 +210,8 @@ function slot0.Clear(slot0)
 	if slot0.player then
 		slot0.player = nil
 	end
+
+	pg.m02:sendNotification(GAME.END_GUIDE)
 end
 
 function slot0.IsPause(slot0)

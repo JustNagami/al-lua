@@ -202,7 +202,7 @@ end
 
 function slot0.updatePaintingTag(slot0)
 	if slot0.displayShip then
-		setActive(slot0.changskinBtnTag, #PaintingConst.GetPaintingNameListByShipVO(slot1) > 0)
+		setActive(slot0.changskinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(slot1) > 0)
 	end
 end
 

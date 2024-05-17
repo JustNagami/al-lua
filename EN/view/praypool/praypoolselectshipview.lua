@@ -179,10 +179,10 @@ function slot0.initUI(slot0)
 					slot2 = {}
 
 					for slot7, slot8 in ipairs(uv0.prayProxy:getSelectedShipIDList()) do
-						PaintingConst.AddPaintingNameByShipConfigID(slot2, slot8)
+						PaintingGroupConst.AddPaintingNameByShipConfigID(slot2, slot8)
 					end
 
-					PaintingConst.PaintingDownload({
+					PaintingGroupConst.PaintingDownload({
 						isShowBox = true,
 						paintingNameList = slot2,
 						finishFunc = slot0

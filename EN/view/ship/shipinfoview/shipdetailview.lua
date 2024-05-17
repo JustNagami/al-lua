@@ -458,7 +458,7 @@ function slot0.UpdateDetail(slot0, slot1)
 end
 
 function slot0.UpdateFashionTag(slot0)
-	setActive(slot0.fashionTag, #PaintingConst.GetPaintingNameListByShipVO(slot0:GetShipVO()) > 0)
+	setActive(slot0.fashionTag, #PaintingGroupConst.GetPaintingNameListByShipVO(slot0:GetShipVO()) > 0)
 end
 
 function slot0.UpdateEquipments(slot0, slot1)

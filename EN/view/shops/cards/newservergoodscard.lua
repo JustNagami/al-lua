@@ -61,10 +61,10 @@ function slot0.Init(slot0)
 
 	GetImageSpriteFromAtlasAsync(slot1.icon, "", slot0.itemIconTF)
 
-	slot4 = ItemRarity.Rarity2Print(slot1.rarity or 1)
+	slot4 = slot1.rarity or ItemRarity.Gray
 
-	setImageSprite(slot0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. slot4))
-	setImageColor(slot0.itemIconFrameTF, shipRarity2FrameColor(slot4 + 1))
+	setImageSprite(slot0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot4)))
+	setImageColor(slot0.itemIconFrameTF, Color.NewHex(ItemRarity.Rarity2FrameHexColor(slot4)))
 end
 
 function slot0.Dispose(slot0)

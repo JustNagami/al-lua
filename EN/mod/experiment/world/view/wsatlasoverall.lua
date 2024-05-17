@@ -19,7 +19,7 @@ function slot0.Dispose(slot0)
 end
 
 function slot0.LoadScene(slot0, slot1)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "WorldOverview", LoadSceneMode.Additive, function (slot0, slot1)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "worldoverview", LoadSceneMode.Additive, function (slot0, slot1)
 		uv0.transform = tf(slot0:GetRootGameObjects()[0])
 
 		setActive(uv0.transform, false)
@@ -54,7 +54,7 @@ end
 
 function slot0.ReturnScene(slot0)
 	if slot0.tfEntity then
-		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "WorldOverview")
+		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "worldoverview")
 
 		slot0.cmPointer = nil
 	end

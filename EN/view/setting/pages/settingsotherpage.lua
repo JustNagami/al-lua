@@ -62,6 +62,10 @@ function slot0.GetPanels(slot0)
 		if slot2 == 1 or slot2 == 3 and pg.SdkMgr.GetInstance():IsHuaweiPackage() then
 			table.insert(slot1, SettingsAccountCHPanle)
 		end
+
+		if slot2 == 1 and OPEN_EXCEPTION_TEST then
+			table.insert(slot1, SettingsTestUploadExceptionPanle)
+		end
 	end
 
 	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then

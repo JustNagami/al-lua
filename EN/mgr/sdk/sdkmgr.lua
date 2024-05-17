@@ -325,6 +325,14 @@ function slot0.ConfirmUnLinkGooglePlayGame(slot0)
 	end
 end
 
+function slot0.BindYostarPass(slot0)
+	if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
+		return slot0:Get("BindYostarPass")
+	else
+		return true
+	end
+end
+
 AIRI_LAST_GEN_TIME = 0
 AIRI_GEN_LIMIT_TIME = 30
 

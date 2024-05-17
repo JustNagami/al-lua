@@ -11,10 +11,6 @@ function slot0.Ctor(slot0, ...)
 	slot0.unlock = true
 end
 
-function slot0.GetConfigID(slot0)
-	return slot0.configId
-end
-
 function slot0.GetName(slot0)
 	return slot0:getConfig("name")
 end

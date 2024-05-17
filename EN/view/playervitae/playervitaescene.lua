@@ -227,7 +227,7 @@ function slot0.UpdatePainting(slot0, slot1)
 end
 
 function slot0.updateSwitchSkinBtnTag(slot0)
-	setActive(slot0.switchSkinBtnTag, #PaintingConst.GetPaintingNameListByShipVO(slot0:GetFlagShip()) > 0)
+	setActive(slot0.switchSkinBtnTag, #PaintingGroupConst.GetPaintingNameListByShipVO(slot0:GetFlagShip()) > 0)
 end
 
 function slot0.onBackPressed(slot0)

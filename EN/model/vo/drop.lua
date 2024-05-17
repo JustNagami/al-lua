@@ -12,7 +12,6 @@ end
 
 function slot0.Change(slot0)
 	if not getmetatable(slot0) then
-		warning("no change drop")
 		setmetatable(slot0, uv0)
 
 		slot0.class = uv0
@@ -240,6 +239,22 @@ function slot0.InitSwitch()
 		end,
 		[DROP_TYPE_TRANS_ITEM] = function (slot0)
 			return pg.drop_data_restore[slot0.id]
+		end,
+		[DROP_TYPE_DORM3D_FURNITURE] = function (slot0)
+			slot1 = pg.dorm3d_furniture_template[slot0.id]
+			slot0.desc = slot1.desc
+
+			return slot1
+		end,
+		[DROP_TYPE_DORM3D_GIFT] = function (slot0)
+			slot0.desc = ""
+
+			return pg.dorm3d_gift[slot0.id]
+		end,
+		[DROP_TYPE_DORM3D_SKIN] = function (slot0)
+			slot0.desc = ""
+
+			return pg.dorm3d_resource[slot0.id]
 		end
 	}
 
@@ -353,37 +368,46 @@ function slot0.InitSwitch()
 
 	uv0.RarityCase = {
 		[DROP_TYPE_RESOURCE] = function (slot0)
-			return slot0:getConfig("rarity") + 1
+			return slot0:getConfig("rarity")
 		end,
 		[DROP_TYPE_ITEM] = function (slot0)
-			return slot0:getConfig("rarity") + 1
+			return slot0:getConfig("rarity")
 		end,
 		[DROP_TYPE_EQUIP] = function (slot0)
-			return slot0:getConfig("rarity")
+			return slot0:getConfig("rarity") - 1
 		end,
 		[DROP_TYPE_SHIP] = function (slot0)
-			return slot0:getConfig("rarity")
+			return slot0:getConfig("rarity") - 1
 		end,
 		[DROP_TYPE_FURNITURE] = function (slot0)
-			return slot0:getConfig("comfortable") + 1
+			return slot0:getConfig("rarity")
 		end,
 		[DROP_TYPE_SKIN] = function (slot0)
-			return ItemRarity.SSR
+			return ItemRarity.Gold
 		end,
 		[DROP_TYPE_SKIN_TIMELIMIT] = function (slot0)
-			return ItemRarity.SSR
+			return ItemRarity.Gold
 		end,
 		[DROP_TYPE_VITEM] = function (slot0)
-			return slot0:getConfig("rarity") + 1
+			return slot0:getConfig("rarity")
 		end,
 		[DROP_TYPE_WORLD_ITEM] = function (slot0)
 			return slot0:getConfig("rarity")
 		end,
 		[DROP_TYPE_BUFF] = function (slot0)
-			return ItemRarity.Gold
+			return ItemRarity.Purple
 		end,
 		[DROP_TYPE_COMMANDER_CAT] = function (slot0)
+			return slot0:getConfig("rarity") - 1
+		end,
+		[DROP_TYPE_DORM3D_FURNITURE] = function (slot0)
 			return slot0:getConfig("rarity")
+		end,
+		[DROP_TYPE_DORM3D_SKIN] = function (slot0)
+			return ItemRarity.Gold
+		end,
+		[DROP_TYPE_WORLD_COLLECTION] = function (slot0)
+			return ItemRarity.Gold
 		end
 	}
 
@@ -793,6 +817,16 @@ function slot0.InitSwitch()
 			end
 		end,
 		[DROP_TYPE_COMMANDER_CAT] = function (slot0)
+		end,
+		[DROP_TYPE_DORM3D_GIFT] = function (slot0)
+			getProxy(ApartmentProxy):changeGiftCount(slot0.id, slot0.count)
+		end,
+		[DROP_TYPE_DORM3D_SKIN] = function (slot0)
+			slot1 = getProxy(ApartmentProxy)
+			slot2 = slot1:getApartment(slot0:getConfig("ship_group"))
+
+			slot2:addSkin(slot0.id)
+			slot1:updateApartment(slot2)
 		end
 	}
 
@@ -928,7 +962,7 @@ function slot0.InitSwitch()
 			updateShip(slot1, slot0.ship, slot2)
 		end,
 		[DROP_TYPE_FURNITURE] = function (slot0, slot1, slot2)
-			updateFurniture(slot1, slot0.id, slot2)
+			updateFurniture(slot1, slot0, slot2)
 		end,
 		[DROP_TYPE_STRATEGY] = function (slot0, slot1, slot2)
 			slot2.isWorldBuff = slot0.isWorldBuff
@@ -1014,7 +1048,16 @@ function slot0.InitSwitch()
 			updateBuff(slot1, slot0.id, slot2)
 		end,
 		[DROP_TYPE_COMMANDER_CAT] = function (slot0, slot1, slot2)
-			updateCommander(slot1, slot0.id, slot2)
+			updateCommander(slot1, slot0, slot2)
+		end,
+		[DROP_TYPE_DORM3D_FURNITURE] = function (slot0, slot1, slot2)
+			updateDorm3dFurniture(slot1, slot0, slot2)
+		end,
+		[DROP_TYPE_DORM3D_GIFT] = function (slot0, slot1, slot2)
+			updateDorm3dGift(slot1, slot0, slot2)
+		end,
+		[DROP_TYPE_DORM3D_SKIN] = function (slot0, slot1, slot2)
+			updateDorm3dSkin(slot1, slot0, slot2)
 		end
 	}
 

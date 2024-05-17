@@ -450,6 +450,15 @@ pg.item_data_frame = {
 		desc = "<color=#ffffff>\"Through the snow, across the icebergs, look at yourself and witness the future.\"</color>\nGiven to Commanders who excelled during the \"Snowrealm Peregrination\" event.",
 		scene = {}
 	},
+	[330] = {
+		time_limit_type = 0,
+		name = "Sigil of the Martyr",
+		gain_by = "",
+		id = 330,
+		time_second = 0,
+		desc = "Obtained from an event.",
+		scene = {}
+	},
 	[406] = {
 		time_limit_type = 0,
 		name = "Hall of Fame: Laffey ",
@@ -708,6 +717,7 @@ pg.item_data_frame = {
 		327,
 		328,
 		329,
+		330,
 		406,
 		411,
 		412,

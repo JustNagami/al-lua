@@ -132,7 +132,7 @@ function slot0.CheckStoryDownload(slot0, slot1, slot2)
 		slot4 = slot4 + 1
 	end
 
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
 		paintingNameList = _.map(pg.NewStoryMgr.GetInstance():GetStoryPaintingsByNameList(slot3), function (slot0)
 			return "painting/" .. slot0

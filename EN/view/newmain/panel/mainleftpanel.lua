@@ -72,18 +72,33 @@ function slot0.OpenCamera(slot0)
 		return
 	end
 
-	if CheckPermissionGranted(ANDROID_CAMERA_PERMISSION) then
-		slot0:emit(NewMainMediator.GO_SNAPSHOT)
-	else
-		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("apply_permission_camera_tip1"),
-			onYes = function ()
-				ApplyPermission({
-					ANDROID_CAMERA_PERMISSION
-				})
-			end
-		})
+	slot1, slot2 = nil
+
+	function slot1()
+		uv0:emit(NewMainMediator.GO_SNAPSHOT)
 	end
+
+	function slot2()
+		if CameraHelper.IsAndroid() then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("apply_permission_camera_tip3"),
+				onYes = function ()
+					CameraHelper.RequestCamera(uv0, uv1)
+				end
+			})
+		elseif CameraHelper.IsIOS() then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("apply_permission_camera_tip2")
+			})
+		end
+	end
+
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		content = i18n("apply_permission_camera_tip1"),
+		onYes = function ()
+			CameraHelper.RequestCamera(uv0, uv1)
+		end
+	})
 end
 
 function slot0.ResetCommissionBtn(slot0)

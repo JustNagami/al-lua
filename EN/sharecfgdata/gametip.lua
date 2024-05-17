@@ -7619,16 +7619,16 @@ _G.pg.base.gametip.blueprint_max_level_tip = {
 	tip = "The maximum level has already been achieved."
 }
 _G.pg.base.gametip.ship_profile_voice_locked_intimacy = {
-	tip = "Coming Soon"
+	tip = "Unlocks after reaching Affinity $1"
 }
 _G.pg.base.gametip.ship_profile_voice_locked_propose = {
-	tip = "Coming Soon"
+	tip = "Unlocks after Oath"
 }
 _G.pg.base.gametip.ship_profile_voice_locked_propose_imas = {
-	tip = "Coming Soon"
+	tip = "Unlocks after Oath"
 }
 _G.pg.base.gametip.ship_profile_voice_locked_design = {
-	tip = "Coming Soon"
+	tip = "Unlocks after reaching Development Level $1"
 }
 _G.pg.base.gametip.ship_profile_voice_locked_meta = {
 	tip = "未配置tip"
@@ -8343,13 +8343,13 @@ _G.pg.base.gametip.buildship_new_tip = {
 	tip = "Get Kronshtadt guaranteed with every 200 event builds (can be done up to 4 times)!"
 }
 _G.pg.base.gametip.buildship_heavy_tip = {
-	tip = "Little Renown and Amagi-chan added to the build pool!"
+	tip = "Little Renown and Amagi-chan added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_light_tip = {
 	tip = "Kirov, Gremyashchy, Murmansk, and others added to standard build pool!"
 }
 _G.pg.base.gametip.buildship_special_tip = {
-	tip = "Little Illustrious and Little Enterprise added to the build pool!"
+	tip = "Little Illustrious and Little Enterprise added to standard build pool!"
 }
 _G.pg.base.gametip.Normalbuild_URexchange_help = {
 	tip = {
@@ -16460,6 +16460,9 @@ _G.pg.base.gametip.setting_resdownload_title_sound = {
 _G.pg.base.gametip.setting_resdownload_title_manga = {
 	tip = "Update Comics"
 }
+_G.pg.base.gametip.setting_resdownload_title_dorm = {
+	tip = "Update Dorm Resources"
+}
 _G.pg.base.gametip.setting_resdownload_title_main_group = {
 	tip = "Update All Assets"
 }
@@ -18652,7 +18655,7 @@ _G.pg.base.gametip.technology_detail = {
 	tip = "Details"
 }
 _G.pg.base.gametip.technology_mission_unfinish = {
-	tip = "Requirements Not Met"
+	tip = "<size=16>Requirements Not Met</size>"
 }
 _G.pg.base.gametip.word_chinese = {
 	tip = "中文"
@@ -23486,4 +23489,10 @@ The 3 rehearsal types are as follows:
 If you're not sure what your current rehearsal level is, you can check it from the right-hand-side of the event banner.]]
 		}
 	}
+}
+_G.pg.base.gametip.liner_sign_cnt_tip = {
+	tip = "Currently Obtainable:"
+}
+_G.pg.base.gametip.liner_sign_unlock_tip = {
+	tip = "Unlocks on 5/21"
 }

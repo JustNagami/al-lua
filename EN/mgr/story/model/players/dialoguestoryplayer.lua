@@ -623,30 +623,97 @@ function slot6(slot0, slot1, slot2)
 	return slot10
 end
 
+function slot7(slot0, slot1, slot2)
+	slot4 = nil
+
+	for slot8 = 1, slot0:GetComponentsInChildren(typeof(Canvas)).Length do
+		if slot8 - 1 == slot1 then
+			slot4 = slot3[slot8 - 1].sortingOrder
+		end
+	end
+
+	slot5 = math.huge
+
+	if slot3.Length == 0 then
+		slot5 = 0
+	else
+		for slot9 = 1, slot3.Length do
+			if slot9 - 1 ~= slot1 and slot5 > slot3[slot9 - 1].sortingOrder - slot4 then
+				slot5 = slot11
+			end
+		end
+	end
+
+	slot7 = {
+		[slot11] = slot13
+	}
+
+	for slot11 = 1, slot0:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length do
+		if slot5 > ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot6[slot11 - 1]) - slot4 then
+			slot5 = slot14
+		end
+	end
+
+	slot8 = slot2 - slot5 + 1
+
+	for slot12 = 1, slot3.Length do
+		if slot12 - 1 == slot1 then
+			slot3[slot12 - 1].sortingOrder = slot8
+		end
+	end
+
+	slot9 = slot8 + 1
+
+	for slot13 = 1, slot3.Length do
+		if slot13 - 1 ~= slot1 then
+			slot14 = slot3[slot13 - 1]
+			slot15 = slot8 + slot14.sortingOrder - slot4
+			slot14.sortingOrder = slot15
+
+			if slot8 < slot15 then
+				slot9 = slot15
+			end
+		end
+	end
+
+	for slot13 = 1, slot6.Length do
+		slot16 = slot8 + slot7[slot13] - slot4
+
+		ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot6[slot13 - 1], slot16)
+
+		if slot8 < slot16 then
+			slot9 = slot16
+		end
+	end
+
+	return slot9
+end
+
 function slot0.UpdateSpinePainting(slot0, slot1, slot2, slot3, slot4)
 	function slot5(slot0)
 		slot2 = uv0:Find("spinebg")
 
 		setActive(slot2, not uv1:IsHideSpineBg())
 
-		uv3.spinePainings[uv0] = SpinePainting.New(SpinePainting.GenerateData({
+		uv2.spinePainings[uv0] = SpinePainting.New(SpinePainting.GenerateData({
 			ship = uv1:GetVirtualShip(),
 			position = Vector3(0, 0, 0),
 			parent = uv0:Find("spine"),
 			effectParent = slot2
 		}), function (slot0)
 			slot0._go.name = uv0:GetPainting()
-			slot2 = GetOrAddComponent(uv4.front, typeof(Canvas))
+			slot1 = uv1.sortingOrder
+			slot3 = GetOrAddComponent(uv1.front, typeof(Canvas))
 
-			GetOrAddComponent(uv4.front, typeof(GraphicRaycaster))
+			GetOrAddComponent(uv1.front, typeof(GraphicRaycaster))
 
-			slot2.overrideSorting = true
-			slot2.sortingOrder = uv1(uv2, uv3, uv4.sortingOrder) + 1
+			slot3.overrideSorting = true
+			slot3.sortingOrder = ((uv0:GetSpineOrderIndex() or uv2(uv3, uv4, uv1.sortingOrder)) and uv5(uv3, slot2, uv1.sortingOrder)) + 1
 
-			uv4:UpdateSpineExpression(slot0, uv0)
+			uv1:UpdateSpineExpression(slot0, uv0)
 
-			if uv5 then
-				uv5()
+			if uv6 then
+				uv6()
 			end
 		end)
 	end
@@ -711,7 +778,7 @@ function slot0.UpdateMeshPainting(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot5()
 end
 
-function slot7(slot0)
+function slot8(slot0)
 	slot1 = slot0.name
 
 	if slot0.showNPainting and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot1 .. "_n")) then
@@ -992,7 +1059,7 @@ function slot0.StartMovePrevPaintingToSide(slot0, slot1, slot2, slot3)
 	slot8.localPosition = Vector2(slot5.localPosition.x, slot8.localPosition.y, 0)
 end
 
-function slot8(slot0, slot1, slot2, slot3, slot4)
+function slot9(slot0, slot1, slot2, slot3, slot4)
 	for slot9 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
 		if slot5[slot9].gameObject.name == "temp_mask" then
 			slot10.material = slot4 and slot0.maskMaterial or slot0.maskMaterialForWithLayer
@@ -1006,7 +1073,7 @@ function slot8(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-function slot9(slot0, slot1, slot2, slot3, slot4)
+function slot10(slot0, slot1, slot2, slot3, slot4)
 	slot5 = slot1:GetComponentsInChildren(typeof(Image))
 
 	if slot2:GetComponent(typeof(Image)) then
@@ -1135,7 +1202,7 @@ function slot0.RecyclesSubPantings(slot0, slot1)
 	end)
 end
 
-function slot10(slot0)
+function slot11(slot0)
 	if slot0:Find("fitter").childCount == 0 then
 		return
 	end
@@ -1207,7 +1274,7 @@ function slot0.ResetMeshPainting(slot0, slot1)
 	end
 end
 
-function slot11(slot0, slot1)
+function slot12(slot0, slot1)
 	slot3 = false
 
 	if slot0.live2dChars[slot1] then
@@ -1229,7 +1296,7 @@ function slot11(slot0, slot1)
 	end
 end
 
-function slot12(slot0, slot1)
+function slot13(slot0, slot1)
 	slot3 = false
 
 	if slot0.spinePainings[slot1] then

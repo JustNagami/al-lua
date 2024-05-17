@@ -6,6 +6,7 @@ slot0.EVENT_TYPE_STICK = 4
 slot0.SHOW_UI = 5
 slot0.TRIGGER_TYPE_BUTTONEX = 6
 slot0.SNAP_PAGE = 7
+slot0.EVENT_TYPE_EVT_CLICK = 8
 
 function slot0.Ctor(slot0, slot1)
 	uv0.super.Ctor(slot0, slot1)

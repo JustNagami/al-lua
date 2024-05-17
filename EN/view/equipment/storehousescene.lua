@@ -833,7 +833,7 @@ function slot0.filterEquipment(slot0)
 		return
 	end
 
-	GetSpriteFromAtlasAsync("ui/commonui_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
 		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
 
@@ -928,7 +928,7 @@ function slot0.filterSpWeapon(slot0)
 		assert(false, "不是特殊兵装分页")
 	end
 
-	GetSpriteFromAtlasAsync("ui/commonui_atlas", slot0:isDefaultSpWeaponIndexData() and "shaixuan_off" or "shaixuan_on", function (slot0)
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", slot0:isDefaultSpWeaponIndexData() and "shaixuan_off" or "shaixuan_on", function (slot0)
 		setImageSprite(uv0.indexBtn, slot0, true)
 	end)
 

@@ -24,6 +24,8 @@ function slot0.GetHalfBodyOffsetY(slot0)
 end
 
 function slot0.OnLoad(slot0, slot1)
+	slot0:SetContainerVisible(true)
+
 	slot0.cg.blocksRaycasts = true
 	slot0.live2dChar = Live2D.New(Live2D.GenerateData({
 		loadPrefs = true,
@@ -224,7 +226,12 @@ function slot0.OnUpdateShip(slot0, slot1)
 	end
 end
 
+function slot0.SetContainerVisible(slot0, slot1)
+	setActive(slot0.live2dContainer, slot1)
+end
+
 function slot0.OnResume(slot0)
+	slot0:SetContainerVisible(true)
 	slot0:AddScreenChangeTimer()
 	slot0:UpdateContainerPosition()
 	slot0.live2dChar:SetVisible(true)

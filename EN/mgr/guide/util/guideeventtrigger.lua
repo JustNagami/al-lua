@@ -19,6 +19,8 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 		slot6 = slot0:HandleBtnExTrigger(slot2, slot3, slot4, slot5)
 	elseif slot1 == GuideFindUIStep.SNAP_PAGE then
 		slot6 = slot0:HandleSnapPageTrigger(slot2, slot3, slot4, slot5)
+	elseif slot1 == GuideFindUIStep.EVENT_TYPE_EVT_CLICK then
+		slot6 = slot0:HandleEvtClickTrigger(slot2, slot3, slot5)
 	end
 
 	slot0.trigger = slot6
@@ -110,6 +112,29 @@ function slot0.HandleClickTrigger(slot0, slot1, slot2, slot3)
 	slot6:AddPointDownFunc(function (slot0, slot1)
 		if not IsNil(uv0) then
 			uv1:OnPointerDown(slot1)
+		end
+	end)
+	slot6:AddPointUpFunc(slot5)
+
+	return slot5
+end
+
+function slot0.HandleEvtClickTrigger(slot0, slot1, slot2, slot3)
+	slot4 = slot2:GetComponent(typeof(EventTriggerListener))
+
+	function slot5(slot0, slot1)
+		uv0()
+
+		if not IsNil(uv1) then
+			uv2:OnPointerUp(slot1)
+		end
+	end
+
+	slot6 = slot1:GetComponent(typeof(EventTriggerListener))
+
+	slot6:AddPointDownFunc(function (slot0, slot1)
+		if not IsNil(uv0) then
+			uv1:OnPointerClick(slot1)
 		end
 	end)
 	slot6:AddPointUpFunc(slot5)

@@ -10,7 +10,7 @@ slot1.BrightnessMode = {
 }
 
 function slot1.Init(slot0, slot1)
-	GlobalClickEventMgr.Inst.OnClick:AddListener(function ()
+	GlobalClickEventMgr.Inst:AddPointerDownFunc(function ()
 		if not uv0.manulStatus then
 			return
 		end

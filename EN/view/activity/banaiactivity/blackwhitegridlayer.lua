@@ -911,12 +911,12 @@ end
 function slot0.preload(slot0, slot1)
 	uv0 = {}
 
-	ResourceMgr.Inst:loadAssetBundleAsync("ui/blackwhitegrid_atlas", function (slot0)
+	buildTempAB("ui/blackwhitegrid_atlas", function (slot0)
 		for slot4 = 0, 4 do
 			uv0[slot4] = {}
 
 			for slot8 = 0, 2 do
-				uv0[slot4][slot8] = ResourceMgr.Inst:LoadAssetSync(slot0, slot4 .. "_" .. slot8, nil, true, false)
+				uv0[slot4][slot8] = slot0:LoadAssetSync(slot4 .. "_" .. slot8, nil, true, false)
 			end
 		end
 	end)

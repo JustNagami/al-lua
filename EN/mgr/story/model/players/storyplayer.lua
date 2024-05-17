@@ -74,16 +74,25 @@ function slot0.StoryStart(slot0, slot1)
 end
 
 function slot0.GetOptionContainer(slot0, slot1)
-	if slot1:GetOptionCnt() <= 3 then
+	slot2 = slot1:GetOptionCnt()
+
+	if slot0.script:IsDialogueStyle2() then
+		setActive(slot0.optionLUIlist.container, true)
+		setActive(slot0.optionCUIlist.container, false)
+
+		return slot0.optionLUIlist, true
+	end
+
+	if slot2 <= 3 then
 		setActive(slot0.optionLUIlist.container, false)
 		setActive(slot0.optionCUIlist.container, true)
 
-		return slot0.optionCUIlist
+		return slot0.optionCUIlist, false
 	else
 		setActive(slot0.optionLUIlist.container, true)
 		setActive(slot0.optionCUIlist.container, false)
 
-		return slot0.optionLUIlist
+		return slot0.optionLUIlist, true
 	end
 end
 
@@ -217,10 +226,15 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 				end,
 				function (slot0)
 					uv0:SetLocation(uv1, slot0)
+				end,
+				function (slot0)
+					uv0:DispatcherEvent(uv1, slot0)
 				end
 			}, slot0)
 		end,
 		function (slot0)
+			uv0:ClearCheckDispatcher()
+
 			if not uv0:NextStage(uv1) then
 				return
 			end
@@ -235,6 +249,12 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 		end,
 		function (slot0)
 			if not uv0:NextStage(uv1) then
+				return
+			end
+
+			if uv0.skipOption then
+				slot0()
+
 				return
 			end
 
@@ -259,6 +279,14 @@ function slot0.Play(slot0, slot1, slot2, slot3)
 			end
 
 			if not uv2:ExistOption() then
+				slot0()
+
+				return
+			end
+
+			if uv0.skipOption then
+				uv0.skipOption = false
+
 				slot0()
 
 				return
@@ -328,6 +356,64 @@ function slot0.NextStage(slot0, slot1)
 	return false
 end
 
+function slot0.DispatcherEvent(slot0, slot1, slot2)
+	if not slot1:ExistDispatcher() then
+		slot2()
+
+		return
+	end
+
+	slot3 = slot1:GetDispatcher()
+
+	pg.NewStoryMgr.GetInstance():ClearStoryEvent()
+	pg.m02:sendNotification(slot3.name, {
+		data = slot3.data,
+		callbackData = slot3.callbackData,
+		flags = slot0.branchCodeList[slot1:GetId()] or {}
+	})
+
+	if slot1:ShouldHideUI() then
+		setActive(slot0._tf, false)
+	end
+
+	if slot1:IsRecallDispatcher() then
+		slot0:CheckDispatcher(slot1, slot2)
+	else
+		slot2()
+	end
+end
+
+function slot0.CheckDispatcher(slot0, slot1, slot2)
+	slot3 = slot1:GetDispatcherRecallName()
+	slot0.checkTimer = Timer.New(function ()
+		if pg.NewStoryMgr.GetInstance():CheckStoryEvent(uv0) then
+			if pg.NewStoryMgr.GetInstance():GetStoryEventArg(uv0) and slot0.optionIndex then
+				uv1:SetBranchCode(uv1.script, uv2, slot0.optionIndex)
+
+				uv1.skipOption = true
+			end
+
+			if uv2:ShouldHideUI() then
+				setActive(uv1._tf, true)
+			end
+
+			uv1:ClearCheckDispatcher()
+			uv3()
+		end
+	end, 1, -1)
+
+	slot0.checkTimer:Start()
+	slot0.checkTimer.func()
+end
+
+function slot0.ClearCheckDispatcher(slot0)
+	if slot0.checkTimer then
+		slot0.checkTimer:Stop()
+
+		slot0.checkTimer = nil
+	end
+end
+
 function slot0.TriggerEventIfAuto(slot0, slot1)
 	if not slot0:ShouldAutoTrigger() then
 		return
@@ -359,7 +445,7 @@ function slot0.TriggerOptionIfAuto(slot0, slot1, slot2)
 		end
 
 		if uv1:GetOptionIndexByAutoSel() ~= nil then
-			triggerButton(uv0:GetOptionContainer(uv1).container:GetChild(slot0 - 1):Find("content"))
+			triggerButton(uv0:GetOptionContainer(uv1).container:GetChild(slot0 - 1))
 		end
 	end)
 end
@@ -462,15 +548,36 @@ function slot0.UpdateIcon(slot0, slot1, slot2)
 	slot2()
 end
 
+function slot0.UpdateOptionTxt(slot0, slot1, slot2, slot3)
+	slot5 = slot2:Find("content")
+
+	if slot1 then
+		slot7 = slot2:Find("content_max")
+		slot8 = GetPerceptualSize(slot3) >= 17
+		slot9 = slot8 and slot7 or slot5
+
+		setActive(slot5, not slot8)
+		setActive(slot7, slot8)
+		setText(slot9:Find("Text"), slot3)
+
+		slot2:GetComponent(typeof(LayoutElement)).preferredHeight = slot9.rect.height
+	else
+		setText(slot5:Find("Text"), slot3)
+
+		slot4.preferredHeight = slot5.rect.height
+	end
+end
+
 function slot0.InitBranches(slot0, slot1, slot2, slot3, slot4)
 	slot5 = false
-	slot7 = slot0:GetOptionContainer(slot2)
-	slot9 = slot0.branchCodeList[slot2:GetId()] or {}
+	slot7, slot8 = slot0:GetOptionContainer(slot2)
+	slot10 = slot0.branchCodeList[slot2:GetId()] or {}
 	slot0.selectedBranchID = nil
 
 	slot7:make(function (slot0, slot1, slot2)
 		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot2:Find("content")
+			slot3 = slot2
+			slot6 = table.contains(uv1, uv0[slot1 + 1][2])
 
 			onButton(uv2, slot3, function ()
 				if uv0.pause or uv0.stop then
@@ -498,8 +605,11 @@ function slot0.InitBranches(slot0, slot1, slot2, slot3, slot4)
 
 				uv0:HideBranchesWithoutSelected(uv4)
 			end, SFX_PANEL)
-			setButtonEnabled(slot3, not table.contains(uv1, uv0[slot1 + 1][2]))
-			setText(slot3:Find("Text"), uv0[slot1 + 1][1])
+			setButtonEnabled(slot3, not slot6)
+
+			GetOrAddComponent(slot2, typeof(CanvasGroup)).alpha = slot6 and 0.5 or 1
+
+			uv2:UpdateOptionTxt(uv7, slot3, uv0[slot1 + 1][1])
 		end
 	end)
 	slot7:align(#slot2:GetOptions())
@@ -1105,6 +1215,7 @@ function slot0.Clear(slot0, slot1)
 	end
 
 	slot0.bgs = {}
+	slot0.skipOption = nil
 	slot0.step = nil
 	slot0.goCG.alpha = 1
 	slot0.callback = nil

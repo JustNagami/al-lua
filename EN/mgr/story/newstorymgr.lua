@@ -212,7 +212,7 @@ end
 
 function slot0.ShouldDownloadRes(slot0, slot1)
 	return _.any(slot0:GetStoryPaintingsByName(slot1), function (slot0)
-		return PaintingConst.VerifyPaintingFileName(slot0)
+		return PaintingGroupConst.VerifyPaintingFileName(slot0)
 	end)
 end
 
@@ -232,6 +232,7 @@ function slot0.Init(slot0, slot1)
 		uv0.skipBtn = findTF(uv0._tf, "front/btns/btns/skip_button")
 		uv0.autoBtn = findTF(uv0._tf, "front/btns/btns/auto_button")
 		uv0.autoBtnImg = findTF(uv0._tf, "front/btns/btns/auto_button/sel"):GetComponent(typeof(Image))
+		uv0.alphaImage = uv0._tf:GetComponent(typeof(Image))
 		uv0.recordBtn = findTF(uv0._tf, "front/btns/record")
 		uv0.dialogueContainer = findTF(uv0._tf, "front/dialogue")
 		uv0.players = {
@@ -441,10 +442,10 @@ function slot0.CheckResDownload(slot0, slot1, slot2)
 	slot5 = {}
 
 	for slot9, slot10 in ipairs(slot3) do
-		PaintingConst.AddPaintingNameWithFilteMap(slot5, slot10)
+		PaintingGroupConst.AddPaintingNameWithFilteMap(slot5, slot10)
 	end
 
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
 		paintingNameList = slot5,
 		finishFunc = slot2
@@ -603,27 +604,36 @@ function slot0.OnStart(slot0)
 	removeOnButton(slot0.autoBtn)
 	removeOnButton(slot0.recordBtn)
 
+	slot0.alphaImage.color = Color(0, 0, 0, slot0.storyScript:GetStoryAlpha())
+
+	setActive(slot0.recordBtn, not slot0.storyScript:ShouldHideRecord())
+	slot0:ClearStoryEventTriggerListener()
+
+	if #slot0.storyScript:GetAllStepDispatcherRecallName() > 0 then
+		slot0.storyEventTriggerListener = StoryEventTriggerListener.New(slot1)
+	end
+
 	slot0.state = uv0
 
 	slot0:TrackingStart()
 	pg.m02:sendNotification(GAME.STORY_BEGIN, slot0.storyScript:GetName())
 
-	slot4 = {
-		storyId = slot5
+	slot5 = {
+		storyId = slot6
 	}
-	slot5 = slot0.storyScript:GetName()
+	slot6 = slot0.storyScript:GetName()
 
-	pg.m02:sendNotification(GAME.STORY_UPDATE, slot4)
+	pg.m02:sendNotification(GAME.STORY_UPDATE, slot5)
 	pg.DelegateInfo.New(slot0)
 
-	for slot4, slot5 in ipairs(slot0.players) do
-		slot5:StoryStart(slot0.storyScript)
+	for slot5, slot6 in ipairs(slot0.players) do
+		slot6:StoryStart(slot0.storyScript)
 	end
 
 	setActive(slot0._go, true)
 	slot0._tf:SetAsLastSibling()
 	setActive(slot0.skipBtn, not slot0.storyScript:ShouldHideSkip())
-	setActive(slot0.autoBtn, true)
+	setActive(slot0.autoBtn, not slot0.storyScript:ShouldHideAutoBtn())
 
 	slot0.bgmVolumeValue = pg.CriMgr.GetInstance():getBGMVolume()
 
@@ -654,6 +664,32 @@ function slot0.TrackingSkip(slot0)
 	TrackConst.StorySkip(slot0:StoryName2StoryId(slot0.storyScript:GetName()))
 end
 
+function slot0.ClearStoryEvent(slot0)
+	if slot0.storyEventTriggerListener then
+		slot0.storyEventTriggerListener:Clear()
+	end
+end
+
+function slot0.CheckStoryEvent(slot0, slot1)
+	if slot0.storyEventTriggerListener then
+		return slot0.storyEventTriggerListener:ExistCache(slot1)
+	end
+
+	return false
+end
+
+function slot0.GetStoryEventArg(slot0, slot1)
+	if not slot0:CheckStoryEvent(slot1) then
+		return nil
+	end
+
+	if slot0.storyEventTriggerListener and slot0.storyEventTriggerListener:ExistArg(slot1) then
+		return slot0.storyEventTriggerListener:GetArg(slot1)
+	end
+
+	return nil
+end
+
 function slot0.UpdateAutoBtn(slot0)
 	slot0:ClearAutoBtn(slot0.storyScript:GetAutoPlayFlag())
 end
@@ -665,7 +701,16 @@ function slot0.ClearAutoBtn(slot0, slot1)
 	slot0.setSpeedPanel[slot1 and "Show" or "Hide"](slot0.setSpeedPanel)
 end
 
+function slot0.ClearStoryEventTriggerListener(slot0)
+	if slot0.storyEventTriggerListener then
+		slot0.storyEventTriggerListener:Dispose()
+
+		slot0.storyEventTriggerListener = nil
+	end
+end
+
 function slot0.Clear(slot0)
+	slot0:ClearStoryEventTriggerListener()
 	slot0.recorder:Clear()
 	slot0.recordPanel:Hide()
 

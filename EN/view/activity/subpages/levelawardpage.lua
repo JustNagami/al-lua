@@ -25,7 +25,7 @@ function slot0.OnFirstFlush(slot0)
 
 		slot15 = slot0:findTF("limit_label/labelLevel", slot7)
 
-		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(slot5[1]) .. ".png", slot15, true)
+		GetImageSpriteFromAtlasAsync("ui/activityuipage/level_award_atlas", tostring(slot5[1]), slot15, true)
 
 		for slot15 = 2, #slot5 do
 			slot16 = cloneTplTo(slot11, slot0:findTF("items", slot7))

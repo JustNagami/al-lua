@@ -14,11 +14,16 @@ function slot0.Init(slot0, slot1)
 	print("initializing ui manager...")
 
 	slot0.mainCamera = GameObject.Find("MainCamera")
+	slot0.mainCameraComp = slot0.mainCamera:GetComponent("Camera")
 	slot0.uiCamera = tf(GameObject.Find("UICamera"))
+	slot0.uiCameraComp = slot0.uiCamera:GetComponent("Camera")
+	slot0.uiCameraComp.allowMSAA = false
 	slot0.levelCamera = tf(GameObject.Find("LevelCamera"))
 	slot0.levelCameraComp = slot0.levelCamera:GetComponent("Camera")
+	slot0.levelCameraComp.allowMSAA = false
 	slot0.overlayCamera = tf(GameObject.Find("OverlayCamera"))
 	slot0.overlayCameraComp = slot0.overlayCamera:GetComponent("Camera")
+	slot0.overlayCameraComp.allowMSAA = false
 	slot0.UIMain = slot0.uiCamera:Find("Canvas/UIMain")
 	slot0.LevelMain = slot0.levelCamera:Find("Canvas/UIMain")
 	slot0.OverlayMain = slot0.overlayCamera:Find("Overlay/UIMain")
@@ -106,21 +111,21 @@ function slot0.Init(slot0, slot1)
 	setActive(slot0.uiCamera, false)
 	seriesAsync({
 		function (slot0)
-			ResourceMgr.Inst:loadAssetBundleAsync("ui/commonui_atlas", function (slot0)
+			buildTempAB("ui/commonui_atlas", function (slot0)
 				uv0._common_ui_bundle = slot0
 
 				uv1()
 			end)
 		end,
 		function (slot0)
-			ResourceMgr.Inst:loadAssetBundleAsync("skinicon", function (slot0)
+			buildTempAB("skinicon", function (slot0)
 				uv0._skinicon_bundle = slot0
 
 				uv1()
 			end)
 		end,
 		function (slot0)
-			ResourceMgr.Inst:loadAssetBundleAsync("attricon", function (slot0)
+			buildTempAB("attricon", function (slot0)
 				uv0._attricon_bundle = slot0
 
 				uv1()

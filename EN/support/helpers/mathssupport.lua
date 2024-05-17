@@ -60,7 +60,7 @@ function math.MoveTowards(slot0, slot1, slot2)
 		return slot1
 	end
 
-	return slot0 + mathf.sign(slot1 - slot0) * slot2
+	return slot0 + math.sign(slot1 - slot0) * slot2
 end
 
 function math.DeltaAngle(slot0, slot1)

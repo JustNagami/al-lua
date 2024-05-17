@@ -33,7 +33,8 @@ end
 function slot0.listNotificationInterests(slot0)
 	return {
 		GAME.GAME_ROOM_AWARD_DONE,
-		GAME.ROOM_FIRST_COIN_DONE
+		GAME.ROOM_FIRST_COIN_DONE,
+		GAME.END_GUIDE
 	}
 end
 
@@ -57,6 +58,8 @@ function slot0.handleNotification(slot0, slot1)
 				slot0()
 			end
 		})
+	elseif slot2 == GAME.END_GUIDE then
+		pg.SystemGuideMgr.GetInstance():Play(slot0.viewComponent)
 	end
 end
 

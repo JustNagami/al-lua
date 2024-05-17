@@ -23,7 +23,7 @@ return {
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/LevelFleetSelectView(Clone)/panel/ShipList/support/1/support/emptytpl(Clone)",
 				triggerType = {
-					3
+					8
 				}
 			}
 		},

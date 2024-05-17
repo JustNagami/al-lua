@@ -1,16 +1,36 @@
 return {
+	PaintingGroupName = "PAINTING",
 	PaintingMgr = nil,
 	GetPaintingMgr = function ()
 		if not uv0.PaintingMgr then
-			uv0.PaintingMgr = BundleWizard.Inst:GetGroupMgr("PAINTING")
+			uv0.PaintingMgr = BundleWizard.Inst:GetGroupMgr(uv0.PaintingGroupName)
 		end
 
 		return uv0.PaintingMgr
 	end,
-	PaintingGroupName = GroupMainHelper.PaintingGroupName,
-	NotifyPaintingDownloadFinish = "PaintingConst.NotifyPaintingDownloadFinish",
+	NotifyPaintingDownloadFinish = "PaintingGroupConst.NotifyPaintingDownloadFinish",
 	VerifyPaintingFileName = function (slot0)
-		return uv0.IsPaintingNeedCheck() and GroupHelper.VerifyFile(uv0.PaintingGroupName, slot0)
+		return GroupHelper.VerifyFile(uv0.PaintingGroupName, slot0)
+	end,
+	CalcPaintingListSize = function (slot0)
+		slot2 = GroupHelper.CalcSizeWithFileArr(uv0.PaintingGroupName, GroupHelper.CreateArrByLuaFileList(uv0.PaintingGroupName, slot0))
+
+		return slot2, HashUtil.BytesToString(slot2)
+	end,
+	IsPaintingNeedCheck = function ()
+		if Application.isEditor then
+			return false
+		end
+
+		if GroupHelper.IsGroupVerLastest(uv0.PaintingGroupName) then
+			return false
+		end
+
+		if not GroupHelper.IsGroupWaitToUpdate(uv0.PaintingGroupName) then
+			return false
+		end
+
+		return true
 	end,
 	AddPaintingNameWithFilteMap = function (slot0, slot1)
 		slot1 = string.lower(slot1)
@@ -89,8 +109,8 @@ return {
 		for slot5 = 1, #slot0 do
 			if slot0[slot5].type == DROP_TYPE_SHIP then
 				uv0.AddPaintingNameByShipConfigID(slot1, slot6.id)
-			elseif slot7 == DROP_TYPE_OPERATION then
-				uv0.AddPaintingNameByShipConfigID(slot1, getProxy(BayProxy):getShipById(slot6.count).configId)
+			elseif slot7 == DROP_TYPE_NPC_SHIP then
+				uv0.AddPaintingNameByShipConfigID(slot1, getProxy(BayProxy):getShipById(slot6.id).configId)
 			elseif slot7 == DROP_TYPE_SKIN then
 				uv0.AddPaintingNameBySkinID(slot1, slot6.id)
 			end
@@ -109,35 +129,12 @@ return {
 
 		return slot1
 	end,
-	CalcPaintingListSize = function (slot0)
-		slot2 = GroupHelper.CalcSizeWithFileArr(uv0.PaintingGroupName, GroupHelper.CreateArrByLuaFileList(uv0.PaintingGroupName, slot0))
-
-		return slot2, HashUtil.BytesToString(slot2)
-	end,
-	IsPaintingNeedCheck = function ()
-		if Application.isEditor then
-			return false
-		end
-
-		if GroupHelper.IsGroupVerLastest(uv0.PaintingGroupName) then
-			return false
-		end
-
-		if not GroupHelper.IsGroupWaitToUpdate(uv0.PaintingGroupName) then
-			return false
-		end
-
-		return true
-	end,
-	IsWifi = function ()
-		return Application.internetReachability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork
-	end,
 	PaintingDownload = function (slot0)
 		slot1 = {}
 
 		if uv0.IsPaintingNeedCheck() then
 			if #slot0.paintingNameList > 0 then
-				if not uv0.IsWifi() and (slot0.isShowBox and pg.FileDownloadMgr.GetInstance():IsNeedRemind()) then
+				if not IsUsingWifi() and (slot0.isShowBox and pg.FileDownloadMgr.GetInstance():IsNeedRemind()) then
 					slot7, slot8 = uv0.CalcPaintingListSize(slot6)
 
 					if slot7 > 0 then

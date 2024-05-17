@@ -470,6 +470,10 @@ function slot0.Ctor(slot0, slot1, slot2)
 	slot0.useEventTriggerFlag = true
 end
 
+function slot0.setStopCallback(slot0, slot1)
+	slot0._stopCallback = slot1
+end
+
 function slot0.SetVisible(slot0, slot1)
 	if not slot0:IsLoaded() then
 		return
@@ -496,6 +500,10 @@ function slot0.SetVisible(slot0, slot1)
 		onDelayTick(function ()
 			if uv0._readlyToStop then
 				uv0._animator.speed = 0
+
+				if uv0._stopCallback then
+					uv0._stopCallback()
+				end
 			end
 		end, 3)
 	end

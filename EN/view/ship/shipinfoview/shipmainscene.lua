@@ -113,7 +113,7 @@ function slot0.checkToggleActive(slot0, slot1)
 		else
 			slot3 = nil
 
-			return not ((PaintingConst.IsPaintingNeedCheck() or false) and PaintingConst.CalcPaintingListSize(PaintingConst.GetPaintingNameListByShipVO(slot0.shipVO)) > 0)
+			return not ((PaintingGroupConst.IsPaintingNeedCheck() or false) and PaintingGroupConst.CalcPaintingListSize(PaintingGroupConst.GetPaintingNameListByShipVO(slot0.shipVO)) > 0)
 		end
 	else
 		return false
@@ -1409,9 +1409,9 @@ function slot0.OnWillLogout(slot0)
 end
 
 function slot0.checkPaintingRes(slot0, slot1)
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = PaintingConst.GetPaintingNameListByShipVO(slot0.shipVO),
+		paintingNameList = PaintingGroupConst.GetPaintingNameListByShipVO(slot0.shipVO),
 		finishFunc = slot1
 	})
 end

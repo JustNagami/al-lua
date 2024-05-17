@@ -2,11 +2,9 @@ slot0 = class("ShipGroup", import(".BaseVO"))
 slot0.REQ_INTERVAL = 60
 
 function slot0.GetGroupConfig(slot0)
-	for slot4, slot5 in ipairs(pg.ship_data_group.all) do
-		if pg.ship_data_group[slot5].group_type == slot0 then
-			return slot6
-		end
-	end
+	return checkExist(pg.ship_data_group.get_id_list_by_group_type[slot0], {
+		1
+	}) and pg.ship_data_group[slot1] or nil
 end
 
 function slot0.getDefaultShipConfig(slot0)

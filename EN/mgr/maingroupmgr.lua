@@ -2,7 +2,7 @@ pg = pg or {}
 pg.MainGroupMgr = singletonClass("MainGroupMgr")
 slot0 = pg.MainGroupMgr
 slot0.GroupNameList = {
-	GroupMainHelper.PaintingGroupName
+	PaintingGroupConst.PaintingGroupName
 }
 
 function slot0.Ctor(slot0)

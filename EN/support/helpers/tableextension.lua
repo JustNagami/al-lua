@@ -135,9 +135,17 @@ function table.Foreach(slot0, slot1)
 	end
 end
 
-function table.Ipars(slot0, slot1)
+function table.Ipairs(slot0, slot1)
 	for slot5, slot6 in ipairs(slot0) do
 		slot1(slot5, slot6)
+	end
+end
+
+function table.IpairsCArray(slot0, slot1)
+	for slot5 = 0, slot0.Length - 1 do
+		v = slot0[slot5]
+
+		slot1(slot5, v)
 	end
 end
 

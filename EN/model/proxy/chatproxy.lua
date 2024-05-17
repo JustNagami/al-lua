@@ -20,7 +20,7 @@ function slot0.InjectPublic(slot0, slot1, slot2)
 
 			slot0:AddSprite("shiptype" .. slot7, GetSpriteFromAtlas("shiptype", shipType2print(slot10.type)))
 
-			slot3 = string.gsub(slot3, "shipcolor" .. slot7, ShipRarity.Rarity2HexColor(slot10.rarity))
+			slot3 = string.gsub(slot3, "shipcolor" .. slot7, ItemRarity.Rarity2HexColor(slot10.rarity - 1))
 
 			if slot2 then
 				slot14 = false

@@ -311,8 +311,9 @@ return {
 		end
 
 		slot1 = slot0:getRawData()
+		slot5 = ""
 
-		uv0:Service(slot1.id, slot1:GetName(), "{\"device_orientation\":\"portrait\"}")
+		uv0:Service(slot1.id, slot1:GetName(), "", PLATFORM == PLATFORM_IPHONEPLAYER and "portrai" or "portrait")
 	end,
 	Survey = function (slot0)
 		uv0:OpenWeb(slot0)

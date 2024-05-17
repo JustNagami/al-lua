@@ -42,6 +42,7 @@ slot0.CHARGE = "ActivityMediator.CHARGE"
 slot0.BUY_ITEM = "ActivityMediator.BUY_ITEM"
 slot0.OPEN_CHARGE_ITEM_PANEL = "ActivityMediator.OPEN_CHARGE_ITEM_PANEL"
 slot0.OPEN_CHARGE_BIRTHDAY = "ActivityMediator.OPEN_CHARGE_BIRTHDAY"
+slot0.STORE_DATE = "ActivityMediator.STORE_DATE"
 
 function slot0.register(slot0)
 	slot0.UIAvalibleCallbacks = {}
@@ -317,6 +318,14 @@ function slot0.register(slot0)
 			viewComponent = ChargeBirthdayLayer,
 			data = {}
 		}))
+	end)
+	slot0:bind(uv0.STORE_DATE, function (slot0, slot1)
+		uv0:sendNotification(GAME.ACTIVITY_STORE_DATE, {
+			activity_id = slot1.actId,
+			intValue = slot1.intValue or 0,
+			strValue = slot1.strValue or "",
+			callback = slot1.callback
+		})
 	end)
 	slot0.viewComponent:setActivities(getProxy(ActivityProxy):getPanelActivities())
 

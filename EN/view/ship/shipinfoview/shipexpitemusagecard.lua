@@ -57,7 +57,7 @@ function slot0.Update(slot0, slot1)
 		setText(slot0.itemTF:Find("icon_bg/count"), 0)
 	end
 
-	slot0.nameTxt.text = "<color=#" .. ItemRarity.Rarity2HexColor(slot2:getConfig("rarity")) .. ">" .. slot2:getConfig("name") .. "</color>"
+	slot0.nameTxt.text = string.format("<color=#%s>%s</color>", ItemRarity.Rarity2HexColor(slot2:getConfig("rarity")), slot2:getConfig("name"))
 
 	slot0:UpdateValue()
 end

@@ -4,6 +4,12 @@ function slot0.getUIName(slot0)
 	return "EducateUI"
 end
 
+function slot0.preload(slot0, slot1)
+	pg.PerformMgr.GetInstance():CheckLoad(function ()
+		uv0()
+	end)
+end
+
 function slot0.init(slot0)
 	slot0:initData()
 	slot0:findUI()

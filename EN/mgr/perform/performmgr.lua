@@ -27,24 +27,40 @@ function slot0.Init(slot0, slot1)
 	slot0.playedList = {}
 	slot0.playQueue = {}
 
-	PoolMgr.GetInstance():GetUI("PerformUI", true, function (slot0)
-		uv0._go = slot0
-		uv0._tf = tf(uv0._go)
-		uv0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
+	if slot1 then
+		slot1()
+	end
+end
 
-		uv0._go.transform:SetParent(uv0.UIOverlay.transform, false)
+function slot0.CheckLoad(slot0, slot1)
+	seriesAsync({
+		function (slot0)
+			if not uv0._go then
+				PoolMgr.GetInstance():GetUI("PerformUI", true, function (slot0)
+					uv0._go = slot0
+					uv0._tf = tf(uv0._go)
+					uv0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
-		uv0.cpkPlayer = CpkPerformPlayer.New(findTF(uv0._tf, "window_cpk"))
-		uv0.dialoguePlayer = DialoguePerformPlayer.New(findTF(uv0._tf, "window_dialogue"))
-		uv0.picturePlayer = PictruePerformPlayer.New(findTF(uv0._tf, "window_picture"))
-		uv0.storyPlayer = StoryPerformPlayer.New(findTF(uv0._tf, "window_story"))
+					uv0._go.transform:SetParent(uv0.UIOverlay.transform, false)
 
-		setActive(uv0._go, false)
+					uv0.cpkPlayer = CpkPerformPlayer.New(findTF(uv0._tf, "window_cpk"))
+					uv0.dialoguePlayer = DialoguePerformPlayer.New(findTF(uv0._tf, "window_dialogue"))
+					uv0.picturePlayer = PictruePerformPlayer.New(findTF(uv0._tf, "window_picture"))
+					uv0.storyPlayer = StoryPerformPlayer.New(findTF(uv0._tf, "window_story"))
 
-		uv0.status = uv1
+					setActive(uv0._go, false)
 
-		if uv2 then
-			uv2()
+					uv0.status = uv1
+
+					uv2()
+				end)
+			else
+				slot0()
+			end
+		end
+	}, function ()
+		if uv0 then
+			uv0()
 		end
 	end)
 end
@@ -215,6 +231,12 @@ function slot0.IsRunning(slot0)
 end
 
 function slot0.Show(slot0)
+	slot0:CheckLoad(function ()
+		uv0:_Show()
+	end)
+end
+
+function slot0._Show(slot0)
 	slot0.status = uv0
 
 	setActive(slot0._go, true)
@@ -226,6 +248,12 @@ function slot0.Clear(slot0)
 	slot0.dialoguePlayer:Clear()
 	slot0.picturePlayer:Clear()
 	slot0.storyPlayer:Clear()
+end
+
+function slot0.Show(slot0)
+	slot0:CheckLoad(function ()
+		uv0:_Show()
+	end)
 end
 
 function slot0.Hide(slot0)
@@ -240,6 +268,12 @@ function slot0.Quit(slot0)
 end
 
 function slot0.SetParamForUI(slot0, slot1)
+	slot0:CheckLoad(function ()
+		uv0:_SetParamForUI(uv1)
+	end)
+end
+
+function slot0._SetParamForUI(slot0, slot1)
 	slot0.cpkPlayer:SetUIParam(uv0.UI_PARAM[slot1] or uv0.UI_PARAM.Default)
 end
 

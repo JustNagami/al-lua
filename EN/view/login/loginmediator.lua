@@ -87,6 +87,8 @@ function slot0.loginProcessHandler(slot0)
 			coroutine.yield()
 		end
 
+		uv0:CheckMaintain()
+
 		if uv0.contextData.code then
 			if uv0.contextData.code ~= 0 then
 				if uv0.contextData.code ~= SDK_EXIT_CODE then
@@ -139,13 +141,8 @@ function slot0.loginProcessHandler(slot0)
 end
 
 function slot0.CheckMaintain(slot0)
-	slot1 = -1
-	slot2 = 0
-	slot3 = 1
-	slot4 = 2
-
-	GetServerState(function (slot0)
-		if slot0 == uv0 then
+	ServerStateChecker.New():Execute(function (slot0)
+		if slot0 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("login_loginMediator_kickServerClose"),
 				onNo = function ()
@@ -155,17 +152,11 @@ function slot0.CheckMaintain(slot0)
 					uv0.process()
 				end
 			})
-		elseif slot0 == uv2 then
-			print("All servers working well. thanks God.")
-			uv1.process()
-		elseif slot0 == uv3 then
-			print("Check server maintain state failed. but it doesnt matter. keep going.")
-			uv1.process()
 		else
-			print("no servers working. anyway. you should have a try. ")
-			uv1.process()
+			uv0.process()
 		end
 	end)
+	coroutine.yield()
 end
 
 function slot0.listNotificationInterests(slot0)
@@ -314,9 +305,9 @@ function slot0.checkPaintingRes(slot0)
 	end
 
 	pg.FileDownloadMgr.GetInstance():SetRemind(false)
-	PaintingConst.PaintingDownload({
+	PaintingGroupConst.PaintingDownload({
 		isShowBox = true,
-		paintingNameList = PaintingConst.GetPaintingNameListInLogin(),
+		paintingNameList = PaintingGroupConst.GetPaintingNameListInLogin(),
 		finishFunc = function ()
 			uv0.viewComponent:onLoadDataDone()
 		end,

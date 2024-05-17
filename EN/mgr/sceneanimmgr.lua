@@ -80,6 +80,33 @@ function slot0.OtherWorldCoverGoScene(slot0, slot1, slot2)
 	end)
 end
 
+function slot0.Dorm3DSceneChange(slot0, slot1)
+	setActive(slot0._tf, true)
+	PoolMgr.GetInstance():GetUI("SixthAnniversaryJPCoverUI", true, function (slot0)
+		slot1 = slot0.transform
+
+		setParent(slot1, uv0.container, false)
+
+		slot2 = slot1:Find("houshanyunwu"):GetComponent(typeof(SpineAnimUI))
+
+		slot2:SetActionCallBack(function (slot0)
+			if slot0 == "action" then
+				uv0:Pause()
+				uv1(function ()
+					uv0:Resume()
+				end)
+			elseif slot0 == "finish" then
+				PoolMgr.GetInstance():ReturnUI(uv2, uv3)
+
+				uv4.playing = nil
+
+				setActive(uv4._tf, false)
+			end
+		end)
+		slot2:SetAction("action", 0)
+	end)
+end
+
 function slot0.IsPlaying(slot0)
 	return slot0.playing
 end

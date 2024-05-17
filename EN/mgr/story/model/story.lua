@@ -41,7 +41,7 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 	slot0.mode = slot1.mode
 	slot0.once = slot1.once
 	slot0.fadeOut = slot1.fadeOut
-	slot0.hideSkip = slot1.hideSkip
+	slot0.hideSkip = defaultValue(slot1.hideSkip, false)
 	slot0.skipTip = defaultValue(slot1.skipTip, true)
 	slot0.noWaitFade = defaultValue(slot1.noWaitFade, false)
 	slot0.dialogueBox = slot1.dialogbox or 1
@@ -55,6 +55,10 @@ function slot0.Ctor(slot0, slot1, slot2, slot3, slot4, slot5)
 
 		slot0.placeholder = bit.bor(slot0.placeholder, slot11)
 	end
+
+	slot0.hideRecord = defaultValue(slot1.hideRecord, false)
+	slot0.hideAutoBtn = defaultValue(slot1.hideAuto, false)
+	slot0.storyAlpha = defaultValue(slot1.alpha, 0.568)
 
 	if UnGamePlayState then
 		slot0.speedData = slot1.speed or 0
@@ -175,8 +179,24 @@ function slot0.ShouldReplaceContent(slot0)
 	return slot0.placeholder > 0
 end
 
+function slot0.GetStoryAlpha(slot0)
+	return slot0.storyAlpha
+end
+
+function slot0.ShouldHideAutoBtn(slot0)
+	return slot0.hideAutoBtn
+end
+
+function slot0.ShouldHideRecord(slot0)
+	return slot0.hideRecord
+end
+
 function slot0.GetDialogueStyleName(slot0)
 	return slot0.dialogueBox
+end
+
+function slot0.IsDialogueStyle2(slot0)
+	return slot0:GetDialogueStyleName() == 2
 end
 
 function slot0.GetTriggerDelayTime(slot0)
@@ -331,6 +351,24 @@ function slot0.GetUsingPaintingNames(slot0)
 	slot2 = {}
 
 	for slot6, slot7 in pairs(slot1) do
+		table.insert(slot2, slot6)
+	end
+
+	return slot2
+end
+
+function slot0.GetAllStepDispatcherRecallName(slot0)
+	for slot5, slot6 in ipairs(slot0.steps) do
+		if slot6:GetDispatcherRecallName() then
+			-- Nothing
+		end
+	end
+
+	slot2 = {}
+
+	for slot6, slot7 in pairs({
+		[slot7] = true
+	}) do
 		table.insert(slot2, slot6)
 	end
 

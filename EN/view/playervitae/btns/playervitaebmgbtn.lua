@@ -1,11 +1,7 @@
 slot0 = class("PlayerVitaeBMGBtn", import(".PlayerVitaeBaseBtn"))
 
 function slot0.GetBgName(slot0)
-	if slot0:IsHrzType() then
-		return "commonUI_atlas", "bgm_bg"
-	else
-		return "AdmiralUI_atlas", "bgm"
-	end
+	return "AdmiralUI_atlas", "bgm"
 end
 
 function slot0.IsActive(slot0, slot1)

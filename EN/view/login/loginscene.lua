@@ -18,11 +18,11 @@ function slot0.preload(slot0, slot1)
 
 	seriesAsync({
 		function (slot0)
-			ResourceMgr.Inst:loadAssetBundleAsync("ui/LoginUI2_atlas", function (slot0)
-				table.insert(uv0.iconSpries, ResourceMgr.Inst:LoadAssetSync(slot0, "statu_green", typeof(Sprite), true, false))
-				table.insert(uv0.iconSpries, ResourceMgr.Inst:LoadAssetSync(slot0, "statu_gray", typeof(Sprite), true, false))
-				table.insert(uv0.iconSpries, ResourceMgr.Inst:LoadAssetSync(slot0, "statu_red", typeof(Sprite), true, false))
-				table.insert(uv0.iconSpries, ResourceMgr.Inst:LoadAssetSync(slot0, "statu_org", typeof(Sprite), true, false))
+			buildTempAB("ui/LoginUI2_atlas", function (slot0)
+				table.insert(uv0.iconSpries, slot0:LoadAssetSync("statu_green", typeof(Sprite), true, false))
+				table.insert(uv0.iconSpries, slot0:LoadAssetSync("statu_gray", typeof(Sprite), true, false))
+				table.insert(uv0.iconSpries, slot0:LoadAssetSync("statu_red", typeof(Sprite), true, false))
+				table.insert(uv0.iconSpries, slot0:LoadAssetSync("statu_org", typeof(Sprite), true, false))
 				uv1()
 			end)
 		end,
@@ -483,14 +483,11 @@ function slot0.didEnter(slot0)
 			end
 
 			if uv0.shareData.lastLoginServer.status == Server.STATUS.VINDICATE or uv0.shareData.lastLoginServer.status == Server.STATUS.FULL then
-				slot1 = 0
-				slot2 = 1
-
-				GetServerState(function (slot0)
-					if slot0 == uv0 then
+				ServerStateChecker.New():Execute(function (slot0)
+					if slot0 then
 						pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_server_disabled"))
-					elseif slot0 == uv1 then
-						uv2.event:emit(LoginMediator.ON_SERVER, uv2.shareData.lastLoginServer)
+					else
+						uv0.event:emit(LoginMediator.ON_SERVER, uv0.shareData.lastLoginServer)
 						pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 					end
 				end)

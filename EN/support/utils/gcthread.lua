@@ -47,10 +47,9 @@ function slot0.GCFinal(slot0)
 
 		if slot3 < slot2 then
 			slot1:DestroyAllSprite()
-		else
-			ResourceMgr.Inst:ResUnloadAsync()
 		end
 
+		ResourceMgr.Inst:ResUnloadAsync()
 		LuaHelper.UnityGC()
 	end
 

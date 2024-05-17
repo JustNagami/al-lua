@@ -141,7 +141,7 @@ function slot0.listNotificationInterests(slot0)
 		SetShipSkinCommand.SKIN_UPDATED,
 		GAME.UPDATE_SKINCONFIG,
 		GAME.CHANGE_PLAYER_ICON_DONE,
-		PaintingConst.NotifyPaintingDownloadFinish,
+		PaintingGroupConst.NotifyPaintingDownloadFinish,
 		GAME.CHANGE_EDUCATE_DONE,
 		GAME.CLEAR_EDUCATE_TIP
 	}
@@ -158,7 +158,7 @@ function slot0.handleNotification(slot0, slot1)
 		slot0.viewComponent:ReloadPanting(slot3.skinId)
 	elseif slot2 == GAME.CHANGE_PLAYER_ICON_DONE then
 		slot0.viewComponent:RefreshShips()
-	elseif slot2 == PaintingConst.NotifyPaintingDownloadFinish then
+	elseif slot2 == PaintingGroupConst.NotifyPaintingDownloadFinish then
 		slot0.viewComponent:updateSwitchSkinBtnTag()
 
 		if slot0.viewComponent.shipsPage and slot0.viewComponent.shipsPage:GetLoaded() then

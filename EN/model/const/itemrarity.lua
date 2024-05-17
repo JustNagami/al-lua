@@ -6,35 +6,43 @@ slot0.Gold = 4
 slot0.SSR = 5
 
 function slot0.Rarity2Print(slot0)
-	if not uv0.prints then
-		uv0.prints = {
-			"1",
-			"2",
-			"3",
-			"4",
-			"5",
-			"6",
-			"7",
-			"8",
-			"9"
-		}
+	if math.clamp(slot0, 1, 9) == slot0 then
+		return tostring(slot0)
+	else
+		return uv0.Gray
 	end
-
-	return uv0.prints[slot0]
 end
 
-function slot0.Rarity2HexColor(slot0)
-	if not uv0.colors then
-		uv0.colors = {
-			"FFFFFFFF",
-			"41D7FFFF",
-			"CC7BFFFF",
-			"FDC637FF",
-			"BD4000FF"
-		}
-	end
+slot0.colors = {
+	"FFFFFFFF",
+	"41D7FFFF",
+	"CC7BFFFF",
+	"FDC637FF",
+	"FF5E39FF",
+	"FFFFFFFF",
+	"FDC637FF",
+	"FFFFFFFF",
+	"FDC637FF"
+}
 
+function slot0.Rarity2HexColor(slot0)
 	return uv0.colors[slot0]
+end
+
+slot0.frameColors = {
+	"BDBDBDFF",
+	"65C7FFFF",
+	"BFA3FFFF",
+	"FFE743FF",
+	"FFFFFFFF",
+	"FFFFFFFF",
+	"FFE743FF",
+	"FFFFFFFF",
+	"FFE743FF"
+}
+
+function slot0.Rarity2FrameHexColor(slot0)
+	return uv0.frameColors[slot0]
 end
 
 return slot0

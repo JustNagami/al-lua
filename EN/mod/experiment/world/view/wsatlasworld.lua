@@ -102,7 +102,7 @@ function slot0.ReturnModel(slot0)
 end
 
 function slot0.LoadScene(slot0, slot1)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "WorldMap3D", LoadSceneMode.Additive, function (slot0, slot1)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldmap3d", "worldmap3d", LoadSceneMode.Additive, function (slot0, slot1)
 		uv0.transform = tf(slot0:GetRootGameObjects()[0])
 
 		setActive(uv0.transform, false)
@@ -170,7 +170,7 @@ function slot0.ReturnScene(slot0)
 		slot2.alpha = 1
 
 		slot2:UpdateAlpha()
-		SceneOpMgr.Inst:UnloadSceneAsync("scene/worldmap3d", "WorldMap3D")
+		SceneOpMgr.Inst:UnloadSceneAsync("scene/worldmap3d", "worldmap3d")
 
 		slot0.cmPointer = nil
 	end

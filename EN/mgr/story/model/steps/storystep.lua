@@ -36,6 +36,7 @@ function slot0.Ctor(slot0, slot1)
 	slot0.location = slot1.location
 	slot0.icon = slot1.icon
 	slot0.autoShowOption = defaultValue(slot1.autoShowOption, false)
+	slot0.dispatcher = slot1.dispatcher
 	slot0.selectedBranchCode = 0
 	slot0.id = 0
 	slot0.placeholderType = 0
@@ -80,6 +81,38 @@ function slot0.ReplaceTbName(slot0, slot1)
 	slot2, slot3 = getProxy(EducateProxy):GetStoryInfo()
 
 	return string.gsub(slot1, "{tb}", slot3)
+end
+
+function slot0.ExistDispatcher(slot0)
+	return slot0.dispatcher ~= nil
+end
+
+function slot0.GetDispatcher(slot0)
+	return slot0.dispatcher
+end
+
+function slot0.IsRecallDispatcher(slot0)
+	if not slot0:ExistDispatcher() then
+		return false
+	end
+
+	return slot0:GetDispatcher().callbackData ~= nil and slot1.callbackData.name ~= nil
+end
+
+function slot0.GetDispatcherRecallName(slot0)
+	if not slot0:IsRecallDispatcher() then
+		return nil
+	end
+
+	return slot0:GetDispatcher().callbackData.name
+end
+
+function slot0.ShouldHideUI(slot0)
+	if not slot0:IsRecallDispatcher() then
+		return false
+	end
+
+	return slot0:GetDispatcher().callbackData.hideUI == true
 end
 
 function slot0.ExistIcon(slot0)

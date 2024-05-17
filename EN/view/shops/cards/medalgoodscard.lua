@@ -54,10 +54,10 @@ function slot0.Init(slot0)
 	GetImageSpriteFromAtlasAsync(slot0.goods:getConfig("goods_icon"), "", slot0.itemIconTF)
 
 	slot0.itemCountTF.text = slot0.goods:getConfig("num")
-	slot2 = ItemRarity.Rarity2Print(slot0.goods:getConfig("goods_rarity") or 1)
+	slot2 = slot0.goods:getConfig("goods_rarity") or ItemRarity.Gray
 
-	setImageSprite(slot0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. slot2))
-	setImageColor(slot0.itemIconFrameTF, shipRarity2FrameColor(slot2 + 1))
+	setImageSprite(slot0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot2)))
+	setImageColor(slot0.itemIconFrameTF, Color.NewHex(ItemRarity.Rarity2FrameHexColor(slot2)))
 
 	slot4 = slot0.goods:getConfig("goods")
 

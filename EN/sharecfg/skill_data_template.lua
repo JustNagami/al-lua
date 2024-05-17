@@ -326,6 +326,7 @@ pg.skill_data_template = setmetatable({
 		60560,
 		60570,
 		60580,
+		60590,
 		7000,
 		9010,
 		9020,
@@ -12079,6 +12080,20 @@ pg.base.skill_data_template = {
 		type = 0,
 		max_level = 0,
 		desc = "When the battle starts: deploys a barrier (lasts 15s) that can negate DMG equal to 2.0% max HP of the ship equipping this gear.",
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	},
+	[60590] = {
+		desc_get = "",
+		name = "Enigmata \"D\"",
+		id = 60590,
+		type = 0,
+		max_level = 0,
+		desc = "A curious machine that periodically emits a strange sound during battle.",
 		system_transform = {},
 		world_death_mark = {
 			1

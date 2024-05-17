@@ -259,20 +259,22 @@ function slot3(slot0, slot1)
 end
 
 function slot0.UpdateCategory(slot0, slot1, slot2, slot3)
+	setActive(slot1:Find("lock"), slot3)
+	setActive(slot1:Find("label"), not slot3)
+	setActive(slot1:Find("selected"), false)
 	uv0(slot1, slot2)
 	onToggle(slot0, slot1, function (slot0)
-		uv0(uv1, slot0)
-		uv2:InitShops(uv3)
+		if slot0 then
+			uv0:InitShops(uv1)
 
-		uv2.category = uv3
+			uv0.category = uv1
 
-		uv2:ActiveDefaultShop()
+			uv0:ActiveDefaultShop()
+		end
+
+		setActive(uv2:Find("label"), not uv3 and not slot0)
+		setActive(uv2:Find("selected"), not uv3 and slot0)
 	end, SFX_PANEL)
-	function (slot0, slot1)
-		setActive(slot0:Find("lock"), uv0)
-		setActive(slot0:Find("label"), not uv0 and not slot1)
-		setActive(slot0:Find("selected"), not uv0 and slot1)
-	end(slot1, false)
 	setToggleEnabled(slot1, not slot3)
 end
 

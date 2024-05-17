@@ -48,10 +48,10 @@ function slot0.CheckPaintingRes(slot0, slot1, slot2)
 			slot3[2]:getPainting(),
 			slot3[3]:getPainting()
 		}) do
-			PaintingConst.AddPaintingNameWithFilteMap(slot11, slot16)
+			PaintingGroupConst.AddPaintingNameWithFilteMap(slot11, slot16)
 		end
 
-		PaintingConst.PaintingDownload({
+		PaintingGroupConst.PaintingDownload({
 			isShowBox = true,
 			paintingNameList = slot11,
 			finishFunc = slot2

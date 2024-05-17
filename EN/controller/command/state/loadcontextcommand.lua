@@ -16,20 +16,104 @@ end
 function slot0.loadNext(slot0)
 	if #uv0.queue > 0 then
 		if uv0.queue[1].type == LOAD_TYPE_SCENE then
-			slot0:loadScene(slot1.context, slot1.prevContext, slot1.isBack, function ()
-				if uv0.callback then
-					uv0.callback()
-				end
+			if slot1.isReload then
+				slot0:reloadScene(slot1.context, function ()
+					if uv0.callback then
+						uv0.callback()
+					end
 
-				table.remove(uv1.queue, 1)
-				uv2:loadNext()
-			end)
+					table.remove(uv1.queue, 1)
+					uv2:loadNext()
+				end)
+			else
+				slot0:loadScene(slot1.context, slot1.prevContext, slot1.isBack, slot2)
+			end
 		elseif slot1.type == LOAD_TYPE_LAYER then
 			slot0:loadLayer(slot1.context, slot1.parentContext, slot1.removeContexts, slot2)
 		else
 			assert(false, "context load type not support: " .. slot1.type)
 		end
 	end
+end
+
+function slot0.reloadScene(slot0, slot1, slot2)
+	assert(isa(slot1, Context), "should be an instance of Context")
+
+	slot3 = getProxy(ContextProxy)
+	slot4 = pg.SceneMgr.GetInstance()
+	slot5, slot6 = nil
+	slot7 = {}
+
+	seriesAsync({
+		function (slot0)
+			pg.UIMgr.GetInstance():LoadingOn(uv0.data.showLoading)
+			uv1:removeLayerMediator(uv2.facade, uv0, function (slot0)
+				uv0 = slot0
+
+				uv1()
+			end)
+		end,
+		function (slot0)
+			if uv0 then
+				table.SerialIpairsAsync(uv0, function (slot0, slot1, slot2)
+					uv0:remove(slot1.mediator, function ()
+						if uv0 == #uv1 then
+							uv2.context:onContextRemoved()
+						end
+
+						uv3()
+					end, false)
+				end, slot0)
+			else
+				slot0()
+			end
+		end,
+		function (slot0)
+			if uv0.cleanStack then
+				uv1:cleanContext()
+			end
+
+			uv1:pushContext(uv0)
+			slot0()
+		end,
+		function (slot0)
+			_.each(uv0:GetHierarchy(), function (slot0)
+				pg.PoolMgr.GetInstance():BuildUIPlural(slot0.viewComponent.getUIName())
+			end)
+			uv1:prepare(uv2.facade, uv0, function (slot0)
+				uv0:sendNotification(GAME.START_LOAD_SCENE, slot0)
+
+				uv1 = slot0
+
+				uv2()
+			end)
+		end,
+		function (slot0)
+			uv0:prepareLayer(uv1.facade, nil, uv2, function (slot0)
+				uv0:sendNotification(GAME.WILL_LOAD_LAYERS, #slot0)
+
+				uv1 = slot0
+
+				uv2()
+			end)
+		end,
+		function (slot0)
+			uv0:enter({
+				uv1
+			}, slot0)
+		end,
+		function (slot0)
+			uv0:enter(uv1, slot0)
+		end,
+		function ()
+			if uv0 then
+				uv0()
+			end
+
+			pg.UIMgr.GetInstance():LoadingOff()
+			uv1:sendNotification(GAME.LOAD_SCENE_DONE, uv2.scene)
+		end
+	})
 end
 
 function slot0.loadScene(slot0, slot1, slot2, slot3, slot4)
@@ -43,13 +127,13 @@ function slot0.loadScene(slot0, slot1, slot2, slot3, slot4)
 
 	seriesAsync({
 		function (slot0)
-			pg.UIMgr.GetInstance():LoadingOn()
+			pg.UIMgr.GetInstance():LoadingOn(uv0.data.showLoading)
 
-			if uv0 ~= nil then
-				uv1:extendData({
-					fromMediatorName = uv0.mediator.__cname
+			if uv1 ~= nil then
+				uv0:extendData({
+					fromMediatorName = uv1.mediator.__cname
 				})
-				uv2:removeLayerMediator(uv3.facade, uv0, function (slot0)
+				uv2:removeLayerMediator(uv3.facade, uv1, function (slot0)
 					uv0 = slot0
 
 					uv1()
@@ -136,10 +220,10 @@ function slot0.loadLayer(slot0, slot1, slot2, slot3, slot4)
 
 	seriesAsync({
 		function (slot0)
-			pg.UIMgr.GetInstance():LoadingOn()
+			pg.UIMgr.GetInstance():LoadingOn(uv0.data.showLoading)
 
-			if uv0 ~= nil then
-				table.ParallelIpairsAsync(uv0, function (slot0, slot1, slot2)
+			if uv1 ~= nil then
+				table.ParallelIpairsAsync(uv1, function (slot0, slot1, slot2)
 					uv0:removeLayerMediator(uv1.facade, slot1, function (slot0)
 						uv0 = uv0 or {}
 

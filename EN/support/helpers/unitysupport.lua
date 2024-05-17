@@ -512,6 +512,22 @@ function limitedParallelAsync(slot0, slot1, slot2)
 	end
 end
 
+function waitUntil(slot0, slot1)
+	slot2 = nil
+	slot2 = FrameTimer.New(function ()
+		if uv0() then
+			uv1()
+			uv2:Stop()
+
+			return
+		end
+	end, 1, -1)
+
+	slot2:Start()
+
+	return slot2
+end
+
 function setImageSprite(slot0, slot1, slot2)
 	if IsNil(slot0) then
 		assert(false)
@@ -779,60 +795,39 @@ function cloneTplTo(slot0, slot1, slot2)
 	return slot3
 end
 
-slot5 = nil
-slot6 = {}
-
 function setGray(slot0, slot1, slot2)
-	slot2 = defaultValue(slot2, true)
-
-	if not slot1 and not uv0[slot0] then
-		return
+	if slot1 then
+		slot3 = GetOrAddComponent(slot0, "UIGrayScale")
+		slot3.Recursive = defaultValue(slot2, true)
+		slot3.enabled = true
 	else
-		uv0[slot0] = true
-	end
-
-	uv1 = uv1 or Material.New(pg.ShaderMgr.GetInstance():GetShader("UI/GrayScale"))
-	slot3 = {}
-
-	if slot2 then
-		for slot7, slot8 in ipairs({
-			Image,
-			Text
-		}) do
-			for slot13 = 0, tf(slot0):GetComponentsInChildren(typeof(slot8), true).Length - 1 do
-				table.insert(slot3, slot9[slot13])
-			end
-		end
-	else
-		for slot7, slot8 in ipairs({
-			Image,
-			Text
-		}) do
-			table.insert(slot3, tf(slot0):GetComponent(typeof(slot8)))
-		end
-	end
-
-	for slot7, slot8 in ipairs(slot3) do
-		if not GetComponent(slot8, "UIGrayScale") then
-			slot8.material = slot1 and uv1 or nil
-		end
+		RemoveComponent(slot0, "UIGrayScale")
 	end
 end
 
 function setBlackMask(slot0, slot1, slot2)
-	slot4 = nil
-
-	if not GetComponent(slot0, "UIMaterialAdjuster") then
-		slot3 = GetOrAddComponent(slot0, "UIMaterialAdjuster")
+	if slot1 then
+		slot2 = slot2 or {}
+		GetOrAddComponent(slot0, "UIMaterialAdjuster").Recursive = tobool(defaultValue(slot2.recursive, true))
 		slot4 = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit Colored_Alpha_UI"))
+
+		slot4:SetColor("_Color", slot2.color or Color(0, 0, 0, 0.2))
+
+		slot3.AjusterMaterial = slot4
+		slot3.enabled = true
 	else
-		slot4 = slot3.AjusterMaterial
+		RemoveComponent(slot0, "UIMaterialAdjuster")
 	end
+end
 
-	slot4:SetColor("_Color", slot2)
-
-	slot3.AjusterMaterial = slot4
-	slot3.enabled = slot1
+function blockBlackMask(slot0, slot1, slot2)
+	if slot1 then
+		slot3 = GetOrAddComponent(slot0, "UIMaterialAdjuster")
+		slot3.Recursive = tobool(defaultValue(slot2, true))
+		slot3.enabled = false
+	else
+		RemoveComponent(slot0, "UIMaterialAdjuster")
+	end
 end
 
 function long2int(slot0)
@@ -899,4 +894,8 @@ function getSizeRate()
 	slot1 = UnityEngine.Screen
 
 	return Vector2.New(slot0.width / slot1.width, slot0.height / slot1.height), slot0.width, slot0.height
+end
+
+function IsUsingWifi()
+	return Application.internetReachability == UnityEngine.NetworkReachability.ReachableViaLocalAreaNetwork
 end

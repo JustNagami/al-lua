@@ -259,7 +259,8 @@ pg.ship_skin_words_extra = setmetatable({
 		203130,
 		207053,
 		307140,
-		403140
+		403140,
+		299020
 	}
 }, confHX)
 pg.base = pg.base or {}
@@ -17990,6 +17991,74 @@ pg.base.ship_skin_words_extra = {
 			{
 				1100,
 				"Even though we're already a couple, my love for you just keeps growing. No-no, you don't need to do anything. You can just relax and slowly bask in all the love I have for you, little one♥"
+			}
+		}
+	},
+	[299020] = {
+		unlock = "",
+		feeling3 = "",
+		feeling4 = "",
+		feeling1 = "",
+		expedition = "",
+		profile = "",
+		mission = "",
+		skill = "",
+		mail = "",
+		lose = "",
+		main = "",
+		upgrade = "",
+		mission_complete = "",
+		headtouch = "",
+		feeling2 = "",
+		hp_warning = "",
+		id = 299020,
+		detail = "",
+		login = {
+			{
+				1100,
+				"Splendid; you're back. Are you going to hunker down, or take a breather? Whichever the case, I will do the same."
+			}
+		},
+		win_mvp = {
+			{
+				1100,
+				"See that? I will never let you down."
+			}
+		},
+		home = {
+			{
+				1100,
+				"You've returned. Unscathed, no less. I'm certain you'll welcome me back with those same words, even should I return alone. Truly, that is a comforting sensation."
+			}
+		},
+		battle = {
+			{
+				1100,
+				"Behold, Commander! This victory I'll dedicate to you!"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"You brought meaning to my existence. As a token of my gratitude, I will forever bring you victory.|It will take time to accustom myself to being wed, but as long as you're here, I will never doubt or feel lost.|It's as I feared. Being alone has become unbearable to me. I blame you for this. For... changing me for the better."
+			}
+		},
+		touch = {
+			{
+				1100,
+				"Commander, I am glad to serve you."
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"Mgh... Give me a moment. I need time to... accustom myself."
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"Never would I have imagined this – that one day I, a loner with no one relying on her, would be mulling over my future together with you. Thank you, for accepting me and giving meaning to my life. You are my greatest love."
 			}
 		}
 	}

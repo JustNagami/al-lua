@@ -23,9 +23,9 @@ function slot0.rarity2Frame(slot0)
 		uv0.frames = {
 			"2",
 			"2",
+			"2",
 			"3",
-			"4",
-			"5"
+			"4"
 		}
 	end
 
