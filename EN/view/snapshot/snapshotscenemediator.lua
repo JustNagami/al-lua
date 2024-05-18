@@ -1,25 +1,25 @@
-slot0 = class("SnapshotSceneMediator", import("..base.ContextMediator"))
+﻿local var_0_0 = class("SnapshotSceneMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(SnapshotScene.SELECT_CHAR_PANEL, function (slot0)
-		uv0:addSubLayers(Context.New({
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(SnapshotScene.SELECT_CHAR_PANEL, function(arg_2_0)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = SnapshotSelectCharMediator,
 			viewComponent = SnapshotSelectCharLayer
 		}))
 	end)
-	slot0:bind(SnapshotScene.SHARE_PANEL, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(SnapshotScene.SHARE_PANEL, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = SnapshotShareMediator,
 			viewComponent = SnapshotShareLayer,
 			data = {
-				photoTex = slot1,
-				photoData = slot2
+				photoTex = arg_3_1,
+				photoData = arg_3_2
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		SnapshotSelectCharMediator.SELECT_CHAR,
 		PERMISSION_GRANTED,
@@ -28,38 +28,42 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == SnapshotSelectCharMediator.SELECT_CHAR then
-		if pg.ship_skin_template[slot3] then
-			slot0.viewComponent.contextData.propose = getProxy(BayProxy):getGroupPropose(pg.ship_skin_template[slot3].ship_group)
+	if var_5_0 == SnapshotSelectCharMediator.SELECT_CHAR then
+		if pg.ship_skin_template[var_5_1] then
+			local var_5_2 = pg.ship_skin_template[var_5_1].ship_group
+			local var_5_3 = getProxy(BayProxy):getGroupPropose(var_5_2)
+
+			arg_5_0.viewComponent.contextData.propose = var_5_3
 		end
 
-		slot0.viewComponent:setSkin(slot3)
-	elseif PERMISSION_GRANTED == slot2 then
-		if slot3 == ANDROID_RECORD_AUDIO_PERMISSION then
-			slot0.viewComponent:changeToTakeVideo()
+		arg_5_0.viewComponent:setSkin(var_5_1)
+	elseif PERMISSION_GRANTED == var_5_0 then
+		if var_5_1 == ANDROID_RECORD_AUDIO_PERMISSION then
+			arg_5_0.viewComponent:changeToTakeVideo()
 		end
-	elseif PERMISSION_REJECT == slot2 then
-		if slot3 == ANDROID_RECORD_AUDIO_PERMISSION then
+	elseif PERMISSION_REJECT == var_5_0 then
+		if var_5_1 == ANDROID_RECORD_AUDIO_PERMISSION then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("apply_permission_record_audio_tip3"),
-				onYes = function ()
+				onYes = function()
 					ApplyPermission({
 						ANDROID_RECORD_AUDIO_PERMISSION
 					})
 				end
 			})
 		end
-	elseif PERMISSION_NEVER_REMIND and slot3 == ANDROID_RECORD_AUDIO_PERMISSION then
+	elseif PERMISSION_NEVER_REMIND and var_5_1 == ANDROID_RECORD_AUDIO_PERMISSION then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("apply_permission_record_audio_tip2"),
-			onYes = function ()
+			onYes = function()
 				OpenDetailSetting()
 			end
 		})
 	end
 end
 
-return slot0
+return var_0_0

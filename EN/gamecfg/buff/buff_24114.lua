@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行6次攻击，触发全弹发射-宁海级II-强化版"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行4次攻击，触发全弹发射-宁海级II-强化版",
-	stack = 1,
-	id = 24114,
-	icon = 20100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -64,5 +51,18 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行6次攻击，触发全弹发射-宁海级II-强化版"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行4次攻击，触发全弹发射-宁海级II-强化版",
+	stack = 1,
+	id = 24114,
+	icon = 20100,
+	last_effect = ""
 }

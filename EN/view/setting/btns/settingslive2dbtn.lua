@@ -1,65 +1,65 @@
-slot0 = class("SettingsLive2DBtn", import(".SettingsDownloadableBtn"))
+﻿local var_0_0 = class("SettingsLive2DBtn", import(".SettingsDownloadableBtn"))
 
-function slot0.GetDownloadGroup(slot0)
+function var_0_0.GetDownloadGroup(arg_1_0)
 	return "L2D"
 end
 
-function slot0.GetLocaltion(slot0, slot1, slot2)
-	slot3 = ""
+function var_0_0.GetLocaltion(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = ""
 
-	if slot1 == DownloadState.None then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_download_title")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_download")
+	if arg_2_1 == DownloadState.None then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_download_title")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_download")
 		end
-	elseif slot1 == DownloadState.Checking then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_checking_title")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_checking")
+	elseif arg_2_1 == DownloadState.Checking then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_checking_title")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_checking")
 		end
-	elseif slot1 == DownloadState.CheckToUpdate then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_checkend_title")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_checkend")
+	elseif arg_2_1 == DownloadState.CheckToUpdate then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_checkend_title")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_checkend")
 		end
-	elseif slot1 == DownloadState.CheckOver then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_checkend_title")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_noneedupdate")
+	elseif arg_2_1 == DownloadState.CheckOver then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_checkend_title")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_noneedupdate")
 		end
-	elseif slot1 == DownloadState.CheckFailure then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_checkfailed")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_retry")
+	elseif arg_2_1 == DownloadState.CheckFailure then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_checkfailed")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_retry")
 		end
-	elseif slot1 == DownloadState.Updating then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_update")
+	elseif arg_2_1 == DownloadState.Updating then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_update")
 		end
-	elseif slot1 == DownloadState.UpdateSuccess then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_update_end_title")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_update_end")
+	elseif arg_2_1 == DownloadState.UpdateSuccess then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_update_end_title")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_update_end")
 		end
-	elseif slot1 == DownloadState.UpdateFailure then
-		if slot2 == 1 then
-			slot3 = i18n("word_live2dfiles_update_failed")
-		elseif slot2 == 2 then
-			slot3 = i18n("word_live2dfiles_update_retry")
+	elseif arg_2_1 == DownloadState.UpdateFailure then
+		if arg_2_2 == 1 then
+			var_2_0 = i18n("word_live2dfiles_update_failed")
+		elseif arg_2_2 == 2 then
+			var_2_0 = i18n("word_live2dfiles_update_retry")
 		end
 	end
 
-	return slot3
+	return var_2_0
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_3_0)
 	return i18n("setting_resdownload_title_live2d")
 end
 
-return slot0
+return var_0_0

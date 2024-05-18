@@ -1,69 +1,7 @@
-slot0 = rawget
-slot2 = tolua.gettime
-slot4 = {
-	fixedDeltaTime = function (slot0)
-		uv0.fixedDeltaTime = slot0
-		uv1.fixedDeltaTime = slot0
-	end,
-	maximumDeltaTime = function (slot0)
-		uv0.maximumDeltaTime = slot0
-		uv1.maximumDeltaTime = slot0
-	end,
-	timeScale = function (slot0)
-		uv0.timeScale = slot0
-		uv1.timeScale = slot0
-	end,
-	captureFramerate = function (slot0)
-		uv0.captureFramerate = slot0
-		uv1.captureFramerate = slot0
-	end,
-	timeSinceLevelLoad = function (slot0)
-		uv0.timeSinceLevelLoad = slot0
-	end
-}
-slot5 = {
-	SetDeltaTime = function (slot0, slot1, slot2)
-		slot3 = uv0
-		slot3.deltaTime = slot1
-		slot3.unscaledDeltaTime = slot2
-		uv1 = uv1 - 1
-
-		if uv1 == 0 and uv2 then
-			slot3.time = uv2.time
-			slot3.timeSinceLevelLoad = uv2.timeSinceLevelLoad
-			slot3.unscaledTime = uv2.unscaledTime
-			slot3.realtimeSinceStartup = uv2.realtimeSinceStartup
-			slot3.frameCount = uv2.frameCount
-			uv1 = 1000000
-		else
-			slot3.time = slot3.time + slot1
-			slot3.realtimeSinceStartup = slot3.realtimeSinceStartup + slot2
-			slot3.timeSinceLevelLoad = slot3.timeSinceLevelLoad + slot1
-			slot3.unscaledTime = slot3.unscaledTime + slot2
-		end
-	end,
-	SetFixedDelta = function (slot0, slot1)
-		uv0.deltaTime = slot1
-		uv0.fixedDeltaTime = slot1
-		uv0.fixedTime = uv0.fixedTime + slot1
-	end,
-	SetFrameCount = function (slot0)
-		uv0.frameCount = uv0.frameCount + 1
-	end,
-	SetTimeScale = function (slot0, slot1)
-		uv0.timeScale = slot1
-		uv1.timeScale = slot1
-
-		return uv0.timeScale
-	end,
-	GetTimestamp = function (slot0)
-		return uv0()
-	end
-}
-slot6 = 1
-UnityEngine.Time = slot5
-
-setmetatable(slot5, {
+﻿local var_0_0 = rawget
+local var_0_1 = UnityEngine.Time
+local var_0_2 = tolua.gettime
+local var_0_3 = {
 	maximumDeltaTime = 0.3333333,
 	frameCount = 1,
 	time = 0,
@@ -74,26 +12,105 @@ setmetatable(slot5, {
 	realtimeSinceStartup = 0,
 	unscaledDeltaTime = 0,
 	timeScale = 1,
-	fixedTime = 0,
-	__index = function (slot0, slot1)
-		if uv0(uv1, slot1) then
-			return slot2
-		end
-
-		return uv2:__index(slot1)
+	fixedTime = 0
+}
+local var_0_4 = {
+	fixedDeltaTime = function(arg_1_0)
+		var_0_3.fixedDeltaTime = arg_1_0
+		var_0_1.fixedDeltaTime = arg_1_0
 	end,
-	__newindex = function (slot0, slot1, slot2)
-		if uv0(uv1, slot1) then
-			return slot3(slot2)
-		end
-
-		error(string.format("Property or indexer `UnityEngine.Time.%s' cannot be assigned to (it is read only)", slot1))
+	maximumDeltaTime = function(arg_2_0)
+		var_0_3.maximumDeltaTime = arg_2_0
+		var_0_1.maximumDeltaTime = arg_2_0
+	end,
+	timeScale = function(arg_3_0)
+		var_0_3.timeScale = arg_3_0
+		var_0_1.timeScale = arg_3_0
+	end,
+	captureFramerate = function(arg_4_0)
+		var_0_3.captureFramerate = arg_4_0
+		var_0_1.captureFramerate = arg_4_0
+	end,
+	timeSinceLevelLoad = function(arg_5_0)
+		var_0_3.timeSinceLevelLoad = arg_5_0
 	end
-})
+}
 
-if UnityEngine.Time ~= nil then
-	slot3.maximumDeltaTime = slot1.maximumDeltaTime
-	slot3.timeScale = slot1.timeScale
+function var_0_3.__index(arg_6_0, arg_6_1)
+	local var_6_0 = var_0_0(var_0_3, arg_6_1)
+
+	if var_6_0 then
+		return var_6_0
+	end
+
+	return var_0_1.__index(var_0_1, arg_6_1)
 end
 
-return slot5
+function var_0_3.__newindex(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = var_0_0(var_0_4, arg_7_1)
+
+	if var_7_0 then
+		return var_7_0(arg_7_2)
+	end
+
+	error(string.format("Property or indexer `UnityEngine.Time.%s' cannot be assigned to (it is read only)", arg_7_1))
+end
+
+local var_0_5 = {}
+local var_0_6 = 1
+
+function var_0_5.SetDeltaTime(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = var_0_3
+
+	var_8_0.deltaTime = arg_8_1
+	var_8_0.unscaledDeltaTime = arg_8_2
+	var_0_6 = var_0_6 - 1
+
+	if var_0_6 == 0 and var_0_1 then
+		var_8_0.time = var_0_1.time
+		var_8_0.timeSinceLevelLoad = var_0_1.timeSinceLevelLoad
+		var_8_0.unscaledTime = var_0_1.unscaledTime
+		var_8_0.realtimeSinceStartup = var_0_1.realtimeSinceStartup
+		var_8_0.frameCount = var_0_1.frameCount
+		var_0_6 = 1000000
+	else
+		var_8_0.time = var_8_0.time + arg_8_1
+		var_8_0.realtimeSinceStartup = var_8_0.realtimeSinceStartup + arg_8_2
+		var_8_0.timeSinceLevelLoad = var_8_0.timeSinceLevelLoad + arg_8_1
+		var_8_0.unscaledTime = var_8_0.unscaledTime + arg_8_2
+	end
+end
+
+function var_0_5.SetFixedDelta(arg_9_0, arg_9_1)
+	var_0_3.deltaTime = arg_9_1
+	var_0_3.fixedDeltaTime = arg_9_1
+	var_0_3.fixedTime = var_0_3.fixedTime + arg_9_1
+end
+
+function var_0_5.SetFrameCount(arg_10_0)
+	var_0_3.frameCount = var_0_3.frameCount + 1
+end
+
+function var_0_5.SetTimeScale(arg_11_0, arg_11_1)
+	local var_11_0 = var_0_3.timeScale
+
+	var_0_3.timeScale = arg_11_1
+	var_0_1.timeScale = arg_11_1
+
+	return var_11_0
+end
+
+function var_0_5.GetTimestamp(arg_12_0)
+	return var_0_2()
+end
+
+UnityEngine.Time = var_0_5
+
+setmetatable(var_0_5, var_0_3)
+
+if var_0_1 ~= nil then
+	var_0_3.maximumDeltaTime = var_0_1.maximumDeltaTime
+	var_0_3.timeScale = var_0_1.timeScale
+end
+
+return var_0_5

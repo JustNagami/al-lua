@@ -1,4 +1,25 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 17910
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				skill_id = 17911,
+				time = 30
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -239,26 +260,5 @@ return {
 	stack = 1,
 	id = 17910,
 	icon = 17910,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 17910
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				skill_id = 17911,
-				time = 30
-			}
-		}
-	}
+	last_effect = ""
 }

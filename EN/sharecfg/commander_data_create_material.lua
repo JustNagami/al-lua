@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_data_create_material = {
 	{
 		use_item = 20011,

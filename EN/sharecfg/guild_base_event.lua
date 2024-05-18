@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.guild_base_event = setmetatable({
 	__name = "guild_base_event",
 	all = {

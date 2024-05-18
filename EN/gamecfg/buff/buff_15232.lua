@@ -1,4 +1,62 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id_list = {
+					15231
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.045
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "luck",
+				number = 1
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				maxTargetNumber = 0,
+				buff_id = 15231,
+				check_target = {
+					"TargetSelf",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"smokeboom"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -537,63 +595,5 @@ return {
 	stack = 1,
 	id = 15232,
 	icon = 15231,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id_list = {
-					15231
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.045
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "luck",
-				number = 1
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				maxTargetNumber = 0,
-				buff_id = 15231,
-				check_target = {
-					"TargetSelf",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"smokeboom"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

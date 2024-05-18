@@ -1,30 +1,31 @@
-slot0 = class("ShipType")
-slot0.QuZhu = 1
-slot0.QingXun = 2
-slot0.ZhongXun = 3
-slot0.ZhanXun = 4
-slot0.ZhanLie = 5
-slot0.QingHang = 6
-slot0.ZhengHang = 7
-slot0.QianTing = 8
-slot0.HangXun = 9
-slot0.HangZhan = 10
-slot0.LeiXun = 11
-slot0.WeiXiu = 12
-slot0.ZhongPao = 13
-slot0.QianMu = 17
-slot0.ChaoXun = 18
-slot0.Yunshu = 19
-slot0.DaoQuV = 20
-slot0.DaoQuM = 21
-slot0.FengFanS = 22
-slot0.FengFanV = 23
-slot0.FengFanM = 24
-slot0.YuLeiTing = 14
-slot0.JinBi = 15
-slot0.ZiBao = 16
-slot0.WeiZhi = 25
-slot0.AllShipType = {
+﻿local var_0_0 = class("ShipType")
+
+var_0_0.QuZhu = 1
+var_0_0.QingXun = 2
+var_0_0.ZhongXun = 3
+var_0_0.ZhanXun = 4
+var_0_0.ZhanLie = 5
+var_0_0.QingHang = 6
+var_0_0.ZhengHang = 7
+var_0_0.QianTing = 8
+var_0_0.HangXun = 9
+var_0_0.HangZhan = 10
+var_0_0.LeiXun = 11
+var_0_0.WeiXiu = 12
+var_0_0.ZhongPao = 13
+var_0_0.QianMu = 17
+var_0_0.ChaoXun = 18
+var_0_0.Yunshu = 19
+var_0_0.DaoQuV = 20
+var_0_0.DaoQuM = 21
+var_0_0.FengFanS = 22
+var_0_0.FengFanV = 23
+var_0_0.FengFanM = 24
+var_0_0.YuLeiTing = 14
+var_0_0.JinBi = 15
+var_0_0.ZiBao = 16
+var_0_0.WeiZhi = 25
+var_0_0.AllShipType = {
 	1,
 	2,
 	3,
@@ -45,24 +46,24 @@ slot0.AllShipType = {
 	23,
 	24
 }
-slot0.SpecificTypeTable = {
+var_0_0.SpecificTypeTable = {
 	auxiliary = "AUX",
 	gunner = "GNR",
 	torpedo = "TORP"
 }
-slot0.SpecificTableTips = {
+var_0_0.SpecificTableTips = {
 	GNR = "breakout_tip_ultimatebonus_gunner",
 	TORP = "breakout_tip_ultimatebonus_torpedo",
 	AUX = "breakout_tip_ultimatebonus_aux"
 }
 
-function slot0.Type2Name(slot0)
-	return pg.ship_data_by_type[slot0].type_name
+function var_0_0.Type2Name(arg_1_0)
+	return pg.ship_data_by_type[arg_1_0].type_name
 end
 
-function slot0.Type2Print(slot0)
-	if not uv0.prints then
-		uv0.prints = {
+function var_0_0.Type2Print(arg_2_0)
+	if not var_0_0.prints then
+		var_0_0.prints = {
 			"quzhu",
 			"qingxun",
 			"zhongxun",
@@ -91,12 +92,12 @@ function slot0.Type2Print(slot0)
 		}
 	end
 
-	return uv0.prints[slot0]
+	return var_0_0.prints[arg_2_0]
 end
 
-function slot0.Type2BattlePrint(slot0)
-	if not uv0.bprints then
-		uv0.bprints = {
+function var_0_0.Type2BattlePrint(arg_3_0)
+	if not var_0_0.bprints then
+		var_0_0.bprints = {
 			"battle_quzhu",
 			"battle_qingxun",
 			"battle_zhongxun",
@@ -125,12 +126,12 @@ function slot0.Type2BattlePrint(slot0)
 		}
 	end
 
-	return uv0.bprints[slot0]
+	return var_0_0.bprints[arg_3_0]
 end
 
-function slot0.Type2CNLabel(slot0)
-	if not uv0.cnLabel then
-		uv0.cnLabel = {
+function var_0_0.Type2CNLabel(arg_4_0)
+	if not var_0_0.cnLabel then
+		var_0_0.cnLabel = {
 			"label_1",
 			"label_2",
 			"label_3",
@@ -159,52 +160,52 @@ function slot0.Type2CNLabel(slot0)
 		}
 	end
 
-	return uv0.cnLabel[slot0]
+	return var_0_0.cnLabel[arg_4_0]
 end
 
-slot0.BundleBattleShip = "zhan"
-slot0.BundleAircraftCarrier = "hang"
-slot0.BundleSubmarine = "qian"
-slot0.BundleLargeCrusier = "zhong"
-slot0.BundleAntiSubmarine = "fanqian"
-slot0.BundleList = {
+var_0_0.BundleBattleShip = "zhan"
+var_0_0.BundleAircraftCarrier = "hang"
+var_0_0.BundleSubmarine = "qian"
+var_0_0.BundleLargeCrusier = "zhong"
+var_0_0.BundleAntiSubmarine = "fanqian"
+var_0_0.BundleList = {
 	zhan = {
-		slot0.ZhanXun,
-		slot0.ZhanLie
+		var_0_0.ZhanXun,
+		var_0_0.ZhanLie
 	},
 	hang = {
-		slot0.QingHang,
-		slot0.ZhengHang
+		var_0_0.QingHang,
+		var_0_0.ZhengHang
 	},
 	qian = {
-		slot0.QianTing,
-		slot0.QianMu,
-		slot0.FengFanS
+		var_0_0.QianTing,
+		var_0_0.QianMu,
+		var_0_0.FengFanS
 	},
 	zhong = {
-		slot0.ZhongXun,
-		slot0.ChaoXun
+		var_0_0.ZhongXun,
+		var_0_0.ChaoXun
 	},
 	fanqian = {
-		slot0.QuZhu,
-		slot0.QingXun,
-		slot0.DaoQuV
+		var_0_0.QuZhu,
+		var_0_0.QingXun,
+		var_0_0.DaoQuV
 	},
 	quzhu = {
-		slot0.QuZhu,
-		slot0.DaoQuM,
-		slot0.DaoQuV
+		var_0_0.QuZhu,
+		var_0_0.DaoQuM,
+		var_0_0.DaoQuV
 	},
 	fengfan = {
-		slot0.FengFanS,
-		slot0.FengFanV,
-		slot0.FengFanM
+		var_0_0.FengFanS,
+		var_0_0.FengFanV,
+		var_0_0.FengFanM
 	}
 }
 
-function slot0.BundleType2CNLabel(slot0)
-	if not uv0.bundleLabel then
-		uv0.bundleLabel = {
+function var_0_0.BundleType2CNLabel(arg_5_0)
+	if not var_0_0.bundleLabel then
+		var_0_0.bundleLabel = {
 			zhong = "label_13",
 			qian = "label_8",
 			zhan = "label_11",
@@ -214,49 +215,49 @@ function slot0.BundleType2CNLabel(slot0)
 		}
 	end
 
-	return uv0.bundleLabel[slot0]
+	return var_0_0.bundleLabel[arg_5_0]
 end
 
-function slot0.ContainInLimitBundle(slot0, slot1)
-	if type(slot0) == "string" then
-		for slot5, slot6 in ipairs(uv0.BundleList[slot0]) do
-			if slot6 == slot1 then
+function var_0_0.ContainInLimitBundle(arg_6_0, arg_6_1)
+	if type(arg_6_0) == "string" then
+		for iter_6_0, iter_6_1 in ipairs(var_0_0.BundleList[arg_6_0]) do
+			if iter_6_1 == arg_6_1 then
 				return true
 			end
 		end
-	elseif type(slot0) == "number" then
-		return slot0 == 0 or slot1 == slot0
+	elseif type(arg_6_0) == "number" then
+		return arg_6_0 == 0 or arg_6_1 == arg_6_0
 	end
 
 	return false
 end
 
-slot0.CloakShipTypeList = {
-	slot0.QingHang,
-	slot0.ZhengHang,
-	slot0.DaoQuM
+var_0_0.CloakShipTypeList = {
+	var_0_0.QingHang,
+	var_0_0.ZhengHang,
+	var_0_0.DaoQuM
 }
 
-function slot0.CloakShipType(slot0)
-	return table.contains(uv0.CloakShipTypeList, slot0)
+function var_0_0.CloakShipType(arg_7_0)
+	return table.contains(var_0_0.CloakShipTypeList, arg_7_0)
 end
 
-slot0.QuZhuShipType = {}
+var_0_0.QuZhuShipType = {}
 
-for slot4, slot5 in ipairs(slot0.BundleList.quzhu) do
-	slot0.QuZhuShipType[slot5] = true
+for iter_0_0, iter_0_1 in ipairs(var_0_0.BundleList.quzhu) do
+	var_0_0.QuZhuShipType[iter_0_1] = true
 end
 
-function slot0.IsTypeQuZhu(slot0)
-	return uv0.QuZhuShipType[slot0]
+function var_0_0.IsTypeQuZhu(arg_8_0)
+	return var_0_0.QuZhuShipType[arg_8_0]
 end
 
-function slot0.FilterOverQuZhuType(slot0)
-	slot1 = false
+function var_0_0.FilterOverQuZhuType(arg_9_0)
+	local var_9_0 = false
 
-	return underscore.filter(slot0, function (slot0)
-		if not uv0 or not uv1.IsTypeQuZhu(slot0) then
-			uv0 = uv0 or uv1.IsTypeQuZhu(slot0)
+	return underscore.filter(arg_9_0, function(arg_10_0)
+		if not var_9_0 or not var_0_0.IsTypeQuZhu(arg_10_0) then
+			var_9_0 = var_9_0 or var_0_0.IsTypeQuZhu(arg_10_0)
 
 			return true
 		else
@@ -265,22 +266,22 @@ function slot0.FilterOverQuZhuType(slot0)
 	end)
 end
 
-slot0.FengFanType = {}
+var_0_0.FengFanType = {}
 
-for slot4, slot5 in ipairs(slot0.BundleList.fengfan) do
-	slot0.FengFanType[slot5] = true
+for iter_0_2, iter_0_3 in ipairs(var_0_0.BundleList.fengfan) do
+	var_0_0.FengFanType[iter_0_3] = true
 end
 
-function slot0.IsTypeFengFan(slot0)
-	return uv0.FengFanType[slot0]
+function var_0_0.IsTypeFengFan(arg_11_0)
+	return var_0_0.FengFanType[arg_11_0]
 end
 
-function slot0.FilterOverFengFanType(slot0)
-	slot1 = false
+function var_0_0.FilterOverFengFanType(arg_12_0)
+	local var_12_0 = false
 
-	return underscore.filter(slot0, function (slot0)
-		if not uv0 or not uv1.IsTypeFengFan(slot0) then
-			uv0 = uv0 or uv1.IsTypeFengFan(slot0)
+	return underscore.filter(arg_12_0, function(arg_13_0)
+		if not var_12_0 or not var_0_0.IsTypeFengFan(arg_13_0) then
+			var_12_0 = var_12_0 or var_0_0.IsTypeFengFan(arg_13_0)
 
 			return true
 		else
@@ -289,21 +290,25 @@ function slot0.FilterOverFengFanType(slot0)
 	end)
 end
 
-function slot0.MergeFengFanType(slot0, slot1, slot2)
-	slot3 = uv0.BundleList.fengfan[1]
+function var_0_0.MergeFengFanType(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = var_0_0.BundleList.fengfan[1]
 
-	if underscore.all(uv0.BundleList.fengfan, function (slot0)
-		return uv0[uv1] == uv0[slot0] and uv2[uv1] == uv2[slot0]
+	if underscore.all(var_0_0.BundleList.fengfan, function(arg_15_0)
+		return arg_14_1[var_14_0] == arg_14_1[arg_15_0] and arg_14_2[var_14_0] == arg_14_2[arg_15_0]
 	end) then
-		table.insert(underscore.filter(slot0, function (slot0)
-			return not table.contains(uv0.BundleList.fengfan, slot0)
-		end), table.indexof(slot0, slot3), "fengfan")
+		local var_14_1 = table.indexof(arg_14_0, var_14_0)
 
-		slot1.fengfan = slot1[slot3]
-		slot2.fengfan = slot2[slot3]
+		arg_14_0 = underscore.filter(arg_14_0, function(arg_16_0)
+			return not table.contains(var_0_0.BundleList.fengfan, arg_16_0)
+		end)
+
+		table.insert(arg_14_0, var_14_1, "fengfan")
+
+		arg_14_1.fengfan = arg_14_1[var_14_0]
+		arg_14_2.fengfan = arg_14_2[var_14_0]
 	end
 
-	return slot0
+	return arg_14_0
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,38 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onStartGame"
+			},
+			pop = {},
+			arg_list = {
+				buff_id = 1010601
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 1010603,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				rant = 5000,
+				target = "TargetSelf",
+				skill_id = 1010600,
+				time = 10
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -369,39 +403,5 @@ return {
 	stack = 1,
 	id = 1010600,
 	icon = 10600,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onStartGame"
-			},
-			pop = {},
-			arg_list = {
-				buff_id = 1010601
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 1010603,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				rant = 5000,
-				target = "TargetSelf",
-				skill_id = 1010600,
-				time = 10
-			}
-		}
-	}
+	last_effect = ""
 }

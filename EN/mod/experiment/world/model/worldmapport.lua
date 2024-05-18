@@ -1,5 +1,6 @@
-slot0 = class("WorldMapPort", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WorldMapPort", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	config = "table",
 	zeroHourTime = "number",
 	goods = "table",
@@ -7,69 +8,71 @@ slot0.Fields = {
 	id = "number",
 	expiredTime = "number"
 }
-slot0.EventUpdateTaskIds = "WorldMapPort.UpdateTaskIds"
-slot0.EventUpdateGoods = "WorldMapPort.EventUpdateGoods"
+var_0_0.EventUpdateTaskIds = "WorldMapPort.UpdateTaskIds"
+var_0_0.EventUpdateGoods = "WorldMapPort.EventUpdateGoods"
 
-function slot0.Build(slot0)
-	slot0.taskIds = {}
-	slot0.goods = {}
+function var_0_0.Build(arg_1_0)
+	arg_1_0.taskIds = {}
+	arg_1_0.goods = {}
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.id = slot1
-	slot0.config = pg.world_port_data[slot0.id]
+function var_0_0.Setup(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1
+	arg_2_0.config = pg.world_port_data[arg_2_0.id]
 
-	assert(slot0.config, "world_port_data not exist: " .. slot0.id)
+	assert(arg_2_0.config, "world_port_data not exist: " .. arg_2_0.id)
 end
 
-function slot0.Dispose(slot0)
-	slot0:ClearGoods()
-	slot0:Clear()
+function var_0_0.Dispose(arg_3_0)
+	arg_3_0:ClearGoods()
+	arg_3_0:Clear()
 end
 
-function slot0.IsValid(slot0)
-	slot1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.IsValid(arg_4_0)
+	local var_4_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	return slot0.expiredTime and slot1 <= slot0.expiredTime and slot0.zeroHourTime and slot1 <= slot0.zeroHourTime
+	return arg_4_0.expiredTime and var_4_0 <= arg_4_0.expiredTime and arg_4_0.zeroHourTime and var_4_0 <= arg_4_0.zeroHourTime
 end
 
-function slot0.UpdateExpiredTime(slot0, slot1)
-	slot0.expiredTime = slot1
-	slot0.zeroHourTime = pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0)
+function var_0_0.UpdateExpiredTime(arg_5_0, arg_5_1)
+	arg_5_0.expiredTime = arg_5_1
+	arg_5_0.zeroHourTime = pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0)
 end
 
-function slot0.UpdateTaskIds(slot0, slot1)
-	if slot0.taskIds ~= slot1 then
-		slot0.taskIds = slot1
+function var_0_0.UpdateTaskIds(arg_6_0, arg_6_1)
+	if arg_6_0.taskIds ~= arg_6_1 then
+		arg_6_0.taskIds = arg_6_1
 
-		slot0:DispatchEvent(uv0.EventUpdateTaskIds)
+		arg_6_0:DispatchEvent(var_0_0.EventUpdateTaskIds)
 	end
 end
 
-function slot0.UpdateGoods(slot0, slot1)
-	if slot0.goods ~= slot1 then
-		slot0.goods = slot1
+function var_0_0.UpdateGoods(arg_7_0, arg_7_1)
+	if arg_7_0.goods ~= arg_7_1 then
+		arg_7_0.goods = arg_7_1
 
-		nowWorld():GetAtlas():UpdatePortMark(slot0.id, #underscore.filter(slot0.goods, function (slot0)
-			return slot0.count > 0
-		end) > 0)
-		slot0:DispatchEvent(uv0.EventUpdateGoods)
+		local var_7_0 = underscore.filter(arg_7_0.goods, function(arg_8_0)
+			return arg_8_0.count > 0
+		end)
+
+		nowWorld():GetAtlas():UpdatePortMark(arg_7_0.id, #var_7_0 > 0)
+		arg_7_0:DispatchEvent(var_0_0.EventUpdateGoods)
 	end
 end
 
-function slot0.ClearGoods(slot0)
-	WPool:ReturnArray(slot0.goods)
+function var_0_0.ClearGoods(arg_9_0)
+	WPool:ReturnArray(arg_9_0.goods)
 
-	slot0.goods = {}
+	arg_9_0.goods = {}
 end
 
-function slot0.GetRealm(slot0)
-	return slot0.config.port_camp
+function var_0_0.GetRealm(arg_10_0)
+	return arg_10_0.config.port_camp
 end
 
-function slot0.IsOpen(slot0, slot1, slot2)
-	for slot6, slot7 in ipairs(slot0.config.open_condition) do
-		if slot7[1] == slot1 and slot7[2] <= slot2 then
+function var_0_0.IsOpen(arg_11_0, arg_11_1, arg_11_2)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.config.open_condition) do
+		if iter_11_1[1] == arg_11_1 and arg_11_2 >= iter_11_1[2] then
 			return true
 		end
 	end
@@ -77,8 +80,8 @@ function slot0.IsOpen(slot0, slot1, slot2)
 	return false
 end
 
-function slot0.IsTempPort(slot0)
-	return slot0.config.port_camp == 0
+function var_0_0.IsTempPort(arg_12_0)
+	return arg_12_0.config.port_camp == 0
 end
 
-return slot0
+return var_0_0

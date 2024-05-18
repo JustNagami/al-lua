@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_task_data = {
 	{
 		server_type = 1,

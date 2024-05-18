@@ -1,157 +1,179 @@
-slot0 = class("EquipmentSkinLayer", import("..base.BaseUI"))
-slot0.DISPLAY = 1
-slot0.REPLACE = 2
+﻿local var_0_0 = class("EquipmentSkinLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.DISPLAY = 1
+var_0_0.REPLACE = 2
+
+function var_0_0.getUIName(arg_1_0)
 	return "EquipmentSkinInfoUI"
 end
 
-function slot0.setShip(slot0, slot1)
-	slot0.shipVO = slot1
+function var_0_0.setShip(arg_2_0, arg_2_1)
+	arg_2_0.shipVO = arg_2_1
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, slot0.contextData.weight and {
-		weight = slot0.contextData.weight
+function var_0_0.init(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, arg_3_0.contextData.weight and {
+		weight = arg_3_0.contextData.weight
 	} or {})
 
-	slot0.displayPanel = slot0:findTF("display")
+	arg_3_0.displayPanel = arg_3_0:findTF("display")
 
-	setActive(slot0.displayPanel, false)
+	setActive(arg_3_0.displayPanel, false)
 
-	slot0.displayActions = slot0.displayPanel:Find("actions")
-	slot0.skinViewOnShipTF = slot0:findTF("replace/equipment_on_ship")
-	slot0.skinViewTF = slot0:findTF("replace/equipment")
-	slot0.replacePanel = slot0:findTF("replace")
+	arg_3_0.displayActions = arg_3_0.displayPanel:Find("actions")
+	arg_3_0.skinViewOnShipTF = arg_3_0:findTF("replace/equipment_on_ship")
+	arg_3_0.skinViewTF = arg_3_0:findTF("replace/equipment")
+	arg_3_0.replacePanel = arg_3_0:findTF("replace")
 
-	setActive(slot0.replacePanel, false)
+	setActive(arg_3_0.replacePanel, false)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf, function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SOUND_BACK)
-	onButton(slot0, slot0._tf:Find("display/top/btnBack"), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_4_0, arg_4_0._tf:Find("display/top/btnBack"), function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("actions/cancel_button", slot0.replacePanel), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_4_0, arg_4_0:findTF("actions/cancel_button", arg_4_0.replacePanel), function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("actions/action_button_2", slot0.replacePanel), function ()
-		if not uv0.contextData.oldShipInfo then
-			uv0:emit(EquipmentSkinMediator.ON_EQUIP)
+	onButton(arg_4_0, arg_4_0:findTF("actions/action_button_2", arg_4_0.replacePanel), function()
+		if not arg_4_0.contextData.oldShipInfo then
+			arg_4_0:emit(EquipmentSkinMediator.ON_EQUIP)
 		else
-			uv0:emit(EquipmentSkinMediator.ON_EQUIP_FORM_SHIP)
+			arg_4_0:emit(EquipmentSkinMediator.ON_EQUIP_FORM_SHIP)
 		end
 	end, SFX_PANEL)
 
-	if (slot0.contextData.mode or uv0.DISPLAY) == uv0.REPLACE and slot0.shipVO then
-		slot0:initReplace()
-	elseif slot1 == uv0.DISPLAY then
-		slot0:initDisplay()
+	local var_4_0 = arg_4_0.contextData.mode or var_0_0.DISPLAY
+
+	if var_4_0 == var_0_0.REPLACE and arg_4_0.shipVO then
+		arg_4_0:initReplace()
+	elseif var_4_0 == var_0_0.DISPLAY then
+		arg_4_0:initDisplay()
 	end
 end
 
-function slot0.initDisplay(slot0)
-	setActive(slot0.displayPanel, true)
-	setActive(slot0.replacePanel, false)
+function var_0_0.initDisplay(arg_9_0)
+	setActive(arg_9_0.displayPanel, true)
+	setActive(arg_9_0.replacePanel, false)
 
-	if slot0.shipVO then
-		slot0:initDisplay4Ship()
+	if arg_9_0.shipVO then
+		arg_9_0:initDisplay4Ship()
 	else
-		eachChild(slot0.displayActions, function (slot0)
-			slot1 = slot0.gameObject.name == "confirm"
+		eachChild(arg_9_0.displayActions, function(arg_10_0)
+			local var_10_0 = arg_10_0.gameObject.name == "confirm"
 
-			setActive(slot0, slot1)
+			setActive(arg_10_0, var_10_0)
 
-			if slot1 then
-				onButton(uv0, slot0, function ()
-					uv0:emit(uv1.ON_CLOSE)
+			if var_10_0 then
+				onButton(arg_9_0, arg_10_0, function()
+					arg_9_0:emit(var_0_0.ON_CLOSE)
 				end, SFX_PANEL)
 			end
 		end)
 	end
 
-	slot0:updateSkinView(slot0.displayPanel, slot0.contextData.skinId)
+	arg_9_0:updateSkinView(arg_9_0.displayPanel, arg_9_0.contextData.skinId)
 end
 
-function slot0.initDisplay4Ship(slot0)
-	eachChild(slot0.displayActions, function (slot0)
-		setActive(slot0, slot0.gameObject.name ~= "confirm")
-		onButton(uv0, slot0, function ()
-			if uv0 == "unload" then
-				uv1:emit(EquipmentSkinMediator.ON_UNEQUIP)
-			elseif uv0 == "replace" then
-				uv1:emit(EquipmentSkinMediator.ON_SELECT)
+function var_0_0.initDisplay4Ship(arg_12_0)
+	eachChild(arg_12_0.displayActions, function(arg_13_0)
+		local var_13_0 = arg_13_0.gameObject.name
+
+		setActive(arg_13_0, var_13_0 ~= "confirm")
+		onButton(arg_12_0, arg_13_0, function()
+			if var_13_0 == "unload" then
+				arg_12_0:emit(EquipmentSkinMediator.ON_UNEQUIP)
+			elseif var_13_0 == "replace" then
+				arg_12_0:emit(EquipmentSkinMediator.ON_SELECT)
 			end
 		end, SFX_PANEL)
 	end)
 end
 
-function slot0.initReplace(slot0)
-	setActive(slot0.displayPanel, false)
-	setActive(slot0.replacePanel, true)
-	slot0:updateSkinView(slot0.skinViewOnShipTF, slot0.shipVO:getEquipSkin(slot0.contextData.pos) or 0)
+function var_0_0.initReplace(arg_15_0)
+	setActive(arg_15_0.displayPanel, false)
+	setActive(arg_15_0.replacePanel, true)
 
-	if slot0.contextData.oldShipInfo then
-		slot0:updateSkinView(slot0.skinViewTF, slot0.contextData.skinId, slot0.contextData.oldShipInfo)
+	local var_15_0 = arg_15_0.contextData.pos
+	local var_15_1 = arg_15_0.shipVO:getEquipSkin(var_15_0) or 0
+	local var_15_2 = arg_15_0.contextData.skinId
+
+	arg_15_0:updateSkinView(arg_15_0.skinViewOnShipTF, var_15_1)
+
+	if arg_15_0.contextData.oldShipInfo then
+		local var_15_3 = arg_15_0.contextData.oldShipInfo
+
+		arg_15_0:updateSkinView(arg_15_0.skinViewTF, var_15_2, var_15_3)
 	else
-		slot0:updateSkinView(slot0.skinViewTF, slot3)
+		arg_15_0:updateSkinView(arg_15_0.skinViewTF, var_15_2)
 	end
 end
 
-function slot0.updateSkinView(slot0, slot1, slot2, slot3)
-	slot4 = slot2 ~= 0
-	slot6 = slot0:findTF("info", slot1)
+function var_0_0.updateSkinView(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local var_16_0 = arg_16_2 ~= 0
+	local var_16_1 = arg_16_0:findTF("empty", arg_16_1)
+	local var_16_2 = arg_16_0:findTF("info", arg_16_1)
 
-	if slot0:findTF("empty", slot1) then
-		setActive(slot5, not slot4)
+	if var_16_1 then
+		setActive(var_16_1, not var_16_0)
 	end
 
-	setActive(slot6, slot4)
+	setActive(var_16_2, var_16_0)
 
-	slot1:GetComponent(typeof(Image)).enabled = slot4
+	arg_16_1:GetComponent(typeof(Image)).enabled = var_16_0
 
-	if slot4 then
-		slot7 = pg.equip_skin_template[slot2]
+	if var_16_0 then
+		local var_16_3 = pg.equip_skin_template[arg_16_2]
 
-		assert(slot7, "miss config equip_skin_template >> " .. slot2)
+		assert(var_16_3, "miss config equip_skin_template >> " .. arg_16_2)
 
-		slot0:findTF("info/display_panel/name_container/name", slot1):GetComponent(typeof(Text)).text = slot7.name
-		slot0:findTF("info/display_panel/desc", slot1):GetComponent(typeof(Text)).text = slot7.desc
+		local var_16_4 = arg_16_0:findTF("info/display_panel/name_container/name", arg_16_1):GetComponent(typeof(Text))
+		local var_16_5 = arg_16_0:findTF("info/display_panel/desc", arg_16_1):GetComponent(typeof(Text))
 
-		setScrollText(slot0:findTF("info/display_panel/equip_type/mask/Text", slot1), table.concat(_.map(slot7.equip_type, function (slot0)
-			return EquipType.Type2Name2(slot0)
-		end), ","))
+		var_16_4.text = var_16_3.name
+		var_16_5.text = var_16_3.desc
 
-		slot11 = slot0:findTF("info/play_btn", slot1)
+		local var_16_6 = _.map(var_16_3.equip_type, function(arg_17_0)
+			return EquipType.Type2Name2(arg_17_0)
+		end)
 
-		setActive(slot11, true)
-		onButton(slot0, slot11, function ()
-			uv0:emit(EquipmentSkinMediator.ON_PREVIEW, uv1)
+		setScrollText(arg_16_0:findTF("info/display_panel/equip_type/mask/Text", arg_16_1), table.concat(var_16_6, ","))
+
+		local var_16_7 = arg_16_0:findTF("info/play_btn", arg_16_1)
+
+		setActive(var_16_7, true)
+		onButton(arg_16_0, var_16_7, function()
+			arg_16_0:emit(EquipmentSkinMediator.ON_PREVIEW, arg_16_2)
 		end, SFX_PANEL)
-		updateDrop(slot0:findTF("info/equip", slot1), Drop.New({
+		updateDrop(arg_16_0:findTF("info/equip", arg_16_1), Drop.New({
 			type = DROP_TYPE_EQUIPMENT_SKIN,
-			id = slot2
+			id = arg_16_2
 		}))
 
-		if slot0:findTF("info/head", slot1) then
-			setActive(slot12, slot3)
+		local var_16_8 = arg_16_0:findTF("info/head", arg_16_1)
 
-			if slot3 then
-				assert(slot3.id, "old ship id is nil")
-				assert(slot3.pos, "old ship pos is nil")
+		if var_16_8 then
+			setActive(var_16_8, arg_16_3)
 
-				if getProxy(BayProxy):getShipById(slot3.id) then
-					setImageSprite(slot12:Find("Image"), LoadSprite("qicon/" .. slot13:getPainting()))
+			if arg_16_3 then
+				assert(arg_16_3.id, "old ship id is nil")
+				assert(arg_16_3.pos, "old ship pos is nil")
+
+				local var_16_9 = getProxy(BayProxy):getShipById(arg_16_3.id)
+
+				if var_16_9 then
+					setImageSprite(var_16_8:Find("Image"), LoadSprite("qicon/" .. var_16_9:getPainting()))
 				end
 			end
 		end
 	end
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0.UIMain)
+function var_0_0.willExit(arg_19_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_19_0._tf, arg_19_0.UIMain)
 end
 
-return slot0
+return var_0_0

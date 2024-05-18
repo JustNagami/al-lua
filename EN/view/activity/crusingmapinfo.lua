@@ -1,12 +1,13 @@
-slot0 = class("CrusingMapInfo")
-slot0.MapInfo = {
+﻿local var_0_0 = class("CrusingMapInfo")
+
+var_0_0.MapInfo = {
 	CrusingMap_0 = {
 		all = 1260,
 		frame = {
 			[0] = 0,
-			[90.0] = 1080,
-			[100.0] = 1260,
-			[95.0] = 1185
+			[90] = 1080,
+			[100] = 1260,
+			[95] = 1185
 		}
 	},
 	CrusingMap_1 = {
@@ -15,40 +16,40 @@ slot0.MapInfo = {
 			[0] = 0,
 			nil,
 			5,
-			[40.0] = 155,
-			[63.0] = 267,
-			[62.0] = 261,
-			[70.0] = 311,
-			[74.0] = 340,
-			[50.0] = 200,
-			[54.0] = 214,
-			[90.0] = 391,
-			[82.0] = 369,
-			[60.0] = 240,
-			[10.0] = 40,
-			[100.0] = 410,
-			[30.0] = 120,
-			[80.0] = 362
+			[40] = 155,
+			[63] = 267,
+			[62] = 261,
+			[70] = 311,
+			[74] = 340,
+			[50] = 200,
+			[54] = 214,
+			[90] = 391,
+			[82] = 369,
+			[60] = 240,
+			[10] = 40,
+			[100] = 410,
+			[30] = 120,
+			[80] = 362
 		}
 	},
 	CrusingMap_2 = {
 		all = 900,
 		frame = {
 			[0] = 410,
-			[50.0] = 606,
-			[40.0] = 570,
-			[100.0] = 860,
-			[70.0] = 716,
-			[60.0] = 664,
-			[20.0] = 490,
-			[80.0] = 772,
-			[90.0] = 812,
-			[10.0] = 450,
-			[30.0] = 530
+			[50] = 606,
+			[40] = 570,
+			[100] = 860,
+			[70] = 716,
+			[60] = 664,
+			[20] = 490,
+			[80] = 772,
+			[90] = 812,
+			[10] = 450,
+			[30] = 530
 		}
 	}
 }
-slot0.VersionInfo = {
+var_0_0.VersionInfo = {
 	map_202210 = "CrusingMap_1",
 	map_202212 = "CrusingMap_1",
 	map_202202 = "CrusingMap_2",
@@ -67,28 +68,29 @@ slot0.VersionInfo = {
 	map_202402 = "CrusingMap_1"
 }
 
-function slot0.GetPhaseFrame(slot0)
-	slot1 = uv0.MapInfo[slot0]
+function var_0_0.GetPhaseFrame(arg_1_0)
+	local var_1_0 = var_0_0.MapInfo[arg_1_0]
 
-	return setmetatable(Clone(slot1.frame), {
-		__index = function (slot0, slot1)
-			slot3 = 100
+	return setmetatable(Clone(var_1_0.frame), {
+		__index = function(arg_2_0, arg_2_1)
+			local var_2_0 = 0
+			local var_2_1 = 100
 
-			for slot7, slot8 in pairs(slot0) do
-				if slot7 < slot1 and 0 < slot7 then
-					slot2 = slot7
+			for iter_2_0, iter_2_1 in pairs(arg_2_0) do
+				if iter_2_0 < arg_2_1 and var_2_0 < iter_2_0 then
+					var_2_0 = iter_2_0
 				end
 
-				if slot1 < slot7 and slot7 < slot3 then
-					slot3 = slot7
+				if arg_2_1 < iter_2_0 and iter_2_0 < var_2_1 then
+					var_2_1 = iter_2_0
 				end
 			end
 
-			slot4 = (slot1 - slot2) / (slot3 - slot2)
+			local var_2_2 = (arg_2_1 - var_2_0) / (var_2_1 - var_2_0)
 
-			return (1 - slot4) * slot0[slot2] + slot4 * slot0[slot3]
+			return (1 - var_2_2) * arg_2_0[var_2_0] + var_2_2 * arg_2_0[var_2_1]
 		end
-	}), slot1.all
+	}), var_1_0.all
 end
 
-return slot0
+return var_0_0

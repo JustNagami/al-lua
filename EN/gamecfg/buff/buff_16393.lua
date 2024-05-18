@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "airPower",
+				number = 1500
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "dodgeRateExtra",
+				number = 0.045
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -248,34 +277,5 @@ return {
 	stack = 1,
 	id = 16393,
 	icon = 16390,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "airPower",
-				number = 1500
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "dodgeRateExtra",
-				number = 0.045
-			}
-		}
-	}
+	last_effect = ""
 }

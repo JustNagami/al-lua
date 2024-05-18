@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minWeaponNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10690,
+				check_weapon = true,
+				label = {
+					"KMS",
+					"CV"
+				}
+			}
+		}
+	},
 	{
 		shipInfoScene = {
 			equip = {
@@ -139,23 +157,5 @@ return {
 	stack = 1,
 	id = 10690,
 	icon = 10690,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minWeaponNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10690,
-				check_weapon = true,
-				label = {
-					"KMS",
-					"CV"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

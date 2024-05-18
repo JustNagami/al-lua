@@ -1,4 +1,32 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "antiSubPower",
+				number = 500
+			}
+		},
+		{
+			type = "BattleBuffNewWeapon",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				weapon_id = 62431
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -238,33 +266,5 @@ return {
 	stack = 1,
 	id = 16017,
 	icon = 16010,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "antiSubPower",
-				number = 500
-			}
-		},
-		{
-			type = "BattleBuffNewWeapon",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				weapon_id = 62431
-			}
-		}
-	}
+	last_effect = ""
 }

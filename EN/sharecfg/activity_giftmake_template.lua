@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_giftmake_template = {
 	{
 		reward = 900028,

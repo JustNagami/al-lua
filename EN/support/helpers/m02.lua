@@ -1,705 +1,837 @@
-slot0 = UnityEngine
+﻿local var_0_0 = UnityEngine
 
-function flog(slot0, slot1)
-	if slot0 and slot1 and pg.ConnectionMgr.GetInstance():isConnected() then
+function flog(arg_1_0, arg_1_1)
+	if arg_1_0 and arg_1_1 and pg.ConnectionMgr.GetInstance():isConnected() then
 		pg.m02:sendNotification(GAME.SEND_CMD, {
 			cmd = "log",
-			arg1 = slot0,
-			arg2 = slot1
+			arg1 = arg_1_0,
+			arg2 = arg_1_1
 		})
 	end
 end
 
-function throttle(slot0, slot1, slot2)
-	slot3, slot4, slot5 = nil
-	slot6 = 0
+function throttle(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0
+	local var_2_1
+	local var_2_2
+	local var_2_3 = 0
 
-	function slot7()
-		uv0 = uv1 and Time.unscaledTime or 0
-		uv2 = nil
-		uv3 = uv4(unpackEx(uv5))
+	local function var_2_4()
+		var_2_3 = arg_2_2 and Time.unscaledTime or 0
+		var_2_0 = nil
+		var_2_2 = arg_2_0(unpackEx(var_2_1))
 
-		if not uv2 then
-			uv5 = nil
+		if not var_2_0 then
+			var_2_1 = nil
 		end
 	end
 
-	return function (...)
-		slot0 = Time.unscaledTime
+	return function(...)
+		local var_4_0 = Time.unscaledTime
 
-		if not uv0 and not uv1 then
-			uv0 = slot0
+		if not var_2_3 and not arg_2_2 then
+			var_2_3 = var_4_0
 		end
 
-		uv3 = packEx(...)
+		local var_4_1 = arg_2_1 - (var_4_0 - var_2_3)
 
-		if uv2 - (slot0 - uv0) <= 0 or uv2 < slot1 then
-			if uv4 then
-				uv4:Stop()
+		var_2_1 = packEx(...)
 
-				uv4 = nil
+		if var_4_1 <= 0 or var_4_1 > arg_2_1 then
+			if var_2_0 then
+				var_2_0:Stop()
+
+				var_2_0 = nil
 			end
 
-			uv0 = slot0
-			uv5 = uv6(unpackEx(uv3))
+			var_2_3 = var_4_0
+			var_2_2 = arg_2_0(unpackEx(var_2_1))
 
-			if not uv4 then
-				uv3 = nil
+			if not var_2_0 then
+				var_2_1 = nil
 			end
-		elseif not uv4 and uv1 then
-			uv4 = Timer.New(uv7, slot1, 1)
+		elseif not var_2_0 and arg_2_2 then
+			var_2_0 = Timer.New(var_2_4, var_4_1, 1)
 
-			uv4:Start()
+			var_2_0:Start()
 		end
 
-		return uv5
+		return var_2_2
 	end
 end
 
-function debounce(slot0, slot1, slot2)
-	slot3, slot4, slot5, slot6, slot7 = nil
+function debounce(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0
+	local var_5_1
+	local var_5_2
+	local var_5_3
+	local var_5_4
 
-	function slot7()
-		if Time.unscaledTime - uv0 < uv1 and slot0 > 0 then
-			uv2 = Timer.New(uv3, uv1 - slot0, 1)
+	local function var_5_5()
+		local var_6_0 = Time.unscaledTime - var_5_2
 
-			uv2:Start()
+		if var_6_0 < arg_5_1 and var_6_0 > 0 then
+			var_5_0 = Timer.New(var_5_5, arg_5_1 - var_6_0, 1)
+
+			var_5_0:Start()
 		else
-			uv2 = nil
+			var_5_0 = nil
 
-			if not uv4 then
-				uv5 = uv6(unpackEx(uv7))
+			if not arg_5_2 then
+				var_5_3 = arg_5_0(unpackEx(var_5_1))
 
-				if not uv2 then
-					uv7 = nil
+				if not var_5_0 then
+					var_5_1 = nil
 				end
 			else
-				uv4 = false
+				arg_5_2 = false
 			end
 		end
 	end
 
-	return function (...)
-		uv0 = packEx(...)
-		uv1 = Time.unscaledTime
-		slot0 = uv2 and not uv3
+	return function(...)
+		var_5_1 = packEx(...)
+		var_5_2 = Time.unscaledTime
 
-		if not uv3 then
-			uv3 = Timer.New(uv4, uv5, 1)
+		local var_7_0 = arg_5_2 and not var_5_0
 
-			uv3:Start()
+		if not var_5_0 then
+			var_5_0 = Timer.New(var_5_5, arg_5_1, 1)
+
+			var_5_0:Start()
 		end
 
-		if slot0 then
-			uv6 = uv7(unpackEx(uv0))
-			uv0 = nil
+		if var_7_0 then
+			var_5_3 = arg_5_0(unpackEx(var_5_1))
+			var_5_1 = nil
 		end
 
-		return uv6
+		return var_5_3
 	end
 end
 
-function createLog(slot0, slot1)
-	if LOG and slot1 then
-		return function (...)
-			print(uv0 .. ": ", ...)
+function createLog(arg_8_0, arg_8_1)
+	if LOG and arg_8_1 then
+		return function(...)
+			print(arg_8_0 .. ": ", ...)
 		end
 	else
-		print(slot0 .. ": log disabled")
+		print(arg_8_0 .. ": log disabled")
 
-		return function ()
+		return function()
+			return
 		end
 	end
 end
 
-function getProxy(slot0)
+function getProxy(arg_11_0)
 	assert(pg.m02, "game is not started")
 
-	return pg.m02:retrieveProxy(slot0.__cname)
+	return pg.m02:retrieveProxy(arg_11_0.__cname)
 end
 
-function LoadAndInstantiateAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot1 = HXSet.autoHxShift(slot0 .. "/", slot1)
+function LoadAndInstantiateAsync(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	arg_12_4 = defaultValue(arg_12_4, true)
+	arg_12_3 = defaultValue(arg_12_3, true)
+	arg_12_0, arg_12_1 = HXSet.autoHxShift(arg_12_0 .. "/", arg_12_1)
 
-	ResourceMgr.Inst:getAssetAsync(slot5 .. slot1, slot1, uv0.Events.UnityAction_UnityEngine_Object(function (slot0)
-		uv0(Instantiate(slot0))
-	end), defaultValue(slot3, true), defaultValue(slot4, true))
+	ResourceMgr.Inst:getAssetAsync(arg_12_0 .. arg_12_1, arg_12_1, var_0_0.Events.UnityAction_UnityEngine_Object(function(arg_13_0)
+		local var_13_0 = Instantiate(arg_13_0)
+
+		arg_12_2(var_13_0)
+	end), arg_12_3, arg_12_4)
 end
 
-function LoadAndInstantiateSync(slot0, slot1, slot2, slot3)
-	slot4, slot1 = HXSet.autoHxShift(slot0 .. "/", slot1)
+function LoadAndInstantiateSync(arg_14_0, arg_14_1, arg_14_2, arg_14_3)
+	arg_14_3 = defaultValue(arg_14_3, true)
+	arg_14_2 = defaultValue(arg_14_2, true)
+	arg_14_0, arg_14_1 = HXSet.autoHxShift(arg_14_0 .. "/", arg_14_1)
 
-	return Instantiate(ResourceMgr.Inst:getAssetSync(slot4 .. slot1, slot1, defaultValue(slot2, true), defaultValue(slot3, true)))
+	local var_14_0 = ResourceMgr.Inst:getAssetSync(arg_14_0 .. arg_14_1, arg_14_1, arg_14_2, arg_14_3)
+
+	return (Instantiate(var_14_0))
 end
 
-slot1 = {}
+local var_0_1 = {}
 
-function LoadSprite(slot0, slot1)
-	slot2, slot3 = HXSet.autoHxShiftPath(slot0, slot1)
+function LoadSprite(arg_15_0, arg_15_1)
+	arg_15_0, arg_15_1 = HXSet.autoHxShiftPath(arg_15_0, arg_15_1)
 
-	return ResourceMgr.Inst:getAssetSync(slot2, slot3 or "", typeof(Sprite), true, false)
+	return ResourceMgr.Inst:getAssetSync(arg_15_0, arg_15_1 or "", typeof(Sprite), true, false)
 end
 
-function LoadSpriteAtlasAsync(slot0, slot1, slot2)
-	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
+function LoadSpriteAtlasAsync(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_0, arg_16_1 = HXSet.autoHxShiftPath(arg_16_0, arg_16_1)
 
-	ResourceMgr.Inst:getAssetAsync(slot3, slot4 or "", typeof(Sprite), uv0.Events.UnityAction_UnityEngine_Object(function (slot0)
-		uv0(slot0)
+	ResourceMgr.Inst:getAssetAsync(arg_16_0, arg_16_1 or "", typeof(Sprite), var_0_0.Events.UnityAction_UnityEngine_Object(function(arg_17_0)
+		arg_16_2(arg_17_0)
 	end), true, false)
 end
 
-function LoadSpriteAsync(slot0, slot1)
-	LoadSpriteAtlasAsync(slot0, nil, slot1)
+function LoadSpriteAsync(arg_18_0, arg_18_1)
+	LoadSpriteAtlasAsync(arg_18_0, nil, arg_18_1)
 end
 
-function LoadAny(slot0, slot1, slot2)
-	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
+function LoadAny(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0, arg_19_1 = HXSet.autoHxShiftPath(arg_19_0, arg_19_1)
 
-	return ResourceMgr.Inst:getAssetSync(slot3, slot4, slot2, true, false)
+	return ResourceMgr.Inst:getAssetSync(arg_19_0, arg_19_1, arg_19_2, true, false)
 end
 
-function LoadAnyAsync(slot0, slot1, slot2, slot3)
-	slot4, slot5 = HXSet.autoHxShiftPath(slot0, slot1)
+function LoadAnyAsync(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
+	arg_20_0, arg_20_1 = HXSet.autoHxShiftPath(arg_20_0, arg_20_1)
 
-	return ResourceMgr.Inst:getAssetAsync(slot4, slot5, slot2, slot3, true, false)
+	return ResourceMgr.Inst:getAssetAsync(arg_20_0, arg_20_1, arg_20_2, arg_20_3, true, false)
 end
 
-function LoadImageSpriteAtlasAsync(slot0, slot1, slot2, slot3)
-	slot4 = slot2:GetComponent(typeof(Image))
-	slot4.enabled = false
-	uv0[slot4] = slot0
+function LoadImageSpriteAtlasAsync(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
+	local var_21_0 = arg_21_2:GetComponent(typeof(Image))
 
-	LoadSpriteAtlasAsync(slot0, slot1, function (slot0)
-		if not IsNil(uv0) and uv1[uv0] == uv2 then
-			uv1[uv0] = nil
-			uv0.enabled = true
-			uv0.sprite = slot0
+	var_21_0.enabled = false
+	var_0_1[var_21_0] = arg_21_0
 
-			if uv3 then
-				uv0:SetNativeSize()
+	LoadSpriteAtlasAsync(arg_21_0, arg_21_1, function(arg_22_0)
+		if not IsNil(var_21_0) and var_0_1[var_21_0] == arg_21_0 then
+			var_0_1[var_21_0] = nil
+			var_21_0.enabled = true
+			var_21_0.sprite = arg_22_0
+
+			if arg_21_3 then
+				var_21_0:SetNativeSize()
 			end
 		end
 	end)
 end
 
-function LoadImageSpriteAsync(slot0, slot1, slot2)
-	LoadImageSpriteAtlasAsync(slot0, nil, slot1, slot2)
+function LoadImageSpriteAsync(arg_23_0, arg_23_1, arg_23_2)
+	LoadImageSpriteAtlasAsync(arg_23_0, nil, arg_23_1, arg_23_2)
 end
 
-function GetSpriteFromAtlas(slot0, slot1)
-	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
+function GetSpriteFromAtlas(arg_24_0, arg_24_1)
+	local var_24_0
 
-	PoolMgr.GetInstance():GetSprite(slot3, slot4, false, function (slot0)
-		uv0 = slot0
+	arg_24_0, arg_24_1 = HXSet.autoHxShiftPath(arg_24_0, arg_24_1)
+
+	PoolMgr.GetInstance():GetSprite(arg_24_0, arg_24_1, false, function(arg_25_0)
+		var_24_0 = arg_25_0
 	end)
 
-	return nil
+	return var_24_0
 end
 
-function GetSpriteFromAtlasAsync(slot0, slot1, slot2)
-	slot3, slot4 = HXSet.autoHxShiftPath(slot0, slot1)
+function GetSpriteFromAtlasAsync(arg_26_0, arg_26_1, arg_26_2)
+	arg_26_0, arg_26_1 = HXSet.autoHxShiftPath(arg_26_0, arg_26_1)
 
-	PoolMgr.GetInstance():GetSprite(slot3, slot4, true, function (slot0)
-		uv0(slot0)
+	PoolMgr.GetInstance():GetSprite(arg_26_0, arg_26_1, true, function(arg_27_0)
+		arg_26_2(arg_27_0)
 	end)
 end
 
-function GetImageSpriteFromAtlasAsync(slot0, slot1, slot2, slot3)
-	slot0, slot1 = HXSet.autoHxShiftPath(slot0, slot1)
-	slot4 = slot2:GetComponent(typeof(Image))
-	slot4.enabled = false
-	uv0[slot4] = slot0 .. slot1
+function GetImageSpriteFromAtlasAsync(arg_28_0, arg_28_1, arg_28_2, arg_28_3)
+	arg_28_0, arg_28_1 = HXSet.autoHxShiftPath(arg_28_0, arg_28_1)
 
-	GetSpriteFromAtlasAsync(slot0, slot1, function (slot0)
-		if not IsNil(uv0) and uv1[uv0] == uv2 .. uv3 then
-			uv1[uv0] = nil
-			uv0.enabled = true
-			uv0.sprite = slot0
+	local var_28_0 = arg_28_2:GetComponent(typeof(Image))
 
-			if uv4 then
-				uv0:SetNativeSize()
+	var_28_0.enabled = false
+	var_0_1[var_28_0] = arg_28_0 .. arg_28_1
+
+	GetSpriteFromAtlasAsync(arg_28_0, arg_28_1, function(arg_29_0)
+		if not IsNil(var_28_0) and var_0_1[var_28_0] == arg_28_0 .. arg_28_1 then
+			var_0_1[var_28_0] = nil
+			var_28_0.enabled = true
+			var_28_0.sprite = arg_29_0
+
+			if arg_28_3 then
+				var_28_0:SetNativeSize()
 			end
 		end
 	end)
 end
 
-function SetAction(slot0, slot1, slot2)
-	GetComponent(slot0, "SkeletonGraphic").AnimationState:SetAnimation(0, slot1, defaultValue(slot2, true))
+function SetAction(arg_30_0, arg_30_1, arg_30_2)
+	GetComponent(arg_30_0, "SkeletonGraphic").AnimationState:SetAnimation(0, arg_30_1, defaultValue(arg_30_2, true))
 end
 
-function SetActionCallback(slot0, slot1)
-	GetOrAddComponent(slot0, typeof(SpineAnimUI)):SetActionCallBack(slot1)
+function SetActionCallback(arg_31_0, arg_31_1)
+	GetOrAddComponent(arg_31_0, typeof(SpineAnimUI)):SetActionCallBack(arg_31_1)
 end
 
-function emojiText(slot0, slot1)
-	slot2 = buildTempAB("emojis", false)
-	slot4 = GetComponent(slot0, "MeshRenderer")
-	slot5 = Shader.Find("UI/Unlit/Transparent")
-	slot8 = {}
-	slot9 = 0
-	GetComponent(slot0, "TextMesh").text = string.gsub(slot1, "#(%d+)#", function (slot0)
-		if not uv0[slot0] then
-			uv1 = uv1 + 1
-			slot2 = Material.New(uv2)
-			slot2.mainTexture = uv3:LoadAssetSync("emoji" .. slot0, false, false)
-
-			table.insert(uv4, slot2)
-
-			uv0[slot0] = uv1
-			slot1 = uv1
-		end
-
-		return "<quad material=" .. uv1 .. " />"
-	end)
-	slot4.materials = {
-		slot4.materials[0]
+function emojiText(arg_32_0, arg_32_1)
+	local var_32_0 = buildTempAB("emojis", false)
+	local var_32_1 = GetComponent(arg_32_0, "TextMesh")
+	local var_32_2 = GetComponent(arg_32_0, "MeshRenderer")
+	local var_32_3 = Shader.Find("UI/Unlit/Transparent")
+	local var_32_4 = var_32_2.materials
+	local var_32_5 = {
+		var_32_4[0]
 	}
+	local var_32_6 = {}
+	local var_32_7 = 0
+
+	var_32_1.text = string.gsub(arg_32_1, "#(%d+)#", function(arg_33_0)
+		if not var_32_6[arg_33_0] then
+			var_32_7 = var_32_7 + 1
+
+			local var_33_0 = Material.New(var_32_3)
+
+			var_33_0.mainTexture = var_32_0:LoadAssetSync("emoji" .. arg_33_0, false, false)
+
+			table.insert(var_32_5, var_33_0)
+
+			var_32_6[arg_33_0] = var_32_7
+
+			local var_33_1 = var_32_7
+		end
+
+		return "<quad material=" .. var_32_7 .. " />"
+	end)
+	var_32_2.materials = var_32_5
 
 	ResourceMgr.Inst:ClearBundleRef("emojis", false, false)
 end
 
-function setPaintingImg(slot0, slot1)
-	setImageSprite(slot0, LoadSprite("painting/" .. slot1) or LoadSprite("painting/unknown"))
-	resetAspectRatio(slot0)
+function setPaintingImg(arg_34_0, arg_34_1)
+	local var_34_0 = LoadSprite("painting/" .. arg_34_1) or LoadSprite("painting/unknown")
+
+	setImageSprite(arg_34_0, var_34_0)
+	resetAspectRatio(arg_34_0)
 end
 
-function setPaintingPrefab(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot0, "fitter")
+function setPaintingPrefab(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
+	local var_35_0 = findTF(arg_35_0, "fitter")
 
-	assert(slot4, "请添加子物体fitter")
-	removeAllChildren(slot4)
+	assert(var_35_0, "请添加子物体fitter")
+	removeAllChildren(var_35_0)
 
-	slot5 = GetOrAddComponent(slot4, "PaintingScaler")
-	slot5.FrameName = slot2 or ""
-	slot5.Tween = 1
-	slot6 = slot1
+	local var_35_1 = GetOrAddComponent(var_35_0, "PaintingScaler")
 
-	if not slot3 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot1, 0) ~= 0 then
-		slot1 = slot1 .. "_n"
+	var_35_1.FrameName = arg_35_2 or ""
+	var_35_1.Tween = 1
+
+	local var_35_2 = arg_35_1
+
+	if not arg_35_3 and PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_35_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_35_1, 0) ~= 0 then
+		arg_35_1 = arg_35_1 .. "_n"
 	end
 
-	PoolMgr.GetInstance():GetPainting(slot1, false, function (slot0)
-		setParent(slot0, uv0, false)
+	PoolMgr.GetInstance():GetPainting(arg_35_1, false, function(arg_36_0)
+		setParent(arg_36_0, var_35_0, false)
 
-		if not IsNil(findTF(slot0, "Touch")) then
-			setActive(slot1, false)
+		local var_36_0 = findTF(arg_36_0, "Touch")
+
+		if not IsNil(var_36_0) then
+			setActive(var_36_0, false)
 		end
 
-		if not IsNil(findTF(slot0, "hx")) then
-			setActive(slot2, HXSet.isHx())
+		local var_36_1 = findTF(arg_36_0, "hx")
+
+		if not IsNil(var_36_1) then
+			setActive(var_36_1, HXSet.isHx())
 		end
 
-		ShipExpressionHelper.SetExpression(uv0:GetChild(0), uv1)
+		ShipExpressionHelper.SetExpression(var_35_0:GetChild(0), var_35_2)
 	end)
 end
 
-slot2 = {}
+local var_0_2 = {}
 
-function setPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot1
+function setPaintingPrefabAsync(arg_37_0, arg_37_1, arg_37_2, arg_37_3, arg_37_4)
+	local var_37_0 = arg_37_1
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. slot1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot1, 0) ~= 0 then
-		slot1 = slot1 .. "_n"
+	if PathMgr.FileExists(PathMgr.getAssetBundle("painting/" .. arg_37_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_37_1, 0) ~= 0 then
+		arg_37_1 = arg_37_1 .. "_n"
 	end
 
-	LoadPaintingPrefabAsync(slot0, slot5, slot1, slot2, slot3)
+	LoadPaintingPrefabAsync(arg_37_0, var_37_0, arg_37_1, arg_37_2, arg_37_3)
 end
 
-function LoadPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5 = findTF(slot0, "fitter")
+function LoadPaintingPrefabAsync(arg_38_0, arg_38_1, arg_38_2, arg_38_3, arg_38_4)
+	local var_38_0 = findTF(arg_38_0, "fitter")
 
-	assert(slot5, "请添加子物体fitter")
-	removeAllChildren(slot5)
+	assert(var_38_0, "请添加子物体fitter")
+	removeAllChildren(var_38_0)
 
-	slot6 = GetOrAddComponent(slot5, "PaintingScaler")
-	slot6.FrameName = slot3 or ""
-	slot6.Tween = 1
-	uv0[slot0] = slot2
+	local var_38_1 = GetOrAddComponent(var_38_0, "PaintingScaler")
 
-	PoolMgr.GetInstance():GetPainting(slot2, true, function (slot0)
-		if IsNil(uv0) or uv1[uv0] ~= uv2 then
-			PoolMgr.GetInstance():ReturnPainting(uv2, slot0)
+	var_38_1.FrameName = arg_38_3 or ""
+	var_38_1.Tween = 1
+	var_0_2[arg_38_0] = arg_38_2
+
+	PoolMgr.GetInstance():GetPainting(arg_38_2, true, function(arg_39_0)
+		if IsNil(arg_38_0) or var_0_2[arg_38_0] ~= arg_38_2 then
+			PoolMgr.GetInstance():ReturnPainting(arg_38_2, arg_39_0)
 
 			return
 		else
-			setParent(slot0, uv3, false)
+			setParent(arg_39_0, var_38_0, false)
 
-			uv1[uv0] = nil
+			var_0_2[arg_38_0] = nil
 
-			ShipExpressionHelper.SetExpression(slot0, uv4)
+			ShipExpressionHelper.SetExpression(arg_39_0, arg_38_1)
 		end
 
-		if not IsNil(findTF(slot0, "Touch")) then
-			setActive(slot1, false)
+		local var_39_0 = findTF(arg_39_0, "Touch")
+
+		if not IsNil(var_39_0) then
+			setActive(var_39_0, false)
 		end
 
-		if not IsNil(findTF(slot0, "Drag")) then
-			setActive(slot2, false)
+		local var_39_1 = findTF(arg_39_0, "Drag")
+
+		if not IsNil(var_39_1) then
+			setActive(var_39_1, false)
 		end
 
-		if not IsNil(findTF(slot0, "hx")) then
-			setActive(slot3, HXSet.isHx())
+		local var_39_2 = findTF(arg_39_0, "hx")
+
+		if not IsNil(var_39_2) then
+			setActive(var_39_2, HXSet.isHx())
 		end
 
-		if uv5 then
-			uv5()
+		if arg_38_4 then
+			arg_38_4()
 		end
 	end)
 end
 
-function retPaintingPrefab(slot0, slot1, slot2)
-	if slot0 and slot1 then
-		if findTF(slot0, "fitter") and slot3.childCount > 0 and not IsNil(slot3:GetChild(0)) then
-			if not IsNil(findTF(slot4, "Touch")) then
-				eachChild(slot5, function (slot0)
-					if not IsNil(slot0:GetComponent(typeof(Button))) then
-						removeOnButton(slot0)
-					end
-				end)
-			end
+function retPaintingPrefab(arg_40_0, arg_40_1, arg_40_2)
+	if arg_40_0 and arg_40_1 then
+		local var_40_0 = findTF(arg_40_0, "fitter")
 
-			if not slot2 then
-				PoolMgr.GetInstance():ReturnPainting(string.gsub(slot4.name, "%(Clone%)", ""), slot4.gameObject)
-			else
-				PoolMgr.GetInstance():ReturnPaintingWithPrefix(string.gsub(slot4.name, "%(Clone%)", ""), slot4.gameObject, slot2)
+		if var_40_0 and var_40_0.childCount > 0 then
+			local var_40_1 = var_40_0:GetChild(0)
+
+			if not IsNil(var_40_1) then
+				local var_40_2 = findTF(var_40_1, "Touch")
+
+				if not IsNil(var_40_2) then
+					eachChild(var_40_2, function(arg_41_0)
+						local var_41_0 = arg_41_0:GetComponent(typeof(Button))
+
+						if not IsNil(var_41_0) then
+							removeOnButton(arg_41_0)
+						end
+					end)
+				end
+
+				if not arg_40_2 then
+					PoolMgr.GetInstance():ReturnPainting(string.gsub(var_40_1.name, "%(Clone%)", ""), var_40_1.gameObject)
+				else
+					PoolMgr.GetInstance():ReturnPaintingWithPrefix(string.gsub(var_40_1.name, "%(Clone%)", ""), var_40_1.gameObject, arg_40_2)
+				end
 			end
 		end
 
-		uv0[slot0] = nil
+		var_0_2[arg_40_0] = nil
 	end
 end
 
-function numberFormat(slot0, slot1)
-	slot2 = ""
-	slot4 = string.len(tostring(slot0))
+function numberFormat(arg_42_0, arg_42_1)
+	local var_42_0 = ""
+	local var_42_1 = tostring(arg_42_0)
+	local var_42_2 = string.len(var_42_1)
 
-	if slot1 == nil then
-		slot1 = ","
+	if arg_42_1 == nil then
+		arg_42_1 = ","
 	end
 
-	for slot8 = 1, slot4 do
-		if slot8 % 3 == 0 and slot4 - slot8 ~= 0 then
-			slot2 = tostring(slot1) .. (string.char(string.byte(slot3, slot4 + 1 - slot8)) .. slot2)
+	arg_42_1 = tostring(arg_42_1)
+
+	for iter_42_0 = 1, var_42_2 do
+		var_42_0 = string.char(string.byte(var_42_1, var_42_2 + 1 - iter_42_0)) .. var_42_0
+
+		if iter_42_0 % 3 == 0 and var_42_2 - iter_42_0 ~= 0 then
+			var_42_0 = arg_42_1 .. var_42_0
 		end
 	end
 
-	return slot2
+	return var_42_0
 end
 
-function usMoneyFormat(slot0, slot1)
-	if slot0 % 100 > 0 then
-		if math.floor(slot0 / 100) < 1 then
-			return "0." .. (slot2 > 10 and slot2 or "0" .. slot2)
+function usMoneyFormat(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_0 % 100
+	local var_43_1 = math.floor(arg_43_0 / 100)
+
+	if var_43_0 > 0 then
+		var_43_0 = var_43_0 > 10 and var_43_0 or "0" .. var_43_0
+
+		if var_43_1 < 1 then
+			return "0." .. var_43_0
 		else
-			return numberFormat(slot3, slot1) .. "." .. slot2
+			return numberFormat(var_43_1, arg_43_1) .. "." .. var_43_0
 		end
 	else
-		return numberFormat(slot3, slot1)
+		return numberFormat(var_43_1, arg_43_1)
 	end
 end
 
-function checkPaintingPrefab(slot0, slot1, slot2, slot3, slot4)
-	slot5 = findTF(slot0, "fitter")
+function checkPaintingPrefab(arg_44_0, arg_44_1, arg_44_2, arg_44_3, arg_44_4)
+	local var_44_0 = findTF(arg_44_0, "fitter")
 
-	assert(slot5, "请添加子物体fitter")
-	removeAllChildren(slot5)
+	assert(var_44_0, "请添加子物体fitter")
+	removeAllChildren(var_44_0)
 
-	slot6 = GetOrAddComponent(slot5, "PaintingScaler")
-	slot6.FrameName = slot2 or ""
-	slot6.Tween = 1
-	slot8 = slot1
+	local var_44_1 = GetOrAddComponent(var_44_0, "PaintingScaler")
 
-	if not slot3 and PathMgr.FileExists(PathMgr.getAssetBundle((slot4 or "painting/") .. slot1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. slot1, 0) ~= 0 then
-		slot1 = slot1 .. "_n"
+	var_44_1.FrameName = arg_44_2 or ""
+	var_44_1.Tween = 1
+
+	local var_44_2 = arg_44_4 or "painting/"
+	local var_44_3 = arg_44_1
+
+	if not arg_44_3 and PathMgr.FileExists(PathMgr.getAssetBundle(var_44_2 .. arg_44_1 .. "_n")) and PlayerPrefs.GetInt("paint_hide_other_obj_" .. arg_44_1, 0) ~= 0 then
+		arg_44_1 = arg_44_1 .. "_n"
 	end
 
-	return slot5, slot1, slot8
+	return var_44_0, arg_44_1, var_44_3
 end
 
-function onLoadedPaintingPrefab(slot0)
-	slot1 = slot0.paintingTF
-	slot3 = slot0.defaultPaintingName
+function onLoadedPaintingPrefab(arg_45_0)
+	local var_45_0 = arg_45_0.paintingTF
+	local var_45_1 = arg_45_0.fitterTF
+	local var_45_2 = arg_45_0.defaultPaintingName
 
-	setParent(slot1, slot0.fitterTF, false)
+	setParent(var_45_0, var_45_1, false)
 
-	if not IsNil(findTF(slot1, "Touch")) then
-		setActive(slot4, false)
+	local var_45_3 = findTF(var_45_0, "Touch")
+
+	if not IsNil(var_45_3) then
+		setActive(var_45_3, false)
 	end
 
-	if not IsNil(findTF(slot1, "hx")) then
-		setActive(slot5, HXSet.isHx())
+	local var_45_4 = findTF(var_45_0, "hx")
+
+	if not IsNil(var_45_4) then
+		setActive(var_45_4, HXSet.isHx())
 	end
 
-	ShipExpressionHelper.SetExpression(slot2:GetChild(0), slot3)
+	ShipExpressionHelper.SetExpression(var_45_1:GetChild(0), var_45_2)
 end
 
-function onLoadedPaintingPrefabAsync(slot0)
-	slot2 = slot0.fitterTF
-	slot4 = slot0.paintingName
-	slot5 = slot0.defaultPaintingName
-	slot6 = slot0.callback
+function onLoadedPaintingPrefabAsync(arg_46_0)
+	local var_46_0 = arg_46_0.paintingTF
+	local var_46_1 = arg_46_0.fitterTF
+	local var_46_2 = arg_46_0.objectOrTransform
+	local var_46_3 = arg_46_0.paintingName
+	local var_46_4 = arg_46_0.defaultPaintingName
+	local var_46_5 = arg_46_0.callback
 
-	if IsNil(slot0.objectOrTransform) or uv0[slot3] ~= slot4 then
-		PoolMgr.GetInstance():ReturnPainting(slot4, slot0.paintingTF)
+	if IsNil(var_46_2) or var_0_2[var_46_2] ~= var_46_3 then
+		PoolMgr.GetInstance():ReturnPainting(var_46_3, var_46_0)
 
 		return
 	else
-		setParent(slot1, slot2, false)
+		setParent(var_46_0, var_46_1, false)
 
-		uv0[slot3] = nil
+		var_0_2[var_46_2] = nil
 
-		ShipExpressionHelper.SetExpression(slot1, slot5)
+		ShipExpressionHelper.SetExpression(var_46_0, var_46_4)
 	end
 
-	if not IsNil(findTF(slot1, "Touch")) then
-		setActive(slot7, false)
+	local var_46_6 = findTF(var_46_0, "Touch")
+
+	if not IsNil(var_46_6) then
+		setActive(var_46_6, false)
 	end
 
-	if not IsNil(findTF(slot1, "hx")) then
-		setActive(slot8, HXSet.isHx())
+	local var_46_7 = findTF(var_46_0, "hx")
+
+	if not IsNil(var_46_7) then
+		setActive(var_46_7, HXSet.isHx())
 	end
 
-	if slot6 then
-		slot6()
+	if var_46_5 then
+		var_46_5()
 	end
 end
 
-function setCommanderPaintingPrefab(slot0, slot1, slot2, slot3)
-	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
+function setCommanderPaintingPrefab(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
+	local var_47_0, var_47_1, var_47_2 = checkPaintingPrefab(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot5, false, function (slot0)
-		onLoadedPaintingPrefab({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			defaultPaintingName = uv1
-		})
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_47_1, false, function(arg_48_0)
+		local var_48_0 = {
+			paintingTF = arg_48_0,
+			fitterTF = var_47_0,
+			defaultPaintingName = var_47_2
+		}
+
+		onLoadedPaintingPrefab(var_48_0)
 	end, "commanderpainting/")
 end
 
-function setCommanderPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
-	uv0[slot0] = slot6
+function setCommanderPaintingPrefabAsync(arg_49_0, arg_49_1, arg_49_2, arg_49_3, arg_49_4)
+	local var_49_0, var_49_1, var_49_2 = checkPaintingPrefab(arg_49_0, arg_49_1, arg_49_2, arg_49_4)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot6, true, function (slot0)
-		onLoadedPaintingPrefabAsync({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			objectOrTransform = uv1,
-			paintingName = uv2,
-			defaultPaintingName = uv3,
-			callback = uv4
-		})
+	var_0_2[arg_49_0] = var_49_1
+
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_49_1, true, function(arg_50_0)
+		local var_50_0 = {
+			paintingTF = arg_50_0,
+			fitterTF = var_49_0,
+			objectOrTransform = arg_49_0,
+			paintingName = var_49_1,
+			defaultPaintingName = var_49_2,
+			callback = arg_49_3
+		}
+
+		onLoadedPaintingPrefabAsync(var_50_0)
 	end, "commanderpainting/")
 end
 
-function retCommanderPaintingPrefab(slot0, slot1)
-	retPaintingPrefab(slot0, slot1, "commanderpainting/")
+function retCommanderPaintingPrefab(arg_51_0, arg_51_1)
+	retPaintingPrefab(arg_51_0, arg_51_1, "commanderpainting/")
 end
 
-function setMetaPaintingPrefab(slot0, slot1, slot2, slot3)
-	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
+function setMetaPaintingPrefab(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
+	local var_52_0, var_52_1, var_52_2 = checkPaintingPrefab(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot5, false, function (slot0)
-		onLoadedPaintingPrefab({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			defaultPaintingName = uv1
-		})
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_52_1, false, function(arg_53_0)
+		local var_53_0 = {
+			paintingTF = arg_53_0,
+			fitterTF = var_52_0,
+			defaultPaintingName = var_52_2
+		}
+
+		onLoadedPaintingPrefab(var_53_0)
 	end, "metapainting/")
 end
 
-function setMetaPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
-	uv0[slot0] = slot6
+function setMetaPaintingPrefabAsync(arg_54_0, arg_54_1, arg_54_2, arg_54_3, arg_54_4)
+	local var_54_0, var_54_1, var_54_2 = checkPaintingPrefab(arg_54_0, arg_54_1, arg_54_2, arg_54_4)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot6, true, function (slot0)
-		onLoadedPaintingPrefabAsync({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			objectOrTransform = uv1,
-			paintingName = uv2,
-			defaultPaintingName = uv3,
-			callback = uv4
-		})
+	var_0_2[arg_54_0] = var_54_1
+
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_54_1, true, function(arg_55_0)
+		local var_55_0 = {
+			paintingTF = arg_55_0,
+			fitterTF = var_54_0,
+			objectOrTransform = arg_54_0,
+			paintingName = var_54_1,
+			defaultPaintingName = var_54_2,
+			callback = arg_54_3
+		}
+
+		onLoadedPaintingPrefabAsync(var_55_0)
 	end, "metapainting/")
 end
 
-function retMetaPaintingPrefab(slot0, slot1)
-	retPaintingPrefab(slot0, slot1, "metapainting/")
+function retMetaPaintingPrefab(arg_56_0, arg_56_1)
+	retPaintingPrefab(arg_56_0, arg_56_1, "metapainting/")
 end
 
-function setGuildPaintingPrefab(slot0, slot1, slot2, slot3)
-	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
+function setGuildPaintingPrefab(arg_57_0, arg_57_1, arg_57_2, arg_57_3)
+	local var_57_0, var_57_1, var_57_2 = checkPaintingPrefab(arg_57_0, arg_57_1, arg_57_2, arg_57_3)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot5, false, function (slot0)
-		onLoadedPaintingPrefab({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			defaultPaintingName = uv1
-		})
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_57_1, false, function(arg_58_0)
+		local var_58_0 = {
+			paintingTF = arg_58_0,
+			fitterTF = var_57_0,
+			defaultPaintingName = var_57_2
+		}
+
+		onLoadedPaintingPrefab(var_58_0)
 	end, "guildpainting/")
 end
 
-function setGuildPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
-	uv0[slot0] = slot6
+function setGuildPaintingPrefabAsync(arg_59_0, arg_59_1, arg_59_2, arg_59_3, arg_59_4)
+	local var_59_0, var_59_1, var_59_2 = checkPaintingPrefab(arg_59_0, arg_59_1, arg_59_2, arg_59_4)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot6, true, function (slot0)
-		onLoadedPaintingPrefabAsync({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			objectOrTransform = uv1,
-			paintingName = uv2,
-			defaultPaintingName = uv3,
-			callback = uv4
-		})
+	var_0_2[arg_59_0] = var_59_1
+
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_59_1, true, function(arg_60_0)
+		local var_60_0 = {
+			paintingTF = arg_60_0,
+			fitterTF = var_59_0,
+			objectOrTransform = arg_59_0,
+			paintingName = var_59_1,
+			defaultPaintingName = var_59_2,
+			callback = arg_59_3
+		}
+
+		onLoadedPaintingPrefabAsync(var_60_0)
 	end, "guildpainting/")
 end
 
-function retGuildPaintingPrefab(slot0, slot1)
-	retPaintingPrefab(slot0, slot1, "guildpainting/")
+function retGuildPaintingPrefab(arg_61_0, arg_61_1)
+	retPaintingPrefab(arg_61_0, arg_61_1, "guildpainting/")
 end
 
-function setShopPaintingPrefab(slot0, slot1, slot2, slot3)
-	slot4, slot5, slot6 = checkPaintingPrefab(slot0, slot1, slot2, slot3)
+function setShopPaintingPrefab(arg_62_0, arg_62_1, arg_62_2, arg_62_3)
+	local var_62_0, var_62_1, var_62_2 = checkPaintingPrefab(arg_62_0, arg_62_1, arg_62_2, arg_62_3)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot5, false, function (slot0)
-		onLoadedPaintingPrefab({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			defaultPaintingName = uv1
-		})
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_62_1, false, function(arg_63_0)
+		local var_63_0 = {
+			paintingTF = arg_63_0,
+			fitterTF = var_62_0,
+			defaultPaintingName = var_62_2
+		}
+
+		onLoadedPaintingPrefab(var_63_0)
 	end, "shoppainting/")
 end
 
-function retShopPaintingPrefab(slot0, slot1)
-	retPaintingPrefab(slot0, slot1, "shoppainting/")
+function retShopPaintingPrefab(arg_64_0, arg_64_1)
+	retPaintingPrefab(arg_64_0, arg_64_1, "shoppainting/")
 end
 
-function setBuildPaintingPrefabAsync(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7 = checkPaintingPrefab(slot0, slot1, slot2, slot4)
-	uv0[slot0] = slot6
+function setBuildPaintingPrefabAsync(arg_65_0, arg_65_1, arg_65_2, arg_65_3, arg_65_4)
+	local var_65_0, var_65_1, var_65_2 = checkPaintingPrefab(arg_65_0, arg_65_1, arg_65_2, arg_65_4)
 
-	PoolMgr.GetInstance():GetPaintingWithPrefix(slot6, true, function (slot0)
-		onLoadedPaintingPrefabAsync({
-			paintingTF = slot0,
-			fitterTF = uv0,
-			objectOrTransform = uv1,
-			paintingName = uv2,
-			defaultPaintingName = uv3,
-			callback = uv4
-		})
+	var_0_2[arg_65_0] = var_65_1
+
+	PoolMgr.GetInstance():GetPaintingWithPrefix(var_65_1, true, function(arg_66_0)
+		local var_66_0 = {
+			paintingTF = arg_66_0,
+			fitterTF = var_65_0,
+			objectOrTransform = arg_65_0,
+			paintingName = var_65_1,
+			defaultPaintingName = var_65_2,
+			callback = arg_65_3
+		}
+
+		onLoadedPaintingPrefabAsync(var_66_0)
 	end, "buildpainting/")
 end
 
-function retBuildPaintingPrefab(slot0, slot1)
-	retPaintingPrefab(slot0, slot1, "buildpainting/")
+function retBuildPaintingPrefab(arg_67_0, arg_67_1)
+	retPaintingPrefab(arg_67_0, arg_67_1, "buildpainting/")
 end
 
-function setColorCount(slot0, slot1, slot2)
-	setText(slot0, string.format(slot1 < slot2 and "<color=" .. COLOR_RED .. ">%d</color>/%d" or "%d/%d", slot1, slot2))
+function setColorCount(arg_68_0, arg_68_1, arg_68_2)
+	setText(arg_68_0, string.format(arg_68_1 < arg_68_2 and "<color=" .. COLOR_RED .. ">%d</color>/%d" or "%d/%d", arg_68_1, arg_68_2))
 end
 
-function setColorStr(slot0, slot1)
-	return "<color=" .. slot1 .. ">" .. slot0 .. "</color>"
+function setColorStr(arg_69_0, arg_69_1)
+	return "<color=" .. arg_69_1 .. ">" .. arg_69_0 .. "</color>"
 end
 
-function setSizeStr(slot0, slot1)
-	slot2, slot3 = string.gsub(slot0, "[<]size=%d+[>]", "<size=" .. slot1 .. ">")
+function setSizeStr(arg_70_0, arg_70_1)
+	local var_70_0, var_70_1 = string.gsub(arg_70_0, "[<]size=%d+[>]", "<size=" .. arg_70_1 .. ">")
 
-	if slot3 == 0 then
-		slot2 = "<size=" .. slot1 .. ">" .. slot2 .. "</size>"
+	if var_70_1 == 0 then
+		var_70_0 = "<size=" .. arg_70_1 .. ">" .. var_70_0 .. "</size>"
 	end
 
-	return slot2
+	return var_70_0
 end
 
-function getBgm(slot0)
-	slot1 = pg.voice_bgm[slot0]
+function getBgm(arg_71_0)
+	local var_71_0 = pg.voice_bgm[arg_71_0]
 
 	if pg.CriMgr.GetInstance():IsDefaultBGM() then
-		return slot1 and slot1.default_bgm or nil
-	elseif slot1 then
-		slot3 = slot1.time
+		return var_71_0 and var_71_0.default_bgm or nil
+	elseif var_71_0 then
+		local var_71_1 = var_71_0.special_bgm
+		local var_71_2 = var_71_0.time
 
-		if slot1.special_bgm and type(slot2) == "string" and #slot2 > 0 and slot3 and type(slot3) == "table" then
-			slot4 = slot1.time
+		if var_71_1 and type(var_71_1) == "string" and #var_71_1 > 0 and var_71_2 and type(var_71_2) == "table" then
+			local var_71_3 = var_71_0.time
+			local var_71_4 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_71_3[1])
+			local var_71_5 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_71_3[2])
+			local var_71_6 = pg.TimeMgr.GetInstance():GetServerTime()
 
-			if pg.TimeMgr.GetInstance():parseTimeFromConfig(slot4[1]) <= pg.TimeMgr.GetInstance():GetServerTime() and slot7 <= pg.TimeMgr.GetInstance():parseTimeFromConfig(slot4[2]) then
-				return slot2
+			if var_71_4 <= var_71_6 and var_71_6 <= var_71_5 then
+				return var_71_1
 			else
-				return slot1.bgm
+				return var_71_0.bgm
 			end
 		else
-			return slot1 and slot1.bgm or nil
+			return var_71_0 and var_71_0.bgm or nil
 		end
 	else
 		return nil
 	end
 end
 
-function playStory(slot0, slot1)
-	pg.NewStoryMgr.GetInstance():Play(slot0, slot1)
+function playStory(arg_72_0, arg_72_1)
+	pg.NewStoryMgr.GetInstance():Play(arg_72_0, arg_72_1)
 end
 
-function errorMessage(slot0)
-	if ERROR_MESSAGE[slot0] == nil then
-		slot1 = ERROR_MESSAGE[9999] .. ":" .. slot0
+function errorMessage(arg_73_0)
+	local var_73_0 = ERROR_MESSAGE[arg_73_0]
+
+	if var_73_0 == nil then
+		var_73_0 = ERROR_MESSAGE[9999] .. ":" .. arg_73_0
 	end
 
-	return slot1
+	return var_73_0
 end
 
-function errorTip(slot0, slot1, ...)
-	slot3 = nil
+function errorTip(arg_74_0, arg_74_1, ...)
+	local var_74_0 = pg.gametip[arg_74_0 .. "_error"]
+	local var_74_1
 
-	if pg.gametip[slot0 .. "_error_" .. slot1] then
-		return ((not pg.gametip[slot0 .. "_error"] or slot2.tip) and pg.gametip.common_error.tip) .. i18n(slot4, ...)
-	elseif pg.gametip["common_error_" .. slot1] then
-		return slot3 .. i18n(slot4, ...)
+	if var_74_0 then
+		var_74_1 = var_74_0.tip
 	else
-		return slot3 .. slot1 .. ":" .. errorMessage(slot1)
+		var_74_1 = pg.gametip.common_error.tip
 	end
-end
 
-function colorNumber(slot0, slot1)
-	if #{} > 0 then
-		slot4 = 0
+	local var_74_2 = arg_74_0 .. "_error_" .. arg_74_1
 
-		return string.gsub(string.gsub(string.gsub(slot0, "<color=#%x+>", function (slot0)
-			table.insert(uv0, slot0)
+	if pg.gametip[var_74_2] then
+		local var_74_3 = i18n(var_74_2, ...)
 
-			return uv1
-		end), "%d+%.?%d*%%*", function (slot0)
-			return "<color=" .. uv0 .. ">" .. slot0 .. "</color>"
-		end), "@COLOR_SCOPE", function (slot0)
-			uv0 = uv0 + 1
-
-			return uv1[uv0]
-		end)
+		return var_74_1 .. var_74_3
 	else
-		return slot0
+		local var_74_4 = "common_error_" .. arg_74_1
+
+		if pg.gametip[var_74_4] then
+			local var_74_5 = i18n(var_74_4, ...)
+
+			return var_74_1 .. var_74_5
+		else
+			local var_74_6 = errorMessage(arg_74_1)
+
+			return var_74_1 .. arg_74_1 .. ":" .. var_74_6
+		end
 	end
 end
 
-function getBounds(slot0)
-	slot1 = LuaHelper.GetWorldCorners(rtf(slot0))
-	slot2 = Bounds.New(slot1[0], Vector3.zero)
+function colorNumber(arg_75_0, arg_75_1)
+	local var_75_0 = "@COLOR_SCOPE"
+	local var_75_1 = {}
 
-	slot2:Encapsulate(slot1[2])
+	arg_75_0 = string.gsub(arg_75_0, "<color=#%x+>", function(arg_76_0)
+		table.insert(var_75_1, arg_76_0)
 
-	return slot2
+		return var_75_0
+	end)
+	arg_75_0 = string.gsub(arg_75_0, "%d+%.?%d*%%*", function(arg_77_0)
+		return "<color=" .. arg_75_1 .. ">" .. arg_77_0 .. "</color>"
+	end)
+
+	if #var_75_1 > 0 then
+		local var_75_2 = 0
+
+		return (string.gsub(arg_75_0, var_75_0, function(arg_78_0)
+			var_75_2 = var_75_2 + 1
+
+			return var_75_1[var_75_2]
+		end))
+	else
+		return arg_75_0
+	end
 end
 
-function slot3(slot0, slot1)
-	slot0.localScale = Vector3.one
-	slot0.anchorMin = Vector2.zero
-	slot0.anchorMax = Vector2.one
-	slot0.offsetMin = Vector2(slot1[1], slot1[2])
-	slot0.offsetMax = Vector2(-slot1[3], -slot1[4])
+function getBounds(arg_79_0)
+	local var_79_0 = LuaHelper.GetWorldCorners(rtf(arg_79_0))
+	local var_79_1 = Bounds.New(var_79_0[0], Vector3.zero)
+
+	var_79_1:Encapsulate(var_79_0[2])
+
+	return var_79_1
 end
 
-slot4 = {
+local function var_0_3(arg_80_0, arg_80_1)
+	arg_80_0.localScale = Vector3.one
+	arg_80_0.anchorMin = Vector2.zero
+	arg_80_0.anchorMax = Vector2.one
+	arg_80_0.offsetMin = Vector2(arg_80_1[1], arg_80_1[2])
+	arg_80_0.offsetMax = Vector2(-arg_80_1[3], -arg_80_1[4])
+end
+
+local var_0_4 = {
 	frame4_0 = {
 		-8,
 		-8.5,
@@ -756,476 +888,584 @@ slot4 = {
 	}
 }
 
-function setFrame(slot0, slot1, slot2)
-	slot3, slot4 = unpack(string.split(tostring(slot1), "_"))
+function setFrame(arg_81_0, arg_81_1, arg_81_2)
+	arg_81_1 = tostring(arg_81_1)
 
-	if slot4 or tonumber(slot3) > 5 then
-		slot2 = slot2 or "frame" .. slot1
+	local var_81_0, var_81_1 = unpack((string.split(arg_81_1, "_")))
+
+	if var_81_1 or tonumber(var_81_0) > 5 then
+		arg_81_2 = arg_81_2 or "frame" .. arg_81_1
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "frame", slot0)
-	setImageColor(slot0, slot2 and Color.white or Color.NewHex(ItemRarity.Rarity2FrameHexColor(slot3 and tonumber(slot3) or ItemRarity.Gray)))
+	GetImageSpriteFromAtlasAsync("weaponframes", "frame", arg_81_0)
 
-	slot6 = findTF(slot0, "specialFrame")
+	local var_81_2 = arg_81_2 and Color.white or Color.NewHex(ItemRarity.Rarity2FrameHexColor(var_81_0 and tonumber(var_81_0) or ItemRarity.Gray))
 
-	if slot2 then
-		if slot6 then
-			setActive(slot6, true)
+	setImageColor(arg_81_0, var_81_2)
+
+	local var_81_3 = findTF(arg_81_0, "specialFrame")
+
+	if arg_81_2 then
+		if var_81_3 then
+			setActive(var_81_3, true)
 		else
-			removeAllChildren(cloneTplTo(slot0, slot0, "specialFrame"))
+			var_81_3 = cloneTplTo(arg_81_0, arg_81_0, "specialFrame")
+
+			removeAllChildren(var_81_3)
 		end
 
-		uv0(slot6, uv1[slot2] or uv1.other)
-		GetImageSpriteFromAtlasAsync("weaponframes", slot2, slot6)
-	elseif slot6 then
-		setActive(slot6, false)
+		var_0_3(var_81_3, var_0_4[arg_81_2] or var_0_4.other)
+		GetImageSpriteFromAtlasAsync("weaponframes", arg_81_2, var_81_3)
+	elseif var_81_3 then
+		setActive(var_81_3, false)
 	end
 end
 
-function setIconColorful(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot0, "icon_bg/frame")
-
-	for slot8, slot9 in pairs(slot3 or {
+function setIconColorful(arg_82_0, arg_82_1, arg_82_2, arg_82_3)
+	arg_82_3 = arg_82_3 or {
 		[ItemRarity.SSR] = {
 			name = "IconColorful",
-			active = function (slot0, slot1)
-				return not slot1.noIconColorful and slot0 == ItemRarity.SSR
+			active = function(arg_83_0, arg_83_1)
+				return not arg_83_1.noIconColorful and arg_83_0 == ItemRarity.SSR
 			end
 		}
-	}) do
-		if slot4:Find(slot9.name .. "(Clone)") then
-			setActive(slot12, slot9.active(slot1, slot2))
-		elseif slot11 then
-			LoadAndInstantiateAsync("ui", string.lower(slot10), function (slot0)
-				if IsNil(uv0) or uv1:Find(uv2 .. "(Clone)") then
-					Object.Destroy(slot0)
+	}
+
+	local var_82_0 = findTF(arg_82_0, "icon_bg/frame")
+
+	for iter_82_0, iter_82_1 in pairs(arg_82_3) do
+		local var_82_1 = iter_82_1.name
+		local var_82_2 = iter_82_1.active(arg_82_1, arg_82_2)
+		local var_82_3 = var_82_0:Find(var_82_1 .. "(Clone)")
+
+		if var_82_3 then
+			setActive(var_82_3, var_82_2)
+		elseif var_82_2 then
+			LoadAndInstantiateAsync("ui", string.lower(var_82_1), function(arg_84_0)
+				if IsNil(arg_82_0) or var_82_0:Find(var_82_1 .. "(Clone)") then
+					Object.Destroy(arg_84_0)
 				else
-					setParent(slot0, uv1)
-					setActive(slot0, uv3)
+					setParent(arg_84_0, var_82_0)
+					setActive(arg_84_0, var_82_2)
 				end
 			end)
 		end
 	end
 end
 
-function setIconStars(slot0, slot1, slot2)
-	slot3 = findTF(slot0, "icon_bg/startpl")
+function setIconStars(arg_85_0, arg_85_1, arg_85_2)
+	local var_85_0 = findTF(arg_85_0, "icon_bg/startpl")
+	local var_85_1 = findTF(arg_85_0, "icon_bg/stars")
 
-	if findTF(slot0, "icon_bg/stars") and slot3 then
-		setActive(slot4, false)
-		setActive(slot3, false)
+	if var_85_1 and var_85_0 then
+		setActive(var_85_1, false)
+		setActive(var_85_0, false)
 	end
 
-	if not slot4 or not slot1 then
+	if not var_85_1 or not arg_85_1 then
 		return
 	end
 
-	slot8 = slot4.childCount
-
-	for slot8 = 1, math.max(slot2, slot8) do
-		setActive(slot4.childCount < slot8 and cloneTplTo(slot3, slot4) or slot4:GetChild(slot8 - 1), slot8 <= slot2)
+	for iter_85_0 = 1, math.max(arg_85_2, var_85_1.childCount) do
+		setActive(iter_85_0 > var_85_1.childCount and cloneTplTo(var_85_0, var_85_1) or var_85_1:GetChild(iter_85_0 - 1), iter_85_0 <= arg_85_2)
 	end
 
-	setActive(slot4, true)
+	setActive(var_85_1, true)
 end
 
-function slot5(slot0, slot1)
-	if not IsNil(findTF(slot0, "icon_bg/slv")) then
-		setActive(slot2, slot1 > 0)
-		setText(findTF(slot2, "Text"), slot1)
-	end
-end
+local function var_0_5(arg_86_0, arg_86_1)
+	local var_86_0 = findTF(arg_86_0, "icon_bg/slv")
 
-function setIconName(slot0, slot1, slot2)
-	if not IsNil(findTF(slot0, "name")) then
-		setText(slot3, slot1)
-		setTextAlpha(slot3, (slot2.hideName or slot2.anonymous) and 0 or 1)
+	if not IsNil(var_86_0) then
+		setActive(var_86_0, arg_86_1 > 0)
+		setText(findTF(var_86_0, "Text"), arg_86_1)
 	end
 end
 
-function setIconCount(slot0, slot1)
-	if not IsNil(findTF(slot0, "icon_bg/count")) then
-		setText(slot2, slot1 and (type(slot1) ~= "number" or slot1 > 0) and slot1 or "")
+function setIconName(arg_87_0, arg_87_1, arg_87_2)
+	local var_87_0 = findTF(arg_87_0, "name")
+
+	if not IsNil(var_87_0) then
+		setText(var_87_0, arg_87_1)
+		setTextAlpha(var_87_0, (arg_87_2.hideName or arg_87_2.anonymous) and 0 or 1)
 	end
 end
 
-function updateEquipment(slot0, slot1, slot2)
-	slot2 = slot2 or {}
+function setIconCount(arg_88_0, arg_88_1)
+	local var_88_0 = findTF(arg_88_0, "icon_bg/count")
 
-	assert(slot1, "equipmentVo can not be nil.")
+	if not IsNil(var_88_0) then
+		setText(var_88_0, arg_88_1 and (type(arg_88_1) ~= "number" or arg_88_1 > 0) and arg_88_1 or "")
+	end
+end
 
-	slot3 = EquipmentRarity.Rarity2Print(slot1:getConfig("rarity"))
+function updateEquipment(arg_89_0, arg_89_1, arg_89_2)
+	arg_89_2 = arg_89_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
+	assert(arg_89_1, "equipmentVo can not be nil.")
 
-	slot4 = findTF(slot0, "icon_bg/icon")
+	local var_89_0 = EquipmentRarity.Rarity2Print(arg_89_1:getConfig("rarity"))
 
-	uv0(slot4, {
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_89_0, findTF(arg_89_0, "icon_bg"))
+	setFrame(findTF(arg_89_0, "icon_bg/frame"), var_89_0)
+
+	local var_89_1 = findTF(arg_89_0, "icon_bg/icon")
+
+	var_0_3(var_89_1, {
 		16,
 		16,
 		16,
 		16
 	})
-	GetImageSpriteFromAtlasAsync("equips/" .. slot1:getConfig("icon"), "", slot4)
-	setIconStars(slot0, true, slot1:getConfig("rarity"))
-	uv1(slot0, slot1:getConfig("level") - 1)
-	setIconName(slot0, slot1:getConfig("name"), slot2)
-	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1:getConfig("rarity") - 1, slot2)
+	GetImageSpriteFromAtlasAsync("equips/" .. arg_89_1:getConfig("icon"), "", var_89_1)
+	setIconStars(arg_89_0, true, arg_89_1:getConfig("rarity"))
+	var_0_5(arg_89_0, arg_89_1:getConfig("level") - 1)
+	setIconName(arg_89_0, arg_89_1:getConfig("name"), arg_89_2)
+	setIconCount(arg_89_0, arg_89_1.count)
+	setIconColorful(arg_89_0, arg_89_1:getConfig("rarity") - 1, arg_89_2)
 end
 
-function updateItem(slot0, slot1, slot2)
-	slot2 = slot2 or {}
+function updateItem(arg_90_0, arg_90_1, arg_90_2)
+	arg_90_2 = arg_90_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot1:getConfig("rarity")), findTF(slot0, "icon_bg"))
+	local var_90_0 = ItemRarity.Rarity2Print(arg_90_1:getConfig("rarity"))
 
-	slot4 = nil
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_90_0, findTF(arg_90_0, "icon_bg"))
 
-	if slot1:getConfig("type") == 9 then
-		slot4 = "frame_design"
+	local var_90_1
+
+	if arg_90_1:getConfig("type") == 9 then
+		var_90_1 = "frame_design"
 	end
 
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3, slot4)
+	setFrame(findTF(arg_90_0, "icon_bg/frame"), var_90_0, var_90_1)
 
-	slot5 = findTF(slot0, "icon_bg/icon")
-	slot6 = slot1.icon or slot1:getConfig("icon")
+	local var_90_2 = findTF(arg_90_0, "icon_bg/icon")
+	local var_90_3 = arg_90_1.icon or arg_90_1:getConfig("icon")
 
-	if slot1:getConfig("type") == Item.LOVE_LETTER_TYPE then
-		assert(slot1.extra, "without extra data")
+	if arg_90_1:getConfig("type") == Item.LOVE_LETTER_TYPE then
+		assert(arg_90_1.extra, "without extra data")
 
-		slot6 = "SquareIcon/" .. ShipGroup.getDefaultSkin(slot1.extra).prefab
+		var_90_3 = "SquareIcon/" .. ShipGroup.getDefaultSkin(arg_90_1.extra).prefab
 	end
 
-	GetImageSpriteFromAtlasAsync(slot6, "", slot5)
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
+	GetImageSpriteFromAtlasAsync(var_90_3, "", var_90_2)
+	setIconStars(arg_90_0, false)
+	setIconName(arg_90_0, arg_90_1:getName(), arg_90_2)
+	setIconColorful(arg_90_0, arg_90_1:getConfig("rarity"), arg_90_2)
 end
 
-function updateWorldItem(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = ItemRarity.Rarity2Print(slot1:getConfig("rarity"))
+function updateWorldItem(arg_91_0, arg_91_1, arg_91_2)
+	arg_91_2 = arg_91_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
-	GetImageSpriteFromAtlasAsync(slot1.icon or slot1:getConfig("icon"), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getConfig("name"), slot2)
-	setIconColorful(slot0, slot1:getConfig("rarity"), slot2)
+	local var_91_0 = ItemRarity.Rarity2Print(arg_91_1:getConfig("rarity"))
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_91_0, findTF(arg_91_0, "icon_bg"))
+	setFrame(findTF(arg_91_0, "icon_bg/frame"), var_91_0)
+
+	local var_91_1 = findTF(arg_91_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync(arg_91_1.icon or arg_91_1:getConfig("icon"), "", var_91_1)
+	setIconStars(arg_91_0, false)
+	setIconName(arg_91_0, arg_91_1:getConfig("name"), arg_91_2)
+	setIconColorful(arg_91_0, arg_91_1:getConfig("rarity"), arg_91_2)
 end
 
-function updateWorldCollection(slot0, slot1, slot2)
-	slot2 = slot2 or {}
+function updateWorldCollection(arg_92_0, arg_92_1, arg_92_2)
+	arg_92_2 = arg_92_2 or {}
 
-	assert(slot1:getConfigTable(), "world_collection_file_template 和 world_collection_record_template 表中找不到配置: " .. slot1.id)
+	assert(arg_92_1:getConfigTable(), "world_collection_file_template 和 world_collection_record_template 表中找不到配置: " .. arg_92_1.id)
 
-	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity())
+	local var_92_0 = arg_92_1:getDropRarity()
+	local var_92_1 = ItemRarity.Rarity2Print(var_92_0)
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("props/" .. (WorldCollectionProxy.GetCollectionType(slot1.id) == WorldCollectionProxy.WorldCollectionType.FILE and "shoucangguangdie" or "shoucangjiaojuan"), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot3, slot2)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_92_1, findTF(arg_92_0, "icon_bg"))
+	setFrame(findTF(arg_92_0, "icon_bg/frame"), var_92_1)
+
+	local var_92_2 = findTF(arg_92_0, "icon_bg/icon")
+	local var_92_3 = WorldCollectionProxy.GetCollectionType(arg_92_1.id) == WorldCollectionProxy.WorldCollectionType.FILE and "shoucangguangdie" or "shoucangjiaojuan"
+
+	GetImageSpriteFromAtlasAsync("props/" .. var_92_3, "", var_92_2)
+	setIconStars(arg_92_0, false)
+	setIconName(arg_92_0, arg_92_1:getName(), arg_92_2)
+	setIconColorful(arg_92_0, var_92_0, arg_92_2)
 end
 
-function updateWorldBuff(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = pg.world_SLGbuff_data[slot1]
+function updateWorldBuff(arg_93_0, arg_93_1, arg_93_2)
+	arg_93_2 = arg_93_2 or {}
 
-	assert(slot3, "找不到大世界buff配置: " .. slot1)
+	local var_93_0 = pg.world_SLGbuff_data[arg_93_1]
 
-	slot4 = ItemRarity.Rarity2Print(ItemRarity.Gray)
+	assert(var_93_0, "找不到大世界buff配置: " .. arg_93_1)
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("world/buff/" .. slot3.icon, "", findTF(slot0, "icon_bg/icon"))
+	local var_93_1 = ItemRarity.Rarity2Print(ItemRarity.Gray)
 
-	if not IsNil(slot0:Find("icon_bg/stars")) then
-		setActive(slot6, false)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_93_1, findTF(arg_93_0, "icon_bg"))
+	setFrame(findTF(arg_93_0, "icon_bg/frame"), var_93_1)
+
+	local var_93_2 = findTF(arg_93_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("world/buff/" .. var_93_0.icon, "", var_93_2)
+
+	local var_93_3 = arg_93_0:Find("icon_bg/stars")
+
+	if not IsNil(var_93_3) then
+		setActive(var_93_3, false)
 	end
 
-	if not IsNil(findTF(slot0, "name")) then
-		setText(slot7, slot3.name)
+	local var_93_4 = findTF(arg_93_0, "name")
+
+	if not IsNil(var_93_4) then
+		setText(var_93_4, var_93_0.name)
 	end
 
-	if not IsNil(findTF(slot0, "icon_bg/count")) then
-		SetActive(slot8, false)
+	local var_93_5 = findTF(arg_93_0, "icon_bg/count")
+
+	if not IsNil(var_93_5) then
+		SetActive(var_93_5, false)
 	end
 end
 
-function updateShip(slot0, slot1, slot2)
-	slot3 = slot1:rarity2bgPrint()
-	slot4 = slot1:getPainting()
+function updateShip(arg_94_0, arg_94_1, arg_94_2)
+	arg_94_2 = arg_94_2 or {}
 
-	if (slot2 or {}).anonymous then
-		slot3 = "1"
-		slot4 = "unknown"
+	local var_94_0 = arg_94_1:rarity2bgPrint()
+	local var_94_1 = arg_94_1:getPainting()
+
+	if arg_94_2.anonymous then
+		var_94_0 = "1"
+		var_94_1 = "unknown"
 	end
 
-	if slot2.unknown_small then
-		slot4 = "unknown_small"
+	if arg_94_2.unknown_small then
+		var_94_1 = "unknown_small"
 	end
 
-	if findTF(slot0, "icon_bg/new") then
-		if slot2.isSkin then
-			setActive(slot5, not slot2.isTimeLimit and slot2.isNew)
+	local var_94_2 = findTF(arg_94_0, "icon_bg/new")
+
+	if var_94_2 then
+		if arg_94_2.isSkin then
+			setActive(var_94_2, not arg_94_2.isTimeLimit and arg_94_2.isNew)
 		else
-			setActive(slot5, slot1.virgin)
+			setActive(var_94_2, arg_94_1.virgin)
 		end
 	end
 
-	if findTF(slot0, "icon_bg/timelimit") then
-		setActive(slot6, slot2.isTimeLimit)
+	local var_94_3 = findTF(arg_94_0, "icon_bg/timelimit")
+
+	if var_94_3 then
+		setActive(var_94_3, arg_94_2.isTimeLimit)
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "_skin" or slot3), findTF(slot0, "icon_bg"))
+	local var_94_4 = findTF(arg_94_0, "icon_bg")
 
-	slot8 = findTF(slot0, "icon_bg/frame")
-	slot9 = nil
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (arg_94_2.isSkin and "_skin" or var_94_0), var_94_4)
 
-	if slot1.isNpc then
-		slot9 = "frame_npc"
-	elseif slot1:ShowPropose() then
-		if slot1:isMetaShip() then
-			slot9 = "frame_prop" .. "_meta"
+	local var_94_5 = findTF(arg_94_0, "icon_bg/frame")
+	local var_94_6
+
+	if arg_94_1.isNpc then
+		var_94_6 = "frame_npc"
+	elseif arg_94_1:ShowPropose() then
+		var_94_6 = "frame_prop"
+
+		if arg_94_1:isMetaShip() then
+			var_94_6 = var_94_6 .. "_meta"
 		end
-	elseif slot2.isSkin then
-		slot9 = "frame_skin"
+	elseif arg_94_2.isSkin then
+		var_94_6 = "frame_skin"
 	end
 
-	setFrame(slot8, slot3, slot9)
+	setFrame(var_94_5, var_94_0, var_94_6)
 
-	if slot2.gray then
-		setGray(slot7, true, true)
+	if arg_94_2.gray then
+		setGray(var_94_4, true, true)
 	end
 
-	GetImageSpriteFromAtlasAsync((slot2.Q and "QIcon/" or "SquareIcon/") .. slot4, "", findTF(slot0, "icon_bg/icon"))
+	local var_94_7 = findTF(arg_94_0, "icon_bg/icon")
 
-	if findTF(slot0, "icon_bg/lv") then
-		setActive(slot11, not slot1.isNpc)
+	GetImageSpriteFromAtlasAsync((arg_94_2.Q and "QIcon/" or "SquareIcon/") .. var_94_1, "", var_94_7)
 
-		if not slot1.isNpc and findTF(slot11, "Text") and slot1.level then
-			setText(slot12, slot1.level)
+	local var_94_8 = findTF(arg_94_0, "icon_bg/lv")
+
+	if var_94_8 then
+		setActive(var_94_8, not arg_94_1.isNpc)
+
+		if not arg_94_1.isNpc then
+			local var_94_9 = findTF(var_94_8, "Text")
+
+			if var_94_9 and arg_94_1.level then
+				setText(var_94_9, arg_94_1.level)
+			end
 		end
 	end
 
-	if findTF(slot0, "ship_type") then
-		setActive(slot12, true)
-		setImageSprite(slot12, GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType())))
+	local var_94_10 = findTF(arg_94_0, "ship_type")
+
+	if var_94_10 then
+		setActive(var_94_10, true)
+		setImageSprite(var_94_10, GetSpriteFromAtlas("shiptype", shipType2print(arg_94_1:getShipType())))
 	end
 
-	if not IsNil(slot7:Find("npc")) then
-		if slot5 and go(slot5).activeSelf then
-			setActive(slot13, false)
+	local var_94_11 = var_94_4:Find("npc")
+
+	if not IsNil(var_94_11) then
+		if var_94_2 and go(var_94_2).activeSelf then
+			setActive(var_94_11, false)
 		else
-			setActive(slot13, slot1:isActivityNpc())
+			setActive(var_94_11, arg_94_1:isActivityNpc())
 		end
 	end
 
-	if slot0:Find("group_locked") then
-		setActive(slot14, not slot2.isSkin and not getProxy(CollectionProxy):getShipGroup(slot1.groupId))
+	local var_94_12 = arg_94_0:Find("group_locked")
+
+	if var_94_12 then
+		setActive(var_94_12, not arg_94_2.isSkin and not getProxy(CollectionProxy):getShipGroup(arg_94_1.groupId))
 	end
 
-	setIconStars(slot0, slot2.initStar, slot1:getStar())
-	setIconName(slot0, slot2.isSkin and slot1:GetSkinConfig().name or slot1:getName(), slot2)
-	setIconColorful(slot0, slot2.isSkin and ItemRarity.Gold or slot1:getRarity() - 1, slot2)
+	setIconStars(arg_94_0, arg_94_2.initStar, arg_94_1:getStar())
+	setIconName(arg_94_0, arg_94_2.isSkin and arg_94_1:GetSkinConfig().name or arg_94_1:getName(), arg_94_2)
+	setIconColorful(arg_94_0, arg_94_2.isSkin and ItemRarity.Gold or arg_94_1:getRarity() - 1, arg_94_2)
 end
 
-function updateCommander(slot0, slot1, slot2)
-	slot4 = ShipRarity.Rarity2Print(slot1:getDropRarity())
-	slot5 = slot1:getConfig("painting")
+function updateCommander(arg_95_0, arg_95_1, arg_95_2)
+	arg_95_2 = arg_95_2 or {}
 
-	if (slot2 or {}).anonymous then
-		slot4 = 1
-		slot5 = "unknown"
+	local var_95_0 = arg_95_1:getDropRarity()
+	local var_95_1 = ShipRarity.Rarity2Print(var_95_0)
+	local var_95_2 = arg_95_1:getConfig("painting")
+
+	if arg_95_2.anonymous then
+		var_95_1 = 1
+		var_95_2 = "unknown"
 	end
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (slot2.isSkin and "-skin" or slot4), findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
+	local var_95_3 = findTF(arg_95_0, "icon_bg")
 
-	if slot2.gray then
-		setGray(slot6, true, true)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. (arg_95_2.isSkin and "-skin" or var_95_1), var_95_3)
+
+	local var_95_4 = findTF(arg_95_0, "icon_bg/frame")
+
+	setFrame(var_95_4, var_95_1)
+
+	if arg_95_2.gray then
+		setGray(var_95_3, true, true)
 	end
 
-	GetImageSpriteFromAtlasAsync("CommanderIcon/" .. slot5, "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, slot2.initStar, 0)
-	setIconName(slot0, slot1:getName(), slot2)
+	local var_95_5 = findTF(arg_95_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("CommanderIcon/" .. var_95_2, "", var_95_5)
+	setIconStars(arg_95_0, arg_95_2.initStar, 0)
+	setIconName(arg_95_0, arg_95_1:getName(), arg_95_2)
 end
 
-function updateStrategy(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = ItemRarity.Rarity2Print(ItemRarity.Gray)
+function updateStrategy(arg_96_0, arg_96_1, arg_96_2)
+	arg_96_2 = arg_96_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
-	GetImageSpriteFromAtlasAsync((slot1.isWorldBuff and "world/buff/" or "strategyicon/") .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, ItemRarity.Gray, slot2)
+	local var_96_0 = ItemRarity.Rarity2Print(ItemRarity.Gray)
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_96_0, findTF(arg_96_0, "icon_bg"))
+	setFrame(findTF(arg_96_0, "icon_bg/frame"), var_96_0)
+
+	local var_96_1 = findTF(arg_96_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync((arg_96_1.isWorldBuff and "world/buff/" or "strategyicon/") .. arg_96_1:getIcon(), "", var_96_1)
+	setIconStars(arg_96_0, false)
+	setIconName(arg_96_0, arg_96_1:getName(), arg_96_2)
+	setIconColorful(arg_96_0, ItemRarity.Gray, arg_96_2)
 end
 
-function updateFurniture(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = slot1:getDropRarity()
-	slot4 = ItemRarity.Rarity2Print(slot3)
+function updateFurniture(arg_97_0, arg_97_1, arg_97_2)
+	arg_97_2 = arg_97_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot3, slot2)
+	local var_97_0 = arg_97_1:getDropRarity()
+	local var_97_1 = ItemRarity.Rarity2Print(var_97_0)
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_97_1, findTF(arg_97_0, "icon_bg"))
+	setFrame(findTF(arg_97_0, "icon_bg/frame"), var_97_1)
+
+	local var_97_2 = findTF(arg_97_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. arg_97_1:getIcon(), "", var_97_2)
+	setIconStars(arg_97_0, false)
+	setIconName(arg_97_0, arg_97_1:getName(), arg_97_2)
+	setIconColorful(arg_97_0, var_97_0, arg_97_2)
 end
 
-function updateSpWeapon(slot0, slot1, slot2)
-	slot2 = slot2 or {}
+function updateSpWeapon(arg_98_0, arg_98_1, arg_98_2)
+	arg_98_2 = arg_98_2 or {}
 
-	assert(slot1, "spWeaponVO can not be nil.")
-	assert(isa(slot1, SpWeapon), "spWeaponVO is not Equipment.")
+	assert(arg_98_1, "spWeaponVO can not be nil.")
+	assert(isa(arg_98_1, SpWeapon), "spWeaponVO is not Equipment.")
 
-	slot3 = ItemRarity.Rarity2Print(slot1:GetRarity())
+	local var_98_0 = ItemRarity.Rarity2Print(arg_98_1:GetRarity())
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_98_0, findTF(arg_98_0, "icon_bg"))
+	setFrame(findTF(arg_98_0, "icon_bg/frame"), var_98_0)
 
-	slot4 = findTF(slot0, "icon_bg/icon")
+	local var_98_1 = findTF(arg_98_0, "icon_bg/icon")
 
-	uv0(slot4, {
+	var_0_3(var_98_1, {
 		16,
 		16,
 		16,
 		16
 	})
-	GetImageSpriteFromAtlasAsync(slot1:GetIconPath(), "", slot4)
-	setIconStars(slot0, true, slot1:GetRarity())
-	uv1(slot0, slot1:GetLevel() - 1)
-	setIconName(slot0, slot1:GetName(), slot2)
-	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1:GetRarity(), slot2)
+	GetImageSpriteFromAtlasAsync(arg_98_1:GetIconPath(), "", var_98_1)
+	setIconStars(arg_98_0, true, arg_98_1:GetRarity())
+	var_0_5(arg_98_0, arg_98_1:GetLevel() - 1)
+	setIconName(arg_98_0, arg_98_1:GetName(), arg_98_2)
+	setIconCount(arg_98_0, arg_98_1.count)
+	setIconColorful(arg_98_0, arg_98_1:GetRarity(), arg_98_2)
 end
 
-function UpdateSpWeaponSlot(slot0, slot1, slot2)
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. ItemRarity.Rarity2Print(slot1:GetRarity()), findTF(slot0, "Icon/Mask/icon_bg"))
+function UpdateSpWeaponSlot(arg_99_0, arg_99_1, arg_99_2)
+	local var_99_0 = ItemRarity.Rarity2Print(arg_99_1:GetRarity())
 
-	slot4 = findTF(slot0, "Icon/Mask/icon_bg/icon")
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_99_0, findTF(arg_99_0, "Icon/Mask/icon_bg"))
 
-	uv0(slot4, slot2 or {
+	local var_99_1 = findTF(arg_99_0, "Icon/Mask/icon_bg/icon")
+
+	arg_99_2 = arg_99_2 or {
 		16,
 		16,
 		16,
 		16
-	})
-	GetImageSpriteFromAtlasAsync(slot1:GetIconPath(), "", slot4)
-	setActive(findTF(slot0, "Icon/LV"), slot1:GetLevel() - 1 > 0)
-	setText(findTF(slot6, "Text"), slot5)
+	}
+
+	var_0_3(var_99_1, arg_99_2)
+	GetImageSpriteFromAtlasAsync(arg_99_1:GetIconPath(), "", var_99_1)
+
+	local var_99_2 = arg_99_1:GetLevel() - 1
+	local var_99_3 = findTF(arg_99_0, "Icon/LV")
+
+	setActive(var_99_3, var_99_2 > 0)
+	setText(findTF(var_99_3, "Text"), var_99_2)
 end
 
-function updateDorm3dFurniture(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = slot1:getDropRarity()
-	slot4 = ItemRarity.Rarity2Print(slot3)
+function updateDorm3dFurniture(arg_100_0, arg_100_1, arg_100_2)
+	arg_100_2 = arg_100_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot3, slot2)
+	local var_100_0 = arg_100_1:getDropRarity()
+	local var_100_1 = ItemRarity.Rarity2Print(var_100_0)
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_100_1, findTF(arg_100_0, "icon_bg"))
+	setFrame(findTF(arg_100_0, "icon_bg/frame"), var_100_1)
+
+	local var_100_2 = findTF(arg_100_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. arg_100_1:getIcon(), "", var_100_2)
+	setIconStars(arg_100_0, false)
+	setIconName(arg_100_0, arg_100_1:getName(), arg_100_2)
+	setIconColorful(arg_100_0, var_100_0, arg_100_2)
 end
 
-function updateDorm3dGift(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity()) or ItemRarity.Gray
+function updateDorm3dGift(arg_101_0, arg_101_1, arg_101_2)
+	arg_101_2 = arg_101_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, slot0:Find("icon_bg"))
-	setFrame(slot0:Find("icon_bg/frame"), slot4)
-	GetImageSpriteFromAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", slot0:Find("icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot3, slot2)
+	local var_101_0 = arg_101_1:getDropRarity()
+	local var_101_1 = ItemRarity.Rarity2Print(var_101_0) or ItemRarity.Gray
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_101_1, arg_101_0:Find("icon_bg"))
+	setFrame(arg_101_0:Find("icon_bg/frame"), var_101_1)
+
+	local var_101_2 = arg_101_0:Find("icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("furnitureicon/" .. arg_101_1:getIcon(), "", var_101_2)
+	setIconStars(arg_101_0, false)
+	setIconName(arg_101_0, arg_101_1:getName(), arg_101_2)
+	setIconColorful(arg_101_0, var_101_0, arg_101_2)
 end
 
-function updateDorm3dSkin(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot4 = ItemRarity.Rarity2Print(slot1:getDropRarity()) or ItemRarity.Gray
+function updateDorm3dSkin(arg_102_0, arg_102_1, arg_102_2)
+	arg_102_2 = arg_102_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, slot0:Find("icon_bg"))
-	setFrame(slot0:Find("icon_bg/frame"), slot4)
+	local var_102_0 = arg_102_1:getDropRarity()
+	local var_102_1 = ItemRarity.Rarity2Print(var_102_0) or ItemRarity.Gray
 
-	slot5 = slot0:Find("icon_bg/icon")
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_102_1, arg_102_0:Find("icon_bg"))
+	setFrame(arg_102_0:Find("icon_bg/frame"), var_102_1)
 
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1:getName(), slot2)
-	setIconColorful(slot0, slot3, slot2)
+	local var_102_2 = arg_102_0:Find("icon_bg/icon")
+
+	setIconStars(arg_102_0, false)
+	setIconName(arg_102_0, arg_102_1:getName(), arg_102_2)
+	setIconColorful(arg_102_0, var_102_0, arg_102_2)
 end
 
-function updateDorm3dIcon(slot0, slot1)
-	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(slot1:getConfig("rarity")), slot0)
+function updateDorm3dIcon(arg_103_0, arg_103_1)
+	local var_103_0 = arg_103_1:getConfig("rarity")
 
-	slot3 = slot0:Find("icon")
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(var_103_0), arg_103_0)
 
-	setText(slot0:Find("count/Text"), "x" .. slot1.count)
-	setText(slot0:Find("name/Text"), slot1:getName())
+	local var_103_1 = arg_103_0:Find("icon")
+
+	setText(arg_103_0:Find("count/Text"), "x" .. arg_103_1.count)
+	setText(arg_103_0:Find("name/Text"), arg_103_1:getName())
 end
 
-slot6 = nil
+local var_0_6
 
-function findCullAndClipWorldRect(slot0)
-	if #slot0 == 0 then
+function findCullAndClipWorldRect(arg_104_0)
+	if #arg_104_0 == 0 then
 		return false
 	end
 
-	for slot5 = 1, #slot0 do
-		slot1 = rectIntersect(slot0[1].canvasRect, slot0[slot5].canvasRect)
+	local var_104_0 = arg_104_0[1].canvasRect
+
+	for iter_104_0 = 1, #arg_104_0 do
+		var_104_0 = rectIntersect(var_104_0, arg_104_0[iter_104_0].canvasRect)
 	end
 
-	if slot1.width <= 0 or slot1.height <= 0 then
+	if var_104_0.width <= 0 or var_104_0.height <= 0 then
 		return false
 	end
 
-	uv0 = uv0 or GameObject.Find("UICamera/Canvas").transform
-	slot2 = uv0:TransformPoint(Vector3(slot1.x, slot1.y, 0))
-	slot3 = uv0:TransformPoint(Vector3(slot1.x + slot1.width, slot1.y + slot1.height, 0))
+	var_0_6 = var_0_6 or GameObject.Find("UICamera/Canvas").transform
 
-	return true, Vector4(slot2.x, slot2.y, slot3.x, slot3.y)
+	local var_104_1 = var_0_6:TransformPoint(Vector3(var_104_0.x, var_104_0.y, 0))
+	local var_104_2 = var_0_6:TransformPoint(Vector3(var_104_0.x + var_104_0.width, var_104_0.y + var_104_0.height, 0))
+
+	return true, Vector4(var_104_1.x, var_104_1.y, var_104_2.x, var_104_2.y)
 end
 
-function rectIntersect(slot0, slot1)
-	slot4 = math.max(slot0.y, slot1.y)
-	slot5 = math.min(slot0.y + slot0.height, slot1.y + slot1.height)
+function rectIntersect(arg_105_0, arg_105_1)
+	local var_105_0 = math.max(arg_105_0.x, arg_105_1.x)
+	local var_105_1 = math.min(arg_105_0.x + arg_105_0.width, arg_105_1.x + arg_105_1.width)
+	local var_105_2 = math.max(arg_105_0.y, arg_105_1.y)
+	local var_105_3 = math.min(arg_105_0.y + arg_105_0.height, arg_105_1.y + arg_105_1.height)
 
-	if math.max(slot0.x, slot1.x) <= math.min(slot0.x + slot0.width, slot1.x + slot1.width) and slot4 <= slot5 then
-		return uv0.Rect.New(slot2, slot4, slot3 - slot2, slot5 - slot4)
+	if var_105_0 <= var_105_1 and var_105_2 <= var_105_3 then
+		return var_0_0.Rect.New(var_105_0, var_105_2, var_105_1 - var_105_0, var_105_3 - var_105_2)
 	end
 
-	return uv0.Rect.New(0, 0, 0, 0)
+	return var_0_0.Rect.New(0, 0, 0, 0)
 end
 
-function getDropInfo(slot0)
-	slot1 = {}
+function getDropInfo(arg_106_0)
+	local var_106_0 = {}
 
-	for slot5, slot6 in ipairs(slot0) do
-		slot7.count = Drop.Create(slot6).count or 1
+	for iter_106_0, iter_106_1 in ipairs(arg_106_0) do
+		local var_106_1 = Drop.Create(iter_106_1)
 
-		if slot7.type == DROP_TYPE_EMOJI then
-			table.insert(slot1, slot7:getName())
+		var_106_1.count = var_106_1.count or 1
+
+		if var_106_1.type == DROP_TYPE_EMOJI then
+			table.insert(var_106_0, var_106_1:getName())
 		else
-			table.insert(slot1, slot7:getName() .. "x" .. slot7.count)
+			table.insert(var_106_0, var_106_1:getName() .. "x" .. var_106_1.count)
 		end
 	end
 
-	return table.concat(slot1, "、")
+	return table.concat(var_106_0, "、")
 end
 
-function updateDrop(slot0, slot1, slot2)
-	Drop.Change(slot1)
+function updateDrop(arg_107_0, arg_107_1, arg_107_2)
+	Drop.Change(arg_107_1)
 
-	slot2 = slot2 or {}
-	slot4 = nil
+	arg_107_2 = arg_107_2 or {}
 
-	for slot8, slot9 in ipairs({
+	local var_107_0 = {
 		{
 			"icon_bg/slv"
 		},
@@ -1248,133 +1488,151 @@ function updateDrop(slot0, slot1, slot2)
 			"group_locked",
 			DROP_TYPE_SHIP
 		}
-	}) do
-		slot4 = slot0:Find(slot9[1])
+	}
+	local var_107_1
 
-		if slot1.type ~= slot9[2] and not IsNil(slot4) then
-			setActive(slot4, false)
+	for iter_107_0, iter_107_1 in ipairs(var_107_0) do
+		local var_107_2 = arg_107_0:Find(iter_107_1[1])
+
+		if arg_107_1.type ~= iter_107_1[2] and not IsNil(var_107_2) then
+			setActive(var_107_2, false)
 		end
 	end
 
-	slot0:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
+	arg_107_0:Find("icon_bg/frame"):GetComponent(typeof(Image)).enabled = true
 
-	setIconColorful(slot0, slot1:getDropRarity(), slot2, {
+	setIconColorful(arg_107_0, arg_107_1:getDropRarity(), arg_107_2, {
 		[ItemRarity.Gold] = {
 			name = "Item_duang5",
-			active = function (slot0, slot1)
-				return slot1.fromAwardLayer and ItemRarity.Gold <= slot0
+			active = function(arg_108_0, arg_108_1)
+				return arg_108_1.fromAwardLayer and arg_108_0 >= ItemRarity.Gold
 			end
 		}
 	})
-	uv0(findTF(slot0, "icon_bg/icon"), {
+	var_0_3(findTF(arg_107_0, "icon_bg/icon"), {
 		2,
 		2,
 		2,
 		2
 	})
-	slot1:UpdateDropTpl(slot0, slot2)
-	setIconCount(slot0, slot2.count or slot1:getCount())
+	arg_107_1:UpdateDropTpl(arg_107_0, arg_107_2)
+	setIconCount(arg_107_0, arg_107_2.count or arg_107_1:getCount())
 end
 
-function updateBuff(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = ItemRarity.Rarity2Print(ItemRarity.Gray)
+function updateBuff(arg_109_0, arg_109_1, arg_109_2)
+	arg_109_2 = arg_109_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
+	local var_109_0 = ItemRarity.Rarity2Print(ItemRarity.Gray)
 
-	slot4 = pg.benefit_buff_template[slot1]
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_109_0, findTF(arg_109_0, "icon_bg"))
 
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3)
-	setText(findTF(slot0, "icon_bg/count"), 1)
-	GetImageSpriteFromAtlasAsync(slot4.icon, "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot4.name, slot2)
-	setIconColorful(slot0, ItemRarity.Gold, slot2)
+	local var_109_1 = pg.benefit_buff_template[arg_109_1]
+
+	setFrame(findTF(arg_109_0, "icon_bg/frame"), var_109_0)
+	setText(findTF(arg_109_0, "icon_bg/count"), 1)
+
+	local var_109_2 = findTF(arg_109_0, "icon_bg/icon")
+	local var_109_3 = var_109_1.icon
+
+	GetImageSpriteFromAtlasAsync(var_109_3, "", var_109_2)
+	setIconStars(arg_109_0, false)
+	setIconName(arg_109_0, var_109_1.name, arg_109_2)
+	setIconColorful(arg_109_0, ItemRarity.Gold, arg_109_2)
 end
 
-function updateAttire(slot0, slot1, slot2, slot3)
-	slot4 = 4
+function updateAttire(arg_110_0, arg_110_1, arg_110_2, arg_110_3)
+	local var_110_0 = 4
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot4, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot4)
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_110_0, findTF(arg_110_0, "icon_bg"))
+	setFrame(findTF(arg_110_0, "icon_bg/frame"), var_110_0)
 
-	slot5 = findTF(slot0, "icon_bg/icon")
-	slot6 = nil
+	local var_110_1 = findTF(arg_110_0, "icon_bg/icon")
+	local var_110_2
 
-	if slot1 == AttireConst.TYPE_CHAT_FRAME then
-		slot6 = "chat_frame"
-	elseif slot1 == AttireConst.TYPE_ICON_FRAME then
-		slot6 = "icon_frame"
+	if arg_110_1 == AttireConst.TYPE_CHAT_FRAME then
+		var_110_2 = "chat_frame"
+	elseif arg_110_1 == AttireConst.TYPE_ICON_FRAME then
+		var_110_2 = "icon_frame"
 	end
 
-	GetImageSpriteFromAtlasAsync("Props/" .. slot6, "", slot5)
-	setIconName(slot0, slot2.name, slot3)
+	GetImageSpriteFromAtlasAsync("Props/" .. var_110_2, "", var_110_1)
+	setIconName(arg_110_0, arg_110_2.name, arg_110_3)
 end
 
-function updateEmoji(slot0, slot1, slot2)
-	GetImageSpriteFromAtlasAsync("Props/" .. "icon_emoji", "", findTF(slot0, "icon_bg/icon"))
+function updateEmoji(arg_111_0, arg_111_1, arg_111_2)
+	local var_111_0 = findTF(arg_111_0, "icon_bg/icon")
+	local var_111_1 = "icon_emoji"
 
-	slot5 = 4
+	GetImageSpriteFromAtlasAsync("Props/" .. var_111_1, "", var_111_0)
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot5, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot5)
-	setIconName(slot0, slot1.name, slot2)
+	local var_111_2 = 4
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_111_2, findTF(arg_111_0, "icon_bg"))
+	setFrame(findTF(arg_111_0, "icon_bg/frame"), var_111_2)
+	setIconName(arg_111_0, arg_111_1.name, arg_111_2)
 end
 
-function updateEquipmentSkin(slot0, slot1, slot2)
-	slot2 = slot2 or {}
-	slot3 = EquipmentRarity.Rarity2Print(slot1.rarity)
+function updateEquipmentSkin(arg_112_0, arg_112_1, arg_112_2)
+	arg_112_2 = arg_112_2 or {}
 
-	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. slot3, findTF(slot0, "icon_bg"))
-	setFrame(findTF(slot0, "icon_bg/frame"), slot3, "frame_skin")
-	GetImageSpriteFromAtlasAsync("equips/" .. slot1.icon, "", findTF(slot0, "icon_bg/icon"))
-	setIconStars(slot0, false)
-	setIconName(slot0, slot1.name, slot2)
-	setIconCount(slot0, slot1.count)
-	setIconColorful(slot0, slot1.rarity - 1, slot2)
+	local var_112_0 = EquipmentRarity.Rarity2Print(arg_112_1.rarity)
+
+	GetImageSpriteFromAtlasAsync("weaponframes", "bg" .. var_112_0, findTF(arg_112_0, "icon_bg"))
+	setFrame(findTF(arg_112_0, "icon_bg/frame"), var_112_0, "frame_skin")
+
+	local var_112_1 = findTF(arg_112_0, "icon_bg/icon")
+
+	GetImageSpriteFromAtlasAsync("equips/" .. arg_112_1.icon, "", var_112_1)
+	setIconStars(arg_112_0, false)
+	setIconName(arg_112_0, arg_112_1.name, arg_112_2)
+	setIconCount(arg_112_0, arg_112_1.count)
+	setIconColorful(arg_112_0, arg_112_1.rarity - 1, arg_112_2)
 end
 
-function NoPosMsgBox(slot0, slot1, slot2, slot3)
-	slot4 = nil
+function NoPosMsgBox(arg_113_0, arg_113_1, arg_113_2, arg_113_3)
+	local var_113_0
+	local var_113_1 = {}
 
-	if slot1 then
-		table.insert({}, {
+	if arg_113_1 then
+		table.insert(var_113_1, {
 			text = "text_noPos_clear",
 			atuoClose = true,
-			onCallback = slot1
+			onCallback = arg_113_1
 		})
 	end
 
-	if slot2 then
-		table.insert(slot5, {
+	if arg_113_2 then
+		table.insert(var_113_1, {
 			text = "text_noPos_buy",
 			atuoClose = true,
-			onCallback = slot2
+			onCallback = arg_113_2
 		})
 	end
 
-	if slot3 then
-		table.insert(slot5, {
+	if arg_113_3 then
+		table.insert(var_113_1, {
 			text = "text_noPos_intensify",
 			atuoClose = true,
-			onCallback = slot3
+			onCallback = arg_113_3
 		})
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideYes = true,
 		hideNo = true,
-		content = slot0,
-		custom = slot5,
+		content = arg_113_0,
+		custom = var_113_1,
 		weight = LayerWeightConst.TOP_LAYER
 	})
 end
 
 function openDestroyEquip()
 	if pg.m02:hasMediator(EquipmentMediator.__cname) then
-		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator) and slot2.data.shipId then
+		local var_114_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator)
+
+		if var_114_0 and var_114_0.data.shipId then
 			pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
-				context = slot2
+				context = var_114_0
 			})
 		else
 			pg.m02:sendNotification(EquipmentMediator.BATCHDESTROY_MODE)
@@ -1391,9 +1649,11 @@ end
 
 function OpenSpWeaponPage()
 	if pg.m02:hasMediator(EquipmentMediator.__cname) then
-		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator) and slot2.data.shipId then
+		local var_115_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(EquipmentMediator)
+
+		if var_115_0 and var_115_0.data.shipId then
 			pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
-				context = slot2
+				context = var_115_0
 			})
 		else
 			pg.m02:sendNotification(EquipmentMediator.SWITCH_TO_SPWEAPON_PAGE)
@@ -1424,60 +1684,65 @@ end
 function openDockyardIntensify()
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 		mode = DockyardScene.MODE_OVERVIEW,
-		onClick = function (slot0, slot1)
+		onClick = function(arg_118_0, arg_118_1)
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 				page = 3,
-				shipId = slot0.id,
-				shipVOs = slot1
+				shipId = arg_118_0.id,
+				shipVOs = arg_118_1
 			})
 		end
 	})
 end
 
-function GoShoppingMsgBox(slot0, slot1, slot2)
-	if slot2 then
-		for slot7, slot8 in ipairs(slot2) do
-			if slot7 < #slot2 then
-				slot3 = "" .. i18n(slot8[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", Item.getConfigData(slot8[1]).name, slot8[2]) .. i18n("text_noRes_info_tip_link")
+function GoShoppingMsgBox(arg_119_0, arg_119_1, arg_119_2)
+	if arg_119_2 then
+		local var_119_0 = ""
+
+		for iter_119_0, iter_119_1 in ipairs(arg_119_2) do
+			local var_119_1 = Item.getConfigData(iter_119_1[1])
+
+			var_119_0 = var_119_0 .. i18n(iter_119_1[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", var_119_1.name, iter_119_1[2])
+
+			if iter_119_0 < #arg_119_2 then
+				var_119_0 = var_119_0 .. i18n("text_noRes_info_tip_link")
 			end
 		end
 
-		if slot3 ~= "" then
-			slot0 = slot0 .. "\n" .. i18n("text_noRes_tip", slot3)
+		if var_119_0 ~= "" then
+			arg_119_0 = arg_119_0 .. "\n" .. i18n("text_noRes_tip", var_119_0)
 		end
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
-		content = slot0,
+		content = arg_119_0,
 		weight = LayerWeightConst.SECOND_LAYER,
-		onYes = function ()
-			gotoChargeScene(uv0, uv1)
+		onYes = function()
+			gotoChargeScene(arg_119_1, arg_119_2)
 		end
 	})
 end
 
-function shoppingBatch(slot0, slot1, slot2, slot3, slot4)
-	slot5 = pg.shop_template[slot0]
+function shoppingBatch(arg_121_0, arg_121_1, arg_121_2, arg_121_3, arg_121_4)
+	local var_121_0 = pg.shop_template[arg_121_0]
 
-	assert(slot5, "shop_template中找不到商品id：" .. slot0)
+	assert(var_121_0, "shop_template中找不到商品id：" .. arg_121_0)
 
-	if math.floor(getProxy(PlayerProxy):getData()[id2res(slot5.resource_type)] / (slot1.price or slot5.resource_num)) <= 0 then
-		slot10 = 1
-	end
+	local var_121_1 = getProxy(PlayerProxy):getData()[id2res(var_121_0.resource_type)]
+	local var_121_2 = arg_121_1.price or var_121_0.resource_num
+	local var_121_3 = math.floor(var_121_1 / var_121_2)
 
-	if slot2 ~= nil and slot2 < slot10 then
-		slot10 = slot2 or slot10
-	end
+	var_121_3 = var_121_3 <= 0 and 1 or var_121_3
+	var_121_3 = arg_121_2 ~= nil and arg_121_2 < var_121_3 and arg_121_2 or var_121_3
 
-	slot11 = true
-	slot12 = 1
+	local var_121_4 = true
+	local var_121_5 = 1
 
-	if slot5 ~= nil and slot1.id then
-		print(slot10 * slot5.num, "--", slot10)
-		assert(Item.getConfigData(slot1.id), "item config should be existence")
+	if var_121_0 ~= nil and arg_121_1.id then
+		print(var_121_3 * var_121_0.num, "--", var_121_3)
+		assert(Item.getConfigData(arg_121_1.id), "item config should be existence")
 
-		slot13 = Item.New({
-			id = slot1.id
+		local var_121_6 = Item.New({
+			id = arg_121_1.id
 		}):getConfig("name")
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
@@ -1485,32 +1750,34 @@ function shoppingBatch(slot0, slot1, slot2, slot3, slot4)
 			type = MSGBOX_TYPE_SINGLE_ITEM,
 			drop = {
 				type = DROP_TYPE_ITEM,
-				id = slot1.id
+				id = arg_121_1.id
 			},
-			addNum = slot5.num,
-			maxNum = slot10 * slot5.num,
-			defaultNum = slot5.num,
-			numUpdate = function (slot0, slot1)
-				uv0 = math.floor(slot1 / uv1.num)
+			addNum = var_121_0.num,
+			maxNum = var_121_3 * var_121_0.num,
+			defaultNum = var_121_0.num,
+			numUpdate = function(arg_122_0, arg_122_1)
+				var_121_5 = math.floor(arg_122_1 / var_121_0.num)
 
-				if uv3 < uv0 * uv2 then
-					setText(slot0, i18n(uv4, slot2, slot1, COLOR_RED, uv5))
+				local var_122_0 = var_121_5 * var_121_2
 
-					uv6 = false
+				if var_122_0 > var_121_1 then
+					setText(arg_122_0, i18n(arg_121_3, var_122_0, arg_122_1, COLOR_RED, var_121_6))
+
+					var_121_4 = false
 				else
-					setText(slot0, i18n(uv4, slot2, slot1, COLOR_GREEN, uv5))
+					setText(arg_122_0, i18n(arg_121_3, var_122_0, arg_122_1, COLOR_GREEN, var_121_6))
 
-					uv6 = true
+					var_121_4 = true
 				end
 			end,
-			onYes = function ()
-				if uv0 then
+			onYes = function()
+				if var_121_4 then
 					pg.m02:sendNotification(GAME.SHOPPING, {
-						id = uv1,
-						count = uv2
+						id = arg_121_0,
+						count = var_121_5
 					})
-				elseif uv3 then
-					pg.TipsMgr.GetInstance():ShowTips(i18n(uv3))
+				elseif arg_121_4 then
+					pg.TipsMgr.GetInstance():ShowTips(i18n(arg_121_4))
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("main_playerInfoLayer_error_changeNameNoGem"))
 				end
@@ -1519,90 +1786,104 @@ function shoppingBatch(slot0, slot1, slot2, slot3, slot4)
 	end
 end
 
-function gotoChargeScene(slot0, slot1)
-	slot2 = getProxy(ContextProxy)
+function gotoChargeScene(arg_124_0, arg_124_1)
+	local var_124_0 = getProxy(ContextProxy)
+	local var_124_1 = getProxy(ContextProxy):getCurrentContext()
 
-	if instanceof(getProxy(ContextProxy):getCurrentContext().mediator, ChargeMediator) then
-		slot3.mediator:getViewComponent():switchSubViewByTogger(slot0)
+	if instanceof(var_124_1.mediator, ChargeMediator) then
+		var_124_1.mediator:getViewComponent():switchSubViewByTogger(arg_124_0)
 	else
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
-			wrap = slot0 or ChargeScene.TYPE_ITEM,
-			noRes = slot1
+			wrap = arg_124_0 or ChargeScene.TYPE_ITEM,
+			noRes = arg_124_1
 		})
 	end
 end
 
-function clearDrop(slot0)
-	clearImageSprite(findTF(slot0, "icon_bg"))
-	clearImageSprite(findTF(slot0, "icon_bg/frame"))
-	clearImageSprite(findTF(slot0, "icon_bg/icon"))
+function clearDrop(arg_125_0)
+	local var_125_0 = findTF(arg_125_0, "icon_bg")
+	local var_125_1 = findTF(arg_125_0, "icon_bg/frame")
+	local var_125_2 = findTF(arg_125_0, "icon_bg/icon")
+	local var_125_3 = findTF(arg_125_0, "icon_bg/icon/icon")
 
-	if findTF(slot0, "icon_bg/icon/icon") then
-		clearImageSprite(slot4)
+	clearImageSprite(var_125_0)
+	clearImageSprite(var_125_1)
+	clearImageSprite(var_125_2)
+
+	if var_125_3 then
+		clearImageSprite(var_125_3)
 	end
 end
 
-slot7 = {
+local var_0_7 = {
 	red = Color.New(1, 0.25, 0.25),
 	blue = Color.New(0.11, 0.55, 0.64),
 	yellow = Color.New(0.92, 0.52, 0)
 }
 
-function updateSkill(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot0, "skill")
+function updateSkill(arg_126_0, arg_126_1, arg_126_2, arg_126_3)
+	local var_126_0 = findTF(arg_126_0, "skill")
+	local var_126_1 = findTF(arg_126_0, "lock")
+	local var_126_2 = findTF(arg_126_0, "unknown")
 
-	if slot1 then
-		setActive(slot4, true)
-		setActive(findTF(slot0, "unknown"), false)
-		setActive(findTF(slot0, "lock"), not slot2)
-		LoadImageSpriteAsync("skillicon/" .. slot1.icon, findTF(slot4, "icon"))
-		setText(findTF(slot4, "name"), shortenString(getSkillName(slot1.id), slot3 or 8))
-		setText(findTF(slot4, "level"), "LEVEL: " .. (slot2 and slot2.level or "??"))
-		setTextColor(slot8, uv0[slot1.color or "blue"])
+	if arg_126_1 then
+		setActive(var_126_0, true)
+		setActive(var_126_2, false)
+		setActive(var_126_1, not arg_126_2)
+		LoadImageSpriteAsync("skillicon/" .. arg_126_1.icon, findTF(var_126_0, "icon"))
+
+		local var_126_3 = arg_126_1.color or "blue"
+
+		setText(findTF(var_126_0, "name"), shortenString(getSkillName(arg_126_1.id), arg_126_3 or 8))
+
+		local var_126_4 = findTF(var_126_0, "level")
+
+		setText(var_126_4, "LEVEL: " .. (arg_126_2 and arg_126_2.level or "??"))
+		setTextColor(var_126_4, var_0_7[var_126_3])
 	else
-		setActive(slot4, false)
-		setActive(slot6, true)
-		setActive(slot5, false)
+		setActive(var_126_0, false)
+		setActive(var_126_2, true)
+		setActive(var_126_1, false)
 	end
 end
 
-slot8 = true
+local var_0_8 = true
 
-function onBackButton(slot0, slot1, slot2, slot3)
-	slot4 = GetOrAddComponent(slot1, "UILongPressTrigger")
+function onBackButton(arg_127_0, arg_127_1, arg_127_2, arg_127_3)
+	local var_127_0 = GetOrAddComponent(arg_127_1, "UILongPressTrigger")
 
-	assert(slot2, "callback should exist")
+	assert(arg_127_2, "callback should exist")
 
-	slot4.longPressThreshold = defaultValue(slot3, 1)
+	var_127_0.longPressThreshold = defaultValue(arg_127_3, 1)
 
-	function slot5(slot0)
-		return function ()
-			if uv0 then
+	local function var_127_1(arg_128_0)
+		return function()
+			if var_0_8 then
 				pg.CriMgr.GetInstance():PlaySoundEffect_V3(SOUND_BACK)
 			end
 
-			slot0, slot1 = uv1()
+			local var_129_0, var_129_1 = arg_127_2()
 
-			if slot0 then
-				uv2(slot1)
+			if var_129_0 then
+				arg_128_0(var_129_1)
 			end
 		end
 	end
 
-	slot6 = slot4.onReleased
+	local var_127_2 = var_127_0.onReleased
 
-	pg.DelegateInfo.Add(slot0, slot6)
-	slot6:RemoveAllListeners()
-	slot6:AddListener(slot5(function (slot0)
-		slot0:emit(BaseUI.ON_BACK)
+	pg.DelegateInfo.Add(arg_127_0, var_127_2)
+	var_127_2:RemoveAllListeners()
+	var_127_2:AddListener(var_127_1(function(arg_130_0)
+		arg_130_0:emit(BaseUI.ON_BACK)
 	end))
 
-	slot7 = slot4.onLongPressed
+	local var_127_3 = var_127_0.onLongPressed
 
-	pg.DelegateInfo.Add(slot0, slot7)
-	slot7:RemoveAllListeners()
-	slot7:AddListener(slot5(function (slot0)
-		slot0:emit(BaseUI.ON_HOME)
+	pg.DelegateInfo.Add(arg_127_0, var_127_3)
+	var_127_3:RemoveAllListeners()
+	var_127_3:AddListener(var_127_1(function(arg_131_0)
+		arg_131_0:emit(BaseUI.ON_HOME)
 	end))
 end
 
@@ -1614,713 +1895,822 @@ function GetHalfHour()
 	return pg.TimeMgr.GetInstance():GetNextTime(0, 0, 0, 1800)
 end
 
-function GetNextHour(slot0)
-	slot2, slot3 = pg.TimeMgr.GetInstance():parseTimeFrom(pg.TimeMgr.GetInstance():GetServerTime())
+function GetNextHour(arg_134_0)
+	local var_134_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_134_1, var_134_2 = pg.TimeMgr.GetInstance():parseTimeFrom(var_134_0)
 
-	return slot2 * 86400 + (slot3 + slot0) * 3600
+	return var_134_1 * 86400 + (var_134_2 + arg_134_0) * 3600
 end
 
-function GetPerceptualSize(slot0)
-	if type(slot0) == "number" then
-		return function (slot0)
-			if not slot0 then
-				return 0, 1
-			elseif slot0 > 240 then
-				return 4, 1
-			elseif slot0 > 225 then
-				return 3, 1
-			elseif slot0 > 192 then
-				return 2, 1
-			elseif slot0 < 126 then
-				return 1, 0.5
-			else
-				return 1, 1
-			end
-		end(slot0)
+function GetPerceptualSize(arg_135_0)
+	local function var_135_0(arg_136_0)
+		if not arg_136_0 then
+			return 0, 1
+		elseif arg_136_0 > 240 then
+			return 4, 1
+		elseif arg_136_0 > 225 then
+			return 3, 1
+		elseif arg_136_0 > 192 then
+			return 2, 1
+		elseif arg_136_0 < 126 then
+			return 1, 0.5
+		else
+			return 1, 1
+		end
 	end
 
-	slot2 = 1
-	slot3 = 0
-	slot4 = 0
-
-	while slot2 <= #slot0 do
-		slot7, slot8 = slot1(string.byte(slot0, slot2))
-		slot2 = slot2 + slot7
-		slot3 = slot3 + slot8
+	if type(arg_135_0) == "number" then
+		return var_135_0(arg_135_0)
 	end
 
-	return slot3
+	local var_135_1 = 1
+	local var_135_2 = 0
+	local var_135_3 = 0
+	local var_135_4 = #arg_135_0
+
+	while var_135_1 <= var_135_4 do
+		local var_135_5 = string.byte(arg_135_0, var_135_1)
+		local var_135_6, var_135_7 = var_135_0(var_135_5)
+
+		var_135_1 = var_135_1 + var_135_6
+		var_135_2 = var_135_2 + var_135_7
+	end
+
+	return var_135_2
 end
 
-function shortenString(slot0, slot1)
-	slot2 = 1
-	slot3 = 0
-	slot4 = 0
-	slot5 = #slot0
+function shortenString(arg_137_0, arg_137_1)
+	local var_137_0 = 1
+	local var_137_1 = 0
+	local var_137_2 = 0
+	local var_137_3 = #arg_137_0
 
-	while slot2 <= slot5 do
-		slot7, slot8 = GetPerceptualSize(string.byte(slot0, slot2))
+	while var_137_0 <= var_137_3 do
+		local var_137_4 = string.byte(arg_137_0, var_137_0)
+		local var_137_5, var_137_6 = GetPerceptualSize(var_137_4)
 
-		if slot1 <= math.ceil(slot3 + slot8) then
-			slot4 = slot2 + slot7
+		var_137_0 = var_137_0 + var_137_5
+		var_137_1 = var_137_1 + var_137_6
+
+		if arg_137_1 <= math.ceil(var_137_1) then
+			var_137_2 = var_137_0
 
 			break
 		end
 	end
 
-	if slot4 == 0 or slot5 < slot4 then
-		return slot0
+	if var_137_2 == 0 or var_137_3 < var_137_2 then
+		return arg_137_0
 	end
 
-	return string.sub(slot0, 1, slot4 - 1) .. ".."
+	return string.sub(arg_137_0, 1, var_137_2 - 1) .. ".."
 end
 
-function shouldShortenString(slot0, slot1)
-	slot2 = 1
-	slot3 = 0
-	slot4 = 0
-	slot5 = #slot0
+function shouldShortenString(arg_138_0, arg_138_1)
+	local var_138_0 = 1
+	local var_138_1 = 0
+	local var_138_2 = 0
+	local var_138_3 = #arg_138_0
 
-	while slot2 <= slot5 do
-		slot7, slot8 = GetPerceptualSize(string.byte(slot0, slot2))
+	while var_138_0 <= var_138_3 do
+		local var_138_4 = string.byte(arg_138_0, var_138_0)
+		local var_138_5, var_138_6 = GetPerceptualSize(var_138_4)
 
-		if slot1 <= math.ceil(slot3 + slot8) then
-			slot4 = slot2 + slot7
+		var_138_0 = var_138_0 + var_138_5
+		var_138_1 = var_138_1 + var_138_6
+
+		if arg_138_1 <= math.ceil(var_138_1) then
+			var_138_2 = var_138_0
 
 			break
 		end
 	end
 
-	if slot4 == 0 or slot5 < slot4 then
+	if var_138_2 == 0 or var_138_3 < var_138_2 then
 		return false
 	end
 
 	return true
 end
 
-function nameValidityCheck(slot0, slot1, slot2, slot3)
-	slot4 = true
-	slot5, slot6 = utf8_to_unicode(slot0)
-	slot7 = filterEgyUnicode(filterSpecChars(slot0))
-	slot8 = wordVer(slot0)
+function nameValidityCheck(arg_139_0, arg_139_1, arg_139_2, arg_139_3)
+	local var_139_0 = true
+	local var_139_1, var_139_2 = utf8_to_unicode(arg_139_0)
+	local var_139_3 = filterEgyUnicode(filterSpecChars(arg_139_0))
+	local var_139_4 = wordVer(arg_139_0)
 
-	if not checkSpaceValid(slot0) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n(slot3[1]))
+	if not checkSpaceValid(arg_139_0) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n(arg_139_3[1]))
 
-		slot4 = false
-	elseif slot8 > 0 or slot7 ~= slot0 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n(slot3[4]))
+		var_139_0 = false
+	elseif var_139_4 > 0 or var_139_3 ~= arg_139_0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n(arg_139_3[4]))
 
-		slot4 = false
-	elseif slot6 < slot1 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n(slot3[2]))
+		var_139_0 = false
+	elseif var_139_2 < arg_139_1 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n(arg_139_3[2]))
 
-		slot4 = false
-	elseif slot2 < slot6 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n(slot3[3]))
+		var_139_0 = false
+	elseif arg_139_2 < var_139_2 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n(arg_139_3[3]))
 
-		slot4 = false
+		var_139_0 = false
 	end
 
-	return slot4
+	return var_139_0
 end
 
-function checkSpaceValid(slot0)
+function checkSpaceValid(arg_140_0)
 	if PLATFORM_CODE == PLATFORM_US then
 		return true
 	end
 
-	return slot0 == string.gsub(string.gsub(slot0, " ", ""), "　", "")
+	local var_140_0 = string.gsub(arg_140_0, " ", "")
+
+	return arg_140_0 == string.gsub(var_140_0, "　", "")
 end
 
-function filterSpecChars(slot0)
-	slot1 = {}
-	slot2 = 0
-	slot3 = 0
-	slot4 = 0
-	slot5 = 1
+function filterSpecChars(arg_141_0)
+	local var_141_0 = {}
+	local var_141_1 = 0
+	local var_141_2 = 0
+	local var_141_3 = 0
+	local var_141_4 = 1
 
-	while slot5 <= #slot0 do
-		if not string.byte(slot0, slot5) then
+	while var_141_4 <= #arg_141_0 do
+		local var_141_5 = string.byte(arg_141_0, var_141_4)
+
+		if not var_141_5 then
 			break
 		end
 
-		if slot6 >= 48 and slot6 <= 57 or slot6 >= 65 and slot6 <= 90 or slot6 == 95 or slot6 >= 97 and slot6 <= 122 then
-			table.insert(slot1, string.char(slot6))
-		elseif slot6 >= 228 and slot6 <= 233 then
-			slot8 = string.byte(slot0, slot5 + 2)
+		if var_141_5 >= 48 and var_141_5 <= 57 or var_141_5 >= 65 and var_141_5 <= 90 or var_141_5 == 95 or var_141_5 >= 97 and var_141_5 <= 122 then
+			table.insert(var_141_0, string.char(var_141_5))
+		elseif var_141_5 >= 228 and var_141_5 <= 233 then
+			local var_141_6 = string.byte(arg_141_0, var_141_4 + 1)
+			local var_141_7 = string.byte(arg_141_0, var_141_4 + 2)
 
-			if string.byte(slot0, slot5 + 1) and slot8 and slot7 >= 128 and slot7 <= 191 and slot8 >= 128 and slot8 <= 191 then
-				slot5 = slot5 + 2
+			if var_141_6 and var_141_7 and var_141_6 >= 128 and var_141_6 <= 191 and var_141_7 >= 128 and var_141_7 <= 191 then
+				var_141_4 = var_141_4 + 2
 
-				table.insert(slot1, string.char(slot6, slot7, slot8))
+				table.insert(var_141_0, string.char(var_141_5, var_141_6, var_141_7))
 
-				slot2 = slot2 + 1
+				var_141_1 = var_141_1 + 1
 			end
-		elseif slot6 == 45 or slot6 == 40 or slot6 == 41 then
-			table.insert(slot1, string.char(slot6))
-		elseif slot6 == 194 then
-			if string.byte(slot0, slot5 + 1) == 183 then
-				slot5 = slot5 + 1
+		elseif var_141_5 == 45 or var_141_5 == 40 or var_141_5 == 41 then
+			table.insert(var_141_0, string.char(var_141_5))
+		elseif var_141_5 == 194 then
+			local var_141_8 = string.byte(arg_141_0, var_141_4 + 1)
 
-				table.insert(slot1, string.char(slot6, slot7))
+			if var_141_8 == 183 then
+				var_141_4 = var_141_4 + 1
 
-				slot2 = slot2 + 1
+				table.insert(var_141_0, string.char(var_141_5, var_141_8))
+
+				var_141_1 = var_141_1 + 1
 			end
-		elseif slot6 == 239 then
-			slot8 = string.byte(slot0, slot5 + 2)
+		elseif var_141_5 == 239 then
+			local var_141_9 = string.byte(arg_141_0, var_141_4 + 1)
+			local var_141_10 = string.byte(arg_141_0, var_141_4 + 2)
 
-			if string.byte(slot0, slot5 + 1) == 188 and (slot8 == 136 or slot8 == 137) then
-				slot5 = slot5 + 2
+			if var_141_9 == 188 and (var_141_10 == 136 or var_141_10 == 137) then
+				var_141_4 = var_141_4 + 2
 
-				table.insert(slot1, string.char(slot6, slot7, slot8))
+				table.insert(var_141_0, string.char(var_141_5, var_141_9, var_141_10))
 
-				slot2 = slot2 + 1
+				var_141_1 = var_141_1 + 1
 			end
-		elseif slot6 == 206 or slot6 == 207 then
-			slot7 = string.byte(slot0, slot5 + 1)
+		elseif var_141_5 == 206 or var_141_5 == 207 then
+			local var_141_11 = string.byte(arg_141_0, var_141_4 + 1)
 
-			if slot6 == 206 and slot7 >= 177 or slot6 == 207 and slot7 <= 134 then
-				slot5 = slot5 + 1
+			if var_141_5 == 206 and var_141_11 >= 177 or var_141_5 == 207 and var_141_11 <= 134 then
+				var_141_4 = var_141_4 + 1
 
-				table.insert(slot1, string.char(slot6, slot7))
+				table.insert(var_141_0, string.char(var_141_5, var_141_11))
 
-				slot2 = slot2 + 1
+				var_141_1 = var_141_1 + 1
 			end
-		elseif slot6 == 227 and PLATFORM_CODE == PLATFORM_JP then
-			slot8 = string.byte(slot0, slot5 + 2)
+		elseif var_141_5 == 227 and PLATFORM_CODE == PLATFORM_JP then
+			local var_141_12 = string.byte(arg_141_0, var_141_4 + 1)
+			local var_141_13 = string.byte(arg_141_0, var_141_4 + 2)
 
-			if string.byte(slot0, slot5 + 1) and slot8 and slot7 > 128 and slot7 <= 191 and slot8 >= 128 and slot8 <= 191 then
-				slot5 = slot5 + 2
+			if var_141_12 and var_141_13 and var_141_12 > 128 and var_141_12 <= 191 and var_141_13 >= 128 and var_141_13 <= 191 then
+				var_141_4 = var_141_4 + 2
 
-				table.insert(slot1, string.char(slot6, slot7, slot8))
+				table.insert(var_141_0, string.char(var_141_5, var_141_12, var_141_13))
 
-				slot3 = slot3 + 1
+				var_141_2 = var_141_2 + 1
 			end
-		elseif slot6 >= 224 and PLATFORM_CODE == PLATFORM_KR then
-			slot8 = string.byte(slot0, slot5 + 2)
+		elseif var_141_5 >= 224 and PLATFORM_CODE == PLATFORM_KR then
+			local var_141_14 = string.byte(arg_141_0, var_141_4 + 1)
+			local var_141_15 = string.byte(arg_141_0, var_141_4 + 2)
 
-			if string.byte(slot0, slot5 + 1) and slot8 and slot7 >= 128 and slot7 <= 191 and slot8 >= 128 and slot8 <= 191 then
-				slot5 = slot5 + 2
+			if var_141_14 and var_141_15 and var_141_14 >= 128 and var_141_14 <= 191 and var_141_15 >= 128 and var_141_15 <= 191 then
+				var_141_4 = var_141_4 + 2
 
-				table.insert(slot1, string.char(slot6, slot7, slot8))
+				table.insert(var_141_0, string.char(var_141_5, var_141_14, var_141_15))
 
-				slot4 = slot4 + 1
+				var_141_3 = var_141_3 + 1
 			end
 		elseif PLATFORM_CODE == PLATFORM_US then
-			if slot5 ~= 1 and slot6 == 32 and string.byte(slot0, slot5 + 1) ~= 32 then
-				table.insert(slot1, string.char(slot6))
+			if var_141_4 ~= 1 and var_141_5 == 32 and string.byte(arg_141_0, var_141_4 + 1) ~= 32 then
+				table.insert(var_141_0, string.char(var_141_5))
 			end
 
-			if slot6 >= 192 and slot6 <= 223 then
-				slot7 = string.byte(slot0, slot5 + 1)
-				slot5 = slot5 + 1
+			if var_141_5 >= 192 and var_141_5 <= 223 then
+				local var_141_16 = string.byte(arg_141_0, var_141_4 + 1)
 
-				if slot6 == 194 and slot7 and slot7 >= 128 then
-					table.insert(slot1, string.char(slot6, slot7))
-				elseif slot6 == 195 and slot7 and slot7 <= 191 then
-					table.insert(slot1, string.char(slot6, slot7))
+				var_141_4 = var_141_4 + 1
+
+				if var_141_5 == 194 and var_141_16 and var_141_16 >= 128 then
+					table.insert(var_141_0, string.char(var_141_5, var_141_16))
+				elseif var_141_5 == 195 and var_141_16 and var_141_16 <= 191 then
+					table.insert(var_141_0, string.char(var_141_5, var_141_16))
 				end
 			end
 
-			if slot6 == 195 and string.byte(slot0, slot5 + 1) == 188 then
-				table.insert(slot1, string.char(slot6, slot7))
+			if var_141_5 == 195 then
+				local var_141_17 = string.byte(arg_141_0, var_141_4 + 1)
+
+				if var_141_17 == 188 then
+					table.insert(var_141_0, string.char(var_141_5, var_141_17))
+				end
 			end
 		end
 
-		slot5 = slot5 + 1
+		var_141_4 = var_141_4 + 1
 	end
 
-	return table.concat(slot1), slot2 + slot3 + slot4
+	return table.concat(var_141_0), var_141_1 + var_141_2 + var_141_3
 end
 
-function filterEgyUnicode(slot0)
-	return string.gsub(string.gsub(slot0, "\\xf0\\x93[\\x80-\\x8f][\\x80-\\xbf]", ""), "\\xf0\\x93\\x90[\\x80-\\xaf]", "")
+function filterEgyUnicode(arg_142_0)
+	arg_142_0 = string.gsub(arg_142_0, "\xF0\x93[\x80-\x8F][\x80-\xBF]", "")
+	arg_142_0 = string.gsub(arg_142_0, "\xF0\x93\x90[\x80-\xAF]", "")
+
+	return arg_142_0
 end
 
-function shiftPanel(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8)
-	slot3 = slot3 or 0.2
+function shiftPanel(arg_143_0, arg_143_1, arg_143_2, arg_143_3, arg_143_4, arg_143_5, arg_143_6, arg_143_7, arg_143_8)
+	arg_143_3 = arg_143_3 or 0.2
 
-	if slot5 then
-		LeanTween.cancel(go(slot0))
+	if arg_143_5 then
+		LeanTween.cancel(go(arg_143_0))
 	end
 
-	slot9 = rtf(slot0)
+	local var_143_0 = rtf(arg_143_0)
 
-	LeanTween.move(slot9, Vector3(slot1 or slot9.anchoredPosition.x, slot2 or slot9.anchoredPosition.y, 0), slot3):setEase(slot7 or LeanTweenType.easeInOutSine)
+	arg_143_1 = arg_143_1 or var_143_0.anchoredPosition.x
+	arg_143_2 = arg_143_2 or var_143_0.anchoredPosition.y
 
-	if slot4 then
-		slot10:setDelay(slot4)
+	local var_143_1 = LeanTween.move(var_143_0, Vector3(arg_143_1, arg_143_2, 0), arg_143_3)
+
+	arg_143_7 = arg_143_7 or LeanTweenType.easeInOutSine
+
+	var_143_1:setEase(arg_143_7)
+
+	if arg_143_4 then
+		var_143_1:setDelay(arg_143_4)
 	end
 
-	if slot6 then
-		GetOrAddComponent(slot0, "CanvasGroup").blocksRaycasts = false
+	if arg_143_6 then
+		GetOrAddComponent(arg_143_0, "CanvasGroup").blocksRaycasts = false
 	end
 
-	slot10:setOnComplete(System.Action(function ()
-		if uv0 then
-			uv0()
+	var_143_1:setOnComplete(System.Action(function()
+		if arg_143_8 then
+			arg_143_8()
 		end
 
-		if uv1 then
-			GetOrAddComponent(uv2, "CanvasGroup").blocksRaycasts = true
+		if arg_143_6 then
+			GetOrAddComponent(arg_143_0, "CanvasGroup").blocksRaycasts = true
 		end
 	end))
 
-	return slot10
+	return var_143_1
 end
 
-function TweenValue(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot8 = LeanTween.value(go(slot0), slot1, slot2, slot3):setOnUpdate(System.Action_float(function (slot0)
-		if uv0 then
-			uv0(slot0)
+function TweenValue(arg_145_0, arg_145_1, arg_145_2, arg_145_3, arg_145_4, arg_145_5, arg_145_6, arg_145_7)
+	local var_145_0 = LeanTween.value(go(arg_145_0), arg_145_1, arg_145_2, arg_145_3):setOnUpdate(System.Action_float(function(arg_146_0)
+		if arg_145_5 then
+			arg_145_5(arg_146_0)
 		end
-	end)):setOnComplete(System.Action(function ()
-		if uv0 then
-			uv0()
+	end)):setOnComplete(System.Action(function()
+		if arg_145_6 then
+			arg_145_6()
 		end
-	end)):setDelay(slot4 or 0)
+	end)):setDelay(arg_145_4 or 0)
 
-	if slot7 and slot7 > 0 then
-		slot8:setRepeat(slot7)
+	if arg_145_7 and arg_145_7 > 0 then
+		var_145_0:setRepeat(arg_145_7)
 	end
 
-	return slot8
+	return var_145_0
 end
 
-function rotateAni(slot0, slot1, slot2)
-	return LeanTween.rotate(rtf(slot0), 360 * slot1, slot2):setLoopClamp()
+function rotateAni(arg_148_0, arg_148_1, arg_148_2)
+	return LeanTween.rotate(rtf(arg_148_0), 360 * arg_148_1, arg_148_2):setLoopClamp()
 end
 
-function blinkAni(slot0, slot1, slot2, slot3)
-	return LeanTween.alpha(rtf(slot0), slot3 or 0, slot1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(slot2 or 0)
+function blinkAni(arg_149_0, arg_149_1, arg_149_2, arg_149_3)
+	return LeanTween.alpha(rtf(arg_149_0), arg_149_3 or 0, arg_149_1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(arg_149_2 or 0)
 end
 
-function scaleAni(slot0, slot1, slot2, slot3)
-	return LeanTween.scale(rtf(slot0), slot3 or 0, slot1):setLoopPingPong(slot2 or 0)
+function scaleAni(arg_150_0, arg_150_1, arg_150_2, arg_150_3)
+	return LeanTween.scale(rtf(arg_150_0), arg_150_3 or 0, arg_150_1):setLoopPingPong(arg_150_2 or 0)
 end
 
-function floatAni(slot0, slot1, slot2, slot3)
-	return LeanTween.moveY(rtf(slot0), slot0.localPosition.y + slot1, slot2):setLoopPingPong(slot3 or 0)
+function floatAni(arg_151_0, arg_151_1, arg_151_2, arg_151_3)
+	local var_151_0 = arg_151_0.localPosition.y + arg_151_1
+
+	return LeanTween.moveY(rtf(arg_151_0), var_151_0, arg_151_2):setLoopPingPong(arg_151_3 or 0)
 end
 
-slot9 = tostring
+local var_0_9 = tostring
 
-function tostring(slot0)
-	if slot0 == nil then
+function tostring(arg_152_0)
+	if arg_152_0 == nil then
 		return "nil"
 	end
 
-	if uv0(slot0) == nil then
-		if type(slot0) == "table" then
+	local var_152_0 = var_0_9(arg_152_0)
+
+	if var_152_0 == nil then
+		if type(arg_152_0) == "table" then
 			return "{}"
 		end
 
 		return " ~nil"
 	end
 
-	return slot1
+	return var_152_0
 end
 
-function wordVer(slot0, slot1)
-	if slot0:match(ChatConst.EmojiCodeMatch) then
-		return 0, slot0
+function wordVer(arg_153_0, arg_153_1)
+	if arg_153_0.match(arg_153_0, ChatConst.EmojiCodeMatch) then
+		return 0, arg_153_0
 	end
 
-	if #filterEgyUnicode(slot0) ~= #slot0 then
-		if (slot1 or {}).isReplace then
-			slot0 = slot2
+	arg_153_1 = arg_153_1 or {}
+
+	local var_153_0 = filterEgyUnicode(arg_153_0)
+
+	if #var_153_0 ~= #arg_153_0 then
+		if arg_153_1.isReplace then
+			arg_153_0 = var_153_0
 		else
 			return 1
 		end
 	end
 
-	slot4 = pg.word_template
-	slot5 = pg.word_legal_template
-	slot1.isReplace = slot1.isReplace or false
-	slot1.replaceWord = slot1.replaceWord or "*"
-	slot7 = 1
-	slot8 = ""
-	slot9 = 0
+	local var_153_1 = wordSplit(arg_153_0)
+	local var_153_2 = pg.word_template
+	local var_153_3 = pg.word_legal_template
 
-	while slot7 <= #wordSplit(slot0) do
-		slot10, slot7, slot12 = wordLegalMatch(slot3, slot5, slot7)
+	arg_153_1.isReplace = arg_153_1.isReplace or false
+	arg_153_1.replaceWord = arg_153_1.replaceWord or "*"
 
-		if slot10 then
-			slot8 = slot8 .. slot12
+	local var_153_4 = #var_153_1
+	local var_153_5 = 1
+	local var_153_6 = ""
+	local var_153_7 = 0
+
+	while var_153_5 <= var_153_4 do
+		local var_153_8, var_153_9, var_153_10 = wordLegalMatch(var_153_1, var_153_3, var_153_5)
+
+		if var_153_8 then
+			var_153_5 = var_153_9
+			var_153_6 = var_153_6 .. var_153_10
 		else
-			slot13, slot7, slot15 = wordVerMatch(slot3, slot4, slot1, slot7, "", false, slot7, "")
+			local var_153_11, var_153_12, var_153_13 = wordVerMatch(var_153_1, var_153_2, arg_153_1, var_153_5, "", false, var_153_5, "")
 
-			if slot13 then
-				slot9 = slot9 + 1
+			if var_153_11 then
+				var_153_5 = var_153_12
+				var_153_7 = var_153_7 + 1
 
-				if slot1.isReplace then
-					slot8 = slot8 .. slot15
+				if arg_153_1.isReplace then
+					var_153_6 = var_153_6 .. var_153_13
 				end
 			else
-				if slot1.isReplace then
-					slot8 = slot8 .. slot3[slot7]
+				if arg_153_1.isReplace then
+					var_153_6 = var_153_6 .. var_153_1[var_153_5]
 				end
 
-				slot7 = slot7 + 1
+				var_153_5 = var_153_5 + 1
 			end
 		end
 	end
 
-	if slot1.isReplace then
-		return slot9, slot8
+	if arg_153_1.isReplace then
+		return var_153_7, var_153_6
 	else
-		return slot9
+		return var_153_7
 	end
 end
 
-function wordLegalMatch(slot0, slot1, slot2, slot3, slot4)
-	if slot2 > #slot0 then
-		return slot3, slot2, slot4
+function wordLegalMatch(arg_154_0, arg_154_1, arg_154_2, arg_154_3, arg_154_4)
+	if arg_154_2 > #arg_154_0 then
+		return arg_154_3, arg_154_2, arg_154_4
 	end
 
-	slot6 = slot1[slot0[slot2]]
+	local var_154_0 = arg_154_0[arg_154_2]
+	local var_154_1 = arg_154_1[var_154_0]
 
-	if slot4 == nil then
-		slot4 = ""
-	end
+	arg_154_4 = arg_154_4 == nil and "" or arg_154_4
 
-	if slot6 then
-		if slot6.this then
-			return wordLegalMatch(slot0, slot6, slot2 + 1, true, slot4 .. slot5)
+	if var_154_1 then
+		if var_154_1.this then
+			return wordLegalMatch(arg_154_0, var_154_1, arg_154_2 + 1, true, arg_154_4 .. var_154_0)
 		else
-			return wordLegalMatch(slot0, slot6, slot2 + 1, false, slot4 .. slot5)
+			return wordLegalMatch(arg_154_0, var_154_1, arg_154_2 + 1, false, arg_154_4 .. var_154_0)
 		end
 	else
-		return slot3, slot2, slot4
+		return arg_154_3, arg_154_2, arg_154_4
 	end
 end
 
-slot10 = string.byte("a")
-slot11 = string.byte("z")
-slot12 = string.byte("A")
-slot13 = string.byte("Z")
+local var_0_10 = string.byte("a")
+local var_0_11 = string.byte("z")
+local var_0_12 = string.byte("A")
+local var_0_13 = string.byte("Z")
 
-function slot14(slot0)
-	if not slot0 then
-		return slot0
+local function var_0_14(arg_155_0)
+	if not arg_155_0 then
+		return arg_155_0
 	end
 
-	if string.byte(slot0) > 128 then
+	local var_155_0 = string.byte(arg_155_0)
+
+	if var_155_0 > 128 then
 		return
 	end
 
-	if uv0 <= slot1 and slot1 <= uv1 then
-		return string.char(slot1 - 32)
-	elseif uv2 <= slot1 and slot1 <= uv3 then
-		return string.char(slot1 + 32)
+	if var_155_0 >= var_0_10 and var_155_0 <= var_0_11 then
+		return string.char(var_155_0 - 32)
+	elseif var_155_0 >= var_0_12 and var_155_0 <= var_0_13 then
+		return string.char(var_155_0 + 32)
 	else
-		return slot0
+		return arg_155_0
 	end
 end
 
-function wordVerMatch(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	if slot3 > #slot0 then
-		return slot5, slot6, slot7
+function wordVerMatch(arg_156_0, arg_156_1, arg_156_2, arg_156_3, arg_156_4, arg_156_5, arg_156_6, arg_156_7)
+	if arg_156_3 > #arg_156_0 then
+		return arg_156_5, arg_156_6, arg_156_7
 	end
 
-	if slot1[slot0[slot3]] then
-		slot10, slot11, slot12 = wordVerMatch(slot0, slot9, slot2, slot3 + 1, slot2.isReplace and slot4 .. slot2.replaceWord or slot4, slot9.this or slot5, slot9.this and slot3 + 1 or slot6, slot9.this and (slot2.isReplace and slot4 .. slot2.replaceWord or slot4) or slot7)
+	local var_156_0 = arg_156_0[arg_156_3]
+	local var_156_1 = arg_156_1[var_156_0]
 
-		if slot10 then
-			return slot10, slot11, slot12
+	if var_156_1 then
+		local var_156_2, var_156_3, var_156_4 = wordVerMatch(arg_156_0, var_156_1, arg_156_2, arg_156_3 + 1, arg_156_2.isReplace and arg_156_4 .. arg_156_2.replaceWord or arg_156_4, var_156_1.this or arg_156_5, var_156_1.this and arg_156_3 + 1 or arg_156_6, var_156_1.this and (arg_156_2.isReplace and arg_156_4 .. arg_156_2.replaceWord or arg_156_4) or arg_156_7)
+
+		if var_156_2 then
+			return var_156_2, var_156_3, var_156_4
 		end
 	end
 
-	slot10 = uv0(slot8)
-	slot9 = slot1[slot10]
+	local var_156_5 = var_0_14(var_156_0)
+	local var_156_6 = arg_156_1[var_156_5]
 
-	if slot10 ~= slot8 and slot9 then
-		slot11, slot12, slot13 = wordVerMatch(slot0, slot9, slot2, slot3 + 1, slot2.isReplace and slot4 .. slot2.replaceWord or slot4, slot9.this or slot5, slot9.this and slot3 + 1 or slot6, slot9.this and (slot2.isReplace and slot4 .. slot2.replaceWord or slot4) or slot7)
+	if var_156_5 ~= var_156_0 and var_156_6 then
+		local var_156_7, var_156_8, var_156_9 = wordVerMatch(arg_156_0, var_156_6, arg_156_2, arg_156_3 + 1, arg_156_2.isReplace and arg_156_4 .. arg_156_2.replaceWord or arg_156_4, var_156_6.this or arg_156_5, var_156_6.this and arg_156_3 + 1 or arg_156_6, var_156_6.this and (arg_156_2.isReplace and arg_156_4 .. arg_156_2.replaceWord or arg_156_4) or arg_156_7)
 
-		if slot11 then
-			return slot11, slot12, slot13
+		if var_156_7 then
+			return var_156_7, var_156_8, var_156_9
 		end
 	end
 
-	return slot5, slot6, slot7
+	return arg_156_5, arg_156_6, arg_156_7
 end
 
-function wordSplit(slot0)
-	slot1 = {}
+function wordSplit(arg_157_0)
+	local var_157_0 = {}
 
-	for slot5 in slot0:gmatch("[-\\xc2-\\xf4][\\x80-\\xbf]*") do
-		slot1[#slot1 + 1] = slot5
+	for iter_157_0 in arg_157_0.gmatch(arg_157_0, "[\x01-\x7F\xC2-\xF4][\x80-\xBF]*") do
+		var_157_0[#var_157_0 + 1] = iter_157_0
 	end
 
-	return slot1
+	return var_157_0
 end
 
-function contentWrap(slot0, slot1, slot2)
-	return #LuaHelper.WrapContent(slot0, slot1, slot2) ~= #slot0, slot3
+function contentWrap(arg_158_0, arg_158_1, arg_158_2)
+	local var_158_0 = LuaHelper.WrapContent(arg_158_0, arg_158_1, arg_158_2)
+
+	return #var_158_0 ~= #arg_158_0, var_158_0
 end
 
-function cancelRich(slot0)
-	slot1 = nil
+function cancelRich(arg_159_0)
+	local var_159_0
 
-	for slot5 = 1, 20 do
-		slot0, slot7 = string.gsub(slot0, "<([^>]*)>", "%1")
+	for iter_159_0 = 1, 20 do
+		local var_159_1
 
-		if slot7 <= 0 then
+		arg_159_0, var_159_1 = string.gsub(arg_159_0, "<([^>]*)>", "%1")
+
+		if var_159_1 <= 0 then
 			break
 		end
 	end
 
-	return slot0
+	return arg_159_0
 end
 
-function getSkillConfig(slot0)
-	if not require("GameCfg.buff.buff_" .. slot0) then
-		warning("找不到技能配置: " .. slot0)
+function getSkillConfig(arg_160_0)
+	local var_160_0 = require("GameCfg.buff.buff_" .. arg_160_0)
+
+	if not var_160_0 then
+		warning("找不到技能配置: " .. arg_160_0)
 
 		return
 	end
 
-	slot2 = Clone(slot1)
-	slot2.name = getSkillName(slot0)
-	slot2.desc = HXSet.hxLan(slot2.desc)
-	slot2.desc_get = HXSet.hxLan(slot2.desc_get)
+	local var_160_1 = Clone(var_160_0)
 
-	_.each(slot2, function (slot0)
-		slot0.desc = HXSet.hxLan(slot0.desc)
+	var_160_1.name = getSkillName(arg_160_0)
+	var_160_1.desc = HXSet.hxLan(var_160_1.desc)
+	var_160_1.desc_get = HXSet.hxLan(var_160_1.desc_get)
+
+	_.each(var_160_1, function(arg_161_0)
+		arg_161_0.desc = HXSet.hxLan(arg_161_0.desc)
 	end)
 
-	return slot2
+	return var_160_1
 end
 
-function getSkillName(slot0)
-	if pg.skill_data_template[slot0] or pg.skill_data_display[slot0] then
-		return HXSet.hxLan(slot1.name)
+function getSkillName(arg_162_0)
+	local var_162_0 = pg.skill_data_template[arg_162_0] or pg.skill_data_display[arg_162_0]
+
+	if var_162_0 then
+		return HXSet.hxLan(var_162_0.name)
 	else
 		return ""
 	end
 end
 
-function getSkillDescGet(slot0, slot1)
-	if not (slot1 and pg.skill_world_display[slot0] and setmetatable({}, {
-		__index = function (slot0, slot1)
-			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
+function getSkillDescGet(arg_163_0, arg_163_1)
+	local var_163_0 = arg_163_1 and pg.skill_world_display[arg_163_0] and setmetatable({}, {
+		__index = function(arg_164_0, arg_164_1)
+			return pg.skill_world_display[arg_163_0][arg_164_1] or pg.skill_data_template[arg_163_0][arg_164_1]
 		end
-	}) or pg.skill_data_template[slot0]) then
+	}) or pg.skill_data_template[arg_163_0]
+
+	if not var_163_0 then
 		return ""
 	end
 
-	slot3 = slot2.desc_get ~= "" and slot2.desc_get or slot2.desc
+	local var_163_1 = var_163_0.desc_get ~= "" and var_163_0.desc_get or var_163_0.desc
 
-	for slot7, slot8 in pairs(slot2.desc_get_add) do
-		if slot8[2] then
-			slot9 = setColorStr(slot8[1], COLOR_GREEN) .. specialGSub(i18n("word_skill_desc_get"), "$1", setColorStr(slot8[2], COLOR_GREEN))
+	for iter_163_0, iter_163_1 in pairs(var_163_0.desc_get_add) do
+		local var_163_2 = setColorStr(iter_163_1[1], COLOR_GREEN)
+
+		if iter_163_1[2] then
+			var_163_2 = var_163_2 .. specialGSub(i18n("word_skill_desc_get"), "$1", setColorStr(iter_163_1[2], COLOR_GREEN))
 		end
 
-		slot3 = specialGSub(slot3, "$" .. slot7, slot9)
+		var_163_1 = specialGSub(var_163_1, "$" .. iter_163_0, var_163_2)
 	end
 
-	return HXSet.hxLan(slot3)
+	return HXSet.hxLan(var_163_1)
 end
 
-function getSkillDescLearn(slot0, slot1, slot2)
-	if not (slot2 and pg.skill_world_display[slot0] and setmetatable({}, {
-		__index = function (slot0, slot1)
-			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
+function getSkillDescLearn(arg_165_0, arg_165_1, arg_165_2)
+	local var_165_0 = arg_165_2 and pg.skill_world_display[arg_165_0] and setmetatable({}, {
+		__index = function(arg_166_0, arg_166_1)
+			return pg.skill_world_display[arg_165_0][arg_166_1] or pg.skill_data_template[arg_165_0][arg_166_1]
 		end
-	}) or pg.skill_data_template[slot0]) then
+	}) or pg.skill_data_template[arg_165_0]
+
+	if not var_165_0 then
 		return ""
 	end
 
-	if not slot3.desc_add then
-		return HXSet.hxLan(slot3.desc)
+	local var_165_1 = var_165_0.desc
+
+	if not var_165_0.desc_add then
+		return HXSet.hxLan(var_165_1)
 	end
 
-	for slot8, slot9 in pairs(slot3.desc_add) do
-		if slot9[slot1][2] then
-			slot10 = slot9[slot1][1] .. specialGSub(i18n("word_skill_desc_learn"), "$1", slot9[slot1][2])
+	for iter_165_0, iter_165_1 in pairs(var_165_0.desc_add) do
+		local var_165_2 = iter_165_1[arg_165_1][1]
+
+		if iter_165_1[arg_165_1][2] then
+			var_165_2 = var_165_2 .. specialGSub(i18n("word_skill_desc_learn"), "$1", iter_165_1[arg_165_1][2])
 		end
 
-		slot4 = specialGSub(slot4, "$" .. slot8, setColorStr(slot10, COLOR_YELLOW))
+		var_165_1 = specialGSub(var_165_1, "$" .. iter_165_0, setColorStr(var_165_2, COLOR_YELLOW))
 	end
 
-	return HXSet.hxLan(slot4)
+	return HXSet.hxLan(var_165_1)
 end
 
-function getSkillDesc(slot0, slot1, slot2)
-	if not (slot2 and pg.skill_world_display[slot0] and setmetatable({}, {
-		__index = function (slot0, slot1)
-			return pg.skill_world_display[uv0][slot1] or pg.skill_data_template[uv0][slot1]
+function getSkillDesc(arg_167_0, arg_167_1, arg_167_2)
+	local var_167_0 = arg_167_2 and pg.skill_world_display[arg_167_0] and setmetatable({}, {
+		__index = function(arg_168_0, arg_168_1)
+			return pg.skill_world_display[arg_167_0][arg_168_1] or pg.skill_data_template[arg_167_0][arg_168_1]
 		end
-	}) or pg.skill_data_template[slot0]) then
+	}) or pg.skill_data_template[arg_167_0]
+
+	if not var_167_0 then
 		return ""
 	end
 
-	if not slot3.desc_add then
-		return HXSet.hxLan(slot3.desc)
+	local var_167_1 = var_167_0.desc
+
+	if not var_167_0.desc_add then
+		return HXSet.hxLan(var_167_1)
 	end
 
-	for slot8, slot9 in pairs(slot3.desc_add) do
-		slot4 = specialGSub(slot4, "$" .. slot8, setColorStr(slot9[slot1][1], COLOR_GREEN))
+	for iter_167_0, iter_167_1 in pairs(var_167_0.desc_add) do
+		local var_167_2 = setColorStr(iter_167_1[arg_167_1][1], COLOR_GREEN)
+
+		var_167_1 = specialGSub(var_167_1, "$" .. iter_167_0, var_167_2)
 	end
 
-	return HXSet.hxLan(slot4)
+	return HXSet.hxLan(var_167_1)
 end
 
-function specialGSub(slot0, slot1, slot2)
-	return string.gsub(string.gsub(string.gsub(string.gsub(slot0, "<color=#", "<color=NNN"), "#", ""), slot1, string.gsub(slot2, "%%", "%%%%")), "<color=NNN", "<color=#")
+function specialGSub(arg_169_0, arg_169_1, arg_169_2)
+	arg_169_0 = string.gsub(arg_169_0, "<color=#", "<color=NNN")
+	arg_169_0 = string.gsub(arg_169_0, "#", "")
+	arg_169_2 = string.gsub(arg_169_2, "%%", "%%%%")
+	arg_169_0 = string.gsub(arg_169_0, arg_169_1, arg_169_2)
+	arg_169_0 = string.gsub(arg_169_0, "<color=NNN", "<color=#")
+
+	return arg_169_0
 end
 
-function topAnimation(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = {}
-	slot7 = 0.05
+function topAnimation(arg_170_0, arg_170_1, arg_170_2, arg_170_3, arg_170_4, arg_170_5)
+	local var_170_0 = {}
 
-	if slot0 then
-		slot8 = slot0.transform.localPosition.x
+	arg_170_4 = arg_170_4 or 0.27
 
-		setAnchoredPosition(slot0, {
-			x = slot8 - 500
+	local var_170_1 = 0.05
+
+	if arg_170_0 then
+		local var_170_2 = arg_170_0.transform.localPosition.x
+
+		setAnchoredPosition(arg_170_0, {
+			x = var_170_2 - 500
 		})
-		shiftPanel(slot0, slot8, nil, 0.05, slot4 or 0.27, true, true)
-		setActive(slot0, true)
+		shiftPanel(arg_170_0, var_170_2, nil, 0.05, arg_170_4, true, true)
+		setActive(arg_170_0, true)
 	end
 
-	setActive(slot1, false)
-	setActive(slot2, false)
-	setActive(slot3, false)
+	setActive(arg_170_1, false)
+	setActive(arg_170_2, false)
+	setActive(arg_170_3, false)
 
-	for slot11 = 1, 3 do
-		table.insert(slot6, LeanTween.delayedCall(slot4 + 0.13 + slot7 * slot11, System.Action(function ()
-			if uv0 then
-				setActive(uv0, not uv0.gameObject.activeSelf)
+	for iter_170_0 = 1, 3 do
+		table.insert(var_170_0, LeanTween.delayedCall(arg_170_4 + 0.13 + var_170_1 * iter_170_0, System.Action(function()
+			if arg_170_1 then
+				setActive(arg_170_1, not arg_170_1.gameObject.activeSelf)
 			end
 		end)).uniqueId)
-		table.insert(slot6, LeanTween.delayedCall(slot4 + 0.02 + slot7 * slot11, System.Action(function ()
-			if uv0 then
-				setActive(uv0, not go(uv0).activeSelf)
+		table.insert(var_170_0, LeanTween.delayedCall(arg_170_4 + 0.02 + var_170_1 * iter_170_0, System.Action(function()
+			if arg_170_2 then
+				setActive(arg_170_2, not go(arg_170_2).activeSelf)
 			end
 
-			if uv0 then
-				setActive(uv1, not go(uv1).activeSelf)
+			if arg_170_2 then
+				setActive(arg_170_3, not go(arg_170_3).activeSelf)
 			end
-		end)).uniqueId)
-	end
-
-	if slot5 then
-		table.insert(slot6, LeanTween.delayedCall(slot4 + 0.13 + slot7 * 3 + 0.1, System.Action(function ()
-			uv0()
 		end)).uniqueId)
 	end
 
-	return slot6
+	if arg_170_5 then
+		table.insert(var_170_0, LeanTween.delayedCall(arg_170_4 + 0.13 + var_170_1 * 3 + 0.1, System.Action(function()
+			arg_170_5()
+		end)).uniqueId)
+	end
+
+	return var_170_0
 end
 
-function cancelTweens(slot0)
-	assert(slot0, "must provide cancel targets, LeanTween.cancelAll is not allow")
+function cancelTweens(arg_174_0)
+	assert(arg_174_0, "must provide cancel targets, LeanTween.cancelAll is not allow")
 
-	for slot4, slot5 in ipairs(slot0) do
-		if slot5 then
-			LeanTween.cancel(slot5)
+	for iter_174_0, iter_174_1 in ipairs(arg_174_0) do
+		if iter_174_1 then
+			LeanTween.cancel(iter_174_1)
 		end
 	end
 end
 
-function getOfflineTimeStamp(slot0)
-	slot3 = ""
+function getOfflineTimeStamp(arg_175_0)
+	local var_175_0 = pg.TimeMgr.GetInstance():GetServerTime() - arg_175_0
+	local var_175_1 = ""
 
-	return (pg.TimeMgr.GetInstance():GetServerTime() - slot0 > 59 or i18n("just_now")) and (slot2 > 3599 or i18n("several_minutes_before", math.floor(slot2 / 60))) and (slot2 > 86399 or i18n("several_hours_before", math.floor(slot2 / 3600))) and i18n("several_days_before", math.floor(slot2 / 86400))
+	if var_175_0 <= 59 then
+		var_175_1 = i18n("just_now")
+	elseif var_175_0 <= 3599 then
+		var_175_1 = i18n("several_minutes_before", math.floor(var_175_0 / 60))
+	elseif var_175_0 <= 86399 then
+		var_175_1 = i18n("several_hours_before", math.floor(var_175_0 / 3600))
+	else
+		var_175_1 = i18n("several_days_before", math.floor(var_175_0 / 86400))
+	end
+
+	return var_175_1
 end
 
-function playMovie(slot0, slot1, slot2)
-	if not IsNil(GameObject.Find("OverlayCamera/Overlay/UITop/MoviePanel")) then
+function playMovie(arg_176_0, arg_176_1, arg_176_2)
+	local var_176_0 = GameObject.Find("OverlayCamera/Overlay/UITop/MoviePanel")
+
+	if not IsNil(var_176_0) then
 		pg.UIMgr.GetInstance():LoadingOn()
-		WWWLoader.Inst:LoadStreamingAsset(slot0, function (slot0)
+		WWWLoader.Inst:LoadStreamingAsset(arg_176_0, function(arg_177_0)
 			pg.UIMgr.GetInstance():LoadingOff()
 
-			slot1 = GCHandle.Alloc(slot0, GCHandleType.Pinned)
+			local var_177_0 = GCHandle.Alloc(arg_177_0, GCHandleType.Pinned)
 
-			setActive(uv0, true)
+			setActive(var_176_0, true)
 
-			slot2 = uv0:AddComponent(typeof(CriManaMovieControllerForUI))
+			local var_177_1 = var_176_0:AddComponent(typeof(CriManaMovieControllerForUI))
 
-			slot2.player:SetData(slot0, slot0.Length)
+			var_177_1.player:SetData(arg_177_0, arg_177_0.Length)
 
-			slot2.target = uv0:GetComponent(typeof(Image))
-			slot2.loop = false
-			slot2.additiveMode = false
-			slot2.playOnStart = true
-			slot3 = nil
+			var_177_1.target = var_176_0:GetComponent(typeof(Image))
+			var_177_1.loop = false
+			var_177_1.additiveMode = false
+			var_177_1.playOnStart = true
 
-			Timer.New(function ()
-				if uv0.player.status == CriMana.Player.Status.PlayEnd or uv0.player.status == CriMana.Player.Status.Stop or uv0.player.status == CriMana.Player.Status.Error then
-					uv1:Stop()
-					Object.Destroy(uv0)
-					GCHandle.Free(uv2)
-					setActive(uv3, false)
+			local var_177_2
 
-					if uv4 then
-						uv4()
+			var_177_2 = Timer.New(function()
+				if var_177_1.player.status == CriMana.Player.Status.PlayEnd or var_177_1.player.status == CriMana.Player.Status.Stop or var_177_1.player.status == CriMana.Player.Status.Error then
+					var_177_2:Stop()
+					Object.Destroy(var_177_1)
+					GCHandle.Free(var_177_0)
+					setActive(var_176_0, false)
+
+					if arg_176_1 then
+						arg_176_1()
 					end
 				end
-			end, 0.2, -1):Start()
-			removeOnButton(uv0)
+			end, 0.2, -1)
 
-			if uv2 then
-				onButton(nil, uv0, function ()
-					uv0:Stop()
-					GetOrAddComponent(uv1, typeof(Button)).onClick:RemoveAllListeners()
+			var_177_2:Start()
+			removeOnButton(var_176_0)
+
+			if arg_176_2 then
+				onButton(nil, var_176_0, function()
+					var_177_1:Stop()
+					GetOrAddComponent(var_176_0, typeof(Button)).onClick:RemoveAllListeners()
 				end, SFX_CANCEL)
 			end
 		end)
-	elseif slot1 then
-		slot1()
+	elseif arg_176_1 then
+		arg_176_1()
 	end
 end
 
 PaintCameraAdjustOn = false
 
-function cameraPaintViewAdjust(slot0)
-	if PaintCameraAdjustOn ~= slot0 then
-		slot1 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(CanvasScaler))
+function cameraPaintViewAdjust(arg_180_0)
+	if PaintCameraAdjustOn ~= arg_180_0 then
+		local var_180_0 = GameObject.Find("UICamera/Canvas"):GetComponent(typeof(CanvasScaler))
 
-		if slot0 then
+		if arg_180_0 then
 			CameraMgr.instance.AutoAdapt = false
 
 			CameraMgr.instance:Revert()
 
-			slot1.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight
-			slot1.matchWidthOrHeight = 1
+			var_180_0.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight
+			var_180_0.matchWidthOrHeight = 1
 		else
 			CameraMgr.instance.AutoAdapt = true
 			CameraMgr.instance.CurrentWidth = 1
 			CameraMgr.instance.CurrentHeight = 1
 			CameraMgr.instance.AspectRatio = 1.7777777777777777
-			slot1.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand
+			var_180_0.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand
 		end
 
-		PaintCameraAdjustOn = slot0
+		PaintCameraAdjustOn = arg_180_0
 	end
 end
 
-function ManhattonDist(slot0, slot1)
-	return math.abs(slot0.row - slot1.row) + math.abs(slot0.column - slot1.column)
+function ManhattonDist(arg_181_0, arg_181_1)
+	return math.abs(arg_181_0.row - arg_181_1.row) + math.abs(arg_181_0.column - arg_181_1.column)
 end
 
-function checkFirstHelpShow(slot0)
-	if not getProxy(SettingsProxy):checkReadHelp(slot0) then
+function checkFirstHelpShow(arg_182_0)
+	local var_182_0 = getProxy(SettingsProxy)
+
+	if not var_182_0:checkReadHelp(arg_182_0) then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = pg.gametip[slot0].tip
+			helps = pg.gametip[arg_182_0].tip
 		})
-		slot1:recordReadHelp(slot0)
+		var_182_0:recordReadHelp(arg_182_0)
 	end
 end
 
 preOrientation = nil
 preNotchFitterEnabled = false
 
-function openPortrait(slot0)
-	enableNotch(slot0, true)
+function openPortrait(arg_183_0)
+	enableNotch(arg_183_0, true)
 
 	preOrientation = Input.deviceOrientation:ToString()
 
@@ -2332,8 +2722,8 @@ function openPortrait(slot0)
 	cameraPaintViewAdjust(true)
 end
 
-function closePortrait(slot0)
-	enableNotch(slot0, false)
+function closePortrait(arg_184_0)
+	enableNotch(arg_184_0, false)
 
 	Screen.autorotateToPortrait = false
 	Screen.autorotateToPortraitUpsideDown = false
@@ -2341,78 +2731,83 @@ function closePortrait(slot0)
 	originalPrint("Closing Orientation:" .. preOrientation)
 
 	Screen.orientation = ScreenOrientation.LandscapeLeft
-	slot1 = Timer.New(function ()
+
+	local var_184_0 = Timer.New(function()
 		Screen.orientation = ScreenOrientation.AutoRotation
 	end, 0.2, 1):Start()
 
 	cameraPaintViewAdjust(false)
 end
 
-function enableNotch(slot0, slot1)
-	if slot0 == nil then
+function enableNotch(arg_186_0, arg_186_1)
+	if arg_186_0 == nil then
 		return
 	end
 
-	slot0:GetComponent("NotchAdapt").enabled = slot1
+	local var_186_0 = arg_186_0:GetComponent("NotchAdapt")
+	local var_186_1 = arg_186_0:GetComponent("AspectRatioFitter")
 
-	if slot0:GetComponent("AspectRatioFitter") then
-		if slot1 then
-			slot3.enabled = preNotchFitterEnabled
+	var_186_0.enabled = arg_186_1
+
+	if var_186_1 then
+		if arg_186_1 then
+			var_186_1.enabled = preNotchFitterEnabled
 		else
-			preNotchFitterEnabled = slot3.enabled
-			slot3.enabled = false
+			preNotchFitterEnabled = var_186_1.enabled
+			var_186_1.enabled = false
 		end
 	end
 end
 
-function comma_value(slot0)
-	slot2 = 0
+function comma_value(arg_187_0)
+	local var_187_0 = arg_187_0
+	local var_187_1 = 0
 
-	while true do
-		slot1, slot4 = string.gsub(slot0, "^(-?%d+)(%d%d%d)", "%1,%2")
+	repeat
+		local var_187_2
 
-		if slot4 == 0 then
-			break
-		end
-	end
+		var_187_0, var_187_2 = string.gsub(var_187_0, "^(-?%d+)(%d%d%d)", "%1,%2")
+	until var_187_2 == 0
 
-	return slot1
+	return var_187_0
 end
 
-slot15 = 0.2
+local var_0_15 = 0.2
 
-function SwitchPanel(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot3 = defaultValue(slot3, uv0)
+function SwitchPanel(arg_188_0, arg_188_1, arg_188_2, arg_188_3, arg_188_4, arg_188_5)
+	arg_188_3 = defaultValue(arg_188_3, var_0_15)
 
-	if slot5 then
-		LeanTween.cancel(go(slot0))
+	if arg_188_5 then
+		LeanTween.cancel(go(arg_188_0))
 	end
 
-	if slot1 then
-		Vector3.New(tf(slot0).localPosition.x, tf(slot0).localPosition.y, tf(slot0).localPosition.z).x = slot1
+	local var_188_0 = Vector3.New(tf(arg_188_0).localPosition.x, tf(arg_188_0).localPosition.y, tf(arg_188_0).localPosition.z)
+
+	if arg_188_1 then
+		var_188_0.x = arg_188_1
 	end
 
-	if slot2 then
-		slot6.y = slot2
+	if arg_188_2 then
+		var_188_0.y = arg_188_2
 	end
 
-	slot7 = LeanTween.move(rtf(slot0), slot6, slot3):setEase(LeanTweenType.easeInOutSine)
+	local var_188_1 = LeanTween.move(rtf(arg_188_0), var_188_0, arg_188_3):setEase(LeanTweenType.easeInOutSine)
 
-	if slot4 then
-		slot7:setDelay(slot4)
+	if arg_188_4 then
+		var_188_1:setDelay(arg_188_4)
 	end
 
-	return slot7
+	return var_188_1
 end
 
-function updateActivityTaskStatus(slot0)
-	slot1 = slot0:getConfig("config_id")
-	slot2, slot3 = getActivityTask(slot0, true)
+function updateActivityTaskStatus(arg_189_0)
+	local var_189_0 = arg_189_0:getConfig("config_id")
+	local var_189_1, var_189_2 = getActivityTask(arg_189_0, true)
 
-	if not slot3 then
+	if not var_189_2 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = slot0.id
+			activity_id = arg_189_0.id
 		})
 
 		return true
@@ -2421,17 +2816,19 @@ function updateActivityTaskStatus(slot0)
 	return false
 end
 
-function updateCrusingActivityTask(slot0)
-	slot1 = getProxy(TaskProxy)
-	slot6 = "config_data"
+function updateCrusingActivityTask(arg_190_0)
+	local var_190_0 = getProxy(TaskProxy)
+	local var_190_1 = arg_190_0:getNDay()
 
-	for slot6, slot7 in ipairs(slot0:getConfig(slot6)) do
-		if pg.battlepass_task_group[slot7].time <= slot0:getNDay() and underscore.any(underscore.flatten(slot8.task_group), function (slot0)
-			return uv0:getTaskVO(slot0) == nil
+	for iter_190_0, iter_190_1 in ipairs(arg_190_0:getConfig("config_data")) do
+		local var_190_2 = pg.battlepass_task_group[iter_190_1]
+
+		if var_190_1 >= var_190_2.time and underscore.any(underscore.flatten(var_190_2.task_group), function(arg_191_0)
+			return var_190_0:getTaskVO(arg_191_0) == nil
 		end) then
 			pg.m02:sendNotification(GAME.CRUSING_CMD, {
 				cmd = 1,
-				activity_id = slot0.id
+				activity_id = arg_190_0.id
 			})
 
 			return true
@@ -2441,390 +2838,499 @@ function updateCrusingActivityTask(slot0)
 	return false
 end
 
-function setShipCardFrame(slot0, slot1, slot2)
-	slot0.localScale = Vector3.one
-	slot0.anchorMin = Vector2.zero
-	slot0.anchorMax = Vector2.one
-	slot3 = slot2 or slot1
+function setShipCardFrame(arg_192_0, arg_192_1, arg_192_2)
+	arg_192_0.localScale = Vector3.one
+	arg_192_0.anchorMin = Vector2.zero
+	arg_192_0.anchorMax = Vector2.one
 
-	GetImageSpriteFromAtlasAsync("shipframe", slot3, slot0)
+	local var_192_0 = arg_192_2 or arg_192_1
 
-	if pg.frame_resource[slot3] then
-		slot4 = slot4.param
-		slot0.offsetMin = Vector2(slot4[1], slot4[2])
-		slot0.offsetMax = Vector2(slot4[3], slot4[4])
+	GetImageSpriteFromAtlasAsync("shipframe", var_192_0, arg_192_0)
+
+	local var_192_1 = pg.frame_resource[var_192_0]
+
+	if var_192_1 then
+		local var_192_2 = var_192_1.param
+
+		arg_192_0.offsetMin = Vector2(var_192_2[1], var_192_2[2])
+		arg_192_0.offsetMax = Vector2(var_192_2[3], var_192_2[4])
 	else
-		slot0.offsetMin = Vector2.zero
-		slot0.offsetMax = Vector2.zero
+		arg_192_0.offsetMin = Vector2.zero
+		arg_192_0.offsetMax = Vector2.zero
 	end
 end
 
-function setRectShipCardFrame(slot0, slot1, slot2)
-	slot0.localScale = Vector3.one
-	slot0.anchorMin = Vector2.zero
-	slot0.anchorMax = Vector2.one
+function setRectShipCardFrame(arg_193_0, arg_193_1, arg_193_2)
+	arg_193_0.localScale = Vector3.one
+	arg_193_0.anchorMin = Vector2.zero
+	arg_193_0.anchorMax = Vector2.one
 
-	setImageSprite(slot0, GetSpriteFromAtlas("shipframeb", "b" .. (slot2 or slot1)))
+	setImageSprite(arg_193_0, GetSpriteFromAtlas("shipframeb", "b" .. (arg_193_2 or arg_193_1)))
 
-	if pg.frame_resource["b" .. (slot2 or slot1)] then
-		slot4 = slot4.param
-		slot0.offsetMin = Vector2(slot4[1], slot4[2])
-		slot0.offsetMax = Vector2(slot4[3], slot4[4])
+	local var_193_0 = "b" .. (arg_193_2 or arg_193_1)
+	local var_193_1 = pg.frame_resource[var_193_0]
+
+	if var_193_1 then
+		local var_193_2 = var_193_1.param
+
+		arg_193_0.offsetMin = Vector2(var_193_2[1], var_193_2[2])
+		arg_193_0.offsetMax = Vector2(var_193_2[3], var_193_2[4])
 	else
-		slot0.offsetMin = Vector2.zero
-		slot0.offsetMax = Vector2.zero
+		arg_193_0.offsetMin = Vector2.zero
+		arg_193_0.offsetMax = Vector2.zero
 	end
 end
 
-function setFrameEffect(slot0, slot1)
-	if slot1 then
-		slot2 = slot1 .. "(Clone)"
+function setFrameEffect(arg_194_0, arg_194_1)
+	if arg_194_1 then
+		local var_194_0 = arg_194_1 .. "(Clone)"
+		local var_194_1 = false
 
-		eachChild(slot0, function (slot0)
-			setActive(slot0, slot0.name == uv0)
+		eachChild(arg_194_0, function(arg_195_0)
+			setActive(arg_195_0, arg_195_0.name == var_194_0)
 
-			uv1 = uv1 or slot0.name == uv0
+			var_194_1 = var_194_1 or arg_195_0.name == var_194_0
 		end)
 
-		if not false then
-			LoadAndInstantiateAsync("effect", slot1, function (slot0)
-				if IsNil(uv0) or findTF(uv0, uv1) then
-					Object.Destroy(slot0)
+		if not var_194_1 then
+			LoadAndInstantiateAsync("effect", arg_194_1, function(arg_196_0)
+				if IsNil(arg_194_0) or findTF(arg_194_0, var_194_0) then
+					Object.Destroy(arg_196_0)
 				else
-					setParent(slot0, uv0)
-					setActive(slot0, true)
+					setParent(arg_196_0, arg_194_0)
+					setActive(arg_196_0, true)
 				end
 			end)
 		end
 	end
 
-	setActive(slot0, slot1)
+	setActive(arg_194_0, arg_194_1)
 end
 
-function setProposeMarkIcon(slot0, slot1)
-	if slot0:Find("proposeShipCard(Clone)") then
-		setActive(slot2, slot1.propose and not slot1:ShowPropose())
-	elseif slot3 then
-		pg.PoolMgr.GetInstance():GetUI("proposeShipCard", true, function (slot0)
-			if IsNil(uv0) or uv0:Find("proposeShipCard(Clone)") then
-				pg.PoolMgr.GetInstance():ReturnUI("proposeShipCard", slot0)
+function setProposeMarkIcon(arg_197_0, arg_197_1)
+	local var_197_0 = arg_197_0:Find("proposeShipCard(Clone)")
+	local var_197_1 = arg_197_1.propose and not arg_197_1:ShowPropose()
+
+	if var_197_0 then
+		setActive(var_197_0, var_197_1)
+	elseif var_197_1 then
+		pg.PoolMgr.GetInstance():GetUI("proposeShipCard", true, function(arg_198_0)
+			if IsNil(arg_197_0) or arg_197_0:Find("proposeShipCard(Clone)") then
+				pg.PoolMgr.GetInstance():ReturnUI("proposeShipCard", arg_198_0)
 			else
-				setParent(slot0, uv0, false)
+				setParent(arg_198_0, arg_197_0, false)
 			end
 		end)
 	end
 end
 
-function flushShipCard(slot0, slot1)
-	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. slot1:rarity2bgPrint(), "", findTF(slot0, "content/bg"))
+function flushShipCard(arg_199_0, arg_199_1)
+	local var_199_0 = arg_199_1:rarity2bgPrint()
+	local var_199_1 = findTF(arg_199_0, "content/bg")
 
-	slot5 = slot1 and {
-		"shipYardIcon/" .. slot1:getPainting(),
-		slot1:getPainting()
+	GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_199_0, "", var_199_1)
+
+	local var_199_2 = findTF(arg_199_0, "content/ship_icon")
+	local var_199_3 = arg_199_1 and {
+		"shipYardIcon/" .. arg_199_1:getPainting(),
+		arg_199_1:getPainting()
 	} or {
 		"shipYardIcon/unknown",
 		""
 	}
 
-	GetImageSpriteFromAtlasAsync(slot5[1], slot5[2], findTF(slot0, "content/ship_icon"))
-	GetImageSpriteFromAtlasAsync("shiptype", shipType2print(slot1:getShipType()), findTF(slot0, "content/info/top/type"))
-	setText(findTF(slot0, "content/dockyard/lv/Text"), defaultValue(slot1.level, 1))
+	GetImageSpriteFromAtlasAsync(var_199_3[1], var_199_3[2], var_199_2)
 
-	slot10 = findTF(slot0, "content/front/stars")
+	local var_199_4 = arg_199_1:getShipType()
+	local var_199_5 = findTF(arg_199_0, "content/info/top/type")
 
-	setActive(slot10, true)
+	GetImageSpriteFromAtlasAsync("shiptype", shipType2print(var_199_4), var_199_5)
+	setText(findTF(arg_199_0, "content/dockyard/lv/Text"), defaultValue(arg_199_1.level, 1))
 
-	for slot16 = 1, Ship.CONFIG_MAX_STAR do
-		slot17 = slot10.childCount < slot16 and cloneTplTo(findTF(slot10, "star_tpl"), slot10) or slot10:GetChild(slot16 - 1)
+	local var_199_6 = arg_199_1:getStar()
+	local var_199_7 = arg_199_1:getMaxStar()
+	local var_199_8 = findTF(arg_199_0, "content/front/stars")
 
-		setActive(slot17, slot16 <= slot1:getMaxStar())
-		triggerToggle(slot17, slot16 <= slot1:getStar())
+	setActive(var_199_8, true)
+
+	local var_199_9 = findTF(var_199_8, "star_tpl")
+	local var_199_10 = var_199_8.childCount
+
+	for iter_199_0 = 1, Ship.CONFIG_MAX_STAR do
+		local var_199_11 = var_199_10 < iter_199_0 and cloneTplTo(var_199_9, var_199_8) or var_199_8:GetChild(iter_199_0 - 1)
+
+		setActive(var_199_11, iter_199_0 <= var_199_7)
+		triggerToggle(var_199_11, iter_199_0 <= var_199_6)
 	end
 
-	slot14, slot15 = slot1:GetFrameAndEffect()
+	local var_199_12 = findTF(arg_199_0, "content/front/frame")
+	local var_199_13, var_199_14 = arg_199_1:GetFrameAndEffect()
 
-	setShipCardFrame(findTF(slot0, "content/front/frame"), slot2, slot14)
-	setFrameEffect(findTF(slot0, "content/front/bg_other"), slot15)
-	setProposeMarkIcon(slot0:Find("content/dockyard/propose"), slot1)
+	setShipCardFrame(var_199_12, var_199_0, var_199_13)
+	setFrameEffect(findTF(arg_199_0, "content/front/bg_other"), var_199_14)
+	setProposeMarkIcon(arg_199_0:Find("content/dockyard/propose"), arg_199_1)
 end
 
-function TweenItemAlphaAndWhite(slot0)
-	LeanTween.cancel(slot0)
+function TweenItemAlphaAndWhite(arg_200_0)
+	LeanTween.cancel(arg_200_0)
 
-	slot1 = GetOrAddComponent(slot0, "CanvasGroup")
-	slot1.alpha = 0
+	local var_200_0 = GetOrAddComponent(arg_200_0, "CanvasGroup")
 
-	LeanTween.alphaCanvas(slot1, 1, 0.2):setUseEstimatedTime(true)
+	var_200_0.alpha = 0
 
-	if findTF(slot0.transform, "white_mask") then
-		setActive(slot2, false)
+	LeanTween.alphaCanvas(var_200_0, 1, 0.2):setUseEstimatedTime(true)
+
+	local var_200_1 = findTF(arg_200_0.transform, "white_mask")
+
+	if var_200_1 then
+		setActive(var_200_1, false)
 	end
 end
 
-function ClearTweenItemAlphaAndWhite(slot0)
-	LeanTween.cancel(slot0)
+function ClearTweenItemAlphaAndWhite(arg_201_0)
+	LeanTween.cancel(arg_201_0)
 
-	GetOrAddComponent(slot0, "CanvasGroup").alpha = 0
+	GetOrAddComponent(arg_201_0, "CanvasGroup").alpha = 0
 end
 
-function getGroupOwnSkins(slot0)
-	slot1 = {}
-	slot3 = getProxy(ShipSkinProxy):getSkinList()
+function getGroupOwnSkins(arg_202_0)
+	local var_202_0 = {}
+	local var_202_1 = getProxy(ShipSkinProxy):getSkinList()
+	local var_202_2 = getProxy(CollectionProxy):getShipGroup(arg_202_0)
 
-	if getProxy(CollectionProxy):getShipGroup(slot0) then
-		for slot9, slot10 in ipairs(ShipGroup.getSkinList(slot0)) do
-			if slot10.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(slot3, slot10.id) or slot10.skin_type == ShipSkin.SKIN_TYPE_REMAKE and slot4.trans or slot10.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and slot4.married == 1 then
-				slot1[slot10.id] = true
+	if var_202_2 then
+		local var_202_3 = ShipGroup.getSkinList(arg_202_0)
+
+		for iter_202_0, iter_202_1 in ipairs(var_202_3) do
+			if iter_202_1.skin_type == ShipSkin.SKIN_TYPE_DEFAULT or table.contains(var_202_1, iter_202_1.id) or iter_202_1.skin_type == ShipSkin.SKIN_TYPE_REMAKE and var_202_2.trans or iter_202_1.skin_type == ShipSkin.SKIN_TYPE_PROPOSE and var_202_2.married == 1 then
+				var_202_0[iter_202_1.id] = true
 			end
 		end
 	end
 
-	return slot1
+	return var_202_0
 end
 
-function split(slot0, slot1)
-	slot2 = {}
+function split(arg_203_0, arg_203_1)
+	local var_203_0 = {}
 
-	if not slot0 then
+	if not arg_203_0 then
 		return nil
 	end
 
-	slot3 = #slot0
-	slot4 = 1
+	local var_203_1 = #arg_203_0
+	local var_203_2 = 1
 
-	while slot3 >= slot4 do
-		if string.find(slot0, slot1, slot4) == nil then
-			table.insert(slot2, string.sub(slot0, slot4, slot3))
+	while var_203_2 <= var_203_1 do
+		local var_203_3 = string.find(arg_203_0, arg_203_1, var_203_2)
 
-			break
-		end
-
-		table.insert(slot2, string.sub(slot0, slot4, slot5 - 1))
-
-		if slot5 == slot3 then
-			table.insert(slot2, "")
+		if var_203_3 == nil then
+			table.insert(var_203_0, string.sub(arg_203_0, var_203_2, var_203_1))
 
 			break
 		end
 
-		slot4 = slot5 + 1
-	end
+		table.insert(var_203_0, string.sub(arg_203_0, var_203_2, var_203_3 - 1))
 
-	return slot2
-end
+		if var_203_3 == var_203_1 then
+			table.insert(var_203_0, "")
 
-function NumberToChinese(slot0, slot1)
-	slot2 = ""
-
-	for slot7 = 1, #slot0 do
-		if string.sub(slot0, slot7, slot7) ~= "0" or slot8 == "0" and not slot1 then
-			slot2 = slot1 and (slot3 >= 2 and (slot7 == 1 and (slot8 == "1" and i18n("number_" .. 10) or i18n("number_" .. slot8) .. i18n("number_" .. 10)) or i18n("number_" .. slot8) .. i18n("number_" .. 10) .. i18n("number_" .. slot8)) or i18n("number_" .. slot8) .. i18n("number_" .. 10) .. i18n("number_" .. slot8) .. i18n("number_" .. slot8)) or i18n("number_" .. slot8) .. i18n("number_" .. 10) .. i18n("number_" .. slot8) .. i18n("number_" .. slot8) .. i18n("number_" .. slot8)
+			break
 		end
+
+		var_203_2 = var_203_3 + 1
 	end
 
-	return slot2
+	return var_203_0
 end
 
-function getActivityTask(slot0, slot1)
-	slot2 = getProxy(TaskProxy)
-	slot5, slot6, slot7 = nil
-	slot11 = #slot0:getConfig("config_data")
+function NumberToChinese(arg_204_0, arg_204_1)
+	local var_204_0 = ""
+	local var_204_1 = #arg_204_0
 
-	for slot11 = math.max(slot0.data3, 1), math.min(slot0:getNDay(slot0.data1), slot11) do
-		for slot16, slot17 in ipairs(_.flatten({
-			slot3[slot11]
-		})) do
-			if slot2:getTaskById(slot17) then
-				return slot5.id, slot5
-			end
+	for iter_204_0 = 1, var_204_1 do
+		local var_204_2 = string.sub(arg_204_0, iter_204_0, iter_204_0)
 
-			if slot6 then
-				if slot2:getFinishTaskById(slot17) then
-					slot6 = slot7
-				elseif slot1 then
-					return slot17
+		if var_204_2 ~= "0" or var_204_2 == "0" and not arg_204_1 then
+			if arg_204_1 then
+				if var_204_1 >= 2 then
+					if iter_204_0 == 1 then
+						if var_204_2 == "1" then
+							var_204_0 = i18n("number_" .. 10)
+						else
+							var_204_0 = i18n("number_" .. var_204_2) .. i18n("number_" .. 10)
+						end
+					else
+						var_204_0 = var_204_0 .. i18n("number_" .. var_204_2)
+					end
 				else
-					return slot6.id, slot6
+					var_204_0 = var_204_0 .. i18n("number_" .. var_204_2)
 				end
 			else
-				slot6 = slot2:getFinishTaskById(slot17)
-				slot7 = slot7 or slot17
+				var_204_0 = var_204_0 .. i18n("number_" .. var_204_2)
 			end
 		end
 	end
 
-	if slot6 then
-		return slot6.id, slot6
+	return var_204_0
+end
+
+function getActivityTask(arg_205_0, arg_205_1)
+	local var_205_0 = getProxy(TaskProxy)
+	local var_205_1 = arg_205_0:getConfig("config_data")
+	local var_205_2 = arg_205_0:getNDay(arg_205_0.data1)
+	local var_205_3
+	local var_205_4
+	local var_205_5
+
+	for iter_205_0 = math.max(arg_205_0.data3, 1), math.min(var_205_2, #var_205_1) do
+		local var_205_6 = _.flatten({
+			var_205_1[iter_205_0]
+		})
+
+		for iter_205_1, iter_205_2 in ipairs(var_205_6) do
+			local var_205_7 = var_205_0:getTaskById(iter_205_2)
+
+			if var_205_7 then
+				return var_205_7.id, var_205_7
+			end
+
+			if var_205_4 then
+				var_205_5 = var_205_0:getFinishTaskById(iter_205_2)
+
+				if var_205_5 then
+					var_205_4 = var_205_5
+				elseif arg_205_1 then
+					return iter_205_2
+				else
+					return var_205_4.id, var_205_4
+				end
+			else
+				var_205_4 = var_205_0:getFinishTaskById(iter_205_2)
+				var_205_5 = var_205_5 or iter_205_2
+			end
+		end
+	end
+
+	if var_205_4 then
+		return var_205_4.id, var_205_4
 	else
-		return slot7
+		return var_205_5
 	end
 end
 
-function setImageFromImage(slot0, slot1, slot2)
-	GetComponent(slot0, "Image").sprite = GetComponent(slot1, "Image").sprite
+function setImageFromImage(arg_206_0, arg_206_1, arg_206_2)
+	local var_206_0 = GetComponent(arg_206_0, "Image")
 
-	if slot2 then
-		slot3:SetNativeSize()
+	var_206_0.sprite = GetComponent(arg_206_1, "Image").sprite
+
+	if arg_206_2 then
+		var_206_0:SetNativeSize()
 	end
 end
 
-function skinTimeStamp(slot0)
-	slot1, slot2, slot3, slot4 = pg.TimeMgr.GetInstance():parseTimeFrom(slot0)
+function skinTimeStamp(arg_207_0)
+	local var_207_0, var_207_1, var_207_2, var_207_3 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_207_0)
 
-	if slot1 >= 1 then
-		return i18n("limit_skin_time_day", slot1)
-	elseif slot1 <= 0 and slot2 > 0 then
-		return i18n("limit_skin_time_day_min", slot2, slot3)
-	elseif slot1 <= 0 and slot2 <= 0 and (slot3 > 0 or slot4 > 0) then
-		return i18n("limit_skin_time_min", math.max(slot3, 1))
-	elseif slot1 <= 0 and slot2 <= 0 and slot3 <= 0 and slot4 <= 0 then
+	if var_207_0 >= 1 then
+		return i18n("limit_skin_time_day", var_207_0)
+	elseif var_207_0 <= 0 and var_207_1 > 0 then
+		return i18n("limit_skin_time_day_min", var_207_1, var_207_2)
+	elseif var_207_0 <= 0 and var_207_1 <= 0 and (var_207_2 > 0 or var_207_3 > 0) then
+		return i18n("limit_skin_time_min", math.max(var_207_2, 1))
+	elseif var_207_0 <= 0 and var_207_1 <= 0 and var_207_2 <= 0 and var_207_3 <= 0 then
 		return i18n("limit_skin_time_overtime")
 	end
 end
 
-function skinCommdityTimeStamp(slot0)
-	if math.floor(math.max(slot0 - pg.TimeMgr.GetInstance():GetServerTime(), 0) / 86400) > 0 then
-		return i18n("time_remaining_tip") .. slot3 .. i18n("word_date")
-	elseif math.floor(slot2 / 3600) > 0 then
-		return i18n("time_remaining_tip") .. slot4 .. i18n("word_hour")
-	elseif math.floor(slot2 / 60) > 0 then
-		return i18n("time_remaining_tip") .. slot5 .. i18n("word_minute")
+function skinCommdityTimeStamp(arg_208_0)
+	local var_208_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_208_1 = math.max(arg_208_0 - var_208_0, 0)
+	local var_208_2 = math.floor(var_208_1 / 86400)
+
+	if var_208_2 > 0 then
+		return i18n("time_remaining_tip") .. var_208_2 .. i18n("word_date")
 	else
-		return i18n("time_remaining_tip") .. slot2 .. i18n("word_second")
+		local var_208_3 = math.floor(var_208_1 / 3600)
+
+		if var_208_3 > 0 then
+			return i18n("time_remaining_tip") .. var_208_3 .. i18n("word_hour")
+		else
+			local var_208_4 = math.floor(var_208_1 / 60)
+
+			if var_208_4 > 0 then
+				return i18n("time_remaining_tip") .. var_208_4 .. i18n("word_minute")
+			else
+				return i18n("time_remaining_tip") .. var_208_1 .. i18n("word_second")
+			end
+		end
 	end
 end
 
-function InstagramTimeStamp(slot0)
-	if (pg.TimeMgr.GetInstance():GetServerTime() - slot0) / 86400 > 1 then
-		return i18n("ins_word_day", math.floor(slot3))
-	elseif slot2 / 3600 > 1 then
-		return i18n("ins_word_hour", math.floor(slot4))
-	elseif slot2 / 60 > 1 then
-		return i18n("ins_word_minu", math.floor(slot5))
+function InstagramTimeStamp(arg_209_0)
+	local var_209_0 = pg.TimeMgr.GetInstance():GetServerTime() - arg_209_0
+	local var_209_1 = var_209_0 / 86400
+
+	if var_209_1 > 1 then
+		return i18n("ins_word_day", math.floor(var_209_1))
 	else
-		return i18n("ins_word_minu", 1)
+		local var_209_2 = var_209_0 / 3600
+
+		if var_209_2 > 1 then
+			return i18n("ins_word_hour", math.floor(var_209_2))
+		else
+			local var_209_3 = var_209_0 / 60
+
+			if var_209_3 > 1 then
+				return i18n("ins_word_minu", math.floor(var_209_3))
+			else
+				return i18n("ins_word_minu", 1)
+			end
+		end
 	end
 end
 
-function InstagramReplyTimeStamp(slot0)
-	if (pg.TimeMgr.GetInstance():GetServerTime() - slot0) / 86400 > 1 then
-		return i18n1(math.floor(slot3) .. "d")
-	elseif slot2 / 3600 > 1 then
-		return i18n1(math.floor(slot4) .. "h")
-	elseif slot2 / 60 > 1 then
-		return i18n1(math.floor(slot5) .. "min")
+function InstagramReplyTimeStamp(arg_210_0)
+	local var_210_0 = pg.TimeMgr.GetInstance():GetServerTime() - arg_210_0
+	local var_210_1 = var_210_0 / 86400
+
+	if var_210_1 > 1 then
+		return i18n1(math.floor(var_210_1) .. "d")
 	else
-		return i18n1("1min")
+		local var_210_2 = var_210_0 / 3600
+
+		if var_210_2 > 1 then
+			return i18n1(math.floor(var_210_2) .. "h")
+		else
+			local var_210_3 = var_210_0 / 60
+
+			if var_210_3 > 1 then
+				return i18n1(math.floor(var_210_3) .. "min")
+			else
+				return i18n1("1min")
+			end
+		end
 	end
 end
 
-function attireTimeStamp(slot0)
-	slot1, slot2, slot3, slot4 = pg.TimeMgr.GetInstance():parseTimeFrom(slot0)
+function attireTimeStamp(arg_211_0)
+	local var_211_0, var_211_1, var_211_2, var_211_3 = pg.TimeMgr.GetInstance():parseTimeFrom(arg_211_0)
 
-	if slot1 <= 0 and slot2 <= 0 and slot3 <= 0 and slot4 <= 0 then
+	if var_211_0 <= 0 and var_211_1 <= 0 and var_211_2 <= 0 and var_211_3 <= 0 then
 		return i18n("limit_skin_time_overtime")
 	else
-		return i18n("attire_time_stamp", slot1, slot2, slot3)
+		return i18n("attire_time_stamp", var_211_0, var_211_1, var_211_2)
 	end
 end
 
-function checkExist(slot0, ...)
-	for slot5, slot6 in ipairs({
+function checkExist(arg_212_0, ...)
+	local var_212_0 = {
 		...
-	}) do
-		if slot0 == nil then
+	}
+
+	for iter_212_0, iter_212_1 in ipairs(var_212_0) do
+		if arg_212_0 == nil then
 			break
 		end
 
-		assert(type(slot0) == "table", "type error : intermediate target should be table")
-		assert(type(slot6) == "table", "type error : param should be table")
+		assert(type(arg_212_0) == "table", "type error : intermediate target should be table")
+		assert(type(iter_212_1) == "table", "type error : param should be table")
 
-		slot0 = (type(slot0[slot6[1]]) ~= "function" or slot0[slot6[1]](slot0, unpack(slot6[2] or {}))) and slot0[slot6[1]](slot0, unpack(slot6[2] or ))[slot6[1]]
+		if type(arg_212_0[iter_212_1[1]]) == "function" then
+			arg_212_0 = arg_212_0[iter_212_1[1]](arg_212_0, unpack(iter_212_1[2] or {}))
+		else
+			arg_212_0 = arg_212_0[iter_212_1[1]]
+		end
 	end
 
-	return slot0
+	return arg_212_0
 end
 
-function AcessWithinNull(slot0, slot1)
-	if slot0 == nil then
+function AcessWithinNull(arg_213_0, arg_213_1)
+	if arg_213_0 == nil then
 		return
 	end
 
-	assert(type(slot0) == "table")
+	assert(type(arg_213_0) == "table")
 
-	return slot0[slot1]
+	return arg_213_0[arg_213_1]
 end
 
 function showRepairMsgbox()
+	local var_214_0 = {
+		text = i18n("msgbox_repair"),
+		onCallback = function()
+			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes.csv") then
+				BundleWizard.Inst:GetGroupMgr("DEFAULT_RES"):StartVerifyForLua()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
+			end
+		end
+	}
+	local var_214_1 = {
+		text = i18n("msgbox_repair_l2d"),
+		onCallback = function()
+			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-live2d.csv") then
+				BundleWizard.Inst:GetGroupMgr("L2D"):StartVerifyForLua()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
+			end
+		end
+	}
+	local var_214_2 = {
+		text = i18n("msgbox_repair_painting"),
+		onCallback = function()
+			if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-painting.csv") then
+				BundleWizard.Inst:GetGroupMgr("PAINTING"):StartVerifyForLua()
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
+			end
+		end
+	}
+
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		hideYes = true,
 		hideNo = true,
 		content = i18n("resource_verify_warn"),
 		custom = {
-			{
-				text = i18n("msgbox_repair_painting"),
-				onCallback = function ()
-					if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-painting.csv") then
-						BundleWizard.Inst:GetGroupMgr("PAINTING"):StartVerifyForLua()
-					else
-						pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
-					end
-				end
-			},
-			{
-				text = i18n("msgbox_repair_l2d"),
-				onCallback = function ()
-					if PathMgr.FileExists(Application.persistentDataPath .. "/hashes-live2d.csv") then
-						BundleWizard.Inst:GetGroupMgr("L2D"):StartVerifyForLua()
-					else
-						pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
-					end
-				end
-			},
-			{
-				text = i18n("msgbox_repair"),
-				onCallback = function ()
-					if PathMgr.FileExists(Application.persistentDataPath .. "/hashes.csv") then
-						BundleWizard.Inst:GetGroupMgr("DEFAULT_RES"):StartVerifyForLua()
-					else
-						pg.TipsMgr.GetInstance():ShowTips(i18n("word_no_cache"))
-					end
-				end
-			}
+			var_214_2,
+			var_214_1,
+			var_214_0
 		}
 	})
 end
 
-function resourceVerify(slot0, slot1)
+function resourceVerify(arg_218_0, arg_218_1)
 	if CSharpVersion > 35 then
 		BundleWizard.Inst:GetGroupMgr("DEFAULT_RES"):StartVerifyForLua()
 
 		return
 	end
 
-	slot3 = nil
-	slot4 = PathMgr.ReadAllLines(Application.persistentDataPath .. "/hashes.csv")
-	slot5 = {}
+	local var_218_0 = Application.persistentDataPath .. "/hashes.csv"
+	local var_218_1
+	local var_218_2 = PathMgr.ReadAllLines(var_218_0)
+	local var_218_3 = {}
 
-	if slot0 then
-		setActive(slot0, true)
+	if arg_218_0 then
+		setActive(arg_218_0, true)
 	else
 		pg.UIMgr.GetInstance():LoadingOn()
 	end
 
-	function slot6()
-		if uv0 then
-			setActive(uv0, false)
+	local function var_218_4()
+		if arg_218_0 then
+			setActive(arg_218_0, false)
 		else
 			pg.UIMgr.GetInstance():LoadingOff()
 		end
 
-		print(uv1)
+		print(var_218_1)
 
-		if uv1 then
+		if var_218_1 then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("resource_verify_fail", ""),
-				onYes = function ()
+				onYes = function()
 					VersionMgr.Inst:DeleteCacheFiles()
 					Application.Quit()
 				end
@@ -2836,645 +3342,739 @@ function resourceVerify(slot0, slot1)
 		end
 	end
 
-	slot8 = nil
+	local var_218_5 = var_218_2.Length
+	local var_218_6
 
-	function (slot0)
-		if slot0 < 0 then
-			uv0()
-
-			return
-		end
-
-		if uv1 then
-			setSlider(uv1, 0, uv2, uv2 - slot0)
-		end
-
-		slot1 = string.split(uv3[slot0], ",")
-
-		if PathMgr.FileExists(PathMgr.getAssetBundle(slot1[1])) and slot1[3] == HashUtil.CalcMD5(PathMgr.ReadAllBytes(PathMgr.getAssetBundle(slot2))) then
-			onNextTick(function ()
-				uv0(uv1 - 1)
-			end)
+	local function var_218_7(arg_221_0)
+		if arg_221_0 < 0 then
+			var_218_4()
 
 			return
 		end
 
-		uv5 = slot2
+		if arg_218_1 then
+			setSlider(arg_218_1, 0, var_218_5, var_218_5 - arg_221_0)
+		end
 
-		uv0()
-	end(slot4.Length - 1)
+		local var_221_0 = string.split(var_218_2[arg_221_0], ",")
+		local var_221_1 = var_221_0[1]
+		local var_221_2 = var_221_0[3]
+		local var_221_3 = PathMgr.getAssetBundle(var_221_1)
+
+		if PathMgr.FileExists(var_221_3) then
+			local var_221_4 = PathMgr.ReadAllBytes(PathMgr.getAssetBundle(var_221_1))
+
+			if var_221_2 == HashUtil.CalcMD5(var_221_4) then
+				onNextTick(function()
+					var_218_7(arg_221_0 - 1)
+				end)
+
+				return
+			end
+		end
+
+		var_218_1 = var_221_1
+
+		var_218_4()
+	end
+
+	var_218_7(var_218_5 - 1)
 end
 
-function splitByWordEN(slot0, slot1)
-	slot3 = ""
-	slot4 = ""
+function splitByWordEN(arg_223_0, arg_223_1)
+	local var_223_0 = string.split(arg_223_0, " ")
+	local var_223_1 = ""
+	local var_223_2 = ""
+	local var_223_3 = arg_223_1:GetComponent(typeof(RectTransform))
+	local var_223_4 = arg_223_1:GetComponent(typeof(Text))
+	local var_223_5 = var_223_3.rect.width
 
-	for slot11, slot12 in ipairs(string.split(slot0, " ")) do
-		slot13 = slot4
+	for iter_223_0, iter_223_1 in ipairs(var_223_0) do
+		local var_223_6 = var_223_2
 
-		setText(slot1, slot4 == "" and slot12 or slot4 .. " " .. slot12)
+		var_223_2 = var_223_2 == "" and iter_223_1 or var_223_2 .. " " .. iter_223_1
 
-		if slot1:GetComponent(typeof(RectTransform)).rect.width < slot1:GetComponent(typeof(Text)).preferredWidth then
-			slot3 = slot3 == "" and slot13 or slot3 .. "\n" .. slot13
-			slot4 = slot12
+		setText(arg_223_1, var_223_2)
+
+		if var_223_5 < var_223_4.preferredWidth then
+			var_223_1 = var_223_1 == "" and var_223_6 or var_223_1 .. "\n" .. var_223_6
+			var_223_2 = iter_223_1
 		end
 
-		if slot11 >= #slot2 then
-			slot3 = slot3 == "" and slot4 or slot3 .. "\n" .. slot4
+		if iter_223_0 >= #var_223_0 then
+			var_223_1 = var_223_1 == "" and var_223_2 or var_223_1 .. "\n" .. var_223_2
 		end
 	end
 
-	return slot3
+	return var_223_1
 end
 
-function checkBirthFormat(slot0)
-	if #slot0 ~= 8 then
+function checkBirthFormat(arg_224_0)
+	if #arg_224_0 ~= 8 then
 		return false
 	end
 
-	slot1 = 0
+	local var_224_0 = 0
+	local var_224_1 = #arg_224_0
 
-	while slot1 < #slot0 do
-		if string.byte(slot0, slot1 + 1) < 48 or slot3 > 57 then
+	while var_224_0 < var_224_1 do
+		local var_224_2 = string.byte(arg_224_0, var_224_0 + 1)
+
+		if var_224_2 < 48 or var_224_2 > 57 then
 			return false
 		end
 
-		slot1 = slot1 + 1
+		var_224_0 = var_224_0 + 1
 	end
 
 	return true
 end
 
-function isHalfBodyLive2D(slot0)
-	return _.any({
+function isHalfBodyLive2D(arg_225_0)
+	local var_225_0 = {
 		"biaoqiang",
 		"z23",
 		"lafei",
 		"lingbo",
 		"mingshi",
 		"xuefeng"
-	}, function (slot0)
-		return slot0 == uv0
+	}
+
+	return _.any(var_225_0, function(arg_226_0)
+		return arg_226_0 == arg_225_0
 	end)
 end
 
-function GetServerState(slot0)
-	slot1 = -1
-	slot2 = 0
-	slot3 = 1
-	slot4 = 2
+function GetServerState(arg_227_0)
+	local var_227_0 = -1
+	local var_227_1 = 0
+	local var_227_2 = 1
+	local var_227_3 = 2
+	local var_227_4 = NetConst.GetServerStateUrl()
 
 	if PLATFORM_CODE == PLATFORM_CH then
-		slot5 = string.gsub(NetConst.GetServerStateUrl(), "https", "http")
+		var_227_4 = string.gsub(var_227_4, "https", "http")
 	end
 
-	VersionMgr.Inst:WebRequest(slot5, function (slot0, slot1)
-		slot2 = true
-		slot3 = false
+	VersionMgr.Inst:WebRequest(var_227_4, function(arg_228_0, arg_228_1)
+		local var_228_0 = true
+		local var_228_1 = false
 
-		for slot7 in string.gmatch(slot1, "\"state\":%d") do
-			if slot7 ~= "\"state\":1" then
-				slot2 = false
+		for iter_228_0 in string.gmatch(arg_228_1, "\"state\":%d") do
+			if iter_228_0 ~= "\"state\":1" then
+				var_228_0 = false
 			end
 
-			slot3 = true
+			var_228_1 = true
 		end
 
-		if not slot3 then
-			slot2 = false
+		if not var_228_1 then
+			var_228_0 = false
 		end
 
-		if uv0 ~= nil then
-			uv0(slot2 and uv1 or uv2)
+		if arg_227_0 ~= nil then
+			arg_227_0(var_228_0 and var_227_2 or var_227_1)
 		end
 	end)
 end
 
-function setScrollText(slot0, slot1)
-	GetOrAddComponent(slot0, "ScrollText"):SetText(slot1)
+function setScrollText(arg_229_0, arg_229_1)
+	GetOrAddComponent(arg_229_0, "ScrollText"):SetText(arg_229_1)
 end
 
-function changeToScrollText(slot0, slot1)
-	assert(GetComponent(slot0, typeof(Text)), "without component<Text>")
+function changeToScrollText(arg_230_0, arg_230_1)
+	local var_230_0 = GetComponent(arg_230_0, typeof(Text))
 
-	if not slot0:Find("subText") then
-		slot3 = cloneTplTo(slot0, slot0, "subText")
+	assert(var_230_0, "without component<Text>")
 
-		eachChild(slot0, function (slot0)
-			setActive(slot0, slot0 == uv0)
+	local var_230_1 = arg_230_0:Find("subText")
+
+	if not var_230_1 then
+		var_230_1 = cloneTplTo(arg_230_0, arg_230_0, "subText")
+
+		eachChild(arg_230_0, function(arg_231_0)
+			setActive(arg_231_0, arg_231_0 == var_230_1)
 		end)
 
-		slot0:GetComponent(typeof(Text)).enabled = false
+		arg_230_0:GetComponent(typeof(Text)).enabled = false
 	end
 
-	setScrollText(slot3, slot1)
+	setScrollText(var_230_1, arg_230_1)
 end
 
-slot16, slot17, slot18, slot19 = nil
+local var_0_16
+local var_0_17
+local var_0_18
+local var_0_19
 
-function slot16(slot0, slot1, slot2)
-	slot3 = slot0:Find("base")
-	slot4, slot5, slot6 = Equipment.GetInfoTrans(slot1, slot2)
+local function var_0_20(arg_232_0, arg_232_1, arg_232_2)
+	local var_232_0 = arg_232_0:Find("base")
+	local var_232_1, var_232_2, var_232_3 = Equipment.GetInfoTrans(arg_232_1, arg_232_2)
 
-	if slot1.nextValue then
-		slot8, slot9 = Equipment.GetInfoTrans({
-			name = slot1.name,
-			type = slot1.type,
-			value = slot1.nextValue
-		}, slot2)
-		slot5 = slot5 .. setColorStr("   >   " .. slot9, COLOR_GREEN)
+	if arg_232_1.nextValue then
+		local var_232_4 = {
+			name = arg_232_1.name,
+			type = arg_232_1.type,
+			value = arg_232_1.nextValue
+		}
+		local var_232_5, var_232_6 = Equipment.GetInfoTrans(var_232_4, arg_232_2)
+
+		var_232_2 = var_232_2 .. setColorStr("   >   " .. var_232_6, COLOR_GREEN)
 	end
 
-	setText(slot3:Find("name"), slot4)
+	setText(var_232_0:Find("name"), var_232_1)
 
-	if slot6 then
-		setText(slot3:Find("value"), slot5 .. ("<color=#afff72>(+" .. ys.Battle.BattleConst.UltimateBonus.AuxBoostValue * 100 .. "%)</color>"))
+	if var_232_3 then
+		local var_232_7 = "<color=#afff72>(+" .. ys.Battle.BattleConst.UltimateBonus.AuxBoostValue * 100 .. "%)</color>"
+
+		setText(var_232_0:Find("value"), var_232_2 .. var_232_7)
 	else
-		setText(slot3:Find("value"), slot5)
+		setText(var_232_0:Find("value"), var_232_2)
 	end
 
-	setActive(slot3:Find("value/up"), slot1.compare and slot1.compare > 0)
-	setActive(slot3:Find("value/down"), slot1.compare and slot1.compare < 0)
-	triggerToggle(slot3, slot1.lock_open)
+	setActive(var_232_0:Find("value/up"), arg_232_1.compare and arg_232_1.compare > 0)
+	setActive(var_232_0:Find("value/down"), arg_232_1.compare and arg_232_1.compare < 0)
+	triggerToggle(var_232_0, arg_232_1.lock_open)
 
-	if not slot1.lock_open and slot1.sub and #slot1.sub > 0 then
-		GetComponent(slot3, typeof(Toggle)).enabled = true
+	if not arg_232_1.lock_open and arg_232_1.sub and #arg_232_1.sub > 0 then
+		GetComponent(var_232_0, typeof(Toggle)).enabled = true
 	else
-		setActive(slot3:Find("name/close"), false)
-		setActive(slot3:Find("name/open"), false)
+		setActive(var_232_0:Find("name/close"), false)
+		setActive(var_232_0:Find("name/open"), false)
 
-		GetComponent(slot3, typeof(Toggle)).enabled = false
+		GetComponent(var_232_0, typeof(Toggle)).enabled = false
 	end
 end
 
-function slot17(slot0, slot1, slot2, slot3)
-	uv0(slot0, slot2, slot3)
+local function var_0_21(arg_233_0, arg_233_1, arg_233_2, arg_233_3)
+	var_0_20(arg_233_0, arg_233_2, arg_233_3)
 
-	if not slot2.sub or #slot2.sub == 0 then
+	if not arg_233_2.sub or #arg_233_2.sub == 0 then
 		return
 	end
 
-	uv1(slot0:Find("subs"), slot1, slot2.sub, slot3)
+	var_0_18(arg_233_0:Find("subs"), arg_233_1, arg_233_2.sub, arg_233_3)
 end
 
-function slot18(slot0, slot1, slot2, slot3)
-	removeAllChildren(slot0)
-	uv0(slot0, slot1, slot2, slot3)
+function var_0_18(arg_234_0, arg_234_1, arg_234_2, arg_234_3)
+	removeAllChildren(arg_234_0)
+	var_0_19(arg_234_0, arg_234_1, arg_234_2, arg_234_3)
 end
 
-function slot19(slot0, slot1, slot2, slot3)
-	for slot7, slot8 in ipairs(slot2) do
-		uv0(cloneTplTo(slot1, slot0), slot1, slot8, slot3)
+function var_0_19(arg_235_0, arg_235_1, arg_235_2, arg_235_3)
+	for iter_235_0, iter_235_1 in ipairs(arg_235_2) do
+		local var_235_0 = cloneTplTo(arg_235_1, arg_235_0)
+
+		var_0_21(var_235_0, arg_235_1, iter_235_1, arg_235_3)
 	end
 end
 
-function updateEquipInfo(slot0, slot1, slot2, slot3)
-	uv0(slot0:Find("attrs"), slot0:Find("attr_tpl"), slot1.attrs, slot3)
-	setActive(slot0:Find("skill"), slot2)
+function updateEquipInfo(arg_236_0, arg_236_1, arg_236_2, arg_236_3)
+	local var_236_0 = arg_236_0:Find("attr_tpl")
 
-	if slot2 then
-		uv1(slot0:Find("skill/attr"), slot4, {
+	var_0_18(arg_236_0:Find("attrs"), var_236_0, arg_236_1.attrs, arg_236_3)
+	setActive(arg_236_0:Find("skill"), arg_236_2)
+
+	if arg_236_2 then
+		var_0_21(arg_236_0:Find("skill/attr"), var_236_0, {
 			name = i18n("skill"),
-			value = setColorStr(slot2.name, "#FFDE00FF")
-		}, slot3)
-		setText(slot0:Find("skill/value/Text"), getSkillDescGet(slot2.id))
+			value = setColorStr(arg_236_2.name, "#FFDE00FF")
+		}, arg_236_3)
+		setText(arg_236_0:Find("skill/value/Text"), getSkillDescGet(arg_236_2.id))
 	end
 
-	setActive(slot0:Find("weapon"), #slot1.weapon.sub > 0)
+	setActive(arg_236_0:Find("weapon"), #arg_236_1.weapon.sub > 0)
 
-	if #slot1.weapon.sub > 0 then
-		uv0(slot0:Find("weapon"), slot4, {
-			slot1.weapon
-		}, slot3)
+	if #arg_236_1.weapon.sub > 0 then
+		var_0_18(arg_236_0:Find("weapon"), var_236_0, {
+			arg_236_1.weapon
+		}, arg_236_3)
 	end
 
-	setActive(slot0:Find("equip_info"), #slot1.equipInfo.sub > 0)
+	setActive(arg_236_0:Find("equip_info"), #arg_236_1.equipInfo.sub > 0)
 
-	if #slot1.equipInfo.sub > 0 then
-		uv0(slot0:Find("equip_info"), slot4, {
-			slot1.equipInfo
-		}, slot3)
+	if #arg_236_1.equipInfo.sub > 0 then
+		var_0_18(arg_236_0:Find("equip_info"), var_236_0, {
+			arg_236_1.equipInfo
+		}, arg_236_3)
 	end
 
-	uv1(slot0:Find("part/attr"), slot4, {
+	var_0_21(arg_236_0:Find("part/attr"), var_236_0, {
 		name = i18n("equip_info_23")
-	}, slot3)
+	}, arg_236_3)
 
-	slot6 = slot0:Find("part/value"):Find("label")
+	local var_236_1 = arg_236_0:Find("part/value")
+	local var_236_2 = var_236_1:Find("label")
+	local var_236_3 = {}
+	local var_236_4 = {}
 
-	if #slot1.part[1] == 0 and #slot1.part[2] == 0 then
-		setmetatable({}, {
-			__index = function (slot0, slot1)
+	if #arg_236_1.part[1] == 0 and #arg_236_1.part[2] == 0 then
+		setmetatable(var_236_3, {
+			__index = function(arg_237_0, arg_237_1)
 				return true
 			end
 		})
-		setmetatable({}, {
-			__index = function (slot0, slot1)
+		setmetatable(var_236_4, {
+			__index = function(arg_238_0, arg_238_1)
 				return true
 			end
 		})
 	else
-		for slot12, slot13 in ipairs(slot1.part[1]) do
-			slot7[slot13] = true
+		for iter_236_0, iter_236_1 in ipairs(arg_236_1.part[1]) do
+			var_236_3[iter_236_1] = true
 		end
 
-		for slot12, slot13 in ipairs(slot1.part[2]) do
-			slot8[slot13] = true
+		for iter_236_2, iter_236_3 in ipairs(arg_236_1.part[2]) do
+			var_236_4[iter_236_3] = true
 		end
 	end
 
-	UIItemList.StaticAlign(slot5, slot6, #ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), slot7, slot8), function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	local var_236_5 = ShipType.MergeFengFanType(ShipType.FilterOverQuZhuType(ShipType.AllShipType), var_236_3, var_236_4)
 
-			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(slot3), slot2)
-			setActive(slot2:Find("main"), uv1[slot3] and not uv2[slot3])
-			setActive(slot2:Find("sub"), uv2[slot3] and not uv1[slot3])
-			setImageAlpha(slot2, not uv1[slot3] and not uv2[slot3] and 0.3 or 1)
+	UIItemList.StaticAlign(var_236_1, var_236_2, #var_236_5, function(arg_239_0, arg_239_1, arg_239_2)
+		arg_239_1 = arg_239_1 + 1
+
+		if arg_239_0 == UIItemList.EventUpdate then
+			local var_239_0 = var_236_5[arg_239_1]
+
+			GetImageSpriteFromAtlasAsync("shiptype", ShipType.Type2CNLabel(var_239_0), arg_239_2)
+			setActive(arg_239_2:Find("main"), var_236_3[var_239_0] and not var_236_4[var_239_0])
+			setActive(arg_239_2:Find("sub"), var_236_4[var_239_0] and not var_236_3[var_239_0])
+			setImageAlpha(arg_239_2, not var_236_3[var_239_0] and not var_236_4[var_239_0] and 0.3 or 1)
 		end
 	end)
 end
 
-function updateEquipUpgradeInfo(slot0, slot1, slot2)
-	uv0(slot0:Find("attrs"), slot0:Find("attr_tpl"), slot1.attrs, slot2)
-	setActive(slot0:Find("weapon"), #slot1.weapon.sub > 0)
+function updateEquipUpgradeInfo(arg_240_0, arg_240_1, arg_240_2)
+	local var_240_0 = arg_240_0:Find("attr_tpl")
 
-	if #slot1.weapon.sub > 0 then
-		uv0(slot0:Find("weapon"), slot3, {
-			slot1.weapon
-		}, slot2)
+	var_0_18(arg_240_0:Find("attrs"), var_240_0, arg_240_1.attrs, arg_240_2)
+	setActive(arg_240_0:Find("weapon"), #arg_240_1.weapon.sub > 0)
+
+	if #arg_240_1.weapon.sub > 0 then
+		var_0_18(arg_240_0:Find("weapon"), var_240_0, {
+			arg_240_1.weapon
+		}, arg_240_2)
 	end
 
-	setActive(slot0:Find("equip_info"), #slot1.equipInfo.sub > 0)
+	setActive(arg_240_0:Find("equip_info"), #arg_240_1.equipInfo.sub > 0)
 
-	if #slot1.equipInfo.sub > 0 then
-		uv0(slot0:Find("equip_info"), slot3, {
-			slot1.equipInfo
-		}, slot2)
+	if #arg_240_1.equipInfo.sub > 0 then
+		var_0_18(arg_240_0:Find("equip_info"), var_240_0, {
+			arg_240_1.equipInfo
+		}, arg_240_2)
 	end
 end
 
-function setCanvasOverrideSorting(slot0, slot1)
-	slot2 = slot0.parent
+function setCanvasOverrideSorting(arg_241_0, arg_241_1)
+	local var_241_0 = arg_241_0.parent
 
-	slot0:SetParent(pg.LayerWeightMgr.GetInstance().uiOrigin, false)
+	arg_241_0:SetParent(pg.LayerWeightMgr.GetInstance().uiOrigin, false)
 
-	if isActive(slot0) then
-		GetOrAddComponent(slot0, typeof(Canvas)).overrideSorting = slot1
+	if isActive(arg_241_0) then
+		GetOrAddComponent(arg_241_0, typeof(Canvas)).overrideSorting = arg_241_1
 	else
-		setActive(slot0, true)
+		setActive(arg_241_0, true)
 
-		GetOrAddComponent(slot0, typeof(Canvas)).overrideSorting = slot1
+		GetOrAddComponent(arg_241_0, typeof(Canvas)).overrideSorting = arg_241_1
 
-		setActive(slot0, false)
+		setActive(arg_241_0, false)
 	end
 
-	slot0:SetParent(slot2, false)
+	arg_241_0:SetParent(var_241_0, false)
 end
 
-function createNewGameObject(slot0, slot1)
-	slot2 = GameObject.New()
+function createNewGameObject(arg_242_0, arg_242_1)
+	local var_242_0 = GameObject.New()
 
-	if slot0 then
-		slot2.name = "model"
+	if arg_242_0 then
+		var_242_0.name = "model"
 	end
 
-	slot2.layer = slot1 or Layer.UI
+	var_242_0.layer = arg_242_1 or Layer.UI
 
-	return GetOrAddComponent(slot2, "RectTransform")
+	return GetOrAddComponent(var_242_0, "RectTransform")
 end
 
-function CreateShell(slot0)
-	if type(slot0) ~= "table" and type(slot0) ~= "userdata" then
-		return slot0
+function CreateShell(arg_243_0)
+	if type(arg_243_0) ~= "table" and type(arg_243_0) ~= "userdata" then
+		return arg_243_0
 	end
 
-	return setmetatable({}, setmetatable({
-		__index = slot0
-	}, slot0))
+	local var_243_0 = setmetatable({
+		__index = arg_243_0
+	}, arg_243_0)
+
+	return setmetatable({}, var_243_0)
 end
 
-function CameraFittingSettin(slot0)
-	if 1.7777777777777777 > Screen.width / Screen.height then
-		slot4 = slot3 / slot2
-		GetComponent(slot0, typeof(Camera)).rect = uv0.Rect.New(0, (1 - slot4) / 2, 1, slot4)
+function CameraFittingSettin(arg_244_0)
+	local var_244_0 = GetComponent(arg_244_0, typeof(Camera))
+	local var_244_1 = 1.7777777777777777
+	local var_244_2 = Screen.width / Screen.height
+
+	if var_244_2 < var_244_1 then
+		local var_244_3 = var_244_2 / var_244_1
+
+		var_244_0.rect = var_0_0.Rect.New(0, (1 - var_244_3) / 2, 1, var_244_3)
 	end
 end
 
-function SwitchSpecialChar(slot0, slot1)
+function SwitchSpecialChar(arg_245_0, arg_245_1)
 	if PLATFORM_CODE ~= PLATFORM_US then
-		slot0 = slot0:gsub(" ", " "):gsub("\t", "    ")
+		arg_245_0 = arg_245_0:gsub(" ", " ")
+		arg_245_0 = arg_245_0:gsub("\t", "    ")
 	end
 
-	if not slot1 then
-		slot0 = slot0:gsub("\n", " ")
+	if not arg_245_1 then
+		arg_245_0 = arg_245_0:gsub("\n", " ")
 	end
 
-	return slot0
+	return arg_245_0
 end
 
-function AfterCheck(slot0, slot1)
-	slot2 = {
-		[slot6] = slot7[1]()
-	}
+function AfterCheck(arg_246_0, arg_246_1)
+	local var_246_0 = {}
 
-	for slot6, slot7 in ipairs(slot0) do
-		-- Nothing
+	for iter_246_0, iter_246_1 in ipairs(arg_246_0) do
+		var_246_0[iter_246_0] = iter_246_1[1]()
 	end
 
-	slot1()
+	arg_246_1()
 
-	for slot6, slot7 in ipairs(slot0) do
-		if slot2[slot6] ~= slot7[1]() then
-			slot7[2]()
+	for iter_246_2, iter_246_3 in ipairs(arg_246_0) do
+		if var_246_0[iter_246_2] ~= iter_246_3[1]() then
+			iter_246_3[2]()
 		end
 
-		slot2[slot6] = slot7[1]()
+		var_246_0[iter_246_2] = iter_246_3[1]()
 	end
 end
 
-function CompareFuncs(slot0, slot1)
-	slot2 = {}
+function CompareFuncs(arg_247_0, arg_247_1)
+	local var_247_0 = {}
 
-	function slot3(slot0, slot1)
-		uv0[slot0] = uv0[slot0] or {}
-		uv0[slot0][slot1] = uv0[slot0][slot1] or uv1[slot0](slot1)
+	local function var_247_1(arg_248_0, arg_248_1)
+		var_247_0[arg_248_0] = var_247_0[arg_248_0] or {}
+		var_247_0[arg_248_0][arg_248_1] = var_247_0[arg_248_0][arg_248_1] or arg_247_0[arg_248_0](arg_248_1)
 
-		return uv0[slot0][slot1]
+		return var_247_0[arg_248_0][arg_248_1]
 	end
 
-	return function (slot0, slot1)
-		slot2 = 1
+	return function(arg_249_0, arg_249_1)
+		local var_249_0 = 1
 
-		while slot2 <= #uv0 do
-			if uv1(slot2, slot0) == uv1(slot2, slot1) then
-				slot2 = slot2 + 1
+		while var_249_0 <= #arg_247_0 do
+			local var_249_1 = var_247_1(var_249_0, arg_249_0)
+			local var_249_2 = var_247_1(var_249_0, arg_249_1)
+
+			if var_249_1 == var_249_2 then
+				var_249_0 = var_249_0 + 1
 			else
-				return slot3 < slot4
+				return var_249_1 < var_249_2
 			end
 		end
 
-		return tobool(uv2)
+		return tobool(arg_247_1)
 	end
 end
 
-function DropResultIntegration(slot0)
-	slot1 = {}
-	slot2 = 1
+function DropResultIntegration(arg_250_0)
+	local var_250_0 = {}
+	local var_250_1 = 1
 
-	while slot2 <= #slot0 do
-		slot1[slot3] = slot1[slot0[slot2].type] or {}
+	while var_250_1 <= #arg_250_0 do
+		local var_250_2 = arg_250_0[var_250_1].type
+		local var_250_3 = arg_250_0[var_250_1].id
 
-		if slot1[slot3][slot0[slot2].id] then
-			slot5 = slot0[slot1[slot3][slot4]]
-			slot5.count = slot5.count + table.remove(slot0, slot2).count
+		var_250_0[var_250_2] = var_250_0[var_250_2] or {}
+
+		if var_250_0[var_250_2][var_250_3] then
+			local var_250_4 = arg_250_0[var_250_0[var_250_2][var_250_3]]
+			local var_250_5 = table.remove(arg_250_0, var_250_1)
+
+			var_250_4.count = var_250_4.count + var_250_5.count
 		else
-			slot1[slot3][slot4] = slot2
-			slot2 = slot2 + 1
+			var_250_0[var_250_2][var_250_3] = var_250_1
+			var_250_1 = var_250_1 + 1
 		end
 	end
 
-	table.sort(slot0, CompareFuncs({
-		function (slot0)
-			slot2 = slot0.id
+	local var_250_6 = {
+		function(arg_251_0)
+			local var_251_0 = arg_251_0.type
+			local var_251_1 = arg_251_0.id
 
-			if slot0.type == DROP_TYPE_SHIP then
+			if var_251_0 == DROP_TYPE_SHIP then
 				return 1
-			elseif slot1 == DROP_TYPE_RESOURCE then
-				if slot2 == 1 then
+			elseif var_251_0 == DROP_TYPE_RESOURCE then
+				if var_251_1 == 1 then
 					return 2
 				else
 					return 3
 				end
-			elseif slot1 == DROP_TYPE_ITEM then
-				if slot2 == 59010 then
+			elseif var_251_0 == DROP_TYPE_ITEM then
+				if var_251_1 == 59010 then
 					return 4
-				elseif slot2 == 59900 then
+				elseif var_251_1 == 59900 then
 					return 5
-				elseif (Item.getConfigData(slot2) and slot3.type or 0) == 9 then
-					return 6
-				elseif slot4 == 5 then
-					return 7
-				elseif slot4 == 4 then
-					return 8
-				elseif slot4 == 7 then
-					return 9
+				else
+					local var_251_2 = Item.getConfigData(var_251_1)
+					local var_251_3 = var_251_2 and var_251_2.type or 0
+
+					if var_251_3 == 9 then
+						return 6
+					elseif var_251_3 == 5 then
+						return 7
+					elseif var_251_3 == 4 then
+						return 8
+					elseif var_251_3 == 7 then
+						return 9
+					end
 				end
-			elseif slot1 == DROP_TYPE_VITEM and slot2 == 59011 then
+			elseif var_251_0 == DROP_TYPE_VITEM and var_251_1 == 59011 then
 				return 4
 			end
 
 			return 100
 		end,
-		function (slot0)
-			slot1 = nil
+		function(arg_252_0)
+			local var_252_0
 
-			if slot0.type == DROP_TYPE_SHIP then
-				slot1 = pg.ship_data_statistics[slot0.id]
-			elseif slot0.type == DROP_TYPE_ITEM then
-				slot1 = Item.getConfigData(slot0.id)
+			if arg_252_0.type == DROP_TYPE_SHIP then
+				var_252_0 = pg.ship_data_statistics[arg_252_0.id]
+			elseif arg_252_0.type == DROP_TYPE_ITEM then
+				var_252_0 = Item.getConfigData(arg_252_0.id)
 			end
 
-			return (slot1 and slot1.rarity or 0) * -1
+			return (var_252_0 and var_252_0.rarity or 0) * -1
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_253_0)
+			return arg_253_0.id
 		end
-	}))
+	}
+
+	table.sort(arg_250_0, CompareFuncs(var_250_6))
 end
 
 function getLoginConfig()
-	slot0 = pg.TimeMgr.GetInstance():GetServerTime()
-	slot1 = 1
+	local var_254_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_254_1 = 1
 
-	for slot5, slot6 in ipairs(pg.login.all) do
-		if pg.login[slot6].date ~= "stop" then
-			slot7, slot8 = parseTimeConfig(pg.login[slot6].date)
+	for iter_254_0, iter_254_1 in ipairs(pg.login.all) do
+		if pg.login[iter_254_1].date ~= "stop" then
+			local var_254_2, var_254_3 = parseTimeConfig(pg.login[iter_254_1].date)
 
-			assert(not slot8)
+			assert(not var_254_3)
 
-			if pg.TimeMgr.GetInstance():inTime(slot7, slot0) then
-				slot1 = slot6
+			if pg.TimeMgr.GetInstance():inTime(var_254_2, var_254_0) then
+				var_254_1 = iter_254_1
 
 				break
 			end
 		end
 	end
 
-	slot2 = pg.login[slot1].login_static ~= "" and slot2 or "login"
-	slot4 = pg.login[slot1].login_cri ~= "" and true or false
-	slot5 = pg.login[slot1].op_play == 1 and true or false
+	local var_254_4 = pg.login[var_254_1].login_static
 
-	if pg.login[slot1].op_time == "" or not pg.TimeMgr.GetInstance():inTime(slot6, slot0) then
-		slot5 = false
+	var_254_4 = var_254_4 ~= "" and var_254_4 or "login"
+
+	local var_254_5 = pg.login[var_254_1].login_cri
+	local var_254_6 = var_254_5 ~= "" and true or false
+	local var_254_7 = pg.login[var_254_1].op_play == 1 and true or false
+	local var_254_8 = pg.login[var_254_1].op_time
+
+	if var_254_8 == "" or not pg.TimeMgr.GetInstance():inTime(var_254_8, var_254_0) then
+		var_254_7 = false
 	end
 
-	return slot4, slot4 and slot3 or slot2, pg.login[slot1].bgm, slot5, slot6 == "" and slot6 or table.concat(slot6[1][1])
+	local var_254_9 = var_254_8 == "" and var_254_8 or table.concat(var_254_8[1][1])
+
+	return var_254_6, var_254_6 and var_254_5 or var_254_4, pg.login[var_254_1].bgm, var_254_7, var_254_9
 end
 
-function setIntimacyIcon(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = nil
+function setIntimacyIcon(arg_255_0, arg_255_1, arg_255_2)
+	local var_255_0 = {}
+	local var_255_1
 
-	if slot0.childCount > 0 then
-		slot4 = slot0:GetChild(0)
+	if arg_255_0.childCount > 0 then
+		var_255_1 = arg_255_0:GetChild(0)
 	else
-		setParent(LoadAndInstantiateSync("template", "intimacytpl").transform, slot0)
+		var_255_1 = LoadAndInstantiateSync("template", "intimacytpl").transform
+
+		setParent(var_255_1, arg_255_0)
 	end
 
-	setImageAlpha(slot4, slot2 and 0 or 1)
-	eachChild(slot4, function (slot0)
-		setActive(slot0, false)
+	setImageAlpha(var_255_1, arg_255_2 and 0 or 1)
+	eachChild(var_255_1, function(arg_256_0)
+		setActive(arg_256_0, false)
 	end)
 
-	if slot2 then
-		if not slot4:Find(slot2 .. "(Clone)") then
-			setParent(LoadAndInstantiateSync("ui", slot2), slot4)
+	if arg_255_2 then
+		local var_255_2 = var_255_1:Find(arg_255_2 .. "(Clone)")
+
+		if not var_255_2 then
+			var_255_2 = LoadAndInstantiateSync("ui", arg_255_2)
+
+			setParent(var_255_2, var_255_1)
 		end
 
-		setActive(slot5, true)
-	elseif slot1 then
-		setImageSprite(slot4, GetSpriteFromAtlas("energy", slot1), true)
+		setActive(var_255_2, true)
+	elseif arg_255_1 then
+		setImageSprite(var_255_1, GetSpriteFromAtlas("energy", arg_255_1), true)
 	else
 		assert(false, "param error")
 	end
 
-	return slot4
+	return var_255_1
 end
 
-slot20 = nil
+local var_0_22
 
 function nowWorld()
-	uv0 = uv0 or getProxy(WorldProxy)
+	var_0_22 = var_0_22 or getProxy(WorldProxy)
 
-	return uv0 and uv0.world
+	return var_0_22 and var_0_22.world
 end
 
 function removeWorld()
-	uv0.world:Dispose()
+	var_0_22.world:Dispose()
 
-	uv0.world = nil
-	uv0 = nil
+	var_0_22.world = nil
+	var_0_22 = nil
 end
 
-function switch(slot0, slot1, slot2, ...)
-	if slot1[slot0] then
-		return slot1[slot0](...)
-	elseif slot2 then
-		return slot2(...)
+function switch(arg_259_0, arg_259_1, arg_259_2, ...)
+	if arg_259_1[arg_259_0] then
+		return arg_259_1[arg_259_0](...)
+	elseif arg_259_2 then
+		return arg_259_2(...)
 	end
 end
 
-function parseTimeConfig(slot0)
-	if type(slot0[1]) == "table" then
-		return slot0[2], slot0[1]
+function parseTimeConfig(arg_260_0)
+	if type(arg_260_0[1]) == "table" then
+		return arg_260_0[2], arg_260_0[1]
 	else
-		return slot0
+		return arg_260_0
 	end
 end
 
-slot21 = {
-	__add = function (slot0, slot1)
-		return NewPos(slot0.x + slot1.x, slot0.y + slot1.y)
+local var_0_23 = {
+	__add = function(arg_261_0, arg_261_1)
+		return NewPos(arg_261_0.x + arg_261_1.x, arg_261_0.y + arg_261_1.y)
 	end,
-	__sub = function (slot0, slot1)
-		return NewPos(slot0.x - slot1.x, slot0.y - slot1.y)
+	__sub = function(arg_262_0, arg_262_1)
+		return NewPos(arg_262_0.x - arg_262_1.x, arg_262_0.y - arg_262_1.y)
 	end,
-	__mul = function (slot0, slot1)
-		if type(slot1) == "number" then
-			return NewPos(slot0.x * slot1, slot0.y * slot1)
+	__mul = function(arg_263_0, arg_263_1)
+		if type(arg_263_1) == "number" then
+			return NewPos(arg_263_0.x * arg_263_1, arg_263_0.y * arg_263_1)
 		else
-			return NewPos(slot0.x * slot1.x, slot0.y * slot1.y)
+			return NewPos(arg_263_0.x * arg_263_1.x, arg_263_0.y * arg_263_1.y)
 		end
 	end,
-	__eq = function (slot0, slot1)
-		return slot0.x == slot1.x and slot0.y == slot1.y
+	__eq = function(arg_264_0, arg_264_1)
+		return arg_264_0.x == arg_264_1.x and arg_264_0.y == arg_264_1.y
 	end,
-	__tostring = function (slot0)
-		return slot0.x .. "_" .. slot0.y
+	__tostring = function(arg_265_0)
+		return arg_265_0.x .. "_" .. arg_265_0.y
 	end
 }
 
-function NewPos(slot0, slot1)
-	assert(slot0 and slot1)
+function NewPos(arg_266_0, arg_266_1)
+	assert(arg_266_0 and arg_266_1)
 
-	slot2 = setmetatable({
-		x = slot0,
-		y = slot1
-	}, uv0)
+	local var_266_0 = setmetatable({
+		x = arg_266_0,
+		y = arg_266_1
+	}, var_0_23)
 
-	function slot2.SqrMagnitude(slot0)
-		return slot0.x * slot0.x + slot0.y * slot0.y
+	function var_266_0.SqrMagnitude(arg_267_0)
+		return arg_267_0.x * arg_267_0.x + arg_267_0.y * arg_267_0.y
 	end
 
-	function slot2.Normalize(slot0)
-		if slot0:SqrMagnitude() > 1e-05 then
-			return slot0 * 1 / math.sqrt(slot1)
+	function var_266_0.Normalize(arg_268_0)
+		local var_268_0 = arg_268_0:SqrMagnitude()
+
+		if var_268_0 > 1e-05 then
+			return arg_268_0 * (1 / math.sqrt(var_268_0))
 		else
 			return NewPos(0, 0)
 		end
 	end
 
-	return slot2
+	return var_266_0
 end
 
-slot22 = nil
+local var_0_24
 
 function Timekeeping()
-	warning(Time.realtimeSinceStartup - (uv0 or Time.realtimeSinceStartup), Time.realtimeSinceStartup)
+	warning(Time.realtimeSinceStartup - (var_0_24 or Time.realtimeSinceStartup), Time.realtimeSinceStartup)
 
-	uv0 = Time.realtimeSinceStartup
+	var_0_24 = Time.realtimeSinceStartup
 end
 
-function GetRomanDigit(slot0)
-	return string.char(226, 133, 160 + slot0 - 1)
+function GetRomanDigit(arg_270_0)
+	return (string.char(226, 133, 160 + (arg_270_0 - 1)))
 end
 
-function quickPlayAnimator(slot0, slot1)
-	slot0:GetComponent(typeof(Animator)):Play(slot1, -1, 0)
+function quickPlayAnimator(arg_271_0, arg_271_1)
+	arg_271_0:GetComponent(typeof(Animator)):Play(arg_271_1, -1, 0)
 end
 
-function getSurveyUrl(slot0)
-	slot2 = nil
+function getSurveyUrl(arg_272_0)
+	local var_272_0 = pg.survey_data_template[arg_272_0]
+	local var_272_1
 
 	if not IsUnityEditor then
 		if PLATFORM_CODE == PLATFORM_CH then
-			if getProxy(UserProxy):GetCacheGatewayInServerLogined() == PLATFORM_ANDROID then
+			local var_272_2 = getProxy(UserProxy):GetCacheGatewayInServerLogined()
+
+			if var_272_2 == PLATFORM_ANDROID then
 				if LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI then
-					slot2 = pg.survey_data_template[slot0].main_url
+					var_272_1 = var_272_0.main_url
 				else
-					slot2 = slot1.uo_url
+					var_272_1 = var_272_0.uo_url
 				end
-			elseif slot3 == PLATFORM_IPHONEPLAYER then
-				slot2 = slot1.ios_url
+			elseif var_272_2 == PLATFORM_IPHONEPLAYER then
+				var_272_1 = var_272_0.ios_url
 			end
 		elseif PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
-			slot2 = slot1.main_url
+			var_272_1 = var_272_0.main_url
 		end
 	else
-		slot2 = slot1.main_url
+		var_272_1 = var_272_0.main_url
 	end
 
-	slot3 = getProxy(PlayerProxy):getRawData().id
-	slot5 = nil
-	slot12 = {
-		slot3,
-		getProxy(UserProxy):getRawData().arg2 or "",
-		PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3,
-		getProxy(ServerProxy):getRawData()[getProxy(UserProxy):getRawData() and slot6.server or 0] and slot7.id or "",
-		getProxy(PlayerProxy):getRawData().level,
-		slot3 .. "_" .. slot0
+	local var_272_3 = getProxy(PlayerProxy):getRawData().id
+	local var_272_4 = getProxy(UserProxy):getRawData().arg2 or ""
+	local var_272_5
+	local var_272_6 = PLATFORM == PLATFORM_ANDROID and 1 or PLATFORM == PLATFORM_IPHONEPLAYER and 2 or 3
+	local var_272_7 = getProxy(UserProxy):getRawData()
+	local var_272_8 = getProxy(ServerProxy):getRawData()[var_272_7 and var_272_7.server or 0]
+	local var_272_9 = var_272_8 and var_272_8.id or ""
+	local var_272_10 = getProxy(PlayerProxy):getRawData().level
+	local var_272_11 = var_272_3 .. "_" .. arg_272_0
+	local var_272_12 = var_272_1
+	local var_272_13 = {
+		var_272_3,
+		var_272_4,
+		var_272_6,
+		var_272_9,
+		var_272_10,
+		var_272_11
 	}
 
-	if slot2 then
-		for slot16, slot17 in ipairs(slot12) do
-			slot11 = string.gsub(slot11, "$" .. slot16, tostring(slot17))
+	if var_272_12 then
+		for iter_272_0, iter_272_1 in ipairs(var_272_13) do
+			var_272_12 = string.gsub(var_272_12, "$" .. iter_272_0, tostring(iter_272_1))
 		end
 	end
 
-	warning(slot11)
+	warning(var_272_12)
 
-	return slot11
+	return var_272_12
 end
 
 function GetMoneySymbol()
@@ -3493,41 +4093,42 @@ function GetMoneySymbol()
 	return ""
 end
 
-function FilterVarchar(slot0)
-	assert(type(slot0) == "string" or type(slot0) == "table")
+function FilterVarchar(arg_274_0)
+	assert(type(arg_274_0) == "string" or type(arg_274_0) == "table")
 
-	if slot0 == "" then
+	if arg_274_0 == "" then
 		return nil
 	end
 
-	return slot0
+	return arg_274_0
 end
 
-function getGameset(slot0)
-	slot1 = pg.gameset[slot0]
+function getGameset(arg_275_0)
+	local var_275_0 = pg.gameset[arg_275_0]
 
-	assert(slot1)
+	assert(var_275_0)
 
 	return {
-		slot1.key_value,
-		slot1.description
+		var_275_0.key_value,
+		var_275_0.description
 	}
 end
 
-function getDorm3dGameset(slot0)
-	slot1 = pg.dorm3d_set[slot0]
+function getDorm3dGameset(arg_276_0)
+	local var_276_0 = pg.dorm3d_set[arg_276_0]
 
-	assert(slot1)
+	assert(var_276_0)
 
 	return {
-		slot1.key_value_int,
-		slot1.key_value_varchar
+		var_276_0.key_value_int,
+		var_276_0.key_value_varchar
 	}
 end
 
-function GetItemsOverflowDic(slot0)
-	slot0 = slot0 or {}
-	slot1 = {
+function GetItemsOverflowDic(arg_277_0)
+	arg_277_0 = arg_277_0 or {}
+
+	local var_277_0 = {
 		[DROP_TYPE_ITEM] = {},
 		[DROP_TYPE_RESOURCE] = {},
 		[DROP_TYPE_EQUIP] = 0,
@@ -3535,70 +4136,76 @@ function GetItemsOverflowDic(slot0)
 		[DROP_TYPE_WORLD_ITEM] = 0
 	}
 
-	while #slot0 > 0 do
-		switch(table.remove(slot0).type, {
-			[DROP_TYPE_ITEM] = function ()
-				if uv0:getConfig("open_directly") == 1 then
-					slot3 = "display_icon"
+	while #arg_277_0 > 0 do
+		local var_277_1 = table.remove(arg_277_0)
 
-					for slot3, slot4 in ipairs(uv0:getConfig(slot3)) do
-						slot5 = Drop.Create(slot4)
-						slot5.count = slot5.count * uv0.count
+		switch(var_277_1.type, {
+			[DROP_TYPE_ITEM] = function()
+				if var_277_1:getConfig("open_directly") == 1 then
+					for iter_278_0, iter_278_1 in ipairs(var_277_1:getConfig("display_icon")) do
+						local var_278_0 = Drop.Create(iter_278_1)
 
-						table.insert(uv1, slot5)
+						var_278_0.count = var_278_0.count * var_277_1.count
+
+						table.insert(arg_277_0, var_278_0)
 					end
-				elseif uv0:getSubClass():IsShipExpType() then
-					uv2[uv0.type][uv0.id] = defaultValue(uv2[uv0.type][uv0.id], 0) + uv0.count
+				elseif var_277_1:getSubClass():IsShipExpType() then
+					var_277_0[var_277_1.type][var_277_1.id] = defaultValue(var_277_0[var_277_1.type][var_277_1.id], 0) + var_277_1.count
 				end
 			end,
-			[DROP_TYPE_RESOURCE] = function ()
-				uv0[uv1.type][uv1.id] = defaultValue(uv0[uv1.type][uv1.id], 0) + uv1.count
+			[DROP_TYPE_RESOURCE] = function()
+				var_277_0[var_277_1.type][var_277_1.id] = defaultValue(var_277_0[var_277_1.type][var_277_1.id], 0) + var_277_1.count
 			end,
-			[DROP_TYPE_EQUIP] = function ()
-				uv0[uv1.type] = uv0[uv1.type] + uv1.count
+			[DROP_TYPE_EQUIP] = function()
+				var_277_0[var_277_1.type] = var_277_0[var_277_1.type] + var_277_1.count
 			end,
-			[DROP_TYPE_SHIP] = function ()
-				uv0[uv1.type] = uv0[uv1.type] + uv1.count
+			[DROP_TYPE_SHIP] = function()
+				var_277_0[var_277_1.type] = var_277_0[var_277_1.type] + var_277_1.count
 			end,
-			[DROP_TYPE_WORLD_ITEM] = function ()
-				uv0[uv1.type] = uv0[uv1.type] + uv1.count
+			[DROP_TYPE_WORLD_ITEM] = function()
+				var_277_0[var_277_1.type] = var_277_0[var_277_1.type] + var_277_1.count
 			end
 		})
 	end
 
-	return slot1
+	return var_277_0
 end
 
-function CheckOverflow(slot0)
-	slot2 = slot0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
-	slot3 = slot0[DROP_TYPE_EQUIP]
-	slot4 = slot0[DROP_TYPE_SHIP]
-	slot5 = getProxy(PlayerProxy):getRawData()
+function CheckOverflow(arg_283_0)
+	local var_283_0 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0
+	local var_283_1 = arg_283_0[DROP_TYPE_RESOURCE][PlayerConst.ResOil] or 0
+	local var_283_2 = arg_283_0[DROP_TYPE_EQUIP]
+	local var_283_3 = arg_283_0[DROP_TYPE_SHIP]
+	local var_283_4 = getProxy(PlayerProxy):getRawData()
 
-	if (slot0[DROP_TYPE_RESOURCE][PlayerConst.ResGold] or 0) > 0 and slot5:GoldMax(slot1) then
+	if var_283_0 > 0 and var_283_4:GoldMax(var_283_0) then
 		return false, "gold"
 	end
 
-	if slot2 > 0 and slot5:OilMax(slot2) then
+	if var_283_1 > 0 and var_283_4:OilMax(var_283_1) then
 		return false, "oil"
 	end
 
-	if slot3 > 0 and slot5:getMaxEquipmentBag() < slot3 + getProxy(EquipmentProxy):getCapacity() then
+	local var_283_5 = getProxy(EquipmentProxy):getCapacity()
+
+	if var_283_2 > 0 and var_283_2 + var_283_5 > var_283_4:getMaxEquipmentBag() then
 		return false, "equip"
 	end
 
-	if slot4 > 0 and slot5:getMaxShipBag() < slot4 + getProxy(BayProxy):getShipCount() then
+	local var_283_6 = getProxy(BayProxy):getShipCount()
+
+	if var_283_3 > 0 and var_283_3 + var_283_6 > var_283_4:getMaxShipBag() then
 		return false, "ship"
 	end
 
 	return true
 end
 
-function CheckShipExpOverflow(slot0)
-	slot1 = getProxy(BagProxy)
+function CheckShipExpOverflow(arg_284_0)
+	local var_284_0 = getProxy(BagProxy)
 
-	for slot5, slot6 in pairs(slot0[DROP_TYPE_ITEM]) do
-		if Item.getConfigData(slot5).max_num < slot1:getItemCountById(slot5) + slot6 then
+	for iter_284_0, iter_284_1 in pairs(arg_284_0[DROP_TYPE_ITEM]) do
+		if var_284_0:getItemCountById(iter_284_0) + iter_284_1 > Item.getConfigData(iter_284_0).max_num then
 			return false
 		end
 	end
@@ -3606,33 +4213,34 @@ function CheckShipExpOverflow(slot0)
 	return true
 end
 
-slot23 = {
-	[17.0] = "item_type17_tip2",
+local var_0_25 = {
+	[17] = "item_type17_tip2",
 	tech = "techpackage_item_use_confirm",
-	[16.0] = "item_type16_tip2",
-	[11.0] = "equip_skin_detail_tip",
-	[13.0] = "item_type13_tip2"
+	[16] = "item_type16_tip2",
+	[11] = "equip_skin_detail_tip",
+	[13] = "item_type13_tip2"
 }
 
-function RegisterDetailButton(slot0, slot1, slot2)
-	Drop.Change(slot2)
-	switch(slot2.type, {
-		[DROP_TYPE_ITEM] = function ()
-			if uv0:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
-				if Item.InTimeLimitSkinAssigned(uv0.id) then
-					slot1 = table.mergeArray(slot0[2], Item.getConfigData(uv0.id).usage_arg[3], true)
+function RegisterDetailButton(arg_285_0, arg_285_1, arg_285_2)
+	Drop.Change(arg_285_2)
+	switch(arg_285_2.type, {
+		[DROP_TYPE_ITEM] = function()
+			if arg_285_2:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+				local var_286_0 = Item.getConfigData(arg_285_2.id).usage_arg
+				local var_286_1 = var_286_0[3]
+
+				if Item.InTimeLimitSkinAssigned(arg_285_2.id) then
+					var_286_1 = table.mergeArray(var_286_0[2], var_286_1, true)
 				end
 
-				slot2 = {
-					[slot7] = true
-				}
+				local var_286_2 = {}
 
-				for slot6, slot7 in ipairs(slot0[2]) do
-					-- Nothing
+				for iter_286_0, iter_286_1 in ipairs(var_286_0[2]) do
+					var_286_2[iter_286_1] = true
 				end
 
-				onButton(uv1, uv2, function ()
-					uv0:closeView()
+				onButton(arg_285_0, arg_285_1, function()
+					arg_285_0:closeView()
 					pg.m02:sendNotification(GAME.LOAD_LAYERS, {
 						parentContext = getProxy(ContextProxy):getCurrentContext(),
 						context = Context.New({
@@ -3640,93 +4248,100 @@ function RegisterDetailButton(slot0, slot1, slot2)
 							mediator = SkinAtlasMediator,
 							data = {
 								mode = SelectSkinLayer.MODE_VIEW,
-								itemId = uv1.id,
-								selectableSkinList = underscore.map(uv2, function (slot0)
+								itemId = arg_285_2.id,
+								selectableSkinList = underscore.map(var_286_1, function(arg_288_0)
 									return SelectableSkin.New({
-										id = slot0,
-										isTimeLimit = uv0[slot0] or false
+										id = arg_288_0,
+										isTimeLimit = var_286_2[arg_288_0] or false
 									})
 								end)
 							}
 						})
 					})
 				end, SFX_PANEL)
-				setActive(uv2, true)
+				setActive(arg_285_1, true)
+			else
+				local var_286_3 = getProxy(TechnologyProxy):getItemCanUnlockBluePrint(arg_285_2.id) and "tech" or arg_285_2:getConfig("type")
 
-				return
-			end
+				if var_0_25[var_286_3] then
+					local var_286_4 = {
+						item2Row = true,
+						content = i18n(var_0_25[var_286_3]),
+						itemList = underscore.map(arg_285_2:getConfig("display_icon"), function(arg_289_0)
+							return Drop.Create(arg_289_0)
+						end)
+					}
 
-			if uv3[getProxy(TechnologyProxy):getItemCanUnlockBluePrint(uv0.id) and "tech" or uv0:getConfig("type")] then
-				slot1 = {
-					item2Row = true,
-					content = i18n(uv3[slot0]),
-					itemList = underscore.map(slot3:getConfig("display_icon"), function (slot0)
-						return Drop.Create(slot0)
-					end)
-				}
-				slot3 = uv0
-
-				if slot0 == 11 then
-					onButton(uv1, uv2, function ()
-						uv0:emit(BaseUI.ON_DROP_LIST_OWN, uv1)
-					end, SFX_PANEL)
-				else
-					onButton(uv1, uv2, function ()
-						uv0:emit(BaseUI.ON_DROP_LIST, uv1)
-					end, SFX_PANEL)
+					if var_286_3 == 11 then
+						onButton(arg_285_0, arg_285_1, function()
+							arg_285_0:emit(BaseUI.ON_DROP_LIST_OWN, var_286_4)
+						end, SFX_PANEL)
+					else
+						onButton(arg_285_0, arg_285_1, function()
+							arg_285_0:emit(BaseUI.ON_DROP_LIST, var_286_4)
+						end, SFX_PANEL)
+					end
 				end
-			end
 
-			setActive(uv2, tobool(uv3[slot0]))
+				setActive(arg_285_1, tobool(var_0_25[var_286_3]))
+			end
 		end,
-		[DROP_TYPE_EQUIP] = function ()
-			onButton(uv0, uv1, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+		[DROP_TYPE_EQUIP] = function()
+			onButton(arg_285_0, arg_285_1, function()
+				arg_285_0:emit(BaseUI.ON_DROP, arg_285_2)
 			end, SFX_PANEL)
-			setActive(uv1, true)
+			setActive(arg_285_1, true)
 		end,
-		[DROP_TYPE_SPWEAPON] = function ()
-			onButton(uv0, uv1, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+		[DROP_TYPE_SPWEAPON] = function()
+			onButton(arg_285_0, arg_285_1, function()
+				arg_285_0:emit(BaseUI.ON_DROP, arg_285_2)
 			end, SFX_PANEL)
-			setActive(uv1, true)
+			setActive(arg_285_1, true)
 		end
-	}, function ()
-		setActive(uv0, false)
+	}, function()
+		setActive(arg_285_1, false)
 	end)
 end
 
-function UpdateOwnDisplay(slot0, slot1)
-	slot2, slot3 = slot1:getOwnedCount()
+function UpdateOwnDisplay(arg_297_0, arg_297_1)
+	local var_297_0, var_297_1 = arg_297_1:getOwnedCount()
 
-	setActive(slot0, slot3 and slot2 > 0)
+	setActive(arg_297_0, var_297_1 and var_297_0 > 0)
 
-	if slot3 and slot2 > 0 then
-		setText(slot0:Find("label"), i18n("word_own1"))
-		setText(slot0:Find("Text"), slot2)
+	if var_297_1 and var_297_0 > 0 then
+		setText(arg_297_0:Find("label"), i18n("word_own1"))
+		setText(arg_297_0:Find("Text"), var_297_0)
 	end
 end
 
-function Damp(slot0, slot1, slot2)
-	if Mathf.Max(1, slot1) < Mathf.Epsilon or Mathf.Abs(slot0) < slot3 then
-		return slot0
+function Damp(arg_298_0, arg_298_1, arg_298_2)
+	arg_298_1 = Mathf.Max(1, arg_298_1)
+
+	local var_298_0 = Mathf.Epsilon
+
+	if arg_298_1 < var_298_0 or var_298_0 > Mathf.Abs(arg_298_0) then
+		return arg_298_0
 	end
 
-	if slot2 < slot3 then
+	if arg_298_2 < var_298_0 then
 		return 0
 	end
 
-	return slot0 * (1 - Mathf.Exp(-4.605170186 * slot2 / slot1))
+	local var_298_1 = -4.605170186
+
+	return arg_298_0 * (1 - Mathf.Exp(var_298_1 * arg_298_2 / arg_298_1))
 end
 
-function checkCullResume(slot0)
-	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(slot0, "CanvasRenderer"), {
+function checkCullResume(arg_299_0)
+	if not ReflectionHelp.RefCallMethodEx(typeof("UnityEngine.CanvasRenderer"), "GetMaterial", GetComponent(arg_299_0, "CanvasRenderer"), {
 		typeof("System.Int32")
 	}, {
 		0
 	}) then
-		for slot5 = 1, slot0:GetComponentsInChildren(typeof(MeshImage)).Length do
-			slot1[slot5 - 1]:SetVerticesDirty()
+		local var_299_0 = arg_299_0:GetComponentsInChildren(typeof(MeshImage))
+
+		for iter_299_0 = 1, var_299_0.Length do
+			var_299_0[iter_299_0 - 1]:SetVerticesDirty()
 		end
 
 		return false
@@ -3735,100 +4350,105 @@ function checkCullResume(slot0)
 	return true
 end
 
-function parseEquipCode(slot0)
-	slot1 = {}
+function parseEquipCode(arg_300_0)
+	local var_300_0 = {}
 
-	if slot0 and slot0 ~= "" then
-		slot1 = string.split(base64.dec(slot0), "/")
-		slot1[5], slot1[6] = unpack(string.split(slot1[5], "\\"))
+	if arg_300_0 and arg_300_0 ~= "" then
+		local var_300_1 = base64.dec(arg_300_0)
 
-		if #slot1 < 6 or slot0 ~= base64.enc(table.concat({
-			table.concat(underscore.first(slot1, 5), "/"),
-			slot1[6]
+		var_300_0 = string.split(var_300_1, "/")
+		var_300_0[5], var_300_0[6] = unpack(string.split(var_300_0[5], "\\"))
+
+		if #var_300_0 < 6 or arg_300_0 ~= base64.enc(table.concat({
+			table.concat(underscore.first(var_300_0, 5), "/"),
+			var_300_0[6]
 		}, "\\")) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_illegal"))
 
-			slot1 = {}
+			var_300_0 = {}
 		end
 	end
 
-	for slot5 = 1, 6 do
-		slot1[slot5] = slot1[slot5] and tonumber(slot1[slot5], 32) or 0
+	for iter_300_0 = 1, 6 do
+		var_300_0[iter_300_0] = var_300_0[iter_300_0] and tonumber(var_300_0[iter_300_0], 32) or 0
 	end
 
-	return slot1
+	return var_300_0
 end
 
-function buildEquipCode(slot0)
-	return base64.enc(table.concat({
-		table.concat(underscore.map(slot0:getAllEquipments(), function (slot0)
-			return ConversionBase(32, slot0 and slot0.id or 0)
-		end), "/"),
-		ConversionBase(32, checkExist(slot0:GetSpWeapon(), {
+function buildEquipCode(arg_301_0)
+	local var_301_0 = underscore.map(arg_301_0:getAllEquipments(), function(arg_302_0)
+		return ConversionBase(32, arg_302_0 and arg_302_0.id or 0)
+	end)
+	local var_301_1 = {
+		table.concat(var_301_0, "/"),
+		ConversionBase(32, checkExist(arg_301_0:GetSpWeapon(), {
 			"id"
 		}) or 0)
-	}, "\\"))
+	}
+
+	return base64.enc(table.concat(var_301_1, "\\"))
 end
 
-function setDirectorSpeed(slot0, slot1)
-	GetComponent(slot0, "TimelineSpeed"):SetTimelineSpeed(slot1)
+function setDirectorSpeed(arg_303_0, arg_303_1)
+	GetComponent(arg_303_0, "TimelineSpeed"):SetTimelineSpeed(arg_303_1)
 end
 
-function envFunc(slot0, slot1)
-	assert(not getmetatable(slot1), "table has error metatable")
-	setfenv(slot0, setmetatable(slot1, {
+function envFunc(arg_304_0, arg_304_1)
+	assert(not getmetatable(arg_304_1), "table has error metatable")
+	setfenv(arg_304_0, setmetatable(arg_304_1, {
 		__index = _G
 	}))
-	slot0()
-	setfenv(slot0, _G)
+	arg_304_0()
+	setfenv(arg_304_0, _G)
 
-	return setmetatable(slot1, nil)
+	return setmetatable(arg_304_1, nil)
 end
 
-function setDefaultZeroMetatable(slot0)
-	return setmetatable(slot0, {
-		__index = function (slot0, slot1)
-			if rawget(slot0, slot1) == nil then
-				slot0[slot1] = 0
+function setDefaultZeroMetatable(arg_305_0)
+	return setmetatable(arg_305_0, {
+		__index = function(arg_306_0, arg_306_1)
+			if rawget(arg_306_0, arg_306_1) == nil then
+				arg_306_0[arg_306_1] = 0
 			end
 
-			return slot0[slot1]
+			return arg_306_0[arg_306_1]
 		end
 	})
 end
 
-slot24 = {
+local var_0_26 = {
 	__index = {
-		LoadAssetSync = function (slot0, ...)
+		LoadAssetSync = function(arg_307_0, ...)
 			if EDITOR_TOOL then
-				return ResourceMgr.Inst:getAssetSync(slot0.path, ...)
+				return ResourceMgr.Inst:getAssetSync(arg_307_0.path, ...)
 			else
-				return ResourceMgr.Inst:LoadAssetSync(slot0.ab, ...)
+				return ResourceMgr.Inst:LoadAssetSync(arg_307_0.ab, ...)
 			end
 		end
 	}
 }
 
-function buildTempAB(slot0, slot1)
-	slot2 = setmetatable({
-		path = slot0
-	}, uv0)
+function buildTempAB(arg_308_0, arg_308_1)
+	local var_308_0 = setmetatable({
+		path = arg_308_0
+	}, var_0_26)
 
 	if EDITOR_TOOL then
-		if slot1 then
-			onNextTick(function ()
-				uv0(uv1)
+		if arg_308_1 then
+			onNextTick(function()
+				arg_308_1(var_308_0)
 			end)
 		end
-	elseif slot1 then
-		ResourceMgr.Inst:loadAssetBundleAsync(slot0, function (slot0)
-			uv0.ab = slot0
+	elseif arg_308_1 then
+		ResourceMgr.Inst:loadAssetBundleAsync(arg_308_0, function(arg_310_0)
+			var_308_0.ab = arg_310_0
 
-			uv1(uv0)
+			arg_308_1(var_308_0)
 		end)
 	else
-		slot2.ab = ResourceMgr.Inst:loadAssetBundleSync(slot0)
+		var_308_0.ab = ResourceMgr.Inst:loadAssetBundleSync(arg_308_0)
 	end
 
-	return slot2
+	return var_308_0
 end

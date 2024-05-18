@@ -1,4 +1,27 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "damageRatioBullet",
+				number = 0.3
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				skill_id = 600092
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -90,28 +113,5 @@ return {
 	stack = 20,
 	id = 600082,
 	icon = 600082,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "damageRatioBullet",
-				number = 0.3
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				skill_id = 600092
-			}
-		}
-	}
+	last_effect = ""
 }

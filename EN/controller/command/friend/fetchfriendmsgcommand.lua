@@ -1,6 +1,7 @@
-slot0 = class("FetchFriendMsgCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FetchFriendMsgCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	return
 end
 
-return slot0
+return var_0_0

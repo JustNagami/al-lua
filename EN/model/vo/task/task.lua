@@ -1,284 +1,354 @@
-slot0 = class("Task", import("..BaseVO"))
-slot0.TYPE_SCENARIO = 1
-slot0.TYPE_BRANCH = 2
-slot0.TYPE_ROUTINE = 3
-slot0.TYPE_WEEKLY = 4
-slot0.TYPE_HIDDEN = 5
-slot0.TYPE_ACTIVITY = 6
-slot0.TYPE_ACTIVITY_ROUTINE = 36
-slot0.TYPE_ACTIVITY_BRANCH = 26
-slot0.TYPE_GUILD_WEEKLY = 12
-slot0.TYPE_NEW_WEEKLY = 13
-slot0.TYPE_REFLUX = 15
-slot0.TYPE_ACTIVITY_WEEKLY = 46
-slot1 = {
+﻿local var_0_0 = class("Task", import("..BaseVO"))
+
+var_0_0.TYPE_SCENARIO = 1
+var_0_0.TYPE_BRANCH = 2
+var_0_0.TYPE_ROUTINE = 3
+var_0_0.TYPE_WEEKLY = 4
+var_0_0.TYPE_HIDDEN = 5
+var_0_0.TYPE_ACTIVITY = 6
+var_0_0.TYPE_ACTIVITY_ROUTINE = 36
+var_0_0.TYPE_ACTIVITY_BRANCH = 26
+var_0_0.TYPE_GUILD_WEEKLY = 12
+var_0_0.TYPE_NEW_WEEKLY = 13
+var_0_0.TYPE_REFLUX = 15
+var_0_0.TYPE_ACTIVITY_WEEKLY = 46
+
+local var_0_1 = {
 	"scenario",
 	"branch",
 	"routine",
 	"weekly"
 }
-slot0.TASK_PROGRESS_UPDATE = 0
-slot0.TASK_PROGRESS_APPEND = 1
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot1.id
-	slot0.progress = slot1.progress or 0
-	slot0.acceptTime = slot1.accept_time
-	slot0.submitTime = slot1.submit_time or 0
+var_0_0.TASK_PROGRESS_UPDATE = 0
+var_0_0.TASK_PROGRESS_APPEND = 1
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_1.id
+	arg_1_0.progress = arg_1_1.progress or 0
+	arg_1_0.acceptTime = arg_1_1.accept_time
+	arg_1_0.submitTime = arg_1_1.submit_time or 0
 end
 
-function slot0.isClientTrigger(slot0)
-	return slot0:getConfig("sub_type") > 2000 and slot0:getConfig("sub_type") < 3000
+function var_0_0.isClientTrigger(arg_2_0)
+	return arg_2_0:getConfig("sub_type") > 2000 and arg_2_0:getConfig("sub_type") < 3000
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_3_0)
 	return pg.task_data_template
 end
 
-function slot0.isGuildTask(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_GUILD_WEEKLY
+function var_0_0.isGuildTask(arg_4_0)
+	return arg_4_0:getConfig("type") == var_0_0.TYPE_GUILD_WEEKLY
 end
 
-function slot0.IsRoutineType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_ROUTINE
+function var_0_0.IsRoutineType(arg_5_0)
+	return arg_5_0:getConfig("type") == var_0_0.TYPE_ROUTINE
 end
 
-function slot0.IsActRoutineType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_ACTIVITY_ROUTINE
+function var_0_0.IsActRoutineType(arg_6_0)
+	return arg_6_0:getConfig("type") == var_0_0.TYPE_ACTIVITY_ROUTINE
 end
 
-function slot0.IsActType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_ACTIVITY
+function var_0_0.IsActType(arg_7_0)
+	return arg_7_0:getConfig("type") == var_0_0.TYPE_ACTIVITY
 end
 
-function slot0.IsWeeklyType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_WEEKLY or slot0:getConfig("type") == uv0.TYPE_NEW_WEEKLY
+function var_0_0.IsWeeklyType(arg_8_0)
+	return arg_8_0:getConfig("type") == var_0_0.TYPE_WEEKLY or arg_8_0:getConfig("type") == var_0_0.TYPE_NEW_WEEKLY
 end
 
-function slot0.IsBackYardInterActionType(slot0)
-	return slot0:getConfig("sub_type") == 2010
+function var_0_0.IsBackYardInterActionType(arg_9_0)
+	return arg_9_0:getConfig("sub_type") == 2010
 end
 
-function slot0.IsFlagShipInterActionType(slot0)
-	return slot0:getConfig("sub_type") == 2011
+function var_0_0.IsFlagShipInterActionType(arg_10_0)
+	return arg_10_0:getConfig("sub_type") == 2011
 end
 
-function slot0.IsGuildAddLivnessType(slot0)
-	return slot0:getConfig("type") == uv0.TYPE_ROUTINE or slot1 == uv0.TYPE_WEEKLY or slot1 == uv0.TYPE_GUILD_WEEKLY or slot1 == uv0.TYPE_NEW_WEEKLY
+function var_0_0.IsGuildAddLivnessType(arg_11_0)
+	local var_11_0 = arg_11_0:getConfig("type")
+
+	return var_11_0 == var_0_0.TYPE_ROUTINE or var_11_0 == var_0_0.TYPE_WEEKLY or var_11_0 == var_0_0.TYPE_GUILD_WEEKLY or var_11_0 == var_0_0.TYPE_NEW_WEEKLY
 end
 
-function slot0.isLock(slot0)
-	return getProxy(PlayerProxy):getRawData().level < slot0:getConfig("level")
+function var_0_0.isLock(arg_12_0)
+	return getProxy(PlayerProxy):getRawData().level < arg_12_0:getConfig("level")
 end
 
-function slot0.isFinish(slot0)
-	return slot0:getConfig("target_num") <= slot0:getProgress()
+function var_0_0.isFinish(arg_13_0)
+	return arg_13_0:getProgress() >= arg_13_0:getConfig("target_num")
 end
 
-function slot0.getProgress(slot0)
-	slot1 = slot0.progress
+function var_0_0.getProgress(arg_14_0)
+	local var_14_0 = arg_14_0.progress
 
-	if slot0:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
-		slot1 = getProxy(BagProxy):getItemCountById(tonumber(tonumber(slot0:getConfig("target_id"))))
-	elseif slot0:getConfig("sub_type") == TASK_SUB_TYPE_PT then
-		slot1 = getProxy(ActivityProxy):getActivityById(tonumber(slot0:getConfig("target_id_2"))) and slot2.data1 or 0
-	elseif slot0:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
-		slot1 = getProxy(PlayerProxy):getData():getResById(tonumber(slot0:getConfig("target_id")))
-	elseif slot0:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
-		slot1 = getProxy(ActivityProxy):getVirtualItemNumber(tonumber(slot0:getConfig("target_id")))
-	elseif slot0:getConfig("sub_type") == TASK_SUB_TYPE_BOSS_PT then
-		slot1 = getProxy(PlayerProxy):getData():getResById(tonumber(slot0:getConfig("target_id")))
-	elseif slot0:getConfig("sub_type") == TASK_SUB_STROY then
-		_.each(slot0:getConfig("target_id"), function (slot0)
-			if pg.NewStoryMgr.GetInstance():GetPlayedFlag(slot0) then
-				uv0 = uv0 + 1
+	if arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_ITEM then
+		local var_14_1 = tonumber(arg_14_0:getConfig("target_id"))
+
+		var_14_0 = getProxy(BagProxy):getItemCountById(tonumber(var_14_1))
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_PT then
+		local var_14_2 = getProxy(ActivityProxy):getActivityById(tonumber(arg_14_0:getConfig("target_id_2")))
+
+		var_14_0 = var_14_2 and var_14_2.data1 or 0
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_PLAYER_RES then
+		local var_14_3 = tonumber(arg_14_0:getConfig("target_id"))
+
+		var_14_0 = getProxy(PlayerProxy):getData():getResById(var_14_3)
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_GIVE_VIRTUAL_ITEM then
+		local var_14_4 = tonumber(arg_14_0:getConfig("target_id"))
+
+		var_14_0 = getProxy(ActivityProxy):getVirtualItemNumber(var_14_4)
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_BOSS_PT then
+		local var_14_5 = tonumber(arg_14_0:getConfig("target_id"))
+
+		var_14_0 = getProxy(PlayerProxy):getData():getResById(var_14_5)
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_STROY then
+		local var_14_6 = arg_14_0:getConfig("target_id")
+		local var_14_7 = 0
+
+		_.each(var_14_6, function(arg_15_0)
+			if pg.NewStoryMgr.GetInstance():GetPlayedFlag(arg_15_0) then
+				var_14_7 = var_14_7 + 1
 			end
 		end)
 
-		slot1 = 0
-	elseif slot0:getConfig("sub_type") == TASK_SUB_TYPE_TECHNOLOGY_POINT then
-		slot1 = math.min(getProxy(TechnologyNationProxy):getNationPoint(tonumber(slot0:getConfig("target_id"))), slot0:getConfig("target_num"))
+		var_14_0 = var_14_7
+	elseif arg_14_0:getConfig("sub_type") == TASK_SUB_TYPE_TECHNOLOGY_POINT then
+		var_14_0 = getProxy(TechnologyNationProxy):getNationPoint(tonumber(arg_14_0:getConfig("target_id")))
+		var_14_0 = math.min(var_14_0, arg_14_0:getConfig("target_num"))
 	end
 
-	return slot1 or 0
+	return var_14_0 or 0
 end
 
-function slot0.getTargetNumber(slot0)
-	return slot0:getConfig("target_num")
+function var_0_0.getTargetNumber(arg_16_0)
+	return arg_16_0:getConfig("target_num")
 end
 
-function slot0.isReceive(slot0)
-	return slot0.submitTime > 0
+function var_0_0.isReceive(arg_17_0)
+	return arg_17_0.submitTime > 0
 end
 
-function slot0.getTaskStatus(slot0)
-	if slot0:isLock() then
+function var_0_0.getTaskStatus(arg_18_0)
+	if arg_18_0:isLock() then
 		return -1
 	end
 
-	if slot0:isReceive() then
+	if arg_18_0:isReceive() then
 		return 2
 	end
 
-	if slot0:isFinish() then
+	if arg_18_0:isFinish() then
 		return 1
 	end
 
 	return 0
 end
 
-function slot0.onAdded(slot0)
-	if slot0:getConfig("story_id") and slot3 ~= "" and function ()
+function var_0_0.onAdded(arg_19_0)
+	local function var_19_0()
+		if arg_19_0:getConfig("sub_type") == 29 then
+			local var_20_0 = getProxy(SkirmishProxy):getRawData()
+
+			if _.any(var_20_0, function(arg_21_0)
+				return arg_21_0:getConfig("task_id") == arg_19_0.id
+			end) then
+				return
+			end
+
+			pg.m02:sendNotification(GAME.TASK_GO, {
+				taskVO = arg_19_0
+			})
+		elseif arg_19_0:getConfig("added_tip") > 0 then
+			local var_20_1
+
+			if getProxy(ContextProxy):getCurrentContext().mediator.__cname ~= TaskMediator.__cname then
+				function var_20_1()
+					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
+						page = var_0_1[arg_19_0:GetRealType()]
+					})
+				end
+			end
+
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				noText = "text_iknow",
+				yesText = "text_forward",
+				content = i18n("tip_add_task", arg_19_0:getConfig("name")),
+				onYes = var_20_1,
+				weight = LayerWeightConst.TOP_LAYER
+			})
+		end
+	end
+
+	local function var_19_1()
+		local var_23_0 = getProxy(ContextProxy):getCurrentContext()
+
 		if not table.contains({
 			"LevelScene",
 			"BattleScene",
 			"EventListScene",
 			"MilitaryExerciseScene",
 			"DailyLevelScene"
-		}, getProxy(ContextProxy):getCurrentContext().viewComponent.__cname) then
+		}, var_23_0.viewComponent.__cname) then
 			return true
 		end
 
 		return false
-	end() then
-		pg.NewStoryMgr.GetInstance():Play(slot3, function ()
-			if uv0:getConfig("sub_type") == 29 then
-				if _.any(getProxy(SkirmishProxy):getRawData(), function (slot0)
-					return slot0:getConfig("task_id") == uv0.id
-				end) then
-					return
-				end
+	end
 
-				pg.m02:sendNotification(GAME.TASK_GO, {
-					taskVO = uv0
-				})
-			elseif uv0:getConfig("added_tip") > 0 then
-				slot0 = nil
+	local var_19_2 = arg_19_0:getConfig("story_id")
 
-				if getProxy(ContextProxy):getCurrentContext().mediator.__cname ~= TaskMediator.__cname then
-					function slot0()
-						pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TASK, {
-							page = uv0[uv1:GetRealType()]
-						})
-					end
-				end
-
-				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					noText = "text_iknow",
-					yesText = "text_forward",
-					content = i18n("tip_add_task", uv0:getConfig("name")),
-					onYes = slot0,
-					weight = LayerWeightConst.TOP_LAYER
-				})
-			end
-		end, true, true)
+	if var_19_2 and var_19_2 ~= "" and var_19_1() then
+		pg.NewStoryMgr.GetInstance():Play(var_19_2, var_19_0, true, true)
 	else
-		slot1()
+		var_19_0()
 	end
 end
 
-function slot0.updateProgress(slot0, slot1)
-	slot0.progress = slot1
+function var_0_0.updateProgress(arg_24_0, arg_24_1)
+	arg_24_0.progress = arg_24_1
 end
 
-function slot0.isSelectable(slot0)
-	return slot0:getConfig("award_choice") ~= nil and type(slot1) == "table" and #slot1 > 0
+function var_0_0.isSelectable(arg_25_0)
+	local var_25_0 = arg_25_0:getConfig("award_choice")
+
+	return var_25_0 ~= nil and type(var_25_0) == "table" and #var_25_0 > 0
 end
 
-function slot0.judgeOverflow(slot0, slot1, slot2, slot3)
-	return uv0.StaticJudgeOverflow(slot1, slot2, slot3, slot0:getTaskStatus() == 1, slot0:ShowOnTaskScene(), slot0:getConfig("award_display"))
+function var_0_0.judgeOverflow(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+	local var_26_0 = arg_26_0:getTaskStatus() == 1
+	local var_26_1 = arg_26_0:ShowOnTaskScene()
+
+	return var_0_0.StaticJudgeOverflow(arg_26_1, arg_26_2, arg_26_3, var_26_0, var_26_1, arg_26_0:getConfig("award_display"))
 end
 
-function slot0.StaticJudgeOverflow(slot0, slot1, slot2, slot3, slot4, slot5)
-	if slot3 and slot4 then
-		slot6 = getProxy(PlayerProxy):getData()
-		slot9 = slot1 or slot6.oil
-		slot10 = slot2 or not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]) or 0
-		slot12 = pg.gameset.max_oil.key_value
-		slot13 = not LOCK_UR_SHIP and pg.gameset.urpt_chapter_max.description[2] or 0
-		slot14 = false
-		slot15 = false
-		slot16 = false
-		slot17 = false
-		slot18 = false
-		slot19 = {}
+function var_0_0.StaticJudgeOverflow(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4, arg_27_5)
+	if arg_27_3 and arg_27_4 then
+		local var_27_0 = getProxy(PlayerProxy):getData()
+		local var_27_1 = pg.gameset.urpt_chapter_max.description[1]
+		local var_27_2 = arg_27_0 or var_27_0.gold
+		local var_27_3 = arg_27_1 or var_27_0.oil
+		local var_27_4 = arg_27_2 or not LOCK_UR_SHIP and getProxy(BagProxy):GetLimitCntById(var_27_1) or 0
+		local var_27_5 = pg.gameset.max_gold.key_value
+		local var_27_6 = pg.gameset.max_oil.key_value
+		local var_27_7 = not LOCK_UR_SHIP and pg.gameset.urpt_chapter_max.description[2] or 0
+		local var_27_8 = false
+		local var_27_9 = false
+		local var_27_10 = false
+		local var_27_11 = false
+		local var_27_12 = false
+		local var_27_13 = {}
+		local var_27_14 = arg_27_5
 
-		for slot24, slot25 in ipairs(slot5) do
-			slot26, slot27, slot28 = unpack(slot25)
+		for iter_27_0, iter_27_1 in ipairs(var_27_14) do
+			local var_27_15, var_27_16, var_27_17 = unpack(iter_27_1)
 
-			if slot26 == DROP_TYPE_RESOURCE then
-				if slot27 == PlayerConst.ResGold then
-					if (slot0 or slot6.gold) + slot28 - pg.gameset.max_gold.key_value > 0 then
-						slot14 = true
+			if var_27_15 == DROP_TYPE_RESOURCE then
+				if var_27_16 == PlayerConst.ResGold then
+					local var_27_18 = var_27_2 + var_27_17 - var_27_5
 
-						table.insert(slot19, {
+					if var_27_18 > 0 then
+						var_27_8 = true
+
+						local var_27_19 = {
 							type = DROP_TYPE_RESOURCE,
 							id = PlayerConst.ResGold,
-							count = setColorStr(slot29, COLOR_RED)
-						})
+							count = setColorStr(var_27_18, COLOR_RED)
+						}
+
+						table.insert(var_27_13, var_27_19)
 					end
-				elseif slot27 == PlayerConst.ResOil and slot9 + slot28 - slot12 > 0 then
-					slot15 = true
+				elseif var_27_16 == PlayerConst.ResOil then
+					local var_27_20 = var_27_3 + var_27_17 - var_27_6
 
-					table.insert(slot19, {
-						type = DROP_TYPE_RESOURCE,
-						id = PlayerConst.ResOil,
-						count = setColorStr(slot29, COLOR_RED)
-					})
+					if var_27_20 > 0 then
+						var_27_9 = true
+
+						local var_27_21 = {
+							type = DROP_TYPE_RESOURCE,
+							id = PlayerConst.ResOil,
+							count = setColorStr(var_27_20, COLOR_RED)
+						}
+
+						table.insert(var_27_13, var_27_21)
+					end
 				end
-			elseif not LOCK_UR_SHIP and slot26 == DROP_TYPE_VITEM then
-				if Item.getConfigData(slot27).virtual_type == 20 and slot10 + slot28 - slot13 > 0 then
-					slot16 = true
+			elseif not LOCK_UR_SHIP and var_27_15 == DROP_TYPE_VITEM then
+				if Item.getConfigData(var_27_16).virtual_type == 20 then
+					local var_27_22 = var_27_4 + var_27_17 - var_27_7
 
-					table.insert(slot19, {
-						type = DROP_TYPE_VITEM,
-						id = slot7,
-						count = setColorStr(slot30, COLOR_RED)
-					})
+					if var_27_22 > 0 then
+						var_27_10 = true
+
+						local var_27_23 = {
+							type = DROP_TYPE_VITEM,
+							id = var_27_1,
+							count = setColorStr(var_27_22, COLOR_RED)
+						}
+
+						table.insert(var_27_13, var_27_23)
+					end
 				end
-			elseif slot26 == DROP_TYPE_ITEM and Item.getConfigData(slot27).type == Item.EXP_BOOK_TYPE and Item.getConfigData(slot27).max_num < getProxy(BagProxy):getItemCountById(slot27) + slot28 then
-				slot17 = true
+			elseif var_27_15 == DROP_TYPE_ITEM and Item.getConfigData(var_27_16).type == Item.EXP_BOOK_TYPE then
+				local var_27_24 = getProxy(BagProxy):getItemCountById(var_27_16) + var_27_17
+				local var_27_25 = Item.getConfigData(var_27_16).max_num
 
-				table.insert(slot19, {
-					type = DROP_TYPE_ITEM,
-					id = slot27,
-					count = setColorStr(math.min(slot28, slot29 - slot30), COLOR_RED)
-				})
+				if var_27_25 < var_27_24 then
+					var_27_11 = true
+
+					local var_27_26 = {
+						type = DROP_TYPE_ITEM,
+						id = var_27_16,
+						count = setColorStr(math.min(var_27_17, var_27_24 - var_27_25), COLOR_RED)
+					}
+
+					table.insert(var_27_13, var_27_26)
+				end
 			end
 		end
 
-		return slot14 or slot15 or slot16 or slot17, slot19
+		return var_27_8 or var_27_9 or var_27_10 or var_27_11, var_27_13
 	end
 end
 
-function slot0.IsUrTask(slot0)
+function var_0_0.IsUrTask(arg_28_0)
 	if not LOCK_UR_SHIP then
-		slot2 = pg.gameset.urpt_chapter_max.description[1]
+		local var_28_0 = pg.gameset.urpt_chapter_max.description[1]
 
-		return _.any(slot0:getConfig("award_display"), function (slot0)
-			return slot0[1] == DROP_TYPE_ITEM and slot0[2] == uv0
-		end)
-	else
-		return false
-	end
-end
-
-function slot0.GetRealType(slot0)
-	if slot0:getConfig("priority_type") == 0 then
-		slot1 = slot0:getConfig("type")
+		do return _.any(arg_28_0:getConfig("award_display"), function(arg_29_0)
+			return arg_29_0[1] == DROP_TYPE_ITEM and arg_29_0[2] == var_28_0
+		end) end
+		return
 	end
 
-	return slot1
+	return false
 end
 
-function slot0.IsOverflowShipExpItem(slot0)
-	for slot6, slot7 in ipairs(slot0:getConfig("award_display")) do
-		slot9 = slot7[2]
+function var_0_0.GetRealType(arg_30_0)
+	local var_30_0 = arg_30_0:getConfig("priority_type")
 
-		if slot7[1] == DROP_TYPE_ITEM and Item.getConfigData(slot9).type == Item.EXP_BOOK_TYPE and function (slot0, slot1)
-			return Item.getConfigData(slot0).max_num < getProxy(BagProxy):getItemCountById(slot0) + slot1
-		end(slot9, slot7[3]) then
+	if var_30_0 == 0 then
+		var_30_0 = arg_30_0:getConfig("type")
+	end
+
+	return var_30_0
+end
+
+function var_0_0.IsOverflowShipExpItem(arg_31_0)
+	local function var_31_0(arg_32_0, arg_32_1)
+		return getProxy(BagProxy):getItemCountById(arg_32_0) + arg_32_1 > Item.getConfigData(arg_32_0).max_num
+	end
+
+	local var_31_1 = arg_31_0:getConfig("award_display")
+
+	for iter_31_0, iter_31_1 in ipairs(var_31_1) do
+		local var_31_2 = iter_31_1[1]
+		local var_31_3 = iter_31_1[2]
+		local var_31_4 = iter_31_1[3]
+
+		if var_31_2 == DROP_TYPE_ITEM and Item.getConfigData(var_31_3).type == Item.EXP_BOOK_TYPE and var_31_0(var_31_3, var_31_4) then
 			return true
 		end
 	end
@@ -286,22 +356,27 @@ function slot0.IsOverflowShipExpItem(slot0)
 	return false
 end
 
-function slot0.ShowOnTaskScene(slot0)
-	slot1 = slot0:getConfig("visibility") == 1
+function var_0_0.ShowOnTaskScene(arg_33_0)
+	local var_33_0 = arg_33_0:getConfig("visibility") == 1
 
-	if slot0.id == 17268 then
-		slot1 = false
+	if arg_33_0.id == 17268 then
+		var_33_0 = false
 
-		if getProxy(ActivityProxy):getActivityById(ActivityConst.BUILDING_NEWYEAR_2022) and not slot2:isEnd() then
-			slot1 = (slot2.data1KeyValueList[2][17] or 1) >= 4 and (slot2.data1KeyValueList[2][18] or 1) >= 4
+		local var_33_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.BUILDING_NEWYEAR_2022)
+
+		if var_33_1 and not var_33_1:isEnd() then
+			local var_33_2 = var_33_1.data1KeyValueList[2][17] or 1
+			local var_33_3 = var_33_1.data1KeyValueList[2][18] or 1
+
+			var_33_0 = var_33_2 >= 4 and var_33_3 >= 4
 		end
 	end
 
-	return slot1
+	return var_33_0
 end
 
-function slot0.isAvatarTask(slot0)
+function var_0_0.isAvatarTask(arg_34_0)
 	return false
 end
 
-return slot0
+return var_0_0

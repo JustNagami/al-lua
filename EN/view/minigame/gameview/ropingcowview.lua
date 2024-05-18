@@ -1,12 +1,12 @@
-slot0 = class("IdolMasterView", import("..BaseMiniGameView"))
-slot1 = "backyard"
-slot2 = "event:/ui/ddldaoshu2"
-slot3 = "event:/ui/sou"
-slot4 = "event:/ui/xueqiu"
-slot5 = 60
-slot6 = 100
-slot7 = 10
-slot8 = {
+﻿local var_0_0 = class("IdolMasterView", import("..BaseMiniGameView"))
+local var_0_1 = "backyard"
+local var_0_2 = "event:/ui/ddldaoshu2"
+local var_0_3 = "event:/ui/sou"
+local var_0_4 = "event:/ui/xueqiu"
+local var_0_5 = 60
+local var_0_6 = 100
+local var_0_7 = 10
+local var_0_8 = {
 	{
 		20,
 		3
@@ -24,7 +24,7 @@ slot8 = {
 		5
 	}
 }
-slot9 = {
+local var_0_9 = {
 	{
 		10700031,
 		10700030
@@ -46,7 +46,7 @@ slot9 = {
 		10700070
 	}
 }
-slot10 = {
+local var_0_10 = {
 	{
 		10700011,
 		10700010
@@ -56,9 +56,9 @@ slot10 = {
 		10700020
 	}
 }
-slot11 = "EVENT_SEND_GIFT"
-slot12 = "EVENT_FANS_ACTION"
-slot13 = {
+local var_0_11 = "EVENT_SEND_GIFT"
+local var_0_12 = "EVENT_FANS_ACTION"
+local var_0_13 = {
 	1,
 	2,
 	3,
@@ -66,425 +66,452 @@ slot13 = {
 	5,
 	6
 }
-slot14 = {
+local var_0_14 = {
 	1,
 	2
 }
-slot15 = {
+local var_0_15 = {
 	3,
 	4,
 	5,
 	6
 }
-slot16 = 3
-slot17 = "dafuweng_event"
-slot18 = "stand2"
-slot19 = "normal"
-slot20 = "work"
-slot21 = "wrong"
-slot22 = "end1"
-slot23 = "end2"
-slot24 = "gift"
-slot25 = "normal"
-slot26 = "walk"
-slot27 = 3
-slot28 = "type_fans_fail"
-slot29 = "type_fans_success"
-slot30 = 4
-slot31 = {
+local var_0_16 = 3
+local var_0_17 = "dafuweng_event"
+local var_0_18 = "stand2"
+local var_0_19 = "normal"
+local var_0_20 = "work"
+local var_0_21 = "wrong"
+local var_0_22 = "end1"
+local var_0_23 = "end2"
+local var_0_24 = "gift"
+local var_0_25 = "normal"
+local var_0_26 = "walk"
+local var_0_27 = 3
+local var_0_28 = "type_fans_fail"
+local var_0_29 = "type_fans_success"
+local var_0_30 = 4
+local var_0_31 = {
 	Vector3(160, 160),
 	Vector3(160, -30),
 	Vector3(160, -210),
 	Vector3(160, -400)
 }
-slot32 = 350
+local var_0_32 = 350
 
-function slot33(slot0, slot1, slot2)
-	slot3 = {
-		Ctor = function (slot0)
-			slot0._giftTf = uv0
-			slot0._event = uv1
-			slot0._workerTf = uv2
-			slot5 = true
+local function var_0_33(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = {
+		Ctor = function(arg_2_0)
+			arg_2_0._giftTf = arg_1_0
+			arg_2_0._event = arg_1_2
+			arg_2_0._workerTf = arg_1_1
 
-			PoolMgr.GetInstance():GetSpineChar("jiu-work", slot5, function (slot0)
-				slot0.transform.localScale = Vector3.one
-				slot0.transform.localPosition = Vector3.zero
+			local var_2_0 = "jiu-work"
 
-				slot0.transform:SetParent(uv0._workerTf, false)
+			PoolMgr.GetInstance():GetSpineChar(var_2_0, true, function(arg_3_0)
+				arg_3_0.transform.localScale = Vector3.one
+				arg_3_0.transform.localPosition = Vector3.zero
 
-				uv0.wokerSpine = {
-					model = uv0.model,
-					anim = slot0:GetComponent(typeof(SpineAnimUI)),
-					name = uv1
+				arg_3_0.transform:SetParent(arg_2_0._workerTf, false)
+
+				local var_3_0 = arg_3_0:GetComponent(typeof(SpineAnimUI))
+
+				arg_2_0.wokerSpine = {
+					model = arg_2_0.model,
+					anim = var_3_0,
+					name = var_2_0
 				}
 
-				uv0:changeWorkerAction(uv2, 0, nil)
+				arg_2_0:changeWorkerAction(var_0_19, 0, nil)
 			end)
 
-			slot0.selectedGifts = {}
-			slot0.gifts = {}
-			slot0.delegateGifts = {}
+			arg_2_0.selectedGifts = {}
+			arg_2_0.gifts = {}
+			arg_2_0.delegateGifts = {}
 
-			for slot5 = 1, #uv4 do
-				slot6 = slot5
-				slot7 = findTF(slot0._giftTf, uv4[slot5])
+			for iter_2_0 = 1, #var_0_13 do
+				local var_2_1 = iter_2_0
+				local var_2_2 = findTF(arg_2_0._giftTf, var_0_13[iter_2_0])
 
-				table.insert(slot0.gifts, {
-					tf = slot7,
-					index = slot5
+				table.insert(arg_2_0.gifts, {
+					tf = var_2_2,
+					index = iter_2_0
 				})
 
-				slot8 = GetOrAddComponent(slot7, "EventTriggerListener")
+				local var_2_3 = GetOrAddComponent(var_2_2, "EventTriggerListener")
 
-				slot8:AddPointDownFunc(function (slot0, slot1)
-					uv0:selectGift(uv1)
+				var_2_3:AddPointDownFunc(function(arg_4_0, arg_4_1)
+					arg_2_0:selectGift(var_2_1)
 				end)
-				table.insert(slot0.delegateGifts, slot8)
+				table.insert(arg_2_0.delegateGifts, var_2_3)
 			end
 
-			slot0:updateSelected()
+			arg_2_0:updateSelected()
 		end,
-		changeWorkerAction = function (slot0, slot1, slot2, slot3)
-			slot0.wokerSpine.anim:SetActionCallBack(nil)
-			slot0.wokerSpine.anim:SetAction(slot1, 0)
-			slot0.wokerSpine.anim:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					if uv0 == 1 then
-						uv1.wokerSpine.anim:SetActionCallBack(nil)
-						uv1.wokerSpine.anim:SetAction(uv2, 0)
+		changeWorkerAction = function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+			arg_5_0.wokerSpine.anim:SetActionCallBack(nil)
+			arg_5_0.wokerSpine.anim:SetAction(arg_5_1, 0)
+			arg_5_0.wokerSpine.anim:SetActionCallBack(function(arg_6_0)
+				if arg_6_0 == "finish" then
+					if arg_5_2 == 1 then
+						arg_5_0.wokerSpine.anim:SetActionCallBack(nil)
+						arg_5_0.wokerSpine.anim:SetAction(var_0_19, 0)
 					end
 
-					if uv3 then
-						uv3()
+					if arg_5_3 then
+						arg_5_3()
 					end
 				end
 			end)
 
-			if slot2 ~= 1 and slot3 then
-				slot3()
+			if arg_5_2 ~= 1 and arg_5_3 then
+				arg_5_3()
 			end
 		end,
-		selectGift = function (slot0, slot1)
-			if table.contains(uv0, slot1) then
-				for slot5 = #slot0.selectedGifts, 1, -1 do
-					if table.contains(uv0, slot0.selectedGifts[slot5]) and slot6 ~= slot1 then
-						table.remove(slot0.selectedGifts, slot5)
+		selectGift = function(arg_7_0, arg_7_1)
+			if table.contains(var_0_14, arg_7_1) then
+				for iter_7_0 = #arg_7_0.selectedGifts, 1, -1 do
+					local var_7_0 = arg_7_0.selectedGifts[iter_7_0]
+
+					if table.contains(var_0_14, var_7_0) and var_7_0 ~= arg_7_1 then
+						table.remove(arg_7_0.selectedGifts, iter_7_0)
 					end
 				end
-			elseif #slot0.selectedGifts == 2 and not table.contains(slot0.selectedGifts, slot1) then
-				slot2 = false
+			elseif #arg_7_0.selectedGifts == 2 and not table.contains(arg_7_0.selectedGifts, arg_7_1) then
+				local var_7_1 = false
 
-				for slot6 = 1, #slot0.selectedGifts do
-					if table.contains(uv0, slot0.selectedGifts[slot6]) then
-						slot2 = true
+				for iter_7_1 = 1, #arg_7_0.selectedGifts do
+					if table.contains(var_0_14, arg_7_0.selectedGifts[iter_7_1]) then
+						var_7_1 = true
 
 						break
 					end
 				end
 
-				if not slot2 then
-					table.remove(slot0.selectedGifts, 1)
+				if not var_7_1 then
+					table.remove(arg_7_0.selectedGifts, 1)
 				end
 			end
 
-			slot2 = 0
+			local var_7_2 = 0
 
-			for slot6 = 1, #slot0.selectedGifts do
-				if slot0.selectedGifts[slot6] == slot1 then
-					slot2 = slot6
+			for iter_7_2 = 1, #arg_7_0.selectedGifts do
+				if arg_7_0.selectedGifts[iter_7_2] == arg_7_1 then
+					var_7_2 = iter_7_2
 				end
 			end
 
-			if slot2 == 0 then
-				table.insert(slot0.selectedGifts, slot1)
-				slot0:moveJiujiu(slot1)
-				slot0:changeWorkerAction(uv1, 1)
+			if var_7_2 == 0 then
+				table.insert(arg_7_0.selectedGifts, arg_7_1)
+				arg_7_0:moveJiujiu(arg_7_1)
+				arg_7_0:changeWorkerAction(var_0_20, 1)
 			else
-				table.remove(slot0.selectedGifts, slot2)
+				table.remove(arg_7_0.selectedGifts, var_7_2)
 			end
 
-			if uv2 <= #slot0.selectedGifts then
-				slot0._event:emit(uv3, Clone(slot0.selectedGifts), function (slot0)
-					if not slot0 then
-						uv0:changeWorkerAction(uv1, 1)
+			if #arg_7_0.selectedGifts >= var_0_16 then
+				arg_7_0._event:emit(var_0_11, Clone(arg_7_0.selectedGifts), function(arg_8_0)
+					if not arg_8_0 then
+						arg_7_0:changeWorkerAction(var_0_21, 1)
 					end
 				end)
 
-				slot0.selectedGifts = {}
+				arg_7_0.selectedGifts = {}
 
-				slot0:moveJiujiu(-1)
+				arg_7_0:moveJiujiu(-1)
 			end
 
-			slot0:updateSelected()
+			arg_7_0:updateSelected()
 		end,
-		start = function (slot0)
-			slot0.selectedGifts = {}
+		start = function(arg_9_0)
+			arg_9_0.selectedGifts = {}
 
-			slot0:updateSelected()
+			arg_9_0:updateSelected()
 		end,
-		updateSelected = function (slot0)
-			for slot4 = 1, #slot0.gifts do
-				if table.contains(slot0.selectedGifts, slot0.gifts[slot4].index) then
-					setActive(findTF(slot0.gifts[slot4].tf, "selected"), true)
+		updateSelected = function(arg_10_0)
+			for iter_10_0 = 1, #arg_10_0.gifts do
+				local var_10_0 = arg_10_0.gifts[iter_10_0].index
+
+				if table.contains(arg_10_0.selectedGifts, var_10_0) then
+					setActive(findTF(arg_10_0.gifts[iter_10_0].tf, "selected"), true)
 				else
-					setActive(findTF(slot0.gifts[slot4].tf, "selected"), false)
+					setActive(findTF(arg_10_0.gifts[iter_10_0].tf, "selected"), false)
 				end
 			end
 		end,
-		moveJiujiu = function (slot0, slot1)
-			if slot1 == -1 then
-				slot0._workerTf.anchoredPosition = Vector3.New(-290, 30, 0)
-				slot0._workerTf.localScale = Vector3.New(-1, 1, 1)
+		moveJiujiu = function(arg_11_0, arg_11_1)
+			if arg_11_1 == -1 then
+				arg_11_0._workerTf.anchoredPosition = Vector3.New(-290, 30, 0)
+				arg_11_0._workerTf.localScale = Vector3.New(-1, 1, 1)
 			else
-				slot3 = slot0._workerTf.parent:InverseTransformPoint(slot0.gifts[slot1].tf.position)
-				slot3.x = slot3.x + 150
-				slot3.y = slot3.y - 50
-				slot0._workerTf.anchoredPosition = slot3
-				slot0._workerTf.localScale = Vector3.New(1, 1, 1)
+				local var_11_0 = arg_11_0.gifts[arg_11_1].tf
+				local var_11_1 = arg_11_0._workerTf.parent:InverseTransformPoint(var_11_0.position)
+
+				var_11_1.x = var_11_1.x + 150
+				var_11_1.y = var_11_1.y - 50
+				arg_11_0._workerTf.anchoredPosition = var_11_1
+				arg_11_0._workerTf.localScale = Vector3.New(1, 1, 1)
 			end
 		end,
-		destroy = function (slot0)
-			if slot0.delegateGifts and #slot0.delegateGifts > 0 then
-				for slot4 = 1, #slot0.delegateGifts do
-					ClearEventTrigger(slot0.delegateGifts[slot4])
+		destroy = function(arg_12_0)
+			if arg_12_0.delegateGifts and #arg_12_0.delegateGifts > 0 then
+				for iter_12_0 = 1, #arg_12_0.delegateGifts do
+					ClearEventTrigger(arg_12_0.delegateGifts[iter_12_0])
 				end
 
-				slot0.delegateGifts = {}
+				arg_12_0.delegateGifts = {}
 			end
 
-			PoolMgr.GetInstance():ReturnSpineChar(slot0.wokerSpine.name, slot0.wokerSpine.model)
+			PoolMgr.GetInstance():ReturnSpineChar(arg_12_0.wokerSpine.name, arg_12_0.wokerSpine.model)
 		end
 	}
 
-	slot3:Ctor()
+	var_1_0:Ctor()
 
-	return slot3
+	return var_1_0
 end
 
-function slot34(slot0, slot1, slot2, slot3)
-	slot4 = {
-		Ctor = function (slot0)
-			slot0._groupTf = uv0
-			slot0._groupIndex = uv1
-			slot0._groupTf.anchoredPosition = uv2[uv1]
-			slot0._event = uv3
-			slot0.modelData = {}
+local function var_0_34(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = {
+		Ctor = function(arg_14_0)
+			arg_14_0._groupTf = arg_13_1
+			arg_14_0._groupIndex = arg_13_2
+			arg_14_0._groupTf.anchoredPosition = var_0_31[arg_13_2]
+			arg_14_0._event = arg_13_3
+			arg_14_0.modelData = {}
 
-			SetActive(slot0._groupTf, true)
-			slot0:createIdol(uv4[1], uv4[2])
+			SetActive(arg_14_0._groupTf, true)
+			arg_14_0:createIdol(arg_13_0[1], arg_13_0[2])
 
-			slot0.fans = {}
-			slot0.wantedData = {}
+			arg_14_0.fans = {}
+			arg_14_0.wantedData = {}
 		end,
-		createIdol = function (slot0, slot1, slot2)
-			PoolMgr.GetInstance():GetSpineChar(Ship.New({
-				configId = slot1,
-				skin_id = slot2
-			}):getPrefab(), true, function (slot0)
-				slot0.transform.localScale = Vector3.one
-				slot0.transform.localPosition = Vector3.zero
+		createIdol = function(arg_15_0, arg_15_1, arg_15_2)
+			local var_15_0 = Ship.New({
+				configId = arg_15_1,
+				skin_id = arg_15_2
+			}):getPrefab()
 
-				slot0.transform:SetParent(findTF(uv0._groupTf, "idolPos"), false)
+			PoolMgr.GetInstance():GetSpineChar(var_15_0, true, function(arg_16_0)
+				arg_16_0.transform.localScale = Vector3.one
+				arg_16_0.transform.localPosition = Vector3.zero
 
-				uv0.modelData = {
-					model = uv0.model,
-					id = uv1,
-					skinId = uv2,
-					anim = slot0:GetComponent(typeof(SpineAnimUI))
+				arg_16_0.transform:SetParent(findTF(arg_15_0._groupTf, "idolPos"), false)
+
+				local var_16_0 = arg_16_0:GetComponent(typeof(SpineAnimUI))
+
+				arg_15_0.modelData = {
+					model = arg_15_0.model,
+					id = arg_15_1,
+					skinId = arg_15_2,
+					anim = var_16_0
 				}
 
-				uv0:changeCharAction(uv3, 0, nil)
+				arg_15_0:changeCharAction(var_0_18, 0, nil)
 			end)
 		end,
-		changeCharAction = function (slot0, slot1, slot2, slot3)
-			if slot0.modelData.actionName == slot1 then
+		changeCharAction = function(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+			if arg_17_0.modelData.actionName == arg_17_1 then
 				return
 			end
 
-			slot0.modelData.actionName = slot1
+			arg_17_0.modelData.actionName = arg_17_1
 
-			slot0.modelData.anim:SetActionCallBack(nil)
-			slot0.modelData.anim:SetAction(slot1, 0)
-			slot0.modelData.anim:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					if uv0 == 1 then
-						uv1.modelData.anim:SetActionCallBack(nil)
-						uv1.modelData.anim:SetAction(uv2, 0)
+			arg_17_0.modelData.anim:SetActionCallBack(nil)
+			arg_17_0.modelData.anim:SetAction(arg_17_1, 0)
+			arg_17_0.modelData.anim:SetActionCallBack(function(arg_18_0)
+				if arg_18_0 == "finish" then
+					if arg_17_2 == 1 then
+						arg_17_0.modelData.anim:SetActionCallBack(nil)
+						arg_17_0.modelData.anim:SetAction(var_0_18, 0)
 					end
 
-					if uv3 then
-						uv3()
+					if arg_17_3 then
+						arg_17_3()
 					end
 				end
 			end)
 
-			if slot2 ~= 1 and slot3 then
-				slot3()
+			if arg_17_2 ~= 1 and arg_17_3 then
+				arg_17_3()
 			end
 		end,
-		createFans = function (slot0, slot1)
-			SetActive(slot1, true)
-			SetParent(slot1, findTF(slot0._groupTf, "fansPos"))
+		createFans = function(arg_19_0, arg_19_1)
+			SetActive(arg_19_1, true)
+			SetParent(arg_19_1, findTF(arg_19_0._groupTf, "fansPos"))
 
-			if #slot0.fans > 0 then
-				slot2 = slot0.fans[#slot0.fans].tf.anchoredPosition
-				slot2.x = slot2.x + uv0 + math.random() * 200 + 150
-				slot1.anchoredPosition = Vector3.New(slot2.x, slot2.y, slot2.z)
+			if #arg_19_0.fans > 0 then
+				local var_19_0 = arg_19_0.fans[#arg_19_0.fans].tf.anchoredPosition
+
+				var_19_0.x = var_19_0.x + var_0_32 + math.random() * 200 + 150
+				arg_19_1.anchoredPosition = Vector3.New(var_19_0.x, var_19_0.y, var_19_0.z)
 			else
-				slot1.anchoredPosition = Vector3.New((#slot0.fans + 1) * uv0 + 200, 0, 0)
+				arg_19_1.anchoredPosition = Vector3.New((#arg_19_0.fans + 1) * var_0_32 + 200, 0, 0)
 			end
 
-			table.insert(slot0.fans, {
-				tf = slot1,
+			table.insert(arg_19_0.fans, {
+				tf = arg_19_1,
 				speed = math.random() + 2.5
 			})
 
-			slot2 = slot0.fans[#slot0.fans]
+			local var_19_1 = arg_19_0.fans[#arg_19_0.fans]
+			local var_19_2 = "jiu-fan" .. math.random(1, 4)
 
-			PoolMgr.GetInstance():GetSpineChar("jiu-fan" .. math.random(1, 4), true, function (slot0)
-				slot0.transform.localScale = Vector3.one
-				slot0.transform.localPosition = Vector3.zero
+			PoolMgr.GetInstance():GetSpineChar(var_19_2, true, function(arg_20_0)
+				arg_20_0.transform.localScale = Vector3.one
+				arg_20_0.transform.localPosition = Vector3.zero
 
-				slot0.transform:SetParent(findTF(uv0.tf, "spinePos"), false)
+				arg_20_0.transform:SetParent(findTF(var_19_1.tf, "spinePos"), false)
 
-				uv0.modelData = {
-					model = slot0,
-					anim = slot0:GetComponent(typeof(SpineAnimUI)),
-					modelName = uv1
+				local var_20_0 = arg_20_0:GetComponent(typeof(SpineAnimUI))
+
+				var_19_1.modelData = {
+					model = arg_20_0,
+					anim = var_20_0,
+					modelName = var_19_2
 				}
 			end)
 		end,
-		changeFansAction = function (slot0, slot1, slot2, slot3, slot4)
-			if not slot1.modelData or slot1.modelData.actionName == slot2 then
+		changeFansAction = function(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_4)
+			if not arg_21_1.modelData or arg_21_1.modelData.actionName == arg_21_2 then
 				return
 			end
 
-			slot1.modelData.actionName = slot2
+			arg_21_1.modelData.actionName = arg_21_2
 
-			slot1.modelData.anim:SetActionCallBack(nil)
-			slot1.modelData.anim:SetAction(slot2, 0)
-			slot1.modelData.anim:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					if uv0 == 1 then
-						uv1.modelData.anim:SetActionCallBack(nil)
-						uv1.modelData.anim:SetAction(uv2, 0)
+			arg_21_1.modelData.anim:SetActionCallBack(nil)
+			arg_21_1.modelData.anim:SetAction(arg_21_2, 0)
+			arg_21_1.modelData.anim:SetActionCallBack(function(arg_22_0)
+				if arg_22_0 == "finish" then
+					if arg_21_3 == 1 then
+						arg_21_1.modelData.anim:SetActionCallBack(nil)
+						arg_21_1.modelData.anim:SetAction(var_0_25, 0)
 					end
 
-					if uv3 then
-						uv3()
+					if arg_21_4 then
+						arg_21_4()
 					end
 				end
 			end)
 
-			if slot3 ~= 1 and slot4 then
-				slot4()
+			if arg_21_3 ~= 1 and arg_21_4 then
+				arg_21_4()
 			end
 		end,
-		getWantedGifts = function (slot0)
-			if #slot0.fans > 0 and slot0.fans[1].gifts and not slot0.fans[1].leave then
-				return slot0.fans[1].gifts
+		getWantedGifts = function(arg_23_0)
+			if #arg_23_0.fans > 0 and arg_23_0.fans[1].gifts and not arg_23_0.fans[1].leave then
+				return arg_23_0.fans[1].gifts
 			end
 
 			return nil
 		end,
-		clearFans = function (slot0)
-			for slot4 = 1, #slot0.fans do
-				PoolMgr.GetInstance():ReturnSpineChar(slot0.fans[slot4].modelData.modelName, slot0.fans[slot4].modelData.model)
-				Destroy(slot0.fans[slot4].tf)
+		clearFans = function(arg_24_0)
+			for iter_24_0 = 1, #arg_24_0.fans do
+				PoolMgr.GetInstance():ReturnSpineChar(arg_24_0.fans[iter_24_0].modelData.modelName, arg_24_0.fans[iter_24_0].modelData.model)
+				Destroy(arg_24_0.fans[iter_24_0].tf)
 			end
 
-			slot0.fans = {}
+			arg_24_0.fans = {}
 		end,
-		start = function (slot0)
+		start = function(arg_25_0)
+			return
 		end,
-		step = function (slot0, slot1)
-			slot0.stepTime = slot1
+		step = function(arg_26_0, arg_26_1)
+			arg_26_0.stepTime = arg_26_1
 
-			for slot5 = #slot0.fans, 1, -1 do
-				slot6 = slot0.fans[slot5]
-				slot7 = slot6.tf
+			for iter_26_0 = #arg_26_0.fans, 1, -1 do
+				local var_26_0 = arg_26_0.fans[iter_26_0]
+				local var_26_1 = var_26_0.tf
+				local var_26_2 = var_26_0.tf.anchoredPosition
 
-				if slot6.tf.anchoredPosition.x > (slot5 - 1) * uv0 then
-					slot8.x = slot8.x - slot6.speed
-					slot6.tf.anchoredPosition = slot8
+				if var_26_2.x > (iter_26_0 - 1) * var_0_32 then
+					var_26_2.x = var_26_2.x - var_26_0.speed
+					var_26_0.tf.anchoredPosition = var_26_2
 
-					slot0:changeFansAction(slot6, uv1, 0, nil)
-				elseif slot5 == 1 and not slot6.leave then
-					if slot6.gifts == nil then
-						slot6.gifts = slot0:createWantedGifts()
-						slot6.time = slot1 + uv2
+					arg_26_0:changeFansAction(var_26_0, var_0_26, 0, nil)
+				elseif iter_26_0 == 1 and not var_26_0.leave then
+					if var_26_0.gifts == nil then
+						var_26_0.gifts = arg_26_0:createWantedGifts()
+						var_26_0.time = arg_26_1 + var_0_7
 
-						setImageSprite(findTF(slot6.tf, "score/pack"), LoadSprite("ui/minigameui/idolmasterui_atlas", "pack" .. slot6.gifts[1]))
-						slot0:changeFansAction(slot6, uv3, 0, nil)
+						local var_26_3 = LoadSprite("ui/minigameui/idolmasterui_atlas", "pack" .. var_26_0.gifts[1])
+
+						setImageSprite(findTF(var_26_0.tf, "score/pack"), var_26_3)
+						arg_26_0:changeFansAction(var_26_0, var_0_24, 0, nil)
 					end
-				elseif not slot6.leave then
-					slot0:changeFansAction(slot6, uv4, 0, nil)
+				elseif not var_26_0.leave then
+					arg_26_0:changeFansAction(var_26_0, var_0_25, 0, nil)
 				end
 			end
 
-			if #slot0.fans > 0 then
-				if slot0.fans[1].time and slot2.time < slot1 and not slot2.leave then
-					slot2.leave = true
+			if #arg_26_0.fans > 0 then
+				local var_26_4 = arg_26_0.fans[1]
 
-					slot0:fanLeave(slot2, uv5, function ()
-						table.remove(uv0.fans, 1)
+				if var_26_4.time and arg_26_1 > var_26_4.time and not var_26_4.leave then
+					var_26_4.leave = true
+
+					arg_26_0:fanLeave(var_26_4, var_0_28, function()
+						table.remove(arg_26_0.fans, 1)
 					end)
 				else
-					slot0:showFansWanted(slot2)
+					arg_26_0:showFansWanted(var_26_4)
 				end
 
-				slot2.tf:SetSiblingIndex(#slot0.fans - 1)
+				var_26_4.tf:SetSiblingIndex(#arg_26_0.fans - 1)
 			end
 		end,
-		showFansWanted = function (slot0, slot1)
-			if slot1.leave then
+		showFansWanted = function(arg_28_0, arg_28_1)
+			if arg_28_1.leave then
 				return
 			end
 
-			if not slot1.time then
+			local var_28_0 = arg_28_1.time
+
+			if not var_28_0 then
 				return
 			end
 
-			slot3 = math.ceil(slot2 - slot0.stepTime) < 0 and 0 or slot2 - slot0.stepTime
-			slot4 = slot1.gifts
-			slot5 = slot3 <= 5
+			local var_28_1 = math.ceil(var_28_0 - arg_28_0.stepTime) < 0 and 0 or var_28_0 - arg_28_0.stepTime
+			local var_28_2 = arg_28_1.gifts
+			local var_28_3 = var_28_1 <= 5
 
-			setActive(findTF(slot1.tf, "wanted"), true)
-			setActive(findTF(slot1.tf, "wanted/bg1"), not slot5)
-			setActive(findTF(slot1.tf, "wanted/bgTime1"), not slot5)
-			setActive(findTF(slot1.tf, "wanted/time1"), not slot5)
-			setActive(findTF(slot1.tf, "wanted/bg2"), slot5)
-			setActive(findTF(slot1.tf, "wanted/bgTime2"), slot5)
-			setActive(findTF(slot1.tf, "wanted/time1"), slot5)
+			setActive(findTF(arg_28_1.tf, "wanted"), true)
+			setActive(findTF(arg_28_1.tf, "wanted/bg1"), not var_28_3)
+			setActive(findTF(arg_28_1.tf, "wanted/bgTime1"), not var_28_3)
+			setActive(findTF(arg_28_1.tf, "wanted/time1"), not var_28_3)
+			setActive(findTF(arg_28_1.tf, "wanted/bg2"), var_28_3)
+			setActive(findTF(arg_28_1.tf, "wanted/bgTime2"), var_28_3)
+			setActive(findTF(arg_28_1.tf, "wanted/time1"), var_28_3)
 
-			if slot3 < 0 then
-				slot3 = 0
+			if var_28_1 < 0 then
+				var_28_1 = 0
 			end
 
-			setText(findTF(slot1.tf, "wanted/time1"), math.abs(math.ceil(slot3)) .. "S")
+			setText(findTF(arg_28_1.tf, "wanted/time1"), math.abs(math.ceil(var_28_1)) .. "S")
+			setText(findTF(arg_28_1.tf, "wanted/time2"), math.abs(math.ceil(var_28_1)) .. "S")
 
-			slot9 = "S"
+			for iter_28_0 = 1, #var_28_2 do
+				local var_28_4 = LoadSprite("ui/minigameui/idolmasterui_atlas", "wantItem" .. var_28_2[iter_28_0])
 
-			setText(findTF(slot1.tf, "wanted/time2"), math.abs(math.ceil(slot3)) .. slot9)
-
-			for slot9 = 1, #slot4 do
-				setImageSprite(findTF(slot1.tf, "wanted/item" .. slot9), LoadSprite("ui/minigameui/idolmasterui_atlas", "wantItem" .. slot4[slot9]))
+				setImageSprite(findTF(arg_28_1.tf, "wanted/item" .. iter_28_0), var_28_4)
 			end
 		end,
-		checkGifts = function (slot0, slot1)
-			if slot0:getWantedGifts() then
-				for slot6 = 1, #slot1 do
-					if not table.contains(slot2, slot1[slot6]) then
+		checkGifts = function(arg_29_0, arg_29_1)
+			local var_29_0 = arg_29_0:getWantedGifts()
+
+			if var_29_0 then
+				for iter_29_0 = 1, #arg_29_1 do
+					if not table.contains(var_29_0, arg_29_1[iter_29_0]) then
 						return false
 					end
 				end
 
-				slot3 = slot0.fans[1]
-				slot3.leave = true
+				local var_29_1 = arg_29_0.fans[1]
 
-				slot0:fanLeave(slot3, uv0, function ()
-					table.remove(uv0.fans, 1)
+				var_29_1.leave = true
+
+				arg_29_0:fanLeave(var_29_1, var_0_29, function()
+					table.remove(arg_29_0.fans, 1)
 				end)
 
 				return true
@@ -492,647 +519,689 @@ function slot34(slot0, slot1, slot2, slot3)
 
 			return false
 		end,
-		createWantedGifts = function (slot0)
-			slot1 = Clone(uv0)
-			slot6 = math.random(1, #uv1)
+		createWantedGifts = function(arg_31_0)
+			local var_31_0 = Clone(var_0_15)
+			local var_31_1 = {}
 
-			table.insert({}, uv1[slot6])
+			table.insert(var_31_1, var_0_14[math.random(1, #var_0_14)])
 
-			for slot6 = 1, 2 do
-				table.insert(slot2, table.remove(slot1, math.random(1, #slot1)))
+			for iter_31_0 = 1, 2 do
+				local var_31_2 = table.remove(var_31_0, math.random(1, #var_31_0))
+
+				table.insert(var_31_1, var_31_2)
 			end
 
-			return slot2
+			return var_31_1
 		end,
-		fanLeave = function (slot0, slot1, slot2, slot3)
-			setActive(findTF(slot1.tf, "wanted"), false)
+		fanLeave = function(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
+			setActive(findTF(arg_32_1.tf, "wanted"), false)
 
-			slot4 = nil
+			local var_32_0
 
-			if uv0 == slot2 then
-				slot4 = uv1
-			elseif uv2 then
-				slot4 = uv3
+			if var_0_28 == arg_32_2 then
+				var_32_0 = var_0_23
+			elseif var_0_29 then
+				var_32_0 = var_0_22
 
-				setText(findTF(slot1.tf, "score"), "+" .. uv4)
-				setActive(findTF(slot1.tf, "score"), true)
+				setText(findTF(arg_32_1.tf, "score"), "+" .. var_0_6)
+				setActive(findTF(arg_32_1.tf, "score"), true)
 			end
 
-			slot0:changeFansAction(slot1, slot4, 1, function ()
-				PoolMgr.GetInstance():ReturnSpineChar(uv0.modelData.modelName, uv0.modelData.model)
-				uv1._event:emit(uv2, uv3)
-				Destroy(uv0.tf)
-				uv4()
+			arg_32_0:changeFansAction(arg_32_1, var_32_0, 1, function()
+				PoolMgr.GetInstance():ReturnSpineChar(arg_32_1.modelData.modelName, arg_32_1.modelData.model)
+				arg_32_0._event:emit(var_0_12, arg_32_2)
+				Destroy(arg_32_1.tf)
+				arg_32_3()
 			end)
 		end,
-		reset = function (slot0)
-			slot0:clearFans()
+		reset = function(arg_34_0)
+			arg_34_0:clearFans()
 
-			slot0.wantedData = {}
+			arg_34_0.wantedData = {}
 		end,
-		destroy = function (slot0)
-			if slot0.modelData then
-				PoolMgr.GetInstance():ReturnSpineChar(slot0.modelData.id, slot0.modelData.model)
+		destroy = function(arg_35_0)
+			if arg_35_0.modelData then
+				PoolMgr.GetInstance():ReturnSpineChar(arg_35_0.modelData.id, arg_35_0.modelData.model)
 			end
 		end
 	}
 
-	slot4:Ctor()
+	var_13_0:Ctor()
 
-	return slot4
+	return var_13_0
 end
 
-function slot35(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {
-		Ctor = function (slot0)
-			slot0._containerTf = uv0
-			slot0._tplGroup = uv1
-			slot0._tplIdol = uv2
-			slot0._tplFans = uv3
-			slot0._event = uv4
-			slot0.groups = {}
+local function var_0_35(arg_36_0, arg_36_1, arg_36_2, arg_36_3, arg_36_4)
+	local var_36_0 = {
+		Ctor = function(arg_37_0)
+			arg_37_0._containerTf = arg_36_0
+			arg_37_0._tplGroup = arg_36_1
+			arg_37_0._tplIdol = arg_36_2
+			arg_37_0._tplFans = arg_36_3
+			arg_37_0._event = arg_36_4
+			arg_37_0.groups = {}
 
-			for slot5 = 1, uv5 do
-				slot6 = tf(Instantiate(slot0._tplGroup))
+			local var_37_0 = arg_37_0:getRandomIdols()
 
-				SetParent(slot6, slot0._containerTf)
-				table.insert(slot0.groups, uv6(slot0:getRandomIdols()[slot5], slot6, slot5, slot0._event))
+			for iter_37_0 = 1, var_0_30 do
+				local var_37_1 = tf(Instantiate(arg_37_0._tplGroup))
+
+				SetParent(var_37_1, arg_37_0._containerTf)
+
+				local var_37_2 = var_0_34(var_37_0[iter_37_0], var_37_1, iter_37_0, arg_37_0._event)
+
+				table.insert(arg_37_0.groups, var_37_2)
 			end
 		end,
-		receiveGift = function (slot0, slot1, slot2)
-			slot3 = false
+		receiveGift = function(arg_38_0, arg_38_1, arg_38_2)
+			local var_38_0 = false
 
-			for slot7 = 1, #slot0.groups do
-				if slot0.groups[slot7]:checkGifts(slot1) then
-					slot3 = true
+			for iter_38_0 = 1, #arg_38_0.groups do
+				if arg_38_0.groups[iter_38_0]:checkGifts(arg_38_1) then
+					var_38_0 = true
 
 					break
 				end
 			end
 
-			if slot2 then
-				slot2(slot3)
+			if arg_38_2 then
+				arg_38_2(var_38_0)
 			end
 		end,
-		getRandomIdols = function (slot0)
-			slot1 = {}
-			slot2 = Clone(uv0)
+		getRandomIdols = function(arg_39_0)
+			local var_39_0 = {}
+			local var_39_1 = Clone(var_0_9)
 
-			for slot6 = 1, uv1 do
-				slot7 = false
+			for iter_39_0 = 1, var_0_30 do
+				local var_39_2 = false
 
-				if slot6 == uv1 then
-					slot7 = true
+				if iter_39_0 == var_0_30 then
+					var_39_2 = true
 
-					for slot11, slot12 in ipairs(uv2) do
-						if table.contains(slot1, slot12) then
-							slot7 = false
+					for iter_39_1, iter_39_2 in ipairs(var_0_10) do
+						if table.contains(var_39_0, iter_39_2) then
+							var_39_2 = false
 						end
 					end
 				end
 
-				if slot7 then
-					table.insert(slot1, uv2[math.random(1, #uv2)])
+				if var_39_2 then
+					table.insert(var_39_0, var_0_10[math.random(1, #var_0_10)])
 				else
-					table.insert(slot1, table.remove(slot2, math.random(1, #slot2)))
+					table.insert(var_39_0, table.remove(var_39_1, math.random(1, #var_39_1)))
 				end
 			end
 
-			return slot1
+			return var_39_0
 		end,
-		getApearTime = function (slot0)
-			if slot0.runTime and slot0.runTime > 0 then
-				for slot4 = 1, #uv0 do
-					if slot0.runTime < uv0[slot4][1] then
-						return uv0[slot4][2]
+		getApearTime = function(arg_40_0)
+			if arg_40_0.runTime and arg_40_0.runTime > 0 then
+				for iter_40_0 = 1, #var_0_8 do
+					if arg_40_0.runTime < var_0_8[iter_40_0][1] then
+						return var_0_8[iter_40_0][2]
 					end
 				end
 			end
 
-			return uv0[#uv0][2]
+			return var_0_8[#var_0_8][2]
 		end,
-		start = function (slot0)
-			slot0:reset()
+		start = function(arg_41_0)
+			arg_41_0:reset()
 
-			slot0.createFansTime = nil
-			slot0.lastTime = uv0
+			arg_41_0.createFansTime = nil
+			arg_41_0.lastTime = var_0_5
 
-			for slot4 = 1, 3 do
-				slot0.groups[math.random(1, #slot0.groups)]:createFans(tf(instantiate(slot0._tplFans)))
+			for iter_41_0 = 1, 3 do
+				local var_41_0 = math.random(1, #arg_41_0.groups)
+
+				arg_41_0.groups[var_41_0]:createFans(tf(instantiate(arg_41_0._tplFans)))
 			end
 
-			for slot4 = 1, #slot0.groups do
-				slot0.groups[slot4]:start()
-			end
-		end,
-		step = function (slot0, slot1)
-			slot0.lastTime = slot0.lastTime - Time.deltaTime
-
-			if not slot0.createFansTime then
-				slot0.createFansTime = slot1 + slot0:getApearTime() + math.random() * 1
-			elseif slot0.createFansTime < slot1 then
-				slot0.groups[math.random(1, #slot0.groups)]:createFans(tf(instantiate(slot0._tplFans)))
-
-				slot0.createFansTime = slot1 + slot2 + math.random() * 1
-			end
-
-			for slot6 = 1, #slot0.groups do
-				slot0.groups[slot6]:step(slot1)
+			for iter_41_1 = 1, #arg_41_0.groups do
+				arg_41_0.groups[iter_41_1]:start()
 			end
 		end,
-		reset = function (slot0)
-			for slot4 = 1, #slot0.groups do
-				slot0.groups[slot4]:reset()
+		step = function(arg_42_0, arg_42_1)
+			arg_42_0.lastTime = arg_42_0.lastTime - Time.deltaTime
+
+			local var_42_0 = arg_42_0:getApearTime()
+
+			if not arg_42_0.createFansTime then
+				arg_42_0.createFansTime = arg_42_1 + var_42_0 + math.random() * 1
+			elseif arg_42_1 > arg_42_0.createFansTime then
+				local var_42_1 = math.random(1, #arg_42_0.groups)
+
+				arg_42_0.groups[var_42_1]:createFans(tf(instantiate(arg_42_0._tplFans)))
+
+				arg_42_0.createFansTime = arg_42_1 + var_42_0 + math.random() * 1
+			end
+
+			for iter_42_0 = 1, #arg_42_0.groups do
+				arg_42_0.groups[iter_42_0]:step(arg_42_1)
 			end
 		end,
-		destroy = function (slot0)
-			for slot4 = 1, #slot0.groups do
-				slot0.groups[slot4]:destroy()
+		reset = function(arg_43_0)
+			for iter_43_0 = 1, #arg_43_0.groups do
+				arg_43_0.groups[iter_43_0]:reset()
+			end
+		end,
+		destroy = function(arg_44_0)
+			for iter_44_0 = 1, #arg_44_0.groups do
+				arg_44_0.groups[iter_44_0]:destroy()
 			end
 		end
 	}
 
-	slot5:Ctor()
+	var_36_0:Ctor()
 
-	return slot5
+	return var_36_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_45_0)
 	return "IdolMasterGameUI"
 end
 
-function slot0.getBGM(slot0)
-	return uv0
+function var_0_0.getBGM(arg_46_0)
+	return var_0_1
 end
 
-function slot0.didEnter(slot0)
-	slot0:initEvent()
-	slot0:initData()
-	slot0:initUI()
-	slot0:initGameUI()
-	slot0:updateMenuUI()
-	slot0:openMenuUI()
+function var_0_0.didEnter(arg_47_0)
+	arg_47_0:initEvent()
+	arg_47_0:initData()
+	arg_47_0:initUI()
+	arg_47_0:initGameUI()
+	arg_47_0:updateMenuUI()
+	arg_47_0:openMenuUI()
 end
 
-function slot0.initEvent(slot0)
-	slot0:bind(uv0, function (slot0, slot1, slot2)
-		if uv0.idolGroupUI then
-			uv0.idolGroupUI:receiveGift(slot1, slot2)
+function var_0_0.initEvent(arg_48_0)
+	arg_48_0:bind(var_0_11, function(arg_49_0, arg_49_1, arg_49_2)
+		if arg_48_0.idolGroupUI then
+			arg_48_0.idolGroupUI:receiveGift(arg_49_1, arg_49_2)
 		end
 	end)
-	slot0:bind(uv1, function (slot0, slot1, slot2)
-		if uv0.gameStartFlag then
-			if slot1 == uv1 then
-				uv0:loseHeart()
-			elseif slot1 == uv2 then
-				uv0:addScore(100)
+	arg_48_0:bind(var_0_12, function(arg_50_0, arg_50_1, arg_50_2)
+		if arg_48_0.gameStartFlag then
+			if arg_50_1 == var_0_28 then
+				arg_48_0:loseHeart()
+			elseif arg_50_1 == var_0_29 then
+				arg_48_0:addScore(100)
 			end
 		end
 	end)
 end
 
-function slot0.initData(slot0)
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
-	end, 1 / (Application.targetFrameRate or 60), -1)
+function var_0_0.initData(arg_51_0)
+	local var_51_0 = Application.targetFrameRate or 60
+
+	arg_51_0.timer = Timer.New(function()
+		arg_51_0:onTimer()
+	end, 1 / var_51_0, -1)
 end
 
-function slot0.initUI(slot0)
-	slot0.sceneTf = findTF(slot0._tf, "scene")
-	slot0.clickMask = findTF(slot0._tf, "clickMask")
-	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
-	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
-	slot0.countDft = GetComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
+function var_0_0.initUI(arg_53_0)
+	arg_53_0.sceneTf = findTF(arg_53_0._tf, "scene")
+	arg_53_0.clickMask = findTF(arg_53_0._tf, "clickMask")
+	arg_53_0.countUI = findTF(arg_53_0._tf, "pop/CountUI")
+	arg_53_0.countAnimator = GetComponent(findTF(arg_53_0.countUI, "count"), typeof(Animator))
+	arg_53_0.countDft = GetComponent(findTF(arg_53_0.countUI, "count"), typeof(DftAniEvent))
 
-	slot0.countDft:SetTriggerEvent(function ()
+	arg_53_0.countDft:SetTriggerEvent(function()
+		return
 	end)
-	slot0.countDft:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:gameStart()
+	arg_53_0.countDft:SetEndEvent(function()
+		setActive(arg_53_0.countUI, false)
+		arg_53_0:gameStart()
 	end)
 
-	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
+	arg_53_0.leaveUI = findTF(arg_53_0._tf, "pop/LeaveUI")
 
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnOk"), function ()
-		uv0:resumeGame()
-		uv0:onGameOver()
+	onButton(arg_53_0, findTF(arg_53_0.leaveUI, "ad/btnOk"), function()
+		arg_53_0:resumeGame()
+		arg_53_0:onGameOver()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
-		uv0:resumeGame()
-	end, SFX_CANCEL)
-
-	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
-
-	onButton(slot0, findTF(slot0.pauseUI, "ad/btnOk"), function ()
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_53_0, findTF(arg_53_0.leaveUI, "ad/btnCancel"), function()
+		arg_53_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
+	arg_53_0.pauseUI = findTF(arg_53_0._tf, "pop/pauseUI")
 
-	onButton(slot0, findTF(slot0.settlementUI, "ad/btnOver"), function ()
-		setActive(uv0.settlementUI, false)
-		uv0:openMenuUI()
+	onButton(arg_53_0, findTF(arg_53_0.pauseUI, "ad/btnOk"), function()
+		setActive(arg_53_0.pauseUI, false)
+		arg_53_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.menuUI = findTF(slot0._tf, "pop/menuUI")
-	slot0.battleScrollRect = GetComponent(findTF(slot0.menuUI, "battList"), typeof(ScrollRect))
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_53_0.settlementUI = findTF(arg_53_0._tf, "pop/SettleMentUI")
 
-	scrollTo(slot0.battleScrollRect, 0, 1 - (slot0:getGameUsedTimes() - 4 < 0 and 0 or slot0:getGameUsedTimes() - 4) / (slot0.totalTimes - 4))
-	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowUp"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y + 1 / (uv0.totalTimes - 4) > 1 then
-			slot0 = 1
+	onButton(arg_53_0, findTF(arg_53_0.settlementUI, "ad/btnOver"), function()
+		setActive(arg_53_0.settlementUI, false)
+		arg_53_0:openMenuUI()
+	end, SFX_CANCEL)
+
+	arg_53_0.menuUI = findTF(arg_53_0._tf, "pop/menuUI")
+	arg_53_0.battleScrollRect = GetComponent(findTF(arg_53_0.menuUI, "battList"), typeof(ScrollRect))
+	arg_53_0.totalTimes = arg_53_0:getGameTotalTime()
+
+	local var_53_0 = arg_53_0:getGameUsedTimes() - 4 < 0 and 0 or arg_53_0:getGameUsedTimes() - 4
+
+	scrollTo(arg_53_0.battleScrollRect, 0, 1 - var_53_0 / (arg_53_0.totalTimes - 4))
+	onButton(arg_53_0, findTF(arg_53_0.menuUI, "rightPanelBg/arrowUp"), function()
+		local var_60_0 = arg_53_0.battleScrollRect.normalizedPosition.y + 1 / (arg_53_0.totalTimes - 4)
+
+		if var_60_0 > 1 then
+			var_60_0 = 1
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_53_0.battleScrollRect, 0, var_60_0)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "rightPanelBg/arrowDown"), function ()
-		if uv0.battleScrollRect.normalizedPosition.y - 1 / (uv0.totalTimes - 4) < 0 then
-			slot0 = 0
+	onButton(arg_53_0, findTF(arg_53_0.menuUI, "rightPanelBg/arrowDown"), function()
+		local var_61_0 = arg_53_0.battleScrollRect.normalizedPosition.y - 1 / (arg_53_0.totalTimes - 4)
+
+		if var_61_0 < 0 then
+			var_61_0 = 0
 		end
 
-		scrollTo(uv0.battleScrollRect, 0, slot0)
+		scrollTo(arg_53_0.battleScrollRect, 0, var_61_0)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnBack"), function ()
-		uv0:closeView()
+	onButton(arg_53_0, findTF(arg_53_0.menuUI, "btnBack"), function()
+		arg_53_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnRule"), function ()
+	onButton(arg_53_0, findTF(arg_53_0.menuUI, "btnRule"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.cowboy_tips.tip
 		})
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnStart"), function ()
-		setActive(uv0.menuUI, false)
-		uv0:readyStart()
+	onButton(arg_53_0, findTF(arg_53_0.menuUI, "btnStart"), function()
+		setActive(arg_53_0.menuUI, false)
+		arg_53_0:readyStart()
 	end, SFX_CANCEL)
 
-	slot0.battleItems = {}
+	local var_53_1 = findTF(arg_53_0.menuUI, "tplBattleItem")
 
-	for slot6 = 1, slot0.totalTimes do
-		slot7 = tf(instantiate(findTF(slot0.menuUI, "tplBattleItem")))
-		slot7.name = "battleItem_" .. slot6
+	arg_53_0.battleItems = {}
 
-		setParent(slot7, findTF(slot0.menuUI, "battList/Viewport/Content"))
+	for iter_53_0 = 1, arg_53_0.totalTimes do
+		local var_53_2 = tf(instantiate(var_53_1))
 
-		slot8 = slot6
+		var_53_2.name = "battleItem_" .. iter_53_0
 
-		GetSpriteFromAtlasAsync("ui/minigameui/idolmasterui_atlas", "tx_" .. slot8, function (slot0)
-			setImageSprite(findTF(uv0, "state_open/icon"), slot0, true)
-			setImageSprite(findTF(uv0, "state_clear/icon"), slot0, true)
-			setImageSprite(findTF(uv0, "state_current/icon"), slot0, true)
+		setParent(var_53_2, findTF(arg_53_0.menuUI, "battList/Viewport/Content"))
+
+		local var_53_3 = iter_53_0
+
+		GetSpriteFromAtlasAsync("ui/minigameui/idolmasterui_atlas", "tx_" .. var_53_3, function(arg_65_0)
+			setImageSprite(findTF(var_53_2, "state_open/icon"), arg_65_0, true)
+			setImageSprite(findTF(var_53_2, "state_clear/icon"), arg_65_0, true)
+			setImageSprite(findTF(var_53_2, "state_current/icon"), arg_65_0, true)
 		end)
-		GetSpriteFromAtlasAsync("ui/minigameui/idolmasterui_atlas", "battleDesc" .. slot8, function (slot0)
-			setImageSprite(findTF(uv0, "state_open/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_clear/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_current/buttomDesc"), slot0, true)
-			setImageSprite(findTF(uv0, "state_closed/buttomDesc"), slot0, true)
+		GetSpriteFromAtlasAsync("ui/minigameui/idolmasterui_atlas", "battleDesc" .. var_53_3, function(arg_66_0)
+			setImageSprite(findTF(var_53_2, "state_open/buttomDesc"), arg_66_0, true)
+			setImageSprite(findTF(var_53_2, "state_clear/buttomDesc"), arg_66_0, true)
+			setImageSprite(findTF(var_53_2, "state_current/buttomDesc"), arg_66_0, true)
+			setImageSprite(findTF(var_53_2, "state_closed/buttomDesc"), arg_66_0, true)
 		end)
-		setActive(slot7, true)
-		table.insert(slot0.battleItems, slot7)
+		setActive(var_53_2, true)
+		table.insert(arg_53_0.battleItems, var_53_2)
 	end
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	if not arg_53_0.handle then
+		arg_53_0.handle = UpdateBeat:CreateListener(arg_53_0.Update, arg_53_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_53_0.handle)
 end
 
-function slot0.initGameUI(slot0)
-	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
-	slot0.textScore = findTF(slot0.gameUI, "top/score")
+function var_0_0.initGameUI(arg_67_0)
+	arg_67_0.gameUI = findTF(arg_67_0._tf, "ui/gameUI")
+	arg_67_0.textScore = findTF(arg_67_0.gameUI, "top/score")
 
-	onButton(slot0, findTF(slot0.gameUI, "topRight/btnStop"), function ()
-		uv0:stopGame()
-		setActive(uv0.pauseUI, true)
+	onButton(arg_67_0, findTF(arg_67_0.gameUI, "topRight/btnStop"), function()
+		arg_67_0:stopGame()
+		setActive(arg_67_0.pauseUI, true)
+	end)
+	onButton(arg_67_0, findTF(arg_67_0.gameUI, "btnLeave"), function()
+		arg_67_0:stopGame()
+		setActive(arg_67_0.leaveUI, true)
 	end)
 
-	function slot4()
-		uv0:stopGame()
-		setActive(uv0.leaveUI, true)
+	arg_67_0.gameTimeM = findTF(arg_67_0.gameUI, "topRight/time/m")
+	arg_67_0.gameTimeS = findTF(arg_67_0.gameUI, "topRight/time/s")
+	arg_67_0.heartTfs = {}
+
+	for iter_67_0 = 1, var_0_27 do
+		table.insert(arg_67_0.heartTfs, findTF(arg_67_0.gameUI, "top/heart" .. iter_67_0 .. "/full"))
 	end
 
-	onButton(slot0, findTF(slot0.gameUI, "btnLeave"), slot4)
+	arg_67_0.scoreTf = findTF(arg_67_0.gameUI, "top/score")
+	arg_67_0.giftUI = var_0_33(findTF(arg_67_0._tf, "scene/gift"), findTF(arg_67_0._tf, "scene/jiujiuWorker"), arg_67_0)
 
-	slot0.gameTimeM = findTF(slot0.gameUI, "topRight/time/m")
-	slot0.gameTimeS = findTF(slot0.gameUI, "topRight/time/s")
-	slot0.heartTfs = {}
+	local var_67_0 = findTF(arg_67_0._tf, "scene/group")
+	local var_67_1 = findTF(arg_67_0._tf, "scene/IdolContainer")
+	local var_67_2 = findTF(arg_67_0._tf, "scene/Idol")
+	local var_67_3 = findTF(arg_67_0._tf, "scene/fans")
 
-	for slot4 = 1, uv0 do
-		table.insert(slot0.heartTfs, findTF(slot0.gameUI, "top/heart" .. slot4 .. "/full"))
-	end
-
-	slot0.scoreTf = findTF(slot0.gameUI, "top/score")
-	slot0.giftUI = uv1(findTF(slot0._tf, "scene/gift"), findTF(slot0._tf, "scene/jiujiuWorker"), slot0)
-	slot0.idolGroupUI = uv2(findTF(slot0._tf, "scene/IdolContainer"), findTF(slot0._tf, "scene/group"), findTF(slot0._tf, "scene/Idol"), findTF(slot0._tf, "scene/fans"), slot0)
+	arg_67_0.idolGroupUI = var_0_35(var_67_1, var_67_0, var_67_2, var_67_3, arg_67_0)
 end
 
-function slot0.Update(slot0)
-	slot0:AddDebugInput()
+function var_0_0.Update(arg_70_0)
+	arg_70_0:AddDebugInput()
 end
 
-function slot0.AddDebugInput(slot0)
-	if slot0.gameStop or slot0.settlementFlag then
+function var_0_0.AddDebugInput(arg_71_0)
+	if arg_71_0.gameStop or arg_71_0.settlementFlag then
 		return
 	end
 
 	if IsUnityEditor then
-		-- Nothing
+		-- block empty
 	end
 end
 
-function slot0.updateMenuUI(slot0)
-	slot2 = slot0:getGameTimes()
+function var_0_0.updateMenuUI(arg_72_0)
+	local var_72_0 = arg_72_0:getGameUsedTimes()
+	local var_72_1 = arg_72_0:getGameTimes()
 
-	for slot6 = 1, #slot0.battleItems do
-		setActive(findTF(slot0.battleItems[slot6], "state_open"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_closed"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_clear"), false)
-		setActive(findTF(slot0.battleItems[slot6], "state_current"), false)
+	for iter_72_0 = 1, #arg_72_0.battleItems do
+		setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_open"), false)
+		setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_closed"), false)
+		setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_clear"), false)
+		setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_current"), false)
 
-		if slot6 <= slot0:getGameUsedTimes() then
-			setActive(findTF(slot0.battleItems[slot6], "state_clear"), true)
-		elseif slot6 == slot1 + 1 and slot2 >= 1 then
-			setActive(findTF(slot0.battleItems[slot6], "state_current"), true)
-		elseif slot1 < slot6 and slot6 <= slot1 + slot2 then
-			setActive(findTF(slot0.battleItems[slot6], "state_open"), true)
+		if iter_72_0 <= var_72_0 then
+			setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_clear"), true)
+		elseif iter_72_0 == var_72_0 + 1 and var_72_1 >= 1 then
+			setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_current"), true)
+		elseif var_72_0 < iter_72_0 and iter_72_0 <= var_72_0 + var_72_1 then
+			setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_open"), true)
 		else
-			setActive(findTF(slot0.battleItems[slot6], "state_closed"), true)
+			setActive(findTF(arg_72_0.battleItems[iter_72_0], "state_closed"), true)
 		end
 	end
 
-	slot0.totalTimes = slot0:getGameTotalTime()
+	arg_72_0.totalTimes = arg_72_0:getGameTotalTime()
 
-	if 1 - (slot0:getGameUsedTimes() - 3 < 0 and 0 or slot0:getGameUsedTimes() - 3) / (slot0.totalTimes - 4) > 1 then
-		slot4 = 1
+	local var_72_2 = 1 - (arg_72_0:getGameUsedTimes() - 3 < 0 and 0 or arg_72_0:getGameUsedTimes() - 3) / (arg_72_0.totalTimes - 4)
+
+	if var_72_2 > 1 then
+		var_72_2 = 1
 	end
 
-	scrollTo(slot0.battleScrollRect, 0, slot4)
-	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot2 > 0)
-	slot0:CheckGet()
+	scrollTo(arg_72_0.battleScrollRect, 0, var_72_2)
+	setActive(findTF(arg_72_0.menuUI, "btnStart/tip"), var_72_1 > 0)
+	arg_72_0:CheckGet()
 end
 
-function slot0.CheckGet(slot0)
-	setActive(findTF(slot0.menuUI, "got"), false)
+function var_0_0.CheckGet(arg_73_0)
+	setActive(findTF(arg_73_0.menuUI, "got"), false)
 
-	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
-		setActive(findTF(slot0.menuUI, "got"), true)
+	if arg_73_0:getUltimate() and arg_73_0:getUltimate() ~= 0 then
+		setActive(findTF(arg_73_0.menuUI, "got"), true)
 	end
 
-	if slot0:getUltimate() == 0 then
-		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
+	if arg_73_0:getUltimate() == 0 then
+		if arg_73_0:getGameTotalTime() > arg_73_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0:GetMGHubData().id,
+			hubid = arg_73_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(slot0.menuUI, "got"), true)
+		setActive(findTF(arg_73_0.menuUI, "got"), true)
 	end
 end
 
-function slot0.openMenuUI(slot0)
-	setActive(findTF(slot0._tf, "scene_front"), false)
-	setActive(findTF(slot0._tf, "scene_background"), false)
-	setActive(findTF(slot0._tf, "scene"), false)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.menuUI, true)
-	slot0:updateMenuUI()
+function var_0_0.openMenuUI(arg_74_0)
+	setActive(findTF(arg_74_0._tf, "scene_front"), false)
+	setActive(findTF(arg_74_0._tf, "scene_background"), false)
+	setActive(findTF(arg_74_0._tf, "scene"), false)
+	setActive(arg_74_0.gameUI, false)
+	setActive(arg_74_0.menuUI, true)
+	arg_74_0:updateMenuUI()
 end
 
-function slot0.clearUI(slot0)
-	setActive(slot0.sceneTf, false)
-	setActive(slot0.settlementUI, false)
-	setActive(slot0.countUI, false)
-	setActive(slot0.menuUI, false)
-	setActive(slot0.gameUI, false)
+function var_0_0.clearUI(arg_75_0)
+	setActive(arg_75_0.sceneTf, false)
+	setActive(arg_75_0.settlementUI, false)
+	setActive(arg_75_0.countUI, false)
+	setActive(arg_75_0.menuUI, false)
+	setActive(arg_75_0.gameUI, false)
 end
 
-function slot0.readyStart(slot0)
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+function var_0_0.readyStart(arg_76_0)
+	setActive(arg_76_0.countUI, true)
+	arg_76_0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
 end
 
-function slot0.gameStart(slot0)
-	setActive(findTF(slot0._tf, "scene_front"), true)
-	setActive(findTF(slot0._tf, "scene_background"), true)
-	setActive(findTF(slot0._tf, "scene"), true)
-	setActive(slot0.gameUI, true)
+function var_0_0.gameStart(arg_77_0)
+	setActive(findTF(arg_77_0._tf, "scene_front"), true)
+	setActive(findTF(arg_77_0._tf, "scene_background"), true)
+	setActive(findTF(arg_77_0._tf, "scene"), true)
+	setActive(arg_77_0.gameUI, true)
 
-	slot0.gameStartFlag = true
-	slot0.scoreNum = 0
-	slot0.playerPosIndex = 2
-	slot0.gameStepTime = 0
-	slot0.heart = uv0
-	slot0.gameTime = uv1
+	arg_77_0.gameStartFlag = true
+	arg_77_0.scoreNum = 0
+	arg_77_0.playerPosIndex = 2
+	arg_77_0.gameStepTime = 0
+	arg_77_0.heart = var_0_27
+	arg_77_0.gameTime = var_0_5
 
-	slot0.idolGroupUI:start()
-	slot0.giftUI:start()
-	slot0:updateGameUI()
-	slot0:timerStart()
+	arg_77_0.idolGroupUI:start()
+	arg_77_0.giftUI:start()
+	arg_77_0:updateGameUI()
+	arg_77_0:timerStart()
 end
 
-function slot0.getGameTimes(slot0)
-	return slot0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_78_0)
+	return arg_78_0:GetMGHubData().count
 end
 
-function slot0.getGameUsedTimes(slot0)
-	return slot0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_79_0)
+	return arg_79_0:GetMGHubData().usedtime
 end
 
-function slot0.getUltimate(slot0)
-	return slot0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_80_0)
+	return arg_80_0:GetMGHubData().ultimate
 end
 
-function slot0.getGameTotalTime(slot0)
-	return slot0:GetMGHubData():getConfig("reward_need")
+function var_0_0.getGameTotalTime(arg_81_0)
+	return (arg_81_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function slot0.changeSpeed(slot0, slot1)
+function var_0_0.changeSpeed(arg_82_0, arg_82_1)
+	return
 end
 
-function slot0.onTimer(slot0)
-	slot0:gameStep()
+function var_0_0.onTimer(arg_83_0)
+	arg_83_0:gameStep()
 end
 
-function slot0.gameStep(slot0)
-	slot0.gameTime = slot0.gameTime - Time.deltaTime
+function var_0_0.gameStep(arg_84_0)
+	arg_84_0.gameTime = arg_84_0.gameTime - Time.deltaTime
 
-	if slot0.gameTime < 0 then
-		slot0.gameTime = 0
+	if arg_84_0.gameTime < 0 then
+		arg_84_0.gameTime = 0
 	end
 
-	slot0.gameStepTime = slot0.gameStepTime + Time.deltaTime
+	arg_84_0.gameStepTime = arg_84_0.gameStepTime + Time.deltaTime
 
-	if slot0.idolGroupUI then
-		slot0.idolGroupUI:step(slot0.gameStepTime)
+	if arg_84_0.idolGroupUI then
+		arg_84_0.idolGroupUI:step(arg_84_0.gameStepTime)
 	end
 
-	slot0:updateGameUI()
+	arg_84_0:updateGameUI()
 
-	if slot0.gameTime <= 0 then
-		slot0:onGameOver()
+	if arg_84_0.gameTime <= 0 then
+		arg_84_0:onGameOver()
 
 		return
 	end
 end
 
-function slot0.timerStart(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.timerStart(arg_85_0)
+	if not arg_85_0.timer.running then
+		arg_85_0.timer:Start()
 	end
 end
 
-function slot0.timerStop(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.timerStop(arg_86_0)
+	if arg_86_0.timer.running then
+		arg_86_0.timer:Stop()
 	end
 end
 
-function slot0.updateGameUI(slot0)
-	setText(slot0.textScore, slot0.scoreNum)
+function var_0_0.updateGameUI(arg_87_0)
+	setText(arg_87_0.textScore, arg_87_0.scoreNum)
 
-	if math.floor(math.ceil(slot0.gameTime) / 60) < 10 then
-		slot1 = "0" .. slot1
+	local var_87_0 = math.floor(math.ceil(arg_87_0.gameTime) / 60)
+
+	if var_87_0 < 10 then
+		var_87_0 = "0" .. var_87_0
 	end
 
-	if math.floor(math.ceil(slot0.gameTime) % 60) < 10 then
-		slot2 = "0" .. slot2
+	local var_87_1 = math.floor(math.ceil(arg_87_0.gameTime) % 60)
+
+	if var_87_1 < 10 then
+		var_87_1 = "0" .. var_87_1
 	end
 
-	for slot6 = 1, #slot0.heartTfs do
-		if slot6 <= slot0.heart then
-			setActive(slot0.heartTfs[slot6], true)
+	for iter_87_0 = 1, #arg_87_0.heartTfs do
+		if iter_87_0 <= arg_87_0.heart then
+			setActive(arg_87_0.heartTfs[iter_87_0], true)
 		else
-			setActive(slot0.heartTfs[slot6], false)
+			setActive(arg_87_0.heartTfs[iter_87_0], false)
 		end
 	end
 
-	setText(slot0.scoreTf, slot0.scoreNum)
-	setText(slot0.gameTimeM, slot1)
-	setText(slot0.gameTimeS, slot2)
+	setText(arg_87_0.scoreTf, arg_87_0.scoreNum)
+	setText(arg_87_0.gameTimeM, var_87_0)
+	setText(arg_87_0.gameTimeS, var_87_1)
 end
 
-function slot0.loseHeart(slot0)
-	if slot0.heart <= 0 then
+function var_0_0.loseHeart(arg_88_0)
+	if arg_88_0.heart <= 0 then
 		return
 	end
 
-	slot0.heart = slot0.heart - 1
+	arg_88_0.heart = arg_88_0.heart - 1
 
-	slot0:updateGameUI()
+	arg_88_0:updateGameUI()
 
-	if slot0.heart <= 0 then
-		slot0.heart = 0
+	if arg_88_0.heart <= 0 then
+		arg_88_0.heart = 0
 
-		slot0:onGameOver()
+		arg_88_0:onGameOver()
 	end
 end
 
-function slot0.addScore(slot0, slot1)
-	slot0.scoreNum = slot0.scoreNum + slot1
+function var_0_0.addScore(arg_89_0, arg_89_1)
+	arg_89_0.scoreNum = arg_89_0.scoreNum + arg_89_1
 
-	if slot0.scoreNum < 0 then
-		slot0.scoreNum = 0
+	if arg_89_0.scoreNum < 0 then
+		arg_89_0.scoreNum = 0
 	end
 end
 
-function slot0.onGameOver(slot0)
-	if slot0.settlementFlag then
+function var_0_0.onGameOver(arg_90_0)
+	if arg_90_0.settlementFlag then
 		return
 	end
 
-	slot0:timerStop()
+	arg_90_0:timerStop()
 
-	slot0.settlementFlag = true
+	arg_90_0.settlementFlag = true
 
-	setActive(slot0.clickMask, true)
-	LeanTween.delayedCall(go(slot0._tf), 2, System.Action(function ()
-		uv0.settlementFlag = false
-		uv0.gameStartFlag = false
+	setActive(arg_90_0.clickMask, true)
+	LeanTween.delayedCall(go(arg_90_0._tf), 2, System.Action(function()
+		arg_90_0.settlementFlag = false
+		arg_90_0.gameStartFlag = false
 
-		setActive(uv0.clickMask, false)
-		uv0:showSettlement()
+		setActive(arg_90_0.clickMask, false)
+		arg_90_0:showSettlement()
 	end))
 end
 
-function slot0.showSettlement(slot0)
-	setActive(slot0.settlementUI, true)
-	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var_0_0.showSettlement(arg_92_0)
+	setActive(arg_92_0.settlementUI, true)
+	GetComponent(findTF(arg_92_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	slot3 = slot0.scoreNum
-	slot4 = slot0:GetMGData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0
+	local var_92_0 = arg_92_0:GetMGData():GetRuntimeData("elements")
+	local var_92_1 = arg_92_0.scoreNum
+	local var_92_2 = var_92_0 and #var_92_0 > 0 and var_92_0[1] or 0
 
-	setActive(findTF(slot0.settlementUI, "ad/new"), slot4 < slot3)
+	setActive(findTF(arg_92_0.settlementUI, "ad/new"), var_92_2 < var_92_1)
 
-	if slot4 <= slot3 then
-		slot0:StoreDataToServer({
-			slot3
+	if var_92_2 <= var_92_1 then
+		var_92_2 = var_92_1
+
+		arg_92_0:StoreDataToServer({
+			var_92_2
 		})
 	end
 
-	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
-	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
+	local var_92_3 = findTF(arg_92_0.settlementUI, "ad/highText")
+	local var_92_4 = findTF(arg_92_0.settlementUI, "ad/currentText")
 
-	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
-		slot0.sendSuccessFlag = true
+	setText(var_92_3, var_92_2)
+	setText(var_92_4, var_92_1)
 
-		slot0:SendSuccess(0)
+	if arg_92_0:getGameTimes() and arg_92_0:getGameTimes() > 0 then
+		arg_92_0.sendSuccessFlag = true
+
+		arg_92_0:SendSuccess(0)
 	end
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gameStop = false
+function var_0_0.resumeGame(arg_93_0)
+	arg_93_0.gameStop = false
 
-	setActive(slot0.leaveUI, false)
-	slot0:changeSpeed(1)
-	slot0:timerStart()
+	setActive(arg_93_0.leaveUI, false)
+	arg_93_0:changeSpeed(1)
+	arg_93_0:timerStart()
 end
 
-function slot0.stopGame(slot0)
-	slot0.gameStop = true
+function var_0_0.stopGame(arg_94_0)
+	arg_94_0.gameStop = true
 
-	slot0:timerStop()
-	slot0:changeSpeed(0)
+	arg_94_0:timerStop()
+	arg_94_0:changeSpeed(0)
 end
 
-function slot0.onBackPressed(slot0)
-	if not slot0.gameStartFlag then
-		slot0:emit(uv0.ON_BACK_PRESSED)
+function var_0_0.onBackPressed(arg_95_0)
+	if not arg_95_0.gameStartFlag then
+		arg_95_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		if slot0.settlementFlag then
+		if arg_95_0.settlementFlag then
 			return
 		end
 
-		if isActive(slot0.pauseUI) then
-			setActive(slot0.pauseUI, false)
+		if isActive(arg_95_0.pauseUI) then
+			setActive(arg_95_0.pauseUI, false)
 		end
 
-		slot0:stopGame()
-		setActive(slot0.leaveUI, true)
+		arg_95_0:stopGame()
+		setActive(arg_95_0.leaveUI, true)
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.willExit(arg_96_0)
+	if arg_96_0.handle then
+		UpdateBeat:RemoveListener(arg_96_0.handle)
 	end
 
-	if slot0._tf and LeanTween.isTweening(go(slot0._tf)) then
-		LeanTween.cancel(go(slot0._tf))
+	if arg_96_0._tf and LeanTween.isTweening(go(arg_96_0._tf)) then
+		LeanTween.cancel(go(arg_96_0._tf))
 	end
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_96_0.timer and arg_96_0.timer.running then
+		arg_96_0.timer:Stop()
 	end
 
 	Time.timeScale = 1
-	slot0.timer = nil
+	arg_96_0.timer = nil
 end
 
-return slot0
+return var_0_0

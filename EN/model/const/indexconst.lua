@@ -1,192 +1,249 @@
-slot0 = class("IndexConst")
+﻿local var_0_0 = class("IndexConst")
 
-function slot0.Flags2Bits(slot0)
-	for slot5, slot6 in ipairs(slot0) do
-		slot1 = bit.bor(0, bit.lshift(1, slot6))
+function var_0_0.Flags2Bits(arg_1_0)
+	local var_1_0 = 0
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0) do
+		var_1_0 = bit.bor(var_1_0, bit.lshift(1, iter_1_1))
 	end
 
-	return slot1
+	return var_1_0
 end
 
-function slot0.FlagRange2Bits(slot0, slot1)
-	for slot6 = slot0, slot1 do
-		slot2 = bit.bor(0, bit.lshift(1, slot6))
+function var_0_0.FlagRange2Bits(arg_2_0, arg_2_1)
+	local var_2_0 = 0
+
+	for iter_2_0 = arg_2_0, arg_2_1 do
+		var_2_0 = bit.bor(var_2_0, bit.lshift(1, iter_2_0))
 	end
 
-	return slot2
+	return var_2_0
 end
 
-function slot0.ToggleBits(slot0, slot1, slot2, slot3)
-	slot4 = slot0
+function var_0_0.ToggleBits(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = arg_3_0
+	local var_3_1 = bit.lshift(1, arg_3_3)
 
-	if slot2 then
-		slot7 = _.reduce(slot1, 0, function (slot0, slot1)
-			return slot0 + (slot1 ~= uv0 and bit.lshift(1, slot1) or 0)
+	if arg_3_2 then
+		local var_3_2 = bit.lshift(1, arg_3_2)
+		local var_3_3 = _.reduce(arg_3_1, 0, function(arg_4_0, arg_4_1)
+			return arg_4_0 + (arg_4_1 ~= arg_3_2 and bit.lshift(1, arg_4_1) or 0)
 		end)
 
-		if bit.lshift(1, slot3) == bit.lshift(1, slot2) then
-			slot4 = slot6
+		if var_3_1 == var_3_2 then
+			var_3_0 = var_3_2
 		else
-			if bit.band(slot4, slot6) > 0 then
-				slot4 = slot4 - slot6
+			if bit.band(var_3_0, var_3_2) > 0 then
+				var_3_0 = var_3_0 - var_3_2
 			end
 
-			if bit.band(slot4, slot5) > 0 then
-				slot5 = -slot5
+			if bit.band(var_3_0, var_3_1) > 0 then
+				var_3_1 = -var_3_1
 			end
 
-			if slot4 + slot5 == slot7 or slot4 == 0 then
-				slot4 = slot6
+			var_3_0 = var_3_0 + var_3_1
+
+			if var_3_0 == var_3_3 or var_3_0 == 0 then
+				var_3_0 = var_3_2
 			end
 		end
 	else
-		if bit.band(slot4, slot5) > 0 then
-			slot5 = -slot5
+		if bit.band(var_3_0, var_3_1) > 0 then
+			var_3_1 = -var_3_1
 		end
 
-		slot4 = slot4 + slot5
+		var_3_0 = var_3_0 + var_3_1
 	end
 
-	return slot4
+	return var_3_0
 end
 
-function slot0.SingleToggleBits(slot0, slot1, slot2, slot3)
-	return (slot0 ~= bit.lshift(1, slot3) or bit.lshift(1, slot2)) and slot5
-end
+function var_0_0.SingleToggleBits(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	local var_5_0 = arg_5_0
+	local var_5_1 = bit.lshift(1, arg_5_3)
 
-function slot0.StrLShift(slot0, slot1)
-	slot2 = ""
-
-	for slot6 = 1, slot1 do
-		slot0 = slot0 .. "0"
+	if var_5_0 == var_5_1 then
+		var_5_0 = bit.lshift(1, arg_5_2)
+	else
+		var_5_0 = var_5_1
 	end
 
-	return slot0 .. slot2
+	return var_5_0
 end
 
-function slot0.StrAnd(slot0, slot1)
-	slot2 = ""
-	slot3 = string.len(slot1) < string.len(slot0) and slot0 or slot1
-	slot4 = slot3 == slot0 and slot1 or slot0
-	slot5 = string.len(slot3)
+function var_0_0.StrLShift(arg_6_0, arg_6_1)
+	local var_6_0 = ""
 
-	for slot10 = 1, string.len(slot4) do
-		slot2 = string.sub(slot4, slot10, slot10) == "1" and string.sub(slot3, slot5 - slot6 + slot10, slot5 - slot6 + slot10) == "1" and slot2 .. "1" or slot2 .. "1" .. "0"
+	for iter_6_0 = 1, arg_6_1 do
+		arg_6_0 = arg_6_0 .. "0"
 	end
 
-	for slot11 = 1, slot5 - slot6 do
-		slot7 = "" .. "0"
-	end
-
-	return slot7 .. slot2
+	return arg_6_0 .. var_6_0
 end
 
-function slot0.StrOr(slot0, slot1)
-	slot2 = ""
-	slot3 = string.len(slot1) < string.len(slot0) and slot0 or slot1
-	slot4 = slot3 == slot0 and slot1 or slot0
-	slot5 = string.len(slot3)
+function var_0_0.StrAnd(arg_7_0, arg_7_1)
+	local var_7_0 = ""
+	local var_7_1 = string.len(arg_7_0) > string.len(arg_7_1) and arg_7_0 or arg_7_1
+	local var_7_2 = var_7_1 == arg_7_0 and arg_7_1 or arg_7_0
+	local var_7_3 = string.len(var_7_1)
+	local var_7_4 = string.len(var_7_2)
 
-	for slot10 = 1, string.len(slot4) do
-		slot2 = (string.sub(slot4, slot10, slot10) == "1" or string.sub(slot3, slot5 - slot6 + slot10, slot5 - slot6 + slot10) == "1") and slot2 .. "1" or slot2 .. "1" .. "0"
+	for iter_7_0 = 1, var_7_4 do
+		if string.sub(var_7_2, iter_7_0, iter_7_0) == "1" and string.sub(var_7_1, var_7_3 - var_7_4 + iter_7_0, var_7_3 - var_7_4 + iter_7_0) == "1" then
+			var_7_0 = var_7_0 .. "1"
+		else
+			var_7_0 = var_7_0 .. "0"
+		end
 	end
 
-	return string.sub(slot3, 1, slot5 - slot6) .. slot2
-end
+	local var_7_5 = ""
 
-function slot0.Flags2Str(slot0)
-	for slot5, slot6 in ipairs(slot0) do
-		slot1 = uv0.StrOr("", uv0.StrLShift("1", slot6))
+	for iter_7_1 = 1, var_7_3 - var_7_4 do
+		var_7_5 = var_7_5 .. "0"
 	end
 
-	return slot1
+	return var_7_5 .. var_7_0
 end
 
-function slot0.FlagRange2Str(slot0, slot1)
-	for slot6 = slot0, slot1 do
-		slot2 = uv0.StrOr("", uv0.StrLShift("1", slot6))
+function var_0_0.StrOr(arg_8_0, arg_8_1)
+	local var_8_0 = ""
+	local var_8_1 = string.len(arg_8_0) > string.len(arg_8_1) and arg_8_0 or arg_8_1
+	local var_8_2 = var_8_1 == arg_8_0 and arg_8_1 or arg_8_0
+	local var_8_3 = string.len(var_8_1)
+	local var_8_4 = string.len(var_8_2)
+
+	for iter_8_0 = 1, var_8_4 do
+		if string.sub(var_8_2, iter_8_0, iter_8_0) == "1" or string.sub(var_8_1, var_8_3 - var_8_4 + iter_8_0, var_8_3 - var_8_4 + iter_8_0) == "1" then
+			var_8_0 = var_8_0 .. "1"
+		else
+			var_8_0 = var_8_0 .. "0"
+		end
 	end
 
-	return slot2
+	return string.sub(var_8_1, 1, var_8_3 - var_8_4) .. var_8_0
 end
 
-function slot0.ToggleStr(slot0, slot1, slot2, slot3)
-	slot4 = slot0
-	slot5 = uv0.StrLShift("1", slot3)
+function var_0_0.Flags2Str(arg_9_0)
+	local var_9_0 = ""
 
-	if slot2 then
-		slot6 = uv0.StrLShift("1", slot2)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0) do
+		var_9_0 = var_0_0.StrOr(var_9_0, var_0_0.StrLShift("1", iter_9_1))
+	end
 
-		for slot11, slot12 in ipairs(slot1) do
-			if slot12 ~= slot2 then
-				slot7 = uv0.StrOr("", uv0.StrLShift("1", slot12))
+	return var_9_0
+end
+
+function var_0_0.FlagRange2Str(arg_10_0, arg_10_1)
+	local var_10_0 = ""
+
+	for iter_10_0 = arg_10_0, arg_10_1 do
+		var_10_0 = var_0_0.StrOr(var_10_0, var_0_0.StrLShift("1", iter_10_0))
+	end
+
+	return var_10_0
+end
+
+function var_0_0.ToggleStr(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = arg_11_0
+	local var_11_1 = var_0_0.StrLShift("1", arg_11_3)
+
+	if arg_11_2 then
+		local var_11_2 = var_0_0.StrLShift("1", arg_11_2)
+		local var_11_3 = ""
+
+		for iter_11_0, iter_11_1 in ipairs(arg_11_1) do
+			if iter_11_1 ~= arg_11_2 then
+				var_11_3 = var_0_0.StrOr(var_11_3, var_0_0.StrLShift("1", iter_11_1))
 			end
 		end
 
-		if slot5 == slot6 or slot4 == slot7 then
-			slot4 = slot6
-		elseif (string.find(uv0.StrAnd(slot4, slot6), "1") ~= nil and slot5 or string.sub(slot8, 1, slot9 - 1) .. (string.find(uv0.StrAnd(slot4, slot5), "1") ~= nil and "0" or "1") .. string.sub(slot8, slot9 + 1)) == slot7 or string.find(slot4, "1") == nil then
-			slot4 = slot6
+		if var_11_1 == var_11_2 or var_11_0 == var_11_3 then
+			var_11_0 = var_11_2
+		else
+			if string.find(var_0_0.StrAnd(var_11_0, var_11_2), "1") ~= nil then
+				var_11_0 = var_11_1
+			else
+				local var_11_4 = var_0_0.StrOr(var_11_0, var_11_1)
+				local var_11_5 = string.len(var_11_4) - arg_11_3
+				local var_11_6 = string.find(var_0_0.StrAnd(var_11_0, var_11_1), "1") ~= nil and "0" or "1"
+
+				var_11_0 = string.sub(var_11_4, 1, var_11_5 - 1) .. var_11_6 .. string.sub(var_11_4, var_11_5 + 1)
+			end
+
+			if var_11_0 == var_11_3 or string.find(var_11_0, "1") == nil then
+				var_11_0 = var_11_2
+			end
 		end
 	else
-		slot7 = string.len(uv0.StrOr(slot4, slot5)) - slot3
-		slot4 = string.sub(slot6, 1, slot7 - 1) .. (string.find(uv0.StrAnd(slot4, slot5), "1") ~= nil and "0" or "1") .. string.sub(slot6, slot7 + 1)
+		local var_11_7 = var_0_0.StrOr(var_11_0, var_11_1)
+		local var_11_8 = string.len(var_11_7) - arg_11_3
+		local var_11_9 = string.find(var_0_0.StrAnd(var_11_0, var_11_1), "1") ~= nil and "0" or "1"
+
+		var_11_0 = string.sub(var_11_7, 1, var_11_8 - 1) .. var_11_9 .. string.sub(var_11_7, var_11_8 + 1)
 	end
 
-	return slot4
+	return var_11_0
 end
 
-function slot0.BitAll(slot0)
-	for slot5, slot6 in ipairs(slot0) do
-		slot1 = bit.bor(slot6, 0)
+function var_0_0.BitAll(arg_12_0)
+	local var_12_0 = 0
+
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0) do
+		var_12_0 = bit.bor(iter_12_1, var_12_0)
 	end
 
-	return slot1
+	return var_12_0
 end
 
-slot0.EquipmentTypeSmallCannon = bit.lshift(1, 0)
-slot0.EquipmentTypeMediumCannon = bit.lshift(1, 1)
-slot0.EquipmentTypeBigCannon = bit.lshift(1, 2)
-slot0.EquipmentTypeWarshipTorpedo = bit.lshift(1, 3)
-slot0.EquipmentTypeSubmaraineTorpedo = bit.lshift(1, 4)
-slot0.EquipmentTypeAntiAircraft = bit.lshift(1, 5)
-slot0.EquipmentTypeFighter = bit.lshift(1, 6)
-slot0.EquipmentTypeBomber = bit.lshift(1, 7)
-slot0.EquipmentTypeTorpedoBomber = bit.lshift(1, 8)
-slot0.EquipmentTypeEquip = bit.lshift(1, 9)
-slot0.EquipmentTypeOther = bit.lshift(1, 10)
-slot0.EquipmentTypeIndexs = {
-	slot0.EquipmentTypeSmallCannon,
-	slot0.EquipmentTypeMediumCannon,
-	slot0.EquipmentTypeBigCannon,
-	slot0.EquipmentTypeWarshipTorpedo,
-	slot0.EquipmentTypeSubmaraineTorpedo,
-	slot0.EquipmentTypeAntiAircraft,
-	slot0.EquipmentTypeFighter,
-	slot0.EquipmentTypeBomber,
-	slot0.EquipmentTypeTorpedoBomber,
-	slot0.EquipmentTypeEquip,
-	slot0.EquipmentTypeOther
+var_0_0.EquipmentTypeSmallCannon = bit.lshift(1, 0)
+var_0_0.EquipmentTypeMediumCannon = bit.lshift(1, 1)
+var_0_0.EquipmentTypeBigCannon = bit.lshift(1, 2)
+var_0_0.EquipmentTypeWarshipTorpedo = bit.lshift(1, 3)
+var_0_0.EquipmentTypeSubmaraineTorpedo = bit.lshift(1, 4)
+var_0_0.EquipmentTypeAntiAircraft = bit.lshift(1, 5)
+var_0_0.EquipmentTypeFighter = bit.lshift(1, 6)
+var_0_0.EquipmentTypeBomber = bit.lshift(1, 7)
+var_0_0.EquipmentTypeTorpedoBomber = bit.lshift(1, 8)
+var_0_0.EquipmentTypeEquip = bit.lshift(1, 9)
+var_0_0.EquipmentTypeOther = bit.lshift(1, 10)
+var_0_0.EquipmentTypeIndexs = {
+	var_0_0.EquipmentTypeSmallCannon,
+	var_0_0.EquipmentTypeMediumCannon,
+	var_0_0.EquipmentTypeBigCannon,
+	var_0_0.EquipmentTypeWarshipTorpedo,
+	var_0_0.EquipmentTypeSubmaraineTorpedo,
+	var_0_0.EquipmentTypeAntiAircraft,
+	var_0_0.EquipmentTypeFighter,
+	var_0_0.EquipmentTypeBomber,
+	var_0_0.EquipmentTypeTorpedoBomber,
+	var_0_0.EquipmentTypeEquip,
+	var_0_0.EquipmentTypeOther
 }
-slot0.EquipmentTypeAll = slot0.BitAll(slot0.EquipmentTypeIndexs)
+var_0_0.EquipmentTypeAll = var_0_0.BitAll(var_0_0.EquipmentTypeIndexs)
 
-table.insert(slot0.EquipmentTypeIndexs, 1, slot0.EquipmentTypeAll)
+table.insert(var_0_0.EquipmentTypeIndexs, 1, var_0_0.EquipmentTypeAll)
 
-function slot0.filterEquipByType(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipmentTypeAll then
+function var_0_0.filterEquipByType(arg_13_0, arg_13_1)
+	if not arg_13_1 or arg_13_1 == var_0_0.EquipmentTypeAll then
 		return true
 	end
 
-	for slot5 = 2, #EquipmentSortCfg.index do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(EquipmentSortCfg.index[slot5].types, slot0:getConfig("type")) then
-			return true
+	for iter_13_0 = 2, #EquipmentSortCfg.index do
+		local var_13_0 = bit.lshift(1, iter_13_0 - 2)
+
+		if bit.band(var_13_0, arg_13_1) > 0 then
+			local var_13_1 = EquipmentSortCfg.index[iter_13_0].types
+
+			if table.contains(var_13_1, arg_13_0:getConfig("type")) then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-slot0.EquipmentTypeNames = {
+var_0_0.EquipmentTypeNames = {
 	"word_equipment_all",
 	"word_equipment_small_cannon",
 	"word_equipment_medium_cannon",
@@ -200,31 +257,31 @@ slot0.EquipmentTypeNames = {
 	"word_equipment_equip",
 	"word_equipment_special"
 }
-slot0.EquipCampUS = bit.lshift(1, 0)
-slot0.EquipCampEN = bit.lshift(1, 1)
-slot0.EquipCampJP = bit.lshift(1, 2)
-slot0.EquipCampDE = bit.lshift(1, 3)
-slot0.EquipCampCN = bit.lshift(1, 4)
-slot0.EquipCampITA = bit.lshift(1, 5)
-slot0.EquipCampSN = bit.lshift(1, 6)
-slot0.EquipCampFR = bit.lshift(1, 7)
-slot0.EquipCampMNF = bit.lshift(1, 8)
-slot0.EquipCampLINK = bit.lshift(1, 9)
-slot0.EquipCampOther = bit.lshift(1, 10)
-slot0.EquipCampIndexs = {
-	slot0.EquipCampUS,
-	slot0.EquipCampEN,
-	slot0.EquipCampJP,
-	slot0.EquipCampDE,
-	slot0.EquipCampCN,
-	slot0.EquipCampITA,
-	slot0.EquipCampSN,
-	slot0.EquipCampFR,
-	slot0.EquipCampMNF,
-	slot0.EquipCampLINK,
-	slot0.EquipCampOther
+var_0_0.EquipCampUS = bit.lshift(1, 0)
+var_0_0.EquipCampEN = bit.lshift(1, 1)
+var_0_0.EquipCampJP = bit.lshift(1, 2)
+var_0_0.EquipCampDE = bit.lshift(1, 3)
+var_0_0.EquipCampCN = bit.lshift(1, 4)
+var_0_0.EquipCampITA = bit.lshift(1, 5)
+var_0_0.EquipCampSN = bit.lshift(1, 6)
+var_0_0.EquipCampFR = bit.lshift(1, 7)
+var_0_0.EquipCampMNF = bit.lshift(1, 8)
+var_0_0.EquipCampLINK = bit.lshift(1, 9)
+var_0_0.EquipCampOther = bit.lshift(1, 10)
+var_0_0.EquipCampIndexs = {
+	var_0_0.EquipCampUS,
+	var_0_0.EquipCampEN,
+	var_0_0.EquipCampJP,
+	var_0_0.EquipCampDE,
+	var_0_0.EquipCampCN,
+	var_0_0.EquipCampITA,
+	var_0_0.EquipCampSN,
+	var_0_0.EquipCampFR,
+	var_0_0.EquipCampMNF,
+	var_0_0.EquipCampLINK,
+	var_0_0.EquipCampOther
 }
-slot0.EquipCampNames = {
+var_0_0.EquipCampNames = {
 	"word_shipNation_all",
 	"word_shipNation_baiYing",
 	"word_shipNation_huangJia",
@@ -238,23 +295,27 @@ slot0.EquipCampNames = {
 	"word_shipNation_link",
 	"word_shipNation_other"
 }
-slot0.EquipCampAll = slot0.BitAll(slot0.EquipCampIndexs)
+var_0_0.EquipCampAll = var_0_0.BitAll(var_0_0.EquipCampIndexs)
 
-table.insert(slot0.EquipCampIndexs, 1, slot0.EquipCampAll)
+table.insert(var_0_0.EquipCampIndexs, 1, var_0_0.EquipCampAll)
 
-function slot0.filterEquipByCamp(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipmentTypeAll then
+function var_0_0.filterEquipByCamp(arg_14_0, arg_14_1)
+	if not arg_14_1 or arg_14_1 == var_0_0.EquipmentTypeAll then
 		return true
 	end
 
-	for slot5 = 2, #EquipmentSortCfg.campIndex do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 then
-			for slot11, slot12 in ipairs(EquipmentSortCfg.campIndex[slot5].types) do
-				if slot12 == Nation.LINK then
-					if Nation.LINK <= slot0:getNation() then
+	for iter_14_0 = 2, #EquipmentSortCfg.campIndex do
+		local var_14_0 = bit.lshift(1, iter_14_0 - 2)
+
+		if bit.band(var_14_0, arg_14_1) > 0 then
+			local var_14_1 = EquipmentSortCfg.campIndex[iter_14_0].types
+
+			for iter_14_1, iter_14_2 in ipairs(var_14_1) do
+				if iter_14_2 == Nation.LINK then
+					if arg_14_0:getNation() >= Nation.LINK then
 						return true
 					end
-				elseif slot12 == slot0:getNation() then
+				elseif iter_14_2 == arg_14_0:getNation() then
 					return true
 				end
 			end
@@ -264,37 +325,37 @@ function slot0.filterEquipByCamp(slot0, slot1)
 	return false
 end
 
-slot0.EquipProperty_Cannon = bit.lshift(1, 0)
-slot0.EquipProperty_Air = bit.lshift(1, 1)
-slot0.EquipProperty_Dodge = bit.lshift(1, 2)
-slot0.EquipProperty_AntiAircraft = bit.lshift(1, 3)
-slot0.EquipProperty_Torpedo = bit.lshift(1, 4)
-slot0.EquipProperty_Reload = bit.lshift(1, 5)
-slot0.EquipProperty_Durability = bit.lshift(1, 6)
-slot0.EquipProperty_Antisub = bit.lshift(1, 7)
-slot0.EquipProperty_Oxy = bit.lshift(1, 8)
-slot0.EquipProperty_Speed = bit.lshift(1, 9)
-slot0.EquipProperty_Hit = bit.lshift(1, 10)
-slot0.EquipProperty_Luck = bit.lshift(1, 11)
-slot0.EquipPropertyIndexs = {
-	slot0.EquipProperty_Cannon,
-	slot0.EquipProperty_Air,
-	slot0.EquipProperty_Dodge,
-	slot0.EquipProperty_AntiAircraft,
-	slot0.EquipProperty_Torpedo,
-	slot0.EquipProperty_Reload,
-	slot0.EquipProperty_Durability,
-	slot0.EquipProperty_Antisub,
-	slot0.EquipProperty_Oxy,
-	slot0.EquipProperty_Speed,
-	slot0.EquipProperty_Hit,
-	slot0.EquipProperty_Luck
+var_0_0.EquipProperty_Cannon = bit.lshift(1, 0)
+var_0_0.EquipProperty_Air = bit.lshift(1, 1)
+var_0_0.EquipProperty_Dodge = bit.lshift(1, 2)
+var_0_0.EquipProperty_AntiAircraft = bit.lshift(1, 3)
+var_0_0.EquipProperty_Torpedo = bit.lshift(1, 4)
+var_0_0.EquipProperty_Reload = bit.lshift(1, 5)
+var_0_0.EquipProperty_Durability = bit.lshift(1, 6)
+var_0_0.EquipProperty_Antisub = bit.lshift(1, 7)
+var_0_0.EquipProperty_Oxy = bit.lshift(1, 8)
+var_0_0.EquipProperty_Speed = bit.lshift(1, 9)
+var_0_0.EquipProperty_Hit = bit.lshift(1, 10)
+var_0_0.EquipProperty_Luck = bit.lshift(1, 11)
+var_0_0.EquipPropertyIndexs = {
+	var_0_0.EquipProperty_Cannon,
+	var_0_0.EquipProperty_Air,
+	var_0_0.EquipProperty_Dodge,
+	var_0_0.EquipProperty_AntiAircraft,
+	var_0_0.EquipProperty_Torpedo,
+	var_0_0.EquipProperty_Reload,
+	var_0_0.EquipProperty_Durability,
+	var_0_0.EquipProperty_Antisub,
+	var_0_0.EquipProperty_Oxy,
+	var_0_0.EquipProperty_Speed,
+	var_0_0.EquipProperty_Hit,
+	var_0_0.EquipProperty_Luck
 }
-slot0.EquipPropertyAll = slot0.BitAll(slot0.EquipPropertyIndexs)
+var_0_0.EquipPropertyAll = var_0_0.BitAll(var_0_0.EquipPropertyIndexs)
 
-table.insert(slot0.EquipPropertyIndexs, 1, slot0.EquipPropertyAll)
+table.insert(var_0_0.EquipPropertyIndexs, 1, var_0_0.EquipPropertyAll)
 
-slot0.EquipPropertyNames = {
+var_0_0.EquipPropertyNames = {
 	"sort_attribute",
 	"attribute_cannon",
 	"attribute_air",
@@ -310,30 +371,40 @@ slot0.EquipPropertyNames = {
 	"attribute_luck"
 }
 
-function slot0.filterEquipByProperty(slot0, slot1)
-	if slot0:getConfig("attribute_1") then
-		table.insert({}, slot0:getConfig("attribute_1"))
+function var_0_0.filterEquipByProperty(arg_15_0, arg_15_1)
+	local var_15_0 = {}
+
+	if arg_15_0:getConfig("attribute_1") then
+		table.insert(var_15_0, arg_15_0:getConfig("attribute_1"))
 	end
 
-	if slot0:getConfig("attribute_2") then
-		table.insert(slot2, slot0:getConfig("attribute_2"))
+	if arg_15_0:getConfig("attribute_2") then
+		table.insert(var_15_0, arg_15_0:getConfig("attribute_2"))
 	end
 
-	if slot0:getConfig("attribute_3") then
-		table.insert(slot2, slot0:getConfig("attribute_3"))
+	if arg_15_0:getConfig("attribute_3") then
+		table.insert(var_15_0, arg_15_0:getConfig("attribute_3"))
 	end
 
-	for slot7, slot8 in ipairs(slot1) do
-		if not slot8 or slot8 == uv0.EquipPropertyAll then
-			slot3 = 0 + 1
+	local var_15_1 = 0
+
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
+		if not iter_15_1 or iter_15_1 == var_0_0.EquipPropertyAll then
+			var_15_1 = var_15_1 + 1
 		else
-			for slot12 = 2, #EquipmentSortCfg.propertyIndex do
-				if bit.band(bit.lshift(1, slot12 - 2), slot8) > 0 then
-					for slot18 = #slot2, 1, -1 do
-						if table.contains(EquipmentSortCfg.propertyIndex[slot12].types, slot2[slot18]) then
-							slot3 = slot3 + 1
+			for iter_15_2 = 2, #EquipmentSortCfg.propertyIndex do
+				local var_15_2 = bit.lshift(1, iter_15_2 - 2)
 
-							table.remove(slot2, slot18)
+				if bit.band(var_15_2, iter_15_1) > 0 then
+					local var_15_3 = EquipmentSortCfg.propertyIndex[iter_15_2].types
+
+					for iter_15_3 = #var_15_0, 1, -1 do
+						local var_15_4 = var_15_0[iter_15_3]
+
+						if table.contains(var_15_3, var_15_4) then
+							var_15_1 = var_15_1 + 1
+
+							table.remove(var_15_0, iter_15_3)
 
 							break
 						end
@@ -343,24 +414,24 @@ function slot0.filterEquipByProperty(slot0, slot1)
 		end
 	end
 
-	return slot3 >= #slot1
+	return var_15_1 >= #arg_15_1
 end
 
-slot0.EquipAmmoChuanjia = bit.lshift(1, 0)
-slot0.EquipAmmoGaobao = bit.lshift(1, 1)
-slot0.EquipAmmoTongchangDan = bit.lshift(1, 2)
-slot0.EquipAmmoQita = bit.lshift(1, 3)
-slot0.EquipAmmoIndexs_1 = {
-	slot0.EquipAmmoChuanjia,
-	slot0.EquipAmmoGaobao,
-	slot0.EquipAmmoTongchangDan,
-	slot0.EquipAmmoQita
+var_0_0.EquipAmmoChuanjia = bit.lshift(1, 0)
+var_0_0.EquipAmmoGaobao = bit.lshift(1, 1)
+var_0_0.EquipAmmoTongchangDan = bit.lshift(1, 2)
+var_0_0.EquipAmmoQita = bit.lshift(1, 3)
+var_0_0.EquipAmmoIndexs_1 = {
+	var_0_0.EquipAmmoChuanjia,
+	var_0_0.EquipAmmoGaobao,
+	var_0_0.EquipAmmoTongchangDan,
+	var_0_0.EquipAmmoQita
 }
-slot0.EquipAmmoAll_1 = slot0.BitAll(slot0.EquipAmmoIndexs_1)
+var_0_0.EquipAmmoAll_1 = var_0_0.BitAll(var_0_0.EquipAmmoIndexs_1)
 
-table.insert(slot0.EquipAmmoIndexs_1, 1, slot0.EquipAmmoAll_1)
+table.insert(var_0_0.EquipAmmoIndexs_1, 1, var_0_0.EquipAmmoAll_1)
 
-slot0.EquipAmmoIndexs_1_Names = {
+var_0_0.EquipAmmoIndexs_1_Names = {
 	"attribute_ammo",
 	"equip_ammo_type_1",
 	"equip_ammo_type_2",
@@ -368,67 +439,79 @@ slot0.EquipAmmoIndexs_1_Names = {
 	"word_shipType_other"
 }
 
-function slot0.filterEquipAmmo1(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipAmmoAll_1 then
+function var_0_0.filterEquipAmmo1(arg_16_0, arg_16_1)
+	if not arg_16_1 or arg_16_1 == var_0_0.EquipAmmoAll_1 then
 		return true
 	end
 
-	for slot5 = 2, #EquipmentSortCfg.ammoIndex1 do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(EquipmentSortCfg.ammoIndex1[slot5].types, slot0:getConfig("ammo")) then
-			return true
+	for iter_16_0 = 2, #EquipmentSortCfg.ammoIndex1 do
+		local var_16_0 = bit.lshift(1, iter_16_0 - 2)
+
+		if bit.band(var_16_0, arg_16_1) > 0 then
+			local var_16_1 = EquipmentSortCfg.ammoIndex1[iter_16_0].types
+
+			if table.contains(var_16_1, arg_16_0:getConfig("ammo")) then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-slot0.EquipAmmoShengdao = bit.lshift(1, 0)
-slot0.EquipAmmoTongchang = bit.lshift(1, 1)
-slot0.EquipAmmoIndexs_2 = {
-	slot0.EquipAmmoShengdao,
-	slot0.EquipAmmoTongchang
+var_0_0.EquipAmmoShengdao = bit.lshift(1, 0)
+var_0_0.EquipAmmoTongchang = bit.lshift(1, 1)
+var_0_0.EquipAmmoIndexs_2 = {
+	var_0_0.EquipAmmoShengdao,
+	var_0_0.EquipAmmoTongchang
 }
-slot0.EquipAmmoAll_2 = slot0.BitAll(slot0.EquipAmmoIndexs_2)
+var_0_0.EquipAmmoAll_2 = var_0_0.BitAll(var_0_0.EquipAmmoIndexs_2)
 
-table.insert(slot0.EquipAmmoIndexs_2, 1, slot0.EquipAmmoAll_2)
+table.insert(var_0_0.EquipAmmoIndexs_2, 1, var_0_0.EquipAmmoAll_2)
 
-slot0.EquipAmmoIndexs_2_Names = {
+var_0_0.EquipAmmoIndexs_2_Names = {
 	"attribute_ammo",
 	"equip_ammo_type_4",
 	"equip_ammo_type_5"
 }
 
-function slot0.filterEquipAmmo2(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipAmmoAll_2 then
+function var_0_0.filterEquipAmmo2(arg_17_0, arg_17_1)
+	if not arg_17_1 or arg_17_1 == var_0_0.EquipAmmoAll_2 then
 		return true
 	end
 
-	for slot5 = 2, #EquipmentSortCfg.ammoIndex2 do
-		if bit.band(bit.lshift(1, slot5 - 2), slot1) > 0 and table.contains(EquipmentSortCfg.ammoIndex2[slot5].types, slot0:getConfig("ammo")) then
-			return true
+	for iter_17_0 = 2, #EquipmentSortCfg.ammoIndex2 do
+		local var_17_0 = bit.lshift(1, iter_17_0 - 2)
+
+		if bit.band(var_17_0, arg_17_1) > 0 then
+			local var_17_1 = EquipmentSortCfg.ammoIndex2[iter_17_0].types
+
+			if table.contains(var_17_1, arg_17_0:getConfig("ammo")) then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-slot0.EquipmentRarity1 = bit.lshift(1, 0)
-slot0.EquipmentRarity2 = bit.lshift(1, 1)
-slot0.EquipmentRarity3 = bit.lshift(1, 2)
-slot0.EquipmentRarity4 = bit.lshift(1, 3)
-slot0.EquipmentRarity5 = bit.lshift(1, 4)
-slot0.EquipmentRarityIndexs = {
-	slot0.EquipmentRarity1,
-	slot0.EquipmentRarity2,
-	slot0.EquipmentRarity3,
-	slot0.EquipmentRarity4,
-	slot0.EquipmentRarity5
+var_0_0.EquipmentRarity1 = bit.lshift(1, 0)
+var_0_0.EquipmentRarity2 = bit.lshift(1, 1)
+var_0_0.EquipmentRarity3 = bit.lshift(1, 2)
+var_0_0.EquipmentRarity4 = bit.lshift(1, 3)
+var_0_0.EquipmentRarity5 = bit.lshift(1, 4)
+var_0_0.EquipmentRarityIndexs = {
+	var_0_0.EquipmentRarity1,
+	var_0_0.EquipmentRarity2,
+	var_0_0.EquipmentRarity3,
+	var_0_0.EquipmentRarity4,
+	var_0_0.EquipmentRarity5
 }
-slot0.EquipmentRarityAll = slot0.BitAll(slot0.EquipmentRarityIndexs)
+var_0_0.EquipmentRarityAll = var_0_0.BitAll(var_0_0.EquipmentRarityIndexs)
 
-table.insert(slot0.EquipmentRarityIndexs, 1, slot0.EquipmentRarityAll)
+table.insert(var_0_0.EquipmentRarityIndexs, 1, var_0_0.EquipmentRarityAll)
 
-slot0.RarityNames = {
+var_0_0.RarityNames = {
 	"index_all",
 	"index_rare2",
 	"index_rare3",
@@ -437,111 +520,125 @@ slot0.RarityNames = {
 	"index_rare6"
 }
 
-function slot0.filterEquipByRarity(slot0, slot1)
-	if not slot1 or slot1 == uv0.EquipmentRarityAll then
+function var_0_0.filterEquipByRarity(arg_18_0, arg_18_1)
+	if not arg_18_1 or arg_18_1 == var_0_0.EquipmentRarityAll then
 		return true
 	end
 
-	return bit.band(bit.lshift(1, math.max(slot0:getConfig("rarity") - 2, 0)), slot1) > 0
+	local var_18_0 = math.max(arg_18_0:getConfig("rarity") - 2, 0)
+	local var_18_1 = bit.lshift(1, var_18_0)
+
+	return bit.band(var_18_1, arg_18_1) > 0
 end
 
-slot0.EquipmentExtraNames = {
+var_0_0.EquipmentExtraNames = {
 	"index_without_limit",
 	"index_equip",
 	"index_strengthen",
 	"index_reform"
 }
-slot0.EquipmentExtraEquiping = bit.lshift(1, 0)
-slot0.EquipmentExtraStrengthen = bit.lshift(1, 1)
-slot0.EquipmentExtraTransform = bit.lshift(1, 2)
-slot0.EquipmentExtraIndexs = {
-	slot0.EquipmentExtraEquiping,
-	slot0.EquipmentExtraStrengthen,
-	slot0.EquipmentExtraTransform
+var_0_0.EquipmentExtraEquiping = bit.lshift(1, 0)
+var_0_0.EquipmentExtraStrengthen = bit.lshift(1, 1)
+var_0_0.EquipmentExtraTransform = bit.lshift(1, 2)
+var_0_0.EquipmentExtraIndexs = {
+	var_0_0.EquipmentExtraEquiping,
+	var_0_0.EquipmentExtraStrengthen,
+	var_0_0.EquipmentExtraTransform
 }
-slot0.EquipmentExtraNone = 0
-slot4 = slot0.EquipmentExtraNone
+var_0_0.EquipmentExtraNone = 0
 
-table.insert(slot0.EquipmentExtraIndexs, 1, slot4)
+table.insert(var_0_0.EquipmentExtraIndexs, 1, var_0_0.EquipmentExtraNone)
 
-function slot0.filterEquipByExtra(slot0, slot1)
-	if bit.band(slot1 or 0, uv0.EquipmentExtraEquiping) > 0 and not slot0.shipId then
+function var_0_0.filterEquipByExtra(arg_19_0, arg_19_1)
+	arg_19_1 = arg_19_1 or 0
+
+	if bit.band(arg_19_1, var_0_0.EquipmentExtraEquiping) > 0 and not arg_19_0.shipId then
 		return false
 	end
 
-	if bit.band(slot1, uv0.EquipmentExtraStrengthen) > 0 and (not pg.equip_data_template[slot0.id] or not slot2.next or slot2.next == 0) then
-		return false
+	if bit.band(arg_19_1, var_0_0.EquipmentExtraStrengthen) > 0 then
+		local var_19_0 = pg.equip_data_template[arg_19_0.id]
+
+		if not var_19_0 or not var_19_0.next or var_19_0.next == 0 then
+			return false
+		end
 	end
 
-	if bit.band(slot1, uv0.EquipmentExtraTransform) > 0 and (not EquipmentProxy.EquipTransformTargetDict[Equipment.GetEquipRootStatic(slot0.id)] or not slot2.targets) then
-		return false
+	if bit.band(arg_19_1, var_0_0.EquipmentExtraTransform) > 0 then
+		local var_19_1 = EquipmentProxy.EquipTransformTargetDict[Equipment.GetEquipRootStatic(arg_19_0.id)]
+
+		if not var_19_1 or not var_19_1.targets then
+			return false
+		end
 	end
 
 	return true
 end
 
-slot0.DisplayEquipSkinSort = 6
-slot0.DisplayEquipSkinIndex = 7
-slot0.DisplayEquipSkinTheme = 8
-slot0.EquipSkinSortType = 1
-slot0.EquipSkinSortTypes = {
-	slot0.EquipSkinSortType
+var_0_0.DisplayEquipSkinSort = 6
+var_0_0.DisplayEquipSkinIndex = 7
+var_0_0.DisplayEquipSkinTheme = 8
+var_0_0.EquipSkinSortType = 1
+var_0_0.EquipSkinSortTypes = {
+	var_0_0.EquipSkinSortType
 }
-slot0.EquipSkinSortNames = {
+var_0_0.EquipSkinSortNames = {
 	i18n("word_equipskin_type")
 }
-slot0.EquipSkinIndexAll = 1
-slot0.EquipSkinIndexCannon = 2
-slot0.EquipSkinIndexTarpedo = 3
-slot0.EquipSkinIndexAircraft = 4
-slot0.EquipSkinIndexAux = 5
-slot0.EquipSkinIndexTypes = {
-	slot0.EquipSkinIndexAll,
-	slot0.EquipSkinIndexCannon,
-	slot0.EquipSkinIndexTarpedo,
-	slot0.EquipSkinIndexAircraft,
-	slot0.EquipSkinIndexAux
+var_0_0.EquipSkinIndexAll = 1
+var_0_0.EquipSkinIndexCannon = 2
+var_0_0.EquipSkinIndexTarpedo = 3
+var_0_0.EquipSkinIndexAircraft = 4
+var_0_0.EquipSkinIndexAux = 5
+var_0_0.EquipSkinIndexTypes = {
+	var_0_0.EquipSkinIndexAll,
+	var_0_0.EquipSkinIndexCannon,
+	var_0_0.EquipSkinIndexTarpedo,
+	var_0_0.EquipSkinIndexAircraft,
+	var_0_0.EquipSkinIndexAux
 }
-slot0.EquipSkinIndexNames = {
+var_0_0.EquipSkinIndexNames = {
 	i18n("word_equipskin_all"),
 	i18n("word_equipskin_cannon"),
 	i18n("word_equipskin_tarpedo"),
 	i18n("word_equipskin_aircraft"),
 	i18n("word_equipskin_aux")
 }
-slot0.EquipSkinThemeAll = 1
-slot0.EquipSkinThemeEnd = nil
-slot0.EquipSkinThemeTypes = {
-	slot0.EquipSkinThemeAll
+var_0_0.EquipSkinThemeAll = 1
+var_0_0.EquipSkinThemeEnd = nil
+var_0_0.EquipSkinThemeTypes = {
+	var_0_0.EquipSkinThemeAll
 }
 
-for slot4, slot5 in ipairs(pg.equip_skin_theme_template.all) do
-	table.insert(slot0.EquipSkinThemeTypes, slot4 + slot0.EquipSkinThemeAll)
+for iter_0_0, iter_0_1 in ipairs(pg.equip_skin_theme_template.all) do
+	table.insert(var_0_0.EquipSkinThemeTypes, iter_0_0 + var_0_0.EquipSkinThemeAll)
 
-	if slot4 == #pg.equip_skin_theme_template.all then
-		slot0.EquipSkinThemeEnd = slot4 + slot0.EquipSkinThemeAll + 1
+	if iter_0_0 == #pg.equip_skin_theme_template.all then
+		var_0_0.EquipSkinThemeEnd = iter_0_0 + var_0_0.EquipSkinThemeAll + 1
 	end
 end
 
-slot0.EquipSkinThemeNames = {
+var_0_0.EquipSkinThemeNames = {
 	i18n("word_equipskin_all")
 }
 
-for slot4, slot5 in ipairs(pg.equip_skin_theme_template.all) do
-	table.insert(slot0.EquipSkinThemeNames, pg.equip_skin_theme_template[slot5].name)
+for iter_0_2, iter_0_3 in ipairs(pg.equip_skin_theme_template.all) do
+	local var_0_1 = pg.equip_skin_theme_template[iter_0_3].name
+
+	table.insert(var_0_0.EquipSkinThemeNames, var_0_1)
 end
 
-function slot0.filterEquipSkinByIndex(slot0, slot1)
-	if not slot1 then
+function var_0_0.filterEquipSkinByIndex(arg_20_0, arg_20_1)
+	if not arg_20_1 then
 		return true
 	end
 
-	if bit.band(slot1, bit.lshift(1, uv0.EquipSkinIndexAll)) > 0 then
+	if bit.band(arg_20_1, bit.lshift(1, var_0_0.EquipSkinIndexAll)) > 0 then
 		return true
 	end
 
-	slot2 = {}
-	slot3 = {
+	local var_20_0 = {}
+	local var_20_1 = {
 		1,
 		2,
 		3,
@@ -549,89 +646,106 @@ function slot0.filterEquipSkinByIndex(slot0, slot1)
 		5
 	}
 
-	for slot7, slot8 in ipairs(uv0.EquipSkinIndexTypes) do
-		if bit.band(slot1, bit.lshift(1, slot8)) > 0 then
-			for slot14, slot15 in ipairs(EquipmentSortCfg.skinIndex[slot3[slot8]].types) do
-				table.insert(slot2, slot15)
+	for iter_20_0, iter_20_1 in ipairs(var_0_0.EquipSkinIndexTypes) do
+		if bit.band(arg_20_1, bit.lshift(1, iter_20_1)) > 0 then
+			local var_20_2 = var_20_1[iter_20_1]
+			local var_20_3 = EquipmentSortCfg.skinIndex[var_20_2].types
+
+			for iter_20_2, iter_20_3 in ipairs(var_20_3) do
+				table.insert(var_20_0, iter_20_3)
 			end
 		end
 	end
 
-	slot4 = pg.equip_skin_template
+	local var_20_4 = pg.equip_skin_template
 
-	if slot0.count > 0 and slot0.isSkin then
-		for slot10, slot11 in pairs(slot4[slot0.id].equip_type) do
-			if table.contains(slot2, slot11) then
+	if arg_20_0.count > 0 and arg_20_0.isSkin then
+		local var_20_5 = var_20_4[arg_20_0.id].equip_type
+
+		for iter_20_4, iter_20_5 in pairs(var_20_5) do
+			if table.contains(var_20_0, iter_20_5) then
 				return true
 			end
 		end
 	end
 end
 
-function slot0.filterEquipSkinByTheme(slot0, slot1)
-	if not slot1 then
+function var_0_0.filterEquipSkinByTheme(arg_21_0, arg_21_1)
+	if not arg_21_1 then
 		return true
 	end
 
-	if string.find(uv0.StrAnd(slot1, uv0.StrLShift("1", uv0.EquipSkinThemeAll)), "1") ~= nil then
+	if string.find(var_0_0.StrAnd(arg_21_1, var_0_0.StrLShift("1", var_0_0.EquipSkinThemeAll)), "1") ~= nil then
 		return true
 	end
 
-	slot3 = pg.equip_skin_theme_template
+	local var_21_0 = pg.equip_skin_template
+	local var_21_1 = pg.equip_skin_theme_template
 
-	if slot0.count > 0 and slot0.isSkin then
-		slot5 = pg.equip_skin_template[slot0.id].themeid
-		slot6 = nil
+	if arg_21_0.count > 0 and arg_21_0.isSkin then
+		local var_21_2 = arg_21_0.id
+		local var_21_3 = var_21_0[var_21_2].themeid
+		local var_21_4
 
-		for slot10, slot11 in ipairs(uv0.EquipSkinThemeTypes) do
-			if string.find(uv0.StrAnd(slot1, uv0.StrLShift("1", slot10)), "1") ~= nil and table.contains(slot3[slot3[pg.equip_skin_theme_template.all[slot11 - 1]].id].ids, slot4) then
-				return true
+		for iter_21_0, iter_21_1 in ipairs(var_0_0.EquipSkinThemeTypes) do
+			if string.find(var_0_0.StrAnd(arg_21_1, var_0_0.StrLShift("1", iter_21_0)), "1") ~= nil then
+				local var_21_5 = var_21_1[var_21_1[pg.equip_skin_theme_template.all[iter_21_1 - 1]].id].ids
+
+				if table.contains(var_21_5, var_21_2) then
+					return true
+				end
 			end
 		end
 	end
 end
 
-slot0.SpWeaponTypeQvZhu = bit.lshift(1, 0)
-slot0.SpWeaponTypeQingXvn = bit.lshift(1, 1)
-slot0.SpWeaponTypeZhongXvn = bit.lshift(1, 2)
-slot0.SpWeaponTypeZhanLie = bit.lshift(1, 3)
-slot0.SpWeaponTypeHangMu = bit.lshift(1, 4)
-slot0.SpWeaponTypeWeiXiu = bit.lshift(1, 5)
-slot0.SpWeaponTypeQianTing = bit.lshift(1, 6)
-slot0.SpWeaponTypeQiTa = bit.lshift(1, 7)
-slot0.SpWeaponTypeIndexs = {
-	slot0.SpWeaponTypeQvZhu,
-	slot0.SpWeaponTypeQingXvn,
-	slot0.SpWeaponTypeZhongXvn,
-	slot0.SpWeaponTypeZhanLie,
-	slot0.SpWeaponTypeHangMu,
-	slot0.SpWeaponTypeWeiXiu,
-	slot0.SpWeaponTypeQianTing,
-	slot0.SpWeaponTypeQiTa
+var_0_0.SpWeaponTypeQvZhu = bit.lshift(1, 0)
+var_0_0.SpWeaponTypeQingXvn = bit.lshift(1, 1)
+var_0_0.SpWeaponTypeZhongXvn = bit.lshift(1, 2)
+var_0_0.SpWeaponTypeZhanLie = bit.lshift(1, 3)
+var_0_0.SpWeaponTypeHangMu = bit.lshift(1, 4)
+var_0_0.SpWeaponTypeWeiXiu = bit.lshift(1, 5)
+var_0_0.SpWeaponTypeQianTing = bit.lshift(1, 6)
+var_0_0.SpWeaponTypeQiTa = bit.lshift(1, 7)
+var_0_0.SpWeaponTypeIndexs = {
+	var_0_0.SpWeaponTypeQvZhu,
+	var_0_0.SpWeaponTypeQingXvn,
+	var_0_0.SpWeaponTypeZhongXvn,
+	var_0_0.SpWeaponTypeZhanLie,
+	var_0_0.SpWeaponTypeHangMu,
+	var_0_0.SpWeaponTypeWeiXiu,
+	var_0_0.SpWeaponTypeQianTing,
+	var_0_0.SpWeaponTypeQiTa
 }
-slot0.SpWeaponTypeAll = slot0.BitAll(slot0.SpWeaponTypeIndexs)
+var_0_0.SpWeaponTypeAll = var_0_0.BitAll(var_0_0.SpWeaponTypeIndexs)
 
-table.insert(slot0.SpWeaponTypeIndexs, 1, slot0.SpWeaponTypeAll)
+table.insert(var_0_0.SpWeaponTypeIndexs, 1, var_0_0.SpWeaponTypeAll)
 
-function slot0.filterSpWeaponByType(slot0, slot1)
-	if not slot1 or slot1 == uv0.SpWeaponTypeAll then
+function var_0_0.filterSpWeaponByType(arg_22_0, arg_22_1)
+	if not arg_22_1 or arg_22_1 == var_0_0.SpWeaponTypeAll then
 		return true
 	end
 
-	slot2 = slot0:GetWearableShipTypes()
+	local var_22_0 = arg_22_0:GetWearableShipTypes()
 
-	for slot6 = 0, #uv0.SpWeaponTypeIndexs - 2 do
-		if bit.band(bit.lshift(1, slot6), slot1) > 0 and _.any(ShipIndexCfg.type[4 + slot6].types, function (slot0)
-			return table.contains(uv0, slot0)
-		end) then
-			return true
+	for iter_22_0 = 0, #var_0_0.SpWeaponTypeIndexs - 2 do
+		local var_22_1 = bit.lshift(1, iter_22_0)
+
+		if bit.band(var_22_1, arg_22_1) > 0 then
+			local var_22_2 = ShipIndexCfg.type[4 + iter_22_0].types
+
+			if _.any(var_22_2, function(arg_23_0)
+				return table.contains(var_22_0, arg_23_0)
+			end) then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-slot0.SpWeaponTypeNames = {
+var_0_0.SpWeaponTypeNames = {
 	"word_equipment_all",
 	"spweapon_ui_index_shipType_quZhu",
 	"spweapon_ui_index_shipType_qinXun",
@@ -642,52 +756,58 @@ slot0.SpWeaponTypeNames = {
 	"spweapon_ui_index_shipType_qianTing",
 	"spweapon_ui_index_shipType_other"
 }
-slot0.SpWeaponRarityNames = {
+var_0_0.SpWeaponRarityNames = {
 	"index_all",
 	"index_rare3",
 	"index_rare4",
 	"index_rare5"
 }
-slot0.SpWeaponRarity1 = bit.lshift(1, 0)
-slot0.SpWeaponRarity2 = bit.lshift(1, 1)
-slot0.SpWeaponRarity3 = bit.lshift(1, 2)
-slot0.SpWeaponRarityIndexs = {
-	slot0.SpWeaponRarity1,
-	slot0.SpWeaponRarity2,
-	slot0.SpWeaponRarity3
+var_0_0.SpWeaponRarity1 = bit.lshift(1, 0)
+var_0_0.SpWeaponRarity2 = bit.lshift(1, 1)
+var_0_0.SpWeaponRarity3 = bit.lshift(1, 2)
+var_0_0.SpWeaponRarityIndexs = {
+	var_0_0.SpWeaponRarity1,
+	var_0_0.SpWeaponRarity2,
+	var_0_0.SpWeaponRarity3
 }
-slot0.SpWeaponRarityAll = slot0.BitAll(slot0.SpWeaponRarityIndexs)
-slot4 = slot0.SpWeaponRarityAll
+var_0_0.SpWeaponRarityAll = var_0_0.BitAll(var_0_0.SpWeaponRarityIndexs)
 
-table.insert(slot0.SpWeaponRarityIndexs, 1, slot4)
+table.insert(var_0_0.SpWeaponRarityIndexs, 1, var_0_0.SpWeaponRarityAll)
 
-function slot0.filterSpWeaponByRarity(slot0, slot1)
-	if not slot1 or slot1 == uv0.SpWeaponRarityAll then
+function var_0_0.filterSpWeaponByRarity(arg_24_0, arg_24_1)
+	if not arg_24_1 or arg_24_1 == var_0_0.SpWeaponRarityAll then
 		return true
 	end
 
-	return bit.band(bit.lshift(1, math.max(slot0:GetRarity() - 2, 0)), slot1) > 0
+	local var_24_0 = math.max(arg_24_0:GetRarity() - 2, 0)
+	local var_24_1 = bit.lshift(1, var_24_0)
+
+	return bit.band(var_24_1, arg_24_1) > 0
 end
 
-slot0.LABEL_COUNT = 9
-slot0.ECodeLabelNames = {}
-slot0.ECodeLabelIndexs = {}
+var_0_0.LABEL_COUNT = 9
+var_0_0.ECodeLabelNames = {}
+var_0_0.ECodeLabelIndexs = {}
 
-for slot4 = 1, slot0.LABEL_COUNT do
-	table.insert(slot0.ECodeLabelNames, "equip_share_label_" .. slot4)
-	table.insert(slot0.ECodeLabelIndexs, bit.lshift(1, slot4 - 1))
+for iter_0_4 = 1, var_0_0.LABEL_COUNT do
+	local var_0_2 = bit.lshift(1, iter_0_4 - 1)
+
+	table.insert(var_0_0.ECodeLabelNames, "equip_share_label_" .. iter_0_4)
+	table.insert(var_0_0.ECodeLabelIndexs, var_0_2)
 end
 
-table.insert(slot0.ECodeLabelNames, 1, "index_all")
-table.insert(slot0.ECodeLabelIndexs, 1, slot0.BitAll(slot0.ECodeLabelIndexs))
+local var_0_3 = var_0_0.BitAll(var_0_0.ECodeLabelIndexs)
 
-function slot0.filterEquipCodeByLable(slot0, slot1)
-	if not slot1 or slot1 == uv0 then
+table.insert(var_0_0.ECodeLabelNames, 1, "index_all")
+table.insert(var_0_0.ECodeLabelIndexs, 1, var_0_3)
+
+function var_0_0.filterEquipCodeByLable(arg_25_0, arg_25_1)
+	if not arg_25_1 or arg_25_1 == var_0_3 then
 		return true
 	end
 
-	for slot5, slot6 in ipairs(slot0:GetLabels()) do
-		if bit.band(bit.lshift(1, slot6 - 1), slot1) > 0 then
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0:GetLabels()) do
+		if bit.band(bit.lshift(1, iter_25_1 - 1), arg_25_1) > 0 then
 			return true
 		end
 	end
@@ -695,4 +815,4 @@ function slot0.filterEquipCodeByLable(slot0, slot1)
 	return false
 end
 
-return slot0
+return var_0_0

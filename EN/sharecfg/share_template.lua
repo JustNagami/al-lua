@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.share_template = {
 	{
 		description = "#AzurLane#",

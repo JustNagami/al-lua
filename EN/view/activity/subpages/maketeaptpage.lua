@@ -1,6 +1,6 @@
-slot0 = class("MakeTeaPtPage", import(".TemplatePage.SkinTemplatePage"))
-slot1 = 5
-slot2 = {
+﻿local var_0_0 = class("MakeTeaPtPage", import(".TemplatePage.SkinTemplatePage"))
+local var_0_1 = 5
+local var_0_2 = {
 	"caizhai",
 	"tanfang",
 	"shaqing",
@@ -8,360 +8,370 @@ slot2 = {
 	"huiguo",
 	"yincha"
 }
-slot3 = "ui/activityuipage/maketeaptpage_atlas"
-slot4 = nil
+local var_0_3 = "ui/activityuipage/maketeaptpage_atlas"
+local var_0_4
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 end
 
-function slot0.initMv(slot0)
-	slot0.showItemNum = slot0.activity.data3 < uv0 and slot0.activity.data3 or uv0
-	slot0.mvTf = findTF(slot0._tf, "AD/mvPage")
+function var_0_0.initMv(arg_2_0)
+	arg_2_0.showItemNum = arg_2_0.activity.data3 < var_0_1 and arg_2_0.activity.data3 or var_0_1
+	arg_2_0.mvTf = findTF(arg_2_0._tf, "AD/mvPage")
 
-	setActive(slot0.mvTf, false)
+	setActive(arg_2_0.mvTf, false)
 
-	slot0.mvContent = findTF(slot0._tf, "AD/mvPage/movie/view/content")
-	slot0.movieWord = findTF(slot0._tf, "AD/mvPage/movie/movieWord")
-	slot0.descClose = findTF(slot0._tf, "AD/mvPage/descClose")
+	arg_2_0.mvContent = findTF(arg_2_0._tf, "AD/mvPage/movie/view/content")
+	arg_2_0.movieWord = findTF(arg_2_0._tf, "AD/mvPage/movie/movieWord")
+	arg_2_0.descClose = findTF(arg_2_0._tf, "AD/mvPage/descClose")
 
-	setText(slot0.descClose, i18n("island_act_tips1"))
+	setText(arg_2_0.descClose, i18n("island_act_tips1"))
 
-	slot0.mvIndex = 1
+	arg_2_0.mvIndex = 1
 
-	slot0:pageUpdate()
+	arg_2_0:pageUpdate()
 
-	slot0.mvBottom = findTF(slot0.mvTf, "bottom")
-	slot0.btnPlay = findTF(slot0.mvTf, "movie/btnPlay")
-	slot0.btnStop = findTF(slot0.mvTf, "movie/btnStop")
-	slot0.btnRepeat = findTF(slot0.mvTf, "movie/btnRepeat")
+	arg_2_0.mvBottom = findTF(arg_2_0.mvTf, "bottom")
+	arg_2_0.btnPlay = findTF(arg_2_0.mvTf, "movie/btnPlay")
+	arg_2_0.btnStop = findTF(arg_2_0.mvTf, "movie/btnStop")
+	arg_2_0.btnRepeat = findTF(arg_2_0.mvTf, "movie/btnRepeat")
 
-	onButton(slot0, slot0.btnPlay, function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, arg_2_0.btnPlay, function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.mvManaCpkUI and not uv1.mvCompleteFlag then
+		if arg_2_0.mvManaCpkUI and not arg_2_0.mvCompleteFlag then
 			print("恢复播放")
-			uv1.mvManaCpkUI:Pause(false)
-			uv1:onPlayerStart()
+			arg_2_0.mvManaCpkUI:Pause(false)
+			arg_2_0:onPlayerStart()
 		end
 	end)
-	onButton(slot0, slot0.btnStop, function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, arg_2_0.btnStop, function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.mvManaCpkUI and not uv1.mvCompleteFlag then
+		if arg_2_0.mvManaCpkUI and not arg_2_0.mvCompleteFlag then
 			print("暂停播放")
-			uv1.mvManaCpkUI:Pause(true)
-			uv1:onPlayerStop()
+			arg_2_0.mvManaCpkUI:Pause(true)
+			arg_2_0:onPlayerStop()
 		end
 	end)
-	onButton(slot0, slot0.btnRepeat, function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, arg_2_0.btnRepeat, function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.mvManaCpkUI and uv1.mvCompleteFlag then
+		if arg_2_0.mvManaCpkUI and arg_2_0.mvCompleteFlag then
 			print("重新播放")
-			uv1:loadMv()
+			arg_2_0:loadMv()
 		end
 	end)
-	onButton(slot0, slot0.mvBottom, function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, arg_2_0.mvBottom, function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.isLoading then
+		if arg_2_0.isLoading then
 			return
 		end
 
-		if uv1.playHandle then
-			uv1.playHandle()
+		if arg_2_0.playHandle then
+			arg_2_0.playHandle()
 
-			uv1.playHandle = nil
+			arg_2_0.playHandle = nil
 		end
 
-		uv1:displayWindow(false)
-		uv1:clearMovie()
+		arg_2_0:displayWindow(false)
+		arg_2_0:clearMovie()
 	end)
-	onButton(slot0, findTF(slot0.mvTf, "left"), function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, findTF(arg_2_0.mvTf, "left"), function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.mvIndex > 1 and not uv1.isLoading then
-			uv1.mvIndex = uv1.mvIndex - 1
+		if arg_2_0.mvIndex > 1 and not arg_2_0.isLoading then
+			arg_2_0.mvIndex = arg_2_0.mvIndex - 1
 
-			uv1:pageChange()
+			arg_2_0:pageChange()
 		end
 	end)
-	onButton(slot0, findTF(slot0.mvTf, "right"), function ()
-		if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+	onButton(arg_2_0, findTF(arg_2_0.mvTf, "right"), function()
+		if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 			return
 		end
 
-		uv0 = Time.realtimeSinceStartup
+		var_0_4 = Time.realtimeSinceStartup
 
-		if uv1.mvIndex < uv1.showItemNum and not uv1.isLoading then
-			uv1.mvIndex = uv1.mvIndex + 1
+		if arg_2_0.mvIndex < arg_2_0.showItemNum and not arg_2_0.isLoading then
+			arg_2_0.mvIndex = arg_2_0.mvIndex + 1
 
-			uv1:pageChange()
+			arg_2_0:pageChange()
 		end
 	end)
 
-	for slot4 = 1, uv0 do
-		slot5 = slot4
+	for iter_2_0 = 1, var_0_1 do
+		local var_2_0 = iter_2_0
 
-		onButton(slot0, findTF(slot0.mvTf, "page/" .. slot4), function ()
-			if uv0 and Time.realtimeSinceStartup - uv0 < 1 then
+		onButton(arg_2_0, findTF(arg_2_0.mvTf, "page/" .. iter_2_0), function()
+			if var_0_4 and Time.realtimeSinceStartup - var_0_4 < 1 then
 				return
 			end
 
-			uv0 = Time.realtimeSinceStartup
+			var_0_4 = Time.realtimeSinceStartup
 
-			if uv1.nday < 6 then
+			if arg_2_0.nday < 6 then
 				return
 			end
 
-			if uv1.mvIndex ~= uv2 and not uv1.isLoading then
-				uv1.mvIndex = uv2
+			if arg_2_0.mvIndex ~= var_2_0 and not arg_2_0.isLoading then
+				arg_2_0.mvIndex = var_2_0
 
-				uv1:pageChange()
+				arg_2_0:pageChange()
 			end
 		end)
-		setActive(findTF(slot0.mvTf, "page/" .. slot4), slot4 <= slot0.showItemNum)
+		setActive(findTF(arg_2_0.mvTf, "page/" .. iter_2_0), iter_2_0 <= arg_2_0.showItemNum)
 	end
 
-	setActive(slot0.mvTf, false)
+	setActive(arg_2_0.mvTf, false)
 end
 
-function slot0.UpdateTask(slot0, slot1, slot2)
-	uv0.super.UpdateTask(slot0, slot1, slot2)
+function var_0_0.UpdateTask(arg_10_0, arg_10_1, arg_10_2)
+	var_0_0.super.UpdateTask(arg_10_0, arg_10_1, arg_10_2)
 
-	slot6 = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][slot1 + 1]) or slot0.taskProxy:getFinishTaskById(slot5)
+	local var_10_0 = arg_10_0:findTF("get_btn", arg_10_2)
+	local var_10_1 = arg_10_1 + 1
+	local var_10_2 = arg_10_0.taskGroup[arg_10_0.nday][var_10_1]
+	local var_10_3 = arg_10_0.taskProxy:getTaskById(var_10_2) or arg_10_0.taskProxy:getFinishTaskById(var_10_2)
 
-	onButton(slot0, slot0:findTF("get_btn", slot2), function ()
-		if uv0.nday <= uv1 then
-			uv0.mvIndex = uv0.nday
+	onButton(arg_10_0, var_10_0, function()
+		if arg_10_0.nday <= var_0_1 then
+			arg_10_0.mvIndex = arg_10_0.nday
 
-			function uv0.playHandle()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+			function arg_10_0.playHandle()
+				arg_10_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_10_3)
 			end
 
-			uv0:displayWindow(true)
-		elseif checkExist(uv0.activity:getConfig("config_client").story, {
-			uv0.nday
-		}, {
-			1
-		}) then
-			pg.NewStoryMgr.GetInstance():Play(slot0[uv0.nday][1], function ()
-				uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
-			end)
+			arg_10_0:displayWindow(true)
 		else
-			uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv2)
+			local var_11_0 = arg_10_0.activity:getConfig("config_client").story
+
+			if checkExist(var_11_0, {
+				arg_10_0.nday
+			}, {
+				1
+			}) then
+				pg.NewStoryMgr.GetInstance():Play(var_11_0[arg_10_0.nday][1], function()
+					arg_10_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_10_3)
+				end)
+			else
+				arg_10_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_10_3)
+			end
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("got_btn", slot2), function ()
-		uv0:displayWindow(true)
+
+	local var_10_4 = arg_10_0:findTF("got_btn", arg_10_2)
+
+	onButton(arg_10_0, var_10_4, function()
+		arg_10_0:displayWindow(true)
 	end, SFX_PANEL)
 end
 
-function slot0.pageChange(slot0)
-	slot0:pageUpdate()
-	slot0:loadMv()
+function var_0_0.pageChange(arg_15_0)
+	arg_15_0:pageUpdate()
+	arg_15_0:loadMv()
 end
 
-function slot0.pageUpdate(slot0)
-	for slot4 = 1, uv0 do
-		setActive(findTF(slot0.mvTf, "page/" .. slot4 .. "/selected"), slot0.mvIndex == slot4)
+function var_0_0.pageUpdate(arg_16_0)
+	for iter_16_0 = 1, var_0_1 do
+		setActive(findTF(arg_16_0.mvTf, "page/" .. iter_16_0 .. "/selected"), arg_16_0.mvIndex == iter_16_0)
 	end
 
-	for slot4 = 1, #uv1 do
-		setActive(findTF(slot0.mvTf, "title_word/" .. slot4), slot4 == slot0.mvIndex)
-	end
-end
-
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-
-	slot0.mvIndex = uv1 < slot0.activity.data3 and 1 or slot0.activity.data3
-
-	slot0:initMv()
-end
-
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data3
-
-	if slot0.dayTF then
-		setText(slot0.dayTF, tostring(slot0.nday))
-	end
-
-	slot4 = slot0.nday
-
-	slot0.uilist:align(#slot0.taskGroup[slot4])
-
-	for slot4 = 1, #uv0 do
-		setActive(findTF(slot0._tf, "AD/word/" .. slot4), slot4 == slot0.nday)
+	for iter_16_1 = 1, #var_0_2 do
+		setActive(findTF(arg_16_0.mvTf, "title_word/" .. iter_16_1), iter_16_1 == arg_16_0.mvIndex)
 	end
 end
 
-function slot0.updateMvUI(slot0)
-	slot0.showItemNum = slot0.activity.data3 < uv0 and slot0.activity.data3 or uv0
+function var_0_0.OnFirstFlush(arg_17_0)
+	var_0_0.super.OnFirstFlush(arg_17_0)
 
-	if slot0.playHandle then
-		setActive(findTF(slot0.mvTf, "left"), false)
-		setActive(findTF(slot0.mvTf, "right"), false)
+	arg_17_0.mvIndex = arg_17_0.activity.data3 > var_0_1 and 1 or arg_17_0.activity.data3
+
+	arg_17_0:initMv()
+end
+
+function var_0_0.OnUpdateFlush(arg_18_0)
+	arg_18_0.nday = arg_18_0.activity.data3
+
+	if arg_18_0.dayTF then
+		setText(arg_18_0.dayTF, tostring(arg_18_0.nday))
+	end
+
+	arg_18_0.uilist:align(#arg_18_0.taskGroup[arg_18_0.nday])
+
+	for iter_18_0 = 1, #var_0_2 do
+		setActive(findTF(arg_18_0._tf, "AD/word/" .. iter_18_0), iter_18_0 == arg_18_0.nday)
+	end
+end
+
+function var_0_0.updateMvUI(arg_19_0)
+	arg_19_0.showItemNum = arg_19_0.activity.data3 < var_0_1 and arg_19_0.activity.data3 or var_0_1
+
+	if arg_19_0.playHandle then
+		setActive(findTF(arg_19_0.mvTf, "left"), false)
+		setActive(findTF(arg_19_0.mvTf, "right"), false)
 	else
-		setActive(findTF(slot0.mvTf, "left"), slot0.showItemNum > 1)
-		setActive(findTF(slot0.mvTf, "right"), slot0.showItemNum > 1)
+		setActive(findTF(arg_19_0.mvTf, "left"), arg_19_0.showItemNum > 1)
+		setActive(findTF(arg_19_0.mvTf, "right"), arg_19_0.showItemNum > 1)
 	end
 
-	for slot4 = 1, uv0 do
-		setActive(findTF(slot0.mvTf, "page/" .. slot4 .. "/selected"), slot0.mvIndex == slot4)
-		setActive(findTF(slot0.mvTf, "page/" .. slot4), slot4 <= slot0.showItemNum)
-		setActive(findTF(slot0.mvTf, "title_word/" .. slot4), slot4 == slot0.mvIndex)
+	for iter_19_0 = 1, var_0_1 do
+		setActive(findTF(arg_19_0.mvTf, "page/" .. iter_19_0 .. "/selected"), arg_19_0.mvIndex == iter_19_0)
+		setActive(findTF(arg_19_0.mvTf, "page/" .. iter_19_0), iter_19_0 <= arg_19_0.showItemNum)
+		setActive(findTF(arg_19_0.mvTf, "title_word/" .. iter_19_0), iter_19_0 == arg_19_0.mvIndex)
 	end
 end
 
-function slot0.displayWindow(slot0, slot1)
-	if not slot1 and not slot0.blurFlag then
+function var_0_0.displayWindow(arg_20_0, arg_20_1)
+	if not arg_20_1 and not arg_20_0.blurFlag then
 		return
 	end
 
-	if slot0.isLoading then
+	if arg_20_0.isLoading then
 		return
 	end
 
-	if slot0.blurFlag == slot1 then
+	if arg_20_0.blurFlag == arg_20_1 then
 		return
 	end
 
-	if slot1 then
-		setActive(slot0.mvTf, true)
+	if arg_20_1 then
+		setActive(arg_20_0.mvTf, true)
 
-		slot2 = Screen.width
-		slot3 = Screen.height
+		local var_20_0 = Screen.width
+		local var_20_1 = Screen.height
 
-		setSizeDelta(findTF(slot0.mvTf, "bottom"), Vector2(Screen.width, Screen.height))
-		pg.UIMgr.GetInstance():BlurPanel(slot0.mvTf, true)
-		slot0:updateMvUI()
-		slot0:loadMv()
+		setSizeDelta(findTF(arg_20_0.mvTf, "bottom"), Vector2(Screen.width, Screen.height))
+		pg.UIMgr.GetInstance():BlurPanel(arg_20_0.mvTf, true)
+		arg_20_0:updateMvUI()
+		arg_20_0:loadMv()
 	else
-		pg.UIMgr.GetInstance():UnblurPanel(slot0.mvTf)
-		setActive(slot0.mvTf, false)
+		pg.UIMgr.GetInstance():UnblurPanel(arg_20_0.mvTf)
+		setActive(arg_20_0.mvTf, false)
 	end
 
-	slot0.blurFlag = slot1
+	arg_20_0.blurFlag = arg_20_1
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_21_0)
+	var_0_0.super.OnDestroy(arg_21_0)
 
-	slot0.isLoading = false
+	arg_21_0.isLoading = false
 
-	slot0:displayWindow(false)
-	slot0:clearMovie()
+	arg_21_0:displayWindow(false)
+	arg_21_0:clearMovie()
 end
 
-function slot0.clearMovie(slot0)
-	if slot0.mvGo then
-		slot0.mvManaCpkUI:SetPlayEndHandler(nil)
-		slot0.mvManaCpkUI:StopCpk()
-		destroy(slot0.mvGo)
+function var_0_0.clearMovie(arg_22_0)
+	if arg_22_0.mvGo then
+		arg_22_0.mvManaCpkUI:SetPlayEndHandler(nil)
+		arg_22_0.mvManaCpkUI:StopCpk()
+		destroy(arg_22_0.mvGo)
 
-		slot0.mvManaCpkUI = nil
-		slot0.mvGo = nil
-		slot0.mvName = nil
+		arg_22_0.mvManaCpkUI = nil
+		arg_22_0.mvGo = nil
+		arg_22_0.mvName = nil
 	end
 end
 
-function slot0.GetProgressColor(slot0)
+function var_0_0.GetProgressColor(arg_23_0)
 	return "#57896D", "#A1AAA1"
 end
 
-function slot0.loadMv(slot0)
-	slot0:clearMovie()
+function var_0_0.loadMv(arg_24_0)
+	arg_24_0:clearMovie()
 
-	if slot0.isLoading then
+	if arg_24_0.isLoading then
 		return
 	end
 
-	slot0.isLoading = true
+	local var_24_0 = "paocha" .. arg_24_0.mvIndex
 
-	PoolMgr.GetInstance():GetUI("paocha" .. slot0.mvIndex, true, function (slot0)
-		uv0.mvGo = slot0
-		uv0.mvName = uv1
-		uv0.mvManaCpkUI = GetComponent(findTF(uv0.mvGo, "video/cpk"), typeof(CriManaCpkUI))
+	arg_24_0.isLoading = true
 
-		uv0.mvManaCpkUI:SetPlayEndHandler(System.Action(function ()
-			uv0:mvComplete()
+	PoolMgr.GetInstance():GetUI(var_24_0, true, function(arg_25_0)
+		arg_24_0.mvGo = arg_25_0
+		arg_24_0.mvName = var_24_0
+		arg_24_0.mvManaCpkUI = GetComponent(findTF(arg_24_0.mvGo, "video/cpk"), typeof(CriManaCpkUI))
 
-			if uv0.playHandle then
-				uv0.playHandle()
+		arg_24_0.mvManaCpkUI:SetPlayEndHandler(System.Action(function()
+			arg_24_0:mvComplete()
 
-				uv0.playHandle = nil
+			if arg_24_0.playHandle then
+				arg_24_0.playHandle()
+
+				arg_24_0.playHandle = nil
 			end
 		end))
-		setActive(uv0.btnPlay, false)
-		setActive(uv0.btnStop, true)
-		setActive(uv0.btnRepeat, false)
-		setText(uv0.movieWord, i18n("mktea_" .. uv0.mvIndex))
+		setActive(arg_24_0.btnPlay, false)
+		setActive(arg_24_0.btnStop, true)
+		setActive(arg_24_0.btnRepeat, false)
+		setText(arg_24_0.movieWord, i18n("mktea_" .. arg_24_0.mvIndex))
 
-		if uv0.isLoading == false then
-			uv0:clearMovie()
+		if arg_24_0.isLoading == false then
+			arg_24_0:clearMovie()
 		else
-			uv0.isLoading = false
+			arg_24_0.isLoading = false
 
-			setParent(uv0.mvGo, uv0.mvContent)
-			setActive(uv0.mvGo, true)
+			setParent(arg_24_0.mvGo, arg_24_0.mvContent)
+			setActive(arg_24_0.mvGo, true)
 		end
 
-		uv0.mvCompleteFlag = false
+		arg_24_0.mvCompleteFlag = false
 
-		uv0.mvManaCpkUI:PlayCpk()
+		arg_24_0.mvManaCpkUI:PlayCpk()
 	end)
 end
 
-function slot0.mvComplete(slot0)
+function var_0_0.mvComplete(arg_27_0)
 	print("播放完成")
 
-	slot0.mvCompleteFlag = true
+	arg_27_0.mvCompleteFlag = true
 
-	slot0:onPlayerEnd()
+	arg_27_0:onPlayerEnd()
 
-	if slot0.mvIndex == slot0.nday then
-		-- Nothing
+	if arg_27_0.mvIndex == arg_27_0.nday then
+		-- block empty
 	end
 end
 
-function slot0.onPlayerEnd(slot0)
-	setActive(slot0.btnPlay, false)
-	setActive(slot0.btnStop, false)
-	setActive(slot0.btnRepeat, true)
+function var_0_0.onPlayerEnd(arg_28_0)
+	setActive(arg_28_0.btnPlay, false)
+	setActive(arg_28_0.btnStop, false)
+	setActive(arg_28_0.btnRepeat, true)
 end
 
-function slot0.onPlayerStop(slot0)
-	setActive(slot0.btnPlay, true)
-	setActive(slot0.btnStop, false)
-	setActive(slot0.btnRepeat, false)
+function var_0_0.onPlayerStop(arg_29_0)
+	setActive(arg_29_0.btnPlay, true)
+	setActive(arg_29_0.btnStop, false)
+	setActive(arg_29_0.btnRepeat, false)
 end
 
-function slot0.onPlayerStart(slot0)
-	setActive(slot0.btnPlay, false)
-	setActive(slot0.btnStop, true)
-	setActive(slot0.btnRepeat, false)
+function var_0_0.onPlayerStart(arg_30_0)
+	setActive(arg_30_0.btnPlay, false)
+	setActive(arg_30_0.btnStop, true)
+	setActive(arg_30_0.btnRepeat, false)
 end
 
-return slot0
+return var_0_0

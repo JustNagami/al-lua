@@ -1,4 +1,25 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSink"
+			},
+			arg_list = {
+				skill_id = 10080,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onSink"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	},
 	{
 		desc = "被击沉时恢复全队其他角色耐久15.0%",
 		addition = {
@@ -69,26 +90,5 @@ return {
 	stack = 1,
 	id = 10080,
 	icon = 10080,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSink"
-			},
-			arg_list = {
-				skill_id = 10080,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onSink"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	}
+	last_effect = "Health"
 }

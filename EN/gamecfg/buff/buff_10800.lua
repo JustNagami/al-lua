@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10800,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Shokaku"
+				}
+			}
+		}
+	},
 	{
 		desc = "五航战"
 	},
@@ -38,25 +58,5 @@ return {
 	stack = 1,
 	id = 10800,
 	icon = 10800,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10800,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Shokaku"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

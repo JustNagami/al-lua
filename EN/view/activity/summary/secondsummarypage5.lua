@@ -1,28 +1,28 @@
-slot0 = class("SecondSummaryPage5", import(".SummaryAnimationPage"))
+﻿local var_0_0 = class("SecondSummaryPage5", import(".SummaryAnimationPage"))
 
-function slot0.OnInit(slot0)
-	setText(slot0._tf:Find("window_share_1/name"), slot0.summaryInfoVO.name)
-	setText(slot0._tf:Find("window_share_1/time/Text"), "「" .. slot0.summaryInfoVO.registerTime .. "」")
-	setText(slot0._tf:Find("window_share_1/day/Text"), slot0.summaryInfoVO.days)
+function var_0_0.OnInit(arg_1_0)
+	setText(arg_1_0._tf:Find("window_share_1/name"), arg_1_0.summaryInfoVO.name)
+	setText(arg_1_0._tf:Find("window_share_1/time/Text"), "「" .. arg_1_0.summaryInfoVO.registerTime .. "」")
+	setText(arg_1_0._tf:Find("window_share_1/day/Text"), arg_1_0.summaryInfoVO.days)
 
-	slot1 = slot0.summaryInfoVO:hasGuild()
+	local var_1_0 = arg_1_0.summaryInfoVO:hasGuild()
 
-	setActive(slot0._tf:Find("window_share_2/has_guild"), slot1)
-	setActive(slot0._tf:Find("window_share_2/without"), not slot1)
+	setActive(arg_1_0._tf:Find("window_share_2/has_guild"), var_1_0)
+	setActive(arg_1_0._tf:Find("window_share_2/without"), not var_1_0)
 
-	slot2 = slot1 and slot0._tf:Find("window_share_2/has_guild") or slot0._tf:Find("window_share_2/without")
+	local var_1_1 = var_1_0 and arg_1_0._tf:Find("window_share_2/has_guild") or arg_1_0._tf:Find("window_share_2/without")
 
-	if slot1 then
-		setText(slot2:Find("guild_name/Text"), "「" .. slot0.summaryInfoVO.guildName .. "」")
+	if var_1_0 then
+		setText(var_1_1:Find("guild_name/Text"), "「" .. arg_1_0.summaryInfoVO.guildName .. "」")
 	end
 
-	setText(slot2:Find("chapter_name/Text"), "「" .. slot0.summaryInfoVO.chapterName .. "」")
-	setText(slot2:Find("number/Text"), slot0.summaryInfoVO.proposeCount)
-	setText(slot0._tf:Find("window_share_3/number/Text"), slot0.summaryInfoVO.medalCount)
-	setText(slot0._tf:Find("window_share_3/count/Text"), slot0.summaryInfoVO.furnitureCount)
-	setText(slot0._tf:Find("window_share_3/coin/Text"), slot0.summaryInfoVO.furnitureWorth)
-	setText(slot0._tf:Find("window_share_3/collection/Text"), slot0.summaryInfoVO.collectionNum)
-	setText(slot0._tf:Find("window_share_3/skin/Text"), slot0.summaryInfoVO.skinNum)
+	setText(var_1_1:Find("chapter_name/Text"), "「" .. arg_1_0.summaryInfoVO.chapterName .. "」")
+	setText(var_1_1:Find("number/Text"), arg_1_0.summaryInfoVO.proposeCount)
+	setText(arg_1_0._tf:Find("window_share_3/number/Text"), arg_1_0.summaryInfoVO.medalCount)
+	setText(arg_1_0._tf:Find("window_share_3/count/Text"), arg_1_0.summaryInfoVO.furnitureCount)
+	setText(arg_1_0._tf:Find("window_share_3/coin/Text"), arg_1_0.summaryInfoVO.furnitureWorth)
+	setText(arg_1_0._tf:Find("window_share_3/collection/Text"), arg_1_0.summaryInfoVO.collectionNum)
+	setText(arg_1_0._tf:Find("window_share_3/skin/Text"), arg_1_0.summaryInfoVO.skinNum)
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "百合根",
-	init_effect = "",
-	time = 90,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 103060,
-	icon = 103060,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -80,5 +59,26 @@ return {
 				time = 86
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "百合根",
+	init_effect = "",
+	time = 90,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 103060,
+	icon = 103060,
+	last_effect = ""
 }

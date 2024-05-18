@@ -1,14 +1,17 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_374 = {}
-slot1 = slot0.word_template_374
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_374 = {}
+
+local var_0_1 = var_0_0.word_template_374
 
 function temp()
-	uv0["窗"] = {
-		["外"] = {
-			["有"] = {
-				["蓝"] = {
-					["天"] = {
+	var_0_1.窗 = {
+		外 = {
+			有 = {
+				蓝 = {
+					天 = {
 						this = true
 					}
 				}
@@ -20,10 +23,10 @@ end
 temp()
 
 function temp()
-	uv0["燒"] = {
-		["油"] = {
-			["腸"] = {
-				["石"] = {
+	var_0_1.燒 = {
+		油 = {
+			腸 = {
+				石 = {
 					this = true
 				}
 			}
@@ -34,7 +37,7 @@ end
 temp()
 
 function temp()
-	uv0.i = {
+	var_0_1.i = {
 		t = {
 			["'"] = {
 				s = {
@@ -90,8 +93,8 @@ function temp()
 		},
 		["2"] = {
 			i = {
-				["睪"] = {
-					["民"] = {
+				睪 = {
+					民 = {
 						this = true
 					}
 				}
@@ -253,10 +256,10 @@ end
 temp()
 
 function temp()
-	uv0["拖"] = {
-		["尸"] = {
-			["擦"] = {
-				["墙"] = {
+	var_0_1.拖 = {
+		尸 = {
+			擦 = {
+				墙 = {
 					this = true
 				}
 			}
@@ -267,16 +270,16 @@ end
 temp()
 
 function temp()
-	uv0["薪"] = {
-		["火"] = {
-			["不"] = {
-				["息"] = {
+	var_0_1.薪 = {
+		火 = {
+			不 = {
+				息 = {
 					this = true
 				}
 			}
 		},
-		["时"] = {
-			["代"] = {
+		时 = {
+			代 = {
 				this = true
 			}
 		}
@@ -286,29 +289,29 @@ end
 temp()
 
 function temp()
-	uv0["首"] = {
-		["度"] = {
-			["禁"] = {
-				["办"] = {
+	var_0_1.首 = {
+		度 = {
+			禁 = {
+				办 = {
 					this = true
 				}
 			}
 		},
-		["次"] = {
+		次 = {
 			["3"] = {
-				["当"] = {
-					["选"] = {
+				当 = {
+					选 = {
 						this = true
 					}
 				}
 			}
 		},
-		["都"] = {
-			["卫"] = {
-				["士"] = {
-					["纪"] = {
-						["念"] = {
-							["章"] = {
+		都 = {
+			卫 = {
+				士 = {
+					纪 = {
+						念 = {
+							章 = {
 								this = true
 							}
 						}
@@ -322,10 +325,10 @@ end
 temp()
 
 function temp()
-	uv0["柱"] = {
-		["之"] = {
-			["殇"] = {
-				["国"] = {
+	var_0_1.柱 = {
+		之 = {
+			殇 = {
+				国 = {
 					this = true
 				}
 			}

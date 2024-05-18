@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发专属弹幕-马德格堡"
-	},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 0,
-	color = "blue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 29771,
-	icon = 29770,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29770
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发专属弹幕-马德格堡"
+	},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 0,
+	color = "blue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 29771,
+	icon = 29770,
+	last_effect = ""
 }

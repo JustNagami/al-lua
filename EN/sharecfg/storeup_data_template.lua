@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.storeup_data_template = setmetatable({
 	__name = "storeup_data_template",
 	all = {

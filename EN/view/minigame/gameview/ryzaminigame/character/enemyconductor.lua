@@ -1,114 +1,124 @@
-slot0 = class("EnemyConductor", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
-slot0.ConfigShildList = {
+﻿local var_0_0 = class("EnemyConductor", import("view.miniGame.gameView.RyzaMiniGame.character.MoveEnemy"))
+
+var_0_0.ConfigShildList = {
 	2,
 	0,
 	0,
 	0
 }
-slot0.BlockRange = 1
-slot1 = {
+var_0_0.BlockRange = 1
+
+local var_0_1 = {
 	"S",
 	"E",
 	"N",
 	"W"
 }
 
-function slot0.InitUI(slot0, slot1)
-	slot0.shieldCount = underscore.rest(slot0.ConfigShildList, 1)
-	slot5 = "front/Shield_W"
-	slot0.rtShieldDic = {
-		S = slot0.rtScale:Find("front/Shield_S"),
-		E = slot0.rtScale:Find("front/Shield_E"),
-		N = slot0.rtScale:Find("back/Shield_N"),
-		W = slot0.rtScale:Find(slot5)
+function var_0_0.InitUI(arg_1_0, arg_1_1)
+	arg_1_0.shieldCount = underscore.rest(arg_1_0.ConfigShildList, 1)
+	arg_1_0.rtShieldDic = {
+		S = arg_1_0.rtScale:Find("front/Shield_S"),
+		E = arg_1_0.rtScale:Find("front/Shield_E"),
+		N = arg_1_0.rtScale:Find("back/Shield_N"),
+		W = arg_1_0.rtScale:Find("front/Shield_W")
 	}
 
-	for slot5, slot6 in ipairs({
+	for iter_1_0, iter_1_1 in ipairs({
 		"front",
 		"back"
 	}) do
-		eachChild(slot0.rtScale:Find(slot6), function (slot0)
-			slot0:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-				setActive(uv0:Find("Image"), false)
-				setActive(uv0, false)
-				setImageAlpha(uv0, 1)
+		eachChild(arg_1_0.rtScale:Find(iter_1_1), function(arg_2_0)
+			arg_2_0:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+				setActive(arg_2_0:Find("Image"), false)
+				setActive(arg_2_0, false)
+				setImageAlpha(arg_2_0, 1)
 			end)
-			slot0:Find("Protect"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-				setActive(uv0:Find("Protect"), false)
+			arg_2_0:Find("Protect"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+				setActive(arg_2_0:Find("Protect"), false)
 
-				if uv2.shieldCount[(table.indexof(uv1, string.split(uv0.name, "_")[2]) - table.indexof(uv1, uv2.statusMark) + 4) % 4 + 1] <= 0 then
-					setImageAlpha(uv0, 0)
-					setActive(uv0:Find("Image"), true)
+				local var_4_0 = (table.indexof(var_0_1, string.split(arg_2_0.name, "_")[2]) - table.indexof(var_0_1, arg_1_0.statusMark) + 4) % 4 + 1
+
+				if arg_1_0.shieldCount[var_4_0] <= 0 then
+					setImageAlpha(arg_2_0, 0)
+					setActive(arg_2_0:Find("Image"), true)
 				end
 			end)
 		end)
 	end
 
-	uv1.super.InitUI(slot0, slot1)
+	var_0_0.super.InitUI(arg_1_0, arg_1_1)
 
-	slot0.hp = slot1.hp or 2
-	slot0.hpMax = slot0.hp
-	slot0.speed = slot1.speed or 3
+	arg_1_0.hp = arg_1_1.hp or 2
+	arg_1_0.hpMax = arg_1_0.hp
+	arg_1_0.speed = arg_1_1.speed or 3
 end
 
-function slot0.InitRegister(slot0, slot1)
-	uv0.super.InitRegister(slot0, slot1)
-	slot0:Register("block", function (slot0)
-		uv0.shieldCount[slot0] = uv0.shieldCount[slot0] - 1
+function var_0_0.InitRegister(arg_5_0, arg_5_1)
+	var_0_0.super.InitRegister(arg_5_0, arg_5_1)
+	arg_5_0:Register("block", function(arg_6_0)
+		arg_5_0.shieldCount[arg_6_0] = arg_5_0.shieldCount[arg_6_0] - 1
 
-		setActive(uv0.rtShieldDic[uv1[(table.indexof(uv1, uv0.statusMark) + slot0 + 2) % 4 + 1]]:Find("Protect"), true)
+		local var_6_0 = arg_5_0.rtShieldDic[var_0_1[(table.indexof(var_0_1, arg_5_0.statusMark) + arg_6_0 + 2) % 4 + 1]]
+
+		setActive(var_6_0:Find("Protect"), true)
 	end, {})
 end
 
-function slot0.CheckBlock(slot0, slot1, slot2, slot3)
-	if slot0.pos.x == slot1.x and slot0.pos.y == slot1.y then
+function var_0_0.CheckBlock(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	if arg_7_0.pos.x == arg_7_1.x and arg_7_0.pos.y == arg_7_1.y then
 		return
-	elseif slot0.pos.x == slot1.x and math.clamp(slot0.pos.y - slot1.y, -slot2[3], slot2[1]) == slot0.pos.y - slot1.y or slot0.pos.y == slot1.y and math.clamp(slot0.pos.x - slot1.x, -slot2[4], slot2[2]) == slot0.pos.x - slot1.x then
-		slot4 = nil
+	elseif arg_7_0.pos.x == arg_7_1.x and math.clamp(arg_7_0.pos.y - arg_7_1.y, -arg_7_2[3], arg_7_2[1]) == arg_7_0.pos.y - arg_7_1.y or arg_7_0.pos.y == arg_7_1.y and math.clamp(arg_7_0.pos.x - arg_7_1.x, -arg_7_2[4], arg_7_2[2]) == arg_7_0.pos.x - arg_7_1.x then
+		local var_7_0
 
-		if slot1.x < slot0.pos.x then
-			slot4 = "W"
-		elseif slot0.pos.x < slot1.x then
-			slot4 = "E"
-		elseif slot1.y < slot0.pos.y then
-			slot4 = "N"
-		elseif slot0.pos.y < slot1.y then
-			slot4 = "S"
+		if arg_7_1.x < arg_7_0.pos.x then
+			var_7_0 = "W"
+		elseif arg_7_1.x > arg_7_0.pos.x then
+			var_7_0 = "E"
+		elseif arg_7_1.y < arg_7_0.pos.y then
+			var_7_0 = "N"
+		elseif arg_7_1.y > arg_7_0.pos.y then
+			var_7_0 = "S"
 		else
 			assert(false)
 		end
 
-		if slot0.shieldCount[(table.indexof(uv0, slot4) - table.indexof(uv0, slot0.statusMark) + 4) % 4 + 1] > 0 then
-			slot6 = (table.indexof(uv0, slot4) + 1) % 4 + 1
-			slot2[slot6] = math.max(math.max(math.abs(slot0.pos.x - slot1.x), math.abs(slot0.pos.y - slot1.y)) - slot0.BlockRange, 0)
-			slot3[slot6] = {
-				slot0,
-				slot5
+		local var_7_1 = (table.indexof(var_0_1, var_7_0) - table.indexof(var_0_1, arg_7_0.statusMark) + 4) % 4 + 1
+
+		if arg_7_0.shieldCount[var_7_1] > 0 then
+			local var_7_2 = (table.indexof(var_0_1, var_7_0) + 1) % 4 + 1
+
+			arg_7_2[var_7_2] = math.max(math.max(math.abs(arg_7_0.pos.x - arg_7_1.x), math.abs(arg_7_0.pos.y - arg_7_1.y)) - arg_7_0.BlockRange, 0)
+			arg_7_3[var_7_2] = {
+				arg_7_0,
+				var_7_1
 			}
 		end
 	end
 end
 
-function slot0.PlayAnim(slot0, slot1)
-	uv0.super.PlayAnim(slot0, slot1)
+function var_0_0.PlayAnim(arg_8_0, arg_8_1)
+	var_0_0.super.PlayAnim(arg_8_0, arg_8_1)
 
-	if slot0.statusMark ~= string.split(slot0.status, "_")[2] then
-		slot0.statusMark = string.split(slot0.status, "_")[2]
+	if arg_8_0.statusMark ~= string.split(arg_8_0.status, "_")[2] then
+		arg_8_0.statusMark = string.split(arg_8_0.status, "_")[2]
 
-		slot0:UpdateShieldDisplay()
+		arg_8_0:UpdateShieldDisplay()
 	end
 end
 
-function slot0.UpdateShieldDisplay(slot0)
-	for slot5 = 0, 3 do
-		slot6 = slot0.rtShieldDic[uv0[(table.indexof(uv0, slot0.statusMark) - 1 + slot5) % 4 + 1]]
+function var_0_0.UpdateShieldDisplay(arg_9_0)
+	local var_9_0 = table.indexof(var_0_1, arg_9_0.statusMark)
 
-		eachChild(slot6, function (slot0)
-			setActive(slot0, false)
+	for iter_9_0 = 0, 3 do
+		local var_9_1 = arg_9_0.rtShieldDic[var_0_1[(var_9_0 - 1 + iter_9_0) % 4 + 1]]
+
+		eachChild(var_9_1, function(arg_10_0)
+			setActive(arg_10_0, false)
 		end)
-		setImageAlpha(slot6, 1)
-		setActive(slot6, slot0.shieldCount[slot5 + 1] > 0)
+		setImageAlpha(var_9_1, 1)
+		setActive(var_9_1, arg_9_0.shieldCount[iter_9_0 + 1] > 0)
 	end
 end
 
-return slot0
+return var_0_0

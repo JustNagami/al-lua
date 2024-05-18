@@ -1,71 +1,77 @@
-ys = ys or {}
-slot0 = class("SeqCenter")
-ys.SeqCenter = slot0
-slot0._list = nil
-slot0._destroyed = false
+﻿ys = ys or {}
 
-function slot0.Ctor(slot0, slot1)
-	slot0._list = ys.LinkList.New()
+local var_0_0 = class("SeqCenter")
+
+ys.SeqCenter = var_0_0
+var_0_0._list = nil
+var_0_0._destroyed = false
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._list = ys.LinkList.New()
 end
 
-function slot0.NewSeq(slot0, slot1)
-	return ys.Sequence.New(slot1, slot0)
+function var_0_0.NewSeq(arg_2_0, arg_2_1)
+	return ys.Sequence.New(arg_2_1, arg_2_0)
 end
 
-function slot0.AddSeq(slot0, slot1)
-	slot0._list:AddLast(slot1)
+function var_0_0.AddSeq(arg_3_0, arg_3_1)
+	arg_3_0._list:AddLast(arg_3_1)
 end
 
-function slot0.Update(slot0)
-	if slot0._destroyed then
+function var_0_0.Update(arg_4_0)
+	if arg_4_0._destroyed then
 		return
 	end
 
-	slot1 = slot0._list.Head
+	local var_4_0 = arg_4_0._list.Head
 
-	while slot1 ~= nil do
-		slot1.Data:Update()
+	while var_4_0 ~= nil do
+		local var_4_1 = var_4_0.Data
 
-		if slot0._destroyed then
+		var_4_1:Update()
+
+		if arg_4_0._destroyed then
 			return
 		end
 
-		if slot2:IsFinish() then
-			slot1 = slot1.Next
+		if var_4_1:IsFinish() then
+			local var_4_2 = var_4_0
 
-			slot0._list:Remove(slot1)
+			var_4_0 = var_4_0.Next
+
+			arg_4_0._list:Remove(var_4_2)
 		else
-			slot1 = slot1.Next
+			var_4_0 = var_4_0.Next
 		end
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot1 = slot0._list.Head
+function var_0_0.Dispose(arg_5_0)
+	local var_5_0 = arg_5_0._list.Head
 
-	for slot5 = 1, slot0._list.Count do
-		slot1.Data.Dispose()
+	for iter_5_0 = 1, arg_5_0._list.Count do
+		var_5_0.Data.Dispose()
 
-		slot1 = slot1.Next
+		var_5_0 = var_5_0.Next
 	end
 
-	slot0._list = nil
-	slot0._destroyed = true
+	arg_5_0._list = nil
+	arg_5_0._destroyed = true
 end
 
-function slot0.IsFinish(slot0)
-	if slot0._list == nil then
+function var_0_0.IsFinish(arg_6_0)
+	if arg_6_0._list == nil then
 		return true
 	end
 
-	slot1 = slot0._list.Head
+	local var_6_0 = arg_6_0._list.Head
 
-	for slot5 = 1, slot0._list.Count do
-		if not slot1.Data:IsFinish() then
+	for iter_6_0 = 1, arg_6_0._list.Count do
+		if not var_6_0.Data:IsFinish() then
 			return false
 		end
 
-		slot1 = slot1.Next
+		var_6_0 = var_6_0.Next
 	end
 
 	return true

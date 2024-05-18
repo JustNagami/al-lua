@@ -1,91 +1,94 @@
-slot0 = class("MonopolyPtMediator", import("view.base.ContextMediator"))
-slot0.ON_START = "MonopolyGame:ON_START"
-slot0.ON_MOVE = "MonopolyGame:ON_MOVE"
-slot0.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
-slot0.ON_AWARD = "MonopolyGame:ON_AWARD"
-slot0.MONOPOLY_OP_LAST = "MonopolyGame:MONOPOLY_OP_LAST"
-slot0.ON_STOP = "MonopolyGame:MONOPOLY_ON_STOP"
-slot0.AWARDS = {}
+﻿local var_0_0 = class("MonopolyPtMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(MonopolyPtMediator.ON_STOP, function (slot0, slot1, slot2)
-		if not uv0.viewComponent.autoFlag and #MonopolyPtMediator.AWARDS > 0 then
-			uv0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, slot2)
+var_0_0.ON_START = "MonopolyGame:ON_START"
+var_0_0.ON_MOVE = "MonopolyGame:ON_MOVE"
+var_0_0.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
+var_0_0.ON_AWARD = "MonopolyGame:ON_AWARD"
+var_0_0.MONOPOLY_OP_LAST = "MonopolyGame:MONOPOLY_OP_LAST"
+var_0_0.ON_STOP = "MonopolyGame:MONOPOLY_ON_STOP"
+var_0_0.AWARDS = {}
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(MonopolyPtMediator.ON_STOP, function(arg_2_0, arg_2_1, arg_2_2)
+		if not arg_1_0.viewComponent.autoFlag and #MonopolyPtMediator.AWARDS > 0 then
+			arg_1_0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, arg_2_2)
 
 			MonopolyPtMediator.AWARDS = {}
 		end
 	end)
-	slot0:bind(MonopolyPtMediator.MONOPOLY_OP_LAST, function (slot0, slot1, slot2)
+	arg_1_0:bind(MonopolyPtMediator.MONOPOLY_OP_LAST, function(arg_3_0, arg_3_1, arg_3_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_3_1,
 			cmd = ActivityConst.MONOPOLY_OP_LAST,
-			callback = slot2
+			callback = arg_3_2
 		})
 	end)
-	slot0:bind(MonopolyPtMediator.ON_START, function (slot0, slot1, slot2)
+	arg_1_0:bind(MonopolyPtMediator.ON_START, function(arg_4_0, arg_4_1, arg_4_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_4_1,
 			cmd = ActivityConst.MONOPOLY_OP_THROW,
-			callback = slot2
+			callback = arg_4_2
 		})
 	end)
-	slot0:bind(MonopolyPtMediator.ON_MOVE, function (slot0, slot1, slot2)
+	arg_1_0:bind(MonopolyPtMediator.ON_MOVE, function(arg_5_0, arg_5_1, arg_5_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_5_1,
 			cmd = ActivityConst.MONOPOLY_OP_MOVE,
-			callback = slot2
+			callback = arg_5_2
 		})
 	end)
-	slot0:bind(MonopolyPtMediator.ON_TRIGGER, function (slot0, slot1, slot2)
+	arg_1_0:bind(MonopolyPtMediator.ON_TRIGGER, function(arg_6_0, arg_6_1, arg_6_2)
 		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
-			activity_id = slot1,
+			activity_id = arg_6_1,
 			cmd = ActivityConst.MONOPOLY_OP_TRIGGER,
-			callback = slot2
+			callback = arg_6_2
 		})
 	end)
-	slot0:bind(MonopolyPtMediator.ON_AWARD, function (slot0)
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.REDPACKEY)
+	arg_1_0:bind(MonopolyPtMediator.ON_AWARD, function(arg_7_0)
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.REDPACKEY)
 	end)
 
-	slot0._configId = slot0.contextData.configId
-	slot0._activityId = slot0.contextData.activityId
-	slot0._activity = getProxy(ActivityProxy):getActivityById(slot0._activityId)
+	arg_1_0._configId = arg_1_0.contextData.configId
+	arg_1_0._activityId = arg_1_0.contextData.activityId
+	arg_1_0._activity = getProxy(ActivityProxy):getActivityById(arg_1_0._activityId)
 
-	slot0.viewComponent:firstUpdata(slot0._activity)
+	arg_1_0.viewComponent:firstUpdata(arg_1_0._activity)
 
-	if not slot0.viewComponent.autoFlag and #MonopolyPtMediator.AWARDS > 0 then
-		slot0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, function ()
+	if not arg_1_0.viewComponent.autoFlag and #MonopolyPtMediator.AWARDS > 0 then
+		arg_1_0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, function()
+			return
 		end)
 
 		MonopolyPtMediator.AWARDS = {}
 	end
 end
 
-function slot0.getLeftRpCount()
-	slot0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+function var_0_0.getLeftRpCount()
+	local var_9_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
+	local var_9_1 = var_9_0.data2_list[2]
 
-	return slot0.data2_list[1] - slot0.data2_list[2]
+	return var_9_0.data2_list[1] - var_9_1
 end
 
-function slot0.onAward(slot0, slot1, slot2)
-	for slot6 = 1, #slot1 do
-		table.insert(MonopolyPtMediator.AWARDS, slot1[slot6])
+function var_0_0.onAward(arg_10_0, arg_10_1, arg_10_2)
+	for iter_10_0 = 1, #arg_10_1 do
+		table.insert(MonopolyPtMediator.AWARDS, arg_10_1[iter_10_0])
 	end
 
-	if slot0.viewComponent.autoFlag then
-		slot0.viewComponent:addAwards(slot1)
+	if arg_10_0.viewComponent.autoFlag then
+		arg_10_0.viewComponent:addAwards(arg_10_1)
 
-		if slot2 then
-			slot2()
+		if arg_10_2 then
+			arg_10_2()
 		end
 	else
-		slot0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, slot2)
+		arg_10_0:emit(BaseUI.ON_ACHIEVE, MonopolyPtMediator.AWARDS, arg_10_2)
 
 		MonopolyPtMediator.AWARDS = {}
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_11_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityProxy.ACTIVITY_ADDED,
@@ -93,35 +96,36 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-	slot4 = slot1:getType()
+function var_0_0.handleNotification(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1:getName()
+	local var_12_1 = arg_12_1:getBody()
+	local var_12_2 = arg_12_1:getType()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED or slot2 == ActivityProxy.ACTIVITY_ADDED then
-		slot0:updateGameUI()
-	elseif slot2 == GAME.MONOPOLY_AWARD_DONE then
-		if slot0._activity:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MONOPOLY and slot0.viewComponent.onAward then
-			slot0.viewComponent:onAward(slot3.awards, slot3.callback)
+	if var_12_0 == ActivityProxy.ACTIVITY_UPDATED or var_12_0 == ActivityProxy.ACTIVITY_ADDED then
+		arg_12_0:updateGameUI()
+	elseif var_12_0 == GAME.MONOPOLY_AWARD_DONE then
+		if arg_12_0._activity:getConfig("type") == ActivityConst.ACTIVITY_TYPE_MONOPOLY and arg_12_0.viewComponent.onAward then
+			arg_12_0.viewComponent:onAward(var_12_1.awards, var_12_1.callback)
 		else
-			slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+			arg_12_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_12_1.awards, var_12_1.callback)
 		end
 	end
 end
 
-function slot0.updateGameUI(slot0)
-	if not slot0._activityId then
+function var_0_0.updateGameUI(arg_13_0)
+	if not arg_13_0._activityId then
 		return
 	end
 
-	slot0._activity = getProxy(ActivityProxy):getActivityById(slot0._activityId)
+	arg_13_0._activity = getProxy(ActivityProxy):getActivityById(arg_13_0._activityId)
 
-	slot0.viewComponent:updataActivity(slot0._activity)
+	arg_13_0.viewComponent:updataActivity(arg_13_0._activity)
 end
 
-function slot0.remove(slot0)
-	if slot0.viewComponent then
+function var_0_0.remove(arg_14_0)
+	if arg_14_0.viewComponent then
 		MonopolyPtMediator.AWARDS = {}
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,127 +1,128 @@
-slot0 = class("WSTimer", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSTimer", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	tweens = "table",
 	inMapTimers = "table",
 	timers = "table",
 	inMapTweens = "table"
 }
-slot0.Listeners = {}
+var_0_0.Listeners = {}
 
-function slot0.Setup(slot0)
-	slot0.inMapTimers = {}
-	slot0.timers = {}
-	slot0.inMapTweens = {}
-	slot0.tweens = {}
+function var_0_0.Setup(arg_1_0)
+	arg_1_0.inMapTimers = {}
+	arg_1_0.timers = {}
+	arg_1_0.inMapTweens = {}
+	arg_1_0.tweens = {}
 end
 
-function slot0.Dispose(slot0)
-	slot0:ClearInMapTweens()
-	slot0:ClearInMapTimers()
-	slot0:ClearTweens()
-	slot0:ClearTimers()
-	slot0:Clear()
+function var_0_0.Dispose(arg_2_0)
+	arg_2_0:ClearInMapTweens()
+	arg_2_0:ClearInMapTimers()
+	arg_2_0:ClearTweens()
+	arg_2_0:ClearTimers()
+	arg_2_0:Clear()
 end
 
-function slot0.AddInMapTimer(slot0, slot1, slot2, slot3, slot4)
-	slot5 = Timer.New(slot1, slot2, slot3, slot4)
+function var_0_0.AddInMapTimer(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	local var_3_0 = Timer.New(arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
-	table.insert(slot0.inMapTimers, slot5)
+	table.insert(arg_3_0.inMapTimers, var_3_0)
 
-	return slot5
+	return var_3_0
 end
 
-function slot0.RemoveInMapTimer(slot0, slot1)
-	slot1:Stop()
+function var_0_0.RemoveInMapTimer(arg_4_0, arg_4_1)
+	arg_4_1:Stop()
 
-	for slot5, slot6 in ipairs(slot0.inMapTimers) do
-		if slot6 == slot1 then
-			table.remove(slot0.inMapTimers, slot5)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.inMapTimers) do
+		if iter_4_1 == arg_4_1 then
+			table.remove(arg_4_0.inMapTimers, iter_4_0)
 		end
 	end
 end
 
-function slot0.ClearInMapTimers(slot0)
-	for slot4, slot5 in ipairs(slot0.inMapTimers) do
-		slot5:Stop()
+function var_0_0.ClearInMapTimers(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.inMapTimers) do
+		iter_5_1:Stop()
 	end
 
-	slot0.inMapTimers = {}
+	arg_5_0.inMapTimers = {}
 end
 
-function slot0.AddTimer(slot0, slot1, slot2, slot3, slot4)
-	slot5 = Timer.New(slot1, slot2, slot3, slot4)
+function var_0_0.AddTimer(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+	local var_6_0 = Timer.New(arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 
-	table.insert(slot0.timers, slot5)
+	table.insert(arg_6_0.timers, var_6_0)
 
-	return slot5
+	return var_6_0
 end
 
-function slot0.RemoveTimer(slot0, slot1)
-	slot1:Stop()
+function var_0_0.RemoveTimer(arg_7_0, arg_7_1)
+	arg_7_1:Stop()
 
-	for slot5, slot6 in ipairs(slot0.timers) do
-		if slot6 == slot1 then
-			table.remove(slot0.timers, slot5)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.timers) do
+		if iter_7_1 == arg_7_1 then
+			table.remove(arg_7_0.timers, iter_7_0)
 		end
 	end
 end
 
-function slot0.ClearTimers(slot0)
-	for slot4, slot5 in ipairs(slot0.timers) do
-		slot5:Stop()
+function var_0_0.ClearTimers(arg_8_0)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.timers) do
+		iter_8_1:Stop()
 	end
 
-	slot0.timers = {}
+	arg_8_0.timers = {}
 end
 
-function slot0.AddInMapTween(slot0, slot1)
-	assert(slot1 and type(slot1) == "number")
-	table.insert(slot0.inMapTweens, slot1)
+function var_0_0.AddInMapTween(arg_9_0, arg_9_1)
+	assert(arg_9_1 and type(arg_9_1) == "number")
+	table.insert(arg_9_0.inMapTweens, arg_9_1)
 end
 
-function slot0.RemoveInMapTween(slot0, slot1)
-	assert(slot1 and type(slot1) == "number")
-	LeanTween.cancel(slot1)
+function var_0_0.RemoveInMapTween(arg_10_0, arg_10_1)
+	assert(arg_10_1 and type(arg_10_1) == "number")
+	LeanTween.cancel(arg_10_1)
 
-	for slot5, slot6 in ipairs(slot0.inMapTweens) do
-		if slot6 == slot1 then
-			table.remove(slot0.inMapTweens, slot5)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.inMapTweens) do
+		if iter_10_1 == arg_10_1 then
+			table.remove(arg_10_0.inMapTweens, iter_10_0)
 
 			break
 		end
 	end
 end
 
-function slot0.ClearInMapTweens(slot0)
-	for slot4, slot5 in ipairs(slot0.inMapTweens) do
-		LeanTween.cancel(slot5)
+function var_0_0.ClearInMapTweens(arg_11_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.inMapTweens) do
+		LeanTween.cancel(iter_11_1)
 	end
 
-	slot0.inMapTweens = {}
+	arg_11_0.inMapTweens = {}
 end
 
-function slot0.AddTween(slot0, slot1)
-	assert(slot1 and type(slot1) == "number")
-	table.insert(slot0.tweens, slot1)
+function var_0_0.AddTween(arg_12_0, arg_12_1)
+	assert(arg_12_1 and type(arg_12_1) == "number")
+	table.insert(arg_12_0.tweens, arg_12_1)
 end
 
-function slot0.RemoveTween(slot0, slot1)
-	assert(slot1 and type(slot1) == "number")
-	LeanTween.cancel(slot1)
+function var_0_0.RemoveTween(arg_13_0, arg_13_1)
+	assert(arg_13_1 and type(arg_13_1) == "number")
+	LeanTween.cancel(arg_13_1)
 
-	for slot5, slot6 in ipairs(slot0.tweens) do
-		if slot6 == slot1 then
-			table.remove(slot0.tweens, slot5)
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.tweens) do
+		if iter_13_1 == arg_13_1 then
+			table.remove(arg_13_0.tweens, iter_13_0)
 		end
 	end
 end
 
-function slot0.ClearTweens(slot0)
-	for slot4, slot5 in ipairs(slot0.tweens) do
-		LeanTween.cancel(slot5)
+function var_0_0.ClearTweens(arg_14_0)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.tweens) do
+		LeanTween.cancel(iter_14_1)
 	end
 
-	slot0.tweens = {}
+	arg_14_0.tweens = {}
 end
 
-return slot0
+return var_0_0

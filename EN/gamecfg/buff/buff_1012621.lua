@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "盾牌",
 	time = 12,
@@ -35,10 +35,10 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(2.5, -1.8, 0.5)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}
@@ -69,13 +69,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
+				centerPosFun = function(arg_3_0)
+					local var_3_0 = arg_3_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST
 
-					return Vector3(math.sin(slot1) * 5, -1.5, math.cos(slot1) * 3.5)
+					return Vector3(math.sin(var_3_0) * 5, -1.5, math.cos(var_3_0) * 3.5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
+				rotationFun = function(arg_4_0)
+					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 90, 0)
 				end
 			}
 		},

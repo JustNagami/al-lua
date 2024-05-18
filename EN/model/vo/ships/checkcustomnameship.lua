@@ -1,11 +1,11 @@
-slot0 = class("CheckCustomNameShip", import("model.vo.Ship"))
+﻿local var_0_0 = class("CheckCustomNameShip", import("model.vo.Ship"))
 
-function slot0.getName(slot0)
+function var_0_0.getName(arg_1_0)
 	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then
-		return slot0:GetDefaultName()
+		return arg_1_0:GetDefaultName()
 	else
-		return uv0.super.getName(slot0)
+		return var_0_0.super.getName(arg_1_0)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,108 +1,117 @@
-slot0 = class("WSAtlasOverall", import(".WSAtlas"))
-slot0.windowSize = Vector2(1747, 776)
-slot0.Fields = {
+﻿local var_0_0 = class("WSAtlasOverall", import(".WSAtlas"))
+
+var_0_0.windowSize = Vector2(1747, 776)
+var_0_0.Fields = {
 	tfMarkScene = "userdata",
 	tfActiveMarkRect = "userdata"
 }
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onUpdateActiveEntrance = "OnUpdateActiveEntrance"
 }
 
-function slot0.Dispose(slot0)
-	if slot0.tfActiveMarkRect then
-		slot0:RemoveExtraMarkPrefab(slot0.tfActiveMarkRect)
-		Destroy(slot0.tfActiveMarkRect)
+function var_0_0.Dispose(arg_1_0)
+	if arg_1_0.tfActiveMarkRect then
+		arg_1_0:RemoveExtraMarkPrefab(arg_1_0.tfActiveMarkRect)
+		Destroy(arg_1_0.tfActiveMarkRect)
 	end
 
-	slot0:RemoveExtraMarkPrefab(slot0.tfMarkScene)
-	uv0.super.Dispose(slot0)
+	arg_1_0:RemoveExtraMarkPrefab(arg_1_0.tfMarkScene)
+	var_0_0.super.Dispose(arg_1_0)
 end
 
-function slot0.LoadScene(slot0, slot1)
-	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "worldoverview", LoadSceneMode.Additive, function (slot0, slot1)
-		uv0.transform = tf(slot0:GetRootGameObjects()[0])
+function var_0_0.LoadScene(arg_2_0, arg_2_1)
+	SceneOpMgr.Inst:LoadSceneAsync("scenes/worldoverview", "worldoverview", LoadSceneMode.Additive, function(arg_3_0, arg_3_1)
+		arg_2_0.transform = tf(arg_3_0:GetRootGameObjects()[0])
 
-		setActive(uv0.transform, false)
+		setActive(arg_2_0.transform, false)
 
-		uv0.tfEntity = uv0.transform:Find("entity")
-		uv0.tfMapScene = uv0.tfEntity:Find("map_scene")
-		uv0.tfMapSelect = uv0.tfMapScene:Find("selected_layer")
-		uv0.tfSpriteScene = uv0.tfEntity:Find("sprite_scene")
-		uv0.tfMarkScene = uv0.tfEntity:Find("mark_scene")
-		uv0.defaultSprite = uv0.tfEntity:Find("decolation_layer/edge"):GetComponent("SpriteRenderer").material
-		uv0.addSprite = uv0.tfEntity:Find("map_scene/mask_layer"):GetComponent("SpriteRenderer").material
+		arg_2_0.tfEntity = arg_2_0.transform:Find("entity")
+		arg_2_0.tfMapScene = arg_2_0.tfEntity:Find("map_scene")
+		arg_2_0.tfMapSelect = arg_2_0.tfMapScene:Find("selected_layer")
+		arg_2_0.tfSpriteScene = arg_2_0.tfEntity:Find("sprite_scene")
+		arg_2_0.tfMarkScene = arg_2_0.tfEntity:Find("mark_scene")
+		arg_2_0.defaultSprite = arg_2_0.tfEntity:Find("decolation_layer/edge"):GetComponent("SpriteRenderer").material
+		arg_2_0.addSprite = arg_2_0.tfEntity:Find("map_scene/mask_layer"):GetComponent("SpriteRenderer").material
 
-		uv0:UpdateCenterEffectDisplay()
-		uv0:BuildActiveMark()
+		arg_2_0:UpdateCenterEffectDisplay()
+		arg_2_0:BuildActiveMark()
 
-		uv0.cmPointer = uv0.tfEntity:Find("Plane"):GetComponent(typeof(PointerInfo))
-		slot2 = nowWorld()
+		arg_2_0.cmPointer = arg_2_0.tfEntity:Find("Plane"):GetComponent(typeof(PointerInfo))
 
-		uv0.cmPointer:AddColorMaskClickListener(function (slot0, slot1)
-			if uv0:ColorToEntrance(slot0) then
-				uv1.onClickColor(slot2, slot1.position)
+		local var_3_0 = nowWorld()
+
+		arg_2_0.cmPointer:AddColorMaskClickListener(function(arg_4_0, arg_4_1)
+			local var_4_0 = var_3_0:ColorToEntrance(arg_4_0)
+
+			if var_4_0 then
+				arg_2_0.onClickColor(var_4_0, arg_4_1.position)
 			end
 		end)
 
-		uv0.tfCamera = uv0.transform:Find("Main Camera")
+		arg_2_0.tfCamera = arg_2_0.transform:Find("Main Camera")
 
-		CameraFittingSettin(uv0.tfCamera)
+		CameraFittingSettin(arg_2_0.tfCamera)
 
-		return existCall(uv1)
+		return existCall(arg_2_1)
 	end)
 end
 
-function slot0.ReturnScene(slot0)
-	if slot0.tfEntity then
+function var_0_0.ReturnScene(arg_5_0)
+	if arg_5_0.tfEntity then
 		SceneOpMgr.Inst:UnloadSceneAsync("scenes/worldoverview", "worldoverview")
 
-		slot0.cmPointer = nil
+		arg_5_0.cmPointer = nil
 	end
 end
 
-function slot0.BuildActiveMark(slot0)
-	uv0.super.BuildActiveMark(slot0)
-	slot0:DoUpdatExtraMark(slot0.tfActiveMark, "overview_player", true)
+function var_0_0.BuildActiveMark(arg_6_0)
+	var_0_0.super.BuildActiveMark(arg_6_0)
+	arg_6_0:DoUpdatExtraMark(arg_6_0.tfActiveMark, "overview_player", true)
 
-	slot0.tfActiveMarkRect = tf(GameObject.New())
-	slot0.tfActiveMarkRect.gameObject.layer = Layer.UI
-	slot0.tfActiveMarkRect.name = "active_mark_rect"
+	arg_6_0.tfActiveMarkRect = tf(GameObject.New())
+	arg_6_0.tfActiveMarkRect.gameObject.layer = Layer.UI
+	arg_6_0.tfActiveMarkRect.name = "active_mark_rect"
 
-	slot0.tfActiveMarkRect:SetParent(slot0.tfSpriteScene, false)
-	setActive(slot0.tfActiveMarkRect, false)
-	slot0:DoUpdatExtraMark(slot0.tfActiveMarkRect, "overview_player_rect", true)
+	arg_6_0.tfActiveMarkRect:SetParent(arg_6_0.tfSpriteScene, false)
+	setActive(arg_6_0.tfActiveMarkRect, false)
+	arg_6_0:DoUpdatExtraMark(arg_6_0.tfActiveMarkRect, "overview_player_rect", true)
 end
 
-function slot0.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
-	uv0.super.OnUpdateActiveEntrance(slot0, slot1, slot2, slot3)
+function var_0_0.OnUpdateActiveEntrance(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	var_0_0.super.OnUpdateActiveEntrance(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 
-	if slot3 then
-		slot0.tfActiveMarkRect.localPosition = slot0.tfActiveMark.localPosition
+	if arg_7_3 then
+		arg_7_0.tfActiveMarkRect.localPosition = arg_7_0.tfActiveMark.localPosition
 	end
 
-	setActive(slot0.tfActiveMarkRect, slot3)
+	setActive(arg_7_0.tfActiveMarkRect, arg_7_3)
 end
 
-function slot0.UpdateStaticMark(slot0, slot1, slot2)
-	slot0:RemoveExtraMarkPrefab(slot0.tfMarkScene)
+function var_0_0.UpdateStaticMark(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0:RemoveExtraMarkPrefab(arg_8_0.tfMarkScene)
 
-	for slot6, slot7 in pairs(slot1 or {}) do
-		if slot7 then
-			if slot0.atlas:GetEntrance(slot6):HasPort() and slot2[1] or slot2[2] then
-				slot0:LoadExtraMarkPrefab(slot0.tfMarkScene, slot9, function (slot0)
-					tf(slot0).localPosition = WorldConst.CalcModelPosition(uv0, uv1.spriteBaseSize)
+	for iter_8_0, iter_8_1 in pairs(arg_8_1 or {}) do
+		if iter_8_1 then
+			local var_8_0 = arg_8_0.atlas:GetEntrance(iter_8_0)
+			local var_8_1 = var_8_0:HasPort() and arg_8_2[1] or arg_8_2[2]
+
+			if var_8_1 then
+				arg_8_0:LoadExtraMarkPrefab(arg_8_0.tfMarkScene, var_8_1, function(arg_9_0)
+					tf(arg_9_0).localPosition = WorldConst.CalcModelPosition(var_8_0, arg_8_0.spriteBaseSize)
 				end)
 			end
 		end
 	end
 
-	uv0.super.UpdateStaticMark(slot0, slot1)
+	var_0_0.super.UpdateStaticMark(arg_8_0, arg_8_1)
 end
 
-function slot0.UpdateTargetEntrance(slot0, slot1)
-	slot2 = slot0.atlas:GetEntrance(slot1)
-	slot3 = slot0.atlas:GetActiveEntrance()
-	slot0.tfActiveMark.localEulerAngles = Vector3(0, calcPositionAngle(slot2.config.area_pos[1] - slot3.config.area_pos[1], slot2.config.area_pos[2] - slot3.config.area_pos[2]), 0)
+function var_0_0.UpdateTargetEntrance(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0.atlas:GetEntrance(arg_10_1)
+	local var_10_1 = arg_10_0.atlas:GetActiveEntrance()
+	local var_10_2 = calcPositionAngle(var_10_0.config.area_pos[1] - var_10_1.config.area_pos[1], var_10_0.config.area_pos[2] - var_10_1.config.area_pos[2])
+
+	arg_10_0.tfActiveMark.localEulerAngles = Vector3(0, var_10_2, 0)
 end
 
-return slot0
+return var_0_0

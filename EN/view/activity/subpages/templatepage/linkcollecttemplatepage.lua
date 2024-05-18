@@ -1,55 +1,56 @@
-slot0 = class("LinkCollectTemplatePage", import("view.base.BaseActivityPage"))
-slot0.DropType2Name = {
+﻿local var_0_0 = class("LinkCollectTemplatePage", import("view.base.BaseActivityPage"))
+
+var_0_0.DropType2Name = {
 	[DROP_TYPE_EQUIP] = "equip",
 	[DROP_TYPE_FURNITURE] = "furniture",
 	[DROP_TYPE_EQUIPMENT_SKIN] = "equip_skin",
 	[DROP_TYPE_SPWEAPON] = "special_weapon"
 }
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.btnList = slot0:findTF("btn_list", slot0.bg)
-	slot0.itemPanel = slot0:findTF("item_panel", slot0.bg)
-	slot0.togglesTF = slot0:findTF("toggles", slot0.itemPanel)
-	slot0.content = slot0:findTF("item_list/content", slot0.itemPanel)
-	slot0.itemList = UIItemList.New(slot0.content, slot0:findTF("tpl", slot0.content))
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.btnList = arg_1_0:findTF("btn_list", arg_1_0.bg)
+	arg_1_0.itemPanel = arg_1_0:findTF("item_panel", arg_1_0.bg)
+	arg_1_0.togglesTF = arg_1_0:findTF("toggles", arg_1_0.itemPanel)
+	arg_1_0.content = arg_1_0:findTF("item_list/content", arg_1_0.itemPanel)
+	arg_1_0.itemList = UIItemList.New(arg_1_0.content, arg_1_0:findTF("tpl", arg_1_0.content))
 
-	setText(slot0:findTF("tpl/owner/title", slot0.content), i18n("collect_page_got"))
+	setText(arg_1_0:findTF("tpl/owner/title", arg_1_0.content), i18n("collect_page_got"))
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.guideConfig = pg.activity_limit_item_guide
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.guideConfig = pg.activity_limit_item_guide
 
-	slot0:BuildDatas()
+	arg_2_0:BuildDatas()
 end
 
-function slot0.BuildDatas(slot0)
-	slot1 = pg.activity_limit_item_guide.get_id_list_by_activity[slot0.activity.id]
-	slot5 = slot0.activity.id
+function var_0_0.BuildDatas(arg_3_0)
+	local var_3_0 = pg.activity_limit_item_guide.get_id_list_by_activity[arg_3_0.activity.id]
 
-	assert(slot1, "activity_limit_item_guide not exist activity id: " .. slot5)
+	assert(var_3_0, "activity_limit_item_guide not exist activity id: " .. arg_3_0.activity.id)
 
-	slot0.dataList = {}
+	arg_3_0.dataList = {}
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = {
-			id = slot6
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
+		local var_3_1 = {
+			id = iter_3_1
 		}
-		slot7.config = slot0.guideConfig[slot7.id]
-		slot7.count = slot0.activity:getKVPList(1, slot7.id)
 
-		if slot7.config.count_storage == 1 then
-			slot7.count = Drop.New({
-				type = slot7.config.type,
-				id = slot7.config.drop_id
+		var_3_1.config = arg_3_0.guideConfig[var_3_1.id]
+		var_3_1.count = arg_3_0.activity:getKVPList(1, var_3_1.id)
+
+		if var_3_1.config.count_storage == 1 then
+			var_3_1.count = Drop.New({
+				type = var_3_1.config.type,
+				id = var_3_1.config.drop_id
 			}):getOwnedCount()
 		end
 
-		table.insert(slot0.dataList, slot7)
+		table.insert(arg_3_0.dataList, var_3_1)
 	end
 end
 
-function slot0.GetTogglesDropTypes(slot0)
+function var_0_0.GetTogglesDropTypes(arg_4_0)
 	return {
 		DROP_TYPE_EQUIP,
 		DROP_TYPE_FURNITURE,
@@ -58,145 +59,149 @@ function slot0.GetTogglesDropTypes(slot0)
 	}
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.itemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:OnUpdateItem(slot1, slot2)
+function var_0_0.OnFirstFlush(arg_5_0)
+	arg_5_0.itemList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_5_0:OnUpdateItem(arg_6_1, arg_6_2)
 		end
 	end)
-	slot0:AddTogglesListener()
-	slot0:AddSpecialBtnListener()
+	arg_5_0:AddTogglesListener()
+	arg_5_0:AddSpecialBtnListener()
 
-	slot0.curPage = slot0.curPage or slot0:GetTogglesDropTypes()[1]
+	arg_5_0.curPage = arg_5_0.curPage or arg_5_0:GetTogglesDropTypes()[1]
 
-	triggerToggle(slot0.toggles[slot0.curPage], true)
+	triggerToggle(arg_5_0.toggles[arg_5_0.curPage], true)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0:BuildDatas()
-	slot0:UpdatePage(slot0.curPage)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	arg_7_0:BuildDatas()
+	arg_7_0:UpdatePage(arg_7_0.curPage)
 end
 
-function slot0.AddTogglesListener(slot0)
-	slot0.toggles = {}
+function var_0_0.AddTogglesListener(arg_8_0)
+	arg_8_0.toggles = {}
 
-	assert(#slot0:GetTogglesDropTypes() == slot0.togglesTF.childCount, "dropType数量与togglesTF子节点数不匹配")
+	local var_8_0 = arg_8_0:GetTogglesDropTypes()
 
-	for slot5, slot6 in ipairs(slot1) do
-		slot7 = slot0:findTF(uv0.DropType2Name[slot6], slot0.togglesTF)
+	assert(#var_8_0 == arg_8_0.togglesTF.childCount, "dropType数量与togglesTF子节点数不匹配")
 
-		onToggle(slot0, slot7, function (slot0)
-			if slot0 then
-				uv0:UpdatePage(uv1)
+	for iter_8_0, iter_8_1 in ipairs(var_8_0) do
+		local var_8_1 = arg_8_0:findTF(var_0_0.DropType2Name[iter_8_1], arg_8_0.togglesTF)
+
+		onToggle(arg_8_0, var_8_1, function(arg_9_0)
+			if arg_9_0 then
+				arg_8_0:UpdatePage(iter_8_1)
 			end
 		end, SFX_PANEL)
 
-		slot0.toggles[slot6] = slot7
+		arg_8_0.toggles[iter_8_1] = var_8_1
 	end
 end
 
-function slot0.AddSpecialBtnListener(slot0)
-	slot1 = slot0.activity:getConfig("config_client")
-	slot0.furnitureThemeBtn = slot0:findTF("furniture_theme", slot0.btnList)
+function var_0_0.AddSpecialBtnListener(arg_10_0)
+	local var_10_0 = arg_10_0.activity:getConfig("config_client")
 
-	if slot0.furnitureThemeBtn and slot1.furniture_theme_link then
-		onButton(slot0, slot0.furnitureThemeBtn, function ()
-			uv0:DoSkip(uv1.furniture_theme_link[1], uv1.furniture_theme_link[2])
+	arg_10_0.furnitureThemeBtn = arg_10_0:findTF("furniture_theme", arg_10_0.btnList)
+
+	if arg_10_0.furnitureThemeBtn and var_10_0.furniture_theme_link then
+		onButton(arg_10_0, arg_10_0.furnitureThemeBtn, function()
+			arg_10_0:DoSkip(var_10_0.furniture_theme_link[1], var_10_0.furniture_theme_link[2])
 		end, SFX_PANEL)
 	end
 
-	slot0.medalBtn = slot0:findTF("medal", slot0.btnList)
+	arg_10_0.medalBtn = arg_10_0:findTF("medal", arg_10_0.btnList)
 
-	if slot0.medalBtn and slot1.medal_link then
-		onButton(slot0, slot0.medalBtn, function ()
-			uv0:DoSkip(uv1.medal_link[1], uv1.medal_link[2])
+	if arg_10_0.medalBtn and var_10_0.medal_link then
+		onButton(arg_10_0, arg_10_0.medalBtn, function()
+			arg_10_0:DoSkip(var_10_0.medal_link[1], var_10_0.medal_link[2])
 		end, SFX_PANEL)
 	end
 
-	slot0.equipSkinBoxBtn = slot0:findTF("equip_skin_box", slot0.btnList)
+	arg_10_0.equipSkinBoxBtn = arg_10_0:findTF("equip_skin_box", arg_10_0.btnList)
 
-	if slot0.equipSkinBoxBtn and slot1.equipskin_box_link then
-		slot2 = Drop.New({
-			type = slot1.equipskin_box_link.drop_type,
-			id = slot1.equipskin_box_link.drop_id
+	if arg_10_0.equipSkinBoxBtn and var_10_0.equipskin_box_link then
+		local var_10_1 = Drop.New({
+			type = var_10_0.equipskin_box_link.drop_type,
+			id = var_10_0.equipskin_box_link.drop_id
 		}):getOwnedCount()
 
-		onButton(slot0, slot0.equipSkinBoxBtn, function ()
+		onButton(arg_10_0, arg_10_0.equipSkinBoxBtn, function()
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_LIKN_COLLECT_GUIDE,
 				show_type = Msgbox4LinkCollectGuide.SHOW_TYPE_NORMAL,
-				drop_type = uv0.equipskin_box_link.drop_type,
-				drop_id = uv0.equipskin_box_link.drop_id,
-				count = uv1,
-				skipable_list = uv0.equipskin_box_link.list
+				drop_type = var_10_0.equipskin_box_link.drop_type,
+				drop_id = var_10_0.equipskin_box_link.drop_id,
+				count = var_10_1,
+				skipable_list = var_10_0.equipskin_box_link.list
 			})
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.showDataList[slot1 + 1]
-	slot4 = slot0:findTF("icon_mask/icon", slot2)
+function var_0_0.OnUpdateItem(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = arg_14_0.showDataList[arg_14_1 + 1]
+	local var_14_1 = arg_14_0:findTF("icon_mask/icon", arg_14_2)
+	local var_14_2 = {
+		type = var_14_0.config.type,
+		id = var_14_0.config.drop_id
+	}
 
-	updateDrop(slot4, {
-		type = slot3.config.type,
-		id = slot3.config.drop_id
-	})
-	onButton(slot0, slot4, function ()
+	updateDrop(var_14_1, var_14_2)
+	onButton(arg_14_0, var_14_1, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_LIKN_COLLECT_GUIDE,
 			show_type = Msgbox4LinkCollectGuide.SHOW_TYPE_LIMIT,
-			drop_type = uv0.config.type,
-			drop_id = uv0.config.drop_id,
-			count = uv0.count,
-			count_limit = uv0.config.count,
-			skipable_list = uv0.config.link_params
+			drop_type = var_14_0.config.type,
+			drop_id = var_14_0.config.drop_id,
+			count = var_14_0.count,
+			count_limit = var_14_0.config.count,
+			skipable_list = var_14_0.config.link_params
 		})
 	end, SFX_PANEL)
-	changeToScrollText(slot0:findTF("name_mask/name", slot2), Drop.New({
-		type = slot3.config.type,
-		id = slot3.config.drop_id
+	changeToScrollText(arg_14_0:findTF("name_mask/name", arg_14_2), Drop.New({
+		type = var_14_0.config.type,
+		id = var_14_0.config.drop_id
 	}):getName())
-	setText(slot0:findTF("owner/number", slot2), slot3.count .. "/" .. slot3.config.count)
+	setText(arg_14_0:findTF("owner/number", arg_14_2), var_14_0.count .. "/" .. var_14_0.config.count)
 
-	GetOrAddComponent(slot0:findTF("owner", slot2), typeof(CanvasGroup)).alpha = slot3.count == slot3.config.count and 0.5 or 1
+	GetOrAddComponent(arg_14_0:findTF("owner", arg_14_2), typeof(CanvasGroup)).alpha = var_14_0.count == var_14_0.config.count and 0.5 or 1
 
-	setActive(slot0:findTF("got", slot2), slot3.count == slot3.config.count)
-	setActive(slot0:findTF("new", slot2), slot3.config.is_new == "1")
+	setActive(arg_14_0:findTF("got", arg_14_2), var_14_0.count == var_14_0.config.count)
+	setActive(arg_14_0:findTF("new", arg_14_2), var_14_0.config.is_new == "1")
 end
 
-function slot0.UpdatePage(slot0, slot1)
-	slot0.curPage = slot1
-	slot0.showDataList = {}
+function var_0_0.UpdatePage(arg_16_0, arg_16_1)
+	arg_16_0.curPage = arg_16_1
+	arg_16_0.showDataList = {}
 
-	for slot5, slot6 in ipairs(slot0.dataList) do
-		if slot0.guideConfig[slot6.id].type == slot1 then
-			table.insert(slot0.showDataList, slot6)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.dataList) do
+		if arg_16_0.guideConfig[iter_16_1.id].type == arg_16_1 then
+			table.insert(arg_16_0.showDataList, iter_16_1)
 		end
 	end
 
-	table.sort(slot0.showDataList, CompareFuncs({
-		function (slot0)
-			return slot0.count < slot0.config.count and 0 or 1
+	table.sort(arg_16_0.showDataList, CompareFuncs({
+		function(arg_17_0)
+			return arg_17_0.count < arg_17_0.config.count and 0 or 1
 		end,
-		function (slot0)
-			return slot0.config.order
+		function(arg_18_0)
+			return arg_18_0.config.order
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_19_0)
+			return arg_19_0.id
 		end
 	}))
-	slot0.itemList:align(#slot0.showDataList)
+	arg_16_0.itemList:align(#arg_16_0.showDataList)
 end
 
-function slot0.DoSkip(slot0, slot1, slot2)
-	if slot1 == 2 then
-		pg.m02:sendNotification(GAME.GO_SCENE, slot2[1], slot2[2] or {})
-	elseif slot1 == 3 then
+function var_0_0.DoSkip(arg_20_0, arg_20_1, arg_20_2)
+	if arg_20_1 == 2 then
+		pg.m02:sendNotification(GAME.GO_SCENE, arg_20_2[1], arg_20_2[2] or {})
+	elseif arg_20_1 == 3 then
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = slot2
+			id = arg_20_2
 		})
 	end
 end
 
-return slot0
+return var_0_0

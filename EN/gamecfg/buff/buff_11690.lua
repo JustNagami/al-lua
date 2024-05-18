@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "湖之都的蛮牛",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 11690,
-	icon = 11690,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCancelBuff",
@@ -43,5 +22,26 @@ return {
 				time = 1
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "湖之都的蛮牛",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 11690,
+	icon = 11690,
+	last_effect = ""
 }

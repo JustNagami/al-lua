@@ -1,810 +1,929 @@
-slot0 = class("BeachGuardSceneMgr")
+﻿local var_0_0 = class("BeachGuardSceneMgr")
 
-function slot1(slot0, slot1, slot2)
-	slot3 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._charTpl = uv1
-			slot0._event = uv2
-			slot0.chars = {}
-			slot0.charPool = {}
-			slot0.gridChars = {}
-			slot0.enemys = {}
-			slot0.enemysPool = {}
-			slot0.content = findTF(slot0._tf, "sceneContainer/scene/content")
+local function var_0_1(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = {
+		Ctor = function(arg_2_0)
+			arg_2_0._tf = arg_1_0
+			arg_2_0._charTpl = arg_1_1
+			arg_2_0._event = arg_1_2
+			arg_2_0.chars = {}
+			arg_2_0.charPool = {}
+			arg_2_0.gridChars = {}
+			arg_2_0.enemys = {}
+			arg_2_0.enemysPool = {}
+			arg_2_0.content = findTF(arg_2_0._tf, "sceneContainer/scene/content")
 		end,
-		changeRecycles = function (slot0, slot1)
-			slot0.recycle = slot1
+		changeRecycles = function(arg_3_0, arg_3_1)
+			arg_3_0.recycle = arg_3_1
 
-			for slot5 = #slot0.chars, 1, -1 do
-				slot0.chars[slot5]:setRecycleFlag(slot1)
+			for iter_3_0 = #arg_3_0.chars, 1, -1 do
+				arg_3_0.chars[iter_3_0]:setRecycleFlag(arg_3_1)
 			end
 		end,
-		setGridChar = function (slot0, slot1, slot2)
-			slot4 = slot0:createChar(slot1)
+		setGridChar = function(arg_4_0, arg_4_1, arg_4_2)
+			local var_4_0 = arg_4_2:getPos()
+			local var_4_1 = arg_4_0:createChar(arg_4_1)
+			local var_4_2 = arg_4_0.content:InverseTransformPoint(var_4_0.position)
 
-			slot4:prepareData()
-			slot4:setParent(slot0.content, true, slot0.content:InverseTransformPoint(slot2:getPos().position))
-			slot4:setLineIndex(slot2:getLineIndex())
-			slot4:setGridIndex(slot2:getIndex())
-			slot4:setCamp(1)
-			slot4:setRaycast(true)
-			table.insert(slot0.chars, slot4)
+			var_4_1:prepareData()
+			var_4_1:setParent(arg_4_0.content, true, var_4_2)
+			var_4_1:setLineIndex(arg_4_2:getLineIndex())
+			var_4_1:setGridIndex(arg_4_2:getIndex())
+			var_4_1:setCamp(1)
+			var_4_1:setRaycast(true)
+			table.insert(arg_4_0.chars, var_4_1)
 
-			return slot4
+			return var_4_1
 		end,
-		createChar = function (slot0, slot1)
-			return slot0:getCharFromPool(slot1) or BeachGuardChar.New(tf(instantiate(slot0._charTpl)), BeachGuardConst.chars[slot1], slot0._event)
+		createChar = function(arg_5_0, arg_5_1)
+			local var_5_0 = arg_5_0:getCharFromPool(arg_5_1)
+
+			if not var_5_0 then
+				local var_5_1 = BeachGuardConst.chars[arg_5_1]
+
+				var_5_0 = BeachGuardChar.New(tf(instantiate(arg_5_0._charTpl)), var_5_1, arg_5_0._event)
+			end
+
+			return var_5_0
 		end,
-		getCharFromPool = function (slot0, slot1)
-			for slot5 = #slot0.charPool, 1, -1 do
-				if slot0.charPool[slot5]:getId() == slot1 then
-					return table.remove(slot0.charPool, slot5)
+		getCharFromPool = function(arg_6_0, arg_6_1)
+			for iter_6_0 = #arg_6_0.charPool, 1, -1 do
+				if arg_6_0.charPool[iter_6_0]:getId() == arg_6_1 then
+					return table.remove(arg_6_0.charPool, iter_6_0)
 				end
 			end
 
 			return nil
 		end,
-		removeChar = function (slot0, slot1)
-			for slot5 = #slot0.chars, 1, -1 do
-				if slot0.chars[slot5] == slot1 then
-					slot6 = table.remove(slot0.chars, slot5)
+		removeChar = function(arg_7_0, arg_7_1)
+			for iter_7_0 = #arg_7_0.chars, 1, -1 do
+				if arg_7_0.chars[iter_7_0] == arg_7_1 then
+					local var_7_0 = table.remove(arg_7_0.chars, iter_7_0)
 
-					slot6:clear()
-					table.insert(slot0.charPool, slot6)
-				elseif slot0.chars[slot5]:getTarget() == slot1 then
-					slot0.chars[slot5]:setTarget(nil)
+					var_7_0:clear()
+					table.insert(arg_7_0.charPool, var_7_0)
+				elseif arg_7_0.chars[iter_7_0]:getTarget() == arg_7_1 then
+					arg_7_0.chars[iter_7_0]:setTarget(nil)
 				end
 			end
 
-			for slot5 = #slot0.enemys, 1, -1 do
-				if slot0.enemys[slot5] == slot1 then
-					slot6 = table.remove(slot0.enemys, slot5)
+			for iter_7_1 = #arg_7_0.enemys, 1, -1 do
+				if arg_7_0.enemys[iter_7_1] == arg_7_1 then
+					local var_7_1 = table.remove(arg_7_0.enemys, iter_7_1)
 
-					slot6:clear()
-					table.insert(slot0.charPool, slot6)
-				elseif slot0.enemys[slot5]:getTarget() == slot1 then
-					slot0.enemys[slot5]:setTarget(nil)
+					var_7_1:clear()
+					table.insert(arg_7_0.charPool, var_7_1)
+				elseif arg_7_0.enemys[iter_7_1]:getTarget() == arg_7_1 then
+					arg_7_0.enemys[iter_7_1]:setTarget(nil)
 				end
 			end
 		end,
-		clear = function (slot0)
-			for slot4 = #slot0.chars, 1, -1 do
-				slot5 = table.remove(slot0.chars, slot4)
+		clear = function(arg_8_0)
+			for iter_8_0 = #arg_8_0.chars, 1, -1 do
+				local var_8_0 = table.remove(arg_8_0.chars, iter_8_0)
 
-				slot5:clear()
-				table.insert(slot0.charPool, slot5)
+				var_8_0:clear()
+				table.insert(arg_8_0.charPool, var_8_0)
 			end
 
-			for slot4 = #slot0.enemys, 1, -1 do
-				slot5 = table.remove(slot0.enemys, slot4)
+			for iter_8_1 = #arg_8_0.enemys, 1, -1 do
+				local var_8_1 = table.remove(arg_8_0.enemys, iter_8_1)
 
-				slot5:clear()
-				table.insert(slot0.charPool, slot5)
+				var_8_1:clear()
+				table.insert(arg_8_0.charPool, var_8_1)
 			end
 		end,
-		start = function (slot0)
-			for slot4 = #slot0.chars, 1, -1 do
-				slot0.chars[slot4]:start()
+		start = function(arg_9_0)
+			for iter_9_0 = #arg_9_0.chars, 1, -1 do
+				arg_9_0.chars[iter_9_0]:start()
 			end
 
-			slot0.recycle = false
+			arg_9_0.recycle = false
 		end,
-		step = function (slot0, slot1)
-			for slot5 = #slot0.chars, 1, -1 do
-				slot0.chars[slot5]:step(slot1)
+		step = function(arg_10_0, arg_10_1)
+			for iter_10_0 = #arg_10_0.chars, 1, -1 do
+				arg_10_0.chars[iter_10_0]:step(arg_10_1)
 			end
 
-			for slot5 = #slot0.enemys, 1, -1 do
-				slot0.enemys[slot5]:step(slot1)
+			for iter_10_1 = #arg_10_0.enemys, 1, -1 do
+				arg_10_0.enemys[iter_10_1]:step(arg_10_1)
 			end
 
-			slot0.enemyOver = false
+			arg_10_0.enemyOver = false
 
-			for slot5 = #slot0.enemys, 1, -1 do
-				if not slot0.enemys[slot5]:getTarget() then
-					for slot15, slot16 in ipairs(slot0:getCharLine(slot6:getLineIndex())) do
-						if slot16:checkCollider(slot6:getPointWorld(), slot6:getPos()) then
-							if false then
-								-- Nothing
-							end
+			for iter_10_2 = #arg_10_0.enemys, 1, -1 do
+				local var_10_0 = arg_10_0.enemys[iter_10_2]
 
-							slot11 = true
+				if not var_10_0:getTarget() then
+					local var_10_1 = var_10_0:getLineIndex()
+					local var_10_2 = var_10_0:getPointWorld()
+					local var_10_3 = var_10_0:getPos()
+					local var_10_4 = arg_10_0:getCharLine(var_10_1)
+					local var_10_5 = false
 
-							slot6:setTarget(slot16)
+					for iter_10_3, iter_10_4 in ipairs(var_10_4) do
+						if iter_10_4:checkCollider(var_10_2, var_10_3) and (not var_10_5 or true) then
+							var_10_5 = true
+
+							var_10_0:setTarget(iter_10_4)
 						end
 					end
 				end
 
-				if slot6:getPos().x < BeachGuardConst.enemy_over_width then
-					slot0.enemyOver = true
+				if var_10_0:getPos().x < BeachGuardConst.enemy_over_width then
+					arg_10_0.enemyOver = true
 				end
 			end
 
-			for slot5 = 1, #slot0.chars do
-				slot6 = slot0.chars[slot5]
-				slot12 = slot6
+			for iter_10_5 = 1, #arg_10_0.chars do
+				local var_10_6 = arg_10_0.chars[iter_10_5]
+				local var_10_7 = var_10_6:getSkillDistance() * BeachGuardConst.part_width
+				local var_10_8 = arg_10_0:getCanHitChar(var_10_6:getLineIndex(), var_10_6:getCamp())
 
-				for slot12, slot13 in ipairs(slot0:getCanHitChar(slot6:getLineIndex(), slot6.getCamp(slot12))) do
-					if slot13:getPos().x - slot6:getPos().x > 0 and slot14 < slot6:getSkillDistance() * BeachGuardConst.part_width then
-						slot6:setTarget(slot13)
+				for iter_10_6, iter_10_7 in ipairs(var_10_8) do
+					local var_10_9 = iter_10_7:getPos().x - var_10_6:getPos().x
+
+					if var_10_9 > 0 and var_10_9 < var_10_7 then
+						var_10_6:setTarget(iter_10_7)
 					end
 				end
 			end
 
-			slot0:sortChar()
+			arg_10_0:sortChar()
 		end,
-		stop = function (slot0)
-			for slot4 = #slot0.chars, 1, -1 do
-				slot0.chars[slot4]:stop()
+		stop = function(arg_11_0)
+			for iter_11_0 = #arg_11_0.chars, 1, -1 do
+				arg_11_0.chars[iter_11_0]:stop()
 			end
 		end,
-		getLineCampChars = function (slot0, slot1, slot2)
-			slot3 = {}
-			slot4 = {}
+		getLineCampChars = function(arg_12_0, arg_12_1, arg_12_2)
+			local var_12_0 = {}
+			local var_12_1 = {}
 
-			if slot2 == 1 then
-				slot4 = slot0.chars
-			elseif slot2 == 2 then
-				slot4 = slot0.enemys
+			if arg_12_2 == 1 then
+				var_12_1 = arg_12_0.chars
+			elseif arg_12_2 == 2 then
+				var_12_1 = arg_12_0.enemys
 			end
 
-			for slot8 = 1, #slot4 do
-				if table.contains(slot1, slot4[slot8]:getLineIndex()) then
-					table.insert(slot3, slot9)
+			for iter_12_0 = 1, #var_12_1 do
+				local var_12_2 = var_12_1[iter_12_0]
+
+				if table.contains(arg_12_1, var_12_2:getLineIndex()) then
+					table.insert(var_12_0, var_12_2)
 				end
 			end
 
-			return slot3
+			return var_12_0
 		end,
-		getCharByCamp = function (slot0, slot1)
-			slot2 = {}
+		getCharByCamp = function(arg_13_0, arg_13_1)
+			local var_13_0 = {}
 
-			if slot1 == 1 then
-				slot2 = slot0.chars
-			elseif slot1 == 2 then
-				slot2 = slot0.enemys
+			if arg_13_1 == 1 then
+				var_13_0 = arg_13_0.chars
+			elseif arg_13_1 == 2 then
+				var_13_0 = arg_13_0.enemys
 			end
 
-			return slot2
+			return var_13_0
 		end,
-		getEnemyOver = function (slot0)
-			return slot0.enemyOver
+		getEnemyOver = function(arg_14_0)
+			return arg_14_0.enemyOver
 		end,
-		getCanHitChar = function (slot0, slot1, slot2)
-			slot3 = {}
-			slot4 = {}
+		getCanHitChar = function(arg_15_0, arg_15_1, arg_15_2)
+			local var_15_0 = {}
+			local var_15_1 = {}
 
-			if slot2 == 1 then
-				slot4 = slot0.enemys
-			elseif slot2 == 2 then
-				slot4 = slot0.chars
+			if arg_15_2 == 1 then
+				var_15_1 = arg_15_0.enemys
+			elseif arg_15_2 == 2 then
+				var_15_1 = arg_15_0.chars
 			end
 
-			for slot8 = 1, #slot4 do
-				if slot4[slot8]:getLineIndex() == slot1 and slot9:inBulletBound() then
-					table.insert(slot3, slot9)
+			for iter_15_0 = 1, #var_15_1 do
+				local var_15_2 = var_15_1[iter_15_0]
+
+				if var_15_2:getLineIndex() == arg_15_1 and var_15_2:inBulletBound() then
+					table.insert(var_15_0, var_15_2)
 				end
 			end
 
-			return slot3
+			return var_15_0
 		end,
-		getChars = function (slot0)
-			return slot0.chars
+		getChars = function(arg_16_0)
+			return arg_16_0.chars
 		end,
-		getEnemys = function (slot0)
-			return slot0.enemys
+		getEnemys = function(arg_17_0)
+			return arg_17_0.enemys
 		end,
-		getCharLine = function (slot0, slot1)
-			slot2 = {}
+		getCharLine = function(arg_18_0, arg_18_1)
+			local var_18_0 = {}
 
-			for slot6 = 1, #slot0.chars do
-				if slot0.chars[slot6]:getLineIndex() == slot1 then
-					table.insert(slot2, slot7)
+			for iter_18_0 = 1, #arg_18_0.chars do
+				local var_18_1 = arg_18_0.chars[iter_18_0]
+
+				if var_18_1:getLineIndex() == arg_18_1 then
+					table.insert(var_18_0, var_18_1)
 				end
 			end
 
-			return slot2
+			return var_18_0
 		end,
-		addEnemyChar = function (slot0, slot1, slot2)
-			slot4 = slot0:createChar(slot1)
+		addEnemyChar = function(arg_19_0, arg_19_1, arg_19_2)
+			local var_19_0 = arg_19_1
+			local var_19_1 = arg_19_0:createChar(var_19_0)
 
-			slot4:prepareData()
-			slot4:setLineIndex(slot2.index)
+			var_19_1:prepareData()
+			var_19_1:setLineIndex(arg_19_2.index)
 
-			slot5 = slot0.content:InverseTransformPoint(slot2.position)
+			local var_19_2 = arg_19_0.content:InverseTransformPoint(arg_19_2.position)
+			local var_19_3 = math.random(BeachGuardConst.enemy_pos[1], BeachGuardConst.enemy_pos[2])
 
-			slot4:setParent(slot0.content, false, Vector2(math.random(BeachGuardConst.enemy_pos[1], BeachGuardConst.enemy_pos[2]) + slot5.x, slot5.y + BeachGuardConst.enemy_offset_y))
-			slot4:setCamp(2)
-			slot4:setRaycast(false)
-			table.insert(slot0.enemys, slot4)
+			var_19_1:setParent(arg_19_0.content, false, Vector2(var_19_3 + var_19_2.x, var_19_2.y + BeachGuardConst.enemy_offset_y))
+			var_19_1:setCamp(2)
+			var_19_1:setRaycast(false)
+			table.insert(arg_19_0.enemys, var_19_1)
 		end,
-		sortChar = function (slot0)
-			if not slot0.sorts or #slot0.sorts ~= #slot0.chars + #slot0.enemys then
-				slot0.sorts = {}
+		sortChar = function(arg_20_0)
+			local var_20_0 = #arg_20_0.chars + #arg_20_0.enemys
 
-				for slot5 = 1, #slot0.chars do
-					table.insert(slot0.sorts, slot0.chars[slot5])
+			if not arg_20_0.sorts or #arg_20_0.sorts ~= var_20_0 then
+				arg_20_0.sorts = {}
+
+				for iter_20_0 = 1, #arg_20_0.chars do
+					table.insert(arg_20_0.sorts, arg_20_0.chars[iter_20_0])
 				end
 
-				for slot5 = 1, #slot0.enemys do
-					table.insert(slot0.sorts, slot0.enemys[slot5])
+				for iter_20_1 = 1, #arg_20_0.enemys do
+					table.insert(arg_20_0.sorts, arg_20_0.enemys[iter_20_1])
 				end
 
-				table.sort(slot0.sorts, function (slot0, slot1)
-					if slot1:getPos().y < slot0:getPos().y then
+				table.sort(arg_20_0.sorts, function(arg_21_0, arg_21_1)
+					local var_21_0 = arg_21_0:getPos()
+					local var_21_1 = arg_21_1:getPos()
+
+					if var_21_0.y > var_21_1.y then
 						return true
-					elseif slot2.y < slot3.y then
+					elseif var_21_0.y < var_21_1.y then
 						return false
 					end
 
-					if slot3.x < slot2.x then
+					if var_21_0.x > var_21_1.x then
 						return true
-					elseif slot2.x < slot3.x then
+					elseif var_21_0.x < var_21_1.x then
 						return false
 					end
 				end)
 
-				for slot5 = 1, #slot0.sorts do
-					slot0.sorts[slot5]:SetSiblingIndex(slot5)
+				for iter_20_2 = 1, #arg_20_0.sorts do
+					arg_20_0.sorts[iter_20_2]:SetSiblingIndex(iter_20_2)
 				end
 			end
 		end
 	}
 
-	slot3:Ctor()
+	var_1_0:Ctor()
 
-	return slot3
+	return var_1_0
 end
 
-function slot2(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.lineTpl = findTF(slot0._tf, "sceneContainer/scene/classes/lineTpl")
-			slot0.gridTpl = findTF(slot0._tf, "sceneContainer/scene/classes/gridTpl")
-			slot0.lines = {}
-			slot0.content = findTF(slot0._tf, "sceneContainer/scene/content")
+local function var_0_2(arg_22_0, arg_22_1)
+	local var_22_0 = {
+		Ctor = function(arg_23_0)
+			arg_23_0._tf = arg_22_0
+			arg_23_0._event = arg_22_1
+			arg_23_0.lineTpl = findTF(arg_23_0._tf, "sceneContainer/scene/classes/lineTpl")
+			arg_23_0.gridTpl = findTF(arg_23_0._tf, "sceneContainer/scene/classes/gridTpl")
+			arg_23_0.lines = {}
+			arg_23_0.content = findTF(arg_23_0._tf, "sceneContainer/scene/content")
 
-			for slot4 = 1, BeachGuardConst.line_num do
-				slot6 = tf(instantiate(slot0.lineTpl))
-				slot6.anchoredPosition = Vector2(0, 0)
+			for iter_23_0 = 1, BeachGuardConst.line_num do
+				local var_23_0 = findTF(arg_23_0._tf, "sceneContainer/scene/linePos/" .. iter_23_0)
+				local var_23_1 = tf(instantiate(arg_23_0.lineTpl))
 
-				setParent(slot6, findTF(slot0._tf, "sceneContainer/scene/linePos/" .. slot4))
+				var_23_1.anchoredPosition = Vector2(0, 0)
 
-				slot7 = BeachGuardLine.New(slot6, slot0.gridTpl, slot0._event)
+				setParent(var_23_1, var_23_0)
 
-				slot7:setIndex(slot4)
-				table.insert(slot0.lines, slot7)
+				local var_23_2 = BeachGuardLine.New(var_23_1, arg_23_0.gridTpl, arg_23_0._event)
+
+				var_23_2:setIndex(iter_23_0)
+				table.insert(arg_23_0.lines, var_23_2)
 			end
 		end,
-		setMapData = function (slot0, slot1)
-			slot0.activeLines = {}
+		setMapData = function(arg_24_0, arg_24_1)
+			local var_24_0 = arg_24_1.line
 
-			for slot6 = 1, #slot0.lines do
-				if table.contains(slot1.line, slot0.lines[slot6]:getIndex()) then
-					slot7:active(true)
-					table.insert(slot0.activeLines, slot7)
+			arg_24_0.activeLines = {}
+
+			for iter_24_0 = 1, #arg_24_0.lines do
+				local var_24_1 = arg_24_0.lines[iter_24_0]
+
+				if table.contains(var_24_0, var_24_1:getIndex()) then
+					var_24_1:active(true)
+					table.insert(arg_24_0.activeLines, var_24_1)
 				else
-					slot7:active(false)
+					var_24_1:active(false)
 				end
 			end
 		end,
-		getGridByIndex = function (slot0, slot1, slot2)
-			for slot6 = 1, #slot0.activeLines do
-				if slot0.activeLines[slot6]:getIndex() == slot1 then
-					return slot7:getGridByIndex(slot2)
+		getGridByIndex = function(arg_25_0, arg_25_1, arg_25_2)
+			for iter_25_0 = 1, #arg_25_0.activeLines do
+				local var_25_0 = arg_25_0.activeLines[iter_25_0]
+
+				if var_25_0:getIndex() == arg_25_1 then
+					return var_25_0:getGridByIndex(arg_25_2)
 				end
 			end
 
 			return nil
 		end,
-		setDrag = function (slot0, slot1)
-			slot0.dragData = slot1
+		setDrag = function(arg_26_0, arg_26_1)
+			arg_26_0.dragData = arg_26_1
 		end,
-		start = function (slot0)
-			for slot4 = 1, #slot0.lines do
-				slot5 = slot0.lines[slot4]:start()
+		start = function(arg_27_0)
+			for iter_27_0 = 1, #arg_27_0.lines do
+				local var_27_0 = arg_27_0.lines[iter_27_0]:start()
 			end
 		end,
-		step = function (slot0, slot1)
-			for slot5 = 1, #slot0.lines do
-				slot6 = slot0.lines[slot5]:step(slot1)
+		step = function(arg_28_0, arg_28_1)
+			for iter_28_0 = 1, #arg_28_0.lines do
+				local var_28_0 = arg_28_0.lines[iter_28_0]:step(arg_28_1)
 			end
 		end,
-		clear = function (slot0)
-			slot0:clearPre()
+		clear = function(arg_29_0)
+			arg_29_0:clearPre()
 
-			for slot4 = 1, #slot0.lines do
-				slot0.lines[slot4]:clear()
+			for iter_29_0 = 1, #arg_29_0.lines do
+				arg_29_0.lines[iter_29_0]:clear()
 			end
 		end,
-		onTimer = function (slot0)
-			if not slot0.dragData then
+		onTimer = function(arg_30_0)
+			if not arg_30_0.dragData then
 				return
 			end
 
-			if slot0.dragData.flag ~= true or not slot0.dragData.pos then
-				if slot0.preCharGrid then
-					slot0._event:emit(BeachGuardGameView.PULL_CHAR, {
-						card_id = slot0.preCardID,
-						line_index = slot0.preCharGrid:getLineIndex(),
-						grid_index = slot0.preCharGrid:getIndex()
+			if arg_30_0.dragData.flag ~= true or not arg_30_0.dragData.pos then
+				if arg_30_0.preCharGrid then
+					arg_30_0._event:emit(BeachGuardGameView.PULL_CHAR, {
+						card_id = arg_30_0.preCardID,
+						line_index = arg_30_0.preCharGrid:getLineIndex(),
+						grid_index = arg_30_0.preCharGrid:getIndex()
 					})
 				end
 
-				slot0:clearPre()
+				arg_30_0:clearPre()
 
 				return
 			end
 
-			if slot0:getGridByWorld(slot0.dragData.pos) and slot2:isEmpty() then
-				slot3 = slot0.dragData.config
-				slot4 = slot3.char_id
-				slot5 = slot3.id
+			local var_30_0 = arg_30_0.dragData.pos
+			local var_30_1 = arg_30_0:getGridByWorld(var_30_0)
 
-				if slot0.preCharGrid == slot2 and slot0.preCardID == slot5 then
+			if var_30_1 and var_30_1:isEmpty() then
+				local var_30_2 = arg_30_0.dragData.config
+				local var_30_3 = var_30_2.char_id
+				local var_30_4 = var_30_2.id
+
+				if arg_30_0.preCharGrid == var_30_1 and arg_30_0.preCardID == var_30_4 then
 					return
 				end
 
-				slot0:clearPre()
+				arg_30_0:clearPre()
 
-				slot0.preCharGrid = slot2
-				slot0.preCardID = slot5
+				arg_30_0.preCharGrid = var_30_1
+				arg_30_0.preCardID = var_30_4
 
-				slot0.preCharGrid:prechar(slot4)
+				arg_30_0.preCharGrid:prechar(var_30_3)
 
-				if slot0.preCharGrid:getLineIndex() and slot0.preCharGrid:getIndex() then
-					for slot12 = 1, BeachGuardConst.chars[slot4].distance do
-						if slot0:getGridByIndex(slot6, slot7 + slot12) then
-							slot13:preDistance()
-							table.insert(slot0.preDistanceGrids, slot13)
+				local var_30_5 = arg_30_0.preCharGrid:getLineIndex()
+				local var_30_6 = arg_30_0.preCharGrid:getIndex()
+
+				if var_30_5 and var_30_6 then
+					local var_30_7 = BeachGuardConst.chars[var_30_3].distance
+
+					for iter_30_0 = 1, var_30_7 do
+						local var_30_8 = arg_30_0:getGridByIndex(var_30_5, var_30_6 + iter_30_0)
+
+						if var_30_8 then
+							var_30_8:preDistance()
+							table.insert(arg_30_0.preDistanceGrids, var_30_8)
 						end
 					end
 				end
 			else
-				slot0:clearPre()
+				arg_30_0:clearPre()
 			end
 		end,
-		clearPre = function (slot0)
-			if slot0.preCharGrid then
-				slot0.preCharGrid:unPreChar()
+		clearPre = function(arg_31_0)
+			if arg_31_0.preCharGrid then
+				arg_31_0.preCharGrid:unPreChar()
 
-				slot0.preCharGrid = nil
+				arg_31_0.preCharGrid = nil
 			end
 
-			if slot0.preDistanceGrids and #slot0.preDistanceGrids > 0 then
-				for slot4 = 1, #slot0.preDistanceGrids do
-					slot0.preDistanceGrids[slot4]:unPreDistance()
+			if arg_31_0.preDistanceGrids and #arg_31_0.preDistanceGrids > 0 then
+				for iter_31_0 = 1, #arg_31_0.preDistanceGrids do
+					arg_31_0.preDistanceGrids[iter_31_0]:unPreDistance()
 				end
 			end
 
-			slot0.preDistanceGrids = {}
+			arg_31_0.preDistanceGrids = {}
 		end,
-		removeGridChar = function (slot0, slot1)
-			if slot0:getGridByChar(slot1) then
-				slot2:removeChar()
+		removeGridChar = function(arg_32_0, arg_32_1)
+			local var_32_0 = arg_32_0:getGridByChar(arg_32_1)
+
+			if var_32_0 then
+				var_32_0:removeChar()
 
 				return true
 			end
 		end,
-		getGridByWorld = function (slot0, slot1)
-			for slot5 = 1, #slot0.activeLines do
-				if slot0.activeLines[slot5]:getGridWorld(slot1) then
-					return slot6
+		getGridByWorld = function(arg_33_0, arg_33_1)
+			for iter_33_0 = 1, #arg_33_0.activeLines do
+				local var_33_0 = arg_33_0.activeLines[iter_33_0]:getGridWorld(arg_33_1)
+
+				if var_33_0 then
+					return var_33_0
 				end
 			end
 
 			return nil
 		end,
-		getGridByChar = function (slot0, slot1)
-			for slot5 = 1, #slot0.lines do
-				for slot10, slot11 in ipairs(slot0.lines[slot5]:getGrids()) do
-					if slot11:getChar() == slot1 then
-						return slot11
+		getGridByChar = function(arg_34_0, arg_34_1)
+			for iter_34_0 = 1, #arg_34_0.lines do
+				local var_34_0 = arg_34_0.lines[iter_34_0]:getGrids()
+
+				for iter_34_1, iter_34_2 in ipairs(var_34_0) do
+					if iter_34_2:getChar() == arg_34_1 then
+						return iter_34_2
 					end
 				end
 			end
 
 			return nil
 		end,
-		getAbleLinePos = function (slot0, slot1)
-			slot2 = {}
+		getAbleLinePos = function(arg_35_0, arg_35_1)
+			local var_35_0 = {}
 
-			for slot6 = 1, #slot0.activeLines do
-				if table.contains(slot1, slot0.activeLines[slot6]:getIndex()) then
-					table.insert(slot2, {
-						position = slot0.activeLines[slot6]:getPosition(),
-						index = slot7
+			for iter_35_0 = 1, #arg_35_0.activeLines do
+				local var_35_1 = arg_35_0.activeLines[iter_35_0]:getIndex()
+
+				if table.contains(arg_35_1, var_35_1) then
+					table.insert(var_35_0, {
+						position = arg_35_0.activeLines[iter_35_0]:getPosition(),
+						index = var_35_1
 					})
 				end
 			end
 
-			return slot2[math.random(1, #slot2)]
+			return var_35_0[math.random(1, #var_35_0)]
 		end
 	}
 
-	slot2:Ctor()
+	var_22_0:Ctor()
 
-	return slot2
+	return var_22_0
 end
 
-function slot3(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.content = findTF(slot0._tf, "sceneContainer/scene/content")
-			slot0.bullets = {}
-			slot0.bulletPool = {}
+local function var_0_3(arg_36_0, arg_36_1)
+	local var_36_0 = {
+		Ctor = function(arg_37_0)
+			arg_37_0._tf = arg_36_0
+			arg_37_0._event = arg_36_1
+			arg_37_0.content = findTF(arg_37_0._tf, "sceneContainer/scene/content")
+			arg_37_0.bullets = {}
+			arg_37_0.bulletPool = {}
 		end,
-		useSkill = function (slot0, slot1)
-			if slot1.skill.type == BeachGuardConst.skill_craft then
-				slot0._event:emit(BeachGuardGameView.ADD_CRAFT, {
-					num = slot2.num
+		useSkill = function(arg_38_0, arg_38_1)
+			local var_38_0 = arg_38_1.skill
+
+			if var_38_0.type == BeachGuardConst.skill_craft then
+				arg_38_0._event:emit(BeachGuardGameView.ADD_CRAFT, {
+					num = var_38_0.num
 				})
-			elseif slot2.type == BeachGuardConst.skill_bullet then
-				for slot7, slot8 in ipairs(slot2.bullet_id) do
-					slot0:pullBullet(slot8, slot1)
+			elseif var_38_0.type == BeachGuardConst.skill_bullet then
+				local var_38_1 = var_38_0.bullet_id
+
+				for iter_38_0, iter_38_1 in ipairs(var_38_1) do
+					arg_38_0:pullBullet(iter_38_1, arg_38_1)
 				end
-			elseif slot2.type == BeachGuardConst.skill_melee then
-				slot0._event:emit(BeachGuardGameView.CREATE_CHAR_DAMAGE, {
-					damage = slot1.damage,
-					position = slot1.position,
-					target = slot1.target,
-					useData = slot1
+			elseif var_38_0.type == BeachGuardConst.skill_melee then
+				local var_38_2 = arg_38_1.damage
+				local var_38_3 = arg_38_1.target
+				local var_38_4 = arg_38_1.position
+
+				arg_38_0._event:emit(BeachGuardGameView.CREATE_CHAR_DAMAGE, {
+					damage = var_38_2,
+					position = var_38_4,
+					target = var_38_3,
+					useData = arg_38_1
 				})
 			end
 		end,
-		pullBullet = function (slot0, slot1, slot2)
-			slot3 = slot0:getOrCreateBullet(slot1)
-			slot5 = slot2.distanceVec
-			slot3.tf.anchoredPosition = slot0.content:InverseTransformPoint(slot2.position)
+		pullBullet = function(arg_39_0, arg_39_1, arg_39_2)
+			local var_39_0 = arg_39_0:getOrCreateBullet(arg_39_1)
+			local var_39_1 = arg_39_2.position
+			local var_39_2 = arg_39_2.distanceVec
+			local var_39_3 = var_39_0.config.offset
 
-			if slot3.config.offset then
-				slot3.tf.anchoredPosition = Vector2(slot3.tf.anchoredPosition.x + slot6.x, slot3.tf.anchoredPosition.y + slot6.y)
+			var_39_0.tf.anchoredPosition = arg_39_0.content:InverseTransformPoint(var_39_1)
+
+			if var_39_3 then
+				var_39_0.tf.anchoredPosition = Vector2(var_39_0.tf.anchoredPosition.x + var_39_3.x, var_39_0.tf.anchoredPosition.y + var_39_3.y)
 			end
 
-			setActive(slot3.tf, true)
+			setActive(var_39_0.tf, true)
 
-			slot3.distanceVec = slot5
-			slot3.speed = Vector2(slot3.config.speed[1], slot3.config.speed[2])
-			slot3.direct = slot2.direct
-			slot3.hit = false
-			slot3.useData = slot2
+			var_39_0.distanceVec = var_39_2
+			var_39_0.speed = Vector2(var_39_0.config.speed[1], var_39_0.config.speed[2])
+			var_39_0.direct = arg_39_2.direct
+			var_39_0.hit = false
+			var_39_0.useData = arg_39_2
 
-			if slot3.config.point_able then
-				slot3.life = nil
-			elseif slot3.config.speed_high and slot3.config.speed_high ~= 0 then
-				slot7 = slot2.target:getPos()
-				slot8 = math.random(-10, 5)
-				slot7.x = slot7.x + 5 - math.random() * 15
-				slot9 = slot2.useChar:getPos()
+			if var_39_0.config.point_able then
+				var_39_0.life = nil
+			elseif var_39_0.config.speed_high and var_39_0.config.speed_high ~= 0 then
+				local var_39_4 = arg_39_2.target:getPos()
+				local var_39_5 = math.random(-10, 5)
 
-				if slot7 and slot9 then
-					slot3.life = math.abs(slot7.x - slot9.x) / math.abs(slot3.speed.x)
+				var_39_4.x = var_39_4.x + 5 - math.random() * 15
+
+				local var_39_6 = arg_39_2.useChar:getPos()
+
+				if var_39_4 and var_39_6 then
+					var_39_0.life = math.abs(var_39_4.x - var_39_6.x) / math.abs(var_39_0.speed.x)
 				else
-					slot3.life = math.abs(slot3.distanceVec.x) / math.abs(slot3.speed.x)
+					var_39_0.life = math.abs(var_39_0.distanceVec.x) / math.abs(var_39_0.speed.x)
 				end
 			else
-				slot3.life = math.abs(slot3.distanceVec.x) / math.abs(slot3.speed.x)
+				var_39_0.life = math.abs(var_39_0.distanceVec.x) / math.abs(var_39_0.speed.x)
 			end
 
-			slot3.gravity = 0
+			var_39_0.gravity = 0
 
-			if slot3.config.speed_high and slot3.config.speed_high ~= 0 then
-				slot7 = -(slot3.config.speed_high * 2) / math.pow(slot3.life / 2, 2)
-				slot3.speed.y = math.abs(slot7) * slot3.life / 2
-				slot3.gravity = slot7
+			if var_39_0.config.speed_high and var_39_0.config.speed_high ~= 0 then
+				local var_39_7 = -(var_39_0.config.speed_high * 2) / math.pow(var_39_0.life / 2, 2)
+
+				var_39_0.speed.y = math.abs(var_39_7) * (var_39_0.life / 2)
+				var_39_0.gravity = var_39_7
 			end
 
-			table.insert(slot0.bullets, slot3)
+			table.insert(arg_39_0.bullets, var_39_0)
 		end,
-		getBullets = function (slot0)
-			return slot0.bullets
+		getBullets = function(arg_40_0)
+			return arg_40_0.bullets
 		end,
-		getOrCreateBullet = function (slot0, slot1)
-			if not slot0:getBulletFromPool(slot1) then
-				slot3 = BeachGuardConst.bullet[slot1]
-				slot4 = BeachGuardAsset.getBullet(slot3.name)
+		getOrCreateBullet = function(arg_41_0, arg_41_1)
+			local var_41_0 = arg_41_0:getBulletFromPool(arg_41_1)
 
-				setParent(slot4, slot0.content)
+			if not var_41_0 then
+				local var_41_1 = BeachGuardConst.bullet[arg_41_1]
+				local var_41_2 = BeachGuardAsset.getBullet(var_41_1.name)
 
-				slot2 = {
-					tf = slot4,
-					config = slot3
+				setParent(var_41_2, arg_41_0.content)
+
+				var_41_0 = {
+					tf = var_41_2,
+					config = var_41_1
 				}
 			end
 
-			return slot2
+			return var_41_0
 		end,
-		getBulletFromPool = function (slot0, slot1)
-			for slot5 = #slot0.bulletPool, 1, -1 do
-				if slot0.bulletPool[slot5].config.id == slot1 then
-					return table.remove(slot0.bulletPool, slot5)
+		getBulletFromPool = function(arg_42_0, arg_42_1)
+			for iter_42_0 = #arg_42_0.bulletPool, 1, -1 do
+				if arg_42_0.bulletPool[iter_42_0].config.id == arg_42_1 then
+					return table.remove(arg_42_0.bulletPool, iter_42_0)
 				end
 			end
 
 			return nil
 		end,
-		finishBullet = function (slot0, slot1)
-			slot2 = slot1.config.damage
+		finishBullet = function(arg_43_0, arg_43_1)
+			local var_43_0 = arg_43_1.config.damage
 
-			setActive(slot1.tf, false)
+			setActive(arg_43_1.tf, false)
 
-			slot3 = slot1.tf.anchoredPosition
+			local var_43_1 = arg_43_1.tf.anchoredPosition
 		end,
-		start = function (slot0)
+		start = function(arg_44_0)
+			return
 		end,
-		step = function (slot0, slot1)
-			for slot5 = #slot0.bullets, 1, -1 do
-				slot6 = slot0.bullets[slot5]
-				slot7 = slot6.speed
-				slot8 = slot6.gravity
-				slot6.tf.anchoredPosition = Vector2(slot6.tf.anchoredPosition.x + slot7.x * slot1 * slot6.direct, slot6.tf.anchoredPosition.y + slot7.y * slot1)
-				slot6.speed.y = slot6.speed.y + slot6.gravity * slot1
+		step = function(arg_45_0, arg_45_1)
+			for iter_45_0 = #arg_45_0.bullets, 1, -1 do
+				local var_45_0 = arg_45_0.bullets[iter_45_0]
+				local var_45_1 = var_45_0.speed
+				local var_45_2 = var_45_0.gravity
+				local var_45_3 = var_45_0.direct
 
-				if slot6.life then
-					slot6.life = slot6.life - slot1
+				var_45_0.tf.anchoredPosition = Vector2(var_45_0.tf.anchoredPosition.x + var_45_1.x * arg_45_1 * var_45_3, var_45_0.tf.anchoredPosition.y + var_45_1.y * arg_45_1)
+				var_45_0.speed.y = var_45_0.speed.y + var_45_0.gravity * arg_45_1
 
-					if slot6.life <= 0 then
-						if slot6.config.speed_high and slot6.config.speed_high ~= 0 and not slot6.hit then
-							slot6.useData.target = nil
+				if var_45_0.life then
+					var_45_0.life = var_45_0.life - arg_45_1
 
-							slot0._event:emit(BeachGuardGameView.BULLET_DAMAGE, {
-								damage = slot6.config.damage,
-								position = slot6.tf.position,
-								useData = slot6.useData
+					if var_45_0.life <= 0 then
+						if var_45_0.config.speed_high and var_45_0.config.speed_high ~= 0 and not var_45_0.hit then
+							local var_45_4 = var_45_0.config.damage
+
+							var_45_0.useData.target = nil
+
+							arg_45_0._event:emit(BeachGuardGameView.BULLET_DAMAGE, {
+								damage = var_45_4,
+								position = var_45_0.tf.position,
+								useData = var_45_0.useData
 							})
 						end
 
-						slot10 = table.remove(slot0.bullets, slot5)
+						local var_45_5 = table.remove(arg_45_0.bullets, iter_45_0)
 
-						slot0:finishBullet(slot10)
-						table.insert(slot0.bulletPool, slot10)
-					elseif slot6.hit then
-						slot10 = table.remove(slot0.bullets, slot5)
+						arg_45_0:finishBullet(var_45_5)
+						table.insert(arg_45_0.bulletPool, var_45_5)
+					elseif var_45_0.hit then
+						local var_45_6 = table.remove(arg_45_0.bullets, iter_45_0)
 
-						slot0:finishBullet(slot10)
-						table.insert(slot0.bulletPool, slot10)
+						arg_45_0:finishBullet(var_45_6)
+						table.insert(arg_45_0.bulletPool, var_45_6)
 					end
 				end
 			end
 		end,
-		stop = function (slot0)
+		stop = function(arg_46_0)
+			return
 		end,
-		clear = function (slot0)
-			for slot4 = #slot0.bullets, 1, -1 do
-				slot5 = table.remove(slot0.bullets, slot4)
+		clear = function(arg_47_0)
+			for iter_47_0 = #arg_47_0.bullets, 1, -1 do
+				local var_47_0 = table.remove(arg_47_0.bullets, iter_47_0)
 
-				setActive(slot5.tf, false)
+				setActive(var_47_0.tf, false)
 
-				slot5.distanceVec = nil
+				var_47_0.distanceVec = nil
 
-				table.insert(slot0.bulletPool, slot5)
+				table.insert(arg_47_0.bulletPool, var_47_0)
 			end
 		end
 	}
 
-	slot2:Ctor()
+	var_36_0:Ctor()
 
-	return slot2
+	return var_36_0
 end
 
-function slot4(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
+local function var_0_4(arg_48_0, arg_48_1)
+	local var_48_0 = {
+		Ctor = function(arg_49_0)
+			arg_49_0._tf = arg_48_0
+			arg_49_0._event = arg_48_1
 		end,
-		setData = function (slot0, slot1)
-			slot0._data = slot1
-			slot0._chapterId = slot0._data.id
+		setData = function(arg_50_0, arg_50_1)
+			arg_50_0._data = arg_50_1
+			arg_50_0._chapterId = arg_50_0._data.id
 		end,
-		start = function (slot0)
-			slot0:clear()
+		start = function(arg_51_0)
+			arg_51_0:clear()
 
-			slot0._chapterDatas = Clone(slot0._data.data)
+			arg_51_0._chapterDatas = Clone(arg_51_0._data.data)
 		end,
-		step = function (slot0, slot1)
-			slot0._overTime = slot0._overTime + slot1
+		step = function(arg_52_0, arg_52_1)
+			arg_52_0._overTime = arg_52_0._overTime + arg_52_1
 
-			for slot5 = #slot0._chapterDatas, 1, -1 do
-				if slot0._chapterDatas[slot5].time < slot0._overTime then
-					table.insert(slot0.enemyDatas, slot0:createData(table.remove(slot0._chapterDatas, slot5)))
+			for iter_52_0 = #arg_52_0._chapterDatas, 1, -1 do
+				if arg_52_0._chapterDatas[iter_52_0].time < arg_52_0._overTime then
+					local var_52_0 = arg_52_0:createData(table.remove(arg_52_0._chapterDatas, iter_52_0))
+
+					table.insert(arg_52_0.enemyDatas, var_52_0)
 				end
 			end
 
-			for slot5 = #slot0.enemyDatas, 1, -1 do
-				if slot0.enemyDatas[slot5].loop then
-					slot6.stepTime = slot6.stepTime - slot1
+			for iter_52_1 = #arg_52_0.enemyDatas, 1, -1 do
+				local var_52_1 = arg_52_0.enemyDatas[iter_52_1]
 
-					if slot6.stepTime <= 0 then
-						slot7 = slot6.step
-						slot6.stepTime = math.random() * (slot7[2] - slot7[1]) + slot7[1]
+				if var_52_1.loop then
+					var_52_1.stepTime = var_52_1.stepTime - arg_52_1
 
-						slot0:addEnemyData(slot6)
+					if var_52_1.stepTime <= 0 then
+						local var_52_2 = var_52_1.step
+
+						var_52_1.stepTime = math.random() * (var_52_2[2] - var_52_2[1]) + var_52_2[1]
+
+						arg_52_0:addEnemyData(var_52_1)
 					end
 
-					if slot6.stop < slot0._overTime then
-						table.remove(slot0.enemyDatas, slot5)
+					if arg_52_0._overTime > var_52_1.stop then
+						table.remove(arg_52_0.enemyDatas, iter_52_1)
 					end
 				else
-					slot0:addEnemyData(slot6)
-					table.remove(slot0.enemyDatas, slot5)
+					arg_52_0:addEnemyData(var_52_1)
+					table.remove(arg_52_0.enemyDatas, iter_52_1)
 				end
 			end
 
-			if not slot0.addEnemyTime then
-				slot0.addEnemyTime = 1
+			if not arg_52_0.addEnemyTime then
+				arg_52_0.addEnemyTime = 1
 			end
 
-			slot0.addEnemyTime = slot0.addEnemyTime - slot1
+			arg_52_0.addEnemyTime = arg_52_0.addEnemyTime - arg_52_1
 
-			if #slot0.enemyList > 0 and slot0.addEnemyTime <= 0 then
-				slot0._event:emit(BeachGuardGameView.ADD_ENEMY, table.remove(slot0.enemyList, #slot0.enemyList))
+			if #arg_52_0.enemyList > 0 and arg_52_0.addEnemyTime <= 0 then
+				local var_52_3 = table.remove(arg_52_0.enemyList, #arg_52_0.enemyList)
+
+				arg_52_0._event:emit(BeachGuardGameView.ADD_ENEMY, var_52_3)
 			end
 
-			if #slot0.enemyDatas == 0 and #slot0._chapterDatas == 0 and #slot0.enemyList == 0 then
-				slot0.finishCreate = true
+			if #arg_52_0.enemyDatas == 0 and #arg_52_0._chapterDatas == 0 and #arg_52_0.enemyList == 0 then
+				arg_52_0.finishCreate = true
 			end
 		end,
-		getFinishCreate = function (slot0)
-			return slot0.finishCreate
+		getFinishCreate = function(arg_53_0)
+			return arg_53_0.finishCreate
 		end,
-		createData = function (slot0, slot1)
-			slot3 = slot1.create
-			slot4 = slot1.time
-			slot5 = slot1.stop
-			slot7 = slot1.comming
+		createData = function(arg_54_0, arg_54_1)
+			local var_54_0 = {}
+			local var_54_1 = arg_54_1.create
+			local var_54_2 = arg_54_1.time
+			local var_54_3 = arg_54_1.stop
+			local var_54_4 = arg_54_1.step
+			local var_54_5 = arg_54_1.comming
 
-			if slot1.step then
-				-- Nothing
+			if var_54_4 then
+				var_54_0.loop = true
+				var_54_0.stepTime = 0
 			else
-				slot2.loop = false
+				var_54_0.loop = false
 			end
 
-			return {
-				loop = true,
-				stepTime = 0,
-				create = slot3,
-				time = slot4,
-				stop = slot5,
-				step = slot6,
-				comming = slot7
-			}
+			var_54_0.create = var_54_1
+			var_54_0.time = var_54_2
+			var_54_0.stop = var_54_3
+			var_54_0.step = var_54_4
+			var_54_0.comming = var_54_5
+
+			return var_54_0
 		end,
-		addEnemyData = function (slot0, slot1)
-			slot2 = slot1.create
+		addEnemyData = function(arg_55_0, arg_55_1)
+			local var_55_0 = arg_55_1.create
 
-			if slot1.comming or false then
-				slot1.comming = false
+			if arg_55_1.comming or false then
+				arg_55_1.comming = false
 
-				slot0._event:emit(BeachGuardGameView.ENEMY_COMMING)
+				arg_55_0._event:emit(BeachGuardGameView.ENEMY_COMMING)
 			end
 
-			for slot8 = 1, BeachGuardConst.create_enemy[slot2].num do
-				table.insert(slot0.enemyList, {
-					id = slot4.enemy[math.random(1, #slot4.enemy)],
-					lines = slot4.line
+			local var_55_1 = BeachGuardConst.create_enemy[var_55_0]
+
+			for iter_55_0 = 1, var_55_1.num do
+				local var_55_2 = var_55_1.enemy[math.random(1, #var_55_1.enemy)]
+				local var_55_3 = var_55_1.line
+
+				table.insert(arg_55_0.enemyList, {
+					id = var_55_2,
+					lines = var_55_3
 				})
 			end
 		end,
-		stop = function (slot0)
+		stop = function(arg_56_0)
+			return
 		end,
-		clear = function (slot0)
-			slot0._overTime = 0
-			slot0._chapterDatas = {}
-			slot0.enemyDatas = {}
-			slot0.enemyList = {}
-			slot0.finishCreate = false
+		clear = function(arg_57_0)
+			arg_57_0._overTime = 0
+			arg_57_0._chapterDatas = {}
+			arg_57_0.enemyDatas = {}
+			arg_57_0.enemyList = {}
+			arg_57_0.finishCreate = false
 		end
 	}
 
-	slot2:Ctor()
+	var_48_0:Ctor()
 
-	return slot2
+	return var_48_0
 end
 
-function slot5(slot0, slot1)
-	slot2 = {
-		Ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._event = uv1
-			slot0.effectBackTf = findTF(slot0._tf, "sceneContainer/scene/effect_back")
-			slot0.effectFrontTf = findTF(slot0._tf, "sceneContainer/scene/effect_front")
-			slot0.content = findTF(slot0._tf, "sceneContainer/scene/content")
-			slot0.effects = {}
-			slot0.effectPool = {}
+local function var_0_5(arg_58_0, arg_58_1)
+	local var_58_0 = {
+		Ctor = function(arg_59_0)
+			arg_59_0._tf = arg_58_0
+			arg_59_0._event = arg_58_1
+			arg_59_0.effectBackTf = findTF(arg_59_0._tf, "sceneContainer/scene/effect_back")
+			arg_59_0.effectFrontTf = findTF(arg_59_0._tf, "sceneContainer/scene/effect_front")
+			arg_59_0.content = findTF(arg_59_0._tf, "sceneContainer/scene/content")
+			arg_59_0.effects = {}
+			arg_59_0.effectPool = {}
 		end,
-		setCharCtrl = function (slot0, slot1)
-			slot0.charCtrl = slot1
+		setCharCtrl = function(arg_60_0, arg_60_1)
+			arg_60_0.charCtrl = arg_60_1
 		end,
-		setSkillCtrl = function (slot0, slot1)
-			slot0.skillCtrl = slot1
+		setSkillCtrl = function(arg_61_0, arg_61_1)
+			arg_61_0.skillCtrl = arg_61_1
 		end,
-		craeteCharDamage = function (slot0, slot1)
-			slot0:createDamage(slot1)
+		craeteCharDamage = function(arg_62_0, arg_62_1)
+			arg_62_0:createDamage(arg_62_1)
 		end,
-		bulletDamage = function (slot0, slot1)
-			slot0:createDamage(slot1)
+		bulletDamage = function(arg_63_0, arg_63_1)
+			arg_63_0:createDamage(arg_63_1)
 		end,
-		createDamage = function (slot0, slot1)
-			slot3 = slot1.position
-			slot4 = slot1.useData
-			slot5 = slot4.target
-			slot6 = slot4.line
-			slot7 = slot4.camp
+		createDamage = function(arg_64_0, arg_64_1)
+			local var_64_0 = arg_64_1.damage
+			local var_64_1 = arg_64_1.position
+			local var_64_2 = arg_64_1.useData
+			local var_64_3 = var_64_2.target
+			local var_64_4 = var_64_2.line
+			local var_64_5 = var_64_2.camp
 
-			if not slot1.damage then
-				-- Nothing
+			if not var_64_0 then
+				-- block empty
 			end
 
-			slot8 = BeachGuardConst.damage[slot2]
+			local var_64_6 = BeachGuardConst.damage[var_64_0]
 
-			if slot5 then
-				slot5:damage(slot8.damage * (slot4.atkRate or 1))
+			if var_64_3 then
+				local var_64_7 = var_64_2.atkRate or 1
+
+				var_64_3:damage(var_64_6.damage * var_64_7)
 			end
 
-			if slot8.type == BeachGuardConst.bullet_type_range then
-				slot9 = slot8.config
-				slot10 = slot9.next
-				slot14 = nil
-				slot14 = (not slot4.target or slot4.target:getPos()) and slot0.effectFrontTf:InverseTransformPoint(slot3)
+			if var_64_6.type == BeachGuardConst.bullet_type_range then
+				local var_64_8 = var_64_6.config
+				local var_64_9 = var_64_8.next
+				local var_64_10 = var_64_8.range
+				local var_64_11 = var_64_5 == 1 and 2 or 1
+				local var_64_12 = arg_64_0.charCtrl:getLineCampChars({
+					var_64_4 + 1,
+					var_64_4 - 1,
+					var_64_4
+				}, var_64_11)
+				local var_64_13
 
-				if slot0.charCtrl:getLineCampChars({
-					slot6 + 1,
-					slot6 - 1,
-					slot6
-				}, slot7 == 1 and 2 or 1) and #slot13 > 0 then
-					for slot19 = 1, #slot13 do
-						slot20 = slot13[slot19]
+				if var_64_2.target then
+					var_64_13 = var_64_2.target:getPos()
+				else
+					var_64_13 = arg_64_0.effectFrontTf:InverseTransformPoint(var_64_1)
+				end
 
-						if (not slot4.target or slot4.target ~= slot20) and math.abs(slot14.x - slot20:getPos().x) < slot9.range * BeachGuardConst.part_width then
-							slot22 = Clone(slot4)
-							slot22.target = slot20
+				if var_64_12 and #var_64_12 > 0 then
+					local var_64_14 = var_64_10 * BeachGuardConst.part_width
 
-							slot0:createDamage({
-								damage = slot9.next,
-								position = slot20:getWorldPos(),
-								useData = slot22
+					for iter_64_0 = 1, #var_64_12 do
+						local var_64_15 = var_64_12[iter_64_0]
+
+						if (not var_64_2.target or var_64_2.target ~= var_64_15) and var_64_14 > math.abs(var_64_13.x - var_64_15:getPos().x) then
+							local var_64_16 = var_64_15:getWorldPos()
+							local var_64_17 = Clone(var_64_2)
+
+							var_64_17.target = var_64_15
+
+							arg_64_0:createDamage({
+								damage = var_64_8.next,
+								position = var_64_16,
+								useData = var_64_17
 							})
 						end
 					end
 				end
-			elseif slot8.type == BeachGuardConst.bullet_type_disperse then
-				slot9 = slot8.config
-				slot12 = slot7 == 1 and 2 or 1
+			elseif var_64_6.type == BeachGuardConst.bullet_type_disperse then
+				local var_64_18 = var_64_6.config
+				local var_64_19 = var_64_18.up
+				local var_64_20 = var_64_18.down
+				local var_64_21 = var_64_5 == 1 and 2 or 1
 
-				slot0:addDamageByDisperse({
-					slot6 - 1
-				}, slot9.range, slot12, slot9.up, slot4)
-				slot0:addDamageByDisperse({
-					slot6 + 1
-				}, slot9.range, slot12, slot9.down, slot4)
+				arg_64_0:addDamageByDisperse({
+					var_64_4 - 1
+				}, var_64_18.range, var_64_21, var_64_19, var_64_2)
+				arg_64_0:addDamageByDisperse({
+					var_64_4 + 1
+				}, var_64_18.range, var_64_21, var_64_20, var_64_2)
 			end
 
-			if slot8.buff and #slot8.buff > 0 then
-				for slot12 = 1, #slot8.buff do
-					slot14 = BeachGuardConst.buff[slot8.buff[slot12]]
-					slot15 = slot14.type
-					slot17 = slot14.bound
-					slot18 = slot4.useChar
+			if var_64_6.buff and #var_64_6.buff > 0 then
+				for iter_64_1 = 1, #var_64_6.buff do
+					local var_64_22 = var_64_6.buff[iter_64_1]
+					local var_64_23 = BeachGuardConst.buff[var_64_22]
+					local var_64_24 = var_64_23.type
+					local var_64_25 = var_64_23.trigger
+					local var_64_26 = var_64_23.bound
+					local var_64_27 = var_64_2.useChar
+					local var_64_28 = var_64_2.target
 
-					if slot14.trigger == BeachGuardConst.buff_trigger_other then
-						slot4.target:addBuff(slot14)
-					elseif slot16 == BeachGuardConst.buff_trigger_self then
-						slot18:addBuff(slot14)
+					if var_64_25 == BeachGuardConst.buff_trigger_other then
+						var_64_28:addBuff(var_64_23)
+					elseif var_64_25 == BeachGuardConst.buff_trigger_self then
+						var_64_27:addBuff(var_64_23)
 
-						if slot17 and slot17 ~= nil then
-							slot20 = slot4.useChar:getCamp()
+						if var_64_26 and var_64_26 ~= nil then
+							local var_64_29 = var_64_2.useChar:getCamp()
+							local var_64_30 = var_64_2.useChar:getLineIndex()
+							local var_64_31 = var_64_2.useChar:getGridIndex()
 
-							if slot4.useChar:getLineIndex() and slot4.useChar:getGridIndex() then
-								for slot27, slot28 in ipairs(slot0.charCtrl:getCharByCamp(slot20)) do
-									if slot28 ~= slot18 then
-										if math.abs(slot28:getGridIndex() - slot22) <= slot17[1] and math.abs(slot28:getLineIndex() - slot21) <= slot17[2] then
-											slot28:addBuff(slot14)
+							if var_64_30 and var_64_31 then
+								local var_64_32 = arg_64_0.charCtrl:getCharByCamp(var_64_29)
+
+								for iter_64_2, iter_64_3 in ipairs(var_64_32) do
+									if iter_64_3 ~= var_64_27 then
+										local var_64_33 = iter_64_3:getGridIndex()
+										local var_64_34 = iter_64_3:getLineIndex()
+
+										if math.abs(var_64_33 - var_64_31) <= var_64_26[1] and math.abs(var_64_34 - var_64_30) <= var_64_26[2] then
+											iter_64_3:addBuff(var_64_23)
 										end
 									end
 								end
@@ -814,208 +933,245 @@ function slot5(slot0, slot1)
 				end
 			end
 
-			if slot8.effect and #slot8.effect > 0 then
-				slot0:createEffect(slot8.effect, slot3)
+			if var_64_6.effect and #var_64_6.effect > 0 then
+				arg_64_0:createEffect(var_64_6.effect, var_64_1)
 			end
 		end,
-		addDamageByDisperse = function (slot0, slot1, slot2, slot3, slot4, slot5)
-			if slot0.charCtrl:getLineCampChars(slot1, slot3) and #slot6 > 0 then
-				for slot12 = 1, #slot6 do
-					if math.abs(slot5.target:getPos().x - slot6[slot12]:getPos().x) < slot2 * BeachGuardConst.part_width then
-						slot16 = Clone(slot5)
-						slot16.target = slot13
+		addDamageByDisperse = function(arg_65_0, arg_65_1, arg_65_2, arg_65_3, arg_65_4, arg_65_5)
+			local var_65_0 = arg_65_0.charCtrl:getLineCampChars(arg_65_1, arg_65_3)
 
-						slot0:createDamage({
-							damage = slot4,
-							position = slot13:getWorldPos(),
-							useData = slot16
+			if var_65_0 and #var_65_0 > 0 then
+				local var_65_1 = arg_65_2 * BeachGuardConst.part_width
+				local var_65_2 = arg_65_5.target:getPos()
+
+				for iter_65_0 = 1, #var_65_0 do
+					local var_65_3 = var_65_0[iter_65_0]
+					local var_65_4 = var_65_3:getPos()
+
+					if var_65_1 > math.abs(var_65_2.x - var_65_4.x) then
+						local var_65_5 = var_65_3:getWorldPos()
+						local var_65_6 = Clone(arg_65_5)
+
+						var_65_6.target = var_65_3
+
+						arg_65_0:createDamage({
+							damage = arg_65_4,
+							position = var_65_5,
+							useData = var_65_6
 						})
 					end
 				end
 			end
 		end,
-		createEffect = function (slot0, slot1, slot2)
-			if not slot0:getEffect(slot1[1]) then
-				-- Nothing
+		createEffect = function(arg_66_0, arg_66_1, arg_66_2)
+			local var_66_0 = arg_66_0:getEffect(arg_66_1[1])
+
+			if not var_66_0 then
+				-- block empty
 			end
 
-			if not slot3 then
+			if not var_66_0 then
 				return
 			end
 
-			slot3.tf.anchoredPosition = slot0.effectFrontTf:InverseTransformPoint(slot2)
+			var_66_0.tf.anchoredPosition = arg_66_0.effectFrontTf:InverseTransformPoint(arg_66_2)
 
-			setActive(slot3.tf, true)
+			setActive(var_66_0.tf, true)
 
-			slot3.time = slot3.config.time
+			var_66_0.time = var_66_0.config.time
 
-			table.insert(slot0.effects, slot3)
+			table.insert(arg_66_0.effects, var_66_0)
 		end,
-		getEffect = function (slot0, slot1)
-			slot2 = nil
+		getEffect = function(arg_67_0, arg_67_1)
+			local var_67_0
 
-			if #slot0.effectPool > 0 then
-				for slot6 = #slot0.effectPool, 1, -1 do
-					if slot0.effectPool[slot6].config.id == slot1 then
-						return table.remove(slot0.effectPool, slot6)
+			if #arg_67_0.effectPool > 0 then
+				for iter_67_0 = #arg_67_0.effectPool, 1, -1 do
+					if arg_67_0.effectPool[iter_67_0].config.id == arg_67_1 then
+						return (table.remove(arg_67_0.effectPool, iter_67_0))
 					end
 				end
 			end
 
-			slot3 = BeachGuardConst.effect[slot1]
-			slot4 = BeachGuardAsset.getEffect(slot3.name)
+			local var_67_1 = BeachGuardConst.effect[arg_67_1]
+			local var_67_2 = BeachGuardAsset.getEffect(var_67_1.name)
 
-			setParent(slot4, slot0.effectFrontTf)
+			setParent(var_67_2, arg_67_0.effectFrontTf)
 
 			return {
-				tf = slot4,
-				config = slot3
+				tf = var_67_2,
+				config = var_67_1
 			}
 		end,
-		start = function (slot0)
+		start = function(arg_68_0)
+			return
 		end,
-		step = function (slot0, slot1)
-			for slot6 = 1, #slot0.skillCtrl:getBullets() do
-				slot7 = slot2[slot6]
-				slot8 = slot7.useData
+		step = function(arg_69_0, arg_69_1)
+			local var_69_0 = arg_69_0.skillCtrl:getBullets()
 
-				for slot17, slot18 in ipairs(slot0.charCtrl:getCanHitChar(slot8.line, slot8.camp)) do
-					if not false and slot18:inBulletBound() and slot18:checkBulletCollider(slot7.tf.position) then
-						slot13 = true
-						slot7.hit = true
-						slot8.target = slot18
+			for iter_69_0 = 1, #var_69_0 do
+				local var_69_1 = var_69_0[iter_69_0]
+				local var_69_2 = var_69_1.useData
+				local var_69_3 = var_69_2.line
+				local var_69_4 = var_69_2.camp
+				local var_69_5 = var_69_1.tf.position
+				local var_69_6 = arg_69_0.charCtrl:getCanHitChar(var_69_3, var_69_4)
+				local var_69_7 = false
 
-						slot0:createDamage({
-							damage = slot7.config.damage,
-							position = slot8.target:getAnimPos(),
-							useData = slot7.useData
+				for iter_69_1, iter_69_2 in ipairs(var_69_6) do
+					if not var_69_7 and iter_69_2:inBulletBound() and iter_69_2:checkBulletCollider(var_69_5) then
+						local var_69_8 = var_69_1.config.damage
+
+						var_69_7 = true
+						var_69_1.hit = true
+						var_69_2.target = iter_69_2
+
+						arg_69_0:createDamage({
+							damage = var_69_8,
+							position = var_69_2.target:getAnimPos(),
+							useData = var_69_1.useData
 						})
 					end
 				end
 			end
 
-			for slot6 = #slot0.effects, 1, -1 do
-				if slot0.effects[slot6].time and slot7.time > 0 then
-					slot7.time = slot7.time - slot1
+			for iter_69_3 = #arg_69_0.effects, 1, -1 do
+				local var_69_9 = arg_69_0.effects[iter_69_3]
 
-					if slot7.time <= 0 then
-						slot7.time = 0
+				if var_69_9.time and var_69_9.time > 0 then
+					var_69_9.time = var_69_9.time - arg_69_1
 
-						setActive(slot7.tf, false)
-						table.insert(slot0.effectPool, table.remove(slot0.effects, slot6))
+					if var_69_9.time <= 0 then
+						var_69_9.time = 0
+
+						setActive(var_69_9.tf, false)
+
+						local var_69_10 = table.remove(arg_69_0.effects, iter_69_3)
+
+						table.insert(arg_69_0.effectPool, var_69_10)
 					end
 				end
 			end
 		end,
-		stop = function (slot0)
+		stop = function(arg_70_0)
+			return
 		end,
-		clear = function (slot0)
-			for slot4 = #slot0.effects, 1, -1 do
-				setActive(slot0.effects[slot4].tf, false)
-				table.insert(slot0.effectPool, table.remove(slot0.effects, slot4))
+		clear = function(arg_71_0)
+			for iter_71_0 = #arg_71_0.effects, 1, -1 do
+				setActive(arg_71_0.effects[iter_71_0].tf, false)
+				table.insert(arg_71_0.effectPool, table.remove(arg_71_0.effects, iter_71_0))
 			end
 		end
 	}
 
-	slot2:Ctor()
+	var_58_0:Ctor()
 
-	return slot2
+	return var_58_0
 end
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._tf = slot1
-	slot0._event = slot3
-	slot0._gameData = slot2
-	slot0.asset = slot0._gameData.asset
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
+function var_0_0.Ctor(arg_72_0, arg_72_1, arg_72_2, arg_72_3)
+	arg_72_0._tf = arg_72_1
+	arg_72_0._event = arg_72_3
+	arg_72_0._gameData = arg_72_2
+	arg_72_0.asset = arg_72_0._gameData.asset
+	arg_72_0.timer = Timer.New(function()
+		arg_72_0:onTimer()
 	end, 0.03333333333333333, -1)
 
-	slot0:init()
+	arg_72_0:init()
 end
 
-function slot0.init(slot0)
-	slot0.charTpl = findTF(slot0._tf, "sceneContainer/scene/classes/charTpl")
-	slot0.charCtrl = uv0(slot0._tf, slot0.charTpl, slot0._event)
-	slot0.lineCtrl = uv1(slot0._tf, slot0._event)
-	slot0.skillCtrl = uv2(slot0._tf, slot0._event)
-	slot0.enemyCtrl = uv3(slot0._tf, slot0._event)
-	slot0.damageCtrl = uv4(slot0._tf, slot0._event)
+function var_0_0.init(arg_74_0)
+	arg_74_0.charTpl = findTF(arg_74_0._tf, "sceneContainer/scene/classes/charTpl")
+	arg_74_0.charCtrl = var_0_1(arg_74_0._tf, arg_74_0.charTpl, arg_74_0._event)
+	arg_74_0.lineCtrl = var_0_2(arg_74_0._tf, arg_74_0._event)
+	arg_74_0.skillCtrl = var_0_3(arg_74_0._tf, arg_74_0._event)
+	arg_74_0.enemyCtrl = var_0_4(arg_74_0._tf, arg_74_0._event)
+	arg_74_0.damageCtrl = var_0_5(arg_74_0._tf, arg_74_0._event)
 
-	slot0.damageCtrl:setCharCtrl(slot0.charCtrl)
-	slot0.damageCtrl:setSkillCtrl(slot0.skillCtrl)
-	slot0.timer:Start()
+	arg_74_0.damageCtrl:setCharCtrl(arg_74_0.charCtrl)
+	arg_74_0.damageCtrl:setSkillCtrl(arg_74_0.skillCtrl)
+	arg_74_0.timer:Start()
 end
 
-function slot0.onTimer(slot0)
-	slot0.lineCtrl:onTimer()
+function var_0_0.onTimer(arg_75_0)
+	arg_75_0.lineCtrl:onTimer()
 end
 
-function slot0.setData(slot0, slot1)
-	slot0._runningData = slot1
-	slot2 = slot0._runningData.chapter
+function var_0_0.setData(arg_76_0, arg_76_1)
+	arg_76_0._runningData = arg_76_1
 
-	slot0.lineCtrl:setMapData(BeachGuardConst.map_data[BeachGuardConst.chapter_data[slot2].map])
-	slot0.enemyCtrl:setData(BeachGuardConst.chapater_enemy[slot2])
+	local var_76_0 = arg_76_0._runningData.chapter
+	local var_76_1 = BeachGuardConst.chapter_data[var_76_0]
+	local var_76_2 = BeachGuardConst.map_data[var_76_1.map]
+	local var_76_3 = BeachGuardConst.chapater_enemy[var_76_0]
 
-	if slot1.fog then
-		setActive(findTF(slot0._tf, "sceneContainer/scene_front/fog"), true)
+	arg_76_0.lineCtrl:setMapData(var_76_2)
+	arg_76_0.enemyCtrl:setData(var_76_3)
+
+	if arg_76_1.fog then
+		setActive(findTF(arg_76_0._tf, "sceneContainer/scene_front/fog"), true)
 	else
-		setActive(findTF(slot0._tf, "sceneContainer/scene_front/fog"), false)
+		setActive(findTF(arg_76_0._tf, "sceneContainer/scene_front/fog"), false)
 	end
 
-	slot7 = GetComponent(findTF(slot0._tf, "sceneBg/map"), typeof(Image))
-	slot7.sprite = BeachGuardAsset.getBeachMap(slot4.pic)
+	local var_76_4 = GetComponent(findTF(arg_76_0._tf, "sceneBg/map"), typeof(Image))
 
-	slot7:SetNativeSize()
+	var_76_4.sprite = BeachGuardAsset.getBeachMap(var_76_2.pic)
+
+	var_76_4:SetNativeSize()
 end
 
-function slot0.start(slot0)
-	slot0.charCtrl:start()
-	slot0.skillCtrl:start()
-	slot0.enemyCtrl:start()
-	slot0.damageCtrl:start()
-	slot0.lineCtrl:start()
+function var_0_0.start(arg_77_0)
+	arg_77_0.charCtrl:start()
+	arg_77_0.skillCtrl:start()
+	arg_77_0.enemyCtrl:start()
+	arg_77_0.damageCtrl:start()
+	arg_77_0.lineCtrl:start()
 end
 
-function slot0.step(slot0)
-	slot1 = slot0._runningData.deltaTime
+function var_0_0.step(arg_78_0)
+	local var_78_0 = arg_78_0._runningData.deltaTime
 
-	slot0.charCtrl:step(slot1)
-	slot0.skillCtrl:step(slot1)
-	slot0.enemyCtrl:step(slot1)
-	slot0.damageCtrl:step(slot1)
-	slot0.lineCtrl:step(slot1)
+	arg_78_0.charCtrl:step(var_78_0)
+	arg_78_0.skillCtrl:step(var_78_0)
+	arg_78_0.enemyCtrl:step(var_78_0)
+	arg_78_0.damageCtrl:step(var_78_0)
+	arg_78_0.lineCtrl:step(var_78_0)
 
-	if slot0.charCtrl:getEnemyOver() then
-		slot0._event:emit(BeachGuardGameView.GAME_OVER)
-	elseif #slot0.charCtrl:getEnemys() == 0 and slot0.enemyCtrl:getFinishCreate() then
-		slot0._event:emit(BeachGuardGameView.GAME_OVER)
+	if arg_78_0.charCtrl:getEnemyOver() then
+		arg_78_0._event:emit(BeachGuardGameView.GAME_OVER)
+	elseif #arg_78_0.charCtrl:getEnemys() == 0 and arg_78_0.enemyCtrl:getFinishCreate() then
+		arg_78_0._event:emit(BeachGuardGameView.GAME_OVER)
 	end
 end
 
-function slot0.stop(slot0)
-	slot0.charCtrl:stop()
-	slot0.skillCtrl:stop()
-	slot0.enemyCtrl:stop()
-	slot0.damageCtrl:stop()
+function var_0_0.stop(arg_79_0)
+	arg_79_0.charCtrl:stop()
+	arg_79_0.skillCtrl:stop()
+	arg_79_0.enemyCtrl:stop()
+	arg_79_0.damageCtrl:stop()
 end
 
-function slot0.clear(slot0)
-	slot0.charCtrl:clear()
-	slot0.lineCtrl:clear()
-	slot0.skillCtrl:clear()
-	slot0.enemyCtrl:clear()
-	slot0.damageCtrl:clear()
+function var_0_0.clear(arg_80_0)
+	arg_80_0.charCtrl:clear()
+	arg_80_0.lineCtrl:clear()
+	arg_80_0.skillCtrl:clear()
+	arg_80_0.enemyCtrl:clear()
+	arg_80_0.damageCtrl:clear()
 end
 
-function slot0.changeRecycles(slot0, slot1)
-	slot0.charCtrl:changeRecycles(slot1)
+function var_0_0.changeRecycles(arg_81_0, arg_81_1)
+	arg_81_0.charCtrl:changeRecycles(arg_81_1)
 end
 
-function slot0.pullChar(slot0, slot1, slot2, slot3)
-	if slot0.lineCtrl:getGridByIndex(slot2, slot3) and slot4:isEmpty() then
-		slot4:setChar(slot0.charCtrl:setGridChar(slot1, slot4))
+function var_0_0.pullChar(arg_82_0, arg_82_1, arg_82_2, arg_82_3)
+	local var_82_0 = arg_82_0.lineCtrl:getGridByIndex(arg_82_2, arg_82_3)
+
+	if var_82_0 and var_82_0:isEmpty() then
+		local var_82_1 = arg_82_0.charCtrl:setGridChar(arg_82_1, var_82_0)
+
+		var_82_0:setChar(var_82_1)
 
 		return true
 	end
@@ -1023,37 +1179,39 @@ function slot0.pullChar(slot0, slot1, slot2, slot3)
 	return false
 end
 
-function slot0.setDrag(slot0, slot1)
-	slot0.lineCtrl:setDrag(slot1)
+function var_0_0.setDrag(arg_83_0, arg_83_1)
+	arg_83_0.lineCtrl:setDrag(arg_83_1)
 end
 
-function slot0.useSkill(slot0, slot1)
-	slot0.skillCtrl:useSkill(slot1)
+function var_0_0.useSkill(arg_84_0, arg_84_1)
+	arg_84_0.skillCtrl:useSkill(arg_84_1)
 end
 
-function slot0.addEnemy(slot0, slot1)
-	slot0.charCtrl:addEnemyChar(slot1.id, slot0.lineCtrl:getAbleLinePos(slot1.lines))
+function var_0_0.addEnemy(arg_85_0, arg_85_1)
+	local var_85_0 = arg_85_0.lineCtrl:getAbleLinePos(arg_85_1.lines)
+
+	arg_85_0.charCtrl:addEnemyChar(arg_85_1.id, var_85_0)
 end
 
-function slot0.craeteCharDamage(slot0, slot1)
-	slot0.damageCtrl:craeteCharDamage(slot1)
+function var_0_0.craeteCharDamage(arg_86_0, arg_86_1)
+	arg_86_0.damageCtrl:craeteCharDamage(arg_86_1)
 end
 
-function slot0.removeChar(slot0, slot1)
-	slot0.charCtrl:removeChar(slot1)
-	slot0.lineCtrl:removeGridChar(slot1)
+function var_0_0.removeChar(arg_87_0, arg_87_1)
+	arg_87_0.charCtrl:removeChar(arg_87_1)
+	arg_87_0.lineCtrl:removeGridChar(arg_87_1)
 end
 
-function slot0.bulletDamage(slot0, slot1)
-	slot0.damageCtrl:bulletDamage(slot1)
+function var_0_0.bulletDamage(arg_88_0, arg_88_1)
+	arg_88_0.damageCtrl:bulletDamage(arg_88_1)
 end
 
-function slot0.dispose(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.dispose(arg_89_0)
+	if arg_89_0.timer then
+		arg_89_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_89_0.timer = nil
 	end
 end
 
-return slot0
+return var_0_0

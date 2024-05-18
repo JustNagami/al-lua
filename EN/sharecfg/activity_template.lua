@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_template = {
 	{
 		mark = 20170614,
@@ -20057,7 +20057,7 @@ pg.activity_template = {
 			{
 				groupId = 30502,
 				configId = 305021,
-				id = 10000030502.0,
+				id = 10000030502,
 				skin_id = 305020
 			}
 		}
@@ -20131,7 +20131,7 @@ pg.activity_template = {
 			{
 				param = 30004,
 				configId = 101061,
-				id = 10000010106.0,
+				id = 10000010106,
 				type = 3,
 				groupId = 10106,
 				skin_id = 101061
@@ -20194,7 +20194,7 @@ pg.activity_template = {
 			{
 				param = 30005,
 				configId = 201101,
-				id = 10000020110.0,
+				id = 10000020110,
 				type = 3,
 				groupId = 20110,
 				skin_id = 201101
@@ -20511,7 +20511,7 @@ pg.activity_template = {
 			{
 				groupId = 20603,
 				configId = 206031,
-				id = 100000206031.0
+				id = 100000206031
 			}
 		}
 	},
@@ -20748,19 +20748,19 @@ pg.activity_template = {
 			{
 				groupId = 20703,
 				configId = 207031,
-				id = 10000207031.0,
+				id = 10000207031,
 				skin_id = 207031
 			},
 			{
 				groupId = 30111,
 				configId = 301111,
-				id = 10000301111.0,
+				id = 10000301111,
 				skin_id = 301111
 			},
 			{
 				groupId = 30112,
 				configId = 301121,
-				id = 10000301121.0,
+				id = 10000301121,
 				skin_id = 301121
 			}
 		}
@@ -20807,25 +20807,25 @@ pg.activity_template = {
 			{
 				groupId = 30605,
 				configId = 306051,
-				id = 10000306051.0,
+				id = 10000306051,
 				skin_id = 306051
 			},
 			{
 				groupId = 30105,
 				configId = 301051,
-				id = 10000301051.0,
+				id = 10000301051,
 				skin_id = 301051
 			},
 			{
 				groupId = 10209,
 				configId = 102091,
-				id = 10000102091.0,
+				id = 10000102091,
 				skin_id = 102091
 			},
 			{
 				groupId = 30117,
 				configId = 301171,
-				id = 10000301171.0,
+				id = 10000301171,
 				skin_id = 301171
 			}
 		}
@@ -20853,25 +20853,25 @@ pg.activity_template = {
 			{
 				groupId = 1010001,
 				configId = 10100011,
-				id = 10010100011.0,
+				id = 10010100011,
 				skin_id = 10100010
 			},
 			{
 				groupId = 1010002,
 				configId = 10100021,
-				id = 10010100021.0,
+				id = 10010100021,
 				skin_id = 10100020
 			},
 			{
 				groupId = 1010003,
 				configId = 10100031,
-				id = 10010100031.0,
+				id = 10010100031,
 				skin_id = 10100030
 			},
 			{
 				groupId = 1010004,
 				configId = 10100041,
-				id = 10010100041.0,
+				id = 10010100041,
 				skin_id = 10100040
 			}
 		}
@@ -21024,7 +21024,7 @@ pg.activity_template = {
 			{
 				param = 30038,
 				configId = 401231,
-				id = 10000040123.0,
+				id = 10000040123,
 				type = 3,
 				groupId = 40123,
 				skin_id = 401231
@@ -21055,13 +21055,13 @@ pg.activity_template = {
 			{
 				groupId = 10105,
 				configId = 101051,
-				id = 10000010105.0,
+				id = 10000010105,
 				skin_id = 101051
 			},
 			{
 				groupId = 10208,
 				configId = 102081,
-				id = 10000010208.0,
+				id = 10000010208,
 				skin_id = 102081,
 				tasks = {
 					2
@@ -21070,7 +21070,7 @@ pg.activity_template = {
 			{
 				groupId = 30502,
 				configId = 305021,
-				id = 10000030502.0,
+				id = 10000030502,
 				skin_id = 305022,
 				tasks = {
 					3,
@@ -21080,7 +21080,7 @@ pg.activity_template = {
 			{
 				groupId = 30132,
 				configId = 301321,
-				id = 10000030132.0,
+				id = 10000030132,
 				skin_id = 301321,
 				tasks = {
 					4
@@ -21089,7 +21089,7 @@ pg.activity_template = {
 			{
 				groupId = 10706,
 				configId = 107061,
-				id = 10000010706.0,
+				id = 10000010706,
 				skin_id = 107061,
 				tasks = {
 					5
@@ -21098,7 +21098,7 @@ pg.activity_template = {
 			{
 				groupId = 20110,
 				configId = 201101,
-				id = 10000020110.0,
+				id = 10000020110,
 				skin_id = 201102,
 				tasks = {
 					6
@@ -21107,7 +21107,7 @@ pg.activity_template = {
 			{
 				groupId = 10126,
 				configId = 101261,
-				id = 10000010126.0,
+				id = 10000010126,
 				skin_id = 101261,
 				tasks = {
 					7
@@ -21633,13 +21633,13 @@ pg.activity_template = {
 			{
 				groupId = 30133,
 				configId = 301331,
-				id = 10000030133.0,
+				id = 10000030133,
 				skin_id = 301331
 			},
 			{
 				groupId = 31201,
 				configId = 312011,
-				id = 10000031201.0,
+				id = 10000031201,
 				skin_id = 312011,
 				tasks = {
 					1,
@@ -21649,7 +21649,7 @@ pg.activity_template = {
 			{
 				groupId = 30312,
 				configId = 303121,
-				id = 10000030312.0,
+				id = 10000030312,
 				skin_id = 303122,
 				tasks = {
 					1,
@@ -21660,7 +21660,7 @@ pg.activity_template = {
 			{
 				groupId = 30703,
 				configId = 307031,
-				id = 10000030703.0,
+				id = 10000030703,
 				skin_id = 307031,
 				tasks = {
 					1,
@@ -21670,7 +21670,7 @@ pg.activity_template = {
 			{
 				groupId = 30701,
 				configId = 307011,
-				id = 10000030701.0,
+				id = 10000030701,
 				skin_id = 307012,
 				tasks = {
 					2,
@@ -21681,7 +21681,7 @@ pg.activity_template = {
 			{
 				groupId = 30702,
 				configId = 307021,
-				id = 10000030702.0,
+				id = 10000030702,
 				skin_id = 307022,
 				tasks = {
 					2,
@@ -21692,7 +21692,7 @@ pg.activity_template = {
 			{
 				groupId = 30114,
 				configId = 301141,
-				id = 10000030114.0,
+				id = 10000030114,
 				skin_id = 301141,
 				tasks = {
 					5,
@@ -21702,7 +21702,7 @@ pg.activity_template = {
 			{
 				groupId = 40303,
 				configId = 403031,
-				id = 10000040303.0,
+				id = 10000040303,
 				skin_id = 403032,
 				tasks = {
 					2,
@@ -21714,7 +21714,7 @@ pg.activity_template = {
 			{
 				groupId = 10117,
 				configId = 101171,
-				id = 10000010117.0,
+				id = 10000010117,
 				skin_id = 101172,
 				tasks = {
 					4,
@@ -22188,7 +22188,7 @@ pg.activity_template = {
 			{
 				param = 30080,
 				configId = 201101,
-				id = 10000020110.0,
+				id = 10000020110,
 				type = 3,
 				groupId = 20110,
 				skin_id = 201101
@@ -22619,7 +22619,7 @@ pg.activity_template = {
 			{
 				param = 30095,
 				configId = 101061,
-				id = 10000010106.0,
+				id = 10000010106,
 				type = 3,
 				groupId = 10106,
 				skin_id = 101061
@@ -23271,7 +23271,7 @@ pg.activity_template = {
 			{
 				param = 30114,
 				configId = 401231,
-				id = 10000040123.0,
+				id = 10000040123,
 				type = 3,
 				groupId = 40123,
 				skin_id = 401231
@@ -23841,7 +23841,7 @@ pg.activity_template = {
 			{
 				param = 30114,
 				configId = 401231,
-				id = 10000040123.0,
+				id = 10000040123,
 				type = 3,
 				groupId = 40123,
 				skin_id = 401231
@@ -26426,7 +26426,7 @@ pg.activity_template = {
 			{
 				groupId = 30511,
 				configId = 305111,
-				id = 10000030511.0
+				id = 10000030511
 			}
 		}
 	},

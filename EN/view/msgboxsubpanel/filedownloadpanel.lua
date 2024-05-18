@@ -1,42 +1,42 @@
-slot0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
+﻿local var_0_0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FileDownloadBox"
 end
 
-function slot0.OnInit(slot0)
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.UpdateView(slot0, slot1)
-	slot2 = slot1.onYes
+function var_0_0.UpdateView(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1.onYes
 
-	function slot1.onYes()
-		pg.FileDownloadMgr.GetInstance():SetRemind(uv0.curStopValue)
-		uv1()
+	function arg_3_1.onYes()
+		pg.FileDownloadMgr.GetInstance():SetRemind(arg_3_0.curStopValue)
+		var_3_0()
 	end
 
-	slot0:PreRefresh(slot1)
-	setText(slot0.contextText, slot1.content)
+	arg_3_0:PreRefresh(arg_3_1)
+	setText(arg_3_0.contextText, arg_3_1.content)
 
-	rtf(slot0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
+	rtf(arg_3_0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
-	slot0:PostRefresh(slot1)
+	arg_3_0:PostRefresh(arg_3_1)
 end
 
-function slot0.findUI(slot0)
-	slot0.contextText = slot0:findTF("Context")
-	slot0.toggleTF = slot0:findTF("Toggle")
-	slot0.tickTF = slot0:findTF("Tip/TickBG/Tick", slot0.toggleTF)
+function var_0_0.findUI(arg_5_0)
+	arg_5_0.contextText = arg_5_0:findTF("Context")
+	arg_5_0.toggleTF = arg_5_0:findTF("Toggle")
+	arg_5_0.tickTF = arg_5_0:findTF("Tip/TickBG/Tick", arg_5_0.toggleTF)
 end
 
-function slot0.addListener(slot0)
-	slot0.curStopValue = false
+function var_0_0.addListener(arg_6_0)
+	arg_6_0.curStopValue = false
 
-	onToggle(slot0, slot0.toggleTF, function (slot0)
-		uv0.curStopValue = slot0
+	onToggle(arg_6_0, arg_6_0.toggleTF, function(arg_7_0)
+		arg_6_0.curStopValue = arg_7_0
 	end, SFX_CONFIRM, SFX_CANCEL)
 end
 
-return slot0
+return var_0_0

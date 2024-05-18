@@ -1,17 +1,20 @@
-slot0 = class("LaunchBallGameConst")
-slot0.color_total = 7
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = 4
-slot5 = 5
-slot6 = 6
-slot7 = 7
-slot0.enemy_move_speed = 50
-slot0.round_type_juqing = 1
-slot0.round_type_zhuanshu = 2
-slot0.round_type_wuxian = 3
-slot0.game_round = {
+﻿local var_0_0 = class("LaunchBallGameConst")
+
+var_0_0.color_total = 7
+
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+local var_0_5 = 5
+local var_0_6 = 6
+local var_0_7 = 7
+
+var_0_0.enemy_move_speed = 50
+var_0_0.round_type_juqing = 1
+var_0_0.round_type_zhuanshu = 2
+var_0_0.round_type_wuxian = 3
+var_0_0.game_round = {
 	{
 		map = 1,
 		round_enemy = 1,
@@ -23,7 +26,7 @@ slot0.game_round = {
 		amulet_life = 1,
 		id = 1,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 2,
@@ -36,7 +39,7 @@ slot0.game_round = {
 		amulet_life = 2,
 		id = 2,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 3,
@@ -49,7 +52,7 @@ slot0.game_round = {
 		amulet_life = 3,
 		id = 3,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 4,
@@ -62,7 +65,7 @@ slot0.game_round = {
 		amulet_life = 4,
 		id = 4,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 5,
@@ -75,7 +78,7 @@ slot0.game_round = {
 		amulet_life = 5,
 		id = 5,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 6,
@@ -88,7 +91,7 @@ slot0.game_round = {
 		amulet_life = 6,
 		id = 6,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 7,
@@ -101,7 +104,7 @@ slot0.game_round = {
 		amulet_life = 7,
 		id = 7,
 		player_id = 1,
-		type = slot0.round_type_juqing
+		type = var_0_0.round_type_juqing
 	},
 	{
 		map = 8,
@@ -112,7 +115,7 @@ slot0.game_round = {
 		type_index = 1,
 		speed = 60,
 		round_bound = 8,
-		type = slot0.round_type_wuxian
+		type = var_0_0.round_type_wuxian
 	},
 	{
 		map = 5,
@@ -125,7 +128,7 @@ slot0.game_round = {
 		amulet_life = 5,
 		id = 9,
 		player_id = 2,
-		type = slot0.round_type_zhuanshu
+		type = var_0_0.round_type_zhuanshu
 	},
 	{
 		map = 6,
@@ -138,7 +141,7 @@ slot0.game_round = {
 		amulet_life = 6,
 		id = 10,
 		player_id = 3,
-		type = slot0.round_type_zhuanshu
+		type = var_0_0.round_type_zhuanshu
 	},
 	{
 		map = 7,
@@ -151,110 +154,110 @@ slot0.game_round = {
 		amulet_life = 7,
 		id = 11,
 		player_id = 4,
-		type = slot0.round_type_zhuanshu
+		type = var_0_0.round_type_zhuanshu
 	}
 }
-slot0.enemy_data = {
+var_0_0.enemy_data = {
 	{
 		id = 1,
 		name = "Enemy_01_Yellow",
 		hp = 1,
 		player = true,
-		color = slot1
+		color = var_0_1
 	},
 	{
 		id = 2,
 		name = "Enemy_02_Green",
 		hp = 1,
 		player = true,
-		color = slot2
+		color = var_0_2
 	},
 	{
 		id = 3,
 		name = "Enemy_03_White",
 		hp = 1,
 		player = true,
-		color = slot3
+		color = var_0_3
 	},
 	{
 		id = 4,
 		name = "Enemy_04_Red",
 		hp = 1,
 		player = true,
-		color = slot4
+		color = var_0_4
 	},
 	{
 		id = 5,
 		name = "Enemy_05_Blue",
 		hp = 1,
 		player = true,
-		color = slot5
+		color = var_0_5
 	},
 	{
 		id = 6,
 		name = "Enemy_06_Black",
 		hp = 1,
 		player = true,
-		color = slot6
+		color = var_0_6
 	},
 	{
 		id = 7,
 		name = "Enemy_07_Purple",
 		hp = 1,
 		player = true,
-		color = slot7
+		color = var_0_7
 	},
 	[11] = {
 		id = 11,
 		name = "Enemy_11_Yellow",
 		hp = 2,
 		player = false,
-		color = slot1
+		color = var_0_1
 	},
 	[12] = {
 		id = 12,
 		name = "Enemy_12_Green",
 		hp = 2,
 		player = false,
-		color = slot2
+		color = var_0_2
 	},
 	[13] = {
 		id = 13,
 		name = "Enemy_13_White",
 		hp = 2,
 		player = false,
-		color = slot3
+		color = var_0_3
 	},
 	[14] = {
 		id = 14,
 		name = "Enemy_14_Red",
 		hp = 2,
 		player = false,
-		color = slot4
+		color = var_0_4
 	},
 	[15] = {
 		id = 15,
 		name = "Enemy_15_Blue",
 		hp = 2,
 		player = false,
-		color = slot5
+		color = var_0_5
 	},
 	[16] = {
 		id = 16,
 		name = "Enemy_16_Black",
 		hp = 2,
 		player = false,
-		color = slot6
+		color = var_0_6
 	},
 	[17] = {
 		id = 17,
 		name = "Enemy_17_Purple",
 		hp = 2,
 		player = false,
-		color = slot7
+		color = var_0_7
 	}
 }
-slot0.enemy_create_rule = {
+var_0_0.enemy_create_rule = {
 	{
 		id = 1,
 		enemy_create = {
@@ -524,7 +527,7 @@ slot0.enemy_create_rule = {
 		}
 	}
 }
-slot0.round_enemy = {
+var_0_0.round_enemy = {
 	{
 		{
 			weight = 10,
@@ -862,7 +865,7 @@ slot0.round_enemy = {
 		}
 	}
 }
-slot0.map_data = {
+var_0_0.map_data = {
 	{
 		map = "BG_01",
 		id = 1,
@@ -912,7 +915,7 @@ slot0.map_data = {
 		bgm = "xinnong-1"
 	}
 }
-slot0.enemy_round_bound = {
+var_0_0.enemy_round_bound = {
 	Vector2(1211, 891),
 	Vector2(1293, 891),
 	Vector2(1455, 960),
@@ -920,66 +923,66 @@ slot0.enemy_round_bound = {
 	Vector2(1293, 960),
 	Vector2(1682, 995),
 	Vector2(1396, 972),
-	Vector2(1211, 995)
+	(Vector2(1211, 995))
 }
-slot0.enemy_buff_slow = 1
-slot0.enemy_buff_back = 2
-slot0.enemy_buff_boom = 3
-slot0.enemy_buff_concentrate = 4
-slot0.enemy_buff_streng = 5
-slot0.enemy_buff_data = {
-	[slot0.enemy_buff_slow] = {
+var_0_0.enemy_buff_slow = 1
+var_0_0.enemy_buff_back = 2
+var_0_0.enemy_buff_boom = 3
+var_0_0.enemy_buff_concentrate = 4
+var_0_0.enemy_buff_streng = 5
+var_0_0.enemy_buff_data = {
+	[var_0_0.enemy_buff_slow] = {
 		name = "slow",
 		time = 4,
 		tpl = "01_Slow"
 	},
-	[slot0.enemy_buff_back] = {
+	[var_0_0.enemy_buff_back] = {
 		name = "back",
 		time = 4,
 		tpl = "02_Back"
 	},
-	[slot0.enemy_buff_boom] = {
+	[var_0_0.enemy_buff_boom] = {
 		name = "boom",
 		distance = 200,
 		tpl = "03_Bomb"
 	},
-	[slot0.enemy_buff_concentrate] = {
+	[var_0_0.enemy_buff_concentrate] = {
 		name = "concentrate",
 		time = 3,
 		tpl = "04_Concentrate"
 	},
-	[slot0.enemy_buff_streng] = {
+	[var_0_0.enemy_buff_streng] = {
 		name = "streng",
 		tpl = "05_Streng"
 	}
 }
-slot0.enemy_round_buff = {
+var_0_0.enemy_round_buff = {
 	{
 		id = 1,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
@@ -991,28 +994,28 @@ slot0.enemy_round_buff = {
 		id = 2,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
@@ -1024,28 +1027,28 @@ slot0.enemy_round_buff = {
 		id = 3,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
@@ -1057,28 +1060,28 @@ slot0.enemy_round_buff = {
 		id = 4,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
@@ -1090,28 +1093,28 @@ slot0.enemy_round_buff = {
 		id = 5,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
@@ -1123,35 +1126,35 @@ slot0.enemy_round_buff = {
 		id = 6,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_streng,
+				type = var_0_0.enemy_buff_streng,
 				rate = {
 					1,
 					100
@@ -1163,35 +1166,35 @@ slot0.enemy_round_buff = {
 		id = 7,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_streng,
+				type = var_0_0.enemy_buff_streng,
 				rate = {
 					1,
 					100
@@ -1203,35 +1206,35 @@ slot0.enemy_round_buff = {
 		id = 8,
 		buffs = {
 			{
-				type = slot0.enemy_buff_slow,
+				type = var_0_0.enemy_buff_slow,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_back,
+				type = var_0_0.enemy_buff_back,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_boom,
+				type = var_0_0.enemy_buff_boom,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_concentrate,
+				type = var_0_0.enemy_buff_concentrate,
 				rate = {
 					3,
 					100
 				}
 			},
 			{
-				type = slot0.enemy_buff_streng,
+				type = var_0_0.enemy_buff_streng,
 				rate = {
 					3,
 					100
@@ -1240,6 +1243,6 @@ slot0.enemy_round_buff = {
 		}
 	}
 }
-slot0.amulet_buff_back = "amulet_buff_back"
+var_0_0.amulet_buff_back = "amulet_buff_back"
 
-return slot0
+return var_0_0

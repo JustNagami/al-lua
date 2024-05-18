@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_by_type = {
 	{
 		distory_resource_gold_ratio = 12,

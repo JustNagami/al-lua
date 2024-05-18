@@ -1,56 +1,56 @@
-slot0 = class("CommanderLockFlagSettingPage", import("view.base.BaseSubView"))
-slot1 = 1
-slot2 = 2
-slot3 = 3
+﻿local var_0_0 = class("CommanderLockFlagSettingPage", import("view.base.BaseSubView"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderLockFlagSettingui"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("frame/close_btn")
-	slot0.cancelBtn = slot0:findTF("frame/cancel")
-	slot0.confirmBtn = slot0:findTF("frame/confirm")
-	slot0.allBtn = slot0:findTF("frame/title/all_btn")
-	slot0.allSel = slot0.allBtn:Find("Image")
-	slot0.ssrToggle = slot0:findTF("frame/toggles/rarity/ssr")
-	slot0.srToggle = slot0:findTF("frame/toggles/rarity/sr")
-	slot0.rToggle = slot0:findTF("frame/toggles/rarity/r")
-	slot0.talentUIlist = UIItemList.New(slot0:findTF("frame/toggles/scrollrect/content/talent"), slot0:findTF("frame/toggles/scrollrect/content/talent/tpl"))
-	slot0.descTxt = slot0:findTF("frame/desc/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/close_btn")
+	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel")
+	arg_2_0.confirmBtn = arg_2_0:findTF("frame/confirm")
+	arg_2_0.allBtn = arg_2_0:findTF("frame/title/all_btn")
+	arg_2_0.allSel = arg_2_0.allBtn:Find("Image")
+	arg_2_0.ssrToggle = arg_2_0:findTF("frame/toggles/rarity/ssr")
+	arg_2_0.srToggle = arg_2_0:findTF("frame/toggles/rarity/sr")
+	arg_2_0.rToggle = arg_2_0:findTF("frame/toggles/rarity/r")
+	arg_2_0.talentUIlist = UIItemList.New(arg_2_0:findTF("frame/toggles/scrollrect/content/talent"), arg_2_0:findTF("frame/toggles/scrollrect/content/talent/tpl"))
+	arg_2_0.descTxt = arg_2_0:findTF("frame/desc/Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("frame/title/rarity"), i18n("word_rarity") .. ": ")
-	setText(slot0:findTF("frame/title/talent"), i18n("word_talent") .. ": ")
-	setText(slot0:findTF("frame/desc/Text"), i18n("commander_lock_setting_title"))
+	setText(arg_2_0:findTF("frame/title/rarity"), i18n("word_rarity") .. ": ")
+	setText(arg_2_0:findTF("frame/title/talent"), i18n("word_talent") .. ": ")
+	setText(arg_2_0:findTF("frame/desc/Text"), i18n("commander_lock_setting_title"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0:UnselAnyTalent() or uv0:UnselAnyRarity() then
-			uv0.contextData.msgBox:ExecuteAction("Show", {
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		if arg_3_0:UnselAnyTalent() or arg_3_0:UnselAnyRarity() then
+			arg_3_0.contextData.msgBox:ExecuteAction("Show", {
 				content = i18n("commander_unsel_lock_flag_tip"),
-				onYes = function ()
-					uv0:Conform()
+				onYes = function()
+					arg_3_0:Conform()
 				end
 			})
 		else
-			uv0:Conform()
+			arg_3_0:Conform()
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.UnselAnyTalent(slot0)
-	for slot4, slot5 in pairs(slot0.talentList) do
-		if slot5 == true then
+function var_0_0.UnselAnyTalent(arg_9_0)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.talentList) do
+		if iter_9_1 == true then
 			return false
 		end
 	end
@@ -58,9 +58,9 @@ function slot0.UnselAnyTalent(slot0)
 	return true
 end
 
-function slot0.UnselAnyRarity(slot0)
-	for slot4, slot5 in pairs(slot0.rarityList) do
-		if slot5 == true then
+function var_0_0.UnselAnyRarity(arg_10_0)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.rarityList) do
+		if iter_10_1 == true then
 			return false
 		end
 	end
@@ -68,82 +68,88 @@ function slot0.UnselAnyRarity(slot0)
 	return true
 end
 
-function slot0.Conform(slot0)
-	slot0:SaveRarityConfig(slot0.rarityList)
-	slot0:SaveTalentConfig(slot0.talentList)
-	slot0:Hide()
+function var_0_0.Conform(arg_11_0)
+	arg_11_0:SaveRarityConfig(arg_11_0.rarityList)
+	arg_11_0:SaveTalentConfig(arg_11_0.talentList)
+	arg_11_0:Hide()
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
-	slot0:InitRarity()
-	slot0:InitTalent()
+function var_0_0.Show(arg_12_0)
+	var_0_0.super.Show(arg_12_0)
+	arg_12_0:InitRarity()
+	arg_12_0:InitTalent()
 end
 
-function slot0.InitRarity(slot0)
-	slot1 = slot0:GetRarityConfig()
-	slot0.rarityList = {}
+function var_0_0.InitRarity(arg_13_0)
+	local var_13_0 = arg_13_0:GetRarityConfig()
 
-	onToggle(slot0, slot0.ssrToggle, function (slot0)
-		uv0.rarityList[uv1] = slot0
+	arg_13_0.rarityList = {}
+
+	onToggle(arg_13_0, arg_13_0.ssrToggle, function(arg_14_0)
+		arg_13_0.rarityList[var_0_1] = arg_14_0
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.srToggle, function (slot0)
-		uv0.rarityList[uv1] = slot0
+	onToggle(arg_13_0, arg_13_0.srToggle, function(arg_15_0)
+		arg_13_0.rarityList[var_0_2] = arg_15_0
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.rToggle, function (slot0)
-		uv0.rarityList[uv1] = slot0
+	onToggle(arg_13_0, arg_13_0.rToggle, function(arg_16_0)
+		arg_13_0.rarityList[var_0_3] = arg_16_0
 	end, SFX_PANEL)
-	triggerToggle(slot0.ssrToggle, slot1[uv0])
-	triggerToggle(slot0.srToggle, slot1[uv1])
-	triggerToggle(slot0.rToggle, slot1[uv2])
+	triggerToggle(arg_13_0.ssrToggle, var_13_0[var_0_1])
+	triggerToggle(arg_13_0.srToggle, var_13_0[var_0_2])
+	triggerToggle(arg_13_0.rToggle, var_13_0[var_0_3])
 end
 
-function slot0.InitTalent(slot0)
-	slot0.talentList = {}
-	slot0.talentCards = {}
+function var_0_0.InitTalent(arg_17_0)
+	local var_17_0 = arg_17_0:GetTalentConfig()
 
-	slot0.talentUIlist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1].id
+	arg_17_0.talentList = {}
+	arg_17_0.talentCards = {}
 
-			onToggle(uv1, slot2, function (slot0)
-				uv0.talentList[uv1] = slot0
+	local var_17_1 = CommanderCatUtil.GetAllTalentNames()
 
-				uv0:UpdateAllBtnStyle()
+	arg_17_0.talentUIlist:make(function(arg_18_0, arg_18_1, arg_18_2)
+		if arg_18_0 == UIItemList.EventUpdate then
+			local var_18_0 = var_17_1[arg_18_1 + 1].id
+			local var_18_1 = var_17_1[arg_18_1 + 1].name
+
+			onToggle(arg_17_0, arg_18_2, function(arg_19_0)
+				arg_17_0.talentList[var_18_0] = arg_19_0
+
+				arg_17_0:UpdateAllBtnStyle()
 			end, SFX_PANEL)
-			setText(slot2:Find("Text"), uv0[slot1 + 1].name)
+			setText(arg_18_2:Find("Text"), var_18_1)
 
-			slot2.gameObject.name = slot3
-			uv1.talentCards[slot3] = slot2
+			arg_18_2.gameObject.name = var_18_0
+			arg_17_0.talentCards[var_18_0] = arg_18_2
 		end
 	end)
-	slot0.talentUIlist:align(#CommanderCatUtil.GetAllTalentNames())
+	arg_17_0.talentUIlist:align(#var_17_1)
 
-	for slot6, slot7 in pairs(slot0:GetTalentConfig()) do
-		if slot0.talentCards[slot6] then
-			triggerToggle(slot0.talentCards[slot6], slot7)
+	for iter_17_0, iter_17_1 in pairs(var_17_0) do
+		if arg_17_0.talentCards[iter_17_0] then
+			triggerToggle(arg_17_0.talentCards[iter_17_0], iter_17_1)
 		end
 	end
 
-	onButton(slot0, slot0.allBtn, function ()
-		if uv0:AnyCardUnSelected() then
-			uv0:TriggerAllCardTrue()
+	onButton(arg_17_0, arg_17_0.allBtn, function()
+		if arg_17_0:AnyCardUnSelected() then
+			arg_17_0:TriggerAllCardTrue()
 		else
-			uv0:TriggerAllCardFalse()
+			arg_17_0:TriggerAllCardFalse()
 		end
 
-		uv0:UpdateAllBtnStyle()
+		arg_17_0:UpdateAllBtnStyle()
 	end, SFX_PANEL)
-	slot0:UpdateAllBtnStyle()
+	arg_17_0:UpdateAllBtnStyle()
 end
 
-function slot0.UpdateAllBtnStyle(slot0)
-	setActive(slot0.allSel, not slot0:AnyCardUnSelected())
+function var_0_0.UpdateAllBtnStyle(arg_21_0)
+	setActive(arg_21_0.allSel, not arg_21_0:AnyCardUnSelected())
 end
 
-function slot0.AnyCardUnSelected(slot0)
-	for slot4, slot5 in pairs(slot0.talentCards) do
-		if not slot5:GetComponent(typeof(Toggle)).isOn then
+function var_0_0.AnyCardUnSelected(arg_22_0)
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.talentCards) do
+		if not iter_22_1:GetComponent(typeof(Toggle)).isOn then
 			return true
 		end
 	end
@@ -151,35 +157,36 @@ function slot0.AnyCardUnSelected(slot0)
 	return false
 end
 
-function slot0.TriggerAllCardTrue(slot0)
-	for slot4, slot5 in pairs(slot0.talentCards) do
-		triggerToggle(slot5, true)
+function var_0_0.TriggerAllCardTrue(arg_23_0)
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.talentCards) do
+		triggerToggle(iter_23_1, true)
 	end
 end
 
-function slot0.TriggerAllCardFalse(slot0)
-	for slot4, slot5 in pairs(slot0.talentCards) do
-		triggerToggle(slot5, false)
+function var_0_0.TriggerAllCardFalse(arg_24_0)
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.talentCards) do
+		triggerToggle(iter_24_1, false)
 	end
 end
 
-function slot0.GetRarityConfig(slot0)
-	return getProxy(SettingsProxy):GetCommanderLockFlagRarityConfig()
+function var_0_0.GetRarityConfig(arg_25_0)
+	return (getProxy(SettingsProxy):GetCommanderLockFlagRarityConfig())
 end
 
-function slot0.SaveRarityConfig(slot0, slot1)
-	getProxy(SettingsProxy):SaveCommanderLockFlagRarityConfig(slot1)
+function var_0_0.SaveRarityConfig(arg_26_0, arg_26_1)
+	getProxy(SettingsProxy):SaveCommanderLockFlagRarityConfig(arg_26_1)
 end
 
-function slot0.GetTalentConfig(slot0)
-	return getProxy(SettingsProxy):GetCommanderLockFlagTalentConfig()
+function var_0_0.GetTalentConfig(arg_27_0)
+	return (getProxy(SettingsProxy):GetCommanderLockFlagTalentConfig())
 end
 
-function slot0.SaveTalentConfig(slot0, slot1)
-	getProxy(SettingsProxy):SaveCommanderLockFlagTalentConfig(slot1)
+function var_0_0.SaveTalentConfig(arg_28_0, arg_28_1)
+	getProxy(SettingsProxy):SaveCommanderLockFlagTalentConfig(arg_28_1)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_29_0)
+	return
 end
 
-return slot0
+return var_0_0

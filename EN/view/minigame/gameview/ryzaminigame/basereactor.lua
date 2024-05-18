@@ -1,63 +1,67 @@
-slot0 = class("BaseReactor")
+﻿local var_0_0 = class("BaseReactor")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.responder = slot3
-	slot0._tf = slot2
-	slot0.callDic = {}
-	slot0.rangeDic = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.responder = arg_1_3
+	arg_1_0._tf = arg_1_2
+	arg_1_0.callDic = {}
+	arg_1_0.rangeDic = {}
 
-	slot0:Init(slot1)
-	slot0.responder:CreateCall(slot0)
+	arg_1_0:Init(arg_1_1)
+	arg_1_0.responder:CreateCall(arg_1_0)
 end
 
-function slot0.Init(slot0, slot1)
+function var_0_0.Init(arg_2_0, arg_2_1)
+	return
 end
 
-function slot0.Register(slot0, slot1, slot2, slot3)
-	assert(slot3)
+function var_0_0.Register(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	assert(arg_3_3)
 
-	slot0.callDic[slot1] = slot2
-	slot0.rangeDic[slot1] = underscore.map(slot3, function (slot0)
-		return NewPos(unpack(slot0))
+	arg_3_0.callDic[arg_3_1] = arg_3_2
+	arg_3_0.rangeDic[arg_3_1] = underscore.map(arg_3_3, function(arg_4_0)
+		return NewPos(unpack(arg_4_0))
 	end)
 
-	slot0.responder:AddListener(slot1, slot0, slot0.rangeDic[slot1])
+	arg_3_0.responder:AddListener(arg_3_1, arg_3_0, arg_3_0.rangeDic[arg_3_1])
 end
 
-function slot0.Deregister(slot0, slot1)
-	slot0.responder:RemoveListener(slot1, slot0, slot0.rangeDic[slot1])
+function var_0_0.Deregister(arg_5_0, arg_5_1)
+	arg_5_0.responder:RemoveListener(arg_5_1, arg_5_0, arg_5_0.rangeDic[arg_5_1])
 
-	slot0.callDic[slot1] = nil
-	slot0.rangeDic[slot1] = nil
+	arg_5_0.callDic[arg_5_1] = nil
+	arg_5_0.rangeDic[arg_5_1] = nil
 end
 
-function slot0.DeregisterAll(slot0)
-	for slot4, slot5 in pairs(slot0.callDic) do
-		slot0:Deregister(slot4)
+function var_0_0.DeregisterAll(arg_6_0)
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.callDic) do
+		arg_6_0:Deregister(iter_6_0)
 	end
 end
 
-function slot0.Calling(slot0, slot1, slot2, slot3)
-	slot0.responder:EventCall(slot1, slot2, slot0, slot3)
+function var_0_0.Calling(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	arg_7_0.responder:EventCall(arg_7_1, arg_7_2, arg_7_0, arg_7_3)
 end
 
-function slot0.React(slot0, slot1, slot2)
-	if not slot0.callDic[slot1] then
+function var_0_0.React(arg_8_0, arg_8_1, arg_8_2)
+	if not arg_8_0.callDic[arg_8_1] then
 		return
 	end
 
-	slot0.callDic[slot1](unpack(slot2))
+	arg_8_0.callDic[arg_8_1](unpack(arg_8_2))
 end
 
-function slot0.Destroy(slot0, slot1)
-	slot0:DeregisterAll()
-	slot0.responder:DestroyCall(slot0, defaultValue(slot1, true) and RyzaMiniGameConfig.GetDestroyPoint(slot0) or 0)
+function var_0_0.Destroy(arg_9_0, arg_9_1)
+	arg_9_0:DeregisterAll()
 
-	slot0.responder = nil
-	slot0.callDic = nil
-	slot0.rangeDic = nil
+	local var_9_0 = defaultValue(arg_9_1, true) and RyzaMiniGameConfig.GetDestroyPoint(arg_9_0) or 0
 
-	Destroy(slot0._tf)
+	arg_9_0.responder:DestroyCall(arg_9_0, var_9_0)
+
+	arg_9_0.responder = nil
+	arg_9_0.callDic = nil
+	arg_9_0.rangeDic = nil
+
+	Destroy(arg_9_0._tf)
 end
 
-return slot0
+return var_0_0

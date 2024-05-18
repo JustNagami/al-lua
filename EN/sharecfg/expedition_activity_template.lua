@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.expedition_activity_template = {
 	[5009] = {
 		id = 5009,

@@ -1,41 +1,52 @@
-slot0 = class("TrophyGalleryMediator", import("..base.ContextMediator"))
-slot0.ON_TROPHY_CLAIM = "TrophyGalleryMediator:ON_TROPHY_CLAIM"
+﻿local var_0_0 = class("TrophyGalleryMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot1 = getProxy(CollectionProxy)
+var_0_0.ON_TROPHY_CLAIM = "TrophyGalleryMediator:ON_TROPHY_CLAIM"
 
-	slot0:bind(uv0.ON_TROPHY_CLAIM, function (slot0, slot1)
-		uv0:sendNotification(GAME.TROPHY_CLAIM, {
-			trophyID = slot1
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(CollectionProxy)
+
+	arg_1_0:bind(var_0_0.ON_TROPHY_CLAIM, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.TROPHY_CLAIM, {
+			trophyID = arg_2_1
 		})
 	end)
-	slot0.viewComponent:setTrophyGroups(slot1:getTrophyGroup())
-	slot0.viewComponent:setTrophyList(slot1:getTrophys())
+
+	local var_1_1 = var_1_0:getTrophyGroup()
+	local var_1_2 = var_1_0:getTrophys()
+
+	arg_1_0.viewComponent:setTrophyGroups(var_1_1)
+	arg_1_0.viewComponent:setTrophyList(var_1_2)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {
 		CollectionProxy.TROPHY_UPDATE,
 		GAME.TROPHY_CLAIM_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == CollectionProxy.TROPHY_UPDATE then
-		-- Nothing
-	elseif slot2 == GAME.TROPHY_CLAIM_DONE then
-		if pg.medal_template[slot3.trophyID].hide == Trophy.ALWAYS_HIDE then
+	if var_4_0 == CollectionProxy.TROPHY_UPDATE then
+		-- block empty
+	elseif var_4_0 == GAME.TROPHY_CLAIM_DONE then
+		local var_4_2 = var_4_1.trophyID
+
+		if pg.medal_template[var_4_2].hide == Trophy.ALWAYS_HIDE then
 			return
 		end
 
-		slot7 = getProxy(CollectionProxy)
+		local var_4_3 = math.floor(var_4_2 / 10)
+		local var_4_4 = getProxy(CollectionProxy)
+		local var_4_5 = var_4_4:getTrophyGroup()
+		local var_4_6 = var_4_4:getTrophys()
 
-		slot0.viewComponent:setTrophyGroups(slot7:getTrophyGroup())
-		slot0.viewComponent:setTrophyList(slot7:getTrophys())
-		slot0.viewComponent:PlayTrophyClaim(math.floor(slot4 / 10))
+		arg_4_0.viewComponent:setTrophyGroups(var_4_5)
+		arg_4_0.viewComponent:setTrophyList(var_4_6)
+		arg_4_0.viewComponent:PlayTrophyClaim(var_4_3)
 	end
 end
 
-return slot0
+return var_0_0

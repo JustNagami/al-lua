@@ -1,63 +1,63 @@
-slot0 = class("RawData2ThemeConvertor")
+﻿local var_0_0 = class("RawData2ThemeConvertor")
 
-function slot1(slot0, slot1, slot2)
-	if slot2 then
-		return slot0
-	elseif pg.furniture_data_template[slot0] then
-		return BackyardThemeFurniture.GetUniqueId(slot0, 0)
+local function var_0_1(arg_1_0, arg_1_1, arg_1_2)
+	if arg_1_2 then
+		return arg_1_0
+	elseif pg.furniture_data_template[arg_1_0] then
+		return BackyardThemeFurniture.GetUniqueId(arg_1_0, 0)
 	else
-		slot5 = nil
+		local var_1_0 = pg.furniture_data_template[arg_1_1].count
+		local var_1_1
 
-		if pg.furniture_data_template[slot1].count > slot0 - slot1 then
-			slot5 = slot0 - slot1
-		elseif slot0 > 10000000 then
-			slot5 = slot0 % 10
+		if var_1_0 > arg_1_0 - arg_1_1 then
+			var_1_1 = arg_1_0 - arg_1_1
+		elseif arg_1_0 > 10000000 then
+			var_1_1 = arg_1_0 % 10
 		end
 
-		return BackyardThemeFurniture.GetUniqueId(slot1, slot5)
+		return BackyardThemeFurniture.GetUniqueId(arg_1_1, var_1_1)
 	end
 end
 
-function slot2(slot0, slot1)
-	slot2 = (slot0.shipId or 0) == 1
+local function var_0_2(arg_2_0, arg_2_1)
+	local var_2_0 = (arg_2_0.shipId or 0) == 1
+	local var_2_1 = {}
 
-	for slot7, slot8 in ipairs(slot0.child or {}) do
-		-- Nothing
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.child or {}) do
+		var_2_1[tonumber(iter_2_1.id)] = Vector2(iter_2_1.x, iter_2_1.y)
 	end
 
-	return BackyardThemeFurniture.New({
-		id = tonumber(slot0.id),
-		position = Vector2(slot0.x, slot0.y),
-		dir = slot0.dir,
-		child = {
-			[tonumber(slot8.id)] = Vector2(slot8.x, slot8.y)
-		},
-		parent = tonumber(slot0.parent),
-		floor = slot1,
-		isNewStyle = slot2
-	})
+	return (BackyardThemeFurniture.New({
+		id = tonumber(arg_2_0.id),
+		position = Vector2(arg_2_0.x, arg_2_0.y),
+		dir = arg_2_0.dir,
+		child = var_2_1,
+		parent = tonumber(arg_2_0.parent),
+		floor = arg_2_1,
+		isNewStyle = var_2_0
+	}))
 end
 
-function slot3(slot0, slot1, slot2)
-	assert(pg.furniture_data_template[slot1], slot1)
+local function var_0_3(arg_3_0, arg_3_1, arg_3_2)
+	assert(pg.furniture_data_template[arg_3_1], arg_3_1)
 
-	slot4 = (pg.furniture_data_template[slot1] or {}).count or 0
+	local var_3_0 = (pg.furniture_data_template[arg_3_1] or {}).count or 0
 
-	if slot2 then
-		for slot8 = 0, slot4 - 1 do
-			if slot0 == BackyardThemeFurniture.GetUniqueId(slot1, slot8) then
+	if arg_3_2 then
+		for iter_3_0 = 0, var_3_0 - 1 do
+			if arg_3_0 == BackyardThemeFurniture.GetUniqueId(arg_3_1, iter_3_0) then
 				return true
 			end
 		end
-	elseif slot4 > slot0 - slot1 then
-		for slot8 = 0, slot4 - 1 do
-			if slot1 + slot8 == slot0 then
+	elseif var_3_0 > arg_3_0 - arg_3_1 then
+		for iter_3_1 = 0, var_3_0 - 1 do
+			if arg_3_1 + iter_3_1 == arg_3_0 then
 				return true
 			end
 		end
-	elseif slot0 > 10000000 then
-		for slot8 = 0, slot4 - 1 do
-			if slot1 * 10000000 + slot8 == slot0 then
+	elseif arg_3_0 > 10000000 then
+		for iter_3_2 = 0, var_3_0 - 1 do
+			if arg_3_1 * 10000000 + iter_3_2 == arg_3_0 then
 				return true
 			end
 		end
@@ -66,89 +66,92 @@ function slot3(slot0, slot1, slot2)
 	return false
 end
 
-function slot4(slot0, slot1, slot2, slot3, slot4)
-	for slot8, slot9 in ipairs(slot0) do
-		if uv0(slot9.parent, slot2, slot9.isNewStyle) and slot9:SameChildPosition(slot3, slot4) and uv0(slot1, slot9.configId, slot9.isNewStyle) then
-			return slot9
+local function var_0_4(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0) do
+		if var_0_3(iter_4_1.parent, arg_4_2, iter_4_1.isNewStyle) and iter_4_1:SameChildPosition(arg_4_3, arg_4_4) and var_0_3(arg_4_1, iter_4_1.configId, iter_4_1.isNewStyle) then
+			return iter_4_1
 		end
 	end
 end
 
-function slot5(slot0, slot1, slot2, slot3, slot4)
-	for slot8, slot9 in ipairs(slot0) do
-		if uv0(slot9.parent, slot2, slot9.isNewStyle) and slot9:SameChildPosition(slot3, slot4) and uv0(slot1, slot9.configId, true) then
-			return slot9
+local function var_0_5(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0) do
+		if var_0_3(iter_5_1.parent, arg_5_2, iter_5_1.isNewStyle) and iter_5_1:SameChildPosition(arg_5_3, arg_5_4) and var_0_3(arg_5_1, iter_5_1.configId, true) then
+			return iter_5_1
 		end
 	end
 end
 
-function slot0.GenFurnitures(slot0, slot1)
-	slot3 = slot1.mapSize
-	slot4 = slot1.skipCheck
-	slot5 = {}
+function var_0_0.GenFurnitures(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.floor
+	local var_6_1 = arg_6_1.mapSize
+	local var_6_2 = arg_6_1.skipCheck
+	local var_6_3 = {}
 
-	for slot9, slot10 in ipairs(slot1.furniture_put_list) do
-		table.insert(slot5, uv0(slot10, slot1.floor))
+	for iter_6_0, iter_6_1 in ipairs(arg_6_1.furniture_put_list) do
+		table.insert(var_6_3, var_0_2(iter_6_1, var_6_0))
 	end
 
-	for slot9, slot10 in ipairs(slot5) do
-		if slot10:AnyChild() then
-			for slot15, slot16 in pairs(slot10:GetChildList()) do
-				if uv1(slot5, slot15, slot10.configId, slot10:GetPosition(), slot16) then
-					-- Nothing
+	for iter_6_2, iter_6_3 in ipairs(var_6_3) do
+		if iter_6_3:AnyChild() then
+			local var_6_4 = {}
+
+			for iter_6_4, iter_6_5 in pairs(iter_6_3:GetChildList()) do
+				local var_6_5 = var_0_4(var_6_3, iter_6_4, iter_6_3.configId, iter_6_3:GetPosition(), iter_6_5)
+
+				if var_6_5 then
+					var_6_4[var_0_1(iter_6_4, var_6_5.configId, var_6_5.isNewStyle)] = iter_6_5
 				end
 			end
 
-			slot10:SetChildList({
-				[uv2(slot15, slot17.configId, slot17.isNewStyle)] = slot16
-			})
+			iter_6_3:SetChildList(var_6_4)
 		end
 	end
 
-	function slot6(slot0)
-		slot1 = {}
+	local function var_6_6(arg_7_0)
+		local var_7_0 = {}
 
-		for slot5, slot6 in pairs(slot0:GetChildList()) do
-			if uv0(uv1, slot5, slot0.configId, slot0:GetPosition(), slot6) then
-				slot7:SetUniqueId(slot5)
-				table.insert(slot1, slot7)
+		for iter_7_0, iter_7_1 in pairs(arg_7_0:GetChildList()) do
+			local var_7_1 = var_0_5(var_6_3, iter_7_0, arg_7_0.configId, arg_7_0:GetPosition(), iter_7_1)
+
+			if var_7_1 then
+				var_7_1:SetUniqueId(iter_7_0)
+				table.insert(var_7_0, var_7_1)
 			end
 		end
 
-		return slot1
+		return var_7_0
 	end
 
-	slot7 = {}
+	local var_6_7 = {}
 
-	for slot11, slot12 in ipairs(slot5) do
-		if not slot12:HasParent() then
-			table.insert(slot7, slot12)
+	for iter_6_6, iter_6_7 in ipairs(var_6_3) do
+		if not iter_6_7:HasParent() then
+			table.insert(var_6_7, iter_6_7)
 		end
 
-		if slot12:AnyChild() then
-			for slot16, slot17 in ipairs(slot6(slot12)) do
-				table.insert(slot7, slot17)
+		if iter_6_7:AnyChild() then
+			for iter_6_8, iter_6_9 in ipairs(var_6_6(iter_6_7)) do
+				table.insert(var_6_7, iter_6_9)
 			end
 		end
 	end
 
-	slot8 = {
-		[slot13.id] = true
-	}
+	local var_6_8 = {}
 
-	for slot12, slot13 in ipairs(slot7) do
-		if slot13:HasParent() then
-			-- Nothing
+	for iter_6_10, iter_6_11 in ipairs(var_6_7) do
+		if iter_6_11:HasParent() then
+			var_6_8[iter_6_11.id] = true
 		end
 	end
 
-	for slot12, slot13 in ipairs(slot7) do
-		if not slot13:HasParent() then
-			for slot17, slot18 in ipairs(slot13:GetAllUniqueId()) do
-				if not slot8[slot18] then
-					slot13:SetUniqueId(slot18)
+	for iter_6_12, iter_6_13 in ipairs(var_6_7) do
+		if not iter_6_13:HasParent() then
+			for iter_6_14, iter_6_15 in ipairs(iter_6_13:GetAllUniqueId()) do
+				if not var_6_8[iter_6_15] then
+					iter_6_13:SetUniqueId(iter_6_15)
 
-					slot8[slot18] = true
+					var_6_8[iter_6_15] = true
 
 					break
 				end
@@ -156,69 +159,67 @@ function slot0.GenFurnitures(slot0, slot1)
 		end
 	end
 
-	function slot9(slot0, slot1, slot2)
-		for slot6, slot7 in ipairs(slot0) do
-			if slot7.id == slot1 then
-				slot7:SetParent(slot2)
+	local function var_6_9(arg_8_0, arg_8_1, arg_8_2)
+		for iter_8_0, iter_8_1 in ipairs(arg_8_0) do
+			if iter_8_1.id == arg_8_1 then
+				iter_8_1:SetParent(arg_8_2)
 
 				break
 			end
 		end
 	end
 
-	for slot13, slot14 in ipairs(slot7) do
-		if slot14:AnyChild() then
-			for slot18, slot19 in pairs(slot14:GetChildList()) do
-				slot9(slot7, slot18, slot14.id)
+	for iter_6_16, iter_6_17 in ipairs(var_6_7) do
+		if iter_6_17:AnyChild() then
+			for iter_6_18, iter_6_19 in pairs(iter_6_17:GetChildList()) do
+				var_6_9(var_6_7, iter_6_18, iter_6_17.id)
 			end
 		end
 	end
 
-	slot10 = {
-		[slot15.id] = slot15
-	}
+	local var_6_10 = {}
 
-	for slot14, slot15 in ipairs(slot7) do
-		-- Nothing
+	for iter_6_20, iter_6_21 in ipairs(var_6_7) do
+		var_6_10[iter_6_21.id] = iter_6_21
 	end
 
-	if not slot4 then
-		slot0:CheckFurnitures(slot10, slot3)
+	if not var_6_2 then
+		arg_6_0:CheckFurnitures(var_6_10, var_6_1)
 	end
 
-	return slot10
+	return var_6_10
 end
 
-function slot0.CheckFurnitures(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.CheckFurnitures(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = {}
 
-	for slot7, slot8 in pairs(slot1) do
-		slot9, slot10 = CourtYardRawDataChecker.CheckFurnitrue(slot8, slot1, slot2)
+	for iter_9_0, iter_9_1 in pairs(arg_9_1) do
+		local var_9_1, var_9_2 = CourtYardRawDataChecker.CheckFurnitrue(iter_9_1, arg_9_1, arg_9_2)
 
-		if not slot9 then
-			slot0:CollectionClearIdList(slot3, slot8, slot1)
+		if not var_9_1 then
+			arg_9_0:CollectionClearIdList(var_9_0, iter_9_1, arg_9_1)
 		end
 	end
 
-	if #slot3 > 0 then
-		for slot7, slot8 in ipairs(slot3) do
-			if slot1[slot8] then
-				slot1[slot8] = nil
+	if #var_9_0 > 0 then
+		for iter_9_2, iter_9_3 in ipairs(var_9_0) do
+			if arg_9_1[iter_9_3] then
+				arg_9_1[iter_9_3] = nil
 			end
 		end
 
-		slot0:CheckFurnitures(slot1, slot2)
+		arg_9_0:CheckFurnitures(arg_9_1, arg_9_2)
 	end
 end
 
-function slot0.CollectionClearIdList(slot0, slot1, slot2, slot3)
-	if slot2:AnyChild() then
-		for slot7, slot8 in ipairs(slot2:GetChildIdList()) do
-			CollectionClearIdList(slot1, slot3[slot8], slot3)
+function var_0_0.CollectionClearIdList(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	if arg_10_2:AnyChild() then
+		for iter_10_0, iter_10_1 in ipairs(arg_10_2:GetChildIdList()) do
+			CollectionClearIdList(arg_10_1, arg_10_3[iter_10_1], arg_10_3)
 		end
 	end
 
-	table.insert(slot1, slot2.id)
+	table.insert(arg_10_1, arg_10_2.id)
 end
 
-return slot0
+return var_0_0

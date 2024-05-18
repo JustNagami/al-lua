@@ -1,1 +1,1 @@
-return class("AzumaTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage"))
+﻿return (class("AzumaTecCatchupPage", import(".TemplatePage.TecCatchupTemplatePage")))

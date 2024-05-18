@@ -1,73 +1,91 @@
-slot0 = class("ValentineQtePage", import("view.base.BaseActivityPage"))
-slot0.MINIGAME_HUB_ID = 42
-slot0.MINIGAME_ID = 50
+﻿local var_0_0 = class("ValentineQtePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.awardPreviewBtn = slot0:findTF("AD/award_preview_btn")
-	slot0.goBtn = slot0:findTF("AD/go")
-	slot4 = Text
-	slot0.indexTxt = slot0:findTF("AD/index"):GetComponent(typeof(slot4))
-	slot0.iconBtn = slot0:findTF("AD/icon")
-	slot0.markContainer = slot0:findTF("AD/marks")
-	slot0.markTpl = slot0:findTF("AD/marks/1")
+var_0_0.MINIGAME_HUB_ID = 42
+var_0_0.MINIGAME_ID = 50
 
-	setActive(slot0.markTpl, false)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.awardPreviewBtn = arg_1_0:findTF("AD/award_preview_btn")
+	arg_1_0.goBtn = arg_1_0:findTF("AD/go")
+	arg_1_0.indexTxt = arg_1_0:findTF("AD/index"):GetComponent(typeof(Text))
+	arg_1_0.iconBtn = arg_1_0:findTF("AD/icon")
+	arg_1_0.markContainer = arg_1_0:findTF("AD/marks")
+	arg_1_0.markTpl = arg_1_0:findTF("AD/marks/1")
 
-	slot0.markTrs = {}
+	setActive(arg_1_0.markTpl, false)
 
-	for slot4 = 1, 7 do
-		table.insert(slot0.markTrs, cloneTplTo(slot0.markTpl, slot0.markContainer, slot4))
+	arg_1_0.markTrs = {}
+
+	for iter_1_0 = 1, 7 do
+		local var_1_0 = cloneTplTo(arg_1_0.markTpl, arg_1_0.markContainer, iter_1_0)
+
+		table.insert(arg_1_0.markTrs, var_1_0)
 	end
 end
 
-function slot0.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_2_0)
+	return
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.MINIGAME_ID)
-	end, SFX_PANEL)
-	onButton(slot0, slot0.iconBtn, function ()
-		uv0:ShowAwards()
-	end, SFX_PANEL)
-	onButton(slot0, slot0.indexTxt, function ()
-		uv0:ShowAwards()
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.MINIGAME_ID)
 	end, SFX_PANEL)
 
-	slot2 = getProxy(MiniGameProxy):GetHubByHubId(uv0.MINIGAME_HUB_ID)
+	local var_3_0 = getProxy(MiniGameProxy)
 
-	slot0:FlushMarks(slot2)
+	onButton(arg_3_0, arg_3_0.iconBtn, function()
+		arg_3_0:ShowAwards()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.indexTxt, function()
+		arg_3_0:ShowAwards()
+	end, SFX_PANEL)
+
+	local var_3_1 = var_3_0:GetHubByHubId(var_0_0.MINIGAME_HUB_ID)
+
+	arg_3_0:FlushMarks(var_3_1)
 	Canvas.ForceUpdateCanvases()
-	slot0:FlushIndex(slot2)
+	arg_3_0:FlushIndex(var_3_1)
 end
 
-function slot0.ShowAwards(slot0)
-	slot0:emit(ActivityMediator.ON_AWARD_WINDOW, slot0:GetDropList(), getProxy(MiniGameProxy):GetHubByHubId(uv0.MINIGAME_HUB_ID).usedtime, {
+function var_0_0.ShowAwards(arg_7_0)
+	local var_7_0 = getProxy(MiniGameProxy)
+	local var_7_1 = arg_7_0:GetDropList()
+	local var_7_2 = var_7_0:GetHubByHubId(var_0_0.MINIGAME_HUB_ID).usedtime
+	local var_7_3 = {
 		i18n("2023Valentine_minigame_label3"),
 		i18n("2023Valentine_minigame_label2")
-	})
+	}
+
+	arg_7_0:emit(ActivityMediator.ON_AWARD_WINDOW, var_7_1, var_7_2, var_7_3)
 end
 
-function slot0.GetDropList(slot0)
-	return pg.mini_game[uv0.MINIGAME_ID].simple_config_data.drop_ids
+function var_0_0.GetDropList(arg_8_0)
+	return pg.mini_game[var_0_0.MINIGAME_ID].simple_config_data.drop_ids
 end
 
-function slot0.FlushMarks(slot0, slot1)
-	for slot8, slot9 in ipairs(slot0.markTrs) do
-		setActive(slot9, slot8 <= slot1.usedtime + slot1.count)
-		setActive(slot9:Find("finish"), slot8 <= slot2)
-		setActive(slot9:Find("finish/line"), slot2 >= slot8 + 1)
+function var_0_0.FlushMarks(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1.usedtime
+	local var_9_1 = var_9_0 + arg_9_1.count
+
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.markTrs) do
+		setActive(iter_9_1, iter_9_0 <= var_9_1)
+		setActive(iter_9_1:Find("finish"), iter_9_0 <= var_9_0)
+		setActive(iter_9_1:Find("finish/line"), var_9_0 >= iter_9_0 + 1)
 	end
 end
 
-function slot0.FlushIndex(slot0, slot1)
-	slot0.indexTxt.text = "<color=#753330>" .. slot1.usedtime .. "</color><color=#605176>/7</color>"
+function var_0_0.FlushIndex(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1.usedtime
+
+	arg_10_0.indexTxt.text = "<color=#753330>" .. var_10_0 .. "</color><color=#605176>/7</color>"
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_11_0)
+	return
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_12_0)
+	return
 end
 
-return slot0
+return var_0_0

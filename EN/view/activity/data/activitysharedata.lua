@@ -1,14 +1,15 @@
-slot0 = class("ActivityShareData")
+﻿local var_0_0 = class("ActivityShareData")
 
-function slot0.Ctor(slot0)
+function var_0_0.Ctor(arg_1_0)
+	return
 end
 
-function slot0.SetPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.SetPlayer(arg_2_0, arg_2_1)
+	arg_2_0.player = arg_2_1
 end
 
-function slot0.SetFlagShip(slot0, slot1)
-	slot0.flagShip = slot1
+function var_0_0.SetFlagShip(arg_3_0, arg_3_1)
+	arg_3_0.flagShip = arg_3_1
 end
 
-return slot0
+return var_0_0

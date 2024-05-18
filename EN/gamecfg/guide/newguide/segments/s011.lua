@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Why not open up your <color=#ff7d36>Mission Log</color>?",
 	"Collect your <color=#ff7d36>mission rewards.</color>"
 }
@@ -13,7 +13,7 @@ return {
 				mode = 2,
 				posY = -123,
 				posX = 87.7,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/taskButton",
@@ -50,7 +50,7 @@ return {
 				mode = 2,
 				posY = 183,
 				posX = 474,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				delay = 1,

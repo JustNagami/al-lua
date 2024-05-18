@@ -1,120 +1,122 @@
-slot0 = class("RawFurnitureData")
+﻿local var_0_0 = class("RawFurnitureData")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.config = pg.furniture_data_template[slot1.configId]
-	slot0.name = slot0.config.name
-	slot0.id = slot1.id
-	slot0.floor = slot1.floor
-	slot0.parent = slot1.parent
-	slot0.dir = slot1.dir
-	slot0.child = slot1.child
-	slot0.position = slot1.position
-	slot0.x = slot0.position and slot0.position.x or slot1.x
-	slot0.y = slot0.position and slot0.position.y or slot1.y
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.config = pg.furniture_data_template[arg_1_1.configId]
+	arg_1_0.name = arg_1_0.config.name
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.floor = arg_1_1.floor
+	arg_1_0.parent = arg_1_1.parent
+	arg_1_0.dir = arg_1_1.dir
+	arg_1_0.child = arg_1_1.child
+	arg_1_0.position = arg_1_1.position
+	arg_1_0.x = arg_1_0.position and arg_1_0.position.x or arg_1_1.x
+	arg_1_0.y = arg_1_0.position and arg_1_0.position.y or arg_1_1.y
 
-	if slot0.dir == 1 then
-		slot0.sizeX = slot0.config.size[1]
-		slot0.sizeY = slot0.config.size[2]
+	if arg_1_0.dir == 1 then
+		arg_1_0.sizeX = arg_1_0.config.size[1]
+		arg_1_0.sizeY = arg_1_0.config.size[2]
 	else
-		slot0.sizeX = slot0.config.size[2]
-		slot0.sizeY = slot0.config.size[1]
+		arg_1_0.sizeX = arg_1_0.config.size[2]
+		arg_1_0.sizeY = arg_1_0.config.size[1]
 	end
 end
 
-function slot0.IsCompletion(slot0)
-	if not slot0.floor then
+function var_0_0.IsCompletion(arg_2_0)
+	if not arg_2_0.floor then
 		return false
 	end
 
-	if not slot0.parent then
+	if not arg_2_0.parent then
 		return false
 	end
 
-	if not slot0.dir or slot0.dir < 0 or slot0.dir > 2 then
+	if not arg_2_0.dir or arg_2_0.dir < 0 or arg_2_0.dir > 2 then
 		return false
 	end
 
-	if not slot0.child then
+	if not arg_2_0.child then
 		return false
 	end
 
-	if not slot0.x or not slot0.y then
+	if not arg_2_0.x or not arg_2_0.y then
 		return false
 	end
 
 	return true
 end
 
-function slot0.ExistParnet(slot0)
-	return slot0.parent and slot0.parent ~= 0
+function var_0_0.ExistParnet(arg_3_0)
+	return arg_3_0.parent and arg_3_0.parent ~= 0
 end
 
-function slot0.LegalParent(slot0, slot1)
-	if not slot1 then
+function var_0_0.LegalParent(arg_4_0, arg_4_1)
+	if not arg_4_1 then
 		return false
 	end
 
-	if not slot1:LegalChild(slot0) then
+	if not arg_4_1:LegalChild(arg_4_0) then
 		return false
 	end
 
 	return true
 end
 
-function slot0.LegalChild(slot0, slot1)
-	if not slot1 then
+function var_0_0.LegalChild(arg_5_0, arg_5_1)
+	if not arg_5_1 then
 		return false
 	end
 
-	if slot1.parent ~= slot0.id then
+	if arg_5_1.parent ~= arg_5_0.id then
 		return false
 	end
 
-	slot2 = {}
+	local var_5_0 = {}
 
-	for slot6, slot7 in pairs(slot0.child or {}) do
-		table.insert(slot2, slot6)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.child or {}) do
+		table.insert(var_5_0, iter_5_0)
 	end
 
-	if not table.contains(slot2, slot1.id) then
+	if not table.contains(var_5_0, arg_5_1.id) then
 		return false
 	end
 
 	return true
 end
 
-function slot0.InSide(slot0, slot1, slot2, slot3, slot4)
-	if slot0.config.belong == 1 and slot0.config.type ~= 1 and slot0.config.type ~= 4 and not slot0:ExistParnet() then
-		return _.all(slot0:GetAreaByPosition(), function (slot0)
-			return uv0 <= slot0.x and uv1 <= slot0.y and slot0.x <= uv2 and slot0.y <= uv3
+function var_0_0.InSide(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+	if arg_6_0.config.belong == 1 and arg_6_0.config.type ~= 1 and arg_6_0.config.type ~= 4 and not arg_6_0:ExistParnet() then
+		local var_6_0 = arg_6_0:GetAreaByPosition()
+
+		return _.all(var_6_0, function(arg_7_0)
+			return arg_7_0.x >= arg_6_1 and arg_7_0.y >= arg_6_2 and arg_7_0.x <= arg_6_3 and arg_7_0.y <= arg_6_4
 		end)
 	end
 
-	if slot0.config.belong == 3 and slot0.x >= slot3 + 1 then
+	if arg_6_0.config.belong == 3 and arg_6_0.x >= arg_6_3 + 1 then
 		return false
 	end
 
-	if slot0.config.belong == 4 and slot0.y >= slot4 + 1 then
+	if arg_6_0.config.belong == 4 and arg_6_0.y >= arg_6_4 + 1 then
 		return false
 	end
 
 	return true
 end
 
-function slot0.GetAreaByPosition(slot0)
-	slot1 = {}
+function var_0_0.GetAreaByPosition(arg_8_0)
+	local var_8_0 = {}
 
-	for slot5 = slot0.x, slot0.x + slot0.sizeX - 1 do
-		for slot9 = slot0.y, slot0.y + slot0.sizeY - 1 do
-			table.insert(slot1, Vector2(slot5, slot9))
+	for iter_8_0 = arg_8_0.x, arg_8_0.x + arg_8_0.sizeX - 1 do
+		for iter_8_1 = arg_8_0.y, arg_8_0.y + arg_8_0.sizeY - 1 do
+			table.insert(var_8_0, Vector2(iter_8_0, iter_8_1))
 		end
 	end
 
-	return slot1
+	return var_8_0
 end
 
-function slot0.MatOrPaper(slot0)
-	return slot0.config.type == 5 or slot0.config.type == 10 or slot0.config.type == 1 or slot0.config.type == 4
+function var_0_0.MatOrPaper(arg_9_0)
+	return arg_9_0.config.type == 5 or arg_9_0.config.type == 10 or arg_9_0.config.type == 1 or arg_9_0.config.type == 4
 end
 
-return slot0
+return var_0_0

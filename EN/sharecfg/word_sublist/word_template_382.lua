@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_382 = {}
-slot1 = slot0.word_template_382
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_382 = {}
+
+local var_0_1 = var_0_0.word_template_382
 
 function temp()
-	uv0["羣"] = {
+	var_0_1.羣 = {
 		P = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["隂"] = {
+	var_0_1.隂 = {
 		b = {
 			this = true
 		}
@@ -24,14 +27,14 @@ end
 temp()
 
 function temp()
-	uv0["灋"] = {
+	var_0_1.灋 = {
 		["\\"] = {
-			["輪"] = {
+			輪 = {
 				this = true
 			}
 		},
 		["'"] = {
-			["輪"] = {
+			輪 = {
 				this = true
 			}
 		}
@@ -41,8 +44,8 @@ end
 temp()
 
 function temp()
-	uv0["韃"] = {
-		["子"] = {
+	var_0_1.韃 = {
+		子 = {
 			this = true
 		}
 	}
@@ -51,10 +54,10 @@ end
 temp()
 
 function temp()
-	uv0.z = {
+	var_0_1.z = {
 		t = {
-			["验"] = {
-				["证"] = {
+			验 = {
+				证 = {
 					_ = {
 						j = {
 							c = {
@@ -68,7 +71,7 @@ function temp()
 			}
 		},
 		e = {
-			["东"] = {
+			东 = {
 				this = true
 			}
 		},
@@ -120,12 +123,12 @@ function temp()
 					}
 				}
 			},
-			["à"] = {
+			à = {
 				o = {
 					z = {
-						["ǐ"] = {
+						ǐ = {
 							y = {
-								["á"] = {
+								á = {
 									n = {
 										g = {
 											this = true
@@ -139,11 +142,11 @@ function temp()
 			},
 			e = {
 				n = {
-					["人"] = {
-						["回"] = {
-							["血"] = {
+					人 = {
+						回 = {
+							血 = {
 								["-"] = {
-									["裙"] = {
+									裙 = {
 										this = true
 									}
 								}
@@ -154,16 +157,16 @@ function temp()
 			}
 		},
 		g = {
-			["厄"] = {
-				["斯"] = {
-					["达"] = {
+			厄 = {
+				斯 = {
+					达 = {
 						this = true
 					}
 				}
 			},
-			["二"] = {
-				["十"] = {
-					["大"] = {
+			二 = {
+				十 = {
+					大 = {
 						this = true
 					}
 				}
@@ -171,43 +174,43 @@ function temp()
 			["2"] = {
 				["."] = {
 					["0"] = {
-						["大"] = {
+						大 = {
 							this = true
 						}
 					}
 				}
 			},
-			["代"] = {
-				["表"] = {
-					["会"] = {
+			代 = {
+				表 = {
+					会 = {
 						this = true
 					}
 				}
 			},
-			["多"] = {
-				["少"] = {
-					["大"] = {
+			多 = {
+				少 = {
+					大 = {
 						this = true
 					}
 				}
 			},
-			["药"] = {
-				["丸"] = {
+			药 = {
+				丸 = {
 					this = true
 				}
 			}
 		},
 		x = {
-			["套"] = {
-				["餐"] = {
+			套 = {
+				餐 = {
 					this = true
 				}
 			}
 		},
 		c = {
 			q = {
-				["家"] = {
-					["书"] = {
+				家 = {
+					书 = {
 						this = true
 					}
 				}
@@ -222,11 +225,11 @@ end
 temp()
 
 function temp()
-	uv0["喫"] = {
-		["中"] = {
-			["國"] = {
-				["的"] = {
-					["飯"] = {
+	var_0_1.喫 = {
+		中 = {
+			國 = {
+				的 = {
+					飯 = {
 						this = true
 					}
 				}
@@ -238,8 +241,8 @@ end
 temp()
 
 function temp()
-	uv0["潤"] = {
-		["之"] = {
+	var_0_1.潤 = {
+		之 = {
 			this = true
 		}
 	}

@@ -1,35 +1,38 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_197 = {}
-slot1 = slot0.word_template_197
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_197 = {}
+
+local var_0_1 = var_0_0.word_template_197
 
 function temp()
-	uv0["羅"] = {
-		["福"] = {
-			["助"] = {
+	var_0_1.羅 = {
+		福 = {
+			助 = {
 				this = true
 			}
 		},
-		["幹"] = {
+		幹 = {
 			this = true
 		},
-		["禮"] = {
-			["詩"] = {
+		禮 = {
+			詩 = {
 				this = true
 			}
 		},
-		["榮"] = {
-			["桓"] = {
+		榮 = {
+			桓 = {
 				this = true
 			}
 		},
-		["文"] = {
-			["嘉"] = {
+		文 = {
+			嘉 = {
 				this = true
 			}
 		},
-		["志"] = {
-			["明"] = {
+		志 = {
+			明 = {
 				this = true
 			}
 		}
@@ -39,11 +42,11 @@ end
 temp()
 
 function temp()
-	uv0["蘿"] = {
-		["拉"] = {
+	var_0_1.蘿 = {
+		拉 = {
 			this = true
 		},
-		["太"] = {
+		太 = {
 			this = true
 		}
 	}
@@ -52,16 +55,16 @@ end
 temp()
 
 function temp()
-	uv0["洛"] = {
-		["波"] = {
-			["桑"] = {
+	var_0_1.洛 = {
+		波 = {
+			桑 = {
 				this = true
 			}
 		},
-		["克"] = {
-			["菲"] = {
-				["爾"] = {
-					["特"] = {
+		克 = {
+			菲 = {
+				爾 = {
+					特 = {
 						this = true
 					}
 				}
@@ -78,14 +81,14 @@ function temp()
 				}
 			}
 		},
-		["丹"] = {
-			["伦"] = {
-				["的"] = {
-					["矮"] = {
-						["人"] = {
-							["火"] = {
-								["枪"] = {
-									["手"] = {
+		丹 = {
+			伦 = {
+				的 = {
+					矮 = {
+						人 = {
+							火 = {
+								枪 = {
+									手 = {
 										this = true
 									}
 								}
@@ -101,21 +104,21 @@ end
 temp()
 
 function temp()
-	uv0["骆"] = {
-		["冰"] = {
-			["淫"] = {
-				["传"] = {
+	var_0_1.骆 = {
+		冰 = {
+			淫 = {
+				传 = {
 					this = true
 				}
 			}
 		},
-		["海"] = {
-			["坚"] = {
+		海 = {
+			坚 = {
 				this = true
 			}
 		},
-		["惠"] = {
-			["宁"] = {
+		惠 = {
+			宁 = {
 				this = true
 			}
 		}
@@ -125,9 +128,9 @@ end
 temp()
 
 function temp()
-	uv0["雒"] = {
-		["树"] = {
-			["刚"] = {
+	var_0_1.雒 = {
+		树 = {
+			刚 = {
 				this = true
 			}
 		}
@@ -137,7 +140,7 @@ end
 temp()
 
 function temp()
-	uv0["濼"] = {
+	var_0_1.濼 = {
 		this = {
 			this = true
 		}
@@ -147,19 +150,19 @@ end
 temp()
 
 function temp()
-	uv0["吕"] = {
-		["建"] = {
-			["成"] = {
+	var_0_1.吕 = {
+		建 = {
+			成 = {
 				this = true
 			}
 		},
-		["京"] = {
-			["花"] = {
+		京 = {
+			花 = {
 				this = true
 			}
 		},
-		["秀"] = {
-			["莲"] = {
+		秀 = {
+			莲 = {
 				this = true
 			}
 		}

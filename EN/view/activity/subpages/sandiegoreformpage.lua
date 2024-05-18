@@ -1,40 +1,49 @@
-slot0 = class("SandiegoReformPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("SandiegoReformPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.progress = slot0:findTF("progress/left", slot0.bg)
-	slot0.gameBtn = slot0:findTF("start", slot0.bg)
-	slot0.helpBtn = slot0:findTF("mic", slot0.bg)
-	slot0.getSign = slot0:findTF("get", slot0.bg)
-	slot0.days = slot0:findTF("days", slot0.bg)
-	slot0.nums = slot0:findTF("count", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.progress = arg_1_0:findTF("progress/left", arg_1_0.bg)
+	arg_1_0.gameBtn = arg_1_0:findTF("start", arg_1_0.bg)
+	arg_1_0.helpBtn = arg_1_0:findTF("mic", arg_1_0.bg)
+	arg_1_0.getSign = arg_1_0:findTF("get", arg_1_0.bg)
+	arg_1_0.days = arg_1_0:findTF("days", arg_1_0.bg)
+	arg_1_0.nums = arg_1_0:findTF("count", arg_1_0.bg)
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.activity:getConfig("config_client")[1][1] ~= nil then
-		pg.NewStoryMgr.GetInstance():Play(slot1)
+function var_0_0.OnDataSetting(arg_2_0)
+	local var_2_0 = arg_2_0.activity:getConfig("config_client")[1][1]
+
+	if var_2_0 ~= nil then
+		pg.NewStoryMgr.GetInstance():Play(var_2_0)
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = slot0.activity
+function var_0_0.OnFirstFlush(arg_3_0)
+	local var_3_0 = arg_3_0.activity
+	local var_3_1 = var_3_0:getConfig("config_client")[3]
 
-	setText(slot0.nums, _.reduce(_.slice(slot1:getConfig("config_client")[3], 1, slot1.data2), 0, function (slot0, slot1)
-		return slot0 + slot1
+	setText(arg_3_0.nums, _.reduce(_.slice(var_3_1, 1, var_3_0.data2), 0, function(arg_4_0, arg_4_1)
+		return arg_4_0 + arg_4_1
 	end))
-	setActive(slot0.getSign, slot1.data1 == 1)
+	setActive(arg_3_0.getSign, var_3_0.data1 == 1)
 
-	slot3 = slot1:getConfig("config_data")[4]
-	slot0.progress.sizeDelta = Vector2.New(10 + 90 * math.max(slot1.data2 - 1, 0), slot0.progress.sizeDelta.y)
+	local var_3_2 = var_3_0:getConfig("config_data")[4]
 
-	for slot9 = 1, 7 do
-		setTextColor(slot0.days:Find(slot9), slot9 <= slot1.data2 and Color.New(1, 0.83, 0.15) or Color.New(0.59, 0.62, 0.69))
+	arg_3_0.progress.sizeDelta = Vector2.New(10 + 90 * math.max(var_3_0.data2 - 1, 0), arg_3_0.progress.sizeDelta.y)
+
+	local var_3_3 = Color.New(1, 0.83, 0.15)
+	local var_3_4 = Color.New(0.59, 0.62, 0.69)
+
+	for iter_3_0 = 1, 7 do
+		local var_3_5 = arg_3_0.days:Find(iter_3_0)
+
+		setTextColor(var_3_5, iter_3_0 <= var_3_0.data2 and var_3_3 or var_3_4)
 	end
 
-	onButton(slot0, slot0.gameBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINK_LINK)
+	onButton(arg_3_0, arg_3_0.gameBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINK_LINK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("link_link_help_tip")
@@ -42,10 +51,12 @@ function slot0.OnFirstFlush(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	return
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,85 +1,93 @@
-slot0 = class("QuotaShopPage", import(".BaseShopPage"))
+﻿local var_0_0 = class("QuotaShopPage", import(".BaseShopPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "QuotaShop"
 end
 
-function slot0.GetPaintingCommodityUpdateVoice(slot0)
+function var_0_0.GetPaintingCommodityUpdateVoice(arg_2_0)
+	return
 end
 
-function slot0.CanOpen(slot0, slot1, slot2)
-	return pg.SystemOpenMgr.GetInstance():isOpenSystem(slot2.level, "QuotaShop")
+function var_0_0.CanOpen(arg_3_0, arg_3_1, arg_3_2)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_3_2.level, "QuotaShop")
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.nanoTxt = slot0:findTF("res_nano/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.nanoTxt = arg_4_0:findTF("res_nano/Text"):GetComponent(typeof(Text))
 end
 
-function slot0.OnInit(slot0)
-	setText(slot0._tf:Find("title/tip"), i18n("quota_shop_description"))
+function var_0_0.OnInit(arg_5_0)
+	setText(arg_5_0._tf:Find("title/tip"), i18n("quota_shop_description"))
 end
 
-function slot0.OnUpdateItems(slot0)
-	if not slot0.items[ChapterConst.ShamMoneyItem] then
-		slot0.nanoTxt.text = 0
+function var_0_0.OnUpdateItems(arg_6_0)
+	local var_6_0 = arg_6_0.items[ChapterConst.ShamMoneyItem]
+
+	if not var_6_0 then
+		arg_6_0.nanoTxt.text = 0
 	else
-		slot0.nanoTxt.text = slot2.count
+		arg_6_0.nanoTxt.text = var_6_0.count
 	end
 end
 
-function slot0.OnUpdateCommodity(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnUpdateCommodity(arg_7_0, arg_7_1)
+	local var_7_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.goodsVO.id == slot1.id then
-			slot2 = slot7
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.cards) do
+		if iter_7_1.goodsVO.id == arg_7_1.id then
+			var_7_0 = iter_7_1
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot2:update(slot1)
+	if var_7_0 then
+		var_7_0:update(arg_7_1)
 	end
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = QuotaGoodsCard.New(slot1)
+function var_0_0.OnInitItem(arg_8_0, arg_8_1)
+	local var_8_0 = QuotaGoodsCard.New(arg_8_1)
 
-	onButton(slot0, slot2.tr, function ()
-		if not uv0.goodsVO:canPurchase() then
+	onButton(arg_8_0, var_8_0.tr, function()
+		if not var_8_0.goodsVO:canPurchase() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 			return
 		end
 
-		uv1:OnClickCommodity(uv0.goodsVO, function (slot0, slot1)
-			uv0:OnPurchase(slot0, slot1)
+		arg_8_0:OnClickCommodity(var_8_0.goodsVO, function(arg_10_0, arg_10_1)
+			arg_8_0:OnPurchase(arg_10_0, arg_10_1)
 		end)
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_8_0.cards[arg_8_1] = var_8_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:OnInitItem(slot2)
+function var_0_0.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.cards[arg_11_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_11_0 then
+		arg_11_0:OnInitItem(arg_11_2)
+
+		var_11_0 = arg_11_0.cards[arg_11_2]
 	end
 
-	slot3:update(slot0.displays[slot1 + 1])
+	local var_11_1 = arg_11_0.displays[arg_11_1 + 1]
+
+	var_11_0:update(var_11_1)
 end
 
-function slot0.OnUpdateAll(slot0)
-	slot0:InitCommodities()
+function var_0_0.OnUpdateAll(arg_12_0)
+	arg_12_0:InitCommodities()
 end
 
-function slot0.OnPurchase(slot0, slot1, slot2)
-	slot0:emit(NewShopsMediator.ON_QUOTA_SHOPPING, slot1.id, slot2)
+function var_0_0.OnPurchase(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0:emit(NewShopsMediator.ON_QUOTA_SHOPPING, arg_13_1.id, arg_13_2)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_14_0)
+	return
 end
 
-return slot0
+return var_0_0

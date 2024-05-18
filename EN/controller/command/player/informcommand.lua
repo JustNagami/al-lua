@@ -1,9 +1,12 @@
-slot0 = class("InformCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("InformCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.playerId
+	local var_1_2 = var_1_0.info
+	local var_1_3 = var_1_0.content
 
-	if not slot2.playerId or not slot2.info or not slot2.content then
+	if not var_1_1 or not var_1_2 or not var_1_3 then
 		return
 	end
 
@@ -14,18 +17,20 @@ function slot0.execute(slot0, slot1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(50111, {
-		id = slot3,
-		info = slot4,
-		content = slot5
-	}, 50112, function (slot0)
-		if slot0.result == 0 then
-			table.insert(getProxy(ChatProxy).informs, uv0 .. uv1)
+		id = var_1_1,
+		info = var_1_2,
+		content = var_1_3
+	}, 50112, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(ChatProxy)
+
+			table.insert(var_2_0.informs, var_1_1 .. var_1_3)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("inform_sueecss"))
-			uv2:sendNotification(GAME.INFORM_DONE)
+			arg_1_0:sendNotification(GAME.INFORM_DONE)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("inform_failed"))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

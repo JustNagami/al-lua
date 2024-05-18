@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = 1221201,
 	bgm = "bsm-3",
 	stages = {

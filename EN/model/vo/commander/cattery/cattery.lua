@@ -1,230 +1,234 @@
-slot0 = class("Cattery", import("...BaseVO"))
-slot0.STATE_LOCK = 1
-slot0.STATE_EMPTY = 2
-slot0.STATE_OCCUPATION = 3
-slot0.OP_CLEAR = 1
-slot0.OP_FEED = 2
-slot0.OP_PLAY = 4
+﻿local var_0_0 = class("Cattery", import("...BaseVO"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.home = slot1
-	slot0.id = slot2.id
-	slot0.op = slot2.op_flag or 0
-	slot0.expSettlementTime = slot2.exp_time
-	slot0.commanderId = slot2.commander_id or 0
-	slot0.style = slot2.style or 1
-	slot0.opClean = bit.band(slot0.op, uv0.OP_CLEAR) > 0
-	slot0.opFeed = bit.band(slot0.op, uv0.OP_FEED) > 0
-	slot0.opPlay = bit.band(slot0.op, uv0.OP_PLAY) > 0
-	slot0.cacheExp = slot2.cache_exp or 0
+var_0_0.STATE_LOCK = 1
+var_0_0.STATE_EMPTY = 2
+var_0_0.STATE_OCCUPATION = 3
+var_0_0.OP_CLEAR = 1
+var_0_0.OP_FEED = 2
+var_0_0.OP_PLAY = 4
+
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.home = arg_1_1
+	arg_1_0.id = arg_1_2.id
+	arg_1_0.op = arg_1_2.op_flag or 0
+	arg_1_0.expSettlementTime = arg_1_2.exp_time
+	arg_1_0.commanderId = arg_1_2.commander_id or 0
+	arg_1_0.style = arg_1_2.style or 1
+	arg_1_0.opClean = bit.band(arg_1_0.op, var_0_0.OP_CLEAR) > 0
+	arg_1_0.opFeed = bit.band(arg_1_0.op, var_0_0.OP_FEED) > 0
+	arg_1_0.opPlay = bit.band(arg_1_0.op, var_0_0.OP_PLAY) > 0
+	arg_1_0.cacheExp = arg_1_2.cache_exp or 0
 end
 
-function slot0.AddCommander(slot0, slot1, slot2)
-	slot0.commanderId = slot1
-	slot0.expSettlementTime = slot2
+function var_0_0.AddCommander(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0.commanderId = arg_2_1
+	arg_2_0.expSettlementTime = arg_2_2
 
-	slot0:ClearCacheExp()
+	arg_2_0:ClearCacheExp()
 end
 
-function slot0.ReplaceCommander(slot0, slot1)
-	slot0.commanderId = slot1
+function var_0_0.ReplaceCommander(arg_3_0, arg_3_1)
+	arg_3_0.commanderId = arg_3_1
 
-	slot0:ClearCacheExp()
+	arg_3_0:ClearCacheExp()
 end
 
-function slot0.RemoveCommander(slot0)
-	slot0.commanderId = 0
+function var_0_0.RemoveCommander(arg_4_0)
+	arg_4_0.commanderId = 0
 
-	slot0:ClearCacheExp()
+	arg_4_0:ClearCacheExp()
 end
 
-function slot0.ExistCommander(slot0)
-	return slot0.commanderId ~= 0 and getProxy(CommanderProxy):RawGetCommanderById(slot0.commanderId) ~= nil
+function var_0_0.ExistCommander(arg_5_0)
+	return arg_5_0.commanderId ~= 0 and getProxy(CommanderProxy):RawGetCommanderById(arg_5_0.commanderId) ~= nil
 end
 
-function slot0.GetCommanderId(slot0)
-	return slot0.commanderId
+function var_0_0.GetCommanderId(arg_6_0)
+	return arg_6_0.commanderId
 end
 
-function slot0.GetCommander(slot0)
-	if slot0:ExistCommander() then
-		return getProxy(CommanderProxy):getCommanderById(slot0.commanderId)
+function var_0_0.GetCommander(arg_7_0)
+	if arg_7_0:ExistCommander() then
+		return getProxy(CommanderProxy):getCommanderById(arg_7_0.commanderId)
 	end
 end
 
-function slot0.CommanderCanClean(slot0)
-	if slot0:ExistCommander() then
-		return slot0:GetCommander():ExistCleanFlag()
-	end
-
-	return false
-end
-
-function slot0.CommanderCanFeed(slot0)
-	if slot0:ExistCommander() then
-		return slot0:GetCommander():ExitFeedFlag()
+function var_0_0.CommanderCanClean(arg_8_0)
+	if arg_8_0:ExistCommander() then
+		return arg_8_0:GetCommander():ExistCleanFlag()
 	end
 
 	return false
 end
 
-function slot0.CommanderCanPlay(slot0)
-	if slot0:ExistCommander() then
-		return slot0:GetCommander():ExitPlayFlag()
+function var_0_0.CommanderCanFeed(arg_9_0)
+	if arg_9_0:ExistCommander() then
+		return arg_9_0:GetCommander():ExitFeedFlag()
 	end
 
 	return false
 end
 
-function slot0.CommanderCanOP(slot0, slot1)
-	if slot1 == 1 then
-		return slot0:CommanderCanClean()
-	elseif slot1 == 2 then
-		return slot0:CommanderCanFeed()
-	elseif slot1 == 3 then
-		return slot0:CommanderCanPlay()
+function var_0_0.CommanderCanPlay(arg_10_0)
+	if arg_10_0:ExistCommander() then
+		return arg_10_0:GetCommander():ExitPlayFlag()
+	end
+
+	return false
+end
+
+function var_0_0.CommanderCanOP(arg_11_0, arg_11_1)
+	if arg_11_1 == 1 then
+		return arg_11_0:CommanderCanClean()
+	elseif arg_11_1 == 2 then
+		return arg_11_0:CommanderCanFeed()
+	elseif arg_11_1 == 3 then
+		return arg_11_0:CommanderCanPlay()
 	end
 end
 
-function slot0.GetStyle(slot0)
-	return slot0.style
+function var_0_0.GetStyle(arg_12_0)
+	return arg_12_0.style
 end
 
-function slot0._GetStyle_(slot0)
+function var_0_0._GetStyle_(arg_13_0)
 	return CatteryStyle.New({
 		own = true,
-		id = slot0.style
+		id = arg_13_0.style
 	})
 end
 
-function slot0.UpdateStyle(slot0, slot1)
-	slot0.style = slot1
+function var_0_0.UpdateStyle(arg_14_0, arg_14_1)
+	arg_14_0.style = arg_14_1
 end
 
-function slot0.IsDirty(slot0)
-	return slot0.opClean == true
+function var_0_0.IsDirty(arg_15_0)
+	return arg_15_0.opClean == true
 end
 
-function slot0.GetOP(slot0)
-	return slot0.op
+function var_0_0.GetOP(arg_16_0)
+	return arg_16_0.op
 end
 
-function slot0.ExistCleanOP(slot0)
-	return slot0.opClean
+function var_0_0.ExistCleanOP(arg_17_0)
+	return arg_17_0.opClean
 end
 
-function slot0.ClearCleanOP(slot0)
-	slot0.opClean = false
+function var_0_0.ClearCleanOP(arg_18_0)
+	arg_18_0.opClean = false
 end
 
-function slot0.ExiseFeedOP(slot0)
-	return slot0.opFeed
+function var_0_0.ExiseFeedOP(arg_19_0)
+	return arg_19_0.opFeed
 end
 
-function slot0.ClearFeedOP(slot0)
-	slot0.opFeed = false
+function var_0_0.ClearFeedOP(arg_20_0)
+	arg_20_0.opFeed = false
 end
 
-function slot0.ExistPlayOP(slot0)
-	return slot0.opPlay
+function var_0_0.ExistPlayOP(arg_21_0)
+	return arg_21_0.opPlay
 end
 
-function slot0.ClearPlayOP(slot0)
-	slot0.opPlay = false
+function var_0_0.ClearPlayOP(arg_22_0)
+	arg_22_0.opPlay = false
 end
 
-function slot0.ExistOP(slot0, slot1)
-	if slot1 == 1 then
-		return slot0:ExistCleanOP()
-	elseif slot1 == 2 then
-		return slot0:ExiseFeedOP()
-	elseif slot1 == 3 then
-		return slot0:ExistPlayOP()
+function var_0_0.ExistOP(arg_23_0, arg_23_1)
+	if arg_23_1 == 1 then
+		return arg_23_0:ExistCleanOP()
+	elseif arg_23_1 == 2 then
+		return arg_23_0:ExiseFeedOP()
+	elseif arg_23_1 == 3 then
+		return arg_23_0:ExistPlayOP()
 	end
 end
 
-function slot0.ClearOP(slot0, slot1)
-	if slot1 == 1 then
-		slot0:ClearCleanOP()
-	elseif slot1 == 2 then
-		slot0:ClearFeedOP()
-	elseif slot1 == 3 then
-		slot0:ClearPlayOP()
+function var_0_0.ClearOP(arg_24_0, arg_24_1)
+	if arg_24_1 == 1 then
+		arg_24_0:ClearCleanOP()
+	elseif arg_24_1 == 2 then
+		arg_24_0:ClearFeedOP()
+	elseif arg_24_1 == 3 then
+		arg_24_0:ClearPlayOP()
 	end
 end
 
-function slot0.ResetOP(slot0)
-	slot0.opPlay = true
-	slot0.opFeed = true
-	slot0.opClean = true
+function var_0_0.ResetOP(arg_25_0)
+	arg_25_0.opPlay = true
+	arg_25_0.opFeed = true
+	arg_25_0.opClean = true
 end
 
-function slot0.ResetCleanOP(slot0)
-	slot0.opClean = true
+function var_0_0.ResetCleanOP(arg_26_0)
+	arg_26_0.opClean = true
 end
 
-function slot0.ResetFeedOP(slot0)
-	slot0.opFeed = true
+function var_0_0.ResetFeedOP(arg_27_0)
+	arg_27_0.opFeed = true
 end
 
-function slot0.ResetPlayOP(slot0)
-	slot0.opPlay = true
+function var_0_0.ResetPlayOP(arg_28_0)
+	arg_28_0.opPlay = true
 end
 
-function slot0.IsLocked(slot0)
-	if slot0.id <= slot0.home:GetMaxCatteryCnt() then
+function var_0_0.IsLocked(arg_29_0)
+	if arg_29_0.home:GetMaxCatteryCnt() >= arg_29_0.id then
 		return false
 	end
 
 	return true
 end
 
-function slot0.GetState(slot0)
-	if slot0:IsLocked() then
-		return uv0.STATE_LOCK
+function var_0_0.GetState(arg_30_0)
+	if arg_30_0:IsLocked() then
+		return var_0_0.STATE_LOCK
 	end
 
-	if slot0:ExistCommander() then
-		return uv0.STATE_OCCUPATION
+	if arg_30_0:ExistCommander() then
+		return var_0_0.STATE_OCCUPATION
 	end
 
-	return uv0.STATE_EMPTY
+	return var_0_0.STATE_EMPTY
 end
 
-function slot0.GetCalcExpTime(slot0)
-	return slot0.expSettlementTime
+function var_0_0.GetCalcExpTime(arg_31_0)
+	return arg_31_0.expSettlementTime
 end
 
-function slot0.UpdateCalcExpTime(slot0, slot1)
-	slot0.expSettlementTime = slot1
+function var_0_0.UpdateCalcExpTime(arg_32_0, arg_32_1)
+	arg_32_0.expSettlementTime = arg_32_1
 end
 
-function slot0.CanUse(slot0)
-	return slot0:GetState() ~= uv0.STATE_LOCK
+function var_0_0.CanUse(arg_33_0)
+	return arg_33_0:GetState() ~= var_0_0.STATE_LOCK
 end
 
-function slot0.GetCacheExp(slot0)
-	return slot0.cacheExp
+function var_0_0.GetCacheExp(arg_34_0)
+	return arg_34_0.cacheExp
 end
 
-function slot0.ClearCacheExp(slot0)
-	slot0.cacheExp = 0
+function var_0_0.ClearCacheExp(arg_35_0)
+	arg_35_0.cacheExp = 0
 end
 
-function slot0.UpdateCacheExp(slot0, slot1)
-	slot0.cacheExp = slot0.cacheExp + slot1
+function var_0_0.UpdateCacheExp(arg_36_0, arg_36_1)
+	arg_36_0.cacheExp = arg_36_0.cacheExp + arg_36_1
 end
 
-function slot0.ExistCacheExp(slot0)
-	return slot0.cacheExp > 0
+function var_0_0.ExistCacheExp(arg_37_0)
+	return arg_37_0.cacheExp > 0
 end
 
-function slot0.GetCacheExpTime(slot0)
-	if slot0:ExistCacheExp() then
-		return math.ceil(slot0:GetCacheExp() / (slot0.home:getConfig("exp_number") / 3600))
+function var_0_0.GetCacheExpTime(arg_38_0)
+	if arg_38_0:ExistCacheExp() then
+		local var_38_0 = arg_38_0:GetCacheExp()
+		local var_38_1 = arg_38_0.home:getConfig("exp_number") / 3600
+
+		return (math.ceil(var_38_0 / var_38_1))
 	else
 		return 0
 	end
 end
 
-return slot0
+return var_0_0

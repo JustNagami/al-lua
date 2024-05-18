@@ -1,11 +1,14 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_195 = {}
-slot1 = slot0.word_template_195
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_195 = {}
+
+local var_0_1 = var_0_0.word_template_195
 
 function temp()
-	uv0["掄"] = {
-		["功"] = {
+	var_0_1.掄 = {
+		功 = {
 			this = true
 		}
 	}
@@ -14,18 +17,18 @@ end
 temp()
 
 function temp()
-	uv0["伦"] = {
-		["公"] = {
+	var_0_1.伦 = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		},
-		["理"] = {
-			["毛"] = {
+		理 = {
+			毛 = {
 				this = true
 			}
 		}
@@ -35,14 +38,14 @@ end
 temp()
 
 function temp()
-	uv0["沦"] = {
-		["公"] = {
+	var_0_1.沦 = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		}
 	}
@@ -51,65 +54,65 @@ end
 temp()
 
 function temp()
-	uv0["轮"] = {
-		["暴"] = {
+	var_0_1.轮 = {
+		暴 = {
 			this = true
 		},
-		["操"] = {
+		操 = {
 			this = true
 		},
-		["大"] = {
+		大 = {
 			this = true
 		},
-		["干"] = {
+		干 = {
 			this = true
 		},
-		["公"] = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		},
-		["奸"] = {
+		奸 = {
 			this = true,
-			["内"] = {
-				["射"] = {
+			内 = {
+				射 = {
 					this = true
 				}
 			}
 		},
-		["姦"] = {
+		姦 = {
 			this = true
 		},
-		["流"] = {
-			["干"] = {
+		流 = {
+			干 = {
 				this = true
 			}
 		},
-		["盘"] = {
-			["赌"] = {
+		盘 = {
+			赌 = {
 				this = true
 			},
-			["机"] = {
+			机 = {
 				this = true
 			},
-			["破"] = {
-				["解"] = {
+			破 = {
+				解 = {
 					this = true
 				}
 			},
-			["源"] = {
-				["码"] = {
+			源 = {
+				码 = {
 					this = true
 				}
 			}
 		},
-		["子"] = {
-			["工"] = {
-				["力"] = {
+		子 = {
+			工 = {
+				力 = {
 					this = true
 				}
 			}
@@ -120,14 +123,14 @@ end
 temp()
 
 function temp()
-	uv0["倫"] = {
-		["公"] = {
+	var_0_1.倫 = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		}
 	}
@@ -136,14 +139,14 @@ end
 temp()
 
 function temp()
-	uv0["淪"] = {
-		["公"] = {
+	var_0_1.淪 = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		}
 	}
@@ -152,38 +155,38 @@ end
 temp()
 
 function temp()
-	uv0["輪"] = {
-		["暴"] = {
+	var_0_1.輪 = {
+		暴 = {
 			this = true
 		},
-		["操"] = {
+		操 = {
 			this = true
 		},
-		["大"] = {
+		大 = {
 			this = true
 		},
-		["公"] = {
+		公 = {
 			this = true
 		},
-		["功"] = {
+		功 = {
 			this = true
 		},
-		["攻"] = {
+		攻 = {
 			this = true
 		},
-		["奸"] = {
+		奸 = {
 			this = true,
-			["內"] = {
-				["射"] = {
+			內 = {
+				射 = {
 					this = true
 				}
 			}
 		},
-		["姦"] = {
+		姦 = {
 			this = true
 		},
-		["盤"] = {
-			["賭"] = {
+		盤 = {
+			賭 = {
 				this = true
 			}
 		}

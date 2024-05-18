@@ -1,35 +1,36 @@
-slot0 = class("AnniversaryPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("AnniversaryPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.btnShop = slot0:findTF("BtnShop")
-	slot0.charListTF = slot0:findTF("list")
-	slot0.charTF = slot0:findTF("Image", slot0.charListTF)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.btnShop = arg_1_0:findTF("BtnShop")
+	arg_1_0.charListTF = arg_1_0:findTF("list")
+	arg_1_0.charTF = arg_1_0:findTF("Image", arg_1_0.charListTF)
 
-	slot0:scrollAnim()
+	arg_1_0:scrollAnim()
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.btnShop, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.btnShop, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
 end
 
-function slot0.scrollAnim(slot0)
-	slot0._tf:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function (slot0)
-		uv0.charListTF:GetChild(0):SetAsLastSibling()
+function var_0_0.scrollAnim(arg_4_0)
+	arg_4_0._tf:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function(arg_5_0)
+		arg_4_0.charListTF:GetChild(0):SetAsLastSibling()
 
-		slot1 = 0
+		local var_5_0 = 0
 
-		eachChild(uv0.charListTF, function (slot0)
-			setActive(uv0.charListTF:GetChild(uv1), uv1 ~= 6)
+		eachChild(arg_4_0.charListTF, function(arg_6_0)
+			setActive(arg_4_0.charListTF:GetChild(var_5_0), var_5_0 ~= 6)
 
-			uv1 = uv1 + 1
+			var_5_0 = var_5_0 + 1
 		end)
-		uv0.charTF:SetSiblingIndex(6)
+		arg_4_0.charTF:SetSiblingIndex(6)
 	end)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_7_0)
+	return
 end
 
-return slot0
+return var_0_0

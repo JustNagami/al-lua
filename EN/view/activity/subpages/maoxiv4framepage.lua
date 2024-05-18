@@ -1,83 +1,88 @@
-slot0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
-slot0.COLOR = "#1895ff"
+﻿local var_0_0 = class("MaoxiV4FramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+var_0_0.COLOR = "#1895ff"
 
-	slot0.switchBtns = {
-		slot0:findTF("switch_btn_1", slot0.switchBtn),
-		slot0:findTF("switch_btn_2", slot0.switchBtn)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
+
+	arg_1_0.switchBtns = {
+		arg_1_0:findTF("switch_btn_1", arg_1_0.switchBtn),
+		arg_1_0:findTF("switch_btn_2", arg_1_0.switchBtn)
 	}
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	setActive(slot0.switchBtns[1], false)
-	setActive(slot0.switchBtns[2], true)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.switchBtns[1], false)
+	setActive(arg_2_0.switchBtns[2], true)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if slot0.avatarConfig.target < slot0.activity.data1 then
-		slot1 = slot2 or slot1
-	end
+function var_0_0.OnUpdateFlush(arg_3_0)
+	local var_3_0 = arg_3_0.activity.data1
+	local var_3_1 = arg_3_0.avatarConfig.target
 
-	setText(slot0.cur, slot1 / slot2 >= 1 and setColorStr(slot1, uv0.COLOR) or slot1)
-	setText(slot0.target, "/" .. slot2)
-	setFillAmount(slot0.bar, slot3)
+	var_3_0 = var_3_1 < var_3_0 and var_3_1 or var_3_0
 
-	slot4 = slot2 <= slot1
-	slot5 = slot0.activity.data2 >= 1
+	local var_3_2 = var_3_0 / var_3_1
 
-	setActive(slot0.battleBtn, slot0.inPhase2 and not slot4)
-	setActive(slot0.getBtn, slot0.inPhase2 and not slot5 and slot4)
-	setActive(slot0.gotBtn, slot0.inPhase2 and slot5)
-	setActive(slot0.gotTag, slot0.inPhase2 and slot5)
-	setActive(slot0.cur, not slot5 and slot0.inPhase2)
-	setActive(slot0.target, not slot5 and slot0.inPhase2)
+	setText(arg_3_0.cur, var_3_2 >= 1 and setColorStr(var_3_0, var_0_0.COLOR) or var_3_0)
+	setText(arg_3_0.target, "/" .. var_3_1)
+	setFillAmount(arg_3_0.bar, var_3_2)
+
+	local var_3_3 = var_3_1 <= var_3_0
+	local var_3_4 = arg_3_0.activity.data2 >= 1
+
+	setActive(arg_3_0.battleBtn, arg_3_0.inPhase2 and not var_3_3)
+	setActive(arg_3_0.getBtn, arg_3_0.inPhase2 and not var_3_4 and var_3_3)
+	setActive(arg_3_0.gotBtn, arg_3_0.inPhase2 and var_3_4)
+	setActive(arg_3_0.gotTag, arg_3_0.inPhase2 and var_3_4)
+	setActive(arg_3_0.cur, not var_3_4 and arg_3_0.inPhase2)
+	setActive(arg_3_0.target, not var_3_4 and arg_3_0.inPhase2)
 end
 
-function slot0.Switch(slot0, slot1)
-	slot0.isSwitching = true
+function var_0_0.Switch(arg_4_0, arg_4_1)
+	arg_4_0.isSwitching = true
 
-	setToggleEnabled(slot0.switchBtn, false)
-	setActive(slot0.switchBtns[1], true)
-	setActive(slot0.switchBtns[2], false)
+	setToggleEnabled(arg_4_0.switchBtn, false)
+	setActive(arg_4_0.switchBtns[1], true)
+	setActive(arg_4_0.switchBtns[2], false)
 
-	slot0.switchBtns[2] = slot0.switchBtns[1]
-	slot0.switchBtns[1] = slot0.switchBtns[2]
-	slot2, slot3 = nil
+	arg_4_0.switchBtns[1], arg_4_0.switchBtns[2] = arg_4_0.switchBtns[2], arg_4_0.switchBtns[1]
 
-	if slot1 then
-		slot3 = slot0.phases[2]
-		slot2 = slot0.phases[1]
+	local var_4_0
+	local var_4_1
+
+	if arg_4_1 then
+		var_4_0, var_4_1 = arg_4_0.phases[1], arg_4_0.phases[2]
 	else
-		slot3 = slot0.phases[1]
-		slot2 = slot0.phases[2]
+		var_4_0, var_4_1 = arg_4_0.phases[2], arg_4_0.phases[1]
 	end
 
-	slot4 = GetOrAddComponent(slot2, typeof(CanvasGroup))
+	local var_4_2 = GetOrAddComponent(var_4_0, typeof(CanvasGroup))
+	local var_4_3 = var_4_0.localPosition
+	local var_4_4 = var_4_1.localPosition
 
-	slot3:SetAsLastSibling()
-	setActive(slot2:Find("Image"), false)
-	LeanTween.moveLocal(go(slot2), slot3.localPosition, 0.4):setOnComplete(System.Action(function ()
-		setActive(uv0:Find("label"), true)
+	var_4_1:SetAsLastSibling()
+	setActive(var_4_0:Find("Image"), false)
+	LeanTween.moveLocal(go(var_4_0), var_4_4, 0.4):setOnComplete(System.Action(function()
+		setActive(var_4_0:Find("label"), true)
 	end))
-	LeanTween.value(go(slot2), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(var_4_0), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_6_0)
+		var_4_2.alpha = arg_6_0
 	end))
-	setActive(slot3:Find("Image"), true)
+	setActive(var_4_1:Find("Image"), true)
 
-	slot7 = GetOrAddComponent(slot3, typeof(CanvasGroup))
+	local var_4_5 = GetOrAddComponent(var_4_1, typeof(CanvasGroup))
 
-	LeanTween.value(go(slot3), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	LeanTween.value(go(var_4_1), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_7_0)
+		var_4_5.alpha = arg_7_0
 	end))
-	setActive(slot3:Find("label"), false)
-	LeanTween.moveLocal(go(slot3), slot2.localPosition, 0.4):setOnComplete(System.Action(function ()
-		uv0.isSwitching = nil
+	setActive(var_4_1:Find("label"), false)
+	LeanTween.moveLocal(go(var_4_1), var_4_3, 0.4):setOnComplete(System.Action(function()
+		arg_4_0.isSwitching = nil
 
-		setToggleEnabled(uv0.switchBtn, true)
+		setToggleEnabled(arg_4_0.switchBtn, true)
 	end))
 end
 
-return slot0
+return var_0_0

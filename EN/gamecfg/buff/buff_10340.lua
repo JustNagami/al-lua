@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAllInStrike"
+			},
+			arg_list = {
+				skill_id = 10340,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "每次执行空袭后为先锋部队增加一个护盾，抵消释放者自身耐久5.0%的伤害，持续8秒",
 		addition = {
@@ -69,17 +81,5 @@ return {
 	stack = 1,
 	id = 10340,
 	icon = 10340,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAllInStrike"
-			},
-			arg_list = {
-				skill_id = 10340,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

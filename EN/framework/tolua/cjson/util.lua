@@ -1,261 +1,297 @@
-slot0 = require("cjson")
+﻿local var_0_0 = require("cjson")
 
-function slot1(slot0)
-	slot2 = 0
+local function var_0_1(arg_1_0)
+	local var_1_0 = 0
+	local var_1_1 = 0
 
-	for slot6, slot7 in pairs(slot0) do
-		if type(slot6) == "number" then
-			if 0 < slot6 then
-				slot1 = slot6
+	for iter_1_0, iter_1_1 in pairs(arg_1_0) do
+		if type(iter_1_0) == "number" then
+			if var_1_0 < iter_1_0 then
+				var_1_0 = iter_1_0
 			end
 
-			slot2 = slot2 + 1
+			var_1_1 = var_1_1 + 1
 		else
 			return -1
 		end
 	end
 
-	if slot1 > slot2 * 2 then
+	if var_1_0 > var_1_1 * 2 then
 		return -1
 	end
 
-	return slot1
+	return var_1_0
 end
 
-slot2 = nil
+local var_0_2
 
-function slot3(slot0, slot1, slot2)
-	slot3, slot4, slot5 = nil
+local function var_0_3(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0
+	local var_2_1
+	local var_2_2
 
-	if slot1 then
-		slot4 = "\n" .. slot1 .. "  "
-		slot5 = slot1 .. "  "
+	if arg_2_1 then
+		var_2_0 = "\n" .. arg_2_1
+		var_2_1 = var_2_0 .. "  "
+		var_2_2 = arg_2_1 .. "  "
 	else
-		slot5 = false
-		slot4 = " "
-		slot3 = " "
+		var_2_0, var_2_1, var_2_2 = " ", " ", false
 	end
 
-	if slot2 + 1 > 50 then
+	arg_2_2 = arg_2_2 + 1
+
+	if arg_2_2 > 50 then
 		return "Cannot serialise any further: too many nested tables"
 	end
 
-	slot7 = false
-	slot8 = {
-		"{" .. slot4
+	local var_2_3 = var_0_1(arg_2_0)
+	local var_2_4 = false
+	local var_2_5 = {
+		"{" .. var_2_1
 	}
 
-	if uv0(slot0) > 0 then
-		for slot12 = 1, slot6 do
-			if slot7 then
-				table.insert(slot8, "," .. slot4)
+	if var_2_3 > 0 then
+		for iter_2_0 = 1, var_2_3 do
+			if var_2_4 then
+				table.insert(var_2_5, "," .. var_2_1)
 			end
 
-			table.insert(slot8, uv1(slot0[slot12], slot5, slot2))
+			table.insert(var_2_5, var_0_2(arg_2_0[iter_2_0], var_2_2, arg_2_2))
 
-			slot7 = true
+			var_2_4 = true
 		end
-	elseif slot6 < 0 then
-		for slot12, slot13 in pairs(slot0) do
-			if slot7 then
-				table.insert(slot8, "," .. slot4)
+	elseif var_2_3 < 0 then
+		for iter_2_1, iter_2_2 in pairs(arg_2_0) do
+			if var_2_4 then
+				table.insert(var_2_5, "," .. var_2_1)
 			end
 
-			table.insert(slot8, ("[%s] = %s"):format(uv1(slot12, slot5, slot2), uv1(slot13, slot5, slot2)))
+			table.insert(var_2_5, ("[%s] = %s"):format(var_0_2(iter_2_1, var_2_2, arg_2_2), var_0_2(iter_2_2, var_2_2, arg_2_2)))
 
-			slot7 = true
+			var_2_4 = true
 		end
 	end
 
-	table.insert(slot8, slot3 .. "}")
+	table.insert(var_2_5, var_2_0 .. "}")
 
-	return table.concat(slot8)
+	return table.concat(var_2_5)
 end
 
-slot7 = 0
-slot8 = 0
+function var_0_2(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_1 == nil then
+		arg_3_1 = ""
+	end
 
-return {
-	serialise_value = function (slot0, slot1, slot2)
-		if slot1 == nil then
-			slot1 = ""
+	if arg_3_2 == nil then
+		arg_3_2 = 0
+	end
+
+	if arg_3_0 == var_0_0.null then
+		return "json.null"
+	elseif type(arg_3_0) == "string" then
+		return ("%q"):format(arg_3_0)
+	elseif type(arg_3_0) == "nil" or type(arg_3_0) == "number" or type(arg_3_0) == "boolean" then
+		return tostring(arg_3_0)
+	elseif type(arg_3_0) == "table" then
+		return var_0_3(arg_3_0, arg_3_1, arg_3_2)
+	else
+		return "\"<" .. type(arg_3_0) .. ">\""
+	end
+end
+
+local function var_0_4(arg_4_0)
+	local var_4_0
+
+	if arg_4_0 == nil then
+		var_4_0 = io.stdin
+	else
+		local var_4_1
+		local var_4_2
+
+		var_4_0, var_4_2 = io.open(arg_4_0, "rb")
+
+		if var_4_0 == nil then
+			error(("Unable to read '%s': %s"):format(arg_4_0, var_4_2))
 		end
+	end
 
-		if slot2 == nil then
-			slot2 = 0
+	local var_4_3 = var_4_0:read("*a")
+
+	if arg_4_0 ~= nil then
+		var_4_0:close()
+	end
+
+	if var_4_3 == nil then
+		error("Failed to read " .. arg_4_0)
+	end
+
+	return var_4_3
+end
+
+local function var_0_5(arg_5_0, arg_5_1)
+	local var_5_0
+
+	if arg_5_0 == nil then
+		var_5_0 = io.stdout
+	else
+		local var_5_1
+		local var_5_2
+
+		var_5_0, var_5_2 = io.open(arg_5_0, "wb")
+
+		if var_5_0 == nil then
+			error(("Unable to write '%s': %s"):format(arg_5_0, var_5_2))
 		end
+	end
 
-		if slot0 == uv0.null then
-			return "json.null"
-		elseif type(slot0) == "string" then
-			return ("%q"):format(slot0)
-		elseif type(slot0) == "nil" or type(slot0) == "number" or type(slot0) == "boolean" then
-			return tostring(slot0)
-		elseif type(slot0) == "table" then
-			return uv1(slot0, slot1, slot2)
-		else
-			return "\"<" .. type(slot0) .. ">\""
-		end
-	end,
-	file_load = function (slot0)
-		slot1 = nil
+	var_5_0:write(arg_5_1)
 
-		if slot0 == nil then
-			slot1 = io.stdin
-		else
-			slot2 = nil
-			slot3, slot2 = io.open(slot0, "rb")
+	if arg_5_0 ~= nil then
+		var_5_0:close()
+	end
+end
 
-			if slot3 == nil then
-				error(("Unable to read '%s': %s"):format(slot0, slot2))
-			end
-		end
+local function var_0_6(arg_6_0, arg_6_1)
+	local var_6_0 = type(arg_6_0)
 
-		slot2 = slot1:read("*a")
+	if var_6_0 ~= type(arg_6_1) then
+		return false
+	end
 
-		if slot0 ~= nil then
-			slot1:close()
-		end
+	if var_6_0 == "number" and arg_6_0 ~= arg_6_0 and arg_6_1 ~= arg_6_1 then
+		return true
+	end
 
-		if slot2 == nil then
-			error("Failed to read " .. slot0)
-		end
+	if var_6_0 ~= "table" then
+		return arg_6_0 == arg_6_1
+	end
 
-		return slot2
-	end,
-	file_save = function (slot0, slot1)
-		slot2 = nil
+	local var_6_1 = {}
 
-		if slot0 == nil then
-			slot2 = io.stdout
-		else
-			slot3 = nil
-			slot4, slot3 = io.open(slot0, "wb")
+	for iter_6_0, iter_6_1 in pairs(arg_6_0) do
+		var_6_1[iter_6_0] = true
+	end
 
-			if slot4 == nil then
-				error(("Unable to write '%s': %s"):format(slot0, slot3))
-			end
-		end
-
-		slot2:write(slot1)
-
-		if slot0 ~= nil then
-			slot2:close()
-		end
-	end,
-	compare_values = function (slot0, slot1)
-		if type(slot0) ~= type(slot1) then
+	for iter_6_2, iter_6_3 in pairs(arg_6_1) do
+		if not var_6_1[iter_6_2] then
 			return false
 		end
 
-		if slot2 == "number" and slot0 ~= slot0 and slot1 ~= slot1 then
-			return true
+		if not var_0_6(arg_6_0[iter_6_2], arg_6_1[iter_6_2]) then
+			return false
 		end
 
-		if slot2 ~= "table" then
-			return slot0 == slot1
-		end
+		var_6_1[iter_6_2] = nil
+	end
 
-		slot4 = {
-			[slot8] = true
+	for iter_6_4, iter_6_5 in pairs(var_6_1) do
+		return false
+	end
+
+	return true
+end
+
+local var_0_7 = 0
+local var_0_8 = 0
+
+local function var_0_9()
+	return var_0_7, var_0_8
+end
+
+local function var_0_10(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+	local function var_8_0(arg_9_0, arg_9_1, arg_9_2)
+		local var_9_0 = {
+			[true] = ":success",
+			[false] = ":error"
 		}
 
-		for slot8, slot9 in pairs(slot0) do
-			-- Nothing
+		if arg_9_1 ~= nil then
+			arg_9_0 = arg_9_0 .. var_9_0[arg_9_1]
 		end
 
-		for slot8, slot9 in pairs(slot1) do
-			if not slot4[slot8] then
-				return false
-			end
-
-			if not uv0(slot0[slot8], slot1[slot8]) then
-				return false
-			end
-
-			slot4[slot8] = nil
-		end
-
-		for slot8, slot9 in pairs(slot4) do
-			return false
-		end
-
-		return true
-	end,
-	run_test_summary = function ()
-		return uv0, uv1
-	end,
-	run_test = function (slot0, slot1, slot2, slot3, slot4)
-		function slot5(slot0, slot1, slot2)
-			if slot1 ~= nil then
-				slot0 = slot0 .. ({
-					[true] = ":success",
-					[false] = ":error"
-				})[slot1]
-			end
-
-			print(("[%s] %s"):format(slot0, uv0(slot2, false)))
-		end
-
-		slot8 = false
-
-		if table.remove({
-			pcall(slot1, unpack(slot2))
-		}, 1) == slot3 and uv1(slot6, slot4) then
-			slot8 = true
-			uv2 = uv2 + 1
-		end
-
-		uv3 = uv3 + 1
-
-		print(("==> Test [%d] %s: %s"):format(uv3, slot0, ({
-			[true] = "PASS",
-			[false] = "FAIL"
-		})[slot8]))
-		slot5("Input", nil, slot2)
-
-		if not slot8 then
-			slot5("Expected", slot3, slot4)
-		end
-
-		slot5("Received", slot7, slot6)
-		print()
-
-		return slot8, slot6
-	end,
-	run_test_group = function (slot0)
-		for slot5, slot6 in ipairs(slot0) do
-			if slot6[4] == nil then
-				function (slot0, slot1, slot2)
-					if type(slot0) == "string" and #slot0 > 0 then
-						print("==> " .. slot0)
-					end
-
-					slot1(unpack(slot2 or {}))
-					print()
-				end(unpack(slot6))
-			else
-				uv0(unpack(slot6))
-			end
-		end
-	end,
-	run_script = function (slot0, slot1)
-		slot3 = nil
-
-		if _G.setfenv then
-			if loadstring(slot0) then
-				setfenv(slot3, slot1 or {})
-			end
-		else
-			slot3 = load(slot0, nil, , slot2)
-		end
-
-		if slot3 == nil then
-			error("Invalid syntax.")
-		end
-
-		slot3()
-
-		return slot2
+		print(("[%s] %s"):format(arg_9_0, var_0_2(arg_9_2, false)))
 	end
+
+	local var_8_1 = {
+		pcall(arg_8_1, unpack(arg_8_2))
+	}
+	local var_8_2 = table.remove(var_8_1, 1)
+	local var_8_3 = false
+
+	if var_8_2 == arg_8_3 and var_0_6(var_8_1, arg_8_4) then
+		var_8_3 = true
+		var_0_7 = var_0_7 + 1
+	end
+
+	var_0_8 = var_0_8 + 1
+
+	local var_8_4 = {
+		[true] = "PASS",
+		[false] = "FAIL"
+	}
+
+	print(("==> Test [%d] %s: %s"):format(var_0_8, arg_8_0, var_8_4[var_8_3]))
+	var_8_0("Input", nil, arg_8_2)
+
+	if not var_8_3 then
+		var_8_0("Expected", arg_8_3, arg_8_4)
+	end
+
+	var_8_0("Received", var_8_2, var_8_1)
+	print()
+
+	return var_8_3, var_8_1
+end
+
+local function var_0_11(arg_10_0)
+	local function var_10_0(arg_11_0, arg_11_1, arg_11_2)
+		if type(arg_11_0) == "string" and #arg_11_0 > 0 then
+			print("==> " .. arg_11_0)
+		end
+
+		arg_11_1(unpack(arg_11_2 or {}))
+		print()
+	end
+
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0) do
+		if iter_10_1[4] == nil then
+			var_10_0(unpack(iter_10_1))
+		else
+			var_0_10(unpack(iter_10_1))
+		end
+	end
+end
+
+local function var_0_12(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1 or {}
+	local var_12_1
+
+	if _G.setfenv then
+		var_12_1 = loadstring(arg_12_0)
+
+		if var_12_1 then
+			setfenv(var_12_1, var_12_0)
+		end
+	else
+		var_12_1 = load(arg_12_0, nil, nil, var_12_0)
+	end
+
+	if var_12_1 == nil then
+		error("Invalid syntax.")
+	end
+
+	var_12_1()
+
+	return var_12_0
+end
+
+return {
+	serialise_value = var_0_2,
+	file_load = var_0_4,
+	file_save = var_0_5,
+	compare_values = var_0_6,
+	run_test_summary = var_0_9,
+	run_test = var_0_10,
+	run_test_group = var_0_11,
+	run_script = var_0_12
 }

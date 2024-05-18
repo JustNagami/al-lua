@@ -1,198 +1,226 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleFormulas
-slot3 = slot0.Battle.BattleAttr
-slot5 = slot0.Battle.BattleConst.EquipmentType
-slot6 = slot0.Battle.BattleConfig
-slot7 = slot0.Battle.BattleCardPuzzleEvent
-slot8 = slot0.Battle.BattleAttr
-slot0.Battle.BattleCardPuzzlePlayerUnit = class("BattleCardPuzzlePlayerUnit", slot0.Battle.BattlePlayerUnit)
-slot0.Battle.BattleCardPuzzlePlayerUnit.__name = "BattleCardPuzzlePlayerUnit"
-slot9 = slot0.Battle.BattleCardPuzzlePlayerUnit
+﻿ys = ys or {}
 
-function slot9.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleFormulas
+local var_0_3 = var_0_0.Battle.BattleAttr
+local var_0_4 = var_0_0.Battle.BattleConst
+local var_0_5 = var_0_4.EquipmentType
+local var_0_6 = var_0_0.Battle.BattleConfig
+local var_0_7 = var_0_0.Battle.BattleCardPuzzleEvent
+local var_0_8 = var_0_0.Battle.BattleAttr
+
+var_0_0.Battle.BattleCardPuzzlePlayerUnit = class("BattleCardPuzzlePlayerUnit", var_0_0.Battle.BattlePlayerUnit)
+var_0_0.Battle.BattleCardPuzzlePlayerUnit.__name = "BattleCardPuzzlePlayerUnit"
+
+local var_0_9 = var_0_0.Battle.BattleCardPuzzlePlayerUnit
+
+function var_0_9.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_9.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
-function slot9.UpdateHP(slot0, slot1, slot2)
-	if not slot0:IsAlive() then
+function var_0_9.UpdateHP(arg_2_0, arg_2_1, arg_2_2)
+	if not arg_2_0:IsAlive() then
 		return
 	end
 
-	if not slot0:IsAlive() then
+	local var_2_0 = arg_2_0:IsAlive()
+
+	if not var_2_0 then
 		return
 	end
 
-	slot10 = slot2.font
-	slot11 = slot2.cldPos
-	slot12 = slot1
+	local var_2_1 = arg_2_2.isMiss
+	local var_2_2 = arg_2_2.isCri
+	local var_2_3 = arg_2_2.isHeal
+	local var_2_4 = arg_2_2.isShare
+	local var_2_5 = arg_2_2.attr
+	local var_2_6 = arg_2_2.font
+	local var_2_7 = arg_2_2.cldPos
+	local var_2_8 = arg_2_1
+	local var_2_9 = arg_2_0:GetCurrentHP()
 
-	if not slot2.isHeal then
-		slot14 = {
-			damage = -slot1,
-			isShare = slot2.isShare,
-			miss = slot2.isMiss,
-			cri = slot2.isCri,
-			damageSrc = slot2.srcID,
-			damageAttr = slot2.attr
+	if not var_2_3 then
+		local var_2_10 = {
+			damage = -arg_2_1,
+			isShare = var_2_4,
+			miss = var_2_1,
+			cri = var_2_2,
+			damageSrc = arg_2_2.srcID,
+			damageAttr = var_2_5
 		}
 
-		slot0:TriggerBuff(uv0.BuffEffectType.ON_TAKE_DAMAGE, slot14)
+		arg_2_0:TriggerBuff(var_0_4.BuffEffectType.ON_TAKE_DAMAGE, var_2_10)
 
-		if slot0:GetCurrentHP() <= slot14.damage then
-			slot0:TriggerBuff(uv0.BuffEffectType.ON_BEFORE_FATAL_DAMAGE, {})
+		if var_2_9 <= var_2_10.damage then
+			arg_2_0:TriggerBuff(var_0_4.BuffEffectType.ON_BEFORE_FATAL_DAMAGE, {})
 		end
 
-		slot1 = -slot14.damage
+		arg_2_1 = -var_2_10.damage
 
-		if uv1.IsInvincible(slot0) then
+		if var_0_8.IsInvincible(arg_2_0) then
 			return 0
 		end
 	else
-		slot14 = {
-			damage = slot1,
-			isHeal = slot7
+		local var_2_11 = {
+			damage = arg_2_1,
+			isHeal = var_2_3
 		}
 
-		slot0:TriggerBuff(uv0.BuffEffectType.ON_TAKE_HEALING, slot14)
+		arg_2_0:TriggerBuff(var_0_4.BuffEffectType.ON_TAKE_HEALING, var_2_11)
 
-		slot7 = slot14.isHeal
-		slot1 = slot14.damage
+		var_2_3 = var_2_11.isHeal
+		arg_2_1 = var_2_11.damage
 	end
 
-	if slot11 and not slot11:EqualZero() then
-		slot17 = slot0:GetPosition()
-		slot18 = slot0:GetBoxSize().x
-		slot21 = slot11:Clone()
-		slot21.x = Mathf.Clamp(slot21.x, slot17.x - slot18, slot17.x + slot18)
+	local var_2_12 = math.min(arg_2_0:GetMaxHP(), math.max(0, var_2_9 + arg_2_1)) - var_2_9
+	local var_2_13 = {
+		preShieldHP = var_2_8,
+		dHP = arg_2_1,
+		validDHP = var_2_12,
+		isMiss = var_2_1,
+		isCri = var_2_2,
+		isHeal = var_2_3,
+		font = var_2_6
+	}
+
+	if var_2_7 and not var_2_7:EqualZero() then
+		local var_2_14 = arg_2_0:GetPosition()
+		local var_2_15 = arg_2_0:GetBoxSize().x
+		local var_2_16 = var_2_14.x - var_2_15
+		local var_2_17 = var_2_14.x + var_2_15
+		local var_2_18 = var_2_7:Clone()
+
+		var_2_18.x = Mathf.Clamp(var_2_18.x, var_2_16, var_2_17)
+		var_2_13.posOffset = var_2_14 - var_2_18
 	end
 
-	slot0:UpdateHPAction({
-		preShieldHP = slot12,
-		dHP = slot1,
-		validDHP = math.min(slot0:GetMaxHP(), math.max(0, slot13 + slot1)) - slot13,
-		isMiss = slot5,
-		isCri = slot6,
-		isHeal = slot7,
-		font = slot10,
-		posOffset = slot17 - slot21
-	})
+	arg_2_0:UpdateHPAction(var_2_13)
 
-	if not slot0:IsAlive() and slot4 then
-		slot0:SetDeathReason(slot2.damageReason)
-		slot0:DeadAction()
+	if not arg_2_0:IsAlive() and var_2_0 then
+		arg_2_0:SetDeathReason(arg_2_2.damageReason)
+		arg_2_0:DeadAction()
 	end
 
-	if slot0:IsAlive() then
-		slot0:TriggerBuff(uv0.BuffEffectType.ON_HP_RATIO_UPDATE, {
-			dHP = slot1,
-			unit = slot0
+	if arg_2_0:IsAlive() then
+		arg_2_0:TriggerBuff(var_0_4.BuffEffectType.ON_HP_RATIO_UPDATE, {
+			dHP = arg_2_1,
+			unit = arg_2_0
 		})
 	end
 
-	return slot1
+	return arg_2_1
 end
 
-function slot9.UpdateHPAction(slot0, slot1)
-	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_COMMON_HP, slot1))
-	uv2.super.UpdateHPAction(slot0, slot1)
+function var_0_9.UpdateHPAction(arg_3_0, arg_3_1)
+	arg_3_0:DispatchEvent(var_0_0.Event.New(var_0_7.UPDATE_COMMON_HP, arg_3_1))
+	var_0_9.super.UpdateHPAction(arg_3_0, arg_3_1)
 end
 
-function slot9.SetTemplate(slot0, slot1, slot2, slot3)
-	slot0._tmpID = slot1
-	slot0._tmpData = Clone(uv0.GetPuzzleShipDataTemplate(slot0._tmpID))
-	slot0._tmpData.scale = 100
-	slot0._tmpData.parallel_max = {
+function var_0_9.SetTemplate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0._tmpID = arg_4_1
+	arg_4_0._tmpData = Clone(var_0_1.GetPuzzleShipDataTemplate(arg_4_0._tmpID))
+	arg_4_0._tmpData.scale = 100
+	arg_4_0._tmpData.parallel_max = {
 		1,
 		1,
 		1
 	}
 
-	slot0:configWeaponQueueParallel()
-	slot0:overrideSkin(slot0._tmpData.skin_id, true)
-	slot0:InitCldComponent()
-	slot0:setAttrFromOutBattle(slot2, slot3)
+	arg_4_0:configWeaponQueueParallel()
+	arg_4_0:overrideSkin(arg_4_0._tmpData.skin_id, true)
+	arg_4_0:InitCldComponent()
+	arg_4_0:setAttrFromOutBattle(arg_4_2, arg_4_3)
 
-	slot0._personality = uv0.GetShipPersonality(2)
-	slot7 = slot0._tmpData.type
+	arg_4_0._personality = var_0_1.GetShipPersonality(2)
 
-	uv1.SetCurrent(slot0, "srcShipType", slot7)
+	var_0_3.SetCurrent(arg_4_0, "srcShipType", arg_4_0._tmpData.type)
 
-	for slot7, slot8 in ipairs(slot0._tmpData.tag) do
-		slot0:AddLabelTag(slot8)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._tmpData.tag) do
+		arg_4_0:AddLabelTag(iter_4_1)
 	end
 end
 
-function slot9.GetTemplate(slot0)
-	return slot0._tmpData
+function var_0_9.GetTemplate(arg_5_0)
+	return arg_5_0._tmpData
 end
 
-function slot9.InitCurrentHP(slot0)
+function var_0_9.InitCurrentHP(arg_6_0)
+	return
 end
 
-function slot9.InitFleetCurrentHP(slot0, slot1)
-	slot0:TriggerBuff(uv0.BuffEffectType.ON_HP_RATIO_UPDATE, {})
+function var_0_9.InitFleetCurrentHP(arg_7_0, arg_7_1)
+	arg_7_0:TriggerBuff(var_0_4.BuffEffectType.ON_HP_RATIO_UPDATE, {})
 end
 
-function slot9.SetCurrentHP(slot0, slot1)
+function var_0_9.SetCurrentHP(arg_8_0, arg_8_1)
+	return
 end
 
-function slot9.GetCurrentHP(slot0)
-	return slot0._fleetCardPuzzleComponent:GetCurrentCommonHP()
+function var_0_9.GetCurrentHP(arg_9_0)
+	return arg_9_0._fleetCardPuzzleComponent:GetCurrentCommonHP()
 end
 
-function slot9.GetMaxHP(slot0)
-	return slot0._fleetCardPuzzleComponent:GetTotalCommonHP()
+function var_0_9.GetMaxHP(arg_10_0)
+	return arg_10_0._fleetCardPuzzleComponent:GetTotalCommonHP()
 end
 
-function slot9.GetHP(slot0)
-	return slot0:GetCurrentHP(), slot0:GetMaxHP()
+function var_0_9.GetHP(arg_11_0)
+	return arg_11_0:GetCurrentHP(), arg_11_0:GetMaxHP()
 end
 
-function slot9.GetHPRate(slot0)
-	return slot0:GetCurrentHP() / slot0:GetMaxHP()
+function var_0_9.GetHPRate(arg_12_0)
+	return arg_12_0:GetCurrentHP() / arg_12_0:GetMaxHP()
 end
 
-function slot9.SetFleetVO(slot0, slot1)
-	uv0.super.SetFleetVO(slot0, slot1)
+function var_0_9.SetFleetVO(arg_13_0, arg_13_1)
+	var_0_9.super.SetFleetVO(arg_13_0, arg_13_1)
 
-	slot0._fleetCardPuzzleComponent = slot1:GetCardPuzzleComponent()
+	arg_13_0._fleetCardPuzzleComponent = arg_13_1:GetCardPuzzleComponent()
 end
 
-function slot9.LeaderSetting(slot0)
-	slot0._warningValue = 1
+function var_0_9.LeaderSetting(arg_14_0)
+	arg_14_0._warningValue = 1
 end
 
-function slot9.SetMainFleetUnit(slot0, slot1)
-	slot0._isMainFleetUnit = true
+function var_0_9.SetMainFleetUnit(arg_15_0, arg_15_1)
+	arg_15_0._isMainFleetUnit = true
 
-	slot0:SetMainUnitStatic(true)
+	arg_15_0:SetMainUnitStatic(true)
 
-	slot0._mainUnitWarningValue = 1
+	arg_15_0._mainUnitWarningValue = 1
 end
 
-function slot9.CheckWeaponInitial(slot0)
+function var_0_9.CheckWeaponInitial(arg_16_0)
+	return
 end
 
-function slot9.setWeapon(slot0)
-	for slot5, slot6 in ipairs(slot0._tmpData.default_equip) do
-		if slot6 ~= 0 then
-			for slot11, slot12 in ipairs(uv0.GetWeaponDataFromID(slot6)) do
-				if slot12 ~= -1 then
-					slot0._totalWeapon[#slot0._totalWeapon + 1] = uv1.Battle.BattleDataFunction.CreateWeaponUnit(slot12, slot0, nil, slot5)
+function var_0_9.setWeapon(arg_17_0)
+	local var_17_0 = arg_17_0._tmpData.default_equip
 
-					if weaponType ~= uv2.EquipmentType.STRIKE_AIRCRAFT then
-						assert(#slot7 < 2, "自动武器一组不允许配置多个")
-						slot0:AddAutoWeapon(slot13)
+	for iter_17_0, iter_17_1 in ipairs(var_17_0) do
+		if iter_17_1 ~= 0 then
+			local var_17_1 = var_0_1.GetWeaponDataFromID(iter_17_1)
+
+			for iter_17_2, iter_17_3 in ipairs(var_17_1) do
+				if iter_17_3 ~= -1 then
+					local var_17_2 = var_0_0.Battle.BattleDataFunction.CreateWeaponUnit(iter_17_3, arg_17_0, nil, iter_17_0)
+
+					arg_17_0._totalWeapon[#arg_17_0._totalWeapon + 1] = var_17_2
+
+					if weaponType == var_0_4.EquipmentType.STRIKE_AIRCRAFT then
+						-- block empty
+					else
+						assert(#var_17_1 < 2, "自动武器一组不允许配置多个")
+						arg_17_0:AddAutoWeapon(var_17_2)
 					end
 
-					if weaponType == uv2.EquipmentType.INTERCEPT_AIRCRAFT or weaponType == uv2.EquipmentType.STRIKE_AIRCRAFT then
-						slot0._hiveList[#slot0._hiveList + 1] = slot13
+					if weaponType == var_0_4.EquipmentType.INTERCEPT_AIRCRAFT or weaponType == var_0_4.EquipmentType.STRIKE_AIRCRAFT then
+						arg_17_0._hiveList[#arg_17_0._hiveList + 1] = var_17_2
 					end
 
-					if weaponType == uv2.EquipmentType.ANTI_AIR then
-						slot0._AAList[#slot0._AAList + 1] = slot13
+					if weaponType == var_0_4.EquipmentType.ANTI_AIR then
+						arg_17_0._AAList[#arg_17_0._AAList + 1] = var_17_2
 					end
 				end
 			end

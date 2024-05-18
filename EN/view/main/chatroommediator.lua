@@ -1,62 +1,76 @@
-slot0 = class("ChatRoomMediator", import("..base.ContextMediator"))
-slot0.SEND_FRIEND_MSG = "ChatRoomMediator:SEND_FRIEND_MSG"
-slot0.FETCH_FRIEND_MSG = "ChatRoomMediator:FETCH_FRIEND_MSG"
-slot0.CLEAR_UNREADCOUNT = "ChatRoomMediator:CLEAR_UNREADCOUNT"
-slot0.OPEN_EMOJI = "ChatRoomMediator:OPEN_EMOJI"
+﻿local var_0_0 = class("ChatRoomMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getData())
-	slot0.viewComponent:setFriendVO(slot0.contextData.friendVO)
+var_0_0.SEND_FRIEND_MSG = "ChatRoomMediator:SEND_FRIEND_MSG"
+var_0_0.FETCH_FRIEND_MSG = "ChatRoomMediator:FETCH_FRIEND_MSG"
+var_0_0.CLEAR_UNREADCOUNT = "ChatRoomMediator:CLEAR_UNREADCOUNT"
+var_0_0.OPEN_EMOJI = "ChatRoomMediator:OPEN_EMOJI"
 
-	slot0.friendProxy = getProxy(FriendProxy)
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(PlayerProxy):getData()
 
-	slot0:bind(uv0.SEND_FRIEND_MSG, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.FRIEND_SEND_MSG, {
-			playerId = slot1,
-			msg = slot2
+	arg_1_0.viewComponent:setPlayer(var_1_0)
+
+	local var_1_1 = arg_1_0.contextData.friendVO
+
+	arg_1_0.viewComponent:setFriendVO(var_1_1)
+
+	arg_1_0.friendProxy = getProxy(FriendProxy)
+
+	local var_1_2 = arg_1_0.friendProxy:getAllFriends()
+	local var_1_3 = arg_1_0.friendProxy:getAllCacheMsg()
+
+	arg_1_0:bind(var_0_0.SEND_FRIEND_MSG, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.FRIEND_SEND_MSG, {
+			playerId = arg_2_1,
+			msg = arg_2_2
 		})
 	end)
-	slot0:bind(uv0.FETCH_FRIEND_MSG, function (slot0, slot1)
-		uv0:sendNotification(GAME.FRIEND_FETCH_MSG, slot1)
+	arg_1_0:bind(var_0_0.FETCH_FRIEND_MSG, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.FRIEND_FETCH_MSG, arg_3_1)
 	end)
-	slot0:bind(uv0.CLEAR_UNREADCOUNT, function (slot0, slot1)
-		if uv0.friendProxy:getFriend(slot1):hasUnreadMsg() then
-			slot2:resetUnreadCount()
-			uv0.friendProxy:updateFriend(slot2)
+	arg_1_0:bind(var_0_0.CLEAR_UNREADCOUNT, function(arg_4_0, arg_4_1)
+		local var_4_0 = arg_1_0.friendProxy:getFriend(arg_4_1)
+
+		if var_4_0:hasUnreadMsg() then
+			var_4_0:resetUnreadCount()
+			arg_1_0.friendProxy:updateFriend(var_4_0)
 		end
 	end)
-	slot0:bind(uv0.OPEN_EMOJI, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.OPEN_EMOJI, function(arg_5_0, arg_5_1, arg_5_2)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = EmojiLayer,
 			mediator = EmojiMediator,
 			data = {
-				callback = slot2,
-				pos = slot1,
+				callback = arg_5_2,
+				pos = arg_5_1,
 				LayerWeightMgr_groupName = LayerWeightConst.GROUP_CHATROOM,
-				emojiIconCallback = function (slot0)
-					uv0.viewComponent:insertEmojiToInputText(slot0)
+				emojiIconCallback = function(arg_6_0)
+					arg_1_0.viewComponent:insertEmojiToInputText(arg_6_0)
 				end
 			}
 		}))
 	end)
-	slot0.viewComponent:setFriends(slot0.friendProxy:getAllFriends())
-	slot0.viewComponent:setCacheMsgs(slot0.friendProxy:getAllCacheMsg())
+	arg_1_0.viewComponent:setFriends(var_1_2)
+	arg_1_0.viewComponent:setCacheMsgs(var_1_3)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_7_0)
 	return {
 		FriendProxy.FRIEND_NEW_MSG,
 		FriendProxy.FRIEND_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == FriendProxy.FRIEND_NEW_MSG then
-		slot0.viewComponent:setCacheMsgs(slot0.friendProxy:getAllCacheMsg())
-		slot0.viewComponent:appendMsg(slot1:getBody())
-	elseif slot2 == FriendProxy.FRIEND_UPDATED then
-		slot0.viewComponent:updateFriendVO(slot3)
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
+
+	if var_8_0 == FriendProxy.FRIEND_NEW_MSG then
+		arg_8_0.viewComponent:setCacheMsgs(arg_8_0.friendProxy:getAllCacheMsg())
+		arg_8_0.viewComponent:appendMsg(var_8_1)
+	elseif var_8_0 == FriendProxy.FRIEND_UPDATED then
+		arg_8_0.viewComponent:updateFriendVO(var_8_1)
 	end
 end
 
-return slot0
+return var_0_0

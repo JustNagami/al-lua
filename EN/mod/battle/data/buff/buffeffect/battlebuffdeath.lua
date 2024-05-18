@@ -1,58 +1,69 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffDeath = class("BattleBuffDeath", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffDeath.__name = "BattleBuffDeath"
-slot1 = slot0.Battle.BattleBuffDeath
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffDeath = class("BattleBuffDeath", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffDeath.__name = "BattleBuffDeath"
+
+local var_0_1 = var_0_0.Battle.BattleBuffDeath
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	if slot0._tempData.arg_list.time then
-		slot0._time = slot3.time + pg.TimeMgr.GetInstance():GetCombatTime()
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0._tempData.arg_list
+
+	if var_2_0.time then
+		arg_2_0._time = var_2_0.time + pg.TimeMgr.GetInstance():GetCombatTime()
 	end
 
-	slot0._maxX = slot3.maxX
-	slot0._minX = slot3.minX
-	slot0._maxY = slot3.maxY
-	slot0._minY = slot3.minY
-	slot0._countType = slot3.countType
-	slot0._instantkill = slot0._tempData.arg_list.instant_kill
+	arg_2_0._maxX = var_2_0.maxX
+	arg_2_0._minX = var_2_0.minX
+	arg_2_0._maxY = var_2_0.maxY
+	arg_2_0._minY = var_2_0.minY
+	arg_2_0._countType = var_2_0.countType
+	arg_2_0._instantkill = arg_2_0._tempData.arg_list.instant_kill
 end
 
-function slot1.onAttach(slot0, slot1, slot2, slot3)
-	if slot0._instantkill then
-		slot0:DoDead(slot1)
-	end
-end
-
-function slot1.onUpdate(slot0, slot1, slot2, slot3)
-	if slot0._time and slot0._time < slot3.timeStamp then
-		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.DESTRUCT)
-		slot0:DoDead(slot1)
-	elseif slot0._maxX and slot0._maxX <= slot1:GetPosition().x then
-		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-		slot0:DoDead(slot1)
-	elseif slot0._minX and slot5.x <= slot0._minX then
-		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-		slot0:DoDead(slot1)
-	elseif slot0._maxY and slot0._maxY <= slot5.z then
-		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-		slot0:DoDead(slot1)
-	elseif slot0._minY and slot5.z <= slot0._minY then
-		slot1:SetDeathReason(uv0.Battle.BattleConst.UnitDeathReason.LEAVE)
-		slot0:DoDead(slot1)
+function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if arg_3_0._instantkill then
+		arg_3_0:DoDead(arg_3_1)
 	end
 end
 
-function slot1.onBattleBuffCount(slot0, slot1, slot2, slot3)
-	if slot3.countType == slot0._countType then
-		slot0:DoDead(slot1)
+function var_0_1.onUpdate(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	local var_4_0 = arg_4_3.timeStamp
+
+	if arg_4_0._time and var_4_0 > arg_4_0._time then
+		arg_4_1:SetDeathReason(var_0_0.Battle.BattleConst.UnitDeathReason.DESTRUCT)
+		arg_4_0:DoDead(arg_4_1)
+	else
+		local var_4_1 = arg_4_1:GetPosition()
+
+		if arg_4_0._maxX and var_4_1.x >= arg_4_0._maxX then
+			arg_4_1:SetDeathReason(var_0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg_4_0:DoDead(arg_4_1)
+		elseif arg_4_0._minX and var_4_1.x <= arg_4_0._minX then
+			arg_4_1:SetDeathReason(var_0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg_4_0:DoDead(arg_4_1)
+		elseif arg_4_0._maxY and var_4_1.z >= arg_4_0._maxY then
+			arg_4_1:SetDeathReason(var_0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg_4_0:DoDead(arg_4_1)
+		elseif arg_4_0._minY and var_4_1.z <= arg_4_0._minY then
+			arg_4_1:SetDeathReason(var_0_0.Battle.BattleConst.UnitDeathReason.LEAVE)
+			arg_4_0:DoDead(arg_4_1)
+		end
 	end
 end
 
-function slot1.DoDead(slot0, slot1)
-	slot1:SetCurrentHP(0)
-	slot1:DeadAction()
+function var_0_1.onBattleBuffCount(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if arg_5_3.countType == arg_5_0._countType then
+		arg_5_0:DoDead(arg_5_1)
+	end
+end
+
+function var_0_1.DoDead(arg_6_0, arg_6_1)
+	arg_6_1:SetCurrentHP(0)
+	arg_6_1:DeadAction()
 end

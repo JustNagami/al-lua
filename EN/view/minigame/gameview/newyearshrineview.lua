@@ -1,331 +1,383 @@
-slot0 = class("NewYearShrineView", import("..BaseMiniGameView"))
+﻿local var_0_0 = class("NewYearShrineView", import("..BaseMiniGameView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewYearShrine"
 end
 
-function slot0.init(slot0)
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:initData()
-	slot0:updateView()
-	slot0:updateBuff()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:initData()
+	arg_3_0:updateView()
+	arg_3_0:updateBuff()
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
-		slot0.shrineBuffView:Destroy()
-	elseif slot0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
-		slot0.shrineResultView:Destroy()
+function var_0_0.onBackPressed(arg_4_0)
+	if arg_4_0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineBuffView:Destroy()
+	elseif arg_4_0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineResultView:Destroy()
 	else
-		slot0:emit(uv0.ON_BACK_PRESSED)
+		arg_4_0:emit(var_0_0.ON_BACK_PRESSED)
 	end
 end
 
-function slot0.OnSendMiniGameOPDone(slot0, slot1)
-	slot2 = slot1.argList
+function var_0_0.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1.argList
+	local var_5_1 = var_5_0[1]
+	local var_5_2 = var_5_0[2]
 
-	if slot2[1] == slot0.miniGameId then
-		if slot2[2] == 1 then
-			slot0:updateView()
-		elseif slot4 == 2 then
-			slot5 = getProxy(PlayerProxy):getData()
+	if var_5_1 == arg_5_0.miniGameId then
+		if var_5_2 == 1 then
+			arg_5_0:updateView()
+		elseif var_5_2 == 2 then
+			local var_5_3 = getProxy(PlayerProxy):getData()
 
-			slot5:consume({
-				gold = slot0:GetMGData():getConfig("config_data")[1]
+			var_5_3:consume({
+				gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 			})
-			getProxy(PlayerProxy):updatePlayer(slot5)
+			getProxy(PlayerProxy):updatePlayer(var_5_3)
 
-			if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHRINE) and not slot6:isEnd() then
-				slot6.data2 = slot6.data2 + 1
+			local var_5_4 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHRINE)
 
-				getProxy(ActivityProxy):updateActivity(slot6)
+			if var_5_4 and not var_5_4:isEnd() then
+				var_5_4.data2 = var_5_4.data2 + 1
+
+				getProxy(ActivityProxy):updateActivity(var_5_4)
 			end
 
-			slot7 = slot2[3]
-			slot8 = pg.benefit_buff_template[slot7].name
+			local var_5_5 = var_5_0[3]
+			local var_5_6 = pg.benefit_buff_template[var_5_5].name
+			local var_5_7 = table.indexof(arg_5_0:GetMGData():getConfig("config_data")[2], var_5_5, 1)
+			local var_5_8 = i18n("tips_shrine_buff")
 
-			slot0:playAnime(i18n("tips_shrine_buff"), table.indexof(slot0:GetMGData():getConfig("config_data")[2], slot7, 1))
-			slot0:updateView()
-		elseif slot4 == 3 then
-			slot5 = getProxy(PlayerProxy):getData()
+			arg_5_0:playAnime(var_5_8, var_5_7)
+			arg_5_0:updateView()
+		elseif var_5_2 == 3 then
+			local var_5_9 = getProxy(PlayerProxy):getData()
 
-			slot5:consume({
-				gold = slot0:GetMGData():getConfig("config_data")[1]
+			var_5_9:consume({
+				gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 			})
-			getProxy(PlayerProxy):updatePlayer(slot5)
-			slot0:playAnime(i18n("tips_shrine_nobuff"))
-			slot0:updateView()
+			getProxy(PlayerProxy):updatePlayer(var_5_9)
+
+			local var_5_10 = i18n("tips_shrine_nobuff")
+
+			arg_5_0:playAnime(var_5_10)
+			arg_5_0:updateView()
 		end
 	end
 end
 
-function slot0.OnModifyMiniGameDataDone(slot0, slot1)
-	slot0:updateView()
+function var_0_0.OnModifyMiniGameDataDone(arg_6_0, arg_6_1)
+	arg_6_0:updateView()
 end
 
-function slot0.willExit(slot0)
-	if slot0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
-		slot0.shrineBuffView:Destroy()
+function var_0_0.willExit(arg_7_0)
+	if arg_7_0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_7_0.shrineBuffView:Destroy()
 	end
 
-	if slot0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
-		slot0.shrineResultView:Destroy()
+	if arg_7_0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
+		arg_7_0.shrineResultView:Destroy()
 	end
 
-	if slot0._buffTextTimer then
-		slot0._buffTextTimer:Stop()
+	if arg_7_0._buffTextTimer then
+		arg_7_0._buffTextTimer:Stop()
 	end
 
-	if slot0._buffTimeCountDownTimer then
-		slot0._buffTimeCountDownTimer:Stop()
+	if arg_7_0._buffTimeCountDownTimer then
+		arg_7_0._buffTimeCountDownTimer:Stop()
 	end
 
-	if slot0.clockSE then
-		slot0.clockSE:Stop(true)
+	if arg_7_0.clockSE then
+		arg_7_0.clockSE:Stop(true)
 	end
 end
 
-function slot0.initData(slot0)
-	slot0.miniGameId = slot0.contextData.miniGameId
-	slot2 = getProxy(MiniGameProxy):GetHubByGameId(slot0.miniGameId)
+function var_0_0.initData(arg_8_0)
+	arg_8_0.miniGameId = arg_8_0.contextData.miniGameId
 
-	if not slot0:isInitedMiniGameData() then
-		slot0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
-			slot0.miniGameId,
+	local var_8_0 = getProxy(MiniGameProxy):GetHubByGameId(arg_8_0.miniGameId)
+
+	if not arg_8_0:isInitedMiniGameData() then
+		arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
+			arg_8_0.miniGameId,
 			1
 		})
 	end
 
-	slot0.shrineBuffView = NewYearShrineBuffView.New(slot0._tf.parent, slot0.event, {
-		onSelect = function (slot0)
-			if getProxy(PlayerProxy):getData().gold < uv0:GetMGData():getConfig("config_data")[1] then
+	local var_8_1 = {
+		onSelect = function(arg_9_0)
+			local var_9_0 = getProxy(PlayerProxy):getData()
+
+			if arg_8_0:GetMGData():getConfig("config_data")[1] > var_9_0.gold then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
 
-			if uv0:GetMGData():GetRuntimeData("count") <= 0 then
-				uv0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
-					uv0.miniGameId,
+			if arg_8_0:GetMGData():GetRuntimeData("count") <= 0 then
+				arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
+					arg_8_0.miniGameId,
 					3
 				})
 			else
-				uv0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
-					uv0.miniGameId,
+				local var_9_1 = arg_8_0:GetMGData():getConfig("config_data")[2][arg_9_0]
+
+				arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
+					arg_8_0.miniGameId,
 					2,
-					uv0:GetMGData():getConfig("config_data")[2][slot0]
+					var_9_1
 				})
 			end
 		end,
-		onClose = function ()
-			uv0.buffEffectAni.enabled = false
-			uv0.bgImg.color = Color.New(1, 1, 1)
+		onClose = function()
+			arg_8_0.buffEffectAni.enabled = false
+			arg_8_0.bgImg.color = Color.New(1, 1, 1)
 
-			setActive(uv0.noAdaptPanel, true)
+			setActive(arg_8_0.noAdaptPanel, true)
 		end
-	})
-	slot0.shrineResultView = ShrineResultView.New(slot0._tf, slot0.event)
+	}
+
+	arg_8_0.shrineBuffView = NewYearShrineBuffView.New(arg_8_0._tf.parent, arg_8_0.event, var_8_1)
+	arg_8_0.shrineResultView = ShrineResultView.New(arg_8_0._tf, arg_8_0.event)
 end
 
-function slot0.findUI(slot0)
-	slot0.noAdaptPanel = slot0:findTF("noAdaptPanel")
-	slot0.buffTF = slot0:findTF("Buff", slot0.noAdaptPanel)
-	slot0.buffRope = slot0:findTF("BuffRope", slot0.buffTF)
-	slot0.buffImg = slot0:findTF("BuffTypeImg", slot0.buffTF)
-	slot0.buffText = slot0:findTF("BuffText", slot0.buffTF)
-	slot0.buffEffectAni = GetComponent(slot0.buffImg, "Animator")
-	slot0.buffDftAniEvent = GetComponent(slot0.buffImg, "DftAniEvent")
-	slot0.bgImg = slot0:findTF("BGImg"):GetComponent(typeof(Image))
-	slot0.bgImg.color = Color.New(1, 1, 1)
-	slot1 = slot0:findTF("Top", slot0.noAdaptPanel)
-	slot0.topTF = slot1
-	slot0.backBtn = slot0:findTF("BackBtn", slot1)
-	slot0.helpBtn = slot0:findTF("HelpBtn", slot1)
-	slot0.timesText = slot0:findTF("Times/Text", slot1)
-	slot0.goldText = slot0:findTF("Gold/Text", slot1)
-	slot2 = slot0:findTF("Main")
-	slot0.clockTF = slot0:findTF("Clock", slot2)
-	slot0.clockBtn = slot0:findTF("ClockBtn", slot2)
-	slot0.clockEffectAni = GetComponent(slot0.clockTF, "Animator")
-	slot0.clockDftAniEvent = GetComponent(slot0.clockTF, "DftAniEvent")
+function var_0_0.findUI(arg_11_0)
+	arg_11_0.noAdaptPanel = arg_11_0:findTF("noAdaptPanel")
+	arg_11_0.buffTF = arg_11_0:findTF("Buff", arg_11_0.noAdaptPanel)
+	arg_11_0.buffRope = arg_11_0:findTF("BuffRope", arg_11_0.buffTF)
+	arg_11_0.buffImg = arg_11_0:findTF("BuffTypeImg", arg_11_0.buffTF)
+	arg_11_0.buffText = arg_11_0:findTF("BuffText", arg_11_0.buffTF)
+	arg_11_0.buffEffectAni = GetComponent(arg_11_0.buffImg, "Animator")
+	arg_11_0.buffDftAniEvent = GetComponent(arg_11_0.buffImg, "DftAniEvent")
+	arg_11_0.bgImg = arg_11_0:findTF("BGImg"):GetComponent(typeof(Image))
+	arg_11_0.bgImg.color = Color.New(1, 1, 1)
+
+	local var_11_0 = arg_11_0:findTF("Top", arg_11_0.noAdaptPanel)
+
+	arg_11_0.topTF = var_11_0
+	arg_11_0.backBtn = arg_11_0:findTF("BackBtn", var_11_0)
+	arg_11_0.helpBtn = arg_11_0:findTF("HelpBtn", var_11_0)
+	arg_11_0.timesText = arg_11_0:findTF("Times/Text", var_11_0)
+	arg_11_0.goldText = arg_11_0:findTF("Gold/Text", var_11_0)
+
+	local var_11_1 = arg_11_0:findTF("Main")
+
+	arg_11_0.clockTF = arg_11_0:findTF("Clock", var_11_1)
+	arg_11_0.clockBtn = arg_11_0:findTF("ClockBtn", var_11_1)
+	arg_11_0.clockEffectAni = GetComponent(arg_11_0.clockTF, "Animator")
+	arg_11_0.clockDftAniEvent = GetComponent(arg_11_0.clockTF, "DftAniEvent")
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:onBackPressed()
+function var_0_0.addListener(arg_12_0)
+	onButton(arg_12_0, arg_12_0.backBtn, function()
+		arg_12_0:onBackPressed()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_12_0, arg_12_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2021__qiaozhong.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.buffImg, function ()
-		uv0:updateBuffDesc()
+	onButton(arg_12_0, arg_12_0.buffImg, function()
+		arg_12_0:updateBuffDesc()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.clockBtn, function ()
-		uv0.bgImg.color = Color.New(0, 0, 0)
+	onButton(arg_12_0, arg_12_0.clockBtn, function()
+		arg_12_0.bgImg.color = Color.New(0, 0, 0)
 
-		setActive(uv0.noAdaptPanel, false)
-		uv0.shrineBuffView:Reset()
-		uv0.shrineBuffView:Load()
+		setActive(arg_12_0.noAdaptPanel, false)
+		arg_12_0.shrineBuffView:Reset()
+		arg_12_0.shrineBuffView:Load()
 	end, SFX_PANEL)
-	slot0.buffDftAniEvent:SetStartEvent(function ()
-		setButtonEnabled(uv0.clockBtn, false)
+	arg_12_0.buffDftAniEvent:SetStartEvent(function()
+		setButtonEnabled(arg_12_0.clockBtn, false)
 	end)
-	slot0.buffDftAniEvent:SetEndEvent(function ()
-		setButtonEnabled(uv0.clockBtn, true)
+	arg_12_0.buffDftAniEvent:SetEndEvent(function()
+		setButtonEnabled(arg_12_0.clockBtn, true)
 	end)
 end
 
-function slot0.playAnime(slot0, slot1, slot2)
-	slot0.clockSE = pg.CriMgr.GetInstance():PlaySE_V3("ui-zhongsheng")
+function var_0_0.playAnime(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0.clockSE = pg.CriMgr.GetInstance():PlaySE_V3("ui-zhongsheng")
 
-	setButtonEnabled(slot0.clockBtn, false)
-	slot0.clockDftAniEvent:SetEndEvent(function ()
-		setButtonEnabled(uv0.clockBtn, true)
+	setButtonEnabled(arg_19_0.clockBtn, false)
+	arg_19_0.clockDftAniEvent:SetEndEvent(function()
+		setButtonEnabled(arg_19_0.clockBtn, true)
 
-		if uv0.clockSE then
-			uv0.clockSE:Stop(true)
+		if arg_19_0.clockSE then
+			arg_19_0.clockSE:Stop(true)
 		end
 
-		uv0.shrineResultView:Reset()
-		uv0.shrineResultView:Load()
-		uv0.shrineResultView:ActionInvoke("updateView", uv1, uv2)
-		uv0.shrineResultView:ActionInvoke("setCloseFunc", function ()
-			if uv0 then
-				uv1:updateBuff(uv0)
+		arg_19_0.shrineResultView:Reset()
+		arg_19_0.shrineResultView:Load()
+		arg_19_0.shrineResultView:ActionInvoke("updateView", arg_19_1, arg_19_2)
+		arg_19_0.shrineResultView:ActionInvoke("setCloseFunc", function()
+			if arg_19_2 then
+				arg_19_0:updateBuff(arg_19_2)
 
-				uv1.buffEffectAni.enabled = true
+				arg_19_0.buffEffectAni.enabled = true
 			end
 		end)
 	end)
 
-	slot0.clockEffectAni.enabled = true
+	arg_19_0.clockEffectAni.enabled = true
 
-	slot0.clockEffectAni:Play("ClockAni", -1, 0)
+	arg_19_0.clockEffectAni:Play("ClockAni", -1, 0)
 end
 
-function slot0.updateView(slot0)
-	if not slot0:isInitedMiniGameData() then
+function var_0_0.updateView(arg_22_0)
+	if not arg_22_0:isInitedMiniGameData() then
 		return
 	end
 
-	setText(slot0.timesText, slot0:GetMGData():GetRuntimeData("count"))
-	setText(slot0.goldText, getProxy(PlayerProxy):getData().gold)
+	local var_22_0 = arg_22_0:GetMGData():GetRuntimeData("count")
+
+	setText(arg_22_0.timesText, var_22_0)
+
+	local var_22_1 = getProxy(PlayerProxy):getData().gold
+
+	setText(arg_22_0.goldText, var_22_1)
 end
 
-function slot0.updateBuff(slot0, slot1)
-	if slot1 then
-		setImageSprite(slot0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. slot1))
-		setImageSprite(slot0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. slot1))
-		setActive(slot0.buffImg, true)
+function var_0_0.updateBuff(arg_23_0, arg_23_1)
+	if arg_23_1 then
+		setImageSprite(arg_23_0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. arg_23_1))
+		setImageSprite(arg_23_0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. arg_23_1))
+		setActive(arg_23_0.buffImg, true)
 	else
-		slot4 = nil
+		local var_23_0 = getProxy(PlayerProxy):getData()
+		local var_23_1 = arg_23_0:GetMGData():getConfig("config_data")[2]
+		local var_23_2
 
-		for slot8, slot9 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
-			if table.indexof(slot0:GetMGData():getConfig("config_data")[2], slot9.id, 1) then
-				if pg.TimeMgr.GetInstance():GetServerTime() < slot9.timestamp then
-					setImageSprite(slot0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. slot4))
-					setImageSprite(slot0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. slot4))
-					setActive(slot0.buffImg, true)
+		for iter_23_0, iter_23_1 in ipairs(var_23_0.buff_list) do
+			var_23_2 = table.indexof(var_23_1, iter_23_1.id, 1)
+
+			if var_23_2 then
+				if pg.TimeMgr.GetInstance():GetServerTime() < iter_23_1.timestamp then
+					setImageSprite(arg_23_0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. var_23_2))
+					setImageSprite(arg_23_0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. var_23_2))
+					setActive(arg_23_0.buffImg, true)
 
 					break
 				end
 
-				slot4 = nil
+				var_23_2 = nil
 
 				break
 			end
 		end
 
-		if not slot4 then
-			setActive(slot0.buffImg, false)
+		if not var_23_2 then
+			setActive(arg_23_0.buffImg, false)
 		end
 	end
 end
 
-function slot0.updateBuffDesc(slot0)
-	slot1 = nil
+function var_0_0.updateBuffDesc(arg_24_0)
+	local var_24_0
+	local var_24_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME) and not slot2:isEnd() then
-		for slot8, slot9 in pairs(getProxy(PlayerProxy):getData().buff_list) do
-			if table.contains(slot0:GetMGData():getConfig("config_data")[2], slot9.id) then
-				slot1 = ActivityBuff.New(slot2.id, slot9.id, slot9.timestamp)
+	if var_24_1 and not var_24_1:isEnd() then
+		local var_24_2 = arg_24_0:GetMGData():getConfig("config_data")[2]
+		local var_24_3 = getProxy(PlayerProxy):getData()
+
+		for iter_24_0, iter_24_1 in pairs(var_24_3.buff_list) do
+			if table.contains(var_24_2, iter_24_1.id) then
+				var_24_0 = ActivityBuff.New(var_24_1.id, iter_24_1.id, iter_24_1.timestamp)
 
 				break
 			end
 		end
 	end
 
-	if slot0._buffTimeCountDownTimer then
-		slot0._buffTimeCountDownTimer:Stop()
+	if arg_24_0._buffTimeCountDownTimer then
+		arg_24_0._buffTimeCountDownTimer:Stop()
 	end
 
-	if slot0._buffTextTimer then
-		slot0._buffTextTimer:Stop()
+	if arg_24_0._buffTextTimer then
+		arg_24_0._buffTextTimer:Stop()
 	end
 
-	if slot1:getConfig("max_time") > 0 then
-		if slot1.timestamp then
-			setText(slot0.buffText:Find("Text"), string.gsub(slot1:getConfig("desc"), "$" .. 1, pg.TimeMgr.GetInstance():DescCDTime(slot6 - pg.TimeMgr.GetInstance():GetServerTime())))
+	local var_24_4 = var_24_0:getConfig("desc")
 
-			slot0._buffTimeCountDownTimer = Timer.New(function ()
-				if uv0 > 0 then
-					uv0 = uv0 - 1
+	if var_24_0:getConfig("max_time") > 0 then
+		local var_24_5 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_24_6 = var_24_0.timestamp
 
-					setText(uv1.buffText:Find("Text"), string.gsub(uv2, "$" .. 1, pg.TimeMgr.GetInstance():DescCDTime(uv0)))
+		if var_24_6 then
+			local var_24_7 = var_24_6 - var_24_5
+			local var_24_8 = pg.TimeMgr.GetInstance():DescCDTime(var_24_7)
+
+			setText(arg_24_0.buffText:Find("Text"), string.gsub(var_24_4, "$" .. 1, var_24_8))
+
+			arg_24_0._buffTimeCountDownTimer = Timer.New(function()
+				if var_24_7 > 0 then
+					var_24_7 = var_24_7 - 1
+
+					local var_25_0 = pg.TimeMgr.GetInstance():DescCDTime(var_24_7)
+
+					setText(arg_24_0.buffText:Find("Text"), string.gsub(var_24_4, "$" .. 1, var_25_0))
 				else
-					uv1._buffTimeCountDownTimer:Stop()
-					setActive(uv1.buffText, false)
-					setActive(uv1.buffImg, false)
+					arg_24_0._buffTimeCountDownTimer:Stop()
+					setActive(arg_24_0.buffText, false)
+					setActive(arg_24_0.buffImg, false)
 				end
 			end, 1, -1)
 
-			setActive(slot0.buffText, true)
-			slot0._buffTimeCountDownTimer:Start()
+			setActive(arg_24_0.buffText, true)
+			arg_24_0._buffTimeCountDownTimer:Start()
 		end
 	end
 
-	slot0._buffTextTimer = Timer.New(function ()
-		setActive(uv0.buffText, false)
-		uv0._buffTimeCountDownTimer:Stop()
+	arg_24_0._buffTextTimer = Timer.New(function()
+		setActive(arg_24_0.buffText, false)
+		arg_24_0._buffTimeCountDownTimer:Stop()
 	end, 7, 1)
 
-	slot0._buffTextTimer:Start()
+	arg_24_0._buffTextTimer:Start()
 end
 
-function slot0.isInitedMiniGameData(slot0)
-	if not slot0:GetMGData():GetRuntimeData("isInited") then
+function var_0_0.isInitedMiniGameData(arg_27_0)
+	if not arg_27_0:GetMGData():GetRuntimeData("isInited") then
 		return false
 	else
 		return true
 	end
 end
 
-function slot0.IsNeedShowTipWithoutActivityFinalReward()
-	if not getProxy(ActivityProxy):getActivityById(ActivityConst.NEWYEAR_SNOWBALL_FIGHT) or slot0:isEnd() then
+function var_0_0.IsNeedShowTipWithoutActivityFinalReward()
+	local var_28_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.NEWYEAR_SNOWBALL_FIGHT)
+
+	if not var_28_0 or var_28_0:isEnd() then
 		return
 	end
 
-	slot1 = false
+	local var_28_1 = false
+	local var_28_2 = MiniGameDataCreator.NewYearShrineGameID
+	local var_28_3 = getProxy(MiniGameProxy):GetMiniGameData(var_28_2)
 
-	if getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.NewYearShrineGameID) then
-		slot1 = (slot3:GetRuntimeData("count") or 0) > 0
+	if var_28_3 then
+		var_28_1 = (var_28_3:GetRuntimeData("count") or 0) > 0
 	end
 
-	slot4 = false
-	slot5 = nil
+	local var_28_4 = false
+	local var_28_5
 
-	if slot3 then
-		for slot11, slot12 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
-			if table.indexof(slot3:getConfig("config_data")[2], slot12.id, 1) then
-				if slot12.timestamp < pg.TimeMgr.GetInstance():GetServerTime() then
-					slot5 = nil
+	if var_28_3 then
+		local var_28_6 = getProxy(PlayerProxy):getData()
+		local var_28_7 = var_28_3:getConfig("config_data")[2]
+
+		for iter_28_0, iter_28_1 in ipairs(var_28_6.buff_list) do
+			var_28_5 = table.indexof(var_28_7, iter_28_1.id, 1)
+
+			if var_28_5 then
+				if pg.TimeMgr.GetInstance():GetServerTime() > iter_28_1.timestamp then
+					var_28_5 = nil
 				end
 
 				break
@@ -333,11 +385,11 @@ function slot0.IsNeedShowTipWithoutActivityFinalReward()
 		end
 	end
 
-	if slot5 then
-		slot4 = true
+	if var_28_5 then
+		var_28_4 = true
 	end
 
-	return slot1 and not slot4
+	return var_28_1 and not var_28_4
 end
 
-return slot0
+return var_0_0

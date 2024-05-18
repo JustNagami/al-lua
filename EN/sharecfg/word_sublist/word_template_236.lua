@@ -1,15 +1,18 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_236 = {}
-slot1 = slot0.word_template_236
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_236 = {}
+
+local var_0_1 = var_0_0.word_template_236
 
 function temp()
-	uv0["乔"] = {
-		["石"] = {
+	var_0_1.乔 = {
+		石 = {
 			this = true
 		},
-		["牌"] = {
-			["公"] = {
+		牌 = {
+			公 = {
 				this = true
 			}
 		}
@@ -19,8 +22,8 @@ end
 temp()
 
 function temp()
-	uv0["侨"] = {
-		["办"] = {
+	var_0_1.侨 = {
+		办 = {
 			this = true
 		}
 	}
@@ -29,11 +32,11 @@ end
 temp()
 
 function temp()
-	uv0["喬"] = {
-		["石"] = {
+	var_0_1.喬 = {
+		石 = {
 			this = true
 		},
-		["伊"] = {
+		伊 = {
 			this = true
 		}
 	}
@@ -42,7 +45,7 @@ end
 temp()
 
 function temp()
-	uv0["嶠"] = {
+	var_0_1.嶠 = {
 		this = {
 			this = true
 		}
@@ -52,10 +55,10 @@ end
 temp()
 
 function temp()
-	uv0["橋"] = {
-		["侵"] = {
-			["襲"] = {
-				["兵"] = {
+	var_0_1.橋 = {
+		侵 = {
+			襲 = {
+				兵 = {
 					this = true
 				}
 			}
@@ -66,7 +69,7 @@ end
 temp()
 
 function temp()
-	uv0["譙"] = {
+	var_0_1.譙 = {
 		this = {
 			this = true
 		}
@@ -76,7 +79,7 @@ end
 temp()
 
 function temp()
-	uv0["鞽"] = {
+	var_0_1.鞽 = {
 		this = {
 			this = true
 		}

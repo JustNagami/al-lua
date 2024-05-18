@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "TACT10006",
 	mode = 2,
 	once = true,

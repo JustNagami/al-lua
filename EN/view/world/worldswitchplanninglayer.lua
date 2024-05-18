@@ -1,8 +1,9 @@
-slot0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
-slot0.MODE_DIFFICULT = 0
-slot0.MODE_SAFE = 1
-slot0.MODE_TREASURE = 2
-slot0.modeToggleDic = {
+﻿local var_0_0 = class("WorldSwitchPlanningLayer", import("view.base.BaseUI"))
+
+var_0_0.MODE_DIFFICULT = 0
+var_0_0.MODE_SAFE = 1
+var_0_0.MODE_TREASURE = 2
+var_0_0.modeToggleDic = {
 	[0] = {
 		base = true,
 		wait_2 = true,
@@ -25,57 +26,59 @@ slot0.modeToggleDic = {
 	}
 }
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldSwitchPlanningUI"
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.init(arg_2_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
 
-	slot0.rtBg = slot0._tf:Find("bg")
+	arg_2_0.rtBg = arg_2_0._tf:Find("bg")
 
-	onButton(slot0, slot0.rtBg, function ()
-		uv0:closeView()
+	onButton(arg_2_0, arg_2_0.rtBg, function()
+		arg_2_0:closeView()
 	end, SFX_CANCEL)
 
-	slot0.rtWindow = slot0._tf:Find("window")
-	slot0.btnBack = slot0.rtWindow:Find("top/btnBack")
+	arg_2_0.rtWindow = arg_2_0._tf:Find("window")
+	arg_2_0.btnBack = arg_2_0.rtWindow:Find("top/btnBack")
 
-	onButton(slot0, slot0.btnBack, function ()
-		uv0:closeView()
+	onButton(arg_2_0, arg_2_0.btnBack, function()
+		arg_2_0:closeView()
 	end, SFX_CANCEL)
 
-	slot0.btnCancel = slot0.rtWindow:Find("button_container/custom_button_2")
+	arg_2_0.btnCancel = arg_2_0.rtWindow:Find("button_container/custom_button_2")
 
-	setText(slot0.btnCancel:Find("pic"), i18n("text_cancel"))
-	onButton(slot0, slot0.btnCancel, function ()
-		uv0:closeView()
+	setText(arg_2_0.btnCancel:Find("pic"), i18n("text_cancel"))
+	onButton(arg_2_0, arg_2_0.btnCancel, function()
+		arg_2_0:closeView()
 	end, SFX_CANCEL)
 
-	slot0.btnConfirm = slot0.rtWindow:Find("button_container/custom_button_1")
+	arg_2_0.btnConfirm = arg_2_0.rtWindow:Find("button_container/custom_button_1")
 
-	setText(slot0.btnConfirm:Find("pic"), i18n("text_confirm"))
-	onButton(slot0, slot0.btnConfirm, function ()
-		uv0:emit(WorldSwitchPlanningMediator.OnConfirm)
-		uv0:closeView()
+	setText(arg_2_0.btnConfirm:Find("pic"), i18n("text_confirm"))
+	onButton(arg_2_0, arg_2_0.btnConfirm, function()
+		arg_2_0:emit(WorldSwitchPlanningMediator.OnConfirm)
+		arg_2_0:closeView()
 	end, SFX_CONFIRM)
 
-	slot0.btnMove = slot0.rtWindow:Find("button_container/custom_button_3")
+	arg_2_0.btnMove = arg_2_0.rtWindow:Find("button_container/custom_button_3")
 
-	setText(slot0.btnMove:Find("pic"), i18n("text_goto"))
-	onButton(slot0, slot0.btnMove, function ()
-		if nowWorld():GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
-			uv0:emit(WorldSwitchPlanningMediator.OnMove, {
+	setText(arg_2_0.btnMove:Find("pic"), i18n("text_goto"))
+	onButton(arg_2_0, arg_2_0.btnMove, function()
+		local var_7_0 = nowWorld()
+
+		if var_7_0:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
+			arg_2_0:emit(WorldSwitchPlanningMediator.OnMove, {
 				inMap = true,
 				context = Context.New({
 					mediator = WorldInventoryMediator,
 					viewComponent = WorldInventoryLayer
 				})
 			})
-		elseif not slot0:IsSystemOpen(WorldConst.SystemResetShop) then
+		elseif not var_7_0:IsSystemOpen(WorldConst.SystemResetShop) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_automode_treasure_3"))
 		else
-			uv0:emit(WorldSwitchPlanningMediator.OnMove, {
+			arg_2_0:emit(WorldSwitchPlanningMediator.OnMove, {
 				inMap = false,
 				context = Context.New({
 					mediator = WorldShopMediator,
@@ -84,94 +87,92 @@ function slot0.init(slot0)
 			})
 		end
 
-		uv0:closeView()
+		arg_2_0:closeView()
 	end, SFX_CONFIRM)
 
-	slot0.rtContent = slot0.rtWindow:Find("content")
+	arg_2_0.rtContent = arg_2_0.rtWindow:Find("content")
 
-	onToggle(slot0, slot0.rtContent:Find("toggles/toggle_base"), function (slot0)
-		if slot0 then
-			uv0:updateView(uv1.MODE_DIFFICULT)
-			scrollTo(uv0.rtView:Find("content"), nil, 1)
+	onToggle(arg_2_0, arg_2_0.rtContent:Find("toggles/toggle_base"), function(arg_8_0)
+		if arg_8_0 then
+			arg_2_0:updateView(var_0_0.MODE_DIFFICULT)
+			scrollTo(arg_2_0.rtView:Find("content"), nil, 1)
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.rtContent:Find("toggles/toggle_safe"), function (slot0)
-		if slot0 then
-			uv0:updateView(uv1.MODE_SAFE)
-			scrollTo(uv0.rtView:Find("content"), nil, 1)
+	onToggle(arg_2_0, arg_2_0.rtContent:Find("toggles/toggle_safe"), function(arg_9_0)
+		if arg_9_0 then
+			arg_2_0:updateView(var_0_0.MODE_SAFE)
+			scrollTo(arg_2_0.rtView:Find("content"), nil, 1)
+		end
+	end, SFX_PANEL)
+	onToggle(arg_2_0, arg_2_0.rtContent:Find("toggles/toggle_treasure"), function(arg_10_0)
+		if arg_10_0 then
+			arg_2_0:updateView(var_0_0.MODE_TREASURE)
+			scrollTo(arg_2_0.rtView:Find("content"), nil, 1)
 		end
 	end, SFX_PANEL)
 
-	function slot4(slot0)
-		if slot0 then
-			uv0:updateView(uv1.MODE_TREASURE)
-			scrollTo(uv0.rtView:Find("content"), nil, 1)
-		end
-	end
+	arg_2_0.rtView = arg_2_0.rtContent:Find("view")
 
-	slot5 = SFX_PANEL
-
-	onToggle(slot0, slot0.rtContent:Find("toggles/toggle_treasure"), slot4, slot5)
-
-	slot0.rtView = slot0.rtContent:Find("view")
-
-	for slot4, slot5 in ipairs({
+	for iter_2_0, iter_2_1 in ipairs({
 		"base",
 		"treasure"
 	}) do
-		slot6 = slot0.rtView:Find("content/" .. slot5 .. "/toggles")
-		slot7 = slot6:Find("all")
-		slot8 = {}
-		slot9 = 0
-		slot10 = slot6.childCount
+		local var_2_0 = arg_2_0.rtView:Find("content/" .. iter_2_1 .. "/toggles")
+		local var_2_1 = var_2_0:Find("all")
+		local var_2_2 = {}
+		local var_2_3 = 0
+		local var_2_4 = var_2_0.childCount
 
-		eachChild(slot6, function (slot0)
-			onToggle(uv0, slot0, function (slot0)
-				uv0[uv1.name] = slot0 and 1 or 0
-				uv2 = uv2 + (slot0 and 1 or 0) - defaultValue(uv0[uv1.name], 0)
-				slot2 = true
+		eachChild(var_2_0, function(arg_11_0)
+			onToggle(arg_2_0, arg_11_0, function(arg_12_0)
+				local var_12_0 = (arg_12_0 and 1 or 0) - defaultValue(var_2_2[arg_11_0.name], 0)
 
-				if uv1 == uv3 and slot0 then
-					eachChild(uv4, function (slot0)
-						if slot0 ~= uv0 and GetComponent(slot0, typeof(Toggle)).isOn == true then
-							triggerToggle(slot0, false)
+				var_2_2[arg_11_0.name] = arg_12_0 and 1 or 0
+				var_2_3 = var_2_3 + var_12_0
 
-							uv1 = false
+				local var_12_1 = true
+
+				if arg_11_0 == var_2_1 and arg_12_0 then
+					eachChild(var_2_0, function(arg_13_0)
+						if arg_13_0 ~= arg_11_0 and GetComponent(arg_13_0, typeof(Toggle)).isOn == true then
+							triggerToggle(arg_13_0, false)
+
+							var_12_1 = false
 						end
 					end)
-				elseif uv2 == 0 or uv2 >= uv5 - 1 then
-					triggerToggle(uv3, true)
+				elseif var_2_3 == 0 or var_2_3 >= var_2_4 - 1 then
+					triggerToggle(var_2_1, true)
 
-					slot2 = false
-				elseif uv2 > 1 and GetComponent(uv3, typeof(Toggle)).isOn == true then
-					triggerToggle(uv3, false)
+					var_12_1 = false
+				elseif var_2_3 > 1 and GetComponent(var_2_1, typeof(Toggle)).isOn == true then
+					triggerToggle(var_2_1, false)
 
-					slot2 = false
+					var_12_1 = false
 				end
 
-				if slot2 then
-					uv6:saveConfig(uv7)
+				if var_12_1 then
+					arg_2_0:saveConfig(iter_2_1)
 				end
 			end, SFX_PANEL)
 		end)
 	end
 
-	slot1 = pg.gameset.joint_boss_ticket.description
-	slot2 = slot1[1] + slot1[2]
-	slot4 = {}
+	local var_2_5 = pg.gameset.joint_boss_ticket.description
+	local var_2_6 = var_2_5[1] + var_2_5[2]
+	local var_2_7 = var_2_5[1] .. "&" .. var_2_6
+	local var_2_8 = {}
 
-	table.insert(slot4, "")
-	table.insert(slot4, slot1[1] .. "&" .. slot2)
-	table.insert(slot4, tostring(slot2))
+	table.insert(var_2_8, "")
+	table.insert(var_2_8, var_2_7)
+	table.insert(var_2_8, tostring(var_2_6))
 
-	slot8 = slot4[3]
-	slot0.togglesList = {
+	arg_2_0.togglesList = {
 		safe = {
-			getFlag = function ()
+			getFlag = function()
 				return PlayerPrefs.GetString("auto_switch_difficult_safe", "all")
 			end,
-			setFlag = function (slot0)
-				PlayerPrefs.SetString("auto_switch_difficult_safe", slot0)
+			setFlag = function(arg_15_0)
+				PlayerPrefs.SetString("auto_switch_difficult_safe", arg_15_0)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -180,11 +181,11 @@ function slot0.init(slot0)
 			}
 		},
 		wait = {
-			getFlag = function ()
+			getFlag = function()
 				return PlayerPrefs.GetInt("auto_switch_wait", 0)
 			end,
-			setFlag = function (slot0)
-				PlayerPrefs.SetInt("auto_switch_wait", slot0)
+			setFlag = function(arg_17_0)
+				PlayerPrefs.SetInt("auto_switch_wait", arg_17_0)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -193,11 +194,11 @@ function slot0.init(slot0)
 			}
 		},
 		wait_2 = {
-			getFlag = function ()
+			getFlag = function()
 				return PlayerPrefs.GetInt("auto_switch_wait_2", 0)
 			end,
-			setFlag = function (slot0)
-				PlayerPrefs.SetInt("auto_switch_wait_2", slot0)
+			setFlag = function(arg_19_0)
+				PlayerPrefs.SetInt("auto_switch_wait_2", arg_19_0)
 				PlayerPrefs.Save()
 			end,
 			info = {
@@ -206,24 +207,24 @@ function slot0.init(slot0)
 			}
 		},
 		boss = {
-			getFlag = function ()
+			getFlag = function()
 				return getProxy(SettingsProxy):GetWorldBossProgressTipFlag()
 			end,
-			setFlag = function (slot0)
-				getProxy(SettingsProxy):WorldBossProgressTipFlag(slot0)
+			setFlag = function(arg_21_0)
+				getProxy(SettingsProxy):WorldBossProgressTipFlag(arg_21_0)
 			end,
 			info = {
-				no = slot4[1],
-				["100"] = slot4[2],
-				["200"] = slot8
+				no = var_2_8[1],
+				["100"] = var_2_8[2],
+				["200"] = var_2_8[3]
 			}
 		},
 		consume = {
-			getFlag = function ()
+			getFlag = function()
 				return getProxy(SettingsProxy):GetWorldFlag("consume_item")
 			end,
-			setFlag = function (slot0)
-				getProxy(SettingsProxy):SetWorldFlag("consume_item", slot0)
+			setFlag = function(arg_23_0)
+				getProxy(SettingsProxy):SetWorldFlag("consume_item", arg_23_0)
 			end,
 			info = {
 				yes = true,
@@ -232,19 +233,19 @@ function slot0.init(slot0)
 		}
 	}
 
-	for slot8, slot9 in pairs(slot0.togglesList) do
-		slot14 = "/toggles"
+	for iter_2_2, iter_2_3 in pairs(arg_2_0.togglesList) do
+		local var_2_9 = arg_2_0.rtView:Find("content/" .. iter_2_2 .. "/toggles")
 
-		for slot14, slot15 in pairs(slot9.info) do
-			onToggle(slot0, slot0.rtView:Find("content/" .. slot8 .. slot14):Find(slot14), function (slot0)
-				if slot0 then
-					uv0.setFlag(uv1)
+		for iter_2_4, iter_2_5 in pairs(iter_2_3.info) do
+			onToggle(arg_2_0, var_2_9:Find(iter_2_4), function(arg_24_0)
+				if arg_24_0 then
+					iter_2_3.setFlag(iter_2_5)
 				end
 			end, SFX_PANEL)
 		end
 	end
 
-	for slot9, slot10 in pairs({
+	local var_2_10 = {
 		base = {
 			text = "world_automode_setting_1",
 			info = {
@@ -300,132 +301,132 @@ function slot0.init(slot0)
 				no = "world_automode_setting_all_3_1"
 			}
 		}
-	}) do
-		slot15 = slot10.text
+	}
 
-		setText(slot0.rtView:Find("content/" .. slot9):Find("Text"), i18n(slot15))
+	for iter_2_6, iter_2_7 in pairs(var_2_10) do
+		local var_2_11 = arg_2_0.rtView:Find("content/" .. iter_2_6)
 
-		for slot15, slot16 in pairs(slot10.info) do
-			setText(slot11:Find("toggles/" .. slot15 .. "/Text"), i18n(slot16))
+		setText(var_2_11:Find("Text"), i18n(iter_2_7.text))
+
+		for iter_2_8, iter_2_9 in pairs(iter_2_7.info) do
+			setText(var_2_11:Find("toggles/" .. iter_2_8 .. "/Text"), i18n(iter_2_9))
 		end
 	end
 
-	setText(slot0.rtWindow:Find("top/bg/title"), i18n("world_automode_title_1"))
-	setText(slot0.rtWindow:Find("top/bg/title/title_en"), i18n("world_automode_title_2"))
-	setText(slot0.rtContent:Find("toggles/toggle_base/Text"), i18n("area_putong"))
-	setText(slot0.rtContent:Find("toggles/toggle_safe/Text"), i18n("area_anquan"))
-	setText(slot0.rtContent:Find("toggles/toggle_treasure/Text"), i18n("area_yinmi"))
+	setText(arg_2_0.rtWindow:Find("top/bg/title"), i18n("world_automode_title_1"))
+	setText(arg_2_0.rtWindow:Find("top/bg/title/title_en"), i18n("world_automode_title_2"))
+	setText(arg_2_0.rtContent:Find("toggles/toggle_base/Text"), i18n("area_putong"))
+	setText(arg_2_0.rtContent:Find("toggles/toggle_safe/Text"), i18n("area_anquan"))
+	setText(arg_2_0.rtContent:Find("toggles/toggle_treasure/Text"), i18n("area_yinmi"))
 end
 
-function slot0.didEnter(slot0)
-	triggerToggle(slot0.rtContent:Find("toggles"):GetChild(PlayerPrefs.GetInt("auto_switch_mode", 0)), true)
+function var_0_0.didEnter(arg_25_0)
+	triggerToggle(arg_25_0.rtContent:Find("toggles"):GetChild(PlayerPrefs.GetInt("auto_switch_mode", 0)), true)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_26_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_26_0._tf)
 end
 
-function slot0.initToggle(slot0, slot1)
-	slot2 = slot0.togglesList[slot1]
+function var_0_0.initToggle(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.togglesList[arg_27_1]
+	local var_27_1 = var_27_0.getFlag()
 
-	for slot7, slot8 in pairs(slot2.info) do
-		if slot8 == slot2.getFlag() then
-			triggerToggle(slot0.rtView:Find("content/" .. slot1 .. "/toggles/" .. slot7), true)
+	for iter_27_0, iter_27_1 in pairs(var_27_0.info) do
+		if iter_27_1 == var_27_1 then
+			triggerToggle(arg_27_0.rtView:Find("content/" .. arg_27_1 .. "/toggles/" .. iter_27_0), true)
 
 			break
 		end
 	end
 end
 
-function slot0.updateView(slot0, slot1)
-	PlayerPrefs.SetInt("auto_switch_mode", slot1)
+function var_0_0.updateView(arg_28_0, arg_28_1)
+	PlayerPrefs.SetInt("auto_switch_mode", arg_28_1)
 	PlayerPrefs.Save()
 
-	slot3 = slot1 == uv0.MODE_TREASURE and not nowWorld():GetGobalFlag("treasure_flag")
+	local var_28_0 = nowWorld()
+	local var_28_1 = arg_28_1 == var_0_0.MODE_TREASURE and not var_28_0:GetGobalFlag("treasure_flag")
 
-	setActive(slot0.rtView:Find("content"), not slot3)
-	setActive(slot0.rtContent:Find("scrollbar"), not slot3)
-	setActive(slot0.rtView:Find("tip"), slot3)
-	setActive(slot0.btnConfirm, not slot3)
-	setActive(slot0.btnMove, slot3)
+	setActive(arg_28_0.rtView:Find("content"), not var_28_1)
+	setActive(arg_28_0.rtContent:Find("scrollbar"), not var_28_1)
+	setActive(arg_28_0.rtView:Find("tip"), var_28_1)
+	setActive(arg_28_0.btnConfirm, not var_28_1)
+	setActive(arg_28_0.btnMove, var_28_1)
 
-	if slot3 then
-		if slot2:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
-			setText(slot0.rtView:Find("tip/Text"), i18n("world_automode_treasure_2"))
+	if var_28_1 then
+		if var_28_0:GetInventoryProxy():GetItemCount(WorldConst.SwitchPlainingItemId) > 0 then
+			setText(arg_28_0.rtView:Find("tip/Text"), i18n("world_automode_treasure_2"))
 		else
-			setText(slot0.rtView:Find("tip/Text"), i18n("world_automode_treasure_1"))
+			setText(arg_28_0.rtView:Find("tip/Text"), i18n("world_automode_treasure_1"))
 		end
 	end
 
-	eachChild(slot0.rtView:Find("content"), function (slot0)
-		setActive(slot0, uv0.modeToggleDic[uv1][slot0.name])
+	eachChild(arg_28_0.rtView:Find("content"), function(arg_29_0)
+		setActive(arg_29_0, var_0_0.modeToggleDic[arg_28_1][arg_29_0.name])
 
-		if uv0.modeToggleDic[uv1] then
-			switch(slot0.name, {
-				base = function ()
-					slot0 = {
-						[slot5] = true
-					}
-					slot4 = "auto_switch_difficult_base"
-					slot5 = "all"
+		if var_0_0.modeToggleDic[arg_28_1] then
+			switch(arg_29_0.name, {
+				base = function()
+					local var_30_0 = {}
 
-					for slot4, slot5 in ipairs(uv0.paresingToggleString(PlayerPrefs.GetString(slot4, slot5))) do
-						-- Nothing
+					for iter_30_0, iter_30_1 in ipairs(var_0_0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_base", "all"))) do
+						var_30_0[iter_30_1] = true
 					end
 
-					eachChild(uv1.rtView:Find("content/base/toggles"), function (slot0)
-						triggerToggle(slot0, uv0[slot0.name])
+					eachChild(arg_28_0.rtView:Find("content/base/toggles"), function(arg_31_0)
+						triggerToggle(arg_31_0, var_30_0[arg_31_0.name])
 					end)
 				end,
-				treasure = function ()
-					slot0 = {
-						[slot5] = true
-					}
-					slot4 = "auto_switch_difficult_treasure"
-					slot5 = "all"
+				treasure = function()
+					local var_32_0 = {}
 
-					for slot4, slot5 in ipairs(uv0.paresingToggleString(PlayerPrefs.GetString(slot4, slot5))) do
-						-- Nothing
+					for iter_32_0, iter_32_1 in ipairs(var_0_0.paresingToggleString(PlayerPrefs.GetString("auto_switch_difficult_treasure", "all"))) do
+						var_32_0[iter_32_1] = true
 					end
 
-					eachChild(uv1.rtView:Find("content/treasure/toggles"), function (slot0)
-						triggerToggle(slot0, uv0[slot0.name])
+					eachChild(arg_28_0.rtView:Find("content/treasure/toggles"), function(arg_33_0)
+						triggerToggle(arg_33_0, var_32_0[arg_33_0.name])
 					end)
 				end
-			}, function ()
-				uv0:initToggle(uv1.name)
+			}, function()
+				arg_28_0:initToggle(arg_29_0.name)
 			end)
 		end
 	end)
 end
 
-function slot0.saveConfig(slot0, slot1)
-	eachChild(slot0.rtView:Find("content/" .. slot1 .. "/toggles"), function (slot0)
-		if GetComponent(slot0, typeof(Toggle)).isOn then
-			table.insert(uv0, slot0.name)
+function var_0_0.saveConfig(arg_35_0, arg_35_1)
+	local var_35_0 = {}
+
+	eachChild(arg_35_0.rtView:Find("content/" .. arg_35_1 .. "/toggles"), function(arg_36_0)
+		if GetComponent(arg_36_0, typeof(Toggle)).isOn then
+			table.insert(var_35_0, arg_36_0.name)
 		end
 	end)
-	PlayerPrefs.SetString("auto_switch_difficult_" .. slot1, table.concat({}, "&"))
+	PlayerPrefs.SetString("auto_switch_difficult_" .. arg_35_1, table.concat(var_35_0, "&"))
 	PlayerPrefs.Save()
 end
 
-function slot0.paresingToggleString(slot0)
-	if not slot0 or slot0 == "" then
+function var_0_0.paresingToggleString(arg_37_0)
+	if not arg_37_0 or arg_37_0 == "" then
 		return {}
 	end
 
-	return string.split(slot0, "&")
+	return string.split(arg_37_0, "&")
 end
 
-function slot0.checkDifficultValid(slot0, slot1)
-	for slot6, slot7 in ipairs(uv0.paresingToggleString(slot0)) do
-		if slot7 == "all" then
+function var_0_0.checkDifficultValid(arg_38_0, arg_38_1)
+	local var_38_0 = var_0_0.paresingToggleString(arg_38_0)
+
+	for iter_38_0, iter_38_1 in ipairs(var_38_0) do
+		if iter_38_1 == "all" then
 			return true
-		elseif string.sub(slot7, 1, 6) == "until_" then
-			if slot1 <= tonumber(string.sub(slot7, 7)) then
+		elseif string.sub(iter_38_1, 1, 6) == "until_" then
+			if arg_38_1 <= tonumber(string.sub(iter_38_1, 7)) then
 				return true
 			end
-		elseif slot1 == tonumber(slot7) then
+		elseif arg_38_1 == tonumber(iter_38_1) then
 			return true
 		end
 	end
@@ -433,4 +434,4 @@ function slot0.checkDifficultValid(slot0, slot1)
 	return false
 end
 
-return slot0
+return var_0_0

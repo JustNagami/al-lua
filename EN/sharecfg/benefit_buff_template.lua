@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.benefit_buff_template = setmetatable({
 	__name = "benefit_buff_template",
 	all = {
@@ -2851,7 +2851,7 @@ pg.base.benefit_buff_template = {
 			"pt",
 			286,
 			5000,
-			1000000000000.0
+			1000000000000
 		}
 	},
 	[300086] = {
@@ -2941,7 +2941,7 @@ pg.base.benefit_buff_template = {
 			"pt",
 			286,
 			5000,
-			1000000000000.0
+			1000000000000
 		}
 	},
 	[300091] = {
@@ -3031,7 +3031,7 @@ pg.base.benefit_buff_template = {
 			"pt",
 			286,
 			5000,
-			1000000000000.0
+			1000000000000
 		}
 	},
 	[300096] = {
@@ -3121,7 +3121,7 @@ pg.base.benefit_buff_template = {
 			"pt",
 			286,
 			5000,
-			1000000000000.0
+			1000000000000
 		}
 	},
 	[300101] = {

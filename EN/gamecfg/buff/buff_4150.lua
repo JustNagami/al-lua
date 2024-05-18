@@ -1,4 +1,79 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4150,
+				attr = "DMG_FROM_TAG_1_T_1",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4151,
+				attr = "DMG_FROM_TAG_2_T_1",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4150,
+				attr = "DMG_FROM_TAG_1_T_20",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4151,
+				attr = "DMG_FROM_TAG_2_T_20",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4150,
+				attr = "DMG_FROM_TAG_1_T_21",
+				number = -0.05
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 4151,
+				attr = "DMG_FROM_TAG_2_T_21",
+				number = -0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -708,80 +783,5 @@ return {
 	stack = 1,
 	id = 4150,
 	icon = 4150,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4150,
-				attr = "DMG_FROM_TAG_1_T_1",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4151,
-				attr = "DMG_FROM_TAG_2_T_1",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4150,
-				attr = "DMG_FROM_TAG_1_T_20",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4151,
-				attr = "DMG_FROM_TAG_2_T_20",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4150,
-				attr = "DMG_FROM_TAG_1_T_21",
-				number = -0.05
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 4151,
-				attr = "DMG_FROM_TAG_2_T_21",
-				number = -0.05
-			}
-		}
-	}
+	last_effect = ""
 }

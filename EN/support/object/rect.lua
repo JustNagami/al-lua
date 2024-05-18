@@ -1,46 +1,48 @@
-pg = pg or {}
-slot0 = pg
-slot0.Rect = class("Rect")
+﻿pg = pg or {}
 
-function slot0.Rect.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0._right = slot1
-	slot0._bottom = slot2
-	slot0._width = slot3
-	slot0._height = slot4
-	slot0._left = slot1 + slot3
-	slot0._top = slot2 + slot4
-	slot0._type = slot5
-	slot0._obj = slot6
+local var_0_0 = pg
+
+var_0_0.Rect = class("Rect")
+
+function var_0_0.Rect.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
+	arg_1_0._right = arg_1_1
+	arg_1_0._bottom = arg_1_2
+	arg_1_0._width = arg_1_3
+	arg_1_0._height = arg_1_4
+	arg_1_0._left = arg_1_1 + arg_1_3
+	arg_1_0._top = arg_1_2 + arg_1_4
+	arg_1_0._type = arg_1_5
+	arg_1_0._obj = arg_1_6
 end
 
-function slot0.Rect.CheckPreCollider(slot0, slot1, slot2, slot3)
-	if slot1._left < slot0._right then
+function var_0_0.Rect.CheckPreCollider(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	if arg_2_1._left < arg_2_0._right then
 		return 0
 	end
 
-	if slot0._left < slot1._right or slot1._top < slot0._bottom or slot0._top < slot1._bottom then
+	if arg_2_1._right > arg_2_0._left or arg_2_1._top < arg_2_0._bottom or arg_2_1._bottom > arg_2_0._top then
 		return 1
 	end
 
-	slot4 = 0
-	slot5 = 0
+	local var_2_0 = 0
+	local var_2_1 = 0
 
-	if slot3 > 0 then
-		if slot2 == 0 then
+	if arg_2_3 > 0 then
+		if arg_2_2 == 0 then
 			return 2
 		end
 
-		if (slot0._left - slot1._right) / slot2 >= (slot0._bottom - slot1._top) / slot3 then
+		if (arg_2_0._left - arg_2_1._right) / arg_2_2 >= (arg_2_0._bottom - arg_2_1._top) / arg_2_3 then
 			return 4
 		end
 
 		return 2
-	elseif slot3 < 0 then
-		if slot2 == 0 then
+	elseif arg_2_3 < 0 then
+		if arg_2_2 == 0 then
 			return 3
 		end
 
-		if (slot0._left - slot1._right) / slot2 >= (slot0._top - slot1._bottom) / slot3 then
+		if (arg_2_0._left - arg_2_1._right) / arg_2_2 >= (arg_2_0._top - arg_2_1._bottom) / arg_2_3 then
 			return 4
 		end
 
@@ -50,8 +52,8 @@ function slot0.Rect.CheckPreCollider(slot0, slot1, slot2, slot3)
 	end
 end
 
-function slot0.Rect.CheckStillCollider(slot0, slot1)
-	if slot0._left < slot1._right or slot1._left < slot0._right or slot1._top < slot0._bottom or slot0._top < slot1._bottom then
+function var_0_0.Rect.CheckStillCollider(arg_3_0, arg_3_1)
+	if arg_3_1._right > arg_3_0._left or arg_3_1._left < arg_3_0._right or arg_3_1._top < arg_3_0._bottom or arg_3_1._bottom > arg_3_0._top then
 		return false
 	end
 

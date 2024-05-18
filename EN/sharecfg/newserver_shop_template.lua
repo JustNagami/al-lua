@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.newserver_shop_template = {
 	[22] = {
 		unlock_time = 0,

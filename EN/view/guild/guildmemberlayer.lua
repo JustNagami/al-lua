@@ -1,202 +1,215 @@
-slot0 = class("GuildMemberLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("GuildMemberLayer", import("..base.BaseUI"))
 
-function slot0.setGuildVO(slot0, slot1)
-	slot0.guildVO = slot1
+function var_0_0.setGuildVO(arg_1_0, arg_1_1)
+	arg_1_0.guildVO = arg_1_1
 
-	slot0:setMemberVOs(slot1:getSortMember())
+	arg_1_0:setMemberVOs(arg_1_1:getSortMember())
 end
 
-function slot0.setMemberVOs(slot0, slot1)
-	slot0.memberVOs = slot1
+function var_0_0.setMemberVOs(arg_2_0, arg_2_1)
+	arg_2_0.memberVOs = arg_2_1
 end
 
-function slot0.setPlayerVO(slot0, slot1)
-	slot0.playerVO = slot1
+function var_0_0.setPlayerVO(arg_3_0, arg_3_1)
+	arg_3_0.playerVO = arg_3_1
 end
 
-function slot0.SetRanks(slot0, slot1)
-	slot0.ranks = slot1
+function var_0_0.SetRanks(arg_4_0, arg_4_1)
+	arg_4_0.ranks = arg_4_1
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_5_0)
 	return "GuildMemberUI"
 end
 
-function slot0.init(slot0)
-	slot0.buttonsPanel = slot0:findTF("buttons_panel")
-	slot0.toggleGroup = slot0:findTF("buttons_panel"):GetComponent(typeof(ToggleGroup))
-	slot0.chatPanel = slot0:findTF("chat")
+function var_0_0.init(arg_6_0)
+	arg_6_0.buttonsPanel = arg_6_0:findTF("buttons_panel")
+	arg_6_0.toggleGroup = arg_6_0:findTF("buttons_panel"):GetComponent(typeof(ToggleGroup))
+	arg_6_0.chatPanel = arg_6_0:findTF("chat")
 
-	setActive(slot0.chatPanel, false)
-	setActive(slot0.buttonsPanel, false)
+	setActive(arg_6_0.chatPanel, false)
+	setActive(arg_6_0.buttonsPanel, false)
 
-	slot0.btns = {
-		slot0:findTF("buttons_panel/info_btn"),
-		slot0:findTF("buttons_panel/duty_btn"),
-		slot0:findTF("buttons_panel/fire_btn"),
-		slot0:findTF("buttons_panel/impeach_btn")
+	arg_6_0.btns = {
+		arg_6_0:findTF("buttons_panel/info_btn"),
+		arg_6_0:findTF("buttons_panel/duty_btn"),
+		arg_6_0:findTF("buttons_panel/fire_btn"),
+		arg_6_0:findTF("buttons_panel/impeach_btn")
 	}
-	slot0.helpBtn = slot0:findTF("help")
-	slot0.pages = {
-		GuildMemberInfoPage.New(slot0._tf, slot0.event),
-		GuildAppiontPage.New(slot0._tf, slot0.event),
-		GuildFirePage.New(slot0._tf, slot0.event),
-		GuildImpeachPage.New(slot0._tf, slot0.event)
+	arg_6_0.helpBtn = arg_6_0:findTF("help")
+	arg_6_0.pages = {
+		GuildMemberInfoPage.New(arg_6_0._tf, arg_6_0.event),
+		GuildAppiontPage.New(arg_6_0._tf, arg_6_0.event),
+		GuildFirePage.New(arg_6_0._tf, arg_6_0.event),
+		GuildImpeachPage.New(arg_6_0._tf, arg_6_0.event)
 	}
-	slot0.contextData.rankPage = GuildRankPage.New(slot0._tf, slot0.event)
-	slot0.listPage = GuildMemberListPage.New(slot0._tf, slot0.event, slot0.contextData)
+	arg_6_0.contextData.rankPage = GuildRankPage.New(arg_6_0._tf, arg_6_0.event)
+	arg_6_0.listPage = GuildMemberListPage.New(arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 
-	function slot0.listPage.OnClickMember(slot0)
-		uv0:LoadPainting(slot0)
+	function arg_6_0.listPage.OnClickMember(arg_7_0)
+		arg_6_0:LoadPainting(arg_7_0)
 	end
 
-	slot0.buttonPos = slot0.buttonsPanel.localPosition
+	arg_6_0.buttonPos = arg_6_0.buttonsPanel.localPosition
 end
 
-function slot0.didEnter(slot0)
-	function slot1()
-		if uv0.page then
-			setActive(uv0.btns[table.indexof(uv0.pages, uv0.page)]:Find("sel"), false)
+function var_0_0.didEnter(arg_8_0)
+	local function var_8_0()
+		if arg_8_0.page then
+			local var_9_0 = table.indexof(arg_8_0.pages, arg_8_0.page)
+			local var_9_1 = arg_8_0.btns[var_9_0]
+
+			setActive(var_9_1:Find("sel"), false)
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot0.btns) do
-		onButton(slot0, slot6, function ()
-			if uv0 == 2 and uv1.memberVO:IsRecruit() then
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.btns) do
+		onButton(arg_8_0, iter_8_1, function()
+			if iter_8_0 == 2 and arg_8_0.memberVO:IsRecruit() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_trainee_duty_change_tip"))
 
 				return
 			end
 
-			if uv1.page and not uv1.page:GetLoaded() then
+			if arg_8_0.page and not arg_8_0.page:GetLoaded() then
 				return
 			end
 
+			local var_10_0 = arg_8_0.pages[iter_8_0]
+
 			pg.UIMgr.GetInstance():LoadingOn()
-			uv1.pages[uv0]:ExecuteAction("Show", uv1.guildVO, uv1.playerVO, uv1.memberVO, function ()
-				if uv0.page then
-					uv0.page:Hide()
+
+			local function var_10_1()
+				if arg_8_0.page then
+					arg_8_0.page:Hide()
 				end
 
-				uv1()
-				setActive(uv2:Find("sel"), true)
+				var_8_0()
+				setActive(iter_8_1:Find("sel"), true)
 
-				uv0.page = uv3
+				arg_8_0.page = var_10_0
 
 				pg.UIMgr.GetInstance():LoadingOff()
-			end)
+			end
+
+			var_10_0:ExecuteAction("Show", arg_8_0.guildVO, arg_8_0.playerVO, arg_8_0.memberVO, var_10_1)
 		end, SFX_PANEL)
-		slot0.pages[slot5]:SetCallBack(function (slot0)
-			uv0.buttonsPanel.localPosition = slot0
+		arg_8_0.pages[iter_8_0]:SetCallBack(function(arg_12_0)
+			arg_8_0.buttonsPanel.localPosition = arg_12_0
 
-			setParent(uv0.buttonsPanel, pg.UIMgr:GetInstance().OverlayMain)
-		end, function ()
-			uv0()
-			setParent(uv1.buttonsPanel, uv1._tf)
+			setParent(arg_8_0.buttonsPanel, pg.UIMgr:GetInstance().OverlayMain)
+		end, function()
+			var_8_0()
+			setParent(arg_8_0.buttonsPanel, arg_8_0._tf)
 
-			uv1.buttonsPanel.localPosition = uv1.buttonPos
+			arg_8_0.buttonsPanel.localPosition = arg_8_0.buttonPos
 		end)
 	end
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_8_0, arg_8_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.guild_member_tip.tip
 		})
 	end, SFX_PANEL)
-	slot0.listPage:ExecuteAction("SetUp", slot0.guildVO, slot0.memberVOs, slot0.ranks)
+	arg_8_0.listPage:ExecuteAction("SetUp", arg_8_0.guildVO, arg_8_0.memberVOs, arg_8_0.ranks)
 end
 
-function slot0.LoadPainting(slot0, slot1)
-	slot0.memberVO = slot1
-	slot2 = slot1.duty
-	slot3 = slot0.guildVO:getDutyByMemberId(slot0.playerVO.id)
+function var_0_0.LoadPainting(arg_15_0, arg_15_1)
+	arg_15_0.memberVO = arg_15_1
 
-	setActive(slot0.buttonsPanel, true)
+	local var_15_0 = arg_15_1.duty
+	local var_15_1 = arg_15_0.guildVO:getDutyByMemberId(arg_15_0.playerVO.id)
 
-	slot4 = slot1:GetManifesto()
+	setActive(arg_15_0.buttonsPanel, true)
+
+	local var_15_2 = arg_15_1:GetManifesto()
 
 	if HXSet.isHxPropose() then
-		slot4 = ""
+		var_15_2 = ""
 	end
 
-	if not slot4 or slot4 == "" then
-		setActive(slot0.chatPanel, false)
+	if not var_15_2 or var_15_2 == "" then
+		setActive(arg_15_0.chatPanel, false)
 	else
-		setActive(slot0.chatPanel, true)
-		setText(slot0:findTF("Text", slot0.chatPanel), slot4)
+		setActive(arg_15_0.chatPanel, true)
+		setText(arg_15_0:findTF("Text", arg_15_0.chatPanel), var_15_2)
 	end
 
-	slot5 = nil
+	local var_15_3
 
 	if HXSet.isHxPropose() then
-		pg.GuildPaintingMgr:GetInstance():Update(slot0.guildVO:GetOfficePainting(), Vector3(-643, -160, 0))
+		local var_15_4 = arg_15_0.guildVO:GetOfficePainting()
+
+		pg.GuildPaintingMgr:GetInstance():Update(var_15_4, Vector3(-643, -160, 0))
 	else
-		pg.GuildPaintingMgr:GetInstance():Update(Ship.New({
-			configId = slot1.icon,
-			skin_id = slot1.skinId
-		}):getPainting(), Vector3(-484, 0, 0), true)
+		local var_15_5 = Ship.New({
+			configId = arg_15_1.icon,
+			skin_id = arg_15_1.skinId
+		}):getPainting()
+
+		pg.GuildPaintingMgr:GetInstance():Update(var_15_5, Vector3(-484, 0, 0), true)
 	end
 
-	setActive(slot0.btns[4], slot3 == GuildConst.DUTY_DEPUTY_COMMANDER and slot2 == GuildConst.DUTY_COMMANDER and slot1:isLongOffLine())
+	setActive(arg_15_0.btns[4], var_15_1 == GuildConst.DUTY_DEPUTY_COMMANDER and var_15_0 == GuildConst.DUTY_COMMANDER and arg_15_1:isLongOffLine())
 
-	slot6 = (slot3 == GuildConst.DUTY_DEPUTY_COMMANDER or slot3 == GuildConst.DUTY_COMMANDER) and slot3 < slot2
+	local var_15_6 = (var_15_1 == GuildConst.DUTY_DEPUTY_COMMANDER or var_15_1 == GuildConst.DUTY_COMMANDER) and var_15_1 < var_15_0
 
-	setButtonEnabled(slot0.btns[2], slot6)
-	setGray(slot0.btns[2], not slot6, true)
+	setButtonEnabled(arg_15_0.btns[2], var_15_6)
+	setGray(arg_15_0.btns[2], not var_15_6, true)
 
-	slot7 = (slot3 == GuildConst.DUTY_DEPUTY_COMMANDER or slot3 == GuildConst.DUTY_COMMANDER) and slot3 < slot2
+	local var_15_7 = (var_15_1 == GuildConst.DUTY_DEPUTY_COMMANDER or var_15_1 == GuildConst.DUTY_COMMANDER) and var_15_1 < var_15_0
 
-	setButtonEnabled(slot0.btns[3], slot7)
-	setGray(slot0.btns[3], not slot7, true)
+	setButtonEnabled(arg_15_0.btns[3], var_15_7)
+	setGray(arg_15_0.btns[3], not var_15_7, true)
 end
 
-function slot0.RefreshMembers(slot0)
-	if slot0.listPage:GetLoaded() then
-		slot0.listPage:Flush(slot0.guildVO, slot0.memberVOs, slot0.ranks)
-	end
-end
-
-function slot0.ActiveDefaultMenmber(slot0)
-	if slot0.listPage:GetLoaded() then
-		slot0.listPage:TriggerFirstCard()
+function var_0_0.RefreshMembers(arg_16_0)
+	if arg_16_0.listPage:GetLoaded() then
+		arg_16_0.listPage:Flush(arg_16_0.guildVO, arg_16_0.memberVOs, arg_16_0.ranks)
 	end
 end
 
-function slot0.UpdateRankList(slot0, slot1, slot2)
-	slot0.ranks[slot1] = slot2
-
-	if slot0.contextData.rankPage and slot0.contextData.rankPage:GetLoaded() then
-		slot0.contextData.rankPage:ExecuteAction("OnUpdateRankList", slot1, slot2)
+function var_0_0.ActiveDefaultMenmber(arg_17_0)
+	if arg_17_0.listPage:GetLoaded() then
+		arg_17_0.listPage:TriggerFirstCard()
 	end
 end
 
-function slot0.ShowInfoPanel(slot0, slot1)
-	slot0.pages[1]:ExecuteAction("Flush", slot1)
+function var_0_0.UpdateRankList(arg_18_0, arg_18_1, arg_18_2)
+	arg_18_0.ranks[arg_18_1] = arg_18_2
+
+	if arg_18_0.contextData.rankPage and arg_18_0.contextData.rankPage:GetLoaded() then
+		arg_18_0.contextData.rankPage:ExecuteAction("OnUpdateRankList", arg_18_1, arg_18_2)
+	end
 end
 
-function slot0.onBackPressed(slot0)
-	for slot4, slot5 in ipairs(slot0.pages) do
-		if slot5:GetLoaded() and slot5:isShowing() then
-			slot5:Hide()
+function var_0_0.ShowInfoPanel(arg_19_0, arg_19_1)
+	arg_19_0.pages[1]:ExecuteAction("Flush", arg_19_1)
+end
+
+function var_0_0.onBackPressed(arg_20_0)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.pages) do
+		if iter_20_1:GetLoaded() and iter_20_1:isShowing() then
+			iter_20_1:Hide()
 
 			return
 		end
 	end
 
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-	slot0:emit(uv0.ON_BACK)
+	arg_20_0:emit(var_0_0.ON_BACK)
 end
 
-function slot0.willExit(slot0)
-	slot0.contextData.rankPage:Destroy()
+function var_0_0.willExit(arg_21_0)
+	arg_21_0.contextData.rankPage:Destroy()
 
-	slot0.listPage.OnClickMember = nil
+	arg_21_0.listPage.OnClickMember = nil
 
-	slot0.listPage:Destroy()
+	arg_21_0.listPage:Destroy()
 
-	for slot4, slot5 in ipairs(slot0.pages) do
-		slot5:Destroy()
+	for iter_21_0, iter_21_1 in ipairs(arg_21_0.pages) do
+		iter_21_1:Destroy()
 	end
 
 	if isActive(pg.MsgboxMgr:GetInstance()._go) then
@@ -204,4 +217,4 @@ function slot0.willExit(slot0)
 	end
 end
 
-return slot0
+return var_0_0

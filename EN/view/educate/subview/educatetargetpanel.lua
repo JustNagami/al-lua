@@ -1,104 +1,108 @@
-slot0 = class("EducateTargetPanel", import("...base.BaseSubView"))
+﻿local var_0_0 = class("EducateTargetPanel", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateTargetPanel"
 end
 
-function slot0.OnInit(slot0)
-	slot0.contentTF = slot0:findTF("content")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.contentTF = arg_2_0:findTF("content")
 
-	onButton(slot0, slot0.contentTF, function ()
-		uv0:emit(EducateBaseUI.EDUCATE_GO_SUBLAYER, Context.New({
+	onButton(arg_2_0, arg_2_0.contentTF, function()
+		arg_2_0:emit(EducateBaseUI.EDUCATE_GO_SUBLAYER, Context.New({
 			mediator = EducateTargetMediator,
 			viewComponent = EducateTargetLayer
 		}))
 	end, SFX_PANEL)
 
-	slot0.taskTpl = slot0:findTF("tpl", slot0.contentTF)
+	arg_2_0.taskTpl = arg_2_0:findTF("tpl", arg_2_0.contentTF)
 
-	setActive(slot0.taskTpl, false)
+	setActive(arg_2_0.taskTpl, false)
 
-	slot0.listBg = slot0:findTF("task_list/bg", slot0.contentTF)
-	slot0.lineTF = slot0:findTF("task_list/line", slot0.contentTF)
-	slot0.mainTF = slot0:findTF("task_list/main", slot0.contentTF)
+	arg_2_0.listBg = arg_2_0:findTF("task_list/bg", arg_2_0.contentTF)
+	arg_2_0.lineTF = arg_2_0:findTF("task_list/line", arg_2_0.contentTF)
+	arg_2_0.mainTF = arg_2_0:findTF("task_list/main", arg_2_0.contentTF)
 
-	setText(slot0:findTF("title/Image/Text", slot0.mainTF), i18n("child_task_system_type3"))
+	setText(arg_2_0:findTF("title/Image/Text", arg_2_0.mainTF), i18n("child_task_system_type3"))
 
-	slot0.mainTaskUIList = UIItemList.New(slot0:findTF("list", slot0.mainTF), slot0.taskTpl)
+	arg_2_0.mainTaskUIList = UIItemList.New(arg_2_0:findTF("list", arg_2_0.mainTF), arg_2_0.taskTpl)
 
-	slot0.mainTaskUIList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTaskItem(slot1, slot2, "main")
+	arg_2_0.mainTaskUIList:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventUpdate then
+			arg_2_0:updateTaskItem(arg_4_1, arg_4_2, "main")
 		end
 	end)
 
-	slot0.otherTF = slot0:findTF("task_list/other", slot0.contentTF)
+	arg_2_0.otherTF = arg_2_0:findTF("task_list/other", arg_2_0.contentTF)
 
-	setText(slot0:findTF("title/Image/Text", slot0.otherTF), i18n("child_task_system_type2"))
+	setText(arg_2_0:findTF("title/Image/Text", arg_2_0.otherTF), i18n("child_task_system_type2"))
 
-	slot0.otherTaskUIList = UIItemList.New(slot0:findTF("list", slot0.otherTF), slot0.taskTpl)
+	arg_2_0.otherTaskUIList = UIItemList.New(arg_2_0:findTF("list", arg_2_0.otherTF), arg_2_0.taskTpl)
 
-	slot0.otherTaskUIList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTaskItem(slot1, slot2, "other")
+	arg_2_0.otherTaskUIList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_2_0:updateTaskItem(arg_5_1, arg_5_2, "other")
 		end
 	end)
-	slot0:Flush()
+	arg_2_0:Flush()
 end
 
-function slot0.updateTaskItem(slot0, slot1, slot2, slot3)
-	slot4 = slot3 == "main" and slot0.mainTaskVOs[slot1 + 1] or slot0.otherTaskVOs[slot1 + 1]
-	slot5 = string.format("(%s)", slot4:GetProgress() .. "/" .. slot4:GetFinishNum())
+function var_0_0.updateTaskItem(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	local var_6_0 = arg_6_3 == "main" and arg_6_0.mainTaskVOs[arg_6_1 + 1] or arg_6_0.otherTaskVOs[arg_6_1 + 1]
+	local var_6_1 = string.format("(%s)", var_6_0:GetProgress() .. "/" .. var_6_0:GetFinishNum())
 
-	setText(slot0:findTF("progress", slot2), slot5)
+	setText(arg_6_0:findTF("progress", arg_6_2), var_6_1)
+
+	local var_6_2 = GetPerceptualSize(var_6_1)
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		slot6 = GetPerceptualSize(slot5) + 2
+		var_6_2 = var_6_2 + 2
 	end
 
-	setText(slot0:findTF("desc", slot2), shortenString(slot4:getConfig("name"), 11 - slot6))
+	setText(arg_6_0:findTF("desc", arg_6_2), shortenString(var_6_0:getConfig("name"), 11 - var_6_2))
 end
 
-function slot0.Flush(slot0)
-	if not slot0:GetLoaded() then
+function var_0_0.Flush(arg_7_0)
+	if not arg_7_0:GetLoaded() then
 		return
 	end
 
-	slot0.taskProxy = getProxy(EducateProxy):GetTaskProxy()
+	arg_7_0.taskProxy = getProxy(EducateProxy):GetTaskProxy()
 
-	setActive(slot0:findTF("target_btn/tip", slot0.contentTF), slot0.taskProxy:IsShowOtherTasksTip())
+	setActive(arg_7_0:findTF("target_btn/tip", arg_7_0.contentTF), arg_7_0.taskProxy:IsShowOtherTasksTip())
 
-	slot0.mainTaskVOs = slot0.taskProxy:FilterByGroup(slot0.taskProxy:GetMainTasksForShow())
+	arg_7_0.mainTaskVOs = arg_7_0.taskProxy:FilterByGroup(arg_7_0.taskProxy:GetMainTasksForShow())
 
-	if not slot0.taskProxy:CanGetTargetAward() then
-		slot0.otherTaskVOs = {}
+	if not arg_7_0.taskProxy:CanGetTargetAward() then
+		arg_7_0.otherTaskVOs = {}
 	else
-		slot0.otherTaskVOs = slot0.taskProxy:FilterByGroup(slot0.taskProxy:GetTargetTasksForShow(), true)
+		arg_7_0.otherTaskVOs = arg_7_0.taskProxy:FilterByGroup(arg_7_0.taskProxy:GetTargetTasksForShow(), true)
 	end
 
-	setActive(slot0.mainTF, #slot0.mainTaskVOs > 0)
-	slot0.mainTaskUIList:align(#slot0.mainTaskVOs)
+	setActive(arg_7_0.mainTF, #arg_7_0.mainTaskVOs > 0)
+	arg_7_0.mainTaskUIList:align(#arg_7_0.mainTaskVOs)
 
-	slot2 = 3 - #slot0.mainTaskVOs
+	local var_7_0 = #arg_7_0.mainTaskVOs
+	local var_7_1 = 3 - var_7_0
 
-	setActive(slot0.otherTF, #slot0.otherTaskVOs > 0)
+	setActive(arg_7_0.otherTF, #arg_7_0.otherTaskVOs > 0)
 
-	slot3 = slot2 < #slot0.otherTaskVOs and slot2 or #slot0.otherTaskVOs
+	local var_7_2 = var_7_1 < #arg_7_0.otherTaskVOs and var_7_1 or #arg_7_0.otherTaskVOs
 
-	slot0.otherTaskUIList:align(slot3)
-	setActive(slot0.listBg, slot1 > 0 or slot3 > 0)
-	setActive(slot0.lineTF, slot1 > 0 and slot3 > 0)
+	arg_7_0.otherTaskUIList:align(var_7_2)
+	setActive(arg_7_0.listBg, var_7_0 > 0 or var_7_2 > 0)
+	setActive(arg_7_0.lineTF, var_7_0 > 0 and var_7_2 > 0)
 end
 
-function slot0.SetPosLeft(slot0)
-	setLocalPosition(slot0.contentTF, Vector2(-650, 0))
+function var_0_0.SetPosLeft(arg_8_0)
+	setLocalPosition(arg_8_0.contentTF, Vector2(-650, 0))
 end
 
-function slot0.SetPosRight(slot0)
-	setLocalPosition(slot0.contentTF, Vector2(0, 0))
+function var_0_0.SetPosRight(arg_9_0)
+	setLocalPosition(arg_9_0.contentTF, Vector2(0, 0))
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_10_0)
+	return
 end
 
-return slot0
+return var_0_0

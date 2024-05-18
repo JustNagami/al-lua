@@ -1,46 +1,49 @@
-slot0 = class("ModifyGuildInfoCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ModifyGuildInfoCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = var_1_1:getData()
+	local var_1_3 = pg.gameset.modify_guild_cost.key_value
 
-	if type == 1 and getProxy(PlayerProxy):getData():getTotalGem() < pg.gameset.modify_guild_cost.key_value then
+	if type == 1 and var_1_3 > var_1_2:getTotalGem() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_rmb"))
 
 		return
 	end
 
-	function slot6()
+	local function var_1_4()
 		pg.ConnectionMgr.GetInstance():Send(60026, {
-			type = uv0.type,
-			int = uv0.int,
-			str = uv0.string
-		}, 60027, function (slot0)
-			if slot0.result == 0 then
-				if uv0.type == 1 then
-					uv1:consume({
-						gem = uv2
+			type = var_1_0.type,
+			int = var_1_0.int,
+			str = var_1_0.string
+		}, 60027, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				if var_1_0.type == 1 then
+					var_1_2:consume({
+						gem = var_1_3
 					})
-					uv3:updatePlayer(uv1)
+					var_1_1:updatePlayer(var_1_2)
 				end
 
-				uv4:sendNotification(GAME.MODIFY_GUILD_INFO_DONE)
+				arg_1_0:sendNotification(GAME.MODIFY_GUILD_INFO_DONE)
 				pg.TipsMgr.GetInstance():ShowTips(i18n("guild_info_update"))
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_modify_erro", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("guild_modify_erro", arg_3_0.result))
 			end
 		end)
 	end
 
-	if slot2.type == 1 then
+	if var_1_0.type == 1 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("guild_modify_info_tip", slot5),
-			onYes = function ()
-				uv0()
+			content = i18n("guild_modify_info_tip", var_1_3),
+			onYes = function()
+				var_1_4()
 			end
 		})
 	else
-		slot6()
+		var_1_4()
 	end
 end
 
-return slot0
+return var_0_0

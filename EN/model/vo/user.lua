@@ -1,26 +1,26 @@
-slot0 = class("User", import(".BaseVO"))
+﻿local var_0_0 = class("User", import(".BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.type = slot1.type
-	slot0.arg1 = slot1.arg1
-	slot0.arg2 = slot1.arg2
-	slot0.arg3 = slot1.arg3
-	slot0.arg4 = slot1.arg4
-	slot0.id = slot1.uid
-	slot0.uid = slot1.uid
-	slot0.token = slot1.token
-	slot0.server = slot1.server
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.type = arg_1_1.type
+	arg_1_0.arg1 = arg_1_1.arg1
+	arg_1_0.arg2 = arg_1_1.arg2
+	arg_1_0.arg3 = arg_1_1.arg3
+	arg_1_0.arg4 = arg_1_1.arg4
+	arg_1_0.id = arg_1_1.uid
+	arg_1_0.uid = arg_1_1.uid
+	arg_1_0.token = arg_1_1.token
+	arg_1_0.server = arg_1_1.server
 end
 
-function slot0.isLogin(slot0)
-	return tobool(slot0.uid and slot0.server and slot0.token)
+function var_0_0.isLogin(arg_2_0)
+	return tobool(arg_2_0.uid and arg_2_0.server and arg_2_0.token)
 end
 
-function slot0.clear(slot0)
-	slot0.id = nil
-	slot0.uid = nil
-	slot0.token = nil
-	slot0.server = nil
+function var_0_0.clear(arg_3_0)
+	arg_3_0.id = nil
+	arg_3_0.uid = nil
+	arg_3_0.token = nil
+	arg_3_0.server = nil
 end
 
-return slot0
+return var_0_0

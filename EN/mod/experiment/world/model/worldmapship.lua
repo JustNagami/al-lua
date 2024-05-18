@@ -1,193 +1,213 @@
-slot0 = class("WorldMapShip", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WorldMapShip", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	fleetId = "number",
 	buffs = "table",
 	triggers = "table",
 	id = "number",
 	hpRant = "number"
 }
-slot0.EventHpRantChange = "WorldMapShip.EventHpRantChange"
-slot0.EventUpdateBuff = "WorldMapShip.EventUpdateBuff"
-slot0.EventUpdateBroken = "WorldMapShip.EventUpdateBroken"
+var_0_0.EventHpRantChange = "WorldMapShip.EventHpRantChange"
+var_0_0.EventUpdateBuff = "WorldMapShip.EventUpdateBuff"
+var_0_0.EventUpdateBroken = "WorldMapShip.EventUpdateBroken"
 
-function slot0.Build(slot0)
-	slot0.id = nil
-	slot0.hpRant = 10000
-	slot0.buffs = {}
-	slot0.triggers = {}
+function var_0_0.Build(arg_1_0)
+	arg_1_0.id = nil
+	arg_1_0.hpRant = 10000
+	arg_1_0.buffs = {}
+	arg_1_0.triggers = {}
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.hpRant = slot1.hp_rant
-	slot0.buffs = WorldConst.ParsingBuffs(slot1.buff_list)
+function var_0_0.Setup(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.hpRant = arg_2_1.hp_rant
+	arg_2_0.buffs = WorldConst.ParsingBuffs(arg_2_1.buff_list)
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_3_0)
+	arg_3_0:Clear()
 end
 
-function slot0.GetImportWorldShipVO(slot0)
+function var_0_0.GetImportWorldShipVO(arg_4_0)
 	return setmetatable({
-		triggers = slot0.triggers,
-		isBroken = slot0:IsBroken(),
-		IsBenefitSkillActive = function (slot0, slot1)
-			slot2 = false
+		triggers = arg_4_0.triggers,
+		isBroken = arg_4_0:IsBroken(),
+		IsBenefitSkillActive = function(arg_5_0, arg_5_1)
+			local var_5_0 = false
 
-			if slot1.type == Ship.BENEFIT_SKILL then
-				if not slot0.isBroken and (not slot1.limit[1] or slot1.limit[1] == slot0.triggers.TeamNumbers) then
-					slot2 = true
+			if arg_5_1.type == Ship.BENEFIT_SKILL then
+				if not arg_5_0.isBroken and (not arg_5_1.limit[1] or arg_5_1.limit[1] == arg_5_0.triggers.TeamNumbers) then
+					var_5_0 = true
 				end
-			elseif slot1.type == Ship.BENEFIT_EQUIP then
-				for slot8, slot9 in ipairs(slot0:getAllEquipments()) do
-					if slot9 and table.contains(slot1.limit, slot9:getConfig("id")) then
-						slot2 = true
+			elseif arg_5_1.type == Ship.BENEFIT_EQUIP then
+				local var_5_1 = arg_5_1.limit
+				local var_5_2 = arg_5_0:getAllEquipments()
+
+				for iter_5_0, iter_5_1 in ipairs(var_5_2) do
+					if iter_5_1 and table.contains(var_5_1, iter_5_1:getConfig("id")) then
+						var_5_0 = true
 
 						break
 					end
 				end
-			elseif slot1.type == Ship.BENEFIT_MAP_AURA then
-				slot2 = not slot0.isBroken
-			elseif slot1.type == Ship.BENEFIT_AID then
-				slot2 = not slot0.isBroken
+			elseif arg_5_1.type == Ship.BENEFIT_MAP_AURA then
+				var_5_0 = not arg_5_0.isBroken
+			elseif arg_5_1.type == Ship.BENEFIT_AID then
+				var_5_0 = not arg_5_0.isBroken
 			end
 
-			return slot2
+			return var_5_0
 		end,
-		GetStaminaDiscount = function (slot0, slot1)
-			slot2 = 0
+		GetStaminaDiscount = function(arg_6_0, arg_6_1)
+			local var_6_0 = 0
 
-			if slot1 == WorldConst.OpReqSub then
-				for slot6, slot7 in pairs(slot0:getAllSkills()) do
-					if pg.skill_benefit_template[tonumber(slot6 .. string.format("%.2d", slot7.level))] and slot0:IsBenefitSkillActive(slot9) and (slot9.type == Ship.BENEFIT_EQUIP or slot9.type == Ship.BENEFIT_SKILL) then
-						slot2 = slot2 + defaultValue(slot9.world_extra_effect[1], 0)
+			if arg_6_1 == WorldConst.OpReqSub then
+				for iter_6_0, iter_6_1 in pairs(arg_6_0:getAllSkills()) do
+					local var_6_1 = tonumber(iter_6_0 .. string.format("%.2d", iter_6_1.level))
+					local var_6_2 = pg.skill_benefit_template[var_6_1]
+
+					if var_6_2 and arg_6_0:IsBenefitSkillActive(var_6_2) and (var_6_2.type == Ship.BENEFIT_EQUIP or var_6_2.type == Ship.BENEFIT_SKILL) then
+						var_6_0 = var_6_0 + defaultValue(var_6_2.world_extra_effect[1], 0)
 					end
 				end
 			end
 
-			return slot2
+			return var_6_0
 		end
 	}, {
-		__index = WorldConst.FetchRawShipVO(slot0.id)
+		__index = WorldConst.FetchRawShipVO(arg_4_0.id)
 	})
 end
 
-function slot0.UpdateHpRant(slot0, slot1)
-	if slot0.hpRant ~= slot1 then
-		slot0.hpRant = slot1
+function var_0_0.UpdateHpRant(arg_7_0, arg_7_1)
+	if arg_7_0.hpRant ~= arg_7_1 then
+		arg_7_0.hpRant = arg_7_1
 
-		slot0:DispatchEvent(uv0.EventHpRantChange)
+		arg_7_0:DispatchEvent(var_0_0.EventHpRantChange)
 	end
 end
 
-function slot0.IsValid(slot0)
-	return tobool(WorldConst.FetchRawShipVO(slot0.id))
+function var_0_0.IsValid(arg_8_0)
+	return tobool(WorldConst.FetchRawShipVO(arg_8_0.id))
 end
 
-function slot0.IsAlive(slot0)
-	return slot0.hpRant > 0
+function var_0_0.IsAlive(arg_9_0)
+	return arg_9_0.hpRant > 0
 end
 
-function slot0.IsHpFull(slot0)
-	return slot0.hpRant == 10000
+function var_0_0.IsHpFull(arg_10_0)
+	return arg_10_0.hpRant == 10000
 end
 
-function slot0.IsHpSafe(slot0)
-	return slot0.hpRant >= 3000
+function var_0_0.IsHpSafe(arg_11_0)
+	return arg_11_0.hpRant >= 3000
 end
 
-function slot0.GetBuffList(slot0)
-	slot1 = underscore.filter(underscore.values(slot0.buffs), function (slot0)
-		return slot0:GetFloor() > 0
+function var_0_0.GetBuffList(arg_12_0)
+	local var_12_0 = underscore.filter(underscore.values(arg_12_0.buffs), function(arg_13_0)
+		return arg_13_0:GetFloor() > 0
 	end)
+	local var_12_1 = arg_12_0.fleetId and nowWorld():GetFleet(arg_12_0.fleetId):GetDamageBuff()
 
-	if slot0.fleetId and nowWorld():GetFleet(slot0.fleetId):GetDamageBuff() then
-		table.insert(slot1, slot2)
+	if var_12_1 then
+		table.insert(var_12_0, var_12_1)
 	end
 
-	return slot1
+	return var_12_0
 end
 
-function slot0.GetBuff(slot0, slot1)
-	if not slot0.buffs[slot1] then
-		slot0.buffs[slot1] = WorldBuff.New()
+function var_0_0.GetBuff(arg_14_0, arg_14_1)
+	if not arg_14_0.buffs[arg_14_1] then
+		arg_14_0.buffs[arg_14_1] = WorldBuff.New()
 
-		slot0.buffs[slot1]:Setup({
+		arg_14_0.buffs[arg_14_1]:Setup({
 			floor = 0,
-			id = slot1
+			id = arg_14_1
 		})
 	end
 
-	return slot0.buffs[slot1]
+	return arg_14_0.buffs[arg_14_1]
 end
 
-function slot0.AddBuff(slot0, slot1, slot2)
-	assert(slot1 and slot2)
-	slot0:GetBuff(slot1):AddFloor(slot2)
+function var_0_0.AddBuff(arg_15_0, arg_15_1, arg_15_2)
+	assert(arg_15_1 and arg_15_2)
+	arg_15_0:GetBuff(arg_15_1):AddFloor(arg_15_2)
 
-	if slot1 == WorldConst.BrokenBuffId then
-		slot0:DispatchEvent(uv0.EventUpdateBroken)
+	if arg_15_1 == WorldConst.BrokenBuffId then
+		arg_15_0:DispatchEvent(var_0_0.EventUpdateBroken)
 	end
 
-	slot0:DispatchEvent(uv0.EventUpdateBuff)
+	arg_15_0:DispatchEvent(var_0_0.EventUpdateBuff)
 end
 
-function slot0.RemoveBuff(slot0, slot1, slot2)
-	if slot2 then
-		slot0:GetBuff(slot1):AddFloor(slot2 * -1)
+function var_0_0.RemoveBuff(arg_16_0, arg_16_1, arg_16_2)
+	local var_16_0 = arg_16_0:GetBuff(arg_16_1)
+
+	if arg_16_2 then
+		var_16_0:AddFloor(arg_16_2 * -1)
 	else
-		slot0.buffs[slot1] = nil
+		arg_16_0.buffs[arg_16_1] = nil
 	end
 
-	if slot1 == WorldConst.BrokenBuffId then
-		slot0:DispatchEvent(uv0.EventUpdateBroken)
+	if arg_16_1 == WorldConst.BrokenBuffId then
+		arg_16_0:DispatchEvent(var_0_0.EventUpdateBroken)
 	end
 
-	slot0:DispatchEvent(uv0.EventUpdateBuff)
+	arg_16_0:DispatchEvent(var_0_0.EventUpdateBuff)
 end
 
-function slot0.IsBuffMax(slot0, slot1)
-	return WorldBuff.GetTemplate(slot1).buff_maxfloor <= slot0:GetBuff(slot1):GetFloor()
+function var_0_0.IsBuffMax(arg_17_0, arg_17_1)
+	return arg_17_0:GetBuff(arg_17_1):GetFloor() >= WorldBuff.GetTemplate(arg_17_1).buff_maxfloor
 end
 
-function slot0.Rebirth(slot0)
-	assert(slot0.hpRant <= 0)
-	slot0:UpdateHpRant(pg.gameset.world_death_hpfix.key_value)
-	slot0:AddBuff(WorldConst.BrokenBuffId, 1)
+function var_0_0.Rebirth(arg_18_0)
+	assert(arg_18_0.hpRant <= 0)
+
+	local var_18_0 = pg.gameset.world_death_hpfix.key_value
+
+	arg_18_0:UpdateHpRant(var_18_0)
+	arg_18_0:AddBuff(WorldConst.BrokenBuffId, 1)
 end
 
-function slot0.Repair(slot0)
-	slot0:UpdateHpRant(10000)
-	slot0:RemoveBuff(WorldConst.BrokenBuffId)
+function var_0_0.Repair(arg_19_0)
+	arg_19_0:UpdateHpRant(10000)
+	arg_19_0:RemoveBuff(WorldConst.BrokenBuffId)
 end
 
-function slot0.Regenerate(slot0, slot1)
-	slot0:UpdateHpRant(math.min(10000, slot0.hpRant + slot1))
+function var_0_0.Regenerate(arg_20_0, arg_20_1)
+	local var_20_0 = math.min(10000, arg_20_0.hpRant + arg_20_1)
+
+	arg_20_0:UpdateHpRant(var_20_0)
 end
 
-function slot0.RegenerateValue(slot0, slot1)
-	slot0:UpdateHpRant(math.min(10000, slot0.hpRant + math.floor(slot1 / WorldConst.FetchShipVO(slot0.id):getProperties(nil, true, false)[AttributeType.Durability] * 10000)))
+function var_0_0.RegenerateValue(arg_21_0, arg_21_1)
+	local var_21_0 = math.floor(arg_21_1 / WorldConst.FetchShipVO(arg_21_0.id):getProperties(nil, true, false)[AttributeType.Durability] * 10000)
+	local var_21_1 = math.min(10000, arg_21_0.hpRant + var_21_0)
+
+	arg_21_0:UpdateHpRant(var_21_1)
 end
 
-function slot0.IsBroken(slot0)
-	return slot0:GetBuff(WorldConst.BrokenBuffId):GetFloor() > 0
+function var_0_0.IsBroken(arg_22_0)
+	return arg_22_0:GetBuff(WorldConst.BrokenBuffId):GetFloor() > 0
 end
 
-function slot0.GetShipBuffProperties(slot0)
-	slot1 = {}
-	slot2 = {}
+function var_0_0.GetShipBuffProperties(arg_23_0)
+	local var_23_0 = {}
+	local var_23_1 = {}
+	local var_23_2 = arg_23_0.fleetId and nowWorld():GetFleet(arg_23_0.fleetId):GetBuffList() or {}
 
-	WorldConst.AppendPropertiesFromBuffList(slot1, slot2, slot0.fleetId and nowWorld():GetFleet(slot0.fleetId):GetBuffList() or {})
+	WorldConst.AppendPropertiesFromBuffList(var_23_0, var_23_1, var_23_2)
 
-	return slot1, slot2
+	return var_23_0, var_23_1
 end
 
-function slot0.GetShipPowerBuffProperties(slot0)
-	slot1 = {}
+function var_0_0.GetShipPowerBuffProperties(arg_24_0)
+	local var_24_0 = {}
+	local var_24_1 = arg_24_0:GetBuffList()
 
-	WorldConst.ExtendPropertiesRatesFromBuffList(slot1, slot0:GetBuffList())
+	WorldConst.ExtendPropertiesRatesFromBuffList(var_24_0, var_24_1)
 
-	return slot1
+	return var_24_0
 end
 
-return slot0
+return var_0_0

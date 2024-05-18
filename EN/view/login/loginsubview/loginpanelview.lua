@@ -1,69 +1,76 @@
-slot0 = class("LoginPanelView", import("...base.BaseSubView"))
+﻿local var_0_0 = class("LoginPanelView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LoginPanelView"
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_2_0)
+	return
 end
 
-function slot0.SetShareData(slot0, slot1)
-	slot0.shareData = slot1
+function var_0_0.SetShareData(arg_3_0, arg_3_1)
+	arg_3_0.shareData = arg_3_1
 end
 
-function slot0.OnInit(slot0)
-	slot0.loginPanel = slot0._tf
-	slot0.loginUsername = slot0:findTF("account/username", slot0.loginPanel)
-	slot0.loginPassword = slot0:findTF("password/password", slot0.loginPanel)
-	slot0.loginButton = slot0:findTF("login_button", slot0.loginPanel)
-	slot0.registerButton = slot0:findTF("register_button", slot0.loginPanel)
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.loginPanel = arg_4_0._tf
+	arg_4_0.loginUsername = arg_4_0:findTF("account/username", arg_4_0.loginPanel)
+	arg_4_0.loginPassword = arg_4_0:findTF("password/password", arg_4_0.loginPanel)
+	arg_4_0.loginButton = arg_4_0:findTF("login_button", arg_4_0.loginPanel)
+	arg_4_0.registerButton = arg_4_0:findTF("register_button", arg_4_0.loginPanel)
 
-	slot0:InitEvent()
+	arg_4_0:InitEvent()
 end
 
-function slot0.InitEvent(slot0)
-	onButton(slot0, slot0.loginButton, function ()
-		if uv0.shareData.autoLoginEnabled and uv0.shareData.lastLoginUser then
-			uv0.event:emit(LoginMediator.ON_LOGIN, uv0.shareData.lastLoginUser)
+function var_0_0.InitEvent(arg_5_0)
+	onButton(arg_5_0, arg_5_0.loginButton, function()
+		if arg_5_0.shareData.autoLoginEnabled and arg_5_0.shareData.lastLoginUser then
+			arg_5_0.event:emit(LoginMediator.ON_LOGIN, arg_5_0.shareData.lastLoginUser)
 
 			return
 		end
 
-		if getInputText(uv0.loginUsername) == "" then
+		local var_6_0 = getInputText(arg_5_0.loginUsername)
+
+		if var_6_0 == "" then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("login_loginScene_error_noUserName"))
-			ActivateInputField(uv0.loginUsername)
+			ActivateInputField(arg_5_0.loginUsername)
 
 			return
 		end
 
-		if User.New({
+		local var_6_1 = getInputText(arg_5_0.loginPassword) or ""
+		local var_6_2 = User.New({
 			type = 2,
-			arg1 = slot0,
-			arg2 = getInputText(uv0.loginPassword) or ""
-		}) then
-			uv0.event:emit(LoginMediator.ON_LOGIN, slot2)
+			arg1 = var_6_0,
+			arg2 = var_6_1
+		})
+
+		if var_6_2 then
+			arg_5_0.event:emit(LoginMediator.ON_LOGIN, var_6_2)
 		end
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.registerButton, function ()
-		uv0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+	onButton(arg_5_0, arg_5_0.registerButton, function()
+		arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
 			LoginSceneConst.DEFINE.REGISTER_PANEL_VIEW
 		})
-		uv0:emit(LoginSceneConst.CLEAR_REGISTER_VIEW)
+		arg_5_0:emit(LoginSceneConst.CLEAR_REGISTER_VIEW)
 	end, SFX_MAIN)
-	onInputChanged(slot0, slot0.loginUsername, function ()
-		uv0.shareData.autoLoginEnabled = false
+	onInputChanged(arg_5_0, arg_5_0.loginUsername, function()
+		arg_5_0.shareData.autoLoginEnabled = false
 	end)
-	onInputChanged(slot0, slot0.loginPassword, function ()
-		uv0.shareData.autoLoginEnabled = false
+	onInputChanged(arg_5_0, arg_5_0.loginPassword, function()
+		arg_5_0.shareData.autoLoginEnabled = false
 	end)
 end
 
-function slot0.SetContent(slot0, slot1, slot2)
-	setInputText(slot0.loginUsername, slot1)
-	setInputText(slot0.loginPassword, slot2)
+function var_0_0.SetContent(arg_10_0, arg_10_1, arg_10_2)
+	setInputText(arg_10_0.loginUsername, arg_10_1)
+	setInputText(arg_10_0.loginPassword, arg_10_2)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_11_0)
+	return
 end
 
-return slot0
+return var_0_0

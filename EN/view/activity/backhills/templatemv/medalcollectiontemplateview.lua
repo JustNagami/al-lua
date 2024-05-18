@@ -1,33 +1,35 @@
-slot0 = class("MedalCollectionTemplateView", import("view.base.BaseUI"))
-slot0.MEDAL_STATUS_UNACTIVATED = 1
-slot0.MEDAL_STATUS_ACTIVATED = 2
-slot0.MEDAL_STATUS_ACTIVATABLE = 3
+﻿local var_0_0 = class("MedalCollectionTemplateView", import("view.base.BaseUI"))
 
-function slot0.UpdateActivity(slot0, slot1)
-	slot0.activityData = slot1
-	slot0.allIDList = slot0.activityData:GetPicturePuzzleIds()
-	slot0.activatableIDList = slot0.activityData.data1_list
-	slot0.activeIDList = slot0.activityData.data2_list
+var_0_0.MEDAL_STATUS_UNACTIVATED = 1
+var_0_0.MEDAL_STATUS_ACTIVATED = 2
+var_0_0.MEDAL_STATUS_ACTIVATABLE = 3
+
+function var_0_0.UpdateActivity(arg_1_0, arg_1_1)
+	arg_1_0.activityData = arg_1_1
+	arg_1_0.allIDList = arg_1_0.activityData:GetPicturePuzzleIds()
+	arg_1_0.activatableIDList = arg_1_0.activityData.data1_list
+	arg_1_0.activeIDList = arg_1_0.activityData.data2_list
 end
 
-function slot0.didEnter(slot0)
-	slot0:CheckAward()
+function var_0_0.didEnter(arg_2_0)
+	arg_2_0:CheckAward()
 end
 
-function slot0.UpdateAfterSubmit(slot0, slot1)
-	slot0:CheckAward()
+function var_0_0.UpdateAfterSubmit(arg_3_0, arg_3_1)
+	arg_3_0:CheckAward()
 end
 
-function slot0.UpdateAfterFinalMedal(slot0)
+function var_0_0.UpdateAfterFinalMedal(arg_4_0)
+	return
 end
 
-function slot0.CheckAward(slot0)
-	if #slot0.activeIDList == #slot0.allIDList and slot0.activityData.data1 ~= 1 then
+function var_0_0.CheckAward(arg_5_0)
+	if #arg_5_0.activeIDList == #arg_5_0.allIDList and arg_5_0.activityData.data1 ~= 1 then
 		pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = slot0.activityData.id
+			activity_id = arg_5_0.activityData.id
 		})
 	end
 end
 
-return slot0
+return var_0_0

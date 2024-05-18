@@ -1,37 +1,40 @@
-slot0 = class("AnniversaryIslandHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
+﻿local var_0_0 = class("AnniversaryIslandHotSpringScene", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringScene"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "AnniversaryIslandHotSpringUI"
 end
 
-slot1 = 0.85
+local var_0_1 = 0.85
 
-function slot0.init(slot0)
-	slot0.scrollRect = slot0._tf:Find("ScrollRect")
-	slot0.scrollContent = slot0.scrollRect:GetComponent(typeof(ScrollRect)).content
-	slot0.slotTFs = _.map(_.range(4, 15), function (slot0)
-		return uv0.scrollRect:Find("Pool"):GetChild(slot0 - 1)
+function var_0_0.init(arg_2_0)
+	arg_2_0.scrollRect = arg_2_0._tf:Find("ScrollRect")
+	arg_2_0.scrollContent = arg_2_0.scrollRect:GetComponent(typeof(ScrollRect)).content
+	arg_2_0.slotTFs = _.map(_.range(4, 15), function(arg_3_0)
+		return arg_2_0.scrollRect:Find("Pool"):GetChild(arg_3_0 - 1)
 	end)
 
-	table.insert(slot0.slotTFs, 1, table.remove(slot0.slotTFs, 11))
-	table.insert(slot0.slotTFs, 7, table.remove(slot0.slotTFs, 12))
+	local var_2_0 = table.remove(arg_2_0.slotTFs, 12)
+	local var_2_1 = table.remove(arg_2_0.slotTFs, 11)
 
-	slot0.slotOriginalPos = _.map(slot0.slotTFs, function (slot0)
-		return slot0.anchoredPosition
+	table.insert(arg_2_0.slotTFs, 1, var_2_1)
+	table.insert(arg_2_0.slotTFs, 7, var_2_0)
+
+	arg_2_0.slotOriginalPos = _.map(arg_2_0.slotTFs, function(arg_4_0)
+		return arg_4_0.anchoredPosition
 	end)
-	slot0.slotShipPos = Clone(slot0.slotOriginalPos)
+	arg_2_0.slotShipPos = Clone(arg_2_0.slotOriginalPos)
 
-	table.Foreach(slot0:GetRecordPos(), function (slot0, slot1)
-		uv0.slotShipPos[slot0] = slot1
+	table.Foreach(arg_2_0:GetRecordPos(), function(arg_5_0, arg_5_1)
+		arg_2_0.slotShipPos[arg_5_0] = arg_5_1
 	end)
 
-	slot0.poolItems = _.map(_.range(slot0.scrollRect:Find("Pool").childCount), function (slot0)
-		return uv0.scrollRect:Find("Pool"):GetChild(slot0 - 1)
+	arg_2_0.poolItems = _.map(_.range(arg_2_0.scrollRect:Find("Pool").childCount), function(arg_6_0)
+		return arg_2_0.scrollRect:Find("Pool"):GetChild(arg_6_0 - 1)
 	end)
 
 	Canvas.ForceUpdateCanvases()
 
-	slot0.scrollBGs = _.map({
+	arg_2_0.scrollBGs = _.map({
 		{
 			"1",
 			0.5
@@ -42,11 +45,11 @@ function slot0.init(slot0)
 		},
 		{
 			"3",
-			uv0
+			var_0_1
 		},
 		{
 			"Pool",
-			uv0
+			var_0_1
 		},
 		{
 			"4",
@@ -56,73 +59,80 @@ function slot0.init(slot0)
 			"5",
 			1
 		}
-	}, function (slot0)
-		slot1 = {
-			uv0.scrollRect:Find(slot0[1]),
-			slot0[2]
+	}, function(arg_7_0)
+		local var_7_0 = {
+			arg_2_0.scrollRect:Find(arg_7_0[1]),
+			arg_7_0[2]
 		}
-		slot1[3] = slot1[1].anchoredPosition.x
 
-		uv0:UpdateScrollContent(0, unpack(slot1))
+		var_7_0[3] = var_7_0[1].anchoredPosition.x
 
-		return slot1
+		arg_2_0:UpdateScrollContent(0, unpack(var_7_0))
+
+		return var_7_0
 	end)
-	slot0.top = slot0._tf:Find("Top")
+	arg_2_0.top = arg_2_0._tf:Find("Top")
 
-	pg.ViewUtils.SetSortingOrder(slot0._tf, -1001)
+	pg.ViewUtils.SetSortingOrder(arg_2_0._tf, -1001)
 
-	slot0.spineRoles = {}
-	slot0.washMaterial = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit_Colored_Semitransparent"))
+	arg_2_0.spineRoles = {}
+	arg_2_0.washMaterial = Material.New(pg.ShaderMgr.GetInstance():GetShader("M02/Unlit_Colored_Semitransparent"))
 
-	slot0.washMaterial:SetFloat("_Height", 0.5)
+	arg_2_0.washMaterial:SetFloat("_Height", 0.5)
 end
 
-function slot0.SetActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.SetActivity(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.activity
 
-	if not slot0.activity then
+	arg_8_0.activity = arg_8_1
+
+	if not var_8_0 then
 		return
 	end
 
-	table.Foreach(slot2.data1_list, function (slot0, slot1)
-		if slot1 > 0 and (uv0.data1_list[slot0] or 0) == 0 then
-			uv1.slotShipPos[slot0] = Clone(uv1.slotOriginalPos[slot0])
+	table.Foreach(var_8_0.data1_list, function(arg_9_0, arg_9_1)
+		if arg_9_1 > 0 and (arg_8_1.data1_list[arg_9_0] or 0) == 0 then
+			arg_8_0.slotShipPos[arg_9_0] = Clone(arg_8_0.slotOriginalPos[arg_9_0])
 		end
 	end)
 end
 
-function slot0.didEnter(slot0)
-	uv0.super.didEnter(slot0)
-	pg.NewStoryMgr.GetInstance():Play(slot0.activity:getConfig("config_client").unlockstory)
+function var_0_0.didEnter(arg_10_0)
+	var_0_0.super.didEnter(arg_10_0)
+	pg.NewStoryMgr.GetInstance():Play(arg_10_0.activity:getConfig("config_client").unlockstory)
 end
 
-function slot0.UpdateView(slot0)
-	slot0:UpdateSlots()
+function var_0_0.UpdateView(arg_11_0)
+	arg_11_0:UpdateSlots()
 end
 
-function slot0.GetRecordPos(slot0)
-	slot3 = {}
+function var_0_0.GetRecordPos(arg_12_0)
+	local var_12_0 = PlayerPrefs.GetString("hotspring_ship_pos_2023", "")
+	local var_12_1 = _.map(string.split(var_12_0, ";"), function(arg_13_0)
+		return tonumber(arg_13_0)
+	end)
+	local var_12_2 = {}
 
-	for slot7 = 1, #_.map(string.split(PlayerPrefs.GetString("hotspring_ship_pos_2023", ""), ";"), function (slot0)
-		return tonumber(slot0)
-	end), 2 do
-		table.insert(slot3, Vector2.New(slot2[slot7], slot2[slot7 + 1]))
+	for iter_12_0 = 1, #var_12_1, 2 do
+		table.insert(var_12_2, Vector2.New(var_12_1[iter_12_0], var_12_1[iter_12_0 + 1]))
 	end
 
-	return slot3
+	return var_12_2
 end
 
-function slot0.RecordPos(slot0, slot1)
-	if not slot1 then
+function var_0_0.RecordPos(arg_14_0, arg_14_1)
+	if not arg_14_1 then
 		return
 	end
 
-	PlayerPrefs.SetString("hotspring_ship_pos_2023", table.concat(_.reduce(slot1, {}, function (slot0, slot1)
-		table.insert(slot0, slot1.x)
-		table.insert(slot0, slot1.y)
+	local var_14_0 = table.concat(_.reduce(arg_14_1, {}, function(arg_15_0, arg_15_1)
+		table.insert(arg_15_0, arg_15_1.x)
+		table.insert(arg_15_0, arg_15_1.y)
 
-		return slot0
-	end), ";"))
+		return arg_15_0
+	end), ";")
+
+	PlayerPrefs.SetString("hotspring_ship_pos_2023", var_14_0)
 end
 
-return slot0
+return var_0_0

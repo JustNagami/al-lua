@@ -1,4 +1,26 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onBulletHit"
+			},
+			arg_list = {
+				rant = 350,
+				buff_id = 12633,
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -177,27 +199,5 @@ return {
 	stack = 1,
 	id = 12632,
 	icon = 12630,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onBulletHit"
-			},
-			arg_list = {
-				rant = 350,
-				buff_id = 12633,
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,108 +1,124 @@
-pg = pg or {}
-slot0 = pg
-slot0.Tool = class("Tool")
+﻿pg = pg or {}
 
-function slot0.Tool.Seq(slot0)
-	for slot5 = 1, slot0 do
+local var_0_0 = pg
+
+var_0_0.Tool = class("Tool")
+
+function var_0_0.Tool.Seq(arg_1_0)
+	local var_1_0 = {}
+
+	for iter_1_0 = 1, arg_1_0 do
+		var_1_0[iter_1_0] = iter_1_0
 	end
 
-	return {
-		[slot5] = slot5
-	}
+	return var_1_0
 end
 
-function slot0.Tool.Swap(slot0, slot1, slot2)
-	slot0[slot1] = slot0[slot2]
-	slot0[slot2] = slot0[slot1]
+function var_0_0.Tool.Swap(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0[arg_2_2], arg_2_0[arg_2_1] = arg_2_0[arg_2_1], arg_2_0[arg_2_2]
 end
 
-function slot0.Tool.RandomMN(slot0, slot1)
-	slot4 = #uv0.Tool.Seq(slot0)
+function var_0_0.Tool.RandomMN(arg_3_0, arg_3_1)
+	local var_3_0 = {}
+	local var_3_1 = var_0_0.Tool.Seq(arg_3_0)
+	local var_3_2 = #var_3_1
 
-	for slot8 = 1, slot1 do
-		uv0.Tool.Swap(slot3, math.random(slot4), slot4)
+	for iter_3_0 = 1, arg_3_1 do
+		local var_3_3 = math.random(var_3_2)
 
-		slot4 = slot4 - 1
+		var_3_0[iter_3_0] = var_3_1[var_3_3]
+
+		var_0_0.Tool.Swap(var_3_1, var_3_3, var_3_2)
+
+		var_3_2 = var_3_2 - 1
 	end
 
-	return {
-		[slot8] = slot3[slot9]
-	}
+	return var_3_0
 end
 
-function slot0.Tool.FilterY(slot0)
-	return Vector3(slot0.x, 0, slot0.z)
+function var_0_0.Tool.FilterY(arg_4_0)
+	return Vector3(arg_4_0.x, 0, arg_4_0.z)
 end
 
-function slot0.Tool.FilterZ(slot0)
-	return Vector3(slot0.x, slot0.y, 0)
+function var_0_0.Tool.FilterZ(arg_5_0)
+	return Vector3(arg_5_0.x, arg_5_0.y, 0)
 end
 
-function slot0.Tool.GetShortName(slot0, slot1, slot2)
-	if slot0 == nil or slot1 == nil then
+function var_0_0.Tool.GetShortName(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_0 == nil or arg_6_1 == nil then
 		return
 	end
 
-	slot4 = {}
-	slot5 = {}
-	slot6 = #slot0
-	slot7 = 0
+	local var_6_0 = arg_6_0
+	local var_6_1 = {}
+	local var_6_2 = {}
+	local var_6_3 = #var_6_0
+	local var_6_4 = 0
 
-	if slot2 == nil then
-		slot2 = slot1 - 3
+	if arg_6_2 == nil then
+		arg_6_2 = arg_6_1 - 3
 	end
 
-	for slot11 = 1, slot6 do
-		slot13 = 0
+	for iter_6_0 = 1, var_6_3 do
+		local var_6_5 = string.byte(var_6_0, iter_6_0)
+		local var_6_6 = 0
 
-		if string.byte(slot3, slot11) > 0 and slot12 <= 127 then
-			slot13 = 1
-		elseif slot12 >= 192 and slot12 < 223 then
-			slot13 = 2
-		elseif slot12 >= 224 and slot12 < 239 then
-			slot13 = 3
-		elseif slot12 >= 240 and slot12 <= 247 then
-			slot13 = 4
+		if var_6_5 > 0 and var_6_5 <= 127 then
+			var_6_6 = 1
+		elseif var_6_5 >= 192 and var_6_5 < 223 then
+			var_6_6 = 2
+		elseif var_6_5 >= 224 and var_6_5 < 239 then
+			var_6_6 = 3
+		elseif var_6_5 >= 240 and var_6_5 <= 247 then
+			var_6_6 = 4
 		end
 
-		slot14 = nil
+		local var_6_7
 
-		if slot13 > 0 then
-			slot14 = string.sub(slot3, slot11, slot11 + slot13 - 1)
-			slot11 = slot11 + slot13 - 1
+		if var_6_6 > 0 then
+			var_6_7 = string.sub(var_6_0, iter_6_0, iter_6_0 + var_6_6 - 1)
+			iter_6_0 = iter_6_0 + var_6_6 - 1
 		end
 
-		if slot13 == 1 then
-			slot7 = slot7 + 1
+		if var_6_6 == 1 then
+			var_6_4 = var_6_4 + 1
 
-			table.insert(slot5, slot14)
-			table.insert(slot4, 1)
-		elseif slot13 > 1 then
-			slot7 = slot7 + 2
+			table.insert(var_6_2, var_6_7)
+			table.insert(var_6_1, 1)
+		elseif var_6_6 > 1 then
+			var_6_4 = var_6_4 + 2
 
-			table.insert(slot5, slot14)
-			table.insert(slot4, 2)
+			table.insert(var_6_2, var_6_7)
+			table.insert(var_6_1, 2)
 		end
 	end
 
-	if slot1 < slot7 then
-		for slot13 = 1, #slot5 do
-			slot8 = "" .. slot5[slot13]
+	if arg_6_1 < var_6_4 then
+		local var_6_8 = ""
+		local var_6_9 = 0
 
-			if slot2 <= 0 + slot4[slot13] then
+		for iter_6_1 = 1, #var_6_2 do
+			var_6_8 = var_6_8 .. var_6_2[iter_6_1]
+			var_6_9 = var_6_9 + var_6_1[iter_6_1]
+
+			if arg_6_2 <= var_6_9 then
 				break
 			end
 		end
 
-		slot0 = slot8 .. "..."
+		arg_6_0 = var_6_8 .. "..."
 	end
 
-	return slot0
+	return arg_6_0
 end
 
-function slot0.Tool.Distances(slot0, slot1, slot2, slot3)
-	slot4 = slot0 / 180 * math.pi
-	slot5 = slot2 / 180 * math.pi
+function var_0_0.Tool.Distances(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	local var_7_0 = arg_7_0 / 180 * math.pi
+	local var_7_1 = arg_7_2 / 180 * math.pi
+	local var_7_2 = arg_7_1 / 180 * math.pi
+	local var_7_3 = arg_7_3 / 180 * math.pi
+	local var_7_4 = var_7_0 - var_7_1
+	local var_7_5 = var_7_2 - var_7_3
 
-	return 2 * math.asin(math.sqrt(math.pow(math.sin((slot4 - slot5) / 2), 2) + math.cos(slot4) * math.cos(slot5) * math.pow(math.sin((slot1 / 180 * math.pi - slot3 / 180 * math.pi) / 2), 2))) * 6378.137
+	return 2 * math.asin(math.sqrt(math.pow(math.sin(var_7_4 / 2), 2) + math.cos(var_7_0) * math.cos(var_7_1) * math.pow(math.sin(var_7_5 / 2), 2))) * 6378.137
 end

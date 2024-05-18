@@ -1,174 +1,185 @@
-slot0 = class("MapBuilder", import("view.base.BaseSubView"))
-slot0.TYPENORMAL = 1
-slot0.TYPEESCORT = 2
-slot0.TYPESHINANO = 3
-slot0.TYPESKIRMISH = 4
-slot0.TYPEBISMARCK = 5
-slot0.TYPESSSS = 6
-slot0.TYPEATELIER = 7
-slot0.TYPESENRANKAGURA = 8
+﻿local var_0_0 = class("MapBuilder", import("view.base.BaseSubView"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2.event, slot2.contextData)
+var_0_0.TYPENORMAL = 1
+var_0_0.TYPEESCORT = 2
+var_0_0.TYPESHINANO = 3
+var_0_0.TYPESKIRMISH = 4
+var_0_0.TYPEBISMARCK = 5
+var_0_0.TYPESSSS = 6
+var_0_0.TYPEATELIER = 7
+var_0_0.TYPESENRANKAGURA = 8
 
-	slot0.sceneParent = slot2
-	slot0.map = slot1:Find("maps")
-	slot0.float = slot1:Find("float")
-	slot0.tweens = {}
-	slot0.mapWidth = 1920
-	slot0.mapHeight = 1440
-	slot0.buffer = setmetatable({}, {
-		__index = function (slot0, slot1)
-			return function (slot0, ...)
-				if uv0 == "UpdateMapItems" and underscore.any(uv1._funcQueue, function (slot0)
-					return slot0.funcName == uv0
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2.event, arg_1_2.contextData)
+
+	arg_1_0.sceneParent = arg_1_2
+	arg_1_0.map = arg_1_1:Find("maps")
+	arg_1_0.float = arg_1_1:Find("float")
+	arg_1_0.tweens = {}
+	arg_1_0.mapWidth = 1920
+	arg_1_0.mapHeight = 1440
+	arg_1_0.buffer = setmetatable({}, {
+		__index = function(arg_2_0, arg_2_1)
+			return function(arg_3_0, ...)
+				if arg_2_1 == "UpdateMapItems" and underscore.any(arg_1_0._funcQueue, function(arg_4_0)
+					return arg_4_0.funcName == arg_2_1
 				end) then
 					return
 				end
 
-				uv1:ActionInvoke(uv0, ...)
+				arg_1_0:ActionInvoke(arg_2_1, ...)
 			end
 		end,
-		__newindex = function ()
+		__newindex = function()
 			errorMsg("Cant write Data in ActionInvoke buffer")
 		end
 	})
-	slot0.isFrozen = nil
+	arg_1_0.isFrozen = nil
 
-	slot0:bind(LevelUIConst.ON_FROZEN, function ()
-		uv0.isFrozen = true
+	arg_1_0:bind(LevelUIConst.ON_FROZEN, function()
+		arg_1_0.isFrozen = true
 	end)
-	slot0:bind(LevelUIConst.ON_UNFROZEN, function ()
-		uv0.isFrozen = nil
+	arg_1_0:bind(LevelUIConst.ON_UNFROZEN, function()
+		arg_1_0.isFrozen = nil
 	end)
 end
 
-function slot0.Load(slot0)
-	if slot0._state ~= uv0.STATES.NONE then
+function var_0_0.Load(arg_8_0)
+	if arg_8_0._state ~= var_0_0.STATES.NONE then
 		return
 	end
 
-	slot0._state = uv0.STATES.LOADING
+	arg_8_0._state = var_0_0.STATES.LOADING
 
 	pg.UIMgr.GetInstance():LoadingOn()
 
-	slot1 = PoolMgr.GetInstance()
-	slot2 = nil
+	local var_8_0 = PoolMgr.GetInstance()
+	local var_8_1
 
 	parallelAsync({
-		function (slot0)
-			uv0:GetUI(uv1:getUIName(), true, function (slot0)
-				if uv0._state == uv1.STATES.DESTROY then
+		function(arg_9_0)
+			var_8_0:GetUI(arg_8_0:getUIName(), true, function(arg_10_0)
+				if arg_8_0._state == var_0_0.STATES.DESTROY then
 					pg.UIMgr.GetInstance():LoadingOff()
-					uv2:ReturnUI(uv0:getUIName(), slot0)
+					var_8_0:ReturnUI(arg_8_0:getUIName(), arg_10_0)
 				else
-					uv3 = slot0
+					var_8_1 = arg_10_0
 
-					uv4()
+					arg_9_0()
 				end
 			end)
 		end,
-		function (slot0)
-			uv0:preload(slot0)
+		function(arg_11_0)
+			arg_8_0:preload(arg_11_0)
 		end
-	}, function ()
-		uv0:Loaded(uv1)
-		uv0:Init()
+	}, function()
+		arg_8_0:Loaded(var_8_1)
+		arg_8_0:Init()
 	end)
 end
 
-function slot0.preload(slot0, slot1)
-	slot1()
+function var_0_0.preload(arg_13_0, arg_13_1)
+	arg_13_1()
 end
 
-function slot0.isfrozen(slot0)
-	return slot0.isFrozen
+function var_0_0.isfrozen(arg_14_0)
+	return arg_14_0.isFrozen
 end
 
-function slot0.DoFunction(slot0, slot1)
-	slot1()
+function var_0_0.DoFunction(arg_15_0, arg_15_1)
+	arg_15_1()
 end
 
-function slot0.InvokeParent(slot0, slot1, ...)
-	if slot0.sceneParent[slot1] then
-		return slot2(slot0.sceneParent, ...)
+function var_0_0.InvokeParent(arg_16_0, arg_16_1, ...)
+	local var_16_0 = arg_16_0.sceneParent[arg_16_1]
+
+	if var_16_0 then
+		return var_16_0(arg_16_0.sceneParent, ...)
 	end
 end
 
-function slot0.GetType(slot0)
+function var_0_0.GetType(arg_17_0)
 	return 0
 end
 
-function slot0.OnLoaded(slot0)
-	slot0._tf:SetParent(slot0.float, false)
+function var_0_0.OnLoaded(arg_18_0)
+	arg_18_0._tf:SetParent(arg_18_0.float, false)
 end
 
-function slot0.Destroy(slot0)
-	if slot0._state == uv0.STATES.INITED then
-		slot0:Hide()
+function var_0_0.Destroy(arg_19_0)
+	if arg_19_0._state == var_0_0.STATES.INITED then
+		arg_19_0:Hide()
 	end
 
-	uv0.super.Destroy(slot0)
+	var_0_0.super.Destroy(arg_19_0)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.tweens = nil
+function var_0_0.OnDestroy(arg_20_0)
+	arg_20_0.tweens = nil
 end
 
-function slot0.Show(slot0)
-	setActive(slot0._tf, true)
-	slot0:OnShow()
+function var_0_0.Show(arg_21_0)
+	setActive(arg_21_0._tf, true)
+	arg_21_0:OnShow()
 end
 
-function slot0.Hide(slot0)
-	slot0:OnHide()
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_22_0)
+	arg_22_0:OnHide()
+	setActive(arg_22_0._tf, false)
 end
 
-function slot0.OnShow(slot0)
+function var_0_0.OnShow(arg_23_0)
+	return
 end
 
-function slot0.OnHide(slot0)
-	for slot4, slot5 in pairs(slot0.tweens) do
-		LeanTween.cancel(slot5)
+function var_0_0.OnHide(arg_24_0)
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.tweens) do
+		LeanTween.cancel(iter_24_1)
 	end
 
-	slot0.tweens = {}
+	arg_24_0.tweens = {}
 end
 
-function slot0.ShowButtons(slot0)
+function var_0_0.ShowButtons(arg_25_0)
+	return
 end
 
-function slot0.HideButtons(slot0)
+function var_0_0.HideButtons(arg_26_0)
+	return
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.data = slot1
+function var_0_0.Update(arg_27_0, arg_27_1)
+	arg_27_0.data = arg_27_1
 end
 
-function slot0.UpdateButtons(slot0)
+function var_0_0.UpdateButtons(arg_28_0)
+	return
 end
 
-function slot0.PostUpdateMap(slot0, slot1)
+function var_0_0.PostUpdateMap(arg_29_0, arg_29_1)
+	return
 end
 
-function slot0.UpdateMapItems(slot0)
+function var_0_0.UpdateMapItems(arg_30_0)
+	return
 end
 
-function slot0.RecordTween(slot0, slot1, slot2)
-	slot0.tweens[slot1] = slot2
+function var_0_0.RecordTween(arg_31_0, arg_31_1, arg_31_2)
+	arg_31_0.tweens[arg_31_1] = arg_31_2
 end
 
-function slot0.DeleteTween(slot0, slot1)
-	if slot0.tweens[slot1] then
-		LeanTween.cancel(slot2)
+function var_0_0.DeleteTween(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_0.tweens[arg_32_1]
 
-		slot0.tweens[slot1] = nil
+	if var_32_0 then
+		LeanTween.cancel(var_32_0)
+
+		arg_32_0.tweens[arg_32_1] = nil
 	end
 end
 
-function slot0.TryOpenChapter(slot0, slot1)
+function var_0_0.TryOpenChapter(arg_33_0, arg_33_1)
 	assert(false)
 end
 
-return slot0
+return var_0_0

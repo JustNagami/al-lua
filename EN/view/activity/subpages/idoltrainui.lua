@@ -1,115 +1,117 @@
-slot0 = class("IdolTrainUI", import("...base.BaseSubView"))
+﻿local var_0_0 = class("IdolTrainUI", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "IdolTrainUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:InitUI()
-	setActive(slot0._tf, true)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:InitUI()
+	setActive(arg_2_0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.onTrain = nil
+function var_0_0.OnDestroy(arg_3_0)
+	arg_3_0.onTrain = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTF)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_3_0._tf, arg_3_0._parentTF)
 end
 
-function slot0.InitUI(slot0)
-	slot0.trainBtn = slot0:findTF("panel/train_btn")
-	slot0.skills = slot0:findTF("panel/skills")
-	slot0.info = slot0:findTF("panel/info")
-	slot0.skillBtns = {}
+function var_0_0.InitUI(arg_4_0)
+	arg_4_0.trainBtn = arg_4_0:findTF("panel/train_btn")
+	arg_4_0.skills = arg_4_0:findTF("panel/skills")
+	arg_4_0.info = arg_4_0:findTF("panel/info")
+	arg_4_0.skillBtns = {}
 
-	eachChild(slot0.skills, function (slot0)
-		table.insert(uv0.skillBtns, slot0)
+	eachChild(arg_4_0.skills, function(arg_5_0)
+		table.insert(arg_4_0.skillBtns, arg_5_0)
 	end)
 
-	slot0.curBuff = slot0:findTF("preview/current", slot0.info)
-	slot0.nextBuff = slot0:findTF("preview/next", slot0.info)
-	slot0.currentBuffLv = slot0:findTF("title/lv/current", slot0.info)
-	slot0.nextBuffLv = slot0:findTF("title/lv/next", slot0.info)
+	arg_4_0.curBuff = arg_4_0:findTF("preview/current", arg_4_0.info)
+	arg_4_0.nextBuff = arg_4_0:findTF("preview/next", arg_4_0.info)
+	arg_4_0.currentBuffLv = arg_4_0:findTF("title/lv/current", arg_4_0.info)
+	arg_4_0.nextBuffLv = arg_4_0:findTF("title/lv/next", arg_4_0.info)
 end
 
-function slot0.setCBFunc(slot0, slot1)
-	slot0.onTrain = slot1
+function var_0_0.setCBFunc(arg_6_0, arg_6_1)
+	arg_6_0.onTrain = arg_6_1
 end
 
-function slot0.set(slot0, slot1, slot2)
-	slot0.buffInfos = slot1
-	slot0.targetIndex = slot2
-	slot0.selectIndex = nil
-	slot0.selectBuffId = nil
-	slot0.selectBuffLv = nil
-	slot0.selectNewBuffId = nil
+function var_0_0.set(arg_7_0, arg_7_1, arg_7_2)
+	arg_7_0.buffInfos = arg_7_1
+	arg_7_0.targetIndex = arg_7_2
+	arg_7_0.selectIndex = nil
+	arg_7_0.selectBuffId = nil
+	arg_7_0.selectBuffLv = nil
+	arg_7_0.selectNewBuffId = nil
 
-	for slot6, slot7 in ipairs(slot0.skillBtns) do
-		onButton(slot0, slot7, function ()
-			for slot3, slot4 in ipairs(uv0.buffInfos) do
-				if uv1 == slot4.group then
-					if slot4.next then
-						uv0.selectIndex = uv1
-						uv0.selectBuffId = slot4.id
-						uv0.selectNewBuffId = slot4.next
-						uv0.selectBuffLv = slot4.lv
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.skillBtns) do
+		onButton(arg_7_0, iter_7_1, function()
+			for iter_8_0, iter_8_1 in ipairs(arg_7_0.buffInfos) do
+				if iter_7_0 == iter_8_1.group then
+					if iter_8_1.next then
+						arg_7_0.selectIndex = iter_7_0
+						arg_7_0.selectBuffId = iter_8_1.id
+						arg_7_0.selectNewBuffId = iter_8_1.next
+						arg_7_0.selectBuffLv = iter_8_1.lv
 					else
-						uv0.selectIndex = nil
-						uv0.selectBuffId = nil
-						uv0.selectNewBuffId = nil
-						uv0.selectBuffLv = nil
+						arg_7_0.selectIndex = nil
+						arg_7_0.selectBuffId = nil
+						arg_7_0.selectNewBuffId = nil
+						arg_7_0.selectBuffLv = nil
 					end
 				end
 			end
 
-			uv0:flush()
+			arg_7_0:flush()
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.trainBtn, function ()
-		if uv0.onTrain and uv0.selectBuffId then
+	onButton(arg_7_0, arg_7_0.trainBtn, function()
+		if arg_7_0.onTrain and arg_7_0.selectBuffId then
+			local var_9_0 = pg.benefit_buff_template[arg_7_0.selectBuffId].name
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
-				content = "是否要对" .. pg.benefit_buff_template[uv0.selectBuffId].name .. "进行训练" .. uv0.selectBuffId,
-				onYes = function ()
-					uv0.onTrain(uv0.targetIndex, uv0.selectNewBuffId, uv0.selectBuffId)
-					uv0:Destroy()
+				content = "是否要对" .. var_9_0 .. "进行训练" .. arg_7_0.selectBuffId,
+				onYes = function()
+					arg_7_0.onTrain(arg_7_0.targetIndex, arg_7_0.selectNewBuffId, arg_7_0.selectBuffId)
+					arg_7_0:Destroy()
 				end
 			})
 		end
 	end, SFX_PANEL)
-	slot0:flush()
+	arg_7_0:flush()
 end
 
-function slot0.flush(slot0)
-	if slot0.buffInfos then
-		for slot4, slot5 in ipairs(slot0.buffInfos) do
-			if slot5.next then
-				setText(slot0:findTF("lv", slot0.skillBtns[slot5.group]), "Lv." .. slot5.lv)
+function var_0_0.flush(arg_11_0)
+	if arg_11_0.buffInfos then
+		for iter_11_0, iter_11_1 in ipairs(arg_11_0.buffInfos) do
+			if iter_11_1.next then
+				setText(arg_11_0:findTF("lv", arg_11_0.skillBtns[iter_11_1.group]), "Lv." .. iter_11_1.lv)
 			else
-				setText(slot0:findTF("lv", slot0.skillBtns[slot5.group]), "MAX")
+				setText(arg_11_0:findTF("lv", arg_11_0.skillBtns[iter_11_1.group]), "MAX")
 			end
 		end
 	end
 
-	for slot4, slot5 in ipairs(slot0.skillBtns) do
-		if slot4 == slot0.selectIndex then
-			setActive(slot0:findTF("selected", slot5), true)
+	for iter_11_2, iter_11_3 in ipairs(arg_11_0.skillBtns) do
+		if iter_11_2 == arg_11_0.selectIndex then
+			setActive(arg_11_0:findTF("selected", iter_11_3), true)
 		else
-			setActive(slot0:findTF("selected", slot5), false)
+			setActive(arg_11_0:findTF("selected", iter_11_3), false)
 		end
 	end
 
-	if slot0.selectIndex then
-		setActive(slot0.info, true)
-		setActive(slot0.trainBtn, true)
-		setText(slot0.curBuff, pg.benefit_buff_template[slot0.selectBuffId].desc)
-		setText(slot0.nextBuff, pg.benefit_buff_template[slot0.selectNewBuffId].desc)
-		setText(slot0.nextBuffLv, "Lv." .. slot0.selectBuffLv + 1)
-		setText(slot0.currentBuffLv, "Lv." .. slot0.selectBuffLv)
+	if arg_11_0.selectIndex then
+		setActive(arg_11_0.info, true)
+		setActive(arg_11_0.trainBtn, true)
+		setText(arg_11_0.curBuff, pg.benefit_buff_template[arg_11_0.selectBuffId].desc)
+		setText(arg_11_0.nextBuff, pg.benefit_buff_template[arg_11_0.selectNewBuffId].desc)
+		setText(arg_11_0.nextBuffLv, "Lv." .. arg_11_0.selectBuffLv + 1)
+		setText(arg_11_0.currentBuffLv, "Lv." .. arg_11_0.selectBuffLv)
 	else
-		setActive(slot0.info, false)
-		setActive(slot0.trainBtn, false)
+		setActive(arg_11_0.info, false)
+		setActive(arg_11_0.trainBtn, false)
 	end
 end
 
-return slot0
+return var_0_0

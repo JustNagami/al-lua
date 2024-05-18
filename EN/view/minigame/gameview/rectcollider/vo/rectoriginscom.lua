@@ -1,78 +1,81 @@
-slot0 = class("RectOriginsCom")
+﻿local var_0_0 = class("RectOriginsCom")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.skinWidth = 0.01
-	slot0.dstBetweenRays = 0.3
-	slot0.horizontalRayCount = 0
-	slot0.verticalRayCount = 0
-	slot0.horizontalRaySpacing = 0
-	slot0.verticalRaySpacing = 0
-	slot0.topLeft = Vector3.zero
-	slot0.topRight = Vector3.zero
-	slot0.bottomLeft = Vector3.zero
-	slot0.bottomRight = Vector3.zero
-	slot0.center = Vector3.zero
-	slot0._collider = slot1
-	slot0.initFlag = false
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.skinWidth = 0.01
+	arg_1_0.dstBetweenRays = 0.3
+	arg_1_0.horizontalRayCount = 0
+	arg_1_0.verticalRayCount = 0
+	arg_1_0.horizontalRaySpacing = 0
+	arg_1_0.verticalRaySpacing = 0
+	arg_1_0.topLeft = Vector3.zero
+	arg_1_0.topRight = Vector3.zero
+	arg_1_0.bottomLeft = Vector3.zero
+	arg_1_0.bottomRight = Vector3.zero
+	arg_1_0.center = Vector3.zero
+	arg_1_0._collider = arg_1_1
+	arg_1_0.initFlag = false
 end
 
-function slot0.calculateRaySpacing(slot0)
-	slot1 = slot0._collider.bounds
+function var_0_0.calculateRaySpacing(arg_2_0)
+	local var_2_0 = arg_2_0._collider.bounds
 
-	slot1:Expand(slot0.skinWidth * -2)
+	var_2_0:Expand(arg_2_0.skinWidth * -2)
 
-	slot0.verticalRayCount = Mathf.Round(slot1.size.x / slot0.dstBetweenRays)
-	slot0.horizontalRayCount = Mathf.Round(slot1.size.y / slot0.dstBetweenRays)
+	local var_2_1 = var_2_0.size.x
+	local var_2_2 = var_2_0.size.y
 
-	if slot0.verticalRayCount <= 1 then
-		slot0.verticalRayCount = 2
+	arg_2_0.verticalRayCount = Mathf.Round(var_2_1 / arg_2_0.dstBetweenRays)
+	arg_2_0.horizontalRayCount = Mathf.Round(var_2_2 / arg_2_0.dstBetweenRays)
+
+	if arg_2_0.verticalRayCount <= 1 then
+		arg_2_0.verticalRayCount = 2
 	end
 
-	slot0.horizontalRaySpacing = slot1.size.y / (slot0.horizontalRayCount - 1)
-	slot0.verticalRaySpacing = slot1.size.x / (slot0.verticalRayCount - 1)
+	arg_2_0.horizontalRaySpacing = var_2_0.size.y / (arg_2_0.horizontalRayCount - 1)
+	arg_2_0.verticalRaySpacing = var_2_0.size.x / (arg_2_0.verticalRayCount - 1)
 end
 
-function slot0.updateRaycastOrigins(slot0)
-	if not slot0.initFlag then
-		slot0.initFlag = true
+function var_0_0.updateRaycastOrigins(arg_3_0)
+	if not arg_3_0.initFlag then
+		arg_3_0.initFlag = true
 
-		slot0:calculateRaySpacing()
+		arg_3_0:calculateRaySpacing()
 	end
 
-	slot1 = slot0._collider.bounds
+	local var_3_0 = arg_3_0._collider.bounds
 
-	slot1:Expand(slot0.skinWidth * -2)
+	var_3_0:Expand(arg_3_0.skinWidth * -2)
 
-	slot0.bottomLeft.x = slot1.min.x
-	slot0.bottomLeft.y = slot1.min.y
-	slot0.bottomLeft.z = slot1.min.z
-	slot0.bottomRight.x = slot1.max.x
-	slot0.bottomRight.y = slot1.min.y
-	slot0.bottomRight.z = slot1.min.z
-	slot0.topLeft.x = slot1.min.x
-	slot0.topLeft.y = slot1.max.y
-	slot0.topLeft.z = slot1.max.z
-	slot0.topRight.x = slot1.max.x
-	slot0.topRight.y = slot1.max.y
-	slot0.topRight.z = slot1.max.z
-	slot0.center.x = slot1.center.x
-	slot0.center.y = slot1.center.y
-	slot0.center.z = slot1.center.z
+	arg_3_0.bottomLeft.x = var_3_0.min.x
+	arg_3_0.bottomLeft.y = var_3_0.min.y
+	arg_3_0.bottomLeft.z = var_3_0.min.z
+	arg_3_0.bottomRight.x = var_3_0.max.x
+	arg_3_0.bottomRight.y = var_3_0.min.y
+	arg_3_0.bottomRight.z = var_3_0.min.z
+	arg_3_0.topLeft.x = var_3_0.min.x
+	arg_3_0.topLeft.y = var_3_0.max.y
+	arg_3_0.topLeft.z = var_3_0.max.z
+	arg_3_0.topRight.x = var_3_0.max.x
+	arg_3_0.topRight.y = var_3_0.max.y
+	arg_3_0.topRight.z = var_3_0.max.z
+	arg_3_0.center.x = var_3_0.center.x
+	arg_3_0.center.y = var_3_0.center.y
+	arg_3_0.center.z = var_3_0.center.z
 end
 
-function slot0.createDebugImg(slot0, slot1, slot2)
-	slot3 = slot0._collider.bounds
+function var_0_0.createDebugImg(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_0._collider.bounds
 
-	slot3:Expand(slot0.skinWidth * -2)
+	var_4_0:Expand(arg_4_0.skinWidth * -2)
 
-	slot0.bl = cloneTplTo(slot1, slot2, "bl")
-	slot0.br = cloneTplTo(slot1, slot2, "br")
-	slot0.tl = cloneTplTo(slot1, slot2, "tl")
-	slot0.tr = cloneTplTo(slot1, slot2, "tr")
-	slot0.bl.position = Vector3(slot3.min.x, slot3.min.y, slot3.min.z)
-	slot0.br.position = Vector3(slot3.max.x, slot3.min.y, slot3.min.z)
-	slot0.tl.position = Vector3(slot3.min.x, slot3.max.y, slot3.max.z)
-	slot0.tr.position = Vector3(slot3.max.x, slot3.max.y, slot3.max.z)
+	arg_4_0.bl = cloneTplTo(arg_4_1, arg_4_2, "bl")
+	arg_4_0.br = cloneTplTo(arg_4_1, arg_4_2, "br")
+	arg_4_0.tl = cloneTplTo(arg_4_1, arg_4_2, "tl")
+	arg_4_0.tr = cloneTplTo(arg_4_1, arg_4_2, "tr")
+	arg_4_0.bl.position = Vector3(var_4_0.min.x, var_4_0.min.y, var_4_0.min.z)
+	arg_4_0.br.position = Vector3(var_4_0.max.x, var_4_0.min.y, var_4_0.min.z)
+	arg_4_0.tl.position = Vector3(var_4_0.min.x, var_4_0.max.y, var_4_0.max.z)
+	arg_4_0.tr.position = Vector3(var_4_0.max.x, var_4_0.max.y, var_4_0.max.z)
 end
 
-return slot0
+return var_0_0

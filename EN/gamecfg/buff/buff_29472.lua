@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "专属弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主武器每进行6次攻击，触发专属弹幕-希佩尔海军上将μII",
-	stack = 1,
-	id = 29472,
-	icon = 29470,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -35,5 +24,16 @@ return {
 				countType = 29470
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "专属弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主武器每进行6次攻击，触发专属弹幕-希佩尔海军上将μII",
+	stack = 1,
+	id = 29472,
+	icon = 29470,
+	last_effect = ""
 }

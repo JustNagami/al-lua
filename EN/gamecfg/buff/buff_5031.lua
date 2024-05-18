@@ -1,4 +1,33 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 5031
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 5030,
+				shipType = 4,
+				target = "TargetPlayerByType"
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 5030,
+				shipType = 5,
+				target = "TargetPlayerByType"
+			}
+		}
+	},
 	{
 		desc = "在队伍中(存活)时降低战巡、战列受到的伤害5.0%，同技能效果不叠加",
 		addition = {
@@ -69,34 +98,5 @@ return {
 	stack = 1,
 	id = 5031,
 	icon = 5030,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 5031
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 5030,
-				shipType = 4,
-				target = "TargetPlayerByType"
-			}
-		},
-		{
-			type = "BattleBuffField",
-			trigger = {},
-			arg_list = {
-				buff_id = 5030,
-				shipType = 5,
-				target = "TargetPlayerByType"
-			}
-		}
-	}
+	last_effect = ""
 }

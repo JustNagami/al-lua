@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.puzzle_card_template = {
 	[20001] = {
 		cost = 0,

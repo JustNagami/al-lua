@@ -1,4 +1,40 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 106340,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				buff_id = 106341,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				quota = 1,
+				target = "TargetSelf",
+				skill_id = 106341,
+				index = {
+					2
+				}
+			}
+		}
+	},
 	{
 		shipInfoScene = {
 			equip = {
@@ -158,41 +194,5 @@ return {
 	stack = 1,
 	id = 106340,
 	icon = 106330,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 106340,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				buff_id = 106341,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				quota = 1,
-				target = "TargetSelf",
-				skill_id = 106341,
-				index = {
-					2
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

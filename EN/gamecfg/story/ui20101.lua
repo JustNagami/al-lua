@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "UI20101",
 	mode = 3,
 	noWaitFade = true,
@@ -45,12 +45,7 @@ return {
 			},
 			sequence = {
 				{
-					[[
-          Chapter 2 - <size=43.5>Battle of Coral Sea</size>  
-
-
-
-]],
+					"          Chapter 2 - <size=43.5>Battle of Coral Sea</size>  \n\n\n\n",
 					2
 				}
 			}

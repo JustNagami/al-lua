@@ -1,3 +1,3 @@
-return {
+﻿return {
 	"_ALL_"
 }

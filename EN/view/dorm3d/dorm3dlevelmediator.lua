@@ -1,29 +1,31 @@
-slot0 = class("Dorm3dLevelMediator", import("view.base.ContextMediator"))
-slot0.CHANGE_SKIN = "Dorm3dLevelMediator.CHANGE_SKIN"
-slot0.CHAMGE_TIME = "Dorm3dLevelMediator.CHAMGE_TIME"
+﻿local var_0_0 = class("Dorm3dLevelMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.CHANGE_SKIN, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.APARTMENT_CHANGE_SKIN, {
-			groupId = slot1,
-			skinId = slot2
+var_0_0.CHANGE_SKIN = "Dorm3dLevelMediator.CHANGE_SKIN"
+var_0_0.CHAMGE_TIME = "Dorm3dLevelMediator.CHAMGE_TIME"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.CHANGE_SKIN, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.APARTMENT_CHANGE_SKIN, {
+			groupId = arg_2_1,
+			skinId = arg_2_2
 		})
-		uv0.viewComponent:closeView()
+		arg_1_0.viewComponent:closeView()
 	end)
-	slot0:bind(uv0.CHAMGE_TIME, function (slot0, slot1)
-		uv0:sendNotification(Dorm3dSceneMediator.CHAMGE_TIME_RELOAD_SCENE, {
-			timeIndex = slot1
+	arg_1_0:bind(var_0_0.CHAMGE_TIME, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(Dorm3dSceneMediator.CHAMGE_TIME_RELOAD_SCENE, {
+			timeIndex = arg_3_1
 		})
-		uv0.viewComponent:closeView()
+		arg_1_0.viewComponent:closeView()
 	end)
-	slot0.viewComponent:SetApartment(getProxy(ApartmentProxy):getApartment(slot0.contextData.groupId))
+	arg_1_0.viewComponent:SetApartment(getProxy(ApartmentProxy):getApartment(arg_1_0.contextData.groupId))
 end
 
-function slot0.initNotificationHandleDic(slot0)
-	slot0.handleDic = {}
+function var_0_0.initNotificationHandleDic(arg_4_0)
+	arg_4_0.handleDic = {}
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_5_0)
+	return
 end
 
-return slot0
+return var_0_0

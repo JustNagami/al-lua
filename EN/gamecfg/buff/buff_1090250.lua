@@ -1,4 +1,41 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 1011
+			}
+		},
+		{
+			type = "BattleBuffCastSkillRandom",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id_list = {
+					1090250,
+					1090251
+				},
+				range = {
+					{
+						0,
+						0.5
+					},
+					{
+						0.5,
+						1
+					}
+				},
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		desc = "提高舰队中所有驱逐舰5.0%雷击属性，同类指挥技能无法同时生效",
 		addition = {
@@ -69,42 +106,5 @@ return {
 	stack = 1,
 	id = 1090250,
 	icon = 1010,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 1011
-			}
-		},
-		{
-			type = "BattleBuffCastSkillRandom",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id_list = {
-					1090250,
-					1090251
-				},
-				range = {
-					{
-						0,
-						0.5
-					},
-					{
-						0.5,
-						1
-					}
-				},
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

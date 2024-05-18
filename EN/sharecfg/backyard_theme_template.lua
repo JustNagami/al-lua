@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.backyard_theme_template = {
 	{
 		Cfg_1 = 5,

@@ -1,4 +1,47 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				number = -0.035
+			}
+		},
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onAttach",
+				"onStack"
+			},
+			arg_list = {
+				countTarget = 2,
+				countType = 107023
+			}
+		},
+		{
+			type = "BattleBuffCleanse",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				countType = 107023,
+				buff_id_list = {
+					107022
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -387,48 +430,5 @@ return {
 	stack = 2,
 	id = 107023,
 	icon = 107020,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				number = -0.035
-			}
-		},
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onAttach",
-				"onStack"
-			},
-			arg_list = {
-				countTarget = 2,
-				countType = 107023
-			}
-		},
-		{
-			type = "BattleBuffCleanse",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				countType = 107023,
-				buff_id_list = {
-					107022
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,5 @@
-return {
+﻿return {
+	effect_list = {},
 	{
 		desc = "出击时获得2次团队策略—紧急维修(不可升级)"
 	},
@@ -12,6 +13,5 @@ return {
 	stack = 1,
 	id = 10521,
 	icon = 10520,
-	last_effect = "",
-	effect_list = {}
+	last_effect = ""
 }

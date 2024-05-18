@@ -1,124 +1,131 @@
-slot0 = class("CommanderReplaceTalentPage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("CommanderReplaceTalentPage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderCatReplaceTalentUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.replaceList = UIItemList.New(slot0:findTF("bg/frame/bg/talents/content"), slot0:findTF("bg/frame/bg/talents/content/talent"))
-	slot0.replaceTargetTF = slot0:findTF("bg/frame/bg/talent")
-	slot0.replaceTalent = slot0:findTF("bg/frame/bg/replace")
-	slot0.replaceCloseBtn = slot0:findTF("bg/frame/close_btn")
-	slot0.replaceCancelBtn = slot0:findTF("bg/frame/cancel_btn")
-	slot0.confirmBtn = slot0:findTF("bg/frame/confirm_btn")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.replaceList = UIItemList.New(arg_2_0:findTF("bg/frame/bg/talents/content"), arg_2_0:findTF("bg/frame/bg/talents/content/talent"))
+	arg_2_0.replaceTargetTF = arg_2_0:findTF("bg/frame/bg/talent")
+	arg_2_0.replaceTalent = arg_2_0:findTF("bg/frame/bg/replace")
+	arg_2_0.replaceCloseBtn = arg_2_0:findTF("bg/frame/close_btn")
+	arg_2_0.replaceCancelBtn = arg_2_0:findTF("bg/frame/cancel_btn")
+	arg_2_0.confirmBtn = arg_2_0:findTF("bg/frame/confirm_btn")
 
-	setActive(slot0:findTF("bg/frame/consume"), false)
-	setText(slot0:findTF("bg/frame/bg/title/Text"), i18n("commander_choice_talent_3"))
-	setText(slot0:findTF("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
+	setActive(arg_2_0:findTF("bg/frame/consume"), false)
+	setText(arg_2_0:findTF("bg/frame/bg/title/Text"), i18n("commander_choice_talent_3"))
+	setText(arg_2_0:findTF("bg/frame/bg/talents/title/Text"), i18n("commander_choice_talent_2"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.replaceCloseBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.replaceCloseBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.replaceCancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.replaceCancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	uv0.super.Show(slot0)
-	slot0._tf:SetAsLastSibling()
+function var_0_0.Show(arg_7_0, arg_7_1, arg_7_2)
+	var_0_0.super.Show(arg_7_0)
+	arg_7_0._tf:SetAsLastSibling()
 
-	slot0.commander = slot1
+	arg_7_0.commander = arg_7_1
 
-	slot0:UpdateTalents(slot2, nil)
-	slot0:UpdateList(slot2)
+	arg_7_0:UpdateTalents(arg_7_2, nil)
+	arg_7_0:UpdateList(arg_7_2)
 end
 
-function slot0.UpdateList(slot0, slot1)
-	slot0.replaceList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			onButton(uv1, slot2, function ()
-				if uv0.prevToggle ~= uv1 then
-					uv0:UpdateTalents(uv2, uv3)
+function var_0_0.UpdateList(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.commander:getTalents()
 
-					if uv0.prevToggle then
-						setActive(uv0.prevToggle:Find("mark"), false)
+	arg_8_0.replaceList:make(function(arg_9_0, arg_9_1, arg_9_2)
+		if arg_9_0 == UIItemList.EventUpdate then
+			local var_9_0 = var_8_0[arg_9_1 + 1]
+
+			onButton(arg_8_0, arg_9_2, function()
+				if arg_8_0.prevToggle ~= arg_9_2 then
+					arg_8_0:UpdateTalents(arg_8_1, var_9_0)
+
+					if arg_8_0.prevToggle then
+						setActive(arg_8_0.prevToggle:Find("mark"), false)
 					end
 
-					uv0.prevToggle = uv1
+					arg_8_0.prevToggle = arg_9_2
 
-					setActive(uv1:Find("mark"), true)
+					setActive(arg_9_2:Find("mark"), true)
 				end
 			end, SFX_PANEL)
-			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. uv0[slot1 + 1]:getConfig("icon"), "", slot2)
+			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var_9_0:getConfig("icon"), "", arg_9_2)
 		end
 	end)
-	slot0.replaceList:align(#slot0.commander:getTalents())
+	arg_8_0.replaceList:align(#var_8_0)
 end
 
-function slot0.UpdateTalents(slot0, slot1, slot2)
-	slot3 = slot0.commander
+function var_0_0.UpdateTalents(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.commander
 
-	slot0:UpdateTalentCard(slot0.replaceTargetTF, slot1)
-	slot0:UpdateTalentCard(slot0.replaceTalent, slot2)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0 and uv1 and uv2 then
-			if uv0:getConfig("worth") > 1 then
+	arg_11_0:UpdateTalentCard(arg_11_0.replaceTargetTF, arg_11_1)
+	arg_11_0:UpdateTalentCard(arg_11_0.replaceTalent, arg_11_2)
+	onButton(arg_11_0, arg_11_0.confirmBtn, function()
+		if arg_11_2 and arg_11_1 and var_11_0 then
+			if arg_11_2:getConfig("worth") > 1 then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("commander_ability_replace_warning"),
-					onYes = function ()
-						uv0:emit(CommanderCatMediator.LEARN_TALENT, uv1.id, uv2.id, uv3.id)
-						uv0:Hide()
+					onYes = function()
+						arg_11_0:emit(CommanderCatMediator.LEARN_TALENT, var_11_0.id, arg_11_1.id, arg_11_2.id)
+						arg_11_0:Hide()
 					end
 				})
 			else
-				uv3:emit(CommanderCatMediator.LEARN_TALENT, uv2.id, uv1.id, uv0.id)
-				uv3:Hide()
+				arg_11_0:emit(CommanderCatMediator.LEARN_TALENT, var_11_0.id, arg_11_1.id, arg_11_2.id)
+				arg_11_0:Hide()
 			end
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.UpdateTalentCard(slot0, slot1, slot2)
-	slot3 = slot1:Find("unlock")
-	slot4 = slot1:Find("lock")
+function var_0_0.UpdateTalentCard(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = arg_14_1:Find("unlock")
+	local var_14_1 = arg_14_1:Find("lock")
 
-	if slot2 then
-		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. slot2:getConfig("icon"), "", slot3:Find("icon"))
+	if arg_14_2 then
+		GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. arg_14_2:getConfig("icon"), "", var_14_0:Find("icon"))
 
-		if slot3:Find("tree_btn") then
-			onButton(slot0, slot5, function ()
-				uv0.contextData.treePanel:ExecuteAction("Show", uv1)
+		local var_14_2 = var_14_0:Find("tree_btn")
+
+		if var_14_2 then
+			onButton(arg_14_0, var_14_2, function()
+				arg_14_0.contextData.treePanel:ExecuteAction("Show", arg_14_2)
 			end, SFX_PANEL)
 		end
 
-		setText(slot3:Find("name_bg/Text"), slot2:getConfig("name"))
-		setScrollText(slot3:Find("desc/Text"), slot2:getConfig("desc"))
+		setText(var_14_0:Find("name_bg/Text"), arg_14_2:getConfig("name"))
+		setScrollText(var_14_0:Find("desc/Text"), arg_14_2:getConfig("desc"))
 	end
 
-	setActive(slot3, slot2)
+	setActive(var_14_0, arg_14_2)
 
-	if slot4 then
-		setActive(slot4, not slot2)
-	end
-end
-
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-
-	if slot0.prevToggle then
-		setActive(slot0.prevToggle:Find("mark"), false)
-
-		slot0.prevToggle = nil
+	if var_14_1 then
+		setActive(var_14_1, not arg_14_2)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.Hide(arg_16_0)
+	var_0_0.super.Hide(arg_16_0)
+
+	if arg_16_0.prevToggle then
+		setActive(arg_16_0.prevToggle:Find("mark"), false)
+
+		arg_16_0.prevToggle = nil
+	end
 end
 
-return slot0
+function var_0_0.OnDestroy(arg_17_0)
+	return
+end
+
+return var_0_0

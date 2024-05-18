@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.settings_other_template = {
 	{
 		default = 0,
@@ -70,32 +70,7 @@ pg.settings_other_template = {
 		alignment = 1,
 		id = 8,
 		title = "Display CV Detection Line",
-		desc = [[
-Display Carrier Detection Line
-
-- About Carrier Detection:
-The carriers in your Main Fleet can be in one of two states: Hidden, and Detected.
-Your carriers start the battle in the Hidden state, but once their Detection Gauge fills up, they will enter and remain in the Detected state until the gauge falls back down below a certain threshold.
-
-While Hidden, your carriers will not be targeted by most enemy skills and attacks.
-Additionally, your carriers will also deal increased damage.
-
-About the Detection Gauge:
-The Detection Gauge represents how close the enemy is to detecting the presence of your carriers. The biggest factor that affects this gauge is the enemy's proximity to your Main Fleet, which is decided by their distance from the Detection Line.
-
-However, other factors affect this gauge as well. The Detection Gauge increases:
-- When an enemy crosses the Detection Line
-- When an enemy ship or aircraft reaches the left-hand side of the screen
-- When a friendly carrier launches an Airstrike
-- When the skills of certain friendly carriers activate
-- When a friendly carrier catches fire (when this happens, the Detection Gauge will not go below a certain threshold until the fire is put out)
-
-The Detection Gauge will decrease as long as there are no enemies past the Detection Line.
-Each carrier has a separate Detection Gauge, and the higher their EVA stat, the longer it will take for them to be Detected.
-
-The Detection Gauge During Exercises:
-The Detection Gauge will not decrease in Exercise Battles. Additionally, once the opponent's fleet gets near enough to your Main Fleet, all of your carriers will enter the Detected state.
-]]
+		desc = "Display Carrier Detection Line\n\n- About Carrier Detection:\nThe carriers in your Main Fleet can be in one of two states: Hidden, and Detected.\nYour carriers start the battle in the Hidden state, but once their Detection Gauge fills up, they will enter and remain in the Detected state until the gauge falls back down below a certain threshold.\n\nWhile Hidden, your carriers will not be targeted by most enemy skills and attacks.\nAdditionally, your carriers will also deal increased damage.\n\nAbout the Detection Gauge:\nThe Detection Gauge represents how close the enemy is to detecting the presence of your carriers. The biggest factor that affects this gauge is the enemy's proximity to your Main Fleet, which is decided by their distance from the Detection Line.\n\nHowever, other factors affect this gauge as well. The Detection Gauge increases:\n- When an enemy crosses the Detection Line\n- When an enemy ship or aircraft reaches the left-hand side of the screen\n- When a friendly carrier launches an Airstrike\n- When the skills of certain friendly carriers activate\n- When a friendly carrier catches fire (when this happens, the Detection Gauge will not go below a certain threshold until the fire is put out)\n\nThe Detection Gauge will decrease as long as there are no enemies past the Detection Line.\nEach carrier has a separate Detection Gauge, and the higher their EVA stat, the longer it will take for them to be Detected.\n\nThe Detection Gauge During Exercises:\nThe Detection Gauge will not decrease in Exercise Battles. Additionally, once the opponent's fleet gets near enough to your Main Fleet, all of your carriers will enter the Detected state.\n"
 	},
 	{
 		default = 0,

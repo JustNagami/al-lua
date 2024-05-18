@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFriendlyHpRatioUpdate"
+			},
+			arg_list = {
+				hpUpperBound = 0.5,
+				target = "TargetSelf",
+				skill_id = 12960,
+				quota = 1
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,19 +33,5 @@ return {
 	stack = 1,
 	id = 12960,
 	icon = 12960,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFriendlyHpRatioUpdate"
-			},
-			arg_list = {
-				hpUpperBound = 0.5,
-				target = "TargetSelf",
-				skill_id = 12960,
-				quota = 1
-			}
-		}
-	}
+	last_effect = ""
 }

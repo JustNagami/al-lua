@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.expedition_constellation_challenge_template = {
 	[10001] = {
 		painting = "huashengdun",

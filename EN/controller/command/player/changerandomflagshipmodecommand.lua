@@ -1,16 +1,18 @@
-slot0 = class("ChangeRandomFlagShipModeCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ChangeRandomFlagShipModeCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().mode
+
 	pg.ConnectionMgr.GetInstance():Send(12206, {
-		flag = slot1:getBody().mode
-	}, 12207, function (slot0)
-		if slot0.result == 0 then
-			getProxy(PlayerProxy):getRawData():UpdateRandomFlagShipMode(uv0)
-			uv1:sendNotification(GAME.CHANGE_RANDOM_SHIP_MODE_DONE)
+		flag = var_1_0
+	}, 12207, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			getProxy(PlayerProxy):getRawData():UpdateRandomFlagShipMode(var_1_0)
+			arg_1_0:sendNotification(GAME.CHANGE_RANDOM_SHIP_MODE_DONE)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

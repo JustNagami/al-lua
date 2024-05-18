@@ -1,290 +1,328 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleConst
-slot4 = slot0.Battle.BattleVariable
-slot5 = slot0.Battle.BattleDataFunction
-slot6 = class("BattleAircraftUnit")
-slot0.Battle.BattleAircraftUnit = slot6
-slot6.__name = "BattleAircraftUnit"
-slot6.STATE_CREATE = "Create"
-slot6.STATE_ATTACK = "Attack"
-slot6.STATE_DESTORY = "Destory"
-slot6.HEIGHT = slot0.Battle.BattleConfig.AircraftHeight + 5
+﻿ys = ys or {}
 
-function slot6.Ctor(slot0, slot1)
-	uv0.EventDispatcher.AttachEventDispatcher(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleConfig
+local var_0_4 = var_0_0.Battle.BattleVariable
+local var_0_5 = var_0_0.Battle.BattleDataFunction
+local var_0_6 = class("BattleAircraftUnit")
 
-	slot0._uniqueID = slot1
-	slot0._speedExemptKey = "air_" .. slot1
-	slot0._dir = uv0.Battle.BattleConst.UnitDir.RIGHT
-	slot0._type = uv1.UnitType.AIRCRAFT_UNIT
-	slot0._currentState = slot0.STATE_CREATE
-	slot0._distanceBackup = {}
-	slot0._battleProxy = uv0.Battle.BattleDataProxy.GetInstance()
-	slot0._frame = 0
-	slot0._weaponPotential = 1
+var_0_0.Battle.BattleAircraftUnit = var_0_6
+var_0_6.__name = "BattleAircraftUnit"
+var_0_6.STATE_CREATE = "Create"
+var_0_6.STATE_ATTACK = "Attack"
+var_0_6.STATE_DESTORY = "Destory"
+var_0_6.HEIGHT = var_0_3.AircraftHeight + 5
 
-	slot0:Init()
+function var_0_6.Ctor(arg_1_0, arg_1_1)
+	var_0_0.EventDispatcher.AttachEventDispatcher(arg_1_0)
+
+	arg_1_0._uniqueID = arg_1_1
+	arg_1_0._speedExemptKey = "air_" .. arg_1_1
+	arg_1_0._dir = var_0_0.Battle.BattleConst.UnitDir.RIGHT
+	arg_1_0._type = var_0_2.UnitType.AIRCRAFT_UNIT
+	arg_1_0._currentState = arg_1_0.STATE_CREATE
+	arg_1_0._distanceBackup = {}
+	arg_1_0._battleProxy = var_0_0.Battle.BattleDataProxy.GetInstance()
+	arg_1_0._frame = 0
+	arg_1_0._weaponPotential = 1
+
+	arg_1_0:Init()
 end
 
-function slot6.SetBound(slot0, slot1, slot2)
-	slot0._top = slot1
-	slot0._bottom = slot2
+function var_0_6.SetBound(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._top = arg_2_1
+	arg_2_0._bottom = arg_2_2
 
-	if slot0._tmpData.spawn_brownian then
-		slot0._speedZ = (math.random() - 0.5) * 0.5
+	if arg_2_0._tmpData.spawn_brownian then
+		arg_2_0._speedZ = (math.random() - 0.5) * 0.5
 	else
-		slot0._speedZ = 0
+		arg_2_0._speedZ = 0
 	end
 
-	slot0:SetTargetZ()
+	arg_2_0:SetTargetZ()
 end
 
-function slot6.SetViewBoundData(slot0, slot1, slot2, slot3, slot4)
-	slot0._cameraTop = slot1 + 3
-	slot0._cameraBottom = slot2 - 23
-	slot0._cameraLeft = slot3 - 3
-	slot0._cameraRight = slot4 + 10
+function var_0_6.SetViewBoundData(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+	arg_3_0._cameraTop = arg_3_1 + 3
+	arg_3_0._cameraBottom = arg_3_2 - 23
+	arg_3_0._cameraLeft = arg_3_3 - 3
+	arg_3_0._cameraRight = arg_3_4 + 10
 end
 
-function slot6.Update(slot0, slot1)
-	slot0._pos:Add(slot0._speed)
-	slot0:UpdateSpeed()
-	slot0:UpdateWeapon()
+function var_0_6.Update(arg_4_0, arg_4_1)
+	arg_4_0._pos:Add(arg_4_0._speed)
+	arg_4_0:UpdateSpeed()
+	arg_4_0:UpdateWeapon()
 end
 
-function slot6.ActiveCldBox(slot0)
-	slot0._cldComponent:SetActive(true)
+function var_0_6.ActiveCldBox(arg_5_0)
+	arg_5_0._cldComponent:SetActive(true)
 end
 
-function slot6.DeactiveCldBox(slot0)
-	slot0._cldComponent:SetActive(false)
+function var_0_6.DeactiveCldBox(arg_6_0)
+	arg_6_0._cldComponent:SetActive(false)
 end
 
-function slot6.Init(slot0)
-	slot0._aliveState = true
-	slot0._speed = Vector3.zero
-	slot0._pos = Vector3.zero
-	slot0._undefeated = false
-	slot0._labelTagList = {}
+function var_0_6.Init(arg_7_0)
+	arg_7_0._aliveState = true
+	arg_7_0._speed = Vector3.zero
+	arg_7_0._pos = Vector3.zero
+	arg_7_0._undefeated = false
+	arg_7_0._labelTagList = {}
 end
 
-function slot6.Clear(slot0)
-	if slot0._createTimer then
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(slot0._createTimer)
+function var_0_6.Clear(arg_8_0)
+	if arg_8_0._createTimer then
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_8_0._createTimer)
 
-		slot0._createTimer = nil
+		arg_8_0._createTimer = nil
 	end
 
-	slot0:ShutdownWeapon()
+	arg_8_0:ShutdownWeapon()
 
-	slot0._distanceBackup = {}
+	arg_8_0._distanceBackup = {}
 end
 
-function slot6.SetWeaponPreCastBound(slot0)
+function var_0_6.SetWeaponPreCastBound(arg_9_0)
+	return
 end
 
-function slot6.EnterGCD(slot0)
+function var_0_6.EnterGCD(arg_10_0)
+	return
 end
 
-function slot6.CreateWeapon(slot0)
-	for slot5, slot6 in ipairs(slot0._tmpData.weapon_ID) do
-		-- Nothing
+function var_0_6.CreateWeapon(arg_11_0)
+	local var_11_0 = {}
+
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0._tmpData.weapon_ID) do
+		var_11_0[iter_11_0] = var_0_0.Battle.BattleDataFunction.CreateAirFighterWeaponUnit(iter_11_1, arg_11_0, iter_11_0, arg_11_0._weaponPotential)
 	end
 
-	return {
-		[slot5] = uv0.Battle.BattleDataFunction.CreateAirFighterWeaponUnit(slot6, slot0, slot5, slot0._weaponPotential)
-	}
+	return var_11_0
 end
 
-function slot6.ShutdownWeapon(slot0)
-	for slot4, slot5 in ipairs(slot0:GetWeapon()) do
-		slot5:Clear()
+function var_0_6.ShutdownWeapon(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0:GetWeapon()) do
+		iter_12_1:Clear()
 	end
 end
 
-function slot6.UpdateWeapon(slot0)
-	if slot0._currentState == slot0.STATE_ATTACK then
-		for slot4, slot5 in ipairs(slot0:GetWeapon()) do
-			slot5:Update()
+function var_0_6.UpdateWeapon(arg_13_0)
+	if arg_13_0._currentState == arg_13_0.STATE_ATTACK then
+		for iter_13_0, iter_13_1 in ipairs(arg_13_0:GetWeapon()) do
+			iter_13_1:Update()
 		end
 	end
 end
 
-function slot6.GetWeapon(slot0)
-	return slot0._weapon
+function var_0_6.GetWeapon(arg_14_0)
+	return arg_14_0._weapon
 end
 
-function slot6.GetCurrentHP(slot0)
-	return slot0._currentHP
+function var_0_6.GetCurrentHP(arg_15_0)
+	return arg_15_0._currentHP
 end
 
-function slot6.GetMaxHP(slot0)
-	return uv0.Battle.BattleAttr.GetCurrent(slot0, "maxHP")
+function var_0_6.GetMaxHP(arg_16_0)
+	return var_0_0.Battle.BattleAttr.GetCurrent(arg_16_0, "maxHP")
 end
 
-function slot6.IsUndefeated(slot0)
-	return slot0._undefeated
+function var_0_6.IsUndefeated(arg_17_0)
+	return arg_17_0._undefeated
 end
 
-function slot6.IsAlive(slot0)
-	return slot0._aliveState
+function var_0_6.IsAlive(arg_18_0)
+	return arg_18_0._aliveState
 end
 
-function slot6.IsCease(slot0)
+function var_0_6.IsCease(arg_19_0)
 	return false
 end
 
-function slot6.GetOxyState(slot0)
+function var_0_6.GetOxyState(arg_20_0)
 	return nil
 end
 
-function slot6.IsBoss(slot0)
+function var_0_6.IsBoss(arg_21_0)
 	return nil
 end
 
-function slot6.HandleDamageToDeath(slot0)
-	slot0:UpdateHP(-slot0._currentHP, {
+function var_0_6.HandleDamageToDeath(arg_22_0)
+	arg_22_0:UpdateHP(-arg_22_0._currentHP, {
 		isMiss = false,
 		isCri = false,
 		isHeal = false
 	})
 end
 
-function slot6.UpdateHP(slot0, slot1, slot2)
-	slot3 = slot2.isMiss
-	slot4 = slot2.isCri
-	slot5 = slot2.isHeal
-	slot0._currentHP = slot0._currentHP + slot1
+function var_0_6.UpdateHP(arg_23_0, arg_23_1, arg_23_2)
+	local var_23_0 = arg_23_2.isMiss
+	local var_23_1 = arg_23_2.isCri
+	local var_23_2 = arg_23_2.isHeal
 
-	if slot0:GetMaxHP() < slot0._currentHP then
-		slot0._currentHP = slot6
+	arg_23_0._currentHP = arg_23_0._currentHP + arg_23_1
+
+	local var_23_3 = arg_23_0:GetMaxHP()
+
+	if var_23_3 < arg_23_0._currentHP then
+		arg_23_0._currentHP = var_23_3
 	end
 
-	if slot0._currentHP < 0 then
-		slot0._currentHP = 0
+	if arg_23_0._currentHP < 0 then
+		arg_23_0._currentHP = 0
 	end
 
-	slot0:DispatchEvent(uv0.Event.New(uv1.UPDATE_AIR_CRAFT_HP, {
-		dHP = slot1,
-		isMiss = slot3,
-		isCri = slot4,
-		isHeal = slot5
-	}))
+	local var_23_4 = {
+		dHP = arg_23_1,
+		isMiss = var_23_0,
+		isCri = var_23_1,
+		isHeal = var_23_2
+	}
 
-	if slot0._currentHP <= 0 and slot0:IsAlive() then
-		slot0:onDead()
+	arg_23_0:DispatchEvent(var_0_0.Event.New(var_0_1.UPDATE_AIR_CRAFT_HP, var_23_4))
+
+	if arg_23_0._currentHP <= 0 and arg_23_0:IsAlive() then
+		arg_23_0:onDead()
 	end
 
-	return slot1
+	return arg_23_1
 end
 
-function slot6.onDead(slot0)
-	slot0._currentState = slot0.STATE_DESTORY
-	slot0._aliveState = false
+function var_0_6.onDead(arg_24_0)
+	arg_24_0._currentState = arg_24_0.STATE_DESTORY
+	arg_24_0._aliveState = false
 end
 
-function slot6.UpdateSpeed(slot0)
-	slot0._speed:Copy(slot0._speedDir)
-	slot0._speed:Mul(slot0._velocity * slot0:GetSpeedRatio())
+function var_0_6.UpdateSpeed(arg_25_0)
+	local var_25_0 = arg_25_0._speedDir
+	local var_25_1 = arg_25_0._velocity * arg_25_0:GetSpeedRatio()
 
-	if slot0:GetPosition().y < uv0.HEIGHT then
-		slot0._speed.y = math.max(0.4, 1 - slot3.y / uv1.AircraftHeight)
+	arg_25_0._speed:Copy(var_25_0)
+	arg_25_0._speed:Mul(var_25_1)
+
+	local var_25_2 = arg_25_0:GetPosition()
+
+	if var_25_2.y < var_0_6.HEIGHT then
+		arg_25_0._speed.y = math.max(0.4, 1 - var_25_2.y / var_0_3.AircraftHeight)
 	end
 
-	slot0._speed.z = slot2 * slot0._speedZ
+	arg_25_0._speed.z = var_25_1 * arg_25_0._speedZ
 
-	if slot0._tmpData.spawn_brownian == 1 then
-		if slot2 < slot0._targetZ - slot3.z then
-			slot0._speed.z = slot2 * 0.5
-		elseif slot4 < -slot2 then
-			slot0._speed.z = -slot2 * 0.5
+	if arg_25_0._tmpData.spawn_brownian == 1 then
+		local var_25_3 = arg_25_0._targetZ - var_25_2.z
+
+		if var_25_1 < var_25_3 then
+			arg_25_0._speed.z = var_25_1 * 0.5
+		elseif var_25_3 < -var_25_1 then
+			arg_25_0._speed.z = -var_25_1 * 0.5
 		else
-			slot0:SetTargetZ()
+			arg_25_0:SetTargetZ()
 		end
 	end
 end
 
-function slot6.OutBound(slot0)
-	slot0._undefeated = true
+function var_0_6.OutBound(arg_26_0)
+	arg_26_0._undefeated = true
 
-	slot0:onDead()
+	arg_26_0:onDead()
 end
 
-function slot6.GetSize(slot0)
-	if slot0._currentState == slot0.STATE_CREATE then
-		return Mathf.Clamp(slot0:GetPosition().y / uv0.HEIGHT, 0.1, slot0._scale)
+function var_0_6.GetSize(arg_27_0)
+	if arg_27_0._currentState == arg_27_0.STATE_CREATE then
+		return Mathf.Clamp(arg_27_0:GetPosition().y / var_0_6.HEIGHT, 0.1, arg_27_0._scale)
 	else
-		return slot0._scale
+		return arg_27_0._scale
 	end
 end
 
-function slot6.SetTemplate(slot0, slot1)
-	slot0._tmpData = slot1
+function var_0_6.SetTemplate(arg_28_0, arg_28_1)
+	arg_28_0._tmpData = arg_28_1
 
-	slot0:InitCldComponent()
-	uv0.Battle.BattleAttr.SetAircraftAttFromTemp(slot0)
+	arg_28_0:InitCldComponent()
+	var_0_0.Battle.BattleAttr.SetAircraftAttFromTemp(arg_28_0)
 
-	slot0._currentHP = slot0:GetMaxHP()
-	slot0._weapon = slot0:CreateWeapon()
-	slot0._modelID = slot1.model_ID
-	slot0._velocity = uv0.Battle.BattleFormulas.ConvertAircraftSpeed(slot1.speed + slot0:GetAttrByName("aircraftBooster"))
-	slot0._scale = slot1.scale or 1
+	arg_28_0._currentHP = arg_28_0:GetMaxHP()
+	arg_28_0._weapon = arg_28_0:CreateWeapon()
+	arg_28_0._modelID = arg_28_1.model_ID
+
+	local var_28_0 = arg_28_1.speed + arg_28_0:GetAttrByName("aircraftBooster")
+
+	arg_28_0._velocity = var_0_0.Battle.BattleFormulas.ConvertAircraftSpeed(var_28_0)
+	arg_28_0._scale = arg_28_1.scale or 1
 end
 
-function slot6.SetWeanponPotential(slot0, slot1)
-	slot0._weaponPotential = slot1
+function var_0_6.SetWeanponPotential(arg_29_0, arg_29_1)
+	arg_29_0._weaponPotential = arg_29_1
 end
 
-function slot6.SetTargetZ(slot0)
-	slot1 = slot0._bottom
-	slot2 = slot0._top
-	slot0._targetZ = (slot1 + slot2) * 0.5 + (slot2 - slot1) * (math.random() - 0.5) * 0.6
+function var_0_6.SetTargetZ(arg_30_0)
+	local var_30_0 = arg_30_0._bottom
+	local var_30_1 = arg_30_0._top
+
+	arg_30_0._targetZ = (var_30_0 + var_30_1) * 0.5 + (var_30_1 - var_30_0) * (math.random() - 0.5) * 0.6
 end
 
-function slot6.SetMotherUnit(slot0, slot1)
-	slot0._motherUnit = slot1
+function var_0_6.SetMotherUnit(arg_31_0, arg_31_1)
+	arg_31_0._motherUnit = arg_31_1
 
-	slot0:SetIFF(slot0._motherUnit:GetIFF())
-	slot0:SetAttr(slot1)
+	local var_31_0 = arg_31_0._motherUnit:GetIFF()
 
-	if slot0._motherUnit:GetWeaponBoundBone().remote then
-		slot4 = slot3.remote
-		slot5 = Vector3(slot4[1], slot4[2], slot4[3])
-		slot5.x = slot5.x * slot2
-		slot7 = nil
+	arg_31_0:SetIFF(var_31_0)
+	arg_31_0:SetAttr(arg_31_1)
 
-		slot0:SetPosition(((not slot0._battleProxy:GetStageInfo().mainUnitPosition or not slot6[slot2] or slot6[slot2][1]) and uv0.MAIN_UNIT_POS[slot2][1]) + slot5)
+	local var_31_1 = arg_31_0._motherUnit:GetWeaponBoundBone()
+
+	if var_31_1.remote then
+		local var_31_2 = var_31_1.remote
+		local var_31_3 = Vector3(var_31_2[1], var_31_2[2], var_31_2[3])
+
+		var_31_3.x = var_31_3.x * var_31_0
+
+		local var_31_4 = arg_31_0._battleProxy:GetStageInfo().mainUnitPosition
+		local var_31_5
+
+		if var_31_4 and var_31_4[var_31_0] then
+			var_31_5 = var_31_4[var_31_0][1]
+		else
+			var_31_5 = var_0_3.MAIN_UNIT_POS[var_31_0][1]
+		end
+
+		local var_31_6 = var_31_5 + var_31_3
+
+		arg_31_0:SetPosition(var_31_6)
 	else
-		slot0:SetPosition(slot0._motherUnit:GetPosition())
+		arg_31_0:SetPosition(arg_31_0._motherUnit:GetPosition())
 	end
 
-	if slot1:GetIFF() == uv0.FRIENDLY_CODE then
-		slot0._dir = uv1.UnitDir.RIGHT
-		slot0._isPlayerAircraft = true
+	if arg_31_1:GetIFF() == var_0_3.FRIENDLY_CODE then
+		arg_31_0._dir = var_0_2.UnitDir.RIGHT
+		arg_31_0._isPlayerAircraft = true
 	else
-		slot0._dir = uv1.UnitDir.LEFT
+		arg_31_0._dir = var_0_2.UnitDir.LEFT
 	end
 end
 
-function slot6.GetLabelTag(slot0)
-	return slot0._labelTagList
+function var_0_6.GetLabelTag(arg_32_0)
+	return arg_32_0._labelTagList
 end
 
-function slot6.AddLabelTag(slot0, slot1)
-	table.insert(slot0._labelTagList, slot1)
+function var_0_6.AddLabelTag(arg_33_0, arg_33_1)
+	table.insert(arg_33_0._labelTagList, arg_33_1)
 
-	slot2[slot1] = (slot0:GetAttrByName("labelTag")[slot1] or 0) + 1
+	local var_33_0 = arg_33_0:GetAttrByName("labelTag")
+
+	var_33_0[arg_33_1] = (var_33_0[arg_33_1] or 0) + 1
 end
 
-function slot6.ContainsLabelTag(slot0, slot1)
-	if slot0._labelTagList == nil then
+function var_0_6.ContainsLabelTag(arg_34_0, arg_34_1)
+	if arg_34_0._labelTagList == nil then
 		return false
 	end
 
-	for slot5, slot6 in ipairs(slot1) do
-		if table.contains(slot0._labelTagList, slot6) then
+	for iter_34_0, iter_34_1 in ipairs(arg_34_1) do
+		if table.contains(arg_34_0._labelTagList, iter_34_1) then
 			return true
 		end
 	end
@@ -292,250 +330,278 @@ function slot6.ContainsLabelTag(slot0, slot1)
 	return false
 end
 
-function slot6.SetIFF(slot0, slot1)
-	slot0._IFF = slot1
+function var_0_6.SetIFF(arg_35_0, arg_35_1)
+	arg_35_0._IFF = arg_35_1
 end
 
-function slot6.SetPosition(slot0, slot1)
-	slot0._pos:Set(slot1.x, slot1.y, slot1.z)
+function var_0_6.SetPosition(arg_36_0, arg_36_1)
+	arg_36_0._pos:Set(arg_36_1.x, arg_36_1.y, arg_36_1.z)
 end
 
-function slot6.IsOutViewBound(slot0)
-	slot1 = slot0:GetPosition()
-	slot3 = slot1.z
+function var_0_6.IsOutViewBound(arg_37_0)
+	local var_37_0 = arg_37_0:GetPosition()
+	local var_37_1 = var_37_0.x
+	local var_37_2 = var_37_0.z
 
-	if slot0._cameraRight < slot1.x or slot0._cameraTop < slot3 or slot3 < slot0._cameraBottom then
+	if var_37_1 > arg_37_0._cameraRight or var_37_2 > arg_37_0._cameraTop or var_37_2 < arg_37_0._cameraBottom then
 		return true
 	end
 end
 
-function slot6.GetDistance(slot0, slot1)
-	if slot0._frame ~= slot0._battleProxy.FrameIndex then
-		slot0._distanceBackup = {}
-		slot0._frame = slot2
+function var_0_6.GetDistance(arg_38_0, arg_38_1)
+	local var_38_0 = arg_38_0._battleProxy.FrameIndex
+
+	if arg_38_0._frame ~= var_38_0 then
+		arg_38_0._distanceBackup = {}
+		arg_38_0._frame = var_38_0
 	end
 
-	if slot0._distanceBackup[slot1] == nil then
-		slot3 = Vector3.Distance(pg.Tool.FilterY(slot0:GetPosition()), pg.Tool.FilterY(slot1:GetPosition()))
-		slot0._distanceBackup[slot1] = slot3
+	local var_38_1 = arg_38_0._distanceBackup[arg_38_1]
 
-		slot1:backupDistance(slot0, slot3)
+	if var_38_1 == nil then
+		var_38_1 = Vector3.Distance(pg.Tool.FilterY(arg_38_0:GetPosition()), pg.Tool.FilterY(arg_38_1:GetPosition()))
+		arg_38_0._distanceBackup[arg_38_1] = var_38_1
+
+		arg_38_1:backupDistance(arg_38_0, var_38_1)
 	end
 
-	return slot3
+	return var_38_1
 end
 
-function slot6.backupDistance(slot0, slot1, slot2)
-	if slot0._frame ~= slot0._battleProxy.FrameIndex then
-		slot0._distanceBackup = {}
-		slot0._frame = slot3
+function var_0_6.backupDistance(arg_39_0, arg_39_1, arg_39_2)
+	local var_39_0 = arg_39_0._battleProxy.FrameIndex
+
+	if arg_39_0._frame ~= var_39_0 then
+		arg_39_0._distanceBackup = {}
+		arg_39_0._frame = var_39_0
 	end
 
-	slot0._distanceBackup[slot1] = slot2
+	arg_39_0._distanceBackup[arg_39_1] = arg_39_2
 end
 
-function slot6.GetSkinID(slot0)
-	return slot0._modelID
+function var_0_6.GetSkinID(arg_40_0)
+	return arg_40_0._modelID
 end
 
-function slot6.SetSkinID(slot0, slot1)
-	slot0._skinID = slot1
-	slot0._modelID = uv0.GetEquipSkin(slot0._skinID)
+function var_0_6.SetSkinID(arg_41_0, arg_41_1)
+	arg_41_0._skinID = arg_41_1
+	arg_41_0._modelID = var_0_5.GetEquipSkin(arg_41_0._skinID)
 
-	for slot5, slot6 in ipairs(slot0._weapon) do
-		slot6:SetDerivateSkin(slot1)
+	for iter_41_0, iter_41_1 in ipairs(arg_41_0._weapon) do
+		iter_41_1:SetDerivateSkin(arg_41_1)
 	end
 end
 
-function slot6.SetSkinData(slot0, slot1)
+function var_0_6.SetSkinData(arg_42_0, arg_42_1)
+	return
 end
 
-function slot6.SetAttr(slot0, slot1)
-	uv0.Battle.BattleAttr.SetAircraftAttFromMother(slot0, slot1)
+function var_0_6.SetAttr(arg_43_0, arg_43_1)
+	var_0_0.Battle.BattleAttr.SetAircraftAttFromMother(arg_43_0, arg_43_1)
 end
 
-function slot6.GetAttr(slot0)
-	return uv0.Battle.BattleAttr.GetAttr(slot0)
+function var_0_6.GetAttr(arg_44_0)
+	return var_0_0.Battle.BattleAttr.GetAttr(arg_44_0)
 end
 
-function slot6.GetAttrByName(slot0, slot1)
-	return uv0.Battle.BattleAttr.GetCurrent(slot0, slot1)
+function var_0_6.GetAttrByName(arg_45_0, arg_45_1)
+	return var_0_0.Battle.BattleAttr.GetCurrent(arg_45_0, arg_45_1)
 end
 
-function slot6.GetMotherUnit(slot0)
-	return slot0._motherUnit
+function var_0_6.GetMotherUnit(arg_46_0)
+	return arg_46_0._motherUnit
 end
 
-function slot6.GetUniqueID(slot0)
-	return slot0._uniqueID
+function var_0_6.GetUniqueID(arg_47_0)
+	return arg_47_0._uniqueID
 end
 
-function slot6.GetIFF(slot0)
-	return slot0._IFF
+function var_0_6.GetIFF(arg_48_0)
+	return arg_48_0._IFF
 end
 
-function slot6.GetCurrentState(slot0)
-	return slot0._currentState
+function var_0_6.GetCurrentState(arg_49_0)
+	return arg_49_0._currentState
 end
 
-function slot6.GetVelocity(slot0)
-	return slot0._velocity
+function var_0_6.GetVelocity(arg_50_0)
+	return arg_50_0._velocity
 end
 
-function slot6.GetSpeed(slot0)
-	return slot0._speed
+function var_0_6.GetSpeed(arg_51_0)
+	return arg_51_0._speed
 end
 
-function slot6.GetPosition(slot0)
-	return slot0._pos
+function var_0_6.GetPosition(arg_52_0)
+	return arg_52_0._pos
 end
 
-function slot6.GetBornPosition(slot0)
+function var_0_6.GetBornPosition(arg_53_0)
 	return nil
 end
 
-function slot6.GetCLDZCenterPosition(slot0)
-	return Vector3(slot0._pos.x, slot0._pos.y, slot0._pos.z + slot0:GetBoxSize().z)
+function var_0_6.GetCLDZCenterPosition(arg_54_0)
+	local var_54_0 = arg_54_0:GetBoxSize()
+
+	return Vector3(arg_54_0._pos.x, arg_54_0._pos.y, arg_54_0._pos.z + var_54_0.z)
 end
 
-function slot6.GetBeenAimedPosition(slot0)
-	slot2 = slot0:GetCLDZCenterPosition()
+function var_0_6.GetBeenAimedPosition(arg_55_0)
+	local var_55_0 = arg_55_0:GetTemplate().aim_offset
+	local var_55_1 = arg_55_0:GetCLDZCenterPosition()
 
-	if not slot0:GetTemplate().aim_offset then
-		return slot2
+	if not var_55_0 then
+		return var_55_1
 	end
 
-	return Vector3(slot2.x + slot1[1], slot2.y + slot1[2], slot2.z + slot1[3])
+	return Vector3(var_55_1.x + var_55_0[1], var_55_1.y + var_55_0[2], var_55_1.z + var_55_0[3])
 end
 
-function slot6.GetDirection(slot0)
-	return slot0._dir
+function var_0_6.GetDirection(arg_56_0)
+	return arg_56_0._dir
 end
 
-function slot6.GetTemplate(slot0)
-	return slot0._tmpData
+function var_0_6.GetTemplate(arg_57_0)
+	return arg_57_0._tmpData
 end
 
-function slot6.GetTemplateID(slot0)
-	return slot0._tmpData.id
+function var_0_6.GetTemplateID(arg_58_0)
+	return arg_58_0._tmpData.id
 end
 
-function slot6.GetUnitType(slot0)
-	return slot0._type
+function var_0_6.GetUnitType(arg_59_0)
+	return arg_59_0._type
 end
 
-function slot6.GetHPRate(slot0)
-	return slot0._currentHP / slot0:GetMaxHP()
+function var_0_6.GetHPRate(arg_60_0)
+	return arg_60_0._currentHP / arg_60_0:GetMaxHP()
 end
 
-function slot6.GetBoxSize(slot0)
-	return slot0._cldComponent:GetCldBoxSize()
+function var_0_6.GetBoxSize(arg_61_0)
+	return arg_61_0._cldComponent:GetCldBoxSize()
 end
 
-function slot6.GetSpeedRatio(slot0)
-	return uv0.GetSpeedRatio(slot0:GetSpeedExemptKey(), slot0._IFF)
+function var_0_6.GetSpeedRatio(arg_62_0)
+	return var_0_4.GetSpeedRatio(arg_62_0:GetSpeedExemptKey(), arg_62_0._IFF)
 end
 
-function slot6.GetSpeedExemptKey(slot0)
-	return slot0._speedExemptKey
+function var_0_6.GetSpeedExemptKey(arg_63_0)
+	return arg_63_0._speedExemptKey
 end
 
-function slot6.IsPlayerAircraft(slot0)
-	return slot0._isPlayerAircraft
+function var_0_6.IsPlayerAircraft(arg_64_0)
+	return arg_64_0._isPlayerAircraft
 end
 
-function slot6.IsShowHPBar(slot0)
+function var_0_6.IsShowHPBar(arg_65_0)
 	return false
 end
 
-function slot6.SetUnVisitable(slot0)
-	uv0.Battle.BattleAttr.UnVisitable(slot0)
+function var_0_6.SetUnVisitable(arg_66_0)
+	var_0_0.Battle.BattleAttr.UnVisitable(arg_66_0)
 end
 
-function slot6.SetVisitable(slot0)
-	uv0.Battle.BattleAttr.Visitable(slot0)
+function var_0_6.SetVisitable(arg_67_0)
+	var_0_0.Battle.BattleAttr.Visitable(arg_67_0)
 end
 
-function slot6.IsVisitable(slot0)
-	return uv0.Battle.BattleAttr.IsVisitable(slot0)
+function var_0_6.IsVisitable(arg_68_0)
+	return var_0_0.Battle.BattleAttr.IsVisitable(arg_68_0)
 end
 
-function slot6.OverrideDeadFX(slot0, slot1)
-	slot0._deadFX = slot1
+function var_0_6.OverrideDeadFX(arg_69_0, arg_69_1)
+	arg_69_0._deadFX = arg_69_1
 end
 
-function slot6.GetDeadFX(slot0)
-	return slot0._deadFX
+function var_0_6.GetDeadFX(arg_70_0)
+	return arg_70_0._deadFX
 end
 
-function slot6.TriggerBuff(slot0, slot1, slot2)
+function var_0_6.TriggerBuff(arg_71_0, arg_71_1, arg_71_2)
+	return
 end
 
-function slot6.AddCreateTimer(slot0, slot1, slot2)
-	slot0._currentState = slot0.STATE_CREATE
-	slot0._speedDir = slot1
-	slot0._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, slot2 or 1.5, function ()
-		uv0._currentState = uv0.STATE_ATTACK
-		uv0._speedDir = Vector3(uv0._dir, 0, 0)
+function var_0_6.AddCreateTimer(arg_72_0, arg_72_1, arg_72_2)
+	arg_72_0._currentState = arg_72_0.STATE_CREATE
+	arg_72_0._speedDir = arg_72_1
+	arg_72_2 = arg_72_2 or 1.5
 
-		pg.TimeMgr.GetInstance():RemoveBattleTimer(uv0._createTimer)
+	local function var_72_0()
+		arg_72_0._currentState = arg_72_0.STATE_ATTACK
+		arg_72_0._speedDir = Vector3(arg_72_0._dir, 0, 0)
 
-		uv0._createTimer = nil
-	end)
-end
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_72_0._createTimer)
 
-function slot6.Dispose(slot0)
-	uv0.EventDispatcher.DetachEventDispatcher(slot0)
-end
-
-function slot6.InitCldComponent(slot0)
-	slot1 = slot0:GetTemplate().cld_box
-
-	if slot0:GetDirection() == uv0.Battle.BattleConst.UnitDir.LEFT then
-		slot3 = slot0:GetTemplate().cld_offset[1] * -1
+		arg_72_0._createTimer = nil
 	end
 
-	slot0._cldComponent = uv0.Battle.BattleCubeCldComponent.New(slot1[1], slot1[2], slot1[3], slot3, slot2[3])
-
-	slot0._cldComponent:SetCldData({
-		type = uv1.CldType.AIRCRAFT,
-		IFF = slot0:GetIFF(),
-		UID = slot0:GetUniqueID()
-	})
+	arg_72_0._createTimer = pg.TimeMgr.GetInstance():AddBattleTimer("AddCreateTimer", 0, arg_72_2, var_72_0)
 end
 
-function slot6.GetCldBox(slot0)
-	return slot0._cldComponent:GetCldBox(slot0:GetPosition())
+function var_0_6.Dispose(arg_74_0)
+	var_0_0.EventDispatcher.DetachEventDispatcher(arg_74_0)
 end
 
-function slot6.GetCldData(slot0)
-	return slot0._cldComponent:GetCldData()
+function var_0_6.InitCldComponent(arg_75_0)
+	local var_75_0 = arg_75_0:GetTemplate().cld_box
+	local var_75_1 = arg_75_0:GetTemplate().cld_offset
+	local var_75_2 = var_75_1[1]
+
+	if arg_75_0:GetDirection() == var_0_0.Battle.BattleConst.UnitDir.LEFT then
+		var_75_2 = var_75_2 * -1
+	end
+
+	arg_75_0._cldComponent = var_0_0.Battle.BattleCubeCldComponent.New(var_75_0[1], var_75_0[2], var_75_0[3], var_75_2, var_75_1[3])
+
+	local var_75_3 = {
+		type = var_0_2.CldType.AIRCRAFT,
+		IFF = arg_75_0:GetIFF(),
+		UID = arg_75_0:GetUniqueID()
+	}
+
+	arg_75_0._cldComponent:SetCldData(var_75_3)
 end
 
-function slot6.AddBuff(slot0)
+function var_0_6.GetCldBox(arg_76_0)
+	return arg_76_0._cldComponent:GetCldBox(arg_76_0:GetPosition())
 end
 
-function slot6.SetBuffStack(slot0)
+function var_0_6.GetCldData(arg_77_0)
+	return arg_77_0._cldComponent:GetCldData()
 end
 
-function slot6.RemoveBuff(slot0)
+function var_0_6.AddBuff(arg_78_0)
+	return
 end
 
-function slot6.TriggerBuff(slot0)
+function var_0_6.SetBuffStack(arg_79_0)
+	return
 end
 
-function slot6.CloakExpose(slot0)
+function var_0_6.RemoveBuff(arg_80_0)
+	return
 end
 
-function slot6.GetCurrentOxyState(slot0)
+function var_0_6.TriggerBuff(arg_81_0)
+	return
+end
+
+function var_0_6.CloakExpose(arg_82_0)
+	return
+end
+
+function var_0_6.GetCurrentOxyState(arg_83_0)
 	return nil
 end
 
-function slot6.RemoveRemoteBoundBone(slot0)
+function var_0_6.RemoveRemoteBoundBone(arg_84_0)
+	return
 end
 
-function slot6.SetRemoteBoundBone(slot0)
+function var_0_6.SetRemoteBoundBone(arg_85_0)
+	return
 end
 
-function slot6.GetRemoteBoundBone(slot0)
+function var_0_6.GetRemoteBoundBone(arg_86_0)
+	return
 end

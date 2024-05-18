@@ -1,61 +1,69 @@
-slot0 = class("BuildShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BuildShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot6, slot7, slot8 = BuildShip.canBuildShipByBuildId(slot2.buildId, slot2.count or 1, slot2.isTicket)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.buildId
+	local var_1_2 = var_1_0.count or 1
+	local var_1_3 = var_1_0.isTicket
+	local var_1_4, var_1_5, var_1_6 = BuildShip.canBuildShipByBuildId(var_1_1, var_1_2, var_1_3)
 
-	if not slot6 then
-		if slot8 then
-			GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, slot8)
+	if not var_1_4 then
+		if var_1_6 then
+			GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, var_1_6)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(slot7)
+			pg.TipsMgr.GetInstance():ShowTips(var_1_5)
 		end
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(12002, {
-		id = slot3,
-		count = slot4,
-		costtype = slot5 and 1 or 0
-	}, 12003, function (slot0)
-		if slot0.result == 0 then
-			pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, uv0)
+		id = var_1_1,
+		count = var_1_2,
+		costtype = var_1_3 and 1 or 0
+	}, 12003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, var_1_2)
 
-			slot1 = pg.ship_data_create_material[uv1]
+			local var_2_0 = pg.ship_data_create_material[var_1_1]
 
-			if uv2 then
-				slot2 = getProxy(ActivityProxy)
-				slot3 = slot2:getBuildFreeActivityByBuildId(uv1)
-				slot3.data1 = slot3.data1 - uv0
+			if var_1_3 then
+				local var_2_1 = getProxy(ActivityProxy)
+				local var_2_2 = var_2_1:getBuildFreeActivityByBuildId(var_1_1)
 
-				slot2:updateActivity(slot3)
+				var_2_2.data1 = var_2_2.data1 - var_1_2
+
+				var_2_1:updateActivity(var_2_2)
 			else
-				getProxy(BagProxy):removeItemById(slot1.use_item, slot1.number_1 * uv0)
+				getProxy(BagProxy):removeItemById(var_2_0.use_item, var_2_0.number_1 * var_1_2)
 
-				slot3 = getProxy(PlayerProxy)
-				slot4 = slot3:getData()
+				local var_2_3 = getProxy(PlayerProxy)
+				local var_2_4 = var_2_3:getData()
 
-				slot4:consume({
-					gold = slot1.use_gold * uv0
+				var_2_4:consume({
+					gold = var_2_0.use_gold * var_1_2
 				})
-				slot3:updatePlayer(slot4)
+				var_2_3:updatePlayer(var_2_4)
 			end
 
-			if slot1.exchange_count > 0 then
-				getProxy(BuildShipProxy):changeRegularExchangeCount(uv0 * slot1.exchange_count)
+			local var_2_5 = getProxy(BuildShipProxy)
+
+			if var_2_0.exchange_count > 0 then
+				var_2_5:changeRegularExchangeCount(var_1_2 * var_2_0.exchange_count)
 			end
 
-			for slot6, slot7 in ipairs(slot0.build_info) do
-				slot2:addBuildShip(BuildShip.New(slot7))
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.build_info) do
+				local var_2_6 = BuildShip.New(iter_2_1)
+
+				var_2_5:addBuildShip(var_2_6)
 			end
 
-			uv3:sendNotification(GAME.BUILD_SHIP_DONE)
+			arg_1_0:sendNotification(GAME.BUILD_SHIP_DONE)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_buildShipMediator_startBuild"))
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_buildShip_error", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_buildShip_error", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

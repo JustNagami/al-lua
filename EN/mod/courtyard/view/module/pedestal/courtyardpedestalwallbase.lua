@@ -1,11 +1,11 @@
-slot0 = class("CourtYardPedestalWallBase", import(".CourtYardPedestalStructure"))
+﻿local var_0_0 = class("CourtYardPedestalWallBase", import(".CourtYardPedestalStructure"))
 
-function slot0.GetAssetPath(slot0)
-	return "furnitrues/base/wall_" .. slot0.level
+function var_0_0.GetAssetPath(arg_1_0)
+	return "furnitrues/base/wall_" .. arg_1_0.level
 end
 
-function slot0.OnLoaded(slot0, slot1)
-	slot1.transform:SetAsFirstSibling()
+function var_0_0.OnLoaded(arg_2_0, arg_2_1)
+	arg_2_1.transform:SetAsFirstSibling()
 end
 
-return slot0
+return var_0_0

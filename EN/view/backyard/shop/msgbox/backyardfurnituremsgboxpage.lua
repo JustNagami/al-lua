@@ -1,255 +1,287 @@
-slot0 = class("BackYardFurnitureMsgBoxPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("BackYardFurnitureMsgBoxPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FurnitureMsgboxPage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.nameTxt = slot0:findTF("frame/name"):GetComponent(typeof(Text))
-	slot0.themeTxt = slot0:findTF("frame/theme/Text"):GetComponent(typeof(Text))
-	slot0.descTxt = slot0:findTF("frame/desc"):GetComponent(typeof(Text))
-	slot0.iconContainer = slot0:findTF("frame/icon")
-	slot0.icon = slot0:findTF("frame/icon/Image"):GetComponent(typeof(Image))
-	slot0.playBtn = slot0:findTF("frame/icon/play")
-	slot0.rawIcon = slot0:findTF("frame/icon/rawImage"):GetComponent(typeof(RawImage))
-	slot0.shipTr = slot0:findTF("frame/ship")
-	slot0.shipIcon = slot0:findTF("frame/ship/icon"):GetComponent(typeof(Image))
-	slot0.shipTxt = slot0:findTF("frame/ship/Text"):GetComponent(typeof(Text))
-	slot0.countPanel = slot0:findTF("frame/count")
-	slot0.leftArr = slot0:findTF("frame/count/left_arr")
-	slot0.rightArr = slot0:findTF("frame/count/right_arr")
-	slot0.countTxt = slot0:findTF("frame/count/Text"):GetComponent(typeof(Text))
-	slot0.gemIcon = slot0:findTF("frame/price/gem")
-	slot0.gemCount = slot0:findTF("frame/price/gem_text"):GetComponent(typeof(Text))
-	slot0.goldIcon = slot0:findTF("frame/price/gold")
-	slot0.goldCount = slot0:findTF("frame/price/gold_text"):GetComponent(typeof(Text))
-	slot0.line = slot0:findTF("frame/price/line")
-	slot0.energyIcon = slot0:findTF("frame/energy"):GetComponent(typeof(Image))
-	slot0.energyTxt = slot0:findTF("frame/energy/Text"):GetComponent(typeof(Text))
-	slot0.energyAddition = slot0:findTF("frame/energy/Text/addition"):GetComponent(typeof(Image))
-	slot0.energyAdditionTxt = slot0:findTF("frame/energy/Text/addition/Text"):GetComponent(typeof(Text))
-	slot0.closeBtn = slot0:findTF("frame/close_btn")
-	slot0.btns = slot0:findTF("frame/btns")
-	slot0.goldPurchaseBtn = slot0:findTF("frame/btns/gold_purchase_btn")
-	slot0.gemPurchaseBtn = slot0:findTF("frame/btns/gem_purchase_btn")
-	slot0.goldPurchaseIcon = slot0:findTF("frame/btns/gold_purchase_btn/content/icon")
-	slot0.gemPurchaseIcon = slot0:findTF("frame/btns/gem_purchase_btn/content/icon")
-	slot0.maxCnt = slot0:findTF("frame/max_cnt"):GetComponent(typeof(Text))
-	slot0.maxBtn = slot0:findTF("frame/count/max")
-	slot0.maxBtnTxt = slot0.maxBtn:Find("Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.nameTxt = arg_2_0:findTF("frame/name"):GetComponent(typeof(Text))
+	arg_2_0.themeTxt = arg_2_0:findTF("frame/theme/Text"):GetComponent(typeof(Text))
+	arg_2_0.descTxt = arg_2_0:findTF("frame/desc"):GetComponent(typeof(Text))
+	arg_2_0.iconContainer = arg_2_0:findTF("frame/icon")
+	arg_2_0.icon = arg_2_0:findTF("frame/icon/Image"):GetComponent(typeof(Image))
+	arg_2_0.playBtn = arg_2_0:findTF("frame/icon/play")
+	arg_2_0.rawIcon = arg_2_0:findTF("frame/icon/rawImage"):GetComponent(typeof(RawImage))
+	arg_2_0.shipTr = arg_2_0:findTF("frame/ship")
+	arg_2_0.shipIcon = arg_2_0:findTF("frame/ship/icon"):GetComponent(typeof(Image))
+	arg_2_0.shipTxt = arg_2_0:findTF("frame/ship/Text"):GetComponent(typeof(Text))
+	arg_2_0.countPanel = arg_2_0:findTF("frame/count")
+	arg_2_0.leftArr = arg_2_0:findTF("frame/count/left_arr")
+	arg_2_0.rightArr = arg_2_0:findTF("frame/count/right_arr")
+	arg_2_0.countTxt = arg_2_0:findTF("frame/count/Text"):GetComponent(typeof(Text))
+	arg_2_0.gemIcon = arg_2_0:findTF("frame/price/gem")
+	arg_2_0.gemCount = arg_2_0:findTF("frame/price/gem_text"):GetComponent(typeof(Text))
+	arg_2_0.goldIcon = arg_2_0:findTF("frame/price/gold")
+	arg_2_0.goldCount = arg_2_0:findTF("frame/price/gold_text"):GetComponent(typeof(Text))
+	arg_2_0.line = arg_2_0:findTF("frame/price/line")
+	arg_2_0.energyIcon = arg_2_0:findTF("frame/energy"):GetComponent(typeof(Image))
+	arg_2_0.energyTxt = arg_2_0:findTF("frame/energy/Text"):GetComponent(typeof(Text))
+	arg_2_0.energyAddition = arg_2_0:findTF("frame/energy/Text/addition"):GetComponent(typeof(Image))
+	arg_2_0.energyAdditionTxt = arg_2_0:findTF("frame/energy/Text/addition/Text"):GetComponent(typeof(Text))
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/close_btn")
+	arg_2_0.btns = arg_2_0:findTF("frame/btns")
+	arg_2_0.goldPurchaseBtn = arg_2_0:findTF("frame/btns/gold_purchase_btn")
+	arg_2_0.gemPurchaseBtn = arg_2_0:findTF("frame/btns/gem_purchase_btn")
+	arg_2_0.goldPurchaseIcon = arg_2_0:findTF("frame/btns/gold_purchase_btn/content/icon")
+	arg_2_0.gemPurchaseIcon = arg_2_0:findTF("frame/btns/gem_purchase_btn/content/icon")
+	arg_2_0.maxCnt = arg_2_0:findTF("frame/max_cnt"):GetComponent(typeof(Text))
+	arg_2_0.maxBtn = arg_2_0:findTF("frame/count/max")
+	arg_2_0.maxBtnTxt = arg_2_0.maxBtn:Find("Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("frame/price/label"), i18n("backyard_theme_total_print"))
-	setActive(slot0.rawIcon, false)
+	setText(arg_2_0:findTF("frame/price/label"), i18n("backyard_theme_total_print"))
+	setActive(arg_2_0.rawIcon, false)
 end
 
-function slot0.OnInit(slot0)
-	function slot1()
-		slot0 = {}
+function var_0_0.OnInit(arg_3_0)
+	local function var_3_0()
+		local var_4_0 = {}
 
-		for slot4 = 1, uv0.count do
-			table.insert(slot0, uv0.furniture.id)
+		for iter_4_0 = 1, arg_3_0.count do
+			table.insert(var_4_0, arg_3_0.furniture.id)
 		end
 
-		return slot0
+		return var_4_0
 	end
 
-	onButton(slot0, slot0.goldPurchaseBtn, function ()
-		uv1:emit(NewBackYardShopMediator.ON_SHOPPING, uv0(), PlayerConst.ResDormMoney)
-		uv1:Hide()
+	onButton(arg_3_0, arg_3_0.goldPurchaseBtn, function()
+		local var_5_0 = var_3_0()
+
+		arg_3_0:emit(NewBackYardShopMediator.ON_SHOPPING, var_5_0, PlayerConst.ResDormMoney)
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.gemPurchaseBtn, function ()
-		uv1:emit(NewBackYardShopMediator.ON_SHOPPING, uv0(), PlayerConst.ResDiamond)
-		uv1:Hide()
+	onButton(arg_3_0, arg_3_0.gemPurchaseBtn, function()
+		local var_6_0 = var_3_0()
+
+		arg_3_0:emit(NewBackYardShopMediator.ON_SHOPPING, var_6_0, PlayerConst.ResDiamond)
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.leftArr, function ()
-		if uv0.count <= 1 then
+	onButton(arg_3_0, arg_3_0.leftArr, function()
+		if arg_3_0.count <= 1 then
 			return
 		end
 
-		uv0.count = uv0.count - 1
+		arg_3_0.count = arg_3_0.count - 1
 
-		uv0:UpdatePrice()
+		arg_3_0:UpdatePrice()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.rightArr, function ()
-		if uv0.count == uv0.maxCount then
+	onButton(arg_3_0, arg_3_0.rightArr, function()
+		if arg_3_0.count == arg_3_0.maxCount then
 			return
 		end
 
-		uv0.count = uv0.count + 1
+		arg_3_0.count = arg_3_0.count + 1
 
-		uv0:UpdatePrice()
+		arg_3_0:UpdatePrice()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.maxBtn, function ()
-		uv0.count = uv0.maxCount
+	onButton(arg_3_0, arg_3_0.maxBtn, function()
+		arg_3_0.count = arg_3_0.maxCount
 
-		uv0:UpdatePrice()
+		arg_3_0:UpdatePrice()
 	end, SFX_PANEL)
 end
 
-function slot0.PlayerUpdated(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.PlayerUpdated(arg_12_0, arg_12_1)
+	arg_12_0.player = arg_12_1
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3)
-	slot0.dorm = slot2
-	slot0.furniture = slot1
-	slot0.count = 1
-	slot0.player = slot3
-	slot0.maxCount = slot1:getConfig("count") - slot1.count
-	slot4 = slot0.maxCount > 1
+function var_0_0.SetUp(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	arg_13_0.dorm = arg_13_2
+	arg_13_0.furniture = arg_13_1
+	arg_13_0.count = 1
+	arg_13_0.player = arg_13_3
+	arg_13_0.maxCount = arg_13_1:getConfig("count") - arg_13_1.count
 
-	setActive(slot0.maxBtn, slot4)
-	setAnchoredPosition(slot0.countPanel, {
-		x = slot4 and 200 or 258
+	local var_13_0 = arg_13_0.maxCount > 1
+
+	setActive(arg_13_0.maxBtn, var_13_0)
+	setAnchoredPosition(arg_13_0.countPanel, {
+		x = var_13_0 and 200 or 258
 	})
 
-	slot0.maxBtnTxt.text = "MAX"
+	arg_13_0.maxBtnTxt.text = "MAX"
 
-	slot0:UpdateMainInfo()
-	slot0:UpdateSkinType()
-	slot0:Show()
-	setText(slot0.gemPurchaseBtn:Find("content/Text"), i18n("word_buy"))
-	setText(slot0.goldPurchaseBtn:Find("content/Text"), i18n("word_buy"))
-	setActive(slot0.goldPurchaseIcon, true)
-	setActive(slot0.gemPurchaseIcon, true)
+	arg_13_0:UpdateMainInfo()
+	arg_13_0:UpdateSkinType()
+	arg_13_0:Show()
+	setText(arg_13_0.gemPurchaseBtn:Find("content/Text"), i18n("word_buy"))
+	setText(arg_13_0.goldPurchaseBtn:Find("content/Text"), i18n("word_buy"))
+	setActive(arg_13_0.goldPurchaseIcon, true)
+	setActive(arg_13_0.gemPurchaseIcon, true)
 end
 
-function slot0.UpdateSkinType(slot0)
-	slot2 = Goods.ExistFurniture(Goods.FurnitureId2Id(slot0.furniture.id))
+function var_0_0.UpdateSkinType(arg_14_0)
+	local var_14_0 = Goods.FurnitureId2Id(arg_14_0.furniture.id)
+	local var_14_1 = Goods.ExistFurniture(var_14_0)
 
-	setActive(slot0.shipTr, slot2)
+	setActive(arg_14_0.shipTr, var_14_1)
 
-	if slot2 then
-		slot5 = pg.ship_skin_template[Goods.Id2ShipSkinId(Goods.GetFurnitureConfig(slot1).id)]
+	if var_14_1 then
+		local var_14_2 = Goods.GetFurnitureConfig(var_14_0)
+		local var_14_3 = Goods.Id2ShipSkinId(var_14_2.id)
+		local var_14_4 = pg.ship_skin_template[var_14_3]
 
-		GetImageSpriteFromAtlasAsync("QIcon/" .. slot5.prefab, "", slot0.shipIcon.gameObject)
+		GetImageSpriteFromAtlasAsync("QIcon/" .. var_14_4.prefab, "", arg_14_0.shipIcon.gameObject)
 
-		slot0.shipTxt.text = shortenString(ShipGroup.getDefaultShipConfig(slot5.ship_group).name .. "-" .. slot5.name, 15)
+		local var_14_5 = ShipGroup.getDefaultShipConfig(var_14_4.ship_group)
+
+		arg_14_0.shipTxt.text = shortenString(var_14_5.name .. "-" .. var_14_4.name, 15)
 	end
 end
 
-function slot0.UpdateMainInfo(slot0)
-	slot1 = slot0.furniture
-	slot0.nameTxt.text = HXSet.hxLan(slot1:getConfig("name"))
-	slot0.themeTxt.text = slot1:GetThemeName()
-	slot0.descTxt.text = HXSet.hxLan(slot1:getConfig("describe"))
+function var_0_0.UpdateMainInfo(arg_15_0)
+	local var_15_0 = arg_15_0.furniture
+	local var_15_1 = HXSet.hxLan(var_15_0:getConfig("name"))
 
-	slot0:UpdateIcon()
-	slot0:UpdatePrice()
+	arg_15_0.nameTxt.text = var_15_1
+	arg_15_0.themeTxt.text = var_15_0:GetThemeName()
+	arg_15_0.descTxt.text = HXSet.hxLan(var_15_0:getConfig("describe"))
 
-	slot3 = slot1:canPurchaseByDormMoeny()
-	slot4 = slot1:canPurchaseByGem()
+	arg_15_0:UpdateIcon()
+	arg_15_0:UpdatePrice()
 
-	setActive(slot0.goldPurchaseBtn, slot3)
-	setActive(slot0.gemPurchaseBtn, slot4)
-	setActive(slot0.gemIcon, slot4)
-	setActive(slot0.gemCount, slot4)
-	setActive(slot0.goldIcon, slot3)
-	setActive(slot0.goldCount, slot3)
-	setActive(slot0.line, slot3 and slot4)
+	local var_15_2 = var_15_0:canPurchaseByDormMoeny()
+	local var_15_3 = var_15_0:canPurchaseByGem()
 
-	if slot4 and slot3 then
-		slot0.goldPurchaseBtn:GetComponent(typeof(LayoutElement)).preferredWidth = 239
-		slot0.gemPurchaseBtn:GetComponent(typeof(LayoutElement)).preferredWidth = 239
-	elseif slot4 and not slot3 then
-		slot5.preferredWidth = 0
-		slot6.preferredWidth = 510
-	elseif not slot4 and slot3 then
-		slot5.preferredWidth = 510
-		slot6.preferredWidth = 0
+	setActive(arg_15_0.goldPurchaseBtn, var_15_2)
+	setActive(arg_15_0.gemPurchaseBtn, var_15_3)
+	setActive(arg_15_0.gemIcon, var_15_3)
+	setActive(arg_15_0.gemCount, var_15_3)
+	setActive(arg_15_0.goldIcon, var_15_2)
+	setActive(arg_15_0.goldCount, var_15_2)
+	setActive(arg_15_0.line, var_15_2 and var_15_3)
+
+	local var_15_4 = arg_15_0.goldPurchaseBtn:GetComponent(typeof(LayoutElement))
+	local var_15_5 = arg_15_0.gemPurchaseBtn:GetComponent(typeof(LayoutElement))
+
+	if var_15_3 and var_15_2 then
+		var_15_4.preferredWidth = 239
+		var_15_5.preferredWidth = 239
+	elseif var_15_3 and not var_15_2 then
+		var_15_4.preferredWidth = 0
+		var_15_5.preferredWidth = 510
+	elseif not var_15_3 and var_15_2 then
+		var_15_4.preferredWidth = 510
+		var_15_5.preferredWidth = 0
 	end
 
-	slot0.maxCnt.text = ""
+	arg_15_0.maxCnt.text = ""
 
-	if slot1:getConfig("count") > 1 then
-		slot0.maxCnt.text = slot1.count .. "/" .. slot1:getConfig("count")
+	if var_15_0:getConfig("count") > 1 then
+		arg_15_0.maxCnt.text = var_15_0.count .. "/" .. var_15_0:getConfig("count")
 	end
 end
 
-function slot0.UpdateEnergy(slot0, slot1)
-	LoadSpriteAtlasAsync("ui/CourtyardUI_atlas", "express_" .. slot0.dorm:_GetComfortableLevel(), function (slot0)
-		if uv0.exited then
+function var_0_0.UpdateEnergy(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.dorm:getComfortable()
+	local var_16_1 = arg_16_0.dorm:getComfortable(arg_16_1) - var_16_0
+	local var_16_2 = var_16_1 > 0
+	local var_16_3 = arg_16_0.dorm:_GetComfortableLevel()
+
+	LoadSpriteAtlasAsync("ui/CourtyardUI_atlas", "express_" .. var_16_3, function(arg_17_0)
+		if arg_16_0.exited then
 			return
 		end
 
-		uv0.energyIcon.sprite = slot0
+		arg_16_0.energyIcon.sprite = arg_17_0
 
-		uv0.energyIcon:SetNativeSize()
+		arg_16_0.energyIcon:SetNativeSize()
 	end)
 
-	slot0.energyAddition.color = slot0.dorm:getComfortable(slot1) - slot0.dorm:getComfortable() > 0 and Color.New(0.5921569, 0.8470588, 0.4235294, 1) or Color.New(0.945098, 0.7960784, 0.3019608, 1)
-	slot0.energyTxt.text = slot2
-	slot0.energyAdditionTxt.text = " +" .. slot4
+	local var_16_4 = Color.New(0.5921569, 0.8470588, 0.4235294, 1)
+	local var_16_5 = Color.New(0.945098, 0.7960784, 0.3019608, 1)
+
+	arg_16_0.energyAddition.color = var_16_2 and var_16_4 or var_16_5
+	arg_16_0.energyTxt.text = var_16_0
+	arg_16_0.energyAdditionTxt.text = " +" .. var_16_1
 end
 
-function slot0.UpdatePrice(slot0)
-	slot1 = slot0.furniture
-	slot0.gemCount.text = slot1:getPrice(PlayerConst.ResDiamond) * slot0.count
-	slot0.goldCount.text = slot1:getPrice(PlayerConst.ResDormMoney) * slot0.count
-	slot0.countTxt.text = slot0.count
-	slot4 = {}
+function var_0_0.UpdatePrice(arg_18_0)
+	local var_18_0 = arg_18_0.furniture
+	local var_18_1 = var_18_0:getPrice(PlayerConst.ResDormMoney)
+	local var_18_2 = var_18_0:getPrice(PlayerConst.ResDiamond)
 
-	for slot8 = 1, slot0.count do
-		table.insert(slot4, Furniture.New({
-			id = slot0.furniture.id
+	arg_18_0.gemCount.text = var_18_2 * arg_18_0.count
+	arg_18_0.goldCount.text = var_18_1 * arg_18_0.count
+	arg_18_0.countTxt.text = arg_18_0.count
+
+	local var_18_3 = {}
+
+	for iter_18_0 = 1, arg_18_0.count do
+		table.insert(var_18_3, Furniture.New({
+			id = arg_18_0.furniture.id
 		}))
 	end
 
-	slot0:UpdateEnergy(slot4)
+	arg_18_0:UpdateEnergy(var_18_3)
 end
 
-function slot0.UpdateIcon(slot0)
-	slot0.icon.sprite = GetSpriteFromAtlas("furnitureicon/" .. slot0.furniture:getConfig("icon"), "")
+function var_0_0.UpdateIcon(arg_19_0)
+	arg_19_0.icon.sprite = GetSpriteFromAtlas("furnitureicon/" .. arg_19_0.furniture:getConfig("icon"), "")
 
-	slot0.icon:SetNativeSize()
-	setActive(slot0.icon.gameObject, true)
+	arg_19_0.icon:SetNativeSize()
+	setActive(arg_19_0.icon.gameObject, true)
 
-	slot2 = pg.furniture_data_template[slot0.furniture.configId].interAction ~= nil or slot1.spine ~= nil and slot1.spine[2] ~= nil
+	local var_19_0 = pg.furniture_data_template[arg_19_0.furniture.configId]
+	local var_19_1
 
-	setActive(slot0.playBtn, false)
-	onButton(slot0, slot0.playBtn, function ()
-		slot2 = 312011
+	var_19_1 = var_19_0.interAction ~= nil or var_19_0.spine ~= nil and var_19_0.spine[2] ~= nil
 
-		if Goods.ExistFurniture(Goods.FurnitureId2Id(uv0.furniture.id)) then
-			slot2 = Goods.Id2ShipSkinId(slot0)
+	setActive(arg_19_0.playBtn, false)
+	onButton(arg_19_0, arg_19_0.playBtn, function()
+		local var_20_0 = Goods.FurnitureId2Id(arg_19_0.furniture.id)
+		local var_20_1 = Goods.ExistFurniture(var_20_0)
+		local var_20_2 = 312011
+
+		if var_20_1 then
+			var_20_2 = Goods.Id2ShipSkinId(var_20_0)
 		end
 
-		uv0.interactionPreview = CourtyardInteractionPreview.New(pg.UIMgr.GetInstance().OverlayMain, uv0._event)
+		arg_19_0.interactionPreview = CourtyardInteractionPreview.New(pg.UIMgr.GetInstance().OverlayMain, arg_19_0._event)
 
-		uv0.interactionPreview:ExecuteAction("Show", uv1.id, slot2)
+		arg_19_0.interactionPreview:ExecuteAction("Show", var_19_0.id, var_20_2)
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0)
-	slot0.isShowing = true
+function var_0_0.Show(arg_21_0)
+	arg_21_0.isShowing = true
 
-	uv0.super.Show(slot0)
-	SetParent(slot0._tf, pg.UIMgr.GetInstance().OverlayMain)
+	var_0_0.super.Show(arg_21_0)
+	SetParent(arg_21_0._tf, pg.UIMgr.GetInstance().OverlayMain)
 end
 
-function slot0.Hide(slot0)
-	slot0.isShowing = false
+function var_0_0.Hide(arg_22_0)
+	arg_22_0.isShowing = false
 
-	uv0.super.Hide(slot0)
-	SetParent(slot0._tf, slot0._parentTf)
+	var_0_0.super.Hide(arg_22_0)
+	SetParent(arg_22_0._tf, arg_22_0._parentTf)
 
-	if slot0.interactionPreview then
-		slot0.interactionPreview:Destroy()
+	if arg_22_0.interactionPreview then
+		arg_22_0.interactionPreview:Destroy()
 
-		slot0.interactionPreview = nil
+		arg_22_0.interactionPreview = nil
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0.isShowing then
-		slot0:Hide()
+function var_0_0.OnDestroy(arg_23_0)
+	if arg_23_0.isShowing then
+		arg_23_0:Hide()
 	end
 end
 
-return slot0
+return var_0_0

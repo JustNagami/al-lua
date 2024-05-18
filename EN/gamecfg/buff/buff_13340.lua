@@ -1,4 +1,40 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13340,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					3
+				},
+				type = {
+					9
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				skill_id = 13341,
+				minWeaponNumber = 1,
+				check_weapon = true,
+				index = {
+					3
+				},
+				type = {
+					2
+				}
+			}
+		}
+	},
 	{
 		shipInfoScene = {
 			equip = {
@@ -189,41 +225,5 @@ return {
 	stack = 1,
 	id = 13340,
 	icon = 13340,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 13340,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					3
-				},
-				type = {
-					9
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				skill_id = 13341,
-				minWeaponNumber = 1,
-				check_weapon = true,
-				index = {
-					3
-				},
-				type = {
-					2
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

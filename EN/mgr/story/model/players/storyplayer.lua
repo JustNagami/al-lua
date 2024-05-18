@@ -1,354 +1,360 @@
-slot0 = class("StoryPlayer", import("..animation.StoryAnimtion"))
-slot1 = 0
-slot2 = 1
-slot3 = 2
-slot4 = 3
-slot5 = 4
-slot6 = 5
-slot7 = 6
-slot8 = 7
-slot9 = 0
-slot10 = 1
-slot11 = 2
+﻿local var_0_0 = class("StoryPlayer", import("..animation.StoryAnimtion"))
+local var_0_1 = 0
+local var_0_2 = 1
+local var_0_3 = 2
+local var_0_4 = 3
+local var_0_5 = 4
+local var_0_6 = 5
+local var_0_7 = 6
+local var_0_8 = 7
+local var_0_9 = 0
+local var_0_10 = 1
+local var_0_11 = 2
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0.front = slot0:findTF("front")
-	slot0.actorTr = slot0._tf:Find("actor")
-	slot0.frontTr = slot0._tf:Find("front")
-	slot0.backPanel = slot0:findTF("back")
-	slot0.goCG = GetOrAddComponent(slot0._tf, typeof(CanvasGroup))
-	slot0.asidePanel = slot0:findTF("front/aside_panel")
-	slot0.bgGlitch = slot0:findTF("back/bg_glitch")
-	slot0.oldPhoto = slot0:findTF("front/oldphoto"):GetComponent(typeof(Image))
-	slot0.bgPanel = slot0:findTF("back/bg")
-	slot0.bgPanelCg = slot0.bgPanel:GetComponent(typeof(CanvasGroup))
-	slot0.bgImage = slot0:findTF("image", slot0.bgPanel):GetComponent(typeof(Image))
-	slot0.mainImg = slot0._tf:GetComponent(typeof(Image))
-	slot0.castPanel = slot0:findTF("front/cast_panel")
-	slot0.centerPanel = slot0._tf:Find("center")
-	slot0.actorPanel = slot0:findTF("actor")
-	slot0.dialoguePanel = slot0:findTF("front/dialogue")
-	slot0.effectPanel = slot0:findTF("front/effect")
-	slot0.movePanel = slot0:findTF("front/move_layer")
-	slot0.curtain = slot0:findTF("back/curtain")
-	slot0.curtainCg = slot0.curtain:GetComponent(typeof(CanvasGroup))
-	slot0.flash = slot0:findTF("front/flash")
-	slot0.flashImg = slot0.flash:GetComponent(typeof(Image))
-	slot0.flashCg = slot0.flash:GetComponent(typeof(CanvasGroup))
-	slot0.curtainF = slot0:findTF("back/curtain_front")
-	slot0.curtainFCg = slot0.curtainF:GetComponent(typeof(CanvasGroup))
-	slot0.locationTr = slot0:findTF("front/location")
-	slot0.locationTxt = slot0:findTF("front/location/Text"):GetComponent(typeof(Text))
-	slot0.locationTrPos = slot0.locationTr.localPosition
-	slot0.locationAnim = slot0.locationTr:GetComponent(typeof(Animation))
-	slot0.locationAniEvent = slot0.locationTr:GetComponent(typeof(DftAniEvent))
-	slot0.iconImage = slot0:findTF("front/icon"):GetComponent(typeof(Image))
-	slot0.dialogueWin = nil
-	slot0.bgs = {}
-	slot0.branchCodeList = {}
-	slot0.stop = false
-	slot0.pause = false
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.front = arg_1_0:findTF("front")
+	arg_1_0.actorTr = arg_1_0._tf:Find("actor")
+	arg_1_0.frontTr = arg_1_0._tf:Find("front")
+	arg_1_0.backPanel = arg_1_0:findTF("back")
+	arg_1_0.goCG = GetOrAddComponent(arg_1_0._tf, typeof(CanvasGroup))
+	arg_1_0.asidePanel = arg_1_0:findTF("front/aside_panel")
+	arg_1_0.bgGlitch = arg_1_0:findTF("back/bg_glitch")
+	arg_1_0.oldPhoto = arg_1_0:findTF("front/oldphoto"):GetComponent(typeof(Image))
+	arg_1_0.bgPanel = arg_1_0:findTF("back/bg")
+	arg_1_0.bgPanelCg = arg_1_0.bgPanel:GetComponent(typeof(CanvasGroup))
+	arg_1_0.bgImage = arg_1_0:findTF("image", arg_1_0.bgPanel):GetComponent(typeof(Image))
+	arg_1_0.mainImg = arg_1_0._tf:GetComponent(typeof(Image))
+	arg_1_0.castPanel = arg_1_0:findTF("front/cast_panel")
+	arg_1_0.centerPanel = arg_1_0._tf:Find("center")
+	arg_1_0.actorPanel = arg_1_0:findTF("actor")
+	arg_1_0.dialoguePanel = arg_1_0:findTF("front/dialogue")
+	arg_1_0.effectPanel = arg_1_0:findTF("front/effect")
+	arg_1_0.movePanel = arg_1_0:findTF("front/move_layer")
+	arg_1_0.curtain = arg_1_0:findTF("back/curtain")
+	arg_1_0.curtainCg = arg_1_0.curtain:GetComponent(typeof(CanvasGroup))
+	arg_1_0.flash = arg_1_0:findTF("front/flash")
+	arg_1_0.flashImg = arg_1_0.flash:GetComponent(typeof(Image))
+	arg_1_0.flashCg = arg_1_0.flash:GetComponent(typeof(CanvasGroup))
+	arg_1_0.curtainF = arg_1_0:findTF("back/curtain_front")
+	arg_1_0.curtainFCg = arg_1_0.curtainF:GetComponent(typeof(CanvasGroup))
+	arg_1_0.locationTr = arg_1_0:findTF("front/location")
+	arg_1_0.locationTxt = arg_1_0:findTF("front/location/Text"):GetComponent(typeof(Text))
+	arg_1_0.locationTrPos = arg_1_0.locationTr.localPosition
+	arg_1_0.locationAnim = arg_1_0.locationTr:GetComponent(typeof(Animation))
+	arg_1_0.locationAniEvent = arg_1_0.locationTr:GetComponent(typeof(DftAniEvent))
+	arg_1_0.iconImage = arg_1_0:findTF("front/icon"):GetComponent(typeof(Image))
+	arg_1_0.dialogueWin = nil
+	arg_1_0.bgs = {}
+	arg_1_0.branchCodeList = {}
+	arg_1_0.stop = false
+	arg_1_0.pause = false
 end
 
-function slot0.StoryStart(slot0, slot1)
-	slot0.branchCodeList = {}
+function var_0_0.StoryStart(arg_2_0, arg_2_1)
+	arg_2_0.branchCodeList = {}
 
-	eachChild(slot0.dialoguePanel, function (slot0)
-		setActive(slot0, false)
+	eachChild(arg_2_0.dialoguePanel, function(arg_3_0)
+		setActive(arg_3_0, false)
 	end)
 
-	slot0.dialogueWin = slot0.dialoguePanel:Find(slot1:GetDialogueStyleName())
+	arg_2_0.dialogueWin = arg_2_0.dialoguePanel:Find(arg_2_1:GetDialogueStyleName())
 
-	setActive(slot0.dialogueWin, true)
+	setActive(arg_2_0.dialogueWin, true)
 
-	slot0.optionLUIlist = UIItemList.New(slot0.dialogueWin:Find("options_panel/options_l"), slot0.dialogueWin:Find("options_panel/options_l/option_tpl"))
-	slot0.optionCUIlist = UIItemList.New(slot0.dialogueWin:Find("options_panel/options_c"), slot0.dialogueWin:Find("options_panel/options_c/option_tpl"))
-	slot0.optionsCg = slot0.dialogueWin:Find("options_panel"):GetComponent(typeof(CanvasGroup))
+	arg_2_0.optionLUIlist = UIItemList.New(arg_2_0.dialogueWin:Find("options_panel/options_l"), arg_2_0.dialogueWin:Find("options_panel/options_l/option_tpl"))
+	arg_2_0.optionCUIlist = UIItemList.New(arg_2_0.dialogueWin:Find("options_panel/options_c"), arg_2_0.dialogueWin:Find("options_panel/options_c/option_tpl"))
+	arg_2_0.optionsCg = arg_2_0.dialogueWin:Find("options_panel"):GetComponent(typeof(CanvasGroup))
 
-	slot0:OnStart(slot1)
+	arg_2_0:OnStart(arg_2_1)
 end
 
-function slot0.GetOptionContainer(slot0, slot1)
-	slot2 = slot1:GetOptionCnt()
+function var_0_0.GetOptionContainer(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:GetOptionCnt()
 
-	if slot0.script:IsDialogueStyle2() then
-		setActive(slot0.optionLUIlist.container, true)
-		setActive(slot0.optionCUIlist.container, false)
+	if arg_4_0.script:IsDialogueStyle2() then
+		setActive(arg_4_0.optionLUIlist.container, true)
+		setActive(arg_4_0.optionCUIlist.container, false)
 
-		return slot0.optionLUIlist, true
+		return arg_4_0.optionLUIlist, true
 	end
 
-	if slot2 <= 3 then
-		setActive(slot0.optionLUIlist.container, false)
-		setActive(slot0.optionCUIlist.container, true)
+	if var_4_0 <= 3 then
+		setActive(arg_4_0.optionLUIlist.container, false)
+		setActive(arg_4_0.optionCUIlist.container, true)
 
-		return slot0.optionCUIlist, false
+		return arg_4_0.optionCUIlist, false
 	else
-		setActive(slot0.optionLUIlist.container, true)
-		setActive(slot0.optionCUIlist.container, false)
+		setActive(arg_4_0.optionLUIlist.container, true)
+		setActive(arg_4_0.optionCUIlist.container, false)
 
-		return slot0.optionLUIlist, true
+		return arg_4_0.optionLUIlist, true
 	end
 end
 
-function slot0.Pause(slot0)
-	slot0.pause = true
+function var_0_0.Pause(arg_5_0)
+	arg_5_0.pause = true
 
-	slot0:PauseAllAnimation()
-	pg.ViewUtils.SetLayer(slot0.effectPanel, Layer.UIHidden)
+	arg_5_0:PauseAllAnimation()
+	pg.ViewUtils.SetLayer(arg_5_0.effectPanel, Layer.UIHidden)
 end
 
-function slot0.Resume(slot0)
-	slot0.pause = false
+function var_0_0.Resume(arg_6_0)
+	arg_6_0.pause = false
 
-	slot0:ResumeAllAnimation()
-	pg.ViewUtils.SetLayer(slot0.effectPanel, Layer.UI)
+	arg_6_0:ResumeAllAnimation()
+	pg.ViewUtils.SetLayer(arg_6_0.effectPanel, Layer.UI)
 end
 
-function slot0.Stop(slot0)
-	slot0.stop = true
+function var_0_0.Stop(arg_7_0)
+	arg_7_0.stop = true
 
-	slot0:NextOneImmediately()
+	arg_7_0:NextOneImmediately()
 end
 
-function slot0.Play(slot0, slot1, slot2, slot3)
-	if not slot1 then
-		slot3()
+function var_0_0.Play(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	if not arg_8_1 then
+		arg_8_3()
 
 		return
 	end
 
-	if slot1:GetNextScriptName() or slot0.stop then
-		slot3()
+	if arg_8_1:GetNextScriptName() or arg_8_0.stop then
+		arg_8_3()
 
 		return
 	end
 
-	if not slot1:GetStepByIndex(slot2) then
-		slot3()
+	local var_8_0 = arg_8_1:GetStepByIndex(arg_8_2)
+
+	if not var_8_0 then
+		arg_8_3()
 
 		return
 	end
 
-	pg.NewStoryMgr.GetInstance():AddRecord(slot4)
+	pg.NewStoryMgr.GetInstance():AddRecord(var_8_0)
 
-	if slot4:ShouldJumpToNextScript() then
-		slot1:SetNextScriptName(slot4:GetNextScriptName())
-		slot3()
-
-		return
-	end
-
-	if slot1:ShouldSkipAll() then
-		slot0:ClearEffects()
-	end
-
-	slot6 = false
-
-	if slot5 and slot4:IsImport() and not pg.NewStoryMgr.GetInstance():IsReView() then
-		slot6 = true
-	elseif slot5 then
-		slot3()
+	if var_8_0:ShouldJumpToNextScript() then
+		arg_8_1:SetNextScriptName(var_8_0:GetNextScriptName())
+		arg_8_3()
 
 		return
 	end
 
-	slot0.script = slot1
-	slot0.callback = slot3
-	slot0.step = slot4
-	slot0.autoNext = slot1:GetAutoPlayFlag()
-	slot0.stage = uv0
-	slot7 = slot1:GetTriggerDelayTime()
+	local var_8_1 = arg_8_1:ShouldSkipAll()
 
-	if slot0.autoNext and slot4:IsImport() and not slot4.optionSelCode then
-		slot0.autoNext = nil
+	if var_8_1 then
+		arg_8_0:ClearEffects()
 	end
 
-	slot0:SetTimeScale(1 - slot1:GetPlaySpeed() * 0.1)
+	local var_8_2 = false
 
-	slot8 = slot1:GetPrevStep(slot2)
+	if var_8_1 and var_8_0:IsImport() and not pg.NewStoryMgr.GetInstance():IsReView() then
+		var_8_2 = true
+	elseif var_8_1 then
+		arg_8_3()
+
+		return
+	end
+
+	arg_8_0.script = arg_8_1
+	arg_8_0.callback = arg_8_3
+	arg_8_0.step = var_8_0
+	arg_8_0.autoNext = arg_8_1:GetAutoPlayFlag()
+	arg_8_0.stage = var_0_1
+
+	local var_8_3 = arg_8_1:GetTriggerDelayTime()
+
+	if arg_8_0.autoNext and var_8_0:IsImport() and not var_8_0.optionSelCode then
+		arg_8_0.autoNext = nil
+	end
+
+	arg_8_0:SetTimeScale(1 - arg_8_1:GetPlaySpeed() * 0.1)
+
+	local var_8_4 = arg_8_1:GetPrevStep(arg_8_2)
 
 	seriesAsync({
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_9_0)
+			if not arg_8_0:NextStage(var_0_2) then
 				return
 			end
 
 			parallelAsync({
-				function (slot0)
-					uv0:Reset(uv1, uv2, slot0)
-					uv0:UpdateBg(uv1)
-					uv0:PlayBgm(uv1)
+				function(arg_10_0)
+					arg_8_0:Reset(var_8_0, var_8_4, arg_10_0)
+					arg_8_0:UpdateBg(var_8_0)
+					arg_8_0:PlayBgm(var_8_0)
 				end,
-				function (slot0)
-					uv0:LoadEffects(uv1, slot0)
+				function(arg_11_0)
+					arg_8_0:LoadEffects(var_8_0, arg_11_0)
 				end,
-				function (slot0)
-					uv0:flashin(uv1, slot0)
+				function(arg_12_0)
+					arg_8_0:flashin(var_8_0, arg_12_0)
 				end
-			}, slot0)
+			}, arg_9_0)
 		end,
-		function (slot0)
-			if uv0 then
-				uv1:StopSkip()
+		function(arg_13_0)
+			if var_8_2 then
+				arg_8_1:StopSkip()
 			end
 
-			uv0 = false
+			var_8_2 = false
 
-			slot0()
+			arg_13_0()
 		end,
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_14_0)
+			if not arg_8_0:NextStage(var_0_3) then
 				return
 			end
 
 			parallelAsync({
-				function (slot0)
-					uv0:OnInit(uv1, uv2, slot0)
+				function(arg_15_0)
+					arg_8_0:OnInit(var_8_0, var_8_4, arg_15_0)
 				end,
-				function (slot0)
-					uv0:PlaySoundEffect(uv1)
-					uv0:StartUIAnimations(uv1, slot0)
+				function(arg_16_0)
+					arg_8_0:PlaySoundEffect(var_8_0)
+					arg_8_0:StartUIAnimations(var_8_0, arg_16_0)
 				end,
-				function (slot0)
-					uv0:OnEnter(uv1, uv2, slot0)
+				function(arg_17_0)
+					arg_8_0:OnEnter(var_8_0, var_8_4, arg_17_0)
 				end,
-				function (slot0)
-					uv0:StartMoveNode(uv1, slot0)
+				function(arg_18_0)
+					arg_8_0:StartMoveNode(var_8_0, arg_18_0)
 				end,
-				function (slot0)
-					uv0:UpdateIcon(uv1, slot0)
+				function(arg_19_0)
+					arg_8_0:UpdateIcon(var_8_0, arg_19_0)
 				end,
-				function (slot0)
-					uv0:SetLocation(uv1, slot0)
+				function(arg_20_0)
+					arg_8_0:SetLocation(var_8_0, arg_20_0)
 				end,
-				function (slot0)
-					uv0:DispatcherEvent(uv1, slot0)
+				function(arg_21_0)
+					arg_8_0:DispatcherEvent(var_8_0, arg_21_0)
 				end
-			}, slot0)
+			}, arg_14_0)
 		end,
-		function (slot0)
-			uv0:ClearCheckDispatcher()
+		function(arg_22_0)
+			arg_8_0:ClearCheckDispatcher()
 
-			if not uv0:NextStage(uv1) then
+			if not arg_8_0:NextStage(var_0_4) then
 				return
 			end
 
-			if not uv2:ShouldDelayEvent() then
-				slot0()
+			if not var_8_0:ShouldDelayEvent() then
+				arg_22_0()
 
 				return
 			end
 
-			uv0:DelayCall(uv2:GetEventDelayTime(), slot0)
+			arg_8_0:DelayCall(var_8_0:GetEventDelayTime(), arg_22_0)
 		end,
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_23_0)
+			if not arg_8_0:NextStage(var_0_5) then
 				return
 			end
 
-			if uv0.skipOption then
-				slot0()
-
-				return
-			end
-
-			if uv2:SkipEventForOption() then
-				slot0()
+			if arg_8_0.skipOption then
+				arg_23_0()
 
 				return
 			end
 
-			if uv0:ShouldAutoTrigger() then
-				uv0:UnscaleDelayCall(uv3, slot0)
+			if var_8_0:SkipEventForOption() then
+				arg_23_0()
 
 				return
 			end
 
-			uv0:RegisetEvent(slot0)
-			uv0:TriggerEventIfAuto(uv3)
+			if arg_8_0:ShouldAutoTrigger() then
+				arg_8_0:UnscaleDelayCall(var_8_3, arg_23_0)
+
+				return
+			end
+
+			arg_8_0:RegisetEvent(arg_23_0)
+			arg_8_0:TriggerEventIfAuto(var_8_3)
 		end,
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_24_0)
+			if not arg_8_0:NextStage(var_0_6) then
 				return
 			end
 
-			if not uv2:ExistOption() then
-				slot0()
-
-				return
-			end
-
-			if uv0.skipOption then
-				uv0.skipOption = false
-
-				slot0()
+			if not var_8_0:ExistOption() then
+				arg_24_0()
 
 				return
 			end
 
-			uv0:InitBranches(uv3, uv2, function (slot0)
-				uv0()
-			end, function ()
-				uv0:TriggerOptionIfAuto(uv1, uv2)
+			if arg_8_0.skipOption then
+				arg_8_0.skipOption = false
+
+				arg_24_0()
+
+				return
+			end
+
+			arg_8_0:InitBranches(arg_8_1, var_8_0, function(arg_25_0)
+				arg_24_0()
+			end, function()
+				arg_8_0:TriggerOptionIfAuto(var_8_3, var_8_0)
 			end)
 		end,
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_27_0)
+			if not arg_8_0:NextStage(var_0_7) then
 				return
 			end
 
-			uv0.autoNext = nil
-			slot1 = uv2:GetNextStep(uv3)
+			arg_8_0.autoNext = nil
+
+			local var_27_0 = arg_8_1:GetNextStep(arg_8_2)
 
 			seriesAsync({
-				function (slot0)
-					uv0:ClearAnimation()
-					uv0:OnWillExit(uv1, uv2, slot0)
+				function(arg_28_0)
+					arg_8_0:ClearAnimation()
+					arg_8_0:OnWillExit(var_8_0, var_27_0, arg_28_0)
 				end,
-				function (slot0)
+				function(arg_29_0)
 					parallelAsync({
-						function (slot0)
-							if not uv0 then
-								slot0()
+						function(arg_30_0)
+							if not var_27_0 then
+								arg_30_0()
 
 								return
 							end
 
-							uv1:Flashout(uv0, slot0)
+							arg_8_0:Flashout(var_27_0, arg_30_0)
 						end,
-						function (slot0)
-							if uv0 then
-								slot0()
+						function(arg_31_0)
+							if var_27_0 then
+								arg_31_0()
 
 								return
 							end
 
-							uv1:FadeOutStory(uv1.script, slot0)
+							arg_8_0:FadeOutStory(arg_8_0.script, arg_31_0)
 						end
-					}, slot0)
+					}, arg_29_0)
 				end
-			}, slot0)
+			}, arg_27_0)
 		end,
-		function (slot0)
-			if not uv0:NextStage(uv1) then
+		function(arg_32_0)
+			if not arg_8_0:NextStage(var_0_8) then
 				return
 			end
 
-			uv0:OnWillClear(uv2)
-			uv0:Clear(slot0)
+			arg_8_0:OnWillClear(var_8_0)
+			arg_8_0:Clear(arg_32_0)
 		end
-	}, slot3)
+	}, arg_8_3)
 end
 
-function slot0.NextStage(slot0, slot1)
-	if slot0.stage == slot1 - 1 then
-		slot0.stage = slot1
+function var_0_0.NextStage(arg_33_0, arg_33_1)
+	if arg_33_0.stage == arg_33_1 - 1 then
+		arg_33_0.stage = arg_33_1
 
 		return true
 	end
@@ -356,1063 +362,1158 @@ function slot0.NextStage(slot0, slot1)
 	return false
 end
 
-function slot0.DispatcherEvent(slot0, slot1, slot2)
-	if not slot1:ExistDispatcher() then
-		slot2()
+function var_0_0.DispatcherEvent(arg_34_0, arg_34_1, arg_34_2)
+	if not arg_34_1:ExistDispatcher() then
+		arg_34_2()
 
 		return
 	end
 
-	slot3 = slot1:GetDispatcher()
+	local var_34_0 = arg_34_1:GetDispatcher()
 
 	pg.NewStoryMgr.GetInstance():ClearStoryEvent()
-	pg.m02:sendNotification(slot3.name, {
-		data = slot3.data,
-		callbackData = slot3.callbackData,
-		flags = slot0.branchCodeList[slot1:GetId()] or {}
+	pg.m02:sendNotification(var_34_0.name, {
+		data = var_34_0.data,
+		callbackData = var_34_0.callbackData,
+		flags = arg_34_0.branchCodeList[arg_34_1:GetId()] or {}
 	})
 
-	if slot1:ShouldHideUI() then
-		setActive(slot0._tf, false)
+	if arg_34_1:ShouldHideUI() then
+		setActive(arg_34_0._tf, false)
 	end
 
-	if slot1:IsRecallDispatcher() then
-		slot0:CheckDispatcher(slot1, slot2)
+	if arg_34_1:IsRecallDispatcher() then
+		arg_34_0:CheckDispatcher(arg_34_1, arg_34_2)
 	else
-		slot2()
+		arg_34_2()
 	end
 end
 
-function slot0.CheckDispatcher(slot0, slot1, slot2)
-	slot3 = slot1:GetDispatcherRecallName()
-	slot0.checkTimer = Timer.New(function ()
-		if pg.NewStoryMgr.GetInstance():CheckStoryEvent(uv0) then
-			if pg.NewStoryMgr.GetInstance():GetStoryEventArg(uv0) and slot0.optionIndex then
-				uv1:SetBranchCode(uv1.script, uv2, slot0.optionIndex)
+function var_0_0.CheckDispatcher(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = arg_35_1:GetDispatcherRecallName()
 
-				uv1.skipOption = true
+	arg_35_0.checkTimer = Timer.New(function()
+		if pg.NewStoryMgr.GetInstance():CheckStoryEvent(var_35_0) then
+			local var_36_0 = pg.NewStoryMgr.GetInstance():GetStoryEventArg(var_35_0)
+
+			if var_36_0 and var_36_0.optionIndex then
+				arg_35_0:SetBranchCode(arg_35_0.script, arg_35_1, var_36_0.optionIndex)
+
+				arg_35_0.skipOption = true
 			end
 
-			if uv2:ShouldHideUI() then
-				setActive(uv1._tf, true)
+			if arg_35_1:ShouldHideUI() then
+				setActive(arg_35_0._tf, true)
 			end
 
-			uv1:ClearCheckDispatcher()
-			uv3()
+			arg_35_0:ClearCheckDispatcher()
+			arg_35_2()
 		end
 	end, 1, -1)
 
-	slot0.checkTimer:Start()
-	slot0.checkTimer.func()
+	arg_35_0.checkTimer:Start()
+	arg_35_0.checkTimer.func()
 end
 
-function slot0.ClearCheckDispatcher(slot0)
-	if slot0.checkTimer then
-		slot0.checkTimer:Stop()
+function var_0_0.ClearCheckDispatcher(arg_37_0)
+	if arg_37_0.checkTimer then
+		arg_37_0.checkTimer:Stop()
 
-		slot0.checkTimer = nil
+		arg_37_0.checkTimer = nil
 	end
 end
 
-function slot0.TriggerEventIfAuto(slot0, slot1)
-	if not slot0:ShouldAutoTrigger() then
+function var_0_0.TriggerEventIfAuto(arg_38_0, arg_38_1)
+	if not arg_38_0:ShouldAutoTrigger() then
 		return
 	end
 
-	slot0:UnscaleDelayCall(slot1, function ()
-		if not uv0.autoNext then
-			setButtonEnabled(uv0._go, true)
+	arg_38_0:UnscaleDelayCall(arg_38_1, function()
+		if not arg_38_0.autoNext then
+			setButtonEnabled(arg_38_0._go, true)
 
 			return
 		end
 
-		triggerButton(uv0._go)
+		triggerButton(arg_38_0._go)
 	end)
 end
 
-function slot0.TriggerOptionIfAuto(slot0, slot1, slot2)
-	if not slot0:ShouldAutoTrigger() then
+function var_0_0.TriggerOptionIfAuto(arg_40_0, arg_40_1, arg_40_2)
+	if not arg_40_0:ShouldAutoTrigger() then
 		return
 	end
 
-	if not slot2 or not slot2:ExistOption() then
+	if not arg_40_2 or not arg_40_2:ExistOption() then
 		return
 	end
 
-	slot0:UnscaleDelayCall(slot1, function ()
-		if not uv0.autoNext then
+	arg_40_0:UnscaleDelayCall(arg_40_1, function()
+		if not arg_40_0.autoNext then
 			return
 		end
 
-		if uv1:GetOptionIndexByAutoSel() ~= nil then
-			triggerButton(uv0:GetOptionContainer(uv1).container:GetChild(slot0 - 1))
+		local var_41_0 = arg_40_2:GetOptionIndexByAutoSel()
+
+		if var_41_0 ~= nil then
+			local var_41_1 = arg_40_0:GetOptionContainer(arg_40_2).container:GetChild(var_41_0 - 1)
+
+			triggerButton(var_41_1)
 		end
 	end)
 end
 
-function slot0.ShouldAutoTrigger(slot0)
-	if slot0.pause or slot0.stop then
+function var_0_0.ShouldAutoTrigger(arg_42_0)
+	if arg_42_0.pause or arg_42_0.stop then
 		return false
 	end
 
-	return slot0.autoNext
+	return arg_42_0.autoNext
 end
 
-function slot0.CanSkip(slot0)
-	return slot0.step and not slot0.step:IsImport()
+function var_0_0.CanSkip(arg_43_0)
+	return arg_43_0.step and not arg_43_0.step:IsImport()
 end
 
-function slot0.CancelAuto(slot0)
-	slot0.autoNext = false
+function var_0_0.CancelAuto(arg_44_0)
+	arg_44_0.autoNext = false
 end
 
-function slot0.NextOne(slot0)
-	slot0.timeScale = 0.0001
+function var_0_0.NextOne(arg_45_0)
+	arg_45_0.timeScale = 0.0001
 
-	if slot0.stage == uv0 then
-		slot0.autoNext = true
-	elseif slot0.stage == uv1 then
-		slot0.autoNext = true
+	if arg_45_0.stage == var_0_1 then
+		arg_45_0.autoNext = true
+	elseif arg_45_0.stage == var_0_5 then
+		arg_45_0.autoNext = true
 
-		slot0:TriggerEventIfAuto(0)
-	elseif slot0.stage == uv2 then
-		slot0:TriggerOptionIfAuto(0, slot0.step)
+		arg_45_0:TriggerEventIfAuto(0)
+	elseif arg_45_0.stage == var_0_6 then
+		arg_45_0:TriggerOptionIfAuto(0, arg_45_0.step)
 	end
 end
 
-function slot0.NextOneImmediately(slot0)
-	if slot0.callback then
-		slot0:ClearAnimation()
-		slot0:Clear()
-		slot1()
+function var_0_0.NextOneImmediately(arg_46_0)
+	local var_46_0 = arg_46_0.callback
+
+	if var_46_0 then
+		arg_46_0:ClearAnimation()
+		arg_46_0:Clear()
+		var_46_0()
 	end
 end
 
-function slot0.SetLocation(slot0, slot1, slot2)
-	if not slot1:ExistLocation() then
-		slot0.locationAniEvent:SetEndEvent(nil)
-		slot2()
+function var_0_0.SetLocation(arg_47_0, arg_47_1, arg_47_2)
+	if not arg_47_1:ExistLocation() then
+		arg_47_0.locationAniEvent:SetEndEvent(nil)
+		arg_47_2()
 
 		return
 	end
 
-	setActive(slot0.locationTr, true)
+	setActive(arg_47_0.locationTr, true)
 
-	slot0.locationTxt.text = slot1:GetLocation().text
+	local var_47_0 = arg_47_1:GetLocation()
 
-	function slot5()
-		uv0:DelayCall(uv1.time, function ()
-			uv0.locationAnim:Play("anim_newstoryUI_iocation_out")
+	arg_47_0.locationTxt.text = var_47_0.text
 
-			uv0.locationStatus = uv1
+	local function var_47_1()
+		arg_47_0:DelayCall(var_47_0.time, function()
+			arg_47_0.locationAnim:Play("anim_newstoryUI_iocation_out")
+
+			arg_47_0.locationStatus = var_0_11
 		end)
 	end
 
-	slot0.locationAniEvent:SetEndEvent(function ()
-		if uv0.locationStatus == uv1 then
-			uv2()
-			uv3()
-		elseif uv0.locationStatus == uv4 then
-			setActive(uv0.locationTr, false)
+	arg_47_0.locationAniEvent:SetEndEvent(function()
+		if arg_47_0.locationStatus == var_0_10 then
+			var_47_1()
+			arg_47_2()
+		elseif arg_47_0.locationStatus == var_0_11 then
+			setActive(arg_47_0.locationTr, false)
 
-			uv0.locationStatus = uv5
+			arg_47_0.locationStatus = var_0_9
 		end
 	end)
-	slot0.locationAnim:Play("anim_newstoryUI_iocation_in")
+	arg_47_0.locationAnim:Play("anim_newstoryUI_iocation_in")
 
-	slot0.locationStatus = uv1
+	arg_47_0.locationStatus = var_0_10
 end
 
-function slot0.UpdateIcon(slot0, slot1, slot2)
-	if not slot1:ExistIcon() then
-		setActive(slot0.iconImage.gameObject, false)
-		slot2()
+function var_0_0.UpdateIcon(arg_51_0, arg_51_1, arg_51_2)
+	if not arg_51_1:ExistIcon() then
+		setActive(arg_51_0.iconImage.gameObject, false)
+		arg_51_2()
 
 		return
 	end
 
-	slot3 = slot1:GetIconData()
-	slot0.iconImage.sprite = LoadSprite(slot3.image)
+	local var_51_0 = arg_51_1:GetIconData()
 
-	slot0.iconImage:SetNativeSize()
+	arg_51_0.iconImage.sprite = LoadSprite(var_51_0.image)
 
-	if slot3.pos then
-		slot0.iconImage.gameObject.transform.localPosition = Vector3(slot3.pos[1], slot3.pos[2], 0)
+	arg_51_0.iconImage:SetNativeSize()
+
+	local var_51_1 = arg_51_0.iconImage.gameObject.transform
+
+	if var_51_0.pos then
+		var_51_1.localPosition = Vector3(var_51_0.pos[1], var_51_0.pos[2], 0)
 	else
-		slot4.localPosition = Vector3.one
+		var_51_1.localPosition = Vector3.one
 	end
 
-	slot4.localScale = Vector3(slot3.scale or 1, slot3.scale or 1, 1)
+	var_51_1.localScale = Vector3(var_51_0.scale or 1, var_51_0.scale or 1, 1)
 
-	setActive(slot0.iconImage.gameObject, true)
-	slot2()
+	setActive(arg_51_0.iconImage.gameObject, true)
+	arg_51_2()
 end
 
-function slot0.UpdateOptionTxt(slot0, slot1, slot2, slot3)
-	slot5 = slot2:Find("content")
+function var_0_0.UpdateOptionTxt(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
+	local var_52_0 = arg_52_2:GetComponent(typeof(LayoutElement))
+	local var_52_1 = arg_52_2:Find("content")
 
-	if slot1 then
-		slot7 = slot2:Find("content_max")
-		slot8 = GetPerceptualSize(slot3) >= 17
-		slot9 = slot8 and slot7 or slot5
+	if arg_52_1 then
+		local var_52_2 = GetPerceptualSize(arg_52_3)
+		local var_52_3 = arg_52_2:Find("content_max")
+		local var_52_4 = var_52_2 >= 17
+		local var_52_5 = var_52_4 and var_52_3 or var_52_1
 
-		setActive(slot5, not slot8)
-		setActive(slot7, slot8)
-		setText(slot9:Find("Text"), slot3)
+		setActive(var_52_1, not var_52_4)
+		setActive(var_52_3, var_52_4)
+		setText(var_52_5:Find("Text"), arg_52_3)
 
-		slot2:GetComponent(typeof(LayoutElement)).preferredHeight = slot9.rect.height
+		var_52_0.preferredHeight = var_52_5.rect.height
 	else
-		setText(slot5:Find("Text"), slot3)
+		setText(var_52_1:Find("Text"), arg_52_3)
 
-		slot4.preferredHeight = slot5.rect.height
+		var_52_0.preferredHeight = var_52_1.rect.height
 	end
 end
 
-function slot0.InitBranches(slot0, slot1, slot2, slot3, slot4)
-	slot5 = false
-	slot7, slot8 = slot0:GetOptionContainer(slot2)
-	slot10 = slot0.branchCodeList[slot2:GetId()] or {}
-	slot0.selectedBranchID = nil
+function var_0_0.InitBranches(arg_53_0, arg_53_1, arg_53_2, arg_53_3, arg_53_4)
+	local var_53_0 = false
+	local var_53_1 = arg_53_2:GetOptions()
+	local var_53_2, var_53_3 = arg_53_0:GetOptionContainer(arg_53_2)
+	local var_53_4 = arg_53_2:GetId()
+	local var_53_5 = arg_53_0.branchCodeList[var_53_4] or {}
 
-	slot7:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = slot2
-			slot6 = table.contains(uv1, uv0[slot1 + 1][2])
+	arg_53_0.selectedBranchID = nil
 
-			onButton(uv2, slot3, function ()
-				if uv0.pause or uv0.stop then
+	var_53_2:make(function(arg_54_0, arg_54_1, arg_54_2)
+		if arg_54_0 == UIItemList.EventUpdate then
+			local var_54_0 = arg_54_2
+			local var_54_1 = var_53_1[arg_54_1 + 1][1]
+			local var_54_2 = var_53_1[arg_54_1 + 1][2]
+			local var_54_3 = table.contains(var_53_5, var_54_2)
+
+			onButton(arg_53_0, var_54_0, function()
+				if arg_53_0.pause or arg_53_0.stop then
 					return
 				end
 
-				if not uv1 then
+				if not var_53_0 then
 					return
 				end
 
-				uv0.selectedBranchID = uv2
+				arg_53_0.selectedBranchID = arg_54_1
 
-				uv0:SetBranchCode(uv3, uv4, uv5)
+				arg_53_0:SetBranchCode(arg_53_1, arg_53_2, var_54_2)
 
-				if uv6:GetComponent(typeof(Animation)) then
-					slot0:Play("anim_storydialogue_optiontpl_confirm")
-					uv6:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-						setActive(uv0.optionsCg.gameObject, false)
-						uv1(uv2)
+				local var_55_0 = arg_54_2:GetComponent(typeof(Animation))
+
+				if var_55_0 then
+					var_55_0:Play("anim_storydialogue_optiontpl_confirm")
+					arg_54_2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+						setActive(arg_53_0.optionsCg.gameObject, false)
+						arg_53_3(var_54_1)
 					end)
 				else
-					setActive(uv0.optionsCg.gameObject, false)
-					uv7(uv8)
+					setActive(arg_53_0.optionsCg.gameObject, false)
+					arg_53_3(var_54_1)
 				end
 
-				uv0:HideBranchesWithoutSelected(uv4)
+				arg_53_0:HideBranchesWithoutSelected(arg_53_2)
 			end, SFX_PANEL)
-			setButtonEnabled(slot3, not slot6)
+			setButtonEnabled(var_54_0, not var_54_3)
 
-			GetOrAddComponent(slot2, typeof(CanvasGroup)).alpha = slot6 and 0.5 or 1
+			GetOrAddComponent(arg_54_2, typeof(CanvasGroup)).alpha = var_54_3 and 0.5 or 1
 
-			uv2:UpdateOptionTxt(uv7, slot3, uv0[slot1 + 1][1])
+			arg_53_0:UpdateOptionTxt(var_53_3, var_54_0, var_54_1)
 		end
 	end)
-	slot7:align(#slot2:GetOptions())
-	slot0:ShowBranches(slot2, function ()
-		uv0 = true
+	var_53_2:align(#var_53_1)
+	arg_53_0:ShowBranches(arg_53_2, function()
+		var_53_0 = true
 
-		if uv1 then
-			uv1()
+		if arg_53_4 then
+			arg_53_4()
 		end
 	end)
 end
 
-function slot0.SetBranchCode(slot0, slot1, slot2, slot3)
-	slot2:SetBranchCode(slot3)
-	slot1:SetBranchCode(slot3)
+function var_0_0.SetBranchCode(arg_58_0, arg_58_1, arg_58_2, arg_58_3)
+	arg_58_2:SetBranchCode(arg_58_3)
+	arg_58_1:SetBranchCode(arg_58_3)
 
-	if not slot0.branchCodeList[slot2:GetId()] then
-		slot0.branchCodeList[slot4] = {}
+	local var_58_0 = arg_58_2:GetId()
+
+	if not arg_58_0.branchCodeList[var_58_0] then
+		arg_58_0.branchCodeList[var_58_0] = {}
 	end
 
-	table.insert(slot0.branchCodeList[slot4], slot3)
+	table.insert(arg_58_0.branchCodeList[var_58_0], arg_58_3)
 end
 
-function slot0.ShowBranches(slot0, slot1, slot2)
-	setActive(slot0.optionsCg.gameObject, true)
+function var_0_0.ShowBranches(arg_59_0, arg_59_1, arg_59_2)
+	setActive(arg_59_0.optionsCg.gameObject, true)
 
-	for slot7 = 0, slot0:GetOptionContainer(slot1).container.childCount - 1 do
-		if slot3.container:GetChild(slot7):GetComponent(typeof(Animation)) then
-			slot9:Play("anim_storydialogue_optiontpl_in")
+	local var_59_0 = arg_59_0:GetOptionContainer(arg_59_1)
+
+	for iter_59_0 = 0, var_59_0.container.childCount - 1 do
+		local var_59_1 = var_59_0.container:GetChild(iter_59_0):GetComponent(typeof(Animation))
+
+		if var_59_1 then
+			var_59_1:Play("anim_storydialogue_optiontpl_in")
 		end
 	end
 
-	slot2()
+	arg_59_2()
 end
 
-function slot0.HideBranchesWithoutSelected(slot0, slot1)
-	for slot6 = 0, slot0:GetOptionContainer(slot1).container.childCount - 1 do
-		if slot6 ~= slot0.selectedBranchID and slot2.container:GetChild(slot6):GetComponent(typeof(Animation)) then
-			slot8:Play("anim_storydialogue_optiontpl_unselected")
+function var_0_0.HideBranchesWithoutSelected(arg_60_0, arg_60_1)
+	local var_60_0 = arg_60_0:GetOptionContainer(arg_60_1)
+
+	for iter_60_0 = 0, var_60_0.container.childCount - 1 do
+		if iter_60_0 ~= arg_60_0.selectedBranchID then
+			local var_60_1 = var_60_0.container:GetChild(iter_60_0):GetComponent(typeof(Animation))
+
+			if var_60_1 then
+				var_60_1:Play("anim_storydialogue_optiontpl_unselected")
+			end
 		end
 	end
 end
 
-function slot0.StartMoveNode(slot0, slot1, slot2)
-	if not slot1:ExistMovableNode() then
-		slot2()
+function var_0_0.StartMoveNode(arg_61_0, arg_61_1, arg_61_2)
+	if not arg_61_1:ExistMovableNode() then
+		arg_61_2()
 
 		return
 	end
 
-	slot4 = {}
-	slot5 = {}
+	local var_61_0 = arg_61_1:GetMovableNode()
+	local var_61_1 = {}
+	local var_61_2 = {}
 
-	for slot9, slot10 in pairs(slot1:GetMovableNode()) do
-		table.insert(slot4, function (slot0)
-			uv0:LoadMovableNode(uv1, function (slot0)
-				uv0[uv1] = slot0
+	for iter_61_0, iter_61_1 in pairs(var_61_0) do
+		table.insert(var_61_1, function(arg_62_0)
+			arg_61_0:LoadMovableNode(iter_61_1, function(arg_63_0)
+				var_61_2[iter_61_0] = arg_63_0
 
-				uv2()
+				arg_62_0()
 			end)
 		end)
 	end
 
-	parallelAsync(slot4, function ()
-		uv0:MoveAllNode(uv1, uv2, uv3)
-		uv4()
+	parallelAsync(var_61_1, function()
+		arg_61_0:MoveAllNode(arg_61_1, var_61_2, var_61_0)
+		arg_61_2()
 	end)
 end
 
-function slot0.MoveAllNode(slot0, slot1, slot2, slot3)
-	slot4 = {}
+function var_0_0.MoveAllNode(arg_65_0, arg_65_1, arg_65_2, arg_65_3)
+	local var_65_0 = {}
 
-	for slot8, slot9 in pairs(slot2) do
-		table.insert(slot4, function (slot0)
-			slot1 = uv0[uv1]
+	for iter_65_0, iter_65_1 in pairs(arg_65_2) do
+		table.insert(var_65_0, function(arg_66_0)
+			local var_66_0 = arg_65_3[iter_65_0]
+			local var_66_1 = var_66_0.path
+			local var_66_2 = var_66_0.time
+			local var_66_3 = var_66_0.easeType
+			local var_66_4 = var_66_0.delay
 
-			uv2:moveLocalPath(uv3, slot1.path, slot1.time, slot1.delay, slot1.easeType, slot0)
+			arg_65_0:moveLocalPath(iter_65_1, var_66_1, var_66_2, var_66_4, var_66_3, arg_66_0)
 		end)
 	end
 
-	slot0.moveTargets = slot2
+	arg_65_0.moveTargets = arg_65_2
 
-	parallelAsync(slot4, function ()
-		uv0:ClearMoveNodes(uv1)
+	parallelAsync(var_65_0, function()
+		arg_65_0:ClearMoveNodes(arg_65_1)
 	end)
 end
 
-function slot12(slot0, slot1, slot2, slot3, slot4)
-	PoolMgr.GetInstance():GetSpineChar(slot1, true, function (slot0)
-		slot0.transform:SetParent(uv0.movePanel)
+local function var_0_12(arg_68_0, arg_68_1, arg_68_2, arg_68_3, arg_68_4)
+	PoolMgr.GetInstance():GetSpineChar(arg_68_1, true, function(arg_69_0)
+		arg_69_0.transform:SetParent(arg_68_0.movePanel)
 
-		slot1 = uv1.scale
-		slot0.transform.localScale = Vector3(slot1, slot1, 0)
-		slot0.transform.localPosition = uv2
+		local var_69_0 = arg_68_2.scale
 
-		slot0:GetComponent(typeof(SpineAnimUI)):SetAction(uv1.action, 0)
+		arg_69_0.transform.localScale = Vector3(var_69_0, var_69_0, 0)
+		arg_69_0.transform.localPosition = arg_68_3
 
-		slot0.name = uv3
+		arg_69_0:GetComponent(typeof(SpineAnimUI)):SetAction(arg_68_2.action, 0)
 
-		if uv4 then
-			uv4(slot0)
+		arg_69_0.name = arg_68_1
+
+		if arg_68_4 then
+			arg_68_4(arg_69_0)
 		end
 	end)
 end
 
-function slot13(slot0, slot1, slot2, slot3)
-	slot4 = GameObject.New("movable")
+local function var_0_13(arg_70_0, arg_70_1, arg_70_2, arg_70_3)
+	local var_70_0 = GameObject.New("movable")
 
-	slot4.transform:SetParent(slot0.movePanel)
+	var_70_0.transform:SetParent(arg_70_0.movePanel)
 
-	slot4.transform.localScale = Vector3.zero
-	slot5 = GetOrAddComponent(slot4, typeof(RectTransform))
-	slot6 = GetOrAddComponent(slot4, typeof(Image))
+	var_70_0.transform.localScale = Vector3.zero
 
-	LoadSpriteAsync(slot1, function (slot0)
-		uv0.sprite = slot0
+	local var_70_1 = GetOrAddComponent(var_70_0, typeof(RectTransform))
+	local var_70_2 = GetOrAddComponent(var_70_0, typeof(Image))
 
-		uv0:SetNativeSize()
+	LoadSpriteAsync(arg_70_1, function(arg_71_0)
+		var_70_2.sprite = arg_71_0
 
-		uv1.localScale = Vector3.one
-		uv1.localPosition = uv2
+		var_70_2:SetNativeSize()
 
-		uv3(uv1.gameObject)
+		var_70_1.localScale = Vector3.one
+		var_70_1.localPosition = arg_70_2
+
+		arg_70_3(var_70_1.gameObject)
 	end)
 end
 
-function slot0.LoadMovableNode(slot0, slot1, slot2)
-	if slot1.isSpine then
-		uv0(slot0, slot1.name, slot1.spineData, slot1.path[1] or Vector3.zero, slot2)
+function var_0_0.LoadMovableNode(arg_72_0, arg_72_1, arg_72_2)
+	local var_72_0 = arg_72_1.path[1] or Vector3.zero
+
+	if arg_72_1.isSpine then
+		var_0_12(arg_72_0, arg_72_1.name, arg_72_1.spineData, var_72_0, arg_72_2)
 	else
-		uv1(slot0, slot1.name, slot3, slot2)
+		var_0_13(arg_72_0, arg_72_1.name, var_72_0, arg_72_2)
 	end
 end
 
-function slot0.ClearMoveNodes(slot0, slot1)
-	if not slot1:ExistMovableNode() then
+function var_0_0.ClearMoveNodes(arg_73_0, arg_73_1)
+	if not arg_73_1:ExistMovableNode() then
 		return
 	end
 
-	if slot0.movePanel.childCount <= 0 then
+	if arg_73_0.movePanel.childCount <= 0 then
 		return
 	end
 
-	for slot5, slot6 in ipairs(slot0.moveTargets or {}) do
-		if slot6:GetComponent(typeof(SpineAnimUI)) ~= nil then
-			PoolMgr.GetInstance():ReturnSpineChar(slot6.name, slot6.gameObject)
+	for iter_73_0, iter_73_1 in ipairs(arg_73_0.moveTargets or {}) do
+		if iter_73_1:GetComponent(typeof(SpineAnimUI)) ~= nil then
+			PoolMgr.GetInstance():ReturnSpineChar(iter_73_1.name, iter_73_1.gameObject)
 		else
-			Object.Destroy(slot6.gameObject)
+			Object.Destroy(iter_73_1.gameObject)
 		end
 	end
 
-	slot0.moveTargets = {}
+	arg_73_0.moveTargets = {}
 end
 
-function slot0.FadeOutStory(slot0, slot1, slot2)
-	if not slot1:ShouldFadeout() then
-		slot2()
+function var_0_0.FadeOutStory(arg_74_0, arg_74_1, arg_74_2)
+	if not arg_74_1:ShouldFadeout() then
+		arg_74_2()
 
 		return
 	end
 
-	if not slot1:ShouldWaitFadeout() then
-		slot0:fadeTransform(slot0._go, 1, 0.3, slot1:GetFadeoutTime(), true)
-		slot2()
+	local var_74_0 = arg_74_1:GetFadeoutTime()
+
+	if not arg_74_1:ShouldWaitFadeout() then
+		arg_74_0:fadeTransform(arg_74_0._go, 1, 0.3, var_74_0, true)
+		arg_74_2()
 	else
-		slot0:fadeTransform(slot0._go, 1, 0.3, slot3, true, slot2)
+		arg_74_0:fadeTransform(arg_74_0._go, 1, 0.3, var_74_0, true, arg_74_2)
 	end
 end
 
-function slot0.GetFadeColor(slot0, slot1)
-	slot2 = {}
-	slot3 = {}
+function var_0_0.GetFadeColor(arg_75_0, arg_75_1)
+	local var_75_0 = {}
+	local var_75_1 = {}
+	local var_75_2 = arg_75_1:GetComponentsInChildren(typeof(Image))
 
-	for slot8 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
-		slot10 = {
+	for iter_75_0 = 0, var_75_2.Length - 1 do
+		local var_75_3 = var_75_2[iter_75_0]
+		local var_75_4 = {
 			name = "_Color",
 			color = Color.white
 		}
 
-		if slot4[slot8].material.shader.name == "UI/GrayScale" then
-			slot10 = {
+		if var_75_3.material.shader.name == "UI/GrayScale" then
+			var_75_4 = {
 				name = "_GrayScale",
 				color = Color.New(0.21176470588235294, 0.7137254901960784, 0.07058823529411765)
 			}
-		elseif slot9.material.shader.name == "UI/Line_Add_Blue" then
-			slot10 = {
+		elseif var_75_3.material.shader.name == "UI/Line_Add_Blue" then
+			var_75_4 = {
 				name = "_GrayScale",
 				color = Color.New(1, 1, 1, 0.5882352941176471)
 			}
 		end
 
-		table.insert(slot3, slot10)
+		table.insert(var_75_1, var_75_4)
 
-		if slot9.material == slot9.defaultGraphicMaterial then
-			slot9.material = Material.Instantiate(slot9.defaultGraphicMaterial)
+		if var_75_3.material == var_75_3.defaultGraphicMaterial then
+			var_75_3.material = Material.Instantiate(var_75_3.defaultGraphicMaterial)
 		end
 
-		table.insert(slot2, slot9.material)
+		table.insert(var_75_0, var_75_3.material)
 	end
 
-	return slot2, slot3
+	return var_75_0, var_75_1
 end
 
-function slot0._SetFadeColor(slot0, slot1, slot2, slot3)
-	for slot7, slot8 in ipairs(slot1) do
-		if not IsNil(slot8) then
-			slot8:SetColor(slot2[slot7].name, slot2[slot7].color * Color.New(slot3, slot3, slot3))
+function var_0_0._SetFadeColor(arg_76_0, arg_76_1, arg_76_2, arg_76_3)
+	for iter_76_0, iter_76_1 in ipairs(arg_76_1) do
+		if not IsNil(iter_76_1) then
+			iter_76_1:SetColor(arg_76_2[iter_76_0].name, arg_76_2[iter_76_0].color * Color.New(arg_76_3, arg_76_3, arg_76_3))
 		end
 	end
 end
 
-function slot0.SetFadeColor(slot0, slot1, slot2)
-	slot3, slot4 = slot0:GetFadeColor(slot1)
+function var_0_0.SetFadeColor(arg_77_0, arg_77_1, arg_77_2)
+	local var_77_0, var_77_1 = arg_77_0:GetFadeColor(arg_77_1)
 
-	slot0:_SetFadeColor(slot3, slot4, slot2)
+	arg_77_0:_SetFadeColor(var_77_0, var_77_1, arg_77_2)
 end
 
-function slot0._RevertFadeColor(slot0, slot1, slot2)
-	slot0:_SetFadeColor(slot1, slot2, 1)
+function var_0_0._RevertFadeColor(arg_78_0, arg_78_1, arg_78_2)
+	arg_78_0:_SetFadeColor(arg_78_1, arg_78_2, 1)
 end
 
-function slot0.RevertFadeColor(slot0, slot1)
-	slot2, slot3 = slot0:GetFadeColor(slot1)
+function var_0_0.RevertFadeColor(arg_79_0, arg_79_1)
+	local var_79_0, var_79_1 = arg_79_0:GetFadeColor(arg_79_1)
 
-	slot0:_RevertFadeColor(slot2, slot3)
+	arg_79_0:_RevertFadeColor(var_79_0, var_79_1)
 end
 
-function slot0.fadeTransform(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	if slot4 <= 0 then
-		if slot6 then
-			slot6()
+function var_0_0.fadeTransform(arg_80_0, arg_80_1, arg_80_2, arg_80_3, arg_80_4, arg_80_5, arg_80_6)
+	if arg_80_4 <= 0 then
+		if arg_80_6 then
+			arg_80_6()
 		end
 
 		return
 	end
 
-	slot7, slot8 = slot0:GetFadeColor(slot1)
+	local var_80_0, var_80_1 = arg_80_0:GetFadeColor(arg_80_1)
 
-	LeanTween.value(go(slot1), slot2, slot3, slot4):setOnUpdate(System.Action_float(function (slot0)
-		uv0:_SetFadeColor(uv1, uv2, slot0)
-	end)):setOnComplete(System.Action(function ()
-		if uv0 then
-			uv1:_RevertFadeColor(uv2, uv3)
+	LeanTween.value(go(arg_80_1), arg_80_2, arg_80_3, arg_80_4):setOnUpdate(System.Action_float(function(arg_81_0)
+		arg_80_0:_SetFadeColor(var_80_0, var_80_1, arg_81_0)
+	end)):setOnComplete(System.Action(function()
+		if arg_80_5 then
+			arg_80_0:_RevertFadeColor(var_80_0, var_80_1)
 		end
 
-		if uv4 then
-			uv4()
+		if arg_80_6 then
+			arg_80_6()
 		end
 	end))
 end
 
-function slot0.setPaintingAlpha(slot0, slot1, slot2)
-	slot3 = {}
-	slot4 = {}
+function var_0_0.setPaintingAlpha(arg_83_0, arg_83_1, arg_83_2)
+	local var_83_0 = {}
+	local var_83_1 = {}
+	local var_83_2 = arg_83_1:GetComponentsInChildren(typeof(Image))
 
-	for slot9 = 0, slot1:GetComponentsInChildren(typeof(Image)).Length - 1 do
-		slot11 = {
+	for iter_83_0 = 0, var_83_2.Length - 1 do
+		local var_83_3 = var_83_2[iter_83_0]
+		local var_83_4 = {
 			name = "_Color",
 			color = Color.white
 		}
 
-		if slot5[slot9].material.shader.name == "UI/GrayScale" then
-			slot11 = {
+		if var_83_3.material.shader.name == "UI/GrayScale" then
+			var_83_4 = {
 				name = "_GrayScale",
 				color = Color.New(0.21176470588235294, 0.7137254901960784, 0.07058823529411765)
 			}
-		elseif slot10.material.shader.name == "UI/Line_Add_Blue" then
-			slot11 = {
+		elseif var_83_3.material.shader.name == "UI/Line_Add_Blue" then
+			var_83_4 = {
 				name = "_GrayScale",
 				color = Color.New(1, 1, 1, 0.5882352941176471)
 			}
 		end
 
-		table.insert(slot4, slot11)
+		table.insert(var_83_1, var_83_4)
 
-		if slot10.material == slot10.defaultGraphicMaterial then
-			slot10.material = Material.Instantiate(slot10.defaultGraphicMaterial)
+		if var_83_3.material == var_83_3.defaultGraphicMaterial then
+			var_83_3.material = Material.Instantiate(var_83_3.defaultGraphicMaterial)
 		end
 
-		table.insert(slot3, slot10.material)
+		table.insert(var_83_0, var_83_3.material)
 	end
 
-	for slot9, slot10 in ipairs(slot3) do
-		if not IsNil(slot10) then
-			slot10:SetColor(slot4[slot9].name, slot4[slot9].color * Color.New(slot2, slot2, slot2))
+	for iter_83_1, iter_83_2 in ipairs(var_83_0) do
+		if not IsNil(iter_83_2) then
+			iter_83_2:SetColor(var_83_1[iter_83_1].name, var_83_1[iter_83_1].color * Color.New(arg_83_2, arg_83_2, arg_83_2))
 		end
 	end
 end
 
-function slot0.RegisetEvent(slot0, slot1)
-	setButtonEnabled(slot0._go, not slot0.autoNext)
-	onButton(slot0, slot0._go, function ()
-		if uv0.pause or uv0.stop then
+function var_0_0.RegisetEvent(arg_84_0, arg_84_1)
+	setButtonEnabled(arg_84_0._go, not arg_84_0.autoNext)
+	onButton(arg_84_0, arg_84_0._go, function()
+		if arg_84_0.pause or arg_84_0.stop then
 			return
 		end
 
-		removeOnButton(uv0._go)
-		uv1()
+		removeOnButton(arg_84_0._go)
+		arg_84_1()
 	end, SFX_PANEL)
 end
 
-function slot0.flashEffect(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0.flashImg.color = slot4 and Color(0, 0, 0) or Color(1, 1, 1)
-	slot0.flashCg.alpha = slot1
+function var_0_0.flashEffect(arg_86_0, arg_86_1, arg_86_2, arg_86_3, arg_86_4, arg_86_5, arg_86_6)
+	arg_86_0.flashImg.color = arg_86_4 and Color(0, 0, 0) or Color(1, 1, 1)
+	arg_86_0.flashCg.alpha = arg_86_1
 
-	setActive(slot0.flash, true)
-	slot0:TweenValueForcanvasGroup(slot0.flashCg, slot1, slot2, slot3, slot5, slot6)
+	setActive(arg_86_0.flash, true)
+	arg_86_0:TweenValueForcanvasGroup(arg_86_0.flashCg, arg_86_1, arg_86_2, arg_86_3, arg_86_5, arg_86_6)
 end
 
-function slot0.Flashout(slot0, slot1, slot2)
-	slot3, slot4, slot5, slot6 = slot1:GetFlashoutData()
+function var_0_0.Flashout(arg_87_0, arg_87_1, arg_87_2)
+	local var_87_0, var_87_1, var_87_2, var_87_3 = arg_87_1:GetFlashoutData()
 
-	if not slot3 then
-		slot2()
+	if not var_87_0 then
+		arg_87_2()
 
 		return
 	end
 
-	slot0:flashEffect(slot3, slot4, slot5, slot6, 0, slot2)
+	arg_87_0:flashEffect(var_87_0, var_87_1, var_87_2, var_87_3, 0, arg_87_2)
 end
 
-function slot0.flashin(slot0, slot1, slot2)
-	slot3, slot4, slot5, slot6, slot7 = slot1:GetFlashinData()
+function var_0_0.flashin(arg_88_0, arg_88_1, arg_88_2)
+	local var_88_0, var_88_1, var_88_2, var_88_3, var_88_4 = arg_88_1:GetFlashinData()
 
-	if not slot3 then
-		slot2()
+	if not var_88_0 then
+		arg_88_2()
 
 		return
 	end
 
-	slot0:flashEffect(slot3, slot4, slot5, slot6, slot7, slot2)
+	arg_88_0:flashEffect(var_88_0, var_88_1, var_88_2, var_88_3, var_88_4, arg_88_2)
 end
 
-function slot0.UpdateBg(slot0, slot1)
-	if slot1:ShouldBgGlitchArt() then
-		slot0:SetBgGlitchArt(slot1)
+function var_0_0.UpdateBg(arg_89_0, arg_89_1)
+	if arg_89_1:ShouldBgGlitchArt() then
+		arg_89_0:SetBgGlitchArt(arg_89_1)
 	else
-		if slot1:GetBgName() then
-			setActive(slot0.bgPanel, true)
+		local var_89_0 = arg_89_1:GetBgName()
 
-			slot0.bgPanelCg.alpha = 1
-			slot3 = slot0.bgImage
-			slot3.color = Color.New(1, 1, 1)
-			slot3.sprite = slot0:GetBg(slot2)
+		if var_89_0 then
+			setActive(arg_89_0.bgPanel, true)
+
+			arg_89_0.bgPanelCg.alpha = 1
+
+			local var_89_1 = arg_89_0.bgImage
+
+			var_89_1.color = Color.New(1, 1, 1)
+			var_89_1.sprite = arg_89_0:GetBg(var_89_0)
 		end
 
-		if slot1:GetBgShadow() then
-			slot0:TweenValue(slot0.bgImage, slot3[1], slot3[2], slot3[3], 0, function (slot0)
-				uv0.color = Color.New(slot0, slot0, slot0)
+		local var_89_2 = arg_89_1:GetBgShadow()
+
+		if var_89_2 then
+			local var_89_3 = arg_89_0.bgImage
+
+			arg_89_0:TweenValue(var_89_3, var_89_2[1], var_89_2[2], var_89_2[3], 0, function(arg_90_0)
+				var_89_3.color = Color.New(arg_90_0, arg_90_0, arg_90_0)
 			end, nil)
 		end
 
-		if slot1:IsBlackBg() then
-			setActive(slot0.curtain, true)
+		if arg_89_1:IsBlackBg() then
+			setActive(arg_89_0.curtain, true)
 
-			slot0.curtainCg.alpha = 1
+			arg_89_0.curtainCg.alpha = 1
 		end
 
-		slot4, slot0.curtainFCg.alpha = slot1:IsBlackFrontGround()
+		local var_89_4, var_89_5 = arg_89_1:IsBlackFrontGround()
 
-		if slot4 then
-			-- Nothing
+		if var_89_4 then
+			arg_89_0.curtainFCg.alpha = var_89_5
 		end
 
-		setActive(slot0.curtainF, slot4)
+		setActive(arg_89_0.curtainF, var_89_4)
 	end
 
-	slot0:ApplyOldPhotoEffect(slot1)
-	slot0:OnBgUpdate(slot1)
+	arg_89_0:ApplyOldPhotoEffect(arg_89_1)
+	arg_89_0:OnBgUpdate(arg_89_1)
 
-	slot0.curtain:GetComponent(typeof(Image)).color = slot1:GetBgColor()
+	local var_89_6 = arg_89_1:GetBgColor()
+
+	arg_89_0.curtain:GetComponent(typeof(Image)).color = var_89_6
 end
 
-function slot0.ApplyOldPhotoEffect(slot0, slot1)
-	slot3 = slot1:OldPhotoEffect() ~= nil
+function var_0_0.ApplyOldPhotoEffect(arg_91_0, arg_91_1)
+	local var_91_0 = arg_91_1:OldPhotoEffect()
+	local var_91_1 = var_91_0 ~= nil
 
-	setActive(slot0.oldPhoto.gameObject, slot3)
+	setActive(arg_91_0.oldPhoto.gameObject, var_91_1)
 
-	if slot3 then
-		if type(slot2) == "table" then
-			slot0.oldPhoto.color = Color.New(slot2[1], slot2[2], slot2[3], slot2[4])
+	if var_91_1 then
+		if type(var_91_0) == "table" then
+			arg_91_0.oldPhoto.color = Color.New(var_91_0[1], var_91_0[2], var_91_0[3], var_91_0[4])
 		else
-			slot0.oldPhoto.color = Color.New(0.62, 0.58, 0.14, 0.36)
+			arg_91_0.oldPhoto.color = Color.New(0.62, 0.58, 0.14, 0.36)
 		end
 	end
 end
 
-function slot0.SetBgGlitchArt(slot0, slot1)
-	setActive(slot0.bgPanel, false)
-	setActive(slot0.bgGlitch, true)
+function var_0_0.SetBgGlitchArt(arg_92_0, arg_92_1)
+	setActive(arg_92_0.bgPanel, false)
+	setActive(arg_92_0.bgGlitch, true)
 end
 
-function slot0.GetBg(slot0, slot1)
-	if not slot0.bgs[slot1] then
-		slot0.bgs[slot1] = LoadSprite("bg/" .. slot1)
+function var_0_0.GetBg(arg_93_0, arg_93_1)
+	if not arg_93_0.bgs[arg_93_1] then
+		arg_93_0.bgs[arg_93_1] = LoadSprite("bg/" .. arg_93_1)
 	end
 
-	return slot0.bgs[slot1]
+	return arg_93_0.bgs[arg_93_1]
 end
 
-function slot0.LoadEffects(slot0, slot1, slot2)
-	if #slot1:GetEffects() <= 0 then
-		slot2()
+function var_0_0.LoadEffects(arg_94_0, arg_94_1, arg_94_2)
+	local var_94_0 = arg_94_1:GetEffects()
+
+	if #var_94_0 <= 0 then
+		arg_94_2()
 
 		return
 	end
 
-	slot4 = {}
+	local var_94_1 = {}
 
-	for slot8, slot9 in ipairs(slot3) do
-		slot11 = slot9.active
-		slot14 = slot9.adapt
+	for iter_94_0, iter_94_1 in ipairs(var_94_0) do
+		local var_94_2 = iter_94_1.name
+		local var_94_3 = iter_94_1.active
+		local var_94_4 = iter_94_1.interlayer
+		local var_94_5 = iter_94_1.center
+		local var_94_6 = iter_94_1.adapt
+		local var_94_7 = arg_94_0.effectPanel:Find(var_94_2) or arg_94_0.centerPanel:Find(var_94_2)
 
-		if slot0.effectPanel:Find(slot9.name) or slot0.centerPanel:Find(slot10) then
-			setActive(slot15, slot11)
-			setParent(slot15, slot9.center and slot0.centerPanel or slot0.effectPanel.transform)
+		if var_94_7 then
+			setActive(var_94_7, var_94_3)
+			setParent(var_94_7, var_94_5 and arg_94_0.centerPanel or arg_94_0.effectPanel.transform)
 
-			if slot9.interlayer then
-				slot0:UpdateEffectInterLayer(slot10, slot15)
+			if var_94_4 then
+				arg_94_0:UpdateEffectInterLayer(var_94_2, var_94_7)
 			end
 
-			if slot11 == false then
-				slot0:ClearEffectInterlayer(slot10)
+			if var_94_3 == false then
+				arg_94_0:ClearEffectInterlayer(var_94_2)
 			end
 
-			if slot14 then
-				slot0:AdaptEffect(slot15)
+			if var_94_6 then
+				arg_94_0:AdaptEffect(var_94_7)
 			end
 		else
-			slot16 = ""
+			local var_94_8 = ""
 
-			if PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. slot10)) then
-				slot16 = "ui"
-			elseif PathMgr.FileExists(PathMgr.getAssetBundle("effect/" .. slot10)) then
-				slot16 = "effect"
+			if PathMgr.FileExists(PathMgr.getAssetBundle("ui/" .. var_94_2)) then
+				var_94_8 = "ui"
+			elseif PathMgr.FileExists(PathMgr.getAssetBundle("effect/" .. var_94_2)) then
+				var_94_8 = "effect"
 			end
 
-			if slot16 and slot16 ~= "" then
-				table.insert(slot4, function (slot0)
-					LoadAndInstantiateAsync(uv0, uv1, function (slot0)
-						setParent(slot0, uv0 and uv1.centerPanel or uv1.effectPanel.transform)
+			if var_94_8 and var_94_8 ~= "" then
+				table.insert(var_94_1, function(arg_95_0)
+					LoadAndInstantiateAsync(var_94_8, var_94_2, function(arg_96_0)
+						setParent(arg_96_0, var_94_5 and arg_94_0.centerPanel or arg_94_0.effectPanel.transform)
 
-						slot0.transform.localScale = Vector3.one
+						arg_96_0.transform.localScale = Vector3.one
 
-						setActive(slot0, uv2)
+						setActive(arg_96_0, var_94_3)
 
-						slot0.name = uv3
+						arg_96_0.name = var_94_2
 
-						if uv4 then
-							uv1:UpdateEffectInterLayer(uv3, slot0)
+						if var_94_4 then
+							arg_94_0:UpdateEffectInterLayer(var_94_2, arg_96_0)
 						end
 
-						if uv2 == false then
-							uv1:ClearEffectInterlayer(uv3)
+						if var_94_3 == false then
+							arg_94_0:ClearEffectInterlayer(var_94_2)
 						end
 
-						if uv5 then
-							uv1:AdaptEffect(slot0)
+						if var_94_6 then
+							arg_94_0:AdaptEffect(arg_96_0)
 						end
 
-						uv6()
+						arg_95_0()
 					end)
 				end)
 			else
-				originalPrint("not found effect", slot10)
+				originalPrint("not found effect", var_94_2)
 			end
 		end
 	end
 
-	parallelAsync(slot4, slot2)
+	parallelAsync(var_94_1, arg_94_2)
 end
 
-function slot0.AdaptEffect(slot0, slot1)
-	slot3 = pg.UIMgr.GetInstance().OverlayMain.parent.sizeDelta
-	slot5 = 1
-	slot5 = 1.7777777777777777 < slot3.x / slot3.y and slot4 / slot2 or slot2 / slot4
-	tf(slot1).localScale = Vector3(slot5, slot5, slot5)
+function var_0_0.AdaptEffect(arg_97_0, arg_97_1)
+	local var_97_0 = 1.7777777777777777
+	local var_97_1 = pg.UIMgr.GetInstance().OverlayMain.parent.sizeDelta
+	local var_97_2 = var_97_1.x / var_97_1.y
+	local var_97_3 = 1
+
+	if var_97_0 < var_97_2 then
+		var_97_3 = var_97_2 / var_97_0
+	else
+		var_97_3 = var_97_0 / var_97_2
+	end
+
+	tf(arg_97_1).localScale = Vector3(var_97_3, var_97_3, var_97_3)
 end
 
-function slot0.UpdateEffectInterLayer(slot0, slot1, slot2)
-	for slot8 = 1, slot2:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length - 1 do
-		if slot0._go:GetComponent(typeof(Canvas)).sortingOrder < ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot4[slot8 - 1]) then
-			slot3 = slot10
+function var_0_0.UpdateEffectInterLayer(arg_98_0, arg_98_1, arg_98_2)
+	local var_98_0 = arg_98_0._go:GetComponent(typeof(Canvas)).sortingOrder
+	local var_98_1 = arg_98_2:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
+
+	for iter_98_0 = 1, var_98_1.Length - 1 do
+		local var_98_2 = var_98_1[iter_98_0 - 1]
+		local var_98_3 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_98_2)
+
+		if var_98_0 < var_98_3 then
+			var_98_0 = var_98_3
 		end
 	end
 
-	slot3 = slot3 + 1
-	slot5 = GetOrAddComponent(slot0.actorTr, typeof(Canvas))
-	slot5.overrideSorting = true
-	slot5.sortingOrder = slot3
-	slot6 = GetOrAddComponent(slot0.frontTr, typeof(Canvas))
-	slot6.overrideSorting = true
-	slot6.sortingOrder = slot3 + 1
-	slot0.activeInterLayer = slot1
+	local var_98_4 = var_98_0 + 1
+	local var_98_5 = GetOrAddComponent(arg_98_0.actorTr, typeof(Canvas))
 
-	GetOrAddComponent(slot0.frontTr, typeof(GraphicRaycaster))
+	var_98_5.overrideSorting = true
+	var_98_5.sortingOrder = var_98_4
+
+	local var_98_6 = GetOrAddComponent(arg_98_0.frontTr, typeof(Canvas))
+
+	var_98_6.overrideSorting = true
+	var_98_6.sortingOrder = var_98_4 + 1
+	arg_98_0.activeInterLayer = arg_98_1
+
+	GetOrAddComponent(arg_98_0.frontTr, typeof(GraphicRaycaster))
 end
 
-function slot0.ClearEffectInterlayer(slot0, slot1)
-	if slot0.activeInterLayer == slot1 then
-		slot3 = slot0.frontTr:GetComponent(typeof(Canvas))
-		slot4 = slot0.frontTr:GetComponent(typeof(GraphicRaycaster))
+function var_0_0.ClearEffectInterlayer(arg_99_0, arg_99_1)
+	if arg_99_0.activeInterLayer == arg_99_1 then
+		local var_99_0 = arg_99_0.actorTr:GetComponent(typeof(Canvas))
+		local var_99_1 = arg_99_0.frontTr:GetComponent(typeof(Canvas))
+		local var_99_2 = arg_99_0.frontTr:GetComponent(typeof(GraphicRaycaster))
 
-		if slot0.actorTr:GetComponent(typeof(Canvas)) then
-			Object.Destroy(slot2)
+		if var_99_0 then
+			Object.Destroy(var_99_0)
 		end
 
-		if slot4 then
-			Object.Destroy(slot4)
+		if var_99_2 then
+			Object.Destroy(var_99_2)
 		end
 
-		if slot3 then
-			Object.Destroy(slot3)
+		if var_99_1 then
+			Object.Destroy(var_99_1)
 		end
 
-		slot0.activeInterLayer = nil
+		arg_99_0.activeInterLayer = nil
 	end
 end
 
-function slot0.ClearEffects(slot0)
-	removeAllChildren(slot0.effectPanel)
-	removeAllChildren(slot0.centerPanel)
+function var_0_0.ClearEffects(arg_100_0)
+	removeAllChildren(arg_100_0.effectPanel)
+	removeAllChildren(arg_100_0.centerPanel)
 
-	if slot0.activeInterLayer ~= nil then
-		slot0:ClearEffectInterlayer(slot0.activeInterLayer)
+	if arg_100_0.activeInterLayer ~= nil then
+		arg_100_0:ClearEffectInterlayer(arg_100_0.activeInterLayer)
 	end
 end
 
-function slot0.PlaySoundEffect(slot0, slot1)
-	if slot1:ShouldPlaySoundEffect() then
-		slot2, slot3 = slot1:GetSoundeffect()
+function var_0_0.PlaySoundEffect(arg_101_0, arg_101_1)
+	if arg_101_1:ShouldPlaySoundEffect() then
+		local var_101_0, var_101_1 = arg_101_1:GetSoundeffect()
 
-		slot0:DelayCall(slot3, function ()
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
+		arg_101_0:DelayCall(var_101_1, function()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_101_0)
 		end)
 	end
 
-	if slot1:ShouldPlayVoice() then
-		slot0:PlayVoice(slot1)
-	elseif slot1:ShouldStopVoice() then
-		slot0:StopVoice()
+	if arg_101_1:ShouldPlayVoice() then
+		arg_101_0:PlayVoice(arg_101_1)
+	elseif arg_101_1:ShouldStopVoice() then
+		arg_101_0:StopVoice()
 	end
 end
 
-function slot0.StopVoice(slot0)
-	if slot0.currentVoice then
-		slot0.currentVoice:Stop(true)
+function var_0_0.StopVoice(arg_103_0)
+	if arg_103_0.currentVoice then
+		arg_103_0.currentVoice:Stop(true)
 
-		slot0.currentVoice = nil
+		arg_103_0.currentVoice = nil
 	end
 end
 
-function slot0.PlayVoice(slot0, slot1)
-	if slot0.voiceDelayTimer then
-		slot0.voiceDelayTimer:Stop()
+function var_0_0.PlayVoice(arg_104_0, arg_104_1)
+	if arg_104_0.voiceDelayTimer then
+		arg_104_0.voiceDelayTimer:Stop()
 
-		slot0.voiceDelayTimer = nil
+		arg_104_0.voiceDelayTimer = nil
 	end
 
-	slot0:StopVoice()
+	arg_104_0:StopVoice()
 
-	slot2, slot3 = slot1:GetVoice()
-	slot4 = nil
-	slot0.voiceDelayTimer = slot0:CreateDelayTimer(slot3, function ()
-		if uv0 then
-			uv0:Stop()
+	local var_104_0, var_104_1 = arg_104_1:GetVoice()
+	local var_104_2
+
+	var_104_2 = arg_104_0:CreateDelayTimer(var_104_1, function()
+		if var_104_2 then
+			var_104_2:Stop()
 		end
 
-		if uv1.voiceDelayTimer then
-			uv1.voiceDelayTimer = nil
+		if arg_104_0.voiceDelayTimer then
+			arg_104_0.voiceDelayTimer = nil
 		end
 
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv2, function (slot0)
-			if slot0 then
-				uv0.currentVoice = slot0.playback
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_104_0, function(arg_106_0)
+			if arg_106_0 then
+				arg_104_0.currentVoice = arg_106_0.playback
 			end
 		end)
 	end)
+	arg_104_0.voiceDelayTimer = var_104_2
 end
 
-function slot0.Reset(slot0, slot1, slot2, slot3)
-	setActive(slot0.castPanel, false)
-	setActive(slot0.bgPanel, false)
-	setActive(slot0.dialoguePanel, false)
-	setActive(slot0.asidePanel, false)
-	setActive(slot0.curtain, false)
-	setActive(slot0.flash, false)
-	setActive(slot0.optionsCg.gameObject, false)
-	setActive(slot0.bgGlitch, false)
-	setActive(slot0.locationTr, false)
+function var_0_0.Reset(arg_107_0, arg_107_1, arg_107_2, arg_107_3)
+	setActive(arg_107_0.castPanel, false)
+	setActive(arg_107_0.bgPanel, false)
+	setActive(arg_107_0.dialoguePanel, false)
+	setActive(arg_107_0.asidePanel, false)
+	setActive(arg_107_0.curtain, false)
+	setActive(arg_107_0.flash, false)
+	setActive(arg_107_0.optionsCg.gameObject, false)
+	setActive(arg_107_0.bgGlitch, false)
+	setActive(arg_107_0.locationTr, false)
 
-	slot0.locationTr.localPosition = slot0.locationTrPos
-	slot0.locationStatus = uv0
-	slot0.flashCg.alpha = 1
-	slot0.goCG.alpha = 1
+	arg_107_0.locationTr.localPosition = arg_107_0.locationTrPos
+	arg_107_0.locationStatus = var_0_9
+	arg_107_0.flashCg.alpha = 1
+	arg_107_0.goCG.alpha = 1
 
-	slot0:OnReset(slot1, slot2, slot3)
+	arg_107_0:OnReset(arg_107_1, arg_107_2, arg_107_3)
 end
 
-function slot0.Clear(slot0, slot1)
-	if slot0.step then
-		slot0:ClearMoveNodes(slot0.step)
+function var_0_0.Clear(arg_108_0, arg_108_1)
+	if arg_108_0.step then
+		arg_108_0:ClearMoveNodes(arg_108_0.step)
 	end
 
-	slot0.bgs = {}
-	slot0.skipOption = nil
-	slot0.step = nil
-	slot0.goCG.alpha = 1
-	slot0.callback = nil
-	slot0.autoNext = nil
-	slot0.script = nil
-	slot0.bgImage.sprite = nil
+	arg_108_0.bgs = {}
+	arg_108_0.skipOption = nil
+	arg_108_0.step = nil
+	arg_108_0.goCG.alpha = 1
+	arg_108_0.callback = nil
+	arg_108_0.autoNext = nil
+	arg_108_0.script = nil
+	arg_108_0.bgImage.sprite = nil
 
-	slot0:OnClear()
+	arg_108_0:OnClear()
 
-	if slot1 then
-		slot1()
+	if arg_108_1 then
+		arg_108_1()
 	end
 
-	pg.DelegateInfo.New(slot0)
+	pg.DelegateInfo.New(arg_108_0)
 end
 
-function slot0.StoryEnd(slot0)
-	setActive(slot0.iconImage.gameObject, false)
+function var_0_0.StoryEnd(arg_109_0)
+	setActive(arg_109_0.iconImage.gameObject, false)
 
-	slot0.iconImage.sprite = nil
-	slot0.branchCodeList = {}
-	slot0.stop = false
-	slot0.pause = false
+	arg_109_0.iconImage.sprite = nil
+	arg_109_0.branchCodeList = {}
+	arg_109_0.stop = false
+	arg_109_0.pause = false
 
-	if slot0.voiceDelayTimer then
-		slot0.voiceDelayTimer:Stop()
+	if arg_109_0.voiceDelayTimer then
+		arg_109_0.voiceDelayTimer:Stop()
 
-		slot0.voiceDelayTimer = nil
+		arg_109_0.voiceDelayTimer = nil
 	end
 
-	if slot0.currentVoice then
-		slot0.currentVoice:Stop(true)
+	if arg_109_0.currentVoice then
+		arg_109_0.currentVoice:Stop(true)
 
-		slot0.currentVoice = nil
+		arg_109_0.currentVoice = nil
 	end
 
-	slot0:ClearEffects()
-	slot0:Clear()
-	slot0:OnEnd()
+	arg_109_0:ClearEffects()
+	arg_109_0:Clear()
+	arg_109_0:OnEnd()
 end
 
-function slot0.PlayBgm(slot0, slot1)
-	if slot1:ShouldStopBgm() then
-		slot0:StopBgm()
+function var_0_0.PlayBgm(arg_110_0, arg_110_1)
+	if arg_110_1:ShouldStopBgm() then
+		arg_110_0:StopBgm()
 	end
 
-	if slot1:ShoulePlayBgm() then
-		slot2, slot3, slot4 = slot1:GetBgmData()
+	if arg_110_1:ShoulePlayBgm() then
+		local var_110_0, var_110_1, var_110_2 = arg_110_1:GetBgmData()
 
-		slot0:DelayCall(slot3, function ()
-			uv0:RevertBgmVolume()
-			pg.BgmMgr.GetInstance():TempPlay(uv1)
+		arg_110_0:DelayCall(var_110_1, function()
+			arg_110_0:RevertBgmVolume()
+			pg.BgmMgr.GetInstance():TempPlay(var_110_0)
 		end)
 
-		if slot4 and slot4 > 0 then
-			slot0.defaultBgmVolume = pg.CriMgr.GetInstance():getBGMVolume()
+		if var_110_2 and var_110_2 > 0 then
+			arg_110_0.defaultBgmVolume = pg.CriMgr.GetInstance():getBGMVolume()
 
-			pg.CriMgr.GetInstance():setBGMVolume(slot4)
+			pg.CriMgr.GetInstance():setBGMVolume(var_110_2)
 		end
 	end
 end
 
-function slot0.StopBgm(slot0, slot1)
-	slot0:RevertBgmVolume()
+function var_0_0.StopBgm(arg_112_0, arg_112_1)
+	arg_112_0:RevertBgmVolume()
 	pg.BgmMgr.GetInstance():StopPlay()
 end
 
-function slot0.RevertBgmVolume(slot0)
-	if slot0.defaultBgmVolume then
-		pg.CriMgr.GetInstance():setBGMVolume(slot0.defaultBgmVolume)
+function var_0_0.RevertBgmVolume(arg_113_0)
+	if arg_113_0.defaultBgmVolume then
+		pg.CriMgr.GetInstance():setBGMVolume(arg_113_0.defaultBgmVolume)
 
-		slot0.defaultBgmVolume = nil
+		arg_113_0.defaultBgmVolume = nil
 	end
 end
 
-function slot0.StartUIAnimations(slot0, slot1, slot2)
+function var_0_0.StartUIAnimations(arg_114_0, arg_114_1, arg_114_2)
 	parallelAsync({
-		function (slot0)
-			uv0:StartBlinkAnimation(uv1, slot0)
+		function(arg_115_0)
+			arg_114_0:StartBlinkAnimation(arg_114_1, arg_115_0)
 		end,
-		function (slot0)
-			uv0:StartBlinkWithColorAnimation(uv1, slot0)
+		function(arg_116_0)
+			arg_114_0:StartBlinkWithColorAnimation(arg_114_1, arg_116_0)
 		end,
-		function (slot0)
-			uv0:OnStartUIAnimations(uv1, slot0)
+		function(arg_117_0)
+			arg_114_0:OnStartUIAnimations(arg_114_1, arg_117_0)
 		end
-	}, slot2)
+	}, arg_114_2)
 end
 
-function slot0.StartBlinkAnimation(slot0, slot1, slot2)
-	if slot1:ShouldBlink() then
-		slot3 = slot1:GetBlinkData()
-		slot6 = slot3.dur
-		slot7 = slot3.delay
-		slot8 = slot3.alpha[1]
-		slot9 = slot3.alpha[2]
-		slot10 = slot3.wait
-		slot0.flashImg.color = slot3.black and Color(0, 0, 0) or Color(1, 1, 1)
+function var_0_0.StartBlinkAnimation(arg_118_0, arg_118_1, arg_118_2)
+	if arg_118_1:ShouldBlink() then
+		local var_118_0 = arg_118_1:GetBlinkData()
+		local var_118_1 = var_118_0.black
+		local var_118_2 = var_118_0.number
+		local var_118_3 = var_118_0.dur
+		local var_118_4 = var_118_0.delay
+		local var_118_5 = var_118_0.alpha[1]
+		local var_118_6 = var_118_0.alpha[2]
+		local var_118_7 = var_118_0.wait
 
-		setActive(slot0.flash, true)
+		arg_118_0.flashImg.color = var_118_1 and Color(0, 0, 0) or Color(1, 1, 1)
 
-		slot11 = {}
+		setActive(arg_118_0.flash, true)
 
-		for slot15 = 1, slot3.number do
-			table.insert(slot11, function (slot0)
-				uv0:TweenAlpha(uv0.flash, uv1, uv2, uv3 / 2, 0, function ()
-					uv0:TweenAlpha(uv0.flash, uv1, uv2, uv3 / 2, uv4, uv5)
+		local var_118_8 = {}
+
+		for iter_118_0 = 1, var_118_2 do
+			table.insert(var_118_8, function(arg_119_0)
+				arg_118_0:TweenAlpha(arg_118_0.flash, var_118_5, var_118_6, var_118_3 / 2, 0, function()
+					arg_118_0:TweenAlpha(arg_118_0.flash, var_118_6, var_118_5, var_118_3 / 2, var_118_7, arg_119_0)
 				end)
 			end)
 		end
 
-		seriesAsync(slot11, function ()
-			setActive(uv0.flash, false)
+		seriesAsync(var_118_8, function()
+			setActive(arg_118_0.flash, false)
 		end)
 	end
 
-	slot2()
+	arg_118_2()
 end
 
-function slot0.StartBlinkWithColorAnimation(slot0, slot1, slot2)
-	if slot1:ShouldBlinkWithColor() then
-		slot3 = slot1:GetBlinkWithColorData()
-		slot4 = slot3.color
-		slot10 = slot4[3]
-		slot11 = slot4[4]
-		slot0.flashImg.color = Color(slot4[1], slot4[2], slot10, slot11)
+function var_0_0.StartBlinkWithColorAnimation(arg_122_0, arg_122_1, arg_122_2)
+	if arg_122_1:ShouldBlinkWithColor() then
+		local var_122_0 = arg_122_1:GetBlinkWithColorData()
+		local var_122_1 = var_122_0.color
+		local var_122_2 = var_122_0.alpha
 
-		setActive(slot0.flash, true)
+		arg_122_0.flashImg.color = Color(var_122_1[1], var_122_1[2], var_122_1[3], var_122_1[4])
 
-		slot6 = {}
+		setActive(arg_122_0.flash, true)
 
-		for slot10, slot11 in ipairs(slot3.alpha) do
-			slot12 = slot11[1]
-			slot13 = slot11[2]
-			slot14 = slot11[3]
-			slot15 = slot11[4]
+		local var_122_3 = {}
 
-			table.insert(slot6, function (slot0)
-				uv0:TweenValue(uv0.flash, uv1, uv2, uv3, uv4, function (slot0)
-					uv0.flashCg.alpha = slot0
-				end, slot0)
+		for iter_122_0, iter_122_1 in ipairs(var_122_2) do
+			local var_122_4 = iter_122_1[1]
+			local var_122_5 = iter_122_1[2]
+			local var_122_6 = iter_122_1[3]
+			local var_122_7 = iter_122_1[4]
+
+			table.insert(var_122_3, function(arg_123_0)
+				arg_122_0:TweenValue(arg_122_0.flash, var_122_4, var_122_5, var_122_6, var_122_7, function(arg_124_0)
+					arg_122_0.flashCg.alpha = arg_124_0
+				end, arg_123_0)
 			end)
 		end
 
-		parallelAsync(slot6, function ()
-			setActive(uv0.flash, false)
+		parallelAsync(var_122_3, function()
+			setActive(arg_122_0.flash, false)
 		end)
 	end
 
-	slot2()
+	arg_122_2()
 end
 
-function slot0.findTF(slot0, slot1, slot2)
-	assert(slot0._tf, "transform should exist")
+function var_0_0.findTF(arg_126_0, arg_126_1, arg_126_2)
+	assert(arg_126_0._tf, "transform should exist")
 
-	return findTF(slot2 or slot0._tf, slot1)
+	return findTF(arg_126_2 or arg_126_0._tf, arg_126_1)
 end
 
-function slot0.OnStart(slot0, slot1)
+function var_0_0.OnStart(arg_127_0, arg_127_1)
+	return
 end
 
-function slot0.OnReset(slot0, slot1, slot2, slot3)
-	slot3()
+function var_0_0.OnReset(arg_128_0, arg_128_1, arg_128_2, arg_128_3)
+	arg_128_3()
 end
 
-function slot0.OnBgUpdate(slot0, slot1)
+function var_0_0.OnBgUpdate(arg_129_0, arg_129_1)
+	return
 end
 
-function slot0.OnInit(slot0, slot1, slot2, slot3)
-	if slot3 then
-		slot3()
+function var_0_0.OnInit(arg_130_0, arg_130_1, arg_130_2, arg_130_3)
+	if arg_130_3 then
+		arg_130_3()
 	end
 end
 
-function slot0.OnStartUIAnimations(slot0, slot1, slot2)
-	if slot2 then
-		slot2()
+function var_0_0.OnStartUIAnimations(arg_131_0, arg_131_1, arg_131_2)
+	if arg_131_2 then
+		arg_131_2()
 	end
 end
 
-function slot0.OnEnter(slot0, slot1, slot2, slot3)
-	if slot3 then
-		slot3()
+function var_0_0.OnEnter(arg_132_0, arg_132_1, arg_132_2, arg_132_3)
+	if arg_132_3 then
+		arg_132_3()
 	end
 end
 
-function slot0.OnWillExit(slot0, slot1, slot2, slot3)
-	slot3()
+function var_0_0.OnWillExit(arg_133_0, arg_133_1, arg_133_2, arg_133_3)
+	arg_133_3()
 end
 
-function slot0.OnWillClear(slot0, slot1)
+function var_0_0.OnWillClear(arg_134_0, arg_134_1)
+	return
 end
 
-function slot0.OnClear(slot0)
+function var_0_0.OnClear(arg_135_0)
+	return
 end
 
-function slot0.OnEnd(slot0)
+function var_0_0.OnEnd(arg_136_0)
+	return
 end
 
-return slot0
+return var_0_0

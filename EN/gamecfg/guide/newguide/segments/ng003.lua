@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"You can tap the Help button for info on Anti-Sub combat!"
+}
+
 return {
 	id = "NG003",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = ({
-					"You can tap the Help button for info on Anti-Sub combat!"
-				})[1]
+				text = var_0_0[1]
 			}
 		},
 		{

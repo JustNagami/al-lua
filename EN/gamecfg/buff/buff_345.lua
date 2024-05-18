@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "水星纪念弹幕减速",
 	time = 5,

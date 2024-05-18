@@ -1,886 +1,947 @@
-slot0 = class("Dorm3dBaseView", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("Dorm3dBaseView", import("view.base.BaseSubView"))
 
-function slot0.SetApartment(slot0, slot1, slot2)
-	slot0.apartment = slot1
-	slot3 = "dorm3d_enter_count_" .. slot0.apartment.configId
+function var_0_0.SetApartment(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.apartment = arg_1_1
 
-	PlayerPrefs.SetInt(slot3, PlayerPrefs.GetInt(slot3, 0) + 1)
-	slot0:UpdateFavorDisplay()
-	slot0:UpdateContactState()
+	local var_1_0 = "dorm3d_enter_count_" .. arg_1_0.apartment.configId
+
+	PlayerPrefs.SetInt(var_1_0, PlayerPrefs.GetInt(var_1_0, 0) + 1)
+	arg_1_0:UpdateFavorDisplay()
+	arg_1_0:UpdateContactState()
 end
 
-function slot0.OnInit(slot0)
-	slot0.uiContianer = slot0._tf:Find("UI")
-	slot1 = slot0.uiContianer:Find("base")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.uiContianer = arg_2_0._tf:Find("UI")
 
-	onButton(slot0, slot1:Find("btn_back"), function ()
-		uv0:emit(BaseUI.ON_BACK)
+	local var_2_0 = arg_2_0.uiContianer:Find("base")
+
+	onButton(arg_2_0, var_2_0:Find("btn_back"), function()
+		arg_2_0:emit(BaseUI.ON_BACK)
 	end, SFX_CANCEL)
-	onButton(slot0, slot1:Find("btn_back/help"), function ()
+	onButton(arg_2_0, var_2_0:Find("btn_back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("roll_gametip")
 		})
 	end, SFX_PANEL)
 
-	slot0.rtFavorLevel = slot1:Find("top/favor_level")
+	arg_2_0.rtFavorLevel = var_2_0:Find("top/favor_level")
 
-	onButton(slot0, slot0.rtFavorLevel, function ()
-		uv0:emit(Dorm3dSceneMediator.OPEN_LEVEL_LAYER)
+	onButton(arg_2_0, arg_2_0.rtFavorLevel, function()
+		arg_2_0:emit(Dorm3dSceneMediator.OPEN_LEVEL_LAYER)
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("bottom/btn_furniture"), function ()
-		slot0, slot1 = uv0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_furniture_unlock")[2])
+	onButton(arg_2_0, var_2_0:Find("bottom/btn_furniture"), function()
+		local var_6_0, var_6_1 = arg_2_0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_furniture_unlock")[2])
 
-		if not slot0 then
-			pg.TipsMgr.GetInstance():ShowTips(slot1)
+		if not var_6_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_6_1)
 
 			return
 		end
 
-		uv0:emit(Dorm3dSceneMediator.OPEN_FURNITURE_SELECT)
+		arg_2_0:emit(Dorm3dSceneMediator.OPEN_FURNITURE_SELECT)
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("left/btn_photograph"), function ()
-		uv0:emit(Dorm3dSceneMediator.OPEN_CAMERA_LAYER)
+	onButton(arg_2_0, var_2_0:Find("left/btn_photograph"), function()
+		arg_2_0:emit(Dorm3dSceneMediator.OPEN_CAMERA_LAYER)
 	end, SFX_PANEL)
-	onButton(slot0, slot1:Find("left/btn_collection"), function ()
-		slot0, slot1 = uv0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_recall_unlock")[2])
+	onButton(arg_2_0, var_2_0:Find("left/btn_collection"), function()
+		local var_8_0, var_8_1 = arg_2_0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_recall_unlock")[2])
 
-		if not slot0 then
-			pg.TipsMgr.GetInstance():ShowTips(slot1)
+		if not var_8_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_8_1)
 
 			return
 		end
 
-		uv0:emit(Dorm3dSceneMediator.OPEN_COLLECTION_LAYER)
+		arg_2_0:emit(Dorm3dSceneMediator.OPEN_COLLECTION_LAYER)
 	end, SFX_PANEL)
 
-	slot2 = slot0.uiContianer:Find("touch")
+	local var_2_1 = arg_2_0.uiContianer:Find("touch")
 
-	onButton(slot0, slot2:Find("btn_back"), function ()
-		uv0:ExitTouchMode()
+	onButton(arg_2_0, var_2_1:Find("btn_back"), function()
+		arg_2_0:ExitTouchMode()
 	end, SFX_CANCEL)
-
-	function slot6()
+	onButton(arg_2_0, var_2_1:Find("btn_back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("roll_gametip")
 		})
-	end
+	end, SFX_PANEL)
 
-	slot7 = SFX_PANEL
+	arg_2_0.rtFavorUp = arg_2_0._tf:Find("Toast/favor_up")
 
-	onButton(slot0, slot2:Find("btn_back/help"), slot6, slot7)
+	setActive(arg_2_0.rtFavorUp, false)
 
-	slot0.rtFavorUp = slot0._tf:Find("Toast/favor_up")
+	arg_2_0.rtFavorUpDaily = arg_2_0._tf:Find("Toast/favor_up_daily")
 
-	setActive(slot0.rtFavorUp, false)
+	setActive(arg_2_0.rtFavorUpDaily, false)
 
-	slot0.rtFavorUpDaily = slot0._tf:Find("Toast/favor_up_daily")
-
-	setActive(slot0.rtFavorUpDaily, false)
-
-	for slot6, slot7 in ipairs({
-		slot0.rtFavorUp,
-		slot0.rtFavorUpDaily
+	for iter_2_0, iter_2_1 in ipairs({
+		arg_2_0.rtFavorUp,
+		arg_2_0.rtFavorUpDaily
 	}) do
-		slot7:GetComponent("DftAniEvent"):SetEndEvent(function (slot0)
-			setActive(uv0, false)
+		iter_2_1:GetComponent("DftAniEvent"):SetEndEvent(function(arg_11_0)
+			setActive(iter_2_1, false)
 		end)
 	end
 
-	slot0.rtLevelUpWindow = slot0._tf:Find("LevelUpWindow")
+	arg_2_0.rtLevelUpWindow = arg_2_0._tf:Find("LevelUpWindow")
 
-	setActive(slot0.rtLevelUpWindow, false)
-	onButton(slot0, slot0.rtLevelUpWindow:Find("bg"), function ()
-		setActive(uv0.rtLevelUpWindow, false)
-		pg.UIMgr.GetInstance():UnOverlayPanel(uv0.rtLevelUpWindow, uv0._tf)
-		existCall(uv0.levelUpCallback)
+	setActive(arg_2_0.rtLevelUpWindow, false)
+	onButton(arg_2_0, arg_2_0.rtLevelUpWindow:Find("bg"), function()
+		setActive(arg_2_0.rtLevelUpWindow, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_2_0.rtLevelUpWindow, arg_2_0._tf)
+		existCall(arg_2_0.levelUpCallback)
 	end, SFX_PANEL)
 
-	slot3 = slot0.uiContianer:Find("watch")
+	local var_2_2 = arg_2_0.uiContianer:Find("watch")
 
-	onButton(slot0, slot3:Find("btn_back"), function ()
-		uv0:emit(Dorm3dScene.EXIT_WATCH_MODE)
+	onButton(arg_2_0, var_2_2:Find("btn_back"), function()
+		arg_2_0:emit(Dorm3dScene.EXIT_WATCH_MODE)
 	end)
-	onButton(slot0, slot3:Find("btn_back/help"), function ()
+	onButton(arg_2_0, var_2_2:Find("btn_back/help"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("roll_gametip")
 		})
 	end, SFX_PANEL)
 
-	slot4 = slot0.uiContianer:Find("watch/Role")
+	local var_2_3 = arg_2_0.uiContianer:Find("watch/Role")
 
-	onButton(slot0, slot4:Find("Talk"), function ()
-		if not uv0:GetFurnitureTalk(uv0:GetZoneName()) then
+	onButton(arg_2_0, var_2_3:Find("Talk"), function()
+		local var_15_0 = arg_2_0:GetFurnitureTalk(arg_2_0:GetZoneName())
+
+		if not var_15_0 then
 			pg.TipsMgr.GetInstance():ShowTips("without topic")
 
 			return
 		end
 
-		uv0:DoTalk(slot0, true, function ()
-			uv0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, uv0.apartment.configId, Apartment.TRIGGER_TALK)
+		arg_2_0:DoTalk(var_15_0, true, function()
+			arg_2_0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, arg_2_0.apartment.configId, Apartment.TRIGGER_TALK)
 		end)
 	end, SFX_CONFIRM)
-	setText(slot4:Find("Talk/Text"), i18n("dorm3d_talk"))
-	onButton(slot0, slot4:Find("Touch"), function ()
-		slot0, slot1 = uv0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_touch_dialogue")[2])
+	setText(var_2_3:Find("Talk/Text"), i18n("dorm3d_talk"))
+	onButton(arg_2_0, var_2_3:Find("Touch"), function()
+		local var_17_0, var_17_1 = arg_2_0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_touch_dialogue")[2])
 
-		if not slot0 then
-			pg.TipsMgr.GetInstance():ShowTips(slot1)
-
-			return
-		end
-
-		uv0:EnterTouchMode()
-	end, SFX_CONFIRM)
-	setText(slot4:Find("Touch/Text"), i18n("dorm3d_touch"))
-	onButton(slot0, slot4:Find("Gift"), function ()
-		slot0, slot1 = uv0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_gift_dialogue")[2])
-
-		if not slot0 then
-			pg.TipsMgr.GetInstance():ShowTips(slot1)
+		if not var_17_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_17_1)
 
 			return
 		end
 
-		uv0:emit(Dorm3dSceneMediator.OPEN_GIFT_LAYER)
+		arg_2_0:EnterTouchMode()
 	end, SFX_CONFIRM)
-	setText(slot4:Find("Gift/Text"), i18n("dorm3d_gift"))
+	setText(var_2_3:Find("Touch/Text"), i18n("dorm3d_touch"))
+	onButton(arg_2_0, var_2_3:Find("Gift"), function()
+		local var_18_0, var_18_1 = arg_2_0.apartment:checkUnlockConfig(getDorm3dGameset("drom3d_gift_dialogue")[2])
 
-	slot0.rtFloatPage = slot0._tf:Find("FloatPage")
-	slot0.tplFloat = slot0.rtFloatPage:Find("tpl")
+		if not var_18_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_18_1)
 
-	setActive(slot0.tplFloat, false)
+			return
+		end
 
-	slot0._joystick = slot0._tf:Find("Stick")
+		arg_2_0:emit(Dorm3dSceneMediator.OPEN_GIFT_LAYER)
+	end, SFX_CONFIRM)
+	setText(var_2_3:Find("Gift/Text"), i18n("dorm3d_gift"))
 
-	setActive(slot0._joystick, true)
+	arg_2_0.rtFloatPage = arg_2_0._tf:Find("FloatPage")
+	arg_2_0.tplFloat = arg_2_0.rtFloatPage:Find("tpl")
 
-	slot0._stickCom = slot0._joystick:GetComponent(typeof(SlideController))
+	setActive(arg_2_0.tplFloat, false)
 
-	slot0._stickCom:SetStickFunc(function (slot0)
-		uv0:emit(Dorm3dScene.ON_STICK_MOVE, slot0)
+	arg_2_0._joystick = arg_2_0._tf:Find("Stick")
+
+	setActive(arg_2_0._joystick, true)
+
+	arg_2_0._stickCom = arg_2_0._joystick:GetComponent(typeof(SlideController))
+
+	arg_2_0._stickCom:SetStickFunc(function(arg_19_0)
+		arg_2_0:emit(Dorm3dScene.ON_STICK_MOVE, arg_19_0)
 	end)
-	slot0:SetUI("base")
+	arg_2_0:SetUI("base")
 
-	slot0.cvLoader = ShipProfileCVLoader.New()
+	arg_2_0.cvLoader = ShipProfileCVLoader.New()
 end
 
-function slot0.initNodeCanvas(slot0, slot1)
-	slot0.rtMainAI = slot1
+function var_0_0.initNodeCanvas(arg_20_0, arg_20_1)
+	arg_20_0.rtMainAI = arg_20_1
 
-	pg.NodeCanvasMgr.GetInstance():SetOwner(slot0.rtMainAI)
+	local var_20_0 = pg.NodeCanvasMgr.GetInstance()
 
-	for slot6, slot7 in ipairs(slot0.contextData.blackboard or {
+	var_20_0:SetOwner(arg_20_0.rtMainAI)
+
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.contextData.blackboard or {
 		inTalking = false,
 		inWatchMode = false
 	}) do
-		slot0:SetBlackboardValue(slot6, slot7)
+		arg_20_0:SetBlackboardValue(iter_20_0, iter_20_1)
 	end
 
-	slot2:RegisterFunc("ClickCharacter", function (slot0)
-		if uv0.uiState ~= "base" then
+	var_20_0:RegisterFunc("ClickCharacter", function(arg_21_0)
+		if arg_20_0.uiState ~= "base" then
 			return
 		end
 
-		if not uv0:GetBlackboardValue("inWatchMode") then
-			uv0:OutOfLazy(function ()
-				uv0:emit(Dorm3dScene.ENTER_WATCH_MODE)
+		if not arg_20_0:GetBlackboardValue("inWatchMode") then
+			arg_20_0:OutOfLazy(function()
+				arg_20_0:emit(Dorm3dScene.ENTER_WATCH_MODE)
 			end)
 		end
 	end)
-	slot2:RegisterFunc("MoveFurniture", function (slot0)
-		if uv0.uiState ~= "base" then
+	var_20_0:RegisterFunc("MoveFurniture", function(arg_23_0)
+		if arg_20_0.uiState ~= "base" then
 			return
 		end
 
-		uv0:OutOfLazy(function ()
-			uv0:SetBlackboardValue("inMoving", true)
-			uv0:emit(Dorm3dScene.MOVE_PLAYER_TO_FURNITURE, uv1.name, function ()
-				uv0:SetBlackboardValue("inMoving", false)
+		arg_20_0:OutOfLazy(function()
+			arg_20_0:SetBlackboardValue("inMoving", true)
+			arg_20_0:emit(Dorm3dScene.MOVE_PLAYER_TO_FURNITURE, arg_23_0.name, function()
+				arg_20_0:SetBlackboardValue("inMoving", false)
 			end)
 		end)
 	end)
-	slot2:RegisterFunc("ClickCharacterInWatch", function ()
-		uv0:OutOfLazy(function ()
-			uv0:emit(Dorm3dScene.WATCH_MODE_INTERACTIVE)
+	var_20_0:RegisterFunc("ClickCharacterInWatch", function()
+		arg_20_0:OutOfLazy(function()
+			arg_20_0:emit(Dorm3dScene.WATCH_MODE_INTERACTIVE)
 		end)
 	end)
-	slot2:RegisterFunc("ClickContact", function (slot0)
-		uv0:TriggerContact(slot0)
+	var_20_0:RegisterFunc("ClickContact", function(arg_28_0)
+		arg_20_0:TriggerContact(arg_28_0)
 	end)
-	slot2:RegisterFunc("ShortWaitAction", function ()
-		uv0:DoShortWait()
+	var_20_0:RegisterFunc("ShortWaitAction", function()
+		arg_20_0:DoShortWait()
 	end)
-	slot2:RegisterFunc("LongWaitAction", function ()
-		uv0:DoLongWait()
+	var_20_0:RegisterFunc("LongWaitAction", function()
+		arg_20_0:DoLongWait()
 	end)
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(Dorm3dScene.ON_TOUCH_CHARACTER, function (slot0, slot1)
-		if not uv0:GetBlackboardValue("inTouching") then
+function var_0_0.BindEvent(arg_31_0)
+	arg_31_0:bind(Dorm3dScene.ON_TOUCH_CHARACTER, function(arg_32_0, arg_32_1)
+		if not arg_31_0:GetBlackboardValue("inTouching") then
 			return
 		end
 
-		uv0:DoTouch(slot1, 1)
+		arg_31_0:DoTouch(arg_32_1, 1)
 	end)
-	slot0:bind(Dorm3dScene.ON_ROLEWATCH_CAMERA_MAX, function (slot0, slot1)
-		if not uv0:GetBlackboardValue("inTouching") then
+	arg_31_0:bind(Dorm3dScene.ON_ROLEWATCH_CAMERA_MAX, function(arg_33_0, arg_33_1)
+		if not arg_31_0:GetBlackboardValue("inTouching") then
 			return
 		end
 
-		uv0:DoTouch(slot1, 0)
+		arg_31_0:DoTouch(arg_33_1, 0)
 	end)
 end
 
-function slot0.TreeStart(slot0)
-	if slot0.contextData.resumeCallback then
-		slot0.contextData.resumeCallback()
+function var_0_0.TreeStart(arg_34_0)
+	if arg_34_0.contextData.resumeCallback then
+		arg_34_0.contextData.resumeCallback()
 
-		slot0.contextData.resumeCallback = nil
+		arg_34_0.contextData.resumeCallback = nil
 	end
 
-	SetCompomentEnabled(slot0.rtMainAI, "BehaviourTreeOwner", true)
-	slot0:EnterCheck()
+	SetCompomentEnabled(arg_34_0.rtMainAI, "BehaviourTreeOwner", true)
+	arg_34_0:EnterCheck()
 end
 
-function slot0.SetBlackboardValue(slot0, slot1, slot2)
-	slot0.contextData.blackboard = slot0.contextData.blackboard or {}
-	slot0.contextData.blackboard[slot1] = slot2
+function var_0_0.SetBlackboardValue(arg_35_0, arg_35_1, arg_35_2)
+	arg_35_0.contextData.blackboard = arg_35_0.contextData.blackboard or {}
+	arg_35_0.contextData.blackboard[arg_35_1] = arg_35_2
 
-	pg.NodeCanvasMgr.GetInstance():SetBlackboradValue(slot1, slot2)
+	pg.NodeCanvasMgr.GetInstance():SetBlackboradValue(arg_35_1, arg_35_2)
 end
 
-function slot0.GetBlackboardValue(slot0, slot1)
-	slot0.contextData.blackboard = slot0.contextData.blackboard or {}
+function var_0_0.GetBlackboardValue(arg_36_0, arg_36_1)
+	arg_36_0.contextData.blackboard = arg_36_0.contextData.blackboard or {}
 
-	return slot0.contextData.blackboard[slot1]
+	return arg_36_0.contextData.blackboard[arg_36_1]
 end
 
-function slot0.SendNodeCanvasEvent(slot0, slot1, slot2)
-	pg.NodeCanvasMgr.GetInstance():SendEvent(slot1, slot2)
+function var_0_0.SendNodeCanvasEvent(arg_37_0, arg_37_1, arg_37_2)
+	pg.NodeCanvasMgr.GetInstance():SendEvent(arg_37_1, arg_37_2)
 end
 
-function slot0.EnableJoystick(slot0, slot1)
-	setActive(slot0._joystick, slot1)
+function var_0_0.EnableJoystick(arg_38_0, arg_38_1)
+	setActive(arg_38_0._joystick, arg_38_1)
 end
 
-function slot0.SetInFurniture(slot0, slot1)
-	slot0:SetBlackboardValue("inFurniture", slot1)
+function var_0_0.SetInFurniture(arg_39_0, arg_39_1)
+	arg_39_0:SetBlackboardValue("inFurniture", arg_39_1)
 end
 
-function slot0.SetLadyTransform(slot0, slot1)
-	slot0:SetBlackboardValue("ladyTransform", slot1)
+function var_0_0.SetLadyTransform(arg_40_0, arg_40_1)
+	arg_40_0:SetBlackboardValue("ladyTransform", arg_40_1)
 end
 
-function slot0.SetUI(slot0, slot1)
-	if slot0.uiState == slot1 then
+function var_0_0.SetUI(arg_41_0, arg_41_1)
+	if arg_41_0.uiState == arg_41_1 then
 		return
 	end
 
-	slot0.uiState = slot1
+	arg_41_0.uiState = arg_41_1
 
-	eachChild(slot0.uiContianer, function (slot0)
-		setActive(slot0, slot0.name == uv0)
+	eachChild(arg_41_0.uiContianer, function(arg_42_0)
+		setActive(arg_42_0, arg_42_0.name == arg_41_1)
 	end)
 end
 
-function slot0.EnterTouchMode(slot0)
-	if slot0:GetBlackboardValue("inTouching") then
+function var_0_0.EnterTouchMode(arg_43_0)
+	if arg_43_0:GetBlackboardValue("inTouching") then
 		return
 	end
 
-	slot0.touchConfig, slot0.touchDic = slot0.apartment:getTouchConfig(slot0:GetZoneName())
-	slot1 = {}
+	arg_43_0.touchConfig, arg_43_0.touchDic = arg_43_0.apartment:getTouchConfig(arg_43_0:GetZoneName())
 
-	table.insert(slot1, function (slot0)
-		uv0:SetBlackboardValue("inTouching", true)
-		setCanvasGroupAlpha(uv0.uiContianer, 0)
-		uv0:emit(Dorm3dScene.SHOW_BLOCK)
-		uv0:SetUI("touch")
-		slot0()
+	local var_43_0 = {}
+
+	table.insert(var_43_0, function(arg_44_0)
+		arg_43_0:SetBlackboardValue("inTouching", true)
+		setCanvasGroupAlpha(arg_43_0.uiContianer, 0)
+		arg_43_0:emit(Dorm3dScene.SHOW_BLOCK)
+		arg_43_0:SetUI("touch")
+		arg_44_0()
 	end)
-	table.insert(slot1, function (slot0)
-		uv0:emit(Dorm3dScene.ENTER_FREELOOK_MODE, slot0, uv0.touchConfig)
+	table.insert(var_43_0, function(arg_45_0)
+		arg_43_0:emit(Dorm3dScene.ENTER_FREELOOK_MODE, arg_45_0, arg_43_0.touchConfig)
 	end)
-	seriesAsync(slot1, function ()
-		uv0:EnableJoystick(true)
-		setCanvasGroupAlpha(uv0.uiContianer, 1)
-		uv0:emit(Dorm3dScene.HIDE_BLOCK)
+	seriesAsync(var_43_0, function()
+		arg_43_0:EnableJoystick(true)
+		setCanvasGroupAlpha(arg_43_0.uiContianer, 1)
+		arg_43_0:emit(Dorm3dScene.HIDE_BLOCK)
 	end)
 end
 
-function slot0.ExitTouchMode(slot0)
-	if not slot0:GetBlackboardValue("inTouching") then
+function var_0_0.ExitTouchMode(arg_47_0)
+	if not arg_47_0:GetBlackboardValue("inTouching") then
 		return
 	end
 
-	slot1 = {}
+	local var_47_0 = {}
 
-	table.insert(slot1, function (slot0)
-		setCanvasGroupAlpha(uv0.uiContianer, 0)
-		uv0:EnableJoystick(false)
-		uv0:emit(Dorm3dScene.SHOW_BLOCK)
-		slot0()
+	table.insert(var_47_0, function(arg_48_0)
+		setCanvasGroupAlpha(arg_47_0.uiContianer, 0)
+		arg_47_0:EnableJoystick(false)
+		arg_47_0:emit(Dorm3dScene.SHOW_BLOCK)
+		arg_48_0()
 	end)
-	table.insert(slot1, function (slot0)
-		uv0:emit(Dorm3dScene.EXIT_FREELOOK_MODE, slot0, uv0.touchConfig)
+	table.insert(var_47_0, function(arg_49_0)
+		arg_47_0:emit(Dorm3dScene.EXIT_FREELOOK_MODE, arg_49_0, arg_47_0.touchConfig)
 	end)
-	seriesAsync(slot1, function ()
-		uv0:SetBlackboardValue("inTouching", false)
-		setCanvasGroupAlpha(uv0.uiContianer, 1)
-		uv0:emit(Dorm3dScene.HIDE_BLOCK)
-		uv0:SetUI("watch")
+	seriesAsync(var_47_0, function()
+		arg_47_0:SetBlackboardValue("inTouching", false)
+		setCanvasGroupAlpha(arg_47_0.uiContianer, 1)
+		arg_47_0:emit(Dorm3dScene.HIDE_BLOCK)
+		arg_47_0:SetUI("watch")
 
-		uv0.touchConfig = nil
-		uv0.touchDic = nil
+		arg_47_0.touchConfig = nil
+		arg_47_0.touchDic = nil
 	end)
 end
 
-function slot0.DoTouch(slot0, slot1, slot2)
-	assert(slot0.touchConfig and slot0.touchDic)
-	warning(slot1, slot2, slot0.touchDic[slot2][slot1])
+function var_0_0.DoTouch(arg_51_0, arg_51_1, arg_51_2)
+	assert(arg_51_0.touchConfig and arg_51_0.touchDic)
+	warning(arg_51_1, arg_51_2, arg_51_0.touchDic[arg_51_2][arg_51_1])
 
-	if not pg.dorm3d_touch_trigger[slot0.touchDic[slot2][slot1]] then
+	local var_51_0 = pg.dorm3d_touch_trigger[arg_51_0.touchDic[arg_51_2][arg_51_1]]
+
+	if not var_51_0 then
 		return
 	end
 
-	if slot3.talk_id > 0 then
-		table.insert({}, function (slot0)
-			uv0:DoTalk(uv1.talk_id, false, slot0)
+	local var_51_1 = {}
+
+	if var_51_0.talk_id > 0 then
+		table.insert(var_51_1, function(arg_52_0)
+			arg_51_0:DoTalk(var_51_0.talk_id, false, arg_52_0)
 		end)
-	elseif slot3.action then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, uv1.action, slot0)
+	elseif var_51_0.action then
+		table.insert(var_51_1, function(arg_53_0)
+			arg_51_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_51_0.action, arg_53_0)
 		end)
 	end
 
-	seriesAsync(slot4, function ()
-		if uv0.favor_trigger_id > 0 then
-			uv1:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, uv1.apartment.configId, Apartment.TRIGGER_TOUCH)
+	seriesAsync(var_51_1, function()
+		if var_51_0.favor_trigger_id > 0 then
+			arg_51_0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, arg_51_0.apartment.configId, Apartment.TRIGGER_TOUCH)
 
-			slot2 = {
+			local var_54_0 = 202200
+			local var_54_1 = pg.ship_skin_words[var_54_0].voice_key
+			local var_54_2 = {
 				"get_1",
 				"touch_1",
 				"touch_1_1",
 				"touch_1_2",
 				"touch_2_2"
 			}
-			uv1.cvIndex = uv1.cvIndex or 0
-			uv1.cvIndex = (uv1.cvIndex + 1) % #slot2
 
-			uv1.cvLoader:PlaySound("event:/cv/" .. pg.ship_skin_words[202200].voice_key .. "/" .. slot2[uv1.cvIndex + 1])
+			arg_51_0.cvIndex = arg_51_0.cvIndex or 0
+
+			local var_54_3 = var_54_2[arg_51_0.cvIndex + 1]
+
+			arg_51_0.cvIndex = (arg_51_0.cvIndex + 1) % #var_54_2
+
+			local var_54_4 = "event:/cv/" .. var_54_1 .. "/" .. var_54_3
+
+			arg_51_0.cvLoader:PlaySound(var_54_4)
 		end
 	end)
 end
 
-function slot0.DoTalk(slot0, slot1, slot2, slot3)
-	if slot0:GetBlackboardValue("inTalking") then
+function var_0_0.DoTalk(arg_55_0, arg_55_1, arg_55_2, arg_55_3)
+	if arg_55_0:GetBlackboardValue("inTalking") then
 		return
 	end
 
-	slot4 = {}
-	slot5 = nil
+	local var_55_0 = {}
+	local var_55_1
 
-	table.insert(slot4, function (slot0)
-		uv0:emit(Dorm3dSceneMediator.DO_TALK, uv1, function (slot0)
-			uv0 = slot0
+	table.insert(var_55_0, function(arg_56_0)
+		arg_55_0:emit(Dorm3dSceneMediator.DO_TALK, arg_55_1, function(arg_57_0)
+			var_55_1 = arg_57_0
 
-			uv1()
+			arg_56_0()
 		end)
 	end)
-	table.insert(slot4, function (slot0)
-		warning(uv0)
 
-		if uv1.type == 101 then
-			PlayerPrefs.SetInt("dorm3d_enter_count_" .. uv2.apartment.configId, 0)
+	local var_55_2 = pg.dorm3d_dialogue_group[arg_55_1]
+
+	table.insert(var_55_0, function(arg_58_0)
+		warning(arg_55_1)
+
+		if var_55_2.type == 101 then
+			PlayerPrefs.SetInt("dorm3d_enter_count_" .. arg_55_0.apartment.configId, 0)
 		end
 
-		uv2:SetBlackboardValue("inTalking", true)
-		setCanvasGroupAlpha(uv2.uiContianer, 0)
-		uv2:emit(Dorm3dScene.SHOW_BLOCK)
-		slot0()
+		arg_55_0:SetBlackboardValue("inTalking", true)
+		setCanvasGroupAlpha(arg_55_0.uiContianer, 0)
+		arg_55_0:emit(Dorm3dScene.SHOW_BLOCK)
+		arg_58_0()
 	end)
 
-	if pg.dorm3d_dialogue_group[slot1].trigger_area and slot6.trigger_area ~= "" then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.MOVE_PLAYER_TO_FURNITURE, uv1.trigger_area, slot0)
+	if var_55_2.trigger_area and var_55_2.trigger_area ~= "" then
+		table.insert(var_55_0, function(arg_59_0)
+			arg_55_0:emit(Dorm3dScene.MOVE_PLAYER_TO_FURNITURE, var_55_2.trigger_area, arg_59_0)
 		end)
 	end
 
-	if slot2 then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.ON_DIALOGUE_BEGIN, slot0)
+	if arg_55_2 then
+		table.insert(var_55_0, function(arg_60_0)
+			arg_55_0:emit(Dorm3dScene.ON_DIALOGUE_BEGIN, arg_60_0)
 		end)
 	end
 
-	if slot6.standby_action and slot6.standby_action ~= "" then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, uv1.standby_action, slot0)
+	if var_55_2.standby_action and var_55_2.standby_action ~= "" then
+		table.insert(var_55_0, function(arg_61_0)
+			arg_55_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_55_2.standby_action, arg_61_0)
 		end)
 	end
 
-	table.insert(slot4, function (slot0)
-		pg.NewStoryMgr.GetInstance():ForceManualPlay(uv0.story, slot0, true)
+	table.insert(var_55_0, function(arg_62_0)
+		pg.NewStoryMgr.GetInstance():ForceManualPlay(var_55_2.story, arg_62_0, true)
 	end)
 
-	if slot6.finish_action and slot6.finish_action ~= "" then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, uv1.finish_action, slot0)
+	if var_55_2.finish_action and var_55_2.finish_action ~= "" then
+		table.insert(var_55_0, function(arg_63_0)
+			arg_55_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_55_2.finish_action, arg_63_0)
 		end)
 	end
 
-	if slot2 then
-		table.insert(slot4, function (slot0)
-			uv0:emit(Dorm3dScene.ON_DIALOGUE_END, slot0)
+	if arg_55_2 then
+		table.insert(var_55_0, function(arg_64_0)
+			arg_55_0:emit(Dorm3dScene.ON_DIALOGUE_END, arg_64_0)
 		end)
 	end
 
-	table.insert(slot4, function (slot0)
-		if uv0 and #uv0 > 0 then
-			uv1:emit(Dorm3dSceneMediator.OPEN_DROP_LAYER, uv0, slot0)
+	table.insert(var_55_0, function(arg_65_0)
+		if var_55_1 and #var_55_1 > 0 then
+			arg_55_0:emit(Dorm3dSceneMediator.OPEN_DROP_LAYER, var_55_1, arg_65_0)
 		else
-			slot0()
+			arg_65_0()
 		end
 	end)
-	table.insert(slot4, function (slot0)
-		setCanvasGroupAlpha(uv0.uiContianer, 1)
-		uv0:emit(Dorm3dScene.HIDE_BLOCK)
-		uv0:SetBlackboardValue("inTalking", false)
-		slot0()
+	table.insert(var_55_0, function(arg_66_0)
+		setCanvasGroupAlpha(arg_55_0.uiContianer, 1)
+		arg_55_0:emit(Dorm3dScene.HIDE_BLOCK)
+		arg_55_0:SetBlackboardValue("inTalking", false)
+		arg_66_0()
 	end)
-	seriesAsync(slot4, slot3)
+	seriesAsync(var_55_0, arg_55_3)
 end
 
-function slot0.DoTalkTouchOption(slot0, slot1, slot2, slot3)
-	setActive(slot0._tf:Find("ExtraScreen/TalkTouchOption"), true)
+function var_0_0.DoTalkTouchOption(arg_67_0, arg_67_1, arg_67_2, arg_67_3)
+	local var_67_0 = arg_67_0._tf:Find("ExtraScreen/TalkTouchOption")
+	local var_67_1 = pg.NewStoryMgr.GetInstance()._tf
 
-	if isActive(pg.NewStoryMgr.GetInstance()._tf) then
-		setParent(slot4, slot5)
+	setActive(var_67_0, true)
+
+	if isActive(var_67_1) then
+		setParent(var_67_0, var_67_1)
 	else
-		pg.UIMgr.GetInstance():OverlayPanel(slot4, {
+		pg.UIMgr.GetInstance():OverlayPanel(var_67_0, {
 			weight = LayerWeightConst.SECOND_LAYER,
 			groupName = LayerWeightConst.GROUP_DORM3D
 		})
 	end
 
-	slot6 = nil
-	slot7 = slot4:Find("content")
+	local var_67_2
+	local var_67_3 = var_67_0:Find("content")
 
-	UIItemList.StaticAlign(slot7, slot7:Find("clickTpl"), #slot1.options, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.options[slot1 + 1]
+	UIItemList.StaticAlign(var_67_3, var_67_3:Find("clickTpl"), #arg_67_1.options, function(arg_68_0, arg_68_1, arg_68_2)
+		arg_68_1 = arg_68_1 + 1
 
-			setAnchoredPosition(slot2, NewPos(unpack(slot3.pos)))
-			onButton(uv1, slot2, function ()
-				uv0(uv1.flag)
+		if arg_68_0 == UIItemList.EventUpdate then
+			local var_68_0 = arg_67_1.options[arg_68_1]
+
+			setAnchoredPosition(arg_68_2, NewPos(unpack(var_68_0.pos)))
+			onButton(arg_67_0, arg_68_2, function()
+				var_67_2(var_68_0.flag)
 			end, SFX_CONFIRM)
-			setActive(slot2, not table.contains(uv3, slot3.flag))
+			setActive(arg_68_2, not table.contains(arg_67_2, var_68_0.flag))
 		end
 	end)
 
-	function slot6(slot0)
-		setActive(uv0, false)
+	function var_67_2(arg_70_0)
+		setActive(var_67_0, false)
 
-		if isActive(uv1) then
-			setParent(uv0, uv2._tf)
+		if isActive(var_67_1) then
+			setParent(var_67_0, arg_67_0._tf)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0, uv2._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(var_67_0, arg_67_0._tf)
 		end
 
-		uv3(slot0)
+		arg_67_3(arg_70_0)
 	end
 end
 
-function slot0.DoTimelineOption(slot0, slot1, slot2)
-	setActive(slot0._tf:Find("ExtraScreen/TimelineOption"), true)
+function var_0_0.DoTimelineOption(arg_71_0, arg_71_1, arg_71_2)
+	local var_71_0 = arg_71_0._tf:Find("ExtraScreen/TimelineOption")
+	local var_71_1 = pg.NewStoryMgr.GetInstance()._tf
 
-	if isActive(pg.NewStoryMgr.GetInstance()._tf) then
-		setParent(slot3, slot4)
+	setActive(var_71_0, true)
+
+	if isActive(var_71_1) then
+		setParent(var_71_0, var_71_1)
 	else
-		pg.UIMgr.GetInstance():OverlayPanel(slot3, {
+		pg.UIMgr.GetInstance():OverlayPanel(var_71_0, {
 			weight = LayerWeightConst.SECOND_LAYER,
 			groupName = LayerWeightConst.GROUP_DORM3D
 		})
 	end
 
-	slot5 = nil
-	slot6 = slot3:Find("content")
+	local var_71_2
+	local var_71_3 = var_71_0:Find("content")
 
-	UIItemList.StaticAlign(slot6, slot6:Find("clickTpl"), #slot1, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setText(slot2:Find("Text"), uv0[slot1 + 1].content)
-			onButton(uv1, slot2, function ()
-				uv0(uv1)
+	UIItemList.StaticAlign(var_71_3, var_71_3:Find("clickTpl"), #arg_71_1, function(arg_72_0, arg_72_1, arg_72_2)
+		arg_72_1 = arg_72_1 + 1
+
+		if arg_72_0 == UIItemList.EventUpdate then
+			local var_72_0 = arg_71_1[arg_72_1]
+
+			setText(arg_72_2:Find("Text"), var_72_0.content)
+			onButton(arg_71_0, arg_72_2, function()
+				var_71_2(arg_72_1)
 			end, SFX_CONFIRM)
 		end
 	end)
 
-	function slot5(slot0)
-		setActive(uv0, false)
+	function var_71_2(arg_74_0)
+		setActive(var_71_0, false)
 
-		if isActive(uv1) then
-			setParent(uv0, uv2._tf)
+		if isActive(var_71_1) then
+			setParent(var_71_0, arg_71_0._tf)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0, uv2._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(var_71_0, arg_71_0._tf)
 		end
 
-		uv3(slot0)
+		arg_71_2(arg_74_0)
 	end
 end
 
-function slot0.DoTimelineTouch(slot0, slot1, slot2)
-	setActive(slot0._tf:Find("ExtraScreen/TimelineTouch"), true)
+function var_0_0.DoTimelineTouch(arg_75_0, arg_75_1, arg_75_2)
+	local var_75_0 = arg_75_0._tf:Find("ExtraScreen/TimelineTouch")
+	local var_75_1 = pg.NewStoryMgr.GetInstance()._tf
 
-	if isActive(pg.NewStoryMgr.GetInstance()._tf) then
-		setParent(slot3, slot4)
+	setActive(var_75_0, true)
+
+	if isActive(var_75_1) then
+		setParent(var_75_0, var_75_1)
 	else
-		pg.UIMgr.GetInstance():OverlayPanel(slot3, {
+		pg.UIMgr.GetInstance():OverlayPanel(var_75_0, {
 			weight = LayerWeightConst.SECOND_LAYER,
 			groupName = LayerWeightConst.GROUP_DORM3D
 		})
 	end
 
-	slot5 = nil
-	slot6 = slot3:Find("content")
+	local var_75_2
+	local var_75_3 = var_75_0:Find("content")
 
-	UIItemList.StaticAlign(slot6, slot6:Find("clickTpl"), #slot1, function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			setAnchoredPosition(slot2, NewPos(unpack(uv0[slot1 + 1].pos)))
-			onButton(uv1, slot2, function ()
-				uv0(uv1)
+	UIItemList.StaticAlign(var_75_3, var_75_3:Find("clickTpl"), #arg_75_1, function(arg_76_0, arg_76_1, arg_76_2)
+		arg_76_1 = arg_76_1 + 1
+
+		if arg_76_0 == UIItemList.EventUpdate then
+			local var_76_0 = arg_75_1[arg_76_1]
+
+			setAnchoredPosition(arg_76_2, NewPos(unpack(var_76_0.pos)))
+			onButton(arg_75_0, arg_76_2, function()
+				var_75_2(arg_76_1)
 			end, SFX_CONFIRM)
 		end
 	end)
 
-	function slot5(slot0)
-		setActive(uv0, false)
+	function var_75_2(arg_78_0)
+		setActive(var_75_0, false)
 
-		if isActive(uv1) then
-			setParent(uv0, uv2._tf)
+		if isActive(var_75_1) then
+			setParent(var_75_0, arg_75_0._tf)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0, uv2._tf)
+			pg.UIMgr.GetInstance():UnOverlayPanel(var_75_0, arg_75_0._tf)
 		end
 
-		uv3(slot0)
+		arg_75_2(arg_78_0)
 	end
 end
 
-function slot0.DoShortWait(slot0)
-	if not (slot0.apartment:getZone(slot0:GetZoneName()):getConfig("special_action") ~= "" and slot2[math.random(#slot2)] or nil) then
+function var_0_0.DoShortWait(arg_79_0)
+	local var_79_0 = arg_79_0.apartment:getZone(arg_79_0:GetZoneName()):getConfig("special_action")
+	local var_79_1 = var_79_0 ~= "" and var_79_0[math.random(#var_79_0)] or nil
+
+	if not var_79_1 then
 		return
 	end
 
-	slot0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, slot3)
+	arg_79_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_79_1)
 end
 
-function slot0.DoLongWait(slot0)
-	if slot0:GetBlackboardValue("inWatchMode") then
-		if not (slot0.apartment:getZone(slot0:GetZoneName()):getConfig("special_talk") ~= "" and slot2[math.random(#slot2)] or nil) then
+function var_0_0.DoLongWait(arg_80_0)
+	local var_80_0 = arg_80_0.apartment:getZone(arg_80_0:GetZoneName())
+
+	if arg_80_0:GetBlackboardValue("inWatchMode") then
+		local var_80_1 = var_80_0:getConfig("special_talk")
+		local var_80_2 = var_80_1 ~= "" and var_80_1[math.random(#var_80_1)] or nil
+
+		if not var_80_2 then
 			return
 		end
 
-		slot0:DoTalk(slot3)
+		arg_80_0:DoTalk(var_80_2)
 	else
-		assert(not slot0:GetBlackboardValue("inLazy"))
+		assert(not arg_80_0:GetBlackboardValue("inLazy"))
 
-		if slot1:getConfig("lazy_action") == "" then
+		local var_80_3 = var_80_0:getConfig("lazy_action")
+
+		if var_80_3 == "" then
 			return
 		end
 
-		slot0:SetBlackboardValue("inLazy", true)
-		slot0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, slot2[1])
+		arg_80_0:SetBlackboardValue("inLazy", true)
+		arg_80_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_80_3[1])
 	end
 end
 
-function slot0.OutOfLazy(slot0, slot1)
-	slot2 = {}
+function var_0_0.OutOfLazy(arg_81_0, arg_81_1)
+	local var_81_0 = {}
 
-	if slot0:GetBlackboardValue("inLazy") then
-		slot3 = slot0.apartment:getZone(slot0:GetZoneName())
+	if arg_81_0:GetBlackboardValue("inLazy") then
+		local var_81_1 = arg_81_0.apartment:getZone(arg_81_0:GetZoneName())
 
-		table.insert(slot2, function (slot0)
-			uv0:emit(Dorm3dScene.SHOW_BLOCK)
-			uv0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, uv1:getConfig("lazy_action")[2], function ()
-				uv0:SetBlackboardValue("inLazy", false)
-				uv0:emit(Dorm3dScene.HIDE_BLOCK)
-				uv1()
+		table.insert(var_81_0, function(arg_82_0)
+			arg_81_0:emit(Dorm3dScene.SHOW_BLOCK)
+			arg_81_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, var_81_1:getConfig("lazy_action")[2], function()
+				arg_81_0:SetBlackboardValue("inLazy", false)
+				arg_81_0:emit(Dorm3dScene.HIDE_BLOCK)
+				arg_82_0()
 			end)
 		end)
 	end
 
-	slot0.contextData.enterZone = nil
+	arg_81_0.contextData.enterZone = nil
 
-	seriesAsync(slot2, slot1)
+	seriesAsync(var_81_0, arg_81_1)
 end
 
-function slot0.TriggerContact(slot0, slot1)
-	slot0:emit(Dorm3dSceneMediator.COLLECTION_ITEM, slot0.apartment.configId, slot0.contactDic[slot1])
+function var_0_0.TriggerContact(arg_84_0, arg_84_1)
+	arg_84_0:emit(Dorm3dSceneMediator.COLLECTION_ITEM, arg_84_0.apartment.configId, arg_84_0.contactDic[arg_84_1])
 end
 
-function slot0.UpdateContactState(slot0)
-	slot0.contactDic = {}
+function var_0_0.UpdateContactState(arg_85_0)
+	local var_85_0 = arg_85_0.apartment:getTriggerableCollectItems()
 
-	for slot5, slot6 in ipairs(slot0.apartment:getTriggerableCollectItems()) do
-		slot0.contactDic[pg.dorm3d_collection_template[slot6].model] = slot6
+	arg_85_0.contactDic = {}
+
+	for iter_85_0, iter_85_1 in ipairs(var_85_0) do
+		local var_85_1 = pg.dorm3d_collection_template[iter_85_1]
+
+		arg_85_0.contactDic[var_85_1.model] = iter_85_1
 	end
 
-	slot0:emit(Dorm3dScene.ON_UPDATE_CONTACT_STSTE, slot0.contactDic)
+	arg_85_0:emit(Dorm3dScene.ON_UPDATE_CONTACT_STSTE, arg_85_0.contactDic)
 
-	if not slot0.floatTimer then
-		slot0.floatTimer = Timer.New(function ()
-			uv0:UpdateContactPosition()
+	if not arg_85_0.floatTimer then
+		arg_85_0.floatTimer = Timer.New(function()
+			arg_85_0:UpdateContactPosition()
 		end, 1 / (Application.targetFrameRate or 60), -1)
 
-		slot0.floatTimer:Start()
+		arg_85_0.floatTimer:Start()
 	end
 
-	if #slot1 > 0 then
-		slot0.floatTimer:Resume()
+	if #var_85_0 > 0 then
+		arg_85_0.floatTimer:Resume()
 	else
-		slot0.floatTimer:Pause()
+		arg_85_0.floatTimer:Pause()
 	end
 
-	slot0:UpdateContactPosition()
+	arg_85_0:UpdateContactPosition()
 end
 
-function slot0.UpdateContactPosition(slot0)
-	slot0:emit(Dorm3dScene.ON_UPDATE_CONTACT_POSITION, slot0.contactDic)
+function var_0_0.UpdateContactPosition(arg_87_0)
+	arg_87_0:emit(Dorm3dScene.ON_UPDATE_CONTACT_POSITION, arg_87_0.contactDic)
 end
 
-function slot0.UpdateFavorDisplay(slot0)
-	setText(slot0.rtFavorLevel:Find("rank/Text"), slot0.apartment.level)
-	setText(slot0.rtFavorLevel:Find("Text"), string.format("<color=#ff6698>%d</color>/%d", slot0.apartment.favor, slot0.apartment:getNextExp()))
+function var_0_0.UpdateFavorDisplay(arg_88_0)
+	setText(arg_88_0.rtFavorLevel:Find("rank/Text"), arg_88_0.apartment.level)
+
+	local var_88_0 = arg_88_0.apartment.favor
+	local var_88_1 = arg_88_0.apartment:getNextExp()
+
+	setText(arg_88_0.rtFavorLevel:Find("Text"), string.format("<color=#ff6698>%d</color>/%d", var_88_0, var_88_1))
 end
 
-function slot0.CheckFavorTrigger(slot0)
-	if slot0.uiState ~= "base" then
+function var_0_0.CheckFavorTrigger(arg_89_0)
+	if arg_89_0.uiState ~= "base" then
 		return
 	end
 
-	slot1 = {}
-	slot2 = getProxy(CollectionProxy):getShipGroup(slot0.apartment.configId)
+	local var_89_0 = {}
+	local var_89_1 = getProxy(CollectionProxy):getShipGroup(arg_89_0.apartment.configId)
 
-	table.insert(slot1, function (slot0)
-		if uv0.apartment.triggerCountDic[Apartment.TRIGGER_OWNER] == 0 and uv1 then
-			uv0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, uv0.apartment.configId, Apartment.TRIGGER_OWNER)
+	table.insert(var_89_0, function(arg_90_0)
+		if arg_89_0.apartment.triggerCountDic[Apartment.TRIGGER_OWNER] == 0 and var_89_1 then
+			arg_89_0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, arg_89_0.apartment.configId, Apartment.TRIGGER_OWNER)
 		else
-			slot0()
+			arg_90_0()
 		end
 	end)
-	table.insert(slot1, function (slot0)
-		if uv0.apartment.triggerCountDic[Apartment.TRIGGER_PROPOSE] == 0 and uv1 and uv1.married > 0 then
-			uv0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, uv0.apartment.configId, Apartment.TRIGGER_PROPOSE)
+	table.insert(var_89_0, function(arg_91_0)
+		if arg_89_0.apartment.triggerCountDic[Apartment.TRIGGER_PROPOSE] == 0 and var_89_1 and var_89_1.married > 0 then
+			arg_89_0:emit(Dorm3dSceneMediator.TRIGGER_FAVOR, arg_89_0.apartment.configId, Apartment.TRIGGER_PROPOSE)
 		else
-			slot0()
+			arg_91_0()
 		end
 	end)
-	seriesAsync(slot1, function ()
-		uv0:CheckLevelUp()
+	seriesAsync(var_89_0, function()
+		arg_89_0:CheckLevelUp()
 	end)
 end
 
-function slot0.CheckLevelUp(slot0)
-	if slot0.apartment:getNextExp() <= slot0.apartment.favor then
-		slot0:emit(Dorm3dSceneMediator.FAVOR_LEVEL_UP, slot0.apartment.configId)
+function var_0_0.CheckLevelUp(arg_93_0)
+	if arg_93_0.apartment.favor >= arg_93_0.apartment:getNextExp() then
+		arg_93_0:emit(Dorm3dSceneMediator.FAVOR_LEVEL_UP, arg_93_0.apartment.configId)
 	end
 end
 
-function slot0.PopFavorTrigger(slot0, slot1, slot2, slot3)
-	if pg.dorm3d_favor_trigger[slot1].is_repeat > 0 then
-		slot6 = slot3.daily
-		slot7 = getDorm3dGameset("daily_exp_max")[1]
+function var_0_0.PopFavorTrigger(arg_94_0, arg_94_1, arg_94_2, arg_94_3)
+	if pg.dorm3d_favor_trigger[arg_94_1].is_repeat > 0 then
+		local var_94_0 = arg_94_3.daily - arg_94_2
+		local var_94_1 = arg_94_3.daily
+		local var_94_2 = getDorm3dGameset("daily_exp_max")[1]
 
-		setText(slot0.rtFavorUpDaily:Find("info/Text"), i18n("xxx"))
-		setText(slot0.rtFavorUpDaily:Find("info/count"), string.format("<color=#ffffff>%d</color>/%d", slot6, slot7))
-		setSlider(slot0.rtFavorUpDaily:Find("slider/back"), 0, slot7, slot6)
-		setSlider(slot0.rtFavorUpDaily:Find("slider/front"), 0, slot7, slot3.daily - slot2)
-		setActive(slot0.rtFavorUpDaily, true)
+		setText(arg_94_0.rtFavorUpDaily:Find("info/Text"), i18n("xxx"))
+		setText(arg_94_0.rtFavorUpDaily:Find("info/count"), string.format("<color=#ffffff>%d</color>/%d", var_94_1, var_94_2))
+		setSlider(arg_94_0.rtFavorUpDaily:Find("slider/back"), 0, var_94_2, var_94_1)
+		setSlider(arg_94_0.rtFavorUpDaily:Find("slider/front"), 0, var_94_2, var_94_0)
+		setActive(arg_94_0.rtFavorUpDaily, true)
 	else
-		setText(slot0.rtFavorUp:Find("Text"), string.format("once plus %d", slot2))
-		setActive(slot0.rtFavorUp, true)
+		setText(arg_94_0.rtFavorUp:Find("Text"), string.format("once plus %d", arg_94_2))
+		setActive(arg_94_0.rtFavorUp, true)
 	end
 end
 
-function slot0.PopFavorLevelUp(slot0, slot1, slot2)
-	eachChild(slot0.rtLevelUpWindow:Find("panel/mark/level"), function (slot0)
-		setActive(slot0, slot0.name == tostring(uv0.level))
+function var_0_0.PopFavorLevelUp(arg_95_0, arg_95_1, arg_95_2)
+	eachChild(arg_95_0.rtLevelUpWindow:Find("panel/mark/level"), function(arg_96_0)
+		setActive(arg_96_0, arg_96_0.name == tostring(arg_95_1.level))
 	end)
-	setText(slot0.rtLevelUpWindow:Find("panel/info/Text"), slot1:getFavorConfig("levelup_trigger_mention"))
-	setActive(slot0.rtLevelUpWindow, true)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.rtLevelUpWindow, {
+	setText(arg_95_0.rtLevelUpWindow:Find("panel/info/Text"), arg_95_1:getFavorConfig("levelup_trigger_mention"))
+	setActive(arg_95_0.rtLevelUpWindow, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_95_0.rtLevelUpWindow, {
 		weight = LayerWeightConst.SECOND_LAYER,
 		groupName = LayerWeightConst.GROUP_DORM3D
 	})
 
-	function slot0.levelUpCallback()
-		uv0.levelUpCallback = nil
+	function arg_95_0.levelUpCallback()
+		arg_95_0.levelUpCallback = nil
 
-		existCall(uv1)
+		existCall(arg_95_2)
 	end
 end
 
-function slot0.TalkingEventHandle(slot0, slot1)
-	slot2 = {}
-	slot3 = {}
+function var_0_0.TalkingEventHandle(arg_98_0, arg_98_1)
+	local var_98_0 = {}
+	local var_98_1 = {}
+	local var_98_2 = arg_98_1.data
 
-	if slot1.data.op_list then
-		for slot8, slot9 in ipairs(slot4.op_list) do
-			table.insert(slot2, function (slot0)
-				if uv0.skip then
-					slot0()
+	if var_98_2.op_list then
+		for iter_98_0, iter_98_1 in ipairs(var_98_2.op_list) do
+			table.insert(var_98_0, function(arg_99_0)
+				if iter_98_1.skip then
+					arg_99_0()
 
-					slot0 = nil
+					arg_99_0 = nil
 				end
 
-				switch(uv0.type, {
-					action = function ()
-						uv0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, uv1.name, uv2)
+				switch(iter_98_1.type, {
+					action = function()
+						arg_98_0:emit(Dorm3dScene.PLAY_SINGLE_ACTION, iter_98_1.name, arg_99_0)
 					end,
-					timeline = function ()
-						uv0:emit(Dorm3dScene.PLAY_TIMELINE, uv1, function (slot0)
-							uv0.optionIndex = slot0.optionIndex
+					timeline = function()
+						arg_98_0:emit(Dorm3dScene.PLAY_TIMELINE, iter_98_1, function(arg_102_0)
+							var_98_1.optionIndex = arg_102_0.optionIndex
 
-							existCall(uv1)
+							existCall(arg_99_0)
 						end)
 					end,
-					clickOption = function ()
-						uv0:DoTalkTouchOption(uv1, uv2.flags, function (slot0)
-							uv0.optionIndex = slot0
+					clickOption = function()
+						arg_98_0:DoTalkTouchOption(iter_98_1, arg_98_1.flags, function(arg_104_0)
+							var_98_1.optionIndex = arg_104_0
 
-							existCall(uv1)
+							existCall(arg_99_0)
 						end)
 					end,
-					wait = function ()
-						uv0.LTs = uv0.LTs or {}
+					wait = function()
+						arg_98_0.LTs = arg_98_0.LTs or {}
 
-						table.insert(uv0.LTs, LeanTween.delayedCall(uv1.time, System.Action(function ()
-							existCall(uv0)
+						table.insert(arg_98_0.LTs, LeanTween.delayedCall(iter_98_1.time, System.Action(function()
+							existCall(arg_99_0)
 						end)).uniqueId)
 					end
-				}, function ()
-					assert(false, "op type error:", uv0.type)
+				}, function()
+					assert(false, "op type error:", iter_98_1.type)
 				end)
 			end)
 		end
 	end
 
-	seriesAsync(slot2, function ()
-		if uv0.callbackData then
-			uv1:emit(Dorm3dSceneMediator.TALKING_EVENT_FINISH, uv0.callbackData.name, uv2)
+	seriesAsync(var_98_0, function()
+		if arg_98_1.callbackData then
+			arg_98_0:emit(Dorm3dSceneMediator.TALKING_EVENT_FINISH, arg_98_1.callbackData.name, var_98_1)
 		end
 	end)
 end
 
-function slot0.GetFurnitureTalk(slot0, slot1)
-	slot2 = slot0.apartment:getFurnitureTalking(slot1)
+function var_0_0.GetFurnitureTalk(arg_109_0, arg_109_1)
+	local var_109_0 = arg_109_0.apartment:getFurnitureTalking(arg_109_1)
 
-	return slot2[math.random(#slot2)]
+	return var_109_0[math.random(#var_109_0)]
 end
 
-function slot0.EnterCheck(slot0)
-	slot1 = {}
+function var_0_0.EnterCheck(arg_110_0)
+	local var_110_0 = {}
 
-	if slot0.contextData.hasEnterCheck then
-		slot0:CheckFavorTrigger()
+	if arg_110_0.contextData.hasEnterCheck then
+		arg_110_0:CheckFavorTrigger()
 	else
-		slot0.contextData.hasEnterCheck = true
+		arg_110_0.contextData.hasEnterCheck = true
 
-		if slot0.contextData.enterType == 1 then
-			if slot0:GetEnterTalk() then
-				table.insert(slot1, function (slot0)
-					uv0:DoTalk(uv1, false, slot0)
+		if arg_110_0.contextData.enterType == 1 then
+			local var_110_1 = arg_110_0:GetEnterTalk()
+
+			if var_110_1 then
+				table.insert(var_110_0, function(arg_111_0)
+					arg_110_0:DoTalk(var_110_1, false, arg_111_0)
 				end)
 			end
 
-			seriesAsync(slot1, function ()
-				uv0:CheckFavorTrigger()
+			seriesAsync(var_110_0, function()
+				arg_110_0:CheckFavorTrigger()
 			end)
+		elseif arg_110_0.contextData.enterType == 2 then
+			local var_110_2 = arg_110_0.apartment:getZone(arg_110_0.contextData.enterZone):getConfig("lazy_action")
 
-			return
-		end
-
-		if slot0.contextData.enterType == 2 then
-			if slot0.apartment:getZone(slot0.contextData.enterZone):getConfig("lazy_action") == "" then
+			if var_110_2 == "" then
 				return
 			end
 
-			slot0:SetBlackboardValue("inLazy", true)
-			slot0:emit(Dorm3dScene.SWITCH_ACTION, slot3[3])
+			arg_110_0:SetBlackboardValue("inLazy", true)
+			arg_110_0:emit(Dorm3dScene.SWITCH_ACTION, var_110_2[3])
 		else
 			assert(false)
 		end
 	end
 end
 
-function slot0.GetEnterTalk(slot0)
-	slot1 = {}
+function var_0_0.GetEnterTalk(arg_113_0)
+	local var_113_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.apartment:getEnterTalking()) do
-		if pg.dorm3d_dialogue_group[slot6].type == 104 and not pg.NewStoryMgr.GetInstance():IsPlayed(slot7.story) then
-			return slot6
-		elseif slot7.type == 105 and PlayerPrefs.GetString("DORM3D_DAILY_ENTER", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") then
+	for iter_113_0, iter_113_1 in ipairs(arg_113_0.apartment:getEnterTalking()) do
+		local var_113_1 = pg.dorm3d_dialogue_group[iter_113_1]
+
+		if var_113_1.type == 104 and not pg.NewStoryMgr.GetInstance():IsPlayed(var_113_1.story) then
+			return iter_113_1
+		elseif var_113_1.type == 105 and PlayerPrefs.GetString("DORM3D_DAILY_ENTER", "") ~= pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d") then
 			PlayerPrefs.SetString("DORM3D_DAILY_ENTER", pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
 
-			return slot6
-		elseif slot7.type == 1053 and not pg.NewStoryMgr.GetInstance():IsPlayed(slot7.story) then
-			if getProxy(CollectionProxy):getShipGroup(slot0.apartment.configId) and slot8.married > 0 then
-				return slot6
+			return iter_113_1
+		elseif var_113_1.type == 1053 and not pg.NewStoryMgr.GetInstance():IsPlayed(var_113_1.story) then
+			local var_113_2 = getProxy(CollectionProxy):getShipGroup(arg_113_0.apartment.configId)
+
+			if var_113_2 and var_113_2.married > 0 then
+				return iter_113_1
 			end
-		elseif slot7.type == 1052 and underscore.any(slot7.trigger_config, function (slot0)
-			return getProxy(ActivityProxy):IsActivityNotEnd(slot0)
+		elseif var_113_1.type == 1052 and underscore.any(var_113_1.trigger_config, function(arg_114_0)
+			return getProxy(ActivityProxy):IsActivityNotEnd(arg_114_0)
 		end) then
-			table.insert(slot1, slot6)
-		elseif slot7.type == 1051 and slot7.trigger_config[2] < PlayerPrefs.GetInt("dorm3d_enter_count_" .. slot0.apartment.configId, 0) then
-			table.insert(slot1, slot6)
+			table.insert(var_113_0, iter_113_1)
+		elseif var_113_1.type == 1051 and PlayerPrefs.GetInt("dorm3d_enter_count_" .. arg_113_0.apartment.configId, 0) > var_113_1.trigger_config[2] then
+			table.insert(var_113_0, iter_113_1)
 		end
 	end
 
-	return slot1[math.random(#slot1)]
+	return var_113_0[math.random(#var_113_0)]
 end
 
-function slot0.EnterWatchMode(slot0)
-	slot0:SetBlackboardValue("inWatchMode", true)
-	slot0:SetUI("watch")
+function var_0_0.EnterWatchMode(arg_115_0)
+	arg_115_0:SetBlackboardValue("inWatchMode", true)
+	arg_115_0:SetUI("watch")
 end
 
-function slot0.ExitWatchMode(slot0)
-	slot0:SetBlackboardValue("inWatchMode", false)
-	slot0:SetUI("base")
-	slot0:CheckFavorTrigger()
+function var_0_0.ExitWatchMode(arg_116_0)
+	arg_116_0:SetBlackboardValue("inWatchMode", false)
+	arg_116_0:SetUI("base")
+	arg_116_0:CheckFavorTrigger()
 end
 
-function slot0.GetZoneName(slot0)
-	slot1 = slot0:GetBlackboardValue("inFurniture")
+function var_0_0.GetZoneName(arg_117_0)
+	local var_117_0 = arg_117_0:GetBlackboardValue("inFurniture")
 
-	return slot0.contextData.enterZone or slot1 and slot1.name or "Default"
+	return arg_117_0.contextData.enterZone or var_117_0 and var_117_0.name or "Default"
 end
 
-function slot0.TempHideUI(slot0, slot1)
-	slot2 = defaultValue(slot0.hideCount, 0)
-	slot0.hideCount = slot2 + (slot1 and 1 or -1)
+function var_0_0.TempHideUI(arg_118_0, arg_118_1)
+	local var_118_0 = defaultValue(arg_118_0.hideCount, 0)
 
-	assert(slot0.hideCount >= 0)
+	arg_118_0.hideCount = var_118_0 + (arg_118_1 and 1 or -1)
 
-	if slot0.hideCount * slot2 > 0 then
+	assert(arg_118_0.hideCount >= 0)
+
+	if arg_118_0.hideCount * var_118_0 > 0 then
 		return
 	end
 
-	slot3 = slot0.hideCount == 0 and slot0.uiState or nil
+	local var_118_1 = arg_118_0.hideCount == 0 and arg_118_0.uiState or nil
 
-	eachChild(slot0.uiContianer, function (slot0)
-		setActive(slot0, slot0.name == uv0)
+	eachChild(arg_118_0.uiContianer, function(arg_119_0)
+		setActive(arg_119_0, arg_119_0.name == var_118_1)
 	end)
-	setActive(slot0.rtFloatPage, slot0.hideCount == 0)
+	setActive(arg_118_0.rtFloatPage, arg_118_0.hideCount == 0)
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.rtLevelUpWindow) then
-		triggerButton(slot0.rtLevelUpWindow:Find("bg"))
-	elseif slot0.uiState ~= "base" then
-		triggerButton(slot0.uiContianer:Find(slot0.uiState .. "/btn_back"))
+function var_0_0.onBackPressed(arg_120_0)
+	if isActive(arg_120_0.rtLevelUpWindow) then
+		triggerButton(arg_120_0.rtLevelUpWindow:Find("bg"))
+	elseif arg_120_0.uiState ~= "base" then
+		triggerButton(arg_120_0.uiContianer:Find(arg_120_0.uiState .. "/btn_back"))
 	else
 		return false
 	end
@@ -888,27 +949,27 @@ function slot0.onBackPressed(slot0)
 	return true
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.cvLoader:Dispose()
+function var_0_0.OnDestroy(arg_121_0)
+	arg_121_0.cvLoader:Dispose()
 
-	if slot0.floatTimer then
-		slot0.floatTimer:Stop()
+	if arg_121_0.floatTimer then
+		arg_121_0.floatTimer:Stop()
 	end
 
-	if slot0.LTs then
-		underscore.map(slot0.LTs, function (slot0)
-			LeanTween.cancel(slot0)
+	if arg_121_0.LTs then
+		underscore.map(arg_121_0.LTs, function(arg_122_0)
+			LeanTween.cancel(arg_122_0)
 		end)
 
-		slot0.LTs = nil
+		arg_121_0.LTs = nil
 	end
 
-	slot0:SetBlackboardValue("inLockLayer", nil)
+	arg_121_0:SetBlackboardValue("inLockLayer", nil)
 
-	slot0.contextData.charFurnitureName = nil
+	arg_121_0.contextData.charFurnitureName = nil
 
-	SetCompomentEnabled(slot0.rtMainAI, "BehaviourTreeOwner", false)
+	SetCompomentEnabled(arg_121_0.rtMainAI, "BehaviourTreeOwner", false)
 	pg.NodeCanvasMgr.GetInstance():Clear()
 end
 
-return slot0
+return var_0_0

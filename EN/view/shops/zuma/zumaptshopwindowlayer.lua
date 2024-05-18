@@ -1,133 +1,139 @@
-slot0 = class("ZumaPTShopWindowLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("ZumaPTShopWindowLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ZumaPTShopWindowUI"
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_2_0._tf)
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateGoodInfoPanel()
-	slot0:updateBuyPanelWithNum(1)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updateGoodInfoPanel()
+	arg_3_0:updateBuyPanelWithNum(1)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
-	slot0.pageUtil:Dispose()
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
+	arg_4_0.pageUtil:Dispose()
 end
 
-function slot0.onBackPressed(slot0)
-	slot0:closeView()
+function var_0_0.onBackPressed(arg_5_0)
+	arg_5_0:closeView()
 end
 
-function slot0.initData(slot0)
-	slot0.actShopVO = slot0.contextData.actShopVO
-	slot0.goodVO = slot0.contextData.goodVO
-	slot0.perCost = slot0.goodVO:getConfig("resource_num")
-	slot0.maxBuyCount = math.floor(Drop.New({
-		type = slot0.goodVO:getConfig("resource_category"),
-		id = slot0.goodVO:getConfig("resource_type")
-	}):getOwnedCount() / slot0.perCost)
+function var_0_0.initData(arg_6_0)
+	arg_6_0.actShopVO = arg_6_0.contextData.actShopVO
+	arg_6_0.goodVO = arg_6_0.contextData.goodVO
+	arg_6_0.perCost = arg_6_0.goodVO:getConfig("resource_num")
+	arg_6_0.maxBuyCount = math.floor(Drop.New({
+		type = arg_6_0.goodVO:getConfig("resource_category"),
+		id = arg_6_0.goodVO:getConfig("resource_type")
+	}):getOwnedCount() / arg_6_0.perCost)
 
-	if slot0.goodVO:getConfig("num_limit") ~= 0 then
-		slot0.maxBuyCount = math.min(slot0.maxBuyCount, math.max(slot0.goodVO:GetPurchasableCnt(), 0))
+	if arg_6_0.goodVO:getConfig("num_limit") ~= 0 then
+		arg_6_0.maxBuyCount = math.min(arg_6_0.maxBuyCount, math.max(arg_6_0.goodVO:GetPurchasableCnt(), 0))
 	end
 
-	slot0.curBuyCount = 1
-	slot0.costItemInfo = Drop.New({
-		type = slot0.goodVO:getConfig("resource_category"),
-		id = slot0.goodVO:getConfig("resource_type")
+	arg_6_0.curBuyCount = 1
+	arg_6_0.costItemInfo = Drop.New({
+		type = arg_6_0.goodVO:getConfig("resource_category"),
+		id = arg_6_0.goodVO:getConfig("resource_type")
 	})
 end
 
-function slot0.findUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot1 = slot0:findTF("Panel")
-	slot2 = slot0:findTF("Info", slot1)
-	slot0.nameText = slot0:findTF("Name/Text", slot2)
-	slot0.descText = slot0:findTF("Desc", slot2)
-	slot0.itemTF = slot0:findTF("CommonItemTemplate", slot2)
-	slot0.countTF = slot0:findTF("Count", slot2)
-	slot0.countText = slot0:findTF("Count/Num", slot2)
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.bg = arg_7_0:findTF("BG")
 
-	setText(slot0:findTF("Count/Tip", slot2), i18n("word_own1"))
+	local var_7_0 = arg_7_0:findTF("Panel")
+	local var_7_1 = arg_7_0:findTF("Info", var_7_0)
 
-	slot0.titleTF = slot0:findTF("Title", slot1)
-	slot4 = slot0:findTF("Buy", slot1)
-	slot0.minusBtn = slot0:findTF("Minus", slot4)
-	slot0.addBtn = slot0:findTF("Add", slot4)
-	slot0.maxBtn = slot0:findTF("Max", slot4)
-	slot0.buyNumText = slot0:findTF("Num", slot4)
-	slot0.butCountText = slot0:findTF("BuyCount/Num", slot1)
-	slot0.costNumText = slot0:findTF("Cost/Num", slot1)
-	slot0.confirmBtn = slot0:findTF("ConfirmBtn", slot1)
-	slot0.cancelBtn = slot0:findTF("CancelBtn", slot1)
+	arg_7_0.nameText = arg_7_0:findTF("Name/Text", var_7_1)
+	arg_7_0.descText = arg_7_0:findTF("Desc", var_7_1)
+	arg_7_0.itemTF = arg_7_0:findTF("CommonItemTemplate", var_7_1)
+	arg_7_0.countTF = arg_7_0:findTF("Count", var_7_1)
+	arg_7_0.countText = arg_7_0:findTF("Count/Num", var_7_1)
+
+	local var_7_2 = arg_7_0:findTF("Count/Tip", var_7_1)
+
+	setText(var_7_2, i18n("word_own1"))
+
+	arg_7_0.titleTF = arg_7_0:findTF("Title", var_7_0)
+
+	local var_7_3 = arg_7_0:findTF("Buy", var_7_0)
+
+	arg_7_0.minusBtn = arg_7_0:findTF("Minus", var_7_3)
+	arg_7_0.addBtn = arg_7_0:findTF("Add", var_7_3)
+	arg_7_0.maxBtn = arg_7_0:findTF("Max", var_7_3)
+	arg_7_0.buyNumText = arg_7_0:findTF("Num", var_7_3)
+	arg_7_0.butCountText = arg_7_0:findTF("BuyCount/Num", var_7_0)
+	arg_7_0.costNumText = arg_7_0:findTF("Cost/Num", var_7_0)
+	arg_7_0.confirmBtn = arg_7_0:findTF("ConfirmBtn", var_7_0)
+	arg_7_0.cancelBtn = arg_7_0:findTF("CancelBtn", var_7_0)
 end
 
-function slot0.addListener(slot0)
-	function slot1()
-		uv0:closeView()
+function var_0_0.addListener(arg_8_0)
+	local function var_8_0()
+		arg_8_0:closeView()
 	end
 
-	onButton(slot0, slot0.bg, slot1, SFX_CANCEL)
-	onButton(slot0, slot0.cancelBtn, slot1, SFX_CANCEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0.maxBuyCount < uv0.curBuyCount then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", uv0.costItemInfo:getName()))
+	onButton(arg_8_0, arg_8_0.bg, var_8_0, SFX_CANCEL)
+	onButton(arg_8_0, arg_8_0.cancelBtn, var_8_0, SFX_CANCEL)
+	onButton(arg_8_0, arg_8_0.confirmBtn, function()
+		if arg_8_0.curBuyCount > arg_8_0.maxBuyCount then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("islandshop_tips4", arg_8_0.costItemInfo:getName()))
 
 			return
 		end
 
 		pg.m02:sendNotification(GAME.ISLAND_SHOPPING, {
-			shop = uv0.actShopVO,
-			arg1 = uv0.goodVO.id,
-			arg2 = uv0.curBuyCount
+			shop = arg_8_0.actShopVO,
+			arg1 = arg_8_0.goodVO.id,
+			arg2 = arg_8_0.curBuyCount
 		})
 	end, SFX_CANCEL)
 
-	slot0.pageUtil = PageUtil.New(slot0.minusBtn, slot0.addBtn, slot0.maxBtn, slot0.butCountText)
+	arg_8_0.pageUtil = PageUtil.New(arg_8_0.minusBtn, arg_8_0.addBtn, arg_8_0.maxBtn, arg_8_0.butCountText)
 
-	slot0.pageUtil:setNumUpdate(function (slot0)
-		uv0:updateBuyPanelWithNum(slot0)
+	arg_8_0.pageUtil:setNumUpdate(function(arg_11_0)
+		arg_8_0:updateBuyPanelWithNum(arg_11_0)
 	end)
-	slot0.pageUtil:setAddNum(1)
-	slot0.pageUtil:setMaxNum(math.max(slot0.maxBuyCount, 1))
-	slot0.pageUtil:setDefaultNum(1)
+	arg_8_0.pageUtil:setAddNum(1)
+	arg_8_0.pageUtil:setMaxNum(math.max(arg_8_0.maxBuyCount, 1))
+	arg_8_0.pageUtil:setDefaultNum(1)
 end
 
-function slot0.updateGoodInfoPanel(slot0)
-	slot1 = slot0.goodVO
-	slot2 = Drop.New({
-		type = slot1:getConfig("commodity_type"),
-		id = slot1:getConfig("commodity_id"),
-		count = slot1:getConfig("num")
+function var_0_0.updateGoodInfoPanel(arg_12_0)
+	local var_12_0 = arg_12_0.goodVO
+	local var_12_1 = Drop.New({
+		type = var_12_0:getConfig("commodity_type"),
+		id = var_12_0:getConfig("commodity_id"),
+		count = var_12_0:getConfig("num")
 	})
 
-	updateDrop(slot0.itemTF, slot2)
+	updateDrop(arg_12_0.itemTF, var_12_1)
 
-	slot3, slot4 = slot2:getOwnedCount()
+	local var_12_2, var_12_3 = var_12_1:getOwnedCount()
 
-	setActive(slot0.countTF, slot4)
+	setActive(arg_12_0.countTF, var_12_3)
 
-	if slot4 then
-		setText(slot0.countText, slot3)
+	if var_12_3 then
+		setText(arg_12_0.countText, var_12_2)
 	end
 
-	setText(slot0.nameText, slot2:getConfig("name"))
-	setText(slot0.descText, string.gsub(slot2.desc or slot2:getConfig("desc"), "<[^>]+>", ""))
+	setText(arg_12_0.nameText, var_12_1:getConfig("name"))
+	setText(arg_12_0.descText, string.gsub(var_12_1.desc or var_12_1:getConfig("desc"), "<[^>]+>", ""))
 end
 
-function slot0.updateBuyPanelWithNum(slot0, slot1)
-	slot0.curBuyCount = slot1 or 0
+function var_0_0.updateBuyPanelWithNum(arg_13_0, arg_13_1)
+	arg_13_0.curBuyCount = arg_13_1 or 0
 
-	setText(slot0.buyNumText, slot0.curBuyCount)
-	setText(slot0.butCountText, slot0.curBuyCount)
-	setText(slot0.costNumText, slot0.curBuyCount * slot0.perCost)
+	setText(arg_13_0.buyNumText, arg_13_0.curBuyCount)
+	setText(arg_13_0.butCountText, arg_13_0.curBuyCount)
+	setText(arg_13_0.costNumText, arg_13_0.curBuyCount * arg_13_0.perCost)
 end
 
-return slot0
+return var_0_0

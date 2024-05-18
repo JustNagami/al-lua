@@ -1,94 +1,98 @@
-slot0 = class("InstagramMediator", import("...base.ContextMediator"))
-slot0.ON_LIKE = "InstagramMediator:ON_LIKE"
-slot0.ON_SHARE = "InstagramMediator:ON_SHARE"
-slot0.ON_COMMENT = "InstagramMediator:ON_COMMENT"
-slot0.ON_REPLY_UPDATE = "InstagramMediator:ON_REPLY_UPDATE"
-slot0.ON_READED = "InstagramMediator:ON_READED"
-slot0.ON_COMMENT_LIST_UPDATE = "InstagramMediator:ON_COMMENT_LIST_UPDATE"
+﻿local var_0_0 = class("InstagramMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
+var_0_0.ON_LIKE = "InstagramMediator:ON_LIKE"
+var_0_0.ON_SHARE = "InstagramMediator:ON_SHARE"
+var_0_0.ON_COMMENT = "InstagramMediator:ON_COMMENT"
+var_0_0.ON_REPLY_UPDATE = "InstagramMediator:ON_REPLY_UPDATE"
+var_0_0.ON_READED = "InstagramMediator:ON_READED"
+var_0_0.ON_COMMENT_LIST_UPDATE = "InstagramMediator:ON_COMMENT_LIST_UPDATE"
+
+function var_0_0.register(arg_1_0)
 	getProxy(InstagramProxy):InitLocalConfigs()
-	slot0:bind(uv0.ON_READED, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+	arg_1_0:bind(var_0_0.ON_READED, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.INSTAGRAM_OP_MARK_READ,
-			arg1 = slot1
+			arg1 = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_LIKE, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+	arg_1_0:bind(var_0_0.ON_LIKE, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.INSTAGRAM_OP_LIKE,
-			arg1 = slot1
+			arg1 = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.ON_SHARE, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+	arg_1_0:bind(var_0_0.ON_SHARE, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.INSTAGRAM_OP_SHARE,
-			arg1 = slot1
+			arg1 = arg_4_1
 		})
 	end)
-	slot0:bind(uv0.ON_COMMENT, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+	arg_1_0:bind(var_0_0.ON_COMMENT, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 			cmd = ActivityConst.INSTAGRAM_OP_COMMENT,
-			arg1 = slot1,
-			arg2 = slot3,
-			arg3 = slot2
+			arg1 = arg_5_1,
+			arg2 = arg_5_3,
+			arg3 = arg_5_2
 		})
 	end)
-	slot0:bind(uv0.ON_REPLY_UPDATE, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
+	arg_1_0:bind(var_0_0.ON_REPLY_UPDATE, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.ACT_INSTAGRAM_OP, {
 			arg2 = 0,
 			cmd = ActivityConst.INSTAGRAM_OP_UPDATE,
-			arg1 = slot1,
-			callback = function ()
-				uv0.viewComponent:UpdateCommentList()
+			arg1 = arg_6_1,
+			callback = function()
+				arg_1_0.viewComponent:UpdateCommentList()
 			end
 		})
 	end)
-	slot0:bind(uv0.ON_COMMENT_LIST_UPDATE, function (slot0, slot1, slot2)
-		uv0.viewComponent:UpdateInstagram(slot2, false)
+	arg_1_0:bind(var_0_0.ON_COMMENT_LIST_UPDATE, function(arg_8_0, arg_8_1, arg_8_2)
+		arg_1_0.viewComponent:UpdateInstagram(arg_8_2, false)
 
-		if uv0.contextData.instagram then
-			uv0.viewComponent:emit(uv1.ON_REPLY_UPDATE, slot1, slot2)
+		if arg_1_0.contextData.instagram then
+			arg_1_0.viewComponent:emit(var_0_0.ON_REPLY_UPDATE, arg_8_1, arg_8_2)
 		end
 	end)
-	slot0.viewComponent:SetProxy(getProxy(InstagramProxy))
+	arg_1_0.viewComponent:SetProxy(getProxy(InstagramProxy))
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_9_0)
 	return {
 		GAME.ACT_INSTAGRAM_OP_DONE
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	function slot4()
-		uv0.viewComponent:SetProxy(getProxy(InstagramProxy))
-		uv0.viewComponent:UpdateInstagram(uv1.id)
-		uv0.viewComponent:UpdateSelectedInstagram(uv1.id)
+function var_0_0.handleNotification(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1:getName()
+	local var_10_1 = arg_10_1:getBody()
+
+	local function var_10_2()
+		arg_10_0.viewComponent:SetProxy(getProxy(InstagramProxy))
+		arg_10_0.viewComponent:UpdateInstagram(var_10_1.id)
+		arg_10_0.viewComponent:UpdateSelectedInstagram(var_10_1.id)
 	end
 
-	if slot1:getName() == GAME.ACT_INSTAGRAM_OP_DONE then
-		slot0.viewComponent:SetProxy(getProxy(InstagramProxy))
+	if var_10_0 == GAME.ACT_INSTAGRAM_OP_DONE then
+		arg_10_0.viewComponent:SetProxy(getProxy(InstagramProxy))
 
-		if slot1:getBody().cmd == ActivityConst.INSTAGRAM_OP_SHARE then
+		if var_10_1.cmd == ActivityConst.INSTAGRAM_OP_SHARE then
 			pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeInstagram)
-		elseif slot3.cmd == ActivityConst.INSTAGRAM_OP_LIKE then
-			slot4()
-			slot0.viewComponent:UpdateLikeBtn()
+		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_LIKE then
+			var_10_2()
+			arg_10_0.viewComponent:UpdateLikeBtn()
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ins_click_like_success"))
-		elseif slot3.cmd == ActivityConst.INSTAGRAM_OP_COMMENT then
+		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_COMMENT then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("ins_push_comment_success"))
-			slot4()
-		elseif slot3.cmd == ActivityConst.INSTAGRAM_OP_ACTIVE or slot3.cmd == ActivityConst.INSTAGRAM_OP_UPDATE then
-			slot0.viewComponent:InitList()
-			slot4()
-		elseif slot3.cmd == ActivityConst.INSTAGRAM_OP_MARK_READ then
-			slot4()
+			var_10_2()
+		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_ACTIVE or var_10_1.cmd == ActivityConst.INSTAGRAM_OP_UPDATE then
+			arg_10_0.viewComponent:InitList()
+			var_10_2()
+		elseif var_10_1.cmd == ActivityConst.INSTAGRAM_OP_MARK_READ then
+			var_10_2()
 		end
 	end
 end
 
-return slot0
+return var_0_0

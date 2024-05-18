@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "属性提升",
-	stack = 3,
-	id = 1090092,
-	icon = 12650,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -38,5 +18,25 @@ return {
 				number = 800
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "属性提升",
+	stack = 3,
+	id = 1090092,
+	icon = 12650,
+	last_effect = ""
 }

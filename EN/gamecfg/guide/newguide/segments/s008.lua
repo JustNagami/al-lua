@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Our next mission is to support the Eagles' aviation fleet combat drills. Tap <color=#ff7d36>Attack</color> to get started.",
 	"We've located Hornet! Let's move towards the target.",
 	"Oh no! Evasion failed. We have to meet them head on!",
@@ -17,7 +17,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -38,7 +38,7 @@ return {
 				mode = 2,
 				posY = -351,
 				posX = -257,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/normal/func_button",
@@ -64,7 +64,7 @@ return {
 				mode = 2,
 				posY = -295,
 				posX = -297,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -75,7 +75,7 @@ return {
 				mode = 2,
 				posY = -295,
 				posX = -297,
-				text = slot0[4]
+				text = var_0_0[4]
 			}
 		},
 		{
@@ -85,7 +85,7 @@ return {
 				mode = 2,
 				posY = -68.93,
 				posX = 241.87,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/ChapterPreCombatUI(Clone)/right/start",

@@ -1,168 +1,170 @@
-slot0 = class("IslandFlowerFieldLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("IslandFlowerFieldLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandFlowerFieldUI"
 end
 
-function slot0.setActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.setActivity(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1
 end
 
-function slot0.init(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.init(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
-	slot1 = slot0._tf:Find("Text")
+	local var_3_0 = arg_3_0._tf:Find("Text")
 
-	setText(slot1, i18n("islandnode_tips6"))
-	slot1:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		setActive(uv0, false)
+	setText(var_3_0, i18n("islandnode_tips6"))
+	var_3_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		setActive(var_3_0, false)
 	end)
 
-	slot0.rtChars = slot0._tf:Find("chars")
-	slot0.rtShip = slot0.rtChars:GetChild(math.random(slot0.rtChars.childCount) - 1)
-	slot0.contextData.shipConfigId = tonumber(slot0.rtShip.name)
+	arg_3_0.rtChars = arg_3_0._tf:Find("chars")
+	arg_3_0.rtShip = arg_3_0.rtChars:GetChild(math.random(arg_3_0.rtChars.childCount) - 1)
+	arg_3_0.contextData.shipConfigId = tonumber(arg_3_0.rtShip.name)
 
-	eachChild(slot0.rtChars, function (slot0)
-		setActive(slot0, slot0 == uv0.rtShip)
+	eachChild(arg_3_0.rtChars, function(arg_5_0)
+		setActive(arg_5_0, arg_5_0 == arg_3_0.rtShip)
 	end)
 
-	slot0.fieldList = {}
-	slot0.posList = {}
+	arg_3_0.fieldList = {}
+	arg_3_0.posList = {}
 
-	eachChild(slot0._tf:Find("field"), function (slot0)
-		eachChild(slot0, function (slot0)
-			table.insert(uv0.fieldList, slot0)
-			table.insert(uv0.posList, uv0.rtChars:InverseTransformPoint(slot0.position))
+	eachChild(arg_3_0._tf:Find("field"), function(arg_6_0)
+		eachChild(arg_6_0, function(arg_7_0)
+			table.insert(arg_3_0.fieldList, arg_7_0)
+			table.insert(arg_3_0.posList, arg_3_0.rtChars:InverseTransformPoint(arg_7_0.position))
 		end)
 	end)
 
-	slot0.rtField = slot0._tf:Find("field")
-	slot0.rtBtnGet = slot0._tf:Find("btn_get")
+	arg_3_0.rtField = arg_3_0._tf:Find("field")
+	arg_3_0.rtBtnGet = arg_3_0._tf:Find("btn_get")
 
-	function slot5()
-		uv0:closeView()
-	end
+	onButton(arg_3_0, arg_3_0._tf:Find("btn_back"), function()
+		arg_3_0:closeView()
+	end, SFX_CANCEL)
 
-	slot6 = SFX_CANCEL
-
-	onButton(slot0, slot0._tf:Find("btn_back"), slot5, slot6)
-
-	for slot5, slot6 in ipairs({
+	for iter_3_0, iter_3_1 in ipairs({
 		"click",
 		"click_lock"
 	}) do
-		onButton(slot0, slot0.rtBtnGet:Find(slot6), function ()
-			if uv0.timer then
-				setActive(uv1, true)
+		onButton(arg_3_0, arg_3_0.rtBtnGet:Find(iter_3_1), function()
+			if arg_3_0.timer then
+				setActive(var_3_0, true)
 
 				return
 			end
 
-			uv0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, false)
+			arg_3_0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, false)
 		end, SFX_CONFIRM)
 	end
 end
 
-function slot0.refreshDisplay(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = slot1:GetTimeToNextTime(math.max(slot0.activity.data1, slot0.activity.data2)) <= slot1:GetServerTime()
+function var_0_0.refreshDisplay(arg_10_0)
+	local var_10_0 = pg.TimeMgr.GetInstance()
+	local var_10_1 = var_10_0:GetServerTime() >= var_10_0:GetTimeToNextTime(math.max(arg_10_0.activity.data1, arg_10_0.activity.data2))
 
-	setActive(slot0.rtBtnGet:Find("click"), slot2)
-	setActive(slot0.rtBtnGet:Find("click_lock"), not slot2)
+	setActive(arg_10_0.rtBtnGet:Find("click"), var_10_1)
+	setActive(arg_10_0.rtBtnGet:Find("click_lock"), not var_10_1)
 
-	for slot6, slot7 in ipairs(slot0.fieldList) do
-		triggerToggle(slot7, slot2)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.fieldList) do
+		triggerToggle(iter_10_1, var_10_1)
 	end
 
-	if slot2 then
-		setText(slot0.rtBtnGet:Find("time/Text"), slot1:DescCDTime(0))
+	if var_10_1 then
+		setText(arg_10_0.rtBtnGet:Find("time/Text"), var_10_0:DescCDTime(0))
 	else
-		slot4 = 0
-		slot0.timer = Timer.New(function ()
-			if uv0 < uv1 then
-				uv0 = uv0 + 1
+		local var_10_2 = var_10_0:GetTimeToNextTime() - var_10_0:GetServerTime()
+		local var_10_3 = 0
 
-				setText(uv2.rtBtnGet:Find("time/Text"), uv3:DescCDTime(uv1 - uv0))
+		arg_10_0.timer = Timer.New(function()
+			if var_10_3 < var_10_2 then
+				var_10_3 = var_10_3 + 1
+
+				setText(arg_10_0.rtBtnGet:Find("time/Text"), var_10_0:DescCDTime(var_10_2 - var_10_3))
 			else
-				uv2.timer:Stop()
+				arg_10_0.timer:Stop()
 
-				uv2.timer = nil
+				arg_10_0.timer = nil
 
-				uv2:refreshDisplay()
+				arg_10_0:refreshDisplay()
 			end
-		end, 1, slot1:GetTimeToNextTime() - slot1:GetServerTime())
+		end, 1, var_10_2)
 
-		slot0.timer.func()
-		slot0.timer:Start()
+		arg_10_0.timer.func()
+		arg_10_0.timer:Start()
 	end
 end
 
-function slot0.didEnter(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
+function var_0_0.didEnter(arg_12_0)
+	local var_12_0 = pg.TimeMgr.GetInstance()
 
-	if slot1:GetServerTime() - slot1:GetTimeToNextTime(math.max(slot0.activity.data1, slot0.activity.data2)) < 86400 then
-		slot0:refreshDisplay()
+	if var_12_0:GetServerTime() - var_12_0:GetTimeToNextTime(math.max(arg_12_0.activity.data1, arg_12_0.activity.data2)) < 86400 then
+		arg_12_0:refreshDisplay()
 	else
-		slot0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, true)
+		arg_12_0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, true)
 	end
 
-	slot0:DoCharAction()
+	arg_12_0:DoCharAction()
 end
 
-slot1 = 50
+local var_0_1 = 50
 
-function slot0.DoCharAction(slot0)
-	if (slot0.posList[math.random(#slot0.posList)] - slot0.rtShip.anchoredPosition3D):SqrMagnitude() <= 0 then
-		return slot0:DoCharAction()
+function var_0_0.DoCharAction(arg_13_0)
+	local var_13_0 = arg_13_0.posList[math.random(#arg_13_0.posList)]
+	local var_13_1 = var_13_0 - arg_13_0.rtShip.anchoredPosition3D
+
+	if var_13_1:SqrMagnitude() <= 0 then
+		return arg_13_0:DoCharAction()
 	end
 
-	slot2.x = slot2.x - (slot2.x < 0 and -1 or 1) * 100
-	slot4 = {}
+	var_13_1.x = var_13_1.x - (var_13_1.x < 0 and -1 or 1) * 100
 
-	table.insert(slot4, function (slot0)
-		SetAction(uv0.rtShip, "jiaoshui_walk")
-		setLocalScale(uv0.rtShip, {
-			x = (uv1.x < 0 and -1 or 1) * math.abs(uv0.rtShip.localScale.x)
+	local var_13_2 = {}
+
+	table.insert(var_13_2, function(arg_14_0)
+		SetAction(arg_13_0.rtShip, "jiaoshui_walk")
+		setLocalScale(arg_13_0.rtShip, {
+			x = (var_13_1.x < 0 and -1 or 1) * math.abs(arg_13_0.rtShip.localScale.x)
 		})
 
-		uv0.charLT = LeanTween.move(uv0.rtShip, uv0.rtShip.anchoredPosition3D + uv1, uv1:Magnitude() / uv2):setOnComplete(System.Action(slot0)).uniqueId
+		arg_13_0.charLT = LeanTween.move(arg_13_0.rtShip, arg_13_0.rtShip.anchoredPosition3D + var_13_1, var_13_1:Magnitude() / var_0_1):setOnComplete(System.Action(arg_14_0)).uniqueId
 	end)
-	table.insert(slot4, function (slot0)
-		uv0 = uv1 - uv2.rtShip.anchoredPosition3D
+	table.insert(var_13_2, function(arg_15_0)
+		var_13_1 = var_13_0 - arg_13_0.rtShip.anchoredPosition3D
 
-		SetAction(uv2.rtShip, "jiaoshui", false)
-		setLocalScale(uv2.rtShip, {
-			x = (uv0.x < 0 and -1 or 1) * math.abs(uv2.rtShip.localScale.x)
+		SetAction(arg_13_0.rtShip, "jiaoshui", false)
+		setLocalScale(arg_13_0.rtShip, {
+			x = (var_13_1.x < 0 and -1 or 1) * math.abs(arg_13_0.rtShip.localScale.x)
 		})
 
-		uv2.charLT = LeanTween.delayedCall(3, System.Action(slot0)).uniqueId
+		arg_13_0.charLT = LeanTween.delayedCall(3, System.Action(arg_15_0)).uniqueId
 	end)
-	table.insert(slot4, function (slot0)
-		SetAction(uv0.rtShip, "jiaoshui_stand")
+	table.insert(var_13_2, function(arg_16_0)
+		SetAction(arg_13_0.rtShip, "jiaoshui_stand")
 
-		uv0.charLT = LeanTween.delayedCall(4.666666666666667, System.Action(slot0)).uniqueId
+		arg_13_0.charLT = LeanTween.delayedCall(4.666666666666667, System.Action(arg_16_0)).uniqueId
 	end)
-	seriesAsync(slot4, function ()
-		uv0.charLT = nil
+	seriesAsync(var_13_2, function()
+		arg_13_0.charLT = nil
 
-		uv0:DoCharAction()
+		arg_13_0:DoCharAction()
 	end)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_18_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_18_0._tf)
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_18_0.timer then
+		arg_18_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_18_0.timer = nil
 	end
 
-	if slot0.charLT then
-		LeanTween.cancel(slot0.charLT)
+	if arg_18_0.charLT then
+		LeanTween.cancel(arg_18_0.charLT)
 
-		slot0.charLT = nil
+		arg_18_0.charLT = nil
 	end
 end
 
-return slot0
+return var_0_0

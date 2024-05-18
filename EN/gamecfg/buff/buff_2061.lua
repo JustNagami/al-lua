@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				rant = 1500,
+				time = 5,
+				skill_id = 2061,
+				target = "TargetSelf",
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		desc = "主炮攻击时有15.0%的概率额外发射1组炮弹",
 		addition = {
@@ -239,22 +256,5 @@ return {
 	stack = 1,
 	id = 2061,
 	icon = 2060,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				rant = 1500,
-				time = 5,
-				skill_id = 2061,
-				target = "TargetSelf",
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,28 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_T_2",
+				number = 0.1
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "DMG_TAG_EHC_T_3",
+				number = 0.1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -268,29 +292,5 @@ return {
 	stack = 1,
 	id = 19483,
 	icon = 19480,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_T_2",
-				number = 0.1
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "DMG_TAG_EHC_T_3",
-				number = 0.1
-			}
-		}
-	}
+	last_effect = ""
 }

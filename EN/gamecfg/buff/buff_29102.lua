@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II"
-	},
-	desc_get = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II",
-	name = "专属弹幕-贝尔法斯特II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II",
-	stack = 1,
-	id = 29102,
-	icon = 29100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29100
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II"
+	},
+	desc_get = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II",
+	name = "专属弹幕-贝尔法斯特II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行8次攻击，触发专属弹幕-贝尔法斯特II",
+	stack = 1,
+	id = 29102,
+	icon = 29100,
+	last_effect = ""
 }

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.sim_battle_template = {
 	{
 		id = 1,

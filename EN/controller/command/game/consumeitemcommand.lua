@@ -1,23 +1,25 @@
-slot0 = class("ConsumeItemCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ConsumeItemCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if slot1:getBody().type == DROP_TYPE_RESOURCE then
-		slot3 = id2res(slot2.id)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-		assert(slot3, "res should be defined: " .. slot2.id)
+	if var_1_0.type == DROP_TYPE_RESOURCE then
+		local var_1_1 = id2res(var_1_0.id)
 
-		slot4 = getProxy(PlayerProxy)
-		slot5 = slot4:getData()
+		assert(var_1_1, "res should be defined: " .. var_1_0.id)
 
-		slot5:consume({
-			[slot3] = slot2.count
+		local var_1_2 = getProxy(PlayerProxy)
+		local var_1_3 = var_1_2:getData()
+
+		var_1_3:consume({
+			[var_1_1] = var_1_0.count
 		})
-		slot4:updatePlayer(slot5)
-	elseif slot2.type == DROP_TYPE_ITEM then
-		getProxy(BagProxy):removeItemById(slot2.id, slot2.count)
+		var_1_2:updatePlayer(var_1_3)
+	elseif var_1_0.type == DROP_TYPE_ITEM then
+		getProxy(BagProxy):removeItemById(var_1_0.id, var_1_0.count)
 	else
-		assert(false, "no support for type --" .. slot2.type)
+		assert(false, "no support for type --" .. var_1_0.type)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Use your mission rewards to <color=#ff7d36>build a new ship</color>.",
 	"Tap to build",
 	"This time, try building a <color=#ff7d36>heavy ship</color>!",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/buildButton",
@@ -38,7 +38,7 @@ return {
 				mode = 2,
 				posY = 125,
 				posX = -520,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/blur_panel/adapt/left_length/frame/tagRoot/build_btn",
@@ -60,11 +60,11 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				pathIndex = -1,
-				dynamicPath = function ()
+				dynamicPath = function()
 					if #getProxy(BuildShipProxy):GetPoolsWithoutNewServer() > 4 then
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/mask/bg/toggles/heavy(Clone)/frame", 0.85
 					else
@@ -87,7 +87,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 205.91,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/start_btn",
@@ -108,7 +108,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/BuildShipMsgBoxUI(Clone)/window/btns/confirm_btn",

@@ -1,7 +1,7 @@
-slot0 = class("MainSequenceView")
+﻿local var_0_0 = class("MainSequenceView")
 
-function slot0.Ctor(slot0)
-	slot0.sequence = {
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.sequence = {
 		MainRefundSequence.New(),
 		MainForcePlayerNameModificationSequence.New(),
 		MainRequestVoteInfoSequence.New(),
@@ -34,55 +34,55 @@ function slot0.Ctor(slot0)
 	}
 end
 
-function slot0.MapSequence(slot0, slot1)
-	slot2 = {}
+function var_0_0.MapSequence(arg_2_0, arg_2_1)
+	local var_2_0 = {}
 
-	for slot6, slot7 in ipairs(slot1) do
-		table.insert(slot2, function (slot0)
-			if uv0._exited then
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
+		table.insert(var_2_0, function(arg_3_0)
+			if arg_2_0._exited then
 				return
 			end
 
-			uv1:Execute(slot0)
+			iter_2_1:Execute(arg_3_0)
 		end)
 	end
 
-	return slot2
+	return var_2_0
 end
 
-function slot0.Execute(slot0, slot1)
+function var_0_0.Execute(arg_4_0, arg_4_1)
 	if not pg.SeriesGuideMgr.GetInstance():isEnd() then
-		slot1()
+		arg_4_1()
 
 		return
 	end
 
-	if not slot0.executable then
-		slot0.executable = slot0:MapSequence(slot0.sequence)
+	if not arg_4_0.executable then
+		arg_4_0.executable = arg_4_0:MapSequence(arg_4_0.sequence)
 	end
 
-	seriesAsync(slot0.executable, slot1)
+	seriesAsync(arg_4_0.executable, arg_4_1)
 end
 
-function slot0.Disable(slot0)
-	for slot4, slot5 in ipairs(slot0.sequence) do
-		if slot5.Clear ~= nil then
-			slot5:Clear()
+function var_0_0.Disable(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.sequence) do
+		if iter_5_1.Clear ~= nil then
+			iter_5_1:Clear()
 		end
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0._exited = true
+function var_0_0.Dispose(arg_6_0)
+	arg_6_0._exited = true
 
-	for slot4, slot5 in ipairs(slot0.sequence) do
-		if slot5.Dispose ~= nil then
-			slot5:Dispose()
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.sequence) do
+		if iter_6_1.Dispose ~= nil then
+			iter_6_1:Dispose()
 		end
 	end
 
-	slot0.sequence = nil
-	slot0.executable = nil
+	arg_6_0.sequence = nil
+	arg_6_0.executable = nil
 end
 
-return slot0
+return var_0_0

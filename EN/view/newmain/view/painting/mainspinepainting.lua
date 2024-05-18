@@ -1,87 +1,108 @@
-slot0 = class("MainSpinePainting", import(".MainBasePainting"))
+﻿local var_0_0 = class("MainSpinePainting", import(".MainBasePainting"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot1, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
-	slot0.bgTr = slot3
-	slot0.spTF = findTF(slot1, "spinePainting")
-	slot0.spBg = findTF(slot3, "spinePainting")
-	slot0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+	arg_1_0.bgTr = arg_1_3
+	arg_1_0.spTF = findTF(arg_1_1, "spinePainting")
+	arg_1_0.spBg = findTF(arg_1_3, "spinePainting")
+	arg_1_0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
 end
 
-function slot0.GetCenterPos(slot0)
-	return slot0.chatTf.parent:InverseTransformPoint(slot0.spTF.position)
+function var_0_0.GetCenterPos(arg_2_0)
+	local var_2_0 = arg_2_0.spTF
+
+	return (arg_2_0.chatTf.parent:InverseTransformPoint(var_2_0.position))
 end
 
-function slot0.OnLoad(slot0, slot1)
-	slot0.spinePainting = SpinePainting.New(SpinePainting.GenerateData({
-		ship = slot0.ship,
+function var_0_0.OnLoad(arg_3_0, arg_3_1)
+	local var_3_0 = SpinePainting.GenerateData({
+		ship = arg_3_0.ship,
 		position = Vector3(0, 0, 0),
-		parent = slot0.spTF,
-		effectParent = slot0.spBg
-	}), function (slot0)
-		uv0:AdJustOrderInLayer(slot0)
-		uv0:InitSpecialTouch()
-		uv1()
+		parent = arg_3_0.spTF,
+		effectParent = arg_3_0.spBg
+	})
+
+	arg_3_0.spinePainting = SpinePainting.New(var_3_0, function(arg_4_0)
+		arg_3_0:AdJustOrderInLayer(arg_4_0)
+		arg_3_0:InitSpecialTouch()
+		arg_3_1()
 	end)
 end
 
-function slot0.AdJustOrderInLayer(slot0, slot1)
-	slot2 = 0
+function var_0_0.AdJustOrderInLayer(arg_5_0, arg_5_1)
+	local var_5_0 = 0
+	local var_5_1 = arg_5_0.container:GetComponent(typeof(Canvas))
 
-	if slot0.container:GetComponent(typeof(Canvas)) and slot3.overrideSorting and slot3.sortingOrder ~= 0 then
-		for slot8 = 1, slot0.spTF:GetComponentsInChildren(typeof(Canvas)).Length do
-			slot9 = slot4[slot8 - 1]
-			slot9.overrideSorting = true
-			slot2 = slot9.sortingOrder - slot3.sortingOrder
-			slot9.sortingOrder = slot3.sortingOrder
+	if var_5_1 and var_5_1.overrideSorting and var_5_1.sortingOrder ~= 0 then
+		local var_5_2 = arg_5_0.spTF:GetComponentsInChildren(typeof(Canvas))
+
+		for iter_5_0 = 1, var_5_2.Length do
+			local var_5_3 = var_5_2[iter_5_0 - 1]
+
+			var_5_3.overrideSorting = true
+			var_5_0 = var_5_3.sortingOrder - var_5_1.sortingOrder
+			var_5_3.sortingOrder = var_5_1.sortingOrder
 		end
 	end
 
-	if slot0.bgTr:GetComponent(typeof(Canvas)) and slot4.overrideSorting and slot4.sortingOrder ~= 0 then
-		for slot9 = 1, slot0.spBg:GetComponentsInChildren(typeof(Canvas)).Length do
-			slot10 = slot5[slot9 - 1]
-			slot10.overrideSorting = true
-			slot10.sortingOrder = slot10.sortingOrder - slot2
+	local var_5_4 = arg_5_0.bgTr:GetComponent(typeof(Canvas))
+
+	if var_5_4 and var_5_4.overrideSorting and var_5_4.sortingOrder ~= 0 then
+		local var_5_5 = arg_5_0.spBg:GetComponentsInChildren(typeof(Canvas))
+
+		for iter_5_1 = 1, var_5_5.Length do
+			local var_5_6 = var_5_5[iter_5_1 - 1]
+
+			var_5_6.overrideSorting = true
+			var_5_6.sortingOrder = var_5_6.sortingOrder - var_5_0
 		end
 
-		for slot10 = 1, slot0.spBg:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer")).Length do
-			slot11 = slot6[slot10 - 1]
+		local var_5_7 = arg_5_0.spBg:GetComponentsInChildren(typeof("UnityEngine.ParticleSystemRenderer"))
 
-			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot11, ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", slot11) - slot2)
+		for iter_5_2 = 1, var_5_7.Length do
+			local var_5_8 = var_5_7[iter_5_2 - 1]
+			local var_5_9 = ReflectionHelp.RefGetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_5_8) - var_5_0
+
+			ReflectionHelp.RefSetProperty(typeof("UnityEngine.ParticleSystemRenderer"), "sortingOrder", var_5_8, var_5_9)
 		end
 	end
 end
 
-function slot0.InitSpecialTouch(slot0)
-	slot0.specialClickDic = {}
+function var_0_0.InitSpecialTouch(arg_6_0)
+	arg_6_0.specialClickDic = {}
 
-	if not findTF(slot0.spTF:GetChild(0), "hitArea") then
+	local var_6_0 = findTF(arg_6_0.spTF:GetChild(0), "hitArea")
+
+	if not var_6_0 then
 		return
 	end
 
-	eachChild(slot1, function (slot0)
-		if slot0.name == "drag" then
-			uv0.dragEvent = GetOrAddComponent(slot0, typeof(EventTriggerListener))
+	eachChild(var_6_0, function(arg_7_0)
+		if arg_7_0.name == "drag" then
+			arg_6_0.dragEvent = GetOrAddComponent(arg_7_0, typeof(EventTriggerListener))
 
-			uv0.dragEvent:AddPointDownFunc(function (slot0, slot1)
-				uv0.dragActive = true
-				uv0.dragStart = slot1.position
+			arg_6_0.dragEvent:AddPointDownFunc(function(arg_8_0, arg_8_1)
+				arg_6_0.dragActive = true
+				arg_6_0.dragStart = arg_8_1.position
 			end)
-			uv0.dragEvent:AddPointUpFunc(function (slot0, slot1)
-				if uv0.dragActive then
-					uv0.dragActive = false
-					uv0.dragOffset = Vector2(uv0.dragStart.x - slot1.position.x, uv0.dragStart.y - slot1.position.y)
+			arg_6_0.dragEvent:AddPointUpFunc(function(arg_9_0, arg_9_1)
+				if arg_6_0.dragActive then
+					arg_6_0.dragActive = false
+					arg_6_0.dragOffset = Vector2(arg_6_0.dragStart.x - arg_9_1.position.x, arg_6_0.dragStart.y - arg_9_1.position.y)
 
-					if math.abs(uv0.dragOffset.x) < 200 or math.abs(uv0.dragOffset.y) < 200 then
-						uv0.dragUp = slot1.position
+					if math.abs(arg_6_0.dragOffset.x) < 200 or math.abs(arg_6_0.dragOffset.y) < 200 then
+						arg_6_0.dragUp = arg_9_1.position
 
-						for slot6 = 1, #uv0.specialClickDic do
-							slot7 = uv0.specialClickDic[slot6]
+						local var_9_0 = arg_6_0.uiCam:ScreenToWorldPoint(arg_9_1.position)
 
-							if math.abs(slot7.tf:InverseTransformPoint(uv0.uiCam:ScreenToWorldPoint(slot1.position)).x) < slot7.bound.x / 2 and math.abs(slot8.y) < slot7.bound.y / 2 then
-								uv0:TriggerEvent(slot7.name)
-								uv0:TriggerPersonalTask(slot7.task)
+						for iter_9_0 = 1, #arg_6_0.specialClickDic do
+							local var_9_1 = arg_6_0.specialClickDic[iter_9_0]
+							local var_9_2 = var_9_1.tf:InverseTransformPoint(var_9_0)
+
+							if math.abs(var_9_2.x) < var_9_1.bound.x / 2 and math.abs(var_9_2.y) < var_9_1.bound.y / 2 then
+								arg_6_0:TriggerEvent(var_9_1.name)
+								arg_6_0:TriggerPersonalTask(var_9_1.task)
 
 								return
 							end
@@ -89,115 +110,120 @@ function slot0.InitSpecialTouch(slot0)
 					end
 				end
 			end)
-			uv0.dragEvent:AddDragFunc(function (slot0, slot1)
-				if uv0.dragActive then
-					if uv0.isDragAndZoomState then
-						uv0.dragActive = false
+			arg_6_0.dragEvent:AddDragFunc(function(arg_10_0, arg_10_1)
+				if arg_6_0.dragActive then
+					if arg_6_0.isDragAndZoomState then
+						arg_6_0.dragActive = false
 
 						return
 					end
 
-					if uv0.chatting then
-						uv0.dragActive = false
+					if arg_6_0.chatting then
+						arg_6_0.dragActive = false
 
 						return
 					end
 
-					uv0.dragOffset = Vector2(uv0.dragStart.x - slot1.position.x, uv0.dragStart.y - slot1.position.y)
+					arg_6_0.dragOffset = Vector2(arg_6_0.dragStart.x - arg_10_1.position.x, arg_6_0.dragStart.y - arg_10_1.position.y)
 
-					if math.abs(uv0.dragOffset.x) > 200 or math.abs(uv0.dragOffset.y) > 200 then
-						uv0.dragActive = false
+					if math.abs(arg_6_0.dragOffset.x) > 200 or math.abs(arg_6_0.dragOffset.y) > 200 then
+						arg_6_0.dragActive = false
 
-						uv0.spinePainting:DoDragTouch()
+						arg_6_0.spinePainting:DoDragTouch()
 					end
 				end
 			end)
 		else
-			if uv0:GetSpecialTouchEvent(slot0.name) then
-				table.insert(uv0.specialClickDic, {
-					name = slot1,
-					task = uv0.ship.groupId,
-					bound = slot0.sizeDelta,
-					tf = slot0
+			local var_7_0 = arg_6_0:GetSpecialTouchEvent(arg_7_0.name)
+
+			if var_7_0 then
+				table.insert(arg_6_0.specialClickDic, {
+					name = var_7_0,
+					task = arg_6_0.ship.groupId,
+					bound = arg_7_0.sizeDelta,
+					tf = arg_7_0
 				})
 			end
 
-			onButton(uv0, slot0, function ()
-				slot0 = uv0:GetSpecialTouchEvent(uv1.name)
+			onButton(arg_6_0, arg_7_0, function()
+				local var_11_0 = arg_6_0:GetSpecialTouchEvent(arg_7_0.name)
 
-				if uv1.name == "special" then
-					if uv0.isDragAndZoomState then
+				if arg_7_0.name == "special" then
+					if arg_6_0.isDragAndZoomState then
 						return
 					end
 
-					if uv0.chatting then
+					if arg_6_0.chatting then
 						return
 					end
 
-					uv0.spinePainting:DoSpecialTouch()
+					arg_6_0.spinePainting:DoSpecialTouch()
 				else
-					uv0:TriggerEvent(slot0)
-					uv0:TriggerPersonalTask(uv0.ship.groupId)
+					arg_6_0:TriggerEvent(var_11_0)
+					arg_6_0:TriggerPersonalTask(arg_6_0.ship.groupId)
 				end
 			end)
 		end
 	end)
 end
 
-function slot0.OnClick(slot0)
-	slot1 = slot0:CollectTouchEvents()
+function var_0_0.OnClick(arg_12_0)
+	local var_12_0 = arg_12_0:CollectTouchEvents()
 
-	slot0:TriggerEvent(slot1[math.ceil(math.random(#slot1))])
+	arg_12_0:TriggerEvent(var_12_0[math.ceil(math.random(#var_12_0))])
 end
 
-function slot0.OnDisplayWorld(slot0, slot1)
-	if ShipExpressionHelper.GetExpression(slot0.paintingName, slot1, slot0.ship:getCVIntimacy(), slot0.ship.skinId) ~= "" then
-		slot0.spinePainting:SetAction(slot3, 1)
+function var_0_0.OnDisplayWorld(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.ship:getCVIntimacy()
+	local var_13_1 = ShipExpressionHelper.GetExpression(arg_13_0.paintingName, arg_13_1, var_13_0, arg_13_0.ship.skinId)
+
+	if var_13_1 ~= "" then
+		arg_13_0.spinePainting:SetAction(var_13_1, 1)
 	end
 end
 
-function slot0.OnDisplayWordEnd(slot0)
-	uv0.super.OnDisplayWordEnd(slot0)
-	slot0.spinePainting:SetEmptyAction(1)
+function var_0_0.OnDisplayWordEnd(arg_14_0)
+	var_0_0.super.OnDisplayWordEnd(arg_14_0)
+	arg_14_0.spinePainting:SetEmptyAction(1)
 end
 
-function slot0.OnLongPress(slot0)
-	if slot0.isFoldState then
+function var_0_0.OnLongPress(arg_15_0)
+	if arg_15_0.isFoldState then
 		return
 	end
 
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-		shipId = slot0.ship.id
+		shipId = arg_15_0.ship.id
 	})
 end
 
-function slot0.OnUnload(slot0)
-	if slot0.spinePainting then
-		slot0.spinePainting:Dispose()
+function var_0_0.OnUnload(arg_16_0)
+	if arg_16_0.spinePainting then
+		arg_16_0.spinePainting:Dispose()
 
-		slot0.spinePainting = nil
+		arg_16_0.spinePainting = nil
 	end
 
-	if slot0.dragEvent then
-		ClearEventTrigger(slot0.dragEvent)
-	end
-end
-
-function slot0.GetOffset(slot0)
-	return slot0.spTF.localPosition.x
-end
-
-function slot0.OnPuase(slot0)
-	if slot0.spinePainting then
-		slot0.spinePainting:SetVisible(false)
+	if arg_16_0.dragEvent then
+		ClearEventTrigger(arg_16_0.dragEvent)
 	end
 end
 
-function slot0.OnResume(slot0)
-	if slot0.spinePainting then
-		slot0.spinePainting:SetVisible(true)
-		slot0.spinePainting:SetEmptyAction(1)
+function var_0_0.GetOffset(arg_17_0)
+	return arg_17_0.spTF.localPosition.x
+end
+
+function var_0_0.OnPuase(arg_18_0)
+	if arg_18_0.spinePainting then
+		arg_18_0.spinePainting:SetVisible(false)
 	end
 end
 
-return slot0
+function var_0_0.OnResume(arg_19_0)
+	if arg_19_0.spinePainting then
+		arg_19_0.spinePainting:SetVisible(true)
+		arg_19_0.spinePainting:SetEmptyAction(1)
+	end
+end
+
+return var_0_0

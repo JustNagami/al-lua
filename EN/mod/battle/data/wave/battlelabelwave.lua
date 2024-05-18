@@ -1,28 +1,31 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleLabelWave = class("BattleLabelWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleLabelWave.__name = "BattleLabelWave"
-slot1 = slot0.Battle.BattleLabelWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleLabelWave = class("BattleLabelWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleLabelWave.__name = "BattleLabelWave"
+
+local var_0_1 = var_0_0.Battle.BattleLabelWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._labelData = {
-		op = slot0._param.op,
-		key = slot0._param.key,
-		x = slot0._param.x,
-		y = slot0._param.y,
-		dialogue = slot0._param.dialogue,
-		duration = slot0._param.duration
+	arg_2_0._labelData = {
+		op = arg_2_0._param.op,
+		key = arg_2_0._param.key,
+		x = arg_2_0._param.x,
+		y = arg_2_0._param.y,
+		dialogue = arg_2_0._param.dialogue,
+		duration = arg_2_0._param.duration
 	}
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
-	uv1.Battle.BattleState.GetInstance():GetProxyByName(uv1.Battle.BattleDataProxy.__name):DispatchCustomWarning(slot0._labelData)
-	slot0:doPass()
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
+	var_0_0.Battle.BattleState.GetInstance():GetProxyByName(var_0_0.Battle.BattleDataProxy.__name):DispatchCustomWarning(arg_3_0._labelData)
+	arg_3_0:doPass()
 end

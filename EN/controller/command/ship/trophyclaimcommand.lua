@@ -1,27 +1,30 @@
-slot0 = class("TrophyClaimCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("TrophyClaimCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot4 = getProxy(CollectionProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().trophyID
+	local var_1_1 = getProxy(CollectionProxy)
 
 	pg.ConnectionMgr.GetInstance():Send(17301, {
-		id = slot1:getBody().trophyID
-	}, 17302, function (slot0)
-		if slot0.result == 0 then
-			uv0:updateTrophyClaim(uv1, slot0.timestamp)
+		id = var_1_0
+	}, 17302, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = arg_2_0.timestamp
 
-			slot2 = {}
+			var_1_1:updateTrophyClaim(var_1_0, var_2_0)
 
-			for slot6, slot7 in ipairs(slot0.next) do
-				slot2[#slot2 + 1] = Trophy.New(slot7)
+			local var_2_1 = {}
+
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.next) do
+				var_2_1[#var_2_1 + 1] = Trophy.New(iter_2_1)
 			end
 
-			uv0:unlockNewTrophy(slot2)
-			uv2:sendNotification(GAME.TROPHY_CLAIM_DONE, {
-				trophyID = uv1
+			var_1_1:unlockNewTrophy(var_2_1)
+			arg_1_0:sendNotification(GAME.TROPHY_CLAIM_DONE, {
+				trophyID = var_1_0
 			})
-			uv0:updateTrophy()
+			var_1_1:updateTrophy()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

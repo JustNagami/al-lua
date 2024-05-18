@@ -1,37 +1,38 @@
-slot0 = class("BeachGuardAsset")
-slot0.ignore_damage = false
-slot0.ignore_enemy_skill = false
-slot0.line_num = 5
-slot0.grid_num = 10
-slot0.part_width = 52
-slot0.part_height = 52
-slot0.enemy_pos = {
+﻿local var_0_0 = class("BeachGuardAsset")
+
+var_0_0.ignore_damage = false
+var_0_0.ignore_enemy_skill = false
+var_0_0.line_num = 5
+var_0_0.grid_num = 10
+var_0_0.part_width = 52
+var_0_0.part_height = 52
+var_0_0.enemy_pos = {
 	700,
 	800
 }
-slot0.enemy_offset_y = -15
-slot0.enemy_over_width = -300
-slot0.enemy_bullet_width = 350
-slot0.enemy_bullet_defaut = 350
-slot0.enemy_bullet_fog = 320
-slot0.skill_melee = 1
-slot0.skill_bullet = 2
-slot0.skill_craft = 3
-slot0.anim_atk = 1
-slot0.anim_craft = 2
-slot0.bullet_type_once = 1
-slot0.bullet_type_throw = 2
-slot0.bullet_type_range = 3
-slot0.bullet_type_disperse = 4
-slot0.rid_index = 0
+var_0_0.enemy_offset_y = -15
+var_0_0.enemy_over_width = -300
+var_0_0.enemy_bullet_width = 350
+var_0_0.enemy_bullet_defaut = 350
+var_0_0.enemy_bullet_fog = 320
+var_0_0.skill_melee = 1
+var_0_0.skill_bullet = 2
+var_0_0.skill_craft = 3
+var_0_0.anim_atk = 1
+var_0_0.anim_craft = 2
+var_0_0.bullet_type_once = 1
+var_0_0.bullet_type_throw = 2
+var_0_0.bullet_type_range = 3
+var_0_0.bullet_type_disperse = 4
+var_0_0.rid_index = 0
 
-function slot0.getRid()
-	uv0.rid_index = uv0.rid_index + 1
+function var_0_0.getRid()
+	var_0_0.rid_index = var_0_0.rid_index + 1
 
-	return uv0.rid_index
+	return var_0_0.rid_index
 end
 
-slot0.chars = {
+var_0_0.chars = {
 	[3001] = {
 		hp = 300,
 		name = "Manjuu_Atk",
@@ -197,7 +198,7 @@ slot0.chars = {
 		}
 	}
 }
-slot0.skill = {
+var_0_0.skill = {
 	[1000] = {
 		auto = true,
 		distance = 0,
@@ -206,8 +207,8 @@ slot0.skill = {
 		id = 1000,
 		num = 25,
 		desc = "生成资源",
-		type = slot0.skill_craft,
-		anim_type = slot0.anim_craft
+		type = var_0_0.skill_craft,
+		anim_type = var_0_0.anim_craft
 	},
 	[1001] = {
 		auto = true,
@@ -216,8 +217,8 @@ slot0.skill = {
 		distance = 10,
 		id = 1001,
 		desc = "柴郡普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5001
 		}
@@ -229,8 +230,8 @@ slot0.skill = {
 		distance = 8,
 		id = 1002,
 		desc = "牛牛普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5002
 		}
@@ -242,8 +243,8 @@ slot0.skill = {
 		distance = 10,
 		id = 1003,
 		desc = "利奥普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5003
 		}
@@ -255,8 +256,8 @@ slot0.skill = {
 		distance = 5,
 		id = 1004,
 		desc = "伯明翰普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5004
 		}
@@ -268,8 +269,8 @@ slot0.skill = {
 		distance = 10,
 		id = 1005,
 		desc = "能代普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5005,
 			5007
@@ -282,8 +283,8 @@ slot0.skill = {
 		distance = 10,
 		id = 1006,
 		desc = "黄鸡普攻",
-		type = slot0.skill_bullet,
-		anim_type = slot0.anim_atk,
+		type = var_0_0.skill_bullet,
+		anim_type = var_0_0.anim_atk,
 		bullet_id = {
 			5006
 		}
@@ -296,8 +297,8 @@ slot0.skill = {
 		id = 1007,
 		damage = 8011,
 		desc = "探索普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1008] = {
 		auto = false,
@@ -307,8 +308,8 @@ slot0.skill = {
 		id = 1008,
 		damage = 8012,
 		desc = "追迹普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1009] = {
 		auto = false,
@@ -318,8 +319,8 @@ slot0.skill = {
 		id = 1009,
 		damage = 8013,
 		desc = "领洋普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1010] = {
 		auto = false,
@@ -329,8 +330,8 @@ slot0.skill = {
 		id = 1010,
 		damage = 8014,
 		desc = "破局普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1011] = {
 		auto = false,
@@ -340,8 +341,8 @@ slot0.skill = {
 		id = 1011,
 		damage = 8015,
 		desc = "执棋普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1012] = {
 		auto = false,
@@ -351,8 +352,8 @@ slot0.skill = {
 		id = 1012,
 		damage = 8016,
 		desc = "测试普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	},
 	[1013] = {
 		auto = false,
@@ -362,11 +363,11 @@ slot0.skill = {
 		id = 1013,
 		damage = 8017,
 		desc = "净化普攻",
-		type = slot0.skill_melee,
-		anim_type = slot0.anim_atk
+		type = var_0_0.skill_melee,
+		anim_type = var_0_0.anim_atk
 	}
 }
-slot0.bullet = {
+var_0_0.bullet = {
 	[5001] = {
 		id = 5001,
 		name = "Bullet_p1",
@@ -440,13 +441,13 @@ slot0.bullet = {
 		offset = Vector2(10, 5)
 	}
 }
-slot0.damage = {
+var_0_0.damage = {
 	[8001] = {
 		id = 8001,
 		desc = "黄鸡攻击",
 		damage = 25,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6014
 		},
@@ -458,7 +459,7 @@ slot0.damage = {
 		desc = "柴郡攻击",
 		damage = 40,
 		hard = 200,
-		type = slot0.bullet_type_range,
+		type = var_0_0.bullet_type_range,
 		effect = {
 			6017
 		},
@@ -473,7 +474,7 @@ slot0.damage = {
 		desc = "柴郡攻击爆炸二段",
 		damage = 50,
 		hard = 100,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6018
 		},
@@ -485,7 +486,7 @@ slot0.damage = {
 		desc = "牛牛攻击",
 		damage = 40,
 		hard = 200,
-		type = slot0.bullet_type_range,
+		type = var_0_0.bullet_type_range,
 		effect = {
 			6019
 		},
@@ -500,7 +501,7 @@ slot0.damage = {
 		desc = "牛牛攻击爆炸二段",
 		damage = 50,
 		hard = 100,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {},
 		config = {},
 		buff = {}
@@ -510,7 +511,7 @@ slot0.damage = {
 		desc = "利奥里托攻击",
 		damage = 50,
 		hard = 100,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6020
 		},
@@ -524,7 +525,7 @@ slot0.damage = {
 		desc = "伯明翰攻击",
 		damage = 40,
 		hard = 500,
-		type = slot0.bullet_type_disperse,
+		type = var_0_0.bullet_type_disperse,
 		effect = {
 			6022
 		},
@@ -539,7 +540,7 @@ slot0.damage = {
 		desc = "伯明翰溅射二段(上)",
 		damage = 25,
 		hard = 200,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6023
 		},
@@ -551,7 +552,7 @@ slot0.damage = {
 		desc = "伯明翰溅射二段(下)",
 		damage = 25,
 		hard = 200,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6021
 		},
@@ -563,7 +564,7 @@ slot0.damage = {
 		desc = "能代攻击A",
 		damage = 30,
 		hard = 100,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6015
 		},
@@ -577,7 +578,7 @@ slot0.damage = {
 		desc = "探索攻击",
 		damage = 100,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6001
 		},
@@ -589,7 +590,7 @@ slot0.damage = {
 		desc = "追迹攻击",
 		damage = 120,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6002
 		},
@@ -601,7 +602,7 @@ slot0.damage = {
 		desc = "领洋攻击",
 		damage = 120,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6003
 		},
@@ -613,7 +614,7 @@ slot0.damage = {
 		desc = "破局攻击",
 		damage = 200,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6004
 		},
@@ -625,7 +626,7 @@ slot0.damage = {
 		desc = "执棋攻击",
 		damage = 170,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6005
 		},
@@ -637,7 +638,7 @@ slot0.damage = {
 		desc = "测试攻击",
 		damage = 270,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6006
 		},
@@ -649,7 +650,7 @@ slot0.damage = {
 		desc = "净化攻击",
 		damage = 270,
 		hard = 0,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6007
 		},
@@ -661,7 +662,7 @@ slot0.damage = {
 		desc = "能代攻击B",
 		damage = 30,
 		hard = 100,
-		type = slot0.bullet_type_once,
+		type = var_0_0.bullet_type_once,
 		effect = {
 			6015
 		},
@@ -669,7 +670,7 @@ slot0.damage = {
 		buff = {}
 	}
 }
-slot0.effect = {
+var_0_0.effect = {
 	[6001] = {
 		id = 6001,
 		name = "EF_Attack_E1",
@@ -815,7 +816,7 @@ slot0.effect = {
 		front = true
 	}
 }
-slot0.char_card = {
+var_0_0.char_card = {
 	{
 		cost = 100,
 		char_id = 3001,
@@ -873,7 +874,7 @@ slot0.char_card = {
 		icon = "P5_Noshiro"
 	}
 }
-slot0.chapter_data = {
+var_0_0.chapter_data = {
 	{
 		id = 1,
 		fog = false,
@@ -985,7 +986,7 @@ slot0.chapter_data = {
 		}
 	}
 }
-slot0.map_data = {
+var_0_0.map_data = {
 	{
 		id = 1,
 		pic = "1_BG_LvA",
@@ -1017,11 +1018,11 @@ slot0.map_data = {
 		}
 	}
 }
-slot0.buff_type_damage_up = 1
-slot0.buff_type_speed_down = 2
-slot0.buff_trigger_other = 1
-slot0.buff_trigger_self = 2
-slot0.buff = {
+var_0_0.buff_type_damage_up = 1
+var_0_0.buff_type_speed_down = 2
+var_0_0.buff_trigger_other = 1
+var_0_0.buff_trigger_self = 2
+var_0_0.buff = {
 	[7001] = {
 		desc = "移动速度降低",
 		rate = 0.2,
@@ -1031,8 +1032,8 @@ slot0.buff = {
 		effect = {
 			6024
 		},
-		type = slot0.buff_type_speed_down,
-		trigger = slot0.buff_trigger_other
+		type = var_0_0.buff_type_speed_down,
+		trigger = var_0_0.buff_trigger_other
 	},
 	[7002] = {
 		desc = "伤害提高",
@@ -1047,15 +1048,15 @@ slot0.buff = {
 		trigger_effect = {
 			6010
 		},
-		type = slot0.buff_type_damage_up,
-		trigger = slot0.buff_trigger_self,
+		type = var_0_0.buff_type_damage_up,
+		trigger = var_0_0.buff_trigger_self,
 		bound = {
 			1,
 			1
 		}
 	}
 }
-slot0.chapater_enemy = {
+var_0_0.chapater_enemy = {
 	{
 		id = 1,
 		init_goods = 400,
@@ -3036,7 +3037,7 @@ slot0.chapater_enemy = {
 		}
 	}
 }
-slot0.create_enemy = {
+var_0_0.create_enemy = {
 	{
 		num = 1,
 		enemy = {
@@ -4775,4 +4776,4 @@ slot0.create_enemy = {
 	}
 }
 
-return slot0
+return var_0_0

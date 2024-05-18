@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_personality = {
 	{
 		front_rate = 0.1,

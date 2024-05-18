@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.equip_upgrade_template = {
 	[101] = {
 		id = 101,

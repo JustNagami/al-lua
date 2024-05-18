@@ -1,61 +1,66 @@
-slot0 = class("CourtYardFollowerFurniture", import(".CourtYardFurniture"))
+﻿local var_0_0 = class("CourtYardFollowerFurniture", import(".CourtYardFurniture"))
 
-function slot0.InitSlots(slot0)
-	slot0.ratios = {}
+function var_0_0.InitSlots(arg_1_0)
+	arg_1_0.ratios = {}
 
-	table.insert(slot0.slots, CourtYardFollowerSlot.New(1, slot0.config.spine))
+	table.insert(arg_1_0.slots, CourtYardFollowerSlot.New(1, arg_1_0.config.spine))
 end
 
-function slot0.GetInterActionTime(slot0)
+function var_0_0.GetInterActionTime(arg_2_0)
 	return math.random(5, 10)
 end
 
-function slot0.GetRatio(slot0, slot1)
-	return slot0.ratios[slot1] or 0
+function var_0_0.GetRatio(arg_3_0, arg_3_1)
+	return arg_3_0.ratios[arg_3_1] or 0
 end
 
-function slot0.IncreaseRatio(slot0, slot1)
-	slot0.ratios[slot1] = 100
+function var_0_0.IncreaseRatio(arg_4_0, arg_4_1)
+	arg_4_0.ratios[arg_4_1] = 100
 end
 
-function slot0.ReduceRatio(slot0, slot1)
-	slot0.ratios[slot1] = slot0:GetRatio(slot1) - 20
+function var_0_0.ReduceRatio(arg_5_0, arg_5_1)
+	arg_5_0.ratios[arg_5_1] = arg_5_0:GetRatio(arg_5_1) - 20
 end
 
-function slot0.CanFollower(slot0, slot1)
-	if slot0:IsUsing() then
+function var_0_0.CanFollower(arg_6_0, arg_6_1)
+	if arg_6_0:IsUsing() then
 		return false
 	end
 
-	if not (slot0:GetRatio(slot1) <= 0) then
-		slot0:ReduceRatio(slot1)
+	local var_6_0 = arg_6_0:GetRatio(arg_6_1) <= 0
+
+	if not var_6_0 then
+		arg_6_0:ReduceRatio(arg_6_1)
 	end
 
-	return slot2
+	return var_6_0
 end
 
-function slot0.IsUsing(slot0)
-	return slot0.slots[1]:IsUsing()
+function var_0_0.IsUsing(arg_7_0)
+	return arg_7_0.slots[1]:IsUsing()
 end
 
-function slot0.StartInteraction(slot0, slot1)
-	uv0.super.StartInteraction(slot0, slot1)
-	slot0:IncreaseRatio(slot1:GetOwner())
+function var_0_0.StartInteraction(arg_8_0, arg_8_1)
+	var_0_0.super.StartInteraction(arg_8_0, arg_8_1)
+
+	local var_8_0 = arg_8_1:GetOwner()
+
+	arg_8_0:IncreaseRatio(var_8_0)
 end
 
-function slot0.GetOwner(slot0)
-	if slot0:IsUsing() then
-		return slot0.slots[1]:GetOwner()
+function var_0_0.GetOwner(arg_9_0)
+	if arg_9_0:IsUsing() then
+		return arg_9_0.slots[1]:GetOwner()
 	end
 end
 
-function slot0.Stop(slot0)
-	slot0.slots[1]:Stop()
+function var_0_0.Stop(arg_10_0)
+	arg_10_0.slots[1]:Stop()
 end
 
-function slot0.SetPosition(slot0, slot1)
-	uv0.super.SetPosition(slot0, slot1)
-	slot0:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, slot0.dir)
+function var_0_0.SetPosition(arg_11_0, arg_11_1)
+	var_0_0.super.SetPosition(arg_11_0, arg_11_1)
+	arg_11_0:DispatchEvent(CourtYardEvent.ROTATE_FURNITURE, arg_11_0.dir)
 end
 
-return slot0
+return var_0_0

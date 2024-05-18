@@ -1,4 +1,62 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillSummon",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				delay = 0.5,
+				spawnData = {
+					monsterTemplateID = 50001,
+					buffList = {
+						16601
+					},
+					phase = {
+						{
+							switchType = 1,
+							switchTo = 1,
+							index = 0,
+							switchParam = 10,
+							setAI = 15009,
+							addWeapon = {
+								160871
+							}
+						},
+						{
+							switchType = 1,
+							switchTo = 2,
+							index = 1,
+							switchParam = 4,
+							setAI = 15007,
+							removeWeapon = {
+								160871
+							}
+						},
+						{
+							switchParam = -120,
+							dive = "STATE_RETREAT",
+							switchTo = 3,
+							index = 2,
+							switchType = 4
+						},
+						{
+							index = 3,
+							retreat = true
+						}
+					}
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -526,63 +584,5 @@ return {
 	id = 16606,
 	picture = "0",
 	castCV = "",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillSummon",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				delay = 0.5,
-				spawnData = {
-					monsterTemplateID = 50001,
-					buffList = {
-						16601
-					},
-					phase = {
-						{
-							switchType = 1,
-							switchTo = 1,
-							index = 0,
-							switchParam = 10,
-							setAI = 15009,
-							addWeapon = {
-								160871
-							}
-						},
-						{
-							switchType = 1,
-							switchTo = 2,
-							index = 1,
-							switchParam = 4,
-							setAI = 15007,
-							removeWeapon = {
-								160871
-							}
-						},
-						{
-							switchParam = -120,
-							dive = "STATE_RETREAT",
-							switchTo = 3,
-							index = 2,
-							switchType = 4
-						},
-						{
-							index = 3,
-							retreat = true
-						}
-					}
-				}
-			}
-		}
-	}
+	desc = ""
 }

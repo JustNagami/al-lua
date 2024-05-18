@@ -1,34 +1,38 @@
-slot0 = class("ShadowPlayPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("ShadowPlayPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.getBtn = slot0:findTF("AD/get")
-	slot0.gotBtn = slot0:findTF("AD/got")
-	slot0.urlBtn = slot0:findTF("AD/url")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.getBtn = arg_1_0:findTF("AD/get")
+	arg_1_0.gotBtn = arg_1_0:findTF("AD/got")
+	arg_1_0.urlBtn = arg_1_0:findTF("AD/url")
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.urlBtn, function ()
-		Application.OpenURL(uv0.activity:getConfig("config_client"))
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.urlBtn, function()
+		Application.OpenURL(arg_2_0.activity:getConfig("config_client"))
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot3 = getProxy(TaskProxy):getTaskById(slot0.activity:getConfig("config_data")[1]) or slot2:getFinishTaskById(slot1) or Task.New({
-		id = slot1
+function var_0_0.OnUpdateFlush(arg_4_0)
+	local var_4_0 = arg_4_0.activity:getConfig("config_data")[1]
+	local var_4_1 = getProxy(TaskProxy)
+	local var_4_2 = var_4_1:getTaskById(var_4_0) or var_4_1:getFinishTaskById(var_4_0) or Task.New({
+		id = var_4_0
 	})
-	slot5 = slot3:isReceive()
+	local var_4_3 = var_4_2:isFinish()
+	local var_4_4 = var_4_2:isReceive()
 
-	setActive(slot0.getBtn, slot3 and slot3:isFinish() and not slot5)
-	setActive(slot0.gotBtn, slot3 and slot5)
-	onButton(slot0, slot0.getBtn, function ()
-		if uv0 and uv1 and not uv2 then
-			uv3:emit(ActivityMediator.ON_TASK_SUBMIT, uv0)
+	setActive(arg_4_0.getBtn, var_4_2 and var_4_3 and not var_4_4)
+	setActive(arg_4_0.gotBtn, var_4_2 and var_4_4)
+	onButton(arg_4_0, arg_4_0.getBtn, function()
+		if var_4_2 and var_4_3 and not var_4_4 then
+			arg_4_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_4_2)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

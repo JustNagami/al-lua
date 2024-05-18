@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_data = {
 	{
 		attr_2_add = 5,

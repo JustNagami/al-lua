@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_7_day_sign = {
 	{
 		id = 1,

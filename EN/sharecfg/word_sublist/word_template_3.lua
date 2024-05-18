@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_3 = {}
-slot1 = slot0.word_template_3
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_3 = {}
+
+local var_0_1 = var_0_0.word_template_3
 
 function temp()
-	uv0.l = {
+	var_0_1.l = {
 		e = {
 			s = {
 				b = {
@@ -64,19 +67,19 @@ function temp()
 					i = {
 						["3"] = {
 							["1"] = {
-								["年"] = {
+								年 = {
 									this = true
 								},
-								["周"] = {
-									["年"] = {
+								周 = {
+									年 = {
 										this = true
 									}
 								}
 							}
 						},
-						["三"] = {
-							["十"] = {
-								["一"] = {
+						三 = {
+							十 = {
+								一 = {
 									this = true
 								}
 							}
@@ -88,25 +91,25 @@ function temp()
 						}
 					}
 				},
-				["驷"] = {
+				驷 = {
 					this = true
 				},
-				["泗"] = {
+				泗 = {
 					this = true
 				},
-				["罒"] = {
+				罒 = {
 					this = true
 				},
-				["亖"] = {
+				亖 = {
 					this = true
 				},
-				["似"] = {
+				似 = {
 					this = true
 				},
-				["寺"] = {
+				寺 = {
 					this = true
 				},
-				["肆"] = {
+				肆 = {
 					this = true
 				},
 				z = {
@@ -139,10 +142,10 @@ function temp()
 										v = {
 											e = {
 												r = {
-													["附"] = {
-														["属"] = {
-															["小"] = {
-																["学"] = {
+													附 = {
+														属 = {
+															小 = {
+																学 = {
 																	this = true
 																}
 															}
@@ -171,8 +174,8 @@ function temp()
 					}
 				}
 			},
-			["首"] = {
-				["辅"] = {
+			首 = {
+				辅 = {
 					this = true
 				}
 			}
@@ -197,8 +200,8 @@ function temp()
 			}
 		},
 		h = {
-			["期"] = {
-				["间"] = {
+			期 = {
+				间 = {
 					this = true
 				}
 			}
@@ -209,7 +212,7 @@ end
 temp()
 
 function temp()
-	uv0.m = {
+	var_0_1.m = {
 		a = {
 			n = {
 				k = {
@@ -280,12 +283,12 @@ function temp()
 				}
 			},
 			o = {
-				["主"] = {
-					["义"] = {
+				主 = {
+					义 = {
 						this = true
 					}
 				},
-				["新"] = {
+				新 = {
 					y = {
 						u = {
 							this = true
@@ -433,15 +436,15 @@ function temp()
 			}
 		},
 		m = {
-			["屄"] = {
+			屄 = {
 				this = true
 			}
 		},
 		d = {
 			x = {
-				["三"] = {
-					["段"] = {
-						["论"] = {
+				三 = {
+					段 = {
+						论 = {
 							this = true
 						}
 					}
@@ -452,9 +455,9 @@ function temp()
 			s = {
 				z = {
 					y = {
-						["中"] = {
-							["国"] = {
-								["画"] = {
+						中 = {
+							国 = {
+								画 = {
 									this = true
 								}
 							}
@@ -556,7 +559,7 @@ function temp()
 			l = {
 				e = {
 					s = {
-						["锅"] = {
+						锅 = {
 							this = true
 						}
 					}
@@ -569,7 +572,7 @@ end
 temp()
 
 function temp()
-	uv0.n = {
+	var_0_1.n = {
 		a = {
 			z = {
 				i = {
@@ -745,13 +748,13 @@ function temp()
 			}
 		},
 		j = {
-			["大"] = {
-				["屠"] = {
-					["杀"] = {
+			大 = {
+				屠 = {
+					杀 = {
 						["|"] = {
-							["工"] = {
-								["信"] = {
-									["部"] = {
+							工 = {
+								信 = {
+									部 = {
 										s = {
 											b = {
 												this = true
@@ -771,7 +774,7 @@ end
 temp()
 
 function temp()
-	uv0.p = {
+	var_0_1.p = {
 		a = {
 			e = {
 				d = {
@@ -799,7 +802,7 @@ function temp()
 			r = {
 				t = {
 					y = {
-						["开"] = {
+						开 = {
 							h = {
 								u = {
 									i = {
@@ -854,8 +857,8 @@ function temp()
 					}
 				},
 				g = {
-					["国"] = {
-						["母"] = {
+					国 = {
+						母 = {
 							this = true
 						}
 					},
@@ -939,9 +942,9 @@ function temp()
 		},
 		r = {
 			c = {
-				["领"] = {
-					["头"] = {
-						["羊"] = {
+				领 = {
+					头 = {
+						羊 = {
 							this = true
 						}
 					}
@@ -1019,11 +1022,11 @@ function temp()
 						}
 					}
 				},
-				["葱"] = {
+				葱 = {
 					this = true
 				},
 				g = {
-					["哥"] = {
+					哥 = {
 						this = true
 					}
 				}
@@ -1064,7 +1067,7 @@ end
 temp()
 
 function temp()
-	uv0.q = {
+	var_0_1.q = {
 		u = {
 			e = {
 				e = {
@@ -1074,9 +1077,9 @@ function temp()
 				}
 			},
 			o = {
-				["カ"] = {
-					["ー"] = {
-						["ド"] = {
+				カ = {
+					ー = {
+						ド = {
 							this = true
 						}
 					}
@@ -1087,9 +1090,9 @@ function temp()
 			n = {
 				g = {
 					["."] = {
-						["丰"] = {
-							["包"] = {
-								["子"] = {
+						丰 = {
+							包 = {
+								子 = {
 									this = true
 								}
 							}
@@ -1099,9 +1102,9 @@ function temp()
 			}
 		},
 		q = {
-			["和"] = {
-				["邮"] = {
-					["箱"] = {
+			和 = {
+				邮 = {
+					箱 = {
 						["2"] = {
 							["5"] = {
 								["3"] = {
@@ -1147,7 +1150,7 @@ end
 temp()
 
 function temp()
-	uv0.r = {
+	var_0_1.r = {
 		a = {
 			p = {
 				e = {
@@ -1179,7 +1182,7 @@ function temp()
 										i = {
 											o = {
 												n = {
-													[" "] = {
+													  = {
 														c = {
 															a = {
 																m = {
@@ -1212,8 +1215,8 @@ function temp()
 						}
 					}
 				},
-				["家"] = {
-					["族"] = {
+				家 = {
+					族 = {
 						this = true
 					}
 				}
@@ -1332,7 +1335,7 @@ end
 temp()
 
 function temp()
-	uv0.s = {
+	var_0_1.s = {
 		c = {
 			r = {
 				o = {
@@ -1348,8 +1351,8 @@ function temp()
 		},
 		e = {
 			o = {
-				["自"] = {
-					["動"] = {
+				自 = {
+					動 = {
 						this = true
 					}
 				}
@@ -1546,36 +1549,36 @@ function temp()
 			}
 		},
 		m = {
-			["色"] = {
-				["虐"] = {
-					["网"] = {
-						["站"] = {
+			色 = {
+				虐 = {
+					网 = {
+						站 = {
 							this = true
 						}
 					}
 				}
 			},
-			["舔"] = {
-				["穴"] = {
+			舔 = {
+				穴 = {
 					this = true
 				}
 			},
-			["女"] = {
-				["王"] = {
+			女 = {
+				王 = {
 					this = true
 				}
 			},
-			["援"] = {
-				["交"] = {
+			援 = {
+				交 = {
 					this = true
 				}
 			},
 			a = {
 				l = {
 					l = {
-						["红"] = {
-							["，"] = {
-								["楼"] = {
+						红 = {
+							， = {
+								楼 = {
 									this = true
 								}
 							}
@@ -1583,7 +1586,7 @@ function temp()
 						r = {
 							e = {
 								d = {
-									["楼"] = {
+									楼 = {
 										this = true
 									}
 								}
@@ -1614,7 +1617,7 @@ function temp()
 															r = {
 																e = {
 																	d = {
-																		["楼"] = {
+																		楼 = {
 																			this = true
 																		}
 																	}
@@ -1816,9 +1819,9 @@ function temp()
 							m = {
 								e = {
 									s = {
-										["那"] = {
-											["义"] = {
-												["务"] = {
+										那 = {
+											义 = {
+												务 = {
 													this = true
 												}
 											}
@@ -1895,7 +1898,7 @@ function temp()
 			o = {
 				n = {
 					e = {
-						["记"] = {
+						记 = {
 							this = true
 						}
 					}
@@ -1929,8 +1932,8 @@ function temp()
 									o = {
 										o = {
 											r = {
-												["事"] = {
-													["件"] = {
+												事 = {
+													件 = {
 														this = true
 													}
 												}

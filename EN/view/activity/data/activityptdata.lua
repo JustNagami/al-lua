@@ -1,204 +1,214 @@
-slot0 = class("ActivityPtData")
+﻿local var_0_0 = class("ActivityPtData")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.dropList = slot1:getDataConfig("drop_client")
-	slot0.targets = slot1:getDataConfig("target")
-	slot0.resId = slot1:getDataConfig("pt")
-	slot0.bindActId = slot1:getDataConfig("id_2")
-	slot0.unlockDay = slot1:getDataConfig("day_unlock")
-	slot0.type = slot1:getDataConfig("type")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.dropList = arg_1_1:getDataConfig("drop_client")
+	arg_1_0.targets = arg_1_1:getDataConfig("target")
+	arg_1_0.resId = arg_1_1:getDataConfig("pt")
+	arg_1_0.bindActId = arg_1_1:getDataConfig("id_2")
+	arg_1_0.unlockDay = arg_1_1:getDataConfig("day_unlock")
+	arg_1_0.type = arg_1_1:getDataConfig("type")
 
-	slot0:Update(slot1)
+	arg_1_0:Update(arg_1_1)
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.activity = slot1
-	slot0.count = slot1.data1
-	slot0.level = 0
-	slot2 = {}
+function var_0_0.Update(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1
+	arg_2_0.count = arg_2_1.data1
+	arg_2_0.level = 0
 
-	for slot6, slot7 in ipairs(slot1.data1_list) do
-		table.insert(slot2, slot7)
+	local var_2_0 = {}
+
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.data1_list) do
+		table.insert(var_2_0, iter_2_1)
 	end
 
-	table.sort(slot2)
+	table.sort(var_2_0)
 
-	for slot6, slot7 in ipairs(slot2) do
-		if slot7 == slot0.targets[slot6] then
-			slot0.level = slot6
+	for iter_2_2, iter_2_3 in ipairs(var_2_0) do
+		if iter_2_3 == arg_2_0.targets[iter_2_2] then
+			arg_2_0.level = iter_2_2
 		else
 			break
 		end
 	end
 
-	slot0.startTime = slot1.data2
-	slot0.value2 = slot1.data3
-	slot0.isDayUnlock = slot0:CheckDayUnlock() and 1 or 0
-	slot0.curHasBuffs = slot1.data2_list
-	slot0.curBuffs = slot1.data3_list
+	arg_2_0.startTime = arg_2_1.data2
+	arg_2_0.value2 = arg_2_1.data3
+	arg_2_0.isDayUnlock = arg_2_0:CheckDayUnlock() and 1 or 0
+	arg_2_0.curHasBuffs = arg_2_1.data2_list
+	arg_2_0.curBuffs = arg_2_1.data3_list
 end
 
-function slot0.CheckDayUnlock(slot0)
-	slot2 = pg.TimeMgr.GetInstance()
+function var_0_0.CheckDayUnlock(arg_3_0)
+	local var_3_0 = math.min(arg_3_0.level + 1, #arg_3_0.targets)
+	local var_3_1 = pg.TimeMgr.GetInstance()
 
-	return slot2:DiffDay(slot0.startTime, slot2:GetServerTime()) + 1 >= (slot0.unlockDay[math.min(slot0.level + 1, #slot0.targets)] or 0)
+	return var_3_1:DiffDay(arg_3_0.startTime, var_3_1:GetServerTime()) + 1 >= (arg_3_0.unlockDay[var_3_0] or 0)
 end
 
-function slot0.GetDayUnlockStamps(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot2 = {}
+function var_0_0.GetDayUnlockStamps(arg_4_0)
+	local var_4_0 = pg.TimeMgr.GetInstance()
+	local var_4_1 = {}
 
-	for slot6, slot7 in ipairs(slot0.unlockDay) do
-		table.insert(slot2, slot0.startTime + (slot7 - 1) * 86400)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.unlockDay) do
+		local var_4_2 = arg_4_0.startTime + (iter_4_1 - 1) * 86400
+
+		table.insert(var_4_1, var_4_2)
 	end
 
-	return slot2
+	return var_4_1
 end
 
-function slot0.GetLevelProgress(slot0)
-	slot1 = slot0:getTargetLevel()
+function var_0_0.GetLevelProgress(arg_5_0)
+	local var_5_0 = arg_5_0:getTargetLevel()
 
-	return slot1, #slot0.targets, slot1 / #slot0.targets
+	return var_5_0, #arg_5_0.targets, var_5_0 / #arg_5_0.targets
 end
 
-function slot0.GetResProgress(slot0)
-	slot1 = slot0:getTargetLevel()
+function var_0_0.GetResProgress(arg_6_0)
+	local var_6_0 = arg_6_0:getTargetLevel()
 
-	return slot0.count, slot0.targets[slot1], slot0.count / slot0.targets[slot1]
+	return arg_6_0.count, arg_6_0.targets[var_6_0], arg_6_0.count / arg_6_0.targets[var_6_0]
 end
 
-function slot0.GetUnlockedMaxResRequire(slot0)
-	slot1 = pg.TimeMgr.GetInstance()
-	slot6 = slot1
+function var_0_0.GetUnlockedMaxResRequire(arg_7_0)
+	local var_7_0 = pg.TimeMgr.GetInstance()
+	local var_7_1 = var_7_0:DiffDay(arg_7_0.startTime, var_7_0:GetServerTime()) + 1
 
-	for slot6 = #slot0.targets, 1, -1 do
-		if slot0.unlockDay[slot6] <= slot1:DiffDay(slot0.startTime, slot1.GetServerTime(slot6)) + 1 then
-			return slot0.targets[slot6]
+	for iter_7_0 = #arg_7_0.targets, 1, -1 do
+		if var_7_1 >= arg_7_0.unlockDay[iter_7_0] then
+			return arg_7_0.targets[iter_7_0]
 		end
 	end
 
 	return 1
 end
 
-function slot0.GetTotalResRequire(slot0)
-	return slot0.targets[#slot0.targets]
+function var_0_0.GetTotalResRequire(arg_8_0)
+	return arg_8_0.targets[#arg_8_0.targets]
 end
 
-function slot0.GetId(slot0)
-	return slot0.activity.id
+function var_0_0.GetId(arg_9_0)
+	return arg_9_0.activity.id
 end
 
-function slot0.GetRes(slot0)
+function var_0_0.GetRes(arg_10_0)
 	return {
 		type = 1,
-		id = slot0.resId
+		id = arg_10_0.resId
 	}
 end
 
-function slot0.GetAward(slot0)
-	slot1 = slot0.dropList[slot0:getTargetLevel()]
+function var_0_0.GetAward(arg_11_0)
+	local var_11_0 = arg_11_0.dropList[arg_11_0:getTargetLevel()]
 
 	return Drop.New({
-		type = slot1[1],
-		id = slot1[2],
-		count = slot1[3]
+		type = var_11_0[1],
+		id = var_11_0[2],
+		count = var_11_0[3]
 	})
 end
 
-function slot0.GetResItemId(slot0)
-	return slot0:GetAward().id
+function var_0_0.GetResItemId(arg_12_0)
+	return arg_12_0:GetAward().id
 end
 
-function slot0.GetValue2(slot0)
-	return slot0.value2
+function var_0_0.GetValue2(arg_13_0)
+	return arg_13_0.value2
 end
 
-function slot0.getTargetLevel(slot0)
-	return math.min(slot0.level + slot0.isDayUnlock, #slot0.targets)
+function var_0_0.getTargetLevel(arg_14_0)
+	return math.min(arg_14_0.level + arg_14_0.isDayUnlock, #arg_14_0.targets)
 end
 
-function slot0.GetLevel(slot0)
-	return slot0.level
+function var_0_0.GetLevel(arg_15_0)
+	return arg_15_0.level
 end
 
-function slot0.CanGetAward(slot0)
-	return slot0:CanGetNextAward() and function ()
-		slot0, slot1, slot2 = uv0:GetResProgress()
+function var_0_0.CanGetAward(arg_16_0)
+	local function var_16_0()
+		local var_17_0, var_17_1, var_17_2 = arg_16_0:GetResProgress()
 
-		return slot2 >= 1
-	end()
+		return var_17_2 >= 1
+	end
+
+	return arg_16_0:CanGetNextAward() and var_16_0()
 end
 
-function slot0.CanGetNextAward(slot0)
-	return slot0.isDayUnlock > 0 and slot0.level < #slot0.targets
+function var_0_0.CanGetNextAward(arg_18_0)
+	return arg_18_0.isDayUnlock > 0 and arg_18_0.level < #arg_18_0.targets
 end
 
-function slot0.CanGetMorePt(slot0)
-	return getProxy(ActivityProxy):getActivityById(slot0.bindActId) and not slot1:isEnd()
+function var_0_0.CanGetMorePt(arg_19_0)
+	local var_19_0 = getProxy(ActivityProxy):getActivityById(arg_19_0.bindActId)
+
+	return var_19_0 and not var_19_0:isEnd()
 end
 
-function slot0.CanTrain(slot0)
-	if not slot0:isInBuffTime() then
+function var_0_0.CanTrain(arg_20_0)
+	if not arg_20_0:isInBuffTime() then
 		return false
 	end
 
-	slot5 = "target_buff"
-
-	for slot5, slot6 in ipairs(slot0.activity:getDataConfig(slot5)) do
-		if function (slot0)
-			for slot4, slot5 in ipairs(uv0.curHasBuffs) do
-				if slot0 == slot5 then
-					return false
-				end
+	local function var_20_0(arg_21_0)
+		for iter_21_0, iter_21_1 in ipairs(arg_20_0.curHasBuffs) do
+			if arg_21_0 == iter_21_1 then
+				return false
 			end
+		end
 
-			return true
-		end(slot6) and slot6 <= slot0.level + 1 then
-			return slot6
+		return true
+	end
+
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.activity:getDataConfig("target_buff")) do
+		if var_20_0(iter_20_1) and iter_20_1 <= arg_20_0.level + 1 then
+			return iter_20_1
 		end
 	end
 
 	return false
 end
 
-function slot0.GetCurBuffInfos(slot0)
-	slot1 = {}
-	slot2 = #slot0.activity:getDataConfig("buff_group")
+function var_0_0.GetCurBuffInfos(arg_22_0)
+	local var_22_0 = {}
+	local var_22_1 = #arg_22_0.activity:getDataConfig("buff_group")
 
-	for slot6, slot7 in ipairs(slot0.curBuffs) do
-		slot11 = "buff_group"
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.curBuffs) do
+		for iter_22_2, iter_22_3 in ipairs(arg_22_0.activity:getDataConfig("buff_group")) do
+			for iter_22_4, iter_22_5 in ipairs(iter_22_3) do
+				if iter_22_1 == iter_22_5 then
+					local var_22_2 = {
+						id = iter_22_5,
+						lv = iter_22_4,
+						group = iter_22_2,
+						next = iter_22_3[iter_22_4 + 1],
+						award = arg_22_0:GetBuffAwardInfo(iter_22_3[#iter_22_3])
+					}
 
-		for slot11, slot12 in ipairs(slot0.activity:getDataConfig(slot11)) do
-			for slot16, slot17 in ipairs(slot12) do
-				if slot7 == slot17 then
-					table.insert(slot1, {
-						id = slot17,
-						lv = slot16,
-						group = slot11,
-						next = slot12[slot16 + 1],
-						award = slot0:GetBuffAwardInfo(slot12[#slot12])
-					})
+					table.insert(var_22_0, var_22_2)
 				end
 			end
 		end
 	end
 
-	return slot1
+	return var_22_0
 end
 
-function slot0.GetBuffAwardInfo(slot0, slot1)
-	if slot0.activity:getDataConfig("drop_display") == "" then
+function var_0_0.GetBuffAwardInfo(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0.activity:getDataConfig("drop_display")
+
+	if var_23_0 == "" then
 		return nil
 	end
 
-	for slot6, slot7 in ipairs(slot2) do
-		if slot1 == slot7[1] then
-			slot8 = slot7[2]
+	for iter_23_0, iter_23_1 in ipairs(var_23_0) do
+		if arg_23_1 == iter_23_1[1] then
+			local var_23_1 = iter_23_1[2]
 
 			return {
-				type = slot8[1],
-				id = slot8[2],
-				count = slot8[3]
+				type = var_23_1[1],
+				id = var_23_1[2],
+				count = var_23_1[3]
 			}
 		end
 	end
@@ -206,99 +216,109 @@ function slot0.GetBuffAwardInfo(slot0, slot1)
 	return nil
 end
 
-function slot0.GetBuffLevelProgress(slot0)
-	slot3, slot4 = function ()
-		slot3 = "target_buff"
-
-		for slot3, slot4 in ipairs(uv0.activity:getDataConfig(slot3)) do
-			if uv0.level < slot4 then
-				return slot3, slot4
+function var_0_0.GetBuffLevelProgress(arg_24_0)
+	local var_24_0 = false
+	local var_24_1, var_24_2 = (function()
+		for iter_25_0, iter_25_1 in ipairs(arg_24_0.activity:getDataConfig("target_buff")) do
+			if iter_25_1 > arg_24_0.level then
+				return iter_25_0, iter_25_1
 			end
 		end
 
-		uv1 = true
+		var_24_0 = true
 
-		return #uv0.activity:getDataConfig("target_buff") + 1, 1
-	end()
-	slot6 = (slot3 == 1 and true or false) and 0 or slot0.activity:getDataConfig("target_buff")[slot3 - 1]
+		return #arg_24_0.activity:getDataConfig("target_buff") + 1, 1
+	end)()
+	local var_24_3 = (var_24_1 == 1 and true or false) and 0 or arg_24_0.activity:getDataConfig("target_buff")[var_24_1 - 1]
 
-	return slot3, false and 1 or (slot0.level - slot6) / (slot4 - slot6)
+	return var_24_1, var_24_0 and 1 or (arg_24_0.level - var_24_3) / (var_24_2 - var_24_3)
 end
 
-function slot0.isInBuffTime(slot0)
-	if type(slot0.activity:getDataConfig("buff_time")) == "table" then
-		return pg.TimeMgr.GetInstance():GetServerTime() < pg.TimeMgr.GetInstance():Table2ServerTime({
-			year = slot1[1][1],
-			month = slot1[1][2],
-			day = slot1[1][3],
-			hour = slot1[2][1],
-			min = slot1[2][2],
-			sec = slot1[2][3]
-		}) and true or false
-	elseif slot1 == "always" then
+function var_0_0.isInBuffTime(arg_26_0)
+	local var_26_0 = arg_26_0.activity:getDataConfig("buff_time")
+
+	if type(var_26_0) == "table" then
+		local var_26_1 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_26_2 = {
+			year = var_26_0[1][1],
+			month = var_26_0[1][2],
+			day = var_26_0[1][3],
+			hour = var_26_0[2][1],
+			min = var_26_0[2][2],
+			sec = var_26_0[2][3]
+		}
+
+		return var_26_1 < pg.TimeMgr.GetInstance():Table2ServerTime(var_26_2) and true or false
+	elseif var_26_0 == "always" then
 		return true
-	elseif slot1 == "stop" then
+	elseif var_26_0 == "stop" then
 		return false
 	end
 
 	return false
 end
 
-function slot0.GetDrop(slot0, slot1)
-	slot2 = slot0.dropList[slot1]
+function var_0_0.GetDrop(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0.dropList[arg_27_1]
 
 	return {
-		type = slot2[1],
-		id = slot2[2],
-		count = slot2[3]
+		type = var_27_0[1],
+		id = var_27_0[2],
+		count = var_27_0[3]
 	}
 end
 
-function slot0.GetPtTarget(slot0, slot1)
-	if slot1 <= 0 then
+function var_0_0.GetPtTarget(arg_28_0, arg_28_1)
+	if arg_28_1 <= 0 then
 		return 0
-	elseif slot1 > #slot0.targets then
-		return slot0.targets[#slot0.targets]
+	elseif arg_28_1 > #arg_28_0.targets then
+		return arg_28_0.targets[#arg_28_0.targets]
 	else
-		return slot0.targets[slot1]
+		return arg_28_0.targets[arg_28_1]
 	end
 end
 
-function slot0.GetCurrLevel(slot0)
-	for slot4, slot5 in ipairs(slot0.targets) do
-		if slot0.count < slot5 then
-			return slot4 - 1
+function var_0_0.GetCurrLevel(arg_29_0)
+	for iter_29_0, iter_29_1 in ipairs(arg_29_0.targets) do
+		if iter_29_1 > arg_29_0.count then
+			return iter_29_0 - 1
 		end
 	end
 
-	return #slot0.targets
+	return #arg_29_0.targets
 end
 
-function slot0.IsMaxLevel(slot0)
-	return slot0:GetCurrLevel() == #slot0.targets
+function var_0_0.IsMaxLevel(arg_30_0)
+	return arg_30_0:GetCurrLevel() == #arg_30_0.targets
 end
 
-function slot0.GetNextLevel(slot0)
-	for slot4, slot5 in ipairs(slot0.targets) do
-		if slot0.count < slot5 then
-			return slot4
+function var_0_0.GetNextLevel(arg_31_0)
+	for iter_31_0, iter_31_1 in ipairs(arg_31_0.targets) do
+		if iter_31_1 > arg_31_0.count then
+			return iter_31_0
 		end
 	end
 
-	return #slot0.targets
+	return #arg_31_0.targets
 end
 
-function slot0.GetCurrTarget(slot0)
-	return slot0:GetPtTarget(slot0:GetCurrLevel())
+function var_0_0.GetCurrTarget(arg_32_0)
+	local var_32_0 = arg_32_0:GetCurrLevel()
+
+	return arg_32_0:GetPtTarget(var_32_0)
 end
 
-function slot0.GetNextLevelTarget(slot0)
-	return slot0:GetPtTarget(slot0:GetNextLevel())
+function var_0_0.GetNextLevelTarget(arg_33_0)
+	local var_33_0 = arg_33_0:GetNextLevel()
+
+	return arg_33_0:GetPtTarget(var_33_0)
 end
 
-function slot0.IsGotLevelAward(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0.activity.data1_list) do
-		if slot7 == slot0:GetPtTarget(slot1) then
+function var_0_0.IsGotLevelAward(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_0:GetPtTarget(arg_34_1)
+
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.activity.data1_list) do
+		if iter_34_1 == var_34_0 then
 			return true
 		end
 	end
@@ -306,33 +326,33 @@ function slot0.IsGotLevelAward(slot0, slot1)
 	return false
 end
 
-function slot0.GetLastAward(slot0)
-	slot1 = slot0.dropList[#slot0.targets]
+function var_0_0.GetLastAward(arg_35_0)
+	local var_35_0 = arg_35_0.dropList[#arg_35_0.targets]
 
 	return {
-		type = slot1[1],
-		id = slot1[2],
-		count = slot1[3]
+		type = var_35_0[1],
+		id = var_35_0[2],
+		count = var_35_0[3]
 	}
 end
 
-slot0.STATE_LOCK = 1
-slot0.STATE_CAN_GET = 2
-slot0.STATE_GOT = 3
+var_0_0.STATE_LOCK = 1
+var_0_0.STATE_CAN_GET = 2
+var_0_0.STATE_GOT = 3
 
-function slot0.GetDroptItemState(slot0, slot1)
-	if slot0:GetCurrLevel() < slot1 then
-		return uv0.STATE_LOCK
-	elseif slot0:IsGotLevelAward(slot1) then
-		return uv0.STATE_GOT
+function var_0_0.GetDroptItemState(arg_36_0, arg_36_1)
+	if arg_36_1 > arg_36_0:GetCurrLevel() then
+		return var_0_0.STATE_LOCK
+	elseif arg_36_0:IsGotLevelAward(arg_36_1) then
+		return var_0_0.STATE_GOT
 	else
-		return uv0.STATE_CAN_GET
+		return var_0_0.STATE_CAN_GET
 	end
 end
 
-function slot0.AnyAwardCanGet(slot0)
-	for slot4, slot5 in ipairs(slot0.targets) do
-		if slot0:GetDroptItemState(slot4) == uv0.STATE_CAN_GET then
+function var_0_0.AnyAwardCanGet(arg_37_0)
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.targets) do
+		if arg_37_0:GetDroptItemState(iter_37_0) == var_0_0.STATE_CAN_GET then
 			return true
 		end
 	end
@@ -340,4 +360,4 @@ function slot0.AnyAwardCanGet(slot0)
 	return false
 end
 
-return slot0
+return var_0_0

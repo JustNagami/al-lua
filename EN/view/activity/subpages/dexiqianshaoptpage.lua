@@ -1,92 +1,102 @@
-slot0 = class("DeXiQianShaoPtPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("DeXiQianShaoPtPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	slot0.awardTF = slot0:findTF("switcher/phase2/Image/award", slot0.bg)
+function var_0_0.OnFirstFlush(arg_1_0)
+	arg_1_0.awardTF = arg_1_0:findTF("switcher/phase2/Image/award", arg_1_0.bg)
 
-	uv0.super.OnFirstFlush(slot0)
-	setActive(slot0.displayBtn, false)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	setActive(arg_1_0.displayBtn, false)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end, SFX_PANEL)
 
-	slot0.step = slot0:findTF("AD/switcher/phase2/Image/step")
-	slot0.progress = slot0:findTF("AD/switcher/phase2/Image/progress")
-	slot0.switchBtn = slot0:findTF("AD/switcher/switch_btn")
-	slot0.bar = slot0:findTF("AD/switcher/phase2/Image/bar")
-	slot0.phases = {
-		slot0:findTF("AD/switcher/phase1"),
-		slot0:findTF("AD/switcher/phase2")
+	arg_1_0.step = arg_1_0:findTF("AD/switcher/phase2/Image/step")
+	arg_1_0.progress = arg_1_0:findTF("AD/switcher/phase2/Image/progress")
+	arg_1_0.switchBtn = arg_1_0:findTF("AD/switcher/switch_btn")
+	arg_1_0.bar = arg_1_0:findTF("AD/switcher/phase2/Image/bar")
+	arg_1_0.phases = {
+		arg_1_0:findTF("AD/switcher/phase1"),
+		arg_1_0:findTF("AD/switcher/phase2")
 	}
-	slot0.inPhase2 = false
+	arg_1_0.inPhase2 = false
 
-	onToggle(slot0, slot0.switchBtn, function (slot0)
-		if uv0.isSwitching then
+	onToggle(arg_1_0, arg_1_0.switchBtn, function(arg_3_0)
+		if arg_1_0.isSwitching then
 			return
 		end
 
-		uv0.inPhase2 = slot0
+		arg_1_0.inPhase2 = arg_3_0
 
-		uv0:Switch(slot0)
+		arg_1_0:Switch(arg_3_0)
 	end, SFX_PANEL)
 
-	if pg.TimeMgr.GetInstance():inTime(slot0.activity:getConfig("config_client")) then
-		triggerToggle(slot0.switchBtn, true)
+	local var_1_0 = arg_1_0.activity:getConfig("config_client")
+
+	if pg.TimeMgr.GetInstance():inTime(var_1_0) then
+		triggerToggle(arg_1_0.switchBtn, true)
 	end
 end
 
-function slot0.Switch(slot0, slot1)
-	slot0.isSwitching = true
-	slot2 = GetOrAddComponent(slot0.phases[1], typeof(CanvasGroup))
+function var_0_0.Switch(arg_4_0, arg_4_1)
+	arg_4_0.isSwitching = true
 
-	slot0.phases[2]:SetAsLastSibling()
-	LeanTween.moveLocal(go(slot0.phases[1]), slot0.phases[2].localPosition, 0.4):setOnComplete(System.Action(function ()
-		setActive(uv0.phases[1]:Find("label"), true)
-	end))
-	LeanTween.value(go(slot0.phases[1]), 1, 0, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
-	end)):setOnComplete(System.Action(function ()
-		uv0.alpha = 1
+	local var_4_0 = GetOrAddComponent(arg_4_0.phases[1], typeof(CanvasGroup))
+	local var_4_1 = arg_4_0.phases[1].localPosition
+	local var_4_2 = arg_4_0.phases[2].localPosition
 
-		setActive(uv1.phases[1]:Find("Image"), false)
+	arg_4_0.phases[2]:SetAsLastSibling()
+	LeanTween.moveLocal(go(arg_4_0.phases[1]), var_4_2, 0.4):setOnComplete(System.Action(function()
+		setActive(arg_4_0.phases[1]:Find("label"), true)
 	end))
-	setActive(slot0.phases[2]:Find("Image"), true)
+	LeanTween.value(go(arg_4_0.phases[1]), 1, 0, 0.4):setOnUpdate(System.Action_float(function(arg_6_0)
+		var_4_0.alpha = arg_6_0
+	end)):setOnComplete(System.Action(function()
+		var_4_0.alpha = 1
 
-	slot5 = GetOrAddComponent(slot0.phases[2], typeof(CanvasGroup))
+		setActive(arg_4_0.phases[1]:Find("Image"), false)
+	end))
+	setActive(arg_4_0.phases[2]:Find("Image"), true)
 
-	LeanTween.value(go(slot0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	local var_4_3 = GetOrAddComponent(arg_4_0.phases[2], typeof(CanvasGroup))
+
+	LeanTween.value(go(arg_4_0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_8_0)
+		var_4_3.alpha = arg_8_0
 	end))
-	setActive(slot0.phases[2]:Find("label"), false)
-	LeanTween.moveLocal(go(slot0.phases[2]), slot0.phases[1].localPosition, 0.4):setOnComplete(System.Action(function ()
-		uv0.isSwitching = nil
-		uv0.phases[2] = uv0.phases[1]
-		uv0.phases[1] = uv0.phases[2]
+	setActive(arg_4_0.phases[2]:Find("label"), false)
+	LeanTween.moveLocal(go(arg_4_0.phases[2]), var_4_1, 0.4):setOnComplete(System.Action(function()
+		arg_4_0.isSwitching = nil
+		arg_4_0.phases[1], arg_4_0.phases[2] = arg_4_0.phases[2], arg_4_0.phases[1]
 	end))
-	slot0:UpdateAwardGot()
+	arg_4_0:UpdateAwardGot()
 end
 
-function slot0.UpdateAwardGot(slot0)
-	slot3 = not slot0.ptData:CanGetNextAward() and slot0.inPhase2
+function var_0_0.UpdateAwardGot(arg_10_0)
+	local var_10_0 = arg_10_0:findTF("switcher/phase2/got", arg_10_0.bg)
+	local var_10_1 = arg_10_0.ptData:CanGetAward()
+	local var_10_2 = not arg_10_0.ptData:CanGetNextAward() and arg_10_0.inPhase2
 
-	setActive(slot0:findTF("switcher/phase2/got", slot0.bg), slot3)
+	setActive(var_10_0, var_10_2)
 
-	if slot3 or slot0.ptData:CanGetAward() then
-		setActive(slot0.battleBtn, false)
+	if var_10_2 or var_10_1 then
+		setActive(arg_10_0.battleBtn, false)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setActive(slot0.battleBtn, pg.TimeMgr.GetInstance():inTime(slot0.activity:getConfig("config_client")))
-	slot0:UpdateAwardGot()
+function var_0_0.OnUpdateFlush(arg_11_0)
+	var_0_0.super.OnUpdateFlush(arg_11_0)
 
-	slot4, slot5, slot6 = slot0.ptData:GetResProgress()
+	local var_11_0 = arg_11_0.activity:getConfig("config_client")
+	local var_11_1 = pg.TimeMgr.GetInstance():inTime(var_11_0)
 
-	setText(slot0.step, slot6 >= 1 and setColorStr(slot4, "#487CFFFF") or slot4)
-	setText(slot0.progress, "/" .. slot5)
-	setFillAmount(slot0.bar, slot4 / slot5)
+	setActive(arg_11_0.battleBtn, var_11_1)
+	arg_11_0:UpdateAwardGot()
+
+	local var_11_2, var_11_3, var_11_4 = arg_11_0.ptData:GetResProgress()
+
+	setText(arg_11_0.step, var_11_4 >= 1 and setColorStr(var_11_2, "#487CFFFF") or var_11_2)
+	setText(arg_11_0.progress, "/" .. var_11_3)
+	setFillAmount(arg_11_0.bar, var_11_2 / var_11_3)
 end
 
-return slot0
+return var_0_0

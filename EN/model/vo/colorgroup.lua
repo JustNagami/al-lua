@@ -1,80 +1,83 @@
-slot0 = class("ColorGroup", import(".BaseVO"))
-slot0.StateLock = 0
-slot0.StateColoring = 1
-slot0.StateFinish = 2
-slot0.StateAchieved = 3
+﻿local var_0_0 = class("ColorGroup", import(".BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1
-	slot0.configId = slot0.id
-	slot0.drops = {}
-	slot0.fills = {}
-	slot0.cells = {}
+var_0_0.StateLock = 0
+var_0_0.StateColoring = 1
+var_0_0.StateFinish = 2
+var_0_0.StateAchieved = 3
 
-	_.each(slot0:getConfig("cells"), function (slot0)
-		uv0:setCell(slot0[1], slot0[2], slot0[3])
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.drops = {}
+	arg_1_0.fills = {}
+	arg_1_0.cells = {}
+
+	_.each(arg_1_0:getConfig("cells"), function(arg_2_0)
+		arg_1_0:setCell(arg_2_0[1], arg_2_0[2], arg_2_0[3])
 	end)
 
-	slot0.colors = _.map(slot0:getConfig("colors"), function (slot0)
-		return Color.New(slot0[1], slot0[2], slot0[3], slot0[4])
+	arg_1_0.colors = _.map(arg_1_0:getConfig("colors"), function(arg_3_0)
+		return Color.New(arg_3_0[1], arg_3_0[2], arg_3_0[3], arg_3_0[4])
 	end)
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_4_0)
 	return pg.activity_coloring_template
 end
 
-function slot0.getState(slot0)
-	return slot0.state
+function var_0_0.getState(arg_5_0)
+	return arg_5_0.state
 end
 
-function slot0.setState(slot0, slot1)
-	slot0.state = slot1
+function var_0_0.setState(arg_6_0, arg_6_1)
+	arg_6_0.state = arg_6_1
 end
 
-function slot0.getHasAward(slot0)
-	return slot0.hasAward
+function var_0_0.getHasAward(arg_7_0)
+	return arg_7_0.hasAward
 end
 
-function slot0.setHasAward(slot0, slot1)
-	slot0.hasAward = slot1
+function var_0_0.setHasAward(arg_8_0, arg_8_1)
+	arg_8_0.hasAward = arg_8_1
 end
 
-function slot0.getDrops(slot0)
-	return slot0.drops
+function var_0_0.getDrops(arg_9_0)
+	return arg_9_0.drops
 end
 
-function slot0.setDrops(slot0, slot1)
-	slot0.drops = slot1
+function var_0_0.setDrops(arg_10_0, arg_10_1)
+	arg_10_0.drops = arg_10_1
 end
 
-function slot0.getFill(slot0, slot1, slot2)
-	return slot0.fills[slot1 .. "_" .. slot2]
+function var_0_0.getFill(arg_11_0, arg_11_1, arg_11_2)
+	return arg_11_0.fills[arg_11_1 .. "_" .. arg_11_2]
 end
 
-function slot0.setFill(slot0, slot1, slot2, slot3)
-	if slot3 == 0 then
-		slot0.fills[slot1 .. "_" .. slot2] = nil
+function var_0_0.setFill(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	local var_12_0 = arg_12_1 .. "_" .. arg_12_2
+
+	if arg_12_3 == 0 then
+		arg_12_0.fills[var_12_0] = nil
 	else
-		slot0.fills[slot4] = ColorCell.New(slot1, slot2, slot3)
+		arg_12_0.fills[var_12_0] = ColorCell.New(arg_12_1, arg_12_2, arg_12_3)
 	end
 end
 
-function slot0.hasFill(slot0, slot1, slot2)
-	return slot0:getFill(slot1, slot2) ~= nil
+function var_0_0.hasFill(arg_13_0, arg_13_1, arg_13_2)
+	return arg_13_0:getFill(arg_13_1, arg_13_2) ~= nil
 end
 
-function slot0.clearFill(slot0)
-	slot0.fills = {}
+function var_0_0.clearFill(arg_14_0)
+	arg_14_0.fills = {}
 end
 
-function slot0.isAllFill(slot0, slot1)
-	if slot0:canBeCustomised() then
+function var_0_0.isAllFill(arg_15_0, arg_15_1)
+	if arg_15_0:canBeCustomised() then
 		return false
 	end
 
-	for slot5, slot6 in pairs(slot0.cells) do
-		if not slot0.fills[slot5] and (not slot1 or slot6.type == slot1) then
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.cells) do
+		if not arg_15_0.fills[iter_15_0] and (not arg_15_1 or iter_15_1.type == arg_15_1) then
 			return false
 		end
 	end
@@ -82,46 +85,56 @@ function slot0.isAllFill(slot0, slot1)
 	return true
 end
 
-function slot0.getCell(slot0, slot1, slot2)
-	return slot0.cells[slot1 .. "_" .. slot2]
+function var_0_0.getCell(arg_16_0, arg_16_1, arg_16_2)
+	return arg_16_0.cells[arg_16_1 .. "_" .. arg_16_2]
 end
 
-function slot0.setCell(slot0, slot1, slot2, slot3)
-	slot0.cells[slot1 .. "_" .. slot2] = ColorCell.New(slot1, slot2, slot3)
+function var_0_0.setCell(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	arg_17_0.cells[arg_17_1 .. "_" .. arg_17_2] = ColorCell.New(arg_17_1, arg_17_2, arg_17_3)
 end
 
-function slot0.hasCell(slot0, slot1, slot2)
-	return slot0:getCell(slot1, slot2) ~= nil
+function var_0_0.hasCell(arg_18_0, arg_18_1, arg_18_2)
+	return arg_18_0:getCell(arg_18_1, arg_18_2) ~= nil
 end
 
-function slot0.canBeCustomised(slot0)
-	return slot0:getConfig("blank") == 1
+function var_0_0.canBeCustomised(arg_19_0)
+	return arg_19_0:getConfig("blank") == 1
 end
 
-function slot0.GetAABB(slot0)
-	assert(next(slot0.cells), "Get AABB from empty List")
+function var_0_0.GetAABB(arg_20_0)
+	local var_20_0 = 1000
+	local var_20_1 = 1000
+	local var_20_2 = 0
+	local var_20_3 = 0
 
-	for slot8, slot9 in pairs(slot0.cells) do
-		slot1 = math.min(1000, slot9.column)
-		slot2 = math.min(1000, slot9.row)
-		slot3 = math.max(0, slot9.column)
-		slot4 = math.max(0, slot9.row)
+	assert(next(arg_20_0.cells), "Get AABB from empty List")
+
+	for iter_20_0, iter_20_1 in pairs(arg_20_0.cells) do
+		var_20_0 = math.min(var_20_0, iter_20_1.column)
+		var_20_1 = math.min(var_20_1, iter_20_1.row)
+		var_20_2 = math.max(var_20_2, iter_20_1.column)
+		var_20_3 = math.max(var_20_3, iter_20_1.row)
 	end
 
-	return Vector2(slot1, slot2), Vector2(slot3, slot4)
+	return Vector2(var_20_0, var_20_1), Vector2(var_20_2, var_20_3)
 end
 
-function slot0.HasItem2Fill(slot0, slot1)
-	slot2 = _.map(slot0:getConfig("color_id_list"), function (slot0)
-		return uv0[slot0] or 0
+function var_0_0.HasItem2Fill(arg_21_0, arg_21_1)
+	local var_21_0 = _.map(arg_21_0:getConfig("color_id_list"), function(arg_22_0)
+		return arg_21_1[arg_22_0] or 0
 	end)
-	slot3, slot4 = slot0:GetAABB()
-	slot6 = slot4.y - slot3.y
+	local var_21_1, var_21_2 = arg_21_0:GetAABB()
+	local var_21_3 = var_21_2.x - var_21_1.x
+	local var_21_4 = var_21_2.y - var_21_1.y
 
-	for slot10 = 0, slot4.x - slot3.x do
-		for slot14 = 0, slot6 do
-			if slot0:getCell(slot10 + slot3.x, slot14 + slot3.y) and not slot0:getFill(slot15, slot16) then
-				return (slot2[slot17.type] or 0) > 0
+	for iter_21_0 = 0, var_21_3 do
+		for iter_21_1 = 0, var_21_4 do
+			local var_21_5 = iter_21_0 + var_21_1.x
+			local var_21_6 = iter_21_1 + var_21_1.y
+			local var_21_7 = arg_21_0:getCell(var_21_5, var_21_6)
+
+			if var_21_7 and not arg_21_0:getFill(var_21_5, var_21_6) then
+				return (var_21_0[var_21_7.type] or 0) > 0
 			end
 		end
 	end
@@ -129,28 +142,35 @@ function slot0.HasItem2Fill(slot0, slot1)
 	return false
 end
 
-function slot0.HasEnoughItem2FillAll(slot0, slot1)
-	_.each(slot0:getConfig("cells"), function (slot0)
-		slot3 = slot0[3]
+function var_0_0.HasEnoughItem2FillAll(arg_23_0, arg_23_1)
+	local var_23_0 = _.map(arg_23_0:getConfig("color_id_list"), function(arg_24_0)
+		return arg_23_1[arg_24_0] or 0
+	end)
+	local var_23_1 = {}
 
-		if not uv0:getFill(slot0[1], slot0[2]) then
-			uv1[slot3] = (uv1[slot3] or 0) + 1
+	_.each(arg_23_0:getConfig("cells"), function(arg_25_0)
+		local var_25_0 = arg_25_0[1]
+		local var_25_1 = arg_25_0[2]
+		local var_25_2 = arg_25_0[3]
+
+		if not arg_23_0:getFill(var_25_0, var_25_1) then
+			local var_25_3 = var_23_1[var_25_2] or 0
+
+			var_23_1[var_25_2] = var_25_3 + 1
 		end
 	end)
 
-	slot4 = true
+	local var_23_2 = true
 
-	for slot8, slot9 in pairs({}) do
-		if slot9 > (_.map(slot0:getConfig("color_id_list"), function (slot0)
-			return uv0[slot0] or 0
-		end)[slot8] or 0) then
-			slot4 = false
+	for iter_23_0, iter_23_1 in pairs(var_23_1) do
+		if iter_23_1 > (var_23_0[iter_23_0] or 0) then
+			var_23_2 = false
 
 			break
 		end
 	end
 
-	return slot4
+	return var_23_2
 end
 
-return slot0
+return var_0_0

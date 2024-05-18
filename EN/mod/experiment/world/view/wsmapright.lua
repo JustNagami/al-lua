@@ -1,5 +1,6 @@
-slot0 = class("WSMapRight", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSMapRight", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	map = "table",
 	btnInventory = "userdata",
 	btnPort = "userdata",
@@ -27,7 +28,7 @@ slot0.Fields = {
 	wsTimer = "table",
 	wsPool = "table"
 }
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onUpdateFleetBuff = "OnUpdateFleetBuff",
 	onClearLog = "OnClearLog",
 	onUpdateFleetLocation = "OnUpdateFleetLocation",
@@ -37,188 +38,199 @@ slot0.Listeners = {
 	onAppendLog = "OnAppendLog"
 }
 
-function slot0.Setup(slot0)
-	pg.DelegateInfo.New(slot0)
-	slot0:Init()
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
+	arg_1_0:Init()
 end
 
-function slot0.Dispose(slot0)
-	slot0.wsCompass:Dispose()
-	slot0:RemoveFleetListener(slot0.fleet)
-	slot0:RemoveMapListener()
+function var_0_0.Dispose(arg_2_0)
+	arg_2_0.wsCompass:Dispose()
+	arg_2_0:RemoveFleetListener(arg_2_0.fleet)
+	arg_2_0:RemoveMapListener()
 
-	if slot0.taskProxy then
-		slot0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, slot0.onUpdateInfoBtnTip)
+	if arg_2_0.taskProxy then
+		arg_2_0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, arg_2_0.onUpdateInfoBtnTip)
 
-		slot0.taskProxy = nil
+		arg_2_0.taskProxy = nil
 	end
 
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
+	pg.DelegateInfo.Dispose(arg_2_0)
+	arg_2_0:Clear()
 end
 
-function slot0.Init(slot0)
-	slot1 = slot0.transform
-	slot0.rtCompassPanel = slot1:Find("compass_panel")
-	slot0.btnOrder = slot0.rtCompassPanel:Find("btn_order")
-	slot0.btnScan = slot0.rtCompassPanel:Find("btn_scan")
-	slot0.btnDefeat = slot0.rtCompassPanel:Find("btn_defeat")
-	slot0.btnDetail = slot0.rtCompassPanel:Find("btn_detail")
-	slot0.toggleSkipPrecombat = slot1:Find("btn_list/lock_fleet")
+function var_0_0.Init(arg_3_0)
+	local var_3_0 = arg_3_0.transform
 
-	onToggle(slot0, slot0.toggleSkipPrecombat, function (slot0)
-		PlayerPrefs.SetInt("world_skip_precombat", slot0 and 1 or 0)
+	arg_3_0.rtCompassPanel = var_3_0:Find("compass_panel")
+	arg_3_0.btnOrder = arg_3_0.rtCompassPanel:Find("btn_order")
+	arg_3_0.btnScan = arg_3_0.rtCompassPanel:Find("btn_scan")
+	arg_3_0.btnDefeat = arg_3_0.rtCompassPanel:Find("btn_defeat")
+	arg_3_0.btnDetail = arg_3_0.rtCompassPanel:Find("btn_detail")
+	arg_3_0.toggleSkipPrecombat = var_3_0:Find("btn_list/lock_fleet")
+
+	onToggle(arg_3_0, arg_3_0.toggleSkipPrecombat, function(arg_4_0)
+		PlayerPrefs.SetInt("world_skip_precombat", arg_4_0 and 1 or 0)
 	end, SFX_PANEL)
 
-	slot0.toggleAutoFight = slot1:Find("btn_list/auto_fight")
-	slot0.toggleAutoSwitch = slot1:Find("btn_list/auto_switch")
-	slot0.btnInventory = slot1:Find("btn_list/dock/inventory_button")
-	slot0.btnInformation = slot1:Find("btn_list/dock/information_button")
-	slot0.btnTransport = slot1:Find("btn_list/dock/transport_button")
-	slot0.btnHelp = slot1:Find("btn_list/dock/help_button")
-	slot0.btnPort = slot1:Find("btn_list/dock/port_button")
+	arg_3_0.toggleAutoFight = var_3_0:Find("btn_list/auto_fight")
+	arg_3_0.toggleAutoSwitch = var_3_0:Find("btn_list/auto_switch")
+	arg_3_0.btnInventory = var_3_0:Find("btn_list/dock/inventory_button")
+	arg_3_0.btnInformation = var_3_0:Find("btn_list/dock/information_button")
+	arg_3_0.btnTransport = var_3_0:Find("btn_list/dock/transport_button")
+	arg_3_0.btnHelp = var_3_0:Find("btn_list/dock/help_button")
+	arg_3_0.btnPort = var_3_0:Find("btn_list/dock/port_button")
 
-	setActive(slot0.btnPort, false)
+	setActive(arg_3_0.btnPort, false)
 
-	slot0.btnExit = slot1:Find("btn_list/dock/exit_button")
+	arg_3_0.btnExit = var_3_0:Find("btn_list/dock/exit_button")
 
-	setActive(slot0.btnExit, false)
+	setActive(arg_3_0.btnExit, false)
 
-	slot0.wsCompass = WSCompass.New()
-	slot0.wsCompass.tf = slot0.rtCompassPanel:Find("ring/compass")
-	slot0.wsCompass.pool = slot0.wsPool
+	arg_3_0.wsCompass = WSCompass.New()
+	arg_3_0.wsCompass.tf = arg_3_0.rtCompassPanel:Find("ring/compass")
+	arg_3_0.wsCompass.pool = arg_3_0.wsPool
 
-	slot0.wsCompass:Setup()
+	arg_3_0.wsCompass:Setup()
 
-	slot0.rtTipWord = slot1:Find("tip_word")
-	slot0.taskProxy = nowWorld():GetTaskProxy()
+	arg_3_0.rtTipWord = var_3_0:Find("tip_word")
+	arg_3_0.taskProxy = nowWorld():GetTaskProxy()
 
-	slot0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, slot0.onUpdateInfoBtnTip)
+	arg_3_0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, arg_3_0.onUpdateInfoBtnTip)
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	if slot0.entrance ~= slot1 or slot0.map ~= slot2 or slot0.gid ~= slot2.gid then
-		slot0:RemoveMapListener()
+function var_0_0.Update(arg_5_0, arg_5_1, arg_5_2)
+	if arg_5_0.entrance ~= arg_5_1 or arg_5_0.map ~= arg_5_2 or arg_5_0.gid ~= arg_5_2.gid then
+		arg_5_0:RemoveMapListener()
 
-		slot0.entrance = slot1
-		slot0.map = slot2
-		slot0.gid = slot2.gid
+		arg_5_0.entrance = arg_5_1
+		arg_5_0.map = arg_5_2
+		arg_5_0.gid = arg_5_2.gid
 
-		slot0:AddMapListener()
-		slot0:OnUpdateSelectedFleet()
-		slot0:UpdateCompass()
-		slot0:UpdateBtns()
-		slot0:OnUpdateEventTips()
+		arg_5_0:AddMapListener()
+		arg_5_0:OnUpdateSelectedFleet()
+		arg_5_0:UpdateCompass()
+		arg_5_0:UpdateBtns()
+		arg_5_0:OnUpdateEventTips()
 	end
 end
 
-function slot0.AddMapListener(slot0)
-	if slot0.map then
-		slot0.map:AddListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
+function var_0_0.AddMapListener(arg_6_0)
+	if arg_6_0.map then
+		arg_6_0.map:AddListener(WorldMap.EventUpdateFIndex, arg_6_0.onUpdateSelectedFleet)
 	end
 end
 
-function slot0.RemoveMapListener(slot0)
-	if slot0.map then
-		slot0.map:RemoveListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
+function var_0_0.RemoveMapListener(arg_7_0)
+	if arg_7_0.map then
+		arg_7_0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg_7_0.onUpdateSelectedFleet)
 	end
 end
 
-function slot0.AddFleetListener(slot0, slot1)
-	if slot1 then
-		slot1:AddListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdateFleetLocation)
-		slot1:AddListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdateFleetBuff)
-		slot1:AddListener(WorldMapFleet.EventUpdateDefeat, slot0.onUpdateFleetDefeat)
+function var_0_0.AddFleetListener(arg_8_0, arg_8_1)
+	if arg_8_1 then
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateLocation, arg_8_0.onUpdateFleetLocation)
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateBuff, arg_8_0.onUpdateFleetBuff)
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateDefeat, arg_8_0.onUpdateFleetDefeat)
 	end
 end
 
-function slot0.RemoveFleetListener(slot0, slot1)
-	if slot1 then
-		slot1:RemoveListener(WorldMapFleet.EventUpdateLocation, slot0.onUpdateFleetLocation)
-		slot1:RemoveListener(WorldMapFleet.EventUpdateBuff, slot0.onUpdateFleetBuff)
-		slot1:RemoveListener(WorldMapFleet.EventUpdateDefeat, slot0.onUpdateFleetDefeat)
+function var_0_0.RemoveFleetListener(arg_9_0, arg_9_1)
+	if arg_9_1 then
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateLocation, arg_9_0.onUpdateFleetLocation)
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateBuff, arg_9_0.onUpdateFleetBuff)
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateDefeat, arg_9_0.onUpdateFleetDefeat)
 	end
 end
 
-function slot0.OnUpdateSelectedFleet(slot0, slot1)
-	slot2 = slot0.map:GetFleet()
+function var_0_0.OnUpdateSelectedFleet(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0.map:GetFleet()
 
-	if not slot1 or slot0.fleet ~= slot2 then
-		slot0:RemoveFleetListener(slot0.fleet)
+	if not arg_10_1 or arg_10_0.fleet ~= var_10_0 then
+		arg_10_0:RemoveFleetListener(arg_10_0.fleet)
 
-		slot0.fleet = slot2
+		arg_10_0.fleet = var_10_0
 
-		slot0:AddFleetListener(slot0.fleet)
-		slot0:UpdateCompassRotation(slot2)
-		slot0:OnUpdateFleetLocation()
-		slot0:OnUpdateFleetBuff()
-		slot0:OnUpdateFleetDefeat()
+		arg_10_0:AddFleetListener(arg_10_0.fleet)
+		arg_10_0:UpdateCompassRotation(var_10_0)
+		arg_10_0:OnUpdateFleetLocation()
+		arg_10_0:OnUpdateFleetBuff()
+		arg_10_0:OnUpdateFleetDefeat()
 	end
 end
 
-function slot0.OnUpdateFleetLocation(slot0)
-	if not slot0.map.active then
+function var_0_0.OnUpdateFleetLocation(arg_11_0)
+	if not arg_11_0.map.active then
 		return
 	end
 
-	slot0:UpdateCompassMarks()
+	arg_11_0:UpdateCompassMarks()
 end
 
-function slot0.OnUpdateFleetBuff(slot0)
-	setActive(slot0.wsCompass.tf, #slot0.fleet:GetBuffsByTrap(WorldBuff.TrapCompassInterference) == 0)
+function var_0_0.OnUpdateFleetBuff(arg_12_0)
+	setActive(arg_12_0.wsCompass.tf, #arg_12_0.fleet:GetBuffsByTrap(WorldBuff.TrapCompassInterference) == 0)
 end
 
-function slot0.OnUpdateFleetDefeat(slot0)
-	setText(slot0.btnDefeat:Find("Text"), math.min(slot0.fleet:getDefeatCount(), 99))
+function var_0_0.OnUpdateFleetDefeat(arg_13_0)
+	setText(arg_13_0.btnDefeat:Find("Text"), math.min(arg_13_0.fleet:getDefeatCount(), 99))
 end
 
-function slot0.UpdateCompass(slot0)
-	slot0:UpdateCompassMarks()
-	slot0:UpdateCompassRotation(slot0.map:GetFleet())
+function var_0_0.UpdateCompass(arg_14_0)
+	local var_14_0 = arg_14_0.map:GetFleet()
+
+	arg_14_0:UpdateCompassMarks()
+	arg_14_0:UpdateCompassRotation(var_14_0)
 end
 
-function slot0.UpdateCompossView(slot0, slot1, slot2)
-	slot0.wsCompass:UpdateByViewer(slot0.map, slot1, slot2)
+function var_0_0.UpdateCompossView(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_0.map
+
+	arg_15_0.wsCompass:UpdateByViewer(var_15_0, arg_15_1, arg_15_2)
 end
 
-function slot0.UpdateCompassRotation(slot0, slot1)
-	slot0.wsCompass:UpdateCompassRotation(slot1)
+function var_0_0.UpdateCompassRotation(arg_16_0, arg_16_1)
+	arg_16_0.wsCompass:UpdateCompassRotation(arg_16_1)
 end
 
-function slot0.UpdateCompassMarks(slot0)
-	slot0.wsCompass:ClearMarks()
-	slot0.wsCompass:Update(slot0.entrance, slot0.map)
+function var_0_0.UpdateCompassMarks(arg_17_0)
+	arg_17_0.wsCompass:ClearMarks()
+	arg_17_0.wsCompass:Update(arg_17_0.entrance, arg_17_0.map)
 end
 
-function slot0.OnUpdateEventTips(slot0)
-	slot1, slot2 = slot0.map:GetEventTipWord()
+function var_0_0.OnUpdateEventTips(arg_18_0)
+	local var_18_0, var_18_1 = arg_18_0.map:GetEventTipWord()
 
-	if slot0.tipEventPri ~= slot2 then
-		setActive(slot0.rtTipWord, false)
+	if arg_18_0.tipEventPri ~= var_18_1 then
+		setActive(arg_18_0.rtTipWord, false)
 
-		slot0.tipEventPri = slot2
+		arg_18_0.tipEventPri = var_18_1
 	end
 
-	setActive(slot0.rtTipWord, slot2 > 0)
+	setActive(arg_18_0.rtTipWord, var_18_1 > 0)
 
-	if slot2 > 0 then
-		setText(slot0.rtTipWord:Find("Text"), slot1)
+	if var_18_1 > 0 then
+		setText(arg_18_0.rtTipWord:Find("Text"), var_18_0)
 	end
 end
 
-function slot0.UpdateBtns(slot0)
-	setActive(slot0.btnPort, slot0.map:GetPort() and not slot1:IsTempPort())
-	setActive(slot0.btnExit, slot0.map:canExit())
+function var_0_0.UpdateBtns(arg_19_0)
+	local var_19_0 = arg_19_0.map:GetPort()
+
+	setActive(arg_19_0.btnPort, var_19_0 and not var_19_0:IsTempPort())
+	setActive(arg_19_0.btnExit, arg_19_0.map:canExit())
 end
 
-function slot0.OnUpdateInfoBtnTip(slot0)
-	setActive(slot0.btnInformation:Find("tip"), _.any(slot0.taskProxy:getTaskVOs(), function (slot0)
-		return slot0:getState() == WorldTask.STATE_FINISHED
-	end))
+function var_0_0.OnUpdateInfoBtnTip(arg_20_0)
+	local var_20_0 = _.any(arg_20_0.taskProxy:getTaskVOs(), function(arg_21_0)
+		return arg_21_0:getState() == WorldTask.STATE_FINISHED
+	end)
+
+	setActive(arg_20_0.btnInformation:Find("tip"), var_20_0)
 end
 
-function slot0.OnUpdateHelpBtnTip(slot0, slot1)
-	setActive(slot0.btnHelp:Find("imge/tip"), WorldConst.IsWorldHelpNew(nowWorld():GetProgress(), slot1))
+function var_0_0.OnUpdateHelpBtnTip(arg_22_0, arg_22_1)
+	local var_22_0 = nowWorld():GetProgress()
+
+	setActive(arg_22_0.btnHelp:Find("imge/tip"), WorldConst.IsWorldHelpNew(var_22_0, arg_22_1))
 end
 
-return slot0
+return var_0_0

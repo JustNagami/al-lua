@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "LUCK19903",
 	mode = 2,
 	fadein = 1.5,

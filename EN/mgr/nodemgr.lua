@@ -1,65 +1,74 @@
-pg = pg or {}
-slot0 = singletonClass("NodeMgr")
-pg.NodeMgr = slot0
+﻿pg = pg or {}
 
-function slot0.Ctor(slot0)
+local var_0_0 = singletonClass("NodeMgr")
+
+pg.NodeMgr = var_0_0
+
+function var_0_0.Ctor(arg_1_0)
+	return
 end
 
-slot0.NodeBase = {}
+var_0_0.NodeBase = {}
 
-function slot0.RigisterNode(slot0, slot1)
-	uv0.NodeBase[slot0] = slot1
+function var_0_0.RigisterNode(arg_2_0, arg_2_1)
+	var_0_0.NodeBase[arg_2_0] = arg_2_1
 end
 
-function slot0.Ctor(slot0)
+function var_0_0.Ctor(arg_3_0)
+	return
 end
 
-function slot1(slot0, slot1, slot2, slot3)
-	if slot0.NodeBase[slot2[1]] == nil then
-		assert(false, "配置的节点不存在，检查“没配置串并”、“拼写错误”或“没补include”~ ：" .. slot2[1])
+local function var_0_1(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	local var_4_0 = arg_4_0.NodeBase[arg_4_2[1]]
+
+	if var_4_0 == nil then
+		assert(false, "配置的节点不存在，检查“没配置串并”、“拼写错误”或“没补include”~ ：" .. arg_4_2[1])
 
 		return
 	end
 
-	slot3:Add(slot4.New(slot1, slot2))
+	local var_4_1 = var_4_0.New(arg_4_1, arg_4_2)
+
+	arg_4_3:Add(var_4_1)
 end
 
-function slot2(slot0, slot1, slot2, slot3)
-	assert(type(slot2) == "table", "节点信息解析错误:" .. tostring(slot2))
+local function var_0_2(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	assert(type(arg_5_2) == "table", "节点信息解析错误:" .. tostring(arg_5_2))
 
-	if slot2._parallel == nil then
-		uv0(slot0, slot1, slot2, slot3)
+	local var_5_0 = arg_5_2._parallel
+
+	if var_5_0 == nil then
+		var_0_1(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 
 		return
 	end
 
-	if slot4 == true then
-		slot3:Add(uv1.NodeBase.Guide.New(slot1))
+	if var_5_0 == true then
+		local var_5_1 = var_0_0.NodeBase.Guide.New(arg_5_1)
 
-		for slot9, slot10 in ipairs(slot2) do
-			slot11 = slot3.Center:NewSeq(slot9)
+		arg_5_3:Add(var_5_1)
 
-			slot1:AddSeq(slot11)
+		for iter_5_0, iter_5_1 in ipairs(arg_5_2) do
+			local var_5_2 = arg_5_3.Center:NewSeq(iter_5_0)
 
-			slot12 = ys.Battle.NodeData.New(slot1:GetUnit(), {}, slot11)
+			arg_5_1:AddSeq(var_5_2)
 
-			slot5:AddFollow(slot11, slot12)
-			uv2(slot0, slot12, slot10, slot11)
+			local var_5_3 = ys.Battle.NodeData.New(arg_5_1:GetUnit(), {}, var_5_2)
+
+			var_5_1:AddFollow(var_5_2, var_5_3)
+			var_0_2(arg_5_0, var_5_3, iter_5_1, var_5_2)
 		end
 	else
-		for slot8, slot9 in ipairs(slot2) do
-			uv2(slot0, slot1, slot9, slot3)
+		for iter_5_2, iter_5_3 in ipairs(arg_5_2) do
+			var_0_2(arg_5_0, arg_5_1, iter_5_3, arg_5_3)
 		end
 	end
 end
 
-function slot0.GenNode(slot0, slot1, slot2, slot3)
-	slot7 = slot2
-	slot8 = slot3
+function var_0_0.GenNode(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	var_0_2(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
 
-	uv0(slot0, slot1, slot7, slot8)
-
-	for slot7, slot8 in ipairs(slot1:GetAllSeq()) do
-		slot8:Update()
+	for iter_6_0, iter_6_1 in ipairs(arg_6_1:GetAllSeq()) do
+		iter_6_1:Update()
 	end
 end

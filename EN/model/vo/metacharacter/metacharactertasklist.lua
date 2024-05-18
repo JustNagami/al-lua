@@ -1,43 +1,46 @@
-slot0 = class("MetaCharacterTaskList", import("..BaseVO"))
+﻿local var_0_0 = class("MetaCharacterTaskList", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
-	slot0.skillId = slot0:getConfig("skill_ID")
-	slot0.taskList = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+	arg_1_0.configId = arg_1_0.id
+	arg_1_0.skillId = arg_1_0:getConfig("skill_ID")
+	arg_1_0.taskList = {}
 
-	for slot7, slot8 in ipairs(slot0:getConfig("skill_levelup_task")) do
-		slot9 = MetaCharacterTask.New({
-			taskId = slot8[1],
-			star = slot8[2],
-			level = slot8[3],
-			skillId = slot0.skillId,
-			prev = nil,
-			indexofList = slot7
+	local var_1_0 = arg_1_0:getConfig("skill_levelup_task")
+	local var_1_1
+
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+		local var_1_2 = MetaCharacterTask.New({
+			taskId = iter_1_1[1],
+			star = iter_1_1[2],
+			level = iter_1_1[3],
+			skillId = arg_1_0.skillId,
+			prev = var_1_1,
+			indexofList = iter_1_0
 		})
 
-		table.insert(slot0.taskList, slot9)
+		table.insert(arg_1_0.taskList, var_1_2)
 
-		slot3 = slot9
+		var_1_1 = var_1_2
 	end
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.ship_meta_skilltask
 end
 
-function slot0.getTaskList(slot0)
-	return slot0.taskList
+function var_0_0.getTaskList(arg_3_0)
+	return arg_3_0.taskList
 end
 
-function slot0.getSkillId(slot0)
-	return slot0.skillId
+function var_0_0.getSkillId(arg_4_0)
+	return arg_4_0.skillId
 end
 
-function slot0.getTaskByTaskId(slot0, slot1)
-	return _.detect(slot0.taskList, function (slot0)
-		return uv0 == slot0.id
+function var_0_0.getTaskByTaskId(arg_5_0, arg_5_1)
+	return _.detect(arg_5_0.taskList, function(arg_6_0)
+		return arg_5_1 == arg_6_0.id
 	end)
 end
 
-return slot0
+return var_0_0

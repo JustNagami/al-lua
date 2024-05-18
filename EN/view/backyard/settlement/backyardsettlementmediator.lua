@@ -1,15 +1,18 @@
-slot0 = class("BackYardSettlementMediator", import("...base.ContextMediator"))
+﻿local var_0_0 = class("BackYardSettlementMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.viewComponent:setShipVOs(slot0.contextData.oldShips, slot0.contextData.newShips)
-	slot0.viewComponent:setDormVO(getProxy(DormProxy):getRawData())
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(DormProxy)
+
+	arg_1_0.viewComponent:setShipVOs(arg_1_0.contextData.oldShips, arg_1_0.contextData.newShips)
+	arg_1_0.viewComponent:setDormVO(var_1_0:getRawData())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {}
 end
 
-function slot0.handleNotification(slot0)
+function var_0_0.handleNotification(arg_3_0)
+	return
 end
 
-return slot0
+return var_0_0

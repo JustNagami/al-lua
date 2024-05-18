@@ -1,331 +1,364 @@
-slot0 = class("CustomIndexLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("CustomIndexLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CustomIndexUI"
 end
 
-slot0.Mode = {
+var_0_0.Mode = {
 	OR = 2,
 	AND = 1,
 	NUM = 3
 }
 
-function slot0.init(slot0)
-	slot0.panel = slot0._tf:Find("index_panel")
-	slot0.layout = slot0.panel:Find("layout")
-	slot0.contianer = slot0.layout:Find("container")
+function var_0_0.init(arg_2_0)
+	arg_2_0.panel = arg_2_0._tf:Find("index_panel")
+	arg_2_0.layout = arg_2_0.panel:Find("layout")
+	arg_2_0.contianer = arg_2_0.layout:Find("container")
 
-	eachChild(slot0.contianer, function (slot0)
-		setActive(slot0, false)
+	eachChild(arg_2_0.contianer, function(arg_3_0)
+		setActive(arg_3_0, false)
 	end)
 
-	slot0.panelTemplate = slot0.layout:Find("container/Template")
-	slot0.displayList = {}
-	slot0.typeList = {}
-	slot0.btnConfirm = slot0:findTF("layout/btns/ok", slot0.panel)
-	slot0.btnCancel = slot0:findTF("layout/btns/cancel", slot0.panel)
+	arg_2_0.panelTemplate = arg_2_0.layout:Find("container/Template")
+	arg_2_0.displayList = {}
+	arg_2_0.typeList = {}
+	arg_2_0.btnConfirm = arg_2_0:findTF("layout/btns/ok", arg_2_0.panel)
+	arg_2_0.btnCancel = arg_2_0:findTF("layout/btns/cancel", arg_2_0.panel)
 
-	setText(slot0:findTF("Image", slot0.btnConfirm), i18n("text_confirm"))
-	setText(slot0:findTF("Image", slot0.btnCancel), i18n("text_cancel"))
+	setText(arg_2_0:findTF("Image", arg_2_0.btnConfirm), i18n("text_confirm"))
+	setText(arg_2_0:findTF("Image", arg_2_0.btnCancel), i18n("text_cancel"))
 
-	slot0.greySprite = slot0:findTF("resource/grey", slot0.panel):GetComponent(typeof(Image)).sprite
-	slot0.blueSprite = slot0:findTF("resource/blue", slot0.panel):GetComponent(typeof(Image)).sprite
-	slot0.yellowSprite = slot0:findTF("resource/yellow", slot0.panel):GetComponent(typeof(Image)).sprite
+	arg_2_0.greySprite = arg_2_0:findTF("resource/grey", arg_2_0.panel):GetComponent(typeof(Image)).sprite
+	arg_2_0.blueSprite = arg_2_0:findTF("resource/blue", arg_2_0.panel):GetComponent(typeof(Image)).sprite
+	arg_2_0.yellowSprite = arg_2_0:findTF("resource/yellow", arg_2_0.panel):GetComponent(typeof(Image)).sprite
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.btnConfirm, function ()
-		if uv0.contextData.callback then
-			uv0.contextData.callback(uv0.contextData.indexDatas)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.btnConfirm, function()
+		if arg_4_0.contextData.callback then
+			arg_4_0.contextData.callback(arg_4_0.contextData.indexDatas)
 
-			uv0.contextData.callback = nil
+			arg_4_0.contextData.callback = nil
 		end
 
-		uv0:emit(uv1.ON_CLOSE)
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.btnCancel, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_4_0, arg_4_0.btnCancel, function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("btn", slot0.panel), function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_4_0, arg_4_0:findTF("btn", arg_4_0.panel), function()
+		arg_4_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
 
-	slot0.panel.localScale = Vector3.zero
+	arg_4_0.panel.localScale = Vector3.zero
 
-	LeanTween.scale(slot0.panel, Vector3(1, 1, 1), 0.2)
-	setText(slot0.panel:Find("layout/tip"), slot0.contextData.tip or "")
-	slot0:InitGroup()
-	slot0:BlurPanel()
+	LeanTween.scale(arg_4_0.panel, Vector3(1, 1, 1), 0.2)
+	setText(arg_4_0.panel:Find("layout/tip"), arg_4_0.contextData.tip or "")
+	arg_4_0:InitGroup()
+	arg_4_0:BlurPanel()
 end
 
-function slot0.BlurPanel(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.BlurPanel(arg_8_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf)
 end
 
-function slot0.InitGroup(slot0)
-	slot0.onInit = true
-	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
-	slot0.dropdownDic = {}
-	slot0.updateList = {}
-	slot0.simpleDropdownDic = {}
+function var_0_0.InitGroup(arg_9_0)
+	arg_9_0.onInit = true
+	arg_9_0.contextData.indexDatas = arg_9_0.contextData.indexDatas or {}
+	arg_9_0.dropdownDic = {}
+	arg_9_0.updateList = {}
+	arg_9_0.simpleDropdownDic = {}
 
-	for slot4, slot5 in pairs(slot0.contextData.groupList) do
-		if slot5.dropdown then
-			slot0:InitDropdown(slot5)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.contextData.groupList) do
+		if iter_9_1.dropdown then
+			arg_9_0:InitDropdown(iter_9_1)
 		else
-			slot0:InitCustoms(slot5)
+			arg_9_0:InitCustoms(iter_9_1)
 		end
 	end
 
-	for slot4, slot5 in ipairs(slot0.updateList) do
-		slot5()
+	for iter_9_2, iter_9_3 in ipairs(arg_9_0.updateList) do
+		iter_9_3()
 	end
 
-	if slot0.contextData.customPanels.minHeight then
-		GetOrAddComponent(slot0.layout, typeof(LayoutElement)).minHeight = slot0.contextData.customPanels.minHeight
+	if arg_9_0.contextData.customPanels.minHeight then
+		GetOrAddComponent(arg_9_0.layout, typeof(LayoutElement)).minHeight = arg_9_0.contextData.customPanels.minHeight
 	end
 
-	if slot0.contextData.customPanels.layoutPos then
-		setLocalPosition(slot0.layout, slot0.contextData.customPanels.layoutPos)
+	if arg_9_0.contextData.customPanels.layoutPos then
+		setLocalPosition(arg_9_0.layout, arg_9_0.contextData.customPanels.layoutPos)
 	end
 
-	slot0.onInit = false
+	arg_9_0.onInit = false
 end
 
-function slot0.InitDropdown(slot0, slot1)
-	slot2 = slot1.tags
-	slot3 = tf(Instantiate(slot0.panelTemplate))
+function var_0_0.InitDropdown(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1.tags
+	local var_10_1 = tf(Instantiate(arg_10_0.panelTemplate))
 
-	setParent(slot3, slot0.contianer, false)
-	setActive(slot3, true)
+	setParent(var_10_1, arg_10_0.contianer, false)
+	setActive(var_10_1, true)
 
-	go(slot3).name = slot1.titleTxt
+	local var_10_2 = var_0_0.Clone2Full(var_10_1:Find("bg"), #var_10_0)
 
-	setText(slot3:Find("title/Image"), i18n(slot1.titleTxt))
-	setText(slot3:Find("title/Image/Image_en"), i18n(slot1.titleENTxt))
+	go(var_10_1).name = arg_10_1.titleTxt
 
-	slot3:Find("bg"):GetComponent(typeof(ScrollRect)).enabled = false
+	setText(var_10_1:Find("title/Image"), i18n(arg_10_1.titleTxt))
+	setText(var_10_1:Find("title/Image/Image_en"), i18n(arg_10_1.titleENTxt))
 
-	for slot9, slot10 in ipairs(slot2) do
-		slot11 = uv0.Clone2Full(slot3:Find("bg"), #slot2)[slot9]
+	var_10_1:Find("bg"):GetComponent(typeof(ScrollRect)).enabled = false
 
-		setActive(slot0:findTF("dropdown", slot11), true)
-		onButton(slot0, slot11, function ()
-			slot0 = uv0.panel:InverseTransformPoint(uv1.position)
+	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+		local var_10_3 = var_10_2[iter_10_0]
 
-			if not uv2:GetLoaded() then
-				uv2:Load()
+		setActive(arg_10_0:findTF("dropdown", var_10_3), true)
+
+		local var_10_4 = CustomDropdown.New(arg_10_0.panel, arg_10_0.event, arg_10_0.contextData, iter_10_1, var_10_3)
+
+		onButton(arg_10_0, var_10_3, function()
+			local var_11_0 = arg_10_0.panel:InverseTransformPoint(var_10_3.position)
+
+			if not var_10_4:GetLoaded() then
+				var_10_4:Load()
 			end
 
-			uv2:ActionInvoke("Show", slot0)
+			var_10_4:ActionInvoke("Show", var_11_0)
 		end)
 
-		slot0.dropdownDic[slot10] = CustomDropdown.New(slot0.panel, slot0.event, slot0.contextData, slot10, slot11)
+		arg_10_0.dropdownDic[iter_10_1] = var_10_4
 	end
 end
 
-function slot0.InitCustoms(slot0, slot1)
-	slot3 = slot0.contextData.customPanels[slot1.tags[1]]
-	slot4 = tf(Instantiate(slot0.panelTemplate))
+function var_0_0.InitCustoms(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1.tags[1]
+	local var_12_1 = arg_12_0.contextData.customPanels[var_12_0]
+	local var_12_2 = tf(Instantiate(arg_12_0.panelTemplate))
 
-	setParent(slot4, slot0.contianer, false)
-	setActive(slot4, true)
+	setParent(var_12_2, arg_12_0.contianer, false)
+	setActive(var_12_2, true)
 
-	go(slot4).name = slot1.titleTxt
+	go(var_12_2).name = arg_12_1.titleTxt
 
-	setText(slot4:Find("title/Image"), i18n(slot1.titleTxt))
-	setText(slot4:Find("title/Image/Image_en"), i18n(slot1.titleENTxt))
+	setText(var_12_2:Find("title/Image"), i18n(arg_12_1.titleTxt))
+	setText(var_12_2:Find("title/Image/Image_en"), i18n(arg_12_1.titleENTxt))
 
-	slot4:Find("bg"):GetComponent(typeof(ScrollRect)).enabled = false
-	slot6 = slot3.options
-	slot7 = slot3.mode or uv0.Mode.OR
-	slot9 = slot3.blueSeleted and slot0.blueSprite or slot0.yellowSprite
+	var_12_2:Find("bg"):GetComponent(typeof(ScrollRect)).enabled = false
 
-	for slot13, slot14 in ipairs(slot6) do
-		slot8 = bit.bor(slot14, 0)
+	local var_12_3 = var_12_1.options
+	local var_12_4 = var_12_1.mode or var_0_0.Mode.OR
+	local var_12_5 = 0
+	local var_12_6 = var_12_1.blueSeleted and arg_12_0.blueSprite or arg_12_0.yellowSprite
+
+	for iter_12_0, iter_12_1 in ipairs(var_12_3) do
+		var_12_5 = bit.bor(iter_12_1, var_12_5)
 	end
 
-	slot0.contextData.indexDatas[slot2] = slot0.contextData.indexDatas[slot2] or slot6[1]
-	slot10 = nil
+	arg_12_0.contextData.indexDatas[var_12_0] = arg_12_0.contextData.indexDatas[var_12_0] or var_12_3[1]
 
-	for slot15, slot16 in ipairs(uv0.Clone2Full(slot4:Find("bg"), #slot6)) do
-		slot17 = slot6[slot15]
+	local var_12_7
+	local var_12_8 = var_0_0.Clone2Full(var_12_2:Find("bg"), #var_12_3)
 
-		setText(findTF(slot16, "Image"), i18n(slot3.names[slot15]))
-		setImageSprite(slot16, slot0.greySprite)
-		onButton(slot0, slot16, function ()
-			switch(uv0, {
-				[uv1.Mode.AND] = function ()
-					if uv0 == 1 or uv1.contextData.indexDatas[uv2] == uv3[1] then
-						uv1.contextData.indexDatas[uv2] = uv4
+	for iter_12_2, iter_12_3 in ipairs(var_12_8) do
+		local var_12_9 = var_12_3[iter_12_2]
+
+		setText(findTF(iter_12_3, "Image"), i18n(var_12_1.names[iter_12_2]))
+		setImageSprite(iter_12_3, arg_12_0.greySprite)
+		onButton(arg_12_0, iter_12_3, function()
+			switch(var_12_4, {
+				[var_0_0.Mode.AND] = function()
+					if iter_12_2 == 1 or arg_12_0.contextData.indexDatas[var_12_0] == var_12_3[1] then
+						arg_12_0.contextData.indexDatas[var_12_0] = var_12_9
 					else
-						uv1.contextData.indexDatas[uv2] = bit.bxor(uv1.contextData.indexDatas[uv2], uv4)
+						arg_12_0.contextData.indexDatas[var_12_0] = bit.bxor(arg_12_0.contextData.indexDatas[var_12_0], var_12_9)
 					end
 
-					if uv1.contextData.indexDatas[uv2] == 0 or uv1.contextData.indexDatas[uv2] == uv5 then
-						uv1.contextData.indexDatas[uv2] = uv3[1]
+					if arg_12_0.contextData.indexDatas[var_12_0] == 0 or arg_12_0.contextData.indexDatas[var_12_0] == var_12_5 then
+						arg_12_0.contextData.indexDatas[var_12_0] = var_12_3[1]
 					end
 				end,
-				[uv1.Mode.OR] = function ()
-					if uv0.isSort then
-						uv1.contextData.indexDatas[uv2] = uv3
+				[var_0_0.Mode.OR] = function()
+					if var_12_1.isSort then
+						arg_12_0.contextData.indexDatas[var_12_0] = var_12_9
 					else
-						uv1.contextData.indexDatas[uv2] = uv3 == uv1.contextData.indexDatas[uv2] and uv4[1] or uv3
+						local var_15_0 = arg_12_0.contextData.indexDatas[var_12_0]
+
+						arg_12_0.contextData.indexDatas[var_12_0] = var_12_9 == var_15_0 and var_12_3[1] or var_12_9
 					end
 				end,
-				[uv1.Mode.NUM] = function ()
-					slot0 = uv0.contextData.indexDatas[uv1]
-					slot1 = 0
+				[var_0_0.Mode.NUM] = function()
+					local var_16_0 = arg_12_0.contextData.indexDatas[var_12_0]
+					local var_16_1 = 0
 
-					while slot0 > 0 do
-						slot1 = slot1 + 1
-						slot0 = bit.band(slot0, slot0 - 1)
+					while var_16_0 > 0 do
+						var_16_1 = var_16_1 + 1
+						var_16_0 = bit.band(var_16_0, var_16_0 - 1)
 					end
 
-					if slot1 < uv2.num or bit.band(uv0.contextData.indexDatas[uv1], uv3) > 0 then
-						uv0.contextData.indexDatas[uv1] = bit.bxor(uv0.contextData.indexDatas[uv1], uv3)
+					if var_16_1 < var_12_1.num or bit.band(arg_12_0.contextData.indexDatas[var_12_0], var_12_9) > 0 then
+						arg_12_0.contextData.indexDatas[var_12_0] = bit.bxor(arg_12_0.contextData.indexDatas[var_12_0], var_12_9)
 					else
 						pg.TipsMgr.GetInstance():ShowTips(i18n("equipcode_share_exceedlimit"))
 					end
 				end
 			})
-			uv9()
+			var_12_7()
 		end, SFX_UI_TAG)
 	end
 
-	table.insert(slot0.updateList, function ()
-		switch(uv0, {
-			[uv1.Mode.AND] = function ()
-				if uv0.contextData.indexDatas[uv1] == uv2[1] then
-					for slot3, slot4 in ipairs(uv3) do
-						slot6 = findTF(slot4, "Image")
+	function var_12_7()
+		switch(var_12_4, {
+			[var_0_0.Mode.AND] = function()
+				if arg_12_0.contextData.indexDatas[var_12_0] == var_12_3[1] then
+					for iter_18_0, iter_18_1 in ipairs(var_12_8) do
+						local var_18_0 = var_12_3[iter_18_0] == var_12_3[1]
+						local var_18_1 = findTF(iter_18_1, "Image")
 
-						setImageSprite(slot4, uv2[slot3] == uv2[1] and uv4 or uv0.greySprite)
+						setImageSprite(iter_18_1, var_18_0 and var_12_6 or arg_12_0.greySprite)
 					end
 				else
-					for slot3, slot4 in ipairs(uv3) do
-						slot6 = findTF(slot4, "Image")
+					for iter_18_2, iter_18_3 in ipairs(var_12_8) do
+						local var_18_2 = var_12_3[iter_18_2] ~= var_12_3[1] and bit.band(arg_12_0.contextData.indexDatas[var_12_0], var_12_3[iter_18_2]) > 0
+						local var_18_3 = findTF(iter_18_3, "Image")
 
-						setImageSprite(slot4, uv2[slot3] ~= uv2[1] and bit.band(uv0.contextData.indexDatas[uv1], uv2[slot3]) > 0 and uv4 or uv0.greySprite)
+						setImageSprite(iter_18_3, var_18_2 and var_12_6 or arg_12_0.greySprite)
 					end
 				end
 			end,
-			[uv1.Mode.OR] = function ()
-				for slot3, slot4 in ipairs(uv0) do
-					slot6 = findTF(slot4, "Image")
+			[var_0_0.Mode.OR] = function()
+				for iter_19_0, iter_19_1 in ipairs(var_12_8) do
+					local var_19_0 = var_12_3[iter_19_0] == arg_12_0.contextData.indexDatas[var_12_0]
+					local var_19_1 = findTF(iter_19_1, "Image")
 
-					setImageSprite(slot4, uv1[slot3] == uv2.contextData.indexDatas[uv3] and uv4 or uv2.greySprite)
+					setImageSprite(iter_19_1, var_19_0 and var_12_6 or arg_12_0.greySprite)
 				end
 			end,
-			[uv1.Mode.NUM] = function ()
-				for slot3, slot4 in ipairs(uv0) do
-					slot6 = findTF(slot4, "Image")
+			[var_0_0.Mode.NUM] = function()
+				for iter_20_0, iter_20_1 in ipairs(var_12_8) do
+					local var_20_0 = bit.band(arg_12_0.contextData.indexDatas[var_12_0], var_12_3[iter_20_0]) > 0
+					local var_20_1 = findTF(iter_20_1, "Image")
 
-					setImageSprite(slot4, bit.band(uv1.contextData.indexDatas[uv2], uv3[slot3]) > 0 and uv4 or uv1.greySprite)
+					setImageSprite(iter_20_1, var_20_0 and var_12_6 or arg_12_0.greySprite)
 				end
 			end
 		})
-		uv2:OnDatasChange(uv3)
+		arg_12_0:OnDatasChange(var_12_0)
 
-		if uv2.simpleDropdownDic[uv3] then
-			for slot3, slot4 in pairs(uv2.simpleDropdownDic[uv3]) do
-				slot4:UpdateVirtualBtn()
+		if arg_12_0.simpleDropdownDic[var_12_0] then
+			for iter_17_0, iter_17_1 in pairs(arg_12_0.simpleDropdownDic[var_12_0]) do
+				iter_17_1:UpdateVirtualBtn()
 			end
 		end
-	end)
+	end
 
-	if slot1.simpleDropdown then
-		assert(slot7 == uv0.Mode.OR, "simpleDropdown目前只支持OR模式")
+	table.insert(arg_12_0.updateList, var_12_7)
 
-		for slot16, slot17 in ipairs(slot1.simpleDropdown) do
-			slot19 = cloneTplTo(slot4:Find("bg"):GetChild(0), slot4:Find("bg"))
-			slot19.name = slot17 .. "_simple"
+	if arg_12_1.simpleDropdown then
+		assert(var_12_4 == var_0_0.Mode.OR, "simpleDropdown目前只支持OR模式")
 
-			setActive(slot0:findTF("dropdown", slot19), true)
-			onButton(slot0, slot19, function ()
-				slot0 = uv0.panel:InverseTransformPoint(uv1.position)
+		local var_12_10 = var_12_2:Find("bg"):GetChild(0)
 
-				if not uv2:GetLoaded() then
-					uv2:Load()
+		for iter_12_4, iter_12_5 in ipairs(arg_12_1.simpleDropdown) do
+			local var_12_11 = arg_12_0.contextData.customPanels[iter_12_5]
+			local var_12_12 = cloneTplTo(var_12_10, var_12_2:Find("bg"))
+
+			var_12_12.name = iter_12_5 .. "_simple"
+
+			local var_12_13 = SimpleDropdown.New(arg_12_0.panel, arg_12_0.event, arg_12_0.contextData, var_12_0, var_12_12, var_12_11, var_12_7, arg_12_0.greySprite, arg_12_0.yellowSprite)
+
+			setActive(arg_12_0:findTF("dropdown", var_12_12), true)
+			onButton(arg_12_0, var_12_12, function()
+				local var_21_0 = arg_12_0.panel:InverseTransformPoint(var_12_12.position)
+
+				if not var_12_13:GetLoaded() then
+					var_12_13:Load()
 				end
 
-				uv2:ActionInvoke("Show", slot0)
+				var_12_13:ActionInvoke("Show", var_21_0)
 			end)
 
-			slot0.simpleDropdownDic[slot2] = slot0.simpleDropdownDic[slot2] or {}
-			slot0.simpleDropdownDic[slot2][slot17] = SimpleDropdown.New(slot0.panel, slot0.event, slot0.contextData, slot2, slot19, slot0.contextData.customPanels[slot17], slot10, slot0.greySprite, slot0.yellowSprite)
+			arg_12_0.simpleDropdownDic[var_12_0] = arg_12_0.simpleDropdownDic[var_12_0] or {}
+			arg_12_0.simpleDropdownDic[var_12_0][iter_12_5] = var_12_13
 		end
 	end
 end
 
-function slot0.OnDatasChange(slot0, slot1)
-	slot2 = slot0.contextData.dropdownLimit or {}
+function var_0_0.OnDatasChange(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0.contextData.dropdownLimit or {}
 
-	for slot6, slot7 in pairs(slot0.dropdownDic) do
-		if slot2[slot6] ~= nil then
-			if slot2[slot6].exclude[slot1] ~= nil or slot2[slot6].include[slot1] ~= nil then
-				slot11 = false
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.dropdownDic) do
+		if var_22_0[iter_22_0] ~= nil then
+			local var_22_1 = var_22_0[iter_22_0].include
+			local var_22_2 = var_22_0[iter_22_0].exclude
 
-				if slot9[slot1] ~= nil and slot0.contextData.indexDatas[slot1] == slot9[slot1] then
-					slot11 = false
-				elseif slot8[slot1] ~= nil then
-					slot11 = bit.band(slot10, slot8[slot1]) > 0
+			if var_22_2[arg_22_1] ~= nil or var_22_1[arg_22_1] ~= nil then
+				local var_22_3 = arg_22_0.contextData.indexDatas[arg_22_1]
+				local var_22_4 = false
+
+				if var_22_2[arg_22_1] ~= nil and var_22_3 == var_22_2[arg_22_1] then
+					var_22_4 = false
+				elseif var_22_1[arg_22_1] ~= nil then
+					var_22_4 = bit.band(var_22_3, var_22_1[arg_22_1]) > 0
 				end
 
-				setActive(slot0.dropdownDic[slot6].virtualBtn, slot11)
+				setActive(arg_22_0.dropdownDic[iter_22_0].virtualBtn, var_22_4)
 
-				if not slot0.onInit then
-					slot0.contextData.indexDatas[slot6] = slot0.contextData.customPanels[slot6].options[1]
+				if not arg_22_0.onInit then
+					arg_22_0.contextData.indexDatas[iter_22_0] = arg_22_0.contextData.customPanels[iter_22_0].options[1]
 				end
 
-				slot0.dropdownDic[slot6]:UpdateVirtualBtn()
-				slot0.dropdownDic[slot6]:ActionInvoke("SelectLast")
+				arg_22_0.dropdownDic[iter_22_0]:UpdateVirtualBtn()
+				arg_22_0.dropdownDic[iter_22_0]:ActionInvoke("SelectLast")
 			end
 		end
 	end
 end
 
-function slot0.willExit(slot0)
-	LeanTween.cancel(go(slot0.panel))
+function var_0_0.willExit(arg_23_0)
+	LeanTween.cancel(go(arg_23_0.panel))
 
-	for slot4, slot5 in pairs(slot0.dropdownDic) do
-		slot5:Destroy()
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.dropdownDic) do
+		iter_23_1:Destroy()
 	end
 
-	for slot4, slot5 in pairs(slot0.simpleDropdownDic) do
-		for slot9, slot10 in pairs(slot5) do
-			slot10:Destroy()
+	for iter_23_2, iter_23_3 in pairs(arg_23_0.simpleDropdownDic) do
+		for iter_23_4, iter_23_5 in pairs(iter_23_3) do
+			iter_23_5:Destroy()
 		end
 	end
 
-	slot0.updateList = nil
+	arg_23_0.updateList = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_23_0._tf)
 end
 
-function slot0.Clone2Full(slot0, slot1)
-	slot3 = slot0:GetChild(0)
+function var_0_0.Clone2Full(arg_24_0, arg_24_1)
+	local var_24_0 = {}
+	local var_24_1 = arg_24_0:GetChild(0)
+	local var_24_2 = arg_24_0.childCount
 
-	for slot8 = 0, slot0.childCount - 1 do
-		table.insert({}, slot0:GetChild(slot8))
+	for iter_24_0 = 0, var_24_2 - 1 do
+		table.insert(var_24_0, arg_24_0:GetChild(iter_24_0))
 	end
 
-	for slot8 = slot4, slot1 - 1 do
-		slot9 = cloneTplTo(slot3, slot0)
-		slot9.name = slot8
+	for iter_24_1 = var_24_2, arg_24_1 - 1 do
+		local var_24_3 = cloneTplTo(var_24_1, arg_24_0)
 
-		table.insert(slot2, tf(slot9))
+		var_24_3.name = iter_24_1
+
+		table.insert(var_24_0, tf(var_24_3))
 	end
 
-	for slot8 = 0, slot0.childCount - 1 do
-		setActive(slot0:GetChild(slot8), slot8 < slot1)
+	local var_24_4 = arg_24_0.childCount
+
+	for iter_24_2 = 0, var_24_4 - 1 do
+		setActive(arg_24_0:GetChild(iter_24_2), iter_24_2 < arg_24_1)
 	end
 
-	for slot8 = slot4, slot1 + 1, -1 do
-		table.remove(slot2)
+	for iter_24_3 = var_24_4, arg_24_1 + 1, -1 do
+		table.remove(var_24_0)
 	end
 
-	return slot2
+	return var_24_0
 end
 
-return slot0
+return var_0_0

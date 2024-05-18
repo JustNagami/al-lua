@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetHarmNearest",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 62061
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -135,16 +146,5 @@ return {
 	painting = 1,
 	id = 15511,
 	castCV = "skill",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetHarmNearest",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 62061
-			}
-		}
-	}
+	desc = ""
 }

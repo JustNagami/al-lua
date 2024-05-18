@@ -1,20 +1,23 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_71 = {}
-slot1 = slot0.word_template_71
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_71 = {}
+
+local var_0_1 = var_0_0.word_template_71
 
 function temp()
-	uv0["纯"] = {
-		["缅"] = {
+	var_0_1.纯 = {
+		缅 = {
 			this = true
 		},
-		["一"] = {
-			["郎"] = {
+		一 = {
+			郎 = {
 				this = true
 			}
 		},
-		["真"] = {
-			["娘"] = {
+		真 = {
+			娘 = {
 				this = true
 			}
 		}
@@ -24,9 +27,9 @@ end
 temp()
 
 function temp()
-	uv0["純"] = {
-		["一"] = {
-			["郎"] = {
+	var_0_1.純 = {
+		一 = {
+			郎 = {
 				this = true
 			}
 		}
@@ -36,8 +39,8 @@ end
 temp()
 
 function temp()
-	uv0["蠢"] = {
-		["猪"] = {
+	var_0_1.蠢 = {
+		猪 = {
 			this = true
 		}
 	}
@@ -46,21 +49,21 @@ end
 temp()
 
 function temp()
-	uv0["戳"] = {
-		["那"] = {
-			["嗎"] = {
+	var_0_1.戳 = {
+		那 = {
+			嗎 = {
 				B = {
 					this = true
 				},
-				["逼"] = {
+				逼 = {
 					this = true
 				},
-				["比"] = {
+				比 = {
 					this = true
 				}
 			}
 		},
-		["你"] = {
+		你 = {
 			this = true
 		}
 	}
@@ -69,12 +72,12 @@ end
 temp()
 
 function temp()
-	uv0["慈"] = {
-		["禧"] = {
-			["秘"] = {
-				["密"] = {
-					["生"] = {
-						["活"] = {
+	var_0_1.慈 = {
+		禧 = {
+			秘 = {
+				密 = {
+					生 = {
+						活 = {
 							this = true
 						}
 					}
@@ -87,10 +90,10 @@ end
 temp()
 
 function temp()
-	uv0["磁"] = {
-		["卡"] = {
-			["复"] = {
-				["制"] = {
+	var_0_1.磁 = {
+		卡 = {
+			复 = {
+				制 = {
 					this = true
 				}
 			}
@@ -101,18 +104,18 @@ end
 temp()
 
 function temp()
-	uv0["次"] = {
-		["旺"] = {
-			["仁"] = {
-				["增"] = {
+	var_0_1.次 = {
+		旺 = {
+			仁 = {
+				增 = {
 					this = true
 				}
 			}
 		},
-		["子"] = {
-			["倒"] = {
-				["汽"] = {
-					["车"] = {
+		子 = {
+			倒 = {
+				汽 = {
+					车 = {
 						this = true
 					}
 				}

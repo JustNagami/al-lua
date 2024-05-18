@@ -1,85 +1,89 @@
-slot0 = class("MainRightPanel", import(".MainBasePanel"))
+﻿local var_0_0 = class("MainRightPanel", import(".MainBasePanel"))
 
-function slot0.OnSetUp(slot0)
-	slot0.memoryBtn = findTF(slot0._tf, "memoryButton")
-	slot0.collectionBtn = findTF(slot0._tf, "collectionButton")
-	slot0.rankBtn = findTF(slot0._tf, "rankButton")
-	slot0.friendBtn = findTF(slot0._tf, "friendButton")
-	slot0.mailBtn = findTF(slot0._tf, "mailButton")
-	slot0.noticeBtn = findTF(slot0._tf, "noticeButton")
-	slot0.settingBtn = findTF(slot0._tf, "settingButton")
-	slot0.formationBtn = findTF(slot0._tf, "formationButton")
-	slot0.combatBtn = findTF(slot0._tf, "combatBtn")
-	slot0.startPos = slot0.memoryBtn.anchoredPosition
+function var_0_0.OnSetUp(arg_1_0)
+	arg_1_0.memoryBtn = findTF(arg_1_0._tf, "memoryButton")
+	arg_1_0.collectionBtn = findTF(arg_1_0._tf, "collectionButton")
+	arg_1_0.rankBtn = findTF(arg_1_0._tf, "rankButton")
+	arg_1_0.friendBtn = findTF(arg_1_0._tf, "friendButton")
+	arg_1_0.mailBtn = findTF(arg_1_0._tf, "mailButton")
+	arg_1_0.noticeBtn = findTF(arg_1_0._tf, "noticeButton")
+	arg_1_0.settingBtn = findTF(arg_1_0._tf, "settingButton")
+	arg_1_0.formationBtn = findTF(arg_1_0._tf, "formationButton")
+	arg_1_0.combatBtn = findTF(arg_1_0._tf, "combatBtn")
+	arg_1_0.startPos = arg_1_0.memoryBtn.anchoredPosition
 end
 
-function slot0.OnRegist(slot0)
-	onButton(slot0, slot0.memoryBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.MEDIA_COLLECTION_ENTRANCE)
+function var_0_0.OnRegist(arg_2_0)
+	onButton(arg_2_0, arg_2_0.memoryBtn, function()
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.MEDIA_COLLECTION_ENTRANCE)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.collectionBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.COLLECTSHIP)
+	onButton(arg_2_0, arg_2_0.collectionBtn, function()
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.COLLECTSHIP)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.rankBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.BILLBOARD, {
+	onButton(arg_2_0, arg_2_0.rankBtn, function()
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.BILLBOARD, {
 			index = PowerRank.TYPE_POWER
 		})
 	end, SFX_MAIN)
-	onButton(slot0, slot0.friendBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.FRIEND)
+	onButton(arg_2_0, arg_2_0.friendBtn, function()
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.FRIEND)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.mailBtn, function ()
-		uv0:emit(NewMainMediator.OPEN_MAIL)
+	onButton(arg_2_0, arg_2_0.mailBtn, function()
+		arg_2_0:emit(NewMainMediator.OPEN_MAIL)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.noticeBtn, function ()
+	onButton(arg_2_0, arg_2_0.noticeBtn, function()
 		if #getProxy(ServerNoticeProxy):getServerNotices(false) > 0 then
-			uv0:emit(NewMainMediator.OPEN_NOTICE)
+			arg_2_0:emit(NewMainMediator.OPEN_NOTICE)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("no_notice_tip"))
 		end
 	end, SFX_MAIN)
-	onButton(slot0, slot0.settingBtn, function ()
+	onButton(arg_2_0, arg_2_0.settingBtn, function()
 		SettingsRedDotNode.CanUpdateCV = false
 
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.SETTINGS)
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.SETTINGS)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.formationBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.BIANDUI, {
+	onButton(arg_2_0, arg_2_0.formationBtn, function()
+		local var_10_0 = {
 			fleetId = 1
-		})
+		}
+
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.BIANDUI, var_10_0)
 	end, SFX_MAIN)
-	onButton(slot0, slot0.combatBtn, function ()
-		uv0:emit(NewMainMediator.GO_SCENE, SCENE.LEVEL, {
-			chapterId = getProxy(ChapterProxy):getActiveChapter() and slot1.id,
-			mapIdx = slot1 and slot1:getConfig("map")
+	onButton(arg_2_0, arg_2_0.combatBtn, function()
+		local var_11_0 = getProxy(ChapterProxy):getActiveChapter()
+
+		arg_2_0:emit(NewMainMediator.GO_SCENE, SCENE.LEVEL, {
+			chapterId = var_11_0 and var_11_0.id,
+			mapIdx = var_11_0 and var_11_0:getConfig("map")
 		})
 	end, SFX_MAIN)
 end
 
-function slot0.GetDirection(slot0)
+function var_0_0.GetDirection(arg_12_0)
 	return Vector2(1, 0)
 end
 
-function slot0.OnFresh(slot0)
-	slot0:RefreshRankBtn()
+function var_0_0.OnFresh(arg_13_0)
+	arg_13_0:RefreshRankBtn()
 end
 
-function slot0.RefreshRankBtn(slot0)
-	slot2 = pg.open_systems_limited[6].level <= getProxy(PlayerProxy):getRawData().level
+function var_0_0.RefreshRankBtn(arg_14_0)
+	local var_14_0 = getProxy(PlayerProxy):getRawData().level >= pg.open_systems_limited[6].level
 
-	if not slot0.isOpenRank or slot0.isOpenRank ~= slot2 then
-		slot3 = 123
+	if not arg_14_0.isOpenRank or arg_14_0.isOpenRank ~= var_14_0 then
+		local var_14_1 = 123
 
-		setActive(slot0.rankBtn, slot2)
+		setActive(arg_14_0.rankBtn, var_14_0)
 
-		slot0.memoryBtn.anchoredPosition = slot2 and slot0.startPos or Vector3(slot0.startPos.x, slot0.startPos.y - slot3, 0)
-		slot0.collectionBtn.anchoredPosition = slot2 and Vector3(slot0.startPos.x, slot0.startPos.y - slot3, 0) or Vector3(slot0.startPos.x, slot0.startPos.y - 2 * slot3, 0)
-		slot0.isOpenRank = slot2
+		arg_14_0.memoryBtn.anchoredPosition = var_14_0 and arg_14_0.startPos or Vector3(arg_14_0.startPos.x, arg_14_0.startPos.y - var_14_1, 0)
+		arg_14_0.collectionBtn.anchoredPosition = var_14_0 and Vector3(arg_14_0.startPos.x, arg_14_0.startPos.y - var_14_1, 0) or Vector3(arg_14_0.startPos.x, arg_14_0.startPos.y - 2 * var_14_1, 0)
+		arg_14_0.isOpenRank = var_14_0
 	end
 end
 
-function slot0.OnUpdatePlayer(slot0)
-	slot0:RefreshRankBtn()
+function var_0_0.OnUpdatePlayer(arg_15_0)
+	arg_15_0:RefreshRankBtn()
 end
 
-return slot0
+return var_0_0

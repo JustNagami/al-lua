@@ -1,148 +1,154 @@
-slot0 = class("Dorm3dPhotoLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("Dorm3dPhotoLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "Dorm3dPhotoUI"
 end
 
-slot0.PANEL = {
+var_0_0.PANEL = {
 	CAMERA = 2,
 	LIGHTING = 3,
 	ACTION = 1
 }
 
-function slot0.init(slot0)
-	slot0.topPanel = slot0._tf:Find("Top")
-	slot0.leftPanel = slot0._tf:Find("Left")
-	slot0.btnAction = slot0._tf:Find("Left/Action")
-	slot0.btnCamera = slot0._tf:Find("Left/Camera")
-	slot0.btnLighting = slot0._tf:Find("Left/Lighting")
-	slot0.sliderZoom = slot0._tf:Find("Left/Zoom/Slider")
-	slot0.panelAction = slot0._tf:Find("Left/ActionSelect")
+function var_0_0.init(arg_2_0)
+	arg_2_0.topPanel = arg_2_0._tf:Find("Top")
+	arg_2_0.leftPanel = arg_2_0._tf:Find("Left")
+	arg_2_0.btnAction = arg_2_0._tf:Find("Left/Action")
+	arg_2_0.btnCamera = arg_2_0._tf:Find("Left/Camera")
+	arg_2_0.btnLighting = arg_2_0._tf:Find("Left/Lighting")
+	arg_2_0.sliderZoom = arg_2_0._tf:Find("Left/Zoom/Slider")
+	arg_2_0.panelAction = arg_2_0._tf:Find("Left/ActionSelect")
 
-	setActive(slot0.panelAction, false)
-	setActive(slot0.panelAction:Find("Mask"), false)
+	setActive(arg_2_0.panelAction, false)
+	setActive(arg_2_0.panelAction:Find("Mask"), false)
 
-	slot0.panelCamera = slot0._tf:Find("Left/CameraSettings")
+	arg_2_0.panelCamera = arg_2_0._tf:Find("Left/CameraSettings")
 
-	setActive(slot0.panelCamera, false)
+	setActive(arg_2_0.panelCamera, false)
 
-	slot0.panelLightning = slot0._tf:Find("Left/LightningSettings")
+	arg_2_0.panelLightning = arg_2_0._tf:Find("Left/LightningSettings")
 
-	setActive(slot0.panelLightning, false)
+	setActive(arg_2_0.panelLightning, false)
 
-	slot0.rightPanel = slot0._tf:Find("Right")
-	slot0.scrollZones = slot0._tf:Find("Right/List/Scroll")
-	slot0.listZones = slot0.scrollZones:Find("Content")
-	slot0.btnHideUI = slot0._tf:Find("Right/HideUI")
-	slot0.btnReset = slot0._tf:Find("Right/Reset")
-	slot0.btnFreeze = slot0._tf:Find("Right/Freeze")
-	slot0.btnAnimSpeed = slot0._tf:Find("Right/AnimSpeed")
-	slot0.listAnimSpeed = slot0.btnAnimSpeed:Find("Bar")
+	arg_2_0.rightPanel = arg_2_0._tf:Find("Right")
+	arg_2_0.scrollZones = arg_2_0._tf:Find("Right/List/Scroll")
+	arg_2_0.listZones = arg_2_0.scrollZones:Find("Content")
+	arg_2_0.btnHideUI = arg_2_0._tf:Find("Right/HideUI")
+	arg_2_0.btnReset = arg_2_0._tf:Find("Right/Reset")
+	arg_2_0.btnFreeze = arg_2_0._tf:Find("Right/Freeze")
+	arg_2_0.btnAnimSpeed = arg_2_0._tf:Find("Right/AnimSpeed")
+	arg_2_0.listAnimSpeed = arg_2_0.btnAnimSpeed:Find("Bar")
 
-	setActive(slot0.listAnimSpeed, false)
+	setActive(arg_2_0.listAnimSpeed, false)
 
-	slot0.textAnimSpeed = slot0.btnAnimSpeed:Find("Speed")
-	slot0.btnAR = slot0._tf:Find("Right/AR")
-	slot0.mask = slot0._tf:Find("Mask")
+	arg_2_0.textAnimSpeed = arg_2_0.btnAnimSpeed:Find("Speed")
+	arg_2_0.btnAR = arg_2_0._tf:Find("Right/AR")
+	arg_2_0.mask = arg_2_0._tf:Find("Mask")
 
-	setActive(slot0.mask, false)
+	setActive(arg_2_0.mask, false)
 
-	slot0.btnFilm = slot0._tf:Find("RightTop/Film")
-	slot0.btnShoot = slot0._tf:Find("RightTop/Shot")
-	slot0.ysScreenShoter = slot0._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenShoter))
-	slot0.ysScreenRecorder = slot0._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenRecorder))
+	arg_2_0.btnFilm = arg_2_0._tf:Find("RightTop/Film")
+	arg_2_0.btnShoot = arg_2_0._tf:Find("RightTop/Shot")
+	arg_2_0.ysScreenShoter = arg_2_0._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenShoter))
+	arg_2_0.ysScreenRecorder = arg_2_0._tf:Find("Shoter"):GetComponent(typeof(YSTool.YSScreenRecorder))
 end
 
-function slot0.SetSceneRoot(slot0, slot1)
-	slot0.scene = slot1
+function var_0_0.SetSceneRoot(arg_3_0, arg_3_1)
+	arg_3_0.scene = arg_3_1
 end
 
-function slot0.SetApartment(slot0, slot1)
-	slot0.apartment = slot1:clone()
+function var_0_0.SetApartment(arg_4_0, arg_4_1)
+	arg_4_0.apartment = arg_4_1:clone()
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.recordState then
-		triggerButton(slot0.btnFilm)
+function var_0_0.onBackPressed(arg_5_0)
+	if arg_5_0.recordState then
+		triggerButton(arg_5_0.btnFilm)
 
 		return
 	end
 
-	slot0:closeView()
+	arg_5_0:closeView()
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf:Find("Top/Back"), function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0._tf:Find("Top/Back"), function()
+		arg_6_0:onBackPressed()
 	end, SFX_CANCEL)
-	setSlider(slot0.sliderZoom, 0, 1, 0)
-	onSlider(slot0, slot0.sliderZoom, function (slot0)
-		uv0.scene:SetPinchValue((1 - slot0) * 0.5 + 0.5)
+	setSlider(arg_6_0.sliderZoom, 0, 1, 0)
+	onSlider(arg_6_0, arg_6_0.sliderZoom, function(arg_8_0)
+		local var_8_0 = (1 - arg_8_0) * 0.5 + 0.5
+
+		arg_6_0.scene:SetPinchValue(var_8_0)
 	end)
 
-	slot0.hideUI = false
+	arg_6_0.hideUI = false
 
-	onButton(slot0, slot0.btnHideUI, function ()
-		if uv0.hideUI then
+	onButton(arg_6_0, arg_6_0.btnHideUI, function()
+		if arg_6_0.hideUI then
 			return
 		end
 
-		setActive(uv0.mask, true)
-		setActive(uv0.topPanel, false)
-		setActive(uv0.leftPanel, false)
-		setActive(uv0.rightPanel, false)
+		setActive(arg_6_0.mask, true)
+		setActive(arg_6_0.topPanel, false)
+		setActive(arg_6_0.leftPanel, false)
+		setActive(arg_6_0.rightPanel, false)
 
-		uv0.hideUI = true
+		arg_6_0.hideUI = true
 	end, SFX_PANEL)
-	onButton(slot0, slot0.mask, function ()
-		if not uv0.hideUI then
+	onButton(arg_6_0, arg_6_0.mask, function()
+		if not arg_6_0.hideUI then
 			return
 		end
 
-		setActive(uv0.topPanel, true)
-		setActive(uv0.leftPanel, true)
-		setActive(uv0.rightPanel, true)
-		setActive(uv0.mask, false)
+		setActive(arg_6_0.topPanel, true)
+		setActive(arg_6_0.leftPanel, true)
+		setActive(arg_6_0.rightPanel, true)
+		setActive(arg_6_0.mask, false)
 
-		uv0.hideUI = false
+		arg_6_0.hideUI = false
 	end)
-	onButton(slot0, slot0.btnReset, function ()
+	onButton(arg_6_0, arg_6_0.btnReset, function()
+		return
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnAR, function ()
+	onButton(arg_6_0, arg_6_0.btnAR, function()
+		return
 	end, SFX_PANEL)
 
-	slot0.recordState = nil
+	arg_6_0.recordState = nil
 
-	onButton(slot0, slot0.btnFilm, function ()
-		uv0.recordState = not uv0.recordState
+	onButton(arg_6_0, arg_6_0.btnFilm, function()
+		arg_6_0.recordState = not arg_6_0.recordState
 
-		if uv0.recordState then
-			function (slot0)
-				setActive(uv0.topPanel, slot0)
-				setActive(uv0.leftPanel, slot0)
-				setActive(uv0.rightPanel, slot0)
-			end(false)
+		local function var_13_0(arg_14_0)
+			setActive(arg_6_0.topPanel, arg_14_0)
+			setActive(arg_6_0.leftPanel, arg_14_0)
+			setActive(arg_6_0.rightPanel, arg_14_0)
+		end
 
-			function slot1(slot0)
-				if slot0 ~= -1 then
-					uv0(true)
+		if arg_6_0.recordState then
+			var_13_0(false)
 
-					uv1.recordState = nil
+			local function var_13_1(arg_15_0)
+				if arg_15_0 ~= -1 then
+					var_13_0(true)
+
+					arg_6_0.recordState = nil
 				end
 			end
 
-			function slot2(slot0)
-				warning("开始录屏结果：" .. slot0)
+			local function var_13_2(arg_16_0)
+				warning("开始录屏结果：" .. arg_16_0)
 			end
 
 			seriesAsync({
-				function (slot0)
-					slot0()
+				function(arg_17_0)
+					arg_17_0()
 				end,
-				function (slot0)
-					uv0.SetMute(true)
-					uv1.ysScreenRecorder:BeforeStart()
-					uv1.ysScreenRecorder:StartRecord(uv2, uv3)
+				function(arg_18_0)
+					var_0_0.SetMute(true)
+					arg_6_0.ysScreenRecorder:BeforeStart()
+					arg_6_0.ysScreenRecorder:StartRecord(var_13_2, var_13_1)
 
 					if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
 						print("start recording : play sound")
@@ -150,612 +156,677 @@ function slot0.didEnter(slot0)
 					end
 				end
 			})
-
-			return
-		end
-
-		function slot1(slot0)
-			warning("结束录屏结果：" .. slot0)
-		end
-
-		seriesAsync({
-			function (slot0)
-				uv0(true)
-				uv1.ysScreenRecorder:StopRecord(uv2)
-
-				if PLATFORM == PLATFORM_ANDROID then
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						content = i18n("word_save_video"),
-						onNo = function ()
-							uv0.ysScreenRecorder:DiscardVideo()
-						end,
-						onYes = function ()
-							MediaSaver.SaveVideoWithPath(uv0.ysScreenRecorder:GetVideoFilePath())
-						end
-					})
-				end
-
-				uv3.SetMute(false)
+		else
+			local function var_13_3(arg_19_0)
+				warning("结束录屏结果：" .. arg_19_0)
 			end
-		})
+
+			seriesAsync({
+				function(arg_20_0)
+					var_13_0(true)
+					arg_6_0.ysScreenRecorder:StopRecord(var_13_3)
+
+					if PLATFORM == PLATFORM_ANDROID then
+						pg.MsgboxMgr.GetInstance():ShowMsgBox({
+							content = i18n("word_save_video"),
+							onNo = function()
+								arg_6_0.ysScreenRecorder:DiscardVideo()
+							end,
+							onYes = function()
+								local var_22_0 = arg_6_0.ysScreenRecorder:GetVideoFilePath()
+
+								MediaSaver.SaveVideoWithPath(var_22_0)
+							end
+						})
+					end
+
+					var_0_0.SetMute(false)
+				end
+			})
+		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnShoot, function ()
-		function (slot0)
-			setActive(uv0.topPanel, slot0)
-			setActive(uv0.leftPanel, slot0)
-			setActive(uv0.rightPanel, slot0)
-			setActive(uv0._tf:Find("RightTop"), slot0)
+	onButton(arg_6_0, arg_6_0.btnShoot, function()
+		local function var_23_0(arg_24_0)
+			setActive(arg_6_0.topPanel, arg_24_0)
+			setActive(arg_6_0.leftPanel, arg_24_0)
+			setActive(arg_6_0.rightPanel, arg_24_0)
+			setActive(arg_6_0._tf:Find("RightTop"), arg_24_0)
 
 			if PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0 then
-				setActive(pg.UIMgr.GetInstance().OverlayEffect, slot0)
+				setActive(pg.UIMgr.GetInstance().OverlayEffect, arg_24_0)
 			end
-		end(false)
-		uv0.ysScreenShoter:TakeScreenShotData(function (slot0)
-			warning("截图结果：" .. tostring(slot0))
-			uv0(true)
-		end, function (slot0)
-			slot1 = UnityEngine.Texture2D.New(Screen.width, Screen.height)
+		end
 
-			Tex2DExtension.LoadImage(slot1, slot0)
-			uv0:emit(SnapshotScene.SHARE_PANEL, slot1, slot0)
+		var_23_0(false)
+
+		local function var_23_1(arg_25_0)
+			warning("截图结果：" .. tostring(arg_25_0))
+			var_23_0(true)
+		end
+
+		local function var_23_2(arg_26_0)
+			local var_26_0 = UnityEngine.Texture2D.New(Screen.width, Screen.height)
+
+			Tex2DExtension.LoadImage(var_26_0, arg_26_0)
+			arg_6_0:emit(SnapshotScene.SHARE_PANEL, var_26_0, arg_26_0)
 
 			if PLATFORM_CODE == PLATFORM_JP and pg.SdkMgr.GetInstance():GetChannelUID() == "2" then
 				print("start photo : play sound")
 				NotificationMgr.Inst:PlayShutterSound()
 			end
-		end)
+		end
+
+		arg_6_0.ysScreenShoter:TakeScreenShotData(var_23_1, var_23_2)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnAnimSpeed, function ()
-		setActive(uv0.listAnimSpeed, not isActive(uv0.listAnimSpeed))
+	onButton(arg_6_0, arg_6_0.btnAnimSpeed, function()
+		setActive(arg_6_0.listAnimSpeed, not isActive(arg_6_0.listAnimSpeed))
 	end, SFX_PANEL)
 
-	slot0.activePanel = nil
+	arg_6_0.activePanel = nil
 
-	table.Ipairs({
+	local var_6_0 = {
 		{
-			btn = slot0.btnAction,
-			panel = slot0.panelAction,
-			On = function ()
-				uv0:UpdateActionPanel()
-				setActive(uv0.panelAction, true)
+			btn = arg_6_0.btnAction,
+			panel = arg_6_0.panelAction,
+			On = function()
+				arg_6_0:UpdateActionPanel()
+				setActive(arg_6_0.panelAction, true)
 			end,
-			Off = function ()
-				setActive(uv0.panelAction, false)
+			Off = function()
+				setActive(arg_6_0.panelAction, false)
 			end
 		},
 		{
-			btn = slot0.btnCamera,
-			panel = slot0.panelCamera,
-			On = function ()
-				uv0:UpdateCameraPanel()
-				setActive(uv0.panelCamera, true)
+			btn = arg_6_0.btnCamera,
+			panel = arg_6_0.panelCamera,
+			On = function()
+				arg_6_0:UpdateCameraPanel()
+				setActive(arg_6_0.panelCamera, true)
 			end,
-			Off = function ()
-				setActive(uv0.panelCamera, false)
+			Off = function()
+				setActive(arg_6_0.panelCamera, false)
 			end
 		},
 		{
-			btn = slot0.btnLighting,
-			panel = slot0.panelLightning,
-			On = function ()
-				uv0:UpdateLightingPanel()
-				setActive(uv0.panelLightning, true)
+			btn = arg_6_0.btnLighting,
+			panel = arg_6_0.panelLightning,
+			On = function()
+				arg_6_0:UpdateLightingPanel()
+				setActive(arg_6_0.panelLightning, true)
 			end,
-			Off = function ()
-				setActive(uv0.panelLightning, false)
+			Off = function()
+				setActive(arg_6_0.panelLightning, false)
 			end
 		}
-	}, function (slot0, slot1)
-		onButton(uv0, slot1.btn, function ()
-			if uv0 == uv1.activePanel then
-				uv1.activePanel = nil
+	}
 
-				uv2.Off()
+	table.Ipairs(var_6_0, function(arg_34_0, arg_34_1)
+		onButton(arg_6_0, arg_34_1.btn, function()
+			if arg_34_0 == arg_6_0.activePanel then
+				arg_6_0.activePanel = nil
+
+				arg_34_1.Off()
 			else
-				table.Ipairs(uv3, function (slot0, slot1)
-					if slot0 == uv0 then
+				table.Ipairs(var_6_0, function(arg_36_0, arg_36_1)
+					if arg_36_0 == arg_34_0 then
 						return
 					end
 
-					slot1.Off()
+					arg_36_1.Off()
 				end)
 
-				uv1.activePanel = uv0
+				arg_6_0.activePanel = arg_34_0
 
-				uv2.On()
+				arg_34_1.On()
 			end
 		end, SFX_PANEL)
 	end)
 
-	slot0.zoneIndex = 1
+	arg_6_0.zoneIndex = 1
 
-	slot0:InitData()
-	slot0:FirstEnterZone()
-	UIItemList.StaticAlign(slot0.listZones, slot0.listZones:GetChild(0), #slot0.apartment:GetCameraZones(), function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	arg_6_0:InitData()
+	arg_6_0:FirstEnterZone()
+
+	local var_6_1 = arg_6_0.apartment:GetCameraZones()
+
+	UIItemList.StaticAlign(arg_6_0.listZones, arg_6_0.listZones:GetChild(0), #var_6_1, function(arg_37_0, arg_37_1, arg_37_2)
+		if arg_37_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setText(slot2:Find("Name"), uv0[slot1 + 1]:GetName())
-		onButton(uv1, slot2, function ()
-			if uv0.zoneIndex == uv1 then
+		arg_37_1 = arg_37_1 + 1
+
+		local var_37_0 = var_6_1[arg_37_1]
+
+		setText(arg_37_2:Find("Name"), var_37_0:GetName())
+		onButton(arg_6_0, arg_37_2, function()
+			if arg_6_0.zoneIndex == arg_37_1 then
 				return
 			end
 
-			setActive(uv2:Find("Selected"), true)
-			setActive(uv0.listZones:GetChild(uv0.zoneIndex - 1):Find("Selected"), false)
+			local var_38_0 = arg_6_0.zoneIndex
 
-			uv0.zoneIndex = uv1
+			setActive(arg_37_2:Find("Selected"), true)
+			setActive(arg_6_0.listZones:GetChild(var_38_0 - 1):Find("Selected"), false)
 
-			uv0:RefreshData()
-			uv0:SwitchZone()
+			arg_6_0.zoneIndex = arg_37_1
+
+			arg_6_0:RefreshData()
+			arg_6_0:SwitchZone()
 		end, SFX_PANEL)
 	end)
-	setActive(slot0.listZones:GetChild(slot0.zoneIndex - 1):Find("Selected"), true)
+	setActive(arg_6_0.listZones:GetChild(arg_6_0.zoneIndex - 1):Find("Selected"), true)
 end
 
-function slot0.InitData(slot0)
-	slot0.cameraSettings = Clone(slot0.scene:GetCameraSettings())
-	slot0.settingHideCharacter = false
-	slot0.settingFaceCamera = true
-	slot0.settingLightingColorIndex = nil
-	slot0.settingLightingStrength = 1
-	slot0.settingLightingAlpha = 1
-	slot0.settingFilterIndex = nil
-	slot0.settingFilterStrength = 1
+function var_0_0.InitData(arg_39_0)
+	arg_39_0.cameraSettings = Clone(arg_39_0.scene:GetCameraSettings())
+	arg_39_0.settingHideCharacter = false
+	arg_39_0.settingFaceCamera = true
+	arg_39_0.settingLightingColorIndex = nil
+	arg_39_0.settingLightingStrength = 1
+	arg_39_0.settingLightingAlpha = 1
+	arg_39_0.settingFilterIndex = nil
+	arg_39_0.settingFilterStrength = 1
 
-	slot0:RefreshData()
+	arg_39_0:RefreshData()
 end
 
-function slot0.RefreshData(slot0)
-	slot2 = slot0.apartment:GetCameraZones()[slot0.zoneIndex]
-	slot0.animID = slot2:GetRegularAnims()[1]:GetConfigID()
+function var_0_0.RefreshData(arg_40_0)
+	local var_40_0 = arg_40_0.apartment:GetCameraZones()[arg_40_0.zoneIndex]
 
-	function slot4(slot0, slot1)
-		slot0.min = slot1[1]
-		slot0.max = slot1[2]
-		slot0.value = math.clamp(slot0.value, slot1[1], slot1[2])
+	arg_40_0.animID = var_40_0:GetRegularAnims()[1]:GetConfigID()
+
+	local function var_40_1(arg_41_0, arg_41_1)
+		arg_41_0.min = arg_41_1[1]
+		arg_41_0.max = arg_41_1[2]
+		arg_41_0.value = math.clamp(arg_41_0.value, arg_41_1[1], arg_41_1[2])
 	end
 
-	slot4(slot0.cameraSettings.depthOfField.focusDistance, slot2:GetFocusDistanceRange())
-	slot4(slot0.cameraSettings.depthOfField.blurRadius, slot2:GetDepthOfFieldBlurRange())
-	slot4(slot0.cameraSettings.postExposure, slot2:GetExposureRange())
-	slot4(slot0.cameraSettings.contrast, slot2:GetContrastRange())
-	slot4(slot0.cameraSettings.saturate, slot2:GetSaturationRange())
+	var_40_1(arg_40_0.cameraSettings.depthOfField.focusDistance, var_40_0:GetFocusDistanceRange())
+	var_40_1(arg_40_0.cameraSettings.depthOfField.blurRadius, var_40_0:GetDepthOfFieldBlurRange())
+	var_40_1(arg_40_0.cameraSettings.postExposure, var_40_0:GetExposureRange())
+	var_40_1(arg_40_0.cameraSettings.contrast, var_40_0:GetContrastRange())
+	var_40_1(arg_40_0.cameraSettings.saturate, var_40_0:GetSaturationRange())
 
-	slot0.animSpeeds = slot2:GetAnimSpeeds()
-	slot0.animSpeed = 1
+	arg_40_0.animSpeeds = var_40_0:GetAnimSpeeds()
+	arg_40_0.animSpeed = 1
 end
 
-function slot0.FirstEnterZone(slot0)
-	slot0.scene:EnterPhotoMode(slot0.apartment:GetCameraZones()[slot0.zoneIndex])
-	slot0:UpdateActionPanel()
-	slot0:UpdateCameraPanel()
-	slot0:UpdateLightingPanel()
-	slot0:UpdateAnimSpeedPanel()
+function var_0_0.FirstEnterZone(arg_42_0)
+	local var_42_0 = arg_42_0.apartment:GetCameraZones()[arg_42_0.zoneIndex]
+
+	arg_42_0.scene:EnterPhotoMode(var_42_0)
+	arg_42_0:UpdateActionPanel()
+	arg_42_0:UpdateCameraPanel()
+	arg_42_0:UpdateLightingPanel()
+	arg_42_0:UpdateAnimSpeedPanel()
 end
 
-function slot0.SwitchZone(slot0)
-	slot0.scene:SwitchCameraZone(slot0.apartment:GetCameraZones()[slot0.zoneIndex])
-	slot0:UpdateActionPanel()
-	slot0:UpdateCameraPanel()
-	slot0:UpdateLightingPanel()
-	slot0:UpdateAnimSpeedPanel()
+function var_0_0.SwitchZone(arg_43_0)
+	local var_43_0 = arg_43_0.apartment:GetCameraZones()[arg_43_0.zoneIndex]
+
+	arg_43_0.scene:SwitchCameraZone(var_43_0)
+	arg_43_0:UpdateActionPanel()
+	arg_43_0:UpdateCameraPanel()
+	arg_43_0:UpdateLightingPanel()
+	arg_43_0:UpdateAnimSpeedPanel()
 end
 
-slot1 = 0.2
+local var_0_1 = 0.2
 
-function slot0.UpdateActionPanel(slot0)
-	if slot0.activePanel ~= uv0.PANEL.ACTION then
+function var_0_0.UpdateActionPanel(arg_44_0)
+	if arg_44_0.activePanel ~= var_0_0.PANEL.ACTION then
 		return
 	end
 
-	slot1 = slot0.apartment:GetCameraZones()[slot0.zoneIndex]
-	slot2 = slot1:GetRegularAnims()
-	slot0.lastSelectedAnimBG = nil
+	local var_44_0 = arg_44_0.apartment:GetCameraZones()[arg_44_0.zoneIndex]
+	local var_44_1 = var_44_0:GetRegularAnims()
 
-	function slot3(slot0, slot1)
-		if uv0.animID == slot0:GetConfigID() then
+	arg_44_0.lastSelectedAnimBG = nil
+
+	local function var_44_2(arg_45_0, arg_45_1)
+		local var_45_0 = arg_45_0:GetConfigID()
+
+		if arg_44_0.animID == var_45_0 then
 			return
 		end
 
-		if uv0.lastSelectedAnimBG then
-			setActive(uv0.lastSelectedAnimBG, false)
+		if arg_44_0.lastSelectedAnimBG then
+			setActive(arg_44_0.lastSelectedAnimBG, false)
 		end
 
-		slot3 = uv0:GetAnimPlayList(slot2)
-		slot4 = Dorm3dCameraAnim.New({
-			configId = uv0.animID
+		local var_45_1 = arg_44_0:GetAnimPlayList(var_45_0)
+		local var_45_2 = Dorm3dCameraAnim.New({
+			configId = arg_44_0.animID
 		}):GetFinishAnimID()
-		uv0.animID = slot2
-		uv0.lastSelectedAnimBG = slot1:Find("Selected")
 
-		uv0:BlockActionPanel(true)
+		arg_44_0.animID = var_45_0
+		arg_44_0.lastSelectedAnimBG = arg_45_1:Find("Selected")
 
-		slot6 = table.indexof(slot3, _.detect(slot3, function (slot0)
-			return slot0:GetConfigID() == uv0
-		end)) or 0
-		slot6 = slot1:Find("Fill"):GetComponent(typeof(Image))
+		arg_44_0:BlockActionPanel(true)
 
-		setActive(slot1:Find("Fill"), true)
+		local var_45_3 = (table.indexof(var_45_1, _.detect(var_45_1, function(arg_46_0)
+			return arg_46_0:GetConfigID() == var_45_2
+		end)) or 0) + 1
+		local var_45_4 = _.rest(var_45_1, var_45_3)
+		local var_45_5 = arg_45_1:Find("Fill"):GetComponent(typeof(Image))
 
-		if #_.rest(slot3, slot6 + 1) == 0 then
-			function ()
-				setActive(uv0:Find("Selected"), true)
-				setActive(uv0:Find("Fill"), false)
-				uv1:BlockActionPanel(false)
+		setActive(arg_45_1:Find("Fill"), true)
 
-				uv1.animPlaying = nil
-			end()
+		local function var_45_6()
+			setActive(arg_45_1:Find("Selected"), true)
+			setActive(arg_45_1:Find("Fill"), false)
+			arg_44_0:BlockActionPanel(false)
+
+			arg_44_0.animPlaying = nil
+		end
+
+		if #var_45_4 == 0 then
+			var_45_6()
 
 			return
 		end
 
-		uv0.animInfo = {
+		local var_45_7 = _.reduce(var_45_4, 0, function(arg_48_0, arg_48_1)
+			return arg_48_0 + math.max(var_0_1, arg_48_1:GetAnimTime())
+		end)
+
+		arg_44_0.animInfo = {
 			index = 1,
 			passedTime = 0,
 			ratio = 0,
-			animPlayList = slot3,
-			totalTime = _.reduce(slot3, 0, function (slot0, slot1)
-				return slot0 + math.max(uv0, slot1:GetAnimTime())
-			end),
-			imgFill = slot6,
+			animPlayList = var_45_4,
+			totalTime = var_45_7,
+			imgFill = var_45_5,
 			startStamp = Time.time
 		}
-		uv0.timerAnim = FrameTimer.New(function ()
-			slot0 = uv0.animInfo
-			slot2 = math.max(uv1, slot0.animPlayList[slot0.index]:GetAnimTime())
-			slot5 = math.min(1, slot0.ratio + (Time.time - slot0.startStamp) * uv0.animSpeed / slot2)
-			uv2.fillAmount = (slot0.passedTime + slot2 * slot5) / uv3
+		arg_44_0.timerAnim = FrameTimer.New(function()
+			local var_49_0 = arg_44_0.animInfo
+			local var_49_1 = var_49_0.animPlayList[var_49_0.index]
+			local var_49_2 = math.max(var_0_1, var_49_1:GetAnimTime())
+			local var_49_3 = var_49_0.startStamp
+			local var_49_4 = Time.time
+			local var_49_5 = math.min(1, var_49_0.ratio + (var_49_4 - var_49_3) * arg_44_0.animSpeed / var_49_2)
+			local var_49_6 = var_49_0.passedTime + var_49_2 * var_49_5
 
-			if slot5 < 1 then
+			var_45_5.fillAmount = var_49_6 / var_45_7
+
+			if var_49_5 < 1 then
 				return
 			end
 
-			slot0.index = slot0.index + 1
-			slot0.ratio = 0
-			slot0.passedTime = slot0.passedTime + slot2
-			slot0.startStamp = slot4
+			var_49_0.index = var_49_0.index + 1
+			var_49_0.ratio = 0
+			var_49_0.passedTime = var_49_0.passedTime + var_49_2
+			var_49_0.startStamp = var_49_4
 
-			warning(slot0.startStamp)
+			warning(var_49_0.startStamp)
 
-			if slot0.index > #slot0.animPlayList then
-				uv4()
-				uv0.timerAnim:Stop()
+			if var_49_0.index > #var_49_0.animPlayList then
+				var_45_6()
+				arg_44_0.timerAnim:Stop()
 
-				uv0.timerAnim = nil
-				uv0.animInfo = nil
+				arg_44_0.timerAnim = nil
+				arg_44_0.animInfo = nil
 
 				return
 			end
 
-			uv0.scene:PlaySingleAction(slot0.animPlayList[slot0.index]:GetStateName())
+			local var_49_7 = var_49_0.animPlayList[var_49_0.index]
+
+			arg_44_0.scene:PlaySingleAction(var_49_7:GetStateName())
 		end, 1, -1)
 
-		if slot5 == 1 then
-			uv0.scene:SwitchAnim(uv0.animInfo.animPlayList[1]:GetStateName())
-			onNextTick(function ()
-				uv0.scene:ResetCharPosByZone(uv1)
+		local var_45_8 = arg_44_0.animInfo.animPlayList[1]
+
+		if var_45_3 == 1 then
+			arg_44_0.scene:SwitchAnim(var_45_8:GetStateName())
+			onNextTick(function()
+				arg_44_0.scene:ResetCharPosByZone(var_44_0)
 			end)
 		else
-			uv0.scene:PlaySingleAction(slot9:GetStateName())
+			arg_44_0.scene:PlaySingleAction(var_45_8:GetStateName())
 		end
 
-		uv0.timerAnim:Start()
+		arg_44_0.timerAnim:Start()
 	end
 
-	slot4 = slot0.panelAction:Find("Regular/List")
+	local var_44_3 = arg_44_0.panelAction:Find("Regular/List")
 
-	UIItemList.StaticAlign(slot4, slot4:GetChild(0), #slot2, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(var_44_3, var_44_3:GetChild(0), #var_44_1, function(arg_51_0, arg_51_1, arg_51_2)
+		if arg_51_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setText(slot2:Find("Name"), uv0[slot1 + 1]:GetName())
-		setActive(slot2:Find("Fill"), false)
-		setActive(slot2:Find("Selected"), false)
-		onButton(uv1, slot2, function ()
-			uv0(uv1, uv2)
+		arg_51_1 = arg_51_1 + 1
+
+		local var_51_0 = var_44_1[arg_51_1]
+
+		setText(arg_51_2:Find("Name"), var_51_0:GetName())
+		setActive(arg_51_2:Find("Fill"), false)
+		setActive(arg_51_2:Find("Selected"), false)
+		onButton(arg_44_0, arg_51_2, function()
+			var_44_2(var_51_0, arg_51_2)
 		end)
 	end)
 
-	slot5, slot6 = table.Find(slot2, function (slot0, slot1)
-		return slot1:GetConfigID() == uv0.animID
+	local var_44_4, var_44_5 = table.Find(var_44_1, function(arg_53_0, arg_53_1)
+		return arg_53_1:GetConfigID() == arg_44_0.animID
 	end)
-	slot0.lastSelectedAnimBG = slot4:GetChild(slot6 - 1):Find("Selected")
 
-	setActive(slot0.lastSelectedAnimBG, true)
+	arg_44_0.lastSelectedAnimBG = var_44_3:GetChild(var_44_5 - 1):Find("Selected")
 
-	slot8 = slot0.panelAction:Find("Special/Furnitures")
-	slot0.lastFurniture = nil
-	slot0.lastSelectedFurnitureBG = nil
+	setActive(arg_44_0.lastSelectedAnimBG, true)
 
-	setActive(slot0.panelAction:Find("Special/List"), false)
-	setActive(slot0.panelAction:Find("Special/Arrow"), false)
+	local var_44_6 = var_44_0:GetSpecialAnims()
+	local var_44_7 = arg_44_0.panelAction:Find("Special/Furnitures")
 
-	function slot11(slot0, slot1)
-		if uv0.lastSelectedFurnitureBG then
-			setActive(uv0.lastSelectedFurnitureBG, false)
+	arg_44_0.lastFurniture = nil
+	arg_44_0.lastSelectedFurnitureBG = nil
+
+	local var_44_8 = arg_44_0.panelAction:Find("Special/List")
+
+	setActive(var_44_8, false)
+
+	local var_44_9 = arg_44_0.panelAction:Find("Special/Arrow")
+
+	setActive(var_44_9, false)
+
+	local function var_44_10(arg_54_0, arg_54_1)
+		if arg_44_0.lastSelectedFurnitureBG then
+			setActive(arg_44_0.lastSelectedFurnitureBG, false)
 		end
 
-		uv0.lastFurniture = slot0
-		uv0.lastSelectedFurnitureBG = slot1:Find("Selected")
+		arg_44_0.lastFurniture = arg_54_0
+		arg_44_0.lastSelectedFurnitureBG = arg_54_1:Find("Selected")
 
-		setActive(uv0.lastSelectedFurnitureBG, true)
-		setActive(uv1, true)
-		setActive(uv2, true)
+		setActive(arg_44_0.lastSelectedFurnitureBG, true)
+		setActive(var_44_8, true)
+		setActive(var_44_9, true)
 
-		uv2.position = slot1.position
-		uv2.anchoredPosition = uv2.anchoredPosition + Vector2(0, -60)
+		var_44_9.position = arg_54_1.position
+		var_44_9.anchoredPosition = var_44_9.anchoredPosition + Vector2(0, -60)
 
-		UIItemList.StaticAlign(uv1, uv1:GetChild(0), #slot0.anims, function (slot0, slot1, slot2)
-			if slot0 ~= UIItemList.EventUpdate then
+		local var_54_0 = arg_54_0.anims
+
+		UIItemList.StaticAlign(var_44_8, var_44_8:GetChild(0), #var_54_0, function(arg_55_0, arg_55_1, arg_55_2)
+			if arg_55_0 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			slot3 = uv0[slot1 + 1]
+			arg_55_1 = arg_55_1 + 1
 
-			setText(slot2:Find("Name"), slot3:GetName())
-			setActive(slot2:Find("Fill"), false)
-			setActive(slot2:Find("Selected"), false)
+			local var_55_0 = var_54_0[arg_55_1]
 
-			if slot3:GetConfigID() == uv1.animID then
-				uv1.lastSelectedAnimBG = slot2:Find("Selected")
+			setText(arg_55_2:Find("Name"), var_55_0:GetName())
+			setActive(arg_55_2:Find("Fill"), false)
+			setActive(arg_55_2:Find("Selected"), false)
 
-				setActive(uv1.lastSelectedAnimBG, true)
+			if var_55_0:GetConfigID() == arg_44_0.animID then
+				arg_44_0.lastSelectedAnimBG = arg_55_2:Find("Selected")
+
+				setActive(arg_44_0.lastSelectedAnimBG, true)
 			end
 
-			onButton(uv1, slot2, function ()
-				uv0.apartment:ReplaceFurniture(uv1.slotId, uv1.furnitureId)
-				uv0.scene:RefreshSlots(uv0.apartment)
-				uv2(uv3, uv4)
+			onButton(arg_44_0, arg_55_2, function()
+				arg_44_0.apartment:ReplaceFurniture(arg_54_0.slotId, arg_54_0.furnitureId)
+				arg_44_0.scene:RefreshSlots(arg_44_0.apartment)
+				var_44_2(var_55_0, arg_55_2)
 			end)
 		end)
 	end
 
-	setActive(slot0.panelAction:Find("Special"), #slot1:GetSpecialAnims() > 0)
-	UIItemList.StaticAlign(slot8, slot8:GetChild(0), #slot7, function (slot0, slot1, slot2)
-		slot4 = Dorm3dFurniture.New({
-			configId = uv0[slot1 + 1].furnitureId
-		})
+	setActive(arg_44_0.panelAction:Find("Special"), #var_44_6 > 0)
+	UIItemList.StaticAlign(var_44_7, var_44_7:GetChild(0), #var_44_6, function(arg_57_0, arg_57_1, arg_57_2)
+		arg_57_1 = arg_57_1 + 1
 
-		updateDrop(slot2:Find("Icon"), {
-			type = DROP_TYPE_DORM3D_FURNITURE,
-			id = slot4:GetConfigID()
+		local var_57_0 = var_44_6[arg_57_1]
+		local var_57_1 = Dorm3dFurniture.New({
+			configId = var_57_0.furnitureId
 		})
-		setText(slot2:Find("Name"), slot4:GetName())
-		setActive(slot2:Find("Lock"), not tobool(_.detect(uv1.apartment:GetFurnitures(), function (slot0)
-			return slot0:GetConfigID() == uv0.furnitureId
-		end)))
-		onButton(uv1, slot2, function ()
-			if not uv0 then
+		local var_57_2 = tobool(_.detect(arg_44_0.apartment:GetFurnitures(), function(arg_58_0)
+			return arg_58_0:GetConfigID() == var_57_0.furnitureId
+		end))
+
+		updateDrop(arg_57_2:Find("Icon"), {
+			type = DROP_TYPE_DORM3D_FURNITURE,
+			id = var_57_1:GetConfigID()
+		})
+		setText(arg_57_2:Find("Name"), var_57_1:GetName())
+		setActive(arg_57_2:Find("Lock"), not var_57_2)
+		onButton(arg_44_0, arg_57_2, function()
+			if not var_57_2 then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("furniture not unlock"))
 
 				return
 			end
 
-			uv1(uv2, uv3)
+			var_44_10(var_57_0, arg_57_2)
 		end)
 	end)
 end
 
-function slot0.BlockActionPanel(slot0, slot1)
-	setActive(slot0.panelAction:Find("Mask"), slot1)
+function var_0_0.BlockActionPanel(arg_60_0, arg_60_1)
+	setActive(arg_60_0.panelAction:Find("Mask"), arg_60_1)
 end
 
-function slot0.GetAnimPlayList(slot0, slot1)
-	slot3 = {}
+function var_0_0.GetAnimPlayList(arg_61_0, arg_61_1)
+	local var_61_0 = arg_61_1
+	local var_61_1 = {}
 
 	while true do
-		if not Dorm3dCameraAnim.New({
-			configId = slot1
-		}) then
-			return slot3
+		local var_61_2 = Dorm3dCameraAnim.New({
+			configId = var_61_0
+		})
+
+		if not var_61_2 then
+			return var_61_1
 		end
 
-		table.insert(slot3, 1, slot4)
+		table.insert(var_61_1, 1, var_61_2)
 
-		if slot4:GetPreAnimID() == 0 then
-			return slot3
+		var_61_0 = var_61_2:GetPreAnimID()
+
+		if var_61_0 == 0 then
+			return var_61_1
 		end
 	end
 end
 
-function slot0.UpdateCameraPanel(slot0)
-	if slot0.activePanel ~= uv0.PANEL.CAMERA then
+function var_0_0.UpdateCameraPanel(arg_62_0)
+	if arg_62_0.activePanel ~= var_0_0.PANEL.CAMERA then
 		return
 	end
 
-	slot1 = slot0.apartment:GetCameraZones()[slot0.zoneIndex]
+	local var_62_0 = arg_62_0.apartment:GetCameraZones()[arg_62_0.zoneIndex]
 
-	function ()
-		slot0 = uv0.panelCamera:Find("DepthOfField/Toggle")
+	;(function()
+		local var_63_0 = arg_62_0.panelCamera:Find("DepthOfField/Toggle")
 
-		triggerToggleWithoutNotify(slot0, uv0.cameraSettings.depthOfField.enabled)
-		onToggle(uv0, slot0, function (slot0)
-			uv0.cameraSettings.depthOfField.enabled = slot0
+		triggerToggleWithoutNotify(var_63_0, arg_62_0.cameraSettings.depthOfField.enabled)
+		onToggle(arg_62_0, var_63_0, function(arg_64_0)
+			arg_62_0.cameraSettings.depthOfField.enabled = arg_64_0
 
-			uv0:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end, SFX_UI_TAG, SFX_UI_CANCEL)
-	end()
-	function ()
-		slot0 = uv0.cameraSettings.depthOfField.focusDistance
-		slot1 = uv0.panelCamera:Find("DepthOfField/List/FocusDistance/Slider")
+	end)()
+	;(function()
+		local var_65_0 = arg_62_0.cameraSettings.depthOfField.focusDistance
+		local var_65_1 = arg_62_0.panelCamera:Find("DepthOfField/List/FocusDistance/Slider")
 
-		setSlider(slot1, slot0.min, slot0.max, slot0.value)
-		onSlider(uv0, slot1, function (slot0)
-			uv0.value = slot0
+		setSlider(var_65_1, var_65_0.min, var_65_0.max, var_65_0.value)
+		onSlider(arg_62_0, var_65_1, function(arg_66_0)
+			var_65_0.value = arg_66_0
 
-			uv1:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end)
-	end()
-	function ()
-		slot0 = uv0.cameraSettings.depthOfField.blurRadius
-		slot1 = uv0.panelCamera:Find("DepthOfField/List/BlurRadius/Slider")
+	end)()
+	;(function()
+		local var_67_0 = arg_62_0.cameraSettings.depthOfField.blurRadius
+		local var_67_1 = arg_62_0.panelCamera:Find("DepthOfField/List/BlurRadius/Slider")
 
-		setSlider(slot1, slot0.min, slot0.max, slot0.value)
-		onSlider(uv0, slot1, function (slot0)
-			uv0.value = slot0
+		setSlider(var_67_1, var_67_0.min, var_67_0.max, var_67_0.value)
+		onSlider(arg_62_0, var_67_1, function(arg_68_0)
+			var_67_0.value = arg_68_0
 
-			uv1:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end)
-	end()
-	function ()
-		slot0 = uv0.cameraSettings.postExposure
-		slot1 = uv0.panelCamera:Find("PostExposure/Slider")
+	end)()
+	;(function()
+		local var_69_0 = arg_62_0.cameraSettings.postExposure
+		local var_69_1 = arg_62_0.panelCamera:Find("PostExposure/Slider")
 
-		setSlider(slot1, slot0.min, slot0.max, slot0.value)
-		onSlider(uv0, slot1, function (slot0)
-			uv0.value = slot0
+		setSlider(var_69_1, var_69_0.min, var_69_0.max, var_69_0.value)
+		onSlider(arg_62_0, var_69_1, function(arg_70_0)
+			var_69_0.value = arg_70_0
 
-			uv1:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end)
-	end()
-	function ()
-		slot0 = uv0.cameraSettings.contrast
-		slot1 = uv0.panelCamera:Find("Contrast/Slider")
+	end)()
+	;(function()
+		local var_71_0 = arg_62_0.cameraSettings.contrast
+		local var_71_1 = arg_62_0.panelCamera:Find("Contrast/Slider")
 
-		setSlider(slot1, slot0.min, slot0.max, slot0.value)
-		onSlider(uv0, slot1, function (slot0)
-			uv0.value = slot0
+		setSlider(var_71_1, var_71_0.min, var_71_0.max, var_71_0.value)
+		onSlider(arg_62_0, var_71_1, function(arg_72_0)
+			var_71_0.value = arg_72_0
 
-			uv1:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end)
-	end()
-	function ()
-		slot0 = uv0.cameraSettings.saturate
-		slot1 = uv0.panelCamera:Find("Saturation/Slider")
+	end)()
+	;(function()
+		local var_73_0 = arg_62_0.cameraSettings.saturate
+		local var_73_1 = arg_62_0.panelCamera:Find("Saturation/Slider")
 
-		setSlider(slot1, slot0.min, slot0.max, slot0.value)
-		onSlider(uv0, slot1, function (slot0)
-			uv0.value = slot0
+		setSlider(var_73_1, var_73_0.min, var_73_0.max, var_73_0.value)
+		onSlider(arg_62_0, var_73_1, function(arg_74_0)
+			var_73_0.value = arg_74_0
 
-			uv1:RefreshCamera()
+			arg_62_0:RefreshCamera()
 		end)
-	end()
-	function ()
-		slot0 = uv0.panelCamera:Find("FaceCamera/Toggle")
+	end)()
+	;(function()
+		local var_75_0 = arg_62_0.panelCamera:Find("FaceCamera/Toggle")
 
-		triggerToggleWithoutNotify(slot0, uv0.settingFaceCamera)
-		setActive(slot0:Find("Selected"), uv0.settingFaceCamera)
-		onToggle(uv0, slot0, function (slot0)
-			uv0.settingFaceCamera = slot0
+		triggerToggleWithoutNotify(var_75_0, arg_62_0.settingFaceCamera)
+		setActive(var_75_0:Find("Selected"), arg_62_0.settingFaceCamera)
+		onToggle(arg_62_0, var_75_0, function(arg_76_0)
+			arg_62_0.settingFaceCamera = arg_76_0
 
-			uv0.scene:EnableHeadIK(slot0)
+			arg_62_0.scene:EnableHeadIK(arg_76_0)
 		end, SFX_UI_TAG, SFX_UI_CANCEL)
-	end()
-	function ()
-		slot0 = uv0.panelCamera:Find("HideCharacter/Toggle")
+	end)()
+	;(function()
+		local var_77_0 = arg_62_0.panelCamera:Find("HideCharacter/Toggle")
 
-		triggerToggleWithoutNotify(slot0, uv0.settingHideCharacter)
-		setActive(slot0:Find("Selected"), uv0.settingHideCharacter)
-		onToggle(uv0, slot0, function (slot0)
-			uv0.settingHideCharacter = slot0
+		triggerToggleWithoutNotify(var_77_0, arg_62_0.settingHideCharacter)
+		setActive(var_77_0:Find("Selected"), arg_62_0.settingHideCharacter)
+		onToggle(arg_62_0, var_77_0, function(arg_78_0)
+			arg_62_0.settingHideCharacter = arg_78_0
 
-			if slot0 then
-				uv0.scene:SwitchLadyInterestInPhotoMode(false)
-				uv0.scene:HideCharacter()
+			if arg_78_0 then
+				arg_62_0.scene:SwitchLadyInterestInPhotoMode(false)
+				arg_62_0.scene:HideCharacter()
 			else
-				uv0.scene:SwitchLadyInterestInPhotoMode(true)
-				uv0.scene:RevertCharacter()
+				arg_62_0.scene:SwitchLadyInterestInPhotoMode(true)
+				arg_62_0.scene:RevertCharacter()
 			end
 		end, SFX_UI_TAG, SFX_UI_CANCEL)
-	end()
+	end)()
 end
 
-function slot0.RefreshCamera(slot0)
-	slot0.scene:SettingCamera(slot0.cameraSettings)
+function var_0_0.RefreshCamera(arg_79_0)
+	arg_79_0.scene:SettingCamera(arg_79_0.cameraSettings)
 end
 
-function slot0.UpdateAnimSpeedPanel(slot0)
-	function slot1()
-		if not uv0.timerAnim then
+function var_0_0.UpdateAnimSpeedPanel(arg_80_0)
+	local function var_80_0()
+		if not arg_80_0.timerAnim then
 			return
 		end
 
-		slot0 = uv0.animInfo
-		slot4 = Time.time
-		slot0.ratio = math.min(1, slot0.ratio + (slot4 - slot0.startStamp) * uv0.animSpeed / math.max(uv1, slot0.animPlayList[slot0.index]:GetAnimTime()))
-		slot0.startStamp = slot4
+		local var_81_0 = arg_80_0.animInfo
+		local var_81_1 = var_81_0.animPlayList[var_81_0.index]
+		local var_81_2 = math.max(var_0_1, var_81_1:GetAnimTime())
+		local var_81_3 = var_81_0.startStamp
+		local var_81_4 = Time.time
+
+		var_81_0.ratio = math.min(1, var_81_0.ratio + (var_81_4 - var_81_3) * arg_80_0.animSpeed / var_81_2)
+		var_81_0.startStamp = var_81_4
 	end
 
-	slot2 = slot0.animSpeeds
+	local var_80_1 = arg_80_0.animSpeeds
 
-	UIItemList.StaticAlign(slot0.listAnimSpeed, slot0.listAnimSpeed:GetChild(0), #slot2, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg_80_0.listAnimSpeed, arg_80_0.listAnimSpeed:GetChild(0), #var_80_1, function(arg_82_0, arg_82_1, arg_82_2)
+		if arg_82_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setText(slot2:Find("Text"), uv0[slot1 + 1])
-		onButton(uv1, slot2, function ()
-			if uv0.animSpeed == uv1 then
+		arg_82_1 = arg_82_1 + 1
+
+		local var_82_0 = var_80_1[arg_82_1]
+
+		setText(arg_82_2:Find("Text"), var_82_0)
+		onButton(arg_80_0, arg_82_2, function()
+			if arg_80_0.animSpeed == var_82_0 then
 				return
 			end
 
-			if uv0.animPlaying then
+			if arg_80_0.animPlaying then
 				return
 			end
 
-			uv2()
+			var_80_0()
 
-			uv0.animSpeed = uv1
+			arg_80_0.animSpeed = var_82_0
 
-			uv0.scene:SetCharacterAnimSpeed(uv1)
-			uv0:UpdateAnimSpeedPanel()
+			arg_80_0.scene:SetCharacterAnimSpeed(var_82_0)
+			arg_80_0:UpdateAnimSpeedPanel()
 		end, SFX_PANEL)
 	end)
-	onButton(slot0, slot0.btnFreeze, function ()
-		if uv0.animPlaying then
+	onButton(arg_80_0, arg_80_0.btnFreeze, function()
+		if arg_80_0.animPlaying then
 			return
 		end
 
-		slot0 = 0
+		local var_84_0 = 0
 
-		if uv0.animSpeed ~= 0 then
-			uv0.lastAnimSpeed = uv0.animSpeed
+		if arg_80_0.animSpeed ~= 0 then
+			arg_80_0.lastAnimSpeed = arg_80_0.animSpeed
 		else
-			slot0 = uv0.lastAnimSpeed or 1
-			uv0.lastAnimSpeed = nil
+			var_84_0 = arg_80_0.lastAnimSpeed or 1
+			arg_80_0.lastAnimSpeed = nil
 		end
 
-		uv1()
+		var_80_0()
 
-		uv0.animSpeed = slot0
+		arg_80_0.animSpeed = var_84_0
 
-		uv0.scene:SetCharacterAnimSpeed(slot0)
-		uv0:UpdateAnimSpeedPanel()
+		arg_80_0.scene:SetCharacterAnimSpeed(var_84_0)
+		arg_80_0:UpdateAnimSpeedPanel()
 	end, SFX_PANEL)
-	UIItemList.StaticAlign(slot0.listAnimSpeed, slot0.listAnimSpeed:GetChild(0), #slot2, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg_80_0.listAnimSpeed, arg_80_0.listAnimSpeed:GetChild(0), #var_80_1, function(arg_85_0, arg_85_1, arg_85_2)
+		if arg_85_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setActive(slot2:Find("Selected"), uv1.animSpeed == uv0[slot1 + 1])
+		arg_85_1 = arg_85_1 + 1
+
+		local var_85_0 = var_80_1[arg_85_1]
+
+		setActive(arg_85_2:Find("Selected"), arg_80_0.animSpeed == var_85_0)
 	end)
-	setActive(slot0.btnFreeze:Find("Selected"), slot0.animSpeed == 0)
-	setText(slot0.textAnimSpeed, "X" .. slot0.animSpeed)
+	setActive(arg_80_0.btnFreeze:Find("Selected"), arg_80_0.animSpeed == 0)
+	setText(arg_80_0.textAnimSpeed, "X" .. arg_80_0.animSpeed)
 end
 
-function slot0.UpdateLightingPanel(slot0)
-	if slot0.activePanel ~= uv0.PANEL.LIGHTING then
+function var_0_0.UpdateLightingPanel(arg_86_0)
+	if arg_86_0.activePanel ~= var_0_0.PANEL.LIGHTING then
 		return
 	end
 
-	slot1 = slot0.apartment:GetCameraZones()[slot0.zoneIndex]
-
-	function slot3()
-		if not uv0.settingLightingColorIndex then
-			uv0.scene:RevertCharacterLight()
-
-			return
-		end
-
-		uv0.scene:SetCharacterLight(Color.NewHex(uv1[uv0.settingLightingColorIndex].color), uv0.settingLightingAlpha, uv0.settingLightingStrength)
-	end
-
-	slot0.lastSelectedColorBG = nil
-
-	UIItemList.StaticAlign(slot0.panelLightning:Find("Lighting/List"), slot0.panelLightning:Find("Lighting/List"):GetChild(0), #{
+	local var_86_0 = arg_86_0.apartment:GetCameraZones()[arg_86_0.zoneIndex]
+	local var_86_1 = {
 		{
 			color = "FF0000",
 			name = "红"
@@ -780,128 +851,152 @@ function slot0.UpdateLightingPanel(slot0)
 			color = "FFFFFF",
 			name = "白"
 		}
-	}, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	}
+
+	local function var_86_2()
+		if not arg_86_0.settingLightingColorIndex then
+			arg_86_0.scene:RevertCharacterLight()
+
 			return
 		end
 
-		slot1 = slot1 + 1
+		local var_87_0 = var_86_1[arg_86_0.settingLightingColorIndex]
 
-		setText(slot2:Find("Name"), uv0[slot1].name)
+		arg_86_0.scene:SetCharacterLight(Color.NewHex(var_87_0.color), arg_86_0.settingLightingAlpha, arg_86_0.settingLightingStrength)
+	end
 
-		if uv1.settingLightingColorIndex == slot1 then
-			uv1.lastSelectedColorBG = slot2:Find("Selected")
+	arg_86_0.lastSelectedColorBG = nil
 
-			setActive(uv1.lastSelectedColorBG, true)
+	UIItemList.StaticAlign(arg_86_0.panelLightning:Find("Lighting/List"), arg_86_0.panelLightning:Find("Lighting/List"):GetChild(0), #var_86_1, function(arg_88_0, arg_88_1, arg_88_2)
+		if arg_88_0 ~= UIItemList.EventUpdate then
+			return
 		end
 
-		onButton(uv1, slot2, function ()
-			if uv0.settingLightingColorIndex ~= uv1 then
-				uv0.settingLightingColorIndex = uv1
+		arg_88_1 = arg_88_1 + 1
+
+		local var_88_0 = var_86_1[arg_88_1]
+
+		setText(arg_88_2:Find("Name"), var_88_0.name)
+
+		if arg_86_0.settingLightingColorIndex == arg_88_1 then
+			arg_86_0.lastSelectedColorBG = arg_88_2:Find("Selected")
+
+			setActive(arg_86_0.lastSelectedColorBG, true)
+		end
+
+		onButton(arg_86_0, arg_88_2, function()
+			if arg_86_0.settingLightingColorIndex ~= arg_88_1 then
+				arg_86_0.settingLightingColorIndex = arg_88_1
 			else
-				uv0.settingLightingColorIndex = nil
+				arg_86_0.settingLightingColorIndex = nil
 			end
 
-			uv2()
+			var_86_2()
 
-			if uv0.lastSelectedColorBG then
-				setActive(uv0.lastSelectedColorBG, false)
+			if arg_86_0.lastSelectedColorBG then
+				setActive(arg_86_0.lastSelectedColorBG, false)
 			end
 
-			if uv0.settingLightingColorIndex == uv1 then
-				uv0.lastSelectedColorBG = uv3:Find("Selected")
+			if arg_86_0.settingLightingColorIndex == arg_88_1 then
+				arg_86_0.lastSelectedColorBG = arg_88_2:Find("Selected")
 
-				setActive(uv0.lastSelectedColorBG, true)
+				setActive(arg_86_0.lastSelectedColorBG, true)
 			end
 		end, SFX_PANEL)
 	end)
-	function ()
-		slot0 = uv0.panelLightning:Find("Lighting/Sliders/Strength/Slider")
+	;(function()
+		local var_90_0 = arg_86_0.panelLightning:Find("Lighting/Sliders/Strength/Slider")
 
-		setSlider(slot0, 0, 1, uv0.settingLightingStrength)
-		onSlider(uv0, slot0, function (slot0)
-			uv0.settingLightingStrength = slot0
+		setSlider(var_90_0, 0, 1, arg_86_0.settingLightingStrength)
+		onSlider(arg_86_0, var_90_0, function(arg_91_0)
+			arg_86_0.settingLightingStrength = arg_91_0
 
-			uv1()
+			var_86_2()
 		end)
-	end()
-	function ()
-		slot0 = uv0.panelLightning:Find("Lighting/Sliders/Alpha/Slider")
+	end)()
+	;(function()
+		local var_92_0 = arg_86_0.panelLightning:Find("Lighting/Sliders/Alpha/Slider")
 
-		setSlider(slot0, 0, 1, uv0.settingLightingAlpha)
-		onSlider(uv0, slot0, function (slot0)
-			uv0.settingLightingAlpha = slot0
+		setSlider(var_92_0, 0, 1, arg_86_0.settingLightingAlpha)
+		onSlider(arg_86_0, var_92_0, function(arg_93_0)
+			arg_86_0.settingLightingAlpha = arg_93_0
 
-			uv1()
+			var_86_2()
 		end)
-	end()
+	end)()
 
-	function slot7()
-		if not uv0.settingFilterIndex then
-			uv0.scene:RevertVolumeProfile()
-
-			return
-		end
-
-		uv0.scene:SetVolumeProfile(uv1[uv0.settingFilterIndex].profile, uv0.settingFilterStrength)
-	end
-
-	slot0.lastSelectedFilterBG = nil
-
-	UIItemList.StaticAlign(slot0.panelLightning:Find("Filter/List"), slot0.panelLightning:Find("Filter/List"):GetChild(0), #{
+	local var_86_3 = {
 		{
 			name = "泛紫",
 			profile = "volume_purple"
 		}
-	}, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	}
+
+	local function var_86_4()
+		if not arg_86_0.settingFilterIndex then
+			arg_86_0.scene:RevertVolumeProfile()
+
 			return
 		end
 
-		slot1 = slot1 + 1
+		local var_94_0 = var_86_3[arg_86_0.settingFilterIndex]
 
-		setText(slot2:Find("Name"), uv0[slot1].name)
+		arg_86_0.scene:SetVolumeProfile(var_94_0.profile, arg_86_0.settingFilterStrength)
+	end
 
-		if uv1.settingFilterIndex == slot1 then
-			uv1.lastSelectedFilterBG = slot2:Find("Selected")
+	arg_86_0.lastSelectedFilterBG = nil
 
-			setActive(uv1.lastSelectedFilterBG, true)
+	UIItemList.StaticAlign(arg_86_0.panelLightning:Find("Filter/List"), arg_86_0.panelLightning:Find("Filter/List"):GetChild(0), #var_86_3, function(arg_95_0, arg_95_1, arg_95_2)
+		if arg_95_0 ~= UIItemList.EventUpdate then
+			return
 		end
 
-		onButton(uv1, slot2, function ()
-			if uv0.settingFilterIndex ~= uv1 then
-				uv0.settingFilterIndex = uv1
+		arg_95_1 = arg_95_1 + 1
+
+		local var_95_0 = var_86_3[arg_95_1]
+
+		setText(arg_95_2:Find("Name"), var_95_0.name)
+
+		if arg_86_0.settingFilterIndex == arg_95_1 then
+			arg_86_0.lastSelectedFilterBG = arg_95_2:Find("Selected")
+
+			setActive(arg_86_0.lastSelectedFilterBG, true)
+		end
+
+		onButton(arg_86_0, arg_95_2, function()
+			if arg_86_0.settingFilterIndex ~= arg_95_1 then
+				arg_86_0.settingFilterIndex = arg_95_1
 			else
-				uv0.settingFilterIndex = nil
+				arg_86_0.settingFilterIndex = nil
 			end
 
-			uv2()
+			var_86_4()
 
-			if uv0.lastSelectedFilterBG then
-				setActive(uv0.lastSelectedFilterBG, false)
+			if arg_86_0.lastSelectedFilterBG then
+				setActive(arg_86_0.lastSelectedFilterBG, false)
 			end
 
-			if uv0.settingFilterIndex == uv1 then
-				uv0.lastSelectedFilterBG = uv3:Find("Selected")
+			if arg_86_0.settingFilterIndex == arg_95_1 then
+				arg_86_0.lastSelectedFilterBG = arg_95_2:Find("Selected")
 
-				setActive(uv0.lastSelectedFilterBG, true)
+				setActive(arg_86_0.lastSelectedFilterBG, true)
 			end
 		end, SFX_PANEL)
 	end)
-	function ()
-		slot0 = uv0.panelLightning:Find("Filter/Sliders/Strength/Slider")
+	;(function()
+		local var_97_0 = arg_86_0.panelLightning:Find("Filter/Sliders/Strength/Slider")
 
-		setSlider(slot0, 0, 1, uv0.settingFilterStrength)
-		onSlider(uv0, slot0, function (slot0)
-			uv0.settingFilterStrength = slot0
+		setSlider(var_97_0, 0, 1, arg_86_0.settingFilterStrength)
+		onSlider(arg_86_0, var_97_0, function(arg_98_0)
+			arg_86_0.settingFilterStrength = arg_98_0
 
-			uv1()
+			var_86_4()
 		end)
-	end()
+	end)()
 end
 
-function slot0.SetMute(slot0)
-	if slot0 then
+function var_0_0.SetMute(arg_99_0)
+	if arg_99_0 then
 		CriAtom.SetCategoryVolume("Category_CV", 0)
 		CriAtom.SetCategoryVolume("Category_BGM", 0)
 		CriAtom.SetCategoryVolume("Category_SE", 0)
@@ -912,24 +1007,24 @@ function slot0.SetMute(slot0)
 	end
 end
 
-function slot0.willExit(slot0)
-	if slot0.animSpeed ~= 1 then
-		slot0.scene:SetCharacterAnimSpeed(1)
+function var_0_0.willExit(arg_100_0)
+	if arg_100_0.animSpeed ~= 1 then
+		arg_100_0.scene:SetCharacterAnimSpeed(1)
 	end
 
-	if slot0.settingHideCharacter then
-		slot0.scene:SwitchLadyInterestInPhotoMode(true)
-		slot0.scene:RevertCharacter()
+	if arg_100_0.settingHideCharacter then
+		arg_100_0.scene:SwitchLadyInterestInPhotoMode(true)
+		arg_100_0.scene:RevertCharacter()
 	end
 
-	if not slot0.settingFaceCamera then
-		slot0.scene:EnableHeadIK(true)
+	if not arg_100_0.settingFaceCamera then
+		arg_100_0.scene:EnableHeadIK(true)
 	end
 
-	slot0.scene:RevertCharacterLight()
-	slot0.scene:RevertVolumeProfile()
-	slot0.scene:RevertCameraSettings()
-	slot0.scene:ExitPhotoMode()
+	arg_100_0.scene:RevertCharacterLight()
+	arg_100_0.scene:RevertVolumeProfile()
+	arg_100_0.scene:RevertCameraSettings()
+	arg_100_0.scene:ExitPhotoMode()
 end
 
-return slot0
+return var_0_0

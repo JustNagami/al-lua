@@ -1,69 +1,76 @@
-slot0 = class("BackYardShopBasePage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("BackYardShopBasePage", import("....base.BaseSubView"))
 
-function slot0.PlayerUpdated(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.PlayerUpdated(arg_1_0, arg_1_1)
+	arg_1_0.player = arg_1_1
 
-	slot0:OnPlayerUpdated()
+	arg_1_0:OnPlayerUpdated()
 end
 
-function slot0.DormUpdated(slot0, slot1)
-	slot0.dorm = slot1
+function var_0_0.DormUpdated(arg_2_0, arg_2_1)
+	arg_2_0.dorm = arg_2_1
 
-	slot0:OnDormUpdated()
+	arg_2_0:OnDormUpdated()
 end
 
-function slot0.FurnituresUpdated(slot0, slot1)
-	for slot6, slot7 in ipairs(slot1) do
-		slot8 = slot0.dorm:GetPurchasedFurnitures()[slot7]
+function var_0_0.FurnituresUpdated(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0.dorm:GetPurchasedFurnitures()
 
-		slot0:OnDisplayUpdated(slot8)
-		slot0:OnCardUpdated(slot8)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		local var_3_1 = var_3_0[iter_3_1]
+
+		arg_3_0:OnDisplayUpdated(var_3_1)
+		arg_3_0:OnCardUpdated(var_3_1)
 	end
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3, slot4)
-	slot0:Show()
+function var_0_0.SetUp(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+	arg_4_0:Show()
 
-	slot0.pageType = slot1
-	slot0.dorm = slot2
-	slot0.player = slot3
+	arg_4_0.pageType = arg_4_1
+	arg_4_0.dorm = arg_4_2
+	arg_4_0.player = arg_4_3
 
-	slot0:OnSetUp()
+	arg_4_0:OnSetUp()
 
-	if slot4 then
-		slot4()
+	if arg_4_4 then
+		arg_4_4()
 	end
 end
 
-function slot0.Show(slot0)
-	setActiveViaLayer(slot0._tf, true)
+function var_0_0.Show(arg_5_0)
+	setActiveViaLayer(arg_5_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	setActiveViaLayer(slot0._tf, false)
+function var_0_0.Hide(arg_6_0)
+	setActiveViaLayer(arg_6_0._tf, false)
 end
 
-function slot0.ShowFurnitureMsgBox(slot0, slot1)
-	slot0.contextData.furnitureMsgBox:ExecuteAction("SetUp", slot1, slot0.dorm, slot0.player)
+function var_0_0.ShowFurnitureMsgBox(arg_7_0, arg_7_1)
+	arg_7_0.contextData.furnitureMsgBox:ExecuteAction("SetUp", arg_7_1, arg_7_0.dorm, arg_7_0.player)
 end
 
-function slot0.ShowThemeVOMsgBox(slot0, slot1)
-	slot0.contextData.themeMsgBox:ExecuteAction("SetUp", slot1, slot0.dorm, slot0.player)
+function var_0_0.ShowThemeVOMsgBox(arg_8_0, arg_8_1)
+	arg_8_0.contextData.themeMsgBox:ExecuteAction("SetUp", arg_8_1, arg_8_0.dorm, arg_8_0.player)
 end
 
-function slot0.OnSetUp(slot0)
+function var_0_0.OnSetUp(arg_9_0)
+	return
 end
 
-function slot0.OnPlayerUpdated(slot0)
+function var_0_0.OnPlayerUpdated(arg_10_0)
+	return
 end
 
-function slot0.OnDisplayUpdated(slot0, slot1)
+function var_0_0.OnDisplayUpdated(arg_11_0, arg_11_1)
+	return
 end
 
-function slot0.OnCardUpdated(slot0, slot1)
+function var_0_0.OnCardUpdated(arg_12_0, arg_12_1)
+	return
 end
 
-function slot0.OnDormUpdated(slot0)
+function var_0_0.OnDormUpdated(arg_13_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,35 +1,28 @@
-slot0 = class("ChapterTransportFleet", import(".ChapterFleet"))
+﻿local var_0_0 = class("ChapterTransportFleet", import(".ChapterFleet"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.line = {
-		row = slot1.pos.row,
-		column = slot1.pos.column
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.line = {
+		row = arg_1_1.pos.row,
+		column = arg_1_1.pos.column
 	}
-	slot0.id = slot2
-	slot0.configId = slot1.item_id
-	slot0.restHp = slot1.item_data
-	slot0.rotation = Quaternion.identity
+	arg_1_0.id = arg_1_2
+	arg_1_0.configId = arg_1_1.item_id
+	arg_1_0.restHp = arg_1_1.item_data
+	arg_1_0.rotation = Quaternion.identity
 
-	slot0:updateShips({})
+	arg_1_0:updateShips({})
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_2_0)
 	return pg.friendly_data_template
 end
 
-function slot0.getFleetType(slot0)
+function var_0_0.getFleetType(arg_3_0)
 	return FleetType.Transport
 end
 
-function slot0.getPrefab(slot0)
-	slot3 = ({
-		"merchant",
-		"merchant_1",
-		"merchant_2",
-		"merchant_d"
-	})[1]
-
-	for slot7, slot8 in ipairs({
+function var_0_0.getPrefab(arg_4_0)
+	local var_4_0 = {
 		{
 			20,
 			16
@@ -46,31 +39,40 @@ function slot0.getPrefab(slot0)
 			0,
 			0
 		}
-	}) do
-		if slot8[2] <= slot0:getRestHp() and slot0:getRestHp() <= slot8[1] then
-			slot3 = slot2[slot7]
+	}
+	local var_4_1 = {
+		"merchant",
+		"merchant_1",
+		"merchant_2",
+		"merchant_d"
+	}
+	local var_4_2 = var_4_1[1]
+
+	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
+		if arg_4_0:getRestHp() >= iter_4_1[2] and arg_4_0:getRestHp() <= iter_4_1[1] then
+			var_4_2 = var_4_1[iter_4_0]
 
 			break
 		end
 	end
 
-	return slot3
+	return var_4_2
 end
 
-function slot0.getRestHp(slot0)
-	return slot0.restHp
+function var_0_0.getRestHp(arg_5_0)
+	return arg_5_0.restHp
 end
 
-function slot0.setRestHp(slot0, slot1)
-	slot0.restHp = slot1
+function var_0_0.setRestHp(arg_6_0, arg_6_1)
+	arg_6_0.restHp = arg_6_1
 end
 
-function slot0.getTotalHp(slot0)
-	return slot0:getConfig("hp")
+function var_0_0.getTotalHp(arg_7_0)
+	return arg_7_0:getConfig("hp")
 end
 
-function slot0.isValid(slot0)
-	return slot0.restHp > 0
+function var_0_0.isValid(arg_8_0)
+	return arg_8_0.restHp > 0
 end
 
-return slot0
+return var_0_0

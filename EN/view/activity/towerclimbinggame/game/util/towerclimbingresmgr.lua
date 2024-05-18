@@ -1,42 +1,42 @@
-slot0 = class("TowerClimbingResMgr")
-slot1 = {
+﻿local var_0_0 = class("TowerClimbingResMgr")
+local var_0_1 = {
 	salatuojia = "TowerClimbingPlayer1"
 }
 
-function slot2(slot0)
-	return uv0[slot0]
+local function var_0_2(arg_1_0)
+	return var_0_1[arg_1_0]
 end
 
-function slot0.GetBlock(slot0, slot1)
-	PoolMgr.GetInstance():GetUI(slot0, true, function (slot0)
-		uv0(slot0)
+function var_0_0.GetBlock(arg_2_0, arg_2_1)
+	PoolMgr.GetInstance():GetUI(arg_2_0, true, function(arg_3_0)
+		arg_2_1(arg_3_0)
 	end)
 end
 
-function slot0.GetPlayer(slot0, slot1)
-	slot2 = uv0(slot0)
+function var_0_0.GetPlayer(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_2(arg_4_0)
 
-	assert(slot2, slot0)
-	PoolMgr.GetInstance():GetUI(slot2, true, slot1)
+	assert(var_4_0, arg_4_0)
+	PoolMgr.GetInstance():GetUI(var_4_0, true, arg_4_1)
 end
 
-function slot0.GetGround(slot0, slot1)
-	PoolMgr.GetInstance():GetUI(slot0, true, slot1)
+function var_0_0.GetGround(arg_5_0, arg_5_1)
+	PoolMgr.GetInstance():GetUI(arg_5_0, true, arg_5_1)
 end
 
-function slot0.ReturnBlock(slot0, slot1)
-	PoolMgr.GetInstance():ReturnUI(slot0, slot1)
+function var_0_0.ReturnBlock(arg_6_0, arg_6_1)
+	PoolMgr.GetInstance():ReturnUI(arg_6_0, arg_6_1)
 end
 
-function slot0.ReturnPlayer(slot0, slot1)
-	slot2 = uv0(slot0)
+function var_0_0.ReturnPlayer(arg_7_0, arg_7_1)
+	local var_7_0 = var_0_2(arg_7_0)
 
-	assert(slot2, slot0)
-	PoolMgr.GetInstance():ReturnUI(slot2, slot1)
+	assert(var_7_0, arg_7_0)
+	PoolMgr.GetInstance():ReturnUI(var_7_0, arg_7_1)
 end
 
-function slot0.ReturnGround(slot0, slot1)
-	PoolMgr.GetInstance():ReturnUI(slot0, slot1)
+function var_0_0.ReturnGround(arg_8_0, arg_8_1)
+	PoolMgr.GetInstance():ReturnUI(arg_8_0, arg_8_1)
 end
 
-return slot0
+return var_0_0

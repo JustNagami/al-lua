@@ -1,131 +1,147 @@
-slot0 = class("GameRoomSnackView", import(".GameRoomBaseSnackView"))
+﻿local var_0_0 = class("GameRoomSnackView", import(".GameRoomBaseSnackView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GameRoomSnackUI"
 end
 
-function slot0.OnSendMiniGameOPDone(slot0)
-	slot0:updateCount()
+function var_0_0.OnSendMiniGameOPDone(arg_2_0)
+	arg_2_0:updateCount()
 end
 
-function slot0.OnGetAwardDone(slot0)
-	if slot0.coinLayerVisible then
-		slot0:openCoinLayer(true)
+function var_0_0.OnGetAwardDone(arg_3_0)
+	if arg_3_0.coinLayerVisible then
+		arg_3_0:openCoinLayer(true)
 	end
 end
 
-function slot0.addListener(slot0)
-	uv0.super.addListener(slot0)
+function var_0_0.addListener(arg_4_0)
+	var_0_0.super.addListener(arg_4_0)
 
-	if slot0:getGameRoomData() then
-		slot0.gameHelpTip = slot0:getGameRoomData().game_help
+	if arg_4_0:getGameRoomData() then
+		arg_4_0.gameHelpTip = arg_4_0:getGameRoomData().game_help
 	end
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = uv0.gameHelpTip
+			helps = arg_4_0.gameHelpTip
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.updateSDModel(slot0)
-	slot2 = getProxy(PlayerProxy):getData()
-	slot3 = getProxy(BayProxy)
+function var_0_0.updateSDModel(arg_6_0)
+	local var_6_0 = getProxy(PlayerProxy):getData()
+	local var_6_1 = getProxy(BayProxy)
+	local var_6_2 = "Z28"
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetSpineChar("Z28", true, function (slot0)
+	PoolMgr.GetInstance():GetSpineChar(var_6_2, true, function(arg_7_0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		uv0.prefab = uv1
-		uv0.model = slot0
-		tf(slot0).localScale = Vector3(1, 1, 1)
+		arg_6_0.prefab = var_6_2
+		arg_6_0.model = arg_7_0
+		tf(arg_7_0).localScale = Vector3(1, 1, 1)
 
-		slot0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
-		setParent(slot0, uv0.spineCharContainer)
+		arg_7_0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+		setParent(arg_7_0, arg_6_0.spineCharContainer)
 	end)
 end
 
-function slot0.updateSelectedList(slot0, slot1)
-	for slot5 = 1, uv0.Order_Num do
-		slot6 = slot0.selectedContainer:GetChild(slot5 - 1)
-		slot8 = slot0:findTF("Full", slot6)
-		slot0.selectedTFList[slot5] = slot6
-		slot10 = (slot1 or {})[slot5]
+function var_0_0.updateSelectedList(arg_8_0, arg_8_1)
+	arg_8_1 = arg_8_1 or {}
 
-		setActive(slot8, slot10)
-		setActive(slot0:findTF("Empty", slot6), not slot10)
+	for iter_8_0 = 1, var_0_0.Order_Num do
+		local var_8_0 = arg_8_0.selectedContainer:GetChild(iter_8_0 - 1)
+		local var_8_1 = arg_8_0:findTF("Empty", var_8_0)
+		local var_8_2 = arg_8_0:findTF("Full", var_8_0)
+		local var_8_3 = arg_8_0:findTF("SnackImg", var_8_2)
 
-		if slot10 then
-			setImageSprite(slot0:findTF("SnackImg", slot8), GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. slot10))
+		arg_8_0.selectedTFList[iter_8_0] = var_8_0
+
+		local var_8_4 = arg_8_1[iter_8_0]
+
+		setActive(var_8_2, var_8_4)
+		setActive(var_8_1, not var_8_4)
+
+		if var_8_4 then
+			setImageSprite(var_8_3, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. var_8_4))
 		end
 	end
 end
 
-function slot0.updateSnackList(slot0, slot1)
-	for slot5 = 1, uv0.Snack_Num do
-		slot6 = slot0.snackContainer:GetChild(slot5 - 1)
+function var_0_0.updateSnackList(arg_9_0, arg_9_1)
+	for iter_9_0 = 1, var_0_0.Snack_Num do
+		local var_9_0 = arg_9_0.snackContainer:GetChild(iter_9_0 - 1)
+		local var_9_1 = arg_9_0:findTF("SnackImg", var_9_0)
+		local var_9_2 = arg_9_1[iter_9_0]
 
-		setImageSprite(slot0:findTF("SnackImg", slot6), GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. slot1[slot5]))
-		setActive(slot0:findTF("SelectedTag", slot6), false)
+		setImageSprite(var_9_1, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "snack_" .. var_9_2))
 
-		slot0.snackTFList[slot5] = slot6
-		slot5 = slot5 + 1
+		local var_9_3 = arg_9_0:findTF("SelectedTag", var_9_0)
+
+		setActive(var_9_3, false)
+
+		arg_9_0.snackTFList[iter_9_0] = var_9_0
+		iter_9_0 = iter_9_0 + 1
 	end
 end
 
-function slot0.updateSelectedOrderTag(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.selectedSnackTFList) do
-		if slot1 then
-			setActive(slot0:findTF("SelectedTag", slot6), false)
+function var_0_0.updateSelectedOrderTag(arg_10_0, arg_10_1)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.selectedSnackTFList) do
+		local var_10_0 = arg_10_0:findTF("SelectedTag", iter_10_1)
+
+		if arg_10_1 then
+			setActive(var_10_0, false)
 		else
-			setImageSprite(slot7, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "order_" .. table.indexof(slot0.selectedIDList, slot5, 1)))
+			local var_10_1 = table.indexof(arg_10_0.selectedIDList, iter_10_0, 1)
+
+			setImageSprite(var_10_0, GetSpriteFromAtlas("ui/minigameui/newyearsnackui_atlas", "order_" .. var_10_1))
 		end
 	end
 end
 
-function slot0.openResultView(slot0)
-	slot0.packageData = {
-		orderIDList = slot0.orderIDList,
-		selectedIDList = slot0.selectedIDList,
-		countTime = slot0.countTime,
-		score = slot0.score,
-		correctNumToEXValue = slot0:GetMGData():getConfig("simple_config_data").correct_value,
-		scoreLevel = slot0:GetMGData():getConfig("simple_config_data").score_level,
-		onSubmit = function (slot0)
-			uv0:SendSuccess(uv0.score)
+function var_0_0.openResultView(arg_11_0)
+	arg_11_0.packageData = {
+		orderIDList = arg_11_0.orderIDList,
+		selectedIDList = arg_11_0.selectedIDList,
+		countTime = arg_11_0.countTime,
+		score = arg_11_0.score,
+		correctNumToEXValue = arg_11_0:GetMGData():getConfig("simple_config_data").correct_value,
+		scoreLevel = arg_11_0:GetMGData():getConfig("simple_config_data").score_level,
+		onSubmit = function(arg_12_0)
+			arg_11_0:SendSuccess(arg_11_0.score)
 
-			uv0.score = 0
-			uv0.countTime = nil
-			uv0.leftTime = uv0.orginSelectTime
-			uv0.orderIDList = {}
-			uv0.selectedIDList = {}
-			uv0.snackIDList = {}
+			arg_11_0.score = 0
+			arg_11_0.countTime = nil
+			arg_11_0.leftTime = arg_11_0.orginSelectTime
+			arg_11_0.orderIDList = {}
+			arg_11_0.selectedIDList = {}
+			arg_11_0.snackIDList = {}
 
-			uv0:updateSelectedOrderTag(true)
+			arg_11_0:updateSelectedOrderTag(true)
 
-			uv0.selectedSnackTFList = {}
+			arg_11_0.selectedSnackTFList = {}
 
-			uv0:openCoinLayer(true)
-			uv0.animtor:SetBool("AniSwitch", uv1.Ani_Open_2_Close)
-			uv0:setState(uv1.States_Before)
+			arg_11_0:openCoinLayer(true)
+			arg_11_0.animtor:SetBool("AniSwitch", var_0_0.Ani_Open_2_Close)
+			arg_11_0:setState(var_0_0.States_Before)
 		end,
-		onContinue = function ()
-			uv0.score = uv0.packageData.score
-			uv0.leftTime = uv0.packageData.countTime
-			uv0.orderIDList = {}
-			uv0.selectedIDList = {}
-			uv0.snackIDList = {}
-			uv0.selectedSnackTFList = {}
+		onContinue = function()
+			arg_11_0.score = arg_11_0.packageData.score
+			arg_11_0.leftTime = arg_11_0.packageData.countTime
+			arg_11_0.orderIDList = {}
+			arg_11_0.selectedIDList = {}
+			arg_11_0.snackIDList = {}
+			arg_11_0.selectedSnackTFList = {}
 
-			uv0.animtor:SetBool("AniSwitch", uv1.Ani_Open_2_Close)
-			uv0:setState(uv1.States_Memory)
+			arg_11_0.animtor:SetBool("AniSwitch", var_0_0.Ani_Open_2_Close)
+			arg_11_0:setState(var_0_0.States_Memory)
 		end
 	}
-	slot0.snackResultView = NewYearSnackResultView.New(slot0._tf, slot0.event, slot0.packageData)
+	arg_11_0.snackResultView = NewYearSnackResultView.New(arg_11_0._tf, arg_11_0.event, arg_11_0.packageData)
 
-	slot0.snackResultView:Reset()
-	slot0.snackResultView:Load()
+	arg_11_0.snackResultView:Reset()
+	arg_11_0.snackResultView:Load()
 end
 
-return slot0
+return var_0_0

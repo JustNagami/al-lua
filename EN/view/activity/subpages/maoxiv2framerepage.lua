@@ -1,1 +1,1 @@
-return class("MaoxiV2FrameRePage", import(".TemplatePage.FrameReTemplatePage"))
+﻿return (class("MaoxiV2FrameRePage", import(".TemplatePage.FrameReTemplatePage")))

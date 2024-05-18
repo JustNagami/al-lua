@@ -1,57 +1,63 @@
-slot0 = class("CourtYardDragAgent", import(".CourtYardAgent"))
+﻿local var_0_0 = class("CourtYardDragAgent", import(".CourtYardAgent"))
 
-function slot0.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.rect = slot2
-	slot0.trigger = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot0.dragging = false
+	arg_1_0.rect = arg_1_2
+	arg_1_0.trigger = GetOrAddComponent(arg_1_0._tf, "EventTriggerListener")
+	arg_1_0.dragging = false
 
-	slot0:RegisterEvent()
+	arg_1_0:RegisterEvent()
 end
 
-function slot0.Enable(slot0, slot1)
-	slot0.trigger.enabled = slot1
+function var_0_0.Enable(arg_2_0, arg_2_1)
+	arg_2_0.trigger.enabled = arg_2_1
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0.trigger:AddBeginDragFunc(function (slot0, slot1)
-		if not uv0:CanDrag(slot0) then
+function var_0_0.RegisterEvent(arg_3_0)
+	arg_3_0.trigger:AddBeginDragFunc(function(arg_4_0, arg_4_1)
+		if not arg_3_0:CanDrag(arg_4_0) then
 			return
 		end
 
-		uv0.dragging = true
+		arg_3_0.dragging = true
 
-		uv0:OnBeginDrag()
+		arg_3_0:OnBeginDrag()
 	end)
-	slot0.trigger:AddDragFunc(function (slot0, slot1)
-		if uv0.dragging and uv0._go == slot0 then
-			uv0:OnDragging(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(uv0.rect, slot1.position)))
+	arg_3_0.trigger:AddDragFunc(function(arg_5_0, arg_5_1)
+		if arg_3_0.dragging and arg_3_0._go == arg_5_0 then
+			local var_5_0 = CourtYardCalcUtil.Screen2Local(arg_3_0.rect, arg_5_1.position)
+			local var_5_1 = CourtYardCalcUtil.Local2Map(var_5_0)
+
+			arg_3_0:OnDragging(var_5_1)
 		end
 	end)
-	slot0.trigger:AddDragEndFunc(function (slot0, slot1)
-		if uv0.dragging and slot0 == uv0._go then
-			uv0.dragging = false
+	arg_3_0.trigger:AddDragEndFunc(function(arg_6_0, arg_6_1)
+		if arg_3_0.dragging and arg_6_0 == arg_3_0._go then
+			arg_3_0.dragging = false
 
-			uv0:OnDragEnd(CourtYardCalcUtil.Local2Map(CourtYardCalcUtil.Screen2Local(uv0.rect, slot1.position)))
+			local var_6_0 = CourtYardCalcUtil.Screen2Local(arg_3_0.rect, arg_6_1.position)
+			local var_6_1 = CourtYardCalcUtil.Local2Map(var_6_0)
+
+			arg_3_0:OnDragEnd(var_6_1)
 		end
 	end)
 end
 
-function slot0.CanDrag(slot0, slot1)
-	return Input.touchCount <= 1 and slot0._go == slot1
+function var_0_0.CanDrag(arg_7_0, arg_7_1)
+	return Input.touchCount <= 1 and arg_7_0._go == arg_7_1
 end
 
-function slot0.UnRegisterEvent(slot0)
-	slot0.dragging = false
+function var_0_0.UnRegisterEvent(arg_8_0)
+	arg_8_0.dragging = false
 
-	ClearEventTrigger(slot0.trigger)
+	ClearEventTrigger(arg_8_0.trigger)
 end
 
-function slot0.Dispose(slot0)
-	uv0.super.Dispose(slot0)
-	slot0:UnRegisterEvent()
-	Object.Destroy(slot0.trigger)
+function var_0_0.Dispose(arg_9_0)
+	var_0_0.super.Dispose(arg_9_0)
+	arg_9_0:UnRegisterEvent()
+	Object.Destroy(arg_9_0.trigger)
 end
 
-return slot0
+return var_0_0

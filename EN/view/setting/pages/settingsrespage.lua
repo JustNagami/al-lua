@@ -1,14 +1,14 @@
-slot0 = class("SettingsResPage", import(".SettingsOptionPage"))
+﻿local var_0_0 = class("SettingsResPage", import(".SettingsOptionPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SettingsCombinationWithBgPage"
 end
 
-function slot0.GetPanels(slot0)
+function var_0_0.GetPanels(arg_2_0)
 	return {
 		SettingsSoundPanle,
 		SettingsResUpdatePanel
 	}
 end
 
-return slot0
+return var_0_0

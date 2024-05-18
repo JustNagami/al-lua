@@ -1,111 +1,125 @@
-slot0 = class("GuildTechnologyGroup", import("..BaseVO"))
-slot0.STATE_STOP = 0
-slot0.STATE_START = 1
+﻿local var_0_0 = class("GuildTechnologyGroup", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot2 = slot0:bindConfigTable().get_id_list_by_group[slot0.id][1]
+var_0_0.STATE_STOP = 0
+var_0_0.STATE_START = 1
 
-	slot0:update({
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = arg_1_1.id
+
+	local var_1_0 = arg_1_0:bindConfigTable().get_id_list_by_group[arg_1_0.id][1]
+
+	arg_1_0:update({
 		state = 0,
 		progress = 0,
-		id = slot2,
-		fake_id = slot2
+		id = var_1_0,
+		fake_id = var_1_0
 	})
 end
 
-function slot0.update(slot0, slot1)
-	slot0.pid = slot1.id
-	slot0.configId = slot0.pid
-	slot0.state = slot1.state or 0
-	slot0.progress = slot1.progress or 0
-	slot0.fakeId = slot1.fake_id or slot0.fakeId or slot1.id
+function var_0_0.update(arg_2_0, arg_2_1)
+	arg_2_0.pid = arg_2_1.id
+	arg_2_0.configId = arg_2_0.pid
+	arg_2_0.state = arg_2_1.state or 0
+	arg_2_0.progress = arg_2_1.progress or 0
+	arg_2_0.fakeId = arg_2_1.fake_id or arg_2_0.fakeId or arg_2_1.id
 end
 
-function slot0.AddProgress(slot0, slot1)
-	slot0.progress = slot0.progress + slot1
+function var_0_0.AddProgress(arg_3_0, arg_3_1)
+	arg_3_0.progress = arg_3_0.progress + arg_3_1
 
-	if slot0:GetTargetProgress() <= slot0.progress then
-		slot0:LevelUp()
+	if arg_3_0:GetTargetProgress() <= arg_3_0.progress then
+		arg_3_0:LevelUp()
 	end
 end
 
-function slot0.LevelUp(slot0)
-	slot0:update({
+function var_0_0.LevelUp(arg_4_0)
+	local var_4_0 = arg_4_0:GetNextId()
+
+	arg_4_0:update({
 		progress = 0,
-		id = slot0:GetNextId(),
-		state = slot0.state,
-		fake_id = slot0.fakeId
+		id = var_4_0,
+		state = arg_4_0.state,
+		fake_id = arg_4_0.fakeId
 	})
 end
 
-function slot0.GetNextId(slot0)
-	if slot0:getConfig("next_tech") == 0 then
-		return slot0.pid
+function var_0_0.GetNextId(arg_5_0)
+	local var_5_0 = arg_5_0:getConfig("next_tech")
+
+	if var_5_0 == 0 then
+		return arg_5_0.pid
 	else
-		return slot1
+		return var_5_0
 	end
 end
 
-function slot0.GetState(slot0)
-	return slot0.state
+function var_0_0.GetState(arg_6_0)
+	return arg_6_0.state
 end
 
-function slot0.GetTargetProgress(slot0)
-	return slot0:getConfig("exp")
+function var_0_0.GetTargetProgress(arg_7_0)
+	return arg_7_0:getConfig("exp")
 end
 
-function slot0.GetProgress(slot0)
-	return slot0.progress
+function var_0_0.GetProgress(arg_8_0)
+	return arg_8_0.progress
 end
 
-function slot0.GetFakeLevel(slot0)
-	return slot0:bindConfigTable()[slot0.fakeId].level
+function var_0_0.GetFakeLevel(arg_9_0)
+	return arg_9_0:bindConfigTable()[arg_9_0.fakeId].level
 end
 
-function slot0.GetLevel(slot0)
-	return slot0:getConfig("level")
+function var_0_0.GetLevel(arg_10_0)
+	return arg_10_0:getConfig("level")
 end
 
-function slot0.GetMaxLevel(slot0)
-	return slot0:getConfig("level_max")
+function var_0_0.GetMaxLevel(arg_11_0)
+	return arg_11_0:getConfig("level_max")
 end
 
-function slot0.isMaxLevel(slot0)
-	return slot0:GetMaxLevel() <= slot0:GetLevel()
+function var_0_0.isMaxLevel(arg_12_0)
+	return arg_12_0:GetLevel() >= arg_12_0:GetMaxLevel()
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_13_0)
 	return pg.guild_technology_template
 end
 
-function slot0.GuildMemberCntType(slot0)
-	return slot0:getConfig("effect_args")[1] == GuildConst.TYPE_GUILD_MEMBER_CNT
+function var_0_0.GuildMemberCntType(arg_14_0)
+	return arg_14_0:getConfig("effect_args")[1] == GuildConst.TYPE_GUILD_MEMBER_CNT
 end
 
-function slot0.isStarting(slot0)
-	return slot0.state == uv0.STATE_START
+function var_0_0.isStarting(arg_15_0)
+	return arg_15_0.state == var_0_0.STATE_START
 end
 
-function slot0.GetDesc(slot0)
-	slot1 = slot0:bindConfigTable()
-	slot2 = slot1[slot0.pid].next_tech
+function var_0_0.GetDesc(arg_16_0)
+	local var_16_0 = arg_16_0:bindConfigTable()
+	local var_16_1 = var_16_0[arg_16_0.pid].next_tech
 
-	assert(slot2, slot0.pid)
+	assert(var_16_1, arg_16_0.pid)
 
-	if slot2 == 0 then
-		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(slot1[slot0.pid].effect_args, slot1[slot0.pid].num, slot1[slot0.pid].num)
+	local var_16_2 = var_16_0[arg_16_0.pid].effect_args
+
+	if var_16_1 == 0 then
+		local var_16_3 = var_16_0[arg_16_0.pid].num
+		local var_16_4 = var_16_0[arg_16_0.pid].num
+
+		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(var_16_2, var_16_3, var_16_4)
 	else
-		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(slot3, slot1[slot0.pid].num, slot1[slot2].num)
+		local var_16_5 = var_16_0[arg_16_0.pid].num
+		local var_16_6 = var_16_0[var_16_1].num
+
+		return GuildConst.GET_TECHNOLOGY_GROUP_DESC(var_16_2, var_16_5, var_16_6)
 	end
 end
 
-function slot0.Stop(slot0)
-	slot0.state = uv0.STATE_STOP
+function var_0_0.Stop(arg_17_0)
+	arg_17_0.state = var_0_0.STATE_STOP
 end
 
-function slot0.Start(slot0)
-	slot0.state = uv0.STATE_START
+function var_0_0.Start(arg_18_0)
+	arg_18_0.state = var_0_0.STATE_START
 end
 
-return slot0
+return var_0_0

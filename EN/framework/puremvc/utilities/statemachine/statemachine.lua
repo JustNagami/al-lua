@@ -1,110 +1,121 @@
-slot1 = class("StateMachine", import("...patterns.mediator.Mediator"))
-slot1.NAME = "StateMachine"
-slot1.ACTION = slot1.NAME .. "/notes/action"
-slot1.CHANGED = slot1.NAME .. "/notes/changed"
-slot1.CANCEL = slot1.NAME .. "/notes/cancel"
+﻿local var_0_0 = import("...patterns.mediator.Mediator")
+local var_0_1 = class("StateMachine", var_0_0)
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0, uv0.NAME, null)
+var_0_1.NAME = "StateMachine"
+var_0_1.ACTION = var_0_1.NAME .. "/notes/action"
+var_0_1.CHANGED = var_0_1.NAME .. "/notes/changed"
+var_0_1.CANCEL = var_0_1.NAME .. "/notes/cancel"
 
-	slot0.states = {}
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0, var_0_1.NAME, null)
+
+	arg_1_0.states = {}
 end
 
-function slot1.onRegister(slot0)
-	if slot0.initial ~= nil then
-		slot0:transitionTo(slot0.initial, null)
+function var_0_1.onRegister(arg_2_0)
+	if arg_2_0.initial ~= nil then
+		arg_2_0:transitionTo(arg_2_0.initial, null)
 	end
 end
 
-function slot1.registerState(slot0, slot1, slot2)
-	if slot1 == nil or slot0.states[slot1.name] ~= nil then
+function var_0_1.registerState(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_1 == nil or arg_3_0.states[arg_3_1.name] ~= nil then
 		return
 	end
 
-	slot0.states[slot1.name] = slot1
+	arg_3_0.states[arg_3_1.name] = arg_3_1
 
-	if slot2 then
-		slot0.initial = slot1
+	if arg_3_2 then
+		arg_3_0.initial = arg_3_1
 	end
 end
 
-function slot1.retrieveState(slot0, slot1)
-	return slot0.states[slot1]
+function var_0_1.retrieveState(arg_4_0, arg_4_1)
+	return arg_4_0.states[arg_4_1]
 end
 
-function slot1.removeState(slot0, slot1)
-	if slot0.states[slot1] == nil then
+function var_0_1.removeState(arg_5_0, arg_5_1)
+	if arg_5_0.states[arg_5_1] == nil then
 		return
 	end
 
-	slot0.states[slot1] = nil
+	arg_5_0.states[arg_5_1] = nil
 end
 
-function slot1.transitionTo(slot0, slot1, slot2)
-	if slot1 == nil then
+function var_0_1.transitionTo(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_1 == nil then
 		return
 	end
 
-	slot0.canceled = false
+	arg_6_0.canceled = false
 
-	if slot0:getCurrentState() ~= nil and slot3.exiting ~= nil then
-		slot0:sendNotification(slot3.exiting, slot2, slot1.name)
+	local var_6_0 = arg_6_0:getCurrentState()
+
+	if var_6_0 ~= nil and var_6_0.exiting ~= nil then
+		arg_6_0:sendNotification(var_6_0.exiting, arg_6_2, arg_6_1.name)
 	end
 
-	if slot0.canceled then
-		slot0.canceled = false
-
-		return
-	end
-
-	if slot1.entering ~= nil then
-		slot0:sendNotification(slot1.entering, slot2)
-	end
-
-	if slot0.canceled then
-		slot0.canceled = false
+	if arg_6_0.canceled then
+		arg_6_0.canceled = false
 
 		return
 	end
 
-	slot0:setCurrentState(slot1)
-
-	if slot1.changed ~= nil then
-		slot0:sendNotification(slot1.changed, slot2)
+	if arg_6_1.entering ~= nil then
+		arg_6_0:sendNotification(arg_6_1.entering, arg_6_2)
 	end
 
-	slot0:sendNotification(uv0.CHANGED, slot2, slot1.name)
+	if arg_6_0.canceled then
+		arg_6_0.canceled = false
+
+		return
+	end
+
+	arg_6_0:setCurrentState(arg_6_1)
+
+	if arg_6_1.changed ~= nil then
+		arg_6_0:sendNotification(arg_6_1.changed, arg_6_2)
+	end
+
+	arg_6_0:sendNotification(var_0_1.CHANGED, arg_6_2, arg_6_1.name)
 end
 
-function slot1.listNotificationInterests(slot0)
+function var_0_1.listNotificationInterests(arg_7_0)
 	return {
-		uv0.ACTION,
-		uv0.CANCEL
+		var_0_1.ACTION,
+		var_0_1.CANCEL
 	}
 end
 
-function slot1.handleNotification(slot0, slot1)
-	if slot1:getName() == uv0.ACTION then
-		if slot0:getCurrentState():getTarget(slot1:getType()) ~= nil then
-			if slot0.states[slot4] ~= nil then
-				slot0:transitionTo(slot5, slot1:getBody())
+function var_0_1.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+
+	if var_8_0 == var_0_1.ACTION then
+		local var_8_1 = arg_8_1:getType()
+		local var_8_2 = arg_8_0:getCurrentState():getTarget(var_8_1)
+
+		if var_8_2 ~= nil then
+			local var_8_3 = arg_8_0.states[var_8_2]
+
+			if var_8_3 ~= nil then
+				arg_8_0:transitionTo(var_8_3, arg_8_1:getBody())
 			else
-				print("state not found, target: " .. slot4)
+				print("state not found, target: " .. var_8_2)
 			end
 		else
-			print("target not found, action: " .. slot3)
+			print("target not found, action: " .. var_8_1)
 		end
-	elseif slot2 == uv0.CANCEL then
-		slot0.canceled = true
+	elseif var_8_0 == var_0_1.CANCEL then
+		arg_8_0.canceled = true
 	end
 end
 
-function slot1.getCurrentState(slot0)
-	return slot0.viewComponent
+function var_0_1.getCurrentState(arg_9_0)
+	return arg_9_0.viewComponent
 end
 
-function slot1.setCurrentState(slot0, slot1)
-	slot0.viewComponent = slot1
+function var_0_1.setCurrentState(arg_10_0, arg_10_1)
+	arg_10_0.viewComponent = arg_10_1
 end
 
-return slot1
+return var_0_1

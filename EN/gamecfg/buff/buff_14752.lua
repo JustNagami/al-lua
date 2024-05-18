@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffFixVelocity",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				add = 0,
+				mul = -500
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,18 +170,5 @@ return {
 	stack = 1,
 	id = 14752,
 	icon = 14752,
-	last_effect = "Darkness",
-	effect_list = {
-		{
-			type = "BattleBuffFixVelocity",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				add = 0,
-				mul = -500
-			}
-		}
-	}
+	last_effect = "Darkness"
 }

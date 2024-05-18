@@ -1,325 +1,354 @@
-slot0 = class("ChallengePreCombatLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ChallengePreCombatLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChapterPreCombatUI"
 end
 
-function slot0.ResUISettings(slot0)
+function var_0_0.ResUISettings(arg_2_0)
 	return true
 end
 
-function slot0.init(slot0)
-	slot0._startBtn = slot0:findTF("right/start")
-	slot0._popup = slot0:findTF("right/popup")
+function var_0_0.init(arg_3_0)
+	arg_3_0._startBtn = arg_3_0:findTF("right/start")
+	arg_3_0._popup = arg_3_0:findTF("right/popup")
 
-	setActive(slot0._popup, false)
+	setActive(arg_3_0._popup, false)
 
-	slot0._backBtn = slot0:findTF("top/back_btn")
-	slot1 = slot0:findTF("middle")
-	slot0._mainGS = slot1:Find("gear_score/main/Text")
-	slot0._vanguardGS = slot1:Find("gear_score/vanguard/Text")
+	arg_3_0._backBtn = arg_3_0:findTF("top/back_btn")
 
-	setText(slot0._mainGS, 0)
-	setText(slot0._vanguardGS, 0)
+	local var_3_0 = arg_3_0:findTF("middle")
 
-	slot0._gridTFs = {
+	arg_3_0._mainGS = var_3_0:Find("gear_score/main/Text")
+	arg_3_0._vanguardGS = var_3_0:Find("gear_score/vanguard/Text")
+
+	setText(arg_3_0._mainGS, 0)
+	setText(arg_3_0._vanguardGS, 0)
+
+	arg_3_0._gridTFs = {
 		[TeamType.Vanguard] = {},
 		[TeamType.Main] = {}
 	}
-	slot0._gridFrame = slot1:Find("mask/GridFrame")
+	arg_3_0._gridFrame = var_3_0:Find("mask/GridFrame")
 
-	for slot5 = 1, 3 do
-		slot0._gridTFs[TeamType.Vanguard][slot5] = slot0._gridFrame:Find("vanguard_" .. slot5)
-		slot0._gridTFs[TeamType.Main][slot5] = slot0._gridFrame:Find("main_" .. slot5)
+	for iter_3_0 = 1, 3 do
+		arg_3_0._gridTFs[TeamType.Vanguard][iter_3_0] = arg_3_0._gridFrame:Find("vanguard_" .. iter_3_0)
+		arg_3_0._gridTFs[TeamType.Main][iter_3_0] = arg_3_0._gridFrame:Find("main_" .. iter_3_0)
 	end
 
-	slot0._heroContainer = slot1:Find("HeroContainer")
-	slot0._strategy = slot1:Find("strategy")
+	arg_3_0._heroContainer = var_3_0:Find("HeroContainer")
+	arg_3_0._strategy = var_3_0:Find("strategy")
 
-	setActive(slot0._strategy, false)
+	setActive(arg_3_0._strategy, false)
 
-	slot0._formationList = slot1:Find("formation_list")
+	arg_3_0._formationList = var_3_0:Find("formation_list")
 
-	setActive(slot0._formationList, false)
+	setActive(arg_3_0._formationList, false)
 
-	slot0._goals = slot0:findTF("right/infomation/goal")
-	slot0._heroInfo = slot0:getTpl("heroInfo")
-	slot0._starTpl = slot0:getTpl("star_tpl")
-	slot0._formationLogic = BaseFormation.New(slot0._tf, slot0._heroContainer, slot0._heroInfo, slot0._gridTFs)
-	slot0._middle = slot0:findTF("middle")
-	slot0._right = slot0:findTF("right")
-	slot0._fleet = slot0:findTF("middle/fleet")
+	arg_3_0._goals = arg_3_0:findTF("right/infomation/goal")
+	arg_3_0._heroInfo = arg_3_0:getTpl("heroInfo")
+	arg_3_0._starTpl = arg_3_0:getTpl("star_tpl")
+	arg_3_0._formationLogic = BaseFormation.New(arg_3_0._tf, arg_3_0._heroContainer, arg_3_0._heroInfo, arg_3_0._gridTFs)
+	arg_3_0._middle = arg_3_0:findTF("middle")
+	arg_3_0._right = arg_3_0:findTF("right")
+	arg_3_0._fleet = arg_3_0:findTF("middle/fleet")
 
-	setText(findTF(slot0._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
-	setText(findTF(slot0._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
-	setText(findTF(slot0._fleet, "title_bg/Text"), i18n("pre_combat_team"))
+	setText(findTF(arg_3_0._tf, "middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(findTF(arg_3_0._tf, "middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(findTF(arg_3_0._fleet, "title_bg/Text"), i18n("pre_combat_team"))
 
-	slot0._ship_tpl = findTF(slot0._fleet, "shiptpl")
-	slot0._empty_tpl = findTF(slot0._fleet, "emptytpl")
+	arg_3_0._ship_tpl = findTF(arg_3_0._fleet, "shiptpl")
+	arg_3_0._empty_tpl = findTF(arg_3_0._fleet, "emptytpl")
 
-	setActive(slot0._ship_tpl, false)
-	setActive(slot0._empty_tpl, false)
+	setActive(arg_3_0._ship_tpl, false)
+	setActive(arg_3_0._empty_tpl, false)
 
-	slot0._autoToggle = slot0:findTF("middle/auto_toggle")
-	slot0._autoSubToggle = slot0:findTF("middle/sub_toggle_container/sub_toggle")
-	slot0.topPanel = slot0:findTF("top")
-	slot0.strategyInfo = slot0:findTF("strategy_info")
+	arg_3_0._autoToggle = arg_3_0:findTF("middle/auto_toggle")
+	arg_3_0._autoSubToggle = arg_3_0:findTF("middle/sub_toggle_container/sub_toggle")
+	arg_3_0.topPanel = arg_3_0:findTF("top")
+	arg_3_0.strategyInfo = arg_3_0:findTF("strategy_info")
 
-	setActive(slot0.strategyInfo, false)
-	setAnchoredPosition(slot0._middle, {
+	setActive(arg_3_0.strategyInfo, false)
+	setAnchoredPosition(arg_3_0._middle, {
 		x = -840
 	})
-	setAnchoredPosition(slot0._right, {
+	setAnchoredPosition(arg_3_0._right, {
 		x = 470
 	})
-	slot0:Register()
+	arg_3_0:Register()
 end
 
-function slot0.uiStartAnimating(slot0)
-	setAnchoredPosition(slot0.topPanel, {
+function var_0_0.uiStartAnimating(arg_4_0)
+	setAnchoredPosition(arg_4_0.topPanel, {
 		y = 100
 	})
 
-	slot1 = 0
-	slot2 = 0.3
+	local var_4_0 = 0
+	local var_4_1 = 0.3
 
-	shiftPanel(slot0._middle, 0, nil, slot2, slot1, true, true)
-	shiftPanel(slot0._right, 0, nil, slot2, slot1, true, true, nil)
-	shiftPanel(slot0.topPanel, nil, 0, slot2, slot1, true, true, nil, )
+	shiftPanel(arg_4_0._middle, 0, nil, var_4_1, var_4_0, true, true)
+	shiftPanel(arg_4_0._right, 0, nil, var_4_1, var_4_0, true, true, nil)
+	shiftPanel(arg_4_0.topPanel, nil, 0, var_4_1, var_4_0, true, true, nil, nil)
 end
 
-function slot0.uiExitAnimating(slot0)
-	slot1 = 0
-	slot2 = 0.3
+function var_0_0.uiExitAnimating(arg_5_0)
+	local var_5_0 = 0
+	local var_5_1 = 0.3
 
-	shiftPanel(slot0._middle, -840, nil, slot2, slot1, true, true)
-	shiftPanel(slot0._right, 470, nil, slot2, slot1, true, true)
-	shiftPanel(slot0.topPanel, nil, slot0.topPanel.rect.height, slot2, slot1, true, true, nil, )
+	shiftPanel(arg_5_0._middle, -840, nil, var_5_1, var_5_0, true, true)
+	shiftPanel(arg_5_0._right, 470, nil, var_5_1, var_5_0, true, true)
+	shiftPanel(arg_5_0.topPanel, nil, arg_5_0.topPanel.rect.height, var_5_1, var_5_0, true, true, nil, nil)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._backBtn, function ()
-		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0._backBtn, function()
+		GetOrAddComponent(arg_6_0._tf, typeof(CanvasGroup)).interactable = false
 
-		uv0:uiExitAnimating()
-		LeanTween.delayedCall(0.3, System.Action(function ()
-			uv0:emit(uv1.ON_CLOSE)
+		arg_6_0:uiExitAnimating()
+		LeanTween.delayedCall(0.3, System.Action(function()
+			arg_6_0:emit(var_0_0.ON_CLOSE)
 		end))
 	end, SFX_CANCEL)
-	onButton(slot0, slot0._startBtn, function ()
-		for slot4, slot5 in pairs(uv0.fleet.ships) do
-			slot6, slot7 = ShipStatus.ShipStatusConflict("inActivity", slot5, {
+	onButton(arg_6_0, arg_6_0._startBtn, function()
+		local var_9_0 = arg_6_0.fleet.ships
+
+		for iter_9_0, iter_9_1 in pairs(var_9_0) do
+			local var_9_1, var_9_2 = ShipStatus.ShipStatusConflict("inActivity", iter_9_1, {
 				inActivity = false
 			})
 
-			if slot6 == ShipStatus.STATE_CHANGE_FAIL then
-				pg.TipsMgr.GetInstance():ShowTips(i18n(slot7))
+			if var_9_1 == ShipStatus.STATE_CHANGE_FAIL then
+				pg.TipsMgr.GetInstance():ShowTips(i18n(var_9_2))
 
 				return
 			end
 		end
 
-		uv0:emit(ChallengePreCombatMediator.ON_START)
+		arg_6_0:emit(ChallengePreCombatMediator.ON_START)
 	end, SFX_UI_WEIGHANCHOR)
-	onToggle(slot0, slot0._autoToggle, function (slot0)
-		uv0:emit(ChallengePreCombatMediator.ON_AUTO, {
-			isOn = not slot0,
-			toggle = uv0._autoToggle
+	onToggle(arg_6_0, arg_6_0._autoToggle, function(arg_10_0)
+		arg_6_0:emit(ChallengePreCombatMediator.ON_AUTO, {
+			isOn = not arg_10_0,
+			toggle = arg_6_0._autoToggle
 		})
 
-		if slot0 and uv0.subUseable == true then
-			setActive(uv0._autoSubToggle, true)
-			onToggle(uv0, uv0._autoSubToggle, function (slot0)
-				uv0:emit(ChallengePreCombatMediator.ON_SUB_AUTO, {
-					isOn = not slot0,
-					toggle = uv0._autoSubToggle
+		if arg_10_0 and arg_6_0.subUseable == true then
+			setActive(arg_6_0._autoSubToggle, true)
+			onToggle(arg_6_0, arg_6_0._autoSubToggle, function(arg_11_0)
+				arg_6_0:emit(ChallengePreCombatMediator.ON_SUB_AUTO, {
+					isOn = not arg_11_0,
+					toggle = arg_6_0._autoSubToggle
 				})
 			end, SFX_PANEL, SFX_PANEL)
-			triggerToggle(uv0._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
+			triggerToggle(arg_6_0._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
 		else
-			setActive(uv0._autoSubToggle, false)
+			setActive(arg_6_0._autoSubToggle, false)
 		end
 	end, SFX_PANEL, SFX_PANEL)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	setParent(slot0.strategyInfo, slot0._tf.parent)
-	triggerToggle(slot0._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
-	setAnchoredPosition(slot0.topPanel, {
-		y = slot0.topPanel.rect.height
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
+	setParent(arg_6_0.strategyInfo, arg_6_0._tf.parent)
+	triggerToggle(arg_6_0._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
+	setAnchoredPosition(arg_6_0.topPanel, {
+		y = arg_6_0.topPanel.rect.height
 	})
-	onNextTick(function ()
-		uv0:uiStartAnimating()
+	onNextTick(function()
+		arg_6_0:uiStartAnimating()
 	end)
 end
 
-function slot0.Register(slot0)
-	slot0._formationLogic:AddHeroInfoModify(function (slot0, slot1)
-		setAnchoredPosition(slot0, {
+function var_0_0.Register(arg_13_0)
+	arg_13_0._formationLogic:AddHeroInfoModify(function(arg_14_0, arg_14_1)
+		setAnchoredPosition(arg_14_0, {
 			x = 0,
 			y = 0
 		})
-		SetActive(slot0, true)
+		SetActive(arg_14_0, true)
 
-		slot0.name = "info"
-		slot3 = findTF(findTF(slot0, "info"), "stars")
-		slot5 = findTF(slot2, "energy")
+		arg_14_0.name = "info"
 
-		if slot1:getEnergy() <= Ship.ENERGY_MID then
-			slot6, slot7 = slot1:getEnergyPrint()
+		local var_14_0 = findTF(arg_14_0, "info")
+		local var_14_1 = findTF(var_14_0, "stars")
+		local var_14_2 = arg_14_1:getEnergy() <= Ship.ENERGY_MID
+		local var_14_3 = findTF(var_14_0, "energy")
 
-			if not GetSpriteFromAtlas("energy", slot6) then
+		if var_14_2 then
+			local var_14_4, var_14_5 = arg_14_1:getEnergyPrint()
+			local var_14_6 = GetSpriteFromAtlas("energy", var_14_4)
+
+			if not var_14_6 then
 				warning("找不到疲劳")
 			end
 
-			setImageSprite(slot5, slot8)
+			setImageSprite(var_14_3, var_14_6)
 		end
 
-		setActive(slot5, slot4)
+		setActive(var_14_3, var_14_2)
 
-		for slot10 = 1, slot1:getStar() do
-			cloneTplTo(uv0._starTpl, slot3)
+		local var_14_7 = arg_14_1:getStar()
+
+		for iter_14_0 = 1, var_14_7 do
+			cloneTplTo(arg_13_0._starTpl, var_14_1)
 		end
 
-		if not GetSpriteFromAtlas("shiptype", shipType2print(slot1:getShipType())) then
-			warning("找不到船形, shipConfigId: " .. slot1.configId)
+		local var_14_8 = GetSpriteFromAtlas("shiptype", shipType2print(arg_14_1:getShipType()))
+
+		if not var_14_8 then
+			warning("找不到船形, shipConfigId: " .. arg_14_1.configId)
 		end
 
-		setImageSprite(findTF(slot2, "type"), slot7, true)
-		setText(findTF(slot2, "frame/lv_contain/lv"), slot1.level)
+		setImageSprite(findTF(var_14_0, "type"), var_14_8, true)
+		setText(findTF(var_14_0, "frame/lv_contain/lv"), arg_14_1.level)
 
-		slot8 = findTF(slot2, "blood")
-		slot10 = findTF(slot8, "fillarea/red")
+		local var_14_9 = findTF(var_14_0, "blood")
+		local var_14_10 = findTF(var_14_9, "fillarea/green")
+		local var_14_11 = findTF(var_14_9, "fillarea/red")
 
-		setActive(findTF(slot8, "fillarea/green"), ChapterConst.HpGreen <= slot1.hpRant)
-		setActive(slot10, slot1.hpRant < ChapterConst.HpGreen)
+		setActive(var_14_10, arg_14_1.hpRant >= ChapterConst.HpGreen)
+		setActive(var_14_11, arg_14_1.hpRant < ChapterConst.HpGreen)
 
-		(ChapterConst.HpGreen <= slot1.hpRant and slot9 or slot10):GetComponent("Image").fillAmount = slot1.hpRant * 0.0001
+		;(arg_14_1.hpRant >= ChapterConst.HpGreen and var_14_10 or var_14_11):GetComponent("Image").fillAmount = arg_14_1.hpRant * 0.0001
 
-		setActive(slot2:Find("expbuff"), false)
+		local var_14_12 = var_14_0:Find("expbuff")
+
+		setActive(var_14_12, false)
 	end)
-	slot0._formationLogic:AddShiftOnly(function (slot0)
-		uv0:updateView(false)
+	arg_13_0._formationLogic:AddShiftOnly(function(arg_15_0)
+		arg_13_0:updateView(false)
 	end)
-	slot0._formationLogic:AddCheckRemove(function (slot0, slot1)
-		slot0()
+	arg_13_0._formationLogic:AddCheckRemove(function(arg_16_0, arg_16_1)
+		arg_16_0()
 	end)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.strategyPanel and slot0.strategyPanel._go and isActive(slot0.strategyPanel._go) then
+function var_0_0.onBackPressed(arg_17_0)
+	if arg_17_0.strategyPanel and arg_17_0.strategyPanel._go and isActive(arg_17_0.strategyPanel._go) then
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 	else
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
-		triggerButton(slot0._backBtn)
+		triggerButton(arg_17_0._backBtn)
 	end
 end
 
-function slot0.setPlayerInfo(slot0, slot1)
+function var_0_0.setPlayerInfo(arg_18_0, arg_18_1)
+	return
 end
 
-function slot0.updateChallenge(slot0, slot1)
-	slot0.challenge = slot1
-	slot0.fleet = slot1:getRegularFleet()
+function var_0_0.updateChallenge(arg_19_0, arg_19_1)
+	arg_19_0.challenge = arg_19_1
+	arg_19_0.fleet = arg_19_1:getRegularFleet()
 
-	slot0._formationLogic:SetFleetVO(slot0.fleet)
-	slot0._formationLogic:SetShipVOs(slot0.fleet.ships)
-	slot0:updateView(true)
+	local var_19_0 = arg_19_0.fleet.ships
+
+	arg_19_0._formationLogic:SetFleetVO(arg_19_0.fleet)
+	arg_19_0._formationLogic:SetShipVOs(var_19_0)
+	arg_19_0:updateView(true)
 end
 
-function slot0.setSubFlag(slot0, slot1)
-	slot0.subUseable = slot1 or false
+function var_0_0.setSubFlag(arg_20_0, arg_20_1)
+	arg_20_0.subUseable = arg_20_1 or false
 end
 
-function slot0.updateView(slot0, slot1)
-	slot0._formationLogic:ResetGrid(TeamType.Vanguard)
-	slot0._formationLogic:ResetGrid(TeamType.Main)
-	SetActive(slot0._gridTFs[TeamType.Main][1]:Find("flag"), true)
+function var_0_0.updateView(arg_21_0, arg_21_1)
+	arg_21_0._formationLogic:ResetGrid(TeamType.Vanguard)
+	arg_21_0._formationLogic:ResetGrid(TeamType.Main)
+	SetActive(arg_21_0._gridTFs[TeamType.Main][1]:Find("flag"), true)
 
-	if slot1 then
-		slot0:updateStageView()
-		slot0._formationLogic:LoadAllCharacter()
+	if arg_21_1 then
+		arg_21_0:updateStageView()
+		arg_21_0._formationLogic:LoadAllCharacter()
 	else
-		slot0._formationLogic:SetAllCharacterPos()
+		arg_21_0._formationLogic:SetAllCharacterPos()
 	end
 
-	slot0:updateBattleFleetView()
-	slot0:displayFleetInfo()
+	arg_21_0:updateBattleFleetView()
+	arg_21_0:displayFleetInfo()
 end
 
-function slot0.updateStageView(slot0)
-	slot4 = 1
+function var_0_0.updateStageView(arg_22_0)
+	local function var_22_0(arg_23_0, arg_23_1)
+		if type(arg_23_0) == "table" then
+			setActive(arg_23_1, true)
 
-	for slot8, slot9 in ipairs({
+			local var_23_0 = i18n(PreCombatLayer.ObjectiveList[arg_23_0[1]], arg_23_0[2])
+
+			setWidgetText(arg_23_1, var_23_0)
+		else
+			setActive(arg_23_1, false)
+		end
+	end
+
+	local var_22_1 = {
+		findTF(arg_22_0._goals, "goal_tpl"),
+		findTF(arg_22_0._goals, "goal_sink"),
+		findTF(arg_22_0._goals, "goal_time")
+	}
+	local var_22_2 = {
 		{
 			1
 		},
 		false,
 		false
-	}) do
-		if type(slot9) ~= "string" then
-			function (slot0, slot1)
-				if type(slot0) == "table" then
-					setActive(slot1, true)
-					setWidgetText(slot1, i18n(PreCombatLayer.ObjectiveList[slot0[1]], slot0[2]))
-				else
-					setActive(slot1, false)
-				end
-			end(slot9, ({
-				findTF(slot0._goals, "goal_tpl"),
-				findTF(slot0._goals, "goal_sink"),
-				findTF(slot0._goals, "goal_time")
-			})[slot4])
+	}
+	local var_22_3 = 1
 
-			slot4 = slot4 + 1
+	for iter_22_0, iter_22_1 in ipairs(var_22_2) do
+		if type(iter_22_1) ~= "string" then
+			var_22_0(iter_22_1, var_22_1[var_22_3])
+
+			var_22_3 = var_22_3 + 1
 		end
 	end
 end
 
-function slot0.updateBattleFleetView(slot0)
-	function slot1(slot0, slot1)
-		removeAllChildren(slot0)
+function var_0_0.updateBattleFleetView(arg_24_0)
+	local function var_24_0(arg_25_0, arg_25_1)
+		removeAllChildren(arg_25_0)
 
-		for slot5 = 1, 3 do
-			if slot1[slot5] then
-				slot6 = cloneTplTo(uv0._ship_tpl, slot0)
+		for iter_25_0 = 1, 3 do
+			if arg_25_1[iter_25_0] then
+				local var_25_0 = cloneTplTo(arg_24_0._ship_tpl, arg_25_0)
 
-				updateShip(slot6, slot1[slot5])
+				updateShip(var_25_0, arg_25_1[iter_25_0])
 
-				slot8 = findTF(slot6, "blood")
-				slot10 = findTF(slot6, "blood/fillarea/red")
+				local var_25_1 = arg_25_1[iter_25_0].hpRant
+				local var_25_2 = findTF(var_25_0, "blood")
+				local var_25_3 = findTF(var_25_0, "blood/fillarea/green")
+				local var_25_4 = findTF(var_25_0, "blood/fillarea/red")
 
-				setActive(findTF(slot6, "blood/fillarea/green"), ChapterConst.HpGreen <= slot1[slot5].hpRant)
-				setActive(slot10, slot7 < ChapterConst.HpGreen)
+				setActive(var_25_3, var_25_1 >= ChapterConst.HpGreen)
+				setActive(var_25_4, var_25_1 < ChapterConst.HpGreen)
 
-				(ChapterConst.HpGreen <= slot7 and slot9 or slot10):GetComponent("Image").fillAmount = slot7 * 0.0001
+				;(var_25_1 >= ChapterConst.HpGreen and var_25_3 or var_25_4):GetComponent("Image").fillAmount = var_25_1 * 0.0001
 			end
 		end
 	end
 
-	slot2 = slot0.challenge:getRegularFleet()
+	local var_24_1 = arg_24_0.challenge:getRegularFleet()
 
-	slot1(slot0._fleet:Find("main"), slot2:getShipsByTeam(TeamType.Main, true))
-	slot1(slot0._fleet:Find("vanguard"), slot2:getShipsByTeam(TeamType.Vanguard, true))
+	var_24_0(arg_24_0._fleet:Find("main"), var_24_1:getShipsByTeam(TeamType.Main, true))
+	var_24_0(arg_24_0._fleet:Find("vanguard"), var_24_1:getShipsByTeam(TeamType.Vanguard, true))
 end
 
-function slot0.displayFleetInfo(slot0)
-	slot1 = slot0.challenge:getRegularFleet()
-	slot2 = slot1:getCommanders()
+function var_0_0.displayFleetInfo(arg_26_0)
+	local var_26_0 = arg_26_0.challenge:getRegularFleet()
+	local var_26_1 = var_26_0:getCommanders()
+	local var_26_2 = _.reduce(var_26_0:getShipsByTeam(TeamType.Vanguard, false), 0, function(arg_27_0, arg_27_1)
+		return arg_27_0 + arg_27_1:getShipCombatPower(var_26_1)
+	end)
+	local var_26_3 = _.reduce(var_26_0:getShipsByTeam(TeamType.Main, false), 0, function(arg_28_0, arg_28_1)
+		return arg_28_0 + arg_28_1:getShipCombatPower(var_26_1)
+	end)
 
-	FormationUI.tweenNumText(slot0._vanguardGS, _.reduce(slot1:getShipsByTeam(TeamType.Vanguard, false), 0, function (slot0, slot1)
-		return slot0 + slot1:getShipCombatPower(uv0)
-	end))
-	FormationUI.tweenNumText(slot0._mainGS, _.reduce(slot1:getShipsByTeam(TeamType.Main, false), 0, function (slot0, slot1)
-		return slot0 + slot1:getShipCombatPower(uv0)
-	end))
+	FormationUI.tweenNumText(arg_26_0._vanguardGS, var_26_2)
+	FormationUI.tweenNumText(arg_26_0._mainGS, var_26_3)
 end
 
-function slot0.willExit(slot0)
-	setParent(slot0.strategyInfo, slot0._tf)
-	slot0._formationLogic:Destroy()
+function var_0_0.willExit(arg_29_0)
+	setParent(arg_29_0.strategyInfo, arg_29_0._tf)
+	arg_29_0._formationLogic:Destroy()
 
-	slot0._formationLogic = nil
+	arg_29_0._formationLogic = nil
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_29_0._tf)
 end
 
-return slot0
+return var_0_0

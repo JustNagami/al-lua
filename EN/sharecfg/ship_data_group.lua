@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_group = setmetatable({
 	__name = "ship_data_group",
 	get_id_list_by_group_type = {
@@ -3637,41 +3637,6 @@ pg.base.ship_data_group = {
 			}
 		}
 	},
-	{
-		type = 1,
-		redirect_id = 101,
-		hide = 0,
-		nationality = 1,
-		trans_skin = 0,
-		handbook_type = 0,
-		index_id = 7,
-		code = 4,
-		group_type = 10102,
-		trans_type = 0,
-		share_group_id = {},
-		property_hexagon = {
-			"C",
-			"C",
-			"E",
-			"B",
-			"C",
-			"C"
-		},
-		trans_radar_chart = {},
-		trans_skill = {},
-		description = {
-			{
-				"Explore Chapter 13-3",
-				{
-					"LEVEL",
-					{
-						chapterid = 1303
-					}
-				},
-				0
-			}
-		}
-	},
 	[5] = {
 		type = 1,
 		redirect_id = 101,
@@ -3841,6 +3806,41 @@ pg.base.ship_data_group = {
 					"LEVEL",
 					{
 						chapterid = 202
+					}
+				},
+				0
+			}
+		}
+	},
+	{
+		type = 1,
+		redirect_id = 101,
+		hide = 0,
+		nationality = 1,
+		trans_skin = 0,
+		handbook_type = 0,
+		index_id = 7,
+		code = 4,
+		group_type = 10102,
+		trans_type = 0,
+		share_group_id = {},
+		property_hexagon = {
+			"C",
+			"C",
+			"E",
+			"B",
+			"C",
+			"C"
+		},
+		trans_radar_chart = {},
+		trans_skill = {},
+		description = {
+			{
+				"Explore Chapter 13-3",
+				{
+					"LEVEL",
+					{
+						chapterid = 1303
 					}
 				},
 				0

@@ -1,16 +1,19 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_361 = {}
-slot1 = slot0.word_template_361
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_361 = {}
+
+local var_0_1 = var_0_0.word_template_361
 
 function temp()
-	uv0["組"] = {
-		["裝"] = {
-			["錄"] = {
-				["音"] = {
-					["監"] = {
-						["聽"] = {
-							["器"] = {
+	var_0_1.組 = {
+		裝 = {
+			錄 = {
+				音 = {
+					監 = {
+						聽 = {
+							器 = {
 								this = true
 							}
 						}
@@ -24,7 +27,7 @@ end
 temp()
 
 function temp()
-	uv0["躜"] = {
+	var_0_1.躜 = {
 		this = {
 			this = true
 		}
@@ -34,7 +37,7 @@ end
 temp()
 
 function temp()
-	uv0["躦"] = {
+	var_0_1.躦 = {
 		this = {
 			this = true
 		}
@@ -44,7 +47,7 @@ end
 temp()
 
 function temp()
-	uv0["缵"] = {
+	var_0_1.缵 = {
 		this = {
 			this = true
 		}
@@ -54,7 +57,7 @@ end
 temp()
 
 function temp()
-	uv0["纘"] = {
+	var_0_1.纘 = {
 		this = {
 			this = true
 		}
@@ -64,20 +67,20 @@ end
 temp()
 
 function temp()
-	uv0["钻"] = {
-		["插"] = {
+	var_0_1.钻 = {
+		插 = {
 			this = true
 		},
-		["石"] = {
-			["冰"] = {
+		石 = {
+			冰 = {
 				this = true
 			},
-			["欲"] = {
-				["火"] = {
+			欲 = {
+				火 = {
 					this = true
 				}
 			},
-			["杯"] = {
+			杯 = {
 				this = true
 			}
 		}
@@ -87,8 +90,8 @@ end
 temp()
 
 function temp()
-	uv0["鑽"] = {
-		["插"] = {
+	var_0_1.鑽 = {
+		插 = {
 			this = true
 		}
 	}

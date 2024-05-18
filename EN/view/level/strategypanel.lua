@@ -1,57 +1,58 @@
-slot0 = class("StrategyPanel", import("..base.BasePanel"))
+﻿local var_0_0 = class("StrategyPanel", import("..base.BasePanel"))
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
 
-	slot0.icon = slot0:findTF("window/panel/item/icon_bg/icon")
-	slot0.count = slot0:findTF("window/panel/item/icon_bg/count")
-	slot0.name = slot0:findTF("window/panel/item/name")
-	slot0.desc = slot0:findTF("window/panel/item/desc")
-	slot0.btnCancel = slot0:findTF("window/panel/actions/cancel_button")
-	slot0.btnUse = slot0:findTF("window/panel/actions/use_button")
-	slot0.btnBack = slot0:findTF("top/btnBack")
-	slot0.tips = slot0:findTF("window/panel/tips")
-	slot0.txSwitch = findTF(slot0.btnUse, "switch")
-	slot0.txUse = findTF(slot0.btnUse, "use")
-	slot0.onConfirm = nil
-	slot0.onCancel = nil
+	arg_1_0.icon = arg_1_0:findTF("window/panel/item/icon_bg/icon")
+	arg_1_0.count = arg_1_0:findTF("window/panel/item/icon_bg/count")
+	arg_1_0.name = arg_1_0:findTF("window/panel/item/name")
+	arg_1_0.desc = arg_1_0:findTF("window/panel/item/desc")
+	arg_1_0.btnCancel = arg_1_0:findTF("window/panel/actions/cancel_button")
+	arg_1_0.btnUse = arg_1_0:findTF("window/panel/actions/use_button")
+	arg_1_0.btnBack = arg_1_0:findTF("top/btnBack")
+	arg_1_0.tips = arg_1_0:findTF("window/panel/tips")
+	arg_1_0.txSwitch = findTF(arg_1_0.btnUse, "switch")
+	arg_1_0.txUse = findTF(arg_1_0.btnUse, "use")
+	arg_1_0.onConfirm = nil
+	arg_1_0.onCancel = nil
 end
 
-function slot0.set(slot0, slot1)
-	slot0.strategy = slot1
-	slot2 = pg.strategy_data_template[slot1.id]
+function var_0_0.set(arg_2_0, arg_2_1)
+	arg_2_0.strategy = arg_2_1
 
-	GetImageSpriteFromAtlasAsync("strategyicon/" .. slot2.icon, "", slot0.icon)
+	local var_2_0 = pg.strategy_data_template[arg_2_1.id]
 
-	if slot2.type == 1 then
-		setText(slot0.count, "")
-		setActive(slot0.tips, true)
-		setActive(slot0.txSwitch, true)
-		setActive(slot0.txUse, false)
+	GetImageSpriteFromAtlasAsync("strategyicon/" .. var_2_0.icon, "", arg_2_0.icon)
+
+	if var_2_0.type == 1 then
+		setText(arg_2_0.count, "")
+		setActive(arg_2_0.tips, true)
+		setActive(arg_2_0.txSwitch, true)
+		setActive(arg_2_0.txUse, false)
 	else
-		setText(slot0.count, slot1.count)
-		setActive(slot0.tips, false)
-		setActive(slot0.txSwitch, false)
-		setActive(slot0.txUse, true)
+		setText(arg_2_0.count, arg_2_1.count)
+		setActive(arg_2_0.tips, false)
+		setActive(arg_2_0.txSwitch, false)
+		setActive(arg_2_0.txUse, true)
 	end
 
-	setText(slot0.name, slot2.name)
-	setText(slot0.desc, slot2.desc)
-	onButton(slot0, slot0.btnBack, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	setText(arg_2_0.name, var_2_0.name)
+	setText(arg_2_0.desc, var_2_0.desc)
+	onButton(arg_2_0, arg_2_0.btnBack, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnCancel, function ()
-		if uv0.onCancel then
-			uv0.onCancel()
+	onButton(arg_2_0, arg_2_0.btnCancel, function()
+		if arg_2_0.onCancel then
+			arg_2_0.onCancel()
 		end
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.btnUse, function ()
-		if uv0.onConfirm then
-			uv0.onConfirm()
+	onButton(arg_2_0, arg_2_0.btnUse, function()
+		if arg_2_0.onConfirm then
+			arg_2_0.onConfirm()
 		end
 	end, SFX_CONFIRM)
 end
 
-return slot0
+return var_0_0

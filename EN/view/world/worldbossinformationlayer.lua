@@ -1,530 +1,604 @@
-slot0 = class("WorldBossInformationLayer", import("view.base.BaseUI"))
-slot1 = 25
-slot2 = 7.2
+﻿local var_0_0 = class("WorldBossInformationLayer", import("view.base.BaseUI"))
+local var_0_1 = 25
+local var_0_2 = 7.2
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldBossInformationUI"
 end
 
-function slot0.init(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.layer = slot0:findTF("fixed")
-	slot0.top = slot0:findTF("top", slot0.layer)
-	slot0.backBtn = slot0.top:Find("back_btn")
-	slot0.homeBtn = slot0.top:Find("option")
-	slot0.playerResOb = slot0.top:Find("playerRes")
-	slot0.resPanel = WorldResource.New()
+function var_0_0.init(arg_2_0)
+	arg_2_0.bg = arg_2_0:findTF("bg")
+	arg_2_0.layer = arg_2_0:findTF("fixed")
+	arg_2_0.top = arg_2_0:findTF("top", arg_2_0.layer)
+	arg_2_0.backBtn = arg_2_0.top:Find("back_btn")
+	arg_2_0.homeBtn = arg_2_0.top:Find("option")
+	arg_2_0.playerResOb = arg_2_0.top:Find("playerRes")
+	arg_2_0.resPanel = WorldResource.New()
 
-	tf(slot0.resPanel._go):SetParent(tf(slot0.playerResOb), false)
+	tf(arg_2_0.resPanel._go):SetParent(tf(arg_2_0.playerResOb), false)
 
-	slot0.startBtn = slot0.layer:Find("battle")
-	slot0.retreatBtn = slot0.layer:Find("retreat")
-	slot0.hpbar = slot0.layer:Find("hp")
-	slot1 = slot0.layer:Find("drop")
-	slot0.dropitems = CustomIndexLayer.Clone2Full(slot1:Find("items"), 5)
-	slot0.dropright = slot1:Find("right")
-	slot0.dropleft = slot1:Find("left")
-	slot0.awardBtn = slot0.layer:Find("showAward")
-	slot0.weaknesstext = slot0.layer:Find("text")
-	slot0.weaknessbg = slot0.layer:Find("boss_ruodian")
-	slot0.downBG = slot0.layer:Find("BlurBG")
-	slot0.buffListTF = slot0.layer:Find("BuffList")
-	slot0.buffListAnimator = slot0.buffListTF:GetComponent(typeof(Animator))
-	slot0.AdditionBuffTF = slot0.layer:Find("BuffList/tezhuangmokuai")
-	slot0.AdditionBuffContainer = slot0.AdditionBuffTF:Find("buff")
-	slot0.EquipmentBuffTF = slot0.layer:Find("BuffList/wuzhuangjiexi")
-	slot0.EquipmentBuffContainer = slot0.EquipmentBuffTF:Find("buff")
-	slot0.switchBuffBtn = slot0.layer:Find("BuffList/Switcher")
-	slot0.ShowBuffIndex = 0
-	slot0.attributeRoot = slot0.layer:Find("attributes")
-	slot0.attributeRootAnchorY = slot0.attributeRoot.anchoredPosition.y
-	slot5 = "attributes"
-	slot0.attributes = CustomIndexLayer.Clone2Full(slot0.layer:Find(slot5), 3)
+	arg_2_0.startBtn = arg_2_0.layer:Find("battle")
+	arg_2_0.retreatBtn = arg_2_0.layer:Find("retreat")
+	arg_2_0.hpbar = arg_2_0.layer:Find("hp")
 
-	for slot5 = 1, #slot0.attributes do
-		slot0.attributes[slot5]:Find("extra").gameObject:SetActive(false)
-		setText(slot0.attributes[slot5]:Find("extra/desc"), i18n("world_mapbuff_compare_txt") .. "：")
+	local var_2_0 = arg_2_0.layer:Find("drop")
+
+	arg_2_0.dropitems = CustomIndexLayer.Clone2Full(var_2_0:Find("items"), 5)
+	arg_2_0.dropright = var_2_0:Find("right")
+	arg_2_0.dropleft = var_2_0:Find("left")
+	arg_2_0.awardBtn = arg_2_0.layer:Find("showAward")
+	arg_2_0.weaknesstext = arg_2_0.layer:Find("text")
+	arg_2_0.weaknessbg = arg_2_0.layer:Find("boss_ruodian")
+	arg_2_0.downBG = arg_2_0.layer:Find("BlurBG")
+	arg_2_0.buffListTF = arg_2_0.layer:Find("BuffList")
+	arg_2_0.buffListAnimator = arg_2_0.buffListTF:GetComponent(typeof(Animator))
+	arg_2_0.AdditionBuffTF = arg_2_0.layer:Find("BuffList/tezhuangmokuai")
+	arg_2_0.AdditionBuffContainer = arg_2_0.AdditionBuffTF:Find("buff")
+	arg_2_0.EquipmentBuffTF = arg_2_0.layer:Find("BuffList/wuzhuangjiexi")
+	arg_2_0.EquipmentBuffContainer = arg_2_0.EquipmentBuffTF:Find("buff")
+	arg_2_0.switchBuffBtn = arg_2_0.layer:Find("BuffList/Switcher")
+	arg_2_0.ShowBuffIndex = 0
+	arg_2_0.attributeRoot = arg_2_0.layer:Find("attributes")
+	arg_2_0.attributeRootAnchorY = arg_2_0.attributeRoot.anchoredPosition.y
+	arg_2_0.attributes = CustomIndexLayer.Clone2Full(arg_2_0.layer:Find("attributes"), 3)
+
+	for iter_2_0 = 1, #arg_2_0.attributes do
+		arg_2_0.attributes[iter_2_0]:Find("extra").gameObject:SetActive(false)
+		setText(arg_2_0.attributes[iter_2_0]:Find("extra/desc"), i18n("world_mapbuff_compare_txt") .. "：")
 	end
 
-	slot2 = slot0.layer:Find("bossname")
-	slot0.bossnameText = slot2:Find("name"):GetComponent(typeof(Text))
-	slot0.bossNameBanner = slot2:Find("name/banner")
-	slot0.bosslevel = slot0.bossNameBanner:Find("level")
-	slot0.bosslogos = {
-		slot2:Find("name/bosslogo_01"),
-		slot2:Find("name/bosslogo_02")
+	local var_2_1 = arg_2_0.layer:Find("bossname")
+
+	arg_2_0.bossnameText = var_2_1:Find("name"):GetComponent(typeof(Text))
+	arg_2_0.bossNameBanner = var_2_1:Find("name/banner")
+	arg_2_0.bosslevel = arg_2_0.bossNameBanner:Find("level")
+	arg_2_0.bosslogos = {
+		var_2_1:Find("name/bosslogo_01"),
+		(var_2_1:Find("name/bosslogo_02"))
 	}
-	slot0.bossTypeIcon = slot0.bossNameBanner:Find("Type/Icon")
-	slot0.bossArmorText = slot0.bossNameBanner:Find("Type/Armor")
-	slot0.saomiaoxian = slot0.layer:Find("saomiao")
-	slot0.bosssprite = slot0.saomiaoxian:Find("qimage")
-	slot0.dangerMark = slot0.layer:Find("danger_mark")
-	slot0.loader = AutoLoader.New()
-	slot0.dungeonDict = {}
+	arg_2_0.bossTypeIcon = arg_2_0.bossNameBanner:Find("Type/Icon")
+	arg_2_0.bossArmorText = arg_2_0.bossNameBanner:Find("Type/Armor")
+	arg_2_0.saomiaoxian = arg_2_0.layer:Find("saomiao")
+	arg_2_0.bosssprite = arg_2_0.saomiaoxian:Find("qimage")
+	arg_2_0.dangerMark = arg_2_0.layer:Find("danger_mark")
+	arg_2_0.loader = AutoLoader.New()
+	arg_2_0.dungeonDict = {}
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.homeBtn, function ()
-		uv0:quickExitFunc()
+	onButton(arg_3_0, arg_3_0.homeBtn, function()
+		arg_3_0:quickExitFunc()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.startBtn, function ()
-		uv0:emit(WorldBossInformationMediator.OnOpenSublayer, Context.New({
+	onButton(arg_3_0, arg_3_0.startBtn, function()
+		arg_3_0:emit(WorldBossInformationMediator.OnOpenSublayer, Context.New({
 			mediator = WorldPreCombatMediator,
 			viewComponent = WorldPreCombatLayer
-		}), true, function ()
-			uv0:closeView()
+		}), true, function()
+			arg_3_0:closeView()
 		end)
 	end, SFX_UI_WEIGHANCHOR)
-	onButton(slot0, slot0.retreatBtn, function ()
-		uv0:emit(WorldBossInformationMediator.RETREAT_FLEET)
-		uv0:closeView()
+	onButton(arg_3_0, arg_3_0.retreatBtn, function()
+		arg_3_0:emit(WorldBossInformationMediator.RETREAT_FLEET)
+		arg_3_0:closeView()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.switchBuffBtn, function ()
-		uv0.ShowBuffIndex = 1 - uv0.ShowBuffIndex
+	onButton(arg_3_0, arg_3_0.switchBuffBtn, function()
+		arg_3_0.ShowBuffIndex = 1 - arg_3_0.ShowBuffIndex
 
-		uv0.buffListAnimator:Play(uv0.ShowBuffIndex == 1 and "switchOn" or "switchOff", -1, 0)
+		local var_9_0 = arg_3_0.ShowBuffIndex == 1 and "switchOn" or "switchOff"
+
+		arg_3_0.buffListAnimator:Play(var_9_0, -1, 0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.awardBtn, function ()
-		uv0:GetAwardPanel().buffer:UpdateView(uv0:GetCurrentAttachment())
+	onButton(arg_3_0, arg_3_0.awardBtn, function()
+		arg_3_0:GetAwardPanel().buffer:UpdateView(arg_3_0:GetCurrentAttachment())
 	end, SFX_PANEL)
-	slot0:updateStageView()
-	slot0.loader:LoadPrefab("ui/xuetiao01", "", nil, function (slot0)
-		setParent(slot0, uv0.layer)
+	arg_3_0:updateStageView()
+	arg_3_0.loader:LoadPrefab("ui/xuetiao01", "", nil, function(arg_11_0)
+		setParent(arg_11_0, arg_3_0.layer)
 
-		slot1 = tf(slot0):Find("qipao")
+		local var_11_0 = tf(arg_11_0):Find("qipao")
 
-		setParent(slot1, uv0.hpbar:Find("hp"), false)
-		setLocalPosition(slot1, {
+		setParent(var_11_0, arg_3_0.hpbar:Find("hp"), false)
+		setLocalPosition(var_11_0, {
 			x = 0,
 			y = 0
 		})
 
-		slot2 = tf(slot0):Find("xuetiao01")
-		uv0.hpeffectmat = slot2:GetComponent(typeof(Renderer)).material
+		local var_11_1 = tf(arg_11_0):Find("xuetiao01")
 
-		setParent(slot2, uv0.hpbar, false)
-		setLocalPosition(slot2, {
+		arg_3_0.hpeffectmat = var_11_1:GetComponent(typeof(Renderer)).material
+
+		setParent(var_11_1, arg_3_0.hpbar, false)
+		setLocalPosition(var_11_1, {
 			x = 0,
 			y = 0
 		})
-		uv0:UpdateHpbar()
+		arg_3_0:UpdateHpbar()
 	end)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf, {
 		interactableAlways = true
 	})
-	pg.UIMgr.GetInstance():OverlayPanelPB(slot0.layer, {
+	pg.UIMgr.GetInstance():OverlayPanelPB(arg_3_0.layer, {
 		pbList = {
-			slot0.downBG,
-			slot0.attributes[1],
-			slot0.attributes[2],
-			slot0.attributes[3],
-			slot0.top,
-			slot0.AdditionBuffTF,
-			slot0.EquipmentBuffTF
+			arg_3_0.downBG,
+			arg_3_0.attributes[1],
+			arg_3_0.attributes[2],
+			arg_3_0.attributes[3],
+			arg_3_0.top,
+			arg_3_0.AdditionBuffTF,
+			arg_3_0.EquipmentBuffTF
 		},
 		groupName = LayerWeightConst.GROUP_BOSSINFORMATION
 	})
 end
 
-function slot0.setPlayerInfo(slot0, slot1)
-	slot0.resPanel:setPlayer(slot1)
-	setActive(slot0.resPanel._tf, nowWorld():IsSystemOpen(WorldConst.SystemResource))
+function var_0_0.setPlayerInfo(arg_12_0, arg_12_1)
+	arg_12_0.resPanel:setPlayer(arg_12_1)
+	setActive(arg_12_0.resPanel._tf, nowWorld():IsSystemOpen(WorldConst.SystemResource))
 end
 
-function slot0.getCurrentFleet(slot0)
+function var_0_0.getCurrentFleet(arg_13_0)
 	return nowWorld():GetFleet()
 end
 
-function slot0.GetCurrentAttachment(slot0)
-	slot1 = nowWorld():GetActiveMap()
-	slot2 = slot1:GetFleet()
+function var_0_0.GetCurrentAttachment(arg_14_0)
+	local var_14_0 = nowWorld():GetActiveMap()
+	local var_14_1 = var_14_0:GetFleet()
 
-	return slot1:GetCell(slot2.row, slot2.column):GetAliveAttachment(), slot1.config.difficulty
+	return var_14_0:GetCell(var_14_1.row, var_14_1.column):GetAliveAttachment(), var_14_0.config.difficulty
 end
 
-function slot0.GetEnemyLevel(slot0, slot1)
-	if slot1.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
-		return WorldConst.WorldLevelCorrect(nowWorld():GetActiveMap().config.expedition_level, slot1.type)
+function var_0_0.GetEnemyLevel(arg_15_0, arg_15_1)
+	if arg_15_1.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+		local var_15_0 = nowWorld():GetActiveMap()
+
+		return WorldConst.WorldLevelCorrect(var_15_0.config.expedition_level, arg_15_1.type)
 	else
-		return slot1.level
+		return arg_15_1.level
 	end
 end
 
-function slot0.UpdateHpbar(slot0)
-	slot1 = slot0:GetCurrentAttachment()
-	slot2 = slot0:GetDungeonBossData(slot1).bossData.hpBarNum
-	slot4 = math.ceil(slot2 * (slot1:GetHP() or 10000) / 10000)
+function var_0_0.UpdateHpbar(arg_16_0)
+	local var_16_0 = arg_16_0:GetCurrentAttachment()
+	local var_16_1 = arg_16_0:GetDungeonBossData(var_16_0).bossData.hpBarNum
+	local var_16_2 = var_16_0:GetHP() or 10000
+	local var_16_3 = var_16_1 * var_16_2 / 10000
+	local var_16_4 = math.ceil(var_16_3)
 
-	setSlider(slot0.hpbar, 0, slot2, slot4)
-	setText(slot0.hpbar:Find("hpcur"), string.format("%d", slot4))
-	setText(slot0.hpbar:Find("hpamount"), slot2)
+	setSlider(arg_16_0.hpbar, 0, var_16_1, var_16_4)
+	setText(arg_16_0.hpbar:Find("hpcur"), string.format("%d", var_16_4))
+	setText(arg_16_0.hpbar:Find("hpamount"), var_16_1)
 
-	slot5 = slot0.hpbar:Find("hp/mask")
+	local var_16_5 = arg_16_0.hpbar:Find("hp/mask")
 
-	if slot0.hpeffectmat then
-		slot0.hpeffectmat:SetFloat("_Mask", slot3 / 100)
+	if arg_16_0.hpeffectmat then
+		arg_16_0.hpeffectmat:SetFloat("_Mask", var_16_2 / 100)
 
-		slot6 = slot0.hpbar:Find("hp").rect
-		slot5.localScale = Vector3(slot6.width * uv0, slot6.height * uv0, 1)
-		slot5.localPosition = Vector3.zero
+		local var_16_6 = arg_16_0.hpbar:Find("hp").rect
 
-		setLocalScale(slot0.hpbar:Find("xuetiao01"), {
-			x = math.clamp(Screen.width / Screen.height, 1.7777777777777777, 2) / 1.7777777777777777
+		var_16_5.localScale = Vector3(var_16_6.width * var_0_1, var_16_6.height * var_0_1, 1)
+		var_16_5.localPosition = Vector3.zero
+
+		local var_16_7 = math.clamp(Screen.width / Screen.height, 1.7777777777777777, 2) / 1.7777777777777777
+
+		setLocalScale(arg_16_0.hpbar:Find("xuetiao01"), {
+			x = var_16_7
 		})
 	end
 
-	slot9 = pg.world_expedition_data[slot1:GetBattleStageId()] and slot8.phase_drop
+	local var_16_8 = arg_16_0.hpbar:Find("rewards")
+	local var_16_9 = var_16_0:GetBattleStageId()
+	local var_16_10 = pg.world_expedition_data[var_16_9]
+	local var_16_11 = var_16_10 and var_16_10.phase_drop
 
-	setActive(slot0.hpbar:Find("rewards"), slot9 and #slot9 > 0)
+	setActive(var_16_8, var_16_11 and #var_16_11 > 0)
 
-	if slot1:IsPeriodEnemy() then
-		slot10 = math.min(slot3, nowWorld():GetHistoryLowestHP(slot1.id))
+	local var_16_12 = var_16_2
+
+	if var_16_0:IsPeriodEnemy() then
+		var_16_12 = math.min(var_16_12, nowWorld():GetHistoryLowestHP(var_16_0.id))
 	end
 
-	UIItemList.StaticAlign(slot6, slot6:GetChild(0), slot9 and #slot9 or 0, function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(var_16_8, var_16_8:GetChild(0), var_16_11 and #var_16_11 or 0, function(arg_17_0, arg_17_1, arg_17_2)
+		if arg_17_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		slot3 = uv0[slot1 + 1]
-		slot4 = slot3[1] / 10000
-		slot2.anchorMin = Vector2(slot4, 0.5)
-		slot2.anchorMax = Vector2(slot4, 0.5)
+		local var_17_0 = var_16_11[arg_17_1 + 1]
+		local var_17_1 = var_17_0[1] / 10000
 
-		setAnchoredPosition(slot2, {
+		arg_17_2.anchorMin = Vector2(var_17_1, 0.5)
+		arg_17_2.anchorMax = Vector2(var_17_1, 0.5)
+
+		setAnchoredPosition(arg_17_2, {
 			x = 0
 		})
-		uv2.loader:GetSprite("ui/worldbossinformationui_atlas", uv1 <= slot3[1] and "reward_empty" or "reward", slot2)
+
+		local var_17_2 = var_16_12 <= var_17_0[1] and "reward_empty" or "reward"
+
+		arg_16_0.loader:GetSprite("ui/worldbossinformationui_atlas", var_17_2, arg_17_2)
 	end)
 
-	slot11 = slot0.hpbar:Find("kedu")
+	local var_16_13 = arg_16_0.hpbar:Find("kedu")
 
-	setLocalScale(slot11, {
-		x = slot0.hpbar.rect.width / slot11.rect.width
+	setLocalScale(var_16_13, {
+		x = arg_16_0.hpbar.rect.width / var_16_13.rect.width
 	})
 end
 
-function slot0.GetDungeonBossData(slot0, slot1)
-	assert(slot1, "Attachment is null")
+function var_0_0.GetDungeonBossData(arg_18_0, arg_18_1)
+	assert(arg_18_1, "Attachment is null")
 
-	slot2 = slot1.config.dungeon_id
+	local var_18_0 = arg_18_1.config.dungeon_id
+	local var_18_1 = arg_18_0:GetDungeonFile(var_18_0).stages[1].waves
+	local var_18_2
 
-	_.any(slot0:GetDungeonFile(slot2).stages[1].waves, function (slot0)
-		if not slot0.spawn then
+	_.any(var_18_1, function(arg_19_0)
+		if not arg_19_0.spawn then
 			return
 		end
 
-		return _.any(slot0.spawn, function (slot0)
-			if slot0.bossData then
-				uv0 = slot0
+		return _.any(arg_19_0.spawn, function(arg_20_0)
+			if arg_20_0.bossData then
+				var_18_2 = arg_20_0
 
 				return true
 			end
 		end)
 	end)
-	assert(nil, "Cant Find Boss Data in Dungeon: " .. (slot2 or "NIL"))
+	assert(var_18_2, "Cant Find Boss Data in Dungeon: " .. (var_18_0 or "NIL"))
 
-	return slot5
+	return var_18_2
 end
 
-function slot0.GetDungeonFile(slot0, slot1)
-	if slot0.dungeonDict[slot1] then
-		return slot0.dungeonDict[slot1]
+function var_0_0.GetDungeonFile(arg_21_0, arg_21_1)
+	if arg_21_0.dungeonDict[arg_21_1] then
+		return arg_21_0.dungeonDict[arg_21_1]
 	end
 
-	slot2 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(slot1)
-	slot0.dungeonDict[slot1] = slot2
+	local var_21_0 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(arg_21_1)
 
-	return slot2
+	arg_21_0.dungeonDict[arg_21_1] = var_21_0
+
+	return var_21_0
 end
 
-slot3 = 212
-slot4 = 40
-slot5 = "fe2222"
-slot6 = "92fc63"
-slot7 = 70
+local var_0_3 = 212
+local var_0_4 = 40
+local var_0_5 = "fe2222"
+local var_0_6 = "92fc63"
+local var_0_7 = 70
 
-function slot0.updateStageView(slot0)
-	slot1, slot2 = slot0:GetCurrentAttachment()
-	slot3 = slot1:GetBattleStageId()
+function var_0_0.updateStageView(arg_22_0)
+	local var_22_0, var_22_1 = arg_22_0:GetCurrentAttachment()
+	local var_22_2 = var_22_0:GetBattleStageId()
+	local var_22_3 = pg.expedition_data_template[var_22_2]
+	local var_22_4 = pg.world_expedition_data[var_22_2]
 
-	assert(pg.expedition_data_template[slot3], "expedition_data_template not exist: " .. slot3)
+	assert(var_22_3, "expedition_data_template not exist: " .. var_22_2)
 
-	slot6 = {}
+	local var_22_5 = {}
 
-	for slot10, slot11 in ipairs(pg.world_expedition_data[slot3].award_display_world) do
-		if slot2 == slot11[1] then
-			slot6 = slot11[2]
+	for iter_22_0, iter_22_1 in ipairs(var_22_4.award_display_world) do
+		if var_22_1 == iter_22_1[1] then
+			var_22_5 = iter_22_1[2]
 		end
 	end
 
-	slot7 = 0
+	local var_22_6 = 0
 
-	onButton(slot0, slot0.dropright, function ()
-		uv0 = uv0 + 1
+	local function var_22_7()
+		for iter_23_0 = 1, #arg_22_0.dropitems do
+			local var_23_0 = arg_22_0.dropitems[iter_23_0]:Find("item_tpl")
+			local var_23_1 = var_22_5[iter_23_0 + var_22_6]
 
-		uv1()
-	end)
-	onButton(slot0, slot0.dropleft, function ()
-		uv0 = uv0 - 1
+			setActive(var_23_0, var_23_1 ~= nil)
 
-		uv1()
-	end)
-	function ()
-		for slot3 = 1, #uv0.dropitems do
-			setActive(uv0.dropitems[slot3]:Find("item_tpl"), uv1[slot3 + uv2] ~= nil)
+			if var_23_1 then
+				local var_23_2 = {
+					type = var_23_1[1],
+					id = var_23_1[2]
+				}
 
-			if slot5 then
-				updateDrop(slot4, {
-					type = slot5[1],
-					id = slot5[2]
-				})
-				onButton(uv0, slot4, function ()
-					uv0:emit(uv1.ON_DROP, uv2)
+				updateDrop(var_23_0, var_23_2)
+				onButton(arg_22_0, var_23_0, function()
+					arg_22_0:emit(var_0_0.ON_DROP, var_23_2)
 				end, SFX_PANEL)
 			end
 		end
 
-		setActive(uv0.dropleft, uv2 > 0)
-		setActive(uv0.dropright, #uv1 - uv2 > #uv0.dropitems)
-	end()
-	setActive(slot0.awardBtn, slot5.phase_drop_display and #slot5.phase_drop_display > 0)
-	setActive(slot0.weaknesstext, pg.world_SLGbuff_data[slot1:GetWeaknessBuffId()] ~= nil)
-	setActive(slot0.weaknessbg, slot10 ~= nil)
-
-	if slot10 then
-		setText(slot0.weaknesstext, i18n("word_weakness") .. ": " .. slot10.desc)
+		setActive(arg_22_0.dropleft, var_22_6 > 0)
+		setActive(arg_22_0.dropright, #var_22_5 - var_22_6 > #arg_22_0.dropitems)
 	end
 
-	setAnchoredPosition(slot0.attributeRoot, {
-		y = slot0.attributeRootAnchorY - (slot10 == nil and uv1 or 0)
+	onButton(arg_22_0, arg_22_0.dropright, function()
+		var_22_6 = var_22_6 + 1
+
+		var_22_7()
+	end)
+	onButton(arg_22_0, arg_22_0.dropleft, function()
+		var_22_6 = var_22_6 - 1
+
+		var_22_7()
+	end)
+	var_22_7()
+	setActive(arg_22_0.awardBtn, var_22_4.phase_drop_display and #var_22_4.phase_drop_display > 0)
+
+	local var_22_8 = var_22_0:GetWeaknessBuffId()
+	local var_22_9 = pg.world_SLGbuff_data[var_22_8]
+
+	setActive(arg_22_0.weaknesstext, var_22_9 ~= nil)
+	setActive(arg_22_0.weaknessbg, var_22_9 ~= nil)
+
+	if var_22_9 then
+		setText(arg_22_0.weaknesstext, i18n("word_weakness") .. ": " .. var_22_9.desc)
+	end
+
+	local var_22_10 = var_22_9 == nil and var_0_7 or 0
+
+	setAnchoredPosition(arg_22_0.attributeRoot, {
+		y = arg_22_0.attributeRootAnchorY - var_22_10
 	})
-	function ()
-		UIItemList.StaticAlign(uv2.AdditionBuffContainer, uv2.AdditionBuffContainer:GetChild(0), #_.filter(table.mergeArray(uv0:GetBuffList(), nowWorld():GetActiveMap():GetBuffList(WorldMap.FactionEnemy, uv0)), function (slot0)
-			return slot0.id ~= uv0
-		end), function (slot0, slot1, slot2)
-			if slot0 ~= UIItemList.EventUpdate then
+	;(function()
+		local var_27_0 = nowWorld():GetActiveMap()
+		local var_27_1 = table.mergeArray(var_22_0:GetBuffList(), var_27_0:GetBuffList(WorldMap.FactionEnemy, var_22_0))
+		local var_27_2 = _.filter(var_27_1, function(arg_28_0)
+			return arg_28_0.id ~= var_22_8
+		end)
+
+		UIItemList.StaticAlign(arg_22_0.AdditionBuffContainer, arg_22_0.AdditionBuffContainer:GetChild(0), #var_27_2, function(arg_29_0, arg_29_1, arg_29_2)
+			if arg_29_0 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			slot3 = uv0[slot1 + 1]
+			local var_29_0 = var_27_2[arg_29_1 + 1]
 
-			setActive(slot2, slot3)
+			setActive(arg_29_2, var_29_0)
 
-			if slot3 then
-				uv1.loader:GetSprite("world/buff/" .. slot3.config.icon, "", slot2:Find("icon"))
-				setText(slot2:Find("desc"), slot3.config.desc)
+			if var_29_0 then
+				arg_22_0.loader:GetSprite("world/buff/" .. var_29_0.config.icon, "", arg_29_2:Find("icon"))
+				setText(arg_29_2:Find("desc"), var_29_0.config.desc)
 			end
 		end)
-	end()
-	function ()
-		if not uv0.special_buff_display or #slot0 == 0 then
-			slot0 = nil
+	end)()
+	;(function()
+		local var_30_0 = var_22_4.special_buff_display
+
+		if not var_30_0 or #var_30_0 == 0 then
+			var_30_0 = nil
 		end
 
-		setActive(uv1.EquipmentBuffTF, slot0)
-		setActive(uv1.switchBuffBtn, slot0)
+		setActive(arg_22_0.EquipmentBuffTF, var_30_0)
+		setActive(arg_22_0.switchBuffBtn, var_30_0)
 
-		if not slot0 then
+		if not var_30_0 then
 			return
 		end
 
-		UIItemList.StaticAlign(uv1.EquipmentBuffContainer, uv1.EquipmentBuffContainer:GetChild(0), #_.map(slot0, function (slot0)
-			assert("world_SLGbuff_data Missing ID: " .. (slot0 or "NIL"))
+		local var_30_1 = _.map(var_30_0, function(arg_31_0)
+			assert("world_SLGbuff_data Missing ID: " .. (arg_31_0 or "NIL"))
 
-			return pg.world_SLGbuff_data[slot0]
-		end), function (slot0, slot1, slot2)
-			if slot0 ~= UIItemList.EventUpdate then
+			return pg.world_SLGbuff_data[arg_31_0]
+		end)
+
+		UIItemList.StaticAlign(arg_22_0.EquipmentBuffContainer, arg_22_0.EquipmentBuffContainer:GetChild(0), #var_30_1, function(arg_32_0, arg_32_1, arg_32_2)
+			if arg_32_0 ~= UIItemList.EventUpdate then
 				return
 			end
 
-			slot3 = uv0[slot1 + 1]
+			local var_32_0 = var_30_1[arg_32_1 + 1]
 
-			setActive(slot2, slot3)
+			setActive(arg_32_2, var_32_0)
 
-			if slot3 then
-				uv1.loader:GetSprite("world/buff/" .. slot3.icon, "", slot2:Find("icon"))
-				setText(slot2:Find("desc"), slot3.desc)
+			if var_32_0 then
+				arg_22_0.loader:GetSprite("world/buff/" .. var_32_0.icon, "", arg_32_2:Find("icon"))
+				setText(arg_32_2:Find("desc"), var_32_0.desc)
 			end
 		end)
-	end()
+	end)()
 	Canvas.ForceUpdateCanvases()
 
-	slot17 = slot0.buffListTF.sizeDelta
-	slot17.y = math.max(slot0.AdditionBuffTF.rect.height, slot0.EquipmentBuffTF.rect.height) + 50
-	slot0.buffListTF.sizeDelta = slot17
+	local var_22_11 = arg_22_0.AdditionBuffTF.rect.height
+	local var_22_12 = arg_22_0.EquipmentBuffTF.rect.height
+	local var_22_13
 
-	slot0:UpdateHpbar()
+	var_22_13.y, var_22_13 = math.max(var_22_11, var_22_12) + 50, arg_22_0.buffListTF.sizeDelta
+	arg_22_0.buffListTF.sizeDelta = var_22_13
 
-	slot18 = ys.Battle.BattleFormulas
-	slot19 = nowWorld()
-	slot20 = slot19:GetWorldMapDifficultyBuffLevel()
-	slot21 = {
-		slot20[1] * (1 + slot5.expedition_sairenvalueA / 10000),
-		slot20[2] * (1 + slot5.expedition_sairenvalueB / 10000),
-		slot20[3] * (1 + slot5.expedition_sairenvalueC / 10000)
+	arg_22_0:UpdateHpbar()
+
+	local var_22_14 = ys.Battle.BattleFormulas
+	local var_22_15 = nowWorld()
+	local var_22_16 = var_22_15:GetWorldMapDifficultyBuffLevel()
+	local var_22_17 = {
+		var_22_16[1] * (1 + var_22_4.expedition_sairenvalueA / 10000),
+		var_22_16[2] * (1 + var_22_4.expedition_sairenvalueB / 10000),
+		var_22_16[3] * (1 + var_22_4.expedition_sairenvalueC / 10000)
 	}
-	slot22 = slot19:GetWorldMapBuffLevel()
-	slot23, slot24, slot25 = slot18.WorldMapRewardAttrEnhance(slot21, slot22)
-	slot27 = {
-		slot23,
-		slot24,
-		1 - slot18.WorldMapRewardHealingRate(slot21, slot22)
+	local var_22_18 = var_22_15:GetWorldMapBuffLevel()
+	local var_22_19, var_22_20, var_22_21 = var_22_14.WorldMapRewardAttrEnhance(var_22_17, var_22_18)
+	local var_22_22 = 1 - var_22_14.WorldMapRewardHealingRate(var_22_17, var_22_18)
+	local var_22_23 = {
+		var_22_19,
+		var_22_20,
+		var_22_22
 	}
 
-	for slot31 = 1, #slot0.attributes do
-		setText(slot0.attributes[slot31]:Find("digit"), string.format("%d", slot21[slot31]))
-		setText(slot32:Find("desc"), i18n("world_mapbuff_attrtxt_" .. slot31) .. string.format(" %d%%", (slot31 == 3 and 1 - slot27[slot31] or slot27[slot31] + 1) * 100))
+	for iter_22_2 = 1, #arg_22_0.attributes do
+		local var_22_24 = arg_22_0.attributes[iter_22_2]
 
-		slot34 = GetOrAddComponent(slot32, typeof(UILongPressTrigger))
+		setText(var_22_24:Find("digit"), string.format("%d", var_22_17[iter_22_2]))
 
-		slot34.onPressed:RemoveAllListeners()
-		slot34.onReleased:RemoveAllListeners()
+		local var_22_25 = iter_22_2 == 3 and 1 - var_22_23[iter_22_2] or var_22_23[iter_22_2] + 1
 
-		slot35, slot36 = nil
+		setText(var_22_24:Find("desc"), i18n("world_mapbuff_attrtxt_" .. iter_22_2) .. string.format(" %d%%", var_22_25 * 100))
 
-		slot34.onPressed:AddListener(function ()
-			uv0 = go(uv1:Find("extra")).activeSelf
+		local var_22_26 = GetOrAddComponent(var_22_24, typeof(UILongPressTrigger))
 
-			setActive(uv1:Find("extra"), true)
+		var_22_26.onPressed:RemoveAllListeners()
+		var_22_26.onReleased:RemoveAllListeners()
 
-			uv2 = Time.realtimeSinceStartup
+		local var_22_27
+		local var_22_28
+
+		var_22_26.onPressed:AddListener(function()
+			var_22_27 = go(var_22_24:Find("extra")).activeSelf
+
+			setActive(var_22_24:Find("extra"), true)
+
+			var_22_28 = Time.realtimeSinceStartup
 		end)
-		slot34.onReleased:AddListener(function ()
-			if not uv0 or Time.realtimeSinceStartup - uv0 < 0.3 then
-				setActive(uv1:Find("extra"), not uv2)
+		var_22_26.onReleased:AddListener(function()
+			if not var_22_28 or Time.realtimeSinceStartup - var_22_28 < 0.3 then
+				setActive(var_22_24:Find("extra"), not var_22_27)
 			else
-				setActive(uv1:Find("extra"), false)
+				setActive(var_22_24:Find("extra"), false)
 			end
 		end)
-		setText(slot32:Find("extra/enemy"), slot21[slot31])
-		setText(slot32:Find("extra/ally"), slot22[slot31])
-		setText(slot32:Find("extra/result"), string.format("%d%%", slot27[slot31] * 100))
-		setTextColor(slot32:Find("extra/result"), slot27[slot31] > 0 and slot0.TransformColor(uv2) or slot0.TransformColor(uv3))
-		setText(slot32:Find("extra/result/arrow"), slot27[slot31] == 0 and "" or slot27[slot31] > 0 and "↑" or "↓")
+		setText(var_22_24:Find("extra/enemy"), var_22_17[iter_22_2])
+		setText(var_22_24:Find("extra/ally"), var_22_18[iter_22_2])
+		setText(var_22_24:Find("extra/result"), string.format("%d%%", var_22_23[iter_22_2] * 100))
+		setTextColor(var_22_24:Find("extra/result"), var_22_23[iter_22_2] > 0 and arg_22_0.TransformColor(var_0_5) or arg_22_0.TransformColor(var_0_6))
+		setText(var_22_24:Find("extra/result/arrow"), var_22_23[iter_22_2] == 0 and "" or var_22_23[iter_22_2] > 0 and "↑" or "↓")
 
-		if slot27[slot31] ~= 0 then
-			setTextColor(slot32:Find("extra/result/arrow"), slot27[slot31] > 0 and slot0.TransformColor(uv2) or slot0.TransformColor(uv3))
+		if var_22_23[iter_22_2] ~= 0 then
+			setTextColor(var_22_24:Find("extra/result/arrow"), var_22_23[iter_22_2] > 0 and arg_22_0.TransformColor(var_0_5) or arg_22_0.TransformColor(var_0_6))
 		end
 
-		slot37 = slot32:Find("extra/allybar")
-		slot38 = slot32:Find("extra/enemybar")
-		slot39 = math.clamp(1 + slot27[slot31], 0.75, 3)
-		slot40 = slot32:Find("extra").rect.width
-		slot38.sizeDelta = Vector2(slot39 * slot40 / (slot39 + 1) + uv4 * 0.5, slot38.sizeDelta.y)
-		slot37.sizeDelta = Vector2(1 * slot40 / (slot39 + 1) + uv4 * 0.5, slot37.sizeDelta.y)
+		local var_22_29 = var_22_24:Find("extra/allybar")
+		local var_22_30 = var_22_24:Find("extra/enemybar")
+		local var_22_31 = math.clamp(1 + var_22_23[iter_22_2], 0.75, 3)
+		local var_22_32 = var_22_24:Find("extra").rect.width
+
+		var_22_30.sizeDelta = Vector2(var_22_31 * var_22_32 / (var_22_31 + 1) + var_0_2 * 0.5, var_22_30.sizeDelta.y)
+		var_22_29.sizeDelta = Vector2(1 * var_22_32 / (var_22_31 + 1) + var_0_2 * 0.5, var_22_29.sizeDelta.y)
 	end
 
-	slot29 = slot5.battle_character and #slot29 > 0 and slot29 or "world_boss_0"
-	slot0.bg:GetComponent(typeof(Image)).enabled = true
+	local var_22_33 = var_22_4.battle_character
+	local var_22_34 = var_22_33 and #var_22_33 > 0
 
-	setImageSprite(slot0.bg, GetSpriteFromAtlas("commonbg/" .. slot29, slot29))
-	function ()
-		uv1.bossnameText.text = uv0.name
-		slot1 = false
+	var_22_33 = var_22_34 and var_22_33 or "world_boss_0"
+	arg_22_0.bg:GetComponent(typeof(Image)).enabled = true
 
-		if uv1.bossnameText.transform.rect.width < uv1.bossnameText.preferredWidth then
-			uv1.bossnameText.text = string.gsub(slot0, "「.-」", "\n%1")
-			slot1 = true
+	setImageSprite(arg_22_0.bg, GetSpriteFromAtlas("commonbg/" .. var_22_33, var_22_33))
+	;(function()
+		local var_35_0 = var_22_3.name
+
+		arg_22_0.bossnameText.text = var_35_0
+
+		local var_35_1 = false
+
+		if arg_22_0.bossnameText.preferredWidth > arg_22_0.bossnameText.transform.rect.width then
+			local var_35_2 = string.gsub(var_35_0, "「.-」", "\n%1")
+
+			arg_22_0.bossnameText.text = var_35_2
+			var_35_1 = true
 		end
 
-		setAnchoredPosition(uv1.bossNameBanner, {
-			y = slot1 and -18 or 0
+		setAnchoredPosition(arg_22_0.bossNameBanner, {
+			y = var_35_1 and -18 or 0
 		})
-		setText(uv1.bosslevel, i18n("world_level_prefix", uv1:GetEnemyLevel(uv0) or 1))
-		setActive(uv1.bosslogos[1], uv2)
-		setActive(uv1.bosslogos[2], not uv2)
-		setActive(uv1.saomiaoxian, not uv2)
+		setText(arg_22_0.bosslevel, i18n("world_level_prefix", arg_22_0:GetEnemyLevel(var_22_3) or 1))
+		setActive(arg_22_0.bosslogos[1], var_22_34)
+		setActive(arg_22_0.bosslogos[2], not var_22_34)
+		setActive(arg_22_0.saomiaoxian, not var_22_34)
 
-		slot3 = ys.Battle.BattleDataFunction.GetMonsterTmpDataFromID(uv1:GetDungeonBossData(uv3).monsterTemplateID)
+		local var_35_3 = arg_22_0:GetDungeonBossData(var_22_0).monsterTemplateID
+		local var_35_4 = ys.Battle.BattleDataFunction.GetMonsterTmpDataFromID(var_35_3)
 
-		uv1.loader:GetSprite("shiptype", ShipType.Type2BattlePrint(slot3.type), uv1.bossTypeIcon, true)
-		setText(uv1.bossArmorText, ArmorType.Type2Name(slot3.armor_type))
-	end()
+		arg_22_0.loader:GetSprite("shiptype", ShipType.Type2BattlePrint(var_35_4.type), arg_22_0.bossTypeIcon, true)
+		setText(arg_22_0.bossArmorText, ArmorType.Type2Name(var_35_4.armor_type))
+	end)()
 
-	slot31 = ys.Battle.BattleAttr.IsWorldMapRewardAttrWarning(slot21, slot22)
+	local var_22_35 = ys.Battle.BattleAttr.IsWorldMapRewardAttrWarning(var_22_17, var_22_18)
 
-	setActive(slot0.dangerMark, slot31)
+	setActive(arg_22_0.dangerMark, var_22_35)
 
-	if slot31 then
-		setAnchoredPosition(slot0.dangerMark, {
-			x = slot28 and uv5 or uv6
+	if var_22_35 then
+		setAnchoredPosition(arg_22_0.dangerMark, {
+			x = var_22_34 and var_0_4 or var_0_3
 		})
 	end
 
-	if not slot28 then
-		if slot4.icon_type == 1 then
-			slot0.loader:GetSprite("enemies/" .. slot4.icon, nil, slot0.bosssprite)
-		elseif slot32 == 2 then
-			slot0.bosssprite:GetComponent(typeof(Image)).enabled = false
+	if not var_22_34 then
+		local var_22_36 = var_22_3.icon_type
 
-			slot0.loader:GetSpine(slot4.icon, function (slot0)
-				slot1 = uv0.battle_spine_size * 0.01
-				slot0.transform.localScale = Vector3(slot1, slot1, 1)
-				slot0.transform.anchoredPosition = Vector3.New(0, -150, 0)
+		if var_22_36 == 1 then
+			arg_22_0.loader:GetSprite("enemies/" .. var_22_3.icon, nil, arg_22_0.bosssprite)
+		elseif var_22_36 == 2 then
+			arg_22_0.bosssprite:GetComponent(typeof(Image)).enabled = false
 
-				slot0.transform:GetComponent("SpineAnimUI"):SetAction(ChapterConst.ShipIdleAction, 0)
+			arg_22_0.loader:GetSpine(var_22_3.icon, function(arg_36_0)
+				local var_36_0 = var_22_4.battle_spine_size * 0.01
 
-				slot0.transform:GetComponent("SkeletonGraphic").raycastTarget = false
+				arg_36_0.transform.localScale = Vector3(var_36_0, var_36_0, 1)
+				arg_36_0.transform.anchoredPosition = Vector3.New(0, -150, 0)
 
-				setParent(slot0, uv1.bosssprite, false)
-			end, slot0.bosssprite)
+				arg_36_0.transform:GetComponent("SpineAnimUI"):SetAction(ChapterConst.ShipIdleAction, 0)
+
+				arg_36_0.transform:GetComponent("SkeletonGraphic").raycastTarget = false
+
+				setParent(arg_36_0, arg_22_0.bosssprite, false)
+			end, arg_22_0.bosssprite)
 		end
 	end
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.awardPanel and slot0.awardPanel:isShowing() then
-		slot0.awardPanel:Hide()
+function var_0_0.onBackPressed(arg_37_0)
+	if arg_37_0.awardPanel and arg_37_0.awardPanel:isShowing() then
+		arg_37_0.awardPanel:Hide()
 
 		return
 	end
 
-	triggerButton(slot0.backBtn)
+	triggerButton(arg_37_0.backBtn)
 end
 
-function slot0.willExit(slot0)
-	slot0:DestroyAwardPanel()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.layer, slot0._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.willExit(arg_38_0)
+	arg_38_0:DestroyAwardPanel()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_38_0.layer, arg_38_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_38_0._tf)
 
-	if slot0.resPanel then
-		slot0.resPanel:exit()
+	if arg_38_0.resPanel then
+		arg_38_0.resPanel:exit()
 
-		slot0.resPanel = nil
+		arg_38_0.resPanel = nil
 	end
 
-	for slot4, slot5 in pairs(slot0.dungeonDict) do
-		ys.Battle.BattleDataFunction.ClearDungeonCfg(slot4)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.dungeonDict) do
+		ys.Battle.BattleDataFunction.ClearDungeonCfg(iter_38_0)
 	end
 
-	table.clear(slot0.dungeonDict)
-	slot0.loader:Clear()
+	table.clear(arg_38_0.dungeonDict)
+	arg_38_0.loader:Clear()
 end
 
-function slot0.GetAwardPanel(slot0)
-	slot0.awardPanel = slot0.awardPanel or WorldBossHPAwardPanel.New(slot0._tf, slot0.event, slot0.contextData)
+function var_0_0.GetAwardPanel(arg_39_0)
+	arg_39_0.awardPanel = arg_39_0.awardPanel or WorldBossHPAwardPanel.New(arg_39_0._tf, arg_39_0.event, arg_39_0.contextData)
 
-	slot0.awardPanel:Load()
+	arg_39_0.awardPanel:Load()
 
-	return slot0.awardPanel
+	return arg_39_0.awardPanel
 end
 
-function slot0.DestroyAwardPanel(slot0)
-	if not slot0.awardPanel then
+function var_0_0.DestroyAwardPanel(arg_40_0)
+	if not arg_40_0.awardPanel then
 		return
 	end
 
-	slot0.awardPanel:Destroy()
+	arg_40_0.awardPanel:Destroy()
 
-	slot0.awardPanel = nil
+	arg_40_0.awardPanel = nil
 end
 
-function slot0.TransformColor(slot0)
-	return Color.New(tonumber(string.sub(slot0, 1, 2), 16) / 255, tonumber(string.sub(slot0, 3, 4), 16) / 255, tonumber(string.sub(slot0, 5, 6), 16) / 255)
+function var_0_0.TransformColor(arg_41_0)
+	local var_41_0 = tonumber(string.sub(arg_41_0, 1, 2), 16)
+	local var_41_1 = tonumber(string.sub(arg_41_0, 3, 4), 16)
+	local var_41_2 = tonumber(string.sub(arg_41_0, 5, 6), 16)
+
+	return Color.New(var_41_0 / 255, var_41_1 / 255, var_41_2 / 255)
 end
 
-return slot0
+return var_0_0

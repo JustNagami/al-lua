@@ -1,1 +1,1 @@
-return class("RepairShipsCommand", pm.SimpleCommand)
+﻿return (class("RepairShipsCommand", pm.SimpleCommand))

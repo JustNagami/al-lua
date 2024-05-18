@@ -1,35 +1,44 @@
-slot0 = class("GetGuildRankCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetGuildRankCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if getProxy(GuildProxy):getRawData().memberCount < 1 then
-		slot4:SetRank(slot1:getBody().id, {})
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().id
+	local var_1_1 = getProxy(GuildProxy)
+	local var_1_2 = var_1_1:getRawData()
+	local var_1_3 = {}
+
+	if var_1_2.memberCount < 1 then
+		var_1_1:SetRank(var_1_0, var_1_3)
 	else
 		pg.ConnectionMgr.GetInstance():Send(62029, {
-			type = slot3
-		}, 62030, function (slot0)
-			for slot4, slot5 in ipairs(slot0.list) do
-				for slot9, slot10 in ipairs(slot5.rankuserinfo) do
-					if uv0:getMemberById(slot10.user_id) then
-						if not uv1[slot10.user_id] then
-							slot12 = GuildRank.New(slot10.user_id)
+			type = var_1_0
+		}, 62030, function(arg_2_0)
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.list) do
+				for iter_2_2, iter_2_3 in ipairs(iter_2_1.rankuserinfo) do
+					local var_2_0 = var_1_2:getMemberById(iter_2_3.user_id)
 
-							slot12:SetName(slot11.name)
+					if var_2_0 then
+						local var_2_1 = var_1_3[iter_2_3.user_id]
 
-							uv1[slot12.id] = slot12
+						if not var_2_1 then
+							var_2_1 = GuildRank.New(iter_2_3.user_id)
+
+							var_2_1:SetName(var_2_0.name)
+
+							var_1_3[var_2_1.id] = var_2_1
 						end
 
-						slot12:SetScore(slot5.period, slot10.count)
+						var_2_1:SetScore(iter_2_1.period, iter_2_3.count)
 					end
 				end
 			end
 
-			uv2:SetRank(uv3, uv1)
-			uv4:sendNotification(GAME.GUILD_GET_RANK_DONE, {
-				id = uv3,
-				list = uv1
+			var_1_1:SetRank(var_1_0, var_1_3)
+			arg_1_0:sendNotification(GAME.GUILD_GET_RANK_DONE, {
+				id = var_1_0,
+				list = var_1_3
 			})
 		end)
 	end
 end
 
-return slot0
+return var_0_0

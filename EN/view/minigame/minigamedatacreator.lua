@@ -1,74 +1,83 @@
-slot0 = class("MiniGameDataCreator")
-slot0.ShrineGameID = 3
-slot0.FireWorkGameID = 4
-slot0.TowerClimbingGameID = 13
-slot0.NewYearShrineGameID = 20
+﻿local var_0_0 = class("MiniGameDataCreator")
 
-function slot0.DataCreateFunc(slot0, slot1, slot2, slot3)
-	if slot0 == MiniGameOPCommand.CMD_SPECIAL_GAME then
-		if getProxy(MiniGameProxy):GetMiniGameData(slot1[1]):getConfig("type") == MiniGameConst.MG_TYPE_3 then
-			if slot1[2] == 1 then
-				-- Nothing
-			elseif slot5 == 2 then
-				slot8.count = slot7:GetRuntimeData("count") - 1
-				slot8.serverGold = slot2[1]
-			elseif slot5 == 3 then
-				slot8.serverGold = slot2[1]
+var_0_0.ShrineGameID = 3
+var_0_0.FireWorkGameID = 4
+var_0_0.TowerClimbingGameID = 13
+var_0_0.NewYearShrineGameID = 20
+
+function var_0_0.DataCreateFunc(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	if arg_1_0 == MiniGameOPCommand.CMD_SPECIAL_GAME then
+		local var_1_0 = arg_1_1[1]
+		local var_1_1 = arg_1_1[2]
+		local var_1_2 = getProxy(MiniGameProxy):GetMiniGameData(var_1_0)
+		local var_1_3 = {}
+
+		if var_1_2:getConfig("type") == MiniGameConst.MG_TYPE_3 then
+			if var_1_1 == 1 then
+				var_1_3.count = arg_1_2[1]
+				var_1_3.serverGold = arg_1_2[2]
+				var_1_3.isInited = true
+			elseif var_1_1 == 2 then
+				var_1_3.count = var_1_2:GetRuntimeData("count") - 1
+				var_1_3.serverGold = arg_1_2[1]
+			elseif var_1_1 == 3 then
+				var_1_3.serverGold = arg_1_2[1]
 			end
-		elseif slot7:getConfig("type") == MiniGameConst.MG_TYPE_5 then
-			if slot5 == 1 then
-				slot8.count = slot2[1]
-				slot8.isInited = true
-			elseif slot5 == 2 then
-				slot8.count = slot7:GetRuntimeData("count") - 1
-				slot11 = slot7:GetRuntimeData("kvpElements")
+		elseif var_1_2:getConfig("type") == MiniGameConst.MG_TYPE_5 then
+			if var_1_1 == 1 then
+				var_1_3.count = arg_1_2[1]
+				var_1_3.isInited = true
+			elseif var_1_1 == 2 then
+				var_1_3.count = var_1_2:GetRuntimeData("count") - 1
 
-				table.insert(slot11[1], {
-					key = slot1[4],
-					value = slot1[5]
+				local var_1_4 = arg_1_1[4]
+				local var_1_5 = arg_1_1[5]
+				local var_1_6 = var_1_2:GetRuntimeData("kvpElements")
+				local var_1_7 = var_1_6[1]
+
+				table.insert(var_1_7, {
+					key = var_1_4,
+					value = var_1_5
 				})
-				slot7:SetRuntimeData("kvpElements", slot11)
+				var_1_2:SetRuntimeData("kvpElements", var_1_6)
 			end
-		elseif slot4 == uv0.TowerClimbingGameID and slot5 == 1 then
-			slot8.isInited = true
+		elseif var_1_0 == var_0_0.TowerClimbingGameID and var_1_1 == 1 then
+			var_1_3.isInited = true
 		end
 
-		if slot7:getConfig("type") == MiniGameConst.MG_TYPE_2 and slot5 == 1 or slot9 == MiniGameConst.MG_TYPE_5 and slot5 == 1 or slot9 == MiniGameConst.MG_TYPE_4 then
-			slot10 = {
-				[slot14] = slot2[slot14]
-			}
+		local var_1_8 = var_1_2:getConfig("type")
 
-			for slot14 = 1, #slot2 do
+		if var_1_8 == MiniGameConst.MG_TYPE_2 and var_1_1 == 1 or var_1_8 == MiniGameConst.MG_TYPE_5 and var_1_1 == 1 or var_1_8 == MiniGameConst.MG_TYPE_4 then
+			local var_1_9 = {}
+
+			for iter_1_0 = 1, #arg_1_2 do
+				var_1_9[iter_1_0] = arg_1_2[iter_1_0]
 			end
 
-			slot11 = {}
+			local var_1_10 = {}
 
-			for slot15, slot16 in ipairs(slot3) do
-				slot17 = {}
+			for iter_1_1, iter_1_2 in ipairs(arg_1_3) do
+				local var_1_11 = {}
 
-				for slot21, slot22 in ipairs(slot16.value_list) do
-					table.insert(slot17, {
-						key = slot22.key,
-						value = slot22.value,
-						value2 = slot22.value2
+				for iter_1_3, iter_1_4 in ipairs(iter_1_2.value_list) do
+					table.insert(var_1_11, {
+						key = iter_1_4.key,
+						value = iter_1_4.value,
+						value2 = iter_1_4.value2
 					})
 				end
 
-				slot11[slot16.key] = slot17
+				var_1_10[iter_1_2.key] = var_1_11
 			end
 
-			slot8.elements = slot10
-			slot8.kvpElements = slot11
+			var_1_3.elements = var_1_9
+			var_1_3.kvpElements = var_1_10
 		end
 
-		for slot13, slot14 in pairs({
-			count = slot2[1],
-			serverGold = slot2[2],
-			isInited = true
-		}) do
-			slot7:SetRuntimeData(slot13, slot14)
+		for iter_1_5, iter_1_6 in pairs(var_1_3) do
+			var_1_2:SetRuntimeData(iter_1_5, iter_1_6)
 		end
 	end
 end
 
-return slot0
+return var_0_0

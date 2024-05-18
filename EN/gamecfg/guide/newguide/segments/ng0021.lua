@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"Tap the help button to check the detailed explanation"
+}
+
 return {
 	id = "NG0021",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 2,
 				posY = -382,
 				posX = -245,
-				text = ({
-					"Tap the help button to check the detailed explanation"
-				})[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/TecSpeedUpUI(Clone)/Window/HelpBtn",

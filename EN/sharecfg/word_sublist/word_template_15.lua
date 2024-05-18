@@ -1,13 +1,16 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_15 = {}
-slot1 = slot0.word_template_15
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_15 = {}
+
+local var_0_1 = var_0_0.word_template_15
 
 function temp()
-	uv0["や"] = {
-		["り"] = {
-			["ま"] = {
-				["ん"] = {
+	var_0_1.や = {
+		り = {
+			ま = {
+				ん = {
 					this = true
 				}
 			}
@@ -18,9 +21,9 @@ end
 temp()
 
 function temp()
-	uv0["よ"] = {
-		["り"] = {
-			["め"] = {
+	var_0_1.よ = {
+		り = {
+			め = {
 				this = true
 			}
 		}
@@ -30,9 +33,9 @@ end
 temp()
 
 function temp()
-	uv0["ラ"] = {
-		["ブ"] = {
-			["ホ"] = {
+	var_0_1.ラ = {
+		ブ = {
+			ホ = {
 				this = true
 			}
 		}
@@ -42,9 +45,9 @@ end
 temp()
 
 function temp()
-	uv0["リ"] = {
-		["ア"] = {
-			["友"] = {
+	var_0_1.リ = {
+		ア = {
+			友 = {
 				this = true
 			}
 		}
@@ -54,12 +57,12 @@ end
 temp()
 
 function temp()
-	uv0["り"] = {
-		["ょ"] = {
-			["う"] = {
-				["じ"] = {
-					["ょ"] = {
-						["く"] = {
+	var_0_1.り = {
+		ょ = {
+			う = {
+				じ = {
+					ょ = {
+						く = {
 							this = true
 						}
 					}
@@ -72,26 +75,26 @@ end
 temp()
 
 function temp()
-	uv0["レ"] = {
-		["イ"] = {
-			["ジ"] = {
-				["ョ"] = {
-					["ウ"] = {
+	var_0_1.レ = {
+		イ = {
+			ジ = {
+				ョ = {
+					ウ = {
 						this = true
 					}
 				}
 			},
-			["プ"] = {
+			プ = {
 				this = true
 			}
 		},
-		["ズ"] = {
+		ズ = {
 			this = true
 		},
-		["ス"] = {
-			["を"] = {
-				["コ"] = {
-					["ピ"] = {
+		ス = {
+			を = {
+				コ = {
+					ピ = {
 						this = true
 					}
 				}
@@ -103,9 +106,9 @@ end
 temp()
 
 function temp()
-	uv0["れ"] = {
-		["い"] = {
-			["ぷ"] = {
+	var_0_1.れ = {
+		い = {
+			ぷ = {
 				this = true
 			}
 		}

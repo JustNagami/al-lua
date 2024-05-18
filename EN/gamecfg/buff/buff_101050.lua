@@ -1,4 +1,30 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCount",
+			trigger = {
+				"onFire"
+			},
+			arg_list = {
+				countTarget = 15,
+				countType = 101050,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBattleBuffCount"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id = 101050,
+				countType = 101050
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -289,31 +315,5 @@ return {
 	stack = 1,
 	id = 101050,
 	icon = 101050,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCount",
-			trigger = {
-				"onFire"
-			},
-			arg_list = {
-				countTarget = 15,
-				countType = 101050,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBattleBuffCount"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id = 101050,
-				countType = 101050
-			}
-		}
-	}
+	last_effect = ""
 }

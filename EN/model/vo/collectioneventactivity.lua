@@ -1,40 +1,47 @@
-slot0 = class("CollectionEventActivity", import(".Activity"))
+﻿local var_0_0 = class("CollectionEventActivity", import(".Activity"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.collections = {}
+	arg_1_0.collections = {}
 
-	for slot5, slot6 in ipairs(slot1.collection_list) do
-		slot7 = EventInfo.New(slot6)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.collection_list) do
+		local var_1_0 = EventInfo.New(iter_1_1)
 
-		slot7:SetActivityId(slot0.id)
-		table.insert(slot0.collections, slot7)
+		var_1_0:SetActivityId(arg_1_0.id)
+		table.insert(arg_1_0.collections, var_1_0)
 	end
 
-	slot2 = slot0:getConfig("config_data")
+	local var_1_1 = arg_1_0:getConfig("config_data")
+	local var_1_2 = arg_1_0:getDayIndex()
 
-	print("collection==============================", slot0:getDayIndex())
+	print("collection==============================", var_1_2)
 
-	if #slot0.collections == 0 and slot3 > 0 and slot3 <= #slot2 and not table.contains(slot0.data1_list, slot2[slot3]) then
-		table.insert(slot0.collections, EventInfo.New({
-			finish_time = 0,
-			over_time = 0,
-			id = slot4,
-			ship_id_list = {},
-			activity_id = slot0.id
-		}))
+	if #arg_1_0.collections == 0 and var_1_2 > 0 and var_1_2 <= #var_1_1 then
+		local var_1_3 = var_1_1[var_1_2]
+
+		if not table.contains(arg_1_0.data1_list, var_1_3) then
+			table.insert(arg_1_0.collections, EventInfo.New({
+				finish_time = 0,
+				over_time = 0,
+				id = var_1_3,
+				ship_id_list = {},
+				activity_id = arg_1_0.id
+			}))
+		end
 	end
 end
 
-function slot0.getDayIndex(slot0)
-	slot2 = pg.TimeMgr.GetInstance()
+function var_0_0.getDayIndex(arg_2_0)
+	local var_2_0 = arg_2_0.data1
+	local var_2_1 = pg.TimeMgr.GetInstance()
+	local var_2_2 = var_2_1:GetServerTime()
 
-	return slot2:DiffDay(slot0.data1, slot2:GetServerTime()) + 1
+	return var_2_1:DiffDay(var_2_0, var_2_2) + 1
 end
 
-function slot0.GetCollectionList(slot0)
-	return slot0.collections
+function var_0_0.GetCollectionList(arg_3_0)
+	return arg_3_0.collections
 end
 
-return slot0
+return var_0_0

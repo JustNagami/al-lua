@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onManualBulletCreate"
+			},
+			arg_list = {
+				buff_id = 13263
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onManualBulletCreate"
+			},
+			arg_list = {
+				buff_id = 13264
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,25 +39,5 @@ return {
 	stack = 1,
 	id = 13262,
 	icon = 13260,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onManualBulletCreate"
-			},
-			arg_list = {
-				buff_id = 13263
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onManualBulletCreate"
-			},
-			arg_list = {
-				buff_id = 13264
-			}
-		}
-	}
+	last_effect = ""
 }

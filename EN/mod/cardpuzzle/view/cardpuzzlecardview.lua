@@ -1,93 +1,99 @@
-slot0 = class("CardPuzzleCardView")
-slot0.AFFIX_TYPE = {
+﻿local var_0_0 = class("CardPuzzleCardView")
+
+var_0_0.AFFIX_TYPE = {
 	TAG = 0,
 	AFFIX = 2,
 	SCHOOL = 1
 }
-slot0.CARD_TYPE = {
+var_0_0.CARD_TYPE = {
 	ATTACK = 1,
 	ABILITY = 3,
 	TACTIC = 2
 }
-slot1 = {
+
+local var_0_1 = {
 	[0] = "cardBG_white",
 	"cardBG_white",
 	"cardBG_blue",
 	"cardBG_purple",
 	"cardBG_yellow"
 }
-slot0.TowerCardType2Color = {
+
+var_0_0.TowerCardType2Color = {
 	"red",
 	"blue",
 	"yellow"
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = tf(slot1)
-	slot0.bgTF = slot0._tf:Find("BG")
-	slot0.iconBG = slot0._tf:Find("IconBG")
-	slot0.iconTF = slot0.iconBG:Find("Icon")
-	slot0.schoolBG = slot0.iconBG:Find("SchoolBG")
-	slot0.schoolIcon = slot0.schoolBG:Find("SchoolIcon")
-	slot0.nameTF = slot0._tf:Find("Name")
-	slot0.descTF = slot0._tf:Find("Desc")
-	slot0.costTF = slot0._tf:Find("Cost")
-	slot0.keywordListContainer = slot0._tf:Find("KeywordList")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0.bgTF = arg_1_0._tf:Find("BG")
+	arg_1_0.iconBG = arg_1_0._tf:Find("IconBG")
+	arg_1_0.iconTF = arg_1_0.iconBG:Find("Icon")
+	arg_1_0.schoolBG = arg_1_0.iconBG:Find("SchoolBG")
+	arg_1_0.schoolIcon = arg_1_0.schoolBG:Find("SchoolIcon")
+	arg_1_0.nameTF = arg_1_0._tf:Find("Name")
+	arg_1_0.descTF = arg_1_0._tf:Find("Desc")
+	arg_1_0.costTF = arg_1_0._tf:Find("Cost")
+	arg_1_0.keywordListContainer = arg_1_0._tf:Find("KeywordList")
 end
 
-function slot0.SetData(slot0, slot1)
-	slot0.data = slot1
+function var_0_0.SetData(arg_2_0, arg_2_1)
+	arg_2_0.data = arg_2_1
 end
 
-function slot0.GetSkillIconBG(slot0, slot1)
-	return "icon_bg_" .. uv0.TowerCardType2Color[slot1]
+function var_0_0.GetSkillIconBG(arg_3_0, arg_3_1)
+	return "icon_bg_" .. var_0_0.TowerCardType2Color[arg_3_1]
 end
 
-function slot0.GetRarityBG(slot0, slot1)
-	return uv0[slot1]
+function var_0_0.GetRarityBG(arg_4_0, arg_4_1)
+	return var_0_1[arg_4_1]
 end
 
-function slot0.GetCardCost(slot0)
-	return slot0.data:GetCost()
+function var_0_0.GetCardCost(arg_5_0)
+	return arg_5_0.data:GetCost()
 end
 
-function slot0.UpdateView(slot0)
-	setImageSprite(slot0.iconTF, LoadSprite(slot0.data:GetIconPath(), ""), true)
-	setImageSprite(slot0.iconBG, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetSkillIconBG(slot0.data:GetType())))
-	setImageSprite(slot0.bgTF, LoadSprite("ui/CardTowerCardView_atlas", slot0:GetRarityBG(slot0.data:GetRarity())))
-	setText(slot0.nameTF, slot0.data:GetName())
-	setText(slot0.descTF, slot0.data:GetDesc())
-	setText(slot0.costTF, slot0.data:GetCost())
+function var_0_0.UpdateView(arg_6_0)
+	setImageSprite(arg_6_0.iconTF, LoadSprite(arg_6_0.data:GetIconPath(), ""), true)
+	setImageSprite(arg_6_0.iconBG, LoadSprite("ui/CardTowerCardView_atlas", arg_6_0:GetSkillIconBG(arg_6_0.data:GetType())))
+	setImageSprite(arg_6_0.bgTF, LoadSprite("ui/CardTowerCardView_atlas", arg_6_0:GetRarityBG(arg_6_0.data:GetRarity())))
+	setText(arg_6_0.nameTF, arg_6_0.data:GetName())
+	setText(arg_6_0.descTF, arg_6_0.data:GetDesc())
+	setText(arg_6_0.costTF, arg_6_0.data:GetCost())
 
-	slot1 = slot0.data:GetKeywords()
+	local var_6_0 = arg_6_0.data:GetKeywords()
+	local var_6_1 = _.filter(var_6_0, function(arg_7_0)
+		return arg_7_0.affix_type == var_0_0.AFFIX_TYPE.AFFIX and arg_7_0.show == 0
+	end)
 
-	UIItemList.StaticAlign(slot0.keywordListContainer, slot0.keywordListContainer:GetChild(0), #_.filter(slot1, function (slot0)
-		return slot0.affix_type == uv0.AFFIX_TYPE.AFFIX and slot0.show == 0
-	end), function (slot0, slot1, slot2)
-		if slot0 ~= UIItemList.EventUpdate then
+	UIItemList.StaticAlign(arg_6_0.keywordListContainer, arg_6_0.keywordListContainer:GetChild(0), #var_6_1, function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		setText(slot2, uv0[slot1 + 1].name)
+		arg_8_1 = arg_8_1 + 1
+
+		setText(arg_8_2, var_6_1[arg_8_1].name)
 	end)
 
-	slot3 = _.detect(slot1, function (slot0)
-		return slot0.affix_type == uv0.AFFIX_TYPE.SCHOOL and slot0.show == 0
+	local var_6_2 = _.detect(var_6_0, function(arg_9_0)
+		return arg_9_0.affix_type == var_0_0.AFFIX_TYPE.SCHOOL and arg_9_0.show == 0
 	end)
 
-	setActive(slot0.schoolBG, slot3)
-	setActive(slot0.schoolIcon, slot3)
+	setActive(arg_6_0.schoolBG, var_6_2)
+	setActive(arg_6_0.schoolIcon, var_6_2)
 
-	if slot3 then
-		setImageSprite(slot0.schoolBG, LoadSprite("ui/CardTowerCardView_atlas", "circle_" .. uv0.TowerCardType2Color[slot0.data:GetType()]))
-		setImageSprite(slot0.schoolIcon, LoadSprite("ui/RogueCardSchoolIcons_atlas", slot3.icon), true)
+	if var_6_2 then
+		setImageSprite(arg_6_0.schoolBG, LoadSprite("ui/CardTowerCardView_atlas", "circle_" .. var_0_0.TowerCardType2Color[arg_6_0.data:GetType()]))
+		setImageSprite(arg_6_0.schoolIcon, LoadSprite("ui/RogueCardSchoolIcons_atlas", var_6_2.icon), true)
 	end
 
-	TweenItemAlphaAndWhite(go(slot0._tf))
+	TweenItemAlphaAndWhite(go(arg_6_0._tf))
 end
 
-function slot0.Clear(slot0)
-	ClearTweenItemAlphaAndWhite(go(slot0._tf))
+function var_0_0.Clear(arg_10_0)
+	ClearTweenItemAlphaAndWhite(go(arg_10_0._tf))
 end
 
-return slot0
+return var_0_0

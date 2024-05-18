@@ -1,128 +1,137 @@
-slot0 = class("EquipmentItem")
-slot1 = 0.5
+﻿local var_0_0 = class("EquipmentItem")
+local var_0_1 = 0.5
 
-function slot0.Ctor(slot0, slot1)
-	slot0.go = slot1
-	slot0.bg = findTF(slot1, "frame/bg")
-	slot0.mask = findTF(slot1, "frame/bg/mask")
-	slot0.nameTF = findTF(slot1, "frame/bg/name"):GetComponent(typeof(Text))
-	slot0.newTF = findTF(slot1, "frame/bg/icon_bg/new")
-	slot0.unloadBtn = findTF(slot1, "frame/unload")
-	slot0.reduceBtn = findTF(slot1, "frame/bg/selected/reduce")
-	slot0.selectCount = findTF(slot1, "frame/bg/selected/reduce/Text")
-	slot0.tr = slot1.transform
-	slot0.selectedGo = findTF(slot0.tr, "frame/bg/selected").gameObject
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.go = arg_1_1
+	arg_1_0.bg = findTF(arg_1_1, "frame/bg")
+	arg_1_0.mask = findTF(arg_1_1, "frame/bg/mask")
+	arg_1_0.nameTF = findTF(arg_1_1, "frame/bg/name"):GetComponent(typeof(Text))
+	arg_1_0.newTF = findTF(arg_1_1, "frame/bg/icon_bg/new")
+	arg_1_0.unloadBtn = findTF(arg_1_1, "frame/unload")
+	arg_1_0.reduceBtn = findTF(arg_1_1, "frame/bg/selected/reduce")
+	arg_1_0.selectCount = findTF(arg_1_1, "frame/bg/selected/reduce/Text")
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.selectedGo = findTF(arg_1_0.tr, "frame/bg/selected").gameObject
 
-	slot0.selectedGo:SetActive(false)
+	arg_1_0.selectedGo:SetActive(false)
 
-	slot0.equiped = findTF(slot0.tr, "frame/bg/equip_flag")
+	arg_1_0.equiped = findTF(arg_1_0.tr, "frame/bg/equip_flag")
 
-	setActive(slot0.equiped, false)
+	setActive(arg_1_0.equiped, false)
 
-	slot0.selectedMask = findTF(slot0.tr, "frame/bg/selected_transform")
+	arg_1_0.selectedMask = findTF(arg_1_0.tr, "frame/bg/selected_transform")
 
-	if slot0.selectedMask then
-		setActive(slot0.selectedMask, false)
+	if arg_1_0.selectedMask then
+		setActive(arg_1_0.selectedMask, false)
 	end
 
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 end
 
-function slot0.update(slot0, slot1, slot2)
-	setActive(slot0.equiped, false)
-	setActive(slot0.unloadBtn, not slot1)
-	setActive(slot0.bg, slot1)
-	TweenItemAlphaAndWhite(slot0.go)
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2)
+	setActive(arg_2_0.equiped, false)
+	setActive(arg_2_0.unloadBtn, not arg_2_1)
+	setActive(arg_2_0.bg, arg_2_1)
+	TweenItemAlphaAndWhite(arg_2_0.go)
 
-	if not slot1 then
+	if not arg_2_1 then
 		return
 	end
 
-	slot0.equipmentVO = slot1
+	arg_2_0.equipmentVO = arg_2_1
 
-	if isa(slot1, SpWeapon) then
-		slot0:updateSpWeapon()
-	elseif slot1.isSkin then
-		slot0:updateSkin()
+	if isa(arg_2_1, SpWeapon) then
+		arg_2_0:updateSpWeapon()
+	elseif arg_2_1.isSkin then
+		arg_2_0:updateSkin()
 	else
-		updateEquipment(slot0.bg, slot1)
+		updateEquipment(arg_2_0.bg, arg_2_1)
 
-		if not IsNil(slot0.mask) then
-			setActive(slot0.mask, slot1.mask)
+		if not IsNil(arg_2_0.mask) then
+			setActive(arg_2_0.mask, arg_2_1.mask)
 		end
 
-		setActive(slot0.newTF, slot1.new ~= 0 or slot1.isSkin)
-		setActive(slot0.nameTF, not slot2)
+		setActive(arg_2_0.newTF, arg_2_1.new ~= 0 or arg_2_1.isSkin)
+		setActive(arg_2_0.nameTF, not arg_2_2)
 
-		slot0.nameTF.text = shortenString(slot0.equipmentVO:getConfig("name"), 5)
+		arg_2_0.nameTF.text = shortenString(arg_2_0.equipmentVO:getConfig("name"), 5)
 
-		setActive(slot0.equiped, slot1.shipId)
+		setActive(arg_2_0.equiped, arg_2_1.shipId)
 
-		if slot1.shipId then
-			setImageSprite(findTF(slot0.equiped, "Image"), LoadSprite("qicon/" .. getProxy(BayProxy):getShipById(slot1.shipId):getPainting()))
+		if arg_2_1.shipId then
+			local var_2_0 = getProxy(BayProxy):getShipById(arg_2_1.shipId)
+
+			setImageSprite(findTF(arg_2_0.equiped, "Image"), LoadSprite("qicon/" .. var_2_0:getPainting()))
 		end
 	end
 end
 
-function slot0.updateSkin(slot0)
-	slot1 = slot0.equipmentVO
+function var_0_0.updateSkin(arg_3_0)
+	local var_3_0 = arg_3_0.equipmentVO
 
-	setActive(slot0.equiped, slot1.shipId)
+	setActive(arg_3_0.equiped, var_3_0.shipId)
 
-	if slot1.shipId then
-		setImageSprite(findTF(slot0.equiped, "Image"), LoadSprite("qicon/" .. getProxy(BayProxy):getShipById(slot1.shipId):getPainting()))
+	if var_3_0.shipId then
+		local var_3_1 = getProxy(BayProxy):getShipById(var_3_0.shipId)
+
+		setImageSprite(findTF(arg_3_0.equiped, "Image"), LoadSprite("qicon/" .. var_3_1:getPainting()))
 	end
 
-	updateDrop(slot0.bg, {
-		id = slot1.id,
+	updateDrop(arg_3_0.bg, {
+		id = var_3_0.id,
 		type = DROP_TYPE_EQUIPMENT_SKIN,
-		count = slot1.count
+		count = var_3_0.count
 	})
 
-	slot0.nameTF.text = shortenString(getText(slot0.nameTF), 5)
+	arg_3_0.nameTF.text = shortenString(getText(arg_3_0.nameTF), 5)
 end
 
-function slot0.updateSpWeapon(slot0)
-	slot1 = slot0.equipmentVO
+function var_0_0.updateSpWeapon(arg_4_0)
+	local var_4_0 = arg_4_0.equipmentVO
 
-	updateSpWeapon(slot0.bg, slot1)
-	setActive(slot0.newTF, false)
-	setActive(slot0.nameTF, true)
+	updateSpWeapon(arg_4_0.bg, var_4_0)
+	setActive(arg_4_0.newTF, false)
+	setActive(arg_4_0.nameTF, true)
 
-	slot0.nameTF.text = shortenString(slot1:GetName(), 5)
-	slot2 = slot1:GetShipId()
+	arg_4_0.nameTF.text = shortenString(var_4_0:GetName(), 5)
 
-	setActive(slot0.equiped, slot2)
+	local var_4_1 = var_4_0:GetShipId()
 
-	if slot2 then
-		setImageSprite(findTF(slot0.equiped, "Image"), LoadSprite("qicon/" .. getProxy(BayProxy):getShipById(slot2):getPainting()))
+	setActive(arg_4_0.equiped, var_4_1)
+
+	if var_4_1 then
+		local var_4_2 = getProxy(BayProxy):getShipById(var_4_1)
+
+		setImageSprite(findTF(arg_4_0.equiped, "Image"), LoadSprite("qicon/" .. var_4_2:getPainting()))
 	end
 end
 
-function slot0.clear(slot0)
-	ClearTweenItemAlphaAndWhite(slot0.go)
+function var_0_0.clear(arg_5_0)
+	ClearTweenItemAlphaAndWhite(arg_5_0.go)
 end
 
-function slot0.dispose(slot0)
+function var_0_0.dispose(arg_6_0)
+	return
 end
 
-function slot0.updateSelected(slot0, slot1, slot2, slot3)
-	slot0.selected = slot1
-	slot4 = slot0.selected
+function var_0_0.updateSelected(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	arg_7_0.selected = arg_7_1
 
-	slot0.selectedGo:SetActive(slot4)
+	local var_7_0 = arg_7_0.selected
 
-	if slot4 then
-		setText(slot0.selectCount, slot2)
+	arg_7_0.selectedGo:SetActive(var_7_0)
 
-		if not slot0.selectedTwId then
-			slot0.selectedTwId = LeanTween.alpha(slot0.selectedGo.transform, 1, uv0):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
+	if var_7_0 then
+		setText(arg_7_0.selectCount, arg_7_2)
+
+		if not arg_7_0.selectedTwId then
+			arg_7_0.selectedTwId = LeanTween.alpha(arg_7_0.selectedGo.transform, 1, var_0_1):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
 		end
-	elseif slot0.selectedTwId then
-		LeanTween.cancel(slot0.selectedTwId)
+	elseif arg_7_0.selectedTwId then
+		LeanTween.cancel(arg_7_0.selectedTwId)
 
-		slot0.selectedTwId = nil
+		arg_7_0.selectedTwId = nil
 	end
 end
 
-return slot0
+return var_0_0

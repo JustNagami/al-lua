@@ -1,39 +1,45 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst.WaveTriggerType
-slot0.Battle.BattleWaveInfo = class("BattleWaveInfo")
-slot0.Battle.BattleWaveInfo.__name = "BattleWaveInfo"
-slot2 = slot0.Battle.BattleWaveInfo
-slot2.LOGIC_AND = 0
-slot2.LGOIC_OR = 1
-slot2.STATE_DEACTIVE = "STATE_DEACTIVE"
-slot2.STATE_ACTIVE = "STATE_ACTIVE"
-slot2.STATE_PASS = "STATE_PASS"
-slot2.STATE_FAIL = "STATE_FAIL"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.EventDispatcher.AttachEventDispatcher(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst.WaveTriggerType
 
-	slot0._preWaves = {}
-	slot0._postWaves = {}
-	slot0._branchWaves = {}
+var_0_0.Battle.BattleWaveInfo = class("BattleWaveInfo")
+var_0_0.Battle.BattleWaveInfo.__name = "BattleWaveInfo"
+
+local var_0_2 = var_0_0.Battle.BattleWaveInfo
+
+var_0_2.LOGIC_AND = 0
+var_0_2.LGOIC_OR = 1
+var_0_2.STATE_DEACTIVE = "STATE_DEACTIVE"
+var_0_2.STATE_ACTIVE = "STATE_ACTIVE"
+var_0_2.STATE_PASS = "STATE_PASS"
+var_0_2.STATE_FAIL = "STATE_FAIL"
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_0.EventDispatcher.AttachEventDispatcher(arg_1_0)
+
+	arg_1_0._preWaves = {}
+	arg_1_0._postWaves = {}
+	arg_1_0._branchWaves = {}
 end
 
-function slot2.IsReady(slot0)
-	return slot0:IsPreWavesFinished()
+function var_0_2.IsReady(arg_2_0)
+	return arg_2_0:IsPreWavesFinished()
 end
 
-function slot2.IsFlagsPass(slot0)
-	if not slot0._blockFlags or not next(slot0._blockFlags) then
+function var_0_2.IsFlagsPass(arg_3_0)
+	if not arg_3_0._blockFlags or not next(arg_3_0._blockFlags) then
 		return true
 	end
 
-	if not uv0.Battle.BattleDataProxy.GetInstance():GetWaveFlags() or not next(slot2) then
+	local var_3_0 = var_0_0.Battle.BattleDataProxy.GetInstance():GetWaveFlags()
+
+	if not var_3_0 or not next(var_3_0) then
 		return false
 	end
 
-	for slot6, slot7 in ipairs(slot0._blockFlags) do
-		if not table.contains(slot2, slot7) then
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0._blockFlags) do
+		if not table.contains(var_3_0, iter_3_1) then
 			return false
 		end
 	end
@@ -41,144 +47,148 @@ function slot2.IsFlagsPass(slot0)
 	return true
 end
 
-function slot2.IsPreWavesFinished(slot0)
-	slot1 = #slot0._preWaves
-	slot2 = nil
+function var_0_2.IsPreWavesFinished(arg_4_0)
+	local var_4_0 = #arg_4_0._preWaves
+	local var_4_1
 
-	if #slot0._preWaves == 0 then
-		slot2 = true
-	elseif slot0._logicType == uv0.LOGIC_AND then
-		slot2 = true
+	if #arg_4_0._preWaves == 0 then
+		var_4_1 = true
+	elseif arg_4_0._logicType == var_0_2.LOGIC_AND then
+		var_4_1 = true
 
-		for slot6, slot7 in ipairs(slot0._preWaves) do
-			if not slot7:IsFinish() then
-				slot2 = false
+		for iter_4_0, iter_4_1 in ipairs(arg_4_0._preWaves) do
+			if not iter_4_1:IsFinish() then
+				var_4_1 = false
 
 				break
 			end
 		end
-	elseif slot0._logicType == uv0.LGOIC_OR then
-		slot2 = false
+	elseif arg_4_0._logicType == var_0_2.LGOIC_OR then
+		var_4_1 = false
 
-		for slot6, slot7 in ipairs(slot0._preWaves) do
-			if slot7:IsFinish() then
-				slot2 = true
+		for iter_4_2, iter_4_3 in ipairs(arg_4_0._preWaves) do
+			if iter_4_3:IsFinish() then
+				var_4_1 = true
 
 				break
 			end
 		end
 	end
 
-	return slot2
+	return var_4_1
 end
 
-function slot2.IsFinish(slot0)
-	return slot0:GetState() == uv0.STATE_PASS or slot0:GetState() == uv0.STATE_FAIL
+function var_0_2.IsFinish(arg_5_0)
+	return arg_5_0:GetState() == var_0_2.STATE_PASS or arg_5_0:GetState() == var_0_2.STATE_FAIL
 end
 
-function slot2.DoBranch(slot0)
-	for slot4, slot5 in ipairs(slot0._branchWaves) do
-		if not slot0._branchWaveIDs[slot5:GetIndex()] or slot5:GetState() ~= uv0.STATE_PASS then
-			if slot6 or slot5:GetState() ~= uv0.STATE_FAIL then
-				slot0:doFail()
+function var_0_2.DoBranch(arg_6_0)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0._branchWaves) do
+		local var_6_0 = arg_6_0._branchWaveIDs[iter_6_1:GetIndex()]
 
-				return
-			end
+		if var_6_0 and iter_6_1:GetState() == var_0_2.STATE_PASS or not var_6_0 and iter_6_1:GetState() == var_0_2.STATE_FAIL then
+			-- block empty
+		else
+			arg_6_0:doFail()
+
+			return
 		end
 	end
 
-	if not slot0:IsFlagsPass() then
-		slot0:doFail()
+	if not arg_6_0:IsFlagsPass() then
+		arg_6_0:doFail()
 
 		return
 	end
 
-	slot0:DoWave()
+	arg_6_0:DoWave()
 end
 
-function slot2.DoWave(slot0)
-	slot0._state = uv0.STATE_ACTIVE
+function var_0_2.DoWave(arg_7_0)
+	arg_7_0._state = var_0_2.STATE_ACTIVE
 end
 
-function slot2.AddMonster(slot0)
+function var_0_2.AddMonster(arg_8_0)
+	return
 end
 
-function slot2.RemoveMonster(slot0)
+function var_0_2.RemoveMonster(arg_9_0)
+	return
 end
 
-function slot2.SetWaveData(slot0, slot1)
-	slot0._index = slot1.waveIndex
-	slot0._isKeyWave = slot1.key
-	slot0._logicType = slot1.conditionType or uv0.LOGIC_AND
-	slot0._param = slot1.triggerParams or {}
-	slot0._preWaveIDs = slot1.preWaves or {}
-	slot0._branchWaveIDs = slot1.conditionWaves or {}
-	slot0._blockFlags = slot1.blockFlags
-	slot0._type = slot1.triggerType
-	slot0._state = uv0.STATE_DEACTIVE
+function var_0_2.SetWaveData(arg_10_0, arg_10_1)
+	arg_10_0._index = arg_10_1.waveIndex
+	arg_10_0._isKeyWave = arg_10_1.key
+	arg_10_0._logicType = arg_10_1.conditionType or var_0_2.LOGIC_AND
+	arg_10_0._param = arg_10_1.triggerParams or {}
+	arg_10_0._preWaveIDs = arg_10_1.preWaves or {}
+	arg_10_0._branchWaveIDs = arg_10_1.conditionWaves or {}
+	arg_10_0._blockFlags = arg_10_1.blockFlags
+	arg_10_0._type = arg_10_1.triggerType
+	arg_10_0._state = var_0_2.STATE_DEACTIVE
 end
 
-function slot2.SetCallback(slot0, slot1, slot2)
-	slot0._spawnFunc = slot1
-	slot0._airFunc = slot2
+function var_0_2.SetCallback(arg_11_0, arg_11_1, arg_11_2)
+	arg_11_0._spawnFunc = arg_11_1
+	arg_11_0._airFunc = arg_11_2
 end
 
-function slot2.AppendBranchWave(slot0, slot1)
-	slot0._branchWaves[#slot0._branchWaves + 1] = slot1
+function var_0_2.AppendBranchWave(arg_12_0, arg_12_1)
+	arg_12_0._branchWaves[#arg_12_0._branchWaves + 1] = arg_12_1
 end
 
-function slot2.AppendPreWave(slot0, slot1)
-	slot0._preWaves[#slot0._preWaves + 1] = slot1
+function var_0_2.AppendPreWave(arg_13_0, arg_13_1)
+	arg_13_0._preWaves[#arg_13_0._preWaves + 1] = arg_13_1
 end
 
-function slot2.AppendPostWave(slot0, slot1)
-	slot0._postWaves[#slot0._postWaves + 1] = slot1
+function var_0_2.AppendPostWave(arg_14_0, arg_14_1)
+	arg_14_0._postWaves[#arg_14_0._postWaves + 1] = arg_14_1
 end
 
-function slot2.IsKeyWave(slot0)
-	return slot0._isKeyWave
+function var_0_2.IsKeyWave(arg_15_0)
+	return arg_15_0._isKeyWave
 end
 
-function slot2.GetPostWaves(slot0)
-	return slot0._postWaves
+function var_0_2.GetPostWaves(arg_16_0)
+	return arg_16_0._postWaves
 end
 
-function slot2.GetIndex(slot0)
-	return slot0._index
+function var_0_2.GetIndex(arg_17_0)
+	return arg_17_0._index
 end
 
-function slot2.GetType(slot0)
-	return slot0._type
+function var_0_2.GetType(arg_18_0)
+	return arg_18_0._type
 end
 
-function slot2.GetState(slot0)
-	return slot0._state
+function var_0_2.GetState(arg_19_0)
+	return arg_19_0._state
 end
 
-function slot2.GetPreWaveIDs(slot0)
-	return slot0._preWaveIDs
+function var_0_2.GetPreWaveIDs(arg_20_0)
+	return arg_20_0._preWaveIDs
 end
 
-function slot2.GetBranchWaveIDs(slot0)
-	return slot0._branchWaveIDs
+function var_0_2.GetBranchWaveIDs(arg_21_0)
+	return arg_21_0._branchWaveIDs
 end
 
-function slot2.Dispose(slot0)
-	uv0.EventDispatcher.DetachEventDispatcher(slot0)
+function var_0_2.Dispose(arg_22_0)
+	var_0_0.EventDispatcher.DetachEventDispatcher(arg_22_0)
 end
 
-function slot2.doPass(slot0)
-	if not slot0:IsFinish() then
-		slot0._state = uv0.STATE_PASS
+function var_0_2.doPass(arg_23_0)
+	if not arg_23_0:IsFinish() then
+		arg_23_0._state = var_0_2.STATE_PASS
 
-		slot0:DispatchEvent(uv1.Event.New(uv1.Battle.BattleEvent.WAVE_FINISH, {}))
+		arg_23_0:DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleEvent.WAVE_FINISH, {}))
 	end
 end
 
-function slot2.doFail(slot0)
-	if not slot0:IsFinish() then
-		slot0._state = uv0.STATE_FAIL
+function var_0_2.doFail(arg_24_0)
+	if not arg_24_0:IsFinish() then
+		arg_24_0._state = var_0_2.STATE_FAIL
 
-		slot0:DispatchEvent(uv1.Event.New(uv1.Battle.BattleEvent.WAVE_FINISH, {}))
+		arg_24_0:DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleEvent.WAVE_FINISH, {}))
 	end
 end

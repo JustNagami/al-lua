@@ -1,188 +1,205 @@
-slot0 = class("FeastOpCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("FeastOpCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = slot2.arg1 or 0
-	slot6 = slot2.arg2 or 0
-	slot8 = slot2.kvpArgs or {}
-	slot9 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.activityId
+	local var_1_2 = var_1_0.cmd or 0
+	local var_1_3 = var_1_0.arg1 or 0
+	local var_1_4 = var_1_0.arg2 or 0
+	local var_1_5 = var_1_0.argList or {}
+	local var_1_6 = var_1_0.kvpArgs or {}
+	local var_1_7 = var_1_0.callback
 
-	if (slot2.cmd or 0) == FeastDorm.OP_RANDOM_SHIPS then
+	if var_1_2 == FeastDorm.OP_RANDOM_SHIPS then
 		pg.ConnectionMgr.GetInstance():Send(26158, {
-			act_id = slot2.activityId,
-			ship_group_id = slot2.argList or {}
-		}, 26159, function (slot0)
-			if slot0.ret == 0 then
-				getProxy(FeastProxy):getData():SetRefreshTime(slot0.refresh_time)
+			act_id = var_1_1,
+			ship_group_id = var_1_5
+		}, 26159, function(arg_2_0)
+			if arg_2_0.ret == 0 then
+				local var_2_0 = getProxy(FeastProxy)
+				local var_2_1 = var_2_0:getData()
 
-				slot3 = {
-					[slot8.tid] = true
-				}
+				var_2_1:SetRefreshTime(arg_2_0.refresh_time)
 
-				for slot7, slot8 in ipairs(slot0.party_roles) do
-					if not slot2:GetFeastShip(slot8.tid) then
-						slot10 = FeastShip.New(slot8)
+				local var_2_2 = {}
 
-						if slot2:GetInvitedFeastShip(slot8.tid) ~= nil then
-							slot10:SetSkinId(slot11:GetSkinId())
+				for iter_2_0, iter_2_1 in ipairs(arg_2_0.party_roles) do
+					var_2_2[iter_2_1.tid] = true
+
+					local var_2_3 = var_2_1:GetFeastShip(iter_2_1.tid)
+
+					if not var_2_3 then
+						local var_2_4 = FeastShip.New(iter_2_1)
+						local var_2_5 = var_2_1:GetInvitedFeastShip(iter_2_1.tid)
+
+						if var_2_5 ~= nil then
+							var_2_4:SetSkinId(var_2_5:GetSkinId())
 						end
 
-						slot2:AddShip(slot10)
+						var_2_1:AddShip(var_2_4)
 					else
-						slot9:UpdateBubble(slot8.bubble)
-						slot9:UpdateSpeechBubble(slot8.speech_bubble)
+						var_2_3:UpdateBubble(iter_2_1.bubble)
+						var_2_3:UpdateSpeechBubble(iter_2_1.speech_bubble)
 					end
 				end
 
-				for slot7, slot8 in pairs(slot2:GetFeastShipList()) do
-					if slot3[slot7] ~= true then
-						slot2:RemoveShip(slot7)
+				for iter_2_2, iter_2_3 in pairs(var_2_1:GetFeastShipList()) do
+					if var_2_2[iter_2_2] ~= true then
+						var_2_1:RemoveShip(iter_2_2)
 					end
 				end
 
-				slot1:UpdateData(slot2)
-				slot1:AddRefreshTimer()
-				uv0:sendNotification(GAME.FEAST_OP_DONE, {
+				var_2_0:UpdateData(var_2_1)
+				var_2_0:AddRefreshTimer()
+				arg_1_0:sendNotification(GAME.FEAST_OP_DONE, {
 					cmd = FeastDorm.OP_RANDOM_SHIPS,
-					ships = slot2:GetPutShipList(),
+					ships = var_2_1:GetPutShipList(),
 					awards = {}
 				})
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.ret] .. slot0.ret)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.ret] .. arg_2_0.ret)
 			end
 
-			if uv1 then
-				uv1()
+			if var_1_7 then
+				var_1_7()
 			end
 		end)
 	else
-		if not slot0:CheckRes(slot4, slot5) then
+		if not arg_1_0:CheckRes(var_1_2, var_1_3) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 			return
 		end
 
 		pg.ConnectionMgr.GetInstance():Send(11202, {
-			activity_id = slot3,
-			cmd = slot4,
-			arg1 = slot5,
-			arg2 = slot6,
-			arg_list = slot7,
-			kvargs1 = slot8
-		}, 11203, function (slot0)
-			if slot0.result == 0 then
-				if uv0 == FeastDorm.OP_INTERACTION then
-					uv1:HandleInteraction(uv2, uv3, slot0.number[1] or 0, PlayerConst.addTranDrop(slot0.award_list))
-				elseif uv0 == FeastDorm.OP_MAKE_TICKET then
-					uv1:HandleMakeTicket(uv2)
-				elseif uv0 == FeastDorm.OP_GIVE_TICKET then
-					uv1:HandleGiveTicket(uv2, slot0.number[1] or 0, slot1)
-				elseif uv0 == FeastDorm.OP_GIVE_GIFT then
-					uv1:HandleGiveGift(uv2, slot1)
-				elseif uv0 == FeastDorm.OP_ENTER then
-					-- Nothing
+			activity_id = var_1_1,
+			cmd = var_1_2,
+			arg1 = var_1_3,
+			arg2 = var_1_4,
+			arg_list = var_1_5,
+			kvargs1 = var_1_6
+		}, 11203, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				local var_3_0 = PlayerConst.addTranDrop(arg_3_0.award_list)
+
+				if var_1_2 == FeastDorm.OP_INTERACTION then
+					arg_1_0:HandleInteraction(var_1_3, var_1_4, arg_3_0.number[1] or 0, var_3_0)
+				elseif var_1_2 == FeastDorm.OP_MAKE_TICKET then
+					arg_1_0:HandleMakeTicket(var_1_3)
+				elseif var_1_2 == FeastDorm.OP_GIVE_TICKET then
+					arg_1_0:HandleGiveTicket(var_1_3, arg_3_0.number[1] or 0, var_3_0)
+				elseif var_1_2 == FeastDorm.OP_GIVE_GIFT then
+					arg_1_0:HandleGiveGift(var_1_3, var_3_0)
+				elseif var_1_2 == FeastDorm.OP_ENTER then
+					-- block empty
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
 			end
 
-			if uv4 then
-				uv4()
+			if var_1_7 then
+				var_1_7()
 			end
 		end)
 	end
 end
 
-function slot0.CheckRes(slot0, slot1, slot2)
-	slot5 = 0
-	slot6 = 1
+function var_0_0.CheckRes(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+	local var_4_1 = 0
+	local var_4_2 = 1
+	local var_4_3 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(arg_4_2)
 
-	if slot1 == FeastDorm.OP_MAKE_TICKET then
-		slot9 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(slot2):GetTicketConsume()
+	if arg_4_1 == FeastDorm.OP_MAKE_TICKET then
+		local var_4_4 = var_4_3:GetTicketConsume()
 
-		return slot9.count <= getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG):getVitemNumber(slot9.id)
-	elseif slot1 == FeastDorm.OP_GIVE_GIFT then
-		slot9 = slot8:GetGiftConsume()
+		return var_4_0:getVitemNumber(var_4_4.id) >= var_4_4.count
+	elseif arg_4_1 == FeastDorm.OP_GIVE_GIFT then
+		local var_4_5 = var_4_3:GetGiftConsume()
 
-		return slot9.count <= slot4:getVitemNumber(slot9.id)
+		return var_4_0:getVitemNumber(var_4_5.id) >= var_4_5.count
 	else
 		return true
 	end
 end
 
-function slot0.HandleInteraction(slot0, slot1, slot2, slot3, slot4)
-	slot6 = getProxy(FeastProxy):getRawData():GetFeastShip(slot1)
-	slot6.speechBubble = slot3
-	slot7 = ""
+function var_0_0.HandleInteraction(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	local var_5_0 = getProxy(FeastProxy):getRawData()
+	local var_5_1 = var_5_0:GetFeastShip(arg_5_1)
 
-	if slot6:IsSpecial() then
-		slot7 = slot5:GetInvitedFeastShip(slot1):GetSpeechContent(slot6.bubble, slot6.speechBubble)
+	var_5_1.speechBubble = arg_5_3
+
+	local var_5_2 = ""
+
+	if var_5_1:IsSpecial() then
+		var_5_2 = var_5_0:GetInvitedFeastShip(arg_5_1):GetSpeechContent(var_5_1.bubble, var_5_1.speechBubble)
 	end
 
-	slot6:ClearBubble()
-	slot0:sendNotification(GAME.FEAST_OP_DONE, {
+	var_5_1:ClearBubble()
+	arg_5_0:sendNotification(GAME.FEAST_OP_DONE, {
 		cmd = FeastDorm.OP_INTERACTION,
-		groupId = slot1,
-		value = slot6:GetBubble(),
-		chat = slot7,
-		awards = slot4
+		groupId = arg_5_1,
+		value = var_5_1:GetBubble(),
+		chat = var_5_2,
+		awards = arg_5_4
 	})
 end
 
-function slot0.HandleMakeTicket(slot0, slot1)
-	slot3 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(slot1)
-	slot4 = slot3:GetTicketConsume()
-	slot5 = getProxy(ActivityProxy)
-	slot6 = slot5:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+function var_0_0.HandleMakeTicket(arg_6_0, arg_6_1)
+	local var_6_0 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(arg_6_1)
+	local var_6_1 = var_6_0:GetTicketConsume()
+	local var_6_2 = getProxy(ActivityProxy)
+	local var_6_3 = var_6_2:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
-	slot6:subVitemNumber(slot4.id, slot4.count)
-	slot5:updateActivity(slot6)
-	slot3:SetInvitationState(InvitedFeastShip.STATE_MAKE_TICKET)
-	slot0:sendNotification(GAME.FEAST_OP_DONE, {
+	var_6_3:subVitemNumber(var_6_1.id, var_6_1.count)
+	var_6_2:updateActivity(var_6_3)
+	var_6_0:SetInvitationState(InvitedFeastShip.STATE_MAKE_TICKET)
+	arg_6_0:sendNotification(GAME.FEAST_OP_DONE, {
 		cmd = FeastDorm.OP_MAKE_TICKET,
-		groupId = slot1,
-		value = slot3:GetInvitationState(),
+		groupId = arg_6_1,
+		value = var_6_0:GetInvitationState(),
 		awards = {}
 	})
 end
 
-function slot0.HandleGiveTicket(slot0, slot1, slot2, slot3)
-	slot4 = getProxy(FeastProxy):getRawData()
-	slot5 = slot4:GetInvitedFeastShip(slot1)
+function var_0_0.HandleGiveTicket(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	local var_7_0 = getProxy(FeastProxy):getRawData()
+	local var_7_1 = var_7_0:GetInvitedFeastShip(arg_7_1)
 
-	slot5:SetInvitationState(InvitedFeastShip.STATE_GOT_TICKET)
+	var_7_1:SetInvitationState(InvitedFeastShip.STATE_GOT_TICKET)
 
-	slot7 = FeastShip.New({
+	local var_7_2 = var_7_1:GetSkinId()
+	local var_7_3 = FeastShip.New({
 		skinId = 0,
-		tid = slot1,
-		bubble = slot2
+		tid = arg_7_1,
+		bubble = arg_7_2
 	})
 
-	slot7:SetSkinId(slot5:GetSkinId())
-	slot4:AddShip(slot7)
-	slot0:sendNotification(GAME.FEAST_OP_DONE, {
+	var_7_3:SetSkinId(var_7_2)
+	var_7_0:AddShip(var_7_3)
+	arg_7_0:sendNotification(GAME.FEAST_OP_DONE, {
 		cmd = FeastDorm.OP_GIVE_TICKET,
-		groupId = slot1,
-		value = slot5:GetInvitationState(),
-		awards = slot3
+		groupId = arg_7_1,
+		value = var_7_1:GetInvitationState(),
+		awards = arg_7_3
 	})
 end
 
-function slot0.HandleGiveGift(slot0, slot1, slot2)
-	slot4 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(slot1)
-	slot5 = slot4:GetGiftConsume()
-	slot6 = getProxy(ActivityProxy)
-	slot7 = slot6:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
+function var_0_0.HandleGiveGift(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = getProxy(FeastProxy):getRawData():GetInvitedFeastShip(arg_8_1)
+	local var_8_1 = var_8_0:GetGiftConsume()
+	local var_8_2 = getProxy(ActivityProxy)
+	local var_8_3 = var_8_2:getActivityByType(ActivityConst.ACTIVITY_TYPE_VIRTUAL_BAG)
 
-	slot7:subVitemNumber(slot5.id, slot5.count)
-	slot6:updateActivity(slot7)
-	slot4:SetGiftState(InvitedFeastShip.GIFT_STATE_GOT)
-	slot0:sendNotification(GAME.FEAST_OP_DONE, {
+	var_8_3:subVitemNumber(var_8_1.id, var_8_1.count)
+	var_8_2:updateActivity(var_8_3)
+	var_8_0:SetGiftState(InvitedFeastShip.GIFT_STATE_GOT)
+	arg_8_0:sendNotification(GAME.FEAST_OP_DONE, {
 		cmd = FeastDorm.OP_GIVE_GIFT,
-		groupId = slot1,
-		value = slot4:GetGiftState(),
-		awards = slot2
+		groupId = arg_8_1,
+		value = var_8_0:GetGiftState(),
+		awards = arg_8_2
 	})
 end
 
-return slot0
+return var_0_0

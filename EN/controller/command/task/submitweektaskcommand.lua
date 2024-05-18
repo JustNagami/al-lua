@@ -1,32 +1,39 @@
-slot0 = class("SubmitWeekTaskCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SubmitWeekTaskCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not getProxy(TaskProxy):GetWeekTaskProgressInfo():GetSubTask(slot1:getBody().id) or not slot6:IsFinished() then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().id
+	local var_1_1 = getProxy(TaskProxy):GetWeekTaskProgressInfo()
+	local var_1_2 = var_1_1:GetSubTask(var_1_0)
+
+	if not var_1_2 or not var_1_2:IsFinished() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(20106, {
-		id = slot3
-	}, 20107, function (slot0)
-		if slot0.result == 0 then
-			slot2 = uv0:GetAward()
+		id = var_1_0
+	}, 20107, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = {}
+			local var_2_1 = var_1_2:GetAward()
 
-			table.insert({}, Drop.Create(slot2))
-			uv1:AddProgress(slot2[3])
-			uv1:RemoveSubTask(uv2)
+			table.insert(var_2_0, Drop.Create(var_2_1))
+			var_1_1:AddProgress(var_2_1[3])
+			var_1_1:RemoveSubTask(var_1_0)
 
-			if slot0.next and slot0.next.id ~= 0 then
-				uv1:AddSubTask(WeekPtTask.New(slot0.next))
+			if arg_2_0.next and arg_2_0.next.id ~= 0 then
+				local var_2_2 = WeekPtTask.New(arg_2_0.next)
+
+				var_1_1:AddSubTask(var_2_2)
 			end
 
-			uv3:sendNotification(GAME.SUBMIT_WEEK_TASK_DONE, {
-				awards = slot1,
-				id = uv2
+			arg_1_0:sendNotification(GAME.SUBMIT_WEEK_TASK_DONE, {
+				awards = var_2_0,
+				id = var_1_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

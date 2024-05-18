@@ -1,14 +1,14 @@
-slot0 = class("CravenCheeringSkinPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("CravenCheeringSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.step_txt = slot0:findTF("step_text", slot0.bg)
+	arg_1_0.step_txt = arg_1_0:findTF("step_text", arg_1_0.bg)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
-	setText(slot0.step_txt, setColorStr(slot0.nday, "#89FF59FF") .. "/" .. #slot0.taskGroup)
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	setText(arg_2_0.step_txt, setColorStr(arg_2_0.nday, "#89FF59FF") .. "/" .. #arg_2_0.taskGroup)
 end
 
-return slot0
+return var_0_0

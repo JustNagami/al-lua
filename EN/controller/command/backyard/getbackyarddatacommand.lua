@@ -1,71 +1,84 @@
-slot0 = class("GetBackYardDataCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GetBackYardDataCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.data
-	slot5 = nil
-	slot5 = (not slot2.isMine or Dorm.New(slot3)) and FriendDorm.New(slot3)
-	slot6 = {}
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.data
+	local var_1_2 = var_1_0.isMine
+	local var_1_3
 
-	for slot10, slot11 in ipairs(slot3.ship_id_list) do
-		table.insert(slot6, slot11)
+	if var_1_2 then
+		var_1_3 = Dorm.New(var_1_1)
+	else
+		var_1_3 = FriendDorm.New(var_1_1)
 	end
 
-	slot5:setShipIds(slot6)
+	local var_1_4 = {}
 
-	for slot11, slot12 in ipairs(slot3.furniture_id_list) do
-		slot13 = Furniture.New(slot12)
+	for iter_1_0, iter_1_1 in ipairs(var_1_1.ship_id_list) do
+		table.insert(var_1_4, iter_1_1)
 	end
 
-	slot5:SetFurnitures({
-		[tonumber(slot13.id)] = slot13
-	})
+	var_1_3:setShipIds(var_1_4)
 
-	for slot11 = 1, BackYardConst.MAX_FLOOR_CNT do
-		slot5:SetTheme(slot11, BackYardSelfThemeTemplate.New({
+	local var_1_5 = {}
+
+	for iter_1_2, iter_1_3 in ipairs(var_1_1.furniture_id_list) do
+		local var_1_6 = Furniture.New(iter_1_3)
+
+		var_1_5[tonumber(var_1_6.id)] = var_1_6
+	end
+
+	var_1_3:SetFurnitures(var_1_5)
+
+	for iter_1_4 = 1, BackYardConst.MAX_FLOOR_CNT do
+		var_1_3:SetTheme(iter_1_4, BackYardSelfThemeTemplate.New({
 			id = -1,
 			furniture_put_list = {}
-		}, slot11))
+		}, iter_1_4))
 	end
 
-	for slot11, slot12 in ipairs(slot3.furniture_put_list) do
-		slot13 = {}
+	for iter_1_5, iter_1_6 in ipairs(var_1_1.furniture_put_list) do
+		local var_1_7 = {}
 
-		for slot17, slot18 in ipairs(slot12.furniture_put_list) do
-			slot19 = {}
+		for iter_1_7, iter_1_8 in ipairs(iter_1_6.furniture_put_list) do
+			local var_1_8 = {}
 
-			for slot23, slot24 in ipairs(slot18.child) do
-				table.insert(slot19, {
-					id = slot24.id,
-					x = slot24.x,
-					y = slot24.y
+			for iter_1_9, iter_1_10 in ipairs(iter_1_8.child) do
+				table.insert(var_1_8, {
+					id = iter_1_10.id,
+					x = iter_1_10.x,
+					y = iter_1_10.y
 				})
 			end
 
-			table.insert(slot13, {
-				id = slot18.id,
-				x = slot18.x,
-				y = slot18.y,
-				dir = slot18.dir,
-				child = slot19,
-				parent = slot18.parent,
-				shipId = slot18.shipId
-			})
+			local var_1_9 = {
+				id = iter_1_8.id,
+				x = iter_1_8.x,
+				y = iter_1_8.y,
+				dir = iter_1_8.dir,
+				child = var_1_8,
+				parent = iter_1_8.parent,
+				shipId = iter_1_8.shipId
+			}
+
+			table.insert(var_1_7, var_1_9)
 		end
 
-		slot5:SetTheme(slot12.floor, BackYardSelfThemeTemplate.New({
+		var_1_3:SetTheme(iter_1_6.floor, BackYardSelfThemeTemplate.New({
 			id = -1,
-			furniture_put_list = slot13
-		}, slot12.floor))
+			furniture_put_list = var_1_7
+		}, iter_1_6.floor))
 	end
 
-	if slot4 then
-		getProxy(DormProxy):addDorm(slot5)
+	local var_1_10 = getProxy(DormProxy)
+
+	if var_1_2 then
+		var_1_10:addDorm(var_1_3)
 	else
-		slot8.friendData = slot5
+		var_1_10.friendData = var_1_3
 	end
 
-	slot0:sendNotification(GAME.GET_BACKYARD_DATA_DONE, slot5)
+	arg_1_0:sendNotification(GAME.GET_BACKYARD_DATA_DONE, var_1_3)
 end
 
-return slot0
+return var_0_0

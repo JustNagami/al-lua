@@ -1,4 +1,20 @@
-return {
+﻿return {
+	limit = {
+		SYSTEM_DUEL
+	},
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				rant = 3000,
+				skill_id = 10131,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -157,21 +173,5 @@ return {
 	stack = 1,
 	id = 10133,
 	icon = 10130,
-	last_effect = "",
-	limit = {
-		SYSTEM_DUEL
-	},
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				rant = 3000,
-				skill_id = 10131,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

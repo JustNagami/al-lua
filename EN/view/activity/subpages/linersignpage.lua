@@ -1,86 +1,91 @@
-slot0 = class("LinerSignPage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("LinerSignPage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.signTF = slot0:findTF("sign", slot0.bg)
-	slot0.items = slot0:findTF("items", slot0.signTF)
-	slot0.uilist = UIItemList.New(slot0.items, slot0:findTF("tpl", slot0.items))
-	slot0.signBtn = slot0:findTF("get", slot0.signTF)
-	slot0.signGreyBtn = slot0:findTF("get_grey", slot0.signTF)
-	slot0.countText = slot0:findTF("count_bg/count", slot0.signTF)
-	slot0.namedTF = slot0:findTF("named", slot0.bg)
-	slot0.nameInput = slot0:findTF("input/nickname", slot0.namedTF)
-	slot0.sureBtn = slot0:findTF("sure", slot0.namedTF)
-	slot0.linerTF = slot0:findTF("liner", slot0.bg)
-	slot0.linerInput = slot0:findTF("name/input", slot0.linerTF)
-	slot0.linerBtn = slot0:findTF("go", slot0.linerTF)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.signTF = arg_1_0:findTF("sign", arg_1_0.bg)
+	arg_1_0.items = arg_1_0:findTF("items", arg_1_0.signTF)
+	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0:findTF("tpl", arg_1_0.items))
+	arg_1_0.signBtn = arg_1_0:findTF("get", arg_1_0.signTF)
+	arg_1_0.signGreyBtn = arg_1_0:findTF("get_grey", arg_1_0.signTF)
+	arg_1_0.countText = arg_1_0:findTF("count_bg/count", arg_1_0.signTF)
+	arg_1_0.namedTF = arg_1_0:findTF("named", arg_1_0.bg)
+	arg_1_0.nameInput = arg_1_0:findTF("input/nickname", arg_1_0.namedTF)
+	arg_1_0.sureBtn = arg_1_0:findTF("sure", arg_1_0.namedTF)
+	arg_1_0.linerTF = arg_1_0:findTF("liner", arg_1_0.bg)
+	arg_1_0.linerInput = arg_1_0:findTF("name/input", arg_1_0.linerTF)
+	arg_1_0.linerBtn = arg_1_0:findTF("go", arg_1_0.linerTF)
 
-	setText(slot0:findTF("lock/Text", slot0.linerBtn), i18n("liner_sign_unlock_tip"))
+	setText(arg_1_0:findTF("lock/Text", arg_1_0.linerBtn), i18n("liner_sign_unlock_tip"))
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.nday = 0
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskGroup = underscore.flatten(slot0.activity:getConfig("config_data"))
-	slot0.taskConfig = pg.task_data_template
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.nday = 0
+	arg_2_0.taskProxy = getProxy(TaskProxy)
+	arg_2_0.taskGroup = underscore.flatten(arg_2_0.activity:getConfig("config_data"))
+	arg_2_0.taskConfig = pg.task_data_template
 
-	return updateActivityTaskStatus(slot0.activity)
+	return updateActivityTaskStatus(arg_2_0.activity)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventInit then
-			slot3 = slot1 + 1
+function var_0_0.OnFirstFlush(arg_3_0)
+	arg_3_0.uilist:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventInit then
+			local var_4_0 = arg_4_1 + 1
+			local var_4_1 = arg_3_0.taskGroup[var_4_0]
+			local var_4_2 = arg_3_0:findTF("item_mask/item", arg_4_2)
+			local var_4_3 = Drop.Create(arg_3_0.taskConfig[var_4_1].award_display[1])
 
-			updateDrop(uv0:findTF("item_mask/item", slot2), Drop.Create(uv0.taskConfig[uv0.taskGroup[slot3]].award_display[1]))
-			onButton(uv0, slot2, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			updateDrop(var_4_2, var_4_3)
+			onButton(arg_3_0, arg_4_2, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_4_3)
 			end, SFX_PANEL)
-			GetImageSpriteFromAtlasAsync("ui/activityuipage/linersignpage_atlas", "D" .. slot3, uv0:findTF("day", slot2), true)
+			GetImageSpriteFromAtlasAsync("ui/activityuipage/linersignpage_atlas", "D" .. var_4_0, arg_3_0:findTF("day", arg_4_2), true)
+		elseif arg_4_0 == UIItemList.EventUpdate then
+			local var_4_4 = arg_4_1 + 1
+			local var_4_5 = arg_3_0.taskGroup[var_4_4]
+			local var_4_6 = arg_3_0.taskProxy:getTaskById(var_4_5) or arg_3_0.taskProxy:getFinishTaskById(var_4_5)
 
-			return
-		end
-
-		if slot0 == UIItemList.EventUpdate then
-			slot5 = uv0.taskProxy:getTaskById(uv0.taskGroup[slot1 + 1]) or uv0.taskProxy:getFinishTaskById(slot4)
-
-			setActive(uv0:findTF("cur", slot2), slot3 == uv0.nday)
-			setActive(uv0:findTF("got", slot2), slot3 < uv0.nday or slot5 and slot5:getTaskStatus() == 2)
+			setActive(arg_3_0:findTF("cur", arg_4_2), var_4_4 == arg_3_0.nday)
+			setActive(arg_3_0:findTF("got", arg_4_2), var_4_4 < arg_3_0.nday or var_4_6 and var_4_6:getTaskStatus() == 2)
 		end
 	end)
-	onButton(slot0, slot0.signBtn, function ()
-		if not uv0.remainCnt or uv0.remainCnt <= 0 then
+	onButton(arg_3_0, arg_3_0.signBtn, function()
+		if not arg_3_0.remainCnt or arg_3_0.remainCnt <= 0 then
 			return
 		end
 
 		seriesAsync({
-			function (slot0)
-				if checkExist(uv0.activity:getConfig("config_client").story, {
-					uv0.nday
+			function(arg_7_0)
+				local var_7_0 = arg_3_0.activity:getConfig("config_client").story
+
+				if checkExist(var_7_0, {
+					arg_3_0.nday
 				}, {
 					1
 				}) then
-					pg.NewStoryMgr.GetInstance():Play(slot1[uv0.nday][1], slot0)
+					pg.NewStoryMgr.GetInstance():Play(var_7_0[arg_3_0.nday][1], arg_7_0)
 				else
-					slot0()
+					arg_7_0()
 				end
 			end,
-			function (slot0)
-				if uv0.curTaskVO:getTaskStatus() == 1 then
-					uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv0.curTaskVO, slot0)
+			function(arg_8_0)
+				if arg_3_0.curTaskVO:getTaskStatus() == 1 then
+					arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, arg_3_0.curTaskVO, arg_8_0)
 				else
-					slot0()
+					arg_8_0()
 				end
 			end
 		})
 	end, SFX_PANEL)
-	setInputText(slot0.nameInput, getProxy(PlayerProxy):getRawData():GetName())
-	onButton(slot0, slot0.sureBtn, function ()
-		if getInputText(uv0.nameInput) == "" then
+	setInputText(arg_3_0.nameInput, getProxy(PlayerProxy):getRawData():GetName())
+	onButton(arg_3_0, arg_3_0.sureBtn, function()
+		local var_9_0 = getInputText(arg_3_0.nameInput)
+
+		if var_9_0 == "" then
 			return
 		end
 
-		if not nameValidityCheck(slot0, 4, 14, {
+		if not nameValidityCheck(var_9_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -89,87 +94,95 @@ function slot0.OnFirstFlush(slot0)
 			return
 		end
 
-		uv0:emit(ActivityMediator.STORE_DATE, {
+		arg_3_0:emit(ActivityMediator.STORE_DATE, {
 			actId = ActivityConst.LINER_NAMED_ID,
-			strValue = slot0,
-			callback = function ()
-				uv0:OnUpdateFlush()
+			strValue = var_9_0,
+			callback = function()
+				arg_3_0:OnUpdateFlush()
 			end
 		})
 	end, SFX_PANEL)
-	onInputEndEdit(slot0, slot0.linerInput, function (slot0)
-		if not uv0:IsNamed() then
+	onInputEndEdit(arg_3_0, arg_3_0.linerInput, function(arg_11_0)
+		if not arg_3_0:IsNamed() then
 			return
 		end
 
-		if not nameValidityCheck(slot0, 4, 14, {
+		if not nameValidityCheck(arg_11_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
 			"login_newPlayerScene_invalideName"
 		}) then
-			setInputText(uv0.linerInput, uv0.lastName)
+			setInputText(arg_3_0.linerInput, arg_3_0.lastName)
 
 			return
 		else
-			uv0:emit(ActivityMediator.STORE_DATE, {
+			arg_3_0:emit(ActivityMediator.STORE_DATE, {
 				actId = ActivityConst.LINER_NAMED_ID,
-				strValue = slot0,
-				callback = function ()
-					uv0:OnUpdateFlush()
+				strValue = arg_11_0,
+				callback = function()
+					arg_3_0:OnUpdateFlush()
 				end
 			})
 		end
 	end)
-	onButton(slot0, slot0.linerBtn, function ()
-		if uv0:IsLockLiner() then
+	onButton(arg_3_0, arg_3_0.linerBtn, function()
+		if arg_3_0:IsLockLiner() then
 			return
 		end
 
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINER)
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LINER)
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0.nday = slot0.activity.data3
-	slot1 = slot0:IsFinishSign()
+function var_0_0.OnUpdateFlush(arg_14_0)
+	arg_14_0.nday = arg_14_0.activity.data3
 
-	setActive(slot0.signTF, not slot1)
-	setActive(slot0.namedTF, slot1 and not slot0:IsNamed())
-	setActive(slot0.linerTF, slot1 and slot0:IsNamed())
-	setActive(slot0:findTF("lock", slot0.linerBtn), slot0:IsLockLiner())
+	local var_14_0 = arg_14_0:IsFinishSign()
 
-	if not slot1 then
-		slot0.curTaskVO = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday]) or slot0.taskProxy:getFinishTaskById(slot2)
-		slot0.remainCnt = math.min(slot0.activity:getDayIndex(), #slot0.taskGroup) - slot0.nday
+	setActive(arg_14_0.signTF, not var_14_0)
+	setActive(arg_14_0.namedTF, var_14_0 and not arg_14_0:IsNamed())
+	setActive(arg_14_0.linerTF, var_14_0 and arg_14_0:IsNamed())
+	setActive(arg_14_0:findTF("lock", arg_14_0.linerBtn), arg_14_0:IsLockLiner())
 
-		if slot0.curTaskVO:getTaskStatus() == 1 then
-			slot0.remainCnt = slot0.remainCnt + 1
+	if not var_14_0 then
+		local var_14_1 = arg_14_0.taskGroup[arg_14_0.nday]
+
+		arg_14_0.curTaskVO = arg_14_0.taskProxy:getTaskById(var_14_1) or arg_14_0.taskProxy:getFinishTaskById(var_14_1)
+		arg_14_0.remainCnt = math.min(arg_14_0.activity:getDayIndex(), #arg_14_0.taskGroup) - arg_14_0.nday
+
+		if arg_14_0.curTaskVO:getTaskStatus() == 1 then
+			arg_14_0.remainCnt = arg_14_0.remainCnt + 1
 		end
 
-		setActive(slot0.signBtn, slot0.remainCnt > 0)
-		setActive(slot0.signGreyBtn, slot0.remainCnt <= 0)
-		setText(slot0.countText, i18n("liner_sign_cnt_tip") .. slot0.remainCnt)
-		slot0.uilist:align(#slot0.taskGroup)
+		setActive(arg_14_0.signBtn, arg_14_0.remainCnt > 0)
+		setActive(arg_14_0.signGreyBtn, arg_14_0.remainCnt <= 0)
+		setText(arg_14_0.countText, i18n("liner_sign_cnt_tip") .. arg_14_0.remainCnt)
+		arg_14_0.uilist:align(#arg_14_0.taskGroup)
 	else
-		slot0.lastName = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID):getStrData1()
+		arg_14_0.lastName = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID):getStrData1()
 
-		setInputText(slot0.linerInput, slot0.lastName)
+		setInputText(arg_14_0.linerInput, arg_14_0.lastName)
 	end
 end
 
-function slot0.IsFinishSign(slot0)
-	slot2 = slot0.taskProxy:getTaskById(slot0.taskGroup[#slot0.taskGroup]) or slot0.taskProxy:getFinishTaskById(slot1)
+function var_0_0.IsFinishSign(arg_15_0)
+	local var_15_0 = arg_15_0.taskGroup[#arg_15_0.taskGroup]
+	local var_15_1 = arg_15_0.taskProxy:getTaskById(var_15_0) or arg_15_0.taskProxy:getFinishTaskById(var_15_0)
 
-	return slot2 and slot2:getTaskStatus() == 2
+	return var_15_1 and var_15_1:getTaskStatus() == 2
 end
 
-function slot0.IsNamed(slot0)
-	return getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID) and not slot1:isEnd() and slot1:getStrData1() ~= ""
+function var_0_0.IsNamed(arg_16_0)
+	local var_16_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_NAMED_ID)
+
+	return var_16_0 and not var_16_0:isEnd() and var_16_0:getStrData1() ~= ""
 end
 
-function slot0.IsLockLiner(slot0)
-	return not getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_ID) or slot1:isEnd()
+function var_0_0.IsLockLiner(arg_17_0)
+	local var_17_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.LINER_ID)
+
+	return not var_17_0 or var_17_0:isEnd()
 end
 
-return slot0
+return var_0_0

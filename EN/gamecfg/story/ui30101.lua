@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "UI30101",
 	mode = 2,
 	once = true,
@@ -207,12 +207,7 @@ return {
 			},
 			sequence = {
 				{
-					[[
-          Chapter 3 - <size=34.5>Five Minutes of Fate</size> 
-
-
-
-]],
+					"          Chapter 3 - <size=34.5>Five Minutes of Fate</size> \n\n\n\n",
 					2
 				}
 			}

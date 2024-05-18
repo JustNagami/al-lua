@@ -1,82 +1,92 @@
-slot0 = class("GuildLogInfo", import("..BaseVO"))
-slot0.CMD_TYPE_JOIN = 1
-slot0.CMD_TYPE_SET_DUTY = 2
-slot0.CMD_TYPE_QUIT = 3
-slot0.CMD_TYPE_FIRE = 4
-slot0.CMD_TYPE_GET_SHIP = 5
-slot0.CMD_TYPE_FACILITY_CONTRIBUTION = 6
-slot0.CMD_TYPE_FACILITY_CONSUME = 7
+﻿local var_0_0 = class("GuildLogInfo", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.cmd = slot1.cmd
-	slot0.time = slot1.time
-	slot0.userId = slot1.user_id
-	slot0.name = slot1.name
-	slot0.arg0 = {}
+var_0_0.CMD_TYPE_JOIN = 1
+var_0_0.CMD_TYPE_SET_DUTY = 2
+var_0_0.CMD_TYPE_QUIT = 3
+var_0_0.CMD_TYPE_FIRE = 4
+var_0_0.CMD_TYPE_GET_SHIP = 5
+var_0_0.CMD_TYPE_FACILITY_CONTRIBUTION = 6
+var_0_0.CMD_TYPE_FACILITY_CONSUME = 7
 
-	for slot5, slot6 in ipairs(slot1.arg0 or {}) do
-		table.insert(slot0.arg0, slot6)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.cmd = arg_1_1.cmd
+	arg_1_0.time = arg_1_1.time
+	arg_1_0.userId = arg_1_1.user_id
+	arg_1_0.name = arg_1_1.name
+	arg_1_0.arg0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.arg0 or {}) do
+		table.insert(arg_1_0.arg0, iter_1_1)
 	end
 
-	slot0.arg1 = slot1.arg1
+	arg_1_0.arg1 = arg_1_1.arg1
 end
 
-function slot0.getConent(slot0)
-	slot2 = pg.TimeMgr.GetInstance():STimeDescC(slot0.time, "[%m-%d %H:%M]")
+function var_0_0.getConent(arg_2_0)
+	local var_2_0 = getOfflineTimeStamp(arg_2_0.time)
+	local var_2_1 = pg.TimeMgr.GetInstance():STimeDescC(arg_2_0.time, "[%m-%d %H:%M]")
 
-	if slot0.cmd == uv0.CMD_TYPE_JOIN then
-		return i18n("guild_log_new_guild_join", slot0.name), getOfflineTimeStamp(slot0.time)
-	elseif slot0.cmd == uv0.CMD_TYPE_SET_DUTY then
-		return i18n("guild_log_duty_change", slot0.name, GuildMember.dutyId2Name(slot0.arg1)), slot1
-	elseif slot0.cmd == uv0.CMD_TYPE_QUIT then
-		return i18n("guild_log_quit", slot0.name), slot1
-	elseif slot0.cmd == uv0.CMD_TYPE_FIRE then
-		return i18n("guild_log_fire", slot0.name), slot1
-	elseif slot0.cmd == uv0.CMD_TYPE_GET_SHIP then
-		slot3 = Ship.New({
-			configId = slot0.arg1
+	if arg_2_0.cmd == var_0_0.CMD_TYPE_JOIN then
+		return i18n("guild_log_new_guild_join", arg_2_0.name), var_2_0
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_SET_DUTY then
+		return i18n("guild_log_duty_change", arg_2_0.name, GuildMember.dutyId2Name(arg_2_0.arg1)), var_2_0
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_QUIT then
+		return i18n("guild_log_quit", arg_2_0.name), var_2_0
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_FIRE then
+		return i18n("guild_log_fire", arg_2_0.name), var_2_0
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_GET_SHIP then
+		local var_2_2 = Ship.New({
+			configId = arg_2_0.arg1
 		})
+		local var_2_3 = {
+			PublicArg.New({
+				type = PublicArg.TypePlayerName,
+				string = arg_2_0.name
+			}),
+			PublicArg.New({
+				type = PublicArg.TypeShipId,
+				int = arg_2_0.arg1
+			})
+		}
 
 		return {
 			id = 3,
-			args = {
-				PublicArg.New({
-					type = PublicArg.TypePlayerName,
-					string = slot0.name
-				}),
-				PublicArg.New({
-					type = PublicArg.TypeShipId,
-					int = slot0.arg1
-				})
-			}
-		}, slot1
-	elseif slot0.cmd == uv0.CMD_TYPE_FACILITY_CONTRIBUTION then
-		return slot0.name .. slot0:getDuty(), slot2, i18n("word_contribution"), slot0.arg0[1] .. Item.New({
-			id = id2ItemId(slot0.arg0[2])
-		}):getConfig("name"), i18n("guild_facility_get_gold", slot0.arg0[3])
-	elseif slot0.cmd == uv0.CMD_TYPE_FACILITY_CONSUME then
-		slot3 = i18n("word_consume")
-		slot4 = slot0.arg0[1] .. i18n("word_guild_res")
-		slot5 = ""
+			args = var_2_3
+		}, var_2_0
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_FACILITY_CONTRIBUTION then
+		local var_2_4 = i18n("word_contribution")
+		local var_2_5 = Item.New({
+			id = id2ItemId(arg_2_0.arg0[2])
+		})
+		local var_2_6 = arg_2_0.arg0[1] .. var_2_5:getConfig("name")
+		local var_2_7 = i18n("guild_facility_get_gold", arg_2_0.arg0[3])
 
-		if slot0.arg0[2] then
-			slot5 = i18n("guild_facility_upgrade", GuildFacility.New({
-				id = slot0.arg0[2]
-			}):getConfig("name"), slot0.arg0[3])
+		return arg_2_0.name .. arg_2_0:getDuty(), var_2_1, var_2_4, var_2_6, var_2_7
+	elseif arg_2_0.cmd == var_0_0.CMD_TYPE_FACILITY_CONSUME then
+		local var_2_8 = i18n("word_consume")
+		local var_2_9 = arg_2_0.arg0[1] .. i18n("word_guild_res")
+		local var_2_10 = ""
+
+		if arg_2_0.arg0[2] then
+			local var_2_11 = GuildFacility.New({
+				id = arg_2_0.arg0[2]
+			}):getConfig("name")
+
+			var_2_10 = i18n("guild_facility_upgrade", var_2_11, arg_2_0.arg0[3])
 		end
 
-		return slot0.name .. slot0:getDuty(), slot2, slot3, slot4, slot5
+		return arg_2_0.name .. arg_2_0:getDuty(), var_2_1, var_2_8, var_2_9, var_2_10
 	end
 end
 
-function slot0.getDuty(slot0)
-	slot1 = ""
+function var_0_0.getDuty(arg_3_0)
+	local var_3_0 = ""
 
-	if slot0.arg1 then
-		slot1 = " （" .. GuildMember.dutyId2Name(slot0.arg1) .. "）"
+	if arg_3_0.arg1 then
+		var_3_0 = " （" .. GuildMember.dutyId2Name(arg_3_0.arg1) .. "）"
 	end
 
-	return slot1
+	return var_3_0
 end
 
-return slot0
+return var_0_0

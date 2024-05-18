@@ -1,38 +1,39 @@
-slot0 = class("ChargeAwardPage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("ChargeAwardPage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("bg")
-	slot0.charge = slot0:findTF("charge")
-	slot0.take = slot0:findTF("take")
-	slot0.finish = slot0:findTF("finish")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("bg")
+	arg_1_0.charge = arg_1_0:findTF("charge")
+	arg_1_0.take = arg_1_0:findTF("take")
+	arg_1_0.finish = arg_1_0:findTF("finish")
 end
 
-function slot0.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_2_0)
+	return
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.charge, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.charge, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
 			wrap = ChargeScene.TYPE_DIAMOND
 		})
 	end)
-	onButton(slot0, slot0.take, function ()
-		uv0:emit(ActivityMediator.EVENT_OPERATION, {
+	onButton(arg_3_0, arg_3_0.take, function()
+		arg_3_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.activity.id
+			activity_id = arg_3_0.activity.id
 		})
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	setActive(slot0.charge, slot0.activity.data2 == 0 and slot0.activity.data1 == 0)
-	setButtonEnabled(slot0.take, slot0.activity.data2 == 0)
-	setActive(slot0.take, slot0.activity.data1 > 0)
-	setActive(slot0.finish, slot0.activity.data2 == 1)
+function var_0_0.OnUpdateFlush(arg_6_0)
+	setActive(arg_6_0.charge, arg_6_0.activity.data2 == 0 and arg_6_0.activity.data1 == 0)
+	setButtonEnabled(arg_6_0.take, arg_6_0.activity.data2 == 0)
+	setActive(arg_6_0.take, arg_6_0.activity.data1 > 0)
+	setActive(arg_6_0.finish, arg_6_0.activity.data2 == 1)
 end
 
-function slot0.OnDestroy(slot0)
-	clearImageSprite(slot0.bg)
+function var_0_0.OnDestroy(arg_7_0)
+	clearImageSprite(arg_7_0.bg)
 end
 
-return slot0
+return var_0_0

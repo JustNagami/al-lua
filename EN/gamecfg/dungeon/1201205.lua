@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = 1201205,
 	bgm = "story-masazhusai",
 	stages = {

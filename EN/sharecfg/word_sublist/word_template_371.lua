@@ -1,11 +1,14 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_371 = {}
-slot1 = slot0.word_template_371
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_371 = {}
+
+local var_0_1 = var_0_0.word_template_371
 
 function temp()
-	uv0["晓"] = {
-		["波"] = {
+	var_0_1.晓 = {
+		波 = {
 			this = true
 		}
 	}
@@ -14,8 +17,8 @@ end
 temp()
 
 function temp()
-	uv0["蜡"] = {
-		["烛"] = {
+	var_0_1.蜡 = {
+		烛 = {
 			this = true
 		}
 	}
@@ -24,8 +27,8 @@ end
 temp()
 
 function temp()
-	uv0["压"] = {
-		["死"] = {
+	var_0_1.压 = {
+		死 = {
 			this = true
 		},
 		s = {
@@ -51,15 +54,15 @@ end
 temp()
 
 function temp()
-	uv0["碾"] = {
-		["压"] = {
+	var_0_1.碾 = {
+		压 = {
 			this = true
 		},
-		["人"] = {
+		人 = {
 			this = true,
-			["的"] = {
-				["贝"] = {
-					["塔"] = {
+			的 = {
+				贝 = {
+					塔 = {
 						this = true
 					}
 				}
@@ -71,10 +74,10 @@ end
 temp()
 
 function temp()
-	uv0["趁"] = {
-		["疫"] = {
-			["打"] = {
-				["压"] = {
+	var_0_1.趁 = {
+		疫 = {
+			打 = {
+				压 = {
 					this = true
 				}
 			}
@@ -85,9 +88,9 @@ end
 temp()
 
 function temp()
-	uv0["塑"] = {
-		["料"] = {
-			["袋"] = {
+	var_0_1.塑 = {
+		料 = {
+			袋 = {
 				this = true
 			}
 		}
@@ -97,8 +100,8 @@ end
 temp()
 
 function temp()
-	uv0["歹"] = {
-		["徒"] = {
+	var_0_1.歹 = {
+		徒 = {
 			this = true
 		}
 	}

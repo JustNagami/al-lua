@@ -1,54 +1,60 @@
-ys = ys or {}
-slot0 = ys
-slot1 = singletonClass("BattleBossCharacterFactory", slot0.Battle.BattleEnemyCharacterFactory)
-slot0.Battle.BattleBossCharacterFactory = slot1
-slot1.__name = "BattleBossCharacterFactory"
-slot1.BOMB_FX_NAME = "Bossbomb"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = singletonClass("BattleBossCharacterFactory", var_0_0.Battle.BattleEnemyCharacterFactory)
 
-	slot0.HP_BAR_NAME = "BossBarContainer/heroBlood"
-	slot0.DUAL_BAR_NAME = {
+var_0_0.Battle.BattleBossCharacterFactory = var_0_1
+var_0_1.__name = "BattleBossCharacterFactory"
+var_0_1.BOMB_FX_NAME = "Bossbomb"
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
+
+	arg_1_0.HP_BAR_NAME = "BossBarContainer/heroBlood"
+	arg_1_0.DUAL_BAR_NAME = {
 		"BossBarContainer/heroBlood_ivory",
 		"BossBarContainer/heroBlood_ebony"
 	}
 end
 
-function slot1.CreateCharacter(slot0, slot1)
-	slot3 = slot0:MakeCharacter()
+function var_0_1.CreateCharacter(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1.unit
+	local var_2_1 = arg_2_0:MakeCharacter()
 
-	slot3:SetFactory(slot0)
-	slot3:SetUnitData(slot1.unit)
-	slot3:SetBossData(slot1.bossData)
-	slot0:MakeModel(slot3)
-	slot0:MakeCastClock(slot3)
-	slot0:MakeBarrierClock(slot3)
+	var_2_1:SetFactory(arg_2_0)
+	var_2_1:SetUnitData(var_2_0)
+	var_2_1:SetBossData(arg_2_1.bossData)
+	arg_2_0:MakeModel(var_2_1)
+	arg_2_0:MakeCastClock(var_2_1)
+	arg_2_0:MakeBarrierClock(var_2_1)
 
-	return slot3
+	return var_2_1
 end
 
-function slot1.MakeCharacter(slot0)
-	return uv0.Battle.BattleBossCharacter:New()
+function var_0_1.MakeCharacter(arg_3_0)
+	return var_0_0.Battle.BattleBossCharacter:New()
 end
 
-function slot1.MakeBloodBar(slot0, slot1)
-	if slot1:GetBossIndex() then
-		slot1:AddHPBar(slot0:GetSceneMediator():InstantiateCharacterComponent(slot0.DUAL_BAR_NAME[slot3]))
+function var_0_1.MakeBloodBar(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0:GetSceneMediator()
+	local var_4_1 = arg_4_1:GetBossIndex()
+
+	if var_4_1 then
+		arg_4_1:AddHPBar(var_4_0:InstantiateCharacterComponent(arg_4_0.DUAL_BAR_NAME[var_4_1]))
 	else
-		slot1:AddHPBar(slot2:InstantiateCharacterComponent(slot0.HP_BAR_NAME), true)
+		arg_4_1:AddHPBar(var_4_0:InstantiateCharacterComponent(arg_4_0.HP_BAR_NAME), true)
 	end
 end
 
-function slot1.MakeAimBiasBar(slot0, slot1)
-	slot2 = slot0:GetHPBarPool():GetHPBar(uv0.Battle.BattleHPBarManager.HP_BAR_FOE).transform
+function var_0_1.MakeAimBiasBar(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_0:GetHPBarPool():GetHPBar(var_0_0.Battle.BattleHPBarManager.HP_BAR_FOE).transform
 
-	setActive(slot2:Find("bg"), false)
-	setActive(slot2:Find("blood"), false)
-	slot1:AddAimBiasBar(slot2)
-	slot1:AddAimBiasFogFX()
+	setActive(var_5_0:Find("bg"), false)
+	setActive(var_5_0:Find("blood"), false)
+	arg_5_1:AddAimBiasBar(var_5_0)
+	arg_5_1:AddAimBiasFogFX()
 end
 
-function slot1.RemoveCharacter(slot0, slot1)
-	uv0.super.RemoveCharacter(slot0, slot1)
+function var_0_1.RemoveCharacter(arg_6_0, arg_6_1)
+	var_0_1.super.RemoveCharacter(arg_6_0, arg_6_1)
 end

@@ -1,10 +1,12 @@
-slot0 = class("SendMsgCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SendMsgCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+
 	pg.ConnectionMgr.GetInstance():Send(50102, {
 		type = 1,
-		content = slot1:getBody()
+		content = var_1_0
 	})
 end
 
-return slot0
+return var_0_0

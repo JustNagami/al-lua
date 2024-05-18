@@ -1,77 +1,87 @@
-slot0 = class("CollectionMediator", import("..base.ContextMediator"))
-slot0.EVENT_OBTAIN_SKIP = "CollectionMediator:EVENT_OBTAIN_SKIP"
-slot0.EVENT_OPEN_FULL_SCREEN_PIC_VIEW = "CollectionMediator:EVENT_OPEN_FULL_SCREEN_PIC_VIEW"
+﻿local var_0_0 = class("CollectionMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0.collectionProxy = getProxy(CollectionProxy)
+var_0_0.EVENT_OBTAIN_SKIP = "CollectionMediator:EVENT_OBTAIN_SKIP"
+var_0_0.EVENT_OPEN_FULL_SCREEN_PIC_VIEW = "CollectionMediator:EVENT_OPEN_FULL_SCREEN_PIC_VIEW"
 
-	slot0.viewComponent:setShipGroups(slot0.collectionProxy:getGroups())
-	slot0.viewComponent:setAwards(slot0.collectionProxy:getAwards())
-	slot0.viewComponent:setCollectionRate(slot0.collectionProxy:getCollectionRate())
-	slot0.viewComponent:setLinkCollectionCount(slot0.collectionProxy:getLinkCollectionCount())
-	slot0.viewComponent:setPlayer(getProxy(PlayerProxy):getRawData())
-	slot0.viewComponent:setProposeList(getProxy(BayProxy):getProposeGroupList())
-	slot0:bind(CollectionScene.GET_AWARD, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.COLLECT_GET_AWARD, {
-			id = slot1,
-			index = slot2
+function var_0_0.register(arg_1_0)
+	arg_1_0.collectionProxy = getProxy(CollectionProxy)
+
+	arg_1_0.viewComponent:setShipGroups(arg_1_0.collectionProxy:getGroups())
+	arg_1_0.viewComponent:setAwards(arg_1_0.collectionProxy:getAwards())
+	arg_1_0.viewComponent:setCollectionRate(arg_1_0.collectionProxy:getCollectionRate())
+	arg_1_0.viewComponent:setLinkCollectionCount(arg_1_0.collectionProxy:getLinkCollectionCount())
+
+	local var_1_0 = getProxy(PlayerProxy)
+
+	arg_1_0.viewComponent:setPlayer(var_1_0:getRawData())
+
+	local var_1_1 = getProxy(BayProxy)
+
+	arg_1_0.viewComponent:setProposeList(var_1_1:getProposeGroupList())
+	arg_1_0:bind(CollectionScene.GET_AWARD, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.COLLECT_GET_AWARD, {
+			id = arg_2_1,
+			index = arg_2_2
 		})
 	end)
-	slot0:bind(CollectionScene.SHOW_DETAIL, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHIP_PROFILE, {
-			showTrans = slot1,
-			groupId = slot2
+	arg_1_0:bind(CollectionScene.SHOW_DETAIL, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIP_PROFILE, {
+			showTrans = arg_3_1,
+			groupId = arg_3_2
 		})
 	end)
-	slot0:bind(CollectionScene.ACTIVITY_OP, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+	arg_1_0:bind(CollectionScene.ACTIVITY_OP, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_4_1)
 	end)
-	slot0:bind(CollectionScene.BEGIN_STAGE, function (slot0, slot1)
-		uv0:sendNotification(GAME.BEGIN_STAGE, slot1)
+	arg_1_0:bind(CollectionScene.BEGIN_STAGE, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.BEGIN_STAGE, arg_5_1)
 	end)
-	slot0:bind(CollectionScene.ON_INDEX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(CollectionScene.ON_INDEX, function(arg_6_0, arg_6_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_6_1
 		}))
 	end)
-	slot0:bind(uv0.EVENT_OPEN_FULL_SCREEN_PIC_VIEW, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.EVENT_OPEN_FULL_SCREEN_PIC_VIEW, function(arg_7_0, arg_7_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = GalleryFullScreenMediator,
 			viewComponent = GalleryFullScreenLayer,
 			data = {
-				picID = slot1
+				picID = arg_7_1
 			}
 		}))
 	end)
-	slot0.viewComponent:updateCollectNotices(slot0.collectionProxy:hasFinish())
+	arg_1_0.viewComponent:updateCollectNotices(arg_1_0.collectionProxy:hasFinish())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {
 		CollectionProxy.AWARDS_UPDATE,
 		GAME.COLLECT_GET_AWARD_DONE,
 		PlayerProxy.UPDATED,
 		GAME.BEGIN_STAGE_DONE,
-		uv0.EVENT_OBTAIN_SKIP
+		var_0_0.EVENT_OBTAIN_SKIP
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == CollectionProxy.AWARDS_UPDATE then
-		slot0.viewComponent:setAwards(slot1:getBody())
-	elseif slot2 == GAME.COLLECT_GET_AWARD_DONE then
-		slot0.viewComponent:sortDisplay()
-		slot0.viewComponent:updateCollectNotices(slot0.collectionProxy:hasFinish())
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.items)
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayer(slot3)
-	elseif slot2 == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
-	elseif slot2 == uv0.EVENT_OBTAIN_SKIP then
-		slot0.viewComponent:skipIn(slot3.toggle, slot3.displayGroupId)
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
+
+	if var_9_0 == CollectionProxy.AWARDS_UPDATE then
+		arg_9_0.viewComponent:setAwards(var_9_1)
+	elseif var_9_0 == GAME.COLLECT_GET_AWARD_DONE then
+		arg_9_0.viewComponent:sortDisplay()
+		arg_9_0.viewComponent:updateCollectNotices(arg_9_0.collectionProxy:hasFinish())
+		arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_1.items)
+	elseif var_9_0 == PlayerProxy.UPDATED then
+		arg_9_0.viewComponent:setPlayer(var_9_1)
+	elseif var_9_0 == GAME.BEGIN_STAGE_DONE then
+		arg_9_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_9_1)
+	elseif var_9_0 == var_0_0.EVENT_OBTAIN_SKIP then
+		arg_9_0.viewComponent:skipIn(var_9_1.toggle, var_9_1.displayGroupId)
 	end
 end
 
-return slot0
+return var_0_0

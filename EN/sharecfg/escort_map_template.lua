@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.escort_map_template = {
 	[70000] = {
 		id = 70000,

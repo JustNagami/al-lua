@@ -1,4 +1,29 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkillRandom",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				target = "TargetSelf",
+				skill_id_list = {
+					16071,
+					16072
+				},
+				range = {
+					{
+						0,
+						0.45
+					},
+					{
+						0.45,
+						1
+					}
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -277,30 +302,5 @@ return {
 	stack = 1,
 	id = 16071,
 	icon = 16071,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkillRandom",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				target = "TargetSelf",
-				skill_id_list = {
-					16071,
-					16072
-				},
-				range = {
-					{
-						0,
-						0.45
-					},
-					{
-						0.45,
-						1
-					}
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

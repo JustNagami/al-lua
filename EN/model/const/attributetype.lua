@@ -1,48 +1,49 @@
-slot0 = class("AttributeType")
-slot0.Durability = "durability"
-slot0.Cannon = "cannon"
-slot0.Torpedo = "torpedo"
-slot0.AntiAircraft = "antiaircraft"
-slot0.AntiSub = "antisub"
-slot0.Air = "air"
-slot0.Reload = "reload"
-slot0.ArmorType = "armor_type"
-slot0.Armor = "armor"
-slot0.Hit = "hit"
-slot0.Speed = "speed"
-slot0.Luck = "luck"
-slot0.Dodge = "dodge"
-slot0.Expend = "expend"
-slot0.Intimacy = "intimacy"
-slot0.AirDominate = "AirDominate"
-slot0.Damage = "damage"
-slot0.CD = "cd"
-slot0.Healthy = "healthy"
-slot0.Speciality = "speciality"
-slot0.Range = "range"
-slot0.Angle = "angle"
-slot0.Scatter = "scatter"
-slot0.Ammo = "ammo"
-slot0.HuntingRange = "hunting_range"
-slot0.AirDurability = "AirDurability"
-slot0.AntiSiren = "anti_siren"
-slot0.Corrected = "corrected"
-slot0.OxyMax = "oxy_max"
-slot0.OxyCost = "oxy_cost"
-slot0.OxyRecovery = "oxy_recovery"
-slot0.OxyRecoverySurface = "oxy_recovery_surface"
-slot0.OxyRecoveryBench = "oxy_recovery_bench"
-slot0.OxyAttackDuration = "attack_duration"
-slot0.OxyRaidDistance = "raid_distance"
-slot0.SonarRange = "sonarRange"
-slot0.Tactics = "tactics"
-slot0.WorldPower = "world_power"
+﻿local var_0_0 = class("AttributeType")
 
-function slot0.Type2Name(slot0)
-	return i18n("attribute_" .. slot0)
+var_0_0.Durability = "durability"
+var_0_0.Cannon = "cannon"
+var_0_0.Torpedo = "torpedo"
+var_0_0.AntiAircraft = "antiaircraft"
+var_0_0.AntiSub = "antisub"
+var_0_0.Air = "air"
+var_0_0.Reload = "reload"
+var_0_0.ArmorType = "armor_type"
+var_0_0.Armor = "armor"
+var_0_0.Hit = "hit"
+var_0_0.Speed = "speed"
+var_0_0.Luck = "luck"
+var_0_0.Dodge = "dodge"
+var_0_0.Expend = "expend"
+var_0_0.Intimacy = "intimacy"
+var_0_0.AirDominate = "AirDominate"
+var_0_0.Damage = "damage"
+var_0_0.CD = "cd"
+var_0_0.Healthy = "healthy"
+var_0_0.Speciality = "speciality"
+var_0_0.Range = "range"
+var_0_0.Angle = "angle"
+var_0_0.Scatter = "scatter"
+var_0_0.Ammo = "ammo"
+var_0_0.HuntingRange = "hunting_range"
+var_0_0.AirDurability = "AirDurability"
+var_0_0.AntiSiren = "anti_siren"
+var_0_0.Corrected = "corrected"
+var_0_0.OxyMax = "oxy_max"
+var_0_0.OxyCost = "oxy_cost"
+var_0_0.OxyRecovery = "oxy_recovery"
+var_0_0.OxyRecoverySurface = "oxy_recovery_surface"
+var_0_0.OxyRecoveryBench = "oxy_recovery_bench"
+var_0_0.OxyAttackDuration = "attack_duration"
+var_0_0.OxyRaidDistance = "raid_distance"
+var_0_0.SonarRange = "sonarRange"
+var_0_0.Tactics = "tactics"
+var_0_0.WorldPower = "world_power"
+
+function var_0_0.Type2Name(arg_1_0)
+	return i18n("attribute_" .. arg_1_0)
 end
 
-slot0.eliteConditionTip = {
+var_0_0.eliteConditionTip = {
 	cannon = "elite_condition_cannon",
 	air = "elite_condition_air",
 	dodge = "elite_condition_dodge",
@@ -54,68 +55,69 @@ slot0.eliteConditionTip = {
 	antisub = "elite_condition_antisub",
 	level = "elite_condition_level"
 }
-slot1 = {
+
+local var_0_1 = {
 	[0] = "common_compare_equal",
 	"common_compare_larger",
 	"common_compare_not_less_than",
-	[-1.0] = "common_compare_smaller",
-	[-2.0] = "common_compare_not_more_than"
+	[-1] = "common_compare_smaller",
+	[-2] = "common_compare_not_more_than"
 }
 
-function slot0.eliteConditionCompareTip(slot0)
-	return i18n(uv0[slot0])
+function var_0_0.eliteConditionCompareTip(arg_2_0)
+	return i18n(var_0_1[arg_2_0])
 end
 
-function slot0.EliteCondition2Name(slot0, ...)
-	return i18n(uv0.eliteConditionTip[slot0], ...)
+function var_0_0.EliteCondition2Name(arg_3_0, ...)
+	return i18n(var_0_0.eliteConditionTip[arg_3_0], ...)
 end
 
-function slot0.EliteConditionCompare(slot0, slot1, slot2)
-	if slot0 == 0 then
-		return slot1 == slot2
-	elseif slot0 == 1 then
-		return slot2 < slot1
-	elseif slot0 == -1 then
-		return slot1 < slot2
-	elseif slot0 == 2 then
-		return slot2 <= slot1
-	elseif slot0 == -2 then
-		return slot1 <= slot2
+function var_0_0.EliteConditionCompare(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_0 == 0 then
+		return arg_4_1 == arg_4_2
+	elseif arg_4_0 == 1 then
+		return arg_4_2 < arg_4_1
+	elseif arg_4_0 == -1 then
+		return arg_4_1 < arg_4_2
+	elseif arg_4_0 == 2 then
+		return arg_4_2 <= arg_4_1
+	elseif arg_4_0 == -2 then
+		return arg_4_1 <= arg_4_2
 	else
 		assert(false, "compare type error")
 	end
 end
 
-slot0.attrNameTable = {
-	[slot0.Durability] = "maxHP",
-	[slot0.Cannon] = "cannonPower",
-	[slot0.Torpedo] = "torpedoPower",
-	[slot0.AntiAircraft] = "antiAirPower",
-	[slot0.AntiSub] = "antiSubPower",
-	[slot0.Air] = "airPower",
-	[slot0.Reload] = "loadSpeed",
-	[slot0.Hit] = "attackRating",
-	[slot0.Speed] = "speed",
-	[slot0.Luck] = "luck",
-	[slot0.Dodge] = "dodgeRate",
-	[slot0.OxyMax] = "oxyMax",
-	[slot0.OxyCost] = "oxyCost",
-	[slot0.OxyRecovery] = "oxyRecovery",
-	[slot0.OxyRecoveryBench] = "oxyRecoveryBench",
-	[slot0.OxyRecoverySurface] = "oxyRecoverySurface",
-	[slot0.OxyAttackDuration] = "oxyAtkDuration",
-	[slot0.OxyRaidDistance] = "raidDist"
+var_0_0.attrNameTable = {
+	[var_0_0.Durability] = "maxHP",
+	[var_0_0.Cannon] = "cannonPower",
+	[var_0_0.Torpedo] = "torpedoPower",
+	[var_0_0.AntiAircraft] = "antiAirPower",
+	[var_0_0.AntiSub] = "antiSubPower",
+	[var_0_0.Air] = "airPower",
+	[var_0_0.Reload] = "loadSpeed",
+	[var_0_0.Hit] = "attackRating",
+	[var_0_0.Speed] = "speed",
+	[var_0_0.Luck] = "luck",
+	[var_0_0.Dodge] = "dodgeRate",
+	[var_0_0.OxyMax] = "oxyMax",
+	[var_0_0.OxyCost] = "oxyCost",
+	[var_0_0.OxyRecovery] = "oxyRecovery",
+	[var_0_0.OxyRecoveryBench] = "oxyRecoveryBench",
+	[var_0_0.OxyRecoverySurface] = "oxyRecoverySurface",
+	[var_0_0.OxyAttackDuration] = "oxyAtkDuration",
+	[var_0_0.OxyRaidDistance] = "raidDist"
 }
 
-function slot0.ConvertBattleAttrName(slot0)
-	if uv0.attrNameTable[slot0] then
-		return uv0.attrNameTable[slot0]
+function var_0_0.ConvertBattleAttrName(arg_5_0)
+	if var_0_0.attrNameTable[arg_5_0] then
+		return var_0_0.attrNameTable[arg_5_0]
 	else
-		return slot0
+		return arg_5_0
 	end
 end
 
-slot0.PrimalAttr = {
+var_0_0.PrimalAttr = {
 	torpedoPower = true,
 	loadSpeed = true,
 	antiSubPower = true,
@@ -127,8 +129,8 @@ slot0.PrimalAttr = {
 	velocity = true
 }
 
-function slot0.IsPrimalBattleAttr(slot0)
-	return uv0.PrimalAttr[slot0]
+function var_0_0.IsPrimalBattleAttr(arg_6_0)
+	return var_0_0.PrimalAttr[arg_6_0]
 end
 
-return slot0
+return var_0_0

@@ -1,62 +1,63 @@
-slot0 = class("EquipmentTransformInfoLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("EquipmentTransformInfoLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EquipmentTransformInfoUI"
 end
 
-function slot0.init(slot0)
-	slot0.loader = AutoLoader.New()
+function var_0_0.init(arg_2_0)
+	arg_2_0.loader = AutoLoader.New()
 end
 
-function slot0.didEnter(slot0)
-	assert(slot0.contextData.equipVO, "Not Pass EquipVO")
+function var_0_0.didEnter(arg_3_0)
+	assert(arg_3_0.contextData.equipVO, "Not Pass EquipVO")
 
-	slot2 = slot0._tf:Find("Main"):Find("item")
-
-	updateDrop(slot2, {
+	local var_3_0 = arg_3_0._tf:Find("Main"):Find("item")
+	local var_3_1 = {
 		type = DROP_TYPE_EQUIP,
-		id = slot0.contextData.equipVO.id
-	})
-	onButton(slot0, slot2, function ()
-		uv0:emit(uv1.ON_DROP, uv2)
+		id = arg_3_0.contextData.equipVO.id
+	}
+
+	updateDrop(var_3_0, var_3_1)
+	onButton(arg_3_0, var_3_0, function()
+		arg_3_0:emit(var_0_0.ON_DROP, var_3_1)
 	end, SFX_PANEL)
 
-	slot4 = nil
+	local var_3_2
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	slot0.loader:GetPrefab("ui/equipupgradeAni", "", function (slot0)
-		setParent(slot0, uv0._tf)
-		setActive(slot0, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
+	arg_3_0.loader:GetPrefab("ui/equipupgradeAni", "", function(arg_5_0)
+		setParent(arg_5_0, arg_3_0._tf)
+		setActive(arg_5_0, true)
 
-		slot1 = slot0:GetComponent(typeof(DftAniEvent))
+		local var_5_0 = arg_5_0:GetComponent(typeof(DftAniEvent))
 
-		slot1:SetTriggerEvent(function (slot0)
-			uv0 = true
+		var_5_0:SetTriggerEvent(function(arg_6_0)
+			var_3_2 = true
 		end)
-		slot1:SetEndEvent(function (slot0)
-			uv0:closeView()
+		var_5_0:SetEndEvent(function(arg_7_0)
+			arg_3_0:closeView()
 		end)
 
-		function uv0.unloadEffect()
-			uv0:SetTriggerEvent(nil)
-			uv0:SetEndEvent(nil)
+		function arg_3_0.unloadEffect()
+			var_5_0:SetTriggerEvent(nil)
+			var_5_0:SetEndEvent(nil)
 		end
 	end)
-	onButton(slot0, slot0._tf, function ()
-		if uv0 then
-			uv1:closeView()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		if var_3_2 then
+			arg_3_0:closeView()
 		end
 	end)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_10_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf)
 
-	if slot0.unloadEffect then
-		slot0.unloadEffect()
+	if arg_10_0.unloadEffect then
+		arg_10_0.unloadEffect()
 	end
 
-	slot0.loader:Clear()
+	arg_10_0.loader:Clear()
 end
 
-return slot0
+return var_0_0

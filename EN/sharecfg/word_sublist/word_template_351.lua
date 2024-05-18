@@ -1,12 +1,15 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_351 = {}
-slot1 = slot0.word_template_351
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_351 = {}
+
+local var_0_1 = var_0_0.word_template_351
 
 function temp()
-	uv0["轴"] = {
-		["永"] = {
-			["康"] = {
+	var_0_1.轴 = {
+		永 = {
+			康 = {
 				this = true
 			}
 		}
@@ -16,9 +19,9 @@ end
 temp()
 
 function temp()
-	uv0["軸"] = {
-		["永"] = {
-			["康"] = {
+	var_0_1.軸 = {
+		永 = {
+			康 = {
 				this = true
 			}
 		}
@@ -28,7 +31,7 @@ end
 temp()
 
 function temp()
-	uv0["碡"] = {
+	var_0_1.碡 = {
 		this = {
 			this = true
 		}
@@ -38,9 +41,9 @@ end
 temp()
 
 function temp()
-	uv0["肘"] = {
-		["永"] = {
-			["康"] = {
+	var_0_1.肘 = {
+		永 = {
+			康 = {
 				this = true
 			}
 		}
@@ -50,7 +53,7 @@ end
 temp()
 
 function temp()
-	uv0["籀"] = {
+	var_0_1.籀 = {
 		this = {
 			this = true
 		}
@@ -60,110 +63,110 @@ end
 temp()
 
 function temp()
-	uv0["朱"] = {
-		["德"] = {
+	var_0_1.朱 = {
+		德 = {
 			this = true
 		},
-		["凤"] = {
-			["芝"] = {
+		凤 = {
+			芝 = {
 				this = true
 			}
 		},
-		["鳳"] = {
-			["芝"] = {
+		鳳 = {
+			芝 = {
 				this = true
 			}
 		},
-		["福"] = {
-			["熙"] = {
+		福 = {
+			熙 = {
 				this = true
 			}
 		},
-		["嘉"] = {
-			["明"] = {
+		嘉 = {
+			明 = {
 				this = true
 			}
 		},
-		["駿"] = {
+		駿 = {
 			this = true
 		},
-		["立"] = {
-			["伦"] = {
+		立 = {
+			伦 = {
 				this = true
 			},
-			["倫"] = {
+			倫 = {
 				this = true
 			}
 		},
-		["狨"] = {
-			["基"] = {
+		狨 = {
+			基 = {
 				this = true
 			}
 		},
-		["容"] = {
-			["鸡"] = {
+		容 = {
+			鸡 = {
 				this = true
 			},
-			["基"] = {
+			基 = {
 				this = true,
-				["想"] = {
-					["单"] = {
-						["干"] = {
+				想 = {
+					单 = {
+						干 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["溶"] = {
-			["剂"] = {
+		溶 = {
+			剂 = {
 				this = true
 			},
-			["劑"] = {
+			劑 = {
 				this = true
 			}
 		},
-		["榮"] = {
-			["機"] = {
+		榮 = {
+			機 = {
 				this = true
 			}
 		},
-		["熔"] = {
-			["基"] = {
+		熔 = {
+			基 = {
 				this = true
 			}
 		},
-		["镕"] = {
-			["基"] = {
+		镕 = {
+			基 = {
 				this = true
 			}
 		},
-		["鎔"] = {
-			["基"] = {
+		鎔 = {
+			基 = {
 				this = true
 			}
 		},
-		["小"] = {
-			["丹"] = {
+		小 = {
+			丹 = {
 				this = true
 			}
 		},
-		["颜"] = {
-			["血"] = {
+		颜 = {
+			血 = {
 				this = true
 			}
 		},
-		["总"] = {
-			["理"] = {
+		总 = {
+			理 = {
 				this = true
 			}
 		},
-		["利"] = {
-			["全"] = {
+		利 = {
+			全 = {
 				this = true
 			}
 		},
-		["毛"] = {
+		毛 = {
 			this = true
 		}
 	}
@@ -172,7 +175,7 @@ end
 temp()
 
 function temp()
-	uv0["邾"] = {
+	var_0_1.邾 = {
 		this = {
 			this = true
 		}

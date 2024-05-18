@@ -1,25 +1,28 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleFleetBuffSonarExtraRange = class("BattleFleetBuffSonarExtraRange", slot0.Battle.BattleFleetBuffEffect)
-slot0.Battle.BattleFleetBuffSonarExtraRange.__name = "BattleFleetBuffSonarExtraRange"
-slot1 = slot0.Battle.BattleFleetBuffSonarExtraRange
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleFleetBuffSonarExtraRange = class("BattleFleetBuffSonarExtraRange", var_0_0.Battle.BattleFleetBuffEffect)
+var_0_0.Battle.BattleFleetBuffSonarExtraRange.__name = "BattleFleetBuffSonarExtraRange"
+
+local var_0_1 = var_0_0.Battle.BattleFleetBuffSonarExtraRange
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._extraRange = slot0._tempData.arg_list.range
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._extraRange = arg_2_0._tempData.arg_list.range
 end
 
-function slot1.onAttach(slot0, slot1, slot2)
-	slot0:appendRange(slot1)
+function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0:appendRange(arg_3_1)
 end
 
-function slot1.onStack(slot0, slot1, slot2)
-	slot0:appendRange(slot1)
+function var_0_1.onStack(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0:appendRange(arg_4_1)
 end
 
-function slot1.appendRange(slot0, slot1)
-	slot1:GetFleetSonar():AppendExtraSkillRange(slot0._extraRange)
+function var_0_1.appendRange(arg_5_0, arg_5_1)
+	arg_5_1:GetFleetSonar():AppendExtraSkillRange(arg_5_0._extraRange)
 end

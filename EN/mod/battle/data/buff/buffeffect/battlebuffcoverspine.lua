@@ -1,22 +1,25 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleBuffCoverSpine = class("BattleBuffCoverSpine", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffCoverSpine.__name = "BattleBuffCoverSpine"
-slot1 = slot0.Battle.BattleBuffCoverSpine
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleBuffCoverSpine = class("BattleBuffCoverSpine", var_0_0.Battle.BattleBuffEffect)
+var_0_0.Battle.BattleBuffCoverSpine.__name = "BattleBuffCoverSpine"
+
+local var_0_1 = var_0_0.Battle.BattleBuffCoverSpine
+
+function var_0_1.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot1.SetArgs(slot0, slot1, slot2)
-	slot0._skin = slot0._tempData.arg_list.ship_skin_id
-	slot0._hpbarOffset = slot0._tempData.arg_list.hp_bar_offset or 0
+function var_0_1.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._skin = arg_2_0._tempData.arg_list.ship_skin_id
+	arg_2_0._hpbarOffset = arg_2_0._tempData.arg_list.hp_bar_offset or 0
 end
 
-function slot1.onAttach(slot0, slot1, slot2, slot3)
-	slot1:SwitchSpine(slot0._skin, slot0._hpbarOffset)
+function var_0_1.onAttach(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_1:SwitchSpine(arg_3_0._skin, arg_3_0._hpbarOffset)
 end
 
-function slot1.onRemove(slot0, slot1, slot2, slot3)
-	slot1:SwitchSpine(nil, slot0._hpbarOffset * -1)
+function var_0_1.onRemove(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_1:SwitchSpine(nil, arg_4_0._hpbarOffset * -1)
 end

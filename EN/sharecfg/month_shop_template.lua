@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.month_shop_template = {
 	{
 		id = 1,

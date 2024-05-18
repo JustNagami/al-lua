@@ -1,83 +1,90 @@
-slot0 = class("SnowballPage", import("...base.BaseActivityPage"))
-slot1 = 14
-slot2 = 18
+﻿local var_0_0 = class("SnowballPage", import("...base.BaseActivityPage"))
+local var_0_1 = 14
+local var_0_2 = 18
 
-function slot0.OnInit(slot0)
-	slot0.icons = {
-		slot0:findTF("AD/bg/npc1"),
-		slot0:findTF("AD/bg/npc2"),
-		slot0:findTF("AD/bg/npc3"),
-		slot0:findTF("AD/bg/npc4"),
-		slot0:findTF("AD/bg/npc5"),
-		slot0:findTF("AD/bg/npc6"),
-		slot0:findTF("AD/bg/npc7")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.icons = {
+		arg_1_0:findTF("AD/bg/npc1"),
+		arg_1_0:findTF("AD/bg/npc2"),
+		arg_1_0:findTF("AD/bg/npc3"),
+		arg_1_0:findTF("AD/bg/npc4"),
+		arg_1_0:findTF("AD/bg/npc5"),
+		arg_1_0:findTF("AD/bg/npc6"),
+		arg_1_0:findTF("AD/bg/npc7")
 	}
-	slot0.opens = {
-		slot0:findTF("AD/bg/open1"),
-		slot0:findTF("AD/bg/open2"),
-		slot0:findTF("AD/bg/open3"),
-		slot0:findTF("AD/bg/open4"),
-		slot0:findTF("AD/bg/open5"),
-		slot0:findTF("AD/bg/open6"),
-		slot0:findTF("AD/bg/open7")
+	arg_1_0.opens = {
+		arg_1_0:findTF("AD/bg/open1"),
+		arg_1_0:findTF("AD/bg/open2"),
+		arg_1_0:findTF("AD/bg/open3"),
+		arg_1_0:findTF("AD/bg/open4"),
+		arg_1_0:findTF("AD/bg/open5"),
+		arg_1_0:findTF("AD/bg/open6"),
+		arg_1_0:findTF("AD/bg/open7")
 	}
-	slot0.helpBtn = slot0:findTF("AD/help")
-	slot0.goBtn = slot0:findTF("AD/go")
+	arg_1_0.helpBtn = arg_1_0:findTF("AD/help")
+	arg_1_0.goBtn = arg_1_0:findTF("AD/go")
 end
 
-function slot0.SetData(slot0)
-	slot2 = getProxy(MiniGameProxy):GetHubByHubId(uv0)
-	slot0.data = slot2
-	slot0.ultimate = slot2.ultimate
-	slot0.usedtime = slot2.usedtime
-	slot0.count = slot2.count
+function var_0_0.SetData(arg_2_0)
+	local var_2_0 = getProxy(MiniGameProxy):GetHubByHubId(var_0_1)
+
+	arg_2_0.data = var_2_0
+	arg_2_0.ultimate = var_2_0.ultimate
+	arg_2_0.usedtime = var_2_0.usedtime
+	arg_2_0.count = var_2_0.count
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:SetData()
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0)
+function var_0_0.OnFirstFlush(arg_3_0)
+	arg_3_0:SetData()
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_2)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_candymagic.tip
 		})
 	end, SFX_PANEL)
-	slot0:UpdateSigned()
-	slot0:CheckGet()
+	arg_3_0:UpdateSigned()
+	arg_3_0:CheckGet()
 end
 
-function slot0.UpdateSigned(slot0)
-	slot1 = slot0.data:getConfig("reward_need")
-	slot3 = slot0.ultimate == 0
+function var_0_0.UpdateSigned(arg_6_0)
+	local var_6_0 = arg_6_0.data:getConfig("reward_need")
+	local var_6_1 = arg_6_0.usedtime
+	local var_6_2
 
-	for slot8, slot9 in ipairs(slot0.icons) do
-		slot11 = slot8 <= slot0.usedtime + slot0.count
+	var_6_2 = arg_6_0.ultimate == 0
 
-		setActive(slot0.icons[slot8], false)
-		setActive(slot0.opens[slot8], false)
+	local var_6_3 = var_6_1 + arg_6_0.count
 
-		if slot8 <= slot2 then
-			setActive(slot0.icons[slot8], slot10)
-		elseif slot11 then
-			setActive(slot0.opens[slot8], slot11)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.icons) do
+		local var_6_4 = iter_6_0 <= var_6_1
+		local var_6_5 = iter_6_0 <= var_6_3
+
+		setActive(arg_6_0.icons[iter_6_0], false)
+		setActive(arg_6_0.opens[iter_6_0], false)
+
+		if var_6_4 then
+			setActive(arg_6_0.icons[iter_6_0], var_6_4)
+		elseif var_6_5 then
+			setActive(arg_6_0.opens[iter_6_0], var_6_5)
 		end
 	end
 end
 
-function slot0.CheckGet(slot0)
-	if slot0.ultimate == 0 then
-		if slot0.usedtime < slot0.data:getConfig("reward_need") then
+function var_0_0.CheckGet(arg_7_0)
+	if arg_7_0.ultimate == 0 then
+		if arg_7_0.data:getConfig("reward_need") > arg_7_0.usedtime then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = uv0,
+			hubid = var_0_1,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
 	end
 end
 
-return slot0
+return var_0_0

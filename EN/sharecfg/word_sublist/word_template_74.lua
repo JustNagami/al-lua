@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_74 = {}
-slot1 = slot0.word_template_74
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_74 = {}
+
+local var_0_1 = var_0_0.word_template_74
 
 function temp()
-	uv0["榱"] = {
+	var_0_1.榱 = {
 		this = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["毳"] = {
+	var_0_1.毳 = {
 		this = {
 			this = true
 		}
@@ -24,15 +27,15 @@ end
 temp()
 
 function temp()
-	uv0["村"] = {
-		["妇"] = {
-			["挎"] = {
-				["着"] = {
-					["一"] = {
-						["篮"] = {
-							["子"] = {
-								["鸡"] = {
-									["蛋"] = {
+	var_0_1.村 = {
+		妇 = {
+			挎 = {
+				着 = {
+					一 = {
+						篮 = {
+							子 = {
+								鸡 = {
+									蛋 = {
 										this = true
 									}
 								}
@@ -42,15 +45,15 @@ function temp()
 				}
 			}
 		},
-		["官"] = {
+		官 = {
 			this = true
 		},
-		["里"] = {
-			["干"] = {
-				["部"] = {
-					["忙"] = {
-						["偷"] = {
-							["摸"] = {
+		里 = {
+			干 = {
+				部 = {
+					忙 = {
+						偷 = {
+							摸 = {
 								this = true
 							}
 						}
@@ -58,21 +61,21 @@ function temp()
 				}
 			}
 		},
-		["民"] = {
-			["游"] = {
-				["行"] = {
+		民 = {
+			游 = {
+				行 = {
 					this = true
 				}
 			}
 		},
-		["田"] = {
-			["和"] = {
-				["美"] = {
+		田 = {
+			和 = {
+				美 = {
 					this = true
 				}
 			}
 		},
-		["长"] = {
+		长 = {
 			this = true
 		}
 	}
@@ -81,7 +84,7 @@ end
 temp()
 
 function temp()
-	uv0["皴"] = {
+	var_0_1.皴 = {
 		this = {
 			this = true
 		}
@@ -91,18 +94,18 @@ end
 temp()
 
 function temp()
-	uv0["存"] = {
-		["瑞"] = {
-			["是"] = {
-				["我"] = {
-					["和"] = {
-						["毛"] = {
-							["主"] = {
-								["席"] = {
-									["的"] = {
-										["好"] = {
-											["儿"] = {
-												["子"] = {
+	var_0_1.存 = {
+		瑞 = {
+			是 = {
+				我 = {
+					和 = {
+						毛 = {
+							主 = {
+								席 = {
+									的 = {
+										好 = {
+											儿 = {
+												子 = {
 													this = true
 												}
 											}
@@ -121,24 +124,24 @@ end
 temp()
 
 function temp()
-	uv0["搓"] = {
-		["摸"] = {
-			["着"] = {
+	var_0_1.搓 = {
+		摸 = {
+			着 = {
 				this = true
 			}
 		},
-		["捻"] = {
-			["着"] = {
+		捻 = {
+			着 = {
 				this = true
 			}
 		},
-		["弄"] = {
+		弄 = {
 			this = true
 		},
-		["揉"] = {
+		揉 = {
 			this = true
 		},
-		["着"] = {
+		着 = {
 			this = true
 		}
 	}
@@ -147,7 +150,7 @@ end
 temp()
 
 function temp()
-	uv0["蹉"] = {
+	var_0_1.蹉 = {
 		this = {
 			this = true
 		}

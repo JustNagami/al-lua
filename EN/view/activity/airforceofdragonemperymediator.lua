@@ -1,21 +1,25 @@
-slot0 = class("AirForceOfDragonEmperyMediator", import("view.base.ContextMediator"))
-slot0.ON_BATTLE = "AirForceOfDragonEmperyMediator ON_BATTLE"
-slot0.ON_ACTIVITY_OPREATION = "AirForceOfDragonEmperyMediator ON_ACTIVITY_OPREATION"
+﻿local var_0_0 = class("AirForceOfDragonEmperyMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_BATTLE, function (slot0, slot1)
-		uv0:sendNotification(GAME.BEGIN_STAGE, {
+var_0_0.ON_BATTLE = "AirForceOfDragonEmperyMediator ON_BATTLE"
+var_0_0.ON_ACTIVITY_OPREATION = "AirForceOfDragonEmperyMediator ON_ACTIVITY_OPREATION"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_BATTLE, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
 			system = SYSTEM_AIRFIGHT,
-			stageId = slot1
+			stageId = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_ACTIVITY_OPREATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+	arg_1_0:bind(var_0_0.ON_ACTIVITY_OPREATION, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_3_1)
 	end)
-	slot0.viewComponent:SetActivityData(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE))
+
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE)
+
+	arg_1_0.viewComponent:SetActivityData(var_1_0)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		GAME.BEGIN_STAGE_DONE,
@@ -23,19 +27,20 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE then
-			slot0:getViewComponent():SetActivityData(slot3)
-			slot0:getViewComponent():UpdateView()
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_AIRFIGHT_BATTLE then
+			arg_5_0:getViewComponent():SetActivityData(var_5_1)
+			arg_5_0:getViewComponent():UpdateView()
 		end
-	elseif slot2 == GAME.BEGIN_STAGE_DONE then
-		slot0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, slot3)
-	elseif slot2 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+	elseif var_5_0 == GAME.BEGIN_STAGE_DONE then
+		arg_5_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_5_1)
+	elseif var_5_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_5_1.awards, var_5_1.callback)
 	end
 end
 
-return slot0
+return var_0_0

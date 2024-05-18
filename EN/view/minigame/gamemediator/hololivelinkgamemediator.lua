@@ -1,22 +1,29 @@
-slot0 = class("HoloLiveLinkGameMediator", import(".MiniHubMediator"))
+﻿local var_0_0 = class("HoloLiveLinkGameMediator", import(".MiniHubMediator"))
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE and slot1:getBody().cmd == MiniGameOPCommand.CMD_COMPLETE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+function var_0_0.handleNotification(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getName()
+	local var_1_1 = arg_1_1:getBody()
+
+	if var_1_0 == GAME.SEND_MINI_GAME_OP_DONE and var_1_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_1_2 = {
+			function(arg_2_0)
+				local var_2_0 = var_1_1.awards
+
+				if #var_2_0 > 0 then
+					arg_1_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_2_0, arg_2_0)
 				else
-					slot0()
+					arg_2_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:playStory()
+			function(arg_3_0)
+				arg_1_0.viewComponent:playStory()
 			end
-		})
+		}
+
+		seriesAsync(var_1_2)
 	else
-		uv0.super.handleNotification(slot0, slot1)
+		var_0_0.super.handleNotification(arg_1_0, arg_1_1)
 	end
 end
 
-return slot0
+return var_0_0

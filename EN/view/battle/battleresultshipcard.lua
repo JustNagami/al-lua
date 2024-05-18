@@ -1,193 +1,205 @@
-slot0 = class("BattleResultShipCard")
+﻿local var_0_0 = class("BattleResultShipCard")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._expTF = slot1
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._expTF = arg_1_1
 
-	slot0:init()
+	arg_1_0:init()
 end
 
-function slot0.init(slot0)
-	slot0._expContent = findTF(slot0._expTF, "content")
-	slot0._expInfo = findTF(slot0._expContent, "exp")
-	slot0._nameTxt = findTF(slot0._expContent, "info/name_mask/name")
-	slot0._intimacyUpFX = findTF(slot0._expContent, "heartsfly")
-	slot0._intimacyDownFX = findTF(slot0._expContent, "heartsbroken")
-	slot0._lvText = findTF(slot0._expContent, "dockyard/lv/Text")
-	slot0._lvUp = findTF(slot0._expContent, "dockyard/lv_bg/levelUpLabel")
-	slot0._lvFX = findTF(slot0._expContent, "dockyard/lv_bg/levelup")
-	slot0._expText = findTF(slot0._expInfo, "exp_text")
-	slot0._expProgress = findTF(slot0._expInfo, "exp_progress")
-	slot0._expImage = slot0._expProgress:GetComponent(typeof(Image))
-	slot0._expBuff = findTF(slot0._expInfo, "exp_buff_mask/exp_buff")
+function var_0_0.init(arg_2_0)
+	arg_2_0._expContent = findTF(arg_2_0._expTF, "content")
+	arg_2_0._expInfo = findTF(arg_2_0._expContent, "exp")
+	arg_2_0._nameTxt = findTF(arg_2_0._expContent, "info/name_mask/name")
+	arg_2_0._intimacyUpFX = findTF(arg_2_0._expContent, "heartsfly")
+	arg_2_0._intimacyDownFX = findTF(arg_2_0._expContent, "heartsbroken")
+	arg_2_0._lvText = findTF(arg_2_0._expContent, "dockyard/lv/Text")
+	arg_2_0._lvUp = findTF(arg_2_0._expContent, "dockyard/lv_bg/levelUpLabel")
+	arg_2_0._lvFX = findTF(arg_2_0._expContent, "dockyard/lv_bg/levelup")
+	arg_2_0._expText = findTF(arg_2_0._expInfo, "exp_text")
+	arg_2_0._expProgress = findTF(arg_2_0._expInfo, "exp_progress")
+	arg_2_0._expImage = arg_2_0._expProgress:GetComponent(typeof(Image))
+	arg_2_0._expBuff = findTF(arg_2_0._expInfo, "exp_buff_mask/exp_buff")
 
-	slot0._expTF:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function (slot0)
-		uv0:expAnimation()
+	arg_2_0._expTF:GetComponent(typeof(DftAniEvent)):SetTriggerEvent(function(arg_3_0)
+		arg_2_0:expAnimation()
 	end)
-	SetActive(slot0._expTF, false)
+	SetActive(arg_2_0._expTF, false)
 end
 
-function slot0.SetShipVO(slot0, slot1, slot2, slot3, slot4)
-	flushShipCard(slot0._expTF, slot1)
+function var_0_0.SetShipVO(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
+	flushShipCard(arg_4_0._expTF, arg_4_1)
 
-	slot0._oldShipVO = slot1
-	slot0._newShipVO = slot2
-	slot0._isMVP = slot3
-	slot0._buffName = slot4
+	arg_4_0._oldShipVO = arg_4_1
+	arg_4_0._newShipVO = arg_4_2
+	arg_4_0._isMVP = arg_4_3
+	arg_4_0._buffName = arg_4_4
 
-	slot0:setShipInfo()
+	arg_4_0:setShipInfo()
 end
 
-function slot0.RegisterPreEXPTF(slot0, slot1)
-	slot1:GetTF():GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		setActive(uv0._expTF, true)
-	end)
-end
-
-function slot0.ConfigCallback(slot0, slot1)
-	slot0._expTF:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		uv0()
+function var_0_0.RegisterPreEXPTF(arg_5_0, arg_5_1)
+	arg_5_1:GetTF():GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_6_0)
+		setActive(arg_5_0._expTF, true)
 	end)
 end
 
-function slot0.setShipInfo(slot0)
-	setScrollText(slot0._nameTxt, slot0._oldShipVO:GetColorName())
-	setActive(findTF(slot0._expContent, "mvp"), slot0._isMVP)
-	SetActive(slot0._expBuff, slot0._buffName ~= nil)
-	setScrollText(slot0._expBuff, slot0._buffName or "")
+function var_0_0.ConfigCallback(arg_7_0, arg_7_1)
+	arg_7_0._expTF:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_8_0)
+		arg_7_1()
+	end)
 end
 
-function slot0.expAnimation(slot0)
-	SetActive(slot0._expInfo, true)
-	SetActive(slot0._intimacyUpFX, slot0._oldShipVO:getIntimacy() < slot0._newShipVO:getIntimacy())
-	SetActive(slot0._intimacyDownFX, slot0._newShipVO:getIntimacy() < slot0._oldShipVO:getIntimacy())
+function var_0_0.setShipInfo(arg_9_0)
+	setScrollText(arg_9_0._nameTxt, arg_9_0._oldShipVO:GetColorName())
+	setActive(findTF(arg_9_0._expContent, "mvp"), arg_9_0._isMVP)
+	SetActive(arg_9_0._expBuff, arg_9_0._buffName ~= nil)
+	setScrollText(arg_9_0._expBuff, arg_9_0._buffName or "")
+end
 
-	slot0._expImage.fillAmount = slot0._oldShipVO:getExp() / getExpByRarityFromLv1(slot0._oldShipVO:getConfig("rarity"), slot0._oldShipVO.level)
+function var_0_0.expAnimation(arg_10_0)
+	SetActive(arg_10_0._expInfo, true)
+	SetActive(arg_10_0._intimacyUpFX, arg_10_0._oldShipVO:getIntimacy() < arg_10_0._newShipVO:getIntimacy())
+	SetActive(arg_10_0._intimacyDownFX, arg_10_0._oldShipVO:getIntimacy() > arg_10_0._newShipVO:getIntimacy())
 
-	if slot0._oldShipVO.level < slot0._newShipVO.level then
-		for slot7 = slot0._oldShipVO.level, slot0._newShipVO.level - 1 do
-			slot3 = 0 + getExpByRarityFromLv1(slot1, slot7)
+	local var_10_0 = arg_10_0._oldShipVO:getConfig("rarity")
+	local var_10_1 = getExpByRarityFromLv1(var_10_0, arg_10_0._oldShipVO.level)
+
+	arg_10_0._expImage.fillAmount = arg_10_0._oldShipVO:getExp() / var_10_1
+
+	if arg_10_0._oldShipVO.level < arg_10_0._newShipVO.level then
+		local var_10_2 = 0
+
+		for iter_10_0 = arg_10_0._oldShipVO.level, arg_10_0._newShipVO.level - 1 do
+			var_10_2 = var_10_2 + getExpByRarityFromLv1(var_10_0, iter_10_0)
 		end
 
-		slot0.playAnimation(slot0._expTF, 0, slot3 + slot0._newShipVO:getExp() - slot0._oldShipVO:getExp(), 1, 0, function (slot0)
-			setText(uv0._expText, "+" .. math.ceil(slot0))
+		arg_10_0.playAnimation(arg_10_0._expTF, 0, var_10_2 + arg_10_0._newShipVO:getExp() - arg_10_0._oldShipVO:getExp(), 1, 0, function(arg_11_0)
+			setText(arg_10_0._expText, "+" .. math.ceil(arg_11_0))
 		end)
 
-		slot0._animationLV = slot0._oldShipVO.level
+		arg_10_0._animationLV = arg_10_0._oldShipVO.level
 
-		slot0:loopAnimation(slot0._oldShipVO:getExp() / slot2, 1, 0.7, true)
+		arg_10_0:loopAnimation(arg_10_0._oldShipVO:getExp() / var_10_1, 1, 0.7, true)
 	else
-		setText(slot0._expText, "+" .. math.ceil(slot0._newShipVO:getExp() - slot0._oldShipVO:getExp()))
+		local var_10_3 = math.ceil(arg_10_0._newShipVO:getExp() - arg_10_0._oldShipVO:getExp())
 
-		if slot0._oldShipVO.level == slot0._oldShipVO:getMaxLevel() then
-			slot0._expImage.fillAmount = 1
+		setText(arg_10_0._expText, "+" .. var_10_3)
+
+		if arg_10_0._oldShipVO.level == arg_10_0._oldShipVO:getMaxLevel() then
+			arg_10_0._expImage.fillAmount = 1
 
 			return
 		end
 
-		slot0.playAnimation(slot0._expTF, slot0._oldShipVO:getExp() / slot2, slot0._newShipVO:getExp() / slot2, 1, 0, function (slot0)
-			uv0._expImage.fillAmount = slot0
+		arg_10_0.playAnimation(arg_10_0._expTF, arg_10_0._oldShipVO:getExp() / var_10_1, arg_10_0._newShipVO:getExp() / var_10_1, 1, 0, function(arg_12_0)
+			arg_10_0._expImage.fillAmount = arg_12_0
 		end)
 	end
 end
 
-function slot0.loopAnimation(slot0, slot1, slot2, slot3, slot4)
-	slot5 = getExpByRarityFromLv1(slot0._oldShipVO:getConfig("rarity"), slot0._newShipVO.level)
+function var_0_0.loopAnimation(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
+	local var_13_0 = getExpByRarityFromLv1(arg_13_0._oldShipVO:getConfig("rarity"), arg_13_0._newShipVO.level)
 
-	LeanTween.value(go(slot0._expTF), slot1, slot2, slot3):setOnUpdate(System.Action_float(function (slot0)
-		uv0._expImage.fillAmount = slot0
-	end)):setOnComplete(System.Action(function ()
-		uv0._animationLV = uv0._animationLV + 1
+	LeanTween.value(go(arg_13_0._expTF), arg_13_1, arg_13_2, arg_13_3):setOnUpdate(System.Action_float(function(arg_14_0)
+		arg_13_0._expImage.fillAmount = arg_14_0
+	end)):setOnComplete(System.Action(function()
+		arg_13_0._animationLV = arg_13_0._animationLV + 1
 
-		if uv1 then
-			uv0:levelUpEffect()
+		if arg_13_4 then
+			arg_13_0:levelUpEffect()
 		end
 
-		if uv0._newShipVO.level == uv0._animationLV then
-			if uv0._animationLV == uv0._newShipVO:getMaxLevel() then
-				uv0._expImage.fillAmount = 1
+		if arg_13_0._newShipVO.level == arg_13_0._animationLV then
+			if arg_13_0._animationLV == arg_13_0._newShipVO:getMaxLevel() then
+				arg_13_0._expImage.fillAmount = 1
 			else
-				uv0:loopAnimation(0, uv0._newShipVO:getExp() / uv2, 1, false)
+				arg_13_0:loopAnimation(0, arg_13_0._newShipVO:getExp() / var_13_0, 1, false)
 			end
-		elseif uv0._animationLV < uv0._newShipVO.level then
-			uv0:loopAnimation(0, 1, 0.7, true)
+		elseif arg_13_0._newShipVO.level > arg_13_0._animationLV then
+			arg_13_0:loopAnimation(0, 1, 0.7, true)
 		end
 	end))
 end
 
-function slot0.levelUpEffect(slot0)
-	SetActive(slot0._lvUp, true)
-	SetActive(slot0._lvFX, true)
-	LeanTween.moveY(rtf(slot0._lvUp), slot0._lvUp.localPosition.y + 30, 0.5):setOnComplete(System.Action(function ()
-		SetActive(uv0._lvUp, false)
+function var_0_0.levelUpEffect(arg_16_0)
+	SetActive(arg_16_0._lvUp, true)
+	SetActive(arg_16_0._lvFX, true)
 
-		uv0._lvUp.localPosition = uv1
+	local var_16_0 = arg_16_0._lvUp.localPosition
+
+	LeanTween.moveY(rtf(arg_16_0._lvUp), var_16_0.y + 30, 0.5):setOnComplete(System.Action(function()
+		SetActive(arg_16_0._lvUp, false)
+
+		arg_16_0._lvUp.localPosition = var_16_0
 
 		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOAT_LEVEL_UP)
 	end))
 
-	if slot0._animationLV <= slot0._newShipVO.level then
-		setText(slot0._lvText, slot0._animationLV)
+	if arg_16_0._animationLV <= arg_16_0._newShipVO.level then
+		setText(arg_16_0._lvText, arg_16_0._animationLV)
 	end
 end
 
-function slot0.Play(slot0)
-	setActive(slot0._expTF, true)
+function var_0_0.Play(arg_18_0)
+	setActive(arg_18_0._expTF, true)
 end
 
-function slot0.SkipAnimation(slot0)
-	slot0._expTF:GetComponent(typeof(Animator)).enabled = false
+function var_0_0.SkipAnimation(arg_19_0)
+	arg_19_0._expTF:GetComponent(typeof(Animator)).enabled = false
 
-	SetActive(slot0._expTF, true)
-	SetActive(slot0._expContent, true)
-	SetActive(slot0._expInfo, true)
+	SetActive(arg_19_0._expTF, true)
+	SetActive(arg_19_0._expContent, true)
+	SetActive(arg_19_0._expInfo, true)
 
-	slot0._expTF:GetComponent(typeof(CanvasGroup)).alpha = 1
+	arg_19_0._expTF:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-	LeanTween.cancel(go(slot0._lvUp))
-	LeanTween.cancel(go(slot0._expTF))
-	SetActive(slot0._intimacyUpFX, slot0._oldShipVO:getIntimacy() < slot0._newShipVO:getIntimacy())
-	SetActive(slot0._intimacyDownFX, slot0._newShipVO:getIntimacy() < slot0._oldShipVO:getIntimacy())
+	LeanTween.cancel(go(arg_19_0._lvUp))
+	LeanTween.cancel(go(arg_19_0._expTF))
+	SetActive(arg_19_0._intimacyUpFX, arg_19_0._oldShipVO:getIntimacy() < arg_19_0._newShipVO:getIntimacy())
+	SetActive(arg_19_0._intimacyDownFX, arg_19_0._oldShipVO:getIntimacy() > arg_19_0._newShipVO:getIntimacy())
 
-	slot0._expContent.localPosition = Vector3(0, 0, 0)
+	arg_19_0._expContent.localPosition = Vector3(0, 0, 0)
 
-	setText(slot0._lvText, slot0._newShipVO.level)
+	setText(arg_19_0._lvText, arg_19_0._newShipVO.level)
 
-	if slot0._oldShipVO.level == slot0._oldShipVO:getMaxLevel() then
-		setText(slot0._expText, "+" .. math.ceil(slot0._newShipVO:getExp() - slot0._oldShipVO:getExp()))
+	if arg_19_0._oldShipVO.level == arg_19_0._oldShipVO:getMaxLevel() then
+		setText(arg_19_0._expText, "+" .. math.ceil(arg_19_0._newShipVO:getExp() - arg_19_0._oldShipVO:getExp()))
 
-		slot0._expImage.fillAmount = 1
+		arg_19_0._expImage.fillAmount = 1
 	else
-		slot1 = slot0._oldShipVO:getConfig("rarity")
+		local var_19_0 = arg_19_0._oldShipVO:getConfig("rarity")
 
-		if slot0._oldShipVO.level < slot0._newShipVO.level then
-			for slot6 = slot0._oldShipVO.level, slot0._newShipVO.level - 1 do
-				slot2 = 0 + getExpByRarityFromLv1(slot1, slot6)
+		if arg_19_0._oldShipVO.level < arg_19_0._newShipVO.level then
+			local var_19_1 = 0
+
+			for iter_19_0 = arg_19_0._oldShipVO.level, arg_19_0._newShipVO.level - 1 do
+				var_19_1 = var_19_1 + getExpByRarityFromLv1(var_19_0, iter_19_0)
 			end
 
-			setText(slot0._expText, "+" .. slot2 + slot0._newShipVO:getExp() - slot0._oldShipVO:getExp())
+			setText(arg_19_0._expText, "+" .. var_19_1 + arg_19_0._newShipVO:getExp() - arg_19_0._oldShipVO:getExp())
 		else
-			setText(slot0._expText, "+" .. math.ceil(slot0._newShipVO:getExp() - slot0._oldShipVO:getExp()))
+			setText(arg_19_0._expText, "+" .. math.ceil(arg_19_0._newShipVO:getExp() - arg_19_0._oldShipVO:getExp()))
 		end
 
-		slot0._expImage.fillAmount = slot0._newShipVO:getExp() / getExpByRarityFromLv1(slot1, slot0._newShipVO.level)
+		arg_19_0._expImage.fillAmount = arg_19_0._newShipVO:getExp() / getExpByRarityFromLv1(var_19_0, arg_19_0._newShipVO.level)
 	end
 
-	SetActive(slot0._lvUp, false)
+	SetActive(arg_19_0._lvUp, false)
 end
 
-function slot0.GetTF(slot0)
-	return slot0._expTF
+function var_0_0.GetTF(arg_20_0)
+	return arg_20_0._expTF
 end
 
-function slot0.playAnimation(slot0, slot1, slot2, slot3, slot4, slot5)
-	LeanTween.value(slot0.gameObject, slot1, slot2, slot3):setDelay(slot4):setOnUpdate(System.Action_float(function (slot0)
-		uv0(slot0)
+function var_0_0.playAnimation(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_4, arg_21_5)
+	LeanTween.value(arg_21_0.gameObject, arg_21_1, arg_21_2, arg_21_3):setDelay(arg_21_4):setOnUpdate(System.Action_float(function(arg_22_0)
+		arg_21_5(arg_22_0)
 	end))
 end
 
-function slot0.Dispose(slot0)
-	slot0._oldShipVO = nil
-	slot0._newShipVO = nil
+function var_0_0.Dispose(arg_23_0)
+	arg_23_0._oldShipVO = nil
+	arg_23_0._newShipVO = nil
 end
 
-return slot0
+return var_0_0

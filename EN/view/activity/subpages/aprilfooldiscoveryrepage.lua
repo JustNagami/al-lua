@@ -1,165 +1,187 @@
-slot0 = class("AprilFoolDiscoveryRePage", import(".AprilFoolDiscoveryPage"))
+﻿local var_0_0 = class("AprilFoolDiscoveryRePage", import(".AprilFoolDiscoveryPage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.bulin = slot0.bg:Find("bulin")
-	slot0.bulinAnim = slot0.bulin:Find("bulin"):GetComponent("SpineAnimUI")
+	arg_1_0.bulin = arg_1_0.bg:Find("bulin")
+	arg_1_0.bulinAnim = arg_1_0.bulin:Find("bulin"):GetComponent("SpineAnimUI")
 
-	setText(slot0.bulin:Find("Text"), i18n("super_bulin_tip"))
-	setActive(slot0.bulin, false)
+	setText(arg_1_0.bulin:Find("Text"), i18n("super_bulin_tip"))
+	setActive(arg_1_0.bulin, false)
 
-	slot0._funcsLink = {}
+	arg_1_0._funcsLink = {}
 end
 
-function slot0.AddFunc(slot0, slot1)
-	table.insert(slot0._funcsLink, slot1)
+function var_0_0.AddFunc(arg_2_0, arg_2_1)
+	table.insert(arg_2_0._funcsLink, arg_2_1)
 
-	if #slot0._funcsLink > 1 then
+	if #arg_2_0._funcsLink > 1 then
 		return
 	end
 
-	slot0:PlayFuncsLink()
+	arg_2_0:PlayFuncsLink()
 end
 
-function slot0.PlayFuncsLink(slot0)
-	slot1 = false
-	slot2 = nil
+function var_0_0.PlayFuncsLink(arg_3_0)
+	local var_3_0 = false
+	local var_3_1
 
-	function (...)
-		if uv0 then
-			table.remove(uv1._funcsLink, 1)
+	local function var_3_2(...)
+		if var_3_0 then
+			table.remove(arg_3_0._funcsLink, 1)
 		end
 
-		uv0 = true
+		var_3_0 = true
 
-		if uv1._funcsLink[1] then
-			slot0(uv2, ...)
+		local var_4_0 = arg_3_0._funcsLink[1]
+
+		if var_4_0 then
+			var_4_0(var_3_2, ...)
 		end
-	end()
+	end
+
+	var_3_2()
 end
 
-function slot0.OnDataSetting(slot0)
-	return uv0.super.OnDataSetting(slot0) or function ()
-		if uv0.activity.data1 == 1 and uv0.activity.data3 == 1 then
-			uv0.activity.data3 = 0
+function var_0_0.OnDataSetting(arg_5_0)
+	local var_5_0 = var_0_0.super.OnDataSetting(arg_5_0)
+
+	local function var_5_1()
+		if arg_5_0.activity.data1 == 1 and arg_5_0.activity.data3 == 1 then
+			arg_5_0.activity.data3 = 0
 
 			pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 				cmd = 4,
-				actId = uv0.activity.id
+				actId = arg_5_0.activity.id
 			})
 
 			return true
 		end
-	end()
+	end
+
+	var_5_0 = var_5_0 or var_5_1()
+
+	return var_5_0
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot1 = pg.activity_event_picturepuzzle[slot0.activity.id]
+function var_0_0.OnFirstFlush(arg_7_0)
+	local var_7_0 = pg.activity_event_picturepuzzle[arg_7_0.activity.id]
 
-	assert(slot1, "Can't Find activity_event_picturepuzzle 's ID : " .. slot0.activity.id)
+	assert(var_7_0, "Can't Find activity_event_picturepuzzle 's ID : " .. arg_7_0.activity.id)
 
-	slot0.puzzleConfig = slot1
-	slot0.keyList = Clone(slot1.pickup_picturepuzzle)
+	arg_7_0.puzzleConfig = var_7_0
+	arg_7_0.keyList = Clone(var_7_0.pickup_picturepuzzle)
 
-	table.insertto(slot0.keyList, slot1.drop_picturepuzzle)
-	assert(#slot0.keyList == #slot0.items, string.format("keyList has {0}, but items has 9", #slot0.keyList))
-	table.sort(slot0.keyList)
-	onButton(slot0, slot0.btnHelp, function ()
+	table.insertto(arg_7_0.keyList, var_7_0.drop_picturepuzzle)
+	assert(#arg_7_0.keyList == #arg_7_0.items, string.format("keyList has {0}, but items has 9", #arg_7_0.keyList))
+	table.sort(arg_7_0.keyList)
+	onButton(arg_7_0, arg_7_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.bulin_help.tip
 		})
 	end, SFX_PANEL)
 
-	slot2 = slot0.activity.id
+	local var_7_1 = arg_7_0.activity.id
 
-	onButton(slot0, slot0.btnBattle, function ()
-		if #uv0.activity.data2_list < #uv0.keyList then
+	onButton(arg_7_0, arg_7_0.btnBattle, function()
+		if #arg_7_0.activity.data2_list < #arg_7_0.keyList then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_not_start"))
 
 			return
 		end
 
-		uv0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
+		arg_7_0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
 			warnMsg = "bulin_tip_other3",
-			stageId = uv0.puzzleConfig.chapter
-		}, function ()
-			if getProxy(ActivityProxy):getActivityById(uv0).data1 == 1 then
+			stageId = arg_7_0.puzzleConfig.chapter
+		}, function()
+			local var_10_0 = getProxy(ActivityProxy)
+			local var_10_1 = var_10_0:getActivityById(var_7_1)
+
+			if var_10_1.data1 == 1 then
 				return
 			end
 
-			slot1.data3 = 1
+			var_10_1.data3 = 1
 
-			slot0:updateActivity(slot1)
+			var_10_0:updateActivity(var_10_1)
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bulin, function ()
-		if uv0.activity.data1 >= 1 then
+	onButton(arg_7_0, arg_7_0.bulin, function()
+		if arg_7_0.activity.data1 >= 1 then
 			seriesAsync({
-				function (slot0)
+				function(arg_12_0)
 					pg.MsgboxMgr.GetInstance():ShowMsgBox({
 						content = i18n("super_bulin"),
-						onYes = slot0
+						onYes = arg_12_0
 					})
 				end,
-				function (slot0)
-					uv0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
+				function(arg_13_0)
+					arg_7_0:emit(ActivityMediator.ON_SIMULATION_COMBAT, {
 						warnMsg = "bulin_tip_other3",
-						stageId = uv0:GetLinkStage()
-					}, function ()
-						if getProxy(ActivityProxy):getActivityById(uv0).data1 == 2 then
+						stageId = arg_7_0:GetLinkStage()
+					}, function()
+						local var_14_0 = getProxy(ActivityProxy)
+						local var_14_1 = var_14_0:getActivityById(var_7_1)
+
+						if var_14_1.data1 == 2 then
 							return
 						end
 
-						slot1.data3 = 1
+						var_14_1.data3 = 1
 
-						slot0:updateActivity(slot1)
+						var_14_0:updateActivity(var_14_1)
 					end)
 				end
 			})
 		end
 	end)
 
-	slot3 = slot0.activity:getConfig("config_client").guideName
+	local var_7_2 = arg_7_0.activity:getConfig("config_client").guideName
 
-	slot0:AddFunc(function (slot0)
-		pg.SystemGuideMgr.GetInstance():PlayByGuideId(uv0, nil, slot0)
+	arg_7_0:AddFunc(function(arg_15_0)
+		pg.SystemGuideMgr.GetInstance():PlayByGuideId(var_7_2, nil, arg_15_0)
 	end)
 end
 
-slot1 = {
+local var_0_1 = {
 	"lock",
 	"hint",
 	"unlock"
 }
 
-function slot0.OnUpdateFlush(slot0)
-	slot2 = #slot0.activity.data2_list == #slot0.keyList
+function var_0_0.OnUpdateFlush(arg_16_0)
+	local var_16_0 = arg_16_0.activity.data1 >= 1
+	local var_16_1 = #arg_16_0.activity.data2_list == #arg_16_0.keyList
+	local var_16_2 = var_16_0 and "activity_bg_aprilfool_final" or "activity_bg_aprilfool_discovery"
 
-	if (slot0.activity.data1 >= 1 and "activity_bg_aprilfool_final" or "activity_bg_aprilfool_discovery") ~= slot0.bgName then
-		setImageSprite(slot0.bg, LoadSprite("ui/activityuipage/AprilFoolDiscoveryRePage_atlas", slot3))
+	if var_16_2 ~= arg_16_0.bgName then
+		setImageSprite(arg_16_0.bg, LoadSprite("ui/activityuipage/AprilFoolDiscoveryRePage_atlas", var_16_2))
 
-		slot0.bg:GetComponent(typeof(Image)).enabled = true
-		slot0.bgName = slot3
+		arg_16_0.bg:GetComponent(typeof(Image)).enabled = true
+		arg_16_0.bgName = var_16_2
 	end
 
-	for slot9, slot10 in ipairs(slot0.items) do
-		slot12 = table.contains(slot0.activity.data2_list, slot0.keyList[slot9]) and 3 or table.contains(slot0.activity.data3_list, slot11) and 2 or 1
+	local var_16_3 = arg_16_0.activity.data2_list
+	local var_16_4 = arg_16_0.activity.data3_list
 
-		onButton(slot0, slot10, function ()
-			if uv0 >= 3 then
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.items) do
+		local var_16_5 = arg_16_0.keyList[iter_16_0]
+		local var_16_6 = table.contains(var_16_3, var_16_5) and 3 or table.contains(var_16_4, var_16_5) and 2 or 1
+
+		onButton(arg_16_0, iter_16_1, function()
+			if var_16_6 >= 3 then
 				return
 			end
 
-			if uv0 == 2 then
-				uv1.selectIndex = uv2
+			if var_16_6 == 2 then
+				arg_16_0.selectIndex = iter_16_0
 
-				uv1:UpdateSelection()
+				arg_16_0:UpdateSelection()
 
 				return
-			elseif uv0 == 1 then
-				if pg.TimeMgr.GetInstance():GetServerTime() < uv1.activity.data2 then
+			elseif var_16_6 == 1 then
+				if pg.TimeMgr.GetInstance():GetServerTime() < arg_16_0.activity.data2 then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("bulin_tip_other2"))
 
 					return
@@ -167,56 +189,58 @@ function slot0.OnUpdateFlush(slot0)
 
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("bulin_tip_other1"),
-					onYes = function ()
+					onYes = function()
 						pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 							cmd = 3,
-							actId = uv0.activity.id,
-							id = uv1
+							actId = arg_16_0.activity.id,
+							id = var_16_5
 						})
 
-						uv0.selectIndex = uv2
+						arg_16_0.selectIndex = iter_16_0
 					end
 				})
 			end
 		end)
-		slot0.loader:GetSprite("UI/ActivityUIPage/AprilFoolDiscoveryRePage_atlas", uv0[slot12], slot10:Find("state"))
-		setActive(slot10:Find("character"), slot12 == 3)
+		arg_16_0.loader:GetSprite("UI/ActivityUIPage/AprilFoolDiscoveryRePage_atlas", var_0_1[var_16_6], iter_16_1:Find("state"))
+		setActive(iter_16_1:Find("character"), var_16_6 == 3)
 	end
 
-	setActive(slot0.btnBattle, slot2)
-	setActive(slot0.btnIncomplete, not slot2)
-	slot0:UpdateSelection()
-	setActive(slot0.bulin, slot1)
+	setActive(arg_16_0.btnBattle, var_16_1)
+	setActive(arg_16_0.btnIncomplete, not var_16_1)
+	arg_16_0:UpdateSelection()
+	setActive(arg_16_0.bulin, var_16_0)
 
-	if slot0.activity.data1 == 1 then
-		slot6 = slot0.activity:getConfig("config_client").popStory
+	if arg_16_0.activity.data1 == 1 then
+		local var_16_7 = arg_16_0.activity:getConfig("config_client").popStory
 
-		slot0:AddFunc(function (slot0)
-			pg.NewStoryMgr.GetInstance():Play(uv0, slot0)
+		arg_16_0:AddFunc(function(arg_19_0)
+			pg.NewStoryMgr.GetInstance():Play(var_16_7, arg_19_0)
 		end)
-		slot0:AddFunc(function (slot0)
-			if PlayerPrefs.GetInt("SuperBurinPopUp_" .. getProxy(PlayerProxy):getRawData().id, 0) == 0 then
+		arg_16_0:AddFunc(function(arg_20_0)
+			local var_20_0 = getProxy(PlayerProxy):getRawData()
+
+			if PlayerPrefs.GetInt("SuperBurinPopUp_" .. var_20_0.id, 0) == 0 then
 				LoadContextCommand.LoadLayerOnTopContext(Context.New({
 					mediator = SuperBulinPopMediator,
 					viewComponent = SuperBulinPopView,
 					data = {
-						stageId = uv0:GetLinkStage(),
-						actId = uv0.activity.id,
-						onRemoved = slot0
+						stageId = arg_16_0:GetLinkStage(),
+						actId = arg_16_0.activity.id,
+						onRemoved = arg_20_0
 					}
 				}))
-				PlayerPrefs.SetInt("SuperBurinPopUp_" .. slot1.id, 1)
+				PlayerPrefs.SetInt("SuperBurinPopUp_" .. var_20_0.id, 1)
 			end
 		end)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	uv0.super.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_21_0)
+	var_0_0.super.OnDestroy(arg_21_0)
 end
 
-function slot0.GetLinkStage(slot0)
-	return slot0.activity:getConfig("config_client").lastChapter
+function var_0_0.GetLinkStage(arg_22_0)
+	return arg_22_0.activity:getConfig("config_client").lastChapter
 end
 
-return slot0
+return var_0_0

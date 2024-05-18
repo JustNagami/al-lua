@@ -1,16 +1,19 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_157 = {}
-slot1 = slot0.word_template_157
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_157 = {}
+
+local var_0_1 = var_0_0.word_template_157
 
 function temp()
-	uv0["近"] = {
-		["看"] = {
-			["原"] = {
-				["来"] = {
-					["在"] = {
-						["性"] = {
-							["交"] = {
+	var_0_1.近 = {
+		看 = {
+			原 = {
+				来 = {
+					在 = {
+						性 = {
+							交 = {
 								this = true
 							}
 						}
@@ -18,91 +21,91 @@ function temp()
 				}
 			}
 		},
-		["贫"] = {
+		贫 = {
 			this = true
 		},
-		["频"] = {
+		频 = {
 			this = true
 		},
-		["品"] = {
+		品 = {
 			this = true
 		},
-		["平"] = {
+		平 = {
 			this = true,
-			["一"] = {
-				["封"] = {
-					["信"] = {
+			一 = {
+				封 = {
+					信 = {
 						this = true
 					}
 				}
 			},
-			["公"] = {
-				["开"] = {
-					["信"] = {
+			公 = {
+				开 = {
+					信 = {
 						this = true
 					}
 				}
 			},
-			["习"] = {
+			习 = {
 				this = true
 			}
 		},
-		["评"] = {
+		评 = {
 			this = true
 		},
-		["坪"] = {
+		坪 = {
 			this = true
 		},
-		["苹"] = {
+		苹 = {
 			this = true
 		},
-		["泙"] = {
+		泙 = {
 			this = true
 		},
-		["瓶"] = {
+		瓶 = {
 			this = true
 		},
-		["萍"] = {
+		萍 = {
 			this = true
 		},
-		["亲"] = {
-			["凌"] = {
-				["辱"] = {
+		亲 = {
+			凌 = {
+				辱 = {
 					this = true
 				}
 			},
-			["乱"] = {
-				["交"] = {
-					["家"] = {
-						["族"] = {
+			乱 = {
+				交 = {
+					家 = {
+						族 = {
 							this = true
 						}
 					}
 				}
 			},
-			["相"] = {
-				["奸"] = {
+			相 = {
+				奸 = {
 					this = true
 				}
 			}
 		},
-		["親"] = {
-			["相"] = {
-				["奸"] = {
+		親 = {
+			相 = {
+				奸 = {
 					this = true
 				},
-				["姦"] = {
+				姦 = {
 					this = true
 				}
 			}
 		},
-		["習"] = {
+		習 = {
 			this = true
 		},
-		["代"] = {
-			["化"] = {
-				["改"] = {
-					["修"] = {
+		代 = {
+			化 = {
+				改 = {
+					修 = {
 						this = true
 					}
 				}
@@ -114,31 +117,31 @@ end
 temp()
 
 function temp()
-	uv0["劲"] = {
-		["得"] = {
-			["力"] = {
+	var_0_1.劲 = {
+		得 = {
+			力 = {
 				this = true
 			}
 		},
-		["奸"] = {
-			["狂"] = {
-				["插"] = {
+		奸 = {
+			狂 = {
+				插 = {
 					this = true
 				}
 			}
 		},
-		["频"] = {
+		频 = {
 			this = true
 		},
-		["瓶"] = {
+		瓶 = {
 			this = true,
-			["铜"] = {
-				["渍"] = {
+			铜 = {
+				渍 = {
 					this = true
 				}
 			}
 		},
-		["评"] = {
+		评 = {
 			this = true
 		}
 	}
@@ -147,8 +150,8 @@ end
 temp()
 
 function temp()
-	uv0["晋"] = {
-		["平"] = {
+	var_0_1.晋 = {
+		平 = {
 			this = true
 		}
 	}
@@ -157,17 +160,17 @@ end
 temp()
 
 function temp()
-	uv0["烬"] = {
-		["平"] = {
+	var_0_1.烬 = {
+		平 = {
 			this = true
 		},
-		["评"] = {
+		评 = {
 			this = true
 		},
-		["瓶"] = {
+		瓶 = {
 			this = true
 		},
-		["萍"] = {
+		萍 = {
 			this = true
 		}
 	}
@@ -176,8 +179,8 @@ end
 temp()
 
 function temp()
-	uv0["浸"] = {
-		["坪"] = {
+	var_0_1.浸 = {
+		坪 = {
 			this = true
 		}
 	}
@@ -186,40 +189,40 @@ end
 temp()
 
 function temp()
-	uv0["進"] = {
-		["京"] = {
-			["诉"] = {
-				["冤"] = {
+	var_0_1.進 = {
+		京 = {
+			诉 = {
+				冤 = {
 					this = true
 				}
 			}
 		},
-		["口"] = {
-			["氣"] = {
-				["狗"] = {
-					["出"] = {
-						["售"] = {
+		口 = {
+			氣 = {
+				狗 = {
+					出 = {
+						售 = {
 							this = true
 						}
 					},
-					["销"] = {
-						["售"] = {
+					销 = {
+						售 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["平"] = {
+		平 = {
 			this = true
 		},
-		["坪"] = {
+		坪 = {
 			this = true
 		},
-		["評"] = {
+		評 = {
 			this = true
 		},
-		["憑"] = {
+		憑 = {
 			this = true
 		}
 	}
@@ -228,8 +231,8 @@ end
 temp()
 
 function temp()
-	uv0["靳"] = {
-		["平"] = {
+	var_0_1.靳 = {
+		平 = {
 			this = true
 		}
 	}

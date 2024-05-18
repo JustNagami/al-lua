@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onChargeWeaponFire"
+			},
+			arg_list = {
+				rant = 4000,
+				target = "TargetSelf",
+				skill_id = 10290,
+				time = 12
+			}
+		}
+	},
 	{
 		desc = "主炮开火时，有40.0%概率朝自己前方发射一轮专属弹幕(威力依据技能等级)，所有主力舰队角色装填提高20.0%，持续8秒",
 		addition = {
@@ -219,19 +233,5 @@ return {
 	stack = 1,
 	id = 10291,
 	icon = 10291,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onChargeWeaponFire"
-			},
-			arg_list = {
-				rant = 4000,
-				target = "TargetSelf",
-				skill_id = 10290,
-				time = 12
-			}
-		}
-	}
+	last_effect = ""
 }

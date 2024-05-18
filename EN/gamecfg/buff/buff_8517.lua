@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "正面装甲挡10发",
 	time = 0,
@@ -34,10 +34,10 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(2, 0.5, 0.5)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}

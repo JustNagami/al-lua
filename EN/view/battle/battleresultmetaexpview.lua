@@ -1,152 +1,182 @@
-slot0 = class("BattleResultMetaExpView", import("..base.BaseSubView"))
+﻿local var_0_0 = class("BattleResultMetaExpView", import("..base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BattleResultMetaExpUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:initUITip()
-	slot0:initData()
-	slot0:initUI()
-	slot0:addListener()
-	slot0:updateIconList()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:initUITip()
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:addListener()
+	arg_2_0:updateIconList()
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.closeCB()
-	slot0:cleanManagedTween(true)
+function var_0_0.OnDestroy(arg_3_0)
+	arg_3_0.closeCB()
+	arg_3_0:cleanManagedTween(true)
 end
 
-function slot0.setData(slot0, slot1, slot2)
-	slot0.lastMetaExpInfoList = slot1
-	slot0.closeCB = slot2
+function var_0_0.setData(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_0.lastMetaExpInfoList = arg_4_1
+	arg_4_0.closeCB = arg_4_2
 end
 
-function slot0.initUITip(slot0)
-	setText(slot0:findTF("Notch/Panel/Title/Text"), i18n("battle_end_subtitle2"))
+function var_0_0.initUITip(arg_5_0)
+	local var_5_0 = arg_5_0:findTF("Notch/Panel/Title/Text")
+
+	setText(var_5_0, i18n("battle_end_subtitle2"))
 end
 
-function slot0.initData(slot0)
-	slot0.metaProxy = getProxy(MetaCharacterProxy)
+function var_0_0.initData(arg_6_0)
+	arg_6_0.metaProxy = getProxy(MetaCharacterProxy)
 end
 
-function slot0.initUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.iconTpl = slot0:findTF("IconTpl")
-	slot0.panelTF = slot0:findTF("Notch/Panel")
-	slot0.iconContainer = slot0:findTF("ScrollView/Content", slot0.panelTF)
-	slot0.gridLayoutGroupSC = GetComponent(slot0.iconContainer, typeof(GridLayoutGroup))
-	slot0.closeBtn = slot0:findTF("Button", slot0.panelTF)
-	slot0.iconUIItemList = UIItemList.New(slot0.iconContainer, slot0.iconTpl)
+function var_0_0.initUI(arg_7_0)
+	arg_7_0.bg = arg_7_0:findTF("BG")
+	arg_7_0.iconTpl = arg_7_0:findTF("IconTpl")
+	arg_7_0.panelTF = arg_7_0:findTF("Notch/Panel")
+	arg_7_0.iconContainer = arg_7_0:findTF("ScrollView/Content", arg_7_0.panelTF)
+	arg_7_0.gridLayoutGroupSC = GetComponent(arg_7_0.iconContainer, typeof(GridLayoutGroup))
+	arg_7_0.closeBtn = arg_7_0:findTF("Button", arg_7_0.panelTF)
+	arg_7_0.iconUIItemList = UIItemList.New(arg_7_0.iconContainer, arg_7_0.iconTpl)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.bg, function ()
-		uv0:closePanel()
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.bg, function()
+		arg_8_0:closePanel()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:closePanel()
+	onButton(arg_8_0, arg_8_0.closeBtn, function()
+		arg_8_0:closePanel()
 	end, SFX_PANEL)
 end
 
-function slot0.updateIconList(slot0)
-	slot0.gridLayoutGroupSC.constraintCount = #slot0:sortDataList(slot0.lastMetaExpInfoList or slot0.metaProxy:getLastMetaSkillExpInfoList()) > 4 and 2 or 1
+function var_0_0.updateIconList(arg_11_0)
+	local var_11_0 = arg_11_0.lastMetaExpInfoList or arg_11_0.metaProxy:getLastMetaSkillExpInfoList()
+	local var_11_1 = arg_11_0:sortDataList(var_11_0)
+	local var_11_2 = #var_11_1
 
-	slot0.iconUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot8 = uv0:findTF("Slider", slot2)
-			slot9 = uv1[slot1 + 1]
-			slot14 = slot9.isExpMax
-			slot15 = slot9.progress
-			slot17 = getProxy(BayProxy):getShipById(slot9.shipID):getPainting()
+	arg_11_0.gridLayoutGroupSC.constraintCount = var_11_2 > 4 and 2 or 1
 
-			setImageSprite(uv0:findTF("Icon", slot2), LoadSprite("SquareIcon/" .. slot17, slot17))
-			setText(uv0:findTF("AddExpText", slot2), "EXP + " .. slot9.addDayExp)
-			setActive(uv0:findTF("Light", slot2), slot9.isUpLevel and slot9.isMaxLevel)
+	arg_11_0.iconUIItemList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		arg_12_1 = arg_12_1 + 1
 
-			if slot12 and slot13 then
-				setActive(slot5, false)
-				setActive(uv0:findTF("LevelMaxText", slot2), true)
-				setActive(uv0:findTF("ExpMaxText", slot2), false)
-			elseif slot14 then
-				setActive(slot5, false)
-				setActive(slot6, false)
-				setActive(slot7, true)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = arg_11_0:findTF("Light", arg_12_2)
+			local var_12_1 = arg_11_0:findTF("Icon", arg_12_2)
+			local var_12_2 = arg_11_0:findTF("AddExpText", arg_12_2)
+			local var_12_3 = arg_11_0:findTF("LevelMaxText", arg_12_2)
+			local var_12_4 = arg_11_0:findTF("ExpMaxText", arg_12_2)
+			local var_12_5 = arg_11_0:findTF("Slider", arg_12_2)
+			local var_12_6 = var_11_1[arg_12_1]
+			local var_12_7 = var_12_6.shipID
+			local var_12_8 = var_12_6.addDayExp
+			local var_12_9 = var_12_6.isUpLevel
+			local var_12_10 = var_12_6.isMaxLevel
+			local var_12_11 = var_12_6.isExpMax
+			local var_12_12 = var_12_6.progress
+			local var_12_13 = getProxy(BayProxy):getShipById(var_12_7)
+			local var_12_14 = var_12_13:getPainting()
+			local var_12_15 = "SquareIcon/" .. var_12_14
+
+			setImageSprite(var_12_1, LoadSprite(var_12_15, var_12_14))
+			setText(var_12_2, "EXP + " .. var_12_8)
+			setActive(var_12_0, var_12_9 and var_12_10)
+
+			if var_12_9 and var_12_10 then
+				setActive(var_12_2, false)
+				setActive(var_12_3, true)
+				setActive(var_12_4, false)
+			elseif var_12_11 then
+				setActive(var_12_2, false)
+				setActive(var_12_3, false)
+				setActive(var_12_4, true)
 			else
-				setActive(slot5, true)
-				setActive(slot6, false)
-				setActive(slot7, false)
+				setActive(var_12_2, true)
+				setActive(var_12_3, false)
+				setActive(var_12_4, false)
 			end
 
-			setSlider(slot8, 0, 1, slot15)
-			onButton(uv0, slot2, function ()
+			setSlider(var_12_5, 0, 1, var_12_12)
+			onButton(arg_11_0, arg_12_2, function()
 				LoadContextCommand.LoadLayerOnTopContext(Context.New({
 					viewComponent = MetaSkillDetailBoxLayer,
 					mediator = MetaSkillDetailBoxMediator,
 					data = {
-						metaShipID = uv0.id,
-						expInfoList = uv1.lastMetaExpInfoList
+						metaShipID = var_12_13.id,
+						expInfoList = arg_11_0.lastMetaExpInfoList
 					},
-					onRemoved = function ()
-						uv0:updateIconList()
+					onRemoved = function()
+						arg_11_0:updateIconList()
 					end
 				}))
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.iconUIItemList:align(#slot1)
+	arg_11_0.iconUIItemList:align(#var_11_1)
 end
 
-slot1 = 0.3
+local var_0_1 = 0.3
 
-function slot0.openPanel(slot0)
-	slot0:cleanManagedTween(true)
+function var_0_0.openPanel(arg_15_0)
+	arg_15_0:cleanManagedTween(true)
 	Canvas.ForceUpdateCanvases()
 
-	slot1 = 400
-	slot2 = slot0.panelTF.sizeDelta.x
-
-	slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.panelTF, {
-			x = slot0
+	local var_15_0 = 400
+	local var_15_1 = arg_15_0.panelTF.sizeDelta.x
+	local var_15_2 = System.Action_float(function(arg_16_0)
+		setAnchoredPosition(arg_15_0.panelTF, {
+			x = arg_16_0
 		})
-	end), 400, 0, uv0):setOnComplete(System.Action(function ()
-		setAnchoredPosition(uv0.panelTF, {
+	end)
+	local var_15_3 = System.Action(function()
+		setAnchoredPosition(arg_15_0.panelTF, {
 			x = 0
 		})
-	end))
+	end)
+
+	arg_15_0:managedTween(LeanTween.value, nil, go(arg_15_0.panelTF), var_15_2, 400, 0, var_0_1):setOnComplete(var_15_3)
 end
 
-function slot0.closePanel(slot0)
-	slot0:cleanManagedTween(true)
+function var_0_0.closePanel(arg_18_0)
+	arg_18_0:cleanManagedTween(true)
 
-	slot1 = 400
-	slot2 = slot0.panelTF.sizeDelta.x
-
-	slot0:managedTween(LeanTween.value, nil, go(slot0.panelTF), System.Action_float(function (slot0)
-		setAnchoredPosition(uv0.panelTF, {
-			x = slot0
+	local var_18_0 = 400
+	local var_18_1 = arg_18_0.panelTF.sizeDelta.x
+	local var_18_2 = System.Action_float(function(arg_19_0)
+		setAnchoredPosition(arg_18_0.panelTF, {
+			x = arg_19_0
 		})
-	end), 0, 400, uv0):setOnComplete(System.Action(function ()
-		setAnchoredPosition(uv0.panelTF, {
+	end)
+	local var_18_3 = System.Action(function()
+		setAnchoredPosition(arg_18_0.panelTF, {
 			x = 0
 		})
-		uv0:Destroy()
-	end))
+		arg_18_0:Destroy()
+	end)
+
+	arg_18_0:managedTween(LeanTween.value, nil, go(arg_18_0.panelTF), var_18_2, 0, 400, var_0_1):setOnComplete(var_18_3)
 end
 
-function slot0.sortDataList(slot0, slot1)
-	table.sort(slot1, function (slot0, slot1)
-		if (slot0.isUpLevel and slot0.isMaxLevel and 9999 or 0) + slot0.progress > (slot1.isUpLevel and slot1.isMaxLevel and 9999 or 0) + slot1.progress then
+function var_0_0.sortDataList(arg_21_0, arg_21_1)
+	table.sort(arg_21_1, function(arg_22_0, arg_22_1)
+		local var_22_0 = arg_22_0.isUpLevel and arg_22_0.isMaxLevel and 9999 or 0
+		local var_22_1 = arg_22_1.isUpLevel and arg_22_1.isMaxLevel and 9999 or 0
+		local var_22_2 = arg_22_0.progress
+		local var_22_3 = arg_22_1.progress
+		local var_22_4 = var_22_0 + var_22_2
+		local var_22_5 = var_22_1 + var_22_3
+
+		if var_22_5 < var_22_4 then
 			return true
-		elseif slot6 == slot7 then
-			return slot0.shipID < slot1.shipID
-		elseif slot6 < slot7 then
+		elseif var_22_4 == var_22_5 then
+			return arg_22_0.shipID < arg_22_1.shipID
+		elseif var_22_4 < var_22_5 then
 			return false
 		end
 	end)
 
-	return slot1
+	return arg_21_1
 end
 
-return slot0
+return var_0_0

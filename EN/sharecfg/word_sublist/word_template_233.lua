@@ -1,32 +1,35 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_233 = {}
-slot1 = slot0.word_template_233
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_233 = {}
+
+local var_0_1 = var_0_0.word_template_233
 
 function temp()
-	uv0["钱"] = {
-		["换"] = {
-			["权"] = {
-				["能"] = {
-					["通"] = {
-						["天"] = {
+	var_0_1.钱 = {
+		换 = {
+			权 = {
+				能 = {
+					通 = {
+						天 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["其"] = {
-			["琛"] = {
+		其 = {
+			琛 = {
 				this = true
 			}
 		},
-		["权"] = {
-			["交"] = {
-				["易"] = {
-					["称"] = {
-						["下"] = {
-							["海"] = {
+		权 = {
+			交 = {
+				易 = {
+					称 = {
+						下 = {
+							海 = {
 								this = true
 							}
 						}
@@ -34,16 +37,16 @@ function temp()
 				}
 			}
 		},
-		["塘"] = {
-			["江"] = {
-				["自"] = {
-					["此"] = {
-						["泽"] = {
-							["被"] = {
-								["两"] = {
-									["岸"] = {
-										["人"] = {
-											["民"] = {
+		塘 = {
+			江 = {
+				自 = {
+					此 = {
+						泽 = {
+							被 = {
+								两 = {
+									岸 = {
+										人 = {
+											民 = {
 												this = true
 											}
 										}
@@ -55,17 +58,17 @@ function temp()
 				}
 			}
 		},
-		["包"] = {
-			["里"] = {
-				["的"] = {
-					["人"] = {
+		包 = {
+			里 = {
+				的 = {
+					人 = {
 						this = true
 					}
 				}
 			}
 		},
-		["文"] = {
-			["雄"] = {
+		文 = {
+			雄 = {
 				this = true
 			}
 		}
@@ -75,7 +78,7 @@ end
 temp()
 
 function temp()
-	uv0["掮"] = {
+	var_0_1.掮 = {
 		this = {
 			this = true
 		}
@@ -85,24 +88,24 @@ end
 temp()
 
 function temp()
-	uv0["乾"] = {
-		["坤"] = {
-			["棒"] = {
+	var_0_1.乾 = {
+		坤 = {
+			棒 = {
 				this = true
 			}
 		},
-		["隆"] = {
-			["爷"] = {
-				["的"] = {
-					["天"] = {
-						["下"] = {
+		隆 = {
+			爷 = {
+				的 = {
+					天 = {
+						下 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["龙"] = {
+		龙 = {
 			T = {
 				O = {
 					M = {
@@ -117,7 +120,7 @@ end
 temp()
 
 function temp()
-	uv0["鈐"] = {
+	var_0_1.鈐 = {
 		this = {
 			this = true
 		}
@@ -127,9 +130,9 @@ end
 temp()
 
 function temp()
-	uv0["潜"] = {
-		["烈"] = {
-			["蟹"] = {
+	var_0_1.潜 = {
+		烈 = {
+			蟹 = {
 				this = true
 			}
 		}
@@ -139,17 +142,17 @@ end
 temp()
 
 function temp()
-	uv0["錢"] = {
-		["達"] = {
+	var_0_1.錢 = {
+		達 = {
 			this = true
 		},
-		["國"] = {
-			["梁"] = {
+		國 = {
+			梁 = {
 				this = true
 			}
 		},
-		["其"] = {
-			["琛"] = {
+		其 = {
+			琛 = {
 				this = true
 			}
 		}
@@ -159,7 +162,7 @@ end
 temp()
 
 function temp()
-	uv0["凵"] = {
+	var_0_1.凵 = {
 		this = {
 			this = true
 		}

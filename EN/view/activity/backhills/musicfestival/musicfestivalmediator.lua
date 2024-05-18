@@ -1,6 +1,6 @@
-slot0 = class("MusicFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
+﻿local var_0_0 = class("MusicFestivalMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_1_0)
 	return {
 		GAME.SEND_MINI_GAME_OP_DONE,
 		GAME.ACT_INSTAGRAM_OP_DONE,
@@ -8,25 +8,30 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1:getName()
+	local var_2_1 = arg_2_1:getBody()
 
-	if slot1:getName() == GAME.SEND_MINI_GAME_OP_DONE then
-		seriesAsync({
-			function (slot0)
-				if #uv0.awards > 0 then
-					uv1.viewComponent:emit(BaseUI.ON_ACHIEVE, slot1, slot0)
+	if var_2_0 == GAME.SEND_MINI_GAME_OP_DONE then
+		local var_2_2 = {
+			function(arg_3_0)
+				local var_3_0 = var_2_1.awards
+
+				if #var_3_0 > 0 then
+					arg_2_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_3_0, arg_3_0)
 				else
-					slot0()
+					arg_3_0()
 				end
 			end,
-			function (slot0)
-				uv0.viewComponent:UpdateView()
+			function(arg_4_0)
+				arg_2_0.viewComponent:UpdateView()
 			end
-		})
-	elseif slot2 == GAME.ACT_INSTAGRAM_OP_DONE or slot2 == ActivityProxy.ACTIVITY_UPDATED then
-		slot0.viewComponent:UpdateView()
+		}
+
+		seriesAsync(var_2_2)
+	elseif var_2_0 == GAME.ACT_INSTAGRAM_OP_DONE or var_2_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_2_0.viewComponent:UpdateView()
 	end
 end
 
-return slot0
+return var_0_0

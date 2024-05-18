@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onUpdate"
+			},
+			arg_list = {
+				buff_id = 5002,
+				time = 20,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		desc = "每隔20秒，有25%的概率发动，中幅降低敌方单个单位射速与伤害，持续5.0秒，优先对精英目标（人形单位）生效，同技能效果不叠加",
 		addition = {
@@ -69,18 +82,5 @@ return {
 	stack = 1,
 	id = 5001,
 	icon = 5000,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onUpdate"
-			},
-			arg_list = {
-				buff_id = 5002,
-				time = 20,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发全弹发射-阿瑞托莎级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发全弹发射-阿瑞托莎级I",
-	stack = 1,
-	id = 21131,
-	icon = 20100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 21130
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发全弹发射-阿瑞托莎级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发全弹发射-阿瑞托莎级I",
+	stack = 1,
+	id = 21131,
+	icon = 20100,
+	last_effect = ""
 }

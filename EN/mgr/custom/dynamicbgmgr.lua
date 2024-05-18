@@ -1,92 +1,101 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.DynamicBgMgr = singletonClass("DynamicBgMgr")
-slot0 = pg.DynamicBgMgr
 
-function slot0.Ctor(slot0)
-	slot0.cache = {}
+local var_0_0 = pg.DynamicBgMgr
+
+function var_0_0.Ctor(arg_1_0)
+	arg_1_0.cache = {}
 end
 
-function slot0.LoadBg(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot7 = "bg/star_level_bg_" .. slot2
+function var_0_0.LoadBg(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, arg_2_6)
+	local var_2_0 = "bg/star_level_bg_" .. arg_2_2
+	local var_2_1 = "ui/star_level_bg_" .. arg_2_2
 
-	if PathMgr.FileExists(PathMgr.getAssetBundle("ui/star_level_bg_" .. slot2)) then
-		slot0:ClearBg(slot1:getUIName())
-		PoolMgr.GetInstance():GetPrefab(slot8, "", true, function (slot0)
-			if not uv0.exited then
-				setParent(slot0, uv1, false)
+	if PathMgr.FileExists(PathMgr.getAssetBundle(var_2_1)) then
+		arg_2_0:ClearBg(arg_2_1:getUIName())
+		PoolMgr.GetInstance():GetPrefab(var_2_1, "", true, function(arg_3_0)
+			if not arg_2_1.exited then
+				setParent(arg_3_0, arg_2_3, false)
 
-				if slot0:GetComponent(typeof(CriManaEffectUI)) then
-					slot1.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
+				local var_3_0 = arg_3_0:GetComponent(typeof(CriManaEffectUI))
 
-					slot1:Pause(false)
+				if var_3_0 then
+					var_3_0.renderMode = ReflectionHelp.RefGetField(typeof("CriManaMovieMaterial+RenderMode"), "Always", nil)
+
+					var_3_0:Pause(false)
 				end
 
-				setActive(uv2, false)
+				setActive(arg_2_4, false)
 
-				if uv3 ~= nil then
-					uv3(slot0)
+				if arg_2_5 ~= nil then
+					arg_2_5(arg_3_0)
 				end
 
-				uv4:InsertCache(uv0:getUIName(), uv5, slot0)
+				arg_2_0:InsertCache(arg_2_1:getUIName(), arg_2_2, arg_3_0)
 			else
-				PoolMgr.GetInstance():DestroyPrefab(uv6, "")
+				PoolMgr.GetInstance():DestroyPrefab(var_2_1, "")
 			end
 		end, 1)
 	else
-		slot0:ClearBg(slot1:getUIName())
-		GetSpriteFromAtlasAsync(slot7, "", function (slot0)
-			if not uv0.exited then
-				setImageSprite(uv1, slot0)
-				setActive(uv1, true)
+		arg_2_0:ClearBg(arg_2_1:getUIName())
+		GetSpriteFromAtlasAsync(var_2_0, "", function(arg_4_0)
+			if not arg_2_1.exited then
+				setImageSprite(arg_2_4, arg_4_0)
+				setActive(arg_2_4, true)
 
-				if uv2 ~= nil then
-					uv2(slot0)
+				if arg_2_6 ~= nil then
+					arg_2_6(arg_4_0)
 				end
 			else
-				PoolMgr.GetInstance():DestroySprite(uv3)
+				PoolMgr.GetInstance():DestroySprite(var_2_0)
 			end
 		end)
 	end
 end
 
-function slot0.ClearBg(slot0, slot1)
-	for slot5 = #slot0.cache, 1, -1 do
-		if slot0.cache[slot5].uiName == slot1 then
-			slot7 = "ui/star_level_bg_" .. slot6.bgName
+function var_0_0.ClearBg(arg_5_0, arg_5_1)
+	for iter_5_0 = #arg_5_0.cache, 1, -1 do
+		local var_5_0 = arg_5_0.cache[iter_5_0]
 
-			if IsNil(slot6.dyBg) then
-				table.remove(slot0.cache, slot5)
+		if var_5_0.uiName == arg_5_1 then
+			local var_5_1 = "ui/star_level_bg_" .. var_5_0.bgName
+			local var_5_2 = var_5_0.dyBg
+
+			if IsNil(var_5_2) then
+				table.remove(arg_5_0.cache, iter_5_0)
 
 				return
 			end
 
-			if slot8:GetComponent(typeof(CriManaEffectUI)) then
-				slot9:Pause(true)
+			local var_5_3 = var_5_2:GetComponent(typeof(CriManaEffectUI))
+
+			if var_5_3 then
+				var_5_3:Pause(true)
 			end
 
-			PoolMgr.GetInstance():ReturnPrefab(slot7, "", slot8)
+			PoolMgr.GetInstance():ReturnPrefab(var_5_1, "", var_5_2)
 
-			if #slot0.cache > 1 then
-				PoolMgr.GetInstance():DestroyPrefab(slot7, "")
+			if #arg_5_0.cache > 1 then
+				PoolMgr.GetInstance():DestroyPrefab(var_5_1, "")
 			end
 
-			table.remove(slot0.cache, slot5)
+			table.remove(arg_5_0.cache, iter_5_0)
 		end
 	end
 end
 
-function slot0.InsertCache(slot0, slot1, slot2, slot3)
-	for slot7, slot8 in ipairs(slot0.cache) do
-		if slot8.uiName == slot1 and slot8.bgName == slot2 then
-			slot8.dyBg = slot3
+function var_0_0.InsertCache(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.cache) do
+		if iter_6_1.uiName == arg_6_1 and iter_6_1.bgName == arg_6_2 then
+			iter_6_1.dyBg = arg_6_3
 
 			return
 		end
 	end
 
-	table.insert(slot0.cache, {
-		uiName = slot1,
-		bgName = slot2,
-		dyBg = slot3
+	table.insert(arg_6_0.cache, {
+		uiName = arg_6_1,
+		bgName = arg_6_2,
+		dyBg = arg_6_3
 	})
 end

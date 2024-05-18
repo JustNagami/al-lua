@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	noWaitFade = true,
@@ -13,12 +13,7 @@ return {
 			bgFade = true,
 			sequence = {
 				{
-					[[
-          Not long ago, in a western sea... 
-
-
-
-]],
+					"          Not long ago, in a western sea... \n\n\n\n",
 					2
 				}
 			}

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.guild_facility_template = {
 	{
 		id = 1,

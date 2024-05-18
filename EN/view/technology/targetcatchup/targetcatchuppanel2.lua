@@ -1,14 +1,14 @@
-slot0 = class("TargetCatchupPanel2", import(".BaseTargetCatchupPanel"))
+﻿local var_0_0 = class("TargetCatchupPanel2", import(".BaseTargetCatchupPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "TargetCatchupPanel2"
 end
 
-function slot0.init(slot0)
-	slot0.tecID = 2
+function var_0_0.init(arg_2_0)
+	arg_2_0.tecID = 2
 
-	slot0:initData()
-	slot0:initUI()
+	arg_2_0:initData()
+	arg_2_0:initUI()
 end
 
-return slot0
+return var_0_0

@@ -1,5 +1,6 @@
-slot0 = class("WSPortLeft", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSPortLeft", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	map = "table",
 	rtVanguard = "userdata",
 	rtFleet = "userdata",
@@ -10,126 +11,140 @@ slot0.Fields = {
 	rtMain = "userdata",
 	fleet = "table"
 }
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet",
 	onUpdateShip = "OnUpdateShip"
 }
 
-function slot0.Setup(slot0)
-	pg.DelegateInfo.New(slot0)
-	slot0:Init()
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
+	arg_1_0:Init()
 end
 
-function slot0.Dispose(slot0)
-	slot0:RemoveMapListener()
-	pg.DelegateInfo.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_2_0)
+	arg_2_0:RemoveMapListener()
+	pg.DelegateInfo.Dispose(arg_2_0)
+	arg_2_0:Clear()
 end
 
-function slot0.Init(slot0)
-	slot0.rtBG = slot0.transform:Find("bg")
-	slot0.rtFleet = slot0.rtBG:Find("fleet")
-	slot0.rtMain = slot0.rtFleet:Find("main")
-	slot0.rtVanguard = slot0.rtFleet:Find("vanguard")
-	slot0.rtShip = slot0.rtFleet:Find("shiptpl")
+function var_0_0.Init(arg_3_0)
+	arg_3_0.rtBG = arg_3_0.transform:Find("bg")
+	arg_3_0.rtFleet = arg_3_0.rtBG:Find("fleet")
+	arg_3_0.rtMain = arg_3_0.rtFleet:Find("main")
+	arg_3_0.rtVanguard = arg_3_0.rtFleet:Find("vanguard")
+	arg_3_0.rtShip = arg_3_0.rtFleet:Find("shiptpl")
 
-	setActive(slot0.rtShip, false)
+	setActive(arg_3_0.rtShip, false)
 end
 
-function slot0.UpdateMap(slot0, slot1)
-	if slot0.map ~= slot1 or slot0.gid ~= slot1.gid then
-		slot0:RemoveMapListener()
+function var_0_0.UpdateMap(arg_4_0, arg_4_1)
+	if arg_4_0.map ~= arg_4_1 or arg_4_0.gid ~= arg_4_1.gid then
+		arg_4_0:RemoveMapListener()
 
-		slot0.map = slot1
-		slot0.gid = slot1.gid
+		arg_4_0.map = arg_4_1
+		arg_4_0.gid = arg_4_1.gid
 
-		slot0:AddMapListener()
-		slot0:OnUpdateSelectedFleet()
+		arg_4_0:AddMapListener()
+		arg_4_0:OnUpdateSelectedFleet()
 	end
 end
 
-function slot0.AddMapListener(slot0)
-	if slot0.map then
-		slot0.map:AddListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
+function var_0_0.AddMapListener(arg_5_0)
+	if arg_5_0.map then
+		arg_5_0.map:AddListener(WorldMap.EventUpdateFIndex, arg_5_0.onUpdateSelectedFleet)
 	end
 end
 
-function slot0.RemoveMapListener(slot0)
-	if slot0.map then
-		slot0.map:RemoveListener(WorldMap.EventUpdateFIndex, slot0.onUpdateSelectedFleet)
-		slot0:RemoveFleetListener(slot0.fleet)
+function var_0_0.RemoveMapListener(arg_6_0)
+	if arg_6_0.map then
+		arg_6_0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg_6_0.onUpdateSelectedFleet)
+		arg_6_0:RemoveFleetListener(arg_6_0.fleet)
 	end
 end
 
-function slot0.AddFleetListener(slot0, slot1)
-	if slot1 then
-		_.each(slot1:GetShips(true), function (slot0)
-			slot0:AddListener(WorldMapShip.EventHpRantChange, uv0.onUpdateShip)
+function var_0_0.AddFleetListener(arg_7_0, arg_7_1)
+	if arg_7_1 then
+		_.each(arg_7_1:GetShips(true), function(arg_8_0)
+			arg_8_0:AddListener(WorldMapShip.EventHpRantChange, arg_7_0.onUpdateShip)
 		end)
 	end
 end
 
-function slot0.RemoveFleetListener(slot0, slot1)
-	if slot1 then
-		_.each(slot1:GetShips(true), function (slot0)
-			slot0:RemoveListener(WorldMapShip.EventHpRantChange, uv0.onUpdateShip)
+function var_0_0.RemoveFleetListener(arg_9_0, arg_9_1)
+	if arg_9_1 then
+		_.each(arg_9_1:GetShips(true), function(arg_10_0)
+			arg_10_0:RemoveListener(WorldMapShip.EventHpRantChange, arg_9_0.onUpdateShip)
 		end)
 	end
 end
 
-function slot0.OnUpdateSelectedFleet(slot0)
-	if slot0.fleet ~= slot0.map:GetFleet() then
-		slot0:RemoveFleetListener(slot0.fleet)
+function var_0_0.OnUpdateSelectedFleet(arg_11_0)
+	local var_11_0 = arg_11_0.map:GetFleet()
 
-		slot0.fleet = slot1
+	if arg_11_0.fleet ~= var_11_0 then
+		arg_11_0:RemoveFleetListener(arg_11_0.fleet)
 
-		slot0:AddFleetListener(slot0.fleet)
-		slot0:UpdateShipList(slot0.rtMain, slot0.fleet:GetTeamShipVOs(TeamType.Main, true))
-		slot0:UpdateShipList(slot0.rtVanguard, slot0.fleet:GetTeamShipVOs(TeamType.Vanguard, true))
+		arg_11_0.fleet = var_11_0
+
+		arg_11_0:AddFleetListener(arg_11_0.fleet)
+		arg_11_0:UpdateShipList(arg_11_0.rtMain, arg_11_0.fleet:GetTeamShipVOs(TeamType.Main, true))
+		arg_11_0:UpdateShipList(arg_11_0.rtVanguard, arg_11_0.fleet:GetTeamShipVOs(TeamType.Vanguard, true))
 	end
 end
 
-function slot0.OnUpdateShip(slot0, slot1, slot2)
-	slot3 = slot0.map:GetFleet(slot2.fleetId)
+function var_0_0.OnUpdateShip(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = arg_12_0.map:GetFleet(arg_12_2.fleetId)
 
-	assert(slot3, "can not find fleet: " .. slot2.fleetId)
+	assert(var_12_0, "can not find fleet: " .. arg_12_2.fleetId)
 
-	if slot3:GetFleetType() == FleetType.Normal then
-		slot0:UpdateShipList(slot0.rtMain, slot0.fleet:GetTeamShipVOs(TeamType.Main, true))
-		slot0:UpdateShipList(slot0.rtVanguard, slot0.fleet:GetTeamShipVOs(TeamType.Vanguard, true))
-	elseif slot4 == FleetType.Submarine then
-		slot0:UpdateShipList(slot0.rtSubmarine, slot0.submarineFleet:GetTeamShipVOs(TeamType.Submarine, true))
+	local var_12_1 = var_12_0:GetFleetType()
+
+	if var_12_1 == FleetType.Normal then
+		arg_12_0:UpdateShipList(arg_12_0.rtMain, arg_12_0.fleet:GetTeamShipVOs(TeamType.Main, true))
+		arg_12_0:UpdateShipList(arg_12_0.rtVanguard, arg_12_0.fleet:GetTeamShipVOs(TeamType.Vanguard, true))
+	elseif var_12_1 == FleetType.Submarine then
+		arg_12_0:UpdateShipList(arg_12_0.rtSubmarine, arg_12_0.submarineFleet:GetTeamShipVOs(TeamType.Submarine, true))
 	end
 end
 
-function slot0.UpdateShipList(slot0, slot1, slot2)
-	slot3 = UIItemList.New(slot1, slot0.rtShip)
+function var_0_0.UpdateShipList(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = UIItemList.New(arg_13_1, arg_13_0.rtShip)
 
-	slot3:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	var_13_0:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = arg_13_2[arg_14_1 + 1]
+			local var_14_1 = WorldConst.FetchWorldShip(var_14_0.id)
 
-			updateShip(slot2, slot3)
+			updateShip(arg_14_2, var_14_0)
 
-			slot5 = findTF(slot2, "HP_POP")
+			local var_14_2 = findTF(arg_14_2, "HP_POP")
 
-			setActive(slot5, true)
-			setActive(findTF(slot5, "heal"), false)
-			setActive(findTF(slot5, "normal"), false)
+			setActive(var_14_2, true)
+			setActive(findTF(var_14_2, "heal"), false)
+			setActive(findTF(var_14_2, "normal"), false)
 
-			slot9 = not WorldConst.FetchWorldShip(slot3.id):IsHpSafe()
+			local var_14_3 = findTF(arg_14_2, "blood")
+			local var_14_4 = findTF(arg_14_2, "blood/fillarea/green")
+			local var_14_5 = findTF(arg_14_2, "blood/fillarea/red")
+			local var_14_6 = not var_14_1:IsHpSafe()
 
-			setActive(findTF(slot2, "blood/fillarea/green"), not slot9)
-			setActive(findTF(slot2, "blood/fillarea/red"), slot9)
+			setActive(var_14_4, not var_14_6)
+			setActive(var_14_5, var_14_6)
 
-			findTF(slot2, "blood"):GetComponent(typeof(Slider)).fillRect = slot9 and slot8 or slot7
+			var_14_3:GetComponent(typeof(Slider)).fillRect = var_14_6 and var_14_5 or var_14_4
 
-			setSlider(slot6, 0, 10000, slot4.hpRant)
-			setActive(slot2:Find("agony"), slot9)
-			setActive(slot2:Find("broken"), slot4:IsBroken())
+			setSlider(var_14_3, 0, 10000, var_14_1.hpRant)
+
+			local var_14_7 = arg_14_2:Find("agony")
+
+			setActive(var_14_7, var_14_6)
+
+			local var_14_8 = arg_14_2:Find("broken")
+
+			setActive(var_14_8, var_14_1:IsBroken())
 		end
 	end)
-	slot3:align(#slot2)
+	var_13_0:align(#arg_13_2)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,24 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onStartGame"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				target = "TargetSelf",
+				skill_id = 10480,
+				check_target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Ping Hai"
+				}
+			}
+		}
+	},
 	{
 		desc = "与平海同在一个舰队时，炮击性能提高15.0%",
 		addition = {
@@ -69,25 +89,5 @@ return {
 	stack = 1,
 	id = 10480,
 	icon = 10480,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onStartGame"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				target = "TargetSelf",
-				skill_id = 10480,
-				check_target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Ping Hai"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

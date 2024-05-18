@@ -1,142 +1,166 @@
-slot0 = class("NavalAcademyShipsView")
+﻿local var_0_0 = class("NavalAcademyShipsView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.parent = slot1
-	slot0.academyStudents = {}
-	slot0._map = slot1:findTF("academyMap/map")
-	slot0._shipTpl = slot0._map:Find("ship")
-	slot0._fountain = slot0._map:Find("fountain")
-	slot0.academyGraphPath = GraphPath.New(AcademyGraph)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.parent = arg_1_1
+	arg_1_0.academyStudents = {}
+	arg_1_0._map = arg_1_1:findTF("academyMap/map")
+	arg_1_0._shipTpl = arg_1_0._map:Find("ship")
+	arg_1_0._fountain = arg_1_0._map:Find("fountain")
+	arg_1_0.academyGraphPath = GraphPath.New(AcademyGraph)
 end
 
-function slot0.BindBuildings(slot0, slot1)
-	slot0.buildings = _.map(slot1, function (slot0)
-		return slot0._tf
+function var_0_0.BindBuildings(arg_2_0, arg_2_1)
+	arg_2_0.buildings = _.map(arg_2_1, function(arg_3_0)
+		return arg_3_0._tf
 	end)
 end
 
-function slot0.Refresh(slot0)
-	slot1, slot2 = slot0:getStudents()
+function var_0_0.Refresh(arg_4_0)
+	local var_4_0, var_4_1 = arg_4_0:getStudents()
 
-	_.each(_.keys(slot0.academyStudents), function (slot0)
-		if uv0[slot0] then
-			uv2.academyStudents[slot0]:updateStudent(slot1, uv1[slot0])
+	_.each(_.keys(arg_4_0.academyStudents), function(arg_5_0)
+		local var_5_0 = var_4_0[arg_5_0]
+		local var_5_1 = var_4_1[arg_5_0]
+		local var_5_2 = arg_4_0.academyStudents[arg_5_0]
+
+		if var_5_0 then
+			var_5_2:updateStudent(var_5_0, var_5_1)
 		else
-			slot3:detach()
+			var_5_2:detach()
 		end
 	end)
 
-	for slot6, slot7 in pairs(slot1) do
-		if not slot0.academyStudents[slot6] then
-			slot10 = NavalAcademyStudent.New(cloneTplTo(slot0._shipTpl, slot0._map).gameObject)
+	for iter_4_0, iter_4_1 in pairs(var_4_0) do
+		if not arg_4_0.academyStudents[iter_4_0] then
+			local var_4_2 = var_4_1[iter_4_0]
+			local var_4_3 = cloneTplTo(arg_4_0._shipTpl, arg_4_0._map)
+			local var_4_4 = NavalAcademyStudent.New(var_4_3.gameObject)
 
-			slot10:attach()
-			slot10:setPathFinder(slot0.academyGraphPath)
-			slot10:setCallBack(function (slot0)
-				uv0:onStateChange(uv1, slot0)
-			end, function (slot0, slot1)
-				uv0:onTask(uv1, uv2)
+			var_4_4:attach()
+			var_4_4:setPathFinder(arg_4_0.academyGraphPath)
+			var_4_4:setCallBack(function(arg_6_0)
+				arg_4_0:onStateChange(iter_4_1, arg_6_0)
+			end, function(arg_7_0, arg_7_1)
+				arg_4_0:onTask(iter_4_1, var_4_2)
 			end)
-			slot10:updateStudent(slot7, slot2[slot6])
+			var_4_4:updateStudent(iter_4_1, var_4_2)
 
-			slot0.academyStudents[slot6] = slot10
+			arg_4_0.academyStudents[iter_4_0] = var_4_4
 		end
 	end
 
-	slot0:sortStudents()
+	arg_4_0:sortStudents()
 end
 
-function slot0.Init(slot0)
-	slot0:Refresh()
+function var_0_0.Init(arg_8_0)
+	arg_8_0:Refresh()
 end
 
-function slot0.onStateChange(slot0, slot1, slot2)
-	if slot0.sortTimer then
-		slot0.sortTimer:Stop()
+function var_0_0.onStateChange(arg_9_0, arg_9_1, arg_9_2)
+	if arg_9_0.sortTimer then
+		arg_9_0.sortTimer:Stop()
 
-		slot0.sortTimer = nil
+		arg_9_0.sortTimer = nil
 	end
 
-	if slot2 == NavalAcademyStudent.ShipState.Walk then
-		slot0.sortTimer = Timer.New(function ()
-			uv0:sortStudents()
+	if arg_9_2 == NavalAcademyStudent.ShipState.Walk then
+		arg_9_0.sortTimer = Timer.New(function()
+			arg_9_0:sortStudents()
 		end, 0.2, -1)
 
-		slot0.sortTimer:Start()
+		arg_9_0.sortTimer:Start()
 	end
 end
 
-function slot0.sortStudents(slot0)
-	table.insertto({}, slot0.buildings)
+function var_0_0.sortStudents(arg_11_0)
+	local var_11_0 = {}
 
-	for slot5, slot6 in pairs(slot0.academyStudents) do
-		table.insert(slot1, slot6._tf)
+	table.insertto(var_11_0, arg_11_0.buildings)
+
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.academyStudents) do
+		table.insert(var_11_0, iter_11_1._tf)
 	end
 
-	table.sort(slot1, function (slot0, slot1)
-		return slot1.anchoredPosition.y < slot0.anchoredPosition.y
+	table.sort(var_11_0, function(arg_12_0, arg_12_1)
+		return arg_12_0.anchoredPosition.y > arg_12_1.anchoredPosition.y
 	end)
 
-	slot2 = 0
+	local var_11_1 = 0
 
-	for slot6, slot7 in ipairs(slot1) do
-		slot7:SetSiblingIndex(slot2)
+	for iter_11_2, iter_11_3 in ipairs(var_11_0) do
+		iter_11_3:SetSiblingIndex(var_11_1)
 
-		slot2 = slot2 + 1
+		var_11_1 = var_11_1 + 1
 	end
 end
 
-function slot0.onTask(slot0, slot1, slot2)
-	slot4 = getProxy(ActivityProxy)
+function var_0_0.onTask(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = getProxy(TaskProxy)
+	local var_13_1 = getProxy(ActivityProxy)
+	local var_13_2 = var_13_1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
+	local var_13_3 = _.detect(var_13_2, function(arg_14_0)
+		local var_14_0 = arg_14_0:getTaskShip()
 
-	if _.detect(slot4:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function (slot0)
-		return slot0:getTaskShip() and slot1.groupId == uv0.groupId
-	end) and not slot6:isEnd() then
-		if slot6.id == ActivityConst.JYHZ_ACTIVITY_ID and slot2.acceptTaskId then
-			slot7 = getProxy(TaskProxy):getAcademyTask(slot1.groupId)
+		return var_14_0 and var_14_0.groupId == arg_13_1.groupId
+	end)
 
-			if slot4:getActivityByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT) and _.detect(slot8:getConfig("config_data"), function (slot0)
-				return _.any(pg.chapter_template[slot0].npc_data, function (slot0)
-					return pg.npc_squad_template[slot0].task_id == uv0
+	if var_13_3 and not var_13_3:isEnd() then
+		if var_13_3.id == ActivityConst.JYHZ_ACTIVITY_ID and arg_13_2.acceptTaskId then
+			local var_13_4 = var_13_0:getAcademyTask(arg_13_1.groupId)
+			local var_13_5 = var_13_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_ZPROJECT)
+
+			if var_13_5 then
+				local var_13_6 = var_13_5:getConfig("config_data")
+				local var_13_7 = _.detect(var_13_6, function(arg_15_0)
+					local var_15_0 = pg.chapter_template[arg_15_0]
+
+					return _.any(var_15_0.npc_data, function(arg_16_0)
+						return pg.npc_squad_template[arg_16_0].task_id == var_13_4
+					end)
 				end)
-			end) and getProxy(ChapterProxy):getChapterById(slot10).active then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("task_target_chapter_in_progress"))
 
-				return
+				if var_13_7 and getProxy(ChapterProxy):getChapterById(var_13_7).active then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("task_target_chapter_in_progress"))
+
+					return
+				end
 			end
 		end
 
-		if slot2.type then
-			if slot2.type == 1 then
-				Application.OpenURL(slot2.param)
-			elseif slot2.type == 2 then
-				slot0:emit(NavalAcademyMediator.GO_SCENE, slot2.param)
-			elseif slot2.type == 3 then
-				slot0:emit(NavalAcademyMediator.OPEN_ACTIVITY_PANEL, tonumber(slot2.param))
-			elseif slot2.type == 4 then
-				slot0:emit(NavalAcademyMediator.OPEN_ACTIVITY_SHOP)
-			elseif slot2.type == 5 then
-				slot0:emit(NavalAcademyMediator.OPEN_SCROLL, tonumber(slot2.param))
+		if arg_13_2.type then
+			if arg_13_2.type == 1 then
+				Application.OpenURL(arg_13_2.param)
+			elseif arg_13_2.type == 2 then
+				arg_13_0:emit(NavalAcademyMediator.GO_SCENE, arg_13_2.param)
+			elseif arg_13_2.type == 3 then
+				arg_13_0:emit(NavalAcademyMediator.OPEN_ACTIVITY_PANEL, tonumber(arg_13_2.param))
+			elseif arg_13_2.type == 4 then
+				arg_13_0:emit(NavalAcademyMediator.OPEN_ACTIVITY_SHOP)
+			elseif arg_13_2.type == 5 then
+				arg_13_0:emit(NavalAcademyMediator.OPEN_SCROLL, tonumber(arg_13_2.param))
 			end
-		elseif not slot2.currentTask and slot2.acceptTaskId then
-			if getProxy(PlayerProxy):getRawData().level < pg.task_data_template[slot2.acceptTaskId].level then
-				pg.TipsMgr.GetInstance():ShowTips(i18n("task_level_notenough", slot9.level))
+		elseif not arg_13_2.currentTask and arg_13_2.acceptTaskId then
+			local var_13_8 = getProxy(PlayerProxy):getRawData()
+			local var_13_9 = pg.task_data_template[arg_13_2.acceptTaskId]
+
+			if var_13_8.level < var_13_9.level then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("task_level_notenough", var_13_9.level))
 
 				return
 			end
 
-			slot0:emit(NavalAcademyMediator.ACTIVITY_OP, {
+			arg_13_0:emit(NavalAcademyMediator.ACTIVITY_OP, {
 				cmd = 1,
-				activity_id = slot6.id,
-				arg1 = slot2.acceptTaskId
+				activity_id = var_13_3.id,
+				arg1 = arg_13_2.acceptTaskId
 			})
-		elseif slot2.currentTask then
-			if not slot2.currentTask:isFinish() and slot2.currentTask:getConfig("sub_type") == 29 then
-				slot0:emit(NavalAcademyMediator.TASK_GO, {
-					taskVO = slot2.currentTask
+		elseif arg_13_2.currentTask then
+			if not arg_13_2.currentTask:isFinish() and arg_13_2.currentTask:getConfig("sub_type") == 29 then
+				arg_13_0:emit(NavalAcademyMediator.TASK_GO, {
+					taskVO = arg_13_2.currentTask
 				})
-			elseif not slot2.currentTask:isReceive() then
-				slot0:emit(NavalAcademyMediator.GO_TASK_SCENE, {
+			elseif not arg_13_2.currentTask:isReceive() then
+				arg_13_0:emit(NavalAcademyMediator.GO_TASK_SCENE, {
 					page = "activity"
 				})
 			end
@@ -146,66 +170,76 @@ function slot0.onTask(slot0, slot1, slot2)
 	end
 end
 
-function slot0.emit(slot0, ...)
-	slot0.parent:emit(...)
+function var_0_0.emit(arg_17_0, ...)
+	arg_17_0.parent:emit(...)
 end
 
-function slot0.clearStudents(slot0)
-	if slot0.sortTimer then
-		slot0.sortTimer:Stop()
+function var_0_0.clearStudents(arg_18_0)
+	if arg_18_0.sortTimer then
+		arg_18_0.sortTimer:Stop()
 
-		slot0.sortTimer = nil
+		arg_18_0.sortTimer = nil
 	end
 
-	for slot4, slot5 in pairs(slot0.academyStudents) do
-		slot5:detach()
-		Destroy(slot5._go)
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.academyStudents) do
+		iter_18_1:detach()
+		Destroy(iter_18_1._go)
 	end
 
-	slot0.academyStudents = {}
+	arg_18_0.academyStudents = {}
 end
 
-function slot0.Dispose(slot0)
-	slot0:clearStudents()
+function var_0_0.Dispose(arg_19_0)
+	arg_19_0:clearStudents()
 end
 
-function slot0.getStudents(slot0)
-	slot3 = getProxy(TaskProxy)
+function var_0_0.getStudents(arg_20_0)
+	local var_20_0 = {}
+	local var_20_1 = {}
+	local var_20_2 = getProxy(TaskProxy)
+	local var_20_3 = getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST)
 
-	function slot6(slot0)
-		slot3 = _.flatten(slot0:getConfig("config_data"))
-		slot4, slot5 = nil
+	local function var_20_4(arg_21_0)
+		local var_21_0 = arg_21_0:getConfig("config_client")
+		local var_21_1 = arg_21_0:getConfig("config_data")
+		local var_21_2 = _.flatten(var_21_1)
+		local var_21_3
+		local var_21_4
 
-		if type(slot0:getConfig("config_client")) == "table" then
-			for slot9, slot10 in ipairs(slot1) do
-				uv0[slot10.id] = Ship.New(slot10)
+		if type(var_21_0) == "table" then
+			for iter_21_0, iter_21_1 in ipairs(var_21_0) do
+				var_20_0[iter_21_1.id] = Ship.New(iter_21_1)
 
-				if slot9 == 1 then
-					uv0[slot10.id].withShipFace = true
-					slot11 = {
-						type = slot10.type,
-						param = slot10.param,
-						showTips = slot12 and not slot13 or slot13 and slot13:isFinish() and not slot13:isReceive(),
-						acceptTaskId = slot12,
-						currentTask = slot13
-					}
+				if iter_21_0 == 1 then
+					var_20_0[iter_21_1.id].withShipFace = true
 
-					if slot10.type then
-						-- Nothing
+					local var_21_5 = {}
+
+					if iter_21_1.type then
+						var_21_5.type = iter_21_1.type
+						var_21_5.param = iter_21_1.param
 					end
 
-					slot12, slot13 = getActivityTask(slot0, true)
-					uv1[slot10.id] = slot11
-					slot4 = slot11.acceptTaskId
-					slot5 = slot11.currentTask
+					local var_21_6, var_21_7 = getActivityTask(arg_21_0, true)
+
+					var_21_5.showTips = var_21_6 and not var_21_7 or var_21_7 and var_21_7:isFinish() and not var_21_7:isReceive()
+					var_21_5.acceptTaskId = var_21_6
+					var_21_5.currentTask = var_21_7
+					var_20_1[iter_21_1.id] = var_21_5
+					var_21_3 = var_21_5.acceptTaskId
+					var_21_4 = var_21_5.currentTask
 				end
 
-				if slot10.tasks then
-					uv0[slot10.id].hide = true
+				local var_21_8 = iter_21_1.tasks
 
-					for slot16, slot17 in ipairs(slot11) do
-						if slot17 == (slot5 and table.indexof(slot3, slot5.id) or table.indexof(slot3, slot4)) then
-							uv0[slot10.id].hide = false
+				if var_21_8 then
+					var_20_0[iter_21_1.id].hide = true
+
+					local var_21_9 = var_21_4 and table.indexof(var_21_2, var_21_4.id) or table.indexof(var_21_2, var_21_3)
+
+					for iter_21_2, iter_21_3 in ipairs(var_21_8) do
+						if iter_21_3 == var_21_9 then
+							var_20_0[iter_21_1.id].hide = false
 
 							break
 						end
@@ -215,13 +249,15 @@ function slot0.getStudents(slot0)
 		end
 	end
 
-	_.each(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST), function (slot0)
-		if not slot0:isEnd() then
-			uv0(slot0)
+	_.each(var_20_3, function(arg_22_0)
+		if not arg_22_0:isEnd() then
+			var_20_4(arg_22_0)
 		end
 	end)
 
-	return getProxy(NavalAcademyProxy):fillStudens({}), {}
+	var_20_0 = getProxy(NavalAcademyProxy):fillStudens(var_20_0)
+
+	return var_20_0, var_20_1
 end
 
-return slot0
+return var_0_0

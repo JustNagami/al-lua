@@ -1,83 +1,87 @@
-slot0 = class("OtherWorldMainPage", import(".TemplatePage.PreviewTemplatePage"))
-slot1 = 0.45
-slot2 = 0.2
-slot3 = 1.2
+﻿local var_0_0 = class("OtherWorldMainPage", import(".TemplatePage.PreviewTemplatePage"))
+local var_0_1 = 0.45
+local var_0_2 = 0.2
+local var_0_3 = 1.2
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.effectBlankScreen = slot0:findTF("blank_screen_effect", slot0.bg)
-	slot0.effectOpen = slot0:findTF("open_effect", slot0.bg)
-	slot0.effectBlink = slot0:findTF("blink_effect", slot0.bg)
-	slot0.effectClick = slot0:findTF("click_effect", slot0.bg)
+	arg_1_0.effectBlankScreen = arg_1_0:findTF("blank_screen_effect", arg_1_0.bg)
+	arg_1_0.effectOpen = arg_1_0:findTF("open_effect", arg_1_0.bg)
+	arg_1_0.effectBlink = arg_1_0:findTF("blink_effect", arg_1_0.bg)
+	arg_1_0.effectClick = arg_1_0:findTF("click_effect", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.skinshopBtn = slot0:findTF("skinshop", slot0.btnList)
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.skinshopBtn = arg_2_0:findTF("skinshop", arg_2_0.btnList)
 
-	onButton(slot0, slot0.skinshopBtn, function ()
-		uv0:PlayClickEffect(uv0.skinshopBtn, function ()
+	onButton(arg_2_0, arg_2_0.skinshopBtn, function()
+		arg_2_0:PlayClickEffect(arg_2_0.skinshopBtn, function()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 		end)
 	end, SFX_PANEL)
 
-	slot0.mountainBtn = slot0:findTF("mountain", slot0.btnList)
+	arg_2_0.mountainBtn = arg_2_0:findTF("mountain", arg_2_0.btnList)
 
-	onButton(slot0, slot0.mountainBtn, function ()
-		uv0:PlayClickEffect(uv0.mountainBtn, function ()
+	onButton(arg_2_0, arg_2_0.mountainBtn, function()
+		arg_2_0:PlayClickEffect(arg_2_0.mountainBtn, function()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.OTHERWORLD_BACKHILL)
 		end)
 	end, SFX_PANEL)
 
-	slot0.buildBtn = slot0:findTF("build", slot0.btnList)
+	arg_2_0.buildBtn = arg_2_0:findTF("build", arg_2_0.btnList)
 
-	onButton(slot0, slot0.buildBtn, function ()
-		uv0:PlayClickEffect(uv0.buildBtn, function ()
-			uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+	onButton(arg_2_0, arg_2_0.buildBtn, function()
+		arg_2_0:PlayClickEffect(arg_2_0.buildBtn, function()
+			arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 				projectName = BuildShipScene.PROJECTS.ACTIVITY
 			})
 		end)
 	end, SFX_PANEL)
 
-	slot0.fightBtn = slot0:findTF("fight", slot0.btnList)
+	arg_2_0.fightBtn = arg_2_0:findTF("fight", arg_2_0.btnList)
 
-	onButton(slot0, slot0.fightBtn, function ()
-		uv0:PlayClickEffect(uv0.fightBtn, function ()
+	onButton(arg_2_0, arg_2_0.fightBtn, function()
+		arg_2_0:PlayClickEffect(arg_2_0.fightBtn, function()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.OTHERWORLD_MAP)
 		end)
 	end, SFX_PANEL)
-	slot0:PlayOpenEffect()
+	arg_2_0:PlayOpenEffect()
 end
 
-function slot0.PlayOpenEffect(slot0)
-	setActive(slot0.effectBlankScreen, true)
-	setActive(slot0.effectOpen, false)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		setActive(uv0.effectOpen, true)
-	end, uv0, nil)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		setActive(uv0.effectBlankScreen, false)
-	end, uv1, nil)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		setActive(uv0.effectOpen, false)
-		setActive(uv0.effectBlink, true)
-	end, uv0 + uv2, nil)
+function var_0_0.PlayOpenEffect(arg_11_0)
+	setActive(arg_11_0.effectBlankScreen, true)
+	setActive(arg_11_0.effectOpen, false)
+	arg_11_0:managedTween(LeanTween.delayedCall, function()
+		setActive(arg_11_0.effectOpen, true)
+	end, var_0_2, nil)
+	arg_11_0:managedTween(LeanTween.delayedCall, function()
+		setActive(arg_11_0.effectBlankScreen, false)
+	end, var_0_1, nil)
+	arg_11_0:managedTween(LeanTween.delayedCall, function()
+		setActive(arg_11_0.effectOpen, false)
+		setActive(arg_11_0.effectBlink, true)
+	end, var_0_2 + var_0_3, nil)
 end
 
-function slot0.PlayClickEffect(slot0, slot1, slot2)
-	setLocalPosition(slot0.effectClick, pg.UIMgr.GetInstance().OverlayEffect:GetChild(0) and slot3.localPosition:Sub(Vector3(192, 60, 0)) or slot1.localPosition)
-	setActive(slot0.effectClick, true)
-	slot0:managedTween(LeanTween.delayedCall, function ()
-		setActive(uv0.effectClick, false)
+function var_0_0.PlayClickEffect(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = pg.UIMgr.GetInstance().OverlayEffect:GetChild(0)
+	local var_15_1 = Vector3(192, 60, 0)
+	local var_15_2 = var_15_0 and var_15_0.localPosition:Sub(var_15_1) or arg_15_1.localPosition
 
-		if uv1 then
-			uv1()
+	setLocalPosition(arg_15_0.effectClick, var_15_2)
+	setActive(arg_15_0.effectClick, true)
+	arg_15_0:managedTween(LeanTween.delayedCall, function()
+		setActive(arg_15_0.effectClick, false)
+
+		if arg_15_2 then
+			arg_15_2()
 		end
 	end, 0.3, nil)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:cleanManagedTween()
+function var_0_0.OnDestroy(arg_17_0)
+	arg_17_0:cleanManagedTween()
 end
 
-return slot0
+return var_0_0

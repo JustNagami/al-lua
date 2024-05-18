@@ -1,91 +1,99 @@
-slot0 = class("BackYardDecorationThemeCard", import(".BackYardDecorationCard"))
+﻿local var_0_0 = class("BackYardDecorationThemeCard", import(".BackYardDecorationCard"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.add = findTF(slot0._tf, "bg/Add")
-	slot0.rawIcon = findTF(slot0._tf, "bg/icon_raw"):GetComponent(typeof(RawImage))
+	arg_1_0.add = findTF(arg_1_0._tf, "bg/Add")
+	arg_1_0.rawIcon = findTF(arg_1_0._tf, "bg/icon_raw"):GetComponent(typeof(RawImage))
 
-	setActive(slot0.rawIcon.gameObject, false)
-	setActive(slot0.newTF, false)
+	setActive(arg_1_0.rawIcon.gameObject, false)
+	setActive(arg_1_0.newTF, false)
 
-	slot0.iconTr = findTF(slot0._tf, "bg/icon")
-	slot0.pos = findTF(slot0._tf, "bg/pos")
-	slot0.posTxt = slot0.pos:Find("new"):GetComponent(typeof(Text))
+	arg_1_0.iconTr = findTF(arg_1_0._tf, "bg/icon")
+	arg_1_0.pos = findTF(arg_1_0._tf, "bg/pos")
+	arg_1_0.posTxt = arg_1_0.pos:Find("new"):GetComponent(typeof(Text))
 end
 
-function slot0.RemoveSizeTag(slot0, slot1)
-	return string.gsub(string.gsub(slot1, "</size>", ""), "<size=%d+>", "")
+function var_0_0.RemoveSizeTag(arg_2_0, arg_2_1)
+	local var_2_0 = string.gsub(arg_2_1, "</size>", "")
+
+	return string.gsub(var_2_0, "<size=%d+>", "")
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.themeVO = slot1
-	slot3 = slot1.id == ""
+function var_0_0.Update(arg_3_0, arg_3_1, arg_3_2)
+	arg_3_0.themeVO = arg_3_1
 
-	SetActive(slot0.add, slot3)
-	setActive(slot0.iconTr, not slot3)
+	local var_3_0 = arg_3_1.id == ""
 
-	if not slot3 then
-		slot4 = slot1:IsSystem()
+	SetActive(arg_3_0.add, var_3_0)
+	setActive(arg_3_0.iconTr, not var_3_0)
 
-		setActive(slot0.iconImg.gameObject, slot4)
-		setActive(slot0.rawIcon.gameObject, false)
+	if not var_3_0 then
+		local var_3_1 = arg_3_1:IsSystem()
 
-		if not slot4 then
-			if BackYardThemeTempalteUtil.FileExists(slot1:GetTextureIconName()) or slot1:IsPushed() then
-				BackYardThemeTempalteUtil.GetTexture(slot1:GetTextureIconName(), slot1:GetIconMd5(), function (slot0)
-					if not IsNil(uv0.rawIcon) and slot0 then
-						setActive(uv0.rawIcon.gameObject, true)
+		setActive(arg_3_0.iconImg.gameObject, var_3_1)
+		setActive(arg_3_0.rawIcon.gameObject, false)
 
-						uv0.rawIcon.texture = slot0
+		if not var_3_1 then
+			if BackYardThemeTempalteUtil.FileExists(arg_3_1:GetTextureIconName()) or arg_3_1:IsPushed() then
+				local var_3_2 = arg_3_1:GetIconMd5()
+
+				BackYardThemeTempalteUtil.GetTexture(arg_3_1:GetTextureIconName(), var_3_2, function(arg_4_0)
+					if not IsNil(arg_3_0.rawIcon) and arg_4_0 then
+						setActive(arg_3_0.rawIcon.gameObject, true)
+
+						arg_3_0.rawIcon.texture = arg_4_0
 					end
 				end)
 			else
-				setActive(slot0.iconImg.gameObject, true)
-				LoadSpriteAtlasAsync("furnitureicon/" .. slot1:getIcon(), "", function (slot0)
-					uv0.iconImg.sprite = slot0
+				setActive(arg_3_0.iconImg.gameObject, true)
+				LoadSpriteAtlasAsync("furnitureicon/" .. arg_3_1:getIcon(), "", function(arg_5_0)
+					arg_3_0.iconImg.sprite = arg_5_0
 				end)
 			end
 
-			slot6 = slot1.pos
+			local var_3_3 = arg_3_1.pos
 
-			if slot1.pos <= 9 then
-				slot6 = "0" .. slot1.pos
+			if arg_3_1.pos <= 9 then
+				var_3_3 = "0" .. arg_3_1.pos
 			end
 
-			slot0.posTxt.text = slot6
+			arg_3_0.posTxt.text = var_3_3
 		else
-			LoadSpriteAsync("furnitureicon/" .. slot1:getIcon(), function (slot0)
-				uv0.iconImg.sprite = slot0
+			LoadSpriteAsync("furnitureicon/" .. arg_3_1:getIcon(), function(arg_6_0)
+				arg_3_0.iconImg.sprite = arg_6_0
 			end)
 		end
 
-		setActive(slot0.pos, not slot4)
-		setText(slot0.comfortableTF, shortenString(slot0:RemoveSizeTag(slot1:getName()), 4))
-		SetActive(slot0.newTF, false)
-		slot0:UpdateState(slot2)
+		setActive(arg_3_0.pos, not var_3_1)
+
+		local var_3_4 = arg_3_0:RemoveSizeTag(arg_3_1:getName())
+
+		setText(arg_3_0.comfortableTF, shortenString(var_3_4, 4))
+		SetActive(arg_3_0.newTF, false)
+		arg_3_0:UpdateState(arg_3_2)
 	else
-		setActive(slot0.pos, false)
-		setText(slot0.comfortableTF, "")
+		setActive(arg_3_0.pos, false)
+		setText(arg_3_0.comfortableTF, "")
 	end
 end
 
-function slot0.UpdateState(slot0, slot1)
-	if slot0.themeVO.id ~= "" then
-		SetActive(slot0.maskTF, slot1)
+function var_0_0.UpdateState(arg_7_0, arg_7_1)
+	if arg_7_0.themeVO.id ~= "" then
+		SetActive(arg_7_0.maskTF, arg_7_1)
 
-		slot0.showMask = slot1
+		arg_7_0.showMask = arg_7_1
 	end
 end
 
-function slot0.Dispose(slot0)
-	uv0.super.Dispose(slot0)
+function var_0_0.Dispose(arg_8_0)
+	var_0_0.super.Dispose(arg_8_0)
 
-	if not IsNil(slot0.rawIcon.texture) then
-		Object.Destroy(slot0.rawIcon.texture)
+	if not IsNil(arg_8_0.rawIcon.texture) then
+		Object.Destroy(arg_8_0.rawIcon.texture)
 
-		slot0.rawIcon.texture = nil
+		arg_8_0.rawIcon.texture = nil
 	end
 end
 
-return slot0
+return var_0_0

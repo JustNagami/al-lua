@@ -1,86 +1,90 @@
-slot0 = class("CryptolaliaResDeleteWindow", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("CryptolaliaResDeleteWindow", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CryptolaliaResDeleteWindowui"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("window/top/btnBack")
-	slot0.contentTxt = slot0:findTF("window/content/Text"):GetComponent(typeof(Text))
-	slot0.icon = slot0:findTF("window/content/cover/icon"):GetComponent(typeof(Image))
-	slot0.signature = slot0:findTF("window/content/cover/signature"):GetComponent(typeof(Image))
-	slot0.name = slot0:findTF("window/content/cover/name"):GetComponent(typeof(Text))
-	slot0.shipname = slot0:findTF("window/content/cover/shipname"):GetComponent(typeof(Text))
-	slot0.cancelBtn = slot0:findTF("window/button_container/cancel")
-	slot0.confirmBtn = slot0:findTF("window/button_container/confirm")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("window/top/btnBack")
+	arg_2_0.contentTxt = arg_2_0:findTF("window/content/Text"):GetComponent(typeof(Text))
+	arg_2_0.icon = arg_2_0:findTF("window/content/cover/icon"):GetComponent(typeof(Image))
+	arg_2_0.signature = arg_2_0:findTF("window/content/cover/signature"):GetComponent(typeof(Image))
+	arg_2_0.name = arg_2_0:findTF("window/content/cover/name"):GetComponent(typeof(Text))
+	arg_2_0.shipname = arg_2_0:findTF("window/content/cover/shipname"):GetComponent(typeof(Text))
+	arg_2_0.cancelBtn = arg_2_0:findTF("window/button_container/cancel")
+	arg_2_0.confirmBtn = arg_2_0:findTF("window/button_container/confirm")
 
-	setText(slot0:findTF("window/top/title"), i18n("cryptolalia_delete_res_title"))
-	setText(slot0.cancelBtn:Find("Text"), i18n("text_cancel"))
-	setText(slot0.confirmBtn:Find("Text"), i18n("text_confirm"))
+	setText(arg_2_0:findTF("window/top/title"), i18n("cryptolalia_delete_res_title"))
+	setText(arg_2_0.cancelBtn:Find("Text"), i18n("text_cancel"))
+	setText(arg_2_0.confirmBtn:Find("Text"), i18n("text_confirm"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	uv0.super.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+function var_0_0.Show(arg_7_0, arg_7_1, arg_7_2)
+	var_0_0.super.Show(arg_7_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
 
-	slot0.contentTxt.text = i18n("cryptolalia_delete_res_tip", slot1:GetResSize(slot2))
-	slot0.name.text = slot1:GetName()
-	slot0.shipname.text = slot1:GetShipName()
+	arg_7_0.contentTxt.text = i18n("cryptolalia_delete_res_tip", arg_7_1:GetResSize(arg_7_2))
+	arg_7_0.name.text = arg_7_1:GetName()
+	arg_7_0.shipname.text = arg_7_1:GetShipName()
 
-	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1:GetShipGroupId(), "cd", function (slot0)
-		if uv0.exited then
+	local var_7_0 = arg_7_1:GetShipGroupId()
+
+	LoadSpriteAtlasAsync("CryptolaliaShip/" .. var_7_0, "cd", function(arg_8_0)
+		if arg_7_0.exited then
 			return
 		end
 
-		uv0.icon.sprite = slot0
+		arg_7_0.icon.sprite = arg_8_0
 
-		uv0.icon:SetNativeSize()
+		arg_7_0.icon:SetNativeSize()
 	end)
-	onButton(slot0, slot0.confirmBtn, function ()
+	onButton(arg_7_0, arg_7_0.confirmBtn, function()
 		if IsUnityEditor then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_open"))
 
 			return
 		end
 
-		uv0:Delete(uv1, uv2)
-		uv0:Hide()
+		arg_7_0:Delete(arg_7_1, arg_7_2)
+		arg_7_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Delete(slot0, slot1, slot2)
-	if slot1 and slot1:IsPlayableState(slot2) then
-		slot3 = slot1:GetCpkName(slot2)
+function var_0_0.Delete(arg_10_0, arg_10_1, arg_10_2)
+	if arg_10_1 and arg_10_1:IsPlayableState(arg_10_2) then
+		local var_10_0 = arg_10_1:GetCpkName(arg_10_2)
+		local var_10_1 = Cryptolalia.BuildCpkPath(var_10_0)
+		local var_10_2 = Cryptolalia.BuildSubtitlePath(var_10_0)
 
 		pg.CipherGroupMgr.GetInstance():DelFile({
-			Cryptolalia.BuildCpkPath(slot3),
-			Cryptolalia.BuildSubtitlePath(slot3)
+			var_10_1,
+			var_10_2
 		})
-		slot0:emit(CryptolaliaScene.ON_DELETE)
+		arg_10_0:emit(CryptolaliaScene.ON_DELETE)
 	end
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_11_0)
+	var_0_0.super.Hide(arg_11_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf, arg_11_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.exited = true
+function var_0_0.OnDestroy(arg_12_0)
+	arg_12_0.exited = true
 end
 
-return slot0
+return var_0_0

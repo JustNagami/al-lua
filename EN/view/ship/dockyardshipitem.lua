@@ -1,305 +1,326 @@
-slot0 = class("DockyardShipItem")
-slot0.DetailType0 = 0
-slot0.DetailType1 = 1
-slot0.DetailType2 = 2
-slot0.DetailType3 = 3
-slot0.SKILL_COLOR = {
+﻿local var_0_0 = class("DockyardShipItem")
+
+var_0_0.DetailType0 = 0
+var_0_0.DetailType1 = 1
+var_0_0.DetailType2 = 2
+var_0_0.DetailType3 = 3
+var_0_0.SKILL_COLOR = {
 	COLOR_RED,
 	COLOR_BLUE,
 	COLOR_YELLOW
 }
-slot1 = 0.8
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.go = slot1
-	slot0.tr = slot1.transform
-	slot0.hideTagFlags = slot2 or {}
-	slot0.blockTagFlags = slot3 or {}
-	slot0.btn = GetOrAddComponent(slot1, "Button")
-	slot0.content = findTF(slot0.tr, "content").gameObject
+local var_0_1 = 0.8
 
-	setActive(findTF(slot0.content, "dockyard"), true)
-	setActive(findTF(slot0.content, "collection"), false)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.go = arg_1_1
+	arg_1_0.tr = arg_1_1.transform
+	arg_1_0.hideTagFlags = arg_1_2 or {}
+	arg_1_0.blockTagFlags = arg_1_3 or {}
+	arg_1_0.btn = GetOrAddComponent(arg_1_1, "Button")
+	arg_1_0.content = findTF(arg_1_0.tr, "content").gameObject
 
-	slot0.quit = findTF(slot0.tr, "quit_button").gameObject
-	slot0.detail = findTF(slot0.tr, "content/dockyard/detail").gameObject
-	slot0.detailLayoutTr = findTF(slot0.detail, "layout")
-	slot0.imageQuit = slot0.quit:GetComponent("Image")
-	slot0.imageFrame = findTF(slot0.tr, "content/front/frame"):GetComponent("Image")
-	slot0.nameTF = findTF(slot0.tr, "content/info/name_mask/name")
-	slot0.npc = findTF(slot0.tr, "content/dockyard/npc")
+	setActive(findTF(arg_1_0.content, "dockyard"), true)
+	setActive(findTF(arg_1_0.content, "collection"), false)
 
-	setActive(slot0.npc, false)
+	arg_1_0.quit = findTF(arg_1_0.tr, "quit_button").gameObject
+	arg_1_0.detail = findTF(arg_1_0.tr, "content/dockyard/detail").gameObject
+	arg_1_0.detailLayoutTr = findTF(arg_1_0.detail, "layout")
+	arg_1_0.imageQuit = arg_1_0.quit:GetComponent("Image")
+	arg_1_0.imageFrame = findTF(arg_1_0.tr, "content/front/frame"):GetComponent("Image")
+	arg_1_0.nameTF = findTF(arg_1_0.tr, "content/info/name_mask/name")
+	arg_1_0.npc = findTF(arg_1_0.tr, "content/dockyard/npc")
 
-	slot0.lock = findTF(slot0.tr, "content/dockyard/container/lock")
-	slot0.maskStatusOb = findTF(slot0.tr, "content/front/status_mask")
-	slot0.iconStatus = findTF(slot0.tr, "content/dockyard/status")
-	slot0.iconStatusMask = slot0.iconStatus:GetComponent(typeof(RectMask2D))
-	slot0.iconStatusTxt = findTF(slot0.tr, "content/dockyard/status/Text"):GetComponent("Text")
-	slot0.selectedGo = findTF(slot0.tr, "content/front/selected").gameObject
-	slot0.energyTF = findTF(slot0.tr, "content/dockyard/container/energy")
-	slot0.proposeTF = findTF(slot0.tr, "content/dockyard/propose")
+	setActive(arg_1_0.npc, false)
 
-	slot0.selectedGo:SetActive(false)
+	arg_1_0.lock = findTF(arg_1_0.tr, "content/dockyard/container/lock")
+	arg_1_0.maskStatusOb = findTF(arg_1_0.tr, "content/front/status_mask")
+	arg_1_0.iconStatus = findTF(arg_1_0.tr, "content/dockyard/status")
+	arg_1_0.iconStatusMask = arg_1_0.iconStatus:GetComponent(typeof(RectMask2D))
+	arg_1_0.iconStatusTxt = findTF(arg_1_0.tr, "content/dockyard/status/Text"):GetComponent("Text")
+	arg_1_0.selectedGo = findTF(arg_1_0.tr, "content/front/selected").gameObject
+	arg_1_0.energyTF = findTF(arg_1_0.tr, "content/dockyard/container/energy")
+	arg_1_0.proposeTF = findTF(arg_1_0.tr, "content/dockyard/propose")
 
-	slot0.hpBar = findTF(slot0.tr, "content/dockyard/blood")
-	slot0.expBuff = findTF(slot0.tr, "content/expbuff")
-	slot0.intimacyTF = findTF(slot0.tr, "content/intimacy")
-	slot0.detailType = uv0.DetailType0
-	slot0.proposeModel = slot0.proposeTF:Find("heartShipCard(Clone)")
+	arg_1_0.selectedGo:SetActive(false)
 
-	if slot0.proposeModel then
-		slot0.sg = GetComponent(slot0.proposeModel, "SkeletonGraphic")
+	arg_1_0.hpBar = findTF(arg_1_0.tr, "content/dockyard/blood")
+	arg_1_0.expBuff = findTF(arg_1_0.tr, "content/expbuff")
+	arg_1_0.intimacyTF = findTF(arg_1_0.tr, "content/intimacy")
+	arg_1_0.detailType = var_0_0.DetailType0
+	arg_1_0.proposeModel = arg_1_0.proposeTF:Find("heartShipCard(Clone)")
+
+	if arg_1_0.proposeModel then
+		arg_1_0.sg = GetComponent(arg_1_0.proposeModel, "SkeletonGraphic")
 	end
 
-	slot0.activityProxy = getProxy(ActivityProxy)
-	slot0.userTF = findTF(slot0.tr, "content/user")
+	arg_1_0.activityProxy = getProxy(ActivityProxy)
+	arg_1_0.userTF = findTF(arg_1_0.tr, "content/user")
 
-	if slot0.userTF then
-		slot0.userIconTF = slot0.userTF:Find("icon"):GetComponent(typeof(Image))
-		slot0.userIconFrame = slot0.userTF:Find("frame")
-		slot0.userNameTF = findTF(slot0.tr, "content/user_name/Text"):GetComponent(typeof(Text))
-		slot0.levelTF = findTF(slot0.tr, "content/dockyard/lv")
+	if arg_1_0.userTF then
+		arg_1_0.userIconTF = arg_1_0.userTF:Find("icon"):GetComponent(typeof(Image))
+		arg_1_0.userIconFrame = arg_1_0.userTF:Find("frame")
+		arg_1_0.userNameTF = findTF(arg_1_0.tr, "content/user_name/Text"):GetComponent(typeof(Text))
+		arg_1_0.levelTF = findTF(arg_1_0.tr, "content/dockyard/lv")
 	end
 
-	slot0.tagRecommand = findTF(slot0.tr, "content/recommand")
-	slot0.palyerId = getProxy(PlayerProxy):getRawData().id
+	arg_1_0.tagRecommand = findTF(arg_1_0.tr, "content/recommand")
+	arg_1_0.palyerId = getProxy(PlayerProxy):getRawData().id
 
-	ClearTweenItemAlphaAndWhite(slot0.go)
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 end
 
-function slot0.update(slot0, slot1)
-	TweenItemAlphaAndWhite(slot0.go)
+function var_0_0.update(arg_2_0, arg_2_1)
+	TweenItemAlphaAndWhite(arg_2_0.go)
 
-	if slot0.proposeModel then
-		LeanTween.cancel(slot0.proposeModel)
-		LeanTween.value(go(slot0.proposeModel), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-			uv0.sg.color = Color.New(1, 1, 1, slot0)
+	if arg_2_0.proposeModel then
+		LeanTween.cancel(arg_2_0.proposeModel)
+		LeanTween.value(go(arg_2_0.proposeModel), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_3_0)
+			arg_2_0.sg.color = Color.New(1, 1, 1, arg_3_0)
 		end))
 	end
 
-	if slot1 then
-		slot0.go.name = slot1.configId
+	if arg_2_1 then
+		arg_2_0.go.name = arg_2_1.configId
 	end
 
-	if slot0.shipVO ~= slot1 then
-		slot0.shipVO = slot1
+	if arg_2_0.shipVO ~= arg_2_1 then
+		arg_2_0.shipVO = arg_2_1
 
-		slot0:flush()
-		slot0:flushDetail()
+		arg_2_0:flush()
+		arg_2_0:flushDetail()
 	end
 
-	setActive(slot0.nameTF, false)
-	setActive(slot0.nameTF, true)
+	setActive(arg_2_0.nameTF, false)
+	setActive(arg_2_0.nameTF, true)
 
-	if not IsNil(slot0.levelTF) then
-		setActive(slot0.levelTF, false)
-		setActive(slot0.levelTF, true)
+	if not IsNil(arg_2_0.levelTF) then
+		setActive(arg_2_0.levelTF, false)
+		setActive(arg_2_0.levelTF, true)
 	end
 end
 
-function slot0.updateDetail(slot0, slot1)
-	slot0.detailType = slot1
+function var_0_0.updateDetail(arg_4_0, arg_4_1)
+	arg_4_0.detailType = arg_4_1
 
-	slot0:flushDetail()
+	arg_4_0:flushDetail()
 end
 
-function slot0.updateSelected(slot0, slot1)
-	slot0.selected = slot1
+function var_0_0.updateSelected(arg_5_0, arg_5_1)
+	arg_5_0.selected = arg_5_1
 
-	slot0.selectedGo:SetActive(slot0.selected)
+	arg_5_0.selectedGo:SetActive(arg_5_0.selected)
 
-	if slot0.selected then
-		if not slot0.selectedTwId then
-			slot0.selectedTwId = LeanTween.alpha(slot0.selectedGo.transform, 0.5, uv0):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
+	if arg_5_0.selected then
+		if not arg_5_0.selectedTwId then
+			arg_5_0.selectedTwId = LeanTween.alpha(arg_5_0.selectedGo.transform, 0.5, var_0_1):setFrom(0):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId
 		end
-	elseif slot0.selectedTwId then
-		LeanTween.cancel(slot0.selectedTwId)
+	elseif arg_5_0.selectedTwId then
+		LeanTween.cancel(arg_5_0.selectedTwId)
 
-		slot0.selectedTwId = nil
+		arg_5_0.selectedTwId = nil
 	end
 end
 
-function slot0.flush(slot0)
-	if tobool(slot0.shipVO) then
-		if not slot1:getConfigTable() then
+function var_0_0.flush(arg_6_0)
+	local var_6_0 = arg_6_0.shipVO
+	local var_6_1 = tobool(var_6_0)
+
+	if var_6_1 then
+		if not var_6_0:getConfigTable() then
 			return
 		end
 
-		flushShipCard(slot0.tr, slot1)
-		setActive(slot0.npc, slot1:isActivityNpc())
+		flushShipCard(arg_6_0.tr, var_6_0)
 
-		if slot0.lock then
-			slot0.lock.gameObject:SetActive(slot1:GetLockState() == Ship.LOCK_STATE_LOCK)
+		local var_6_2 = var_6_0:isActivityNpc()
+
+		setActive(arg_6_0.npc, var_6_2)
+
+		if arg_6_0.lock then
+			arg_6_0.lock.gameObject:SetActive(var_6_0:GetLockState() == Ship.LOCK_STATE_LOCK)
 		end
 
-		if slot1.energy <= Ship.ENERGY_MID then
-			if not GetSpriteFromAtlas("energy", slot1:getEnergyPrint()) then
+		local var_6_3 = var_6_0.energy <= Ship.ENERGY_MID
+
+		if var_6_3 then
+			local var_6_4 = GetSpriteFromAtlas("energy", var_6_0:getEnergyPrint())
+
+			if not var_6_4 then
 				warning("找不到疲劳")
 			end
 
-			setImageSprite(slot0.energyTF, slot6)
+			setImageSprite(arg_6_0.energyTF, var_6_4)
 		end
 
-		setActive(slot0.energyTF, slot5)
-		setText(slot0.nameTF, slot1:GetColorName(shortenString(slot1:getName(), PLATFORM_CODE == PLATFORM_US and 6 or 7)))
+		setActive(arg_6_0.energyTF, var_6_3)
+		setText(arg_6_0.nameTF, var_6_0:GetColorName(shortenString(var_6_0:getName(), PLATFORM_CODE == PLATFORM_US and 6 or 7)))
 
-		slot6 = nil
+		local var_6_5
 
-		if slot1.user then
-			slot7 = Clone(slot1)
-			slot7.id = GuildAssaultFleet.GetRealId(slot7.id)
-			slot6 = ShipStatus.ShipStatusToTag(slot7, slot0.hideTagFlags)
+		if var_6_0.user then
+			local var_6_6 = Clone(var_6_0)
+
+			var_6_6.id = GuildAssaultFleet.GetRealId(var_6_6.id)
+			var_6_5 = ShipStatus.ShipStatusToTag(var_6_6, arg_6_0.hideTagFlags)
 		else
-			slot6 = ShipStatus.ShipStatusToTag(slot1, slot0.hideTagFlags)
+			var_6_5 = ShipStatus.ShipStatusToTag(var_6_0, arg_6_0.hideTagFlags)
 		end
 
-		if slot6 then
-			slot0.iconStatusTxt.text = slot6[3]
+		if var_6_5 then
+			arg_6_0.iconStatusTxt.text = var_6_5[3]
 
-			GetSpriteFromAtlasAsync(slot6[1], slot6[2], function (slot0)
-				setImageSprite(uv0.iconStatus, slot0, true)
-				setActive(uv0.iconStatus, true)
+			GetSpriteFromAtlasAsync(var_6_5[1], var_6_5[2], function(arg_7_0)
+				setImageSprite(arg_6_0.iconStatus, arg_7_0, true)
+				setActive(arg_6_0.iconStatus, true)
 
-				if uv1[1] == "shipstatus" then
-					uv0.iconStatus.sizeDelta = Vector2(195, 36)
-					uv0.iconStatusTxt.fontSize = 30
-					uv0.iconStatusTxt.transform.sizeDelta = Vector2(195, 36)
+				if var_6_5[1] == "shipstatus" then
+					arg_6_0.iconStatus.sizeDelta = Vector2(195, 36)
+					arg_6_0.iconStatusTxt.fontSize = 30
+					arg_6_0.iconStatusTxt.transform.sizeDelta = Vector2(195, 36)
 				end
 
-				uv0.iconStatusMask.enabled = false
+				arg_6_0.iconStatusMask.enabled = false
 			end)
 		else
-			setActive(slot0.iconStatus, false)
+			setActive(arg_6_0.iconStatus, false)
 		end
 
 		if not LOCK_PROPOSE then
-			if slot0.proposeModel then
-				slot0.sg.enabled = slot0:CheckHeartState()
-			elseif slot0:CheckHeartState() and not slot0.heartLoading then
-				slot0.heartLoading = true
+			if arg_6_0.proposeModel then
+				arg_6_0.sg.enabled = arg_6_0:CheckHeartState()
+			elseif arg_6_0:CheckHeartState() and not arg_6_0.heartLoading then
+				arg_6_0.heartLoading = true
 
-				pg.PoolMgr.GetInstance():GetUI("heartShipCard", false, function (slot0)
-					if uv0.proposeModel then
-						pg.PoolMgr.GetInstance():ReturnUI("heartShipCard", slot0)
+				pg.PoolMgr.GetInstance():GetUI("heartShipCard", false, function(arg_8_0)
+					if arg_6_0.proposeModel then
+						pg.PoolMgr.GetInstance():ReturnUI("heartShipCard", arg_8_0)
 					else
-						uv0.proposeModel = slot0
-						uv0.sg = GetComponent(uv0.proposeModel, "SkeletonGraphic")
+						arg_6_0.proposeModel = arg_8_0
+						arg_6_0.sg = GetComponent(arg_6_0.proposeModel, "SkeletonGraphic")
 
-						uv0.proposeModel.transform:SetParent(uv0.proposeTF, false)
+						arg_6_0.proposeModel.transform:SetParent(arg_6_0.proposeTF, false)
 
-						uv0.sg.enabled = uv0:CheckHeartState()
-						uv0.heartLoading = false
+						arg_6_0.sg.enabled = arg_6_0:CheckHeartState()
+						arg_6_0.heartLoading = false
 					end
 				end)
 			end
 		end
 
-		if slot0.hpBar then
-			setActive(slot0.hpBar, false)
+		if arg_6_0.hpBar then
+			setActive(arg_6_0.hpBar, false)
 		end
 
-		slot0:UpdateExpBuff()
-		slot0:updateNpcTfPosY()
+		arg_6_0:UpdateExpBuff()
+		arg_6_0:updateNpcTfPosY()
 	end
 
-	if slot0.userTF then
-		slot0:UpdateUser(slot1)
+	if arg_6_0.userTF then
+		arg_6_0:UpdateUser(var_6_0)
 	end
 
-	slot0.content:SetActive(slot2)
-	slot0.quit:SetActive(not slot2)
+	arg_6_0.content:SetActive(var_6_1)
+	arg_6_0.quit:SetActive(not var_6_1)
 
-	slot0.btn.targetGraphic = slot2 and slot0.imageFrame or slot0.imageQuit
+	arg_6_0.btn.targetGraphic = var_6_1 and arg_6_0.imageFrame or arg_6_0.imageQuit
 end
 
-function slot0.CheckHeartState(slot0)
-	if tobool(slot0.shipVO) then
-		slot2, slot3 = slot0.shipVO:getIntimacyIcon()
+function var_0_0.CheckHeartState(arg_9_0)
+	if tobool(arg_9_0.shipVO) then
+		local var_9_0, var_9_1 = arg_9_0.shipVO:getIntimacyIcon()
+		local var_9_2 = arg_9_0.shipVO:isActivityNpc()
 
-		return slot3 and not slot0.shipVO:isActivityNpc()
+		return var_9_1 and not var_9_2
 	end
 
 	return false
 end
 
-slot2 = {
+local var_0_2 = {
 	90,
 	60,
 	30
 }
 
-function slot0.updateNpcTfPosY(slot0)
-	if isActive(slot0.npc) then
-		if isActive(findTF(slot0.tr, "content/energy")) then
-			slot1 = 1 + 1
+function var_0_0.updateNpcTfPosY(arg_10_0)
+	if isActive(arg_10_0.npc) then
+		local var_10_0 = 1
+		local var_10_1 = findTF(arg_10_0.tr, "content/energy")
+
+		if isActive(var_10_1) then
+			var_10_0 = var_10_0 + 1
 		end
 
-		if isActive(slot0.intimacyTF) then
-			slot1 = slot1 + 1
+		if isActive(arg_10_0.intimacyTF) then
+			var_10_0 = var_10_0 + 1
 		end
 
-		slot3 = slot0.npc.anchoredPosition
-		slot3.y = uv0[slot1]
-		slot0.npc.anchoredPosition = slot3
+		local var_10_2 = arg_10_0.npc.anchoredPosition
+
+		var_10_2.y = var_0_2[var_10_0]
+		arg_10_0.npc.anchoredPosition = var_10_2
 	end
 end
 
-function slot0.UpdateUser(slot0, slot1)
-	if slot0.userIconFrame.childCount > 0 then
-		slot2 = slot0.userIconFrame:GetChild(0).gameObject
+function var_0_0.UpdateUser(arg_11_0, arg_11_1)
+	if arg_11_0.userIconFrame.childCount > 0 then
+		local var_11_0 = arg_11_0.userIconFrame:GetChild(0).gameObject
 
-		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. slot2.name, slot2.name, slot2)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_11_0.name, var_11_0.name, var_11_0)
 	end
 
-	slot2 = tobool(slot1) and slot1.user
-	slot3 = slot2 and slot2.id ~= slot0.palyerId
+	local var_11_1 = tobool(arg_11_1) and arg_11_1.user
+	local var_11_2 = var_11_1 and var_11_1.id ~= arg_11_0.palyerId
 
-	setActive(slot0.userTF, slot3 and slot0.detailType == uv0.DetailType0)
-	setActive(slot0.userNameTF.gameObject.transform.parent, slot3)
+	setActive(arg_11_0.userTF, var_11_2 and arg_11_0.detailType == var_0_0.DetailType0)
+	setActive(arg_11_0.userNameTF.gameObject.transform.parent, var_11_2)
 
-	if slot3 and slot2 ~= slot0.user then
-		LoadSpriteAsync("qicon/" .. Ship.New({
-			configId = slot2.icon
-		}):getPrefab(), function (slot0)
-			uv0.userIconTF.sprite = slot0
+	if var_11_2 and var_11_1 ~= arg_11_0.user then
+		local var_11_3 = Ship.New({
+			configId = var_11_1.icon
+		})
+
+		LoadSpriteAsync("qicon/" .. var_11_3:getPrefab(), function(arg_12_0)
+			arg_11_0.userIconTF.sprite = arg_12_0
 		end)
 
-		slot5 = AttireFrame.attireFrameRes(slot2, false, AttireConst.TYPE_ICON_FRAME, slot2.propose)
+		local var_11_4 = AttireFrame.attireFrameRes(var_11_1, false, AttireConst.TYPE_ICON_FRAME, var_11_1.propose)
 
-		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot5, slot5, true, function (slot0)
-			if IsNil(uv0.tr) then
+		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_11_4, var_11_4, true, function(arg_13_0)
+			if IsNil(arg_11_0.tr) then
 				return
 			end
 
-			if uv0.userIconFrame then
-				slot0.name = uv1
+			if arg_11_0.userIconFrame then
+				arg_13_0.name = var_11_4
 
-				setParent(slot0, uv0.userIconFrame, false)
+				setParent(arg_13_0, arg_11_0.userIconFrame, false)
 			else
-				PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
+				PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_11_4, var_11_4, arg_13_0)
 			end
 		end)
 
-		slot0.userNameTF.text = slot2.name
-		slot0.user = slot2
+		arg_11_0.userNameTF.text = var_11_1.name
+		arg_11_0.user = var_11_1
 
-		setAnchoredPosition(slot0.levelTF, {
+		setAnchoredPosition(arg_11_0.levelTF, {
 			x = -108
 		})
-
-		return
+	else
+		setAnchoredPosition(arg_11_0.levelTF, {
+			x = -16
+		})
 	end
-
-	setAnchoredPosition(slot0.levelTF, {
-		x = -16
-	})
 end
 
-function slot0.flushDetail(slot0)
-	if tobool(slot0.shipVO) and uv0.DetailType0 < slot0.detailType then
-		slot3 = slot1:getShipProperties()
-		slot4 = {
+function var_0_0.flushDetail(arg_14_0)
+	local var_14_0 = arg_14_0.shipVO
+	local var_14_1 = tobool(var_14_0)
+
+	if var_14_1 and arg_14_0.detailType > var_0_0.DetailType0 then
+		local var_14_2 = var_14_0:getShipProperties()
+		local var_14_3 = {
 			{
 				AttributeType.Durability,
 				AttributeType.Cannon,
@@ -317,104 +338,131 @@ function slot0.flushDetail(slot0)
 			},
 			{}
 		}
-		slot5 = slot1:getShipCombatPower()
-		slot6, slot7 = nil
+		local var_14_4 = var_14_0:getShipCombatPower()
+		local var_14_5
+		local var_14_6
 
-		if slot0.detailType == uv0.DetailType3 then
-			slot6 = slot1:getDisplaySkillIds()
-			slot7 = pg.skill_data_template
+		if arg_14_0.detailType == var_0_0.DetailType3 then
+			var_14_5 = var_14_0:getDisplaySkillIds()
+			var_14_6 = pg.skill_data_template
 		end
 
-		for slot11 = 1, 6 do
-			slot12 = slot0.detailLayoutTr:GetChild(slot11 - 1)
-			slot13 = true
-			slot12:GetChild(0):GetComponent("Text").alignment = TextAnchor.MiddleLeft
-			slot12:GetChild(1):GetComponent("Text").alignment = TextAnchor.MiddleRight
+		for iter_14_0 = 1, 6 do
+			local var_14_7 = arg_14_0.detailLayoutTr:GetChild(iter_14_0 - 1)
+			local var_14_8 = true
+			local var_14_9 = var_14_7:GetChild(0):GetComponent("Text")
+			local var_14_10 = var_14_7:GetChild(1):GetComponent("Text")
 
-			if slot0.detailType == uv0.DetailType1 then
-				if slot11 == 6 then
-					slot17, slot18 = slot0.shipVO:getIntimacyDetail()
-					slot14.text = AttributeType.Type2Name(slot4[slot0.detailType][slot11])
-					slot15.text = setColorStr(slot18, slot17 <= slot18 and COLOR_GREEN or COLOR_WHITE)
+			var_14_9.alignment = TextAnchor.MiddleLeft
+			var_14_10.alignment = TextAnchor.MiddleRight
+
+			local var_14_11 = var_14_3[arg_14_0.detailType][iter_14_0]
+
+			if arg_14_0.detailType == var_0_0.DetailType1 then
+				if iter_14_0 == 6 then
+					local var_14_12, var_14_13 = arg_14_0.shipVO:getIntimacyDetail()
+
+					var_14_9.text = AttributeType.Type2Name(var_14_11)
+					var_14_10.text = setColorStr(var_14_13, var_14_12 <= var_14_13 and COLOR_GREEN or COLOR_WHITE)
 				else
-					slot14.text = AttributeType.Type2Name(slot16)
-					slot15.text = setColorStr(tostring(math.floor(slot3[slot16])), slot0:canModAttr(slot1, slot16, slot3) and COLOR_GREEN or COLOR_WHITE)
+					local var_14_14 = tostring(math.floor(var_14_2[var_14_11]))
+
+					var_14_9.text = AttributeType.Type2Name(var_14_11)
+					var_14_10.text = setColorStr(var_14_14, arg_14_0:canModAttr(var_14_0, var_14_11, var_14_2) and COLOR_GREEN or COLOR_WHITE)
 				end
-			elseif slot0.detailType == uv0.DetailType2 then
-				if slot11 == 1 then
-					slot14.alignment = TextAnchor.MiddleCenter
-					slot14.text = slot1:getShipArmorName()
-					slot15.text = ""
-				elseif slot11 == 5 then
-					slot14.text = AttributeType.Type2Name(AttributeType.Expend)
-					slot15.text = tostring(math.floor(slot1:getBattleTotalExpend()))
-				elseif slot11 == 6 then
-					slot14.text = setColorStr(i18n("word_synthesize_power"), COLOR_GREEN)
-					slot15.text = tostring(slot5)
+			elseif arg_14_0.detailType == var_0_0.DetailType2 then
+				if iter_14_0 == 1 then
+					var_14_9.alignment = TextAnchor.MiddleCenter
+					var_14_9.text = var_14_0:getShipArmorName()
+					var_14_10.text = ""
+				elseif iter_14_0 == 5 then
+					local var_14_15 = var_14_0:getBattleTotalExpend()
+
+					var_14_9.text = AttributeType.Type2Name(AttributeType.Expend)
+					var_14_10.text = tostring(math.floor(var_14_15))
+				elseif iter_14_0 == 6 then
+					var_14_9.text = setColorStr(i18n("word_synthesize_power"), COLOR_GREEN)
+					var_14_10.text = tostring(var_14_4)
 				else
-					slot14.text = AttributeType.Type2Name(slot16)
-					slot15.text = tostring(math.floor(slot3[slot16]))
+					var_14_9.text = AttributeType.Type2Name(var_14_11)
+					var_14_10.text = tostring(math.floor(var_14_2[var_14_11]))
 				end
-			elseif slot0.detailType == uv0.DetailType3 then
-				if slot6[slot11] and slot1.skills[slot17] and slot7[slot17].max_level ~= 1 then
-					slot19 = uv0.SKILL_COLOR[pg.skill_data_template[slot1.skills[slot17].id].type] or COLOR_WHITE
-					slot14.alignment = TextAnchor.MiddleLeft
-					slot14.text = setColorStr(i18n("skill") .. slot11, slot19)
-					slot15.text = setColorStr(slot18.level == slot7[slot17].max_level and "Lv.Max" or "Lv." .. slot18.level, slot19)
+			elseif arg_14_0.detailType == var_0_0.DetailType3 then
+				local var_14_16 = var_14_5[iter_14_0]
+
+				if var_14_16 and var_14_0.skills[var_14_16] and var_14_6[var_14_16].max_level ~= 1 then
+					local var_14_17 = var_14_0.skills[var_14_16]
+					local var_14_18 = var_0_0.SKILL_COLOR[pg.skill_data_template[var_14_17.id].type] or COLOR_WHITE
+
+					var_14_9.alignment = TextAnchor.MiddleLeft
+					var_14_9.text = setColorStr(i18n("skill") .. iter_14_0, var_14_18)
+
+					local var_14_19 = var_14_17.level == var_14_6[var_14_16].max_level and "Lv.Max" or "Lv." .. var_14_17.level
+
+					var_14_10.text = setColorStr(var_14_19, var_14_18)
 				else
-					slot13 = false
+					var_14_8 = false
 				end
 			end
 
-			setActive(slot12, slot13)
+			setActive(var_14_7, var_14_8)
 		end
 	end
 
-	slot0.detail:SetActive(slot2 and uv0.DetailType0 < slot0.detailType)
+	arg_14_0.detail:SetActive(var_14_1 and arg_14_0.detailType > var_0_0.DetailType0)
 
-	if slot0.userTF then
-		slot0:UpdateUser(slot1)
+	if arg_14_0.userTF then
+		arg_14_0:UpdateUser(var_14_0)
 	end
 
-	slot0:UpdateRecommandTag(slot1)
+	arg_14_0:UpdateRecommandTag(var_14_0)
 end
 
-function slot0.UpdateRecommandTag(slot0, slot1)
-	if slot1 and slot0.tagRecommand then
-		setActive(slot0.tagRecommand, defaultValue(slot1.guildRecommand, false))
+function var_0_0.UpdateRecommandTag(arg_15_0, arg_15_1)
+	if arg_15_1 and arg_15_0.tagRecommand then
+		local var_15_0 = defaultValue(arg_15_1.guildRecommand, false)
+
+		setActive(arg_15_0.tagRecommand, var_15_0)
 	end
 end
 
-function slot0.canModAttr(slot0, slot1, slot2, slot3)
-	if slot1:isBluePrintShip() then
-		return slot1:getBluePrint():isMaxIntensifyLevel()
-	elseif slot1:isMetaShip() then
-		return slot1:getMetaCharacter():isMaxRepairExp()
-	elseif not ShipModAttr.ATTR_TO_INDEX[slot2] then
+function var_0_0.canModAttr(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	if arg_16_1:isBluePrintShip() then
+		return arg_16_1:getBluePrint():isMaxIntensifyLevel()
+	elseif arg_16_1:isMetaShip() then
+		return arg_16_1:getMetaCharacter():isMaxRepairExp()
+	elseif not ShipModAttr.ATTR_TO_INDEX[arg_16_2] then
 		return true
-	elseif slot1:getModAttrTopLimit(slot2) == 0 then
+	elseif arg_16_1:getModAttrTopLimit(arg_16_2) == 0 then
 		return true
 	else
-		return (slot1.level >= 100 or slot1.level == slot1:getMaxLevel()) and slot1:getModAttrBaseMax(slot2) <= slot3[slot2]
+		local var_16_0 = arg_16_1.level >= 100 or arg_16_1.level == arg_16_1:getMaxLevel()
+		local var_16_1 = arg_16_1:getModAttrBaseMax(arg_16_2)
+
+		return var_16_0 and var_16_1 <= arg_16_3[arg_16_2]
 	end
 end
 
-function slot0.updateBlackBlock(slot0, slot1)
-	slot2 = false
+function var_0_0.updateBlackBlock(arg_17_0, arg_17_1)
+	local var_17_0 = false
 
-	if slot0.shipVO then
-		for slot6, slot7 in pairs(slot0.blockTagFlags) do
-			if slot7 and slot0.shipVO:getFlag(slot6) then
-				slot2 = true
+	if arg_17_0.shipVO then
+		for iter_17_0, iter_17_1 in pairs(arg_17_0.blockTagFlags) do
+			if iter_17_1 and arg_17_0.shipVO:getFlag(iter_17_0) then
+				var_17_0 = true
 
 				break
 			end
 		end
 
-		if not slot2 and slot1 then
-			for slot7, slot8 in ipairs(slot1) do
-				if getProxy(BayProxy):getShipById(slot8) and slot0.shipVO:isSameKind(slot9) then
-					slot2 = slot9.id ~= slot0.shipVO.id
+		if not var_17_0 and arg_17_1 then
+			local var_17_1 = getProxy(BayProxy)
+
+			for iter_17_2, iter_17_3 in ipairs(arg_17_1) do
+				local var_17_2 = var_17_1:getShipById(iter_17_3)
+
+				if var_17_2 and arg_17_0.shipVO:isSameKind(var_17_2) then
+					var_17_0 = var_17_2.id ~= arg_17_0.shipVO.id
 
 					break
 				end
@@ -422,89 +470,109 @@ function slot0.updateBlackBlock(slot0, slot1)
 		end
 	end
 
-	if slot0.maskStatusOb then
-		setActive(slot0.maskStatusOb, slot2)
+	if arg_17_0.maskStatusOb then
+		setActive(arg_17_0.maskStatusOb, var_17_0)
 	end
 end
 
-function slot0.updateWorld(slot0)
-	if slot0.shipVO:getFlag("inWorld") then
-		slot2 = WorldConst.FetchWorldShip(slot1.id)
+function var_0_0.updateWorld(arg_18_0)
+	local var_18_0 = arg_18_0.shipVO
 
-		setActive(slot0.hpBar, true)
-		setActive(slot0.hpBar:Find("fillarea/green"), slot2:IsHpSafe())
-		setActive(slot0.hpBar:Find("fillarea/red"), not slot2:IsHpSafe())
+	if var_18_0:getFlag("inWorld") then
+		local var_18_1 = WorldConst.FetchWorldShip(var_18_0.id)
 
-		slot0.hpBar:GetComponent(typeof(Slider)).fillRect = slot2:IsHpSafe() and slot3 or slot4
+		setActive(arg_18_0.hpBar, true)
 
-		setSlider(slot0.hpBar, 0, 10000, slot2.hpRant)
-		setActive(slot0.hpBar:Find("broken"), slot2:IsBroken())
+		local var_18_2 = arg_18_0.hpBar:Find("fillarea/green")
+		local var_18_3 = arg_18_0.hpBar:Find("fillarea/red")
 
-		if slot0.maskStatusOb then
-			setActive(slot0.maskStatusOb, not slot2:IsAlive())
+		setActive(var_18_2, var_18_1:IsHpSafe())
+		setActive(var_18_3, not var_18_1:IsHpSafe())
+
+		arg_18_0.hpBar:GetComponent(typeof(Slider)).fillRect = var_18_1:IsHpSafe() and var_18_2 or var_18_3
+
+		setSlider(arg_18_0.hpBar, 0, 10000, var_18_1.hpRant)
+		setActive(arg_18_0.hpBar:Find("broken"), var_18_1:IsBroken())
+
+		if arg_18_0.maskStatusOb then
+			setActive(arg_18_0.maskStatusOb, not var_18_1:IsAlive())
 		end
 	end
 end
 
-function slot0.UpdateExpBuff(slot0)
-	setActive(slot0.expBuff, false)
-	setActive(slot0.expBuff, slot0.activityProxy:getBuffShipList()[slot0.shipVO:getGroupId()] ~= nil)
+function var_0_0.UpdateExpBuff(arg_19_0)
+	local var_19_0 = arg_19_0.shipVO
+	local var_19_1 = arg_19_0.activityProxy:getBuffShipList()[var_19_0:getGroupId()]
 
-	if slot3 then
-		if slot3 % 100 > 0 then
-			slot6 = tostring(slot3 / 100) .. "." .. tostring(slot5)
+	setActive(arg_19_0.expBuff, false)
+	setActive(arg_19_0.expBuff, var_19_1 ~= nil)
+
+	if var_19_1 then
+		local var_19_2 = var_19_1 / 100
+		local var_19_3 = var_19_1 % 100
+		local var_19_4 = tostring(var_19_2)
+
+		if var_19_3 > 0 then
+			var_19_4 = var_19_4 .. "." .. tostring(var_19_3)
 		end
 
-		setText(slot0.expBuff:Find("text"), string.format("EXP +%s%%", slot6))
+		setText(arg_19_0.expBuff:Find("text"), string.format("EXP +%s%%", var_19_4))
 	end
 end
 
-function slot0.clear(slot0)
-	ClearTweenItemAlphaAndWhite(slot0.go)
+function var_0_0.clear(arg_20_0)
+	ClearTweenItemAlphaAndWhite(arg_20_0.go)
 
-	if slot0.selectedTwId then
-		LeanTween.cancel(slot0.selectedTwId)
+	if arg_20_0.selectedTwId then
+		LeanTween.cancel(arg_20_0.selectedTwId)
 
-		slot0.selectedTwId = nil
+		arg_20_0.selectedTwId = nil
 	end
 end
 
-function slot0.updateIntimacy(slot0, slot1)
-	if not slot0.shipVO then
+function var_0_0.updateIntimacy(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_0.shipVO
+
+	if not var_21_0 then
 		return
 	end
 
-	if isActive(findTF(slot0.tr, "content/energy")) then
-		slot0.intimacyTF = findTF(slot0.tr, "content/intimacy_with_energy")
+	local var_21_1 = findTF(arg_21_0.tr, "content/energy")
 
-		setActive(findTF(slot0.tr, "content/intimacy"), false)
+	if isActive(var_21_1) then
+		arg_21_0.intimacyTF = findTF(arg_21_0.tr, "content/intimacy_with_energy")
+
+		setActive(findTF(arg_21_0.tr, "content/intimacy"), false)
 	else
-		slot0.intimacyTF = findTF(slot0.tr, "content/intimacy")
+		arg_21_0.intimacyTF = findTF(arg_21_0.tr, "content/intimacy")
 
-		setActive(findTF(slot0.tr, "content/intimacy_with_energy"), false)
+		setActive(findTF(arg_21_0.tr, "content/intimacy_with_energy"), false)
 	end
 
-	slot4, slot5 = slot2:getIntimacyDetail()
+	local var_21_2, var_21_3 = var_21_0:getIntimacyDetail()
 
-	setText(findTF(slot0.intimacyTF, "Text"), slot5)
+	setText(findTF(arg_21_0.intimacyTF, "Text"), var_21_3)
 
-	if slot5 == 100 or slot5 == 200 then
-		setText(findTF(slot0.intimacyTF, "Text"), setColorStr(slot5, "#ff8d8d"))
+	if var_21_3 == 100 or var_21_3 == 200 then
+		setText(findTF(arg_21_0.intimacyTF, "Text"), setColorStr(var_21_3, "#ff8d8d"))
 	end
 
-	setActive(slot0.intimacyTF, slot1)
-	slot0:updateNpcTfPosY()
+	setActive(arg_21_0.intimacyTF, arg_21_1)
+	arg_21_0:updateNpcTfPosY()
 end
 
-function slot0.updateIntimacyEnergy(slot0, slot1)
-	slot2 = slot0.tr:Find("content/energy")
+function var_0_0.updateIntimacyEnergy(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0.tr:Find("content/energy")
+	local var_22_1 = arg_22_0.shipVO
 
-	setActive(slot0.tr:Find("content/energy"), slot0.shipVO and slot1)
+	setActive(arg_22_0.tr:Find("content/energy"), var_22_1 and arg_22_1)
 
-	if slot1 and tobool(slot3) then
-		setImageSprite(slot2:Find("icon/img"), GetSpriteFromAtlas("energy", slot3:getEnergyPrint()), true)
-		setText(slot2:Find("Text"), slot3:getEnergy())
+	if arg_22_1 and tobool(var_22_1) then
+		local var_22_2 = GetSpriteFromAtlas("energy", var_22_1:getEnergyPrint())
+
+		setImageSprite(var_22_0:Find("icon/img"), var_22_2, true)
+		setText(var_22_0:Find("Text"), var_22_1:getEnergy())
 	end
 end
 
-return slot0
+return var_0_0

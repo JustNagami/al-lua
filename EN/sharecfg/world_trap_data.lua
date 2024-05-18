@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_trap_data = {
 	{
 		buff_id = 301,

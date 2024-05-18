@@ -1,20 +1,26 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleFormulas
-slot2 = class("BattleSkillPlayFX", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillPlayFX = slot2
-slot2.__name = "BattleSkillPlayFX"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleFormulas
+local var_0_2 = class("BattleSkillPlayFX", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._FXID = slot0._tempData.arg_list.effect
+var_0_0.Battle.BattleSkillPlayFX = var_0_2
+var_0_2.__name = "BattleSkillPlayFX"
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_2.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._FXID = arg_1_0._tempData.arg_list.effect
 end
 
-function slot2.DoDataEffect(slot0, slot1, slot2)
-	uv0.Battle.BattleDataProxy.GetInstance():SpawnEffect(slot0._FXID, slot0.calcCorrdinate(slot0._tempData.arg_list, slot1, slot2))
+function var_0_2.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0.calcCorrdinate(arg_2_0._tempData.arg_list, arg_2_1, arg_2_2)
+
+	var_0_0.Battle.BattleDataProxy.GetInstance():SpawnEffect(arg_2_0._FXID, var_2_0)
 end
 
-function slot2.DoDataEffectWithoutTarget(slot0, slot1)
-	uv0.Battle.BattleDataProxy.GetInstance():SpawnEffect(slot0._FXID, slot0.calcCorrdinate(slot0._tempData.arg_list, slot1))
+function var_0_2.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0.calcCorrdinate(arg_3_0._tempData.arg_list, arg_3_1)
+
+	var_0_0.Battle.BattleDataProxy.GetInstance():SpawnEffect(arg_3_0._FXID, var_3_0)
 end

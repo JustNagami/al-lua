@@ -1,294 +1,315 @@
-slot0 = class("ChatRoomLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("ChatRoomLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChatRoomUI"
 end
 
-function slot0.setFriendVO(slot0, slot1)
-	slot0.friendVO = slot1
+function var_0_0.setFriendVO(arg_2_0, arg_2_1)
+	arg_2_0.friendVO = arg_2_1
 end
 
-function slot0.setFriends(slot0, slot1)
-	slot0.friendVOs = slot1
+function var_0_0.setFriends(arg_3_0, arg_3_1)
+	arg_3_0.friendVOs = arg_3_1
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.playerVO = slot1
+function var_0_0.setPlayer(arg_4_0, arg_4_1)
+	arg_4_0.playerVO = arg_4_1
 end
 
-function slot0.setCacheMsgs(slot0, slot1)
-	slot0.cacheMsgsVOs = slot1
+function var_0_0.setCacheMsgs(arg_5_0, arg_5_1)
+	arg_5_0.cacheMsgsVOs = arg_5_1
 end
 
-function slot0.init(slot0)
-	slot0.frame = slot0:findTF("frame")
-	slot0.friendView = slot0:findTF("left_length/scrollView", slot0.frame)
-	slot0.chatPanel = slot0:findTF("notification_panel", slot0.frame)
-	slot0.chatPanelTitle = slot0:findTF("notification_panel/frame/top/name", slot0.frame)
-	slot0.sendBtn = slot0:findTF("frame/bottom/send", slot0.chatPanel)
-	slot0.inputTF = slot0:findTF("frame/bottom/input", slot0.chatPanel)
-	slot0.chatsRect = slot0:findTF("frame/list", slot0.chatPanel)
-	slot0.chatsContainer = slot0:findTF("frame/list/content", slot0.chatPanel)
-	slot0.closeBtn = slot0:findTF("frame/notification_panel/frame/top/close_btn")
-	slot0.otherPopTpl = slot0:getTpl("frame/list/popo_other", slot0.chatPanel)
-	slot0.selfPopTpl = slot0:getTpl("frame/list/popo_self", slot0.chatPanel)
+function var_0_0.init(arg_6_0)
+	arg_6_0.frame = arg_6_0:findTF("frame")
+	arg_6_0.friendView = arg_6_0:findTF("left_length/scrollView", arg_6_0.frame)
+	arg_6_0.chatPanel = arg_6_0:findTF("notification_panel", arg_6_0.frame)
+	arg_6_0.chatPanelTitle = arg_6_0:findTF("notification_panel/frame/top/name", arg_6_0.frame)
+	arg_6_0.sendBtn = arg_6_0:findTF("frame/bottom/send", arg_6_0.chatPanel)
+	arg_6_0.inputTF = arg_6_0:findTF("frame/bottom/input", arg_6_0.chatPanel)
+	arg_6_0.chatsRect = arg_6_0:findTF("frame/list", arg_6_0.chatPanel)
+	arg_6_0.chatsContainer = arg_6_0:findTF("frame/list/content", arg_6_0.chatPanel)
+	arg_6_0.closeBtn = arg_6_0:findTF("frame/notification_panel/frame/top/close_btn")
+	arg_6_0.otherPopTpl = arg_6_0:getTpl("frame/list/popo_other", arg_6_0.chatPanel)
+	arg_6_0.selfPopTpl = arg_6_0:getTpl("frame/list/popo_self", arg_6_0.chatPanel)
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0.frame, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0.frame, false, {
 		groupName = LayerWeightConst.GROUP_CHATROOM
 	})
 
-	slot0.mainPanel = pg.UIMgr.GetInstance().UIMain
+	arg_6_0.mainPanel = pg.UIMgr.GetInstance().UIMain
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0:findTF("frame/bottom/emoji", slot0.chatPanel), function ()
-		slot0 = uv0.position
+function var_0_0.didEnter(arg_7_0)
+	local var_7_0 = arg_7_0:findTF("frame/bottom/emoji", arg_7_0.chatPanel)
 
-		uv1:emit(ChatRoomMediator.OPEN_EMOJI, Vector3(slot0.x, slot0.y, 0), function (slot0)
-			uv0:sendMessage(string.gsub(ChatConst.EmojiCode, "code", slot0))
+	onButton(arg_7_0, var_7_0, function()
+		local var_8_0 = var_7_0.position
+
+		arg_7_0:emit(ChatRoomMediator.OPEN_EMOJI, Vector3(var_8_0.x, var_8_0.y, 0), function(arg_9_0)
+			arg_7_0:sendMessage(string.gsub(ChatConst.EmojiCode, "code", arg_9_0))
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_7_0, arg_7_0._tf, function()
+		arg_7_0:emit(var_0_0.ON_CLOSE)
 	end, SOUND_BACK)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+	onButton(arg_7_0, arg_7_0.closeBtn, function()
+		arg_7_0:emit(var_0_0.ON_CLOSE)
 	end, SOUND_BACK)
-	slot0:initFriends()
+	arg_7_0:initFriends()
 end
 
-function slot0.initFriends(slot0)
-	slot0.friendItems = {}
-	slot0.friendRect = slot0.friendView:GetComponent("LScrollRect")
+function var_0_0.initFriends(arg_12_0)
+	arg_12_0.friendItems = {}
+	arg_12_0.friendRect = arg_12_0.friendView:GetComponent("LScrollRect")
 
-	function slot0.friendRect.onInitItem(slot0)
-		uv0:initFriend(slot0)
+	function arg_12_0.friendRect.onInitItem(arg_13_0)
+		arg_12_0:initFriend(arg_13_0)
 	end
 
-	function slot0.friendRect.onUpdateItem(slot0, slot1)
-		uv0:updateFriend(slot0, slot1)
+	function arg_12_0.friendRect.onUpdateItem(arg_14_0, arg_14_1)
+		arg_12_0:updateFriend(arg_14_0, arg_14_1)
 	end
 
-	slot0:sortFriend()
+	arg_12_0:sortFriend()
 end
 
-function slot0.createFriendItem(slot0, slot1)
-	slot2 = {
-		tf = tf(slot1)
+function var_0_0.createFriendItem(arg_15_0, arg_15_1)
+	local var_15_0 = {
+		tf = tf(arg_15_1)
 	}
-	slot2.nameTF = slot2.tf:Find("name"):GetComponent(typeof(Text))
-	slot2.iconTF = slot2.tf:Find("shipicon/icon"):GetComponent(typeof(Image))
-	slot2.circle = slot2.tf:Find("shipicon/frame")
-	slot2.toggle = slot2.tf:GetComponent(typeof(Toggle))
-	slot2.tipTF = slot2.tf:Find("tip")
-	slot2.dateTF = slot2.tf:Find("lv_bg/date"):GetComponent(typeof(Text))
-	slot2.onlineTF = slot2.tf:Find("lv_bg/online")
-	slot2.levelTF = slot2.tf:Find("lv_bg/Text"):GetComponent(typeof(Text))
-	slot3 = slot0.friendVO
 
-	function slot2.update(slot0, slot1, slot2)
-		slot0:clear()
-		setActive(uv0.tipTF, false)
+	var_15_0.nameTF = var_15_0.tf:Find("name"):GetComponent(typeof(Text))
+	var_15_0.iconTF = var_15_0.tf:Find("shipicon/icon"):GetComponent(typeof(Image))
+	var_15_0.circle = var_15_0.tf:Find("shipicon/frame")
+	var_15_0.toggle = var_15_0.tf:GetComponent(typeof(Toggle))
+	var_15_0.tipTF = var_15_0.tf:Find("tip")
+	var_15_0.dateTF = var_15_0.tf:Find("lv_bg/date"):GetComponent(typeof(Text))
+	var_15_0.onlineTF = var_15_0.tf:Find("lv_bg/online")
+	var_15_0.levelTF = var_15_0.tf:Find("lv_bg/Text"):GetComponent(typeof(Text))
 
-		slot0.friendVO = slot1
-		uv0.nameTF.text = slot1.name
-		uv0.levelTF.text = "LV." .. slot1.level
+	local var_15_1 = arg_15_0.friendVO
 
-		assert(pg.ship_data_statistics[slot1.icon], "shipCfg is nil >> id ==" .. slot1.icon)
-		LoadSpriteAsync("qicon/" .. Ship.New({
-			configId = slot1.icon,
-			skin_id = slot1.skinId
-		}):getPainting(), function (slot0)
-			if not slot0 then
-				uv0.iconTF.sprite = GetSpriteFromAtlas("heroicon/unknown", "")
+	function var_15_0.update(arg_16_0, arg_16_1, arg_16_2)
+		arg_16_0:clear()
+		setActive(var_15_0.tipTF, false)
+
+		arg_16_0.friendVO = arg_16_1
+		var_15_0.nameTF.text = arg_16_1.name
+		var_15_0.levelTF.text = "LV." .. arg_16_1.level
+
+		local var_16_0 = pg.ship_data_statistics[arg_16_1.icon]
+		local var_16_1 = Ship.New({
+			configId = arg_16_1.icon,
+			skin_id = arg_16_1.skinId
+		})
+
+		assert(var_16_0, "shipCfg is nil >> id ==" .. arg_16_1.icon)
+		LoadSpriteAsync("qicon/" .. var_16_1:getPainting(), function(arg_17_0)
+			if not arg_17_0 then
+				var_15_0.iconTF.sprite = GetSpriteFromAtlas("heroicon/unknown", "")
 			else
-				uv0.iconTF.sprite = slot0
+				var_15_0.iconTF.sprite = arg_17_0
 			end
 		end)
 
-		slot5 = AttireFrame.attireFrameRes(slot1, slot1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, slot1.propose)
+		local var_16_2 = AttireFrame.attireFrameRes(arg_16_1, arg_16_1.id == getProxy(PlayerProxy):getRawData().id, AttireConst.TYPE_ICON_FRAME, arg_16_1.propose)
 
-		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. slot5, slot5, true, function (slot0)
-			if uv0.circle then
-				slot0.name = uv1
-				findTF(slot0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
+		PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_16_2, var_16_2, true, function(arg_18_0)
+			if arg_16_0.circle then
+				arg_18_0.name = var_16_2
+				findTF(arg_18_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-				setParent(slot0, uv0.circle, false)
+				setParent(arg_18_0, arg_16_0.circle, false)
 			else
-				PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. uv1, uv1, slot0)
+				PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_16_2, var_16_2, arg_18_0)
 			end
 		end)
 
-		if uv1.id == slot1.id and uv0.toggle.isOn == false then
-			triggerToggle(uv0.tf, true)
+		if var_15_1.id == arg_16_1.id and var_15_0.toggle.isOn == false then
+			triggerToggle(var_15_0.tf, true)
 		end
 
-		setActive(slot0.onlineTF, slot1.online == Friend.ONLINE)
-		setActive(uv0.dateTF, slot1.online == Friend.OFFLINE)
+		setActive(arg_16_0.onlineTF, arg_16_1.online == Friend.ONLINE)
+		setActive(var_15_0.dateTF, arg_16_1.online == Friend.OFFLINE)
 
-		uv0.dateTF.text = pg.TimeMgr.GetInstance():STimeDescC(slot1.preOnLineTime, "%Y/%m/%d")
+		var_15_0.dateTF.text = pg.TimeMgr.GetInstance():STimeDescC(arg_16_1.preOnLineTime, "%Y/%m/%d")
 	end
 
-	function slot2.clear(slot0)
-		if slot0.circle.childCount > 0 then
-			slot1 = slot0.circle:GetChild(0).gameObject
+	function var_15_0.clear(arg_19_0)
+		if arg_19_0.circle.childCount > 0 then
+			local var_19_0 = arg_19_0.circle:GetChild(0).gameObject
 
-			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. slot1.name, slot1.name, slot1)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_19_0.name, var_19_0.name, var_19_0)
 		end
 	end
 
-	function slot2.dispose(slot0)
-		slot0:clear()
+	function var_15_0.dispose(arg_20_0)
+		arg_20_0:clear()
 	end
 
-	return slot2
+	return var_15_0
 end
 
-function slot0.updateFriend(slot0, slot1, slot2)
-	if not slot0.friendItems[slot2] then
-		slot0:initFriend(slot2)
+function var_0_0.updateFriend(arg_21_0, arg_21_1, arg_21_2)
+	local var_21_0 = arg_21_0.friendItems[arg_21_2]
 
-		slot3 = slot0.friendItems[slot2]
+	if not var_21_0 then
+		arg_21_0:initFriend(arg_21_2)
+
+		var_21_0 = arg_21_0.friendItems[arg_21_2]
 	end
 
-	slot3:update(slot0.friendVOs[slot1 + 1])
+	local var_21_1 = arg_21_0.friendVOs[arg_21_1 + 1]
+
+	var_21_0:update(var_21_1)
 end
 
-function slot0.initFriend(slot0, slot1)
-	slot2 = slot0:createFriendItem(slot1)
+function var_0_0.initFriend(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0:createFriendItem(arg_22_1)
 
-	onToggle(slot0, slot2.tf, function (slot0)
-		if slot0 and uv0.friendVO then
-			uv1:openChatPanel(uv0.friendVO)
+	onToggle(arg_22_0, var_22_0.tf, function(arg_23_0)
+		if arg_23_0 and var_22_0.friendVO then
+			arg_22_0:openChatPanel(var_22_0.friendVO)
 
-			uv1.contextData.friendVO = uv0.friendVO
+			arg_22_0.contextData.friendVO = var_22_0.friendVO
 
-			uv1:setFriendVO(uv0.friendVO)
-			uv1:emit(ChatRoomMediator.CLEAR_UNREADCOUNT, uv0.friendVO.id)
+			arg_22_0:setFriendVO(var_22_0.friendVO)
+			arg_22_0:emit(ChatRoomMediator.CLEAR_UNREADCOUNT, var_22_0.friendVO.id)
 		end
 	end)
 
-	slot0.friendItems[slot1] = slot2
+	arg_22_0.friendItems[arg_22_1] = var_22_0
 end
 
-function slot0.updateFriendVO(slot0, slot1)
-	for slot5, slot6 in ipairs(slot0.friendVOs) do
-		if slot6.id == slot1.id then
-			slot0.friendVOs[slot5] = slot1
+function var_0_0.updateFriendVO(arg_24_0, arg_24_1)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.friendVOs) do
+		if iter_24_1.id == arg_24_1.id then
+			arg_24_0.friendVOs[iter_24_0] = arg_24_1
 
 			break
 		end
 	end
 
-	if slot1.id == slot0.friendVO.id then
-		slot0.friendVO = slot1
+	if arg_24_1.id == arg_24_0.friendVO.id then
+		arg_24_0.friendVO = arg_24_1
 	end
 
-	slot0:sortFriend()
+	arg_24_0:sortFriend()
 end
 
-function slot0.sortFriend(slot0)
-	table.sort(slot0.friendVOs, function (slot0, slot1)
-		if (slot0.id == uv0.friendVO.id and 1 or 0) == (slot1.id == uv0.friendVO.id and 1 or 0) then
-			if slot0.online == slot1.online then
-				if slot0.level == slot1.level then
-					return slot0.id < slot1.id
+function var_0_0.sortFriend(arg_25_0)
+	table.sort(arg_25_0.friendVOs, function(arg_26_0, arg_26_1)
+		local var_26_0 = arg_26_0.id == arg_25_0.friendVO.id and 1 or 0
+		local var_26_1 = arg_26_1.id == arg_25_0.friendVO.id and 1 or 0
+
+		if var_26_0 == var_26_1 then
+			if arg_26_0.online == arg_26_1.online then
+				if arg_26_0.level == arg_26_1.level then
+					return arg_26_0.id < arg_26_1.id
 				else
-					return slot1.level < slot0.level
+					return arg_26_0.level > arg_26_1.level
 				end
 			else
-				return slot1.online < slot0.online
+				return arg_26_0.online > arg_26_1.online
 			end
 		else
-			return slot3 < slot2
+			return var_26_1 < var_26_0
 		end
 	end)
-	slot0.friendRect:SetTotalCount(#slot0.friendVOs, -1)
+	arg_25_0.friendRect:SetTotalCount(#arg_25_0.friendVOs, -1)
 end
 
-function slot0.openChatPanel(slot0, slot1)
-	slot0.friendVO = slot1
+function var_0_0.openChatPanel(arg_27_0, arg_27_1)
+	arg_27_0.friendVO = arg_27_1
 
-	removeAllChildren(slot0.chatsContainer)
+	removeAllChildren(arg_27_0.chatsContainer)
 
-	for slot6, slot7 in pairs(slot0.cacheMsgsVOs[slot1.id] or {}) do
-		slot0:appendMsg(slot7)
+	local var_27_0 = arg_27_0.cacheMsgsVOs[arg_27_1.id]
+
+	for iter_27_0, iter_27_1 in pairs(var_27_0 or {}) do
+		arg_27_0:appendMsg(iter_27_1)
 	end
 
-	setText(slot0.chatPanelTitle, slot0.friendVO.name)
-	setActive(slot0.chatPanel, true)
-	onButton(slot0, slot0.sendBtn, function ()
-		setInputText(uv0.inputTF, "")
-		uv0:sendMessage(getInputText(uv0.inputTF))
+	setText(arg_27_0.chatPanelTitle, arg_27_0.friendVO.name)
+	setActive(arg_27_0.chatPanel, true)
+	onButton(arg_27_0, arg_27_0.sendBtn, function()
+		local var_28_0 = getInputText(arg_27_0.inputTF)
+
+		setInputText(arg_27_0.inputTF, "")
+		arg_27_0:sendMessage(var_28_0)
 	end)
 end
 
-function slot0.sendMessage(slot0, slot1)
-	if slot1 == "" then
+function var_0_0.sendMessage(arg_29_0, arg_29_1)
+	if arg_29_1 == "" then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("friend_send_msg_null_tip"))
 
 		return
 	end
 
-	slot0:emit(ChatRoomMediator.SEND_FRIEND_MSG, slot0.friendVO.id, slot1)
+	arg_29_0:emit(ChatRoomMediator.SEND_FRIEND_MSG, arg_29_0.friendVO.id, arg_29_1)
 end
 
-function slot0.getPlayer(slot0, slot1)
-	if slot1 == slot0.playerVO.id then
-		return slot0.playerVO
+function var_0_0.getPlayer(arg_30_0, arg_30_1)
+	if arg_30_1 == arg_30_0.playerVO.id then
+		return arg_30_0.playerVO
 	end
 
-	for slot5, slot6 in ipairs(slot0.friendVOs) do
-		if slot6.id == slot1 then
-			return slot6
+	for iter_30_0, iter_30_1 in ipairs(arg_30_0.friendVOs) do
+		if iter_30_1.id == arg_30_1 then
+			return iter_30_1
 		end
 	end
 end
 
-function slot0.appendMsg(slot0, slot1)
-	if slot1.playerId ~= slot0.playerVO.id and slot1.playerId ~= slot0.friendVO.id then
+function var_0_0.appendMsg(arg_31_0, arg_31_1)
+	if arg_31_1.playerId ~= arg_31_0.playerVO.id and arg_31_1.playerId ~= arg_31_0.friendVO.id then
 		return
 	end
 
-	slot0:emit(ChatRoomMediator.CLEAR_UNREADCOUNT, slot0.friendVO.id)
+	arg_31_0:emit(ChatRoomMediator.CLEAR_UNREADCOUNT, arg_31_0.friendVO.id)
 
-	slot2 = slot0.otherPopTpl
+	local var_31_0 = arg_31_0.otherPopTpl
+	local var_31_1 = arg_31_0:getPlayer(arg_31_1.playerId)
 
-	if slot1.playerId == slot0.playerVO.id then
-		slot2 = slot0.selfPopTpl
-		slot1.player = setmetatable(Clone(slot0.playerVO), {
-			__index = slot0:getPlayer(slot1.playerId)
+	if arg_31_1.playerId == arg_31_0.playerVO.id then
+		var_31_0 = arg_31_0.selfPopTpl
+		arg_31_1.player = setmetatable(Clone(arg_31_0.playerVO), {
+			__index = var_31_1
 		})
-		slot1.isSelf = true
+		arg_31_1.isSelf = true
 	end
 
-	ChatRoomBubble.New(cloneTplTo(slot2, slot0.chatsContainer)):update(slot1)
-	scrollToBottom(slot0.chatsRect)
+	local var_31_2 = cloneTplTo(var_31_0, arg_31_0.chatsContainer)
+
+	ChatRoomBubble.New(var_31_2):update(arg_31_1)
+	scrollToBottom(arg_31_0.chatsRect)
 end
 
-function slot0.closeChatPanel(slot0)
-	setActive(slot0.chatPanel, false)
+function var_0_0.closeChatPanel(arg_32_0)
+	setActive(arg_32_0.chatPanel, false)
 end
 
-function slot0.willExit(slot0)
-	slot4 = slot0._tf
+function var_0_0.willExit(arg_33_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_33_0.frame, arg_33_0._tf)
+	eachChild(arg_33_0.chatsContainer, function(arg_34_0)
+		local var_34_0 = arg_33_0:findTF("face", arg_34_0)
 
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.frame, slot4)
-	eachChild(slot0.chatsContainer, function (slot0)
-		if uv0:findTF("face", slot0).childCount > 0 then
-			slot2 = slot1:GetChild(0).gameObject
+		if var_34_0.childCount > 0 then
+			local var_34_1 = var_34_0:GetChild(0).gameObject
 
-			PoolMgr.GetInstance():ReturnPrefab("emoji/" .. slot2.name, slot2.name, slot2)
+			PoolMgr.GetInstance():ReturnPrefab("emoji/" .. var_34_1.name, var_34_1.name, var_34_1)
 		end
 	end)
 
-	for slot4, slot5 in pairs(slot0.friendItems) do
-		slot5:dispose()
+	for iter_33_0, iter_33_1 in pairs(arg_33_0.friendItems) do
+		iter_33_1:dispose()
 	end
 end
 
-function slot0.insertEmojiToInputText(slot0, slot1)
-	setInputText(slot0.inputTF, getInputText(slot0.inputTF) .. string.gsub(ChatConst.EmojiIconCode, "code", slot1))
+function var_0_0.insertEmojiToInputText(arg_35_0, arg_35_1)
+	setInputText(arg_35_0.inputTF, getInputText(arg_35_0.inputTF) .. string.gsub(ChatConst.EmojiIconCode, "code", arg_35_1))
 end
 
-return slot0
+return var_0_0

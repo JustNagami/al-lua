@@ -1,64 +1,68 @@
-slot0 = class("CourtYardEffectAgent", import(".CourtYardAgent"))
+﻿local var_0_0 = class("CourtYardEffectAgent", import(".CourtYardAgent"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.effects = {}
-	slot0.counts = {}
+	arg_1_0.effects = {}
+	arg_1_0.counts = {}
 end
 
-function slot0.EnableEffect(slot0, slot1)
-	if not slot1 then
+function var_0_0.EnableEffect(arg_2_0, arg_2_1)
+	if not arg_2_1 then
 		return
 	end
 
-	if slot0.effects[slot1] then
-		slot0.counts[slot1] = (slot0.counts[slot1] or 0) + 1
+	if arg_2_0.effects[arg_2_1] then
+		arg_2_0.counts[arg_2_1] = (arg_2_0.counts[arg_2_1] or 0) + 1
 
 		return
 	end
 
 	pg.UIMgr.GetInstance():LoadingOn()
-	PoolMgr.GetInstance():GetPrefab("ui/" .. slot1, slot1, true, function (slot0)
+	PoolMgr.GetInstance():GetPrefab("ui/" .. arg_2_1, arg_2_1, true, function(arg_3_0)
 		pg.UIMgr.GetInstance():LoadingOff()
 
-		if not uv0.effects or uv0.effects[uv1] then
-			PoolMgr.GetInstance():ReturnPrefab("ui/" .. uv1, uv1, slot0)
+		if not arg_2_0.effects or arg_2_0.effects[arg_2_1] then
+			PoolMgr.GetInstance():ReturnPrefab("ui/" .. arg_2_1, arg_2_1, arg_3_0)
 
 			return
 		end
 
-		slot0.name = uv1
+		arg_3_0.name = arg_2_1
 
-		setParent(slot0, uv0.effectContainer)
-		setActive(slot0, true)
+		setParent(arg_3_0, arg_2_0.effectContainer)
+		setActive(arg_3_0, true)
 
-		uv0.effects[uv1] = slot0
-		uv0.counts[uv1] = (uv0.counts[uv1] or 0) + 1
+		arg_2_0.effects[arg_2_1] = arg_3_0
+		arg_2_0.counts[arg_2_1] = (arg_2_0.counts[arg_2_1] or 0) + 1
 	end)
 end
 
-function slot0.DisableEffect(slot0, slot1)
-	if not slot0.effects[slot1] then
+function var_0_0.DisableEffect(arg_4_0, arg_4_1)
+	if not arg_4_0.effects[arg_4_1] then
 		return
 	end
 
-	slot0.counts[slot1] = (slot0.counts[slot1] or 0) - 1
+	arg_4_0.counts[arg_4_1] = (arg_4_0.counts[arg_4_1] or 0) - 1
 
-	if slot0.counts[slot1] <= 0 and findTF(slot0.effectContainer, slot1) then
-		PoolMgr.GetInstance():ReturnPrefab("ui/" .. slot1, slot1, slot2.gameObject)
+	if arg_4_0.counts[arg_4_1] <= 0 then
+		local var_4_0 = findTF(arg_4_0.effectContainer, arg_4_1)
 
-		slot0.effects[slot1] = nil
+		if var_4_0 then
+			PoolMgr.GetInstance():ReturnPrefab("ui/" .. arg_4_1, arg_4_1, var_4_0.gameObject)
+
+			arg_4_0.effects[arg_4_1] = nil
+		end
 	end
 end
 
-function slot0.Dispose(slot0)
-	for slot4, slot5 in pairs(slot0.effects) do
-		PoolMgr.GetInstance():ReturnPrefab("ui/" .. slot4, slot4, slot5)
+function var_0_0.Dispose(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.effects) do
+		PoolMgr.GetInstance():ReturnPrefab("ui/" .. iter_5_0, iter_5_0, iter_5_1)
 	end
 
-	slot0.effects = nil
-	slot0.counts = nil
+	arg_5_0.effects = nil
+	arg_5_0.counts = nil
 end
 
-return slot0
+return var_0_0

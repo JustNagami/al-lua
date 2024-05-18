@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-基辅II"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-基辅II",
-	name = "专属弹幕-基辅II",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-基辅II",
-	stack = 1,
-	id = 29822,
-	icon = 29820,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 29820
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-基辅II"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-基辅II",
+	name = "专属弹幕-基辅II",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-基辅II",
+	stack = 1,
+	id = 29822,
+	icon = 29820,
+	last_effect = ""
 }

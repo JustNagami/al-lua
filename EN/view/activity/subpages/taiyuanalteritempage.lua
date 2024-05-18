@@ -1,36 +1,51 @@
-slot0 = class("TaiyuanAlterItemPage", import(".TemplatePage.SkinTemplatePage"))
+﻿local var_0_0 = class("TaiyuanAlterItemPage", import(".TemplatePage.SkinTemplatePage"))
 
-function slot0.UpdateTask(slot0, slot1, slot2)
-	slot4 = slot0:findTF("item", slot2)
-	slot6 = slot0.taskProxy:getTaskById(slot0.taskGroup[slot0.nday][slot1 + 1]) or slot0.taskProxy:getFinishTaskById(slot5)
+function var_0_0.UpdateTask(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = arg_1_1 + 1
+	local var_1_1 = arg_1_0:findTF("item", arg_1_2)
+	local var_1_2 = arg_1_0.taskGroup[arg_1_0.nday][var_1_0]
+	local var_1_3 = arg_1_0.taskProxy:getTaskById(var_1_2) or arg_1_0.taskProxy:getFinishTaskById(var_1_2)
 
-	assert(slot6, "without this task by id: " .. slot5)
-	updateDrop(slot4, Drop.Create(slot6:getConfig("award_display")[1]))
-	onButton(slot0, slot4, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	assert(var_1_3, "without this task by id: " .. var_1_2)
+
+	local var_1_4 = Drop.Create(var_1_3:getConfig("award_display")[1])
+
+	updateDrop(var_1_1, var_1_4)
+	onButton(arg_1_0, var_1_1, function()
+		arg_1_0:emit(BaseUI.ON_DROP, var_1_4)
 	end, SFX_PANEL)
 
-	slot8 = slot6:getProgress()
-	slot9 = slot6:getConfig("target_num")
+	local var_1_5 = var_1_3:getProgress()
+	local var_1_6 = var_1_3:getConfig("target_num")
 
-	setText(slot0:findTF("description", slot2), slot6:getConfig("desc"))
+	setText(arg_1_0:findTF("description", arg_1_2), var_1_3:getConfig("desc"))
 
-	slot10, slot11 = slot0:GetProgressColor()
+	local var_1_7, var_1_8 = arg_1_0:GetProgressColor()
+	local var_1_9
 
-	setText(slot0:findTF("progressText", slot2), "<color=#E95545>" .. (slot10 and setColorStr(slot8, slot10) or slot8) .. "</color><color=#6D8189>" .. (slot11 and setColorStr("/" .. slot9, slot11) or "/" .. slot9) .. "</color>")
-	setSlider(slot0:findTF("progress", slot2), 0, slot9, slot8)
+	var_1_9 = var_1_7 and setColorStr(var_1_5, var_1_7) or var_1_5
 
-	slot13 = slot0:findTF("get_btn", slot2)
+	local var_1_10
 
-	setActive(slot0:findTF("go_btn", slot2), slot6:getTaskStatus() == 0)
-	setActive(slot13, slot15 == 1)
-	setActive(slot0:findTF("got_btn", slot2), slot15 == 2)
-	onButton(slot0, slot12, function ()
-		uv0:emit(ActivityMediator.ON_TASK_GO, uv1)
+	var_1_10 = var_1_8 and setColorStr("/" .. var_1_6, var_1_8) or "/" .. var_1_6
+
+	setText(arg_1_0:findTF("progressText", arg_1_2), "<color=#E95545>" .. var_1_9 .. "</color><color=#6D8189>" .. var_1_10 .. "</color>")
+	setSlider(arg_1_0:findTF("progress", arg_1_2), 0, var_1_6, var_1_5)
+
+	local var_1_11 = arg_1_0:findTF("go_btn", arg_1_2)
+	local var_1_12 = arg_1_0:findTF("get_btn", arg_1_2)
+	local var_1_13 = arg_1_0:findTF("got_btn", arg_1_2)
+	local var_1_14 = var_1_3:getTaskStatus()
+
+	setActive(var_1_11, var_1_14 == 0)
+	setActive(var_1_12, var_1_14 == 1)
+	setActive(var_1_13, var_1_14 == 2)
+	onButton(arg_1_0, var_1_11, function()
+		arg_1_0:emit(ActivityMediator.ON_TASK_GO, var_1_3)
 	end, SFX_PANEL)
-	onButton(slot0, slot13, function ()
-		uv0:emit(ActivityMediator.ON_TASK_SUBMIT, uv1)
+	onButton(arg_1_0, var_1_12, function()
+		arg_1_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_1_3)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

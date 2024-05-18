@@ -1,57 +1,70 @@
-slot0 = class("BeachGamePage", import("view.base.BaseActivityPage"))
-slot0.MINIGAME_HUB_ID = 37
-slot0.MINIGAME_ID = 44
+﻿local var_0_0 = class("BeachGamePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.goBtn = slot0:findTF("AD/go")
-	slot0.indexTpl = slot0:findTF("AD/index")
-	slot0.markContainer = slot0:findTF("AD/marks")
-	slot0.markTpl = slot0:findTF("AD/marks/1")
-	slot0.markTrs = {}
+var_0_0.MINIGAME_HUB_ID = 37
+var_0_0.MINIGAME_ID = 44
 
-	for slot4 = 1, 7 do
-		setActive(cloneTplTo(slot0.markTpl, slot0.markContainer, slot4):Find("open"), slot4 ~= 7)
-		setActive(slot5:Find("openL"), slot4 == 7)
-		table.insert(slot0.markTrs, slot5)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.goBtn = arg_1_0:findTF("AD/go")
+	arg_1_0.indexTpl = arg_1_0:findTF("AD/index")
+	arg_1_0.markContainer = arg_1_0:findTF("AD/marks")
+	arg_1_0.markTpl = arg_1_0:findTF("AD/marks/1")
+	arg_1_0.markTrs = {}
+
+	for iter_1_0 = 1, 7 do
+		local var_1_0 = cloneTplTo(arg_1_0.markTpl, arg_1_0.markContainer, iter_1_0)
+
+		setActive(var_1_0:Find("open"), iter_1_0 ~= 7)
+		setActive(var_1_0:Find("openL"), iter_1_0 == 7)
+		table.insert(arg_1_0.markTrs, var_1_0)
 	end
 end
 
-function slot0.OnDataSetting(slot0)
+function var_0_0.OnDataSetting(arg_2_0)
+	return
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		pg.m02:sendNotification(GAME.GO_MINI_GAME, uv0.MINIGAME_ID)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.MINIGAME_ID)
 	end, SFX_PANEL)
 
-	slot2 = getProxy(MiniGameProxy):GetHubByHubId(uv0.MINIGAME_HUB_ID)
+	local var_3_0 = getProxy(MiniGameProxy):GetHubByHubId(var_0_0.MINIGAME_HUB_ID)
 
-	slot0:FlushMarks(slot2)
+	arg_3_0:FlushMarks(var_3_0)
 	Canvas.ForceUpdateCanvases()
-	slot0:FlushIndex(slot2)
+	arg_3_0:FlushIndex(var_3_0)
 end
 
-function slot0.FlushMarks(slot0, slot1)
-	for slot8, slot9 in ipairs(slot0.markTrs) do
-		setActive(slot9, slot8 <= slot1.usedtime + slot1.count)
-		setActive(slot9:Find("finish"), slot8 <= slot2 and slot8 ~= 7)
-		setActive(slot9:Find("finishL"), slot8 <= slot2 and slot8 == 7)
+function var_0_0.FlushMarks(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1.usedtime
+	local var_5_1 = var_5_0 + arg_5_1.count
+
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.markTrs) do
+		setActive(iter_5_1, iter_5_0 <= var_5_1)
+		setActive(iter_5_1:Find("finish"), iter_5_0 <= var_5_0 and iter_5_0 ~= 7)
+		setActive(iter_5_1:Find("finishL"), iter_5_0 <= var_5_0 and iter_5_0 == 7)
 	end
 end
 
-function slot0.FlushIndex(slot0, slot1)
-	setActive(slot0.indexTpl, slot1.usedtime > 0)
+function var_0_0.FlushIndex(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1.usedtime
 
-	if slot2 > 0 then
-		slot4 = slot0.indexTpl.parent:InverseTransformPoint(slot0.markTrs[math.min(slot2, #slot0.markTrs)].position)
-		slot0.indexTpl.localPosition = Vector3(slot4.x, slot4.y, 0)
+	setActive(arg_6_0.indexTpl, var_6_0 > 0)
+
+	if var_6_0 > 0 then
+		local var_6_1 = arg_6_0.markTrs[math.min(var_6_0, #arg_6_0.markTrs)]
+		local var_6_2 = arg_6_0.indexTpl.parent:InverseTransformPoint(var_6_1.position)
+
+		arg_6_0.indexTpl.localPosition = Vector3(var_6_2.x, var_6_2.y, 0)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_7_0)
+	return
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-return slot0
+return var_0_0

@@ -1,336 +1,355 @@
-slot0 = class("CommanderHomeLayer", import("...base.BaseUI"))
-slot0.DESC_PAGE_OPEN = "CommanderHomeLayer:DESC_PAGE_OPEN"
-slot0.DESC_PAGE_CLOSE = "CommanderHomeLayer:DESC_PAGE_CLOSE"
+﻿local var_0_0 = class("CommanderHomeLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.DESC_PAGE_OPEN = "CommanderHomeLayer:DESC_PAGE_OPEN"
+var_0_0.DESC_PAGE_CLOSE = "CommanderHomeLayer:DESC_PAGE_CLOSE"
+
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderHomeUI"
 end
 
-function slot0.SetHome(slot0, slot1)
-	slot0.home = slot1
+function var_0_0.SetHome(arg_2_0, arg_2_1)
+	arg_2_0.home = arg_2_1
 end
 
-function slot0.OnCatteryUpdate(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnCatteryUpdate(arg_3_0, arg_3_1)
+	local var_3_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.cattery.id == slot1 then
-			slot7:Update(slot7.cattery)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.cards) do
+		if iter_3_1.cattery.id == arg_3_1 then
+			var_3_0 = iter_3_1.cattery
+
+			iter_3_1:Update(var_3_0)
 		end
 	end
 
-	if slot2 and slot0.catteryDescPage:GetLoaded() and slot0.catteryDescPage:isShowing() then
-		slot0.catteryDescPage:OnCatteryUpdate(slot2)
+	if var_3_0 and arg_3_0.catteryDescPage:GetLoaded() and arg_3_0.catteryDescPage:isShowing() then
+		arg_3_0.catteryDescPage:OnCatteryUpdate(var_3_0)
 	end
 
-	slot0:UpdateMain()
+	arg_3_0:UpdateMain()
 end
 
-function slot0.OnCatteryStyleUpdate(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnCatteryStyleUpdate(arg_4_0, arg_4_1)
+	local var_4_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.cattery.id == slot1 then
-			slot7:UpdateStyle(slot7.cattery)
+	for iter_4_0, iter_4_1 in pairs(arg_4_0.cards) do
+		if iter_4_1.cattery.id == arg_4_1 then
+			var_4_0 = iter_4_1.cattery
+
+			iter_4_1:UpdateStyle(var_4_0)
 		end
 	end
 
-	if slot2 and slot0.catteryDescPage:GetLoaded() and slot0.catteryDescPage:isShowing() then
-		slot0.catteryDescPage:OnCatteryStyleUpdate(slot2)
+	if var_4_0 and arg_4_0.catteryDescPage:GetLoaded() and arg_4_0.catteryDescPage:isShowing() then
+		arg_4_0.catteryDescPage:OnCatteryStyleUpdate(var_4_0)
 	end
 end
 
-function slot0.OnCommanderExpChange(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.cards) do
-		if slot6.cattery:ExistCommander() then
-			slot6:Update(slot7)
+function var_0_0.OnCommanderExpChange(arg_5_0, arg_5_1)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.cards) do
+		local var_5_0 = iter_5_1.cattery
+
+		if var_5_0:ExistCommander() then
+			iter_5_1:Update(var_5_0)
 		end
 	end
 
-	if slot0.catteryDescPage:GetLoaded() and slot0.catteryDescPage:isShowing() then
-		slot0.catteryDescPage:FlushCatteryInfo()
+	if arg_5_0.catteryDescPage:GetLoaded() and arg_5_0.catteryDescPage:isShowing() then
+		arg_5_0.catteryDescPage:FlushCatteryInfo()
 	end
 
-	slot0.awardDisplayView:ExecuteAction("AddPlan", {
+	arg_5_0.awardDisplayView:ExecuteAction("AddPlan", {
 		homeExp = 0,
-		commanderExps = slot1,
+		commanderExps = arg_5_1,
 		awards = {}
 	})
 end
 
-function slot0.OnCatteryOPDone(slot0)
-	slot0:UpdateMain()
+function var_0_0.OnCatteryOPDone(arg_6_0)
+	arg_6_0:UpdateMain()
 end
 
-function slot0.OnZeroHour(slot0)
-	slot0:UpdateMain()
+function var_0_0.OnZeroHour(arg_7_0)
+	arg_7_0:UpdateMain()
 end
 
-function slot0.OnOpAnimtion(slot0, slot1, slot2, slot3)
-	setActive(slot0.opAnim.gameObject, true)
+function var_0_0.OnOpAnimtion(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	setActive(arg_8_0.opAnim.gameObject, true)
 
-	if not ({
+	local var_8_0 = ({
 		"clean",
 		"feed",
 		"play"
-	})[slot1] then
-		slot3()
+	})[arg_8_1]
+
+	if not var_8_0 then
+		arg_8_3()
 
 		return
 	end
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_8_0.timer then
+		arg_8_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_8_0.timer = nil
 	end
 
-	slot9 = 1
-	slot0.timer = Timer.New(function ()
-		uv0:CancelOpAnim()
-	end, 0.8, slot9)
+	arg_8_0.timer = Timer.New(function()
+		arg_8_0:CancelOpAnim()
+	end, 0.8, 1)
 
-	slot0.timer:Start()
-	slot0.opAnim:SetTrigger(slot5)
+	arg_8_0.timer:Start()
+	arg_8_0.opAnim:SetTrigger(var_8_0)
 
-	for slot9, slot10 in pairs(slot0.cards) do
-		if table.contains(slot2, slot10.cattery.id) then
-			floatAni(slot10.char, 20, 0.1, 2)
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.cards) do
+		if table.contains(arg_8_2, iter_8_1.cattery.id) then
+			floatAni(iter_8_1.char, 20, 0.1, 2)
 		end
 	end
 
-	slot0.callback = slot3
+	arg_8_0.callback = arg_8_3
 end
 
-function slot0.CancelOpAnim(slot0)
-	if slot0.callback then
-		slot0.timer:Stop()
+function var_0_0.CancelOpAnim(arg_10_0)
+	if arg_10_0.callback then
+		arg_10_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_10_0.timer = nil
 
-		slot0.opAnim:SetTrigger("empty")
-		slot0.callback()
+		arg_10_0.opAnim:SetTrigger("empty")
+		arg_10_0.callback()
 
-		slot0.callback = nil
+		arg_10_0.callback = nil
 
-		setActive(slot0.opAnim.gameObject, false)
+		setActive(arg_10_0.opAnim.gameObject, false)
 	end
 end
 
-function slot0.OnDisplayAwardDone(slot0, slot1)
-	slot0.awardDisplayView:ExecuteAction("AddPlan", slot1)
+function var_0_0.OnDisplayAwardDone(arg_11_0, arg_11_1)
+	arg_11_0.awardDisplayView:ExecuteAction("AddPlan", arg_11_1)
 end
 
-function slot0.init(slot0)
-	slot0.frame = slot0:findTF("bg")
-	slot0.closeBtn = slot0:findTF("bg/frame/close_btn")
-	slot0.levelInfoBtn = slot0:findTF("bg/frame/title/help")
-	slot0.levelTxt = slot0:findTF("bg/frame/title/Text"):GetComponent(typeof(Text))
-	slot0.scrollRect = slot0:findTF("bg/frame/scrollrect"):GetComponent("ScrollRect")
-	slot0.scrollRectContent = slot0:findTF("bg/frame/scrollrect/content")
-	slot0.batchBtn = slot0:findTF("bg/frame/batch")
-	slot0.opAnim = slot0:findTF("animation"):GetComponent(typeof(Animator))
-	slot0.UIlist = UIItemList.New(slot0.scrollRectContent, slot0.scrollRectContent:Find("tpl"))
-	slot0.helpBtn = slot0:findTF("bg/frame/help")
-	slot0.cntTxt = slot0:findTF("bg/frame/cnt/Text"):GetComponent(typeof(Text))
-	slot0.cards = {}
-	slot0.catteryDescPage = CatteryDescPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.levelInfoPage = CommanderHomeLevelInfoPage.New(slot0._tf, slot0.event, slot0.contextData)
-	slot0.awardDisplayView = CatteryOpAnimPage.New(slot0._tf, slot0.event)
-	slot0.batchSelPage = CommanderHomeBatchSelPage.New(slot0._tf, slot0.event)
-	slot0.flower = CatteryFlowerView.New(slot0:findTF("bg/frame/flower"))
-	slot0.bubbleTF = slot0:findTF("bg/bubble")
-	slot0.bubbleClean = slot0.bubbleTF:Find("clean")
-	slot0.bubbleFeed = slot0.bubbleTF:Find("feed")
-	slot0.bubblePlay = slot0.bubbleTF:Find("play")
+function var_0_0.init(arg_12_0)
+	arg_12_0.frame = arg_12_0:findTF("bg")
+	arg_12_0.closeBtn = arg_12_0:findTF("bg/frame/close_btn")
+	arg_12_0.levelInfoBtn = arg_12_0:findTF("bg/frame/title/help")
+	arg_12_0.levelTxt = arg_12_0:findTF("bg/frame/title/Text"):GetComponent(typeof(Text))
+	arg_12_0.scrollRect = arg_12_0:findTF("bg/frame/scrollrect"):GetComponent("ScrollRect")
+	arg_12_0.scrollRectContent = arg_12_0:findTF("bg/frame/scrollrect/content")
+	arg_12_0.batchBtn = arg_12_0:findTF("bg/frame/batch")
+	arg_12_0.opAnim = arg_12_0:findTF("animation"):GetComponent(typeof(Animator))
+	arg_12_0.UIlist = UIItemList.New(arg_12_0.scrollRectContent, arg_12_0.scrollRectContent:Find("tpl"))
+	arg_12_0.helpBtn = arg_12_0:findTF("bg/frame/help")
+	arg_12_0.cntTxt = arg_12_0:findTF("bg/frame/cnt/Text"):GetComponent(typeof(Text))
+	arg_12_0.cards = {}
+	arg_12_0.catteryDescPage = CatteryDescPage.New(arg_12_0._tf, arg_12_0.event, arg_12_0.contextData)
+	arg_12_0.levelInfoPage = CommanderHomeLevelInfoPage.New(arg_12_0._tf, arg_12_0.event, arg_12_0.contextData)
+	arg_12_0.awardDisplayView = CatteryOpAnimPage.New(arg_12_0._tf, arg_12_0.event)
+	arg_12_0.batchSelPage = CommanderHomeBatchSelPage.New(arg_12_0._tf, arg_12_0.event)
+	arg_12_0.flower = CatteryFlowerView.New(arg_12_0:findTF("bg/frame/flower"))
+	arg_12_0.bubbleTF = arg_12_0:findTF("bg/bubble")
+	arg_12_0.bubbleClean = arg_12_0.bubbleTF:Find("clean")
+	arg_12_0.bubbleFeed = arg_12_0.bubbleTF:Find("feed")
+	arg_12_0.bubblePlay = arg_12_0.bubbleTF:Find("play")
 end
 
-function slot0.RegisterEvent(slot0)
-	slot0:bind(uv0.DESC_PAGE_CLOSE, function ()
-		setActive(uv0.frame, true)
+function var_0_0.RegisterEvent(arg_13_0)
+	arg_13_0:bind(var_0_0.DESC_PAGE_CLOSE, function()
+		setActive(arg_13_0.frame, true)
 	end)
-	slot0:bind(uv0.DESC_PAGE_OPEN, function ()
-		setActive(uv0.frame, false)
+	arg_13_0:bind(var_0_0.DESC_PAGE_OPEN, function()
+		setActive(arg_13_0.frame, false)
 	end)
 end
 
-function slot0.didEnter(slot0)
-	slot0:RegisterEvent()
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.didEnter(arg_16_0)
+	arg_16_0:RegisterEvent()
+	onButton(arg_16_0, arg_16_0.closeBtn, function()
+		arg_16_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		if uv0.forbiddenClose then
+	onButton(arg_16_0, arg_16_0._tf, function()
+		if arg_16_0.forbiddenClose then
 			return
 		end
 
-		uv0:emit(uv1.ON_CLOSE)
+		arg_16_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.levelInfoBtn, function ()
-		uv0.levelInfoPage:ExecuteAction("Show", uv0.home)
+	onButton(arg_16_0, arg_16_0.levelInfoBtn, function()
+		arg_16_0.levelInfoPage:ExecuteAction("Show", arg_16_0.home)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_16_0, arg_16_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.cat_home_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bubbleClean, function ()
-		uv0:CancelOpAnim()
-		uv0:emit(CommanderHomeMediator.ON_CLEAN)
+	onButton(arg_16_0, arg_16_0.bubbleClean, function()
+		arg_16_0:CancelOpAnim()
+		arg_16_0:emit(CommanderHomeMediator.ON_CLEAN)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bubbleFeed, function ()
-		uv0:CancelOpAnim()
-		uv0:emit(CommanderHomeMediator.ON_FEED)
+	onButton(arg_16_0, arg_16_0.bubbleFeed, function()
+		arg_16_0:CancelOpAnim()
+		arg_16_0:emit(CommanderHomeMediator.ON_FEED)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bubblePlay, function ()
-		uv0:CancelOpAnim()
-		uv0:emit(CommanderHomeMediator.ON_PLAY)
+	onButton(arg_16_0, arg_16_0.bubblePlay, function()
+		arg_16_0:CancelOpAnim()
+		arg_16_0:emit(CommanderHomeMediator.ON_PLAY)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.batchBtn, function ()
-		uv0.batchSelPage:ExecuteAction("Update", uv0.home)
+	onButton(arg_16_0, arg_16_0.batchBtn, function()
+		arg_16_0.batchSelPage:ExecuteAction("Update", arg_16_0.home)
 	end, SFX_PANEL)
-	slot0.UIlist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:OnUpdateItem(slot2, uv0.displays[slot1 + 1])
+	arg_16_0.UIlist:make(function(arg_25_0, arg_25_1, arg_25_2)
+		if arg_25_0 == UIItemList.EventUpdate then
+			arg_16_0:OnUpdateItem(arg_25_2, arg_16_0.displays[arg_25_1 + 1])
 		end
 	end)
-	slot0:UpdateMain()
+	arg_16_0:UpdateMain()
 
-	slot0.UIMgr = pg.UIMgr.GetInstance()
+	arg_16_0.UIMgr = pg.UIMgr.GetInstance()
 
-	slot0.UIMgr:BlurPanel(slot0._tf)
+	arg_16_0.UIMgr:BlurPanel(arg_16_0._tf)
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot1] then
-		slot0.cards[slot1] = CatteryCard.New(slot1)
+function var_0_0.OnUpdateItem(arg_26_0, arg_26_1, arg_26_2)
+	local var_26_0 = arg_26_0.cards[arg_26_1]
+
+	if not var_26_0 then
+		var_26_0 = CatteryCard.New(arg_26_1)
+		arg_26_0.cards[arg_26_1] = var_26_0
 	end
 
-	onButton(slot0, slot3._tf, function ()
-		if not uv0.cattery:IsLocked() then
-			uv1.catteryDescPage:ExecuteAction("Update", uv1.home, uv0.cattery)
+	onButton(arg_26_0, var_26_0._tf, function()
+		if not var_26_0.cattery:IsLocked() then
+			arg_26_0.catteryDescPage:ExecuteAction("Update", arg_26_0.home, var_26_0.cattery)
 		else
 			pg.TipsMgr.GetInstance():ShowTips(i18n("cat_home_unlock"))
 		end
 	end, SFX_PANEL)
-	slot3:Update(slot2)
+	var_26_0:Update(arg_26_2)
 end
 
-function slot0.UpdateMain(slot0)
-	slot0.levelTxt.text = "LV." .. slot0.home:GetLevel()
+function var_0_0.UpdateMain(arg_28_0)
+	arg_28_0.levelTxt.text = "LV." .. arg_28_0.home:GetLevel()
 
-	slot0:InitCatteries()
-	slot0.flower:Update(slot0.home)
+	arg_28_0:InitCatteries()
+	arg_28_0.flower:Update(arg_28_0.home)
 end
 
-function slot0.InitCatteries(slot0)
-	slot0.displays = {}
-	slot3 = 0
+function var_0_0.InitCatteries(arg_29_0)
+	local var_29_0 = arg_29_0.home
 
-	for slot8, slot9 in pairs(slot0.home:GetCatteries()) do
-		table.insert(slot0.displays, slot9)
+	arg_29_0.displays = {}
 
-		if slot9:ExistCommander() then
-			slot4 = 0 + 1
+	local var_29_1 = var_29_0:GetCatteries()
+	local var_29_2 = 0
+	local var_29_3 = 0
+
+	for iter_29_0, iter_29_1 in pairs(var_29_1) do
+		table.insert(arg_29_0.displays, iter_29_1)
+
+		if iter_29_1:ExistCommander() then
+			var_29_3 = var_29_3 + 1
 		end
 
-		if not slot9:IsLocked() then
-			slot3 = slot3 + 1
-		end
-	end
-
-	slot0.UIlist:align(#slot0.displays)
-	slot0:UpdateBubble()
-
-	slot0.cntTxt.text = slot4 .. "/" .. slot3
-end
-
-function slot0.UpdateBubble(slot0)
-	slot2 = false
-	slot3 = false
-	slot4 = false
-
-	for slot8, slot9 in pairs(slot0.home:GetCatteries()) do
-		if slot9:ExistCleanOP() and slot9:CommanderCanClean() then
-			slot2 = true
-		end
-
-		if slot9:ExiseFeedOP() and slot9:CommanderCanFeed() then
-			slot3 = true
-		end
-
-		if slot9:ExistPlayOP() and slot9:CommanderCanPlay() then
-			slot4 = true
+		if not iter_29_1:IsLocked() then
+			var_29_2 = var_29_2 + 1
 		end
 	end
 
-	setActive(slot0.bubbleTF, slot2 or slot3 or slot4)
+	arg_29_0.UIlist:align(#arg_29_0.displays)
+	arg_29_0:UpdateBubble()
 
-	if LeanTween.isTweening(slot0.bubbleTF.gameObject) then
-		LeanTween.cancel(slot0.bubbleTF.gameObject)
+	arg_29_0.cntTxt.text = var_29_3 .. "/" .. var_29_2
+end
+
+function var_0_0.UpdateBubble(arg_30_0)
+	local var_30_0 = arg_30_0.home:GetCatteries()
+	local var_30_1 = false
+	local var_30_2 = false
+	local var_30_3 = false
+
+	for iter_30_0, iter_30_1 in pairs(var_30_0) do
+		if iter_30_1:ExistCleanOP() and iter_30_1:CommanderCanClean() then
+			var_30_1 = true
+		end
+
+		if iter_30_1:ExiseFeedOP() and iter_30_1:CommanderCanFeed() then
+			var_30_2 = true
+		end
+
+		if iter_30_1:ExistPlayOP() and iter_30_1:CommanderCanPlay() then
+			var_30_3 = true
+		end
 	end
 
-	if slot5 then
-		floatAni(slot0.bubbleTF, 20, 0.5, -1)
-		setActive(slot0.bubbleClean, slot2)
-		setActive(slot0.bubbleFeed, slot3 and not slot2)
-		setActive(slot0.bubblePlay, slot4 and not slot3)
+	local var_30_4 = var_30_1 or var_30_2 or var_30_3
+
+	setActive(arg_30_0.bubbleTF, var_30_4)
+
+	if LeanTween.isTweening(arg_30_0.bubbleTF.gameObject) then
+		LeanTween.cancel(arg_30_0.bubbleTF.gameObject)
+	end
+
+	if var_30_4 then
+		floatAni(arg_30_0.bubbleTF, 20, 0.5, -1)
+		setActive(arg_30_0.bubbleClean, var_30_1)
+		setActive(arg_30_0.bubbleFeed, var_30_2 and not var_30_1)
+		setActive(arg_30_0.bubblePlay, var_30_3 and not var_30_2)
 	end
 end
 
-function slot0.willExit(slot0)
-	slot0.UIMgr:UnblurPanel(slot0._tf, slot0.UIMgr._normalUIMain)
+function var_0_0.willExit(arg_31_0)
+	arg_31_0.UIMgr:UnblurPanel(arg_31_0._tf, arg_31_0.UIMgr._normalUIMain)
 
-	if LeanTween.isTweening(slot0.bubbleTF.gameObject) then
-		LeanTween.cancel(slot0.bubbleTF.gameObject)
+	if LeanTween.isTweening(arg_31_0.bubbleTF.gameObject) then
+		LeanTween.cancel(arg_31_0.bubbleTF.gameObject)
 	end
 
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Dispose()
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.cards) do
+		iter_31_1:Dispose()
 	end
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_31_0.timer then
+		arg_31_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_31_0.timer = nil
 	end
 
-	slot0.cards = nil
+	arg_31_0.cards = nil
 
-	slot0.flower:Dispose()
+	arg_31_0.flower:Dispose()
 
-	slot0.flower = nil
+	arg_31_0.flower = nil
 
-	slot0.catteryDescPage:Destroy()
+	arg_31_0.catteryDescPage:Destroy()
 
-	slot0.catteryDescPage = nil
+	arg_31_0.catteryDescPage = nil
 
-	slot0.levelInfoPage:Destroy()
+	arg_31_0.levelInfoPage:Destroy()
 
-	slot0.levelInfoPage = nil
+	arg_31_0.levelInfoPage = nil
 
-	slot0.awardDisplayView:Destroy()
+	arg_31_0.awardDisplayView:Destroy()
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.catteryDescPage:GetLoaded() and slot0.catteryDescPage:isShowing() then
-		slot0.catteryDescPage:Hide()
+function var_0_0.onBackPressed(arg_32_0)
+	if arg_32_0.catteryDescPage:GetLoaded() and arg_32_0.catteryDescPage:isShowing() then
+		arg_32_0.catteryDescPage:Hide()
 
 		return
 	end
 
-	if slot0.levelInfoPage:GetLoaded() and slot0.levelInfoPage:isShowing() then
-		slot0.levelInfoPage:Hide()
+	if arg_32_0.levelInfoPage:GetLoaded() and arg_32_0.levelInfoPage:isShowing() then
+		arg_32_0.levelInfoPage:Hide()
 
 		return
 	end
 
-	if slot0.batchSelPage:GetLoaded() and slot0.batchSelPage:isShowing() then
-		slot0.batchSelPage:Hide()
+	if arg_32_0.batchSelPage:GetLoaded() and arg_32_0.batchSelPage:isShowing() then
+		arg_32_0.batchSelPage:Hide()
 	end
 
-	uv0.super.onBackPressed(slot0)
+	var_0_0.super.onBackPressed(arg_32_0)
 end
 
-return slot0
+return var_0_0

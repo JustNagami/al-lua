@@ -1,12 +1,15 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_135 = {}
-slot1 = slot0.word_template_135
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_135 = {}
+
+local var_0_1 = var_0_0.word_template_135
 
 function temp()
-	uv0["惠"] = {
-		["美"] = {
-			["梨"] = {
+	var_0_1.惠 = {
+		美 = {
+			梨 = {
 				this = true
 			}
 		}
@@ -16,8 +19,8 @@ end
 temp()
 
 function temp()
-	uv0["會"] = {
-		["陰"] = {
+	var_0_1.會 = {
+		陰 = {
 			this = true
 		}
 	}
@@ -26,8 +29,8 @@ end
 temp()
 
 function temp()
-	uv0["慧"] = {
-		["网"] = {
+	var_0_1.慧 = {
+		网 = {
 			this = true
 		}
 	}
@@ -36,7 +39,7 @@ end
 temp()
 
 function temp()
-	uv0["噦"] = {
+	var_0_1.噦 = {
 		this = {
 			this = true
 		}
@@ -46,7 +49,7 @@ end
 temp()
 
 function temp()
-	uv0["繢"] = {
+	var_0_1.繢 = {
 		this = {
 			this = true
 		}
@@ -56,15 +59,15 @@ end
 temp()
 
 function temp()
-	uv0["昏"] = {
-		["迷"] = {
-			["圖"] = {
-				["騰"] = {
+	var_0_1.昏 = {
+		迷 = {
+			圖 = {
+				騰 = {
 					this = true
 				}
 			}
 		},
-		["药"] = {
+		药 = {
 			this = true
 		}
 	}
@@ -73,21 +76,21 @@ end
 temp()
 
 function temp()
-	uv0["婚"] = {
-		["嫁"] = {
-			["业"] = {
-				["务"] = {
+	var_0_1.婚 = {
+		嫁 = {
+			业 = {
+				务 = {
 					this = true
 				}
 			}
 		},
-		["姻"] = {
-			["改"] = {
-				["革"] = {
-					["同"] = {
-						["居"] = {
-							["成"] = {
-								["风"] = {
+		姻 = {
+			改 = {
+				革 = {
+					同 = {
+						居 = {
+							成 = {
+								风 = {
 									this = true
 								}
 							}

@@ -1,69 +1,74 @@
-slot0 = class("SkinAtlasBgView")
+﻿local var_0_0 = class("SkinAtlasBgView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0._go = slot1.gameObject
-	slot0.isSpecialBg = false
-	slot0.isloading = false
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0._go = arg_1_1.gameObject
+	arg_1_0.isSpecialBg = false
+	arg_1_0.isloading = false
 end
 
-function slot0.getUIName(slot0)
-	return slot0.__cname
+function var_0_0.getUIName(arg_2_0)
+	return arg_2_0.__cname
 end
 
-function slot0.Init(slot0, slot1, slot2, slot3)
-	slot0.ship = slot1
+function var_0_0.Init(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_3_0.ship = arg_3_1
 
-	slot0:ClearSpecailBg()
-	slot0:SetSpecailBg(slot0:getShipBgPrint(slot2), slot3)
+	arg_3_0:ClearSpecailBg()
+
+	local var_3_0 = arg_3_0:getShipBgPrint(arg_3_2)
+
+	arg_3_0:SetSpecailBg(var_3_0, arg_3_3)
 end
 
-function slot0.getShipBgPrint(slot0, slot1)
-	if not slot1 then
-		return slot0.ship:rarity2bgPrintForGet()
+function var_0_0.getShipBgPrint(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.ship
+
+	if not arg_4_1 then
+		return var_4_0:rarity2bgPrintForGet()
 	else
-		return slot2:getShipBgPrint()
+		return var_4_0:getShipBgPrint()
 	end
 end
 
-function slot0.SetSpecailBg(slot0, slot1, slot2)
-	slot0.isloading = true
+function var_0_0.SetSpecailBg(arg_5_0, arg_5_1, arg_5_2)
+	arg_5_0.isloading = true
 
-	pg.DynamicBgMgr.GetInstance():LoadBg(slot0, slot1, slot0._tf.parent, slot0._tf, function (slot0)
-		uv0.isSpecialBg = true
-		uv0.isloading = false
-		slot0.transform.localPosition = Vector3(0, 0, 200)
+	pg.DynamicBgMgr.GetInstance():LoadBg(arg_5_0, arg_5_1, arg_5_0._tf.parent, arg_5_0._tf, function(arg_6_0)
+		arg_5_0.isSpecialBg = true
+		arg_5_0.isloading = false
+		arg_6_0.transform.localPosition = Vector3(0, 0, 200)
 
-		if uv1 then
-			uv1()
+		if arg_5_2 then
+			arg_5_2()
 		end
-	end, function ()
-		uv0.isloading = false
+	end, function()
+		arg_5_0.isloading = false
 
-		if uv1 then
-			uv1()
+		if arg_5_2 then
+			arg_5_2()
 		end
 	end)
 end
 
-function slot0.ClearSpecailBg(slot0)
-	if slot0.isSpecialBg then
-		pg.DynamicBgMgr.GetInstance():ClearBg(slot0:getUIName())
+function var_0_0.ClearSpecailBg(arg_8_0)
+	if arg_8_0.isSpecialBg then
+		pg.DynamicBgMgr.GetInstance():ClearBg(arg_8_0:getUIName())
 
-		slot0.isSpecialBg = false
+		arg_8_0.isSpecialBg = false
 	end
 end
 
-function slot0.IsLoading(slot0)
-	return slot0.isloading
+function var_0_0.IsLoading(arg_9_0)
+	return arg_9_0.isloading
 end
 
-function slot0.Clear(slot0)
-	slot0:ClearSpecailBg()
+function var_0_0.Clear(arg_10_0)
+	arg_10_0:ClearSpecailBg()
 end
 
-function slot0.Dispose(slot0)
-	slot0:Clear()
+function var_0_0.Dispose(arg_11_0)
+	arg_11_0:Clear()
 end
 
-return slot0
+return var_0_0

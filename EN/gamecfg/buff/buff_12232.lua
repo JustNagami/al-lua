@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				buff_id = 12233,
+				target = {
+					"TargetAllHelp",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"Cleveland-Chan"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,23 +37,5 @@ return {
 	stack = 1,
 	id = 12232,
 	icon = 12230,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				buff_id = 12233,
-				target = {
-					"TargetAllHelp",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"Cleveland-Chan"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

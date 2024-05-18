@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.strategy_data_template = setmetatable({
 	__name = "strategy_data_template",
 	all = {
@@ -2524,11 +2524,7 @@ pg.base.strategy_data_template = {
 		id = 200394,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 0
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 0\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200396] = {
@@ -2539,11 +2535,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200396,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 1
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 1\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200401] = {
@@ -2554,11 +2546,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200401,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 2
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 2\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200406] = {
@@ -2569,11 +2557,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200406,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 3
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 3\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200411] = {
@@ -2584,11 +2568,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200411,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 4
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 4\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200416] = {
@@ -2599,11 +2579,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200416,
 		icon = "200394",
 		buff_type = 0,
-		desc = [[
-Current Corrosion Level: 5
-Corrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.
-At maximum Corrosion Level, your ships will have reduced SPD and ACC.
-Certain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.]],
+		desc = "Current Corrosion Level: 5\nCorrosion Level increases by 1 every time any of your fleets completes a battle, up to a maximum of 5. During battle, DMG dealt and received by your fleets will be increased depending on Corrosion Level.\nAt maximum Corrosion Level, your ships will have reduced SPD and ACC.\nCertain ships, such as META ships, will not receive the increased DMG taken, reduced SPD, and reduced ACC effects from Corrosion.",
 		arg = {}
 	},
 	[200432] = {
@@ -3142,13 +3118,7 @@ Certain ships, such as META ships, will not receive the increased DMG taken, red
 		id = 200908,
 		icon = "200908",
 		buff_type = 0,
-		desc = [[
-The battle will initiate in challenge mode if your Vanguard consists of only a single ship when the battle starts. This will increase the difficulty, but also increase the score you gain.
-
-- Challenge Mode Details -
-· Enemies deal significantly more DMG and any shields they deploy have infinite HP.
-· The more time passes, the more their DMG dealt increases.
-· The skills "Quick Takeoff" and "Fiercer When Cornered" are rendered ineffective.]],
+		desc = "The battle will initiate in challenge mode if your Vanguard consists of only a single ship when the battle starts. This will increase the difficulty, but also increase the score you gain.\n\n- Challenge Mode Details -\n· Enemies deal significantly more DMG and any shields they deploy have infinite HP.\n· The more time passes, the more their DMG dealt increases.\n· The skills \"Quick Takeoff\" and \"Fiercer When Cornered\" are rendered ineffective.",
 		arg = {}
 	}
 }

@@ -1,4 +1,4 @@
-require("Support/Helpers/LuaSupport")
+﻿require("Support/Helpers/LuaSupport")
 require("Support/Helpers/TableExtension")
 require("Support/Helpers/UnitySupport")
 require("Support/Helpers/MathsSupport")

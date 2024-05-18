@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "tb_12_0",
 	events = {
 		{

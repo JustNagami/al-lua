@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII"
-	},
-	desc_get = "主炮每进行10次攻击，触发专属弹幕-恶毒μII",
-	name = "专属弹幕-恶毒μII",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII",
-	stack = 1,
-	id = 29622,
-	icon = 29620,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -39,5 +25,19 @@ return {
 				countType = 29620
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII"
+	},
+	desc_get = "主炮每进行10次攻击，触发专属弹幕-恶毒μII",
+	name = "专属弹幕-恶毒μII",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行10次攻击，触发专属弹幕-恶毒μII",
+	stack = 1,
+	id = 29622,
+	icon = 29620,
+	last_effect = ""
 }

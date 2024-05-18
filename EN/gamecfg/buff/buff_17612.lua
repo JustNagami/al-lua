@@ -1,4 +1,17 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatioByBulletTorpedo",
+				number = -0.01
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -156,18 +169,5 @@ return {
 	id = 17612,
 	picture = "",
 	last_effect = "",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatioByBulletTorpedo",
-				number = -0.01
-			}
-		}
-	}
+	desc = ""
 }

@@ -1,99 +1,120 @@
-slot0 = class("AvatarFrameAwardCommand", pm.SimpleCommand)
-slot1 = nil
+﻿local var_0_0 = class("AvatarFrameAwardCommand", pm.SimpleCommand)
+local var_0_1
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody() or {}
-	slot3 = slot2.callback
-	slot5 = pg.activity_template[slot2.act_id].type
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody() or {}
+	local var_1_1 = var_1_0.callback
+	local var_1_2 = pg.activity_template[var_1_0.act_id].type
 
 	pg.ConnectionMgr.GetInstance():Send(20205, {
-		act_id = slot2.act_id,
-		task_ids = slot2.task_ids
-	}, 20206, function (slot0)
-		if slot0.result == 0 then
-			if uv0 == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
-				slot3 = Clone(pg.activity_event_avatarframe[pg.activity_template[uv1.act_id].config_id].award_display)[1]
+		act_id = var_1_0.act_id,
+		task_ids = var_1_0.task_ids
+	}, 20206, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			if var_1_2 == ActivityConst.ACTIVITY_TYPE_PT_OTHER then
+				local var_2_0 = pg.activity_template[var_1_0.act_id].config_id
+				local var_2_1 = pg.activity_event_avatarframe[var_2_0]
+				local var_2_2 = Clone(var_2_1.award_display)[1]
+				local var_2_3 = 0
 
-				for slot8, slot9 in ipairs(uv1.task_ids) do
-					slot4 = 0 + uv2:getAwardNum(slot2, slot9)
+				for iter_2_0, iter_2_1 in ipairs(var_1_0.task_ids) do
+					var_2_3 = var_2_3 + arg_1_0:getAwardNum(var_2_1, iter_2_1)
 				end
 
-				if getProxy(ActivityProxy):RawGetActivityById(uv1.act_id) then
-					slot5.data1 = slot5.data1 + slot4
+				local var_2_4 = getProxy(ActivityProxy):RawGetActivityById(var_1_0.act_id)
+
+				if var_2_4 then
+					var_2_4.data1 = var_2_4.data1 + var_2_3
 				end
 
-				slot3[3] = slot4
+				var_2_2[3] = var_2_3
 
-				uv2:sendNotification(GAME.SUBMIT_AVATAR_TASK_DONE, {
+				local var_2_5 = Drop.Create(var_2_2)
+
+				arg_1_0:sendNotification(GAME.SUBMIT_AVATAR_TASK_DONE, {
 					awards = {
-						Drop.Create(slot3)
+						var_2_5
 					},
-					callback = uv3
+					callback = var_1_1
 				})
 			else
-				slot1 = PlayerConst.addTranDrop(slot0.award_list)
-				slot2 = {}
+				local var_2_6 = PlayerConst.addTranDrop(arg_2_0.award_list)
+				local var_2_7 = {}
 
-				for slot6 = 1, #uv1.task_ids do
-					slot8 = pg.task_data_template[uv1.task_ids[slot6]]
-					slot9 = slot8.award_display
-					slot11 = slot8.sub_type
-					slot12 = tonumber(slot8.target_id)
-					slot13 = tonumber(slot8.target_id_2)
-					slot14 = slot8.target_num
+				for iter_2_2 = 1, #var_1_0.task_ids do
+					local var_2_8 = var_1_0.task_ids[iter_2_2]
+					local var_2_9 = pg.task_data_template[var_2_8]
+					local var_2_10 = var_2_9.award_display
+					local var_2_11 = var_2_9.type
+					local var_2_12 = var_2_9.sub_type
+					local var_2_13 = tonumber(var_2_9.target_id)
+					local var_2_14 = tonumber(var_2_9.target_id_2)
+					local var_2_15 = var_2_9.target_num
 
-					if slot8.type == 6 then
-						slot15 = getProxy(ActivityProxy):getActivityById(uv1.act_id)
+					if var_2_11 == 6 then
+						local var_2_16 = getProxy(ActivityProxy):getActivityById(var_1_0.act_id)
 
-						assert(slot15)
+						assert(var_2_16)
 
-						if not table.contains(slot15:GetFinishedTaskIds(), slot7) then
-							table.insert(slot16, slot7)
-							getProxy(ActivityProxy):updateActivity(slot15)
+						local var_2_17 = var_2_16:GetFinishedTaskIds()
+
+						if not table.contains(var_2_17, var_2_8) then
+							table.insert(var_2_17, var_2_8)
+							getProxy(ActivityProxy):updateActivity(var_2_16)
 						end
 					end
 
-					if slot10 == 6 and slot11 == 1006 and pg.activity_drop_type[slot12] and getProxy(ActivityProxy):getActivityById(pg.activity_drop_type[slot12].activity_id) then
-						slot16:subVitemNumber(slot13, slot14)
-						getProxy(ActivityProxy):updateActivity(slot16)
+					if var_2_11 == 6 and var_2_12 == 1006 and pg.activity_drop_type[var_2_13] then
+						local var_2_18 = pg.activity_drop_type[var_2_13].activity_id
+						local var_2_19 = getProxy(ActivityProxy):getActivityById(var_2_18)
+
+						if var_2_19 then
+							var_2_19:subVitemNumber(var_2_14, var_2_15)
+							getProxy(ActivityProxy):updateActivity(var_2_19)
+						end
 					end
 				end
 
-				for slot6, slot7 in ipairs(slot0.award_list) do
-					table.insert(slot2, Drop.New({
-						type = slot7.type,
-						id = slot7.id,
-						count = slot7.number
-					}))
+				for iter_2_3, iter_2_4 in ipairs(arg_2_0.award_list) do
+					local var_2_20 = Drop.New({
+						type = iter_2_4.type,
+						id = iter_2_4.id,
+						count = iter_2_4.number
+					})
+
+					table.insert(var_2_7, var_2_20)
 				end
 
-				uv2:sendNotification(GAME.SUBMIT_AVATAR_TASK_DONE, {
-					awards = slot2,
-					callback = uv3
+				arg_1_0:sendNotification(GAME.SUBMIT_AVATAR_TASK_DONE, {
+					awards = var_2_7,
+					callback = var_1_1
 				})
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 	end)
 end
 
-function slot0.getAwardNum(slot0, slot1, slot2)
-	for slot6 = 1, #AvatarFrameTask.fillter_task_type do
-		for slot12, slot13 in ipairs(slot1[AvatarFrameTask.fillter_task_type[slot6]]) do
-			if slot2 == slot13[1] then
-				if slot7 == AvatarFrameTask.type_task_level then
-					return slot13[6]
-				elseif slot7 == AvatarFrameTask.type_task_ship then
-					return slot13[4]
+function var_0_0.getAwardNum(arg_3_0, arg_3_1, arg_3_2)
+	for iter_3_0 = 1, #AvatarFrameTask.fillter_task_type do
+		local var_3_0 = AvatarFrameTask.fillter_task_type[iter_3_0]
+		local var_3_1 = arg_3_1[var_3_0]
+
+		for iter_3_1, iter_3_2 in ipairs(var_3_1) do
+			if arg_3_2 == iter_3_2[1] then
+				if var_3_0 == AvatarFrameTask.type_task_level then
+					return iter_3_2[6]
+				elseif var_3_0 == AvatarFrameTask.type_task_ship then
+					return iter_3_2[4]
 				end
 			end
 		end
 	end
 
-	print("找不到taskId:" .. slot2)
+	print("找不到taskId:" .. arg_3_2)
 
 	return 0
 end
 
-return slot0
+return var_0_0

@@ -1,59 +1,63 @@
-slot0 = class("EffectRedDotNode", import(".RedDotNode"))
+﻿local var_0_0 = class("EffectRedDotNode", import(".RedDotNode"))
 
-function slot0.SetData(slot0, slot1)
-	if IsNil(slot0.gameObject) or not isActive(slot0.gameObject) then
+function var_0_0.SetData(arg_1_0, arg_1_1)
+	if IsNil(arg_1_0.gameObject) or not isActive(arg_1_0.gameObject) then
 		return
 	end
 
-	slot2 = nil
+	local var_1_0
 
-	if slot0.gameObject.childCount > 0 then
-		slot2 = slot0.gameObject:GetChild(0)
+	if arg_1_0.gameObject.childCount > 0 then
+		var_1_0 = arg_1_0.gameObject:GetChild(0)
 	end
 
-	if slot2 then
-		setActive(slot2, slot1)
+	if var_1_0 then
+		setActive(var_1_0, arg_1_1)
 	end
 
-	if slot0.gameObject:Find("tip") then
-		setActive(slot3, slot1)
+	local var_1_1 = arg_1_0.gameObject:Find("tip")
 
-		if slot1 then
-			slot0:StartAnimation(slot3)
+	if var_1_1 then
+		setActive(var_1_1, arg_1_1)
+
+		if arg_1_1 then
+			arg_1_0:StartAnimation(var_1_1)
 		end
 	end
 end
 
-function slot0.StartAnimation(slot0, slot1)
-	slot0:RemoveTimer()
+function var_0_0.StartAnimation(arg_2_0, arg_2_1)
+	arg_2_0:RemoveTimer()
 
-	slot1:GetComponent(typeof(Animator)).enabled = true
-	slot0.timer = Timer.New(function ()
-		if not uv0 then
+	local var_2_0 = arg_2_1:GetComponent(typeof(Animator))
+
+	var_2_0.enabled = true
+	arg_2_0.timer = Timer.New(function()
+		if not var_2_0 then
 			return
 		end
 
-		uv0.enabled = false
-		uv0.gameObject.transform.localEulerAngles = Vector3.zero
+		var_2_0.enabled = false
+		var_2_0.gameObject.transform.localEulerAngles = Vector3.zero
 	end, 5, 1)
 
-	slot0.timer:Start()
+	arg_2_0.timer:Start()
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_4_0)
+	if arg_4_0.timer then
+		arg_4_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_4_0.timer = nil
 	end
 end
 
-function slot0.Remove(slot0)
-	slot0:RemoveTimer()
+function var_0_0.Remove(arg_5_0)
+	arg_5_0:RemoveTimer()
 end
 
-function slot0.Puase(slot0)
-	slot0:RemoveTimer()
+function var_0_0.Puase(arg_6_0)
+	arg_6_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

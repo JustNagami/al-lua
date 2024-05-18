@@ -1,50 +1,49 @@
-slot0 = class("StarSeaFramePage", import(".TemplatePage.NewFrameTemplatePage"))
+﻿local var_0_0 = class("StarSeaFramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-function slot0.OnFirstFlush(slot0)
-	for slot4, slot5 in ipairs(slot0.phases) do
-		setActive(slot5, true)
+function var_0_0.OnFirstFlush(arg_1_0)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0.phases) do
+		setActive(iter_1_1, true)
 
-		GetOrAddComponent(slot5, typeof(CanvasGroup)).alpha = 0
+		GetOrAddComponent(iter_1_1, typeof(CanvasGroup)).alpha = 0
 	end
 
-	uv0.super.OnFirstFlush(slot0)
-	GetComponent(slot0:findTF("AD/switcher/phase2/Image"), typeof(Image)):SetNativeSize()
-	GetComponent(slot0:findTF("AD/switcher/phase1/Image"), typeof(Image)):SetNativeSize()
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	GetComponent(arg_1_0:findTF("AD/switcher/phase2/Image"), typeof(Image)):SetNativeSize()
+	GetComponent(arg_1_0:findTF("AD/switcher/phase1/Image"), typeof(Image)):SetNativeSize()
 end
 
-function slot0.Switch(slot0, slot1)
-	slot0.isSwitching = true
+function var_0_0.Switch(arg_2_0, arg_2_1)
+	arg_2_0.isSwitching = true
 
-	setToggleEnabled(slot0.switchBtn, false)
+	setToggleEnabled(arg_2_0.switchBtn, false)
 
-	slot2, slot3 = nil
+	local var_2_0
+	local var_2_1
 
-	if slot1 then
-		slot3 = slot0.phases[2]
-		slot2 = slot0.phases[1]
+	if arg_2_1 then
+		var_2_0, var_2_1 = arg_2_0.phases[1], arg_2_0.phases[2]
 	else
-		slot3 = slot0.phases[1]
-		slot2 = slot0.phases[2]
+		var_2_0, var_2_1 = arg_2_0.phases[2], arg_2_0.phases[1]
 	end
 
-	slot4 = slot2.localPosition
-	slot5 = slot3.localPosition
+	local var_2_2 = var_2_0.localPosition
+	local var_2_3 = var_2_1.localPosition
 
-	slot3:SetAsLastSibling()
+	var_2_1:SetAsLastSibling()
 
-	slot6 = {}
+	local var_2_4 = {}
 
-	table.insert(slot6, function (slot0)
-		LeanTween.moveLocal(go(uv0), uv1, 0.4)
-		LeanTween.alphaCanvas(GetOrAddComponent(uv0, typeof(CanvasGroup)), 0, 0.4)
-		LeanTween.moveLocal(go(uv2), uv3, 0.4)
-		LeanTween.alphaCanvas(GetOrAddComponent(uv2, typeof(CanvasGroup)), 1, 0.4):setOnComplete(System.Action(slot0))
+	table.insert(var_2_4, function(arg_3_0)
+		LeanTween.moveLocal(go(var_2_0), var_2_3, 0.4)
+		LeanTween.alphaCanvas(GetOrAddComponent(var_2_0, typeof(CanvasGroup)), 0, 0.4)
+		LeanTween.moveLocal(go(var_2_1), var_2_2, 0.4)
+		LeanTween.alphaCanvas(GetOrAddComponent(var_2_1, typeof(CanvasGroup)), 1, 0.4):setOnComplete(System.Action(arg_3_0))
 	end)
-	seriesAsync(slot6, function ()
-		uv0.isSwitching = nil
+	seriesAsync(var_2_4, function()
+		arg_2_0.isSwitching = nil
 
-		setToggleEnabled(uv0.switchBtn, true)
+		setToggleEnabled(arg_2_0.switchBtn, true)
 	end)
 end
 
-return slot0
+return var_0_0

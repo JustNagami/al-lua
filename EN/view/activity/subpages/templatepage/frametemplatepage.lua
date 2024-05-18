@@ -1,128 +1,138 @@
-slot0 = class("FrameTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("FrameTemplatePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.battleBtn = slot0:findTF("battle_btn", slot0.bg)
-	slot0.getBtn = slot0:findTF("get_btn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("got_btn", slot0.bg)
-	slot0.switchBtn = slot0:findTF("AD/switch_btn")
-	slot0.phases = {
-		slot0:findTF("AD/switcher/phase1"),
-		slot0:findTF("AD/switcher/phase2")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.battleBtn = arg_1_0:findTF("battle_btn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("get_btn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("got_btn", arg_1_0.bg)
+	arg_1_0.switchBtn = arg_1_0:findTF("AD/switch_btn")
+	arg_1_0.phases = {
+		arg_1_0:findTF("AD/switcher/phase1"),
+		arg_1_0:findTF("AD/switcher/phase2")
 	}
-	slot0.bar = slot0:findTF("AD/switcher/phase2/Image/barContent/bar")
-	slot0.step = slot0:findTF("AD/switcher/phase2/Image/step")
-	slot0.progress = slot0:findTF("AD/switcher/phase2/Image/progress")
+	arg_1_0.bar = arg_1_0:findTF("AD/switcher/phase2/Image/barContent/bar")
+	arg_1_0.step = arg_1_0:findTF("AD/switcher/phase2/Image/step")
+	arg_1_0.progress = arg_1_0:findTF("AD/switcher/phase2/Image/progress")
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.ptData then
-		slot0.ptData:Update(slot0.activity)
+function var_0_0.OnDataSetting(arg_2_0)
+	if arg_2_0.ptData then
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		slot0.ptData = ActivityPtData.New(slot0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 			page = "activity"
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0 = {}
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		local var_5_0 = {}
+		local var_5_1 = arg_3_0.ptData:GetAward()
+		local var_5_2 = getProxy(PlayerProxy):getData()
 
-		if uv0.ptData:GetAward().type == DROP_TYPE_RESOURCE and slot1.id == PlayerConst.ResGold and getProxy(PlayerProxy):getData():GoldMax(slot1.count) then
-			table.insert(slot0, function (slot0)
+		if var_5_1.type == DROP_TYPE_RESOURCE and var_5_1.id == PlayerConst.ResGold and var_5_2:GoldMax(var_5_1.count) then
+			table.insert(var_5_0, function(arg_6_0)
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					content = i18n("gold_max_tip_title") .. i18n("award_max_warning"),
-					onYes = slot0
+					onYes = arg_6_0
 				})
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			slot0, slot1 = uv0.ptData:GetResProgress()
+		seriesAsync(var_5_0, function()
+			local var_7_0, var_7_1 = arg_3_0.ptData:GetResProgress()
 
-			uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			arg_3_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 				cmd = 1,
-				activity_id = uv0.ptData:GetId(),
-				arg1 = slot1
+				activity_id = arg_3_0.ptData:GetId(),
+				arg1 = var_7_1
 			})
 		end)
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.switchBtn, function (slot0)
-		if uv0.isSwitching then
+	onToggle(arg_3_0, arg_3_0.switchBtn, function(arg_8_0)
+		if arg_3_0.isSwitching then
 			return
 		end
 
-		uv0.inPhase2 = slot0
+		arg_3_0.inPhase2 = arg_8_0
 
-		uv0:Switch(slot0)
+		arg_3_0:Switch(arg_8_0)
 	end, SFX_PANEL)
 
-	slot2 = pg.TimeMgr.GetInstance():inTime(slot0.activity:getConfig("config_client"))
+	local var_3_0 = arg_3_0.activity:getConfig("config_client")
+	local var_3_1 = pg.TimeMgr.GetInstance():inTime(var_3_0)
 
-	setActive(slot0.battleBtn, slot2)
+	setActive(arg_3_0.battleBtn, var_3_1)
 
-	slot0.inPhase2 = slot2
+	arg_3_0.inPhase2 = var_3_1
 
-	if slot2 then
-		triggerToggle(slot0.switchBtn, true)
+	if var_3_1 then
+		triggerToggle(arg_3_0.switchBtn, true)
 	end
 end
 
-function slot0.OnUpdateFlush(slot0)
-	setActive(slot0.getBtn, slot0.ptData:CanGetAward())
-	setActive(slot0.gotBtn, not slot0.ptData:CanGetNextAward())
+function var_0_0.OnUpdateFlush(arg_9_0)
+	local var_9_0 = arg_9_0.ptData:CanGetAward()
+	local var_9_1 = arg_9_0.ptData:CanGetNextAward()
 
-	slot3, slot4, slot5 = slot0.ptData:GetResProgress()
+	setActive(arg_9_0.getBtn, var_9_0)
+	setActive(arg_9_0.gotBtn, not var_9_1)
 
-	setText(slot0.step, slot5 >= 1 and setColorStr(slot3, COLOR_GREEN) or slot3)
-	setText(slot0.progress, "/" .. slot4)
-	setFillAmount(slot0.bar, slot3 / slot4)
-	slot0:UpdateAwardGot()
+	local var_9_2, var_9_3, var_9_4 = arg_9_0.ptData:GetResProgress()
+
+	setText(arg_9_0.step, var_9_4 >= 1 and setColorStr(var_9_2, COLOR_GREEN) or var_9_2)
+	setText(arg_9_0.progress, "/" .. var_9_3)
+	setFillAmount(arg_9_0.bar, var_9_2 / var_9_3)
+	arg_9_0:UpdateAwardGot()
 end
 
-function slot0.Switch(slot0, slot1)
-	slot0.isSwitching = true
-	slot2 = GetOrAddComponent(slot0.phases[1], typeof(CanvasGroup))
+function var_0_0.Switch(arg_10_0, arg_10_1)
+	arg_10_0.isSwitching = true
 
-	slot0.phases[2]:SetAsLastSibling()
-	setActive(slot0.phases[1]:Find("Image"), false)
-	LeanTween.moveLocal(go(slot0.phases[1]), slot0.phases[2].localPosition, 0.4):setOnComplete(System.Action(function ()
-		setActive(uv0.phases[1]:Find("label"), true)
-	end))
-	LeanTween.value(go(slot0.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
-	end))
-	setActive(slot0.phases[2]:Find("Image"), true)
+	local var_10_0 = GetOrAddComponent(arg_10_0.phases[1], typeof(CanvasGroup))
+	local var_10_1 = arg_10_0.phases[1].localPosition
+	local var_10_2 = arg_10_0.phases[2].localPosition
 
-	slot5 = GetOrAddComponent(slot0.phases[2], typeof(CanvasGroup))
+	arg_10_0.phases[2]:SetAsLastSibling()
+	setActive(arg_10_0.phases[1]:Find("Image"), false)
+	LeanTween.moveLocal(go(arg_10_0.phases[1]), var_10_2, 0.4):setOnComplete(System.Action(function()
+		setActive(arg_10_0.phases[1]:Find("label"), true)
+	end))
+	LeanTween.value(go(arg_10_0.phases[1]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_12_0)
+		var_10_0.alpha = arg_12_0
+	end))
+	setActive(arg_10_0.phases[2]:Find("Image"), true)
 
-	LeanTween.value(go(slot0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function (slot0)
-		uv0.alpha = slot0
+	local var_10_3 = GetOrAddComponent(arg_10_0.phases[2], typeof(CanvasGroup))
+
+	LeanTween.value(go(arg_10_0.phases[2]), 0, 1, 0.4):setOnUpdate(System.Action_float(function(arg_13_0)
+		var_10_3.alpha = arg_13_0
 	end))
-	setActive(slot0.phases[2]:Find("label"), false)
-	LeanTween.moveLocal(go(slot0.phases[2]), slot0.phases[1].localPosition, 0.4):setOnComplete(System.Action(function ()
-		uv0.isSwitching = nil
-		uv0.phases[2] = uv0.phases[1]
-		uv0.phases[1] = uv0.phases[2]
+	setActive(arg_10_0.phases[2]:Find("label"), false)
+	LeanTween.moveLocal(go(arg_10_0.phases[2]), var_10_1, 0.4):setOnComplete(System.Action(function()
+		arg_10_0.isSwitching = nil
+		arg_10_0.phases[1], arg_10_0.phases[2] = arg_10_0.phases[2], arg_10_0.phases[1]
 	end))
-	slot0:UpdateAwardGot()
+	arg_10_0:UpdateAwardGot()
 end
 
-function slot0.UpdateAwardGot(slot0)
-	slot2 = not slot0.ptData:CanGetNextAward() and slot0.inPhase2
+function var_0_0.UpdateAwardGot(arg_15_0)
+	local var_15_0 = arg_15_0:findTF("switcher/phase2/got", arg_15_0.bg)
+	local var_15_1 = not arg_15_0.ptData:CanGetNextAward() and arg_15_0.inPhase2
 
-	setActive(slot0:findTF("switcher/phase2/got", slot0.bg), slot2)
+	setActive(var_15_0, var_15_1)
 
-	if slot2 then
-		setActive(slot0.battleBtn, false)
+	if var_15_1 then
+		setActive(arg_15_0.battleBtn, false)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_16_0)
+	return
 end
 
-return slot0
+return var_0_0

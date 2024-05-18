@@ -1,93 +1,96 @@
-slot0 = class("RollingCircleItem")
-slot1 = 73
+﻿local var_0_0 = class("RollingCircleItem")
+local var_0_1 = 73
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.tr = slot1
-	slot0._tr = slot1
-	slot0.id = slot3
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.tr = arg_1_1
+	arg_1_0._tr = arg_1_1
+	arg_1_0.id = arg_1_3
 
-	slot0:SetIndex(slot2)
+	arg_1_0:SetIndex(arg_1_2)
 end
 
-function slot0.GetID(slot0)
-	return slot0.id
+function var_0_0.GetID(arg_2_0)
+	return arg_2_0.id
 end
 
-function slot0.GetIndex(slot0)
-	return slot0.index
+function var_0_0.GetIndex(arg_3_0)
+	return arg_3_0.index
 end
 
-function slot0.SetIndex(slot0, slot1)
-	slot0.index = slot1
-	slot0.tr.gameObject.name = slot1
+function var_0_0.SetIndex(arg_4_0, arg_4_1)
+	arg_4_0.index = arg_4_1
+	arg_4_0.tr.gameObject.name = arg_4_1
 end
 
-function slot0.IsCenter(slot0, slot1)
-	return slot0.index == slot1
+function var_0_0.IsCenter(arg_5_0, arg_5_1)
+	return arg_5_0.index == arg_5_1
 end
 
-function slot0.SetPrev(slot0, slot1)
-	slot0.prev = slot1
+function var_0_0.SetPrev(arg_6_0, arg_6_1)
+	arg_6_0.prev = arg_6_1
 end
 
-function slot0.SetNext(slot0, slot1)
-	slot0.nex = slot1
+function var_0_0.SetNext(arg_7_0, arg_7_1)
+	arg_7_0.nex = arg_7_1
 end
 
-function slot0.Init(slot0)
-	if not slot0.prev then
+function var_0_0.Init(arg_8_0)
+	local var_8_0 = arg_8_0.prev
+
+	if not var_8_0 then
 		return
 	end
 
-	slot2 = slot1:GetLocalposition()
+	local var_8_1 = var_8_0:GetLocalposition()
+	local var_8_2 = var_8_0:GetSpace()
 
-	slot0:UpdateLocalPosition(Vector3(slot2.x, slot2.y - slot1:GetSpace(), 0))
+	arg_8_0:UpdateLocalPosition(Vector3(var_8_1.x, var_8_1.y - var_8_2, 0))
 end
 
-function slot0.GetSpace(slot0)
-	return uv0
+function var_0_0.GetSpace(arg_9_0)
+	return var_0_1
 end
 
-function slot0.GetLocalposition(slot0)
-	return slot0.tr.localPosition
+function var_0_0.GetLocalposition(arg_10_0)
+	return arg_10_0.tr.localPosition
 end
 
-function slot0.UpdateLocalPosition(slot0, slot1)
-	slot0.tr.localPosition = slot1
+function var_0_0.UpdateLocalPosition(arg_11_0, arg_11_1)
+	arg_11_0.tr.localPosition = arg_11_1
 end
 
-function slot0.Record(slot0)
-	slot0.lastIndex = slot0.index
-	slot0.lastLocalPosition = slot0:GetLocalposition()
+function var_0_0.Record(arg_12_0)
+	arg_12_0.lastIndex = arg_12_0.index
+	arg_12_0.lastLocalPosition = arg_12_0:GetLocalposition()
 end
 
-function slot0.GetLastPositionAndIndex(slot0)
-	return slot0.lastLocalPosition, slot0.lastIndex
+function var_0_0.GetLastPositionAndIndex(arg_13_0)
+	return arg_13_0.lastLocalPosition, arg_13_0.lastIndex
 end
 
-function slot0.GoForward(slot0)
-	if slot0.nex then
-		slot1, slot2 = slot0.nex:GetLastPositionAndIndex()
+function var_0_0.GoForward(arg_14_0)
+	if arg_14_0.nex then
+		local var_14_0, var_14_1 = arg_14_0.nex:GetLastPositionAndIndex()
 
-		slot0:SetIndex(slot2)
-		slot0:UpdateLocalPosition(slot1)
+		arg_14_0:SetIndex(var_14_1)
+		arg_14_0:UpdateLocalPosition(var_14_0)
 	end
 end
 
-function slot0.GoBack(slot0)
-	if slot0.prev then
-		slot1, slot2 = slot0.prev:GetLastPositionAndIndex()
+function var_0_0.GoBack(arg_15_0)
+	if arg_15_0.prev then
+		local var_15_0, var_15_1 = arg_15_0.prev:GetLastPositionAndIndex()
 
-		slot0:SetIndex(slot2)
-		slot0:UpdateLocalPosition(slot1)
+		arg_15_0:SetIndex(var_15_1)
+		arg_15_0:UpdateLocalPosition(var_15_0)
 	end
 end
 
-function slot0.Dispose(slot0)
-	Object.Destroy(slot0.tr.gameObject)
+function var_0_0.Dispose(arg_16_0)
+	Object.Destroy(arg_16_0.tr.gameObject)
 
-	slot0.prev = nil
-	slot0.nex = nil
+	arg_16_0.prev = nil
+	arg_16_0.nex = nil
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "在队伍中(存活)时，队伍内所有驱逐、轻巡的雷击和装填属性提高3.0%（满级15.0%）",
-	name = "水雷战队",
-	init_effect = "",
-	time = 0,
-	color = "yellow",
-	picture = "",
-	desc = "在队伍中(存活)时，队伍内所有驱逐、轻巡的雷击和装填属性提高3.0%（满级15.0%）",
-	stack = 1,
-	id = 1091,
-	icon = 1090,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -66,5 +45,26 @@ return {
 				target = "TargetPlayerByType"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "在队伍中(存活)时，队伍内所有驱逐、轻巡的雷击和装填属性提高3.0%（满级15.0%）",
+	name = "水雷战队",
+	init_effect = "",
+	time = 0,
+	color = "yellow",
+	picture = "",
+	desc = "在队伍中(存活)时，队伍内所有驱逐、轻巡的雷击和装填属性提高3.0%（满级15.0%）",
+	stack = 1,
+	id = 1091,
+	icon = 1090,
+	last_effect = ""
 }

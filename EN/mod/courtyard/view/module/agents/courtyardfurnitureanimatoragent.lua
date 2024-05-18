@@ -1,117 +1,121 @@
-slot0 = class("CourtYardFurnitureAnimatorAgent", import(".CourtYardAgent"))
+﻿local var_0_0 = class("CourtYardFurnitureAnimatorAgent", import(".CourtYardAgent"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.maskSpineAnimUIs = {}
+	arg_1_0.maskSpineAnimUIs = {}
 
-	for slot5, slot6 in pairs(slot0.masks) do
-		table.insert(slot0.maskSpineAnimUIs, GetOrAddComponent(slot6:Find("spine"), typeof(SpineAnimUI)))
+	for iter_1_0, iter_1_1 in pairs(arg_1_0.masks) do
+		local var_1_0 = GetOrAddComponent(iter_1_1:Find("spine"), typeof(SpineAnimUI))
+
+		table.insert(arg_1_0.maskSpineAnimUIs, var_1_0)
 	end
 
-	slot0.spineTF = slot0._tf:Find("spine_icon")
-	slot0.spineAnimUI = GetOrAddComponent(slot0.spineTF:Find("spine"), typeof(SpineAnimUI))
+	arg_1_0.spineTF = arg_1_0._tf:Find("spine_icon")
+	arg_1_0.spineAnimUI = GetOrAddComponent(arg_1_0.spineTF:Find("spine"), typeof(SpineAnimUI))
 
-	slot0:SetState(CourtYardFurniture.STATE_IDLE)
+	arg_1_0:SetState(CourtYardFurniture.STATE_IDLE)
 end
 
-function slot0.State2Action(slot0, slot1)
-	if slot1 == CourtYardFurniture.STATE_IDLE then
-		return slot0.data:GetFirstSlot():GetSpineDefaultAction(), true
-	elseif slot1 == CourtYardFurniture.STATE_TOUCH then
-		return slot0.data:GetTouchAction()
-	elseif slot1 == CourtYardFurniture.STATE_TOUCH_PREPARE then
-		return slot0.data:GetTouchPrepareAction()
-	elseif slot1 == CourtYardFurniture.STATE_PLAY_MUSIC then
-		return slot0.data:GetMusicData().action, true
+function var_0_0.State2Action(arg_2_0, arg_2_1)
+	if arg_2_1 == CourtYardFurniture.STATE_IDLE then
+		return arg_2_0.data:GetFirstSlot():GetSpineDefaultAction(), true
+	elseif arg_2_1 == CourtYardFurniture.STATE_TOUCH then
+		return arg_2_0.data:GetTouchAction()
+	elseif arg_2_1 == CourtYardFurniture.STATE_TOUCH_PREPARE then
+		return arg_2_0.data:GetTouchPrepareAction()
+	elseif arg_2_1 == CourtYardFurniture.STATE_PLAY_MUSIC then
+		return arg_2_0.data:GetMusicData().action, true
 	end
 end
 
-function slot0.SetState(slot0, slot1)
-	slot2, slot3 = slot0:State2Action(slot1)
+function var_0_0.SetState(arg_3_0, arg_3_1)
+	local var_3_0, var_3_1 = arg_3_0:State2Action(arg_3_1)
 
-	if not slot2 or slot2 == "" then
+	if not var_3_0 or var_3_0 == "" then
 		return
 	end
 
-	slot0:_PlayAction(slot2, slot3, function ()
-		uv0:OnAnimtionFinish(uv1)
+	arg_3_0:_PlayAction(var_3_0, var_3_1, function()
+		arg_3_0:OnAnimtionFinish(arg_3_1)
 	end)
 
-	if slot1 == CourtYardFurniture.STATE_IDLE then
-		for slot7, slot8 in ipairs(slot0.maskSpineAnimUIs) do
-			slot8:SetAction(slot2, 0)
+	if arg_3_1 == CourtYardFurniture.STATE_IDLE then
+		for iter_3_0, iter_3_1 in ipairs(arg_3_0.maskSpineAnimUIs) do
+			iter_3_1:SetAction(var_3_0, 0)
 		end
 	end
 end
 
-function slot0.GetNormalAnimationName(slot0)
-	return slot0:State2Action(CourtYardFurniture.STATE_IDLE)
+function var_0_0.GetNormalAnimationName(arg_5_0)
+	return arg_5_0:State2Action(CourtYardFurniture.STATE_IDLE)
 end
 
-function slot0.RestartAnimation(slot0, slot1)
-	slot0.spineAnimUI:SetAction(slot1, 0)
+function var_0_0.RestartAnimation(arg_6_0, arg_6_1)
+	arg_6_0.spineAnimUI:SetAction(arg_6_1, 0)
 end
 
-function slot0._PlayAction(slot0, slot1, slot2, slot3)
-	slot0.spineAnimUI:SetActionCallBack(not slot2 and function (slot0)
-		if slot0 == "finish" then
-			uv0.spineAnimUI:SetActionCallBack(nil)
-			uv1()
+function var_0_0._PlayAction(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	local var_7_0 = not arg_7_2 and function(arg_8_0)
+		if arg_8_0 == "finish" then
+			arg_7_0.spineAnimUI:SetActionCallBack(nil)
+			arg_7_3()
 		end
-	end or nil)
-	slot0.spineAnimUI:SetAction(slot1, 0)
+	end or nil
+
+	arg_7_0.spineAnimUI:SetActionCallBack(var_7_0)
+	arg_7_0.spineAnimUI:SetAction(arg_7_1, 0)
 end
 
-function slot0.PlayInteractioAnim(slot0, slot1)
+function var_0_0.PlayInteractioAnim(arg_9_0, arg_9_1)
 	parallelAsync({
-		function (slot0)
-			uv0:PlayMaskAction(uv1, slot0)
+		function(arg_10_0)
+			arg_9_0:PlayMaskAction(arg_9_1, arg_10_0)
 		end,
-		function (slot0)
-			uv0:_PlayAction(uv1, false, slot0)
+		function(arg_11_0)
+			arg_9_0:_PlayAction(arg_9_1, false, arg_11_0)
 		end
-	}, function ()
-		uv0:OnAnimtionFinish(CourtYardFurniture.STATE_INTERACT)
+	}, function()
+		arg_9_0:OnAnimtionFinish(CourtYardFurniture.STATE_INTERACT)
 	end)
 end
 
-function slot0.PlayMaskAction(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.PlayMaskAction(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = {}
 
-	for slot7, slot8 in ipairs(slot0.maskSpineAnimUIs) do
-		table.insert(slot3, function (slot0)
-			uv0:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					uv0:SetActionCallBack(nil)
-					uv1()
+	for iter_13_0, iter_13_1 in ipairs(arg_13_0.maskSpineAnimUIs) do
+		table.insert(var_13_0, function(arg_14_0)
+			iter_13_1:SetActionCallBack(function(arg_15_0)
+				if arg_15_0 == "finish" then
+					iter_13_1:SetActionCallBack(nil)
+					arg_14_0()
 				end
 			end)
-			uv0:SetAction(uv1, 0)
+			iter_13_1:SetAction(arg_13_1, 0)
 		end)
 	end
 
-	parallelAsync(slot3, slot2)
+	parallelAsync(var_13_0, arg_13_2)
 end
 
-function slot0.Dispose(slot0)
-	slot0.spineAnimUI:SetActionCallBack(nil)
-	Object.Destroy(slot0.spineAnimUI)
+function var_0_0.Dispose(arg_16_0)
+	arg_16_0.spineAnimUI:SetActionCallBack(nil)
+	Object.Destroy(arg_16_0.spineAnimUI)
 
-	slot0.spineAnimUI = nil
+	arg_16_0.spineAnimUI = nil
 
-	Object.Destroy(slot0.spineTF.gameObject)
+	Object.Destroy(arg_16_0.spineTF.gameObject)
 
-	slot0.spineTF = nil
+	arg_16_0.spineTF = nil
 
-	for slot4, slot5 in ipairs(slot0.maskSpineAnimUIs) do
-		slot5:SetActionCallBack(nil)
-		Object.Destroy(slot5)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.maskSpineAnimUIs) do
+		iter_16_1:SetActionCallBack(nil)
+		Object.Destroy(iter_16_1)
 	end
 
-	slot0.maskSpineAnimUIs = nil
+	arg_16_0.maskSpineAnimUIs = nil
 
-	uv0.super.Dispose()
+	var_0_0.super.Dispose()
 end
 
-return slot0
+return var_0_0

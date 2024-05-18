@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_resource = {
 	{
 		icon = "10003",
@@ -16,12 +16,7 @@ pg.child_resource = {
 		id = 2,
 		max_value = 100,
 		min_value = 0,
-		desc = [[
-$1
-0 to 19: Depressed - Rewards Gained -40%
-20 to 39: Sad - Rewards Gained -20%
-40 to 59: Normal - Rewards Gained +0%
-60 to 100: Happy - Rewards Gained +40%]]
+		desc = "$1\n0 to 19: Depressed - Rewards Gained -40%\n20 to 39: Sad - Rewards Gained -20%\n40 to 59: Normal - Rewards Gained +0%\n60 to 100: Happy - Rewards Gained +40%"
 	},
 	{
 		icon = "10001",

@@ -1,79 +1,80 @@
-slot0 = class("SpineCellView")
+﻿local var_0_0 = class("SpineCellView")
 
-function slot0.Ctor(slot0)
+function var_0_0.Ctor(arg_1_0)
+	return
 end
 
-function slot0.InitCellTransform(slot0)
-	slot0.tfShip = slot0.tf:Find("ship")
-	slot0.tfShadow = slot0.tf:Find("shadow")
+function var_0_0.InitCellTransform(arg_2_0)
+	arg_2_0.tfShip = arg_2_0.tf:Find("ship")
+	arg_2_0.tfShadow = arg_2_0.tf:Find("shadow")
 end
 
-function slot0.GetRotatePivot(slot0)
-	return slot0.tfShip
+function var_0_0.GetRotatePivot(arg_3_0)
+	return arg_3_0.tfShip
 end
 
-function slot0.GetAction(slot0)
-	return slot0.action
+function var_0_0.GetAction(arg_4_0)
+	return arg_4_0.action
 end
 
-function slot0.SetAction(slot0, slot1)
-	slot0.action = slot1
+function var_0_0.SetAction(arg_5_0, arg_5_1)
+	arg_5_0.action = arg_5_1
 
-	if slot0.spineRole then
-		slot0.spineRole:SetAction(slot1)
+	if arg_5_0.spineRole then
+		arg_5_0.spineRole:SetAction(arg_5_1)
 	end
 end
 
-function slot0.GetSpineRole(slot0)
-	return slot0.spineRole
+function var_0_0.GetSpineRole(arg_6_0)
+	return arg_6_0.spineRole
 end
 
-function slot0.LoadSpine(slot0, slot1, slot2, slot3, slot4)
-	if slot0.lastPrefab == slot1 then
-		if slot0.spineRole:CheckInited() then
-			existCall(slot4)
+function var_0_0.LoadSpine(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
+	if arg_7_0.lastPrefab == arg_7_1 then
+		if arg_7_0.spineRole:CheckInited() then
+			existCall(arg_7_4)
 		end
 
 		return
 	end
 
-	slot0:UnloadSpine()
+	arg_7_0.UnloadSpine(arg_7_0)
 
-	slot0.lastPrefab = slot1
-	slot0.spineRole = SpineRole.New()
+	arg_7_0.lastPrefab = arg_7_1
+	arg_7_0.spineRole = SpineRole.New()
 
-	slot0.spineRole:SetData(slot1, slot3)
-	slot0.spineRole:Load(function ()
-		uv0.spineRole:SetParent(uv0.tfShip)
-		uv0.spineRole:SetRaycastTarget(false)
-		uv0.spineRole:SetLocalPos(Vector3.zero)
+	arg_7_0.spineRole:SetData(arg_7_1, arg_7_3)
+	arg_7_0.spineRole:Load(function()
+		arg_7_0.spineRole:SetParent(arg_7_0.tfShip)
+		arg_7_0.spineRole:SetRaycastTarget(false)
+		arg_7_0.spineRole:SetLocalPos(Vector3.zero)
 
-		uv1 = uv1 and uv1 * 0.01 or 1
+		arg_7_2 = arg_7_2 and arg_7_2 * 0.01 or 1
 
-		uv0.spineRole:SetLocalScale(Vector3(0.4 * uv1, 0.4 * uv1, 1))
-		uv0:SetAction(uv0:GetAction())
-		existCall(uv2)
-	end, nil, slot0.spineRole.ORBIT_KEY_SLG)
+		arg_7_0.spineRole:SetLocalScale(Vector3(0.4 * arg_7_2, 0.4 * arg_7_2, 1))
+		arg_7_0:SetAction(arg_7_0:GetAction())
+		existCall(arg_7_4)
+	end, nil, arg_7_0.spineRole.ORBIT_KEY_SLG)
 end
 
-function slot0.UnloadSpine(slot0)
-	slot0.lastPrefab = nil
+function var_0_0.UnloadSpine(arg_9_0)
+	arg_9_0.lastPrefab = nil
 
-	if slot0.spineRole then
-		slot0.spineRole:Dispose()
+	if arg_9_0.spineRole then
+		arg_9_0.spineRole:Dispose()
 
-		slot0.spineRole = nil
+		arg_9_0.spineRole = nil
 	end
 end
 
-function slot0.SetSpineVisible(slot0, slot1)
-	if slot0.spineRole then
-		slot0.spineRole:SetVisible(slot1)
+function var_0_0.SetSpineVisible(arg_10_0, arg_10_1)
+	if arg_10_0.spineRole then
+		arg_10_0.spineRole:SetVisible(arg_10_1)
 	end
 end
 
-function slot0.ClearSpine(slot0)
-	slot0:UnloadSpine()
+function var_0_0.ClearSpine(arg_11_0)
+	arg_11_0.UnloadSpine(arg_11_0)
 end
 
-return slot0
+return var_0_0

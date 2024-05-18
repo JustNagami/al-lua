@@ -1,91 +1,97 @@
-slot0 = class("GameRoomCoinLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("GameRoomCoinLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "GameRoomCoinUI"
 end
 
-function slot0.init(slot0)
-	slot0.totalCount = 0
-	slot0.curCount = 0
-	slot0.maxCoin = 0
+function var_0_0.init(arg_2_0)
+	arg_2_0.totalCount = 0
+	arg_2_0.curCount = 0
+	arg_2_0.maxCoin = 0
 end
 
-function slot0.didEnter(slot0)
-	slot0.window = findTF(slot0._tf, "ad/window")
-	slot0.text = findTF(slot0._tf, "ad/window/text")
-	slot1 = slot0.contextData.position
-	slot0.window.anchoredPosition = Vector2(slot1[1], slot1[2])
-	slot0.maxCoin = slot0.contextData.coin_max
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.window = findTF(arg_3_0._tf, "ad/window")
+	arg_3_0.text = findTF(arg_3_0._tf, "ad/window/text")
 
-	onButton(slot0, findTF(slot0.window, "add"), function ()
-		if uv0.lockCount then
+	local var_3_0 = arg_3_0.contextData.position
+
+	arg_3_0.window.anchoredPosition = Vector2(var_3_0[1], var_3_0[2])
+	arg_3_0.maxCoin = arg_3_0.contextData.coin_max
+
+	onButton(arg_3_0, findTF(arg_3_0.window, "add"), function()
+		if arg_3_0.lockCount then
 			return
 		end
 
-		uv0.curCount = uv0.curCount + 1
+		arg_3_0.curCount = arg_3_0.curCount + 1
 
-		uv0:updateCount()
+		arg_3_0:updateCount()
 	end)
-	onButton(slot0, findTF(slot0.window, "sub"), function ()
-		if uv0.lockCount then
+	onButton(arg_3_0, findTF(arg_3_0.window, "sub"), function()
+		if arg_3_0.lockCount then
 			return
 		end
 
-		uv0.curCount = uv0.curCount - 1
+		arg_3_0.curCount = arg_3_0.curCount - 1
 
-		uv0:updateCount()
+		arg_3_0:updateCount()
 	end)
 
-	if getProxy(GameRoomProxy):lastMonthlyTicket() == 0 or slot2:lastTicketMax() == 0 then
-		slot0.curCount = 0
-		slot0.lockCount = true
+	local var_3_1 = getProxy(GameRoomProxy)
+
+	if var_3_1:lastMonthlyTicket() == 0 or var_3_1:lastTicketMax() == 0 then
+		arg_3_0.curCount = 0
+		arg_3_0.lockCount = true
 	else
-		slot0.curCount = 1
-		slot0.lockCount = false
+		arg_3_0.curCount = 1
+		arg_3_0.lockCount = false
 	end
 
-	slot0:updateUI()
+	arg_3_0:updateUI()
 end
 
-function slot0.changeVisible(slot0, slot1)
-	setActive(slot0.window, slot1)
-	slot0:updateUI()
+function var_0_0.changeVisible(arg_6_0, arg_6_1)
+	setActive(arg_6_0.window, arg_6_1)
+	arg_6_0:updateUI()
 end
 
-function slot0.updateUI(slot0)
-	slot0:updateCoin()
-	slot0:updateCount()
+function var_0_0.updateUI(arg_7_0)
+	arg_7_0:updateCoin()
+	arg_7_0:updateCount()
 end
 
-function slot0.updateCoin(slot0)
-	slot0.totalCount = getProxy(GameRoomProxy):getCoin() or 0
+function var_0_0.updateCoin(arg_8_0)
+	arg_8_0.totalCount = getProxy(GameRoomProxy):getCoin() or 0
 
-	if slot0.totalCount < slot0.curCount then
-		slot0.curCount = 0
+	if arg_8_0.curCount > arg_8_0.totalCount then
+		arg_8_0.curCount = 0
 	end
 end
 
-function slot0.updateCount(slot0)
-	if slot0.maxCoin < slot0.curCount then
-		slot0.curCount = slot0.maxCoin
+function var_0_0.updateCount(arg_9_0)
+	if arg_9_0.curCount > arg_9_0.maxCoin then
+		arg_9_0.curCount = arg_9_0.maxCoin
 	end
 
-	if slot0.totalCount < slot0.curCount then
-		slot0.curCount = slot0.totalCount
+	if arg_9_0.curCount > arg_9_0.totalCount then
+		arg_9_0.curCount = arg_9_0.totalCount
 	end
 
-	if slot0.curCount < 0 then
-		slot0.curCount = 0
+	if arg_9_0.curCount < 0 then
+		arg_9_0.curCount = 0
 	end
 
-	setText(slot0.text, slot0.curCount .. "/" .. slot0.totalCount)
-	slot0:emit(GameRoomCoinMediator.CHANGE_COIN_NUM, slot0.curCount)
+	setText(arg_9_0.text, arg_9_0.curCount .. "/" .. arg_9_0.totalCount)
+	arg_9_0:emit(GameRoomCoinMediator.CHANGE_COIN_NUM, arg_9_0.curCount)
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_10_0)
+	return
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_11_0)
+	return
 end
 
-return slot0
+return var_0_0

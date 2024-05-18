@@ -1,12 +1,12 @@
-slot0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
-slot1 = Mathf
+﻿local var_0_0 = class("FireworkFactoryView", import("..BaseMiniGameView"))
+local var_0_1 = Mathf
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "FireworkFactoryUI"
 end
 
-slot2 = 50
-slot3 = {
+local var_0_2 = 50
+local var_0_3 = {
 	{
 		color = "FFD26FFF",
 		name = "na"
@@ -32,252 +32,265 @@ slot3 = {
 		name = "cu"
 	}
 }
-slot4 = {
+local var_0_4 = {
 	"s",
 	"a",
 	"b",
 	"c"
 }
 
-function slot0.TransformColor(slot0)
-	return Color.New(tonumber(string.sub(slot0, 1, 2), 16) / 255, tonumber(string.sub(slot0, 3, 4), 16) / 255, tonumber(string.sub(slot0, 5, 6), 16) / 255)
+function var_0_0.TransformColor(arg_2_0)
+	local var_2_0 = tonumber(string.sub(arg_2_0, 1, 2), 16)
+	local var_2_1 = tonumber(string.sub(arg_2_0, 3, 4), 16)
+	local var_2_2 = tonumber(string.sub(arg_2_0, 5, 6), 16)
+
+	return Color.New(var_2_0 / 255, var_2_1 / 255, var_2_2 / 255)
 end
 
-function slot0.init(slot0)
-	slot0.top = slot0:findTF("top")
-	slot0.plate = slot0:findTF("plate")
-	slot0.storage = slot0:findTF("storage")
-	slot0.dispenseView = slot0:findTF("top/dispenseView")
+function var_0_0.init(arg_3_0)
+	arg_3_0.top = arg_3_0:findTF("top")
+	arg_3_0.plate = arg_3_0:findTF("plate")
+	arg_3_0.storage = arg_3_0:findTF("storage")
+	arg_3_0.dispenseView = arg_3_0:findTF("top/dispenseView")
 
-	setActive(slot0.dispenseView, false)
+	setActive(arg_3_0.dispenseView, false)
 
-	slot0.resultWindow = slot0:findTF("top/resultwindow")
+	arg_3_0.resultWindow = arg_3_0:findTF("top/resultwindow")
 
-	setActive(slot0.resultWindow, false)
+	setActive(arg_3_0.resultWindow, false)
 
-	slot0.btn_back = slot0.top:Find("noAdaptPanel/back")
-	slot0.btn_help = slot0.top:Find("noAdaptPanel/title/help")
-	slot0.timesText = slot0.top:Find("times/text")
-	slot0.ballPlate = slot0.plate:Find("ball_plate")
-	slot0.plateRings = {}
+	arg_3_0.btn_back = arg_3_0.top:Find("noAdaptPanel/back")
+	arg_3_0.btn_help = arg_3_0.top:Find("noAdaptPanel/title/help")
+	arg_3_0.timesText = arg_3_0.top:Find("times/text")
+	arg_3_0.ballPlate = arg_3_0.plate:Find("ball_plate")
+	arg_3_0.plateRings = {}
 
-	for slot4 = 1, 3 do
-		table.insert(slot0.plateRings, slot0.ballPlate:GetChild(slot4))
+	for iter_3_0 = 1, 3 do
+		table.insert(arg_3_0.plateRings, arg_3_0.ballPlate:GetChild(iter_3_0))
 	end
 
-	slot0.btn_load = slot0.plate:Find("btn_load")
-	slot0.ballSelectPanel = slot0.plate:Find("panel/layout")
-	slot0.ballSelects = CustomIndexLayer.Clone2Full(slot0.ballSelectPanel, 3)
-	slot0.ballSelectStatus = {
+	arg_3_0.btn_load = arg_3_0.plate:Find("btn_load")
+	arg_3_0.ballSelectPanel = arg_3_0.plate:Find("panel/layout")
+	arg_3_0.ballSelects = CustomIndexLayer.Clone2Full(arg_3_0.ballSelectPanel, 3)
+	arg_3_0.ballSelectStatus = {
 		0,
 		0,
 		0
 	}
-	slot0.lastSelectedBall = nil
-	slot0.ballStoragePanel = slot0.storage:Find("house/layout")
-	slot0.ballStorages = CustomIndexLayer.Clone2Full(slot0.ballStoragePanel, 6)
-	slot0.screen_mask = slot0:findTF("mask")
-	slot0.btn_next = slot0:findTF("Button")
-	slot0.btn_next_text = slot0.btn_next:Find("Image")
-	slot0.desc_dispense = slot0.dispenseView:Find("intro/Scroll View/Viewport/text")
-	slot4 = "help_firework_produce"
+	arg_3_0.lastSelectedBall = nil
+	arg_3_0.ballStoragePanel = arg_3_0.storage:Find("house/layout")
+	arg_3_0.ballStorages = CustomIndexLayer.Clone2Full(arg_3_0.ballStoragePanel, 6)
+	arg_3_0.screen_mask = arg_3_0:findTF("mask")
+	arg_3_0.btn_next = arg_3_0:findTF("Button")
+	arg_3_0.btn_next_text = arg_3_0.btn_next:Find("Image")
+	arg_3_0.desc_dispense = arg_3_0.dispenseView:Find("intro/Scroll View/Viewport/text")
 
-	setText(slot0.desc_dispense, i18n(slot4))
+	setText(arg_3_0.desc_dispense, i18n("help_firework_produce"))
 
-	slot0.btn_dispenseBG = slot0.dispenseView:Find("bg")
-	slot0.btn_hammer = slot0.dispenseView:Find("container/Button")
-	slot0.btn_hammer_text = slot0.btn_hammer:Find("text")
-	slot0.slider_powder = slot0.dispenseView:Find("container/Slider/Fill Area"):GetComponent("Slider")
-	slot0.slider_progress = slot0.dispenseView:Find("progress/Slider"):GetComponent("Slider")
-	slot0.slider_progress_bg = slot0.dispenseView:Find("progress/Slider/Background/progressdi")
-	slot0.slider_bubble = slot0.dispenseView:Find("container/Slider/Fill Area/Fill/handler/bubble")
-	slot0.slider_bubble_text = slot0.slider_bubble:Find("text")
-	slot0.progress_width = slot0.dispenseView:Find("progress/Slider/Handle Slide Area").rect.width
-	slot0.progress_sub_mark_1 = slot0.dispenseView:Find("progress/Slider/Handle Slide Area/submark1")
-	slot0.progress_sub_mark_2 = slot0.dispenseView:Find("progress/Slider/Handle Slide Area/submark2")
-	slot0.progress_dis = {}
+	arg_3_0.btn_dispenseBG = arg_3_0.dispenseView:Find("bg")
+	arg_3_0.btn_hammer = arg_3_0.dispenseView:Find("container/Button")
+	arg_3_0.btn_hammer_text = arg_3_0.btn_hammer:Find("text")
+	arg_3_0.slider_powder = arg_3_0.dispenseView:Find("container/Slider/Fill Area"):GetComponent("Slider")
+	arg_3_0.slider_progress = arg_3_0.dispenseView:Find("progress/Slider"):GetComponent("Slider")
+	arg_3_0.slider_progress_bg = arg_3_0.dispenseView:Find("progress/Slider/Background/progressdi")
+	arg_3_0.slider_bubble = arg_3_0.dispenseView:Find("container/Slider/Fill Area/Fill/handler/bubble")
+	arg_3_0.slider_bubble_text = arg_3_0.slider_bubble:Find("text")
+	arg_3_0.progress_width = arg_3_0.dispenseView:Find("progress/Slider/Handle Slide Area").rect.width
+	arg_3_0.progress_sub_mark_1 = arg_3_0.dispenseView:Find("progress/Slider/Handle Slide Area/submark1")
+	arg_3_0.progress_sub_mark_2 = arg_3_0.dispenseView:Find("progress/Slider/Handle Slide Area/submark2")
+	arg_3_0.progress_dis = {}
 
-	for slot4 = 0, slot0.slider_progress_bg.childCount - 1 do
-		table.insert(slot0.progress_dis, slot0.slider_progress_bg:GetChild(slot4))
+	for iter_3_1 = 0, arg_3_0.slider_progress_bg.childCount - 1 do
+		table.insert(arg_3_0.progress_dis, arg_3_0.slider_progress_bg:GetChild(iter_3_1))
 	end
 
-	slot0.result_digits = {}
+	arg_3_0.result_digits = {}
 
-	pg.PoolMgr.GetInstance():GetPrefab("ui/light01", "", true, function (slot0)
-		tf(slot0):SetParent(uv0.dispenseView, false)
-		slot0:SetActive(false)
+	pg.PoolMgr.GetInstance():GetPrefab("ui/light01", "", true, function(arg_4_0)
+		tf(arg_4_0):SetParent(arg_3_0.dispenseView, false)
+		arg_4_0:SetActive(false)
 
-		uv0.effect_light = slot0
+		arg_3_0.effect_light = arg_4_0
 	end)
 
-	slot0.result_bg = slot0.resultWindow:Find("bg")
-	slot0.result_desc = slot0.resultWindow:Find("window/Text")
+	arg_3_0.result_bg = arg_3_0.resultWindow:Find("bg")
+	arg_3_0.result_desc = arg_3_0.resultWindow:Find("window/Text")
 
-	setText(slot0.result_desc, i18n("result_firework_produce"))
+	setText(arg_3_0.result_desc, i18n("result_firework_produce"))
 
-	slot0.btn_result_confirm = slot0.resultWindow:Find("window/button")
-	slot0.result_pingjia = slot0.resultWindow:Find("window/pingjia"):GetComponent("Image")
-	slot0.flagStart = false
-	slot0.flagDispense = false
-	slot0.progressDispense = 0
+	arg_3_0.btn_result_confirm = arg_3_0.resultWindow:Find("window/button")
+	arg_3_0.result_pingjia = arg_3_0.resultWindow:Find("window/pingjia"):GetComponent("Image")
+	arg_3_0.flagStart = false
+	arg_3_0.flagDispense = false
+	arg_3_0.progressDispense = 0
 end
 
-function slot0.SetSprite(slot0, slot1, slot2)
-	slot0:SetImageSprite(slot1:GetComponent("Image"), slot2)
+function var_0_0.SetSprite(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_1:GetComponent("Image")
+
+	arg_5_0:SetImageSprite(var_5_0, arg_5_2)
 end
 
-function slot0.SetImageSprite(slot0, slot1, slot2)
-	pg.PoolMgr.GetInstance():GetSprite("ui/fireworkfactoryui_atlas", slot2, false, function (slot0)
-		uv0.sprite = slot0
+function var_0_0.SetImageSprite(arg_6_0, arg_6_1, arg_6_2)
+	pg.PoolMgr.GetInstance():GetSprite("ui/fireworkfactoryui_atlas", arg_6_2, false, function(arg_7_0)
+		arg_6_1.sprite = arg_7_0
 	end)
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.btn_back, function ()
-		if uv0.flagDispense then
-			uv0:ExitDispenseView()
-		elseif uv0:CheckpowderDispensed() and uv0.flagStart then
+function var_0_0.didEnter(arg_8_0)
+	onButton(arg_8_0, arg_8_0.btn_back, function()
+		if arg_8_0.flagDispense then
+			arg_8_0:ExitDispenseView()
+		elseif arg_8_0:CheckpowderDispensed() and arg_8_0.flagStart then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("tips_firework_exit"),
-				onYes = function ()
-					uv0:emit(uv1.ON_BACK_PRESSED)
+				onYes = function()
+					arg_8_0:emit(var_0_0.ON_BACK_PRESSED)
 				end
 			})
 		else
-			uv0:emit(uv1.ON_BACK)
+			arg_8_0:emit(var_0_0.ON_BACK)
 		end
 	end)
-	onButton(slot0, slot0.btn_dispenseBG, function ()
-		uv0:ExitDispenseView()
+	onButton(arg_8_0, arg_8_0.btn_dispenseBG, function()
+		arg_8_0:ExitDispenseView()
 	end)
-	onButton(slot0, slot0.btn_help, function ()
+	onButton(arg_8_0, arg_8_0.btn_help, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_xinnian2022_firework.tip
 		})
 	end)
-	onButton(slot0, slot0.btn_next, function ()
-		if not uv0.flagStart then
-			uv0.flagStart = true
+	onButton(arg_8_0, arg_8_0.btn_next, function()
+		if not arg_8_0.flagStart then
+			arg_8_0.flagStart = true
 
-			uv0:UpdateNextBtn()
-		elseif uv0:CheckballLoaded() then
-			uv0:EnterDispenseView()
+			arg_8_0:UpdateNextBtn()
+		elseif arg_8_0:CheckballLoaded() then
+			arg_8_0:EnterDispenseView()
 		end
 	end)
-	onButton(slot0, slot0.btn_hammer, function ()
-		if uv0.progressDispense == 0 then
-			uv0:ResetHammerAnim()
-			uv0:FindNextPowderProgress()
-			uv0:UpdateContainer()
-		elseif slot0 == 1 then
-			uv0.result_digits[1] = uv0.slider_powder.value * 100
+	onButton(arg_8_0, arg_8_0.btn_hammer, function()
+		local var_14_0 = arg_8_0.progressDispense
 
-			uv0:FindandStopProgress()
-			uv0:UpdateContainer()
-		elseif slot0 == 2 then
-			uv0.result_digits[2] = uv0.slider_powder.value * 100
+		if var_14_0 == 0 then
+			arg_8_0:ResetHammerAnim()
+			arg_8_0:FindNextPowderProgress()
+			arg_8_0:UpdateContainer()
+		elseif var_14_0 == 1 then
+			arg_8_0.result_digits[1] = arg_8_0.slider_powder.value * 100
 
-			uv0:FindandStopProgress()
-			uv0:UpdateContainer()
-		elseif slot0 == 3 then
-			uv0.result_digits[3] = uv0.slider_powder.value * 100
+			arg_8_0:FindandStopProgress()
+			arg_8_0:UpdateContainer()
+		elseif var_14_0 == 2 then
+			arg_8_0.result_digits[2] = arg_8_0.slider_powder.value * 100
 
-			uv0:FindandStopProgress()
-			uv0:UpdateContainer()
+			arg_8_0:FindandStopProgress()
+			arg_8_0:UpdateContainer()
+		elseif var_14_0 == 3 then
+			arg_8_0.result_digits[3] = arg_8_0.slider_powder.value * 100
+
+			arg_8_0:FindandStopProgress()
+			arg_8_0:UpdateContainer()
 		end
 	end)
-	onButton(slot0, slot0.btn_result_confirm, function ()
-		uv0:ShowResult()
+	onButton(arg_8_0, arg_8_0.btn_result_confirm, function()
+		arg_8_0:ShowResult()
+	end)
+	onButton(arg_8_0, arg_8_0.result_bg, function()
+		arg_8_0:ShowResult()
 	end)
 
-	function slot4()
-		uv0:ShowResult()
-	end
+	for iter_8_0 = 1, #arg_8_0.ballStorages do
+		local var_8_0 = arg_8_0.ballStorages[iter_8_0]
 
-	onButton(slot0, slot0.result_bg, slot4)
-
-	for slot4 = 1, #slot0.ballStorages do
-		slot5 = slot0.ballStorages[slot4]
-
-		slot0:UpdateBall(slot5, slot4)
-		onButton(slot0, slot5:Find("mask"), function ()
-			if not uv0.lastSelectedBall or uv0.lastSelectedBall <= 0 then
+		arg_8_0:UpdateBall(var_8_0, iter_8_0)
+		onButton(arg_8_0, var_8_0:Find("mask"), function()
+			if not arg_8_0.lastSelectedBall or arg_8_0.lastSelectedBall <= 0 then
 				return
 			end
 
-			uv0.ballSelectStatus[uv0.lastSelectedBall] = uv1
+			arg_8_0.ballSelectStatus[arg_8_0.lastSelectedBall] = iter_8_0
 
-			uv0:UpdateRing(uv0.lastSelectedBall, uv1)
-			uv0:UpdateBall(uv0.ballSelects[uv0.lastSelectedBall]:Find("ball"), uv1)
-			uv0:UdpateSelectedBall(uv0.lastSelectedBall + 1)
-			uv0:UpdateNextBtn()
+			arg_8_0:UpdateRing(arg_8_0.lastSelectedBall, iter_8_0)
+			arg_8_0:UpdateBall(arg_8_0.ballSelects[arg_8_0.lastSelectedBall]:Find("ball"), iter_8_0)
+			arg_8_0:UdpateSelectedBall(arg_8_0.lastSelectedBall + 1)
+			arg_8_0:UpdateNextBtn()
 		end)
 	end
 
-	for slot4 = 1, #slot0.ballSelects do
-		slot5 = slot0.ballSelects[slot4]
+	for iter_8_1 = 1, #arg_8_0.ballSelects do
+		local var_8_1 = arg_8_0.ballSelects[iter_8_1]
 
-		slot0:UpdateBall(slot5:Find("ball"), 0)
-		slot0:UpdateRing(slot4, 0)
-		onButton(slot0, slot5:Find("mask"), function ()
-			uv0.ballSelectStatus[uv1] = 0
+		arg_8_0:UpdateBall(var_8_1:Find("ball"), 0)
+		arg_8_0:UpdateRing(iter_8_1, 0)
+		onButton(arg_8_0, var_8_1:Find("mask"), function()
+			arg_8_0.ballSelectStatus[iter_8_1] = 0
 
-			uv0:UpdateBall(uv0.ballSelects[uv1]:Find("ball"), 0)
-			uv0:UpdateRing(uv1, 0)
-			uv0:UdpateSelectedBall(uv1)
-			uv0:UpdateNextBtn()
+			arg_8_0:UpdateBall(arg_8_0.ballSelects[iter_8_1]:Find("ball"), 0)
+			arg_8_0:UpdateRing(iter_8_1, 0)
+			arg_8_0:UdpateSelectedBall(iter_8_1)
+			arg_8_0:UpdateNextBtn()
 		end)
 	end
 
-	slot0:ResetView()
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.top, {
+	arg_8_0:ResetView()
+	pg.UIMgr.GetInstance():OverlayPanel(arg_8_0.top, {
 		groupName = LayerWeightConst.GROUP_FIREWORK_PRODUCE
 	})
 
-	slot3 = {
-		0,
-		[#slot2 - slot7 + 2] = slot8[1],
-		[#slot2 + slot7 + 1] = slot8[2]
-	}
+	local var_8_2 = arg_8_0:GetMGData():GetSimpleValue("score_reference")
+	local var_8_3 = {}
 
-	for slot7, slot8 in ipairs(slot0:GetMGData():GetSimpleValue("score_reference")) do
-		-- Nothing
+	var_8_3[1] = 0
+
+	for iter_8_2, iter_8_3 in ipairs(var_8_2) do
+		var_8_3[#var_8_2 - iter_8_2 + 2] = iter_8_3[1]
+		var_8_3[#var_8_2 + iter_8_2 + 1] = iter_8_3[2]
 	end
 
-	slot3[#slot3] = 300
+	var_8_3[#var_8_3] = 300
 
-	for slot7 = 1, #slot3 - 1 do
-		slot0.progress_dis[slot7].anchorMin = Vector2(slot3[slot7] / 300, 0)
-		slot0.progress_dis[slot7].anchorMax = Vector2(slot3[slot7 + 1] / 300, 1)
-		slot0.progress_dis[slot7].sizeDelta = Vector2.zero
+	for iter_8_4 = 1, #var_8_3 - 1 do
+		local var_8_4 = var_8_3[iter_8_4] / 300
+		local var_8_5 = var_8_3[iter_8_4 + 1] / 300
+
+		arg_8_0.progress_dis[iter_8_4].anchorMin = Vector2(var_8_4, 0)
+		arg_8_0.progress_dis[iter_8_4].anchorMax = Vector2(var_8_5, 1)
+		arg_8_0.progress_dis[iter_8_4].sizeDelta = Vector2.zero
 	end
 end
 
-function slot0.UpdateNextBtn(slot0)
-	if not slot0.flagStart then
-		slot1 = "dispense_ready"
+function var_0_0.UpdateNextBtn(arg_19_0)
+	if not arg_19_0.flagStart then
+		local var_19_0 = "dispense_ready"
+		local var_19_1 = arg_19_0:GetMGData():GetRuntimeData("elements")
 
-		if slot0:GetMGData():GetRuntimeData("elements") and #slot3 > 3 and slot3[4] == SummerFeastScene.GetCurrentDay() then
-			slot1 = "dispense_retry"
+		if var_19_1 and #var_19_1 > 3 and var_19_1[4] == SummerFeastScene.GetCurrentDay() then
+			var_19_0 = "dispense_retry"
 		end
 
-		slot0:SetSprite(slot0.btn_next_text, slot1)
+		arg_19_0:SetSprite(arg_19_0.btn_next_text, var_19_0)
 	else
-		slot0:SetSprite(slot0.btn_next_text, "dispense_confirm")
+		arg_19_0:SetSprite(arg_19_0.btn_next_text, "dispense_confirm")
 	end
 
-	setActive(slot0.screen_mask, not slot0.flagStart)
-	setButtonEnabled(slot0.btn_next, not slot0.flagStart or slot0:CheckballLoaded())
+	setActive(arg_19_0.screen_mask, not arg_19_0.flagStart)
+
+	local var_19_2 = not arg_19_0.flagStart or arg_19_0:CheckballLoaded()
+
+	setButtonEnabled(arg_19_0.btn_next, var_19_2)
 end
 
-function slot0.UpdateDispenseBtn(slot0)
-	slot0:SetImageSprite(slot0.btn_load_img, slot0:CheckpowderDispensed() and "btn_loadcompleted" or "btn_load")
-	slot0:SetSprite(slot0.btn_load_text, slot1 and "load_completed" or "load_ready")
-	setButtonEnabled(slot0.btn_load, not slot1)
+function var_0_0.UpdateDispenseBtn(arg_20_0)
+	local var_20_0 = arg_20_0:CheckpowderDispensed()
+
+	arg_20_0:SetImageSprite(arg_20_0.btn_load_img, var_20_0 and "btn_loadcompleted" or "btn_load")
+	arg_20_0:SetSprite(arg_20_0.btn_load_text, var_20_0 and "load_completed" or "load_ready")
+	setButtonEnabled(arg_20_0.btn_load, not var_20_0)
 end
 
-slot5 = {
+local var_0_5 = {
 	"start",
 	"first_time",
 	"second_time",
@@ -285,353 +298,394 @@ slot5 = {
 	"finish_time"
 }
 
-function slot0.FindandStopProgress(slot0)
-	slot0:StopHammerAnim()
-	setButtonEnabled(slot0.btn_hammer, false)
-	setButtonEnabled(slot0.btn_dispenseBG, false)
-	setText(slot0.slider_bubble_text, math.ceil(slot0.result_digits[#slot0.result_digits]) .. "%")
-	setActive(slot0.slider_bubble, true)
-	setActive(slot0.effect_light, true)
+function var_0_0.FindandStopProgress(arg_21_0)
+	arg_21_0:StopHammerAnim()
+	setButtonEnabled(arg_21_0.btn_hammer, false)
+	setButtonEnabled(arg_21_0.btn_dispenseBG, false)
+	setText(arg_21_0.slider_bubble_text, math.ceil(arg_21_0.result_digits[#arg_21_0.result_digits]) .. "%")
+	setActive(arg_21_0.slider_bubble, true)
+	setActive(arg_21_0.effect_light, true)
 
-	slot0.progressDispense = #slot0.result_digits >= 3 and 4 or 0
+	arg_21_0.progressDispense = #arg_21_0.result_digits >= 3 and 4 or 0
 
-	for slot5 = 1, 3 do
-		if slot0.result_digits[slot5] then
-			slot1 = 0 + slot6
+	local var_21_0 = 0
+
+	for iter_21_0 = 1, 3 do
+		local var_21_1 = arg_21_0.result_digits[iter_21_0]
+
+		if var_21_1 then
+			var_21_0 = var_21_0 + var_21_1
 		end
 	end
 
-	for slot6 = 1, #slot0.result_digits - 1 do
-		if slot0.result_digits[slot6] then
-			if slot6 == 1 then
-				setActive(slot0.progress_sub_mark_1, true)
+	local var_21_2 = 0
 
-				slot0.progress_sub_mark_1.anchoredPosition = Vector2(slot0.progress_width * (0 + slot7) / 300, 27)
-			elseif slot6 == 2 then
-				setActive(slot0.progress_sub_mark_2, true)
+	for iter_21_1 = 1, #arg_21_0.result_digits - 1 do
+		local var_21_3 = arg_21_0.result_digits[iter_21_1]
 
-				slot0.progress_sub_mark_2.anchoredPosition = Vector2(slot0.progress_width * slot2 / 300, 27)
+		if var_21_3 then
+			var_21_2 = var_21_2 + var_21_3
+
+			if iter_21_1 == 1 then
+				setActive(arg_21_0.progress_sub_mark_1, true)
+
+				local var_21_4 = Vector2(arg_21_0.progress_width * var_21_2 / 300, 27)
+
+				arg_21_0.progress_sub_mark_1.anchoredPosition = var_21_4
+			elseif iter_21_1 == 2 then
+				setActive(arg_21_0.progress_sub_mark_2, true)
+
+				local var_21_5 = Vector2(arg_21_0.progress_width * var_21_2 / 300, 27)
+
+				arg_21_0.progress_sub_mark_2.anchoredPosition = var_21_5
 			end
 		end
 	end
 
-	slot3 = slot0.slider_bubble.transform.position
-	slot4 = slot0.slider_progress.transform.position
-	slot5 = slot0.slider_progress.value
-	slot0.progressAnim = LeanTween.value(slot0.slider_progress.gameObject, 0, 1, 1.5):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function (slot0)
-		uv0.slider_progress.value = uv1.Lerp(uv2, uv3 / 300, slot0)
+	local var_21_6 = arg_21_0.slider_bubble.transform.position
+	local var_21_7 = arg_21_0.slider_progress.transform.position
+	local var_21_8 = arg_21_0.slider_progress.value
 
-		if uv0.effect_light then
-			uv0.effect_light.transform.position = Vector3.Lerp(uv4, uv5, slot0 * 3) - Vector3(0, 0, 2)
+	arg_21_0.progressAnim = LeanTween.value(arg_21_0.slider_progress.gameObject, 0, 1, 1.5):setEase(LeanTweenType.linear):setOnUpdate(System.Action_float(function(arg_22_0)
+		arg_21_0.slider_progress.value = var_0_1.Lerp(var_21_8, var_21_0 / 300, arg_22_0)
 
-			if slot0 * 3 > 1 then
-				setActive(uv0.effect_light, false)
+		if arg_21_0.effect_light then
+			arg_21_0.effect_light.transform.position = Vector3.Lerp(var_21_6, var_21_7, arg_22_0 * 3) - Vector3(0, 0, 2)
+
+			if arg_22_0 * 3 > 1 then
+				setActive(arg_21_0.effect_light, false)
 			end
 		end
-	end)):setOnComplete(System.Action(function ()
-		setButtonEnabled(uv0.btn_hammer, true)
-		setButtonEnabled(uv0.btn_dispenseBG, true)
+	end)):setOnComplete(System.Action(function()
+		setButtonEnabled(arg_21_0.btn_hammer, true)
+		setButtonEnabled(arg_21_0.btn_dispenseBG, true)
 
-		if uv0.progressDispense > 3 then
-			uv0:FindNextPowderProgress()
+		if arg_21_0.progressDispense > 3 then
+			arg_21_0:FindNextPowderProgress()
 		end
 	end))
 end
 
-function slot0.FindNextPowderProgress(slot0)
-	slot0.progressDispense = #slot0.result_digits + 1
+function var_0_0.FindNextPowderProgress(arg_24_0)
+	arg_24_0.progressDispense = #arg_24_0.result_digits + 1
 
-	if slot0.progressDispense > 3 then
-		slot0:StopHammerAnim()
-		setButtonEnabled(slot0.btn_hammer, false)
-		slot0:ShowResultWindow()
+	if arg_24_0.progressDispense > 3 then
+		arg_24_0:StopHammerAnim()
+		setButtonEnabled(arg_24_0.btn_hammer, false)
+		arg_24_0:ShowResultWindow()
 	end
 end
 
-function slot0.ShowResultWindow(slot0)
-	if #slot0.result_digits < 3 then
+function var_0_0.ShowResultWindow(arg_25_0)
+	if #arg_25_0.result_digits < 3 then
 		return
 	end
 
-	setActive(slot0.resultWindow, true)
+	setActive(arg_25_0.resultWindow, true)
 
-	slot2 = slot0:GetMGData():GetSimpleValue("score_reference")
+	local var_25_0 = arg_25_0:GetMGData():GetSimpleValue("score_reference")
+	local var_25_1 = 0
 
-	for slot7 = 1, 3 do
-		slot3 = 0 + slot0.result_digits[slot7]
+	for iter_25_0 = 1, 3 do
+		var_25_1 = var_25_1 + arg_25_0.result_digits[iter_25_0]
 	end
 
-	slot4 = 4
+	local var_25_2 = 4
 
-	for slot8, slot9 in ipairs(slot2) do
-		if slot9[1] <= slot3 and slot3 <= slot9[2] then
-			slot4 = slot8
+	for iter_25_1, iter_25_2 in ipairs(var_25_0) do
+		if var_25_1 >= iter_25_2[1] and var_25_1 <= iter_25_2[2] then
+			var_25_2 = iter_25_1
 
 			break
 		end
 	end
 
-	if slot4 <= 0 then
+	if var_25_2 <= 0 then
 		return
 	end
 
-	slot0:SetImageSprite(slot0.result_pingjia, uv0[slot4])
+	arg_25_0:SetImageSprite(arg_25_0.result_pingjia, var_0_4[var_25_2])
 end
 
-function slot0.ShowResult(slot0)
-	if slot0:GetMGHubData().count <= 0 then
-		slot0:AfterResult()
+function var_0_0.ShowResult(arg_26_0)
+	if arg_26_0:GetMGHubData().count <= 0 then
+		arg_26_0:AfterResult()
 	else
-		slot0:GetReward()
+		arg_26_0:GetReward()
 	end
 
-	setActive(slot0.resultWindow, false)
+	setActive(arg_26_0.resultWindow, false)
 end
 
-function slot0.OnGetAwardDone(slot0, slot1)
-	if slot1.cmd == MiniGameOPCommand.CMD_COMPLETE and (slot0:GetMGHubData().ultimate == 0 and slot2:getConfig("reward_need") <= slot2.usedtime) then
+function var_0_0.OnGetAwardDone(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_0:GetMGHubData()
+	local var_27_1 = var_27_0.ultimate == 0 and var_27_0.usedtime >= var_27_0:getConfig("reward_need")
+
+	if arg_27_1.cmd == MiniGameOPCommand.CMD_COMPLETE and var_27_1 then
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot2.id,
+			hubid = var_27_0.id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-	elseif slot1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
-		slot0:AfterResult()
+	elseif arg_27_1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+		arg_27_0:AfterResult()
 	else
-		slot0:AfterResult()
+		arg_27_0:AfterResult()
 	end
 end
 
-function slot0.AfterResult(slot0)
-	slot2 = Clone(slot0.ballSelectStatus)
+function var_0_0.AfterResult(arg_28_0)
+	local var_28_0 = SummerFeastScene.GetCurrentDay()
+	local var_28_1 = Clone(arg_28_0.ballSelectStatus)
 
-	table.insert(slot2, SummerFeastScene.GetCurrentDay())
-	slot0:StoreDataToServer(slot2)
-	onNextTick(function ()
-		uv0:emit(uv1.ON_BACK)
+	table.insert(var_28_1, var_28_0)
+	arg_28_0:StoreDataToServer(var_28_1)
+	onNextTick(function()
+		arg_28_0:emit(var_0_0.ON_BACK)
 	end)
 end
 
-function slot0.reset(slot0)
-	slot0:ExitDispenseView()
+function var_0_0.reset(arg_30_0)
+	arg_30_0:ExitDispenseView()
 
-	slot0.flagStart = false
-	slot0.flagDispense = false
-	slot0.progressDispense = 0
-	slot0.result_digits = {}
+	arg_30_0.flagStart = false
+	arg_30_0.flagDispense = false
+	arg_30_0.progressDispense = 0
+	arg_30_0.result_digits = {}
 
-	slot0:ResetView()
-	slot0:UpdateNextBtn()
+	arg_30_0:ResetView()
+	arg_30_0:UpdateNextBtn()
 end
 
-function slot0.GetReward(slot0)
-	if #slot0.result_digits < 3 then
+function var_0_0.GetReward(arg_31_0)
+	if #arg_31_0.result_digits < 3 then
 		return
 	end
 
-	slot2 = slot0:GetMGData():GetSimpleValue("score_reference")
+	local var_31_0 = arg_31_0:GetMGData():GetSimpleValue("score_reference")
+	local var_31_1 = 0
 
-	for slot7 = 1, 3 do
-		slot3 = 0 + slot0.result_digits[slot7]
+	for iter_31_0 = 1, 3 do
+		var_31_1 = var_31_1 + arg_31_0.result_digits[iter_31_0]
 	end
 
-	slot4 = 4
+	local var_31_2 = 4
 
-	for slot8, slot9 in ipairs(slot2) do
-		if slot9[1] <= slot3 and slot3 <= slot9[2] then
-			slot4 = slot8
+	for iter_31_1, iter_31_2 in ipairs(var_31_0) do
+		if var_31_1 >= iter_31_2[1] and var_31_1 <= iter_31_2[2] then
+			var_31_2 = iter_31_1
 
 			break
 		end
 	end
 
-	if slot4 <= 0 then
+	if var_31_2 <= 0 then
 		return
 	end
 
-	slot0:SendSuccess(slot4)
+	arg_31_0:SendSuccess(var_31_2)
 end
 
-function slot0.ResetHammerAnim(slot0)
-	if slot0.hammerAnim then
-		slot0:StopHammerAnim()
+function var_0_0.ResetHammerAnim(arg_32_0)
+	if arg_32_0.hammerAnim then
+		arg_32_0:StopHammerAnim()
 	end
 
-	setActive(slot0.slider_bubble, false)
+	setActive(arg_32_0.slider_bubble, false)
 
-	slot0.hammerAnim = LeanTween.value(slot0.slider_powder.gameObject, 0, 1, (slot0:GetMGData():GetSimpleValue("roundTime") or uv0) / 100 * 2):setEase(LeanTweenType.linear):setLoopPingPong():setOnUpdate(System.Action_float(function (slot0)
-		uv0.slider_powder.value = slot0
+	local var_32_0 = (arg_32_0:GetMGData():GetSimpleValue("roundTime") or var_0_2) / 100
+
+	arg_32_0.hammerAnim = LeanTween.value(arg_32_0.slider_powder.gameObject, 0, 1, var_32_0 * 2):setEase(LeanTweenType.linear):setLoopPingPong():setOnUpdate(System.Action_float(function(arg_33_0)
+		arg_32_0.slider_powder.value = arg_33_0
 	end))
 end
 
-function slot0.StopHammerAnim(slot0)
-	if not slot0.hammerAnim then
+function var_0_0.StopHammerAnim(arg_34_0)
+	if not arg_34_0.hammerAnim then
 		return
 	end
 
-	LeanTween.cancel(slot0.hammerAnim.uniqueId)
+	LeanTween.cancel(arg_34_0.hammerAnim.uniqueId)
 
-	slot0.hammerAnim = nil
+	arg_34_0.hammerAnim = nil
 end
 
-function slot0.UpdateContainer(slot0)
-	slot0:SetSprite(slot0.btn_hammer_text, uv0[slot0.progressDispense + 1])
+function var_0_0.UpdateContainer(arg_35_0)
+	arg_35_0:SetSprite(arg_35_0.btn_hammer_text, var_0_5[arg_35_0.progressDispense + 1])
 
-	for slot6 = 1, 3 do
-		slot7 = slot0.result_digits[slot6]
-		slot2 = true and slot7 ~= nil
+	local var_35_0 = 0
+	local var_35_1 = true
 
-		if slot7 then
-			slot1 = 0 + slot7
+	for iter_35_0 = 1, 3 do
+		local var_35_2 = arg_35_0.result_digits[iter_35_0]
+
+		var_35_1 = var_35_1 and var_35_2 ~= nil
+
+		if var_35_2 then
+			var_35_0 = var_35_0 + var_35_2
 		end
 	end
 
-	slot0.slider_progress.value = slot1 / 300
+	arg_35_0.slider_progress.value = var_35_0 / 300
 end
 
-function slot0.StopProgressAnim(slot0)
-	if not slot0.progressAnim then
+function var_0_0.StopProgressAnim(arg_36_0)
+	if not arg_36_0.progressAnim then
 		return
 	end
 
-	LeanTween.cancel(slot0.progressAnim.uniqueId)
+	LeanTween.cancel(arg_36_0.progressAnim.uniqueId)
 
-	slot0.progressAnim = nil
+	arg_36_0.progressAnim = nil
 end
 
-function slot0.CheckballLoaded(slot0)
-	return _.all(slot0.ballSelectStatus, function (slot0)
-		return slot0 > 0
+function var_0_0.CheckballLoaded(arg_37_0)
+	return _.all(arg_37_0.ballSelectStatus, function(arg_38_0)
+		return arg_38_0 > 0
 	end)
 end
 
-function slot0.CheckpowderDispensed(slot0)
-	return #slot0.result_digits >= 3
+function var_0_0.CheckpowderDispensed(arg_39_0)
+	return #arg_39_0.result_digits >= 3
 end
 
-function slot0.UpdateBall(slot0, slot1, slot2)
-	setActive(slot1, slot2 > 0)
+function var_0_0.UpdateBall(arg_40_0, arg_40_1, arg_40_2)
+	setActive(arg_40_1, arg_40_2 > 0)
 
-	if slot2 <= 0 then
+	if arg_40_2 <= 0 then
 		return
 	end
 
-	slot1:GetComponent("Image").color = slot0.TransformColor(uv0[slot2].color)
+	arg_40_1:GetComponent("Image").color = arg_40_0.TransformColor(var_0_3[arg_40_2].color)
 
-	slot0:SetSprite(slot1:Find("symbol"), uv0[slot2].name)
+	arg_40_0:SetSprite(arg_40_1:Find("symbol"), var_0_3[arg_40_2].name)
 end
 
-function slot0.UpdateRing(slot0, slot1, slot2)
-	if slot1 <= 0 or slot1 > 3 then
+function var_0_0.UpdateRing(arg_41_0, arg_41_1, arg_41_2)
+	if arg_41_1 <= 0 or arg_41_1 > 3 then
 		return
 	end
 
-	setActive(slot0.plateRings[slot1], slot2 > 0)
+	local var_41_0 = arg_41_0.plateRings[arg_41_1]
 
-	if slot2 <= 0 then
+	setActive(var_41_0, arg_41_2 > 0)
+
+	if arg_41_2 <= 0 then
 		return
 	end
 
-	slot3:GetComponent("Image").color = slot0.TransformColor(uv0[slot2].color)
+	var_41_0:GetComponent("Image").color = arg_41_0.TransformColor(var_0_3[arg_41_2].color)
 end
 
-function slot0.ResetView(slot0)
-	_.each(slot0.plateRings, function (slot0)
-		setActive(slot0, false)
+function var_0_0.ResetView(arg_42_0)
+	_.each(arg_42_0.plateRings, function(arg_43_0)
+		setActive(arg_43_0, false)
 	end)
-	_.each(slot0.ballSelects, function (slot0)
-		setActive(slot0:Find("ball"), false)
-		setActive(slot0:Find("selected"), false)
+	_.each(arg_42_0.ballSelects, function(arg_44_0)
+		setActive(arg_44_0:Find("ball"), false)
+		setActive(arg_44_0:Find("selected"), false)
 	end)
-	setText(slot0.timesText, slot0:GetMGHubData().count)
 
-	if slot0:GetMGData():GetRuntimeData("elements") and #slot3 > 3 and slot3[4] == SummerFeastScene.GetCurrentDay() then
-		for slot7 = 1, 3 do
-			slot8 = slot3[slot7]
-			slot0.ballSelectStatus[slot7] = slot8
+	local var_42_0 = arg_42_0:GetMGHubData()
 
-			if slot8 > 0 then
-				slot0:UpdateRing(slot7, slot8)
-				slot0:UpdateBall(slot0.ballSelects[slot7]:Find("ball"), slot8)
+	setText(arg_42_0.timesText, var_42_0.count)
+
+	local var_42_1 = arg_42_0:GetMGData():GetRuntimeData("elements")
+
+	if var_42_1 and #var_42_1 > 3 and var_42_1[4] == SummerFeastScene.GetCurrentDay() then
+		for iter_42_0 = 1, 3 do
+			local var_42_2 = var_42_1[iter_42_0]
+
+			arg_42_0.ballSelectStatus[iter_42_0] = var_42_2
+
+			if var_42_2 > 0 then
+				arg_42_0:UpdateRing(iter_42_0, var_42_2)
+
+				local var_42_3 = arg_42_0.ballSelects[iter_42_0]:Find("ball")
+
+				arg_42_0:UpdateBall(var_42_3, var_42_2)
 			end
 		end
 	end
 
-	slot0:UdpateSelectedBall(1)
-	slot0:UpdateNextBtn()
-	setActive(slot0.slider_bubble, false)
-	setActive(slot0.progress_sub_mark_1, false)
-	setActive(slot0.progress_sub_mark_2, false)
+	arg_42_0:UdpateSelectedBall(1)
+	arg_42_0:UpdateNextBtn()
+	setActive(arg_42_0.slider_bubble, false)
+	setActive(arg_42_0.progress_sub_mark_1, false)
+	setActive(arg_42_0.progress_sub_mark_2, false)
 end
 
-function slot0.UdpateSelectedBall(slot0, slot1)
-	if slot1 <= 0 or slot1 > 3 then
+function var_0_0.UdpateSelectedBall(arg_45_0, arg_45_1)
+	if arg_45_1 <= 0 or arg_45_1 > 3 then
 		return
 	end
 
-	if slot0.lastSelectedBall then
-		if slot0.lastSelectedBall == slot1 then
+	if arg_45_0.lastSelectedBall then
+		if arg_45_0.lastSelectedBall == arg_45_1 then
 			return
 		end
 
-		setActive(slot0.ballSelects[slot0.lastSelectedBall]:Find("selected"), false)
+		setActive(arg_45_0.ballSelects[arg_45_0.lastSelectedBall]:Find("selected"), false)
 	end
 
-	setActive(slot0.ballSelects[slot1]:Find("selected"), true)
+	setActive(arg_45_0.ballSelects[arg_45_1]:Find("selected"), true)
 
-	slot0.lastSelectedBall = slot1
+	arg_45_0.lastSelectedBall = arg_45_1
 end
 
-function slot0.EnterDispenseView(slot0)
-	setActive(slot0.dispenseView, true)
+function var_0_0.EnterDispenseView(arg_46_0)
+	setActive(arg_46_0.dispenseView, true)
 
-	slot0.flagDispense = true
-	slot0.progressDispense = #slot0.result_digits >= 3 and 4 or 0
+	arg_46_0.flagDispense = true
+	arg_46_0.progressDispense = #arg_46_0.result_digits >= 3 and 4 or 0
 
-	slot0:UpdateContainer()
+	arg_46_0:UpdateContainer()
 
-	slot0.slider_powder.value = 0
+	arg_46_0.slider_powder.value = 0
 end
 
-function slot0.ExitDispenseView(slot0)
-	if not slot0.flagDispense then
+function var_0_0.ExitDispenseView(arg_47_0)
+	if not arg_47_0.flagDispense then
 		return
 	end
 
-	slot0:UpdateNextBtn()
-	slot0:StopHammerAnim()
-	slot0:StopProgressAnim()
+	arg_47_0:UpdateNextBtn()
+	arg_47_0:StopHammerAnim()
+	arg_47_0:StopProgressAnim()
 
-	slot0.progressDispense = 0
+	arg_47_0.progressDispense = 0
 
-	setActive(slot0.dispenseView, false)
-	setButtonEnabled(slot0.btn_hammer, true)
-	setText(slot0.timesText, slot0:GetMGHubData().count)
-	setActive(slot0.slider_bubble, false)
+	setActive(arg_47_0.dispenseView, false)
+	setButtonEnabled(arg_47_0.btn_hammer, true)
 
-	if slot0.effect_light then
-		setActive(slot0.effect_light, false)
+	local var_47_0 = arg_47_0:GetMGHubData()
+
+	setText(arg_47_0.timesText, var_47_0.count)
+	setActive(arg_47_0.slider_bubble, false)
+
+	if arg_47_0.effect_light then
+		setActive(arg_47_0.effect_light, false)
 	end
 
-	slot0.flagDispense = false
+	arg_47_0.flagDispense = false
 end
 
-function slot0.willExit(slot0)
-	slot0:ExitDispenseView()
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.top, slot0._tf)
+function var_0_0.willExit(arg_48_0)
+	arg_48_0:ExitDispenseView()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_48_0.top, arg_48_0._tf)
 
-	if slot0.effect_light then
-		pg.PoolMgr.GetInstance():ReturnPrefab("ui/light01", "", slot0.effect_light)
+	if arg_48_0.effect_light then
+		pg.PoolMgr.GetInstance():ReturnPrefab("ui/light01", "", arg_48_0.effect_light)
 	end
 
 	pg.PoolMgr.GetInstance():DestroyPrefab("ui/light01", "")
 	pg.PoolMgr.GetInstance():DestroySprite("ui/fireworkfactoryui_atlas")
 
-	if slot0.OPTimer then
-		slot0.OPTimer:Stop()
+	if arg_48_0.OPTimer then
+		arg_48_0.OPTimer:Stop()
 
-		slot0.OPTimer = nil
+		arg_48_0.OPTimer = nil
 	end
 end
 
-return slot0
+return var_0_0

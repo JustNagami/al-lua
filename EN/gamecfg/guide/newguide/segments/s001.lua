@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Are you the new Commander? Welcome to the world of Azur Lane. I'll be your teacher!!",
 	"First, let's build a new ship.",
 	"How about trying to build a <color=#ffde38>light ship</color> first?",
@@ -16,7 +16,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[1]
+				text = var_0_0[1]
 			}
 		},
 		{
@@ -26,7 +26,7 @@ return {
 				mode = 2,
 				posY = -152.6,
 				posX = 215.2,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/buildButton",
@@ -48,11 +48,11 @@ return {
 				mode = 1,
 				posY = -46.82,
 				posX = -126.5,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				pathIndex = -1,
-				dynamicPath = function ()
+				dynamicPath = function()
 					if #getProxy(BuildShipProxy):GetPoolsWithoutNewServer() > 4 then
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/mask/bg/toggles/light/frame", 0.85
 					else
@@ -75,7 +75,7 @@ return {
 				mode = 1,
 				posY = -11.13,
 				posX = 301.54,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/start_btn",
@@ -96,7 +96,7 @@ return {
 				mode = 1,
 				posY = 65.31,
 				posX = 103.3,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/BuildShipMsgBoxUI(Clone)/window/btns/confirm_btn",

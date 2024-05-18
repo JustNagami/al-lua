@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_2 = {}
-slot1 = slot0.word_template_2
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_2 = {}
+
+local var_0_1 = var_0_0.word_template_2
 
 function temp()
-	uv0.b = {
+	var_0_1.b = {
 		i = {
 			t = {
 				c = {
@@ -187,16 +190,16 @@ function temp()
 									a = {
 										c = {
 											y = {
-												["化"] = {
-													["的"] = {
+												化 = {
+													的 = {
 														c = {
 															n = {
 																this = true
 															}
 														},
-														["宣"] = {
-															["传"] = {
-																["部"] = {
+														宣 = {
+															传 = {
+																部 = {
 																	this = true
 																}
 															}
@@ -341,13 +344,13 @@ function temp()
 			}
 		},
 		t = {
-			["天"] = {
-				["堂"] = {
+			天 = {
+				堂 = {
 					w = {
 						w = {
 							w = {
-								["在"] = {
-									["线"] = {
+								在 = {
+									线 = {
 										this = true
 									}
 								}
@@ -358,13 +361,13 @@ function temp()
 			}
 		},
 		b = {
-			["狗"] = {
+			狗 = {
 				this = true
 			}
 		},
 		o = {
-			["格"] = {
-				["巴"] = {
+			格 = {
+				巴 = {
 					this = true
 				}
 			},
@@ -418,29 +421,29 @@ function temp()
 						}
 					}
 				},
-				["刮"] = {
-					["刮"] = {
+				刮 = {
+					刮 = {
 						this = true
 					}
 				},
-				["一"] = {
-					["拨"] = {
+				一 = {
+					拨 = {
 						this = true
 					}
 				}
 			},
-			["书"] = {
-				["记"] = {
+			书 = {
+				记 = {
 					this = true
 				}
 			},
-			["袭"] = {
-				["来"] = {
+			袭 = {
+				来 = {
 					this = true
 				}
 			},
-			["西"] = {
-				["奶"] = {
+			西 = {
+				奶 = {
 					this = true
 				}
 			}
@@ -478,7 +481,7 @@ end
 temp()
 
 function temp()
-	uv0.d = {
+	var_0_1.d = {
 		i = {
 			c = {
 				k = {
@@ -511,10 +514,10 @@ function temp()
 		},
 		o = {
 			g = {
-				["肉"] = {
-					["汤"] = {
-						["浇"] = {
-							["地"] = {
+				肉 = {
+					汤 = {
+						浇 = {
+							地 = {
 								this = true
 							}
 						}
@@ -544,7 +547,7 @@ function temp()
 				b = {
 					l = {
 						e = {
-							["会"] = {
+							会 = {
 								this = true
 							},
 							m = {
@@ -565,7 +568,7 @@ function temp()
 			a = {
 				r = {
 					f = {
-						["邓"] = {
+						邓 = {
 							this = true
 						}
 					}
@@ -628,8 +631,8 @@ function temp()
 			l = {
 				a = {
 					i = {
-						["辣"] = {
-							["妈"] = {
+						辣 = {
+							妈 = {
 								this = true
 							}
 						}
@@ -643,7 +646,7 @@ end
 temp()
 
 function temp()
-	uv0.f = {
+	var_0_1.f = {
 		["."] = {
 			u = {
 				["."] = {
@@ -673,15 +676,15 @@ function temp()
 					this = true
 				}
 			},
-			["轮"] = {
-				["功"] = {
+			轮 = {
+				功 = {
 					this = true
 				}
 			},
 			l = {
 				v = {
-					["虚"] = {
-						["设"] = {
+					虚 = {
+						设 = {
 							this = true
 						}
 					}
@@ -748,9 +751,9 @@ function temp()
 							}
 						}
 					},
-					["钻"] = {
-						["石"] = {
-							["杯"] = {
+					钻 = {
+						石 = {
+							杯 = {
 								this = true
 							}
 						}
@@ -822,8 +825,8 @@ function temp()
 			}
 		},
 		["4"] = {
-			["小"] = {
-				["王"] = {
+			小 = {
+				王 = {
 					this = true
 				}
 			}
@@ -834,7 +837,7 @@ end
 temp()
 
 function temp()
-	uv0.h = {
+	var_0_1.h = {
 		a = {
 			n = {
 				d = {
@@ -941,15 +944,15 @@ function temp()
 				}
 			}
 		},
-		["大"] = {
-			["炮"] = {
+		大 = {
+			炮 = {
 				this = true
 			}
 		},
 		u = {
 			i = {
-				["台"] = {
-					["办"] = {
+				台 = {
+					办 = {
 						this = true
 					}
 				}
@@ -1020,9 +1023,9 @@ function temp()
 								g = {
 									e = {
 										d = {
-											["恰"] = {
-												["一"] = {
-													["纳"] = {
+											恰 = {
+												一 = {
+													纳 = {
 														this = true
 													}
 												}
@@ -1053,9 +1056,9 @@ end
 temp()
 
 function temp()
-	uv0["ｊ"] = {
-		["ａ"] = {
-			["ｐ"] = {
+	var_0_1.ｊ = {
+		ａ = {
+			ｐ = {
 				this = true
 			}
 		}
@@ -1065,7 +1068,7 @@ end
 temp()
 
 function temp()
-	uv0.j = {
+	var_0_1.j = {
 		a = {
 			p = {
 				this = true
@@ -1241,7 +1244,7 @@ end
 temp()
 
 function temp()
-	uv0.k = {
+	var_0_1.k = {
 		a = {
 			f = {
 				f = {
@@ -1283,7 +1286,7 @@ function temp()
 								["1"] = {
 									["5"] = {
 										["}"] = {
-											["然"] = {
+											然 = {
 												["."] = {
 													["{"] = {
 														["0"] = {
@@ -1291,7 +1294,7 @@ function temp()
 																["1"] = {
 																	["5"] = {
 																		["}"] = {
-																			["不"] = {
+																			不 = {
 																				["."] = {
 																					["{"] = {
 																						["0"] = {
@@ -1299,7 +1302,7 @@ function temp()
 																								["1"] = {
 																									["5"] = {
 																										["}"] = {
-																											["动"] = {
+																											动 = {
 																												this = true
 																											}
 																										}

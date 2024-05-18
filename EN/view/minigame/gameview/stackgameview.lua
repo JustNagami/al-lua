@@ -1,107 +1,124 @@
-slot0 = class("StackGameView", import("..BaseMiniGameView"))
-slot0.MINIGAME_HUB_ID = 39
-slot0.MINIGAME_ID = 47
+﻿local var_0_0 = class("StackGameView", import("..BaseMiniGameView"))
 
-function slot0.getUIName(slot0)
+var_0_0.MINIGAME_HUB_ID = 39
+var_0_0.MINIGAME_ID = 47
+
+function var_0_0.getUIName(arg_1_0)
 	return "PileGameUI"
 end
 
-function slot0.init(slot0)
-	slot0.backBtn = slot0:findTF("overview/back")
-	slot0.scrollrect = slot0:findTF("overview/levels"):GetComponent(typeof(ScrollRect))
-	slot0.levelUIlist = UIItemList.New(slot0:findTF("overview/levels/mask/content"), slot0:findTF("overview/levels/mask/content/1"))
-	slot0.topArrBtn = slot0:findTF("overview/levels/top")
-	slot0.bottomArrBtn = slot0:findTF("overview/levels/bottom")
+function var_0_0.init(arg_2_0)
+	arg_2_0.backBtn = arg_2_0:findTF("overview/back")
+	arg_2_0.scrollrect = arg_2_0:findTF("overview/levels"):GetComponent(typeof(ScrollRect))
+	arg_2_0.levelUIlist = UIItemList.New(arg_2_0:findTF("overview/levels/mask/content"), arg_2_0:findTF("overview/levels/mask/content/1"))
+	arg_2_0.topArrBtn = arg_2_0:findTF("overview/levels/top")
+	arg_2_0.bottomArrBtn = arg_2_0:findTF("overview/levels/bottom")
 end
 
-slot1 = 7
+local var_0_1 = 7
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.topArrBtn, function ()
-		if uv0.scrollrect.normalizedPosition.y + 1 / (uv1 - 4) > 1 then
-			slot0 = 1
+	onButton(arg_3_0, arg_3_0.topArrBtn, function()
+		local var_5_0 = arg_3_0.scrollrect.normalizedPosition.y + 1 / (var_0_1 - 4)
+
+		if var_5_0 > 1 then
+			var_5_0 = 1
 		end
 
-		scrollTo(uv0.scrollrect, 0, slot0)
+		scrollTo(arg_3_0.scrollrect, 0, var_5_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bottomArrBtn, function ()
-		if uv0.scrollrect.normalizedPosition.y - 1 / (uv1 - 4) < 0 then
-			slot0 = 0
+	onButton(arg_3_0, arg_3_0.bottomArrBtn, function()
+		local var_6_0 = arg_3_0.scrollrect.normalizedPosition.y - 1 / (var_0_1 - 4)
+
+		if var_6_0 < 0 then
+			var_6_0 = 0
 		end
 
-		scrollTo(uv0.scrollrect, 0, slot0)
+		scrollTo(arg_3_0.scrollrect, 0, var_6_0)
 	end, SFX_PANEL)
-	slot0.levelUIlist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateLevelTr(slot1 + 1, slot2)
+	arg_3_0.levelUIlist:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateLevelTr(arg_7_1 + 1, arg_7_2)
 		end
 	end)
-	slot0.levelUIlist:align(uv1)
+	arg_3_0.levelUIlist:align(var_0_1)
 
-	slot0.controller = PileGameController.New()
+	arg_3_0.controller = PileGameController.New()
 
-	slot0.controller.view:SetUI(slot0._go)
-	slot0.controller:SetUp(slot0:PackData(), function (slot0, slot1)
-		if slot1 < slot0 then
-			uv0:StoreDataToServer({
-				slot0
+	arg_3_0.controller.view:SetUI(arg_3_0._go)
+
+	local var_3_0 = arg_3_0:PackData()
+
+	arg_3_0.controller:SetUp(var_3_0, function(arg_8_0, arg_8_1)
+		if arg_8_1 < arg_8_0 then
+			arg_3_0:StoreDataToServer({
+				arg_8_0
 			})
 		end
 
-		if uv0:GetMGHubData().count > 0 then
-			uv0:SendSuccess(0)
+		if arg_3_0:GetMGHubData().count > 0 then
+			arg_3_0:SendSuccess(0)
 		end
 	end)
 end
 
-function slot0.UpdateLevelTr(slot0, slot1, slot2)
-	setActive(slot2:Find("clear"), slot1 <= getProxy(MiniGameProxy):GetHubByHubId(uv0.MINIGAME_HUB_ID).usedtime)
+function var_0_0.UpdateLevelTr(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = getProxy(MiniGameProxy):GetHubByHubId(var_0_0.MINIGAME_HUB_ID)
+	local var_9_1 = arg_9_2:Find("clear")
+	local var_9_2 = arg_9_2:Find("unopen")
+	local var_9_3 = arg_9_2:Find("award")
 
-	slot8 = slot1 > slot4.count + slot4.usedtime
+	setActive(var_9_1, arg_9_1 <= var_9_0.usedtime)
 
-	setActive(slot2:Find("unopen"), slot8)
-	setActive(slot2:Find("award"), not slot8)
+	local var_9_4 = arg_9_1 > var_9_0.count + var_9_0.usedtime
 
-	if not slot8 then
-		slot10 = pg.mini_game[uv0.MINIGAME_ID].simple_config_data.drop[slot1]
+	setActive(var_9_2, var_9_4)
+	setActive(var_9_3, not var_9_4)
 
-		updateDrop(slot7, {
-			type = slot10[1],
-			id = slot10[2],
-			count = slot10[3]
-		})
-		onButton(slot0, slot7, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+	if not var_9_4 then
+		local var_9_5 = pg.mini_game[var_0_0.MINIGAME_ID].simple_config_data.drop[arg_9_1]
+		local var_9_6 = {
+			type = var_9_5[1],
+			id = var_9_5[2],
+			count = var_9_5[3]
+		}
+
+		updateDrop(var_9_3, var_9_6)
+		onButton(arg_9_0, var_9_3, function()
+			arg_9_0:emit(BaseUI.ON_DROP, var_9_6)
 		end, SFX_PANEL)
 	end
 
-	slot2:Find("Text"):GetComponent(typeof(Image)).sprite = LoadSprite("ui/minigameui/pile_atlas", "level" .. slot1)
+	arg_9_2:Find("Text"):GetComponent(typeof(Image)).sprite = LoadSprite("ui/minigameui/pile_atlas", "level" .. arg_9_1)
 end
 
-function slot0.PackData(slot0)
+function var_0_0.PackData(arg_11_0)
+	local var_11_0 = arg_11_0:GetMGData():GetRuntimeData("elements")
+	local var_11_1 = var_11_0 and var_11_0[1] or 0
+
 	return {
-		highestScore = slot0:GetMGData():GetRuntimeData("elements") and slot1[1] or 0,
-		screen = Vector2(slot0._tf.rect.width, slot0._tf.rect.height)
+		highestScore = var_11_1,
+		screen = Vector2(arg_11_0._tf.rect.width, arg_11_0._tf.rect.height)
 	}
 end
 
-function slot0.OnGetAwardDone(slot0, slot1)
-	slot0.levelUIlist:align(uv0)
+function var_0_0.OnGetAwardDone(arg_12_0, arg_12_1)
+	arg_12_0.levelUIlist:align(var_0_1)
 end
 
-function slot0.onBackPressed(slot0)
-	if slot0.controller:onBackPressed() then
+function var_0_0.onBackPressed(arg_13_0)
+	if arg_13_0.controller:onBackPressed() then
 		return
 	end
 
-	slot0:emit(uv0.ON_BACK)
+	arg_13_0:emit(var_0_0.ON_BACK)
 end
 
-function slot0.willExit(slot0)
-	slot0.controller:Dispose()
+function var_0_0.willExit(arg_14_0)
+	arg_14_0.controller:Dispose()
 end
 
-return slot0
+return var_0_0

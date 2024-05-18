@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_collection_record_template = {
 	[100001] = {
 		type = 1,

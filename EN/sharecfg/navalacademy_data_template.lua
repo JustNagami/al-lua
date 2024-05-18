@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.navalacademy_data_template = {
 	{
 		name = "Lecture Hall",

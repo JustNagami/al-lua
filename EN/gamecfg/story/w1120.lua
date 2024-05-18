@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "W1120",
 	mode = 2,
 	skipTip = false,

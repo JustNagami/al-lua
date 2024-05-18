@@ -1,18 +1,23 @@
-slot0 = class("GalleryUnlockCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GalleryUnlockCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.unlockCBFunc
-	slot6 = getProxy(BagProxy)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.picID
+	local var_1_2 = var_1_0.unlockCBFunc
+	local var_1_3 = getProxy(AppreciateProxy)
+	local var_1_4 = getProxy(BagProxy)
+	local var_1_5 = getProxy(PlayerProxy)
+	local var_1_6 = var_1_5:getData()
+	local var_1_7 = var_1_3:getPicUnlockMaterialByID(var_1_1)
 
-	for slot13, slot14 in pairs(getProxy(AppreciateProxy):getPicUnlockMaterialByID(slot2.picID)) do
-		if slot14.type == DROP_TYPE_RESOURCE then
-			if getProxy(PlayerProxy):getData():getResById(slot14.id) < slot14.count then
+	for iter_1_0, iter_1_1 in pairs(var_1_7) do
+		if iter_1_1.type == DROP_TYPE_RESOURCE then
+			if var_1_6:getResById(iter_1_1.id) < iter_1_1.count then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
-		elseif slot14.type == DROP_TYPE_ITEM and slot6:getItemCountById(slot14.id) < slot14.count then
+		elseif iter_1_1.type == DROP_TYPE_ITEM and var_1_4:getItemCountById(iter_1_1.id) < iter_1_1.count then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 			return
@@ -20,29 +25,31 @@ function slot0.execute(slot0, slot1)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(17501, {
-		id = slot3
-	}, 17502, function (slot0)
-		if slot0.result == 0 then
-			uv0:addPicIDToUnlockList(uv1)
+		id = var_1_1
+	}, 17502, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_3:addPicIDToUnlockList(var_1_1)
 
-			for slot5, slot6 in pairs(uv0:getPicUnlockMaterialByID(uv1)) do
-				if slot6.type == DROP_TYPE_RESOURCE then
-					uv2:consume({
-						[id2res(slot6.id)] = slot6.count
+			local var_2_0 = var_1_3:getPicUnlockMaterialByID(var_1_1)
+
+			for iter_2_0, iter_2_1 in pairs(var_2_0) do
+				if iter_2_1.type == DROP_TYPE_RESOURCE then
+					var_1_6:consume({
+						[id2res(iter_2_1.id)] = iter_2_1.count
 					})
-					uv3:updatePlayer(uv2)
-				elseif slot6.type == DROP_TYPE_ITEM then
-					uv4:removeItemById(slot6.id, slot6.count)
+					var_1_5:updatePlayer(var_1_6)
+				elseif iter_2_1.type == DROP_TYPE_ITEM then
+					var_1_4:removeItemById(iter_2_1.id, iter_2_1.count)
 				end
 			end
 
-			if uv5 then
-				uv5()
+			if var_1_2 then
+				var_1_2()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips("UnLock Fail, Code:" .. tostring(slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips("UnLock Fail, Code:" .. tostring(arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,15 +1,4 @@
-return {
-	{},
-	time = 0,
-	name = "",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 30223,
-	icon = 30220,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -30,5 +19,16 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	time = 0,
+	name = "",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 30223,
+	icon = 30220,
+	last_effect = ""
 }

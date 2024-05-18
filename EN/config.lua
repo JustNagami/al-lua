@@ -1,4 +1,4 @@
-ShareCfg = {
+﻿ShareCfg = {
 	["ShareCfg.activity_event_challenge"] = true,
 	["ShareCfg.roll_attr"] = true,
 	["ShareCfg.puzzle_combat_template"] = true,

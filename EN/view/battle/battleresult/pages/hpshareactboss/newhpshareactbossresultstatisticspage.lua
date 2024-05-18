@@ -1,62 +1,66 @@
-slot0 = class("NewHpShareActBossResultStatisticsPage", import("..activityBoss.NewActivityBossResultStatisticsPage"))
+﻿local var_0_0 = class("NewHpShareActBossResultStatisticsPage", import("..activityBoss.NewActivityBossResultStatisticsPage"))
 
-function slot0.UpdateGrade(slot0)
-	LoadImageSpriteAsync("battlescore/grade_label_clear", slot0.gradeTxt, false)
-	setActive(slot0.gradeIcon, false)
+function var_0_0.UpdateGrade(arg_1_0)
+	local var_1_0 = "battlescore/grade_label_clear"
+
+	LoadImageSpriteAsync(var_1_0, arg_1_0.gradeTxt, false)
+	setActive(arg_1_0.gradeIcon, false)
 end
 
-function slot0.UpdateTicket(slot0, slot1)
-	uv0.super.UpdateTicket(slot0, slot1)
+function var_0_0.UpdateTicket(arg_2_0, arg_2_1)
+	var_0_0.super.UpdateTicket(arg_2_0, arg_2_1)
 
-	slot2 = slot1:Find("playAgain/ticket/checkbox")
+	local var_2_0 = arg_2_1:Find("playAgain/ticket/checkbox")
 
-	triggerToggle(slot2, true)
-	setToggleEnabled(slot2, false)
+	triggerToggle(var_2_0, true)
+	setToggleEnabled(var_2_0, false)
 end
 
-function slot0.EnoughTicketCount(slot0)
-	return getProxy(PlayerProxy):getRawData():getResource(slot0:GetTicketItemID(slot0.contextData.actId)) > 0
+function var_0_0.EnoughTicketCount(arg_3_0)
+	local var_3_0 = arg_3_0:GetTicketItemID(arg_3_0.contextData.actId)
+
+	return getProxy(PlayerProxy):getRawData():getResource(var_3_0) > 0
 end
 
-function slot0.OnPlayAgain(slot0, slot1)
-	if slot0:IsLastBonus() then
-		slot0:PassMsgbox("lastBonus", {
+function var_0_0.OnPlayAgain(arg_4_0, arg_4_1)
+	if arg_4_0:IsLastBonus() then
+		arg_4_0:PassMsgbox("lastBonus", {
 			content = i18n("expedition_drop_use_out")
-		}, slot1)
+		}, arg_4_1)
 
 		return
 	end
 
-	if not slot0:EnoughTicketCount() then
-		slot1()
+	if not arg_4_0:EnoughTicketCount() then
+		arg_4_1()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noTicket"))
 
 		return
 	end
 
-	slot2, slot3 = slot0:NotEnoughOilCost()
+	local var_4_0, var_4_1 = arg_4_0:NotEnoughOilCost()
 
-	if slot2 then
-		slot0:PassMsgbox("oil", slot3, slot1)
-
-		return
-	end
-
-	if slot0:NotEnoughShipBag() then
-		slot0:PassMsgbox("shipCapacity", nil, slot1)
+	if var_4_0 then
+		arg_4_0:PassMsgbox("oil", var_4_1, arg_4_1)
 
 		return
 	end
 
-	slot4, slot5 = slot0:NotEnoughEnergy()
-
-	if slot4 then
-		slot0:PassMsgbox("energy", slot5, slot1)
+	if arg_4_0:NotEnoughShipBag() then
+		arg_4_0:PassMsgbox("shipCapacity", nil, arg_4_1)
 
 		return
 	end
 
-	slot0:emit(NewBattleResultMediator.REENTER_STAGE)
+	local var_4_2, var_4_3 = arg_4_0:NotEnoughEnergy()
+
+	if var_4_2 then
+		arg_4_0:PassMsgbox("energy", var_4_3, arg_4_1)
+
+		return
+	end
+
+	arg_4_0:emit(NewBattleResultMediator.REENTER_STAGE)
 end
 
-return slot0
+return var_0_0

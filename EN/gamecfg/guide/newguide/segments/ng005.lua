@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "NG005",
 	events = {
 		{
@@ -8,7 +8,7 @@ return {
 		},
 		{
 			ui = {
-				dynamicPath = function ()
+				dynamicPath = function()
 					if USE_OLD_MAIN_LIVE_AREA_UI then
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaOldUI(Clone)/commander_btn"
 					else

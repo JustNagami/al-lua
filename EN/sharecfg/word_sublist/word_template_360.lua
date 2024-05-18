@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_360 = {}
-slot1 = slot0.word_template_360
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_360 = {}
+
+local var_0_1 = var_0_0.word_template_360
 
 function temp()
-	uv0["諏"] = {
+	var_0_1.諏 = {
 		this = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["鄹"] = {
+	var_0_1.鄹 = {
 		this = {
 			this = true
 		}
@@ -24,7 +27,7 @@ end
 temp()
 
 function temp()
-	uv0["鲰"] = {
+	var_0_1.鲰 = {
 		this = {
 			this = true
 		}
@@ -34,7 +37,7 @@ end
 temp()
 
 function temp()
-	uv0["鯫"] = {
+	var_0_1.鯫 = {
 		this = {
 			this = true
 		}
@@ -44,43 +47,43 @@ end
 temp()
 
 function temp()
-	uv0["足"] = {
-		["交"] = {
+	var_0_1.足 = {
+		交 = {
 			this = true,
-			["口"] = {
-				["爆"] = {
+			口 = {
+				爆 = {
 					this = true
 				}
 			}
 		},
-		["脚"] = {
-			["交"] = {
+		脚 = {
+			交 = {
 				this = true
 			}
 		},
-		["腳"] = {
-			["交"] = {
+		腳 = {
+			交 = {
 				this = true
 			}
 		},
-		["球"] = {
-			["改"] = {
-				["单"] = {
+		球 = {
+			改 = {
+				单 = {
 					this = true
 				}
 			},
-			["皇"] = {
-				["冠"] = {
+			皇 = {
+				冠 = {
 					this = true
 				}
 			},
-			["投"] = {
-				["注"] = {
+			投 = {
+				注 = {
 					this = true
 				}
 			},
-			["系"] = {
-				["统"] = {
+			系 = {
+				统 = {
 					this = true
 				}
 			}
@@ -91,24 +94,24 @@ end
 temp()
 
 function temp()
-	uv0["组"] = {
-		["鸡"] = {
-			["部"] = {
+	var_0_1.组 = {
+		鸡 = {
+			部 = {
 				this = true
 			}
 		},
-		["装"] = {
+		装 = {
 			["5"] = {
 				["4"] = {
-					["式"] = {
+					式 = {
 						["7"] = {
 							["6"] = {
 								["2"] = {
 									m = {
 										m = {
-											["枪"] = {
-												["提"] = {
-													["供"] = {
+											枪 = {
+												提 = {
+													供 = {
 														this = true
 													}
 												}
@@ -121,15 +124,15 @@ function temp()
 					}
 				}
 			},
-			["录"] = {
-				["音"] = {
-					["监"] = {
-						["听"] = {
-							["器"] = {
+			录 = {
+				音 = {
+					监 = {
+						听 = {
+							器 = {
 								this = true
 							},
-							["软"] = {
-								["件"] = {
+							软 = {
+								件 = {
 									this = true
 								}
 							}
@@ -144,22 +147,22 @@ end
 temp()
 
 function temp()
-	uv0["祖"] = {
-		["国"] = {
-			["在"] = {
-				["沉"] = {
-					["睡"] = {
+	var_0_1.祖 = {
+		国 = {
+			在 = {
+				沉 = {
+					睡 = {
 						this = true
 					}
 				}
 			}
 		},
-		["穆"] = {
-			["来"] = {
-				["提"] = {
-					["·"] = {
-						["阿"] = {
-							["金"] = {
+		穆 = {
+			来 = {
+				提 = {
+					· = {
+						阿 = {
+							金 = {
 								this = true
 							}
 						}

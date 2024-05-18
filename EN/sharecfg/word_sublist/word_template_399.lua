@@ -1,13 +1,16 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_399 = {}
-slot1 = slot0.word_template_399
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_399 = {}
+
+local var_0_1 = var_0_0.word_template_399
 
 function temp()
-	uv0["洒"] = {
-		["哥"] = {
-			["儿"] = {
-				["王"] = {
+	var_0_1.洒 = {
+		哥 = {
+			儿 = {
+				王 = {
 					this = true
 				}
 			}
@@ -18,9 +21,9 @@ end
 temp()
 
 function temp()
-	uv0["蝗"] = {
-		["冥"] = {
-			["痔"] = {
+	var_0_1.蝗 = {
+		冥 = {
+			痔 = {
 				this = true
 			}
 		}
@@ -30,17 +33,17 @@ end
 temp()
 
 function temp()
-	uv0["矛"] = {
-		["按"] = {
-			["嘤"] = {
+	var_0_1.矛 = {
+		按 = {
+			嘤 = {
 				this = true
 			},
-			["英"] = {
+			英 = {
 				this = true
 			}
 		},
-		["则"] = {
-			["西"] = {
+		则 = {
+			西 = {
 				this = true
 			}
 		}
@@ -50,14 +53,14 @@ end
 temp()
 
 function temp()
-	uv0["坎"] = {
-		["特"] = {
+	var_0_1.坎 = {
+		特 = {
 			["\\"] = {
 				p = {
 					P = {
 						["?"] = {
-							["自"] = {
-								["由"] = {
+							自 = {
+								由 = {
 									this = true
 								}
 							}
@@ -72,9 +75,9 @@ end
 temp()
 
 function temp()
-	uv0["ξ"] = {
-		["病"] = {
-			["毒"] = {
+	var_0_1.ξ = {
+		病 = {
+			毒 = {
 				this = true
 			}
 		}
@@ -84,19 +87,19 @@ end
 temp()
 
 function temp()
-	uv0["闷"] = {
-		["声"] = {
-			["发"] = {
-				["财"] = {
-					["一"] = {
-						["路"] = {
-							["续"] = {
-								["续"] = {
-									["啊"] = {
-										["续"] = {
-											["啊"] = {
-												["续"] = {
-													["啊"] = {
+	var_0_1.闷 = {
+		声 = {
+			发 = {
+				财 = {
+					一 = {
+						路 = {
+							续 = {
+								续 = {
+									啊 = {
+										续 = {
+											啊 = {
+												续 = {
+													啊 = {
 														this = true
 													}
 												}
@@ -116,10 +119,10 @@ end
 temp()
 
 function temp()
-	uv0["蛇"] = {
-		["灰"] = {
-			["主"] = {
-				["义"] = {
+	var_0_1.蛇 = {
+		灰 = {
+			主 = {
+				义 = {
 					this = true
 				}
 			}

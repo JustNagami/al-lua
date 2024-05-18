@@ -1,829 +1,910 @@
-slot0 = class("OtherworldMapScene", import("view.activity.BossSingle.BossSingleSceneTemplate"))
-slot1 = "otherworld_scroll_value_x"
-slot2 = "otherworld_mode"
-slot0.MODE_STORY = 1
-slot0.MODE_BATTLE = 2
-slot0.NAME2INDEX = {
+﻿local var_0_0 = class("OtherworldMapScene", import("view.activity.BossSingle.BossSingleSceneTemplate"))
+local var_0_1 = "otherworld_scroll_value_x"
+local var_0_2 = "otherworld_mode"
+
+var_0_0.MODE_STORY = 1
+var_0_0.MODE_BATTLE = 2
+var_0_0.NAME2INDEX = {
 	xifangjudian = 1,
 	mowangcheng = 4,
 	julongchaoxue = 5,
 	zhongbujudian = 2,
 	dongfangjudian = 3
 }
-slot0.TYPE2NAME = {
+var_0_0.TYPE2NAME = {
 	[BossSingleEnemyData.TYPE.EAST] = "xifangjudian",
 	[BossSingleEnemyData.TYPE.NORMAL] = "zhongbujudian",
 	[BossSingleEnemyData.TYPE.HARD] = "dongfangjudian",
 	[BossSingleEnemyData.TYPE.SP] = "mowangcheng",
 	[BossSingleEnemyData.TYPE.EX] = "julongchaoxue"
 }
-slot0.MAP_AREA_CNT = 5
-slot0.MAP_AREA_START = 2
-slot0.FLOAT_LEFT_MIN_Y = -100
-slot0.FLOAT_ARROW_LIMIT_Y = {
+var_0_0.MAP_AREA_CNT = 5
+var_0_0.MAP_AREA_START = 2
+var_0_0.FLOAT_LEFT_MIN_Y = -100
+var_0_0.FLOAT_ARROW_LIMIT_Y = {
 	-50,
 	50
 }
-slot0.STORY_TPL_HALF_WIDTH = 235
-slot0.TERMINAL_DELAY_TIME = 0.5
-slot0.MAP_ANIM_TIME = 0.8
-slot0.DEFAULT_SCROLL_VALUE = 0.36
+var_0_0.STORY_TPL_HALF_WIDTH = 235
+var_0_0.TERMINAL_DELAY_TIME = 0.5
+var_0_0.MAP_ANIM_TIME = 0.8
+var_0_0.DEFAULT_SCROLL_VALUE = 0.36
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "OtherworldMapUI"
 end
 
-function slot0.SetEventAct(slot0, slot1)
-	slot0.eventAct = slot1
+function var_0_0.SetEventAct(arg_2_0, arg_2_1)
+	arg_2_0.eventAct = arg_2_1
 end
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+function var_0_0.init(arg_3_0)
+	var_0_0.super.init(arg_3_0)
 
-	slot0.mapTF = slot0:findTF("map")
-	slot0.bgTF = slot0:findTF("bg", slot0.mapTF)
-	slot0.mapContent = slot0:findTF("content", slot0.mapTF)
-	slot0.storiesTF = slot0:findTF("stories", slot0.mapContent)
-	slot0.storyTpl = slot0:findTF("story_node", slot0.storiesTF)
+	arg_3_0.mapTF = arg_3_0:findTF("map")
+	arg_3_0.bgTF = arg_3_0:findTF("bg", arg_3_0.mapTF)
+	arg_3_0.mapContent = arg_3_0:findTF("content", arg_3_0.mapTF)
+	arg_3_0.storiesTF = arg_3_0:findTF("stories", arg_3_0.mapContent)
+	arg_3_0.storyTpl = arg_3_0:findTF("story_node", arg_3_0.storiesTF)
 
-	setActive(slot0.storyTpl, false)
+	setActive(arg_3_0.storyTpl, false)
 
-	slot0.strongholdsTF = slot0:findTF("strongholds", slot0.mapContent)
-	slot0.locationsTF = slot0:findTF("locations", slot0.mapContent)
-	slot0.uiTF = slot0:findTF("ui")
-	slot0.focusTF = slot0:findTF("focus", slot0.uiTF)
+	arg_3_0.strongholdsTF = arg_3_0:findTF("strongholds", arg_3_0.mapContent)
+	arg_3_0.locationsTF = arg_3_0:findTF("locations", arg_3_0.mapContent)
+	arg_3_0.uiTF = arg_3_0:findTF("ui")
+	arg_3_0.focusTF = arg_3_0:findTF("focus", arg_3_0.uiTF)
 
-	setActive(slot0:findTF("tpl", slot0.focusTF), false)
+	setActive(arg_3_0:findTF("tpl", arg_3_0.focusTF), false)
 
-	slot0.topUI = slot0:findTF("top", slot0.uiTF)
-	slot0.ptIconTF = slot0:findTF("res_panel/icon", slot0.topUI)
-	slot0.ptValueTF = slot0:findTF("res_panel/Text", slot0.topUI)
-	slot0.leftUI = slot0:findTF("left", slot0.uiTF)
-	slot0.battleBtn = slot0:findTF("battle_btn", slot0.leftUI)
-	slot0.storyBtn = slot0:findTF("story_btn", slot0.leftUI)
-	slot0.leftArrow = slot0:findTF("arrow", slot0.leftUI)
-	slot0.rightArrow = slot0:findTF("right/arrow", slot0.uiTF)
-	slot0.playerId = getProxy(PlayerProxy):getRawData().id
-	slot0.battleHideLocations = {
-		slot0:findTF("2/xifangjudian", slot0.locationsTF),
-		slot0:findTF("3/zhongbujudian", slot0.locationsTF),
-		slot0:findTF("4/dongfangjudian", slot0.locationsTF),
-		slot0:findTF("5/julongchaoxue", slot0.locationsTF),
-		slot0:findTF("5/mowangcheng", slot0.locationsTF),
-		slot0:findTF("wangdu", slot0.locationsTF)
+	arg_3_0.topUI = arg_3_0:findTF("top", arg_3_0.uiTF)
+	arg_3_0.ptIconTF = arg_3_0:findTF("res_panel/icon", arg_3_0.topUI)
+	arg_3_0.ptValueTF = arg_3_0:findTF("res_panel/Text", arg_3_0.topUI)
+	arg_3_0.leftUI = arg_3_0:findTF("left", arg_3_0.uiTF)
+	arg_3_0.battleBtn = arg_3_0:findTF("battle_btn", arg_3_0.leftUI)
+	arg_3_0.storyBtn = arg_3_0:findTF("story_btn", arg_3_0.leftUI)
+	arg_3_0.leftArrow = arg_3_0:findTF("arrow", arg_3_0.leftUI)
+	arg_3_0.rightArrow = arg_3_0:findTF("right/arrow", arg_3_0.uiTF)
+	arg_3_0.playerId = getProxy(PlayerProxy):getRawData().id
+	arg_3_0.battleHideLocations = {
+		arg_3_0:findTF("2/xifangjudian", arg_3_0.locationsTF),
+		arg_3_0:findTF("3/zhongbujudian", arg_3_0.locationsTF),
+		arg_3_0:findTF("4/dongfangjudian", arg_3_0.locationsTF),
+		arg_3_0:findTF("5/julongchaoxue", arg_3_0.locationsTF),
+		arg_3_0:findTF("5/mowangcheng", arg_3_0.locationsTF),
+		arg_3_0:findTF("wangdu", arg_3_0.locationsTF)
 	}
-	slot0.clickMask = slot0:findTF("click_mask", slot0.uiTF)
+	arg_3_0.clickMask = arg_3_0:findTF("click_mask", arg_3_0.uiTF)
 
-	setActive(slot0.clickMask, false)
+	setActive(arg_3_0.clickMask, false)
 end
 
-function slot0.didEnter(slot0)
-	uv0.super.didEnter(slot0)
-	slot0:SetNativeSizes()
-	onButton(slot0, slot0:findTF("return_btn", slot0.topUI), function ()
-		uv0:onBackPressed()
+function var_0_0.didEnter(arg_4_0)
+	var_0_0.super.didEnter(arg_4_0)
+	arg_4_0:SetNativeSizes()
+	onButton(arg_4_0, arg_4_0:findTF("return_btn", arg_4_0.topUI), function()
+		arg_4_0:onBackPressed()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("home_btn", slot0.topUI), function ()
-		uv0:quickExitFunc()
+	onButton(arg_4_0, arg_4_0:findTF("home_btn", arg_4_0.topUI), function()
+		arg_4_0:quickExitFunc()
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("help_btn", slot0.topUI), function ()
+	onButton(arg_4_0, arg_4_0:findTF("help_btn", arg_4_0.topUI), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.otherworld_map_help.tip
 		})
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:PlaySwithAnim(function ()
-			uv0:ShowBattleMode()
+	onButton(arg_4_0, arg_4_0.battleBtn, function()
+		arg_4_0:PlaySwithAnim(function()
+			arg_4_0:ShowBattleMode()
 		end)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.storyBtn, function ()
-		if not uv0.eventAct then
+	onButton(arg_4_0, arg_4_0.storyBtn, function()
+		if not arg_4_0.eventAct then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		uv0:PlaySwithAnim(function ()
-			uv0:ShowStoryMode()
+		arg_4_0:PlaySwithAnim(function()
+			arg_4_0:ShowStoryMode()
 		end)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0:findTF("terminal_btn", slot0.leftUI), function ()
-		uv0:OpenTerminal()
+	onButton(arg_4_0, arg_4_0:findTF("terminal_btn", arg_4_0.leftUI), function()
+		arg_4_0:OpenTerminal()
 	end, SFX_CANCEL)
-	onScroll(slot0, slot0.mapTF, function (slot0)
-		setActive(uv0.leftArrow, slot0.x > 0.1)
-		setActive(uv0.rightArrow, slot0.x < 0.85)
+	onScroll(arg_4_0, arg_4_0.mapTF, function(arg_13_0)
+		setActive(arg_4_0.leftArrow, arg_13_0.x > 0.1)
+		setActive(arg_4_0.rightArrow, arg_13_0.x < 0.85)
 
-		uv0.scrollValueX = slot0.x
+		arg_4_0.scrollValueX = arg_13_0.x
 
-		uv0:onDragFunction()
+		arg_4_0:onDragFunction()
 	end)
 	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = DROP_TYPE_RESOURCE,
-		id = slot0.contextData.resId
-	}):getIcon(), "", slot0.ptIconTF)
-	slot0:InitStrongholds()
-	slot0:InitStoryNodes()
+		id = arg_4_0.contextData.resId
+	}):getIcon(), "", arg_4_0.ptIconTF)
+	arg_4_0:InitStrongholds()
+	arg_4_0:InitStoryNodes()
 
-	slot0.bgScale = slot0._tf.rect.height / 1440
+	arg_4_0.bgScale = arg_4_0._tf.rect.height / 1440
 
-	setLocalScale(slot0.mapTF, {
-		x = slot0.bgScale,
-		y = slot0.bgScale,
-		z = slot0.bgScale
+	setLocalScale(arg_4_0.mapTF, {
+		x = arg_4_0.bgScale,
+		y = arg_4_0.bgScale,
+		z = arg_4_0.bgScale
 	})
 
-	slot1, slot2, slot3 = getSizeRate()
-	slot0.delta = Vector2(slot2 - 100, slot3 - 100) / 2
-	slot0.extendLimit = Vector2(slot0.mapTF.rect.width * slot0.bgScale - slot0._tf.rect.width, slot0.mapTF.rect.height * slot0.bgScale - slot0._tf.rect.height) / 2
+	local var_4_0, var_4_1, var_4_2 = getSizeRate()
 
-	if not slot0.contextData.mode then
-		if PlayerPrefs.GetInt(uv1 .. slot0.playerId, 0) == 0 then
-			slot0.contextData.mode = uv0.MODE_BATTLE
+	arg_4_0.delta = Vector2(var_4_1 - 100, var_4_2 - 100) / 2
+	arg_4_0.extendLimit = Vector2(arg_4_0.mapTF.rect.width * arg_4_0.bgScale - arg_4_0._tf.rect.width, arg_4_0.mapTF.rect.height * arg_4_0.bgScale - arg_4_0._tf.rect.height) / 2
+
+	if not arg_4_0.contextData.mode then
+		local var_4_3 = PlayerPrefs.GetInt(var_0_2 .. arg_4_0.playerId, 0)
+
+		if var_4_3 == 0 then
+			arg_4_0.contextData.mode = var_0_0.MODE_BATTLE
 		else
-			slot0.contextData.mode = slot4
+			arg_4_0.contextData.mode = var_4_3
 		end
 	end
 
-	if slot0.eventAct and slot0.eventAct:getConfig("config_client").open_story and slot4 ~= "" and not pg.NewStoryMgr.GetInstance():IsPlayed(slot4) or not pg.NewStoryMgr.GetInstance():IsPlayed("NG0044") then
-		slot0.contextData.mode = uv0.MODE_BATTLE
+	local var_4_4 = arg_4_0.eventAct and arg_4_0.eventAct:getConfig("config_client").open_story
+
+	if var_4_4 and var_4_4 ~= "" and not pg.NewStoryMgr.GetInstance():IsPlayed(var_4_4) or not pg.NewStoryMgr.GetInstance():IsPlayed("NG0044") then
+		arg_4_0.contextData.mode = var_0_0.MODE_BATTLE
 	end
 
-	if slot0.contextData.mode == uv0.MODE_BATTLE then
-		slot0:ShowBattleMode()
-	elseif slot0.eventAct then
-		slot0:ShowStoryMode()
+	if arg_4_0.contextData.mode == var_0_0.MODE_BATTLE then
+		arg_4_0:ShowBattleMode()
+	elseif arg_4_0.eventAct then
+		arg_4_0:ShowStoryMode()
 	else
-		slot0:ShowBattleMode()
+		arg_4_0:ShowBattleMode()
 	end
 
-	slot0:UpdateView()
+	arg_4_0:UpdateView()
 	seriesAsync({
-		function (slot0)
-			slot1 = PlayerPrefs.GetFloat(uv0 .. uv1.playerId, 0)
+		function(arg_14_0)
+			local var_14_0 = PlayerPrefs.GetFloat(var_0_1 .. arg_4_0.playerId, 0)
 
-			if not PlayerPrefs.HasKey(uv0 .. uv1.playerId) then
-				slot1 = uv2.DEFAULT_SCROLL_VALUE
+			if not PlayerPrefs.HasKey(var_0_1 .. arg_4_0.playerId) then
+				var_14_0 = var_0_0.DEFAULT_SCROLL_VALUE
 			end
 
-			scrollTo(uv1.mapTF, slot1, 0)
-			slot0()
+			scrollTo(arg_4_0.mapTF, var_14_0, 0)
+			arg_14_0()
 		end,
-		function (slot0)
-			if uv0.eventAct and uv0.eventAct:getConfig("config_client").open_story and slot1 ~= "" then
-				pg.NewStoryMgr.GetInstance():Play(slot1, slot0)
+		function(arg_15_0)
+			local var_15_0 = arg_4_0.eventAct and arg_4_0.eventAct:getConfig("config_client").open_story
+
+			if var_15_0 and var_15_0 ~= "" then
+				pg.NewStoryMgr.GetInstance():Play(var_15_0, arg_15_0)
 			else
-				slot0()
+				arg_15_0()
 			end
 		end,
-		function (slot0)
-			pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0044", nil, slot0)
+		function(arg_16_0)
+			pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0044", nil, arg_16_0)
 		end,
-		function (slot0)
-			if uv0.contextData.openTerminal then
-				uv0:OpenTerminal({
-					page = uv0.contextData.terminalPage,
-					onExit = slot0
+		function(arg_17_0)
+			if arg_4_0.contextData.openTerminal then
+				arg_4_0:OpenTerminal({
+					page = arg_4_0.contextData.terminalPage,
+					onExit = arg_17_0
 				})
 
-				uv0.contextData.openTerminal = nil
-				uv0.contextData.terminalPage = nil
+				arg_4_0.contextData.openTerminal = nil
+				arg_4_0.contextData.terminalPage = nil
 			else
-				slot0()
+				arg_17_0()
 			end
 		end
-	}, function ()
-		if uv0.eventAct and uv0.contextData.eventTriggerId then
-			uv0:managedTween(LeanTween.delayedCall, function ()
-				uv0:emit(OtherworldMapMediator.ON_EVENT_TRIGGER, {
-					actId = uv0.eventAct.id,
-					eventId = uv0.contextData.eventTriggerId
+	}, function()
+		if arg_4_0.eventAct and arg_4_0.contextData.eventTriggerId then
+			arg_4_0:managedTween(LeanTween.delayedCall, function()
+				arg_4_0:emit(OtherworldMapMediator.ON_EVENT_TRIGGER, {
+					actId = arg_4_0.eventAct.id,
+					eventId = arg_4_0.contextData.eventTriggerId
 				})
 
-				uv0.contextData.eventTriggerId = nil
+				arg_4_0.contextData.eventTriggerId = nil
 			end, 0.02, nil)
 		end
 	end)
 end
 
-function slot0.SetNativeSizes(slot0)
-	eachChild(slot0.bgTF, function (slot0)
-		eachChild(slot0, function (slot0)
-			if slot0:GetComponent(typeof(Image)) then
-				slot1:SetNativeSize()
+function var_0_0.SetNativeSizes(arg_20_0)
+	eachChild(arg_20_0.bgTF, function(arg_21_0)
+		eachChild(arg_21_0, function(arg_22_0)
+			local var_22_0 = arg_22_0:GetComponent(typeof(Image))
+
+			if var_22_0 then
+				var_22_0:SetNativeSize()
 			end
 		end)
 	end)
-	eachChild(slot0.locationsTF, function (slot0)
-		if slot0.childCount > 0 then
-			eachChild(slot0, function (slot0)
-				if slot0:GetComponent(typeof(Image)) then
-					slot1:SetNativeSize()
+	eachChild(arg_20_0.locationsTF, function(arg_23_0)
+		if arg_23_0.childCount > 0 then
+			eachChild(arg_23_0, function(arg_24_0)
+				local var_24_0 = arg_24_0:GetComponent(typeof(Image))
+
+				if var_24_0 then
+					var_24_0:SetNativeSize()
 				end
 			end)
-		elseif slot0:GetComponent(typeof(Image)) then
-			slot1:SetNativeSize()
+		else
+			local var_23_0 = arg_23_0:GetComponent(typeof(Image))
+
+			if var_23_0 then
+				var_23_0:SetNativeSize()
+			end
 		end
 	end)
-	eachChild(slot0.strongholdsTF, function (slot0)
-		if slot0:Find("name/Image") and slot1:GetComponent(typeof(Image)) then
-			slot2:SetNativeSize()
+	eachChild(arg_20_0.strongholdsTF, function(arg_25_0)
+		local var_25_0 = arg_25_0:Find("name/Image")
+		local var_25_1 = var_25_0 and var_25_0:GetComponent(typeof(Image))
+
+		if var_25_1 then
+			var_25_1:SetNativeSize()
 		end
 	end)
 end
 
-function slot0.BindStronghold(slot0, slot1, slot2)
-	onButton(slot0, slot0:findTF(slot1 .. "/icon", slot0.strongholdsTF), slot2, SFX_PANEL)
-	onButton(slot0, slot0:findTF(slot1 .. "/name", slot0.strongholdsTF), slot2, SFX_PANEL)
+function var_0_0.BindStronghold(arg_26_0, arg_26_1, arg_26_2)
+	onButton(arg_26_0, arg_26_0:findTF(arg_26_1 .. "/icon", arg_26_0.strongholdsTF), arg_26_2, SFX_PANEL)
+	onButton(arg_26_0, arg_26_0:findTF(arg_26_1 .. "/name", arg_26_0.strongholdsTF), arg_26_2, SFX_PANEL)
 end
 
-function slot0.InitStrongholds(slot0, slot1, slot2)
-	function slot6()
+function var_0_0.InitStrongholds(arg_27_0, arg_27_1, arg_27_2)
+	arg_27_0:BindStronghold("wangdu", function()
 		pg.SceneAnimMgr.GetInstance():OtherWorldCoverGoScene(SCENE.OTHERWORLD_BACKHILL)
-	end
+	end)
 
-	slot0:BindStronghold("wangdu", slot6)
+	for iter_27_0, iter_27_1 in pairs(var_0_0.NAME2INDEX) do
+		arg_27_0:BindStronghold(iter_27_0, function()
+			local var_29_0, var_29_1 = arg_27_0.contextData.bossActivity:CheckEntranceByIdx(iter_27_1)
 
-	for slot6, slot7 in pairs(uv0.NAME2INDEX) do
-		slot0:BindStronghold(slot6, function ()
-			slot0, slot1 = uv0.contextData.bossActivity:CheckEntranceByIdx(uv1)
-
-			if slot0 then
-				uv0:ShowNormalFleet(uv1)
+			if var_29_0 then
+				arg_27_0:ShowNormalFleet(iter_27_1)
 			else
-				pg.TipsMgr.GetInstance():ShowTips(slot1)
+				pg.TipsMgr.GetInstance():ShowTips(var_29_1)
 			end
 		end)
 	end
 end
 
-function slot0.InitStoryNodes(slot0)
-	slot0.eventIds = {}
-	slot0.nodeItemList = UIItemList.New(slot0.storiesTF, slot0.storyTpl)
+function var_0_0.InitStoryNodes(arg_30_0)
+	arg_30_0.eventIds = {}
+	arg_30_0.nodeItemList = UIItemList.New(arg_30_0.storiesTF, arg_30_0.storyTpl)
 
-	slot0.nodeItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot2.name = uv0.eventAct:GetEventById(uv0.eventIds[slot1 + 1]).id
+	arg_30_0.nodeItemList:make(function(arg_31_0, arg_31_1, arg_31_2)
+		if arg_31_0 == UIItemList.EventUpdate then
+			local var_31_0 = arg_31_1 + 1
+			local var_31_1 = arg_30_0.eventIds[var_31_0]
+			local var_31_2 = arg_30_0.eventAct:GetEventById(var_31_1)
 
-			slot2:GetComponent(typeof(Animation)):Stop()
+			arg_31_2.name = var_31_2.id
 
-			if not uv0.playInAnimId or uv0.playInAnimId ~= slot5.id then
-				setLocalScale(slot2, Vector3.one)
+			arg_31_2:GetComponent(typeof(Animation)):Stop()
 
-				GetOrAddComponent(slot2, typeof(CanvasGroup)).alpha = 1
+			if not arg_30_0.playInAnimId or arg_30_0.playInAnimId ~= var_31_2.id then
+				setLocalScale(arg_31_2, Vector3.one)
+
+				GetOrAddComponent(arg_31_2, typeof(CanvasGroup)).alpha = 1
 			end
 
-			slot6, slot7 = unpack(slot5:GetPos())
+			local var_31_3, var_31_4 = unpack(var_31_2:GetPos())
 
-			setAnchoredPosition(slot2, {
-				x = slot6,
-				y = slot7
+			setAnchoredPosition(arg_31_2, {
+				x = var_31_3,
+				y = var_31_4
 			})
-			setImageSprite(slot2:Find("type"), GetSpriteFromAtlas("ui/otherworldmapui_atlas", slot5:GetIconName()))
-			setText(slot2:Find("title"), slot5:GetName())
-			onButton(uv0, slot2, function ()
-				if uv0.eventAct:CheckTrigger(uv1) then
-					uv0:TriggerEvent(uv1)
+			setImageSprite(arg_31_2:Find("type"), GetSpriteFromAtlas("ui/otherworldmapui_atlas", var_31_2:GetIconName()))
+			setText(arg_31_2:Find("title"), var_31_2:GetName())
+			onButton(arg_30_0, arg_31_2, function()
+				if arg_30_0.eventAct:CheckTrigger(var_31_1) then
+					arg_30_0:TriggerEvent(var_31_1)
 				end
 			end, SFX_CONFIRM)
 		end
 	end)
 
-	slot0.floatItemList = UIItemList.New(slot0.focusTF, slot0.focusTF:Find("tpl"))
+	arg_30_0.floatItemList = UIItemList.New(arg_30_0.focusTF, arg_30_0.focusTF:Find("tpl"))
 
-	slot0.floatItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0.eventIds[slot1 + 1]
-			slot2.name = slot3
+	arg_30_0.floatItemList:make(function(arg_33_0, arg_33_1, arg_33_2)
+		arg_33_1 = arg_33_1 + 1
 
-			setImageSprite(slot2:Find("type"), GetSpriteFromAtlas("ui/otherworldmapui_atlas", uv0.eventAct:GetEventById(slot3):GetIconName()))
-			onButton(uv0, slot2, function ()
-				uv0:FocusNode(uv0.eventIds[uv1])
+		if arg_33_0 == UIItemList.EventUpdate then
+			local var_33_0 = arg_30_0.eventIds[arg_33_1]
+			local var_33_1 = arg_30_0.eventAct:GetEventById(var_33_0)
+
+			arg_33_2.name = var_33_0
+
+			setImageSprite(arg_33_2:Find("type"), GetSpriteFromAtlas("ui/otherworldmapui_atlas", var_33_1:GetIconName()))
+			onButton(arg_30_0, arg_33_2, function()
+				arg_30_0:FocusNode(arg_30_0.eventIds[arg_33_1])
 			end, SFX_PANEL)
 		end
 	end)
 end
 
-function slot0.onDragFunction(slot0)
-	if not uv0.screenPoints then
-		uv0.screenPoints = {
-			Vector2(-slot0.delta.x, slot0.delta.y),
-			Vector2(slot0.delta.x, slot0.delta.y),
-			Vector2(slot0.delta.x, -slot0.delta.y),
-			Vector2(-slot0.delta.x, -slot0.delta.y)
+function var_0_0.onDragFunction(arg_35_0)
+	if not var_0_0.screenPoints then
+		var_0_0.screenPoints = {
+			Vector2(-arg_35_0.delta.x, arg_35_0.delta.y),
+			Vector2(arg_35_0.delta.x, arg_35_0.delta.y),
+			Vector2(arg_35_0.delta.x, -arg_35_0.delta.y),
+			Vector2(-arg_35_0.delta.x, -arg_35_0.delta.y)
 		}
 	end
 
-	for slot4, slot5 in ipairs(slot0.eventIds) do
-		if slot0.nodeItemList.container:Find(tostring(slot5)) then
-			slot7 = slot0._tf:InverseTransformPoint(slot6.position)
-			slot8 = nil
+	for iter_35_0, iter_35_1 in ipairs(arg_35_0.eventIds) do
+		local var_35_0 = arg_35_0.nodeItemList.container:Find(tostring(iter_35_1))
 
-			for slot12, slot13 in ipairs(uv0.screenPoints) do
-				slot14 = uv0.screenPoints[slot12 % 4 + 1]
-				slot15 = Vector2(slot7.x, slot7.y)
+		if var_35_0 then
+			local var_35_1 = arg_35_0._tf:InverseTransformPoint(var_35_0.position)
+			local var_35_2
 
-				if slot13.x < 0 then
-					slot15.x = slot15.x + uv0.STORY_TPL_HALF_WIDTH
+			for iter_35_2, iter_35_3 in ipairs(var_0_0.screenPoints) do
+				local var_35_3 = var_0_0.screenPoints[iter_35_2 % 4 + 1]
+				local var_35_4 = Vector2(var_35_1.x, var_35_1.y)
+
+				if iter_35_3.x < 0 then
+					var_35_4.x = var_35_4.x + var_0_0.STORY_TPL_HALF_WIDTH
 				end
 
-				if slot13.x > 0 then
-					slot15.x = slot15.x - uv0.STORY_TPL_HALF_WIDTH
+				if iter_35_3.x > 0 then
+					var_35_4.x = var_35_4.x - var_0_0.STORY_TPL_HALF_WIDTH
 				end
 
-				slot16, slot17, slot18 = LineLine(Vector2.zero, slot15, slot13, slot14)
+				local var_35_5, var_35_6, var_35_7 = LineLine(Vector2.zero, var_35_4, iter_35_3, var_35_3)
 
-				if slot16 then
-					slot8 = slot15 * slot17
+				if var_35_5 then
+					var_35_2 = var_35_4 * var_35_6
 
 					break
 				end
 			end
 
-			slot10 = slot0.floatItemList.container:Find(tostring(slot5)):GetComponent(typeof(CanvasGroup))
-			slot10.interactable = tobool(slot8)
-			slot10.blocksRaycasts = tobool(slot8)
-			slot10.alpha = tobool(slot8) and 1 or 0
+			local var_35_8 = arg_35_0.floatItemList.container:Find(tostring(iter_35_1))
+			local var_35_9 = var_35_8:GetComponent(typeof(CanvasGroup))
 
-			if slot8 then
-				if (slot8 * (1 - 50 / slot8:Magnitude())).x < 0 and slot11.y < uv0.FLOAT_LEFT_MIN_Y then
-					slot11.y = uv0.FLOAT_LEFT_MIN_Y
+			var_35_9.interactable = tobool(var_35_2)
+			var_35_9.blocksRaycasts = tobool(var_35_2)
+			var_35_9.alpha = tobool(var_35_2) and 1 or 0
+
+			if var_35_2 then
+				local var_35_10 = var_35_2 * (1 - 50 / var_35_2:Magnitude())
+
+				if var_35_10.x < 0 and var_35_10.y < var_0_0.FLOAT_LEFT_MIN_Y then
+					var_35_10.y = var_0_0.FLOAT_LEFT_MIN_Y
 				end
 
-				if uv0.FLOAT_ARROW_LIMIT_Y[1] <= slot11.y and slot11.y <= uv0.FLOAT_ARROW_LIMIT_Y[2] then
-					if slot11.x < 0 then
-						setActive(slot0.leftArrow, false)
+				if var_35_10.y >= var_0_0.FLOAT_ARROW_LIMIT_Y[1] and var_35_10.y <= var_0_0.FLOAT_ARROW_LIMIT_Y[2] then
+					if var_35_10.x < 0 then
+						setActive(arg_35_0.leftArrow, false)
 					end
 
-					if slot11.x > 0 then
-						setActive(slot0.rightArrow, false)
+					if var_35_10.x > 0 then
+						setActive(arg_35_0.rightArrow, false)
 					end
 				end
 
-				setAnchoredPosition(slot9, slot11)
-				setLocalEulerAngles(slot9:Find("arrow"), {
-					z = math.rad2Deg * math.atan2(slot8.y, slot8.x)
+				setAnchoredPosition(var_35_8, var_35_10)
+
+				local var_35_11 = math.rad2Deg * math.atan2(var_35_2.y, var_35_2.x)
+
+				setLocalEulerAngles(var_35_8:Find("arrow"), {
+					z = var_35_11
 				})
 			end
 		end
 	end
 
-	if slot0.contextData.mode == uv0.MODE_BATTLE then
-		slot1 = nil
-		slot6 = "wangdu"
-		slot7 = slot0.strongholdsTF
-		slot2 = slot0._tf:InverseTransformPoint(slot0:findTF(slot6, slot7).position)
-		slot2.x = slot2.x + 150
+	if arg_35_0.contextData.mode == var_0_0.MODE_BATTLE then
+		local var_35_12
+		local var_35_13 = arg_35_0._tf:InverseTransformPoint(arg_35_0:findTF("wangdu", arg_35_0.strongholdsTF).position)
 
-		for slot6, slot7 in ipairs(uv0.screenPoints) do
-			slot9, slot10, slot11 = LineLine(Vector2.zero, slot2, slot7, uv0.screenPoints[slot6 % 4 + 1])
+		var_35_13.x = var_35_13.x + 150
 
-			if slot9 then
-				slot1 = slot2 * slot10
+		for iter_35_4, iter_35_5 in ipairs(var_0_0.screenPoints) do
+			local var_35_14 = var_0_0.screenPoints[iter_35_4 % 4 + 1]
+			local var_35_15, var_35_16, var_35_17 = LineLine(Vector2.zero, var_35_13, iter_35_5, var_35_14)
 
-				break
-			end
-		end
-
-		setActive(slot0:findTF("tip", slot0.leftArrow), slot0.isShowWangduTip and slot1)
-
-		slot3 = nil
-		slot4 = slot0._tf:InverseTransformPoint(slot0:findTF("mowangcheng", slot0.strongholdsTF).position)
-		slot4.x = slot4.x + 100
-
-		for slot8, slot9 in ipairs(uv0.screenPoints) do
-			slot11, slot12, slot13 = LineLine(Vector2.zero, slot4, slot9, uv0.screenPoints[slot8 % 4 + 1])
-
-			if slot11 then
-				slot3 = slot4 * slot12
+			if var_35_15 then
+				var_35_12 = var_35_13 * var_35_16
 
 				break
 			end
 		end
 
-		setActive(slot0:findTF("tip", slot0.rightArrow), slot0.isShowSpTip and slot3)
+		setActive(arg_35_0:findTF("tip", arg_35_0.leftArrow), arg_35_0.isShowWangduTip and var_35_12)
+
+		local var_35_18
+		local var_35_19 = arg_35_0._tf:InverseTransformPoint(arg_35_0:findTF("mowangcheng", arg_35_0.strongholdsTF).position)
+
+		var_35_19.x = var_35_19.x + 100
+
+		for iter_35_6, iter_35_7 in ipairs(var_0_0.screenPoints) do
+			local var_35_20 = var_0_0.screenPoints[iter_35_6 % 4 + 1]
+			local var_35_21, var_35_22, var_35_23 = LineLine(Vector2.zero, var_35_19, iter_35_7, var_35_20)
+
+			if var_35_21 then
+				var_35_18 = var_35_19 * var_35_22
+
+				break
+			end
+		end
+
+		setActive(arg_35_0:findTF("tip", arg_35_0.rightArrow), arg_35_0.isShowSpTip and var_35_18)
 	end
 end
 
-function slot0.FocusNode(slot0, slot1, slot2)
-	slot4 = slot0.nodeItemList.container:Find(slot1).anchoredPosition * -1
-	slot4.x = math.clamp(slot4.x, -slot0.extendLimit.x, slot0.extendLimit.x)
-	slot4.y = math.clamp(slot4.y, -slot0.extendLimit.y, slot0.extendLimit.y)
+function var_0_0.FocusNode(arg_36_0, arg_36_1, arg_36_2)
+	local var_36_0 = arg_36_0.nodeItemList.container:Find(arg_36_1).anchoredPosition * -1
 
-	if slot0.twFocusId then
-		LeanTween.cancel(slot0.twFocusId)
+	var_36_0.x = math.clamp(var_36_0.x, -arg_36_0.extendLimit.x, arg_36_0.extendLimit.x)
+	var_36_0.y = math.clamp(var_36_0.y, -arg_36_0.extendLimit.y, arg_36_0.extendLimit.y)
 
-		slot0.twFocusId = nil
+	if arg_36_0.twFocusId then
+		LeanTween.cancel(arg_36_0.twFocusId)
+
+		arg_36_0.twFocusId = nil
 	end
 
-	slot5 = {}
+	local var_36_1 = {}
 
-	table.insert(slot5, function (slot0)
-		SetCompomentEnabled(uv0.mapTF, typeof(ScrollRect), false)
+	table.insert(var_36_1, function(arg_37_0)
+		SetCompomentEnabled(arg_36_0.mapTF, typeof(ScrollRect), false)
 
-		uv0.twFocusId = LeanTween.move(uv0.mapTF, Vector3(uv1.x, uv1.y), (uv0.mapTF.anchoredPosition - uv1).magnitude > 0 and slot1 / (40 * math.sqrt(slot1)) or 0):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function (slot0)
-			uv0:onDragFunction()
-		end)):setOnComplete(System.Action(slot0)).uniqueId
+		local var_37_0 = (arg_36_0.mapTF.anchoredPosition - var_36_0).magnitude
+		local var_37_1 = var_37_0 > 0 and var_37_0 / (40 * math.sqrt(var_37_0)) or 0
+
+		arg_36_0.twFocusId = LeanTween.move(arg_36_0.mapTF, Vector3(var_36_0.x, var_36_0.y), var_37_1):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_38_0)
+			arg_36_0:onDragFunction()
+		end)):setOnComplete(System.Action(arg_37_0)).uniqueId
 	end)
-	seriesAsync(slot5, function ()
-		SetCompomentEnabled(uv0.mapTF, typeof(ScrollRect), true)
+	seriesAsync(var_36_1, function()
+		SetCompomentEnabled(arg_36_0.mapTF, typeof(ScrollRect), true)
 
-		if uv1 then
-			uv1()
+		if arg_36_2 then
+			arg_36_2()
 		end
 	end)
 end
 
-function slot0.FocusPoint(slot0, slot1, slot2)
-	slot1.x = math.clamp(slot1.x, -slot0.extendLimit.x, slot0.extendLimit.x)
-	slot1.y = math.clamp(slot1.y, -slot0.extendLimit.y, slot0.extendLimit.y)
+function var_0_0.FocusPoint(arg_40_0, arg_40_1, arg_40_2)
+	arg_40_1.x = math.clamp(arg_40_1.x, -arg_40_0.extendLimit.x, arg_40_0.extendLimit.x)
+	arg_40_1.y = math.clamp(arg_40_1.y, -arg_40_0.extendLimit.y, arg_40_0.extendLimit.y)
 
-	if slot0.twFocusId then
-		LeanTween.cancel(slot0.twFocusId)
+	if arg_40_0.twFocusId then
+		LeanTween.cancel(arg_40_0.twFocusId)
 
-		slot0.twFocusId = nil
+		arg_40_0.twFocusId = nil
 	end
 
-	slot3 = {}
+	local var_40_0 = {}
 
-	table.insert(slot3, function (slot0)
-		SetCompomentEnabled(uv0.mapTF, typeof(ScrollRect), false)
+	table.insert(var_40_0, function(arg_41_0)
+		SetCompomentEnabled(arg_40_0.mapTF, typeof(ScrollRect), false)
 
-		uv0.twFocusId = LeanTween.move(uv0.mapTF, Vector3(uv1.x, uv1.y), (uv0.mapTF.anchoredPosition - uv1).magnitude > 0 and slot1 / (40 * math.sqrt(slot1)) or 0):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function (slot0)
-			uv0:onDragFunction()
-		end)):setOnComplete(System.Action(slot0)).uniqueId
+		local var_41_0 = (arg_40_0.mapTF.anchoredPosition - arg_40_1).magnitude
+		local var_41_1 = var_41_0 > 0 and var_41_0 / (40 * math.sqrt(var_41_0)) or 0
+
+		arg_40_0.twFocusId = LeanTween.move(arg_40_0.mapTF, Vector3(arg_40_1.x, arg_40_1.y), var_41_1):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_42_0)
+			arg_40_0:onDragFunction()
+		end)):setOnComplete(System.Action(arg_41_0)).uniqueId
 	end)
-	seriesAsync(slot3, function ()
-		SetCompomentEnabled(uv0.mapTF, typeof(ScrollRect), true)
+	seriesAsync(var_40_0, function()
+		SetCompomentEnabled(arg_40_0.mapTF, typeof(ScrollRect), true)
 
-		if uv1 then
-			uv1()
+		if arg_40_2 then
+			arg_40_2()
 		end
 	end)
 end
 
-function slot0.TriggerEvent(slot0, slot1, slot2)
-	switch(slot0.eventAct:GetEventById(slot1):GetStoryType(), {
-		[SingleEvent.STORY_TYPE.STORY] = function ()
+function var_0_0.TriggerEvent(arg_44_0, arg_44_1, arg_44_2)
+	local var_44_0 = arg_44_0.eventAct:GetEventById(arg_44_1)
+
+	switch(var_44_0:GetStoryType(), {
+		[SingleEvent.STORY_TYPE.STORY] = function()
 			seriesAsync({
-				function (slot0)
-					if uv0:GetStory() and slot1 ~= "" then
-						pg.NewStoryMgr.GetInstance():Play(slot1, slot0, true)
+				function(arg_46_0)
+					local var_46_0 = var_44_0:GetStory()
+
+					if var_46_0 and var_46_0 ~= "" then
+						pg.NewStoryMgr.GetInstance():Play(var_46_0, arg_46_0, true)
 					end
 				end
-			}, function ()
-				uv0:emit(OtherworldMapMediator.ON_EVENT_TRIGGER, {
-					actId = uv0.eventAct.id,
-					eventId = uv1
+			}, function()
+				arg_44_0:emit(OtherworldMapMediator.ON_EVENT_TRIGGER, {
+					actId = arg_44_0.eventAct.id,
+					eventId = arg_44_1
 				})
 			end)
 		end,
-		[SingleEvent.STORY_TYPE.BATTLE] = function ()
+		[SingleEvent.STORY_TYPE.BATTLE] = function()
 			seriesAsync({
-				function (slot0)
-					if tonumber(uv0:GetStory()) and slot1 > 0 then
-						uv1:emit(OtherworldMapMediator.ON_PERFORM_COMBAT, slot1)
+				function(arg_49_0)
+					local var_49_0 = tonumber(var_44_0:GetStory())
+
+					if var_49_0 and var_49_0 > 0 then
+						arg_44_0:emit(OtherworldMapMediator.ON_PERFORM_COMBAT, var_49_0)
 					end
 
-					uv1.contextData.eventTriggerId = uv2
+					arg_44_0.contextData.eventTriggerId = arg_44_1
 				end
-			}, function ()
-				existCall(uv0)
+			}, function()
+				existCall(arg_44_2)
 			end)
 		end
-	}, function ()
-		pg.TipsMgr.GetInstance():ShowTips("trigger unkonw story_type: " .. uv0:GetStoryType())
+	}, function()
+		pg.TipsMgr.GetInstance():ShowTips("trigger unkonw story_type: " .. var_44_0:GetStoryType())
 	end)
 end
 
-function slot0.UpdateToggleTip(slot0)
-	if not slot0.eventAct then
-		setActive(slot0:findTF("new", slot0.storyBtn), false)
-		setActive(slot0:findTF("new", slot0.battleBtn), false)
+function var_0_0.UpdateToggleTip(arg_52_0)
+	if not arg_52_0.eventAct then
+		setActive(arg_52_0:findTF("new", arg_52_0.storyBtn), false)
+		setActive(arg_52_0:findTF("new", arg_52_0.battleBtn), false)
 
 		return
 	end
 
-	slot1 = slot0.eventAct:GetAllEventIds()
+	local var_52_0 = arg_52_0.eventAct:GetAllEventIds()
+	local var_52_1 = underscore.any(var_52_0, function(arg_53_0)
+		local var_53_0 = arg_52_0.eventAct:GetEventById(arg_53_0)
 
-	setActive(slot0:findTF("new", slot0.storyBtn), underscore.any(slot1, function (slot0)
-		return uv0.eventAct:GetEventById(slot0) and uv0.eventAct:CheckTrigger(slot1.id) and slot1:GetMode() == SingleEvent.MODE_TYPE.STORY
-	end))
-	setActive(slot0:findTF("new", slot0.battleBtn), underscore.any(slot1, function (slot0)
-		return uv0.eventAct:GetEventById(slot0) and uv0.eventAct:CheckTrigger(slot1.id) and slot1:GetMode() == SingleEvent.MODE_TYPE.BATTLE
-	end))
+		return var_53_0 and arg_52_0.eventAct:CheckTrigger(var_53_0.id) and var_53_0:GetMode() == SingleEvent.MODE_TYPE.STORY
+	end)
+	local var_52_2 = underscore.any(var_52_0, function(arg_54_0)
+		local var_54_0 = arg_52_0.eventAct:GetEventById(arg_54_0)
+
+		return var_54_0 and arg_52_0.eventAct:CheckTrigger(var_54_0.id) and var_54_0:GetMode() == SingleEvent.MODE_TYPE.BATTLE
+	end)
+
+	setActive(arg_52_0:findTF("new", arg_52_0.storyBtn), var_52_1)
+	setActive(arg_52_0:findTF("new", arg_52_0.battleBtn), var_52_2)
 end
 
-function slot0.UpdateMapArea(slot0)
-	if not slot0.eventAct then
+function var_0_0.UpdateMapArea(arg_55_0)
+	if not arg_55_0.eventAct then
 		return
 	end
 
-	slot1 = slot0.contextData.mode == uv0.MODE_STORY
+	local var_55_0 = arg_55_0.contextData.mode == var_0_0.MODE_STORY
+	local var_55_1 = arg_55_0.eventAct:GetUnlockMapAreas()
 
-	for slot6 = uv0.MAP_AREA_START, uv0.MAP_AREA_CNT do
-		slot7 = table.contains(slot0.eventAct:GetUnlockMapAreas(), slot6)
+	for iter_55_0 = var_0_0.MAP_AREA_START, var_0_0.MAP_AREA_CNT do
+		local var_55_2 = table.contains(var_55_1, iter_55_0)
 
-		setActive(slot0:findTF(tostring(slot6), slot0.locationsTF), not slot1 or not slot7)
-		setActive(slot0:findTF(tostring(slot6), slot0.bgTF), slot7 and slot1)
+		setActive(arg_55_0:findTF(tostring(iter_55_0), arg_55_0.locationsTF), not var_55_0 or not var_55_2)
+		setActive(arg_55_0:findTF(tostring(iter_55_0), arg_55_0.bgTF), var_55_2 and var_55_0)
 	end
 end
 
-function slot0.PlayMapAnim(slot0, slot1, slot2)
-	slot3 = slot0.eventAct:GetEventById(slot1):GetMapOptions()
-	slot5 = slot0:findTF(slot3, slot0.locationsTF)
+function var_0_0.PlayMapAnim(arg_56_0, arg_56_1, arg_56_2)
+	local var_56_0 = arg_56_0.eventAct:GetEventById(arg_56_1):GetMapOptions()
+	local var_56_1 = arg_56_0:findTF(var_56_0, arg_56_0.bgTF)
+	local var_56_2 = arg_56_0:findTF(var_56_0, arg_56_0.locationsTF)
 
-	if slot0:findTF(slot3, slot0.bgTF) and slot5 then
-		setActive(slot4, true)
+	if var_56_1 and var_56_2 then
+		setActive(var_56_1, true)
 
-		GetOrAddComponent(slot4, typeof(CanvasGroup)).alpha = 0
+		GetOrAddComponent(var_56_1, typeof(CanvasGroup)).alpha = 0
 
-		slot0:managedTween(LeanTween.value, nil, go(slot4), 0, 1, uv0.MAP_ANIM_TIME):setOnUpdate(System.Action_float(function (slot0)
-			GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = slot0
-		end)):setOnComplete(System.Action(function ()
-			uv0()
+		arg_56_0:managedTween(LeanTween.value, nil, go(var_56_1), 0, 1, var_0_0.MAP_ANIM_TIME):setOnUpdate(System.Action_float(function(arg_57_0)
+			GetOrAddComponent(var_56_1, typeof(CanvasGroup)).alpha = arg_57_0
+		end)):setOnComplete(System.Action(function()
+			arg_56_2()
 		end))
 
-		GetOrAddComponent(slot5, typeof(CanvasGroup)).alpha = 1
+		GetOrAddComponent(var_56_2, typeof(CanvasGroup)).alpha = 1
 
-		slot0:managedTween(LeanTween.value, nil, go(slot4), 1, 0, uv0.MAP_ANIM_TIME):setOnUpdate(System.Action_float(function (slot0)
-			GetOrAddComponent(uv0, typeof(CanvasGroup)).alpha = slot0
-		end)):setOnComplete(System.Action(function ()
-			setActive(uv0, false)
+		arg_56_0:managedTween(LeanTween.value, nil, go(var_56_1), 1, 0, var_0_0.MAP_ANIM_TIME):setOnUpdate(System.Action_float(function(arg_59_0)
+			GetOrAddComponent(var_56_2, typeof(CanvasGroup)).alpha = arg_59_0
+		end)):setOnComplete(System.Action(function()
+			setActive(var_56_2, false)
 		end))
 	else
-		slot2()
+		arg_56_2()
 	end
 end
 
-function slot0.UpdateWangduBtn(slot0)
-	slot0.isShowWangduTip = OtherworldBackHillScene.IsShowTip()
+function var_0_0.UpdateWangduBtn(arg_61_0)
+	arg_61_0.isShowWangduTip = OtherworldBackHillScene.IsShowTip()
 
-	setActive(slot0:findTF("wangdu/name/tip", slot0.strongholdsTF), slot0.isShowWangduTip)
-	setActive(slot0:findTF("tip", slot0.leftArrow), slot0.isShowWangduTip and slot0.contextData.mode == uv0.MODE_BATTLE)
+	setActive(arg_61_0:findTF("wangdu/name/tip", arg_61_0.strongholdsTF), arg_61_0.isShowWangduTip)
+	setActive(arg_61_0:findTF("tip", arg_61_0.leftArrow), arg_61_0.isShowWangduTip and arg_61_0.contextData.mode == var_0_0.MODE_BATTLE)
 end
 
-function slot0.UpdateEntrances(slot0)
-	for slot5, slot6 in pairs(slot0.contextData.bossActivity:GetEnemyDatas()) do
-		if slot0:findTF("lock", slot0:findTF(uv0.TYPE2NAME[slot6:GetType()], slot0.strongholdsTF)) then
-			setActive(slot10, not slot1:IsUnlockByEnemyId(slot6.id))
+function var_0_0.UpdateEntrances(arg_62_0)
+	local var_62_0 = arg_62_0.contextData.bossActivity
+
+	for iter_62_0, iter_62_1 in pairs(var_62_0:GetEnemyDatas()) do
+		local var_62_1 = var_62_0:IsUnlockByEnemyId(iter_62_1.id)
+		local var_62_2 = iter_62_1:GetType()
+		local var_62_3 = arg_62_0:findTF(var_0_0.TYPE2NAME[var_62_2], arg_62_0.strongholdsTF)
+		local var_62_4 = arg_62_0:findTF("lock", var_62_3)
+
+		if var_62_4 then
+			setActive(var_62_4, not var_62_1)
 		end
 
-		if slot8 == BossSingleEnemyData.TYPE.SP then
-			setActive(slot0:findTF("count", slot9), slot7 and slot6:InTime())
+		if var_62_2 == BossSingleEnemyData.TYPE.SP then
+			setActive(arg_62_0:findTF("count", var_62_3), var_62_1 and iter_62_1:InTime())
 
-			slot11, slot12 = slot1:GetCounts(slot6.id)
+			local var_62_5, var_62_6 = var_62_0:GetCounts(iter_62_1.id)
 
-			setText(slot0:findTF("count/Text", slot9), i18n("levelScene_chapter_count_tip") .. slot11 .. "/" .. slot12)
+			setText(arg_62_0:findTF("count/Text", var_62_3), i18n("levelScene_chapter_count_tip") .. var_62_5 .. "/" .. var_62_6)
 
-			slot13 = slot7 and slot11 > 0 and slot6:InTime()
+			local var_62_7 = var_62_1 and var_62_5 > 0 and iter_62_1:InTime()
 
-			setActive(slot0:findTF("name/tip", slot9), slot13)
-			setActive(slot0:findTF("tip", slot0.rightArrow), slot13 and slot0.contextData.mode == uv0.MODE_BATTLE)
+			setActive(arg_62_0:findTF("name/tip", var_62_3), var_62_7)
+			setActive(arg_62_0:findTF("tip", arg_62_0.rightArrow), var_62_7 and arg_62_0.contextData.mode == var_0_0.MODE_BATTLE)
 		end
 	end
 end
 
-function slot0.OpenTerminal(slot0, slot1)
-	slot0:emit(OtherworldMapMediator.GO_SUBLAYER, Context.New({
+function var_0_0.OpenTerminal(arg_63_0, arg_63_1)
+	arg_63_0:emit(OtherworldMapMediator.GO_SUBLAYER, Context.New({
 		mediator = OtherworldTerminalMediator,
 		viewComponent = OtherworldTerminalLayer,
-		data = slot1
+		data = arg_63_1
 	}))
 end
 
-function slot0.UpdateEvents(slot0, slot1)
-	if not slot0.eventAct then
+function var_0_0.UpdateEvents(arg_64_0, arg_64_1)
+	if not arg_64_0.eventAct then
 		return
 	end
 
-	slot2 = slot0.contextData.mode == uv0.MODE_STORY and SingleEvent.MODE_TYPE.STORY or SingleEvent.MODE_TYPE.BATTLE
-	slot0.eventIds = underscore.select(slot0.eventAct:GetAllEventIds(), function (slot0)
-		return uv0.eventAct:GetEventById(slot0) and uv0.eventAct:CheckTrigger(slot1.id) and slot1:GetMode() == uv1
+	local var_64_0 = arg_64_0.contextData.mode == var_0_0.MODE_STORY and SingleEvent.MODE_TYPE.STORY or SingleEvent.MODE_TYPE.BATTLE
+
+	arg_64_0.eventIds = underscore.select(arg_64_0.eventAct:GetAllEventIds(), function(arg_65_0)
+		local var_65_0 = arg_64_0.eventAct:GetEventById(arg_65_0)
+
+		return var_65_0 and arg_64_0.eventAct:CheckTrigger(var_65_0.id) and var_65_0:GetMode() == var_64_0
 	end)
-	slot3 = {}
 
-	if slot1 then
-		slot4 = slot0.nodeItemList.container:Find(tostring(slot1)).anchoredPosition * -1
-		slot5 = slot0.contextData.mode == uv0.MODE_STORY and #slot0.eventIds > 0
+	local var_64_1 = {}
 
-		if #slot0.eventAct:GetEventById(slot1):GetOptions() > 0 then
-			table.insert(slot3, function (slot0)
-				uv0:OpenTerminal({
+	if arg_64_1 then
+		local var_64_2 = arg_64_0.nodeItemList.container:Find(tostring(arg_64_1)).anchoredPosition * -1
+		local var_64_3 = arg_64_0.contextData.mode == var_0_0.MODE_STORY and #arg_64_0.eventIds > 0
+
+		if #arg_64_0.eventAct:GetEventById(arg_64_1):GetOptions() > 0 then
+			table.insert(var_64_1, function(arg_66_0)
+				arg_64_0:OpenTerminal({
 					upgrade = true,
-					onExit = slot0
+					onExit = arg_66_0
 				})
 			end)
 		end
 
-		if slot5 then
-			slot7, slot8 = unpack(slot0.eventAct:GetEventById(slot0.eventIds[1]):GetPos())
-			slot9 = Vector2(slot7, slot8) * -1
+		if var_64_3 then
+			local var_64_4, var_64_5 = unpack(arg_64_0.eventAct:GetEventById(arg_64_0.eventIds[1]):GetPos())
+			local var_64_6 = Vector2(var_64_4, var_64_5) * -1
 
-			table.insert(slot3, function (slot0)
-				uv0:FocusPoint({
-					x = (uv1.x + uv2.x) / 2,
-					y = (uv1.y + uv2.y) / 2
-				}, slot0)
+			table.insert(var_64_1, function(arg_67_0)
+				arg_64_0:FocusPoint({
+					x = (var_64_2.x + var_64_6.x) / 2,
+					y = (var_64_2.y + var_64_6.y) / 2
+				}, arg_67_0)
 			end)
 		end
 
-		table.insert(slot3, function (slot0)
-			slot1 = uv0.nodeItemList.container:Find(tostring(uv1))
+		table.insert(var_64_1, function(arg_68_0)
+			local var_68_0 = arg_64_0.nodeItemList.container:Find(tostring(arg_64_1))
+			local var_68_1 = var_68_0:GetComponent(typeof(Animation))
+			local var_68_2 = var_68_0:GetComponent(typeof(DftAniEvent))
 
-			slot1:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-				uv0()
-				uv1:SetEndEvent(nil)
+			var_68_2:SetEndEvent(function()
+				arg_68_0()
+				var_68_2:SetEndEvent(nil)
 			end)
-			slot1:GetComponent(typeof(Animation)):Play("story_node_out")
+			var_68_1:Play("story_node_out")
 		end)
-		table.insert(slot3, function (slot0)
-			if uv0 then
-				uv1.playInAnimId = uv1.eventIds[1]
+		table.insert(var_64_1, function(arg_70_0)
+			if var_64_3 then
+				arg_64_0.playInAnimId = arg_64_0.eventIds[1]
 			end
 
-			uv1.nodeItemList:align(#uv1.eventIds)
-			uv1.floatItemList:align(#uv1.eventIds)
-			uv1:UpdateToggleTip()
-			uv1:managedTween(LeanTween.delayedCall, function ()
-				uv0()
+			arg_64_0.nodeItemList:align(#arg_64_0.eventIds)
+			arg_64_0.floatItemList:align(#arg_64_0.eventIds)
+			arg_64_0:UpdateToggleTip()
+			arg_64_0:managedTween(LeanTween.delayedCall, function()
+				arg_70_0()
 			end, 0.02, nil)
 		end)
 
-		if slot0.eventAct:IsShowMapAnim(slot1) then
-			table.insert(slot3, function (slot0)
-				uv0:PlayMapAnim(uv1, slot0)
+		if arg_64_0.eventAct:IsShowMapAnim(arg_64_1) then
+			table.insert(var_64_1, function(arg_72_0)
+				arg_64_0:PlayMapAnim(arg_64_1, arg_72_0)
 			end)
 		end
 
-		if slot5 then
-			table.insert(slot3, function (slot0)
-				slot1 = uv0.nodeItemList.container:Find(tostring(uv0.eventIds[1]))
+		if var_64_3 then
+			table.insert(var_64_1, function(arg_73_0)
+				local var_73_0 = arg_64_0.nodeItemList.container:Find(tostring(arg_64_0.eventIds[1]))
+				local var_73_1 = var_73_0:GetComponent(typeof(Animation))
+				local var_73_2 = var_73_0:GetComponent(typeof(DftAniEvent))
 
-				slot1:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-					uv0()
-					uv1:SetEndEvent(nil)
+				var_73_2:SetEndEvent(function()
+					arg_73_0()
+					var_73_2:SetEndEvent(nil)
 
-					uv2.playInAnimId = nil
+					arg_64_0.playInAnimId = nil
 				end)
 
-				GetOrAddComponent(slot1, typeof(CanvasGroup)).alpha = 0
+				GetOrAddComponent(var_73_0, typeof(CanvasGroup)).alpha = 0
 
-				slot1:GetComponent(typeof(Animation)):Play("story_node_in")
+				var_73_1:Play("story_node_in")
 			end)
 		end
 	else
-		table.insert(slot3, function (slot0)
-			uv0.nodeItemList:align(#uv0.eventIds)
+		table.insert(var_64_1, function(arg_75_0)
+			arg_64_0.nodeItemList:align(#arg_64_0.eventIds)
 
-			if not uv0.first then
-				eachChild(uv0.nodeItemList.container, function (slot0)
-					if isActive(slot0) then
-						onNextTick(function ()
-							uv0:GetComponent(typeof(Animation)):Play("story_node_in")
+			if not arg_64_0.first then
+				eachChild(arg_64_0.nodeItemList.container, function(arg_76_0)
+					if isActive(arg_76_0) then
+						onNextTick(function()
+							arg_76_0:GetComponent(typeof(Animation)):Play("story_node_in")
 						end)
 					end
 				end)
 
-				uv0.first = true
+				arg_64_0.first = true
 			end
 
-			uv0.floatItemList:align(#uv0.eventIds)
-			uv0:UpdateToggleTip()
-			slot0()
+			arg_64_0.floatItemList:align(#arg_64_0.eventIds)
+			arg_64_0:UpdateToggleTip()
+			arg_75_0()
 		end)
 	end
 
-	setActive(slot0.clickMask, true)
-	seriesAsync(slot3, function ()
-		uv0:onDragFunction()
-		setActive(uv0.clickMask, false)
+	setActive(arg_64_0.clickMask, true)
+	seriesAsync(var_64_1, function()
+		arg_64_0:onDragFunction()
+		setActive(arg_64_0.clickMask, false)
 	end)
 end
 
-function slot0.UpdateRes(slot0)
-	setText(slot0.ptValueTF, getProxy(PlayerProxy):getData():getResource(slot0.contextData.resId))
+function var_0_0.UpdateRes(arg_79_0)
+	setText(arg_79_0.ptValueTF, getProxy(PlayerProxy):getData():getResource(arg_79_0.contextData.resId))
 end
 
-function slot0.UpdateTerminalTip(slot0)
-	setActive(slot0:findTF("terminal_btn/tip", slot0.leftUI), TerminalAdventurePage.IsTip())
+function var_0_0.UpdateTerminalTip(arg_80_0)
+	setActive(arg_80_0:findTF("terminal_btn/tip", arg_80_0.leftUI), TerminalAdventurePage.IsTip())
 end
 
-function slot0.ShowBattleMode(slot0)
-	slot0.contextData.mode = uv0.MODE_BATTLE
+function var_0_0.ShowBattleMode(arg_81_0)
+	arg_81_0.contextData.mode = var_0_0.MODE_BATTLE
 
-	setActive(slot0.battleBtn, false)
-	setActive(slot0.storyBtn, true)
-	setActive(slot0.strongholdsTF, true)
+	setActive(arg_81_0.battleBtn, false)
+	setActive(arg_81_0.storyBtn, true)
+	setActive(arg_81_0.strongholdsTF, true)
 
-	for slot4, slot5 in ipairs(slot0.battleHideLocations) do
-		setActive(slot5, false)
+	for iter_81_0, iter_81_1 in ipairs(arg_81_0.battleHideLocations) do
+		setActive(iter_81_1, false)
 	end
 
-	slot0:UpdateEvents()
-	slot0:UpdateMapArea()
+	arg_81_0:UpdateEvents()
+	arg_81_0:UpdateMapArea()
 
-	slot1 = slot0.contextData.bossActivity
+	local var_81_0 = arg_81_0.contextData.bossActivity
+	local var_81_1 = var_81_0:GetEnemyDataByType(BossSingleEnemyData.TYPE.SP)
 
-	if not slot1:IsUnlockByEnemyId(slot1:GetEnemyDataByType(BossSingleEnemyData.TYPE.SP).id) or not slot2:InTime() then
-		slot0.isShowSpTip = false
+	if not var_81_0:IsUnlockByEnemyId(var_81_1.id) or not var_81_1:InTime() then
+		arg_81_0.isShowSpTip = false
 	else
-		slot4, slot5 = slot1:GetCounts(slot2.id)
-		slot0.isShowSpTip = slot4 > 0
+		local var_81_2, var_81_3 = var_81_0:GetCounts(var_81_1.id)
+
+		arg_81_0.isShowSpTip = var_81_2 > 0
 	end
 
-	setActive(slot0:findTF("tip", slot0.rightArrow), slot0.isShowSpTip)
-	setActive(slot0:findTF("tip", slot0.leftArrow), slot0.isShowWangduTip)
-	PlayerPrefs.SetInt(uv1 .. slot0.playerId, slot0.contextData.mode)
+	setActive(arg_81_0:findTF("tip", arg_81_0.rightArrow), arg_81_0.isShowSpTip)
+	setActive(arg_81_0:findTF("tip", arg_81_0.leftArrow), arg_81_0.isShowWangduTip)
+	PlayerPrefs.SetInt(var_0_2 .. arg_81_0.playerId, arg_81_0.contextData.mode)
 	PlayerPrefs.Save()
 end
 
-function slot0.ShowStoryMode(slot0)
-	slot0.contextData.mode = uv0.MODE_STORY
+function var_0_0.ShowStoryMode(arg_82_0)
+	arg_82_0.contextData.mode = var_0_0.MODE_STORY
 
-	setActive(slot0.battleBtn, true)
-	setActive(slot0.storyBtn, false)
-	setActive(slot0.strongholdsTF, false)
+	setActive(arg_82_0.battleBtn, true)
+	setActive(arg_82_0.storyBtn, false)
+	setActive(arg_82_0.strongholdsTF, false)
 
-	for slot4, slot5 in ipairs(slot0.battleHideLocations) do
-		setActive(slot5, true)
+	for iter_82_0, iter_82_1 in ipairs(arg_82_0.battleHideLocations) do
+		setActive(iter_82_1, true)
 	end
 
-	slot0:UpdateEvents()
-	slot0:UpdateMapArea()
-	setActive(slot0:findTF("tip", slot0.rightArrow), false)
-	setActive(slot0:findTF("tip", slot0.leftArrow), false)
-	PlayerPrefs.SetInt(uv1 .. slot0.playerId, slot0.contextData.mode)
+	arg_82_0:UpdateEvents()
+	arg_82_0:UpdateMapArea()
+	setActive(arg_82_0:findTF("tip", arg_82_0.rightArrow), false)
+	setActive(arg_82_0:findTF("tip", arg_82_0.leftArrow), false)
+	PlayerPrefs.SetInt(var_0_2 .. arg_82_0.playerId, arg_82_0.contextData.mode)
 	PlayerPrefs.Save()
 end
 
-function slot0.PlaySwithAnim(slot0, slot1)
+function var_0_0.PlaySwithAnim(arg_83_0, arg_83_1)
 	seriesAsync({
-		function (slot0)
-			if not uv0.swithAnimTF then
-				PoolMgr.GetInstance():GetUI("OtherworldCoverUI", true, function (slot0)
-					uv0.swithAnimTF = slot0.transform
+		function(arg_84_0)
+			if not arg_83_0.swithAnimTF then
+				PoolMgr.GetInstance():GetUI("OtherworldCoverUI", true, function(arg_85_0)
+					arg_83_0.swithAnimTF = arg_85_0.transform
 
-					setParent(uv0.swithAnimTF, uv0._tf, false)
-					setActive(uv0.swithAnimTF, false)
-					uv1()
+					setParent(arg_83_0.swithAnimTF, arg_83_0._tf, false)
+					setActive(arg_83_0.swithAnimTF, false)
+					arg_84_0()
 				end)
 			else
-				slot0()
+				arg_84_0()
 			end
 		end,
-		function (slot0)
-			setActive(uv0.swithAnimTF, true)
+		function(arg_86_0)
+			setActive(arg_83_0.swithAnimTF, true)
 
-			slot1 = uv0.swithAnimTF:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
+			local var_86_0 = arg_83_0.swithAnimTF:Find("yuncaizhuanchang"):GetComponent(typeof(SpineAnimUI))
 
-			slot1:SetActionCallBack(function (slot0)
-				if slot0 == "finish" then
-					setActive(uv0.swithAnimTF, false)
-				elseif slot0 == "action" and uv1 then
-					uv1()
+			var_86_0:SetActionCallBack(function(arg_87_0)
+				if arg_87_0 == "finish" then
+					setActive(arg_83_0.swithAnimTF, false)
+				elseif arg_87_0 == "action" and arg_83_1 then
+					arg_83_1()
 				end
 			end)
-			slot1:SetAction("action", 0)
+			var_86_0:SetAction("action", 0)
 		end
-	}, function ()
+	}, function()
+		return
 	end)
 end
 
-function slot0.UpdateView(slot0)
-	slot0:UpdateWangduBtn()
-	slot0:UpdateRes()
-	slot0:UpdateEntrances()
-	slot0:UpdateEvents()
-	slot0:UpdateMapArea()
-	slot0:UpdateTerminalTip()
-	slot0:UpdateToggleTip()
+function var_0_0.UpdateView(arg_89_0)
+	arg_89_0:UpdateWangduBtn()
+	arg_89_0:UpdateRes()
+	arg_89_0:UpdateEntrances()
+	arg_89_0:UpdateEvents()
+	arg_89_0:UpdateMapArea()
+	arg_89_0:UpdateTerminalTip()
+	arg_89_0:UpdateToggleTip()
 end
 
-function slot0.willExit(slot0)
-	uv0.super.willExit(slot0)
-	slot0:cleanManagedTween()
-	PlayerPrefs.SetFloat(uv1 .. slot0.playerId, slot0.scrollValueX or 0)
+function var_0_0.willExit(arg_90_0)
+	var_0_0.super.willExit(arg_90_0)
+	arg_90_0:cleanManagedTween()
+	PlayerPrefs.SetFloat(var_0_1 .. arg_90_0.playerId, arg_90_0.scrollValueX or 0)
 	PlayerPrefs.Save()
 end
 
-function slot0.IsShowTip()
-	return TerminalAdventurePage.IsTip() or function ()
-		if not getProxy(ActivityProxy):getActivityById(ActivityConst.OTHER_WORLD_TERMINAL_BATTLE_ID) or slot0:isEnd() then
+function var_0_0.IsShowTip()
+	local function var_91_0()
+		local var_92_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.OTHER_WORLD_TERMINAL_BATTLE_ID)
+
+		if not var_92_0 or var_92_0:isEnd() then
 			return false
 		end
 
-		if not slot0:IsUnlockByEnemyId(slot0:GetEnemyDataByType(BossSingleEnemyData.TYPE.SP).id) or not slot1:InTime() then
+		local var_92_1 = var_92_0:GetEnemyDataByType(BossSingleEnemyData.TYPE.SP)
+
+		if not var_92_0:IsUnlockByEnemyId(var_92_1.id) or not var_92_1:InTime() then
 			return false
 		end
 
-		slot3, slot4 = slot0:GetCounts(slot1.id)
+		local var_92_2, var_92_3 = var_92_0:GetCounts(var_92_1.id)
 
-		return slot3 > 0
-	end()
+		return var_92_2 > 0
+	end
+
+	return TerminalAdventurePage.IsTip() or var_91_0()
 end
 
-slot0.personalRandomData = nil
+var_0_0.personalRandomData = nil
 
-return slot0
+return var_0_0

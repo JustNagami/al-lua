@@ -1,64 +1,67 @@
-slot0 = class("SVRealmPanel", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("SVRealmPanel", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SVRealmPanel"
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_2_0)
+	return
 end
 
-function slot0.OnInit(slot0)
-	slot2 = slot0._tf:Find("panel")
-	slot0.btnBLHX = slot2:Find("blhx")
-	slot0.btnCSZZ = slot2:Find("cszz")
+function var_0_0.OnInit(arg_3_0)
+	local var_3_0 = arg_3_0._tf:Find("panel")
 
-	setActive(slot0.btnBLHX, true)
-	setActive(slot0.btnCSZZ, true)
-	onButton(slot0, slot0.btnBLHX, function ()
-		uv0:PlayAnim(uv0.btnBLHX, function ()
-			uv0:Hide()
-			uv0.onConfirm(1)
+	arg_3_0.btnBLHX = var_3_0:Find("blhx")
+	arg_3_0.btnCSZZ = var_3_0:Find("cszz")
+
+	setActive(arg_3_0.btnBLHX, true)
+	setActive(arg_3_0.btnCSZZ, true)
+	onButton(arg_3_0, arg_3_0.btnBLHX, function()
+		arg_3_0:PlayAnim(arg_3_0.btnBLHX, function()
+			arg_3_0:Hide()
+			arg_3_0.onConfirm(1)
 		end)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.btnCSZZ, function ()
-		uv0:PlayAnim(uv0.btnCSZZ, function ()
-			uv0:Hide()
-			uv0.onConfirm(2)
+	onButton(arg_3_0, arg_3_0.btnCSZZ, function()
+		arg_3_0:PlayAnim(arg_3_0.btnCSZZ, function()
+			arg_3_0:Hide()
+			arg_3_0.onConfirm(2)
 		end)
 	end)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_8_0)
+	return
 end
 
-function slot0.Show(slot0)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf)
-	setActive(slot0._tf, true)
+function var_0_0.Show(arg_9_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_9_0._tf)
+	setActive(arg_9_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf, slot0._parentTf)
-	setActive(slot0._tf, false)
+function var_0_0.Hide(arg_10_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_10_0._tf, arg_10_0._parentTf)
+	setActive(arg_10_0._tf, false)
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.onConfirm = slot1
+function var_0_0.Setup(arg_11_0, arg_11_1)
+	arg_11_0.onConfirm = arg_11_1
 end
 
-function slot0.PlayAnim(slot0, slot1, slot2)
-	slot3 = slot1:Find("bg")
+function var_0_0.PlayAnim(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = arg_12_1:Find("bg")
 
-	setActive(slot3, true)
-	LeanTween.value(go(slot3), 1, 1.2, 0.2):setOnUpdate(System.Action_float(function (slot0)
-		uv0.localScale = Vector3(slot0, slot0, 1)
-	end)):setOnComplete(System.Action(function ()
-		setActive(uv0, false)
+	setActive(var_12_0, true)
+	LeanTween.value(go(var_12_0), 1, 1.2, 0.2):setOnUpdate(System.Action_float(function(arg_13_0)
+		var_12_0.localScale = Vector3(arg_13_0, arg_13_0, 1)
+	end)):setOnComplete(System.Action(function()
+		setActive(var_12_0, false)
 
-		uv0.localScale = Vector3(1, 1, 1)
+		var_12_0.localScale = Vector3(1, 1, 1)
 
-		uv1()
+		arg_12_2()
 	end))
-	LeanTween.value(go(slot3), 1, 0.7, 0.2)
+	LeanTween.value(go(var_12_0), 1, 0.7, 0.2)
 end
 
-return slot0
+return var_0_0

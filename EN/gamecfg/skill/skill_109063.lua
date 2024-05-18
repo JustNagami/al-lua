@@ -1,4 +1,38 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				maxHPRatio = 0.015
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			target_choise = {
+				"TargetAllHelp",
+				"TargetShipTag"
+			},
+			arg_list = {
+				buff_id = 109062,
+				ship_tag_list = {
+					"KlaudiaHA"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -285,39 +319,5 @@ return {
 	painting = 0,
 	id = 109063,
 	picture = "0",
-	desc = "",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				maxHPRatio = 0.015
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			target_choise = {
-				"TargetAllHelp",
-				"TargetShipTag"
-			},
-			arg_list = {
-				buff_id = 109062,
-				ship_tag_list = {
-					"KlaudiaHA"
-				}
-			}
-		}
-	}
+	desc = ""
 }

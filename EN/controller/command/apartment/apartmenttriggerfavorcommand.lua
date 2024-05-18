@@ -1,33 +1,39 @@
-slot0 = class("ApartmentTriggerFavorCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ApartmentTriggerFavorCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.groupId
+	local var_1_2 = var_1_0.triggerId
+	local var_1_3 = getProxy(ApartmentProxy)
+	local var_1_4 = var_1_3:getApartment(var_1_1)
 
-	if pg.dorm3d_favor_trigger[slot2.triggerId].is_repeat > 0 then
-		if getDorm3dGameset("daily_exp_max")[1] <= getProxy(ApartmentProxy):getApartment(slot2.groupId).daily then
+	if pg.dorm3d_favor_trigger[var_1_2].is_repeat > 0 then
+		if var_1_4.daily >= getDorm3dGameset("daily_exp_max")[1] then
 			return
 		end
-	elseif slot6.triggerCountDic[slot4] > 0 then
+	elseif var_1_4.triggerCountDic[var_1_2] > 0 then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(28003, {
-		ship_group = slot3,
-		trigger_id = slot4
-	}, 28004, function (slot0)
-		if slot0.result == 0 then
-			uv0 = uv1:getApartment(uv2)
+		ship_group = var_1_1,
+		trigger_id = var_1_2
+	}, 28004, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			var_1_4 = var_1_3:getApartment(var_1_1)
 
-			uv1:updateApartment(uv0)
-			uv4:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
-				triggerId = uv3,
-				delta = uv0:addFavor(uv3),
-				apartment = uv0
+			local var_2_0 = var_1_4:addFavor(var_1_2)
+
+			var_1_3:updateApartment(var_1_4)
+			arg_1_0:sendNotification(GAME.APARTMENT_TRIGGER_FAVOR_DONE, {
+				triggerId = var_1_2,
+				delta = var_2_0,
+				apartment = var_1_4
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

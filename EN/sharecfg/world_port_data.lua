@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_port_data = {
 	{
 		port_bg = "port_niuyue",

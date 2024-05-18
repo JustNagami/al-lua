@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_plan = {
 	[1101] = {
 		cost_resource2 = 0,

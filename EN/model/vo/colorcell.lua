@@ -1,9 +1,9 @@
-slot0 = class("ColorCell")
+﻿local var_0_0 = class("ColorCell")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0.row = slot1
-	slot0.column = slot2
-	slot0.type = slot3
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0.row = arg_1_1
+	arg_1_0.column = arg_1_2
+	arg_1_0.type = arg_1_3
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,32 @@
-return {
+﻿return {
+	aniEffect = {
+		effect = "jineng",
+		offset = {
+			0,
+			-2,
+			0
+		}
+	},
+	effect_list = {
+		{
+			type = "BattleSkillHeal",
+			target_choise = {
+				"TargetSelf"
+			},
+			arg_list = {
+				maxHPRatio = 0.01
+			}
+		},
+		{
+			type = "BattleSkillAddBuff",
+			casterAniEffect = "",
+			target_choise = "TargetSelf",
+			targetAniEffect = "",
+			arg_list = {
+				buff_id = 15402
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -224,33 +252,5 @@ return {
 	cd = 0,
 	id = 15401,
 	picture = "0",
-	desc = "耐久回复",
-	aniEffect = {
-		effect = "jineng",
-		offset = {
-			0,
-			-2,
-			0
-		}
-	},
-	effect_list = {
-		{
-			type = "BattleSkillHeal",
-			target_choise = {
-				"TargetSelf"
-			},
-			arg_list = {
-				maxHPRatio = 0.01
-			}
-		},
-		{
-			type = "BattleSkillAddBuff",
-			casterAniEffect = "",
-			target_choise = "TargetSelf",
-			targetAniEffect = "",
-			arg_list = {
-				buff_id = 15402
-			}
-		}
-	}
+	desc = "耐久回复"
 }

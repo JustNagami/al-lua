@@ -1,99 +1,105 @@
-slot0 = class("MainBuffDescPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("MainBuffDescPage", import("...base.BaseSubView"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	uv0.super.Ctor(slot0, slot1, slot2, slot3)
-	slot0:bind(NewMainScene.ON_BUFF_DESC, function (slot0, slot1, slot2)
-		uv0:ExecuteAction("Show", slot1, slot2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0:bind(NewMainScene.ON_BUFF_DESC, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:ExecuteAction("Show", arg_2_1, arg_2_2)
 	end)
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_3_0)
 	return "MainUIBuffDescWindow"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.descTxt = slot0:findTF("Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.descTxt = arg_4_0:findTF("Text"):GetComponent(typeof(Text))
 end
 
-function slot0.Show(slot0, slot1, slot2)
-	uv0.super.Show(slot0)
-	slot0:RemoveDescTimer()
-	slot0:AddCloseTimer()
-	slot0:UpdateDesc(slot1)
+function var_0_0.Show(arg_5_0, arg_5_1, arg_5_2)
+	var_0_0.super.Show(arg_5_0)
+	arg_5_0:RemoveDescTimer()
+	arg_5_0:AddCloseTimer()
+	arg_5_0:UpdateDesc(arg_5_1)
 
-	slot0._tf.localPosition = slot2
-	slot0._parentTf = slot0._tf.parent
+	arg_5_0._tf.localPosition = arg_5_2
+	arg_5_0._parentTf = arg_5_0._tf.parent
 
-	pg.UIMgr.GetInstance():OverlayPanel(slot0._tf, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg_5_0._tf, {
 		overlayType = LayerWeightConst.OVERLAY_UI_TOP
 	})
 end
 
-function slot0.UpdateDesc(slot0, slot1)
-	if slot1:getConfig("max_time") <= 0 then
-		slot0.descTxt.text = slot1:getConfig("desc")
+function var_0_0.UpdateDesc(arg_6_0, arg_6_1)
+	if arg_6_1:getConfig("max_time") <= 0 then
+		arg_6_0.descTxt.text = arg_6_1:getConfig("desc")
 
 		return
 	end
 
-	slot0.descTimer = Timer.New(function ()
-		uv0:UpdateDescPreSce(uv1)
+	arg_6_0.descTimer = Timer.New(function()
+		arg_6_0:UpdateDescPreSce(arg_6_1)
 	end, 1, -1)
 
-	slot0.descTimer:Start()
-	slot0.descTimer.func()
+	arg_6_0.descTimer:Start()
+	arg_6_0.descTimer.func()
 end
 
-function slot0.UpdateDescPreSce(slot0, slot1)
-	if slot1.timestamp - pg.TimeMgr:GetInstance():GetServerTime() > 0 then
-		slot0.descTxt.text = string.gsub(slot1:getConfig("desc"), "$1", pg.TimeMgr.GetInstance():DescCDTime(slot4))
+function var_0_0.UpdateDescPreSce(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getConfig("desc")
+	local var_8_1 = pg.TimeMgr:GetInstance():GetServerTime()
+	local var_8_2 = arg_8_1.timestamp - var_8_1
+
+	if var_8_2 > 0 then
+		local var_8_3 = pg.TimeMgr.GetInstance():DescCDTime(var_8_2)
+
+		arg_8_0.descTxt.text = string.gsub(var_8_0, "$1", var_8_3)
 	else
-		slot0:Hide()
+		arg_8_0:Hide()
 	end
 end
 
-function slot0.RemoveDescTimer(slot0)
-	if slot0.descTimer then
-		slot0.descTimer:Stop()
+function var_0_0.RemoveDescTimer(arg_9_0)
+	if arg_9_0.descTimer then
+		arg_9_0.descTimer:Stop()
 
-		slot0.descTimer = nil
+		arg_9_0.descTimer = nil
 	end
 end
 
-function slot0.AddCloseTimer(slot0)
-	slot0:RemoveCloseTimer()
+function var_0_0.AddCloseTimer(arg_10_0)
+	arg_10_0:RemoveCloseTimer()
 
-	slot0.timer = Timer.New(function ()
-		uv0:Hide()
+	arg_10_0.timer = Timer.New(function()
+		arg_10_0:Hide()
 	end, 7, 1)
 
-	slot0.timer:Start()
+	arg_10_0.timer:Start()
 end
 
-function slot0.RemoveCloseTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveCloseTimer(arg_12_0)
+	if arg_12_0.timer then
+		arg_12_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_12_0.timer = nil
 	end
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf, slot0._parentTf)
-	slot0:RemoveCloseTimer()
-	slot0:RemoveDescTimer()
+function var_0_0.Hide(arg_13_0)
+	var_0_0.super.Hide(arg_13_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_13_0._tf, arg_13_0._parentTf)
+	arg_13_0:RemoveCloseTimer()
+	arg_13_0:RemoveDescTimer()
 end
 
-function slot0.Disable(slot0)
-	if slot0:GetLoaded() and slot0:isShowing() then
-		slot0:Hide()
+function var_0_0.Disable(arg_14_0)
+	if arg_14_0:GetLoaded() and arg_14_0:isShowing() then
+		arg_14_0:Hide()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:RemoveCloseTimer()
-	slot0:RemoveDescTimer()
+function var_0_0.OnDestroy(arg_15_0)
+	arg_15_0:RemoveCloseTimer()
+	arg_15_0:RemoveDescTimer()
 end
 
-return slot0
+return var_0_0

@@ -1,34 +1,34 @@
-slot0 = class("GuildChatBubble", import(".ChatBubble"))
+﻿local var_0_0 = class("GuildChatBubble", import(".ChatBubble"))
 
-function slot0.init(slot0)
-	slot0.nameTF = findTF(slot0.tf, "name_bg/name"):GetComponent("Text")
-	slot0.face = findTF(slot0.tf, "face/content")
-	slot0.circle = findTF(slot0.tf, "shipicon/frame")
-	slot0.timeTF = findTF(slot0.tf, "time"):GetComponent("Text")
-	slot0.headTF = findTF(slot0.tf, "shipicon/icon"):GetComponent("Image")
-	slot0.stars = findTF(slot0.tf, "shipicon/stars")
-	slot0.star = findTF(slot0.stars, "star")
-	slot0.frame = findTF(slot0.tf, "shipicon/frame"):GetComponent("Image")
-	slot0.dutyTF = findTF(slot0.tf, "name_bg/duty")
-	slot0.chatBgWidth = 550
+function var_0_0.init(arg_1_0)
+	arg_1_0.nameTF = findTF(arg_1_0.tf, "name_bg/name"):GetComponent("Text")
+	arg_1_0.face = findTF(arg_1_0.tf, "face/content")
+	arg_1_0.circle = findTF(arg_1_0.tf, "shipicon/frame")
+	arg_1_0.timeTF = findTF(arg_1_0.tf, "time"):GetComponent("Text")
+	arg_1_0.headTF = findTF(arg_1_0.tf, "shipicon/icon"):GetComponent("Image")
+	arg_1_0.stars = findTF(arg_1_0.tf, "shipicon/stars")
+	arg_1_0.star = findTF(arg_1_0.stars, "star")
+	arg_1_0.frame = findTF(arg_1_0.tf, "shipicon/frame"):GetComponent("Image")
+	arg_1_0.dutyTF = findTF(arg_1_0.tf, "name_bg/duty")
+	arg_1_0.chatBgWidth = 550
 end
 
-function slot0.OnChatFrameLoaded(slot0, slot1)
-	slot2 = tf(slot1):Find("Text"):GetComponent(typeof(Text))
+function var_0_0.OnChatFrameLoaded(arg_2_0, arg_2_1)
+	local var_2_0 = tf(arg_2_1):Find("Text"):GetComponent(typeof(Text))
 
-	if not slot0.prevChatFrameColor then
-		slot0.prevChatFrameColor = slot2.color
+	if not arg_2_0.prevChatFrameColor then
+		arg_2_0.prevChatFrameColor = var_2_0.color
 	end
 
-	slot0.charFrameTxt = slot2
+	arg_2_0.charFrameTxt = var_2_0
 end
 
-function slot0.dispose(slot0)
-	uv0.super.dispose(slot0)
+function var_0_0.dispose(arg_3_0)
+	var_0_0.super.dispose(arg_3_0)
 
-	if slot0.charFrameTxt and slot0.prevChatFrameColor then
-		slot0.charFrameTxt.color = slot0.prevChatFrameColor
+	if arg_3_0.charFrameTxt and arg_3_0.prevChatFrameColor then
+		arg_3_0.charFrameTxt.color = arg_3_0.prevChatFrameColor
 	end
 end
 
-return slot0
+return var_0_0

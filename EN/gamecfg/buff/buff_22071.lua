@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发全弹发射-{namecode:11}级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行15次攻击，触发全弹发射-{namecode:11}级I",
-	stack = 1,
-	id = 22071,
-	icon = 20000,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 22070
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发全弹发射-{namecode:11}级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行15次攻击，触发全弹发射-{namecode:11}级I",
+	stack = 1,
+	id = 22071,
+	icon = 20000,
+	last_effect = ""
 }

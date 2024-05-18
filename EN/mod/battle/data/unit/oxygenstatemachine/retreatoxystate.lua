@@ -1,44 +1,49 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleAttr
-slot0.Battle.RetreatOxyState = class("RetreatOxyState", slot0.Battle.IOxyState)
-slot0.Battle.RetreatOxyState.__name = "RetreatOxyState"
-slot3 = slot0.Battle.RetreatOxyState
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleAttr
+
+var_0_0.Battle.RetreatOxyState = class("RetreatOxyState", var_0_0.Battle.IOxyState)
+var_0_0.Battle.RetreatOxyState.__name = "RetreatOxyState"
+
+local var_0_3 = var_0_0.Battle.RetreatOxyState
+
+function var_0_3.Ctor(arg_1_0)
+	var_0_3.super.Ctor(arg_1_0)
 end
 
-function slot3.GetWeaponUseableList(slot0)
+function var_0_3.GetWeaponUseableList(arg_2_0)
 	return {}
 end
 
-function slot3.UpdateCldData(slot0, slot1, slot2)
-	slot4 = slot0:GetDiveState()
-	slot1:GetCldData().Surface = slot4
+function var_0_3.UpdateCldData(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_2:GetDiveState()
+	local var_3_1 = arg_3_0:GetDiveState()
 
-	if slot2:GetDiveState() ~= slot4 then
-		uv0.UnitCldEnable(slot1)
+	arg_3_1:GetCldData().Surface = var_3_1
+
+	if var_3_0 ~= var_3_1 then
+		var_0_2.UnitCldEnable(arg_3_1)
 	end
 end
 
-function slot3.GetDiveState(slot0)
-	return uv0.OXY_STATE.FLOAT
+function var_0_3.GetDiveState(arg_4_0)
+	return var_0_1.OXY_STATE.FLOAT
 end
 
-function slot3.GetBubbleFlag(slot0)
+function var_0_3.GetBubbleFlag(arg_5_0)
 	return false
 end
 
-function slot3.IsVisible(slot0)
+function var_0_3.IsVisible(arg_6_0)
 	return true
 end
 
-function slot3.GetBarVisible(slot0)
+function var_0_3.GetBarVisible(arg_7_0)
 	return false
 end
 
-function slot3.RunMode(slot0)
+function var_0_3.RunMode(arg_8_0)
 	return false
 end

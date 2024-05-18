@@ -1,4 +1,24 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				group = 10501,
+				attr = "DMG_TAG_EHC_N_3",
+				number = 0.05
+			}
+		}
+	},
 	{
 		desc = "测试对固定类型舰娘的伤害加成",
 		effect_list = {
@@ -167,25 +187,5 @@ return {
 	stack = 1,
 	id = 10501,
 	icon = 10501,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				group = 10501,
-				attr = "DMG_TAG_EHC_N_3",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

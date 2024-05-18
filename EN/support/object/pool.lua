@@ -1,170 +1,190 @@
-pg = pg or {}
-slot1 = require("Mgr/Pool/PoolUtil")
-slot2 = class("Pool")
-pg.Pool = slot2
+﻿pg = pg or {}
 
-function slot2.Ctor(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	assert(slot2, "template or transform should exist")
+local var_0_0 = pg
+local var_0_1 = require("Mgr/Pool/PoolUtil")
+local var_0_2 = class("Pool")
 
-	slot0.template = slot2
-	slot0.keepParent = slot5
-	slot0.parentTF = slot1
-	slot0.templateActive = slot2.activeSelf
-	slot0.parentActive = slot1.gameObject.activeSelf
-	slot0.keepActive = slot6
-	slot0.min = slot3
-	slot0.list = ys.LinkList.New()
-	slot0.map = {}
-	slot0.usedEnd = nil
-	slot0.resizeTime = slot4
+var_0_0.Pool = var_0_2
+
+function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
+	assert(arg_1_2, "template or transform should exist")
+
+	arg_1_0.template = arg_1_2
+	arg_1_0.keepParent = arg_1_5
+	arg_1_0.parentTF = arg_1_1
+	arg_1_0.templateActive = arg_1_2.activeSelf
+	arg_1_0.parentActive = arg_1_1.gameObject.activeSelf
+	arg_1_0.keepActive = arg_1_6
+	arg_1_0.min = arg_1_3
+	arg_1_0.list = ys.LinkList.New()
+	arg_1_0.map = {}
+	arg_1_0.usedEnd = nil
+	arg_1_0.resizeTime = arg_1_4
 end
 
-function slot2.InitSize(slot0, slot1)
-	slot1 = slot1 or slot0.min
-	slot2 = {
-		[slot6] = slot0:GetObject()
-	}
+function var_0_2.InitSize(arg_2_0, arg_2_1)
+	arg_2_1 = arg_2_1 or arg_2_0.min
 
-	for slot6 = 1, slot1 do
+	local var_2_0 = {}
+
+	for iter_2_0 = 1, arg_2_1 do
+		var_2_0[iter_2_0] = arg_2_0:GetObject()
 	end
 
-	for slot6 = 1, slot1 do
-		slot0:Recycle(slot2[slot6])
+	for iter_2_1 = 1, arg_2_1 do
+		arg_2_0:Recycle(var_2_0[iter_2_1])
 	end
 
-	return slot0
+	return arg_2_0
 end
 
-function slot2.SetInitFuncs(slot0, slot1)
-	slot0.initFunc = slot1
+function var_0_2.SetInitFuncs(arg_3_0, arg_3_1)
+	arg_3_0.initFunc = arg_3_1
 end
 
-function slot2.SetRecycleFuncs(slot0, slot1)
-	slot0.recycleFunc = slot1
+function var_0_2.SetRecycleFuncs(arg_4_0, arg_4_1)
+	arg_4_0.recycleFunc = arg_4_1
 end
 
-function slot2.IsEmpty(slot0)
-	return slot0.usedEnd == slot0.list.Tail
+function var_0_2.IsEmpty(arg_5_0)
+	return arg_5_0.usedEnd == arg_5_0.list.Tail
 end
 
-function slot2.GetRootTF(slot0)
-	return slot0.parentTF
+function var_0_2.GetRootTF(arg_6_0)
+	return arg_6_0.parentTF
 end
 
-function slot2.GetObject(slot0)
-	slot1 = nil
+function var_0_2.GetObject(arg_7_0)
+	local var_7_0
+	local var_7_1 = arg_7_0.usedEnd
 
-	if not slot0:IsEmpty() then
-		slot2 = (slot0.usedEnd ~= nil or slot0.list.Head) and slot0.usedEnd.Next
-		slot0.usedEnd = slot2
-		slot1 = slot2.Data
-		slot0.map[slot1] = slot2
+	if not arg_7_0:IsEmpty() then
+		if var_7_1 == nil then
+			var_7_1 = arg_7_0.list.Head
+		else
+			var_7_1 = arg_7_0.usedEnd.Next
+		end
 
-		LuaHelper.ResetTF(slot1.transform)
+		arg_7_0.usedEnd = var_7_1
+		var_7_0 = var_7_1.Data
+		arg_7_0.map[var_7_0] = var_7_1
 
-		if not slot0.keepActive and slot0.parentActive then
-			slot1:SetActive(true)
+		LuaHelper.ResetTF(var_7_0.transform)
+
+		if not arg_7_0.keepActive and arg_7_0.parentActive then
+			var_7_0:SetActive(true)
 		end
 	else
-		if not slot0.templateActive then
-			Object.Instantiate(slot0.template):SetActive(true)
+		var_7_0 = Object.Instantiate(arg_7_0.template)
+
+		if not arg_7_0.templateActive then
+			var_7_0:SetActive(true)
 		end
 
-		if slot0.keepParent then
-			slot1.transform:SetParent(slot0.parentTF, false)
+		if arg_7_0.keepParent then
+			var_7_0.transform:SetParent(arg_7_0.parentTF, false)
 		end
 
-		if slot0.initFunc then
-			slot0.initFunc(slot1)
+		if arg_7_0.initFunc then
+			arg_7_0.initFunc(var_7_0)
 		end
 
-		slot3 = slot0.list:AddLast(slot1)
-		slot0.usedEnd = slot3
-		slot0.map[slot1] = slot3
+		local var_7_2 = arg_7_0.list:AddLast(var_7_0)
+
+		arg_7_0.usedEnd = var_7_2
+		arg_7_0.map[var_7_0] = var_7_2
 	end
 
-	return slot1
+	return var_7_0
 end
 
-function slot2.ResetParent(slot0, slot1)
-	slot0.parentTF = slot1
+function var_0_2.ResetParent(arg_8_0, arg_8_1)
+	arg_8_0.parentTF = arg_8_1
 
-	for slot5 in slot0.list:Iterator() do
-		slot5.Data.transform:SetParent(slot0.parentTF, false)
+	for iter_8_0 in arg_8_0.list:Iterator() do
+		iter_8_0.Data.transform:SetParent(arg_8_0.parentTF, false)
 	end
 end
 
-function slot2.Recycle(slot0, slot1)
-	if slot0.map[slot1] == nil then
-		uv0.Destroy(slot1)
+function var_0_2.Recycle(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_0.map[arg_9_1]
+
+	if var_9_0 == nil then
+		var_0_1.Destroy(arg_9_1)
 
 		return
 	end
 
-	slot0.map[slot1] = nil
+	arg_9_0.map[arg_9_1] = nil
 
-	if not slot0.keepActive and slot0.parentActive then
-		slot1:SetActive(false)
+	if not arg_9_0.keepActive and arg_9_0.parentActive then
+		arg_9_1:SetActive(false)
 	end
 
-	if not slot0.keepParent then
-		LuaHelper.SetGOParentTF(slot1, slot0.parentTF, false)
+	if not arg_9_0.keepParent then
+		LuaHelper.SetGOParentTF(arg_9_1, arg_9_0.parentTF, false)
 	end
 
-	if slot0.recycleFunc then
-		slot0.recycleFunc(slot1)
+	if arg_9_0.recycleFunc then
+		arg_9_0.recycleFunc(arg_9_1)
 	end
 
-	if slot0.usedEnd == slot2 then
-		slot0.usedEnd = slot2.Before
+	if arg_9_0.usedEnd == var_9_0 then
+		arg_9_0.usedEnd = var_9_0.Before
 	end
 
-	slot0.list:Remove(slot2)
-	slot0.list:AddNodeLast(slot2)
+	arg_9_0.list:Remove(var_9_0)
+	arg_9_0.list:AddNodeLast(var_9_0)
 
-	slot2.liveTime = uv1.TimeMgr.GetInstance():GetCombatTime() + slot0.resizeTime
+	var_9_0.liveTime = var_0_0.TimeMgr.GetInstance():GetCombatTime() + arg_9_0.resizeTime
 end
 
-function slot2.AllRecycle(slot0)
-	for slot4, slot5 in pairs(slot0.map) do
-		slot0:Recycle(slot4)
+function var_0_2.AllRecycle(arg_10_0)
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.map) do
+		arg_10_0:Recycle(iter_10_0)
 	end
 end
 
-function slot2.Resize(slot0)
-	if slot0.list.Count <= slot0.min then
+function var_0_2.Resize(arg_11_0)
+	if arg_11_0.list.Count <= arg_11_0.min then
 		return
 	end
 
-	slot1 = nil
-	slot1 = (not slot0.usedEnd or slot0.usedEnd.Next) and slot0.list.Head
-	slot2 = uv0.TimeMgr.GetInstance():GetCombatTime()
-	slot3 = 0
+	local var_11_0
 
-	while slot1 do
-		if slot2 < slot1.liveTime then
+	if arg_11_0.usedEnd then
+		var_11_0 = arg_11_0.usedEnd.Next
+	else
+		var_11_0 = arg_11_0.list.Head
+	end
+
+	local var_11_1 = var_0_0.TimeMgr.GetInstance():GetCombatTime()
+	local var_11_2 = 0
+
+	while var_11_0 do
+		if var_11_1 < var_11_0.liveTime then
 			break
 		end
 
-		uv1.Destroy(slot1.Data)
-		slot0.list:Remove(slot1)
+		var_0_1.Destroy(var_11_0.Data)
 
-		slot1 = slot1.Next
+		var_11_0 = var_11_0.Next, arg_11_0.list:Remove(var_11_0)
+		var_11_2 = var_11_2 + 1
 
-		if slot3 + 1 >= 6 or slot0.list.Count <= slot0.min then
+		if var_11_2 >= 6 or arg_11_0.list.Count <= arg_11_0.min then
 			break
 		end
 	end
 end
 
-function slot2.Dispose(slot0)
-	for slot4 in slot0.list:Iterator() do
-		uv0.Destroy(slot4.Data)
+function var_0_2.Dispose(arg_12_0)
+	for iter_12_0 in arg_12_0.list:Iterator() do
+		var_0_1.Destroy(iter_12_0.Data)
 	end
 
-	slot0.list = nil
-	slot0.map = nil
-	slot0.last = nil
-	slot0.template = nil
-	slot0.parentTF = nil
+	arg_12_0.list = nil
+	arg_12_0.map = nil
+	arg_12_0.last = nil
+	arg_12_0.template = nil
+	arg_12_0.parentTF = nil
 end

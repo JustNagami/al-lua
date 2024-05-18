@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.task_data_trigger = {
 	{
 		group_id = 0,

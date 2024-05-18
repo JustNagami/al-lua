@@ -1,60 +1,87 @@
-slot0 = class("UpGradeEquipmentCommands", pm.SimpleCommand)
+﻿local var_0_0 = class("UpGradeEquipmentCommands", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot5 = slot2.equipmentId
-	slot6 = nil
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shipId
+	local var_1_2 = var_1_0.pos
+	local var_1_3 = var_1_0.equipmentId
+	local var_1_4
 
-	if slot2.shipId then
-		assert(getProxy(BayProxy):getShipById(slot3):getEquip(slot2.pos), "can not find equipment at ship.")
+	if var_1_1 then
+		var_1_4 = getProxy(BayProxy):getShipById(var_1_1):getEquip(var_1_2)
+
+		assert(var_1_4, "can not find equipment at ship.")
 	else
-		assert(getProxy(EquipmentProxy):getEquipmentById(slot5), "can not find equipment: " .. slot5)
+		var_1_4 = getProxy(EquipmentProxy):getEquipmentById(var_1_3)
+
+		assert(var_1_4, "can not find equipment: " .. var_1_3)
 	end
 
-	if not Equipment.canUpgrade(slot6.configId) then
+	if not Equipment.canUpgrade(var_1_4.configId) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_max_level"))
 
 		return
 	end
 
-	pg.ConnectionMgr.GetInstance():Send(slot3 and 14002 or 14004, slot3 and {
-		ship_id = slot3,
-		pos = slot4
+	local var_1_5 = var_1_1 and 14002 or 14004
+	local var_1_6 = var_1_1 and 14003 or 14005
+	local var_1_7 = var_1_1 and {
+		ship_id = var_1_1,
+		pos = var_1_2
 	} or {
 		type = 0,
-		equip_id = slot5
-	}, slot3 and 14003 or 14005, function (slot0)
-		if slot0.result == 0 then
-			slot4 = getProxy(PlayerProxy)
-			slot5, slot6 = nil
-			slot7 = slot4:getData()
+		equip_id = var_1_3
+	}
 
-			slot7:consume({
-				gold = ((not uv0 or getProxy(BayProxy):getShipById(uv0):getEquip(uv1)) and getProxy(EquipmentProxy):getEquipmentById(uv2)):getConfig("trans_use_gold")
+	pg.ConnectionMgr.GetInstance():Send(var_1_5, var_1_7, var_1_6, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(BayProxy)
+			local var_2_1 = getProxy(BagProxy)
+			local var_2_2 = getProxy(EquipmentProxy)
+			local var_2_3 = getProxy(PlayerProxy)
+			local var_2_4
+			local var_2_5
+
+			if var_1_1 then
+				var_2_4 = var_2_0:getShipById(var_1_1)
+				var_2_5 = var_2_4:getEquip(var_1_2)
+			else
+				var_2_5 = var_2_2:getEquipmentById(var_1_3)
+			end
+
+			local var_2_6 = var_2_3:getData()
+			local var_2_7 = var_2_5:getConfig("trans_use_gold")
+
+			var_2_6:consume({
+				gold = var_2_7
 			})
-			slot4:updatePlayer(slot7)
+			var_2_3:updatePlayer(var_2_6)
 
-			for slot13, slot14 in ipairs(slot6:getConfig("trans_use_item")) do
-				getProxy(BagProxy):removeItemById(slot14[1], slot14[2])
+			local var_2_8 = var_2_5:getConfig("trans_use_item")
+
+			for iter_2_0, iter_2_1 in ipairs(var_2_8) do
+				var_2_1:removeItemById(iter_2_1[1], iter_2_1[2])
 			end
 
-			if slot5 then
-				slot5:updateEquip(uv1, slot6:MigrateTo(slot6:getConfig("next")))
-				slot1:updateShip(slot5)
-			elseif slot6 then
-				slot3:removeEquipmentById(slot6.id, 1)
-				slot3:addEquipmentById(slot10.id, 1, true)
+			local var_2_9 = var_2_5:MigrateTo(var_2_5:getConfig("next"))
+
+			if var_2_4 then
+				var_2_4:updateEquip(var_1_2, var_2_9)
+				var_2_0:updateShip(var_2_4)
+			elseif var_2_5 then
+				var_2_2:removeEquipmentById(var_2_5.id, 1)
+				var_2_2:addEquipmentById(var_2_9.id, 1, true)
 			end
 
-			uv3:sendNotification(GAME.UPGRADE_EQUIPMENTS_DONE, {
-				ship = slot5,
-				equip = slot6,
-				newEquip = slot10
+			arg_1_0:sendNotification(GAME.UPGRADE_EQUIPMENTS_DONE, {
+				ship = var_2_4,
+				equip = var_2_5,
+				newEquip = var_2_9
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_upgrade_erro", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("equipment_upgrade_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

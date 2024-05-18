@@ -1,94 +1,102 @@
-slot0 = class("BackYardRefreshShopTemplateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardRefreshShopTemplateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.type
-	slot5 = slot2.force
-	slot6 = slot2.timeType
-	slot8 = false
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.type
+	local var_1_2 = var_1_0.page
+	local var_1_3 = var_1_0.force
+	local var_1_4 = var_1_0.timeType
+	local var_1_5 = getProxy(DormProxy)
+	local var_1_6 = false
 
-	if slot2.page == getProxy(DormProxy).MAX_PAGE then
+	if var_1_2 == var_1_5.MAX_PAGE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shop_reach_last_page"))
 
 		return
 	end
 
-	if slot7.lastPages[slot3] < slot4 then
-		slot0:sendNotification(GAME.BACKYARD_REFRESH_SHOP_TEMPLATE_ERRO)
+	if var_1_2 > var_1_5.lastPages[var_1_1] then
+		arg_1_0:sendNotification(GAME.BACKYARD_REFRESH_SHOP_TEMPLATE_ERRO)
 
 		return
 	end
 
-	function slot9(slot0, slot1)
-		for slot6, slot7 in ipairs(slot0.theme_id_list or {}) do
-			if not uv0:GetShopThemeTemplateById(slot7) then
-				uv1 = true
+	local function var_1_7(arg_2_0, arg_2_1)
+		local var_2_0 = {}
 
-				BackYardThemeTemplate.New({
-					id = slot7
-				}):SetSortIndex(slot6)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.theme_id_list or {}) do
+			local var_2_1 = var_1_5:GetShopThemeTemplateById(iter_2_1)
+
+			if not var_2_1 then
+				var_1_6 = true
+
+				local var_2_2 = BackYardThemeTemplate.New({
+					id = iter_2_1
+				})
+
+				var_2_2:SetSortIndex(iter_2_0)
+
+				var_2_0[var_2_2.id] = var_2_2
 			else
-				slot8:SetSortIndex(slot6)
+				var_2_1:SetSortIndex(iter_2_0)
 
-				slot2[slot8.id] = slot8
+				var_2_0[var_2_1.id] = var_2_1
 			end
 		end
 
-		if table.getCount({
-			[slot9.id] = slot9
-		}) > 0 then
-			uv0:SetShopThemeTemplates(slot2)
+		if table.getCount(var_2_0) > 0 then
+			var_1_5:SetShopThemeTemplates(var_2_0)
 
-			uv0.TYPE = uv2
-			uv0.PAGE = uv3
+			var_1_5.TYPE = var_1_1
+			var_1_5.PAGE = var_1_2
 		end
 
-		if table.getCount(slot2) < BackYardConst.THEME_TEMPLATE_SHOP_REFRSH_CNT then
-			uv0.lastPages[uv2] = uv3
+		if table.getCount(var_2_0) < BackYardConst.THEME_TEMPLATE_SHOP_REFRSH_CNT then
+			var_1_5.lastPages[var_1_1] = var_1_2
 
-			if not uv4 then
-				-- Nothing
+			if not var_1_3 then
+				-- block empty
 			end
 		end
 
-		if slot1 then
-			slot1()
+		if arg_2_1 then
+			arg_2_1()
 		end
 	end
 
-	function slot10(slot0)
-		uv0:sendNotification(GAME.BACKYARD_GET_IMG_MD5, {
+	local function var_1_8(arg_3_0)
+		arg_1_0:sendNotification(GAME.BACKYARD_GET_IMG_MD5, {
 			type = BackYardConst.THEME_TEMPLATE_TYPE_SHOP,
-			callback = slot0
+			callback = arg_3_0
 		})
 	end
 
-	function slot11(slot0)
+	local function var_1_9(arg_4_0)
 		seriesAsync({
-			function (slot0)
-				uv0(uv1, slot0)
+			function(arg_5_0)
+				var_1_7(arg_4_0, arg_5_0)
 			end,
-			function (slot0)
-				uv0(slot0)
+			function(arg_6_0)
+				var_1_8(arg_6_0)
 			end
-		}, function ()
-			uv0:sendNotification(GAME.BACKYARD_REFRESH_SHOP_TEMPLATE_DONE, {
-				existNew = uv1
+		}, function()
+			arg_1_0:sendNotification(GAME.BACKYARD_REFRESH_SHOP_TEMPLATE_DONE, {
+				existNew = var_1_6
 			})
 		end)
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19117, {
-		typ = slot3,
-		page = slot4,
+		typ = var_1_1,
+		page = var_1_2,
 		num = BackYardConst.THEME_TEMPLATE_SHOP_REFRSH_CNT
-	}, 19118, function (slot0)
-		if slot0.result == 0 then
-			uv0(slot0)
+	}, 19118, function(arg_8_0)
+		if arg_8_0.result == 0 then
+			var_1_9(arg_8_0)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_8_0.result] .. arg_8_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

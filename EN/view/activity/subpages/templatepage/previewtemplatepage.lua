@@ -1,114 +1,120 @@
-slot0 = class("PreviewTemplatePage", import("view.base.BaseActivityPage"))
+﻿local var_0_0 = class("PreviewTemplatePage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.btnList = slot0:findTF("btn_list", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.btnList = arg_1_0:findTF("btn_list", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0:initBtn()
-	eachChild(slot0.btnList, function (slot0)
-		uv0.btnFuncList[slot0.name](slot0)
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0:initBtn()
+	eachChild(arg_2_0.btnList, function(arg_3_0)
+		arg_2_0.btnFuncList[arg_3_0.name](arg_3_0)
 	end)
 end
 
-function slot0.initBtn(slot0)
-	function slot1(slot0)
-		if not getProxy(ActivityProxy):getActivityById(slot0) or slot1 and slot1:isEnd() then
+function var_0_0.initBtn(arg_4_0)
+	local function var_4_0(arg_5_0)
+		local var_5_0 = getProxy(ActivityProxy):getActivityById(arg_5_0)
+
+		if not var_5_0 or var_5_0 and var_5_0:isEnd() then
 			return true
 		else
 			return false
 		end
 	end
 
-	slot2 = slot0.activity:getConfig("config_client")
-	slot0.btnFuncList = {
-		task = function (slot0)
-			onButton(uv0, slot0, function ()
-				if uv0.taskLinkActID and uv1(uv0.taskLinkActID) then
+	local var_4_1 = arg_4_0.activity:getConfig("config_client")
+
+	arg_4_0.btnFuncList = {
+		task = function(arg_6_0)
+			onButton(arg_4_0, arg_6_0, function()
+				if var_4_1.taskLinkActID and var_4_0(var_4_1.taskLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				uv2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
+				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK, {
 					page = "activity"
 				})
 			end)
 		end,
-		academy = function (slot0)
-			onButton(uv0, slot0, function ()
-				uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE, {
+		academy = function(arg_8_0)
+			onButton(arg_4_0, arg_8_0, function()
+				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.NAVALACADEMYSCENE, {
 					page = "activity"
 				})
 			end)
 		end,
-		shop = function (slot0)
-			slot1 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
-				return slot0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
+		shop = function(arg_10_0)
+			local var_10_0 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_11_0)
+				return arg_11_0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
 			end)
 
-			onButton(uv0, slot0, function ()
-				if uv0.shopLinkActID and uv1(uv0.shopLinkActID) then
+			onButton(arg_4_0, arg_10_0, function()
+				if var_4_1.shopLinkActID and var_4_0(var_4_1.shopLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				uv2:emit(ActivityMediator.GO_SHOPS_LAYER, {
+				arg_4_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 					warp = NewShopsScene.TYPE_ACTIVITY,
-					actId = uv3 and uv3.id
+					actId = var_10_0 and var_10_0.id
 				})
 			end)
 		end,
-		build = function (slot0)
-			onButton(uv0, slot0, function ()
-				if uv0.buildLinkActID and uv1(uv0.buildLinkActID) then
+		build = function(arg_13_0)
+			onButton(arg_4_0, arg_13_0, function()
+				if var_4_1.buildLinkActID and var_4_0(var_4_1.buildLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				uv2:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 					page = BuildShipScene.PAGE_BUILD,
 					projectName = BuildShipScene.PROJECTS.ACTIVITY
 				})
 			end)
 		end,
-		fight = function (slot0)
-			onButton(uv0, slot0, function ()
-				if uv0.fightLinkActID and uv1(uv0.fightLinkActID) then
+		fight = function(arg_15_0)
+			onButton(arg_4_0, arg_15_0, function()
+				if var_4_1.fightLinkActID and var_4_0(var_4_1.fightLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				uv2:emit(ActivityMediator.BATTLE_OPERA)
+				arg_4_0:emit(ActivityMediator.BATTLE_OPERA)
 			end)
 		end,
-		lottery = function (slot0)
-			onButton(uv0, slot0, function ()
-				if uv0.lotteryLinkActID and uv1(uv0.lotteryLinkActID) then
+		lottery = function(arg_17_0)
+			onButton(arg_4_0, arg_17_0, function()
+				if var_4_1.lotteryLinkActID and var_4_0(var_4_1.lotteryLinkActID) then
 					pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 					return
 				end
 
-				uv2:emit(ActivityMediator.GO_LOTTERY)
+				arg_4_0:emit(ActivityMediator.GO_LOTTERY)
 			end)
 		end,
-		memory = function (slot0)
+		memory = function(arg_19_0)
+			return
 		end,
-		activity = function (slot0)
+		activity = function(arg_20_0)
+			return
 		end,
-		mountain = function (slot0)
+		mountain = function(arg_21_0)
+			return
 		end,
-		skinshop = function (slot0)
-			onButton(uv0, slot0, function ()
-				uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+		skinshop = function(arg_22_0)
+			onButton(arg_4_0, arg_22_0, function()
+				arg_4_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 			end)
 		end
 	}
 end
 
-return slot0
+return var_0_0

@@ -1,55 +1,57 @@
-slot0 = class("AddShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("AddShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.id
-	slot4 = slot2.type
-	slot5 = slot2.callBack
-	slot8 = getProxy(BayProxy):getShipById(slot3)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.type
+	local var_1_3 = var_1_0.callBack
+	local var_1_4 = getProxy(DormProxy)
+	local var_1_5 = getProxy(BayProxy):getShipById(var_1_1)
+	local var_1_6 = var_1_4:getData()
 
-	if table.contains(getProxy(DormProxy):getData().shipIds, slot3) then
-		if slot5 then
-			slot5()
+	if table.contains(var_1_6.shipIds, var_1_1) then
+		if var_1_3 then
+			var_1_3()
 		end
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(19002, {
-		ship_id = slot3,
-		type = slot4
-	}, 19003, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(BayProxy)
+		ship_id = var_1_1,
+		type = var_1_2
+	}, 19003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(BayProxy)
 
-			if uv0 == 1 then
-				uv1.state_info_1 = pg.TimeMgr.GetInstance():GetServerTime()
-				uv1.state_info_2 = uv1:getTotalExp()
+			if var_1_2 == 1 then
+				var_1_5.state_info_1 = pg.TimeMgr.GetInstance():GetServerTime()
+				var_1_5.state_info_2 = var_1_5:getTotalExp()
 
-				uv1:updateState(Ship.STATE_TRAIN)
+				var_1_5:updateState(Ship.STATE_TRAIN)
 
-				if uv2.next_timestamp == 0 then
-					uv2:restNextTime()
-					uv3:updateDrom(uv2, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+				if var_1_6.next_timestamp == 0 then
+					var_1_6:restNextTime()
+					var_1_4:updateDrom(var_1_6, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 				end
-			elseif uv0 == 2 then
-				uv1:updateState(Ship.STATE_REST)
+			elseif var_1_2 == 2 then
+				var_1_5:updateState(Ship.STATE_REST)
 			end
 
-			slot1:updateShip(uv1)
-			uv3:addShip(uv1.id)
-			uv4:sendNotification(GAME.ADD_SHIP_DONE, {
-				id = uv5,
-				type = uv0
+			var_2_0:updateShip(var_1_5)
+			var_1_4:addShip(var_1_5.id)
+			arg_1_0:sendNotification(GAME.ADD_SHIP_DONE, {
+				id = var_1_1,
+				type = var_1_2
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_addShip", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_addShip", arg_2_0.result))
 		end
 
-		if uv6 then
-			uv6()
+		if var_1_3 then
+			var_1_3()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

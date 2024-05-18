@@ -1,120 +1,158 @@
-slot0 = class("BattleGateLimitChallenge")
-ys.Battle.BattleGateLimitChallenge = slot0
-slot0.__name = "BattleGateLimitChallenge"
-slot0.BattleSystem = SYSTEM_LIMIT_CHALLENGE
+﻿local var_0_0 = class("BattleGateLimitChallenge")
 
-function slot0.Entrance(slot0, slot1)
-	if not slot1.LegalFleet(FleetProxy.CHALLENGE_FLEET_ID) then
+ys.Battle.BattleGateLimitChallenge = var_0_0
+var_0_0.__name = "BattleGateLimitChallenge"
+var_0_0.BattleSystem = SYSTEM_LIMIT_CHALLENGE
+
+function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_0 = FleetProxy.CHALLENGE_FLEET_ID
+
+	if not arg_1_1.LegalFleet(var_1_0) then
 		return
 	end
 
-	slot4 = getProxy(PlayerProxy):getData()
-	slot7 = getProxy(LimitChallengeProxy)
-	slot10 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot0.stageId].dungeon_id).fleet_prefab
-	slot12 = {}
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = var_1_1:getData()
+	local var_1_3 = getProxy(FleetProxy)
+	local var_1_4 = getProxy(BayProxy)
+	local var_1_5 = getProxy(LimitChallengeProxy)
+	local var_1_6 = arg_1_0.stageId
+	local var_1_7 = pg.expedition_data_template[var_1_6].dungeon_id
+	local var_1_8 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_7).fleet_prefab
+	local var_1_9 = var_1_3:getFleetById(FleetProxy.CHALLENGE_FLEET_ID)
+	local var_1_10 = {}
+	local var_1_11 = var_1_4:getSortShipsByFleet(var_1_9)
 
-	for slot17, slot18 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getFleetById(FleetProxy.CHALLENGE_FLEET_ID))) do
-		slot12[#slot12 + 1] = slot18.id
+	for iter_1_0, iter_1_1 in ipairs(var_1_11) do
+		var_1_10[#var_1_10 + 1] = iter_1_1.id
 	end
 
-	slot16 = 0
-	slot17 = 0
+	local var_1_12 = pg.battle_cost_template[var_0_0.BattleSystem]
+	local var_1_13 = var_1_12.oil_cost > 0
+	local var_1_14 = 0
+	local var_1_15 = 0
 
-	if pg.battle_cost_template[uv0.BattleSystem].oil_cost > 0 then
-		slot16 = slot11:getStartCost().oil
-		slot17 = slot11:GetCostSum().oil
+	if var_1_13 then
+		var_1_14 = var_1_9:getStartCost().oil
+		var_1_15 = var_1_9:GetCostSum().oil
 	end
 
-	if slot15 and slot4.oil < slot17 then
+	if var_1_13 and var_1_15 > var_1_2.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(uv0.BattleSystem, slot12, {
-		slot8
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_16(arg_2_0)
+		if var_1_13 then
+			var_1_2:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_14
 			})
 		end
 
-		if uv3.enter_energy_cost > 0 then
-			for slot5, slot6 in ipairs(uv4) do
-				slot6:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
-				uv5:updateShip(slot6)
+		if var_1_12.enter_energy_cost > 0 then
+			local var_2_0 = pg.gameset.battle_consume_energy.key_value
+
+			for iter_2_0, iter_2_1 in ipairs(var_1_11) do
+				iter_2_1:cosumeEnergy(var_2_0)
+				var_1_4:updateShip(iter_2_1)
 			end
 		end
 
-		uv6:updatePlayer(uv1)
-		uv10:sendNotification(GAME.BEGIN_STAGE_DONE, {
+		var_1_1:updatePlayer(var_1_2)
+
+		local var_2_1 = {
 			mainFleetId = mainFleetID,
-			prefabFleet = uv7,
-			stageId = uv8,
-			system = uv9.BattleSystem,
-			token = slot0.key
-		})
-	end, function (slot0)
-		uv0:RequestFailStandardProcess(slot0)
-	end)
-end
+			prefabFleet = var_1_8,
+			stageId = var_1_6,
+			system = var_0_0.BattleSystem,
+			token = arg_2_0.key
+		}
 
-function slot0.Exit(slot0, slot1)
-	slot2 = pg.battle_cost_template[uv0.BattleSystem]
-	slot4 = getProxy(BayProxy)
-	slot5 = slot0.statistics._battleScore
-	slot6 = 0
-	slot7 = {}
-	slot8 = {}
-	slot9 = slot0.stageId
-	slot10 = getProxy(FleetProxy):getFleetById(FleetProxy.CHALLENGE_FLEET_ID)
-	slot11 = nil
-
-	if slot0.statistics.submarineAid then
-		slot11 = slot3:getFleetById(FleetProxy.CHALLENGE_SUB_FLEET_ID)
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_1)
 	end
 
-	function ()
-		function (slot0)
-			uv0 = uv0 + slot0:getEndCost().oil
+	local function var_1_17(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
+	end
 
-			table.insertto(uv1, _.values(slot0.commanderIds))
-			table.insertto(uv2, uv3:getSortShipsByFleet(slot0))
-		end(uv4)
-
-		if uv5.statistics.submarineAid then
-			slot0(uv6)
-		end
-	end()
-
-	slot13 = slot1.GeneralPackage(slot0, slot7)
-	slot13.commander_id_list = slot8
-
-	slot1:SendRequest(slot13, function (slot0)
-		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, true)
-
-		uv1.statistics.mvpShipID = slot0.mvp
-		slot1, slot2 = uv0:GeneralLoot(slot0)
-		slot3 = ys.Battle.BattleConst.BattleScore.C < uv2
-
-		uv0.GeneralPlayerCosume(uv5.BattleSystem, slot3, uv6, slot0.player_exp)
-		uv0:sendNotification(GAME.FINISH_STAGE_DONE, {
-			system = uv5.BattleSystem,
-			statistics = uv1.statistics,
-			score = uv2,
-			drops = slot1,
-			commanderExps = uv0.GenerateCommanderExp(slot0, uv3, uv4),
-			result = slot0.result,
-			extraDrops = slot2
-		})
-
-		if slot3 then
-			getProxy(LimitChallengeProxy):setPassTime(LimitChallengeConst.GetChallengeIDByStageID(uv7), uv1.statistics._totalTime)
-		end
-	end)
+	BeginStageCommand.SendRequest(var_0_0.BattleSystem, var_1_10, {
+		var_1_6
+	}, var_1_16, var_1_17)
 end
 
-return slot0
+function var_0_0.Exit(arg_4_0, arg_4_1)
+	local var_4_0 = pg.battle_cost_template[var_0_0.BattleSystem]
+	local var_4_1 = getProxy(FleetProxy)
+	local var_4_2 = getProxy(BayProxy)
+	local var_4_3 = arg_4_0.statistics._battleScore
+	local var_4_4 = 0
+	local var_4_5 = {}
+	local var_4_6 = {}
+	local var_4_7 = arg_4_0.stageId
+	local var_4_8 = var_4_1:getFleetById(FleetProxy.CHALLENGE_FLEET_ID)
+	local var_4_9
+
+	if arg_4_0.statistics.submarineAid then
+		var_4_9 = var_4_1:getFleetById(FleetProxy.CHALLENGE_SUB_FLEET_ID)
+	end
+
+	;(function()
+		local function var_5_0(arg_6_0)
+			local var_6_0 = arg_6_0:getEndCost().oil
+
+			var_4_4 = var_4_4 + var_6_0
+
+			table.insertto(var_4_6, _.values(arg_6_0.commanderIds))
+			table.insertto(var_4_5, var_4_2:getSortShipsByFleet(arg_6_0))
+		end
+
+		var_5_0(var_4_8)
+
+		if arg_4_0.statistics.submarineAid then
+			var_5_0(var_4_9)
+		end
+	end)()
+
+	local var_4_10 = arg_4_1.GeneralPackage(arg_4_0, var_4_5)
+
+	var_4_10.commander_id_list = var_4_6
+
+	local function var_4_11(arg_7_0)
+		arg_4_1.addShipsExp(arg_7_0.ship_exp_list, arg_4_0.statistics, true)
+
+		arg_4_0.statistics.mvpShipID = arg_7_0.mvp
+
+		local var_7_0, var_7_1 = arg_4_1:GeneralLoot(arg_7_0)
+		local var_7_2 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
+		local var_7_3 = arg_4_1.GenerateCommanderExp(arg_7_0, var_4_8, var_4_9)
+
+		arg_4_1.GeneralPlayerCosume(var_0_0.BattleSystem, var_7_2, var_4_4, arg_7_0.player_exp)
+
+		local var_7_4 = {
+			system = var_0_0.BattleSystem,
+			statistics = arg_4_0.statistics,
+			score = var_4_3,
+			drops = var_7_0,
+			commanderExps = var_7_3,
+			result = arg_7_0.result,
+			extraDrops = var_7_1
+		}
+
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_7_4)
+
+		if var_7_2 then
+			local var_7_5 = LimitChallengeConst.GetChallengeIDByStageID(var_4_7)
+			local var_7_6 = arg_4_0.statistics._totalTime
+
+			getProxy(LimitChallengeProxy):setPassTime(var_7_5, var_7_6)
+		end
+	end
+
+	arg_4_1:SendRequest(var_4_10, var_4_11)
+end
+
+return var_0_0

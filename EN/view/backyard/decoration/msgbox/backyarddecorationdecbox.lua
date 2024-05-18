@@ -1,88 +1,108 @@
-slot0 = class("BackYardDecorationDecBox", import("....base.BaseSubView"))
+﻿local var_0_0 = class("BackYardDecorationDecBox", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardDecorationDescUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.nameTxt = slot0:findTF("name_bg/Text"):GetComponent(typeof(Text))
-	slot0.descTxt = slot0:findTF("Text"):GetComponent(typeof(Text))
-	slot0.icon = slot0:findTF("icon_bg/icon"):GetComponent(typeof(Image))
-	slot0.shipIcon = slot0:findTF("icon_bg/ship"):GetComponent(typeof(Image))
-	slot0.width = slot0._tf.rect.width
-	slot0.prantLeftBound = slot0._tf.parent.rect.width / 2
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.nameTxt = arg_2_0:findTF("name_bg/Text"):GetComponent(typeof(Text))
+	arg_2_0.descTxt = arg_2_0:findTF("Text"):GetComponent(typeof(Text))
+	arg_2_0.icon = arg_2_0:findTF("icon_bg/icon"):GetComponent(typeof(Image))
+	arg_2_0.shipIcon = arg_2_0:findTF("icon_bg/ship"):GetComponent(typeof(Image))
+	arg_2_0.width = arg_2_0._tf.rect.width
+	arg_2_0.prantLeftBound = arg_2_0._tf.parent.rect.width / 2
 end
 
-function slot0.shortenString(slot0, slot1, slot2)
-	slot3 = string.gmatch(slot1, "<color=#%w+>")()
-	slot4, slot5 = string.find(slot1, "<color=#%w+>")
+function var_0_0.shortenString(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = string.gmatch(arg_3_1, "<color=#%w+>")()
+	local var_3_1, var_3_2 = string.find(arg_3_1, "<color=#%w+>")
 
-	if not slot4 then
-		return shortenString(slot1, slot2)
+	if not var_3_1 then
+		return shortenString(arg_3_1, arg_3_2)
 	end
 
-	slot6, slot7 = string.find(slot1, "</color>")
-	slot12 = 0
+	local var_3_3, var_3_4 = string.find(arg_3_1, "</color>")
+	local var_3_5 = string.sub(arg_3_1, 1, var_3_1 - 1)
+	local var_3_6 = string.sub(arg_3_1, var_3_2 + 1, var_3_3 - 1)
+	local var_3_7 = string.sub(arg_3_1, var_3_4 + 1, string.len(arg_3_1))
+	local var_3_8 = ""
+	local var_3_9 = 0
 
-	for slot16, slot17 in ipairs({
-		string.sub(slot1, 1, slot4 - 1),
-		string.sub(slot1, slot5 + 1, slot6 - 1),
-		string.sub(slot1, slot7 + 1, string.len(slot1))
+	for iter_3_0, iter_3_1 in ipairs({
+		var_3_5,
+		var_3_6,
+		var_3_7
 	}) do
-		slot12 = slot16
+		var_3_8 = var_3_8 .. iter_3_1
+		var_3_9 = iter_3_0
 
-		if shouldShortenString("" .. slot17, slot2) then
+		if shouldShortenString(var_3_8, arg_3_2) then
 			break
 		end
 	end
 
-	if slot12 <= 1 then
-		return shortenString(slot11, slot2)
-	elseif slot8 == "" then
-		return string.gsub(shortenString(slot11, slot2), slot9, slot3 .. slot9) .. "</color>"
+	if var_3_9 <= 1 then
+		return shortenString(var_3_8, arg_3_2)
 	else
-		return string.gsub(slot11, slot8, slot8 .. slot3) .. "</color>"
+		local var_3_10 = shortenString(var_3_8, arg_3_2)
+
+		if var_3_5 == "" then
+			return string.gsub(var_3_10, var_3_6, var_3_0 .. var_3_6) .. "</color>"
+		else
+			return string.gsub(var_3_10, var_3_5, var_3_5 .. var_3_0) .. "</color>"
+		end
 	end
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3)
-	if slot0.furniture ~= slot1 then
-		slot0.nameTxt.text = shortenString(HXSet.hxLan(slot1:getConfig("name")), 10)
-		slot0.descTxt.text = slot0:shortenString(HXSet.hxLan(slot1:getConfig("describe")), 41)
-		slot0.icon.sprite = LoadSprite("furnitureicon/" .. slot1:getConfig("icon"))
+function var_0_0.SetUp(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	if arg_4_0.furniture ~= arg_4_1 then
+		arg_4_0.nameTxt.text = shortenString(HXSet.hxLan(arg_4_1:getConfig("name")), 10)
 
-		slot0.icon:SetNativeSize()
+		local var_4_0 = arg_4_0:shortenString(HXSet.hxLan(arg_4_1:getConfig("describe")), 41)
+
+		arg_4_0.descTxt.text = var_4_0
+		arg_4_0.icon.sprite = LoadSprite("furnitureicon/" .. arg_4_1:getConfig("icon"))
+
+		arg_4_0.icon:SetNativeSize()
 	end
 
-	slot0._tf.position = slot2
+	arg_4_0._tf.position = arg_4_2
 
-	if slot3 then
-		slot4 = slot0._tf.localPosition
-		slot0._tf.localPosition = Vector3(slot4.x, slot4.y - slot0._tf.rect.height, 0)
+	if arg_4_3 then
+		local var_4_1 = arg_4_0._tf.localPosition
+
+		arg_4_0._tf.localPosition = Vector3(var_4_1.x, var_4_1.y - arg_4_0._tf.rect.height, 0)
 	end
 
-	if slot0.prantLeftBound < slot0._tf.localPosition.x + slot0.width then
-		slot4 = slot0._tf.localPosition
-		slot0._tf.localPosition = Vector3(slot4.x - slot0.width, slot4.y, slot4.z)
+	if arg_4_0._tf.localPosition.x + arg_4_0.width > arg_4_0.prantLeftBound then
+		local var_4_2 = arg_4_0._tf.localPosition
+
+		arg_4_0._tf.localPosition = Vector3(var_4_2.x - arg_4_0.width, var_4_2.y, var_4_2.z)
 	end
 
-	slot0.furniture = slot1
+	arg_4_0.furniture = arg_4_1
 
-	slot0:UpdateSkinType()
-	slot0:Show()
+	arg_4_0:UpdateSkinType()
+	arg_4_0:Show()
 end
 
-function slot0.UpdateSkinType(slot0)
-	slot2 = Goods.ExistFurniture(Goods.FurnitureId2Id(slot0.furniture.id))
+function var_0_0.UpdateSkinType(arg_5_0)
+	local var_5_0 = Goods.FurnitureId2Id(arg_5_0.furniture.id)
+	local var_5_1 = Goods.ExistFurniture(var_5_0)
 
-	setActive(slot0.shipIcon, slot2)
+	setActive(arg_5_0.shipIcon, var_5_1)
 
-	if slot2 then
-		GetImageSpriteFromAtlasAsync("QIcon/" .. pg.ship_skin_template[Goods.Id2ShipSkinId(Goods.GetFurnitureConfig(slot1).id)].prefab, "", slot0.shipIcon.gameObject)
+	if var_5_1 then
+		local var_5_2 = Goods.GetFurnitureConfig(var_5_0)
+		local var_5_3 = Goods.Id2ShipSkinId(var_5_2.id)
+		local var_5_4 = pg.ship_skin_template[var_5_3].prefab
+
+		GetImageSpriteFromAtlasAsync("QIcon/" .. var_5_4, "", arg_5_0.shipIcon.gameObject)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

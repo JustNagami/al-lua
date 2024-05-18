@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Let's add your new ship to your <color=#ff7d36>formation</color>.",
 	"Commander, do you remember what to do?",
 	"Tap the empty slot in your team to <color=#ff7d36>add</color> another ship.",
@@ -18,7 +18,7 @@ return {
 				mode = 2,
 				posY = 104.87,
 				posX = 4.77,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/formationButton",
@@ -40,7 +40,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -50,7 +50,7 @@ return {
 				mode = 2,
 				posY = 240,
 				posX = -88.52,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/GridFrame/vanguard_3/tip",
@@ -71,7 +71,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/DockyardUI(Clone)/main/ship_container/ships",
@@ -98,7 +98,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 239.42,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/select_panel/confirm_button",
@@ -120,7 +120,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[6]
+				text = var_0_0[6]
 			}
 		},
 		{
@@ -130,7 +130,7 @@ return {
 				mode = 2,
 				posY = 226.21,
 				posX = -130.49,
-				text = slot0[7]
+				text = var_0_0[7]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/FormationUI(Clone)/blur_panel/top/back_btn",

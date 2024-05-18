@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "FutureBase",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "FutureBase",
-	stack = 1,
-	id = 104050,
-	icon = 104050,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -56,5 +36,25 @@ return {
 				skill_id = 104050
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "FutureBase",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "FutureBase",
+	stack = 1,
+	id = 104050,
+	icon = 104050,
+	last_effect = ""
 }

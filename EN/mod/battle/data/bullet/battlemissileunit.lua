@@ -1,127 +1,142 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleConst
-slot3 = slot0.Battle.BattleBulletEvent
-slot4 = pg.bfConsts
-slot5 = slot0.Battle.BattleFormulas
-slot7 = class("BattleMissileUnit", slot0.Battle.BattleBulletUnit)
-slot7.__name = "BattleMissileUnit"
-slot0.Battle.BattleMissileUnit = slot7
-slot7.STATE_LAUNCH = "Launch"
-slot7.STATE_ATTACK = "Attack"
-slot7.TYPE_COORD = 1
-slot7.TYPE_RANGE = 2
-slot7.TYPE_TARGET = 3
+﻿ys = ys or {}
 
-function slot7.Ctor(slot0, ...)
-	uv0.super.Ctor(slot0, ...)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = var_0_0.Battle.BattleBulletEvent
+local var_0_4 = pg.bfConsts
+local var_0_5 = var_0_0.Battle.BattleFormulas
+local var_0_6 = var_0_0.Battle.BattleConfig
+local var_0_7 = class("BattleMissileUnit", var_0_0.Battle.BattleBulletUnit)
 
-	slot0._state = slot0.STATE_LAUNCH
+var_0_7.__name = "BattleMissileUnit"
+var_0_0.Battle.BattleMissileUnit = var_0_7
+var_0_7.STATE_LAUNCH = "Launch"
+var_0_7.STATE_ATTACK = "Attack"
+var_0_7.TYPE_COORD = 1
+var_0_7.TYPE_RANGE = 2
+var_0_7.TYPE_TARGET = 3
+
+function var_0_7.Ctor(arg_1_0, ...)
+	var_0_7.super.Ctor(arg_1_0, ...)
+
+	arg_1_0._state = arg_1_0.STATE_LAUNCH
 end
 
-function slot7.SetTemplateData(slot0, slot1)
-	uv0.super.SetTemplateData(slot0, slot1)
-	slot0:ResetVelocity(0)
+function var_0_7.SetTemplateData(arg_2_0, arg_2_1)
+	var_0_7.super.SetTemplateData(arg_2_0, arg_2_1)
+	arg_2_0:ResetVelocity(0)
 
-	slot0._gravity = slot0:GetTemplate().extra_param.gravity or uv1.Battle.BattleConfig.GRAVITY
-	slot0._targetType = slot2.aimType or uv0.TYPE_TARGET
+	local var_2_0 = arg_2_0:GetTemplate().extra_param
+
+	arg_2_0._gravity = var_2_0.gravity or var_0_0.Battle.BattleConfig.GRAVITY
+	arg_2_0._targetType = var_2_0.aimType or var_0_7.TYPE_TARGET
 end
 
-function slot7.GetPierceCount(slot0)
+function var_0_7.GetPierceCount(arg_3_0)
 	return 1
 end
 
-function slot7.RegisterOnTheAir(slot0, slot1)
-	slot0._onTheHighest = slot1
+function var_0_7.RegisterOnTheAir(arg_4_0, arg_4_1)
+	arg_4_0._onTheHighest = arg_4_1
 end
 
-function slot7.SetExplodePosition(slot0, slot1)
-	slot0._explodePos = slot1:Clone()
-	slot0._explodePos.y = uv0.BombDetonateHeight
+function var_0_7.SetExplodePosition(arg_5_0, arg_5_1)
+	arg_5_0._explodePos = arg_5_1:Clone()
+	arg_5_0._explodePos.y = var_0_1.BombDetonateHeight
 end
 
-function slot7.GetExplodePostion(slot0)
-	return slot0._explodePos
+function var_0_7.GetExplodePostion(arg_6_0)
+	return arg_6_0._explodePos
 end
 
-slot8 = 1 / slot0.Battle.BattleConfig.viewFPS
+local var_0_8 = 1 / var_0_6.viewFPS
 
-function slot7.SetSpawnPosition(slot0, slot1)
-	uv0.super.SetSpawnPosition(slot0, slot1)
+function var_0_7.SetSpawnPosition(arg_7_0, arg_7_1)
+	var_0_7.super.SetSpawnPosition(arg_7_0, arg_7_1)
 
-	slot0._verticalSpeed = slot0:GetTemplate().extra_param.launchVrtSpeed
+	arg_7_0._verticalSpeed = arg_7_0:GetTemplate().extra_param.launchVrtSpeed
 end
 
-function slot7.Update(slot0, slot1)
-	uv0.super.Update(slot0, slot1)
+function var_0_7.Update(arg_8_0, arg_8_1)
+	var_0_7.super.Update(arg_8_0, arg_8_1)
 
-	if slot0._state == slot0.STATE_LAUNCH and slot1 > slot0:GetTemplate().extra_param.launchRiseTime + slot0._timeStamp then
-		slot0:CompleteRise()
+	if arg_8_0._state == arg_8_0.STATE_LAUNCH and arg_8_1 > arg_8_0:GetTemplate().extra_param.launchRiseTime + arg_8_0._timeStamp then
+		arg_8_0:CompleteRise()
 	end
 end
 
-function slot7.CompleteRise(slot0)
-	slot0._state = slot0.STATE_ATTACK
-	slot0._gravity = 0
+function var_0_7.CompleteRise(arg_9_0)
+	arg_9_0._state = arg_9_0.STATE_ATTACK
+	arg_9_0._gravity = 0
 
-	if slot0._onTheHighest then
-		slot0._onTheHighest()
+	if arg_9_0._onTheHighest then
+		arg_9_0._onTheHighest()
 	end
 
-	slot1 = slot0:GetTemplate().extra_param.fallTime
-	slot0._targetPos = slot0._explodePos
-	slot0._yAngle = math.rad2Deg * math.atan2(slot0._explodePos.z - slot0._spawnPos.z, slot0._explodePos.x - slot0._spawnPos.x)
-	slot0._verticalSpeed = -(slot0._position.y / slot1) * uv0
+	local var_9_0 = arg_9_0:GetTemplate().extra_param.fallTime
 
-	slot0:ResetVelocity(uv1.ConvertBulletDataSpeed(pg.Tool.FilterY(slot0._explodePos - slot0._position):Magnitude() / slot1 * uv0))
-	slot0:calcSpeed()
+	arg_9_0._targetPos = arg_9_0._explodePos
+	arg_9_0._yAngle = math.rad2Deg * math.atan2(arg_9_0._explodePos.z - arg_9_0._spawnPos.z, arg_9_0._explodePos.x - arg_9_0._spawnPos.x)
+	arg_9_0._verticalSpeed = -(arg_9_0._position.y / var_9_0) * var_0_8
+
+	local var_9_1 = pg.Tool.FilterY(arg_9_0._explodePos - arg_9_0._position):Magnitude()
+
+	arg_9_0:ResetVelocity(var_0_5.ConvertBulletDataSpeed(var_9_1 / var_9_0 * var_0_8))
+	arg_9_0:calcSpeed()
 end
 
-function slot7.IsOutRange(slot0)
-	return slot0._state == slot0.STATE_ATTACK and slot0._position.y <= uv0.BombDetonateHeight
+function var_0_7.IsOutRange(arg_10_0)
+	return arg_10_0._state == arg_10_0.STATE_ATTACK and arg_10_0._position.y <= var_0_1.BombDetonateHeight
 end
 
-function slot7.OutRange(slot0, slot1)
-	slot0:DispatchEvent(uv0.Event.New(uv1.EXPLODE, {
-		UID = slot1
-	}))
-	uv2.super.OutRange(slot0)
+function var_0_7.OutRange(arg_11_0, arg_11_1)
+	local var_11_0 = {
+		UID = arg_11_1
+	}
+
+	arg_11_0:DispatchEvent(var_0_0.Event.New(var_0_3.EXPLODE, var_11_0))
+	var_0_7.super.OutRange(arg_11_0)
 end
 
-function slot7.GetMissileTargetPosition(slot0)
-	if slot0._targetType == uv0.TYPE_RANGE then
-		return slot0:aimRange()
-	elseif slot0._targetType == uv0.TYPE_COORD then
-		return slot0:aimCoord()
-	elseif slot0._targetType == uv0.TYPE_TARGET then
-		return slot0:aimTarget()
+function var_0_7.GetMissileTargetPosition(arg_12_0)
+	if arg_12_0._targetType == var_0_7.TYPE_RANGE then
+		return arg_12_0:aimRange()
+	elseif arg_12_0._targetType == var_0_7.TYPE_COORD then
+		return arg_12_0:aimCoord()
+	elseif arg_12_0._targetType == var_0_7.TYPE_TARGET then
+		return arg_12_0:aimTarget()
 	end
 end
 
-function slot7.aimRange(slot0)
-	slot1 = slot0._range
+function var_0_7.aimRange(arg_13_0)
+	local var_13_0 = arg_13_0._range
+	local var_13_1 = arg_13_0._range * arg_13_0:GetIFF()
 
-	return Vector3(slot0._spawnPos.x + slot0._range * slot0:GetIFF(), 0, 0)
+	return (Vector3(arg_13_0._spawnPos.x + var_13_1, 0, 0))
 end
 
-function slot7.aimCoord(slot0)
-	slot1 = slot0:GetTemplate().extra_param
-	slot3 = slot1.missileZ
+function var_0_7.aimCoord(arg_14_0)
+	local var_14_0 = arg_14_0:GetTemplate().extra_param
+	local var_14_1 = var_14_0.missileX
+	local var_14_2 = var_14_0.missileZ
 
-	if not slot1.missileX or not slot3 then
-		return slot0:aimRange()
+	if not var_14_1 or not var_14_2 then
+		return arg_14_0:aimRange()
 	end
 
-	return Vector3(slot2, 0, slot3)
+	return (Vector3(var_14_1, 0, var_14_2))
 end
 
-function slot7.aimTarget(slot0)
-	if not slot0:GetWeapon():GetHost() or not slot2:IsAlive() then
-		return slot0:aimCoord()
+function var_0_7.aimTarget(arg_15_0)
+	local var_15_0 = arg_15_0:GetWeapon()
+	local var_15_1 = var_15_0:GetHost()
+
+	if not var_15_1 or not var_15_1:IsAlive() then
+		return arg_15_0:aimCoord()
 	end
 
-	slot3 = slot1:Tracking()
+	local var_15_2 = var_15_0:Tracking()
 
-	return slot1:GetTemplateData().aim_type == uv0.WeaponAimType.AIM and slot3 and slot1:CalculateRandTargetPosition(slot0, slot3) or slot1:CalculateFixedExplodePosition(slot0)
+	return var_15_0:GetTemplateData().aim_type == var_0_2.WeaponAimType.AIM and var_15_2 and var_15_0:CalculateRandTargetPosition(arg_15_0, var_15_2) or var_15_0:CalculateFixedExplodePosition(arg_15_0)
 end

@@ -1,37 +1,49 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleConst.AircraftUnitType
-slot3 = slot0.Battle.BattleConst.CharacterUnitType
-slot0.Battle.BattleElectricArcBulletFactory = singletonClass("BattleElectricArcBulletFactory", slot0.Battle.BattleBulletFactory)
-slot0.Battle.BattleElectricArcBulletFactory.__name = "BattleElectricArcBulletFactory"
-slot4 = slot0.Battle.BattleElectricArcBulletFactory
+﻿ys = ys or {}
 
-function slot4.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleConst.AircraftUnitType
+local var_0_3 = var_0_0.Battle.BattleConst.CharacterUnitType
+
+var_0_0.Battle.BattleElectricArcBulletFactory = singletonClass("BattleElectricArcBulletFactory", var_0_0.Battle.BattleBulletFactory)
+var_0_0.Battle.BattleElectricArcBulletFactory.__name = "BattleElectricArcBulletFactory"
+
+local var_0_4 = var_0_0.Battle.BattleElectricArcBulletFactory
+
+function var_0_4.Ctor(arg_1_0)
+	var_0_4.super.Ctor(arg_1_0)
 end
 
-function slot4.CreateBullet(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0:PlayFireFX(slot1, slot2, slot3, slot4, slot5, nil)
+function var_0_4.CreateBullet(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
+	arg_2_0:PlayFireFX(arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5, nil)
 
-	if slot2:GetDirectHitUnit() == nil then
+	local var_2_0 = arg_2_2:GetDirectHitUnit()
+
+	if var_2_0 == nil then
 		return
 	end
 
-	slot9 = nil
+	local var_2_1 = var_2_0:GetUniqueID()
+	local var_2_2 = var_2_0:GetUnitType()
+	local var_2_3
 
-	if table.contains(uv0, slot6:GetUnitType()) then
-		slot9 = uv1.GetSceneMediator():GetAircraft(slot6:GetUniqueID())
-	elseif table.contains(uv2, slot8) then
-		slot9 = uv1.GetSceneMediator():GetCharacter(slot7)
+	if table.contains(var_0_2, var_2_2) then
+		var_2_3 = var_0_4.GetSceneMediator():GetAircraft(var_2_1)
+	elseif table.contains(var_0_3, var_2_2) then
+		var_2_3 = var_0_4.GetSceneMediator():GetCharacter(var_2_1)
 	end
 
-	if slot9 then
-		slot9:AddFX(slot2:GetTemplate().hit_fx)
-		slot0:GetDataProxy():HandleDamage(slot2, slot6)
+	if var_2_3 then
+		var_2_3:AddFX(arg_2_2:GetTemplate().hit_fx)
+		arg_2_0:GetDataProxy():HandleDamage(arg_2_2, var_2_0)
 
-		if slot2:GetWeapon():GetHost() then
-			slot0:GetSceneMediator():AddArcEffect(slot2:GetTemplate().modle_ID, slot0:GetSceneMediator():GetCharacter(slot10:GetUniqueID()), slot6, slot2:GetWeapon():GetTemplateData().spawn_bound)
+		local var_2_4 = arg_2_2:GetWeapon():GetHost()
+
+		if var_2_4 then
+			local var_2_5 = arg_2_2:GetWeapon():GetTemplateData().spawn_bound
+			local var_2_6 = arg_2_0:GetSceneMediator():GetCharacter(var_2_4:GetUniqueID())
+
+			arg_2_0:GetSceneMediator():AddArcEffect(arg_2_2:GetTemplate().modle_ID, var_2_6, var_2_0, var_2_5)
 		end
 	end
 end

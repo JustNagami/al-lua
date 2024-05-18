@@ -1,40 +1,43 @@
-slot0 = class("SpTemplatePage", import(".PtTemplatePage"))
+﻿local var_0_0 = class("SpTemplatePage", import(".PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.buildBtn = slot0:findTF("build_btn", slot0.bg)
+	arg_1_0.buildBtn = arg_1_0:findTF("build_btn", arg_1_0.bg)
 end
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
 
-	if not slot0.activity:getConfig("config_client").linkPoolActID then
+	local var_2_0 = arg_2_0.activity:getConfig("config_client").linkPoolActID
+
+	if not var_2_0 then
 		pg.TipsMgr.GetInstance():ShowTips("未配置linkPoolActID！！！")
 	else
-		if getProxy(ActivityProxy):getActivityById(slot1) and not slot2:isEnd() then
-			setActive(slot0.buildBtn, true)
+		local var_2_1 = getProxy(ActivityProxy):getActivityById(var_2_0)
 
-			slot5 = pg.activity_template[slot1].config_client.id and slot4 or BuildShipScene.PROJECTS.SPECIAL
-			slot6 = {
+		if var_2_1 and not var_2_1:isEnd() then
+			setActive(arg_2_0.buildBtn, true)
+
+			local var_2_2 = pg.activity_template[var_2_0].config_client.id
+			local var_2_3 = var_2_2 and var_2_2 or BuildShipScene.PROJECTS.SPECIAL
+			local var_2_4 = {
 				BuildShipScene.PROJECTS.SPECIAL,
 				BuildShipScene.PROJECTS.LIGHT,
 				BuildShipScene.PROJECTS.HEAVY,
 				BuildShipScene.PROJECTS.ACTIVITY
 			}
 
-			onButton(slot0, slot0.buildBtn, function ()
-				uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+			onButton(arg_2_0, arg_2_0.buildBtn, function()
+				arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 					page = BuildShipScene.PAGE_BUILD,
-					projectName = uv1[uv2]
+					projectName = var_2_4[var_2_3]
 				})
 			end, SFX_PANEL)
-
-			return
+		else
+			setActive(arg_2_0.buildBtn, false)
 		end
-
-		setActive(slot0.buildBtn, false)
 	end
 end
 
-return slot0
+return var_0_0

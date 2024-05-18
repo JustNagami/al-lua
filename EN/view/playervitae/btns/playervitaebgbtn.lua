@@ -1,33 +1,33 @@
-slot0 = class("PlayerVitaeBGBtn", import(".PlayerVitaeBaseBtn"))
+﻿local var_0_0 = class("PlayerVitaeBGBtn", import(".PlayerVitaeBaseBtn"))
 
-function slot0.GetBgName(slot0)
-	if slot0:IsHrzType() then
+function var_0_0.GetBgName(arg_1_0)
+	if arg_1_0:IsHrzType() then
 		return "AdmiralUI_atlas", "bg_bg"
 	else
 		return "AdmiralUI_atlas", "bg"
 	end
 end
 
-function slot0.IsActive(slot0, slot1)
-	return slot1:getShipBgPrint() ~= slot1:rarity2bgPrintForGet()
+function var_0_0.IsActive(arg_2_0, arg_2_1)
+	return arg_2_1:getShipBgPrint() ~= arg_2_1:rarity2bgPrintForGet()
 end
 
-function slot0.GetDefaultValue(slot0)
-	return getProxy(SettingsProxy):getCharacterSetting(slot0.ship.id, SHIP_FLAG_BG)
+function var_0_0.GetDefaultValue(arg_3_0)
+	return getProxy(SettingsProxy):getCharacterSetting(arg_3_0.ship.id, SHIP_FLAG_BG)
 end
 
-function slot0.OnSwitch(slot0, slot1)
-	getProxy(SettingsProxy):setCharacterSetting(slot0.ship.id, SHIP_FLAG_BG, slot1)
+function var_0_0.OnSwitch(arg_4_0, arg_4_1)
+	getProxy(SettingsProxy):setCharacterSetting(arg_4_0.ship.id, SHIP_FLAG_BG, arg_4_1)
 
 	return true
 end
 
-function slot0.Load(slot0, slot1)
-	uv0.super.Load(slot0, slot1)
+function var_0_0.Load(arg_5_0, arg_5_1)
+	var_0_0.super.Load(arg_5_0, arg_5_1)
 
-	if slot0:IsHrzType() then
-		slot1.gameObject.name = "bg"
+	if arg_5_0:IsHrzType() then
+		arg_5_1.gameObject.name = "bg"
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	Points = {
 		{
 			x = -101.37,
@@ -44,13 +44,14 @@ slot0 = {
 		}
 	}
 }
-slot0.Points[4].isBan = true
-slot0.Points[4].outRandom = true
-slot0.Points[5].isBan = true
-slot0.Points[5].outRandom = true
 
-for slot4, slot5 in pairs(slot0.Points) do
-	slot5.scale = 0.4
+var_0_0.Points[4].isBan = true
+var_0_0.Points[4].outRandom = true
+var_0_0.Points[5].isBan = true
+var_0_0.Points[5].outRandom = true
+
+for iter_0_0, iter_0_1 in pairs(var_0_0.Points) do
+	iter_0_1.scale = 0.4
 end
 
-return slot0
+return var_0_0

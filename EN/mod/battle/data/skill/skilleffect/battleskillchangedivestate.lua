@@ -1,19 +1,24 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleSkillChangeDiveState = class("BattleSkillChangeDiveState", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillChangeDiveState.__name = "BattleSkillChangeDiveState"
-slot1 = slot0.Battle.BattleSkillChangeDiveState
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
 
-	slot0._state = slot0._tempData.arg_list.state
-	slot0._expose = slot0._tempData.arg_list.expose
+var_0_0.Battle.BattleSkillChangeDiveState = class("BattleSkillChangeDiveState", var_0_0.Battle.BattleSkillEffect)
+var_0_0.Battle.BattleSkillChangeDiveState.__name = "BattleSkillChangeDiveState"
+
+local var_0_1 = var_0_0.Battle.BattleSkillChangeDiveState
+
+function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._state = arg_1_0._tempData.arg_list.state
+	arg_1_0._expose = arg_1_0._tempData.arg_list.expose
 end
 
-function slot1.DoDataEffect(slot0, slot1, slot2)
-	if slot2:IsAlive() then
-		slot2:ChangeOxygenState(slot0._state)
-		(slot2:GetOxyState() or slot2:InitOxygen()):SetForceExpose(slot0._expose)
+function var_0_1.DoDataEffect(arg_2_0, arg_2_1, arg_2_2)
+	if arg_2_2:IsAlive() then
+		local var_2_0 = arg_2_2:GetOxyState() or arg_2_2:InitOxygen()
+
+		arg_2_2:ChangeOxygenState(arg_2_0._state)
+		var_2_0:SetForceExpose(arg_2_0._expose)
 	end
 end

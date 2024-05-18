@@ -1,97 +1,104 @@
-slot0 = class("VotePreRaceShipPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("VotePreRaceShipPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "PreRaceShips"
 end
 
-function slot0.OnInit(slot0)
-	slot0.scrollRect = slot0._tf:GetComponent("LScrollRect")
-	slot0.voteItems = {}
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.scrollRect = arg_2_0._tf:GetComponent("LScrollRect")
+	arg_2_0.voteItems = {}
 
-	function slot0.scrollRect.onInitItem(slot0)
-		uv0:onInitItem(slot0)
+	function arg_2_0.scrollRect.onInitItem(arg_3_0)
+		arg_2_0:onInitItem(arg_3_0)
 	end
 
-	function slot0.scrollRect.onUpdateItem(slot0, slot1)
-		uv0:onUpdateItem(slot0, slot1)
+	function arg_2_0.scrollRect.onUpdateItem(arg_4_0, arg_4_1)
+		arg_2_0:onUpdateItem(arg_4_0, arg_4_1)
 	end
 
-	function slot0.scrollRect.onReturnItem(slot0, slot1)
-		uv0:onReturnItem(slot0, slot1)
+	function arg_2_0.scrollRect.onReturnItem(arg_5_0, arg_5_1)
+		arg_2_0:onReturnItem(arg_5_0, arg_5_1)
 	end
 
-	slot0._tf:SetAsFirstSibling()
+	arg_2_0._tf:SetAsFirstSibling()
 end
 
-function slot0.onInitItem(slot0, slot1)
-	slot2 = VoteShipItem.New(slot1)
+function var_0_0.onInitItem(arg_6_0, arg_6_1)
+	local var_6_0 = VoteShipItem.New(arg_6_1)
 
-	onButton(slot0, slot2.go, function ()
-		if uv0.phase == VoteGroup.VOTE_STAGE then
-			uv0.CallBack(uv1)
+	onButton(arg_6_0, var_6_0.go, function()
+		if arg_6_0.phase == VoteGroup.VOTE_STAGE then
+			arg_6_0.CallBack(var_6_0)
 		end
 	end, SFX_PANEL)
 
-	slot0.voteItems[slot1] = slot2
+	arg_6_0.voteItems[arg_6_1] = var_6_0
 end
 
-function slot0.SetCallBack(slot0, slot1)
-	slot0.CallBack = slot1
+function var_0_0.SetCallBack(arg_8_0, arg_8_1)
+	arg_8_0.CallBack = arg_8_1
 end
 
-function slot0.onUpdateItem(slot0, slot1, slot2)
-	if not slot0.voteItems[slot2] then
-		slot0:onInitItem(slot2)
+function var_0_0.onUpdateItem(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = arg_9_0.voteItems[arg_9_2]
 
-		slot3 = slot0.voteItems[slot2]
+	if not var_9_0 then
+		arg_9_0:onInitItem(arg_9_2)
+
+		var_9_0 = arg_9_0.voteItems[arg_9_2]
 	end
 
-	slot0:UpdateShip(slot1, slot3, slot0.displays[slot1 + 1])
+	local var_9_1 = arg_9_0.displays[arg_9_1 + 1]
+
+	arg_9_0:UpdateShip(arg_9_1, var_9_0, var_9_1)
 end
 
-function slot0.UpdateShip(slot0, slot1, slot2, slot3)
-	if slot0.phase ~= VoteGroup.VOTE_STAGE then
-		slot4 = slot0.voteGroup:GetRank(slot3)
-		slot5, slot6 = slot0.voteGroup:CanRankToNextTurn(slot4)
+function var_0_0.UpdateShip(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	if arg_10_0.phase ~= VoteGroup.VOTE_STAGE then
+		local var_10_0 = arg_10_0.voteGroup:GetRank(arg_10_3)
+		local var_10_1, var_10_2 = arg_10_0.voteGroup:CanRankToNextTurn(var_10_0)
 
-		slot2:update(slot3, {
-			rank = slot4,
-			riseFlag = slot5,
-			resurgenceFlag = slot6
+		arg_10_2:update(arg_10_3, {
+			rank = var_10_0,
+			riseFlag = var_10_1,
+			resurgenceFlag = var_10_2
 		})
 	else
-		slot2:update(slot3, nil)
+		arg_10_2:update(arg_10_3, nil)
 	end
 end
 
-function slot0.onReturnItem(slot0, slot1, slot2)
-	if slot0.exited then
+function var_0_0.onReturnItem(arg_11_0, arg_11_1, arg_11_2)
+	if arg_11_0.exited then
 		return
 	end
 
-	if slot0.voteItems[slot2] then
-		slot3:clear()
+	local var_11_0 = arg_11_0.voteItems[arg_11_2]
+
+	if var_11_0 then
+		var_11_0:clear()
 	end
 end
 
-function slot0.Update(slot0, slot1, slot2)
-	slot0.voteGroup = slot1
-	slot0.phase = slot1:GetStage()
-	slot0.displays = slot2
+function var_0_0.Update(arg_12_0, arg_12_1, arg_12_2)
+	arg_12_0.voteGroup = arg_12_1
+	arg_12_0.phase = arg_12_1:GetStage()
+	arg_12_0.displays = arg_12_2
 
-	slot0:UpdateShips()
-	slot0:Show()
+	arg_12_0:UpdateShips()
+	arg_12_0:Show()
 end
 
-function slot0.UpdateShips(slot0)
-	if slot0.phase == VoteGroup.VOTE_STAGE then
-		shuffle(slot0.displays)
+function var_0_0.UpdateShips(arg_13_0)
+	if arg_13_0.phase == VoteGroup.VOTE_STAGE then
+		shuffle(arg_13_0.displays)
 	end
 
-	slot0.scrollRect:SetTotalCount(#slot0.displays)
+	arg_13_0.scrollRect:SetTotalCount(#arg_13_0.displays)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_14_0)
+	return
 end
 
-return slot0
+return var_0_0

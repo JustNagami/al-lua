@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "MP清零的「EXPLOSION」",
-	time = 10,
-	color = "yellow",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 105132,
-	icon = 105130,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCleanse",
@@ -53,5 +33,25 @@ return {
 				time = 8
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "MP清零的「EXPLOSION」",
+	time = 10,
+	color = "yellow",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 105132,
+	icon = 105130,
+	last_effect = ""
 }

@@ -1,86 +1,96 @@
-slot0 = class("CryptolaliaPurchaseWindow", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("CryptolaliaPurchaseWindow", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CryptolaliaPurchaseWindowui"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.icon = slot0:findTF("window/cover/icon"):GetComponent(typeof(Image))
-	slot0.signature = slot0:findTF("window/cover/signature"):GetComponent(typeof(Image))
-	slot0.name = slot0:findTF("window/cover/name"):GetComponent(typeof(Text))
-	slot0.shipname = slot0:findTF("window/cover/shipname"):GetComponent(typeof(Text))
-	slot0.gemToggle = slot0:findTF("window/gem")
-	slot0.ticketToggle = slot0:findTF("window/ticket")
-	slot0.gemCntTxt = slot0.gemToggle:Find("Text"):GetComponent(typeof(Text))
-	slot0.ticketCntTxt = slot0.ticketToggle:Find("Text"):GetComponent(typeof(Text))
-	slot0.exchangeBtn = slot0:findTF("exchange")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.icon = arg_2_0:findTF("window/cover/icon"):GetComponent(typeof(Image))
+	arg_2_0.signature = arg_2_0:findTF("window/cover/signature"):GetComponent(typeof(Image))
+	arg_2_0.name = arg_2_0:findTF("window/cover/name"):GetComponent(typeof(Text))
+	arg_2_0.shipname = arg_2_0:findTF("window/cover/shipname"):GetComponent(typeof(Text))
+	arg_2_0.gemToggle = arg_2_0:findTF("window/gem")
+	arg_2_0.ticketToggle = arg_2_0:findTF("window/ticket")
+	arg_2_0.gemCntTxt = arg_2_0.gemToggle:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.ticketCntTxt = arg_2_0.ticketToggle:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.exchangeBtn = arg_2_0:findTF("exchange")
 
-	setText(slot0.gemToggle:Find("title"), i18n("cryptolalia_use_gem_title"))
-	setText(slot0.ticketToggle:Find("title"), i18n("cryptolalia_use_ticket_title"))
-	setText(slot0.exchangeBtn:Find("Text"), i18n("cryptolalia_exchange"))
+	setText(arg_2_0.gemToggle:Find("title"), i18n("cryptolalia_use_gem_title"))
+	setText(arg_2_0.ticketToggle:Find("title"), i18n("cryptolalia_use_ticket_title"))
+	setText(arg_2_0.exchangeBtn:Find("Text"), i18n("cryptolalia_exchange"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 
-	slot0.costType = Cryptolalia.COST_TYPE_GEM
+	arg_3_0.costType = Cryptolalia.COST_TYPE_GEM
 
-	onToggle(slot0, slot0.gemToggle, function (slot0)
-		if slot0 then
-			uv0.costType = Cryptolalia.COST_TYPE_GEM
+	onToggle(arg_3_0, arg_3_0.gemToggle, function(arg_5_0)
+		if arg_5_0 then
+			arg_3_0.costType = Cryptolalia.COST_TYPE_GEM
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.ticketToggle, function (slot0)
-		if slot0 then
-			uv0.costType = Cryptolalia.COST_TYPE_TICKET
+	onToggle(arg_3_0, arg_3_0.ticketToggle, function(arg_6_0)
+		if arg_6_0 then
+			arg_3_0.costType = Cryptolalia.COST_TYPE_TICKET
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf, false, {
 		weight = LayerWeightConst.TOP_LAYER
 	})
-	triggerToggle(slot0.gemToggle, true)
+	triggerToggle(arg_7_0.gemToggle, true)
 
-	slot0.name.text = slot1:GetName()
-	slot0.shipname.text = slot1:GetShipName()
+	arg_7_0.name.text = arg_7_1:GetName()
+	arg_7_0.shipname.text = arg_7_1:GetShipName()
 
-	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1:GetShipGroupId(), "cd", function (slot0)
-		if uv0.exited then
+	local var_7_0 = arg_7_1:GetShipGroupId()
+
+	LoadSpriteAtlasAsync("CryptolaliaShip/" .. var_7_0, "cd", function(arg_8_0)
+		if arg_7_0.exited then
 			return
 		end
 
-		uv0.icon.sprite = slot0
+		arg_7_0.icon.sprite = arg_8_0
 
-		uv0.icon:SetNativeSize()
+		arg_7_0.icon:SetNativeSize()
 	end)
-	onButton(slot0, slot0.exchangeBtn, function ()
-		if not uv0.costType then
+	onButton(arg_7_0, arg_7_0.exchangeBtn, function()
+		if not arg_7_0.costType then
 			return
 		end
 
-		uv0:emit(CryptolaliaMediator.UNLOCK, uv1.id, uv0.costType)
+		arg_7_0:emit(CryptolaliaMediator.UNLOCK, arg_7_1.id, arg_7_0.costType)
 	end, SFX_PANEL)
 
-	slot3 = slot1:GetCost(Cryptolalia.COST_TYPE_GEM)
-	slot0.gemCntTxt.text = setColorStr(slot5, getProxy(PlayerProxy):getRawData():getResource(slot3.id) < slot3.count and COLOR_RED or COLOR_GREEN) .. setColorStr("/" .. slot3.count, "#AFAFAF")
-	slot7 = slot1:GetCost(Cryptolalia.COST_TYPE_TICKET)
-	slot0.ticketCntTxt.text = setColorStr(slot8, slot4:getResource(slot7.id) < slot7.count and COLOR_RED or COLOR_GREEN) .. setColorStr("/" .. slot7.count, "#AFAFAF")
+	local var_7_1 = arg_7_1:GetCost(Cryptolalia.COST_TYPE_GEM)
+	local var_7_2 = getProxy(PlayerProxy):getRawData()
+	local var_7_3 = var_7_2:getResource(var_7_1.id)
+	local var_7_4 = var_7_3 < var_7_1.count and COLOR_RED or COLOR_GREEN
 
-	triggerToggle(slot0.ticketToggle, true)
+	arg_7_0.gemCntTxt.text = setColorStr(var_7_3, var_7_4) .. setColorStr("/" .. var_7_1.count, "#AFAFAF")
+
+	local var_7_5 = arg_7_1:GetCost(Cryptolalia.COST_TYPE_TICKET)
+	local var_7_6 = var_7_2:getResource(var_7_5.id)
+	local var_7_7 = var_7_6 < var_7_5.count and COLOR_RED or COLOR_GREEN
+
+	arg_7_0.ticketCntTxt.text = setColorStr(var_7_6, var_7_7) .. setColorStr("/" .. var_7_5.count, "#AFAFAF")
+
+	triggerToggle(arg_7_0.ticketToggle, true)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_10_0)
+	var_0_0.super.Hide(arg_10_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf, arg_10_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.exited = true
+function var_0_0.OnDestroy(arg_11_0)
+	arg_11_0.exited = true
 end
 
-return slot0
+return var_0_0

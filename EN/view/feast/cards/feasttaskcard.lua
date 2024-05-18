@@ -1,77 +1,86 @@
-slot0 = class("FeastTaskCard")
+﻿local var_0_0 = class("FeastTaskCard")
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.binder = slot2
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0.nameTxt = slot0._tf:Find("name/Text"):GetComponent(typeof(Text))
-	slot0.descTxt = slot0._tf:Find("desc"):GetComponent(typeof(Text))
-	slot0.progressTxt = slot0._tf:Find("Text"):GetComponent(typeof(Text))
-	slot0.progress = slot0._tf:Find("progress/bar")
-	slot0.uilist = UIItemList.New(slot0._tf:Find("awards"), slot0._tf:Find("awards/award"))
-	slot0.getBtn = slot0._tf:Find("btns/get")
-	slot0.gotBtn = slot0._tf:Find("btns/got")
-	slot0.goBtn = slot0._tf:Find("btns/go")
-	slot0.sprites = {
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.binder = arg_1_2
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.nameTxt = arg_1_0._tf:Find("name/Text"):GetComponent(typeof(Text))
+	arg_1_0.descTxt = arg_1_0._tf:Find("desc"):GetComponent(typeof(Text))
+	arg_1_0.progressTxt = arg_1_0._tf:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.progress = arg_1_0._tf:Find("progress/bar")
+	arg_1_0.uilist = UIItemList.New(arg_1_0._tf:Find("awards"), arg_1_0._tf:Find("awards/award"))
+	arg_1_0.getBtn = arg_1_0._tf:Find("btns/get")
+	arg_1_0.gotBtn = arg_1_0._tf:Find("btns/got")
+	arg_1_0.goBtn = arg_1_0._tf:Find("btns/go")
+	arg_1_0.sprites = {
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_frame_1"),
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_frame_2")
 	}
-	slot0.barSprites = {
+	arg_1_0.barSprites = {
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_progress_1"),
 		GetSpriteFromAtlas("ui/feasttask_atlas", "t_progress_2")
 	}
-	slot0.tags = {
+	arg_1_0.tags = {
 		i18n("feast_task_tag_daily"),
 		i18n("feast_task_tag_activity")
 	}
-	slot0.barImg = slot0._tf:Find("progress/bar"):GetComponent(typeof(Image))
-	slot0.bgImg = slot0._tf:GetComponent(typeof(Image))
+	arg_1_0.barImg = arg_1_0._tf:Find("progress/bar"):GetComponent(typeof(Image))
+	arg_1_0.bgImg = arg_1_0._tf:GetComponent(typeof(Image))
 end
 
-function slot0.Flush(slot0, slot1)
-	slot3 = getProxy(TaskProxy):getTaskById(slot1) or slot2:getFinishTaskById(slot1)
-	slot4 = slot3:IsActRoutineType() and 1 or 2
-	slot0.nameTxt.text = slot0.tags[slot4] .. slot3:getConfig("name")
-	slot0.descTxt.text = slot3:getConfig("desc")
-	slot0.bgImg.sprite = slot0.sprites[slot4]
-	slot0.barImg.sprite = slot0.barSprites[slot4]
-	slot5 = slot3:getProgress()
-	slot6 = slot3:getConfig("target_num")
-	slot0.progressTxt.text = slot5 .. "/" .. slot6
+function var_0_0.Flush(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(TaskProxy)
+	local var_2_1 = var_2_0:getTaskById(arg_2_1) or var_2_0:getFinishTaskById(arg_2_1)
+	local var_2_2 = var_2_1:IsActRoutineType() and 1 or 2
 
-	setFillAmount(slot0.progress, slot5 / slot6)
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	arg_2_0.nameTxt.text = arg_2_0.tags[var_2_2] .. var_2_1:getConfig("name")
+	arg_2_0.descTxt.text = var_2_1:getConfig("desc")
+	arg_2_0.bgImg.sprite = arg_2_0.sprites[var_2_2]
+	arg_2_0.barImg.sprite = arg_2_0.barSprites[var_2_2]
 
-			updateDrop(slot2, {
-				type = slot3[1],
-				id = slot3[2],
-				count = slot3[3]
-			})
-			onButton(uv1.binder, slot2, function ()
-				uv0.binder:emit(BaseUI.ON_DROP, uv1)
+	local var_2_3 = var_2_1:getProgress()
+	local var_2_4 = var_2_1:getConfig("target_num")
+
+	arg_2_0.progressTxt.text = var_2_3 .. "/" .. var_2_4
+
+	setFillAmount(arg_2_0.progress, var_2_3 / var_2_4)
+
+	local var_2_5 = var_2_1:getConfig("award_display")
+
+	arg_2_0.uilist:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventUpdate then
+			local var_3_0 = var_2_5[arg_3_1 + 1]
+			local var_3_1 = {
+				type = var_3_0[1],
+				id = var_3_0[2],
+				count = var_3_0[3]
+			}
+
+			updateDrop(arg_3_2, var_3_1)
+			onButton(arg_2_0.binder, arg_3_2, function()
+				arg_2_0.binder:emit(BaseUI.ON_DROP, var_3_1)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.uilist:align(#slot3:getConfig("award_display"))
+	arg_2_0.uilist:align(#var_2_5)
 
-	slot9 = slot3:isReceive()
+	local var_2_6 = var_2_1:isFinish()
+	local var_2_7 = var_2_1:isReceive()
 
-	setActive(slot0.getBtn, slot3:isFinish() and not slot9)
-	setActive(slot0.gotBtn, slot8 and slot9)
-	setActive(slot0.goBtn, not slot8)
-	onButton(slot0.binder, slot0.getBtn, function ()
-		uv0.binder:emit(FeastMediator.ON_SUBMIT, uv1)
+	setActive(arg_2_0.getBtn, var_2_6 and not var_2_7)
+	setActive(arg_2_0.gotBtn, var_2_6 and var_2_7)
+	setActive(arg_2_0.goBtn, not var_2_6)
+	onButton(arg_2_0.binder, arg_2_0.getBtn, function()
+		arg_2_0.binder:emit(FeastMediator.ON_SUBMIT, arg_2_1)
 	end, SFX_PANEL)
-	onButton(slot0.binder, slot0.goBtn, function ()
-		uv0.binder:emit(FeastMediator.ON_GO, uv1)
+	onButton(arg_2_0.binder, arg_2_0.goBtn, function()
+		arg_2_0.binder:emit(FeastMediator.ON_GO, var_2_1)
 	end, SFX_PANEL)
 end
 
-function slot0.Dispose(slot0)
-	slot0.sprites = nil
-	slot0.barSprites = nil
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0.sprites = nil
+	arg_7_0.barSprites = nil
 end
 
-return slot0
+return var_0_0

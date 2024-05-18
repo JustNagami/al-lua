@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_buff = {
 	[1001] = {
 		desc = "Mood cost +1",

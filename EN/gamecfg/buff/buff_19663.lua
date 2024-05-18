@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "",
-	init_effect = "",
-	time = 10,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 19663,
-	icon = 19663,
-	last_effect = "zhuoshao",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffDOT",
@@ -67,5 +46,26 @@ return {
 				number = 0.08
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	time = 10,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 19663,
+	icon = 19663,
+	last_effect = "zhuoshao"
 }

@@ -1,108 +1,115 @@
-slot0 = class("CattertAddHomeExpAndCommanderExpAnim", import(".CatteryAddHomeExpAnim"))
+﻿local var_0_0 = class("CattertAddHomeExpAndCommanderExpAnim", import(".CatteryAddHomeExpAnim"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0._tf = slot1
-	slot0.expSlider = findTF(slot0._tf, "home/slider"):GetComponent(typeof(Slider))
-	slot0.levelTxt = findTF(slot0._tf, "home/level"):GetComponent(typeof(Text))
-	slot0.expTxt = findTF(slot0._tf, "home/exp"):GetComponent(typeof(Text))
-	slot0.addition = findTF(slot0._tf, "home/addition")
-	slot0.additionExpTxt = slot0.addition:Find("Text"):GetComponent(typeof(Text))
-	slot0.uilist = UIItemList.New(findTF(slot0._tf, "commanders"), findTF(slot0._tf, "commanders/tpl"))
-	slot0.cards = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._tf = arg_1_1
+	arg_1_0.expSlider = findTF(arg_1_0._tf, "home/slider"):GetComponent(typeof(Slider))
+	arg_1_0.levelTxt = findTF(arg_1_0._tf, "home/level"):GetComponent(typeof(Text))
+	arg_1_0.expTxt = findTF(arg_1_0._tf, "home/exp"):GetComponent(typeof(Text))
+	arg_1_0.addition = findTF(arg_1_0._tf, "home/addition")
+	arg_1_0.additionExpTxt = arg_1_0.addition:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.uilist = UIItemList.New(findTF(arg_1_0._tf, "commanders"), findTF(arg_1_0._tf, "commanders/tpl"))
+	arg_1_0.cards = {}
 
-	slot0.uilist:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateCommander(slot2, uv0.displays[slot1 + 1])
+	arg_1_0.uilist:make(function(arg_2_0, arg_2_1, arg_2_2)
+		if arg_2_0 == UIItemList.EventUpdate then
+			arg_1_0:UpdateCommander(arg_2_2, arg_1_0.displays[arg_2_1 + 1])
 		end
 	end)
 
-	slot0.animRiseH = slot0.addition.localPosition.y
+	arg_1_0.animRiseH = arg_1_0.addition.localPosition.y
 
-	setActive(slot0._tf, false)
+	setActive(arg_1_0._tf, false)
 end
 
-function slot0.RefreshAward(slot0)
+function var_0_0.RefreshAward(arg_3_0)
+	return
 end
 
-function slot0.Action(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0.commanderExps = slot1
+function var_0_0.Action(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5)
+	arg_4_0.commanderExps = arg_4_1
 
 	parallelAsync({
-		function (slot0)
-			uv0.super.Action(uv1, uv2, uv3, uv4, uv5, slot0)
+		function(arg_5_0)
+			var_0_0.super.Action(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_5_0)
 		end,
-		function (slot0)
-			uv0:InitCommanders()
-			uv0:DoCommandersAnim(slot0)
+		function(arg_6_0)
+			arg_4_0:InitCommanders()
+			arg_4_0:DoCommandersAnim(arg_6_0)
 		end
-	}, slot5)
+	}, arg_4_5)
 end
 
-function slot0.HideOrShowAddition(slot0, slot1)
-	setActive(slot0.addition, slot1 > 0)
+function var_0_0.HideOrShowAddition(arg_7_0, arg_7_1)
+	setActive(arg_7_0.addition, arg_7_1 > 0)
 end
 
-function slot0.GetAwardOffset(slot0)
+function var_0_0.GetAwardOffset(arg_8_0)
 	return 473
 end
 
-function slot0.InitCommanders(slot0)
-	slot0.displays = {}
+function var_0_0.InitCommanders(arg_9_0)
+	local var_9_0 = getProxy(CommanderProxy):GetCommanderHome():GetCatteries()
 
-	for slot6, slot7 in pairs(getProxy(CommanderProxy):GetCommanderHome():GetCatteries()) do
-		table.insert(slot0.displays, slot7)
+	arg_9_0.displays = {}
+
+	for iter_9_0, iter_9_1 in pairs(var_9_0) do
+		table.insert(arg_9_0.displays, iter_9_1)
 	end
 
-	table.sort(slot0.displays, function (slot0, slot1)
-		return slot1:GetCommanderId() < slot0:GetCommanderId()
+	table.sort(arg_9_0.displays, function(arg_10_0, arg_10_1)
+		return arg_10_0:GetCommanderId() > arg_10_1:GetCommanderId()
 	end)
-	slot0.uilist:align(#slot0.displays)
+	arg_9_0.uilist:align(#arg_9_0.displays)
 end
 
-function slot0.DoCommandersAnim(slot0, slot1)
-	slot2 = {}
+function var_0_0.DoCommandersAnim(arg_11_0, arg_11_1)
+	local var_11_0 = {}
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		table.insert(slot2, function (slot0)
-			uv0:Action(slot0)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.cards) do
+		table.insert(var_11_0, function(arg_12_0)
+			iter_11_1:Action(arg_12_0)
 		end)
 	end
 
-	parallelAsync(slot2, slot1)
+	parallelAsync(var_11_0, arg_11_1)
 end
 
-function slot0.UpdateCommander(slot0, slot1, slot2)
-	if not slot0.cards[slot1] then
-		slot0.cards[slot1] = CatteryAnimCard.New(slot1)
+function var_0_0.UpdateCommander(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = arg_13_0.cards[arg_13_1]
+
+	if not var_13_0 then
+		var_13_0 = CatteryAnimCard.New(arg_13_1)
+		arg_13_0.cards[arg_13_1] = var_13_0
 	end
 
-	slot4 = 0
+	local var_13_1 = 0
+	local var_13_2 = _.detect(arg_13_0.commanderExps, function(arg_14_0)
+		return arg_14_0.id == arg_13_2.id
+	end)
 
-	if _.detect(slot0.commanderExps, function (slot0)
-		return slot0.id == uv0.id
-	end) then
-		slot4 = slot5.value
+	if var_13_2 then
+		var_13_1 = var_13_2.value
 	end
 
-	slot3:Update(slot2, slot4)
+	var_13_0:Update(arg_13_2, var_13_1)
 end
 
-function slot0.Clear(slot0)
-	uv0.super.Clear(slot0)
+function var_0_0.Clear(arg_15_0)
+	var_0_0.super.Clear(arg_15_0)
 
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Clear()
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.cards) do
+		iter_15_1:Clear()
 	end
 end
 
-function slot0.Dispose(slot0)
-	uv0.super.Dispose(slot0)
+function var_0_0.Dispose(arg_16_0)
+	var_0_0.super.Dispose(arg_16_0)
 
-	for slot4, slot5 in pairs(slot0.cards) do
-		slot5:Dispose()
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.cards) do
+		iter_16_1:Dispose()
 	end
 
-	slot0.cards = nil
+	arg_16_0.cards = nil
 end
 
-return slot0
+return var_0_0

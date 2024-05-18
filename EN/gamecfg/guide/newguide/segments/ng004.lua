@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"Commander, welcome to Azur Lane! Let’s report to boot camp, now!"
+}
+
 return {
 	id = "NG004",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 1,
 				posY = 172,
 				posX = -337,
-				text = ({
-					"Commander, welcome to Azur Lane! Let’s report to boot camp, now!"
-				})[1]
+				text = var_0_0[1]
 			}
 		},
 		{

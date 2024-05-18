@@ -1,27 +1,30 @@
-slot0 = class("MainActAprilFoolBtn", import(".MainBaseActivityBtn"))
+﻿local var_0_0 = class("MainActAprilFoolBtn", import(".MainBaseActivityBtn"))
 
-function slot0.GetEventName(slot0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_aprilFool"
 end
 
-function slot0.OnInit(slot0)
-	setActive(slot0.tipTr.gameObject, slot0:IsShowTip())
+function var_0_0.OnInit(arg_2_0)
+	local var_2_0 = arg_2_0:IsShowTip()
+
+	setActive(arg_2_0.tipTr.gameObject, var_2_0)
 end
 
-function slot0.GetActivityID(slot0)
-	return slot0:GetLinkConfig().time[2]
+function var_0_0.GetActivityID(arg_3_0)
+	return arg_3_0:GetLinkConfig().time[2]
 end
 
-function slot0.IsShowTip(slot0)
-	slot2 = slot0:GetActivityID() and getProxy(ActivityProxy):getActivityById(slot1)
+function var_0_0.IsShowTip(arg_4_0)
+	local var_4_0 = arg_4_0:GetActivityID()
+	local var_4_1 = var_4_0 and getProxy(ActivityProxy):getActivityById(var_4_0)
 
-	return slot2 and slot2:readyToAchieve()
+	return var_4_1 and var_4_1:readyToAchieve()
 end
 
-function slot0.CustomOnClick(slot0)
+function var_0_0.CustomOnClick(arg_5_0)
 	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-		id = slot0:GetActivityID()
+		id = arg_5_0:GetActivityID()
 	})
 end
 
-return slot0
+return var_0_0

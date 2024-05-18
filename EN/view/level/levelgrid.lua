@@ -1,767 +1,875 @@
-slot0 = class("LevelGrid", import("..base.BasePanel"))
-slot1 = require("Mgr/Pool/PoolPlural")
-slot0.MapDefaultPos = Vector3(420, -1000, -1000)
+﻿local var_0_0 = class("LevelGrid", import("..base.BasePanel"))
+local var_0_1 = require("Mgr/Pool/PoolPlural")
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
+var_0_0.MapDefaultPos = Vector3(420, -1000, -1000)
 
-	slot0.levelCam = GameObject.Find("LevelCamera"):GetComponent(typeof(Camera))
+function var_0_0.init(arg_1_0)
+	var_0_0.super.init(arg_1_0)
+
+	arg_1_0.levelCam = GameObject.Find("LevelCamera"):GetComponent(typeof(Camera))
 	GameObject.Find("LevelCamera/Canvas"):GetComponent(typeof(Canvas)).sortingOrder = ChapterConst.PriorityMin
-	slot0.quadTws = {}
-	slot0.presentTws = {}
-	slot0.markTws = {}
-	slot0.tweens = {}
-	slot0.markQuads = {}
-	slot0.pools = {}
-	slot0.edgePools = {}
-	slot0.poolParent = GameObject.Find("__Pool__")
-	slot0.opBtns = {}
-	slot0.itemCells = {}
-	slot0.attachmentCells = {}
-	slot0.extraAttachmentCells = {}
-	slot0.weatherCells = {}
-	slot0.onShipStepChange = nil
-	slot0.onShipArrived = nil
-	slot0.lastSelectedId = -1
-	slot0.quadState = -1
-	slot0.subTeleportTargetLine = nil
-	slot0.missileStrikeTargetLine = nil
-	slot0.cellEdges = {}
-	slot0.walls = {}
-	slot0.material_Add = LoadAny("ui/commonUI_atlas", "add", typeof(Material))
-	slot0.loader = AutoLoader.New()
+	arg_1_0.quadTws = {}
+	arg_1_0.presentTws = {}
+	arg_1_0.markTws = {}
+	arg_1_0.tweens = {}
+	arg_1_0.markQuads = {}
+	arg_1_0.pools = {}
+	arg_1_0.edgePools = {}
+	arg_1_0.poolParent = GameObject.Find("__Pool__")
+	arg_1_0.opBtns = {}
+	arg_1_0.itemCells = {}
+	arg_1_0.attachmentCells = {}
+	arg_1_0.extraAttachmentCells = {}
+	arg_1_0.weatherCells = {}
+	arg_1_0.onShipStepChange = nil
+	arg_1_0.onShipArrived = nil
+	arg_1_0.lastSelectedId = -1
+	arg_1_0.quadState = -1
+	arg_1_0.subTeleportTargetLine = nil
+	arg_1_0.missileStrikeTargetLine = nil
+	arg_1_0.cellEdges = {}
+	arg_1_0.walls = {}
+	arg_1_0.material_Add = LoadAny("ui/commonUI_atlas", "add", typeof(Material))
+	arg_1_0.loader = AutoLoader.New()
 end
 
-function slot0.ExtendItem(slot0, slot1, slot2)
-	if IsNil(slot0[slot1]) then
-		slot0[slot1] = slot2
+function var_0_0.ExtendItem(arg_2_0, arg_2_1, arg_2_2)
+	if IsNil(arg_2_0[arg_2_1]) then
+		arg_2_0[arg_2_1] = arg_2_2
 	end
 end
 
-function slot0.getFleetPool(slot0, slot1)
-	if not slot0.pools["fleet_" .. slot1] then
-		slot4 = slot0.shipTpl
+function var_0_0.getFleetPool(arg_3_0, arg_3_1)
+	local var_3_0 = "fleet_" .. arg_3_1
+	local var_3_1 = arg_3_0.pools[var_3_0]
 
-		if slot1 == FleetType.Submarine then
-			slot4 = slot0.subTpl
-		elseif slot1 == FleetType.Transport then
-			slot4 = slot0.transportTpl
+	if not var_3_1 then
+		local var_3_2 = arg_3_0.shipTpl
+
+		if arg_3_1 == FleetType.Submarine then
+			var_3_2 = arg_3_0.subTpl
+		elseif arg_3_1 == FleetType.Transport then
+			var_3_2 = arg_3_0.transportTpl
 		end
 
-		slot0.pools[slot2] = uv0.New(slot4.gameObject, 2)
+		var_3_1 = var_0_1.New(var_3_2.gameObject, 2)
+		arg_3_0.pools[var_3_0] = var_3_1
 	end
 
-	return slot3
+	return var_3_1
 end
 
-function slot0.getChampionPool(slot0, slot1)
-	if not slot0.pools["champion_" .. slot1] then
-		slot4 = slot0.championTpl
+function var_0_0.getChampionPool(arg_4_0, arg_4_1)
+	local var_4_0 = "champion_" .. arg_4_1
+	local var_4_1 = arg_4_0.pools[var_4_0]
 
-		if slot1 == ChapterConst.TemplateOni then
-			slot4 = slot0.oniTpl
-		elseif slot1 == ChapterConst.TemplateEnemy then
-			slot4 = slot0.enemyTpl
+	if not var_4_1 then
+		local var_4_2 = arg_4_0.championTpl
+
+		if arg_4_1 == ChapterConst.TemplateOni then
+			var_4_2 = arg_4_0.oniTpl
+		elseif arg_4_1 == ChapterConst.TemplateEnemy then
+			var_4_2 = arg_4_0.enemyTpl
 		end
 
-		slot0.pools[slot2] = uv0.New(slot4.gameObject, 3)
+		var_4_1 = var_0_1.New(var_4_2.gameObject, 3)
+		arg_4_0.pools[var_4_0] = var_4_1
 	end
 
-	return slot3
+	return var_4_1
 end
 
-function slot0.AddEdgePool(slot0, slot1, slot2, slot3, slot4, slot5)
-	if slot0.edgePools[slot1] then
+function var_0_0.AddEdgePool(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5)
+	if arg_5_0.edgePools[arg_5_1] then
 		return
 	end
 
-	slot6 = GameObject.New(slot1)
-	slot6:AddComponent(typeof(Image)).enabled = false
-	slot0.edgePools[slot1] = uv0.New(slot6, 32)
-	slot7, slot8 = nil
+	local var_5_0 = GameObject.New(arg_5_1)
+
+	var_5_0:AddComponent(typeof(Image)).enabled = false
+	arg_5_0.edgePools[arg_5_1] = var_0_1.New(var_5_0, 32)
+
+	local var_5_1
+	local var_5_2
 
 	parallelAsync({
-		function (slot0)
-			if not uv0 then
-				slot0()
+		function(arg_6_0)
+			if not arg_5_3 then
+				arg_6_0()
 
 				return
 			end
 
-			uv1.loader:LoadReference(uv2, uv0, typeof(Sprite), function (slot0)
-				uv0 = slot0
+			arg_5_0.loader:LoadReference(arg_5_2, arg_5_3, typeof(Sprite), function(arg_7_0)
+				var_5_1 = arg_7_0
 
-				uv1()
+				arg_6_0()
 			end)
 		end,
-		function (slot0)
-			if not uv0 then
-				slot0()
+		function(arg_8_0)
+			if not arg_5_5 then
+				arg_8_0()
 
 				return
 			end
 
-			uv1.loader:LoadReference(uv2, uv0, typeof(Material), function (slot0)
-				uv0 = slot0
+			arg_5_0.loader:LoadReference(arg_5_2, arg_5_5, typeof(Material), function(arg_9_0)
+				var_5_2 = arg_9_0
 
-				uv1()
+				arg_8_0()
 			end)
 		end
-	}, function ()
-		if uv5.edgePools[uv6].prefab then
-			function (slot0)
-				go(slot0):GetComponent(typeof(Image)).enabled = true
-				slot1.color = type(uv0) == "table" and Color.New(unpack(uv0)) or Color.white
-				slot1.sprite = uv1 and uv2 or nil
-				slot1.material = uv3 and uv4 or nil
-			end(slot1.prefab)
+	}, function()
+		local function var_10_0(arg_11_0)
+			local var_11_0 = go(arg_11_0):GetComponent(typeof(Image))
+
+			var_11_0.enabled = true
+			var_11_0.color = type(arg_5_4) == "table" and Color.New(unpack(arg_5_4)) or Color.white
+			var_11_0.sprite = arg_5_3 and var_5_1 or nil
+			var_11_0.material = arg_5_5 and var_5_2 or nil
 		end
 
-		if slot1.items then
-			for slot5, slot6 in pairs(slot1.items) do
-				slot0(slot6)
+		local var_10_1 = arg_5_0.edgePools[arg_5_1]
+
+		if var_10_1.prefab then
+			var_10_0(var_10_1.prefab)
+		end
+
+		if var_10_1.items then
+			for iter_10_0, iter_10_1 in pairs(var_10_1.items) do
+				var_10_0(iter_10_1)
 			end
 		end
 
-		if uv5.cellEdges[uv6] and next(uv5.cellEdges[uv6]) then
-			for slot5, slot6 in pairs(uv5.cellEdges[uv6]) do
-				slot0(slot6)
+		if arg_5_0.cellEdges[arg_5_1] and next(arg_5_0.cellEdges[arg_5_1]) then
+			for iter_10_2, iter_10_3 in pairs(arg_5_0.cellEdges[arg_5_1]) do
+				var_10_0(iter_10_3)
 			end
 		end
 	end)
 end
 
-function slot0.GetEdgePool(slot0, slot1)
-	assert(slot1, "Missing Key")
+function var_0_0.GetEdgePool(arg_12_0, arg_12_1)
+	assert(arg_12_1, "Missing Key")
 
-	slot2 = slot0.edgePools[slot1]
+	local var_12_0 = arg_12_0.edgePools[arg_12_1]
 
-	assert(slot2, "Must Create Pool before Using")
+	assert(var_12_0, "Must Create Pool before Using")
 
-	return slot2
+	return var_12_0
 end
 
-function slot0.initAll(slot0, slot1)
+function var_0_0.initAll(arg_13_0, arg_13_1)
 	seriesAsync({
-		function (slot0)
-			uv0:initPlane()
-			uv0:initDrag()
-			onNextTick(slot0)
+		function(arg_14_0)
+			arg_13_0:initPlane()
+			arg_13_0:initDrag()
+			onNextTick(arg_14_0)
 		end,
-		function (slot0)
-			if uv0.exited then
+		function(arg_15_0)
+			if arg_13_0.exited then
 				return
 			end
 
-			uv0:initTargetArrow()
-			uv0:InitDestinationMark()
-			onNextTick(slot0)
+			arg_13_0:initTargetArrow()
+			arg_13_0:InitDestinationMark()
+			onNextTick(arg_15_0)
 		end,
-		function (slot0)
-			if uv0.exited then
+		function(arg_16_0)
+			if arg_13_0.exited then
 				return
 			end
 
-			for slot4 = 0, ChapterConst.MaxRow - 1 do
-				for slot8 = 0, ChapterConst.MaxColumn - 1 do
-					uv0:initCell(slot4, slot8)
+			for iter_16_0 = 0, ChapterConst.MaxRow - 1 do
+				for iter_16_1 = 0, ChapterConst.MaxColumn - 1 do
+					arg_13_0:initCell(iter_16_0, iter_16_1)
 				end
 			end
 
-			uv0:UpdateItemCells()
-			uv0:updateQuadCells(ChapterConst.QuadStateFrozen)
-			onNextTick(slot0)
+			arg_13_0:UpdateItemCells()
+			arg_13_0:updateQuadCells(ChapterConst.QuadStateFrozen)
+			onNextTick(arg_16_0)
 		end,
-		function (slot0)
-			if uv0.exited then
+		function(arg_17_0)
+			if arg_13_0.exited then
 				return
 			end
 
-			uv0:AddEdgePool("SubmarineHunting", "ui/commonUI_atlas", "white_dot", {
+			arg_13_0:AddEdgePool("SubmarineHunting", "ui/commonUI_atlas", "white_dot", {
 				1,
 				0,
 				0
 			}, "add")
-			uv0:UpdateFloor()
-			uv0:updateAttachments()
-			uv0:InitWalls()
-			uv0:InitIdolsAnim()
-			onNextTick(slot0)
+			arg_13_0:UpdateFloor()
+			arg_13_0:updateAttachments()
+			arg_13_0:InitWalls()
+			arg_13_0:InitIdolsAnim()
+			onNextTick(arg_17_0)
 		end,
-		function (slot0)
-			if uv0.exited then
+		function(arg_18_0)
+			if arg_13_0.exited then
 				return
 			end
 
 			parallelAsync({
-				function (slot0)
-					uv0:initFleets(slot0)
+				function(arg_19_0)
+					arg_13_0:initFleets(arg_19_0)
 				end,
-				function (slot0)
-					uv0:initChampions(slot0)
+				function(arg_20_0)
+					arg_13_0:initChampions(arg_20_0)
 				end
-			}, slot0)
+			}, arg_18_0)
 		end,
-		function ()
-			uv0:OnChangeSubAutoAttack()
-			uv0:updateQuadCells(ChapterConst.QuadStateNormal)
-			existCall(uv1)
+		function()
+			arg_13_0:OnChangeSubAutoAttack()
+			arg_13_0:updateQuadCells(ChapterConst.QuadStateNormal)
+			existCall(arg_13_1)
 		end
 	})
 end
 
-function slot0.clearAll(slot0)
-	for slot4, slot5 in pairs(slot0.tweens) do
-		LeanTween.cancel(slot4)
+function var_0_0.clearAll(arg_22_0)
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.tweens) do
+		LeanTween.cancel(iter_22_0)
 	end
 
-	table.clear(slot0.tweens)
-	slot0.loader:Clear()
+	table.clear(arg_22_0.tweens)
+	arg_22_0.loader:Clear()
 
-	if not IsNil(slot0.cellRoot) then
-		slot0:clearFleets()
-		slot0:clearChampions()
-		slot0:clearTargetArrow()
-		slot0:ClearDestinationMark()
-		slot0:ClearIdolsAnim()
+	if not IsNil(arg_22_0.cellRoot) then
+		arg_22_0:clearFleets()
+		arg_22_0:clearChampions()
+		arg_22_0:clearTargetArrow()
+		arg_22_0:ClearDestinationMark()
+		arg_22_0:ClearIdolsAnim()
 
-		for slot4, slot5 in pairs(slot0.itemCells) do
-			slot5:Clear()
+		for iter_22_2, iter_22_3 in pairs(arg_22_0.itemCells) do
+			iter_22_3:Clear()
 		end
 
-		table.clear(slot0.itemCells)
+		table.clear(arg_22_0.itemCells)
 
-		for slot4, slot5 in pairs(slot0.attachmentCells) do
-			slot5:Clear()
+		for iter_22_4, iter_22_5 in pairs(arg_22_0.attachmentCells) do
+			iter_22_5:Clear()
 		end
 
-		table.clear(slot0.attachmentCells)
+		table.clear(arg_22_0.attachmentCells)
 
-		for slot4, slot5 in pairs(slot0.extraAttachmentCells) do
-			slot5:Clear()
+		for iter_22_6, iter_22_7 in pairs(arg_22_0.extraAttachmentCells) do
+			iter_22_7:Clear()
 		end
 
-		table.clear(slot0.extraAttachmentCells)
+		table.clear(arg_22_0.extraAttachmentCells)
 
-		for slot4, slot5 in pairs(slot0.weatherCells) do
-			slot5:Clear()
+		for iter_22_8, iter_22_9 in pairs(arg_22_0.weatherCells) do
+			iter_22_9:Clear()
 		end
 
-		table.clear(slot0.weatherCells)
+		table.clear(arg_22_0.weatherCells)
 
-		for slot4 = 0, ChapterConst.MaxRow - 1 do
-			for slot8 = 0, ChapterConst.MaxColumn - 1 do
-				slot0:clearCell(slot4, slot8)
+		for iter_22_10 = 0, ChapterConst.MaxRow - 1 do
+			for iter_22_11 = 0, ChapterConst.MaxColumn - 1 do
+				arg_22_0:clearCell(iter_22_10, iter_22_11)
 			end
 		end
 
-		for slot4, slot5 in pairs(slot0.walls) do
-			slot5:Clear()
+		for iter_22_12, iter_22_13 in pairs(arg_22_0.walls) do
+			iter_22_13:Clear()
 		end
 
-		table.clear(slot0.walls)
-		slot0:clearPlane()
+		table.clear(arg_22_0.walls)
+		arg_22_0:clearPlane()
 	end
 
-	slot0.material_Add = nil
+	arg_22_0.material_Add = nil
 
-	for slot4, slot5 in pairs(slot0.edgePools) do
-		slot5:Clear()
+	for iter_22_14, iter_22_15 in pairs(arg_22_0.edgePools) do
+		iter_22_15:Clear()
 	end
 
-	slot0.edgePools = nil
+	arg_22_0.edgePools = nil
 
-	for slot4, slot5 in pairs(slot0.pools) do
-		slot5:ClearItems()
+	for iter_22_16, iter_22_17 in pairs(arg_22_0.pools) do
+		iter_22_17:ClearItems()
 	end
 
-	slot0.pools = nil
-	GetOrAddComponent(slot0._tf, "EventTriggerListener").enabled = false
+	arg_22_0.pools = nil
+	GetOrAddComponent(arg_22_0._tf, "EventTriggerListener").enabled = false
 
-	if slot0.dragTrigger then
-		ClearEventTrigger(slot0.dragTrigger)
+	if arg_22_0.dragTrigger then
+		ClearEventTrigger(arg_22_0.dragTrigger)
 
-		slot0.dragTrigger = nil
+		arg_22_0.dragTrigger = nil
 	end
 
-	LeanTween.cancel(slot0._tf)
+	LeanTween.cancel(arg_22_0._tf)
 end
 
-slot2 = 640
+local var_0_2 = 640
 
-function slot0.initDrag(slot0)
-	slot1, slot2, slot3 = getSizeRate()
-	slot4 = slot0.contextData.chapterVO
-	slot5 = slot4.theme
-	slot6 = slot3 * 0.5 / math.tan(math.deg2Rad * slot5.fov * 0.5)
-	slot7 = math.deg2Rad * slot5.angle
-	slot9 = Vector3(slot5.offsetx, slot5.offsety, slot5.offsetz) + uv0.MapDefaultPos
-	slot1 = slot1 * math.clamp((slot6 - Vector3.Dot(Vector3(0, -math.sin(slot7), -math.cos(slot7)), slot9)) / slot6, 0, 1)
-	slot12 = slot0.plane:Find("display").anchoredPosition
-	slot13 = uv1 - slot9.x - slot12.x
-	slot14 = uv0.MapDefaultPos.y - slot9.y - slot12.y
-	slot15, slot16, slot17, slot18 = slot4:getDragExtend()
-	slot0.leftBound = slot13 - slot16
-	slot0.rightBound = slot13 + slot15
-	slot0.topBound = slot14 + slot18
-	slot0.bottomBound = slot14 - slot17
-	slot0._tf.sizeDelta = Vector2(slot2 * 2, slot3 * 2)
-	slot0.dragTrigger = GetOrAddComponent(slot0._tf, "EventTriggerListener")
-	slot0.dragTrigger.enabled = true
+function var_0_0.initDrag(arg_23_0)
+	local var_23_0, var_23_1, var_23_2 = getSizeRate()
+	local var_23_3 = arg_23_0.contextData.chapterVO
+	local var_23_4 = var_23_3.theme
+	local var_23_5 = var_23_2 * 0.5 / math.tan(math.deg2Rad * var_23_4.fov * 0.5)
+	local var_23_6 = math.deg2Rad * var_23_4.angle
+	local var_23_7 = Vector3(0, -math.sin(var_23_6), -math.cos(var_23_6))
+	local var_23_8 = Vector3(var_23_4.offsetx, var_23_4.offsety, var_23_4.offsetz) + var_0_0.MapDefaultPos
+	local var_23_9 = Vector3.Dot(var_23_7, var_23_8)
+	local var_23_10 = var_23_0 * math.clamp((var_23_5 - var_23_9) / var_23_5, 0, 1)
+	local var_23_11 = arg_23_0.plane:Find("display").anchoredPosition
+	local var_23_12 = var_0_2 - var_23_8.x - var_23_11.x
+	local var_23_13 = var_0_0.MapDefaultPos.y - var_23_8.y - var_23_11.y
+	local var_23_14, var_23_15, var_23_16, var_23_17 = var_23_3:getDragExtend()
 
-	slot0.dragTrigger:AddDragFunc(function (slot0, slot1)
-		slot2 = uv0._tf.anchoredPosition
-		slot2.x = math.clamp(slot2.x + slot1.delta.x * uv1.x, uv0.leftBound, uv0.rightBound)
-		slot2.y = math.clamp(slot2.y + slot1.delta.y * uv1.y / math.cos(uv2), uv0.bottomBound, uv0.topBound)
-		uv0._tf.anchoredPosition = slot2
+	arg_23_0.leftBound = var_23_12 - var_23_15
+	arg_23_0.rightBound = var_23_12 + var_23_14
+	arg_23_0.topBound = var_23_13 + var_23_17
+	arg_23_0.bottomBound = var_23_13 - var_23_16
+	arg_23_0._tf.sizeDelta = Vector2(var_23_1 * 2, var_23_2 * 2)
+	arg_23_0.dragTrigger = GetOrAddComponent(arg_23_0._tf, "EventTriggerListener")
+	arg_23_0.dragTrigger.enabled = true
+
+	arg_23_0.dragTrigger:AddDragFunc(function(arg_24_0, arg_24_1)
+		local var_24_0 = arg_23_0._tf.anchoredPosition
+
+		var_24_0.x = math.clamp(var_24_0.x + arg_24_1.delta.x * var_23_10.x, arg_23_0.leftBound, arg_23_0.rightBound)
+		var_24_0.y = math.clamp(var_24_0.y + arg_24_1.delta.y * var_23_10.y / math.cos(var_23_6), arg_23_0.bottomBound, arg_23_0.topBound)
+		arg_23_0._tf.anchoredPosition = var_24_0
 	end)
 end
 
-function slot0.initPlane(slot0)
-	slot2 = slot0.contextData.chapterVO.theme
-	slot0.levelCam.fieldOfView = slot2.fov
-	slot3 = nil
+function var_0_0.initPlane(arg_25_0)
+	local var_25_0 = arg_25_0.contextData.chapterVO
+	local var_25_1 = var_25_0.theme
 
-	PoolMgr.GetInstance():GetPrefab("chapter/plane", "", false, function (slot0)
-		uv0 = slot0.transform
+	arg_25_0.levelCam.fieldOfView = var_25_1.fov
+
+	local var_25_2
+
+	PoolMgr.GetInstance():GetPrefab("chapter/plane", "", false, function(arg_26_0)
+		var_25_2 = arg_26_0.transform
 	end)
 
-	slot0.plane = slot3
-	slot3.name = ChapterConst.PlaneName
+	arg_25_0.plane = var_25_2
+	var_25_2.name = ChapterConst.PlaneName
 
-	slot3:SetParent(slot0._tf, false)
+	var_25_2:SetParent(arg_25_0._tf, false)
 
-	slot7 = slot2.offsetz
-	slot3.anchoredPosition3D = Vector3(slot2.offsetx, slot2.offsety, slot7) + uv0.MapDefaultPos
-	slot0.cellRoot = slot3:Find("cells")
-	slot0.quadRoot = slot3:Find("quads")
-	slot0.bottomMarkRoot = slot3:Find("buttomMarks")
-	slot0.topMarkRoot = slot3:Find("topMarks")
-	slot0.restrictMap = slot3:Find("restrictMap")
-	slot0.UIFXList = slot3:Find("UI_FX_list")
+	var_25_2.anchoredPosition3D = Vector3(var_25_1.offsetx, var_25_1.offsety, var_25_1.offsetz) + var_0_0.MapDefaultPos
+	arg_25_0.cellRoot = var_25_2:Find("cells")
+	arg_25_0.quadRoot = var_25_2:Find("quads")
+	arg_25_0.bottomMarkRoot = var_25_2:Find("buttomMarks")
+	arg_25_0.topMarkRoot = var_25_2:Find("topMarks")
+	arg_25_0.restrictMap = var_25_2:Find("restrictMap")
+	arg_25_0.UIFXList = var_25_2:Find("UI_FX_list")
 
-	for slot7 = 1, slot0.UIFXList.childCount do
-		setActive(slot0.UIFXList:GetChild(slot7 - 1), false)
+	for iter_25_0 = 1, arg_25_0.UIFXList.childCount do
+		local var_25_3 = arg_25_0.UIFXList:GetChild(iter_25_0 - 1)
+
+		setActive(var_25_3, false)
 	end
 
-	if slot0.UIFXList:Find(slot1:getConfig("uifx")) then
-		setActive(slot4, true)
+	local var_25_4 = arg_25_0.UIFXList:Find(var_25_0:getConfig("uifx"))
+
+	if var_25_4 then
+		setActive(var_25_4, true)
 	end
 
-	if type(slot1:getConfig("chapter_fx")) == "table" then
-		for slot9, slot10 in pairs(slot5) do
-			if #slot9 <= 0 then
+	local var_25_5 = var_25_0:getConfig("chapter_fx")
+
+	if type(var_25_5) == "table" then
+		for iter_25_1, iter_25_2 in pairs(var_25_5) do
+			if #iter_25_1 <= 0 then
 				return
 			end
 
-			slot0.loader:GetPrefab("effect/" .. slot9, slot9, function (slot0)
-				setParent(slot0, uv0.UIFXList)
+			arg_25_0.loader:GetPrefab("effect/" .. iter_25_1, iter_25_1, function(arg_27_0)
+				setParent(arg_27_0, arg_25_0.UIFXList)
 
-				if uv1.offset then
-					tf(slot0).localPosition = Vector3(unpack(uv1.offset))
+				if iter_25_2.offset then
+					tf(arg_27_0).localPosition = Vector3(unpack(iter_25_2.offset))
 				end
 
-				if uv1.rotation then
-					tf(slot0).localRotation = Quaternion.Euler(unpack(uv1.rotation))
+				if iter_25_2.rotation then
+					tf(arg_27_0).localRotation = Quaternion.Euler(unpack(iter_25_2.rotation))
 				end
 			end)
 		end
 	end
 
-	slot6 = slot3:Find("display")
+	local var_25_6 = var_25_2:Find("display")
+	local var_25_7 = var_25_6:Find("mask/sea")
 
-	GetImageSpriteFromAtlasAsync("chapter/pic/" .. slot2.assetSea, slot2.assetSea, slot6:Find("mask/sea"))
+	GetImageSpriteFromAtlasAsync("chapter/pic/" .. var_25_1.assetSea, var_25_1.assetSea, var_25_7)
 
-	slot0.indexMax = slot1.indexMax
-	slot0.indexMin = slot1.indexMin
-	slot10 = slot2.cellSize + slot2.cellSpace
-	slot8 = Vector2.Scale(Vector2(slot0.indexMin.y, ChapterConst.MaxRow * 0.5 - slot0.indexMax.x - 1), slot10)
-	slot9 = Vector2.Scale(Vector2(slot0.indexMax.y - slot0.indexMin.y + 1, slot0.indexMax.x - slot0.indexMin.x + 1), slot10)
-	slot6.anchoredPosition = slot8 + slot9 * 0.5
-	slot6.sizeDelta = slot9
-	slot0.restrictMap.anchoredPosition = slot8 + slot9 * 0.5
-	slot0.restrictMap.sizeDelta = slot9
-	slot12 = slot6:Find("ABC")
-	slot13 = slot12:GetChild(0)
-	slot14 = slot12:GetComponent(typeof(GridLayoutGroup))
-	slot14.cellSize = Vector2(slot2.cellSize.x, slot2.cellSize.y)
-	slot14.spacing = Vector2(slot2.cellSpace.x, slot2.cellSpace.y)
-	slot14.padding.left = slot2.cellSpace.x
+	arg_25_0.indexMin, arg_25_0.indexMax = var_25_0.indexMin, var_25_0.indexMax
 
-	for slot18 = slot12.childCount - 1, Vector2(math.floor(slot6.sizeDelta.x / slot10.x), math.floor(slot6.sizeDelta.y / slot10.y)).x, -1 do
-		Destroy(slot12:GetChild(slot18))
+	local var_25_8 = Vector2(arg_25_0.indexMin.y, ChapterConst.MaxRow * 0.5 - arg_25_0.indexMax.x - 1)
+	local var_25_9 = Vector2(arg_25_0.indexMax.y - arg_25_0.indexMin.y + 1, arg_25_0.indexMax.x - arg_25_0.indexMin.x + 1)
+	local var_25_10 = var_25_1.cellSize + var_25_1.cellSpace
+	local var_25_11 = Vector2.Scale(var_25_8, var_25_10)
+	local var_25_12 = Vector2.Scale(var_25_9, var_25_10)
+
+	var_25_6.anchoredPosition = var_25_11 + var_25_12 * 0.5
+	var_25_6.sizeDelta = var_25_12
+	arg_25_0.restrictMap.anchoredPosition = var_25_11 + var_25_12 * 0.5
+	arg_25_0.restrictMap.sizeDelta = var_25_12
+
+	local var_25_13 = Vector2(math.floor(var_25_6.sizeDelta.x / var_25_10.x), math.floor(var_25_6.sizeDelta.y / var_25_10.y))
+	local var_25_14 = var_25_6:Find("ABC")
+	local var_25_15 = var_25_14:GetChild(0)
+	local var_25_16 = var_25_14:GetComponent(typeof(GridLayoutGroup))
+
+	var_25_16.cellSize = Vector2(var_25_1.cellSize.x, var_25_1.cellSize.y)
+	var_25_16.spacing = Vector2(var_25_1.cellSpace.x, var_25_1.cellSpace.y)
+	var_25_16.padding.left = var_25_1.cellSpace.x
+
+	for iter_25_3 = var_25_14.childCount - 1, var_25_13.x, -1 do
+		Destroy(var_25_14:GetChild(iter_25_3))
 	end
 
-	for slot18 = slot12.childCount, slot11.x - 1 do
-		Instantiate(slot13).transform:SetParent(slot12, false)
+	for iter_25_4 = var_25_14.childCount, var_25_13.x - 1 do
+		Instantiate(var_25_15).transform:SetParent(var_25_14, false)
 	end
 
-	for slot18 = 0, slot11.x - 1 do
-		setText(slot12:GetChild(slot18), string.char(string.byte("A") + slot18))
+	for iter_25_5 = 0, var_25_13.x - 1 do
+		setText(var_25_14:GetChild(iter_25_5), string.char(string.byte("A") + iter_25_5))
 	end
 
-	slot15 = slot6:Find("123")
-	slot16 = slot15:GetChild(0)
-	slot17 = slot15:GetComponent(typeof(GridLayoutGroup))
-	slot17.cellSize = Vector2(slot2.cellSize.x, slot2.cellSize.y)
-	slot17.spacing = Vector2(slot2.cellSpace.x, slot2.cellSpace.y)
-	slot17.padding.top = slot2.cellSpace.y
+	local var_25_17 = var_25_6:Find("123")
+	local var_25_18 = var_25_17:GetChild(0)
+	local var_25_19 = var_25_17:GetComponent(typeof(GridLayoutGroup))
 
-	for slot21 = slot15.childCount - 1, slot11.y, -1 do
-		Destroy(slot15:GetChild(slot21))
+	var_25_19.cellSize = Vector2(var_25_1.cellSize.x, var_25_1.cellSize.y)
+	var_25_19.spacing = Vector2(var_25_1.cellSpace.x, var_25_1.cellSpace.y)
+	var_25_19.padding.top = var_25_1.cellSpace.y
+
+	for iter_25_6 = var_25_17.childCount - 1, var_25_13.y, -1 do
+		Destroy(var_25_17:GetChild(iter_25_6))
 	end
 
-	for slot21 = slot15.childCount, slot11.y - 1 do
-		Instantiate(slot16).transform:SetParent(slot15, false)
+	for iter_25_7 = var_25_17.childCount, var_25_13.y - 1 do
+		Instantiate(var_25_18).transform:SetParent(var_25_17, false)
 	end
 
-	for slot21 = 0, slot11.y - 1 do
-		setText(slot15:GetChild(slot21), 1 + slot21)
+	for iter_25_8 = 0, var_25_13.y - 1 do
+		setText(var_25_17:GetChild(iter_25_8), 1 + iter_25_8)
 	end
 
-	slot18 = slot6:Find("linev")
-	slot19 = slot18:GetChild(0)
-	slot20 = slot18:GetComponent(typeof(GridLayoutGroup))
-	slot20.cellSize = Vector2(ChapterConst.LineCross, slot6.sizeDelta.y)
-	slot20.spacing = Vector2(slot10.x - ChapterConst.LineCross, 0)
-	slot20.padding.left = math.floor(slot20.spacing.x)
-	slot24 = 0
+	local var_25_20 = var_25_6:Find("linev")
+	local var_25_21 = var_25_20:GetChild(0)
+	local var_25_22 = var_25_20:GetComponent(typeof(GridLayoutGroup))
 
-	for slot24 = slot18.childCount - 1, math.max(slot11.x - 1, slot24), -1 do
-		if slot24 > 0 then
-			Destroy(slot18:GetChild(slot24))
+	var_25_22.cellSize = Vector2(ChapterConst.LineCross, var_25_6.sizeDelta.y)
+	var_25_22.spacing = Vector2(var_25_10.x - ChapterConst.LineCross, 0)
+	var_25_22.padding.left = math.floor(var_25_22.spacing.x)
+
+	for iter_25_9 = var_25_20.childCount - 1, math.max(var_25_13.x - 1, 0), -1 do
+		if iter_25_9 > 0 then
+			Destroy(var_25_20:GetChild(iter_25_9))
 		end
 	end
 
-	for slot24 = slot18.childCount, slot11.x - 2 do
-		Instantiate(slot19).transform:SetParent(slot18, false)
+	for iter_25_10 = var_25_20.childCount, var_25_13.x - 2 do
+		Instantiate(var_25_21).transform:SetParent(var_25_20, false)
 	end
 
-	slot21 = slot6:Find("lineh")
-	slot22 = slot21:GetChild(0)
-	slot23 = slot21:GetComponent(typeof(GridLayoutGroup))
-	slot23.cellSize = Vector2(slot6.sizeDelta.x, ChapterConst.LineCross)
-	slot23.spacing = Vector2(0, slot10.y - ChapterConst.LineCross)
-	slot23.padding.top = math.floor(slot23.spacing.y)
-	slot27 = 0
+	local var_25_23 = var_25_6:Find("lineh")
+	local var_25_24 = var_25_23:GetChild(0)
+	local var_25_25 = var_25_23:GetComponent(typeof(GridLayoutGroup))
 
-	for slot27 = slot21.childCount - 1, math.max(slot11.y - 1, slot27), -1 do
-		if slot27 > 0 then
-			Destroy(slot21:GetChild(slot27))
+	var_25_25.cellSize = Vector2(var_25_6.sizeDelta.x, ChapterConst.LineCross)
+	var_25_25.spacing = Vector2(0, var_25_10.y - ChapterConst.LineCross)
+	var_25_25.padding.top = math.floor(var_25_25.spacing.y)
+
+	for iter_25_11 = var_25_23.childCount - 1, math.max(var_25_13.y - 1, 0), -1 do
+		if iter_25_11 > 0 then
+			Destroy(var_25_23:GetChild(iter_25_11))
 		end
 	end
 
-	for slot27 = slot21.childCount, slot11.y - 2 do
-		Instantiate(slot22).transform:SetParent(slot21, false)
+	for iter_25_12 = var_25_23.childCount, var_25_13.y - 2 do
+		Instantiate(var_25_24).transform:SetParent(var_25_23, false)
 	end
 
-	slot24 = GetOrAddComponent(slot6:Find("mask"), "RawImage")
-	slot25 = slot6:Find("seaBase/sea")
+	local var_25_26 = GetOrAddComponent(var_25_6:Find("mask"), "RawImage")
+	local var_25_27 = var_25_6:Find("seaBase/sea")
 
-	if slot2.seaBase and slot2.seaBase ~= "" then
-		setActive(slot25, true)
-		GetImageSpriteFromAtlasAsync("chapter/pic/" .. slot2.seaBase, slot2.seaBase, slot25)
+	if var_25_1.seaBase and var_25_1.seaBase ~= "" then
+		setActive(var_25_27, true)
+		GetImageSpriteFromAtlasAsync("chapter/pic/" .. var_25_1.seaBase, var_25_1.seaBase, var_25_27)
 
-		slot24.enabled = true
-		slot24.uvRect = UnityEngine.Rect.New(0, 0, 1, -1)
+		var_25_26.enabled = true
+		var_25_26.uvRect = UnityEngine.Rect.New(0, 0, 1, -1)
 	else
-		setActive(slot25, false)
+		setActive(var_25_27, false)
 
-		slot24.enabled = false
+		var_25_26.enabled = false
 	end
 end
 
-function slot0.updatePoisonArea(slot0)
-	if not GetOrAddComponent(slot0:findTF("plane/display/mask"), "RawImage").enabled then
+function var_0_0.updatePoisonArea(arg_28_0)
+	local var_28_0 = arg_28_0:findTF("plane/display/mask")
+	local var_28_1 = GetOrAddComponent(var_28_0, "RawImage")
+
+	if not var_28_1.enabled then
 		return
 	end
 
-	slot2.texture = slot0:getPoisonTex()
+	var_28_1.texture = arg_28_0:getPoisonTex()
 end
 
-function slot0.getPoisonTex(slot0)
-	slot2 = slot0:findTF("plane/display")
-	slot6 = nil
+function var_0_0.getPoisonTex(arg_29_0)
+	local var_29_0 = arg_29_0.contextData.chapterVO
+	local var_29_1 = arg_29_0:findTF("plane/display")
+	local var_29_2 = var_29_1.sizeDelta.x / var_29_1.sizeDelta.y
+	local var_29_3 = 256
+	local var_29_4 = math.floor(var_29_3 / var_29_2)
+	local var_29_5
 
-	if slot0.preChapterId ~= slot0.contextData.chapterVO.id then
-		slot0.maskTexture = UnityEngine.Texture2D.New(slot4, math.floor(256 / (slot2.sizeDelta.x / slot2.sizeDelta.y)))
-		slot0.preChapterId = slot1.id
+	if arg_29_0.preChapterId ~= var_29_0.id then
+		var_29_5 = UnityEngine.Texture2D.New(var_29_3, var_29_4)
+		arg_29_0.maskTexture = var_29_5
+		arg_29_0.preChapterId = var_29_0.id
 	else
-		slot6 = slot0.maskTexture
+		var_29_5 = arg_29_0.maskTexture
 	end
 
-	slot7 = {}
+	local var_29_6 = {}
+	local var_29_7 = var_29_0:getPoisonArea(var_29_3 / var_29_1.sizeDelta.x)
 
-	if slot0.poisonRectDir == nil then
-		slot7 = slot1:getPoisonArea(slot4 / slot2.sizeDelta.x)
+	if arg_29_0.poisonRectDir == nil then
+		var_29_6 = var_29_7
 	else
-		for slot12, slot13 in pairs(slot8) do
-			if slot0.poisonRectDir[slot12] == nil then
-				slot7[slot12] = slot13
+		for iter_29_0, iter_29_1 in pairs(var_29_7) do
+			if arg_29_0.poisonRectDir[iter_29_0] == nil then
+				var_29_6[iter_29_0] = iter_29_1
 			end
 		end
 	end
 
-	for slot13, slot14 in pairs(slot7) do
-		function (slot0)
-			for slot4 = slot0.x, slot0.w + slot0.x do
-				for slot8 = slot0.y, slot0.h + slot0.y do
-					uv0:SetPixel(slot4, slot8, Color.New(1, 1, 1, 0))
+	local function var_29_8(arg_30_0)
+		for iter_30_0 = arg_30_0.x, arg_30_0.w + arg_30_0.x do
+			for iter_30_1 = arg_30_0.y, arg_30_0.h + arg_30_0.y do
+				var_29_5:SetPixel(iter_30_0, iter_30_1, Color.New(1, 1, 1, 0))
+			end
+		end
+	end
+
+	for iter_29_2, iter_29_3 in pairs(var_29_6) do
+		var_29_8(iter_29_3)
+	end
+
+	var_29_5:Apply()
+
+	arg_29_0.poisonRectDir = var_29_7
+
+	return var_29_5
+end
+
+function var_0_0.showFleetPoisonDamage(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_0 = arg_31_0.contextData.chapterVO.fleets[arg_31_1].id
+	local var_31_1 = arg_31_0.cellFleets[var_31_0]
+
+	if var_31_1 then
+		var_31_1:showPoisonDamage(arg_31_2)
+	end
+end
+
+function var_0_0.clearPlane(arg_32_0)
+	arg_32_0:killQuadTws()
+	arg_32_0:killPresentTws()
+	arg_32_0:ClearEdges()
+	arg_32_0:hideQuadMark()
+	removeAllChildren(arg_32_0.cellRoot)
+	removeAllChildren(arg_32_0.quadRoot)
+	removeAllChildren(arg_32_0.bottomMarkRoot)
+	removeAllChildren(arg_32_0.topMarkRoot)
+	removeAllChildren(arg_32_0.restrictMap)
+
+	arg_32_0.cellRoot = nil
+	arg_32_0.quadRoot = nil
+	arg_32_0.bottomMarkRoot = nil
+	arg_32_0.topMarkRoot = nil
+	arg_32_0.restrictMap = nil
+
+	local var_32_0 = arg_32_0._tf:Find(ChapterConst.PlaneName)
+	local var_32_1 = var_32_0:Find("display/seaBase/sea")
+
+	clearImageSprite(var_32_1)
+	pg.PoolMgr.GetInstance():ReturnPrefab("chapter/plane", "", var_32_0.gameObject)
+end
+
+function var_0_0.initFleets(arg_33_0, arg_33_1)
+	if arg_33_0.cellFleets then
+		existCall(arg_33_1)
+
+		return
+	end
+
+	local var_33_0 = arg_33_0.contextData.chapterVO
+
+	arg_33_0.cellFleets = {}
+
+	table.ParallelIpairsAsync(var_33_0.fleets, function(arg_34_0, arg_34_1, arg_34_2)
+		if arg_34_1:getFleetType() == FleetType.Support then
+			return arg_34_2()
+		end
+
+		arg_33_0:InitFleetCell(arg_34_1.id, arg_34_2)
+	end, arg_33_1)
+end
+
+function var_0_0.InitFleetCell(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = arg_35_0.contextData.chapterVO
+	local var_35_1 = var_35_0:getFleetById(arg_35_1)
+
+	if not var_35_1:isValid() then
+		existCall(arg_35_2)
+
+		return
+	end
+
+	local var_35_2
+	local var_35_3 = arg_35_0:getFleetPool(var_35_1:getFleetType()):Dequeue()
+
+	var_35_3.transform.localEulerAngles = Vector3(-var_35_0.theme.angle, 0, 0)
+
+	setParent(var_35_3, arg_35_0.cellRoot, false)
+	setActive(var_35_3, true)
+
+	local var_35_4 = var_35_1:getFleetType()
+	local var_35_5
+
+	if var_35_4 == FleetType.Transport then
+		var_35_5 = TransportCellView
+	elseif var_35_4 == FleetType.Submarine then
+		var_35_5 = SubCellView
+	else
+		var_35_5 = FleetCellView
+	end
+
+	local var_35_6 = var_35_5.New(var_35_3)
+
+	var_35_6.fleetType = var_35_4
+
+	if var_35_4 == FleetType.Normal or var_35_4 == FleetType.Submarine then
+		var_35_6:SetAction(ChapterConst.ShipIdleAction)
+	end
+
+	var_35_6.tf.localPosition = var_35_0.theme:GetLinePosition(var_35_1.line.row, var_35_1.line.column)
+	arg_35_0.cellFleets[arg_35_1] = var_35_6
+
+	arg_35_0:RefreshFleetCell(arg_35_1, arg_35_2)
+end
+
+function var_0_0.RefreshFleetCells(arg_36_0, arg_36_1)
+	if not arg_36_0.cellFleets then
+		arg_36_0:initFleets(arg_36_1)
+
+		return
+	end
+
+	local var_36_0 = arg_36_0.contextData.chapterVO
+	local var_36_1 = {}
+
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.cellFleets) do
+		if not var_36_0:getFleetById(iter_36_0) then
+			table.insert(var_36_1, iter_36_0)
+		end
+	end
+
+	for iter_36_2, iter_36_3 in pairs(var_36_1) do
+		arg_36_0:ClearFleetCell(iter_36_3)
+	end
+
+	table.ParallelIpairsAsync(var_36_0.fleets, function(arg_37_0, arg_37_1, arg_37_2)
+		if arg_37_1:getFleetType() == FleetType.Support then
+			return arg_37_2()
+		end
+
+		if not arg_36_0.cellFleets[arg_37_1.id] then
+			arg_36_0:InitFleetCell(arg_37_1.id, arg_37_2)
+		else
+			arg_36_0:RefreshFleetCell(arg_37_1.id, arg_37_2)
+		end
+	end, arg_36_1)
+end
+
+function var_0_0.RefreshFleetCell(arg_38_0, arg_38_1, arg_38_2)
+	local var_38_0 = arg_38_0.contextData.chapterVO
+	local var_38_1 = var_38_0:getFleetById(arg_38_1)
+	local var_38_2 = arg_38_0.cellFleets[arg_38_1]
+	local var_38_3
+	local var_38_4
+
+	if var_38_1:isValid() then
+		if var_38_1:getFleetType() == FleetType.Transport then
+			var_38_3 = var_38_1:getPrefab()
+		else
+			local var_38_5 = var_38_0:getMapShip(var_38_1)
+
+			if var_38_5 then
+				var_38_3 = var_38_5:getPrefab()
+				var_38_4 = var_38_5:getAttachmentPrefab()
+			end
+		end
+	end
+
+	if not var_38_3 then
+		arg_38_0:ClearFleetCell(arg_38_1)
+		existCall(arg_38_2)
+
+		return
+	end
+
+	var_38_2.go.name = "cell_fleet_" .. var_38_3
+
+	var_38_2:SetLine(var_38_1.line)
+
+	if var_38_2.fleetType == FleetType.Transport then
+		var_38_2:LoadIcon(var_38_3, function()
+			var_38_2:GetRotatePivot().transform.localRotation = var_38_1.rotation
+
+			arg_38_0:updateFleet(arg_38_1, arg_38_2)
+		end)
+	else
+		var_38_2:LoadSpine(var_38_3, nil, var_38_4, function()
+			var_38_2:GetRotatePivot().transform.localRotation = var_38_1.rotation
+
+			arg_38_0:updateFleet(arg_38_1, arg_38_2)
+		end)
+	end
+end
+
+function var_0_0.clearFleets(arg_41_0)
+	if arg_41_0.cellFleets then
+		for iter_41_0, iter_41_1 in pairs(arg_41_0.cellFleets) do
+			arg_41_0:ClearFleetCell(iter_41_0)
+		end
+
+		arg_41_0.cellFleets = nil
+	end
+end
+
+function var_0_0.ClearFleetCell(arg_42_0, arg_42_1)
+	local var_42_0 = arg_42_0.cellFleets[arg_42_1]
+
+	if not var_42_0 then
+		return
+	end
+
+	var_42_0:Clear()
+	LeanTween.cancel(var_42_0.go)
+	setActive(var_42_0.go, false)
+	setParent(var_42_0.go, arg_42_0.poolParent, false)
+	arg_42_0:getFleetPool(var_42_0.fleetType):Enqueue(var_42_0.go, false)
+
+	if arg_42_0.opBtns[arg_42_1] then
+		Destroy(arg_42_0.opBtns[arg_42_1].gameObject)
+
+		arg_42_0.opBtns[arg_42_1] = nil
+	end
+
+	arg_42_0.cellFleets[arg_42_1] = nil
+end
+
+function var_0_0.UpdateFleets(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_0.contextData.chapterVO
+
+	table.ParallelIpairsAsync(var_43_0.fleets, function(arg_44_0, arg_44_1, arg_44_2)
+		if arg_44_1:getFleetType() == FleetType.Support then
+			return arg_44_2()
+		end
+
+		arg_43_0:updateFleet(arg_44_1.id, arg_44_2)
+	end, arg_43_1)
+end
+
+function var_0_0.updateFleet(arg_45_0, arg_45_1, arg_45_2)
+	local var_45_0 = arg_45_0.contextData.chapterVO
+	local var_45_1 = arg_45_0.cellFleets[arg_45_1]
+	local var_45_2 = var_45_0:getFleetById(arg_45_1)
+
+	if var_45_1 then
+		local var_45_3 = var_45_2.line
+		local var_45_4 = var_45_2:isValid()
+
+		setActive(var_45_1.go, var_45_4)
+		var_45_1:RefreshLinePosition(var_45_0, var_45_3)
+
+		local var_45_5 = var_45_2:getFleetType()
+
+		if var_45_5 == FleetType.Normal then
+			local var_45_6 = var_45_0:GetEnemy(var_45_3.row, var_45_3.column)
+			local var_45_7 = tobool(var_45_6)
+			local var_45_8 = var_45_6 and var_45_6.attachment or nil
+			local var_45_9 = var_45_0:existFleet(FleetType.Transport, var_45_3.row, var_45_3.column)
+
+			var_45_1:SetSpineVisible(not var_45_7 and not var_45_9)
+
+			local var_45_10 = table.indexof(var_45_0.fleets, var_45_2) == var_45_0.findex
+
+			setActive(var_45_1.tfArrow, var_45_10)
+			setActive(var_45_1.tfOp, false)
+
+			local var_45_11 = arg_45_0.opBtns[arg_45_1]
+
+			if not var_45_11 then
+				var_45_11 = tf(Instantiate(var_45_1.tfOp))
+				var_45_11.name = "op" .. arg_45_1
+
+				var_45_11:SetParent(arg_45_0._tf, false)
+
+				var_45_11.localEulerAngles = Vector3(-var_45_0.theme.angle, 0, 0)
+
+				local var_45_12 = GetOrAddComponent(var_45_11, typeof(Canvas))
+
+				GetOrAddComponent(go(var_45_11), typeof(GraphicRaycaster))
+
+				var_45_12.overrideSorting = true
+				var_45_12.sortingOrder = ChapterConst.PriorityMax
+				arg_45_0.opBtns[arg_45_1] = var_45_11
+
+				arg_45_0:UpdateOpBtns()
+			end
+
+			var_45_11.position = var_45_1.tfOp.position
+
+			local var_45_13 = var_45_6 and ChapterConst.IsBossCell(var_45_6)
+			local var_45_14 = false
+
+			if var_45_7 and var_45_8 == ChapterConst.AttachChampion then
+				local var_45_15 = var_45_0:getChampion(var_45_3.row, var_45_3.column):GetLastID()
+				local var_45_16 = pg.expedition_data_template[var_45_15]
+
+				if var_45_16 then
+					var_45_14 = var_45_16.ai == ChapterConst.ExpeditionAILair
 				end
 			end
-		end(slot14)
-	end
 
-	slot6:Apply()
+			var_45_13 = var_45_13 or var_45_14
 
-	slot0.poisonRectDir = slot8
+			local var_45_17 = _.any(var_45_0.fleets, function(arg_46_0)
+				return arg_46_0.id ~= var_45_2.id and arg_46_0:getFleetType() == FleetType.Normal and arg_46_0:isValid()
+			end)
+			local var_45_18 = var_45_10 and var_45_4 and var_45_7
+			local var_45_19 = var_45_11:Find("retreat")
 
-	return slot6
-end
+			setActive(var_45_19:Find("retreat"), var_45_18 and not var_45_13 and var_45_17)
+			setActive(var_45_19:Find("escape"), var_45_18 and var_45_13)
+			setActive(var_45_19, var_45_19:Find("retreat").gameObject.activeSelf or var_45_19:Find("escape").gameObject.activeSelf)
 
-function slot0.showFleetPoisonDamage(slot0, slot1, slot2)
-	if slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id] then
-		slot5:showPoisonDamage(slot2)
-	end
-end
-
-function slot0.clearPlane(slot0)
-	slot0:killQuadTws()
-	slot0:killPresentTws()
-	slot0:ClearEdges()
-	slot0:hideQuadMark()
-	removeAllChildren(slot0.cellRoot)
-	removeAllChildren(slot0.quadRoot)
-	removeAllChildren(slot0.bottomMarkRoot)
-	removeAllChildren(slot0.topMarkRoot)
-	removeAllChildren(slot0.restrictMap)
-
-	slot0.cellRoot = nil
-	slot0.quadRoot = nil
-	slot0.bottomMarkRoot = nil
-	slot0.topMarkRoot = nil
-	slot0.restrictMap = nil
-	slot1 = slot0._tf:Find(ChapterConst.PlaneName)
-
-	clearImageSprite(slot1:Find("display/seaBase/sea"))
-	pg.PoolMgr.GetInstance():ReturnPrefab("chapter/plane", "", slot1.gameObject)
-end
-
-function slot0.initFleets(slot0, slot1)
-	if slot0.cellFleets then
-		existCall(slot1)
-
-		return
-	end
-
-	slot0.cellFleets = {}
-
-	table.ParallelIpairsAsync(slot0.contextData.chapterVO.fleets, function (slot0, slot1, slot2)
-		if slot1:getFleetType() == FleetType.Support then
-			return slot2()
-		end
-
-		uv0:InitFleetCell(slot1.id, slot2)
-	end, slot1)
-end
-
-function slot0.InitFleetCell(slot0, slot1, slot2)
-	if not slot0.contextData.chapterVO:getFleetById(slot1):isValid() then
-		existCall(slot2)
-
-		return
-	end
-
-	slot5 = nil
-	slot7 = slot0:getFleetPool(slot4:getFleetType()):Dequeue()
-	slot7.transform.localEulerAngles = Vector3(-slot3.theme.angle, 0, 0)
-
-	setParent(slot7, slot0.cellRoot, false)
-	setActive(slot7, true)
-
-	slot9 = nil
-	((slot4:getFleetType() ~= FleetType.Transport or TransportCellView) and (slot8 ~= FleetType.Submarine or SubCellView) and FleetCellView).New(slot7).fleetType = slot8
-
-	if slot8 == FleetType.Normal or slot8 == FleetType.Submarine then
-		slot5:SetAction(ChapterConst.ShipIdleAction)
-	end
-
-	slot5.tf.localPosition = slot3.theme:GetLinePosition(slot4.line.row, slot4.line.column)
-	slot0.cellFleets[slot1] = slot5
-
-	slot0:RefreshFleetCell(slot1, slot2)
-end
-
-function slot0.RefreshFleetCells(slot0, slot1)
-	if not slot0.cellFleets then
-		slot0:initFleets(slot1)
-
-		return
-	end
-
-	slot3 = {}
-
-	for slot7, slot8 in pairs(slot0.cellFleets) do
-		if not slot0.contextData.chapterVO:getFleetById(slot7) then
-			table.insert(slot3, slot7)
-		end
-	end
-
-	for slot7, slot8 in pairs(slot3) do
-		slot0:ClearFleetCell(slot8)
-	end
-
-	table.ParallelIpairsAsync(slot2.fleets, function (slot0, slot1, slot2)
-		if slot1:getFleetType() == FleetType.Support then
-			return slot2()
-		end
-
-		if not uv0.cellFleets[slot1.id] then
-			uv0:InitFleetCell(slot1.id, slot2)
-		else
-			uv0:RefreshFleetCell(slot1.id, slot2)
-		end
-	end, slot1)
-end
-
-function slot0.RefreshFleetCell(slot0, slot1, slot2)
-	slot5 = slot0.cellFleets[slot1]
-	slot6, slot7 = nil
-
-	if slot0.contextData.chapterVO:getFleetById(slot1):isValid() then
-		if slot4:getFleetType() == FleetType.Transport then
-			slot6 = slot4:getPrefab()
-		elseif slot3:getMapShip(slot4) then
-			slot6 = slot8:getPrefab()
-			slot7 = slot8:getAttachmentPrefab()
-		end
-	end
-
-	if not slot6 then
-		slot0:ClearFleetCell(slot1)
-		existCall(slot2)
-
-		return
-	end
-
-	slot5.go.name = "cell_fleet_" .. slot6
-
-	slot5:SetLine(slot4.line)
-
-	if slot5.fleetType == FleetType.Transport then
-		slot5:LoadIcon(slot6, function ()
-			uv0:GetRotatePivot().transform.localRotation = uv1.rotation
-
-			uv2:updateFleet(uv3, uv4)
-		end)
-	else
-		slot5:LoadSpine(slot6, nil, slot7, function ()
-			uv0:GetRotatePivot().transform.localRotation = uv1.rotation
-
-			uv2:updateFleet(uv3, uv4)
-		end)
-	end
-end
-
-function slot0.clearFleets(slot0)
-	if slot0.cellFleets then
-		for slot4, slot5 in pairs(slot0.cellFleets) do
-			slot0:ClearFleetCell(slot4)
-		end
-
-		slot0.cellFleets = nil
-	end
-end
-
-function slot0.ClearFleetCell(slot0, slot1)
-	if not slot0.cellFleets[slot1] then
-		return
-	end
-
-	slot2:Clear()
-	LeanTween.cancel(slot2.go)
-	setActive(slot2.go, false)
-	setParent(slot2.go, slot0.poolParent, false)
-	slot0:getFleetPool(slot2.fleetType):Enqueue(slot2.go, false)
-
-	if slot0.opBtns[slot1] then
-		Destroy(slot0.opBtns[slot1].gameObject)
-
-		slot0.opBtns[slot1] = nil
-	end
-
-	slot0.cellFleets[slot1] = nil
-end
-
-function slot0.UpdateFleets(slot0, slot1)
-	table.ParallelIpairsAsync(slot0.contextData.chapterVO.fleets, function (slot0, slot1, slot2)
-		if slot1:getFleetType() == FleetType.Support then
-			return slot2()
-		end
-
-		uv0:updateFleet(slot1.id, slot2)
-	end, slot1)
-end
-
-function slot0.updateFleet(slot0, slot1, slot2)
-	slot5 = slot0.contextData.chapterVO:getFleetById(slot1)
-
-	if slot0.cellFleets[slot1] then
-		setActive(slot4.go, slot5:isValid())
-		slot4:RefreshLinePosition(slot3, slot5.line)
-
-		if slot5:getFleetType() == FleetType.Normal then
-			slot9 = slot3:GetEnemy(slot6.row, slot6.column)
-			slot11 = slot9 and slot9.attachment or nil
-
-			slot4:SetSpineVisible(not tobool(slot9) and not slot3:existFleet(FleetType.Transport, slot6.row, slot6.column))
-			setActive(slot4.tfArrow, table.indexof(slot3.fleets, slot5) == slot3.findex)
-			setActive(slot4.tfOp, false)
-
-			if not slot0.opBtns[slot1] then
-				slot14 = tf(Instantiate(slot4.tfOp))
-				slot14.name = "op" .. slot1
-
-				slot14:SetParent(slot0._tf, false)
-
-				slot14.localEulerAngles = Vector3(-slot3.theme.angle, 0, 0)
-				slot15 = GetOrAddComponent(slot14, typeof(Canvas))
-
-				GetOrAddComponent(go(slot14), typeof(GraphicRaycaster))
-
-				slot15.overrideSorting = true
-				slot15.sortingOrder = ChapterConst.PriorityMax
-				slot0.opBtns[slot1] = slot14
-
-				slot0:UpdateOpBtns()
-			end
-
-			slot14.position = slot4.tfOp.position
-			slot15 = slot9 and ChapterConst.IsBossCell(slot9)
-			slot16 = false
-
-			if slot10 and slot11 == ChapterConst.AttachChampion and pg.expedition_data_template[slot3:getChampion(slot6.row, slot6.column):GetLastID()] then
-				slot16 = slot19.ai == ChapterConst.ExpeditionAILair
-			end
-
-			slot15 = slot15 or slot16
-			slot18 = slot13 and slot7 and slot10
-
-			setActive(slot14:Find("retreat"):Find("retreat"), slot18 and not slot15 and _.any(slot3.fleets, function (slot0)
-				return slot0.id ~= uv0.id and slot0:getFleetType() == FleetType.Normal and slot0:isValid()
-			end))
-			setActive(slot19:Find("escape"), slot18 and slot15)
-			setActive(slot19, slot19:Find("retreat").gameObject.activeSelf or slot19:Find("escape").gameObject.activeSelf)
-
-			if slot19.gameObject.activeSelf then
-				onButton(slot0, slot19, function ()
-					if uv0.parent:isfrozen() then
+			if var_45_19.gameObject.activeSelf then
+				onButton(arg_45_0, var_45_19, function()
+					if arg_45_0.parent:isfrozen() then
 						return
 					end
 
-					if uv1 then
-						function ()
-							for slot4, slot5 in ipairs({
+					if var_45_13 then
+						(function()
+							local var_48_0 = {
 								{
 									1,
 									0
@@ -778,14 +886,16 @@ function slot0.updateFleet(slot0, slot1, slot2)
 									0,
 									-1
 								}
-							}) do
-								if uv0:considerAsStayPoint(ChapterConst.SubjectPlayer, uv1.row + slot5[1], uv1.column + slot5[2]) and not uv0:existEnemy(ChapterConst.SubjectPlayer, uv1.row + slot5[1], uv1.column + slot5[2]) then
-									uv2:emit(LevelMediator2.ON_OP, {
+							}
+
+							for iter_48_0, iter_48_1 in ipairs(var_48_0) do
+								if var_45_0:considerAsStayPoint(ChapterConst.SubjectPlayer, var_45_3.row + iter_48_1[1], var_45_3.column + iter_48_1[2]) and not var_45_0:existEnemy(ChapterConst.SubjectPlayer, var_45_3.row + iter_48_1[1], var_45_3.column + iter_48_1[2]) then
+									arg_45_0:emit(LevelMediator2.ON_OP, {
 										type = ChapterConst.OpMove,
-										id = uv3.id,
-										arg1 = uv1.row + slot5[1],
-										arg2 = uv1.column + slot5[2],
-										ordLine = uv3.line
+										id = var_45_2.id,
+										arg1 = var_45_3.row + iter_48_1[1],
+										arg2 = var_45_3.column + iter_48_1[2],
+										ordLine = var_45_2.line
 									})
 
 									return false
@@ -795,14 +905,14 @@ function slot0.updateFleet(slot0, slot1, slot2)
 							pg.TipsMgr.GetInstance():ShowTips(i18n("no_way_to_escape"))
 
 							return true
-						end()
+						end)()
 					else
 						pg.MsgboxMgr.GetInstance():ShowMsgBox({
-							content = i18n("levelScene_who_to_retreat", uv4.name),
-							onYes = function ()
-								uv0:emit(LevelMediator2.ON_OP, {
+							content = i18n("levelScene_who_to_retreat", var_45_2.name),
+							onYes = function()
+								arg_45_0:emit(LevelMediator2.ON_OP, {
 									type = ChapterConst.OpRetreat,
-									id = uv1.id
+									id = var_45_2.id
 								})
 							end
 						})
@@ -810,482 +920,550 @@ function slot0.updateFleet(slot0, slot1, slot2)
 				end, SFX_UI_WEIGHANCHOR_WITHDRAW)
 			end
 
-			setActive(slot14:Find("exchange"), false)
-			setActive(slot4.tfAmmo, not slot12)
+			local var_45_20 = var_45_11:Find("exchange")
 
-			slot21, slot22 = slot3:getFleetAmmo(slot5)
+			setActive(var_45_20, false)
+			setActive(var_45_1.tfAmmo, not var_45_9)
 
-			if slot22 == 0 then
-				slot23 = setColorStr(slot22 .. "/" .. slot21, COLOR_RED)
+			local var_45_21, var_45_22 = var_45_0:getFleetAmmo(var_45_2)
+			local var_45_23 = var_45_22 .. "/" .. var_45_21
+
+			if var_45_22 == 0 then
+				var_45_23 = setColorStr(var_45_23, COLOR_RED)
 			end
 
-			setText(slot4.tfAmmoText, slot23)
+			setText(var_45_1.tfAmmoText, var_45_23)
 
-			if slot10 or slot12 then
-				if slot10 and slot11 == ChapterConst.AttachChampion and slot3:getChampion(slot6.row, slot6.column):getPoolType() == ChapterConst.TemplateChampion then
-					slot4.tfArrow.anchoredPosition = Vector2(0, 180)
-					slot4.tfAmmo.anchoredPosition = Vector2(60, 100)
+			if var_45_7 or var_45_9 then
+				local var_45_24 = var_45_0:getChampion(var_45_3.row, var_45_3.column)
+
+				if var_45_7 and var_45_8 == ChapterConst.AttachChampion and var_45_24:getPoolType() == ChapterConst.TemplateChampion then
+					var_45_1.tfArrow.anchoredPosition = Vector2(0, 180)
+					var_45_1.tfAmmo.anchoredPosition = Vector2(60, 100)
 				else
-					slot4.tfArrow.anchoredPosition = Vector2(0, 100)
-					slot4.tfAmmo.anchoredPosition = Vector2(22, 56)
+					var_45_1.tfArrow.anchoredPosition = Vector2(0, 100)
+					var_45_1.tfAmmo.anchoredPosition = Vector2(22, 56)
 				end
 
-				slot4.tfAmmo:SetAsLastSibling()
+				var_45_1.tfAmmo:SetAsLastSibling()
 			else
-				slot4.tfArrow.anchoredPosition = Vector2(0, 175)
-				slot4.tfAmmo.anchoredPosition = Vector2(-60, 85)
+				var_45_1.tfArrow.anchoredPosition = Vector2(0, 175)
+				var_45_1.tfAmmo.anchoredPosition = Vector2(-60, 85)
 			end
 
-			if slot4:GetSpineRole() and slot13 and slot0.lastSelectedId ~= slot5.id then
-				if not slot10 and not slot12 and slot0.lastSelectedId ~= -1 then
-					slot4:TweenShining()
+			if var_45_1:GetSpineRole() and var_45_10 and arg_45_0.lastSelectedId ~= var_45_2.id then
+				if not var_45_7 and not var_45_9 and arg_45_0.lastSelectedId ~= -1 then
+					var_45_1:TweenShining()
 				end
 
-				slot0.lastSelectedId = slot5.id
+				arg_45_0.lastSelectedId = var_45_2.id
 			end
 
-			slot4:SetActiveNoPassIcon(slot3:existBarrier(slot6.row, slot6.column))
-			slot4:UpdateIconRecordedFlag(table.contains(slot5:GetStatusStrategy(), ChapterConst.StrategyIntelligenceRecorded))
-		elseif slot8 == FleetType.Submarine then
-			slot9 = slot3:existEnemy(ChapterConst.SubjectPlayer, slot6.row, slot6.column) or slot3:existAlly(slot5)
+			local var_45_25 = var_45_0:existBarrier(var_45_3.row, var_45_3.column)
 
-			slot4:SetActiveModel(not slot9 and slot3.subAutoAttack == 1)
-			setActive(slot4.tfAmmo, not slot9)
+			var_45_1:SetActiveNoPassIcon(var_45_25)
 
-			slot11, slot12 = slot3:getFleetAmmo(slot5)
+			local var_45_26 = table.contains(var_45_2:GetStatusStrategy(), ChapterConst.StrategyIntelligenceRecorded)
 
-			if slot12 == 0 then
-				slot13 = setColorStr(slot12 .. "/" .. slot11, COLOR_RED)
+			var_45_1:UpdateIconRecordedFlag(var_45_26)
+		elseif var_45_5 == FleetType.Submarine then
+			local var_45_27 = var_45_0:existEnemy(ChapterConst.SubjectPlayer, var_45_3.row, var_45_3.column) or var_45_0:existAlly(var_45_2)
+			local var_45_28 = var_45_0.subAutoAttack == 1
+
+			var_45_1:SetActiveModel(not var_45_27 and var_45_28)
+			setActive(var_45_1.tfAmmo, not var_45_27)
+
+			local var_45_29, var_45_30 = var_45_0:getFleetAmmo(var_45_2)
+			local var_45_31 = var_45_30 .. "/" .. var_45_29
+
+			if var_45_30 == 0 then
+				var_45_31 = setColorStr(var_45_31, COLOR_RED)
 			end
 
-			setText(slot4.tfAmmoText, slot13)
-		elseif slot8 == FleetType.Transport then
-			setText(slot4.tfHpText, slot5:getRestHp() .. "/" .. slot5:getTotalHp())
-			GetImageSpriteFromAtlasAsync("enemies/" .. slot5:getPrefab(), "", slot4.tfIcon, true)
-			setActive(slot4.tfFighting, slot3:existEnemy(ChapterConst.SubjectPlayer, slot6.row, slot6.column))
+			setText(var_45_1.tfAmmoText, var_45_31)
+		elseif var_45_5 == FleetType.Transport then
+			setText(var_45_1.tfHpText, var_45_2:getRestHp() .. "/" .. var_45_2:getTotalHp())
+
+			local var_45_32 = var_45_0:existEnemy(ChapterConst.SubjectPlayer, var_45_3.row, var_45_3.column)
+
+			GetImageSpriteFromAtlasAsync("enemies/" .. var_45_2:getPrefab(), "", var_45_1.tfIcon, true)
+			setActive(var_45_1.tfFighting, var_45_32)
 		end
 	end
 
-	existCall(slot2)
+	existCall(arg_45_2)
 end
 
-function slot0.UpdateOpBtns(slot0)
-	table.Foreach(slot0.opBtns, function (slot0, slot1)
-		setActive(slot1, uv0.quadState == ChapterConst.QuadStateNormal)
+function var_0_0.UpdateOpBtns(arg_50_0)
+	table.Foreach(arg_50_0.opBtns, function(arg_51_0, arg_51_1)
+		setActive(arg_51_1, arg_50_0.quadState == ChapterConst.QuadStateNormal)
 	end)
 end
 
-function slot0.GetCellFleet(slot0, slot1)
-	return slot0.cellFleets[slot1]
+function var_0_0.GetCellFleet(arg_52_0, arg_52_1)
+	return arg_52_0.cellFleets[arg_52_1]
 end
 
-function slot0.initTargetArrow(slot0)
-	slot0.arrowTarget = cloneTplTo(slot0.arrowTpl, slot0._tf)
-	slot2 = slot0.arrowTarget
+function var_0_0.initTargetArrow(arg_53_0)
+	local var_53_0 = arg_53_0.contextData.chapterVO
 
-	pg.ViewUtils.SetLayer(tf(slot2), Layer.UI)
+	arg_53_0.arrowTarget = cloneTplTo(arg_53_0.arrowTpl, arg_53_0._tf)
 
-	GetOrAddComponent(slot2, typeof(Canvas)).overrideSorting = true
-	slot0.arrowTarget.localEulerAngles = Vector3(-slot0.contextData.chapterVO.theme.angle, 0, 0)
+	local var_53_1 = arg_53_0.arrowTarget
 
-	setActive(slot0.arrowTarget, false)
+	pg.ViewUtils.SetLayer(tf(var_53_1), Layer.UI)
+
+	GetOrAddComponent(var_53_1, typeof(Canvas)).overrideSorting = true
+	arg_53_0.arrowTarget.localEulerAngles = Vector3(-var_53_0.theme.angle, 0, 0)
+
+	setActive(arg_53_0.arrowTarget, false)
 end
 
-function slot0.updateTargetArrow(slot0, slot1)
-	slot2 = slot0.contextData.chapterVO
+function var_0_0.updateTargetArrow(arg_54_0, arg_54_1)
+	local var_54_0 = arg_54_0.contextData.chapterVO
+	local var_54_1 = ChapterCell.Line2Name(arg_54_1.row, arg_54_1.column)
+	local var_54_2 = arg_54_0.cellRoot:Find(var_54_1)
 
-	slot0.arrowTarget:SetParent(slot0.cellRoot:Find(ChapterCell.Line2Name(slot1.row, slot1.column)))
+	arg_54_0.arrowTarget:SetParent(var_54_2)
 
-	slot6, slot7 = function ()
-		slot0, slot1 = uv0:existEnemy(ChapterConst.SubjectPlayer, uv1.row, uv1.column)
+	local var_54_3, var_54_4 = (function()
+		local var_55_0, var_55_1 = var_54_0:existEnemy(ChapterConst.SubjectPlayer, arg_54_1.row, arg_54_1.column)
 
-		if not slot0 then
+		if not var_55_0 then
 			return false
 		end
 
-		if slot1 == ChapterConst.AttachChampion then
-			if not uv0:getChampion(uv1.row, uv1.column) then
+		if var_55_1 == ChapterConst.AttachChampion then
+			local var_55_2 = var_54_0:getChampion(arg_54_1.row, arg_54_1.column)
+
+			if not var_55_2 then
 				return false
 			end
 
-			return slot2:getPoolType() == "common", slot2:getScale() / 100
-		elseif ChapterConst.IsEnemyAttach(slot1) then
-			if not uv0:getChapterCell(uv1.row, uv1.column) or slot2.flag ~= ChapterConst.CellFlagActive then
+			return var_55_2:getPoolType() == "common", var_55_2:getScale() / 100
+		elseif ChapterConst.IsEnemyAttach(var_55_1) then
+			local var_55_3 = var_54_0:getChapterCell(arg_54_1.row, arg_54_1.column)
+
+			if not var_55_3 or var_55_3.flag ~= ChapterConst.CellFlagActive then
 				return false
 			end
 
-			return pg.expedition_data_template[slot2.attachmentId].icon_type == 2, slot3.scale / 100
+			local var_55_4 = pg.expedition_data_template[var_55_3.attachmentId]
+
+			return var_55_4.icon_type == 2, var_55_4.scale / 100
 		end
-	end()
+	end)()
 
-	if slot6 then
-		slot0.arrowTarget.localPosition = Vector3(0, 20 + 80 * slot7, -80 * slot7)
+	if var_54_3 then
+		arg_54_0.arrowTarget.localPosition = Vector3(0, 20 + 80 * var_54_4, -80 * var_54_4)
 	else
-		slot0.arrowTarget.localPosition = Vector3(0, 20, 0)
+		arg_54_0.arrowTarget.localPosition = Vector3(0, 20, 0)
 	end
 
-	if slot0.arrowTarget:GetComponent(typeof(Canvas)) then
-		slot8.sortingOrder = slot1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityTopMark
-	end
-end
+	local var_54_5 = arg_54_0.arrowTarget:GetComponent(typeof(Canvas))
 
-function slot0.clearTargetArrow(slot0)
-	if not IsNil(slot0.arrowTarget) then
-		Destroy(slot0.arrowTarget)
-
-		slot0.arrowTarget = nil
+	if var_54_5 then
+		var_54_5.sortingOrder = arg_54_1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityTopMark
 	end
 end
 
-function slot0.InitDestinationMark(slot0)
-	slot1 = cloneTplTo(slot0.destinationMarkTpl, slot0._tf)
+function var_0_0.clearTargetArrow(arg_56_0)
+	if not IsNil(arg_56_0.arrowTarget) then
+		Destroy(arg_56_0.arrowTarget)
 
-	pg.ViewUtils.SetLayer(tf(slot1), Layer.UI)
-
-	GetOrAddComponent(slot1, typeof(Canvas)).overrideSorting = true
-
-	setActive(slot1, false)
-
-	tf(slot1).localEulerAngles = Vector3(-slot0.contextData.chapterVO.theme.angle, 0, 0)
-	slot0.destinationMark = tf(slot1)
+		arg_56_0.arrowTarget = nil
+	end
 end
 
-function slot0.UpdateDestinationMark(slot0, slot1)
-	if not slot1 then
-		slot0.destinationMark:SetParent(slot0._tf)
-		setActive(go(slot0.destinationMark), false)
+function var_0_0.InitDestinationMark(arg_57_0)
+	local var_57_0 = cloneTplTo(arg_57_0.destinationMarkTpl, arg_57_0._tf)
+
+	pg.ViewUtils.SetLayer(tf(var_57_0), Layer.UI)
+
+	GetOrAddComponent(var_57_0, typeof(Canvas)).overrideSorting = true
+
+	setActive(var_57_0, false)
+
+	local var_57_1 = arg_57_0.contextData.chapterVO
+
+	tf(var_57_0).localEulerAngles = Vector3(-var_57_1.theme.angle, 0, 0)
+	arg_57_0.destinationMark = tf(var_57_0)
+end
+
+function var_0_0.UpdateDestinationMark(arg_58_0, arg_58_1)
+	if not arg_58_1 then
+		arg_58_0.destinationMark:SetParent(arg_58_0._tf)
+		setActive(go(arg_58_0.destinationMark), false)
 
 		return
 	end
 
-	setActive(go(slot0.destinationMark), true)
-	slot0.destinationMark:SetParent(slot0.cellRoot:Find(ChapterCell.Line2Name(slot1.row, slot1.column)))
+	setActive(go(arg_58_0.destinationMark), true)
 
-	slot0.destinationMark.localPosition = Vector3(0, 40, -40)
+	local var_58_0 = ChapterCell.Line2Name(arg_58_1.row, arg_58_1.column)
+	local var_58_1 = arg_58_0.cellRoot:Find(var_58_0)
 
-	if slot0.destinationMark:GetComponent(typeof(Canvas)) then
-		slot4.sortingOrder = slot1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityTopMark
+	arg_58_0.destinationMark:SetParent(var_58_1)
+
+	arg_58_0.destinationMark.localPosition = Vector3(0, 40, -40)
+
+	local var_58_2 = arg_58_0.destinationMark:GetComponent(typeof(Canvas))
+
+	if var_58_2 then
+		var_58_2.sortingOrder = arg_58_1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityTopMark
 	end
 end
 
-function slot0.ClearDestinationMark(slot0)
-	if not IsNil(slot0.destinationMark) then
-		Destroy(slot0.destinationMark)
+function var_0_0.ClearDestinationMark(arg_59_0)
+	if not IsNil(arg_59_0.destinationMark) then
+		Destroy(arg_59_0.destinationMark)
 
-		slot0.destinationMark = nil
+		arg_59_0.destinationMark = nil
 	end
 end
 
-function slot0.initChampions(slot0, slot1)
-	if slot0.cellChampions then
-		existCall(slot1)
+function var_0_0.initChampions(arg_60_0, arg_60_1)
+	if arg_60_0.cellChampions then
+		existCall(arg_60_1)
 
 		return
 	end
 
-	slot0.cellChampions = {}
+	arg_60_0.cellChampions = {}
 
-	table.ParallelIpairsAsync(slot0.contextData.chapterVO.champions, function (slot0, slot1, slot2)
-		uv0.cellChampions[slot0] = false
+	local var_60_0 = arg_60_0.contextData.chapterVO
 
-		if slot1.flag ~= ChapterConst.CellFlagDisabled then
-			uv0:InitChampion(slot0, slot2)
+	table.ParallelIpairsAsync(var_60_0.champions, function(arg_61_0, arg_61_1, arg_61_2)
+		arg_60_0.cellChampions[arg_61_0] = false
+
+		if arg_61_1.flag ~= ChapterConst.CellFlagDisabled then
+			arg_60_0:InitChampion(arg_61_0, arg_61_2)
 		else
-			slot2()
+			arg_61_2()
 		end
-	end, slot1)
+	end, arg_60_1)
 end
 
-function slot0.InitChampion(slot0, slot1, slot2)
-	slot3 = slot0.contextData.chapterVO
-	slot4 = slot3.champions[slot1]
-	slot5 = slot4:getPoolType()
-	slot7 = slot0:getChampionPool(slot5):Dequeue()
-	slot7.name = "cell_champion_" .. slot4:getPrefab()
-	slot7.transform.localEulerAngles = Vector3(-slot3.theme.angle, 0, 0)
+function var_0_0.InitChampion(arg_62_0, arg_62_1, arg_62_2)
+	local var_62_0 = arg_62_0.contextData.chapterVO
+	local var_62_1 = var_62_0.champions[arg_62_1]
+	local var_62_2 = var_62_1:getPoolType()
+	local var_62_3 = arg_62_0:getChampionPool(var_62_2):Dequeue()
 
-	setParent(slot7, slot0.cellRoot, false)
-	setActive(slot7, true)
+	var_62_3.name = "cell_champion_" .. var_62_1:getPrefab()
+	var_62_3.transform.localEulerAngles = Vector3(-var_62_0.theme.angle, 0, 0)
 
-	slot8 = nil
+	setParent(var_62_3, arg_62_0.cellRoot, false)
+	setActive(var_62_3, true)
 
-	if slot5 == ChapterConst.TemplateChampion then
-		slot8 = DynamicChampionCellView
-	elseif slot5 == ChapterConst.TemplateEnemy then
-		slot8 = DynamicEggCellView
-	elseif slot5 == ChapterConst.TemplateOni then
-		slot8 = OniCellView
+	local var_62_4
+
+	if var_62_2 == ChapterConst.TemplateChampion then
+		var_62_4 = DynamicChampionCellView
+	elseif var_62_2 == ChapterConst.TemplateEnemy then
+		var_62_4 = DynamicEggCellView
+	elseif var_62_2 == ChapterConst.TemplateOni then
+		var_62_4 = OniCellView
 	end
 
-	slot9 = slot8.New(slot7)
-	slot0.cellChampions[slot1] = slot9
+	local var_62_5 = var_62_4.New(var_62_3)
 
-	slot9:SetLine({
-		row = slot4.row,
-		column = slot4.column
+	arg_62_0.cellChampions[arg_62_1] = var_62_5
+
+	var_62_5:SetLine({
+		row = var_62_1.row,
+		column = var_62_1.column
 	})
-	slot9:SetPoolType(slot5)
+	var_62_5:SetPoolType(var_62_2)
 
-	if slot9.GetRotatePivot then
-		tf(slot9:GetRotatePivot()).localRotation = slot4.rotation
+	if var_62_5.GetRotatePivot then
+		tf(var_62_5:GetRotatePivot()).localRotation = var_62_1.rotation
 	end
 
-	if slot5 == ChapterConst.TemplateChampion then
-		slot9:SetAction(ChapterConst.ShipIdleAction)
+	if var_62_2 == ChapterConst.TemplateChampion then
+		var_62_5:SetAction(ChapterConst.ShipIdleAction)
 
-		if slot4.flag == ChapterConst.CellFlagDiving then
-			slot9:SetAction(ChapterConst.ShipSwimAction)
+		if var_62_1.flag == ChapterConst.CellFlagDiving then
+			var_62_5:SetAction(ChapterConst.ShipSwimAction)
 		end
 
-		slot9:LoadSpine(slot4:getPrefab(), slot4:getScale(), slot4:getConfig("effect_prefab"), function ()
-			uv0:updateChampion(uv1, uv2)
+		var_62_5:LoadSpine(var_62_1:getPrefab(), var_62_1:getScale(), var_62_1:getConfig("effect_prefab"), function()
+			arg_62_0:updateChampion(arg_62_1, arg_62_2)
 		end)
-	elseif slot5 == ChapterConst.TemplateEnemy then
-		slot9:LoadIcon(slot4:getPrefab(), slot4:getConfigTable(), function ()
-			uv0:updateChampion(uv1, uv2)
+	elseif var_62_2 == ChapterConst.TemplateEnemy then
+		var_62_5:LoadIcon(var_62_1:getPrefab(), var_62_1:getConfigTable(), function()
+			arg_62_0:updateChampion(arg_62_1, arg_62_2)
 		end)
-	elseif slot5 == ChapterConst.TemplateOni then
-		slot0:updateChampion(slot1, slot2)
+	elseif var_62_2 == ChapterConst.TemplateOni then
+		arg_62_0:updateChampion(arg_62_1, arg_62_2)
 	end
 end
 
-function slot0.updateChampions(slot0, slot1)
-	table.ParallelIpairsAsync(slot0.cellChampions, function (slot0, slot1, slot2)
-		uv0:updateChampion(slot0, slot2)
-	end, slot1)
+function var_0_0.updateChampions(arg_65_0, arg_65_1)
+	table.ParallelIpairsAsync(arg_65_0.cellChampions, function(arg_66_0, arg_66_1, arg_66_2)
+		arg_65_0:updateChampion(arg_66_0, arg_66_2)
+	end, arg_65_1)
 end
 
-function slot0.updateChampion(slot0, slot1, slot2)
-	slot5 = slot0.contextData.chapterVO.champions[slot1]
+function var_0_0.updateChampion(arg_67_0, arg_67_1, arg_67_2)
+	local var_67_0 = arg_67_0.contextData.chapterVO
+	local var_67_1 = arg_67_0.cellChampions[arg_67_1]
+	local var_67_2 = var_67_0.champions[arg_67_1]
 
-	if slot0.cellChampions[slot1] and slot5 then
-		slot4:UpdateChampionCell(slot3, slot5, slot2)
+	if var_67_1 and var_67_2 then
+		var_67_1:UpdateChampionCell(var_67_0, var_67_2, arg_67_2)
 	end
 end
 
-function slot0.updateOni(slot0)
-	slot2 = nil
+function var_0_0.updateOni(arg_68_0)
+	local var_68_0 = arg_68_0.contextData.chapterVO
+	local var_68_1
 
-	for slot6, slot7 in ipairs(slot0.contextData.chapterVO.champions) do
-		if slot7.attachment == ChapterConst.AttachOni then
-			slot2 = slot6
+	for iter_68_0, iter_68_1 in ipairs(var_68_0.champions) do
+		if iter_68_1.attachment == ChapterConst.AttachOni then
+			var_68_1 = iter_68_0
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot0:updateChampion(slot2)
+	if var_68_1 then
+		arg_68_0:updateChampion(var_68_1)
 	end
 end
 
-function slot0.clearChampions(slot0)
-	if slot0.cellChampions then
-		for slot4, slot5 in ipairs(slot0.cellChampions) do
-			if slot5 then
-				slot5:Clear()
-				LeanTween.cancel(slot5.go)
-				setActive(slot5.go, false)
-				setParent(slot5.go, slot0.poolParent, false)
-				slot0:getChampionPool(slot5:GetPoolType()):Enqueue(slot5.go, false)
+function var_0_0.clearChampions(arg_69_0)
+	if arg_69_0.cellChampions then
+		for iter_69_0, iter_69_1 in ipairs(arg_69_0.cellChampions) do
+			if iter_69_1 then
+				iter_69_1:Clear()
+				LeanTween.cancel(iter_69_1.go)
+				setActive(iter_69_1.go, false)
+				setParent(iter_69_1.go, arg_69_0.poolParent, false)
+				arg_69_0:getChampionPool(iter_69_1:GetPoolType()):Enqueue(iter_69_1.go, false)
 			end
 		end
 
-		slot0.cellChampions = nil
+		arg_69_0.cellChampions = nil
 	end
 end
 
-function slot0.initCell(slot0, slot1, slot2)
-	if slot0.contextData.chapterVO:getChapterCell(slot1, slot2) then
-		slot5 = slot3.theme.cellSize
-		slot7 = nil
+function var_0_0.initCell(arg_70_0, arg_70_1, arg_70_2)
+	local var_70_0 = arg_70_0.contextData.chapterVO
+	local var_70_1 = var_70_0:getChapterCell(arg_70_1, arg_70_2)
 
-		if slot4:IsWalkable() then
-			PoolMgr.GetInstance():GetPrefab("chapter/cell_quad", "", false, function (slot0)
-				uv0 = slot0.transform
+	if var_70_1 then
+		local var_70_2 = var_70_0.theme.cellSize
+		local var_70_3 = ChapterCell.Line2QuadName(arg_70_1, arg_70_2)
+		local var_70_4
+
+		if var_70_1:IsWalkable() then
+			PoolMgr.GetInstance():GetPrefab("chapter/cell_quad", "", false, function(arg_71_0)
+				var_70_4 = arg_71_0.transform
 			end)
 
-			slot7.name = ChapterCell.Line2QuadName(slot1, slot2)
+			var_70_4.name = var_70_3
 
-			slot7:SetParent(slot0.quadRoot, false)
+			var_70_4:SetParent(arg_70_0.quadRoot, false)
 
-			slot7.sizeDelta = slot5
-			slot7.anchoredPosition = slot3.theme:GetLinePosition(slot1, slot2)
+			var_70_4.sizeDelta = var_70_2
+			var_70_4.anchoredPosition = var_70_0.theme:GetLinePosition(arg_70_1, arg_70_2)
 
-			slot7:SetAsLastSibling()
-			onButton(slot0, slot7, function ()
-				if uv0:isfrozen() then
+			var_70_4:SetAsLastSibling()
+			onButton(arg_70_0, var_70_4, function()
+				if arg_70_0:isfrozen() then
 					return
 				end
 
-				uv0:ClickGridCell(uv1)
+				arg_70_0:ClickGridCell(var_70_1)
 			end, SFX_CONFIRM)
 		end
 
-		slot9 = nil
+		local var_70_5 = ChapterCell.Line2Name(arg_70_1, arg_70_2)
+		local var_70_6
 
-		PoolMgr.GetInstance():GetPrefab("chapter/cell", "", false, function (slot0)
-			uv0 = slot0.transform
+		PoolMgr.GetInstance():GetPrefab("chapter/cell", "", false, function(arg_73_0)
+			var_70_6 = arg_73_0.transform
 		end)
 
-		slot9.name = ChapterCell.Line2Name(slot1, slot2)
+		var_70_6.name = var_70_5
 
-		slot9:SetParent(slot0.cellRoot, false)
+		var_70_6:SetParent(arg_70_0.cellRoot, false)
 
-		slot9.sizeDelta = slot5
-		slot9.anchoredPosition = slot3.theme:GetLinePosition(slot1, slot2)
+		var_70_6.sizeDelta = var_70_2
+		var_70_6.anchoredPosition = var_70_0.theme:GetLinePosition(arg_70_1, arg_70_2)
 
-		slot9:SetAsLastSibling()
+		var_70_6:SetAsLastSibling()
 
-		slot10 = slot9:Find(ChapterConst.ChildItem)
-		slot10.localEulerAngles = Vector3(-slot3.theme.angle, 0, 0)
+		local var_70_7 = var_70_6:Find(ChapterConst.ChildItem)
 
-		setActive(slot10, slot4.item)
+		var_70_7.localEulerAngles = Vector3(-var_70_0.theme.angle, 0, 0)
 
-		slot11 = ItemCell.New(slot10, slot1, slot2)
-		slot0.itemCells[ChapterCell.Line2Name(slot1, slot2)] = slot11
-		slot11.loader = slot0.loader
+		setActive(var_70_7, var_70_1.item)
 
-		slot11:Init(slot4)
+		local var_70_8 = ItemCell.New(var_70_7, arg_70_1, arg_70_2)
 
-		slot9:Find(ChapterConst.ChildAttachment).localEulerAngles = Vector3(-slot3.theme.angle, 0, 0)
+		arg_70_0.itemCells[ChapterCell.Line2Name(arg_70_1, arg_70_2)] = var_70_8
+		var_70_8.loader = arg_70_0.loader
+
+		var_70_8:Init(var_70_1)
+
+		var_70_6:Find(ChapterConst.ChildAttachment).localEulerAngles = Vector3(-var_70_0.theme.angle, 0, 0)
 	end
 end
 
-function slot0.clearCell(slot0, slot1, slot2)
-	slot6 = slot0.quadRoot:Find(ChapterCell.Line2QuadName(slot1, slot2))
+function var_0_0.clearCell(arg_74_0, arg_74_1, arg_74_2)
+	local var_74_0 = ChapterCell.Line2Name(arg_74_1, arg_74_2)
+	local var_74_1 = ChapterCell.Line2QuadName(arg_74_1, arg_74_2)
+	local var_74_2 = arg_74_0.cellRoot:Find(var_74_0)
+	local var_74_3 = arg_74_0.quadRoot:Find(var_74_1)
 
-	if not IsNil(slot0.cellRoot:Find(ChapterCell.Line2Name(slot1, slot2))) then
-		PoolMgr.GetInstance():ReturnPrefab("chapter/cell", "", slot5.gameObject)
+	if not IsNil(var_74_2) then
+		PoolMgr.GetInstance():ReturnPrefab("chapter/cell", "", var_74_2.gameObject)
 	end
 
-	if not IsNil(slot6) then
-		if slot0.quadTws[slot4] then
-			LeanTween.cancel(slot0.quadTws[slot4].uniqueId)
+	if not IsNil(var_74_3) then
+		if arg_74_0.quadTws[var_74_1] then
+			LeanTween.cancel(arg_74_0.quadTws[var_74_1].uniqueId)
 
-			slot0.quadTws[slot4] = nil
+			arg_74_0.quadTws[var_74_1] = nil
 		end
 
-		slot7 = slot6:Find("grid"):GetComponent(typeof(Image))
-		slot7.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
-		slot7.material = nil
+		local var_74_4 = var_74_3:Find("grid"):GetComponent(typeof(Image))
 
-		PoolMgr.GetInstance():ReturnPrefab("chapter/cell_quad", "", slot6.gameObject)
+		var_74_4.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
+		var_74_4.material = nil
+
+		PoolMgr.GetInstance():ReturnPrefab("chapter/cell_quad", "", var_74_3.gameObject)
 	end
 end
 
-function slot0.UpdateItemCells(slot0)
-	if not slot0.contextData.chapterVO then
+function var_0_0.UpdateItemCells(arg_75_0)
+	local var_75_0 = arg_75_0.contextData.chapterVO
+
+	if not var_75_0 then
 		return
 	end
 
-	for slot5, slot6 in pairs(slot0.itemCells) do
-		slot6:UpdateAsset(ItemCell.TransformItemAsset(slot1, slot6:GetOriginalInfo() and slot7.item))
+	for iter_75_0, iter_75_1 in pairs(arg_75_0.itemCells) do
+		local var_75_1 = iter_75_1:GetOriginalInfo()
+		local var_75_2 = var_75_1 and var_75_1.item
+		local var_75_3 = ItemCell.TransformItemAsset(var_75_0, var_75_2)
+
+		iter_75_1:UpdateAsset(var_75_3)
 	end
 end
 
-function slot0.updateAttachments(slot0)
-	for slot4 = 0, ChapterConst.MaxRow - 1 do
-		for slot8 = 0, ChapterConst.MaxColumn - 1 do
-			slot0:updateAttachment(slot4, slot8)
+function var_0_0.updateAttachments(arg_76_0)
+	for iter_76_0 = 0, ChapterConst.MaxRow - 1 do
+		for iter_76_1 = 0, ChapterConst.MaxColumn - 1 do
+			arg_76_0:updateAttachment(iter_76_0, iter_76_1)
 		end
 	end
 
-	slot0:updateExtraAttachments()
-	slot0:updateCoastalGunAttachArea()
-	slot0:displayEscapeGrid()
+	arg_76_0:updateExtraAttachments()
+	arg_76_0:updateCoastalGunAttachArea()
+	arg_76_0:displayEscapeGrid()
 end
 
-function slot0.UpdateFloor(slot0)
-	slot3 = {}
+function var_0_0.UpdateFloor(arg_77_0)
+	local var_77_0 = arg_77_0.contextData.chapterVO
+	local var_77_1 = var_77_0.cells
+	local var_77_2 = {}
 
-	for slot7, slot8 in pairs(slot0.contextData.chapterVO.cells) do
-		for slot13, slot14 in pairs(slot8:GetFlagList()) do
-			slot3[slot14] = slot3[slot14] or {}
+	for iter_77_0, iter_77_1 in pairs(var_77_1) do
+		local var_77_3 = iter_77_1:GetFlagList()
 
-			table.insert(slot3[slot14], slot8)
+		for iter_77_2, iter_77_3 in pairs(var_77_3) do
+			var_77_2[iter_77_3] = var_77_2[iter_77_3] or {}
+
+			table.insert(var_77_2[iter_77_3], iter_77_1)
 		end
 	end
 
-	if slot3[ChapterConst.FlagBanaiAirStrike] and next(slot3[ChapterConst.FlagBanaiAirStrike]) then
-		slot0:hideQuadMark(ChapterConst.MarkBanaiAirStrike)
-		slot0:showQuadMark(slot3[ChapterConst.FlagBanaiAirStrike], ChapterConst.MarkBanaiAirStrike, "cell_coastal_gun", Vector2(110, 110), nil, true)
+	if var_77_2[ChapterConst.FlagBanaiAirStrike] and next(var_77_2[ChapterConst.FlagBanaiAirStrike]) then
+		arg_77_0:hideQuadMark(ChapterConst.MarkBanaiAirStrike)
+		arg_77_0:showQuadMark(var_77_2[ChapterConst.FlagBanaiAirStrike], ChapterConst.MarkBanaiAirStrike, "cell_coastal_gun", Vector2(110, 110), nil, true)
 	end
 
-	slot0:updatePoisonArea()
+	arg_77_0:updatePoisonArea()
 
-	if slot3[ChapterConst.FlagLava] and next(slot3[ChapterConst.FlagLava]) then
-		slot0:hideQuadMark(ChapterConst.MarkLava)
-		slot0:showQuadMark(slot3[ChapterConst.FlagLava], ChapterConst.MarkLava, "cell_lava", Vector2(110, 110), nil, true)
+	if var_77_2[ChapterConst.FlagLava] and next(var_77_2[ChapterConst.FlagLava]) then
+		arg_77_0:hideQuadMark(ChapterConst.MarkLava)
+		arg_77_0:showQuadMark(var_77_2[ChapterConst.FlagLava], ChapterConst.MarkLava, "cell_lava", Vector2(110, 110), nil, true)
 	end
 
-	if slot3[ChapterConst.FlagNightmare] and next(slot3[ChapterConst.FlagNightmare]) then
-		slot0:hideQuadMark(ChapterConst.MarkNightMare)
-		slot0:hideQuadMark(ChapterConst.MarkHideNight)
+	if var_77_2[ChapterConst.FlagNightmare] and next(var_77_2[ChapterConst.FlagNightmare]) then
+		arg_77_0:hideQuadMark(ChapterConst.MarkNightMare)
+		arg_77_0:hideQuadMark(ChapterConst.MarkHideNight)
 
-		if slot1:getExtraFlags()[1] == ChapterConst.StatusDay then
-			slot0:showQuadMark(slot3[ChapterConst.FlagNightmare], ChapterConst.MarkHideNight, "cell_hidden_nightmare", Vector2(110, 110), nil, true)
-		elseif slot4 == ChapterConst.StatusNight then
-			slot0:showQuadMark(slot3[ChapterConst.FlagNightmare], ChapterConst.MarkNightMare, "cell_nightmare", Vector2(110, 110), nil, true)
+		local var_77_4 = var_77_0:getExtraFlags()[1]
+
+		if var_77_4 == ChapterConst.StatusDay then
+			arg_77_0:showQuadMark(var_77_2[ChapterConst.FlagNightmare], ChapterConst.MarkHideNight, "cell_hidden_nightmare", Vector2(110, 110), nil, true)
+		elseif var_77_4 == ChapterConst.StatusNight then
+			arg_77_0:showQuadMark(var_77_2[ChapterConst.FlagNightmare], ChapterConst.MarkNightMare, "cell_nightmare", Vector2(110, 110), nil, true)
 		end
 	end
 
-	slot4 = {}
+	local var_77_5 = {}
 
-	for slot8, slot9 in pairs(slot1:GetChapterCellAttachemnts()) do
-		if slot9.data == ChapterConst.StoryTrigger then
-			slot10 = pg.map_event_template[slot9.attachmentId]
+	for iter_77_4, iter_77_5 in pairs(var_77_0:GetChapterCellAttachemnts()) do
+		if iter_77_5.data == ChapterConst.StoryTrigger then
+			local var_77_6 = pg.map_event_template[iter_77_5.attachmentId]
 
-			assert(slot10, "map_event_template not exists " .. slot9.attachmentId)
+			assert(var_77_6, "map_event_template not exists " .. iter_77_5.attachmentId)
 
-			if slot10 and slot10.c_type == ChapterConst.EvtType_AdditionalFloor then
-				slot4[slot10.icon] = slot4[slot10.icon] or {}
+			if var_77_6 and var_77_6.c_type == ChapterConst.EvtType_AdditionalFloor then
+				var_77_5[var_77_6.icon] = var_77_5[var_77_6.icon] or {}
 
-				table.insert(slot4[slot10.icon], slot9)
+				table.insert(var_77_5[var_77_6.icon], iter_77_5)
 			end
 		end
 	end
 
-	for slot8, slot9 in pairs(slot4) do
-		slot0:hideQuadMark(slot8)
-		slot0:showQuadMark(slot9, slot8, slot8, Vector2(110, 110), nil, true)
+	for iter_77_6, iter_77_7 in pairs(var_77_5) do
+		arg_77_0:hideQuadMark(iter_77_6)
+		arg_77_0:showQuadMark(iter_77_7, iter_77_6, iter_77_6, Vector2(110, 110), nil, true)
 	end
 
-	if slot1:getConfig("alarm_cell") and #slot5 > 0 then
-		slot6 = slot5[3]
+	local var_77_7 = var_77_0:getConfig("alarm_cell")
 
-		slot0:ClearEdges(slot6)
-		slot0:ClearEdges(slot6 .. "corner")
-		slot0:AddEdgePool(slot6, "chapter/celltexture/" .. slot6, "")
-		slot0:AddEdgePool(slot6 .. "_corner", "chapter/celltexture/" .. slot6 .. "_corner", "")
+	if var_77_7 and #var_77_7 > 0 then
+		local var_77_8 = var_77_7[3]
 
-		slot7 = _.map(slot5[1], function (slot0)
+		arg_77_0:ClearEdges(var_77_8)
+		arg_77_0:ClearEdges(var_77_8 .. "corner")
+		arg_77_0:AddEdgePool(var_77_8, "chapter/celltexture/" .. var_77_8, "")
+		arg_77_0:AddEdgePool(var_77_8 .. "_corner", "chapter/celltexture/" .. var_77_8 .. "_corner", "")
+
+		local var_77_9 = _.map(var_77_7[1], function(arg_78_0)
 			return {
-				row = slot0[1],
-				column = slot0[2]
+				row = arg_78_0[1],
+				column = arg_78_0[2]
 			}
 		end)
 
-		slot0:AddOutlines(slot7, nil, slot5[5], slot5[4], slot6)
+		arg_77_0:AddOutlines(var_77_9, nil, var_77_7[5], var_77_7[4], var_77_8)
 
-		slot8 = slot5[2]
+		local var_77_10 = var_77_7[2]
 
-		slot0:hideQuadMark(slot8)
-		slot0:showQuadMark(slot7, slot8, slot8, Vector2(104, 104), nil, true)
+		arg_77_0:hideQuadMark(var_77_10)
+		arg_77_0:showQuadMark(var_77_9, var_77_10, var_77_10, Vector2(104, 104), nil, true)
 	end
 
-	slot0:HideMissileAimingMarks()
+	arg_77_0:HideMissileAimingMarks()
 
-	if slot3[ChapterConst.FlagMissleAiming] and next(slot3[ChapterConst.FlagMissleAiming]) then
-		slot0:ShowMissileAimingMarks(slot3[ChapterConst.FlagMissleAiming])
+	if var_77_2[ChapterConst.FlagMissleAiming] and next(var_77_2[ChapterConst.FlagMissleAiming]) then
+		arg_77_0:ShowMissileAimingMarks(var_77_2[ChapterConst.FlagMissleAiming])
 	end
 
-	slot0:UpdateWeatherCells()
+	arg_77_0:UpdateWeatherCells()
 
-	slot6 = slot1.fleet
+	local var_77_11 = var_77_0.fleet
 
-	if slot1:isPlayingWithBombEnemy() then
-		slot0:showQuadMark(_.map({
+	if var_77_0:isPlayingWithBombEnemy() then
+		local var_77_12 = _.map({
 			{
 				-1,
 				0
@@ -1302,188 +1480,212 @@ function slot0.UpdateFloor(slot0)
 				0,
 				1
 			}
-		}, function (slot0)
+		}, function(arg_79_0)
 			return {
-				row = slot0[1] + uv0.line.row,
-				column = slot0[2] + uv0.line.column
+				row = arg_79_0[1] + var_77_11.line.row,
+				column = arg_79_0[2] + var_77_11.line.column
 			}
-		end), ChapterConst.MarkBomb, "cell_bomb", Vector2(100, 100), nil, true)
+		end)
+
+		arg_77_0:showQuadMark(var_77_12, ChapterConst.MarkBomb, "cell_bomb", Vector2(100, 100), nil, true)
 	end
 end
 
-function slot0.updateExtraAttachments(slot0)
-	for slot6, slot7 in pairs(slot0.contextData.chapterVO:GetChapterCellAttachemnts()) do
-		slot8 = slot7.row
-		slot9 = slot7.column
-		slot11 = slot0.cellRoot:Find(slot6):Find(ChapterConst.ChildAttachment)
-		slot14 = nil
+function var_0_0.updateExtraAttachments(arg_80_0)
+	local var_80_0 = arg_80_0.contextData.chapterVO
+	local var_80_1 = var_80_0:GetChapterCellAttachemnts()
 
-		if slot7.data == ChapterConst.StoryTrigger and pg.map_event_template[slot7.attachmentId].c_type ~= ChapterConst.EvtType_AdditionalFloor then
-			slot14 = MapEventStoryTriggerCellView
+	for iter_80_0, iter_80_1 in pairs(var_80_1) do
+		local var_80_2 = iter_80_1.row
+		local var_80_3 = iter_80_1.column
+		local var_80_4 = arg_80_0.cellRoot:Find(iter_80_0):Find(ChapterConst.ChildAttachment)
+		local var_80_5 = pg.map_event_template[iter_80_1.attachmentId]
+		local var_80_6 = iter_80_1.data
+		local var_80_7
+
+		if var_80_6 == ChapterConst.StoryTrigger and var_80_5.c_type ~= ChapterConst.EvtType_AdditionalFloor then
+			var_80_7 = MapEventStoryTriggerCellView
 		end
 
-		if slot0.extraAttachmentCells[slot6] and slot15.class ~= slot14 then
-			slot15:Clear()
+		local var_80_8 = arg_80_0.extraAttachmentCells[iter_80_0]
 
-			slot15 = nil
-			slot0.extraAttachmentCells[slot6] = nil
+		if var_80_8 and var_80_8.class ~= var_80_7 then
+			var_80_8:Clear()
+
+			var_80_8 = nil
+			arg_80_0.extraAttachmentCells[iter_80_0] = nil
 		end
 
-		if slot14 then
-			if not slot15 then
-				slot0.extraAttachmentCells[slot6] = slot14.New(slot11)
+		if var_80_7 then
+			if not var_80_8 then
+				var_80_8 = var_80_7.New(var_80_4)
+				arg_80_0.extraAttachmentCells[iter_80_0] = var_80_8
 			end
 
-			slot15.info = slot7
-			slot15.chapter = slot1
+			var_80_8.info = iter_80_1
+			var_80_8.chapter = var_80_0
 
-			slot15:SetLine({
-				row = slot8,
-				column = slot9
+			var_80_8:SetLine({
+				row = var_80_2,
+				column = var_80_3
 			})
-			slot15:Update()
+			var_80_8:Update()
 		end
 	end
 end
 
-function slot0.updateAttachment(slot0, slot1, slot2)
-	if not slot0.contextData.chapterVO:getChapterCell(slot1, slot2) then
+function var_0_0.updateAttachment(arg_81_0, arg_81_1, arg_81_2)
+	local var_81_0 = arg_81_0.contextData.chapterVO
+	local var_81_1 = var_81_0:getChapterCell(arg_81_1, arg_81_2)
+
+	if not var_81_1 then
 		return
 	end
 
-	slot7 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot1, slot2)):Find(ChapterConst.ChildAttachment)
-	slot8 = nil
+	local var_81_2 = ChapterCell.Line2Name(arg_81_1, arg_81_2)
+	local var_81_3 = arg_81_0.cellRoot:Find(var_81_2):Find(ChapterConst.ChildAttachment)
+	local var_81_4
+	local var_81_5 = {}
 
-	if ChapterConst.IsEnemyAttach(slot4.attachment) then
-		assert(pg.expedition_data_template[slot4.attachmentId], "expedition_data_template not exist: " .. slot4.attachmentId)
+	if ChapterConst.IsEnemyAttach(var_81_1.attachment) then
+		local var_81_6 = pg.expedition_data_template[var_81_1.attachmentId]
 
-		if slot4.flag == ChapterConst.CellFlagDisabled then
-			if slot4.attachment ~= ChapterConst.AttachAmbush then
-				slot8 = EnemyDeadCellView
+		assert(var_81_6, "expedition_data_template not exist: " .. var_81_1.attachmentId)
+
+		if var_81_1.flag == ChapterConst.CellFlagDisabled then
+			if var_81_1.attachment ~= ChapterConst.AttachAmbush then
+				var_81_4 = EnemyDeadCellView
+				var_81_5.chapter = var_81_0
+				var_81_5.config = var_81_6
 			end
-		elseif slot4.flag == ChapterConst.CellFlagActive then
-			slot8 = slot10.icon_type == 1 and StaticEggCellView or StaticChampionCellView
-			slot9.config = slot10
-			slot9.chapter = slot3
-			slot9.viewParent = slot0
+		elseif var_81_1.flag == ChapterConst.CellFlagActive then
+			var_81_4 = var_81_6.icon_type == 1 and StaticEggCellView or StaticChampionCellView
+			var_81_5.config = var_81_6
+			var_81_5.chapter = var_81_0
+			var_81_5.viewParent = arg_81_0
 		end
-	elseif slot4.attachment == ChapterConst.AttachBox then
-		slot8 = AttachmentBoxCell
-	elseif slot4.attachment == ChapterConst.AttachSupply then
-		slot8 = AttachmentSupplyCell
-	elseif slot4.attachment == ChapterConst.AttachTransport_Target then
-		slot8 = AttachmentTransportTargetCell
-	elseif slot4.attachment == ChapterConst.AttachStory then
-		if slot4.data == ChapterConst.Story then
-			slot8 = MapEventStoryCellView
-		elseif slot4.data == ChapterConst.StoryObstacle then
-			slot8 = MapEventStoryObstacleCellView
-			slot9.chapter = slot3
+	elseif var_81_1.attachment == ChapterConst.AttachBox then
+		var_81_4 = AttachmentBoxCell
+	elseif var_81_1.attachment == ChapterConst.AttachSupply then
+		var_81_4 = AttachmentSupplyCell
+	elseif var_81_1.attachment == ChapterConst.AttachTransport_Target then
+		var_81_4 = AttachmentTransportTargetCell
+	elseif var_81_1.attachment == ChapterConst.AttachStory then
+		if var_81_1.data == ChapterConst.Story then
+			var_81_4 = MapEventStoryCellView
+		elseif var_81_1.data == ChapterConst.StoryObstacle then
+			var_81_4 = MapEventStoryObstacleCellView
+			var_81_5.chapter = var_81_0
 		end
-	elseif slot4.attachment == ChapterConst.AttachBomb_Enemy then
-		slot8 = AttachmentBombEnemyCell
-	elseif slot4.attachment == ChapterConst.AttachLandbase then
-		slot10 = pg.land_based_template[slot4.attachmentId]
+	elseif var_81_1.attachment == ChapterConst.AttachBomb_Enemy then
+		var_81_4 = AttachmentBombEnemyCell
+	elseif var_81_1.attachment == ChapterConst.AttachLandbase then
+		local var_81_7 = pg.land_based_template[var_81_1.attachmentId]
 
-		assert(slot10, "land_based_template not exist: " .. slot4.attachmentId)
+		assert(var_81_7, "land_based_template not exist: " .. var_81_1.attachmentId)
 
-		if slot10.type == ChapterConst.LBCoastalGun then
-			slot8 = AttachmentLBCoastalGunCell
-		elseif slot10.type == ChapterConst.LBHarbor then
-			slot8 = AttachmentLBHarborCell
-		elseif slot10.type == ChapterConst.LBDock then
-			slot8 = AttachmentLBDockCell
-			slot9.chapter = slot3
-		elseif slot10.type == ChapterConst.LBAntiAir then
-			slot8 = AttachmentLBAntiAirCell
-			slot9.info = slot4
-			slot9.chapter = slot3
-			slot9.grid = slot0
-		elseif slot10.type == ChapterConst.LBIdle and slot4.attachmentId == ChapterConst.LBIDAirport then
-			slot8 = AttachmentLBAirport
-			slot9.extraFlagList = slot3:getExtraFlags()
+		if var_81_7.type == ChapterConst.LBCoastalGun then
+			var_81_4 = AttachmentLBCoastalGunCell
+		elseif var_81_7.type == ChapterConst.LBHarbor then
+			var_81_4 = AttachmentLBHarborCell
+		elseif var_81_7.type == ChapterConst.LBDock then
+			var_81_4 = AttachmentLBDockCell
+			var_81_5.chapter = var_81_0
+		elseif var_81_7.type == ChapterConst.LBAntiAir then
+			var_81_4 = AttachmentLBAntiAirCell
+			var_81_5.info = var_81_1
+			var_81_5.chapter = var_81_0
+			var_81_5.grid = arg_81_0
+		elseif var_81_7.type == ChapterConst.LBIdle and var_81_1.attachmentId == ChapterConst.LBIDAirport then
+			var_81_4 = AttachmentLBAirport
+			var_81_5.extraFlagList = var_81_0:getExtraFlags()
 		end
-	elseif slot4.attachment == ChapterConst.AttachBarrier then
-		slot8 = AttachmentBarrierCell
-	elseif slot4.attachment == ChapterConst.AttachNone then
-		slot9.fadeAnim = function ()
-			if not uv0.attachmentCells[uv1] then
+	elseif var_81_1.attachment == ChapterConst.AttachBarrier then
+		var_81_4 = AttachmentBarrierCell
+	elseif var_81_1.attachment == ChapterConst.AttachNone then
+		var_81_5.fadeAnim = (function()
+			local var_82_0 = arg_81_0.attachmentCells[var_81_2]
+
+			if not var_82_0 then
 				return
 			end
 
-			if slot0.class ~= StaticEggCellView and slot0.class ~= StaticChampionCellView then
+			if var_82_0.class ~= StaticEggCellView and var_82_0.class ~= StaticChampionCellView then
 				return
 			end
 
-			if not slot0.info then
+			local var_82_1 = var_82_0.info
+
+			if not var_82_1 then
 				return
 			end
 
-			return pg.expedition_data_template[slot1.attachmentId].dungeon_id == 0
-		end()
+			return pg.expedition_data_template[var_82_1.attachmentId].dungeon_id == 0
+		end)()
 	end
 
-	if ({
-		chapter = slot3,
-		config = slot10
-	}).fadeAnim then
-		slot0:PlayAttachmentEffect(slot1, slot2, "miwuxiaosan")
+	if var_81_5.fadeAnim then
+		arg_81_0:PlayAttachmentEffect(arg_81_1, arg_81_2, "miwuxiaosan")
 	end
 
-	if slot0.attachmentCells[slot5] and slot10.class ~= slot8 then
-		slot10:Clear()
+	local var_81_8 = arg_81_0.attachmentCells[var_81_2]
 
-		slot10 = nil
-		slot0.attachmentCells[slot5] = nil
+	if var_81_8 and var_81_8.class ~= var_81_4 then
+		var_81_8:Clear()
+
+		var_81_8 = nil
+		arg_81_0.attachmentCells[var_81_2] = nil
 	end
 
-	if slot8 then
-		if not slot10 then
-			slot10 = slot8.New(slot7)
+	if var_81_4 then
+		if not var_81_8 then
+			var_81_8 = var_81_4.New(var_81_3)
 
-			slot10:SetLine({
-				row = slot1,
-				column = slot2
+			var_81_8:SetLine({
+				row = arg_81_1,
+				column = arg_81_2
 			})
 
-			slot0.attachmentCells[slot5] = slot10
+			arg_81_0.attachmentCells[var_81_2] = var_81_8
 		end
 
-		slot10.info = slot4
+		var_81_8.info = var_81_1
 
-		for slot14, slot15 in pairs(slot9) do
-			slot10[slot14] = slot15
+		for iter_81_0, iter_81_1 in pairs(var_81_5) do
+			var_81_8[iter_81_0] = iter_81_1
 		end
 
-		slot10:Update()
+		var_81_8:Update()
 	end
 end
 
-function slot0.InitWalls(slot0)
-	slot1 = slot0.contextData.chapterVO
+function var_0_0.InitWalls(arg_83_0)
+	local var_83_0 = arg_83_0.contextData.chapterVO
 
-	for slot5 = slot0.indexMin.x, slot0.indexMax.x do
-		for slot9 = slot0.indexMin.y, slot0.indexMax.y do
-			if slot1:GetRawChapterCell(slot5, slot9) then
-				slot11 = ChapterConst.ForbiddenUp
+	for iter_83_0 = arg_83_0.indexMin.x, arg_83_0.indexMax.x do
+		for iter_83_1 = arg_83_0.indexMin.y, arg_83_0.indexMax.y do
+			local var_83_1 = var_83_0:GetRawChapterCell(iter_83_0, iter_83_1)
 
-				while slot11 > 0 do
-					slot0:InitWallDirection(slot10, slot11)
+			if var_83_1 then
+				local var_83_2 = ChapterConst.ForbiddenUp
 
-					slot11 = slot11 / 2
+				while var_83_2 > 0 do
+					arg_83_0:InitWallDirection(var_83_1, var_83_2)
+
+					var_83_2 = var_83_2 / 2
 				end
 			end
 		end
 	end
 
-	for slot5, slot6 in pairs(slot0.walls) do
-		if slot6.WallPrefabs then
-			slot6:SetAsset(slot6.WallPrefabs[5 - slot6.BanCount])
+	for iter_83_2, iter_83_3 in pairs(arg_83_0.walls) do
+		if iter_83_3.WallPrefabs then
+			iter_83_3:SetAsset(iter_83_3.WallPrefabs[5 - iter_83_3.BanCount])
 		end
 	end
 end
 
-slot3 = {
+local var_0_3 = {
 	[ChapterConst.ForbiddenUp] = {
 		-1,
 		0
@@ -1502,513 +1704,604 @@ slot3 = {
 	}
 }
 
-function slot0.InitWallDirection(slot0, slot1, slot2)
-	slot3 = slot0.contextData.chapterVO
+function var_0_0.InitWallDirection(arg_84_0, arg_84_1, arg_84_2)
+	local var_84_0 = arg_84_0.contextData.chapterVO
 
-	if bit.band(slot1.forbiddenDirections, slot2) == 0 then
+	if bit.band(arg_84_1.forbiddenDirections, arg_84_2) == 0 then
 		return
 	end
 
-	if slot1.walkable == false then
+	if arg_84_1.walkable == false then
 		return
 	end
 
-	slot4 = uv0[slot2]
-	slot8 = not slot3:GetRawChapterCell(slot1.row + slot4[1], slot1.column + slot4[2]) or slot7.walkable == false
+	local var_84_1 = var_0_3[arg_84_2]
+	local var_84_2 = 2 * arg_84_1.row + var_84_1[1]
+	local var_84_3 = 2 * arg_84_1.column + var_84_1[2]
+	local var_84_4 = var_84_0:GetRawChapterCell(arg_84_1.row + var_84_1[1], arg_84_1.column + var_84_1[2])
+	local var_84_5 = not var_84_4 or var_84_4.walkable == false
+	local var_84_6 = var_84_2 .. "_" .. var_84_3
+	local var_84_7 = arg_84_0.walls[var_84_6]
 
-	if not slot0.walls[2 * slot1.row + slot4[1] .. "_" .. 2 * slot1.column + slot4[2]] then
-		slot11 = slot3.theme:GetLinePosition(slot1.row, slot1.column)
-		slot11.x = slot11.x + slot4[2] * (slot3.theme.cellSize.x + slot3.theme.cellSpace.x) * 0.5
-		slot11.y = slot11.y - slot4[1] * (slot3.theme.cellSize.y + slot3.theme.cellSpace.y) * 0.5
-		slot12 = WallCell.New(slot5, slot6, bit.band(slot2, ChapterConst.ForbiddenRow) > 0, slot11)
-		slot12.girdParent = slot0
-		slot0.walls[slot9] = slot12
+	if not var_84_7 then
+		local var_84_8 = var_84_0.theme:GetLinePosition(arg_84_1.row, arg_84_1.column)
 
-		if slot3.wallAssets[slot1.row .. "_" .. slot1.column] then
-			slot12.WallPrefabs = slot13
+		var_84_8.x = var_84_8.x + var_84_1[2] * (var_84_0.theme.cellSize.x + var_84_0.theme.cellSpace.x) * 0.5
+		var_84_8.y = var_84_8.y - var_84_1[1] * (var_84_0.theme.cellSize.y + var_84_0.theme.cellSpace.y) * 0.5
+
+		local var_84_9 = WallCell.New(var_84_2, var_84_3, bit.band(arg_84_2, ChapterConst.ForbiddenRow) > 0, var_84_8)
+
+		var_84_9.girdParent = arg_84_0
+		arg_84_0.walls[var_84_6] = var_84_9
+		var_84_7 = var_84_9
+
+		local var_84_10 = var_84_0.wallAssets[arg_84_1.row .. "_" .. arg_84_1.column]
+
+		if var_84_10 then
+			var_84_7.WallPrefabs = var_84_10
 		end
 	end
 
-	slot10.BanCount = slot10.BanCount + (slot8 and 2 or 1)
+	var_84_7.BanCount = var_84_7.BanCount + (var_84_5 and 2 or 1)
 end
 
-function slot0.UpdateWeatherCells(slot0)
-	for slot5, slot6 in pairs(slot0.contextData.chapterVO.cells) do
-		slot7 = nil
+function var_0_0.UpdateWeatherCells(arg_85_0)
+	local var_85_0 = arg_85_0.contextData.chapterVO
 
-		if #slot6:GetWeatherFlagList() > 0 then
-			slot7 = MapWeatherCellView
+	for iter_85_0, iter_85_1 in pairs(var_85_0.cells) do
+		local var_85_1
+		local var_85_2 = iter_85_1:GetWeatherFlagList()
+
+		if #var_85_2 > 0 then
+			var_85_1 = MapWeatherCellView
 		end
 
-		if slot0.weatherCells[slot5] and slot9.class ~= slot7 then
-			slot9:Clear()
+		local var_85_3 = arg_85_0.weatherCells[iter_85_0]
 
-			slot9 = nil
-			slot0.weatherCells[slot5] = nil
+		if var_85_3 and var_85_3.class ~= var_85_1 then
+			var_85_3:Clear()
+
+			var_85_3 = nil
+			arg_85_0.weatherCells[iter_85_0] = nil
 		end
 
-		if slot7 then
-			if not slot9 then
-				slot9 = slot7.New(slot0.cellRoot:Find(slot5):Find(ChapterConst.ChildAttachment))
+		if var_85_1 then
+			if not var_85_3 then
+				local var_85_4 = arg_85_0.cellRoot:Find(iter_85_0):Find(ChapterConst.ChildAttachment)
 
-				slot9:SetLine({
-					row = slot6.row,
-					column = slot6.column
+				var_85_3 = var_85_1.New(var_85_4)
+
+				var_85_3:SetLine({
+					row = iter_85_1.row,
+					column = iter_85_1.column
 				})
 
-				slot0.weatherCells[slot5] = slot9
+				arg_85_0.weatherCells[iter_85_0] = var_85_3
 			end
 
-			slot9.info = slot6
+			var_85_3.info = iter_85_1
 
-			slot9:Update(slot8)
+			var_85_3:Update(var_85_2)
 		end
 	end
 end
 
-function slot0.updateQuadCells(slot0, slot1)
-	slot1 = slot1 or ChapterConst.QuadStateNormal
-	slot0.quadState = slot1
+function var_0_0.updateQuadCells(arg_86_0, arg_86_1)
+	arg_86_1 = arg_86_1 or ChapterConst.QuadStateNormal
+	arg_86_0.quadState = arg_86_1
 
-	slot0:updateQuadBase()
+	arg_86_0:updateQuadBase()
 
-	if slot1 == ChapterConst.QuadStateNormal then
-		slot0:UpdateQuadStateNormal()
-	elseif slot1 == ChapterConst.QuadStateBarrierSetting then
-		slot0:UpdateQuadStateBarrierSetting()
-	elseif slot1 == ChapterConst.QuadStateTeleportSub then
-		slot0:UpdateQuadStateTeleportSub()
-	elseif slot1 == ChapterConst.QuadStateMissileStrike or slot1 == ChapterConst.QuadStateAirSuport then
-		slot0:UpdateQuadStateMissileStrike()
-	elseif slot1 == ChapterConst.QuadStateExpel then
-		slot0:UpdateQuadStateAirExpel()
+	if arg_86_1 == ChapterConst.QuadStateNormal then
+		arg_86_0:UpdateQuadStateNormal()
+	elseif arg_86_1 == ChapterConst.QuadStateBarrierSetting then
+		arg_86_0:UpdateQuadStateBarrierSetting()
+	elseif arg_86_1 == ChapterConst.QuadStateTeleportSub then
+		arg_86_0:UpdateQuadStateTeleportSub()
+	elseif arg_86_1 == ChapterConst.QuadStateMissileStrike or arg_86_1 == ChapterConst.QuadStateAirSuport then
+		arg_86_0:UpdateQuadStateMissileStrike()
+	elseif arg_86_1 == ChapterConst.QuadStateExpel then
+		arg_86_0:UpdateQuadStateAirExpel()
 	end
 
-	slot0:UpdateOpBtns()
+	arg_86_0:UpdateOpBtns()
 end
 
-function slot0.PlayQuadsParallelAnim(slot0, slot1)
-	slot0:frozen()
-	table.ParallelIpairsAsync(slot1, function (slot0, slot1, slot2)
-		slot3 = ChapterCell.Line2QuadName(slot1.row, slot1.column)
-		slot4 = uv0.quadRoot:Find(slot3)
+function var_0_0.PlayQuadsParallelAnim(arg_87_0, arg_87_1)
+	arg_87_0:frozen()
+	table.ParallelIpairsAsync(arg_87_1, function(arg_88_0, arg_88_1, arg_88_2)
+		local var_88_0 = ChapterCell.Line2QuadName(arg_88_1.row, arg_88_1.column)
+		local var_88_1 = arg_87_0.quadRoot:Find(var_88_0)
 
-		uv0:cancelQuadTween(slot3, slot4)
-		setImageAlpha(slot4, 0.4)
+		arg_87_0:cancelQuadTween(var_88_0, var_88_1)
+		setImageAlpha(var_88_1, 0.4)
 
-		uv0.presentTws[slot3] = {
-			uniqueId = LeanTween.scale(slot4, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(slot2)).uniqueId
+		local var_88_2 = LeanTween.scale(var_88_1, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_88_2))
+
+		arg_87_0.presentTws[var_88_0] = {
+			uniqueId = var_88_2.uniqueId
 		}
-	end, function ()
-		uv0:unfrozen()
+	end, function()
+		arg_87_0:unfrozen()
 	end)
 end
 
-function slot0.updateQuadBase(slot0)
-	if slot0.contextData.chapterVO.fleet == nil then
+function var_0_0.updateQuadBase(arg_90_0)
+	local var_90_0 = arg_90_0.contextData.chapterVO
+
+	if var_90_0.fleet == nil then
 		return
 	end
 
-	slot0:killPresentTws()
+	arg_90_0:killPresentTws()
 
-	for slot7, slot8 in pairs(slot1.cells) do
-		function (slot0)
-			if not slot0 or not slot0:IsWalkable() then
+	local function var_90_1(arg_91_0)
+		if not arg_91_0 or not arg_91_0:IsWalkable() then
+			return
+		end
+
+		local var_91_0 = arg_91_0.row
+		local var_91_1 = arg_91_0.column
+		local var_91_2 = ChapterCell.Line2QuadName(var_91_0, var_91_1)
+		local var_91_3 = arg_90_0.quadRoot:Find(var_91_2)
+
+		var_91_3.localScale = Vector3.one
+
+		local var_91_4 = var_91_3:Find("grid"):GetComponent(typeof(Image))
+		local var_91_5 = var_90_0:getChampion(var_91_0, var_91_1)
+
+		if var_91_5 and var_91_5.flag == ChapterConst.CellFlagActive and var_91_5.trait ~= ChapterConst.TraitLurk and var_90_0:getChampionVisibility(var_91_5) and not var_90_0:existFleet(FleetType.Transport, var_91_0, var_91_1) then
+			arg_90_0:startQuadTween(var_91_2, var_91_3)
+			setImageSprite(var_91_3, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy"))
+			setImageSprite(var_91_3:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
+
+			var_91_4.material = arg_90_0.material_Add
+
+			return
+		end
+
+		local var_91_6 = var_90_0:GetRawChapterAttachemnt(var_91_0, var_91_1)
+
+		if var_91_6 then
+			local var_91_7 = var_90_0:getQuadCellPic(var_91_6)
+
+			if var_91_7 then
+				arg_90_0:startQuadTween(var_91_2, var_91_3)
+				setImageSprite(var_91_3, GetSpriteFromAtlas("chapter/pic/cellgrid", var_91_7))
+
 				return
 			end
+		end
 
-			slot1 = slot0.row
-			slot2 = slot0.column
-			slot4 = uv0.quadRoot:Find(ChapterCell.Line2QuadName(slot1, slot2))
-			slot4.localScale = Vector3.one
+		if var_90_0:getChapterCell(var_91_0, var_91_1) then
+			local var_91_8 = var_90_0:getQuadCellPic(arg_91_0)
 
-			if uv1:getChampion(slot1, slot2) and slot6.flag == ChapterConst.CellFlagActive and slot6.trait ~= ChapterConst.TraitLurk and uv1:getChampionVisibility(slot6) and not uv1:existFleet(FleetType.Transport, slot1, slot2) then
-				uv0:startQuadTween(slot3, slot4)
-				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy"))
-				setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
+			if var_91_8 then
+				arg_90_0:startQuadTween(var_91_2, var_91_3)
 
-				slot4:Find("grid"):GetComponent(typeof(Image)).material = uv0.material_Add
+				if var_91_8 == "cell_enemy" then
+					setImageSprite(var_91_3:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
 
-				return
-			end
-
-			if uv1:GetRawChapterAttachemnt(slot1, slot2) and uv1:getQuadCellPic(slot7) then
-				uv0:startQuadTween(slot3, slot4)
-				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot8))
-
-				return
-			end
-
-			if uv1:getChapterCell(slot1, slot2) and uv1:getQuadCellPic(slot0) then
-				uv0:startQuadTween(slot3, slot4)
-
-				if slot9 == "cell_enemy" then
-					setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_enemy_grid"))
-
-					slot5.material = uv0.material_Add
+					var_91_4.material = arg_90_0.material_Add
 				else
-					setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
+					setImageSprite(var_91_3:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
 
-					slot5.material = nil
+					var_91_4.material = nil
 				end
 
-				setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", slot9))
+				setImageSprite(var_91_3, GetSpriteFromAtlas("chapter/pic/cellgrid", var_91_8))
 
 				return
 			end
+		end
 
-			uv0:cancelQuadTween(slot3, slot4)
-			setImageAlpha(slot4, ChapterConst.CellEaseOutAlpha)
-			setImageSprite(slot4, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
-			setImageSprite(slot4:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
+		arg_90_0:cancelQuadTween(var_91_2, var_91_3)
+		setImageAlpha(var_91_3, ChapterConst.CellEaseOutAlpha)
+		setImageSprite(var_91_3, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
+		setImageSprite(var_91_3:Find("grid"), GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid"))
 
-			slot5.material = nil
-		end(slot8)
+		var_91_4.material = nil
 	end
 
-	if slot1:isPlayingWithBombEnemy() then
-		slot0:hideQuadMark(ChapterConst.MarkBomb)
+	for iter_90_0, iter_90_1 in pairs(var_90_0.cells) do
+		var_90_1(iter_90_1)
+	end
+
+	if var_90_0:isPlayingWithBombEnemy() then
+		arg_90_0:hideQuadMark(ChapterConst.MarkBomb)
 	end
 end
 
-function slot0.UpdateQuadStateNormal(slot0)
-	slot1 = slot0.contextData.chapterVO
-	slot2 = slot1.fleet
-	slot3 = nil
+function var_0_0.UpdateQuadStateNormal(arg_92_0)
+	local var_92_0 = arg_92_0.contextData.chapterVO
+	local var_92_1 = var_92_0.fleet
+	local var_92_2
 
-	if slot1:existMoveLimit() and not slot1:checkAnyInteractive() then
-		slot3 = slot1:calcWalkableCells(ChapterConst.SubjectPlayer, slot2.line.row, slot2.line.column, slot2:getSpeed())
+	if var_92_0:existMoveLimit() and not var_92_0:checkAnyInteractive() then
+		var_92_2 = var_92_0:calcWalkableCells(ChapterConst.SubjectPlayer, var_92_1.line.row, var_92_1.line.column, var_92_1:getSpeed())
 	end
 
-	if not slot3 or #slot3 == 0 then
+	if not var_92_2 or #var_92_2 == 0 then
 		return
 	end
 
-	slot5 = ManhattonDist(_.min(slot3, function (slot0)
-		return ManhattonDist(slot0, uv0.line)
-	end), slot2.line)
+	local var_92_3 = _.min(var_92_2, function(arg_93_0)
+		return ManhattonDist(arg_93_0, var_92_1.line)
+	end)
+	local var_92_4 = ManhattonDist(var_92_3, var_92_1.line)
 
-	_.each(slot3, function (slot0)
-		slot1 = ChapterCell.Line2QuadName(slot0.row, slot0.column)
-		slot2 = uv0.quadRoot:Find(slot1)
+	_.each(var_92_2, function(arg_94_0)
+		local var_94_0 = ChapterCell.Line2QuadName(arg_94_0.row, arg_94_0.column)
+		local var_94_1 = arg_92_0.quadRoot:Find(var_94_0)
 
-		uv0:cancelQuadTween(slot1, slot2)
-		setImageSprite(slot2, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
+		arg_92_0:cancelQuadTween(var_94_0, var_94_1)
+		setImageSprite(var_94_1, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_normal"))
 
-		slot3 = slot2:Find("grid"):GetComponent(typeof(Image))
-		slot3.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
-		slot3.material = nil
+		local var_94_2 = var_94_1:Find("grid"):GetComponent(typeof(Image))
 
-		setImageAlpha(slot2, uv1:getRound() == ChapterConst.RoundPlayer and 1 or ChapterConst.CellEaseOutAlpha)
+		var_94_2.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
+		var_94_2.material = nil
 
-		slot2.localScale = Vector3.zero
-		uv0.presentTws[slot1] = {
-			uniqueId = LeanTween.scale(slot2, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setDelay((ManhattonDist(slot0, uv2.line) - uv3) * 0.1).uniqueId
+		local var_94_3 = var_92_0:getRound() == ChapterConst.RoundPlayer
+
+		setImageAlpha(var_94_1, var_94_3 and 1 or ChapterConst.CellEaseOutAlpha)
+
+		var_94_1.localScale = Vector3.zero
+
+		local var_94_4 = LeanTween.scale(var_94_1, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setDelay((ManhattonDist(arg_94_0, var_92_1.line) - var_92_4) * 0.1)
+
+		arg_92_0.presentTws[var_94_0] = {
+			uniqueId = var_94_4.uniqueId
 		}
 	end)
 end
 
-function slot0.UpdateQuadStateBarrierSetting(slot0)
-	slot2 = slot0.contextData.chapterVO
-	slot4 = slot2.fleet.line
+function var_0_0.UpdateQuadStateBarrierSetting(arg_95_0)
+	local var_95_0 = 1
+	local var_95_1 = arg_95_0.contextData.chapterVO
+	local var_95_2 = var_95_1.fleet
+	local var_95_3 = var_95_2.line
+	local var_95_4 = var_95_1:calcSquareBarrierCells(var_95_3.row, var_95_3.column, var_95_0)
 
-	if not slot2:calcSquareBarrierCells(slot4.row, slot4.column, 1) or #slot5 == 0 then
+	if not var_95_4 or #var_95_4 == 0 then
 		return
 	end
 
-	slot7 = ManhattonDist(_.min(slot5, function (slot0)
-		return ManhattonDist(slot0, uv0.line)
-	end), slot3.line)
+	local var_95_5 = _.min(var_95_4, function(arg_96_0)
+		return ManhattonDist(arg_96_0, var_95_2.line)
+	end)
+	local var_95_6 = ManhattonDist(var_95_5, var_95_2.line)
 
-	_.each(slot5, function (slot0)
-		slot1 = ChapterCell.Line2QuadName(slot0.row, slot0.column)
-		slot2 = uv0.quadRoot:Find(slot1)
+	_.each(var_95_4, function(arg_97_0)
+		local var_97_0 = ChapterCell.Line2QuadName(arg_97_0.row, arg_97_0.column)
+		local var_97_1 = arg_95_0.quadRoot:Find(var_97_0)
 
-		uv0:cancelQuadTween(slot1, slot2)
-		setImageSprite(slot2, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_barrier_select"))
+		arg_95_0:cancelQuadTween(var_97_0, var_97_1)
+		setImageSprite(var_97_1, GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_barrier_select"))
 
-		slot3 = slot2:Find("grid"):GetComponent(typeof(Image))
-		slot3.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
-		slot3.material = nil
+		local var_97_2 = var_97_1:Find("grid"):GetComponent(typeof(Image))
 
-		setImageAlpha(slot2, 1)
+		var_97_2.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", "cell_grid")
+		var_97_2.material = nil
 
-		slot2.localScale = Vector3.zero
-		uv0.presentTws[slot1] = {
-			uniqueId = LeanTween.scale(slot2, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setDelay((ManhattonDist(slot0, uv1.line) - uv2) * 0.1).uniqueId
+		setImageAlpha(var_97_1, 1)
+
+		var_97_1.localScale = Vector3.zero
+
+		local var_97_3 = LeanTween.scale(var_97_1, Vector3.one, 0.2):setFrom(Vector3.zero):setEase(LeanTweenType.easeInOutSine):setDelay((ManhattonDist(arg_97_0, var_95_2.line) - var_95_6) * 0.1)
+
+		arg_95_0.presentTws[var_97_0] = {
+			uniqueId = var_97_3.uniqueId
 		}
 	end)
 end
 
-function slot0.UpdateQuadStateTeleportSub(slot0)
-	if not _.detect(slot0.contextData.chapterVO.fleets, function (slot0)
-		return slot0:getFleetType() == FleetType.Submarine
-	end) then
+function var_0_0.UpdateQuadStateTeleportSub(arg_98_0)
+	local var_98_0 = arg_98_0.contextData.chapterVO
+	local var_98_1 = _.detect(var_98_0.fleets, function(arg_99_0)
+		return arg_99_0:getFleetType() == FleetType.Submarine
+	end)
+
+	if not var_98_1 then
 		return
 	end
 
-	slot0:PlayQuadsParallelAnim(_.filter(slot1:calcWalkableCells(nil, slot2.line.row, slot2.line.column, ChapterConst.MaxStep), function (slot0)
-		return not uv0:getQuadCellPic(uv0:getChapterCell(slot0.row, slot0.column))
-	end))
+	local var_98_2 = var_98_0:calcWalkableCells(nil, var_98_1.line.row, var_98_1.line.column, ChapterConst.MaxStep)
+	local var_98_3 = _.filter(var_98_2, function(arg_100_0)
+		return not var_98_0:getQuadCellPic(var_98_0:getChapterCell(arg_100_0.row, arg_100_0.column))
+	end)
+
+	arg_98_0:PlayQuadsParallelAnim(var_98_3)
 end
 
-function slot0.UpdateQuadStateMissileStrike(slot0)
-	slot0:PlayQuadsParallelAnim(_.filter(_.values(slot0.contextData.chapterVO.cells), function (slot0)
-		return slot0:IsWalkable() and not uv0:getQuadCellPic(slot0)
-	end))
+function var_0_0.UpdateQuadStateMissileStrike(arg_101_0)
+	local var_101_0 = arg_101_0.contextData.chapterVO
+	local var_101_1 = _.filter(_.values(var_101_0.cells), function(arg_102_0)
+		return arg_102_0:IsWalkable() and not var_101_0:getQuadCellPic(arg_102_0)
+	end)
+
+	arg_101_0:PlayQuadsParallelAnim(var_101_1)
 end
 
-function slot0.UpdateQuadStateAirExpel(slot0)
-	slot1 = slot0.contextData.chapterVO
+function var_0_0.UpdateQuadStateAirExpel(arg_103_0)
+	local var_103_0 = arg_103_0.contextData.chapterVO
+	local var_103_1 = arg_103_0.airSupportTarget
 
-	if not slot0.airSupportTarget or not slot2.source then
-		slot0:PlayQuadsParallelAnim(_.filter(_.values(slot1.cells), function (slot0)
-			return slot0:IsWalkable() and not uv0:getQuadCellPic(slot0)
-		end))
+	if not var_103_1 or not var_103_1.source then
+		local var_103_2 = _.filter(_.values(var_103_0.cells), function(arg_104_0)
+			return arg_104_0:IsWalkable() and not var_103_0:getQuadCellPic(arg_104_0)
+		end)
+
+		arg_103_0:PlayQuadsParallelAnim(var_103_2)
 
 		return
 	end
 
-	slot3 = slot2.source
+	local var_103_3 = var_103_1.source
+	local var_103_4 = var_103_0:calcWalkableCells(ChapterConst.SubjectChampion, var_103_3.row, var_103_3.column, 1)
 
-	slot0:PlayQuadsParallelAnim(slot1:calcWalkableCells(ChapterConst.SubjectChampion, slot3.row, slot3.column, 1))
+	arg_103_0:PlayQuadsParallelAnim(var_103_4)
 end
 
-function slot0.ClickGridCell(slot0, slot1)
-	if slot0.quadState == ChapterConst.QuadStateBarrierSetting then
-		slot0:OnBarrierSetting(slot1)
-	elseif slot0.quadState == ChapterConst.QuadStateTeleportSub then
-		slot0:OnTeleportConfirm(slot1)
-	elseif slot0.quadState == ChapterConst.QuadStateMissileStrike then
-		slot0:OnMissileAiming(slot1)
-	elseif slot0.quadState == ChapterConst.QuadStateAirSuport then
-		slot0:OnAirSupportAiming(slot1)
-	elseif slot0.quadState == ChapterConst.QuadStateExpel then
-		slot0:OnAirExpelSelect(slot1)
+function var_0_0.ClickGridCell(arg_105_0, arg_105_1)
+	if arg_105_0.quadState == ChapterConst.QuadStateBarrierSetting then
+		arg_105_0:OnBarrierSetting(arg_105_1)
+	elseif arg_105_0.quadState == ChapterConst.QuadStateTeleportSub then
+		arg_105_0:OnTeleportConfirm(arg_105_1)
+	elseif arg_105_0.quadState == ChapterConst.QuadStateMissileStrike then
+		arg_105_0:OnMissileAiming(arg_105_1)
+	elseif arg_105_0.quadState == ChapterConst.QuadStateAirSuport then
+		arg_105_0:OnAirSupportAiming(arg_105_1)
+	elseif arg_105_0.quadState == ChapterConst.QuadStateExpel then
+		arg_105_0:OnAirExpelSelect(arg_105_1)
 	else
-		slot0:emit(LevelUIConst.ON_CLICK_GRID_QUAD, slot1)
+		arg_105_0:emit(LevelUIConst.ON_CLICK_GRID_QUAD, arg_105_1)
 	end
 end
 
-function slot0.OnBarrierSetting(slot0, slot1)
-	slot3 = slot0.contextData.chapterVO
-	slot5 = slot3.fleet.line
+function var_0_0.OnBarrierSetting(arg_106_0, arg_106_1)
+	local var_106_0 = 1
+	local var_106_1 = arg_106_0.contextData.chapterVO
+	local var_106_2 = var_106_1.fleet.line
+	local var_106_3 = var_106_1:calcSquareBarrierCells(var_106_2.row, var_106_2.column, var_106_0)
 
-	if not _.any(slot3:calcSquareBarrierCells(slot5.row, slot5.column, 1), function (slot0)
-		return slot0.row == uv0.row and slot0.column == uv0.column
+	if not _.any(var_106_3, function(arg_107_0)
+		return arg_107_0.row == arg_106_1.row and arg_107_0.column == arg_106_1.column
 	end) then
 		return
 	end
 
-	function (slot0, slot1)
-		newChapterVO = uv0.contextData.chapterVO
+	;(function(arg_108_0, arg_108_1)
+		newChapterVO = arg_106_0.contextData.chapterVO
 
-		if not newChapterVO:existBarrier(slot0, slot1) and newChapterVO.modelCount <= 0 then
+		if not newChapterVO:existBarrier(arg_108_0, arg_108_1) and newChapterVO.modelCount <= 0 then
 			return
 		end
 
-		uv0:emit(LevelMediator2.ON_OP, {
+		arg_106_0:emit(LevelMediator2.ON_OP, {
 			type = ChapterConst.OpBarrier,
 			id = newChapterVO.fleet.id,
-			arg1 = slot0,
-			arg2 = slot1
+			arg1 = arg_108_0,
+			arg2 = arg_108_1
 		})
-	end(slot1.row, slot1.column)
+	end)(arg_106_1.row, arg_106_1.column)
 end
 
-function slot0.PrepareSubTeleport(slot0)
-	slot1 = slot0.contextData.chapterVO
-	slot2 = slot1:GetSubmarineFleet()
-	slot3 = slot0.cellFleets[slot2.id]
-	slot4 = slot2.startPos
+function var_0_0.PrepareSubTeleport(arg_109_0)
+	local var_109_0 = arg_109_0.contextData.chapterVO
+	local var_109_1 = var_109_0:GetSubmarineFleet()
+	local var_109_2 = arg_109_0.cellFleets[var_109_1.id]
+	local var_109_3 = var_109_1.startPos
 
-	for slot8, slot9 in pairs(slot1.fleets) do
-		if slot9:getFleetType() == FleetType.Normal then
-			slot0:updateFleet(slot9.id)
+	for iter_109_0, iter_109_1 in pairs(var_109_0.fleets) do
+		if iter_109_1:getFleetType() == FleetType.Normal then
+			arg_109_0:updateFleet(iter_109_1.id)
 		end
 	end
 
-	setActive(slot3.tfAmmo, not (slot1:existEnemy(ChapterConst.SubjectPlayer, slot4.row, slot4.column) or slot1:existFleet(FleetType.Normal, slot4.row, slot4.column)))
-	slot3:SetActiveModel(true)
+	local var_109_4 = var_109_0:existEnemy(ChapterConst.SubjectPlayer, var_109_3.row, var_109_3.column) or var_109_0:existFleet(FleetType.Normal, var_109_3.row, var_109_3.column)
 
-	if not (slot1.subAutoAttack == 1) then
-		slot0:PlaySubAnimation(slot3, false, function ()
-			uv0:SetActiveModel(not uv1)
+	setActive(var_109_2.tfAmmo, not var_109_4)
+	var_109_2:SetActiveModel(true)
+
+	if not (var_109_0.subAutoAttack == 1) then
+		arg_109_0:PlaySubAnimation(var_109_2, false, function()
+			var_109_2:SetActiveModel(not var_109_4)
 		end)
 	else
-		slot3:SetActiveModel(not slot5)
+		var_109_2:SetActiveModel(not var_109_4)
 	end
 
-	slot3.tf.localPosition = slot1.theme:GetLinePosition(slot4.row, slot4.column)
+	var_109_2.tf.localPosition = var_109_0.theme:GetLinePosition(var_109_3.row, var_109_3.column)
 
-	slot3:ResetCanvasOrder()
+	var_109_2:ResetCanvasOrder()
 end
 
-function slot0.TurnOffSubTeleport(slot0)
-	slot0.subTeleportTargetLine = nil
-	slot1 = slot0.contextData.chapterVO
+function var_0_0.TurnOffSubTeleport(arg_111_0)
+	arg_111_0.subTeleportTargetLine = nil
 
-	slot0:hideQuadMark(ChapterConst.MarkMovePathArrow)
-	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
-	slot0:ClearEdges("SubmarineHunting")
-	slot0:UpdateDestinationMark()
+	local var_111_0 = arg_111_0.contextData.chapterVO
 
-	slot4 = slot1.subAutoAttack == 1
+	arg_111_0:hideQuadMark(ChapterConst.MarkMovePathArrow)
+	arg_111_0:hideQuadMark(ChapterConst.MarkHuntingRange)
+	arg_111_0:ClearEdges("SubmarineHunting")
+	arg_111_0:UpdateDestinationMark()
 
-	slot0.cellFleets[slot1:GetSubmarineFleet().id]:SetActiveModel(slot4)
+	local var_111_1 = var_111_0:GetSubmarineFleet()
+	local var_111_2 = arg_111_0.cellFleets[var_111_1.id]
+	local var_111_3 = var_111_0.subAutoAttack == 1
 
-	if not slot4 then
-		slot0:PlaySubAnimation(slot3, true, function ()
-			uv0:updateFleet(uv1.id)
+	var_111_2:SetActiveModel(var_111_3)
+
+	if not var_111_3 then
+		arg_111_0:PlaySubAnimation(var_111_2, true, function()
+			arg_111_0:updateFleet(var_111_1.id)
 		end)
 	else
-		slot0:updateFleet(slot2.id)
+		arg_111_0:updateFleet(var_111_1.id)
 	end
 
-	slot0:ShowHuntingRange()
+	arg_111_0:ShowHuntingRange()
 end
 
-function slot0.OnTeleportConfirm(slot0, slot1)
-	if slot0.contextData.chapterVO:getChapterCell(slot1.row, slot1.column) and slot3:IsWalkable() and not slot2:existBarrier(slot1.row, slot1.column) then
-		if slot2:GetSubmarineFleet().startPos.row == slot1.row and slot4.startPos.column == slot1.column then
+function var_0_0.OnTeleportConfirm(arg_113_0, arg_113_1)
+	local var_113_0 = arg_113_0.contextData.chapterVO
+	local var_113_1 = var_113_0:getChapterCell(arg_113_1.row, arg_113_1.column)
+
+	if var_113_1 and var_113_1:IsWalkable() and not var_113_0:existBarrier(arg_113_1.row, arg_113_1.column) then
+		local var_113_2 = var_113_0:GetSubmarineFleet()
+
+		if var_113_2.startPos.row == arg_113_1.row and var_113_2.startPos.column == arg_113_1.column then
 			return
 		end
 
-		slot5, slot6 = slot2:findPath(nil, slot4.startPos, slot1)
+		local var_113_3, var_113_4 = var_113_0:findPath(nil, var_113_2.startPos, arg_113_1)
 
-		if PathFinding.PrioObstacle <= slot5 or slot1.row ~= slot6[#slot6].row or slot1.column ~= slot6[#slot6].column then
+		if var_113_3 >= PathFinding.PrioObstacle or arg_113_1.row ~= var_113_4[#var_113_4].row or arg_113_1.column ~= var_113_4[#var_113_4].column then
 			return
 		end
 
-		slot0:ShowTargetHuntingRange(slot1)
-		slot0:UpdateDestinationMark(slot1)
+		arg_113_0:ShowTargetHuntingRange(arg_113_1)
+		arg_113_0:UpdateDestinationMark(arg_113_1)
 
-		if slot5 > 0 then
-			slot0:ShowPathInArrows(slot6)
+		if var_113_3 > 0 then
+			arg_113_0:ShowPathInArrows(var_113_4)
 
-			slot0.subTeleportTargetLine = slot1
+			arg_113_0.subTeleportTargetLine = arg_113_1
 		end
 	end
 end
 
-function slot0.ShowPathInArrows(slot0, slot1)
-	slot2 = slot0.contextData.chapterVO
-	slot3 = Clone(slot1)
+function var_0_0.ShowPathInArrows(arg_114_0, arg_114_1)
+	local var_114_0 = arg_114_0.contextData.chapterVO
+	local var_114_1 = Clone(arg_114_1)
 
-	table.remove(slot3, #slot3)
+	table.remove(var_114_1, #var_114_1)
 
-	for slot7 = #slot3, 1, -1 do
-		slot8 = slot3[slot7]
+	for iter_114_0 = #var_114_1, 1, -1 do
+		local var_114_2 = var_114_1[iter_114_0]
 
-		if slot2:existEnemy(ChapterConst.SubjectPlayer, slot8.row, slot8.column) or slot2:getFleet(FleetType.Normal, slot8.row, slot8.column) then
-			table.remove(slot3, slot7)
+		if var_114_0:existEnemy(ChapterConst.SubjectPlayer, var_114_2.row, var_114_2.column) or var_114_0:getFleet(FleetType.Normal, var_114_2.row, var_114_2.column) then
+			table.remove(var_114_1, iter_114_0)
 		end
 	end
 
-	slot0:hideQuadMark(ChapterConst.MarkMovePathArrow)
+	arg_114_0:hideQuadMark(ChapterConst.MarkMovePathArrow)
+	arg_114_0:showQuadMark(var_114_1, ChapterConst.MarkMovePathArrow, "cell_path_arrow", Vector2(100, 100), nil, true)
 
-	slot8 = "cell_path_arrow"
+	local var_114_3 = arg_114_0.markQuads[ChapterConst.MarkMovePathArrow]
 
-	slot0:showQuadMark(slot3, ChapterConst.MarkMovePathArrow, slot8, Vector2(100, 100), nil, true)
+	for iter_114_1 = #arg_114_1, 1, -1 do
+		local var_114_4 = arg_114_1[iter_114_1]
+		local var_114_5 = ChapterCell.Line2MarkName(var_114_4.row, var_114_4.column, ChapterConst.MarkMovePathArrow)
+		local var_114_6 = var_114_3 and var_114_3[var_114_5]
 
-	slot4 = slot0.markQuads[ChapterConst.MarkMovePathArrow]
+		if var_114_6 then
+			local var_114_7 = arg_114_1[iter_114_1 + 1]
+			local var_114_8 = Vector3.Normalize(Vector3(var_114_7.column - var_114_4.column, var_114_4.row - var_114_7.row, 0))
+			local var_114_9 = Vector3.Dot(var_114_8, Vector3.up)
+			local var_114_10 = Mathf.Acos(var_114_9) * Mathf.Rad2Deg
+			local var_114_11 = Vector3.Cross(Vector3.up, var_114_8).z > 0 and 1 or -1
 
-	for slot8 = #slot1, 1, -1 do
-		slot9 = slot1[slot8]
-
-		if slot4 and slot4[ChapterCell.Line2MarkName(slot9.row, slot9.column, ChapterConst.MarkMovePathArrow)] then
-			slot12 = slot1[slot8 + 1]
-			slot13 = Vector3.Normalize(Vector3(slot12.column - slot9.column, slot9.row - slot12.row, 0))
-			slot11.localEulerAngles = Vector3(0, 0, Mathf.Acos(Vector3.Dot(slot13, Vector3.up)) * Mathf.Rad2Deg * (Vector3.Cross(Vector3.up, slot13).z > 0 and 1 or -1))
+			var_114_6.localEulerAngles = Vector3(0, 0, var_114_10 * var_114_11)
 		end
 	end
 end
 
-function slot0.ShowMissileAimingMarks(slot0, slot1)
-	_.each(slot1, function (slot0)
-		uv0.loader:GetPrefabBYGroup("ui/miaozhun02", "miaozhun02", function (slot0)
-			setParent(slot0, uv0.restrictMap)
+function var_0_0.ShowMissileAimingMarks(arg_115_0, arg_115_1)
+	_.each(arg_115_1, function(arg_116_0)
+		arg_115_0.loader:GetPrefabBYGroup("ui/miaozhun02", "miaozhun02", function(arg_117_0)
+			setParent(arg_117_0, arg_115_0.restrictMap)
 
-			slot3 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row, uv1.column)
-			slot4 = uv0.restrictMap.anchoredPosition
-			tf(slot0).anchoredPosition = Vector2(slot3.x - slot4.x, slot3.y - slot4.y)
+			local var_117_0 = arg_115_0.contextData.chapterVO.theme:GetLinePosition(arg_116_0.row, arg_116_0.column)
+			local var_117_1 = arg_115_0.restrictMap.anchoredPosition
+
+			tf(arg_117_0).anchoredPosition = Vector2(var_117_0.x - var_117_1.x, var_117_0.y - var_117_1.y)
 		end, "MissileAimingMarks")
 	end)
 end
 
-function slot0.HideMissileAimingMarks(slot0)
-	slot0.loader:ReturnGroup("MissileAimingMarks")
+function var_0_0.HideMissileAimingMarks(arg_118_0)
+	arg_118_0.loader:ReturnGroup("MissileAimingMarks")
 end
 
-function slot0.ShowMissileAimingMark(slot0, slot1)
-	slot0.loader:GetPrefab("ui/miaozhun02", "miaozhun02", function (slot0)
-		setParent(slot0, uv0.restrictMap)
+function var_0_0.ShowMissileAimingMark(arg_119_0, arg_119_1)
+	arg_119_0.loader:GetPrefab("ui/miaozhun02", "miaozhun02", function(arg_120_0)
+		setParent(arg_120_0, arg_119_0.restrictMap)
 
-		slot2 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row, uv1.column)
-		slot3 = uv0.restrictMap.anchoredPosition
-		tf(slot0).anchoredPosition = Vector2(slot2.x - slot3.x, slot2.y - slot3.y)
+		local var_120_0 = arg_119_0.contextData.chapterVO.theme:GetLinePosition(arg_119_1.row, arg_119_1.column)
+		local var_120_1 = arg_119_0.restrictMap.anchoredPosition
+
+		tf(arg_120_0).anchoredPosition = Vector2(var_120_0.x - var_120_1.x, var_120_0.y - var_120_1.y)
 	end, "MissileAimingMark")
 end
 
-function slot0.HideMissileAimingMark(slot0)
-	slot0.loader:ClearRequest("MissileAimingMark")
+function var_0_0.HideMissileAimingMark(arg_121_0)
+	arg_121_0.loader:ClearRequest("MissileAimingMark")
 end
 
-function slot0.OnMissileAiming(slot0, slot1)
-	slot0:HideMissileAimingMark()
-	slot0:ShowMissileAimingMark(slot1)
+function var_0_0.OnMissileAiming(arg_122_0, arg_122_1)
+	arg_122_0:HideMissileAimingMark()
+	arg_122_0:ShowMissileAimingMark(arg_122_1)
 
-	slot0.missileStrikeTargetLine = slot1
+	arg_122_0.missileStrikeTargetLine = arg_122_1
 end
 
-function slot0.ShowAirSupportAimingMark(slot0, slot1)
-	slot0.loader:GetPrefab("ui/miaozhun03", "miaozhun03", function (slot0)
-		setParent(slot0, uv0.restrictMap)
+function var_0_0.ShowAirSupportAimingMark(arg_123_0, arg_123_1)
+	arg_123_0.loader:GetPrefab("ui/miaozhun03", "miaozhun03", function(arg_124_0)
+		setParent(arg_124_0, arg_123_0.restrictMap)
 
-		slot2 = uv0.contextData.chapterVO.theme:GetLinePosition(uv1.row - 0.5, uv1.column)
-		slot3 = uv0.restrictMap.anchoredPosition
-		tf(slot0).anchoredPosition = Vector2(slot2.x - slot3.x, slot2.y - slot3.y)
+		local var_124_0 = arg_123_0.contextData.chapterVO.theme:GetLinePosition(arg_123_1.row - 0.5, arg_123_1.column)
+		local var_124_1 = arg_123_0.restrictMap.anchoredPosition
+
+		tf(arg_124_0).anchoredPosition = Vector2(var_124_0.x - var_124_1.x, var_124_0.y - var_124_1.y)
 	end, "AirSupportAimingMark")
 end
 
-function slot0.HideAirSupportAimingMark(slot0)
-	slot0.loader:ClearRequest("AirSupportAimingMark")
+function var_0_0.HideAirSupportAimingMark(arg_125_0)
+	arg_125_0.loader:ClearRequest("AirSupportAimingMark")
 end
 
-function slot0.OnAirSupportAiming(slot0, slot1)
-	slot0:HideAirSupportAimingMark()
-	slot0:ShowAirSupportAimingMark(slot1)
+function var_0_0.OnAirSupportAiming(arg_126_0, arg_126_1)
+	arg_126_0:HideAirSupportAimingMark()
+	arg_126_0:ShowAirSupportAimingMark(arg_126_1)
 
-	slot0.missileStrikeTargetLine = slot1
+	arg_126_0.missileStrikeTargetLine = arg_126_1
 end
 
-function slot0.ShowAirExpelAimingMark(slot0)
-	if not slot0.airSupportTarget or not slot1.source then
+function var_0_0.ShowAirExpelAimingMark(arg_127_0)
+	local var_127_0 = arg_127_0.airSupportTarget
+
+	if not var_127_0 or not var_127_0.source then
 		return
 	end
 
-	slot2 = slot1.source
-	slot4 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot2.row, slot2.column))
+	local var_127_1 = var_127_0.source
+	local var_127_2 = ChapterCell.Line2Name(var_127_1.row, var_127_1.column)
+	local var_127_3 = arg_127_0.cellRoot:Find(var_127_2)
 
-	function slot5(slot0, slot1)
-		setParent(slot0, uv0)
+	local function var_127_4(arg_128_0, arg_128_1)
+		setParent(arg_128_0, var_127_3)
 
-		GetOrAddComponent(slot0, typeof(Canvas)).overrideSorting = true
+		GetOrAddComponent(arg_128_0, typeof(Canvas)).overrideSorting = true
 
-		if not slot1 then
+		if not arg_128_1 then
 			return
 		end
 
-		tf(slot0).localEulerAngles = Vector3(-uv1.contextData.chapterVO.theme.angle, 0, 0)
+		local var_128_0 = arg_127_0.contextData.chapterVO
+
+		tf(arg_128_0).localEulerAngles = Vector3(-var_128_0.theme.angle, 0, 0)
 	end
 
-	slot0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportmark", "tpl_airsupportmark", function (slot0)
-		uv0(slot0, true)
+	arg_127_0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportmark", "tpl_airsupportmark", function(arg_129_0)
+		var_127_4(arg_129_0, true)
 	end, "AirExpelAimingMark")
-	slot0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportdirection", "tpl_airsupportdirection", function (slot0)
-		uv0(slot0)
+	arg_127_0.loader:GetPrefabBYGroup("leveluiview/tpl_airsupportdirection", "tpl_airsupportdirection", function(arg_130_0)
+		var_127_4(arg_130_0)
 
-		slot2 = {
+		local var_130_0 = arg_127_0.contextData.chapterVO
+		local var_130_1 = {
 			{
 				-1,
 				0
@@ -2027,393 +2320,495 @@ function slot0.ShowAirExpelAimingMark(slot0)
 			}
 		}
 
-		for slot6 = 1, 4 do
-			setActive(tf(slot0):Find(slot6), uv2 and uv1.contextData.chapterVO:considerAsStayPoint(ChapterConst.SubjectChampion, uv3.row + slot2[slot6][1], uv3.column + slot2[slot6][2]))
+		for iter_130_0 = 1, 4 do
+			local var_130_2 = tf(arg_130_0):Find(iter_130_0)
+			local var_130_3 = var_127_0 and var_130_0:considerAsStayPoint(ChapterConst.SubjectChampion, var_127_1.row + var_130_1[iter_130_0][1], var_127_1.column + var_130_1[iter_130_0][2])
+
+			setActive(var_130_2, var_130_3)
 		end
 	end, "AirExpelAimingMark")
 end
 
-function slot0.HideAirExpelAimingMark(slot0)
-	slot0.loader:ReturnGroup("AirExpelAimingMark")
+function var_0_0.HideAirExpelAimingMark(arg_131_0)
+	arg_131_0.loader:ReturnGroup("AirExpelAimingMark")
 end
 
-function slot0.OnAirExpelSelect(slot0, slot1)
-	function slot3()
-		uv0:HideAirExpelAimingMark()
-		uv0:ShowAirExpelAimingMark()
-		uv0:updateQuadBase()
-		uv0:UpdateQuadStateAirExpel()
+function var_0_0.OnAirExpelSelect(arg_132_0, arg_132_1)
+	local var_132_0 = arg_132_0.contextData.chapterVO
+
+	local function var_132_1()
+		arg_132_0:HideAirExpelAimingMark()
+		arg_132_0:ShowAirExpelAimingMark()
+		arg_132_0:updateQuadBase()
+		arg_132_0:UpdateQuadStateAirExpel()
 	end
 
-	slot0.airSupportTarget = slot0.airSupportTarget or {}
-	slot4 = slot0.airSupportTarget
+	arg_132_0.airSupportTarget = arg_132_0.airSupportTarget or {}
 
-	if slot0.contextData.chapterVO:GetEnemy(slot1.row, slot1.column) then
-		if ChapterConst.IsBossCell(slot5) then
+	local var_132_2 = arg_132_0.airSupportTarget
+	local var_132_3 = var_132_0:GetEnemy(arg_132_1.row, arg_132_1.column)
+
+	if var_132_3 then
+		if ChapterConst.IsBossCell(var_132_3) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_select_boss"))
 
 			return
 		end
 
-		if slot2:existFleet(FleetType.Normal, slot1.row, slot1.column) then
+		if var_132_0:existFleet(FleetType.Normal, arg_132_1.row, arg_132_1.column) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_select_battle"))
 
 			return
 		end
 
-		if slot4.source and table.equal(slot4.source:GetLine(), slot5:GetLine()) then
-			slot5 = nil
+		if var_132_2.source and table.equal(var_132_2.source:GetLine(), var_132_3:GetLine()) then
+			var_132_3 = nil
 		end
 
-		slot4.source = slot5
+		var_132_2.source = var_132_3
 
-		slot3()
-	elseif not slot4.source then
+		var_132_1()
+	elseif not var_132_2.source then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_select_enemy"))
-	elseif ManhattonDist(slot4.source, slot1) > 1 then
+	elseif ManhattonDist(var_132_2.source, arg_132_1) > 1 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_outrange"))
-	elseif not slot2:considerAsStayPoint(ChapterConst.SubjectChampion, slot1.row, slot1.column) then
+	elseif not var_132_0:considerAsStayPoint(ChapterConst.SubjectChampion, arg_132_1.row, arg_132_1.column) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("levelscene_airexpel_outrange"))
 	else
-		if not slot0.airSupportTarget.source or not slot1 then
+		local var_132_4 = arg_132_0.airSupportTarget.source
+		local var_132_5 = arg_132_1
+
+		if not var_132_4 or not var_132_5 then
 			return
 		end
 
-		slot12 = nil
-		slot14 = slot2:getChapterSupportFleet()
+		local var_132_6 = {
+			arg_132_1.row - var_132_4.row,
+			arg_132_1.column - var_132_4.column
+		}
+		local var_132_7 = {
+			"up",
+			"right",
+			"down",
+			"left"
+		}
+		local var_132_8
+
+		if var_132_6[1] ~= 0 then
+			var_132_8 = var_132_6[1] + 2
+		else
+			var_132_8 = 3 - var_132_6[2]
+		end
+
+		local var_132_9 = var_132_7[var_132_8]
+		local var_132_10 = var_132_0:getChapterSupportFleet()
+
+		local function var_132_11()
+			arg_132_0:emit(LevelMediator2.ON_OP, {
+				type = ChapterConst.OpStrategy,
+				id = var_132_10.id,
+				arg1 = ChapterConst.StrategyExpel,
+				arg2 = var_132_4.row,
+				arg3 = var_132_4.column,
+				arg4 = var_132_5.row,
+				arg5 = var_132_5.column
+			})
+		end
+
+		local var_132_12 = var_132_4.attachmentId
+		local var_132_13 = pg.expedition_data_template[var_132_12].name
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("levelscene_airexpel_select_confirm_" .. ({
-				"up",
-				"right",
-				"down",
-				"left"
-			})[({
-				slot1.row - slot8.row,
-				slot1.column - slot8.column
-			})[1] ~= 0 and slot10[1] + 2 or 3 - slot10[2]], pg.expedition_data_template[slot8.attachmentId].name),
-			onYes = function ()
-				uv0:emit(LevelMediator2.ON_OP, {
-					type = ChapterConst.OpStrategy,
-					id = uv1.id,
-					arg1 = ChapterConst.StrategyExpel,
-					arg2 = uv2.row,
-					arg3 = uv2.column,
-					arg4 = uv3.row,
-					arg5 = uv3.column
-				})
-			end
+			content = i18n("levelscene_airexpel_select_confirm_" .. var_132_9, var_132_13),
+			onYes = var_132_11
 		})
 	end
 end
 
-function slot0.CleanAirSupport(slot0)
-	slot0.airSupportTarget = nil
+function var_0_0.CleanAirSupport(arg_135_0)
+	arg_135_0.airSupportTarget = nil
 end
 
-function slot0.startQuadTween(slot0, slot1, slot2, slot3, slot4)
-	if slot0.presentTws[slot1] then
-		LeanTween.cancel(slot0.presentTws[slot1].uniqueId)
+function var_0_0.startQuadTween(arg_136_0, arg_136_1, arg_136_2, arg_136_3, arg_136_4)
+	if arg_136_0.presentTws[arg_136_1] then
+		LeanTween.cancel(arg_136_0.presentTws[arg_136_1].uniqueId)
 
-		slot0.presentTws[slot1] = nil
+		arg_136_0.presentTws[arg_136_1] = nil
 	end
 
-	if not slot0.quadTws[slot1] then
-		setImageAlpha(slot2, slot3 or 1)
+	if not arg_136_0.quadTws[arg_136_1] then
+		arg_136_3 = arg_136_3 or 1
+		arg_136_4 = arg_136_4 or ChapterConst.CellEaseOutAlpha
 
-		slot5 = LeanTween.alpha(slot2, slot4 or ChapterConst.CellEaseOutAlpha, 1):setLoopPingPong()
-		slot0.quadTws[slot1] = {
-			tw = slot5,
-			uniqueId = slot5.uniqueId
+		setImageAlpha(arg_136_2, arg_136_3)
+
+		local var_136_0 = LeanTween.alpha(arg_136_2, arg_136_4, 1):setLoopPingPong()
+
+		arg_136_0.quadTws[arg_136_1] = {
+			tw = var_136_0,
+			uniqueId = var_136_0.uniqueId
 		}
 	end
 end
 
-function slot0.cancelQuadTween(slot0, slot1, slot2)
-	if slot0.quadTws[slot1] then
-		LeanTween.cancel(slot0.quadTws[slot1].uniqueId)
+function var_0_0.cancelQuadTween(arg_137_0, arg_137_1, arg_137_2)
+	if arg_137_0.quadTws[arg_137_1] then
+		LeanTween.cancel(arg_137_0.quadTws[arg_137_1].uniqueId)
 
-		slot0.quadTws[slot1] = nil
+		arg_137_0.quadTws[arg_137_1] = nil
 	end
 
-	setImageAlpha(slot2, ChapterConst.CellEaseOutAlpha)
+	setImageAlpha(arg_137_2, ChapterConst.CellEaseOutAlpha)
 end
 
-function slot0.killQuadTws(slot0)
-	for slot4, slot5 in pairs(slot0.quadTws) do
-		LeanTween.cancel(slot5.uniqueId)
+function var_0_0.killQuadTws(arg_138_0)
+	for iter_138_0, iter_138_1 in pairs(arg_138_0.quadTws) do
+		LeanTween.cancel(iter_138_1.uniqueId)
 	end
 
-	slot0.quadTws = {}
+	arg_138_0.quadTws = {}
 end
 
-function slot0.killPresentTws(slot0)
-	for slot4, slot5 in pairs(slot0.presentTws) do
-		LeanTween.cancel(slot5.uniqueId)
+function var_0_0.killPresentTws(arg_139_0)
+	for iter_139_0, iter_139_1 in pairs(arg_139_0.presentTws) do
+		LeanTween.cancel(iter_139_1.uniqueId)
 	end
 
-	slot0.presentTws = {}
+	arg_139_0.presentTws = {}
 end
 
-function slot0.startMarkTween(slot0, slot1, slot2, slot3, slot4)
-	if not slot0.markTws[slot1] then
-		setImageAlpha(slot2, slot3 or 1)
+function var_0_0.startMarkTween(arg_140_0, arg_140_1, arg_140_2, arg_140_3, arg_140_4)
+	if not arg_140_0.markTws[arg_140_1] then
+		arg_140_3 = arg_140_3 or 1
+		arg_140_4 = arg_140_4 or 0.2
 
-		slot5 = LeanTween.alpha(slot2, slot4 or 0.2, 0.7):setLoopPingPong():setEase(LeanTweenType.easeInOutSine):setDelay(1)
-		slot0.markTws[slot1] = {
-			tw = slot5,
-			uniqueId = slot5.uniqueId
+		setImageAlpha(arg_140_2, arg_140_3)
+
+		local var_140_0 = LeanTween.alpha(arg_140_2, arg_140_4, 0.7):setLoopPingPong():setEase(LeanTweenType.easeInOutSine):setDelay(1)
+
+		arg_140_0.markTws[arg_140_1] = {
+			tw = var_140_0,
+			uniqueId = var_140_0.uniqueId
 		}
 	end
 end
 
-function slot0.cancelMarkTween(slot0, slot1, slot2, slot3)
-	if slot0.markTws[slot1] then
-		LeanTween.cancel(slot0.markTws[slot1].uniqueId)
+function var_0_0.cancelMarkTween(arg_141_0, arg_141_1, arg_141_2, arg_141_3)
+	if arg_141_0.markTws[arg_141_1] then
+		LeanTween.cancel(arg_141_0.markTws[arg_141_1].uniqueId)
 
-		slot0.markTws[slot1] = nil
+		arg_141_0.markTws[arg_141_1] = nil
 	end
 
-	setImageAlpha(slot2, slot3 or ChapterConst.CellEaseOutAlpha)
+	setImageAlpha(arg_141_2, arg_141_3 or ChapterConst.CellEaseOutAlpha)
 end
 
-function slot0.moveFleet(slot0, slot1, slot2, slot3, slot4)
-	slot8 = slot0.cellFleets[slot0.contextData.chapterVO.fleet.id]
+function var_0_0.moveFleet(arg_142_0, arg_142_1, arg_142_2, arg_142_3, arg_142_4)
+	local var_142_0 = arg_142_0.contextData.chapterVO
+	local var_142_1 = var_142_0.fleet
+	local var_142_2 = var_142_1.id
+	local var_142_3 = arg_142_0.cellFleets[var_142_2]
 
-	slot8:SetSpineVisible(true)
-	setActive(slot8.tfShadow, true)
-	setActive(slot0.arrowTarget, true)
-	slot0:updateTargetArrow(slot2[#slot2])
+	var_142_3:SetSpineVisible(true)
+	setActive(var_142_3.tfShadow, true)
+	setActive(arg_142_0.arrowTarget, true)
+	arg_142_0:updateTargetArrow(arg_142_2[#arg_142_2])
 
-	if slot3 then
-		slot0:updateAttachment(slot3.row, slot3.column)
+	if arg_142_3 then
+		arg_142_0:updateAttachment(arg_142_3.row, arg_142_3.column)
 	end
 
-	slot0:updateQuadCells(ChapterConst.QuadStateFrozen)
-	slot0:moveCellView(slot8, slot1, slot2, function (slot0)
-		uv0.step = uv0.step + 1
+	local function var_142_4(arg_143_0)
+		var_142_1.step = var_142_1.step + 1
 
-		if uv1.onShipStepChange then
-			uv1.onShipStepChange(slot0)
+		if arg_142_0.onShipStepChange then
+			arg_142_0.onShipStepChange(arg_143_0)
 		end
-	end, function (slot0)
-	end, function ()
-		setActive(uv0.arrowTarget, false)
+	end
 
-		slot0 = uv1.fleet.line
+	local function var_142_5(arg_144_0)
+		return
+	end
 
-		if ChapterConst.NeedClearStep(uv1:getChapterCell(slot0.row, slot0.column)) then
-			uv2.step = 0
-		end
+	local function var_142_6()
+		setActive(arg_142_0.arrowTarget, false)
 
-		uv2.rotation = uv3:GetRotatePivot().transform.localRotation
+		local var_145_0 = var_142_0.fleet.line
+		local var_145_1 = var_142_0:getChapterCell(var_145_0.row, var_145_0.column)
 
-		uv0:updateAttachment(slot0.row, slot0.column)
-		uv0:updateFleet(uv4)
-		uv0:updateOni()
-
-		if uv1:getChampionIndex(slot0.row, slot0.column) then
-			uv0:updateChampion(slot2)
+		if ChapterConst.NeedClearStep(var_145_1) then
+			var_142_1.step = 0
 		end
 
-		if uv0.onShipArrived then
-			uv0.onShipArrived()
+		var_142_1.rotation = var_142_3:GetRotatePivot().transform.localRotation
+
+		arg_142_0:updateAttachment(var_145_0.row, var_145_0.column)
+		arg_142_0:updateFleet(var_142_2)
+		arg_142_0:updateOni()
+
+		local var_145_2 = var_142_0:getChampionIndex(var_145_0.row, var_145_0.column)
+
+		if var_145_2 then
+			arg_142_0:updateChampion(var_145_2)
 		end
 
-		if uv5 then
-			uv5()
+		if arg_142_0.onShipArrived then
+			arg_142_0.onShipArrived()
 		end
-	end)
+
+		if arg_142_4 then
+			arg_142_4()
+		end
+	end
+
+	arg_142_0:updateQuadCells(ChapterConst.QuadStateFrozen)
+	arg_142_0:moveCellView(var_142_3, arg_142_1, arg_142_2, var_142_4, var_142_5, var_142_6)
 end
 
-function slot0.moveSub(slot0, slot1, slot2, slot3, slot4)
-	slot7 = slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id]
+function var_0_0.moveSub(arg_146_0, arg_146_1, arg_146_2, arg_146_3, arg_146_4)
+	local var_146_0 = arg_146_0.contextData.chapterVO
+	local var_146_1 = var_146_0.fleets[arg_146_1]
+	local var_146_2 = arg_146_0.cellFleets[var_146_1.id]
+	local var_146_3 = arg_146_2[#arg_146_2]
 
-	slot0:updateQuadCells(ChapterConst.QuadStateFrozen)
-	slot0:teleportSubView(slot7, slot7:GetLine(), slot2[#slot2], function (slot0)
-	end, function (slot0)
-	end, function ()
-		uv3:SetActiveModel(not (uv0:existEnemy(ChapterConst.SubjectPlayer, uv1.row, uv1.column) or uv0:existAlly(uv2)) and uv0.subAutoAttack == 1)
+	local function var_146_4(arg_147_0)
+		return
+	end
 
-		uv2.rotation = uv3:GetRotatePivot().transform.localRotation
+	local function var_146_5(arg_148_0)
+		return
+	end
 
-		if uv4 then
-			uv4()
+	local function var_146_6()
+		local var_149_0 = var_146_0:existEnemy(ChapterConst.SubjectPlayer, var_146_3.row, var_146_3.column) or var_146_0:existAlly(var_146_1)
+		local var_149_1 = var_146_0.subAutoAttack == 1
+
+		var_146_2:SetActiveModel(not var_149_0 and var_149_1)
+
+		var_146_1.rotation = var_146_2:GetRotatePivot().transform.localRotation
+
+		if arg_146_4 then
+			arg_146_4()
 		end
-	end)
+	end
+
+	arg_146_0:updateQuadCells(ChapterConst.QuadStateFrozen)
+	arg_146_0:teleportSubView(var_146_2, var_146_2:GetLine(), var_146_3, var_146_4, var_146_5, var_146_6)
 end
 
-function slot0.moveChampion(slot0, slot1, slot2, slot3, slot4)
-	slot5 = slot0.contextData.chapterVO
+function var_0_0.moveChampion(arg_150_0, arg_150_1, arg_150_2, arg_150_3, arg_150_4)
+	local var_150_0 = arg_150_0.contextData.chapterVO
+	local var_150_1 = var_150_0.champions[arg_150_1]
+	local var_150_2 = arg_150_0.cellChampions[arg_150_1]
 
-	if slot5:getChampionVisibility(slot5.champions[slot1]) then
-		slot0:moveCellView(slot0.cellChampions[slot1], slot2, slot3, function (slot0)
-		end, function (slot0)
-		end, function ()
-			if uv0.GetRotatePivot then
-				uv1.rotation = uv0:GetRotatePivot().transform.localRotation
-			end
+	local function var_150_3(arg_151_0)
+		return
+	end
 
-			if uv2 then
-				uv2()
-			end
-		end)
+	local function var_150_4(arg_152_0)
+		return
+	end
+
+	local function var_150_5()
+		if var_150_2.GetRotatePivot then
+			var_150_1.rotation = var_150_2:GetRotatePivot().transform.localRotation
+		end
+
+		if arg_150_4 then
+			arg_150_4()
+		end
+	end
+
+	if var_150_0:getChampionVisibility(var_150_1) then
+		arg_150_0:moveCellView(var_150_2, arg_150_2, arg_150_3, var_150_3, var_150_4, var_150_5)
 	else
-		slot7:RefreshLinePosition(slot5, slot2[#slot2])
-		slot10()
+		local var_150_6 = arg_150_2[#arg_150_2]
+
+		var_150_2:RefreshLinePosition(var_150_0, var_150_6)
+		var_150_5()
 	end
 end
 
-function slot0.moveTransport(slot0, slot1, slot2, slot3, slot4)
-	slot0:updateQuadCells(ChapterConst.QuadStateFrozen)
-	slot0:moveCellView(slot0.cellFleets[slot0.contextData.chapterVO.fleets[slot1].id], slot2, slot3, function (slot0)
-	end, function (slot0)
-	end, function ()
-		uv0.rotation = uv1:GetRotatePivot().transform.localRotation
+function var_0_0.moveTransport(arg_154_0, arg_154_1, arg_154_2, arg_154_3, arg_154_4)
+	local var_154_0 = arg_154_0.contextData.chapterVO.fleets[arg_154_1]
+	local var_154_1 = arg_154_0.cellFleets[var_154_0.id]
 
-		uv2:updateFleet(uv0.id)
-		existCall(uv3)
-	end)
+	local function var_154_2(arg_155_0)
+		return
+	end
+
+	local function var_154_3(arg_156_0)
+		return
+	end
+
+	local function var_154_4()
+		var_154_0.rotation = var_154_1:GetRotatePivot().transform.localRotation
+
+		arg_154_0:updateFleet(var_154_0.id)
+		existCall(arg_154_4)
+	end
+
+	arg_154_0:updateQuadCells(ChapterConst.QuadStateFrozen)
+	arg_154_0:moveCellView(var_154_1, arg_154_2, arg_154_3, var_154_2, var_154_3, var_154_4)
 end
 
-function slot0.moveCellView(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot7 = slot0.contextData.chapterVO
-	slot8 = nil
-	slot8 = coroutine.create(function ()
-		uv0:frozen()
+function var_0_0.moveCellView(arg_158_0, arg_158_1, arg_158_2, arg_158_3, arg_158_4, arg_158_5, arg_158_6)
+	local var_158_0 = arg_158_0.contextData.chapterVO
+	local var_158_1
 
-		slot0 = uv1:GetQuickPlayFlag() and ChapterConst.ShipStepQuickPlayScale or 1
-		slot1 = 0.3 * slot0
-		slot2 = ChapterConst.ShipStepDuration * ChapterConst.ShipMoveTailLength * slot0
-		slot3 = 0.1 * slot0
-		slot4 = 0
+	local function var_158_2()
+		if var_158_1 and coroutine.status(var_158_1) == "suspended" then
+			local var_159_0, var_159_1 = coroutine.resume(var_158_1)
 
-		table.insert(uv2, 1, uv3:GetLine())
-		_.each(uv2, function (slot0)
-			if ChapterConst.NeedEasePathCell(uv0:getChapterCell(slot0.row, slot0.column)) then
-				slot2 = ChapterCell.Line2QuadName(slot1.row, slot1.column)
-				slot3 = uv1.quadRoot:Find(slot2)
+			assert(var_159_0, debug.traceback(var_158_1, var_159_1))
+		end
+	end
 
-				uv1:cancelQuadTween(slot2, slot3)
-				LeanTween.alpha(slot3, 1, uv2):setDelay(uv3)
+	var_158_1 = coroutine.create(function()
+		arg_158_0:frozen()
 
-				uv3 = uv3 + uv4
+		local var_160_0 = var_158_0:GetQuickPlayFlag() and ChapterConst.ShipStepQuickPlayScale or 1
+		local var_160_1 = 0.3 * var_160_0
+		local var_160_2 = ChapterConst.ShipStepDuration * ChapterConst.ShipMoveTailLength * var_160_0
+		local var_160_3 = 0.1 * var_160_0
+		local var_160_4 = 0
+
+		table.insert(arg_158_3, 1, arg_158_1:GetLine())
+		_.each(arg_158_3, function(arg_161_0)
+			local var_161_0 = var_158_0:getChapterCell(arg_161_0.row, arg_161_0.column)
+
+			if ChapterConst.NeedEasePathCell(var_161_0) then
+				local var_161_1 = ChapterCell.Line2QuadName(var_161_0.row, var_161_0.column)
+				local var_161_2 = arg_158_0.quadRoot:Find(var_161_1)
+
+				arg_158_0:cancelQuadTween(var_161_1, var_161_2)
+				LeanTween.alpha(var_161_2, 1, var_160_1):setDelay(var_160_4)
+
+				var_160_4 = var_160_4 + var_160_3
 			end
 		end)
-		_.each(uv4, function (slot0)
-			uv0:moveStep(uv1, slot0, uv2[#uv2], function ()
-				slot0 = uv0:GetLine()
+		_.each(arg_158_2, function(arg_162_0)
+			arg_158_0:moveStep(arg_158_1, arg_162_0, arg_158_3[#arg_158_3], function()
+				local var_163_0 = arg_158_1:GetLine()
+				local var_163_1 = var_158_0:getChapterCell(var_163_0.row, var_163_0.column)
 
-				if ChapterConst.NeedEasePathCell(uv1:getChapterCell(slot0.row, slot0.column)) then
-					LeanTween.scale(uv2.quadRoot:Find(ChapterCell.Line2QuadName(slot1.row, slot1.column)), Vector3.zero, uv3)
+				if ChapterConst.NeedEasePathCell(var_163_1) then
+					local var_163_2 = ChapterCell.Line2QuadName(var_163_1.row, var_163_1.column)
+					local var_163_3 = arg_158_0.quadRoot:Find(var_163_2)
+
+					LeanTween.scale(var_163_3, Vector3.zero, var_160_2)
 				end
 
-				uv4(uv5)
-				uv0:SetLine(uv5)
-				uv0:ResetCanvasOrder()
-			end, function ()
-				uv0(uv1)
-				uv2()
+				arg_158_4(arg_162_0)
+				arg_158_1:SetLine(arg_162_0)
+				arg_158_1:ResetCanvasOrder()
+			end, function()
+				arg_158_5(arg_162_0)
+				var_158_2()
 			end)
 			coroutine.yield()
 		end)
-		_.each(uv2, function (slot0)
-			if ChapterConst.NeedEasePathCell(uv0:getChapterCell(slot0.row, slot0.column)) then
-				slot3 = uv1.quadRoot:Find(ChapterCell.Line2QuadName(slot1.row, slot1.column))
+		_.each(arg_158_3, function(arg_165_0)
+			local var_165_0 = var_158_0:getChapterCell(arg_165_0.row, arg_165_0.column)
 
-				LeanTween.cancel(slot3.gameObject)
-				setImageAlpha(slot3, ChapterConst.CellEaseOutAlpha)
+			if ChapterConst.NeedEasePathCell(var_165_0) then
+				local var_165_1 = ChapterCell.Line2QuadName(var_165_0.row, var_165_0.column)
+				local var_165_2 = arg_158_0.quadRoot:Find(var_165_1)
 
-				slot3.localScale = Vector3.one
+				LeanTween.cancel(var_165_2.gameObject)
+				setImageAlpha(var_165_2, ChapterConst.CellEaseOutAlpha)
+
+				var_165_2.localScale = Vector3.one
 			end
 		end)
 
-		if uv0.exited then
+		if arg_158_0.exited then
 			return
 		end
 
-		if uv3.GetAction then
-			uv3:SetAction(ChapterConst.ShipIdleAction)
+		if arg_158_1.GetAction then
+			arg_158_1:SetAction(ChapterConst.ShipIdleAction)
 		end
 
-		uv8()
-		uv0:unfrozen()
+		arg_158_6()
+		arg_158_0:unfrozen()
 	end)
 
-	function ()
-		if uv0 and coroutine.status(uv0) == "suspended" then
-			slot0, slot1 = coroutine.resume(uv0)
-
-			assert(slot0, debug.traceback(uv0, slot1))
-		end
-	end()
+	var_158_2()
 end
 
-function slot0.moveStep(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot7 = slot0.contextData.chapterVO:GetQuickPlayFlag() and ChapterConst.ShipStepQuickPlayScale or 1
-	slot8 = nil
+function var_0_0.moveStep(arg_166_0, arg_166_1, arg_166_2, arg_166_3, arg_166_4, arg_166_5)
+	local var_166_0 = arg_166_0.contextData.chapterVO
+	local var_166_1 = var_166_0:GetQuickPlayFlag() and ChapterConst.ShipStepQuickPlayScale or 1
+	local var_166_2
 
-	if slot1.GetRotatePivot then
-		slot8 = slot1:GetRotatePivot()
+	if arg_166_1.GetRotatePivot then
+		var_166_2 = arg_166_1:GetRotatePivot()
 	end
 
-	slot9 = slot1:GetLine()
+	local var_166_3 = arg_166_1:GetLine()
 
-	if slot1.GetAction then
-		slot1:SetAction(ChapterConst.ShipMoveAction)
+	if arg_166_1.GetAction then
+		arg_166_1:SetAction(ChapterConst.ShipMoveAction)
 	end
 
-	if not IsNil(slot8) and (slot2.column ~= slot9.column or slot3.column ~= slot9.column) then
-		tf(slot8).localRotation = Quaternion.identity
+	if not IsNil(var_166_2) and (arg_166_2.column ~= var_166_3.column or arg_166_3.column ~= var_166_3.column) then
+		tf(var_166_2).localRotation = Quaternion.identity
 
-		if slot2.column < slot9.column or slot2.column == slot9.column and slot3.column < slot9.column then
-			tf(slot8).localRotation = Quaternion.Euler(0, 180, 0)
+		if arg_166_2.column < var_166_3.column or arg_166_2.column == var_166_3.column and arg_166_3.column < var_166_3.column then
+			tf(var_166_2).localRotation = Quaternion.Euler(0, 180, 0)
 		end
 	end
 
-	slot10 = slot1.tf.localPosition
-	slot11 = slot6.theme:GetLinePosition(slot2.row, slot2.column)
-	slot12 = 0
+	local var_166_4 = arg_166_1.tf.localPosition
+	local var_166_5 = var_166_0.theme:GetLinePosition(arg_166_2.row, arg_166_2.column)
+	local var_166_6 = 0
 
-	LeanTween.value(slot1.go, 0, 1, ChapterConst.ShipStepDuration * slot7):setOnComplete(System.Action(slot5)):setOnUpdate(System.Action_float(function (slot0)
-		uv0.tf.localPosition = Vector3.Lerp(uv1, uv2, slot0)
+	LeanTween.value(arg_166_1.go, 0, 1, ChapterConst.ShipStepDuration * var_166_1):setOnComplete(System.Action(arg_166_5)):setOnUpdate(System.Action_float(function(arg_167_0)
+		arg_166_1.tf.localPosition = Vector3.Lerp(var_166_4, var_166_5, arg_167_0)
 
-		if uv3 <= 0.5 and slot0 > 0.5 then
-			uv4()
+		if var_166_6 <= 0.5 and arg_167_0 > 0.5 then
+			arg_166_4()
 		end
 
-		uv3 = slot0
+		var_166_6 = arg_167_0
 	end))
 end
 
-function slot0.teleportSubView(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot7 = slot0.contextData.chapterVO
+function var_0_0.teleportSubView(arg_168_0, arg_168_1, arg_168_2, arg_168_3, arg_168_4, arg_168_5, arg_168_6)
+	local var_168_0 = arg_168_0.contextData.chapterVO
 
-	slot0:PlaySubAnimation(slot1, true, function ()
-		uv0(uv1)
-		uv2:RefreshLinePosition(uv3, uv1)
-		uv4(uv1)
-		uv5:PlaySubAnimation(uv2, false, uv6)
-	end)
+	local function var_168_1()
+		arg_168_4(arg_168_3)
+		arg_168_1:RefreshLinePosition(var_168_0, arg_168_3)
+		arg_168_5(arg_168_3)
+		arg_168_0:PlaySubAnimation(arg_168_1, false, arg_168_6)
+	end
+
+	arg_168_0:PlaySubAnimation(arg_168_1, true, var_168_1)
 end
 
-function slot0.CellToScreen(slot0, slot1, slot2)
-	slot3 = slot0._tf:Find(ChapterConst.PlaneName .. "/cells")
+function var_0_0.CellToScreen(arg_170_0, arg_170_1, arg_170_2)
+	local var_170_0 = arg_170_0._tf:Find(ChapterConst.PlaneName .. "/cells")
 
-	assert(slot3, "plane not exist.")
+	assert(var_170_0, "plane not exist.")
 
-	slot5 = slot0.contextData.chapterVO.theme
-	slot6 = slot5:GetLinePosition(slot1, slot2)
-	slot7 = slot6.y
-	slot6.y = slot7 * math.cos(math.pi / 180 * slot5.angle)
-	slot6.z = slot7 * math.sin(math.pi / 180 * slot5.angle)
-	slot8 = slot0.levelCam.transform:GetChild(0)
-	slot11 = slot0.levelCam:WorldToViewportPoint(slot3.position + slot6 * slot3.transform.lossyScale.x)
+	local var_170_1 = arg_170_0.contextData.chapterVO.theme
+	local var_170_2 = var_170_1:GetLinePosition(arg_170_1, arg_170_2)
+	local var_170_3 = var_170_2.y
 
-	return Vector3(slot8.rect.width * (slot11.x - 0.5), slot8.rect.height * (slot11.y - 0.5))
+	var_170_2.y = var_170_3 * math.cos(math.pi / 180 * var_170_1.angle)
+	var_170_2.z = var_170_3 * math.sin(math.pi / 180 * var_170_1.angle)
+
+	local var_170_4 = arg_170_0.levelCam.transform:GetChild(0)
+	local var_170_5 = var_170_0.transform.lossyScale.x
+	local var_170_6 = var_170_0.position + var_170_2 * var_170_5
+	local var_170_7 = arg_170_0.levelCam:WorldToViewportPoint(var_170_6)
+
+	return Vector3(var_170_4.rect.width * (var_170_7.x - 0.5), var_170_4.rect.height * (var_170_7.y - 0.5))
 end
 
-slot4 = {
+local var_0_4 = {
 	{
 		1,
 		0
@@ -2431,7 +2826,7 @@ slot4 = {
 		1
 	}
 }
-slot5 = {
+local var_0_5 = {
 	{
 		1,
 		1
@@ -2450,496 +2845,607 @@ slot5 = {
 	}
 }
 
-function slot0.AddCellEdge(slot0, slot1, slot2, ...)
-	slot4 = 1
+function var_0_0.AddCellEdge(arg_171_0, arg_171_1, arg_171_2, ...)
+	local var_171_0 = 0
+	local var_171_1 = 1
 
-	for slot8 = 1, 4 do
-		if not _.any(slot1, function (slot0)
-			return slot0.row == uv0.row + uv1[uv2][1] and slot0.column == uv0.column + uv1[uv2][2]
+	for iter_171_0 = 1, 4 do
+		if not _.any(arg_171_1, function(arg_172_0)
+			return arg_172_0.row == arg_171_2.row + var_0_4[iter_171_0][1] and arg_172_0.column == arg_171_2.column + var_0_4[iter_171_0][2]
 		end) then
-			slot3 = bit.bor(0, slot4)
+			var_171_0 = bit.bor(var_171_0, var_171_1)
 		end
 
-		slot4 = slot4 * 2
+		var_171_1 = var_171_1 * 2
 	end
 
-	if slot3 == 0 then
+	if var_171_0 == 0 then
 		return
 	end
 
-	slot0:CreateEdge(slot3, slot2, ...)
+	arg_171_0:CreateEdge(var_171_0, arg_171_2, ...)
 end
 
-function slot0.AddOutlines(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = {}
-	slot7 = {}
+function var_0_0.AddOutlines(arg_173_0, arg_173_1, arg_173_2, arg_173_3, arg_173_4, arg_173_5)
+	local var_173_0 = {}
+	local var_173_1 = {}
 
-	for slot11, slot12 in ipairs(slot1) do
-		for slot16 = 1, 4 do
-			if not underscore.any(slot1, function (slot0)
-				return slot0.row == uv0.row + uv1[uv2][1] and slot0.column == uv0.column + uv1[uv2][2]
+	for iter_173_0, iter_173_1 in ipairs(arg_173_1) do
+		for iter_173_2 = 1, 4 do
+			if not underscore.any(arg_173_1, function(arg_174_0)
+				return arg_174_0.row == iter_173_1.row + var_0_4[iter_173_2][1] and arg_174_0.column == iter_173_1.column + var_0_4[iter_173_2][2]
 			end) then
-				slot17 = 2 * slot12.row + uv0[slot16][1]
-				slot18 = 2 * slot12.column + uv0[slot16][2]
+				local var_173_2 = 2 * iter_173_1.row + var_0_4[iter_173_2][1]
+				local var_173_3 = 2 * iter_173_1.column + var_0_4[iter_173_2][2]
 
-				assert(not slot6[slot17 .. "_" .. slot18], "Multiple outline")
+				assert(not var_173_0[var_173_2 .. "_" .. var_173_3], "Multiple outline")
 
-				slot6[slot17 .. "_" .. slot18] = {
-					row = slot17,
-					column = slot18,
-					normal = slot16
+				var_173_0[var_173_2 .. "_" .. var_173_3] = {
+					row = var_173_2,
+					column = var_173_3,
+					normal = iter_173_2
 				}
 			end
 
-			if not underscore.any(slot1, function (slot0)
-				return slot0.row == uv0.row + uv1[uv2][1] and slot0.column == uv0.column + uv1[uv2][2]
-			end) and underscore.any(slot1, function (slot0)
-				return slot0.row == uv0.row and slot0.column == uv0.column + uv1[uv2][2]
-			end) and underscore.any(slot1, function (slot0)
-				return slot0.row == uv0.row + uv1[uv2][1] and slot0.column == uv0.column
+			if not underscore.any(arg_173_1, function(arg_175_0)
+				return arg_175_0.row == iter_173_1.row + var_0_5[iter_173_2][1] and arg_175_0.column == iter_173_1.column + var_0_5[iter_173_2][2]
+			end) and underscore.any(arg_173_1, function(arg_176_0)
+				return arg_176_0.row == iter_173_1.row and arg_176_0.column == iter_173_1.column + var_0_5[iter_173_2][2]
+			end) and underscore.any(arg_173_1, function(arg_177_0)
+				return arg_177_0.row == iter_173_1.row + var_0_5[iter_173_2][1] and arg_177_0.column == iter_173_1.column
 			end) then
-				slot7[slot12.row .. "_" .. slot12.column .. "_" .. slot16] = {
-					row = slot12.row,
-					column = slot12.column,
-					corner = slot16
+				var_173_1[iter_173_1.row .. "_" .. iter_173_1.column .. "_" .. iter_173_2] = {
+					row = iter_173_1.row,
+					column = iter_173_1.column,
+					corner = iter_173_2
 				}
 			end
 		end
 	end
 
-	slot0:CreateOutlines(slot6, slot2, slot3, slot4, slot5)
-	slot0:CreateOutlineCorners(slot7, slot2, slot3, slot4, slot5 .. "_corner")
+	arg_173_0:CreateOutlines(var_173_0, arg_173_2, arg_173_3, arg_173_4, arg_173_5)
+	arg_173_0:CreateOutlineCorners(var_173_1, arg_173_2, arg_173_3, arg_173_4, arg_173_5 .. "_corner")
 end
 
-function slot0.isHuntingRangeVisible(slot0)
-	return slot0.contextData.huntingRangeVisibility % 2 == 0
+function var_0_0.isHuntingRangeVisible(arg_178_0)
+	return arg_178_0.contextData.huntingRangeVisibility % 2 == 0
 end
 
-function slot0.toggleHuntingRange(slot0)
-	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
-	slot0:ClearEdges("SubmarineHunting")
+function var_0_0.toggleHuntingRange(arg_179_0)
+	arg_179_0:hideQuadMark(ChapterConst.MarkHuntingRange)
+	arg_179_0:ClearEdges("SubmarineHunting")
 
-	if not slot0:isHuntingRangeVisible() then
-		slot0:ShowHuntingRange()
+	if not arg_179_0:isHuntingRangeVisible() then
+		arg_179_0:ShowHuntingRange()
 	end
 
-	slot0.contextData.huntingRangeVisibility = 1 - slot0.contextData.huntingRangeVisibility
+	arg_179_0.contextData.huntingRangeVisibility = 1 - arg_179_0.contextData.huntingRangeVisibility
 
-	slot0:updateAttachments()
-	slot0:updateChampions()
+	arg_179_0:updateAttachments()
+	arg_179_0:updateChampions()
 end
 
-function slot0.ShowHuntingRange(slot0)
-	if not slot0.contextData.chapterVO:GetSubmarineFleet() then
+function var_0_0.ShowHuntingRange(arg_180_0)
+	local var_180_0 = arg_180_0.contextData.chapterVO
+	local var_180_1 = var_180_0:GetSubmarineFleet()
+
+	if not var_180_1 then
 		return
 	end
 
-	slot0:RefreshHuntingRange(_.filter(slot2:getHuntingRange(), function (slot0)
-		return uv0:getChapterCell(slot0.row, slot0.column) and slot1:IsWalkable()
-	end), false)
+	local var_180_2 = var_180_1:getHuntingRange()
+	local var_180_3 = _.filter(var_180_2, function(arg_181_0)
+		local var_181_0 = var_180_0:getChapterCell(arg_181_0.row, arg_181_0.column)
+
+		return var_181_0 and var_181_0:IsWalkable()
+	end)
+
+	arg_180_0:RefreshHuntingRange(var_180_3, false)
 end
 
-function slot0.RefreshHuntingRange(slot0, slot1, slot2)
-	slot0:showQuadMark(slot1, ChapterConst.MarkHuntingRange, "cell_hunting_range", Vector2(100, 100), slot0.material_Add, slot2)
-	_.each(slot1, function (slot0)
-		uv0:AddCellEdge(uv1, slot0, not uv2, nil, , "SubmarineHunting")
+function var_0_0.RefreshHuntingRange(arg_182_0, arg_182_1, arg_182_2)
+	arg_182_0:showQuadMark(arg_182_1, ChapterConst.MarkHuntingRange, "cell_hunting_range", Vector2(100, 100), arg_182_0.material_Add, arg_182_2)
+	_.each(arg_182_1, function(arg_183_0)
+		arg_182_0:AddCellEdge(arg_182_1, arg_183_0, not arg_182_2, nil, nil, "SubmarineHunting")
 	end)
 end
 
-function slot0.ShowStaticHuntingRange(slot0)
-	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
-	slot0:ClearEdges("SubmarineHunting")
+function var_0_0.ShowStaticHuntingRange(arg_184_0)
+	arg_184_0:hideQuadMark(ChapterConst.MarkHuntingRange)
+	arg_184_0:ClearEdges("SubmarineHunting")
 
-	slot2 = slot0.contextData.chapterVO:GetSubmarineFleet()
+	local var_184_0 = arg_184_0.contextData.chapterVO
+	local var_184_1 = var_184_0:GetSubmarineFleet()
 
-	if not slot0:isHuntingRangeVisible() then
-		slot0.contextData.huntingRangeVisibility = slot0.contextData.huntingRangeVisibility + 1
+	if not arg_184_0:isHuntingRangeVisible() then
+		arg_184_0.contextData.huntingRangeVisibility = arg_184_0.contextData.huntingRangeVisibility + 1
 	end
 
-	slot0:RefreshHuntingRange(_.filter(slot2:getHuntingRange(), function (slot0)
-		return uv0:getChapterCell(slot0.row, slot0.column) and slot1:IsWalkable()
-	end), true)
+	local var_184_2 = var_184_1:getHuntingRange()
+	local var_184_3 = _.filter(var_184_2, function(arg_185_0)
+		local var_185_0 = var_184_0:getChapterCell(arg_185_0.row, arg_185_0.column)
+
+		return var_185_0 and var_185_0:IsWalkable()
+	end)
+
+	arg_184_0:RefreshHuntingRange(var_184_3, true)
 end
 
-function slot0.ShowTargetHuntingRange(slot0, slot1)
-	slot0:hideQuadMark(ChapterConst.MarkHuntingRange)
-	slot0:ClearEdges("SubmarineHunting")
+function var_0_0.ShowTargetHuntingRange(arg_186_0, arg_186_1)
+	arg_186_0:hideQuadMark(ChapterConst.MarkHuntingRange)
+	arg_186_0:ClearEdges("SubmarineHunting")
 
-	slot3 = slot0.contextData.chapterVO:GetSubmarineFleet()
-	slot4 = _.filter(slot3:getHuntingRange(slot1), function (slot0)
-		return uv0:getChapterCell(slot0.row, slot0.column) and slot1:IsWalkable()
+	local var_186_0 = arg_186_0.contextData.chapterVO
+	local var_186_1 = var_186_0:GetSubmarineFleet()
+	local var_186_2 = var_186_1:getHuntingRange(arg_186_1)
+	local var_186_3 = _.filter(var_186_2, function(arg_187_0)
+		local var_187_0 = var_186_0:getChapterCell(arg_187_0.row, arg_187_0.column)
+
+		return var_187_0 and var_187_0:IsWalkable()
 	end)
-	slot6 = {}
+	local var_186_4 = var_186_1:getHuntingRange()
+	local var_186_5 = _.filter(var_186_4, function(arg_188_0)
+		local var_188_0 = var_186_0:getChapterCell(arg_188_0.row, arg_188_0.column)
 
-	for slot10, slot11 in pairs(_.filter(slot3:getHuntingRange(), function (slot0)
-		return uv0:getChapterCell(slot0.row, slot0.column) and slot1:IsWalkable()
-	end)) do
-		if not table.containsData(slot4, slot11) then
-			table.insert(slot6, slot11)
+		return var_188_0 and var_188_0:IsWalkable()
+	end)
+	local var_186_6 = {}
+
+	for iter_186_0, iter_186_1 in pairs(var_186_5) do
+		if not table.containsData(var_186_3, iter_186_1) then
+			table.insert(var_186_6, iter_186_1)
 		end
 	end
 
-	slot0:RefreshHuntingRange(slot6, true)
-	slot0:RefreshHuntingRange(slot4, false)
-	slot0:updateAttachments()
-	slot0:updateChampions()
+	arg_186_0:RefreshHuntingRange(var_186_6, true)
+	arg_186_0:RefreshHuntingRange(var_186_3, false)
+	arg_186_0:updateAttachments()
+	arg_186_0:updateChampions()
 end
 
-function slot0.OnChangeSubAutoAttack(slot0)
-	if not slot0.contextData.chapterVO:GetSubmarineFleet() then
+function var_0_0.OnChangeSubAutoAttack(arg_189_0)
+	local var_189_0 = arg_189_0.contextData.chapterVO
+	local var_189_1 = var_189_0:GetSubmarineFleet()
+
+	if not var_189_1 then
 		return
 	end
 
-	if not slot0.cellFleets[slot2.id] then
+	local var_189_2 = arg_189_0.cellFleets[var_189_1.id]
+
+	if not var_189_2 then
 		return
 	end
 
-	slot4 = slot1.subAutoAttack == 1
+	local var_189_3 = var_189_0.subAutoAttack == 1
 
-	slot3:SetActiveModel(not slot4)
-	slot0:PlaySubAnimation(slot3, not slot4, function ()
-		uv0:updateFleet(uv1.id)
+	var_189_2:SetActiveModel(not var_189_3)
+	arg_189_0:PlaySubAnimation(var_189_2, not var_189_3, function()
+		arg_189_0:updateFleet(var_189_1.id)
 	end)
 end
 
-function slot0.displayEscapeGrid(slot0)
-	if not slot0.contextData.chapterVO:existOni() then
+function var_0_0.displayEscapeGrid(arg_191_0)
+	local var_191_0 = arg_191_0.contextData.chapterVO
+
+	if not var_191_0:existOni() then
 		return
 	end
 
-	slot0:hideQuadMark(ChapterConst.MarkEscapeGrid)
-	slot0:showQuadMark(_.map(slot1:getOniChapterInfo().escape_grids, function (slot0)
+	local var_191_1 = var_191_0:getOniChapterInfo()
+
+	arg_191_0:hideQuadMark(ChapterConst.MarkEscapeGrid)
+	arg_191_0:showQuadMark(_.map(var_191_1.escape_grids, function(arg_192_0)
 		return {
-			row = slot0[1],
-			column = slot0[2]
+			row = arg_192_0[1],
+			column = arg_192_0[2]
 		}
 	end), ChapterConst.MarkEscapeGrid, "cell_escape_grid", Vector2(105, 105))
 end
 
-function slot0.showQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0:ShowAnyQuadMark(slot1, slot2, slot3, slot4, slot5, false, slot6)
+function var_0_0.showQuadMark(arg_193_0, arg_193_1, arg_193_2, arg_193_3, arg_193_4, arg_193_5, arg_193_6)
+	arg_193_0:ShowAnyQuadMark(arg_193_1, arg_193_2, arg_193_3, arg_193_4, arg_193_5, false, arg_193_6)
 end
 
-function slot0.ShowTopQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0:ShowAnyQuadMark(slot1, slot2, slot3, slot4, slot5, true, slot6)
+function var_0_0.ShowTopQuadMark(arg_194_0, arg_194_1, arg_194_2, arg_194_3, arg_194_4, arg_194_5, arg_194_6)
+	arg_194_0:ShowAnyQuadMark(arg_194_1, arg_194_2, arg_194_3, arg_194_4, arg_194_5, true, arg_194_6)
 end
 
-function slot0.ShowAnyQuadMark(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7)
-	slot8 = slot0.contextData.chapterVO
+function var_0_0.ShowAnyQuadMark(arg_195_0, arg_195_1, arg_195_2, arg_195_3, arg_195_4, arg_195_5, arg_195_6, arg_195_7)
+	local var_195_0 = arg_195_0.contextData.chapterVO
 
-	for slot12, slot13 in pairs(slot1) do
-		if slot8:getChapterCell(slot13.row, slot13.column) and slot14:IsWalkable() then
-			slot0.markQuads[slot2] = slot0.markQuads[slot2] or {}
+	for iter_195_0, iter_195_1 in pairs(arg_195_1) do
+		local var_195_1 = var_195_0:getChapterCell(iter_195_1.row, iter_195_1.column)
 
-			if not slot0.markQuads[slot2][ChapterCell.Line2MarkName(slot13.row, slot13.column, slot2)] then
-				PoolMgr.GetInstance():GetPrefab("chapter/cell_quad_mark", "", false, function (slot0)
-					uv0 = slot0.transform
-					uv1.markQuads[uv2][uv3] = uv0
+		if var_195_1 and var_195_1:IsWalkable() then
+			local var_195_2 = ChapterCell.Line2MarkName(iter_195_1.row, iter_195_1.column, arg_195_2)
+
+			arg_195_0.markQuads[arg_195_2] = arg_195_0.markQuads[arg_195_2] or {}
+
+			local var_195_3 = arg_195_0.markQuads[arg_195_2][var_195_2]
+
+			if not var_195_3 then
+				PoolMgr.GetInstance():GetPrefab("chapter/cell_quad_mark", "", false, function(arg_196_0)
+					var_195_3 = arg_196_0.transform
+					arg_195_0.markQuads[arg_195_2][var_195_2] = var_195_3
 				end)
 			else
-				slot0:cancelMarkTween(slot15, slot16, 1)
+				arg_195_0:cancelMarkTween(var_195_2, var_195_3, 1)
 			end
 
-			slot16.name = slot15
+			var_195_3.name = var_195_2
 
-			slot16:SetParent(slot6 and slot0.topMarkRoot or slot0.bottomMarkRoot, false)
+			var_195_3:SetParent(arg_195_6 and arg_195_0.topMarkRoot or arg_195_0.bottomMarkRoot, false)
 
-			slot16.sizeDelta = slot8.theme.cellSize
-			slot16.anchoredPosition = slot8.theme:GetLinePosition(slot13.row, slot13.column)
-			slot16.localScale = Vector3.one
+			var_195_3.sizeDelta = var_195_0.theme.cellSize
+			var_195_3.anchoredPosition = var_195_0.theme:GetLinePosition(iter_195_1.row, iter_195_1.column)
+			var_195_3.localScale = Vector3.one
 
-			slot16:SetAsLastSibling()
+			var_195_3:SetAsLastSibling()
 
-			slot17 = slot16:GetComponent(typeof(Image))
-			slot17.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", slot3)
-			slot17.material = slot5
-			slot16.sizeDelta = slot4
+			local var_195_4 = var_195_3:GetComponent(typeof(Image))
 
-			if not slot7 then
-				slot0:startMarkTween(slot15, slot16)
+			var_195_4.sprite = GetSpriteFromAtlas("chapter/pic/cellgrid", arg_195_3)
+			var_195_4.material = arg_195_5
+			var_195_3.sizeDelta = arg_195_4
+
+			if not arg_195_7 then
+				arg_195_0:startMarkTween(var_195_2, var_195_3)
 			else
-				slot0:cancelMarkTween(slot15, slot16, 1)
+				arg_195_0:cancelMarkTween(var_195_2, var_195_3, 1)
 			end
 		end
 	end
 end
 
-function slot0.hideQuadMark(slot0, slot1)
-	if slot1 and not slot0.markQuads[slot1] then
+function var_0_0.hideQuadMark(arg_197_0, arg_197_1)
+	if arg_197_1 and not arg_197_0.markQuads[arg_197_1] then
 		return
 	end
 
-	for slot5, slot6 in pairs(slot0.markQuads) do
-		if not slot1 or slot5 == slot1 then
-			for slot10, slot11 in pairs(slot6) do
-				slot0:cancelMarkTween(slot10, slot11)
+	for iter_197_0, iter_197_1 in pairs(arg_197_0.markQuads) do
+		if not arg_197_1 or iter_197_0 == arg_197_1 then
+			for iter_197_2, iter_197_3 in pairs(iter_197_1) do
+				arg_197_0:cancelMarkTween(iter_197_2, iter_197_3)
 
-				slot6[slot10]:GetComponent(typeof(Image)).material = nil
-				slot6[slot10] = nil
+				iter_197_1[iter_197_2]:GetComponent(typeof(Image)).material = nil
+				iter_197_1[iter_197_2] = nil
 
-				PoolMgr.GetInstance():ReturnPrefab("chapter/cell_quad_mark", "", slot11.gameObject)
+				PoolMgr.GetInstance():ReturnPrefab("chapter/cell_quad_mark", "", iter_197_3.gameObject)
 			end
 
-			table.clear(slot0.markQuads[slot5])
+			table.clear(arg_197_0.markQuads[iter_197_0])
 		end
 	end
 end
 
-function slot0.CreateEdgeIndex(slot0, slot1, slot2, slot3)
-	return ChapterCell.Line2Name(slot0, slot1) .. (slot3 and "_" .. slot3 or "") .. "_" .. slot2
+function var_0_0.CreateEdgeIndex(arg_198_0, arg_198_1, arg_198_2, arg_198_3)
+	return ChapterCell.Line2Name(arg_198_0, arg_198_1) .. (arg_198_3 and "_" .. arg_198_3 or "") .. "_" .. arg_198_2
 end
 
-function slot0.CreateEdge(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	if slot1 <= 0 or slot1 >= 16 then
+function var_0_0.CreateEdge(arg_199_0, arg_199_1, arg_199_2, arg_199_3, arg_199_4, arg_199_5, arg_199_6)
+	if arg_199_1 <= 0 or arg_199_1 >= 16 then
 		return
 	end
 
-	slot7 = slot0:GetEdgePool(slot6)
-	slot8 = slot0.contextData.chapterVO
-	slot9 = slot8.theme:GetLinePosition(slot2.row, slot2.column)
-	slot10 = slot8.theme.cellSize
+	local var_199_0 = arg_199_0:GetEdgePool(arg_199_6)
+	local var_199_1 = arg_199_0.contextData.chapterVO
+	local var_199_2 = var_199_1.theme:GetLinePosition(arg_199_2.row, arg_199_2.column)
+	local var_199_3 = var_199_1.theme.cellSize
 
-	assert(slot6, "Missing key, Please PM Programmer")
+	assert(arg_199_6, "Missing key, Please PM Programmer")
 
-	slot11 = 1
-	slot12 = 0
+	local var_199_4 = 1
+	local var_199_5 = 0
 
-	while slot12 < 4 do
-		slot12 = slot12 + 1
+	while var_199_5 < 4 do
+		var_199_5 = var_199_5 + 1
 
-		if bit.band(slot1, slot11) > 0 then
-			slot13 = slot0.CreateEdgeIndex(slot2.row, slot2.column, slot12, slot6)
-			slot0.cellEdges[slot6] = slot0.cellEdges[slot6] or {}
-			slot0.cellEdges[slot6][slot13] = slot0.cellEdges[slot6][slot13] or tf(slot7:Dequeue())
-			slot14 = slot0.cellEdges[slot6][slot13]
-			slot14.name = slot13
+		if bit.band(arg_199_1, var_199_4) > 0 then
+			local var_199_6 = arg_199_0.CreateEdgeIndex(arg_199_2.row, arg_199_2.column, var_199_5, arg_199_6)
 
-			slot14:SetParent(slot0.bottomMarkRoot, false)
+			arg_199_0.cellEdges[arg_199_6] = arg_199_0.cellEdges[arg_199_6] or {}
+			arg_199_0.cellEdges[arg_199_6][var_199_6] = arg_199_0.cellEdges[arg_199_6][var_199_6] or tf(var_199_0:Dequeue())
 
-			slot4 = slot4 or 0
-			slot14.sizeDelta = Vector2.New(bit.band(slot12, 1) == 1 and slot10.x - slot4 * 2 or slot10.y - slot4 * 2, slot5 or 3)
-			slot14.pivot = Vector2.New(0.5, 0)
-			slot18 = math.pi * 0.5 * -slot12
-			slot14.anchoredPosition = Vector2.New(math.cos(slot18) * (slot10.x * 0.5 - slot4) + slot9.x, math.sin(slot18) * (slot10.y * 0.5 - slot4) + slot9.y)
-			slot14.localRotation = Quaternion.Euler(0, 0, (5 - slot12) * 90)
+			local var_199_7 = arg_199_0.cellEdges[arg_199_6][var_199_6]
 
-			if slot3 then
-				slot0:startMarkTween(slot13, slot14)
+			var_199_7.name = var_199_6
+
+			var_199_7:SetParent(arg_199_0.bottomMarkRoot, false)
+
+			arg_199_4 = arg_199_4 or 0
+			arg_199_5 = arg_199_5 or 3
+
+			local var_199_8 = bit.band(var_199_5, 1) == 1 and var_199_3.x - arg_199_4 * 2 or var_199_3.y - arg_199_4 * 2
+			local var_199_9 = arg_199_5
+
+			var_199_7.sizeDelta = Vector2.New(var_199_8, var_199_9)
+			var_199_7.pivot = Vector2.New(0.5, 0)
+
+			local var_199_10 = math.pi * 0.5 * -var_199_5
+			local var_199_11 = math.cos(var_199_10) * (var_199_3.x * 0.5 - arg_199_4)
+			local var_199_12 = math.sin(var_199_10) * (var_199_3.y * 0.5 - arg_199_4)
+
+			var_199_7.anchoredPosition = Vector2.New(var_199_11 + var_199_2.x, var_199_12 + var_199_2.y)
+			var_199_7.localRotation = Quaternion.Euler(0, 0, (5 - var_199_5) * 90)
+
+			if arg_199_3 then
+				arg_199_0:startMarkTween(var_199_6, var_199_7)
 			else
-				slot0:cancelMarkTween(slot13, slot14, 1)
+				arg_199_0:cancelMarkTween(var_199_6, var_199_7, 1)
 			end
 		end
 
-		slot11 = slot11 * 2
+		var_199_4 = var_199_4 * 2
 	end
 end
 
-function slot0.ClearEdge(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.cellEdges) do
-		for slot10 = 1, 4 do
-			if slot6[slot0.CreateEdgeIndex(slot1.row, slot1.column, slot10, slot5)] then
-				slot13 = tf(slot6[slot11])
+function var_0_0.ClearEdge(arg_200_0, arg_200_1)
+	for iter_200_0, iter_200_1 in pairs(arg_200_0.cellEdges) do
+		for iter_200_2 = 1, 4 do
+			local var_200_0 = arg_200_0.CreateEdgeIndex(arg_200_1.row, arg_200_1.column, iter_200_2, iter_200_0)
 
-				slot0:cancelMarkTween(slot11, slot13)
-				slot0:GetEdgePool(slot5):Enqueue(slot13, false)
+			if iter_200_1[var_200_0] then
+				local var_200_1 = arg_200_0:GetEdgePool(iter_200_0)
+				local var_200_2 = tf(iter_200_1[var_200_0])
 
-				slot6[slot11] = nil
+				arg_200_0:cancelMarkTween(var_200_0, var_200_2)
+				var_200_1:Enqueue(var_200_2, false)
+
+				iter_200_1[var_200_0] = nil
 			end
 		end
 	end
 end
 
-function slot0.ClearEdges(slot0, slot1)
-	if not next(slot0.cellEdges) then
+function var_0_0.ClearEdges(arg_201_0, arg_201_1)
+	if not next(arg_201_0.cellEdges) then
 		return
 	end
 
-	for slot5, slot6 in pairs(slot0.cellEdges) do
-		if not slot1 or slot1 == slot5 then
-			for slot11, slot12 in pairs(slot6) do
-				slot0:cancelMarkTween(slot11, slot12)
-				slot0:GetEdgePool(slot5):Enqueue(go(slot12), false)
+	for iter_201_0, iter_201_1 in pairs(arg_201_0.cellEdges) do
+		if not arg_201_1 or arg_201_1 == iter_201_0 then
+			local var_201_0 = arg_201_0:GetEdgePool(iter_201_0)
+
+			for iter_201_2, iter_201_3 in pairs(iter_201_1) do
+				arg_201_0:cancelMarkTween(iter_201_2, iter_201_3)
+				var_201_0:Enqueue(go(iter_201_3), false)
 			end
 
-			slot0.cellEdges[slot5] = nil
+			arg_201_0.cellEdges[iter_201_0] = nil
 		end
 	end
 end
 
-function slot0.CreateOutlines(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot6 = slot0.contextData.chapterVO
-	slot7 = slot6.theme.cellSize + slot6.theme.cellSpace
+function var_0_0.CreateOutlines(arg_202_0, arg_202_1, arg_202_2, arg_202_3, arg_202_4, arg_202_5)
+	local var_202_0 = arg_202_0.contextData.chapterVO
+	local var_202_1 = var_202_0.theme.cellSize + var_202_0.theme.cellSpace
 
-	for slot11, slot12 in pairs(slot1) do
-		slot14 = slot6.theme:GetLinePosition(slot12.row / 2, slot12.column / 2)
+	for iter_202_0, iter_202_1 in pairs(arg_202_1) do
+		local var_202_2 = arg_202_0:GetEdgePool(arg_202_5)
+		local var_202_3 = var_202_0.theme:GetLinePosition(iter_202_1.row / 2, iter_202_1.column / 2)
 
-		assert(slot5, "Missing key, Please PM Programmer")
+		assert(arg_202_5, "Missing key, Please PM Programmer")
 
-		slot15 = slot0.CreateEdgeIndex(slot12.row, slot12.column, 0, slot5)
-		slot0.cellEdges[slot5] = slot0.cellEdges[slot5] or {}
-		slot0.cellEdges[slot5][slot15] = slot0.cellEdges[slot5][slot15] or tf(slot0:GetEdgePool(slot5):Dequeue())
-		slot16 = slot0.cellEdges[slot5][slot15]
-		slot16.name = slot15
+		local var_202_4 = arg_202_0.CreateEdgeIndex(iter_202_1.row, iter_202_1.column, 0, arg_202_5)
 
-		slot16:SetParent(slot0.bottomMarkRoot, false)
+		arg_202_0.cellEdges[arg_202_5] = arg_202_0.cellEdges[arg_202_5] or {}
+		arg_202_0.cellEdges[arg_202_5][var_202_4] = arg_202_0.cellEdges[arg_202_5][var_202_4] or tf(var_202_2:Dequeue())
 
-		slot3 = slot3 or 0
-		slot19 = slot4 or 3
-		slot20 = (uv0[slot12.normal][1] ~= 0 and slot7.x or slot7.y) * 0.5
-		slot21 = slot12.normal % 4 + 1
-		slot22 = (slot12.normal + 2) % 4 + 1
-		slot23 = {
-			slot12.row + uv0[slot21][1],
-			slot12.column + uv0[slot21][2]
+		local var_202_5 = arg_202_0.cellEdges[arg_202_5][var_202_4]
+
+		var_202_5.name = var_202_4
+
+		var_202_5:SetParent(arg_202_0.bottomMarkRoot, false)
+
+		arg_202_3 = arg_202_3 or 0
+		arg_202_4 = arg_202_4 or 3
+
+		local var_202_6 = var_0_4[iter_202_1.normal][1] ~= 0 and var_202_1.x or var_202_1.y
+		local var_202_7 = arg_202_4
+		local var_202_8 = var_202_6 * 0.5
+		local var_202_9 = iter_202_1.normal % 4 + 1
+		local var_202_10 = (iter_202_1.normal + 2) % 4 + 1
+		local var_202_11 = {
+			iter_202_1.row + var_0_4[var_202_9][1],
+			iter_202_1.column + var_0_4[var_202_9][2]
 		}
-		slot25 = {
-			slot12.row + uv0[slot22][1],
-			slot12.column + uv0[slot22][2]
+		local var_202_12 = arg_202_1[var_202_11[1] + var_0_4[iter_202_1.normal][1] .. "_" .. var_202_11[2] + var_0_4[iter_202_1.normal][2]] or arg_202_1[var_202_11[1] - var_0_4[iter_202_1.normal][1] .. "_" .. var_202_11[2] - var_0_4[iter_202_1.normal][2]]
+		local var_202_13 = {
+			iter_202_1.row + var_0_4[var_202_10][1],
+			iter_202_1.column + var_0_4[var_202_10][2]
 		}
-		slot26 = slot1[slot25[1] + uv0[slot12.normal][1] .. "_" .. slot25[2] + uv0[slot12.normal][2]] or slot1[slot25[1] - uv0[slot12.normal][1] .. "_" .. slot25[2] - uv0[slot12.normal][2]]
+		local var_202_14 = arg_202_1[var_202_13[1] + var_0_4[iter_202_1.normal][1] .. "_" .. var_202_13[2] + var_0_4[iter_202_1.normal][2]] or arg_202_1[var_202_13[1] - var_0_4[iter_202_1.normal][1] .. "_" .. var_202_13[2] - var_0_4[iter_202_1.normal][2]]
 
-		if slot1[slot23[1] + uv0[slot12.normal][1] .. "_" .. slot23[2] + uv0[slot12.normal][2]] or slot1[slot23[1] - uv0[slot12.normal][1] .. "_" .. slot23[2] - uv0[slot12.normal][2]] then
-			slot27 = slot12.row + uv0[slot12.normal][1] == slot24.row + uv0[slot24.normal][1] or slot12.column + uv0[slot12.normal][2] == slot24.column + uv0[slot24.normal][2]
-			slot18 = slot27 and slot18 + slot3 or slot18 - slot3
-			slot20 = slot27 and slot20 + slot3 or slot20 - slot3
+		if var_202_12 then
+			local var_202_15 = iter_202_1.row + var_0_4[iter_202_1.normal][1] == var_202_12.row + var_0_4[var_202_12.normal][1] or iter_202_1.column + var_0_4[iter_202_1.normal][2] == var_202_12.column + var_0_4[var_202_12.normal][2]
+
+			var_202_6 = var_202_15 and var_202_6 + arg_202_3 or var_202_6 - arg_202_3
+			var_202_8 = var_202_15 and var_202_8 + arg_202_3 or var_202_8 - arg_202_3
 		end
 
-		if slot26 then
-			slot18 = (slot12.row + uv0[slot12.normal][1] == slot26.row + uv0[slot26.normal][1] or slot12.column + uv0[slot12.normal][2] == slot26.column + uv0[slot26.normal][2]) and slot18 + slot3 or slot18 - slot3
+		if var_202_14 then
+			var_202_6 = (iter_202_1.row + var_0_4[iter_202_1.normal][1] == var_202_14.row + var_0_4[var_202_14.normal][1] or iter_202_1.column + var_0_4[iter_202_1.normal][2] == var_202_14.column + var_0_4[var_202_14.normal][2]) and var_202_6 + arg_202_3 or var_202_6 - arg_202_3
 		end
 
-		slot16.sizeDelta = Vector2.New(slot18, slot19)
-		slot16.pivot = Vector2.New(slot20 / slot18, 0)
-		slot16.anchoredPosition = Vector2.New(uv0[slot12.normal][2] * -slot3 + slot14.x, uv0[slot12.normal][1] * slot3 + slot14.y)
-		slot16.localRotation = Quaternion.Euler(0, 0, (5 - slot12.normal) * 90)
+		var_202_5.sizeDelta = Vector2.New(var_202_6, var_202_7)
+		var_202_5.pivot = Vector2.New(var_202_8 / var_202_6, 0)
 
-		if slot2 then
-			slot0:startMarkTween(slot15, slot16)
+		local var_202_16 = var_0_4[iter_202_1.normal][2] * -arg_202_3
+		local var_202_17 = var_0_4[iter_202_1.normal][1] * arg_202_3
+
+		var_202_5.anchoredPosition = Vector2.New(var_202_16 + var_202_3.x, var_202_17 + var_202_3.y)
+		var_202_5.localRotation = Quaternion.Euler(0, 0, (5 - iter_202_1.normal) * 90)
+
+		if arg_202_2 then
+			arg_202_0:startMarkTween(var_202_4, var_202_5)
 		else
-			slot0:cancelMarkTween(slot15, slot16, 1)
+			arg_202_0:cancelMarkTween(var_202_4, var_202_5, 1)
 		end
 	end
 end
 
-function slot0.CreateOutlineCorners(slot0, slot1, slot2, slot3, slot4, slot5)
-	for slot10, slot11 in pairs(slot1) do
-		slot13 = slot0.contextData.chapterVO.theme:GetLinePosition(slot11.row + uv0[slot11.corner][1] * 0.5, slot11.column + uv0[slot11.corner][2] * 0.5)
+function var_0_0.CreateOutlineCorners(arg_203_0, arg_203_1, arg_203_2, arg_203_3, arg_203_4, arg_203_5)
+	local var_203_0 = arg_203_0.contextData.chapterVO
 
-		assert(slot5, "Missing key, Please PM Programmer")
+	for iter_203_0, iter_203_1 in pairs(arg_203_1) do
+		local var_203_1 = arg_203_0:GetEdgePool(arg_203_5)
+		local var_203_2 = var_203_0.theme:GetLinePosition(iter_203_1.row + var_0_5[iter_203_1.corner][1] * 0.5, iter_203_1.column + var_0_5[iter_203_1.corner][2] * 0.5)
 
-		slot14 = slot0.CreateEdgeIndex(slot11.row, slot11.column, slot11.corner, slot5)
-		slot0.cellEdges[slot5] = slot0.cellEdges[slot5] or {}
-		slot0.cellEdges[slot5][slot14] = slot0.cellEdges[slot5][slot14] or tf(slot0:GetEdgePool(slot5):Dequeue())
-		slot15 = slot0.cellEdges[slot5][slot14]
-		slot15.name = slot14
+		assert(arg_203_5, "Missing key, Please PM Programmer")
 
-		slot15:SetParent(slot0.bottomMarkRoot, false)
+		local var_203_3 = arg_203_0.CreateEdgeIndex(iter_203_1.row, iter_203_1.column, iter_203_1.corner, arg_203_5)
 
-		slot3 = slot3 or 0
-		slot4 = slot4 or 3
-		slot15.sizeDelta = Vector2.New(slot4, slot4)
-		slot15.pivot = Vector2.New(1, 0)
-		slot15.anchoredPosition = Vector2.New(uv0[slot11.corner][2] * -slot3 + slot13.x, uv0[slot11.corner][1] * slot3 + slot13.y)
-		slot15.localRotation = Quaternion.Euler(0, 0, (5 - slot11.corner) * 90)
+		arg_203_0.cellEdges[arg_203_5] = arg_203_0.cellEdges[arg_203_5] or {}
+		arg_203_0.cellEdges[arg_203_5][var_203_3] = arg_203_0.cellEdges[arg_203_5][var_203_3] or tf(var_203_1:Dequeue())
 
-		if slot2 then
-			slot0:startMarkTween(slot14, slot15)
+		local var_203_4 = arg_203_0.cellEdges[arg_203_5][var_203_3]
+
+		var_203_4.name = var_203_3
+
+		var_203_4:SetParent(arg_203_0.bottomMarkRoot, false)
+
+		arg_203_3 = arg_203_3 or 0
+		arg_203_4 = arg_203_4 or 3
+
+		local var_203_5 = arg_203_4
+		local var_203_6 = arg_203_4
+
+		var_203_4.sizeDelta = Vector2.New(var_203_5, var_203_6)
+		var_203_4.pivot = Vector2.New(1, 0)
+
+		local var_203_7 = var_0_5[iter_203_1.corner][2] * -arg_203_3
+		local var_203_8 = var_0_5[iter_203_1.corner][1] * arg_203_3
+
+		var_203_4.anchoredPosition = Vector2.New(var_203_7 + var_203_2.x, var_203_8 + var_203_2.y)
+		var_203_4.localRotation = Quaternion.Euler(0, 0, (5 - iter_203_1.corner) * 90)
+
+		if arg_203_2 then
+			arg_203_0:startMarkTween(var_203_3, var_203_4)
 		else
-			slot0:cancelMarkTween(slot14, slot15, 1)
+			arg_203_0:cancelMarkTween(var_203_3, var_203_4, 1)
 		end
 	end
 end
 
-function slot0.updateCoastalGunAttachArea(slot0)
-	slot0:hideQuadMark(ChapterConst.MarkCoastalGun)
-	slot0:showQuadMark(slot0.contextData.chapterVO:getCoastalGunArea(), ChapterConst.MarkCoastalGun, "cell_coastal_gun", Vector2(110, 110), nil, false)
+function var_0_0.updateCoastalGunAttachArea(arg_204_0)
+	local var_204_0 = arg_204_0.contextData.chapterVO:getCoastalGunArea()
+
+	arg_204_0:hideQuadMark(ChapterConst.MarkCoastalGun)
+	arg_204_0:showQuadMark(var_204_0, ChapterConst.MarkCoastalGun, "cell_coastal_gun", Vector2(110, 110), nil, false)
 end
 
-function slot0.InitIdolsAnim(slot0)
-	if not pg.chapter_pop_template[slot0.contextData.chapterVO.id] then
+function var_0_0.InitIdolsAnim(arg_205_0)
+	local var_205_0 = arg_205_0.contextData.chapterVO
+	local var_205_1 = pg.chapter_pop_template[var_205_0.id]
+
+	if not var_205_1 then
 		return
 	end
 
-	for slot7, slot8 in ipairs(slot2.sd_location) do
-		slot0.idols = slot0.idols or {}
-		slot10 = slot0.cellRoot:Find(ChapterCell.Line2Name(slot8[1][1], slot8[1][2]) .. "/" .. ChapterConst.ChildAttachment)
+	local var_205_2 = var_205_1.sd_location
 
-		assert(slot10, "cant find attachment")
+	for iter_205_0, iter_205_1 in ipairs(var_205_2) do
+		arg_205_0.idols = arg_205_0.idols or {}
 
-		slot11 = AttachmentSpineAnimationCell.New(slot10)
+		local var_205_3 = ChapterCell.Line2Name(iter_205_1[1][1], iter_205_1[1][2])
+		local var_205_4 = arg_205_0.cellRoot:Find(var_205_3 .. "/" .. ChapterConst.ChildAttachment)
 
-		slot11:SetLine({
-			row = slot8[1][1],
-			column = slot8[1][2]
+		assert(var_205_4, "cant find attachment")
+
+		local var_205_5 = AttachmentSpineAnimationCell.New(var_205_4)
+
+		var_205_5:SetLine({
+			row = iter_205_1[1][1],
+			column = iter_205_1[1][2]
 		})
-		table.insert(slot0.idols, slot11)
-		slot11:Set(slot8[2])
-		slot11:SetRoutine(slot2.sd_act[slot7])
+		table.insert(arg_205_0.idols, var_205_5)
+		var_205_5:Set(iter_205_1[2])
+		var_205_5:SetRoutine(var_205_1.sd_act[iter_205_0])
 	end
 end
 
-function slot0.ClearIdolsAnim(slot0)
-	if slot0.idols then
-		for slot4, slot5 in ipairs(slot0.idols) do
-			slot5:Clear()
+function var_0_0.ClearIdolsAnim(arg_206_0)
+	if arg_206_0.idols then
+		for iter_206_0, iter_206_1 in ipairs(arg_206_0.idols) do
+			iter_206_1:Clear()
 		end
 
-		table.clear(slot0.idols)
+		table.clear(arg_206_0.idols)
 
-		slot0.idols = nil
+		arg_206_0.idols = nil
 	end
 end
 
-function slot0.GetEnemyCellView(slot0, slot1)
-	return _.detect(slot0.cellChampions, function (slot0)
-		return slot0:GetLine().row == uv0.row and slot1.column == uv0.column
-	end) or slot0.attachmentCells[ChapterCell.Line2Name(slot1.row, slot1.column)]
-end
+function var_0_0.GetEnemyCellView(arg_207_0, arg_207_1)
+	local var_207_0 = _.detect(arg_207_0.cellChampions, function(arg_208_0)
+		local var_208_0 = arg_208_0:GetLine()
 
-function slot0.TransformLine2PlanePos(slot0, slot1)
-	return string.char(string.byte("A") + slot1.column - slot0.indexMin.y) .. string.char(string.byte("1") + slot1.row - slot0.indexMin.x)
-end
+		return var_208_0.row == arg_207_1.row and var_208_0.column == arg_207_1.column
+	end)
 
-function slot0.AlignListContainer(slot0, slot1)
-	for slot6 = slot1, slot0.childCount - 1 do
-		setActive(slot0:GetChild(slot6), false)
+	if not var_207_0 then
+		local var_207_1 = ChapterCell.Line2Name(arg_207_1.row, arg_207_1.column)
+
+		var_207_0 = arg_207_0.attachmentCells[var_207_1]
 	end
 
-	for slot6 = slot2, slot1 - 1 do
-		cloneTplTo(slot0:GetChild(0), slot0)
+	return var_207_0
+end
+
+function var_0_0.TransformLine2PlanePos(arg_209_0, arg_209_1)
+	local var_209_0 = string.char(string.byte("A") + arg_209_1.column - arg_209_0.indexMin.y)
+	local var_209_1 = string.char(string.byte("1") + arg_209_1.row - arg_209_0.indexMin.x)
+
+	return var_209_0 .. var_209_1
+end
+
+function var_0_0.AlignListContainer(arg_210_0, arg_210_1)
+	local var_210_0 = arg_210_0.childCount
+
+	for iter_210_0 = arg_210_1, var_210_0 - 1 do
+		local var_210_1 = arg_210_0:GetChild(iter_210_0)
+
+		setActive(var_210_1, false)
 	end
 
-	for slot6 = 0, slot1 - 1 do
-		setActive(slot0:GetChild(slot6), true)
+	for iter_210_1 = var_210_0, arg_210_1 - 1 do
+		cloneTplTo(arg_210_0:GetChild(0), arg_210_0)
+	end
+
+	for iter_210_2 = 0, arg_210_1 - 1 do
+		local var_210_2 = arg_210_0:GetChild(iter_210_2)
+
+		setActive(var_210_2, true)
 	end
 end
 
-function slot0.frozen(slot0)
-	slot0.forzenCount = (slot0.forzenCount or 0) + 1
+function var_0_0.frozen(arg_211_0)
+	arg_211_0.forzenCount = (arg_211_0.forzenCount or 0) + 1
 
-	slot0.parent:frozen()
+	arg_211_0.parent:frozen()
 end
 
-function slot0.unfrozen(slot0)
-	if slot0.exited then
+function var_0_0.unfrozen(arg_212_0)
+	if arg_212_0.exited then
 		return
 	end
 
-	slot0.forzenCount = (slot0.forzenCount or 0) - 1
+	arg_212_0.forzenCount = (arg_212_0.forzenCount or 0) - 1
 
-	slot0.parent:unfrozen()
+	arg_212_0.parent:unfrozen()
 end
 
-function slot0.isfrozen(slot0)
-	return slot0.parent.frozenCount > 0
+function var_0_0.isfrozen(arg_213_0)
+	return arg_213_0.parent.frozenCount > 0
 end
 
-function slot0.clear(slot0)
-	slot0:clearAll()
+function var_0_0.clear(arg_214_0)
+	arg_214_0:clearAll()
 
-	if (slot0.forzenCount or 0) > 0 then
-		slot0.parent:unfrozen(slot0.forzenCount)
+	if (arg_214_0.forzenCount or 0) > 0 then
+		arg_214_0.parent:unfrozen(arg_214_0.forzenCount)
 	end
 end
 
-return slot0
+return var_0_0

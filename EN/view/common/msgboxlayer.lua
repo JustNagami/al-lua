@@ -1,585 +1,630 @@
-slot0 = class("MsgboxLayer", import("view.base.BaseUI"))
-slot1 = require("Mgr.const.MsgboxBtnNameMap")
-slot0.BUTTON_BLUE = 1
-slot0.BUTTON_GRAY = 2
-slot0.BUTTON_RED = 3
-slot0.BUTTON_MEDAL = 4
-slot0.BUTTON_RETREAT = 5
-slot0.BUTTON_PREPAGE = 6
-slot0.BUTTON_NEXTPAGE = 7
-slot0.BUTTON_BLUE_WITH_ICON = 8
-slot0.TITLE_INFORMATION = "infomation"
-slot0.TITLE_SETTING = "setting"
-slot0.TITLE_WARNING = "warning"
-slot0.TITLE_OBTAIN = "obtain"
-slot0.TITLE_CADPA = "cadpa"
-slot0.TEXT_CANCEL = "text_cancel"
-slot0.TEXT_CONFIRM = "text_confirm"
+﻿local var_0_0 = class("MsgboxLayer", import("view.base.BaseUI"))
+local var_0_1 = require("Mgr.const.MsgboxBtnNameMap")
 
-function slot0.getUIName(slot0)
+var_0_0.BUTTON_BLUE = 1
+var_0_0.BUTTON_GRAY = 2
+var_0_0.BUTTON_RED = 3
+var_0_0.BUTTON_MEDAL = 4
+var_0_0.BUTTON_RETREAT = 5
+var_0_0.BUTTON_PREPAGE = 6
+var_0_0.BUTTON_NEXTPAGE = 7
+var_0_0.BUTTON_BLUE_WITH_ICON = 8
+var_0_0.TITLE_INFORMATION = "infomation"
+var_0_0.TITLE_SETTING = "setting"
+var_0_0.TITLE_WARNING = "warning"
+var_0_0.TITLE_OBTAIN = "obtain"
+var_0_0.TITLE_CADPA = "cadpa"
+var_0_0.TEXT_CANCEL = "text_cancel"
+var_0_0.TEXT_CONFIRM = "text_confirm"
+
+function var_0_0.getUIName(arg_1_0)
 	return "MsgBoxUI"
 end
 
-function slot0.init(slot0)
-	slot0._window = slot0._tf:Find("window")
+function var_0_0.init(arg_2_0)
+	arg_2_0._window = arg_2_0._tf:Find("window")
 
-	setActive(slot0._window, true)
+	setActive(arg_2_0._window, true)
 
-	slot0._top = slot0._window:Find("top")
-	slot0._titleList = slot0._top:Find("bg")
-	slot0._closeBtn = slot0._top:Find("btnBack")
+	arg_2_0._top = arg_2_0._window:Find("top")
+	arg_2_0._titleList = arg_2_0._top:Find("bg")
+	arg_2_0._closeBtn = arg_2_0._top:Find("btnBack")
 
-	setText(slot0._titleList:Find("infomation/title"), i18n("words_information"))
-	setText(slot0._titleList:Find("cadpa/title"), i18n("cadpa_tip1"))
+	setText(arg_2_0._titleList:Find("infomation/title"), i18n("words_information"))
+	setText(arg_2_0._titleList:Find("cadpa/title"), i18n("cadpa_tip1"))
 
-	slot0._res = slot0._tf:Find("res")
-	slot0._msgPanel = slot0._window:Find("msg_panel")
-	slot0.contentText = slot0._msgPanel:Find("content"):GetComponent("RichText")
+	arg_2_0._res = arg_2_0._tf:Find("res")
+	arg_2_0._msgPanel = arg_2_0._window:Find("msg_panel")
+	arg_2_0.contentText = arg_2_0._msgPanel:Find("content"):GetComponent("RichText")
 
-	slot0.contentText:AddSprite("diamond", slot0._res:Find("diamond"):GetComponent(typeof(Image)).sprite)
-	slot0.contentText:AddSprite("gold", slot0._res:Find("gold"):GetComponent(typeof(Image)).sprite)
-	slot0.contentText:AddSprite("oil", slot0._res:Find("oil"):GetComponent(typeof(Image)).sprite)
-	slot0.contentText:AddSprite("world_money", slot0._res:Find("world_money"):GetComponent(typeof(Image)).sprite)
-	slot0.contentText:AddSprite("port_money", slot0._res:Find("port_money"):GetComponent(typeof(Image)).sprite)
-	slot0.contentText:AddSprite("guildicon", slot0._res:Find("guildicon"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("diamond", arg_2_0._res:Find("diamond"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("gold", arg_2_0._res:Find("gold"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("oil", arg_2_0._res:Find("oil"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("world_money", arg_2_0._res:Find("world_money"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("port_money", arg_2_0._res:Find("port_money"):GetComponent(typeof(Image)).sprite)
+	arg_2_0.contentText:AddSprite("guildicon", arg_2_0._res:Find("guildicon"):GetComponent(typeof(Image)).sprite)
 
-	slot0._exchangeShipPanel = slot0._window:Find("exchange_ship_panel")
-	slot0._itemPanel = slot0._window:Find("item_panel")
-	slot0._itemText = slot0._itemPanel:Find("Text"):GetComponent(typeof(Text))
-	slot0._itemListItemContainer = slot0._itemPanel:Find("scrollview/list")
-	slot0._itemListItemTpl = slot0._itemListItemContainer:Find("item")
-	slot0._eskinPanel = slot0._window:Find("eskin_panel")
-	slot0._eskinText = slot0._eskinPanel:Find("Text"):GetComponent(typeof(Text))
-	slot0._eskinListItemContainer = slot0._eskinPanel:Find("scrollview/list")
-	slot0._eskinListItemTpl = slot0._eskinListItemContainer:Find("item")
-	slot0._sigleItemPanel = slot0._window:Find("single_item_panel")
-	slot0._singleItemshipTypeTF = slot0._sigleItemPanel:Find("display_panel/name_container/shiptype")
-	slot0.singleItemIntro = slot0._sigleItemPanel:Find("display_panel/desc/Text")
-	slot1 = slot0.singleItemIntro:GetComponent("RichText")
+	arg_2_0._exchangeShipPanel = arg_2_0._window:Find("exchange_ship_panel")
+	arg_2_0._itemPanel = arg_2_0._window:Find("item_panel")
+	arg_2_0._itemText = arg_2_0._itemPanel:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0._itemListItemContainer = arg_2_0._itemPanel:Find("scrollview/list")
+	arg_2_0._itemListItemTpl = arg_2_0._itemListItemContainer:Find("item")
+	arg_2_0._eskinPanel = arg_2_0._window:Find("eskin_panel")
+	arg_2_0._eskinText = arg_2_0._eskinPanel:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0._eskinListItemContainer = arg_2_0._eskinPanel:Find("scrollview/list")
+	arg_2_0._eskinListItemTpl = arg_2_0._eskinListItemContainer:Find("item")
+	arg_2_0._sigleItemPanel = arg_2_0._window:Find("single_item_panel")
+	arg_2_0._singleItemshipTypeTF = arg_2_0._sigleItemPanel:Find("display_panel/name_container/shiptype")
+	arg_2_0.singleItemIntro = arg_2_0._sigleItemPanel:Find("display_panel/desc/Text")
 
-	slot1:AddSprite("diamond", slot0._res:Find("diamond"):GetComponent(typeof(Image)).sprite)
-	slot1:AddSprite("gold", slot0._res:Find("gold"):GetComponent(typeof(Image)).sprite)
-	slot1:AddSprite("oil", slot0._res:Find("oil"):GetComponent(typeof(Image)).sprite)
-	slot1:AddSprite("world_money", slot0._res:Find("world_money"):GetComponent(typeof(Image)).sprite)
-	slot1:AddSprite("port_money", slot0._res:Find("port_money"):GetComponent(typeof(Image)).sprite)
-	slot1:AddSprite("world_boss", slot0._res:Find("world_boss"):GetComponent(typeof(Image)).sprite)
+	local var_2_0 = arg_2_0.singleItemIntro:GetComponent("RichText")
 
-	slot0._singleItemSubIntroTF = slot0._sigleItemPanel:Find("sub_intro")
+	var_2_0:AddSprite("diamond", arg_2_0._res:Find("diamond"):GetComponent(typeof(Image)).sprite)
+	var_2_0:AddSprite("gold", arg_2_0._res:Find("gold"):GetComponent(typeof(Image)).sprite)
+	var_2_0:AddSprite("oil", arg_2_0._res:Find("oil"):GetComponent(typeof(Image)).sprite)
+	var_2_0:AddSprite("world_money", arg_2_0._res:Find("world_money"):GetComponent(typeof(Image)).sprite)
+	var_2_0:AddSprite("port_money", arg_2_0._res:Find("port_money"):GetComponent(typeof(Image)).sprite)
+	var_2_0:AddSprite("world_boss", arg_2_0._res:Find("world_boss"):GetComponent(typeof(Image)).sprite)
 
-	setText(slot0._sigleItemPanel:Find("ship_group/locked/Text"), i18n("tag_ship_locked"))
-	setText(slot0._sigleItemPanel:Find("ship_group/unlocked/Text"), i18n("tag_ship_unlocked"))
+	arg_2_0._singleItemSubIntroTF = arg_2_0._sigleItemPanel:Find("sub_intro")
 
-	slot0._inputPanel = slot0._window:Find("input_panel")
-	slot0._inputTitle = slot0._inputPanel:Find("label"):GetComponent(typeof(Text))
-	slot0._inputTF = slot0._inputPanel:Find("InputField")
-	slot0._inputField = slot0._inputTF:GetComponent(typeof(InputField))
-	slot0._placeholderTF = slot0._inputTF:Find("Placeholder"):GetComponent(typeof(Text))
-	slot0._inputConfirmBtn = slot0._inputPanel:Find("btns/confirm_btn")
-	slot0._inputCancelBtn = slot0._inputPanel:Find("btns/cancel_btn")
-	slot0._helpPanel = slot0._window:Find("help_panel")
-	slot0._helpBgTF = slot0._tf:Find("bg_help")
-	slot0._helpList = slot0._helpPanel:Find("list")
-	slot0._helpTpl = slot0._helpPanel:Find("list/help_tpl")
-	slot0._worldResetPanel = slot0._window:Find("world_reset_panel")
-	slot0._worldShopBtn = slot0._window:Find("world_shop_btn")
-	slot0._remasterPanel = slot0._window:Find("remaster_info")
-	slot0._obtainPanel = slot0._window:Find("obtain_panel")
-	slot0._otherPanel = slot0._window:Find("other_panel")
-	slot0._countSelect = slot0._window:Find("count_select")
-	slot0._pageUtil = PageUtil.New(slot0._countSelect:Find("value_bg/left"), slot0._countSelect:Find("value_bg/right"), slot0._countSelect:Find("max"), slot0._countSelect:Find("value_bg/value"))
-	slot0._countDescTxt = slot0._countSelect:Find("desc_txt")
-	slot0._sliders = slot0._window:Find("sliders")
-	slot0._discountInfo = slot0._sliders:Find("discountInfo")
-	slot0._discountDate = slot0._sliders:Find("discountDate")
-	slot0._discount = slot0._sliders:Find("discountInfo/discount")
-	slot0._strike = slot0._sliders:Find("strike")
-	slot0.stopRemindToggle = slot0._window:Find("stopRemind"):GetComponent(typeof(Toggle))
-	slot0.stopRemindText = tf(slot0.stopRemindToggle.gameObject):Find("Label"):GetComponent(typeof(Text))
-	slot0._btnContainer = slot0._window:Find("button_container")
-	slot0._defaultSize = Vector2(930, 620)
-	slot0._defaultHelpSize = Vector2(870, 480)
-	slot0._defaultHelpPos = Vector2(0, -40)
-	slot0.pools = {}
-	slot0.panelDict = {}
-	slot0.timers = {}
+	setText(arg_2_0._sigleItemPanel:Find("ship_group/locked/Text"), i18n("tag_ship_locked"))
+	setText(arg_2_0._sigleItemPanel:Find("ship_group/unlocked/Text"), i18n("tag_ship_unlocked"))
+
+	arg_2_0._inputPanel = arg_2_0._window:Find("input_panel")
+	arg_2_0._inputTitle = arg_2_0._inputPanel:Find("label"):GetComponent(typeof(Text))
+	arg_2_0._inputTF = arg_2_0._inputPanel:Find("InputField")
+	arg_2_0._inputField = arg_2_0._inputTF:GetComponent(typeof(InputField))
+	arg_2_0._placeholderTF = arg_2_0._inputTF:Find("Placeholder"):GetComponent(typeof(Text))
+	arg_2_0._inputConfirmBtn = arg_2_0._inputPanel:Find("btns/confirm_btn")
+	arg_2_0._inputCancelBtn = arg_2_0._inputPanel:Find("btns/cancel_btn")
+	arg_2_0._helpPanel = arg_2_0._window:Find("help_panel")
+	arg_2_0._helpBgTF = arg_2_0._tf:Find("bg_help")
+	arg_2_0._helpList = arg_2_0._helpPanel:Find("list")
+	arg_2_0._helpTpl = arg_2_0._helpPanel:Find("list/help_tpl")
+	arg_2_0._worldResetPanel = arg_2_0._window:Find("world_reset_panel")
+	arg_2_0._worldShopBtn = arg_2_0._window:Find("world_shop_btn")
+	arg_2_0._remasterPanel = arg_2_0._window:Find("remaster_info")
+	arg_2_0._obtainPanel = arg_2_0._window:Find("obtain_panel")
+	arg_2_0._otherPanel = arg_2_0._window:Find("other_panel")
+	arg_2_0._countSelect = arg_2_0._window:Find("count_select")
+	arg_2_0._pageUtil = PageUtil.New(arg_2_0._countSelect:Find("value_bg/left"), arg_2_0._countSelect:Find("value_bg/right"), arg_2_0._countSelect:Find("max"), arg_2_0._countSelect:Find("value_bg/value"))
+	arg_2_0._countDescTxt = arg_2_0._countSelect:Find("desc_txt")
+	arg_2_0._sliders = arg_2_0._window:Find("sliders")
+	arg_2_0._discountInfo = arg_2_0._sliders:Find("discountInfo")
+	arg_2_0._discountDate = arg_2_0._sliders:Find("discountDate")
+	arg_2_0._discount = arg_2_0._sliders:Find("discountInfo/discount")
+	arg_2_0._strike = arg_2_0._sliders:Find("strike")
+	arg_2_0.stopRemindToggle = arg_2_0._window:Find("stopRemind"):GetComponent(typeof(Toggle))
+	arg_2_0.stopRemindText = tf(arg_2_0.stopRemindToggle.gameObject):Find("Label"):GetComponent(typeof(Text))
+	arg_2_0._btnContainer = arg_2_0._window:Find("button_container")
+	arg_2_0._defaultSize = Vector2(930, 620)
+	arg_2_0._defaultHelpSize = Vector2(870, 480)
+	arg_2_0._defaultHelpPos = Vector2(0, -40)
+	arg_2_0.pools = {}
+	arg_2_0.panelDict = {}
+	arg_2_0.timers = {}
 end
 
-function slot0.didEnter(slot0)
-	slot0:showMsgBox(slot0.contextData)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:showMsgBox(arg_3_0.contextData)
 end
 
-function slot0.showMsgBox(slot0, slot1)
-	switch(slot1.type or MSGBOX_TYPE_NORMAL, {
-		[MSGBOX_TYPE_NORMAL] = function ()
-			uv0:showNormalMsgBox(uv1)
+function var_0_0.showMsgBox(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1.type or MSGBOX_TYPE_NORMAL
+
+	switch(var_4_0, {
+		[MSGBOX_TYPE_NORMAL] = function()
+			arg_4_0:showNormalMsgBox(arg_4_1)
 		end,
-		[MSGBOX_TYPE_HELP] = function ()
-			uv0.hideNo = defaultValue(uv0.hideNo, true)
-			uv0.hideYes = defaultValue(uv0.hideYes, true)
+		[MSGBOX_TYPE_HELP] = function()
+			arg_4_1.hideNo = defaultValue(arg_4_1.hideNo, true)
+			arg_4_1.hideYes = defaultValue(arg_4_1.hideYes, true)
 
-			uv1:showHelpWindow(uv0)
+			arg_4_0:showHelpWindow(arg_4_1)
 		end
 	})
 end
 
-function slot0.showNormalMsgBox(slot0, slot1)
-	slot0:commonSetting(slot1)
-	SetActive(slot0._msgPanel, true)
+function var_0_0.showNormalMsgBox(arg_7_0, arg_7_1)
+	arg_7_0:commonSetting(arg_7_1)
+	SetActive(arg_7_0._msgPanel, true)
 
-	slot0.contentText.alignment = slot0.settings.alignment or TextAnchor.MiddleCenter
-	slot0.contentText.fontSize = slot0.settings.fontSize or 36
-	slot0.contentText.text = slot0.settings.content or ""
+	arg_7_0.contentText.alignment = arg_7_0.settings.alignment or TextAnchor.MiddleCenter
+	arg_7_0.contentText.fontSize = arg_7_0.settings.fontSize or 36
+	arg_7_0.contentText.text = arg_7_0.settings.content or ""
 
-	slot0:Loaded(slot1)
+	arg_7_0:Loaded(arg_7_1)
 end
 
-function slot0.showHelpWindow(slot0, slot1)
-	slot0:commonSetting(slot1)
-	setActive(findTF(slot0._helpPanel, "bg"), not slot1.helps.pageMode)
-	setActive(slot0._helpBgTF, slot1.helps.pageMode)
-	setActive(slot0._helpPanel:Find("btn_blueprint"), slot1.show_blueprint)
+function var_0_0.showHelpWindow(arg_8_0, arg_8_1)
+	arg_8_0:commonSetting(arg_8_1)
+	setActive(findTF(arg_8_0._helpPanel, "bg"), not arg_8_1.helps.pageMode)
+	setActive(arg_8_0._helpBgTF, arg_8_1.helps.pageMode)
+	setActive(arg_8_0._helpPanel:Find("btn_blueprint"), arg_8_1.show_blueprint)
 
-	if slot1.show_blueprint then
-		onButton(slot0, slot0._helpPanel:Find("btn_blueprint"), function ()
-			uv0:hide()
+	if arg_8_1.show_blueprint then
+		onButton(arg_8_0, arg_8_0._helpPanel:Find("btn_blueprint"), function()
+			arg_8_0:hide()
 			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPBLUEPRINT, {
-				shipGroupId = uv1.show_blueprint
+				shipGroupId = arg_8_1.show_blueprint
 			})
 		end, SFX_PANEL)
 	end
 
-	if slot1.helps.helpSize then
-		slot0._helpPanel.sizeDelta = Vector2(slot1.helps.helpSize.x or slot0._defaultHelpSize.x, slot1.helps.helpSize.y or slot0._defaultHelpSize.y)
+	if arg_8_1.helps.helpSize then
+		arg_8_0._helpPanel.sizeDelta = Vector2(arg_8_1.helps.helpSize.x or arg_8_0._defaultHelpSize.x, arg_8_1.helps.helpSize.y or arg_8_0._defaultHelpSize.y)
 	end
 
-	if slot1.helps.helpPos then
-		setAnchoredPosition(slot0._helpPanel, {
-			x = slot1.helps.helpPos.x or slot0._defaultHelpPos.x,
-			y = slot1.helps.helpPos.y or slot0._defaultHelpPos.y
+	if arg_8_1.helps.helpPos then
+		setAnchoredPosition(arg_8_0._helpPanel, {
+			x = arg_8_1.helps.helpPos.x or arg_8_0._defaultHelpPos.x,
+			y = arg_8_1.helps.helpPos.y or arg_8_0._defaultHelpPos.y
 		})
 	end
 
-	if slot1.helps.windowSize then
-		slot0._window.sizeDelta = Vector2(slot1.helps.windowSize.x or slot0._defaultSize.x, slot1.helps.windowSize.y or slot0._defaultSize.y)
+	if arg_8_1.helps.windowSize then
+		arg_8_0._window.sizeDelta = Vector2(arg_8_1.helps.windowSize.x or arg_8_0._defaultSize.x, arg_8_1.helps.windowSize.y or arg_8_0._defaultSize.y)
 	end
 
-	if slot1.helps.windowPos then
-		slot0._window.sizeDelta = Vector2(slot1.helps.windowSize.x or slot0._defaultSize.x, slot1.helps.windowSize.y or slot0._defaultSize.y)
+	if arg_8_1.helps.windowPos then
+		arg_8_0._window.sizeDelta = Vector2(arg_8_1.helps.windowSize.x or arg_8_0._defaultSize.x, arg_8_1.helps.windowSize.y or arg_8_0._defaultSize.y)
 
-		setAnchoredPosition(slot0._window, {
-			x = slot1.helps.windowPos.x or 0,
-			y = slot1.helps.windowPos.y or 0
+		setAnchoredPosition(arg_8_0._window, {
+			x = arg_8_1.helps.windowPos.x or 0,
+			y = arg_8_1.helps.windowPos.y or 0
 		})
 	else
-		setAnchoredPosition(slot0._window, {
+		setAnchoredPosition(arg_8_0._window, {
 			x = 0,
 			y = 0
 		})
 	end
 
-	if slot1.helps.buttonsHeight then
-		setAnchoredPosition(slot0._btnContainer, {
-			y = slot1.helps.buttonsHeight
+	if arg_8_1.helps.buttonsHeight then
+		setAnchoredPosition(arg_8_0._btnContainer, {
+			y = arg_8_1.helps.buttonsHeight
 		})
 	end
 
-	if slot1.helps.disableScroll then
-		SetCompomentEnabled(slot0._helpPanel:Find("list"), typeof(ScrollRect), not slot1.helps.disableScroll)
-		setAnchoredPosition(slot0._helpPanel:Find("list"), Vector2.zero)
-		setActive(findTF(slot0._helpPanel, "Scrollbar"), false)
+	if arg_8_1.helps.disableScroll then
+		local var_8_0 = arg_8_0._helpPanel:Find("list")
+
+		SetCompomentEnabled(arg_8_0._helpPanel:Find("list"), typeof(ScrollRect), not arg_8_1.helps.disableScroll)
+		setAnchoredPosition(var_8_0, Vector2.zero)
+		setActive(findTF(arg_8_0._helpPanel, "Scrollbar"), false)
 	end
 
-	if slot1.helps.ImageMode then
-		setActive(slot0._top, false)
-		setActive(findTF(slot0._window, "bg"), false)
+	if arg_8_1.helps.ImageMode then
+		setActive(arg_8_0._top, false)
+		setActive(findTF(arg_8_0._window, "bg"), false)
 	end
 
-	for slot6 = #slot0.settings.helps, slot0._helpList.childCount - 1 do
-		Destroy(slot0._helpList:GetChild(slot6))
+	local var_8_1 = arg_8_0.settings.helps
+
+	for iter_8_0 = #var_8_1, arg_8_0._helpList.childCount - 1 do
+		Destroy(arg_8_0._helpList:GetChild(iter_8_0))
 	end
 
-	for slot6 = slot0._helpList.childCount, #slot2 - 1 do
-		cloneTplTo(slot0._helpTpl, slot0._helpList)
+	for iter_8_1 = arg_8_0._helpList.childCount, #var_8_1 - 1 do
+		cloneTplTo(arg_8_0._helpTpl, arg_8_0._helpList)
 	end
 
-	for slot6, slot7 in ipairs(slot2) do
-		slot8 = slot0._helpList:GetChild(slot6 - 1)
+	for iter_8_2, iter_8_3 in ipairs(var_8_1) do
+		local var_8_2 = arg_8_0._helpList:GetChild(iter_8_2 - 1)
 
-		setActive(slot8, true)
-		setActive(slot8:Find("icon"), slot7.icon)
-		setActive(findTF(slot8, "line"), slot7.line)
+		setActive(var_8_2, true)
 
-		if slot7.icon then
-			slot10 = 1
+		local var_8_3 = var_8_2:Find("icon")
 
-			if slot1.helps.ImageMode then
-				slot10 = 1.5
+		setActive(var_8_3, iter_8_3.icon)
+		setActive(findTF(var_8_2, "line"), iter_8_3.line)
+
+		if iter_8_3.icon then
+			local var_8_4 = 1
+
+			if arg_8_1.helps.ImageMode then
+				var_8_4 = 1.5
 			end
 
-			slot9.transform.localScale = Vector2(slot7.icon.scale or slot10, slot7.icon.scale or slot10)
-			slot11 = slot7.icon.path
+			var_8_3.transform.localScale = Vector2(iter_8_3.icon.scale or var_8_4, iter_8_3.icon.scale or var_8_4)
 
-			setImageSprite(slot9:GetComponent(typeof(Image)), LoadSprite(slot7.icon.atlas, slot7.icon.path), true)
-			setAnchoredPosition(slot9, {
-				x = slot7.icon.posX and slot7.icon.posX or -20,
-				y = slot7.icon.posY and slot7.icon.posY or 0
+			local var_8_5 = iter_8_3.icon.path
+			local var_8_6 = iter_8_3.icon.posX and iter_8_3.icon.posX or -20
+			local var_8_7 = iter_8_3.icon.posY and iter_8_3.icon.posY or 0
+			local var_8_8 = LoadSprite(iter_8_3.icon.atlas, iter_8_3.icon.path)
+
+			setImageSprite(var_8_3:GetComponent(typeof(Image)), var_8_8, true)
+			setAnchoredPosition(var_8_3, {
+				x = var_8_6,
+				y = var_8_7
 			})
-			setActive(slot9:Find("corner"), slot1.helps.pageMode)
+			setActive(var_8_3:Find("corner"), arg_8_1.helps.pageMode)
 		end
 
-		slot10 = slot8:Find("richText"):GetComponent("RichText")
+		local var_8_9 = var_8_2:Find("richText"):GetComponent("RichText")
 
-		if slot7.rawIcon then
-			slot11 = slot7.rawIcon.name
+		if iter_8_3.rawIcon then
+			local var_8_10 = iter_8_3.rawIcon.name
 
-			slot10:AddSprite(slot11, GetSpriteFromAtlas(slot7.rawIcon.atlas, slot11))
-			setText(slot8, "")
+			var_8_9:AddSprite(var_8_10, GetSpriteFromAtlas(iter_8_3.rawIcon.atlas, var_8_10))
 
-			slot10.text = string.format("<icon name=%s w=0.7 h=0.7/>%s", slot11, HXSet.hxLan(slot7.info or ""))
+			local var_8_11 = HXSet.hxLan(iter_8_3.info or "")
+
+			setText(var_8_2, "")
+
+			var_8_9.text = string.format("<icon name=%s w=0.7 h=0.7/>%s", var_8_10, var_8_11)
 		else
-			setText(slot8, HXSet.hxLan(slot7.info and SwitchSpecialChar(slot7.info, true) or ""))
+			setText(var_8_2, HXSet.hxLan(iter_8_3.info and SwitchSpecialChar(iter_8_3.info, true) or ""))
 		end
 
-		setActive(slot10.gameObject, slot7.rawIcon)
+		setActive(var_8_9.gameObject, iter_8_3.rawIcon)
 	end
 
-	slot0.helpPage = slot1.helps.defaultpage or 1
+	arg_8_0.helpPage = arg_8_1.helps.defaultpage or 1
 
-	if slot1.helps.pageMode then
-		slot0:switchHelpPage(slot0.helpPage)
+	if arg_8_1.helps.pageMode then
+		arg_8_0:switchHelpPage(arg_8_0.helpPage)
 	end
 
-	slot0:Loaded(slot1)
+	arg_8_0:Loaded(arg_8_1)
 end
 
-function slot0.switchHelpPage(slot0, slot1)
-	for slot5 = 1, slot0._helpList.childCount do
-		setActive(slot0._helpList:GetChild(slot5 - 1), slot1 == slot5)
-		setText(slot6:Find("icon/corner/Text"), slot5)
+function var_0_0.switchHelpPage(arg_10_0, arg_10_1)
+	for iter_10_0 = 1, arg_10_0._helpList.childCount do
+		local var_10_0 = arg_10_0._helpList:GetChild(iter_10_0 - 1)
+
+		setActive(var_10_0, arg_10_1 == iter_10_0)
+		setText(var_10_0:Find("icon/corner/Text"), iter_10_0)
 	end
 end
 
-function slot0.commonSetting(slot0, slot1)
-	rtf(slot0._window).sizeDelta = slot0._defaultSize
-	rtf(slot0._helpPanel).sizeDelta = slot0._defaultHelpSize
-	slot0.enable = true
+function var_0_0.commonSetting(arg_11_0, arg_11_1)
+	rtf(arg_11_0._window).sizeDelta = arg_11_0._defaultSize
+	rtf(arg_11_0._helpPanel).sizeDelta = arg_11_0._defaultHelpSize
+	arg_11_0.enable = true
 
-	setActive(slot0._msgPanel, false)
-	setActive(slot0._exchangeShipPanel, false)
-	setActive(slot0._itemPanel, false)
-	setActive(slot0._sigleItemPanel, false)
-	setActive(slot0._inputPanel, false)
-	setActive(slot0._obtainPanel, false)
-	setActive(slot0._otherPanel, false)
-	setActive(slot0._worldResetPanel, false)
-	setActive(slot0._worldShopBtn, false)
-	setActive(slot0._helpBgTF, false)
-	setActive(slot0._helpPanel, slot1.helps)
+	setActive(arg_11_0._msgPanel, false)
+	setActive(arg_11_0._exchangeShipPanel, false)
+	setActive(arg_11_0._itemPanel, false)
+	setActive(arg_11_0._sigleItemPanel, false)
+	setActive(arg_11_0._inputPanel, false)
+	setActive(arg_11_0._obtainPanel, false)
+	setActive(arg_11_0._otherPanel, false)
+	setActive(arg_11_0._worldResetPanel, false)
+	setActive(arg_11_0._worldShopBtn, false)
+	setActive(arg_11_0._helpBgTF, false)
+	setActive(arg_11_0._helpPanel, arg_11_1.helps)
 
-	for slot5, slot6 in pairs(slot0.panelDict) do
-		slot6.buffer:Hide()
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.panelDict) do
+		iter_11_1.buffer:Hide()
 	end
 
-	setActive(slot0._btnContainer, true)
+	setActive(arg_11_0._btnContainer, true)
 
-	slot0.stopRemindToggle.isOn = slot1.toggleStatus or false
+	arg_11_0.stopRemindToggle.isOn = arg_11_1.toggleStatus or false
 
-	setActive(go(slot0.stopRemindToggle), slot1.showStopRemind)
+	setActive(go(arg_11_0.stopRemindToggle), arg_11_1.showStopRemind)
 
-	slot0.stopRemindText.text = slot1.stopRamindContent or i18n("dont_remind_today")
+	arg_11_0.stopRemindText.text = arg_11_1.stopRamindContent or i18n("dont_remind_today")
 
-	removeAllChildren(slot0._btnContainer)
+	removeAllChildren(arg_11_0._btnContainer)
 
-	slot0.settings = slot1
+	arg_11_0.settings = arg_11_1
 
-	SetActive(slot0._go, true)
-	setActive(slot0._countSelect, slot0.settings.needCounter or false)
+	SetActive(arg_11_0._go, true)
 
-	slot3 = slot0.settings.numUpdate
+	local var_11_0 = arg_11_0.settings.needCounter or false
 
-	slot0._pageUtil:setNumUpdate(function (slot0)
-		if uv0 ~= nil then
-			uv0(uv1._countDescTxt, slot0)
+	setActive(arg_11_0._countSelect, var_11_0)
+
+	local var_11_1 = arg_11_0.settings.numUpdate
+	local var_11_2 = arg_11_0.settings.addNum or 1
+	local var_11_3 = arg_11_0.settings.maxNum or -1
+	local var_11_4 = arg_11_0.settings.defaultNum or 1
+
+	arg_11_0._pageUtil:setNumUpdate(function(arg_12_0)
+		if var_11_1 ~= nil then
+			var_11_1(arg_11_0._countDescTxt, arg_12_0)
 		end
 	end)
-	slot0._pageUtil:setAddNum(slot0.settings.addNum or 1)
-	slot0._pageUtil:setMaxNum(slot0.settings.maxNum or -1)
-	slot0._pageUtil:setDefaultNum(slot0.settings.defaultNum or 1)
-	setActive(slot0._sliders, slot0.settings.discount)
+	arg_11_0._pageUtil:setAddNum(var_11_2)
+	arg_11_0._pageUtil:setMaxNum(var_11_3)
+	arg_11_0._pageUtil:setDefaultNum(var_11_4)
+	setActive(arg_11_0._sliders, arg_11_0.settings.discount)
 
-	if slot0.settings.discount then
-		slot0._discount:GetComponent(typeof(Text)).text = slot0.settings.discount.discount .. "%OFF"
-		slot0._discountDate:GetComponent(typeof(Text)).text = slot0.settings.discount.date
+	if arg_11_0.settings.discount then
+		arg_11_0._discount:GetComponent(typeof(Text)).text = arg_11_0.settings.discount.discount .. "%OFF"
+		arg_11_0._discountDate:GetComponent(typeof(Text)).text = arg_11_0.settings.discount.date
 	end
 
-	setActive(slot0._remasterPanel, slot0.settings.remaster)
+	setActive(arg_11_0._remasterPanel, arg_11_0.settings.remaster)
 
-	if slot0.settings.remaster then
-		slot7 = slot0.settings.remaster
+	if arg_11_0.settings.remaster then
+		local var_11_5 = arg_11_0.settings.remaster
 
-		setText(slot0._remasterPanel:Find("content/Text"), slot7.word)
-		setText(slot0._remasterPanel:Find("content/count"), slot7.number or "")
-		setText(slot0._remasterPanel:Find("btn/pic"), slot7.btn_text)
-		onButton(slot0, slot0._remasterPanel:Find("btn"), function ()
-			if uv0.btn_call then
-				uv0.btn_call()
+		setText(arg_11_0._remasterPanel:Find("content/Text"), var_11_5.word)
+		setText(arg_11_0._remasterPanel:Find("content/count"), var_11_5.number or "")
+		setText(arg_11_0._remasterPanel:Find("btn/pic"), var_11_5.btn_text)
+		onButton(arg_11_0, arg_11_0._remasterPanel:Find("btn"), function()
+			if var_11_5.btn_call then
+				var_11_5.btn_call()
 			end
 
-			uv1:hide()
+			arg_11_0:hide()
 		end)
 	end
 
-	slot8 = slot0.settings.hideYes or false
-	slot10 = slot0.settings.onYes or function ()
+	local var_11_6 = arg_11_0.settings.hideNo or false
+	local var_11_7 = arg_11_0.settings.hideYes or false
+	local var_11_8 = arg_11_0.settings.modal or false
+	local var_11_9 = arg_11_0.settings.onYes or function()
+		return
 	end
-
-	onButton(slot0, tf(slot0._go):Find("bg"), function ()
-		if uv0.settings.onClose then
-			uv0.settings.onClose()
-		else
-			uv1()
-		end
-
-		uv0:hide()
-	end, SFX_CANCEL)
-	SetCompomentEnabled(tf(slot0._go):Find("bg"), typeof(Button), not (slot0.settings.modal or false))
-
-	slot12, slot13 = nil
-
-	if not (slot0.settings.hideNo or false) then
-		slot12 = slot0:createBtn({
-			text = slot0.settings.noText or uv0.TEXT_CANCEL,
-			btnType = slot0.settings.noBtnType or uv0.BUTTON_GRAY,
-			onCallback = slot0.settings.onNo or function ()
-			end,
-			sound = slot1.noSound or SFX_CANCEL
-		})
-	end
-
-	if not slot8 then
-		slot13 = slot0:createBtn({
-			text = slot0.settings.yesText or uv0.TEXT_CONFIRM,
-			btnType = slot0.settings.yesBtnType or uv0.BUTTON_BLUE,
-			onCallback = slot10,
-			sound = slot1.yesSound or SFX_CONFIRM,
-			alignment = slot0.settings.yesSize and TextAnchor.MiddleCenter
-		})
-
-		if slot0.settings.yesSize then
-			slot13.sizeDelta = slot0.settings.yesSize
-		end
-
-		setGray(slot13, slot0.settings.yesGray, true)
-	end
-
-	if slot0.settings.yseBtnLetf then
-		slot13:SetAsFirstSibling()
-	end
-
-	if slot0.settings.custom ~= nil then
-		for slot17, slot18 in ipairs(slot0.settings.custom) do
-			slot0:createBtn(slot18)
-		end
-	end
-
-	setActive(slot0._closeBtn, not slot1.hideClose)
-	onButton(slot0, slot0._closeBtn, function ()
-		slot0 = uv0.settings.onClose
-
-		if uv0.settings and uv0.settings.hideClose and not slot0 and uv0.settings.onYes then
-			uv0.settings.onYes()
-		end
-
-		uv0:hide()
-
-		if slot0 then
-			slot0()
-		else
-			uv1()
-		end
-	end, SFX_CANCEL)
-
-	slot14 = slot0.settings.title or uv0.TITLE_INFORMATION
-	slot15 = 0
-
-	while slot15 < slot0._titleList.transform.childCount do
-		slot17 = slot0._titleList.transform:GetChild(slot15)
-
-		SetActive(slot17, slot17.name == slot14)
-
-		slot15 = slot15 + 1
-	end
-
-	slot17 = slot0._go.transform.localPosition
-	slot0._go.transform.localPosition = Vector3(slot17.x, slot17.y, slot0.settings.zIndex or 0)
-	slot0.locked = slot0.settings.locked or false
-
-	slot0:AddSprites()
-end
-
-function slot0.AddSprites(slot0)
-	table.Foreach(slot0.contextData.contextSprites or {}, function (slot0, slot1)
-		uv0.contentText:AddSprite(slot1.name, LoadSprite(slot1.path, slot1.name))
-	end)
-end
-
-function slot0.createBtn(slot0, slot1)
-	slot3 = slot1.noQuit
-	slot5 = cloneTplTo(slot0._go.transform:Find("custom_btn_list/custom_button_" .. (slot1.btnType or uv0.BUTTON_BLUE)), slot0._btnContainer)
-
-	if slot1.label then
-		go(slot5).name = slot1.label
-	end
-
-	SetActive(slot5, true)
-
-	if slot1.scale then
-		slot5.localScale = Vector2(slot1.scale.x or 1, slot1.scale.y or 1)
-	end
-
-	if slot2 == uv0.BUTTON_MEDAL then
-		setText(slot5:Find("text"), slot1.text)
-	elseif slot2 ~= uv0.BUTTON_RETREAT and slot2 ~= uv0.BUTTON_PREPAGE and slot2 ~= uv0.BUTTON_NEXTPAGE then
-		slot0:updateButton(slot5, slot1.text, slot1.alignment)
-	end
-
-	if slot2 == uv0.BUTTON_BLUE_WITH_ICON and slot1.iconName then
-		setImageSprite(slot5:Find("ticket/icon"), LoadSprite(slot1.iconName[1], slot1.iconName[2]))
-	end
-
-	if not slot1.hideEvent then
-		onButton(slot0, slot5, function ()
-			if type(uv0) == "function" then
-				if uv0() then
-					return
-				else
-					uv1:hide()
-				end
-			elseif not uv0 then
-				uv1:hide()
-			end
-
-			return existCall(uv2.onCallback)
-		end, slot1.sound or SFX_CONFIRM)
-	end
-
-	if slot1.sibling then
-		slot5:SetSiblingIndex(slot1.sibling)
-	end
-
-	return slot5
-end
-
-function slot0.updateButton(slot0, slot1, slot2, slot3)
-	slot4 = uv0[slot2]
-
-	if IsNil(slot1:Find("pic")) then
+	local var_11_10 = arg_11_0.settings.onNo or function()
 		return
 	end
 
-	if slot4 then
-		setText(slot5, i18n(slot4))
-	else
-		if string.len(slot2) > 12 then
-			GetComponent(slot5, typeof(Text)).resizeTextForBestFit = true
+	onButton(arg_11_0, tf(arg_11_0._go):Find("bg"), function()
+		if arg_11_0.settings.onClose then
+			arg_11_0.settings.onClose()
+		else
+			var_11_10()
 		end
 
-		setText(slot5, slot2)
+		arg_11_0:hide()
+	end, SFX_CANCEL)
+	SetCompomentEnabled(tf(arg_11_0._go):Find("bg"), typeof(Button), not var_11_8)
+
+	local var_11_11
+	local var_11_12
+
+	if not var_11_6 then
+		local var_11_13 = arg_11_0:createBtn({
+			text = arg_11_0.settings.noText or var_0_0.TEXT_CANCEL,
+			btnType = arg_11_0.settings.noBtnType or var_0_0.BUTTON_GRAY,
+			onCallback = var_11_10,
+			sound = arg_11_1.noSound or SFX_CANCEL
+		})
 	end
 
-	if slot3 then
-		slot5:GetComponent(typeof(Text)).alignment = slot3
+	if not var_11_7 then
+		var_11_12 = arg_11_0:createBtn({
+			text = arg_11_0.settings.yesText or var_0_0.TEXT_CONFIRM,
+			btnType = arg_11_0.settings.yesBtnType or var_0_0.BUTTON_BLUE,
+			onCallback = var_11_9,
+			sound = arg_11_1.yesSound or SFX_CONFIRM,
+			alignment = arg_11_0.settings.yesSize and TextAnchor.MiddleCenter
+		})
+
+		if arg_11_0.settings.yesSize then
+			var_11_12.sizeDelta = arg_11_0.settings.yesSize
+		end
+
+		setGray(var_11_12, arg_11_0.settings.yesGray, true)
+	end
+
+	if arg_11_0.settings.yseBtnLetf then
+		var_11_12:SetAsFirstSibling()
+	end
+
+	if arg_11_0.settings.custom ~= nil then
+		for iter_11_2, iter_11_3 in ipairs(arg_11_0.settings.custom) do
+			arg_11_0:createBtn(iter_11_3)
+		end
+	end
+
+	setActive(arg_11_0._closeBtn, not arg_11_1.hideClose)
+	onButton(arg_11_0, arg_11_0._closeBtn, function()
+		local var_17_0 = arg_11_0.settings.onClose
+
+		if arg_11_0.settings and arg_11_0.settings.hideClose and not var_17_0 and arg_11_0.settings.onYes then
+			arg_11_0.settings.onYes()
+		end
+
+		arg_11_0:hide()
+
+		if var_17_0 then
+			var_17_0()
+		else
+			var_11_10()
+		end
+	end, SFX_CANCEL)
+
+	local var_11_14 = arg_11_0.settings.title or var_0_0.TITLE_INFORMATION
+	local var_11_15 = 0
+	local var_11_16 = arg_11_0._titleList.transform.childCount
+
+	while var_11_15 < var_11_16 do
+		local var_11_17 = arg_11_0._titleList.transform:GetChild(var_11_15)
+
+		SetActive(var_11_17, var_11_17.name == var_11_14)
+
+		var_11_15 = var_11_15 + 1
+	end
+
+	local var_11_18 = arg_11_0._go.transform.localPosition
+
+	arg_11_0._go.transform.localPosition = Vector3(var_11_18.x, var_11_18.y, arg_11_0.settings.zIndex or 0)
+	arg_11_0.locked = arg_11_0.settings.locked or false
+
+	arg_11_0:AddSprites()
+end
+
+function var_0_0.AddSprites(arg_18_0)
+	local var_18_0 = arg_18_0.contextData
+
+	table.Foreach(var_18_0.contextSprites or {}, function(arg_19_0, arg_19_1)
+		arg_18_0.contentText:AddSprite(arg_19_1.name, LoadSprite(arg_19_1.path, arg_19_1.name))
+	end)
+end
+
+function var_0_0.createBtn(arg_20_0, arg_20_1)
+	local var_20_0 = arg_20_1.btnType or var_0_0.BUTTON_BLUE
+	local var_20_1 = arg_20_1.noQuit
+	local var_20_2 = arg_20_0._go.transform:Find("custom_btn_list/custom_button_" .. var_20_0)
+	local var_20_3 = cloneTplTo(var_20_2, arg_20_0._btnContainer)
+
+	if arg_20_1.label then
+		go(var_20_3).name = arg_20_1.label
+	end
+
+	SetActive(var_20_3, true)
+
+	if arg_20_1.scale then
+		local var_20_4 = arg_20_1.scale.x or 1
+		local var_20_5 = arg_20_1.scale.y or 1
+
+		var_20_3.localScale = Vector2(var_20_4, var_20_5)
+	end
+
+	if var_20_0 == var_0_0.BUTTON_MEDAL then
+		setText(var_20_3:Find("text"), arg_20_1.text)
+	elseif var_20_0 ~= var_0_0.BUTTON_RETREAT and var_20_0 ~= var_0_0.BUTTON_PREPAGE and var_20_0 ~= var_0_0.BUTTON_NEXTPAGE then
+		arg_20_0:updateButton(var_20_3, arg_20_1.text, arg_20_1.alignment)
+	end
+
+	if var_20_0 == var_0_0.BUTTON_BLUE_WITH_ICON and arg_20_1.iconName then
+		local var_20_6 = var_20_3:Find("ticket/icon")
+
+		setImageSprite(var_20_6, LoadSprite(arg_20_1.iconName[1], arg_20_1.iconName[2]))
+	end
+
+	if not arg_20_1.hideEvent then
+		onButton(arg_20_0, var_20_3, function()
+			if type(var_20_1) == "function" then
+				if var_20_1() then
+					return
+				else
+					arg_20_0:hide()
+				end
+			elseif not var_20_1 then
+				arg_20_0:hide()
+			end
+
+			return existCall(arg_20_1.onCallback)
+		end, arg_20_1.sound or SFX_CONFIRM)
+	end
+
+	if arg_20_1.sibling then
+		var_20_3:SetSiblingIndex(arg_20_1.sibling)
+	end
+
+	return var_20_3
+end
+
+function var_0_0.updateButton(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
+	local var_22_0 = var_0_1[arg_22_2]
+	local var_22_1 = arg_22_1:Find("pic")
+
+	if IsNil(var_22_1) then
+		return
+	end
+
+	if var_22_0 then
+		setText(var_22_1, i18n(var_22_0))
+	else
+		if string.len(arg_22_2) > 12 then
+			GetComponent(var_22_1, typeof(Text)).resizeTextForBestFit = true
+		end
+
+		setText(var_22_1, arg_22_2)
+	end
+
+	if arg_22_3 then
+		var_22_1:GetComponent(typeof(Text)).alignment = arg_22_3
 	end
 end
 
-function slot0.Loaded(slot0, slot1)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
-		groupName = slot1.groupName,
-		weight = slot1.weight or LayerWeightConst.SECOND_LAYER,
-		blurLevelCamera = slot1.blurLevelCamera,
-		parent = slot1.parent
+function var_0_0.Loaded(arg_23_0, arg_23_1)
+	pg.UIMgr.GetInstance():BlurPanel(arg_23_0._tf, false, {
+		groupName = arg_23_1.groupName,
+		weight = arg_23_1.weight or LayerWeightConst.SECOND_LAYER,
+		blurLevelCamera = arg_23_1.blurLevelCamera,
+		parent = arg_23_1.parent
 	})
 	pg.m02:sendNotification(GAME.OPEN_MSGBOX_DONE)
 end
 
-function slot0.Clear(slot0)
-	for slot4, slot5 in pairs(slot0.panelDict) do
-		slot5:Destroy()
+function var_0_0.Clear(arg_24_0)
+	for iter_24_0, iter_24_1 in pairs(arg_24_0.panelDict) do
+		iter_24_1:Destroy()
 	end
 
-	table.clear(slot0.panelDict)
+	table.clear(arg_24_0.panelDict)
 
-	rtf(slot0._window).sizeDelta = slot0._defaultSize
-	rtf(slot0._helpPanel).sizeDelta = slot0._defaultHelpSize
+	rtf(arg_24_0._window).sizeDelta = arg_24_0._defaultSize
+	rtf(arg_24_0._helpPanel).sizeDelta = arg_24_0._defaultHelpSize
 
-	setAnchoredPosition(slot0._window, {
+	setAnchoredPosition(arg_24_0._window, {
 		x = 0,
 		y = 0
 	})
-	setAnchoredPosition(slot0._btnContainer, {
+	setAnchoredPosition(arg_24_0._btnContainer, {
 		y = 15
 	})
-	setAnchoredPosition(slot0._helpPanel, {
-		x = slot0._defaultHelpPos.x,
-		y = slot0._defaultHelpPos.y
+	setAnchoredPosition(arg_24_0._helpPanel, {
+		x = arg_24_0._defaultHelpPos.x,
+		y = arg_24_0._defaultHelpPos.y
 	})
-	SetCompomentEnabled(slot0._helpPanel:Find("list"), typeof(ScrollRect), true)
-	setActive(slot0._top, true)
-	setActive(findTF(slot0._window, "bg"), true)
-	setActive(slot0._sigleItemPanel:Find("left/own"), false)
+	SetCompomentEnabled(arg_24_0._helpPanel:Find("list"), typeof(ScrollRect), true)
+	setActive(arg_24_0._top, true)
+	setActive(findTF(arg_24_0._window, "bg"), true)
+	setActive(arg_24_0._sigleItemPanel:Find("left/own"), false)
 
-	slot1 = slot0._sigleItemPanel:Find("left/IconTpl")
+	local var_24_0 = arg_24_0._sigleItemPanel:Find("left/IconTpl")
 
-	SetCompomentEnabled(slot1:Find("icon_bg"), typeof(Image), true)
-	SetCompomentEnabled(slot1:Find("icon_bg/frame"), typeof(Image), true)
-	setActive(slot1:Find("icon_bg/slv"), false)
+	SetCompomentEnabled(var_24_0:Find("icon_bg"), typeof(Image), true)
+	SetCompomentEnabled(var_24_0:Find("icon_bg/frame"), typeof(Image), true)
+	setActive(var_24_0:Find("icon_bg/slv"), false)
 
-	slot2 = findTF(slot1, "icon_bg/icon")
-	slot2.pivot = Vector2(0.5, 0.5)
-	slot2.sizeDelta = Vector2(-4, -4)
-	slot2.anchoredPosition = Vector2(0, 0)
+	local var_24_1 = findTF(var_24_0, "icon_bg/icon")
 
-	setActive(slot0.singleItemIntro, false)
-	setText(slot0._singleItemSubIntroTF, "")
+	var_24_1.pivot = Vector2(0.5, 0.5)
+	var_24_1.sizeDelta = Vector2(-4, -4)
+	var_24_1.anchoredPosition = Vector2(0, 0)
 
-	for slot6 = 0, slot0._helpList.childCount - 1 do
-		slot0._helpList:GetChild(slot6):Find("icon"):GetComponent(typeof(Image)).sprite = nil
+	setActive(arg_24_0.singleItemIntro, false)
+	setText(arg_24_0._singleItemSubIntroTF, "")
+
+	for iter_24_2 = 0, arg_24_0._helpList.childCount - 1 do
+		arg_24_0._helpList:GetChild(iter_24_2):Find("icon"):GetComponent(typeof(Image)).sprite = nil
 	end
 
-	for slot6, slot7 in pairs(slot0.pools) do
-		if slot7 then
-			PoolMgr.GetInstance():ReturnUI(slot7.name, slot7)
+	for iter_24_3, iter_24_4 in pairs(arg_24_0.pools) do
+		if iter_24_4 then
+			PoolMgr.GetInstance():ReturnUI(iter_24_4.name, iter_24_4)
 		end
 	end
 
-	slot0.pools = {}
+	arg_24_0.pools = {}
 
-	for slot6, slot7 in pairs(slot0.timers) do
-		slot7:Stop()
+	for iter_24_5, iter_24_6 in pairs(arg_24_0.timers) do
+		iter_24_6:Stop()
 	end
 
-	slot0.timers = {}
+	arg_24_0.timers = {}
 
-	removeAllChildren(slot0._btnContainer)
-	slot0.contentText:RemoveAllListeners()
+	removeAllChildren(arg_24_0._btnContainer)
+	arg_24_0.contentText:RemoveAllListeners()
 
-	slot0.settings = nil
-	slot0.enable = false
-	slot0.locked = nil
+	arg_24_0.settings = nil
+	arg_24_0.enable = false
+	arg_24_0.locked = nil
 end
 
-function slot0.willExit(slot0)
-	slot0._pageUtil:Dispose()
+function var_0_0.willExit(arg_25_0)
+	arg_25_0._pageUtil:Dispose()
 end
 
-function slot0.hide(slot0)
-	if not slot0.enable then
+function var_0_0.hide(arg_26_0)
+	if not arg_26_0.enable then
 		return
 	end
 
-	slot0:Clear()
-	slot0:closeView()
+	arg_26_0:Clear()
+	arg_26_0:closeView()
 	pg.m02:sendNotification(GAME.CLOSE_MSGBOX_DONE)
 end
 
-return slot0
+return var_0_0

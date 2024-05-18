@@ -1,4 +1,33 @@
-return {
+﻿return {
+	blink = {
+		1,
+		0,
+		0,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddReloadRequirement",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				type = "airAssist",
+				number = -0.1
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onAirAssistReady"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -248,34 +277,5 @@ return {
 	stack = 2,
 	id = 105154,
 	icon = 105150,
-	last_effect = "",
-	blink = {
-		1,
-		0,
-		0,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddReloadRequirement",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				type = "airAssist",
-				number = -0.1
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onAirAssistReady"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	}
+	last_effect = ""
 }

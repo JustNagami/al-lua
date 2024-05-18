@@ -1,1 +1,1 @@
-return class("DexiV3MainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("DexiV3MainPage", import(".TemplatePage.PreviewTemplatePage")))

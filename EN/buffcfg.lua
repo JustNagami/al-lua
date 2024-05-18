@@ -1,4 +1,4 @@
-pg.buffCfg_tag = {
+﻿pg.buffCfg_tag = {
 	buff_19593 = true,
 	buff_13991 = true,
 	buff_29931 = true,
@@ -8587,9 +8587,9 @@ pg.buffCfg_tag = {
 	buff_600001 = true
 }
 pg.buffCfg = setmetatable({}, {
-	__index = function (slot0, slot1)
-		if pg.buffCfg_tag[slot1] then
-			return require("GameCfg.buff." .. slot1)
+	__index = function(arg_1_0, arg_1_1)
+		if pg.buffCfg_tag[arg_1_1] then
+			return require("GameCfg.buff." .. arg_1_1)
 		else
 			return nil
 		end

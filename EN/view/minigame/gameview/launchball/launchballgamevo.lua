@@ -1,91 +1,97 @@
-slot0 = class("LaunchBallGameVo")
-slot0.game_id = nil
-slot0.hub_id = nil
-slot0.total_times = nil
-slot0.drop = nil
-slot0.game_bgm = "cw-story"
-slot0.game_time = 60000
-slot0.rule_tip = "launchball_minigame_help"
-slot0.frameRate = Application.targetFrameRate or 60
-slot0.ui_atlas = "ui/minigameui/launchballgameui_atlas"
-slot0.game_ui = "LaunchBallGameUI"
-slot0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
-slot0.launchball_minigame_select = "launchball_minigame_select"
-slot0.launchball_minigame_un_select = "launchball_minigame_un_select"
-slot0.SFX_PRESS_SKILL = "ui-maoudamashii"
-slot0.SFX_FIRE = "ui-mini_throw"
-slot0.SFX_ENEMY_REMOVE = "ui-mini_pigu"
-slot0.enemyToEndRate = nil
-slot0.gameTime = 0
-slot0.gameStepTime = 0
-slot0.deltaTime = 0
+﻿local var_0_0 = class("LaunchBallGameVo")
 
-function slot0.Init(slot0, slot1)
-	uv0.game_id = slot0
-	uv0.hub_id = slot1
-	uv0.total_times = pg.mini_game_hub[uv0.hub_id]
-	uv0.drop = pg.mini_game[uv0.game_id].simple_config_data.drop_ids
-	uv0.total_times = pg.mini_game_hub[uv0.hub_id].reward_need
+var_0_0.game_id = nil
+var_0_0.hub_id = nil
+var_0_0.total_times = nil
+var_0_0.drop = nil
+var_0_0.game_bgm = "cw-story"
+var_0_0.game_time = 60000
+var_0_0.rule_tip = "launchball_minigame_help"
+var_0_0.frameRate = Application.targetFrameRate or 60
+var_0_0.ui_atlas = "ui/minigameui/launchballgameui_atlas"
+var_0_0.game_ui = "LaunchBallGameUI"
+var_0_0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
+var_0_0.launchball_minigame_select = "launchball_minigame_select"
+var_0_0.launchball_minigame_un_select = "launchball_minigame_un_select"
+var_0_0.SFX_PRESS_SKILL = "ui-maoudamashii"
+var_0_0.SFX_FIRE = "ui-mini_throw"
+var_0_0.SFX_ENEMY_REMOVE = "ui-mini_pigu"
+var_0_0.enemyToEndRate = nil
+var_0_0.gameTime = 0
+var_0_0.gameStepTime = 0
+var_0_0.deltaTime = 0
+
+function var_0_0.Init(arg_1_0, arg_1_1)
+	var_0_0.game_id = arg_1_0
+	var_0_0.hub_id = arg_1_1
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id]
+	var_0_0.drop = pg.mini_game[var_0_0.game_id].simple_config_data.drop_ids
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id].reward_need
 end
 
-function slot0.initRoundData(slot0, slot1)
-	for slot6, slot7 in pairs(LaunchBallGameConst.game_round) do
-		if slot7.type == slot0 and slot7.type_index == slot1 then
-			uv0.gameRoundData = slot7
+function var_0_0.initRoundData(arg_2_0, arg_2_1)
+	local var_2_0 = LaunchBallGameConst.game_round
 
-			if slot7.player_id then
-				uv0.SetPlayer(slot7.player_id)
+	for iter_2_0, iter_2_1 in pairs(var_2_0) do
+		if iter_2_1.type == arg_2_0 and iter_2_1.type_index == arg_2_1 then
+			var_0_0.gameRoundData = iter_2_1
+
+			if iter_2_1.player_id then
+				var_0_0.SetPlayer(iter_2_1.player_id)
 			end
 		end
 	end
 end
 
-function slot0.SetPlayer(slot0)
-	uv0.selectPlayer = slot0
+function var_0_0.SetPlayer(arg_3_0)
+	var_0_0.selectPlayer = arg_3_0
 end
 
-function slot0.GetGameTimes()
-	return uv0.GetMiniGameHubData().count
+function var_0_0.GetGameTimes()
+	return var_0_0.GetMiniGameHubData().count
 end
 
-function slot0.GetGameUseTimes()
-	return uv0.GetMiniGameHubData().usedtime or 0
+function var_0_0.GetGameUseTimes()
+	return var_0_0.GetMiniGameHubData().usedtime or 0
 end
 
-function slot0.GetGameRound()
-	if uv0.GetGameTimes() and slot1 > 0 then
-		return uv0.GetGameUseTimes() + 1
+function var_0_0.GetGameRound()
+	local var_6_0 = var_0_0.GetGameUseTimes()
+	local var_6_1 = var_0_0.GetGameTimes()
+
+	if var_6_1 and var_6_1 > 0 then
+		return var_6_0 + 1
 	else
-		return slot0
+		return var_6_0
 	end
 end
 
-function slot0.GetMiniGameData()
-	return getProxy(MiniGameProxy):GetMiniGameData(uv0.game_id)
+function var_0_0.GetMiniGameData()
+	return getProxy(MiniGameProxy):GetMiniGameData(var_0_0.game_id)
 end
 
-function slot0.GetMiniGameHubData()
-	return getProxy(MiniGameProxy):GetHubByHubId(uv0.hub_id)
+function var_0_0.GetMiniGameHubData()
+	return getProxy(MiniGameProxy):GetHubByHubId(var_0_0.hub_id)
 end
 
-slot0.scoreNum = 0
-slot0.joyStickData = nil
-slot0.amulet = nil
-slot0.gameRoundData = nil
-slot0.selectPlayer = nil
-slot0.pressSkill = nil
-slot0.buffs = nil
-slot0.base_score = 10
-slot0.series_score = 10
-slot0.enemyColors = {}
-slot0.enemyStopTime = nil
+var_0_0.scoreNum = 0
+var_0_0.joyStickData = nil
+var_0_0.amulet = nil
+var_0_0.gameRoundData = nil
+var_0_0.selectPlayer = nil
+var_0_0.pressSkill = nil
+var_0_0.buffs = nil
+var_0_0.base_score = 10
+var_0_0.series_score = 10
+var_0_0.enemyColors = {}
+var_0_0.enemyStopTime = nil
 
-function slot0.Prepare()
-	uv0.gameTime = uv0.game_time
-	uv0.gameStepTime = 0
-	uv0.scoreNum = 0
-	uv0.enemyStopTime = nil
-	uv0.gameResultData = {
+function var_0_0.Prepare()
+	var_0_0.gameTime = var_0_0.game_time
+	var_0_0.gameStepTime = 0
+	var_0_0.scoreNum = 0
+	var_0_0.enemyStopTime = nil
+	var_0_0.gameResultData = {
 		mix_count = 0,
 		skill_count = 0,
 		use_pass_skill = 0,
@@ -102,51 +108,51 @@ function slot0.Prepare()
 	}
 end
 
-slot0.result_split_count = "split_count"
-slot0.result_round = "round"
-slot0.result_player = "player"
-slot0.result_series_count = "series_count"
-slot0.result_over_count = "over_count"
-slot0.result_many_count = "many_count"
-slot0.result_mix_count = "mix_count"
-slot0.result_use_skill = "use_skill"
-slot0.result_use_pass_skill = "use_pass_skill"
-slot0.result_skill_count = "skill_count"
-slot0.result_pass_skill_count = "pass_skill_count"
-slot0.reuslt_double_skill_time = "double_skill_time"
-slot0.reuslt_double_pass_skill_time = "double_pass_skill_time"
+var_0_0.result_split_count = "split_count"
+var_0_0.result_round = "round"
+var_0_0.result_player = "player"
+var_0_0.result_series_count = "series_count"
+var_0_0.result_over_count = "over_count"
+var_0_0.result_many_count = "many_count"
+var_0_0.result_mix_count = "mix_count"
+var_0_0.result_use_skill = "use_skill"
+var_0_0.result_use_pass_skill = "use_pass_skill"
+var_0_0.result_skill_count = "skill_count"
+var_0_0.result_pass_skill_count = "pass_skill_count"
+var_0_0.reuslt_double_skill_time = "double_skill_time"
+var_0_0.reuslt_double_pass_skill_time = "double_pass_skill_time"
 
-function slot0.UpdateGameResultData(slot0, slot1)
-	print(slot0 .. "  update count  = " .. slot1)
+function var_0_0.UpdateGameResultData(arg_10_0, arg_10_1)
+	print(arg_10_0 .. "  update count  = " .. arg_10_1)
 
-	if slot0 == uv0.reuslt_double_skill_time then
-		slot1 = math.floor(slot1)
+	if arg_10_0 == var_0_0.reuslt_double_skill_time then
+		arg_10_1 = math.floor(arg_10_1)
 
-		if uv0.gameResultData[slot0] ~= 0 then
-			if slot1 < uv0.gameResultData[slot0] then
-				uv0.gameResultData[slot0] = slot1
+		if var_0_0.gameResultData[arg_10_0] ~= 0 then
+			if arg_10_1 < var_0_0.gameResultData[arg_10_0] then
+				var_0_0.gameResultData[arg_10_0] = arg_10_1
 			end
 		else
-			uv0.gameResultData[slot0] = slot1
+			var_0_0.gameResultData[arg_10_0] = arg_10_1
 		end
-	elseif slot0 == uv0.result_skill_count then
-		if uv0.gameResultData[slot0] and uv0.gameResultData[slot0] < slot1 then
-			uv0.gameResultData[slot0] = slot1
+	elseif arg_10_0 == var_0_0.result_skill_count then
+		if var_0_0.gameResultData[arg_10_0] and arg_10_1 > var_0_0.gameResultData[arg_10_0] then
+			var_0_0.gameResultData[arg_10_0] = arg_10_1
 		end
 	else
-		uv0.gameResultData[slot0] = slot1
+		var_0_0.gameResultData[arg_10_0] = arg_10_1
 	end
 end
 
-function slot0.AddGameResultData(slot0, slot1)
-	uv0.gameResultData[slot0] = uv0.gameResultData[slot0] + slot1
+function var_0_0.AddGameResultData(arg_11_0, arg_11_1)
+	var_0_0.gameResultData[arg_11_0] = var_0_0.gameResultData[arg_11_0] + arg_11_1
 end
 
-function slot0.GetBuff(slot0)
-	if uv0.buffs and #uv0.buffs > 0 then
-		for slot4, slot5 in ipairs(uv0.buffs) do
-			if slot5.data.type == slot0 then
-				return slot5
+function var_0_0.GetBuff(arg_12_0)
+	if var_0_0.buffs and #var_0_0.buffs > 0 then
+		for iter_12_0, iter_12_1 in ipairs(var_0_0.buffs) do
+			if iter_12_1.data.type == arg_12_0 then
+				return iter_12_1
 			end
 		end
 	end
@@ -154,39 +160,48 @@ function slot0.GetBuff(slot0)
 	return nil
 end
 
-function slot0.GetScore(slot0, slot1, slot2, slot3)
-	slot4 = 0
+function var_0_0.GetScore(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = 0
+	local var_13_1 = arg_13_0 * var_0_0.base_score
 
-	if slot3 and slot3 > 0 then
-		slot4 = slot0 * uv0.base_score + slot3 * uv0.base_score
+	if arg_13_3 and arg_13_3 > 0 then
+		var_13_1 = var_13_1 + arg_13_3 * var_0_0.base_score
 	end
 
-	if slot2 then
-		slot4 = slot4 + uv0.base_score
+	if arg_13_2 then
+		var_13_1 = var_13_1 + var_0_0.base_score
 	end
 
-	if slot0 > 3 then
-		slot4 = slot4 + (slot0 - 3) * 10
+	if arg_13_0 > 3 then
+		var_13_1 = var_13_1 + (arg_13_0 - 3) * 10
 	end
 
-	if slot1 > 1 then
-		slot4 = slot4 + (slot1 - 1) * uv0.series_score
+	if arg_13_1 > 1 then
+		var_13_1 = var_13_1 + (arg_13_1 - 1) * var_0_0.series_score
 	end
 
-	return slot4
+	return var_13_1
 end
 
-function slot0.Sign(slot0, slot1, slot2)
-	return (slot0.x - slot2.x) * (slot1.y - slot2.y) - (slot1.x - slot2.x) * (slot0.y - slot2.y)
+function var_0_0.Sign(arg_14_0, arg_14_1, arg_14_2)
+	return (arg_14_0.x - arg_14_2.x) * (arg_14_1.y - arg_14_2.y) - (arg_14_1.x - arg_14_2.x) * (arg_14_0.y - arg_14_2.y)
 end
 
-function slot0.PointInRect(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6, slot7, slot8, slot9, slot10 = nil
-	slot6 = uv0.Sign(slot0, slot2, slot3)
-	slot7 = uv0.Sign(slot0, slot3, slot4)
-	slot8 = uv0.Sign(slot0, slot4, slot1)
+function var_0_0.PointInRect(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
+	local var_15_0
+	local var_15_1
+	local var_15_2
+	local var_15_3
+	local var_15_4
+	local var_15_5
+	local var_15_6 = var_0_0.Sign(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_7 = var_0_0.Sign(arg_15_0, arg_15_2, arg_15_3)
+	local var_15_8 = var_0_0.Sign(arg_15_0, arg_15_3, arg_15_4)
+	local var_15_9 = var_0_0.Sign(arg_15_0, arg_15_4, arg_15_1)
+	local var_15_10 = var_15_6 < 0 or var_15_7 < 0 or var_15_8 < 0 or var_15_9 < 0
+	local var_15_11 = var_15_6 > 0 or var_15_7 > 0 or var_15_8 > 0 or var_15_9 > 0
 
-	return not (uv0.Sign(slot0, slot1, slot2) < 0 or slot6 < 0 or slot7 < 0 or slot8 < 0) or not (slot5 > 0 or slot6 > 0 or slot7 > 0 or slot8 > 0)
+	return not var_15_10 or not var_15_11
 end
 
-return slot0
+return var_0_0

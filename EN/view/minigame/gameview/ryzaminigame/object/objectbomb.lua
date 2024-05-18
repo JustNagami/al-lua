@@ -1,19 +1,19 @@
-slot0 = class("ObjectBomb", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
+﻿local var_0_0 = class("ObjectBomb", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
-function slot0.FirePassability(slot0)
+function var_0_0.FirePassability(arg_1_0)
 	return 0
 end
 
-function slot0.InTimeRiver(slot0)
+function var_0_0.InTimeRiver(arg_2_0)
 	return true
 end
 
-function slot0.InitUI(slot0, slot1)
-	slot0.cooldown = slot1.cooldown or 3
-	slot0.power = slot1.power
+function var_0_0.InitUI(arg_3_0, arg_3_1)
+	arg_3_0.cooldown = arg_3_1.cooldown or 3
+	arg_3_0.power = arg_3_1.power
 
-	slot0:Calling("move", {
-		slot0
+	arg_3_0:Calling("move", {
+		arg_3_0
 	}, {
 		{
 			0,
@@ -22,9 +22,9 @@ function slot0.InitUI(slot0, slot1)
 	})
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot0:Register("burn", function ()
-		uv0:Burning()
+function var_0_0.InitRegister(arg_4_0, arg_4_1)
+	arg_4_0:Register("burn", function()
+		arg_4_0:Burning()
 	end, {
 		{
 			0,
@@ -33,52 +33,52 @@ function slot0.InitRegister(slot0, slot1)
 	})
 end
 
-function slot0.Burning(slot0)
-	if slot0.burst then
+function var_0_0.Burning(arg_6_0)
+	if arg_6_0.burst then
 		return
 	else
-		slot0.burst = true
+		arg_6_0.burst = true
 	end
 
-	slot0.cooldown = 0
+	arg_6_0.cooldown = 0
 
-	slot0:DeregisterAll()
-	slot0:Calling("leave", {
-		slot0
+	arg_6_0:DeregisterAll()
+	arg_6_0:Calling("leave", {
+		arg_6_0
 	}, {
 		{
 			0,
 			0
 		}
 	})
-	slot0:Calling("feedback", {}, MoveRyza)
-	slot0.responder:Create({
+	arg_6_0:Calling("feedback", {}, MoveRyza)
+	arg_6_0.responder:Create({
 		name = "Fire",
 		pos = {
-			slot0.pos.x,
-			slot0.pos.y
+			arg_6_0.pos.x,
+			arg_6_0.pos.y
 		},
-		power = slot0.power
+		power = arg_6_0.power
 	})
-	slot0:Destroy()
+	arg_6_0:Destroy()
 end
 
-function slot0.TimeUpdate(slot0, slot1)
-	if slot0.cooldown > 0 then
-		if slot0.cooldown > 2.87 and slot0.cooldown - slot1 <= 2.87 then
+function var_0_0.TimeUpdate(arg_7_0, arg_7_1)
+	if arg_7_0.cooldown > 0 then
+		if arg_7_0.cooldown > 2.87 and arg_7_0.cooldown - arg_7_1 <= 2.87 then
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3("ui-ryza-minigame-blasting fuse")
 		end
 
-		slot0.cooldown = slot0.cooldown - slot1
+		arg_7_0.cooldown = arg_7_0.cooldown - arg_7_1
 
-		if slot0.cooldown <= 0 then
-			slot0:Burning()
+		if arg_7_0.cooldown <= 0 then
+			arg_7_0:Burning()
 		end
 	end
 end
 
-function slot0.SetHide(slot0, slot1)
-	slot0.hide = slot1
+function var_0_0.SetHide(arg_8_0, arg_8_1)
+	arg_8_0.hide = arg_8_1
 end
 
-return slot0
+return var_0_0

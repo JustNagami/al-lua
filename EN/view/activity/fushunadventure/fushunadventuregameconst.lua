@@ -1,25 +1,26 @@
-slot0 = class("FushunAdventureGameConst")
-slot0.BGM_NAME = "main-chunjie2"
-slot0.GAME_BGM_NAME = "bgm-cccp3"
-slot0.A_BTN_VOICE = "event:/ui/quanji"
-slot0.B_BTN_VOICE = "event:/ui/tiji"
-slot0.COUNT_DOWN_VOICE = "event:/ui/ddldaoshu2"
-slot0.ENTER_EX_VOICE = "event:/ui/baoqi"
-slot0.EX_TIP_TIME = 3
-slot0.EX_TIME = 10
-slot0.EX_CLICK_SCORE = 10
-slot0.COMBO_SCORE_TARGET = 20
-slot0.COMBO_EXTRA_SCORE = 5
-slot0.LEVEL_CNT = 7
-slot0.SHAKE_RANGE = 0.1
-slot0.SHAKE_TIME = 0.05
-slot0.SHAKE_LOOP_CNT = 2
-slot0.FUSHUN_INIT_POSITION = Vector2(-655.7, -205)
-slot0.FUSHUN_ATTACK_DISTANCE = 230
-slot0.FUSHUN_ATTACK_RANGE = 300
-slot0.ENEMY_SPAWN_POSITION = Vector2(1300, -351)
-slot0.EX_ENEMY_SPAWN_TIME = 0.5
-slot0.SPEED_ADDITION = {
+﻿local var_0_0 = class("FushunAdventureGameConst")
+
+var_0_0.BGM_NAME = "main-chunjie2"
+var_0_0.GAME_BGM_NAME = "bgm-cccp3"
+var_0_0.A_BTN_VOICE = "event:/ui/quanji"
+var_0_0.B_BTN_VOICE = "event:/ui/tiji"
+var_0_0.COUNT_DOWN_VOICE = "event:/ui/ddldaoshu2"
+var_0_0.ENTER_EX_VOICE = "event:/ui/baoqi"
+var_0_0.EX_TIP_TIME = 3
+var_0_0.EX_TIME = 10
+var_0_0.EX_CLICK_SCORE = 10
+var_0_0.COMBO_SCORE_TARGET = 20
+var_0_0.COMBO_EXTRA_SCORE = 5
+var_0_0.LEVEL_CNT = 7
+var_0_0.SHAKE_RANGE = 0.1
+var_0_0.SHAKE_TIME = 0.05
+var_0_0.SHAKE_LOOP_CNT = 2
+var_0_0.FUSHUN_INIT_POSITION = Vector2(-655.7, -205)
+var_0_0.FUSHUN_ATTACK_DISTANCE = 230
+var_0_0.FUSHUN_ATTACK_RANGE = 300
+var_0_0.ENEMY_SPAWN_POSITION = Vector2(1300, -351)
+var_0_0.EX_ENEMY_SPAWN_TIME = 0.5
+var_0_0.SPEED_ADDITION = {
 	{
 		{
 			0,
@@ -49,7 +50,7 @@ slot0.SPEED_ADDITION = {
 		3.4
 	}
 }
-slot0.PROPABILITES = {
+var_0_0.PROPABILITES = {
 	{
 		{
 			0,
@@ -87,7 +88,7 @@ slot0.PROPABILITES = {
 		30
 	}
 }
-slot0.ENEMY_SPAWN_TIME_ADDITION = {
+var_0_0.ENEMY_SPAWN_TIME_ADDITION = {
 	{
 		{
 			0,
@@ -129,7 +130,7 @@ slot0.ENEMY_SPAWN_TIME_ADDITION = {
 		}
 	}
 }
-slot0.ENEMYS = {
+var_0_0.ENEMYS = {
 	{
 		crazy_speed = 14,
 		name = "beast01",
@@ -162,4 +163,4 @@ slot0.ENEMYS = {
 	}
 }
 
-return slot0
+return var_0_0

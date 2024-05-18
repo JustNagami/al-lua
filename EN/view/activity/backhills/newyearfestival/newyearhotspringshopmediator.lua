@@ -1,52 +1,58 @@
-slot0 = class("NewYearHotSpringShopMediator", import("view.base.ContextMediator"))
-slot0.ON_ACT_SHOPPING = "NewYearHotSpringShopMediator:ON_ACT_SHOPPING"
+﻿local var_0_0 = class("NewYearHotSpringShopMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:TransActivity2ShopData(getProxy(ActivityProxy):getActivityById(ActivityConst.HOTSPRING_SHOP))
-	slot0:bind(uv0.ON_ACT_SHOPPING, function (slot0, slot1, slot2, slot3, slot4)
-		uv0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
-			activity_id = slot1,
-			cmd = slot2,
-			arg1 = slot3,
-			arg2 = slot4
+var_0_0.ON_ACT_SHOPPING = "NewYearHotSpringShopMediator:ON_ACT_SHOPPING"
+
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.HOTSPRING_SHOP)
+
+	arg_1_0:TransActivity2ShopData(var_1_0)
+	arg_1_0:bind(var_0_0.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		arg_1_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
+			activity_id = arg_2_1,
+			cmd = arg_2_2,
+			arg1 = arg_2_3,
+			arg2 = arg_2_4
 		})
 	end)
-	slot0:bind(GAME.GO_SCENE, function (slot0, slot1, ...)
-		uv0:sendNotification(GAME.GO_SCENE, slot1, ...)
+	arg_1_0:bind(GAME.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 	end)
 end
 
-function slot0.TransActivity2ShopData(slot0, slot1)
-	if slot1 and not slot1:isEnd() then
-		slot2 = ActivityShop.New(slot1)
+function var_0_0.TransActivity2ShopData(arg_4_0, arg_4_1)
+	if arg_4_1 and not arg_4_1:isEnd() then
+		local var_4_0 = ActivityShop.New(arg_4_1)
 
-		slot0.viewComponent:SetShop(slot2)
+		arg_4_0.viewComponent:SetShop(var_4_0)
 
-		return slot2
+		return var_4_0
 	end
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_5_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3.id == ActivityConst.HOTSPRING_SHOP then
-			slot0:TransActivity2ShopData(slot3)
-			slot0.viewComponent:UpdateView()
+	if var_6_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_6_1.id == ActivityConst.HOTSPRING_SHOP then
+			local var_6_2 = var_6_1
+
+			arg_6_0:TransActivity2ShopData(var_6_2)
+			arg_6_0.viewComponent:UpdateView()
 		end
-	elseif slot2 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, function ()
-			uv0.viewComponent:OnShoppingDone()
-			existCall(uv1.callback)
+	elseif var_6_0 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.awards, function()
+			arg_6_0.viewComponent:OnShoppingDone()
+			existCall(var_6_1.callback)
 		end)
 	end
 end
 
-return slot0
+return var_0_0

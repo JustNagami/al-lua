@@ -1,18 +1,4 @@
-return {
-	{
-		desc = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I"
-	},
-	desc_get = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I",
-	name = "专属弹幕-安克雷奇I",
-	init_effect = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I",
-	stack = 1,
-	id = 29741,
-	icon = 29740,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -38,5 +24,19 @@ return {
 				countType = 29740
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I"
+	},
+	desc_get = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I",
+	name = "专属弹幕-安克雷奇I",
+	init_effect = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行12次攻击，触发专属弹幕-安克雷奇I",
+	stack = 1,
+	id = 29741,
+	icon = 29740,
+	last_effect = ""
 }

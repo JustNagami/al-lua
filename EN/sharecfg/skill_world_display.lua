@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.skill_world_display = {
 	[3631] = {
 		desc_get = "",
@@ -1569,11 +1569,7 @@ pg.skill_world_display = {
 	[14630] = {
 		desc_get = "",
 		id = 14630,
-		desc = [[
-[Operation Siren only]
-Improves the "Knight of the Sky" TBF Avenger airstrike. Additionally, the following buffs are active as long as this ship is afloat (does not stack with the "Supporting Wings" skill):
-1) At the start of the battle, increases AVI by $1 and RLD by $2 for all CVs and CVLs in the same fleet this ship is in, and decreases the load time of this ship's first Airstrike by $3.
-2) At the start of the battle, increases RLD and AVI by $4 for all CVs and CVLs in the fleet this ship is NOT in.]],
+		desc = "[Operation Siren only]\nImproves the \"Knight of the Sky\" TBF Avenger airstrike. Additionally, the following buffs are active as long as this ship is afloat (does not stack with the \"Supporting Wings\" skill):\n1) At the start of the battle, increases AVI by $1 and RLD by $2 for all CVs and CVLs in the same fleet this ship is in, and decreases the load time of this ship's first Airstrike by $3.\n2) At the start of the battle, increases RLD and AVI by $4 for all CVs and CVLs in the fleet this ship is NOT in.",
 		desc_get_add = {
 			{
 				"4.5%",
@@ -1960,11 +1956,7 @@ Improves the "Knight of the Sky" TBF Avenger airstrike. Additionally, the follow
 	[16220] = {
 		desc_get = "",
 		id = 16220,
-		desc = [[
-[Operation Siren only] 
-When the battle starts, if there are 3 or more Eagle Union ships afloat in your fleet: increases this ship's AVI and ACC by $1. 
-Every 18s after the battle starts: $2 chance to fire a $3 special barrage (DMG is based on the skill's level) and decreases this ship's Detection Gauge value by 2 once a second for 5s. 
-While this ship is afloat, for the first 4 battles another fleet fights during a sortie: increases the FP of that fleet's Main Fleet Eagle Union ships by $4; 20s after that fleet's battle starts: fires a $3 special barrage (DMG is based on the skill's level). [This skill's sortie battle counter resets when moving to a new area or changing your formation within Operation Siren.]]],
+		desc = "[Operation Siren only] \nWhen the battle starts, if there are 3 or more Eagle Union ships afloat in your fleet: increases this ship's AVI and ACC by $1. \nEvery 18s after the battle starts: $2 chance to fire a $3 special barrage (DMG is based on the skill's level) and decreases this ship's Detection Gauge value by 2 once a second for 5s. \nWhile this ship is afloat, for the first 4 battles another fleet fights during a sortie: increases the FP of that fleet's Main Fleet Eagle Union ships by $4; 20s after that fleet's battle starts: fires a $3 special barrage (DMG is based on the skill's level). [This skill's sortie battle counter resets when moving to a new area or changing your formation within Operation Siren.]",
 		desc_get_add = {
 			{
 				"5.0%",
@@ -2144,14 +2136,7 @@ While this ship is afloat, for the first 4 battles another fleet fights during a
 	[16450] = {
 		desc_get = "",
 		id = 16450,
-		desc = [[
-[Operation Siren]
-When this ship launches an airstrike: $1 chance to lower the SPD of all enemies to 0 over 2s, keep it at 0 for 2s, then gradually restore their SPD to normal over 2s; when this effect activates: targets 1 random enemy (prioritizing humanoid enemies) and lowers their EVA by $2 for 6s. 
-Each sortie, for the first 3 battles fought by a fleet this ship is NOT in: when that fleet's Flagship fires her first Main Gun volley or launches an airstrike: expends all stacks of No Mercy and, after 2s, activates one of the following effects based on the number of No Mercy stacks expended: 
-1) 3 to 5: decreases the SPD of all enemies by 20.0% for 2s; 
-2) 6 to 8: decreases the SPD of all enemies by 60.0% for 2s; 
-3) 9: decreases the SPD of all enemies by 100.0% for 2s.
-[In Operation Siren, the battle count resets when the fleets enter a new zone or when the Fleet Deployment order is issued.]]],
+		desc = "[Operation Siren]\nWhen this ship launches an airstrike: $1 chance to lower the SPD of all enemies to 0 over 2s, keep it at 0 for 2s, then gradually restore their SPD to normal over 2s; when this effect activates: targets 1 random enemy (prioritizing humanoid enemies) and lowers their EVA by $2 for 6s. \nEach sortie, for the first 3 battles fought by a fleet this ship is NOT in: when that fleet's Flagship fires her first Main Gun volley or launches an airstrike: expends all stacks of No Mercy and, after 2s, activates one of the following effects based on the number of No Mercy stacks expended: \n1) 3 to 5: decreases the SPD of all enemies by 20.0% for 2s; \n2) 6 to 8: decreases the SPD of all enemies by 60.0% for 2s; \n3) 9: decreases the SPD of all enemies by 100.0% for 2s.\n[In Operation Siren, the battle count resets when the fleets enter a new zone or when the Fleet Deployment order is issued.]",
 		desc_get_add = {
 			{
 				"70.0%",
@@ -2250,11 +2235,7 @@ Each sortie, for the first 3 battles fought by a fleet this ship is NOT in: when
 	[16510] = {
 		desc_get = "",
 		id = 16510,
-		desc = [[
-[Operation Siren]
-When the HP of a CV or CVL in your fleet falls below 20.0% as a result of DMG taken: restores 10.0% of that ship's max HP (can only activate once per ship). While this ship is afloat:
-1) When the fleet this ship is in starts a battle, increases your CVs' and CVLs' AVI by $1 and RLD by $2, and decreases the loading time of this ship's first airstrike by $3;
-2) When the battle starts for the fleet this ship is NOT in, increases your CVs' and CVLs' AVI and RLD by $4. Does not stack with the skill "Supporting Wings."]],
+		desc = "[Operation Siren]\nWhen the HP of a CV or CVL in your fleet falls below 20.0% as a result of DMG taken: restores 10.0% of that ship's max HP (can only activate once per ship). While this ship is afloat:\n1) When the fleet this ship is in starts a battle, increases your CVs' and CVLs' AVI by $1 and RLD by $2, and decreases the loading time of this ship's first airstrike by $3;\n2) When the battle starts for the fleet this ship is NOT in, increases your CVs' and CVLs' AVI and RLD by $4. Does not stack with the skill \"Supporting Wings.\"",
 		desc_get_add = {
 			{
 				"4.5%",

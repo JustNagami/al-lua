@@ -1,4 +1,4 @@
-return {
+﻿return {
 	init_effect = "",
 	name = "濒死护盾",
 	time = 0,
@@ -35,13 +35,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3
+				centerPosFun = function(arg_1_0)
+					local var_1_0 = arg_1_0 * 3
 
-					return Vector3(math.sin(slot1) * 5, 0.75, math.cos(slot1) * 5)
+					return Vector3(math.sin(var_1_0) * 5, 0.75, math.cos(var_1_0) * 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
+				rotationFun = function(arg_2_0)
+					return Vector3(0, arg_2_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
 				end
 			}
 		},
@@ -71,13 +71,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_2
+				centerPosFun = function(arg_3_0)
+					local var_3_0 = arg_3_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_2
 
-					return Vector3(math.sin(slot1) * 5, 0.75, math.cos(slot1) * 5)
+					return Vector3(math.sin(var_3_0) * 5, 0.75, math.cos(var_3_0) * 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 210, 0)
+				rotationFun = function(arg_4_0)
+					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 210, 0)
 				end
 			}
 		},
@@ -107,13 +107,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_4
+				centerPosFun = function(arg_5_0)
+					local var_5_0 = arg_5_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_4
 
-					return Vector3(math.sin(slot1) * 5, 0.75, math.cos(slot1) * 5)
+					return Vector3(math.sin(var_5_0) * 5, 0.75, math.cos(var_5_0) * 5)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 20, 0)
+				rotationFun = function(arg_6_0)
+					return Vector3(0, arg_6_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 20, 0)
 				end
 			}
 		}

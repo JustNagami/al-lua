@@ -1,4 +1,4 @@
-pg.skillCfg_tag = {
+﻿pg.skillCfg_tag = {
 	skill_6260 = true,
 	skill_24121 = true,
 	skill_8836 = true,
@@ -4819,9 +4819,9 @@ pg.skillCfg_tag = {
 	skill_105071 = true
 }
 pg.skillCfg = setmetatable({}, {
-	__index = function (slot0, slot1)
-		if pg.skillCfg_tag[slot1] then
-			return require("GameCfg.skill." .. slot1)
+	__index = function(arg_1_0, arg_1_1)
+		if pg.skillCfg_tag[arg_1_1] then
+			return require("GameCfg.skill." .. arg_1_1)
 		else
 			return nil
 		end

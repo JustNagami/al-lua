@@ -1,7 +1,7 @@
-slot0 = require((string.match(..., ".*%.") or "") .. "dis_mips")
+﻿local var_0_0 = require((string.match(..., ".*%.") or "") .. "dis_mips")
 
 return {
-	create = slot0.create_el,
-	disass = slot0.disass_el,
-	regname = slot0.regname
+	create = var_0_0.create_el,
+	disass = var_0_0.disass_el,
+	regname = var_0_0.regname
 }

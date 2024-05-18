@@ -1,4 +1,4 @@
-return {
+﻿return {
 	time = 30,
 	name = "2020英系活动 鱼雷护盾",
 	init_effect = "",
@@ -34,13 +34,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3
+				centerPosFun = function(arg_1_0)
+					local var_1_0 = arg_1_0 * 3
 
-					return Vector3(math.sin(slot1) * 2, 0.75, math.cos(slot1) * 2)
+					return Vector3(math.sin(var_1_0) * 2, 0.75, math.cos(var_1_0) * 2)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
+				rotationFun = function(arg_2_0)
+					return Vector3(0, arg_2_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
 				end
 			}
 		},
@@ -70,13 +70,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + 1.256
+				centerPosFun = function(arg_3_0)
+					local var_3_0 = arg_3_0 * 3 + 1.256
 
-					return Vector3(math.sin(slot1) * 2, 0.75, math.cos(slot1) * 2)
+					return Vector3(math.sin(var_3_0) * 2, 0.75, math.cos(var_3_0) * 2)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 162, 0)
+				rotationFun = function(arg_4_0)
+					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 162, 0)
 				end
 			}
 		},
@@ -106,13 +106,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 + 2.512
+				centerPosFun = function(arg_5_0)
+					local var_5_0 = arg_5_0 * 3 + 2.512
 
-					return Vector3(math.sin(slot1) * 2, 0.75, math.cos(slot1) * 2)
+					return Vector3(math.sin(var_5_0) * 2, 0.75, math.cos(var_5_0) * 2)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 234, 0)
+				rotationFun = function(arg_6_0)
+					return Vector3(0, arg_6_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 234, 0)
 				end
 			}
 		},
@@ -142,13 +142,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 - 1.256
+				centerPosFun = function(arg_7_0)
+					local var_7_0 = arg_7_0 * 3 - 1.256
 
-					return Vector3(math.sin(slot1) * 2, 0.75, math.cos(slot1) * 2)
+					return Vector3(math.sin(var_7_0) * 2, 0.75, math.cos(var_7_0) * 2)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 18, 0)
+				rotationFun = function(arg_8_0)
+					return Vector3(0, arg_8_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 18, 0)
 				end
 			}
 		},
@@ -178,13 +178,13 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
-					slot1 = slot0 * 3 - 2.512
+				centerPosFun = function(arg_9_0)
+					local var_9_0 = arg_9_0 * 3 - 2.512
 
-					return Vector3(math.sin(slot1) * 2, 0.75, math.cos(slot1) * 2)
+					return Vector3(math.sin(var_9_0) * 2, 0.75, math.cos(var_9_0) * 2)
 				end,
-				rotationFun = function (slot0)
-					return Vector3(0, slot0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 54, 0)
+				rotationFun = function(arg_10_0)
+					return Vector3(0, arg_10_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 54, 0)
 				end
 			}
 		}

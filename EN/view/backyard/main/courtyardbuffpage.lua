@@ -1,104 +1,110 @@
-slot0 = class("CourtYardBuffPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CourtYardBuffPage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CourtYardBuffListPanel"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.closeBtn = slot0:findTF("frame/close")
-	slot0.uiItemList = UIItemList.New(slot0:findTF("frame/list/content"), slot0:findTF("frame/list/content/tpl"))
-	slot0.totalExp = slot0:findTF("frame/subtitle/Text"):GetComponent(typeof(Text))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("frame/close")
+	arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("frame/list/content"), arg_2_0:findTF("frame/list/content/tpl"))
+	arg_2_0.totalExp = arg_2_0:findTF("frame/subtitle/Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("frame/title"), i18n("courtyard_label_exp_addition"))
-	setText(slot0:findTF("frame/subtitle"), i18n("courtyard_label_total_exp_addition"))
+	setText(arg_2_0:findTF("frame/title"), i18n("courtyard_label_exp_addition"))
+	setText(arg_2_0:findTF("frame/subtitle"), i18n("courtyard_label_total_exp_addition"))
 
-	slot0.timers = {}
+	arg_2_0.timers = {}
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
-	slot0:Flush(slot1)
+function var_0_0.Show(arg_6_0, arg_6_1)
+	var_0_0.super.Show(arg_6_0)
+	arg_6_0:Flush(arg_6_1)
 
-	slot0.list = slot1
+	arg_6_0.list = arg_6_1
 end
 
-function slot0.Flush(slot0, slot1)
-	slot2 = 0
-	slot3 = {}
+function var_0_0.Flush(arg_7_0, arg_7_1)
+	local var_7_0 = 0
+	local var_7_1 = {}
 
-	for slot7, slot8 in ipairs(slot1) do
-		if slot8:getLeftTime() > 0 then
-			table.insert(slot3, slot8)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
+		if iter_7_1:getLeftTime() > 0 then
+			table.insert(var_7_1, iter_7_1)
 		end
 	end
 
-	slot0.uiItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
-
-			updateDrop(slot2:Find("award"), {
+	arg_7_0.uiItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventUpdate then
+			local var_8_0 = var_7_1[arg_8_1 + 1]
+			local var_8_1 = {
 				count = 0,
 				type = DROP_TYPE_BUFF,
-				id = slot3.id
-			})
-			setText(slot2:Find("Text"), slot3:getConfig("desc"))
-			uv1:AddTimer(slot2:Find("time"), slot3)
+				id = var_8_0.id
+			}
 
-			uv2 = uv2 + tonumber(slot3:getConfig("benefit_effect"))
+			updateDrop(arg_8_2:Find("award"), var_8_1)
+			setText(arg_8_2:Find("Text"), var_8_0:getConfig("desc"))
+			arg_7_0:AddTimer(arg_8_2:Find("time"), var_8_0)
+
+			local var_8_2 = var_8_0:getConfig("benefit_effect")
+
+			var_7_0 = var_7_0 + tonumber(var_8_2)
 		end
 	end)
-	slot0.uiItemList:align(#slot3)
+	arg_7_0.uiItemList:align(#var_7_1)
 
-	slot0.totalExp.text = slot2 .. "%"
+	arg_7_0.totalExp.text = var_7_0 .. "%"
 end
 
-function slot0.AddTimer(slot0, slot1, slot2)
-	slot0:RemoveTimer(slot2.id)
+function var_0_0.AddTimer(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0:RemoveTimer(arg_9_2.id)
 
-	slot3 = Timer.New(function ()
-		if uv0:getLeftTime() > 0 then
-			slot1 = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+	local var_9_0 = Timer.New(function()
+		local var_10_0 = arg_9_2:getLeftTime()
 
-			setText(uv1, slot0 <= 600 and setColorStr(slot1, COLOR_RED) or setColorStr(slot1, "#72bc42"))
+		if var_10_0 > 0 then
+			local var_10_1 = pg.TimeMgr.GetInstance():DescCDTime(var_10_0)
+			local var_10_2 = var_10_0 <= 600 and setColorStr(var_10_1, COLOR_RED) or setColorStr(var_10_1, "#72bc42")
+
+			setText(arg_9_1, var_10_2)
 		else
-			uv2:RemoveTimer(uv0.id)
-			uv2:Flush(uv2.list)
+			arg_9_0:RemoveTimer(arg_9_2.id)
+			arg_9_0:Flush(arg_9_0.list)
 		end
 	end, 1, -1)
 
-	slot3.func()
-	slot3:Start()
+	var_9_0.func()
+	var_9_0:Start()
 
-	slot0.timers[slot2.id] = slot3
+	arg_9_0.timers[arg_9_2.id] = var_9_0
 end
 
-function slot0.RemoveTimer(slot0, slot1)
-	if slot0.timers[slot1] then
-		slot0.timers[slot1]:Stop()
+function var_0_0.RemoveTimer(arg_11_0, arg_11_1)
+	if arg_11_0.timers[arg_11_1] then
+		arg_11_0.timers[arg_11_1]:Stop()
 
-		slot0.timers[slot1] = nil
+		arg_11_0.timers[arg_11_1] = nil
 	end
 end
 
-function slot0.RemoveAllTimer(slot0)
-	for slot4, slot5 in pairs(slot0.timers or {}) do
-		slot5:Stop()
+function var_0_0.RemoveAllTimer(arg_12_0)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.timers or {}) do
+		iter_12_1:Stop()
 	end
 
-	slot0.timers = {}
+	arg_12_0.timers = {}
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:RemoveAllTimer()
+function var_0_0.OnDestroy(arg_13_0)
+	arg_13_0:RemoveAllTimer()
 end
 
-return slot0
+return var_0_0

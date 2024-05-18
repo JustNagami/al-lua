@@ -1,86 +1,92 @@
-slot0 = class("BuildingUpgradeLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("BuildingUpgradeLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "BuildingUpgradePanel"
 end
 
-function slot0.init(slot0)
-	slot0.btnUpgrade = slot0:findTF("window/frame/upgrade_btn")
+function var_0_0.init(arg_2_0)
+	arg_2_0.btnUpgrade = arg_2_0:findTF("window/frame/upgrade_btn")
 
-	setText(slot0:findTF("window/frame/costback/label"), i18n("word_consume"))
-	setText(slot0:findTF("window/frame/upgrade_btn/Image"), i18n("msgbox_text_upgrade"))
+	setText(arg_2_0:findTF("window/frame/costback/label"), i18n("word_consume"))
+	setText(arg_2_0:findTF("window/frame/upgrade_btn/Image"), i18n("msgbox_text_upgrade"))
 
-	slot0.loader = AutoLoader.New()
+	arg_2_0.loader = AutoLoader.New()
 end
 
-function slot0.UpdateActivity(slot0, slot1)
-	slot0.activity = slot1
+function var_0_0.UpdateActivity(arg_3_0, arg_3_1)
+	arg_3_0.activity = arg_3_1
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
-	onButton(slot0, slot0:findTF("window/top/btnBack"), function ()
-		uv0:closeView()
+function var_0_0.didEnter(arg_4_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf)
+	onButton(arg_4_0, arg_4_0:findTF("window/top/btnBack"), function()
+		arg_4_0:closeView()
 	end)
-	onButton(slot0, slot0:findTF("mengban"), function ()
-		uv0:closeView()
+	onButton(arg_4_0, arg_4_0:findTF("mengban"), function()
+		arg_4_0:closeView()
 	end)
-	slot0:Set(slot0.activity)
+	arg_4_0:Set(arg_4_0.activity)
 end
 
-function slot0.Set(slot0, slot1, slot2)
-	slot2 = slot2 or slot0.contextData.buildingID
-	slot3 = pg.activity_event_building[slot2]
+function var_0_0.Set(arg_7_0, arg_7_1, arg_7_2)
+	arg_7_2 = arg_7_2 or arg_7_0.contextData.buildingID
 
-	assert(slot3, "Can't Find activity_event_building Config ID: " .. slot2)
+	local var_7_0 = pg.activity_event_building[arg_7_2]
 
-	slot0.contextData.buildingID = slot2
-	slot5 = slot1.data1KeyValueList[2][slot2] or 1
+	assert(var_7_0, "Can't Find activity_event_building Config ID: " .. arg_7_2)
 
-	assert(#slot3.material[slot5] == 1)
+	arg_7_0.contextData.buildingID = arg_7_2
 
-	slot9 = #slot3.buff <= slot5
-	slot10 = slot9 or slot6[1][3] <= (slot1.data1KeyValueList[1][slot6[1][2]] or 0)
+	local var_7_1 = #var_7_0.buff
+	local var_7_2 = arg_7_1.data1KeyValueList[2][arg_7_2] or 1
+	local var_7_3 = var_7_0.material[var_7_2]
 
-	setText(slot0:findTF("window/top/name"), slot3.name)
-	setText(slot0:findTF("window/top/name/lv"), "Lv." .. slot5)
-	setScrollText(slot0:findTF("window/frame/describe/text"), slot3.desc)
-	setText(slot0:findTF("window/frame/content/title/lv/current"), "Lv." .. slot5)
-	setActive(slot0:findTF("window/frame/content/title/lv/next"), not slot9)
+	assert(#var_7_3 == 1)
 
-	if not slot9 then
-		setText(slot0:findTF("window/frame/content/title/lv/next"), "Lv." .. slot5 + 1)
+	local var_7_4 = var_7_3[1][2]
+	local var_7_5 = arg_7_1.data1KeyValueList[1][var_7_4] or 0
+	local var_7_6 = var_7_1 <= var_7_2
+	local var_7_7 = var_7_6 or var_7_5 >= var_7_3[1][3]
+
+	setText(arg_7_0:findTF("window/top/name"), var_7_0.name)
+	setText(arg_7_0:findTF("window/top/name/lv"), "Lv." .. var_7_2)
+	setScrollText(arg_7_0:findTF("window/frame/describe/text"), var_7_0.desc)
+	setText(arg_7_0:findTF("window/frame/content/title/lv/current"), "Lv." .. var_7_2)
+	setActive(arg_7_0:findTF("window/frame/content/title/lv/next"), not var_7_6)
+
+	if not var_7_6 then
+		setText(arg_7_0:findTF("window/frame/content/title/lv/next"), "Lv." .. var_7_2 + 1)
 	end
 
-	slot11 = slot3.buff[slot5]
-	slot12 = pg.benefit_buff_template[slot11]
+	local var_7_8 = var_7_0.buff[var_7_2]
+	local var_7_9 = pg.benefit_buff_template[var_7_8]
 
-	assert(slot12, "Can't Find benefit_buff_template Config ID: " .. slot11)
-	setText(slot0:findTF("window/frame/content/preview/current"), slot12.desc)
-	setActive(slot0:findTF("window/frame/content/preview/arrow"), not slot9)
-	setActive(slot0:findTF("window/frame/content/preview/next"), not slot9)
+	assert(var_7_9, "Can't Find benefit_buff_template Config ID: " .. var_7_8)
+	setText(arg_7_0:findTF("window/frame/content/preview/current"), var_7_9.desc)
+	setActive(arg_7_0:findTF("window/frame/content/preview/arrow"), not var_7_6)
+	setActive(arg_7_0:findTF("window/frame/content/preview/next"), not var_7_6)
 
-	if not slot9 then
-		slot13 = slot3.buff[slot5 + 1]
-		slot12 = pg.benefit_buff_template[slot13]
+	if not var_7_6 then
+		local var_7_10 = var_7_0.buff[var_7_2 + 1]
+		local var_7_11 = pg.benefit_buff_template[var_7_10]
 
-		assert(slot12, "Can't Find benefit_buff_template Config ID: " .. slot13)
-		setText(slot0:findTF("window/frame/content/preview/next"), slot12.desc)
+		assert(var_7_11, "Can't Find benefit_buff_template Config ID: " .. var_7_10)
+		setText(arg_7_0:findTF("window/frame/content/preview/next"), var_7_11.desc)
 	end
 
-	slot0.loader:GetSprite(Item.getConfigData(slot7).icon, "", slot0:findTF("window/frame/costback/icon"))
-	setText(slot0:findTF("window/frame/costback/cost"), slot3.material[slot5] or 0)
-	onButton(slot0, slot0.btnUpgrade, function ()
+	arg_7_0.loader:GetSprite(Item.getConfigData(var_7_4).icon, "", arg_7_0:findTF("window/frame/costback/icon"))
+	setText(arg_7_0:findTF("window/frame/costback/cost"), var_7_0.material[var_7_2] or 0)
+	onButton(arg_7_0, arg_7_0.btnUpgrade, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("building_upgrade_tip"),
-			onYes = function ()
-				if uv0 then
+			onYes = function()
+				if var_7_6 then
 					return
-				elseif uv1 then
-					uv2:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
+				elseif var_7_7 then
+					arg_7_0:emit(BuildingUpgradeMediator.ACTIVITY_OPERATION, {
 						cmd = 1,
-						activity_id = uv2.activity.id,
-						arg1 = uv3
+						activity_id = arg_7_0.activity.id,
+						arg1 = arg_7_2
 					})
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("building_tip"))
@@ -88,12 +94,12 @@ function slot0.Set(slot0, slot1, slot2)
 			end
 		})
 	end)
-	setGray(slot0.btnUpgrade, slot9)
-	setButtonEnabled(slot0.btnUpgrade, not slot9)
+	setGray(arg_7_0.btnUpgrade, var_7_6)
+	setButtonEnabled(arg_7_0.btnUpgrade, not var_7_6)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_10_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_10_0._tf)
 end
 
-return slot0
+return var_0_0

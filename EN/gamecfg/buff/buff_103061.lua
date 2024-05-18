@@ -1,4 +1,19 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBulletAttr",
+			trigger = {
+				"onBulletCreate"
+			},
+			arg_list = {
+				attr = "cri",
+				number = 1,
+				index = {
+					-1
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,20 +34,5 @@ return {
 	stack = 1,
 	id = 103060,
 	icon = 103060,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBulletAttr",
-			trigger = {
-				"onBulletCreate"
-			},
-			arg_list = {
-				attr = "cri",
-				number = 1,
-				index = {
-					-1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,157 +1,175 @@
-slot0 = class("BackYardDecorationBasePage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("BackYardDecorationBasePage", import("....base.BaseSubView"))
 
-function slot0.OnLoaded(slot0)
-	slot0.scrollRect = slot0._tf:GetComponent("LScrollRect")
+function var_0_0.OnLoaded(arg_1_0)
+	arg_1_0.scrollRect = arg_1_0._tf:GetComponent("LScrollRect")
 end
 
-function slot0.OnInit(slot0)
-	slot0.cards = {}
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.cards = {}
 
-	function slot0.scrollRect.onInitItem(slot0)
-		uv0:OnInitItem(slot0)
+	function arg_2_0.scrollRect.onInitItem(arg_3_0)
+		arg_2_0:OnInitItem(arg_3_0)
 	end
 
-	function slot0.scrollRect.onUpdateItem(slot0, slot1)
-		uv0:OnUpdateItem(slot0, slot1)
+	function arg_2_0.scrollRect.onUpdateItem(arg_4_0, arg_4_1)
+		arg_2_0:OnUpdateItem(arg_4_0, arg_4_1)
 	end
 end
 
-function slot0.SetUp(slot0, slot1, slot2, slot3, slot4)
-	slot0:Show()
+function var_0_0.SetUp(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4)
+	arg_5_0:Show()
 
-	slot0.pageType = slot1
-	slot0.dorm = slot2
-	slot0.customTheme = slot3
-	slot0.orderMode = slot4
+	arg_5_0.pageType = arg_5_1
+	arg_5_0.dorm = arg_5_2
+	arg_5_0.customTheme = arg_5_3
+	arg_5_0.orderMode = arg_5_4
 
-	slot0:OnDisplayList()
-	slot0:UpdateFliterData()
+	arg_5_0:OnDisplayList()
+	arg_5_0:UpdateFliterData()
 end
 
-function slot0.Show(slot0)
-	setActiveViaLayer(slot0._tf, true)
+function var_0_0.Show(arg_6_0)
+	setActiveViaLayer(arg_6_0._tf, true)
 end
 
-function slot0.Hide(slot0)
-	setActiveViaLayer(slot0._tf, false)
+function var_0_0.Hide(arg_7_0)
+	setActiveViaLayer(arg_7_0._tf, false)
 end
 
-function slot0.DormUpdated(slot0, slot1)
-	slot0.dorm = slot1
+function var_0_0.DormUpdated(arg_8_0, arg_8_1)
+	arg_8_0.dorm = arg_8_1
 
-	slot0:UpdateFliterData()
-	slot0:OnDormUpdated()
+	arg_8_0:UpdateFliterData()
+	arg_8_0:OnDormUpdated()
 end
 
-function slot0.FurnitureUpdated(slot0, slot1)
-	slot0:OnFurnitureUpdated(slot1)
+function var_0_0.FurnitureUpdated(arg_9_0, arg_9_1)
+	arg_9_0:OnFurnitureUpdated(arg_9_1)
 end
 
-function slot0.CustomThemeAdded(slot0, slot1)
-	slot0.customTheme[slot1.id] = slot1
+function var_0_0.CustomThemeAdded(arg_10_0, arg_10_1)
+	arg_10_0.customTheme[arg_10_1.id] = arg_10_1
 
-	slot0:CustomThemeUpdated(slot0.customTheme)
+	arg_10_0:CustomThemeUpdated(arg_10_0.customTheme)
 end
 
-function slot0.CustomThemeDeleted(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.customTheme) do
-		if slot6.id == slot1 then
-			slot0.customTheme[slot5] = nil
+function var_0_0.CustomThemeDeleted(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.customTheme) do
+		if iter_11_1.id == arg_11_1 then
+			arg_11_0.customTheme[iter_11_0] = nil
 
 			break
 		end
 	end
 
-	slot0:CustomThemeUpdated(slot0.customTheme)
+	arg_11_0:CustomThemeUpdated(arg_11_0.customTheme)
 end
 
-function slot0.ThemeUpdated(slot0)
-	slot0:OnThemeUpdated()
+function var_0_0.ThemeUpdated(arg_12_0)
+	arg_12_0:OnThemeUpdated()
 end
 
-function slot0.CustomThemeUpdated(slot0, slot1)
-	slot0.customTheme = slot1
+function var_0_0.CustomThemeUpdated(arg_13_0, arg_13_1)
+	arg_13_0.customTheme = arg_13_1
 
-	slot0:ThemeUpdated()
+	arg_13_0:ThemeUpdated()
 end
 
-function slot0.OrderModeUpdated(slot0, slot1)
-	slot0.orderMode = slot1
+function var_0_0.OrderModeUpdated(arg_14_0, arg_14_1)
+	arg_14_0.orderMode = arg_14_1
 
-	slot0:UpdateFliterData()
+	arg_14_0:UpdateFliterData()
 
-	if slot0.contextData.filterPanel:GetLoaded() then
-		slot0.contextData.filterPanel:Sort()
-		slot0:OnFilterDone(slot0.contextData.filterPanel:GetFilterData())
+	if arg_14_0.contextData.filterPanel:GetLoaded() then
+		arg_14_0.contextData.filterPanel:Sort()
+
+		local var_14_0 = arg_14_0.contextData.filterPanel:GetFilterData()
+
+		arg_14_0:OnFilterDone(var_14_0)
 	else
-		slot0:OnOrderModeUpdated()
+		arg_14_0:OnOrderModeUpdated()
 	end
 end
 
-function slot0.UpdateFliterData(slot0)
-	slot0.contextData.filterPanel:SetDorm(slot0.dorm)
-	slot0.contextData.filterPanel:updateOrderMode(slot0.orderMode)
+function var_0_0.UpdateFliterData(arg_15_0)
+	arg_15_0.contextData.filterPanel:SetDorm(arg_15_0.dorm)
+	arg_15_0.contextData.filterPanel:updateOrderMode(arg_15_0.orderMode)
 end
 
-function slot0.ShowFilterPanel(slot0, slot1)
-	slot0.contextData.filterPanel:setFilterData(slot0:GetDisplays())
+function var_0_0.ShowFilterPanel(arg_16_0, arg_16_1)
+	arg_16_0.contextData.filterPanel:setFilterData(arg_16_0:GetDisplays())
 
-	function slot0.contextData.filterPanel.confirmFunc()
-		if uv1 then
-			uv1(uv0.contextData.filterPanel.sortTxt)
+	function arg_16_0.contextData.filterPanel.confirmFunc()
+		local var_17_0 = arg_16_0.contextData.filterPanel.sortTxt
+
+		if arg_16_1 then
+			arg_16_1(var_17_0)
 		end
 
-		uv0:OnFilterDone(uv0.contextData.filterPanel:GetFilterData())
+		local var_17_1 = arg_16_0.contextData.filterPanel:GetFilterData()
+
+		arg_16_0:OnFilterDone(var_17_1)
 	end
 
-	slot0.contextData.filterPanel:ExecuteAction("Show")
+	arg_16_0.contextData.filterPanel:ExecuteAction("Show")
 end
 
-function slot0.SearchKeyUpdated(slot0, slot1)
-	slot0.searchKey = slot1
+function var_0_0.SearchKeyUpdated(arg_18_0, arg_18_1)
+	arg_18_0.searchKey = arg_18_1
 
-	slot0:OnSearchKeyChanged()
+	arg_18_0:OnSearchKeyChanged()
 end
 
-function slot0.OnInitItem(slot0, slot1)
+function var_0_0.OnInitItem(arg_19_0, arg_19_1)
+	return
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
+function var_0_0.OnUpdateItem(arg_20_0, arg_20_1, arg_20_2)
+	return
 end
 
-function slot0.OnDisplayList(slot0)
+function var_0_0.OnDisplayList(arg_21_0)
+	return
 end
 
-function slot0.OnDormUpdated(slot0)
+function var_0_0.OnDormUpdated(arg_22_0)
+	return
 end
 
-function slot0.OnFurnitureUpdated(slot0, slot1)
+function var_0_0.OnFurnitureUpdated(arg_23_0, arg_23_1)
+	return
 end
 
-function slot0.OnThemeUpdated(slot0)
+function var_0_0.OnThemeUpdated(arg_24_0)
+	return
 end
 
-function slot0.OnOrderModeUpdated(slot0)
+function var_0_0.OnOrderModeUpdated(arg_25_0)
+	return
 end
 
-function slot0.OnFilterDone(slot0, slot1)
+function var_0_0.OnFilterDone(arg_26_0, arg_26_1)
+	return
 end
 
-function slot0.GetDisplays(slot0)
+function var_0_0.GetDisplays(arg_27_0)
 	return {}
 end
 
-function slot0.OnSearchKeyChanged(slot0)
+function var_0_0.OnSearchKeyChanged(arg_28_0)
+	return
 end
 
-function slot0.OnBackPressed(slot0)
+function var_0_0.OnBackPressed(arg_29_0)
 	return false
 end
 
-function slot0.OnApplyThemeBefore(slot0)
+function var_0_0.OnApplyThemeBefore(arg_30_0)
+	return
 end
 
-function slot0.OnApplyThemeAfter(slot0, slot1)
+function var_0_0.OnApplyThemeAfter(arg_31_0, arg_31_1)
+	return
 end
 
-return slot0
+return var_0_0

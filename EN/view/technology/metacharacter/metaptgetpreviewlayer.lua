@@ -1,63 +1,71 @@
-slot0 = class("MetaPTGetPreviewLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("MetaPTGetPreviewLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MetaPTGetPreviewUI"
 end
 
-function slot0.init(slot0)
-	slot0:initUITextTips()
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initUITextTips()
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
 		weight = LayerWeightConst.THIRD_LAYER
 	})
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
 end
 
-function slot0.initUITextTips(slot0)
-	setText(slot0:findTF("Panel/BG/TitleText"), i18n("meta_pt_get_way"))
+function var_0_0.initUITextTips(arg_5_0)
+	local var_5_0 = arg_5_0:findTF("Panel/BG/TitleText")
+
+	setText(var_5_0, i18n("meta_pt_get_way"))
 end
 
-function slot0.initData(slot0)
+function var_0_0.initData(arg_6_0)
+	return
 end
 
-function slot0.findUI(slot0)
-	slot0.bg = slot0:findTF("BG")
-	slot0.panelTF = slot0:findTF("Panel")
-	slot0.bossBtn = slot0:findTF("BossTip", slot0.panelTF)
-	slot0.taskBtn = slot0:findTF("TaskTip", slot0.panelTF)
-	slot0.resetBtn = slot0:findTF("ResetTip", slot0.panelTF)
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.bg = arg_7_0:findTF("BG")
+	arg_7_0.panelTF = arg_7_0:findTF("Panel")
+	arg_7_0.bossBtn = arg_7_0:findTF("BossTip", arg_7_0.panelTF)
+	arg_7_0.taskBtn = arg_7_0:findTF("TaskTip", arg_7_0.panelTF)
+	arg_7_0.resetBtn = arg_7_0:findTF("ResetTip", arg_7_0.panelTF)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.bg, function ()
-		uv0:closeView()
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.bg, function()
+		arg_8_0:closeView()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.panelTF, function ()
-		uv0:closeView()
+	onButton(arg_8_0, arg_8_0.panelTF, function()
+		arg_8_0:closeView()
 	end, SFX_PANEL)
 
-	function slot1()
-		getProxy(ContextProxy):getContextByMediator(MetaCharacterMediator).data.lastPageIndex = pg.m02:retrieveMediator("MetaCharacterMediator").viewComponent.curPageIndex
+	local function var_8_0()
+		local var_11_0 = getProxy(ContextProxy):getContextByMediator(MetaCharacterMediator)
+		local var_11_1 = pg.m02:retrieveMediator("MetaCharacterMediator")
 
-		uv0:closeView()
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
+		var_11_0.data.lastPageIndex = var_11_1.viewComponent.curPageIndex
 
-		if getProxy(ContextProxy):getContextByMediator(MetaCharacterSynMediator) then
-			slot0:removeChild(slot2)
+		arg_8_0:closeView()
+		arg_8_0:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
+
+		local var_11_2 = getProxy(ContextProxy):getContextByMediator(MetaCharacterSynMediator)
+
+		if var_11_2 then
+			var_11_0:removeChild(var_11_2)
 		end
 	end
 
-	onButton(slot0, slot0.bossBtn, slot1, SFX_PANEL)
-	onButton(slot0, slot0.taskBtn, slot1, SFX_PANEL)
-	onButton(slot0, slot0.resetBtn, slot1, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.bossBtn, var_8_0, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.taskBtn, var_8_0, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.resetBtn, var_8_0, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

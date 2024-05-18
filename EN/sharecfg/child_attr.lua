@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.child_attr = {
 	[101] = {
 		id = 101,

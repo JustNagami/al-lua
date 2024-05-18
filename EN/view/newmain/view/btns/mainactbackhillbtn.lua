@@ -1,54 +1,72 @@
-slot0 = class("MainActBackHillBtn", import(".MainBaseActivityBtn"))
+﻿local var_0_0 = class("MainActBackHillBtn", import(".MainBaseActivityBtn"))
 
-function slot0.GetEventName(slot0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_minigame"
 end
 
-function slot0.OnInit(slot0)
-	setActive(slot0.tipTr.gameObject, slot0:IsShowTip())
+function var_0_0.OnInit(arg_2_0)
+	local var_2_0 = arg_2_0:IsShowTip()
+
+	setActive(arg_2_0.tipTr.gameObject, var_2_0)
 end
 
-function slot0.GetActivityID(slot0)
-	if not checkExist(slot0.config, {
+function var_0_0.GetActivityID(arg_3_0)
+	local var_3_0 = checkExist(arg_3_0.config, {
 		"time"
-	}) then
+	})
+
+	if not var_3_0 then
 		return nil
 	end
 
-	return slot1[1] == "default" and slot1[2] or nil
+	return var_3_0[1] == "default" and var_3_0[2] or nil
 end
 
-function slot0.CustomOnClick(slot0)
-	if getProxy(ActivityProxy):getActivityById(slot0:GetActivityID()) and slot2:getConfig("config_client").scene then
-		slot0:emit(NewMainMediator.GO_SCENE, slot3)
+function var_0_0.CustomOnClick(arg_4_0)
+	local var_4_0 = arg_4_0:GetActivityID()
+	local var_4_1 = getProxy(ActivityProxy):getActivityById(var_4_0)
 
-		return
+	if var_4_1 then
+		local var_4_2 = var_4_1:getConfig("config_client").scene
+
+		if var_4_2 then
+			arg_4_0:emit(NewMainMediator.GO_SCENE, var_4_2)
+
+			return
+		end
 	end
 
-	errorMsg("not bind backhill Activity id:", slot1 or "NIL")
-	slot0:OnClick()
+	errorMsg("not bind backhill Activity id:", var_4_0 or "NIL")
+	arg_4_0:OnClick()
 end
 
-function slot0.IsShowTip(slot0)
-	if getProxy(ActivityProxy):getActivityById(slot0:GetActivityID()) then
-		if slot2:getConfig("config_client").scene then
-			slot4 = Context.New()
+function var_0_0.IsShowTip(arg_5_0)
+	local var_5_0 = arg_5_0:GetActivityID()
+	local var_5_1 = getProxy(ActivityProxy):getActivityById(var_5_0)
+
+	if var_5_1 then
+		local var_5_2 = var_5_1:getConfig("config_client").scene
+
+		if var_5_2 then
+			local var_5_3 = Context.New()
 
 			if IsUnityEditor then
-				assert(table.Find(SCENE, function (slot0, slot1)
-					return slot1 == uv0
-				end), "not Find name in scene.lua : " .. slot3)
+				assert(table.Find(SCENE, function(arg_6_0, arg_6_1)
+					return arg_6_1 == var_5_2
+				end), "not Find name in scene.lua : " .. var_5_2)
 			end
 
-			SCENE.SetSceneInfo(slot4, slot3)
+			SCENE.SetSceneInfo(var_5_3, var_5_2)
 
-			if slot4.viewComponent.IsShowMainTip then
-				return slot5(slot2)
+			local var_5_4 = var_5_3.viewComponent.IsShowMainTip
+
+			if var_5_4 then
+				return var_5_4(var_5_1)
 			end
 
-			errorMsg("scene has not function IsShowMainTip Tip Activity id:", slot1 or "NIL")
+			errorMsg("scene has not function IsShowMainTip Tip Activity id:", var_5_0 or "NIL")
 		end
 	end
 end
 
-return slot0
+return var_0_0

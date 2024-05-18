@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "清扫工作",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行20次攻击，触发增益效果",
-	stack = 1,
-	id = 17730,
-	icon = 17730,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -68,5 +48,25 @@ return {
 				countType = 17731
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "清扫工作",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行20次攻击，触发增益效果",
+	stack = 1,
+	id = 17730,
+	icon = 17730,
+	last_effect = ""
 }

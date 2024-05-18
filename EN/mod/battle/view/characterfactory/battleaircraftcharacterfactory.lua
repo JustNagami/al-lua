@@ -1,55 +1,72 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = singletonClass("BattleAircraftCharacterFactory", slot0.Battle.BattleCharacterFactory)
-slot0.Battle.BattleAircraftCharacterFactory = slot2
-slot2.__name = "BattleAircraftCharacterFactory"
-slot2.BOMB_FX_NAME = "feijibaozha"
+﻿ys = ys or {}
 
-function slot2.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = singletonClass("BattleAircraftCharacterFactory", var_0_0.Battle.BattleCharacterFactory)
+
+var_0_0.Battle.BattleAircraftCharacterFactory = var_0_2
+var_0_2.__name = "BattleAircraftCharacterFactory"
+var_0_2.BOMB_FX_NAME = "feijibaozha"
+
+function var_0_2.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 end
 
-function slot2.MakeCharacter(slot0)
-	return uv0.Battle.BattleAircraftCharacter.New()
+function var_0_2.MakeCharacter(arg_2_0)
+	return var_0_0.Battle.BattleAircraftCharacter.New()
 end
 
-function slot2.MakeModel(slot0, slot1)
-	function slot2(slot0)
-		uv0:AddModel(slot0)
-		uv0:InitWeapon()
-		uv0:CameraOrthogonal(uv2.Battle.BattleCameraUtil.GetInstance():GetCamera())
-		uv1:GetSceneMediator():AddAirCraftCharacter(uv0)
-		uv1:MakeUIComponentContainer(uv0)
-		uv1:MakeFXContainer(uv0)
-		uv1:MakeShadow(uv0)
+function var_0_2.MakeModel(arg_3_0, arg_3_1)
+	local function var_3_0(arg_4_0)
+		arg_3_1:AddModel(arg_4_0)
+		arg_3_1:InitWeapon()
 
-		if uv0:GetUnitData():GetIFF() == uv3.FOE_CODE then
-			uv1:MakePopNumPool(uv0)
-			uv1:MakeBloodBar(uv0)
+		local var_4_0 = arg_3_0:GetSceneMediator()
+
+		arg_3_1:CameraOrthogonal(var_0_0.Battle.BattleCameraUtil.GetInstance():GetCamera())
+		var_4_0:AddAirCraftCharacter(arg_3_1)
+		arg_3_0:MakeUIComponentContainer(arg_3_1)
+		arg_3_0:MakeFXContainer(arg_3_1)
+		arg_3_0:MakeShadow(arg_3_1)
+
+		if arg_3_1:GetUnitData():GetIFF() == var_0_1.FOE_CODE then
+			arg_3_0:MakePopNumPool(arg_3_1)
+			arg_3_0:MakeBloodBar(arg_3_1)
 		end
 	end
 
-	slot0:GetCharacterPool():InstAirCharacter(slot1:GetModleID(), function (slot0)
-		uv0(slot0)
+	arg_3_0:GetCharacterPool():InstAirCharacter(arg_3_1:GetModleID(), function(arg_5_0)
+		var_3_0(arg_5_0)
 	end)
 end
 
-function slot2.MakeBloodBar(slot0, slot1)
-	slot2 = nil
+function var_0_2.MakeBloodBar(arg_6_0, arg_6_1)
+	local var_6_0
 
-	slot1:AddHPBar((not slot1:GetUnitData():IsPlayerAircraft() or slot0:GetHPBarPool():GetHPBar(uv0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY)) and slot0:GetHPBarPool():GetHPBar(uv0.Battle.BattleHPBarManager.HP_BAR_FOE))
-	slot1:UpdateHPBarPosition()
+	if arg_6_1:GetUnitData():IsPlayerAircraft() then
+		var_6_0 = arg_6_0:GetHPBarPool():GetHPBar(var_0_0.Battle.BattleHPBarManager.HP_BAR_FRIENDLY)
+	else
+		var_6_0 = arg_6_0:GetHPBarPool():GetHPBar(var_0_0.Battle.BattleHPBarManager.HP_BAR_FOE)
+	end
+
+	arg_6_1:AddHPBar(var_6_0)
+	arg_6_1:UpdateHPBarPosition()
 end
 
-function slot2.SetHPBarWidth(slot0, slot1, slot2)
-	slot3 = 40
-	slot4 = slot1.transform
-	slot4.sizeDelta = Vector2(slot3, slot4.rect.height)
-	slot6.sizeDelta = Vector2(slot3 - slot2 or 0, slot4:Find("blood").transform.rect.height)
+function var_0_2.SetHPBarWidth(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = 40
+	local var_7_1 = arg_7_1.transform
+	local var_7_2 = var_7_1.rect.height
+
+	var_7_1.sizeDelta = Vector2(var_7_0, var_7_2)
+
+	local var_7_3 = var_7_1:Find("blood").transform
+	local var_7_4 = var_7_3.rect.height
+
+	var_7_3.sizeDelta = Vector2(var_7_0 - arg_7_2 or 0, var_7_4)
 end
 
-function slot2.MakeShadow(slot0, slot1)
-	slot1:AddShadow()
-	slot1:UpdateShadow()
+function var_0_2.MakeShadow(arg_8_0, arg_8_1)
+	arg_8_1:AddShadow()
+	arg_8_1:UpdateShadow()
 end

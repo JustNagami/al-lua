@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "野性的二元论",
-	init_effect = "jinengchufared",
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 105142,
-	icon = 105140,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -49,5 +29,25 @@ return {
 				skill_id = 105140
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "野性的二元论",
+	init_effect = "jinengchufared",
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 105142,
+	icon = 105140,
+	last_effect = ""
 }

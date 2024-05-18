@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"Click the button for help"
+}
+
 return {
 	id = "test",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 2,
 				posY = 180.11,
 				posX = 538.63,
-				text = ({
-					"Click the button for help"
-				})[1],
+				text = var_0_0[1],
 				ui = {
 					path = "",
 					pathIndex = -1

@@ -1,50 +1,61 @@
-slot0 = class("WorldBossSupportCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("WorldBossSupportCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	assert(slot1:getBody().type)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().type
 
-	if not nowWorld().worldBossProxy:GetSelfBoss() then
+	assert(var_1_0)
+
+	local var_1_1 = nowWorld().worldBossProxy
+	local var_1_2 = var_1_1:GetSelfBoss()
+
+	if not var_1_2 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_not_found"))
 
 		return
 	end
 
-	if slot6:isDeath() then
+	if var_1_2:isDeath() then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_boss_is_death"))
 
 		return
 	end
 
-	if slot3 == WorldBoss.SUPPORT_TYPE_GUILD then
+	if var_1_0 == WorldBoss.SUPPORT_TYPE_GUILD then
 		if not getProxy(GuildProxy):getRawData() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_whitout_guild"))
 
 			return
 		end
-	elseif slot3 == WorldBoss.SUPPORT_TYPE_FRIEND and table.getCount(getProxy(FriendProxy):getRawData()) <= 0 then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_whitout_friend"))
+	elseif var_1_0 == WorldBoss.SUPPORT_TYPE_FRIEND then
+		local var_1_3 = getProxy(FriendProxy):getRawData()
 
-		return
+		if table.getCount(var_1_3) <= 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_whitout_friend"))
+
+			return
+		end
+	end
+
+	local function var_1_4(arg_2_0)
+		if arg_2_0.result == 0 then
+			if var_1_0 == WorldBoss.SUPPORT_TYPE_FRIEND then
+				var_1_1:UpdateFriendSupported()
+			elseif var_1_0 == WorldBoss.SUPPORT_TYPE_GUILD then
+				var_1_1:UpdateGuildSupported()
+			elseif var_1_0 == WorldBoss.SUPPORT_TYPE_WORLD then
+				var_1_1:UpdateWorldSupported()
+			end
+
+			var_1_1:UpdateSelfBoss(var_1_2)
+			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUPPORT_DONE)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_call_support_failed") .. arg_2_0.result)
+		end
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(34509, {
-		type = slot3
-	}, 34510, function (slot0)
-		if slot0.result == 0 then
-			if uv0 == WorldBoss.SUPPORT_TYPE_FRIEND then
-				uv1:UpdateFriendSupported()
-			elseif uv0 == WorldBoss.SUPPORT_TYPE_GUILD then
-				uv1:UpdateGuildSupported()
-			elseif uv0 == WorldBoss.SUPPORT_TYPE_WORLD then
-				uv1:UpdateWorldSupported()
-			end
-
-			uv1:UpdateSelfBoss(uv2)
-			uv3:sendNotification(GAME.WORLD_BOSS_SUPPORT_DONE)
-		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("world_joint_call_support_failed") .. slot0.result)
-		end
-	end)
+		type = var_1_0
+	}, 34510, var_1_4)
 end
 
-return slot0
+return var_0_0

@@ -1,32 +1,32 @@
-slot0 = class("SkinGuide5Page", import("...base.BaseActivityPage"))
-slot1 = {
+﻿local var_0_0 = class("SkinGuide5Page", import("...base.BaseActivityPage"))
+local var_0_1 = {
 	"guandao",
 	"lafei2",
 	"kelifulan",
 	"xingzuo"
 }
-slot2 = nil
-slot3 = "ui/activityuipage/skinguide5page_atlas"
+local var_0_2
+local var_0_3 = "ui/activityuipage/skinguide5page_atlas"
 
-function slot0.OnInit(slot0)
-	slot0.ad = slot0:findTF("AD")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.ad = arg_1_0:findTF("AD")
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		uv0 = {
+		var_0_2 = {
 			Vector2(-488, 52),
 			Vector2(-420, -41),
 			Vector2(102, -82),
 			Vector2(-471, -128)
 		}
 	elseif PLATFORM_CODE == PLATFORM_US then
-		uv0 = {
+		var_0_2 = {
 			Vector2(-480, 189),
 			Vector2(-445, -101),
 			Vector2(-410, -101),
 			Vector2(-354, -108)
 		}
 	else
-		uv0 = {
+		var_0_2 = {
 			Vector2(-490, 130),
 			Vector2(-400, -128),
 			Vector2(89, 10),
@@ -34,256 +34,287 @@ function slot0.OnInit(slot0)
 		}
 	end
 
-	slot0.paint = findTF(slot0.ad, "paint")
-	slot0.paintGot = findTF(slot0.paint, "show/got")
-	slot0.paintAnim = GetComponent(slot0.paint, typeof(Animator))
-	slot0.itemContent = findTF(slot0.ad, "items/content")
-	slot0.itemTpl = findTF(slot0.ad, "items/content/itemTpl")
+	arg_1_0.paint = findTF(arg_1_0.ad, "paint")
+	arg_1_0.paintGot = findTF(arg_1_0.paint, "show/got")
+	arg_1_0.paintAnim = GetComponent(arg_1_0.paint, typeof(Animator))
+	arg_1_0.itemContent = findTF(arg_1_0.ad, "items/content")
+	arg_1_0.itemTpl = findTF(arg_1_0.ad, "items/content/itemTpl")
 
-	setActive(slot0.itemTpl, false)
+	setActive(arg_1_0.itemTpl, false)
 
-	slot0.iconContent = findTF(slot0.ad, "iconContent")
-	slot0.iconTpl = findTF(slot0.ad, "iconContent/IconTpl")
+	arg_1_0.iconContent = findTF(arg_1_0.ad, "iconContent")
+	arg_1_0.iconTpl = findTF(arg_1_0.ad, "iconContent/IconTpl")
 
-	setActive(slot0.iconTpl, false)
+	setActive(arg_1_0.iconTpl, false)
 
-	slot0.desc = findTF(slot0.ad, "desc")
-	slot0.got = findTF(slot0.ad, "got")
-	slot0.get = findTF(slot0.ad, "get")
-	slot0.getBound = findTF(slot0.ad, "get_bound")
-	slot0.times = findTF(slot0.ad, "times")
+	arg_1_0.desc = findTF(arg_1_0.ad, "desc")
+	arg_1_0.got = findTF(arg_1_0.ad, "got")
+	arg_1_0.get = findTF(arg_1_0.ad, "get")
+	arg_1_0.getBound = findTF(arg_1_0.ad, "get_bound")
+	arg_1_0.times = findTF(arg_1_0.ad, "times")
 
-	onButton(slot0, slot0.get, function ()
-		if uv0.selectIndex then
-			uv0:emit(ActivityMediator.ON_TASK_SUBMIT, getProxy(TaskProxy):getTaskById(uv0.skinDatas[uv0.selectIndex].task))
+	onButton(arg_1_0, arg_1_0.get, function()
+		if arg_1_0.selectIndex then
+			local var_2_0 = getProxy(TaskProxy):getTaskById(arg_1_0.skinDatas[arg_1_0.selectIndex].task)
+
+			arg_1_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_2_0)
 		end
 	end, sound, guideData)
 end
 
-function slot0.OnDataSetting(slot0)
-	slot0.taskProxy = getProxy(TaskProxy)
-	slot0.taskList = slot0.activity:getConfig("config_data")
-	slot0.totalCnt = #slot0.taskList
+function var_0_0.OnDataSetting(arg_3_0)
+	arg_3_0.taskProxy = getProxy(TaskProxy)
+	arg_3_0.taskList = arg_3_0.activity:getConfig("config_data")
+	arg_3_0.totalCnt = #arg_3_0.taskList
 
-	if not slot0.skinDatas then
-		slot0.skinDatas = {}
+	if not arg_3_0.skinDatas then
+		arg_3_0.skinDatas = {}
 
-		for slot4 = 1, #slot0.taskList do
-			slot7 = tf(instantiate(slot0.itemTpl))
+		for iter_3_0 = 1, #arg_3_0.taskList do
+			local var_3_0 = arg_3_0.taskList[iter_3_0]
+			local var_3_1 = var_0_1[iter_3_0]
+			local var_3_2 = tf(instantiate(arg_3_0.itemTpl))
 
-			setParent(slot7, slot0.itemContent)
-			setActive(slot7, true)
-			onButton(slot0, slot7, function ()
-				uv0:selectItem(uv1)
+			setParent(var_3_2, arg_3_0.itemContent)
+			setActive(var_3_2, true)
+			onButton(arg_3_0, var_3_2, function()
+				arg_3_0:selectItem(iter_3_0)
 			end, SFX_CONFIRM)
 
-			GetComponent(slot7, typeof(Image)).sprite = GetSpriteFromAtlas(uv1, "item_" .. uv0[slot4])
-			slot9 = tf(Instantiate(slot0.iconTpl))
+			GetComponent(var_3_2, typeof(Image)).sprite = GetSpriteFromAtlas(var_0_3, "item_" .. var_3_1)
 
-			setParent(slot9, slot0.iconContent)
-			setActive(slot9, true)
+			local var_3_3 = tf(Instantiate(arg_3_0.iconTpl))
 
-			slot11 = (slot0.taskProxy:getTaskById(slot0.taskList[slot4]) or slot0.taskProxy:getFinishTaskById(slot5)):getConfig("award_display")[1]
+			setParent(var_3_3, arg_3_0.iconContent)
+			setActive(var_3_3, true)
 
-			updateDrop(slot9, {
-				type = slot11[1],
-				id = slot11[2],
-				count = slot11[3]
-			})
-			onButton(slot0, slot9, function ()
-				uv0:emit(BaseUI.ON_DROP, uv1)
+			local var_3_4 = (arg_3_0.taskProxy:getTaskById(var_3_0) or arg_3_0.taskProxy:getFinishTaskById(var_3_0)):getConfig("award_display")[1]
+			local var_3_5 = {
+				type = var_3_4[1],
+				id = var_3_4[2],
+				count = var_3_4[3]
+			}
+
+			updateDrop(var_3_3, var_3_5)
+			onButton(arg_3_0, var_3_3, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_3_5)
 			end, SFX_PANEL)
-			table.insert(slot0.skinDatas, {
-				task = slot5,
-				name = slot6,
-				item = slot7,
-				icon = slot9
+			table.insert(arg_3_0.skinDatas, {
+				task = var_3_0,
+				name = var_3_1,
+				item = var_3_2,
+				icon = var_3_3
 			})
 		end
 	end
 end
 
-function slot0.selectItem(slot0, slot1)
-	for slot5 = 1, #slot0.skinDatas do
-		if LeanTween.isTweening(go(slot0.skinDatas[slot5].item)) then
+function var_0_0.selectItem(arg_6_0, arg_6_1)
+	for iter_6_0 = 1, #arg_6_0.skinDatas do
+		local var_6_0 = arg_6_0.skinDatas[iter_6_0].item
+
+		if LeanTween.isTweening(go(var_6_0)) then
 			return
 		end
 	end
 
-	slot2 = 0
+	local var_6_1 = 0
 
-	for slot6 = slot1 + 1, #slot0.skinDatas do
-		slot0.skinDatas[slot6].item:SetAsFirstSibling()
-		setActive(slot0.skinDatas[slot6].item, slot6 ~= slot1)
-		setActive(slot0.skinDatas[slot6].icon, slot6 == slot1)
+	for iter_6_1 = arg_6_1 + 1, #arg_6_0.skinDatas do
+		arg_6_0.skinDatas[iter_6_1].item:SetAsFirstSibling()
+		setActive(arg_6_0.skinDatas[iter_6_1].item, iter_6_1 ~= arg_6_1)
+		setActive(arg_6_0.skinDatas[iter_6_1].icon, iter_6_1 == arg_6_1)
 
-		slot0.skinDatas[slot6].targetPos = Vector2(slot2 * 215, 0)
-		slot2 = slot2 + 1
+		arg_6_0.skinDatas[iter_6_1].targetPos = Vector2(var_6_1 * 215, 0)
+		var_6_1 = var_6_1 + 1
 	end
 
-	for slot6 = 1, slot1 do
-		slot0.skinDatas[slot6].item:SetAsFirstSibling()
-		setActive(slot0.skinDatas[slot6].item, slot6 ~= slot1)
-		setActive(slot0.skinDatas[slot6].icon, slot6 == slot1)
+	for iter_6_2 = 1, arg_6_1 do
+		arg_6_0.skinDatas[iter_6_2].item:SetAsFirstSibling()
+		setActive(arg_6_0.skinDatas[iter_6_2].item, iter_6_2 ~= arg_6_1)
+		setActive(arg_6_0.skinDatas[iter_6_2].icon, iter_6_2 == arg_6_1)
 
-		slot0.skinDatas[slot6].targetPos = Vector2(slot2 * 215, 0)
-		slot2 = slot2 + 1
+		arg_6_0.skinDatas[iter_6_2].targetPos = Vector2(var_6_1 * 215, 0)
+		var_6_1 = var_6_1 + 1
 	end
 
-	slot3 = slot0.skinDatas[slot1].task
+	local var_6_2 = arg_6_0.skinDatas[arg_6_1].task
+	local var_6_3 = arg_6_0.skinDatas[arg_6_1].task
+	local var_6_4 = arg_6_0.taskProxy:getFinishTaskById(var_6_3)
 
-	setActive(slot0.get, not slot0.taskProxy:getFinishTaskById(slot0.skinDatas[slot1].task) and slot0.remainCnt > 0)
-	setActive(slot0.getBound, not slot5 and slot0.remainCnt > 0)
-	setActive(slot0.got, slot5)
+	setActive(arg_6_0.get, not var_6_4 and arg_6_0.remainCnt > 0)
+	setActive(arg_6_0.getBound, not var_6_4 and arg_6_0.remainCnt > 0)
+	setActive(arg_6_0.got, var_6_4)
 
-	slot0.paintGot.anchoredPosition = uv0[slot1]
+	arg_6_0.paintGot.anchoredPosition = var_0_2[arg_6_1]
 
-	setActive(slot0.paintGot, slot5)
+	setActive(arg_6_0.paintGot, var_6_4)
 
-	slot6 = GetComponent(findTF(slot0.paint, "show"), typeof(Image))
-	slot6.sprite = GetSpriteFromAtlas(uv1, "bg_" .. slot0.skinDatas[slot1].name)
+	local var_6_5 = GetComponent(findTF(arg_6_0.paint, "show"), typeof(Image))
 
-	slot6:SetNativeSize()
+	var_6_5.sprite = GetSpriteFromAtlas(var_0_3, "bg_" .. arg_6_0.skinDatas[arg_6_1].name)
 
-	if slot0.selectIndex then
-		GetComponent(findTF(slot0.paint, "temp"), typeof(Image)).sprite = GetSpriteFromAtlas(uv1, "bg_" .. slot0.skinDatas[slot0.selectIndex].name)
+	var_6_5:SetNativeSize()
+
+	local var_6_6 = GetComponent(findTF(arg_6_0.paint, "temp"), typeof(Image))
+
+	if arg_6_0.selectIndex then
+		var_6_6.sprite = GetSpriteFromAtlas(var_0_3, "bg_" .. arg_6_0.skinDatas[arg_6_0.selectIndex].name)
 	else
-		slot7.sprite = GetSpriteFromAtlas(uv1, "bg_" .. slot0.skinDatas[slot1].name)
+		var_6_6.sprite = GetSpriteFromAtlas(var_0_3, "bg_" .. arg_6_0.skinDatas[arg_6_1].name)
 	end
 
-	slot7:SetNativeSize()
+	var_6_6:SetNativeSize()
 
-	if slot0.selectIndex and slot0.selectIndex ~= slot1 then
-		slot8 = nil
-		slot8 = (slot0.selectIndex ~= 1 or slot1 ~= #slot0.skinDatas or false) and (slot0.selectIndex == #slot0.skinDatas and slot1 == 1 and true or slot0.selectIndex < slot1 and true or false)
+	if arg_6_0.selectIndex and arg_6_0.selectIndex ~= arg_6_1 then
+		local var_6_7
+		local var_6_8 = (arg_6_0.selectIndex ~= 1 or arg_6_1 ~= #arg_6_0.skinDatas or false) and (arg_6_0.selectIndex == #arg_6_0.skinDatas and arg_6_1 == 1 and true or arg_6_1 > arg_6_0.selectIndex and true or false)
 
-		slot0.paintAnim:SetTrigger(slot8 and "next" or "pre")
-		slot0:updateItemPos(true, slot8)
+		arg_6_0.paintAnim:SetTrigger(var_6_8 and "next" or "pre")
+		arg_6_0:updateItemPos(true, var_6_8)
 	else
-		slot0:updateItemPos(false)
+		arg_6_0:updateItemPos(false)
 	end
 
-	slot0.selectIndex = slot1
+	arg_6_0.selectIndex = arg_6_1
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.usedCnt = slot0.activity:getData1()
-	slot0.unlockCnt = pg.TimeMgr.GetInstance():DiffDay(slot0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
-	slot0.unlockCnt = slot0.totalCnt < slot0.unlockCnt and slot0.totalCnt or slot0.unlockCnt
-	slot0.remainCnt = slot0.totalCnt <= slot0.usedCnt and 0 or slot0.unlockCnt - slot0.usedCnt
+function var_0_0.OnFirstFlush(arg_7_0)
+	arg_7_0.usedCnt = arg_7_0.activity:getData1()
+	arg_7_0.unlockCnt = pg.TimeMgr.GetInstance():DiffDay(arg_7_0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1
+	arg_7_0.unlockCnt = arg_7_0.unlockCnt > arg_7_0.totalCnt and arg_7_0.totalCnt or arg_7_0.unlockCnt
+	arg_7_0.remainCnt = arg_7_0.usedCnt >= arg_7_0.totalCnt and 0 or arg_7_0.unlockCnt - arg_7_0.usedCnt
 
-	setText(slot0.desc, i18n("skin_page_desc", slot0.activity:getConfig("config_id")))
-	setText(findTF(slot0.get, "desc"), i18n("skin_page_sign"))
+	setText(arg_7_0.desc, i18n("skin_page_desc", arg_7_0.activity:getConfig("config_id")))
+	setText(findTF(arg_7_0.get, "desc"), i18n("skin_page_sign"))
 
-	for slot5 = 1, #slot0.skinDatas do
-		if not (slot0.taskProxy:getFinishTaskById(slot0.skinDatas[slot5].task) or false) then
-			slot1 = 1 or slot5
+	local var_7_0 = 1
+
+	for iter_7_0 = 1, #arg_7_0.skinDatas do
+		local var_7_1 = arg_7_0.skinDatas[iter_7_0].task
+
+		if not (arg_7_0.taskProxy:getFinishTaskById(var_7_1) or false) then
+			var_7_0 = var_7_0 or iter_7_0
 		end
 	end
 
-	slot0:selectItem(slot1)
-	slot0:updateItemData()
+	arg_7_0:selectItem(var_7_0)
+	arg_7_0:updateItemData()
 end
 
-function slot0.OnUpdateFlush(slot0)
-	for slot5, slot6 in ipairs(slot0.taskList) do
-		if slot0.taskProxy:getFinishTaskById(slot6) ~= nil then
-			slot1 = 0 + 1
+function var_0_0.OnUpdateFlush(arg_8_0)
+	local var_8_0 = 0
+
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.taskList) do
+		if arg_8_0.taskProxy:getFinishTaskById(iter_8_1) ~= nil then
+			var_8_0 = var_8_0 + 1
 		end
 	end
 
-	if slot0.usedCnt ~= slot1 then
-		slot0.usedCnt = slot1
-		slot2 = slot0.activity
-		slot2.data1 = slot0.usedCnt
+	if arg_8_0.usedCnt ~= var_8_0 then
+		arg_8_0.usedCnt = var_8_0
 
-		getProxy(ActivityProxy):updateActivity(slot2)
+		local var_8_1 = arg_8_0.activity
+
+		var_8_1.data1 = arg_8_0.usedCnt
+
+		getProxy(ActivityProxy):updateActivity(var_8_1)
 	end
 
-	slot0.unlockCnt = (pg.TimeMgr.GetInstance():DiffDay(slot0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1) * slot0.activity:getConfig("config_id")
-	slot0.unlockCnt = slot0.totalCnt < slot0.unlockCnt and slot0.totalCnt or slot0.unlockCnt
-	slot0.remainCnt = slot0.totalCnt <= slot0.usedCnt and 0 or slot0.unlockCnt - slot0.usedCnt
+	arg_8_0.unlockCnt = (pg.TimeMgr.GetInstance():DiffDay(arg_8_0.activity:getStartTime(), pg.TimeMgr.GetInstance():GetServerTime()) + 1) * arg_8_0.activity:getConfig("config_id")
+	arg_8_0.unlockCnt = arg_8_0.unlockCnt > arg_8_0.totalCnt and arg_8_0.totalCnt or arg_8_0.unlockCnt
+	arg_8_0.remainCnt = arg_8_0.usedCnt >= arg_8_0.totalCnt and 0 or arg_8_0.unlockCnt - arg_8_0.usedCnt
 
-	setText(findTF(slot0.times, "desc"), i18n("last_times_sign", slot0.remainCnt))
+	setText(findTF(arg_8_0.times, "desc"), i18n("last_times_sign", arg_8_0.remainCnt))
 
-	slot2 = slot0.activity:getConfig("config_client").story
+	local var_8_2 = arg_8_0.activity:getConfig("config_client").story
 
-	for slot6, slot7 in ipairs(slot0.taskList) do
-		if slot0.taskProxy:getFinishTaskById(slot7) and checkExist(slot2, {
-			slot6
+	for iter_8_2, iter_8_3 in ipairs(arg_8_0.taskList) do
+		if arg_8_0.taskProxy:getFinishTaskById(iter_8_3) and checkExist(var_8_2, {
+			iter_8_2
 		}, {
 			1
 		}) then
-			pg.NewStoryMgr.GetInstance():Play(slot2[slot6][1])
+			pg.NewStoryMgr.GetInstance():Play(var_8_2[iter_8_2][1])
 		end
 	end
 
-	slot0:selectItem(slot0.selectIndex)
-	slot0:updateItemData()
+	arg_8_0:selectItem(arg_8_0.selectIndex)
+	arg_8_0:updateItemData()
 end
 
-slot4 = 215
+local var_0_4 = 215
 
-function slot0.updateItemPos(slot0, slot1, slot2)
-	slot3 = Vector2(-uv0, 0)
-	slot4 = Vector2((#slot0.skinDatas - 1) * uv0, 0)
+function var_0_0.updateItemPos(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = Vector2(-var_0_4, 0)
+	local var_9_1 = Vector2((#arg_9_0.skinDatas - 1) * var_0_4, 0)
 
-	for slot8 = 1, #slot0.skinDatas do
-		if LeanTween.isTweening(go(slot0.skinDatas[slot8].item)) then
-			LeanTween.cancel(go(slot9))
+	for iter_9_0 = 1, #arg_9_0.skinDatas do
+		local var_9_2 = arg_9_0.skinDatas[iter_9_0].item
+
+		if LeanTween.isTweening(go(var_9_2)) then
+			LeanTween.cancel(go(var_9_2))
 		end
 
-		slot10 = slot0.skinDatas[slot8].targetPos
+		local var_9_3 = arg_9_0.skinDatas[iter_9_0].targetPos
 
-		if slot1 then
-			slot12 = {}
+		if arg_9_1 then
+			local var_9_4 = var_9_2.anchoredPosition
+			local var_9_5 = {}
 
-			if not slot2 and slot10.x < slot9.anchoredPosition.x then
-				table.insert(slot12, slot4)
-				table.insert(slot12, slot3)
-			elseif slot2 and slot11.x < slot10.x then
-				table.insert(slot12, slot3)
-				table.insert(slot12, slot4)
+			if not arg_9_2 and var_9_4.x > var_9_3.x then
+				table.insert(var_9_5, var_9_1)
+				table.insert(var_9_5, var_9_0)
+			elseif arg_9_2 and var_9_4.x < var_9_3.x then
+				table.insert(var_9_5, var_9_0)
+				table.insert(var_9_5, var_9_1)
 			end
 
-			table.insert(slot12, slot10)
-			table.insert(slot12, slot10)
-			slot0:tweenItem(slot9, slot12)
+			table.insert(var_9_5, var_9_3)
+			table.insert(var_9_5, var_9_3)
+			arg_9_0:tweenItem(var_9_2, var_9_5)
 		else
-			slot9.anchoredPosition = slot10
+			var_9_2.anchoredPosition = var_9_3
 		end
 	end
 end
 
-function slot0.tweenItem(slot0, slot1, slot2)
-	if #slot2 >= 2 then
-		slot3 = slot1.anchoredPosition
-		slot4 = table.remove(slot2, 1)
-		slot5 = table.remove(slot2, 1)
+function var_0_0.tweenItem(arg_10_0, arg_10_1, arg_10_2)
+	if #arg_10_2 >= 2 then
+		local var_10_0 = arg_10_1.anchoredPosition
+		local var_10_1 = table.remove(arg_10_2, 1)
+		local var_10_2 = table.remove(arg_10_2, 1)
+		local var_10_3 = math.abs(var_10_1.x - var_10_0.x) / var_0_4 * 0.25
 
-		LeanTween.value(go(slot1), slot3.x, slot4.x, math.abs(slot4.x - slot3.x) / uv0 * 0.25):setOnUpdate(System.Action_float(function (slot0)
-			uv0.x = slot0
-			uv1.anchoredPosition = uv0
-		end)):setOnComplete(System.Action(function ()
-			uv0.anchoredPosition = uv1
+		LeanTween.value(go(arg_10_1), var_10_0.x, var_10_1.x, var_10_3):setOnUpdate(System.Action_float(function(arg_11_0)
+			var_10_0.x = arg_11_0
+			arg_10_1.anchoredPosition = var_10_0
+		end)):setOnComplete(System.Action(function()
+			arg_10_1.anchoredPosition = var_10_2
 
-			uv2:tweenItem(uv0, uv3)
+			arg_10_0:tweenItem(arg_10_1, arg_10_2)
 		end))
 	end
 end
 
-function slot0.updateItemData(slot0)
-	for slot4 = 1, #slot0.skinDatas do
-		setActive(findTF(slot0.skinDatas[slot4].item, "got"), slot0.taskProxy:getFinishTaskById(slot0.skinDatas[slot4].task) or false)
+function var_0_0.updateItemData(arg_13_0)
+	for iter_13_0 = 1, #arg_13_0.skinDatas do
+		local var_13_0 = arg_13_0.skinDatas[iter_13_0].item
+		local var_13_1 = arg_13_0.skinDatas[iter_13_0].task
+		local var_13_2 = arg_13_0.taskProxy:getFinishTaskById(var_13_1) or false
+
+		setActive(findTF(var_13_0, "got"), var_13_2)
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	for slot4 = 1, #slot0.skinDatas do
-		if LeanTween.isTweening(go(slot0.skinDatas[slot4].item)) then
-			LeanTween.cancel(go(slot5), false)
+function var_0_0.OnDestroy(arg_14_0)
+	for iter_14_0 = 1, #arg_14_0.skinDatas do
+		local var_14_0 = arg_14_0.skinDatas[iter_14_0].item
+
+		if LeanTween.isTweening(go(var_14_0)) then
+			LeanTween.cancel(go(var_14_0), false)
 		end
 	end
 end
 
-return slot0
+return var_0_0

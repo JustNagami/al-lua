@@ -1,42 +1,45 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleUnitEvent
-slot2 = slot0.Battle.BattleEvent
-slot3 = slot0.Battle.BattleCardPuzzleEvent
-slot4 = slot0.Battle.BattleFormulas
-slot5 = slot0.Battle.BattleConst
-slot6 = slot0.Battle.BattleConfig
-slot7 = slot0.Battle.BattleAttr
-slot8 = slot0.Battle.BattleDataFunction
-slot9 = slot0.Battle.BattleAttr
-slot10 = class("BattleFleetCardPuzzleDeck")
-slot0.Battle.BattleFleetCardPuzzleDeck = slot10
-slot10.__name = "BattleFleetCardPuzzleDeck"
-slot10.OP_ADD_TO = "add"
-slot10.OP_SHUFFLE_TO = "shuffle"
-slot10.NOT_INIT_SHUFFLE = 0
+﻿ys = ys or {}
 
-function slot10.Ctor(slot0, slot1, slot2)
-	slot0._cardPuzzleComponent = slot1
-	slot0._indexID = slot2
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleUnitEvent
+local var_0_2 = var_0_0.Battle.BattleEvent
+local var_0_3 = var_0_0.Battle.BattleCardPuzzleEvent
+local var_0_4 = var_0_0.Battle.BattleFormulas
+local var_0_5 = var_0_0.Battle.BattleConst
+local var_0_6 = var_0_0.Battle.BattleConfig
+local var_0_7 = var_0_0.Battle.BattleAttr
+local var_0_8 = var_0_0.Battle.BattleDataFunction
+local var_0_9 = var_0_0.Battle.BattleAttr
+local var_0_10 = class("BattleFleetCardPuzzleDeck")
 
-	slot0:init()
+var_0_0.Battle.BattleFleetCardPuzzleDeck = var_0_10
+var_0_10.__name = "BattleFleetCardPuzzleDeck"
+var_0_10.OP_ADD_TO = "add"
+var_0_10.OP_SHUFFLE_TO = "shuffle"
+var_0_10.NOT_INIT_SHUFFLE = 0
+
+function var_0_10.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0._cardPuzzleComponent = arg_1_1
+	arg_1_0._indexID = arg_1_2
+
+	arg_1_0:init()
 end
 
-function slot10.GetIndexID(slot0)
-	return slot0._indexID
+function var_0_10.GetIndexID(arg_2_0)
+	return arg_2_0._indexID
 end
 
-function slot10.Dispose(slot0)
+function var_0_10.Dispose(arg_3_0)
+	return
 end
 
-function slot10.GetCardList(slot0)
-	return slot0._cardList
+function var_0_10.GetCardList(arg_4_0)
+	return arg_4_0._cardList
 end
 
-function slot10.init(slot0)
-	slot0._cardList = {}
+function var_0_10.init(arg_5_0)
+	arg_5_0._cardList = {}
 
-	uv0.EventDispatcher.AttachEventDispatcher(slot0)
-	uv0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(slot0)
+	var_0_0.EventDispatcher.AttachEventDispatcher(arg_5_0)
+	var_0_0.Battle.BattleFleetCardPuzzleCardManageComponent.AttachCardManager(arg_5_0)
 end

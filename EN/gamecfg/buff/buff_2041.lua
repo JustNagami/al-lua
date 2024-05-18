@@ -1,4 +1,21 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onWeaponSteday"
+			},
+			arg_list = {
+				rant = 1500,
+				time = 3,
+				skill_id = 2041,
+				target = "TargetSelf",
+				index = {
+					1
+				}
+			}
+		}
+	},
 	{
 		desc = "主炮射击时有15.0%概率造成2倍伤害",
 		addition = {
@@ -239,22 +256,5 @@ return {
 	stack = 1,
 	id = 2041,
 	icon = 2040,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onWeaponSteday"
-			},
-			arg_list = {
-				rant = 1500,
-				time = 3,
-				skill_id = 2041,
-				target = "TargetSelf",
-				index = {
-					1
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

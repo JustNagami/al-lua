@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.extraenemy_challenge_template = {
 	{
 		id = 1,

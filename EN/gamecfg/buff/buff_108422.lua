@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffDeath",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				instant_kill = true
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,16 +30,5 @@ return {
 	stack = 1,
 	id = 108422,
 	icon = 108420,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffDeath",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				instant_kill = true
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,33 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleGuideWave = class("BattleGuideWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleGuideWave.__name = "BattleGuideWave"
-slot1 = slot0.Battle.BattleGuideWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleGuideWave = class("BattleGuideWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleGuideWave.__name = "BattleGuideWave"
+
+local var_0_1 = var_0_0.Battle.BattleGuideWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._guideType = slot0._param.type or 0
-	slot0._guideStep = slot0._param.id
-	slot0._event = slot0._param.event
+	arg_2_0._guideType = arg_2_0._param.type or 0
+	arg_2_0._guideStep = arg_2_0._param.id
+	arg_2_0._event = arg_2_0._param.event
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
 
 	if not pg.NewGuideMgr.ENABLE_GUIDE then
-		slot0:doPass()
-	elseif slot0._guideType == 1 and pg.SeriesGuideMgr.GetInstance():isEnd() then
-		slot0:doFail()
+		arg_3_0:doPass()
+	elseif arg_3_0._guideType == 1 and pg.SeriesGuideMgr.GetInstance():isEnd() then
+		arg_3_0:doFail()
 	else
-		pg.NewGuideMgr.GetInstance():Play(slot0._guideStep, {
-			slot0._event
-		}, function ()
-			uv0:doPass()
+		pg.NewGuideMgr.GetInstance():Play(arg_3_0._guideStep, {
+			arg_3_0._event
+		}, function()
+			arg_3_0:doPass()
 		end)
 	end
 end

@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_workbench_item = {
 	{
 		rarity = 2,

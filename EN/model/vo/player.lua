@@ -1,375 +1,420 @@
-slot0 = class("Player", import(".PlayerAttire"))
-slot2 = pg.player_resource.get_id_list_by_name
-slot3, slot4 = nil
-slot0.MAX_SHIP_BAG = 4000
-slot0.MAX_EQUIP_BAG = 2000
-slot0.MAX_COMMANDER_BAG = 200
-slot0.ASSISTS_TYPE_SHAM = 0
-slot0.ASSISTS_TYPE_GUILD = 1
-slot0.CHANGE_NAME_KEY = 1
+﻿local var_0_0 = class("Player", import(".PlayerAttire"))
+local var_0_1 = pg.player_resource
+local var_0_2 = var_0_1.get_id_list_by_name
+local var_0_3
+local var_0_4
 
-function id2res(slot0)
-	return uv0[slot0].name
+var_0_0.MAX_SHIP_BAG = 4000
+var_0_0.MAX_EQUIP_BAG = 2000
+var_0_0.MAX_COMMANDER_BAG = 200
+var_0_0.ASSISTS_TYPE_SHAM = 0
+var_0_0.ASSISTS_TYPE_GUILD = 1
+var_0_0.CHANGE_NAME_KEY = 1
+
+function id2res(arg_1_0)
+	return var_0_1[arg_1_0].name
 end
 
-function res2id(slot0)
-	return uv0.get_id_list_by_name[slot0][1]
+function res2id(arg_2_0)
+	return var_0_1.get_id_list_by_name[arg_2_0][1]
 end
 
-function id2ItemId(slot0)
-	return uv0[slot0].itemid
+function id2ItemId(arg_3_0)
+	return var_0_1[arg_3_0].itemid
 end
 
-function itemId2Id(slot0)
+function itemId2Id(arg_4_0)
 	assert(false)
 end
 
-function slot0.isMetaShipNeedToTrans(slot0)
-	return getProxy(BayProxy):getMetaShipByGroupId(MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0)) and true or false
+function var_0_0.isMetaShipNeedToTrans(arg_5_0)
+	local var_5_0 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg_5_0)
+
+	return getProxy(BayProxy):getMetaShipByGroupId(var_5_0) and true or false
 end
 
-function slot0.metaShip2Res(slot0)
-	slot4 = getProxy(BayProxy):getMetaShipByGroupId(MetaCharacterConst.GetMetaShipGroupIDByConfigID(slot0)):getMetaCharacter():getSpecialMaterialInfoToMaxStar()
-	slot9 = nil
-	slot10 = {}
+function var_0_0.metaShip2Res(arg_6_0)
+	local var_6_0 = MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg_6_0)
+	local var_6_1 = getProxy(BayProxy):getMetaShipByGroupId(var_6_0):getMetaCharacter():getSpecialMaterialInfoToMaxStar()
+	local var_6_2 = var_6_1.itemID
+	local var_6_3 = var_6_1.count <= getProxy(BagProxy):getItemCountById(var_6_2)
+	local var_6_4
 
-	for slot14, slot15 in ipairs((not (slot4.count <= getProxy(BagProxy):getItemCountById(slot4.itemID)) or pg.ship_transform[slot1].common_item) and pg.ship_transform[slot1].exclusive_item) do
-		table.insert(slot10, {
-			type = slot15[1],
-			id = slot15[2],
-			count = slot15[3]
-		})
+	if var_6_3 then
+		var_6_4 = pg.ship_transform[var_6_0].common_item
+	else
+		var_6_4 = pg.ship_transform[var_6_0].exclusive_item
 	end
 
-	return slot10
+	local var_6_5 = {}
+
+	for iter_6_0, iter_6_1 in ipairs(var_6_4) do
+		local var_6_6 = {
+			type = iter_6_1[1],
+			id = iter_6_1[2],
+			count = iter_6_1[3]
+		}
+
+		table.insert(var_6_5, var_6_6)
+	end
+
+	return var_6_5
 end
 
-function slot0.getSkinTicket(slot0)
-	return pg.gameset.skin_ticket.key_value == 0 and 0 or slot0:getResource(slot1)
+function var_0_0.getSkinTicket(arg_7_0)
+	local var_7_0 = pg.gameset.skin_ticket.key_value
+
+	return var_7_0 == 0 and 0 or arg_7_0:getResource(var_7_0)
 end
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_8_0, arg_8_1)
+	var_0_0.super.Ctor(arg_8_0, arg_8_1)
 
-	slot0.educateCharacter = slot1.child_display or 0
+	local var_8_0 = arg_8_0.character
 
-	if slot0.character then
-		if type(slot2) == "number" then
-			slot0.character = slot2
-			slot0.characters = {
-				slot2
+	arg_8_0.educateCharacter = arg_8_1.child_display or 0
+
+	if var_8_0 then
+		if type(var_8_0) == "number" then
+			arg_8_0.character = var_8_0
+			arg_8_0.characters = {
+				var_8_0
 			}
 		else
-			slot0.character = slot2[1]
-			slot0.characters = slot2
+			arg_8_0.character = var_8_0[1]
+			arg_8_0.characters = var_8_0
 		end
 	end
 
-	slot0.id = slot1.id
-	slot0.name = slot1.name
-	slot0.level = slot1.level or slot1.lv
-	slot0.configId = slot0.level
-	slot0.exp = slot1.exp or 0
-	slot0.attackCount = slot1.attack_count or 0
-	slot0.winCount = slot1.win_count or 0
-	slot0.manifesto = slot1.adv or slot1.manifesto
-	slot0.shipBagMax = slot1.ship_bag_max
-	slot0.equipBagMax = slot1.equip_bag_max
-	slot0.buff_list = slot1.buffList or {}
-	slot0.rank = slot1.rank or slot1.title or 0
-	slot0.pvp_attack_count = slot1.pvp_attack_count or 0
-	slot0.pvp_win_count = slot1.pvp_win_count or 0
-	slot0.collect_attack_count = slot1.collect_attack_count or 0
-	slot0.guideIndex = slot1.guide_index
-	slot0.buyOilCount = slot1.buy_oil_count
-	slot0.chatRoomId = slot1.chat_room_id or 1
-	slot0.score = slot1.score or 0
-	slot0.guildWaitTime = slot1.guild_wait_time or 0
-	slot0.commanderBagMax = slot1.commander_bag_max
-	slot0.displayTrophyList = slot1.medal_id or {}
-	slot0.banBackyardUploadTime = slot1.theme_upload_not_allowed_time or 0
-	slot0.rmb = slot1.rmb or 0
-	slot0.identityFlag = slot1.gm_flag
-	slot3 = getProxy(AppreciateProxy)
+	arg_8_0.id = arg_8_1.id
+	arg_8_0.name = arg_8_1.name
+	arg_8_0.level = arg_8_1.level or arg_8_1.lv
+	arg_8_0.configId = arg_8_0.level
+	arg_8_0.exp = arg_8_1.exp or 0
+	arg_8_0.attackCount = arg_8_1.attack_count or 0
+	arg_8_0.winCount = arg_8_1.win_count or 0
+	arg_8_0.manifesto = arg_8_1.adv or arg_8_1.manifesto
+	arg_8_0.shipBagMax = arg_8_1.ship_bag_max
+	arg_8_0.equipBagMax = arg_8_1.equip_bag_max
+	arg_8_0.buff_list = arg_8_1.buffList or {}
+	arg_8_0.rank = arg_8_1.rank or arg_8_1.title or 0
+	arg_8_0.pvp_attack_count = arg_8_1.pvp_attack_count or 0
+	arg_8_0.pvp_win_count = arg_8_1.pvp_win_count or 0
+	arg_8_0.collect_attack_count = arg_8_1.collect_attack_count or 0
+	arg_8_0.guideIndex = arg_8_1.guide_index
+	arg_8_0.buyOilCount = arg_8_1.buy_oil_count
+	arg_8_0.chatRoomId = arg_8_1.chat_room_id or 1
+	arg_8_0.score = arg_8_1.score or 0
+	arg_8_0.guildWaitTime = arg_8_1.guild_wait_time or 0
+	arg_8_0.commanderBagMax = arg_8_1.commander_bag_max
+	arg_8_0.displayTrophyList = arg_8_1.medal_id or {}
+	arg_8_0.banBackyardUploadTime = arg_8_1.theme_upload_not_allowed_time or 0
+	arg_8_0.rmb = arg_8_1.rmb or 0
+	arg_8_0.identityFlag = arg_8_1.gm_flag
 
-	if slot1.appreciation then
-		for slot7, slot8 in ipairs(slot1.appreciation.gallerys or {}) do
-			slot3:addPicIDToUnlockList(slot8)
+	local var_8_1 = getProxy(AppreciateProxy)
+
+	if arg_8_1.appreciation then
+		for iter_8_0, iter_8_1 in ipairs(arg_8_1.appreciation.gallerys or {}) do
+			var_8_1:addPicIDToUnlockList(iter_8_1)
 		end
 
-		for slot7, slot8 in ipairs(slot1.appreciation.musics or {}) do
-			slot3:addMusicIDToUnlockList(slot8)
+		for iter_8_2, iter_8_3 in ipairs(arg_8_1.appreciation.musics or {}) do
+			var_8_1:addMusicIDToUnlockList(iter_8_3)
 		end
 
-		for slot7, slot8 in ipairs(slot1.appreciation.favor_gallerys or {}) do
-			slot3:addPicIDToLikeList(slot8)
+		for iter_8_4, iter_8_5 in ipairs(arg_8_1.appreciation.favor_gallerys or {}) do
+			var_8_1:addPicIDToLikeList(iter_8_5)
 		end
 
-		for slot7, slot8 in ipairs(slot1.appreciation.favor_musics or {}) do
-			slot3:addMusicIDToLikeList(slot8)
+		for iter_8_6, iter_8_7 in ipairs(arg_8_1.appreciation.favor_musics or {}) do
+			var_8_1:addMusicIDToLikeList(iter_8_7)
 		end
 
-		if getProxy(AppreciateProxy):getResultForVer() then
+		local var_8_2 = getProxy(AppreciateProxy)
+		local var_8_3 = var_8_2:getResultForVer()
+
+		if var_8_3 then
 			pg.ConnectionMgr.GetInstance():Send(15300, {
 				type = 0,
-				ver_str = slot5
+				ver_str = var_8_3
 			})
-			slot4:clearVer()
+			var_8_2:clearVer()
 		end
 	end
 
-	if slot1.cartoon_read_mark then
-		slot3:initMangaReadIDList(slot1.cartoon_read_mark)
+	if arg_8_1.cartoon_read_mark then
+		var_8_1:initMangaReadIDList(arg_8_1.cartoon_read_mark)
 	end
 
-	if slot1.cartoon_collect_mark then
-		slot3:initMangaLikeIDList(slot1.cartoon_collect_mark)
+	if arg_8_1.cartoon_collect_mark then
+		var_8_1:initMangaLikeIDList(arg_8_1.cartoon_collect_mark)
 	end
 
-	slot0.cdList = {}
+	arg_8_0.cdList = {}
 
-	for slot7, slot8 in ipairs(slot1.cd_list or {}) do
-		slot0.cdList[slot8.key] = slot8.timestamp
+	for iter_8_8, iter_8_9 in ipairs(arg_8_1.cd_list or {}) do
+		arg_8_0.cdList[iter_8_9.key] = iter_8_9.timestamp
 	end
 
-	slot0.commonFlagList = {}
+	arg_8_0.commonFlagList = {}
 
-	for slot7, slot8 in ipairs(slot1.flag_list or {}) do
-		slot0.commonFlagList[slot8] = true
+	for iter_8_10, iter_8_11 in ipairs(arg_8_1.flag_list or {}) do
+		arg_8_0.commonFlagList[iter_8_11] = true
 	end
 
-	slot0.registerTime = slot1.register_time
-	slot0.vipCards = {}
+	arg_8_0.registerTime = arg_8_1.register_time
+	arg_8_0.vipCards = {}
 
-	for slot7, slot8 in ipairs(slot1.card_list or {}) do
-		slot9 = VipCard.New(slot8)
-		slot0.vipCards[slot9.id] = slot9
+	for iter_8_12, iter_8_13 in ipairs(arg_8_1.card_list or {}) do
+		local var_8_4 = VipCard.New(iter_8_13)
+
+		arg_8_0.vipCards[var_8_4.id] = var_8_4
 	end
 
-	slot0:updateResources(slot1.resource_list)
+	arg_8_0:updateResources(arg_8_1.resource_list)
 
-	slot0.maxRank = slot1.max_rank or 0
-	slot0.shipCount = slot1.ship_count or 0
-	slot0.chargeExp = slot1.acc_pay_lv or 0
-	slot0.mingshiflag = 0
-	slot0.mingshiCount = 0
-	slot0.chatMsgBanTime = slot1.chat_msg_ban_time or 0
-	slot0.randomShipMode = slot1.random_ship_mode or 0
-	slot0.customRandomShips = {}
+	arg_8_0.maxRank = arg_8_1.max_rank or 0
+	arg_8_0.shipCount = arg_8_1.ship_count or 0
+	arg_8_0.chargeExp = arg_8_1.acc_pay_lv or 0
+	arg_8_0.mingshiflag = 0
+	arg_8_0.mingshiCount = 0
+	arg_8_0.chatMsgBanTime = arg_8_1.chat_msg_ban_time or 0
+	arg_8_0.randomShipMode = arg_8_1.random_ship_mode or 0
+	arg_8_0.customRandomShips = {}
 
-	for slot7, slot8 in ipairs(slot1.random_ship_list or {}) do
-		table.insert(slot0.customRandomShips, slot8)
+	for iter_8_14, iter_8_15 in ipairs(arg_8_1.random_ship_list or {}) do
+		table.insert(arg_8_0.customRandomShips, iter_8_15)
 	end
 
-	slot0.buildShipNotification = {}
+	arg_8_0.buildShipNotification = {}
 
-	for slot7, slot8 in ipairs(slot1.taking_ship_list or {}) do
-		table.insert(slot0.buildShipNotification, {
-			uid = slot8.uid,
-			new = slot8.isnew == 1
+	for iter_8_16, iter_8_17 in ipairs(arg_8_1.taking_ship_list or {}) do
+		table.insert(arg_8_0.buildShipNotification, {
+			uid = iter_8_17.uid,
+			new = iter_8_17.isnew == 1
 		})
 	end
 
-	slot0.proposeShipId = slot1.marry_ship
-	slot0.unlockCryptolaliaList = {}
+	arg_8_0.proposeShipId = arg_8_1.marry_ship
+	arg_8_0.unlockCryptolaliaList = {}
 
-	for slot7, slot8 in ipairs(slot1.soundstory or {}) do
-		table.insert(slot0.unlockCryptolaliaList, slot8)
+	for iter_8_18, iter_8_19 in ipairs(arg_8_1.soundstory or {}) do
+		table.insert(arg_8_0.unlockCryptolaliaList, iter_8_19)
 	end
 
-	slot0.displayInfo = slot1.display or {}
-	slot0.attireInfo = {
-		[AttireConst.TYPE_ICON_FRAME] = slot0.iconFrame,
-		[AttireConst.TYPE_CHAT_FRAME] = slot0.chatFrame
-	}
+	arg_8_0.displayInfo = arg_8_1.display or {}
+	arg_8_0.attireInfo = {}
+	arg_8_0.attireInfo[AttireConst.TYPE_ICON_FRAME] = arg_8_0.iconFrame
+	arg_8_0.attireInfo[AttireConst.TYPE_CHAT_FRAME] = arg_8_0.chatFrame
 end
 
-function slot0.updateAttireFrame(slot0, slot1, slot2)
-	slot0.attireInfo[slot1] = slot2
+function var_0_0.updateAttireFrame(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0.attireInfo[arg_9_1] = arg_9_2
 end
 
-function slot0.getAttireByType(slot0, slot1)
-	return slot0.attireInfo[slot1]
+function var_0_0.getAttireByType(arg_10_0, arg_10_1)
+	return arg_10_0.attireInfo[arg_10_1]
 end
 
-function slot0.getRandomSecretary(slot0)
-	return slot0.characters[math.random(#slot0.characters)]
+function var_0_0.getRandomSecretary(arg_11_0)
+	return arg_11_0.characters[math.random(#arg_11_0.characters)]
 end
 
-function slot0.canModifyName(slot0)
-	slot1 = pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.canModifyName(arg_12_0)
+	local var_12_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_12_1 = pg.gameset.player_name_change_lv_limit.key_value
 
-	if slot0.level < pg.gameset.player_name_change_lv_limit.key_value then
-		return false, i18n("player_name_change_time_lv_tip", slot2)
+	if var_12_1 > arg_12_0.level then
+		return false, i18n("player_name_change_time_lv_tip", var_12_1)
 	end
 
-	if slot1 < slot0:getModifyNameTimestamp() then
-		slot4, slot5, slot6, slot7 = pg.TimeMgr.GetInstance():parseTimeFrom(slot3 - slot1)
-		slot8 = nil
+	local var_12_2 = arg_12_0:getModifyNameTimestamp()
 
-		return false, i18n("player_name_change_time_limit_tip", slot4 == 0 and (slot5 == 0 and math.max(slot6, 1) .. i18n("word_minute") or slot5 .. i18n("word_hour")) or slot4 .. i18n("word_date"))
+	if var_12_0 < var_12_2 then
+		local var_12_3, var_12_4, var_12_5, var_12_6 = pg.TimeMgr.GetInstance():parseTimeFrom(var_12_2 - var_12_0)
+		local var_12_7
+
+		if var_12_3 == 0 then
+			if var_12_4 == 0 then
+				var_12_7 = math.max(var_12_5, 1) .. i18n("word_minute")
+			else
+				var_12_7 = var_12_4 .. i18n("word_hour")
+			end
+		else
+			var_12_7 = var_12_3 .. i18n("word_date")
+		end
+
+		return false, i18n("player_name_change_time_limit_tip", var_12_7)
 	end
 
 	return true
 end
 
-function slot0.getModifyNameComsume(slot0)
+function var_0_0.getModifyNameComsume(arg_13_0)
 	return pg.gameset.player_name_change_cost.description
 end
 
-function slot0.getModifyNameTimestamp(slot0)
-	return slot0.cdList[uv0.CHANGE_NAME_KEY] or 0
+function var_0_0.getModifyNameTimestamp(arg_14_0)
+	return arg_14_0.cdList[var_0_0.CHANGE_NAME_KEY] or 0
 end
 
-function slot0.updateModifyNameColdTime(slot0, slot1)
-	slot0.cdList[uv0.CHANGE_NAME_KEY] = slot1
+function var_0_0.updateModifyNameColdTime(arg_15_0, arg_15_1)
+	arg_15_0.cdList[var_0_0.CHANGE_NAME_KEY] = arg_15_1
 end
 
-function slot0.getMaxGold(slot0)
+function var_0_0.getMaxGold(arg_16_0)
 	return pg.gameset.max_gold.key_value
 end
 
-function slot0.getMaxOil(slot0)
+function var_0_0.getMaxOil(arg_17_0)
 	return pg.gameset.max_oil.key_value
 end
 
-function slot0.getLevelMaxGold(slot0)
-	slot1 = slot0:getConfig("max_gold")
+function var_0_0.getLevelMaxGold(arg_18_0)
+	local var_18_0 = arg_18_0:getConfig("max_gold")
+	local var_18_1 = getProxy(GuildProxy):GetAdditionGuild()
 
-	return getProxy(GuildProxy):GetAdditionGuild() and slot1 + slot2:getMaxGoldAddition() or slot1
+	return var_18_1 and var_18_0 + var_18_1:getMaxGoldAddition() or var_18_0
 end
 
-function slot0.getLevelMaxOil(slot0)
-	slot1 = slot0:getConfig("max_oil")
+function var_0_0.getLevelMaxOil(arg_19_0)
+	local var_19_0 = arg_19_0:getConfig("max_oil")
+	local var_19_1 = getProxy(GuildProxy):GetAdditionGuild()
 
-	return getProxy(GuildProxy):GetAdditionGuild() and slot1 + slot2:getMaxOilAddition() or slot1
+	return var_19_1 and var_19_0 + var_19_1:getMaxOilAddition() or var_19_0
 end
 
-function slot0.getResource(slot0, slot1)
-	return slot0[id2res(slot1)] or 0
+function var_0_0.getResource(arg_20_0, arg_20_1)
+	return arg_20_0[id2res(arg_20_1)] or 0
 end
 
-function slot0.updateResources(slot0, slot1)
-	for slot5, slot6 in pairs(uv0) do
-		assert(#slot6 == 1, "Multiple ID have the same name : " .. slot5)
+function var_0_0.updateResources(arg_21_0, arg_21_1)
+	for iter_21_0, iter_21_1 in pairs(var_0_2) do
+		assert(#iter_21_1 == 1, "Multiple ID have the same name : " .. iter_21_0)
 
-		slot7 = slot6[1]
+		local var_21_0 = iter_21_1[1]
 
-		if slot5 == "gem" then
-			slot0.chargeGem = 0
-		elseif slot5 == "freeGem" then
-			slot0.awardGem = 0
+		if iter_21_0 == "gem" then
+			arg_21_0.chargeGem = 0
+		elseif iter_21_0 == "freeGem" then
+			arg_21_0.awardGem = 0
 		else
-			slot0[slot5] = 0
+			arg_21_0[iter_21_0] = 0
 		end
 	end
 
-	for slot5, slot6 in ipairs(slot1 or {}) do
-		slot7 = id2res(slot6.type)
+	for iter_21_2, iter_21_3 in ipairs(arg_21_1 or {}) do
+		local var_21_1 = id2res(iter_21_3.type)
 
-		assert(slot7, "resource type erro>>>>>" .. slot6.type)
+		assert(var_21_1, "resource type erro>>>>>" .. iter_21_3.type)
 
-		if slot7 == "gem" then
-			slot0.chargeGem = slot6.num
-		elseif slot7 == "freeGem" then
-			slot0.awardGem = slot6.num
+		if var_21_1 == "gem" then
+			arg_21_0.chargeGem = iter_21_3.num
+		elseif var_21_1 == "freeGem" then
+			arg_21_0.awardGem = iter_21_3.num
 		else
-			slot0[slot7] = slot6.num
+			arg_21_0[var_21_1] = iter_21_3.num
 		end
 	end
 end
 
-function slot0.getPainting(slot0)
-	return pg.ship_skin_template[slot0.skinId] and slot1.painting or "unknown"
+function var_0_0.getPainting(arg_22_0)
+	local var_22_0 = pg.ship_skin_template[arg_22_0.skinId]
+
+	return var_22_0 and var_22_0.painting or "unknown"
 end
 
-function slot0.inGuildCDTime(slot0)
-	return slot0.guildWaitTime > 0 and pg.TimeMgr.GetInstance():GetServerTime() < slot0.guildWaitTime
+function var_0_0.inGuildCDTime(arg_23_0)
+	return arg_23_0.guildWaitTime > 0 and arg_23_0.guildWaitTime > pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.setGuildWaitTime(slot0, slot1)
-	slot0.guildWaitTime = slot1
+function var_0_0.setGuildWaitTime(arg_24_0, arg_24_1)
+	arg_24_0.guildWaitTime = arg_24_1
 end
 
-function slot0.getChargeLevel(slot0)
-	slot1 = pg.pay_level_award
-	slot2 = slot1.all[1]
+function var_0_0.getChargeLevel(arg_25_0)
+	local var_25_0 = pg.pay_level_award
+	local var_25_1 = var_25_0.all[1]
+	local var_25_2 = var_25_0.all[#var_25_0.all]
 
-	for slot7, slot8 in ipairs(slot1.all) do
-		if slot1[slot8].exp <= slot0.chargeExp then
-			slot2 = math.min(slot8 + 1, slot1.all[#slot1.all])
+	for iter_25_0, iter_25_1 in ipairs(var_25_0.all) do
+		if arg_25_0.chargeExp >= var_25_0[iter_25_1].exp then
+			var_25_1 = math.min(iter_25_1 + 1, var_25_2)
 		end
 	end
 
-	return slot2
+	return var_25_1
 end
 
-function slot0.getCardById(slot0, slot1)
-	return Clone(slot0.vipCards[slot1])
+function var_0_0.getCardById(arg_26_0, arg_26_1)
+	return Clone(arg_26_0.vipCards[arg_26_1])
 end
 
-function slot0.addVipCard(slot0, slot1)
-	slot0.vipCards[slot1.id] = slot1
+function var_0_0.addVipCard(arg_27_0, arg_27_1)
+	arg_27_0.vipCards[arg_27_1.id] = arg_27_1
 end
 
-function slot0.addShipBagCount(slot0, slot1)
-	slot0.shipBagMax = slot0.shipBagMax + slot1
+function var_0_0.addShipBagCount(arg_28_0, arg_28_1)
+	arg_28_0.shipBagMax = arg_28_0.shipBagMax + arg_28_1
 end
 
-function slot0.addEquipmentBagCount(slot0, slot1)
-	slot0.equipBagMax = slot0.equipBagMax + slot1
+function var_0_0.addEquipmentBagCount(arg_29_0, arg_29_1)
+	arg_29_0.equipBagMax = arg_29_0.equipBagMax + arg_29_1
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_30_0)
 	return pg.user_level
 end
 
-function slot0.updateScoreAndRank(slot0, slot1, slot2)
-	slot0.score = slot1
-	slot0.rank = slot2
+function var_0_0.updateScoreAndRank(arg_31_0, arg_31_1, arg_31_2)
+	arg_31_0.score = arg_31_1
+	arg_31_0.rank = arg_31_2
 end
 
-function slot0.increasePvpCount(slot0)
-	slot0.pvp_attack_count = slot0.pvp_attack_count + 1
+function var_0_0.increasePvpCount(arg_32_0)
+	arg_32_0.pvp_attack_count = arg_32_0.pvp_attack_count + 1
 end
 
-function slot0.increasePvpWinCount(slot0)
-	slot0.pvp_win_count = slot0.pvp_win_count + 1
+function var_0_0.increasePvpWinCount(arg_33_0)
+	arg_33_0.pvp_win_count = arg_33_0.pvp_win_count + 1
 end
 
-function slot0.isEnough(slot0, slot1)
-	for slot5, slot6 in pairs(slot1) do
-		if slot0[slot5] == nil or slot0[slot5] < slot6 then
-			return false, slot5
+function var_0_0.isEnough(arg_34_0, arg_34_1)
+	for iter_34_0, iter_34_1 in pairs(arg_34_1) do
+		if arg_34_0[iter_34_0] == nil or iter_34_1 > arg_34_0[iter_34_0] then
+			return false, iter_34_0
 		end
 	end
 
 	return true
 end
 
-function slot0.increaseBuyOilCount(slot0)
-	slot0.buyOilCount = slot0.buyOilCount + 1
+function var_0_0.increaseBuyOilCount(arg_35_0)
+	arg_35_0.buyOilCount = arg_35_0.buyOilCount + 1
 end
 
-function slot0.changeChatRoom(slot0, slot1)
-	slot0.chatRoomId = slot1
+function var_0_0.changeChatRoom(arg_36_0, arg_36_1)
+	arg_36_0.chatRoomId = arg_36_1
 end
 
-function slot0.increaseAttackCount(slot0)
-	slot0.attackCount = slot0.attackCount + 1
+function var_0_0.increaseAttackCount(arg_37_0)
+	arg_37_0.attackCount = arg_37_0.attackCount + 1
 end
 
-function slot0.increaseAttackWinCount(slot0)
-	slot0.winCount = slot0.winCount + 1
+function var_0_0.increaseAttackWinCount(arg_38_0)
+	arg_38_0.winCount = arg_38_0.winCount + 1
 end
 
-function slot0.increaseShipCount(slot0, slot1)
-	slot0.shipCount = slot0.shipCount + (slot1 and slot1 or 1)
+function var_0_0.increaseShipCount(arg_39_0, arg_39_1)
+	arg_39_0.shipCount = arg_39_0.shipCount + (arg_39_1 and arg_39_1 or 1)
 end
 
-function slot0.isFull(slot0)
-	for slot4, slot5 in pairs(uv0) do
-		if pg.user_level["max_" .. slot4] and slot0[slot4] < slot6 then
+function var_0_0.isFull(arg_40_0)
+	for iter_40_0, iter_40_1 in pairs(var_0_2) do
+		local var_40_0 = pg.user_level["max_" .. iter_40_0]
+
+		if var_40_0 and var_40_0 > arg_40_0[iter_40_0] then
 			return false
 		end
 	end
@@ -377,438 +422,508 @@ function slot0.isFull(slot0)
 	return true
 end
 
-function slot0.getMaxEquipmentBag(slot0)
-	slot1 = slot0.equipBagMax
-	slot2 = 0
+function var_0_0.getMaxEquipmentBag(arg_41_0)
+	local var_41_0 = arg_41_0.equipBagMax
+	local var_41_1 = 0
+	local var_41_2 = getProxy(GuildProxy):GetAdditionGuild()
 
-	if getProxy(GuildProxy):GetAdditionGuild() then
-		slot2 = slot3:getEquipmentBagAddition()
+	if var_41_2 then
+		var_41_1 = var_41_2:getEquipmentBagAddition()
 	end
 
-	return slot2 + slot1
+	return var_41_1 + var_41_0
 end
 
-function slot0.getMaxShipBag(slot0)
-	slot1 = slot0.shipBagMax
-	slot2 = 0
+function var_0_0.getMaxShipBag(arg_42_0)
+	local var_42_0 = arg_42_0.shipBagMax
+	local var_42_1 = 0
+	local var_42_2 = getProxy(GuildProxy):GetAdditionGuild()
 
-	if getProxy(GuildProxy):GetAdditionGuild() then
-		slot2 = slot3:getShipBagAddition()
+	if var_42_2 then
+		var_42_1 = var_42_2:getShipBagAddition()
 	end
 
-	return slot2 + slot1
+	return var_42_1 + var_42_0
 end
 
-function slot0.getMaxEquipmentBagExcludeGuild(slot0)
-	return slot0.equipBagMax
+function var_0_0.getMaxEquipmentBagExcludeGuild(arg_43_0)
+	return arg_43_0.equipBagMax
 end
 
-function slot0.getMaxShipBagExcludeGuild(slot0)
-	return slot0.shipBagMax
+function var_0_0.getMaxShipBagExcludeGuild(arg_44_0)
+	return arg_44_0.shipBagMax
 end
 
-function slot0.__index(slot0, slot1)
-	if slot1 == "gem" then
-		return slot0:getChargeGem()
-	elseif slot1 == "freeGem" then
-		return slot0:getTotalGem()
-	elseif slot1 == "equipBagMax" then
-		return slot0:getMaxEquipmentBag()
-	elseif slot1 == "shipBagMax" then
-		return slot0:getMaxShipBag()
+function var_0_0.__index(arg_45_0, arg_45_1)
+	if arg_45_1 == "gem" then
+		return arg_45_0:getChargeGem()
+	elseif arg_45_1 == "freeGem" then
+		return arg_45_0:getTotalGem()
+	elseif arg_45_1 == "equipBagMax" then
+		return arg_45_0:getMaxEquipmentBag()
+	elseif arg_45_1 == "shipBagMax" then
+		return arg_45_0:getMaxShipBag()
 	end
 
-	return rawget(slot0, slot1) or uv0[slot1] or uv0.super[slot1]
+	local var_45_0 = rawget(arg_45_0, arg_45_1) or var_0_0[arg_45_1]
+
+	var_45_0 = var_45_0 or var_0_0.super[arg_45_1]
+
+	return var_45_0
 end
 
-function slot0.__newindex(slot0, slot1, slot2)
-	assert(slot1 ~= "gem" and slot1 ~= "freeGem", "Do not set gem directly.")
-	rawset(slot0, slot1, slot2)
+function var_0_0.__newindex(arg_46_0, arg_46_1, arg_46_2)
+	assert(arg_46_1 ~= "gem" and arg_46_1 ~= "freeGem", "Do not set gem directly.")
+	rawset(arg_46_0, arg_46_1, arg_46_2)
 end
 
-function slot0.getFreeGem(slot0)
-	return slot0.awardGem
+function var_0_0.getFreeGem(arg_47_0)
+	return arg_47_0.awardGem
 end
 
-function slot0.getChargeGem(slot0)
-	return slot0.chargeGem
+function var_0_0.getChargeGem(arg_48_0)
+	return arg_48_0.chargeGem
 end
 
-function slot0.getTotalGem(slot0)
-	return slot0:getFreeGem() + slot0:getChargeGem()
+function var_0_0.getTotalGem(arg_49_0)
+	return arg_49_0:getFreeGem() + arg_49_0:getChargeGem()
 end
 
-function slot0.getResById(slot0, slot1)
-	if slot1 == 4 then
-		return slot0:getTotalGem()
+function var_0_0.getResById(arg_50_0, arg_50_1)
+	if arg_50_1 == 4 then
+		return arg_50_0:getTotalGem()
 	else
-		return slot0[id2res(slot1)]
+		return arg_50_0[id2res(arg_50_1)]
 	end
 end
 
-function slot0.consume(slot0, slot1)
-	slot1.freeGem = nil
-	slot1.gem = nil
+function var_0_0.consume(arg_51_0, arg_51_1)
+	local var_51_0 = (arg_51_1.freeGem or 0) + (arg_51_1.gem or 0)
 
-	if (slot1.freeGem or 0) + (slot1.gem or 0) > 0 then
-		slot3 = slot0:getFreeGem()
-		slot4 = math.min(slot2, slot3)
-		slot0.awardGem = slot3 - slot4
-		slot0.chargeGem = slot0.chargeGem - (slot2 - slot4)
+	arg_51_1.freeGem = nil
+	arg_51_1.gem = nil
+
+	if var_51_0 > 0 then
+		local var_51_1 = arg_51_0:getFreeGem()
+		local var_51_2 = math.min(var_51_0, var_51_1)
+
+		arg_51_0.awardGem = var_51_1 - var_51_2
+		arg_51_0.chargeGem = arg_51_0.chargeGem - (var_51_0 - var_51_2)
 	end
 
-	for slot6, slot7 in pairs(slot1) do
-		slot0[slot6] = slot0[slot6] - slot7
+	for iter_51_0, iter_51_1 in pairs(arg_51_1) do
+		arg_51_0[iter_51_0] = arg_51_0[iter_51_0] - iter_51_1
 	end
 end
 
-function slot0.addResources(slot0, slot1)
-	for slot5, slot6 in pairs(slot1) do
-		if slot5 == "gold" then
-			slot0[slot5] = math.min(slot0[slot5] + slot6, slot0:getMaxGold())
-		elseif slot5 == "oil" then
-			slot0[slot5] = math.min(slot0[slot5] + slot6, slot0:getMaxOil())
-		elseif slot5 == "gem" then
-			slot0.chargeGem = slot0:getChargeGem() + slot6
-		elseif slot5 == "freeGem" then
-			slot0.awardGem = slot0:getFreeGem() + slot6
-		elseif slot5 == id2res(WorldConst.ResourceID) then
-			slot0[slot5] = math.min(slot0[slot5] + slot6, pg.gameset.world_resource_max.key_value)
-		elseif slot5 == "gameticket" then
-			slot0[slot5] = math.min(slot0[slot5] + slot6, pg.gameset.game_room_remax.key_value)
+function var_0_0.addResources(arg_52_0, arg_52_1)
+	for iter_52_0, iter_52_1 in pairs(arg_52_1) do
+		if iter_52_0 == "gold" then
+			local var_52_0 = arg_52_0:getMaxGold()
+
+			arg_52_0[iter_52_0] = math.min(arg_52_0[iter_52_0] + iter_52_1, var_52_0)
+		elseif iter_52_0 == "oil" then
+			local var_52_1 = arg_52_0:getMaxOil()
+
+			arg_52_0[iter_52_0] = math.min(arg_52_0[iter_52_0] + iter_52_1, var_52_1)
+		elseif iter_52_0 == "gem" then
+			arg_52_0.chargeGem = arg_52_0:getChargeGem() + iter_52_1
+		elseif iter_52_0 == "freeGem" then
+			arg_52_0.awardGem = arg_52_0:getFreeGem() + iter_52_1
+		elseif iter_52_0 == id2res(WorldConst.ResourceID) then
+			local var_52_2 = pg.gameset.world_resource_max.key_value
+
+			arg_52_0[iter_52_0] = math.min(arg_52_0[iter_52_0] + iter_52_1, var_52_2)
+		elseif iter_52_0 == "gameticket" then
+			local var_52_3 = pg.gameset.game_room_remax.key_value
+
+			arg_52_0[iter_52_0] = math.min(arg_52_0[iter_52_0] + iter_52_1, var_52_3)
 		else
-			slot0[slot5] = slot0[slot5] + slot6
+			arg_52_0[iter_52_0] = arg_52_0[iter_52_0] + iter_52_1
 		end
 	end
 end
 
-function slot0.resetBuyOilCount(slot0)
-	slot0.buyOilCount = 0
+function var_0_0.resetBuyOilCount(arg_53_0)
+	arg_53_0.buyOilCount = 0
 end
 
-function slot0.addExp(slot0, slot1)
-	assert(slot1 >= 0, "exp should greater than zero")
+function var_0_0.addExp(arg_54_0, arg_54_1)
+	assert(arg_54_1 >= 0, "exp should greater than zero")
 
-	slot0.exp = slot0.exp + slot1
+	arg_54_0.exp = arg_54_0.exp + arg_54_1
 
-	while slot0:canLevelUp() do
-		slot0.exp = slot0.exp - slot0:getLevelExpConfig().exp_interval
-		slot0.level = slot0.level + 1
+	while arg_54_0:canLevelUp() do
+		arg_54_0.exp = arg_54_0.exp - arg_54_0:getLevelExpConfig().exp_interval
+		arg_54_0.level = arg_54_0.level + 1
 
-		pg.TrackerMgr.GetInstance():Tracking(TRACKING_USER_LEVELUP, slot0.level)
+		pg.TrackerMgr.GetInstance():Tracking(TRACKING_USER_LEVELUP, arg_54_0.level)
 
-		if slot0.level == 30 then
+		if arg_54_0.level == 30 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_USER_LEVEL_THIRTY)
-		elseif slot0.level == 40 then
+		elseif arg_54_0.level == 40 then
 			pg.TrackerMgr.GetInstance():Tracking(TRACKING_USER_LEVEL_FORTY)
 		end
 	end
 end
 
-function slot0.addExpToLevel(slot0, slot1)
-	if getConfigFromLevel1(pg.user_level, slot1).exp_start <= slot0:getLevelExpConfig().exp_start + slot0.exp then
+function var_0_0.addExpToLevel(arg_55_0, arg_55_1)
+	local var_55_0 = getConfigFromLevel1(pg.user_level, arg_55_1)
+	local var_55_1 = arg_55_0:getLevelExpConfig()
+
+	if var_55_1.exp_start + arg_55_0.exp >= var_55_0.exp_start then
 		print("EXP Overflow, Return")
 
 		return
 	end
 
-	slot0:addExp(slot2.exp_start - slot3.exp_start - slot0.exp)
+	arg_55_0:addExp(var_55_0.exp_start - var_55_1.exp_start - arg_55_0.exp)
 end
 
-function slot0.GetBuffs(slot0)
-	return slot0.buff_list
+function var_0_0.GetBuffs(arg_56_0)
+	return arg_56_0.buff_list
 end
 
-function slot0.getLevelExpConfig(slot0)
-	return getConfigFromLevel1(pg.user_level, slot0.level)
+function var_0_0.getLevelExpConfig(arg_57_0)
+	return getConfigFromLevel1(pg.user_level, arg_57_0.level)
 end
 
-function slot0.getMaxLevel(slot0)
+function var_0_0.getMaxLevel(arg_58_0)
 	return pg.user_level.all[#pg.user_level.all]
 end
 
-function slot0.getTotalExp(slot0)
-	return slot0:getLevelExpConfig().exp_start + slot0.exp
+function var_0_0.getTotalExp(arg_59_0)
+	return arg_59_0:getLevelExpConfig().exp_start + arg_59_0.exp
 end
 
-function slot0.canLevelUp(slot0)
-	slot2 = slot0:getLevelExpConfig()
+function var_0_0.canLevelUp(arg_60_0)
+	local var_60_0 = getConfigFromLevel1(pg.user_level, arg_60_0.level + 1)
+	local var_60_1 = arg_60_0:getLevelExpConfig()
 
-	return getConfigFromLevel1(pg.user_level, slot0.level + 1) and slot2 ~= slot1 and slot2.exp_interval <= slot0.exp
+	return var_60_0 and var_60_1 ~= var_60_0 and var_60_1.exp_interval <= arg_60_0.exp
 end
 
-function slot0.isSelf(slot0)
-	return getProxy(PlayerProxy):isSelf(slot0.id)
+function var_0_0.isSelf(arg_61_0)
+	return getProxy(PlayerProxy):isSelf(arg_61_0.id)
 end
 
-function slot0.isFriend(slot0)
-	return getProxy(FriendProxy):isFriend(slot0.id)
+function var_0_0.isFriend(arg_62_0)
+	return getProxy(FriendProxy):isFriend(arg_62_0.id)
 end
 
-function slot0.OilMax(slot0, slot1)
-	if (slot1 or 0) < 0 then
-		slot1 = 0
+function var_0_0.OilMax(arg_63_0, arg_63_1)
+	arg_63_1 = arg_63_1 or 0
+
+	if arg_63_1 < 0 then
+		arg_63_1 = 0
 	end
 
-	return pg.gameset.max_oil.key_value < slot0.oil + slot1
+	return pg.gameset.max_oil.key_value < arg_63_0.oil + arg_63_1
 end
 
-function slot0.GoldMax(slot0, slot1)
-	return pg.gameset.max_gold.key_value < slot0.gold + (slot1 or 0)
+function var_0_0.GoldMax(arg_64_0, arg_64_1)
+	arg_64_1 = arg_64_1 or 0
+
+	return pg.gameset.max_gold.key_value < arg_64_0.gold + arg_64_1
 end
 
-function slot0.UpdateCommonFlag(slot0, slot1)
-	slot0.commonFlagList[slot1] = true
+function var_0_0.UpdateCommonFlag(arg_65_0, arg_65_1)
+	arg_65_0.commonFlagList[arg_65_1] = true
 end
 
-function slot0.GetCommonFlag(slot0, slot1)
-	return slot0.commonFlagList[slot1]
+function var_0_0.GetCommonFlag(arg_66_0, arg_66_1)
+	return arg_66_0.commonFlagList[arg_66_1]
 end
 
-function slot0.CancelCommonFlag(slot0, slot1)
-	slot0.commonFlagList[slot1] = false
+function var_0_0.CancelCommonFlag(arg_67_0, arg_67_1)
+	arg_67_0.commonFlagList[arg_67_1] = false
 end
 
-function slot0.SetCommonFlag(slot0, slot1, slot2)
-	slot0.commonFlagList[slot1] = slot2
+function var_0_0.SetCommonFlag(arg_68_0, arg_68_1, arg_68_2)
+	arg_68_0.commonFlagList[arg_68_1] = arg_68_2
 end
 
-function slot0.updateCommanderBagMax(slot0, slot1)
-	slot0.commanderBagMax = slot0.commanderBagMax + slot1
+function var_0_0.updateCommanderBagMax(arg_69_0, arg_69_1)
+	arg_69_0.commanderBagMax = arg_69_0.commanderBagMax + arg_69_1
 end
 
-function slot0.GetDaysFromRegister(slot0)
-	return pg.TimeMgr.GetInstance():DiffDay(slot0.registerTime, pg.TimeMgr.GetInstance():GetServerTime())
+function var_0_0.GetDaysFromRegister(arg_70_0)
+	local var_70_0 = pg.TimeMgr.GetInstance():GetServerTime()
+
+	return pg.TimeMgr.GetInstance():DiffDay(arg_70_0.registerTime, var_70_0)
 end
 
-function slot0.CanUploadBackYardThemeTemplate(slot0)
-	return slot0.banBackyardUploadTime <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.CanUploadBackYardThemeTemplate(arg_71_0)
+	return pg.TimeMgr.GetInstance():GetServerTime() >= arg_71_0.banBackyardUploadTime
 end
 
-function slot0.GetBanUploadBackYardThemeTemplateTime(slot0)
-	return pg.TimeMgr.GetInstance():STimeDescC(slot0.banBackyardUploadTime or 0)
+function var_0_0.GetBanUploadBackYardThemeTemplateTime(arg_72_0)
+	return pg.TimeMgr.GetInstance():STimeDescC(arg_72_0.banBackyardUploadTime or 0)
 end
 
-function slot0.CheckIdentityFlag(slot0)
-	return slot0.identityFlag == 1
+function var_0_0.CheckIdentityFlag(arg_73_0)
+	return arg_73_0.identityFlag == 1
 end
 
-function slot0.GetRegisterTime(slot0)
-	return slot0.registerTime
+function var_0_0.GetRegisterTime(arg_74_0)
+	return arg_74_0.registerTime
 end
 
-function slot0.GetFlagShip(slot0)
-	slot1 = getProxy(SettingsProxy)
-	slot2 = slot1:getCurrentSecretaryIndex()
-	slot3 = nil
+function var_0_0.GetFlagShip(arg_75_0)
+	local var_75_0 = getProxy(SettingsProxy)
+	local var_75_1 = var_75_0:getCurrentSecretaryIndex()
+	local var_75_2
 
-	return (not slot1:IsOpenRandomFlagShip() or slot0:GetRandomFlagShip(slot2)) and slot0:GetNativeFlagShip(slot2)
-end
-
-function slot5(slot0)
-	slot1 = {}
-	slot2 = {}
-
-	if getProxy(SettingsProxy):GetFlagShipDisplayMode() == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not getProxy(PlayerProxy):getRawData():ExistEducateChar() then
-		getProxy(SettingsProxy):SetFlagShipDisplayMode(FlAG_SHIP_DISPLAY_ALL)
+	if var_75_0:IsOpenRandomFlagShip() then
+		var_75_2 = arg_75_0:GetRandomFlagShip(var_75_1)
+	else
+		var_75_2 = arg_75_0:GetNativeFlagShip(var_75_1)
 	end
 
-	if slot3 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
-		for slot9, slot10 in ipairs(slot0) do
-			slot1[slot9] = defaultValue(getProxy(BayProxy):RawGetShipById(slot10), false)
+	return var_75_2
+end
 
-			table.insert(slot2, slot9)
+local function var_0_5(arg_76_0)
+	local var_76_0 = {}
+	local var_76_1 = {}
+	local var_76_2 = getProxy(SettingsProxy):GetFlagShipDisplayMode()
+	local var_76_3 = getProxy(PlayerProxy):getRawData():ExistEducateChar()
+
+	if var_76_2 == FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR and not var_76_3 then
+		var_76_2 = FlAG_SHIP_DISPLAY_ALL
+
+		getProxy(SettingsProxy):SetFlagShipDisplayMode(var_76_2)
+	end
+
+	if var_76_2 ~= FlAG_SHIP_DISPLAY_ONLY_EDUCATECHAR then
+		local var_76_4 = getProxy(BayProxy)
+
+		for iter_76_0, iter_76_1 in ipairs(arg_76_0) do
+			var_76_0[iter_76_0] = defaultValue(var_76_4:RawGetShipById(iter_76_1), false)
+
+			table.insert(var_76_1, iter_76_0)
 		end
 	end
 
-	if slot4 and slot3 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
-		table.insert(slot2, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
+	if var_76_3 and var_76_2 ~= FlAG_SHIP_DISPLAY_ONLY_SHIP then
+		table.insert(var_76_1, PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID)
 
-		slot1[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = VirtualEducateCharShip.New(getProxy(PlayerProxy):getRawData():GetEducateCharacter())
+		local var_76_5 = getProxy(PlayerProxy):getRawData():GetEducateCharacter()
+		local var_76_6 = VirtualEducateCharShip.New(var_76_5)
+
+		var_76_0[PlayerVitaeShipsPage.EDUCATE_CHAR_SLOT_ID] = var_76_6
 	end
 
-	return slot1, slot2
+	return var_76_0, var_76_1
 end
 
-function slot0.GetNativeFlagShip(slot0, slot1)
-	slot2, slot3 = uv0(slot0.characters)
+function var_0_0.GetNativeFlagShip(arg_77_0, arg_77_1)
+	local var_77_0, var_77_1 = var_0_5(arg_77_0.characters)
+	local var_77_2 = getProxy(SettingsProxy)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		slot5 = math.random(#slot3)
-		slot1 = slot3[slot5]
+		local var_77_3 = math.random(#var_77_1)
 
-		getProxy(SettingsProxy):setCurrentSecretaryIndex(slot5)
+		arg_77_1 = var_77_1[var_77_3]
+
+		var_77_2:setCurrentSecretaryIndex(var_77_3)
 	end
 
-	if not slot2[slot1] and table.indexof(PlayerVitaeShipsPage.GetSlotIndexList(), slot1) and slot7 > 0 then
-		for slot11 = slot7 + 1, #slot6 do
-			if slot2[slot6[slot11]] then
-				slot4:setCurrentSecretaryIndex(slot11)
+	local var_77_4 = var_77_0[arg_77_1]
 
-				break
+	if not var_77_4 then
+		local var_77_5 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var_77_6 = table.indexof(var_77_5, arg_77_1)
+
+		if var_77_6 and var_77_6 > 0 then
+			for iter_77_0 = var_77_6 + 1, #var_77_5 do
+				arg_77_1 = var_77_5[iter_77_0]
+				var_77_4 = var_77_0[arg_77_1]
+
+				if var_77_4 then
+					var_77_2:setCurrentSecretaryIndex(iter_77_0)
+
+					break
+				end
 			end
 		end
 	end
 
-	if not slot5 then
-		slot1 = 1
+	if not var_77_4 then
+		arg_77_1 = 1
 
-		slot4:setCurrentSecretaryIndex(slot1)
+		var_77_2:setCurrentSecretaryIndex(arg_77_1)
 
-		slot5 = slot2[slot1]
+		var_77_4 = var_77_0[arg_77_1]
 	end
 
-	return slot5
+	return var_77_4
 end
 
-function slot0.GetRandomFlagShip(slot0, slot1)
-	slot4, slot5 = uv0(getProxy(SettingsProxy):GetRandomFlagShipList())
+function var_0_0.GetRandomFlagShip(arg_78_0, arg_78_1)
+	local var_78_0 = getProxy(SettingsProxy)
+	local var_78_1 = var_78_0:GetRandomFlagShipList()
+	local var_78_2, var_78_3 = var_0_5(var_78_1)
 
 	if getProxy(PlayerProxy):getFlag("battle") then
-		slot6 = math.random(#slot5)
-		slot1 = slot5[slot6]
+		local var_78_4 = math.random(#var_78_3)
 
-		slot2:setCurrentSecretaryIndex(slot6)
+		arg_78_1 = var_78_3[var_78_4]
+
+		var_78_0:setCurrentSecretaryIndex(var_78_4)
 	end
 
-	if not slot4[slot1] and table.indexof(PlayerVitaeShipsPage.GetSlotIndexList(), slot1) and slot8 > 0 then
-		for slot12 = slot8 + 1, #slot7 do
-			if slot4[slot7[slot12]] then
-				slot2:setCurrentSecretaryIndex(slot12)
+	local var_78_5 = var_78_2[arg_78_1]
 
-				break
+	if not var_78_5 then
+		local var_78_6 = PlayerVitaeShipsPage.GetSlotIndexList()
+		local var_78_7 = table.indexof(var_78_6, arg_78_1)
+
+		if var_78_7 and var_78_7 > 0 then
+			for iter_78_0 = var_78_7 + 1, #var_78_6 do
+				arg_78_1 = var_78_6[iter_78_0]
+				var_78_5 = var_78_2[arg_78_1]
+
+				if var_78_5 then
+					var_78_0:setCurrentSecretaryIndex(iter_78_0)
+
+					break
+				end
 			end
 		end
 	end
 
-	if not slot6 then
-		slot7 = {}
+	if not var_78_5 then
+		local var_78_8 = {}
 
-		for slot11, slot12 in pairs(slot4) do
-			if slot12 then
-				table.insert(slot7, slot11)
+		for iter_78_1, iter_78_2 in pairs(var_78_2) do
+			if iter_78_2 then
+				table.insert(var_78_8, iter_78_1)
 			end
 		end
 
-		if #slot7 > 0 then
-			slot1 = slot7[math.random(1, #slot7)]
-			slot6 = slot4[slot1]
+		if #var_78_8 > 0 then
+			arg_78_1 = var_78_8[math.random(1, #var_78_8)]
+			var_78_5 = var_78_2[arg_78_1]
 
-			if table.indexof(slot5, slot1) then
-				slot2:setCurrentSecretaryIndex(slot8)
+			local var_78_9 = table.indexof(var_78_3, arg_78_1)
+
+			if var_78_9 then
+				var_78_0:setCurrentSecretaryIndex(var_78_9)
 			end
 		end
 	end
 
-	if not slot6 then
-		slot1 = 1
+	if not var_78_5 then
+		arg_78_1 = 1
 
-		slot2:setCurrentSecretaryIndex(slot1)
+		var_78_0:setCurrentSecretaryIndex(arg_78_1)
 
-		slot6 = slot4[slot1]
+		var_78_5 = var_78_2[arg_78_1]
 	end
 
-	return slot6
+	return var_78_5
 end
 
-function slot0.GetNextFlagShip(slot0)
+function var_0_0.GetNextFlagShip(arg_79_0)
 	getProxy(SettingsProxy):rotateCurrentSecretaryIndex()
 
-	return slot0:GetFlagShip()
+	return arg_79_0:GetFlagShip()
 end
 
-function slot0.IsOpenShipEvaluationImpeach(slot0)
-	return not LOCK_IMPEACH and pg.gameset.report_level_limit.key_value <= slot0.level
+function var_0_0.IsOpenShipEvaluationImpeach(arg_80_0)
+	return not LOCK_IMPEACH and arg_80_0.level >= pg.gameset.report_level_limit.key_value
 end
 
-function slot0.ShouldCheckCustomName(slot0)
-	return slot0:GetCommonFlag(REVERT_CUSTOM_NAME)
+function var_0_0.ShouldCheckCustomName(arg_81_0)
+	return arg_81_0:GetCommonFlag(REVERT_CUSTOM_NAME)
 end
 
-function slot0.WhetherServerModifiesName(slot0)
-	return slot0:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
+function var_0_0.WhetherServerModifiesName(arg_82_0)
+	return arg_82_0:GetCommonFlag(ILLEGALITY_PLAYER_NAME)
 end
 
-function slot0.GetManifesto(slot0)
-	return slot0.manifesto or ""
+function var_0_0.GetManifesto(arg_83_0)
+	return arg_83_0.manifesto or ""
 end
 
-function slot0.GetName(slot0)
-	return slot0.name
+function var_0_0.GetName(arg_84_0)
+	return arg_84_0.name
 end
 
-function slot0.GetRandomFlagShipMode(slot0)
-	if slot0.randomShipMode <= 0 then
-		if slot0:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
-			slot0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
+function var_0_0.GetRandomFlagShipMode(arg_85_0)
+	if arg_85_0.randomShipMode <= 0 then
+		if arg_85_0:GetCommonFlag(RANDOM_FLAG_SHIP_MODE) then
+			arg_85_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_LOCKED
 		else
-			slot0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
+			arg_85_0.randomShipMode = SettingsRandomFlagShipAndSkinPanel.SHIP_FREQUENTLYUSED
 		end
 	end
 
-	return slot0.randomShipMode
+	return arg_85_0.randomShipMode
 end
 
-function slot0.UpdateRandomFlagShipMode(slot0, slot1)
-	slot0.randomShipMode = slot1
+function var_0_0.UpdateRandomFlagShipMode(arg_86_0, arg_86_1)
+	arg_86_0.randomShipMode = arg_86_1
 end
 
-function slot0.GetCustomRandomShipList(slot0)
-	slot1 = {}
+function var_0_0.GetCustomRandomShipList(arg_87_0)
+	local var_87_0 = {}
 
-	for slot5, slot6 in ipairs(slot0.customRandomShips) do
-		table.insert(slot1, slot6)
+	for iter_87_0, iter_87_1 in ipairs(arg_87_0.customRandomShips) do
+		table.insert(var_87_0, iter_87_1)
 	end
 
-	return slot1
+	return var_87_0
 end
 
-function slot0.UpdateCustomRandomShipList(slot0, slot1)
-	slot0.customRandomShips = slot1
+function var_0_0.UpdateCustomRandomShipList(arg_88_0, arg_88_1)
+	arg_88_0.customRandomShips = arg_88_1
 end
 
-function slot0.SetProposeShipId(slot0, slot1)
-	slot0.proposeShipId = slot1
+function var_0_0.SetProposeShipId(arg_89_0, arg_89_1)
+	arg_89_0.proposeShipId = arg_89_1
 end
 
-function slot0.GetProposeShipId(slot0)
-	return slot0.proposeShipId
+function var_0_0.GetProposeShipId(arg_90_0)
+	return arg_90_0.proposeShipId
 end
 
-function slot0.GetCryptolaliaList(slot0)
-	slot1 = {}
-	slot2 = {
-		[slot8] = true
-	}
+function var_0_0.GetCryptolaliaList(arg_91_0)
+	local var_91_0 = {}
+	local var_91_1 = {}
+	local var_91_2 = arg_91_0.unlockCryptolaliaList
 
-	for slot7, slot8 in ipairs(slot0.unlockCryptolaliaList) do
-		-- Nothing
+	for iter_91_0, iter_91_1 in ipairs(var_91_2) do
+		var_91_1[iter_91_1] = true
 	end
 
-	for slot7, slot8 in ipairs(pg.soundstory_template.all) do
-		slot9 = Cryptolalia.New({
-			id = slot8
+	for iter_91_2, iter_91_3 in ipairs(pg.soundstory_template.all) do
+		local var_91_3 = Cryptolalia.New({
+			id = iter_91_3
 		})
 
-		if slot2[slot8] then
-			slot9:Unlock()
+		if var_91_1[iter_91_3] then
+			var_91_3:Unlock()
 		end
 
-		table.insert(slot1, slot9)
+		table.insert(var_91_0, var_91_3)
 	end
 
-	return slot1
+	return var_91_0
 end
 
-function slot0.UnlockCryptolalia(slot0, slot1)
-	if not table.contains(slot0.unlockCryptolaliaList) then
-		table.insert(slot0.unlockCryptolaliaList, slot1)
+function var_0_0.UnlockCryptolalia(arg_92_0, arg_92_1)
+	if not table.contains(arg_92_0.unlockCryptolaliaList) then
+		table.insert(arg_92_0.unlockCryptolaliaList, arg_92_1)
 	end
 end
 
-function slot0.ExistCryptolalia(slot0, slot1)
-	for slot6, slot7 in ipairs(slot0:GetCryptolaliaList()) do
-		if (slot7:InTime() or not slot7:IsLock()) and slot7:IsSameGroup(slot1) then
+function var_0_0.ExistCryptolalia(arg_93_0, arg_93_1)
+	local var_93_0 = arg_93_0:GetCryptolaliaList()
+
+	for iter_93_0, iter_93_1 in ipairs(var_93_0) do
+		if (iter_93_1:InTime() or not iter_93_1:IsLock()) and iter_93_1:IsSameGroup(arg_93_1) then
 			return true
 		end
 	end
@@ -816,16 +931,16 @@ function slot0.ExistCryptolalia(slot0, slot1)
 	return false
 end
 
-function slot0.ExistEducateChar(slot0)
-	return slot0.educateCharacter > 0
+function var_0_0.ExistEducateChar(arg_94_0)
+	return arg_94_0.educateCharacter > 0
 end
 
-function slot0.GetEducateCharacter(slot0)
-	return slot0.educateCharacter
+function var_0_0.GetEducateCharacter(arg_95_0)
+	return arg_95_0.educateCharacter
 end
 
-function slot0.SetEducateCharacter(slot0, slot1)
-	slot0.educateCharacter = slot1
+function var_0_0.SetEducateCharacter(arg_96_0, arg_96_1)
+	arg_96_0.educateCharacter = arg_96_1
 end
 
-return slot0
+return var_0_0

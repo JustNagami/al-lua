@@ -1,63 +1,72 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.BattleStoryWave = class("BattleStoryWave", slot0.Battle.BattleWaveInfo)
-slot0.Battle.BattleStoryWave.__name = "BattleStoryWave"
-slot1 = slot0.Battle.BattleStoryWave
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.BattleStoryWave = class("BattleStoryWave", var_0_0.Battle.BattleWaveInfo)
+var_0_0.Battle.BattleStoryWave.__name = "BattleStoryWave"
+
+local var_0_1 = var_0_0.Battle.BattleStoryWave
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.SetWaveData(slot0, slot1)
-	uv0.super.SetWaveData(slot0, slot1)
+function var_0_1.SetWaveData(arg_2_0, arg_2_1)
+	var_0_1.super.SetWaveData(arg_2_0, arg_2_1)
 
-	slot0._storyID = slot0._param.id
+	arg_2_0._storyID = arg_2_0._param.id
 end
 
-function slot1.DoWave(slot0)
-	uv0.super.DoWave(slot0)
+function var_0_1.DoWave(arg_3_0)
+	var_0_1.super.DoWave(arg_3_0)
 
-	slot1 = true
+	local var_3_0 = true
+	local var_3_1 = false
 
-	if uv1.Battle.BattleDataProxy.GetInstance():GetInitData().battleType == SYSTEM_SCENARIO then
-		if getProxy(ChapterProxy):getActiveChapter(true) then
-			slot2 = slot4:IsAutoFight() or false
-		end
+	if var_0_0.Battle.BattleDataProxy.GetInstance():GetInitData().battleType == SYSTEM_SCENARIO then
+		local var_3_2 = getProxy(ChapterProxy):getActiveChapter(true)
 
-		if slot0._param.progress then
-			if not slot4 then
-				slot1 = false
-			elseif math.min(slot4.progress + slot4:getConfig("progress_boss"), 100) < slot0._param.progress then
-				slot1 = false
+		var_3_1 = var_3_2 and var_3_2:IsAutoFight() or var_3_1
+
+		if arg_3_0._param.progress then
+			if not var_3_2 then
+				var_3_0 = false
+			elseif math.min(var_3_2.progress + var_3_2:getConfig("progress_boss"), 100) < arg_3_0._param.progress then
+				var_3_0 = false
 			end
 		end
 
-		if slot4 and getProxy(ChapterProxy):getMapById(slot4:getConfig("map")) and slot5:getRemaster() then
-			slot1 = false
+		local var_3_3 = var_3_2 and getProxy(ChapterProxy):getMapById(var_3_2:getConfig("map"))
+
+		if var_3_3 and var_3_3:getRemaster() then
+			var_3_0 = false
 		end
 	end
 
-	if slot1 then
+	if var_3_0 then
 		pg.MsgboxMgr.GetInstance():hide()
-		ChapterOpCommand.PlayChapterStory(slot0._storyID, function (slot0, slot1)
-			if slot0 then
-				uv0:doFail(slot1)
+
+		local function var_3_4(arg_4_0, arg_4_1)
+			if arg_4_0 then
+				arg_3_0:doFail(arg_4_1)
 			else
-				uv0:doPass(slot1)
+				arg_3_0:doPass(arg_4_1)
 			end
-		end, slot2)
+		end
+
+		ChapterOpCommand.PlayChapterStory(arg_3_0._storyID, var_3_4, var_3_1)
 		gcAll()
 	else
-		slot0:doPass()
+		arg_3_0:doPass()
 	end
 end
 
-function slot1.doPass(slot0, slot1)
-	uv0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(slot1)
-	uv1.super.doPass(slot0)
+function var_0_1.doPass(arg_5_0, arg_5_1)
+	var_0_0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg_5_1)
+	var_0_1.super.doPass(arg_5_0)
 end
 
-function slot1.doFail(slot0, slot1)
-	uv0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(slot1)
-	uv1.super.doFail(slot0)
+function var_0_1.doFail(arg_6_0, arg_6_1)
+	var_0_0.Battle.BattleDataProxy.GetInstance():AddWaveFlag(arg_6_1)
+	var_0_1.super.doFail(arg_6_0)
 end

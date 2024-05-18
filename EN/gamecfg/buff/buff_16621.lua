@@ -1,4 +1,32 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffHP",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				maxHPRatio = 0.035
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			casterAniEffect = "",
+			targetAniEffect = "",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				buff_id = 16622,
+				nationality = 7,
+				check_target = {
+					"TargetSelf",
+					"TargetNationality"
+				}
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -307,33 +335,5 @@ return {
 	stack = 1,
 	id = 16621,
 	icon = 16620,
-	last_effect = "Health",
-	effect_list = {
-		{
-			type = "BattleBuffHP",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				maxHPRatio = 0.035
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			casterAniEffect = "",
-			targetAniEffect = "",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				buff_id = 16622,
-				nationality = 7,
-				check_target = {
-					"TargetSelf",
-					"TargetNationality"
-				}
-			}
-		}
-	}
+	last_effect = "Health"
 }

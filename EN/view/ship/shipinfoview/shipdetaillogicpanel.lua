@@ -1,5 +1,5 @@
-slot0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
-slot1 = {
+﻿local var_0_0 = class("ShipDetailLogicPanel", import("...base.BasePanel"))
+local var_0_1 = {
 	durability = AttributeType.Durability,
 	armor = AttributeType.Armor,
 	reload = AttributeType.Reload,
@@ -17,7 +17,7 @@ slot1 = {
 	consume = AttributeType.Expend,
 	speed = AttributeType.Speed
 }
-slot2 = {
+local var_0_2 = {
 	us = {
 		prop_ignore = {
 			luck = {
@@ -183,520 +183,563 @@ slot2 = {
 		hide = {}
 	}
 }
-slot3 = nil
-slot4 = 0.5
-slot5 = Vector3(1, 1, 1)
-slot6 = Vector3(1.3, 1.3, 1.3)
-slot0.EQUIPMENT_ADDITION = 0
-slot0.TECHNOLOGY_ADDITION = 1
-slot0.CORE_ADDITION = 2
+local var_0_3
+local var_0_4 = 0.5
+local var_0_5 = Vector3(1, 1, 1)
+local var_0_6 = Vector3(1.3, 1.3, 1.3)
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1.gameObject)
+var_0_0.EQUIPMENT_ADDITION = 0
+var_0_0.TECHNOLOGY_ADDITION = 1
+var_0_0.CORE_ADDITION = 2
 
-	slot0.skillContainer = findTF(slot0._tf, "skills/content")
-	slot0.skillContainerHz = slot0.skillContainer:GetComponent(typeof(HorizontalLayoutGroup))
-	slot0.skillTpl = findTF(slot0.skillContainer, "skill_tpl")
-	slot0.attrs = findTF(slot0._tf, "attrs/property")
-	slot0.powerTxt = findTF(slot0.attrs, "power/value")
-	slot0.levelTxt = findTF(slot0.attrs, "level_bg/level_label/Text")
-	slot0.levelSlider = findTF(slot0.attrs, "level_bg/exp")
-	slot0.expInfo = findTF(slot0.attrs, "level_bg/exp_info")
-	slot0.outline = findTF(slot0.attrs, "level_bg/outline")
-	slot0.levelTip = findTF(slot0.attrs, "level_bg/tip")
-	slot0.levelBg = findTF(slot0.attrs, "level_bg")
-	slot0.expTip = findTF(slot0.attrs, "level_bg/exp_tip")
-	slot0.armorNameTxt = slot0.attrs:Find("icons"):GetChild(1):Find("name")
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1.gameObject)
+
+	arg_1_0.skillContainer = findTF(arg_1_0._tf, "skills/content")
+	arg_1_0.skillContainerHz = arg_1_0.skillContainer:GetComponent(typeof(HorizontalLayoutGroup))
+	arg_1_0.skillTpl = findTF(arg_1_0.skillContainer, "skill_tpl")
+	arg_1_0.attrs = findTF(arg_1_0._tf, "attrs/property")
+	arg_1_0.powerTxt = findTF(arg_1_0.attrs, "power/value")
+	arg_1_0.levelTxt = findTF(arg_1_0.attrs, "level_bg/level_label/Text")
+	arg_1_0.levelSlider = findTF(arg_1_0.attrs, "level_bg/exp")
+	arg_1_0.expInfo = findTF(arg_1_0.attrs, "level_bg/exp_info")
+	arg_1_0.outline = findTF(arg_1_0.attrs, "level_bg/outline")
+	arg_1_0.levelTip = findTF(arg_1_0.attrs, "level_bg/tip")
+	arg_1_0.levelBg = findTF(arg_1_0.attrs, "level_bg")
+	arg_1_0.expTip = findTF(arg_1_0.attrs, "level_bg/exp_tip")
+	arg_1_0.armorNameTxt = arg_1_0.attrs:Find("icons"):GetChild(1):Find("name")
 
 	if PLATFORM_CODE == PLATFORM_JP then
-		uv1 = uv2.jp
+		var_0_3 = var_0_2.jp
 	elseif PLATFORM_CODE == PLATFORM_KR then
-		uv1 = uv2.kr
+		var_0_3 = var_0_2.kr
 	elseif PLATFORM_CODE == PLATFORM_US then
-		uv1 = uv2.us
+		var_0_3 = var_0_2.us
 	else
-		uv1 = uv2.defaut
+		var_0_3 = var_0_2.defaut
 	end
 
-	for slot6 = 1, #uv1.sort_index do
-		slot7 = slot2[slot6]
-		slot8 = findTF(slot0.attrs, "props/" .. slot7)
-		slot9 = findTF(slot0.attrs, "icons/" .. slot7)
+	local var_1_0 = var_0_3.sort_index
 
-		if pg.gametip["attr_" .. slot7].tip and string.len(slot10) > 0 and slot7 ~= "armor" then
-			setText(findTF(slot9, "name"), slot10)
+	for iter_1_0 = 1, #var_1_0 do
+		local var_1_1 = var_1_0[iter_1_0]
+		local var_1_2 = findTF(arg_1_0.attrs, "props/" .. var_1_1)
+		local var_1_3 = findTF(arg_1_0.attrs, "icons/" .. var_1_1)
+		local var_1_4 = pg.gametip["attr_" .. var_1_1].tip
+
+		if var_1_4 and string.len(var_1_4) > 0 and var_1_1 ~= "armor" then
+			setText(findTF(var_1_3, "name"), var_1_4)
 		end
 
-		slot8:SetSiblingIndex(slot6 - 1)
-		slot9:SetSiblingIndex(slot6 - 1)
+		var_1_2:SetSiblingIndex(iter_1_0 - 1)
+		var_1_3:SetSiblingIndex(iter_1_0 - 1)
 	end
 
-	for slot7 = 1, #uv1.hide do
-		slot8 = slot3[slot7]
+	local var_1_5 = var_0_3.hide
 
-		setActive(findTF(slot0.attrs, "props/" .. slot8), false)
-		setActive(findTF(slot0.attrs, "icons/" .. slot8), false)
+	for iter_1_1 = 1, #var_1_5 do
+		local var_1_6 = var_1_5[iter_1_1]
+		local var_1_7 = findTF(arg_1_0.attrs, "props/" .. var_1_6)
+		local var_1_8 = findTF(arg_1_0.attrs, "icons/" .. var_1_6)
+
+		setActive(var_1_7, false)
+		setActive(var_1_8, false)
 	end
 
-	for slot8, slot9 in pairs(uv1.prop_ignore) do
-		slot10 = findTF(slot0.attrs, "props/" .. slot8)
-		slot11 = findTF(slot0.attrs, "icons/" .. slot8)
-		GetOrAddComponent(slot10, typeof(LayoutElement)).ignoreLayout = true
-		GetOrAddComponent(slot11, typeof(LayoutElement)).ignoreLayout = true
-		slot10.anchorMax = Vector2(0, 1)
-		slot10.anchorMin = Vector2(0, 1)
-		slot11.anchorMax = Vector2(0, 1)
-		slot11.anchorMin = Vector2(0, 1)
-		slot10.anchoredPosition = Vector2(slot9[3], slot9[4])
-		slot11.anchoredPosition = Vector2(slot9[1], slot9[2])
+	local var_1_9 = var_0_3.prop_ignore
+
+	for iter_1_2, iter_1_3 in pairs(var_1_9) do
+		local var_1_10 = findTF(arg_1_0.attrs, "props/" .. iter_1_2)
+		local var_1_11 = findTF(arg_1_0.attrs, "icons/" .. iter_1_2)
+
+		GetOrAddComponent(var_1_10, typeof(LayoutElement)).ignoreLayout = true
+		GetOrAddComponent(var_1_11, typeof(LayoutElement)).ignoreLayout = true
+		var_1_10.anchorMax = Vector2(0, 1)
+		var_1_10.anchorMin = Vector2(0, 1)
+		var_1_11.anchorMax = Vector2(0, 1)
+		var_1_11.anchorMin = Vector2(0, 1)
+		var_1_10.anchoredPosition = Vector2(iter_1_3[3], iter_1_3[4])
+		var_1_11.anchoredPosition = Vector2(iter_1_3[1], iter_1_3[2])
 	end
 end
 
-function slot0.attach(slot0, slot1)
-	uv0.super.attach(slot0, slot1)
+function var_0_0.attach(arg_2_0, arg_2_1)
+	var_0_0.super.attach(arg_2_0, arg_2_1)
 
-	slot0.evalueToggle = slot0.attrs:Find("evalue_toggle")
-	slot0.evalueIndex = uv0.EQUIPMENT_ADDITION
+	arg_2_0.evalueToggle = arg_2_0.attrs:Find("evalue_toggle")
+	arg_2_0.evalueIndex = var_0_0.EQUIPMENT_ADDITION
 
-	onToggle(slot0.viewComponent, slot0.evalueToggle, function ()
-		uv0.evalueIndex = 1 - uv0.evalueIndex
+	onToggle(arg_2_0.viewComponent, arg_2_0.evalueToggle, function()
+		arg_2_0.evalueIndex = 1 - arg_2_0.evalueIndex
 
-		uv0:updateEvalues()
+		arg_2_0:updateEvalues()
 	end)
 end
 
-function slot0.enableEvent(slot0, slot1)
-	slot0:emit(ShipViewConst.SET_CLICK_ENABLE, slot1)
+function var_0_0.enableEvent(arg_4_0, arg_4_1)
+	arg_4_0:emit(ShipViewConst.SET_CLICK_ENABLE, arg_4_1)
 end
 
-function slot0.flush(slot0, slot1)
-	assert(slot1, "shipVO can not be nil")
+function var_0_0.flush(arg_5_0, arg_5_1)
+	assert(arg_5_1, "shipVO can not be nil")
 
-	slot0.shipDataTemplate = pg.ship_data_template[slot1.configId]
-	slot0.shipVO = slot1
+	arg_5_0.shipDataTemplate = pg.ship_data_template[arg_5_1.configId]
+	arg_5_0.shipVO = arg_5_1
 
-	slot0:updateShipAttrs()
-	slot0:updateSKills()
-	slot0:updateLevelInfo()
+	arg_5_0:updateShipAttrs()
+	arg_5_0:updateSKills()
+	arg_5_0:updateLevelInfo()
 
-	if not slot1:isMaxStar() and slot0.evalueIndex == uv0.TECHNOLOGY_ADDITION then
-		triggerToggle(slot0.evalueToggle, false)
+	local var_5_0 = arg_5_1:isMaxStar()
+
+	if not var_5_0 and arg_5_0.evalueIndex == var_0_0.TECHNOLOGY_ADDITION then
+		triggerToggle(arg_5_0.evalueToggle, false)
 	end
 
-	setActive(slot0.evalueToggle, slot2)
+	setActive(arg_5_0.evalueToggle, var_5_0)
 end
 
-function slot0.updateEvalues(slot0)
-	if not slot0.additionValues then
+function var_0_0.updateEvalues(arg_6_0)
+	if not arg_6_0.additionValues then
 		return
 	end
 
-	for slot5, slot6 in pairs(slot0.additionValues.transforms) do
-		if slot5 == AttributeType.Armor or slot5 == AttributeType.Expend or slot5 == AttributeType.HuntingRange and table.contains(TeamType.SubShipType, slot0.shipVO:getShipType()) then
-			setText(slot6, "")
-			setActive(slot6, false)
-		else
-			slot7 = slot0.additionValues[slot0.evalueIndex][slot5] or 0
-			slot9 = slot0.evalueIndex == uv0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
+	local var_6_0 = table.contains(TeamType.SubShipType, arg_6_0.shipVO:getShipType())
 
-			if slot0.evalueIndex == uv0.TECHNOLOGY_ADDITION and slot7 ~= slot0.shipVO:getTechNationMaxAddition(slot5) then
-				slot9 = "#B4BFD5FF"
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.additionValues.transforms) do
+		if iter_6_0 == AttributeType.Armor or iter_6_0 == AttributeType.Expend or iter_6_0 == AttributeType.HuntingRange and var_6_0 then
+			setText(iter_6_1, "")
+			setActive(iter_6_1, false)
+		else
+			local var_6_1 = arg_6_0.additionValues[arg_6_0.evalueIndex][iter_6_0] or 0
+			local var_6_2 = arg_6_0.shipVO:getTechNationMaxAddition(iter_6_0)
+			local var_6_3 = arg_6_0.evalueIndex == var_0_0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
+
+			if arg_6_0.evalueIndex == var_0_0.TECHNOLOGY_ADDITION and var_6_1 ~= var_6_2 then
+				var_6_3 = "#B4BFD5FF"
 			end
 
-			setText(slot6, slot7 == 0 and "" or setColorStr(" +" .. slot7, slot9))
-			setActive(slot6, slot7 ~= 0)
+			setText(iter_6_1, var_6_1 == 0 and "" or setColorStr(" +" .. var_6_1, var_6_3))
+			setActive(iter_6_1, var_6_1 ~= 0)
 		end
 	end
 end
 
-function slot0.updateShipAttrs(slot0)
-	slot0.additionValues = {
-		[uv0.EQUIPMENT_ADDITION] = {},
-		[uv0.TECHNOLOGY_ADDITION] = {},
+function var_0_0.updateShipAttrs(arg_7_0)
+	arg_7_0.additionValues = {
+		[var_0_0.EQUIPMENT_ADDITION] = {},
+		[var_0_0.TECHNOLOGY_ADDITION] = {},
 		transforms = {}
 	}
-	slot1 = slot0.shipVO
-	slot2 = table.contains(TeamType.SubShipType, slot1:getShipType())
-	slot4, slot5 = slot1:getEquipmentProperties()
 
-	FormationUI.tweenNumText(slot0.powerTxt, slot1:getShipCombatPower())
+	local var_7_0 = arg_7_0.shipVO
+	local var_7_1 = table.contains(TeamType.SubShipType, var_7_0:getShipType())
+	local var_7_2 = intProperties(var_7_0:isBluePrintShip() and var_7_0:getBluePrint():getShipProperties(var_7_0) or var_7_0:getShipProperties())
+	local var_7_3, var_7_4 = var_7_0:getEquipmentProperties()
+	local var_7_5 = intProperties(var_7_3)
+	local var_7_6 = intProperties(var_7_4)
+	local var_7_7 = var_7_0:getShipCombatPower()
 
-	for slot10, slot11 in pairs(uv1) do
-		slot12 = findTF(slot0.attrs, "props/" .. slot10)
-		slot13 = findTF(slot0.attrs, "icons/" .. slot10)
-		slot16 = intProperties(slot1:isBluePrintShip() and slot1:getBluePrint():getShipProperties(slot1) or slot1:getShipProperties())[slot11] or 0
+	FormationUI.tweenNumText(arg_7_0.powerTxt, var_7_7)
 
-		setText(findTF(slot12, "value"), slot16)
+	for iter_7_0, iter_7_1 in pairs(var_0_1) do
+		local var_7_8 = findTF(arg_7_0.attrs, "props/" .. iter_7_0)
+		local var_7_9 = findTF(arg_7_0.attrs, "icons/" .. iter_7_0)
+		local var_7_10 = findTF(var_7_8, "value")
+		local var_7_11 = findTF(var_7_8, "add")
+		local var_7_12 = var_7_2[iter_7_1] or 0
+		local var_7_13 = var_7_6[iter_7_1] or 1
+		local var_7_14 = calcFloor(((var_7_5[iter_7_1] or 0) + var_7_12) * var_7_13) - var_7_12
 
-		slot0.additionValues.transforms[slot11] = findTF(slot12, "add")
-		slot0.additionValues[0][slot11] = calcFloor(((intProperties(slot4)[slot11] or 0) + slot16) * (intProperties(slot5)[slot11] or 1)) - slot16
-		slot0.additionValues[1][slot11] = slot1:getTechNationAddition(slot11)
+		setText(var_7_10, var_7_12)
 
-		if slot11 == AttributeType.Armor then
-			setActive(slot14, false)
-			setActive(slot15, false)
-			setText(slot0.armorNameTxt, slot1:getShipArmorName())
-		elseif slot11 == AttributeType.Expend then
-			setText(findTF(slot12, "value"), slot1:getBattleTotalExpend())
-			setActive(slot15, false)
-		elseif slot11 == AttributeType.HuntingRange then
-			setActive(slot13, slot2)
-			setActive(slot12, slot2)
+		arg_7_0.additionValues.transforms[iter_7_1] = var_7_11
+		arg_7_0.additionValues[0][iter_7_1] = var_7_14
+		arg_7_0.additionValues[1][iter_7_1] = var_7_0:getTechNationAddition(iter_7_1)
 
-			if slot2 then
-				setActive(slot14, false)
-				setActive(slot15, false)
+		if iter_7_1 == AttributeType.Armor then
+			setActive(var_7_10, false)
+			setActive(var_7_11, false)
+			setText(arg_7_0.armorNameTxt, var_7_0:getShipArmorName())
+		elseif iter_7_1 == AttributeType.Expend then
+			setText(findTF(var_7_8, "value"), var_7_0:getBattleTotalExpend())
+			setActive(var_7_11, false)
+		elseif iter_7_1 == AttributeType.HuntingRange then
+			setActive(var_7_9, var_7_1)
+			setActive(var_7_8, var_7_1)
+
+			if var_7_1 then
+				setActive(var_7_10, false)
+				setActive(var_7_11, false)
 			end
-		elseif slot11 == AttributeType.AntiSub then
-			setActive(slot13, not slot2)
-			setActive(slot12, not slot2)
-		elseif slot11 == AttributeType.OxyMax or slot11 == AttributeType.Ammo then
-			setActive(slot13, slot2)
-			setActive(slot12, slot2)
+		elseif iter_7_1 == AttributeType.AntiSub then
+			setActive(var_7_9, not var_7_1)
+			setActive(var_7_8, not var_7_1)
+		elseif iter_7_1 == AttributeType.OxyMax or iter_7_1 == AttributeType.Ammo then
+			setActive(var_7_9, var_7_1)
+			setActive(var_7_8, var_7_1)
 
-			if slot11 == AttributeType.Ammo then
-				setText(slot14, slot1:getShipAmmo())
+			if iter_7_1 == AttributeType.Ammo then
+				setText(var_7_10, var_7_0:getShipAmmo())
 			end
 		end
 	end
 
-	slot0:updateEvalues()
+	arg_7_0:updateEvalues()
 end
 
-function slot0.updateSKills(slot0)
-	slot1 = slot0.shipVO
+function var_0_0.updateSKills(arg_8_0)
+	local var_8_0 = arg_8_0.shipVO
+	local var_8_1 = Clone(arg_8_0.shipDataTemplate.buff_list_display)
 
-	for slot6 = #Clone(slot0.shipDataTemplate.buff_list_display) + 1, 3 do
-		table.insert(slot2, false)
+	for iter_8_0 = #var_8_1 + 1, 3 do
+		table.insert(var_8_1, false)
 	end
 
-	setActive(slot0.skillTpl, false)
+	setActive(arg_8_0.skillTpl, false)
 
-	slot3 = UIItemList.New(slot0.skillContainer, slot0.skillTpl)
+	local var_8_2 = UIItemList.New(arg_8_0.skillContainer, arg_8_0.skillTpl)
 
-	slot3:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			if uv0[slot1 + 1] then
-				slot3 = uv1:fateSkillChange(slot3)
-				slot4 = getSkillConfig(uv1:RemapSkillId(slot3))
+	var_8_2:make(function(arg_9_0, arg_9_1, arg_9_2)
+		if arg_9_0 == UIItemList.EventUpdate then
+			local var_9_0 = var_8_1[arg_9_1 + 1]
 
-				if uv1.skills[slot3] and slot5.id == 11720 and not uv1.transforms[3612] then
-					slot5 = nil
+			if var_9_0 then
+				local var_9_1 = var_8_0:fateSkillChange(var_9_0)
+				local var_9_2 = getSkillConfig(var_8_0:RemapSkillId(var_9_1))
+				local var_9_3 = var_8_0.skills[var_9_1]
+
+				if var_9_3 and var_9_3.id == 11720 and not var_8_0.transforms[3612] then
+					var_9_3 = nil
 				end
 
-				if slot5 and slot5.id == 14900 and not uv1.transforms[16412] then
-					slot5 = nil
+				if var_9_3 and var_9_3.id == 14900 and not var_8_0.transforms[16412] then
+					var_9_3 = nil
 				end
 
-				uv2:updateSkillTF(slot2, slot4, slot5)
-				onButton(uv2, slot2, function ()
-					uv0:emit(ShipMainMediator.ON_SKILL, uv1.id, uv2, uv3 + 1)
+				arg_8_0:updateSkillTF(arg_9_2, var_9_2, var_9_3)
+				onButton(arg_8_0, arg_9_2, function()
+					arg_8_0:emit(ShipMainMediator.ON_SKILL, var_9_2.id, var_9_3, arg_9_1 + 1)
 				end, SFX_PANEL)
-
-				return
+			else
+				arg_8_0:updateSkillTF(arg_9_2)
+				RemoveComponent(arg_9_2, "Button")
 			end
-
-			uv2:updateSkillTF(slot2)
-			RemoveComponent(slot2, "Button")
 		end
 	end)
-	slot3:align(#slot2)
+	var_8_2:align(#var_8_1)
 end
 
-function slot0.updateSkillTF(slot0, slot1, slot2, slot3)
-	slot4 = findTF(slot1, "skill")
+function var_0_0.updateSkillTF(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	local var_11_0 = findTF(arg_11_1, "skill")
+	local var_11_1 = findTF(arg_11_1, "lock")
+	local var_11_2 = findTF(arg_11_1, "unknown")
 
-	if slot2 then
-		setActive(slot4, true)
-		setActive(findTF(slot1, "unknown"), false)
-		setActive(findTF(slot1, "lock"), not slot3)
-		LoadImageSpriteAsync("skillicon/" .. slot2.icon, findTF(slot4, "icon"))
+	if arg_11_2 then
+		setActive(var_11_0, true)
+		setActive(var_11_2, false)
+		setActive(var_11_1, not arg_11_3)
+		LoadImageSpriteAsync("skillicon/" .. arg_11_2.icon, findTF(var_11_0, "icon"))
 
-		findTF(slot4, "mask/name").anchoredPosition = Vector2(0, 0)
+		findTF(var_11_0, "mask/name").anchoredPosition = Vector2(0, 0)
 
-		setScrollText(findTF(slot4, "mask/name"), getSkillName(slot2.id))
-		setText(findTF(slot4, "level"), "LEVEL: " .. (slot3 and slot3.level or "??"))
+		setScrollText(findTF(var_11_0, "mask/name"), getSkillName(arg_11_2.id))
+
+		local var_11_3 = findTF(var_11_0, "level")
+
+		setText(var_11_3, "LEVEL: " .. (arg_11_3 and arg_11_3.level or "??"))
 	else
-		setActive(slot4, false)
-		setActive(slot6, true)
-		setActive(slot5, false)
+		setActive(var_11_0, false)
+		setActive(var_11_2, true)
+		setActive(var_11_1, false)
 	end
 end
 
-function slot0.updateLevelInfo(slot0)
-	slot1 = slot0.shipVO
+function var_0_0.updateLevelInfo(arg_12_0)
+	local var_12_0 = arg_12_0.shipVO
 
-	setText(slot0.levelTxt, slot1.level)
+	setText(arg_12_0.levelTxt, var_12_0.level)
 
-	slot2 = slot1:getLevelExpConfig()
+	local var_12_1 = var_12_0:getLevelExpConfig()
 
-	if slot1.level ~= slot1:getMaxLevel() then
-		setSlider(slot0.levelSlider, 0, slot2.exp_interval, slot1.exp)
-		setText(slot0.expInfo, slot1.exp .. "/" .. slot2.exp_interval)
+	if var_12_0.level ~= var_12_0:getMaxLevel() then
+		setSlider(arg_12_0.levelSlider, 0, var_12_1.exp_interval, var_12_0.exp)
+		setText(arg_12_0.expInfo, var_12_0.exp .. "/" .. var_12_1.exp_interval)
 	else
-		setSlider(slot0.levelSlider, 0, 1, 1)
-		setText(slot0.expInfo, slot1.exp .. "/Max")
+		setSlider(arg_12_0.levelSlider, 0, 1, 1)
+		setText(arg_12_0.expInfo, var_12_0.exp .. "/Max")
 	end
 
-	slot0:updateMaxLevel(slot1)
-	slot0:UpdateExpTip(slot1)
+	arg_12_0:updateMaxLevel(var_12_0)
+	arg_12_0:UpdateExpTip(var_12_0)
 end
 
-function slot0.UpdateExpTip(slot0, slot1)
-	setActive(slot0.expTip, not slot1:isReachNextMaxLevel() and not (slot1.maxLevel <= slot1.level))
-	onButton(slot0, slot0.expTip, function ()
-		if uv0:isActivityNpc() then
+function var_0_0.UpdateExpTip(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1:isReachNextMaxLevel()
+	local var_13_1 = arg_13_1.level >= arg_13_1.maxLevel
+
+	setActive(arg_13_0.expTip, not var_13_0 and not var_13_1)
+	onButton(arg_13_0, arg_13_0.expTip, function()
+		if arg_13_1:isActivityNpc() then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("coures_exp_npc_tip"),
-				onYes = function ()
-					uv0:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, uv1)
+				onYes = function()
+					arg_13_0:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg_13_1)
 				end
 			})
 		else
-			uv1:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, uv0)
+			arg_13_0:emit(ShipViewConst.SHOW_EXP_ITEM_USAGE, arg_13_1)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.updateMaxLevel(slot0, slot1)
-	if slot1:isReachNextMaxLevel() then
-		SetActive(slot0.outline, true)
-		setActive(slot0.levelTip, true)
-		blinkAni(slot0.outline, 1.5, -1, 0.1):setFrom(1)
-		blinkAni(slot0.levelTip, 1.5, -1, 0.1):setFrom(1)
+function var_0_0.updateMaxLevel(arg_16_0, arg_16_1)
+	if arg_16_1:isReachNextMaxLevel() then
+		SetActive(arg_16_0.outline, true)
+		setActive(arg_16_0.levelTip, true)
+		blinkAni(arg_16_0.outline, 1.5, -1, 0.1):setFrom(1)
+		blinkAni(arg_16_0.levelTip, 1.5, -1, 0.1):setFrom(1)
 
-		slot3 = slot1:getNextMaxLevelConsume()
-		slot4 = slot1:getMaxLevel()
-		slot5 = slot1:getNextMaxLevel()
+		local var_16_0 = arg_16_1:getNextMaxLevelConsume()
+		local var_16_1 = arg_16_1:getMaxLevel()
+		local var_16_2 = arg_16_1:getNextMaxLevel()
 
-		onButton(slot0, slot0.levelBg, function ()
-			if uv0:isActivityNpc() then
+		onButton(arg_16_0, arg_16_0.levelBg, function()
+			if arg_16_1:isActivityNpc() then
 				pg.TipsMgr.GetInstance():ShowTips(i18n("npc_upgrade_max_level"))
 
 				return
 			end
 
-			uv1:emit(ShipViewConst.SHOW_CUSTOM_MSG, {
+			arg_16_0:emit(ShipViewConst.SHOW_CUSTOM_MSG, {
 				content = i18n("upgrade_to_next_maxlevel_tip"),
-				content1 = uv2 .. "->" .. uv3,
-				items = uv4,
-				onYes = function ()
-					slot0, slot1 = uv0:canUpgradeMaxLevel()
+				content1 = var_16_1 .. "->" .. var_16_2,
+				items = var_16_0,
+				onYes = function()
+					local var_18_0, var_18_1 = arg_16_1:canUpgradeMaxLevel()
 
-					if slot0 then
-						uv1:emit(ShipViewConst.HIDE_CUSTOM_MSG)
-						uv1:emit(ShipMainMediator.ON_UPGRADE_MAX_LEVEL, uv0.id)
+					if var_18_0 then
+						arg_16_0:emit(ShipViewConst.HIDE_CUSTOM_MSG)
+						arg_16_0:emit(ShipMainMediator.ON_UPGRADE_MAX_LEVEL, arg_16_1.id)
 					else
-						pg.TipsMgr.GetInstance():ShowTips(slot1)
+						pg.TipsMgr.GetInstance():ShowTips(var_18_1)
 					end
 				end
 			})
 		end, SFX_PANEL)
-
-		return
+	else
+		arg_16_0:removeLevelUpTip()
 	end
-
-	slot0:removeLevelUpTip()
 end
 
-function slot0.removeLevelUpTip(slot0)
-	SetActive(slot0.outline, false)
-	setActive(slot0.levelTip, false)
+function var_0_0.removeLevelUpTip(arg_19_0)
+	SetActive(arg_19_0.outline, false)
+	setActive(arg_19_0.levelTip, false)
 
-	if LeanTween.isTweening(go(slot0.outline)) then
-		LeanTween.cancel(go(slot0.outline))
+	if LeanTween.isTweening(go(arg_19_0.outline)) then
+		LeanTween.cancel(go(arg_19_0.outline))
 	end
 
-	if LeanTween.isTweening(go(slot0.levelTip)) then
-		LeanTween.cancel(go(slot0.levelTip))
+	if LeanTween.isTweening(go(arg_19_0.levelTip)) then
+		LeanTween.cancel(go(arg_19_0.levelTip))
 	end
 
-	removeOnButton(slot0.levelBg)
+	removeOnButton(arg_19_0.levelBg)
 end
 
-function slot0.doLeveUpAnim(slot0, slot1, slot2, slot3)
-	slot0:removeLevelUpTip()
-	slot0:enableEvent(false)
+function var_0_0.doLeveUpAnim(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
+	arg_20_0:removeLevelUpTip()
+	arg_20_0:enableEvent(false)
 
-	slot4 = {}
+	local var_20_0 = {}
 
-	if slot1.level < slot2.level then
-		slot6 = slot1:getLevelExpConfig()
+	if arg_20_1.level < arg_20_2.level then
+		local var_20_1 = arg_20_2.level - arg_20_1.level
+		local var_20_2 = arg_20_1:getLevelExpConfig()
 
-		for slot10 = 1, slot2.level - slot1.level do
-			table.insert(slot4, function (slot0)
-				TweenValue(uv0.levelSlider, 0, uv1.exp_interval, uv2, 0, function (slot0)
-					setSlider(uv0.levelSlider, 0, uv1.exp_interval, slot0)
-					setText(uv0.expInfo, math.floor(slot0) .. "/" .. uv1.exp_interval)
-				end, function ()
-					slot0 = Clone(uv0)
-					uv0.level = uv0.level + 1
-					uv1 = uv0:getLevelExpConfig()
+		for iter_20_0 = 1, var_20_1 do
+			table.insert(var_20_0, function(arg_21_0)
+				TweenValue(arg_20_0.levelSlider, 0, var_20_2.exp_interval, var_0_4, 0, function(arg_22_0)
+					setSlider(arg_20_0.levelSlider, 0, var_20_2.exp_interval, arg_22_0)
+					setText(arg_20_0.expInfo, math.floor(arg_22_0) .. "/" .. var_20_2.exp_interval)
+				end, function()
+					local var_23_0 = Clone(arg_20_1)
 
-					uv2:scaleAnim(uv2.levelTxt, uv3, uv4, uv5 / 2, function ()
-						if uv0.level == uv1.level then
-							uv2:doAttrAnim(uv3, uv1, function ()
-								TweenValue(uv0.levelSlider, 0, uv1.exp, uv2, 0, function (slot0)
-									setSlider(uv0.levelSlider, 0, uv1.exp_interval, slot0)
-									setText(uv0.expInfo, math.floor(slot0) .. "/" .. uv1.exp_interval)
-								end, uv4)
+					arg_20_1.level = arg_20_1.level + 1
+					var_20_2 = arg_20_1:getLevelExpConfig()
+
+					arg_20_0:scaleAnim(arg_20_0.levelTxt, var_0_5, var_0_6, var_0_4 / 2, function()
+						if arg_20_1.level == arg_20_2.level then
+							arg_20_0:doAttrAnim(var_23_0, arg_20_2, function()
+								TweenValue(arg_20_0.levelSlider, 0, arg_20_2.exp, var_0_4, 0, function(arg_26_0)
+									setSlider(arg_20_0.levelSlider, 0, var_20_2.exp_interval, arg_26_0)
+									setText(arg_20_0.expInfo, math.floor(arg_26_0) .. "/" .. var_20_2.exp_interval)
+								end, arg_21_0)
 							end)
 						else
-							uv2:doAttrAnim(uv3, uv0, uv6)
+							arg_20_0:doAttrAnim(var_23_0, arg_20_1, arg_21_0)
 						end
-					end, function ()
-						setText(uv0.levelTxt, uv1.level)
+					end, function()
+						setText(arg_20_0.levelTxt, arg_20_1.level)
 					end)
 				end)
 			end)
 		end
 	else
-		slot5 = slot2:getLevelExpConfig()
+		local var_20_3 = arg_20_2:getLevelExpConfig()
 
-		if slot1.exp < slot2.exp then
-			table.insert(slot4, function (slot0)
-				TweenValue(uv0.levelSlider, uv1.exp, uv2.exp, uv3, 0, function (slot0)
-					setSlider(uv0.levelSlider, 0, uv1.exp_interval, slot0)
-					setText(uv0.expInfo, math.floor(slot0) .. "/" .. uv1.exp_interval)
-				end, slot0)
+		if arg_20_2.exp > arg_20_1.exp then
+			table.insert(var_20_0, function(arg_28_0)
+				TweenValue(arg_20_0.levelSlider, arg_20_1.exp, arg_20_2.exp, var_0_4, 0, function(arg_29_0)
+					setSlider(arg_20_0.levelSlider, 0, var_20_3.exp_interval, arg_29_0)
+					setText(arg_20_0.expInfo, math.floor(arg_29_0) .. "/" .. var_20_3.exp_interval)
+				end, arg_28_0)
 			end)
 		end
 	end
 
-	seriesAsync(slot4, function ()
-		if uv0 then
-			uv0()
+	seriesAsync(var_20_0, function()
+		if arg_20_3 then
+			arg_20_3()
 		end
 
-		uv1:enableEvent(true)
+		arg_20_0:enableEvent(true)
 	end)
 end
 
-function slot0.doAttrAnim(slot0, slot1, slot2, slot3)
-	slot4 = intProperties(slot1:getShipProperties())
-	slot5, slot6 = slot1:getEquipmentProperties()
-	slot7 = intProperties(slot2:getShipProperties())
-	slot8, slot9 = slot2:getEquipmentProperties()
-	slot5 = intProperties(slot5)
-	slot6 = intProperties(slot6)
-	slot8 = intProperties(slot8)
-	slot9 = intProperties(slot9)
+function var_0_0.doAttrAnim(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
+	local var_31_0 = intProperties(arg_31_1:getShipProperties())
+	local var_31_1, var_31_2 = arg_31_1:getEquipmentProperties()
+	local var_31_3 = intProperties(arg_31_2:getShipProperties())
+	local var_31_4, var_31_5 = arg_31_2:getEquipmentProperties()
+	local var_31_6 = intProperties(var_31_1)
+	local var_31_7 = intProperties(var_31_2)
+	local var_31_8 = intProperties(var_31_4)
+	local var_31_9 = intProperties(var_31_5)
+	local var_31_10 = {}
+	local var_31_11 = arg_31_2:getShipCombatPower()
+	local var_31_12 = arg_31_1:getShipCombatPower()
 
-	if slot1:getShipCombatPower() ~= slot2:getShipCombatPower() then
-		table.insert({}, function (slot0)
-			TweenValue(uv0.powerTxt, uv1, uv2, uv3, 0, function (slot0)
-				setText(uv0.powerTxt, math.floor(slot0))
-			end, slot0)
+	if var_31_12 ~= var_31_11 then
+		table.insert(var_31_10, function(arg_32_0)
+			TweenValue(arg_31_0.powerTxt, var_31_12, var_31_11, var_0_4, 0, function(arg_33_0)
+				setText(arg_31_0.powerTxt, math.floor(arg_33_0))
+			end, arg_32_0)
 		end)
 	end
 
-	for slot16, slot17 in pairs(uv1) do
-		slot18 = findTF(slot0.attrs, "props/" .. slot16) or findTF(slot0.attrs, "prop_" .. slot16)
-		slot19 = findTF(slot0.attrs, "icons/" .. slot16) or findTF(slot0.attrs, "icon_" .. slot16)
-		slot20 = findTF(slot18, "value")
-		slot21 = findTF(slot18, "add")
-		slot22 = slot4[slot17] or 0
-		slot24 = slot7[slot17] or 0
-		slot26, slot27 = nil
+	for iter_31_0, iter_31_1 in pairs(var_0_1) do
+		local var_31_13 = findTF(arg_31_0.attrs, "props/" .. iter_31_0) or findTF(arg_31_0.attrs, "prop_" .. iter_31_0)
+		local var_31_14 = findTF(arg_31_0.attrs, "icons/" .. iter_31_0) or findTF(arg_31_0.attrs, "icon_" .. iter_31_0)
+		local var_31_15 = findTF(var_31_13, "value")
+		local var_31_16 = findTF(var_31_13, "add")
+		local var_31_17 = var_31_0[iter_31_1] or 0
+		local var_31_18 = var_31_7[iter_31_1] or 1
+		local var_31_19 = var_31_3[iter_31_1] or 0
+		local var_31_20 = var_31_9[iter_31_1] or 1
+		local var_31_21
+		local var_31_22
 
-		if slot0.evalueIndex == uv2.EQUIPMENT_ADDITION then
-			slot26 = calcFloor(((slot5[slot17] or 0) + slot22) * (slot6[slot17] or 1)) - slot22
-			slot27 = calcFloor(((slot8[slot17] or 0) + slot24) * (slot9[slot17] or 1)) - slot24
-		elseif slot0.evalueIndex == uv2.TECHNOLOGY_ADDITION then
-			slot26 = slot1:getTechNationAddition(slot17)
-			slot27 = slot2:getTechNationAddition(slot17)
+		if arg_31_0.evalueIndex == var_0_0.EQUIPMENT_ADDITION then
+			var_31_21 = calcFloor(((var_31_6[iter_31_1] or 0) + var_31_17) * var_31_18) - var_31_17
+			var_31_22 = calcFloor(((var_31_8[iter_31_1] or 0) + var_31_19) * var_31_20) - var_31_19
+		elseif arg_31_0.evalueIndex == var_0_0.TECHNOLOGY_ADDITION then
+			var_31_21 = arg_31_1:getTechNationAddition(iter_31_1)
+			var_31_22 = arg_31_2:getTechNationAddition(iter_31_1)
 		end
 
-		if slot22 ~= 0 then
-			table.insert(slot10, function (slot0)
-				TweenValue(uv0, uv1, uv2, uv3, 0, function (slot0)
-					setText(uv0, math.floor(slot0))
-				end, slot0)
-				uv4:scaleAnim(uv0, uv5, uv6, uv3 / 2)
+		if var_31_17 ~= 0 then
+			table.insert(var_31_10, function(arg_34_0)
+				TweenValue(var_31_15, var_31_17, var_31_19, var_0_4, 0, function(arg_35_0)
+					setText(var_31_15, math.floor(arg_35_0))
+				end, arg_34_0)
+				arg_31_0:scaleAnim(var_31_15, var_0_5, var_0_6, var_0_4 / 2)
 			end)
 		end
 
-		if slot26 < slot27 then
-			slot28 = slot0.evalueIndex == uv2.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
+		if var_31_21 < var_31_22 then
+			local var_31_23 = arg_31_0.evalueIndex == var_0_0.EQUIPMENT_ADDITION and COLOR_GREEN or COLOR_YELLOW
 
-			table.insert(slot10, function (slot0)
-				TweenValue(uv0, uv1, uv2, uv3, 0, function (slot0)
-					setText(uv0, setColorStr("+" .. math.floor(slot0), uv1))
-				end, slot0)
-				uv5:scaleAnim(uv0, uv6, uv7, uv3 / 2)
+			table.insert(var_31_10, function(arg_36_0)
+				TweenValue(var_31_16, var_31_21, var_31_22, var_0_4, 0, function(arg_37_0)
+					setText(var_31_16, setColorStr("+" .. math.floor(arg_37_0), var_31_23))
+				end, arg_36_0)
+				arg_31_0:scaleAnim(var_31_16, var_0_5, var_0_6, var_0_4 / 2)
 			end)
 		end
 
-		setActive(slot21, slot27 ~= 0)
+		setActive(var_31_16, var_31_22 ~= 0)
 
-		if slot17 == AttributeType.Armor then
-			setActive(slot20, false)
-			setActive(slot21, false)
-			setText(slot0.armorNameTxt, slot2:getShipArmorName())
-		elseif slot17 == AttributeType.Expend then
-			slot30 = findTF(slot18, "value")
+		if iter_31_1 == AttributeType.Armor then
+			setActive(var_31_15, false)
+			setActive(var_31_16, false)
+			setText(arg_31_0.armorNameTxt, arg_31_2:getShipArmorName())
+		elseif iter_31_1 == AttributeType.Expend then
+			local var_31_24 = arg_31_2:getBattleTotalExpend()
+			local var_31_25 = arg_31_1:getBattleTotalExpend()
+			local var_31_26 = findTF(var_31_13, "value")
 
-			if slot1:getBattleTotalExpend() ~= slot2:getBattleTotalExpend() then
-				table.insert(slot10, function (slot0)
-					TweenValue(uv0, uv1, uv2, uv3, 0, function (slot0)
-						setText(uv0, math.floor(slot0))
-					end, slot0)
-					uv4:scaleAnim(uv0, uv5, uv6, uv3 / 2)
+			if var_31_25 ~= var_31_24 then
+				table.insert(var_31_10, function(arg_38_0)
+					TweenValue(var_31_26, var_31_25, var_31_24, var_0_4, 0, function(arg_39_0)
+						setText(var_31_26, math.floor(arg_39_0))
+					end, arg_38_0)
+					arg_31_0:scaleAnim(var_31_26, var_0_5, var_0_6, var_0_4 / 2)
 				end)
 			end
 
-			setActive(slot21, false)
-		elseif slot17 == AttributeType.OxyMax or slot17 == AttributeType.Tactics then
-			slot28 = table.contains(TeamType.SubShipType, slot2:getShipType())
+			setActive(var_31_16, false)
+		elseif iter_31_1 == AttributeType.OxyMax or iter_31_1 == AttributeType.Tactics then
+			local var_31_27 = table.contains(TeamType.SubShipType, arg_31_2:getShipType())
 
-			setActive(slot19, slot28)
-			setActive(slot18, slot28)
+			setActive(var_31_14, var_31_27)
+			setActive(var_31_13, var_31_27)
 
-			if slot28 and slot17 == AttributeType.Tactics then
-				slot29, slot30 = slot2:getTactics()
+			if var_31_27 and iter_31_1 == AttributeType.Tactics then
+				local var_31_28, var_31_29 = arg_31_2:getTactics()
 
-				setActive(slot20, false)
-				setActive(slot21, true)
-				setText(slot21, i18n(slot30))
+				setActive(var_31_15, false)
+				setActive(var_31_16, true)
+				setText(var_31_16, i18n(var_31_29))
 			end
 		end
 	end
 
-	parallelAsync(slot10, function ()
-		if uv0 then
-			uv0()
+	parallelAsync(var_31_10, function()
+		if arg_31_3 then
+			arg_31_3()
 		end
 	end)
 end
 
-function slot0.scaleAnim(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	LeanTween.scale(go(slot1), slot3, slot4):setFrom(slot2):setOnComplete(System.Action(function ()
-		if uv0 then
-			uv0()
+function var_0_0.scaleAnim(arg_41_0, arg_41_1, arg_41_2, arg_41_3, arg_41_4, arg_41_5, arg_41_6)
+	LeanTween.scale(go(arg_41_1), arg_41_3, arg_41_4):setFrom(arg_41_2):setOnComplete(System.Action(function()
+		if arg_41_6 then
+			arg_41_6()
 		end
 
-		LeanTween.scale(go(uv1), uv2, uv3):setFrom(uv4):setOnComplete(System.Action(uv5))
+		LeanTween.scale(go(arg_41_1), arg_41_2, arg_41_4):setFrom(arg_41_3):setOnComplete(System.Action(arg_41_5))
 	end))
 end
 
-function slot0.clear(slot0)
-	triggerToggle(slot0.evalueToggle, false)
+function var_0_0.clear(arg_43_0)
+	triggerToggle(arg_43_0.evalueToggle, false)
 
-	if LeanTween.isTweening(go(slot0.levelSlider)) then
-		LeanTween.cancel(go(slot0.levelSlider))
+	if LeanTween.isTweening(go(arg_43_0.levelSlider)) then
+		LeanTween.cancel(go(arg_43_0.levelSlider))
 	end
 
-	if LeanTween.isTweening(go(slot0.powerTxt)) then
-		LeanTween.cancel(go(slot0.powerTxt))
+	if LeanTween.isTweening(go(arg_43_0.powerTxt)) then
+		LeanTween.cancel(go(arg_43_0.powerTxt))
 	end
 
-	if LeanTween.isTweening(go(slot0.expInfo)) then
-		LeanTween.cancel(go(slot0.expInfo))
+	if LeanTween.isTweening(go(arg_43_0.expInfo)) then
+		LeanTween.cancel(go(arg_43_0.expInfo))
 	end
 
-	slot0:removeLevelUpTip()
+	arg_43_0:removeLevelUpTip()
 
-	slot0.additionValues = nil
+	arg_43_0.additionValues = nil
 end
 
-return slot0
+return var_0_0

@@ -1,13 +1,16 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_394 = {}
-slot1 = slot0.word_template_394
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_394 = {}
+
+local var_0_1 = var_0_0.word_template_394
 
 function temp()
-	uv0["糕"] = {
-		["力"] = {
-			["先"] = {
-				["生"] = {
+	var_0_1.糕 = {
+		力 = {
+			先 = {
+				生 = {
 					this = true
 				}
 			}
@@ -18,9 +21,9 @@ end
 temp()
 
 function temp()
-	uv0["枷"] = {
-		["一"] = {
-			["秒"] = {
+	var_0_1.枷 = {
+		一 = {
+			秒 = {
 				this = true
 			}
 		}
@@ -30,13 +33,13 @@ end
 temp()
 
 function temp()
-	uv0["禾"] = {
-		["舀"] = {
-			["学"] = {
-				["拯"] = {
-					["救"] = {
-						["中"] = {
-							["国"] = {
+	var_0_1.禾 = {
+		舀 = {
+			学 = {
+				拯 = {
+					救 = {
+						中 = {
+							国 = {
 								this = true
 							}
 						}
@@ -50,9 +53,9 @@ end
 temp()
 
 function temp()
-	uv0["裆"] = {
-		["仲"] = {
-			["央"] = {
+	var_0_1.裆 = {
+		仲 = {
+			央 = {
 				this = true
 			}
 		}
@@ -62,7 +65,7 @@ end
 temp()
 
 function temp()
-	uv0.u = {
+	var_0_1.u = {
 		s = {
 			h = {
 				o = {
@@ -137,9 +140,9 @@ end
 temp()
 
 function temp()
-	uv0["算"] = {
-		["计"] = {
-			["师"] = {
+	var_0_1.算 = {
+		计 = {
+			师 = {
 				this = true
 			}
 		}
@@ -149,7 +152,7 @@ end
 temp()
 
 function temp()
-	uv0["壴"] = {
+	var_0_1.壴 = {
 		["."] = {
 			["{"] = {
 				["0"] = {
@@ -157,7 +160,7 @@ function temp()
 						["1"] = {
 							["5"] = {
 								["}"] = {
-									["彡"] = {
+									彡 = {
 										["."] = {
 											["{"] = {
 												["0"] = {
@@ -165,7 +168,7 @@ function temp()
 														["1"] = {
 															["5"] = {
 																["}"] = {
-																	["丽"] = {
+																	丽 = {
 																		["."] = {
 																			["{"] = {
 																				["0"] = {
@@ -173,7 +176,7 @@ function temp()
 																						["1"] = {
 																							["5"] = {
 																								["}"] = {
-																									["女"] = {
+																									女 = {
 																										["."] = {
 																											["{"] = {
 																												["0"] = {
@@ -181,7 +184,7 @@ function temp()
 																														["1"] = {
 																															["5"] = {
 																																["}"] = {
-																																	["爰"] = {
+																																	爰 = {
 																																		this = true
 																																	}
 																																}

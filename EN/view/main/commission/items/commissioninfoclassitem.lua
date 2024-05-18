@@ -1,119 +1,130 @@
-slot0 = class("CommissionInfoClassItem", import(".CommissionInfoItem"))
+﻿local var_0_0 = class("CommissionInfoClassItem", import(".CommissionInfoItem"))
 
-function slot0.OnFlush(slot0)
-	slot1 = getProxy(NavalAcademyProxy):getStudents()
-	slot3 = table.getCount(slot1)
-	slot4 = 0
+function var_0_0.OnFlush(arg_1_0)
+	local var_1_0 = getProxy(NavalAcademyProxy):getStudents()
+	local var_1_1 = getProxy(NavalAcademyProxy):getSkillClassNum()
+	local var_1_2 = table.getCount(var_1_0)
+	local var_1_3 = 0
 
-	_.each(_.values(slot1), function (slot0)
-		if slot0:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
-			uv0 = uv0 + 1
+	_.each(_.values(var_1_0), function(arg_2_0)
+		if arg_2_0:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime() then
+			var_1_3 = var_1_3 + 1
 		end
 	end)
 
-	slot0.finishedCounter.text = slot4
-	slot0.ongoingCounter.text = slot3 - slot4
-	slot0.leisureCounter.text = getProxy(NavalAcademyProxy):getSkillClassNum() - slot3
+	arg_1_0.finishedCounter.text = var_1_3
+	arg_1_0.ongoingCounter.text = var_1_2 - var_1_3
+	arg_1_0.leisureCounter.text = var_1_1 - var_1_2
 
-	setActive(slot0.finishedCounterContainer, slot4 > 0)
-	setActive(slot0.ongoingCounterContainer, slot4 < slot3)
-	setActive(slot0.leisureCounterContainer, slot3 < slot2)
-	setActive(slot0.goBtn, slot4 == 0)
-	setActive(slot0.finishedBtn, slot4 > 0)
+	setActive(arg_1_0.finishedCounterContainer, var_1_3 > 0)
+	setActive(arg_1_0.ongoingCounterContainer, var_1_3 < var_1_2)
+	setActive(arg_1_0.leisureCounterContainer, var_1_2 < var_1_1)
+	setActive(arg_1_0.goBtn, var_1_3 == 0)
+	setActive(arg_1_0.finishedBtn, var_1_3 > 0)
 
-	slot0.list = slot1
+	arg_1_0.list = var_1_0
 end
 
-function slot0.UpdateListItem(slot0, slot1, slot2, slot3)
-	if slot2 then
-		slot0:UpdateStudent(slot4, slot3)
+function var_0_0.UpdateListItem(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = arg_3_2
+	local var_3_1 = arg_3_3:Find("unlock/name_bg")
 
-		slot3:Find("unlock/name_bg").sizeDelta = Vector2(267, 45)
+	if var_3_0 then
+		arg_3_0:UpdateStudent(var_3_0, arg_3_3)
+
+		var_3_1.sizeDelta = Vector2(267, 45)
 	else
-		slot0:UpdateEmpty(slot3)
+		arg_3_0:UpdateEmpty(arg_3_3)
 
-		slot5.sizeDelta = Vector2(400, 45)
+		var_3_1.sizeDelta = Vector2(400, 45)
 	end
 
-	slot6 = slot4 and slot4:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime()
+	local var_3_2 = var_3_0 and var_3_0:getFinishTime() <= pg.TimeMgr.GetInstance():GetServerTime()
 
-	setActive(slot3:Find("unlock"), true)
-	setActive(slot3:Find("lock"), false)
-	setActive(slot3:Find("unlock/leisure"), not slot4)
-	setActive(slot3:Find("unlock/ongoging"), slot4 and not slot6)
-	setActive(slot3:Find("unlock/finished"), slot4 and slot6)
+	setActive(arg_3_3:Find("unlock"), true)
+	setActive(arg_3_3:Find("lock"), false)
+	setActive(arg_3_3:Find("unlock/leisure"), not var_3_0)
+	setActive(arg_3_3:Find("unlock/ongoging"), var_3_0 and not var_3_2)
+	setActive(arg_3_3:Find("unlock/finished"), var_3_0 and var_3_2)
 end
 
-function slot0.UpdateStudent(slot0, slot1, slot2)
-	slot5 = slot1:getShipVO()
-	slot6 = nil
+function var_0_0.UpdateStudent(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_1:getFinishTime()
+	local var_4_1 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_4_2 = arg_4_1:getShipVO()
+	local var_4_3
 
-	setText(slot2:Find("unlock/name_bg/Text"), slot1:getSkillName())
+	setText(arg_4_2:Find("unlock/name_bg/Text"), arg_4_1:getSkillName())
 
-	if pg.TimeMgr.GetInstance():GetServerTime() < slot1:getFinishTime() then
-		slot0:AddTimer(slot1, slot2)
+	if var_4_1 < var_4_0 then
+		arg_4_0:AddTimer(arg_4_1, arg_4_2)
 
-		slot6 = slot2:Find("unlock/ongoging/shipicon")
+		var_4_3 = arg_4_2:Find("unlock/ongoging/shipicon")
 	else
-		onButton(slot0, slot2:Find("unlock/finished/finish_btn"), function ()
-			uv0:emit(CommissionInfoMediator.FINISH_CLASS, uv1.id, Student.CANCEL_TYPE_AUTO)
+		onButton(arg_4_0, arg_4_2:Find("unlock/finished/finish_btn"), function()
+			arg_4_0:emit(CommissionInfoMediator.FINISH_CLASS, arg_4_1.id, Student.CANCEL_TYPE_AUTO)
 		end, SFX_PANEL)
-		onButton(slot0, slot2, function ()
-			triggerButton(uv0:Find("unlock/finished/finish_btn"))
+		onButton(arg_4_0, arg_4_2, function()
+			triggerButton(arg_4_2:Find("unlock/finished/finish_btn"))
 		end, SFX_PANEL)
 
-		slot6 = slot2:Find("unlock/finished/shipicon")
+		var_4_3 = arg_4_2:Find("unlock/finished/shipicon")
 	end
 
-	updateShip(slot6, slot5)
+	updateShip(var_4_3, var_4_2)
 end
 
-function slot0.AddTimer(slot0, slot1, slot2)
-	slot0:RemoveTimer(slot1)
+function var_0_0.AddTimer(arg_7_0, arg_7_1, arg_7_2)
+	arg_7_0:RemoveTimer(arg_7_1)
 
-	slot3 = slot2:Find("unlock/ongoging/time"):GetComponent(typeof(Text))
-	slot4 = slot1:getFinishTime()
-	slot0.timers[slot1.id] = Timer.New(function ()
-		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() <= 0 then
-			uv1:RemoveTimer(uv2)
-			uv1:Update()
+	local var_7_0 = arg_7_2:Find("unlock/ongoging/time"):GetComponent(typeof(Text))
+	local var_7_1 = arg_7_1:getFinishTime()
+
+	arg_7_0.timers[arg_7_1.id] = Timer.New(function()
+		local var_8_0 = var_7_1 - pg.TimeMgr.GetInstance():GetServerTime()
+
+		if var_8_0 <= 0 then
+			arg_7_0:RemoveTimer(arg_7_1)
+			arg_7_0:Update()
 		else
-			uv3.text = pg.TimeMgr.GetInstance():DescCDTime(slot0)
+			var_7_0.text = pg.TimeMgr.GetInstance():DescCDTime(var_8_0)
 		end
 	end, 1, -1)
 
-	slot0.timers[slot1.id]:Start()
-	slot0.timers[slot1.id]:func()
+	arg_7_0.timers[arg_7_1.id]:Start()
+	arg_7_0.timers[arg_7_1.id]:func()
 end
 
-function slot0.RemoveTimer(slot0, slot1)
-	if slot0.timers[slot1.id] then
-		slot0.timers[slot1.id]:Stop()
+function var_0_0.RemoveTimer(arg_9_0, arg_9_1)
+	if arg_9_0.timers[arg_9_1.id] then
+		arg_9_0.timers[arg_9_1.id]:Stop()
 
-		slot0.timers[slot1.id] = nil
+		arg_9_0.timers[arg_9_1.id] = nil
 	end
 end
 
-function slot0.UpdateEmpty(slot0, slot1)
-	setText(slot1:Find("unlock/name_bg/Text"), i18n("commission_idle"))
-	onButton(slot0, slot1:Find("unlock/leisure/go_btn"), function ()
-		uv0:emit(CommissionInfoMediator.ON_ACTIVE_CLASS)
+function var_0_0.UpdateEmpty(arg_10_0, arg_10_1)
+	setText(arg_10_1:Find("unlock/name_bg/Text"), i18n("commission_idle"))
+	onButton(arg_10_0, arg_10_1:Find("unlock/leisure/go_btn"), function()
+		arg_10_0:emit(CommissionInfoMediator.ON_ACTIVE_CLASS)
 	end, SFX_PANEL)
-	onButton(slot0, slot1, function ()
-		uv0:OnSkip()
+	onButton(arg_10_0, arg_10_1, function()
+		arg_10_0:OnSkip()
 	end, SFX_PANEL)
 end
 
-function slot0.GetList(slot0)
-	return slot0.list, getProxy(NavalAcademyProxy):getSkillClassNum()
+function var_0_0.GetList(arg_13_0)
+	local var_13_0 = getProxy(NavalAcademyProxy):getSkillClassNum()
+
+	return arg_13_0.list, var_13_0
 end
 
-function slot0.OnSkip(slot0)
-	slot0:emit(CommissionInfoMediator.ON_ACTIVE_CLASS)
+function var_0_0.OnSkip(arg_14_0)
+	arg_14_0:emit(CommissionInfoMediator.ON_ACTIVE_CLASS)
 end
 
-function slot0.OnFinishAll(slot0)
-	slot0:emit(CommissionInfoMediator.FINISH_CLASS_ALL)
+function var_0_0.OnFinishAll(arg_15_0)
+	arg_15_0:emit(CommissionInfoMediator.FINISH_CLASS_ALL)
 end
 
-return slot0
+return var_0_0

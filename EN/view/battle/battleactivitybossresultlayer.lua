@@ -1,139 +1,167 @@
-slot0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
+﻿local var_0_0 = class("BattleActivityBossResultLayer", import(".BattleResultLayer"))
 
-function slot0.showRightBottomPanel(slot0)
-	setActive(slot0._blurConatiner:Find("activitybossConfirmPanel"), true)
-	uv0.super.showRightBottomPanel(slot0)
-	SetActive(slot0._rightBottomPanel, false)
-	setActive(slot1:Find("playAgain"), slot0.contextData.system ~= SYSTEM_BOSS_EXPERIMENT)
-	onButton(slot0, slot1:Find("statisticsBtn"), function ()
-		setActive(uv0:Find("playAgain"), uv1._atkBG.gameObject.activeSelf and uv2)
-		triggerButton(uv1._statisticsBtn)
+function var_0_0.showRightBottomPanel(arg_1_0)
+	local var_1_0 = arg_1_0._blurConatiner:Find("activitybossConfirmPanel")
+
+	setActive(var_1_0, true)
+	var_0_0.super.showRightBottomPanel(arg_1_0)
+	SetActive(arg_1_0._rightBottomPanel, false)
+
+	local var_1_1 = arg_1_0.contextData.system
+	local var_1_2 = var_1_1 ~= SYSTEM_BOSS_EXPERIMENT
+
+	setActive(var_1_0:Find("playAgain"), var_1_2)
+	onButton(arg_1_0, var_1_0:Find("statisticsBtn"), function()
+		setActive(var_1_0:Find("playAgain"), arg_1_0._atkBG.gameObject.activeSelf and var_1_2)
+		triggerButton(arg_1_0._statisticsBtn)
 	end, SFX_PANEL)
-	setText(slot1:Find("confirmBtn/Image"), i18n("text_confirm"))
-	onButton(slot0, slot1:Find("confirmBtn"), function ()
-		triggerButton(uv0._confirmBtn)
+	setText(var_1_0:Find("confirmBtn/Image"), i18n("text_confirm"))
+	onButton(arg_1_0, var_1_0:Find("confirmBtn"), function()
+		triggerButton(arg_1_0._confirmBtn)
 	end, SFX_CONFIRM)
-	setText(slot1:Find("confirmBtn/Image"), i18n("text_confirm"))
-	setText(slot1:Find("playAgain/Image"), i18n("re_battle"))
-	setText(slot1:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
+	setText(var_1_0:Find("confirmBtn/Image"), i18n("text_confirm"))
+	setText(var_1_0:Find("playAgain/Image"), i18n("re_battle"))
+	setText(var_1_0:Find("playAgain/bonus/title"), i18n("expedition_extra_drop_tip"))
 
-	slot6 = slot1:Find("playAgain/bonus")
-	slot8 = getProxy(ActivityProxy):getActivityById(slot0.contextData.actId)
-	slot9 = slot0.contextData.stageId
-	slot11 = pg.activity_event_worldboss[slot8:getConfig("config_id")]
-	slot12 = slot11.ticket
-	slot13 = slot8:GetStageBonus(slot9)
+	local var_1_3 = getProxy(FleetProxy):getActivityFleets()[arg_1_0.contextData.actId]
+	local var_1_4 = var_1_0:Find("playAgain/bonus")
+	local var_1_5 = var_1_0:Find("playAgain/ticket")
+	local var_1_6 = getProxy(ActivityProxy):getActivityById(arg_1_0.contextData.actId)
+	local var_1_7 = arg_1_0.contextData.stageId
+	local var_1_8 = var_1_6:getConfig("config_id")
+	local var_1_9 = pg.activity_event_worldboss[var_1_8]
+	local var_1_10 = var_1_9.ticket
+	local var_1_11 = var_1_6:GetStageBonus(var_1_7)
+	local var_1_12 = var_1_6:IsOilLimit(var_1_7)
+	local var_1_13 = 0
+	local var_1_14 = var_1_9.use_oil_limit[arg_1_0.contextData.mainFleetId]
 
-	function (slot0, slot1)
-		if slot1 > 0 then
-			slot2 = math.min(slot0:GetCostSum().oil, uv0[1])
+	;(function(arg_4_0, arg_4_1)
+		local var_4_0 = arg_4_0:GetCostSum().oil
+
+		if arg_4_1 > 0 then
+			var_4_0 = math.min(var_4_0, var_1_14[1])
 		end
 
-		uv1 = uv1 + slot2
-	end(getProxy(FleetProxy):getActivityFleets()[slot0.contextData.actId][slot0.contextData.mainFleetId], slot8:IsOilLimit(slot9) and slot11.use_oil_limit[slot0.contextData.mainFleetId][1] or 0)
-	setText(slot1:Find("playAgain/Text"), 0)
+		var_1_13 = var_1_13 + var_4_0
+	end)(var_1_3[arg_1_0.contextData.mainFleetId], var_1_12 and var_1_14[1] or 0)
+	setText(var_1_0:Find("playAgain/Text"), var_1_13)
 
-	slot18, slot19 = nil
+	local var_1_15
+	local var_1_16
 
-	setActive(slot6, slot13 > 0)
-	setActive(slot1:Find("playAgain/ticket"), slot13 <= 0)
-	setText(slot6:Find("Text"), slot13)
+	setActive(var_1_4, var_1_11 > 0)
+	setActive(var_1_5, var_1_11 <= 0)
+	setText(var_1_4:Find("Text"), var_1_11)
 
-	if slot13 <= 0 then
-		setImageSprite(slot7:Find("icon"), GetSpriteFromAtlas(Drop.New({
+	if var_1_11 <= 0 then
+		local var_1_17 = Drop.New({
 			type = DROP_TYPE_RESOURCE,
-			id = slot12
-		}):getIcon(), ""))
+			id = var_1_10
+		}):getIcon()
+		local var_1_18 = GetSpriteFromAtlas(var_1_17, "")
 
-		slot19 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
-		slot18 = getProxy(PlayerProxy):getRawData():getResource(slot12) > 0
-		slot23 = 1
-		slot24 = slot7:Find("checkbox")
+		setImageSprite(var_1_5:Find("icon"), var_1_18)
 
-		if slot2 == SYSTEM_BOSS_EXPERIMENT then
-			slot23 = 0
+		local var_1_19 = getProxy(PlayerProxy):getRawData():getResource(var_1_10)
 
-			triggerToggle(slot24, false)
-			setToggleEnabled(slot24, false)
-		elseif slot2 == SYSTEM_HP_SHARE_ACT_BOSS then
-			triggerToggle(slot24, true)
-			setToggleEnabled(slot24, false)
-		elseif slot2 == SYSTEM_ACT_BOSS then
-			setToggleEnabled(slot24, slot18)
-			triggerToggle(slot24, slot18 and slot19)
+		var_1_16 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
+		var_1_15 = var_1_19 > 0
+
+		local var_1_20 = 1
+		local var_1_21 = var_1_5:Find("checkbox")
+
+		if var_1_1 == SYSTEM_BOSS_EXPERIMENT then
+			var_1_20 = 0
+
+			triggerToggle(var_1_21, false)
+			setToggleEnabled(var_1_21, false)
+		elseif var_1_1 == SYSTEM_HP_SHARE_ACT_BOSS then
+			triggerToggle(var_1_21, true)
+			setToggleEnabled(var_1_21, false)
+		elseif var_1_1 == SYSTEM_ACT_BOSS then
+			setToggleEnabled(var_1_21, var_1_15)
+			triggerToggle(var_1_21, var_1_15 and var_1_16)
 		end
 
-		if slot22 < slot23 then
-			slot22 = setColorStr(slot22, COLOR_RED) or slot22
-		end
+		var_1_19 = var_1_19 < var_1_20 and setColorStr(var_1_19, COLOR_RED) or var_1_19
 
-		setText(slot7:Find("Text"), slot23 .. "/" .. slot22)
-		onToggle(slot0, slot24, function (slot0)
-			uv0 = slot0
+		setText(var_1_5:Find("Text"), var_1_20 .. "/" .. var_1_19)
+		onToggle(arg_1_0, var_1_21, function(arg_5_0)
+			var_1_16 = arg_5_0
 
-			getProxy(SettingsProxy):setActBossExchangeTicketTip(slot0 and 1 or 0)
+			getProxy(SettingsProxy):setActBossExchangeTicketTip(arg_5_0 and 1 or 0)
 		end, SFX_PANEL, SFX_CANCEL)
 	end
 
-	onButton(slot0, slot1:Find("playAgain"), function ()
-		if uv0.contextData.isLastBonus then
-			uv0:PassMsgbox("lastBonus", {
+	onButton(arg_1_0, var_1_0:Find("playAgain"), function()
+		if arg_1_0.contextData.isLastBonus then
+			arg_1_0:PassMsgbox("lastBonus", {
 				content = i18n("expedition_drop_use_out")
 			})
 
 			return
 		end
 
-		if uv1 == SYSTEM_HP_SHARE_ACT_BOSS and not uv2 then
+		if var_1_1 == SYSTEM_HP_SHARE_ACT_BOSS and not var_1_15 then
 			pg.m02:sendNotification(GAME.GO_BACK)
 			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noTicket"))
 
 			return
 		end
 
-		if pg.battle_cost_template[uv0.contextData.system].oil_cost > 0 and getProxy(PlayerProxy):getRawData().oil < uv3 then
-			uv0:PassMsgbox("oil", uv3)
+		local var_6_0 = pg.battle_cost_template[arg_1_0.contextData.system].oil_cost > 0
+		local var_6_1 = getProxy(PlayerProxy):getRawData().oil
+
+		if var_6_0 and var_6_1 < var_1_13 then
+			arg_1_0:PassMsgbox("oil", var_1_13)
 
 			return
 		end
 
-		if getProxy(PlayerProxy):getRawData():getMaxShipBag() <= getProxy(BayProxy):getShipCount() then
-			uv0:PassMsgbox("shipCapacity")
+		if getProxy(BayProxy):getShipCount() >= getProxy(PlayerProxy):getRawData():getMaxShipBag() then
+			arg_1_0:PassMsgbox("shipCapacity")
 
 			return
 		end
 
-		if _.any(_.values(uv4[uv0.contextData.mainFleetId].ships), function (slot0)
-			return getProxy(BayProxy):getShipById(slot0) and slot1.energy == Ship.ENERGY_LOW
+		local var_6_2 = var_1_3[arg_1_0.contextData.mainFleetId]
+
+		if _.any(_.values(var_6_2.ships), function(arg_7_0)
+			local var_7_0 = getProxy(BayProxy):getShipById(arg_7_0)
+
+			return var_7_0 and var_7_0.energy == Ship.ENERGY_LOW
 		end) then
-			uv0:PassMsgbox("energy", slot4)
+			arg_1_0:PassMsgbox("energy", var_6_2)
 
 			return
 		end
 
-		if uv1 == SYSTEM_ACT_BOSS and uv2 and uv5 then
+		if var_1_1 == SYSTEM_ACT_BOSS and var_1_15 and var_1_16 then
 			pg.m02:sendNotification(GAME.ACT_BOSS_EXCHANGE_TICKET, {
-				stageId = uv6
+				stageId = var_1_7
 			})
 
 			return
 		end
 
-		uv0:emit(NewBattleResultMediator.REENTER_STAGE)
+		arg_1_0:emit(NewBattleResultMediator.REENTER_STAGE)
 	end)
 end
 
-function slot0.PassMsgbox(slot0, slot1, slot2)
+function var_0_0.PassMsgbox(arg_8_0, arg_8_1, arg_8_2)
 	getProxy(ContextProxy):GetPrevContext(1).data.msg = {
-		type = slot1,
-		param = slot2
+		type = arg_8_1,
+		param = arg_8_2
 	}
 
 	pg.m02:sendNotification(GAME.GO_BACK)
 end
 
-function slot0.HideConfirmPanel(slot0)
-	setActive(slot0._blurConatiner:Find("activitybossConfirmPanel"), false)
+function var_0_0.HideConfirmPanel(arg_9_0)
+	local var_9_0 = arg_9_0._blurConatiner:Find("activitybossConfirmPanel")
+
+	setActive(var_9_0, false)
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	icon = 600024,
 	name = "",
 	time = 3,

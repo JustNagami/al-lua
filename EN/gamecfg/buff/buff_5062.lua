@@ -1,4 +1,22 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				check_target = "TargetShipTypeFriendly",
+				skill_id = 5061,
+				quota = 1,
+				ship_type_list = {
+					1,
+					20
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,23 +37,5 @@ return {
 	stack = 1,
 	id = 5061,
 	icon = 5060,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				minTargetNumber = 1,
-				check_target = "TargetShipTypeFriendly",
-				skill_id = 5061,
-				quota = 1,
-				ship_type_list = {
-					1,
-					20
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

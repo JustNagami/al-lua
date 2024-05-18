@@ -1,85 +1,107 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleFormulas
-slot3 = slot0.Battle.BattleAttr
-slot5 = slot0.Battle.BattleConst.EquipmentType
-slot6 = slot0.Battle.BattleConfig
-slot0.Battle.BattleSupportUnit = class("BattleSupportUnit", slot0.Battle.BattlePlayerUnit)
-slot0.Battle.BattleSupportUnit.__name = "BattleSupportUnit"
-slot7 = slot0.Battle.BattleSupportUnit
+﻿ys = ys or {}
 
-function slot7.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleFormulas
+local var_0_3 = var_0_0.Battle.BattleAttr
+local var_0_4 = var_0_0.Battle.BattleConst
+local var_0_5 = var_0_4.EquipmentType
+local var_0_6 = var_0_0.Battle.BattleConfig
 
-	slot0._type = uv1.UnitType.SUPPORT_UNIT
+var_0_0.Battle.BattleSupportUnit = class("BattleSupportUnit", var_0_0.Battle.BattlePlayerUnit)
+var_0_0.Battle.BattleSupportUnit.__name = "BattleSupportUnit"
+
+local var_0_7 = var_0_0.Battle.BattleSupportUnit
+
+function var_0_7.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_7.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._type = var_0_4.UnitType.SUPPORT_UNIT
 end
 
-function slot7.setWeapon(slot0, slot1)
-	slot2 = slot0._tmpData.default_equip_list
-	slot3 = slot0._tmpData.base_list
-	slot4 = slot0._proficiencyList
-	slot5 = slot0._tmpData.preload_count
+function var_0_7.setWeapon(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_0._tmpData.default_equip_list
+	local var_2_1 = arg_2_0._tmpData.base_list
+	local var_2_2 = arg_2_0._proficiencyList
+	local var_2_3 = arg_2_0._tmpData.preload_count
 
-	for slot9, slot10 in ipairs(slot1) do
-		if slot10 and slot10.skin and slot10.skin ~= 0 and Equipment.IsOrbitSkin(slot10.skin) then
-			slot0._orbitSkinIDList = slot0._orbitSkinIDList or {}
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
+		if iter_2_1 and iter_2_1.skin and iter_2_1.skin ~= 0 and Equipment.IsOrbitSkin(iter_2_1.skin) then
+			arg_2_0._orbitSkinIDList = arg_2_0._orbitSkinIDList or {}
 
-			table.insert(slot0._orbitSkinIDList, slot10.skin)
+			table.insert(arg_2_0._orbitSkinIDList, iter_2_1.skin)
 		end
 
-		if slot9 <= Ship.WEAPON_COUNT then
-			slot11 = slot4[slot9]
-			slot12 = slot5[slot9]
+		if iter_2_0 <= Ship.WEAPON_COUNT then
+			local var_2_4 = var_2_2[iter_2_0]
+			local var_2_5 = var_2_3[iter_2_0]
 
-			function slot13(slot0, slot1, slot2)
-				if uv0.GetWeaponPropertyDataFromID(slot0).type == uv1.EquipmentType.INTERCEPT_AIRCRAFT then
-					for slot8 = 1, uv2[uv3] do
-						slot10 = uv4:AddWeapon(slot0, slot1, slot2, uv5, uv3):GetTemplateData().type
+			local function var_2_6(arg_3_0, arg_3_1, arg_3_2)
+				if var_0_1.GetWeaponPropertyDataFromID(arg_3_0).type == var_0_4.EquipmentType.INTERCEPT_AIRCRAFT then
+					local var_3_0 = var_2_1[iter_2_0]
 
-						if uv6.equipment then
-							slot9:SetSrcEquipmentID(uv6.equipment.id)
+					for iter_3_0 = 1, var_3_0 do
+						local var_3_1 = arg_2_0:AddWeapon(arg_3_0, arg_3_1, arg_3_2, var_2_4, iter_2_0)
+						local var_3_2 = var_3_1:GetTemplateData().type
+
+						if iter_2_1.equipment then
+							var_3_1:SetSrcEquipmentID(iter_2_1.equipment.id)
 						end
 					end
 				end
 			end
 
-			if slot10.equipment and #slot10.equipment.weapon_id > 0 then
-				if slot10.equipment.type == EquipType.FighterAircraft then
-					for slot18, slot19 in ipairs(slot10.equipment.weapon_id) do
-						if (not uv2.EQUIPMENT_ACTIVE_LIMITED_BY_TYPE[uv0.GetWeaponPropertyDataFromID(slot19).type] or table.contains(slot21, slot0._tmpData.type)) and slot19 and slot19 ~= -1 then
-							slot13(slot19, slot10.equipment.label, slot10.skin)
+			if iter_2_1.equipment and #iter_2_1.equipment.weapon_id > 0 then
+				if iter_2_1.equipment.type == EquipType.FighterAircraft then
+					local var_2_7 = iter_2_1.equipment.weapon_id
+
+					for iter_2_2, iter_2_3 in ipairs(var_2_7) do
+						local var_2_8 = var_0_1.GetWeaponPropertyDataFromID(iter_2_3).type
+						local var_2_9 = var_0_6.EQUIPMENT_ACTIVE_LIMITED_BY_TYPE[var_2_8]
+
+						if (not var_2_9 or table.contains(var_2_9, arg_2_0._tmpData.type)) and iter_2_3 and iter_2_3 ~= -1 then
+							var_2_6(iter_2_3, iter_2_1.equipment.label, iter_2_1.skin)
 						end
 					end
 				end
-			elseif uv0.GetWeaponDataFromID(slot2[slot9]).type == EquipType.FighterAircraft then
-				slot13(slot14, slot15.label)
+			else
+				local var_2_10 = var_2_0[iter_2_0]
+				local var_2_11 = var_0_1.GetWeaponDataFromID(var_2_10)
+
+				if var_2_11.type == EquipType.FighterAircraft then
+					var_2_6(var_2_10, var_2_11.label)
+				end
 			end
 		end
 	end
 
-	slot6 = #slot2
+	local var_2_12 = #var_2_0
+	local var_2_13 = arg_2_0._tmpData.fix_equip_list
 
-	for slot11, slot12 in ipairs(slot0._tmpData.fix_equip_list) do
-		if slot12 and slot12 ~= -1 then
-			slot0:AddWeapon(slot12, nil, , slot4[slot11 + slot6] or 1, slot11 + slot6):SetFixedFlag()
+	for iter_2_4, iter_2_5 in ipairs(var_2_13) do
+		if iter_2_5 and iter_2_5 ~= -1 then
+			local var_2_14 = var_2_2[iter_2_4 + var_2_12] or 1
+
+			arg_2_0:AddWeapon(iter_2_5, nil, nil, var_2_14, iter_2_4 + var_2_12):SetFixedFlag()
 		end
 	end
 end
 
-function slot7.AddWeapon(slot0, slot1, slot2, slot3, slot4, slot5, slot6)
-	slot0._totalWeapon[#slot0._totalWeapon + 1] = uv0.CreateWeaponUnit(slot1, slot0, slot4, slot5)
+function var_0_7.AddWeapon(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5, arg_4_6)
+	local var_4_0 = var_0_1.CreateWeaponUnit(arg_4_1, arg_4_0, arg_4_4, arg_4_5)
 
-	if slot2 then
-		slot7:SetEquipmentLabel(slot2)
+	arg_4_0._totalWeapon[#arg_4_0._totalWeapon + 1] = var_4_0
+
+	if arg_4_2 then
+		var_4_0:SetEquipmentLabel(arg_4_2)
 	end
 
-	slot0:AddAutoWeapon(slot7)
+	arg_4_0:AddAutoWeapon(var_4_0)
 
-	if slot3 and slot3 ~= 0 then
-		slot7:SetSkinData(slot3)
-		slot0:SetPriorityWeaponSkin(slot3)
+	if arg_4_3 and arg_4_3 ~= 0 then
+		var_4_0:SetSkinData(arg_4_3)
+		arg_4_0:SetPriorityWeaponSkin(arg_4_3)
 	end
 
-	return slot7
+	return var_4_0
 end

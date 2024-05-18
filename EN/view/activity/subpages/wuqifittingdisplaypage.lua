@@ -1,28 +1,29 @@
-slot0 = class("WuQiFittingDisplayPage", import("view.base.BaseActivityPage"))
-slot0.blueprintGroupId = 39904
+﻿local var_0_0 = class("WuQiFittingDisplayPage", import("view.base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.btnClick = slot0._tf:Find("bg/click_area")
-	slot0.rtAnim = slot0._tf:Find("bg/CircleBlue02")
+var_0_0.blueprintGroupId = 39904
+
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.btnClick = arg_1_0._tf:Find("bg/click_area")
+	arg_1_0.rtAnim = arg_1_0._tf:Find("bg/CircleBlue02")
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.rtAnim:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SHIPBLUEPRINT, {
-			shipGroupId = uv0.blueprintGroupId
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.rtAnim:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_3_0)
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SHIPBLUEPRINT, {
+			shipGroupId = arg_2_0.blueprintGroupId
 		})
 	end)
-	onButton(slot0, slot0.btnClick, function ()
-		slot0, slot1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "TechnologyMediator")
+	onButton(arg_2_0, arg_2_0.btnClick, function()
+		local var_4_0, var_4_1 = pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "TechnologyMediator")
 
-		if not slot0 then
-			pg.TipsMgr.GetInstance():ShowTips(slot1)
+		if not var_4_0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_4_1)
 
 			return
 		end
 
-		setActive(uv0.rtAnim, true)
+		setActive(arg_2_0.rtAnim, true)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

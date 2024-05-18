@@ -1,75 +1,83 @@
-slot0 = class("SpWeaponUpgradeMediator", import("view.base.ContextMediator"))
-slot0.EQUIPMENT_UPGRADE = "SpWeaponUpgradeMediator:EQUIPMENT_UPGRADE"
-slot0.EQUIPMENT_COMPOSITE = "SpWeaponUpgradeMediator:EQUIPMENT_COMPOSITE"
-slot0.OPEN_EQUIPMENT_INDEX = "SpWeaponUpgradeMediator:OPEN_EQUIPMENT_INDEX"
-slot0.ON_SKILLINFO = "SpWeaponUpgradeMediator:ON_SKILLINFO"
+﻿local var_0_0 = class("SpWeaponUpgradeMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:BindEvent()
-	slot0.viewComponent:setItems(getProxy(BagProxy):getData())
-	slot0.viewComponent:updateRes(getProxy(PlayerProxy):getData())
+var_0_0.EQUIPMENT_UPGRADE = "SpWeaponUpgradeMediator:EQUIPMENT_UPGRADE"
+var_0_0.EQUIPMENT_COMPOSITE = "SpWeaponUpgradeMediator:EQUIPMENT_COMPOSITE"
+var_0_0.OPEN_EQUIPMENT_INDEX = "SpWeaponUpgradeMediator:OPEN_EQUIPMENT_INDEX"
+var_0_0.ON_SKILLINFO = "SpWeaponUpgradeMediator:ON_SKILLINFO"
 
-	slot4 = EquipmentProxy.StaticGetSpWeapon(slot0.contextData.shipId, slot0.contextData.spWeaponUid)
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 
-	if slot0.contextData.spWeaponConfigId then
-		slot4 = SpWeapon.New({
-			id = slot0.contextData.spWeaponConfigId
+	local var_1_0 = getProxy(BagProxy):getData()
+
+	arg_1_0.viewComponent:setItems(var_1_0)
+
+	local var_1_1 = getProxy(PlayerProxy)
+
+	arg_1_0.viewComponent:updateRes(var_1_1:getData())
+
+	local var_1_2 = EquipmentProxy.StaticGetSpWeapon(arg_1_0.contextData.shipId, arg_1_0.contextData.spWeaponUid)
+
+	if arg_1_0.contextData.spWeaponConfigId then
+		var_1_2 = SpWeapon.New({
+			id = arg_1_0.contextData.spWeaponConfigId
 		})
 	end
 
-	slot0.viewComponent:SetSpWeapon(slot4)
-	slot0:UpdateSpWeapons()
+	arg_1_0.viewComponent:SetSpWeapon(var_1_2)
+	arg_1_0:UpdateSpWeapons()
 end
 
-function slot0.UpdateSpWeapons(slot0)
-	slot1 = getProxy(BayProxy):GetSpWeaponsInShips()
+function var_0_0.UpdateSpWeapons(arg_2_0)
+	local var_2_0 = getProxy(BayProxy):GetSpWeaponsInShips()
+	local var_2_1 = _.values(getProxy(EquipmentProxy):GetSpWeapons())
 
-	for slot6, slot7 in ipairs(_.values(getProxy(EquipmentProxy):GetSpWeapons())) do
-		table.insert(slot1, slot7)
+	for iter_2_0, iter_2_1 in ipairs(var_2_1) do
+		table.insert(var_2_0, iter_2_1)
 	end
 
-	slot0.viewComponent:SetSpWeaponList(slot1)
+	arg_2_0.viewComponent:SetSpWeaponList(var_2_0)
 end
 
-function slot0.BindEvent(slot0)
-	slot0:bind(uv0.EQUIPMENT_UPGRADE, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.UPGRADE_SPWEAPON, {
-			shipId = uv0.contextData.shipId,
-			uid = slot1,
-			items = slot2,
-			consumes = slot3
+function var_0_0.BindEvent(arg_3_0)
+	arg_3_0:bind(var_0_0.EQUIPMENT_UPGRADE, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+		arg_3_0:sendNotification(GAME.UPGRADE_SPWEAPON, {
+			shipId = arg_3_0.contextData.shipId,
+			uid = arg_4_1,
+			items = arg_4_2,
+			consumes = arg_4_3
 		})
 	end)
-	slot0:bind(uv0.EQUIPMENT_COMPOSITE, function (slot0, slot1, slot2, slot3)
-		uv0:sendNotification(GAME.COMPOSITE_SPWEAPON, {
-			id = slot1,
-			consumeItems = slot2,
-			consumeSpweapons = slot3
+	arg_3_0:bind(var_0_0.EQUIPMENT_COMPOSITE, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+		arg_3_0:sendNotification(GAME.COMPOSITE_SPWEAPON, {
+			id = arg_5_1,
+			consumeItems = arg_5_2,
+			consumeSpweapons = arg_5_3
 		})
 	end)
-	slot0:bind(uv0.OPEN_EQUIPMENT_INDEX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_3_0:bind(var_0_0.OPEN_EQUIPMENT_INDEX, function(arg_6_0, arg_6_1)
+		arg_3_0:addSubLayers(Context.New({
 			viewComponent = CustomIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_6_1
 		}))
 	end)
-	slot0:bind(uv0.ON_SKILLINFO, function (slot0, slot1, slot2, slot3)
-		uv0:addSubLayers(Context.New({
+	arg_3_0:bind(var_0_0.ON_SKILLINFO, function(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+		arg_3_0:addSubLayers(Context.New({
 			mediator = SkillInfoMediator,
 			viewComponent = SpWeaponSkillInfoLayer,
 			data = {
-				unlock = slot2,
-				skillId = slot1,
+				unlock = arg_7_2,
+				skillId = arg_7_1,
 				skillOnShip = {
-					level = slot3
+					level = arg_7_3
 				}
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_8_0)
 	return {
 		BagProxy.ITEM_UPDATED,
 		PlayerProxy.UPDATED,
@@ -80,34 +88,35 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	if slot1:getName() == GAME.COMPOSITE_SPWEAPON_DONE then
-		slot0.viewComponent:SetSpWeapon(slot3)
-		slot0.viewComponent:ClearSelectMaterials()
-		slot0.viewComponent:UpdateAll()
+	if var_9_0 == GAME.COMPOSITE_SPWEAPON_DONE then
+		arg_9_0.viewComponent:SetSpWeapon(var_9_1)
+		arg_9_0.viewComponent:ClearSelectMaterials()
+		arg_9_0.viewComponent:UpdateAll()
 
-		if slot0.contextData.shipId and slot0.contextData.shipId > 0 then
-			slot0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
-				spWeaponUid = slot3:GetUID(),
-				shipId = slot0.contextData.shipId
+		if arg_9_0.contextData.shipId and arg_9_0.contextData.shipId > 0 then
+			arg_9_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
+				spWeaponUid = var_9_1:GetUID(),
+				shipId = arg_9_0.contextData.shipId
 			})
 		end
-	elseif slot2 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
-		slot0.viewComponent:emit(BaseUI.ON_BACK)
-	elseif slot2 == GAME.UPGRADE_SPWEAPON_DONE then
-		slot0.viewComponent:SetSpWeapon(slot3)
-		slot0.viewComponent:ClearSelectMaterials()
-		slot0.viewComponent:UpdateAll()
-	elseif slot2 == BagProxy.ITEM_UPDATED then
-		slot0.viewComponent:setItems(getProxy(BagProxy):getData())
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:updateRes(getProxy(PlayerProxy):getData())
-	elseif slot2 == EquipmentProxy.SPWEAPONS_UPDATED then
-		slot0:UpdateSpWeapons()
-		slot0.viewComponent:UpdateCraftTargetCount()
+	elseif var_9_0 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
+		arg_9_0.viewComponent:emit(BaseUI.ON_BACK)
+	elseif var_9_0 == GAME.UPGRADE_SPWEAPON_DONE then
+		arg_9_0.viewComponent:SetSpWeapon(var_9_1)
+		arg_9_0.viewComponent:ClearSelectMaterials()
+		arg_9_0.viewComponent:UpdateAll()
+	elseif var_9_0 == BagProxy.ITEM_UPDATED then
+		arg_9_0.viewComponent:setItems(getProxy(BagProxy):getData())
+	elseif var_9_0 == PlayerProxy.UPDATED then
+		arg_9_0.viewComponent:updateRes(getProxy(PlayerProxy):getData())
+	elseif var_9_0 == EquipmentProxy.SPWEAPONS_UPDATED then
+		arg_9_0:UpdateSpWeapons()
+		arg_9_0.viewComponent:UpdateCraftTargetCount()
 	end
 end
 
-return slot0
+return var_0_0

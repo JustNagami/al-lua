@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行9次攻击，触发全弹发射-约克级I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行9次攻击，触发全弹发射-约克级I",
-	stack = 1,
-	id = 21241,
-	icon = 20200,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 21240
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行9次攻击，触发全弹发射-约克级I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行9次攻击，触发全弹发射-约克级I",
+	stack = 1,
+	id = 21241,
+	icon = 20200,
+	last_effect = ""
 }

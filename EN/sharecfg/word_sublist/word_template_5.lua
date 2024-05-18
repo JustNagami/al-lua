@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_5 = {}
-slot1 = slot0.word_template_5
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_5 = {}
+
+local var_0_1 = var_0_0.word_template_5
 
 function temp()
-	uv0.L = {
+	var_0_1.L = {
 		o = {
 			n = {
 				t = {
@@ -28,17 +31,17 @@ function temp()
 				}
 			}
 		},
-		["月"] = {
+		月 = {
 			S = {
-				["日"] = {
+				日 = {
 					this = true
 				}
 			}
 		},
 		e = {
 			s = {
-				["视"] = {
-					["频"] = {
+				视 = {
+					频 = {
 						this = true
 					}
 				}
@@ -67,7 +70,7 @@ end
 temp()
 
 function temp()
-	uv0.B = {
+	var_0_1.B = {
 		a = {
 			j = {
 				i = {
@@ -168,8 +171,8 @@ function temp()
 		E = {
 			T = {
 				["9"] = {
-					["体"] = {
-						["育"] = {
+					体 = {
+						育 = {
 							this = true
 						}
 					}
@@ -178,10 +181,10 @@ function temp()
 		},
 		e = {
 			t = {
-				["亚"] = {
-					["洲"] = {
-						["唯"] = {
-							["一"] = {
+				亚 = {
+					洲 = {
+						唯 = {
+							一 = {
 								this = true
 							}
 						}
@@ -190,12 +193,12 @@ function temp()
 			},
 			a = {
 				r = {
-					["粘"] = {
-						["仁"] = {
+					粘 = {
+						仁 = {
 							this = true
 						}
 					},
-					["坐"] = {
+					坐 = {
 						l = {
 							o = {
 								n = {
@@ -215,9 +218,9 @@ function temp()
 		},
 		["2"] = {
 			["6"] = {
-				["轰"] = {
-					["炸"] = {
-						["机"] = {
+				轰 = {
+					炸 = {
+						机 = {
 							this = true
 						}
 					}
@@ -319,7 +322,7 @@ end
 temp()
 
 function temp()
-	uv0.M = {
+	var_0_1.M = {
 		e = {
 			m = {
 				e = {
@@ -336,16 +339,16 @@ function temp()
 		},
 		a = {
 			y = {
-				["三"] = {
-					["五"] = {
-						["日"] = {
+				三 = {
+					五 = {
+						日 = {
 							this = true
 						}
 					}
 				},
 				["3"] = {
 					["5"] = {
-						["日"] = {
+						日 = {
 							this = true
 						}
 					}
@@ -354,16 +357,16 @@ function temp()
 					I = {
 						I = {
 							I = {
-								["日"] = {
+								日 = {
 									this = true
 								}
 							}
 						}
 					}
 				},
-				["③"] = {
-					["⑤"] = {
-						["日"] = {
+				③ = {
+					⑤ = {
+						日 = {
 							this = true
 						}
 					}
@@ -424,7 +427,7 @@ end
 temp()
 
 function temp()
-	uv0.J = {
+	var_0_1.J = {
 		a = {
 			n = {
 				c = {
@@ -569,9 +572,9 @@ function temp()
 			a = {
 				n = {
 					g = {
-						["锋"] = {
-							["时"] = {
-								["刻"] = {
+						锋 = {
+							时 = {
+								刻 = {
 									this = true
 								}
 							}
@@ -586,7 +589,7 @@ end
 temp()
 
 function temp()
-	uv0.T = {
+	var_0_1.T = {
 		a = {
 			e = {
 				k = {
@@ -615,10 +618,10 @@ function temp()
 		A = {
 			N = {
 				K = {
-					["碾"] = {
+					碾 = {
 						this = true
 					},
-					["压"] = {
+					压 = {
 						this = true
 					}
 				}
@@ -742,7 +745,7 @@ end
 temp()
 
 function temp()
-	uv0.N = {
+	var_0_1.N = {
 		g = {
 			e = {
 				n = {
@@ -843,9 +846,9 @@ function temp()
 				}
 			}
 		},
-		["个"] = {
-			["五"] = {
-				["年"] = {
+		个 = {
+			五 = {
+				年 = {
 					this = true
 				}
 			}
@@ -856,7 +859,7 @@ end
 temp()
 
 function temp()
-	uv0.S = {
+	var_0_1.S = {
 		e = {
 			p = {
 				o = {
@@ -875,8 +878,8 @@ function temp()
 		},
 		M = {
 			this = true,
-			["论"] = {
-				["坛"] = {
+			论 = {
+				坛 = {
 					this = true
 				}
 			}

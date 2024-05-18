@@ -1,8 +1,8 @@
-slot0 = class("FifthInvitePage", import(".FourthInvitePage"))
+﻿local var_0_0 = class("FifthInvitePage", import(".FourthInvitePage"))
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
-	onButton(slot0, slot0.helpBtn, function ()
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.five_qingdian.tip
@@ -10,4 +10,4 @@ function slot0.OnFirstFlush(slot0)
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

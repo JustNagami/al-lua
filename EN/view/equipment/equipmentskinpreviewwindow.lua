@@ -1,88 +1,91 @@
-slot0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
+﻿local var_0_0 = class("EquipmentSkinPreviewWindow", import("view.ship.ShipPreviewLayer"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "EquipSkinPreviewUI"
 end
 
-function slot0.init(slot0)
-	slot0.buttonList = slot0._tf:Find("left_panel/Buttons")
-	slot0.hitToggle = slot0.buttonList:Find("HitEffect")
-	slot0.spawnToggle = slot0.buttonList:Find("SpawnEffect")
+function var_0_0.init(arg_2_0)
+	arg_2_0.buttonList = arg_2_0._tf:Find("left_panel/Buttons")
+	arg_2_0.hitToggle = arg_2_0.buttonList:Find("HitEffect")
+	arg_2_0.spawnToggle = arg_2_0.buttonList:Find("SpawnEffect")
 
-	uv0.super.init(slot0)
-	setText(slot0.hitToggle:Find("Text"), i18n("hit_preview"))
-	setText(slot0.spawnToggle:Find("Text"), i18n("shoot_preview"))
+	var_0_0.super.init(arg_2_0)
+	setText(arg_2_0.hitToggle:Find("Text"), i18n("hit_preview"))
+	setText(arg_2_0.spawnToggle:Find("Text"), i18n("shoot_preview"))
 end
 
-function slot0.didEnter(slot0)
-	slot3 = {
+function var_0_0.didEnter(arg_3_0)
+	local var_3_0 = pg.equip_skin_template[arg_3_0.equipSkinId]
+	local var_3_1 = var_3_0.hit_fx_name ~= ""
+	local var_3_2 = {
 		EquipType.CannonQuZhu,
 		EquipType.CannonQingXun,
 		EquipType.CannonZhongXun,
 		EquipType.Torpedo,
 		EquipType.SubmarineTorpedo
 	}
-	slot2 = pg.equip_skin_template[slot0.equipSkinId].hit_fx_name ~= "" and _.any(slot1.equip_type, function (slot0)
-		return table.contains(uv0, slot0)
+
+	var_3_1 = var_3_1 and _.any(var_3_0.equip_type, function(arg_4_0)
+		return table.contains(var_3_2, arg_4_0)
 	end)
 
-	setActive(slot0.hitToggle, slot2)
+	setActive(arg_3_0.hitToggle, var_3_1)
 
-	if slot2 then
-		slot0.contextData.hitEffect = defaultValue(slot0.contextData.hitEffect, true)
+	if var_3_1 then
+		arg_3_0.contextData.hitEffect = defaultValue(arg_3_0.contextData.hitEffect, true)
 
-		triggerToggle(slot0.hitToggle, slot0.contextData.hitEffect)
-		onToggle(slot0, slot0.hitToggle, function (slot0)
-			uv0.contextData.hitEffect = slot0
+		triggerToggle(arg_3_0.hitToggle, arg_3_0.contextData.hitEffect)
+		onToggle(arg_3_0, arg_3_0.hitToggle, function(arg_5_0)
+			arg_3_0.contextData.hitEffect = arg_5_0
 
-			uv0:RefreshFXMode()
+			arg_3_0:RefreshFXMode()
 		end)
 	else
-		slot0.contextData.hitEffect = defaultValue(slot0.contextData.hitEffect, false)
+		arg_3_0.contextData.hitEffect = defaultValue(arg_3_0.contextData.hitEffect, false)
 	end
 
-	slot4 = slot1.fire_fx_name ~= ""
+	local var_3_3 = var_3_0.fire_fx_name ~= ""
 
-	setActive(slot0.spawnToggle, slot4)
+	setActive(arg_3_0.spawnToggle, var_3_3)
 
-	if slot4 then
-		slot0.contextData.spawnEffect = defaultValue(slot0.contextData.spawnEffect, true)
+	if var_3_3 then
+		arg_3_0.contextData.spawnEffect = defaultValue(arg_3_0.contextData.spawnEffect, true)
 
-		triggerToggle(slot0.spawnToggle, slot0.contextData.spawnEffect)
-		onToggle(slot0, slot0.spawnToggle, function (slot0)
-			uv0.contextData.spawnEffect = slot0
+		triggerToggle(arg_3_0.spawnToggle, arg_3_0.contextData.spawnEffect)
+		onToggle(arg_3_0, arg_3_0.spawnToggle, function(arg_6_0)
+			arg_3_0.contextData.spawnEffect = arg_6_0
 
-			uv0:RefreshFXMode()
+			arg_3_0:RefreshFXMode()
 		end)
 	else
-		slot0.contextData.spawnEffect = defaultValue(slot0.contextData.spawnEffect, true)
+		arg_3_0.contextData.spawnEffect = defaultValue(arg_3_0.contextData.spawnEffect, true)
 	end
 
-	uv0.super.didEnter(slot0)
+	var_0_0.super.didEnter(arg_3_0)
 end
 
-function slot0.RefreshFXMode(slot0)
-	if not slot0.previewer then
+function var_0_0.RefreshFXMode(arg_7_0)
+	if not arg_7_0.previewer then
 		return
 	end
 
-	slot0.previewer:SetFXMode(slot0.contextData.spawnEffect, slot0.contextData.hitEffect)
-	slot0.previewer:onWeaponUpdate()
+	arg_7_0.previewer:SetFXMode(arg_7_0.contextData.spawnEffect, arg_7_0.contextData.hitEffect)
+	arg_7_0.previewer:onWeaponUpdate()
 end
 
-function slot0.showBarrage(slot0)
-	uv0.super.showBarrage(slot0)
-	slot0.previewer:SetFXMode(slot0.contextData.spawnEffect, slot0.contextData.hitEffect)
+function var_0_0.showBarrage(arg_8_0)
+	var_0_0.super.showBarrage(arg_8_0)
+	arg_8_0.previewer:SetFXMode(arg_8_0.contextData.spawnEffect, arg_8_0.contextData.hitEffect)
 end
 
-function slot0.playLoadingAni(slot0)
-	uv0.super.playLoadingAni(slot0)
-	setActive(slot0.buttonList, false)
+function var_0_0.playLoadingAni(arg_9_0)
+	var_0_0.super.playLoadingAni(arg_9_0)
+	setActive(arg_9_0.buttonList, false)
 end
 
-function slot0.stopLoadingAni(slot0)
-	uv0.super.stopLoadingAni(slot0)
-	setActive(slot0.buttonList, true)
+function var_0_0.stopLoadingAni(arg_10_0)
+	var_0_0.super.stopLoadingAni(arg_10_0)
+	setActive(arg_10_0.buttonList, true)
 end
 
-return slot0
+return var_0_0

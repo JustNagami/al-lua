@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Head to the Lab!",
 	"Now enter the META Lab!",
 	"Here you can claim rewards based on how many Sync Points you’ve accumulated!",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -308.7,
 				posX = 199.3,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/bottom/technologyButton",
@@ -38,7 +38,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 286.9,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/SelectTechnologyUI(Clone)/frame/bg/meta_btn",
@@ -62,7 +62,7 @@ return {
 				mode = 1,
 				posY = -236.99,
 				posX = -419.8,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -72,7 +72,7 @@ return {
 				mode = 2,
 				posY = -236.99,
 				posX = -419.8,
-				text = slot0[4],
+				text = var_0_0[4],
 				ui = {
 					path = "UICamera/Canvas/UIMain/MetaCharacterUI(Clone)/HidePanel/ActTimeTip"
 				}

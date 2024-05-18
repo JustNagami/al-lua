@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "XINGCHEN5",
 	mode = 3,
 	noWaitFade = true,

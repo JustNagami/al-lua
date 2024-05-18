@@ -1,3 +1,7 @@
+﻿local var_0_0 = {
+	"Start by going to the Buy menu to purchase a Cat Box from Akashi!"
+}
+
 return {
 	id = "NG006",
 	events = {
@@ -8,9 +12,7 @@ return {
 				mode = 1,
 				posY = -110,
 				posX = 0,
-				text = ({
-					"Start by going to the Buy menu to purchase a Cat Box from Akashi!"
-				})[1]
+				text = var_0_0[1]
 			}
 		},
 		{

@@ -1,23 +1,23 @@
-slot0 = class("ChangeMailImpFlagCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ChangeMailImpFlagCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
 	pg.ConnectionMgr.GetInstance():Send(30010, {
-		id = slot2.id,
-		flag = slot2.flag
-	}, 30011, function (slot0)
-		if slot0.result == 0 then
-			slot1 = getProxy(MailProxy)
-			slot2 = slot1:getMailById(uv0.id)
+		id = var_1_0.id,
+		flag = var_1_0.flag
+	}, 30011, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = getProxy(MailProxy)
+			local var_2_1 = var_2_0:getMailById(var_1_0.id)
 
-			slot2:setImportantFlag(uv0.flag)
-			slot1:updateMail(slot2)
-			uv1:sendNotification(GAME.CHANGE_MAIL_IMP_FLAG_DONE, slot2)
+			var_2_1:setImportantFlag(var_1_0.flag)
+			var_2_0:updateMail(var_2_1)
+			arg_1_0:sendNotification(GAME.CHANGE_MAIL_IMP_FLAG_DONE, var_2_1)
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("change_mail_imp_flag", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("change_mail_imp_flag", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

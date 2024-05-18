@@ -1,4 +1,23 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				skill_id = 3621,
+				maxTargetNumber = 0,
+				check_target = {
+					"TargetPlayerFlagShip",
+					"TargetShipTag"
+				},
+				ship_tag_list = {
+					"AirDominance_lower"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,24 +38,5 @@ return {
 	stack = 1,
 	id = 3621,
 	icon = 3620,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				skill_id = 3621,
-				maxTargetNumber = 0,
-				check_target = {
-					"TargetPlayerFlagShip",
-					"TargetShipTag"
-				},
-				ship_tag_list = {
-					"AirDominance_lower"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "WORLD508K",
 	mode = 2,
 	once = true,

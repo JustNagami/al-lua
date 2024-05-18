@@ -1,14 +1,19 @@
-slot0 = class("MainFixSettingDefaultValue")
+﻿local var_0_0 = class("MainFixSettingDefaultValue")
 
-function slot0.Execute(slot0, slot1)
-	for slot6, slot7 in ipairs(pg.settings_other_template.all) do
-		if _G[slot2[slot7].name] ~= "" and not PlayerPrefs.HasKey(slot8) then
-			PlayerPrefs.SetInt(slot8, slot2[slot7].default)
+function var_0_0.Execute(arg_1_0, arg_1_1)
+	local var_1_0 = pg.settings_other_template
+
+	for iter_1_0, iter_1_1 in ipairs(var_1_0.all) do
+		local var_1_1 = _G[var_1_0[iter_1_1].name]
+		local var_1_2 = var_1_0[iter_1_1].default
+
+		if var_1_1 ~= "" and not PlayerPrefs.HasKey(var_1_1) then
+			PlayerPrefs.SetInt(var_1_1, var_1_2)
 		end
 	end
 
 	PlayerPrefs.Save()
-	slot1()
+	arg_1_1()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	lose_condition = 1,
 	win_condition = 1,
 	id = 320001,
@@ -87,11 +87,6 @@ return {
 									}
 								},
 								{
-									a,
-									index = 1,
-									switchParam = 30,
-									switchTo = 2,
-									switchType = 1,
 									removeWeapon = {
 										2150011,
 										2150012
@@ -99,7 +94,12 @@ return {
 									addWeapon = {
 										2150021,
 										2150022
-									}
+									},
+									a,
+									index = 1,
+									switchParam = 30,
+									switchTo = 2,
+									switchType = 1
 								},
 								{
 									index = 2,

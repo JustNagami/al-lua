@@ -1,11 +1,11 @@
-slot0 = class("HMSHunterPTPage", import(".TemplatePage.PtTemplatePage"))
+﻿local var_0_0 = class("HMSHunterPTPage", import(".TemplatePage.PtTemplatePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.helpBtn = slot0:findTF("help", slot0.bg)
+	arg_1_0.helpBtn = arg_1_0:findTF("help", arg_1_0.bg)
 
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = i18n("hunter_npc")
@@ -13,46 +13,49 @@ function slot0.OnInit(slot0)
 	end, SFX_PANEL)
 end
 
-function slot0.flush_task_list_pt(slot0)
-	slot1 = slot0.activity
-	slot3, slot4, slot5 = slot0:getDoingTask(slot1)
-	slot7 = getProxy(ActivityProxy):getActivityById(slot1:getConfig("config_client").rank_act_id).data1
+function var_0_0.flush_task_list_pt(arg_3_0)
+	local var_3_0 = arg_3_0.activity
+	local var_3_1 = _.flatten(var_3_0:getConfig("config_data"))
+	local var_3_2, var_3_3, var_3_4 = arg_3_0:getDoingTask(var_3_0)
+	local var_3_5 = getProxy(ActivityProxy):getActivityById(var_3_0:getConfig("config_client").rank_act_id).data1
 
-	setText(slot0.phaseTxt, slot3 .. "/" .. #_.flatten(slot1:getConfig("config_data")))
+	setText(arg_3_0.phaseTxt, var_3_2 .. "/" .. #var_3_1)
 
-	if slot5 then
-		slot8 = slot5:getConfig("target_num")
+	if var_3_4 then
+		local var_3_6 = var_3_4:getConfig("target_num")
+		local var_3_7 = var_3_5 .. "/" .. setColorStr(var_3_6, "#FFE7B3")
 
-		setText(slot0.progressTxt, slot7 .. "/" .. setColorStr(slot8, "#FFE7B3"))
-		setSlider(slot0.progress, 0, slot8, math.min(slot7, slot8))
+		setText(arg_3_0.progressTxt, var_3_7)
+		setSlider(arg_3_0.progress, 0, var_3_6, math.min(var_3_5, var_3_6))
 
-		slot10 = slot5:getConfig("award_display")[1]
+		local var_3_8 = var_3_4:getConfig("award_display")[1]
+		local var_3_9 = {
+			type = var_3_8[1],
+			id = var_3_8[2],
+			count = var_3_8[3]
+		}
 
-		updateDrop(slot0.award, {
-			type = slot10[1],
-			id = slot10[2],
-			count = slot10[3]
-		})
-		onButton(slot0, slot0.award, function ()
-			uv0:emit(BaseUI.ON_DROP, uv1)
+		updateDrop(arg_3_0.award, var_3_9)
+		onButton(arg_3_0, arg_3_0.award, function()
+			arg_3_0:emit(BaseUI.ON_DROP, var_3_9)
 		end, SFX_PANEL)
 
-		slot0.btn:GetComponent(typeof(Image)).enabled = not slot5:isFinish()
+		arg_3_0.btn:GetComponent(typeof(Image)).enabled = not var_3_4:isFinish()
 
-		setActive(slot0.btn:Find("get"), slot5:isFinish() and not slot5:isReceive())
-		setActive(slot0.btn:Find("achieved"), slot5:isReceive())
-		onButton(slot0, slot0.btn, function ()
-			if not uv0:isFinish() then
-				uv1:emit(ActivityMediator.ON_TASK_GO, uv0)
+		setActive(arg_3_0.btn:Find("get"), var_3_4:isFinish() and not var_3_4:isReceive())
+		setActive(arg_3_0.btn:Find("achieved"), var_3_4:isReceive())
+		onButton(arg_3_0, arg_3_0.btn, function()
+			if not var_3_4:isFinish() then
+				arg_3_0:emit(ActivityMediator.ON_TASK_GO, var_3_4)
 			end
 		end, SFX_PANEL)
-		onButton(slot0, slot0.btn:Find("get"), function ()
-			if uv0:isFinish() and not uv0:isReceive() then
-				uv1:emit(ActivityMediator.ON_TASK_SUBMIT, uv0)
+		onButton(arg_3_0, arg_3_0.btn:Find("get"), function()
+			if var_3_4:isFinish() and not var_3_4:isReceive() then
+				arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_3_4)
 			end
 		end)
-		setButtonEnabled(slot0.btn, not slot5:isReceive())
+		setButtonEnabled(arg_3_0.btn, not var_3_4:isReceive())
 	end
 end
 
-return slot0
+return var_0_0

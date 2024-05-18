@@ -1,82 +1,90 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = pg.effect_offset
-slot0.Battle.BattleShelterData = class("BattleShelterData")
-slot0.Battle.BattleShelterData.__name = "BattleShelterData"
-slot3 = slot0.Battle.BattleShelterData
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._id = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = pg.effect_offset
+
+var_0_0.Battle.BattleShelterData = class("BattleShelterData")
+var_0_0.Battle.BattleShelterData.__name = "BattleShelterData"
+
+local var_0_3 = var_0_0.Battle.BattleShelterData
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._id = arg_1_1
 end
 
-function slot3.SetIFF(slot0, slot1)
-	slot0._IFF = slot1
+function var_0_3.SetIFF(arg_2_0, arg_2_1)
+	arg_2_0._IFF = arg_2_1
 end
 
-function slot3.SetArgs(slot0, slot1, slot2, slot3, slot4, slot5)
-	slot0._duration = slot2
-	slot0._bulletType = uv0.Battle.BattleConst.BulletType.CANNON
-	slot0._count = slot1
-	slot0._effect = slot5
-	slot0._doWhenHit = "intercept"
-	slot0._wall = uv0.Battle.BattleDataProxy.GetInstance():SpawnWall(slot0, function (slot0)
-		if slot0:GetType() == uv0._bulletType and uv0:IsWallActive() then
-			uv0:DoWhenHit(slot0)
+function var_0_3.SetArgs(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
+	arg_3_0._duration = arg_3_2
+	arg_3_0._bulletType = var_0_0.Battle.BattleConst.BulletType.CANNON
+	arg_3_0._count = arg_3_1
+	arg_3_0._effect = arg_3_5
+	arg_3_0._doWhenHit = "intercept"
+
+	local function var_3_0(arg_4_0)
+		if arg_4_0:GetType() == arg_3_0._bulletType and arg_3_0:IsWallActive() then
+			arg_3_0:DoWhenHit(arg_4_0)
 		end
 
-		return uv0._count > 0
-	end, slot3, {
+		return arg_3_0._count > 0
+	end
+
+	local var_3_1 = {
 		0,
 		0,
 		0
-	})
-	slot0._centerPos = slot4
+	}
+
+	arg_3_0._wall = var_0_0.Battle.BattleDataProxy.GetInstance():SpawnWall(arg_3_0, var_3_0, arg_3_3, var_3_1)
+	arg_3_0._centerPos = arg_3_4
 end
 
-function slot3.SetStartTimeStamp(slot0, slot1)
-	slot0._startTimeStamp = slot1
+function var_0_3.SetStartTimeStamp(arg_5_0, arg_5_1)
+	arg_5_0._startTimeStamp = arg_5_1
 end
 
-function slot3.Update(slot0, slot1)
-	if slot0._duration < slot1 - slot0._startTimeStamp then
-		slot0._startTimeStamp = nil
+function var_0_3.Update(arg_6_0, arg_6_1)
+	if arg_6_1 - arg_6_0._startTimeStamp > arg_6_0._duration then
+		arg_6_0._startTimeStamp = nil
 	end
 end
 
-function slot3.DoWhenHit(slot0, slot1)
-	if slot0._doWhenHit == "intercept" then
-		slot1:Intercepted()
-		uv0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(slot1:GetUniqueID())
+function var_0_3.DoWhenHit(arg_7_0, arg_7_1)
+	if arg_7_0._doWhenHit == "intercept" then
+		arg_7_1:Intercepted()
+		var_0_0.Battle.BattleDataProxy.GetInstance():RemoveBulletUnit(arg_7_1:GetUniqueID())
 
-		slot0._count = slot0._count - 1
-	elseif slot0._doWhenHit == "reflect" and slot0:GetIFF() ~= slot1:GetIFF() then
-		slot1:Reflected()
+		arg_7_0._count = arg_7_0._count - 1
+	elseif arg_7_0._doWhenHit == "reflect" and arg_7_0:GetIFF() ~= arg_7_1:GetIFF() then
+		arg_7_1:Reflected()
 
-		slot0._count = slot0._count - 1
+		arg_7_0._count = arg_7_0._count - 1
 	end
 end
 
-function slot3.GetUniqueID(slot0)
-	return slot0._id
+function var_0_3.GetUniqueID(arg_8_0)
+	return arg_8_0._id
 end
 
-function slot3.GetIFF(slot0)
-	return slot0._IFF
+function var_0_3.GetIFF(arg_9_0)
+	return arg_9_0._IFF
 end
 
-function slot3.GetFXID(slot0)
-	return slot0._effect
+function var_0_3.GetFXID(arg_10_0)
+	return arg_10_0._effect
 end
 
-function slot3.GetPosition(slot0)
-	return slot0._centerPos
+function var_0_3.GetPosition(arg_11_0)
+	return arg_11_0._centerPos
 end
 
-function slot3.Deactive(slot0)
-	uv0.Battle.BattleDataProxy.GetInstance():RemoveWall(slot0._wall:GetUniqueID())
+function var_0_3.Deactive(arg_12_0)
+	var_0_0.Battle.BattleDataProxy.GetInstance():RemoveWall(arg_12_0._wall:GetUniqueID())
 end
 
-function slot3.IsWallActive(slot0)
-	return slot0._count > 0 and slot0._startTimeStamp
+function var_0_3.IsWallActive(arg_13_0)
+	return arg_13_0._count > 0 and arg_13_0._startTimeStamp
 end

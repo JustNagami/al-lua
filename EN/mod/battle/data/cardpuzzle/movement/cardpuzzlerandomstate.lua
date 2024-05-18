@@ -1,45 +1,52 @@
-ys = ys or {}
-slot0 = ys
-slot0.Battle.CardPuzzleRandomState = class("CardPuzzleRandomState", slot0.Battle.CardPuzzleIMoveState)
-slot1 = slot0.Battle.CardPuzzleRandomState
-slot1.__name = "CardPuzzleRandomState"
-slot1.VALVE = 0.5
-slot1.RANDOM_RANGE = 10
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+
+var_0_0.Battle.CardPuzzleRandomState = class("CardPuzzleRandomState", var_0_0.Battle.CardPuzzleIMoveState)
+
+local var_0_1 = var_0_0.Battle.CardPuzzleRandomState
+
+var_0_1.__name = "CardPuzzleRandomState"
+var_0_1.VALVE = 0.5
+var_0_1.RANDOM_RANGE = 10
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.AddMoveToState(slot0, slot1)
-	slot1:OnMoveToState()
+function var_0_1.AddMoveToState(arg_2_0, arg_2_1)
+	arg_2_1:OnMoveToState()
 end
 
-function slot1.AddRandomState(slot0, slot1)
+function var_0_1.AddRandomState(arg_3_0, arg_3_1)
+	return
 end
 
-function slot1.AddStayState(slot0, slot1)
-	slot1:OnStayState()
+function var_0_1.AddStayState(arg_4_0, arg_4_1)
+	arg_4_1:OnStayState()
 end
 
-function slot1.IntputReferencePoint(slot0, slot1)
-	slot0._referencePoint = uv1.Battle.BattleFormulas.RandomPos({
-		X1 = slot1.x - uv0.RANDOM_RANGE,
-		X2 = slot1.x + uv0.RANDOM_RANGE,
-		Z1 = slot1.z - uv0.RANDOM_RANGE,
-		Z2 = slot1.z + uv0.RANDOM_RANGE
-	})
+function var_0_1.IntputReferencePoint(arg_5_0, arg_5_1)
+	local var_5_0 = {
+		X1 = arg_5_1.x - var_0_1.RANDOM_RANGE,
+		X2 = arg_5_1.x + var_0_1.RANDOM_RANGE,
+		Z1 = arg_5_1.z - var_0_1.RANDOM_RANGE,
+		Z2 = arg_5_1.z + var_0_1.RANDOM_RANGE
+	}
+
+	arg_5_0._referencePoint = var_0_0.Battle.BattleFormulas.RandomPos(var_5_0)
 end
 
-function slot1.IsFinish(slot0, slot1)
-	return (slot0._referencePoint - slot1:GetFleetPosition()).magnitude < uv0.VALVE
+function var_0_1.IsFinish(arg_6_0, arg_6_1)
+	return (arg_6_0._referencePoint - arg_6_1:GetFleetPosition()).magnitude < var_0_1.VALVE
 end
 
-function slot1.GetOutput(slot0, slot1)
-	slot3 = (slot0._referencePoint - slot1:GetFleetPosition()).normalized
+function var_0_1.GetOutput(arg_7_0, arg_7_1)
+	local var_7_0 = (arg_7_0._referencePoint - arg_7_1:GetFleetPosition()).normalized
 
-	return slot3.x, slot3.z
+	return var_7_0.x, var_7_0.z
 end
 
-function slot1.NextState(slot0)
-	return uv0.Battle.CardPuzzleMoveState.STATE_STAY
+function var_0_1.NextState(arg_8_0)
+	return var_0_0.Battle.CardPuzzleMoveState.STATE_STAY
 end

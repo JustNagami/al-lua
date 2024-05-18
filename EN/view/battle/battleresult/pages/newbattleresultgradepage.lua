@@ -1,247 +1,260 @@
-slot0 = class("NewBattleResultGradePage", import("view.base.BaseSubView"))
+﻿local var_0_0 = class("NewBattleResultGradePage", import("view.base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewBattleResultGradePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.parentTr = slot0._tf.parent
-	slot0.bgTr = slot0:findTF("bg")
-	slot0.gradePanel = slot0.bgTr:Find("grade")
-	slot0.gradeIcon = slot0.bgTr:Find("grade/icon")
-	slot0.gradeTxt = slot0.bgTr:Find("grade/Text")
-	slot0.gradeLabel = slot0.bgTr:Find("grade/label")
-	slot0.gradeChapterName = slot0.bgTr:Find("grade/chapterName")
-	slot0.gradeTxtCG = slot0.gradeTxt:GetComponent(typeof(CanvasGroup))
-	slot0.gradeChapterNameCG = slot0.gradeChapterName:GetComponent(typeof(CanvasGroup))
-	slot0.objectiveContainer = slot0.bgTr:Find("conditions/list")
-	slot0.objectiveTpl = slot0.bgTr:Find("conditions/list/tpl")
-	slot0.objectiveContainer.localPosition = Vector3(2000, slot0.objectiveContainer.localPosition.y, 0)
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.parentTr = arg_2_0._tf.parent
+	arg_2_0.bgTr = arg_2_0:findTF("bg")
+	arg_2_0.gradePanel = arg_2_0.bgTr:Find("grade")
+	arg_2_0.gradeIcon = arg_2_0.bgTr:Find("grade/icon")
+	arg_2_0.gradeTxt = arg_2_0.bgTr:Find("grade/Text")
+	arg_2_0.gradeLabel = arg_2_0.bgTr:Find("grade/label")
+	arg_2_0.gradeChapterName = arg_2_0.bgTr:Find("grade/chapterName")
+	arg_2_0.gradeTxtCG = arg_2_0.gradeTxt:GetComponent(typeof(CanvasGroup))
+	arg_2_0.gradeChapterNameCG = arg_2_0.gradeChapterName:GetComponent(typeof(CanvasGroup))
+	arg_2_0.objectiveContainer = arg_2_0.bgTr:Find("conditions/list")
+	arg_2_0.objectiveTpl = arg_2_0.bgTr:Find("conditions/list/tpl")
+	arg_2_0.objectiveContainer.localPosition = Vector3(2000, arg_2_0.objectiveContainer.localPosition.y, 0)
 
-	setText(slot0.bgTr:Find("conditions/Text"), i18n("battle_result_targets"))
+	setText(arg_2_0.bgTr:Find("conditions/Text"), i18n("battle_result_targets"))
 end
 
-function slot0.SetUp(slot0, slot1)
-	slot0:Show()
+function var_0_0.SetUp(arg_3_0, arg_3_1)
+	arg_3_0:Show()
 	seriesAsync({
-		function (slot0)
-			uv0:LoadBGAndGrade(slot0)
+		function(arg_4_0)
+			arg_3_0:LoadBGAndGrade(arg_4_0)
 		end,
-		function (slot0)
-			uv0:PlayEnterAnimation(slot0)
-			uv0:UpdateChapterName()
+		function(arg_5_0)
+			arg_3_0:PlayEnterAnimation(arg_5_0)
+			arg_3_0:UpdateChapterName()
 		end,
-		function (slot0)
-			uv0:LoadEffects(slot0)
+		function(arg_6_0)
+			arg_3_0:LoadEffects(arg_6_0)
 		end,
-		function (slot0)
-			uv0:UpdateObjectives(slot0)
+		function(arg_7_0)
+			arg_3_0:UpdateObjectives(arg_7_0)
 		end,
-		function (slot0)
-			uv0:RegisterEvent(slot0)
+		function(arg_8_0)
+			arg_3_0:RegisterEvent(arg_8_0)
 		end
-	}, function ()
-		uv0:Clear()
-		uv0:Destroy()
-		uv1()
+	}, function()
+		arg_3_0:Clear()
+		arg_3_0:Destroy()
+		arg_3_1()
 	end)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
-	if slot0.exited then
+function var_0_0.RegisterEvent(arg_10_0, arg_10_1)
+	if arg_10_0.exited then
 		return
 	end
 
-	onButton(slot0, slot0._tf, slot1, SFX_PANEL)
+	onButton(arg_10_0, arg_10_0._tf, arg_10_1, SFX_PANEL)
 
-	if slot0.contextData.autoSkipFlag then
-		triggerButton(slot0._tf)
+	if arg_10_0.contextData.autoSkipFlag then
+		triggerButton(arg_10_0._tf)
 	end
 end
 
-function slot0.Clear(slot0)
-	removeOnButton(slot0._tf)
+function var_0_0.Clear(arg_11_0)
+	removeOnButton(arg_11_0._tf)
 end
 
-function slot1(slot0, slot1)
-	slot2 = slot1.text or ""
-	slot3 = slot1.icon
-	slot4 = slot1.value or ""
+local function var_0_1(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1.text or ""
+	local var_12_1 = arg_12_1.icon
+	local var_12_2 = arg_12_1.value or ""
+	local var_12_3 = arg_12_0.transform:Find("checkBox"):GetComponent(typeof(Image))
 
-	setActive(slot0.transform:Find("checkBox"):GetComponent(typeof(Image)).gameObject, slot3)
+	setActive(var_12_3.gameObject, var_12_1)
 
-	if slot3 then
-		slot5.sprite = GetSpriteFromAtlas("ui/battleresult_atlas", slot3)
+	if var_12_1 then
+		var_12_3.sprite = GetSpriteFromAtlas("ui/battleresult_atlas", var_12_1)
 
-		slot5:SetNativeSize()
+		var_12_3:SetNativeSize()
 	end
 
-	setText(slot0.transform:Find("text"), slot2)
-	setText(slot0.transform:Find("value"), slot4)
-	setActive(slot0:Find("fx"), true)
+	setText(arg_12_0.transform:Find("text"), var_12_0)
+	setText(arg_12_0.transform:Find("value"), var_12_2)
+	setActive(arg_12_0:Find("fx"), true)
 end
 
-function slot0.GetGetObjectives(slot0)
-	return NewBattleResultUtil.GetObjectives(slot0.contextData)
+function var_0_0.GetGetObjectives(arg_13_0)
+	return NewBattleResultUtil.GetObjectives(arg_13_0.contextData)
 end
 
-function slot0.UpdateObjectives(slot0, slot1)
-	if #slot0:GetGetObjectives() <= 0 then
-		setActive(slot0.objectiveTpl, false)
-		slot1()
+function var_0_0.UpdateObjectives(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0:GetGetObjectives()
+
+	if #var_14_0 <= 0 then
+		setActive(arg_14_0.objectiveTpl, false)
+		arg_14_1()
 
 		return
 	end
 
-	for slot7 = 2, #slot2 do
-		table.insert({
-			slot0.objectiveTpl
-		}, Object.Instantiate(slot0.objectiveTpl, slot0.objectiveContainer))
+	local var_14_1 = {
+		arg_14_0.objectiveTpl
+	}
+
+	for iter_14_0 = 2, #var_14_0 do
+		local var_14_2 = Object.Instantiate(arg_14_0.objectiveTpl, arg_14_0.objectiveContainer)
+
+		table.insert(var_14_1, var_14_2)
 	end
 
-	slot4 = {}
+	local var_14_3 = {}
 
-	for slot8 = 1, #slot2 do
-		table.insert(slot4, function (slot0)
-			if uv0.exited then
+	for iter_14_1 = 1, #var_14_0 do
+		table.insert(var_14_3, function(arg_15_0)
+			if arg_14_0.exited then
 				return
 			end
 
-			uv1(uv2[uv3], uv4[uv3])
-			onDelayTick(slot0, 0.3)
+			var_0_1(var_14_1[iter_14_1], var_14_0[iter_14_1])
+			onDelayTick(arg_15_0, 0.3)
 		end)
 	end
 
-	seriesAsync(slot4, slot1)
-	LeanTween.value(slot0.objectiveContainer.gameObject, 2000, 237, 0.3):setOnUpdate(System.Action_float(function (slot0)
-		uv0.objectiveContainer.localPosition = Vector3(slot0, uv0.objectiveContainer.localPosition.y, 0)
+	seriesAsync(var_14_3, arg_14_1)
+	LeanTween.value(arg_14_0.objectiveContainer.gameObject, 2000, 237, 0.3):setOnUpdate(System.Action_float(function(arg_16_0)
+		arg_14_0.objectiveContainer.localPosition = Vector3(arg_16_0, arg_14_0.objectiveContainer.localPosition.y, 0)
 	end))
 end
 
-function slot0.UpdateChapterName(slot0)
-	setText(slot0.gradeChapterName, NewBattleResultUtil.GetChapterName(slot0.contextData))
+function var_0_0.UpdateChapterName(arg_17_0)
+	local var_17_0 = NewBattleResultUtil.GetChapterName(arg_17_0.contextData)
+
+	setText(arg_17_0.gradeChapterName, var_17_0)
 end
 
-function slot0.LoadEffects(slot0, slot1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ResultEffect", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+function var_0_0.LoadEffects(arg_18_0, arg_18_1)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/ResultEffect", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_19_0)
+		if arg_18_0.exited or IsNil(arg_19_0) then
+			if arg_18_1 then
+				arg_18_1()
 			end
 
 			return
 		end
 
-		slot1 = Object.Instantiate(slot0, uv0.bgTr)
+		local var_19_0 = Object.Instantiate(arg_19_0, arg_18_0.bgTr)
 
-		setText(slot1.transform:Find("Tips/dianjijixu/bg20"), i18n("battle_result_continue"))
+		setText(var_19_0.transform:Find("Tips/dianjijixu/bg20"), i18n("battle_result_continue"))
 
-		slot1.name = "ResultEffect"
+		var_19_0.name = "ResultEffect"
 
-		slot1.transform:SetSiblingIndex(1)
+		var_19_0.transform:SetSiblingIndex(1)
 
-		if uv1 then
-			uv1()
+		if arg_18_1 then
+			arg_18_1()
 		end
 	end), true, true)
 end
 
-function slot0.PlayEnterAnimation(slot0, slot1)
-	slot0.gradeTxtCG.alpha = 0
+function var_0_0.PlayEnterAnimation(arg_20_0, arg_20_1)
+	arg_20_0.gradeTxtCG.alpha = 0
 
-	LeanTween.value(slot0.gradeTxt.gameObject, 0.2, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
-		uv0.gradeTxtCG.alpha = slot0
+	LeanTween.value(arg_20_0.gradeTxt.gameObject, 0.2, 1, 0.3):setOnUpdate(System.Action_float(function(arg_21_0)
+		arg_20_0.gradeTxtCG.alpha = arg_21_0
 	end)):setDelay(0.2)
-	LeanTween.value(slot0.gradeTxt.gameObject, 1.3, 1, 0.15):setOnUpdate(System.Action_float(function (slot0)
-		uv0.gradeTxt.localScale = Vector3(slot0, slot0, 1)
+	LeanTween.value(arg_20_0.gradeTxt.gameObject, 1.3, 1, 0.15):setOnUpdate(System.Action_float(function(arg_22_0)
+		arg_20_0.gradeTxt.localScale = Vector3(arg_22_0, arg_22_0, 1)
 	end)):setDelay(0.15)
 
-	slot0.gradeLabel.localPosition = slot0.gradeLabel.localPosition + Vector3(20, 20)
+	local var_20_0 = arg_20_0.gradeLabel.localPosition
 
-	LeanTween.moveLocal(slot0.gradeLabel.gameObject, slot0.gradeLabel.localPosition, 0.15):setDelay(0.15)
+	arg_20_0.gradeLabel.localPosition = arg_20_0.gradeLabel.localPosition + Vector3(20, 20)
 
-	slot0.gradeChapterNameCG.alpha = 0
+	LeanTween.moveLocal(arg_20_0.gradeLabel.gameObject, var_20_0, 0.15):setDelay(0.15)
 
-	LeanTween.value(slot0.gradeChapterName.gameObject, 0.1, 0.7, 0.3):setOnUpdate(System.Action_float(function (slot0)
-		uv0.gradeChapterNameCG.alpha = slot0
-	end)):setOnComplete(System.Action(function ()
-		uv0.gradeChapterNameCG.alpha = 1
+	arg_20_0.gradeChapterNameCG.alpha = 0
+
+	LeanTween.value(arg_20_0.gradeChapterName.gameObject, 0.1, 0.7, 0.3):setOnUpdate(System.Action_float(function(arg_23_0)
+		arg_20_0.gradeChapterNameCG.alpha = arg_23_0
+	end)):setOnComplete(System.Action(function()
+		arg_20_0.gradeChapterNameCG.alpha = 1
 	end)):setLoopPingPong(2):setDelay(0.15)
-	LeanTween.value(slot0.gradeIcon.gameObject, 15, 1, 0.3):setOnUpdate(System.Action_float(function (slot0)
-		uv0.gradeIcon.localScale = Vector3(slot0, slot0, 1)
-	end)):setOnComplete(System.Action(slot1))
+	LeanTween.value(arg_20_0.gradeIcon.gameObject, 15, 1, 0.3):setOnUpdate(System.Action_float(function(arg_25_0)
+		arg_20_0.gradeIcon.localScale = Vector3(arg_25_0, arg_25_0, 1)
+	end)):setOnComplete(System.Action(arg_20_1))
 end
 
-function slot0.LoadBGAndGrade(slot0, slot1)
+function var_0_0.LoadBGAndGrade(arg_26_0, arg_26_1)
 	parallelAsync({
-		function (slot0)
-			uv0:LoadBG(slot0)
+		function(arg_27_0)
+			arg_26_0:LoadBG(arg_27_0)
 		end,
-		function (slot0)
-			uv0:LoadGrade(slot0)
+		function(arg_28_0)
+			arg_26_0:LoadGrade(arg_28_0)
 		end
-	}, slot1)
+	}, arg_26_1)
 end
 
-function slot0.LoadBG(slot0, slot1)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. NewBattleResultUtil.Score2Bg(slot0.contextData.score), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+function var_0_0.LoadBG(arg_29_0, arg_29_1)
+	local var_29_0 = NewBattleResultUtil.Score2Bg(arg_29_0.contextData.score)
+
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/" .. var_29_0, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_30_0)
+		if arg_29_0.exited or IsNil(arg_30_0) then
+			if arg_29_1 then
+				arg_29_1()
 			end
 
 			return
 		end
 
-		slot1 = Object.Instantiate(slot0, uv0._parentTf)
+		local var_30_0 = Object.Instantiate(arg_30_0, arg_29_0._parentTf)
 
-		slot1.transform:SetAsFirstSibling()
+		var_30_0.transform:SetAsFirstSibling()
 
-		slot1.name = "Effect"
+		var_30_0.name = "Effect"
 
-		if uv1 then
-			uv1()
+		if arg_29_1 then
+			arg_29_1()
 		end
 	end), false, false)
 end
 
-function slot0.LoadGrade(slot0, slot1)
-	slot2, slot3 = NewBattleResultUtil.Score2Grade(slot0.contextData.score, slot0.contextData._scoreMark)
+function var_0_0.LoadGrade(arg_31_0, arg_31_1)
+	local var_31_0, var_31_1 = NewBattleResultUtil.Score2Grade(arg_31_0.contextData.score, arg_31_0.contextData._scoreMark)
 
-	LoadImageSpriteAsync(slot2, slot0.gradeIcon, true)
-	LoadImageSpriteAsync(slot3, slot0.gradeTxt, true)
+	LoadImageSpriteAsync(var_31_0, arg_31_0.gradeIcon, true)
+	LoadImageSpriteAsync(var_31_1, arg_31_0.gradeTxt, true)
 
-	if slot1 then
-		slot1()
+	if arg_31_1 then
+		arg_31_1()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0.exited = true
+function var_0_0.OnDestroy(arg_32_0)
+	arg_32_0.exited = true
 
-	if slot0:isShowing() then
-		slot0:Hide()
+	if arg_32_0:isShowing() then
+		arg_32_0:Hide()
 	end
 
-	if LeanTween.isTweening(slot0.objectiveContainer.gameObject) then
-		LeanTween.cancel(slot0.objectiveContainer.gameObject)
+	if LeanTween.isTweening(arg_32_0.objectiveContainer.gameObject) then
+		LeanTween.cancel(arg_32_0.objectiveContainer.gameObject)
 	end
 
-	if LeanTween.isTweening(slot0.gradeTxt.gameObject) then
-		LeanTween.cancel(slot0.gradeTxt.gameObject)
+	if LeanTween.isTweening(arg_32_0.gradeTxt.gameObject) then
+		LeanTween.cancel(arg_32_0.gradeTxt.gameObject)
 	end
 
-	if LeanTween.isTweening(slot0.gradeIcon.gameObject) then
-		LeanTween.cancel(slot0.gradeIcon.gameObject)
+	if LeanTween.isTweening(arg_32_0.gradeIcon.gameObject) then
+		LeanTween.cancel(arg_32_0.gradeIcon.gameObject)
 	end
 
-	if LeanTween.isTweening(slot0.gradeLabel.gameObject) then
-		LeanTween.cancel(slot0.gradeLabel.gameObject)
+	if LeanTween.isTweening(arg_32_0.gradeLabel.gameObject) then
+		LeanTween.cancel(arg_32_0.gradeLabel.gameObject)
 	end
 
-	if LeanTween.isTweening(slot0.gradeChapterNameCG.gameObject) then
-		LeanTween.cancel(slot0.gradeChapterNameCG.gameObject)
+	if LeanTween.isTweening(arg_32_0.gradeChapterNameCG.gameObject) then
+		LeanTween.cancel(arg_32_0.gradeChapterNameCG.gameObject)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_6 = {}
-slot1 = slot0.word_template_6
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_6 = {}
+
+local var_0_1 = var_0_0.word_template_6
 
 function temp()
-	uv0.E = {
+	var_0_1.E = {
 		w = {
 			e = {
 				this = true
@@ -22,16 +25,16 @@ function temp()
 		d = {
 			e = {
 				a = {
-					["白"] = {
-						["豆"] = {
-							["沙"] = {
+					白 = {
+						豆 = {
+							沙 = {
 								this = true
 							}
 						}
 					},
-					["黑"] = {
-						["豆"] = {
-							["沙"] = {
+					黑 = {
+						豆 = {
+							沙 = {
 								this = true
 							}
 						}
@@ -45,7 +48,7 @@ end
 temp()
 
 function temp()
-	uv0.Q = {
+	var_0_1.Q = {
 		m = {
 			a = {
 				k = {
@@ -70,7 +73,7 @@ end
 temp()
 
 function temp()
-	uv0.D = {
+	var_0_1.D = {
 		a = {
 			n = {
 				c = {
@@ -112,9 +115,9 @@ function temp()
 		},
 		I = {
 			Y = {
-				["开"] = {
-					["花"] = {
-						["弹"] = {
+				开 = {
+					花 = {
+						弹 = {
 							this = true
 						}
 					}
@@ -122,15 +125,15 @@ function temp()
 			}
 		},
 		D = {
-			["连"] = {
-				["届"] = {
+			连 = {
+				届 = {
 					this = true
 				}
 			}
 		},
 		p = {
 			u = {
-				["方"] = {
+				方 = {
 					this = true
 				}
 			}
@@ -160,30 +163,30 @@ end
 temp()
 
 function temp()
-	uv0["ア"] = {
-		["ダ"] = {
-			["ル"] = {
-				["ト"] = {
+	var_0_1.ア = {
+		ダ = {
+			ル = {
+				ト = {
 					this = true
 				}
 			}
 		},
-		["ナ"] = {
-			["ル"] = {
+		ナ = {
+			ル = {
 				this = true
 			}
 		},
-		["ヌ"] = {
-			["ス"] = {
+		ヌ = {
+			ス = {
 				this = true
 			}
 		},
-		["フ"] = {
-			["ィ"] = {
-				["リ"] = {
-					["エ"] = {
-						["イ"] = {
-							["ト"] = {
+		フ = {
+			ィ = {
+				リ = {
+					エ = {
+						イ = {
+							ト = {
 								this = true
 							}
 						}
@@ -191,28 +194,28 @@ function temp()
 				}
 			}
 		},
-		["ホ"] = {
+		ホ = {
 			this = true
 		},
-		["メ"] = {
-			["公"] = {
+		メ = {
+			公 = {
 				this = true
 			}
 		},
-		["ル"] = {
-			["バ"] = {
-				["イ"] = {
-					["ト"] = {
+		ル = {
+			バ = {
+				イ = {
+					ト = {
 						this = true
 					}
 				}
 			}
 		},
-		["ン"] = {
-			["ポ"] = {
-				["ン"] = {
-					["タ"] = {
-						["ン"] = {
+		ン = {
+			ポ = {
+				ン = {
+					タ = {
+						ン = {
 							this = true
 						}
 					}
@@ -225,18 +228,18 @@ end
 temp()
 
 function temp()
-	uv0["い"] = {
-		["て"] = {
-			["ま"] = {
-				["う"] = {
-					["ぞ"] = {
+	var_0_1.い = {
+		て = {
+			ま = {
+				う = {
+					ぞ = {
 						this = true
 					}
 				}
 			}
 		},
-		["ん"] = {
-			["ぽ"] = {
+		ん = {
+			ぽ = {
 				this = true
 			}
 		}
@@ -246,18 +249,18 @@ end
 temp()
 
 function temp()
-	uv0["イ"] = {
-		["ラ"] = {
-			["マ"] = {
-				["チ"] = {
-					["オ"] = {
+	var_0_1.イ = {
+		ラ = {
+			マ = {
+				チ = {
+					オ = {
 						this = true
 					}
 				}
 			}
 		},
-		["ン"] = {
-			["ポ"] = {
+		ン = {
+			ポ = {
 				this = true
 			}
 		}
@@ -267,8 +270,8 @@ end
 temp()
 
 function temp()
-	uv0["ウ"] = {
-		["リ"] = {
+	var_0_1.ウ = {
+		リ = {
 			this = true
 		}
 	}

@@ -1,38 +1,50 @@
-slot0 = class("LotteryMediator", import("..base.ContextMediator"))
-slot0.ON_LAUNCH = "LotteryMediator:ON_LAUNCH"
-slot0.ON_SWITCH = "LotteryMediator:ON_SWITCH"
+﻿local var_0_0 = class("LotteryMediator", import("..base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_LAUNCH, function (slot0, slot1, slot2, slot3, slot4)
-		if not uv0:getActivityById(slot1) or slot5:isEnd() then
+var_0_0.ON_LAUNCH = "LotteryMediator:ON_LAUNCH"
+var_0_0.ON_SWITCH = "LotteryMediator:ON_SWITCH"
+
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy)
+
+	arg_1_0:bind(var_0_0.ON_LAUNCH, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		local var_2_0 = var_1_0:getActivityById(arg_2_1)
+
+		if not var_2_0 or var_2_0:isEnd() then
 			return
 		end
 
-		uv1:sendNotification(GAME.ACTIVITY_OPERATION, {
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 1,
-			activity_id = slot1,
-			arg1 = slot3,
-			arg2 = slot2,
-			isAwardMerge = slot4
+			activity_id = arg_2_1,
+			arg1 = arg_2_3,
+			arg2 = arg_2_2,
+			isAwardMerge = arg_2_4
 		})
 	end)
-	slot0:bind(uv0.ON_SWITCH, function (slot0, slot1, slot2)
-		if not uv0:getActivityById(slot1) or slot3:isEnd() then
+	arg_1_0:bind(var_0_0.ON_SWITCH, function(arg_3_0, arg_3_1, arg_3_2)
+		local var_3_0 = var_1_0:getActivityById(arg_3_1)
+
+		if not var_3_0 or var_3_0:isEnd() then
 			return
 		end
 
-		uv1:sendNotification(GAME.ACTIVITY_OPERATION, {
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
 			cmd = 2,
 			arg2 = 0,
-			activity_id = slot1,
-			arg1 = slot2
+			activity_id = arg_3_1,
+			arg1 = arg_3_2
 		})
 	end)
-	slot0.viewComponent:setActivity(getProxy(ActivityProxy):getActivityById(slot0.contextData.activityId))
-	slot0.viewComponent:setPlayerVO(getProxy(PlayerProxy):getData())
+
+	local var_1_1 = arg_1_0.contextData.activityId
+	local var_1_2 = var_1_0:getActivityById(var_1_1)
+	local var_1_3 = getProxy(PlayerProxy)
+
+	arg_1_0.viewComponent:setActivity(var_1_2)
+	arg_1_0.viewComponent:setPlayerVO(var_1_3:getData())
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED,
 		PlayerProxy.UPDATED,
@@ -40,18 +52,19 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED then
-		if slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
-			slot0.viewComponent:onActivityUpdated(slot3)
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_LOTTERY then
+			arg_5_0.viewComponent:onActivityUpdated(var_5_1)
 		end
-	elseif slot2 == PlayerProxy.UPDATED then
-		slot0.viewComponent:setPlayerVO(slot3)
-	elseif slot2 == ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS then
-		slot0.viewComponent:emit(BaseUI.ON_ACHIEVE, slot3.awards, slot3.callback)
+	elseif var_5_0 == PlayerProxy.UPDATED then
+		arg_5_0.viewComponent:setPlayerVO(var_5_1)
+	elseif var_5_0 == ActivityProxy.ACTIVITY_LOTTERY_SHOW_AWARDS then
+		arg_5_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_5_1.awards, var_5_1.callback)
 	end
 end
 
-return slot0
+return var_0_0

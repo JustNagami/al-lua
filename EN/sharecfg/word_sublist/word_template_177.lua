@@ -1,20 +1,23 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_177 = {}
-slot1 = slot0.word_template_177
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_177 = {}
+
+local var_0_1 = var_0_0.word_template_177
 
 function temp()
-	uv0["藍"] = {
-		["原"] = {
-			["夕"] = {
-				["妃"] = {
+	var_0_1.藍 = {
+		原 = {
+			夕 = {
+				妃 = {
 					this = true
 				}
 			}
 		},
-		["沢"] = {
-			["舞"] = {
-				["音"] = {
+		沢 = {
+			舞 = {
+				音 = {
 					this = true
 				}
 			}
@@ -25,8 +28,8 @@ end
 temp()
 
 function temp()
-	uv0["蘭"] = {
-		["迪"] = {
+	var_0_1.蘭 = {
+		迪 = {
 			this = true
 		}
 	}
@@ -35,8 +38,8 @@ end
 temp()
 
 function temp()
-	uv0["览"] = {
-		["叫"] = {
+	var_0_1.览 = {
+		叫 = {
 			this = true
 		}
 	}
@@ -45,11 +48,11 @@ end
 temp()
 
 function temp()
-	uv0["懒"] = {
-		["叫"] = {
+	var_0_1.懒 = {
+		叫 = {
 			this = true
 		},
-		["教"] = {
+		教 = {
 			this = true
 		}
 	}
@@ -58,11 +61,11 @@ end
 temp()
 
 function temp()
-	uv0["懶"] = {
-		["叫"] = {
+	var_0_1.懶 = {
+		叫 = {
 			this = true
 		},
-		["教"] = {
+		教 = {
 			this = true
 		}
 	}
@@ -71,41 +74,41 @@ end
 temp()
 
 function temp()
-	uv0["烂"] = {
+	var_0_1.烂 = {
 		B = {
 			this = true
 		},
-		["屄"] = {
+		屄 = {
 			this = true
 		},
-		["逼"] = {
+		逼 = {
 			this = true
 		},
-		["比"] = {
+		比 = {
 			this = true
 		},
-		["党"] = {
+		党 = {
 			this = true
 		},
-		["屌"] = {
+		屌 = {
 			this = true
 		},
-		["货"] = {
+		货 = {
 			this = true
 		},
-		["鸟"] = {
+		鸟 = {
 			this = true
 		},
-		["人"] = {
+		人 = {
 			this = true
 		},
-		["游"] = {
-			["戏"] = {
+		游 = {
+			戏 = {
 				this = true
 			}
 		},
-		["政"] = {
-			["权"] = {
+		政 = {
+			权 = {
 				this = true
 			}
 		}
@@ -115,37 +118,37 @@ end
 temp()
 
 function temp()
-	uv0["滥"] = {
-		["交"] = {
+	var_0_1.滥 = {
+		交 = {
 			this = true
 		},
-		["用"] = {
-			["枪"] = {
-				["支"] = {
+		用 = {
+			枪 = {
+				支 = {
 					this = true
 				}
 			},
-			["武"] = {
-				["力"] = {
+			武 = {
+				力 = {
 					this = true
 				}
 			},
-			["政"] = {
-				["府"] = {
-					["权"] = {
-						["力"] = {
+			政 = {
+				府 = {
+					权 = {
+						力 = {
 							this = true
 						}
 					}
 				}
 			},
-			["官"] = {
-				["号"] = {
+			官 = {
+				号 = {
 					this = true
 				}
 			},
-			["权"] = {
-				["力"] = {
+			权 = {
+				力 = {
 					this = true
 				}
 			}

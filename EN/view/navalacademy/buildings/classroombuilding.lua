@@ -1,51 +1,54 @@
-slot0 = class("ClassRoomBuilding", import(".NavalAcademyUpgradableBuilding"))
+﻿local var_0_0 = class("ClassRoomBuilding", import(".NavalAcademyUpgradableBuilding"))
 
-function slot0.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-	slot0.bubbleImg = slot0.bubble:Find("icon"):GetComponent(typeof(Image))
-	slot0.floatImg = slot0.floatTF:GetComponent(typeof(Image))
-	slot0.isUpdateIcon = false
+	arg_1_0.bubbleImg = arg_1_0.bubble:Find("icon"):GetComponent(typeof(Image))
+	arg_1_0.floatImg = arg_1_0.floatTF:GetComponent(typeof(Image))
+	arg_1_0.isUpdateIcon = false
 end
 
-function slot0.UpdateBubble(slot0)
-	slot2 = slot0:GetResField():GetGenResCnt() > 0
+function var_0_0.UpdateBubble(arg_2_0)
+	local var_2_0 = arg_2_0:GetResField()
+	local var_2_1 = var_2_0:GetGenResCnt() > 0
 
-	setActive(slot0.bubble, slot2)
+	setActive(arg_2_0.bubble, var_2_1)
 
-	if slot2 then
-		slot0:FloatAni()
+	if var_2_1 then
+		arg_2_0:FloatAni()
 	end
 
-	if not slot0.isUpdateIcon then
-		slot4 = Item.getConfigData(slot1:GetResourceType()).icon
-		slot0.bubbleImg.sprite = LoadSprite(slot4)
-		slot0.floatImg.sprite = LoadSprite(slot4)
+	if not arg_2_0.isUpdateIcon then
+		local var_2_2 = var_2_0:GetResourceType()
+		local var_2_3 = Item.getConfigData(var_2_2).icon
 
-		onButton(slot0, slot0.bubble, function ()
-			slot0 = uv0:GetResField()
+		arg_2_0.bubbleImg.sprite = LoadSprite(var_2_3)
+		arg_2_0.floatImg.sprite = LoadSprite(var_2_3)
 
-			uv0:emit(NavalAcademyMediator.ON_GET_CLASS_RES)
+		onButton(arg_2_0, arg_2_0.bubble, function()
+			local var_3_0 = arg_2_0:GetResField()
+
+			arg_2_0:emit(NavalAcademyMediator.ON_GET_CLASS_RES)
 		end, SFX_PANEL)
 
-		slot0.isUpdateIcon = true
+		arg_2_0.isUpdateIcon = true
 	end
 end
 
-function slot0.GetGameObjectName(slot0)
+function var_0_0.GetGameObjectName(arg_4_0)
 	return "classRoom"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_5_0)
 	return i18n("school_title_dajiangtang")
 end
 
-function slot0.OnClick(slot0)
-	slot0:emit(NavalAcademyMediator.ON_OPEN_CLASSROOM)
+function var_0_0.OnClick(arg_6_0)
+	arg_6_0:emit(NavalAcademyMediator.ON_OPEN_CLASSROOM)
 end
 
-function slot0.GetResField(slot0)
-	return slot0.parent.classResField
+function var_0_0.GetResField(arg_7_0)
+	return arg_7_0.parent.classResField
 end
 
-return slot0
+return var_0_0

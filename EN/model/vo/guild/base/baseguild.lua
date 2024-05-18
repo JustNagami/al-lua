@@ -1,43 +1,49 @@
-slot0 = class("BaseGuild", import("...BaseVO"))
+﻿local var_0_0 = class("BaseGuild", import("...BaseVO"))
 
-function slot0.GetTechnologys(slot0)
+function var_0_0.GetTechnologys(arg_1_0)
 	assert(false)
 end
 
-function slot0.getAddition(slot0, slot1)
-	return 0 + slot0:GetTechnologys()[GuildConst.TYPE_TO_GROUP[slot1]]:getAddition()
+function var_0_0.getAddition(arg_2_0, arg_2_1)
+	local var_2_0 = 0
+	local var_2_1 = GuildConst.TYPE_TO_GROUP[arg_2_1]
+
+	return var_2_0 + arg_2_0:GetTechnologys()[var_2_1]:getAddition()
 end
 
-function slot0.getMaxOilAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_OIL_MAX)
+function var_0_0.getMaxOilAddition(arg_3_0)
+	return arg_3_0:getAddition(GuildConst.TYPE_OIL_MAX)
 end
 
-function slot0.getMaxGoldAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_GOLD_MAX)
+function var_0_0.getMaxGoldAddition(arg_4_0)
+	return arg_4_0:getAddition(GuildConst.TYPE_GOLD_MAX)
 end
 
-function slot0.getCatBoxGoldAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_CATBOX_GOLD_COST)
+function var_0_0.getCatBoxGoldAddition(arg_5_0)
+	return arg_5_0:getAddition(GuildConst.TYPE_CATBOX_GOLD_COST)
 end
 
-function slot0.getEquipmentBagAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_EQUIPMENT_BAG)
+function var_0_0.getEquipmentBagAddition(arg_6_0)
+	return arg_6_0:getAddition(GuildConst.TYPE_EQUIPMENT_BAG)
 end
 
-function slot0.getShipBagAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_SHIP_BAG)
+function var_0_0.getShipBagAddition(arg_7_0)
+	return arg_7_0:getAddition(GuildConst.TYPE_SHIP_BAG)
 end
 
-function slot0.getShipAddition(slot0, slot1, slot2)
-	for slot8, slot9 in pairs(slot0:GetTechnologys()) do
-		slot3 = 0 + slot9:GetShipAttrAddition(slot1, slot2)
+function var_0_0.getShipAddition(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = 0
+	local var_8_1 = arg_8_0:GetTechnologys()
+
+	for iter_8_0, iter_8_1 in pairs(var_8_1) do
+		var_8_0 = var_8_0 + iter_8_1:GetShipAttrAddition(arg_8_1, arg_8_2)
 	end
 
-	return slot3
+	return var_8_0
 end
 
-function slot0.GetGuildMemberCntAddition(slot0)
-	return slot0:getAddition(GuildConst.TYPE_GUILD_MEMBER_CNT)
+function var_0_0.GetGuildMemberCntAddition(arg_9_0)
+	return arg_9_0:getAddition(GuildConst.TYPE_GUILD_MEMBER_CNT)
 end
 
-return slot0
+return var_0_0

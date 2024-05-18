@@ -1,18 +1,21 @@
-pg = pg or {}
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
 this = {}
-pg.SpineCharCustomInfo = this
+var_0_0.SpineCharCustomInfo = this
 this.char_material_default_alpha = {}
 
-function this.GetCharMaterial(slot0)
-	slot1 = nil
+function this.GetCharMaterial(arg_1_0)
+	local var_1_0
 
-	if table.contains(uv0.SpineCharCustomInfo.char_material_default_alpha, slot0) then
-		PoolMgr:GetInstance():LoadAsset("spinematerials", "CharDefaultAlpha", false, typeof(Material), function (slot0)
-			uv0 = slot0
+	if table.contains(var_0_0.SpineCharCustomInfo.char_material_default_alpha, arg_1_0) then
+		PoolMgr:GetInstance():LoadAsset("spinematerials", "CharDefaultAlpha", false, typeof(Material), function(arg_2_0)
+			var_1_0 = arg_2_0
 		end, false)
 
-		slot1.name = "SkeletonGraphicDefault"
+		var_1_0.name = "SkeletonGraphicDefault"
 	end
 
-	return slot1
+	return var_1_0
 end

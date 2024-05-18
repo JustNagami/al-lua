@@ -1,116 +1,135 @@
-slot0 = class("MonopolyOPCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("MonopolyOPCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	if not getProxy(ActivityProxy):getActivityById(slot1:getBody().activity_id) or slot4:isEnd() then
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ActivityProxy)
+	local var_1_2 = var_1_1:getActivityById(var_1_0.activity_id)
+
+	if not var_1_2 or var_1_2:isEnd() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(11202, {
-		activity_id = slot2.activity_id,
-		cmd = slot2.cmd,
-		arg1 = slot2.arg1,
-		arg2 = slot2.arg2,
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.arg1,
+		arg2 = var_1_0.arg2,
 		arg_list = {}
-	}, 11203, function (slot0)
-		if slot0.result == 0 then
-			if uv0.cmd == ActivityConst.MONOPOLY_OP_AWARD then
-				uv1.data2_list[2] = uv1.data2_list[2] + 1
+	}, 11203, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
+			local var_2_1 = var_1_0.cmd
 
-				uv2:updateActivity(uv1)
-				uv3:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
-					awards = PlayerConst.addTranDrop(slot0.award_list)
+			if var_2_1 == ActivityConst.MONOPOLY_OP_AWARD then
+				var_1_2.data2_list[2] = var_1_2.data2_list[2] + 1
+
+				var_1_1:updateActivity(var_1_2)
+				arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+					awards = var_2_0
 				})
 			else
-				if slot2 == ActivityConst.MONOPOLY_OP_LAST then
-					uv1.data2_list[3] = 1
+				if var_2_1 == ActivityConst.MONOPOLY_OP_LAST then
+					var_1_2.data2_list[3] = 1
 
-					if #slot1 > 0 then
-						uv3:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
-							awards = slot1,
-							callback = function ()
+					if #var_2_0 > 0 then
+						arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+							awards = var_2_0,
+							callback = function()
+								return
 							end
 						})
 					end
 
-					if uv0.callback then
-						uv0.callback()
+					if var_1_0.callback then
+						var_1_0.callback()
 					end
 				end
 
-				slot3 = {}
+				local var_2_2 = {}
+				local var_2_3 = ""
 
-				for slot8, slot9 in ipairs(slot0.number) do
-					if slot8 > 2 then
-						table.insert(slot3, slot9)
+				for iter_2_0, iter_2_1 in ipairs(arg_2_0.number) do
+					if iter_2_0 > 2 then
+						table.insert(var_2_2, iter_2_1)
 
-						slot4 = "" .. "-" .. slot9
+						var_2_3 = var_2_3 .. "-" .. iter_2_1
 					end
 				end
 
-				slot5 = slot0.number[1]
-				slot6 = slot0.number[2]
-				slot7 = #slot3 > 0 and slot3[#slot3] or uv1.data2
+				local var_2_4 = arg_2_0.number[1]
+				local var_2_5 = arg_2_0.number[2]
+				local var_2_6 = #var_2_2 > 0 and var_2_2[#var_2_2] or var_1_2.data2
 
-				if table.contains(slot3, 1) then
-					uv1.data1_list[3] = uv1.data1_list[3] + 1
+				if table.contains(var_2_2, 1) then
+					var_1_2.data1_list[3] = var_1_2.data1_list[3] + 1
 				end
 
-				if slot2 == ActivityConst.MONOPOLY_OP_THROW then
-					uv1.data3 = slot5
-					uv1.data1_list[2] = uv1.data1_list[2] + 1
-					slot9 = uv1:getDataConfig("effective_times") or 0
-					slot10 = nil
+				if var_2_1 == ActivityConst.MONOPOLY_OP_THROW then
+					var_1_2.data3 = var_2_4
+					var_1_2.data1_list[2] = var_1_2.data1_list[2] + 1
 
-					if uv1:getDataConfig("reward_time") > 0 then
-						uv1.data2_list[1] = math.floor(((slot9 == 0 or math.min(uv1.data1_list[2], slot9)) and uv1.data1_list[2]) / slot8)
+					local var_2_7 = var_1_2:getDataConfig("reward_time")
+					local var_2_8 = var_1_2:getDataConfig("effective_times") or 0
+					local var_2_9
+
+					if var_2_8 ~= 0 then
+						var_2_9 = math.min(var_1_2.data1_list[2], var_2_8)
 					else
-						uv1.data2_list[1] = 0
+						var_2_9 = var_1_2.data1_list[2]
 					end
 
-					uv2:updateActivity(uv1)
-
-					if uv0.callback then
-						uv0.callback(slot5)
+					if var_2_7 > 0 then
+						var_1_2.data2_list[1] = math.floor(var_2_9 / var_2_7)
+					else
+						var_1_2.data2_list[1] = 0
 					end
-				elseif slot2 == ActivityConst.MONOPOLY_OP_MOVE then
-					uv1.data3 = slot5
-					uv1.data2 = slot7
-					uv1.data4 = slot6
 
-					uv2:updateActivity(uv1)
+					var_1_1:updateActivity(var_1_2)
 
-					if uv0.callback then
-						uv0.callback(slot5, slot3, slot6)
+					if var_1_0.callback then
+						var_1_0.callback(var_2_4)
 					end
-				elseif slot2 == ActivityConst.MONOPOLY_OP_TRIGGER then
-					slot8 = uv0.callback or function (slot0, slot1)
+				elseif var_2_1 == ActivityConst.MONOPOLY_OP_MOVE then
+					var_1_2.data3 = var_2_4
+					var_1_2.data2 = var_2_6
+					var_1_2.data4 = var_2_5
+
+					var_1_1:updateActivity(var_1_2)
+
+					if var_1_0.callback then
+						var_1_0.callback(var_2_4, var_2_2, var_2_5)
 					end
-					uv1.data3 = slot5
-					uv1.data2 = slot7
-					uv1.data4 = slot6 or 0
+				elseif var_2_1 == ActivityConst.MONOPOLY_OP_TRIGGER then
+					local var_2_10 = var_1_0.callback or function(arg_4_0, arg_4_1)
+						return
+					end
 
-					uv2:updateActivity(uv1)
+					var_1_2.data3 = var_2_4
+					var_1_2.data2 = var_2_6
+					var_1_2.data4 = var_2_5 or 0
 
-					if #slot1 > 0 then
-						uv3:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
-							awards = slot1,
-							callback = function ()
-								uv0(uv1, uv2)
+					var_1_1:updateActivity(var_1_2)
+
+					if #var_2_0 > 0 then
+						arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+							awards = var_2_0,
+							callback = function()
+								var_2_10(var_2_2, var_2_5)
 							end
 						})
 					else
-						slot8(slot3, slot6)
+						var_2_10(var_2_2, var_2_5)
 					end
 				end
 			end
 		else
-			if uv0.callback then
-				uv0.callback()
+			if var_1_0.callback then
+				var_1_0.callback()
 			end
 
-			originalPrint("Monopoly Activity erro code" .. slot0.result .. " cmd:" .. uv0.cmd)
+			originalPrint("Monopoly Activity erro code" .. arg_2_0.result .. " cmd:" .. var_1_0.cmd)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

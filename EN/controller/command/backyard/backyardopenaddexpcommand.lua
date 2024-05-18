@@ -1,13 +1,13 @@
-slot0 = class("BackYardOpenAddExpCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("BackYardOpenAddExpCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-	print("add exp ::", slot2)
+	print("add exp ::", var_1_0)
 	pg.ConnectionMgr.GetInstance():Send(19015, {
-		is_open = slot2
+		is_open = var_1_0
 	})
-	slot0:sendNotification(GAME.OPEN_ADD_EXP_DONE)
+	arg_1_0:sendNotification(GAME.OPEN_ADD_EXP_DONE)
 end
 
-return slot0
+return var_0_0

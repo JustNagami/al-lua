@@ -1,116 +1,113 @@
-slot0 = class("PublicGuildMainScene", import("...base.BaseUI"))
+﻿local var_0_0 = class("PublicGuildMainScene", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "PublicGuildMainUI"
 end
 
-function slot0.OnUpdateDonateList(slot0)
-	if slot0.page and isa(slot0.page, PublicGuildOfficePage) and slot0.page:GetLoaded() then
-		slot0.page:Flush()
+function var_0_0.OnUpdateDonateList(arg_2_0)
+	if arg_2_0.page and isa(arg_2_0.page, PublicGuildOfficePage) and arg_2_0.page:GetLoaded() then
+		arg_2_0.page:Flush()
 	end
 end
 
-function slot0.OnPlayerUpdate(slot0, slot1)
-	slot0:SetPlayer(slot1)
+function var_0_0.OnPlayerUpdate(arg_3_0, arg_3_1)
+	arg_3_0:SetPlayer(arg_3_1)
 
-	if slot0.resPage and slot0.resPage:GetLoaded() then
-		slot0.resPage:Update(slot1)
+	if arg_3_0.resPage and arg_3_0.resPage:GetLoaded() then
+		arg_3_0.resPage:Update(arg_3_1)
 	end
 end
 
-function slot0.OnTechGroupUpdate(slot0, slot1)
-	if slot0.page and isa(slot0.page, PublicGuildTechnologyPage) and slot0.page:GetLoaded() then
-		slot0.page:OnTechGroupUpdate(slot1)
+function var_0_0.OnTechGroupUpdate(arg_4_0, arg_4_1)
+	if arg_4_0.page and isa(arg_4_0.page, PublicGuildTechnologyPage) and arg_4_0.page:GetLoaded() then
+		arg_4_0.page:OnTechGroupUpdate(arg_4_1)
 	end
 end
 
-function slot0.RefreshAll(slot0)
-	if slot0.page and slot0.page:GetLoaded() then
-		slot0.page:Show(slot0.publicGuild)
+function var_0_0.RefreshAll(arg_5_0)
+	if arg_5_0.page and arg_5_0.page:GetLoaded() then
+		arg_5_0.page:Show(arg_5_0.publicGuild)
 	end
 end
 
-function slot0.SetPublicGuild(slot0, slot1)
-	slot0.publicGuild = slot1
+function var_0_0.SetPublicGuild(arg_6_0, arg_6_1)
+	arg_6_0.publicGuild = arg_6_1
 end
 
-function slot0.SetPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.SetPlayer(arg_7_0, arg_7_1)
+	arg_7_0.player = arg_7_1
 end
 
-function slot0.init(slot0)
-	slot0._playerResOb = slot0:findTF("blur_panel/adapt/top/res")
-	slot0.resPage = PublicGuildResPage.New(slot0._playerResOb, slot0.event)
-	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back")
-	slot0.helpBtn = slot0:findTF("blur_panel/adapt/left_length/frame/help")
-	slot0.toggles = {
-		slot0:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/office"),
-		slot0:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/technology")
+function var_0_0.init(arg_8_0)
+	arg_8_0._playerResOb = arg_8_0:findTF("blur_panel/adapt/top/res")
+	arg_8_0.resPage = PublicGuildResPage.New(arg_8_0._playerResOb, arg_8_0.event)
+	arg_8_0.backBtn = arg_8_0:findTF("blur_panel/adapt/top/back")
+	arg_8_0.helpBtn = arg_8_0:findTF("blur_panel/adapt/left_length/frame/help")
+	arg_8_0.toggles = {
+		arg_8_0:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/office"),
+		arg_8_0:findTF("blur_panel/adapt/left_length/frame/scroll_rect/tagRoot/technology")
 	}
-	slot1 = slot0:findTF("pages")
-	slot0.pages = {
-		PublicGuildOfficePage.New(slot1, slot0.event),
-		PublicGuildTechnologyPage.New(slot1, slot0.event)
+
+	local var_8_0 = arg_8_0:findTF("pages")
+
+	arg_8_0.pages = {
+		PublicGuildOfficePage.New(var_8_0, arg_8_0.event),
+		PublicGuildTechnologyPage.New(var_8_0, arg_8_0.event)
 	}
 end
 
-function slot0.didEnter(slot0)
-	pg.GuildPaintingMgr.GetInstance():Enter(slot0:findTF("bg/painting"))
-	slot0.resPage:ExecuteAction("Update", slot0.player)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.didEnter(arg_9_0)
+	pg.GuildPaintingMgr.GetInstance():Enter(arg_9_0:findTF("bg/painting"))
+	arg_9_0.resPage:ExecuteAction("Update", arg_9_0.player)
+	onButton(arg_9_0, arg_9_0.backBtn, function()
+		arg_9_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-
-	function slot4()
-		if isa(uv0.page, PublicGuildOfficePage) then
+	onButton(arg_9_0, arg_9_0.helpBtn, function()
+		if isa(arg_9_0.page, PublicGuildOfficePage) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = i18n("guild_public_office_tip")
 			})
-		elseif isa(uv0.page, PublicGuildTechnologyPage) then
+		elseif isa(arg_9_0.page, PublicGuildTechnologyPage) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				type = MSGBOX_TYPE_HELP,
 				helps = i18n("guild_public_tech_tip")
 			})
 		end
-	end
+	end, SFX_PANEL)
 
-	slot5 = SFX_PANEL
-
-	onButton(slot0, slot0.helpBtn, slot4, slot5)
-
-	for slot4, slot5 in ipairs(slot0.toggles) do
-		onToggle(slot0, slot5, function (slot0)
-			if slot0 then
-				uv0:SwitchPage(uv1)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.toggles) do
+		onToggle(arg_9_0, iter_9_1, function(arg_12_0)
+			if arg_12_0 then
+				arg_9_0:SwitchPage(iter_9_0)
 			end
 		end, SFX_PANEL)
 
-		if slot4 == 1 then
-			triggerToggle(slot5, true)
+		if iter_9_0 == 1 then
+			triggerToggle(iter_9_1, true)
 		end
 	end
 end
 
-function slot0.SwitchPage(slot0, slot1)
-	slot2 = slot0.pages[slot1]
+function var_0_0.SwitchPage(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_0.pages[arg_13_1]
 
-	if slot0.page then
-		slot0.page:Hide()
+	if arg_13_0.page then
+		arg_13_0.page:Hide()
 	end
 
-	slot2:ExecuteAction("Show", slot0.publicGuild)
+	var_13_0:ExecuteAction("Show", arg_13_0.publicGuild)
 
-	slot0.page = slot2
+	arg_13_0.page = var_13_0
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_14_0)
 	pg.GuildPaintingMgr.GetInstance():Exit()
-	slot0.resPage:Destroy()
+	arg_14_0.resPage:Destroy()
 
-	for slot4, slot5 in pairs(slot0.pages) do
-		slot5:Destroy()
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.pages) do
+		iter_14_1:Destroy()
 	end
 end
 
-return slot0
+return var_0_0

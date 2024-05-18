@@ -1,152 +1,181 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleConfig
-slot0.Battle.BattleHiveUnit = class("BattleHiveUnit", slot0.Battle.BattleWeaponUnit)
-slot0.Battle.BattleHiveUnit.__name = "BattleHiveUnit"
-slot3 = slot0.Battle.BattleHiveUnit
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleConfig
+
+var_0_0.Battle.BattleHiveUnit = class("BattleHiveUnit", var_0_0.Battle.BattleWeaponUnit)
+var_0_0.Battle.BattleHiveUnit.__name = "BattleHiveUnit"
+
+local var_0_3 = var_0_0.Battle.BattleHiveUnit
+
+function var_0_3.Ctor(arg_1_0)
+	var_0_3.super.Ctor(arg_1_0)
 end
 
-function slot3.Update(slot0)
-	slot0:UpdateReload()
-	slot0:updateMovementInfo()
+function var_0_3.Update(arg_2_0)
+	arg_2_0:UpdateReload()
+	arg_2_0:updateMovementInfo()
 
-	if slot0._currentState == slot0.STATE_READY then
-		if slot0._host:GetUnitType() ~= uv0.UnitType.PLAYER_UNIT then
-			if slot0._preCastInfo.time == nil then
-				slot0._currentState = slot0.STATE_PRECAST_FINISH
+	if arg_2_0._currentState == arg_2_0.STATE_READY then
+		if arg_2_0._host:GetUnitType() ~= var_0_1.UnitType.PLAYER_UNIT then
+			if arg_2_0._preCastInfo.time == nil then
+				arg_2_0._currentState = arg_2_0.STATE_PRECAST_FINISH
 			else
-				slot0:PreCast()
+				arg_2_0:PreCast()
 			end
 		else
-			slot1 = nil
+			local var_2_0
 
-			if #((not slot0._antiSub or uv1.Battle.BattleTargetChoise.TargetDetectedUnit(nil, , uv1.Battle.BattleTargetChoise.TargetDiveState(nil, , uv1.Battle.BattleTargetChoise.LegalTarget(slot0._host)))) and uv1.Battle.BattleTargetChoise.TargetAircraftHarm(slot0._host)) > 0 then
-				slot0._currentState = slot0.STATE_PRECAST_FINISH
+			if arg_2_0._antiSub then
+				var_2_0 = var_0_0.Battle.BattleTargetChoise.LegalTarget(arg_2_0._host)
+				var_2_0 = var_0_0.Battle.BattleTargetChoise.TargetDiveState(nil, nil, var_2_0)
+				var_2_0 = var_0_0.Battle.BattleTargetChoise.TargetDetectedUnit(nil, nil, var_2_0)
+			else
+				var_2_0 = var_0_0.Battle.BattleTargetChoise.TargetAircraftHarm(arg_2_0._host)
+			end
+
+			if #var_2_0 > 0 then
+				arg_2_0._currentState = arg_2_0.STATE_PRECAST_FINISH
 			end
 		end
 	end
 
-	if slot0._currentState == slot0.STATE_PRECAST_FINISH then
-		slot0:updateMovementInfo()
-		slot0:Fire()
+	if arg_2_0._currentState == arg_2_0.STATE_PRECAST_FINISH then
+		arg_2_0:updateMovementInfo()
+		arg_2_0:Fire()
 	end
 end
 
-function slot3.SetTemplateData(slot0, slot1)
-	uv0.super.SetTemplateData(slot0, slot1)
+function var_0_3.SetTemplateData(arg_3_0, arg_3_1)
+	var_0_3.super.SetTemplateData(arg_3_0, arg_3_1)
 
-	slot0._antiSub = table.contains(slot1.search_condition, uv1.OXY_STATE.DIVE)
+	arg_3_0._antiSub = table.contains(arg_3_1.search_condition, var_0_1.OXY_STATE.DIVE)
 end
 
-function slot3.Fire(slot0)
-	slot0:DispatchGCD()
+function var_0_3.Fire(arg_4_0)
+	arg_4_0:DispatchGCD()
 
-	slot0._currentState = slot0.STATE_ATTACK
+	arg_4_0._currentState = arg_4_0.STATE_ATTACK
 
-	if slot0._tmpData.action_index == "" then
-		slot0:DoAttack()
+	if arg_4_0._tmpData.action_index == "" then
+		arg_4_0:DoAttack()
 	else
-		slot0:DispatchFireEvent(nil, slot0._tmpData.action_index)
+		arg_4_0:DispatchFireEvent(nil, arg_4_0._tmpData.action_index)
 	end
 
-	slot0._host:CloakExpose(slot0._tmpData.expose)
+	arg_4_0._host:CloakExpose(arg_4_0._tmpData.expose)
 
 	return true
 end
 
-function slot3.createMajorEmitter(slot0, slot1, slot2, slot3, slot4, slot5)
-	uv0.super.createMajorEmitter(slot0, slot1, slot2, nil, function (slot0, slot1, slot2, slot3, slot4)
-		slot5, slot6 = uv0:SpwanAircraft(slot2)
+function var_0_3.createMajorEmitter(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5)
+	local function var_5_0(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
+		local var_6_0, var_6_1 = arg_5_0:SpwanAircraft(arg_6_2)
 
-		slot5:AddCreateTimer(slot6, 1.5)
+		var_6_0:AddCreateTimer(var_6_1, 1.5)
 
-		if uv0._debugRecordDEFAircraft then
-			table.insert(uv0._debugRecordDEFAircraft, slot5)
-		end
-	end, nil)
-end
-
-function slot3.SingleFire(slot0, slot1, slot2, slot3)
-	slot0._tempEmitterList = {}
-
-	for slot9, slot10 in ipairs(slot0._tmpData.barrage_ID) do
-		slot0._tempEmitterList[#slot0._tempEmitterList + 1] = uv0.Battle[slot2 or uv2.EMITTER_SHOTGUN].New(function (slot0, slot1, slot2, slot3, slot4)
-			slot5, slot6 = uv0:SpwanAircraft(slot2)
-
-			uv1.Battle.BattleVariable.AddExempt(slot5:GetSpeedExemptKey(), slot5:GetIFF(), uv2.SPEED_FACTOR_FOCUS_CHARACTER)
-			slot5:AddCreateTimer(slot6, 1)
-
-			if uv0._debugRecordATKAircraft then
-				table.insert(uv0._debugRecordATKAircraft, slot5)
-			end
-		end, function ()
-			for slot3, slot4 in ipairs(uv0._tempEmitterList) do
-				if slot4:GetState() ~= slot4.STATE_STOP then
-					return
-				end
-			end
-
-			for slot3, slot4 in ipairs(uv0._tempEmitterList) do
-				slot4:Destroy()
-			end
-
-			uv0._tempEmitterList = nil
-
-			if uv1 then
-				uv1()
-			end
-		end, slot10)
-	end
-
-	for slot9, slot10 in ipairs(slot0._tempEmitterList) do
-		slot10:Ready()
-		slot10:Fire(slot1, slot0:GetDirection(), slot0:GetAttackAngle())
-		slot10:SetTimeScale(false)
-	end
-
-	slot0._host:CloakExpose(slot0._tmpData.expose)
-end
-
-function slot3.SpwanAircraft(slot0, slot1)
-	slot2 = slot0._dataProxy:CreateAircraft(slot0._host, slot0._tmpData.id, slot0:GetPotential(), slot0._skinID)
-	slot4 = math.deg2Rad * (slot0:GetBaseAngle() + slot1)
-
-	slot0:TriggerBuffWhenSpawnAircraft(slot2)
-
-	return slot2, Vector3(math.cos(slot4), 0, math.sin(slot4))
-end
-
-function slot3.TriggerBuffWhenSpawnAircraft(slot0, slot1)
-	slot0._host:TriggerBuff(uv0.BuffEffectType.ON_AIRCRAFT_CREATE, {
-		aircraft = slot1,
-		equipIndex = slot0._equipmentIndex
-	})
-end
-
-function slot3.GetATKAircraftList(slot0)
-	slot0._debugRecordATKAircraft = slot0._debugRecordATKAircraft or {}
-
-	return slot0._debugRecordATKAircraft
-end
-
-function slot3.GetDEFAircraftList(slot0)
-	slot0._debugRecordDEFAircraft = slot0._debugRecordDEFAircraft or {}
-
-	return slot0._debugRecordDEFAircraft
-end
-
-function slot3.GetDamageSUM(slot0)
-	slot1 = 0
-
-	for slot6, slot7 in ipairs(slot0:GetDEFAircraftList()) do
-		for slot12, slot13 in ipairs(slot7:GetWeapon()) do
-			slot1 = slot1 + slot13:GetDamageSUM()
+		if arg_5_0._debugRecordDEFAircraft then
+			table.insert(arg_5_0._debugRecordDEFAircraft, var_6_0)
 		end
 	end
 
-	return slot1
+	var_0_3.super.createMajorEmitter(arg_5_0, arg_5_1, arg_5_2, nil, var_5_0, nil)
+end
+
+function var_0_3.SingleFire(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	arg_7_0._tempEmitterList = {}
+
+	local function var_7_0(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+		local var_8_0, var_8_1 = arg_7_0:SpwanAircraft(arg_8_2)
+
+		var_0_0.Battle.BattleVariable.AddExempt(var_8_0:GetSpeedExemptKey(), var_8_0:GetIFF(), var_0_2.SPEED_FACTOR_FOCUS_CHARACTER)
+		var_8_0:AddCreateTimer(var_8_1, 1)
+
+		if arg_7_0._debugRecordATKAircraft then
+			table.insert(arg_7_0._debugRecordATKAircraft, var_8_0)
+		end
+	end
+
+	local function var_7_1()
+		for iter_9_0, iter_9_1 in ipairs(arg_7_0._tempEmitterList) do
+			if iter_9_1:GetState() ~= iter_9_1.STATE_STOP then
+				return
+			end
+		end
+
+		for iter_9_2, iter_9_3 in ipairs(arg_7_0._tempEmitterList) do
+			iter_9_3:Destroy()
+		end
+
+		arg_7_0._tempEmitterList = nil
+
+		if arg_7_3 then
+			arg_7_3()
+		end
+	end
+
+	arg_7_2 = arg_7_2 or var_0_3.EMITTER_SHOTGUN
+
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0._tmpData.barrage_ID) do
+		local var_7_2 = var_0_0.Battle[arg_7_2].New(var_7_0, var_7_1, iter_7_1)
+
+		arg_7_0._tempEmitterList[#arg_7_0._tempEmitterList + 1] = var_7_2
+	end
+
+	for iter_7_2, iter_7_3 in ipairs(arg_7_0._tempEmitterList) do
+		iter_7_3:Ready()
+		iter_7_3:Fire(arg_7_1, arg_7_0:GetDirection(), arg_7_0:GetAttackAngle())
+		iter_7_3:SetTimeScale(false)
+	end
+
+	arg_7_0._host:CloakExpose(arg_7_0._tmpData.expose)
+end
+
+function var_0_3.SpwanAircraft(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0._dataProxy:CreateAircraft(arg_10_0._host, arg_10_0._tmpData.id, arg_10_0:GetPotential(), arg_10_0._skinID)
+	local var_10_1 = arg_10_0:GetBaseAngle() + arg_10_1
+	local var_10_2 = math.deg2Rad * var_10_1
+	local var_10_3 = Vector3(math.cos(var_10_2), 0, math.sin(var_10_2))
+
+	arg_10_0:TriggerBuffWhenSpawnAircraft(var_10_0)
+
+	return var_10_0, var_10_3
+end
+
+function var_0_3.TriggerBuffWhenSpawnAircraft(arg_11_0, arg_11_1)
+	local var_11_0 = var_0_1.BuffEffectType.ON_AIRCRAFT_CREATE
+	local var_11_1 = {
+		aircraft = arg_11_1,
+		equipIndex = arg_11_0._equipmentIndex
+	}
+
+	arg_11_0._host:TriggerBuff(var_11_0, var_11_1)
+end
+
+function var_0_3.GetATKAircraftList(arg_12_0)
+	arg_12_0._debugRecordATKAircraft = arg_12_0._debugRecordATKAircraft or {}
+
+	return arg_12_0._debugRecordATKAircraft
+end
+
+function var_0_3.GetDEFAircraftList(arg_13_0)
+	arg_13_0._debugRecordDEFAircraft = arg_13_0._debugRecordDEFAircraft or {}
+
+	return arg_13_0._debugRecordDEFAircraft
+end
+
+function var_0_3.GetDamageSUM(arg_14_0)
+	local var_14_0 = 0
+	local var_14_1 = arg_14_0:GetDEFAircraftList()
+
+	for iter_14_0, iter_14_1 in ipairs(var_14_1) do
+		local var_14_2 = iter_14_1:GetWeapon()
+
+		for iter_14_2, iter_14_3 in ipairs(var_14_2) do
+			var_14_0 = var_14_0 + iter_14_3:GetDamageSUM()
+		end
+	end
+
+	return var_14_0
 end

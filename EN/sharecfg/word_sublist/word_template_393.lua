@@ -1,11 +1,14 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_393 = {}
-slot1 = slot0.word_template_393
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_393 = {}
+
+local var_0_1 = var_0_0.word_template_393
 
 function temp()
-	uv0["撸"] = {
-		["管"] = {
+	var_0_1.撸 = {
+		管 = {
 			this = true
 		}
 	}
@@ -14,10 +17,10 @@ end
 temp()
 
 function temp()
-	uv0["庐"] = {
-		["山"] = {
-			["会"] = {
-				["议"] = {
+	var_0_1.庐 = {
+		山 = {
+			会 = {
+				议 = {
 					this = true
 				}
 			}
@@ -28,10 +31,10 @@ end
 temp()
 
 function temp()
-	uv0["捕"] = {
-		["鼠"] = {
-			["理"] = {
-				["论"] = {
+	var_0_1.捕 = {
+		鼠 = {
+			理 = {
+				论 = {
 					this = true
 				}
 			}
@@ -42,8 +45,8 @@ end
 temp()
 
 function temp()
-	uv0["溜"] = {
-		["贺"] = {
+	var_0_1.溜 = {
+		贺 = {
 			this = true
 		}
 	}
@@ -52,8 +55,8 @@ end
 temp()
 
 function temp()
-	uv0["粽"] = {
-		["鲤"] = {
+	var_0_1.粽 = {
+		鲤 = {
 			this = true
 		},
 		["\\"] = {
@@ -83,13 +86,13 @@ end
 temp()
 
 function temp()
-	uv0["约"] = {
-		["德"] = {
-			["尔"] = {
-				["凳"] = {
+	var_0_1.约 = {
+		德 = {
+			尔 = {
+				凳 = {
 					this = true
 				},
-				["邓"] = {
+				邓 = {
 					this = true
 				}
 			}
@@ -100,9 +103,9 @@ end
 temp()
 
 function temp()
-	uv0["氘"] = {
-		["熵"] = {
-			["飞"] = {
+	var_0_1.氘 = {
+		熵 = {
+			飞 = {
 				this = true
 			}
 		}

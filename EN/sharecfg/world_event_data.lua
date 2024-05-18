@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_event_data = setmetatable({
 	__name = "world_event_data",
 	all = {

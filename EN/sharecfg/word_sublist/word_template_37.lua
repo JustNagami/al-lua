@@ -1,11 +1,14 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_37 = {}
-slot1 = slot0.word_template_37
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_37 = {}
+
+local var_0_1 = var_0_0.word_template_37
 
 function temp()
-	uv0["傴"] = {
-		["僂"] = {
+	var_0_1.傴 = {
+		僂 = {
 			this = true
 		},
 		this = {
@@ -17,7 +20,7 @@ end
 temp()
 
 function temp()
-	uv0["咥"] = {
+	var_0_1.咥 = {
 		this = {
 			this = true
 		}
@@ -27,8 +30,8 @@ end
 temp()
 
 function temp()
-	uv0["喘"] = {
-		["ぎ"] = {
+	var_0_1.喘 = {
+		ぎ = {
 			this = true
 		}
 	}
@@ -37,18 +40,18 @@ end
 temp()
 
 function temp()
-	uv0["專"] = {
-		["制"] = {
+	var_0_1.專 = {
+		制 = {
 			this = true
 		},
-		["業"] = {
-			["坡"] = {
-				["解"] = {
+		業 = {
+			坡 = {
+				解 = {
 					this = true
 				}
 			}
 		},
-		["政"] = {
+		政 = {
 			this = true
 		}
 	}
@@ -57,8 +60,8 @@ end
 temp()
 
 function temp()
-	uv0["癩"] = {
-		["病"] = {
+	var_0_1.癩 = {
+		病 = {
 			this = true
 		}
 	}
@@ -67,8 +70,8 @@ end
 temp()
 
 function temp()
-	uv0["穢"] = {
-		["多"] = {
+	var_0_1.穢 = {
+		多 = {
 			this = true
 		}
 	}
@@ -77,37 +80,37 @@ end
 temp()
 
 function temp()
-	uv0["聊"] = {
+	var_0_1.聊 = {
 		this = {
 			this = true
 		},
-		["天"] = {
-			["服"] = {
-				["务"] = {
+		天 = {
+			服 = {
+				务 = {
 					this = true
 				}
 			}
 		},
-		["性"] = {
-			["爱"] = {
+		性 = {
+			爱 = {
 				this = true
 			}
 		},
-		["斋"] = {
-			["艳"] = {
-				["蛇"] = {
+		斋 = {
+			艳 = {
+				蛇 = {
 					this = true
 				},
-				["谭"] = {
+				谭 = {
 					this = true
 				}
 			},
-			["之"] = {
-				["欲"] = {
-					["焰"] = {
-						["三"] = {
-							["娘"] = {
-								["子"] = {
+			之 = {
+				欲 = {
+					焰 = {
+						三 = {
+							娘 = {
+								子 = {
 									this = true
 								}
 							}

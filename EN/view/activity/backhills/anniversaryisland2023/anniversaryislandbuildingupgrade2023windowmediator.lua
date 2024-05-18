@@ -1,34 +1,39 @@
-slot0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
-slot0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+﻿local var_0_0 = class("AnniversaryIslandBuildingUpgrade2023WindowMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ACTIVITY_OPERATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ACTIVITY_OPERATION, slot1)
+var_0_0.ACTIVITY_OPERATION = "ACTIVITY_OPERATION"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ACTIVITY_OPERATION, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, arg_2_1)
 	end)
-	slot0:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(WorkBenchItemDetailMediator.SHOW_DETAIL, function(arg_3_0, arg_3_1)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = WorkBenchItemDetailMediator,
 			viewComponent = WorkBenchItemDetailLayer,
 			data = {
-				material = slot1
+				material = arg_3_1
 			}
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		ActivityProxy.ACTIVITY_UPDATED
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	if slot1:getName() == ActivityProxy.ACTIVITY_UPDATED and slot1:getBody():getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
-		slot0.viewComponent:UpdateView()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
+
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED and var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2 then
+		arg_5_0.viewComponent:UpdateView()
 	end
 end
 
-function slot0.remove(slot0)
+function var_0_0.remove(arg_6_0)
+	return
 end
 
-return slot0
+return var_0_0

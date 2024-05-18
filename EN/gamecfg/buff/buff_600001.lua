@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 8,
-	name = "",
-	init_effect = "jinengchufablue",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 600001,
-	icon = 600001,
-	last_effect = "",
+﻿return {
 	blink = {
 		0,
 		0.7,
@@ -95,5 +76,24 @@ return {
 				target = "TargetSelf"
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 8,
+	name = "",
+	init_effect = "jinengchufablue",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 600001,
+	icon = 600001,
+	last_effect = ""
 }

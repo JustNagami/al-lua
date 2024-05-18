@@ -1,25 +1,25 @@
-slot0 = class("AttachmentBarrierCell", import("view.level.cell.StaticCellView"))
+﻿local var_0_0 = class("AttachmentBarrierCell", import("view.level.cell.StaticCellView"))
 
-function slot0.GetOrder(slot0)
+function var_0_0.GetOrder(arg_1_0)
 	return ChapterConst.CellPriorityAttachment
 end
 
-function slot0.Update(slot0)
-	slot1 = slot0.info
+function var_0_0.Update(arg_2_0)
+	local var_2_0 = arg_2_0.info
 
-	if IsNil(slot0.go) then
-		slot0:PrepareBase("zulanwangheng")
-		slot0:GetLoader():GetPrefab("chapter/zulanwangheng", "zulanwangheng", function (slot0)
-			setParent(slot0, uv0.tf)
-			setActive(slot0, true)
+	if IsNil(arg_2_0.go) then
+		arg_2_0:PrepareBase("zulanwangheng")
+		arg_2_0:GetLoader():GetPrefab("chapter/zulanwangheng", "zulanwangheng", function(arg_3_0)
+			setParent(arg_3_0, arg_2_0.tf)
+			setActive(arg_3_0, true)
 
-			uv0.barrier = slot0
+			arg_2_0.barrier = arg_3_0
 
-			uv0:Update()
+			arg_2_0:Update()
 		end)
 	end
 
-	setActive(slot0.tf, slot1.flag == ChapterConst.CellFlagActive)
+	setActive(arg_2_0.tf, var_2_0.flag == ChapterConst.CellFlagActive)
 end
 
-return slot0
+return var_0_0

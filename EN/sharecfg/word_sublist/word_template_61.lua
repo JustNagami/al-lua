@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_61 = {}
-slot1 = slot0.word_template_61
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_61 = {}
+
+local var_0_1 = var_0_0.word_template_61
 
 function temp()
-	uv0["蒇"] = {
+	var_0_1.蒇 = {
 		this = {
 			this = true
 		}
@@ -14,7 +17,7 @@ end
 temp()
 
 function temp()
-	uv0["蕆"] = {
+	var_0_1.蕆 = {
 		this = {
 			this = true
 		}
@@ -24,7 +27,7 @@ end
 temp()
 
 function temp()
-	uv0["冁"] = {
+	var_0_1.冁 = {
 		this = {
 			this = true
 		}
@@ -34,7 +37,7 @@ end
 temp()
 
 function temp()
-	uv0["囅"] = {
+	var_0_1.囅 = {
 		this = {
 			this = true
 		}
@@ -44,11 +47,11 @@ end
 temp()
 
 function temp()
-	uv0["颤"] = {
-		["栗"] = {
-			["的"] = {
-				["情"] = {
-					["人"] = {
+	var_0_1.颤 = {
+		栗 = {
+			的 = {
+				情 = {
+					人 = {
 						this = true
 					}
 				}
@@ -60,7 +63,7 @@ end
 temp()
 
 function temp()
-	uv0["羼"] = {
+	var_0_1.羼 = {
 		this = {
 			this = true
 		}
@@ -70,8 +73,8 @@ end
 temp()
 
 function temp()
-	uv0["猖"] = {
-		["妓"] = {
+	var_0_1.猖 = {
+		妓 = {
 			this = true
 		}
 	}

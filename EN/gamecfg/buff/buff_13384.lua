@@ -1,4 +1,20 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				minTargetNumber = 3,
+				skill_id = 13381,
+				check_target = {
+					"TargetAllHelp",
+					"TargetPlayerVanguardFleet"
+				}
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,21 +35,5 @@ return {
 	stack = 1,
 	id = 13384,
 	icon = 13380,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				minTargetNumber = 3,
-				skill_id = 13381,
-				check_target = {
-					"TargetAllHelp",
-					"TargetPlayerVanguardFleet"
-				}
-			}
-		}
-	}
+	last_effect = ""
 }

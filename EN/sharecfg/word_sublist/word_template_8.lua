@@ -1,12 +1,15 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_8 = {}
-slot1 = slot0.word_template_8
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_8 = {}
+
+local var_0_1 = var_0_0.word_template_8
 
 function temp()
-	uv0["か"] = {
-		["た"] = {
-			["わ"] = {
+	var_0_1.か = {
+		た = {
+			わ = {
 				this = true
 			}
 		}
@@ -16,22 +19,22 @@ end
 temp()
 
 function temp()
-	uv0["キ"] = {
-		["チ"] = {
-			["ガ"] = {
-				["イ"] = {
+	var_0_1.キ = {
+		チ = {
+			ガ = {
+				イ = {
 					this = true
 				}
 			}
 		},
-		["ャ"] = {
-			["ッ"] = {
-				["シ"] = {
+		ャ = {
+			ッ = {
+				シ = {
 					this = true,
-					["ュ"] = {
-						["バ"] = {
-							["ッ"] = {
-								["ク"] = {
+					ュ = {
+						バ = {
+							ッ = {
+								ク = {
 									this = true
 								}
 							}
@@ -46,15 +49,15 @@ end
 temp()
 
 function temp()
-	uv0["き"] = {
-		["ょ"] = {
-			["う"] = {
-				["じ"] = {
-					["ん"] = {
-						["（"] = {
-							["狂"] = {
-								["人"] = {
-									["）"] = {
+	var_0_1.き = {
+		ょ = {
+			う = {
+				じ = {
+					ん = {
+						（ = {
+							狂 = {
+								人 = {
+									） = {
 										this = true
 									}
 								}
@@ -70,29 +73,29 @@ end
 temp()
 
 function temp()
-	uv0["ク"] = {
-		["ソ"] = {
+	var_0_1.ク = {
+		ソ = {
 			this = true
 		},
-		["リ"] = {
-			["ニ"] = {
-				["ッ"] = {
-					["ク"] = {
+		リ = {
+			ニ = {
+				ッ = {
+					ク = {
 						this = true
 					}
 				}
 			}
 		},
-		["ロ"] = {
-			["ン"] = {
-				["ボ"] = {
+		ロ = {
+			ン = {
+				ボ = {
 					this = true
 				}
 			}
 		},
-		["ー"] = {
-			["リ"] = {
-				["ー"] = {
+		ー = {
+			リ = {
+				ー = {
 					this = true
 				}
 			}
@@ -103,10 +106,10 @@ end
 temp()
 
 function temp()
-	uv0["グ"] = {
-		["ラ"] = {
-			["ビ"] = {
-				["ア"] = {
+	var_0_1.グ = {
+		ラ = {
+			ビ = {
+				ア = {
 					this = true
 				}
 			}
@@ -117,10 +120,10 @@ end
 temp()
 
 function temp()
-	uv0["く"] = {
-		["ろ"] = {
-			["ん"] = {
-				["ぼ"] = {
+	var_0_1.く = {
+		ろ = {
+			ん = {
+				ぼ = {
 					this = true
 				}
 			}
@@ -131,8 +134,8 @@ end
 temp()
 
 function temp()
-	uv0["ゲ"] = {
-		["ス"] = {
+	var_0_1.ゲ = {
+		ス = {
 			this = true
 		}
 	}

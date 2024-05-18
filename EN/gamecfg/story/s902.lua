@@ -1,4 +1,4 @@
-return {
+﻿return {
 	id = "S902",
 	type = 2,
 	scripts = {

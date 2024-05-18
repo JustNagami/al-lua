@@ -1,4 +1,28 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffFixVelocity",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				add = 0,
+				mul = -1500
+			}
+		},
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "dodgeRate",
+				number = -400
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -267,29 +291,5 @@ return {
 	stack = 1,
 	id = 106261,
 	icon = 106100,
-	last_effect = "Darkness",
-	effect_list = {
-		{
-			type = "BattleBuffFixVelocity",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				add = 0,
-				mul = -1500
-			}
-		},
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "dodgeRate",
-				number = -400
-			}
-		}
-	}
+	last_effect = "Darkness"
 }

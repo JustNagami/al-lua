@@ -1,222 +1,228 @@
-slot0 = class("ChallengeMainScene", import("..base.BaseUI"))
-slot0.BOSS_NUM = 5
-slot0.FADE_TIME = 5
+﻿local var_0_0 = class("ChallengeMainScene", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+var_0_0.BOSS_NUM = 5
+var_0_0.FADE_TIME = 5
+
+function var_0_0.getUIName(arg_1_0)
 	return "ChallengeMainUI"
 end
 
-function slot0.init(slot0)
-	slot0:findUI()
-	slot0:initData()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:findUI()
+	arg_2_0:initData()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateGrade(slot0.challengeInfo:getGradeList())
-	slot0:updateTimePanel()
-	slot0:updateSwitchModBtn()
-	slot0:updateAwardPanel()
-	slot0:updatePaintingList(slot0.nameList, slot0.showingIndex)
-	slot0:updateRoundText(slot0.showingIndex)
-	slot0:updateSlider(slot0.showingIndex)
-	slot0:updateFuncBtns()
-	slot0:showSLResetMsgBox()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updateGrade(arg_3_0.challengeInfo:getGradeList())
+	arg_3_0:updateTimePanel()
+	arg_3_0:updateSwitchModBtn()
+	arg_3_0:updateAwardPanel()
+	arg_3_0:updatePaintingList(arg_3_0.nameList, arg_3_0.showingIndex)
+	arg_3_0:updateRoundText(arg_3_0.showingIndex)
+	arg_3_0:updateSlider(arg_3_0.showingIndex)
+	arg_3_0:updateFuncBtns()
+	arg_3_0:showSLResetMsgBox()
 
-	if slot0.contextData.editFleet then
-		slot0:doOnFleetPanel()
+	if arg_3_0.contextData.editFleet then
+		arg_3_0:doOnFleetPanel()
 
-		slot0.contextData.editFleet = nil
+		arg_3_0.contextData.editFleet = nil
 	end
 
-	slot0:tryPlayGuide()
+	arg_3_0:tryPlayGuide()
 end
 
-function slot0.willExit(slot0)
-	LeanTween.cancel(go(slot0.modTipTF))
+function var_0_0.willExit(arg_4_0)
+	LeanTween.cancel(go(arg_4_0.modTipTF))
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	if arg_4_0.timer then
+		arg_4_0.timer:Stop()
 	end
 
-	slot0:destroyCommanderPanel()
+	arg_4_0:destroyCommanderPanel()
 end
 
-function slot0.onBackPressed(slot0)
-	if isActive(slot0.fleetSelect) then
-		slot0:hideFleetEdit()
+function var_0_0.onBackPressed(arg_5_0)
+	if isActive(arg_5_0.fleetSelect) then
+		arg_5_0:hideFleetEdit()
 	else
-		triggerButton(slot0.backBtn)
+		triggerButton(arg_5_0.backBtn)
 	end
 end
 
-function slot0.setFleet(slot0, slot1)
-	slot0.fleets = {}
+function var_0_0.setFleet(arg_6_0, arg_6_1)
+	arg_6_0.fleets = {}
 
-	function slot2(slot0)
-		uv0.fleets[slot0] = {
-			uv1[slot0 + 1],
-			[11] = uv1[slot0 + 11]
+	local function var_6_0(arg_7_0)
+		arg_6_0.fleets[arg_7_0] = {
+			arg_6_1[arg_7_0 + 1],
+			[11] = arg_6_1[arg_7_0 + 11]
 		}
 	end
 
-	slot2(ChallengeProxy.MODE_CASUAL)
-	slot2(ChallengeProxy.MODE_INFINITE)
+	var_6_0(ChallengeProxy.MODE_CASUAL)
+	var_6_0(ChallengeProxy.MODE_INFINITE)
 end
 
-function slot0.findUI(slot0)
-	slot0.northTF = slot0:findTF("ForNorth")
-	slot0.paintingListTF = slot0:findTF("PaintingList")
-	slot0.backBtn = slot0:findTF("top/back_button", slot0.northTF)
-	slot0.gradeContainer = slot0:findTF("GradeContainer", slot0.northTF)
-	slot0.seasonBestPointText = slot0:findTF("SeasonBestPoint/Text", slot0.gradeContainer)
-	slot0.activityBestPointText = slot0:findTF("ActivityBestPoint/Text", slot0.gradeContainer)
-	slot0.seasonLevelNumText = slot0:findTF("SeasonLevelNum/Text", slot0.gradeContainer)
-	slot0.activityLevelNumText = slot0:findTF("ActivityLevelNum/Text", slot0.gradeContainer)
-	slot0.timeTipTF = slot0:findTF("TimeTip", slot0.northTF)
-	slot0.activityTimeText = slot0:findTF("ActivityTimeText", slot0.timeTipTF)
-	slot0.seasonDayText = slot0:findTF("SeasonTipText/DayText", slot0.timeTipTF)
-	slot0.seasonTimeText = slot0:findTF("SeasonTimeText", slot0.timeTipTF)
-	slot0.switchModTF = slot0:findTF("SwitchMod", slot0.northTF)
-	slot0.casualModBtn = slot0:findTF("NormalBtn", slot0.switchModTF)
-	slot0.infiniteModBtn = slot0:findTF("EndlessBtn", slot0.switchModTF)
-	slot0.casualModBtnBG = slot0:findTF("BG", slot0.casualModBtn)
-	slot0.infiniteModBtnBG = slot0:findTF("BG", slot0.infiniteModBtn)
-	slot0.casualModBtnSC = GetComponent(slot0.casualModBtn, "Button")
-	slot0.infiniteModBtnSC = GetComponent(slot0.infiniteModBtn, "Button")
-	slot0.functionBtnsTF = slot0:findTF("FunctionBtns", slot0.northTF)
-	slot0.rankBtn = slot0:findTF("RankBtn", slot0.functionBtnsTF)
-	slot0.startBtn = slot0:findTF("StartBtn", slot0.functionBtnsTF)
-	slot0.resetBtn = slot0:findTF("ResetBtn", slot0.functionBtnsTF)
-	slot0.startBtnBanned = slot0:findTF("StartBtnBanned", slot0.functionBtnsTF)
-	slot0.resetBtnBanned = slot0:findTF("ResetBtnBanned", slot0.functionBtnsTF)
-	slot0.awardTF = slot0:findTF("Award", slot0.northTF)
-	slot0.helpBtn = slot0:findTF("HelpBtn", slot0.awardTF)
-	slot0.getBtn = slot0:findTF("GetBtn", slot0.awardTF)
-	slot0.gotBtn = slot0:findTF("GotBtn", slot0.awardTF)
-	slot0.getBtnBanned = slot0:findTF("GetBtnBanned", slot0.awardTF)
-	slot0.itemTF = slot0:findTF("ItemBG/item", slot0.awardTF)
-	slot0.scoreText = slot0:findTF("Score/ScoreText", slot0.awardTF)
-	slot0.slider = slot0:findTF("Slider", slot0.northTF)
-	slot0.squareContainer = slot0:findTF("SquareList", slot0.slider)
-	slot0.squareTpl = slot0:findTF("Squre", slot0.slider)
-	slot0.squareList = UIItemList.New(slot0.squareContainer, slot0.squareTpl)
-	slot0.sliderSC = GetComponent(slot0.slider, "Slider")
-	slot0.paintingContainer = slot0:findTF("PaintingList")
-	slot0.scrollSC = GetComponent(slot0.paintingContainer, "Slider")
-	slot0.material = slot0:findTF("material"):GetComponent(typeof(Image)).material
-	slot0.material1 = slot0:findTF("material1"):GetComponent(typeof(Image)).material
-	slot0.painting = slot0:findTF("Painting", slot0.paintingContainer)
-	slot0.paintingShadow1 = slot0:findTF("PaintingShadow1", slot0.painting)
-	slot0.paintingShadow2 = slot0:findTF("PaintingShadow2", slot0.painting)
-	slot0.bossInfoImg = slot0:findTF("InfoImg", slot0.painting)
-	slot0.roundNumText = slot0:findTF("Round/NumText", slot0.painting)
-	slot0.completeEffectTF = slot0:findTF("TZ02", slot0.painting)
+function var_0_0.findUI(arg_8_0)
+	arg_8_0.northTF = arg_8_0:findTF("ForNorth")
+	arg_8_0.paintingListTF = arg_8_0:findTF("PaintingList")
+	arg_8_0.backBtn = arg_8_0:findTF("top/back_button", arg_8_0.northTF)
+	arg_8_0.gradeContainer = arg_8_0:findTF("GradeContainer", arg_8_0.northTF)
+	arg_8_0.seasonBestPointText = arg_8_0:findTF("SeasonBestPoint/Text", arg_8_0.gradeContainer)
+	arg_8_0.activityBestPointText = arg_8_0:findTF("ActivityBestPoint/Text", arg_8_0.gradeContainer)
+	arg_8_0.seasonLevelNumText = arg_8_0:findTF("SeasonLevelNum/Text", arg_8_0.gradeContainer)
+	arg_8_0.activityLevelNumText = arg_8_0:findTF("ActivityLevelNum/Text", arg_8_0.gradeContainer)
+	arg_8_0.timeTipTF = arg_8_0:findTF("TimeTip", arg_8_0.northTF)
+	arg_8_0.activityTimeText = arg_8_0:findTF("ActivityTimeText", arg_8_0.timeTipTF)
+	arg_8_0.seasonDayText = arg_8_0:findTF("SeasonTipText/DayText", arg_8_0.timeTipTF)
+	arg_8_0.seasonTimeText = arg_8_0:findTF("SeasonTimeText", arg_8_0.timeTipTF)
+	arg_8_0.switchModTF = arg_8_0:findTF("SwitchMod", arg_8_0.northTF)
+	arg_8_0.casualModBtn = arg_8_0:findTF("NormalBtn", arg_8_0.switchModTF)
+	arg_8_0.infiniteModBtn = arg_8_0:findTF("EndlessBtn", arg_8_0.switchModTF)
+	arg_8_0.casualModBtnBG = arg_8_0:findTF("BG", arg_8_0.casualModBtn)
+	arg_8_0.infiniteModBtnBG = arg_8_0:findTF("BG", arg_8_0.infiniteModBtn)
+	arg_8_0.casualModBtnSC = GetComponent(arg_8_0.casualModBtn, "Button")
+	arg_8_0.infiniteModBtnSC = GetComponent(arg_8_0.infiniteModBtn, "Button")
+	arg_8_0.functionBtnsTF = arg_8_0:findTF("FunctionBtns", arg_8_0.northTF)
+	arg_8_0.rankBtn = arg_8_0:findTF("RankBtn", arg_8_0.functionBtnsTF)
+	arg_8_0.startBtn = arg_8_0:findTF("StartBtn", arg_8_0.functionBtnsTF)
+	arg_8_0.resetBtn = arg_8_0:findTF("ResetBtn", arg_8_0.functionBtnsTF)
+	arg_8_0.startBtnBanned = arg_8_0:findTF("StartBtnBanned", arg_8_0.functionBtnsTF)
+	arg_8_0.resetBtnBanned = arg_8_0:findTF("ResetBtnBanned", arg_8_0.functionBtnsTF)
+	arg_8_0.awardTF = arg_8_0:findTF("Award", arg_8_0.northTF)
+	arg_8_0.helpBtn = arg_8_0:findTF("HelpBtn", arg_8_0.awardTF)
+	arg_8_0.getBtn = arg_8_0:findTF("GetBtn", arg_8_0.awardTF)
+	arg_8_0.gotBtn = arg_8_0:findTF("GotBtn", arg_8_0.awardTF)
+	arg_8_0.getBtnBanned = arg_8_0:findTF("GetBtnBanned", arg_8_0.awardTF)
+	arg_8_0.itemTF = arg_8_0:findTF("ItemBG/item", arg_8_0.awardTF)
+	arg_8_0.scoreText = arg_8_0:findTF("Score/ScoreText", arg_8_0.awardTF)
+	arg_8_0.slider = arg_8_0:findTF("Slider", arg_8_0.northTF)
+	arg_8_0.squareContainer = arg_8_0:findTF("SquareList", arg_8_0.slider)
+	arg_8_0.squareTpl = arg_8_0:findTF("Squre", arg_8_0.slider)
+	arg_8_0.squareList = UIItemList.New(arg_8_0.squareContainer, arg_8_0.squareTpl)
+	arg_8_0.sliderSC = GetComponent(arg_8_0.slider, "Slider")
+	arg_8_0.paintingContainer = arg_8_0:findTF("PaintingList")
+	arg_8_0.scrollSC = GetComponent(arg_8_0.paintingContainer, "Slider")
+	arg_8_0.material = arg_8_0:findTF("material"):GetComponent(typeof(Image)).material
+	arg_8_0.material1 = arg_8_0:findTF("material1"):GetComponent(typeof(Image)).material
+	arg_8_0.painting = arg_8_0:findTF("Painting", arg_8_0.paintingContainer)
+	arg_8_0.paintingShadow1 = arg_8_0:findTF("PaintingShadow1", arg_8_0.painting)
+	arg_8_0.paintingShadow2 = arg_8_0:findTF("PaintingShadow2", arg_8_0.painting)
+	arg_8_0.bossInfoImg = arg_8_0:findTF("InfoImg", arg_8_0.painting)
+	arg_8_0.roundNumText = arg_8_0:findTF("Round/NumText", arg_8_0.painting)
+	arg_8_0.completeEffectTF = arg_8_0:findTF("TZ02", arg_8_0.painting)
 
-	SetActive(slot0.completeEffectTF, false)
+	SetActive(arg_8_0.completeEffectTF, false)
 
-	slot0.card1TF = slot0:findTF("Card1", slot0.paintingContainer)
-	slot0.shipPaintImg_1 = slot0:findTF("Mask/ShipPaint", slot0.card1TF)
-	slot0.tag_1 = slot0:findTF("Tag", slot0.card1TF)
-	slot0.mask_1 = slot0:findTF("Mask", slot0.card1TF)
-	slot0.roundTF_1 = slot0:findTF("Round", slot0.card1TF)
-	slot0.roundText_1 = slot0:findTF("Round/RoundText", slot0.card1TF)
-	slot0.card2TF = slot0:findTF("Card2", slot0.paintingContainer)
-	slot0.shipPaintImg_2 = slot0:findTF("Mask/ShipPaint", slot0.card2TF)
-	slot0.tag_2 = slot0:findTF("Tag", slot0.card2TF)
-	slot0.mask_2 = slot0:findTF("Mask", slot0.card2TF)
-	slot0.roundTF_2 = slot0:findTF("Round", slot0.card2TF)
-	slot0.roundText_2 = slot0:findTF("Round/RoundText", slot0.card2TF)
-	slot0.modTipBtn = slot0:findTF("ModTipBtn", slot0.northTF)
-	slot0.modTipTF = slot0:findTF("TipText", slot0.northTF)
-	slot0.modTipText = slot0:findTF("Text", slot0.modTipTF)
+	arg_8_0.card1TF = arg_8_0:findTF("Card1", arg_8_0.paintingContainer)
+	arg_8_0.shipPaintImg_1 = arg_8_0:findTF("Mask/ShipPaint", arg_8_0.card1TF)
+	arg_8_0.tag_1 = arg_8_0:findTF("Tag", arg_8_0.card1TF)
+	arg_8_0.mask_1 = arg_8_0:findTF("Mask", arg_8_0.card1TF)
+	arg_8_0.roundTF_1 = arg_8_0:findTF("Round", arg_8_0.card1TF)
+	arg_8_0.roundText_1 = arg_8_0:findTF("Round/RoundText", arg_8_0.card1TF)
+	arg_8_0.card2TF = arg_8_0:findTF("Card2", arg_8_0.paintingContainer)
+	arg_8_0.shipPaintImg_2 = arg_8_0:findTF("Mask/ShipPaint", arg_8_0.card2TF)
+	arg_8_0.tag_2 = arg_8_0:findTF("Tag", arg_8_0.card2TF)
+	arg_8_0.mask_2 = arg_8_0:findTF("Mask", arg_8_0.card2TF)
+	arg_8_0.roundTF_2 = arg_8_0:findTF("Round", arg_8_0.card2TF)
+	arg_8_0.roundText_2 = arg_8_0:findTF("Round/RoundText", arg_8_0.card2TF)
+	arg_8_0.modTipBtn = arg_8_0:findTF("ModTipBtn", arg_8_0.northTF)
+	arg_8_0.modTipTF = arg_8_0:findTF("TipText", arg_8_0.northTF)
+	arg_8_0.modTipText = arg_8_0:findTF("Text", arg_8_0.modTipTF)
 
-	setActive(slot0.modTipTF, false)
+	setActive(arg_8_0.modTipTF, false)
 
-	slot0.fleetSelect = slot0:findTF("LevelFleetSelectView")
-	slot0.fleetEditPanel = ActivityFleetPanel.New(slot0.fleetSelect.gameObject)
+	arg_8_0.fleetSelect = arg_8_0:findTF("LevelFleetSelectView")
+	arg_8_0.fleetEditPanel = ActivityFleetPanel.New(arg_8_0.fleetSelect.gameObject)
 
-	function slot0.fleetEditPanel.onCancel()
-		uv0:hideFleetEdit()
+	function arg_8_0.fleetEditPanel.onCancel()
+		arg_8_0:hideFleetEdit()
 	end
 
-	function slot0.fleetEditPanel.onCommit()
-		uv0:commitEdit()
+	function arg_8_0.fleetEditPanel.onCommit()
+		arg_8_0:commitEdit()
 	end
 
-	function slot0.fleetEditPanel.onCombat()
-		uv0:commitEdit()
-		uv0:emit(ChallengeMainMediator.ON_PRECOMBAT, uv0.curMode)
+	function arg_8_0.fleetEditPanel.onCombat()
+		arg_8_0:commitEdit()
+		arg_8_0:emit(ChallengeMainMediator.ON_PRECOMBAT, arg_8_0.curMode)
 	end
 
-	function slot0.fleetEditPanel.onLongPressShip(slot0, slot1)
-		uv0:openShipInfo(slot0, slot1)
+	function arg_8_0.fleetEditPanel.onLongPressShip(arg_12_0, arg_12_1)
+		arg_8_0:openShipInfo(arg_12_0, arg_12_1)
 	end
 
-	slot0:buildCommanderPanel()
+	arg_8_0:buildCommanderPanel()
 end
 
-function slot0.tryPlayGuide(slot0)
-	pg.SystemGuideMgr.GetInstance():Play(slot0)
+function var_0_0.tryPlayGuide(arg_13_0)
+	pg.SystemGuideMgr.GetInstance():Play(arg_13_0)
 end
 
-function slot0.initData(slot0)
-	slot0.challengeProxy = getProxy(ChallengeProxy)
-	slot0.challengeInfo = slot0.challengeProxy:getChallengeInfo()
-	slot0.userChallengeInfoList = slot0.challengeProxy:getUserChallengeInfoList()
-	slot0.timeOverTag = false
+function var_0_0.initData(arg_14_0)
+	arg_14_0.challengeProxy = getProxy(ChallengeProxy)
+	arg_14_0.challengeInfo = arg_14_0.challengeProxy:getChallengeInfo()
+	arg_14_0.userChallengeInfoList = arg_14_0.challengeProxy:getUserChallengeInfoList()
+	arg_14_0.timeOverTag = false
 
-	slot0:updateData()
+	arg_14_0:updateData()
 
-	slot0.openedCommanerSystem = true
+	arg_14_0.openedCommanerSystem = true
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_BACK)
+function var_0_0.addListener(arg_15_0)
+	onButton(arg_15_0, arg_15_0.backBtn, function()
+		arg_15_0:emit(var_0_0.ON_BACK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.helpBtn, function ()
+	onButton(arg_15_0, arg_15_0.helpBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.challenge_help.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.rankBtn, function ()
-		uv0:emit(ChallengeMainMediator.ON_OPEN_RANK)
+	onButton(arg_15_0, arg_15_0.rankBtn, function()
+		arg_15_0:emit(ChallengeMainMediator.ON_OPEN_RANK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.startBtn, function ()
-		if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE) or slot0:isEnd() then
+	onButton(arg_15_0, arg_15_0.startBtn, function()
+		local var_19_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
+
+		if not var_19_0 or var_19_0:isEnd() then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
-			triggerButton(uv0.backBtn)
+			triggerButton(arg_15_0.backBtn)
 
 			return
 		end
 
-		if uv0:isCrossedSeason() == true then
-			slot1 = uv0.challengeProxy:getCurMode()
+		if arg_15_0:isCrossedSeason() == true then
+			local var_19_1 = arg_15_0.challengeProxy:getCurMode()
 
-			if not uv0.curModeInfo then
+			if not arg_15_0.curModeInfo then
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					hideNo = true,
 					content = i18n("challenge_season_update"),
-					onYes = function ()
-						uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv1)
+					onYes = function()
+						arg_15_0:emit(ChallengeConst.RESET_DATA_EVENT, var_19_1)
 					end,
-					onNo = function ()
-						uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv1)
+					onNo = function()
+						arg_15_0:emit(ChallengeConst.RESET_DATA_EVENT, var_19_1)
 					end
 				})
 
 				return
 			else
+				local var_19_2 = var_19_1 == ChallengeProxy.MODE_CASUAL and "challenge_season_update_casual_clear" or "challenge_season_update_infinite_clear"
+				local var_19_3 = var_19_1 == ChallengeProxy.MODE_CASUAL and arg_15_0.curModeInfo:getScore() or arg_15_0.curModeInfo:getLevel()
+
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
 					hideNo = false,
-					content = i18n(slot1 == ChallengeProxy.MODE_CASUAL and "challenge_season_update_casual_clear" or "challenge_season_update_infinite_clear", slot1 == ChallengeProxy.MODE_CASUAL and uv0.curModeInfo:getScore() or uv0.curModeInfo:getLevel()),
-					onNo = function ()
-						uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv1)
+					content = i18n(var_19_2, var_19_3),
+					onNo = function()
+						arg_15_0:emit(ChallengeConst.RESET_DATA_EVENT, var_19_1)
 					end,
-					onYes = function ()
-						uv0:emit(ChallengeMainMediator.ON_PRECOMBAT, uv0.curMode)
+					onYes = function()
+						arg_15_0:emit(ChallengeMainMediator.ON_PRECOMBAT, arg_15_0.curMode)
 					end
 				})
 
@@ -224,375 +230,420 @@ function slot0.addListener(slot0)
 			end
 		end
 
-		if not uv0.curModeInfo then
-			uv0:doOnFleetPanel()
+		if not arg_15_0.curModeInfo then
+			arg_15_0:doOnFleetPanel()
 
 			return
 		end
 
-		uv0:emit(ChallengeMainMediator.ON_PRECOMBAT, uv0.curMode)
+		arg_15_0:emit(ChallengeMainMediator.ON_PRECOMBAT, arg_15_0.curMode)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.resetBtn, function ()
+	onButton(arg_15_0, arg_15_0.resetBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = false,
 			content = i18n("challenge_normal_reset"),
-			onYes = function ()
-				uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv0.challengeProxy:getCurMode())
+			onYes = function()
+				arg_15_0:emit(ChallengeConst.RESET_DATA_EVENT, arg_15_0.challengeProxy:getCurMode())
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.modTipBtn, function ()
-		uv0:showTipText()
+	onButton(arg_15_0, arg_15_0.modTipBtn, function()
+		arg_15_0:showTipText()
 	end)
-	addSlip(SLIP_TYPE_HRZ, slot0.paintingContainer, function ()
-		if uv0.showingIndex % ChallengeConst.BOSS_NUM == 1 then
+
+	local function var_15_0()
+		if arg_15_0.showingIndex % ChallengeConst.BOSS_NUM == 1 then
 			return
 		end
 
-		uv0.showingIndex = uv0.showingIndex - 1
+		arg_15_0.showingIndex = arg_15_0.showingIndex - 1
 
-		uv0:updatePaintingList(uv0.nameList, uv0.showingIndex)
-		uv0:updateRoundText(uv0.showingIndex)
-		uv0:updateSlider(uv0.showingIndex)
-	end, function ()
-		if uv0.showingIndex % ChallengeConst.BOSS_NUM == 0 then
+		arg_15_0:updatePaintingList(arg_15_0.nameList, arg_15_0.showingIndex)
+		arg_15_0:updateRoundText(arg_15_0.showingIndex)
+		arg_15_0:updateSlider(arg_15_0.showingIndex)
+	end
+
+	local function var_15_1()
+		if arg_15_0.showingIndex % ChallengeConst.BOSS_NUM == 0 then
 			return
 		end
 
-		uv0.showingIndex = uv0.showingIndex + 1
+		arg_15_0.showingIndex = arg_15_0.showingIndex + 1
 
-		uv0:updatePaintingList(uv0.nameList, uv0.showingIndex)
-		uv0:updateRoundText(uv0.showingIndex)
-		uv0:updateSlider(uv0.showingIndex)
-	end)
+		arg_15_0:updatePaintingList(arg_15_0.nameList, arg_15_0.showingIndex)
+		arg_15_0:updateRoundText(arg_15_0.showingIndex)
+		arg_15_0:updateSlider(arg_15_0.showingIndex)
+	end
+
+	addSlip(SLIP_TYPE_HRZ, arg_15_0.paintingContainer, var_15_0, var_15_1)
 end
 
-function slot0.updateData(slot0)
-	slot0.curMode = slot0.challengeProxy:getCurMode()
-	slot0.curModeInfo = slot0.userChallengeInfoList[slot0.curMode]
-	slot0.timeOverTag = false
+function var_0_0.updateData(arg_29_0)
+	arg_29_0.curMode = arg_29_0.challengeProxy:getCurMode()
+	arg_29_0.curModeInfo = arg_29_0.userChallengeInfoList[arg_29_0.curMode]
+	arg_29_0.timeOverTag = false
 
-	if not slot0.curModeInfo then
-		slot0.curLevel = 1
-		slot0.showingIndex = slot0.curLevel
+	if not arg_29_0.curModeInfo then
+		arg_29_0.curLevel = 1
+		arg_29_0.showingIndex = arg_29_0.curLevel
 
-		if slot0.curMode == ChallengeProxy.MODE_CASUAL then
-			slot0.dungeonIDList = slot0.challengeInfo:getDungeonIDList()
-		elseif slot0.curMode == ChallengeProxy.MODE_INFINITE then
-			slot0.dungeonIDList = pg.activity_event_challenge[slot0.challengeInfo:getActivityIndex()].infinite_stage[slot0.challengeInfo:getSeasonID()][1]
+		if arg_29_0.curMode == ChallengeProxy.MODE_CASUAL then
+			arg_29_0.dungeonIDList = arg_29_0.challengeInfo:getDungeonIDList()
+		elseif arg_29_0.curMode == ChallengeProxy.MODE_INFINITE then
+			local var_29_0 = arg_29_0.challengeInfo:getSeasonID()
+			local var_29_1 = arg_29_0.challengeInfo:getActivityIndex()
+
+			arg_29_0.dungeonIDList = pg.activity_event_challenge[var_29_1].infinite_stage[var_29_0][1]
 		end
 	else
-		slot0.curLevel = slot0.curModeInfo:getLevel()
-		slot0.showingIndex = slot0.curLevel
-		slot0.dungeonIDList = slot0.curModeInfo:getDungeonIDList()
+		arg_29_0.curLevel = arg_29_0.curModeInfo:getLevel()
+		arg_29_0.showingIndex = arg_29_0.curLevel
+		arg_29_0.dungeonIDList = arg_29_0.curModeInfo:getDungeonIDList()
 
-		print("self.dungeonIDList", tostring(slot0.dungeonIDList))
+		print("self.dungeonIDList", tostring(arg_29_0.dungeonIDList))
 	end
 
-	slot0.nameList = {}
-	slot4 = tostring(slot0.dungeonIDList)
-	slot5 = tostring
+	arg_29_0.nameList = {}
 
-	print("创建nameList", tostring(slot0.nameList), slot4, slot5(#slot0.dungeonIDList))
+	print("创建nameList", tostring(arg_29_0.nameList), tostring(arg_29_0.dungeonIDList), tostring(#arg_29_0.dungeonIDList))
 
-	slot0.infoNameList = {}
+	arg_29_0.infoNameList = {}
 
-	for slot4, slot5 in ipairs(slot0.dungeonIDList) do
-		slot6 = pg.expedition_challenge_template[slot5].char_icon[1]
-		slot0.nameList[slot4] = slot6
+	for iter_29_0, iter_29_1 in ipairs(arg_29_0.dungeonIDList) do
+		local var_29_2 = pg.expedition_challenge_template[iter_29_1].char_icon[1]
 
-		print("self.nameList", tostring(slot6))
+		arg_29_0.nameList[iter_29_0] = var_29_2
 
-		slot0.infoNameList[slot4] = pg.expedition_challenge_template[slot5].name_p
+		print("self.nameList", tostring(var_29_2))
+
+		local var_29_3 = pg.expedition_challenge_template[iter_29_1].name_p
+
+		arg_29_0.infoNameList[iter_29_0] = var_29_3
 	end
 
-	slot0.nextNameList = {}
+	arg_29_0.nextNameList = {}
 
-	if slot0.curMode == ChallengeProxy.MODE_INFINITE then
-		slot1 = nil
+	if arg_29_0.curMode == ChallengeProxy.MODE_INFINITE then
+		local var_29_4
 
-		for slot5, slot6 in ipairs((not slot0.curModeInfo or slot0.curModeInfo:getNextInfiniteDungeonIDList()) and (not pg.activity_event_challenge[slot0.challengeInfo:getActivityIndex()].infinite_stage[slot0.challengeInfo:getSeasonID()][2] or pg.activity_event_challenge[slot3].infinite_stage[slot2][2]) and pg.activity_event_challenge[slot3].infinite_stage[slot2][1]) do
-			slot0.nextNameList[slot5 + ChallengeConst.BOSS_NUM] = pg.expedition_challenge_template[slot6].char_icon[1]
+		if arg_29_0.curModeInfo then
+			var_29_4 = arg_29_0.curModeInfo:getNextInfiniteDungeonIDList()
+		else
+			local var_29_5 = arg_29_0.challengeInfo:getSeasonID()
+			local var_29_6 = arg_29_0.challengeInfo:getActivityIndex()
+
+			if pg.activity_event_challenge[var_29_6].infinite_stage[var_29_5][2] then
+				var_29_4 = pg.activity_event_challenge[var_29_6].infinite_stage[var_29_5][2]
+			else
+				var_29_4 = pg.activity_event_challenge[var_29_6].infinite_stage[var_29_5][1]
+			end
+		end
+
+		for iter_29_2, iter_29_3 in ipairs(var_29_4) do
+			local var_29_7 = pg.expedition_challenge_template[iter_29_3].char_icon[1]
+
+			arg_29_0.nextNameList[iter_29_2 + ChallengeConst.BOSS_NUM] = var_29_7
 		end
 	end
 end
 
-function slot0.updatePaintingList(slot0, slot1, slot2)
-	slot3 = slot1 or slot0.nameList
-	slot5 = slot0.curLevel
+function var_0_0.updatePaintingList(arg_30_0, arg_30_1, arg_30_2)
+	local var_30_0 = arg_30_1 or arg_30_0.nameList
+	local var_30_1 = arg_30_2 or arg_30_0.showingIndex
+	local var_30_2 = arg_30_0.curLevel
 
-	if ChallengeConst.BOSS_NUM < (slot2 or slot0.showingIndex) then
-		slot4 = slot4 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or slot4 % ChallengeConst.BOSS_NUM
+	if var_30_1 > ChallengeConst.BOSS_NUM then
+		var_30_1 = var_30_1 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or var_30_1 % ChallengeConst.BOSS_NUM
 	end
 
-	if slot0.curMode == ChallengeProxy.MODE_INFINITE and ChallengeConst.BOSS_NUM < slot5 then
-		slot5 = slot5 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or slot5 % ChallengeConst.BOSS_NUM
+	if arg_30_0.curMode == ChallengeProxy.MODE_INFINITE and var_30_2 > ChallengeConst.BOSS_NUM then
+		var_30_2 = var_30_2 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or var_30_2 % ChallengeConst.BOSS_NUM
 	end
 
-	function slot6(slot0)
-		slot0.material:SetFloat("_LineGray", 0.3)
-		slot0.material:SetFloat("_TearDistance", 0)
-		LeanTween.cancel(slot0.gameObject)
-		LeanTween.value(slot0.gameObject, 0, 2, 2):setLoopClamp():setOnUpdate(System.Action_float(function (slot0)
-			if slot0 >= 1.2 then
-				uv0.material:SetFloat("_LineGray", 0.3)
-			elseif slot0 >= 1.1 then
-				uv0.material:SetFloat("_LineGray", 0.45)
-			elseif slot0 >= 1.03 then
-				uv0.material:SetFloat("_TearDistance", 0)
-			elseif slot0 >= 1 then
-				uv0.material:SetFloat("_TearDistance", 0.3)
-			elseif slot0 >= 0.35 then
-				uv0.material:SetFloat("_LineGray", 0.3)
-			elseif slot0 >= 0.3 then
-				uv0.material:SetFloat("_LineGray", 0.4)
-			elseif slot0 >= 0.25 then
-				uv0.material:SetFloat("_LineGray", 0.3)
-			elseif slot0 >= 0.2 then
-				uv0.material:SetFloat("_LineGray", 0.4)
+	local function var_30_3(arg_31_0)
+		arg_31_0.material:SetFloat("_LineGray", 0.3)
+		arg_31_0.material:SetFloat("_TearDistance", 0)
+		LeanTween.cancel(arg_31_0.gameObject)
+		LeanTween.value(arg_31_0.gameObject, 0, 2, 2):setLoopClamp():setOnUpdate(System.Action_float(function(arg_32_0)
+			if arg_32_0 >= 1.2 then
+				arg_31_0.material:SetFloat("_LineGray", 0.3)
+			elseif arg_32_0 >= 1.1 then
+				arg_31_0.material:SetFloat("_LineGray", 0.45)
+			elseif arg_32_0 >= 1.03 then
+				arg_31_0.material:SetFloat("_TearDistance", 0)
+			elseif arg_32_0 >= 1 then
+				arg_31_0.material:SetFloat("_TearDistance", 0.3)
+			elseif arg_32_0 >= 0.35 then
+				arg_31_0.material:SetFloat("_LineGray", 0.3)
+			elseif arg_32_0 >= 0.3 then
+				arg_31_0.material:SetFloat("_LineGray", 0.4)
+			elseif arg_32_0 >= 0.25 then
+				arg_31_0.material:SetFloat("_LineGray", 0.3)
+			elseif arg_32_0 >= 0.2 then
+				arg_31_0.material:SetFloat("_LineGray", 0.4)
 			end
 		end))
 	end
 
-	setPaintingPrefabAsync(slot0.painting, slot3[slot4], "chuanwu", function ()
-		if uv0:findTF("fitter", uv0.painting):GetChild(0) then
-			slot1 = GetComponent(slot0, "MeshImage")
-			slot2 = uv1 - 1 - uv2 >= 0
+	setPaintingPrefabAsync(arg_30_0.painting, var_30_0[var_30_1], "chuanwu", function()
+		local var_33_0 = arg_30_0:findTF("fitter", arg_30_0.painting):GetChild(0)
 
-			SetActive(uv0.completeEffectTF, slot2)
+		if var_33_0 then
+			local var_33_1 = GetComponent(var_33_0, "MeshImage")
+			local var_33_2 = var_30_2 - 1 - var_30_1 >= 0
 
-			if slot2 then
-				slot1.material = uv0.material1
+			SetActive(arg_30_0.completeEffectTF, var_33_2)
 
-				slot1.material:SetFloat("_LineDensity", 7)
-				uv3(slot1)
+			if var_33_2 then
+				var_33_1.material = arg_30_0.material1
+
+				var_33_1.material:SetFloat("_LineDensity", 7)
+				var_30_3(var_33_1)
 			else
-				slot1.material = uv0.material
+				var_33_1.material = arg_30_0.material
 
-				slot1.material:SetFloat("_Range", 16)
-				slot1.material:SetFloat("_Degree", 7)
+				var_33_1.material:SetFloat("_Range", 16)
+				var_33_1.material:SetFloat("_Degree", 7)
 			end
 		end
 	end)
-	setPaintingPrefabAsync(slot0.paintingShadow1, slot3[slot4], "chuanwu", function ()
-		if uv0:findTF("fitter", uv0.paintingShadow1):GetChild(0) then
-			slot0:GetComponent("Image").color = Color.New(0, 0, 0, 0.44)
+	setPaintingPrefabAsync(arg_30_0.paintingShadow1, var_30_0[var_30_1], "chuanwu", function()
+		local var_34_0 = arg_30_0:findTF("fitter", arg_30_0.paintingShadow1):GetChild(0)
+
+		if var_34_0 then
+			var_34_0:GetComponent("Image").color = Color.New(0, 0, 0, 0.44)
 		end
 	end)
-	setPaintingPrefabAsync(slot0.paintingShadow2, slot3[slot4], "chuanwu", function ()
-		if uv0:findTF("fitter", uv0.paintingShadow2):GetChild(0) then
-			slot0:GetComponent("Image").color = Color.New(1, 1, 1, 0.15)
+	setPaintingPrefabAsync(arg_30_0.paintingShadow2, var_30_0[var_30_1], "chuanwu", function()
+		local var_35_0 = arg_30_0:findTF("fitter", arg_30_0.paintingShadow2):GetChild(0)
+
+		if var_35_0 then
+			var_35_0:GetComponent("Image").color = Color.New(1, 1, 1, 0.15)
 		end
 	end)
-	LoadSpriteAsync("ChallengeBossInfo/" .. slot0.infoNameList[slot4], function (slot0)
-		setImageSprite(uv0.bossInfoImg, slot0, true)
+	LoadSpriteAsync("ChallengeBossInfo/" .. arg_30_0.infoNameList[var_30_1], function(arg_36_0)
+		setImageSprite(arg_30_0.bossInfoImg, arg_36_0, true)
 	end)
 
-	if uv0.BOSS_NUM - slot4 >= 2 then
-		setActive(slot0.roundTF_1, true)
-		setActive(slot0.roundTF_2, true)
-		setActive(slot0.mask_1, true)
-		setActive(slot0.mask_2, true)
-		LoadSpriteAsync("shipYardIcon/" .. slot3[slot4 + 1], function (slot0)
-			setImageSprite(uv0.shipPaintImg_1, slot0)
+	if var_0_0.BOSS_NUM - var_30_1 >= 2 then
+		setActive(arg_30_0.roundTF_1, true)
+		setActive(arg_30_0.roundTF_2, true)
+		setActive(arg_30_0.mask_1, true)
+		setActive(arg_30_0.mask_2, true)
+		LoadSpriteAsync("shipYardIcon/" .. var_30_0[var_30_1 + 1], function(arg_37_0)
+			setImageSprite(arg_30_0.shipPaintImg_1, arg_37_0)
 		end)
-		LoadSpriteAsync("shipYardIcon/" .. slot3[slot4 + 2], function (slot0)
-			setImageSprite(uv0.shipPaintImg_2, slot0)
+		LoadSpriteAsync("shipYardIcon/" .. var_30_0[var_30_1 + 2], function(arg_38_0)
+			setImageSprite(arg_30_0.shipPaintImg_2, arg_38_0)
 		end)
-	elseif uv0.BOSS_NUM - slot4 == 1 then
-		setActive(slot0.roundTF_1, true)
-		setActive(slot0.roundTF_2, false)
-		setActive(slot0.mask_1, true)
-		setActive(slot0.mask_2, false)
-		LoadSpriteAsync("shipYardIcon/" .. slot3[slot4 + 1], function (slot0)
-			setImageSprite(uv0.shipPaintImg_1, slot0)
+	elseif var_0_0.BOSS_NUM - var_30_1 == 1 then
+		setActive(arg_30_0.roundTF_1, true)
+		setActive(arg_30_0.roundTF_2, false)
+		setActive(arg_30_0.mask_1, true)
+		setActive(arg_30_0.mask_2, false)
+		LoadSpriteAsync("shipYardIcon/" .. var_30_0[var_30_1 + 1], function(arg_39_0)
+			setImageSprite(arg_30_0.shipPaintImg_1, arg_39_0)
 		end)
 
-		if slot0.curMode == ChallengeProxy.MODE_INFINITE then
-			LoadSpriteAsync("shipYardIcon/" .. slot0.nextNameList[slot4 + 2], function (slot0)
-				setImageSprite(uv0.shipPaintImg_2, slot0)
-				setActive(uv0.mask_2, true)
-				setActive(uv0.roundTF_2, true)
+		if arg_30_0.curMode == ChallengeProxy.MODE_INFINITE then
+			LoadSpriteAsync("shipYardIcon/" .. arg_30_0.nextNameList[var_30_1 + 2], function(arg_40_0)
+				setImageSprite(arg_30_0.shipPaintImg_2, arg_40_0)
+				setActive(arg_30_0.mask_2, true)
+				setActive(arg_30_0.roundTF_2, true)
 			end)
 		end
 	else
-		setActive(slot0.roundTF_1, false)
-		setActive(slot0.roundTF_2, false)
-		setActive(slot0.mask_1, false)
-		setActive(slot0.mask_2, false)
+		setActive(arg_30_0.roundTF_1, false)
+		setActive(arg_30_0.roundTF_2, false)
+		setActive(arg_30_0.mask_1, false)
+		setActive(arg_30_0.mask_2, false)
 
-		if slot0.curMode == ChallengeProxy.MODE_INFINITE then
-			LoadSpriteAsync("shipYardIcon/" .. slot0.nextNameList[slot4 + 1], function (slot0)
-				setImageSprite(uv0.shipPaintImg_1, slot0)
-				setActive(uv0.mask_1, true)
-				setActive(uv0.roundTF_1, true)
+		if arg_30_0.curMode == ChallengeProxy.MODE_INFINITE then
+			LoadSpriteAsync("shipYardIcon/" .. arg_30_0.nextNameList[var_30_1 + 1], function(arg_41_0)
+				setImageSprite(arg_30_0.shipPaintImg_1, arg_41_0)
+				setActive(arg_30_0.mask_1, true)
+				setActive(arg_30_0.roundTF_1, true)
 			end)
-			LoadSpriteAsync("shipYardIcon/" .. slot0.nextNameList[slot4 + 2], function (slot0)
-				setImageSprite(uv0.shipPaintImg_2, slot0)
-				setActive(uv0.mask_2, true)
-				setActive(uv0.roundTF_2, true)
+			LoadSpriteAsync("shipYardIcon/" .. arg_30_0.nextNameList[var_30_1 + 2], function(arg_42_0)
+				setImageSprite(arg_30_0.shipPaintImg_2, arg_42_0)
+				setActive(arg_30_0.mask_2, true)
+				setActive(arg_30_0.roundTF_2, true)
 			end)
 		end
 	end
 
-	if slot5 - 1 - slot4 >= 2 then
-		setActive(slot0.tag_1, true)
-		setActive(slot0.tag_2, true)
-	elseif slot5 - 1 - slot4 == 1 then
-		setActive(slot0.tag_1, true)
-		setActive(slot0.tag_2, false)
-	elseif slot5 - 1 - slot4 <= 0 then
-		setActive(slot0.tag_1, false)
-		setActive(slot0.tag_2, false)
+	if var_30_2 - 1 - var_30_1 >= 2 then
+		setActive(arg_30_0.tag_1, true)
+		setActive(arg_30_0.tag_2, true)
+	elseif var_30_2 - 1 - var_30_1 == 1 then
+		setActive(arg_30_0.tag_1, true)
+		setActive(arg_30_0.tag_2, false)
+	elseif var_30_2 - 1 - var_30_1 <= 0 then
+		setActive(arg_30_0.tag_1, false)
+		setActive(arg_30_0.tag_2, false)
 	end
 end
 
-function slot0.updateRoundText(slot0, slot1)
-	slot2 = slot1 or slot0.showingIndex
+function var_0_0.updateRoundText(arg_43_0, arg_43_1)
+	local var_43_0 = arg_43_1 or arg_43_0.showingIndex
 
-	if slot0.curMode == ChallengeProxy.MODE_CASUAL and ChallengeConst.BOSS_NUM < slot2 then
-		slot2 = slot2 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or slot2 % ChallengeConst.BOSS_NUM
+	if arg_43_0.curMode == ChallengeProxy.MODE_CASUAL and var_43_0 > ChallengeConst.BOSS_NUM then
+		var_43_0 = var_43_0 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or var_43_0 % ChallengeConst.BOSS_NUM
 	end
 
-	setText(slot0.roundNumText, string.format("%02d", slot2))
-	setText(slot0.roundText_1, "Round" .. slot2 + 1)
-	setText(slot0.roundText_2, "Round" .. slot2 + 2)
+	setText(arg_43_0.roundNumText, string.format("%02d", var_43_0))
+	setText(arg_43_0.roundText_1, "Round" .. var_43_0 + 1)
+	setText(arg_43_0.roundText_2, "Round" .. var_43_0 + 2)
 end
 
-function slot0.updateSlider(slot0, slot1)
-	slot3 = slot0.curLevel
+function var_0_0.updateSlider(arg_44_0, arg_44_1)
+	local var_44_0 = arg_44_1 or arg_44_0.showingIndex
+	local var_44_1 = arg_44_0.curLevel
 
-	if ChallengeConst.BOSS_NUM < (slot1 or slot0.showingIndex) then
-		slot2 = slot2 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or slot2 % ChallengeConst.BOSS_NUM
+	if var_44_0 > ChallengeConst.BOSS_NUM then
+		var_44_0 = var_44_0 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or var_44_0 % ChallengeConst.BOSS_NUM
 	end
 
-	if slot0.curMode == ChallengeProxy.MODE_INFINITE and ChallengeConst.BOSS_NUM < slot3 then
-		slot3 = slot3 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or slot3 % ChallengeConst.BOSS_NUM
+	if arg_44_0.curMode == ChallengeProxy.MODE_INFINITE and var_44_1 > ChallengeConst.BOSS_NUM then
+		var_44_1 = var_44_1 % ChallengeConst.BOSS_NUM == 0 and ChallengeConst.BOSS_NUM or var_44_1 % ChallengeConst.BOSS_NUM
 	end
 
-	slot0.sliderSC.value = (slot3 - 1) * 1 / (ChallengeConst.BOSS_NUM - 1)
+	local var_44_2 = 1 / (ChallengeConst.BOSS_NUM - 1)
+	local var_44_3 = (var_44_1 - 1) * var_44_2
 
-	slot0.squareList:make(function (slot0, slot1, slot2)
-		slot3 = uv0:findTF("UnFinished", slot2)
-		slot4 = uv0:findTF("Finished", slot2)
-		slot5 = uv0:findTF("Challengeing", slot2)
-		slot6 = uv0:findTF("Arrow", slot2)
+	arg_44_0.sliderSC.value = var_44_3
 
-		function slot8()
-			setActive(uv0, false)
-			setActive(uv1, true)
-			setActive(uv2, false)
+	arg_44_0.squareList:make(function(arg_45_0, arg_45_1, arg_45_2)
+		local var_45_0 = arg_44_0:findTF("UnFinished", arg_45_2)
+		local var_45_1 = arg_44_0:findTF("Finished", arg_45_2)
+		local var_45_2 = arg_44_0:findTF("Challengeing", arg_45_2)
+		local var_45_3 = arg_44_0:findTF("Arrow", arg_45_2)
+
+		local function var_45_4()
+			setActive(var_45_1, true)
+			setActive(var_45_0, false)
+			setActive(var_45_2, false)
 		end
 
-		function slot9()
-			setActive(uv0, false)
-			setActive(uv1, false)
-			setActive(uv2, true)
+		local function var_45_5()
+			setActive(var_45_1, false)
+			setActive(var_45_0, true)
+			setActive(var_45_2, false)
 		end
 
-		if slot0 == UIItemList.EventUpdate then
-			if slot1 + 1 < uv1 then
-				function ()
-					setActive(uv0, true)
-					setActive(uv1, false)
-					setActive(uv2, false)
-				end()
-			elseif slot1 + 1 == uv1 then
-				slot9()
-			elseif uv1 < slot1 + 1 then
-				slot8()
+		local function var_45_6()
+			setActive(var_45_1, false)
+			setActive(var_45_0, false)
+			setActive(var_45_2, true)
+		end
+
+		if arg_45_0 == UIItemList.EventUpdate then
+			if arg_45_1 + 1 < var_44_1 then
+				var_45_4()
+			elseif arg_45_1 + 1 == var_44_1 then
+				var_45_6()
+			elseif arg_45_1 + 1 > var_44_1 then
+				var_45_5()
 			end
 
-			if slot1 + 1 == uv2 then
-				setActive(slot6, true)
+			if arg_45_1 + 1 == var_44_0 then
+				setActive(var_45_3, true)
 			else
-				setActive(slot6, false)
+				setActive(var_45_3, false)
 			end
 		end
 	end)
-	slot0.squareList:align(ChallengeConst.BOSS_NUM)
+	arg_44_0.squareList:align(ChallengeConst.BOSS_NUM)
 end
 
-function slot0.updateGrade(slot0, slot1)
-	setText(slot0.seasonBestPointText, slot1.seasonMaxScore)
-	setText(slot0.activityBestPointText, slot1.activityMaxScore)
-	setText(slot0.seasonLevelNumText, slot1.seasonMaxLevel)
-	setText(slot0.activityLevelNumText, slot1.activityMaxLevel)
+function var_0_0.updateGrade(arg_49_0, arg_49_1)
+	setText(arg_49_0.seasonBestPointText, arg_49_1.seasonMaxScore)
+	setText(arg_49_0.activityBestPointText, arg_49_1.activityMaxScore)
+	setText(arg_49_0.seasonLevelNumText, arg_49_1.seasonMaxLevel)
+	setText(arg_49_0.activityLevelNumText, arg_49_1.activityMaxLevel)
 end
 
-function slot0.updateTimePanel(slot0)
-	setText(slot0.activityTimeText, pg.TimeMgr.GetInstance():STimeDescS(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE).stopTime, "%Y.%m.%d"))
+function var_0_0.updateTimePanel(arg_50_0)
+	local var_50_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE).stopTime
+	local var_50_1 = pg.TimeMgr.GetInstance():STimeDescS(var_50_0, "%Y.%m.%d")
 
-	slot5 = pg.TimeMgr.GetInstance()
-	slot7, slot8, slot9, slot10 = slot5:parseTimeFrom(slot5:GetNextWeekTime(1, 0, 0, 0) - slot5:GetServerTime())
+	setText(arg_50_0.activityTimeText, var_50_1)
 
-	setText(slot0.seasonDayText, slot7)
-	setText(slot0.seasonTimeText, string.format("%02d:%02d:%02d", slot8, slot9, slot10))
+	local var_50_2 = pg.TimeMgr.GetInstance()
+	local var_50_3 = var_50_2:GetNextWeekTime(1, 0, 0, 0) - var_50_2:GetServerTime()
+	local var_50_4, var_50_5, var_50_6, var_50_7 = var_50_2:parseTimeFrom(var_50_3)
 
-	if slot0.timer then
-		slot0.timer:Stop()
+	setText(arg_50_0.seasonDayText, var_50_4)
+	setText(arg_50_0.seasonTimeText, string.format("%02d:%02d:%02d", var_50_5, var_50_6, var_50_7))
+
+	if arg_50_0.timer then
+		arg_50_0.timer:Stop()
 	end
 
-	slot0.timer = Timer.New(function ()
-		uv0 = uv0 - 1
-		slot0, slot1, slot2, slot3 = pg.TimeMgr.GetInstance():parseTimeFrom(uv0)
+	arg_50_0.timer = Timer.New(function()
+		var_50_3 = var_50_3 - 1
 
-		setText(uv1.seasonDayText, slot0)
-		setText(uv1.seasonTimeText, string.format("%02d:%02d:%02d", slot1, slot2, slot3))
+		local var_51_0, var_51_1, var_51_2, var_51_3 = pg.TimeMgr.GetInstance():parseTimeFrom(var_50_3)
 
-		if uv0 <= 0 then
-			uv1.timeOverTag = true
+		setText(arg_50_0.seasonDayText, var_51_0)
+		setText(arg_50_0.seasonTimeText, string.format("%02d:%02d:%02d", var_51_1, var_51_2, var_51_3))
 
-			uv1.timer:Stop()
+		if var_50_3 <= 0 then
+			arg_50_0.timeOverTag = true
+
+			arg_50_0.timer:Stop()
 		end
 	end, 1, -1)
 
-	slot0.timer:Start()
+	arg_50_0.timer:Start()
 end
 
-function slot0.updateSwitchModBtn(slot0)
-	if not slot0:isFinishedCasualMode() then
-		setActive(slot0.infiniteModBtn, false)
+function var_0_0.updateSwitchModBtn(arg_52_0)
+	if not arg_52_0:isFinishedCasualMode() then
+		setActive(arg_52_0.infiniteModBtn, false)
 	else
-		setActive(slot0.infiniteModBtn, true)
+		setActive(arg_52_0.infiniteModBtn, true)
 	end
 
-	if slot0.curMode == ChallengeProxy.MODE_CASUAL then
-		setActive(slot0.casualModBtnBG, true)
-		setActive(slot0.infiniteModBtnBG, false)
+	if arg_52_0.curMode == ChallengeProxy.MODE_CASUAL then
+		setActive(arg_52_0.casualModBtnBG, true)
+		setActive(arg_52_0.infiniteModBtnBG, false)
 	else
-		setActive(slot0.casualModBtnBG, false)
-		setActive(slot0.infiniteModBtnBG, true)
+		setActive(arg_52_0.casualModBtnBG, false)
+		setActive(arg_52_0.infiniteModBtnBG, true)
 	end
 
-	onButton(slot0, slot0.casualModBtn, function ()
-		if uv0.curMode == ChallengeProxy.MODE_CASUAL then
+	onButton(arg_52_0, arg_52_0.casualModBtn, function()
+		if arg_52_0.curMode == ChallengeProxy.MODE_CASUAL then
 			return
 		end
 
-		slot0 = uv0.curModeInfo and uv0.curModeInfo:getLevel() or 0
+		local var_53_0 = arg_52_0.curModeInfo and arg_52_0.curModeInfo:getLevel() or 0
 
-		function slot1()
-			uv0.challengeProxy:setCurMode(ChallengeProxy.MODE_CASUAL)
-			setActive(uv0.casualModBtnBG, true)
-			setActive(uv0.infiniteModBtnBG, false)
-			uv0:updateData()
-			uv0:updatePaintingList(uv0.nameList, uv0.showingIndex)
-			uv0:updateRoundText(uv0.showingIndex)
-			uv0:updateSlider(uv0.showingIndex)
-			uv0:updateSwitchModBtn()
-			uv0:updateFuncBtns()
-			uv0:showTipText()
+		local function var_53_1()
+			arg_52_0.challengeProxy:setCurMode(ChallengeProxy.MODE_CASUAL)
+			setActive(arg_52_0.casualModBtnBG, true)
+			setActive(arg_52_0.infiniteModBtnBG, false)
+			arg_52_0:updateData()
+			arg_52_0:updatePaintingList(arg_52_0.nameList, arg_52_0.showingIndex)
+			arg_52_0:updateRoundText(arg_52_0.showingIndex)
+			arg_52_0:updateSlider(arg_52_0.showingIndex)
+			arg_52_0:updateSwitchModBtn()
+			arg_52_0:updateFuncBtns()
+			arg_52_0:showTipText()
 		end
 
-		if uv0:isCrossedSeason() then
+		if arg_52_0:isCrossedSeason() then
+			local var_53_2 = "challenge_season_update_infinite_switch"
+			local var_53_3 = var_53_0
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = false,
-				content = i18n("challenge_season_update_infinite_switch", slot0),
-				onYes = function ()
-					uv0:emit(ChallengeConst.RESET_DATA_EVENT, ChallengeProxy.MODE_INFINITE)
+				content = i18n(var_53_2, var_53_3),
+				onYes = function()
+					arg_52_0:emit(ChallengeConst.RESET_DATA_EVENT, ChallengeProxy.MODE_INFINITE)
 				end,
-				onNo = slot1
+				onNo = var_53_1
 			})
 
 			return
@@ -600,37 +651,40 @@ function slot0.updateSwitchModBtn(slot0)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = false,
-			content = i18n("challenge_infinite_click_switch", slot0),
-			onYes = slot1
+			content = i18n("challenge_infinite_click_switch", var_53_0),
+			onYes = var_53_1
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.infiniteModBtn, function ()
-		if uv0.curMode == ChallengeProxy.MODE_INFINITE then
+	onButton(arg_52_0, arg_52_0.infiniteModBtn, function()
+		if arg_52_0.curMode == ChallengeProxy.MODE_INFINITE then
 			return
 		end
 
-		slot0 = uv0.curModeInfo and uv0.curModeInfo:getScore() or uv0.challengeInfo:getGradeList().seasonMaxScore
+		local var_56_0 = arg_52_0.curModeInfo and arg_52_0.curModeInfo:getScore() or arg_52_0.challengeInfo:getGradeList().seasonMaxScore
 
-		function slot1()
-			uv0.challengeProxy:setCurMode(ChallengeProxy.MODE_INFINITE)
-			setActive(uv0.casualModBtnBG, false)
-			setActive(uv0.infiniteModBtnBG, true)
-			uv0:updateData()
-			uv0:updatePaintingList(uv0.nameList, uv0.showingIndex)
-			uv0:updateRoundText(uv0.showingIndex)
-			uv0:updateSlider(uv0.showingIndex)
-			uv0:updateFuncBtns()
-			uv0:showTipText()
+		local function var_56_1()
+			arg_52_0.challengeProxy:setCurMode(ChallengeProxy.MODE_INFINITE)
+			setActive(arg_52_0.casualModBtnBG, false)
+			setActive(arg_52_0.infiniteModBtnBG, true)
+			arg_52_0:updateData()
+			arg_52_0:updatePaintingList(arg_52_0.nameList, arg_52_0.showingIndex)
+			arg_52_0:updateRoundText(arg_52_0.showingIndex)
+			arg_52_0:updateSlider(arg_52_0.showingIndex)
+			arg_52_0:updateFuncBtns()
+			arg_52_0:showTipText()
 		end
 
-		if uv0:isCrossedSeason() then
+		if arg_52_0:isCrossedSeason() then
+			local var_56_2 = "challenge_season_update_casual_switch"
+			local var_56_3 = var_56_0
+
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideNo = false,
-				content = i18n("challenge_season_update_casual_switch", slot0),
-				onYes = function ()
-					uv0:emit(ChallengeConst.RESET_DATA_EVENT, ChallengeProxy.MODE_CASUAL)
+				content = i18n(var_56_2, var_56_3),
+				onYes = function()
+					arg_52_0:emit(ChallengeConst.RESET_DATA_EVENT, ChallengeProxy.MODE_CASUAL)
 				end,
-				onNo = slot1
+				onNo = var_56_1
 			})
 
 			return
@@ -638,265 +692,283 @@ function slot0.updateSwitchModBtn(slot0)
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = false,
-			content = i18n("challenge_casual_click_switch", slot0),
-			onYes = slot1
+			content = i18n("challenge_casual_click_switch", var_56_0),
+			onYes = var_56_1
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.updateResetBtn(slot0)
-	if slot0.userChallengeInfoList[slot0.curMode] then
-		setActive(slot0.resetBtn, true)
-		SetActive(slot0.resetBtnBanned, false)
+function var_0_0.updateResetBtn(arg_59_0)
+	if arg_59_0.userChallengeInfoList[arg_59_0.curMode] then
+		setActive(arg_59_0.resetBtn, true)
+		SetActive(arg_59_0.resetBtnBanned, false)
 	else
-		setActive(slot0.resetBtn, false)
-		SetActive(slot0.resetBtnBanned, true)
+		setActive(arg_59_0.resetBtn, false)
+		SetActive(arg_59_0.resetBtnBanned, true)
 	end
 end
 
-function slot0.updateStartBtn(slot0)
-	if slot0.userChallengeInfoList[slot0.curMode] then
-		if slot0.curMode == ChallengeProxy.MODE_CASUAL and ChallengeConst.BOSS_NUM < slot1:getLevel() then
-			SetActive(slot0.startBtn, false)
-			SetActive(slot0.startBtnBanned, true)
+function var_0_0.updateStartBtn(arg_60_0)
+	local var_60_0 = arg_60_0.userChallengeInfoList[arg_60_0.curMode]
+
+	if var_60_0 then
+		if arg_60_0.curMode == ChallengeProxy.MODE_CASUAL and var_60_0:getLevel() > ChallengeConst.BOSS_NUM then
+			SetActive(arg_60_0.startBtn, false)
+			SetActive(arg_60_0.startBtnBanned, true)
 		else
-			SetActive(slot0.startBtn, true)
-			SetActive(slot0.startBtnBanned, false)
+			SetActive(arg_60_0.startBtn, true)
+			SetActive(arg_60_0.startBtnBanned, false)
 		end
 	else
-		SetActive(slot0.startBtn, true)
-		SetActive(slot0.startBtnBanned, false)
+		SetActive(arg_60_0.startBtn, true)
+		SetActive(arg_60_0.startBtnBanned, false)
 	end
 end
 
-function slot0.updateFuncBtns(slot0)
-	slot0:updateResetBtn()
-	slot0:updateStartBtn()
+function var_0_0.updateFuncBtns(arg_61_0)
+	arg_61_0:updateResetBtn()
+	arg_61_0:updateStartBtn()
 end
 
-function slot0.updateAwardPanel(slot0)
-	slot4 = getProxy(TaskProxy):getTaskById(pg.activity_template[pg.activity_template[getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE).id].config_data[1]].config_data[1]) or getProxy(TaskProxy):getFinishTaskById(slot3)
+function var_0_0.updateAwardPanel(arg_62_0)
+	local var_62_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE)
+	local var_62_1 = pg.activity_template[var_62_0.id].config_data[1]
+	local var_62_2 = pg.activity_template[var_62_1].config_data[1]
+	local var_62_3 = getProxy(TaskProxy):getTaskById(var_62_2) or getProxy(TaskProxy):getFinishTaskById(var_62_2)
+	local var_62_4 = var_62_3:getConfig("target_num")
+	local var_62_5 = arg_62_0.challengeInfo:getGradeList().activityMaxScore
 
-	setText(slot0.scoreText, slot0.challengeInfo:getGradeList().activityMaxScore .. " / " .. slot4:getConfig("target_num"))
+	setText(arg_62_0.scoreText, var_62_5 .. " / " .. var_62_4)
 
-	if slot4:getTaskStatus() == 0 then
-		setActive(slot0.getBtn, false)
-		setActive(slot0.getBtnBanned, true)
-		setActive(slot0.gotBtn, false)
-	elseif slot7 == 1 then
-		setActive(slot0.getBtn, true)
-		setActive(slot0.getBtnBanned, false)
-		setActive(slot0.gotBtn, false)
-	elseif slot7 == 2 then
-		setActive(slot0.getBtn, false)
-		setActive(slot0.getBtnBanned, false)
-		setActive(slot0.gotBtn, true)
+	local var_62_6 = var_62_3:getTaskStatus()
+
+	if var_62_6 == 0 then
+		setActive(arg_62_0.getBtn, false)
+		setActive(arg_62_0.getBtnBanned, true)
+		setActive(arg_62_0.gotBtn, false)
+	elseif var_62_6 == 1 then
+		setActive(arg_62_0.getBtn, true)
+		setActive(arg_62_0.getBtnBanned, false)
+		setActive(arg_62_0.gotBtn, false)
+	elseif var_62_6 == 2 then
+		setActive(arg_62_0.getBtn, false)
+		setActive(arg_62_0.getBtnBanned, false)
+		setActive(arg_62_0.gotBtn, true)
 	end
 
-	slot8 = slot4:getConfig("award_display")[1]
+	local var_62_7 = var_62_3:getConfig("award_display")[1]
+	local var_62_8 = {
+		type = var_62_7[1],
+		id = var_62_7[2],
+		count = var_62_7[3]
+	}
 
-	updateDrop(slot0.itemTF, {
-		type = slot8[1],
-		id = slot8[2],
-		count = slot8[3]
-	})
-	onButton(slot0, slot0.itemTF, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	updateDrop(arg_62_0.itemTF, var_62_8)
+	onButton(arg_62_0, arg_62_0.itemTF, function()
+		arg_62_0:emit(BaseUI.ON_DROP, var_62_8)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		uv0:emit(ChallengeConst.CLICK_GET_AWARD_BTN, uv1.id)
+	onButton(arg_62_0, arg_62_0.getBtn, function()
+		arg_62_0:emit(ChallengeConst.CLICK_GET_AWARD_BTN, var_62_3.id)
 	end, SFX_PANEL)
 
-	slot10 = nil
+	local var_62_9
 end
 
-function slot0.showSLResetMsgBox(slot0)
-	slot1 = false
-	slot2, slot3 = nil
+function var_0_0.showSLResetMsgBox(arg_65_0)
+	local var_65_0 = false
+	local var_65_1
+	local var_65_2
 
-	for slot7, slot8 in pairs(slot0.userChallengeInfoList) do
-		if ChallengeConst.NEED_TO_RESET_SAVELOAD <= slot8:getResetFlag() then
-			slot1 = true
-			slot2 = slot8
-			slot3 = slot7
+	for iter_65_0, iter_65_1 in pairs(arg_65_0.userChallengeInfoList) do
+		if iter_65_1:getResetFlag() >= ChallengeConst.NEED_TO_RESET_SAVELOAD then
+			var_65_0 = true
+			var_65_1 = iter_65_1
+			var_65_2 = iter_65_0
 
 			break
 		end
 	end
 
-	if slot1 == true then
-		slot4, slot5 = nil
+	if var_65_0 == true then
+		local var_65_3
+		local var_65_4
 
-		if slot3 == ChallengeProxy.MODE_CASUAL then
-			slot4 = "challenge_casual_reset"
-			slot5 = slot2:getScore()
-		elseif slot3 == ChallengeProxy.MODE_INFINITE then
-			slot4 = "challenge_infinite_reset"
-			slot5 = slot2:getLevel() - 1
+		if var_65_2 == ChallengeProxy.MODE_CASUAL then
+			var_65_3 = "challenge_casual_reset"
+			var_65_4 = var_65_1:getScore()
+		elseif var_65_2 == ChallengeProxy.MODE_INFINITE then
+			var_65_3 = "challenge_infinite_reset"
+			var_65_4 = var_65_1:getLevel() - 1
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
-			content = i18n(slot4, slot5),
-			onYes = function ()
-				uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv1)
+			content = i18n(var_65_3, var_65_4),
+			onYes = function()
+				arg_65_0:emit(ChallengeConst.RESET_DATA_EVENT, var_65_2)
 			end,
-			onNo = function ()
-				uv0:emit(ChallengeConst.RESET_DATA_EVENT, uv1)
+			onNo = function()
+				arg_65_0:emit(ChallengeConst.RESET_DATA_EVENT, var_65_2)
 			end
 		})
 	end
 end
 
-function slot0.showTipText(slot0)
-	slot1 = nil
+function var_0_0.showTipText(arg_68_0)
+	local var_68_0
+	local var_68_1 = arg_68_0.curMode == ChallengeProxy.MODE_CASUAL and "challenge_normal_tip" or "challenge_unlimited_tip"
 
-	setText(slot0.modTipText, i18n(slot0.curMode == ChallengeProxy.MODE_CASUAL and "challenge_normal_tip" or "challenge_unlimited_tip"))
+	setText(arg_68_0.modTipText, i18n(var_68_1))
 
-	if slot0.modTipTF:GetComponent(typeof(DftAniEvent)) then
-		slot2:SetEndEvent(function (slot0)
-			setActive(uv0.modTipText, false)
-			setActive(uv0.modTipTF, false)
+	local var_68_2 = arg_68_0.modTipTF:GetComponent(typeof(DftAniEvent))
+
+	if var_68_2 then
+		var_68_2:SetEndEvent(function(arg_69_0)
+			setActive(arg_68_0.modTipText, false)
+			setActive(arg_68_0.modTipTF, false)
 		end)
 	end
 
-	setActive(slot0.modTipTF, true)
-	setActive(slot0.modTipText, true)
+	setActive(arg_68_0.modTipTF, true)
+	setActive(arg_68_0.modTipText, true)
 end
 
-function slot0.doOnFleetPanel(slot0)
-	slot0.fleetEditPanel:attach(slot0)
-	slot0.fleetEditPanel:setFleets(slot0.fleets[slot0.curMode])
-	slot0.fleetEditPanel:set(1, 1)
-	pg.UIMgr.GetInstance():BlurPanel(slot0.fleetEditPanel._tf)
+function var_0_0.doOnFleetPanel(arg_70_0)
+	arg_70_0.fleetEditPanel:attach(arg_70_0)
+	arg_70_0.fleetEditPanel:setFleets(arg_70_0.fleets[arg_70_0.curMode])
+	arg_70_0.fleetEditPanel:set(1, 1)
+	pg.UIMgr.GetInstance():BlurPanel(arg_70_0.fleetEditPanel._tf)
 end
 
-function slot0.isFinishedCasualMode(slot0)
-	slot1 = false
-	slot3 = slot0.userChallengeInfoList[ChallengeProxy.MODE_CASUAL]
+function var_0_0.isFinishedCasualMode(arg_71_0)
+	local var_71_0 = false
+	local var_71_1 = arg_71_0.userChallengeInfoList[ChallengeProxy.MODE_INFINITE]
+	local var_71_2 = arg_71_0.userChallengeInfoList[ChallengeProxy.MODE_CASUAL]
 
-	if slot0.userChallengeInfoList[ChallengeProxy.MODE_INFINITE] then
-		slot1 = true
-	elseif not slot2 then
-		if slot3 then
-			if slot3:getSeasonID() == slot0.challengeInfo:getSeasonID() then
-				if ChallengeConst.BOSS_NUM <= slot0.challengeInfo:getGradeList().seasonMaxLevel then
-					slot1 = true
+	if var_71_1 then
+		var_71_0 = true
+	elseif not var_71_1 then
+		local var_71_3 = arg_71_0.challengeInfo:getGradeList().seasonMaxLevel
+
+		if var_71_2 then
+			if var_71_2:getSeasonID() == arg_71_0.challengeInfo:getSeasonID() then
+				if var_71_3 >= ChallengeConst.BOSS_NUM then
+					var_71_0 = true
 				else
-					slot1 = false
+					var_71_0 = false
 				end
 			else
-				slot1 = false
+				var_71_0 = false
 			end
-		elseif ChallengeConst.BOSS_NUM <= slot4 then
-			slot1 = true
-		elseif not slot3 then
-			slot1 = false
+		elseif var_71_3 >= ChallengeConst.BOSS_NUM then
+			var_71_0 = true
+		elseif not var_71_2 then
+			var_71_0 = false
 		end
 	end
 
-	return slot1
+	return var_71_0
 end
 
-function slot0.isCrossedSeason(slot0)
-	slot1 = false
+function var_0_0.isCrossedSeason(arg_72_0)
+	local var_72_0 = false
 
-	if slot0.timeOverTag == true then
-		slot1 = true
-	elseif slot0.curModeInfo then
-		if slot0.curModeInfo:getSeasonID() ~= slot0.challengeInfo:getSeasonID() then
-			slot1 = true
+	if arg_72_0.timeOverTag == true then
+		var_72_0 = true
+	elseif arg_72_0.curModeInfo then
+		if arg_72_0.curModeInfo:getSeasonID() ~= arg_72_0.challengeInfo:getSeasonID() then
+			var_72_0 = true
 		end
 	else
-		slot1 = false
+		var_72_0 = false
 	end
 
-	return slot1
+	return var_72_0
 end
 
-function slot0.commitEdit(slot0)
-	slot0:emit(ChallengeMainMediator.ON_COMMIT_FLEET)
+function var_0_0.commitEdit(arg_73_0)
+	arg_73_0:emit(ChallengeMainMediator.ON_COMMIT_FLEET)
 end
 
-function slot0.openShipInfo(slot0, slot1, slot2)
-	slot0:emit(ChallengeMainMediator.ON_FLEET_SHIPINFO, {
-		shipId = slot1,
-		shipVOs = slot2
+function var_0_0.openShipInfo(arg_74_0, arg_74_1, arg_74_2)
+	arg_74_0:emit(ChallengeMainMediator.ON_FLEET_SHIPINFO, {
+		shipId = arg_74_1,
+		shipVOs = arg_74_2
 	})
 end
 
-function slot0.hideFleetEdit(slot0)
-	setActive(slot0.fleetSelect, false)
-	slot0:closeCommanderPanel()
-	pg.UIMgr.GetInstance():UnblurPanel(slot0.fleetSelect, slot0._tf)
-	setParent(slot0.fleetSelect, slot0._tf, false)
+function var_0_0.hideFleetEdit(arg_75_0)
+	setActive(arg_75_0.fleetSelect, false)
+	arg_75_0:closeCommanderPanel()
+	pg.UIMgr.GetInstance():UnblurPanel(arg_75_0.fleetSelect, arg_75_0._tf)
+	setParent(arg_75_0.fleetSelect, arg_75_0._tf, false)
 end
 
-function slot0.updateEditPanel(slot0)
-	slot0.fleetEditPanel:setFleets(slot0.fleets[slot0.curMode])
-	slot0.fleetEditPanel:updateFleets()
+function var_0_0.updateEditPanel(arg_76_0)
+	arg_76_0.fleetEditPanel:setFleets(arg_76_0.fleets[arg_76_0.curMode])
+	arg_76_0.fleetEditPanel:updateFleets()
 end
 
-function slot0.setCommanderPrefabs(slot0, slot1)
-	slot0.commanderPrefabs = slot1
+function var_0_0.setCommanderPrefabs(arg_77_0, arg_77_1)
+	arg_77_0.commanderPrefabs = arg_77_1
 end
 
-function slot0.openCommanderPanel(slot0, slot1, slot2)
-	slot3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE).id
+function var_0_0.openCommanderPanel(arg_78_0, arg_78_1, arg_78_2)
+	local var_78_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE).id
 
-	slot0.levelCMDFormationView:setCallback(function (slot0)
-		if slot0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
-			uv0:emit(ChallengeMainMediator.ON_COMMANDER_SKILL, slot0.skill)
-		elseif slot0.type == LevelUIConst.COMMANDER_OP_ADD then
-			uv0.contextData.eliteCommanderSelected = {
-				fleetIndex = uv1,
-				cmdPos = slot0.pos,
-				mode = uv0.curMode
+	arg_78_0.levelCMDFormationView:setCallback(function(arg_79_0)
+		if arg_79_0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+			arg_78_0:emit(ChallengeMainMediator.ON_COMMANDER_SKILL, arg_79_0.skill)
+		elseif arg_79_0.type == LevelUIConst.COMMANDER_OP_ADD then
+			arg_78_0.contextData.eliteCommanderSelected = {
+				fleetIndex = arg_78_2,
+				cmdPos = arg_79_0.pos,
+				mode = arg_78_0.curMode
 			}
 
-			uv0:emit(ChallengeMainMediator.ON_SELECT_ELITE_COMMANDER, uv1, slot0.pos)
-			uv0:closeCommanderPanel()
-			uv0:hideFleetEdit()
+			arg_78_0:emit(ChallengeMainMediator.ON_SELECT_ELITE_COMMANDER, arg_78_2, arg_79_0.pos)
+			arg_78_0:closeCommanderPanel()
+			arg_78_0:hideFleetEdit()
 		else
-			uv0:emit(ChallengeMainMediator.COMMANDER_FORMATION_OP, {
+			arg_78_0:emit(ChallengeMainMediator.COMMANDER_FORMATION_OP, {
 				FleetType = LevelUIConst.FLEET_TYPE_ACTIVITY,
-				data = slot0,
-				fleetId = uv2.id,
-				actId = uv3
+				data = arg_79_0,
+				fleetId = arg_78_1.id,
+				actId = var_78_0
 			})
 		end
 	end)
-	slot0.levelCMDFormationView:Load()
-	slot0.levelCMDFormationView:ActionInvoke("update", slot1, slot0.commanderPrefabs)
-	slot0.levelCMDFormationView:ActionInvoke("Show")
+	arg_78_0.levelCMDFormationView:Load()
+	arg_78_0.levelCMDFormationView:ActionInvoke("update", arg_78_1, arg_78_0.commanderPrefabs)
+	arg_78_0.levelCMDFormationView:ActionInvoke("Show")
 end
 
-function slot0.closeCommanderPanel(slot0)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("Hide")
+function var_0_0.closeCommanderPanel(arg_80_0)
+	if arg_80_0.levelCMDFormationView:isShowing() then
+		arg_80_0.levelCMDFormationView:ActionInvoke("Hide")
 	end
 end
 
-function slot0.updateCommanderFleet(slot0, slot1)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("updateFleet", slot1)
+function var_0_0.updateCommanderFleet(arg_81_0, arg_81_1)
+	if arg_81_0.levelCMDFormationView:isShowing() then
+		arg_81_0.levelCMDFormationView:ActionInvoke("updateFleet", arg_81_1)
 	end
 end
 
-function slot0.updateCommanderPrefab(slot0)
-	if slot0.levelCMDFormationView:isShowing() then
-		slot0.levelCMDFormationView:ActionInvoke("updatePrefabs", slot0.commanderPrefabs)
+function var_0_0.updateCommanderPrefab(arg_82_0)
+	if arg_82_0.levelCMDFormationView:isShowing() then
+		arg_82_0.levelCMDFormationView:ActionInvoke("updatePrefabs", arg_82_0.commanderPrefabs)
 	end
 end
 
-function slot0.buildCommanderPanel(slot0)
-	slot0.levelCMDFormationView = LevelCMDFormationView.New(slot0.fleetSelect, slot0.event, slot0.contextData)
+function var_0_0.buildCommanderPanel(arg_83_0)
+	arg_83_0.levelCMDFormationView = LevelCMDFormationView.New(arg_83_0.fleetSelect, arg_83_0.event, arg_83_0.contextData)
 end
 
-function slot0.destroyCommanderPanel(slot0)
-	slot0.levelCMDFormationView:Destroy()
+function var_0_0.destroyCommanderPanel(arg_84_0)
+	arg_84_0.levelCMDFormationView:Destroy()
 
-	slot0.levelCMDFormationView = nil
+	arg_84_0.levelCMDFormationView = nil
 end
 
-return slot0
+return var_0_0

@@ -1,255 +1,292 @@
-slot0 = class("Furniture", import("..BaseVO"))
-slot0.TYPE_WALLPAPER = 1
-slot0.TYPE_FURNITURE = 2
-slot0.TYPE_DECORATE = 3
-slot0.TYPE_FLOORPAPER = 4
-slot0.TYPE_MAT = 5
-slot0.TYPE_WALL = 6
-slot0.TYPE_COLLECTION = 7
-slot0.TYPE_STAGE = 8
-slot0.TYPE_ARCH = 9
-slot0.TYPE_WALL_MAT = 10
-slot0.TYPE_MOVEABLE = 11
-slot0.TYPE_TRANSPORT = 12
-slot0.TYPE_RANDOM_CONTROLLER = 13
-slot0.TYPE_FOLLOWER = 14
-slot0.TYPE_LUTE = 15
-slot0.TYPE_RANDOM_SLOT = 16
-slot0.INDEX_TO_COMFORTABLE_TYPE = {
-	slot0.TYPE_WALLPAPER,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_DECORATE,
-	slot0.TYPE_FLOORPAPER,
-	slot0.TYPE_MAT,
-	slot0.TYPE_WALL,
-	slot0.TYPE_COLLECTION,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_WALL,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE,
-	slot0.TYPE_FURNITURE
+﻿local var_0_0 = class("Furniture", import("..BaseVO"))
+
+var_0_0.TYPE_WALLPAPER = 1
+var_0_0.TYPE_FURNITURE = 2
+var_0_0.TYPE_DECORATE = 3
+var_0_0.TYPE_FLOORPAPER = 4
+var_0_0.TYPE_MAT = 5
+var_0_0.TYPE_WALL = 6
+var_0_0.TYPE_COLLECTION = 7
+var_0_0.TYPE_STAGE = 8
+var_0_0.TYPE_ARCH = 9
+var_0_0.TYPE_WALL_MAT = 10
+var_0_0.TYPE_MOVEABLE = 11
+var_0_0.TYPE_TRANSPORT = 12
+var_0_0.TYPE_RANDOM_CONTROLLER = 13
+var_0_0.TYPE_FOLLOWER = 14
+var_0_0.TYPE_LUTE = 15
+var_0_0.TYPE_RANDOM_SLOT = 16
+var_0_0.INDEX_TO_COMFORTABLE_TYPE = {
+	var_0_0.TYPE_WALLPAPER,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_DECORATE,
+	var_0_0.TYPE_FLOORPAPER,
+	var_0_0.TYPE_MAT,
+	var_0_0.TYPE_WALL,
+	var_0_0.TYPE_COLLECTION,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_WALL,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE,
+	var_0_0.TYPE_FURNITURE
 }
-slot0.INDEX_TO_SHOP_TYPE = {
+var_0_0.INDEX_TO_SHOP_TYPE = {
 	{
-		slot0.TYPE_WALLPAPER
+		var_0_0.TYPE_WALLPAPER
 	},
 	{
-		slot0.TYPE_FLOORPAPER
+		var_0_0.TYPE_FLOORPAPER
 	},
 	{
-		slot0.TYPE_FURNITURE,
-		slot0.TYPE_MAT,
-		slot0.TYPE_COLLECTION,
-		slot0.TYPE_STAGE,
-		slot0.TYPE_ARCH,
-		slot0.TYPE_MOVEABLE,
-		slot0.TYPE_TRANSPORT,
-		slot0.TYPE_RANDOM_CONTROLLER,
-		slot0.TYPE_FOLLOWER,
-		slot0.TYPE_LUTE,
-		slot0.TYPE_RANDOM_SLOT
+		var_0_0.TYPE_FURNITURE,
+		var_0_0.TYPE_MAT,
+		var_0_0.TYPE_COLLECTION,
+		var_0_0.TYPE_STAGE,
+		var_0_0.TYPE_ARCH,
+		var_0_0.TYPE_MOVEABLE,
+		var_0_0.TYPE_TRANSPORT,
+		var_0_0.TYPE_RANDOM_CONTROLLER,
+		var_0_0.TYPE_FOLLOWER,
+		var_0_0.TYPE_LUTE,
+		var_0_0.TYPE_RANDOM_SLOT
 	},
 	{},
 	{
-		slot0.TYPE_DECORATE
+		var_0_0.TYPE_DECORATE
 	},
 	{
-		slot0.TYPE_WALL,
-		slot0.TYPE_WALL_MAT
+		var_0_0.TYPE_WALL,
+		var_0_0.TYPE_WALL_MAT
 	}
 }
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = tonumber(slot1.id)
-	slot0.configId = slot1.configId or tonumber(slot1.id)
-	slot0.count = slot1.count or 0
-	slot0.date = slot1.get_time or slot1.date or 0
-	slot0.newFlag = false
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.id = tonumber(arg_1_1.id)
+	arg_1_0.configId = arg_1_1.configId or tonumber(arg_1_1.id)
+	arg_1_0.count = arg_1_1.count or 0
+	arg_1_0.date = arg_1_1.get_time or arg_1_1.date or 0
+	arg_1_0.newFlag = false
 end
 
-function slot0.MarkNew(slot0)
-	slot0.newFlag = true
+function var_0_0.MarkNew(arg_2_0)
+	arg_2_0.newFlag = true
 end
 
-function slot0.ClearNewFlag(slot0)
-	slot0.newFlag = false
+function var_0_0.ClearNewFlag(arg_3_0)
+	arg_3_0.newFlag = false
 end
 
-function slot0.getDate(slot0)
-	if slot0.date > 0 then
-		return pg.TimeMgr.GetInstance():STimeDescS(slot0.date, "%Y/%m/%d")
+function var_0_0.getDate(arg_4_0)
+	if arg_4_0.date > 0 then
+		return pg.TimeMgr.GetInstance():STimeDescS(arg_4_0.date, "%Y/%m/%d")
 	end
 end
 
-function slot0.GetOwnCnt(slot0)
-	return slot0.count
+function var_0_0.GetOwnCnt(arg_5_0)
+	return arg_5_0.count
 end
 
-function slot0.setCount(slot0, slot1)
-	slot0.count = slot1
+function var_0_0.setCount(arg_6_0, arg_6_1)
+	arg_6_0.count = arg_6_1
 end
 
-function slot0.isNotForSale(slot0)
-	return slot0:getConfig("not_for_sale") == 1
+function var_0_0.isNotForSale(arg_7_0)
+	return arg_7_0:getConfig("not_for_sale") == 1
 end
 
-function slot0.isForActivity(slot0)
-	return slot0:getConfig("not_for_sale") == 2
+function var_0_0.isForActivity(arg_8_0)
+	return arg_8_0:getConfig("not_for_sale") == 2
 end
 
-function slot0.addFurnitrueCount(slot0, slot1)
-	slot0.count = slot0.count + slot1
+function var_0_0.addFurnitrueCount(arg_9_0, arg_9_1)
+	arg_9_0.count = arg_9_0.count + arg_9_1
 end
 
-function slot0.canPurchase(slot0)
-	return slot0.count < slot0:getConfig("count")
+function var_0_0.canPurchase(arg_10_0)
+	return arg_10_0.count < arg_10_0:getConfig("count")
 end
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_11_0)
 	return pg.furniture_data_template
 end
 
-function slot0.bindShopConfigTable(slot0)
+function var_0_0.bindShopConfigTable(arg_12_0)
 	return pg.furniture_shop_template
 end
 
-function slot0.isFurniture(slot0)
-	return slot0:getConfig("type") ~= 0
+function var_0_0.isFurniture(arg_13_0)
+	return arg_13_0:getConfig("type") ~= 0
 end
 
-function slot0.IsNew(slot0)
-	return slot0:getConfig("new") ~= 0
+function var_0_0.IsNew(arg_14_0)
+	return arg_14_0:getConfig("new") ~= 0
 end
 
-function slot0.getConfig(slot0, slot1)
-	slot3 = slot0:bindConfigTable()[slot0.configId]
+function var_0_0.getConfig(arg_15_0, arg_15_1)
+	local var_15_0 = arg_15_0:bindConfigTable()[arg_15_0.configId]
 
-	assert(slot3, slot0.configId)
+	assert(var_15_0, arg_15_0.configId)
 
-	if slot3[slot1] then
-		return slot3[slot1]
-	elseif slot0:bindShopConfigTable()[slot0.configId] then
-		return slot5[slot1]
+	if var_15_0[arg_15_1] then
+		return var_15_0[arg_15_1]
+	else
+		local var_15_1 = arg_15_0:bindShopConfigTable()[arg_15_0.configId]
+
+		if var_15_1 then
+			return var_15_1[arg_15_1]
+		end
 	end
 end
 
-function slot0.getTypeForComfortable(slot0)
-	return uv0.INDEX_TO_COMFORTABLE_TYPE[slot0:getConfig("type")] and slot2 or uv0.TYPE_FURNITURE
+function var_0_0.getTypeForComfortable(arg_16_0)
+	local var_16_0 = arg_16_0:getConfig("type")
+	local var_16_1 = var_0_0.INDEX_TO_COMFORTABLE_TYPE[var_16_0]
+
+	return var_16_1 and var_16_1 or var_0_0.TYPE_FURNITURE
 end
 
-function slot0.getDeblocking(slot0)
-	slot1 = slot0:getConfig("themeId")
-	slot2 = pg.backyard_theme_template[slot1]
+function var_0_0.getDeblocking(arg_17_0)
+	local var_17_0 = arg_17_0:getConfig("themeId")
+	local var_17_1 = pg.backyard_theme_template[var_17_0]
 
-	assert(slot2, "pg.backyard_theme_template>>> id" .. slot1)
+	assert(var_17_1, "pg.backyard_theme_template>>> id" .. var_17_0)
 
-	return slot2.deblocking
+	return var_17_1.deblocking
 end
 
-function slot0.inTheme(slot0)
-	if slot0:getConfig("themeId") == 0 then
+function var_0_0.inTheme(arg_18_0)
+	local var_18_0 = arg_18_0:getConfig("themeId")
+
+	if var_18_0 == 0 then
 		return false
 	end
 
-	slot2 = pg.backyard_theme_template[slot1]
+	local var_18_1 = pg.backyard_theme_template[var_18_0]
 
-	assert(slot2, "pg.backyard_theme_template>>id" .. slot1)
+	assert(var_18_1, "pg.backyard_theme_template>>id" .. var_18_0)
 
-	return table.contains(slot2.ids, slot0.id)
+	return table.contains(var_18_1.ids, arg_18_0.id)
 end
 
-function slot0.isLock(slot0, slot1)
-	return slot0:inTheme() and slot1 < slot0:getDeblocking()
+function var_0_0.isLock(arg_19_0, arg_19_1)
+	return arg_19_0:inTheme() and arg_19_1 < arg_19_0:getDeblocking()
 end
 
-function slot0.isPaper(slot0)
-	return slot0:getConfig("type") == 4 or slot1 == 1
+function var_0_0.isPaper(arg_20_0)
+	local var_20_0 = arg_20_0:getConfig("type")
+
+	return var_20_0 == 4 or var_20_0 == 1
 end
 
-function slot0.GetThemeName(slot0)
-	if pg.backyard_theme_template[slot0:getConfig("themeId")] then
-		return slot2.name
+function var_0_0.GetThemeName(arg_21_0)
+	local var_21_0 = arg_21_0:getConfig("themeId")
+	local var_21_1 = pg.backyard_theme_template[var_21_0]
+
+	if var_21_1 then
+		return var_21_1.name
 	end
 
 	return ""
 end
 
-function slot0.inTime(slot0)
-	return pg.TimeMgr.GetInstance():inTime(slot0:getConfig("time"))
+function var_0_0.inTime(arg_22_0)
+	local var_22_0 = arg_22_0:getConfig("time")
+
+	return pg.TimeMgr.GetInstance():inTime(var_22_0)
 end
 
-function slot0.isTimeLimit(slot0)
-	return slot0:getConfig("time") and type(slot1) == "table"
+function var_0_0.isTimeLimit(arg_23_0)
+	local var_23_0 = arg_23_0:getConfig("time")
+
+	return var_23_0 and type(var_23_0) == "table"
 end
 
-function slot0.isRecordTime(slot0)
-	return slot0:getConfig("is_get_time_note") == 1
+function var_0_0.isRecordTime(arg_24_0)
+	return arg_24_0:getConfig("is_get_time_note") == 1
 end
 
-function slot0.isDisCount(slot0)
-	return (slot0:getConfig("discount") or 0) > 0 and pg.TimeMgr.GetInstance():inTime(slot0:getConfig("discount_time"))
+function var_0_0.isDisCount(arg_25_0)
+	return (arg_25_0:getConfig("discount") or 0) > 0 and pg.TimeMgr.GetInstance():inTime(arg_25_0:getConfig("discount_time"))
 end
 
-function slot0.sortSizeFunc(slot0)
-	return (slot0:getConfig("size")[1] or 0) * (slot1[2] or 0)
+function var_0_0.sortSizeFunc(arg_26_0)
+	local var_26_0 = arg_26_0:getConfig("size")
+
+	return (var_26_0[1] or 0) * (var_26_0[2] or 0)
 end
 
-function slot0.getPrice(slot0, slot1)
-	if slot1 == 4 and slot0:getConfig("gem_price") or slot1 == 6 and slot0:getConfig("dorm_icon_price") then
-		slot5 = math.floor(slot4 * (100 - (slot0:isDisCount() and slot0:getConfig("discount") or 0)) / 100)
+function var_0_0.getPrice(arg_27_0, arg_27_1)
+	local var_27_0 = (100 - (arg_27_0:isDisCount() and arg_27_0:getConfig("discount") or 0)) / 100
+	local var_27_1 = arg_27_1 == 4 and arg_27_0:getConfig("gem_price") or arg_27_1 == 6 and arg_27_0:getConfig("dorm_icon_price")
 
-		return slot4 > 0 and slot5 == 0 and 1 or slot5
+	if var_27_1 then
+		local var_27_2 = math.floor(var_27_1 * var_27_0)
+
+		return var_27_1 > 0 and var_27_2 == 0 and 1 or var_27_2
 	end
 end
 
-function slot0.canPurchaseByGem(slot0)
-	return slot0:getPrice(4) and slot1 ~= 0
+function var_0_0.canPurchaseByGem(arg_28_0)
+	local var_28_0 = arg_28_0:getPrice(4)
+
+	return var_28_0 and var_28_0 ~= 0
 end
 
-function slot0.canPurchaseByDormMoeny(slot0)
-	return slot0:getPrice(6) and slot1 ~= 0
+function var_0_0.canPurchaseByDormMoeny(arg_29_0)
+	local var_29_0 = arg_29_0:getPrice(6)
+
+	return var_29_0 and var_29_0 ~= 0
 end
 
-function slot0.getSortCurrency(slot0)
-	if slot0:canPurchaseByGem() then
-		slot1 = 0 + 2
-	elseif slot0:canPurchaseByDormMoeny() then
-		slot1 = slot1 + 1
+function var_0_0.getSortCurrency(arg_30_0)
+	local var_30_0 = 0
+
+	if arg_30_0:canPurchaseByGem() then
+		var_30_0 = var_30_0 + 2
+	elseif arg_30_0:canPurchaseByDormMoeny() then
+		var_30_0 = var_30_0 + 1
 	end
 
-	return slot1
+	return var_30_0
 end
 
-function slot0.sortPriceFunc(slot0)
-	slot2 = slot0:getConfig("dorm_icon_price") or 0
+function var_0_0.sortPriceFunc(arg_31_0)
+	local var_31_0 = arg_31_0:getConfig("gem_price") or 0
+	local var_31_1 = arg_31_0:getConfig("dorm_icon_price") or 0
 
-	if (slot0:getConfig("gem_price") or 0) > 0 then
-		return slot1 + 1000000
+	if var_31_0 > 0 then
+		return var_31_0 + 1000000
 	else
-		return slot2
+		return var_31_1
 	end
 end
 
-function slot0.isMatchSearchKey(slot0, slot1)
-	if slot1 == "" or not slot1 then
+function var_0_0.isMatchSearchKey(arg_32_0, arg_32_1)
+	if arg_32_1 == "" or not arg_32_1 then
 		return true
 	end
 
-	slot3 = string.lower(slot0:getConfig("describe"))
+	local var_32_0 = arg_32_0:getConfig("name")
+	local var_32_1 = arg_32_0:getConfig("describe")
 
-	if string.find(string.lower(slot0:getConfig("name")), string.lower(slot1)) or string.find(slot2, slot1) then
+	arg_32_1 = string.lower(arg_32_1)
+
+	local var_32_2 = string.lower(var_32_0)
+	local var_32_3 = string.lower(var_32_1)
+
+	if string.find(var_32_2, arg_32_1) or string.find(var_32_2, arg_32_1) then
 		return true
 	end
 
 	return false
 end
 
-function slot0.IsShopType(slot0)
-	return slot0:bindShopConfigTable()[slot0.configId] ~= nil
+function var_0_0.IsShopType(arg_33_0)
+	return arg_33_0:bindShopConfigTable()[arg_33_0.configId] ~= nil
 end
 
-return slot0
+return var_0_0

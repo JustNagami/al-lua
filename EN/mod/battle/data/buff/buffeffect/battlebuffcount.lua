@@ -1,157 +1,175 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleDataFunction
-slot2 = slot0.Battle.BattleAttr
-slot3 = class("BattleBuffCount", slot0.Battle.BattleBuffEffect)
-slot0.Battle.BattleBuffCount = slot3
-slot3.__name = "BattleBuffCount"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	uv0.super.Ctor(slot0, slot1)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleDataFunction
+local var_0_2 = var_0_0.Battle.BattleAttr
+local var_0_3 = class("BattleBuffCount", var_0_0.Battle.BattleBuffEffect)
+
+var_0_0.Battle.BattleBuffCount = var_0_3
+var_0_3.__name = "BattleBuffCount"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	var_0_3.super.Ctor(arg_1_0, arg_1_1)
 end
 
-function slot3.SetArgs(slot0, slot1, slot2)
-	slot0._countTarget = slot0._tempData.arg_list.countTarget or 1
-	slot0._countType = slot3.countType
-	slot0._weaponType = slot3.weaponType
-	slot0._index = slot3.index
-	slot0._maxHPRatio = slot3.maxHPRatio or 0
-	slot0._casterMaxHPRatio = slot3.casterMaxHPRatio or 0
-	slot0._clock = slot0._tempData.arg_list.clock
-	slot0._interrupt = slot0._tempData.arg_list.interrupt
-	slot0._iconType = slot0._tempData.arg_list.iconType or 1
-	slot0._gunnerBonus = slot3.gunnerBonus
+function var_0_3.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0._tempData.arg_list
 
-	slot0:ResetCount()
+	arg_2_0._countTarget = var_2_0.countTarget or 1
+	arg_2_0._countType = var_2_0.countType
+	arg_2_0._weaponType = var_2_0.weaponType
+	arg_2_0._index = var_2_0.index
+	arg_2_0._maxHPRatio = var_2_0.maxHPRatio or 0
+	arg_2_0._casterMaxHPRatio = var_2_0.casterMaxHPRatio or 0
+	arg_2_0._clock = arg_2_0._tempData.arg_list.clock
+	arg_2_0._interrupt = arg_2_0._tempData.arg_list.interrupt
+	arg_2_0._iconType = arg_2_0._tempData.arg_list.iconType or 1
+	arg_2_0._gunnerBonus = var_2_0.gunnerBonus
 
-	if slot0._clock then
-		slot1:DispatchCastClock(true, slot0, slot0._iconType, slot0._interrupt)
+	arg_2_0:ResetCount()
+
+	if arg_2_0._clock then
+		arg_2_1:DispatchCastClock(true, arg_2_0, arg_2_0._iconType, arg_2_0._interrupt)
 	end
 end
 
-function slot3.onRemove(slot0, slot1, slot2)
-	if slot0._clock then
-		slot1:DispatchCastClock(false, slot0, nil, slot0._interrupt and slot0._count < slot0._countTarget)
+function var_0_3.onRemove(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_0._clock then
+		local var_3_0 = arg_3_0._interrupt and arg_3_0._count < arg_3_0._countTarget
+
+		arg_3_1:DispatchCastClock(false, arg_3_0, nil, var_3_0)
 	end
 end
 
-function slot3.onTrigger(slot0, slot1, slot2)
-	uv0.super.onTrigger(slot0, slot1, slot2)
+function var_0_3.onTrigger(arg_4_0, arg_4_1, arg_4_2)
+	var_0_3.super.onTrigger(arg_4_0, arg_4_1, arg_4_2)
 
-	slot0._count = slot0._count + 1
+	arg_4_0._count = arg_4_0._count + 1
 
-	slot0:checkCount(slot1)
+	arg_4_0:checkCount(arg_4_1)
 end
 
-function slot3.onFire(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_3.onFire(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+	if not arg_5_0:equipIndexRequire(arg_5_3.equipIndex) then
 		return
 	end
 
-	slot0._count = slot0._count + 1
+	arg_5_0._count = arg_5_0._count + 1
 
-	slot0:checkModCount(slot1)
+	arg_5_0:checkModCount(arg_5_1)
 end
 
-function slot3.onUpdate(slot0, slot1, slot2, slot3)
-	slot0._count = slot3.timeStamp - (slot0._lastTriggerTime or slot2:GetBuffStartTime())
+function var_0_3.onUpdate(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	local var_6_0 = arg_6_3.timeStamp
 
-	if slot0._countTarget <= slot0._count then
-		slot0._lastTriggerTime = slot4
+	arg_6_0._count = var_6_0 - (arg_6_0._lastTriggerTime or arg_6_2:GetBuffStartTime())
 
-		slot0:ResetCount()
-		slot1:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = slot0
+	if arg_6_0._count >= arg_6_0._countTarget then
+		arg_6_0._lastTriggerTime = var_6_0
+
+		arg_6_0:ResetCount()
+		arg_6_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_6_0
 		})
 	end
 end
 
-function slot3.onTakeDamage(slot0, slot1, slot2, slot3)
-	if slot0:damageCheck(slot3) then
-		slot0._count = slot0._count + slot3.damage
+function var_0_3.onTakeDamage(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	if arg_7_0:damageCheck(arg_7_3) then
+		local var_7_0 = arg_7_3.damage
 
-		slot0:checkHPCount(slot1)
+		arg_7_0._count = arg_7_0._count + var_7_0
+
+		arg_7_0:checkHPCount(arg_7_1)
 	end
 end
 
-function slot3.onTakeHealing(slot0, slot1, slot2, slot3)
-	slot0._count = slot0._count + slot3.damage
+function var_0_3.onTakeHealing(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	local var_8_0 = arg_8_3.damage
 
-	slot0:checkHPCount(slot1)
+	arg_8_0._count = arg_8_0._count + var_8_0
+
+	arg_8_0:checkHPCount(arg_8_1)
 end
 
-function slot3.onHPRatioUpdate(slot0, slot1, slot2, slot3)
-	slot0._count = slot0._count + math.abs(slot3.validDHP)
+function var_0_3.onHPRatioUpdate(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+	local var_9_0 = math.abs(arg_9_3.validDHP)
 
-	slot0:checkHPCount(slot1)
+	arg_9_0._count = arg_9_0._count + var_9_0
+
+	arg_9_0:checkHPCount(arg_9_1)
 end
 
-function slot3.onStack(slot0, slot1, slot2, slot3)
-	slot0._count = slot2:GetStack()
+function var_0_3.onStack(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	arg_10_0._count = arg_10_2:GetStack()
 
-	slot0:checkCount(slot1)
+	arg_10_0:checkCount(arg_10_1)
 end
 
-function slot3.onBulletHit(slot0, slot1, slot2, slot3)
-	if not slot0:equipIndexRequire(slot3.equipIndex) then
+function var_0_3.onBulletHit(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	if not arg_11_0:equipIndexRequire(arg_11_3.equipIndex) then
 		return
 	end
 
-	slot0._count = slot0._count + slot3.damage
+	arg_11_0._count = arg_11_0._count + arg_11_3.damage
 
-	slot0:checkCount(slot1)
+	arg_11_0:checkCount(arg_11_1)
 end
 
-function slot3.checkCount(slot0, slot1)
-	if slot0._countTarget <= slot0._count then
-		slot1:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = slot0
+function var_0_3.checkCount(arg_12_0, arg_12_1)
+	if arg_12_0._count >= arg_12_0._countTarget then
+		arg_12_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_12_0
 		})
 	end
 end
 
-function slot3.checkModCount(slot0, slot1)
-	if slot0:getCount(slot1) <= slot0._count then
-		slot1:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = slot0
+function var_0_3.checkModCount(arg_13_0, arg_13_1)
+	if arg_13_0._count >= arg_13_0:getCount(arg_13_1) then
+		arg_13_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_13_0
 		})
 	end
 end
 
-function slot3.getCount(slot0, slot1)
-	if slot0._gunnerBonus then
-		slot2 = math.ceil(slot0._countTarget / uv0.GetCurrent(slot1, "barrageCounterMod"))
+function var_0_3.getCount(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0._countTarget
+	local var_14_1 = var_0_2.GetCurrent(arg_14_1, "barrageCounterMod")
+
+	if arg_14_0._gunnerBonus then
+		var_14_0 = math.ceil(var_14_0 / var_14_1)
 	end
 
-	return slot2
+	return var_14_0
 end
 
-function slot3.checkHPCount(slot0, slot1)
-	if not slot0._hpCountTarget then
-		slot0:calcHPCount(slot1)
+function var_0_3.checkHPCount(arg_15_0, arg_15_1)
+	if not arg_15_0._hpCountTarget then
+		arg_15_0:calcHPCount(arg_15_1)
 	end
 
-	if slot0._hpCountTarget <= slot0._count then
-		slot1:TriggerBuff(uv0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
-			buffFX = slot0
+	if arg_15_0._count >= arg_15_0._hpCountTarget then
+		arg_15_1:TriggerBuff(var_0_0.Battle.BattleConst.BuffEffectType.ON_BATTLE_BUFF_COUNT, {
+			buffFX = arg_15_0
 		})
 	end
 end
 
-function slot3.calcHPCount(slot0, slot1)
-	slot2, slot3 = slot1:GetHP()
-	slot4, slot5 = slot0._caster:GetHP()
-	slot0._hpCountTarget = slot0._casterMaxHPRatio * slot5 + slot0._maxHPRatio * slot3 + slot0._countTarget
+function var_0_3.calcHPCount(arg_16_0, arg_16_1)
+	local var_16_0, var_16_1 = arg_16_1:GetHP()
+	local var_16_2, var_16_3 = arg_16_0._caster:GetHP()
+
+	arg_16_0._hpCountTarget = arg_16_0._casterMaxHPRatio * var_16_3 + arg_16_0._maxHPRatio * var_16_1 + arg_16_0._countTarget
 end
 
-function slot3.GetCountType(slot0)
-	return slot0._countType
+function var_0_3.GetCountType(arg_17_0)
+	return arg_17_0._countType
 end
 
-function slot3.GetCountProgress(slot0)
-	return slot0._count / slot0._countTarget
+function var_0_3.GetCountProgress(arg_18_0)
+	return arg_18_0._count / arg_18_0._countTarget
 end
 
-function slot3.ResetCount(slot0)
-	slot0._count = 0
+function var_0_3.ResetCount(arg_19_0)
+	arg_19_0._count = 0
 end

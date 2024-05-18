@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.land_based_template = {
 	{
 		id = 1,

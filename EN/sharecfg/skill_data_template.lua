@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.skill_data_template = setmetatable({
 	__name = "skill_data_template",
 	all = {
@@ -6279,7 +6279,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this ship's OXY by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6342,7 +6342,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases the time this ship can stay in combat after resurfacing by $1s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6405,7 +6405,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases the DMG of this ship's Torpedoes by $1 but decreases their Speed by 1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6468,7 +6468,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this ship's DMG to CLs by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6531,7 +6531,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this ship's DMG to CAs by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6594,7 +6594,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this ship's DMG to CVs by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6657,7 +6657,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "For each Iron Blood SS in your fleet: increases this boat's TRP, RLD, and Accuracy by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6720,7 +6720,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When your Aerial Superiority status is higher than \"AD\": increases this boat's FP, TRP, and RLD by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -6783,7 +6783,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's OXY by $1. Once per sortie, while this boat is afloat: you can call in Submarine Support even if your fleet is outside the Submarine Fleet's ASR.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -8278,7 +8278,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[51.0] = 4176
+			[51] = 4176
 		},
 		world_death_mark = {
 			1
@@ -10355,7 +10355,7 @@ pg.base.skill_data_template = {
 		max_level = 0,
 		desc = "[Naval Exercise Gear; only 1 gear of this type will work if multiple are equipped] When equipped by your Flagship: increases the DMG dealt by both sides' CVs and CVLs by 10.0%, and decreases the DMG dealt by both sides' BBs and BCs by 10.0%.",
 		system_transform = {
-			[3.0] = 6741
+			[3] = 6741
 		},
 		world_death_mark = {
 			1
@@ -10385,7 +10385,7 @@ pg.base.skill_data_template = {
 		max_level = 0,
 		desc = "[Naval Exercise Gear; only 1 gear of this type will work if multiple are equipped] When equipped by your Flagship: decreases the DMG dealt by both sides' ships by 15.0%.",
 		system_transform = {
-			[3.0] = 6761
+			[3] = 6761
 		},
 		world_death_mark = {
 			1
@@ -13741,7 +13741,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Every 20s: $1 chance to fire a special barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 10131
+			[3] = 10131
 		},
 		world_death_mark = {
 			1
@@ -14840,7 +14840,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage and increase the RLD of your Main Fleet by $2 for 8s. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 10291
+			[3] = 10291
 		},
 		world_death_mark = {
 			1
@@ -20392,7 +20392,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Every 20s: $1 chance to fire a special barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 11001
+			[3] = 11001
 		},
 		world_death_mark = {
 			1
@@ -22602,7 +22602,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this ship's DMG to enemy BBs by $1. When this ship fires a Salvo: $2 chance to fire a special barrage (uses Type 3 Ammo.) Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 11271
+			[3] = 11271
 		},
 		world_death_mark = {
 			1
@@ -23430,7 +23430,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "8s after this boat enters the battle: fires a $1 torpedo barrage that can pierce through enemies, damaging up to 2 targets per torpedo. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23488,7 +23488,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG to CAs by $1. When this boat retreats from battle (when it's done attacking): fires a special torpedo barrage. Barrage damage is based on the skill's level.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23551,7 +23551,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG to CVs by $2. When this boat hits an enemy with its Torpedoes: $1 chance to inflicts Flooding that lasts 24s, inflicting DMG every 3s (DMG is based on this ship's TRP stat.) Effect does not stack, but the Flooding duration can be refreshed.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23720,7 +23720,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's EVA by $2. For each Iron Blood SS in your fleet: increases this boat's TRP, RLD, and Accuracy by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -23950,7 +23950,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this boat hits an enemy with its Torpedoes: for 5s, the enemy hit will take $1 more DMG from this boat's Torpedoes.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -24164,7 +24164,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When the Submarine Fleet consists of this boat only: increases this boat's DMG to BBs (does not affect BCs or BBVs) by $1, increases ASR by 1, and increases AMO by 2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -24227,7 +24227,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When the Submarine Fleet consists of this boat only: increases this boat's DMG to BBs (does not affect BCs or BBVs) by $1, increases ASR by 1, and increases AMO by 2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -25928,7 +25928,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this boat resurfaces and when it retreats: fires a $1 torpedo barrage (DMG is based on the skill's level) with a 70.0% chance to ignite enemies, causing Burn DMG. Burn DMG is based on this boat's TRP stat.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -25977,7 +25977,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG to enemy DDs, CLs, and CVs by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -27222,7 +27222,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 11811
+			[3] = 11811
 		},
 		world_death_mark = {
 			1
@@ -29030,7 +29030,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this boat enters the battle: launches a Saiun seaplane and increases DMG dealt by your Main Fleet by $1 for 10s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -29807,7 +29807,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo while sortied as the Flagship: $1 chance to fire a special barrage. Also increases the DMG of all your Iron Blood Carriers by $2.",
 		system_transform = {
-			[3.0] = 12135
+			[3] = 12135
 		},
 		world_death_mark = {
 			1
@@ -30066,7 +30066,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Every 24s: $3 chance to fire a special barrage. While equipping the Quadruple 356 mm Main Gun: decreases this ship's first Salvo load time by $1, increases its Main Gun Crit Rate by $2, decreases its Spread Range by 2, and improves the barrage.",
 		system_transform = {
-			[3.0] = 12170
+			[3] = 12170
 		},
 		world_death_mark = {
 			1
@@ -30325,7 +30325,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Once per battle, when this boat is called into battle and until it retreats: if the HP of one of your ships falls below 20%: launches a torpedo barrage. If Bismarck is in your fleet: improves the barrage.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -31853,7 +31853,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this boat enters the battle: launches a special Type 0 Small Recon Seaplane airstrike (DMG is based on this boat's TRP stat.) Increases Accuracy by $1 for all SSs and SSVs in your fleet.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -31916,7 +31916,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this boat resurfaces: fires a special barrage (DMG is based on the skill's level.) When this boat hits an enemy with this barrage and its Main Guns: $1 chance to decrease the enemy's Accuracy and RLD by $2 for 15s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32024,7 +32024,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG to Carriers by $1. When this boat resurfaces: fires a special guaranteed Critical Hit torpedo barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32087,7 +32087,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's Accuracy by $1. When called into battle when placed in the first or last position in the Submarine Fleet: continues advancing beyond its starting position then returns to it after 18s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32150,7 +32150,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases Evasion Rate by $1 and DMG to DDs and CLs by $1 for all your Iron Blood SSs. For each Iron Blood SS in your fleet: increases this boat's TRP and RLD by $2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32365,7 +32365,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "While this ship is afloat: increases this ship's EVA by $1 and decreases DMG taken from enemy torpedoes by $2 for your Main Fleet. Every 20s: $3 chance to fire a special barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 12435
+			[3] = 12435
 		},
 		world_death_mark = {
 			1
@@ -32624,7 +32624,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Allied SS and SSV take $1 reduced damage and heal for $2 of their max HP when retreating from battle.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -32732,7 +32732,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG to enemy CVs by $1. When this boat resurfaces and when it retreats: fires a special torpedo barrage $2 (DMG is based on the skill's level.) When sortied with Albacore: increases the DMG of this barrage's torpedoes by $3.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -34096,7 +34096,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage (DMG is based on the skill's level.) While this ship has the Triple 381mm Main Gun (M1934) equipped: improves the barrage and increases its proc chance by 10.0%.",
 		system_transform = {
-			[3.0] = 12605
+			[3] = 12605
 		},
 		world_death_mark = {
 			1
@@ -35975,7 +35975,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Every 20s: $1 chance to fire a special barrage (DMG is based on the skill's level). While in an Exercise: improves the firing pattern of the barrage.",
 		system_transform = {
-			[3.0] = 12800
+			[3] = 12800
 		},
 		world_death_mark = {
 			1
@@ -37998,7 +37998,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 13025
+			[3] = 13025
 		},
 		world_death_mark = {
 			1
@@ -39360,7 +39360,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG against enemy DDs and CLs by $1.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -39423,7 +39423,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage; the barrage is unaffected by this ship's position in your Main Fleet. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 13165
+			[3] = 13165
 		},
 		world_death_mark = {
 			1
@@ -40079,7 +40079,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Future Content ",
 		system_transform = {
-			[51.0] = 13225
+			[51] = 13225
 		},
 		world_death_mark = {
 			1
@@ -40307,7 +40307,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires its Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level.) This barrage has a 70.0% chance to inflict a special Burn to enemies, dealing 119 DMG per tick and decreasing their FP, TRP, and AVI by 5.0% for 30s.",
 		system_transform = {
-			[3.0] = 13255
+			[3] = 13255
 		},
 		world_death_mark = {
 			1
@@ -42996,7 +42996,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Future Content ",
 		system_transform = {
-			[51.0] = 13545
+			[51] = 13545
 		},
 		world_death_mark = {
 			1
@@ -43012,7 +43012,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's Torpedo Crit Rate by $1. At the start of the battle: fires a $2 torpedo barrage (DMG is based on the skill's level.) ",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -43111,7 +43111,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases Accuracy by $1 and Crit DMG by $2 for all your Iron Blood SSs. Additionally, for each Iron Blood SS in your fleet: increases this boat's Accuracy, RLD, and EVA by $3.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -43571,7 +43571,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Every 20s after the battle starts: $1 chance to fire a $2 special barrage (DMG is based on the skill's level.)",
 		system_transform = {
-			[3.0] = 13615
+			[3] = 13615
 		},
 		world_death_mark = {
 			1
@@ -44446,7 +44446,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Support effect",
 		system_transform = {
-			[51.0] = 13705
+			[51] = 13705
 		},
 		world_death_mark = {
 			1
@@ -45748,7 +45748,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's OXY by $1. When this boat resurfaces: fires a $2 torpedo barrage with a 70.0% chance to inflict Armor Break. When this boat retreats from the battle: fires a $2 torpedo barrage with a 70.0% chance to Burn enemies. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -46481,7 +46481,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's OXY by $1 and DMG against Light Armor enemies by $2. When this boat resurfaces: fires a special torpedo barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -46625,7 +46625,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's Speed by 3 and RLD by $1. For each Iron Blood SS in the same fleet: increases this boat's TRP, EVA, and Accuracy by $2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -48596,7 +48596,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG dealt to CLs by $1. When this boat resurfaces: fires a special $2 torpedo barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -48810,7 +48810,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a $2 special barrage (Barrage DMG is based on this skill's level). If this barrage fails to activate, increases this ship's AA by 50.0% until the next Salvo is fired.",
 		system_transform = {
-			[3.0] = 14155
+			[3] = 14155
 		},
 		world_death_mark = {
 			1
@@ -52134,7 +52134,7 @@ pg.base.skill_data_template = {
 		max_level = 10,
 		desc = "Increases this boat's DMG dealt to enemy DDs by $1. When this boat resurfaces: decreases her DMG taken by $2 and fires a $3 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -52585,11 +52585,7 @@ pg.base.skill_data_template = {
 		id = 14500,
 		type = 1,
 		max_level = 10,
-		desc = [[
-$1 chance to activate one of the following effects (chosen at random) when this ship launches an Airstrike:
-1) Doubles this ship's DMG dealt to all enemies for 6s.
-2)Grants this ship 100% Evasion Rate for 5s.
-3)Decreases the Speed of all enemies by $2 for 4s.]],
+		desc = "$1 chance to activate one of the following effects (chosen at random) when this ship launches an Airstrike:\n1) Doubles this ship's DMG dealt to all enemies for 6s.\n2)Grants this ship 100% Evasion Rate for 5s.\n3)Decreases the Speed of all enemies by $2 for 4s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -53554,11 +53550,7 @@ $1 chance to activate one of the following effects (chosen at random) when this 
 		id = 14580,
 		type = 3,
 		max_level = 10,
-		desc = [[
-Increases this ship's EVA and AA by $1. Activates one of the following effects based on this ship's position in your Vanguard during battle:
-1) Front (and also when this ship is your last afloat Vanguard ship): increases this ship's EVA and AA by $2, and decreases her DMG taken by $3.
-2) Middle: heals all ships in your Vanguard for $4 of their max HP 20s after the battle starts.
-3) Rear: increases this ship's FP by $3 and AA by $1, and also increases your whole Vanguard's DMG dealt to enemies by 5.0%.]],
+		desc = "Increases this ship's EVA and AA by $1. Activates one of the following effects based on this ship's position in your Vanguard during battle:\n1) Front (and also when this ship is your last afloat Vanguard ship): increases this ship's EVA and AA by $2, and decreases her DMG taken by $3.\n2) Middle: heals all ships in your Vanguard for $4 of their max HP 20s after the battle starts.\n3) Rear: increases this ship's FP by $3 and AA by $1, and also increases your whole Vanguard's DMG dealt to enemies by 5.0%.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -53756,7 +53748,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "Increases this boat's DMG to Heavy Armor enemies by $1. When sortied with at least 1 other Eagle Union submarine: increases Crit DMG by $2 and increases TRP and Accuracy by $3 for all your Eagle Union submarines.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -53909,7 +53901,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "Increases this boat's OXY by $1. When this boat resurfaces, and again when she leaves the battle: fires a $2 torpedo barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -55494,7 +55486,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "At the start of the battle: this boat moves forward a set distance, then fires a $1 torpedo barrage (DMG is based on the skill's level) and briefly resurfaces. Afterwards, she submerges and moves back into attack position, then fires a stronger $1 torpedo barrage. This boat takes $2 less DMG while resurfaced as part of this skill's effect.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -55593,7 +55585,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "When this boat is hit by an enemy: increases that enemy's DMG taken by $1 for 3s. If the enemy is a DD: also decreases that enemy's Speed by $2 for 5s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -58382,7 +58374,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "When the fleet this ship is in sinks an enemy fleet: increases this ship's DMG dealt by $1 (can be stacked up to 4 times). When this ship sinks an enemy in combat: increases this ship's ACC and EVA by $2 (can be stacked up to 4 times).",
 		system_transform = {
-			[51.0] = 14985
+			[51] = 14985
 		},
 		world_death_mark = {
 			1
@@ -58490,7 +58482,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		max_level = 10,
 		desc = "When the fleet this ship is in sinks an enemy fleet: increases this ship's DMG dealt by $1 (can be stacked up to 4 times). When this ship sinks an enemy in combat: increases this ship's ACC and EVA by $2 (can be stacked up to 4 times).",
 		system_transform = {
-			[51.0] = 14985
+			[51] = 14985
 		},
 		world_death_mark = {
 			1
@@ -59652,11 +59644,7 @@ Increases this ship's EVA and AA by $1. Activates one of the following effects b
 		id = 15070,
 		type = 1,
 		max_level = 10,
-		desc = [[
-Increases this ship's Crit DMG dealt by $1. While this ship is afloat, for the first 5 battles of a sortie fought by a fleet this ship is NOT in, the following buffs apply to that fleet: 
-1) Decreases DMG taken by your Iron Blood ships by 5.0%; 
-2) Increases Crit DMG dealt by your Iron Blood ships by $2; 
-3) When an enemy gets within close proximity of your ships: fires a $3 supporting barrage (DMG is based on the skill's level; can only activate up to 6 times per battle; has a 5s cooldown between activations).]],
+		desc = "Increases this ship's Crit DMG dealt by $1. While this ship is afloat, for the first 5 battles of a sortie fought by a fleet this ship is NOT in, the following buffs apply to that fleet: \n1) Decreases DMG taken by your Iron Blood ships by 5.0%; \n2) Increases Crit DMG dealt by your Iron Blood ships by $2; \n3) When an enemy gets within close proximity of your ships: fires a $3 supporting barrage (DMG is based on the skill's level; can only activate up to 6 times per battle; has a 5s cooldown between activations).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -63217,12 +63205,7 @@ Increases this ship's Crit DMG dealt by $1. While this ship is afloat, for the f
 		id = 15380,
 		type = 3,
 		max_level = 10,
-		desc = [[
-Increases this ship's DMG dealt by $2. 
-10s after the battle starts, and every 20s after that, while a ship in your Main Fleet has between 20.0% and 90.0% HP remaining: 
-1) If this ship has the highest percentage HP of all ships in your Main Fleet, and there are at least 2 ships in your Main Fleet, deducts $1 HP from this ship and heals your Main Fleet ship with the lowest percentage HP (except this ship) for the amount of HP deducted from this ship; 
-2) If this ship does NOT have the highest percentage HP, deducts $1 HP from your Main Fleet ship with the highest percentage HP and heals this ship for the amount of HP deducted from the other ship. 
-Whichever ship is healed as a result of this skill has her EVA increased by $2 for 5s. If the ship healed is from the Sardegna Empire, the amount healed is increased by 183.]],
+		desc = "Increases this ship's DMG dealt by $2. \n10s after the battle starts, and every 20s after that, while a ship in your Main Fleet has between 20.0% and 90.0% HP remaining: \n1) If this ship has the highest percentage HP of all ships in your Main Fleet, and there are at least 2 ships in your Main Fleet, deducts $1 HP from this ship and heals your Main Fleet ship with the lowest percentage HP (except this ship) for the amount of HP deducted from this ship; \n2) If this ship does NOT have the highest percentage HP, deducts $1 HP from your Main Fleet ship with the highest percentage HP and heals this ship for the amount of HP deducted from the other ship. \nWhichever ship is healed as a result of this skill has her EVA increased by $2 for 5s. If the ship healed is from the Sardegna Empire, the amount healed is increased by 183.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -64818,11 +64801,7 @@ Whichever ship is healed as a result of this skill has her EVA increased by $2 f
 		id = 15520,
 		type = 3,
 		max_level = 10,
-		desc = [[
-When the battle starts, increases your Emden's EVA by $1 and: 
-1) If your Vanguard consists of only Emden, Emden is unaffected by the Out of Ammo debuff; 
-2) If there are other Iron Blood ships in your fleet, after 5s, lowers your Iron Blood ships' HP by 11 and increases their FP by $3. 
-Every battle, when Emden sinks an enemy: increases Emden's EVA by $2 (can be stacked up to 3 times).]],
+		desc = "When the battle starts, increases your Emden's EVA by $1 and: \n1) If your Vanguard consists of only Emden, Emden is unaffected by the Out of Ammo debuff; \n2) If there are other Iron Blood ships in your fleet, after 5s, lowers your Iron Blood ships' HP by 11 and increases their FP by $3. \nEvery battle, when Emden sinks an enemy: increases Emden's EVA by $2 (can be stacked up to 3 times).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -65079,11 +65058,7 @@ Every battle, when Emden sinks an enemy: increases Emden's EVA by $2 (can be sta
 		id = 15540,
 		type = 2,
 		max_level = 10,
-		desc = [[
-When the battle starts, and every 30s: deploys 3 types of shields that each last $1s: 
-1) A blue shield which can block up to 4 enemy shots; 
-2) A purple shield which can block up to 2 enemy torpedoes; 
-3) A red shield which inflicts DMG up to 6 times to an enemy it comes in contact with.]],
+		desc = "When the battle starts, and every 30s: deploys 3 types of shields that each last $1s: \n1) A blue shield which can block up to 4 enemy shots; \n2) A purple shield which can block up to 2 enemy torpedoes; \n3) A red shield which inflicts DMG up to 6 times to an enemy it comes in contact with.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -65956,11 +65931,7 @@ When the battle starts, and every 30s: deploys 3 types of shields that each last
 		id = 15640,
 		type = 3,
 		max_level = 10,
-		desc = [[
-Increases your Illustrious-class CVs' DMG dealt by $1. When the battle starts: 
-1) Increases AVI and ACC by $2 for all your Illustrious-class CVs except this ship; 
-2) If sortied with Prince of Wales or Repulse: increases this ship's AVI by $2 and ACC by $3; 
-3) If sortied with neither of the above ships, and if this ship is the only Illustrious-class CV in your fleet: increases this ship's AVI by $2.]],
+		desc = "Increases your Illustrious-class CVs' DMG dealt by $1. When the battle starts: \n1) Increases AVI and ACC by $2 for all your Illustrious-class CVs except this ship; \n2) If sortied with Prince of Wales or Repulse: increases this ship's AVI by $2 and ACC by $3; \n3) If sortied with neither of the above ships, and if this ship is the only Illustrious-class CV in your fleet: increases this ship's AVI by $2.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -67322,13 +67293,7 @@ Increases your Illustrious-class CVs' DMG dealt by $1. When the battle starts:
 		id = 15750,
 		type = 2,
 		max_level = 10,
-		desc = [[
-Increases this ship's EVA by $1. When this ship takes DMG that would sink her, she becomes unsinkable for 2.5s and randomly gains one of the following buffs:
-1) Increases this ship's FP by $2;
-2) Increases this ship's TRP by $3;
-3) Increases this ship's ACC by $4;
-4) Increases this ship's RLD by $5.
-Once per battle, when a ship in your Vanguard (other than this ship) falls below 30.0% max HP as a result of DMG taken: this ship gains one of the above buffs and restores $6 max HP to that ship (restores an additional 5.0% if the ship is a Le Fantasque class). When this ship gains one of the above buffs: restores $7 of this ship's max HP, but if she gets 2 stacks of the same buff, she sinks after 2.5s.]],
+		desc = "Increases this ship's EVA by $1. When this ship takes DMG that would sink her, she becomes unsinkable for 2.5s and randomly gains one of the following buffs:\n1) Increases this ship's FP by $2;\n2) Increases this ship's TRP by $3;\n3) Increases this ship's ACC by $4;\n4) Increases this ship's RLD by $5.\nOnce per battle, when a ship in your Vanguard (other than this ship) falls below 30.0% max HP as a result of DMG taken: this ship gains one of the above buffs and restores $6 max HP to that ship (restores an additional 5.0% if the ship is a Le Fantasque class). When this ship gains one of the above buffs: restores $7 of this ship's max HP, but if she gets 2 stacks of the same buff, she sinks after 2.5s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -67781,7 +67746,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "Increases this boat's TRP and ACC by $2, and DMG dealt to Light Armor enemies by $1. If this boat has Sardegna Empire gear equipped: further increases this boat's TRP and ACC by $2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -67889,7 +67854,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "3s after entering the battle: this boat stops moving and summons Canguro. Canguro moves forward a set distance and deploys sea mines (sea mines inflict Flooding to enemies that touch them, continuously dealing DMG for 24s; Flooding DMG is based on this boat's TRP stat; Flooding cannot stack), then returns to this boat. After this boat retrieves Canguro, she resumes moving and fires a $1 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -70779,7 +70744,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "Once when the battle starts, and with a $2 chance when this ship takes DMG: fires a $3 special barrage that restores 1.0% max HP to each ship in your Vanguard (DMG is based on the skill's level; 18s cooldown between activations). When this ship sinks: 1) Outside of an Exercise, restores $1 max HP to all other ships in your fleet; 2) During an Exercise: this ship instead will not sink, and restores $1 max HP to all ships in your fleet (can only activate once per battle; if the Eagle Union Elite Damage Control is also equipped, the effects from this skill take precedence).",
 		system_transform = {
-			[3.0] = 16025
+			[3] = 16025
 		},
 		world_death_mark = {
 			1
@@ -71216,7 +71181,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "When the battle starts, if this ship is NOT your Flagship OR your Airspace Control status is not Air Incapability or Air Denial: reduces this ship's DMG taken by $1 in that battle.\nIf this ship is afloat, when a fleet this ship is NOT in enters a battle: fires a $2 supporting barrage 15s and 35s after the battle starts (DMG is based on the skill's level).\n[Non-Exercise Only] While this ship is above 40.0% HP: grants the \"Musashi's Guardianship\" status to all your other Main Fleet ships. Ships with this status: 1) No longer take Ramming DMG; 2) Force Musashi to become Detected as well if they become Detected; 3) Cause Musashi to be prioritized by enemy attacks if they are both valid targets.",
 		system_transform = {
-			[3.0] = 16056
+			[3] = 16056
 		},
 		world_death_mark = {
 			1
@@ -72414,7 +72379,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "When this ship enters the battle, and every 20s after that: performs a $1 special attack that slows enemies hit by 40.0% for 6s (DMG is based on the skill's level). Increases this ship's DMG dealt by $2 for 30s after entering the battle.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -72522,7 +72487,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "Decreases this ship's DMG taken by $1 and increases her FP by $2. When this ship enters the battle: restores $3 of this ship's max HP. 5s after this ship's HP falls below 50.0% as a result of DMG taken, or 60s after she enters the battle: this ship leaves the battle.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -72675,7 +72640,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		max_level = 10,
 		desc = "16190实际撤退效果实现用",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -72973,11 +72938,7 @@ Once per battle, when a ship in your Vanguard (other than this ship) falls below
 		id = 16230,
 		type = 3,
 		max_level = 10,
-		desc = [[
-When this ship launches an airstrike: decreases your Yorktown-class CVs' airstrike loading time by $1 and decreases it by $2 for your other Essex-class CVs (only affects the currently loading airstrike once; effect does not stack). 
-Your Yorktown-class and Essex-class CVs gain the following effects during battle: 
-1) increases their DMG dealt by $1; 
-2) when they launch an airstrike: also launches a $3 interceptive airstrike (DMG is based on the skill's level).]],
+		desc = "When this ship launches an airstrike: decreases your Yorktown-class CVs' airstrike loading time by $1 and decreases it by $2 for your other Essex-class CVs (only affects the currently loading airstrike once; effect does not stack). \nYour Yorktown-class and Essex-class CVs gain the following effects during battle: \n1) increases their DMG dealt by $1; \n2) when they launch an airstrike: also launches a $3 interceptive airstrike (DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -75721,12 +75682,7 @@ Your Yorktown-class and Essex-class CVs gain the following effects during battle
 		id = 16450,
 		type = 1,
 		max_level = 10,
-		desc = [[
-When this ship launches an airstrike: $1 chance to lower the SPD of all enemies to 0 over 2s, keep it at 0 for 2s, then gradually restore their SPD to normal over 2s; when this effect activates: targets 1 random enemy (prioritizing humanoid enemies) and lowers their EVA by $2 for 6s. 
-Each sortie, for the first 3 battles fought by a fleet this ship is NOT in: when that fleet's Flagship fires her first Main Gun volley or launches an airstrike: expends all stacks of No Mercy and, after 2s, activates one of the following effects based on the number of No Mercy stacks expended: 
-1) 3 to 5: decreases the SPD of all enemies by 20.0% for 2s; 
-2) 6 to 8: decreases the SPD of all enemies by 60.0% for 2s; 
-3) 9: decreases the SPD of all enemies by 100.0% for 2s.]],
+		desc = "When this ship launches an airstrike: $1 chance to lower the SPD of all enemies to 0 over 2s, keep it at 0 for 2s, then gradually restore their SPD to normal over 2s; when this effect activates: targets 1 random enemy (prioritizing humanoid enemies) and lowers their EVA by $2 for 6s. \nEach sortie, for the first 3 battles fought by a fleet this ship is NOT in: when that fleet's Flagship fires her first Main Gun volley or launches an airstrike: expends all stacks of No Mercy and, after 2s, activates one of the following effects based on the number of No Mercy stacks expended: \n1) 3 to 5: decreases the SPD of all enemies by 20.0% for 2s; \n2) 6 to 8: decreases the SPD of all enemies by 60.0% for 2s; \n3) 9: decreases the SPD of all enemies by 100.0% for 2s.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -75832,12 +75788,7 @@ Each sortie, for the first 3 battles fought by a fleet this ship is NOT in: when
 		id = 16460,
 		type = 1,
 		max_level = 10,
-		desc = [[
-While this ship is afloat, when the fleet this ship is in starts a battle, and for the first 3 battles of a sortie a fleet this ship is NOT in: when a ship in your fleet takes DMG, she gains a stack of No Mercy (can be stacked up to 9 times). 
-When this ship launches an airstrike: launches an additional $1 special airstrike (DMG is based on the skill's level) and expends all stacks of No Mercy. Activates the following effects based on the number of No Mercy stacks expended: 
-1) 3 or more: increases this ship's DMG dealt by $2 for 5s; 
-2) 6 or more: negates the Detection Gauge value gained from launching this airstrike; 
-3) 9: this airstrike is guaranteed to deal Critical Damage.]],
+		desc = "While this ship is afloat, when the fleet this ship is in starts a battle, and for the first 3 battles of a sortie a fleet this ship is NOT in: when a ship in your fleet takes DMG, she gains a stack of No Mercy (can be stacked up to 9 times). \nWhen this ship launches an airstrike: launches an additional $1 special airstrike (DMG is based on the skill's level) and expends all stacks of No Mercy. Activates the following effects based on the number of No Mercy stacks expended: \n1) 3 or more: increases this ship's DMG dealt by $2 for 5s; \n2) 6 or more: negates the Detection Gauge value gained from launching this airstrike; \n3) 9: this airstrike is guaranteed to deal Critical Damage.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -77359,7 +77310,7 @@ When this ship launches an airstrike: launches an additional $1 special airstrik
 		max_level = 10,
 		desc = "Every 15s: summons 2 $1 Flea mini-submarines that fire torpedoes; the Fleas remain active for 10s and have a 70.0% chance to inflict a special Flooding ailment (lasts 10s) to enemies hit (the Fleas' DMG dealt is based on the skill's level and Kursk's TRP stat).",
 		system_transform = {
-			[3.0] = 16605
+			[3] = 16605
 		},
 		world_death_mark = {
 			1
@@ -82760,11 +82711,7 @@ When this ship launches an airstrike: launches an additional $1 special airstrik
 		id = 17070,
 		type = 3,
 		max_level = 10,
-		desc = [[
-When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG is based on the skill's level). When this special barrage fires: increases your Kii-class BBs' DMG dealt by $2 for 10s. If your Flagship meets any one of the following criteria, this barrage's activation chance increases by 25.0%:
-1) She is a Sakura Empire ship;
-2) She is a BB, BC, or BBV;
-3) She has received the Best Buds trait at least once during the battle.]],
+		desc = "When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG is based on the skill's level). When this special barrage fires: increases your Kii-class BBs' DMG dealt by $2 for 10s. If your Flagship meets any one of the following criteria, this barrage's activation chance increases by 25.0%:\n1) She is a Sakura Empire ship;\n2) She is a BB, BC, or BBV;\n3) She has received the Best Buds trait at least once during the battle.",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -83891,7 +83838,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "Increases this ship's DMG dealt by $1. When this ship is attacked: $2 chance for this ship to enter the Phantom state. \nThis state increases her Evasion Rate by $3 and lasts for 5s. When this state ends: fires a $4 special barrage (DMG is based on the skill's level). There is a 15s cooldown between Phantom state activations.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84080,7 +84027,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "When the battle starts: increases this ship's FP by $1 and restores 25.0% of her max HP. When this ship's Evasion Rate increases as a result of her skills activating: restores $2 of this ship's max HP. \nOnce per battle, 5s after this ship's HP falls below 40.0% as a result of DMG taken, or 60s after she has entered the battle: summons a Ghost Ship which copies some of this ship's stats, then this ship leaves the battle. The Ghost Ship lasts for 5s, does not attack, and the percentages of stats it copies increases based on the skill's level.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84188,7 +84135,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -84452,7 +84399,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "When the battle starts, and every 10s: performs a $1 special attack (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84506,7 +84453,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "Increases this ship's FP by $1. When the battle starts: restores $2 of her max HP once per second for 5s. 5s after this ship's HP falls below 30.0% as a result of DMG taken, or 45s after she has entered the battle: this ship leaves the battle.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -84614,7 +84561,7 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		max_level = 10,
 		desc = "",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			0
@@ -85282,13 +85229,9 @@ When this ship fires her Main Guns: $1 chance to fire a $3 special barrage (DMG 
 		id = 17300,
 		type = 1,
 		max_level = 10,
-		desc = [[
-Increases this ship's FP and TRP by $1.
-When the battle starts, and every 20s: summons 2 Bunbun Strikers. The Bunbun Strikers fight for 15s, attacking enemies with their weapons, and gain stats based on Laffey II's stats (the amount of stats gained is based on the skill's level).
-Every 12s: 70.0% chance to perform a radar scan, marking 3 enemies and decreasing their AA and AVI by $2, and fires a $3 special barrage (DMG is based on the skill's level). When this effect activates: this ship gains stacks of Motivation based on the number of active Bunbun Strikers.
-Increases this ship's DMG dealt by 2.0% and increases the radar scan's activation chance by 6.0% for each stack of Motivation (can stack up to 5 times).]],
+		desc = "Increases this ship's FP and TRP by $1.\nWhen the battle starts, and every 20s: summons 2 Bunbun Strikers. The Bunbun Strikers fight for 15s, attacking enemies with their weapons, and gain stats based on Laffey II's stats (the amount of stats gained is based on the skill's level).\nEvery 12s: 70.0% chance to perform a radar scan, marking 3 enemies and decreasing their AA and AVI by $2, and fires a $3 special barrage (DMG is based on the skill's level). When this effect activates: this ship gains stacks of Motivation based on the number of active Bunbun Strikers.\nIncreases this ship's DMG dealt by 2.0% and increases the radar scan's activation chance by 6.0% for each stack of Motivation (can stack up to 5 times).",
 		system_transform = {
-			[3.0] = 17445
+			[3] = 17445
 		},
 		world_death_mark = {
 			1
@@ -86391,7 +86334,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this boat's equipped torpedoes hit an enemy (skill effects can only affect the same enemy once every 10s):\n1) Decreases that enemy's SPD by $1 for 4s. When this boat's torpedoes hit an enemy affected by this skill's SPD debuff: fires a $2 special barrage (DMG is based on the skill's level; 10s cooldown between activations).\n2) With a 50.0% chance, increases this boat's DMG dealt to the enemy hit by $3 for 10s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -86535,7 +86478,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "Increases this boat's ASR by 1. Increases this boat's torpedo Crit Rate by $1 and DMG dealt against Light Armor enemies by $2. If this boat is your Submarine Fleet's Flagship or if there is another Gato-class SS in your fleet: increases your Gato-class SSs' TRP and ACC by $3.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -92258,7 +92201,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this ship fires its Main Guns: $1 chance to fire an improved special barrage. Barrage damage is based on the skill's level.",
 		system_transform = {
-			[3.0] = 18071
+			[3] = 18071
 		},
 		world_death_mark = {
 			1
@@ -95168,7 +95111,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage. Decreases the Speed of enemies hit by the barrage by $2 for 6s. Barrage DMG is based on the skill's level.",
 		system_transform = {
-			[3.0] = 19031
+			[3] = 19031
 		},
 		world_death_mark = {
 			1
@@ -96174,7 +96117,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this ship fires a Salvo: $1 chance to fire a special barrage.",
 		system_transform = {
-			[3.0] = 19161
+			[3] = 19161
 		},
 		world_death_mark = {
 			1
@@ -96704,7 +96647,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this ship takes DMG or when an enemy comes within close range of this ship: fires a $1 special barrage that ignores the enemy's Armor Type (barrage DMG is based on the skill's level.) Has a 15s cooldown between activations.",
 		system_transform = {
-			[3.0] = 19221
+			[3] = 19221
 		},
 		world_death_mark = {
 			1
@@ -97076,7 +97019,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "Each Main Gun reload gives this ship 2 Salvoes that can be fired independently. This ship's DMG bonus with manually aimed Salvoes becomes $2. Every 20s: $1 chance to fire a special barrage (barrage DMG is based on the skill's level.)",
 		system_transform = {
-			[3.0] = 19261
+			[3] = 19261
 		},
 		world_death_mark = {
 			1
@@ -99613,7 +99556,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		max_level = 10,
 		desc = "When this ship has the Out of Ammo debuff: decreases the DMG penalty's effect by $1. When this ship fires her Main Guns: $2 chance to fire a frontal barrage (DMG is based on the skill's level). If this barrage fails to activate: heals this ship for 5.0% of her max HP.",
 		system_transform = {
-			[3.0] = 19495
+			[3] = 19495
 		},
 		world_death_mark = {
 			1
@@ -102395,11 +102338,7 @@ Increases this ship's DMG dealt by 2.0% and increases the radar scan's activatio
 		id = 19710,
 		type = 2,
 		max_level = 10,
-		desc = [[
-Increases this ship's FP by 5.0% and EVA and ACC by $1. 
-One of the following two effects apply based on what type of weapon this ship has equipped in her third weapon slot:
- 1): Main Gun: increases this ship's FP by $2 and DMG dealt by 5.0%. Shells fired from this ship's Main Guns ignore enemy shields.
- 2): AA Gun: increases this ship's EVA by $3 and decreases her DMG taken by 8.0%. When the battle starts, and every 30s: deploys 2 shields (last 15s; can each block up to 8 shells).]],
+		desc = "Increases this ship's FP by 5.0% and EVA and ACC by $1. \nOne of the following two effects apply based on what type of weapon this ship has equipped in her third weapon slot:\n 1): Main Gun: increases this ship's FP by $2 and DMG dealt by 5.0%. Shells fired from this ship's Main Guns ignore enemy shields.\n 2): AA Gun: increases this ship's EVA by $3 and decreases her DMG taken by 8.0%. When the battle starts, and every 30s: deploys 2 shields (last 15s; can each block up to 8 shells).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -107288,7 +107227,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 1,
 		desc = "Activates All Out Assault Ⅰ: Surcouf when this boat resurfaces.",
 		system_transform = {
-			[11.0] = 29323
+			[11] = 29323
 		},
 		world_death_mark = {
 			1
@@ -107304,7 +107243,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 1,
 		desc = "Activates All Out Assault Ⅱ: Surcouf when this boat resurfaces.",
 		system_transform = {
-			[11.0] = 29324
+			[11] = 29324
 		},
 		world_death_mark = {
 			1
@@ -108006,7 +107945,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 1,
 		desc = "Activates All Out Assault Ⅰ: U-96 when surfacing",
 		system_transform = {
-			[11.0] = 29593
+			[11] = 29593
 		},
 		world_death_mark = {
 			1
@@ -108022,7 +107961,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 1,
 		desc = "Activates All Out Assault Ⅱ: U-96 when surfacing",
 		system_transform = {
-			[11.0] = 29594
+			[11] = 29594
 		},
 		world_death_mark = {
 			1
@@ -112180,7 +112119,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "Decreases this boat's OXY by $1. For 20s after entering battle: increases this boat's DMG by $2. When this boat retreats from battle: increases its Speed by 100.0%.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -112288,7 +112227,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When entering battle: applies 1 randomly chosen buff to your fleet. The buff's effect is increased to 150% for Hololive ships.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -112342,7 +112281,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When entering battle: fires a special guaranteed $1 Critical Hit barrage. When there are 3 or more Hololive ships in the same fleet: improves the barrage.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -113454,7 +113393,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this ship fires its Main Guns: heals 2 random ships in your fleet for 5.0% of their max HP and, with a $1 chance, fires a $2 special barrage (DMG is based on the skill's level.)",
 		system_transform = {
-			[3.0] = 106045
+			[3] = 106045
 		},
 		world_death_mark = {
 			1
@@ -114912,7 +114851,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this ship fires her Main Guns: 2 random ships in your fleet recover 5.0% of their max HP and, with a $1 chance, fires a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[3.0] = 106215
+			[3] = 106215
 		},
 		world_death_mark = {
 			1
@@ -117551,7 +117490,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this boat enters the battle: decreases the Speed of a random ship in your Vanguard by 1 for 1s, then heals said ship for 100 HP and increases her EVA by $1 for 20s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -117614,7 +117553,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "At the start of the battle: fires a $1 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -117677,7 +117616,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this boat enters the battle: decreases the Speed of a random ship in your Main Fleet by 1 for 1s, then heals said ship for 100 HP and increases her Accuracy by $1 for 20s.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -117740,7 +117679,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "At the start of the battle: fires a $1 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -118121,7 +118060,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this ship fires her Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[3.0] = 108045
+			[3] = 108045
 		},
 		world_death_mark = {
 			1
@@ -119353,7 +119292,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this ship fires her Main Guns: $1 chance to fire a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[3.0] = 108225
+			[3] = 108225
 		},
 		world_death_mark = {
 			1
@@ -124010,7 +123949,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "When this boat surfaces: fires a $1 special barrage I that inflicts a special Burn ailment for 6s to enemies hit (barrage DMG is based on the skill's level; special Burn DMG is based on this boat's TRP stat).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -124073,7 +124012,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "Increases this boat's TRP stat by $1. When this boat leaves the battle: fires a $2 special barrage II (DMG is based on the skill's level) and removes your fleet's non-special Burn ailments.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -124181,7 +124120,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "5s after the battle starts: this boat surfaces and performs a $1 Secret Ninja Art: Charge, inflicting a special Burn ailment to enemies hit for 20s (Secret Ninja Art DMG is based on the skill's level; special Burn DMG is based on the boat's TRP stat).\nWhile this boat performs this Secret Ninja Art: this boat recovers 10 OXY every second and the first 3 attacks that hit her have their DMG set to 1. This boat submerges after she has finished attacking, and will surface a second time when her OXY runs out.\nWhile an enemy afflicted with the special Burn caused by this skill is afloat: increases this boat's Crit DMG by $2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -124794,7 +124733,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "Increases this ship's FP and ACC by $1. When this ship fires her Main Guns: $2 chance to fire a $3 special barrage (DMG is based on the skill's level). Enemies hit 5 times by this barrage suffer a special Armor Break ailment and take 5.0% increased airstrike DMG from your ships until the battle ends.",
 		system_transform = {
-			[3.0] = 110143
+			[3] = 110143
 		},
 		world_death_mark = {
 			1
@@ -124947,7 +124886,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		max_level = 10,
 		desc = "Increases this ship's FP and ACC by $1. When this ship fires her Main Guns: $2 chance to perform a $3 Secret Ninja Art: Purple Ice, Linked Fangs. Enemies hit 5 times by this Secret Ninja Art suffer a special Armor Break ailment and take 5.0% increased airstrike DMG from your ships until the battle ends.",
 		system_transform = {
-			[3.0] = 110153
+			[3] = 110153
 		},
 		world_death_mark = {
 			1
@@ -125326,11 +125265,7 @@ One of the following two effects apply based on what type of weapon this ship ha
 		id = 110190,
 		type = 3,
 		max_level = 10,
-		desc = [[
-When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate: 
-1) Performs a $2 slash attack; 
-2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends; 
-3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $1 special slash attack (slash attack DMG is based on the skill's level).]],
+		desc = "When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate: \n1) Performs a $2 slash attack; \n2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends; \n3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $1 special slash attack (slash attack DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -125533,11 +125468,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		id = 110210,
 		type = 1,
 		max_level = 10,
-		desc = [[
-When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate:
-1) Performs a $2 Secret Ninja Art: Poro Kamuyasi;
-2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends;
-3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $2 Secret Ninja Art: Poro Kamuyasi (DMG is based on the skill's level).]],
+		desc = "When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this ship's RLD by 5.0% (can be stacked up to 3 times). When this buff reaches its max stacks, the following effects activate:\n1) Performs a $2 Secret Ninja Art: Poro Kamuyasi;\n2) Increases this ship's Main Gun DMG dealt by 10.0% until the battle ends;\n3) Until the battle ends, if the skill Enka Tuypa's special barrage activates: performs an additional $2 Secret Ninja Art: Poro Kamuyasi (DMG is based on the skill's level).",
 		system_transform = {},
 		world_death_mark = {
 			1
@@ -126411,7 +126342,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: this ship deals 3% more DMG. ",
 		system_transform = {
-			[51.0] = 800075
+			[51] = 800075
 		},
 		world_death_mark = {
 			1
@@ -126427,7 +126358,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: this ship deals 8% more DMG.",
 		system_transform = {
-			[51.0] = 800077
+			[51] = 800077
 		},
 		world_death_mark = {
 			1
@@ -126443,7 +126374,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: this ship deals 3% more DMG. ",
 		system_transform = {
-			[51.0] = 800075
+			[51] = 800075
 		},
 		world_death_mark = {
 			1
@@ -126459,7 +126390,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: this ship deals 8% more DMG.",
 		system_transform = {
-			[51.0] = 800077
+			[51] = 800077
 		},
 		world_death_mark = {
 			1
@@ -126475,7 +126406,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG your Vanguard takes by 3.0%.",
 		system_transform = {
-			[51.0] = 800085
+			[51] = 800085
 		},
 		world_death_mark = {
 			1
@@ -126491,7 +126422,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG your Vanguard takes by 8.0%.",
 		system_transform = {
-			[51.0] = 800087
+			[51] = 800087
 		},
 		world_death_mark = {
 			1
@@ -126507,7 +126438,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG your Vanguard takes by 3.0%.",
 		system_transform = {
-			[51.0] = 800085
+			[51] = 800085
 		},
 		world_death_mark = {
 			1
@@ -126523,7 +126454,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG your Vanguard takes by 8.0%.",
 		system_transform = {
-			[51.0] = 800087
+			[51] = 800087
 		},
 		world_death_mark = {
 			1
@@ -126848,7 +126779,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Activates Ashen Might - Helena I once every 15 times the Main Guns are fired. ",
 		system_transform = {
-			[51.0] = 800125
+			[51] = 800125
 		},
 		world_death_mark = {
 			1
@@ -126864,7 +126795,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Activates Ashen Might - Helena II once every 10 times the Main Guns are fired.",
 		system_transform = {
-			[51.0] = 800127
+			[51] = 800127
 		},
 		world_death_mark = {
 			1
@@ -126880,7 +126811,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nActivates Ashen Might - Helena I once every 15 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: increases your Vanguard's DMG dealt by 3.0%.",
 		system_transform = {
-			[51.0] = 800125
+			[51] = 800125
 		},
 		world_death_mark = {
 			1
@@ -126896,7 +126827,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nActivates Ashen Might - Helena II once every 10 times the Main Guns are fired. When fighting humanoid Siren fleets or Boss fleets: increases your Vanguard's DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 800127
+			[51] = 800127
 		},
 		world_death_mark = {
 			1
@@ -127122,7 +127053,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nIncreases this ship's Accuracy by 3.0%. When fighting humanoid Siren fleets or Boss fleets: further increases this ship's Accuracy and AVI by 3.0%.",
 		system_transform = {
-			[51.0] = 800165
+			[51] = 800165
 		},
 		world_death_mark = {
 			1
@@ -127138,7 +127069,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nIncreases this ship's Accuracy by 5.0%. When fighting humanoid Siren fleets or Boss fleets: further increases this ship's Accuracy and AVI by 5.0%.",
 		system_transform = {
-			[51.0] = 800167
+			[51] = 800167
 		},
 		world_death_mark = {
 			1
@@ -127154,7 +127085,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nIncreases this ship's Accuracy by 3.0%. When fighting humanoid Siren fleets or Boss fleets: further increases this ship's Accuracy and AVI by 3.0%.",
 		system_transform = {
-			[51.0] = 800165
+			[51] = 800165
 		},
 		world_death_mark = {
 			1
@@ -127170,7 +127101,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nIncreases this ship's Accuracy by 5.0%. When fighting humanoid Siren fleets or Boss fleets: further increases this ship's Accuracy and AVI by 5.0%.",
 		system_transform = {
-			[51.0] = 800167
+			[51] = 800167
 		},
 		world_death_mark = {
 			1
@@ -127396,7 +127327,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG taken by your Vanguard by 2.0%.",
 		system_transform = {
-			[51.0] = 800205
+			[51] = 800205
 		},
 		world_death_mark = {
 			1
@@ -127412,7 +127343,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG taken by your Vanguard by 6.0%.",
 		system_transform = {
-			[51.0] = 800207
+			[51] = 800207
 		},
 		world_death_mark = {
 			1
@@ -127428,7 +127359,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG taken by your Vanguard by 2.0%.",
 		system_transform = {
-			[51.0] = 800205
+			[51] = 800205
 		},
 		world_death_mark = {
 			1
@@ -127444,7 +127375,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: reduces the DMG taken by your Vanguard by 6.0%.",
 		system_transform = {
-			[51.0] = 800207
+			[51] = 800207
 		},
 		world_death_mark = {
 			1
@@ -127648,7 +127579,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800255
+			[51] = 800255
 		},
 		world_death_mark = {
 			1
@@ -127664,7 +127595,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800257
+			[51] = 800257
 		},
 		world_death_mark = {
 			1
@@ -127680,7 +127611,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800255
+			[51] = 800255
 		},
 		world_death_mark = {
 			1
@@ -127696,7 +127627,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800257
+			[51] = 800257
 		},
 		world_death_mark = {
 			1
@@ -128030,7 +127961,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or boss fleets: increases this ship's Crit DMG by 5.0%",
 		system_transform = {
-			[51.0] = 800295
+			[51] = 800295
 		},
 		world_death_mark = {
 			1
@@ -128046,7 +127977,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or boss fleets: increases this ship's Crit DMG by 8.0%.",
 		system_transform = {
-			[51.0] = 800297
+			[51] = 800297
 		},
 		world_death_mark = {
 			1
@@ -128062,7 +127993,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or boss fleets: increases this ship's Crit DMG by 5.0%",
 		system_transform = {
-			[51.0] = 800295
+			[51] = 800295
 		},
 		world_death_mark = {
 			1
@@ -128078,7 +128009,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or boss fleets: increases this ship's Crit DMG by 8.0%.",
 		system_transform = {
-			[51.0] = 800297
+			[51] = 800297
 		},
 		world_death_mark = {
 			1
@@ -128268,7 +128199,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800335
+			[51] = 800335
 		},
 		world_death_mark = {
 			1
@@ -128284,7 +128215,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800337
+			[51] = 800337
 		},
 		world_death_mark = {
 			1
@@ -128300,7 +128231,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800335
+			[51] = 800335
 		},
 		world_death_mark = {
 			1
@@ -128316,7 +128247,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800337
+			[51] = 800337
 		},
 		world_death_mark = {
 			1
@@ -128542,7 +128473,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and ACC by 5%",
 		system_transform = {
-			[51.0] = 800375
+			[51] = 800375
 		},
 		world_death_mark = {
 			1
@@ -128558,7 +128489,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and ACC by 8%",
 		system_transform = {
-			[51.0] = 800377
+			[51] = 800377
 		},
 		world_death_mark = {
 			1
@@ -128574,7 +128505,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and ACC by 5%",
 		system_transform = {
-			[51.0] = 800375
+			[51] = 800375
 		},
 		world_death_mark = {
 			1
@@ -128590,7 +128521,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and ACC by 8%",
 		system_transform = {
-			[51.0] = 800377
+			[51] = 800377
 		},
 		world_death_mark = {
 			1
@@ -128789,7 +128720,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800415
+			[51] = 800415
 		},
 		world_death_mark = {
 			1
@@ -128805,7 +128736,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%. ",
 		system_transform = {
-			[51.0] = 800417
+			[51] = 800417
 		},
 		world_death_mark = {
 			1
@@ -128821,7 +128752,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800415
+			[51] = 800415
 		},
 		world_death_mark = {
 			1
@@ -128837,7 +128768,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%. ",
 		system_transform = {
-			[51.0] = 800417
+			[51] = 800417
 		},
 		world_death_mark = {
 			1
@@ -129081,7 +129012,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800455
+			[51] = 800455
 		},
 		world_death_mark = {
 			1
@@ -129097,7 +129028,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800457
+			[51] = 800457
 		},
 		world_death_mark = {
 			1
@@ -129113,7 +129044,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 2.0%.",
 		system_transform = {
-			[51.0] = 800455
+			[51] = 800455
 		},
 		world_death_mark = {
 			1
@@ -129129,7 +129060,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 5.0%.",
 		system_transform = {
-			[51.0] = 800457
+			[51] = 800457
 		},
 		world_death_mark = {
 			1
@@ -129499,7 +129430,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and RLD by 5.0%.",
 		system_transform = {
-			[51.0] = 800495
+			[51] = 800495
 		},
 		world_death_mark = {
 			1
@@ -129515,7 +129446,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and RLD by 8.0%.",
 		system_transform = {
-			[51.0] = 800497
+			[51] = 800497
 		},
 		world_death_mark = {
 			1
@@ -129531,7 +129462,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and RLD by 5.0%.",
 		system_transform = {
-			[51.0] = 800495
+			[51] = 800495
 		},
 		world_death_mark = {
 			1
@@ -129547,7 +129478,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and RLD by 8.0%.",
 		system_transform = {
-			[51.0] = 800497
+			[51] = 800497
 		},
 		world_death_mark = {
 			1
@@ -129881,7 +129812,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800535
+			[51] = 800535
 		},
 		world_death_mark = {
 			1
@@ -129897,7 +129828,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800537
+			[51] = 800537
 		},
 		world_death_mark = {
 			1
@@ -129913,7 +129844,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800535
+			[51] = 800535
 		},
 		world_death_mark = {
 			1
@@ -129929,7 +129860,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800537
+			[51] = 800537
 		},
 		world_death_mark = {
 			1
@@ -130164,7 +130095,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and AA by 5.0%.",
 		system_transform = {
-			[51.0] = 800575
+			[51] = 800575
 		},
 		world_death_mark = {
 			1
@@ -130180,7 +130111,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and AA by 8.0%.",
 		system_transform = {
-			[51.0] = 800577
+			[51] = 800577
 		},
 		world_death_mark = {
 			1
@@ -130196,7 +130127,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and AA by 5.0%.",
 		system_transform = {
-			[51.0] = 800575
+			[51] = 800575
 		},
 		world_death_mark = {
 			1
@@ -130212,7 +130143,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's FP and AA by 8.0%.",
 		system_transform = {
-			[51.0] = 800577
+			[51] = 800577
 		},
 		world_death_mark = {
 			1
@@ -130431,7 +130362,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800605
+			[51] = 800605
 		},
 		world_death_mark = {
 			1
@@ -130447,7 +130378,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800607
+			[51] = 800607
 		},
 		world_death_mark = {
 			1
@@ -130463,7 +130394,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800605
+			[51] = 800605
 		},
 		world_death_mark = {
 			1
@@ -130479,7 +130410,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800607
+			[51] = 800607
 		},
 		world_death_mark = {
 			1
@@ -130689,7 +130620,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800635
+			[51] = 800635
 		},
 		world_death_mark = {
 			1
@@ -130705,7 +130636,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800637
+			[51] = 800637
 		},
 		world_death_mark = {
 			1
@@ -130721,7 +130652,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800635
+			[51] = 800635
 		},
 		world_death_mark = {
 			1
@@ -130737,7 +130668,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800637
+			[51] = 800637
 		},
 		world_death_mark = {
 			1
@@ -131062,7 +130993,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		system_transform = {
-			[51.0] = 800675
+			[51] = 800675
 		},
 		world_death_mark = {
 			1
@@ -131078,7 +131009,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		system_transform = {
-			[51.0] = 800677
+			[51] = 800677
 		},
 		world_death_mark = {
 			1
@@ -131094,7 +131025,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 3.0%.",
 		system_transform = {
-			[51.0] = 800675
+			[51] = 800675
 		},
 		world_death_mark = {
 			1
@@ -131110,7 +131041,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: decreases this ship's DMG taken by 8.0%.",
 		system_transform = {
-			[51.0] = 800677
+			[51] = 800677
 		},
 		world_death_mark = {
 			1
@@ -131329,7 +131260,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800705
+			[51] = 800705
 		},
 		world_death_mark = {
 			1
@@ -131345,7 +131276,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800707
+			[51] = 800707
 		},
 		world_death_mark = {
 			1
@@ -131361,7 +131292,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800705
+			[51] = 800705
 		},
 		world_death_mark = {
 			1
@@ -131377,7 +131308,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800707
+			[51] = 800707
 		},
 		world_death_mark = {
 			1
@@ -131756,7 +131687,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 800745
+			[51] = 800745
 		},
 		world_death_mark = {
 			1
@@ -131772,7 +131703,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG dealt by 8.0%.",
 		system_transform = {
-			[51.0] = 800747
+			[51] = 800747
 		},
 		world_death_mark = {
 			1
@@ -131788,7 +131719,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 800745
+			[51] = 800745
 		},
 		world_death_mark = {
 			1
@@ -131804,7 +131735,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG dealt by 8.0%.",
 		system_transform = {
-			[51.0] = 800747
+			[51] = 800747
 		},
 		world_death_mark = {
 			1
@@ -132068,7 +131999,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800775
+			[51] = 800775
 		},
 		world_death_mark = {
 			1
@@ -132084,7 +132015,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800777
+			[51] = 800777
 		},
 		world_death_mark = {
 			1
@@ -132100,7 +132031,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800775
+			[51] = 800775
 		},
 		world_death_mark = {
 			1
@@ -132116,7 +132047,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800777
+			[51] = 800777
 		},
 		world_death_mark = {
 			1
@@ -132132,7 +132063,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this boat's torpedo Crit Rate by $1 and increases her DMG dealt against Light Armor enemies by $2. When this boat enters the battle: increases this boat's DMG dealt by $3, but increases her DMG taken by 10.0% (this effect lasts until the boat leaves the battle).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -132285,7 +132216,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this boat's ASR by 1. When the battle starts, if there are any other SSs in your fleet: increases this boat's TRP by $1. When this boat resurfaces: fires a $2 torpedo barrage (DMG is based on the skill's level) and this boat recovers 500 HP.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -132384,7 +132315,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "While this boat is on the battlefield, when one of your ships takes DMG: $1 chance to fire a $2 special torpedo barrage (DMG is based on the skill's level; 1s cooldown between activations). If this barrage activates while this boat has 20.0% or more max HP remaining: this boat loses 20 HP; if this boat has \"Certificate of Sponsorship\" equipped or Bismarck is present in the fleet: increases this boat's EVA by $3, and removes the HP loss effect when the special barrage activates.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -132537,7 +132468,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Fires a special barrage immediately after entering the battle.",
 		system_transform = {
-			[51.0] = 800815
+			[51] = 800815
 		},
 		world_death_mark = {
 			1
@@ -132553,7 +132484,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Fires a special barrage immediately after entering the battle.",
 		system_transform = {
-			[51.0] = 800817
+			[51] = 800817
 		},
 		world_death_mark = {
 			1
@@ -132569,7 +132500,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nFires a special barrage immediately after entering the battle. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800815
+			[51] = 800815
 		},
 		world_death_mark = {
 			1
@@ -132585,7 +132516,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nFires a special barrage immediately after entering the battle. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800817
+			[51] = 800817
 		},
 		world_death_mark = {
 			1
@@ -132813,7 +132744,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen entering battle against a humanoid Siren fleet or a Boss fleet: 35s after the start of battle, all allied ships restore 2.0% of their Max HP.",
 		system_transform = {
-			[51.0] = 800845
+			[51] = 800845
 		},
 		world_death_mark = {
 			1
@@ -132829,7 +132760,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen entering battle against a humanoid Siren fleet or a Boss fleet: 35s after the start of battle, all allied ships restore 6.0% of their Max HP.",
 		system_transform = {
-			[51.0] = 800847
+			[51] = 800847
 		},
 		world_death_mark = {
 			1
@@ -132845,7 +132776,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen entering battle against a humanoid Siren fleet or a Boss fleet: 35s after the start of battle, all allied ships restore 2.0% of their Max HP.",
 		system_transform = {
-			[51.0] = 800845
+			[51] = 800845
 		},
 		world_death_mark = {
 			1
@@ -132861,7 +132792,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen entering battle against a humanoid Siren fleet or a Boss fleet: 35s after the start of battle, all allied ships restore 6.0% of their Max HP.",
 		system_transform = {
-			[51.0] = 800847
+			[51] = 800847
 		},
 		world_death_mark = {
 			1
@@ -133186,7 +133117,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 9 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800885
+			[51] = 800885
 		},
 		world_death_mark = {
 			1
@@ -133202,7 +133133,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 6 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800887
+			[51] = 800887
 		},
 		world_death_mark = {
 			1
@@ -133218,7 +133149,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 9 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 3.0% when fighting humanoid Siren fleets or Boss fleets.",
 		system_transform = {
-			[51.0] = 800885
+			[51] = 800885
 		},
 		world_death_mark = {
 			1
@@ -133234,7 +133165,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 6 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 8.0% when fighting humanoid Siren fleets or Boss fleets.",
 		system_transform = {
-			[51.0] = 800887
+			[51] = 800887
 		},
 		world_death_mark = {
 			1
@@ -133453,7 +133384,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800915
+			[51] = 800915
 		},
 		world_death_mark = {
 			1
@@ -133469,7 +133400,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800917
+			[51] = 800917
 		},
 		world_death_mark = {
 			1
@@ -133485,7 +133416,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 2.0% when fighting humanoid Siren fleets or Boss fleets.",
 		system_transform = {
-			[51.0] = 800915
+			[51] = 800915
 		},
 		world_death_mark = {
 			1
@@ -133501,7 +133432,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. Decreases this ship's DMG taken by 6.0% when fighting humanoid Siren fleets or Boss fleets.",
 		system_transform = {
-			[51.0] = 800917
+			[51] = 800917
 		},
 		world_death_mark = {
 			1
@@ -133880,7 +133811,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800955
+			[51] = 800955
 		},
 		world_death_mark = {
 			1
@@ -133896,7 +133827,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 800957
+			[51] = 800957
 		},
 		world_death_mark = {
 			1
@@ -133912,7 +133843,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 5.0%.",
 		system_transform = {
-			[51.0] = 800955
+			[51] = 800955
 		},
 		world_death_mark = {
 			1
@@ -133928,7 +133859,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: decreases your META ships' DMG taken by 8.0%.",
 		system_transform = {
-			[51.0] = 800957
+			[51] = 800957
 		},
 		world_death_mark = {
 			1
@@ -134237,7 +134168,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800985
+			[51] = 800985
 		},
 		world_death_mark = {
 			1
@@ -134253,7 +134184,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800987
+			[51] = 800987
 		},
 		world_death_mark = {
 			1
@@ -134269,7 +134200,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 800985
+			[51] = 800985
 		},
 		world_death_mark = {
 			1
@@ -134285,7 +134216,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 800987
+			[51] = 800987
 		},
 		world_death_mark = {
 			1
@@ -134549,7 +134480,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 5.0%.",
 		system_transform = {
-			[51.0] = 801015
+			[51] = 801015
 		},
 		world_death_mark = {
 			1
@@ -134565,7 +134496,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 8.0%.",
 		system_transform = {
-			[51.0] = 801017
+			[51] = 801017
 		},
 		world_death_mark = {
 			1
@@ -134581,7 +134512,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 5.0%.",
 		system_transform = {
-			[51.0] = 801015
+			[51] = 801015
 		},
 		world_death_mark = {
 			1
@@ -134597,7 +134528,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's Crit DMG by 8.0%.",
 		system_transform = {
-			[51.0] = 801017
+			[51] = 801017
 		},
 		world_death_mark = {
 			1
@@ -134868,7 +134799,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801055
+			[51] = 801055
 		},
 		world_death_mark = {
 			1
@@ -134884,7 +134815,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801057
+			[51] = 801057
 		},
 		world_death_mark = {
 			1
@@ -134900,7 +134831,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
 		system_transform = {
-			[51.0] = 801055
+			[51] = 801055
 		},
 		world_death_mark = {
 			1
@@ -134916,7 +134847,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 801057
+			[51] = 801057
 		},
 		world_death_mark = {
 			1
@@ -135216,7 +135147,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801085
+			[51] = 801085
 		},
 		world_death_mark = {
 			1
@@ -135232,7 +135163,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801087
+			[51] = 801087
 		},
 		world_death_mark = {
 			1
@@ -135248,7 +135179,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 801085
+			[51] = 801085
 		},
 		world_death_mark = {
 			1
@@ -135264,7 +135195,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 801087
+			[51] = 801087
 		},
 		world_death_mark = {
 			1
@@ -135544,7 +135475,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 12 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage.",
 		system_transform = {
-			[51.0] = 801125
+			[51] = 801125
 		},
 		world_death_mark = {
 			1
@@ -135560,7 +135491,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 8 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage.",
 		system_transform = {
-			[51.0] = 801127
+			[51] = 801127
 		},
 		world_death_mark = {
 			1
@@ -135576,7 +135507,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 12 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 3.0%.",
 		system_transform = {
-			[51.0] = 801125
+			[51] = 801125
 		},
 		world_death_mark = {
 			1
@@ -135592,7 +135523,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 8 times this ship fires her Main Guns: fires a special barrage. If this ship has the Glory of the Past buff: improves this barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 801127
+			[51] = 801127
 		},
 		world_death_mark = {
 			1
@@ -135863,7 +135794,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 801165
+			[51] = 801165
 		},
 		world_death_mark = {
 			1
@@ -135879,7 +135810,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
 		system_transform = {
-			[51.0] = 801167
+			[51] = 801167
 		},
 		world_death_mark = {
 			1
@@ -135895,7 +135826,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 5.0%.",
 		system_transform = {
-			[51.0] = 801165
+			[51] = 801165
 		},
 		world_death_mark = {
 			1
@@ -135911,7 +135842,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nWhen fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 8.0%.",
 		system_transform = {
-			[51.0] = 801167
+			[51] = 801167
 		},
 		world_death_mark = {
 			1
@@ -136130,7 +136061,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 15 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801195
+			[51] = 801195
 		},
 		world_death_mark = {
 			1
@@ -136146,7 +136077,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "Every 10 times this ship fires her Main Guns: fires a special barrage.",
 		system_transform = {
-			[51.0] = 801197
+			[51] = 801197
 		},
 		world_death_mark = {
 			1
@@ -136162,7 +136093,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 15 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 2.0%.",
 		system_transform = {
-			[51.0] = 801195
+			[51] = 801195
 		},
 		world_death_mark = {
 			1
@@ -136178,7 +136109,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 1,
 		desc = "[Operation Siren]\nEvery 10 times this ship fires her Main Guns: fires a special barrage. When fighting humanoid Siren fleets or Boss fleets: increases this ship's DMG dealt by 6.0%.",
 		system_transform = {
-			[51.0] = 801197
+			[51] = 801197
 		},
 		world_death_mark = {
 			1
@@ -136572,7 +136503,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Once per battle, when one of your ships (excluding this ship) falls below 20.0% max HP as a result of DMG taken: restores $1 max HP to that ship and fires a special barrage (DMG is based on the skill's level). When this ship fires her Main Guns: 50.0% chance to restore $2 max HP to each ship in your Vanguard.",
 		system_transform = {
-			[3.0] = 1010145
+			[3] = 1010145
 		},
 		world_death_mark = {
 			1
@@ -137523,7 +137454,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "When this boat arrives at her attack position: increases TRP and ACC by $2 for your Sakura Empire SSs and SSVs and increases DMG dealt against enemy CAs and CBs by $1. When this boat retreats from battle: fires a special torpedo barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -138512,7 +138443,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "When this ship fires her Main Guns: $1 chance to fire an improved forward-facing special barrage (DMG is based on the skill's level) and increase your Main Fleet's RLD by $2 for 8s.",
 		system_transform = {
-			[3.0] = 1010291
+			[3] = 1010291
 		},
 		world_death_mark = {
 			1
@@ -138620,7 +138551,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "5s after this boat enters the battle, when she resurfaces, and when she leaves the battle: fires a $1 special torpedo barrage (DMG is based on the skill's level) that Burns enemies hit (Burn DMG is based on this boat's TRP stat).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -139837,7 +139768,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "When this ship fires her Main Guns: $1 chance to fire a special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[3.0] = 1012602
+			[3] = 1012602
 		},
 		world_death_mark = {
 			1
@@ -140547,7 +140478,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "When this boat's torpedoes hit an enemy: for 5s, if that enemy takes DMG from this boat's torpedoes again, the enemy's DMG taken increases by $1; when this boat resurfaces, fires a $2 special torpedo barrage (DMG is based on the skill's level) and decreases this boat's DMG taken by 15.0% until the battle ends.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -140797,7 +140728,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this ship's DMG dealt by $1. When this ship is attacked: $2 chance for this ship to enter the Phantom state. \nThis state increases her Evasion Rate by $3 and lasts for 5s. When this state ends, one random enemy is chosen; for 5s, Mary Celeste deals 15.0% increased DMG to this enemy and she fires a $4 special barrage (DMG is based on the skill's level) that always deals Critical DMG. There is a 15s cooldown between Phantom state activations.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -141331,7 +141262,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "When the battle starts, and every 10s: performs a $1 special attack (DMG is based on the skill's level). As long as at least 1 enemy hit by this attack is afloat: decreases Whydah's DMG taken by $2.",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -141915,7 +141846,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this boat's TRP and ACC by $2. 8s after entering the battle: fires a torpedo barrage that can pierce through enemies once (barrage DMG and pattern are based on the skill's level; enemies penetrated by the torpedoes still suffer DMG). When this boat retreats from the battle: fires a $1 special barrage (DMG is based on the skill's level and this boat's TRP stat).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -143193,7 +143124,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this boat's TRP, ACC, and RLD by $1 for each Iron Blood SS in the same fleet. When this boat leaves the battle: fires a $2 special barrage based on the number of hits this boat scored with her torpedoes (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1
@@ -144631,7 +144562,7 @@ When this ship's Main or Secondary Gun hits an enemy: $1 chance to increase this
 		max_level = 10,
 		desc = "Increases this boat's surface combat duration by $1s. When this boat fires her Main Guns: fires a $2 special barrage (DMG is based on the skill's level).",
 		system_transform = {
-			[11.0] = 3500
+			[11] = 3500
 		},
 		world_death_mark = {
 			1

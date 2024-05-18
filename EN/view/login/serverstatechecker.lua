@@ -1,48 +1,48 @@
-slot0 = class("ServerStateChecker")
+﻿local var_0_0 = class("ServerStateChecker")
 
-function slot0.Execute(slot0, slot1)
-	slot2 = {
+function var_0_0.Execute(arg_1_0, arg_1_1)
+	local var_1_0 = {
 		true
 	}
 
 	seriesAsync({
-		function (slot0)
-			onNextTick(slot0)
+		function(arg_2_0)
+			onNextTick(arg_2_0)
 		end,
-		function (slot0)
-			uv0:DoCheck(uv1, slot0)
+		function(arg_3_0)
+			arg_1_0:DoCheck(var_1_0, arg_3_0)
 		end
-	}, function ()
-		uv0(uv1[1])
+	}, function()
+		arg_1_1(var_1_0[1])
 	end)
 end
 
-function slot0.DoCheck(slot0, slot1, slot2)
+function var_0_0.DoCheck(arg_5_0, arg_5_1, arg_5_2)
 	if IsUnityEditor then
-		slot1[1] = false
+		arg_5_1[1] = false
 
-		slot2()
+		arg_5_2()
 
 		return
 	end
 
-	pg.ConnectionMgr.GetInstance():Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function ()
+	pg.ConnectionMgr.GetInstance():Connect(NetConst.GATEWAY_HOST, NetConst.GATEWAY_PORT, function()
 		pg.ConnectionMgr.GetInstance():Send(10018, {
 			arg = 0
-		}, 10019, function (slot0)
+		}, 10019, function(arg_7_0)
 			pg.ConnectionMgr.GetInstance():Disconnect()
 
-			for slot4, slot5 in ipairs(slot0.serverlist or {}) do
-				if slot5.state ~= Server.STATUS.VINDICATE then
-					uv0[1] = false
+			for iter_7_0, iter_7_1 in ipairs(arg_7_0.serverlist or {}) do
+				if iter_7_1.state ~= Server.STATUS.VINDICATE then
+					arg_5_1[1] = false
 
 					break
 				end
 			end
 
-			uv1()
+			arg_5_2()
 		end)
 	end)
 end
 
-return slot0
+return var_0_0

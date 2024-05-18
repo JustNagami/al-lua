@@ -1,8 +1,9 @@
-slot0 = class("SofmapPTPage", import(".TemplatePage.PtTemplatePage"))
-slot0.FADE_TIME = 0.5
-slot0.SHOW_TIME = 1
-slot0.FADE_OUT_TIME = 0.5
-slot0.SpineActionByStep = {
+﻿local var_0_0 = class("SofmapPTPage", import(".TemplatePage.PtTemplatePage"))
+
+var_0_0.FADE_TIME = 0.5
+var_0_0.SHOW_TIME = 1
+var_0_0.FADE_OUT_TIME = 0.5
+var_0_0.SpineActionByStep = {
 	4,
 	8,
 	12,
@@ -10,146 +11,150 @@ slot0.SpineActionByStep = {
 	20
 }
 
-function slot0.OnFirstFlush(slot0)
-	uv0.super.OnFirstFlush(slot0)
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
 
-	slot0.shop = slot0:findTF("shop", slot0.bg)
-	slot0.shopAnim = GetComponent(slot0.shop, "SpineAnimUI")
-	slot0.sdContainer = slot0:findTF("sdcontainer", slot0.bg)
-	slot0.spine = nil
-	slot0.spineLRQ = GetSpineRequestPackage.New("mingshi_5", function (slot0)
-		SetParent(slot0, uv0.sdContainer)
+	arg_1_0.shop = arg_1_0:findTF("shop", arg_1_0.bg)
+	arg_1_0.shopAnim = GetComponent(arg_1_0.shop, "SpineAnimUI")
+	arg_1_0.sdContainer = arg_1_0:findTF("sdcontainer", arg_1_0.bg)
+	arg_1_0.spine = nil
+	arg_1_0.spineLRQ = GetSpineRequestPackage.New("mingshi_5", function(arg_2_0)
+		SetParent(arg_2_0, arg_1_0.sdContainer)
 
-		uv0.spine = slot0
-		uv0.spine.transform.localScale = Vector3.one
+		arg_1_0.spine = arg_2_0
+		arg_1_0.spine.transform.localScale = Vector3.one
 
-		if uv0.spine:GetComponent("SpineAnimUI") then
-			slot1:SetAction("stand", 0)
+		local var_2_0 = arg_1_0.spine:GetComponent("SpineAnimUI")
+
+		if var_2_0 then
+			var_2_0:SetAction("stand", 0)
 		end
 
-		uv0.spineLRQ = nil
+		arg_1_0.spineLRQ = nil
 	end):Start()
 
-	onButton(slot0, slot0:findTF("sdBtn", slot0.bg), function ()
-		uv0:showBubble()
+	onButton(arg_1_0, arg_1_0:findTF("sdBtn", arg_1_0.bg), function()
+		arg_1_0:showBubble()
 	end, SFX_PANEL)
 
-	slot0.levelBtn = slot0:findTF("level_btn", slot0.bg)
-	slot0.ptBtn = slot0:findTF("pt_btn", slot0.bg)
-	slot0.bubble = slot0:findTF("bubble", slot0.bg)
-	slot0.bubbleText = slot0:findTF("Text", slot0.bubble)
-	slot0.bubbleCG = GetComponent(slot0.bubble, "CanvasGroup")
-	slot0.showBubbleTag = false
+	arg_1_0.levelBtn = arg_1_0:findTF("level_btn", arg_1_0.bg)
+	arg_1_0.ptBtn = arg_1_0:findTF("pt_btn", arg_1_0.bg)
+	arg_1_0.bubble = arg_1_0:findTF("bubble", arg_1_0.bg)
+	arg_1_0.bubbleText = arg_1_0:findTF("Text", arg_1_0.bubble)
+	arg_1_0.bubbleCG = GetComponent(arg_1_0.bubble, "CanvasGroup")
+	arg_1_0.showBubbleTag = false
 
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_1_0, arg_1_0.getBtn, function()
+		local var_4_0, var_4_1 = arg_1_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_1_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1,
-			callback = function ()
-				uv0:showBubble(i18n("sofmapsd_3"))
+			activity_id = arg_1_0.ptData:GetId(),
+			arg1 = var_4_1,
+			callback = function()
+				arg_1_0:showBubble(i18n("sofmapsd_3"))
 			end
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.levelBtn, function ()
+	onButton(arg_1_0, arg_1_0.levelBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.sofmap_attention.tip
 		})
 	end, SFX_PANEL)
 
-	slot1 = {
+	local var_1_0 = {
 		count = 0,
 		type = DROP_TYPE_RESOURCE,
-		id = slot0.ptData.resId
+		id = arg_1_0.ptData.resId
 	}
 
-	onButton(slot0, slot0.ptBtn, function ()
+	onButton(arg_1_0, arg_1_0.ptBtn, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
-			drop = uv0
+			drop = var_1_0
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	uv0.super.OnUpdateFlush(slot0)
+function var_0_0.OnUpdateFlush(arg_8_0)
+	var_0_0.super.OnUpdateFlush(arg_8_0)
 
-	slot1, slot2, slot3 = slot0.ptData:GetResProgress()
+	local var_8_0, var_8_1, var_8_2 = arg_8_0.ptData:GetResProgress()
 
-	setText(slot0.progress, (slot3 >= 1 and setColorStr(slot1, "#68E9F4FF") or slot1) .. "/" .. slot2)
+	setText(arg_8_0.progress, (var_8_2 >= 1 and setColorStr(var_8_0, "#68E9F4FF") or var_8_0) .. "/" .. var_8_1)
 
-	slot4, slot5, slot6 = slot0.ptData:GetLevelProgress()
+	local var_8_3, var_8_4, var_8_5 = arg_8_0.ptData:GetLevelProgress()
 
-	if slot4 <= uv0.SpineActionByStep[1] then
-		slot0.shopAnim:SetAction("stand2", 0)
-	elseif slot4 <= uv0.SpineActionByStep[2] then
-		slot0.shopAnim:SetAction("stand1", 0)
-	elseif slot4 <= uv0.SpineActionByStep[3] then
-		slot0.shopAnim:SetAction("stand1x2", 0)
-	elseif slot4 <= uv0.SpineActionByStep[4] then
-		slot0.shopAnim:SetAction("stand1x4", 0)
-	elseif slot4 <= uv0.SpineActionByStep[5] then
-		slot0.shopAnim:SetAction("stand1x8", 0)
+	if var_8_3 <= var_0_0.SpineActionByStep[1] then
+		arg_8_0.shopAnim:SetAction("stand2", 0)
+	elseif var_8_3 <= var_0_0.SpineActionByStep[2] then
+		arg_8_0.shopAnim:SetAction("stand1", 0)
+	elseif var_8_3 <= var_0_0.SpineActionByStep[3] then
+		arg_8_0.shopAnim:SetAction("stand1x2", 0)
+	elseif var_8_3 <= var_0_0.SpineActionByStep[4] then
+		arg_8_0.shopAnim:SetAction("stand1x4", 0)
+	elseif var_8_3 <= var_0_0.SpineActionByStep[5] then
+		arg_8_0.shopAnim:SetAction("stand1x8", 0)
 	end
 
-	if not slot0.showBubbleTag then
-		slot0:showBubble()
+	if not arg_8_0.showBubbleTag then
+		arg_8_0:showBubble()
 
-		slot0.showBubbleTag = true
-	end
-end
-
-function slot0.OnDestroy(slot0)
-	if slot0.spineLRQ then
-		slot0.spineLRQ:Stop()
-
-		slot0.spineLRQ = nil
-	end
-
-	if slot0.spine then
-		slot0.spine.transform.localScale = Vector3.one
-
-		pg.PoolMgr.GetInstance():ReturnSpineChar("mingshi_5", slot0.spine)
-
-		slot0.spine = nil
+		arg_8_0.showBubbleTag = true
 	end
 end
 
-function slot0.showBubble(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnDestroy(arg_9_0)
+	if arg_9_0.spineLRQ then
+		arg_9_0.spineLRQ:Stop()
 
-	if not slot1 then
-		if isActive(slot0.battleBtn) then
-			slot2 = i18n("sofmapsd_1")
-		elseif isActive(slot0.getBtn) then
-			slot2 = i18n("sofmapsd_2")
-		elseif isActive(slot0.gotBtn) then
-			slot2 = i18n("sofmapsd_4")
+		arg_9_0.spineLRQ = nil
+	end
+
+	if arg_9_0.spine then
+		arg_9_0.spine.transform.localScale = Vector3.one
+
+		pg.PoolMgr.GetInstance():ReturnSpineChar("mingshi_5", arg_9_0.spine)
+
+		arg_9_0.spine = nil
+	end
+end
+
+function var_0_0.showBubble(arg_10_0, arg_10_1)
+	local var_10_0
+
+	if not arg_10_1 then
+		if isActive(arg_10_0.battleBtn) then
+			var_10_0 = i18n("sofmapsd_1")
+		elseif isActive(arg_10_0.getBtn) then
+			var_10_0 = i18n("sofmapsd_2")
+		elseif isActive(arg_10_0.gotBtn) then
+			var_10_0 = i18n("sofmapsd_4")
 		end
 	else
-		slot2 = slot1
+		var_10_0 = arg_10_1
 	end
 
-	setText(slot0.bubbleText, slot2)
+	setText(arg_10_0.bubbleText, var_10_0)
 
-	function slot4()
-		LeanTween.value(go(uv0.bubble), 1, 0, uv1.FADE_OUT_TIME):setOnUpdate(System.Action_float(uv2)):setOnComplete(System.Action(function ()
-			setActive(uv0.bubble, false)
+	local function var_10_1(arg_11_0)
+		arg_10_0.bubbleCG.alpha = arg_11_0
+
+		setLocalScale(arg_10_0.bubble, Vector3.one * arg_11_0)
+	end
+
+	local function var_10_2()
+		LeanTween.value(go(arg_10_0.bubble), 1, 0, var_0_0.FADE_OUT_TIME):setOnUpdate(System.Action_float(var_10_1)):setOnComplete(System.Action(function()
+			setActive(arg_10_0.bubble, false)
 		end))
 	end
 
-	LeanTween.cancel(go(slot0.bubble))
-	setActive(slot0.bubble, true)
-	LeanTween.value(go(slot0.bubble), 0, 1, uv0.FADE_TIME):setOnUpdate(System.Action_float(function (slot0)
-		uv0.bubbleCG.alpha = slot0
-
-		setLocalScale(uv0.bubble, Vector3.one * slot0)
-	end)):setOnComplete(System.Action(function ()
-		LeanTween.delayedCall(go(uv0.bubble), uv1.SHOW_TIME, System.Action(uv2))
+	LeanTween.cancel(go(arg_10_0.bubble))
+	setActive(arg_10_0.bubble, true)
+	LeanTween.value(go(arg_10_0.bubble), 0, 1, var_0_0.FADE_TIME):setOnUpdate(System.Action_float(var_10_1)):setOnComplete(System.Action(function()
+		LeanTween.delayedCall(go(arg_10_0.bubble), var_0_0.SHOW_TIME, System.Action(var_10_2))
 	end))
 end
 
-return slot0
+return var_0_0

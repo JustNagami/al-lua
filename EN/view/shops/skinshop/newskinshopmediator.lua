@@ -1,58 +1,59 @@
-slot0 = class("NewSkinShopMediator", import("view.base.ContextMediator"))
-slot0.ON_ATLAS = "NewSkinShopMediator:ON_ATLAS"
-slot0.ON_INDEX = "NewSkinShopMediator:ON_INDEX"
-slot0.ON_BACKYARD_SHOP = "NewSkinShopMediator:ON_BACKYARD_SHOP"
-slot0.GO_SHOPS_LAYER = "NewSkinShopMediator:GO_SHOPS_LAYER"
-slot0.OPEN_SCENE = "NewSkinShopMediator:OPEN_SCENE"
-slot0.OPEN_ACTIVITY = "NewSkinShopMediator:OPEN_ACTIVITY"
-slot0.ON_SHOPPING_BY_ACT = "NewSkinShopMediator:ON_SHOPPING_BY_ACT"
-slot0.ON_SHOPPING = "NewSkinShopMediator:ON_SHOPPING"
-slot0.ON_RECORD_ANIM_PREVIEW_BTN = "NewSkinShopMediator:ON_RECORD_ANIM_PREVIEW_BTN"
-slot0.ON_ITEM_PURCHASE = "NewSkinShopMediator:ON_ITEM_PURCHASE"
+﻿local var_0_0 = class("NewSkinShopMediator", import("view.base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_ITEM_PURCHASE, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.USE_ITEM, {
+var_0_0.ON_ATLAS = "NewSkinShopMediator:ON_ATLAS"
+var_0_0.ON_INDEX = "NewSkinShopMediator:ON_INDEX"
+var_0_0.ON_BACKYARD_SHOP = "NewSkinShopMediator:ON_BACKYARD_SHOP"
+var_0_0.GO_SHOPS_LAYER = "NewSkinShopMediator:GO_SHOPS_LAYER"
+var_0_0.OPEN_SCENE = "NewSkinShopMediator:OPEN_SCENE"
+var_0_0.OPEN_ACTIVITY = "NewSkinShopMediator:OPEN_ACTIVITY"
+var_0_0.ON_SHOPPING_BY_ACT = "NewSkinShopMediator:ON_SHOPPING_BY_ACT"
+var_0_0.ON_SHOPPING = "NewSkinShopMediator:ON_SHOPPING"
+var_0_0.ON_RECORD_ANIM_PREVIEW_BTN = "NewSkinShopMediator:ON_RECORD_ANIM_PREVIEW_BTN"
+var_0_0.ON_ITEM_PURCHASE = "NewSkinShopMediator:ON_ITEM_PURCHASE"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_ITEM_PURCHASE, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.USE_ITEM, {
 			count = 1,
-			id = slot1,
+			id = arg_2_1,
 			arg = {
-				slot2
+				arg_2_2
 			}
 		})
 	end)
-	slot0:bind(uv0.ON_RECORD_ANIM_PREVIEW_BTN, function (slot0, slot1)
-		uv0:sendNotification(GAME.RECORD_SKIN_ANIM_PREVIEW, {
-			isOpen = slot1
+	arg_1_0:bind(var_0_0.ON_RECORD_ANIM_PREVIEW_BTN, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.RECORD_SKIN_ANIM_PREVIEW, {
+			isOpen = arg_3_1
 		})
 	end)
-	slot0:bind(uv0.ON_SHOPPING, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SKIN_SHOPPIGN, {
-			id = slot1,
-			count = slot2
+	arg_1_0:bind(var_0_0.ON_SHOPPING, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.SKIN_SHOPPIGN, {
+			id = arg_4_1,
+			count = arg_4_2
 		})
 	end)
-	slot0:bind(uv0.ON_SHOPPING_BY_ACT, function (slot0, slot1, slot2)
-		uv0:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
-			shopId = slot1,
-			cnt = slot2
+	arg_1_0:bind(var_0_0.ON_SHOPPING_BY_ACT, function(arg_5_0, arg_5_1, arg_5_2)
+		arg_1_0:sendNotification(GAME.SKIN_COUPON_SHOPPING, {
+			shopId = arg_5_1,
+			cnt = arg_5_2
 		})
 	end)
-	slot0:bind(uv0.OPEN_ACTIVITY, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
-			id = slot1
+	arg_1_0:bind(var_0_0.OPEN_ACTIVITY, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
+			id = arg_6_1
 		})
 	end)
-	slot0:bind(uv0.GO_SHOPS_LAYER, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+	arg_1_0:bind(var_0_0.GO_SHOPS_LAYER, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = slot1
+			actId = arg_7_1
 		})
 	end)
-	slot0:bind(uv0.OPEN_SCENE, function (slot0, slot1)
-		uv0:sendNotification(GAME.GO_SCENE, slot1[1], slot1[2])
+	arg_1_0:bind(var_0_0.OPEN_SCENE, function(arg_8_0, arg_8_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_8_1[1], arg_8_1[2])
 	end)
-	slot0:bind(uv0.ON_BACKYARD_SHOP, function (slot0)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_BACKYARD_SHOP, function(arg_9_0)
+		arg_1_0:addSubLayers(Context.New({
 			mediator = NewBackYardShopMediator,
 			viewComponent = NewBackYardShopLayer,
 			data = {
@@ -61,19 +62,19 @@ function slot0.register(slot0)
 			}
 		}))
 	end)
-	slot0:bind(uv0.ON_ATLAS, function (slot0)
-		uv0:sendNotification(GAME.GO_SCENE, SCENE.SKINATALAS)
+	arg_1_0:bind(var_0_0.ON_ATLAS, function(arg_10_0)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SKINATALAS)
 	end)
-	slot0:bind(uv0.ON_INDEX, function (slot0, slot1)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_INDEX, function(arg_11_0, arg_11_1)
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = SkinIndexLayer,
 			mediator = CustomIndexMediator,
-			data = slot1
+			data = arg_11_1
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_12_0)
 	return {
 		GAME.SKIN_SHOPPIGN_DONE,
 		GAME.SKIN_COUPON_SHOPPING_DONE,
@@ -83,31 +84,34 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
-	slot4 = slot1:getType()
+function var_0_0.handleNotification(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1:getName()
+	local var_13_1 = arg_13_1:getBody()
+	local var_13_2 = arg_13_1:getType()
 
-	if slot1:getName() == GAME.SKIN_SHOPPIGN_DONE or slot2 == GAME.SKIN_COUPON_SHOPPING_DONE then
-		if pg.shop_template[slot3.id] and (slot5.genre == ShopArgs.SkinShop or slot5.genre == ShopArgs.SkinShopTimeLimit) then
-			slot0:addSubLayers(Context.New({
+	if var_13_0 == GAME.SKIN_SHOPPIGN_DONE or var_13_0 == GAME.SKIN_COUPON_SHOPPING_DONE then
+		local var_13_3 = pg.shop_template[var_13_1.id]
+
+		if var_13_3 and (var_13_3.genre == ShopArgs.SkinShop or var_13_3.genre == ShopArgs.SkinShopTimeLimit) then
+			arg_13_0:addSubLayers(Context.New({
 				mediator = NewSkinMediator,
 				viewComponent = NewSkinLayer,
 				data = {
-					skinId = slot5.effect_args[1],
-					timeLimit = slot5.genre == ShopArgs.SkinShopTimeLimit
+					skinId = var_13_3.effect_args[1],
+					timeLimit = var_13_3.genre == ShopArgs.SkinShopTimeLimit
 				}
 			}))
-			slot0.viewComponent:OnShopping(slot3.id)
+			arg_13_0.viewComponent:OnShopping(var_13_1.id)
 		end
-	elseif slot2 == GAME.BUY_FURNITURE_DONE then
-		slot0.viewComponent:OnFurnitureUpdate(slot4[1])
-	elseif slot2 == GAME.LOAD_LAYERS then
-		if slot3.context.mediator == NewBackYardShopMediator then
-			slot0:sendNotification(PlayerResUI.HIDE)
+	elseif var_13_0 == GAME.BUY_FURNITURE_DONE then
+		arg_13_0.viewComponent:OnFurnitureUpdate(var_13_2[1])
+	elseif var_13_0 == GAME.LOAD_LAYERS then
+		if var_13_1.context.mediator == NewBackYardShopMediator then
+			arg_13_0:sendNotification(PlayerResUI.HIDE)
 		end
-	elseif slot2 == GAME.REMOVE_LAYERS and slot3.context.mediator == NewBackYardShopMediator then
-		slot0:sendNotification(PlayerResUI.SHOW)
+	elseif var_13_0 == GAME.REMOVE_LAYERS and var_13_1.context.mediator == NewBackYardShopMediator then
+		arg_13_0:sendNotification(PlayerResUI.SHOW)
 	end
 end
 
-return slot0
+return var_0_0

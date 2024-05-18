@@ -1,7 +1,7 @@
-slot0 = class("NewBossExperimentResultGradePage", import("..hpShareActBoss.NewHpShareActBossResultGradePage"))
+﻿local var_0_0 = class("NewBossExperimentResultGradePage", import("..hpShareActBoss.NewHpShareActBossResultGradePage"))
 
-function slot0.GetContributionPoint(slot0)
+function var_0_0.GetContributionPoint(arg_1_0)
 	return 0
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,27 @@
-slot0 = class("SubmitWeekTaskProgressCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("SubmitWeekTaskProgressCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(TaskProxy):GetWeekTaskProgressInfo()
 
-	if not getProxy(TaskProxy):GetWeekTaskProgressInfo():CanUpgrade() then
+	if not var_1_1:CanUpgrade() then
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(20110, {
 		id = 0
-	}, 20111, function (slot0)
-		if slot0.result == 0 then
-			uv0:Upgrade()
-			uv1:sendNotification(GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE, {
-				awards = PlayerConst.addTranDrop(slot0.award_list)
+	}, 20111, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.award_list)
+
+			var_1_1:Upgrade()
+			arg_1_0:sendNotification(GAME.SUBMIT_WEEK_TASK_PROGRESS_DONE, {
+				awards = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

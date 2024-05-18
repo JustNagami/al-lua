@@ -1,10 +1,15 @@
-slot0 = class("DailiyQuickBattleCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("DailiyQuickBattleCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot4 = slot2.stageId
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.dailyLevelId
+	local var_1_2 = var_1_0.stageId
+	local var_1_3 = var_1_0.cnt
+	local var_1_4 = getProxy(DailyLevelProxy)
+	local var_1_5 = var_1_4.data[var_1_1] or 0
+	local var_1_6 = pg.expedition_daily_template[var_1_1]
 
-	if pg.expedition_daily_template[slot3].limit_time < (getProxy(DailyLevelProxy).data[slot2.dailyLevelId] or 0) + slot2.cnt then
+	if var_1_5 + var_1_3 > var_1_6.limit_time then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("dailyLevel_restCount_notEnough"))
 
 		return
@@ -12,27 +17,27 @@ function slot0.execute(slot0, slot1)
 
 	pg.ConnectionMgr.GetInstance():Send(40007, {
 		system = SYSTEM_ROUTINE,
-		id = slot4,
-		cnt = slot5
-	}, 40008, function (slot0)
-		if slot0.result == 0 then
-			for slot5, slot6 in ipairs(slot0.reward_list) do
-				-- Nothing
+		id = var_1_2,
+		cnt = var_1_3
+	}, 40008, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = {}
+
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.reward_list) do
+				var_2_0[iter_2_0] = PlayerConst.addTranDrop(iter_2_1.drop_list)
 			end
 
-			uv0.data[uv1] = (uv0.data[uv1] or 0) + uv2
+			var_1_4.data[var_1_1] = (var_1_4.data[var_1_1] or 0) + var_1_3
 
-			uv3:sendNotification(GAME.DAILY_LEVEL_QUICK_BATTLE_DONE, {
-				awards = {
-					[slot5] = PlayerConst.addTranDrop(slot6.drop_list)
-				},
-				stageId = uv4,
-				dailyLevelId = uv1
+			arg_1_0:sendNotification(GAME.DAILY_LEVEL_QUICK_BATTLE_DONE, {
+				awards = var_2_0,
+				stageId = var_1_2,
+				dailyLevelId = var_1_1
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[slot0.result] .. slot0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 	end)
 end
 
-return slot0
+return var_0_0

@@ -1,25 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	desc_get = "",
-	name = "穿甲防护·最上",
-	init_effect = "",
-	time = 15,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 1090170,
-	icon = 4110,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkill",
@@ -41,5 +20,26 @@ return {
 				skill_id = 1090172
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "穿甲防护·最上",
+	init_effect = "",
+	time = 15,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 1090170,
+	icon = 4110,
+	last_effect = ""
 }

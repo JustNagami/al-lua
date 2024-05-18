@@ -1,127 +1,133 @@
-slot0 = class("WeekTaskProgress", import("..BaseVO"))
+﻿local var_0_0 = class("WeekTaskProgress", import("..BaseVO"))
 
-function slot0.Ctor(slot0)
+function var_0_0.Ctor(arg_1_0)
+	return
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.targets = {}
-	slot0.dropData = {}
-	slot0.index = 0
-	slot0.target = 0
-	slot0.progress = 0
-	slot0.drops = {}
-	slot0.subTasks = {}
-	slot0.targets = pg.gameset.weekly_target.description
-	slot0.dropData = pg.gameset.weekly_drop_client.description
-	slot0.progress = slot1.pt or 0
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.targets = {}
+	arg_2_0.dropData = {}
+	arg_2_0.index = 0
+	arg_2_0.target = 0
+	arg_2_0.progress = 0
+	arg_2_0.drops = {}
+	arg_2_0.subTasks = {}
+	arg_2_0.targets = pg.gameset.weekly_target.description
+	arg_2_0.dropData = pg.gameset.weekly_drop_client.description
+	arg_2_0.progress = arg_2_1.pt or 0
 
-	for slot5, slot6 in ipairs(slot1.task) do
-		slot7 = WeekPtTask.New(slot6)
-		slot0.subTasks[slot7.id] = slot7
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1.task) do
+		local var_2_0 = WeekPtTask.New(iter_2_1)
+
+		arg_2_0.subTasks[var_2_0.id] = var_2_0
 	end
 
-	slot0:UpdateTarget(table.indexof(slot0.targets, slot1.reward_lv) or 0)
+	local var_2_1 = table.indexof(arg_2_0.targets, arg_2_1.reward_lv)
+
+	arg_2_0:UpdateTarget(var_2_1 or 0)
 end
 
-function slot0.IsMaximum(slot0)
-	return slot0.index >= #slot0.targets
+function var_0_0.IsMaximum(arg_3_0)
+	return arg_3_0.index >= #arg_3_0.targets
 end
 
-function slot0.UpdateTarget(slot0, slot1)
-	slot0.index = slot1
-	slot0.target = slot0.targets[slot1 + 1] or slot0.targets[#slot0.targets]
-	slot0.drops = slot0.dropData[slot1 + 1] or slot0.dropData[#slot0.dropData]
+function var_0_0.UpdateTarget(arg_4_0, arg_4_1)
+	arg_4_0.index = arg_4_1
+	arg_4_0.target = arg_4_0.targets[arg_4_1 + 1] or arg_4_0.targets[#arg_4_0.targets]
+	arg_4_0.drops = arg_4_0.dropData[arg_4_1 + 1] or arg_4_0.dropData[#arg_4_0.dropData]
 end
 
-function slot0.CanUpgrade(slot0)
-	return slot0.target <= slot0.progress and not slot0:IsMaximum()
+function var_0_0.CanUpgrade(arg_5_0)
+	return arg_5_0.progress >= arg_5_0.target and not arg_5_0:IsMaximum()
 end
 
-function slot0.Upgrade(slot0)
-	if slot0:CanUpgrade() then
-		slot0:UpdateTarget(slot0.index + 1)
+function var_0_0.Upgrade(arg_6_0)
+	if arg_6_0:CanUpgrade() then
+		local var_6_0 = arg_6_0.index + 1
+
+		arg_6_0:UpdateTarget(var_6_0)
 	end
 end
 
-function slot0.GetDropList(slot0)
-	return slot0.drops
+function var_0_0.GetDropList(arg_7_0)
+	return arg_7_0.drops
 end
 
-function slot0.GetPhase(slot0)
-	return math.min(slot0.index + 1, #slot0.targets)
+function var_0_0.GetPhase(arg_8_0)
+	return math.min(arg_8_0.index + 1, #arg_8_0.targets)
 end
 
-function slot0.GetTotalPhase(slot0)
-	return #slot0.targets
+function var_0_0.GetTotalPhase(arg_9_0)
+	return #arg_9_0.targets
 end
 
-function slot0.GetProgress(slot0)
-	return slot0.progress
+function var_0_0.GetProgress(arg_10_0)
+	return arg_10_0.progress
 end
 
-function slot0.GetTarget(slot0)
-	return slot0.target
+function var_0_0.GetTarget(arg_11_0)
+	return arg_11_0.target
 end
 
-function slot0.UpdateProgress(slot0, slot1)
-	slot0.progress = slot1
+function var_0_0.UpdateProgress(arg_12_0, arg_12_1)
+	arg_12_0.progress = arg_12_1
 end
 
-function slot0.AddProgress(slot0, slot1)
-	slot0.progress = slot0.progress + slot1
+function var_0_0.AddProgress(arg_13_0, arg_13_1)
+	arg_13_0.progress = arg_13_0.progress + arg_13_1
 end
 
-function slot0.GetAllPhaseDrops(slot0)
+function var_0_0.GetAllPhaseDrops(arg_14_0)
 	return {
 		resIcon = "Props/weekly_pt",
 		type = 1,
-		dropList = slot0.dropData,
-		targets = slot0.targets,
-		level = slot0.index,
-		count = slot0.progress,
+		dropList = arg_14_0.dropData,
+		targets = arg_14_0.targets,
+		level = arg_14_0.index,
+		count = arg_14_0.progress,
 		resName = i18n("week_task_pt_name")
 	}
 end
 
-function slot0.ReachMaxPt(slot0)
-	return slot0.targets[#slot0.targets] <= slot0.progress
+function var_0_0.ReachMaxPt(arg_15_0)
+	return arg_15_0.targets[#arg_15_0.targets] <= arg_15_0.progress
 end
 
-function slot0.GetSubTasks(slot0)
-	return slot0.subTasks
+function var_0_0.GetSubTasks(arg_16_0)
+	return arg_16_0.subTasks
 end
 
-function slot0.RemoveSubTasks(slot0, slot1)
-	for slot5, slot6 in ipairs(slot1) do
-		slot0:RemoveSubTask(slot6)
+function var_0_0.RemoveSubTasks(arg_17_0, arg_17_1)
+	for iter_17_0, iter_17_1 in ipairs(arg_17_1) do
+		arg_17_0:RemoveSubTask(iter_17_1)
 	end
 end
 
-function slot0.RemoveSubTask(slot0, slot1)
-	slot0.subTasks[slot1] = nil
+function var_0_0.RemoveSubTask(arg_18_0, arg_18_1)
+	arg_18_0.subTasks[arg_18_1] = nil
 end
 
-function slot0.AddSubTask(slot0, slot1)
-	slot0.subTasks[slot1.id] = slot1
+function var_0_0.AddSubTask(arg_19_0, arg_19_1)
+	arg_19_0.subTasks[arg_19_1.id] = arg_19_1
 end
 
-function slot0.UpdateSubTask(slot0, slot1)
-	assert(slot0.subTasks[slot1.id], "should exist task >> " .. slot1.id)
+function var_0_0.UpdateSubTask(arg_20_0, arg_20_1)
+	assert(arg_20_0.subTasks[arg_20_1.id], "should exist task >> " .. arg_20_1.id)
 
-	slot0.subTasks[slot1.id] = slot1
+	arg_20_0.subTasks[arg_20_1.id] = arg_20_1
 end
 
-function slot0.GetSubTask(slot0, slot1)
-	return slot0.subTasks[slot1]
+function var_0_0.GetSubTask(arg_21_0, arg_21_1)
+	return arg_21_0.subTasks[arg_21_1]
 end
 
-function slot0.AnySubTaskCanSubmit(slot0)
-	if slot0:ReachMaxPt() then
+function var_0_0.AnySubTaskCanSubmit(arg_22_0)
+	if arg_22_0:ReachMaxPt() then
 		return false
 	end
 
-	for slot4, slot5 in pairs(slot0.subTasks) do
-		if slot5:isFinish() then
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.subTasks) do
+		if iter_22_1:isFinish() then
 			return true
 		end
 	end
@@ -129,18 +135,20 @@ function slot0.AnySubTaskCanSubmit(slot0)
 	return false
 end
 
-function slot0.GetCanSubmitSubTaskCnt(slot0)
-	if slot0:ReachMaxPt() then
+function var_0_0.GetCanSubmitSubTaskCnt(arg_23_0)
+	if arg_23_0:ReachMaxPt() then
 		return 0
 	end
 
-	for slot5, slot6 in pairs(slot0.subTasks) do
-		if slot6:isFinish() then
-			slot1 = 0 + 1
+	local var_23_0 = 0
+
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.subTasks) do
+		if iter_23_1:isFinish() then
+			var_23_0 = var_23_0 + 1
 		end
 	end
 
-	return slot1
+	return var_23_0
 end
 
-return slot0
+return var_0_0

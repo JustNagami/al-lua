@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.world_collection_file_group = {
 	[110] = {
 		name = "Aerolith Incident",

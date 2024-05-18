@@ -1,62 +1,67 @@
-slot0 = class("JPSkirmishHeadFramePage", import("...base.BaseActivityPage"))
+﻿local var_0_0 = class("JPSkirmishHeadFramePage", import("...base.BaseActivityPage"))
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.goBtn = slot0:findTF("GoBtn", slot0.bg)
-	slot0.getBtn = slot0:findTF("GetBtn", slot0.bg)
-	slot0.gotBtn = slot0:findTF("GotBtn", slot0.bg)
-	slot0.gotTag = slot0:findTF("GotTag", slot0.bg)
-	slot0.progressBar = slot0:findTF("Progress", slot0.bg)
-	slot0.progressText = slot0:findTF("ProgressText", slot0.bg)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0:findTF("AD")
+	arg_1_0.goBtn = arg_1_0:findTF("GoBtn", arg_1_0.bg)
+	arg_1_0.getBtn = arg_1_0:findTF("GetBtn", arg_1_0.bg)
+	arg_1_0.gotBtn = arg_1_0:findTF("GotBtn", arg_1_0.bg)
+	arg_1_0.gotTag = arg_1_0:findTF("GotTag", arg_1_0.bg)
+	arg_1_0.progressBar = arg_1_0:findTF("Progress", arg_1_0.bg)
+	arg_1_0.progressText = arg_1_0:findTF("ProgressText", arg_1_0.bg)
 
-	setActive(slot0.goBtn, false)
-	setActive(slot0.getBtn, false)
-	setActive(slot0.gotBtn, false)
-	setActive(slot0.gotTag, false)
+	setActive(arg_1_0.goBtn, false)
+	setActive(arg_1_0.getBtn, false)
+	setActive(arg_1_0.gotBtn, false)
+	setActive(arg_1_0.gotTag, false)
 end
 
-function slot0.OnDataSetting(slot0)
-	if slot0.ptData then
-		slot0.ptData:Update(slot0.activity)
+function var_0_0.OnDataSetting(arg_2_0)
+	if arg_2_0.ptData then
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		slot0.ptData = ActivityPtData.New(slot0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 end
 
-function slot0.OnFirstFlush(slot0)
-	onButton(slot0, slot0.goBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getBtn, function ()
-		slot0, slot1 = uv0.ptData:GetResProgress()
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		local var_5_0, var_5_1 = arg_3_0.ptData:GetResProgress()
 
-		uv0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+		arg_3_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
 			cmd = 1,
-			activity_id = uv0.ptData:GetId(),
-			arg1 = slot1
+			activity_id = arg_3_0.ptData:GetId(),
+			arg1 = var_5_1
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	if not getProxy(ActivityProxy):getActivityById(slot0.activity:getConfig("config_client").linkExpActID) or slot2:isEnd() then
-		slot3 = slot0.ptData:CanGetAward()
-		slot4 = slot0.ptData:CanGetNextAward()
+function var_0_0.OnUpdateFlush(arg_6_0)
+	local var_6_0 = arg_6_0.activity:getConfig("config_client").linkExpActID
+	local var_6_1 = getProxy(ActivityProxy):getActivityById(var_6_0)
 
-		setActive(slot0.goBtn, slot0.ptData:CanGetMorePt() and not slot3 and slot4)
-		setActive(slot0.getBtn, slot3)
-		setActive(slot0.gotBtn, not slot4)
-		setActive(slot0.gotTag, not slot4)
+	if not var_6_1 or var_6_1:isEnd() then
+		local var_6_2 = arg_6_0.ptData:CanGetAward()
+		local var_6_3 = arg_6_0.ptData:CanGetNextAward()
+		local var_6_4 = arg_6_0.ptData:CanGetMorePt()
+
+		setActive(arg_6_0.goBtn, var_6_4 and not var_6_2 and var_6_3)
+		setActive(arg_6_0.getBtn, var_6_2)
+		setActive(arg_6_0.gotBtn, not var_6_3)
+		setActive(arg_6_0.gotTag, not var_6_3)
 	end
 
-	slot3, slot4, slot5 = slot0.ptData:GetResProgress()
+	local var_6_5, var_6_6, var_6_7 = arg_6_0.ptData:GetResProgress()
 
-	setText(slot0.progressText, setColorStr(slot3, "#487CFFFF") .. "/" .. slot4)
-	setSlider(slot0.progressBar, 0, 1, slot5)
-	setActive(slot0.progressText, true)
+	setText(arg_6_0.progressText, setColorStr(var_6_5, "#487CFFFF") .. "/" .. var_6_6)
+	setSlider(arg_6_0.progressBar, 0, 1, var_6_7)
+	setActive(arg_6_0.progressText, true)
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_7_0)
+	return
 end
 
-return slot0
+return var_0_0

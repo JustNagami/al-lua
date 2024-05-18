@@ -1,200 +1,233 @@
-slot0 = class("BismarckChapterPage", import("...base.BaseActivityPage"))
-slot0.tabPos = {
-	[1.0] = 10,
-	[2.0] = 182.3
+﻿local var_0_0 = class("BismarckChapterPage", import("...base.BaseActivityPage"))
+
+var_0_0.tabPos = {
+	[1] = 10,
+	[2] = 182.3
 }
-slot0.IconShowFunc = {
-	[DROP_TYPE_SHIP] = function (slot0, slot1)
-		GetImageSpriteFromAtlasAsync("SquareIcon/" .. pg.ship_skin_template[pg.ship_data_statistics[slot1].skin_id].painting, "", slot0)
+var_0_0.IconShowFunc = {
+	[DROP_TYPE_SHIP] = function(arg_1_0, arg_1_1)
+		local var_1_0 = pg.ship_data_statistics[arg_1_1].skin_id
+		local var_1_1 = pg.ship_skin_template[var_1_0].painting
+
+		GetImageSpriteFromAtlasAsync("SquareIcon/" .. var_1_1, "", arg_1_0)
 	end,
-	[DROP_TYPE_FURNITURE] = function (slot0, slot1)
-		GetImageSpriteFromAtlasAsync("furnitureicon/" .. pg.furniture_data_template[slot1].icon, "", slot0)
+	[DROP_TYPE_FURNITURE] = function(arg_2_0, arg_2_1)
+		local var_2_0 = pg.furniture_data_template[arg_2_1]
+
+		GetImageSpriteFromAtlasAsync("furnitureicon/" .. var_2_0.icon, "", arg_2_0)
 	end
 }
-slot0.TransformType = {
+var_0_0.TransformType = {
 	[TASK_SUB_TYPE_COLLECT_SHIP] = DROP_TYPE_SHIP,
 	[TASK_SUB_TYPE_COLLECT_FURNITURE] = DROP_TYPE_FURNITURE
 }
 
-function slot0.OnInit(slot0)
-	slot0.bg = slot0:findTF("AD")
-	slot0.items = {
-		slot0:findTF("AD/Item1"),
-		slot0:findTF("AD/Item2")
-	}
-	slot0.awardTF = slot0:findTF("AD/award")
-	slot0.battleBtn = slot0:findTF("AD/battle_btn")
-	slot0.shopBtn = slot0:findTF("AD/exchange_btn")
-	slot0.buildBtn = slot0:findTF("AD/build_btn")
-	slot0.tab = slot0:findTF("tab")
-	slot0.bar = slot0:findTF("bar")
-	slot0.scrollList = slot0:findTF("Scroll View", slot0.tab)
-	slot0.content = slot0:findTF("Content", slot0.scrollList)
-	slot0.listTmpl = slot0:findTF("listitem", slot0.tab)
-	slot0.taskList = UIItemList.New(slot0.content, slot0.listTmpl)
-	slot0.finalTasks = {}
-	slot0.subtasks = {}
-	slot0.tabType = 0
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.bg = arg_3_0:findTF("AD")
+	arg_3_0.items = {}
+	arg_3_0.items[1] = arg_3_0:findTF("AD/Item1")
+	arg_3_0.items[2] = arg_3_0:findTF("AD/Item2")
+	arg_3_0.awardTF = arg_3_0:findTF("AD/award")
+	arg_3_0.battleBtn = arg_3_0:findTF("AD/battle_btn")
+	arg_3_0.shopBtn = arg_3_0:findTF("AD/exchange_btn")
+	arg_3_0.buildBtn = arg_3_0:findTF("AD/build_btn")
+	arg_3_0.tab = arg_3_0:findTF("tab")
+	arg_3_0.bar = arg_3_0:findTF("bar")
+	arg_3_0.scrollList = arg_3_0:findTF("Scroll View", arg_3_0.tab)
+	arg_3_0.content = arg_3_0:findTF("Content", arg_3_0.scrollList)
+	arg_3_0.listTmpl = arg_3_0:findTF("listitem", arg_3_0.tab)
+	arg_3_0.taskList = UIItemList.New(arg_3_0.content, arg_3_0.listTmpl)
+	arg_3_0.finalTasks = {}
+	arg_3_0.subtasks = {}
+	arg_3_0.tabType = 0
 end
 
-function slot0.OnFirstFlush(slot0)
-	slot0.finalTasks = Clone(slot0.activity:getConfig("config_client"))
+function var_0_0.OnFirstFlush(arg_4_0)
+	arg_4_0.finalTasks = Clone(arg_4_0.activity:getConfig("config_client"))
 
-	_.each(slot0.finalTasks, function (slot0)
-		if pg.task_data_template[slot0] and slot1.target_id then
-			table.insert(uv0.subtasks, Clone(slot2))
+	local var_4_0 = arg_4_0.finalTasks
+
+	_.each(var_4_0, function(arg_5_0)
+		local var_5_0 = pg.task_data_template[arg_5_0]
+		local var_5_1 = var_5_0 and var_5_0.target_id
+
+		if var_5_1 then
+			table.insert(arg_4_0.subtasks, Clone(var_5_1))
 		end
 	end)
-	setText(slot0:findTF("desc", slot0.bg), i18n("bismarck_chapter_desc"))
-	slot0:SubimtCompletedMission()
-	slot0:InitInteractable()
+	setText(arg_4_0:findTF("desc", arg_4_0.bg), i18n("bismarck_chapter_desc"))
+	arg_4_0:SubimtCompletedMission()
+	arg_4_0:InitInteractable()
 end
 
-function slot0.InitInteractable(slot0)
-	slot1 = getProxy(TaskProxy)
+function var_0_0.InitInteractable(arg_6_0)
+	local var_6_0 = getProxy(TaskProxy)
 
-	for slot5, slot6 in ipairs(slot0.finalTasks) do
-		slot7 = pg.task_data_template[slot6]
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.finalTasks) do
+		local var_6_1 = pg.task_data_template[iter_6_1]
+		local var_6_2 = arg_6_0.items[iter_6_0]
 
-		onButton(slot0, slot0.items[slot5], function ()
-			if uv0:getTaskVO(uv1):getTaskStatus() == 1 then
-				uv2:emit(ActivityMediator.ON_TASK_SUBMIT, slot0)
+		onButton(arg_6_0, var_6_2, function()
+			local var_7_0 = var_6_0:getTaskVO(iter_6_1)
+
+			if var_7_0:getTaskStatus() == 1 then
+				arg_6_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_7_0)
 
 				return
 			end
 
-			if uv2.tabType == uv3 then
+			if arg_6_0.tabType == iter_6_0 then
 				return
 			end
 
-			uv2.tabType = uv3
+			arg_6_0.tabType = iter_6_0
 
-			uv2:UpdateTab()
+			arg_6_0:UpdateTab()
 		end, SFX_PANEL)
 	end
 
-	onButton(slot0, slot0.battleBtn, function ()
-		uv0:emit(ActivityMediator.BATTLE_OPERA)
+	onButton(arg_6_0, arg_6_0.battleBtn, function()
+		arg_6_0:emit(ActivityMediator.BATTLE_OPERA)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.shopBtn, function ()
-		uv0:emit(ActivityMediator.GO_SHOPS_LAYER, {
+	onButton(arg_6_0, arg_6_0.shopBtn, function()
+		local var_9_0 = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function(arg_10_0)
+			return arg_10_0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
+		end)
+
+		arg_6_0:emit(ActivityMediator.GO_SHOPS_LAYER, {
 			warp = NewShopsScene.TYPE_ACTIVITY,
-			actId = _.detect(getProxy(ActivityProxy):getActivitiesByType(ActivityConst.ACTIVITY_TYPE_SHOP), function (slot0)
-				return slot0:getConfig("config_client").pt_id == pg.gameset.activity_res_id.key_value
-			end) and slot0.id
+			actId = var_9_0 and var_9_0.id
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.buildBtn, function ()
-		uv0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+	onButton(arg_6_0, arg_6_0.buildBtn, function()
+		arg_6_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
 			projectName = BuildShipScene.PROJECTS.ACTIVITY
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.bg, function ()
-		if uv0.tabType > 0 then
-			uv0.tabType = 0
+	onButton(arg_6_0, arg_6_0.bg, function()
+		if arg_6_0.tabType > 0 then
+			arg_6_0.tabType = 0
 
-			uv0:UpdateTab()
+			arg_6_0:UpdateTab()
 		end
 	end)
 end
 
-function slot0.OnUpdateFlush(slot0)
-	slot0:UpdateView()
-	slot0:UpdateTab()
+function var_0_0.OnUpdateFlush(arg_13_0)
+	arg_13_0:UpdateView()
+	arg_13_0:UpdateTab()
 end
 
-function slot0.UpdateView(slot0)
-	for slot5 = 1, #slot0.finalTasks do
-		slot6 = slot0.finalTasks[slot5]
-		slot8 = slot0.items[slot5]
+function var_0_0.UpdateView(arg_14_0)
+	local var_14_0 = getProxy(TaskProxy)
 
-		setActive(slot8, true)
+	for iter_14_0 = 1, #arg_14_0.finalTasks do
+		local var_14_1 = arg_14_0.finalTasks[iter_14_0]
+		local var_14_2 = pg.task_data_template[var_14_1]
+		local var_14_3 = arg_14_0.items[iter_14_0]
 
-		slot9 = pg.task_data_template[slot6].award_display[1]
+		setActive(var_14_3, true)
 
-		slot0:UpdateIcon(slot0:findTF("icon", slot8), slot9[1], slot9[2])
-		setActive(slot8:Find("active"), getProxy(TaskProxy):getTaskVO(slot6):getTaskStatus() == 0)
-		setActive(slot8:Find("finished"), slot11 == 1)
-		setActive(slot8:Find("achieved"), slot11 == 2)
-		setButtonEnabled(slot8, slot11 < 2)
+		local var_14_4 = var_14_2.award_display[1]
 
-		slot0.tabType = slot0.tabType == slot5 and slot11 == 2 and 0 or slot0.tabType
+		arg_14_0:UpdateIcon(arg_14_0:findTF("icon", var_14_3), var_14_4[1], var_14_4[2])
+
+		local var_14_5 = var_14_0:getTaskVO(var_14_1):getTaskStatus()
+
+		setActive(var_14_3:Find("active"), var_14_5 == 0)
+		setActive(var_14_3:Find("finished"), var_14_5 == 1)
+		setActive(var_14_3:Find("achieved"), var_14_5 == 2)
+		setButtonEnabled(var_14_3, var_14_5 < 2)
+
+		arg_14_0.tabType = arg_14_0.tabType == iter_14_0 and var_14_5 == 2 and 0 or arg_14_0.tabType
 	end
 
-	for slot5 = #slot0.finalTasks + 1, #slot0.items do
-		setActive(slot0.items[slot5], false)
+	for iter_14_1 = #arg_14_0.finalTasks + 1, #arg_14_0.items do
+		setActive(arg_14_0.items[iter_14_1], false)
 
-		slot0.tabType = slot0.tabType == slot5 and 0 or slot0.tabType
+		arg_14_0.tabType = arg_14_0.tabType == iter_14_1 and 0 or arg_14_0.tabType
 	end
 end
 
-function slot0.UpdateTab(slot0)
-	if slot0.tabType == 0 then
-		setActive(slot0.tab, false)
+function var_0_0.UpdateTab(arg_15_0)
+	if arg_15_0.tabType == 0 then
+		setActive(arg_15_0.tab, false)
 
 		return
 	end
 
-	slot2 = #slot0.subtasks[slot0.tabType]
+	local var_15_0 = arg_15_0.subtasks[arg_15_0.tabType]
+	local var_15_1 = #var_15_0
 
-	slot0.taskList:align(slot2)
+	arg_15_0.taskList:align(var_15_1)
 
-	slot3 = getProxy(TaskProxy)
+	local var_15_2 = getProxy(TaskProxy)
+	local var_15_3 = 0
 
-	for slot8 = 1, slot2 do
-		slot9 = slot0.content:GetChild(slot8 - 1)
+	for iter_15_0 = 1, var_15_1 do
+		local var_15_4 = arg_15_0.content:GetChild(iter_15_0 - 1)
 
-		setText(slot0:findTF("title/Text", slot9), string.format("Task-%02d", slot8))
+		setText(arg_15_0:findTF("title/Text", var_15_4), string.format("Task-%02d", iter_15_0))
 
-		slot11 = pg.task_data_template[slot1[slot8]]
+		local var_15_5 = var_15_0[iter_15_0]
+		local var_15_6 = pg.task_data_template[var_15_5]
+		local var_15_7 = tonumber(var_15_6.target_id)
+		local var_15_8 = var_0_0.TransformType[var_15_6.sub_type]
 
-		setActive(slot9:Find("tip2"), uv0.TransformType[slot11.sub_type] == DROP_TYPE_FURNITURE)
-		setActive(slot9:Find("tip"), slot13 == DROP_TYPE_SHIP)
+		setActive(var_15_4:Find("tip2"), var_15_8 == DROP_TYPE_FURNITURE)
+		setActive(var_15_4:Find("tip"), var_15_8 == DROP_TYPE_SHIP)
 
-		slot14 = false
-		slot15 = slot3:getTaskById(slot10) or slot3:getFinishTaskById(slot10)
+		local var_15_9 = false
+		local var_15_10 = var_15_2:getTaskById(var_15_5) or var_15_2:getFinishTaskById(var_15_5)
 
-		setActive(slot9:Find("completed"), defaultValue(slot15 and slot15:isFinish(), false))
-		setText(slot0:findTF("text", slot9), slot11.desc)
-		slot0:UpdateIcon(slot0:findTF("icon", slot9), slot13, tonumber(slot11.target_id))
+		setActive(var_15_4:Find("completed"), defaultValue(var_15_10 and var_15_10:isFinish(), false))
+		setText(arg_15_0:findTF("text", var_15_4), var_15_6.desc)
+		arg_15_0:UpdateIcon(arg_15_0:findTF("icon", var_15_4), var_15_8, var_15_7)
 
-		slot4 = 0 + (slot15 and slot15:isFinish() and 1 or 0)
+		var_15_3 = var_15_3 + (var_15_10 and var_15_10:isFinish() and 1 or 0)
 	end
 
-	setText(slot0:findTF("slider/progress", slot0.tab), string.format("[%d/%d]", slot4, slot2))
+	setText(arg_15_0:findTF("slider/progress", arg_15_0.tab), string.format("[%d/%d]", var_15_3, var_15_1))
 
-	slot0.scrollList:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
-	slot5 = slot0.tab.transform.anchoredPosition
-	slot5.x = uv0.tabPos[slot0.tabType]
+	arg_15_0.scrollList:GetComponent(typeof(ScrollRect)).verticalNormalizedPosition = 1
 
-	setAnchoredPosition(slot0.tab, slot5)
+	local var_15_11 = arg_15_0.tab.transform.anchoredPosition
+	local var_15_12 = arg_15_0.tab.sizeDelta
 
-	slot8 = slot0.bar.sizeDelta
-	slot8.x = slot0._tf.sizeDelta.x - slot0.bar.anchoredPosition.x - slot5.x - slot0.tab.sizeDelta.x
-	slot0.bar.sizeDelta = slot8
+	var_15_11.x = var_0_0.tabPos[arg_15_0.tabType]
 
-	setActive(slot0.tab, true)
+	setAnchoredPosition(arg_15_0.tab, var_15_11)
+
+	local var_15_13
+
+	var_15_13.x, var_15_13 = arg_15_0._tf.sizeDelta.x - arg_15_0.bar.anchoredPosition.x - var_15_11.x - var_15_12.x, arg_15_0.bar.sizeDelta
+	arg_15_0.bar.sizeDelta = var_15_13
+
+	setActive(arg_15_0.tab, true)
 end
 
-function slot0.UpdateIcon(slot0, slot1, slot2, slot3)
-	if uv0.IconShowFunc[slot2] then
-		uv0.IconShowFunc[slot2](slot1, slot3)
+function var_0_0.UpdateIcon(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	if var_0_0.IconShowFunc[arg_16_2] then
+		var_0_0.IconShowFunc[arg_16_2](arg_16_1, arg_16_3)
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_17_0)
+	return
 end
 
-function slot0.SubimtCompletedMission(slot0)
-	slot1 = getProxy(TaskProxy)
+function var_0_0.SubimtCompletedMission(arg_18_0)
+	local var_18_0 = getProxy(TaskProxy)
 
-	for slot5, slot6 in pairs(slot0.subtasks) do
-		for slot10, slot11 in pairs(slot6) do
-			if slot1:getTaskById(slot11) and slot12:isFinish() then
-				slot0:emit(ActivityMediator.ON_TASK_SUBMIT, slot12)
+	for iter_18_0, iter_18_1 in pairs(arg_18_0.subtasks) do
+		for iter_18_2, iter_18_3 in pairs(iter_18_1) do
+			local var_18_1 = var_18_0:getTaskById(iter_18_3)
+
+			if var_18_1 and var_18_1:isFinish() then
+				arg_18_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_18_1)
 			end
 		end
 	end
 end
 
-return slot0
+return var_0_0

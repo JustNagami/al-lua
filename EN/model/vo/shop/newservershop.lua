@@ -1,87 +1,95 @@
-slot0 = class("NewServerShop", import("..BaseVO"))
+﻿local var_0_0 = class("NewServerShop", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.startTime = slot1.start_time
-	slot0.stopTime = slot1.stop_time
-	slot0.goods = {}
-	slot0.phases = {}
-	slot0.activityId = slot1.id
-	slot2 = {
-		[slot7.id] = NewServerCommodity.New(slot7)
-	}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.startTime = arg_1_1.start_time
+	arg_1_0.stopTime = arg_1_1.stop_time
+	arg_1_0.goods = {}
+	arg_1_0.phases = {}
+	arg_1_0.activityId = arg_1_1.id
 
-	for slot6, slot7 in ipairs(slot1.goods) do
-		-- Nothing
+	local var_1_0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.goods) do
+		var_1_0[iter_1_1.id] = NewServerCommodity.New(iter_1_1)
 	end
 
-	slot4 = {
-		[slot9] = true
-	}
-	slot8 = "config_data"
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(arg_1_0.activityId)
+	local var_1_2 = {}
 
-	for slot8, slot9 in ipairs(getProxy(ActivityProxy):getActivityById(slot0.activityId):getConfig(slot8)) do
-		-- Nothing
+	for iter_1_2, iter_1_3 in ipairs(var_1_1:getConfig("config_data")) do
+		var_1_2[iter_1_3] = true
 	end
 
-	for slot9, slot10 in pairs(pg.newserver_shop_template.get_id_list_by_unlock_time) do
-		slot0.goods[slot9] = slot0:WrapPhaseGoods(slot10, slot2, slot4)
+	local var_1_3 = pg.newserver_shop_template.get_id_list_by_unlock_time
 
-		table.insert(slot0.phases, slot9)
+	for iter_1_4, iter_1_5 in pairs(var_1_3) do
+		local var_1_4 = arg_1_0:WrapPhaseGoods(iter_1_5, var_1_0, var_1_2)
+
+		arg_1_0.goods[iter_1_4] = var_1_4
+
+		table.insert(arg_1_0.phases, iter_1_4)
 	end
 end
 
-function slot0.GetPtId(slot0)
-	return pg.newserver_shop_template[getProxy(ActivityProxy):getActivityById(slot0.activityId):getConfig("config_data")[1]].resource_type
+function var_0_0.GetPtId(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivityById(arg_2_0.activityId):getConfig("config_data")
+
+	return pg.newserver_shop_template[var_2_0[1]].resource_type
 end
 
-function slot0.WrapPhaseGoods(slot0, slot1, slot2, slot3)
-	for slot8, slot9 in ipairs(slot1) do
-		if slot3[slot9] then
-			slot11 = slot2[slot9] or NewServerCommodity.New({
-				id = slot9
+function var_0_0.WrapPhaseGoods(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = {}
+
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		if arg_3_3[iter_3_1] then
+			local var_3_1 = arg_3_2[iter_3_1] or NewServerCommodity.New({
+				id = iter_3_1
 			})
+
+			var_3_0[var_3_1.id] = var_3_1
 		end
 	end
 
-	return {
-		[slot11.id] = slot11
-	}
+	return var_3_0
 end
 
-function slot0.GetStartTime(slot0)
-	return slot0.startTime
+function var_0_0.GetStartTime(arg_4_0)
+	return arg_4_0.startTime
 end
 
-function slot0.GetEndTime(slot0)
-	return slot0.stopTime
+function var_0_0.GetEndTime(arg_5_0)
+	return arg_5_0.stopTime
 end
 
-function slot0.GetCommodityById(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.goods) do
-		for slot10, slot11 in pairs(slot6) do
-			if slot10 == slot1 then
-				return slot11
+function var_0_0.GetCommodityById(arg_6_0, arg_6_1)
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.goods) do
+		for iter_6_2, iter_6_3 in pairs(iter_6_1) do
+			if iter_6_2 == arg_6_1 then
+				return iter_6_3
 			end
 		end
 	end
 end
 
-function slot0.GetOpeningGoodsList(slot0, slot1)
-	slot2 = {}
+function var_0_0.GetOpeningGoodsList(arg_7_0, arg_7_1)
+	local var_7_0 = {}
+	local var_7_1 = arg_7_0.goods[arg_7_1]
 
-	for slot7, slot8 in pairs(slot0.goods[slot1]) do
-		table.insert(slot2, slot8)
+	for iter_7_0, iter_7_1 in pairs(var_7_1) do
+		table.insert(var_7_0, iter_7_1)
 	end
 
-	return slot2
+	return var_7_0
 end
 
-function slot0.IsOpenPhase(slot0, slot1)
-	return slot0:GetStartTime() + slot0.phases[slot1] <= pg.TimeMgr.GetInstance():GetServerTime()
+function var_0_0.IsOpenPhase(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0.phases[arg_8_1]
+
+	return arg_8_0:GetStartTime() + var_8_0 <= pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function slot0.GetPhases(slot0)
-	return slot0.phases
+function var_0_0.GetPhases(arg_9_0)
+	return arg_9_0.phases
 end
 
-return slot0
+return var_0_0

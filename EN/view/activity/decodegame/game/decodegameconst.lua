@@ -1,5 +1,6 @@
-slot0 = class("DecodeGameConst")
-slot0.DISORDER = {
+﻿local var_0_0 = class("DecodeGameConst")
+
+var_0_0.DISORDER = {
 	11,
 	1,
 	10,
@@ -22,28 +23,28 @@ slot0.DISORDER = {
 	14,
 	16
 }
-slot0.START_POS = {
+var_0_0.START_POS = {
 	-336.8,
 	-93.6
 }
-slot0.BLOCK_SIZE = {
+var_0_0.BLOCK_SIZE = {
 	170,
 	170
 }
-slot0.MAP_ROW = 4
-slot0.MAP_COLUMN = 5
-slot0.MAP_NAME_OFFSET = 5
-slot0.PROGRESS2FILLAMOUMT = 0.0125
-slot0.PROGRESS2ANGLE = 4.5
-slot0.OPEN_DOOR_DELAY = 0
-slot0.MAX_MAP_COUNT = 3
-slot0.DECODE_MAP_TIME = 0.5
-slot0.SCAN_MAP_TIME = 1
-slot0.SWITCH_MAP = 0.5
-slot0.SCAN_GRID_TIME = 1
-slot0.SWITCH_TO_DECODE_TIME = 0.4
-slot0.GET_AWARD_ANIM_TIME = 0.7
-slot0.PASSWORDS = {
+var_0_0.MAP_ROW = 4
+var_0_0.MAP_COLUMN = 5
+var_0_0.MAP_NAME_OFFSET = 5
+var_0_0.PROGRESS2FILLAMOUMT = 0.0125
+var_0_0.PROGRESS2ANGLE = 4.5
+var_0_0.OPEN_DOOR_DELAY = 0
+var_0_0.MAX_MAP_COUNT = 3
+var_0_0.DECODE_MAP_TIME = 0.5
+var_0_0.SCAN_MAP_TIME = 1
+var_0_0.SWITCH_MAP = 0.5
+var_0_0.SCAN_GRID_TIME = 1
+var_0_0.SWITCH_TO_DECODE_TIME = 0.4
+var_0_0.GET_AWARD_ANIM_TIME = 0.7
+var_0_0.PASSWORDS = {
 	"4",
 	"8",
 	"-",
@@ -65,7 +66,7 @@ slot0.PASSWORDS = {
 	"4",
 	"1"
 }
-slot0.PASSWORD = {
+var_0_0.PASSWORD = {
 	{
 		2,
 		2
@@ -103,7 +104,7 @@ slot0.PASSWORD = {
 		1
 	}
 }
-slot0.MAPS_PASSWORD = {
+var_0_0.MAPS_PASSWORD = {
 	{
 		{
 			3,
@@ -147,30 +148,31 @@ slot0.MAPS_PASSWORD = {
 		}
 	}
 }
-slot0.AWARD = {
+var_0_0.AWARD = {
 	3,
 	980,
 	1
 }
-slot0.STORYID = "MAOZIPT"
-slot0.UNLOCK_STORYID = {
-	[20.0] = "LIMINGZHIAN1",
-	[40.0] = "LIMINGZHIAN2",
-	[60.0] = "LIMINGZHIAN3"
+var_0_0.STORYID = "MAOZIPT"
+var_0_0.UNLOCK_STORYID = {
+	[20] = "LIMINGZHIAN1",
+	[40] = "LIMINGZHIAN2",
+	[60] = "LIMINGZHIAN3"
 }
-slot0.LAST_STORYID = "LIMINGZHIAN4"
+var_0_0.LAST_STORYID = "LIMINGZHIAN4"
 
-function slot0.Vect2Index(slot0, slot1)
-	return (slot0 - 1) * DecodeGameConst.MAP_COLUMN + slot1
+function var_0_0.Vect2Index(arg_1_0, arg_1_1)
+	return (arg_1_0 - 1) * DecodeGameConst.MAP_COLUMN + arg_1_1
 end
 
-function slot0.Index2Vect(slot0)
-	slot1 = math.ceil(slot0 / uv0.MAP_COLUMN)
+function var_0_0.Index2Vect(arg_2_0)
+	local var_2_0 = math.ceil(arg_2_0 / var_0_0.MAP_COLUMN)
+	local var_2_1 = arg_2_0 - (var_2_0 - 1) * var_0_0.MAP_COLUMN
 
-	return slot1, slot0 - (slot1 - 1) * uv0.MAP_COLUMN
+	return var_2_0, var_2_1
 end
 
-slot0.HELP_BGS = {
+var_0_0.HELP_BGS = {
 	{
 		"decode_helper_1",
 		{
@@ -205,15 +207,15 @@ slot0.HELP_BGS = {
 		}
 	}
 }
-slot0.OPEN_DOOR_VOICE = ""
-slot0.SWITCH_MAP_VOCIE = "event:/ui/dg-youanniu"
-slot0.PRESS_DOWN_PASSWORDBTN = "event:/ui/dg-xiaanniu"
-slot0.PRESS_UP_PASSWORDBTN = "event:/ui/dg-xiaanniu"
-slot0.SCAN_MAP_VOICE = ""
-slot0.INCREASE_PROGRESS_VOICE = ""
-slot0.PASSWORD_IS_RIGHT_VOICE = "event:/ui/dg-zhengque"
-slot0.PASSWORD_IS_FALSE_VOICE = "event:/ui/dg-cuowu"
-slot0.INCREASE_PASSWORD_PROGRESS_VOICE = ""
-slot0.GET_AWARD_DONE_VOICE = "event:/ui/dg-jiangli"
+var_0_0.OPEN_DOOR_VOICE = ""
+var_0_0.SWITCH_MAP_VOCIE = "event:/ui/dg-youanniu"
+var_0_0.PRESS_DOWN_PASSWORDBTN = "event:/ui/dg-xiaanniu"
+var_0_0.PRESS_UP_PASSWORDBTN = "event:/ui/dg-xiaanniu"
+var_0_0.SCAN_MAP_VOICE = ""
+var_0_0.INCREASE_PROGRESS_VOICE = ""
+var_0_0.PASSWORD_IS_RIGHT_VOICE = "event:/ui/dg-zhengque"
+var_0_0.PASSWORD_IS_FALSE_VOICE = "event:/ui/dg-cuowu"
+var_0_0.INCREASE_PASSWORD_PROGRESS_VOICE = ""
+var_0_0.GET_AWARD_DONE_VOICE = "event:/ui/dg-jiangli"
 
-return slot0
+return var_0_0

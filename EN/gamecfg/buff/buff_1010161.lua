@@ -1,4 +1,35 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffHPLink",
+			trigger = {
+				"onTakeDamage",
+				"onRemove"
+			},
+			arg_list = {
+				number = 0.5,
+				restoreRatio = 2000,
+				absorb = 0.04
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 1010163,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -267,36 +298,5 @@ return {
 	stack = 1,
 	id = 1010161,
 	icon = 10161,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffHPLink",
-			trigger = {
-				"onTakeDamage",
-				"onRemove"
-			},
-			arg_list = {
-				number = 0.5,
-				restoreRatio = 2000,
-				absorb = 0.04
-			}
-		},
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onRemove"
-			},
-			arg_list = {
-				buff_id = 1010163,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

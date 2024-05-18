@@ -1,1 +1,1 @@
-return class("DaofengMainRePage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("DaofengMainRePage", import(".TemplatePage.PreviewTemplatePage")))

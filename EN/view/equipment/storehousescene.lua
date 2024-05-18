@@ -1,1301 +1,1370 @@
-slot0 = class("StoreHouseScene", import("view.base.BaseUI"))
-slot1 = 1
-slot2 = 0
-slot3 = 1
-slot4 = 2
-slot5 = 1
-slot6 = 2
+﻿local var_0_0 = class("StoreHouseScene", import("view.base.BaseUI"))
+local var_0_1 = 1
+local var_0_2 = 0
+local var_0_3 = 1
+local var_0_4 = 2
+local var_0_5 = 1
+local var_0_6 = 2
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "StoreHouseUI"
 end
 
-function slot0.setEquipments(slot0, slot1)
-	slot0.equipmentVOs = slot1
+function var_0_0.setEquipments(arg_2_0, arg_2_1)
+	arg_2_0.equipmentVOs = arg_2_1
 
-	slot0:setEquipmentByIds(slot1)
+	arg_2_0:setEquipmentByIds(arg_2_1)
 end
 
-function slot0.setEquipmentByIds(slot0, slot1)
-	slot0.equipmentVOByIds = {}
+function var_0_0.setEquipmentByIds(arg_3_0, arg_3_1)
+	arg_3_0.equipmentVOByIds = {}
 
-	for slot5, slot6 in pairs(slot1) do
-		if not slot6.isSkin then
-			slot0.equipmentVOByIds[slot6.id] = slot6
+	for iter_3_0, iter_3_1 in pairs(arg_3_1) do
+		if not iter_3_1.isSkin then
+			arg_3_0.equipmentVOByIds[iter_3_1.id] = iter_3_1
 		end
 	end
 end
 
-slot7 = require("view.equipment.EquipmentSortCfg")
-slot8 = require("view.equipment.SpWeaponSortCfg")
+local var_0_7 = require("view.equipment.EquipmentSortCfg")
+local var_0_8 = require("view.equipment.SpWeaponSortCfg")
 
-function slot0.init(slot0)
-	slot0.filterEquipWaitting = 0
-	slot1 = slot0.contextData
-	slot0.topItems = slot0:findTF("topItems")
-	slot0.equipmentView = slot0:findTF("equipment_scrollview")
-	slot0.blurPanel = slot0:findTF("blur_panel")
-	slot0.topPanel = slot0:findTF("adapt/top", slot0.blurPanel)
-	slot0.indexBtn = slot0:findTF("buttons/index_button", slot0.topPanel)
-	slot0.sortBtn = slot0:findTF("buttons/sort_button", slot0.topPanel)
-	slot0.sortPanel = slot0:findTF("sort", slot0.topItems)
-	slot0.sortContain = slot0:findTF("adapt/mask/panel", slot0.sortPanel)
-	slot0.sortTpl = slot0:findTF("tpl", slot0.sortContain)
+function var_0_0.init(arg_4_0)
+	arg_4_0.filterEquipWaitting = 0
 
-	setActive(slot0.sortTpl, false)
+	local var_4_0 = arg_4_0.contextData
 
-	slot0.equipSkinFilteBtn = slot0:findTF("buttons/EquipSkinFilteBtn", slot0.topPanel)
-	slot0.itemView = slot0:findTF("item_scrollview")
-	slot2 = nil
-	slot2 = (NotchAdapt.CheckNotchRatio == 2 or not getProxy(SettingsProxy):CheckLargeScreen()) and slot0.itemView.rect.width > 2000 or NotchAdapt.CheckNotchRatio >= 2
-	slot0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = slot2 and 8 or 7
-	slot0.itemView:Find("item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = slot2 and 8 or 7
-	slot0.decBtn = findTF(slot0.topPanel, "buttons/dec_btn")
-	slot0.sortImgAsc = findTF(slot0.decBtn, "asc")
-	slot0.sortImgDec = findTF(slot0.decBtn, "desc")
-	slot0.equipmentToggle = slot0._tf:Find("blur_panel/adapt/left_length/frame/toggle_root")
+	arg_4_0.topItems = arg_4_0:findTF("topItems")
+	arg_4_0.equipmentView = arg_4_0:findTF("equipment_scrollview")
+	arg_4_0.blurPanel = arg_4_0:findTF("blur_panel")
+	arg_4_0.topPanel = arg_4_0:findTF("adapt/top", arg_4_0.blurPanel)
+	arg_4_0.indexBtn = arg_4_0:findTF("buttons/index_button", arg_4_0.topPanel)
+	arg_4_0.sortBtn = arg_4_0:findTF("buttons/sort_button", arg_4_0.topPanel)
+	arg_4_0.sortPanel = arg_4_0:findTF("sort", arg_4_0.topItems)
+	arg_4_0.sortContain = arg_4_0:findTF("adapt/mask/panel", arg_4_0.sortPanel)
+	arg_4_0.sortTpl = arg_4_0:findTF("tpl", arg_4_0.sortContain)
 
-	setActive(slot0.equipmentToggle, false)
+	setActive(arg_4_0.sortTpl, false)
 
-	slot0.filterBusyToggle = slot0._tf:Find("blur_panel/adapt/left_length/frame/toggle_equip")
+	arg_4_0.equipSkinFilteBtn = arg_4_0:findTF("buttons/EquipSkinFilteBtn", arg_4_0.topPanel)
+	arg_4_0.itemView = arg_4_0:findTF("item_scrollview")
 
-	setActive(slot0.filterBusyToggle, false)
+	local var_4_1
+	local var_4_2 = getProxy(SettingsProxy)
 
-	slot0.designTabRoot = slot0._tf:Find("blur_panel/adapt/left_length/frame/toggle_design")
+	if NotchAdapt.CheckNotchRatio == 2 or not var_4_2:CheckLargeScreen() then
+		var_4_1 = arg_4_0.itemView.rect.width > 2000
+	else
+		var_4_1 = NotchAdapt.CheckNotchRatio >= 2
+	end
 
-	setActive(slot0.designTabRoot, false)
+	arg_4_0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var_4_1 and 8 or 7
+	arg_4_0.itemView:Find("item_grid"):GetComponent(typeof(GridLayoutGroup)).constraintCount = var_4_1 and 8 or 7
+	arg_4_0.decBtn = findTF(arg_4_0.topPanel, "buttons/dec_btn")
+	arg_4_0.sortImgAsc = findTF(arg_4_0.decBtn, "asc")
+	arg_4_0.sortImgDec = findTF(arg_4_0.decBtn, "desc")
+	arg_4_0.equipmentToggle = arg_4_0._tf:Find("blur_panel/adapt/left_length/frame/toggle_root")
 
-	slot0.designTabs = CustomIndexLayer.Clone2Full(slot0.designTabRoot, 2)
-	slot0.bottomBack = slot0:findTF("adapt/bottom_back", slot0.topItems)
-	slot0.bottomPanel = slot0:findTF("types", slot0.bottomBack)
-	slot0.materialToggle = slot0.bottomPanel:Find("material")
-	slot0.weaponToggle = slot0.bottomPanel:Find("weapon")
-	slot0.designToggle = slot0.bottomPanel:Find("design")
-	slot0.capacityTF = slot0:findTF("bottom_left/tip/capcity/Text", slot0.bottomBack)
-	slot0.tipTF = slot0:findTF("bottom_left/tip", slot0.bottomBack)
-	slot0.tip = slot0.tipTF:Find("label")
-	slot0.helpBtn = slot0:findTF("adapt/help_btn", slot0.topItems)
+	setActive(arg_4_0.equipmentToggle, false)
 
-	setActive(slot0.helpBtn, true)
+	arg_4_0.filterBusyToggle = arg_4_0._tf:Find("blur_panel/adapt/left_length/frame/toggle_equip")
 
-	slot0.backBtn = slot0:findTF("blur_panel/adapt/top/back_btn")
-	slot0.selectedMin = defaultValue(slot1.selectedMin, 1)
-	slot0.selectedMax = defaultValue(slot1.selectedMax, pg.gameset.equip_select_limit.key_value or 0)
-	slot0.selectedIds = Clone(slot1.selectedIds or {})
-	slot0.checkEquipment = slot1.onEquipment or function (slot0, slot1, slot2)
+	setActive(arg_4_0.filterBusyToggle, false)
+
+	arg_4_0.designTabRoot = arg_4_0._tf:Find("blur_panel/adapt/left_length/frame/toggle_design")
+
+	setActive(arg_4_0.designTabRoot, false)
+
+	arg_4_0.designTabs = CustomIndexLayer.Clone2Full(arg_4_0.designTabRoot, 2)
+	arg_4_0.bottomBack = arg_4_0:findTF("adapt/bottom_back", arg_4_0.topItems)
+	arg_4_0.bottomPanel = arg_4_0:findTF("types", arg_4_0.bottomBack)
+	arg_4_0.materialToggle = arg_4_0.bottomPanel:Find("material")
+	arg_4_0.weaponToggle = arg_4_0.bottomPanel:Find("weapon")
+	arg_4_0.designToggle = arg_4_0.bottomPanel:Find("design")
+	arg_4_0.capacityTF = arg_4_0:findTF("bottom_left/tip/capcity/Text", arg_4_0.bottomBack)
+	arg_4_0.tipTF = arg_4_0:findTF("bottom_left/tip", arg_4_0.bottomBack)
+	arg_4_0.tip = arg_4_0.tipTF:Find("label")
+	arg_4_0.helpBtn = arg_4_0:findTF("adapt/help_btn", arg_4_0.topItems)
+
+	setActive(arg_4_0.helpBtn, true)
+
+	arg_4_0.backBtn = arg_4_0:findTF("blur_panel/adapt/top/back_btn")
+	arg_4_0.selectedMin = defaultValue(var_4_0.selectedMin, 1)
+	arg_4_0.selectedMax = defaultValue(var_4_0.selectedMax, pg.gameset.equip_select_limit.key_value or 0)
+	arg_4_0.selectedIds = Clone(var_4_0.selectedIds or {})
+	arg_4_0.checkEquipment = var_4_0.onEquipment or function(arg_5_0, arg_5_1, arg_5_2)
 		return true
 	end
-	slot0.onSelected = slot1.onSelected or function ()
+	arg_4_0.onSelected = var_4_0.onSelected or function()
 		warning("not implemented.")
 	end
-	slot0.BatchDisposeBtn = slot0:findTF("dispos", slot0.bottomPanel)
+	arg_4_0.BatchDisposeBtn = arg_4_0:findTF("dispos", arg_4_0.bottomPanel)
 
-	if not slot0.BatchDisposeBtn then
-		slot0.BatchDisposeBtn = slot0:findTF("dispos", slot0.bottomBack)
+	if not arg_4_0.BatchDisposeBtn then
+		arg_4_0.BatchDisposeBtn = arg_4_0:findTF("dispos", arg_4_0.bottomBack)
 	end
 
-	slot0.selectPanel = slot0:findTF("adapt/select_panel", slot0.topItems)
+	arg_4_0.selectPanel = arg_4_0:findTF("adapt/select_panel", arg_4_0.topItems)
 
-	setActive(slot0.selectPanel, true)
-	setAnchoredPosition(slot0.selectPanel, {
+	setActive(arg_4_0.selectPanel, true)
+	setAnchoredPosition(arg_4_0.selectPanel, {
 		y = -124
 	})
 
-	slot0.selectTransformPanel = slot0:findTF("adapt/select_transform_panel", slot0.topItems)
+	arg_4_0.selectTransformPanel = arg_4_0:findTF("adapt/select_transform_panel", arg_4_0.topItems)
 
-	setActive(slot0.selectTransformPanel, false)
+	setActive(arg_4_0.selectTransformPanel, false)
 
-	slot0.listEmptyTF = slot0:findTF("empty")
+	arg_4_0.listEmptyTF = arg_4_0:findTF("empty")
 
-	setActive(slot0.listEmptyTF, false)
+	setActive(arg_4_0.listEmptyTF, false)
 
-	slot0.listEmptyTxt = slot0:findTF("Text", slot0.listEmptyTF)
-	slot0.destroyConfirmView = DestroyConfirmView.New(slot0.topItems, slot0.event)
-	slot0.assignedItemView = AssignedItemView.New(slot0.topItems, slot0.event)
-	slot0.blueprintAssignedItemView = BlueprintAssignedItemView.New(slot0.topItems, slot0.event)
-	slot0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(slot0.topItems, slot0.event)
-	slot0.isEquipingOn = false
-	slot0.msgBox = SelectSkinMsgbox.New(slot0._tf, slot0.event)
+	arg_4_0.listEmptyTxt = arg_4_0:findTF("Text", arg_4_0.listEmptyTF)
+	arg_4_0.destroyConfirmView = DestroyConfirmView.New(arg_4_0.topItems, arg_4_0.event)
+	arg_4_0.assignedItemView = AssignedItemView.New(arg_4_0.topItems, arg_4_0.event)
+	arg_4_0.blueprintAssignedItemView = BlueprintAssignedItemView.New(arg_4_0.topItems, arg_4_0.event)
+	arg_4_0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(arg_4_0.topItems, arg_4_0.event)
+	arg_4_0.isEquipingOn = false
+	arg_4_0.msgBox = SelectSkinMsgbox.New(arg_4_0._tf, arg_4_0.event)
 end
 
-function slot0.setEquipment(slot0, slot1)
-	slot2 = #slot0.equipmentVOs + 1
+function var_0_0.setEquipment(arg_7_0, arg_7_1)
+	local var_7_0 = #arg_7_0.equipmentVOs + 1
 
-	for slot6, slot7 in ipairs(slot0.equipmentVOs) do
-		if not slot7.shipId and slot7.id == slot1.id then
-			slot2 = slot6
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.equipmentVOs) do
+		if not iter_7_1.shipId and iter_7_1.id == arg_7_1.id then
+			var_7_0 = iter_7_0
 
 			break
 		end
 	end
 
-	if slot1.count > 0 then
-		slot0.equipmentVOs[slot2] = slot1
-		slot0.equipmentVOByIds[slot1.id] = slot1
+	if arg_7_1.count > 0 then
+		arg_7_0.equipmentVOs[var_7_0] = arg_7_1
+		arg_7_0.equipmentVOByIds[arg_7_1.id] = arg_7_1
 	else
-		table.remove(slot0.equipmentVOs, slot2)
+		table.remove(arg_7_0.equipmentVOs, var_7_0)
 
-		slot0.equipmentVOByIds[slot1.id] = nil
+		arg_7_0.equipmentVOByIds[arg_7_1.id] = nil
 	end
 end
 
-function slot0.setEquipmentUpdate(slot0)
-	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
-		slot0:filterEquipment()
-		slot0:updateCapacity()
+function var_0_0.setEquipmentUpdate(arg_8_0)
+	if arg_8_0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
+		arg_8_0:filterEquipment()
+		arg_8_0:updateCapacity()
 	end
 end
 
-function slot0.addShipEquipment(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.equipmentVOs) do
-		if EquipmentProxy.SameEquip(slot6, slot1) then
-			slot0.equipmentVOs[slot5] = slot1
+function var_0_0.addShipEquipment(arg_9_0, arg_9_1)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.equipmentVOs) do
+		if EquipmentProxy.SameEquip(iter_9_1, arg_9_1) then
+			arg_9_0.equipmentVOs[iter_9_0] = arg_9_1
 
 			return
 		end
 	end
 
-	table.insert(slot0.equipmentVOs, slot1)
+	table.insert(arg_9_0.equipmentVOs, arg_9_1)
 end
 
-function slot0.removeShipEquipment(slot0, slot1)
-	for slot5 = #slot0.equipmentVOs, 1, -1 do
-		if EquipmentProxy.SameEquip(slot0.equipmentVOs[slot5], slot1) then
-			table.remove(slot0.equipmentVOs, slot5)
+function var_0_0.removeShipEquipment(arg_10_0, arg_10_1)
+	for iter_10_0 = #arg_10_0.equipmentVOs, 1, -1 do
+		local var_10_0 = arg_10_0.equipmentVOs[iter_10_0]
+
+		if EquipmentProxy.SameEquip(var_10_0, arg_10_1) then
+			table.remove(arg_10_0.equipmentVOs, iter_10_0)
 		end
 	end
 end
 
-function slot0.setEquipmentSkin(slot0, slot1)
-	slot2 = true
+function var_0_0.setEquipmentSkin(arg_11_0, arg_11_1)
+	local var_11_0 = true
 
-	for slot6, slot7 in pairs(slot0.equipmentVOs) do
-		if slot7.id == slot1.id and slot7.isSkin then
-			slot0.equipmentVOs[slot6] = {
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.equipmentVOs) do
+		if iter_11_1.id == arg_11_1.id and iter_11_1.isSkin then
+			arg_11_0.equipmentVOs[iter_11_0] = {
 				isSkin = true,
-				id = slot1.id,
-				count = slot1.count
+				id = arg_11_1.id,
+				count = arg_11_1.count
 			}
-			slot2 = false
+			var_11_0 = false
 		end
 	end
 
-	if slot2 then
-		table.insert(slot0.equipmentVOs, {
+	if var_11_0 then
+		table.insert(arg_11_0.equipmentVOs, {
 			isSkin = true,
-			id = slot1.id,
-			count = slot1.count
+			id = arg_11_1.id,
+			count = arg_11_1.count
 		})
 	end
 end
 
-function slot0.setEquipmentSkinUpdate(slot0)
-	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
-		slot0:filterEquipment()
-		slot0:updateCapacity()
+function var_0_0.setEquipmentSkinUpdate(arg_12_0)
+	if arg_12_0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
+		arg_12_0:filterEquipment()
+		arg_12_0:updateCapacity()
 	end
 end
 
-function slot0.SetSpWeapons(slot0, slot1)
-	slot0.spweaponVOs = slot1
+function var_0_0.SetSpWeapons(arg_13_0, arg_13_1)
+	arg_13_0.spweaponVOs = arg_13_1
 end
 
-function slot0.SetSpWeaponUpdate(slot0)
-	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and slot0.page == uv0 then
-		slot0:filterEquipment()
-		slot0:UpdateSpweaponCapacity()
-	elseif slot0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN and slot0.contextData.designPage == uv1 then
-		slot0:UpdateSpweaponCapacity()
+function var_0_0.SetSpWeaponUpdate(arg_14_0)
+	if arg_14_0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and arg_14_0.page == var_0_4 then
+		arg_14_0:filterEquipment()
+		arg_14_0:UpdateSpweaponCapacity()
+	elseif arg_14_0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN and arg_14_0.contextData.designPage == var_0_6 then
+		arg_14_0:UpdateSpweaponCapacity()
 	end
 end
 
-function slot0.didEnter(slot0)
-	setText(slot0:findTF("tip", slot0.selectPanel), i18n("equipment_select_device_destroy_tip"))
-	setActive(slot0:findTF("adapt/stamp", slot0.topItems), getProxy(TaskProxy):mingshiTouchFlagEnabled())
-	onButton(slot0, slot0:findTF("adapt/stamp", slot0.topItems), function ()
+function var_0_0.didEnter(arg_15_0)
+	setText(arg_15_0:findTF("tip", arg_15_0.selectPanel), i18n("equipment_select_device_destroy_tip"))
+	setActive(arg_15_0:findTF("adapt/stamp", arg_15_0.topItems), getProxy(TaskProxy):mingshiTouchFlagEnabled())
+	onButton(arg_15_0, arg_15_0:findTF("adapt/stamp", arg_15_0.topItems), function()
 		getProxy(TaskProxy):dealMingshiTouchFlag(2)
 	end, SFX_CONFIRM)
-	onButton(slot0, slot0.helpBtn, function ()
-		slot0 = nil
+	onButton(arg_15_0, arg_15_0.helpBtn, function()
+		local var_17_0
 
-		if uv0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
-			if uv0.page == uv1 then
-				slot0 = pg.gametip.help_equipment.tip
-			elseif uv0.page == uv2 then
-				slot0 = pg.gametip.help_equipment_skin.tip
-			elseif uv0.page == uv3 then
-				slot0 = pg.gametip.spweapon_help_storage.tip
+		if arg_15_0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON then
+			if arg_15_0.page == var_0_2 then
+				var_17_0 = pg.gametip.help_equipment.tip
+			elseif arg_15_0.page == var_0_3 then
+				var_17_0 = pg.gametip.help_equipment_skin.tip
+			elseif arg_15_0.page == var_0_4 then
+				var_17_0 = pg.gametip.spweapon_help_storage.tip
 			end
-		elseif uv0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN then
-			if uv0.contextData.designPage == uv4 then
-				slot0 = pg.gametip.help_equipment.tip
-			elseif uv0.contextData.designPage == uv5 then
-				slot0 = pg.gametip.spweapon_help_storage.tip
+		elseif arg_15_0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN then
+			if arg_15_0.contextData.designPage == var_0_5 then
+				var_17_0 = pg.gametip.help_equipment.tip
+			elseif arg_15_0.contextData.designPage == var_0_6 then
+				var_17_0 = pg.gametip.spweapon_help_storage.tip
 			end
 		end
 
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
-			helps = slot0
+			helps = var_17_0
 		})
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.equipmentToggle:Find("equipment"), function (slot0)
-		if slot0 then
-			uv0.page = uv1
+	onToggle(arg_15_0, arg_15_0.equipmentToggle:Find("equipment"), function(arg_18_0)
+		if arg_18_0 then
+			arg_15_0.page = var_0_2
 
-			uv0:UpdateWeaponWrapButtons()
-			uv0:filterEquipment()
+			arg_15_0:UpdateWeaponWrapButtons()
+			arg_15_0:filterEquipment()
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.equipmentToggle:Find("skin"), function (slot0)
-		if slot0 then
-			uv0.page = uv1
+	onToggle(arg_15_0, arg_15_0.equipmentToggle:Find("skin"), function(arg_19_0)
+		if arg_19_0 then
+			arg_15_0.page = var_0_3
 
-			uv0:UpdateWeaponWrapButtons()
-			uv0:filterEquipment()
+			arg_15_0:UpdateWeaponWrapButtons()
+			arg_15_0:filterEquipment()
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.equipmentToggle:Find("spweapon"), function (slot0)
-		if slot0 then
-			uv0.page = uv1
+	onToggle(arg_15_0, arg_15_0.equipmentToggle:Find("spweapon"), function(arg_20_0)
+		if arg_20_0 then
+			arg_15_0.page = var_0_4
 
-			uv0:UpdateWeaponWrapButtons()
-			uv0:filterEquipment()
+			arg_15_0:UpdateWeaponWrapButtons()
+			arg_15_0:filterEquipment()
 		end
 	end, SFX_PANEL)
-	setActive(slot0.equipmentToggle:Find("spweapon"), not LOCK_SP_WEAPON)
-	onToggle(slot0, slot0.designTabs[uv3], function (slot0)
-		if slot0 then
-			uv0.contextData.designPage = uv1
+	setActive(arg_15_0.equipmentToggle:Find("spweapon"), not LOCK_SP_WEAPON)
+	onToggle(arg_15_0, arg_15_0.designTabs[var_0_5], function(arg_21_0)
+		if arg_21_0 then
+			arg_15_0.contextData.designPage = var_0_5
 
-			uv0:emit(EquipmentMediator.OPEN_DESIGN)
-			uv0:updateCapacity()
-			setActive(uv0.tip, false)
-			setActive(uv0.listEmptyTF, false)
+			arg_15_0:emit(EquipmentMediator.OPEN_DESIGN)
+			arg_15_0:updateCapacity()
+			setActive(arg_15_0.tip, false)
+			setActive(arg_15_0.listEmptyTF, false)
 		else
-			uv0:emit(EquipmentMediator.CLOSE_DESIGN_LAYER)
+			arg_15_0:emit(EquipmentMediator.CLOSE_DESIGN_LAYER)
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.designTabs[uv4], function (slot0)
-		if slot0 then
-			uv0.contextData.designPage = uv1
+	onToggle(arg_15_0, arg_15_0.designTabs[var_0_6], function(arg_22_0)
+		if arg_22_0 then
+			arg_15_0.contextData.designPage = var_0_6
 
-			uv0:emit(EquipmentMediator.OPEN_SPWEAPON_DESIGN)
-			uv0:UpdateSpweaponCapacity()
-			setActive(uv0.tip, false)
-			setActive(uv0.listEmptyTF, false)
+			arg_15_0:emit(EquipmentMediator.OPEN_SPWEAPON_DESIGN)
+			arg_15_0:UpdateSpweaponCapacity()
+			setActive(arg_15_0.tip, false)
+			setActive(arg_15_0.listEmptyTF, false)
 		else
-			uv0:emit(EquipmentMediator.CLOSE_SPWEAPON_DESIGN_LAYER)
+			arg_15_0:emit(EquipmentMediator.CLOSE_SPWEAPON_DESIGN_LAYER)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.backBtn, function ()
-		if uv0.mode == StoreHouseConst.DESTROY then
-			triggerButton(uv0.BatchDisposeBtn)
+	onButton(arg_15_0, arg_15_0.backBtn, function()
+		if arg_15_0.mode == StoreHouseConst.DESTROY then
+			triggerButton(arg_15_0.BatchDisposeBtn)
 
 			return
 		end
 
-		GetOrAddComponent(uv0._tf, typeof(CanvasGroup)).interactable = false
+		GetOrAddComponent(arg_15_0._tf, typeof(CanvasGroup)).interactable = false
 
-		uv0:emit(uv1.ON_BACK)
+		arg_15_0:emit(var_0_0.ON_BACK)
 	end, SFX_CANCEL)
-	onToggle(slot0, slot0.sortBtn, function (slot0)
-		if slot0 then
-			pg.UIMgr.GetInstance():OverlayPanel(uv0.sortPanel, {
+	onToggle(arg_15_0, arg_15_0.sortBtn, function(arg_24_0)
+		if arg_24_0 then
+			pg.UIMgr.GetInstance():OverlayPanel(arg_15_0.sortPanel, {
 				groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 			})
-			setActive(uv0.sortPanel, true)
+			setActive(arg_15_0.sortPanel, true)
 		else
-			pg.UIMgr.GetInstance():UnOverlayPanel(uv0.sortPanel, uv0.topItems)
-			setActive(uv0.sortPanel, false)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_15_0.sortPanel, arg_15_0.topItems)
+			setActive(arg_15_0.sortPanel, false)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot0.sortPanel, function ()
-		triggerToggle(uv0.sortBtn, false)
+	onButton(arg_15_0, arg_15_0.sortPanel, function()
+		triggerToggle(arg_15_0.sortBtn, false)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.indexBtn, function ()
-		uv0:emit(EquipmentMediator.OPEN_EQUIPMENT_INDEX, switch(uv0.page, {
-			[uv1] = function ()
+	onButton(arg_15_0, arg_15_0.indexBtn, function()
+		local var_26_0 = switch(arg_15_0.page, {
+			[var_0_2] = function()
 				return setmetatable({
-					indexDatas = Clone(uv0.contextData.indexDatas),
-					callback = function (slot0)
-						uv0.contextData.indexDatas.typeIndex = slot0.typeIndex
-						uv0.contextData.indexDatas.equipPropertyIndex = slot0.equipPropertyIndex
-						uv0.contextData.indexDatas.equipPropertyIndex2 = slot0.equipPropertyIndex2
-						uv0.contextData.indexDatas.equipAmmoIndex1 = slot0.equipAmmoIndex1
-						uv0.contextData.indexDatas.equipAmmoIndex2 = slot0.equipAmmoIndex2
-						uv0.contextData.indexDatas.equipCampIndex = slot0.equipCampIndex
-						uv0.contextData.indexDatas.rarityIndex = slot0.rarityIndex
-						uv0.contextData.indexDatas.extraIndex = slot0.extraIndex
+					indexDatas = Clone(arg_15_0.contextData.indexDatas),
+					callback = function(arg_28_0)
+						arg_15_0.contextData.indexDatas.typeIndex = arg_28_0.typeIndex
+						arg_15_0.contextData.indexDatas.equipPropertyIndex = arg_28_0.equipPropertyIndex
+						arg_15_0.contextData.indexDatas.equipPropertyIndex2 = arg_28_0.equipPropertyIndex2
+						arg_15_0.contextData.indexDatas.equipAmmoIndex1 = arg_28_0.equipAmmoIndex1
+						arg_15_0.contextData.indexDatas.equipAmmoIndex2 = arg_28_0.equipAmmoIndex2
+						arg_15_0.contextData.indexDatas.equipCampIndex = arg_28_0.equipCampIndex
+						arg_15_0.contextData.indexDatas.rarityIndex = arg_28_0.rarityIndex
+						arg_15_0.contextData.indexDatas.extraIndex = arg_28_0.extraIndex
 
-						if uv0.filterBusyToggle:GetComponent(typeof(Toggle)) then
-							if bit.band(slot0.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
-								uv0:SetShowBusyFlag(true)
+						if arg_15_0.filterBusyToggle:GetComponent(typeof(Toggle)) then
+							if bit.band(arg_28_0.extraIndex, IndexConst.EquipmentExtraEquiping) > 0 then
+								arg_15_0:SetShowBusyFlag(true)
 							end
 
-							triggerToggle(uv0.filterBusyToggle, uv0:GetShowBusyFlag())
+							triggerToggle(arg_15_0.filterBusyToggle, arg_15_0:GetShowBusyFlag())
 						else
-							uv0:filterEquipment()
+							arg_15_0:filterEquipment()
 						end
 					end
 				}, {
 					__index = StoreHouseConst.EQUIPMENT_INDEX_COMMON
 				})
 			end,
-			[uv2] = function ()
+			[var_0_4] = function()
 				return setmetatable({
-					indexDatas = Clone(uv0.contextData.spweaponIndexDatas),
-					callback = function (slot0)
-						uv0.contextData.spweaponIndexDatas.typeIndex = slot0.typeIndex
-						uv0.contextData.spweaponIndexDatas.rarityIndex = slot0.rarityIndex
+					indexDatas = Clone(arg_15_0.contextData.spweaponIndexDatas),
+					callback = function(arg_30_0)
+						arg_15_0.contextData.spweaponIndexDatas.typeIndex = arg_30_0.typeIndex
+						arg_15_0.contextData.spweaponIndexDatas.rarityIndex = arg_30_0.rarityIndex
 
-						uv0:filterEquipment()
+						arg_15_0:filterEquipment()
 					end
 				}, {
 					__index = StoreHouseConst.SPWEAPON_INDEX_COMMON
 				})
 			end
-		}))
+		})
+
+		arg_15_0:emit(EquipmentMediator.OPEN_EQUIPMENT_INDEX, var_26_0)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.equipSkinFilteBtn, function ()
-		uv0:emit(EquipmentMediator.OPEN_EQUIPSKIN_INDEX_LAYER, {
+	onButton(arg_15_0, arg_15_0.equipSkinFilteBtn, function()
+		local var_31_0 = {
 			display = {
 				equipSkinIndex = IndexConst.FlagRange2Bits(IndexConst.EquipSkinIndexAll, IndexConst.EquipSkinIndexAux),
 				equipSkinTheme = IndexConst.FlagRange2Str(IndexConst.EquipSkinThemeAll, IndexConst.EquipSkinThemeEnd)
 			},
-			equipSkinSort = uv0.equipSkinSort or IndexConst.EquipSkinSortType,
-			equipSkinIndex = uv0.equipSkinIndex or IndexConst.Flags2Bits({
+			equipSkinSort = arg_15_0.equipSkinSort or IndexConst.EquipSkinSortType,
+			equipSkinIndex = arg_15_0.equipSkinIndex or IndexConst.Flags2Bits({
 				IndexConst.EquipSkinIndexAll
 			}),
-			equipSkinTheme = uv0.equipSkinTheme or IndexConst.Flags2Str({
+			equipSkinTheme = arg_15_0.equipSkinTheme or IndexConst.Flags2Str({
 				IndexConst.EquipSkinThemeAll
 			}),
-			callback = function (slot0)
-				uv0.equipSkinSort = slot0.equipSkinSort
-				uv0.equipSkinIndex = slot0.equipSkinIndex
-				uv0.equipSkinTheme = slot0.equipSkinTheme
+			callback = function(arg_32_0)
+				arg_15_0.equipSkinSort = arg_32_0.equipSkinSort
+				arg_15_0.equipSkinIndex = arg_32_0.equipSkinIndex
+				arg_15_0.equipSkinTheme = arg_32_0.equipSkinTheme
 
-				uv0:filterEquipment()
+				arg_15_0:filterEquipment()
 			end
-		})
+		}
+
+		arg_15_0:emit(EquipmentMediator.OPEN_EQUIPSKIN_INDEX_LAYER, var_31_0)
 	end, SFX_PANEL)
 
-	slot0.equipmetItems = {}
-	slot0.itemCards = {}
+	arg_15_0.equipmetItems = {}
+	arg_15_0.itemCards = {}
 
-	slot0:initItems()
-	slot0:initEquipments()
+	arg_15_0:initItems()
+	arg_15_0:initEquipments()
 
-	slot0.asc = slot0.contextData.asc or false
-	slot0.contextData.sortData = slot0.contextData.sortData or uv6.sort[1]
-	slot0.contextData.indexDatas = slot0.contextData.indexDatas or {}
-	slot0.contextData.spweaponIndexDatas = slot0.contextData.spweaponIndexDatas or {}
-	slot0.contextData.spweaponSortData = slot0.contextData.spweaponSortData or uv7.sort[1]
+	arg_15_0.asc = arg_15_0.contextData.asc or false
+	arg_15_0.contextData.sortData = arg_15_0.contextData.sortData or var_0_7.sort[1]
+	arg_15_0.contextData.indexDatas = arg_15_0.contextData.indexDatas or {}
+	arg_15_0.contextData.spweaponIndexDatas = arg_15_0.contextData.spweaponIndexDatas or {}
+	arg_15_0.contextData.spweaponSortData = arg_15_0.contextData.spweaponSortData or var_0_8.sort[1]
 
-	slot0:initSort()
-	setActive(slot0.itemView, false)
-	setActive(slot0.equipmentView, false)
-	onToggle(slot0, slot0.materialToggle, function (slot0)
-		uv0.inMaterial = slot0
+	arg_15_0:initSort()
+	setActive(arg_15_0.itemView, false)
+	setActive(arg_15_0.equipmentView, false)
+	onToggle(arg_15_0, arg_15_0.materialToggle, function(arg_33_0)
+		arg_15_0.inMaterial = arg_33_0
 
-		if slot0 and uv0.contextData.warp ~= StoreHouseConst.WARP_TO_MATERIAL then
-			uv0.contextData.warp = StoreHouseConst.WARP_TO_MATERIAL
+		if arg_33_0 and arg_15_0.contextData.warp ~= StoreHouseConst.WARP_TO_MATERIAL then
+			arg_15_0.contextData.warp = StoreHouseConst.WARP_TO_MATERIAL
 
-			setText(uv0.tip, i18n("equipment_select_materials_tip"))
-			setActive(uv0.capacityTF.parent, false)
-			setActive(uv0.tip, true)
-			uv0:sortItems()
+			setText(arg_15_0.tip, i18n("equipment_select_materials_tip"))
+			setActive(arg_15_0.capacityTF.parent, false)
+			setActive(arg_15_0.tip, true)
+			arg_15_0:sortItems()
 		end
 
-		setActive(uv0.helpBtn, not slot0)
+		setActive(arg_15_0.helpBtn, not arg_33_0)
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.weaponToggle, function (slot0)
-		if slot0 then
-			if uv0.contextData.warp ~= StoreHouseConst.WARP_TO_WEAPON then
-				uv0.contextData.warp = StoreHouseConst.WARP_TO_WEAPON
+	onToggle(arg_15_0, arg_15_0.weaponToggle, function(arg_34_0)
+		if arg_34_0 then
+			if arg_15_0.contextData.warp ~= StoreHouseConst.WARP_TO_WEAPON then
+				arg_15_0.contextData.warp = StoreHouseConst.WARP_TO_WEAPON
 
-				setActive(uv0.tip, false)
-				setActive(uv0.capacityTF.parent, true)
+				setActive(arg_15_0.tip, false)
+				setActive(arg_15_0.capacityTF.parent, true)
 
-				if uv0.page == uv1 then
-					triggerToggle(uv0.equipmentToggle:Find("skin"), true)
-				elseif uv0.page == uv2 then
-					triggerToggle(uv0.equipmentToggle:Find("spweapon"), true)
+				if arg_15_0.page == var_0_3 then
+					triggerToggle(arg_15_0.equipmentToggle:Find("skin"), true)
+				elseif arg_15_0.page == var_0_4 then
+					triggerToggle(arg_15_0.equipmentToggle:Find("spweapon"), true)
 				else
-					triggerToggle(uv0.equipmentToggle:Find("equipment"), true)
+					triggerToggle(arg_15_0.equipmentToggle:Find("equipment"), true)
 				end
 			end
 		else
-			setActive(uv0.BatchDisposeBtn, false)
-			setActive(uv0.filterBusyToggle, false)
-			setActive(uv0.equipmentToggle, false)
+			setActive(arg_15_0.BatchDisposeBtn, false)
+			setActive(arg_15_0.filterBusyToggle, false)
+			setActive(arg_15_0.equipmentToggle, false)
 		end
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.designToggle, function (slot0)
-		if slot0 then
-			uv0.contextData.warp = StoreHouseConst.WARP_TO_DESIGN
+	onToggle(arg_15_0, arg_15_0.designToggle, function(arg_35_0)
+		if arg_35_0 then
+			arg_15_0.contextData.warp = StoreHouseConst.WARP_TO_DESIGN
 
-			triggerToggle(uv0.designTabs[uv0.contextData.designPage or uv1], true)
-			setActive(uv0.capacityTF.parent, true)
+			local var_35_0 = arg_15_0.contextData.designPage or var_0_5
+
+			triggerToggle(arg_15_0.designTabs[var_35_0], true)
+			setActive(arg_15_0.capacityTF.parent, true)
 		else
-			uv0:emit(EquipmentMediator.CLOSE_DESIGN_LAYER)
-			uv0:emit(EquipmentMediator.CLOSE_SPWEAPON_DESIGN_LAYER)
+			arg_15_0:emit(EquipmentMediator.CLOSE_DESIGN_LAYER)
+			arg_15_0:emit(EquipmentMediator.CLOSE_SPWEAPON_DESIGN_LAYER)
 		end
 
-		setActive(uv0.designTabRoot, slot0 and not LOCK_SP_WEAPON)
+		setActive(arg_15_0.designTabRoot, arg_35_0 and not LOCK_SP_WEAPON)
 	end, SFX_PANEL)
-	onToggle(slot0, slot0.filterBusyToggle, function (slot0)
-		uv0:SetShowBusyFlag(slot0)
-		uv0:filterEquipment()
+	onToggle(arg_15_0, arg_15_0.filterBusyToggle, function(arg_36_0)
+		arg_15_0:SetShowBusyFlag(arg_36_0)
+		arg_15_0:filterEquipment()
 	end, SFX_PANEL)
 
-	slot0.filterEquipWaitting = slot0.filterEquipWaitting + 1
+	arg_15_0.filterEquipWaitting = arg_15_0.filterEquipWaitting + 1
 
-	triggerToggle(slot0.filterBusyToggle, slot0.shipVO)
-	onButton(slot0, slot0.BatchDisposeBtn, function ()
-		if uv0.mode == StoreHouseConst.DESTROY then
-			uv0.mode = StoreHouseConst.OVERVIEW
-			uv0.asc = uv0.lastasc
-			uv0.lastasc = nil
-			uv0.filterImportance = nil
+	triggerToggle(arg_15_0.filterBusyToggle, arg_15_0.shipVO)
+	onButton(arg_15_0, arg_15_0.BatchDisposeBtn, function()
+		if arg_15_0.mode == StoreHouseConst.DESTROY then
+			arg_15_0.mode = StoreHouseConst.OVERVIEW
+			arg_15_0.asc = arg_15_0.lastasc
+			arg_15_0.lastasc = nil
+			arg_15_0.filterImportance = nil
 
-			shiftPanel(uv0.bottomBack, nil, 0, nil, 0, true, true)
-			shiftPanel(uv0.selectPanel, nil, -124, nil, 0, true, true)
-			uv0:filterEquipment()
+			shiftPanel(arg_15_0.bottomBack, nil, 0, nil, 0, true, true)
+			shiftPanel(arg_15_0.selectPanel, nil, -124, nil, 0, true, true)
+			arg_15_0:filterEquipment()
 		else
-			uv0.mode = StoreHouseConst.DESTROY
-			uv0.lastasc = uv0.asc
-			uv0.filterImportance = true
-			uv0.asc = true
+			arg_15_0.mode = StoreHouseConst.DESTROY
+			arg_15_0.lastasc = arg_15_0.asc
+			arg_15_0.filterImportance = true
+			arg_15_0.asc = true
 
-			shiftPanel(uv0.bottomBack, nil, -124, nil, 0, true, true)
-			shiftPanel(uv0.selectPanel, nil, 0, nil, 0, true, true)
+			shiftPanel(arg_15_0.bottomBack, nil, -124, nil, 0, true, true)
+			shiftPanel(arg_15_0.selectPanel, nil, 0, nil, 0, true, true)
 
-			uv0.contextData.asc = uv0.asc
-			uv0.contextData.sortData = uv1.sort[1]
+			arg_15_0.contextData.asc = arg_15_0.asc
+			arg_15_0.contextData.sortData = var_0_7.sort[1]
 
-			uv0:filterEquipment()
+			arg_15_0:filterEquipment()
 		end
 
-		uv0:UpdateWeaponWrapButtons()
+		arg_15_0:UpdateWeaponWrapButtons()
 	end, SFX_PANEL)
-	onButton(slot0, findTF(slot0.selectPanel, "cancel_button"), function ()
-		uv0:unselecteAllEquips()
-		triggerButton(uv0.BatchDisposeBtn)
+	onButton(arg_15_0, findTF(arg_15_0.selectPanel, "cancel_button"), function()
+		arg_15_0:unselecteAllEquips()
+		triggerButton(arg_15_0.BatchDisposeBtn)
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.selectPanel, "confirm_button"), function ()
-		slot0 = {}
+	onButton(arg_15_0, findTF(arg_15_0.selectPanel, "confirm_button"), function()
+		local var_39_0 = {}
 
-		if underscore.any(uv0.selectedIds, function (slot0)
-			return uv0.equipmentVOByIds[slot0[1]]:getConfig("rarity") >= 4 or slot1:getConfig("level") > 1
+		if underscore.any(arg_15_0.selectedIds, function(arg_40_0)
+			local var_40_0 = arg_15_0.equipmentVOByIds[arg_40_0[1]]
+
+			return var_40_0:getConfig("rarity") >= 4 or var_40_0:getConfig("level") > 1
 		end) then
-			table.insert(slot0, function (slot0)
-				uv0.equipDestroyConfirmWindow:Load()
-				uv0.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(uv0.selectedIds, function (slot0)
+			table.insert(var_39_0, function(arg_41_0)
+				arg_15_0.equipDestroyConfirmWindow:Load()
+				arg_15_0.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(arg_15_0.selectedIds, function(arg_42_0)
 					return setmetatable({
-						count = slot0[2]
+						count = arg_42_0[2]
 					}, {
-						__index = uv0.equipmentVOByIds[slot0[1]]
+						__index = arg_15_0.equipmentVOByIds[arg_42_0[1]]
 					})
-				end), slot0)
+				end), arg_41_0)
 			end)
 		end
 
-		seriesAsync(slot0, function ()
-			uv0.destroyConfirmView:Load()
-			uv0.destroyConfirmView:ActionInvoke("Show")
-			uv0.destroyConfirmView:ActionInvoke("DisplayDestroyBonus", uv0.selectedIds)
-			uv0.destroyConfirmView:ActionInvoke("SetConfirmBtnCB", function ()
-				uv0:unselecteAllEquips()
+		seriesAsync(var_39_0, function()
+			arg_15_0.destroyConfirmView:Load()
+			arg_15_0.destroyConfirmView:ActionInvoke("Show")
+			arg_15_0.destroyConfirmView:ActionInvoke("DisplayDestroyBonus", arg_15_0.selectedIds)
+			arg_15_0.destroyConfirmView:ActionInvoke("SetConfirmBtnCB", function()
+				arg_15_0:unselecteAllEquips()
 			end)
 		end)
 	end, SFX_CONFIRM)
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.blurPanel, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg_15_0.blurPanel, {
 		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 	})
-	pg.UIMgr.GetInstance():OverlayPanel(slot0.topItems, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg_15_0.topItems, {
 		groupName = LayerWeightConst.GROUP_EQUIPMENTSCENE
 	})
 
-	slot2 = slot0.contextData.mode or StoreHouseConst.OVERVIEW
-	slot0.contextData.warp = nil
-	slot0.contextData.mode = nil
-	slot0.mode = slot0.mode or StoreHouseConst.OVERVIEW
+	local var_15_0 = arg_15_0.contextData.warp or StoreHouseConst.WARP_TO_MATERIAL
+	local var_15_1 = arg_15_0.contextData.mode or StoreHouseConst.OVERVIEW
 
-	if (slot0.contextData.warp or StoreHouseConst.WARP_TO_MATERIAL) == StoreHouseConst.WARP_TO_DESIGN then
-		triggerToggle(slot0.designToggle, true)
-	elseif slot1 == StoreHouseConst.WARP_TO_MATERIAL then
-		triggerToggle(slot0.materialToggle, true)
-	elseif slot1 == StoreHouseConst.WARP_TO_WEAPON then
-		if slot2 == StoreHouseConst.DESTROY then
-			slot0.filterEquipWaitting = slot0.filterEquipWaitting + 1
+	arg_15_0.contextData.warp = nil
+	arg_15_0.contextData.mode = nil
+	arg_15_0.mode = arg_15_0.mode or StoreHouseConst.OVERVIEW
 
-			triggerToggle(slot0.weaponToggle, true)
-			triggerButton(slot0.BatchDisposeBtn)
+	if var_15_0 == StoreHouseConst.WARP_TO_DESIGN then
+		triggerToggle(arg_15_0.designToggle, true)
+	elseif var_15_0 == StoreHouseConst.WARP_TO_MATERIAL then
+		triggerToggle(arg_15_0.materialToggle, true)
+	elseif var_15_0 == StoreHouseConst.WARP_TO_WEAPON then
+		if var_15_1 == StoreHouseConst.DESTROY then
+			arg_15_0.filterEquipWaitting = arg_15_0.filterEquipWaitting + 1
+
+			triggerToggle(arg_15_0.weaponToggle, true)
+			triggerButton(arg_15_0.BatchDisposeBtn)
 		else
-			if slot2 == StoreHouseConst.SKIN then
-				slot0.page = uv1
-			elseif slot2 == StoreHouseConst.SPWEAPON then
-				slot0.page = uv2
+			if var_15_1 == StoreHouseConst.SKIN then
+				arg_15_0.page = var_0_3
+			elseif var_15_1 == StoreHouseConst.SPWEAPON then
+				arg_15_0.page = var_0_4
 			else
-				slot0.page = uv0
+				arg_15_0.page = var_0_2
 			end
 
-			triggerToggle(slot0.weaponToggle, true)
+			triggerToggle(arg_15_0.weaponToggle, true)
 		end
 	end
 
-	slot0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(slot0, slot0.topItems)
+	arg_15_0.bulinTip = AprilFoolBulinSubView.ShowAprilFoolBulin(arg_15_0, arg_15_0.topItems)
 end
 
-function slot0.isDefaultStatus(slot0)
-	return underscore(slot0.contextData.indexDatas):chain():keys():all(function (slot0)
-		return uv0.contextData.indexDatas[slot0] == StoreHouseConst.EQUIPMENT_INDEX_COMMON.customPanels[slot0].options[1]
+function var_0_0.isDefaultStatus(arg_45_0)
+	return underscore(arg_45_0.contextData.indexDatas):chain():keys():all(function(arg_46_0)
+		return arg_45_0.contextData.indexDatas[arg_46_0] == StoreHouseConst.EQUIPMENT_INDEX_COMMON.customPanels[arg_46_0].options[1]
 	end):value()
 end
 
-function slot0.isDefaultSpWeaponIndexData(slot0)
-	return underscore(slot0.contextData.spweaponIndexDatas):chain():keys():all(function (slot0)
-		return uv0.contextData.spweaponIndexDatas[slot0] == StoreHouseConst.SPWEAPON_INDEX_COMMON.customPanels[slot0].options[1]
+function var_0_0.isDefaultSpWeaponIndexData(arg_47_0)
+	return underscore(arg_47_0.contextData.spweaponIndexDatas):chain():keys():all(function(arg_48_0)
+		return arg_47_0.contextData.spweaponIndexDatas[arg_48_0] == StoreHouseConst.SPWEAPON_INDEX_COMMON.customPanels[arg_48_0].options[1]
 	end):value()
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_49_0)
 	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	if isActive(slot0.sortPanel) then
-		triggerButton(slot0.sortPanel)
-	elseif slot0.destroyConfirmView:isShowing() then
-		slot0.destroyConfirmView:Hide()
-	elseif slot0.assignedItemView:isShowing() then
-		slot0.assignedItemView:Hide()
-	elseif slot0.blueprintAssignedItemView:isShowing() then
-		slot0.blueprintAssignedItemView:Hide()
-	elseif slot0.equipDestroyConfirmWindow:isShowing() then
-		slot0.equipDestroyConfirmWindow:Hide()
+	if isActive(arg_49_0.sortPanel) then
+		triggerButton(arg_49_0.sortPanel)
+	elseif arg_49_0.destroyConfirmView:isShowing() then
+		arg_49_0.destroyConfirmView:Hide()
+	elseif arg_49_0.assignedItemView:isShowing() then
+		arg_49_0.assignedItemView:Hide()
+	elseif arg_49_0.blueprintAssignedItemView:isShowing() then
+		arg_49_0.blueprintAssignedItemView:Hide()
+	elseif arg_49_0.equipDestroyConfirmWindow:isShowing() then
+		arg_49_0.equipDestroyConfirmWindow:Hide()
 	else
-		triggerButton(slot0.backBtn)
+		triggerButton(arg_49_0.backBtn)
 	end
 end
 
-function slot0.updateCapacity(slot0)
-	if slot0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
+function var_0_0.updateCapacity(arg_50_0)
+	if arg_50_0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
 		return
 	end
 
-	setText(slot0.tip, "")
-	setText(slot0.capacityTF, slot0.capacity .. "/" .. slot0.player:getMaxEquipmentBag())
+	setText(arg_50_0.tip, "")
+	setText(arg_50_0.capacityTF, arg_50_0.capacity .. "/" .. arg_50_0.player:getMaxEquipmentBag())
 end
 
-function slot0.setCapacity(slot0, slot1)
-	slot0.capacity = slot1
+function var_0_0.setCapacity(arg_51_0, arg_51_1)
+	arg_51_0.capacity = arg_51_1
 end
 
-function slot0.UpdateSpweaponCapacity(slot0)
-	slot1 = getProxy(EquipmentProxy)
+function var_0_0.UpdateSpweaponCapacity(arg_52_0)
+	local var_52_0 = getProxy(EquipmentProxy)
 
-	setText(slot0.capacityTF, slot1:GetSpWeaponCount() .. "/" .. slot1:GetSpWeaponCapacity())
+	setText(arg_52_0.capacityTF, var_52_0:GetSpWeaponCount() .. "/" .. var_52_0:GetSpWeaponCapacity())
 end
 
-function slot0.setShip(slot0, slot1)
-	slot0.shipVO = slot1
+function var_0_0.setShip(arg_53_0, arg_53_1)
+	arg_53_0.shipVO = arg_53_1
 
-	setActive(slot0.bottomPanel, not tobool(slot1))
+	setActive(arg_53_0.bottomPanel, not tobool(arg_53_1))
 end
 
-function slot0.setPlayer(slot0, slot1)
-	slot0.player = slot1
+function var_0_0.setPlayer(arg_54_0, arg_54_1)
+	arg_54_0.player = arg_54_1
 
-	if slot0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and slot0.page == uv0 then
-		slot0:updateCapacity()
-	elseif slot0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN and slot0.contextData.designPage == uv1 then
-		slot0:updateCapacity()
+	if arg_54_0.contextData.warp == StoreHouseConst.WARP_TO_WEAPON and arg_54_0.page == var_0_2 then
+		arg_54_0:updateCapacity()
+	elseif arg_54_0.contextData.warp == StoreHouseConst.WARP_TO_DESIGN and arg_54_0.contextData.designPage == var_0_5 then
+		arg_54_0:updateCapacity()
 	end
 end
 
-function slot0.initSort(slot0)
-	function slot4()
-		uv0.asc = not uv0.asc
-		uv0.contextData.asc = uv0.asc
+function var_0_0.initSort(arg_55_0)
+	onButton(arg_55_0, arg_55_0.decBtn, function()
+		arg_55_0.asc = not arg_55_0.asc
+		arg_55_0.contextData.asc = arg_55_0.asc
 
-		uv0:filterEquipment()
-	end
-
-	onButton(slot0, slot0.decBtn, slot4)
-
-	slot0.sortButtons = {}
-
-	eachChild(slot0.sortContain, function (slot0)
-		setActive(slot0, false)
+		arg_55_0:filterEquipment()
 	end)
 
-	for slot4, slot5 in ipairs(uv0.sort) do
-		slot6 = slot4 <= slot0.sortContain.childCount and slot0.sortContain:GetChild(slot4 - 1) or cloneTplTo(slot0.sortTpl, slot0.sortContain)
+	arg_55_0.sortButtons = {}
 
-		setActive(slot6, true)
-		setImageSprite(findTF(slot6, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", slot5.spr), true)
-		onToggle(slot0, slot6, function (slot0)
-			if slot0 then
-				if uv0.page == uv1 then
-					uv0.contextData.sortData = uv2
-				elseif uv0.page == uv3 then
-					uv0.contextData.spweaponSortData = uv4.sort[uv5]
+	eachChild(arg_55_0.sortContain, function(arg_57_0)
+		setActive(arg_57_0, false)
+	end)
+
+	for iter_55_0, iter_55_1 in ipairs(var_0_7.sort) do
+		local var_55_0 = iter_55_0 <= arg_55_0.sortContain.childCount and arg_55_0.sortContain:GetChild(iter_55_0 - 1) or cloneTplTo(arg_55_0.sortTpl, arg_55_0.sortContain)
+
+		setActive(var_55_0, true)
+		setImageSprite(findTF(var_55_0, "Image"), GetSpriteFromAtlas("ui/equipmentui_atlas", iter_55_1.spr), true)
+		onToggle(arg_55_0, var_55_0, function(arg_58_0)
+			if arg_58_0 then
+				if arg_55_0.page == var_0_2 then
+					arg_55_0.contextData.sortData = iter_55_1
+				elseif arg_55_0.page == var_0_4 then
+					arg_55_0.contextData.spweaponSortData = var_0_8.sort[iter_55_0]
 				end
 
-				uv0:filterEquipment()
-				triggerToggle(uv0.sortBtn, false)
+				arg_55_0:filterEquipment()
+				triggerToggle(arg_55_0.sortBtn, false)
 			end
 		end, SFX_PANEL)
 
-		slot0.sortButtons[slot4] = slot6
+		arg_55_0.sortButtons[iter_55_0] = var_55_0
 	end
 end
 
-function slot0.UpdateWeaponWrapButtons(slot0)
-	setActive(slot0.indexBtn, slot0.page == uv0 or slot1 == uv1)
-	setActive(slot0.sortBtn, slot1 == uv0 or slot1 == uv1)
-	setActive(slot0.BatchDisposeBtn, slot1 == uv0)
-	setActive(slot0.capacityTF.parent, slot1 == uv0 or slot1 == uv1)
-	setActive(slot0.equipSkinFilteBtn, slot1 == uv2)
-	setActive(slot0.filterBusyToggle, slot0.mode == StoreHouseConst.OVERVIEW)
-	setActive(slot0.equipmentToggle, slot0.mode == StoreHouseConst.OVERVIEW and not slot0.contextData.shipId)
-	slot0:updatePageFilterButtons(slot1)
+function var_0_0.UpdateWeaponWrapButtons(arg_59_0)
+	local var_59_0 = arg_59_0.page
+
+	setActive(arg_59_0.indexBtn, var_59_0 == var_0_2 or var_59_0 == var_0_4)
+	setActive(arg_59_0.sortBtn, var_59_0 == var_0_2 or var_59_0 == var_0_4)
+	setActive(arg_59_0.BatchDisposeBtn, var_59_0 == var_0_2)
+	setActive(arg_59_0.capacityTF.parent, var_59_0 == var_0_2 or var_59_0 == var_0_4)
+	setActive(arg_59_0.equipSkinFilteBtn, var_59_0 == var_0_3)
+	setActive(arg_59_0.filterBusyToggle, arg_59_0.mode == StoreHouseConst.OVERVIEW)
+	setActive(arg_59_0.equipmentToggle, arg_59_0.mode == StoreHouseConst.OVERVIEW and not arg_59_0.contextData.shipId)
+	arg_59_0:updatePageFilterButtons(var_59_0)
 end
 
-function slot0.updatePageFilterButtons(slot0, slot1)
-	for slot5, slot6 in ipairs(uv0.sort) do
-		triggerToggle(slot0.sortButtons[slot5], false)
-		setActive(slot0.sortButtons[slot5], table.contains(slot6.pages, slot1))
+function var_0_0.updatePageFilterButtons(arg_60_0, arg_60_1)
+	for iter_60_0, iter_60_1 in ipairs(var_0_7.sort) do
+		triggerToggle(arg_60_0.sortButtons[iter_60_0], false)
+		setActive(arg_60_0.sortButtons[iter_60_0], table.contains(iter_60_1.pages, arg_60_1))
 	end
 end
 
-function slot0.initEquipments(slot0)
-	slot0.isInitWeapons = true
-	slot0.equipmentRect = slot0.equipmentView:GetComponent("LScrollRect")
+function var_0_0.initEquipments(arg_61_0)
+	arg_61_0.isInitWeapons = true
+	arg_61_0.equipmentRect = arg_61_0.equipmentView:GetComponent("LScrollRect")
 
-	function slot0.equipmentRect.onInitItem(slot0)
-		uv0:initEquipment(slot0)
+	function arg_61_0.equipmentRect.onInitItem(arg_62_0)
+		arg_61_0:initEquipment(arg_62_0)
 	end
 
-	function slot0.equipmentRect.onUpdateItem(slot0, slot1)
-		uv0:updateEquipment(slot0, slot1)
+	function arg_61_0.equipmentRect.onUpdateItem(arg_63_0, arg_63_1)
+		arg_61_0:updateEquipment(arg_63_0, arg_63_1)
 	end
 
-	function slot0.equipmentRect.onReturnItem(slot0, slot1)
-		uv0:returnEquipment(slot0, slot1)
+	function arg_61_0.equipmentRect.onReturnItem(arg_64_0, arg_64_1)
+		arg_61_0:returnEquipment(arg_64_0, arg_64_1)
 	end
 
-	function slot0.equipmentRect.onStart()
-		uv0:updateSelected()
+	function arg_61_0.equipmentRect.onStart()
+		arg_61_0:updateSelected()
 	end
 
-	slot0.equipmentRect.decelerationRate = 0.07
+	arg_61_0.equipmentRect.decelerationRate = 0.07
 end
 
-function slot0.initEquipment(slot0, slot1)
-	slot2 = EquipmentItem.New(slot1)
+function var_0_0.initEquipment(arg_66_0, arg_66_1)
+	local var_66_0 = EquipmentItem.New(arg_66_1)
 
-	onButton(slot0, slot2.unloadBtn, function ()
-		if uv0.page == uv1 then
-			uv0:emit(EquipmentMediator.ON_UNEQUIP_EQUIPMENT_SKIN)
-		elseif uv0.page == uv2 then
-			uv0:emit(EquipmentMediator.ON_UNEQUIP_EQUIPMENT)
+	onButton(arg_66_0, var_66_0.unloadBtn, function()
+		if arg_66_0.page == var_0_3 then
+			arg_66_0:emit(EquipmentMediator.ON_UNEQUIP_EQUIPMENT_SKIN)
+		elseif arg_66_0.page == var_0_2 then
+			arg_66_0:emit(EquipmentMediator.ON_UNEQUIP_EQUIPMENT)
 		end
 	end, SFX_PANEL)
-	onButton(slot0, slot2.reduceBtn, function ()
-		uv0:selectEquip(uv1.equipmentVO, 1)
+	onButton(arg_66_0, var_66_0.reduceBtn, function()
+		arg_66_0:selectEquip(var_66_0.equipmentVO, 1)
 	end, SFX_PANEL)
 
-	slot0.equipmetItems[slot1] = slot2
+	arg_66_0.equipmetItems[arg_66_1] = var_66_0
 end
 
-function slot0.updateEquipment(slot0, slot1, slot2)
-	slot3 = slot0.equipmetItems[slot2]
+function var_0_0.updateEquipment(arg_69_0, arg_69_1, arg_69_2)
+	local var_69_0 = arg_69_0.equipmetItems[arg_69_2]
 
-	assert(slot3, "without init item")
+	assert(var_69_0, "without init item")
 
-	slot4 = slot0.loadEquipmentVOs[slot1 + 1]
+	local var_69_1 = arg_69_0.loadEquipmentVOs[arg_69_1 + 1]
 
-	slot3:update(slot4)
+	var_69_0:update(var_69_1)
 
-	slot5 = false
-	slot6 = 0
+	local var_69_2 = false
+	local var_69_3 = 0
 
-	if slot4 then
-		for slot10, slot11 in ipairs(slot0.selectedIds) do
-			if slot4.id == slot11[1] then
-				slot5 = true
-				slot6 = slot11[2]
+	if var_69_1 then
+		for iter_69_0, iter_69_1 in ipairs(arg_69_0.selectedIds) do
+			if var_69_1.id == iter_69_1[1] then
+				var_69_2 = true
+				var_69_3 = iter_69_1[2]
 
 				break
 			end
 		end
 	end
 
-	slot3:updateSelected(slot5, slot6)
+	var_69_0:updateSelected(var_69_2, var_69_3)
 
-	if not slot4 then
-		removeOnButton(slot3.go)
-	elseif isa(slot4, SpWeapon) then
-		onButton(slot0, slot3.go, function ()
-			uv0:emit(uv2.ON_SPWEAPON, uv0.shipVO and {
+	if not var_69_1 then
+		removeOnButton(var_69_0.go)
+	elseif isa(var_69_1, SpWeapon) then
+		onButton(arg_69_0, var_69_0.go, function()
+			local var_70_0 = arg_69_0.shipVO and {
 				type = EquipmentInfoMediator.TYPE_REPLACE,
-				shipId = uv0.contextData.shipId,
-				oldSpWeaponUid = uv1:GetUID(),
-				oldShipId = uv1:GetShipId()
-			} or uv1:GetShipId() and {
+				shipId = arg_69_0.contextData.shipId,
+				oldSpWeaponUid = var_69_1:GetUID(),
+				oldShipId = var_69_1:GetShipId()
+			} or var_69_1:GetShipId() and {
 				type = EquipmentInfoMediator.TYPE_DISPLAY,
-				spWeaponUid = uv1:GetUID(),
-				shipId = uv1:GetShipId()
+				spWeaponUid = var_69_1:GetUID(),
+				shipId = var_69_1:GetShipId()
 			} or {
 				type = EquipmentInfoMediator.TYPE_DEFAULT,
-				spWeaponUid = uv1:GetUID()
-			})
-		end, SFX_PANEL)
-	elseif slot3.equipmentVO.isSkin then
-		if slot4.shipId then
-			onButton(slot0, slot3.go, function ()
-				slot1 = uv0.shipPos
+				spWeaponUid = var_69_1:GetUID()
+			}
 
-				assert(slot1, "equipment skin pos is nil")
-				uv1:emit(EquipmentMediator.ON_EQUIPMENT_SKIN_INFO, uv0.id, uv1.contextData.pos, {
-					id = uv0.shipId,
-					pos = slot1
+			arg_69_0:emit(var_0_0.ON_SPWEAPON, var_70_0)
+		end, SFX_PANEL)
+	elseif var_69_0.equipmentVO.isSkin then
+		if var_69_1.shipId then
+			onButton(arg_69_0, var_69_0.go, function()
+				local var_71_0 = var_69_1.shipId
+				local var_71_1 = var_69_1.shipPos
+
+				assert(var_71_1, "equipment skin pos is nil")
+				arg_69_0:emit(EquipmentMediator.ON_EQUIPMENT_SKIN_INFO, var_69_1.id, arg_69_0.contextData.pos, {
+					id = var_71_0,
+					pos = var_71_1
 				})
 			end, SFX_PANEL)
 		else
-			onButton(slot0, slot3.go, function ()
-				uv0:emit(EquipmentMediator.ON_EQUIPMENT_SKIN_INFO, uv1.id, uv0.contextData.pos)
+			onButton(arg_69_0, var_69_0.go, function()
+				arg_69_0:emit(EquipmentMediator.ON_EQUIPMENT_SKIN_INFO, var_69_1.id, arg_69_0.contextData.pos)
 			end, SFX_PANEL)
 		end
-	elseif slot4.mask then
-		removeOnButton(slot3.go)
-	elseif slot0.mode == StoreHouseConst.DESTROY then
-		onButton(slot0, slot3.go, function ()
-			uv0:selectEquip(uv1, uv1.count)
+	elseif var_69_1.mask then
+		removeOnButton(var_69_0.go)
+	elseif arg_69_0.mode == StoreHouseConst.DESTROY then
+		onButton(arg_69_0, var_69_0.go, function()
+			arg_69_0:selectEquip(var_69_1, var_69_1.count)
 		end, SFX_PANEL)
 	else
-		onButton(slot0, slot3.go, function ()
-			uv0:emit(uv2.ON_EQUIPMENT, uv0.shipVO and {
+		onButton(arg_69_0, var_69_0.go, function()
+			local var_74_0 = arg_69_0.shipVO and {
 				type = EquipmentInfoMediator.TYPE_REPLACE,
-				equipmentId = uv1.id,
-				shipId = uv0.contextData.shipId,
-				pos = uv0.contextData.pos,
-				oldShipId = uv1.shipId,
-				oldPos = uv1.shipPos
-			} or uv1.shipId and {
+				equipmentId = var_69_1.id,
+				shipId = arg_69_0.contextData.shipId,
+				pos = arg_69_0.contextData.pos,
+				oldShipId = var_69_1.shipId,
+				oldPos = var_69_1.shipPos
+			} or var_69_1.shipId and {
 				showTransformTip = true,
 				type = EquipmentInfoMediator.TYPE_DISPLAY,
-				equipmentId = uv1.id,
-				shipId = uv1.shipId,
-				pos = uv1.shipPos
+				equipmentId = var_69_1.id,
+				shipId = var_69_1.shipId,
+				pos = var_69_1.shipPos
 			} or {
 				destroy = true,
 				type = EquipmentInfoMediator.TYPE_DEFAULT,
-				equipmentId = uv1.id
-			})
+				equipmentId = var_69_1.id
+			}
+
+			arg_69_0:emit(var_0_0.ON_EQUIPMENT, var_74_0)
 		end, SFX_PANEL)
 	end
 end
 
-function slot0.returnEquipment(slot0, slot1, slot2)
-	if slot0.exited then
+function var_0_0.returnEquipment(arg_75_0, arg_75_1, arg_75_2)
+	if arg_75_0.exited then
 		return
 	end
 
-	if slot0.equipmetItems[slot2] then
-		removeOnButton(slot3.go)
-		slot3:clear()
+	local var_75_0 = arg_75_0.equipmetItems[arg_75_2]
+
+	if var_75_0 then
+		removeOnButton(var_75_0.go)
+		var_75_0:clear()
 	end
 end
 
-function slot0.updateEquipmentCount(slot0, slot1)
-	slot0.equipmentRect:SetTotalCount(slot1 or #slot0.loadEquipmentVOs, -1)
-	setActive(slot0.listEmptyTF, (slot1 or #slot0.loadEquipmentVOs) <= 0)
-	setText(slot0.listEmptyTxt, i18n("list_empty_tip_storehouseui_equip"))
+function var_0_0.updateEquipmentCount(arg_76_0, arg_76_1)
+	arg_76_0.equipmentRect:SetTotalCount(arg_76_1 or #arg_76_0.loadEquipmentVOs, -1)
+	setActive(arg_76_0.listEmptyTF, (arg_76_1 or #arg_76_0.loadEquipmentVOs) <= 0)
+	setText(arg_76_0.listEmptyTxt, i18n("list_empty_tip_storehouseui_equip"))
 	Canvas.ForceUpdateCanvases()
 end
 
-function slot0.filterEquipment(slot0)
-	if slot0.filterEquipWaitting > 0 then
-		slot0.filterEquipWaitting = slot0.filterEquipWaitting - 1
+function var_0_0.filterEquipment(arg_77_0)
+	if arg_77_0.filterEquipWaitting > 0 then
+		arg_77_0.filterEquipWaitting = arg_77_0.filterEquipWaitting - 1
 
 		return
 	end
 
-	if slot0.page == uv0 then
-		slot0:filterEquipSkin()
+	if arg_77_0.page == var_0_3 then
+		arg_77_0:filterEquipSkin()
 
 		return
-	elseif slot0.page == uv1 then
-		slot0:filterSpWeapon()
+	elseif arg_77_0.page == var_0_4 then
+		arg_77_0:filterSpWeapon()
 
 		return
 	end
 
-	GetSpriteFromAtlasAsync("ui/share/index_atlas", slot0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on", function (slot0)
-		setImageSprite(uv0.indexBtn, slot0, true)
+	local var_77_0 = arg_77_0:isDefaultStatus() and "shaixuan_off" or "shaixuan_on"
+
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", var_77_0, function(arg_78_0)
+		setImageSprite(arg_77_0.indexBtn, arg_78_0, true)
 	end)
 
-	slot2 = {}
-	slot0.loadEquipmentVOs = {}
+	local var_77_1 = {}
 
-	for slot6, slot7 in pairs(slot0.equipmentVOs) do
-		if not slot7.isSkin then
-			table.insert(slot2, slot7)
+	arg_77_0.loadEquipmentVOs = {}
+
+	for iter_77_0, iter_77_1 in pairs(arg_77_0.equipmentVOs) do
+		if not iter_77_1.isSkin then
+			table.insert(var_77_1, iter_77_1)
 		end
 	end
 
-	for slot7, slot8 in pairs(slot2) do
-		if (slot8.count > 0 or slot8.shipId) and slot0:checkFitBusyCondition(slot8) and IndexConst.filterEquipByType(slot8, slot0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(slot8, {
-			slot0.contextData.indexDatas.equipPropertyIndex,
-			slot0.contextData.indexDatas.equipPropertyIndex2
-		}) and IndexConst.filterEquipAmmo1(slot8, slot0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(slot8, slot0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(slot8, slot0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(slot8, slot0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(slot8, slot0.contextData.indexDatas.extraIndex) then
-			table.insert(slot0.loadEquipmentVOs, slot8)
+	local var_77_2 = {
+		arg_77_0.contextData.indexDatas.equipPropertyIndex,
+		arg_77_0.contextData.indexDatas.equipPropertyIndex2
+	}
+
+	for iter_77_2, iter_77_3 in pairs(var_77_1) do
+		if (iter_77_3.count > 0 or iter_77_3.shipId) and arg_77_0:checkFitBusyCondition(iter_77_3) and IndexConst.filterEquipByType(iter_77_3, arg_77_0.contextData.indexDatas.typeIndex) and IndexConst.filterEquipByProperty(iter_77_3, var_77_2) and IndexConst.filterEquipAmmo1(iter_77_3, arg_77_0.contextData.indexDatas.equipAmmoIndex1) and IndexConst.filterEquipAmmo2(iter_77_3, arg_77_0.contextData.indexDatas.equipAmmoIndex2) and IndexConst.filterEquipByCamp(iter_77_3, arg_77_0.contextData.indexDatas.equipCampIndex) and IndexConst.filterEquipByRarity(iter_77_3, arg_77_0.contextData.indexDatas.rarityIndex) and IndexConst.filterEquipByExtra(iter_77_3, arg_77_0.contextData.indexDatas.extraIndex) then
+			table.insert(arg_77_0.loadEquipmentVOs, iter_77_3)
 		end
 	end
 
-	if slot0.filterImportance ~= nil then
-		for slot7 = #slot0.loadEquipmentVOs, 1, -1 do
-			if slot0.loadEquipmentVOs[slot7].isSkin or not slot8.isSkin and slot8:isImportance() then
-				table.remove(slot0.loadEquipmentVOs, slot7)
+	if arg_77_0.filterImportance ~= nil then
+		for iter_77_4 = #arg_77_0.loadEquipmentVOs, 1, -1 do
+			local var_77_3 = arg_77_0.loadEquipmentVOs[iter_77_4]
+
+			if var_77_3.isSkin or not var_77_3.isSkin and var_77_3:isImportance() then
+				table.remove(arg_77_0.loadEquipmentVOs, iter_77_4)
 			end
 		end
 	end
 
-	if slot0.contextData.sortData then
-		table.sort(slot0.loadEquipmentVOs, CompareFuncs(uv2.sortFunc(slot4, slot0.asc)))
+	local var_77_4 = arg_77_0.contextData.sortData
+
+	if var_77_4 then
+		local var_77_5 = arg_77_0.asc
+
+		table.sort(arg_77_0.loadEquipmentVOs, CompareFuncs(var_0_7.sortFunc(var_77_4, var_77_5)))
 	end
 
-	if slot0.contextData.qiutBtn then
-		table.insert(slot0.loadEquipmentVOs, 1, false)
+	if arg_77_0.contextData.qiutBtn then
+		table.insert(arg_77_0.loadEquipmentVOs, 1, false)
 	end
 
-	slot0:updateSelected()
-	slot0:updateEquipmentCount()
-	setImageSprite(slot0:findTF("Image", slot0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", slot4.spr), true)
-	setActive(slot0.sortImgAsc, slot0.asc)
-	setActive(slot0.sortImgDec, not slot0.asc)
-	slot0:updateCapacity()
+	arg_77_0:updateSelected()
+	arg_77_0:updateEquipmentCount()
+	setImageSprite(arg_77_0:findTF("Image", arg_77_0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var_77_4.spr), true)
+	setActive(arg_77_0.sortImgAsc, arg_77_0.asc)
+	setActive(arg_77_0.sortImgDec, not arg_77_0.asc)
+	arg_77_0:updateCapacity()
 end
 
-function slot0.filterEquipSkin(slot0)
-	slot1 = slot0.equipSkinIndex
-	slot2 = slot0.equipSkinTheme
-	slot4 = {}
-	slot0.loadEquipmentVOs = {}
+function var_0_0.filterEquipSkin(arg_79_0)
+	local var_79_0 = arg_79_0.equipSkinIndex
+	local var_79_1 = arg_79_0.equipSkinTheme
+	local var_79_2 = arg_79_0.page
+	local var_79_3 = {}
 
-	if slot0.page ~= uv0 then
+	arg_79_0.loadEquipmentVOs = {}
+
+	if var_79_2 ~= var_0_3 then
 		assert(false, "不是外观分页")
 	end
 
-	for slot8, slot9 in pairs(slot0.equipmentVOs) do
-		if slot9.isSkin and slot9.count > 0 then
-			table.insert(slot4, slot9)
+	for iter_79_0, iter_79_1 in pairs(arg_79_0.equipmentVOs) do
+		if iter_79_1.isSkin and iter_79_1.count > 0 then
+			table.insert(var_79_3, iter_79_1)
 		end
 	end
 
-	for slot8, slot9 in pairs(slot4) do
-		if IndexConst.filterEquipSkinByIndex(slot9, slot1) and IndexConst.filterEquipSkinByTheme(slot9, slot2) and slot0:checkFitBusyCondition(slot9) then
-			table.insert(slot0.loadEquipmentVOs, slot9)
+	for iter_79_2, iter_79_3 in pairs(var_79_3) do
+		if IndexConst.filterEquipSkinByIndex(iter_79_3, var_79_0) and IndexConst.filterEquipSkinByTheme(iter_79_3, var_79_1) and arg_79_0:checkFitBusyCondition(iter_79_3) then
+			table.insert(arg_79_0.loadEquipmentVOs, iter_79_3)
 		end
 	end
 
-	if slot0.filterImportance ~= nil then
-		for slot8 = #slot0.loadEquipmentVOs, 1, -1 do
-			if slot0.loadEquipmentVOs[slot8].isSkin or not slot9.isSkin and slot9:isImportance() then
-				table.remove(slot0.loadEquipmentVOs, slot8)
+	if arg_79_0.filterImportance ~= nil then
+		for iter_79_4 = #arg_79_0.loadEquipmentVOs, 1, -1 do
+			local var_79_4 = arg_79_0.loadEquipmentVOs[iter_79_4]
+
+			if var_79_4.isSkin or not var_79_4.isSkin and var_79_4:isImportance() then
+				table.remove(arg_79_0.loadEquipmentVOs, iter_79_4)
 			end
 		end
 	end
 
-	if slot0.contextData.sortData then
-		table.sort(slot0.loadEquipmentVOs, CompareFuncs(uv1.sortFunc(slot5, slot0.asc)))
+	local var_79_5 = arg_79_0.contextData.sortData
+
+	if var_79_5 then
+		local var_79_6 = arg_79_0.asc
+
+		table.sort(arg_79_0.loadEquipmentVOs, CompareFuncs(var_0_7.sortFunc(var_79_5, var_79_6)))
 	end
 
-	if slot0.contextData.qiutBtn then
-		table.insert(slot0.loadEquipmentVOs, 1, false)
+	if arg_79_0.contextData.qiutBtn then
+		table.insert(arg_79_0.loadEquipmentVOs, 1, false)
 	end
 
-	slot0:updateSelected()
-	slot0:updateEquipmentCount()
-	setActive(slot0.sortImgAsc, slot0.asc)
-	setActive(slot0.sortImgDec, not slot0.asc)
+	arg_79_0:updateSelected()
+	arg_79_0:updateEquipmentCount()
+	setActive(arg_79_0.sortImgAsc, arg_79_0.asc)
+	setActive(arg_79_0.sortImgDec, not arg_79_0.asc)
 end
 
-function slot0.filterSpWeapon(slot0)
-	if slot0.page ~= uv0 then
+function var_0_0.filterSpWeapon(arg_80_0)
+	if arg_80_0.page ~= var_0_4 then
 		assert(false, "不是特殊兵装分页")
 	end
 
-	GetSpriteFromAtlasAsync("ui/share/index_atlas", slot0:isDefaultSpWeaponIndexData() and "shaixuan_off" or "shaixuan_on", function (slot0)
-		setImageSprite(uv0.indexBtn, slot0, true)
+	local var_80_0 = arg_80_0:isDefaultSpWeaponIndexData() and "shaixuan_off" or "shaixuan_on"
+
+	GetSpriteFromAtlasAsync("ui/share/index_atlas", var_80_0, function(arg_81_0)
+		setImageSprite(arg_80_0.indexBtn, arg_81_0, true)
 	end)
 
-	slot0.loadEquipmentVOs = {}
+	arg_80_0.loadEquipmentVOs = {}
 
-	for slot8, slot9 in pairs(slot0.spweaponVOs) do
-		if IndexConst.filterSpWeaponByType(slot9, slot0.contextData.spweaponIndexDatas.typeIndex) and IndexConst.filterSpWeaponByRarity(slot9, slot0.contextData.spweaponIndexDatas.rarityIndex) and slot0:checkFitBusyCondition(slot9) and (slot0.filterImportance == nil or slot9:IsImportant()) then
-			table.insert(slot0.loadEquipmentVOs, slot9)
+	local var_80_1 = arg_80_0.contextData.spweaponIndexDatas.typeIndex
+	local var_80_2 = arg_80_0.contextData.spweaponIndexDatas.rarityIndex
+
+	for iter_80_0, iter_80_1 in pairs(arg_80_0.spweaponVOs) do
+		if IndexConst.filterSpWeaponByType(iter_80_1, var_80_1) and IndexConst.filterSpWeaponByRarity(iter_80_1, var_80_2) and arg_80_0:checkFitBusyCondition(iter_80_1) and (arg_80_0.filterImportance == nil or iter_80_1:IsImportant()) then
+			table.insert(arg_80_0.loadEquipmentVOs, iter_80_1)
 		end
 	end
 
-	if slot0.contextData.spweaponSortData then
-		table.sort(slot0.loadEquipmentVOs, CompareFuncs(uv1.sortFunc(slot5, slot0.asc)))
+	local var_80_3 = arg_80_0.contextData.spweaponSortData
+
+	if var_80_3 then
+		local var_80_4 = arg_80_0.asc
+
+		table.sort(arg_80_0.loadEquipmentVOs, CompareFuncs(var_0_8.sortFunc(var_80_3, var_80_4)))
 	end
 
-	if slot0.contextData.qiutBtn then
-		table.insert(slot0.loadEquipmentVOs, 1, false)
+	if arg_80_0.contextData.qiutBtn then
+		table.insert(arg_80_0.loadEquipmentVOs, 1, false)
 	end
 
-	slot0:updateSelected()
-	slot0:updateEquipmentCount()
-	setImageSprite(slot0:findTF("Image", slot0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", slot5.spr), true)
-	setActive(slot0.sortImgAsc, slot0.asc)
-	setActive(slot0.sortImgDec, not slot0.asc)
-	slot0:UpdateSpweaponCapacity()
+	arg_80_0:updateSelected()
+	arg_80_0:updateEquipmentCount()
+	setImageSprite(arg_80_0:findTF("Image", arg_80_0.sortBtn), GetSpriteFromAtlas("ui/equipmentui_atlas", var_80_3.spr), true)
+	setActive(arg_80_0.sortImgAsc, arg_80_0.asc)
+	setActive(arg_80_0.sortImgDec, not arg_80_0.asc)
+	arg_80_0:UpdateSpweaponCapacity()
 end
 
-function slot0.GetShowBusyFlag(slot0)
-	return slot0.isEquipingOn
+function var_0_0.GetShowBusyFlag(arg_82_0)
+	return arg_82_0.isEquipingOn
 end
 
-function slot0.SetShowBusyFlag(slot0, slot1)
-	slot0.isEquipingOn = slot1
+function var_0_0.SetShowBusyFlag(arg_83_0, arg_83_1)
+	arg_83_0.isEquipingOn = arg_83_1
 end
 
-function slot0.Scroll2Equip(slot0, slot1)
-	if slot0.contextData.warp ~= StoreHouseConst.WARP_TO_WEAPON or slot0.page ~= uv0 then
+function var_0_0.Scroll2Equip(arg_84_0, arg_84_1)
+	if arg_84_0.contextData.warp ~= StoreHouseConst.WARP_TO_WEAPON or arg_84_0.page ~= var_0_2 then
 		return
 	end
 
-	for slot5, slot6 in ipairs(slot0.loadEquipmentVOs) do
-		if EquipmentProxy.SameEquip(slot6, slot1) then
-			slot7 = slot0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup))
+	for iter_84_0, iter_84_1 in ipairs(arg_84_0.loadEquipmentVOs) do
+		if EquipmentProxy.SameEquip(iter_84_1, arg_84_1) then
+			local var_84_0 = arg_84_0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup))
+			local var_84_1 = (var_84_0.cellSize.y + var_84_0.spacing.y) * math.floor((iter_84_0 - 1) / var_84_0.constraintCount) + arg_84_0.equipmentRect.paddingFront + arg_84_0.equipmentView.rect.height * 0.5
 
-			slot0:ScrollEquipPos((slot7.cellSize.y + slot7.spacing.y) * math.floor((slot5 - 1) / slot7.constraintCount) + slot0.equipmentRect.paddingFront + slot0.equipmentView.rect.height * 0.5 - slot0.equipmentRect.paddingFront)
+			arg_84_0:ScrollEquipPos(var_84_1 - arg_84_0.equipmentRect.paddingFront)
 
 			break
 		end
 	end
 end
 
-function slot0.ScrollEquipPos(slot0, slot1)
-	slot2 = slot0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup))
+function var_0_0.ScrollEquipPos(arg_85_0, arg_85_1)
+	local var_85_0 = arg_85_0.equipmentView:Find("equipment_grid"):GetComponent(typeof(GridLayoutGroup))
+	local var_85_1 = (var_85_0.cellSize.y + var_85_0.spacing.y) * math.ceil(#arg_85_0.loadEquipmentVOs / var_85_0.constraintCount) - var_85_0.spacing.y + arg_85_0.equipmentRect.paddingFront + arg_85_0.equipmentRect.paddingEnd
+	local var_85_2 = var_85_1 - arg_85_0.equipmentView.rect.height
 
-	slot0.equipmentRect:ScrollTo((slot1 - slot0.equipmentView.rect.height * 0.5) / ((slot2.cellSize.y + slot2.spacing.y) * math.ceil(#slot0.loadEquipmentVOs / slot2.constraintCount) - slot2.spacing.y + slot0.equipmentRect.paddingFront + slot0.equipmentRect.paddingEnd - slot0.equipmentView.rect.height > 0 and slot5 or slot4))
+	var_85_2 = var_85_2 > 0 and var_85_2 or var_85_1
+
+	local var_85_3 = (arg_85_1 - arg_85_0.equipmentView.rect.height * 0.5) / var_85_2
+
+	arg_85_0.equipmentRect:ScrollTo(var_85_3)
 end
 
-function slot0.checkFitBusyCondition(slot0, slot1)
-	return not slot1.shipId or slot0:GetShowBusyFlag() and slot0.mode ~= StoreHouseConst.DESTROY
+function var_0_0.checkFitBusyCondition(arg_86_0, arg_86_1)
+	return not arg_86_1.shipId or arg_86_0:GetShowBusyFlag() and arg_86_0.mode ~= StoreHouseConst.DESTROY
 end
 
-function slot0.setItems(slot0, slot1)
-	slot0.itemVOs = slot1
+function var_0_0.setItems(arg_87_0, arg_87_1)
+	arg_87_0.itemVOs = arg_87_1
 
-	if slot0.isInitItems and slot0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
-		slot0:sortItems()
+	if arg_87_0.isInitItems and arg_87_0.contextData.warp == StoreHouseConst.WARP_TO_MATERIAL then
+		arg_87_0:sortItems()
 	end
 end
 
-function slot0.initItems(slot0)
-	slot0.isInitItems = true
-	slot0.itemRect = slot0.itemView:GetComponent("LScrollRect")
+function var_0_0.initItems(arg_88_0)
+	arg_88_0.isInitItems = true
+	arg_88_0.itemRect = arg_88_0.itemView:GetComponent("LScrollRect")
 
-	function slot0.itemRect.onInitItem(slot0)
-		uv0:initItem(slot0)
+	function arg_88_0.itemRect.onInitItem(arg_89_0)
+		arg_88_0:initItem(arg_89_0)
 	end
 
-	function slot0.itemRect.onUpdateItem(slot0, slot1)
-		uv0:updateItem(slot0, slot1)
+	function arg_88_0.itemRect.onUpdateItem(arg_90_0, arg_90_1)
+		arg_88_0:updateItem(arg_90_0, arg_90_1)
 	end
 
-	function slot0.itemRect.onReturnItem(slot0, slot1)
-		uv0:returnItem(slot0, slot1)
+	function arg_88_0.itemRect.onReturnItem(arg_91_0, arg_91_1)
+		arg_88_0:returnItem(arg_91_0, arg_91_1)
 	end
 
-	slot0.itemRect.decelerationRate = 0.07
+	arg_88_0.itemRect.decelerationRate = 0.07
 end
 
-function slot0.sortItems(slot0)
-	table.sort(slot0.itemVOs, CompareFuncs({
-		function (slot0)
-			return -slot0:getConfig("order")
+function var_0_0.sortItems(arg_92_0)
+	table.sort(arg_92_0.itemVOs, CompareFuncs({
+		function(arg_93_0)
+			return -arg_93_0:getConfig("order")
 		end,
-		function (slot0)
-			return -slot0:getConfig("rarity")
+		function(arg_94_0)
+			return -arg_94_0:getConfig("rarity")
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_95_0)
+			return arg_95_0.id
 		end
 	}))
-	slot0.itemRect:SetTotalCount(#slot0.itemVOs, -1)
-	setActive(slot0.listEmptyTF, #slot0.itemVOs <= 0)
-	setText(slot0.listEmptyTxt, i18n("list_empty_tip_storehouseui_item"))
+	arg_92_0.itemRect:SetTotalCount(#arg_92_0.itemVOs, -1)
+	setActive(arg_92_0.listEmptyTF, #arg_92_0.itemVOs <= 0)
+	setText(arg_92_0.listEmptyTxt, i18n("list_empty_tip_storehouseui_item"))
 	Canvas.ForceUpdateCanvases()
 end
 
-function slot0.initItem(slot0, slot1)
-	slot0.itemCards[slot1] = ItemCard.New(slot1)
+function var_0_0.initItem(arg_96_0, arg_96_1)
+	arg_96_0.itemCards[arg_96_1] = ItemCard.New(arg_96_1)
 end
 
-function slot0.updateItem(slot0, slot1, slot2)
-	slot3 = slot0.itemCards[slot2]
+function var_0_0.updateItem(arg_97_0, arg_97_1, arg_97_2)
+	local var_97_0 = arg_97_0.itemCards[arg_97_2]
 
-	assert(slot3, "without init item")
+	assert(var_97_0, "without init item")
 
-	slot4 = slot0.itemVOs[slot1 + 1]
+	local var_97_1 = arg_97_0.itemVOs[arg_97_1 + 1]
 
-	slot3:update(slot4)
+	var_97_0:update(var_97_1)
 
-	if not slot4 then
-		removeOnButton(slot3.go)
-	else
-		if tobool(getProxy(TechnologyProxy):getItemCanUnlockBluePrint(slot4.id)) then
-			if underscore.detect(underscore.map(getProxy(TechnologyProxy):getItemCanUnlockBluePrint(slot4.id), function (slot0)
-				return uv0:getBluePrintById(slot0)
-			end), function (slot0)
-				return not slot0:isUnlock()
-			end) then
-				onButton(slot0, slot3.go, function ()
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						type = MSGBOX_TYPE_BLUEPRINT_UNLOCK_ITEM,
-						item = uv0,
-						blueprints = uv1,
-						onYes = function ()
-							uv0:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.SHIPBLUEPRINT, {
-								shipBluePrintVO = uv1
-							})
-						end,
-						yesText = i18n("text_forward")
-					})
-				end, SFX_PANEL)
-			else
-				onButton(slot0, slot3.go, function ()
-					pg.MsgboxMgr.GetInstance():ShowMsgBox({
-						type = MSGBOX_TYPE_BLUEPRINT_UNLOCK_ITEM,
-						windowSize = Vector2(1010, 685),
-						item = uv0,
-						blueprints = uv1,
-						onYes = function ()
-							pg.MsgboxMgr.GetInstance():ShowMsgBox({
-								type = MSGBOX_TYPE_ITEM_BOX,
-								content = i18n("techpackage_item_use_confirm"),
-								items = underscore.map(uv0:getConfig("display_icon"), function (slot0)
-									return {
-										type = slot0[1],
-										id = slot0[2],
-										count = slot0[3]
-									}
-								end),
-								onYes = function ()
-									uv0:emit(EquipmentMediator.ON_USE_ITEM, uv1.id, 1)
-								end
-							})
-						end
-					})
-				end, SFX_PANEL)
-			end
+	if not var_97_1 then
+		removeOnButton(var_97_0.go)
+	elseif tobool(getProxy(TechnologyProxy):getItemCanUnlockBluePrint(var_97_1.id)) then
+		local var_97_2 = getProxy(TechnologyProxy)
+		local var_97_3 = underscore.map(var_97_2:getItemCanUnlockBluePrint(var_97_1.id), function(arg_98_0)
+			return var_97_2:getBluePrintById(arg_98_0)
+		end)
+		local var_97_4 = underscore.detect(var_97_3, function(arg_99_0)
+			return not arg_99_0:isUnlock()
+		end)
 
-			return
-		end
-
-		if slot4:getConfig("type") == Item.INVITATION_TYPE then
-			onButton(slot0, slot3.go, function ()
-				uv0:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.INVITATION, {
-					itemVO = uv1
+		if var_97_4 then
+			onButton(arg_97_0, var_97_0.go, function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					type = MSGBOX_TYPE_BLUEPRINT_UNLOCK_ITEM,
+					item = var_97_1,
+					blueprints = var_97_3,
+					onYes = function()
+						arg_97_0:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.SHIPBLUEPRINT, {
+							shipBluePrintVO = var_97_4
+						})
+					end,
+					yesText = i18n("text_forward")
 				})
 			end, SFX_PANEL)
-		elseif slot4:getConfig("type") == Item.ASSIGNED_TYPE or slot4:getConfig("type") == Item.EQUIPMENT_ASSIGNED_TYPE then
-			if underscore.any(pg.gameset.general_blueprint_list.description, function (slot0)
-				return uv0.id == slot0
-			end) then
-				onButton(slot0, slot3.go, function ()
-					uv0.blueprintAssignedItemView:Load()
-					uv0.blueprintAssignedItemView:ActionInvoke("Show")
-					uv0.blueprintAssignedItemView:ActionInvoke("update", uv1)
-				end, SFX_PANEL)
-			else
-				onButton(slot0, slot3.go, function ()
-					uv0.assignedItemView:Load()
-					uv0.assignedItemView:ActionInvoke("Show")
-					uv0.assignedItemView:ActionInvoke("update", uv1)
-				end, SFX_PANEL)
-			end
-		elseif slot4:getConfig("type") == Item.LOVE_LETTER_TYPE then
-			onButton(slot0, slot3.go, function ()
-				uv0:emit(uv1.ON_ITEM_EXTRA, uv2.id, uv2.extra)
-			end, SFX_PANEL)
-		elseif slot4:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
-			onButton(slot0, slot3.go, function ()
-				uv0:emit(uv1.ON_ITEM, uv2.id, function ()
-					if uv0:IsAllSkinOwner() then
-						slot1 = Drop.New({
-							count = 1,
-							type = DROP_TYPE_ITEM,
-							id = uv0:getConfig("usage_arg")[5]
-						})
-
-						uv1.msgBox:ExecuteAction("Show", {
-							content = i18n("blackfriday_pack_select_skinall_dialog", uv0:getConfig("name"), slot1:getName()),
-							leftDrop = {
-								count = 1,
-								type = DROP_TYPE_ITEM,
-								id = uv0.id
-							},
-							rightDrop = slot1,
-							onYes = function ()
-								uv0:emit(EquipmentMediator.ON_USE_ITEM, uv1.id, 1, {
-									0
-								})
+		else
+			onButton(arg_97_0, var_97_0.go, function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					type = MSGBOX_TYPE_BLUEPRINT_UNLOCK_ITEM,
+					windowSize = Vector2(1010, 685),
+					item = var_97_1,
+					blueprints = var_97_3,
+					onYes = function()
+						pg.MsgboxMgr.GetInstance():ShowMsgBox({
+							type = MSGBOX_TYPE_ITEM_BOX,
+							content = i18n("techpackage_item_use_confirm"),
+							items = underscore.map(var_97_1:getConfig("display_icon"), function(arg_104_0)
+								return {
+									type = arg_104_0[1],
+									id = arg_104_0[2],
+									count = arg_104_0[3]
+								}
+							end),
+							onYes = function()
+								arg_97_0:emit(EquipmentMediator.ON_USE_ITEM, var_97_1.id, 1)
 							end
 						})
-					else
-						slot1 = {
-							[slot6] = true
-						}
-
-						for slot5, slot6 in ipairs(slot0[2]) do
-							-- Nothing
-						end
-
-						uv1:emit(EquipmentMediator.ITEM_ADD_LAYER, Context.New({
-							viewComponent = SelectSkinLayer,
-							mediator = SkinAtlasMediator,
-							data = {
-								mode = SelectSkinLayer.MODE_SELECT,
-								itemId = uv0.id,
-								selectableSkinList = underscore.map(uv0:GetValidSkinList(), function (slot0)
-									return SelectableSkin.New({
-										id = slot0,
-										isTimeLimit = uv0[slot0] or false
-									})
-								end),
-								OnConfirm = function (slot0)
-									uv0:emit(EquipmentMediator.ON_USE_ITEM, uv1.id, 1, {
-										slot0
-									})
-								end
-							}
-						}))
 					end
-				end)
-			end, SFX_PANEL)
-		else
-			onButton(slot0, slot3.go, function ()
-				uv0:emit(uv1.ON_ITEM, uv2.id)
+				})
 			end, SFX_PANEL)
 		end
+	elseif var_97_1:getConfig("type") == Item.INVITATION_TYPE then
+		onButton(arg_97_0, var_97_0.go, function()
+			arg_97_0:emit(EquipmentMediator.ITEM_GO_SCENE, SCENE.INVITATION, {
+				itemVO = var_97_1
+			})
+		end, SFX_PANEL)
+	elseif var_97_1:getConfig("type") == Item.ASSIGNED_TYPE or var_97_1:getConfig("type") == Item.EQUIPMENT_ASSIGNED_TYPE then
+		if underscore.any(pg.gameset.general_blueprint_list.description, function(arg_107_0)
+			return var_97_1.id == arg_107_0
+		end) then
+			onButton(arg_97_0, var_97_0.go, function()
+				arg_97_0.blueprintAssignedItemView:Load()
+				arg_97_0.blueprintAssignedItemView:ActionInvoke("Show")
+				arg_97_0.blueprintAssignedItemView:ActionInvoke("update", var_97_1)
+			end, SFX_PANEL)
+		else
+			onButton(arg_97_0, var_97_0.go, function()
+				arg_97_0.assignedItemView:Load()
+				arg_97_0.assignedItemView:ActionInvoke("Show")
+				arg_97_0.assignedItemView:ActionInvoke("update", var_97_1)
+			end, SFX_PANEL)
+		end
+	elseif var_97_1:getConfig("type") == Item.LOVE_LETTER_TYPE then
+		onButton(arg_97_0, var_97_0.go, function()
+			arg_97_0:emit(var_0_0.ON_ITEM_EXTRA, var_97_1.id, var_97_1.extra)
+		end, SFX_PANEL)
+	elseif var_97_1:getConfig("type") == Item.SKIN_ASSIGNED_TYPE then
+		onButton(arg_97_0, var_97_0.go, function()
+			arg_97_0:emit(var_0_0.ON_ITEM, var_97_1.id, function()
+				local var_112_0 = var_97_1:getConfig("usage_arg")
+
+				if var_97_1:IsAllSkinOwner() then
+					local var_112_1 = Drop.New({
+						count = 1,
+						type = DROP_TYPE_ITEM,
+						id = var_112_0[5]
+					})
+
+					arg_97_0.msgBox:ExecuteAction("Show", {
+						content = i18n("blackfriday_pack_select_skinall_dialog", var_97_1:getConfig("name"), var_112_1:getName()),
+						leftDrop = {
+							count = 1,
+							type = DROP_TYPE_ITEM,
+							id = var_97_1.id
+						},
+						rightDrop = var_112_1,
+						onYes = function()
+							arg_97_0:emit(EquipmentMediator.ON_USE_ITEM, var_97_1.id, 1, {
+								0
+							})
+						end
+					})
+				else
+					local var_112_2 = {}
+
+					for iter_112_0, iter_112_1 in ipairs(var_112_0[2]) do
+						var_112_2[iter_112_1] = true
+					end
+
+					arg_97_0:emit(EquipmentMediator.ITEM_ADD_LAYER, Context.New({
+						viewComponent = SelectSkinLayer,
+						mediator = SkinAtlasMediator,
+						data = {
+							mode = SelectSkinLayer.MODE_SELECT,
+							itemId = var_97_1.id,
+							selectableSkinList = underscore.map(var_97_1:GetValidSkinList(), function(arg_114_0)
+								return SelectableSkin.New({
+									id = arg_114_0,
+									isTimeLimit = var_112_2[arg_114_0] or false
+								})
+							end),
+							OnConfirm = function(arg_115_0)
+								arg_97_0:emit(EquipmentMediator.ON_USE_ITEM, var_97_1.id, 1, {
+									arg_115_0
+								})
+							end
+						}
+					}))
+				end
+			end)
+		end, SFX_PANEL)
+	else
+		onButton(arg_97_0, var_97_0.go, function()
+			arg_97_0:emit(var_0_0.ON_ITEM, var_97_1.id)
+		end, SFX_PANEL)
 	end
 end
 
-function slot0.returnItem(slot0, slot1, slot2)
-	if slot0.exited then
+function var_0_0.returnItem(arg_117_0, arg_117_1, arg_117_2)
+	if arg_117_0.exited then
 		return
 	end
 
-	if slot0.itemCards[slot2] then
-		removeOnButton(slot3.go)
-		slot3:clear()
+	local var_117_0 = arg_117_0.itemCards[arg_117_2]
+
+	if var_117_0 then
+		removeOnButton(var_117_0.go)
+		var_117_0:clear()
 	end
 end
 
-function slot0.selectCount(slot0)
-	for slot5, slot6 in ipairs(slot0.selectedIds) do
-		slot1 = 0 + slot6[2]
+function var_0_0.selectCount(arg_118_0)
+	local var_118_0 = 0
+
+	for iter_118_0, iter_118_1 in ipairs(arg_118_0.selectedIds) do
+		var_118_0 = var_118_0 + iter_118_1[2]
 	end
 
-	return slot1
+	return var_118_0
 end
 
-function slot0.selectEquip(slot0, slot1, slot2)
-	if not slot0:checkDestroyGold(slot1, slot2) then
+function var_0_0.selectEquip(arg_119_0, arg_119_1, arg_119_2)
+	if not arg_119_0:checkDestroyGold(arg_119_1, arg_119_2) then
 		return
 	end
 
-	if slot0.mode == StoreHouseConst.DESTROY then
-		slot3 = false
-		slot4 = nil
-		slot5 = 0
+	if arg_119_0.mode == StoreHouseConst.DESTROY then
+		local var_119_0 = false
+		local var_119_1
+		local var_119_2 = 0
 
-		for slot9, slot10 in pairs(slot0.selectedIds) do
-			if slot10[1] == slot1.id then
-				slot3 = true
-				slot4 = slot9
-				slot5 = slot10[2]
+		for iter_119_0, iter_119_1 in pairs(arg_119_0.selectedIds) do
+			if iter_119_1[1] == arg_119_1.id then
+				var_119_0 = true
+				var_119_1 = iter_119_0
+				var_119_2 = iter_119_1[2]
 
 				break
 			end
 		end
 
-		if not slot3 then
-			slot6, slot7 = slot0.checkEquipment(slot1, function ()
-				uv0:selectEquip(uv1, uv2)
-			end, slot0.selectedIds)
+		if not var_119_0 then
+			local var_119_3, var_119_4 = arg_119_0.checkEquipment(arg_119_1, function()
+				arg_119_0:selectEquip(arg_119_1, arg_119_2)
+			end, arg_119_0.selectedIds)
 
-			if not slot6 then
-				if slot7 then
-					pg.TipsMgr.GetInstance():ShowTips(slot7)
+			if not var_119_3 then
+				if var_119_4 then
+					pg.TipsMgr.GetInstance():ShowTips(var_119_4)
 				end
 
 				return
 			end
 
-			slot8 = slot0:selectCount()
+			local var_119_5 = arg_119_0:selectCount()
 
-			if slot0.selectedMax > 0 and slot0.selectedMax < slot8 + slot2 then
-				slot2 = slot0.selectedMax - slot8
+			if arg_119_0.selectedMax > 0 and var_119_5 + arg_119_2 > arg_119_0.selectedMax then
+				arg_119_2 = arg_119_0.selectedMax - var_119_5
 			end
 
-			if slot0.selectedMax == 0 or slot8 < slot0.selectedMax then
-				table.insert(slot0.selectedIds, {
-					slot1.id,
-					slot2
+			if arg_119_0.selectedMax == 0 or var_119_5 < arg_119_0.selectedMax then
+				table.insert(arg_119_0.selectedIds, {
+					arg_119_1.id,
+					arg_119_2
 				})
-			elseif slot0.selectedMax == 1 then
-				slot0.selectedIds[1] = {
-					slot1.id,
-					slot2
+			elseif arg_119_0.selectedMax == 1 then
+				arg_119_0.selectedIds[1] = {
+					arg_119_1.id,
+					arg_119_2
 				}
 			else
-				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_equipmentScene_selectError_more", slot0.selectedMax))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_equipmentScene_selectError_more", arg_119_0.selectedMax))
 
 				return
 			end
-		elseif slot5 - slot2 > 0 then
-			slot0.selectedIds[slot4][2] = slot5 - slot2
+		elseif var_119_2 - arg_119_2 > 0 then
+			arg_119_0.selectedIds[var_119_1][2] = var_119_2 - arg_119_2
 		else
-			table.remove(slot0.selectedIds, slot4)
+			table.remove(arg_119_0.selectedIds, var_119_1)
 		end
 	end
 
-	slot0:updateSelected()
+	arg_119_0:updateSelected()
 end
 
-function slot0.unselecteAllEquips(slot0)
-	slot0.selectedIds = {}
+function var_0_0.unselecteAllEquips(arg_121_0)
+	arg_121_0.selectedIds = {}
 
-	slot0:updateSelected()
+	arg_121_0:updateSelected()
 end
 
-function slot0.checkDestroyGold(slot0, slot1, slot2)
-	slot4 = false
+function var_0_0.checkDestroyGold(arg_122_0, arg_122_1, arg_122_2)
+	local var_122_0 = 0
+	local var_122_1 = false
 
-	for slot8, slot9 in pairs(slot0.selectedIds) do
-		if Equipment.CanInBag(slot9[1]) then
-			slot3 = 0 + (Equipment.getConfigData(slot9[1]).destory_gold or 0) * slot9[2]
+	for iter_122_0, iter_122_1 in pairs(arg_122_0.selectedIds) do
+		local var_122_2 = iter_122_1[2]
+
+		if Equipment.CanInBag(iter_122_1[1]) then
+			var_122_0 = var_122_0 + (Equipment.getConfigData(iter_122_1[1]).destory_gold or 0) * var_122_2
 		end
 
-		if slot1 and slot9[1] == slot1.configId then
-			slot4 = true
+		if arg_122_1 and iter_122_1[1] == arg_122_1.configId then
+			var_122_1 = true
 		end
 	end
 
-	if not slot4 and slot1 and slot2 > 0 then
-		slot3 = slot3 + (slot1:getConfig("destory_gold") or 0) * slot2
+	if not var_122_1 and arg_122_1 and arg_122_2 > 0 then
+		var_122_0 = var_122_0 + (arg_122_1:getConfig("destory_gold") or 0) * arg_122_2
 	end
 
-	if slot0.player:GoldMax(slot3) then
+	if arg_122_0.player:GoldMax(var_122_0) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_destroy"))
 
 		return false
@@ -1304,69 +1373,71 @@ function slot0.checkDestroyGold(slot0, slot1, slot2)
 	return true
 end
 
-function slot0.updateSelected(slot0)
-	for slot4, slot5 in pairs(slot0.equipmetItems) do
-		if slot5.equipmentVO then
-			slot6 = false
-			slot7 = 0
+function var_0_0.updateSelected(arg_123_0)
+	for iter_123_0, iter_123_1 in pairs(arg_123_0.equipmetItems) do
+		if iter_123_1.equipmentVO then
+			local var_123_0 = false
+			local var_123_1 = 0
 
-			for slot11, slot12 in pairs(slot0.selectedIds) do
-				if slot5.equipmentVO.id == slot12[1] then
-					slot6 = true
-					slot7 = slot12[2]
+			for iter_123_2, iter_123_3 in pairs(arg_123_0.selectedIds) do
+				if iter_123_1.equipmentVO.id == iter_123_3[1] then
+					var_123_0 = true
+					var_123_1 = iter_123_3[2]
 
 					break
 				end
 			end
 
-			slot5:updateSelected(slot6, slot7)
+			iter_123_1:updateSelected(var_123_0, var_123_1)
 		end
 	end
 
-	if slot0.mode == StoreHouseConst.DESTROY then
-		if slot0.selectedMax == 0 then
-			setText(findTF(slot0.selectPanel, "bottom_info/bg_input/count"), slot0:selectCount())
+	if arg_123_0.mode == StoreHouseConst.DESTROY then
+		local var_123_2 = arg_123_0:selectCount()
+
+		if arg_123_0.selectedMax == 0 then
+			setText(findTF(arg_123_0.selectPanel, "bottom_info/bg_input/count"), var_123_2)
 		else
-			setText(findTF(slot0.selectPanel, "bottom_info/bg_input/count"), slot1 .. "/" .. slot0.selectedMax)
+			setText(findTF(arg_123_0.selectPanel, "bottom_info/bg_input/count"), var_123_2 .. "/" .. arg_123_0.selectedMax)
 		end
 
-		if #slot0.selectedIds < slot0.selectedMin then
-			setActive(findTF(slot0.selectPanel, "confirm_button/mask"), true)
+		if #arg_123_0.selectedIds < arg_123_0.selectedMin then
+			setActive(findTF(arg_123_0.selectPanel, "confirm_button/mask"), true)
 		else
-			setActive(findTF(slot0.selectPanel, "confirm_button/mask"), false)
+			setActive(findTF(arg_123_0.selectPanel, "confirm_button/mask"), false)
 		end
 	end
 end
 
-function slot0.SwitchToDestroy(slot0)
-	slot0.page = uv0
-	slot0.filterEquipWaitting = slot0.filterEquipWaitting + 1
+function var_0_0.SwitchToDestroy(arg_124_0)
+	arg_124_0.page = var_0_2
+	arg_124_0.filterEquipWaitting = arg_124_0.filterEquipWaitting + 1
 
-	triggerToggle(slot0.weaponToggle, true)
-	triggerButton(slot0.BatchDisposeBtn)
+	triggerToggle(arg_124_0.weaponToggle, true)
+	triggerButton(arg_124_0.BatchDisposeBtn)
 end
 
-function slot0.SwitchToSpWeaponStoreHouse(slot0)
-	slot0.page = uv0
+function var_0_0.SwitchToSpWeaponStoreHouse(arg_125_0)
+	arg_125_0.page = var_0_4
 
-	triggerToggle(slot0.weaponToggle, true)
+	triggerToggle(arg_125_0.weaponToggle, true)
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.blurPanel, slot0._tf)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0.topItems, slot0._tf)
+function var_0_0.willExit(arg_126_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_126_0.blurPanel, arg_126_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_126_0.topItems, arg_126_0._tf)
 
-	if slot0.bulinTip then
-		slot0.bulinTip:Destroy()
+	if arg_126_0.bulinTip then
+		arg_126_0.bulinTip:Destroy()
 
-		slot0.bulinTip = nil
+		arg_126_0.bulinTip = nil
 	end
 
-	slot0.destroyConfirmView:Destroy()
-	slot0.assignedItemView:Destroy()
-	slot0.blueprintAssignedItemView:Destroy()
-	slot0.equipDestroyConfirmWindow:Destroy()
-	slot0.msgBox:Destroy()
+	arg_126_0.destroyConfirmView:Destroy()
+	arg_126_0.assignedItemView:Destroy()
+	arg_126_0.blueprintAssignedItemView:Destroy()
+	arg_126_0.equipDestroyConfirmWindow:Destroy()
+	arg_126_0.msgBox:Destroy()
 end
 
-return slot0
+return var_0_0

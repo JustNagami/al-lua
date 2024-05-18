@@ -1,72 +1,73 @@
-slot0 = class("SingleEvent", import("model.vo.BaseVO"))
-slot0.EVENT_TYPE = {
+﻿local var_0_0 = class("SingleEvent", import("model.vo.BaseVO"))
+
+var_0_0.EVENT_TYPE = {
 	DAILY = 2,
 	MAIN = 1
 }
-slot0.STORY_TYPE = {
+var_0_0.STORY_TYPE = {
 	STORY = 1,
 	BATTLE = 2
 }
-slot0.MODE_TYPE = {
+var_0_0.MODE_TYPE = {
 	STORY = 1,
 	BATTLE = 2
 }
 
-function slot0.bindConfigTable(slot0)
+function var_0_0.bindConfigTable(arg_1_0)
 	return pg.activity_single_event
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.id = slot1.id
-	slot0.configId = slot0.id
+function var_0_0.Ctor(arg_2_0, arg_2_1)
+	arg_2_0.id = arg_2_1.id
+	arg_2_0.configId = arg_2_0.id
 end
 
-function slot0.IsMain(slot0)
-	return slot0:getConfig("type") == uv0.EVENT_TYPE.MAIN
+function var_0_0.IsMain(arg_3_0)
+	return arg_3_0:getConfig("type") == var_0_0.EVENT_TYPE.MAIN
 end
 
-function slot0.IsDaily(slot0)
-	return slot0:getConfig("type") == uv0.EVENT_TYPE.DAILY
+function var_0_0.IsDaily(arg_4_0)
+	return arg_4_0:getConfig("type") == var_0_0.EVENT_TYPE.DAILY
 end
 
-function slot0.GetType(slot0)
-	return slot0:getConfig("type")
+function var_0_0.GetType(arg_5_0)
+	return arg_5_0:getConfig("type")
 end
 
-function slot0.GetMode(slot0)
-	return slot0:getConfig("mode")
+function var_0_0.GetMode(arg_6_0)
+	return arg_6_0:getConfig("mode")
 end
 
-function slot0.GetName(slot0)
-	return slot0:getConfig("name")
+function var_0_0.GetName(arg_7_0)
+	return arg_7_0:getConfig("name")
 end
 
-function slot0.GetPos(slot0)
-	return slot0:getConfig("pos")
+function var_0_0.GetPos(arg_8_0)
+	return arg_8_0:getConfig("pos")
 end
 
-function slot0.GetIconName(slot0)
-	return slot0:getConfig("icon")
+function var_0_0.GetIconName(arg_9_0)
+	return arg_9_0:getConfig("icon")
 end
 
-function slot0.GetStoryType(slot0)
-	return slot0:getConfig("story_type")
+function var_0_0.GetStoryType(arg_10_0)
+	return arg_10_0:getConfig("story_type")
 end
 
-function slot0.GetStory(slot0)
-	return slot0:getConfig("story")
+function var_0_0.GetStory(arg_11_0)
+	return arg_11_0:getConfig("story")
 end
 
-function slot0.GetPreEventId(slot0)
-	return slot0:getConfig("pre_event")
+function var_0_0.GetPreEventId(arg_12_0)
+	return arg_12_0:getConfig("pre_event")
 end
 
-function slot0.GetOptions(slot0)
-	return slot0:getConfig("options")
+function var_0_0.GetOptions(arg_13_0)
+	return arg_13_0:getConfig("options")
 end
 
-function slot0.GetMapOptions(slot0)
-	return slot0:getConfig("map_options")
+function var_0_0.GetMapOptions(arg_14_0)
+	return arg_14_0:getConfig("map_options")
 end
 
-return slot0
+return var_0_0

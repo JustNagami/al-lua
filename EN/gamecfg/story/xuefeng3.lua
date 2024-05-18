@@ -1,4 +1,4 @@
-return {
+﻿return {
 	fadeOut = 1.5,
 	mode = 2,
 	id = "XUEFENG3",
@@ -289,6 +289,14 @@ return {
 			}
 		},
 		{
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			painting = {
+				alpha = 0.3,
+				time = 1
+			},
 			{
 				type = "shake",
 				y = 37.5,
@@ -304,7 +312,13 @@ return {
 			dir = 1,
 			hideOther = true,
 			actorName = "{namecode:17}",
-			say = "There's only room for one of us here, Yukikaze! Let's take this outside!",
+			say = "There's only room for one of us here, Yukikaze! Let's take this outside!"
+		},
+		{
+			paintingFadeOut = {
+				time = 0.5,
+				side = 1
+			},
 			typewriter = {
 				speed = 0.05,
 				speedUp = 0.01
@@ -312,9 +326,7 @@ return {
 			painting = {
 				alpha = 0.3,
 				time = 1
-			}
-		},
-		{
+			},
 			{
 				type = "shake",
 				y = 37.5,
@@ -329,19 +341,7 @@ return {
 			side = 0,
 			dir = 1,
 			actorName = "{namecode:22}",
-			say = "Wa ha ha ha! Even though you've never defeated Yukikaze the Great even once? Hmph! Come at me then!",
-			paintingFadeOut = {
-				time = 0.5,
-				side = 1
-			},
-			typewriter = {
-				speed = 0.05,
-				speedUp = 0.01
-			},
-			painting = {
-				alpha = 0.3,
-				time = 1
-			}
+			say = "Wa ha ha ha! Even though you've never defeated Yukikaze the Great even once? Hmph! Come at me then!"
 		},
 		{
 			actor = 301130,

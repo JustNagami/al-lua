@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "根据TAG强化"
-	},
-	init_effect = "",
-	name = "特殊弹幕",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "根据TAG强化",
-	stack = 1,
-	id = 29562,
-	icon = 29560,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -49,5 +36,18 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{
+		desc = "根据TAG强化"
+	},
+	init_effect = "",
+	name = "特殊弹幕",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "根据TAG强化",
+	stack = 1,
+	id = 29562,
+	icon = 29560,
+	last_effect = ""
 }

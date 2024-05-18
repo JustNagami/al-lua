@@ -1,62 +1,66 @@
-slot0 = class("LevelStageAtelierMaterialToast", import("view.base.BaseSubPanel"))
+﻿local var_0_0 = class("LevelStageAtelierMaterialToast", import("view.base.BaseSubPanel"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelStageAtelierMaterialToast"
 end
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_2_0)
+	return
 end
 
-function slot0.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_3_0)
+	return
 end
 
-slot1 = 26
-slot2 = 47
-slot3 = 196
+local var_0_1 = 26
+local var_0_2 = 47
+local var_0_3 = 196
 
-function slot0.Play(slot0, slot1)
-	slot2 = slot0.contextData.settings
+function var_0_0.Play(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_0.contextData.settings
 
-	setText(slot0._tf:Find("Title"), slot2.title)
+	setText(arg_4_0._tf:Find("Title"), var_4_0.title)
 
-	slot3 = slot0._tf:Find("Desc")
-	slot6 = 2
+	local var_4_1 = arg_4_0._tf:Find("Desc")
+	local var_4_2 = GetComponent(var_4_1, typeof(Text))
+	local var_4_3 = WorldMediaCollectionFileDetailLayer.getTextPreferredHeight(var_4_2, var_4_1.rect.width, var_4_0.desc)
+	local var_4_4 = 2
 
-	while WorldMediaCollectionFileDetailLayer.getTextPreferredHeight(GetComponent(slot3, typeof(Text)), slot3.rect.width, slot2.desc) > uv0 + uv1 * (slot6 - 1) do
-		slot6 = slot6 + 1
+	while var_4_3 > var_0_1 + var_0_2 * (var_4_4 - 1) do
+		var_4_4 = var_4_4 + 1
 	end
 
-	CustomIndexLayer.Clone2Full(slot0._tf:Find("Lines"), slot6 + 1)
-	setSizeDelta(slot0._tf, {
-		x = slot0._tf.sizeDelta.x,
-		y = uv2 + math.max(slot6 - 2, 0) * uv1
+	CustomIndexLayer.Clone2Full(arg_4_0._tf:Find("Lines"), var_4_4 + 1)
+	setSizeDelta(arg_4_0._tf, {
+		x = arg_4_0._tf.sizeDelta.x,
+		y = var_0_3 + math.max(var_4_4 - 2, 0) * var_0_2
 	})
-	setText(slot3, slot2.desc)
+	setText(var_4_1, var_4_0.desc)
 
-	if slot2.icon then
-		slot7 = slot2.iconScale or 1
+	if var_4_0.icon then
+		local var_4_5 = var_4_0.iconScale or 1
 
-		LoadImageSpriteAtlasAsync("ui/ryzaicon_atlas", slot2.icon, slot0._tf:Find("Image"))
-		setLocalScale(slot0._tf:Find("Image"), {
-			x = slot7,
-			y = slot7
+		LoadImageSpriteAtlasAsync("ui/ryzaicon_atlas", var_4_0.icon, arg_4_0._tf:Find("Image"))
+		setLocalScale(arg_4_0._tf:Find("Image"), {
+			x = var_4_5,
+			y = var_4_5
 		})
 	end
 
-	if slot2.voice then
-		pg.CriMgr.GetInstance():PlaySoundEffect_V3(slot2.voice)
+	if var_4_0.voice then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_4_0.voice)
 	end
 
-	slot0._go.transform:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
-	GetComponent(slot0._tf, typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0:Destroy()
-		existCall(uv1)
+	arg_4_0._go.transform:SetParent(pg.UIMgr.GetInstance().OverlayToast, false)
+	GetComponent(arg_4_0._tf, typeof(DftAniEvent)):SetEndEvent(function()
+		arg_4_0:Destroy()
+		existCall(arg_4_1)
 	end)
 end
 
-function slot0.OnDestroy(slot0)
-	pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
-	LeanTween.cancel(slot0._go)
+function var_0_0.OnDestroy(arg_6_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_6_0._tf)
+	LeanTween.cancel(arg_6_0._go)
 end
 
-return slot0
+return var_0_0

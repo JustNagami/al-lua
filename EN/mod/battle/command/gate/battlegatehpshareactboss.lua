@@ -1,148 +1,203 @@
-slot0 = class("BattleGateHPShareActBoss")
-ys.Battle.BattleGateHPShareActBoss = slot0
-slot0.__name = "BattleGateHPShareActBoss"
+﻿local var_0_0 = class("BattleGateHPShareActBoss")
 
-function slot0.Entrance(slot0, slot1)
+ys.Battle.BattleGateHPShareActBoss = var_0_0
+var_0_0.__name = "BattleGateHPShareActBoss"
+
+function var_0_0.Entrance(arg_1_0, arg_1_1)
 	if BeginStageCommand.DockOverload() then
 		return
 	end
 
-	slot5 = pg.activity_event_worldboss[getProxy(ActivityProxy):getActivityById(slot0.actId):getConfig("config_id")]
-	slot6 = getProxy(PlayerProxy)
-	slot10 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS].oil_cost > 0
-	slot11 = {}
-	slot12 = 0
-	slot13 = 0
-	slot14 = 0
-	slot15 = 0
-	slot16 = slot0.stageId
+	local var_1_0 = arg_1_0.actId
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0)
+	local var_1_2 = var_1_1:getConfig("config_id")
+	local var_1_3 = pg.activity_event_worldboss[var_1_2]
+	local var_1_4 = getProxy(PlayerProxy)
+	local var_1_5 = getProxy(BayProxy)
+	local var_1_6 = getProxy(FleetProxy)
+	local var_1_7 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS]
+	local var_1_8 = var_1_7.oil_cost > 0
+	local var_1_9 = {}
+	local var_1_10 = 0
+	local var_1_11 = 0
+	local var_1_12 = 0
+	local var_1_13 = 0
+	local var_1_14 = arg_1_0.stageId
+	local var_1_15 = arg_1_0.mainFleetId
+	local var_1_16 = var_1_6:getActivityFleets()[var_1_0][var_1_15]
+	local var_1_17 = var_1_5:getSortShipsByFleet(var_1_16)
 
-	for slot23, slot24 in ipairs(getProxy(BayProxy):getSortShipsByFleet(getProxy(FleetProxy):getActivityFleets()[slot2][slot0.mainFleetId])) do
-		slot11[#slot11 + 1] = slot24.id
+	for iter_1_0, iter_1_1 in ipairs(var_1_17) do
+		var_1_9[#var_1_9 + 1] = iter_1_1.id
 	end
 
-	slot13 = slot18:getStartCost().oil
-	slot22 = slot5.use_oil_limit[slot17]
+	local var_1_18 = var_1_16:getStartCost().oil
+	local var_1_19 = var_1_16:GetCostSum().oil
+	local var_1_20 = var_1_3.use_oil_limit[var_1_15]
 
-	if slot3:IsOilLimit(slot16) and slot22[1] > 0 then
-		slot15 = math.min(slot18:GetCostSum().oil, slot22[1])
+	if var_1_1:IsOilLimit(var_1_14) and var_1_20[1] > 0 then
+		var_1_19 = math.min(var_1_19, var_1_20[1])
 	end
 
-	slot24 = slot6:getData()
+	local var_1_21 = var_1_4:getData()
+	local var_1_22 = pg.activity_template[var_1_0]
+	local var_1_23 = pg.activity_event_worldboss[var_1_22.config_id].ticket
 
-	if slot6:getRawData():getResource(pg.activity_event_worldboss[pg.activity_template[slot2].config_id].ticket) <= 0 then
+	if var_1_4:getRawData():getResource(var_1_23) <= 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noTicket"))
 
 		return
 	end
 
-	if slot10 and slot24.oil < slot15 then
+	if var_1_8 and var_1_19 > var_1_21.oil then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
-	slot28 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(pg.expedition_data_template[slot16].dungeon_id).fleet_prefab
+	local var_1_24 = pg.expedition_data_template[var_1_14].dungeon_id
+	local var_1_25 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(var_1_24).fleet_prefab
 
-	slot1.ShipVertify()
-	BeginStageCommand.SendRequest(SYSTEM_HP_SHARE_ACT_BOSS, slot11, {
-		slot16
-	}, function (slot0)
-		if uv0 then
-			uv1:consume({
+	arg_1_1.ShipVertify()
+
+	local function var_1_26(arg_2_0)
+		if var_1_8 then
+			var_1_21:consume({
 				gold = 0,
-				oil = uv2
+				oil = var_1_18
 			})
 		end
 
-		uv1:consume({
-			[id2res(uv3)] = 1
+		local var_2_0 = id2res(var_1_23)
+
+		var_1_21:consume({
+			[var_2_0] = 1
 		})
 
-		if uv4.enter_energy_cost > 0 then
-			for slot6, slot7 in ipairs(uv5) do
-				slot7:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
-				uv6:updateShip(slot7)
+		if var_1_7.enter_energy_cost > 0 then
+			local var_2_1 = pg.gameset.battle_consume_energy.key_value
+
+			for iter_2_0, iter_2_1 in ipairs(var_1_17) do
+				iter_2_1:cosumeEnergy(var_2_1)
+				var_1_5:updateShip(iter_2_1)
 			end
 		end
 
-		uv7:updatePlayer(uv1)
-		uv12:sendNotification(GAME.BEGIN_STAGE_DONE, {
-			mainFleetId = uv8,
-			actId = uv9,
-			prefabFleet = uv10,
-			stageId = uv11,
+		var_1_4:updatePlayer(var_1_21)
+
+		local var_2_2 = {
+			mainFleetId = var_1_15,
+			actId = var_1_0,
+			prefabFleet = var_1_25,
+			stageId = var_1_14,
 			system = SYSTEM_HP_SHARE_ACT_BOSS,
-			token = slot0.key
-		})
-	end, function (slot0)
-		uv0:RequestFailStandardProcess(slot0)
-	end)
+			token = arg_2_0.key
+		}
+
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, var_2_2)
+	end
+
+	local function var_1_27(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
+	end
+
+	BeginStageCommand.SendRequest(SYSTEM_HP_SHARE_ACT_BOSS, var_1_9, {
+		var_1_14
+	}, var_1_26, var_1_27)
 end
 
-function slot0.Exit(slot0, slot1)
-	slot4 = getProxy(BayProxy)
-	slot0.statistics._battleScore = ys.Battle.BattleConst.BattleScore.S
-	slot6 = getProxy(ActivityProxy):getActivityById(slot0.actId)
-	slot14 = nil
-	slot15 = 0
-	slot16 = {}
-	slot17 = {}
-	slot18 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS].oil_cost > 0
+function var_0_0.Exit(arg_4_0, arg_4_1)
+	local var_4_0 = pg.battle_cost_template[SYSTEM_HP_SHARE_ACT_BOSS]
+	local var_4_1 = getProxy(FleetProxy)
+	local var_4_2 = getProxy(BayProxy)
+	local var_4_3 = ys.Battle.BattleConst.BattleScore.S
 
-	function (slot0, slot1)
-		if uv0 then
-			if slot1 > 0 then
-				slot2 = math.clamp(slot1 - slot0:getStartCost().oil, 0, slot0:getEndCost().oil)
+	arg_4_0.statistics._battleScore = var_4_3
+
+	local var_4_4 = getProxy(ActivityProxy):getActivityById(arg_4_0.actId)
+	local var_4_5 = var_4_4:getConfig("config_id")
+	local var_4_6 = pg.activity_event_worldboss[var_4_5].use_oil_limit[arg_4_0.mainFleetId]
+	local var_4_7 = var_4_4:IsOilLimit(arg_4_0.stageId)
+	local var_4_8 = var_4_1:getActivityFleets()[arg_4_0.actId]
+	local var_4_9 = var_4_8[arg_4_0.mainFleetId]
+	local var_4_10
+	local var_4_11 = 0
+	local var_4_12 = {}
+	local var_4_13 = {}
+	local var_4_14 = var_4_0.oil_cost > 0
+
+	local function var_4_15(arg_5_0, arg_5_1)
+		if var_4_14 then
+			local var_5_0 = arg_5_0:getEndCost().oil
+
+			if arg_5_1 > 0 then
+				local var_5_1 = arg_5_0:getStartCost().oil
+
+				var_5_0 = math.clamp(arg_5_1 - var_5_1, 0, var_5_0)
 			end
 
-			uv1 = uv1 + slot2
+			var_4_11 = var_4_11 + var_5_0
 		end
 
-		table.insertto(uv2, uv3:getSortShipsByFleet(slot0))
-		table.insertto(uv4, slot0.commanderIds)
-	end(getProxy(FleetProxy):getActivityFleets()[slot0.actId][slot0.mainFleetId], slot6:IsOilLimit(slot0.stageId) and pg.activity_event_worldboss[slot6:getConfig("config_id")].use_oil_limit[slot0.mainFleetId][1] or 0)
+		table.insertto(var_4_12, var_4_2:getSortShipsByFleet(arg_5_0))
+		table.insertto(var_4_13, arg_5_0.commanderIds)
+	end
 
-	if slot0.statistics.submarineAid then
-		if slot12[slot0.mainFleetId + 10] then
-			slot19(slot14, slot10 and slot9[2] or 0)
+	var_4_15(var_4_9, var_4_7 and var_4_6[1] or 0)
+
+	if arg_4_0.statistics.submarineAid then
+		var_4_10 = var_4_8[arg_4_0.mainFleetId + 10]
+
+		if var_4_10 then
+			var_4_15(var_4_10, var_4_7 and var_4_6[2] or 0)
 		else
 			originalPrint("finish stage error: can not find submarin fleet.")
 		end
 	end
 
-	slot1.GeneralPackage(slot0, slot16).commander_id_list = slot17
-	slot21 = {}
+	local var_4_16 = arg_4_1.GeneralPackage(arg_4_0, var_4_12)
 
-	for slot25, slot26 in ipairs(slot0.statistics._enemyInfoList) do
-		table.insert(slot21, {
-			enemy_id = slot26.id,
-			damage_taken = slot26.damage,
-			total_hp = slot26.totalHp
+	var_4_16.commander_id_list = var_4_13
+
+	local var_4_17 = {}
+
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.statistics._enemyInfoList) do
+		table.insert(var_4_17, {
+			enemy_id = iter_4_1.id,
+			damage_taken = iter_4_1.damage,
+			total_hp = iter_4_1.totalHp
 		})
 	end
 
-	slot20.enemy_info = slot21
+	var_4_16.enemy_info = var_4_17
 
-	slot1:SendRequest(slot20, function (slot0)
-		uv0.addShipsExp(slot0.ship_exp_list, uv1.statistics, true)
+	local function var_4_18(arg_6_0)
+		arg_4_1.addShipsExp(arg_6_0.ship_exp_list, arg_4_0.statistics, true)
 
-		uv1.statistics.mvpShipID = slot0.mvp
-		slot1, slot2 = uv0:GeneralLoot(slot0)
+		arg_4_0.statistics.mvpShipID = arg_6_0.mvp
 
-		uv0.GeneralPlayerCosume(SYSTEM_HP_SHARE_ACT_BOSS, ys.Battle.BattleConst.BattleScore.C < uv2, uv5, slot0.player_exp)
-		uv6:AddStage(uv1.stageId)
-		getProxy(ActivityProxy):updateActivity(uv6)
-		uv0:sendNotification(GAME.FINISH_STAGE_DONE, {
+		local var_6_0, var_6_1 = arg_4_1:GeneralLoot(arg_6_0)
+		local var_6_2 = var_4_3 > ys.Battle.BattleConst.BattleScore.C
+		local var_6_3 = arg_4_1.GenerateCommanderExp(arg_6_0, var_4_9, var_4_10)
+
+		arg_4_1.GeneralPlayerCosume(SYSTEM_HP_SHARE_ACT_BOSS, var_6_2, var_4_11, arg_6_0.player_exp)
+
+		local var_6_4 = {
 			system = SYSTEM_HP_SHARE_ACT_BOSS,
-			statistics = uv1.statistics,
-			score = uv2,
-			drops = slot1,
-			commanderExps = uv0.GenerateCommanderExp(slot0, uv3, uv4),
-			result = slot0.result,
-			extraDrops = slot2
-		})
-	end)
+			statistics = arg_4_0.statistics,
+			score = var_4_3,
+			drops = var_6_0,
+			commanderExps = var_6_3,
+			result = arg_6_0.result,
+			extraDrops = var_6_1
+		}
+
+		var_4_4:AddStage(arg_4_0.stageId)
+		getProxy(ActivityProxy):updateActivity(var_4_4)
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, var_6_4)
+	end
+
+	arg_4_1:SendRequest(var_4_16, var_4_18)
 end
 
-return slot0
+return var_0_0

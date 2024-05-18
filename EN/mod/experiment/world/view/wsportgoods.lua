@@ -1,5 +1,6 @@
-slot0 = class("WSPortGoods", import("...BaseEntity"))
-slot0.Fields = {
+﻿local var_0_0 = class("WSPortGoods", import("...BaseEntity"))
+
+var_0_0.Fields = {
 	transform = "userdata",
 	rtMask = "userdata",
 	goods = "table",
@@ -9,55 +10,56 @@ slot0.Fields = {
 	txCount = "userdata",
 	rtResCount = "userdata"
 }
-slot0.Listeners = {
+var_0_0.Listeners = {
 	onUpdate = "Update"
 }
 
-function slot0.Build(slot0, slot1)
-	slot0.transform = slot1
+function var_0_0.Build(arg_1_0, arg_1_1)
+	arg_1_0.transform = arg_1_1
 end
 
-function slot0.Setup(slot0, slot1)
-	slot0.goods = slot1
+function var_0_0.Setup(arg_2_0, arg_2_1)
+	arg_2_0.goods = arg_2_1
 
-	slot0.goods:AddListener(WorldGoods.EventUpdateCount, slot0.onUpdate)
-	slot0:Init()
+	arg_2_0.goods:AddListener(WorldGoods.EventUpdateCount, arg_2_0.onUpdate)
+	arg_2_0:Init()
 end
 
-function slot0.Dispose(slot0)
-	slot0.goods:RemoveListener(WorldGoods.EventUpdateCount, slot0.onUpdate)
-	slot0:Clear()
+function var_0_0.Dispose(arg_3_0)
+	arg_3_0.goods:RemoveListener(WorldGoods.EventUpdateCount, arg_3_0.onUpdate)
+	arg_3_0:Clear()
 end
 
-function slot0.Init(slot0)
-	slot1 = slot0.transform
-	slot0.rtMask = slot1:Find("mask")
-	slot0.rtItem = slot1:Find("IconTpl")
-	slot0.txCount = slot1:Find("count_contain/count")
-	slot0.txName = slot1:Find("name_mask/name")
-	slot0.rtResIcon = slot1:Find("consume/contain/icon")
-	slot0.rtResCount = slot1:Find("consume/contain/Text")
+function var_0_0.Init(arg_4_0)
+	local var_4_0 = arg_4_0.transform
 
-	setText(slot1:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
-	setText(slot1:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
+	arg_4_0.rtMask = var_4_0:Find("mask")
+	arg_4_0.rtItem = var_4_0:Find("IconTpl")
+	arg_4_0.txCount = var_4_0:Find("count_contain/count")
+	arg_4_0.txName = var_4_0:Find("name_mask/name")
+	arg_4_0.rtResIcon = var_4_0:Find("consume/contain/icon")
+	arg_4_0.rtResCount = var_4_0:Find("consume/contain/Text")
 
-	slot2 = slot0.goods.item
+	setText(var_4_0:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
+	setText(var_4_0:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
 
-	updateDrop(slot0.rtItem, slot2)
-	setText(slot0.txName, shortenString(slot2:getConfig("name"), 6))
+	local var_4_1 = arg_4_0.goods.item
 
-	slot3 = slot0.goods.moneyItem
+	updateDrop(arg_4_0.rtItem, var_4_1)
+	setText(arg_4_0.txName, shortenString(var_4_1:getConfig("name"), 6))
 
-	GetImageSpriteFromAtlasAsync(slot3:getIcon(), "", slot0.rtResIcon, false)
-	setText(slot0.rtResCount, slot3.count)
-	slot0:Update()
+	local var_4_2 = arg_4_0.goods.moneyItem
+
+	GetImageSpriteFromAtlasAsync(var_4_2:getIcon(), "", arg_4_0.rtResIcon, false)
+	setText(arg_4_0.rtResCount, var_4_2.count)
+	arg_4_0:Update()
 end
 
-function slot0.Update(slot0, slot1)
-	if slot1 == nil or slot1 == WorldGoods.EventUpdateCount then
-		setText(slot0.txCount, slot0.goods.count .. "/" .. slot0.goods.config.frequency)
-		setActive(slot0.rtMask, slot0.goods.count == 0)
+function var_0_0.Update(arg_5_0, arg_5_1)
+	if arg_5_1 == nil or arg_5_1 == WorldGoods.EventUpdateCount then
+		setText(arg_5_0.txCount, arg_5_0.goods.count .. "/" .. arg_5_0.goods.config.frequency)
+		setActive(arg_5_0.rtMask, arg_5_0.goods.count == 0)
 	end
 end
 
-return slot0
+return var_0_0

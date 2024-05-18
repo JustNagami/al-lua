@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Commander, please Tap <color=#ff7d36>Attack</color>",
 	"Our fleet is even more perfect now~! We can definitely take down Hornet!",
 	"Tap <color=#ff7d36>Battle</color> to start the battle!"
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -42,
 				posX = 243,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/combatBtn",
@@ -37,7 +37,7 @@ return {
 				mode = 2,
 				posY = -200,
 				posX = -190,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/normal/func_button",
@@ -62,7 +62,7 @@ return {
 				mode = 2,
 				posY = -68.93,
 				posX = 241.87,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/ChapterPreCombatUI(Clone)/right/start",

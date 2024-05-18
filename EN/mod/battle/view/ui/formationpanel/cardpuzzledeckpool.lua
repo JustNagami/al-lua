@@ -1,39 +1,43 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConfig
-slot2 = slot0.Battle.BattleCardPuzzleEvent
-slot0.Battle.CardPuzzleDeckPool = class("CardPuzzleDeckPool")
-slot3 = slot0.Battle.CardPuzzleDeckPool
-slot3.__name = "CardPuzzleDeckPool"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1)
-	slot0._go = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConfig
+local var_0_2 = var_0_0.Battle.BattleCardPuzzleEvent
 
-	slot0:init()
+var_0_0.Battle.CardPuzzleDeckPool = class("CardPuzzleDeckPool")
+
+local var_0_3 = var_0_0.Battle.CardPuzzleDeckPool
+
+var_0_3.__name = "CardPuzzleDeckPool"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+
+	arg_1_0:init()
 end
 
-function slot3.SetCardPuzzleComponent(slot0, slot1)
-	slot0._cardPuzzleInfo = slot1
-	slot0._deck = slot0._cardPuzzleInfo:GetDeck()
+function var_0_3.SetCardPuzzleComponent(arg_2_0, arg_2_1)
+	arg_2_0._cardPuzzleInfo = arg_2_1
+	arg_2_0._deck = arg_2_0._cardPuzzleInfo:GetDeck()
 
-	slot0._deck:RegisterEventListener(slot0, uv0.UPDATE_CARDS, slot0.onUpdateDeckCard)
-	slot0:onUpdateDeckCard()
+	arg_2_0._deck:RegisterEventListener(arg_2_0, var_0_2.UPDATE_CARDS, arg_2_0.onUpdateDeckCard)
+	arg_2_0:onUpdateDeckCard()
 end
 
-function slot3.onUpdateDeckCard(slot0, slot1)
-	setText(slot0._deckCountLabel, slot0._deck:GetLength())
+function var_0_3.onUpdateDeckCard(arg_3_0, arg_3_1)
+	setText(arg_3_0._deckCountLabel, arg_3_0._deck:GetLength())
 end
 
-function slot3.init(slot0)
-	uv0.EventListener.AttachEventListener(slot0)
+function var_0_3.init(arg_4_0)
+	var_0_0.EventListener.AttachEventListener(arg_4_0)
 
-	slot0._tf = slot0._go.transform
-	slot0._deckCountLabel = slot0._tf:Find("count/text")
+	arg_4_0._tf = arg_4_0._go.transform
+	arg_4_0._deckCountLabel = arg_4_0._tf:Find("count/text")
 
-	setText(slot0._tf:Find("label"), i18n("card_puzzle_deck"))
+	setText(arg_4_0._tf:Find("label"), i18n("card_puzzle_deck"))
 end
 
-function slot3.Dispose(slot0)
-	slot0._deckCountLabel = nil
-	slot0._tf = nil
+function var_0_3.Dispose(arg_5_0)
+	arg_5_0._deckCountLabel = nil
+	arg_5_0._tf = nil
 end

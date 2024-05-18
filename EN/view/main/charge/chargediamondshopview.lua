@@ -1,283 +1,335 @@
-slot0 = class("ChargeDiamondShopView", import("...base.BaseSubView"))
-slot0.MonthCardID = 1
+﻿local var_0_0 = class("ChargeDiamondShopView", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+var_0_0.MonthCardID = 1
+
+function var_0_0.getUIName(arg_1_0)
 	return "ChargeDiamondShopUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0:initData()
-	slot0:initUI()
-	slot0:Show()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:initUI()
+	arg_2_0:Show()
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_3_0)
+	return
 end
 
-function slot0.initData(slot0)
-	slot0.isNeedHideMonthCard = (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and pg.SdkMgr.GetInstance():CheckAudit()
-	slot0.diamondGoodsVOList = {}
-	slot0.diamondGoodsVOListForShow = {}
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.initData(arg_4_0)
+	arg_4_0.isNeedHideMonthCard = (PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US) and pg.SdkMgr.GetInstance():CheckAudit()
+	arg_4_0.diamondGoodsVOList = {}
+	arg_4_0.diamondGoodsVOListForShow = {}
+	arg_4_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateData()
+	arg_4_0:updateData()
 end
 
-function slot0.initUI(slot0)
-	slot0.itemTpl = slot0:findTF("ItemTpl")
-	slot1 = slot0:findTF("content")
-	slot0.monthCardTF = slot0:findTF("ItemMonth", slot1)
-	slot0.itemContainerTF = slot0:findTF("ItemList", slot1)
-	slot0.uiItemList = slot0:initUIItemList()
+function var_0_0.initUI(arg_5_0)
+	arg_5_0.itemTpl = arg_5_0:findTF("ItemTpl")
 
-	slot0:updateView()
+	local var_5_0 = arg_5_0:findTF("content")
+
+	arg_5_0.monthCardTF = arg_5_0:findTF("ItemMonth", var_5_0)
+	arg_5_0.itemContainerTF = arg_5_0:findTF("ItemList", var_5_0)
+	arg_5_0.uiItemList = arg_5_0:initUIItemList()
+
+	arg_5_0:updateView()
 end
 
-function slot0.initUIItemList(slot0)
-	slot1 = UIItemList.New(slot0.itemContainerTF, slot0.itemTpl)
+function var_0_0.initUIItemList(arg_6_0)
+	local var_6_0 = UIItemList.New(arg_6_0.itemContainerTF, arg_6_0.itemTpl)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = ChargeDiamondCard.New(go(slot2), uv0.monthCardTF, uv0)
+	var_6_0:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_7_1 = arg_7_1 + 1
 
-			slot3:update(uv0.diamondGoodsVOListForShow[slot1 + 1], uv0.player, uv0.firstChargeIds)
-			onButton(uv0, slot3.tr, function ()
-				uv0:confirm(uv1.goods)
+			local var_7_0 = ChargeDiamondCard.New(go(arg_7_2), arg_6_0.monthCardTF, arg_6_0)
+			local var_7_1 = arg_6_0.diamondGoodsVOListForShow[arg_7_1]
+
+			var_7_0:update(var_7_1, arg_6_0.player, arg_6_0.firstChargeIds)
+			onButton(arg_6_0, var_7_0.tr, function()
+				arg_6_0:confirm(var_7_0.goods)
 			end, SFX_PANEL)
 		end
 	end)
 
-	slot0.uiItemList = slot1
+	arg_6_0.uiItemList = var_6_0
 
-	return slot1
+	return var_6_0
 end
 
-function slot0.updateUIItemList(slot0)
-	slot0.uiItemList:align(#slot0.diamondGoodsVOListForShow)
+function var_0_0.updateUIItemList(arg_9_0)
+	arg_9_0.uiItemList:align(#arg_9_0.diamondGoodsVOListForShow)
 end
 
-function slot0.updateView(slot0)
-	setActive(slot0.monthCardTF, not slot0.isNeedHideMonthCard)
-	slot0:updateUIItemList()
+function var_0_0.updateView(arg_10_0)
+	setActive(arg_10_0.monthCardTF, not arg_10_0.isNeedHideMonthCard)
+	arg_10_0:updateUIItemList()
 end
 
-function slot0.confirm(slot0, slot1)
-	if not slot1 then
+function var_0_0.confirm(arg_11_0, arg_11_1)
+	if not arg_11_1 then
 		return
 	end
 
-	if Clone(slot1):isChargeType() then
-		slot4 = (table.contains(slot0.firstChargeIds, slot1.id) or slot1:firstPayDouble()) and 4 or slot1:getConfig("tag")
+	arg_11_1 = Clone(arg_11_1)
 
-		if slot1:isMonthCard() or slot1:isGiftBox() or slot1:isItemBox() or slot1:isPassItem() then
-			slot5 = underscore.map(slot1:getConfig("extra_service_item"), function (slot0)
-				return Drop.Create(slot0)
+	if arg_11_1:isChargeType() then
+		local var_11_0 = not table.contains(arg_11_0.firstChargeIds, arg_11_1.id) and arg_11_1:firstPayDouble()
+		local var_11_1 = var_11_0 and 4 or arg_11_1:getConfig("tag")
+
+		if arg_11_1:isMonthCard() or arg_11_1:isGiftBox() or arg_11_1:isItemBox() or arg_11_1:isPassItem() then
+			local var_11_2 = underscore.map(arg_11_1:getConfig("extra_service_item"), function(arg_12_0)
+				return Drop.Create(arg_12_0)
 			end)
-			slot6 = nil
+			local var_11_3
 
-			if slot1:isPassItem() then
-				slot7 = slot1:getConfig("sub_display")
-				slot8 = slot7[1]
-				slot9 = pg.battlepass_event_pt[slot8].pt
-				slot6 = Drop.New({
+			if arg_11_1:isPassItem() then
+				local var_11_4 = arg_11_1:getConfig("sub_display")
+				local var_11_5 = var_11_4[1]
+				local var_11_6 = pg.battlepass_event_pt[var_11_5].pt
+
+				var_11_3 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
-					id = pg.battlepass_event_pt[slot8].pt,
-					count = slot7[2]
+					id = pg.battlepass_event_pt[var_11_5].pt,
+					count = var_11_4[2]
 				})
-				slot5 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[slot8].drop_client_pay, function (slot0)
-					return Drop.Create(slot0)
+				var_11_2 = PlayerConst.MergePassItemDrop(underscore.map(pg.battlepass_event_pt[var_11_5].drop_client_pay, function(arg_13_0)
+					return Drop.Create(arg_13_0)
 				end))
 			end
 
-			slot8 = nil
+			local var_11_7 = arg_11_1:getConfig("gem") + arg_11_1:getConfig("extra_gem")
+			local var_11_8
 
-			if slot1:isMonthCard() then
-				slot8 = Drop.New({
+			if arg_11_1:isMonthCard() then
+				var_11_8 = Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResDiamond,
-					count = slot1:getConfig("gem") + slot1:getConfig("extra_gem")
+					count = var_11_7
 				})
-			elseif slot7 > 0 then
-				table.insert(slot5, Drop.New({
+			elseif var_11_7 > 0 then
+				table.insert(var_11_2, Drop.New({
 					type = DROP_TYPE_RESOURCE,
 					id = PlayerConst.ResDiamond,
-					count = slot7
+					count = var_11_7
 				}))
 			end
 
-			slot9, slot10 = nil
+			local var_11_9
+			local var_11_10
 
-			if slot1:isPassItem() then
-				slot9 = i18n("battlepass_pay_tip")
-			elseif slot1:isMonthCard() then
-				slot9 = i18n("charge_title_getitem_month")
-				slot10 = i18n("charge_title_getitem_soon")
+			if arg_11_1:isPassItem() then
+				var_11_9 = i18n("battlepass_pay_tip")
+			elseif arg_11_1:isMonthCard() then
+				var_11_9 = i18n("charge_title_getitem_month")
+				var_11_10 = i18n("charge_title_getitem_soon")
 			else
-				slot9 = i18n("charge_title_getitem")
+				var_11_9 = i18n("charge_title_getitem")
 			end
 
-			slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, {
+			local var_11_11 = {
 				isChargeType = true,
-				icon = "chargeicon/" .. slot1:getConfig("picture"),
-				name = slot1:getConfig("name_display"),
-				tipExtra = slot9,
-				extraItems = slot5,
-				price = slot1:getConfig("money"),
-				isLocalPrice = slot1:IsLocalPrice(),
-				tagType = slot4,
-				isMonthCard = slot1:isMonthCard(),
-				tipBonus = slot10,
-				bonusItem = slot8,
-				extraDrop = slot6,
-				descExtra = slot1:getConfig("descrip_extra"),
-				onYes = function ()
+				icon = "chargeicon/" .. arg_11_1:getConfig("picture"),
+				name = arg_11_1:getConfig("name_display"),
+				tipExtra = var_11_9,
+				extraItems = var_11_2,
+				price = arg_11_1:getConfig("money"),
+				isLocalPrice = arg_11_1:IsLocalPrice(),
+				tagType = var_11_1,
+				isMonthCard = arg_11_1:isMonthCard(),
+				tipBonus = var_11_10,
+				bonusItem = var_11_8,
+				extraDrop = var_11_3,
+				descExtra = arg_11_1:getConfig("descrip_extra"),
+				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						uv0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg_11_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						uv0:emit(ChargeMediator.CHARGE, uv1.id)
+						arg_11_0:emit(ChargeMediator.CHARGE, arg_11_1.id)
 					end
 				end
-			})
-		elseif slot1:isGem() then
-			slot6 = slot1:getConfig("gem")
+			}
 
-			slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_BOX, {
+			arg_11_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var_11_11)
+		elseif arg_11_1:isGem() then
+			local var_11_12 = arg_11_1:getConfig("money")
+			local var_11_13 = arg_11_1:getConfig("gem")
+
+			if var_11_0 then
+				var_11_13 = var_11_13 + arg_11_1:getConfig("gem")
+			else
+				var_11_13 = var_11_13 + arg_11_1:getConfig("extra_gem")
+			end
+
+			local var_11_14 = {
 				isChargeType = true,
-				icon = "chargeicon/" .. slot1:getConfig("picture"),
-				name = slot1:getConfig("name_display"),
-				price = slot1:getConfig("money"),
-				isLocalPrice = slot1:IsLocalPrice(),
-				tagType = slot4,
-				normalTip = i18n("charge_start_tip", slot1:getConfig("money"), slot3 and slot6 + slot1:getConfig("gem") or slot6 + slot1:getConfig("extra_gem")),
-				onYes = function ()
+				icon = "chargeicon/" .. arg_11_1:getConfig("picture"),
+				name = arg_11_1:getConfig("name_display"),
+				price = arg_11_1:getConfig("money"),
+				isLocalPrice = arg_11_1:IsLocalPrice(),
+				tagType = var_11_1,
+				normalTip = i18n("charge_start_tip", var_11_12, var_11_13),
+				onYes = function()
 					if ChargeConst.isNeedSetBirth() then
-						uv0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
+						arg_11_0:emit(ChargeMediator.OPEN_CHARGE_BIRTHDAY)
 					else
-						uv0:emit(ChargeMediator.CHARGE, uv1.id)
+						arg_11_0:emit(ChargeMediator.CHARGE, arg_11_1.id)
 					end
 				end
-			})
+			}
+
+			arg_11_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_BOX, var_11_14)
 		end
 	else
-		slot2 = {}
+		local var_11_15 = {}
+		local var_11_16 = arg_11_1:getConfig("effect_args")
+		local var_11_17 = Item.getConfigData(var_11_16[1])
+		local var_11_18 = var_11_17.display_icon
 
-		if type(Item.getConfigData(slot1:getConfig("effect_args")[1]).display_icon) == "table" then
-			for slot9, slot10 in ipairs(slot5) do
-				table.insert(slot2, {
-					type = slot10[1],
-					id = slot10[2],
-					count = slot10[3]
+		if type(var_11_18) == "table" then
+			for iter_11_0, iter_11_1 in ipairs(var_11_18) do
+				table.insert(var_11_15, {
+					type = iter_11_1[1],
+					id = iter_11_1[2],
+					count = iter_11_1[3]
 				})
 			end
 		end
 
-		slot0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, {
+		local var_11_19 = {
 			isMonthCard = false,
 			isChargeType = false,
 			isLocalPrice = false,
-			icon = slot4.icon,
-			name = slot4.name,
+			icon = var_11_17.icon,
+			name = var_11_17.name,
 			tipExtra = i18n("charge_title_getitem"),
-			extraItems = slot2,
-			price = slot1:getConfig("resource_num"),
-			tagType = slot1:getConfig("tag"),
-			onYes = function ()
+			extraItems = var_11_15,
+			price = arg_11_1:getConfig("resource_num"),
+			tagType = arg_11_1:getConfig("tag"),
+			onYes = function()
 				pg.MsgboxMgr.GetInstance():ShowMsgBox({
-					content = i18n("charge_scene_buy_confirm", uv0:getConfig("resource_num"), uv1.name),
-					onYes = function ()
-						uv0:emit(ChargeMediator.BUY_ITEM, uv1.id, 1)
+					content = i18n("charge_scene_buy_confirm", arg_11_1:getConfig("resource_num"), var_11_17.name),
+					onYes = function()
+						arg_11_0:emit(ChargeMediator.BUY_ITEM, arg_11_1.id, 1)
 					end
 				})
 			end
-		})
+		}
+
+		arg_11_0:emit(ChargeMediator.OPEN_CHARGE_ITEM_PANEL, var_11_19)
 	end
 end
 
-function slot0.updateDiamondGoodsVOList(slot0)
-	slot0.diamondGoodsVOList = {}
+function var_0_0.updateDiamondGoodsVOList(arg_18_0)
+	arg_18_0.diamondGoodsVOList = {}
 
-	for slot5, slot6 in pairs(pg.pay_data_display.all) do
-		slot8 = slot1[slot6].extra_service
+	local var_18_0 = pg.pay_data_display
 
-		if slot0.isNeedHideMonthCard and slot6 == uv0.MonthCardID then
-			-- Nothing
-		elseif pg.SdkMgr.GetInstance():IgnorePlatform(slot1[slot6].ignorePlatform) then
-			-- Nothing
-		elseif slot8 == Goods.MONTH_CARD or slot8 == Goods.GEM or slot8 == Goods.GIFT_BOX then
-			table.insert(slot0.diamondGoodsVOList, Goods.Create({
-				shop_id = slot6
-			}, Goods.TYPE_CHARGE))
+	for iter_18_0, iter_18_1 in pairs(var_18_0.all) do
+		local var_18_1 = var_18_0[iter_18_1].extra_service
+
+		if arg_18_0.isNeedHideMonthCard and iter_18_1 == var_0_0.MonthCardID then
+			-- block empty
+		elseif pg.SdkMgr.GetInstance():IgnorePlatform(var_18_0[iter_18_1].ignorePlatform) then
+			-- block empty
+		elseif var_18_1 == Goods.MONTH_CARD or var_18_1 == Goods.GEM or var_18_1 == Goods.GIFT_BOX then
+			local var_18_2 = Goods.Create({
+				shop_id = iter_18_1
+			}, Goods.TYPE_CHARGE)
+
+			table.insert(arg_18_0.diamondGoodsVOList, var_18_2)
 		end
 	end
 end
 
-function slot0.sortDiamondGoodsVOList(slot0)
-	slot0.diamondGoodsVOListForShow = {}
+function var_0_0.sortDiamondGoodsVOList(arg_19_0)
+	arg_19_0.diamondGoodsVOListForShow = {}
 
-	for slot4, slot5 in ipairs(slot0.diamondGoodsVOList) do
-		slot5:updateBuyCount(ChargeConst.getBuyCount(slot0.chargedList, slot5.id))
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.diamondGoodsVOList) do
+		local var_19_0 = ChargeConst.getBuyCount(arg_19_0.chargedList, iter_19_1.id)
 
-		if slot5:canPurchase() and slot5:inTime() then
-			table.insert(slot0.diamondGoodsVOListForShow, slot5)
+		iter_19_1:updateBuyCount(var_19_0)
+
+		if iter_19_1:canPurchase() and iter_19_1:inTime() then
+			table.insert(arg_19_0.diamondGoodsVOListForShow, iter_19_1)
 		end
 	end
 
-	table.sort(slot0.diamondGoodsVOListForShow, function (slot0, slot1)
-		slot3 = not table.contains(uv0.firstChargeIds, slot0.id) and slot0:firstPayDouble() and 1 or 0
-		slot5 = not table.contains(uv0.firstChargeIds, slot1.id) and slot1:firstPayDouble() and 1 or 0
-		slot6 = 0
-		slot7 = 0
+	table.sort(arg_19_0.diamondGoodsVOListForShow, function(arg_20_0, arg_20_1)
+		local var_20_0 = not table.contains(arg_19_0.firstChargeIds, arg_20_0.id) and arg_20_0:firstPayDouble() and 1 or 0
+		local var_20_1 = not table.contains(arg_19_0.firstChargeIds, arg_20_1.id) and arg_20_1:firstPayDouble() and 1 or 0
+		local var_20_2 = 0
+		local var_20_3 = 0
 
-		if slot0:isFree() then
+		if arg_20_0:isFree() then
 			return true
-		elseif slot1:isFree() then
+		elseif arg_20_1:isFree() then
 			return false
 		end
 
-		if slot0:isChargeType() and slot0:isMonthCard() and uv0.player:getCardById(VipCard.MONTH) then
-			slot6 = math.floor((slot8:getLeftDate() - pg.TimeMgr.GetInstance():GetServerTime()) / 86400) > (slot0:getConfig("limit_arg") or 0) and 1 or 0
+		if arg_20_0:isChargeType() and arg_20_0:isMonthCard() then
+			local var_20_4 = arg_19_0.player:getCardById(VipCard.MONTH)
+
+			if var_20_4 then
+				local var_20_5 = var_20_4:getLeftDate()
+				local var_20_6 = pg.TimeMgr.GetInstance():GetServerTime()
+
+				var_20_2 = math.floor((var_20_5 - var_20_6) / 86400) > (arg_20_0:getConfig("limit_arg") or 0) and 1 or 0
+			end
 		end
 
-		if slot1:isChargeType() and slot1:isMonthCard() and uv0.player:getCardById(VipCard.MONTH) then
-			slot7 = math.floor((slot8:getLeftDate() - pg.TimeMgr.GetInstance():GetServerTime()) / 86400) > (slot1:getConfig("limit_arg") or 0) and 1 or 0
+		if arg_20_1:isChargeType() and arg_20_1:isMonthCard() then
+			local var_20_7 = arg_19_0.player:getCardById(VipCard.MONTH)
+
+			if var_20_7 then
+				local var_20_8 = var_20_7:getLeftDate()
+				local var_20_9 = pg.TimeMgr.GetInstance():GetServerTime()
+
+				var_20_3 = math.floor((var_20_8 - var_20_9) / 86400) > (arg_20_1:getConfig("limit_arg") or 0) and 1 or 0
+			end
 		end
 
-		if slot6 ~= slot7 then
-			return slot6 < slot7
+		if var_20_2 ~= var_20_3 then
+			return var_20_2 < var_20_3
 		end
 
-		if slot3 == slot5 and (slot0:getConfig("tag") == 2 and 1 or 0) == (slot1:getConfig("tag") == 2 and 1 or 0) then
-			return slot0.id < slot1.id
+		local var_20_10 = arg_20_0:getConfig("tag") == 2 and 1 or 0
+		local var_20_11 = arg_20_1:getConfig("tag") == 2 and 1 or 0
+
+		if var_20_0 == var_20_1 and var_20_10 == var_20_11 then
+			return arg_20_0.id < arg_20_1.id
 		else
-			return slot5 < slot3 or slot3 == slot5 and slot9 < slot8
+			return var_20_1 < var_20_0 or var_20_0 == var_20_1 and var_20_11 < var_20_10
 		end
 	end)
 end
 
-function slot0.updateGoodsData(slot0)
-	slot0.firstChargeIds = slot0.contextData.firstChargeIds
-	slot0.chargedList = slot0.contextData.chargedList
-	slot0.normalList = slot0.contextData.normalList
-	slot0.normalGroupList = slot0.contextData.normalGroupList
+function var_0_0.updateGoodsData(arg_21_0)
+	arg_21_0.firstChargeIds = arg_21_0.contextData.firstChargeIds
+	arg_21_0.chargedList = arg_21_0.contextData.chargedList
+	arg_21_0.normalList = arg_21_0.contextData.normalList
+	arg_21_0.normalGroupList = arg_21_0.contextData.normalGroupList
 end
 
-function slot0.setGoodData(slot0, slot1, slot2, slot3, slot4)
-	slot0.firstChargeIds = slot1
-	slot0.chargedList = slot2
-	slot0.normalList = slot3
-	slot0.normalGroupList = slot4
+function var_0_0.setGoodData(arg_22_0, arg_22_1, arg_22_2, arg_22_3, arg_22_4)
+	arg_22_0.firstChargeIds = arg_22_1
+	arg_22_0.chargedList = arg_22_2
+	arg_22_0.normalList = arg_22_3
+	arg_22_0.normalGroupList = arg_22_4
 end
 
-function slot0.updateData(slot0)
-	slot0.player = getProxy(PlayerProxy):getData()
+function var_0_0.updateData(arg_23_0)
+	arg_23_0.player = getProxy(PlayerProxy):getData()
 
-	slot0:updateDiamondGoodsVOList()
-	slot0:sortDiamondGoodsVOList()
+	arg_23_0:updateDiamondGoodsVOList()
+	arg_23_0:sortDiamondGoodsVOList()
 end
 
-function slot0.reUpdateAll(slot0)
-	slot0:updateData()
-	slot0:updateView()
+function var_0_0.reUpdateAll(arg_24_0)
+	arg_24_0:updateData()
+	arg_24_0:updateView()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,5 @@
-return {
+﻿return {
+	effect_list = {},
 	{
 		effect_list = {
 			{
@@ -136,6 +137,5 @@ return {
 	id = 17100,
 	picture = "1",
 	castCV = "",
-	desc = "",
-	effect_list = {}
+	desc = ""
 }

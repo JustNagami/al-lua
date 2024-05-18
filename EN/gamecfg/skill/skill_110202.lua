@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleSkillFire",
+			casterAniEffect = "",
+			target_choise = "TargetNil",
+			targetAniEffect = "",
+			arg_list = {
+				weapon_id = 163631
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -186,16 +197,5 @@ return {
 	id = 110202,
 	picture = "1",
 	castCV = "",
-	desc = "",
-	effect_list = {
-		{
-			type = "BattleSkillFire",
-			casterAniEffect = "",
-			target_choise = "TargetNil",
-			targetAniEffect = "",
-			arg_list = {
-				weapon_id = 163631
-			}
-		}
-	}
+	desc = ""
 }

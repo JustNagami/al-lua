@@ -1,45 +1,48 @@
-slot0 = class("PlayerVitaeRenamePage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("PlayerVitaeRenamePage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "PlayerVitaeRenamePage"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.content = slot0:findTF("frame/border/tip"):GetComponent(typeof(Text))
-	slot0.confirmBtn = slot0:findTF("frame/queren")
-	slot0.cancelBtn = slot0:findTF("frame/cancel")
-	slot0.inputField = slot0:findTF("frame/name_field")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.content = arg_2_0:findTF("frame/border/tip"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0:findTF("frame/queren")
+	arg_2_0.cancelBtn = arg_2_0:findTF("frame/cancel")
+	arg_2_0.inputField = arg_2_0:findTF("frame/name_field")
 
-	setText(slot0._tf:Find("frame/top/title_list/infomation/title"), i18n("change_player_name_title"))
-	setText(slot0._tf:Find("frame/border/prompt"), i18n("change_player_name_subtitle"))
-	setText(slot0._tf:Find("frame/name_field/Placeholder"), i18n("change_player_name_input_tip"))
-	setText(slot0.confirmBtn:Find("Image"), i18n("word_ok"))
-	setText(slot0.cancelBtn:Find("Image"), i18n("word_cancel"))
+	setText(arg_2_0._tf:Find("frame/top/title_list/infomation/title"), i18n("change_player_name_title"))
+	setText(arg_2_0._tf:Find("frame/border/prompt"), i18n("change_player_name_subtitle"))
+	setText(arg_2_0._tf:Find("frame/name_field/Placeholder"), i18n("change_player_name_input_tip"))
+	setText(arg_2_0.confirmBtn:Find("Image"), i18n("word_ok"))
+	setText(arg_2_0.cancelBtn:Find("Image"), i18n("word_cancel"))
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.confirmBtn, function ()
-		uv0:emit(PlayerVitaeMediator.ON_CHANGE_PLAYER_NAME, getInputText(uv0.inputField))
-		setInputText(uv0.inputField, "")
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		local var_4_0 = getInputText(arg_3_0.inputField)
+
+		arg_3_0:emit(PlayerVitaeMediator.ON_CHANGE_PLAYER_NAME, var_4_0)
+		setInputText(arg_3_0.inputField, "")
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.cancelBtn, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Show(slot0, slot1)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
-	slot2 = Drop.Create(slot1:getModifyNameComsume())
-	slot0.content.text = i18n("player_name_change_windows_tip", slot2:getName(), slot2:getOwnedCount() .. "/" .. slot2.count)
+	local var_7_0 = Drop.Create(arg_7_1:getModifyNameComsume())
+
+	arg_7_0.content.text = i18n("player_name_change_windows_tip", var_7_0:getName(), var_7_0:getOwnedCount() .. "/" .. var_7_0.count)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
+function var_0_0.OnDestroy(arg_8_0)
+	arg_8_0:Hide()
 end
 
-return slot0
+return var_0_0

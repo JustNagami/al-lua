@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.spweapon_data_statistics = setmetatable({
 	__name = "spweapon_data_statistics",
 	all = {

@@ -1,10 +1,13 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_127 = {}
-slot1 = slot0.word_template_127
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_127 = {}
+
+local var_0_1 = var_0_0.word_template_127
 
 function temp()
-	uv0["黌"] = {
+	var_0_1.黌 = {
 		this = {
 			this = true
 		}
@@ -14,11 +17,11 @@ end
 temp()
 
 function temp()
-	uv0["哄"] = {
+	var_0_1.哄 = {
 		["."] = {
-			["铲"] = {
+			铲 = {
 				["."] = {
-					["谠"] = {
+					谠 = {
 						this = true
 					}
 				}
@@ -37,29 +40,29 @@ function temp()
 								}
 							}
 						},
-						["当"] = {
+						当 = {
 							this = true
 						},
-						["裆"] = {
+						裆 = {
 							this = true
 						},
-						["挡"] = {
+						挡 = {
 							this = true
 						},
-						["档"] = {
+						档 = {
 							this = true
 						},
-						["党"] = {
+						党 = {
 							this = true
 						},
-						["谠"] = {
+						谠 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["残"] = {
+		残 = {
 			d = {
 				a = {
 					n = {
@@ -69,26 +72,26 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		},
-		["惨"] = {
+		惨 = {
 			d = {
 				a = {
 					n = {
@@ -98,26 +101,26 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		},
-		["掺"] = {
+		掺 = {
 			d = {
 				a = {
 					n = {
@@ -127,26 +130,26 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		},
-		["产"] = {
+		产 = {
 			d = {
 				a = {
 					n = {
@@ -156,26 +159,26 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		},
-		["铲"] = {
+		铲 = {
 			d = {
 				a = {
 					n = {
@@ -185,26 +188,26 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		},
-		["産"] = {
+		産 = {
 			d = {
 				a = {
 					n = {
@@ -214,22 +217,22 @@ function temp()
 					}
 				}
 			},
-			["当"] = {
+			当 = {
 				this = true
 			},
-			["裆"] = {
+			裆 = {
 				this = true
 			},
-			["挡"] = {
+			挡 = {
 				this = true
 			},
-			["档"] = {
+			档 = {
 				this = true
 			},
-			["党"] = {
+			党 = {
 				this = true
 			},
-			["谠"] = {
+			谠 = {
 				this = true
 			}
 		}
@@ -239,24 +242,24 @@ end
 temp()
 
 function temp()
-	uv0["侯"] = {
-		["贺"] = {
-			["华"] = {
+	var_0_1.侯 = {
+		贺 = {
+			华 = {
 				this = true
 			}
 		},
-		["凯"] = {
+		凯 = {
 			this = true
 		},
-		["赛"] = {
-			["因"] = {
-				["江"] = {
+		赛 = {
+			因 = {
+				江 = {
 					this = true
 				}
 			}
 		},
-		["长"] = {
-			["安"] = {
+		长 = {
+			安 = {
 				this = true
 			}
 		}
@@ -266,80 +269,80 @@ end
 temp()
 
 function temp()
-	uv0["后"] = {
-		["宫"] = {
-			["社"] = {
-				["区"] = {
+	var_0_1.后 = {
+		宫 = {
+			社 = {
+				区 = {
 					this = true
 				}
 			}
 		},
-		["浪"] = {
-			["推"] = {
-				["前"] = {
-					["浪"] = {
-						["式"] = {
+		浪 = {
+			推 = {
+				前 = {
+					浪 = {
+						式 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["面"] = {
-			["插"] = {
+		面 = {
+			插 = {
 				this = true
 			},
-			["还"] = {
-				["是"] = {
-					["你"] = {
+			还 = {
+				是 = {
+					你 = {
 						this = true
 					},
-					["他"] = {
+					他 = {
 						this = true
 					}
 				}
 			},
-			["一"] = {
-				["定"] = {
-					["是"] = {
-						["你"] = {
+			一 = {
+				定 = {
+					是 = {
+						你 = {
 							this = true
 						}
 					}
 				}
 			}
 		},
-		["藤"] = {
-			["亚"] = {
-				["美"] = {
+		藤 = {
+			亚 = {
+				美 = {
 					this = true
 				}
 			}
 		},
-		["庭"] = {
+		庭 = {
 			this = true,
-			["专"] = {
-				["区"] = {
+			专 = {
+				区 = {
 					this = true
 				}
 			}
 		},
-		["位"] = {
-			["倒"] = {
-				["模"] = {
+		位 = {
+			倒 = {
+				模 = {
 					this = true
 				}
 			}
 		},
-		["肖"] = {
+		肖 = {
 			this = true
 		},
-		["有"] = {
-			["强"] = {
-				["大"] = {
-					["的"] = {
-						["祖"] = {
-							["国"] = {
+		有 = {
+			强 = {
+				大 = {
+					的 = {
+						祖 = {
+							国 = {
 								this = true
 							}
 						}
@@ -353,23 +356,23 @@ end
 temp()
 
 function temp()
-	uv0["厚"] = {
-		["黑"] = {
-			["大"] = {
-				["全"] = {
+	var_0_1.厚 = {
+		黑 = {
+			大 = {
+				全 = {
 					this = true
 				}
 			}
 		},
-		["街"] = {
-			["技"] = {
-				["校"] = {
+		街 = {
+			技 = {
+				校 = {
 					this = true
 				}
 			}
 		},
-		["东"] = {
-			["去"] = {
+		东 = {
+			去 = {
 				this = true
 			}
 		}
@@ -379,8 +382,8 @@ end
 temp()
 
 function temp()
-	uv0["後"] = {
-		["庭"] = {
+	var_0_1.後 = {
+		庭 = {
 			this = true
 		}
 	}
@@ -389,9 +392,9 @@ end
 temp()
 
 function temp()
-	uv0["候"] = {
-		["德"] = {
-			["建"] = {
+	var_0_1.候 = {
+		德 = {
+			建 = {
 				this = true
 			}
 		}

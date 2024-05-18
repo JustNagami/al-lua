@@ -1,11 +1,11 @@
-slot0 = class("CourtYardThemeOwner", import("model.vo.Player"))
+﻿local var_0_0 = class("CourtYardThemeOwner", import("model.vo.Player"))
 
-function slot0.GetName(slot0)
+function var_0_0.GetName(arg_1_0)
 	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then
 		return i18n("nodisplay_player_home_share")
 	else
-		return uv0.super.GetName(slot0)
+		return var_0_0.super.GetName(arg_1_0)
 	end
 end
 
-return slot0
+return var_0_0

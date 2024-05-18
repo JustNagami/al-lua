@@ -1,1 +1,1 @@
-return class("MikasaPreviewPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("MikasaPreviewPage", import(".TemplatePage.PreviewTemplatePage")))

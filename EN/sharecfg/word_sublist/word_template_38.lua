@@ -1,11 +1,14 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_38 = {}
-slot1 = slot0.word_template_38
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_38 = {}
+
+local var_0_1 = var_0_0.word_template_38
 
 function temp()
-	uv0["肅"] = {
-		["清"] = {
+	var_0_1.肅 = {
+		清 = {
 			this = true
 		}
 	}
@@ -14,8 +17,8 @@ end
 temp()
 
 function temp()
-	uv0["腋"] = {
-		["臭"] = {
+	var_0_1.腋 = {
+		臭 = {
 			this = true
 		}
 	}
@@ -24,20 +27,20 @@ end
 temp()
 
 function temp()
-	uv0["膣"] = {
+	var_0_1.膣 = {
 		this = {
 			this = true
 		},
-		["壁"] = {
+		壁 = {
 			this = true
 		},
-		["口"] = {
+		口 = {
 			this = true
 		},
-		["肉"] = {
+		肉 = {
 			this = true
 		},
-		["穴"] = {
+		穴 = {
 			this = true
 		}
 	}
@@ -46,15 +49,15 @@ end
 temp()
 
 function temp()
-	uv0["舐"] = {
+	var_0_1.舐 = {
 		this = {
 			this = true
 		},
-		["吸"] = {
+		吸 = {
 			this = true
 		},
-		["台"] = {
-			["办"] = {
+		台 = {
+			办 = {
 				this = true
 			}
 		}
@@ -64,29 +67,29 @@ end
 temp()
 
 function temp()
-	uv0["賣"] = {
-		["淫"] = {
+	var_0_1.賣 = {
+		淫 = {
 			this = true
 		},
-		["逼"] = {
+		逼 = {
 			this = true
 		},
-		["比"] = {
+		比 = {
 			this = true
 		},
-		["國"] = {
+		國 = {
 			this = true
 		},
-		["槍"] = {
-			["支"] = {
-				["彈"] = {
-					["藥"] = {
+		槍 = {
+			支 = {
+				彈 = {
+					藥 = {
 						this = true
 					}
 				}
 			}
 		},
-		["騷"] = {
+		騷 = {
 			this = true
 		}
 	}
@@ -95,45 +98,45 @@ end
 temp()
 
 function temp()
-	uv0["趙"] = {
-		["紫"] = {
-			["陽"] = {
+	var_0_1.趙 = {
+		紫 = {
+			陽 = {
 				this = true
 			}
 		},
-		["海"] = {
-			["青"] = {
+		海 = {
+			青 = {
 				this = true
 			}
 		},
-		["建"] = {
-			["銘"] = {
+		建 = {
+			銘 = {
 				this = true
 			}
 		},
-		["俊"] = {
-			["卿"] = {
+		俊 = {
+			卿 = {
 				this = true
 			}
 		},
-		["南"] = {
+		南 = {
 			this = true,
-			["起"] = {
+			起 = {
 				this = true
 			}
 		},
-		["品"] = {
-			["潞"] = {
+		品 = {
+			潞 = {
 				this = true
 			}
 		},
-		["曉"] = {
-			["微"] = {
+		曉 = {
+			微 = {
 				this = true
 			}
 		},
-		["樂"] = {
-			["際"] = {
+		樂 = {
+			際 = {
 				this = true
 			}
 		}
@@ -143,18 +146,18 @@ end
 temp()
 
 function temp()
-	uv0["魏"] = {
-		["京"] = {
-			["生"] = {
+	var_0_1.魏 = {
+		京 = {
+			生 = {
 				this = true
 			}
 		},
-		["凤"] = {
-			["和"] = {
+		凤 = {
+			和 = {
 				this = true
 			}
 		},
-		["亮"] = {
+		亮 = {
 			this = true
 		}
 	}

@@ -1,11 +1,11 @@
-slot0 = class("GuildRefreshRecommandShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildRefreshRecommandShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
 
-	if uv0.TIME and pg.TimeMgr.GetInstance():GetServerTime() < uv0.TIME then
-		if slot3 then
-			slot3()
+	if var_0_0.TIME and var_0_0.TIME > pg.TimeMgr.GetInstance():GetServerTime() then
+		if var_1_0 then
+			var_1_0()
 		end
 
 		return
@@ -13,34 +13,41 @@ function slot0.execute(slot0, slot1)
 
 	pg.ConnectionMgr.GetInstance():Send(61035, {
 		type = 0
-	}, 61036, function (slot0)
-		slot1 = {}
+	}, 61036, function(arg_2_0)
+		local var_2_0 = {}
 
-		for slot5, slot6 in ipairs(slot0.recommends or {}) do
-			if not slot1[slot6.user_id] then
-				slot1[slot6.user_id] = {}
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.recommends or {}) do
+			if not var_2_0[iter_2_1.user_id] then
+				var_2_0[iter_2_1.user_id] = {}
 			end
 
-			table.insert(slot1[slot6.user_id], slot6.ship_id)
+			table.insert(var_2_0[iter_2_1.user_id], iter_2_1.ship_id)
 		end
 
-		for slot8, slot9 in ipairs(getProxy(GuildProxy):getData():GetMembers()) do
-			slot9:GetAssaultFleet():ClearAllRecommandShip()
+		local var_2_1 = getProxy(GuildProxy)
+		local var_2_2 = var_2_1:getData()
+		local var_2_3 = var_2_2:GetMembers()
 
-			if slot1[slot9.id] then
-				slot11:SetRecommendList(slot10)
+		for iter_2_2, iter_2_3 in ipairs(var_2_3) do
+			local var_2_4 = var_2_0[iter_2_3.id]
+			local var_2_5 = iter_2_3:GetAssaultFleet()
+
+			var_2_5:ClearAllRecommandShip()
+
+			if var_2_4 then
+				var_2_5:SetRecommendList(var_2_4)
 			end
 		end
 
-		slot2:updateGuild(slot3)
-		uv0:sendNotification(GAME.REFRESH_ALL_ASSULT_SHIP_RECOMMAND_STATE_DONE)
+		var_2_1:updateGuild(var_2_2)
+		arg_1_0:sendNotification(GAME.REFRESH_ALL_ASSULT_SHIP_RECOMMAND_STATE_DONE)
 
-		uv1.TIME = pg.TimeMgr.GetInstance():GetServerTime() + 3
+		var_0_0.TIME = pg.TimeMgr.GetInstance():GetServerTime() + 3
 
-		if uv2 then
-			uv2()
+		if var_1_0 then
+			var_1_0()
 		end
 	end)
 end
 
-return slot0
+return var_0_0

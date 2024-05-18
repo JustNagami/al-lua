@@ -1,16 +1,19 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_183 = {}
-slot1 = slot0.word_template_183
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_183 = {}
+
+local var_0_1 = var_0_0.word_template_183
 
 function temp()
-	uv0["利"] = {
-		["用"] = {
-			["公"] = {
-				["款"] = {
-					["下"] = {
-						["饭"] = {
-							["店"] = {
+	var_0_1.利 = {
+		用 = {
+			公 = {
+				款 = {
+					下 = {
+						饭 = {
+							店 = {
 								this = true
 							}
 						}
@@ -18,15 +21,15 @@ function temp()
 				}
 			}
 		},
-		["新"] = {
-			["彩"] = {
-				["票"] = {
+		新 = {
+			彩 = {
+				票 = {
 					this = true
 				}
 			}
 		},
-		["沾"] = {
-			["书"] = {
+		沾 = {
+			书 = {
 				this = true
 			}
 		}
@@ -36,10 +39,10 @@ end
 temp()
 
 function temp()
-	uv0["隶"] = {
-		["女"] = {
-			["志"] = {
-				["愿"] = {
+	var_0_1.隶 = {
+		女 = {
+			志 = {
+				愿 = {
 					this = true
 				}
 			}
@@ -50,7 +53,7 @@ end
 temp()
 
 function temp()
-	uv0["轹"] = {
+	var_0_1.轹 = {
 		this = {
 			this = true
 		}
@@ -60,10 +63,10 @@ end
 temp()
 
 function temp()
-	uv0["俪"] = {
-		["影"] = {
-			["蝎"] = {
-				["心"] = {
+	var_0_1.俪 = {
+		影 = {
+			蝎 = {
+				心 = {
 					this = true
 				}
 			}
@@ -74,21 +77,21 @@ end
 temp()
 
 function temp()
-	uv0["栗"] = {
-		["林"] = {
-			["知"] = {
-				["美"] = {
+	var_0_1.栗 = {
+		林 = {
+			知 = {
+				美 = {
 					this = true
 				}
 			}
 		},
-		["战"] = {
-			["书"] = {
+		战 = {
+			书 = {
 				this = true
 			}
 		},
-		["戰"] = {
-			["書"] = {
+		戰 = {
+			書 = {
 				this = true
 			}
 		}
@@ -98,7 +101,7 @@ end
 temp()
 
 function temp()
-	uv0["跞"] = {
+	var_0_1.跞 = {
 		this = {
 			this = true
 		}
@@ -108,7 +111,7 @@ end
 temp()
 
 function temp()
-	uv0["詈"] = {
+	var_0_1.詈 = {
 		this = {
 			this = true
 		}

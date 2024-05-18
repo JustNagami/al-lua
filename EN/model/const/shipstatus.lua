@@ -1,5 +1,6 @@
-slot0 = class("ShipStatus")
-slot0.flagList = {
+﻿local var_0_0 = class("ShipStatus")
+
+var_0_0.flagList = {
 	"inChapter",
 	"inFleet",
 	"inElite",
@@ -19,116 +20,122 @@ slot0.flagList = {
 	"inSupport"
 }
 
-function slot0.checkShipFlag(slot0, slot1, slot2)
-	if type(defaultValue(slot1[slot2], uv0.TAG_HIDE_BASE[slot2])) == "boolean" then
-		return not slot3 and slot0:getFlag(slot2)
-	elseif type(slot3) == "number" then
-		return slot0:getFlag(slot2, slot3)
+function var_0_0.checkShipFlag(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = defaultValue(arg_1_1[arg_1_2], var_0_0.TAG_HIDE_BASE[arg_1_2])
+
+	if type(var_1_0) == "boolean" then
+		return not var_1_0 and arg_1_0:getFlag(arg_1_2)
+	elseif type(var_1_0) == "number" then
+		return arg_1_0:getFlag(arg_1_2, var_1_0)
 	else
 		assert(false, "type error")
 	end
 end
 
-function slot0.ShipStatusToTag(slot0, slot1)
-	if uv0.checkShipFlag(slot0, slot1, "inChapter") then
+function var_0_0.ShipStatusToTag(arg_2_0, arg_2_1)
+	if var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inChapter") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_inFight")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inFleet") then
-		slot3 = getProxy(FleetProxy):GetRegularFleetByShip(slot0)
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inFleet") then
+		local var_2_0 = getProxy(FleetProxy):GetRegularFleetByShip(arg_2_0)
 
-		assert(slot3)
+		assert(var_2_0)
 
-		if slot3:isRegularFleet() then
+		local var_2_1 = var_2_0.id
+
+		if var_2_0:isRegularFleet() then
+			var_2_1 = math.fmod(var_2_1, 10)
+
 			return {
 				"ui/dockyardui_atlas",
-				"biandui0" .. math.fmod(slot3.id, 10),
+				"biandui0" .. var_2_1,
 				""
 			}
 		else
 			return {
 				"shipstatus",
 				"red",
-				Fleet.DEFAULT_NAME_FOR_DOCKYARD[slot4]
+				Fleet.DEFAULT_NAME_FOR_DOCKYARD[var_2_1]
 			}
 		end
-	elseif uv0.checkShipFlag(slot0, slot1, "inElite") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inElite") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_inHardFormation")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inSupport") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inSupport") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_inSupportFleet")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inActivity") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inActivity") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_activity")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inChallenge") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inChallenge") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_challenge")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inPvP") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inPvP") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_inPVP")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inEvent") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inEvent") then
 		return {
 			"shipstatus",
 			"green",
 			i18n("word_status_inEvent")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inBackyard") then
-		if slot0.state == Ship.STATE_REST then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inBackyard") then
+		if arg_2_0.state == Ship.STATE_REST then
 			return {
 				"shipstatus",
 				"purple",
 				i18n("word_status_rest")
 			}
-		elseif slot0.state == Ship.STATE_TRAIN then
+		elseif arg_2_0.state == Ship.STATE_TRAIN then
 			return {
 				"shipstatus",
 				"purple",
 				i18n("word_status_train")
 			}
 		end
-	elseif uv0.checkShipFlag(slot0, slot1, "inClass") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inClass") then
 		return {
 			"shipstatus",
 			"blue",
 			i18n("word_status_inClass")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inTactics") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inTactics") then
 		return {
 			"shipstatus",
 			"blue",
 			i18n("word_status_inTactics")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inAdmiral") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inAdmiral") then
 		return {
 			"shipstatus",
 			"light_green",
 			i18n("common_flag_ship")
 		}
-	elseif uv0.checkShipFlag(slot0, slot1, "inWorld") then
+	elseif var_0_0.checkShipFlag(arg_2_0, arg_2_1, "inWorld") then
 		return {
 			"shipstatus",
 			"red",
 			i18n("word_status_world")
 		}
-	elseif getProxy(SettingsProxy):IsRandomFlagShip(slot0.id) then
+	elseif getProxy(SettingsProxy):IsRandomFlagShip(arg_2_0.id) then
 		return {
 			"shipstatus",
 			"light_yellow",
@@ -137,7 +144,7 @@ function slot0.ShipStatusToTag(slot0, slot1)
 	end
 end
 
-slot0.FILTER_SHIPS_FLAGS_1 = {
+var_0_0.FILTER_SHIPS_FLAGS_1 = {
 	inExercise = false,
 	inChapter = true,
 	inFleet = false,
@@ -155,7 +162,7 @@ slot0.FILTER_SHIPS_FLAGS_1 = {
 	inWorld = true,
 	inAdmiral = true
 }
-slot0.FILTER_SHIPS_FLAGS_2 = {
+var_0_0.FILTER_SHIPS_FLAGS_2 = {
 	inGuildBossEvent = true,
 	inChallenge = true,
 	inBackyard = true,
@@ -174,7 +181,7 @@ slot0.FILTER_SHIPS_FLAGS_2 = {
 	inElite = true,
 	inEvent = true
 }
-slot0.FILTER_SHIPS_FLAGS_3 = {
+var_0_0.FILTER_SHIPS_FLAGS_3 = {
 	inExercise = false,
 	inChapter = true,
 	inFleet = false,
@@ -192,7 +199,7 @@ slot0.FILTER_SHIPS_FLAGS_3 = {
 	inWorld = true,
 	inAdmiral = false
 }
-slot0.FILTER_SHIPS_FLAGS_4 = {
+var_0_0.FILTER_SHIPS_FLAGS_4 = {
 	inPvP = true,
 	inChallenge = true,
 	inBackyard = true,
@@ -211,7 +218,7 @@ slot0.FILTER_SHIPS_FLAGS_4 = {
 	inElite = true,
 	inEvent = true
 }
-slot0.TAG_HIDE_ALL = {
+var_0_0.TAG_HIDE_ALL = {
 	inExercise = true,
 	inChallenge = true,
 	inChapter = true,
@@ -227,7 +234,7 @@ slot0.TAG_HIDE_ALL = {
 	inWorld = true,
 	inAdmiral = true
 }
-slot0.TAG_HIDE_BASE = {
+var_0_0.TAG_HIDE_BASE = {
 	inExercise = true,
 	inChallenge = false,
 	inChapter = false,
@@ -244,7 +251,7 @@ slot0.TAG_HIDE_BASE = {
 	inWorld = false,
 	inAdmiral = false
 }
-slot0.TAG_HIDE_ACTIVITY_BOSS = {
+var_0_0.TAG_HIDE_ACTIVITY_BOSS = {
 	inChallenge = true,
 	inChapter = true,
 	inPvP = true,
@@ -254,7 +261,7 @@ slot0.TAG_HIDE_ACTIVITY_BOSS = {
 	inTactics = true,
 	inAdmiral = true
 }
-slot0.TAG_HIDE_BACKYARD = {
+var_0_0.TAG_HIDE_BACKYARD = {
 	inExercise = false,
 	inChallenge = true,
 	inChapter = true,
@@ -263,7 +270,7 @@ slot0.TAG_HIDE_BACKYARD = {
 	inActivity = true,
 	inTactics = true
 }
-slot0.TAG_HIDE_PVP = {
+var_0_0.TAG_HIDE_PVP = {
 	inExercise = false,
 	inChapter = true,
 	inChallenge = true,
@@ -274,7 +281,7 @@ slot0.TAG_HIDE_PVP = {
 	inBackyard = true,
 	inPvP = true
 }
-slot0.TAG_HIDE_DEFENSE = {
+var_0_0.TAG_HIDE_DEFENSE = {
 	inExercise = false,
 	inChapter = true,
 	inChallenge = true,
@@ -286,7 +293,7 @@ slot0.TAG_HIDE_DEFENSE = {
 	inPvP = true,
 	inEvent = true
 }
-slot0.TAG_HIDE_LEVEL = {
+var_0_0.TAG_HIDE_LEVEL = {
 	inBackyard = true,
 	inChallenge = true,
 	inFleet = true,
@@ -295,7 +302,7 @@ slot0.TAG_HIDE_LEVEL = {
 	inTactics = true,
 	inAdmiral = true
 }
-slot0.TAG_HIDE_SUPPORT = {
+var_0_0.TAG_HIDE_SUPPORT = {
 	inBackyard = true,
 	inChallenge = true,
 	inClass = true,
@@ -303,7 +310,7 @@ slot0.TAG_HIDE_SUPPORT = {
 	inTactics = true,
 	inAdmiral = true
 }
-slot0.TAG_HIDE_NORMAL = {
+var_0_0.TAG_HIDE_NORMAL = {
 	inExercise = false,
 	inChallenge = true,
 	inPvP = true,
@@ -312,7 +319,7 @@ slot0.TAG_HIDE_NORMAL = {
 	inTactics = true,
 	inBackyard = true
 }
-slot0.TAG_HIDE_CHALLENGE = {
+var_0_0.TAG_HIDE_CHALLENGE = {
 	inPvP = true,
 	inChapter = true,
 	inFleet = true,
@@ -323,7 +330,7 @@ slot0.TAG_HIDE_CHALLENGE = {
 	inEvent = false,
 	inAdmiral = true
 }
-slot0.TAG_HIDE_EVENT = {
+var_0_0.TAG_HIDE_EVENT = {
 	inExercise = false,
 	inChallenge = true,
 	inClass = true,
@@ -331,7 +338,7 @@ slot0.TAG_HIDE_EVENT = {
 	inTactics = true,
 	inBackyard = true
 }
-slot0.TAG_HIDE_TACTICES = {
+var_0_0.TAG_HIDE_TACTICES = {
 	inExercise = false,
 	inChapter = true,
 	inChallenge = true,
@@ -343,7 +350,7 @@ slot0.TAG_HIDE_TACTICES = {
 	inPvP = true,
 	inEvent = true
 }
-slot0.TAG_HIDE_ADMIRAL = {
+var_0_0.TAG_HIDE_ADMIRAL = {
 	inExercise = false,
 	inChapter = true,
 	inChallenge = true,
@@ -355,7 +362,7 @@ slot0.TAG_HIDE_ADMIRAL = {
 	inPvP = true,
 	inEvent = true
 }
-slot0.TAG_HIDE_FORMATION = {
+var_0_0.TAG_HIDE_FORMATION = {
 	inExercise = false,
 	inChallenge = true,
 	inPvP = true,
@@ -364,28 +371,29 @@ slot0.TAG_HIDE_FORMATION = {
 	inTactics = true,
 	inBackyard = true
 }
-slot0.TAG_HIDE_WORLD = {
+var_0_0.TAG_HIDE_WORLD = {
 	inActivity = true,
 	inChallenge = true,
 	inFleet = true
 }
-slot0.TAG_HIDE_DESTROY = {
+var_0_0.TAG_HIDE_DESTROY = {
 	inElite = false
 }
-slot0.TAG_BLOCK_EVENT = {
+var_0_0.TAG_BLOCK_EVENT = {
 	inEvent = true
 }
-slot0.TAG_BLOCK_PVP = {
+var_0_0.TAG_BLOCK_PVP = {
 	inEvent = true
 }
-slot0.TAG_BLOCK_BACKYARD = {
+var_0_0.TAG_BLOCK_BACKYARD = {
 	inClass = true
 }
-slot0.STATE_CHANGE_OK = -1
-slot0.STATE_CHANGE_FAIL = 0
-slot0.STATE_CHANGE_CHECK = 1
-slot0.STATE_CHANGE_TIP = 2
-slot1 = {
+var_0_0.STATE_CHANGE_OK = -1
+var_0_0.STATE_CHANGE_FAIL = 0
+var_0_0.STATE_CHANGE_CHECK = 1
+var_0_0.STATE_CHANGE_TIP = 2
+
+local var_0_1 = {
 	inFleet = {
 		inEvent = 0,
 		inSupport = 1
@@ -465,7 +473,7 @@ slot1 = {
 		inGuildBossEvent = 1
 	}
 }
-slot2 = {
+local var_0_2 = {
 	inChapter = {
 		tips_block = "word_shipState_fight"
 	},
@@ -519,70 +527,76 @@ slot2 = {
 	}
 }
 
-function slot0.ShipStatusCheck(slot0, slot1, slot2, slot3)
-	slot4, slot5 = uv0.ShipStatusConflict(slot0, slot1, slot3)
+function var_0_0.ShipStatusCheck(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0, var_3_1 = var_0_0.ShipStatusConflict(arg_3_0, arg_3_1, arg_3_3)
 
-	if slot4 == uv0.STATE_CHANGE_FAIL then
-		return false, i18n(slot5)
-	elseif slot4 == uv0.STATE_CHANGE_CHECK then
-		if slot2 then
-			return uv0.ChangeStatusCheckBox(slot5, slot1, slot2)
+	if var_3_0 == var_0_0.STATE_CHANGE_FAIL then
+		return false, i18n(var_3_1)
+	elseif var_3_0 == var_0_0.STATE_CHANGE_CHECK then
+		if arg_3_2 then
+			return var_0_0.ChangeStatusCheckBox(var_3_1, arg_3_1, arg_3_2)
 		else
 			return false
 		end
-	elseif slot4 == uv0.STATE_CHANGE_TIP then
-		return uv0.ChangeStatusTipBox(slot5, slot1)
-	elseif slot4 == uv0.STATE_CHANGE_OK then
+	elseif var_3_0 == var_0_0.STATE_CHANGE_TIP then
+		return var_0_0.ChangeStatusTipBox(var_3_1, arg_3_1)
+	elseif var_3_0 == var_0_0.STATE_CHANGE_OK then
 		return true
 	else
 		assert(false, "unknow error")
 	end
 end
 
-function slot0.ShipStatusConflict(slot0, slot1, slot2)
-	for slot7, slot8 in ipairs(uv1.flagList) do
-		if uv0[slot0][slot8] == uv1.STATE_CHANGE_FAIL and slot1:getFlag(slot8, (slot2 or {})[slot8]) then
-			return uv1.STATE_CHANGE_FAIL, uv2[slot8].tips_block
+function var_0_0.ShipStatusConflict(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = var_0_1[arg_4_0]
+
+	arg_4_2 = arg_4_2 or {}
+
+	for iter_4_0, iter_4_1 in ipairs(var_0_0.flagList) do
+		if var_4_0[iter_4_1] == var_0_0.STATE_CHANGE_FAIL and arg_4_1:getFlag(iter_4_1, arg_4_2[iter_4_1]) then
+			return var_0_0.STATE_CHANGE_FAIL, var_0_2[iter_4_1].tips_block
 		end
 	end
 
-	for slot7, slot8 in ipairs(uv1.flagList) do
-		if slot3[slot8] == uv1.STATE_CHANGE_CHECK and slot1:getFlag(slot8, slot2[slot8]) then
-			return uv1.STATE_CHANGE_CHECK, slot8
+	for iter_4_2, iter_4_3 in ipairs(var_0_0.flagList) do
+		if var_4_0[iter_4_3] == var_0_0.STATE_CHANGE_CHECK and arg_4_1:getFlag(iter_4_3, arg_4_2[iter_4_3]) then
+			return var_0_0.STATE_CHANGE_CHECK, iter_4_3
 		end
 	end
 
-	for slot7, slot8 in ipairs(uv1.flagList) do
-		if slot3[slot8] == uv1.STATE_CHANGE_TIP and slot1:getFlag(slot8, slot2[slot8]) then
-			return uv1.STATE_CHANGE_TIP, slot8
+	for iter_4_4, iter_4_5 in ipairs(var_0_0.flagList) do
+		if var_4_0[iter_4_5] == var_0_0.STATE_CHANGE_TIP and arg_4_1:getFlag(iter_4_5, arg_4_2[iter_4_5]) then
+			return var_0_0.STATE_CHANGE_TIP, iter_4_5
 		end
 	end
 
-	return uv1.STATE_CHANGE_OK
+	return var_0_0.STATE_CHANGE_OK
 end
 
-function slot0.ChangeStatusCheckBox(slot0, slot1, slot2)
-	if slot0 == "inBackyard" then
+function var_0_0.ChangeStatusCheckBox(arg_5_0, arg_5_1, arg_5_2)
+	if arg_5_0 == "inBackyard" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("ship_vo_moveout_backyard"),
-			onYes = function ()
+			onYes = function()
 				pg.m02:sendNotification(GAME.EXIT_SHIP, {
-					callback = uv0,
-					shipId = uv1.id
+					callback = arg_5_2,
+					shipId = arg_5_1.id
 				})
 			end
 		})
 
 		return false, nil
-	elseif slot0 == "inFleet" then
+	elseif arg_5_0 == "inFleet" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("shipchange_alert_infleet"),
-			onYes = function ()
-				if getProxy(FleetProxy):GetRegularFleetByShip(uv0):canRemove(uv0) then
-					slot0:removeShip(uv0)
+			onYes = function()
+				local var_7_0 = getProxy(FleetProxy):GetRegularFleetByShip(arg_5_1)
+
+				if var_7_0:canRemove(arg_5_1) then
+					var_7_0:removeShip(arg_5_1)
 					pg.m02:sendNotification(GAME.UPDATE_FLEET, {
-						callback = uv1,
-						fleet = slot0
+						callback = arg_5_2,
+						fleet = var_7_0
 					})
 				else
 					pg.TipsMgr.GetInstance():ShowTips(i18n("shipmodechange_reject_1stfleet_only"))
@@ -591,117 +605,142 @@ function slot0.ChangeStatusCheckBox(slot0, slot1, slot2)
 		})
 
 		return false, nil
-	elseif slot0 == "inPvP" then
+	elseif arg_5_0 == "inPvP" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("shipchange_alert_inpvp"),
-			onYes = function ()
-				if getProxy(FleetProxy):getFleetById(FleetProxy.PVP_FLEET_ID):canRemove(uv0) then
-					slot0:removeShip(uv0)
+			onYes = function()
+				local var_8_0 = getProxy(FleetProxy):getFleetById(FleetProxy.PVP_FLEET_ID)
+
+				if var_8_0:canRemove(arg_5_1) then
+					var_8_0:removeShip(arg_5_1)
 					pg.m02:sendNotification(GAME.UPDATE_FLEET, {
-						callback = uv1,
-						fleet = slot0
+						callback = arg_5_2,
+						fleet = var_8_0
 					})
-				elseif uv0:getTeamType() == TeamType.Vanguard then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_vanguardFleet_must_hasShip"))
-				elseif slot1 == TeamType.Main then
-					pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_mainFleet_must_hasShip"))
+				else
+					local var_8_1 = arg_5_1:getTeamType()
+
+					if var_8_1 == TeamType.Vanguard then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_vanguardFleet_must_hasShip"))
+					elseif var_8_1 == TeamType.Main then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("ship_vo_mainFleet_must_hasShip"))
+					end
 				end
 			end
 		})
 
 		return false, nil
-	elseif slot0 == "inExercise" then
-		if getProxy(MilitaryExerciseProxy):getExerciseFleet():canRemove(slot1) then
+	elseif arg_5_0 == "inExercise" then
+		local var_5_0 = getProxy(MilitaryExerciseProxy):getExerciseFleet()
+
+		if var_5_0:canRemove(arg_5_1) then
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("shipchange_alert_inexercise"),
-				onYes = function ()
-					uv0:removeShip(uv1)
+				onYes = function()
+					var_5_0:removeShip(arg_5_1)
 					pg.m02:sendNotification(GAME.UPDATE_EXERCISE_FLEET, {
-						fleet = uv0,
-						callback = uv2
+						fleet = var_5_0,
+						callback = arg_5_2
 					})
 				end
 			})
 		else
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("exercise_clear_fleet_tip"),
-				onYes = function ()
-					uv0:removeShip(uv1)
+				onYes = function()
+					var_5_0:removeShip(arg_5_1)
 					pg.m02:sendNotification(GAME.UPDATE_EXERCISE_FLEET, {
-						fleet = uv0,
-						callback = uv2
+						fleet = var_5_0,
+						callback = arg_5_2
 					})
 				end
 			})
 		end
 
 		return false, nil
-	elseif slot0 == "inTactics" then
+	elseif arg_5_0 == "inTactics" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("tactics_lesson_cancel"),
-			onYes = function ()
+			onYes = function()
+				local var_11_0 = getProxy(NavalAcademyProxy):getStudentIdByShipId(arg_5_1.id)
+
 				pg.m02:sendNotification(GAME.CANCEL_LEARN_TACTICS, {
-					callback = uv1,
-					shipId = getProxy(NavalAcademyProxy):getStudentIdByShipId(uv0.id),
+					callback = arg_5_2,
+					shipId = var_11_0,
 					type = Student.CANCEL_TYPE_MANUAL
 				})
 			end
 		})
 
 		return false, nil
-	elseif slot0 == "inGuildBossEvent" then
+	elseif arg_5_0 == "inGuildBossEvent" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			content = i18n("word_shipState_guild_boss"),
-			onYes = function ()
-				if not getProxy(GuildProxy):getRawData() then
+			onYes = function()
+				local var_12_0 = getProxy(GuildProxy):getRawData()
+
+				if not var_12_0 then
 					return
 				end
 
-				if not slot0:GetActiveEvent() then
+				local var_12_1 = var_12_0:GetActiveEvent()
+
+				if not var_12_1 then
 					return
 				end
 
-				if not slot1:GetBossMission() or not slot2:IsActive() then
+				local var_12_2 = var_12_1:GetBossMission()
+
+				if not var_12_2 or not var_12_2:IsActive() then
 					return
 				end
 
-				if not slot2:GetFleetUserId(getProxy(PlayerProxy):getRawData().id, uv0.id) then
+				local var_12_3 = getProxy(PlayerProxy):getRawData().id
+				local var_12_4 = var_12_2:GetFleetUserId(var_12_3, arg_5_1.id)
+
+				if not var_12_4 then
 					return
 				end
 
-				slot5 = Clone(slot4)
+				local var_12_5 = Clone(var_12_4)
 
-				slot5:RemoveUserShip(slot3, uv0.id)
+				var_12_5:RemoveUserShip(var_12_3, arg_5_1.id)
 				pg.m02:sendNotification(GAME.GUILD_UPDATE_BOSS_FORMATION, {
 					force = true,
 					editFleet = {
-						[slot5.id] = slot5
+						[var_12_5.id] = var_12_5
 					},
-					callback = uv1
+					callback = arg_5_2
 				})
 			end
 		})
 
 		return false, nil
-	elseif slot0 == "inWorld" then
-		if nowWorld().type == World.TypeBase then
-			WorldConst.ReqWorldCheck(slot2)
+	elseif arg_5_0 == "inWorld" then
+		local var_5_1 = nowWorld()
+
+		if var_5_1.type == World.TypeBase then
+			WorldConst.ReqWorldCheck(arg_5_2)
 
 			return false, nil
-		elseif #slot3:GetFleet(slot3:GetShip(slot1.id).fleetId)[slot1:getTeamType()] > 1 then
-			return true
 		else
-			pg.TipsMgr.GetInstance():ShowTips(i18n("shipmodechange_reject_worldfleet_only"))
+			local var_5_2 = var_5_1:GetShip(arg_5_1.id).fleetId
 
-			return false, nil
+			if #var_5_1:GetFleet(var_5_2)[arg_5_1:getTeamType()] > 1 then
+				return true
+			else
+				pg.TipsMgr.GetInstance():ShowTips(i18n("shipmodechange_reject_worldfleet_only"))
+
+				return false, nil
+			end
 		end
 	end
 
 	return true
 end
 
-function slot0.ChangeStatusTipBox(slot0, slot1)
-	if slot0 == "inElite" then
+function var_0_0.ChangeStatusTipBox(arg_13_0, arg_13_1)
+	if arg_13_0 == "inElite" then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			content = i18n("ship_vo_moveout_hardFormation")
@@ -711,16 +750,16 @@ function slot0.ChangeStatusTipBox(slot0, slot1)
 	return true
 end
 
-function slot0.canDestroyShip(slot0, slot1)
-	if slot0:isBluePrintShip() then
+function var_0_0.canDestroyShip(arg_14_0, arg_14_1)
+	if arg_14_0:isBluePrintShip() then
 		return false, i18n("blueprint_destory_tip")
-	elseif slot0:GetLockState() == Ship.LOCK_STATE_LOCK then
+	elseif arg_14_0:GetLockState() == Ship.LOCK_STATE_LOCK then
 		return false, i18n("ship_vo_locked")
-	elseif slot0:isMetaShip() then
+	elseif arg_14_0:isMetaShip() then
 		return false, i18n("meta_destroy_tip")
 	end
 
-	return uv0.ShipStatusCheck("onDestroy", slot0, slot1)
+	return var_0_0.ShipStatusCheck("onDestroy", arg_14_0, arg_14_1)
 end
 
-return slot0
+return var_0_0

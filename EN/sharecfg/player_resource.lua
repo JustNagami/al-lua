@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.player_resource = {
 	{
 		id = 1,

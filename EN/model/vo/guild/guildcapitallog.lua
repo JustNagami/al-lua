@@ -1,66 +1,86 @@
-slot0 = class("GuildCapitalLog", import("..BaseVO"))
+﻿local var_0_0 = class("GuildCapitalLog", import("..BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.memberId = slot1.member_id
-	slot0.name = slot1.name
-	slot0.eventType = slot1.event_type
-	slot0.eventTarget = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.memberId = arg_1_1.member_id
+	arg_1_0.name = arg_1_1.name
+	arg_1_0.eventType = arg_1_1.event_type
+	arg_1_0.eventTarget = {}
 
-	for slot5, slot6 in ipairs(slot1.event_target) do
-		table.insert(slot0.eventTarget, slot6)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.event_target) do
+		table.insert(arg_1_0.eventTarget, iter_1_1)
 	end
 
-	slot0.time = slot1.time
-	slot0.text = slot0:buildText()
+	arg_1_0.time = arg_1_1.time
+	arg_1_0.text = arg_1_0:buildText()
 end
 
-function slot0.buildText(slot0)
-	slot1 = ""
+function var_0_0.buildText(arg_2_0)
+	local var_2_0 = ""
+	local var_2_1 = pg.TimeMgr:GetInstance():STimeDescC(arg_2_0.time)
+	local var_2_2 = arg_2_0.eventTarget[1]
 
-	if slot0.eventType == GuildConst.TYPE_DONATE then
-		slot5 = nil
-		slot1 = i18n("guild_donate_log", pg.TimeMgr:GetInstance():STimeDescC(slot0.time), slot0.name, slot4.consume, (pg.guild_contribution_template[slot0.eventTarget[1]].type ~= DROP_TYPE_RESOURCE or Item.New({
-			id = id2ItemId(slot4.type_id)
-		}):getConfig("name")) and Item.New({
-			id = slot4.type_id
-		}):getConfig("name"), slot4.award_capital)
-	elseif slot0.eventType == GuildConst.TYPE_SUPPLY then
-		if getProxy(GuildProxy):getRawData() then
-			slot5, slot6 = slot4:getSupplyConsume()
-			slot1 = i18n("guild_supply_log", slot2, slot0.name, slot5, slot6)
+	if arg_2_0.eventType == GuildConst.TYPE_DONATE then
+		local var_2_3 = pg.guild_contribution_template[var_2_2]
+		local var_2_4
+
+		if var_2_3.type == DROP_TYPE_RESOURCE then
+			var_2_4 = Item.New({
+				id = id2ItemId(var_2_3.type_id)
+			}):getConfig("name")
+		else
+			var_2_4 = Item.New({
+				id = var_2_3.type_id
+			}):getConfig("name")
 		end
-	elseif slot0.eventType == GuildConst.WEEKLY_TASK then
-		slot1 = i18n("guild_weektask_log", slot2, slot3)
-	elseif slot0.eventType == GuildConst.START_BATTLE then
-		slot1 = i18n("guild_battle_log", slot2, slot0.name, slot3)
-	elseif slot0.eventType == GuildConst.TECHNOLOGY then
-		slot4 = pg.guild_technology_template[slot3]
 
-		assert(slot4, slot3)
+		var_2_0 = i18n("guild_donate_log", var_2_1, arg_2_0.name, var_2_3.consume, var_2_4, var_2_3.award_capital)
+	elseif arg_2_0.eventType == GuildConst.TYPE_SUPPLY then
+		local var_2_5 = getProxy(GuildProxy):getRawData()
 
-		slot1 = i18n("guild_tech_log", slot2, slot0.name, slot4.contribution_consume, slot4.name, level)
-	elseif slot0.eventType == GuildConst.TECHNOLOGY_OVER then
-		slot4 = pg.guild_technology_template[slot3]
+		if var_2_5 then
+			local var_2_6, var_2_7 = var_2_5:getSupplyConsume()
 
-		assert(slot4, slot3)
+			var_2_0 = i18n("guild_supply_log", var_2_1, arg_2_0.name, var_2_6, var_2_7)
+		end
+	elseif arg_2_0.eventType == GuildConst.WEEKLY_TASK then
+		var_2_0 = i18n("guild_weektask_log", var_2_1, var_2_2)
+	elseif arg_2_0.eventType == GuildConst.START_BATTLE then
+		var_2_0 = i18n("guild_battle_log", var_2_1, arg_2_0.name, var_2_2)
+	elseif arg_2_0.eventType == GuildConst.TECHNOLOGY then
+		local var_2_8 = pg.guild_technology_template[var_2_2]
 
-		slot5 = slot4.contribution_consume
-		slot1 = i18n("guild_tech_over_log", slot2, slot0.name, slot4.name)
-	elseif slot0.eventType == GuildConst.SWITCH_TOGGLE then
-		slot1 = i18n("guild_tech_change_log", slot2, slot0.name, pg.guild_technology_template[slot3].name)
+		assert(var_2_8, var_2_2)
+
+		local var_2_9 = var_2_8.contribution_consume
+		local var_2_10 = var_2_8.name
+
+		var_2_0 = i18n("guild_tech_log", var_2_1, arg_2_0.name, var_2_9, var_2_10, level)
+	elseif arg_2_0.eventType == GuildConst.TECHNOLOGY_OVER then
+		local var_2_11 = pg.guild_technology_template[var_2_2]
+
+		assert(var_2_11, var_2_2)
+
+		local var_2_12 = var_2_11.contribution_consume
+		local var_2_13 = var_2_11.name
+
+		var_2_0 = i18n("guild_tech_over_log", var_2_1, arg_2_0.name, var_2_13)
+	elseif arg_2_0.eventType == GuildConst.SWITCH_TOGGLE then
+		local var_2_14 = pg.guild_technology_template[var_2_2].name
+
+		var_2_0 = i18n("guild_tech_change_log", var_2_1, arg_2_0.name, var_2_14)
 	end
 
-	return slot1
+	return var_2_0
 end
 
-function slot0.getText(slot0)
-	return slot0.text
+function var_0_0.getText(arg_3_0)
+	return arg_3_0.text
 end
 
-function slot0.IsSameType(slot0, slot1)
-	return _.any(slot1, function (slot0)
-		return uv0.eventType == slot0
+function var_0_0.IsSameType(arg_4_0, arg_4_1)
+	return _.any(arg_4_1, function(arg_5_0)
+		return arg_4_0.eventType == arg_5_0
 	end)
 end
 
-return slot0
+return var_0_0

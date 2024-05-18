@@ -1,4 +1,25 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onBeforeFatalDamage"
+			},
+			arg_list = {
+				skill_id = 10450,
+				target = "TargetSelf"
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onBeforeFatalDamage"
+			},
+			arg_list = {
+				count = 1
+			}
+		}
+	},
 	{
 		desc = "受到致命伤害时不会阵亡，5秒内回避所有伤害，同时立刻发动一轮空袭，每场战斗只能触发1次",
 		addition = {
@@ -69,26 +90,5 @@ return {
 	stack = 1,
 	id = 10450,
 	icon = 10450,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onBeforeFatalDamage"
-			},
-			arg_list = {
-				skill_id = 10450,
-				target = "TargetSelf"
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onBeforeFatalDamage"
-			},
-			arg_list = {
-				count = 1
-			}
-		}
-	}
+	last_effect = ""
 }

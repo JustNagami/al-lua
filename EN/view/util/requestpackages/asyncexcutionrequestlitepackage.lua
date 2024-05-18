@@ -1,68 +1,71 @@
-slot0 = class("AsyncExcutionRequestLitePackage", import(".RequestPackage"))
-slot0.STATUS = {
+﻿local var_0_0 = class("AsyncExcutionRequestLitePackage", import(".RequestPackage"))
+
+var_0_0.STATUS = {
 	SUSPEND = 2,
 	READY = 1,
 	RUNNING = 3
 }
 
-function slot0.__call(slot0, ...)
-	if slot0.stopped then
+function var_0_0.__call(arg_1_0, ...)
+	if arg_1_0.stopped then
 		return
 	end
 
-	if not slot0.funcs or #slot0.funcs == 0 then
+	if not arg_1_0.funcs or #arg_1_0.funcs == 0 then
 		return
 	end
 
-	slot0:Excute()
+	arg_1_0:Excute()
 end
 
-function slot0.Resume(slot0)
-	slot0.targetStatus = uv0.STATUS.READY
+function var_0_0.Resume(arg_2_0)
+	arg_2_0.targetStatus = var_0_0.STATUS.READY
 
-	if slot0.status == uv0.STATUS.SUSPEND then
-		slot0:Excute()
+	if arg_2_0.status == var_0_0.STATUS.SUSPEND then
+		arg_2_0:Excute()
 	end
 end
 
-function slot0.Suspend(slot0)
-	slot0.targetStatus = uv0.STATUS.SUSPEND
+function var_0_0.Suspend(arg_3_0)
+	arg_3_0.targetStatus = var_0_0.STATUS.SUSPEND
 end
 
-function slot0.Ctor(slot0, slot1)
-	slot0.funcs = slot1 or {}
-	slot0.status = uv0.STATUS.READY
-	slot0.targetStatus = uv0.STATUS.READY
+function var_0_0.Ctor(arg_4_0, arg_4_1)
+	arg_4_0.funcs = arg_4_1 or {}
+	arg_4_0.status = var_0_0.STATUS.READY
+	arg_4_0.targetStatus = var_0_0.STATUS.READY
 end
 
-function slot0.Insert(slot0, slot1)
-	table.insert(slot0.funcs, slot1)
+function var_0_0.Insert(arg_5_0, arg_5_1)
+	table.insert(arg_5_0.funcs, arg_5_1)
 end
 
-function slot0.Excute(slot0)
-	assert(slot0.ready)
+function var_0_0.Excute(arg_6_0)
+	assert(arg_6_0.ready)
 
-	if not slot0.ready then
+	if not arg_6_0.ready then
 		return
 	end
 
-	slot1 = nil
+	local var_6_0
 
-	function (...)
-		if uv0.stopped then
+	local function var_6_1(...)
+		if arg_6_0.stopped then
 			return
 		end
 
-		if uv0.suspended or not uv0.funcs or #uv0.funcs <= 0 then
-			uv0.ready = true
+		if arg_6_0.suspended or not arg_6_0.funcs or not (#arg_6_0.funcs > 0) then
+			arg_6_0.ready = true
 
 			return
 		end
 
-		uv0.ready = nil
+		arg_6_0.ready = nil
 
-		table.remove(uv0.funcs, 1)(uv1, ...)
-	end()
+		table.remove(arg_6_0.funcs, 1)(var_6_1, ...)
+	end
+
+	var_6_1()
 end
 
-return slot0
+return var_0_0

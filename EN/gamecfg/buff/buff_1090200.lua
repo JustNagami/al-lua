@@ -1,4 +1,18 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onTorpedoWeaponFire"
+			},
+			arg_list = {
+				rant = 3000,
+				target = "TargetSelf",
+				skill_id = 1090200,
+				time = 10
+			}
+		}
+	},
 	{
 		desc = "每次使用鱼雷时有15.0%的概率再次发射一轮",
 		addition = {
@@ -209,19 +223,5 @@ return {
 	stack = 1,
 	id = 1090200,
 	icon = 2050,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onTorpedoWeaponFire"
-			},
-			arg_list = {
-				rant = 3000,
-				target = "TargetSelf",
-				skill_id = 1090200,
-				time = 10
-			}
-		}
-	}
+	last_effect = ""
 }

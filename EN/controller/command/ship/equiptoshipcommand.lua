@@ -1,34 +1,39 @@
-slot0 = class("EquipToShipCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("EquipToShipCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
-	slot3 = slot2.equipmentId
-	slot5 = slot2.pos
-	slot6 = slot2.callback
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.equipmentId
+	local var_1_2 = var_1_0.shipId
+	local var_1_3 = var_1_0.pos
+	local var_1_4 = var_1_0.callback
+	local var_1_5 = getProxy(BayProxy)
+	local var_1_6 = var_1_5:getShipById(var_1_2)
 
-	if getProxy(BayProxy):getShipById(slot2.shipId) == nil then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", slot4))
+	if var_1_6 == nil then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_2))
 
-		if slot6 then
-			slot6(100)
+		if var_1_4 then
+			var_1_4(100)
 		end
 
 		return
 	end
 
-	slot11, slot12 = slot8:canEquipAtPos(getProxy(EquipmentProxy):getEquipmentById(slot3), slot5)
+	local var_1_7 = getProxy(EquipmentProxy)
+	local var_1_8 = var_1_7:getEquipmentById(var_1_1)
+	local var_1_9, var_1_10 = var_1_6:canEquipAtPos(var_1_8, var_1_3)
 
-	if not slot11 then
-		pg.TipsMgr.GetInstance():ShowTips(slot12)
+	if not var_1_9 then
+		pg.TipsMgr.GetInstance():ShowTips(var_1_10)
 
 		return
 	end
 
-	if not slot10 or slot10.count == 0 then
+	if not var_1_8 or var_1_8.count == 0 then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_error_noEquip"))
 
-		if slot6 then
-			slot6(101)
+		if var_1_4 then
+			var_1_4(101)
 		end
 
 		return
@@ -36,37 +41,40 @@ function slot0.execute(slot0, slot1)
 
 	pg.ConnectionMgr.GetInstance():Send(12006, {
 		type = 0,
-		equip_id = slot3,
-		ship_id = slot4,
-		pos = slot5
-	}, 12007, function (slot0)
-		if slot0.result == 0 then
-			assert(uv2:getEquipmentById(uv3) and slot2.count > 0)
+		equip_id = var_1_1,
+		ship_id = var_1_2,
+		pos = var_1_3
+	}, 12007, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = var_1_6:getEquip(var_1_3)
+			local var_2_1 = var_1_7:getEquipmentById(var_1_1)
 
-			slot2.count = 1
+			assert(var_2_1 and var_2_1.count > 0)
 
-			if uv0:getEquip(uv1) then
-				uv2:addEquipment(slot1)
+			var_2_1.count = 1
+
+			if var_2_0 then
+				var_1_7:addEquipment(var_2_0)
 			end
 
-			uv0:updateEquip(uv1, slot2)
-			uv4:updateShip(uv0)
-			uv2:removeEquipmentById(uv3, 1)
-			uv5:sendNotification(GAME.EQUIP_TO_SHIP_DONE, uv0)
-			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_ok", slot2:getConfig("name")), "green")
+			var_1_6:updateEquip(var_1_3, var_2_1)
+			var_1_5:updateShip(var_1_6)
+			var_1_7:removeEquipmentById(var_1_1, 1)
+			arg_1_0:sendNotification(GAME.EQUIP_TO_SHIP_DONE, var_1_6)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_equipToShip_ok", var_2_1:getConfig("name")), "green")
 			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_DOCKYARD_EQUIPON)
 
-			if uv6 then
-				uv6()
+			if var_1_4 then
+				var_1_4()
 			end
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_equipToShip", arg_2_0.result))
 
-			if uv6 then
-				uv6()
+			if var_1_4 then
+				var_1_4()
 			end
 		end
 	end)
 end
 
-return slot0
+return var_0_0

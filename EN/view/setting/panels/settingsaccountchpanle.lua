@@ -1,21 +1,21 @@
-slot0 = class("SettingsAccountCHPanle", import(".SettingsBasePanel"))
+﻿local var_0_0 = class("SettingsAccountCHPanle", import(".SettingsBasePanel"))
 
-function slot0.GetUIName(slot0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsAccountCH"
 end
 
-function slot0.GetTitle(slot0)
+function var_0_0.GetTitle(arg_2_0)
 	return "注销账户"
 end
 
-function slot0.GetTitleEn(slot0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "/ Account Deactivation"
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, findTF(slot0._tf, "delete"), function ()
+function var_0_0.OnInit(arg_4_0)
+	onButton(arg_4_0, findTF(arg_4_0._tf, "delete"), function()
 		pg.SdkMgr.GetInstance():DeleteAccount()
 	end, SFX_PANEL)
 end
 
-return slot0
+return var_0_0

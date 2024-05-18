@@ -1,8 +1,8 @@
-slot0 = class("MonopolyCarGame")
-slot1 = 100
-slot2 = 50
-slot3 = "redcar"
-slot4 = {
+﻿local var_0_0 = class("MonopolyCarGame")
+local var_0_1 = 100
+local var_0_2 = 50
+local var_0_3 = "redcar"
+local var_0_4 = {
 	"gaoxiong_5",
 	"aidang_5",
 	"dafeng_5",
@@ -13,611 +13,664 @@ slot4 = {
 	"ougen_5",
 	"qiye_7"
 }
-slot5 = 0.6
-slot6 = "B-stand"
-slot7 = "F-stand"
-slot8 = "B-walk"
-slot9 = "F-walk"
-slot10 = "typeMoveUp"
-slot11 = "typeMoveDown"
-slot12 = "typeMoveLeft"
-slot13 = "typeMoveRight"
+local var_0_5 = 0.6
+local var_0_6 = "B-stand"
+local var_0_7 = "F-stand"
+local var_0_8 = "B-walk"
+local var_0_9 = "F-walk"
+local var_0_10 = "typeMoveUp"
+local var_0_11 = "typeMoveDown"
+local var_0_12 = "typeMoveLeft"
+local var_0_13 = "typeMoveRight"
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	slot0._binder = slot1
-	slot0._tf = slot2
-	slot0._event = slot3
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	arg_1_0._binder = arg_1_1
+	arg_1_0._tf = arg_1_2
+	arg_1_0._event = arg_1_3
 
-	slot0:initData()
-	slot0:initUI()
-	slot0:initEvent()
+	arg_1_0:initData()
+	arg_1_0:initUI()
+	arg_1_0:initEvent()
 end
 
-function slot0.initData(slot0)
-	slot0.leftCount = 0
-	slot0.inAnimatedFlag = false
-	slot0.mapCells = {}
-	slot0.showSkinId = uv0[math.random(1, #uv0)]
+function var_0_0.initData(arg_2_0)
+	arg_2_0.leftCount = 0
+	arg_2_0.inAnimatedFlag = false
+	arg_2_0.mapCells = {}
+
+	local var_2_0 = math.random(1, #var_0_4)
+
+	arg_2_0.showSkinId = var_0_4[var_2_0]
 end
 
-function slot0.initUI(slot0)
-	slot0.tplMapCell = findTF(slot0._tf, "tplMapCell")
-	slot0.mapContainer = findTF(slot0._tf, "mapContainer")
-	slot0.char = findTF(slot0._tf, "mapContainer/char")
-	slot0.showChar = findTF(slot0._tf, "showChar")
+function var_0_0.initUI(arg_3_0)
+	arg_3_0.tplMapCell = findTF(arg_3_0._tf, "tplMapCell")
+	arg_3_0.mapContainer = findTF(arg_3_0._tf, "mapContainer")
+	arg_3_0.char = findTF(arg_3_0._tf, "mapContainer/char")
+	arg_3_0.showChar = findTF(arg_3_0._tf, "showChar")
 
-	setActive(slot0.char, false)
+	setActive(arg_3_0.char, false)
 
-	slot0.btnStart = findTF(slot0._tf, "btnStart")
-	slot0.btnHelp = findTF(slot0._tf, "btnHelp")
-	slot0.btnRp = findTF(slot0._tf, "btnRp")
-	slot0.commonAnim = findTF(slot0.btnRp, "rpAni"):GetComponent(typeof(Animator))
-	slot0.labelLeftCountTip = findTF(slot0.btnStart, "labelLeftCountTip")
+	arg_3_0.btnStart = findTF(arg_3_0._tf, "btnStart")
+	arg_3_0.btnHelp = findTF(arg_3_0._tf, "btnHelp")
+	arg_3_0.btnRp = findTF(arg_3_0._tf, "btnRp")
+	arg_3_0.commonAnim = findTF(arg_3_0.btnRp, "rpAni"):GetComponent(typeof(Animator))
+	arg_3_0.labelLeftCountTip = findTF(arg_3_0.btnStart, "labelLeftCountTip")
 
-	setActive(slot0.labelLeftCountTip, false)
+	setActive(arg_3_0.labelLeftCountTip, false)
 
-	slot0.labelLeftCount = findTF(slot0.btnStart, "labelLeftCount")
-	slot0.labelDropShip = findTF(slot0._tf, "labelDropShip")
-	slot0.labelLeftRpCount = findTF(slot0._tf, "labelLeftRpCount")
-	slot0.rollStep = findTF(slot0._tf, "step")
+	arg_3_0.labelLeftCount = findTF(arg_3_0.btnStart, "labelLeftCount")
+	arg_3_0.labelDropShip = findTF(arg_3_0._tf, "labelDropShip")
+	arg_3_0.labelLeftRpCount = findTF(arg_3_0._tf, "labelLeftRpCount")
+	arg_3_0.rollStep = findTF(arg_3_0._tf, "step")
 
-	setActive(slot0.rollStep, false)
+	setActive(arg_3_0.rollStep, false)
 
-	slot0.mcTouzi = findTF(slot0._tf, "mcTouzi")
-	slot0.imgTouzi = findTF(slot0._tf, "imgTouzi")
+	arg_3_0.mcTouzi = findTF(arg_3_0._tf, "mcTouzi")
+	arg_3_0.imgTouzi = findTF(arg_3_0._tf, "imgTouzi")
 
-	setActive(slot0.mcTouzi, false)
-	slot0:initMap()
-	slot0:initChar()
+	setActive(arg_3_0.mcTouzi, false)
+	arg_3_0:initMap()
+	arg_3_0:initChar()
 end
 
-function slot0.initEvent(slot0)
-	onButton(slot0._binder, slot0.btnStart, function ()
-		if uv0.inAnimatedFlag then
+function var_0_0.initEvent(arg_4_0)
+	onButton(arg_4_0._binder, arg_4_0.btnStart, function()
+		if arg_4_0.inAnimatedFlag then
 			return
 		end
 
-		if uv0.leftCount and uv0.leftCount <= 0 then
+		if arg_4_0.leftCount and arg_4_0.leftCount <= 0 then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("common_count_noenough"))
 
 			return
 		end
 
-		uv0:changeAnimeState(true)
-		setActive(uv0.btnStart, true)
-		uv0._event:emit(MonopolyCarPage.ON_START, uv0.activity.id, function (slot0)
-			if slot0 and slot0 > 0 then
-				uv0:showRollAnimated(slot0)
+		arg_4_0:changeAnimeState(true)
+		setActive(arg_4_0.btnStart, true)
+		arg_4_0._event:emit(MonopolyCarPage.ON_START, arg_4_0.activity.id, function(arg_6_0)
+			if arg_6_0 and arg_6_0 > 0 then
+				arg_4_0:showRollAnimated(arg_6_0)
 			end
 		end)
 	end, SFX_PANEL)
-	onButton(slot0._binder, slot0.btnHelp, function ()
+	onButton(arg_4_0._binder, arg_4_0.btnHelp, function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.help_monopoly_car.tip
 		})
 	end, SFX_PANEL)
-	onButton(slot0._binder, slot0.showChar, function ()
-		uv0._event:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
+	onButton(arg_4_0._binder, arg_4_0.showChar, function()
+		arg_4_0._event:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 	end, SFX_PANEL)
-	onButton(slot0._binder, slot0.btnRp, function ()
-		if uv0.leftAwardCnt > 0 then
-			uv0._event:emit(MonopolyCarPage.ON_AWARD)
+	onButton(arg_4_0._binder, arg_4_0.btnRp, function()
+		if arg_4_0.leftAwardCnt > 0 then
+			arg_4_0._event:emit(MonopolyCarPage.ON_AWARD)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.showRollAnimated(slot0, slot1)
-	findTF(slot0.rollStep, "stepArrow").localEulerAngles = Vector3(0, 0, 0)
-	findTF(slot0.rollStep, "progress/bg"):GetComponent(typeof(Image)).fillAmount = 0.1
-	findTF(slot0.rollStep, "select/bg"):GetComponent(typeof(Image)).fillAmount = 0.1
+function var_0_0.showRollAnimated(arg_10_0, arg_10_1)
+	local var_10_0 = findTF(arg_10_0.rollStep, "stepArrow")
 
-	setText(findTF(slot0.rollStep, "labelRoll"), "0")
+	var_10_0.localEulerAngles = Vector3(0, 0, 0)
+	findTF(arg_10_0.rollStep, "progress/bg"):GetComponent(typeof(Image)).fillAmount = 0.1
+	findTF(arg_10_0.rollStep, "select/bg"):GetComponent(typeof(Image)).fillAmount = 0.1
+
+	setText(findTF(arg_10_0.rollStep, "labelRoll"), "0")
 	seriesAsync({
-		function (slot0)
-			LeanTween.value(go(uv0._tf), 1, 0, 0.2):setOnUpdate(System.Action_float(function (slot0)
-				uv0.btnStart:GetComponent(typeof(CanvasGroup)).alpha = slot0
-			end)):setOnComplete(System.Action(function ()
-				setActive(uv0.btnStart, false)
+		function(arg_11_0)
+			LeanTween.value(go(arg_10_0._tf), 1, 0, 0.2):setOnUpdate(System.Action_float(function(arg_12_0)
+				arg_10_0.btnStart:GetComponent(typeof(CanvasGroup)).alpha = arg_12_0
+			end)):setOnComplete(System.Action(function()
+				setActive(arg_10_0.btnStart, false)
 
-				uv0.btnStart:GetComponent(typeof(CanvasGroup)).alpha = 1
+				arg_10_0.btnStart:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-				uv1()
+				arg_11_0()
 			end))
 		end,
-		function (slot0)
-			LeanTween.value(go(uv0._tf), 0, 1, 0.2):setOnUpdate(System.Action_float(function (slot0)
-				uv0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = slot0
+		function(arg_14_0)
+			LeanTween.value(go(arg_10_0._tf), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_15_0)
+				arg_10_0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = arg_15_0
 
-				setActive(uv0.rollStep, true)
-			end)):setOnComplete(System.Action(function ()
-				uv0()
+				setActive(arg_10_0.rollStep, true)
+			end)):setOnComplete(System.Action(function()
+				arg_14_0()
 			end))
 		end,
-		function (slot0)
-			slot2 = uv0 / 6 * 0.62 / uv0
-			slot3 = -uv0 * 31
+		function(arg_17_0)
+			local var_17_0 = arg_10_1 / 6 * 0.62
+			local var_17_1 = var_17_0 / arg_10_1
+			local var_17_2 = -arg_10_1 * 31
 
-			LeanTween.value(go(uv1._tf), 0, 1, 0.7 + uv0 / 5):setEase(LeanTweenType.easeOutCirc):setOnUpdate(System.Action_float(function (slot0)
-				findTF(uv0.rollStep, "progress/bg"):GetComponent(typeof(Image)).fillAmount = uv1 * slot0 + 0.13
-				findTF(uv0.rollStep, "select/bg"):GetComponent(typeof(Image)).fillAmount = uv2 * math.floor(slot0 / (1 / uv3)) + 0.17
+			LeanTween.value(go(arg_10_0._tf), 0, 1, 0.7 + arg_10_1 / 5):setEase(LeanTweenType.easeOutCirc):setOnUpdate(System.Action_float(function(arg_18_0)
+				findTF(arg_10_0.rollStep, "progress/bg"):GetComponent(typeof(Image)).fillAmount = var_17_0 * arg_18_0 + 0.13
+				findTF(arg_10_0.rollStep, "select/bg"):GetComponent(typeof(Image)).fillAmount = var_17_1 * math.floor(arg_18_0 / (1 / arg_10_1)) + 0.17
 
-				setText(findTF(uv0.rollStep, "labelRoll"), math.floor(slot0 / (1 / uv3)))
+				setText(findTF(arg_10_0.rollStep, "labelRoll"), math.floor(arg_18_0 / (1 / arg_10_1)))
 
-				uv5.localEulerAngles = Vector3(0, 0, uv4 * slot0 - 13)
-			end)):setOnComplete(System.Action(function ()
-				uv0()
+				local var_18_0 = var_17_2 * arg_18_0 - 13
+
+				var_10_0.localEulerAngles = Vector3(0, 0, var_18_0)
+			end)):setOnComplete(System.Action(function()
+				arg_17_0()
 			end))
 		end,
-		function (slot0)
-			LeanTween.value(go(uv0._tf), 1, 0, 0.3):setOnComplete(System.Action(function ()
-				uv0()
+		function(arg_20_0)
+			LeanTween.value(go(arg_10_0._tf), 1, 0, 0.3):setOnComplete(System.Action(function()
+				arg_20_0()
 			end))
 		end,
-		function (slot0)
-			LeanTween.value(go(uv0._tf), 1, 0, 0.3):setOnUpdate(System.Action_float(function (slot0)
-				uv0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = slot0
-			end)):setOnComplete(System.Action(function ()
-				setActive(uv0.rollStep, false)
+		function(arg_22_0)
+			LeanTween.value(go(arg_10_0._tf), 1, 0, 0.3):setOnUpdate(System.Action_float(function(arg_23_0)
+				arg_10_0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = arg_23_0
+			end)):setOnComplete(System.Action(function()
+				setActive(arg_10_0.rollStep, false)
 
-				uv0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = 1
+				arg_10_0.rollStep:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-				uv1()
+				arg_22_0()
 			end))
 		end
-	}, function ()
-		setActive(uv0.mcTouzi, true)
-		setActive(uv0.mcTouzi, false)
+	}, function()
+		setActive(arg_10_0.mcTouzi, true)
+		setActive(arg_10_0.mcTouzi, false)
 
-		uv0.useCount = uv0.useCount + 1
-		uv0.step = uv1
+		arg_10_0.useCount = arg_10_0.useCount + 1
+		arg_10_0.step = arg_10_1
 
-		if uv0.step > 0 then
-			setActive(uv0.imgTouzi, true)
+		if arg_10_0.step > 0 then
+			local var_25_0 = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", arg_10_0.step)
 
-			uv0.imgTouzi:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", uv0.step)
+			setActive(arg_10_0.imgTouzi, true)
+
+			arg_10_0.imgTouzi:GetComponent(typeof(Image)).sprite = var_25_0
 		end
 
-		uv0:updataUI()
-		uv0:checkCharActive()
+		arg_10_0:updataUI()
+		arg_10_0:checkCharActive()
 	end)
 end
 
-function slot0.checkCountStory(slot0, slot1)
-	slot2 = slot0.useCount
+function var_0_0.checkCountStory(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_0.useCount
+	local var_26_1 = arg_26_0.activity:getDataConfig("story") or {}
+	local var_26_2 = _.detect(var_26_1, function(arg_27_0)
+		return arg_27_0[1] == var_26_0
+	end)
 
-	if _.detect(slot0.activity:getDataConfig("story") or {}, function (slot0)
-		return slot0[1] == uv0
-	end) then
-		pg.NewStoryMgr.GetInstance():Play(slot5[2], slot1)
+	if var_26_2 then
+		pg.NewStoryMgr.GetInstance():Play(var_26_2[2], arg_26_1)
 	else
-		slot1()
+		arg_26_1()
 	end
 end
 
-function slot0.changeAnimeState(slot0, slot1)
-	if slot1 then
-		slot0.btnStart:GetComponent(typeof(Image)).raycastTarget = false
-		slot0.inAnimatedFlag = true
+function var_0_0.changeAnimeState(arg_28_0, arg_28_1)
+	if arg_28_1 then
+		arg_28_0.btnStart:GetComponent(typeof(Image)).raycastTarget = false
+		arg_28_0.inAnimatedFlag = true
 
-		slot0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
+		arg_28_0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, true)
 	else
-		slot0.inAnimatedFlag = false
-		slot0.btnStart:GetComponent(typeof(Image)).raycastTarget = true
+		arg_28_0.inAnimatedFlag = false
+		arg_28_0.btnStart:GetComponent(typeof(Image)).raycastTarget = true
 
-		setActive(slot0.imgTouzi, false)
-		slot0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
+		setActive(arg_28_0.imgTouzi, false)
+		arg_28_0._event:emit(ActivityMainScene.LOCK_ACT_MAIN, false)
 	end
 
-	setActive(slot0.btnStart, not slot1)
+	setActive(arg_28_0.btnStart, not arg_28_1)
 end
 
-function slot0.initMap(slot0)
-	slot0.mapCells = {}
+function var_0_0.initMap(arg_29_0)
+	local var_29_0 = MonopolyCarConst.map_dic
 
-	for slot5 = 1, #MonopolyCarConst.map_dic do
-		slot6 = slot5 - 1
-		slot7 = {
-			x = -slot6 * uv0,
-			y = -slot6 * uv1
+	arg_29_0.mapCells = {}
+
+	for iter_29_0 = 1, #var_29_0 do
+		local var_29_1 = iter_29_0 - 1
+		local var_29_2 = {
+			x = -var_29_1 * var_0_1,
+			y = -var_29_1 * var_0_2
 		}
+		local var_29_3 = var_29_0[iter_29_0]
 
-		for slot12 = 1, #slot1[slot5] do
-			slot13 = slot12 - 1
+		for iter_29_1 = 1, #var_29_3 do
+			local var_29_4 = iter_29_1 - 1
+			local var_29_5 = var_29_3[iter_29_1]
 
-			if slot8[slot12] > 0 then
-				slot15 = cloneTplTo(slot0.tplMapCell, slot0.mapContainer, tostring(slot14))
-				slot16 = Vector2(uv0 * slot13 + slot7.x, -uv1 * slot13 + slot7.y)
-				slot15.localPosition = slot16
-				slot17 = pg.activity_event_monopoly_map[slot14].icon
-				findTF(slot15, "image"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", slot17)
+			if var_29_5 > 0 then
+				local var_29_6 = cloneTplTo(arg_29_0.tplMapCell, arg_29_0.mapContainer, tostring(var_29_5))
+				local var_29_7 = Vector2(var_0_1 * var_29_4 + var_29_2.x, -var_0_2 * var_29_4 + var_29_2.y)
 
-				findTF(slot15, "image"):GetComponent(typeof(Image)):SetNativeSize()
-				table.insert(slot0.mapCells, {
-					col = slot13,
-					row = slot6,
-					mapId = slot14,
-					tf = slot15,
-					icon = slot17,
-					position = slot16
-				})
+				var_29_6.localPosition = var_29_7
+
+				local var_29_8 = pg.activity_event_monopoly_map[var_29_5].icon
+				local var_29_9 = GetSpriteFromAtlas("ui/activityuipage/monopolycar_atlas", var_29_8)
+
+				findTF(var_29_6, "image"):GetComponent(typeof(Image)).sprite = var_29_9
+
+				findTF(var_29_6, "image"):GetComponent(typeof(Image)):SetNativeSize()
+
+				local var_29_10 = {
+					col = var_29_4,
+					row = var_29_1,
+					mapId = var_29_5,
+					tf = var_29_6,
+					icon = var_29_8,
+					position = var_29_7
+				}
+
+				table.insert(arg_29_0.mapCells, var_29_10)
 			end
 		end
 	end
 
-	table.sort(slot0.mapCells, function (slot0, slot1)
-		return slot0.mapId < slot1.mapId
+	table.sort(arg_29_0.mapCells, function(arg_30_0, arg_30_1)
+		return arg_30_0.mapId < arg_30_1.mapId
 	end)
 end
 
-function slot0.initChar(slot0)
-	PoolMgr.GetInstance():GetSpineChar(uv0, true, function (slot0)
-		uv0.model = slot0
-		uv0.model.transform.localScale = Vector3.one
-		uv0.model.transform.localPosition = Vector3.zero
+function var_0_0.initChar(arg_31_0)
+	PoolMgr.GetInstance():GetSpineChar(var_0_3, true, function(arg_32_0)
+		arg_31_0.model = arg_32_0
+		arg_31_0.model.transform.localScale = Vector3.one
+		arg_31_0.model.transform.localPosition = Vector3.zero
 
-		uv0.model.transform:SetParent(uv0.char, false)
+		arg_31_0.model.transform:SetParent(arg_31_0.char, false)
 
-		uv0.anim = uv0.model:GetComponent(typeof(SpineAnimUI))
+		arg_31_0.anim = arg_31_0.model:GetComponent(typeof(SpineAnimUI))
 
-		uv0:checkCharActive()
+		arg_31_0:checkCharActive()
 
-		if uv0.pos then
-			uv0:updataCharDirect(uv0.pos, false)
+		if arg_31_0.pos then
+			arg_31_0:updataCharDirect(arg_31_0.pos, false)
 		end
 	end)
-	PoolMgr.GetInstance():GetSpineChar(slot0.showSkinId, true, function (slot0)
-		uv0.showModel = slot0
-		uv0.showModel.transform.localScale = Vector3.one
-		uv0.showModel.transform.localPosition = Vector3.zero
+	PoolMgr.GetInstance():GetSpineChar(arg_31_0.showSkinId, true, function(arg_33_0)
+		arg_31_0.showModel = arg_33_0
+		arg_31_0.showModel.transform.localScale = Vector3.one
+		arg_31_0.showModel.transform.localPosition = Vector3.zero
 
-		uv0.showModel.transform:SetParent(uv0.showChar, false)
+		arg_31_0.showModel.transform:SetParent(arg_31_0.showChar, false)
 
-		uv0.showAnim = uv0.showModel:GetComponent(typeof(SpineAnimUI))
+		arg_31_0.showAnim = arg_31_0.showModel:GetComponent(typeof(SpineAnimUI))
 
-		uv0.showAnim:SetAction("stand", 0)
+		arg_31_0.showAnim:SetAction("stand", 0)
 	end)
 end
 
-function slot0.updataCharDirect(slot0, slot1, slot2)
-	if slot0.model then
-		slot3 = slot0.mapCells[slot1].position
-		slot4 = slot1 + 1 > #slot0.mapCells and 1 or slot1 + 1
-		slot5 = slot0.mapCells[slot4]
-		slot6, slot7 = slot0:getMoveType(slot0.mapCells[slot1].mapId, slot0.mapCells[slot4].mapId, slot2)
-		slot0.char.localScale = Vector3(slot7, slot0.char.localScale.y, slot0.char.localScale.z)
+function var_0_0.updataCharDirect(arg_34_0, arg_34_1, arg_34_2)
+	if arg_34_0.model then
+		local var_34_0 = arg_34_0.mapCells[arg_34_1].position
+		local var_34_1 = arg_34_1 + 1 > #arg_34_0.mapCells and 1 or arg_34_1 + 1
+		local var_34_2 = arg_34_0.mapCells[var_34_1]
+		local var_34_3, var_34_4 = arg_34_0:getMoveType(arg_34_0.mapCells[arg_34_1].mapId, arg_34_0.mapCells[var_34_1].mapId, arg_34_2)
 
-		slot0.anim:SetActionCallBack(nil)
-		slot0.anim:SetAction(slot6, 0)
+		arg_34_0.char.localScale = Vector3(var_34_4, arg_34_0.char.localScale.y, arg_34_0.char.localScale.z)
+
+		arg_34_0.anim:SetActionCallBack(nil)
+		arg_34_0.anim:SetAction(var_34_3, 0)
 	end
 end
 
-function slot0.getMoveType(slot0, slot1, slot2, slot3)
-	slot5 = {}
-	slot6 = {}
+function var_0_0.getMoveType(arg_35_0, arg_35_1, arg_35_2, arg_35_3)
+	local var_35_0 = MonopolyCarConst.map_dic
+	local var_35_1 = {}
+	local var_35_2 = {}
 
-	for slot10 = 1, #MonopolyCarConst.map_dic do
-		for slot15 = 1, #slot4[slot10] do
-			if slot11[slot15] == slot1 then
-				slot5 = {
-					x = slot15,
-					y = slot10
+	for iter_35_0 = 1, #var_35_0 do
+		local var_35_3 = var_35_0[iter_35_0]
+
+		for iter_35_1 = 1, #var_35_3 do
+			local var_35_4 = var_35_3[iter_35_1]
+
+			if var_35_4 == arg_35_1 then
+				var_35_1 = {
+					x = iter_35_1,
+					y = iter_35_0
 				}
 			end
 
-			if slot16 == slot2 then
-				slot6 = {
-					x = slot15,
-					y = slot10
+			if var_35_4 == arg_35_2 then
+				var_35_2 = {
+					x = iter_35_1,
+					y = iter_35_0
 				}
 			end
 		end
 	end
 
-	slot7, slot8 = nil
+	local var_35_5
+	local var_35_6
 
-	if slot5.y < slot6.y then
-		slot7 = slot3 and uv0 or uv1
-		slot8 = uv2
-	elseif slot6.y < slot5.y then
-		slot7 = slot3 and uv3 or uv4
-		slot8 = uv2
-	elseif slot5.x < slot6.x then
-		slot7 = slot3 and uv0 or uv1
-		slot8 = -uv2
-	elseif slot6.x < slot5.x then
-		slot7 = slot3 and uv3 or uv4
-		slot8 = -uv2
+	if var_35_2.y > var_35_1.y then
+		var_35_5 = arg_35_3 and var_0_9 or var_0_7
+		var_35_6 = var_0_5
+	elseif var_35_2.y < var_35_1.y then
+		var_35_5 = arg_35_3 and var_0_8 or var_0_6
+		var_35_6 = var_0_5
+	elseif var_35_2.x > var_35_1.x then
+		var_35_5 = arg_35_3 and var_0_9 or var_0_7
+		var_35_6 = -var_0_5
+	elseif var_35_2.x < var_35_1.x then
+		var_35_5 = arg_35_3 and var_0_8 or var_0_6
+		var_35_6 = -var_0_5
 	end
 
-	return slot7, slot8
+	return var_35_5, var_35_6
 end
 
-function slot0.checkCharActive(slot0)
-	if slot0.anim then
-		if slot0.effectId and slot0.effectId > 0 then
-			slot0:changeAnimeState(true)
-			slot0:checkEffect(function ()
-				uv0:changeAnimeState(false)
-				uv0:checkCharActive()
+function var_0_0.checkCharActive(arg_36_0)
+	if arg_36_0.anim then
+		if arg_36_0.effectId and arg_36_0.effectId > 0 then
+			arg_36_0:changeAnimeState(true)
+			arg_36_0:checkEffect(function()
+				arg_36_0:changeAnimeState(false)
+				arg_36_0:checkCharActive()
 			end)
-		elseif slot0.step and slot0.step > 0 then
-			slot0:changeAnimeState(true)
-			slot0:checkStep(function ()
-				uv0:changeAnimeState(false)
-				uv0:checkCharActive()
+		elseif arg_36_0.step and arg_36_0.step > 0 then
+			arg_36_0:changeAnimeState(true)
+			arg_36_0:checkStep(function()
+				arg_36_0:changeAnimeState(false)
+				arg_36_0:checkCharActive()
 			end)
 		end
 	end
 end
 
-function slot0.firstUpdata(slot0, slot1)
-	slot0:activityDataUpdata(slot1)
-	slot0:updataUI()
-	slot0:updataChar()
-	slot0:checkCharActive()
+function var_0_0.firstUpdata(arg_39_0, arg_39_1)
+	arg_39_0:activityDataUpdata(arg_39_1)
+	arg_39_0:updataUI()
+	arg_39_0:updataChar()
+	arg_39_0:checkCharActive()
 end
 
-function slot0.updataActivity(slot0, slot1)
-	slot0:activityDataUpdata(slot1)
-	slot0:updataUI()
+function var_0_0.updataActivity(arg_40_0, arg_40_1)
+	arg_40_0:activityDataUpdata(arg_40_1)
+	arg_40_0:updataUI()
 end
 
-function slot0.activityDataUpdata(slot0, slot1)
-	slot0.activity = slot1
-	slot0.totalCnt = math.ceil((pg.TimeMgr.GetInstance():GetServerTime() - slot0.activity.data1) / 86400) * slot0.activity:getDataConfig("daily_time") + slot0.activity.data1_list[1]
-	slot0.useCount = slot0.activity.data1_list[2]
-	slot0.leftCount = slot0.totalCnt - slot0.useCount
-	slot0.turnCnt = slot0.activity.data1_list[3] - 1
-	slot0.leftDropShipCnt = 8 - slot0.turnCnt
-	slot0.advanceTotalCnt = #slot1:getDataConfig("reward")
-	slot0.isAdvanceRp = slot0.advanceTotalCnt - slot0.activity.data2_list[2] > 0
-	slot9 = slot0.activity.data2_list[1]
-	slot0.leftAwardCnt = slot9 - slot8
-	slot0.advanceRpCount = math.max(0, math.min(slot9, slot0.advanceTotalCnt) - slot8)
-	slot0.commonRpCount = math.max(0, slot9 - slot0.advanceTotalCnt) - math.max(0, slot8 - slot0.advanceTotalCnt)
-	slot10 = slot1:getDataConfig("reward_time")
-	slot0.nextredPacketStep = slot10 - slot0.useCount % slot10
-	slot0.pos = slot0.activity.data2
-	slot0.step = slot0.activity.data3
-	slot0.effectId = slot0.activity.data4
+function var_0_0.activityDataUpdata(arg_41_0, arg_41_1)
+	arg_41_0.activity = arg_41_1
+
+	local var_41_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_41_1 = arg_41_0.activity.data1
+
+	arg_41_0.totalCnt = math.ceil((var_41_0 - var_41_1) / 86400) * arg_41_0.activity:getDataConfig("daily_time") + arg_41_0.activity.data1_list[1]
+	arg_41_0.useCount = arg_41_0.activity.data1_list[2]
+	arg_41_0.leftCount = arg_41_0.totalCnt - arg_41_0.useCount
+	arg_41_0.turnCnt = arg_41_0.activity.data1_list[3] - 1
+	arg_41_0.leftDropShipCnt = 8 - arg_41_0.turnCnt
+
+	local var_41_2 = arg_41_0.activity.data2_list[2]
+
+	arg_41_0.advanceTotalCnt = #arg_41_1:getDataConfig("reward")
+	arg_41_0.isAdvanceRp = arg_41_0.advanceTotalCnt - var_41_2 > 0
+
+	local var_41_3 = arg_41_0.activity.data2_list[1]
+
+	arg_41_0.leftAwardCnt = var_41_3 - var_41_2
+	arg_41_0.advanceRpCount = math.max(0, math.min(var_41_3, arg_41_0.advanceTotalCnt) - var_41_2)
+	arg_41_0.commonRpCount = math.max(0, var_41_3 - arg_41_0.advanceTotalCnt) - math.max(0, var_41_2 - arg_41_0.advanceTotalCnt)
+
+	local var_41_4 = arg_41_1:getDataConfig("reward_time")
+
+	arg_41_0.nextredPacketStep = var_41_4 - arg_41_0.useCount % var_41_4
+	arg_41_0.pos = arg_41_0.activity.data2
+	arg_41_0.step = arg_41_0.activity.data3
+	arg_41_0.effectId = arg_41_0.activity.data4
 end
 
-function slot0.checkStep(slot0, slot1)
-	if slot0.step > 0 then
-		slot0._event:emit(MonopolyCarPage.ON_MOVE, slot0.activity.id, function (slot0, slot1, slot2)
-			uv0.step = slot0
-			uv0.pos = slot1[#slot1]
-			uv0.effectId = slot2
+function var_0_0.checkStep(arg_42_0, arg_42_1)
+	if arg_42_0.step > 0 then
+		arg_42_0._event:emit(MonopolyCarPage.ON_MOVE, arg_42_0.activity.id, function(arg_43_0, arg_43_1, arg_43_2)
+			arg_42_0.step = arg_43_0
+			arg_42_0.pos = arg_43_1[#arg_43_1]
+			arg_42_0.effectId = arg_43_2
 
 			seriesAsync({
-				function (slot0)
-					uv0:moveCharWithPaths(uv1, nil, slot0)
+				function(arg_44_0)
+					local var_44_0
+
+					arg_42_0:moveCharWithPaths(arg_43_1, var_44_0, arg_44_0)
 				end,
-				function (slot0)
-					uv0:checkEffect(slot0)
+				function(arg_45_0)
+					arg_42_0:checkEffect(arg_45_0)
 				end
-			}, function ()
-				if uv0 then
-					uv0()
+			}, function()
+				if arg_42_1 then
+					arg_42_1()
 				end
 			end)
 		end)
-	elseif slot1 then
-		slot1()
+	elseif arg_42_1 then
+		arg_42_1()
 	end
 end
 
-function slot0.updataUI(slot0)
-	setText(slot0.labelLeftRpCount, "" .. slot0.leftAwardCnt)
-	slot0.commonAnim:SetInteger("count", slot0.leftAwardCnt)
-	setText(slot0.labelDropShip, "" .. slot0.turnCnt + 1)
-	setText(slot0.labelLeftCountTip, i18n("monopoly_left_count"))
-	setText(slot0.labelLeftCount, slot0.leftCount)
+function var_0_0.updataUI(arg_47_0)
+	setText(arg_47_0.labelLeftRpCount, "" .. arg_47_0.leftAwardCnt)
+	arg_47_0.commonAnim:SetInteger("count", arg_47_0.leftAwardCnt)
+	setText(arg_47_0.labelDropShip, "" .. arg_47_0.turnCnt + 1)
+	setText(arg_47_0.labelLeftCountTip, i18n("monopoly_left_count"))
+	setText(arg_47_0.labelLeftCount, arg_47_0.leftCount)
 end
 
-function slot0.updataChar(slot0)
-	slot0.char.localPosition = slot0.mapCells[slot0.pos].position
+function var_0_0.updataChar(arg_48_0)
+	local var_48_0 = arg_48_0.mapCells[arg_48_0.pos]
 
-	if not isActive(slot0.char) then
-		SetActive(slot0.char, true)
-		slot0.char:SetAsLastSibling()
+	arg_48_0.char.localPosition = var_48_0.position
+
+	if not isActive(arg_48_0.char) then
+		SetActive(arg_48_0.char, true)
+		arg_48_0.char:SetAsLastSibling()
 	end
 
-	if slot0.model then
-		slot0:updataCharDirect(slot0.pos, false)
+	if arg_48_0.model then
+		arg_48_0:updataCharDirect(arg_48_0.pos, false)
 	end
 end
 
-function slot0.checkEffect(slot0, slot1)
-	if slot0.effectId > 0 then
-		slot2 = slot0.mapCells[slot0.pos]
-		slot3 = pg.activity_event_monopoly_event[slot0.effectId].story
+function var_0_0.checkEffect(arg_49_0, arg_49_1)
+	if arg_49_0.effectId > 0 then
+		local var_49_0 = arg_49_0.mapCells[arg_49_0.pos]
+		local var_49_1 = pg.activity_event_monopoly_event[arg_49_0.effectId].story
 
 		seriesAsync({
-			function (slot0)
-				if uv0 and tonumber(uv0) ~= 0 then
-					pg.NewStoryMgr.GetInstance():Play(uv0, slot0, true, true)
+			function(arg_50_0)
+				if var_49_1 and tonumber(var_49_1) ~= 0 then
+					pg.NewStoryMgr.GetInstance():Play(var_49_1, arg_50_0, true, true)
 				else
-					slot0()
+					arg_50_0()
 				end
 			end,
-			function (slot0)
-				uv0:triggerEfeect(slot0)
+			function(arg_51_0)
+				arg_49_0:triggerEfeect(arg_51_0)
 			end,
-			function (slot0)
-				uv0:checkCountStory(slot0)
+			function(arg_52_0)
+				arg_49_0:checkCountStory(arg_52_0)
 			end
-		}, slot1)
-
-		return
-	end
-
-	if slot1 then
-		slot1()
+		}, arg_49_1)
+	elseif arg_49_1 then
+		arg_49_1()
 	end
 end
 
-function slot0.triggerEfeect(slot0, slot1)
-	slot0._event:emit(MonopolyCarPage.ON_TRIGGER, slot0.activity.id, function (slot0, slot1)
-		if slot0 and #slot0 >= 0 then
-			uv0.effectId = slot1
-			uv0.pos = slot0[#slot0]
+function var_0_0.triggerEfeect(arg_53_0, arg_53_1)
+	arg_53_0._event:emit(MonopolyCarPage.ON_TRIGGER, arg_53_0.activity.id, function(arg_54_0, arg_54_1)
+		if arg_54_0 and #arg_54_0 >= 0 then
+			arg_53_0.effectId = arg_54_1
+			arg_53_0.pos = arg_54_0[#arg_54_0]
 
 			seriesAsync({
-				function (slot0)
-					uv0:moveCharWithPaths(uv1, nil, slot0)
+				function(arg_55_0)
+					arg_53_0:moveCharWithPaths(arg_54_0, nil, arg_55_0)
 				end
-			}, function ()
-				uv0()
+			}, function()
+				arg_53_1()
 			end)
 		end
 	end)
 end
 
-function slot0.moveCarWithPaths(slot0, slot1, slot2, slot3)
-	if not slot1 or #slot1 <= 0 then
-		if slot3 then
-			slot3()
+function var_0_0.moveCarWithPaths(arg_57_0, arg_57_1, arg_57_2, arg_57_3)
+	if not arg_57_1 or #arg_57_1 <= 0 then
+		if arg_57_3 then
+			arg_57_3()
 		end
 
 		return
 	end
 
-	slot4 = {}
-	slot5 = slot0.char.localPosition
+	local var_57_0 = {}
+	local var_57_1 = arg_57_0.char.localPosition
+	local var_57_2 = {}
+	local var_57_3 = {}
 
-	for slot11 = 1, #slot1 do
-		if slot0:checkPathTurn(slot1[slot11]) then
-			table.insert({}, slot0.mapCells[slot1[slot11]].position)
-			table.insert({}, slot1[slot11])
-		elseif slot11 == #slot1 then
-			table.insert(slot6, slot0.mapCells[slot1[slot11]].position)
-			table.insert(slot7, slot1[slot11])
+	for iter_57_0 = 1, #arg_57_1 do
+		if arg_57_0:checkPathTurn(arg_57_1[iter_57_0]) then
+			table.insert(var_57_2, arg_57_0.mapCells[arg_57_1[iter_57_0]].position)
+			table.insert(var_57_3, arg_57_1[iter_57_0])
+		elseif iter_57_0 == #arg_57_1 then
+			table.insert(var_57_2, arg_57_0.mapCells[arg_57_1[iter_57_0]].position)
+			table.insert(var_57_3, arg_57_1[iter_57_0])
 		end
 	end
 
-	slot0.speedX = 0
-	slot0.speedY = 0
-	slot0.baseSpeed = 6
-	slot0.baseASpeed = 0.1
+	arg_57_0.speedX = 0
+	arg_57_0.speedY = 0
+	arg_57_0.baseSpeed = 6
+	arg_57_0.baseASpeed = 0.1
 
-	if not slot0.timer then
-		slot0.timer = Timer.New(function ()
-			uv0:toMoveCar()
+	if not arg_57_0.timer then
+		arg_57_0.timer = Timer.New(function()
+			arg_57_0:toMoveCar()
 		end, 0.016666666666666666, -1)
 
-		slot0.timer:Start()
+		arg_57_0.timer:Start()
 	end
 
-	for slot11 = 1, #slot6 do
-		table.insert(slot4, function (slot0)
-			uv0.moveComplete = slot0
-			uv0.stopOnEnd = false
-			uv0.targetPosition = uv1[uv2]
-			uv0.targetPosIndex = uv3[uv2]
-			uv0.moveX = uv0.targetPosition.x - uv0.char.localPosition.x
-			uv0.moveY = uv0.targetPosition.y - uv0.char.localPosition.y
-			uv0.baseSpeedX = uv0.baseSpeed * uv0.moveX / math.abs(uv0.moveX)
-			uv0.baseASpeedX = uv0.baseASpeed * uv0.moveX / math.abs(uv0.moveX)
-			uv0.baseSpeedY = math.abs(uv0.baseSpeedX) / (math.abs(uv0.moveX) / uv0.moveY)
-			uv0.baseASpeedY = math.abs(uv0.baseASpeedX) / (math.abs(uv0.moveX) / uv0.moveY)
+	for iter_57_1 = 1, #var_57_2 do
+		table.insert(var_57_0, function(arg_59_0)
+			arg_57_0.moveComplete = arg_59_0
+			arg_57_0.stopOnEnd = false
+			arg_57_0.targetPosition = var_57_2[iter_57_1]
+			arg_57_0.targetPosIndex = var_57_3[iter_57_1]
+			arg_57_0.moveX = arg_57_0.targetPosition.x - arg_57_0.char.localPosition.x
+			arg_57_0.moveY = arg_57_0.targetPosition.y - arg_57_0.char.localPosition.y
+			arg_57_0.baseSpeedX = arg_57_0.baseSpeed * (arg_57_0.moveX / math.abs(arg_57_0.moveX))
+			arg_57_0.baseASpeedX = arg_57_0.baseASpeed * (arg_57_0.moveX / math.abs(arg_57_0.moveX))
+			arg_57_0.baseSpeedY = math.abs(arg_57_0.baseSpeedX) / (math.abs(arg_57_0.moveX) / arg_57_0.moveY)
+			arg_57_0.baseASpeedY = math.abs(arg_57_0.baseASpeedX) / (math.abs(arg_57_0.moveX) / arg_57_0.moveY)
 
-			if uv2 == 1 then
-				uv0.speedX = 0
-				uv0.speedY = 0
+			if iter_57_1 == 1 then
+				arg_57_0.speedX = 0
+				arg_57_0.speedY = 0
 			else
-				uv0.speedX = uv0.baseSpeedX
-				uv0.speedY = uv0.baseSpeedY
+				arg_57_0.speedX = arg_57_0.baseSpeedX
+				arg_57_0.speedY = arg_57_0.baseSpeedY
 			end
 		end)
 	end
 
-	table.insert(slot4, function (slot0)
-		uv0.moveComplete = nil
+	table.insert(var_57_0, function(arg_60_0)
+		arg_57_0.moveComplete = nil
 
-		uv0:updataCharDirect(uv1[#uv1], false)
-		slot0()
+		arg_57_0:updataCharDirect(arg_57_1[#arg_57_1], false)
+		arg_60_0()
 	end)
-	table.insert(slot4, function (slot0)
-		LeanTween.value(go(uv0._tf), 1, 0, 0.1):setOnComplete(System.Action(function ()
-			uv0()
+	table.insert(var_57_0, function(arg_61_0)
+		LeanTween.value(go(arg_57_0._tf), 1, 0, 0.1):setOnComplete(System.Action(function()
+			arg_61_0()
 		end))
 	end)
-	seriesAsync(slot4, slot3)
+	seriesAsync(var_57_0, arg_57_3)
 end
 
-function slot0.toMoveCar(slot0)
-	if not slot0.targetPosition then
+function var_0_0.toMoveCar(arg_63_0)
+	if not arg_63_0.targetPosition then
 		return
 	end
 
-	if math.abs(slot0.targetPosition.x - slot0.char.localPosition.x) <= 6.5 and math.abs(slot0.targetPosition.y - slot0.char.localPosition.y) <= 6.5 then
-		slot0.targetPosition = nil
+	local var_63_0 = math.abs(arg_63_0.targetPosition.x - arg_63_0.char.localPosition.x)
+	local var_63_1 = math.abs(arg_63_0.targetPosition.y - arg_63_0.char.localPosition.y)
 
-		if slot0.moveComplete then
-			slot0:updataCharDirect(slot0.targetPosIndex, true)
-			slot0.moveComplete()
+	if var_63_0 <= 6.5 and var_63_1 <= 6.5 then
+		arg_63_0.targetPosition = nil
+
+		if arg_63_0.moveComplete then
+			arg_63_0:updataCharDirect(arg_63_0.targetPosIndex, true)
+			arg_63_0.moveComplete()
 		end
 	end
 
-	slot0.speedX = math.abs(slot0.baseSpeedX) < math.abs(slot0.speedX + slot0.baseASpeedX) and slot0.baseSpeedX or slot0.speedX + slot0.baseASpeedX
-	slot0.speedY = math.abs(slot0.baseSpeedY) < math.abs(slot0.speedY + slot0.baseASpeedY) and slot0.baseSpeedY or slot0.speedY + slot0.baseASpeedY
-	slot3 = slot0.char.localPosition
-	slot0.char.localPosition = Vector3(slot3.x + slot0.speedX, slot3.y + slot0.speedY, 0)
+	arg_63_0.speedX = math.abs(arg_63_0.speedX + arg_63_0.baseASpeedX) > math.abs(arg_63_0.baseSpeedX) and arg_63_0.baseSpeedX or arg_63_0.speedX + arg_63_0.baseASpeedX
+	arg_63_0.speedY = math.abs(arg_63_0.speedY + arg_63_0.baseASpeedY) > math.abs(arg_63_0.baseSpeedY) and arg_63_0.baseSpeedY or arg_63_0.speedY + arg_63_0.baseASpeedY
+
+	local var_63_2 = arg_63_0.char.localPosition
+
+	arg_63_0.char.localPosition = Vector3(var_63_2.x + arg_63_0.speedX, var_63_2.y + arg_63_0.speedY, 0)
 end
 
-function slot0.checkPathTurn(slot0, slot1)
-	if slot0.mapCells[slot1 + 1 > #slot0.mapCells and 1 or slot1 + 1].col == slot0.mapCells[slot1 - 1 < 1 and #slot0.mapCells or slot1 - 1].col or slot0.mapCells[slot2].row == slot0.mapCells[slot3].row then
+function var_0_0.checkPathTurn(arg_64_0, arg_64_1)
+	local var_64_0 = arg_64_1 + 1 > #arg_64_0.mapCells and 1 or arg_64_1 + 1
+	local var_64_1 = arg_64_1 - 1 < 1 and #arg_64_0.mapCells or arg_64_1 - 1
+
+	if arg_64_0.mapCells[var_64_0].col == arg_64_0.mapCells[var_64_1].col or arg_64_0.mapCells[var_64_0].row == arg_64_0.mapCells[var_64_1].row then
 		return false
 	end
 
 	return true
 end
 
-function slot0.moveCharWithPaths(slot0, slot1, slot2, slot3)
-	slot0:moveCarWithPaths(slot1, slot2, slot3)
+function var_0_0.moveCharWithPaths(arg_65_0, arg_65_1, arg_65_2, arg_65_3)
+	arg_65_0:moveCarWithPaths(arg_65_1, arg_65_2, arg_65_3)
 
-	return
+	do return end
 
-	if not slot1 or #slot1 <= 0 then
-		if slot3 then
-			slot3()
+	if not arg_65_1 or #arg_65_1 <= 0 then
+		if arg_65_3 then
+			arg_65_3()
 		end
 
 		return
 	end
 
-	slot4 = {}
-	slot5 = slot1[1] - 1 < 1 and #slot0.mapCells or slot1[1] - 1
+	local var_65_0 = {}
+	local var_65_1 = arg_65_1[1] - 1 < 1 and #arg_65_0.mapCells or arg_65_1[1] - 1
 
-	for slot9 = 1, #slot1 do
-		slot10 = slot0.mapCells[slot1[slot9]]
+	for iter_65_0 = 1, #arg_65_1 do
+		local var_65_2 = arg_65_0.mapCells[arg_65_1[iter_65_0]]
 
-		table.insert(slot4, function (slot0)
-			uv0:updataCharDirect(uv1, true)
+		table.insert(var_65_0, function(arg_66_0)
+			arg_65_0:updataCharDirect(var_65_1, true)
 
-			uv1 = uv2[uv3]
+			var_65_1 = arg_65_1[iter_65_0]
 
-			LeanTween.moveLocal(go(uv0.char), uv4.tf.localPosition, 0.35):setEase(LeanTweenType.linear):setOnComplete(System.Action(function ()
-				uv0()
+			local var_66_0 = 0.35
+
+			LeanTween.moveLocal(go(arg_65_0.char), var_65_2.tf.localPosition, var_66_0):setEase(LeanTweenType.linear):setOnComplete(System.Action(function()
+				arg_66_0()
 			end))
 		end)
 
-		if slot9 == #slot1 then
-			table.insert(slot4, function (slot0)
-				uv0:updataCharDirect(uv1[uv2], false)
-				slot0()
+		if iter_65_0 == #arg_65_1 then
+			table.insert(var_65_0, function(arg_68_0)
+				arg_65_0:updataCharDirect(arg_65_1[iter_65_0], false)
+				arg_68_0()
 			end)
 		end
 	end
 
-	seriesAsync(slot4, slot3)
+	seriesAsync(var_65_0, arg_65_3)
 end
 
-function slot0.dispose(slot0)
-	PoolMgr.GetInstance():ReturnSpineChar(uv0, slot0.model)
-	PoolMgr.GetInstance():ReturnSpineChar(slot0.showSkinId, slot0.showModel)
+function var_0_0.dispose(arg_69_0)
+	PoolMgr.GetInstance():ReturnSpineChar(var_0_3, arg_69_0.model)
+	PoolMgr.GetInstance():ReturnSpineChar(arg_69_0.showSkinId, arg_69_0.showModel)
 end
 
-return slot0
+return var_0_0

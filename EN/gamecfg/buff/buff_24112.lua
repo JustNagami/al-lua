@@ -1,15 +1,4 @@
-return {
-	{},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "检查是否为特殊兵装版本",
-	stack = 1,
-	id = 24112,
-	icon = 20100,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffAddBuff",
@@ -47,5 +36,16 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "检查是否为特殊兵装版本",
+	stack = 1,
+	id = 24112,
+	icon = 20100,
+	last_effect = ""
 }

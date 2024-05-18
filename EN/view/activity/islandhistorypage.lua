@@ -1,6 +1,6 @@
-slot0 = class("IslandHistoryPage")
-slot1 = 8
-slot2 = {
+﻿local var_0_0 = class("IslandHistoryPage")
+local var_0_1 = 8
+local var_0_2 = {
 	{
 		-291,
 		-6
@@ -34,7 +34,7 @@ slot2 = {
 		0
 	}
 }
-slot3 = {
+local var_0_3 = {
 	{
 		0,
 		0,
@@ -77,145 +77,162 @@ slot3 = {
 	}
 }
 
-function slot0.Ctor(slot0, slot1, slot2)
-	slot0.historyPage = slot1
-	slot0.event = slot2
-	slot0.activityId = ActivityConst.ISLAND_TASK_ID
-	slot0.finishTasks = getProxy(ActivityTaskProxy):getFinishTasksByActId(slot0.activityId)
-	slot0.mapDataList = pg.activity_template[slot0.activityId].config_client.map_event_list or {}
-	slot0.pageItemContent = findTF(slot0.historyPage, "selectPanel/page")
-	slot0.pageItemTpl = findTF(slot0.historyPage, "selectPanel/page/pageItemTpl")
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	arg_1_0.historyPage = arg_1_1
+	arg_1_0.event = arg_1_2
+	arg_1_0.activityId = ActivityConst.ISLAND_TASK_ID
+	arg_1_0.finishTasks = getProxy(ActivityTaskProxy):getFinishTasksByActId(arg_1_0.activityId)
+	arg_1_0.mapDataList = pg.activity_template[arg_1_0.activityId].config_client.map_event_list or {}
+	arg_1_0.pageItemContent = findTF(arg_1_0.historyPage, "selectPanel/page")
+	arg_1_0.pageItemTpl = findTF(arg_1_0.historyPage, "selectPanel/page/pageItemTpl")
 
-	setActive(slot0.pageItemTpl, false)
+	setActive(arg_1_0.pageItemTpl, false)
 
-	slot0.mapPic = findTF(slot0.historyPage, "pic")
-	slot0.mapTitle = findTF(slot0.historyPage, "title/desc")
-	slot0.taskDesc = findTF(slot0.historyPage, "taskDesc")
+	arg_1_0.mapPic = findTF(arg_1_0.historyPage, "pic")
+	arg_1_0.mapTitle = findTF(arg_1_0.historyPage, "title/desc")
+	arg_1_0.taskDesc = findTF(arg_1_0.historyPage, "taskDesc")
 
-	setText(slot0.taskDesc, i18n(IslandTaskScene.island_history_desc))
+	setText(arg_1_0.taskDesc, i18n(IslandTaskScene.island_history_desc))
 
-	slot0.pageItemTfs = {}
+	arg_1_0.pageItemTfs = {}
 
-	for slot6 = 1, uv0 do
-		slot7 = slot6
-		slot8 = tf(instantiate(slot0.pageItemTpl))
+	for iter_1_0 = 1, var_0_1 do
+		local var_1_0 = iter_1_0
+		local var_1_1 = tf(instantiate(arg_1_0.pageItemTpl))
 
-		setParent(slot8, slot0.pageItemContent)
-		setActive(slot8, true)
-		onButton(slot0.event, slot8, function ()
-			uv0:selectedPage(uv1)
+		setParent(var_1_1, arg_1_0.pageItemContent)
+		setActive(var_1_1, true)
+		onButton(arg_1_0.event, var_1_1, function()
+			arg_1_0:selectedPage(var_1_0)
 		end, SFX_UI_CLICK)
-		table.insert(slot0.pageItemTfs, slot8)
+		table.insert(arg_1_0.pageItemTfs, var_1_1)
 	end
 
-	slot0.startIndex = 0
-	slot0.taskList = {}
-	slot0.listConent = findTF(slot0.historyPage, "listPanel/viewcontent/content")
-	slot0.taskListTpl = findTF(slot0.historyPage, "listPanel/viewcontent/content/listTpl")
+	arg_1_0.startIndex = 0
+	arg_1_0.taskList = {}
+	arg_1_0.listConent = findTF(arg_1_0.historyPage, "listPanel/viewcontent/content")
+	arg_1_0.taskListTpl = findTF(arg_1_0.historyPage, "listPanel/viewcontent/content/listTpl")
 
-	setActive(slot0.taskListTpl, false)
+	setActive(arg_1_0.taskListTpl, false)
 
-	slot0.gotTf = findTF(slot0.historyPage, "got")
-	slot0.finalAward = findTF(slot0.historyPage, "finalAward")
+	arg_1_0.gotTf = findTF(arg_1_0.historyPage, "got")
+	arg_1_0.finalAward = findTF(arg_1_0.historyPage, "finalAward")
 
-	slot0:initPageUI()
-	slot0:selectedPage(1)
+	arg_1_0:initPageUI()
+	arg_1_0:selectedPage(1)
 end
 
-function slot0.selectedPage(slot0, slot1)
-	if slot0.startIndex + slot1 > #slot0.mapDataList then
+function var_0_0.selectedPage(arg_3_0, arg_3_1)
+	if arg_3_0.startIndex + arg_3_1 > #arg_3_0.mapDataList then
 		return
 	end
 
-	slot0:updatePage(slot1)
-	slot0:updateMap(slot1)
+	arg_3_0:updatePage(arg_3_1)
+	arg_3_0:updateMap(arg_3_1)
 end
 
-function slot0.initPageUI(slot0)
-	for slot4 = 1, uv0 do
-		slot5 = slot0.startIndex + slot4
+function var_0_0.initPageUI(arg_4_0)
+	for iter_4_0 = 1, var_0_1 do
+		local var_4_0 = arg_4_0.startIndex + iter_4_0
 
-		setText(findTF(slot0.pageItemTfs[slot4], "num"), tostring(slot5))
-		setActive(findTF(slot0.pageItemTfs[slot4], "lock"), slot5 > #slot0.mapDataList)
-		setActive(slot0.pageItemTfs[slot4], slot5 <= #slot0.mapDataList)
-		setActive(findTF(slot0.pageItemTfs[slot4], "selected"), false)
-		setText(findTF(slot0.pageItemTfs[slot4], "num"), setColorStr(slot5, "#c57053"))
+		setText(findTF(arg_4_0.pageItemTfs[iter_4_0], "num"), tostring(var_4_0))
+		setActive(findTF(arg_4_0.pageItemTfs[iter_4_0], "lock"), var_4_0 > #arg_4_0.mapDataList)
+		setActive(arg_4_0.pageItemTfs[iter_4_0], var_4_0 <= #arg_4_0.mapDataList)
+		setActive(findTF(arg_4_0.pageItemTfs[iter_4_0], "selected"), false)
+
+		local var_4_1 = setColorStr(var_4_0, "#c57053")
+
+		setText(findTF(arg_4_0.pageItemTfs[iter_4_0], "num"), var_4_1)
 	end
 end
 
-function slot0.updatePage(slot0, slot1)
-	slot2 = nil
+function var_0_0.updatePage(arg_5_0, arg_5_1)
+	local var_5_0
 
-	if slot0.selectedPageItem then
-		setActive(findTF(slot0.selectedPageItem, "selected"), false)
-		setText(findTF(slot0.selectedPageItem, "num"), setColorStr(slot0.selectedIndex, "#c57053"))
+	if arg_5_0.selectedPageItem then
+		setActive(findTF(arg_5_0.selectedPageItem, "selected"), false)
+
+		local var_5_1 = setColorStr(arg_5_0.selectedIndex, "#c57053")
+
+		setText(findTF(arg_5_0.selectedPageItem, "num"), var_5_1)
 	end
 
-	slot0.selectedPageItem = slot0.pageItemTfs[slot1]
-	slot0.selectedIndex = slot1
+	arg_5_0.selectedPageItem = arg_5_0.pageItemTfs[arg_5_1]
+	arg_5_0.selectedIndex = arg_5_1
 
-	setActive(findTF(slot0.selectedPageItem, "selected"), true)
-	setText(findTF(slot0.selectedPageItem, "num"), setColorStr(slot0.selectedIndex, "#84412A"))
+	setActive(findTF(arg_5_0.selectedPageItem, "selected"), true)
+
+	local var_5_2 = setColorStr(arg_5_0.selectedIndex, "#84412A")
+
+	setText(findTF(arg_5_0.selectedPageItem, "num"), var_5_2)
 end
 
-function slot0.updateMap(slot0, slot1)
-	slot0.showMapId = slot0.mapDataList[slot1 + slot0.startIndex]
-	slot3 = pg.activity_map_event_list[slot0.showMapId]
-	slot0.mapIndex = slot3.area
+function var_0_0.updateMap(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1 + arg_6_0.startIndex
 
-	setImageSprite(slot0.mapPic, LoadSprite(IslandTaskScene.ui_atlas, "map_" .. slot0.mapIndex), true)
-	setImageSprite(slot0.mapTitle, LoadSprite(IslandTaskScene.ui_atlas, "map_" .. slot0.mapIndex .. "_desc"), true)
+	arg_6_0.showMapId = arg_6_0.mapDataList[var_6_0]
 
-	slot0.taskDatas = slot3.open_task
+	local var_6_1 = pg.activity_map_event_list[arg_6_0.showMapId]
 
-	if #slot0.taskDatas - #slot0.taskList > 0 then
-		slot0:addTaskList(slot4)
+	arg_6_0.mapIndex = var_6_1.area
+
+	setImageSprite(arg_6_0.mapPic, LoadSprite(IslandTaskScene.ui_atlas, "map_" .. arg_6_0.mapIndex), true)
+	setImageSprite(arg_6_0.mapTitle, LoadSprite(IslandTaskScene.ui_atlas, "map_" .. arg_6_0.mapIndex .. "_desc"), true)
+
+	arg_6_0.taskDatas = var_6_1.open_task
+
+	local var_6_2 = #arg_6_0.taskDatas - #arg_6_0.taskList
+
+	if var_6_2 > 0 then
+		arg_6_0:addTaskList(var_6_2)
 	end
 
-	slot5 = true
+	local var_6_3 = true
 
-	for slot9 = 1, #slot0.taskList do
-		slot10 = slot0.taskList[slot9]
+	for iter_6_0 = 1, #arg_6_0.taskList do
+		local var_6_4 = arg_6_0.taskList[iter_6_0]
 
-		if slot9 <= #slot0.taskDatas then
-			setActive(slot10, true)
+		if iter_6_0 <= #arg_6_0.taskDatas then
+			setActive(var_6_4, true)
 
-			slot11 = pg.task_data_template[slot0.taskDatas[slot9]]
+			local var_6_5 = pg.task_data_template[arg_6_0.taskDatas[iter_6_0]]
 
-			setText(findTF(slot10, "text"), slot11.name)
+			setText(findTF(var_6_4, "text"), var_6_5.name)
 
-			slot12 = slot0:checkTaskFinish(slot11.id)
+			local var_6_6 = arg_6_0:checkTaskFinish(var_6_5.id)
 
-			if slot5 and slot12 ~= slot5 then
-				slot5 = false
+			if var_6_3 and var_6_6 ~= var_6_3 then
+				var_6_3 = false
 			end
 
-			setActive(findTF(slot10, "tag/complete"), slot12)
+			setActive(findTF(var_6_4, "tag/complete"), var_6_6)
 		else
-			setActive(slot10, false)
+			setActive(var_6_4, false)
 		end
 	end
 
-	print("mapId :" .. slot0.showMapId .. " get flag = " .. tostring(getProxy(IslandProxy):GetNode(slot0.showMapId):IsCompleted()))
-	setActive(slot0.finalAward, slot5 and not slot6)
-	setActive(slot0.gotTf, slot5 and slot6)
-	setLocalPosition(findTF(slot0.historyPage, "finalAward"), Vector3(uv0[slot0.mapIndex][1], uv0[slot0.mapIndex][2], uv0[slot0.mapIndex][3]))
-	setLocalEulerAngles(findTF(slot0.historyPage, "finalAward/arrow"), Vector3(uv1[slot0.mapIndex][1], uv1[slot0.mapIndex][2], uv1[slot0.mapIndex][3]))
+	local var_6_7 = getProxy(IslandProxy):GetNode(arg_6_0.showMapId):IsCompleted()
+
+	print("mapId :" .. arg_6_0.showMapId .. " get flag = " .. tostring(var_6_7))
+	setActive(arg_6_0.finalAward, var_6_3 and not var_6_7)
+	setActive(arg_6_0.gotTf, var_6_3 and var_6_7)
+	setLocalPosition(findTF(arg_6_0.historyPage, "finalAward"), Vector3(var_0_2[arg_6_0.mapIndex][1], var_0_2[arg_6_0.mapIndex][2], var_0_2[arg_6_0.mapIndex][3]))
+	setLocalEulerAngles(findTF(arg_6_0.historyPage, "finalAward/arrow"), Vector3(var_0_3[arg_6_0.mapIndex][1], var_0_3[arg_6_0.mapIndex][2], var_0_3[arg_6_0.mapIndex][3]))
 end
 
-function slot0.addTaskList(slot0, slot1)
-	for slot5 = 1, slot1 do
-		slot6 = tf(instantiate(slot0.taskListTpl))
+function var_0_0.addTaskList(arg_7_0, arg_7_1)
+	for iter_7_0 = 1, arg_7_1 do
+		local var_7_0 = tf(instantiate(arg_7_0.taskListTpl))
 
-		setActive(slot6, false)
-		setParent(slot6, slot0.listConent)
-		table.insert(slot0.taskList, slot6)
+		setActive(var_7_0, false)
+		setParent(var_7_0, arg_7_0.listConent)
+		table.insert(arg_7_0.taskList, var_7_0)
 	end
 end
 
-function slot0.checkTaskFinish(slot0, slot1)
-	for slot5 = 1, #slot0.finishTasks do
-		if slot0.finishTasks[slot5].id == slot1 then
+function var_0_0.checkTaskFinish(arg_8_0, arg_8_1)
+	for iter_8_0 = 1, #arg_8_0.finishTasks do
+		if arg_8_0.finishTasks[iter_8_0].id == arg_8_1 then
 			return true
 		end
 	end
@@ -223,11 +240,12 @@ function slot0.checkTaskFinish(slot0, slot1)
 	return false
 end
 
-function slot0.setActive(slot0, slot1)
-	setActive(slot0.historyPage, slot1)
+function var_0_0.setActive(arg_9_0, arg_9_1)
+	setActive(arg_9_0.historyPage, arg_9_1)
 end
 
-function slot0.dispose(slot0)
+function var_0_0.dispose(arg_10_0)
+	return
 end
 
-return slot0
+return var_0_0

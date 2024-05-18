@@ -1,243 +1,288 @@
-slot0 = class("ActivityShopPage", import(".BaseShopPage"))
+﻿local var_0_0 = class("ActivityShopPage", import(".BaseShopPage"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivityShop"
 end
 
-function slot0.GetPaintingName(slot0)
-	assert(slot0.shop)
+function var_0_0.GetPaintingName(arg_2_0)
+	assert(arg_2_0.shop)
 
-	if pg.activity_template[slot0.shop.activityId] and slot1.config_client then
-		if slot1.config_client.use_secretary or getProxy(ActivityProxy):checkHxActivity(slot0.shop.activityId) then
-			slot6 = getProxy(SettingsProxy):getCurrentSecretaryIndex()
-			slot0.tempFlagShip = getProxy(BayProxy):getShipById(getProxy(PlayerProxy):getData().characters[1])
+	local var_2_0 = pg.activity_template[arg_2_0.shop.activityId]
+	local var_2_1 = getProxy(ActivityProxy):checkHxActivity(arg_2_0.shop.activityId)
 
-			return slot0.tempFlagShip:getPainting(), true, "build"
-		elseif slot1.config_client.painting then
-			return slot1.config_client.painting
+	if var_2_0 and var_2_0.config_client then
+		if var_2_0.config_client.use_secretary or var_2_1 then
+			local var_2_2 = getProxy(PlayerProxy):getData()
+			local var_2_3 = getProxy(SettingsProxy):getCurrentSecretaryIndex()
+
+			arg_2_0.tempFlagShip = getProxy(BayProxy):getShipById(var_2_2.characters[1])
+
+			return arg_2_0.tempFlagShip:getPainting(), true, "build"
+		elseif var_2_0.config_client.painting then
+			return var_2_0.config_client.painting
 		end
 	end
 
 	return "aijiang_pt"
 end
 
-function slot0.GetBg(slot0, slot1)
-	return slot1:getBgPath()
+function var_0_0.GetBg(arg_3_0, arg_3_1)
+	return (arg_3_1:getBgPath())
 end
 
-function slot0.GetPaintingEnterVoice(slot0)
-	slot1, slot2, slot3 = slot0.shop:GetEnterVoice()
+function var_0_0.GetPaintingEnterVoice(arg_4_0)
+	local var_4_0, var_4_1, var_4_2 = arg_4_0.shop:GetEnterVoice()
 
-	return slot2, slot1, slot3
+	return var_4_1, var_4_0, var_4_2
 end
 
-function slot0.GetPaintingCommodityUpdateVoice(slot0)
-	slot1, slot2, slot3 = slot0.shop:GetPurchaseVoice()
+function var_0_0.GetPaintingCommodityUpdateVoice(arg_5_0)
+	local var_5_0, var_5_1, var_5_2 = arg_5_0.shop:GetPurchaseVoice()
 
-	return slot2, slot1, slot3
+	return var_5_1, var_5_0, var_5_2
 end
 
-function slot0.GetPaintingAllPurchaseVoice(slot0)
-	slot1, slot2, slot3 = slot0.shop:GetPurchaseAllVoice()
+function var_0_0.GetPaintingAllPurchaseVoice(arg_6_0)
+	local var_6_0, var_6_1, var_6_2 = arg_6_0.shop:GetPurchaseAllVoice()
 
-	return slot2, slot1, slot3
+	return var_6_1, var_6_0, var_6_2
 end
 
-function slot0.GetPaintingTouchVoice(slot0)
-	slot1, slot2, slot3 = slot0.shop:GetTouchVoice()
+function var_0_0.GetPaintingTouchVoice(arg_7_0)
+	local var_7_0, var_7_1, var_7_2 = arg_7_0.shop:GetTouchVoice()
 
-	return slot2, slot1, slot3
+	return var_7_1, var_7_0, var_7_2
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.resTrList = {
+function var_0_0.OnLoaded(arg_8_0)
+	local var_8_0 = arg_8_0:findTF("res_battery"):GetComponent(typeof(Image))
+	local var_8_1 = arg_8_0:findTF("res_battery/icon"):GetComponent(typeof(Image))
+	local var_8_2 = arg_8_0:findTF("res_battery/Text"):GetComponent(typeof(Text))
+	local var_8_3 = arg_8_0:findTF("res_battery/label"):GetComponent(typeof(Text))
+	local var_8_4 = arg_8_0:findTF("res_battery1"):GetComponent(typeof(Image))
+	local var_8_5 = arg_8_0:findTF("res_battery1/icon"):GetComponent(typeof(Image))
+	local var_8_6 = arg_8_0:findTF("res_battery1/Text"):GetComponent(typeof(Text))
+	local var_8_7 = arg_8_0:findTF("res_battery1/label"):GetComponent(typeof(Text))
+
+	arg_8_0.resTrList = {
 		{
-			slot0:findTF("res_battery"):GetComponent(typeof(Image)),
-			slot0:findTF("res_battery/icon"):GetComponent(typeof(Image)),
-			slot0:findTF("res_battery/Text"):GetComponent(typeof(Text)),
-			slot0:findTF("res_battery/label"):GetComponent(typeof(Text))
+			var_8_0,
+			var_8_1,
+			var_8_2,
+			var_8_3
 		},
 		{
-			slot0:findTF("res_battery1"):GetComponent(typeof(Image)),
-			slot0:findTF("res_battery1/icon"):GetComponent(typeof(Image)),
-			slot0:findTF("res_battery1/Text"):GetComponent(typeof(Text)),
-			slot0:findTF("res_battery1/label"):GetComponent(typeof(Text))
+			var_8_4,
+			var_8_5,
+			var_8_6,
+			var_8_7
 		}
 	}
-	slot0.eventResCnt = slot0:findTF("event_res_battery/Text"):GetComponent(typeof(Text))
-	slot0.time = slot0:findTF("Text"):GetComponent(typeof(Text))
+	arg_8_0.eventResCnt = arg_8_0:findTF("event_res_battery/Text"):GetComponent(typeof(Text))
+	arg_8_0.time = arg_8_0:findTF("Text"):GetComponent(typeof(Text))
 end
 
-function slot0.OnInit(slot0)
+function var_0_0.OnInit(arg_9_0)
+	return
 end
 
-function slot0.OnUpdatePlayer(slot0)
-	if slot0.shop:IsEventShop() then
-		slot0.eventResCnt.text = slot0.player:getResource(slot0.shop:getResId())
+function var_0_0.OnUpdatePlayer(arg_10_0)
+	if arg_10_0.shop:IsEventShop() then
+		local var_10_0 = arg_10_0.shop:getResId()
+
+		arg_10_0.eventResCnt.text = arg_10_0.player:getResource(var_10_0)
 	else
-		for slot5, slot6 in pairs(slot0.resTrList) do
-			slot8 = slot6[2]
+		local var_10_1 = arg_10_0.shop:GetResList()
 
-			setActive(slot6[1], slot0.shop:GetResList()[slot5] ~= nil)
+		for iter_10_0, iter_10_1 in pairs(arg_10_0.resTrList) do
+			local var_10_2 = iter_10_1[1]
+			local var_10_3 = iter_10_1[2]
+			local var_10_4 = iter_10_1[3]
+			local var_10_5 = var_10_1[iter_10_0]
 
-			if slot10 ~= nil then
-				slot6[3].text = slot0.player:getResource(slot10)
+			setActive(var_10_2, var_10_5 ~= nil)
+
+			if var_10_5 ~= nil then
+				var_10_4.text = arg_10_0.player:getResource(var_10_5)
 			end
 		end
 	end
 end
 
-function slot0.OnSetUp(slot0)
-	slot0:SetResIcon()
-	slot0:UpdateTip()
+function var_0_0.OnSetUp(arg_11_0)
+	arg_11_0:SetResIcon()
+	arg_11_0:UpdateTip()
 end
 
-function slot0.OnUpdateAll(slot0)
-	slot0:InitCommodities()
+function var_0_0.OnUpdateAll(arg_12_0)
+	arg_12_0:InitCommodities()
 end
 
-function slot0.OnUpdateCommodity(slot0, slot1)
-	slot2 = nil
+function var_0_0.OnUpdateCommodity(arg_13_0, arg_13_1)
+	local var_13_0
 
-	for slot6, slot7 in pairs(slot0.cards) do
-		if slot7.goodsVO.id == slot1.id then
-			slot2 = slot7
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.cards) do
+		if iter_13_1.goodsVO.id == arg_13_1.id then
+			var_13_0 = iter_13_1
 
 			break
 		end
 	end
 
-	if slot2 then
-		slot3, slot4, slot5 = slot0.shop:getBgPath()
+	if var_13_0 then
+		local var_13_1, var_13_2, var_13_3 = arg_13_0.shop:getBgPath()
 
-		slot2:update(slot1, nil, slot4, slot5)
+		var_13_0:update(arg_13_1, nil, var_13_2, var_13_3)
 	end
 end
 
-function slot0.SetResIcon(slot0, slot1)
-	slot2 = slot0.shop:GetResList()
+function var_0_0.SetResIcon(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0.shop:GetResList()
 
-	for slot6, slot7 in ipairs(slot0.resTrList) do
-		slot8 = slot7[1]
-		slot9 = slot7[2]
-		slot10 = slot7[3]
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.resTrList) do
+		local var_14_1 = iter_14_1[1]
+		local var_14_2 = iter_14_1[2]
+		local var_14_3 = iter_14_1[3]
+		local var_14_4 = iter_14_1[4]
+		local var_14_5 = var_14_0[iter_14_0]
 
-		if slot2[slot6] ~= nil then
-			slot13 = Drop.New({
-				type = slot1 or DROP_TYPE_RESOURCE,
-				id = slot12
+		if var_14_5 ~= nil then
+			local var_14_6 = Drop.New({
+				type = arg_14_1 or DROP_TYPE_RESOURCE,
+				id = var_14_5
 			})
 
-			GetSpriteFromAtlasAsync(slot13:getIcon(), "", function (slot0)
-				uv0.sprite = slot0
+			GetSpriteFromAtlasAsync(var_14_6:getIcon(), "", function(arg_15_0)
+				var_14_2.sprite = arg_15_0
 			end)
 
-			slot7[4].text = slot13:getName()
+			var_14_4.text = var_14_6:getName()
 		end
 	end
 
-	slot3 = slot0.shop:IsEventShop()
+	local var_14_7 = arg_14_0.shop:IsEventShop()
 
-	setActive(slot0:findTF("res_battery"), not slot3)
-	setActive(slot0:findTF("res_battery1"), not slot3 and #slot2 > 1)
-	setActive(slot0:findTF("event_res_battery"), slot3)
+	setActive(arg_14_0:findTF("res_battery"), not var_14_7)
+	setActive(arg_14_0:findTF("res_battery1"), not var_14_7 and #var_14_0 > 1)
+	setActive(arg_14_0:findTF("event_res_battery"), var_14_7)
 end
 
-function slot0.UpdateTip(slot0)
-	slot0.time.text = "<size=" .. (#slot0.shop:GetResList() > 1 and 25 or 27) .. ">" .. i18n("activity_shop_lable", slot0.shop:getOpenTime()) .. "</size>"
+function var_0_0.UpdateTip(arg_16_0)
+	local var_16_0 = #arg_16_0.shop:GetResList() > 1 and 25 or 27
+
+	arg_16_0.time.text = "<size=" .. var_16_0 .. ">" .. i18n("activity_shop_lable", arg_16_0.shop:getOpenTime()) .. "</size>"
 end
 
-function slot0.OnInitItem(slot0, slot1)
-	slot2 = ActivityGoodsCard.New(slot1)
-	slot2.tagImg.raycastTarget = false
+function var_0_0.OnInitItem(arg_17_0, arg_17_1)
+	local var_17_0 = ActivityGoodsCard.New(arg_17_1)
 
-	onButton(slot0, slot2.tr, function ()
-		uv0:OnClickCommodity(uv1.goodsVO, function (slot0, slot1)
-			uv0:OnPurchase(slot0, slot1)
+	var_17_0.tagImg.raycastTarget = false
+
+	onButton(arg_17_0, var_17_0.tr, function()
+		arg_17_0:OnClickCommodity(var_17_0.goodsVO, function(arg_19_0, arg_19_1)
+			arg_17_0:OnPurchase(arg_19_0, arg_19_1)
 		end)
 	end, SFX_PANEL)
 
-	slot0.cards[slot1] = slot2
+	arg_17_0.cards[arg_17_1] = var_17_0
 end
 
-function slot0.OnUpdateItem(slot0, slot1, slot2)
-	if not slot0.cards[slot2] then
-		slot0:OnInitItem(slot2)
+function var_0_0.OnUpdateItem(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = arg_20_0.cards[arg_20_2]
 
-		slot3 = slot0.cards[slot2]
+	if not var_20_0 then
+		arg_20_0:OnInitItem(arg_20_2)
+
+		var_20_0 = arg_20_0.cards[arg_20_2]
 	end
 
-	slot5, slot6, slot7 = slot0.shop:getBgPath()
+	local var_20_1 = arg_20_0.displays[arg_20_1 + 1]
+	local var_20_2, var_20_3, var_20_4 = arg_20_0.shop:getBgPath()
 
-	slot3:update(slot0.displays[slot1 + 1], nil, slot6, slot7)
+	var_20_0:update(var_20_1, nil, var_20_3, var_20_4)
 end
 
-function slot0.TipPurchase(slot0, slot1, slot2, slot3, slot4)
-	slot5, slot6 = slot1:GetTranCntWhenFull(slot2)
+function var_0_0.TipPurchase(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_4)
+	local var_21_0, var_21_1 = arg_21_1:GetTranCntWhenFull(arg_21_2)
 
-	if slot5 > 0 then
+	if var_21_0 > 0 then
+		local var_21_2 = math.max(arg_21_2 - var_21_0, 0)
+
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
-			content = i18n("pt_shop_tran_tip", math.max(slot2 - slot5, 0), slot3, slot5 * slot6.count, slot6:getConfig("name")),
-			onYes = slot4
+			content = i18n("pt_shop_tran_tip", var_21_2, arg_21_3, var_21_0 * var_21_1.count, var_21_1:getConfig("name")),
+			onYes = arg_21_4
 		})
 	else
-		slot4()
+		arg_21_4()
 	end
 end
 
-function slot0.OnPurchase(slot0, slot1, slot2)
-	if slot1:getConfig("commodity_type") == DROP_TYPE_ITEM and getProxy(BagProxy):RawGetItemById(slot1:getConfig("commodity_id")) and slot5:IsShipExpType() and slot5:IsMaxCnt() then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("item_is_max_cnt"))
+function var_0_0.OnPurchase(arg_22_0, arg_22_1, arg_22_2)
+	local var_22_0 = arg_22_1:getConfig("commodity_type")
+	local var_22_1 = arg_22_1:getConfig("commodity_id")
 
-		return
+	if var_22_0 == DROP_TYPE_ITEM then
+		local var_22_2 = getProxy(BagProxy):RawGetItemById(var_22_1)
+
+		if var_22_2 and var_22_2:IsShipExpType() and var_22_2:IsMaxCnt() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("item_is_max_cnt"))
+
+			return
+		end
 	end
 
-	slot0:emit(NewShopsMediator.ON_ACT_SHOPPING, slot0.shop.activityId, 1, slot1.id, slot2)
+	local var_22_3 = arg_22_0.shop.activityId
+
+	arg_22_0:emit(NewShopsMediator.ON_ACT_SHOPPING, var_22_3, 1, arg_22_1.id, arg_22_2)
 end
 
-function slot0.OnClickCommodity(slot0, slot1, slot2)
-	if not slot1:CheckCntLimit() then
+function var_0_0.OnClickCommodity(arg_23_0, arg_23_1, arg_23_2)
+	local var_23_0 = arg_23_1:CheckCntLimit()
+
+	if not var_23_0 then
 		return
 	end
 
-	if slot3 and not slot1:CheckArgLimit() then
-		slot5, slot6, slot7, slot8 = slot1:CheckArgLimit()
+	if var_23_0 and not arg_23_1:CheckArgLimit() then
+		local var_23_1, var_23_2, var_23_3, var_23_4 = arg_23_1:CheckArgLimit()
 
-		if slot6 == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_shop_exchange_limit_tip", (ShipGroup.getDefaultShipConfig(slot8) or {}).name or ""))
-		elseif slot6 == ShopArgs.LIMIT_ARGS_SALE_START_TIME then
-			slot9 = {
-				year = slot8[1][1],
-				month = slot8[1][2],
-				day = slot8[1][3],
-				hour = slot8[2][1],
-				min = slot8[2][2],
-				sec = slot8[2][3]
+		if var_23_2 == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE then
+			local var_23_5 = ShipGroup.getDefaultShipConfig(var_23_4) or {}
+
+			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_shop_exchange_limit_tip", var_23_5.name or ""))
+		elseif var_23_2 == ShopArgs.LIMIT_ARGS_SALE_START_TIME then
+			local var_23_6 = {
+				year = var_23_4[1][1],
+				month = var_23_4[1][2],
+				day = var_23_4[1][3],
+				hour = var_23_4[2][1],
+				min = var_23_4[2][2],
+				sec = var_23_4[2][3]
 			}
 
-			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_shop_exchange_limit_2_tip", slot9.year, slot9.month, slot9.day, slot9.hour, slot9.min, slot9.sec))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_shop_exchange_limit_2_tip", var_23_6.year, var_23_6.month, var_23_6.day, var_23_6.hour, var_23_6.min, var_23_6.sec))
 		end
 
 		return
 	end
 
-	uv0.super.OnClickCommodity(slot0, slot1, slot2)
+	var_0_0.super.OnClickCommodity(arg_23_0, arg_23_1, arg_23_2)
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
+function var_0_0.Show(arg_24_0)
+	var_0_0.super.Show(arg_24_0)
 
-	if slot0.shop:GetBGM() ~= "" then
-		pg.BgmMgr.GetInstance():Push(slot0.__cname, slot0.shop:GetBGM())
+	if arg_24_0.shop:GetBGM() ~= "" then
+		pg.BgmMgr.GetInstance():Push(arg_24_0.__cname, arg_24_0.shop:GetBGM())
 	end
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
+function var_0_0.Hide(arg_25_0)
+	var_0_0.super.Hide(arg_25_0)
 
-	if slot0.shop:GetBGM() ~= "" then
-		pg.BgmMgr.GetInstance():Pop(slot0.__cname)
+	if arg_25_0.shop:GetBGM() ~= "" then
+		pg.BgmMgr.GetInstance():Pop(arg_25_0.__cname)
 	end
 end
 
-return slot0
+return var_0_0

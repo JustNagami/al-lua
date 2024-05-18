@@ -1,283 +1,294 @@
-pg = pg or {}
-slot0 = singletonClass("PerformMgr")
-pg.PerformMgr = slot0
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = 4
-slot5 = 5
-slot6 = 6
-slot7 = 7
-slot8 = 0
-slot9 = 1
-slot10 = 2
+﻿pg = pg or {}
+
+local var_0_0 = singletonClass("PerformMgr")
+
+pg.PerformMgr = var_0_0
+
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+local var_0_5 = 5
+local var_0_6 = 6
+local var_0_7 = 7
+local var_0_8 = 0
+local var_0_9 = 1
+local var_0_10 = 2
 
 require("Mgr/Perform/Include")
 
-slot11 = true
+local var_0_11 = true
 
-function slot12(...)
-	if uv0 and IsUnityEditor then
+local function var_0_12(...)
+	if var_0_11 and IsUnityEditor then
 		originalPrint(...)
 	end
 end
 
-function slot0.Init(slot0, slot1)
-	slot0.status = uv0
-	slot0.playedList = {}
-	slot0.playQueue = {}
+function var_0_0.Init(arg_2_0, arg_2_1)
+	arg_2_0.status = var_0_1
+	arg_2_0.playedList = {}
+	arg_2_0.playQueue = {}
 
-	if slot1 then
-		slot1()
+	if arg_2_1 then
+		arg_2_1()
 	end
 end
 
-function slot0.CheckLoad(slot0, slot1)
+function var_0_0.CheckLoad(arg_3_0, arg_3_1)
 	seriesAsync({
-		function (slot0)
-			if not uv0._go then
-				PoolMgr.GetInstance():GetUI("PerformUI", true, function (slot0)
-					uv0._go = slot0
-					uv0._tf = tf(uv0._go)
-					uv0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
+		function(arg_4_0)
+			if not arg_3_0._go then
+				PoolMgr.GetInstance():GetUI("PerformUI", true, function(arg_5_0)
+					arg_3_0._go = arg_5_0
+					arg_3_0._tf = tf(arg_3_0._go)
+					arg_3_0.UIOverlay = GameObject.Find("Overlay/UIOverlay")
 
-					uv0._go.transform:SetParent(uv0.UIOverlay.transform, false)
+					arg_3_0._go.transform:SetParent(arg_3_0.UIOverlay.transform, false)
 
-					uv0.cpkPlayer = CpkPerformPlayer.New(findTF(uv0._tf, "window_cpk"))
-					uv0.dialoguePlayer = DialoguePerformPlayer.New(findTF(uv0._tf, "window_dialogue"))
-					uv0.picturePlayer = PictruePerformPlayer.New(findTF(uv0._tf, "window_picture"))
-					uv0.storyPlayer = StoryPerformPlayer.New(findTF(uv0._tf, "window_story"))
+					arg_3_0.cpkPlayer = CpkPerformPlayer.New(findTF(arg_3_0._tf, "window_cpk"))
+					arg_3_0.dialoguePlayer = DialoguePerformPlayer.New(findTF(arg_3_0._tf, "window_dialogue"))
+					arg_3_0.picturePlayer = PictruePerformPlayer.New(findTF(arg_3_0._tf, "window_picture"))
+					arg_3_0.storyPlayer = StoryPerformPlayer.New(findTF(arg_3_0._tf, "window_story"))
 
-					setActive(uv0._go, false)
+					setActive(arg_3_0._go, false)
 
-					uv0.status = uv1
+					arg_3_0.status = var_0_2
 
-					uv2()
+					arg_4_0()
 				end)
 			else
-				slot0()
+				arg_4_0()
 			end
 		end
-	}, function ()
-		if uv0 then
-			uv0()
+	}, function()
+		if arg_3_1 then
+			arg_3_1()
 		end
 	end)
 end
 
-function slot0.PlayOne(slot0, slot1, slot2, slot3, slot4)
-	assert(pg.child_performance[slot1], "child_performance not exist id: " .. slot1)
+function var_0_0.PlayOne(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4)
+	assert(pg.child_performance[arg_7_1], "child_performance not exist id: " .. arg_7_1)
 
-	if not slot0:CheckState() then
-		uv0("perform state error" .. slot0.status)
+	if not arg_7_0:CheckState() then
+		var_0_12("perform state error" .. arg_7_0.status)
 
 		return nil
 	end
 
-	uv0("OnlyOne Play")
-	slot0:Show()
-	slot0:play(slot1, function ()
-		uv0:Hide()
+	var_0_12("OnlyOne Play")
+	arg_7_0:Show()
 
-		if uv1 then
-			uv1()
+	local function var_7_0()
+		arg_7_0:Hide()
+
+		if arg_7_2 then
+			arg_7_2()
 		end
-	end, slot3, slot4)
+	end
+
+	arg_7_0:play(arg_7_1, var_7_0, arg_7_3, arg_7_4)
 end
 
-function slot0.PlayGroup(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {}
+function var_0_0.PlayGroup(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local var_9_0 = {}
 
-	for slot9, slot10 in ipairs(slot1) do
-		table.insert(slot5, function (slot0)
-			uv0:play(uv1, slot0, uv2, uv3)
+	for iter_9_0, iter_9_1 in ipairs(arg_9_1) do
+		table.insert(var_9_0, function(arg_10_0)
+			arg_9_0:play(iter_9_1, arg_10_0, arg_9_3, arg_9_4)
 		end)
 	end
 
-	slot0:Show()
-	seriesAsync(slot5, function (slot0)
-		uv0:Hide()
+	arg_9_0:Show()
+	seriesAsync(var_9_0, function(arg_11_0)
+		arg_9_0:Hide()
 
-		if uv1 then
-			uv1()
+		if arg_9_2 then
+			arg_9_2()
 		end
 	end)
 end
 
-function slot0.play(slot0, slot1, slot2, slot3, slot4)
-	assert(pg.child_performance[slot1], "child_performance not exist id: " .. slot1)
+function var_0_0.play(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	assert(pg.child_performance[arg_12_1], "child_performance not exist id: " .. arg_12_1)
 
-	if not slot0:CheckState() then
-		uv0("perform state error" .. slot0.status)
+	if not arg_12_0:CheckState() then
+		var_0_12("perform state error" .. arg_12_0.status)
 
 		return nil
 	end
 
-	uv0("Play Perform:", slot1)
-	slot0:addTaskProgress(slot1)
+	var_0_12("Play Perform:", arg_12_1)
+	arg_12_0:addTaskProgress(arg_12_1)
 
-	slot0.status = uv1
+	arg_12_0.status = var_0_4
 
-	function slot5()
-		uv0.status = uv1
+	local function var_12_0()
+		arg_12_0.status = var_0_5
 
-		if uv2 then
-			uv2()
+		if arg_12_2 then
+			arg_12_2()
 		end
 	end
 
-	slot6 = pg.child_performance[slot1]
+	local var_12_1 = pg.child_performance[arg_12_1]
 
-	slot0:setWindowStatus(slot6)
-	switch(slot6.type, {
-		[EducateConst.PERFORM_TYPE_ANIM] = function ()
-			uv0.cpkPlayer:Play(uv1, uv2, uv3)
+	arg_12_0:setWindowStatus(var_12_1)
+	switch(var_12_1.type, {
+		[EducateConst.PERFORM_TYPE_ANIM] = function()
+			arg_12_0.cpkPlayer:Play(var_12_1, var_12_0, arg_12_4)
 		end,
-		[EducateConst.PERFORM_TYPE_WORD] = function ()
-			uv2.dialoguePlayer:Play(setmetatable({
-				drops = uv0 or {}
+		[EducateConst.PERFORM_TYPE_WORD] = function()
+			local var_15_0 = setmetatable({
+				drops = arg_12_3 or {}
 			}, {
-				__index = uv1
-			}), uv3)
+				__index = var_12_1
+			})
+
+			arg_12_0.dialoguePlayer:Play(var_15_0, var_12_0)
 		end,
-		[EducateConst.PERFORM_TYPE_STORY] = function ()
-			uv0.storyPlayer:Play(uv1, uv2)
+		[EducateConst.PERFORM_TYPE_STORY] = function()
+			arg_12_0.storyPlayer:Play(var_12_1, var_12_0)
 		end,
-		[EducateConst.PERFORM_TYPE_PICTURE] = function ()
-			uv0.picturePlayer:Play(uv1, uv2, uv3)
+		[EducateConst.PERFORM_TYPE_PICTURE] = function()
+			arg_12_0.picturePlayer:Play(var_12_1, var_12_0, arg_12_4)
 		end
 	})
 end
 
-function slot0.addTaskProgress(slot0, slot1)
-	slot3 = {}
-	slot4 = {}
-	slot5 = {}
+function var_0_0.addTaskProgress(arg_18_0, arg_18_1)
+	local var_18_0 = getProxy(EducateProxy):GetTaskProxy():GetPerformAddTasks(arg_18_1)
+	local var_18_1 = {}
+	local var_18_2 = {}
+	local var_18_3 = {}
 
-	for slot9, slot10 in ipairs(getProxy(EducateProxy):GetTaskProxy():GetPerformAddTasks(slot1)) do
-		if slot10:IsMind() then
-			table.insert(slot3, {
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		if iter_18_1:IsMind() then
+			table.insert(var_18_1, {
 				progress = 1,
-				task_id = slot10.id
+				task_id = iter_18_1.id
 			})
 		end
 
-		if slot10:IsTarget() then
-			table.insert(slot4, {
+		if iter_18_1:IsTarget() then
+			table.insert(var_18_2, {
 				progress = 1,
-				task_id = slot10.id
+				task_id = iter_18_1.id
 			})
 		end
 
-		if slot10:IsMain() then
-			table.insert(slot5, {
+		if iter_18_1:IsMain() then
+			table.insert(var_18_3, {
 				progress = 1,
-				task_id = slot10.id
+				task_id = iter_18_1.id
 			})
 		end
 	end
 
-	if #slot3 > 0 then
+	if #var_18_1 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_MIND,
-			progresses = slot3
+			progresses = var_18_1
 		})
 	end
 
-	if #slot4 > 0 then
+	if #var_18_2 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.SYSTEM_TYPE_TARGET,
-			progresses = slot4
+			progresses = var_18_2
 		})
 	end
 
-	if #slot5 > 0 then
+	if #var_18_3 > 0 then
 		pg.m02:sendNotification(GAME.EDUCATE_ADD_TASK_PROGRESS, {
 			system = EducateTask.STSTEM_TYPE_MAIN,
-			progresses = slot5
+			progresses = var_18_3
 		})
 	end
 end
 
-function slot0.PlayGroupNoHide(slot0, slot1, slot2, slot3, slot4)
-	slot5 = {}
+function var_0_0.PlayGroupNoHide(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4)
+	local var_19_0 = {}
 
-	for slot9, slot10 in ipairs(slot1) do
-		table.insert(slot5, function (slot0)
-			uv0:play(uv1, slot0, uv2, uv3)
+	for iter_19_0, iter_19_1 in ipairs(arg_19_1) do
+		table.insert(var_19_0, function(arg_20_0)
+			arg_19_0:play(iter_19_1, arg_20_0, arg_19_3, arg_19_4)
 		end)
 	end
 
-	seriesAsync(slot5, slot2)
+	seriesAsync(var_19_0, arg_19_2)
 end
 
-function slot0.setWindowStatus(slot0, slot1)
-	setActive(slot0.cpkPlayer._tf, slot1.cpk_status == uv0)
-	setActive(slot0.dialoguePlayer._tf, slot1.dialogue_status == uv0)
-	setActive(slot0.picturePlayer._tf, slot1.picture_status == uv0)
-	setActive(slot0.storyPlayer._tf, slot1.story_status == uv0)
+function var_0_0.setWindowStatus(arg_21_0, arg_21_1)
+	setActive(arg_21_0.cpkPlayer._tf, arg_21_1.cpk_status == var_0_10)
+	setActive(arg_21_0.dialoguePlayer._tf, arg_21_1.dialogue_status == var_0_10)
+	setActive(arg_21_0.picturePlayer._tf, arg_21_1.picture_status == var_0_10)
+	setActive(arg_21_0.storyPlayer._tf, arg_21_1.story_status == var_0_10)
 end
 
-function slot0.CheckState(slot0)
-	if slot0.status == uv0 then
+function var_0_0.CheckState(arg_22_0)
+	if arg_22_0.status == var_0_1 then
 		return false
 	end
 
 	return true
 end
 
-function slot0.IsRunning(slot0)
-	return slot0.status == uv0 or slot0.status == uv1 or slot0.status == uv2
+function var_0_0.IsRunning(arg_23_0)
+	return arg_23_0.status == var_0_3 or arg_23_0.status == var_0_4 or arg_23_0.status == var_0_5
 end
 
-function slot0.Show(slot0)
-	slot0:CheckLoad(function ()
-		uv0:_Show()
+function var_0_0.Show(arg_24_0)
+	arg_24_0:CheckLoad(function()
+		arg_24_0:_Show()
 	end)
 end
 
-function slot0._Show(slot0)
-	slot0.status = uv0
+function var_0_0._Show(arg_26_0)
+	arg_26_0.status = var_0_3
 
-	setActive(slot0._go, true)
-	slot0._tf:SetAsLastSibling()
+	setActive(arg_26_0._go, true)
+	arg_26_0._tf:SetAsLastSibling()
 end
 
-function slot0.Clear(slot0)
-	slot0.cpkPlayer:Clear()
-	slot0.dialoguePlayer:Clear()
-	slot0.picturePlayer:Clear()
-	slot0.storyPlayer:Clear()
+function var_0_0.Clear(arg_27_0)
+	arg_27_0.cpkPlayer:Clear()
+	arg_27_0.dialoguePlayer:Clear()
+	arg_27_0.picturePlayer:Clear()
+	arg_27_0.storyPlayer:Clear()
 end
 
-function slot0.Show(slot0)
-	slot0:CheckLoad(function ()
-		uv0:_Show()
+function var_0_0.Show(arg_28_0)
+	arg_28_0:CheckLoad(function()
+		arg_28_0:_Show()
 	end)
 end
 
-function slot0.Hide(slot0)
-	slot0:Clear()
-	setActive(slot0._go, false)
+function var_0_0.Hide(arg_30_0)
+	arg_30_0:Clear()
+	setActive(arg_30_0._go, false)
 
-	slot0.status = uv0
+	arg_30_0.status = var_0_6
 end
 
-function slot0.Quit(slot0)
-	slot0.status = uv0
+function var_0_0.Quit(arg_31_0)
+	arg_31_0.status = var_0_7
 end
 
-function slot0.SetParamForUI(slot0, slot1)
-	slot0:CheckLoad(function ()
-		uv0:_SetParamForUI(uv1)
+function var_0_0.SetParamForUI(arg_32_0, arg_32_1)
+	arg_32_0:CheckLoad(function()
+		arg_32_0:_SetParamForUI(arg_32_1)
 	end)
 end
 
-function slot0._SetParamForUI(slot0, slot1)
-	slot0.cpkPlayer:SetUIParam(uv0.UI_PARAM[slot1] or uv0.UI_PARAM.Default)
+function var_0_0._SetParamForUI(arg_34_0, arg_34_1)
+	local var_34_0 = var_0_0.UI_PARAM[arg_34_1] or var_0_0.UI_PARAM.Default
+
+	arg_34_0.cpkPlayer:SetUIParam(var_34_0)
 end
 
-slot0.UI_PARAM = {
+var_0_0.UI_PARAM = {
 	Default = {
 		showCpkBg = true,
 		sliderPos = {

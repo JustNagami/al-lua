@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "不安定的发明家",
-	time = 9,
-	color = "red",
-	picture = "",
-	desc = "战斗中，每12秒触发一种研发中的特殊装备$1，特殊装备的效果随技能等级提高",
-	stack = 1,
-	id = 12041,
-	icon = 12040,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCastSkillRandom",
@@ -68,5 +48,25 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "不安定的发明家",
+	time = 9,
+	color = "red",
+	picture = "",
+	desc = "战斗中，每12秒触发一种研发中的特殊装备$1，特殊装备的效果随技能等级提高",
+	stack = 1,
+	id = 12041,
+	icon = 12040,
+	last_effect = ""
 }

@@ -1,172 +1,181 @@
-slot0 = class("ShipProfilePaintingView")
+﻿local var_0_0 = class("ShipProfilePaintingView")
 
-function slot0.Ctor(slot0, slot1, slot2, slot3)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.prefab = slot1
-	slot0.painting = slot2
-	slot0.cg = slot0.painting:GetComponent("CanvasGroup")
-	slot0.bg = slot0.prefab:Find("bg")
-	slot0.bgBtn = slot0.bg:GetComponent("Button")
-	slot0.recorder = {}
-	slot0.hideObjList = {}
-	slot0.isPreview = false
-	slot0.zoomDelegate = GetOrAddComponent(slot0.bg, "MultiTouchZoom")
-	slot0.zoomDelegate.enabled = false
-	slot0.dragTrigger = GetOrAddComponent(slot0.bg, "EventTriggerListener")
+	arg_1_0.prefab = arg_1_1
+	arg_1_0.painting = arg_1_2
+	arg_1_0.cg = arg_1_0.painting:GetComponent("CanvasGroup")
+	arg_1_0.bg = arg_1_0.prefab:Find("bg")
+	arg_1_0.bgBtn = arg_1_0.bg:GetComponent("Button")
+	arg_1_0.recorder = {}
+	arg_1_0.hideObjList = {}
+	arg_1_0.isPreview = false
+	arg_1_0.zoomDelegate = GetOrAddComponent(arg_1_0.bg, "MultiTouchZoom")
+	arg_1_0.zoomDelegate.enabled = false
+	arg_1_0.dragTrigger = GetOrAddComponent(arg_1_0.bg, "EventTriggerListener")
 
-	slot0:SetHideObject()
+	arg_1_0:SetHideObject()
 
-	slot0.isBanRotate = slot3
+	arg_1_0.isBanRotate = arg_1_3
 end
 
-function slot0.SetHideObject(slot0)
-	slot2 = 0
+function var_0_0.SetHideObject(arg_2_0)
+	local var_2_0 = arg_2_0.prefab.childCount
+	local var_2_1 = 0
 
-	while slot0.prefab.childCount > slot2 do
-		if slot0.prefab:GetChild(slot2).gameObject.activeSelf and slot3 ~= slot0.painting and slot3 ~= slot0.bg then
-			slot0.hideObjList[#slot0.hideObjList + 1] = slot3
+	while var_2_1 < var_2_0 do
+		local var_2_2 = arg_2_0.prefab:GetChild(var_2_1)
+
+		if var_2_2.gameObject.activeSelf and var_2_2 ~= arg_2_0.painting and var_2_2 ~= arg_2_0.bg then
+			arg_2_0.hideObjList[#arg_2_0.hideObjList + 1] = var_2_2
 		end
 
-		slot2 = slot2 + 1
+		var_2_1 = var_2_1 + 1
 	end
 end
 
-function slot0.setBGCallback(slot0, slot1)
-	slot0.bgCallback = slot1
+function var_0_0.setBGCallback(arg_3_0, arg_3_1)
+	arg_3_0.bgCallback = arg_3_1
 end
 
-function slot0.Start(slot0)
-	slot0.cg.blocksRaycasts = false
+function var_0_0.Start(arg_4_0)
+	arg_4_0.cg.blocksRaycasts = false
 
-	slot0:EnableObjects(false)
-	slot0:RecodObjectInfo()
-	LeanTween.moveX(slot0.painting, 0, 0.3):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function ()
-		uv0:TweenObjects()
+	arg_4_0:EnableObjects(false)
+	arg_4_0:RecodObjectInfo()
+	LeanTween.moveX(arg_4_0.painting, 0, 0.3):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
+		arg_4_0:TweenObjects()
 	end))
 
-	slot0.isPreview = true
+	arg_4_0.isPreview = true
 end
 
-function slot0.EnableObjects(slot0, slot1)
-	_.each(slot0.hideObjList, function (slot0)
-		setActive(slot0, uv0)
+function var_0_0.EnableObjects(arg_6_0, arg_6_1)
+	_.each(arg_6_0.hideObjList, function(arg_7_0)
+		setActive(arg_7_0, arg_6_1)
 	end)
 end
 
-function slot0.TweenObjects(slot0)
-	if not slot0.isBanRotate then
-		openPortrait(slot0.prefab)
+function var_0_0.TweenObjects(arg_8_0)
+	if not arg_8_0.isBanRotate then
+		openPortrait(arg_8_0.prefab)
 	end
 
-	slot1 = true
-	slot0.exitFlag = false
-	slot2, slot3 = nil
+	local var_8_0 = true
 
-	slot0.zoomDelegate:SetZoomTarget(slot0.painting)
+	arg_8_0.exitFlag = false
 
-	slot0.zoomDelegate.enabled = true
-	slot4 = slot0.dragTrigger
-	slot4.enabled = true
+	local var_8_1
+	local var_8_2
 
-	slot4:AddPointDownFunc(function (slot0)
+	arg_8_0.zoomDelegate:SetZoomTarget(arg_8_0.painting)
+
+	arg_8_0.zoomDelegate.enabled = true
+
+	local var_8_3 = arg_8_0.dragTrigger
+
+	var_8_3.enabled = true
+
+	var_8_3:AddPointDownFunc(function(arg_9_0)
 		if Input.touchCount == 1 or IsUnityEditor then
-			uv0.exitFlag = true
-			uv1 = true
+			arg_8_0.exitFlag = true
+			var_8_0 = true
 		elseif Input.touchCount >= 2 then
-			uv1 = false
-			uv0.exitFlag = false
+			var_8_0 = false
+			arg_8_0.exitFlag = false
 		end
 	end)
-	slot4:AddPointUpFunc(function (slot0)
+	var_8_3:AddPointUpFunc(function(arg_10_0)
 		if Input.touchCount <= 2 then
-			uv0 = true
+			var_8_0 = true
 		end
 	end)
-	slot4:AddBeginDragFunc(function (slot0, slot1)
-		uv0.exitFlag = false
-		uv1 = slot1.position.x * uv0.recorder.widthRate - uv0.recorder.halfWidth - tf(uv0.painting).localPosition.x
-		uv2 = slot1.position.y * uv0.recorder.heightRate - uv0.recorder.halfHeight - tf(uv0.painting).localPosition.y
+	var_8_3:AddBeginDragFunc(function(arg_11_0, arg_11_1)
+		arg_8_0.exitFlag = false
+		var_8_1 = arg_11_1.position.x * arg_8_0.recorder.widthRate - arg_8_0.recorder.halfWidth - tf(arg_8_0.painting).localPosition.x
+		var_8_2 = arg_11_1.position.y * arg_8_0.recorder.heightRate - arg_8_0.recorder.halfHeight - tf(arg_8_0.painting).localPosition.y
 	end)
-	slot4:AddDragFunc(function (slot0, slot1)
-		if uv0 then
-			slot2 = tf(uv1.painting).localPosition
-			tf(uv1.painting).localPosition = Vector3(slot1.position.x * uv1.recorder.widthRate - uv1.recorder.halfWidth - uv2 - 150, slot1.position.y * uv1.recorder.heightRate - uv1.recorder.halfHeight - uv3, -22)
+	var_8_3:AddDragFunc(function(arg_12_0, arg_12_1)
+		if var_8_0 then
+			local var_12_0 = tf(arg_8_0.painting).localPosition
+
+			tf(arg_8_0.painting).localPosition = Vector3(arg_12_1.position.x * arg_8_0.recorder.widthRate - arg_8_0.recorder.halfWidth - var_8_1 - 150, arg_12_1.position.y * arg_8_0.recorder.heightRate - arg_8_0.recorder.halfHeight - var_8_2, -22)
 		end
 	end)
 
-	slot0.bgBtn.enabled = true
+	arg_8_0.bgBtn.enabled = true
 
-	onButton(slot0, slot0.bg, function ()
-		if uv0.bgCallback then
-			if uv0.exitFlag then
-				uv0.bgCallback()
+	onButton(arg_8_0, arg_8_0.bg, function()
+		if arg_8_0.bgCallback then
+			if arg_8_0.exitFlag then
+				arg_8_0.bgCallback()
 			end
 		else
-			uv0:Finish()
+			arg_8_0:Finish()
 		end
 	end, SFX_CANCEL)
 end
 
-function slot0.RecodObjectInfo(slot0)
-	slot0.recorder.srcPosX = slot0.painting.anchoredPosition.x
-	slot0.recorder.srcPosY = slot0.painting.anchoredPosition.y
-	slot0.recorder.srcWidth = slot0.painting.rect.width
-	slot0.recorder.srcHeight = slot0.painting.rect.height
-	slot0.recorder.widthRate = slot0.prefab.rect.width / UnityEngine.Screen.width
-	slot0.recorder.heightRate = slot0.prefab.rect.height / UnityEngine.Screen.height
-	slot0.recorder.halfWidth = slot0.recorder.srcWidth / 2
-	slot0.recorder.halfHeight = slot0.recorder.srcHeight / 2
+function var_0_0.RecodObjectInfo(arg_14_0)
+	arg_14_0.recorder.srcPosX = arg_14_0.painting.anchoredPosition.x
+	arg_14_0.recorder.srcPosY = arg_14_0.painting.anchoredPosition.y
+	arg_14_0.recorder.srcWidth = arg_14_0.painting.rect.width
+	arg_14_0.recorder.srcHeight = arg_14_0.painting.rect.height
+	arg_14_0.recorder.widthRate = arg_14_0.prefab.rect.width / UnityEngine.Screen.width
+	arg_14_0.recorder.heightRate = arg_14_0.prefab.rect.height / UnityEngine.Screen.height
+	arg_14_0.recorder.halfWidth = arg_14_0.recorder.srcWidth / 2
+	arg_14_0.recorder.halfHeight = arg_14_0.recorder.srcHeight / 2
 end
 
-function slot0.Finish(slot0, slot1)
-	if not slot1 and not slot0.exitFlag then
+function var_0_0.Finish(arg_15_0, arg_15_1)
+	if not arg_15_1 and not arg_15_0.exitFlag then
 		return
 	end
 
-	slot0.dragTrigger.enabled = false
-	slot0.zoomDelegate.enabled = false
+	arg_15_0.dragTrigger.enabled = false
+	arg_15_0.zoomDelegate.enabled = false
 
-	_.each(slot0.hideObjList, function (slot0)
-		setActive(slot0, true)
+	_.each(arg_15_0.hideObjList, function(arg_16_0)
+		setActive(arg_16_0, true)
 	end)
 
-	if not slot0.isBanRotate then
-		closePortrait(slot0.prefab)
+	if not arg_15_0.isBanRotate then
+		closePortrait(arg_15_0.prefab)
 	end
 
-	slot0:EnableObjects(true)
+	arg_15_0:EnableObjects(true)
 
-	slot0.painting.localScale = Vector3(1, 1, 1)
+	arg_15_0.painting.localScale = Vector3(1, 1, 1)
 
-	setAnchoredPosition(slot0.painting, {
-		x = slot0.recorder.srcPosX,
-		y = slot0.recorder.srcPosY
+	setAnchoredPosition(arg_15_0.painting, {
+		x = arg_15_0.recorder.srcPosX,
+		y = arg_15_0.recorder.srcPosY
 	})
 
-	slot0.bgBtn.enabled = false
-	slot0.cg.blocksRaycasts = true
-	slot0.isPreview = false
-	slot0.exitFlag = false
-	slot0.recorder = {}
+	arg_15_0.bgBtn.enabled = false
+	arg_15_0.cg.blocksRaycasts = true
+	arg_15_0.isPreview = false
+	arg_15_0.exitFlag = false
+	arg_15_0.recorder = {}
 end
 
-function slot0.Dispose(slot0)
-	if slot0.isPreview then
-		slot0:Finish(true)
+function var_0_0.Dispose(arg_17_0)
+	if arg_17_0.isPreview then
+		arg_17_0:Finish(true)
 	end
 
-	if slot0.dragTrigger then
-		ClearEventTrigger(slot0.dragTrigger)
+	if arg_17_0.dragTrigger then
+		ClearEventTrigger(arg_17_0.dragTrigger)
 
-		slot0.dragTrigger = nil
+		arg_17_0.dragTrigger = nil
 	end
 
-	slot0.exitFlag = nil
-	slot0.recorder = nil
-	slot0.isPreview = nil
+	arg_17_0.exitFlag = nil
+	arg_17_0.recorder = nil
+	arg_17_0.isPreview = nil
 
-	pg.DelegateInfo.Dispose(slot0)
+	pg.DelegateInfo.Dispose(arg_17_0)
 end
 
-return slot0
+return var_0_0

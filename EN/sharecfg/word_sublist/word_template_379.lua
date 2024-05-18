@@ -1,15 +1,18 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_379 = {}
-slot1 = slot0.word_template_379
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_379 = {}
+
+local var_0_1 = var_0_0.word_template_379
 
 function temp()
-	uv0.o = {
+	var_0_1.o = {
 		k = {
-			["娱"] = {
-				["乐"] = {
-					["平"] = {
-						["台"] = {
+			娱 = {
+				乐 = {
+					平 = {
+						台 = {
 							this = true
 						}
 					}
@@ -22,10 +25,10 @@ end
 temp()
 
 function temp()
-	uv0["菩"] = {
-		["提"] = {
-			["娱"] = {
-				["乐"] = {
+	var_0_1.菩 = {
+		提 = {
+			娱 = {
+				乐 = {
 					this = true
 				}
 			}
@@ -36,8 +39,8 @@ end
 temp()
 
 function temp()
-	uv0["睹"] = {
-		["场"] = {
+	var_0_1.睹 = {
+		场 = {
 			this = true
 		}
 	}
@@ -46,10 +49,10 @@ end
 temp()
 
 function temp()
-	uv0["盈"] = {
-		["利"] = {
-			["国"] = {
-				["际"] = {
+	var_0_1.盈 = {
+		利 = {
+			国 = {
+				际 = {
 					this = true
 				}
 			}
@@ -60,10 +63,10 @@ end
 temp()
 
 function temp()
-	uv0["荣"] = {
-		["兴"] = {
-			["娱"] = {
-				["乐"] = {
+	var_0_1.荣 = {
+		兴 = {
+			娱 = {
+				乐 = {
 					this = true
 				}
 			}
@@ -74,11 +77,11 @@ end
 temp()
 
 function temp()
-	uv0["抖"] = {
-		["阴"] = {
-			["小"] = {
-				["视"] = {
-					["频"] = {
+	var_0_1.抖 = {
+		阴 = {
+			小 = {
+				视 = {
+					频 = {
 						this = true
 					}
 				}
@@ -90,9 +93,9 @@ end
 temp()
 
 function temp()
-	uv0["芭"] = {
-		["乐"] = {
-			["草"] = {
+	var_0_1.芭 = {
+		乐 = {
+			草 = {
 				this = true
 			}
 		}

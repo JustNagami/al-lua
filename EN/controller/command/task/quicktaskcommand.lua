@@ -1,128 +1,146 @@
-slot0 = class("QuickTaskCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("QuickTaskCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getType()
-	slot4 = nil
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = arg_1_1:getType()
+	local var_1_2
+	local var_1_3 = var_1_0
+	local var_1_4 = getProxy(TaskProxy)
+	local var_1_5 = var_1_4:getTaskById(var_1_3)
 
-	if not getProxy(TaskProxy):getTaskById(slot1:getBody()) then
-		pg.TipsMgr.GetInstance():ShowTips(i18n("task_is_not_existence", slot5))
+	if not var_1_5 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("task_is_not_existence", var_1_3))
 
-		if slot3 then
-			slot3(false)
+		if var_1_1 then
+			var_1_1(false)
 		end
 
 		return
 	end
 
-	if getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID) < slot7:getConfig("quick_finish") then
+	if var_1_5:getConfig("quick_finish") > getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID) then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
-		if slot3 then
-			slot3(false)
+		if var_1_1 then
+			var_1_1(false)
 		end
 
 		return
 	end
 
-	if slot6:isSubmitting(slot5) then
+	if var_1_4:isSubmitting(var_1_3) then
 		return
 	else
-		slot6:addSubmittingTask(slot5)
+		var_1_4:addSubmittingTask(var_1_3)
 	end
 
-	slot8 = {}
+	local var_1_6 = {}
 
-	if slot7:IsOverflowShipExpItem() then
-		table.insert(slot8, function (slot0)
+	if var_1_5:IsOverflowShipExpItem() then
+		table.insert(var_1_6, function(arg_2_0)
 			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				content = i18n("player_expResource_mail_fullBag"),
-				onYes = slot0,
-				onNo = function ()
-					uv0:removeSubmittingTask(uv1)
+				onYes = arg_2_0,
+				onNo = function()
+					var_1_4:removeSubmittingTask(var_1_3)
 
-					if uv2 then
-						uv2(false)
+					if var_1_1 then
+						var_1_1(false)
 					end
 				end
 			})
 		end)
 	end
 
-	seriesAsync(slot8, function ()
+	seriesAsync(var_1_6, function()
 		pg.ConnectionMgr.GetInstance():Send(20013, {
-			id = uv0.id,
-			item_cost = uv0:getConfig("quick_finish")
-		}, 20014, function (slot0)
-			uv0:removeSubmittingTask(uv1)
+			id = var_1_5.id,
+			item_cost = var_1_5:getConfig("quick_finish")
+		}, 20014, function(arg_5_0)
+			var_1_4:removeSubmittingTask(var_1_3)
 
-			if slot0.result == 0 then
-				getProxy(BagProxy):removeItemById(tonumber(Item.QUICK_TASK_PASS_TICKET_ID), tonumber(uv2:getConfig("quick_finish")))
-				uv3.AddGuildLivness(uv2)
+			if arg_5_0.result == 0 then
+				local var_5_0 = Item.QUICK_TASK_PASS_TICKET_ID
+				local var_5_1 = var_1_5:getConfig("quick_finish")
 
-				slot4 = PlayerConst.addTranDrop(slot0.award_list, {
-					taskId = uv2.id
+				getProxy(BagProxy):removeItemById(tonumber(var_5_0), tonumber(var_5_1))
+				var_0_0.AddGuildLivness(var_1_5)
+
+				local var_5_2 = PlayerConst.addTranDrop(arg_5_0.award_list, {
+					taskId = var_1_5.id
 				})
 
-				if uv2:getConfig("type") ~= 8 then
-					uv0:removeTask(uv2)
+				if var_1_5:getConfig("type") ~= 8 then
+					var_1_4:removeTask(var_1_5)
 				else
-					uv2.submitTime = 1
+					var_1_5.submitTime = 1
 
-					uv0:updateTask(uv2)
+					var_1_4:updateTask(var_1_5)
 				end
 
 				pg.TipsMgr.GetInstance():ShowTips(i18n("battlepass_task_quickfinish3"))
-				uv4:sendNotification(GAME.SUBMIT_TASK_DONE, slot4, {
-					uv2.id
+				arg_1_0:sendNotification(GAME.SUBMIT_TASK_DONE, var_5_2, {
+					var_1_5.id
 				})
 
-				if getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR) and not slot6:isEnd() and table.contains(slot6:getConfig("config_data")[1] or {}, uv2.id) then
-					slot5:monitorTaskList(slot6)
+				local var_5_3 = getProxy(ActivityProxy)
+				local var_5_4 = var_5_3:getActivityByType(ActivityConst.ACTIVITY_TYPE_TASK_LIST_MONITOR)
+
+				if var_5_4 and not var_5_4:isEnd() then
+					local var_5_5 = var_5_4:getConfig("config_data")[1] or {}
+
+					if table.contains(var_5_5, var_1_5.id) then
+						var_5_3:monitorTaskList(var_5_4)
+					end
 				end
 
-				if uv5 then
-					uv5(true)
+				if var_1_1 then
+					var_1_1(true)
 				end
 			else
-				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", slot0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("task_submitTask", arg_5_0.result))
 
-				if uv5 then
-					uv5(false)
+				if var_1_1 then
+					var_1_1(false)
 				end
 			end
 		end)
 	end)
 end
 
-function slot0.AddGuildLivness(slot0)
-	if slot0:IsGuildAddLivnessType() then
-		slot3 = 0
-		slot4 = false
+function var_0_0.AddGuildLivness(arg_6_0)
+	if arg_6_0:IsGuildAddLivnessType() then
+		local var_6_0 = getProxy(GuildProxy)
+		local var_6_1 = var_6_0:getData()
+		local var_6_2 = 0
+		local var_6_3 = false
 
-		if getProxy(GuildProxy):getData() and slot0:isGuildTask() then
-			slot2:setWeeklyTaskFlag(1)
+		if var_6_1 and arg_6_0:isGuildTask() then
+			var_6_1:setWeeklyTaskFlag(1)
 
-			if slot2:getWeeklyTask() then
-				slot3 = slot5:GetLivenessAddition()
+			local var_6_4 = var_6_1:getWeeklyTask()
+
+			if var_6_4 then
+				var_6_2 = var_6_4:GetLivenessAddition()
 			end
 
-			slot4 = true
-		elseif slot0:IsRoutineType() then
-			slot3 = pg.guildset.new_daily_task_guild_active.key_value
-		elseif slot0:IsWeeklyType() then
-			slot3 = pg.guildset.new_weekly_task_guild_active.key_value
+			var_6_3 = true
+		elseif arg_6_0:IsRoutineType() then
+			var_6_2 = pg.guildset.new_daily_task_guild_active.key_value
+		elseif arg_6_0:IsWeeklyType() then
+			var_6_2 = pg.guildset.new_weekly_task_guild_active.key_value
 		end
 
-		if slot2 and slot3 and slot3 > 0 then
-			slot2:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(slot3)
+		if var_6_1 and var_6_2 and var_6_2 > 0 then
+			var_6_1:getMemberById(getProxy(PlayerProxy):getRawData().id):AddLiveness(var_6_2)
 
-			slot4 = true
+			var_6_3 = true
 		end
 
-		if slot4 then
-			slot1:updateGuild(slot2)
+		if var_6_3 then
+			var_6_0:updateGuild(var_6_1)
 		end
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,24 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	init_effect = "",
-	name = "",
-	time = 6,
-	color = "blue",
-	picture = "",
-	desc = "正面护盾挡10",
-	stack = 1,
-	id = 16572,
-	icon = 16570,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			id = 1,
@@ -45,13 +25,33 @@ return {
 						}
 					}
 				},
-				centerPosFun = function (slot0)
+				centerPosFun = function(arg_1_0)
 					return Vector3(3, -1.8, 0.5)
 				end,
-				rotationFun = function (slot0)
+				rotationFun = function(arg_2_0)
 					return Vector3(0, 192, 0)
 				end
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	init_effect = "",
+	name = "",
+	time = 6,
+	color = "blue",
+	picture = "",
+	desc = "正面护盾挡10",
+	stack = 1,
+	id = 16572,
+	icon = 16570,
+	last_effect = ""
 }

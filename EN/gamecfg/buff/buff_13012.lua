@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "恰巴耶夫2",
-	init_effect = "jinengchufared",
-	picture = "",
-	desc = "主炮飞行速度提高15%",
-	stack = 1,
-	id = 13012,
-	icon = 13010,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -39,5 +20,24 @@ return {
 				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "恰巴耶夫2",
+	init_effect = "jinengchufared",
+	picture = "",
+	desc = "主炮飞行速度提高15%",
+	stack = 1,
+	id = 13012,
+	icon = 13010,
+	last_effect = ""
 }

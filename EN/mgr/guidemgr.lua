@@ -1,91 +1,96 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.GuideMgr = singletonClass("GuideMgr")
-slot0 = pg.GuideMgr
-slot0.ENABLE_GUIDE = true
-slot0.MANAGER_STATE = {
+
+local var_0_0 = pg.GuideMgr
+
+var_0_0.ENABLE_GUIDE = true
+var_0_0.MANAGER_STATE = {
 	IDLE = 1,
 	BUSY = 2,
 	LOADING = 0,
 	BREAK = 4,
 	STOP = 3
 }
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = 4
-slot5 = 5
-slot6 = {
+
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+local var_0_5 = 5
+local var_0_6 = {
 	MODE1 = 1,
 	MODE2 = 2
 }
 
-function slot0.Init(slot0, slot1)
+function var_0_0.Init(arg_1_0, arg_1_1)
 	print("initializing guide manager...")
 
-	slot0.managerState = uv0.MANAGER_STATE.LOADING
-	slot0.sceneStore = {}
-	slot0.uisetGos = {}
+	arg_1_0.managerState = var_0_0.MANAGER_STATE.LOADING
+	arg_1_0.sceneStore = {}
+	arg_1_0.uisetGos = {}
 
-	PoolMgr.GetInstance():GetUI("GuideUI", true, function (slot0)
-		uv0._go = slot0
-		uv0._tf = uv0._go.transform
+	PoolMgr.GetInstance():GetUI("GuideUI", true, function(arg_2_0)
+		arg_1_0._go = arg_2_0
+		arg_1_0._tf = arg_1_0._go.transform
 
-		uv0._go:SetActive(false)
+		arg_1_0._go:SetActive(false)
 
-		uv0.UIOverlay = tf(GameObject.Find("Overlay/UIOverlay"))
+		arg_1_0.UIOverlay = tf(GameObject.Find("Overlay/UIOverlay"))
 
-		uv0._go.transform:SetParent(uv0.UIOverlay, false)
+		arg_1_0._go.transform:SetParent(arg_1_0.UIOverlay, false)
 
-		uv0.guiderTF = findTF(uv0._go, "Guider")
-		uv0.styleTF1 = findTF(uv0.guiderTF, "mode1")
-		uv0.styleTF2 = findTF(uv0.guiderTF, "mode2")
-		uv0.initChatBgH = uv0.styleTF2.sizeDelta.y
+		arg_1_0.guiderTF = findTF(arg_1_0._go, "Guider")
+		arg_1_0.styleTF1 = findTF(arg_1_0.guiderTF, "mode1")
+		arg_1_0.styleTF2 = findTF(arg_1_0.guiderTF, "mode2")
+		arg_1_0.initChatBgH = arg_1_0.styleTF2.sizeDelta.y
 
-		SetActive(uv0.guiderTF, false)
+		SetActive(arg_1_0.guiderTF, false)
 
-		uv0._bg = findTF(uv0._go, "BG")
-		uv0.bgAlpha = uv0._bg:GetComponent(typeof(CanvasGroup))
-		uv0.bgAlpha.alpha = 0.2
-		uv0._closeBtn = uv0._bg:Find("close_btn")
-		uv0.uiLongPress = GetOrAddComponent(uv0._closeBtn, typeof(UILongPressTrigger))
-		uv0.uiLongPress.longPressThreshold = 10
-		uv0.fingerTF = findTF(uv0._go, "finger")
+		arg_1_0._bg = findTF(arg_1_0._go, "BG")
+		arg_1_0.bgAlpha = arg_1_0._bg:GetComponent(typeof(CanvasGroup))
+		arg_1_0.bgAlpha.alpha = 0.2
+		arg_1_0._closeBtn = arg_1_0._bg:Find("close_btn")
+		arg_1_0.uiLongPress = GetOrAddComponent(arg_1_0._closeBtn, typeof(UILongPressTrigger))
+		arg_1_0.uiLongPress.longPressThreshold = 10
+		arg_1_0.fingerTF = findTF(arg_1_0._go, "finger")
 
-		SetActive(uv0.fingerTF, false)
+		SetActive(arg_1_0.fingerTF, false)
 
-		uv0._signRes = findTF(uv0._go, "signRes")
-		uv0.signPool = {}
-		uv0.curSignList = {}
-		uv0.fingerSprites = {}
+		arg_1_0._signRes = findTF(arg_1_0._go, "signRes")
+		arg_1_0.signPool = {}
+		arg_1_0.curSignList = {}
+		arg_1_0.fingerSprites = {}
 
-		eachChild(findTF(uv0._go, "resources"), function (slot0)
-			table.insert(uv0.fingerSprites, slot0:GetComponent(typeof(Image)).sprite)
+		eachChild(findTF(arg_1_0._go, "resources"), function(arg_3_0)
+			local var_3_0 = arg_3_0:GetComponent(typeof(Image)).sprite
+
+			table.insert(arg_1_0.fingerSprites, var_3_0)
 		end)
 
-		uv0.sceneFunc = nil
-		uv0.inited = true
-		uv0.finder = uv0:Finder()
-		uv0.managerState = uv1.MANAGER_STATE.IDLE
-		uv0.chars = {
-			uv0.styleTF1:Find("char"):GetComponent(typeof(Image)).sprite,
+		arg_1_0.sceneFunc = nil
+		arg_1_0.inited = true
+		arg_1_0.finder = arg_1_0:Finder()
+		arg_1_0.managerState = var_0_0.MANAGER_STATE.IDLE
+		arg_1_0.chars = {
+			arg_1_0.styleTF1:Find("char"):GetComponent(typeof(Image)).sprite,
 			GetSpriteFromAtlas("ui/guide_atlas", "guide1"),
 			GetSpriteFromAtlas("ui/share/guider_atlas", "amazon")
 		}
-		uv0.material = uv0._tf:Find("resources/material"):GetComponent(typeof(Image)).material
+		arg_1_0.material = arg_1_0._tf:Find("resources/material"):GetComponent(typeof(Image)).material
 
-		uv2()
+		arg_1_1()
 	end)
 end
 
-function slot0.isRuning(slot0)
-	return slot0.managerState == uv0.MANAGER_STATE.BUSY
+function var_0_0.isRuning(arg_4_0)
+	return arg_4_0.managerState == var_0_0.MANAGER_STATE.BUSY
 end
 
-function slot0.transformPos(slot0, slot1)
-	return tf(slot0._go):InverseTransformPoint(slot1)
+function var_0_0.transformPos(arg_5_0, arg_5_1)
+	return tf(arg_5_0._go):InverseTransformPoint(arg_5_1)
 end
 
-function slot0.canPlay(slot0)
+function var_0_0.canPlay(arg_6_0)
 	if pg.MsgboxMgr.GetInstance()._go.activeSelf then
 		return false, 1
 	end
@@ -94,894 +99,1022 @@ function slot0.canPlay(slot0)
 		return false, 2
 	end
 
-	if slot0.managerState == uv0.MANAGER_STATE.BUSY then
+	if arg_6_0.managerState == var_0_0.MANAGER_STATE.BUSY then
 		return false, 3
 	end
 
 	return true
 end
 
-function slot0.onSceneAnimDone(slot0, slot1)
-	if not slot0.inited then
+function var_0_0.onSceneAnimDone(arg_7_0, arg_7_1)
+	if not arg_7_0.inited then
 		return
 	end
 
-	if not table.contains(slot0.sceneStore, slot1.view) then
-		table.insert(slot0.sceneStore, slot1.view)
+	if not table.contains(arg_7_0.sceneStore, arg_7_1.view) then
+		table.insert(arg_7_0.sceneStore, arg_7_1.view)
 	end
 
-	if slot0.sceneFunc then
-		slot0.sceneFunc(slot1.view)
+	if arg_7_0.sceneFunc then
+		arg_7_0.sceneFunc(arg_7_1.view)
 	end
 end
 
-function slot0.onSceneExit(slot0, slot1)
-	if not slot0.inited then
+function var_0_0.onSceneExit(arg_8_0, arg_8_1)
+	if not arg_8_0.inited then
 		return
 	end
 
-	if table.contains(slot0.sceneStore, slot1.view) then
-		table.removebyvalue(slot0.sceneStore, slot1.view)
+	if table.contains(arg_8_0.sceneStore, arg_8_1.view) then
+		table.removebyvalue(arg_8_0.sceneStore, arg_8_1.view)
 	end
 end
 
-function slot0.checkModuleOpen(slot0, slot1)
-	return table.contains(slot0.sceneStore, slot1)
+function var_0_0.checkModuleOpen(arg_9_0, arg_9_1)
+	return table.contains(arg_9_0.sceneStore, arg_9_1)
 end
 
-function slot0.isPlayed(slot0, slot1)
-	return pg.NewStoryMgr.GetInstance():IsPlayed(slot1)
+function var_0_0.isPlayed(arg_10_0, arg_10_1)
+	return pg.NewStoryMgr.GetInstance():IsPlayed(arg_10_1)
 end
 
-function slot0.play(slot0, slot1, slot2, slot3, slot4)
-	if not uv0.ENABLE_GUIDE then
+function var_0_0.play(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4)
+	if not var_0_0.ENABLE_GUIDE then
 		return
 	end
 
-	slot5, slot6 = slot0:canPlay()
+	local var_11_0, var_11_1 = arg_11_0:canPlay()
 
-	originalPrint("play guide >>", slot1, slot5)
+	originalPrint("play guide >>", arg_11_1, var_11_0)
 
-	slot0.erroCallback = slot4
+	arg_11_0.erroCallback = arg_11_4
 
-	if slot5 then
-		slot0.currentGuide = require("GameCfg.guide.newguide.segments." .. slot1)
+	if var_11_0 then
+		arg_11_0.currentGuide = require("GameCfg.guide.newguide.segments." .. arg_11_1)
 
-		slot0:addDelegateInfo()
+		arg_11_0:addDelegateInfo()
 
-		if slot2 then
-			slot0.curEvents = _.select(Clone(slot0.currentGuide.events), function (slot0)
-				if not slot0.code then
+		local var_11_2 = Clone(arg_11_0.currentGuide.events)
+
+		if arg_11_2 then
+			arg_11_0.curEvents = _.select(var_11_2, function(arg_12_0)
+				if not arg_12_0.code then
 					return true
-				elseif type(slot0.code) == "table" then
-					return _.any(uv0, function (slot0)
-						return table.contains(uv0.code, slot0)
+				elseif type(arg_12_0.code) == "table" then
+					return _.any(arg_11_2, function(arg_13_0)
+						return table.contains(arg_12_0.code, arg_13_0)
 					end)
 				else
-					return table.contains(uv0, slot0.code)
+					return table.contains(arg_11_2, arg_12_0.code)
 				end
 			end)
 		else
-			slot0.curEvents = slot7
+			arg_11_0.curEvents = var_11_2
 		end
 
-		slot0:prepareGuider(slot3)
+		arg_11_0:prepareGuider(arg_11_3)
 
-		slot8 = {}
+		local var_11_3 = {}
 
-		for slot12, slot13 in ipairs(slot0.curEvents or {}) do
-			table.insert(slot8, function (slot0)
-				uv0:doCurrEvent(uv2, function ()
-					if uv0.managerState ~= uv1.MANAGER_STATE.IDLE then
-						uv0.scenes = {}
+		for iter_11_0, iter_11_1 in ipairs(arg_11_0.curEvents or {}) do
+			table.insert(var_11_3, function(arg_14_0)
+				local function var_14_0()
+					if arg_11_0.managerState ~= var_0_0.MANAGER_STATE.IDLE then
+						arg_11_0.scenes = {}
 
-						uv2()
+						arg_14_0()
 					else
-						uv0.erroCallback()
+						arg_11_0.erroCallback()
 
-						uv0.erroCallback = nil
+						arg_11_0.erroCallback = nil
 					end
-				end)
+				end
+
+				arg_11_0:doCurrEvent(iter_11_1, var_14_0)
 			end)
 		end
 
-		slot0.managerState = uv0.MANAGER_STATE.BUSY
+		arg_11_0.managerState = var_0_0.MANAGER_STATE.BUSY
 
-		seriesAsync(slot8, function ()
-			uv0:endGuider(uv1)
+		seriesAsync(var_11_3, function()
+			arg_11_0:endGuider(arg_11_3)
 		end)
-	elseif slot3 then
-		slot3()
+	elseif arg_11_3 then
+		arg_11_3()
 	end
 end
 
-function slot0.prepareGuider(slot0, slot1)
+function var_0_0.prepareGuider(arg_17_0, arg_17_1)
 	pg.m02:sendNotification(GAME.START_GUIDE)
-	slot0._go.transform:SetAsLastSibling()
-	slot0._go:SetActive(true)
-	SetActive(slot0.fingerTF, false)
+	arg_17_0._go.transform:SetAsLastSibling()
+	arg_17_0._go:SetActive(true)
+	SetActive(arg_17_0.fingerTF, false)
 
-	slot0.bgAlpha.alpha = 0.2
+	arg_17_0.bgAlpha.alpha = 0.2
 
-	slot0.uiLongPress.onLongPressed:AddListener(function ()
-		uv0:endGuider(uv1)
+	arg_17_0.uiLongPress.onLongPressed:AddListener(function()
+		arg_17_0:endGuider(arg_17_1)
 	end)
 end
 
-function slot0.doCurrEvent(slot0, slot1, slot2)
-	function slot3(slot0)
-		if uv0.waitScene and uv0.waitScene ~= "" and not table.contains(uv1.scenes, uv0.waitScene) then
-			function uv1.sceneFunc(slot0)
-				if uv0.waitScene == slot0 or table.contains(uv1.sceneStore, uv0.waitScene) then
-					uv1.sceneFunc = nil
+function var_0_0.doCurrEvent(arg_19_0, arg_19_1, arg_19_2)
+	local function var_19_0(arg_20_0)
+		if arg_19_1.waitScene and arg_19_1.waitScene ~= "" and not table.contains(arg_19_0.scenes, arg_19_1.waitScene) then
+			function arg_19_0.sceneFunc(arg_21_0)
+				if arg_19_1.waitScene == arg_21_0 or table.contains(arg_19_0.sceneStore, arg_19_1.waitScene) then
+					arg_19_0.sceneFunc = nil
 
-					uv2()
+					arg_20_0()
 				end
 			end
 
-			uv1.sceneFunc()
+			arg_19_0.sceneFunc()
 		else
-			slot0()
+			arg_20_0()
 		end
 	end
 
-	function slot4()
-		if uv0.hideui then
-			uv1:hideUI(uv0, uv2)
-		elseif uv0.stories then
-			uv1:playStories(uv0, uv2)
-		elseif uv0.notifies then
-			uv1:sendNotifies(uv0, uv2)
-		elseif uv0.showSign then
-			uv1:showSign(uv0, uv2)
-		elseif uv0.doFunc then
-			uv0.doFunc()
-			uv2()
-		elseif uv0.doNothing then
-			uv2()
+	local function var_19_1()
+		if arg_19_1.hideui then
+			arg_19_0:hideUI(arg_19_1, arg_19_2)
+		elseif arg_19_1.stories then
+			arg_19_0:playStories(arg_19_1, arg_19_2)
+		elseif arg_19_1.notifies then
+			arg_19_0:sendNotifies(arg_19_1, arg_19_2)
+		elseif arg_19_1.showSign then
+			arg_19_0:showSign(arg_19_1, arg_19_2)
+		elseif arg_19_1.doFunc then
+			arg_19_1.doFunc()
+			arg_19_2()
+		elseif arg_19_1.doNothing then
+			arg_19_2()
 		else
-			uv1:findUI(uv0, uv2)
+			arg_19_0:findUI(arg_19_1, arg_19_2)
 		end
 	end
 
-	if slot1.delay ~= nil then
-		slot0.delayTimer = Timer.New(function ()
-			uv0(uv1)
-		end, slot1.delay, 1)
+	if arg_19_1.delay ~= nil then
+		arg_19_0.delayTimer = Timer.New(function()
+			var_19_0(var_19_1)
+		end, arg_19_1.delay, 1)
 
-		slot0.delayTimer:Start()
+		arg_19_0.delayTimer:Start()
 	else
-		slot3(slot4)
+		var_19_0(var_19_1)
 	end
 end
 
-function slot0.showSign(slot0, slot1, slot2)
-	slot3 = slot1.showSign
+function var_0_0.showSign(arg_24_0, arg_24_1, arg_24_2)
+	local var_24_0 = arg_24_1.showSign
 
-	function ()
-		slot0 = uv0.type
-		slot1 = uv0.duration
-		slot2 = uv0.simultaneously
-		slot3 = uv0.clickUI
-		slot4 = uv0.clickArea
-		slot5 = uv0.longPress
-		slot7 = {}
+	;(function()
+		local var_25_0 = var_24_0.type
+		local var_25_1 = var_24_0.duration
+		local var_25_2 = var_24_0.simultaneously
+		local var_25_3 = var_24_0.clickUI
+		local var_25_4 = var_24_0.clickArea
+		local var_25_5 = var_24_0.longPress
+		local var_25_6 = var_24_0.signList
+		local var_25_7 = {}
 
-		for slot11, slot12 in ipairs(uv0.signList) do
-			slot13 = slot12.signType
-			uv1.curSignList[#uv1.curSignList + 1] = {
-				signType = slot13,
-				sign = uv1:getSign(slot13, slot12)
+		for iter_25_0, iter_25_1 in ipairs(var_25_6) do
+			local var_25_8 = iter_25_1.signType
+			local var_25_9 = iter_25_1.pos
+			local var_25_10 = iter_25_1.cachedIndex
+			local var_25_11 = arg_24_0:getSign(var_25_8, iter_25_1)
+			local var_25_12 = #arg_24_0.curSignList + 1
+
+			arg_24_0.curSignList[var_25_12] = {
+				signType = var_25_8,
+				sign = var_25_11
 			}
 
-			if type(slot12.pos) == "string" then
-				if slot14 == "useCachePos" then
-					slot14 = WorldGuider.GetInstance():GetTempGridPos(slot12.cachedIndex)
+			if type(var_25_9) == "string" then
+				if var_25_9 == "useCachePos" then
+					var_25_9 = WorldGuider.GetInstance():GetTempGridPos(var_25_10)
 				end
-			elseif type(slot14) == "table" then
-				slot14 = Vector3.New(slot14[1], slot14[2], slot14[3])
+			elseif type(var_25_9) == "table" then
+				var_25_9 = Vector3.New(var_25_9[1], var_25_9[2], var_25_9[3])
 			end
 
-			if slot14 then
-				setLocalPosition(slot16, slot14)
+			if var_25_9 then
+				setLocalPosition(var_25_11, var_25_9)
 			end
 
-			slot7[#slot7 + 1] = slot17
+			var_25_7[#var_25_7 + 1] = var_25_12
 		end
 
 		function recycle_handler()
-			for slot3, slot4 in ipairs(uv0) do
-				slot5 = uv1.curSignList[slot4]
+			for iter_26_0, iter_26_1 in ipairs(var_25_7) do
+				local var_26_0 = arg_24_0.curSignList[iter_26_1]
 
-				uv1:recycleSign(slot5.signType, slot5.sign)
+				arg_24_0:recycleSign(var_26_0.signType, var_26_0.sign)
 
-				uv1.curSignList[slot4] = nil
+				arg_24_0.curSignList[iter_26_1] = nil
 			end
 
-			if not uv2 then
-				uv1:finishCurrEvent(uv3, uv4)
+			if not var_25_2 then
+				arg_24_0:finishCurrEvent(arg_24_1, arg_24_2)
 			end
 		end
 
-		slot9 = uv1.curSignList[slot7[1]].sign
+		local var_25_13 = var_25_7[1]
+		local var_25_14 = arg_24_0.curSignList[var_25_13].sign
 
-		if slot0 == 2 then
-			uv1:updateUIStyle(uv2, false, nil)
+		if var_25_0 == 2 then
+			arg_24_0:updateUIStyle(arg_24_1, false, nil)
 
-			slot10 = findTF(slot9, "btn")
+			local var_25_15 = findTF(var_25_14, "btn")
 
-			if slot3 then
-				setActive(slot9, false)
-				uv1.finder:Search({
-					path = slot3.path,
-					delay = slot3.delay,
-					pathIndex = slot3.pathIndex,
-					conditionData = slot3.conditionData,
-					found = function (slot0)
-						uv0.cloneTarget = uv0:cloneGO(go(slot0), uv0._tf, uv1)
+			if var_25_3 then
+				setActive(var_25_14, false)
+				arg_24_0.finder:Search({
+					path = var_25_3.path,
+					delay = var_25_3.delay,
+					pathIndex = var_25_3.pathIndex,
+					conditionData = var_25_3.conditionData,
+					found = function(arg_27_0)
+						arg_24_0.cloneTarget = arg_24_0:cloneGO(go(arg_27_0), arg_24_0._tf, var_25_3)
 
-						setActive(uv0.cloneTarget, false)
+						setActive(arg_24_0.cloneTarget, false)
 
-						uv2.localPosition = uv0.cloneTarget.localPosition - Vector3(uv0.cloneTarget.sizeDelta.x * (uv0.cloneTarget.pivot.x - 0.5), uv0.cloneTarget.sizeDelta.y * (uv0.cloneTarget.pivot.y - 0.5), 0)
+						local var_27_0 = Vector3(arg_24_0.cloneTarget.sizeDelta.x * (arg_24_0.cloneTarget.pivot.x - 0.5), arg_24_0.cloneTarget.sizeDelta.y * (arg_24_0.cloneTarget.pivot.y - 0.5), 0)
 
-						if uv1.sizeDeltaPlus then
-							uv3.sizeDelta = uv0.cloneTarget.sizeDelta + Vector2(uv1.sizeDeltaPlus[1], uv1.sizeDeltaPlus[2])
+						var_25_14.localPosition = arg_24_0.cloneTarget.localPosition - var_27_0
+
+						if var_25_3.sizeDeltaPlus then
+							local var_27_1 = Vector2(var_25_3.sizeDeltaPlus[1], var_25_3.sizeDeltaPlus[2])
+
+							var_25_15.sizeDelta = arg_24_0.cloneTarget.sizeDelta + var_27_1
 						else
-							uv3.sizeDelta = uv0.cloneTarget.sizeDelta
+							var_25_15.sizeDelta = arg_24_0.cloneTarget.sizeDelta
 						end
 
-						setActive(uv2, true)
+						setActive(var_25_14, true)
 					end,
-					notFound = function ()
-						uv0:endGuider(uv1)
+					notFound = function()
+						arg_24_0:endGuider(arg_24_2)
 					end
 				})
-			elseif slot4 then
-				slot10.sizeDelta = Vector2.New(slot4[1], slot4[2])
+			elseif var_25_4 then
+				var_25_15.sizeDelta = Vector2.New(var_25_4[1], var_25_4[2])
 			end
 
-			slot11 = GetOrAddComponent(slot10, typeof(UILongPressTrigger))
+			local var_25_16 = GetOrAddComponent(var_25_15, typeof(UILongPressTrigger))
 
-			slot11.onLongPressed:RemoveAllListeners()
-			slot11.onReleased:RemoveAllListeners()
+			var_25_16.onLongPressed:RemoveAllListeners()
+			var_25_16.onReleased:RemoveAllListeners()
 
-			if slot5 == 1 then
-				slot11.onLongPressed:AddListener(function ()
+			if var_25_5 == 1 then
+				var_25_16.onLongPressed:AddListener(function()
 					recycle_handler()
 				end)
 			else
-				slot11.onReleased:AddListener(function ()
+				var_25_16.onReleased:AddListener(function()
 					recycle_handler()
 				end)
 			end
+		elseif var_25_0 == 3 then
+			var_25_14.sizeDelta = Vector2.New(var_25_4[1], var_25_4[2])
 
-			return
-		end
-
-		if slot0 == 3 then
-			slot9.sizeDelta = Vector2.New(slot4[1], slot4[2])
-
-			uv1:updateUIStyle(uv2, true, uv3)
+			arg_24_0:updateUIStyle(arg_24_1, true, arg_24_2)
 		else
-			if slot2 then
-				uv1:finishCurrEvent(uv2, uv3)
+			if var_25_2 then
+				arg_24_0:finishCurrEvent(arg_24_1, arg_24_2)
 			end
 
-			if slot1 ~= nil then
-				uv1.curSignList[slot8].signTimer = Timer.New(function ()
+			if var_25_1 ~= nil then
+				arg_24_0.curSignList[var_25_13].signTimer = Timer.New(function()
 					recycle_handler()
-				end, slot1, 1)
+				end, var_25_1, 1)
 
-				uv1.curSignList[slot8].signTimer:Start()
+				arg_24_0.curSignList[var_25_13].signTimer:Start()
 			end
 		end
-	end()
+	end)()
 end
 
-function slot0.getSign(slot0, slot1, slot2)
-	slot3, slot4 = nil
-	slot5 = slot2.atlasName
-	slot6 = slot2.fileName
+function var_0_0.getSign(arg_32_0, arg_32_1, arg_32_2)
+	local var_32_0
+	local var_32_1
+	local var_32_2 = arg_32_2.atlasName
+	local var_32_3 = arg_32_2.fileName
 
-	if slot0.signPool[slot1] ~= nil and #slot0.signPool[slot1] > 0 then
-		slot3 = table.remove(slot0.signPool[slot1], #slot0.signPool[slot1])
+	if arg_32_0.signPool[arg_32_1] ~= nil and #arg_32_0.signPool[arg_32_1] > 0 then
+		var_32_0 = table.remove(arg_32_0.signPool[arg_32_1], #arg_32_0.signPool[arg_32_1])
 	else
-		if slot1 == 1 or slot1 == 6 then
-			slot4 = findTF(slot0._signRes, "wTask")
-		elseif slot1 == 2 then
-			slot4 = findTF(slot0._signRes, "wDanger")
-		elseif slot1 == 3 then
-			slot4 = findTF(slot0._signRes, "wForbidden")
-		elseif slot1 == 4 then
-			slot4 = findTF(slot0._signRes, "wClickArea")
-		elseif slot1 == 5 then
-			slot4 = findTF(slot0._signRes, "wShowArea")
+		if arg_32_1 == 1 or arg_32_1 == 6 then
+			var_32_1 = findTF(arg_32_0._signRes, "wTask")
+		elseif arg_32_1 == 2 then
+			var_32_1 = findTF(arg_32_0._signRes, "wDanger")
+		elseif arg_32_1 == 3 then
+			var_32_1 = findTF(arg_32_0._signRes, "wForbidden")
+		elseif arg_32_1 == 4 then
+			var_32_1 = findTF(arg_32_0._signRes, "wClickArea")
+		elseif arg_32_1 == 5 then
+			var_32_1 = findTF(arg_32_0._signRes, "wShowArea")
 		end
 
-		slot3 = tf(Instantiate(slot4))
+		var_32_0 = tf(Instantiate(var_32_1))
 	end
 
-	if slot1 == 6 then
-		setImageSprite(findTF(slot3, "shadow"), LoadSprite(slot5, slot6), true)
+	if arg_32_1 == 6 then
+		local var_32_4 = findTF(var_32_0, "shadow")
+		local var_32_5 = LoadSprite(var_32_2, var_32_3)
+
+		setImageSprite(var_32_4, var_32_5, true)
 	end
 
-	setActive(slot3, true)
-	setParent(slot3, slot0._go.transform)
+	setActive(var_32_0, true)
+	setParent(var_32_0, arg_32_0._go.transform)
 
-	slot3.eulerAngles = Vector3(0, 0, 0)
-	slot3.localScale = Vector3.one
+	var_32_0.eulerAngles = Vector3(0, 0, 0)
+	var_32_0.localScale = Vector3.one
 
-	return slot3
+	return var_32_0
 end
 
-function slot0.recycleSign(slot0, slot1, slot2)
-	if slot0.signPool[slot1] == nil then
-		slot0.signPool[slot1] = {}
+function var_0_0.recycleSign(arg_33_0, arg_33_1, arg_33_2)
+	if arg_33_0.signPool[arg_33_1] == nil then
+		arg_33_0.signPool[arg_33_1] = {}
 	end
 
-	if #slot0.signPool[slot1] > 3 or slot1 == 6 then
-		Destroy(slot2)
+	local var_33_0 = arg_33_0.signPool[arg_33_1]
+
+	if #var_33_0 > 3 or arg_33_1 == 6 then
+		Destroy(arg_33_2)
 	else
-		table.insert(slot3, slot2)
-		setParent(slot2, slot0._signRes)
-		setActive(slot2, false)
+		table.insert(var_33_0, arg_33_2)
+		setParent(arg_33_2, arg_33_0._signRes)
+		setActive(arg_33_2, false)
 	end
 end
 
-function slot0.destroyAllSign(slot0)
-	for slot4, slot5 in ipairs(slot0.curSignList) do
-		if slot5.signTimer ~= nil then
-			slot5.signTimer:Stop()
+function var_0_0.destroyAllSign(arg_34_0)
+	for iter_34_0, iter_34_1 in ipairs(arg_34_0.curSignList) do
+		if iter_34_1.signTimer ~= nil then
+			iter_34_1.signTimer:Stop()
 
-			slot5.signTimer = nil
+			iter_34_1.signTimer = nil
 		end
 
-		slot0:recycleSign(slot5.signType, slot5.sign)
+		arg_34_0:recycleSign(iter_34_1.signType, iter_34_1.sign)
 
-		slot0.curSignList[slot4] = nil
+		arg_34_0.curSignList[iter_34_0] = nil
 	end
 end
 
-function slot0.sendNotifies(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.sendNotifies(arg_35_0, arg_35_1, arg_35_2)
+	local var_35_0 = {}
 
-	for slot7, slot8 in ipairs(slot1.notifies) do
-		table.insert(slot3, function (slot0)
-			pg.m02:sendNotification(uv0.notify, uv0.body)
-			slot0()
+	for iter_35_0, iter_35_1 in ipairs(arg_35_1.notifies) do
+		table.insert(var_35_0, function(arg_36_0)
+			pg.m02:sendNotification(iter_35_1.notify, iter_35_1.body)
+			arg_36_0()
 		end)
 	end
 
-	seriesAsync(slot3, function ()
-		uv0:finishCurrEvent(uv1, uv2)
+	seriesAsync(var_35_0, function()
+		arg_35_0:finishCurrEvent(arg_35_1, arg_35_2)
 	end)
 end
 
-function slot0.playStories(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.playStories(arg_38_0, arg_38_1, arg_38_2)
+	local var_38_0 = {}
 
-	for slot7, slot8 in ipairs(slot1.stories) do
-		table.insert(slot3, function (slot0)
-			pg.NewStoryMgr.GetInstance():Play(uv0, slot0, true)
+	for iter_38_0, iter_38_1 in ipairs(arg_38_1.stories) do
+		table.insert(var_38_0, function(arg_39_0)
+			pg.NewStoryMgr.GetInstance():Play(iter_38_1, arg_39_0, true)
 		end)
 	end
 
-	seriesAsync(slot3, function ()
-		uv0:finishCurrEvent(uv1, uv2)
+	seriesAsync(var_38_0, function()
+		arg_38_0:finishCurrEvent(arg_38_1, arg_38_2)
 		pg.m02:sendNotification(GAME.START_GUIDE)
 	end)
 end
 
-function slot0.hideUI(slot0, slot1, slot2)
-	slot3 = {}
+function var_0_0.hideUI(arg_41_0, arg_41_1, arg_41_2)
+	local var_41_0 = {}
 
-	for slot7, slot8 in ipairs(slot1.hideui) do
-		table.insert(slot3, function (slot0)
-			uv0.finder:SearchTimely({
-				path = uv1.path,
-				delay = uv1.delay,
-				pathIndex = uv1.pathIndex,
-				found = function (slot0)
-					SetActive(slot0, not uv0.ishide)
-					uv1()
+	for iter_41_0, iter_41_1 in ipairs(arg_41_1.hideui) do
+		table.insert(var_41_0, function(arg_42_0)
+			arg_41_0.finder:SearchTimely({
+				path = iter_41_1.path,
+				delay = iter_41_1.delay,
+				pathIndex = iter_41_1.pathIndex,
+				found = function(arg_43_0)
+					SetActive(arg_43_0, not iter_41_1.ishide)
+					arg_42_0()
 				end,
-				notFound = function ()
-					uv0:endGuider(uv1)
+				notFound = function()
+					arg_41_0:endGuider(arg_41_2)
 				end
 			})
 		end)
 	end
 
-	parallelAsync(slot3, function ()
-		uv0:finishCurrEvent(uv1, uv2)
+	parallelAsync(var_41_0, function()
+		arg_41_0:finishCurrEvent(arg_41_1, arg_41_2)
 	end)
 end
 
-function slot0.findUI(slot0, slot1, slot2)
-	slot3 = true
-
-	seriesAsync({
-		function (slot0)
-			if not uv0.baseui then
-				slot0()
+function var_0_0.findUI(arg_46_0, arg_46_1, arg_46_2)
+	local var_46_0 = true
+	local var_46_1 = {
+		function(arg_47_0)
+			if not arg_46_1.baseui then
+				arg_47_0()
 
 				return
 			end
 
-			uv1.finder:Search({
-				path = uv0.baseui.path,
-				delay = uv0.baseui.delay,
-				pathIndex = uv0.baseui.pathIndex,
-				conditionData = uv0.baseui.conditionData,
-				found = slot0,
-				notFound = function ()
-					uv0:endGuider(uv1)
+			arg_46_0.finder:Search({
+				path = arg_46_1.baseui.path,
+				delay = arg_46_1.baseui.delay,
+				pathIndex = arg_46_1.baseui.pathIndex,
+				conditionData = arg_46_1.baseui.conditionData,
+				found = arg_47_0,
+				notFound = function()
+					arg_46_0:endGuider(arg_46_2)
 				end
 			})
 		end,
-		function (slot0)
-			if not uv0.spriteui then
-				slot0()
+		function(arg_49_0)
+			if not arg_46_1.spriteui then
+				arg_49_0()
 
 				return
 			end
 
-			uv1:CheckSprite(uv0.spriteui, slot0, uv2)
+			arg_46_0:CheckSprite(arg_46_1.spriteui, arg_49_0, arg_46_2)
 		end,
-		function (slot0)
-			if not uv0.ui then
-				slot0()
+		function(arg_50_0)
+			if not arg_46_1.ui then
+				arg_50_0()
 
 				return
 			end
 
-			uv1 = false
+			var_46_0 = false
 
-			uv2.finder:Search({
-				path = uv0.ui.path,
-				delay = uv0.ui.delay,
-				pathIndex = uv0.ui.pathIndex,
-				conditionData = uv0.ui.conditionData,
-				found = function (slot0)
+			arg_46_0.finder:Search({
+				path = arg_46_1.ui.path,
+				delay = arg_46_1.ui.delay,
+				pathIndex = arg_46_1.ui.pathIndex,
+				conditionData = arg_46_1.ui.conditionData,
+				found = function(arg_51_0)
 					Canvas.ForceUpdateCanvases()
 
-					uv0.cloneTarget = uv0:cloneGO(slot0.gameObject, uv0._go.transform, uv1.ui)
+					arg_46_0.cloneTarget = arg_46_0:cloneGO(arg_51_0.gameObject, arg_46_0._go.transform, arg_46_1.ui)
 
-					uv0:addUIEventTrigger(slot0, uv1, uv2)
-					uv0:setFinger(slot0, uv1.ui)
-					uv3()
+					arg_46_0:addUIEventTrigger(arg_51_0, arg_46_1, arg_46_2)
+					arg_46_0:setFinger(arg_51_0, arg_46_1.ui)
+					arg_50_0()
 				end,
-				notFound = function ()
-					if uv0.ui.notfoundSkip then
-						uv1:finishCurrEvent(uv0, uv2)
+				notFound = function()
+					if arg_46_1.ui.notfoundSkip then
+						arg_46_0:finishCurrEvent(arg_46_1, arg_46_2)
 					else
-						uv1:endGuider(uv2)
+						arg_46_0:endGuider(arg_46_2)
 					end
 				end
 			})
 		end
-	}, function ()
-		uv0:updateUIStyle(uv1, uv2, uv3)
+	}
+
+	seriesAsync(var_46_1, function()
+		arg_46_0:updateUIStyle(arg_46_1, var_46_0, arg_46_2)
 	end)
 end
 
-function slot0.CheckSprite(slot0, slot1, slot2, slot3)
-	slot4, slot5 = nil
-	slot6 = 0
-	slot7 = 10
+function var_0_0.CheckSprite(arg_54_0, arg_54_1, arg_54_2, arg_54_3)
+	local var_54_0
+	local var_54_1
+	local var_54_2 = 0
+	local var_54_3 = 10
 
-	function slot4()
-		uv0 = uv0 + 1
+	local function var_54_4()
+		var_54_2 = var_54_2 + 1
 
-		uv1:RemoveCheckSpriteTimer()
+		arg_54_0:RemoveCheckSpriteTimer()
 
-		if IsNil(uv2:GetComponent(typeof(Image)).sprite) or uv3.defaultName and slot0.sprite.name == uv3.defaultName then
-			if uv4 <= uv0 then
-				uv5()
+		local var_55_0 = var_54_1:GetComponent(typeof(Image))
+
+		if IsNil(var_55_0.sprite) or arg_54_1.defaultName and var_55_0.sprite.name == arg_54_1.defaultName then
+			if var_54_2 >= var_54_3 then
+				arg_54_2()
 
 				return
 			end
 
-			uv1.srpiteTimer = Timer.New(uv6, 0.5, 1)
+			arg_54_0.srpiteTimer = Timer.New(var_54_4, 0.5, 1)
 
-			uv1.srpiteTimer:Start()
+			arg_54_0.srpiteTimer:Start()
 		else
-			uv5()
+			arg_54_2()
 		end
 	end
 
-	slot0.finder:Search({
-		path = slot1.path,
-		delay = slot1.delay,
-		pathIndex = slot1.pathIndex,
-		conditionData = slot1.conditionData,
-		found = function (slot0)
-			if uv0.childPath then
-				uv1 = slot0:Find(uv0.childPath)
+	arg_54_0.finder:Search({
+		path = arg_54_1.path,
+		delay = arg_54_1.delay,
+		pathIndex = arg_54_1.pathIndex,
+		conditionData = arg_54_1.conditionData,
+		found = function(arg_56_0)
+			if arg_54_1.childPath then
+				var_54_1 = arg_56_0:Find(arg_54_1.childPath)
 			else
-				uv1 = slot0
+				var_54_1 = arg_56_0
 			end
 
-			uv2()
+			var_54_4()
 		end,
-		notFound = function ()
-			uv0:endGuider(uv1)
+		notFound = function()
+			arg_54_0:endGuider(arg_54_3)
 		end
 	})
 end
 
-function slot0.RemoveCheckSpriteTimer(slot0)
-	if slot0.srpiteTimer then
-		slot0.srpiteTimer:Stop()
+function var_0_0.RemoveCheckSpriteTimer(arg_58_0)
+	if arg_58_0.srpiteTimer then
+		arg_58_0.srpiteTimer:Stop()
 
-		slot0.srpiteTimer = nil
+		arg_58_0.srpiteTimer = nil
 	end
 end
 
-function slot0.SetHighLightLine(slot0, slot1)
-	slot2 = slot0._tf:InverseTransformPoint(slot1.position)
-	slot3 = cloneTplTo(findTF(slot0._signRes, "wShowArea"), slot0._tf)
-	slot4 = 15
-	slot3.sizeDelta = Vector2(slot1.sizeDelta.x + slot4, slot1.sizeDelta.y + slot4)
-	slot3.pivot = slot1.pivot
-	slot3.localPosition = Vector3(slot2.x, slot2.y, 0) + Vector3((slot1.pivot.x - 0.5) * slot4, (slot1.pivot.y - 0.5) * slot4, 0)
+function var_0_0.SetHighLightLine(arg_59_0, arg_59_1)
+	local var_59_0 = arg_59_0._tf:InverseTransformPoint(arg_59_1.position)
+	local var_59_1 = cloneTplTo(findTF(arg_59_0._signRes, "wShowArea"), arg_59_0._tf)
+	local var_59_2 = 15
 
-	return slot3
+	var_59_1.sizeDelta = Vector2(arg_59_1.sizeDelta.x + var_59_2, arg_59_1.sizeDelta.y + var_59_2)
+	var_59_1.pivot = arg_59_1.pivot
+
+	local var_59_3 = (arg_59_1.pivot.x - 0.5) * var_59_2
+	local var_59_4 = (arg_59_1.pivot.y - 0.5) * var_59_2
+	local var_59_5 = Vector3(var_59_3, var_59_4, 0)
+
+	var_59_1.localPosition = Vector3(var_59_0.x, var_59_0.y, 0) + var_59_5
+
+	return var_59_1
 end
 
-function slot0.updateUIStyle(slot0, slot1, slot2, slot3)
-	slot0.bgAlpha.alpha = slot1.alpha or 0.2
+function var_0_0.updateUIStyle(arg_60_0, arg_60_1, arg_60_2, arg_60_3)
+	arg_60_0.bgAlpha.alpha = arg_60_1.alpha or 0.2
 
-	SetActive(slot0.guiderTF, slot1.style)
+	SetActive(arg_60_0.guiderTF, arg_60_1.style)
 
-	slot0.highLightLines = {}
+	arg_60_0.highLightLines = {}
 
-	if slot1.style then
-		slot0:updateContent(slot1)
+	local function var_60_0(arg_61_0)
+		if arg_60_1.style.ui.lineMode then
+			local var_61_0 = arg_60_0:SetHighLightLine(arg_61_0)
 
-		if slot1.style.ui then
-			slot0.finder:Search({
-				path = slot1.style.ui.path,
-				delay = slot1.style.ui.delay,
-				pathIndex = slot1.style.ui.pathIndex,
-				found = function (slot0)
-					if uv0.style.ui.lineMode then
-						table.insert(uv1.highLightLines, uv1:SetHighLightLine(slot0))
-					else
-						uv1.cloneTarget = uv1:cloneGO(go(slot0), uv1._tf, uv0.style.ui)
+			table.insert(arg_60_0.highLightLines, var_61_0)
+		else
+			arg_60_0.cloneTarget = arg_60_0:cloneGO(go(arg_61_0), arg_60_0._tf, arg_60_1.style.ui)
+		end
+	end
+
+	local function var_60_1()
+		onButton(arg_60_0, arg_60_0._go, function()
+			if arg_60_1.style and arg_60_1.style.scene then
+				arg_60_0:finishCurrEvent(arg_60_1, arg_60_3)
+				pg.m02:sendNotification(GAME.GO_SCENE, SCENE[arg_60_1.style.scene])
+			elseif arg_60_1.style.trigger then
+				arg_60_0.finder:Search({
+					path = arg_60_1.style.trigger.path,
+					delay = arg_60_1.style.trigger.delay,
+					pathIndex = arg_60_1.style.trigger.pathIndex,
+					found = function(arg_64_0)
+						triggerButton(arg_64_0)
+						arg_60_0:finishCurrEvent(arg_60_1, arg_60_3)
+					end,
+					notFound = function()
+						arg_60_0:endGuider()
 					end
-				end,
-				notFound = function ()
-					uv0:endGuider()
+				})
+			else
+				arg_60_0:finishCurrEvent(arg_60_1, arg_60_3)
+			end
+		end, SFX_PANEL)
+		setButtonEnabled(arg_60_0._go, arg_60_2)
+	end
+
+	if arg_60_1.style then
+		arg_60_0:updateContent(arg_60_1)
+
+		if arg_60_1.style.ui then
+			arg_60_0.finder:Search({
+				path = arg_60_1.style.ui.path,
+				delay = arg_60_1.style.ui.delay,
+				pathIndex = arg_60_1.style.ui.pathIndex,
+				found = var_60_0,
+				notFound = function()
+					arg_60_0:endGuider()
 				end
 			})
-			function ()
-				onButton(uv0, uv0._go, function ()
-					if uv0.style and uv0.style.scene then
-						uv1:finishCurrEvent(uv0, uv2)
-						pg.m02:sendNotification(GAME.GO_SCENE, SCENE[uv0.style.scene])
-					elseif uv0.style.trigger then
-						uv1.finder:Search({
-							path = uv0.style.trigger.path,
-							delay = uv0.style.trigger.delay,
-							pathIndex = uv0.style.trigger.pathIndex,
-							found = function (slot0)
-								triggerButton(slot0)
-								uv0:finishCurrEvent(uv1, uv2)
-							end,
-							notFound = function ()
-								uv0:endGuider()
-							end
-						})
-					else
-						uv1:finishCurrEvent(uv0, uv2)
-					end
-				end, SFX_PANEL)
-				setButtonEnabled(uv0._go, uv3)
-			end()
-		elseif slot1.style.uiset then
-			slot6 = {}
+			var_60_1()
+		elseif arg_60_1.style.uiset then
+			local var_60_2 = {}
 
-			for slot10, slot11 in ipairs(slot1.style.uiset) do
-				table.insert(slot6, function (slot0)
-					uv0.finder:Search({
-						path = uv1.path,
-						delay = uv1.delay,
-						pathIndex = uv1.pathIndex,
-						found = function (slot0)
-							slot1, slot2 = nil
+			for iter_60_0, iter_60_1 in ipairs(arg_60_1.style.uiset) do
+				table.insert(var_60_2, function(arg_67_0)
+					arg_60_0.finder:Search({
+						path = iter_60_1.path,
+						delay = iter_60_1.delay,
+						pathIndex = iter_60_1.pathIndex,
+						found = function(arg_68_0)
+							local var_68_0
+							local var_68_1
 
-							if uv0.style.lineMode then
-								slot2 = uv1:SetHighLightLine(slot0)
+							if arg_60_1.style.lineMode then
+								var_68_1 = arg_60_0:SetHighLightLine(arg_68_0)
 							else
-								slot1 = uv1:cloneGO(go(slot0), uv1._tf, uv2)
+								var_68_0 = arg_60_0:cloneGO(go(arg_68_0), arg_60_0._tf, iter_60_1)
 							end
 
-							if slot1 then
-								table.insert(uv1.uisetGos, slot1)
+							if var_68_0 then
+								table.insert(arg_60_0.uisetGos, var_68_0)
 							end
 
-							if slot2 then
-								table.insert(uv1.highLightLines, slot2)
+							if var_68_1 then
+								table.insert(arg_60_0.highLightLines, var_68_1)
 							end
 
-							uv3()
+							arg_67_0()
 						end,
-						notFound = function ()
-							uv0:endGuider()
+						notFound = function()
+							arg_60_0:endGuider()
 						end
 					})
 				end)
 			end
 
-			seriesAsync(slot6, slot5)
+			seriesAsync(var_60_2, var_60_1)
 		else
-			slot5()
+			var_60_1()
 		end
 	else
-		slot5()
+		var_60_1()
 	end
 end
 
-function slot0.updateContent(slot0, slot1)
-	slot2 = slot1.style or {}
-	slot3 = slot2.dir or 1
-	slot4 = slot2.mode or 1
-	slot5 = slot2.posX or 0
-	slot6 = slot2.posY or 0
+function var_0_0.updateContent(arg_70_0, arg_70_1)
+	local var_70_0 = arg_70_1.style or {}
+	local var_70_1 = var_70_0.dir or 1
+	local var_70_2 = var_70_0.mode or 1
+	local var_70_3 = var_70_0.posX or 0
+	local var_70_4 = var_70_0.posY or 0
 
-	SetActive(slot0.styleTF1, slot4 == uv0.MODE1)
-	SetActive(slot0.styleTF2, slot4 == uv0.MODE2)
+	SetActive(arg_70_0.styleTF1, var_70_2 == var_0_6.MODE1)
+	SetActive(arg_70_0.styleTF2, var_70_2 == var_0_6.MODE2)
 
-	slot7, slot8 = nil
+	local var_70_5
+	local var_70_6
 
-	if slot4 == uv0.MODE1 then
-		slot7 = slot0.styleTF1
-		slot8 = Vector3(18, -31, 0)
-	elseif slot4 == uv0.MODE2 then
-		slot7 = slot0.styleTF2
-		slot8 = Vector3(-27, 143, 0)
-		slot9 = slot2.windowbg == "3"
-		slot7:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/guide_atlas", "uibg" .. (slot9 and slot2.windowbg or "2"))
+	if var_70_2 == var_0_6.MODE1 then
+		var_70_5 = arg_70_0.styleTF1
+		var_70_6 = Vector3(18, -31, 0)
+	elseif var_70_2 == var_0_6.MODE2 then
+		var_70_5 = arg_70_0.styleTF2
+		var_70_6 = Vector3(-27, 143, 0)
 
-		setAnchoredPosition(slot7:Find("content"), {
-			x = slot9 and 0 or 17
+		local var_70_7 = var_70_0.windowbg == "3"
+		local var_70_8 = GetSpriteFromAtlas("ui/guide_atlas", "uibg" .. (var_70_7 and var_70_0.windowbg or "2"))
+
+		var_70_5:GetComponent(typeof(Image)).sprite = var_70_8
+
+		setAnchoredPosition(var_70_5:Find("content"), {
+			x = var_70_7 and 0 or 17
 		})
 	end
 
-	slot9 = slot7:Find("char"):GetComponent(typeof(Image))
-	slot10 = nil
-	slot10 = slot2.char and slot2.char == "1" and 2 or slot2.char and slot2.char == "amazon" and 3 or 1
-	slot9.sprite = slot0.chars[slot10]
+	local var_70_9 = var_70_5:Find("char"):GetComponent(typeof(Image))
+	local var_70_10
+	local var_70_11 = var_70_0.char and var_70_0.char == "1" and 2 or var_70_0.char and var_70_0.char == "amazon" and 3 or 1
+	local var_70_12 = arg_70_0.chars[var_70_11]
 
-	slot9:SetNativeSize()
+	var_70_9.sprite = var_70_12
 
-	if slot10 == 2 then
-		slot9.material = slot0.material
+	var_70_9:SetNativeSize()
+
+	if var_70_11 == 2 then
+		var_70_9.material = arg_70_0.material
 	else
-		slot9.material = nil
+		var_70_9.material = nil
 	end
 
-	slot9.gameObject.transform.pivot = getSpritePivot(slot11)
+	var_70_9.gameObject.transform.pivot = getSpritePivot(var_70_12)
 
-	if slot2.charPos then
-		setAnchoredPosition(slot9.gameObject.transform, {
-			x = slot2.charPos[1],
-			y = slot2.charPos[2]
+	if var_70_0.charPos then
+		setAnchoredPosition(var_70_9.gameObject.transform, {
+			x = var_70_0.charPos[1],
+			y = var_70_0.charPos[2]
 		})
 	else
-		setAnchoredPosition(slot9.gameObject.transform, {
-			x = slot8.x,
-			y = slot8.y
+		setAnchoredPosition(var_70_9.gameObject.transform, {
+			x = var_70_6.x,
+			y = var_70_6.y
 		})
 	end
 
-	if slot2.charScale then
-		slot9.gameObject.transform.localScale = Vector3(slot2.charScale[1], slot2.charScale[2], 1)
+	if var_70_0.charScale then
+		var_70_9.gameObject.transform.localScale = Vector3(var_70_0.charScale[1], var_70_0.charScale[2], 1)
 	else
-		slot9.gameObject.transform.localScale = Vector3(1, 1, 1)
+		var_70_9.gameObject.transform.localScale = Vector3(1, 1, 1)
 	end
 
-	slot12 = slot3 == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1)
-	slot7.localScale = slot12
-	slot7:Find("content").localScale = slot12
+	local var_70_13 = var_70_1 == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1)
 
-	setText(slot13, HXSet.hxLan(slot2.text or ""))
+	var_70_5.localScale = var_70_13
 
-	if CHAT_POP_STR_LEN_MIDDLE < #slot13:GetComponent(typeof(Text)).text then
-		slot15.alignment = TextAnchor.MiddleLeft
+	local var_70_14 = var_70_5:Find("content")
+
+	var_70_14.localScale = var_70_13
+
+	local var_70_15 = var_70_0.text or ""
+
+	setText(var_70_14, HXSet.hxLan(var_70_15))
+
+	local var_70_16 = var_70_14:GetComponent(typeof(Text))
+
+	if #var_70_16.text > CHAT_POP_STR_LEN_MIDDLE then
+		var_70_16.alignment = TextAnchor.MiddleLeft
 	else
-		slot15.alignment = TextAnchor.MiddleCenter
+		var_70_16.alignment = TextAnchor.MiddleCenter
 	end
 
-	slot16 = slot15.preferredHeight + 120
+	local var_70_17 = var_70_16.preferredHeight + 120
 
-	if slot4 == uv0.MODE2 and slot0.initChatBgH < slot16 then
-		slot7.sizeDelta = Vector2.New(slot7.sizeDelta.x, slot16)
+	if var_70_2 == var_0_6.MODE2 and var_70_17 > arg_70_0.initChatBgH then
+		var_70_5.sizeDelta = Vector2.New(var_70_5.sizeDelta.x, var_70_17)
 	else
-		slot7.sizeDelta = Vector2.New(slot7.sizeDelta.x, slot0.initChatBgH)
+		var_70_5.sizeDelta = Vector2.New(var_70_5.sizeDelta.x, arg_70_0.initChatBgH)
 	end
 
-	if slot4 == uv0.MODE1 then
-		slot17 = slot2.hand or {
+	if var_70_2 == var_0_6.MODE1 then
+		local var_70_18 = var_70_0.hand or {
 			w = 0,
 			x = -267,
 			y = -96
 		}
-		slot7:Find("hand").localPosition = Vector3(slot17.x, slot17.y, 0)
-		slot7:Find("hand").eulerAngles = Vector3(0, 0, slot17.w)
+
+		var_70_5:Find("hand").localPosition = Vector3(var_70_18.x, var_70_18.y, 0)
+		var_70_5:Find("hand").eulerAngles = Vector3(0, 0, var_70_18.w)
 	end
 
-	setAnchoredPosition(slot0.guiderTF, Vector2(slot5, slot6))
+	setAnchoredPosition(arg_70_0.guiderTF, Vector2(var_70_3, var_70_4))
 end
 
-function slot0.Finder(slot0)
-	function slot2(slot0, slot1)
-		slot2 = -1
+function var_0_0.Finder(arg_71_0)
+	local var_71_0 = {}
 
-		for slot6 = 1, slot0.childCount do
-			if (not slot0:GetChild(slot6 - 1):GetComponent(typeof(LayoutElement)) or not slot8.ignoreLayout) and slot2 + 1 == slot1 then
-				break
+	local function var_71_1(arg_72_0, arg_72_1)
+		local var_72_0 = -1
+
+		for iter_72_0 = 1, arg_72_0.childCount do
+			local var_72_1 = arg_72_0:GetChild(iter_72_0 - 1):GetComponent(typeof(LayoutElement))
+
+			if not var_72_1 or not var_72_1.ignoreLayout then
+				var_72_0 = var_72_0 + 1
+
+				if var_72_0 == arg_72_1 then
+					break
+				end
 			end
 		end
 
-		return slot2
+		return var_72_0
 	end
 
-	function slot3(slot0, slot1)
-		if not IsNil(GameObject.Find(slot0)) then
-			if slot1 and slot1 == -999 then
-				for slot7 = 0, tf(slot2).childCount do
-					if not IsNil(tf(slot2):GetChild(slot7)) and go(slot8).activeInHierarchy then
-						return slot8
+	local function var_71_2(arg_73_0, arg_73_1)
+		local var_73_0 = GameObject.Find(arg_73_0)
+
+		if not IsNil(var_73_0) then
+			if arg_73_1 and arg_73_1 == -999 then
+				local var_73_1 = tf(var_73_0).childCount
+
+				for iter_73_0 = 0, var_73_1 do
+					local var_73_2 = tf(var_73_0):GetChild(iter_73_0)
+
+					if not IsNil(var_73_2) and go(var_73_2).activeInHierarchy then
+						return var_73_2
 					end
 				end
-			elseif slot1 and slot1 ~= -1 then
-				if uv0(tf(slot2), slot1) >= 0 and slot3 < tf(slot2).childCount and not IsNil(tf(slot2):GetChild(slot3)) then
-					return slot4
+			elseif arg_73_1 and arg_73_1 ~= -1 then
+				local var_73_3 = var_71_1(tf(var_73_0), arg_73_1)
+
+				if var_73_3 >= 0 and var_73_3 < tf(var_73_0).childCount then
+					local var_73_4 = tf(var_73_0):GetChild(var_73_3)
+
+					if not IsNil(var_73_4) then
+						return var_73_4
+					end
 				end
 			else
-				return tf(slot2)
+				return tf(var_73_0)
 			end
 		end
 	end
 
-	function slot4(slot0, slot1)
-		if uv0(slot0, -1) ~= nil then
-			for slot6, slot7 in ipairs(slot1) do
-				if slot2:Find(slot7) then
-					return slot8
+	local function var_71_3(arg_74_0, arg_74_1)
+		local var_74_0 = var_71_2(arg_74_0, -1)
+
+		if var_74_0 ~= nil then
+			for iter_74_0, iter_74_1 in ipairs(arg_74_1) do
+				local var_74_1 = var_74_0:Find(iter_74_1)
+
+				if var_74_1 then
+					return var_74_1
 				end
 			end
 		end
 	end
 
-	return {
-		Search = function (slot0, slot1)
-			slot2 = nil
-			slot2 = (type(slot1.path) ~= "function" or slot1.path()) and slot1.path
+	function var_71_0.Search(arg_75_0, arg_75_1)
+		local var_75_0
 
-			slot0:Clear()
+		if type(arg_75_1.path) == "function" then
+			var_75_0 = arg_75_1.path()
+		else
+			var_75_0 = arg_75_1.path
+		end
 
-			slot4 = 20
-			slot5 = 0
-			slot6 = slot1.delay or 0
-			slot0.findUITimer = Timer.New(function ()
-				uv0 = uv0 + uv1
+		arg_75_0:Clear()
 
-				if pg.UIMgr.GetInstance():OnLoading() then
+		local var_75_1 = 0.5
+		local var_75_2 = 20
+		local var_75_3 = 0
+		local var_75_4 = arg_75_1.delay or 0
+
+		arg_75_0.findUITimer = Timer.New(function()
+			var_75_3 = var_75_3 + var_75_1
+
+			if pg.UIMgr.GetInstance():OnLoading() then
+				return
+			end
+
+			if var_75_3 > var_75_4 then
+				if var_75_2 == 0 then
+					originalPrint("not found ui >>", var_75_0)
+					arg_75_0:Clear()
+					arg_75_1.notFound()
+
 					return
 				end
 
-				if uv2 < uv0 then
-					if uv3 == 0 then
-						originalPrint("not found ui >>", uv4)
-						uv5:Clear()
-						uv6.notFound()
+				local var_76_0
 
-						return
-					end
-
-					slot0 = nil
-
-					if (uv6.conditionData == nil or uv7(uv4, uv6.conditionData)) and uv8(uv4, uv6.pathIndex) and go(slot0).activeInHierarchy then
-						uv5:Clear()
-						uv6.found(slot0)
-
-						return
-					end
-
-					uv3 = uv3 - 1
+				if arg_75_1.conditionData ~= nil then
+					var_76_0 = var_71_3(var_75_0, arg_75_1.conditionData)
+				else
+					var_76_0 = var_71_2(var_75_0, arg_75_1.pathIndex)
 				end
-			end, 0.5, -1)
 
-			slot0.findUITimer:Start()
-			slot0.findUITimer.func()
-		end,
-		SearchTimely = function (slot0, slot1)
-			slot2 = nil
+				if var_76_0 and go(var_76_0).activeInHierarchy then
+					arg_75_0:Clear()
+					arg_75_1.found(var_76_0)
 
-			slot0:Clear()
+					return
+				end
 
-			if uv0((type(slot1.path) ~= "function" or slot1.path()) and slot1.path, slot1.pathIndex) then
-				slot1.found(slot3)
-			else
-				slot1.notFound()
+				var_75_2 = var_75_2 - 1
 			end
-		end,
-		Clear = function (slot0)
-			if slot0.findUITimer then
-				slot0.findUITimer:Stop()
+		end, var_75_1, -1)
 
-				slot0.findUITimer = nil
-			end
+		arg_75_0.findUITimer:Start()
+		arg_75_0.findUITimer.func()
+	end
+
+	function var_71_0.SearchTimely(arg_77_0, arg_77_1)
+		local var_77_0
+
+		if type(arg_77_1.path) == "function" then
+			var_77_0 = arg_77_1.path()
+		else
+			var_77_0 = arg_77_1.path
 		end
-	}
+
+		arg_77_0:Clear()
+
+		local var_77_1 = var_71_2(var_77_0, arg_77_1.pathIndex)
+
+		if var_77_1 then
+			arg_77_1.found(var_77_1)
+		else
+			arg_77_1.notFound()
+		end
+	end
+
+	function var_71_0.Clear(arg_78_0)
+		if arg_78_0.findUITimer then
+			arg_78_0.findUITimer:Stop()
+
+			arg_78_0.findUITimer = nil
+		end
+	end
+
+	return var_71_0
 end
 
-function slot0.cloneGO(slot0, slot1, slot2, slot3)
-	slot4 = tf(Instantiate(slot1))
-	slot4.sizeDelta = tf(slot1).sizeDelta
+function var_0_0.cloneGO(arg_79_0, arg_79_1, arg_79_2, arg_79_3)
+	local var_79_0 = tf(Instantiate(arg_79_1))
 
-	SetActive(slot4, true)
-	slot4:SetParent(slot2, false)
+	var_79_0.sizeDelta = tf(arg_79_1).sizeDelta
 
-	if slot3.hideChildEvent then
-		eachChild(slot4, function (slot0)
-			if slot0:GetComponent(typeof(Button)) then
-				slot1.enabled = false
+	SetActive(var_79_0, true)
+	var_79_0:SetParent(arg_79_2, false)
+
+	if arg_79_3.hideChildEvent then
+		eachChild(var_79_0, function(arg_80_0)
+			local var_80_0 = arg_80_0:GetComponent(typeof(Button))
+
+			if var_80_0 then
+				var_80_0.enabled = false
 			end
 		end)
 	end
 
-	if slot3.hideAnimtor and slot4:GetComponent(typeof(Animator)) then
-		slot5.enabled = false
+	if arg_79_3.hideAnimtor then
+		local var_79_1 = var_79_0:GetComponent(typeof(Animator))
+
+		if var_79_1 then
+			var_79_1.enabled = false
+		end
 	end
 
-	if slot3.childAdjust then
-		for slot8, slot9 in ipairs(slot3.childAdjust) do
-			if LeanTween.isTweening(slot4:Find(slot9[1]).gameObject) then
-				LeanTween.cancel(slot10.gameObject)
+	if arg_79_3.childAdjust then
+		for iter_79_0, iter_79_1 in ipairs(arg_79_3.childAdjust) do
+			local var_79_2 = var_79_0:Find(iter_79_1[1])
+
+			if LeanTween.isTweening(var_79_2.gameObject) then
+				LeanTween.cancel(var_79_2.gameObject)
 			end
 
-			if slot10 and slot9[2] == "scale" then
-				slot10.localScale = Vector3(slot9[3][1], slot9[3][2], slot9[3][3])
-			elseif slot10 and slot9[2] == "position" then
-				slot10.anchoredPosition = Vector3(slot9[3][1], slot9[3][2], slot9[3][3])
+			if var_79_2 and iter_79_1[2] == "scale" then
+				var_79_2.localScale = Vector3(iter_79_1[3][1], iter_79_1[3][2], iter_79_1[3][3])
+			elseif var_79_2 and iter_79_1[2] == "position" then
+				var_79_2.anchoredPosition = Vector3(iter_79_1[3][1], iter_79_1[3][2], iter_79_1[3][3])
 			end
 		end
 	end
 
-	if slot0.targetTimer then
-		slot0.targetTimer:Stop()
+	if arg_79_0.targetTimer then
+		arg_79_0.targetTimer:Stop()
 
-		slot0.targetTimer = nil
+		arg_79_0.targetTimer = nil
 	end
 
-	if not slot3.pos and not slot3.scale and not slot3.eulerAngles then
-		slot0.targetTimer = Timer.New(function ()
-			if not IsNil(uv0) and not IsNil(uv1) then
-				uv1.position = uv0.transform.position
-				slot0 = uv1.localPosition
-				uv1.localPosition = Vector3(slot0.x, slot0.y, 0)
-				slot1 = uv0.transform.localScale
-				uv1.localScale = Vector3(slot1.x, slot1.y, slot1.z)
+	if not arg_79_3.pos and not arg_79_3.scale and not arg_79_3.eulerAngles then
+		arg_79_0.targetTimer = Timer.New(function()
+			if not IsNil(arg_79_1) and not IsNil(var_79_0) then
+				var_79_0.position = arg_79_1.transform.position
 
-				if uv2.image and type(uv2.image) == "table" then
-					slot2 = nil
-					slot4 = nil
-					slot4 = (not uv2.image.isRelative or uv2.image.target == "" and uv1 or tf(uv1):Find(uv2.image.target)) and GameObject.Find(uv2.image.target)
+				local var_81_0 = var_79_0.localPosition
 
-					if not IsNil((not uv2.image.isChild or tf(uv0):Find(uv2.image.source)) and GameObject.Find(uv2.image.source)) and not IsNil(slot4) then
-						slot6 = slot4:GetComponent(typeof(Image))
+				var_79_0.localPosition = Vector3(var_81_0.x, var_81_0.y, 0)
 
-						if slot2:GetComponent(typeof(Image)) and slot6 then
-							slot8 = slot6.sprite
+				local var_81_1 = arg_79_1.transform.localScale
 
-							if slot5.sprite and slot8 and slot7 ~= slot8 then
-								slot6.enabled = slot5.enabled
+				var_79_0.localScale = Vector3(var_81_1.x, var_81_1.y, var_81_1.z)
 
-								setImageSprite(slot4, slot7)
+				if arg_79_3.image and type(arg_79_3.image) == "table" then
+					local var_81_2
+
+					if arg_79_3.image.isChild then
+						var_81_2 = tf(arg_79_1):Find(arg_79_3.image.source)
+					else
+						var_81_2 = GameObject.Find(arg_79_3.image.source)
+					end
+
+					local var_81_3 = arg_79_3.image.isRelative
+					local var_81_4
+
+					if var_81_3 then
+						if arg_79_3.image.target == "" then
+							var_81_4 = var_79_0
+						else
+							var_81_4 = tf(var_79_0):Find(arg_79_3.image.target)
+						end
+					else
+						var_81_4 = GameObject.Find(arg_79_3.image.target)
+					end
+
+					if not IsNil(var_81_2) and not IsNil(var_81_4) then
+						local var_81_5 = var_81_2:GetComponent(typeof(Image))
+						local var_81_6 = var_81_4:GetComponent(typeof(Image))
+
+						if var_81_5 and var_81_6 then
+							local var_81_7 = var_81_5.sprite
+							local var_81_8 = var_81_6.sprite
+
+							if var_81_7 and var_81_8 and var_81_7 ~= var_81_8 then
+								var_81_6.enabled = var_81_5.enabled
+
+								setImageSprite(var_81_4, var_81_7)
 							end
 						end
 					end
@@ -989,287 +1122,303 @@ function slot0.cloneGO(slot0, slot1, slot2, slot3)
 			end
 		end, 0.01, -1)
 
-		slot0.targetTimer:Start()
-		slot0.targetTimer.func()
+		arg_79_0.targetTimer:Start()
+		arg_79_0.targetTimer.func()
 	else
-		if slot3.pos then
-			slot4.localPosition = Vector3(slot3.pos.x, slot3.pos.y, slot3.pos.z or 0)
-		elseif slot3.isLevelPoint then
-			slot4.localPosition = LuaHelper.ScreenToLocal(slot2, GameObject.Find("LevelCamera"):GetComponent(typeof(Camera)):WorldToScreenPoint(slot1.transform.parent:TransformPoint(slot1.transform.localPosition)), GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera)))
+		if arg_79_3.pos then
+			var_79_0.localPosition = Vector3(arg_79_3.pos.x, arg_79_3.pos.y, arg_79_3.pos.z or 0)
+		elseif arg_79_3.isLevelPoint then
+			local var_79_3 = GameObject.Find("LevelCamera"):GetComponent(typeof(Camera))
+			local var_79_4 = arg_79_1.transform.parent:TransformPoint(arg_79_1.transform.localPosition)
+			local var_79_5 = var_79_3:WorldToScreenPoint(var_79_4)
+			local var_79_6 = GameObject.Find("OverlayCamera"):GetComponent(typeof(Camera))
+
+			var_79_0.localPosition = LuaHelper.ScreenToLocal(arg_79_2, var_79_5, var_79_6)
 		else
-			slot4.position = slot1.transform.position
-			slot5 = slot4.localPosition
-			slot4.localPosition = Vector3(slot5.x, slot5.y, 0)
+			var_79_0.position = arg_79_1.transform.position
+
+			local var_79_7 = var_79_0.localPosition
+
+			var_79_0.localPosition = Vector3(var_79_7.x, var_79_7.y, 0)
 		end
 
-		slot5 = slot3.scale or 1
-		slot4.localScale = Vector3(slot5, slot5, slot5)
+		local var_79_8 = arg_79_3.scale or 1
 
-		if slot3.eulerAngles then
-			slot4.eulerAngles = Vector3(slot3.eulerAngles[1], slot3.eulerAngles[2], slot3.eulerAngles[3])
+		var_79_0.localScale = Vector3(var_79_8, var_79_8, var_79_8)
+
+		if arg_79_3.eulerAngles then
+			var_79_0.eulerAngles = Vector3(arg_79_3.eulerAngles[1], arg_79_3.eulerAngles[2], arg_79_3.eulerAngles[3])
 		else
-			slot4.eulerAngles = Vector3(0, 0, 0)
+			var_79_0.eulerAngles = Vector3(0, 0, 0)
 		end
 	end
 
-	return slot4
+	return var_79_0
 end
 
-function slot0.setFinger(slot0, slot1, slot2)
-	SetActive(slot0.fingerTF, not slot2.fingerPos or not slot2.fingerPos.hideFinger)
+function var_0_0.setFinger(arg_82_0, arg_82_1, arg_82_2)
+	SetActive(arg_82_0.fingerTF, not arg_82_2.fingerPos or not arg_82_2.fingerPos.hideFinger)
 
-	slot5 = slot2.scale and 1 / slot2.scale or 1
-	slot0.fingerTF.localScale = Vector3(slot5, slot5, 1)
-	slot6 = slot2.fingerPos and Vector3(slot2.fingerPos.posX, slot2.fingerPos.posY, 0) or Vector3(slot1.sizeDelta.x / 2, -(slot1.sizeDelta.y / 2), 0)
+	local var_82_0 = arg_82_1.sizeDelta.x / 2
+	local var_82_1 = arg_82_1.sizeDelta.y / 2
+	local var_82_2 = arg_82_2.scale and 1 / arg_82_2.scale or 1
 
-	if slot0.cloneTarget then
-		slot0.fingerTF:SetParent(slot0.cloneTarget, false)
+	arg_82_0.fingerTF.localScale = Vector3(var_82_2, var_82_2, 1)
+
+	local var_82_3 = arg_82_2.fingerPos and Vector3(arg_82_2.fingerPos.posX, arg_82_2.fingerPos.posY, 0) or Vector3(var_82_0, -var_82_1, 0)
+
+	if arg_82_0.cloneTarget then
+		arg_82_0.fingerTF:SetParent(arg_82_0.cloneTarget, false)
 	end
 
-	setAnchoredPosition(slot0.fingerTF, slot6)
+	setAnchoredPosition(arg_82_0.fingerTF, var_82_3)
 end
 
-function slot0.addUIEventTrigger(slot0, slot1, slot2, slot3)
-	slot4 = slot2.ui
-	slot5 = slot1
+function var_0_0.addUIEventTrigger(arg_83_0, arg_83_1, arg_83_2, arg_83_3)
+	local var_83_0 = arg_83_2.ui
+	local var_83_1 = arg_83_1
+	local var_83_2 = arg_83_0.cloneTarget
+	local var_83_3 = var_83_2:GetComponent(typeof(CanvasGroup))
 
-	if slot0.cloneTarget:GetComponent(typeof(CanvasGroup)) then
-		slot7.alpha = 1
+	if var_83_3 then
+		var_83_3.alpha = 1
 	end
 
-	if slot4.eventIndex then
-		slot5 = slot1:GetChild(slot4.eventIndex)
-		slot6 = slot0.cloneTarget:GetChild(slot4.eventIndex)
-	elseif slot4.eventPath then
-		if IsNil(GameObject.Find(slot4.eventPath)) then
-			slot5 = slot1
+	if var_83_0.eventIndex then
+		var_83_1 = arg_83_1:GetChild(var_83_0.eventIndex)
+		var_83_2 = arg_83_0.cloneTarget:GetChild(var_83_0.eventIndex)
+	elseif var_83_0.eventPath then
+		var_83_1 = GameObject.Find(var_83_0.eventPath)
+
+		if IsNil(var_83_1) then
+			var_83_1 = arg_83_1
 		end
 
-		if slot0.cloneTarget:GetComponent(typeof(Image)) == nil then
-			GetOrAddComponent(slot0.cloneTarget, typeof(Image)).color = Color(1, 1, 1, 0)
+		if arg_83_0.cloneTarget:GetComponent(typeof(Image)) == nil then
+			GetOrAddComponent(arg_83_0.cloneTarget, typeof(Image)).color = Color(1, 1, 1, 0)
 		end
 	end
 
-	if (slot4.triggerType and slot4.triggerType[1] or uv0) == uv0 then
-		onButton(slot0, slot6, function ()
-			if not IsNil(uv0) then
-				uv1:finishCurrEvent(uv2, uv3)
+	local var_83_4 = var_83_0.triggerType and var_83_0.triggerType[1] or var_0_1
 
-				if uv4.onClick then
-					uv4.onClick()
+	if var_83_4 == var_0_1 then
+		onButton(arg_83_0, var_83_2, function()
+			if not IsNil(var_83_1) then
+				arg_83_0:finishCurrEvent(arg_83_2, arg_83_3)
+
+				if var_83_0.onClick then
+					var_83_0.onClick()
 				else
-					triggerButton(uv0)
+					triggerButton(var_83_1)
 				end
 			end
 		end, SFX_PANEL)
-		setButtonEnabled(slot6, true)
-	elseif slot8 == uv1 then
-		onToggle(slot0, slot6, function (slot0)
-			if IsNil(uv0) then
+		setButtonEnabled(var_83_2, true)
+	elseif var_83_4 == var_0_2 then
+		onToggle(arg_83_0, var_83_2, function(arg_85_0)
+			if IsNil(var_83_1) then
 				return
 			end
 
-			uv1:finishCurrEvent(uv2, uv3)
+			arg_83_0:finishCurrEvent(arg_83_2, arg_83_3)
 
-			if uv4.triggerType[2] ~= nil then
-				triggerToggle(uv0, uv4.triggerType[2])
+			if var_83_0.triggerType[2] ~= nil then
+				triggerToggle(var_83_1, var_83_0.triggerType[2])
 			else
-				triggerToggle(uv0, true)
+				triggerToggle(var_83_1, true)
 			end
 		end, SFX_PANEL)
-		setToggleEnabled(slot6, true)
-	else
-		if slot8 == uv2 then
-			slot9 = slot5:GetComponent(typeof(EventTriggerListener))
-			slot10 = slot6:GetComponent(typeof(EventTriggerListener))
+		setToggleEnabled(var_83_2, true)
+	elseif var_83_4 == var_0_3 then
+		local var_83_5 = var_83_1:GetComponent(typeof(EventTriggerListener))
+		local var_83_6 = var_83_2:GetComponent(typeof(EventTriggerListener))
 
-			slot10:AddPointDownFunc(function (slot0, slot1)
-				if not IsNil(uv0) then
-					uv1:OnPointerDown(slot1)
-				end
-			end)
-			slot10:AddPointUpFunc(function (slot0, slot1)
-				uv0:finishCurrEvent(uv1, uv2)
-
-				if not IsNil(uv3) then
-					uv4:OnPointerUp(slot1)
-				end
-			end)
-
-			return
-		end
-
-		if slot8 == uv3 then
-			if slot6:GetComponent(typeof(EventTriggerListener)) == nil then
-				slot9 = go(slot6):AddComponent(typeof(EventTriggerListener))
+		var_83_6:AddPointDownFunc(function(arg_86_0, arg_86_1)
+			if not IsNil(var_83_1) then
+				var_83_5:OnPointerDown(arg_86_1)
 			end
+		end)
+		var_83_6:AddPointUpFunc(function(arg_87_0, arg_87_1)
+			arg_83_0:finishCurrEvent(arg_83_2, arg_83_3)
 
-			slot9:AddPointDownFunc(function (slot0, slot1)
-				if not IsNil(uv0) then
-					uv1:finishCurrEvent(uv2, uv3)
-				end
-			end)
-		elseif slot8 == uv4 then
-			if slot6:GetComponent(typeof(EventTriggerListener)) == nil then
-				slot9 = go(slot6):AddComponent(typeof(EventTriggerListener))
+			if not IsNil(var_83_1) then
+				var_83_5:OnPointerUp(arg_87_1)
 			end
+		end)
+	elseif var_83_4 == var_0_4 then
+		local var_83_7 = var_83_2:GetComponent(typeof(EventTriggerListener))
 
-			slot9:AddPointUpFunc(function (slot0, slot1)
-				uv0:finishCurrEvent(uv1, uv2)
-			end)
-		end
-	end
-end
-
-function slot0.finishCurrEvent(slot0, slot1, slot2)
-	slot0.bgAlpha.alpha = 0.2
-
-	removeOnButton(slot0._go)
-	slot0:destroyAllSign()
-	SetParent(slot0.fingerTF, tf(slot0._go), false)
-	SetActive(slot0.fingerTF, false)
-	SetActive(slot0.guiderTF, false)
-
-	slot0.fingerTF.localScale = Vector3(1, 1, 1)
-
-	if slot0.cloneTarget then
-		SetActive(slot0.cloneTarget, false)
-		Destroy(slot0.cloneTarget)
-
-		slot0.cloneTarget = nil
-	end
-
-	if #slot0.uisetGos > 0 then
-		for slot6 = #slot0.uisetGos, 1, -1 do
-			Destroy(slot0.uisetGos[slot6])
-
-			slot0.uisetGos[slot6] = nil
+		if var_83_7 == nil then
+			var_83_7 = go(var_83_2):AddComponent(typeof(EventTriggerListener))
 		end
 
-		slot0.uisetGos = {}
-	end
+		var_83_7:AddPointDownFunc(function(arg_88_0, arg_88_1)
+			if not IsNil(var_83_1) then
+				arg_83_0:finishCurrEvent(arg_83_2, arg_83_3)
+			end
+		end)
+	elseif var_83_4 == var_0_5 then
+		local var_83_8 = var_83_2:GetComponent(typeof(EventTriggerListener))
 
-	if slot0.targetTimer then
-		slot0.targetTimer:Stop()
-
-		slot0.targetTimer = nil
-	end
-
-	if slot0.findUITimer then
-		slot0.findUITimer:Stop()
-
-		slot0.findUITimer = nil
-	end
-
-	if slot0.highLightLines then
-		for slot6, slot7 in ipairs(slot0.highLightLines) do
-			Destroy(slot7)
+		if var_83_8 == nil then
+			var_83_8 = go(var_83_2):AddComponent(typeof(EventTriggerListener))
 		end
 
-		slot0.highLightLines = {}
-	end
-
-	if slot2 then
-		slot2()
+		var_83_8:AddPointUpFunc(function(arg_89_0, arg_89_1)
+			arg_83_0:finishCurrEvent(arg_83_2, arg_83_3)
+		end)
 	end
 end
 
-function slot7(slot0)
-	slot0:clearDelegateInfo()
-	slot0:RemoveCheckSpriteTimer()
+function var_0_0.finishCurrEvent(arg_90_0, arg_90_1, arg_90_2)
+	arg_90_0.bgAlpha.alpha = 0.2
 
-	if slot0.delayTimer then
-		slot0.delayTimer:Stop()
+	removeOnButton(arg_90_0._go)
+	arg_90_0:destroyAllSign()
+	SetParent(arg_90_0.fingerTF, tf(arg_90_0._go), false)
+	SetActive(arg_90_0.fingerTF, false)
+	SetActive(arg_90_0.guiderTF, false)
 
-		slot0.delayTimer = nil
+	arg_90_0.fingerTF.localScale = Vector3(1, 1, 1)
+
+	if arg_90_0.cloneTarget then
+		SetActive(arg_90_0.cloneTarget, false)
+		Destroy(arg_90_0.cloneTarget)
+
+		arg_90_0.cloneTarget = nil
 	end
 
-	if slot0.targetTimer then
-		slot0.targetTimer:Stop()
+	if #arg_90_0.uisetGos > 0 then
+		for iter_90_0 = #arg_90_0.uisetGos, 1, -1 do
+			Destroy(arg_90_0.uisetGos[iter_90_0])
 
-		slot0.targetTimer = nil
+			arg_90_0.uisetGos[iter_90_0] = nil
+		end
+
+		arg_90_0.uisetGos = {}
 	end
 
-	slot0:destroyAllSign()
-	slot0.finder:Clear()
+	if arg_90_0.targetTimer then
+		arg_90_0.targetTimer:Stop()
 
-	if slot0.cloneTarget then
-		SetParent(slot0.fingerTF, slot0._go)
-		Destroy(slot0.cloneTarget)
-
-		slot0.cloneTarget = nil
+		arg_90_0.targetTimer = nil
 	end
 
-	slot0._go:SetActive(false)
-	removeOnButton(slot0._go)
+	if arg_90_0.findUITimer then
+		arg_90_0.findUITimer:Stop()
 
-	if slot0.curEvents then
-		slot0.curEvents = nil
+		arg_90_0.findUITimer = nil
 	end
 
-	if slot0.currentGuide then
-		slot0.currentGuide = nil
+	if arg_90_0.highLightLines then
+		for iter_90_1, iter_90_2 in ipairs(arg_90_0.highLightLines) do
+			Destroy(iter_90_2)
+		end
+
+		arg_90_0.highLightLines = {}
 	end
 
-	slot0.uiLongPress.onLongPressed:RemoveAllListeners()
+	if arg_90_2 then
+		arg_90_2()
+	end
 end
 
-function slot0.addDelegateInfo(slot0)
-	pg.DelegateInfo.New(slot0)
+local function var_0_7(arg_91_0)
+	arg_91_0:clearDelegateInfo()
+	arg_91_0:RemoveCheckSpriteTimer()
 
-	slot0.isAddDelegateInfo = true
+	if arg_91_0.delayTimer then
+		arg_91_0.delayTimer:Stop()
+
+		arg_91_0.delayTimer = nil
+	end
+
+	if arg_91_0.targetTimer then
+		arg_91_0.targetTimer:Stop()
+
+		arg_91_0.targetTimer = nil
+	end
+
+	arg_91_0:destroyAllSign()
+	arg_91_0.finder:Clear()
+
+	if arg_91_0.cloneTarget then
+		SetParent(arg_91_0.fingerTF, arg_91_0._go)
+		Destroy(arg_91_0.cloneTarget)
+
+		arg_91_0.cloneTarget = nil
+	end
+
+	arg_91_0._go:SetActive(false)
+	removeOnButton(arg_91_0._go)
+
+	if arg_91_0.curEvents then
+		arg_91_0.curEvents = nil
+	end
+
+	if arg_91_0.currentGuide then
+		arg_91_0.currentGuide = nil
+	end
+
+	arg_91_0.uiLongPress.onLongPressed:RemoveAllListeners()
 end
 
-function slot0.clearDelegateInfo(slot0)
-	if slot0.isAddDelegateInfo then
-		pg.DelegateInfo.Dispose(slot0)
+function var_0_0.addDelegateInfo(arg_92_0)
+	pg.DelegateInfo.New(arg_92_0)
 
-		slot0.isAddDelegateInfo = nil
+	arg_92_0.isAddDelegateInfo = true
+end
+
+function var_0_0.clearDelegateInfo(arg_93_0)
+	if arg_93_0.isAddDelegateInfo then
+		pg.DelegateInfo.Dispose(arg_93_0)
+
+		arg_93_0.isAddDelegateInfo = nil
 	end
 end
 
-function slot0.mask(slot0)
-	SetActive(slot0._go, true)
+function var_0_0.mask(arg_94_0)
+	SetActive(arg_94_0._go, true)
 end
 
-function slot0.unMask(slot0)
-	SetActive(slot0._go, false)
+function var_0_0.unMask(arg_95_0)
+	SetActive(arg_95_0._go, false)
 end
 
-function slot0.endGuider(slot0, slot1)
-	uv0(slot0)
+function var_0_0.endGuider(arg_96_0, arg_96_1)
+	var_0_7(arg_96_0)
 
-	slot0.managerState = uv1.MANAGER_STATE.IDLE
+	arg_96_0.managerState = var_0_0.MANAGER_STATE.IDLE
 
 	pg.m02:sendNotification(GAME.END_GUIDE)
 
-	if slot1 then
-		slot1()
+	if arg_96_1 then
+		arg_96_1()
 	end
 end
 
-function slot0.onDisconnected(slot0)
-	if slot0._go.activeSelf then
-		slot0.prevState = slot0.managerState
-		slot0.managerState = uv0.MANAGER_STATE.BREAK
+function var_0_0.onDisconnected(arg_97_0)
+	if arg_97_0._go.activeSelf then
+		arg_97_0.prevState = arg_97_0.managerState
+		arg_97_0.managerState = var_0_0.MANAGER_STATE.BREAK
 
-		SetActive(slot0._go, false)
+		SetActive(arg_97_0._go, false)
 
-		if slot0.cloneTarget then
-			SetActive(slot0.cloneTarget, false)
+		if arg_97_0.cloneTarget then
+			SetActive(arg_97_0.cloneTarget, false)
 		end
 	end
 end
 
-function slot0.onReconneceted(slot0)
-	if slot0.prevState then
-		slot0.managerState = slot0.prevState
-		slot0.prevState = nil
+function var_0_0.onReconneceted(arg_98_0)
+	if arg_98_0.prevState then
+		arg_98_0.managerState = arg_98_0.prevState
+		arg_98_0.prevState = nil
 
-		SetActive(slot0._go, true)
+		SetActive(arg_98_0._go, true)
 
-		if slot0.cloneTarget then
-			SetActive(slot0.cloneTarget, true)
+		if arg_98_0.cloneTarget then
+			SetActive(arg_98_0.cloneTarget, true)
 		end
 	end
 end

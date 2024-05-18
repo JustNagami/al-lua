@@ -1,30 +1,34 @@
-slot0 = class("AnniversaryIslandSpringShipSelectMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectMediator"))
+﻿local var_0_0 = class("AnniversaryIslandSpringShipSelectMediator", import("view.activity.BackHills.NewYearFestival.NewYearHotSpringShipSelectMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.LOOG_PRESS_SHIP, function (slot0, slot1, slot2)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.LOOG_PRESS_SHIP, function(arg_2_0, arg_2_1, arg_2_2)
 		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
-			shipId = slot2.id
+			shipId = arg_2_2.id
 		})
 	end)
-	slot0:bind(uv0.OPEN_CHUANWU, function (slot0, slot1, slot2)
-		uv0:sendNotification(AnniversaryIslandHotSpringMediator.OPEN_CHUANWU, {
-			slot1,
-			slot2
+	arg_1_0:bind(var_0_0.OPEN_CHUANWU, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(AnniversaryIslandHotSpringMediator.OPEN_CHUANWU, {
+			arg_3_1,
+			arg_3_2
 		})
 	end)
-	slot0.viewComponent:SetActivity(getProxy(ActivityProxy):getActivityById(slot0.contextData.actId))
+
+	local var_1_0 = getProxy(ActivityProxy):getActivityById(arg_1_0.contextData.actId)
+
+	arg_1_0.viewComponent:SetActivity(var_1_0)
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	if slot1:getName() == GAME.EXTEND_BACKYARD_DONE then
+	if var_4_0 == GAME.EXTEND_BACKYARD_DONE then
 		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardShipInfoMediator_ok_unlock"))
-		slot0.viewComponent:UpdateSlots()
-	elseif slot2 == ActivityProxy.ACTIVITY_UPDATED and slot3:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
-		slot0.viewComponent:SetActivity(slot3)
-		slot0.viewComponent:UpdateSlots()
+		arg_4_0.viewComponent:UpdateSlots()
+	elseif var_4_0 == ActivityProxy.ACTIVITY_UPDATED and var_4_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING_2 then
+		arg_4_0.viewComponent:SetActivity(var_4_1)
+		arg_4_0.viewComponent:UpdateSlots()
 	end
 end
 
-return slot0
+return var_0_0

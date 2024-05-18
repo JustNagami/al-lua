@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.survey_data_template = {
 	[1001] = {
 		ios_url = "",

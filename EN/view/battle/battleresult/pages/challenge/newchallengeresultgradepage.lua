@@ -1,134 +1,146 @@
-slot0 = class("NewChallengeResultGradePage", import("..NewBattleResultGradePage"))
+﻿local var_0_0 = class("NewChallengeResultGradePage", import("..NewBattleResultGradePage"))
 
-function slot0.OnInit(slot0)
-	uv0.super.OnInit(slot0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-	slot0.challenge = getProxy(ChallengeProxy):getUserChallengeInfo(slot0.contextData.mode)
-	slot0.challengeExpire = getProxy(ChallengeProxy):userSeaonExpire(slot0.contextData.mode)
+	arg_1_0.challenge = getProxy(ChallengeProxy):getUserChallengeInfo(arg_1_0.contextData.mode)
+	arg_1_0.challengeExpire = getProxy(ChallengeProxy):userSeaonExpire(arg_1_0.contextData.mode)
 end
 
-function slot0.isTotalClear(slot0)
-	return slot0.challenge:getMode() == ChallengeProxy.MODE_CASUAL and slot0.challenge:IsFinish() or slot0:isFail()
+function var_0_0.isTotalClear(arg_2_0)
+	return arg_2_0.challenge:getMode() == ChallengeProxy.MODE_CASUAL and arg_2_0.challenge:IsFinish() or arg_2_0:isFail()
 end
 
-function slot0.isFail(slot0)
-	return slot0.contextData.score < ys.Battle.BattleConst.BattleScore.S
+function var_0_0.isFail(arg_3_0)
+	return arg_3_0.contextData.score < ys.Battle.BattleConst.BattleScore.S
 end
 
-function slot0.GetGetObjectives(slot0)
-	if getProxy(ChallengeProxy):getUserChallengeInfo(slot0.contextData.mode):getMode() == ChallengeProxy.MODE_INFINITE then
+function var_0_0.GetGetObjectives(arg_4_0)
+	local var_4_0 = arg_4_0.contextData
+	local var_4_1 = getProxy(ChallengeProxy):getUserChallengeInfo(var_4_0.mode)
+
+	if var_4_1:getMode() == ChallengeProxy.MODE_INFINITE then
 		return {}
 	else
-		slot3 = {}
-		slot5, slot6 = NewBattleResultUtil.ColorObjective(true)
+		local var_4_2 = {}
+		local var_4_3 = i18n("challenge_combat_score", var_4_1:getLastScore())
+		local var_4_4, var_4_5 = NewBattleResultUtil.ColorObjective(true)
 
-		table.insert(slot3, {
-			text = setColorStr(i18n("challenge_combat_score", slot2:getLastScore()), slot6),
-			icon = slot5
-		})
-		table.insert(slot3, {
-			text = setColorStr(i18n("challenge_current_score", slot2:getScore()), slot6),
-			icon = slot5
+		table.insert(var_4_2, {
+			text = setColorStr(var_4_3, var_4_5),
+			icon = var_4_4
 		})
 
-		return slot3
+		local var_4_6 = i18n("challenge_current_score", var_4_1:getScore())
+
+		table.insert(var_4_2, {
+			text = setColorStr(var_4_6, var_4_5),
+			icon = var_4_4
+		})
+
+		return var_4_2
 	end
 end
 
-function slot0.UpdateChapterName(slot0)
-	if getProxy(ChallengeProxy):getUserChallengeInfo(slot0.contextData.mode) == ChallengeProxy.MODE_INFINITE then
-		setText(slot0.gradeChapterName, pg.expedition_data_template[slot1.stageId].name .. " - ROUND " .. getProxy(ChallengeProxy):getUserChallengeInfo(slot1.mode):getLevel())
+function var_0_0.UpdateChapterName(arg_5_0)
+	local var_5_0 = arg_5_0.contextData
+
+	if getProxy(ChallengeProxy):getUserChallengeInfo(var_5_0.mode) == ChallengeProxy.MODE_INFINITE then
+		local var_5_1 = pg.expedition_data_template[var_5_0.stageId].name .. " - ROUND " .. getProxy(ChallengeProxy):getUserChallengeInfo(var_5_0.mode):getLevel()
+
+		setText(arg_5_0.gradeChapterName, var_5_1)
 	else
-		uv0.super.UpdateChapterName(slot0)
+		var_0_0.super.UpdateChapterName(arg_5_0)
 	end
 end
 
-function slot0.LoadChallengeRes(slot0, slot1)
-	setActive(slot0.bgTr:Find("ResultEffect/Tips"), false)
-	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Challenge", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-		if uv0.exited or IsNil(slot0) then
-			if uv1 then
-				uv1()
+function var_0_0.LoadChallengeRes(arg_6_0, arg_6_1)
+	setActive(arg_6_0.bgTr:Find("ResultEffect/Tips"), false)
+	ResourceMgr.Inst:getAssetAsync("BattleResultItems/Challenge", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_7_0)
+		if arg_6_0.exited or IsNil(arg_7_0) then
+			if arg_6_1 then
+				arg_6_1()
 			end
 
 			return
 		end
 
-		uv0:UpdateChallengeInfo(Object.Instantiate(slot0, uv0._tf).transform)
+		arg_6_0:UpdateChallengeInfo(Object.Instantiate(arg_7_0, arg_6_0._tf).transform)
 
-		if uv1 then
-			uv1()
+		if arg_6_1 then
+			arg_6_1()
 		end
 	end), true, true)
 end
 
-function slot0.UpdateChallengeInfo(slot0, slot1)
-	setText(slot1:Find("expire"), slot0.challengeExpire and i18n("challenge_expire_warn") or "")
-	setText(findTF(slot1, "continue_btn/text"), i18n("battle_result_continue_battle"))
-	setText(findTF(slot1, "quit_btn/text"), i18n("battle_result_quit_battle"))
-	setText(findTF(slot1, "share_btn/text"), i18n("battle_result_share_battle"))
+function var_0_0.UpdateChallengeInfo(arg_8_0, arg_8_1)
+	setText(arg_8_1:Find("expire"), arg_8_0.challengeExpire and i18n("challenge_expire_warn") or "")
+	setText(findTF(arg_8_1, "continue_btn/text"), i18n("battle_result_continue_battle"))
+	setText(findTF(arg_8_1, "quit_btn/text"), i18n("battle_result_quit_battle"))
+	setText(findTF(arg_8_1, "share_btn/text"), i18n("battle_result_share_battle"))
 
-	slot0.continueBtn = findTF(slot1, "continue_btn")
-	slot0.quitBtn = findTF(slot1, "quit_btn")
-	slot0.shareBtn = findTF(slot1, "share_btn")
-	slot2 = slot0:isTotalClear()
+	arg_8_0.continueBtn = findTF(arg_8_1, "continue_btn")
+	arg_8_0.quitBtn = findTF(arg_8_1, "quit_btn")
+	arg_8_0.shareBtn = findTF(arg_8_1, "share_btn")
 
-	SetActive(slot0.continueBtn, not slot2)
-	SetActive(slot0.quitBtn, not slot2)
-	SetActive(slot0.shareBtn, slot2)
+	local var_8_0 = arg_8_0:isTotalClear()
+
+	SetActive(arg_8_0.continueBtn, not var_8_0)
+	SetActive(arg_8_0.quitBtn, not var_8_0)
+	SetActive(arg_8_0.shareBtn, var_8_0)
 end
 
-function slot0.RegisterEvent(slot0, slot1)
+function var_0_0.RegisterEvent(arg_9_0, arg_9_1)
 	seriesAsync({
-		function (slot0)
-			uv0.super.RegisterEvent(uv1, slot0)
+		function(arg_10_0)
+			var_0_0.super.RegisterEvent(arg_9_0, arg_10_0)
 		end,
-		function (slot0)
-			removeOnButton(uv0._tf)
-			uv0:LoadChallengeRes(slot0)
+		function(arg_11_0)
+			removeOnButton(arg_9_0._tf)
+			arg_9_0:LoadChallengeRes(arg_11_0)
 		end,
-		function (slot0)
-			uv0:RegisterChallengeEvent(uv1)
+		function(arg_12_0)
+			arg_9_0:RegisterChallengeEvent(arg_9_1)
 		end
 	})
 end
 
-function slot0.RegisterChallengeEvent(slot0, slot1)
-	if slot0:isTotalClear() then
-		onButton(slot0, slot0.shareBtn, function ()
-			uv0:emit(NewBattleResultMediator.CHALLENGE_SHARE)
+function var_0_0.RegisterChallengeEvent(arg_13_0, arg_13_1)
+	if arg_13_0:isTotalClear() then
+		onButton(arg_13_0, arg_13_0.shareBtn, function()
+			arg_13_0:emit(NewBattleResultMediator.CHALLENGE_SHARE)
 		end, SFX_CONFIRM)
-		onButton(slot0, slot0._tf, slot1, SFX_CONFIRM)
+		onButton(arg_13_0, arg_13_0._tf, arg_13_1, SFX_CONFIRM)
 	else
-		onButton(slot0, slot0.continueBtn, function ()
-			uv0:OnContinue(uv1)
+		onButton(arg_13_0, arg_13_0.continueBtn, function()
+			arg_13_0:OnContinue(arg_13_1)
 		end, SFX_CONFIRM)
-		onButton(slot0, slot0.quitBtn, function ()
-			uv0:OnQuit(uv1)
+		onButton(arg_13_0, arg_13_0.quitBtn, function()
+			arg_13_0:OnQuit(arg_13_1)
 		end, SFX_CONFIRM)
 	end
 end
 
-function slot0.OnContinue(slot0, slot1)
-	if slot0:isFail() then
-		slot1()
+function var_0_0.OnContinue(arg_17_0, arg_17_1)
+	if arg_17_0:isFail() then
+		arg_17_1()
 	else
-		slot0.contextData.goToNext = true
+		arg_17_0.contextData.goToNext = true
 
-		slot0:emit(NewBattleResultMediator.CHALLENGE_DEFEAT_SCENE, {
-			callback = slot1
+		arg_17_0:emit(NewBattleResultMediator.CHALLENGE_DEFEAT_SCENE, {
+			callback = arg_17_1
 		})
 	end
 end
 
-function slot0.OnQuit(slot0, slot1)
-	if slot0:isFail() then
-		slot1()
+function var_0_0.OnQuit(arg_18_0, arg_18_1)
+	if arg_18_0:isFail() then
+		arg_18_1()
 	else
-		slot0:emit(NewBattleResultMediator.CHALLENGE_DEFEAT_SCENE, {
-			callback = slot1
+		arg_18_0:emit(NewBattleResultMediator.CHALLENGE_DEFEAT_SCENE, {
+			callback = arg_18_1
 		})
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,4 @@
-return {
+﻿return {
 	uiEffect = "",
 	name = "ATKMODE",
 	cd = 0,

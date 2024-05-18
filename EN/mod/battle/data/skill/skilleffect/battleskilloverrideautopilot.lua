@@ -1,25 +1,29 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleEvent
-slot2 = slot0.Battle.BattleConfig
-slot3 = class("BattleSkillOverrideAutoPilot", slot0.Battle.BattleSkillEffect)
-slot0.Battle.BattleSkillOverrideAutoPilot = slot3
-slot3.__name = "BattleSkillOverrideAutoPilot"
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0, slot1, slot2)
-	uv0.super.Ctor(slot0, slot1, slot2)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleEvent
+local var_0_2 = var_0_0.Battle.BattleConfig
+local var_0_3 = class("BattleSkillOverrideAutoPilot", var_0_0.Battle.BattleSkillEffect)
 
-	slot0._AIID = slot0._tempData.arg_list.ai_id
+var_0_0.Battle.BattleSkillOverrideAutoPilot = var_0_3
+var_0_3.__name = "BattleSkillOverrideAutoPilot"
+
+function var_0_3.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_3.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+
+	arg_1_0._AIID = arg_1_0._tempData.arg_list.ai_id
 end
 
-function slot3.DoDataEffect(slot0, slot1)
-	if not slot1:GetFleetVO() then
+function var_0_3.DoDataEffect(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1:GetFleetVO()
+
+	if not var_2_0 then
 		return
 	end
 
-	slot2:OverrideJoyStickAutoBot(slot0._AIID)
+	var_2_0:OverrideJoyStickAutoBot(arg_2_0._AIID)
 end
 
-function slot3.DataEffectWithoutTarget(slot0, slot1)
-	slot0:DoDataEffect(slot1)
+function var_0_3.DataEffectWithoutTarget(arg_3_0, arg_3_1)
+	arg_3_0:DoDataEffect(arg_3_1)
 end

@@ -1,45 +1,47 @@
-slot0 = class("CourtYardStoreyComposeChecker")
+﻿local var_0_0 = class("CourtYardStoreyComposeChecker")
 
-function slot0.Ctor(slot0, slot1)
-	slot0.storey = slot1
-	slot0.config = pg.furniture_compose_template
-	slot0.list = {}
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.storey = arg_1_1
+	arg_1_0.config = pg.furniture_compose_template
+	arg_1_0.list = {}
 end
 
-function slot0.Check(slot0)
-	for slot4, slot5 in ipairs(slot0.config.all) do
-		if slot0:IsMatch(slot0.config[slot5].furniture_ids) then
-			slot0:Add(slot5)
+function var_0_0.Check(arg_2_0)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.config.all) do
+		if arg_2_0:IsMatch(arg_2_0.config[iter_2_1].furniture_ids) then
+			arg_2_0:Add(iter_2_1)
 		else
-			slot0:Remove(slot5)
+			arg_2_0:Remove(iter_2_1)
 		end
 	end
 end
 
-function slot0.Add(slot0, slot1)
-	if not table.contains(slot0.list, slot1) then
-		table.insert(slot0.list, slot1)
-		slot0.storey:DispatchEvent(CourtYardEvent.ON_ADD_EFFECT, slot0.config[slot1].effect_name)
+function var_0_0.Add(arg_3_0, arg_3_1)
+	if not table.contains(arg_3_0.list, arg_3_1) then
+		table.insert(arg_3_0.list, arg_3_1)
+		arg_3_0.storey:DispatchEvent(CourtYardEvent.ON_ADD_EFFECT, arg_3_0.config[arg_3_1].effect_name)
 	end
 end
 
-function slot0.Remove(slot0, slot1)
-	if table.contains(slot0.list, slot1) then
-		table.removebyvalue(slot0.list, slot1)
-		slot0.storey:DispatchEvent(CourtYardEvent.ON_REMOVE_EFFECT, slot0.config[slot1].effect_name)
+function var_0_0.Remove(arg_4_0, arg_4_1)
+	if table.contains(arg_4_0.list, arg_4_1) then
+		table.removebyvalue(arg_4_0.list, arg_4_1)
+		arg_4_0.storey:DispatchEvent(CourtYardEvent.ON_REMOVE_EFFECT, arg_4_0.config[arg_4_1].effect_name)
 	end
 end
 
-function slot0.IsMatch(slot0, slot1)
-	return _.all(slot1, function (slot0)
-		return uv0.storey.furnitures[slot0] ~= nil or uv0.storey.wallPaper and uv0.storey.wallPaper.configId == slot0 or uv0.storey.floorPaper and uv0.storey.floorPaper.configId == slot0
-	end)
+function var_0_0.IsMatch(arg_5_0, arg_5_1)
+	local function var_5_0(arg_6_0)
+		return arg_5_0.storey.furnitures[arg_6_0] ~= nil or arg_5_0.storey.wallPaper and arg_5_0.storey.wallPaper.configId == arg_6_0 or arg_5_0.storey.floorPaper and arg_5_0.storey.floorPaper.configId == arg_6_0
+	end
+
+	return _.all(arg_5_1, var_5_0)
 end
 
-function slot0.Dispose(slot0)
-	slot0.config = nil
-	slot0.list = nil
-	slot0.storey = nil
+function var_0_0.Dispose(arg_7_0)
+	arg_7_0.config = nil
+	arg_7_0.list = nil
+	arg_7_0.storey = nil
 end
 
-return slot0
+return var_0_0

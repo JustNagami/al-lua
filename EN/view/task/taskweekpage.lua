@@ -1,221 +1,247 @@
-slot0 = class("TaskWeekPage", import(".TaskCommonPage"))
-slot0.WEEK_TASK_TYPE_COMMON = 1
-slot0.WEEK_TASK_TYPE_PT = 2
+﻿local var_0_0 = class("TaskWeekPage", import(".TaskCommonPage"))
 
-function slot0.getUIName(slot0)
+var_0_0.WEEK_TASK_TYPE_COMMON = 1
+var_0_0.WEEK_TASK_TYPE_PT = 2
+
+function var_0_0.getUIName(arg_1_0)
 	return "TaskListForWeekPage"
 end
 
-function slot0.RefreshWeekProgress(slot0)
-	slot0:UpdateWeekProgress(slot0.contextData.weekTaskProgressInfo)
+function var_0_0.RefreshWeekProgress(arg_2_0)
+	arg_2_0:UpdateWeekProgress(arg_2_0.contextData.weekTaskProgressInfo)
 end
 
-function slot0.OnLoaded(slot0)
-	uv0.super.OnLoaded(slot0)
+function var_0_0.OnLoaded(arg_3_0)
+	var_0_0.super.OnLoaded(arg_3_0)
 
-	slot1 = slot0:findTF("right_panel/task_progress")
+	local var_3_0 = arg_3_0:findTF("right_panel/task_progress")
 
-	setActive(slot1, true)
-	setText(slot1:Find("title"), i18n("week_task_title_label"))
+	setActive(var_3_0, true)
+	setText(var_3_0:Find("title"), i18n("week_task_title_label"))
 
-	slot0.awardPreviewBtn = slot1:Find("award_preview")
+	arg_3_0.awardPreviewBtn = var_3_0:Find("award_preview")
 
-	setText(slot0.awardPreviewBtn:Find("Text"), i18n("week_task_award_preview_label"))
+	setText(arg_3_0.awardPreviewBtn:Find("Text"), i18n("week_task_award_preview_label"))
 
-	slot0.phaseTxt = slot1:Find("phase/Text"):GetComponent(typeof(Text))
-	slot0.progressSlider = slot1:Find("slider"):GetComponent(typeof(Slider))
-	slot0.progressTxt = slot1:Find("slider/Text"):GetComponent(typeof(Text))
-	slot0.awardList = UIItemList.New(slot1:Find("awards"), slot1:Find("awards/itemtpl"))
-	slot0.getBtn = slot1:Find("get_btn")
-	slot0.getBtnEnableTF = slot0.getBtn:Find("enable")
-	slot0.getBtnDisableTF = slot0.getBtn:Find("disable")
-	slot0.tip = slot1:Find("tip")
+	arg_3_0.phaseTxt = var_3_0:Find("phase/Text"):GetComponent(typeof(Text))
+	arg_3_0.progressSlider = var_3_0:Find("slider"):GetComponent(typeof(Slider))
+	arg_3_0.progressTxt = var_3_0:Find("slider/Text"):GetComponent(typeof(Text))
+	arg_3_0.awardList = UIItemList.New(var_3_0:Find("awards"), var_3_0:Find("awards/itemtpl"))
+	arg_3_0.getBtn = var_3_0:Find("get_btn")
+	arg_3_0.getBtnEnableTF = arg_3_0.getBtn:Find("enable")
+	arg_3_0.getBtnDisableTF = arg_3_0.getBtn:Find("disable")
+	arg_3_0.tip = var_3_0:Find("tip")
 
-	onButton(slot0, slot0.awardPreviewBtn, function ()
-		uv0.contextData.ptAwardWindow:ExecuteAction("Display", uv0.contextData.weekTaskProgressInfo:GetAllPhaseDrops())
+	onButton(arg_3_0, arg_3_0.awardPreviewBtn, function()
+		local var_4_0 = arg_3_0.contextData.weekTaskProgressInfo
+
+		arg_3_0.contextData.ptAwardWindow:ExecuteAction("Display", var_4_0:GetAllPhaseDrops())
 	end, SFX_PANEL)
 
-	slot0.topTF = slot0._scrllPanel.parent
-	slot0.topPosy = slot0._scrllPanel.localPosition.y + slot0._scrllPanel.rect.height * 0.5
+	arg_3_0.topTF = arg_3_0._scrllPanel.parent
+	arg_3_0.topPosy = arg_3_0._scrllPanel.localPosition.y + arg_3_0._scrllPanel.rect.height * 0.5
 
-	slot0._scrollView.onValueChanged:AddListener(function (slot0)
-		uv0:UpdateCardTip()
+	arg_3_0._scrollView.onValueChanged:AddListener(function(arg_5_0)
+		arg_3_0:UpdateCardTip()
 	end)
 end
 
-function slot0.UpdateCardTip(slot0)
-	for slot4, slot5 in pairs(slot0.taskCards) do
-		slot5.tip.anchoredPosition3D = math.abs(slot0.topTF:InverseTransformPoint(slot5._tf.position).y + slot5.height * 0.5 - slot0.topPosy) < slot5.tip.rect.height * 0.5 and Vector3(-5, -25) or Vector3(-5, 0)
+function var_0_0.UpdateCardTip(arg_6_0)
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.taskCards) do
+		local var_6_0 = arg_6_0.topTF:InverseTransformPoint(iter_6_1._tf.position).y + iter_6_1.height * 0.5
+
+		iter_6_1.tip.anchoredPosition3D = math.abs(var_6_0 - arg_6_0.topPosy) < iter_6_1.tip.rect.height * 0.5 and Vector3(-5, -25) or Vector3(-5, 0)
 	end
 end
 
-function slot0.onUpdateTask(slot0, slot1, slot2)
-	uv0.super.onUpdateTask(slot0, slot1, slot2)
+function var_0_0.onUpdateTask(arg_7_0, arg_7_1, arg_7_2)
+	var_0_0.super.onUpdateTask(arg_7_0, arg_7_1, arg_7_2)
 
-	if slot1 == 0 then
-		slot0.taskCards[slot2].tip.anchoredPosition3D = Vector3(-5, -25)
+	if arg_7_1 == 0 then
+		arg_7_0.taskCards[arg_7_2].tip.anchoredPosition3D = Vector3(-5, -25)
 	end
 end
 
-function slot0.Update(slot0, slot1, slot2, slot3)
-	if slot0.contextData.weekTaskProgressInfo:ReachMaxPt() and slot0:isShowing() then
+function var_0_0.Update(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	if arg_8_0.contextData.weekTaskProgressInfo:ReachMaxPt() and arg_8_0:isShowing() then
 		pg.UIMgr.GetInstance():LoadingOn(false)
-		slot0:DoDisablePtTaskAnim(function ()
+		arg_8_0:DoDisablePtTaskAnim(function()
 			pg.UIMgr.GetInstance():LoadingOff()
-			uv0:Flush(uv1)
+			arg_8_0:Flush(arg_8_2)
 
-			if uv2 then
-				uv2(uv0.taskVOs or {})
+			if arg_8_3 then
+				arg_8_3(arg_8_0.taskVOs or {})
 			end
 		end)
 	elseif TaskScene.IsPassScenario() then
-		slot0:Flush(slot2)
+		arg_8_0:Flush(arg_8_2)
 
-		if slot3 then
-			slot3(slot0.taskVOs or {})
+		if arg_8_3 then
+			arg_8_3(arg_8_0.taskVOs or {})
 		end
 	else
-		setActive(slot0._tf, false)
+		setActive(arg_8_0._tf, false)
 
-		if slot3 then
-			slot3({})
+		if arg_8_3 then
+			arg_8_3({})
 		end
 	end
 end
 
-function slot0.DoDisablePtTaskAnim(slot0, slot1)
-	function slot2(slot0, slot1)
-		slot0:DoSubmitAnim(function ()
-			setActive(uv0._go, false)
-			uv1()
+function var_0_0.DoDisablePtTaskAnim(arg_10_0, arg_10_1)
+	local function var_10_0(arg_11_0, arg_11_1)
+		arg_11_0:DoSubmitAnim(function()
+			setActive(arg_11_0._go, false)
+			arg_11_1()
 		end)
 	end
 
-	slot0._scrollView.enabled = false
-	slot3 = {}
+	arg_10_0._scrollView.enabled = false
 
-	for slot7, slot8 in ipairs(slot0.taskVOs or {}) do
-		if slot8.isWeekTask then
-			if slot0:GetCard(slot8.id) then
-				table.insert(slot3, function (slot0)
-					uv0(uv1, slot0)
+	local var_10_1 = {}
+
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.taskVOs or {}) do
+		if iter_10_1.isWeekTask then
+			local var_10_2 = arg_10_0:GetCard(iter_10_1.id)
+
+			if var_10_2 then
+				table.insert(var_10_1, function(arg_13_0)
+					var_10_0(var_10_2, arg_13_0)
 				end)
 			end
 		end
 	end
 
-	seriesAsync(slot3, function ()
-		uv0._scrollView.enabled = true
+	seriesAsync(var_10_1, function()
+		arg_10_0._scrollView.enabled = true
 
-		uv1()
+		arg_10_1()
 	end)
 end
 
-function slot0.GetCard(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.taskCards) do
-		if slot6.taskVO.id == slot1 then
-			return slot6
+function var_0_0.GetCard(arg_15_0, arg_15_1)
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.taskCards) do
+		if iter_15_1.taskVO.id == arg_15_1 then
+			return iter_15_1
 		end
 	end
 
 	return nil
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.taskVOs = {}
-	slot2 = slot0.contextData.weekTaskProgressInfo
+function var_0_0.Flush(arg_16_0, arg_16_1)
+	arg_16_0.taskVOs = {}
 
-	slot0:UpdateWeekProgress(slot2)
+	local var_16_0 = arg_16_0.contextData.weekTaskProgressInfo
 
-	if not slot2:ReachMaxPt() then
-		for slot7, slot8 in pairs(slot2:GetSubTasks()) do
-			table.insert(slot0.taskVOs, slot8)
+	arg_16_0:UpdateWeekProgress(var_16_0)
+
+	if not var_16_0:ReachMaxPt() then
+		local var_16_1 = var_16_0:GetSubTasks()
+
+		for iter_16_0, iter_16_1 in pairs(var_16_1) do
+			table.insert(arg_16_0.taskVOs, iter_16_1)
 		end
 	end
 
-	for slot7, slot8 in pairs(slot0.contextData.taskVOsById) do
-		if slot8:ShowOnTaskScene() and slot1[slot8:GetRealType()] then
-			table.insert(slot0.taskVOs, slot8)
+	local var_16_2 = arg_16_0.contextData.taskVOsById
+
+	for iter_16_2, iter_16_3 in pairs(var_16_2) do
+		if iter_16_3:ShowOnTaskScene() and arg_16_1[iter_16_3:GetRealType()] then
+			table.insert(arg_16_0.taskVOs, iter_16_3)
 		end
 	end
 
-	table.sort(slot0.taskVOs, function (slot0, slot1)
-		if slot0:getTaskStatus(slot0) == slot1:getTaskStatus(slot1) then
-			return (slot0.isWeekTask and 0 or 1) > (slot1.isWeekTask and 0 or 1)
+	table.sort(arg_16_0.taskVOs, function(arg_17_0, arg_17_1)
+		local var_17_0 = arg_17_0:getTaskStatus(arg_17_0)
+		local var_17_1 = arg_17_1:getTaskStatus(arg_17_1)
+
+		if var_17_0 == var_17_1 then
+			return (arg_17_0.isWeekTask and 0 or 1) > (arg_17_1.isWeekTask and 0 or 1)
 		else
-			return slot3 < slot2
+			return var_17_1 < var_17_0
 		end
 	end)
-	slot0:Show()
-	slot0._scrollView:SetTotalCount(#slot0.taskVOs, -1)
+	arg_16_0:Show()
+	arg_16_0._scrollView:SetTotalCount(#arg_16_0.taskVOs, -1)
 end
 
-function slot0.UpdateWeekProgress(slot0, slot1)
-	slot0:UpdateWeekProgressGetBtn(slot1)
+function var_0_0.UpdateWeekProgress(arg_18_0, arg_18_1)
+	arg_18_0:UpdateWeekProgressGetBtn(arg_18_1)
 
-	slot0.phaseTxt.text = slot1:GetPhase() .. "/" .. slot1:GetTotalPhase()
-	slot2 = slot1:GetProgress()
-	slot3 = slot1:GetTarget()
-	slot0.progressSlider.value = slot2 / slot3
-	slot0.progressTxt.text = slot2 .. "/" .. slot3
+	arg_18_0.phaseTxt.text = arg_18_1:GetPhase() .. "/" .. arg_18_1:GetTotalPhase()
 
-	slot0.awardList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot3 = uv0[slot1 + 1]
+	local var_18_0 = arg_18_1:GetProgress()
+	local var_18_1 = arg_18_1:GetTarget()
 
-			updateDrop(slot2, {
-				type = slot3[1],
-				id = slot3[2],
-				count = slot3[3]
-			})
-			onButton(uv1, slot2, function ()
-				uv0:emit(TaskMediator.ON_DROP, uv1)
+	arg_18_0.progressSlider.value = var_18_0 / var_18_1
+	arg_18_0.progressTxt.text = var_18_0 .. "/" .. var_18_1
+
+	local var_18_2 = arg_18_1:GetDropList()
+
+	arg_18_0.awardList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			local var_19_0 = var_18_2[arg_19_1 + 1]
+			local var_19_1 = {
+				type = var_19_0[1],
+				id = var_19_0[2],
+				count = var_19_0[3]
+			}
+
+			updateDrop(arg_19_2, var_19_1)
+			onButton(arg_18_0, arg_19_2, function()
+				arg_18_0:emit(TaskMediator.ON_DROP, var_19_1)
 			end, SFX_PANEL)
 		end
 	end)
-	slot0.awardList:align(#slot1:GetDropList())
+	arg_18_0.awardList:align(#var_18_2)
 end
 
-function slot0.UpdateWeekProgressGetBtn(slot0, slot1)
-	slot2 = slot1:CanUpgrade()
+function var_0_0.UpdateWeekProgressGetBtn(arg_21_0, arg_21_1)
+	local var_21_0 = arg_21_1:CanUpgrade()
 
-	setGray(slot0.getBtn, not slot2, false)
-	setActive(slot0.getBtnEnableTF, slot2)
-	setActive(slot0.getBtnDisableTF, not slot2)
-	setActive(slot0.tip, slot2)
-	onButton(slot0, slot0.getBtn, function ()
-		if uv0 then
-			uv1:JudgeOverflow(uv2, function ()
-				uv0:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
+	setGray(arg_21_0.getBtn, not var_21_0, false)
+	setActive(arg_21_0.getBtnEnableTF, var_21_0)
+	setActive(arg_21_0.getBtnDisableTF, not var_21_0)
+	setActive(arg_21_0.tip, var_21_0)
+	onButton(arg_21_0, arg_21_0.getBtn, function()
+		if var_21_0 then
+			arg_21_0:JudgeOverflow(arg_21_1, function()
+				arg_21_0:emit(TaskMediator.ON_SUBMIT_WEEK_PROGREE)
 			end)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.JudgeOverflow(slot0, slot1, slot2)
-	slot3 = getProxy(PlayerProxy):getRawData()
-	slot7, slot8 = Task.StaticJudgeOverflow(slot3.gold, slot3.oil, LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1]), true, true, slot1:GetDropList())
+function var_0_0.JudgeOverflow(arg_24_0, arg_24_1, arg_24_2)
+	local var_24_0 = getProxy(PlayerProxy):getRawData()
+	local var_24_1 = pg.gameset.urpt_chapter_max.description[1]
+	local var_24_2 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(var_24_1)
+	local var_24_3 = arg_24_1:GetDropList()
+	local var_24_4, var_24_5 = Task.StaticJudgeOverflow(var_24_0.gold, var_24_0.oil, var_24_2, true, true, var_24_3)
 
-	if slot7 then
+	if var_24_4 then
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_ITEM_BOX,
 			content = i18n("award_max_warning"),
-			items = slot8,
-			onYes = slot2
+			items = var_24_5,
+			onYes = arg_24_2
 		})
 	else
-		slot2()
+		arg_24_2()
 	end
 end
 
-function slot0.OnDestroy(slot0)
-	slot0._scrollView.onValueChanged:RemoveAllListeners()
+function var_0_0.OnDestroy(arg_25_0)
+	arg_25_0._scrollView.onValueChanged:RemoveAllListeners()
 end
 
-function slot0.RefreshWeekTaskPageBefore(slot0, slot1)
-	if slot0:GetCard(slot1) then
-		setActive(slot2._go, false)
+function var_0_0.RefreshWeekTaskPageBefore(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_0:GetCard(arg_26_1)
+
+	if var_26_0 then
+		setActive(var_26_0._go, false)
 	end
 end
 
-return slot0
+return var_0_0

@@ -1,158 +1,161 @@
-slot0 = class("CryptolaliaMainView")
+﻿local var_0_0 = class("CryptolaliaMainView")
 
-function slot0.Ctor(slot0, slot1)
-	setmetatable(slot0, {
-		__index = function (slot0, slot1)
-			return rawget(slot0, "class")[slot1] and slot2[slot1] or uv0[slot1]
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	setmetatable(arg_1_0, {
+		__index = function(arg_2_0, arg_2_1)
+			local var_2_0 = rawget(arg_2_0, "class")
+
+			return var_2_0[arg_2_1] and var_2_0[arg_2_1] or arg_1_1[arg_2_1]
 		end
 	})
 
-	slot0.downloadBtnAnim = slot0.downloadBtn:GetComponent(typeof(Animation))
+	arg_1_0.downloadBtnAnim = arg_1_0.downloadBtn:GetComponent(typeof(Animation))
 end
 
-function slot0.Flush(slot0, slot1, slot2, slot3)
-	if not slot0.cryptolalia or slot0.cryptolalia.id ~= slot1.id then
-		slot0.shipName.text = slot1:GetShipName()
-		slot0.nameTxt.text = slot1:GetName()
-		slot0.descTxt.text = slot1:GetDescription()
+function var_0_0.Flush(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	if not arg_3_0.cryptolalia or arg_3_0.cryptolalia.id ~= arg_3_1.id then
+		arg_3_0.shipName.text = arg_3_1:GetShipName()
+		arg_3_0.nameTxt.text = arg_3_1:GetName()
+		arg_3_0.descTxt.text = arg_3_1:GetDescription()
 
-		slot0.auditionTxt:SetText(slot1:GetAuditionTitle())
-		slot0:LoadCryptolaliaSpriteForShipGroup(slot1:GetShipGroupId())
+		arg_3_0.auditionTxt:SetText(arg_3_1:GetAuditionTitle())
+		arg_3_0:LoadCryptolaliaSpriteForShipGroup(arg_3_1:GetShipGroupId())
 
-		slot4 = not slot1:IsForever() and slot1:IsLock()
+		local var_3_0 = not arg_3_1:IsForever() and arg_3_1:IsLock()
 
-		setActive(slot0.timeLimit, slot4)
-		slot0:RemoveTimer()
-		slot0:AddTimer(slot1, slot4)
+		setActive(arg_3_0.timeLimit, var_3_0)
+		arg_3_0:RemoveTimer()
+		arg_3_0:AddTimer(arg_3_1, var_3_0)
 	end
 
-	slot0.authorTxt.text = "CV:" .. slot1:GetCvAuthor(slot2)
+	arg_3_0.authorTxt.text = "CV:" .. arg_3_1:GetCvAuthor(arg_3_2)
 
-	slot0:FlushState(slot1, slot2, slot3)
+	arg_3_0:FlushState(arg_3_1, arg_3_2, arg_3_3)
 
-	slot0.cryptolalia = slot1
+	arg_3_0.cryptolalia = arg_3_1
 end
 
-function slot0.AddTimer(slot0, slot1, slot2)
-	if slot2 then
-		slot3 = ""
-		slot0.timer = Timer.New(function ()
-			if uv1 ~= uv0:GetExpiredTimeStr() then
-				uv1 = slot0
-				uv2.timeTxt.text = slot0
+function var_0_0.AddTimer(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_2 then
+		local var_4_0 = ""
+
+		arg_4_0.timer = Timer.New(function()
+			local var_5_0 = arg_4_1:GetExpiredTimeStr()
+
+			if var_4_0 ~= var_5_0 then
+				var_4_0 = var_5_0
+				arg_4_0.timeTxt.text = var_5_0
 			end
 		end, 1, -1)
 
-		slot0.timer:Start()
-		slot0.timer.func()
-
-		return
-	end
-
-	slot0.timeTxt.text = ""
-end
-
-function slot0.FlushState(slot0, slot1, slot2, slot3)
-	slot4 = slot3 and Cryptolalia.STATE_DOWNLOADING or slot1:GetState(slot2)
-
-	setActive(slot0.lockBtn, Cryptolalia.STATE_LOCK == slot4)
-	setActive(slot0.downloadBtn, Cryptolalia.STATE_DOWNLOADABLE == slot4)
-
-	if slot0.state and slot0.state == Cryptolalia.STATE_LOCK and slot4 == Cryptolalia.STATE_DOWNLOADABLE then
-		slot0.downloadBtnAnim:Stop()
-		slot0.downloadBtnAnim:Play("anim_Cryptolalia_dowmload")
-	end
-
-	setSlider(slot0.downloadingBtn, 0, 1, 0)
-	setActive(slot0.downloadingBtn, slot4 == Cryptolalia.STATE_DOWNLOADING)
-	setActive(slot0.playBtn, Cryptolalia.STATE_PLAYABLE == slot4)
-	setActive(slot0.deleteBtn, Cryptolalia.STATE_PLAYABLE == slot4)
-	setText(slot0.deleteBtn:Find("label"), i18n("cryptolalia_delete_res", slot1:GetResSize(slot2)))
-	setActive(slot0.stateBtn, Cryptolalia.STATE_PLAYABLE ~= slot4)
-	setActive(slot0.switchBtn, slot4 ~= Cryptolalia.STATE_DOWNLOADING and PLATFORM_CODE == PLATFORM_CH and slot1:IsMultiVersion())
-
-	slot5 = Vector2(0, 0)
-	slot6 = Vector2(20, -9.2)
-	slot7 = slot2 == Cryptolalia.LANG_TYPE_CH
-
-	setAnchoredPosition(slot0.switchBtn:Find("ch"), slot7 and slot5 or slot6)
-	setAnchoredPosition(slot0.switchBtn:Find("jp"), slot7 and slot6 or slot5)
-	setActive(slot0.listBtn, slot4 ~= Cryptolalia.STATE_DOWNLOADING)
-
-	if Cryptolalia.STATE_LOCK == slot4 then
-		slot0.stateBtnTxt.text = i18n("cryptolalia_lock_res")
-	elseif Cryptolalia.STATE_PLAYABLE ~= slot4 then
-		slot0.stateBtnTxt.text = i18n("cryptolalia_not_download_res")
+		arg_4_0.timer:Start()
+		arg_4_0.timer.func()
 	else
-		slot0.stateBtnTxt.text = ""
+		arg_4_0.timeTxt.text = ""
+	end
+end
+
+function var_0_0.FlushState(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	local var_6_0 = arg_6_3 and Cryptolalia.STATE_DOWNLOADING or arg_6_1:GetState(arg_6_2)
+
+	setActive(arg_6_0.lockBtn, Cryptolalia.STATE_LOCK == var_6_0)
+	setActive(arg_6_0.downloadBtn, Cryptolalia.STATE_DOWNLOADABLE == var_6_0)
+
+	if arg_6_0.state and arg_6_0.state == Cryptolalia.STATE_LOCK and var_6_0 == Cryptolalia.STATE_DOWNLOADABLE then
+		arg_6_0.downloadBtnAnim:Stop()
+		arg_6_0.downloadBtnAnim:Play("anim_Cryptolalia_dowmload")
 	end
 
-	slot0.state = slot4
+	setSlider(arg_6_0.downloadingBtn, 0, 1, 0)
+	setActive(arg_6_0.downloadingBtn, var_6_0 == Cryptolalia.STATE_DOWNLOADING)
+	setActive(arg_6_0.playBtn, Cryptolalia.STATE_PLAYABLE == var_6_0)
+	setActive(arg_6_0.deleteBtn, Cryptolalia.STATE_PLAYABLE == var_6_0)
+	setText(arg_6_0.deleteBtn:Find("label"), i18n("cryptolalia_delete_res", arg_6_1:GetResSize(arg_6_2)))
+	setActive(arg_6_0.stateBtn, Cryptolalia.STATE_PLAYABLE ~= var_6_0)
+	setActive(arg_6_0.switchBtn, var_6_0 ~= Cryptolalia.STATE_DOWNLOADING and PLATFORM_CODE == PLATFORM_CH and arg_6_1:IsMultiVersion())
+
+	local var_6_1 = Vector2(0, 0)
+	local var_6_2 = Vector2(20, -9.2)
+	local var_6_3 = arg_6_2 == Cryptolalia.LANG_TYPE_CH
+
+	setAnchoredPosition(arg_6_0.switchBtn:Find("ch"), var_6_3 and var_6_1 or var_6_2)
+	setAnchoredPosition(arg_6_0.switchBtn:Find("jp"), var_6_3 and var_6_2 or var_6_1)
+	setActive(arg_6_0.listBtn, var_6_0 ~= Cryptolalia.STATE_DOWNLOADING)
+
+	if Cryptolalia.STATE_LOCK == var_6_0 then
+		arg_6_0.stateBtnTxt.text = i18n("cryptolalia_lock_res")
+	elseif Cryptolalia.STATE_PLAYABLE ~= var_6_0 then
+		arg_6_0.stateBtnTxt.text = i18n("cryptolalia_not_download_res")
+	else
+		arg_6_0.stateBtnTxt.text = ""
+	end
+
+	arg_6_0.state = var_6_0
 end
 
-function slot1(slot0, slot1, slot2)
-	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "cd", function (slot0)
-		if uv0.exited then
+local function var_0_1(arg_7_0, arg_7_1, arg_7_2)
+	LoadSpriteAtlasAsync("CryptolaliaShip/" .. arg_7_1, "cd", function(arg_8_0)
+		if arg_7_0.exited then
 			return
 		end
 
-		uv0.cdImg.sprite = slot0
+		arg_7_0.cdImg.sprite = arg_8_0
 
-		uv0.cdImg:SetNativeSize()
-		uv1()
+		arg_7_0.cdImg:SetNativeSize()
+		arg_7_2()
 	end)
 end
 
-function slot2(slot0, slot1, slot2)
-	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "name", function (slot0)
-		if uv0.exited then
+local function var_0_2(arg_9_0, arg_9_1, arg_9_2)
+	LoadSpriteAtlasAsync("CryptolaliaShip/" .. arg_9_1, "name", function(arg_10_0)
+		if arg_9_0.exited then
 			return
 		end
 
-		uv0.cdSignatureImg.sprite = slot0
+		arg_9_0.cdSignatureImg.sprite = arg_10_0
 
-		uv0.cdSignatureImg:SetNativeSize()
-		uv1()
+		arg_9_0.cdSignatureImg:SetNativeSize()
+		arg_9_2()
 	end)
 end
 
-function slot3(slot0, slot1, slot2)
-	LoadSpriteAtlasAsync("CryptolaliaShip/" .. slot1, "name", function (slot0)
-		if uv0.exited then
+local function var_0_3(arg_11_0, arg_11_1, arg_11_2)
+	LoadSpriteAtlasAsync("CryptolaliaShip/" .. arg_11_1, "name", function(arg_12_0)
+		if arg_11_0.exited then
 			return
 		end
 
-		uv0.signatureImg.sprite = slot0
+		arg_11_0.signatureImg.sprite = arg_12_0
 
-		uv0.signatureImg:SetNativeSize()
-		uv1()
+		arg_11_0.signatureImg:SetNativeSize()
+		arg_11_2()
 	end)
 end
 
-function slot0.LoadCryptolaliaSpriteForShipGroup(slot0, slot1)
-	slot0.cg.blocksRaycasts = false
+function var_0_0.LoadCryptolaliaSpriteForShipGroup(arg_13_0, arg_13_1)
+	arg_13_0.cg.blocksRaycasts = false
 
 	parallelAsync({
-		function (slot0)
-			uv0(uv1, uv2, slot0)
+		function(arg_14_0)
+			var_0_1(arg_13_0, arg_13_1, arg_14_0)
 		end
-	}, function ()
-		uv0.cg.blocksRaycasts = true
+	}, function()
+		arg_13_0.cg.blocksRaycasts = true
 	end)
 end
 
-function slot0.RemoveTimer(slot0)
-	if slot0.timer then
-		slot0.timer:Stop()
+function var_0_0.RemoveTimer(arg_16_0)
+	if arg_16_0.timer then
+		arg_16_0.timer:Stop()
 
-		slot0.timer = nil
+		arg_16_0.timer = nil
 	end
 end
 
-function slot0.Dispose(slot0)
-	slot0.exited = true
+function var_0_0.Dispose(arg_17_0)
+	arg_17_0.exited = true
 
-	slot0:RemoveTimer()
+	arg_17_0:RemoveTimer()
 end
 
-return slot0
+return var_0_0

@@ -1,4 +1,45 @@
-return {
+﻿return {
+	blink = {
+		0,
+		0.7,
+		1,
+		0.3,
+		0.3
+	},
+	effect_list = {
+		{
+			type = "BattleBuffAddAttrRatio",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "cannonPower",
+				number = 400
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				attr = "injureRatio",
+				number = -0.04
+			}
+		},
+		{
+			type = "BattleBuffCancelBuff",
+			trigger = {
+				"onHPRatioUpdate"
+			},
+			arg_list = {
+				count = 1,
+				hpUpperBound = 0.3
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -358,46 +399,5 @@ return {
 	stack = 1,
 	id = 19242,
 	icon = 19240,
-	last_effect = "",
-	blink = {
-		0,
-		0.7,
-		1,
-		0.3,
-		0.3
-	},
-	effect_list = {
-		{
-			type = "BattleBuffAddAttrRatio",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "cannonPower",
-				number = 400
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach",
-				"onRemove"
-			},
-			arg_list = {
-				attr = "injureRatio",
-				number = -0.04
-			}
-		},
-		{
-			type = "BattleBuffCancelBuff",
-			trigger = {
-				"onHPRatioUpdate"
-			},
-			arg_list = {
-				count = 1,
-				hpUpperBound = 0.3
-			}
-		}
-	}
+	last_effect = ""
 }

@@ -1,27 +1,29 @@
-slot0 = class("ColoringAchieveCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("ColoringAchieveCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot2 = slot1:getBody()
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.activityId
+	local var_1_2 = var_1_0.id
 
 	pg.ConnectionMgr.GetInstance():Send(26002, {
-		act_id = slot2.activityId,
-		id = slot2.id
-	}, 26003, function (slot0)
-		if slot0.result == 0 then
-			slot1 = PlayerConst.addTranDrop(slot0.drop_list)
-			slot2 = getProxy(ColoringProxy)
-			slot3 = slot2:getColorGroup(uv0)
+		act_id = var_1_1,
+		id = var_1_2
+	}, 26003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			local var_2_1 = getProxy(ColoringProxy)
+			local var_2_2 = var_2_1:getColorGroup(var_1_2)
 
-			slot3:setDrops(slot1)
-			slot3:setState(ColorGroup.StateAchieved)
-			slot2:checkState()
-			uv1:sendNotification(GAME.COLORING_ACHIEVE_DONE, {
-				drops = slot1
+			var_2_2:setDrops(var_2_0)
+			var_2_2:setState(ColorGroup.StateAchieved)
+			var_2_1:checkState()
+			arg_1_0:sendNotification(GAME.COLORING_ACHIEVE_DONE, {
+				drops = var_2_0
 			})
 		else
-			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_achieve", slot0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("coloring_achieve", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

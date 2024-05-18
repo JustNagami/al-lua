@@ -1,23 +1,24 @@
-slot0 = class("CardPuzzleRelicDeckLayerCombat", CardPuzzleRelicDeckLayer)
+﻿local var_0_0 = class("CardPuzzleRelicDeckLayerCombat", CardPuzzleRelicDeckLayer)
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CardTowerGiftDeckCombat"
 end
 
-function slot0.init(slot0)
-	uv0.super.init(slot0)
-	onButton(slot0, slot0:findTF("backBtn"), function ()
-		uv0:OnBackward()
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
+	onButton(arg_2_0, arg_2_0:findTF("backBtn"), function()
+		arg_2_0:OnBackward()
 	end, SFX_PANEL)
 end
 
-function slot0.OnBackward(slot0)
-	slot0:emit(CardPuzzleCardDeckMediator.CLOSE_LAYER)
+function var_0_0.OnBackward(arg_4_0)
+	arg_4_0:emit(CardPuzzleCardDeckMediator.CLOSE_LAYER)
 
-	return uv0.super.OnBackward(slot0)
+	return var_0_0.super.OnBackward(arg_4_0)
 end
 
-function slot0.willExit(slot0)
+function var_0_0.willExit(arg_5_0)
+	return
 end
 
-return slot0
+return var_0_0

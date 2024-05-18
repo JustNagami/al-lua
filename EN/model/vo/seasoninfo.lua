@@ -1,163 +1,178 @@
-slot0 = class("SeasonInfo", import(".BaseVO"))
-slot0.RECOVER_UP_COUNT = 5
-slot0.MAX_FIGHTCOUNT = 10
-slot0.RECOVER_UP_SIX_HOUR = 6
-slot0.RECOVER_UP_TWELVE_HOUR = 12
-slot0.INIT_POINT = pg.arena_data_rank[1].point
-slot0.ONE_SEASON_TIME = 1209600
-slot0.preRivals = {}
+﻿local var_0_0 = class("SeasonInfo", import(".BaseVO"))
 
-function slot0.Ctor(slot0, slot1)
-	slot0.score = slot1.score or 0
-	slot0.rank = slot1.rank
-	slot0.fightCount = slot1.fight_count
-	slot0.resetTime = slot1.fight_count_reset_time
-	slot0.flashTargetCount = slot1.flash_target_count + 1
-	slot0.score = slot0.score + uv0.INIT_POINT
+var_0_0.RECOVER_UP_COUNT = 5
+var_0_0.MAX_FIGHTCOUNT = 10
+var_0_0.RECOVER_UP_SIX_HOUR = 6
+var_0_0.RECOVER_UP_TWELVE_HOUR = 12
+var_0_0.INIT_POINT = pg.arena_data_rank[1].point
+var_0_0.ONE_SEASON_TIME = 1209600
+var_0_0.preRivals = {}
 
-	for slot6, slot7 in ipairs(slot1.vanguard_ship_id_list) do
-		table.insert({}, slot7)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0.score = arg_1_1.score or 0
+	arg_1_0.rank = arg_1_1.rank
+	arg_1_0.fightCount = arg_1_1.fight_count
+	arg_1_0.resetTime = arg_1_1.fight_count_reset_time
+	arg_1_0.flashTargetCount = arg_1_1.flash_target_count + 1
+	arg_1_0.score = arg_1_0.score + var_0_0.INIT_POINT
+
+	local var_1_0 = {}
+
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.vanguard_ship_id_list) do
+		table.insert(var_1_0, iter_1_1)
 	end
 
-	for slot6, slot7 in ipairs(slot1.main_ship_id_list) do
-		table.insert(slot2, slot7)
+	for iter_1_2, iter_1_3 in ipairs(arg_1_1.main_ship_id_list) do
+		table.insert(var_1_0, iter_1_3)
 	end
 
-	slot0.fleet = TypedFleet.New({
+	arg_1_0.fleet = TypedFleet.New({
 		saveLastShipFlag = true,
-		ship_list = slot2,
+		ship_list = var_1_0,
 		fleetType = FleetType.Normal
 	})
-	slot0.rivals = {}
+	arg_1_0.rivals = {}
 
-	for slot6, slot7 in ipairs(slot1.target_list) do
-		slot8 = Rival.New(slot7)
+	for iter_1_4, iter_1_5 in ipairs(arg_1_1.target_list) do
+		local var_1_1 = Rival.New(iter_1_5)
 
-		table.insert(slot0.rivals, slot8)
+		table.insert(arg_1_0.rivals, var_1_1)
 
-		uv0.preRivals[slot8.id] = slot8
+		var_0_0.preRivals[var_1_1.id] = var_1_1
 	end
 end
 
-function slot0.getFlashCount(slot0)
-	return slot0.flashTargetCount
+function var_0_0.getFlashCount(arg_2_0)
+	return arg_2_0.flashTargetCount
 end
 
-function slot0.increaseFlashCount(slot0)
-	slot0.flashTargetCount = slot0.flashTargetCount + 1
+function var_0_0.increaseFlashCount(arg_3_0)
+	arg_3_0.flashTargetCount = arg_3_0.flashTargetCount + 1
 end
 
-function slot0.resetFlashCount(slot0)
-	slot0.flashTargetCount = 0
+function var_0_0.resetFlashCount(arg_4_0)
+	arg_4_0.flashTargetCount = 0
 end
 
-function slot0.getconsumeGem(slot0)
-	return slot0.getMilitaryRank(slot0.score, slot0.rank).refresh_price[slot0.flashTargetCount] or slot1.refresh_price[#slot1.refresh_price]
+function var_0_0.getconsumeGem(arg_5_0)
+	local var_5_0 = arg_5_0.getMilitaryRank(arg_5_0.score, arg_5_0.rank)
+
+	return var_5_0.refresh_price[arg_5_0.flashTargetCount] or var_5_0.refresh_price[#var_5_0.refresh_price]
 end
 
-function slot0.updateRank(slot0, slot1)
-	slot0.rank = slot1
+function var_0_0.updateRank(arg_6_0, arg_6_1)
+	arg_6_0.rank = arg_6_1
 end
 
-function slot0.updateScore(slot0, slot1)
-	slot0.score = slot1
+function var_0_0.updateScore(arg_7_0, arg_7_1)
+	arg_7_0.score = arg_7_1
 end
 
-function slot0.getRivals(slot0)
-	return Clone(slot0.rivals)
+function var_0_0.getRivals(arg_8_0)
+	return Clone(arg_8_0.rivals)
 end
 
-function slot0.updateRivals(slot0, slot1)
-	for slot5, slot6 in pairs(slot0.rivals) do
-		uv0.preRivals[slot6.id] = slot6
+function var_0_0.updateRivals(arg_9_0, arg_9_1)
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.rivals) do
+		var_0_0.preRivals[iter_9_1.id] = iter_9_1
 	end
 
-	slot0.rivals = slot1
+	arg_9_0.rivals = arg_9_1
 end
 
-function slot0.GetPreRivals(slot0)
-	return uv0.preRivals
+function var_0_0.GetPreRivals(arg_10_0)
+	return var_0_0.preRivals
 end
 
-function slot0.updateFleet(slot0, slot1)
-	slot0.fleet = slot1
+function var_0_0.updateFleet(arg_11_0, arg_11_1)
+	arg_11_0.fleet = arg_11_1
 end
 
-function slot0.canExercise(slot0)
-	return slot0.fightCount > 0
+function var_0_0.canExercise(arg_12_0)
+	return arg_12_0.fightCount > 0
 end
 
-function slot0.reduceExerciseCount(slot0)
-	assert(slot0.fightCount > 0, "演习次数必须大于0")
+function var_0_0.reduceExerciseCount(arg_13_0)
+	assert(arg_13_0.fightCount > 0, "演习次数必须大于0")
 
-	slot0.fightCount = slot0.fightCount - 1
+	arg_13_0.fightCount = arg_13_0.fightCount - 1
 end
 
-function slot0.updateExerciseCount(slot0, slot1)
-	slot0.fightCount = math.min(slot0.fightCount + slot1, uv0.MAX_FIGHTCOUNT)
+function var_0_0.updateExerciseCount(arg_14_0, arg_14_1)
+	local var_14_0 = arg_14_0.fightCount + arg_14_1
+
+	arg_14_0.fightCount = math.min(var_14_0, var_0_0.MAX_FIGHTCOUNT)
 end
 
-function slot0.setExerciseCount(slot0, slot1)
-	slot0.fightCount = slot1
+function var_0_0.setExerciseCount(arg_15_0, arg_15_1)
+	arg_15_0.fightCount = arg_15_1
 end
 
-function slot0.updateResetTime(slot0, slot1)
-	slot0.resetTime = slot1
+function var_0_0.updateResetTime(arg_16_0, arg_16_1)
+	arg_16_0.resetTime = arg_16_1
 end
 
-function slot0.getMilitaryRank(slot0, slot1)
-	slot2 = nil
+function var_0_0.getMilitaryRank(arg_17_0, arg_17_1)
+	local var_17_0
+	local var_17_1 = pg.arena_data_rank
 
-	for slot7 = #pg.arena_data_rank.all, 1, -1 do
-		slot8 = slot3.all[slot7]
+	for iter_17_0 = #var_17_1.all, 1, -1 do
+		local var_17_2 = var_17_1.all[iter_17_0]
+		local var_17_3 = var_17_1[var_17_2].point
+		local var_17_4 = var_17_1[var_17_2].order
 
-		if slot3[slot8].order ~= 0 then
-			if slot1 <= slot3[slot8].order and slot3[slot8].point <= slot0 then
-				slot2 = slot3[slot8]
+		if var_17_1[var_17_2].order ~= 0 then
+			if arg_17_1 <= var_17_4 and var_17_3 <= arg_17_0 then
+				var_17_0 = var_17_1[var_17_2]
 
 				break
 			end
-		elseif slot9 <= slot0 then
-			slot2 = slot3[slot8]
+		elseif var_17_3 <= arg_17_0 then
+			var_17_0 = var_17_1[var_17_2]
 
 			break
 		end
 	end
 
-	return slot2 or slot3[slot3.all[1]]
+	var_17_0 = var_17_0 or var_17_1[var_17_1.all[1]]
+
+	return var_17_0
 end
 
-function slot0.getNextMilitaryRank(slot0, slot1)
-	slot3 = pg.arena_data_rank[uv0.getMilitaryRank(slot0, slot1).id + 1] or pg.arena_data_rank[#pg.arena_data_rank.all]
+function var_0_0.getNextMilitaryRank(arg_18_0, arg_18_1)
+	local var_18_0 = var_0_0.getMilitaryRank(arg_18_0, arg_18_1)
+	local var_18_1 = pg.arena_data_rank[var_18_0.id + 1] or pg.arena_data_rank[#pg.arena_data_rank.all]
 
-	return slot3.name, slot3.point, slot3.order
+	return var_18_1.name, var_18_1.point, var_18_1.order
 end
 
-function slot0.maxRankScore()
-	slot0 = pg.arena_data_rank
-	slot1 = slot0[slot0.all[#slot0.all]]
+function var_0_0.maxRankScore()
+	local var_19_0 = pg.arena_data_rank
+	local var_19_1 = var_19_0[var_19_0.all[#var_19_0.all]]
 
-	return slot1.name, slot1.point
+	return var_19_1.name, var_19_1.point
 end
 
-function slot0.getEmblem(slot0, slot1)
-	return math.min(math.max(uv0.getMilitaryRank(slot0, slot1).id, 1), 14)
+function var_0_0.getEmblem(arg_20_0, arg_20_1)
+	local var_20_0 = var_0_0.getMilitaryRank(arg_20_0, arg_20_1)
+
+	return math.min(math.max(var_20_0.id, 1), 14)
 end
 
-function slot0.getMainShipIds(slot0)
-	return slot0.fleet.mainShips
+function var_0_0.getMainShipIds(arg_21_0)
+	return arg_21_0.fleet.mainShips
 end
 
-function slot0.getVanguardShipIds(slot0)
-	return slot0.fleet.vanguardShips
+function var_0_0.getVanguardShipIds(arg_22_0)
+	return arg_22_0.fleet.vanguardShips
 end
 
-function slot0.getMainFleetShipCount(slot0)
-	return table.getCount(slot0.mainShips)
+function var_0_0.getMainFleetShipCount(arg_23_0)
+	return table.getCount(arg_23_0.mainShips)
 end
 
-function slot0.getVanguardShipsShipCount(slot0)
-	return table.getCount(slot0.vanguardShips)
+function var_0_0.getVanguardShipsShipCount(arg_24_0)
+	return table.getCount(arg_24_0.vanguardShips)
 end
 
-return slot0
+return var_0_0

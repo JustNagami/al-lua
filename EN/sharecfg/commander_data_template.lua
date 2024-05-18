@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.commander_data_template = {
 	[10011] = {
 		rarity = 5,

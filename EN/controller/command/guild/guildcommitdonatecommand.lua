@@ -1,77 +1,91 @@
-slot0 = class("GuildCommitDonateCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("GuildCommitDonateCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
-	slot3 = slot1:getBody().taskId
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().taskId
+	local var_1_1 = getProxy(GuildProxy)
+	local var_1_2 = var_1_1:getData()
 
-	if not getProxy(GuildProxy):getData() then
+	if not var_1_2 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_no_exist"))
 
 		return
 	end
 
-	if not slot5:getDonateTaskById(slot3) then
+	local var_1_3 = var_1_2:getDonateTaskById(var_1_0)
+
+	if not var_1_3 then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_not_exist_donate_task"))
 
 		return
 	end
 
-	if not slot6:canCommit() then
+	if not var_1_3:canCommit() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	if not slot5:canDonate() then
+	if not var_1_2:canDonate() then
 		pg.TipsMgr:GetInstance():ShowTips(i18n("guild_donate_times_not enough"))
 
 		return
 	end
 
 	pg.ConnectionMgr.GetInstance():Send(62002, {
-		id = slot3
-	}, 62003, function (slot0)
-		if slot0.result == 0 then
-			slot1 = {}
+		id = var_1_0
+	}, 62003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = {}
 
-			for slot5, slot6 in ipairs(slot0.donate_tasks) do
-				table.insert(slot1, GuildDonateTask.New({
-					id = slot6
-				}))
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.donate_tasks) do
+				local var_2_1 = GuildDonateTask.New({
+					id = iter_2_1
+				})
+
+				table.insert(var_2_0, var_2_1)
 			end
 
-			slot2 = getProxy(PlayerProxy)
-			slot3 = slot2:getData()
-			slot4 = uv0:getData()
+			local var_2_2 = getProxy(PlayerProxy)
+			local var_2_3 = var_2_2:getData()
+			local var_2_4 = var_1_1:getData()
 
-			slot4:getMemberById(slot3.id):AddLiveness(uv1:GetLivenessAddition())
-			slot4:updateDonateTasks(slot1)
-			slot4:updateDonateCount()
-			uv0:updateGuild(slot4)
+			var_2_4:getMemberById(var_2_3.id):AddLiveness(var_1_3:GetLivenessAddition())
+			var_2_4:updateDonateTasks(var_2_0)
+			var_2_4:updateDonateCount()
+			var_1_1:updateGuild(var_2_4)
 
-			slot6 = uv1:getConfig("award_contribution")
+			local var_2_5 = var_1_3:getConfig("award_contribution")
 
-			slot3:addResources({
-				guildCoin = slot6
+			var_2_3:addResources({
+				guildCoin = var_2_5
 			})
-			slot2:updatePlayer(slot3)
-			uv2:sendNotification(GAME.CONSUME_ITEM, Drop.Create(uv1:getCommitItem()))
+			var_2_2:updatePlayer(var_2_3)
 
-			slot8 = {}
+			local var_2_6 = var_1_3:getCommitItem()
 
-			table.insert(slot8, Drop.New({
+			arg_1_0:sendNotification(GAME.CONSUME_ITEM, Drop.Create(var_2_6))
+
+			local var_2_7 = {}
+			local var_2_8 = Drop.New({
 				type = DROP_TYPE_RESOURCE,
 				id = PlayerConst.ResGuildCoin,
-				count = slot6
-			}))
-			uv2:sendNotification(GAME.GUILD_COMMIT_DONATE_DONE, {
-				awards = slot8,
-				capital = uv1:getConfig("award_capital"),
-				techPoint = uv1:getConfig("award_tech_exp")
+				count = var_2_5
+			})
+
+			table.insert(var_2_7, var_2_8)
+
+			local var_2_9 = var_1_3:getConfig("award_capital")
+			local var_2_10 = var_1_3:getConfig("award_tech_exp")
+
+			arg_1_0:sendNotification(GAME.GUILD_COMMIT_DONATE_DONE, {
+				awards = var_2_7,
+				capital = var_2_9,
+				techPoint = var_2_10
 			})
 		else
-			pg.TipsMgr:GetInstance():ShowTips(errorTip("guild_dissolve_erro", slot0.result))
+			pg.TipsMgr:GetInstance():ShowTips(errorTip("guild_dissolve_erro", arg_2_0.result))
 		end
 	end)
 end
 
-return slot0
+return var_0_0

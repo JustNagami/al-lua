@@ -1,4 +1,15 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onFriendlyShipDying"
+			},
+			arg_list = {
+				buff_id = 10901
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,16 +30,5 @@ return {
 	stack = 1,
 	id = 10900,
 	icon = 10900,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffAddBuff",
-			trigger = {
-				"onFriendlyShipDying"
-			},
-			arg_list = {
-				buff_id = 10901
-			}
-		}
-	}
+	last_effect = ""
 }

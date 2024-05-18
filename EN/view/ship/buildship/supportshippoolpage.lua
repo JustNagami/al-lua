@@ -1,88 +1,97 @@
-slot0 = class("SupportShipPoolPage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("SupportShipPoolPage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "SupportShipPoolPageUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.medalCount = slot0._tf:Find("gallery/res_items/medal")
-	slot0.patingTF = slot0:findTF("painting")
-	slot0.bg = slot0:findTF("gallery/bg")
-	slot0.tipSTxt = slot0.bg:Find("type_intro/mask/title"):GetComponent("ScrollText")
-	slot0.shopBtn = slot0._tf:Find("gallery/shop_btn")
-	slot0.helpBtn = slot0:findTF("gallery/help_btn")
-	slot0.startBtn = slot0:findTF("gallery/start_btn")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.medalCount = arg_2_0._tf:Find("gallery/res_items/medal")
+	arg_2_0.patingTF = arg_2_0:findTF("painting")
+	arg_2_0.bg = arg_2_0:findTF("gallery/bg")
+	arg_2_0.tipSTxt = arg_2_0.bg:Find("type_intro/mask/title"):GetComponent("ScrollText")
+	arg_2_0.shopBtn = arg_2_0._tf:Find("gallery/shop_btn")
+	arg_2_0.helpBtn = arg_2_0:findTF("gallery/help_btn")
+	arg_2_0.startBtn = arg_2_0:findTF("gallery/start_btn")
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0.shopBtn, function ()
-		uv0:emit(BuildShipMediator.ON_SUPPORT_SHOP)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.shopBtn, function()
+		arg_3_0:emit(BuildShipMediator.ON_SUPPORT_SHOP)
 	end, SFX_PANEL)
 end
 
-function slot0.Flush(slot0)
-	slot0:UpdateMedal()
+function var_0_0.Flush(arg_5_0)
+	arg_5_0:UpdateMedal()
 
-	slot2 = pg.gametip.honor_medal_support_tips_display.tip
+	local var_5_0 = getProxy(BuildShipProxy):getSupportShipCost()
+	local var_5_1 = pg.gametip.honor_medal_support_tips_display.tip
 
-	setText(slot0:findTF("gallery/prints/intro/text"), slot2.support_tip_consume)
-	setImageSprite(slot0.bg, GetSpriteFromAtlas(slot2.bg, ""))
-	slot0.tipSTxt:SetText(slot2.support_tip_ship)
+	setText(arg_5_0:findTF("gallery/prints/intro/text"), var_5_1.support_tip_consume)
+	setImageSprite(arg_5_0.bg, GetSpriteFromAtlas(var_5_1.bg, ""))
 
-	slot4 = slot0:findTF("gallery/item_bg/medal")
+	local var_5_2 = var_5_1.support_tip_ship
 
-	setText(slot4:Find("name"), Drop.New({
+	arg_5_0.tipSTxt:SetText(var_5_2)
+
+	local var_5_3 = arg_5_0:findTF("gallery/item_bg/medal")
+
+	setText(var_5_3:Find("name"), Drop.New({
 		type = DROP_TYPE_ITEM,
 		id = ITEM_ID_SILVER_HOOK
 	}):getName())
-	setText(slot4:Find("count/Text"), getProxy(BuildShipProxy):getSupportShipCost())
-	slot0:UpdateBuildPoolPaiting()
-	onButton(slot0, slot0.helpBtn, function ()
-		uv0.contextData.helpWindow:ExecuteAction("Show", uv1, "support")
+	setText(var_5_3:Find("count/Text"), var_5_0)
+	arg_5_0:UpdateBuildPoolPaiting()
+	onButton(arg_5_0, arg_5_0.helpBtn, function()
+		arg_5_0.contextData.helpWindow:ExecuteAction("Show", var_5_1, "support")
 	end, SFX_CANCEL)
 
-	slot5 = getProxy(BagProxy)
+	local var_5_4 = getProxy(BagProxy)
 
-	onButton(slot0, slot0.startBtn, function ()
-		uv2.contextData.msgbox:ExecuteAction("Show", {
+	onButton(arg_5_0, arg_5_0.startBtn, function()
+		local var_7_0 = {
 			buildType = "medal",
 			itemVO = Item.New({
 				id = ITEM_ID_SILVER_HOOK,
-				count = uv0:getItemCountById(ITEM_ID_SILVER_HOOK)
+				count = var_5_4:getItemCountById(ITEM_ID_SILVER_HOOK)
 			}),
-			cost = uv1,
+			cost = var_5_0,
 			max = MAX_BUILD_WORK_COUNT,
-			onConfirm = function (slot0)
-				uv0:emit(BuildShipMediator.ON_SUPPORT_EXCHANGE, slot0)
+			onConfirm = function(arg_8_0)
+				arg_5_0:emit(BuildShipMediator.ON_SUPPORT_EXCHANGE, arg_8_0)
 			end
-		})
+		}
+
+		arg_5_0.contextData.msgbox:ExecuteAction("Show", var_7_0)
 	end, SFX_UI_BUILDING_STARTBUILDING)
 end
 
-function slot0.UpdateMedal(slot0)
-	setText(slot0.medalCount:Find("Text"), getProxy(BagProxy):getItemCountById(ITEM_ID_SILVER_HOOK))
+function var_0_0.UpdateMedal(arg_9_0)
+	setText(arg_9_0.medalCount:Find("Text"), getProxy(BagProxy):getItemCountById(ITEM_ID_SILVER_HOOK))
 end
 
-function slot0.UpdateBuildPoolPaiting(slot0)
-	if slot0.painting ~= slot0.contextData.falgShip:getPainting() then
+function var_0_0.UpdateBuildPoolPaiting(arg_10_0)
+	local var_10_0 = arg_10_0.contextData.falgShip:getPainting()
+
+	if arg_10_0.painting ~= var_10_0 then
 		pg.UIMgr:GetInstance():LoadingOn()
-		setPaintingPrefabAsync(slot0.patingTF, slot1, "build", function ()
-			uv0.painting = uv1
+		setPaintingPrefabAsync(arg_10_0.patingTF, var_10_0, "build", function()
+			arg_10_0.painting = var_10_0
 
 			pg.UIMgr:GetInstance():LoadingOff()
 		end)
 	end
 end
 
-function slot0.ShowOrHide(slot0, slot1)
-	if slot1 then
-		slot0:Show()
+function var_0_0.ShowOrHide(arg_12_0, arg_12_1)
+	if arg_12_1 then
+		arg_12_0:Show()
 	else
-		slot0:Hide()
+		arg_12_0:Hide()
 	end
 end
 
-function slot0.OnDestroy(slot0)
+function var_0_0.OnDestroy(arg_13_0)
+	return
 end
 
-return slot0
+return var_0_0

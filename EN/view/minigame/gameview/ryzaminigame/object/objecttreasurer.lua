@@ -1,20 +1,20 @@
-slot0 = class("ObjectTreasureR", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
+﻿local var_0_0 = class("ObjectTreasureR", import("view.miniGame.gameView.RyzaMiniGame.object.TargetObject"))
 
-function slot0.FirePassability(slot0)
+function var_0_0.FirePassability(arg_1_0)
 	return 2
 end
 
-function slot0.InitUI(slot0, slot1)
-	slot0._tf:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		uv0:TryDrop(uv1.drop, "Drop_Treasure_R")
-		uv0:Destroy()
+function var_0_0.InitUI(arg_2_0, arg_2_1)
+	arg_2_0._tf:Find("Image"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		arg_2_0:TryDrop(arg_2_1.drop, "Drop_Treasure_R")
+		arg_2_0:Destroy()
 	end)
 end
 
-function slot0.InitRegister(slot0, slot1)
-	slot0:Register("touch", function ()
-		uv0:DeregisterAll()
-		uv0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Open")
+function var_0_0.InitRegister(arg_4_0, arg_4_1)
+	arg_4_0:Register("touch", function()
+		arg_4_0:DeregisterAll()
+		arg_4_0._tf:Find("Image"):GetComponent(typeof(Animator)):Play("Open")
 	end, {
 		{
 			0,
@@ -23,4 +23,4 @@ function slot0.InitRegister(slot0, slot1)
 	})
 end
 
-return slot0
+return var_0_0

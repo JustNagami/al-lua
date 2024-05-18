@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"Let's add your new ship to your <color=#ff7d36>formation</color>.",
 	"Keep in mind that <color=#ffde38>destroyers, light cruisers, and heavy cruisers</color> may only be deployed to your team's vanguard!",
 	"<color=#ffde38>Carriers and battleships</color> must be placed towards the back in the main fleet.",
@@ -19,7 +19,7 @@ return {
 				mode = 2,
 				posY = -275,
 				posX = 348,
-				text = slot0[1]
+				text = var_0_0[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/main/frame/right/formationButton",
@@ -41,7 +41,7 @@ return {
 				mode = 1,
 				posY = -100,
 				posX = 300,
-				text = slot0[2]
+				text = var_0_0[2]
 			}
 		},
 		{
@@ -51,7 +51,7 @@ return {
 				mode = 1,
 				posY = 200,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			}
 		},
 		{
@@ -61,7 +61,7 @@ return {
 				mode = 2,
 				posY = 122.82,
 				posX = 243.5,
-				text = slot0[4]
+				text = var_0_0[4]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/GridFrame/vanguard_2/tip",
@@ -83,7 +83,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[5]
+				text = var_0_0[5]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/DockyardUI(Clone)/main/ship_container/ships",
@@ -110,7 +110,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 0,
-				text = slot0[6]
+				text = var_0_0[6]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/blur_panel/select_panel/confirm_button",
@@ -133,7 +133,7 @@ return {
 				mode = 1,
 				posY = 0,
 				posX = 0,
-				text = slot0[7]
+				text = var_0_0[7]
 			}
 		},
 		{
@@ -143,7 +143,7 @@ return {
 				mode = 2,
 				posY = 215.7,
 				posX = -95.62,
-				text = slot0[8]
+				text = var_0_0[8]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/FormationUI(Clone)/blur_panel/top/back_btn",

@@ -1,4 +1,29 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffFixRange",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				bulletRange = 75,
+				weaponRange = 75,
+				index = {
+					1
+				}
+			}
+		},
+		{
+			type = "BattleBuffAddAttr",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				attr = "damageToArmorRateEnhance_1",
+				number = 0.05
+			}
+		}
+	},
 	{
 		effect_list = {
 			{
@@ -278,30 +303,5 @@ return {
 	stack = 1,
 	id = 14181,
 	icon = 14180,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffFixRange",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				bulletRange = 75,
-				weaponRange = 75,
-				index = {
-					1
-				}
-			}
-		},
-		{
-			type = "BattleBuffAddAttr",
-			trigger = {
-				"onAttach"
-			},
-			arg_list = {
-				attr = "damageToArmorRateEnhance_1",
-				number = 0.05
-			}
-		}
-	}
+	last_effect = ""
 }

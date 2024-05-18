@@ -1,525 +1,670 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleFormulas
-slot2 = slot0.Battle.BattleConst
-slot3 = Vector3.zero
-slot4 = slot2.OXY_STATE
-slot5 = slot2.BulletType
-slot6 = slot0.Battle.BattleAttr
-slot7 = class("BattleCldSystem")
-slot0.Battle.BattleCldSystem = slot7
-slot7.__name = "BattleCldSystem"
+﻿ys = ys or {}
 
-function slot7.Ctor(slot0, slot1)
-	slot0._proxy = slot1
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleFormulas
+local var_0_2 = var_0_0.Battle.BattleConst
+local var_0_3 = Vector3.zero
+local var_0_4 = var_0_2.OXY_STATE
+local var_0_5 = var_0_2.BulletType
+local var_0_6 = var_0_0.Battle.BattleAttr
+local var_0_7 = class("BattleCldSystem")
 
-	slot0:InitCldTree()
+var_0_0.Battle.BattleCldSystem = var_0_7
+var_0_7.__name = "BattleCldSystem"
 
-	slot0._friendlyCode = slot1:GetFriendlyCode()
-	slot0._foeCode = slot1:GetFoeCode()
+function var_0_7.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._proxy = arg_1_1
+
+	arg_1_0:InitCldTree()
+
+	arg_1_0._friendlyCode = arg_1_1:GetFriendlyCode()
+	arg_1_0._foeCode = arg_1_1:GetFoeCode()
 end
 
-function slot7.Dispose(slot0)
-	slot0._proxy = nil
-	slot0._shipTree = nil
-	slot0._foeShipTree = nil
-	slot0._aircraftTree = nil
-	slot0._surfaceBulletTree = nil
-	slot0._airBulletTree = nil
-	slot0._bulletTreeList = nil
-	slot0._foeSurafceBulletTree = nil
-	slot0._foeAirbulletTree = nil
-	slot0._foeBulleetTreeList = nil
-	slot0._surfaceAOETree = nil
-	slot0._airAOETree = nil
-	slot0._AOETreeList = nil
-	slot0._wallTree = nil
+function var_0_7.Dispose(arg_2_0)
+	arg_2_0._proxy = nil
+	arg_2_0._shipTree = nil
+	arg_2_0._foeShipTree = nil
+	arg_2_0._aircraftTree = nil
+	arg_2_0._surfaceBulletTree = nil
+	arg_2_0._airBulletTree = nil
+	arg_2_0._bulletTreeList = nil
+	arg_2_0._foeSurafceBulletTree = nil
+	arg_2_0._foeAirbulletTree = nil
+	arg_2_0._foeBulleetTreeList = nil
+	arg_2_0._surfaceAOETree = nil
+	arg_2_0._airAOETree = nil
+	arg_2_0._AOETreeList = nil
+	arg_2_0._wallTree = nil
 end
 
-function slot7.InitCldTree(slot0)
-	slot1, slot2, slot3, slot4 = slot0._proxy:GetTotalBounds()
-	slot5 = Vector3(slot3, 0, slot2)
-	slot6 = Vector3(slot4, 0, slot1)
-	slot0._shipTree = pg.ColliderTree.New("shipTree", slot5, slot6, 2)
-	slot0._foeShipTree = pg.ColliderTree.New("foeShipTree", slot5, slot6, 2)
-	slot0._aircraftTree = pg.ColliderTree.New("aircraftTree", slot5, slot6, 2)
-	slot0._surfaceBulletTree = pg.ColliderTree.New("surfaceBullets", slot5, slot6, 4)
-	slot0._airBulletTree = pg.ColliderTree.New("airBullets", slot5, slot6, 3)
-	slot0._bulletTreeList = {
-		[uv0.BulletField.SURFACE] = slot0._surfaceBulletTree,
-		[uv0.BulletField.AIR] = slot0._airBulletTree
-	}
-	slot0._foeSurafceBulletTree = pg.ColliderTree.New("foeSurfaceBullets", slot5, slot6, 3)
-	slot0._foeAirbulletTree = pg.ColliderTree.New("foeAirBullets", slot5, slot6, 3)
-	slot0._foeBulleetTreeList = {
-		[uv0.BulletField.SURFACE] = slot0._foeSurafceBulletTree,
-		[uv0.BulletField.AIR] = slot0._foeAirbulletTree
-	}
-	slot0._surfaceAOETree = pg.ColliderTree.New("surfaceAOE", slot5, slot6, 2)
-	slot0._airAOETree = pg.ColliderTree.New("airAOE", slot5, slot6, 2)
-	slot0._bulletAOETree = pg.ColliderTree.New("bulletAOE", slot5, slot6, 2)
-	slot0._AOETreeList = {
-		[uv0.AOEField.SURFACE] = slot0._surfaceAOETree,
-		[uv0.AOEField.AIR] = slot0._airAOETree,
-		[uv0.AOEField.BULLET] = slot0._bulletAOETree
-	}
-	slot0._wallTree = pg.ColliderTree.New("wall", slot5, slot6, 2)
+function var_0_7.InitCldTree(arg_3_0)
+	local var_3_0, var_3_1, var_3_2, var_3_3 = arg_3_0._proxy:GetTotalBounds()
+	local var_3_4 = Vector3(var_3_2, 0, var_3_1)
+	local var_3_5 = Vector3(var_3_3, 0, var_3_0)
+
+	arg_3_0._shipTree = pg.ColliderTree.New("shipTree", var_3_4, var_3_5, 2)
+	arg_3_0._foeShipTree = pg.ColliderTree.New("foeShipTree", var_3_4, var_3_5, 2)
+	arg_3_0._aircraftTree = pg.ColliderTree.New("aircraftTree", var_3_4, var_3_5, 2)
+	arg_3_0._surfaceBulletTree = pg.ColliderTree.New("surfaceBullets", var_3_4, var_3_5, 4)
+	arg_3_0._airBulletTree = pg.ColliderTree.New("airBullets", var_3_4, var_3_5, 3)
+	arg_3_0._bulletTreeList = {}
+	arg_3_0._bulletTreeList[var_0_2.BulletField.SURFACE] = arg_3_0._surfaceBulletTree
+	arg_3_0._bulletTreeList[var_0_2.BulletField.AIR] = arg_3_0._airBulletTree
+	arg_3_0._foeSurafceBulletTree = pg.ColliderTree.New("foeSurfaceBullets", var_3_4, var_3_5, 3)
+	arg_3_0._foeAirbulletTree = pg.ColliderTree.New("foeAirBullets", var_3_4, var_3_5, 3)
+	arg_3_0._foeBulleetTreeList = {}
+	arg_3_0._foeBulleetTreeList[var_0_2.BulletField.SURFACE] = arg_3_0._foeSurafceBulletTree
+	arg_3_0._foeBulleetTreeList[var_0_2.BulletField.AIR] = arg_3_0._foeAirbulletTree
+	arg_3_0._surfaceAOETree = pg.ColliderTree.New("surfaceAOE", var_3_4, var_3_5, 2)
+	arg_3_0._airAOETree = pg.ColliderTree.New("airAOE", var_3_4, var_3_5, 2)
+	arg_3_0._bulletAOETree = pg.ColliderTree.New("bulletAOE", var_3_4, var_3_5, 2)
+	arg_3_0._AOETreeList = {}
+	arg_3_0._AOETreeList[var_0_2.AOEField.SURFACE] = arg_3_0._surfaceAOETree
+	arg_3_0._AOETreeList[var_0_2.AOEField.AIR] = arg_3_0._airAOETree
+	arg_3_0._AOETreeList[var_0_2.AOEField.BULLET] = arg_3_0._bulletAOETree
+	arg_3_0._wallTree = pg.ColliderTree.New("wall", var_3_4, var_3_5, 2)
 end
 
-function slot7.UpdateShipCldTree(slot0, slot1)
-	slot2 = slot1:GetSpeed()
-	slot3 = slot1:GetCldBox()
-	slot4 = nil
+function var_0_7.UpdateShipCldTree(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:GetSpeed()
+	local var_4_1 = arg_4_1:GetCldBox()
+	local var_4_2
+	local var_4_3 = not var_0_6.IsUnitCldImmune(arg_4_1)
 
-	if slot1:GetIFF() == slot0._foeCode then
-		if not uv0.IsUnitCldImmune(slot1) then
-			if slot1:GetCldData().FriendlyCld then
-				slot1:GetCldData().distList = {}
+	if arg_4_1:GetIFF() == arg_4_0._foeCode then
+		if var_4_3 then
+			if arg_4_1:GetCldData().FriendlyCld then
+				local var_4_4 = arg_4_0._foeShipTree:GetCldList(var_4_1, var_4_0)
 
-				if #slot0._foeShipTree:GetCldList(slot3, slot2) > 1 then
-					slot0:HandleEnemyShipCld(slot6, slot1)
+				arg_4_1:GetCldData().distList = {}
+
+				if #var_4_4 > 1 then
+					arg_4_0:HandleEnemyShipCld(var_4_4, arg_4_1)
 				end
 			end
 
-			slot6 = slot0._shipTree:GetCldList(slot3, slot2)
+			local var_4_5 = arg_4_0._shipTree:GetCldList(var_4_1, var_4_0)
+			local var_4_6 = arg_4_0.surfaceFilterCount(arg_4_1, var_4_5)
 
-			slot0._proxy:HandleShipCrashDecelerate(slot1, slot0.surfaceFilterCount(slot1, slot6))
-			slot0:HandlePlayerShipCld(slot6, slot1)
+			arg_4_0._proxy:HandleShipCrashDecelerate(arg_4_1, var_4_6)
+			arg_4_0:HandlePlayerShipCld(var_4_5, arg_4_1)
 		end
 
-		slot4 = slot0._foeShipTree
-	elseif slot1:GetIFF() == slot0._friendlyCode then
-		if slot5 then
-			slot0._proxy:HandleShipCrashDecelerate(slot1, slot0.surfaceFilterCount(slot1, slot0._foeShipTree:GetCldList(slot3, slot2)))
+		var_4_2 = arg_4_0._foeShipTree
+	elseif arg_4_1:GetIFF() == arg_4_0._friendlyCode then
+		if var_4_3 then
+			local var_4_7 = arg_4_0._foeShipTree:GetCldList(var_4_1, var_4_0)
+			local var_4_8 = arg_4_0.surfaceFilterCount(arg_4_1, var_4_7)
+
+			arg_4_0._proxy:HandleShipCrashDecelerate(arg_4_1, var_4_8)
 		end
 
-		slot4 = slot0._shipTree
+		var_4_2 = arg_4_0._shipTree
 	end
 
-	slot4:Update(slot3)
+	var_4_2:Update(var_4_1)
 end
 
-function slot7.HandlePlayerShipCld(slot0, slot1, slot2)
-	if slot2:GetCldData().Active == false then
+function var_0_7.HandlePlayerShipCld(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_2:GetCldData()
+
+	if var_5_0.Active == false then
 		return
 	end
 
-	slot5 = {}
+	local var_5_1 = #arg_5_1
+	local var_5_2 = {}
 
-	for slot9 = 1, #slot1 do
-		if slot1[slot9].data.Active == false then
-			-- Nothing
-		elseif slot10.UID == slot2:GetUniqueID() then
-			-- Nothing
-		elseif slot3.IFF == slot10.IFF then
-			-- Nothing
-		elseif slot3.Surface == slot10.Surface then
-			slot5[#slot5 + 1] = slot10.UID
-		end
-	end
+	for iter_5_0 = 1, var_5_1 do
+		local var_5_3 = arg_5_1[iter_5_0].data
 
-	slot0._proxy:HandleShipCrashDamageList(slot2, slot5)
-end
-
-function slot7.HandleEnemyShipCld(slot0, slot1, slot2)
-	if slot2:GetCldData().Active == false then
-		return
-	end
-
-	slot4 = slot2:GetPosition()
-	slot5 = {}
-
-	for slot10 = 1, #slot1 do
-		if slot1[slot10].data.Active == false then
-			-- Nothing
-		elseif slot11.UID == slot2:GetUniqueID() then
-			-- Nothing
-		elseif slot3.IFF ~= slot11.IFF then
-			-- Nothing
-		elseif not slot11.FriendlyCld then
-			-- Nothing
-		elseif slot3.Surface == slot11.Surface then
-			slot5[#slot5 + 1] = slot4 - slot0:GetShip(slot11.UID):GetPosition()
-		end
-	end
-
-	slot3.distList = slot5
-end
-
-function slot7.surfaceFilterCount(slot0, slot1)
-	slot2 = slot0:GetCldData()
-
-	for slot8 = 1, #slot1 do
-		if slot1[slot8].data.Active == true and slot9.UID ~= slot0:GetUniqueID() and slot2.IFF ~= slot9.IFF and slot2.Surface == slot9.Surface then
-			slot3 = 0 + 1
-		end
-	end
-
-	return slot3
-end
-
-function slot7.UpdateAircraftCld(slot0, slot1)
-	slot2 = slot1:GetSpeed()
-	slot3 = slot1:GetCldBox()
-	slot4 = nil
-
-	if slot1:GetIFF() == slot0._foeCode then
-		slot4 = slot0:GetBulletTree(uv0.BulletField.AIR)
-	elseif slot1:GetIFF() == slot0._friendlyCode then
-		slot4 = slot0:GetFoeBulletTree(uv0.BulletField.AIR)
-	end
-
-	slot0:HandleBulletCldWithAircraft(slot4:GetCldList(slot3, slot2), slot1)
-	slot0._aircraftTree:Update(slot1:GetCldBox())
-end
-
-function slot7.HandleBulletCldWithAircraft(slot0, slot1, slot2)
-	for slot7 = 1, #slot1 do
-		if slot1[slot7].data.type == uv0.CldType.BULLET and slot8.Active == true then
-			slot0._proxy:HandleBulletHit(slot0:GetBullet(slot8.UID), slot2)
-		end
-	end
-end
-
-function slot7.UpdateBulletCld(slot0, slot1)
-	slot3 = slot1:GetCldBox()
-	slot4 = slot1:GetCldData().IFF
-
-	if slot1:GetEffectField() == uv0.BulletField.SURFACE then
-		slot7 = slot0:getBulletCldShipList(slot1, slot4 == slot0._foeCode and slot0._shipTree or slot0._foeShipTree)
-
-		if slot1:IsIndiscriminate() then
-			for slot13, slot14 in ipairs(slot0:getBulletCldShipList(slot1, nil == slot0._shipTree and slot0._foeShipTree or slot0._shipTree)) do
-				table.insert(slot7, slot14)
-			end
-		end
-
-		slot0:HandleBulletCldWithShip(slot7, slot1)
-	end
-
-	if slot4 == slot0._friendlyCode then
-		slot5 = slot0:GetBulletTree(slot2)
-	elseif slot4 == slot0._foeCode then
-		slot5 = slot0:GetFoeBulletTree(slot2)
-	end
-
-	slot5:Update(slot3)
-end
-
-function slot7.getBulletCldShipList(slot0, slot1, slot2)
-	slot3 = slot1:GetCldBox()
-	slot4 = nil
-
-	if slot1:GetType() == uv0.BulletType.SCALE then
-		slot5, slot6, slot7 = slot1:GetRadian()
-
-		if math.abs(slot6) ~= 1 then
-			if slot1:GetIFF() == -1 then
-				slot5 = slot5 + math.pi
-			end
-
-			slot8 = slot1:GetBoxSize()
-			slot11 = slot1:GetPosition()
-			slot12 = slot8.x
-			slot4 = slot2:GetCldListGradient(slot5, slot8.z * 2, slot8.x * 2, Vector3(slot11.x - slot12 * slot6, 1, slot11.z - slot12 * slot7))
+		if var_5_3.Active == false then
+			-- block empty
+		elseif var_5_3.UID == arg_5_2:GetUniqueID() then
+			-- block empty
+		elseif var_5_0.IFF == var_5_3.IFF then
+			-- block empty
+		elseif var_5_0.Surface ~= var_5_3.Surface then
+			-- block empty
 		else
-			slot4 = slot2:GetCldList(slot3, uv1)
+			var_5_2[#var_5_2 + 1] = var_5_3.UID
+		end
+	end
+
+	arg_5_0._proxy:HandleShipCrashDamageList(arg_5_2, var_5_2)
+end
+
+function var_0_7.HandleEnemyShipCld(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = arg_6_2:GetCldData()
+
+	if var_6_0.Active == false then
+		return
+	end
+
+	local var_6_1 = arg_6_2:GetPosition()
+	local var_6_2 = {}
+	local var_6_3 = #arg_6_1
+
+	for iter_6_0 = 1, var_6_3 do
+		local var_6_4 = arg_6_1[iter_6_0].data
+
+		if var_6_4.Active == false then
+			-- block empty
+		elseif var_6_4.UID == arg_6_2:GetUniqueID() then
+			-- block empty
+		elseif var_6_0.IFF ~= var_6_4.IFF then
+			-- block empty
+		elseif not var_6_4.FriendlyCld then
+			-- block empty
+		elseif var_6_0.Surface ~= var_6_4.Surface then
+			-- block empty
+		else
+			local var_6_5 = var_6_1 - arg_6_0:GetShip(var_6_4.UID):GetPosition()
+
+			var_6_2[#var_6_2 + 1] = var_6_5
+		end
+	end
+
+	var_6_0.distList = var_6_2
+end
+
+function var_0_7.surfaceFilterCount(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_0:GetCldData()
+	local var_7_1 = 0
+	local var_7_2 = #arg_7_1
+
+	for iter_7_0 = 1, var_7_2 do
+		local var_7_3 = arg_7_1[iter_7_0].data
+
+		if var_7_3.Active == true and var_7_3.UID ~= arg_7_0:GetUniqueID() and var_7_0.IFF ~= var_7_3.IFF and var_7_0.Surface == var_7_3.Surface then
+			var_7_1 = var_7_1 + 1
+		end
+	end
+
+	return var_7_1
+end
+
+function var_0_7.UpdateAircraftCld(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:GetSpeed()
+	local var_8_1 = arg_8_1:GetCldBox()
+	local var_8_2
+
+	if arg_8_1:GetIFF() == arg_8_0._foeCode then
+		var_8_2 = arg_8_0:GetBulletTree(var_0_2.BulletField.AIR)
+	elseif arg_8_1:GetIFF() == arg_8_0._friendlyCode then
+		var_8_2 = arg_8_0:GetFoeBulletTree(var_0_2.BulletField.AIR)
+	end
+
+	local var_8_3 = var_8_2:GetCldList(var_8_1, var_8_0)
+
+	arg_8_0:HandleBulletCldWithAircraft(var_8_3, arg_8_1)
+	arg_8_0._aircraftTree:Update(arg_8_1:GetCldBox())
+end
+
+function var_0_7.HandleBulletCldWithAircraft(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = #arg_9_1
+
+	for iter_9_0 = 1, var_9_0 do
+		local var_9_1 = arg_9_1[iter_9_0].data
+
+		if var_9_1.type == var_0_2.CldType.BULLET and var_9_1.Active == true then
+			local var_9_2 = arg_9_0:GetBullet(var_9_1.UID)
+
+			arg_9_0._proxy:HandleBulletHit(var_9_2, arg_9_2)
+		end
+	end
+end
+
+function var_0_7.UpdateBulletCld(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1:GetEffectField()
+	local var_10_1 = arg_10_1:GetCldBox()
+	local var_10_2 = arg_10_1:GetCldData().IFF
+	local var_10_3
+	local var_10_4
+
+	if var_10_0 == var_0_2.BulletField.SURFACE then
+		local var_10_5 = var_10_2 == arg_10_0._foeCode and arg_10_0._shipTree or arg_10_0._foeShipTree
+		local var_10_6 = arg_10_0:getBulletCldShipList(arg_10_1, var_10_5)
+
+		if arg_10_1:IsIndiscriminate() then
+			local var_10_7 = var_10_5 == arg_10_0._shipTree and arg_10_0._foeShipTree or arg_10_0._shipTree
+			local var_10_8 = arg_10_0:getBulletCldShipList(arg_10_1, var_10_7)
+
+			for iter_10_0, iter_10_1 in ipairs(var_10_8) do
+				table.insert(var_10_6, iter_10_1)
+			end
+		end
+
+		arg_10_0:HandleBulletCldWithShip(var_10_6, arg_10_1)
+	end
+
+	if var_10_2 == arg_10_0._friendlyCode then
+		var_10_3 = arg_10_0:GetBulletTree(var_10_0)
+	elseif var_10_2 == arg_10_0._foeCode then
+		var_10_3 = arg_10_0:GetFoeBulletTree(var_10_0)
+	end
+
+	var_10_3:Update(var_10_1)
+end
+
+function var_0_7.getBulletCldShipList(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_1:GetCldBox()
+	local var_11_1
+
+	if arg_11_1:GetType() == var_0_2.BulletType.SCALE then
+		local var_11_2, var_11_3, var_11_4 = arg_11_1:GetRadian()
+
+		if math.abs(var_11_3) ~= 1 then
+			if arg_11_1:GetIFF() == -1 then
+				var_11_2 = var_11_2 + math.pi
+			end
+
+			local var_11_5 = arg_11_1:GetBoxSize()
+			local var_11_6 = var_11_5.x * 2
+			local var_11_7 = var_11_5.z * 2
+			local var_11_8 = arg_11_1:GetPosition()
+			local var_11_9 = var_11_5.x
+			local var_11_10 = var_11_9 * var_11_3
+			local var_11_11 = var_11_9 * var_11_4
+			local var_11_12 = Vector3(var_11_8.x - var_11_10, 1, var_11_8.z - var_11_11)
+
+			var_11_1 = arg_11_2:GetCldListGradient(var_11_2, var_11_7, var_11_6, var_11_12)
+		else
+			var_11_1 = arg_11_2:GetCldList(var_11_0, var_0_3)
 		end
 	else
-		slot4 = slot2:GetCldList(slot3, uv1)
+		var_11_1 = arg_11_2:GetCldList(var_11_0, var_0_3)
 	end
 
-	return slot4
+	return var_11_1
 end
 
-function slot7.HandleBulletCldWithShip(slot0, slot1, slot2)
-	slot4 = slot2:GetType()
+function var_0_7.HandleBulletCldWithShip(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = #arg_12_1
+	local var_12_1 = arg_12_2:GetType()
 
-	for slot8 = 1, #slot1 do
-		if slot1[slot8].data.type == uv0.CldType.SHIP and slot9.Active == true then
-			slot10 = slot0:GetShip(slot9.UID)
-			slot12 = slot10:IsImmuneCommonBulletCLD()
+	for iter_12_0 = 1, var_12_0 do
+		local var_12_2 = arg_12_1[iter_12_0].data
 
-			if slot10:GetCurrentOxyState() == uv1.DIVE and slot2:GetCldData().Surface ~= uv0.OXY_STATE.DIVE then
-				-- Nothing
-			elseif slot12 then
-				-- Nothing
-			elseif slot0._proxy:HandleBulletHit(slot2, slot10) then
+		if var_12_2.type == var_0_2.CldType.SHIP and var_12_2.Active == true then
+			local var_12_3 = arg_12_0:GetShip(var_12_2.UID)
+			local var_12_4 = var_12_3:GetCurrentOxyState()
+			local var_12_5 = var_12_3:IsImmuneCommonBulletCLD()
+
+			if var_12_4 == var_0_4.DIVE and arg_12_2:GetCldData().Surface ~= var_0_2.OXY_STATE.DIVE then
+				-- block empty
+			elseif var_12_5 then
+				-- block empty
+			elseif arg_12_0._proxy:HandleBulletHit(arg_12_2, var_12_3) then
 				break
 			end
 		end
 	end
 end
 
-function slot7.UpdateAOECld(slot0, slot1)
-	slot2 = slot1:GetCldBox()
-	slot5 = slot1:GetCldData().IFF
-	slot6 = slot1:OpponentAffected() and slot5 * -1 or slot5
-	slot7 = nil
+function var_0_7.UpdateAOECld(arg_13_0, arg_13_1)
+	local var_13_0 = arg_13_1:GetCldBox()
+	local var_13_1 = arg_13_1:GetFieldType()
+	local var_13_2 = arg_13_1:OpponentAffected()
+	local var_13_3 = arg_13_1:GetCldData().IFF
+	local var_13_4 = var_13_2 and var_13_3 * -1 or var_13_3
+	local var_13_5
 
-	if slot1:GetFieldType() == uv0.AOEField.SURFACE then
-		slot7 = slot0:getAreaCldShipList(slot1, slot1:OpponentAffected() == (slot1:GetCldData().IFF == slot0._foeCode) and slot0._shipTree or slot0._foeShipTree)
+	if var_13_1 == var_0_2.AOEField.SURFACE then
+		local var_13_6 = arg_13_1:GetCldData().IFF == arg_13_0._foeCode
+		local var_13_7 = arg_13_1:OpponentAffected() == var_13_6 and arg_13_0._shipTree or arg_13_0._foeShipTree
+		local var_13_8 = arg_13_0:getAreaCldShipList(arg_13_1, var_13_7)
 
-		if slot1:GetIndiscriminate() then
-			for slot17, slot18 in ipairs(slot0:getAreaCldShipList(slot1, slot11 == slot0._shipTree and slot0._foeShipTree or slot0._shipTree)) do
-				table.insert(slot7, slot18)
+		if arg_13_1:GetIndiscriminate() then
+			local var_13_9 = var_13_7 == arg_13_0._shipTree and arg_13_0._foeShipTree or arg_13_0._shipTree
+			local var_13_10 = arg_13_0:getAreaCldShipList(arg_13_1, var_13_9)
+
+			for iter_13_0, iter_13_1 in ipairs(var_13_10) do
+				table.insert(var_13_8, iter_13_1)
 			end
 		end
 
-		slot0:HandleAreaCldWithVehicle(slot1, slot7)
-	elseif slot3 == uv0.AOEField.BULLET then
-		slot8 = nil
+		arg_13_0:HandleAreaCldWithVehicle(arg_13_1, var_13_8)
+	elseif var_13_1 == var_0_2.AOEField.BULLET then
+		local var_13_11
 
-		slot1:ClearCLDList()
-		slot0:HandleAreaCldWithBullet(slot1, ((slot6 ~= slot0._foeCode or slot0._foeSurafceBulletTree) and slot0._surfaceBulletTree):GetCldList(slot2, uv1))
+		if var_13_4 == arg_13_0._foeCode then
+			var_13_11 = arg_13_0._foeSurafceBulletTree
+		else
+			var_13_11 = arg_13_0._surfaceBulletTree
+		end
+
+		local var_13_12 = var_13_11:GetCldList(var_13_0, var_0_3)
+
+		arg_13_1:ClearCLDList()
+		arg_13_0:HandleAreaCldWithBullet(arg_13_1, var_13_12)
 	else
-		slot7 = {}
+		local var_13_13 = {}
+		local var_13_14 = arg_13_0._aircraftTree:GetCldList(var_13_0, var_0_3)
 
-		for slot12, slot13 in ipairs(slot0._aircraftTree:GetCldList(slot2, uv1)) do
-			if slot13.data.IFF == slot6 then
-				table.insert(slot7, slot13)
+		for iter_13_2, iter_13_3 in ipairs(var_13_14) do
+			if iter_13_3.data.IFF == var_13_4 then
+				table.insert(var_13_13, iter_13_3)
 			end
 		end
 
-		slot0:HandleAreaCldWithAircraft(slot1, slot7)
+		arg_13_0:HandleAreaCldWithAircraft(arg_13_1, var_13_13)
 	end
 end
 
-function slot7.getAreaCldShipList(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_7.getAreaCldShipList(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0
 
-	if slot1:GetAreaType() == uv0.AreaType.COLUMN or slot1:GetAnchorPointAlignment() == Vector3.zero then
-		slot3 = slot2:GetCldList(slot1:GetCldBox(), uv1)
+	if arg_14_1:GetAreaType() == var_0_2.AreaType.COLUMN or arg_14_1:GetAnchorPointAlignment() == Vector3.zero then
+		local var_14_1 = arg_14_1:GetCldBox()
+
+		var_14_0 = arg_14_2:GetCldList(var_14_1, var_0_3)
 	else
-		if slot1:GetCldData().IFF == slot0._foeCode then
-			slot6 = slot1:GetAngle() * math.deg2Rad + math.pi
+		local var_14_2 = arg_14_1:GetCldData().IFF == arg_14_0._foeCode
+		local var_14_3 = arg_14_1:GetAngle() * math.deg2Rad
+
+		if var_14_2 then
+			var_14_3 = var_14_3 + math.pi
 		end
 
-		slot3 = slot2:GetCldListGradient(slot6, slot1:GetHeight(), slot1:GetWidth(), slot1:GetPosition())
+		local var_14_4 = arg_14_1:GetWidth()
+		local var_14_5 = arg_14_1:GetHeight()
+		local var_14_6 = arg_14_1:GetPosition()
+
+		var_14_0 = arg_14_2:GetCldListGradient(var_14_3, var_14_5, var_14_4, var_14_6)
 	end
 
-	return slot3
+	return var_14_0
 end
 
-function slot7.HandleAreaCldWithVehicle(slot0, slot1, slot2)
-	slot1:ClearCLDList()
+function var_0_7.HandleAreaCldWithVehicle(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_1:ClearCLDList()
 
-	slot3 = slot1:GetCldData()
-	slot4 = slot1:OpponentAffected()
+	local var_15_0 = arg_15_1:GetCldData()
+	local var_15_1 = arg_15_1:OpponentAffected()
+	local var_15_2 = #arg_15_2
 
-	for slot9 = 1, #slot2 do
-		slot12 = slot0:GetShip(slot2[slot9].data.UID)
-		slot13 = true
+	for iter_15_0 = 1, var_15_2 do
+		local var_15_3 = arg_15_2[iter_15_0].data
+		local var_15_4 = arg_15_1:GetDiveFilter()
+		local var_15_5 = arg_15_0:GetShip(var_15_3.UID)
+		local var_15_6 = true
 
-		if slot1:GetDiveFilter() and table.contains(slot11, slot12:GetCurrentOxyState()) then
-			slot13 = false
+		if var_15_4 then
+			local var_15_7 = var_15_5:GetCurrentOxyState()
+
+			if table.contains(var_15_4, var_15_7) then
+				var_15_6 = false
+			end
 		end
 
-		if slot13 and not slot1:IsOutOfAngle(slot12) then
-			slot1:AppendCldObj(slot10)
-		end
-	end
-end
-
-function slot7.HandleAreaCldWithAircraft(slot0, slot1, slot2)
-	slot1:ClearCLDList()
-
-	for slot9 = 1, #slot2 do
-		if slot1:OpponentAffected() == (slot2[slot9].data.IFF ~= slot1:GetCldData().IFF) then
-			slot1:AppendCldObj(slot10)
-		end
-	end
-end
-
-function slot7.HandleAreaCldWithBullet(slot0, slot1, slot2)
-	for slot7 = 1, #slot2 do
-		slot1:AppendCldObj(slot2[slot7].data)
-	end
-end
-
-function slot7.UpdateWallCld(slot0, slot1)
-	slot2 = slot1:GetCldBox()
-
-	if slot1:GetCldObjType() == slot1.CLD_OBJ_TYPE_BULLET then
-		slot4 = nil
-
-		slot0:HandleWallCldWithBullet(slot1, (slot1:GetIFF() ~= slot0._friendlyCode or slot0._foeSurafceBulletTree:GetCldList(slot2, uv0)) and slot0._surfaceBulletTree:GetCldList(slot2, uv0))
-	elseif slot3 == slot1.CLD_OBJ_TYPE_SHIP then
-		slot4 = nil
-
-		slot0:HandleWllCldWithShip(slot1, (slot1:GetIFF() ~= slot0._friendlyCode or slot0._foeShipTree:GetCldList(slot2, uv0)) and slot0._shipTree:GetCldList(slot2, uv0))
-	end
-end
-
-function slot7.HandleWallCldWithBullet(slot0, slot1, slot2)
-	for slot7 = 1, #slot2 do
-		if slot2[slot7].data.type == uv0.CldType.BULLET and slot8.Active == true and not slot0._proxy:HandleWallHitByBullet(slot1, slot0:GetBullet(slot8.UID)) then
-			return
+		if var_15_6 and not arg_15_1:IsOutOfAngle(var_15_5) then
+			arg_15_1:AppendCldObj(var_15_3)
 		end
 	end
 end
 
-function slot7.HandleWllCldWithShip(slot0, slot1, slot2)
-	slot4 = {}
+function var_0_7.HandleAreaCldWithAircraft(arg_16_0, arg_16_1, arg_16_2)
+	arg_16_1:ClearCLDList()
 
-	for slot8 = 1, #slot2 do
-		if slot2[slot8].data.type == uv0.CldType.SHIP and slot9.Active == true then
-			if slot0:GetShip(slot9.UID):GetCurrentOxyState() ~= uv1.DIVE then
-				table.insert(slot4, slot10)
+	local var_16_0 = arg_16_1:GetCldData()
+	local var_16_1 = arg_16_1:OpponentAffected()
+	local var_16_2 = #arg_16_2
+
+	for iter_16_0 = 1, var_16_2 do
+		local var_16_3 = arg_16_2[iter_16_0].data
+
+		if var_16_1 == (var_16_3.IFF ~= var_16_0.IFF) then
+			arg_16_1:AppendCldObj(var_16_3)
+		end
+	end
+end
+
+function var_0_7.HandleAreaCldWithBullet(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = #arg_17_2
+
+	for iter_17_0 = 1, var_17_0 do
+		local var_17_1 = arg_17_2[iter_17_0].data
+
+		arg_17_1:AppendCldObj(var_17_1)
+	end
+end
+
+function var_0_7.UpdateWallCld(arg_18_0, arg_18_1)
+	local var_18_0 = arg_18_1:GetCldBox()
+	local var_18_1 = arg_18_1:GetCldObjType()
+
+	if var_18_1 == arg_18_1.CLD_OBJ_TYPE_BULLET then
+		local var_18_2
+
+		if arg_18_1:GetIFF() == arg_18_0._friendlyCode then
+			var_18_2 = arg_18_0._foeSurafceBulletTree:GetCldList(var_18_0, var_0_3)
+		else
+			var_18_2 = arg_18_0._surfaceBulletTree:GetCldList(var_18_0, var_0_3)
+		end
+
+		arg_18_0:HandleWallCldWithBullet(arg_18_1, var_18_2)
+	elseif var_18_1 == arg_18_1.CLD_OBJ_TYPE_SHIP then
+		local var_18_3
+
+		if arg_18_1:GetIFF() == arg_18_0._friendlyCode then
+			var_18_3 = arg_18_0._foeShipTree:GetCldList(var_18_0, var_0_3)
+		else
+			var_18_3 = arg_18_0._shipTree:GetCldList(var_18_0, var_0_3)
+		end
+
+		arg_18_0:HandleWllCldWithShip(arg_18_1, var_18_3)
+	end
+end
+
+function var_0_7.HandleWallCldWithBullet(arg_19_0, arg_19_1, arg_19_2)
+	local var_19_0 = #arg_19_2
+
+	for iter_19_0 = 1, var_19_0 do
+		local var_19_1 = arg_19_2[iter_19_0].data
+
+		if var_19_1.type == var_0_2.CldType.BULLET and var_19_1.Active == true then
+			local var_19_2 = arg_19_0:GetBullet(var_19_1.UID)
+
+			if not arg_19_0._proxy:HandleWallHitByBullet(arg_19_1, var_19_2) then
+				return
+			end
+		end
+	end
+end
+
+function var_0_7.HandleWllCldWithShip(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = #arg_20_2
+	local var_20_1 = {}
+
+	for iter_20_0 = 1, var_20_0 do
+		local var_20_2 = arg_20_2[iter_20_0].data
+
+		if var_20_2.type == var_0_2.CldType.SHIP and var_20_2.Active == true then
+			local var_20_3 = arg_20_0:GetShip(var_20_2.UID)
+
+			if var_20_3:GetCurrentOxyState() == var_0_4.DIVE then
+				-- block empty
+			else
+				table.insert(var_20_1, var_20_3)
 			end
 		end
 	end
 
-	slot0._proxy:HandleWallHitByShip(slot1, slot4)
+	arg_20_0._proxy:HandleWallHitByShip(arg_20_1, var_20_1)
 end
 
-function slot7.InsertToBulletCldTree(slot0, slot1, slot2)
-	slot3 = nil
+function var_0_7.InsertToBulletCldTree(arg_21_0, arg_21_1, arg_21_2)
+	local var_21_0
+	local var_21_1 = arg_21_2:GetCldData()
 
-	if slot2:GetCldData().IFF == slot0._foeCode then
-		slot3 = slot0:GetFoeBulletTree(slot1)
-	elseif slot4.IFF == slot0._friendlyCode then
-		slot3 = slot0:GetBulletTree(slot1)
+	if var_21_1.IFF == arg_21_0._foeCode then
+		var_21_0 = arg_21_0:GetFoeBulletTree(arg_21_1)
+	elseif var_21_1.IFF == arg_21_0._friendlyCode then
+		var_21_0 = arg_21_0:GetBulletTree(arg_21_1)
 	end
 
-	slot3:Insert(slot2:GetCldBox())
+	local var_21_2 = arg_21_2:GetCldBox()
+
+	var_21_0:Insert(var_21_2)
 end
 
-function slot7.InsertToAOECldTree(slot0, slot1, slot2)
-	slot0:GetAOETree(slot1):Insert(slot2:GetCldBox())
+function var_0_7.InsertToAOECldTree(arg_22_0, arg_22_1, arg_22_2)
+	local var_22_0 = arg_22_0:GetAOETree(arg_22_1)
+	local var_22_1 = arg_22_2:GetCldBox()
+
+	var_22_0:Insert(var_22_1)
 end
 
-function slot7.InsertToWallCldTree(slot0, slot1)
-	slot0:GetWallTree():Insert(slot1:GetCldBox())
+function var_0_7.InsertToWallCldTree(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0:GetWallTree()
+	local var_23_1 = arg_23_1:GetCldBox()
+
+	var_23_0:Insert(var_23_1)
 end
 
-function slot7.InsertToShipCldTree(slot0, slot1)
-	slot3 = nil
+function var_0_7.InsertToShipCldTree(arg_24_0, arg_24_1)
+	local var_24_0 = arg_24_1:GetCldData()
+	local var_24_1
 
-	if slot1:GetCldData().IFF == slot0._foeCode then
-		slot3 = slot0:GetFoeShipTree()
-	elseif slot2.IFF == slot0._friendlyCode then
-		slot3 = slot0:GetShipTree()
+	if var_24_0.IFF == arg_24_0._foeCode then
+		var_24_1 = arg_24_0:GetFoeShipTree()
+	elseif var_24_0.IFF == arg_24_0._friendlyCode then
+		var_24_1 = arg_24_0:GetShipTree()
 	end
 
-	slot3:Insert(slot1:GetCldBox())
+	local var_24_2 = arg_24_1:GetCldBox()
+
+	var_24_1:Insert(var_24_2)
 end
 
-function slot7.InsertToAircraftCldTree(slot0, slot1)
-	slot0._aircraftTree:Insert(slot1:GetCldBox())
+function var_0_7.InsertToAircraftCldTree(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_1:GetCldBox()
+
+	arg_25_0._aircraftTree:Insert(var_25_0)
 end
 
-function slot7.GetBulletTree(slot0, slot1)
-	return slot0._bulletTreeList[slot1]
+function var_0_7.GetBulletTree(arg_26_0, arg_26_1)
+	return arg_26_0._bulletTreeList[arg_26_1]
 end
 
-function slot7.GetFoeBulletTree(slot0, slot1)
-	return slot0._foeBulleetTreeList[slot1]
+function var_0_7.GetFoeBulletTree(arg_27_0, arg_27_1)
+	return arg_27_0._foeBulleetTreeList[arg_27_1]
 end
 
-function slot7.GetAOETree(slot0, slot1)
-	return slot0._AOETreeList[slot1]
+function var_0_7.GetAOETree(arg_28_0, arg_28_1)
+	return arg_28_0._AOETreeList[arg_28_1]
 end
 
-function slot7.GetWallTree(slot0, slot1)
-	return slot0._wallTree
+function var_0_7.GetWallTree(arg_29_0, arg_29_1)
+	return arg_29_0._wallTree
 end
 
-function slot7.GetShipTree(slot0)
-	return slot0._shipTree
+function var_0_7.GetShipTree(arg_30_0)
+	return arg_30_0._shipTree
 end
 
-function slot7.GetFoeShipTree(slot0)
-	return slot0._foeShipTree
+function var_0_7.GetFoeShipTree(arg_31_0)
+	return arg_31_0._foeShipTree
 end
 
-function slot7.GetAircraftTree(slot0)
-	return slot0._aircraftTree
+function var_0_7.GetAircraftTree(arg_32_0)
+	return arg_32_0._aircraftTree
 end
 
-function slot7.DeleteShipLeaf(slot0, slot1)
-	if slot1:GetCldData().IFF == slot0._foeCode then
-		slot0.DeleteCldLeaf(slot0:GetFoeShipTree(), slot1)
-	elseif slot2 == slot0._friendlyCode then
-		slot0.DeleteCldLeaf(slot0:GetShipTree(), slot1)
+function var_0_7.DeleteShipLeaf(arg_33_0, arg_33_1)
+	local var_33_0 = arg_33_1:GetCldData().IFF
+
+	if var_33_0 == arg_33_0._foeCode then
+		arg_33_0.DeleteCldLeaf(arg_33_0:GetFoeShipTree(), arg_33_1)
+	elseif var_33_0 == arg_33_0._friendlyCode then
+		arg_33_0.DeleteCldLeaf(arg_33_0:GetShipTree(), arg_33_1)
 	end
 end
 
-function slot7.DeleteBulletLeaf(slot0, slot1)
-	if slot1:GetCldData().IFF == slot0._foeCode then
-		slot0.DeleteCldLeaf(slot0:GetFoeBulletTree(slot1:GetEffectField()), slot1)
-	elseif slot2 == slot0._friendlyCode then
-		slot0.DeleteCldLeaf(slot0:GetBulletTree(slot1:GetEffectField()), slot1)
+function var_0_7.DeleteBulletLeaf(arg_34_0, arg_34_1)
+	local var_34_0 = arg_34_1:GetCldData().IFF
+
+	if var_34_0 == arg_34_0._foeCode then
+		arg_34_0.DeleteCldLeaf(arg_34_0:GetFoeBulletTree(arg_34_1:GetEffectField()), arg_34_1)
+	elseif var_34_0 == arg_34_0._friendlyCode then
+		arg_34_0.DeleteCldLeaf(arg_34_0:GetBulletTree(arg_34_1:GetEffectField()), arg_34_1)
 	end
 end
 
-function slot7.DeleteCldLeaf(slot0, slot1)
-	slot0:Remove(slot1:GetCldBox())
+function var_0_7.DeleteCldLeaf(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_1:GetCldBox()
+
+	arg_35_0:Remove(var_35_0)
 end
 
-function slot7.GetShip(slot0, slot1)
-	return slot0._proxy:GetUnitList()[slot1]
+function var_0_7.GetShip(arg_36_0, arg_36_1)
+	return arg_36_0._proxy:GetUnitList()[arg_36_1]
 end
 
-function slot7.GetAircraft(slot0, slot1)
-	return slot0._proxy:GetAircraftList()[slot1]
+function var_0_7.GetAircraft(arg_37_0, arg_37_1)
+	return arg_37_0._proxy:GetAircraftList()[arg_37_1]
 end
 
-function slot7.GetBullet(slot0, slot1)
-	return slot0._proxy:GetBulletList()[slot1]
+function var_0_7.GetBullet(arg_38_0, arg_38_1)
+	return arg_38_0._proxy:GetBulletList()[arg_38_1]
 end
 
-function slot7.GetAOE(slot0, slot1)
-	return slot0._proxy:GetAOEList()[slot1]
+function var_0_7.GetAOE(arg_39_0, arg_39_1)
+	return arg_39_0._proxy:GetAOEList()[arg_39_1]
 end
 
-function slot7.InitShipCld(slot0, slot1)
-	slot0:InsertToShipCldTree(slot1)
+function var_0_7.InitShipCld(arg_40_0, arg_40_1)
+	arg_40_0:InsertToShipCldTree(arg_40_1)
 end
 
-function slot7.DeleteShipCld(slot0, slot1)
-	slot1:DeactiveCldBox()
-	slot0:DeleteShipLeaf(slot1)
+function var_0_7.DeleteShipCld(arg_41_0, arg_41_1)
+	arg_41_1:DeactiveCldBox()
+	arg_41_0:DeleteShipLeaf(arg_41_1)
 end
 
-function slot7.InitAircraftCld(slot0, slot1)
-	slot0:InsertToAircraftCldTree(slot1)
+function var_0_7.InitAircraftCld(arg_42_0, arg_42_1)
+	arg_42_0:InsertToAircraftCldTree(arg_42_1)
 end
 
-function slot7.DeleteAircraftCld(slot0, slot1)
-	slot1:DeactiveCldBox()
-	slot0.DeleteCldLeaf(slot0:GetAircraftTree(), slot1)
+function var_0_7.DeleteAircraftCld(arg_43_0, arg_43_1)
+	arg_43_1:DeactiveCldBox()
+	arg_43_0.DeleteCldLeaf(arg_43_0:GetAircraftTree(), arg_43_1)
 end
 
-function slot7.InitBulletCld(slot0, slot1)
-	slot0:InsertToBulletCldTree(slot1:GetEffectField(), slot1)
+function var_0_7.InitBulletCld(arg_44_0, arg_44_1)
+	arg_44_0:InsertToBulletCldTree(arg_44_1:GetEffectField(), arg_44_1)
 end
 
-function slot7.DeleteBulletCld(slot0, slot1)
-	slot1:DeactiveCldBox()
-	slot0:DeleteBulletLeaf(slot1)
+function var_0_7.DeleteBulletCld(arg_45_0, arg_45_1)
+	arg_45_1:DeactiveCldBox()
+	arg_45_0:DeleteBulletLeaf(arg_45_1)
 end
 
-function slot7.ShiftBulletCld(slot0, slot1)
+function var_0_7.ShiftBulletCld(arg_46_0, arg_46_1)
+	return
 end
 
-function slot7.InitAOECld(slot0, slot1)
-	slot0:InsertToAOECldTree(slot1:GetFieldType(), slot1)
+function var_0_7.InitAOECld(arg_47_0, arg_47_1)
+	arg_47_0:InsertToAOECldTree(arg_47_1:GetFieldType(), arg_47_1)
 end
 
-function slot7.DeleteAOECld(slot0, slot1)
-	slot1:DeactiveCldBox()
-	slot0.DeleteCldLeaf(slot0:GetAOETree(slot1:GetFieldType()), slot1)
+function var_0_7.DeleteAOECld(arg_48_0, arg_48_1)
+	arg_48_1:DeactiveCldBox()
+	arg_48_0.DeleteCldLeaf(arg_48_0:GetAOETree(arg_48_1:GetFieldType()), arg_48_1)
 end
 
-function slot7.InitWallCld(slot0, slot1)
-	slot0:InsertToWallCldTree(slot1)
+function var_0_7.InitWallCld(arg_49_0, arg_49_1)
+	arg_49_0:InsertToWallCldTree(arg_49_1)
 end
 
-function slot7.DeleteWallCld(slot0, slot1)
-	slot1:DeactiveCldBox()
+function var_0_7.DeleteWallCld(arg_50_0, arg_50_1)
+	arg_50_1:DeactiveCldBox()
 
-	if slot0:GetWallTree() then
-		slot0.DeleteCldLeaf(slot2, slot1)
+	local var_50_0 = arg_50_0:GetWallTree()
+
+	if var_50_0 then
+		arg_50_0.DeleteCldLeaf(var_50_0, arg_50_1)
 	end
 end

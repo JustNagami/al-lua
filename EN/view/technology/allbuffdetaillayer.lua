@@ -1,117 +1,124 @@
-slot0 = class("AllBuffDetailLayer", import("..base.BaseUI"))
+﻿local var_0_0 = class("AllBuffDetailLayer", import("..base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "TechnologyTreeAllBuffUI"
 end
 
-function slot0.init(slot0)
-	slot0:initData()
-	slot0:findUI()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initData()
+	arg_2_0:findUI()
 end
 
-function slot0.didEnter(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
-		weight = slot0:getWeightFromData()
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf, false, {
+		weight = arg_3_0:getWeightFromData()
 	})
-	slot0:addListener()
-	slot0:updateDetail()
+	arg_3_0:addListener()
+	arg_3_0:updateDetail()
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_4_0._tf)
 end
 
-function slot0.initData(slot0)
-	slot0.technologyNationProxy = getProxy(TechnologyNationProxy)
-	slot0.tecList = slot0.technologyNationProxy:GetTecList()
-	slot0.typeAttrTable, slot0.typeOrder, slot0.typeAttrOrderTable = slot0.technologyNationProxy:getTecBuff()
-	slot0.typeOrder = ShipType.FilterOverQuZhuType(slot0.typeOrder)
+function var_0_0.initData(arg_5_0)
+	arg_5_0.technologyNationProxy = getProxy(TechnologyNationProxy)
+	arg_5_0.tecList = arg_5_0.technologyNationProxy:GetTecList()
+	arg_5_0.typeAttrTable, arg_5_0.typeOrder, arg_5_0.typeAttrOrderTable = arg_5_0.technologyNationProxy:getTecBuff()
+	arg_5_0.typeOrder = ShipType.FilterOverQuZhuType(arg_5_0.typeOrder)
 end
 
-function slot0.findUI(slot0)
-	slot0.backBtn = slot0:findTF("BG")
-	slot0.scrollView = slot0:findTF("Scroll View")
-	slot0.viewport = slot0:findTF("Viewport", slot0.scrollView)
-	slot0.typeContainer = slot0:findTF("Content", slot0.viewport)
-	slot0.typeItemTpl = slot0:findTF("TypeItemTpl")
-	slot0.buffItemTpl = slot0:findTF("BuffItemTpl")
-	slot0.scrollViewGroupCom = GetComponent(slot0.scrollView, "VerticalLayoutGroup")
-	slot0.scrollViewFitterCom = GetComponent(slot0.scrollView, "ContentSizeFitter")
-	slot0.viewportGroupCom = GetComponent(slot0.viewport, "VerticalLayoutGroup")
-	slot0.viewportFitterCom = GetComponent(slot0.viewport, "ContentSizeFitter")
-	slot0.setValueBtn = slot0:findTF("Scroll View/bg/SetValueBtn")
+function var_0_0.findUI(arg_6_0)
+	arg_6_0.backBtn = arg_6_0:findTF("BG")
+	arg_6_0.scrollView = arg_6_0:findTF("Scroll View")
+	arg_6_0.viewport = arg_6_0:findTF("Viewport", arg_6_0.scrollView)
+	arg_6_0.typeContainer = arg_6_0:findTF("Content", arg_6_0.viewport)
+	arg_6_0.typeItemTpl = arg_6_0:findTF("TypeItemTpl")
+	arg_6_0.buffItemTpl = arg_6_0:findTF("BuffItemTpl")
+	arg_6_0.scrollViewGroupCom = GetComponent(arg_6_0.scrollView, "VerticalLayoutGroup")
+	arg_6_0.scrollViewFitterCom = GetComponent(arg_6_0.scrollView, "ContentSizeFitter")
+	arg_6_0.viewportGroupCom = GetComponent(arg_6_0.viewport, "VerticalLayoutGroup")
+	arg_6_0.viewportFitterCom = GetComponent(arg_6_0.viewport, "ContentSizeFitter")
+	arg_6_0.setValueBtn = arg_6_0:findTF("Scroll View/bg/SetValueBtn")
 end
 
-function slot0.onBackPressed(slot0)
-	triggerButton(slot0.backBtn)
+function var_0_0.onBackPressed(arg_7_0)
+	triggerButton(arg_7_0.backBtn)
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.backBtn, function ()
-		uv0:emit(uv1.ON_CLOSE)
+function var_0_0.addListener(arg_8_0)
+	onButton(arg_8_0, arg_8_0.backBtn, function()
+		arg_8_0:emit(var_0_0.ON_CLOSE)
 	end, SFX_CANCEL)
-	onButton(slot0, slot0.setValueBtn, function ()
+	onButton(arg_8_0, arg_8_0.setValueBtn, function()
 		if getProxy(ChapterProxy):getActiveChapter(true) then
 			pg.TipsMgr.GetInstance():ShowTips(i18n("attrset_disable"))
 		else
-			uv0:emit(AllBuffDetailMediator.OPEN_SET_VALUE_LAYER)
+			arg_8_0:emit(AllBuffDetailMediator.OPEN_SET_VALUE_LAYER)
 		end
 	end, SFX_PANEL)
 end
 
-function slot0.updateDetail(slot0)
-	slot1 = UIItemList.New(slot0.typeContainer, slot0.typeItemTpl)
+function var_0_0.updateDetail(arg_11_0)
+	local var_11_0 = UIItemList.New(arg_11_0.typeContainer, arg_11_0.typeItemTpl)
 
-	slot1:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot6 = uv0.typeOrder[slot1 + 1]
+	var_11_0:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			local var_12_0 = arg_11_0:findTF("TypeTitle/TypeImg", arg_12_2)
+			local var_12_1 = arg_11_0:findTF("TypeTitle/TypeTextImg", arg_12_2)
+			local var_12_2 = arg_11_0:findTF("Container", arg_12_2)
+			local var_12_3 = arg_11_0.typeOrder[arg_12_1 + 1]
 
-			setImageSprite(uv0:findTF("TypeTitle/TypeTextImg", slot2), GetSpriteFromAtlas("ShipType", "ch_title_" .. slot6))
-			setImageSprite(uv0:findTF("TypeTitle/TypeImg", slot2), GetSpriteFromAtlas("ShipType", "buffitem_tec_" .. slot6), true)
+			setImageSprite(var_12_1, GetSpriteFromAtlas("ShipType", "ch_title_" .. var_12_3))
+			setImageSprite(var_12_0, GetSpriteFromAtlas("ShipType", "buffitem_tec_" .. var_12_3), true)
 			Canvas.ForceUpdateCanvases()
-			uv0:updateBuffList(uv0:findTF("Container", slot2), slot6)
+			arg_11_0:updateBuffList(var_12_2, var_12_3)
 		end
 	end)
-	slot1:align(#slot0.typeOrder)
+	var_11_0:align(#arg_11_0.typeOrder)
 	Canvas.ForceUpdateCanvases()
 
-	if slot0.scrollView.rect.height >= 850 then
-		slot0.viewportGroupCom.enabled = false
-		slot0.viewportFitterCom.enabled = false
-		slot0.scrollViewFitterCom.enabled = false
-		slot0.scrollView.sizeDelta = Vector2.New(0, 850)
-		GetComponent(slot0.scrollView, "ScrollRect").enabled = true
+	if arg_11_0.scrollView.rect.height >= 850 then
+		arg_11_0.viewportGroupCom.enabled = false
+		arg_11_0.viewportFitterCom.enabled = false
+		arg_11_0.scrollViewFitterCom.enabled = false
+		arg_11_0.scrollView.sizeDelta = Vector2.New(0, 850)
+		GetComponent(arg_11_0.scrollView, "ScrollRect").enabled = true
 	end
 
-	setActive(slot0.scrollView, false)
-	setActive(slot0.scrollView, true)
+	setActive(arg_11_0.scrollView, false)
+	setActive(arg_11_0.scrollView, true)
 end
 
-function slot0.updateBuffList(slot0, slot1, slot2)
-	slot3 = UIItemList.New(slot1, slot0.buffItemTpl)
-	slot4 = slot0.typeAttrTable[slot2]
+function var_0_0.updateBuffList(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = UIItemList.New(arg_13_1, arg_13_0.buffItemTpl)
+	local var_13_1 = arg_13_0.typeAttrTable[arg_13_2]
+	local var_13_2 = arg_13_0.typeAttrOrderTable[arg_13_2]
 
-	slot3:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			slot4 = uv0:findTF("ValueText", slot2)
-			slot5 = uv1[slot1 + 1]
+	var_13_0:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = arg_13_0:findTF("AttrText", arg_14_2)
+			local var_14_1 = arg_13_0:findTF("ValueText", arg_14_2)
+			local var_14_2 = var_13_2[arg_14_1 + 1]
+			local var_14_3 = var_13_1[var_14_2]
+			local var_14_4 = arg_13_0.technologyNationProxy:getSetableAttrAdditionValueByTypeAttr(arg_13_2, var_14_2)
 
-			setText(uv0:findTF("AttrText", slot2), AttributeType.Type2Name(pg.attribute_info_by_type[slot5].name))
+			setText(var_14_0, AttributeType.Type2Name(pg.attribute_info_by_type[var_14_2].name))
 
-			slot8 = nil
+			local var_14_5
 
-			if uv0.technologyNationProxy:getSetableAttrAdditionValueByTypeAttr(uv3, slot5) == uv2[slot5] then
-				slot8 = "#00FF32FF"
-			elseif slot7 == 0 then
-				slot8 = "#CA5B5BFF"
-			elseif slot7 < slot6 then
-				slot8 = "#A5BBD6FF"
+			if var_14_4 == var_14_3 then
+				var_14_5 = "#00FF32FF"
+			elseif var_14_4 == 0 then
+				var_14_5 = "#CA5B5BFF"
+			elseif var_14_4 < var_14_3 then
+				var_14_5 = "#A5BBD6FF"
 			end
 
-			setText(slot4, setColorStr("+" .. slot7, slot8))
+			setText(var_14_1, setColorStr("+" .. var_14_4, var_14_5))
 		end
 	end)
-	slot3:align(#slot0.typeAttrOrderTable[slot2])
+	var_13_0:align(#var_13_2)
 end
 
-return slot0
+return var_0_0

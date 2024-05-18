@@ -1,4 +1,4 @@
-slot0 = {
+﻿local var_0_0 = {
 	"The META Lab is equipped with three primary functions to increase the strength of META ships: Somatic Activation, Rigging Fortification, and Tactical Research. You can also collect rewards for accumulating Sync Points here!",
 	"Though META ships are a little bit different, increasing their strength should feel familiar. Now, let’s go through how to level their skills!",
 	"Before you can start, they need to learn the skill in the first place.",
@@ -15,7 +15,7 @@ return {
 				mode = 2,
 				posY = -230.2,
 				posX = -332.5,
-				text = slot0[1]
+				text = var_0_0[1]
 			}
 		},
 		{
@@ -25,7 +25,7 @@ return {
 				mode = 2,
 				posY = -186.8,
 				posX = 634.32,
-				text = slot0[2]
+				text = var_0_0[2]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/MetaCharacterUI(Clone)/HidePanel/MenuPanel/TacticsBtn",
@@ -48,7 +48,7 @@ return {
 				mode = 2,
 				posY = -133,
 				posX = 0,
-				text = slot0[3]
+				text = var_0_0[3]
 			},
 			ui = {
 				path = "OverlayCamera/Overlay/UIMain/MetaCharacterTacticsUI(Clone)/SkillPanel/Skills/Content",
@@ -72,7 +72,7 @@ return {
 				mode = 2,
 				posY = 0,
 				posX = 383.59,
-				text = slot0[4]
+				text = var_0_0[4]
 			}
 		}
 	}

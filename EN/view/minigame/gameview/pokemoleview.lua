@@ -1,25 +1,25 @@
-slot0 = class("PokeMoleView", import("..BaseMiniGameView"))
-slot1 = 1
-slot2 = 2
-slot3 = 3
-slot4 = {
+﻿local var_0_0 = class("PokeMoleView", import("..BaseMiniGameView"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = {
 	1000,
 	230
 }
-slot5 = {
+local var_0_5 = {
 	300,
 	100
 }
-slot6 = "backyard"
-slot7 = "event:/ui/jida"
-slot8 = "event:/ui/quanji"
-slot9 = "event:/ui/baozhaxiaoshi"
-slot10 = ""
-slot11 = ""
-slot12 = "event:/ui/ddldaoshu2"
-slot13 = 0.5
-slot14 = 90
-slot15 = {
+local var_0_6 = "backyard"
+local var_0_7 = "event:/ui/jida"
+local var_0_8 = "event:/ui/quanji"
+local var_0_9 = "event:/ui/baozhaxiaoshi"
+local var_0_10 = ""
+local var_0_11 = ""
+local var_0_12 = "event:/ui/ddldaoshu2"
+local var_0_13 = 0.5
+local var_0_14 = 90
+local var_0_15 = {
 	{
 		speed = 60,
 		type = 1,
@@ -53,7 +53,7 @@ slot15 = {
 		damage_time = 1
 	}
 }
-slot16 = {
+local var_0_16 = {
 	level_up_time = {
 		0,
 		20,
@@ -100,1119 +100,1208 @@ slot16 = {
 		}
 	}
 }
-slot17 = 3
-slot18 = {
+local var_0_17 = 3
+local var_0_18 = {
 	1,
 	2,
 	3
 }
-slot19 = 10
-slot20 = 10
+local var_0_19 = 10
+local var_0_20 = 10
 
-function slot21(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._callback = uv1
-			slot0._animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0._attakeCount = 0
-			slot0._attakeCd = 0
-			slot0._specialTime = 0
-			slot0._specialCount = 0
-			slot0.atkCollider = GetComponent(findTF(slot0._tf, "atkCollider"), typeof(BoxCollider2D))
-			slot0.specialCollider = GetComponent(findTF(slot0._tf, "specialCollider"), typeof(BoxCollider2D))
-			slot1 = GetComponent(slot0._tf, typeof(DftAniEvent))
+local function var_0_21(arg_1_0, arg_1_1)
+	local var_1_0 = {
+		ctor = function(arg_2_0)
+			arg_2_0._tf = arg_1_0
+			arg_2_0._callback = arg_1_1
+			arg_2_0._animator = GetComponent(arg_2_0._tf, typeof(Animator))
+			arg_2_0._attakeCount = 0
+			arg_2_0._attakeCd = 0
+			arg_2_0._specialTime = 0
+			arg_2_0._specialCount = 0
+			arg_2_0.atkCollider = GetComponent(findTF(arg_2_0._tf, "atkCollider"), typeof(BoxCollider2D))
+			arg_2_0.specialCollider = GetComponent(findTF(arg_2_0._tf, "specialCollider"), typeof(BoxCollider2D))
 
-			slot1:SetStartEvent(function ()
+			local var_2_0 = GetComponent(arg_2_0._tf, typeof(DftAniEvent))
+
+			var_2_0:SetStartEvent(function()
+				return
 			end)
-			slot1:SetTriggerEvent(function ()
-				if uv0._callback then
-					uv0._callback(uv0:getColliderData())
+			var_2_0:SetTriggerEvent(function()
+				if arg_2_0._callback then
+					local var_4_0 = arg_2_0:getColliderData()
 
-					if uv0:getSpecialState() then
-						pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv1)
+					arg_2_0._callback(var_4_0)
+
+					if arg_2_0:getSpecialState() then
+						pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_8)
 					end
 				end
 			end)
-			slot1:SetEndEvent(function ()
+			var_2_0:SetEndEvent(function()
+				return
 			end)
 		end,
-		getColliderData = function (slot0)
-			slot1 = nil
-			slot1 = (not slot0:getSpecialState() or slot0.specialCollider) and slot0.atkCollider
+		getColliderData = function(arg_6_0)
+			local var_6_0
+
+			if arg_6_0:getSpecialState() then
+				var_6_0 = arg_6_0.specialCollider
+			else
+				var_6_0 = arg_6_0.atkCollider
+			end
+
+			local var_6_1 = var_6_0.bounds.max.x - var_6_0.bounds.min.x
+			local var_6_2 = var_6_0.bounds.max.y - var_6_0.bounds.min.y
 
 			return {
-				pos = slot1.bounds.min,
+				pos = var_6_0.bounds.min,
 				boundsLength = {
-					width = slot1.bounds.max.x - slot1.bounds.min.x,
-					height = slot1.bounds.max.y - slot1.bounds.min.y
+					width = var_6_1,
+					height = var_6_2
 				},
-				damage = slot0:getDamage()
+				damage = arg_6_0:getDamage()
 			}
 		end,
-		atk = function (slot0)
-			pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-			slot0._animator:SetTrigger("atk")
+		atk = function(arg_7_0)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_7)
+			arg_7_0._animator:SetTrigger("atk")
 
-			slot0._attakeCd = uv1
+			arg_7_0._attakeCd = var_0_13
 		end,
-		specialAtk = function (slot0)
-			slot0._animator:SetTrigger("special")
+		specialAtk = function(arg_8_0)
+			arg_8_0._animator:SetTrigger("special")
 
-			slot0._attakeCd = uv0
+			arg_8_0._attakeCd = var_0_13
 		end,
-		getDamage = function (slot0)
-			if slot0._specialTime > 0 then
+		getDamage = function(arg_9_0)
+			if arg_9_0._specialTime > 0 then
 				return 3
 			end
 
 			return 1
 		end,
-		reset = function (slot0)
-			slot0._animator:SetTrigger("reset")
+		reset = function(arg_10_0)
+			arg_10_0._animator:SetTrigger("reset")
 		end,
-		setActive = function (slot0, slot1)
-			SetActive(slot0._tf, slot1)
+		setActive = function(arg_11_0, arg_11_1)
+			SetActive(arg_11_0._tf, arg_11_1)
 		end,
-		setParent = function (slot0, slot1, slot2)
-			SetParent(slot0._tf, slot1)
-			slot0:setActive(slot2)
+		setParent = function(arg_12_0, arg_12_1, arg_12_2)
+			SetParent(arg_12_0._tf, arg_12_1)
+			arg_12_0:setActive(arg_12_2)
 		end,
-		attakeAble = function (slot0)
-			return slot0._attakeCd == 0
+		attakeAble = function(arg_13_0)
+			return arg_13_0._attakeCd == 0
 		end,
-		moveTo = function (slot0, slot1)
-			slot1.y = slot1.y + 100
-			slot0._tf.anchoredPosition = slot1
+		moveTo = function(arg_14_0, arg_14_1)
+			arg_14_1.y = arg_14_1.y + 100
+			arg_14_0._tf.anchoredPosition = arg_14_1
 		end,
-		attakeCount = function (slot0, slot1)
-			slot0._attakeCount = slot0._attakeCount + slot1 * 4
+		attakeCount = function(arg_15_0, arg_15_1)
+			arg_15_0._attakeCount = arg_15_0._attakeCount + arg_15_1 * 4
 
-			if slot0._attakeCount > 8 then
-				slot0._attakeCount = 8
+			if arg_15_0._attakeCount > 8 then
+				arg_15_0._attakeCount = 8
 			end
 
-			if slot0._attakeCount > 0 then
-				slot0._animator.speed = 0
+			if arg_15_0._attakeCount > 0 then
+				arg_15_0._animator.speed = 0
 			end
 		end,
-		addSpecialCount = function (slot0, slot1)
-			if slot0._specialTime == 0 then
-				slot0._specialCount = slot0._specialCount + slot1
+		addSpecialCount = function(arg_16_0, arg_16_1)
+			if arg_16_0._specialTime == 0 then
+				arg_16_0._specialCount = arg_16_0._specialCount + arg_16_1
 
-				if uv0 <= slot0._specialCount then
-					slot0._specialCount = uv0
+				if arg_16_0._specialCount >= var_0_20 then
+					arg_16_0._specialCount = var_0_20
 				end
 			end
 		end,
-		useSpecial = function (slot0)
-			if slot0._specialTime and uv0 <= slot0._specialCount then
-				slot0._specialCount = 0
-				slot0._specialTime = uv1
+		useSpecial = function(arg_17_0)
+			if arg_17_0._specialTime and arg_17_0._specialCount >= var_0_20 then
+				arg_17_0._specialCount = 0
+				arg_17_0._specialTime = var_0_19
 
 				return true
 			end
 
 			return false
 		end,
-		SetSiblingIndex = function (slot0, slot1)
-			slot0._tf:SetSiblingIndex(slot1)
+		SetSiblingIndex = function(arg_18_0, arg_18_1)
+			arg_18_0._tf:SetSiblingIndex(arg_18_1)
 		end,
-		getSpecialState = function (slot0)
-			return slot0._specialTime > 0
+		getSpecialState = function(arg_19_0)
+			return arg_19_0._specialTime > 0
 		end,
-		step = function (slot0)
-			if slot0._attakeCount > 0 then
-				slot0._attakeCount = slot0._attakeCount - 1
+		step = function(arg_20_0)
+			if arg_20_0._attakeCount > 0 then
+				arg_20_0._attakeCount = arg_20_0._attakeCount - 1
 
-				if slot0._attakeCount == 0 then
-					slot0._animator.speed = 1
+				if arg_20_0._attakeCount == 0 then
+					arg_20_0._animator.speed = 1
 				end
 			end
 
-			if slot0._attakeCd > 0 then
-				slot0._attakeCd = slot0._attakeCd - Time.deltaTime
-				slot0._attakeCd = slot0._attakeCd < 0 and 0 or slot0._attakeCd
+			if arg_20_0._attakeCd > 0 then
+				arg_20_0._attakeCd = arg_20_0._attakeCd - Time.deltaTime
+				arg_20_0._attakeCd = arg_20_0._attakeCd < 0 and 0 or arg_20_0._attakeCd
 			end
 
-			if slot0._specialTime > 0 then
-				slot0._specialTime = slot0._specialTime - Time.deltaTime
-				slot0._specialTime = slot0._specialTime < 0 and 0 or slot0._specialTime
+			if arg_20_0._specialTime > 0 then
+				arg_20_0._specialTime = arg_20_0._specialTime - Time.deltaTime
+				arg_20_0._specialTime = arg_20_0._specialTime < 0 and 0 or arg_20_0._specialTime
 			end
 		end,
-		inSpecial = function (slot0)
-			return slot0._specialTime > 0
+		inSpecial = function(arg_21_0)
+			return arg_21_0._specialTime > 0
 		end,
-		getSpecialData = function (slot0)
-			return slot0._specialTime, slot0._specialCount
+		getSpecialData = function(arg_22_0)
+			return arg_22_0._specialTime, arg_22_0._specialCount
 		end,
-		clear = function (slot0)
-			slot0._specialTime = 0
-			slot0._specialCount = 0
+		clear = function(arg_23_0)
+			arg_23_0._specialTime = 0
+			arg_23_0._specialCount = 0
 
-			slot0:reset()
+			arg_23_0:reset()
 		end,
-		useAtk = function (slot0)
-			if slot0:inSpecial() then
-				slot0:specialAtk()
+		useAtk = function(arg_24_0)
+			if arg_24_0:inSpecial() then
+				arg_24_0:specialAtk()
 			else
-				slot0:atk()
+				arg_24_0:atk()
 			end
 		end
 	}
 
-	slot2:ctor()
+	var_1_0:ctor()
 
-	return slot2
+	return var_1_0
 end
 
-function slot22(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0.playerTpl = uv0
-			slot0.sceneTf = uv1
-			slot0._playerPos = findTF(slot0.sceneTf, "playerPos")
-			slot0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
-			slot0.dragDelegate = GetOrAddComponent(findTF(slot0.sceneTf, "clickBounds"), "EventTriggerListener")
-			slot0.dragDelegate.enabled = true
+local function var_0_22(arg_25_0, arg_25_1)
+	local var_25_0 = {
+		ctor = function(arg_26_0)
+			arg_26_0.playerTpl = arg_25_0
+			arg_26_0.sceneTf = arg_25_1
+			arg_26_0._playerPos = findTF(arg_26_0.sceneTf, "playerPos")
+			arg_26_0.uiCam = GameObject.Find("UICamera"):GetComponent("Camera")
+			arg_26_0.dragDelegate = GetOrAddComponent(findTF(arg_26_0.sceneTf, "clickBounds"), "EventTriggerListener")
+			arg_26_0.dragDelegate.enabled = true
 
-			slot0.dragDelegate:AddPointDownFunc(function (slot0, slot1)
-				if uv0.player and uv0.player:attakeAble() then
-					uv0.player:moveTo(uv0._playerPos:InverseTransformPoint(uv0.uiCam:ScreenToWorldPoint(slot1.pressPosition)))
-					uv0.player:reset()
-					uv0.player:useAtk()
+			arg_26_0.dragDelegate:AddPointDownFunc(function(arg_27_0, arg_27_1)
+				if arg_26_0.player and arg_26_0.player:attakeAble() then
+					local var_27_0 = arg_26_0.uiCam:ScreenToWorldPoint(arg_27_1.pressPosition)
+					local var_27_1 = arg_26_0._playerPos:InverseTransformPoint(var_27_0)
+
+					arg_26_0.player:moveTo(var_27_1)
+					arg_26_0.player:reset()
+					arg_26_0.player:useAtk()
 				end
 			end)
 		end,
-		createPlayer = function (slot0)
-			if slot0.player == nil then
-				slot0.player = uv0(tf(Instantiate(slot0.playerTpl)), function (slot0)
-					uv0:playerActHand(slot0)
+		createPlayer = function(arg_28_0)
+			if arg_28_0.player == nil then
+				arg_28_0.player = var_0_21(tf(Instantiate(arg_28_0.playerTpl)), function(arg_29_0)
+					arg_28_0:playerActHand(arg_29_0)
 				end)
 
-				slot0.player:setParent(slot0._playerPos, true)
+				arg_28_0.player:setParent(arg_28_0._playerPos, true)
 			end
 		end,
-		playerActHand = function (slot0, slot1)
-			if slot0.playerHandle then
-				slot0.playerHandle(slot1)
+		playerActHand = function(arg_30_0, arg_30_1)
+			if arg_30_0.playerHandle then
+				arg_30_0.playerHandle(arg_30_1)
 			end
 		end,
-		setPlayerHandle = function (slot0, slot1)
-			slot0.playerHandle = slot1
+		setPlayerHandle = function(arg_31_0, arg_31_1)
+			arg_31_0.playerHandle = arg_31_1
 		end,
-		step = function (slot0)
-			if slot0.player then
-				slot0.player:step()
+		step = function(arg_32_0)
+			if arg_32_0.player then
+				arg_32_0.player:step()
 			end
 		end,
-		getSpecialData = function (slot0)
-			if slot0.player then
-				return slot0.player:getSpecialData()
+		getSpecialData = function(arg_33_0)
+			if arg_33_0.player then
+				return arg_33_0.player:getSpecialData()
 			end
 
-			return nil, 
+			return nil, nil
 		end,
-		useSpecial = function (slot0)
-			if slot0.player then
-				return slot0.player:useSpecial()
+		useSpecial = function(arg_34_0)
+			if arg_34_0.player then
+				return arg_34_0.player:useSpecial()
 			end
 		end,
-		attakeCount = function (slot0, slot1)
-			if slot0.player then
-				slot0.player:attakeCount(slot1)
+		attakeCount = function(arg_35_0, arg_35_1)
+			if arg_35_0.player then
+				arg_35_0.player:attakeCount(arg_35_1)
 			end
 		end,
-		addSpecialCount = function (slot0, slot1)
-			if slot0.player then
-				slot0.player:addSpecialCount(slot1)
+		addSpecialCount = function(arg_36_0, arg_36_1)
+			if arg_36_0.player then
+				arg_36_0.player:addSpecialCount(arg_36_1)
 			end
 		end,
-		clear = function (slot0)
-			if slot0.player then
-				slot0.player:clear()
+		clear = function(arg_37_0)
+			if arg_37_0.player then
+				arg_37_0.player:clear()
 			end
 		end
 	}
 
-	slot2:ctor()
+	var_25_0:ctor()
 
-	return slot2
+	return var_25_0
 end
 
-function slot23(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0._tf = uv0
-			slot0._data = uv1
-			slot0._life = 0
-			slot0._enable = false
-			slot0._attakeAble = false
-			slot0._animator = GetComponent(slot0._tf, typeof(Animator))
-			slot0._boxCollider = GetComponent(slot0._tf, "BoxCollider2D")
-			slot1 = GetComponent(slot0._tf, typeof(DftAniEvent))
+local function var_0_23(arg_38_0, arg_38_1)
+	local var_38_0 = {
+		ctor = function(arg_39_0)
+			arg_39_0._tf = arg_38_0
+			arg_39_0._data = arg_38_1
+			arg_39_0._life = 0
+			arg_39_0._enable = false
+			arg_39_0._attakeAble = false
+			arg_39_0._animator = GetComponent(arg_39_0._tf, typeof(Animator))
+			arg_39_0._boxCollider = GetComponent(arg_39_0._tf, "BoxCollider2D")
 
-			slot1:SetStartEvent(function ()
-				if uv0._callback then
-					uv0._callback(uv1)
+			local var_39_0 = GetComponent(arg_39_0._tf, typeof(DftAniEvent))
+
+			var_39_0:SetStartEvent(function()
+				if arg_39_0._callback then
+					arg_39_0._callback(var_0_3)
 				end
 			end)
-			slot1:SetTriggerEvent(function ()
-				if uv0._callback then
-					uv0._callback(uv1)
+			var_39_0:SetTriggerEvent(function()
+				if arg_39_0._callback then
+					arg_39_0._callback(var_0_2)
 				end
 			end)
-			slot1:SetEndEvent(function ()
-				uv0._enable = false
+			var_39_0:SetEndEvent(function()
+				arg_39_0._enable = false
 
-				if uv0._callback then
-					uv0._callback(uv1)
+				if arg_39_0._callback then
+					arg_39_0._callback(var_0_1)
 				end
 			end)
 		end,
-		setHandle = function (slot0, slot1)
-			slot0._callback = slot1
+		setHandle = function(arg_43_0, arg_43_1)
+			arg_43_0._callback = arg_43_1
 		end,
-		getSpeed = function (slot0)
-			return slot0._data.speed
+		getSpeed = function(arg_44_0)
+			return arg_44_0._data.speed
 		end,
-		step = function (slot0)
-			if slot0._enableTime > 0 then
-				slot0._enableTime = slot0._enableTime - Time.deltaTime
+		step = function(arg_45_0)
+			if arg_45_0._enableTime > 0 then
+				arg_45_0._enableTime = arg_45_0._enableTime - Time.deltaTime
 
-				if slot0._enableTime < 0 then
-					slot0._enable = true
-					slot0._enableTime = 0
+				if arg_45_0._enableTime < 0 then
+					arg_45_0._enable = true
+					arg_45_0._enableTime = 0
 				end
 			end
 		end,
-		apear = function (slot0)
-			slot0._animator:SetTrigger("pop")
+		apear = function(arg_46_0)
+			arg_46_0._animator:SetTrigger("pop")
 
-			slot0._enableTime = math.random() * slot0._data.enable_time + 0.5
-			slot0._life = slot0._data.life
-			slot0._attakeAble = true
+			arg_46_0._enableTime = math.random() * arg_46_0._data.enable_time + 0.5
+			arg_46_0._life = arg_46_0._data.life
+			arg_46_0._attakeAble = true
 		end,
-		stop = function (slot0)
-			slot0._animator:SetBool("stop", true)
+		stop = function(arg_47_0)
+			arg_47_0._animator:SetBool("stop", true)
 		end,
-		damage = function (slot0, slot1)
-			slot0._life = slot0._life - slot1
+		damage = function(arg_48_0, arg_48_1)
+			arg_48_0._life = arg_48_0._life - arg_48_1
 
-			if slot0._life <= 0 then
-				pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-				slot0:dead()
+			if arg_48_0._life <= 0 then
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_9)
+				arg_48_0:dead()
 			else
-				slot0._animator:SetTrigger("damage")
+				arg_48_0._animator:SetTrigger("damage")
 
-				slot0._enable = false
-				slot0._enableTime = slot0._data.damage_time
+				arg_48_0._enable = false
+				arg_48_0._enableTime = arg_48_0._data.damage_time
 			end
 		end,
-		dead = function (slot0)
-			slot0._animator:SetTrigger("dead")
+		dead = function(arg_49_0)
+			arg_49_0._animator:SetTrigger("dead")
 
-			slot0._enable = false
-			slot0._enableTime = 0
-			slot0._attakeAble = false
+			arg_49_0._enable = false
+			arg_49_0._enableTime = 0
+			arg_49_0._attakeAble = false
 		end,
-		steal = function (slot0)
-			slot0._animator:SetTrigger("steal")
+		steal = function(arg_50_0)
+			arg_50_0._animator:SetTrigger("steal")
 
-			slot0._enable = false
-			slot0._attakeAble = false
+			arg_50_0._enable = false
+			arg_50_0._attakeAble = false
 		end,
-		move = function (slot0, slot1, slot2)
-			slot3 = slot0._tf.anchoredPosition
-			slot3.x = slot3.x + slot1
-			slot3.y = slot3.y + slot2
-			slot0._tf.anchoredPosition = slot3
-			slot4 = slot0._tf.localScale
-			slot4.x = Mathf.Abs(slot0._tf.localScale.x) * -1 * Mathf.Sign(slot1)
-			slot0._tf.localScale = slot4
+		move = function(arg_51_0, arg_51_1, arg_51_2)
+			local var_51_0 = arg_51_0._tf.anchoredPosition
+
+			var_51_0.x = var_51_0.x + arg_51_1
+			var_51_0.y = var_51_0.y + arg_51_2
+			arg_51_0._tf.anchoredPosition = var_51_0
+
+			local var_51_1 = arg_51_0._tf.localScale
+
+			var_51_1.x = Mathf.Abs(arg_51_0._tf.localScale.x) * -1 * Mathf.Sign(arg_51_1)
+			arg_51_0._tf.localScale = var_51_1
 		end,
-		moveTo = function (slot0, slot1)
-			slot0._tf.anchoredPosition = slot1
-			slot2 = slot0._tf.localScale
-			slot2.x = Mathf.Abs(slot0._tf.localScale.x) * Mathf.Sign(slot0._tf.localPosition.x)
-			slot0._tf.localScale = slot2
+		moveTo = function(arg_52_0, arg_52_1)
+			arg_52_0._tf.anchoredPosition = arg_52_1
+
+			local var_52_0 = arg_52_0._tf.localScale
+
+			var_52_0.x = Mathf.Abs(arg_52_0._tf.localScale.x) * Mathf.Sign(arg_52_0._tf.localPosition.x)
+			arg_52_0._tf.localScale = var_52_0
 		end,
-		setParent = function (slot0, slot1, slot2)
-			SetParent(slot0._tf, slot1)
-			slot0:setActive(slot2)
+		setParent = function(arg_53_0, arg_53_1, arg_53_2)
+			SetParent(arg_53_0._tf, arg_53_1)
+			arg_53_0:setActive(arg_53_2)
 		end,
-		setActive = function (slot0, slot1)
-			SetActive(slot0._tf, slot1)
+		setActive = function(arg_54_0, arg_54_1)
+			SetActive(arg_54_0._tf, arg_54_1)
 		end,
-		SetSiblingIndex = function (slot0, slot1)
-			slot0._tf:SetSiblingIndex(slot1)
+		SetSiblingIndex = function(arg_55_0, arg_55_1)
+			arg_55_0._tf:SetSiblingIndex(arg_55_1)
 		end,
-		getPosition = function (slot0)
-			return slot0._tf.anchoredPosition
+		getPosition = function(arg_56_0)
+			return arg_56_0._tf.anchoredPosition
 		end,
-		getType = function (slot0)
-			return slot0._data.type
+		getType = function(arg_57_0)
+			return arg_57_0._data.type
 		end,
-		getMoveAble = function (slot0)
-			return isActive(slot0._tf) and slot0._enable
+		getMoveAble = function(arg_58_0)
+			return isActive(arg_58_0._tf) and arg_58_0._enable
 		end,
-		getAttakeAble = function (slot0)
-			return isActive(slot0._tf) and slot0._attakeAble
+		getAttakeAble = function(arg_59_0)
+			return isActive(arg_59_0._tf) and arg_59_0._attakeAble
 		end,
-		getBounds = function (slot0)
-			return slot0._boxCollider.bounds
+		getBounds = function(arg_60_0)
+			return arg_60_0._boxCollider.bounds
 		end,
-		getLife = function (slot0)
-			return slot0._life
+		getLife = function(arg_61_0)
+			return arg_61_0._life
 		end,
-		getScore = function (slot0)
-			return slot0._data.score
+		getScore = function(arg_62_0)
+			return arg_62_0._data.score
 		end,
-		getBoundLength = function (slot0)
-			if slot0.boundsData == nil then
-				slot0.boundsData = {
-					width = slot0._boxCollider.bounds.max.x - slot0._boxCollider.bounds.min.x,
-					height = slot0._boxCollider.bounds.max.y - slot0._boxCollider.bounds.min.y
+		getBoundLength = function(arg_63_0)
+			if arg_63_0.boundsData == nil then
+				local var_63_0 = arg_63_0._boxCollider.bounds.max.x - arg_63_0._boxCollider.bounds.min.x
+				local var_63_1 = arg_63_0._boxCollider.bounds.max.y - arg_63_0._boxCollider.bounds.min.y
+
+				arg_63_0.boundsData = {
+					width = var_63_0,
+					height = var_63_1
 				}
 			end
 
-			return slot0.boundsData
+			return arg_63_0.boundsData
 		end
 	}
 
-	slot2:ctor()
+	var_38_0:ctor()
 
-	return slot2
+	return var_38_0
 end
 
-function slot24(slot0, slot1, slot2, slot3)
-	slot4 = {
-		ctor = function (slot0)
-			slot0.enemysTpl = uv0
-			slot0.sceneTf = uv1
-			slot0.enemyPos = findTF(slot0.sceneTf, "enemyPos")
-			slot0.createPos = findTF(slot0.sceneTf, "createPos")
-			slot0.countsWeight = {}
+local function var_0_24(arg_64_0, arg_64_1, arg_64_2, arg_64_3)
+	local var_64_0 = {
+		ctor = function(arg_65_0)
+			arg_65_0.enemysTpl = arg_64_0
+			arg_65_0.sceneTf = arg_64_1
+			arg_65_0.enemyPos = findTF(arg_65_0.sceneTf, "enemyPos")
+			arg_65_0.createPos = findTF(arg_65_0.sceneTf, "createPos")
+			arg_65_0.countsWeight = {}
 
-			for slot4 = 1, #uv2.enemy_amounts do
-				slot5 = {}
+			for iter_65_0 = 1, #var_0_16.enemy_amounts do
+				local var_65_0 = {}
+				local var_65_1 = 0
+				local var_65_2 = var_0_16.enemy_amounts[iter_65_0]
 
-				for slot11 = 1, #uv2.enemy_amounts[slot4] do
-					table.insert(slot5, 0 + slot7[slot11])
+				for iter_65_1 = 1, #var_65_2 do
+					var_65_1 = var_65_1 + var_65_2[iter_65_1]
+
+					table.insert(var_65_0, var_65_1)
 				end
 
-				table.insert(slot0.countsWeight, slot5)
+				table.insert(arg_65_0.countsWeight, var_65_0)
 			end
 
-			slot0.callback = uv3
-			slot0.callback2 = uv4
-			slot0.enemys = {}
-			slot0.enemysPool = {}
-			slot0.apearTime = 0
-			slot0.stepTime = 0
-			slot0.level = 1
-			slot0.cakeLife = uv5
-			slot0.cakeTf = findTF(slot0.sceneTf, "enemyPos/cake")
-			slot0.cakeAniamtor = GetComponent(findTF(slot0.cakeTf, "image"), typeof(Animator))
-			slot4 = slot0.getCakeLifeIndex
+			arg_65_0.callback = arg_64_2
+			arg_65_0.callback2 = arg_64_3
+			arg_65_0.enemys = {}
+			arg_65_0.enemysPool = {}
+			arg_65_0.apearTime = 0
+			arg_65_0.stepTime = 0
+			arg_65_0.level = 1
+			arg_65_0.cakeLife = var_0_17
+			arg_65_0.cakeTf = findTF(arg_65_0.sceneTf, "enemyPos/cake")
+			arg_65_0.cakeAniamtor = GetComponent(findTF(arg_65_0.cakeTf, "image"), typeof(Animator))
 
-			slot0.cakeAniamtor:SetInteger("life", slot4(slot0))
+			arg_65_0.cakeAniamtor:SetInteger("life", arg_65_0:getCakeLifeIndex())
 
-			slot0.cakeBox = GetComponent(slot0.cakeTf, "BoxCollider2D")
-			slot0.cakeBoundsLength = {
-				width = slot0.cakeBox.bounds.max.x - slot0.cakeBox.bounds.min.x,
-				height = slot0.cakeBox.bounds.max.y - slot0.cakeBox.bounds.min.y
+			arg_65_0.cakeBox = GetComponent(arg_65_0.cakeTf, "BoxCollider2D")
+			arg_65_0.cakeBoundsLength = {
+				width = arg_65_0.cakeBox.bounds.max.x - arg_65_0.cakeBox.bounds.min.x,
+				height = arg_65_0.cakeBox.bounds.max.y - arg_65_0.cakeBox.bounds.min.y
 			}
-			slot0.gameScore = 0
-			slot0.createBounds = {}
+			arg_65_0.gameScore = 0
+			arg_65_0.createBounds = {}
 
-			for slot4 = 0, slot0.createPos.childCount - 1 do
-				table.insert(slot0.createBounds, slot0.createPos:GetChild(slot4))
+			for iter_65_2 = 0, arg_65_0.createPos.childCount - 1 do
+				table.insert(arg_65_0.createBounds, arg_65_0.createPos:GetChild(iter_65_2))
 			end
 		end,
-		step = function (slot0)
-			for slot4 = #uv0.level_up_time, 1, -1 do
-				if slot0.level < slot4 and uv0.level_up_time[slot4] < slot0.stepTime and slot0.level ~= slot4 then
-					slot0.level = slot4
+		step = function(arg_66_0)
+			for iter_66_0 = #var_0_16.level_up_time, 1, -1 do
+				if iter_66_0 > arg_66_0.level and arg_66_0.stepTime > var_0_16.level_up_time[iter_66_0] and arg_66_0.level ~= iter_66_0 then
+					arg_66_0.level = iter_66_0
 
-					print("level up :" .. slot0.level)
+					print("level up :" .. arg_66_0.level)
 
 					break
 				end
 			end
 
-			if slot0.apearTime == 0 then
-				for slot5 = 1, slot0:getCreateCounts() do
-					if #slot0.enemys < uv0.enemy_max[slot0.level] then
-						slot7 = slot0:getEnemyFromPool(uv1[math.random(1, #uv1)].type) or slot0:createEnemy(slot6)
+			if arg_66_0.apearTime == 0 then
+				local var_66_0 = arg_66_0:getCreateCounts()
 
-						table.insert(slot0.enemys, slot7)
-						slot7:setActive(true)
-						slot7:moveTo(slot0:getRandApearPosition())
-						slot7:apear()
+				for iter_66_1 = 1, var_66_0 do
+					if #arg_66_0.enemys < var_0_16.enemy_max[arg_66_0.level] then
+						local var_66_1 = var_0_15[math.random(1, #var_0_15)]
+						local var_66_2 = arg_66_0:getEnemyFromPool(var_66_1.type) or arg_66_0:createEnemy(var_66_1)
+
+						table.insert(arg_66_0.enemys, var_66_2)
+						var_66_2:setActive(true)
+						var_66_2:moveTo(arg_66_0:getRandApearPosition())
+						var_66_2:apear()
 					end
 				end
 
-				slot0.apearTime = uv0.enemy_apear_time[slot0.level]
+				arg_66_0.apearTime = var_0_16.enemy_apear_time[arg_66_0.level]
 			end
 
-			table.sort(slot0.enemys, function (slot0, slot1)
-				return slot1:getPosition().y < slot0:getPosition().y
+			table.sort(arg_66_0.enemys, function(arg_67_0, arg_67_1)
+				return arg_67_0:getPosition().y > arg_67_1:getPosition().y
 			end)
 
-			for slot5 = #slot0.enemys, 1, -1 do
-				if slot0.cakeTf.localPosition.y <= slot0.enemys[slot5]:getPosition().y then
-					slot1 = 0 + 1
+			local var_66_3 = 0
+
+			for iter_66_2 = #arg_66_0.enemys, 1, -1 do
+				local var_66_4 = arg_66_0.enemys[iter_66_2]
+
+				if arg_66_0.cakeTf.localPosition.y <= var_66_4:getPosition().y then
+					var_66_3 = var_66_3 + 1
 				end
 
-				slot6:SetSiblingIndex(slot5)
-				slot6:step()
+				var_66_4:SetSiblingIndex(iter_66_2)
+				var_66_4:step()
 
-				if slot6:getMoveAble() then
-					slot7 = slot6:getPosition()
+				if var_66_4:getMoveAble() then
+					local var_66_5 = var_66_4:getPosition()
 
-					if slot0:checkEnemySteal(slot6) then
-						slot6:steal()
+					if arg_66_0:checkEnemySteal(var_66_4) then
+						var_66_4:steal()
 					else
-						slot8 = Mathf.Atan2(Mathf.Abs(slot7.y), Mathf.Abs(slot7.x))
+						local var_66_6 = Mathf.Atan2(Mathf.Abs(var_66_5.y), Mathf.Abs(var_66_5.x))
+						local var_66_7 = var_66_4:getSpeed() * Mathf.Cos(var_66_6) * -Mathf.Sign(var_66_5.x)
+						local var_66_8 = var_66_4:getSpeed() * Mathf.Sin(var_66_6) * -Mathf.Sign(var_66_5.y)
 
-						slot6:move(slot6:getSpeed() * Mathf.Cos(slot8) * -Mathf.Sign(slot7.x) * Time.deltaTime, slot6:getSpeed() * Mathf.Sin(slot8) * -Mathf.Sign(slot7.y) * Time.deltaTime)
+						var_66_4:move(var_66_7 * Time.deltaTime, var_66_8 * Time.deltaTime)
 					end
 				end
 			end
 
-			slot0.cakeTf:SetSiblingIndex(slot1)
+			arg_66_0.cakeTf:SetSiblingIndex(var_66_3)
 
-			slot0.apearTime = slot0.apearTime - Time.deltaTime
+			arg_66_0.apearTime = arg_66_0.apearTime - Time.deltaTime
 
-			if slot0.apearTime < 0 then
-				slot0.apearTime = 0
+			if arg_66_0.apearTime < 0 then
+				arg_66_0.apearTime = 0
 			end
 
-			slot0.stepTime = slot0.stepTime + Time.deltaTime
+			arg_66_0.stepTime = arg_66_0.stepTime + Time.deltaTime
 
-			slot0.cakeAniamtor:SetInteger("life", slot0:getCakeLifeIndex())
+			arg_66_0.cakeAniamtor:SetInteger("life", arg_66_0:getCakeLifeIndex())
 		end,
-		getCreateCounts = function (slot0)
-			slot1 = slot0.countsWeight[slot0.level]
+		getCreateCounts = function(arg_68_0)
+			local var_68_0 = arg_68_0.countsWeight[arg_68_0.level]
+			local var_68_1 = math.random(1, var_68_0[#var_68_0])
 
-			for slot6 = 1, #slot1 do
-				if math.random(1, slot1[#slot1]) <= slot1[slot6] then
-					return slot6
+			for iter_68_0 = 1, #var_68_0 do
+				if var_68_1 <= var_68_0[iter_68_0] then
+					return iter_68_0
 				end
 			end
 
 			return 1
 		end,
-		checkEnemySteal = function (slot0, slot1)
-			return slot0:checkRectCollider(slot1:getBounds().min, slot0.cakeBox.bounds.min, slot1:getBoundLength(), slot0.cakeBoundsLength)
-		end,
-		checkRectCollider = function (slot0, slot1, slot2, slot3, slot4)
-			slot6 = slot1.y
-			slot7 = slot3.width
-			slot8 = slot3.height
-			slot10 = slot2.y
-			slot12 = slot4.height
+		checkEnemySteal = function(arg_69_0, arg_69_1)
+			local var_69_0 = arg_69_1:getBounds().min
+			local var_69_1 = arg_69_1:getBoundLength()
+			local var_69_2 = arg_69_0.cakeBox.bounds.min
+			local var_69_3 = arg_69_0.cakeBoundsLength
 
-			if slot2.x <= slot1.x and slot5 >= slot9 + slot4.width then
+			return arg_69_0:checkRectCollider(var_69_0, var_69_2, var_69_1, var_69_3)
+		end,
+		checkRectCollider = function(arg_70_0, arg_70_1, arg_70_2, arg_70_3, arg_70_4)
+			local var_70_0 = arg_70_1.x
+			local var_70_1 = arg_70_1.y
+			local var_70_2 = arg_70_3.width
+			local var_70_3 = arg_70_3.height
+			local var_70_4 = arg_70_2.x
+			local var_70_5 = arg_70_2.y
+			local var_70_6 = arg_70_4.width
+			local var_70_7 = arg_70_4.height
+
+			if var_70_4 <= var_70_0 and var_70_0 >= var_70_4 + var_70_6 then
 				return false
-			elseif slot5 <= slot9 and slot9 >= slot5 + slot7 then
+			elseif var_70_0 <= var_70_4 and var_70_4 >= var_70_0 + var_70_2 then
 				return false
-			elseif slot10 <= slot6 and slot6 >= slot10 + slot12 then
+			elseif var_70_5 <= var_70_1 and var_70_1 >= var_70_5 + var_70_7 then
 				return false
-			elseif slot6 <= slot10 and slot10 >= slot6 + slot8 then
+			elseif var_70_1 <= var_70_5 and var_70_5 >= var_70_1 + var_70_3 then
 				return false
 			else
 				return true
 			end
 		end,
-		createEnemy = function (slot0, slot1)
-			slot3 = uv0(tf(Instantiate(slot0.enemysTpl[slot1.type])), slot1)
+		createEnemy = function(arg_71_0, arg_71_1)
+			local var_71_0 = tf(Instantiate(arg_71_0.enemysTpl[arg_71_1.type]))
+			local var_71_1 = var_0_23(var_71_0, arg_71_1)
 
-			slot3:setHandle(function (slot0)
-				uv0:enemyEventHandle(slot0, uv1)
+			var_71_1:setHandle(function(arg_72_0)
+				arg_71_0:enemyEventHandle(arg_72_0, var_71_1)
 			end)
-			slot3:setParent(slot0.enemyPos, true)
+			var_71_1:setParent(arg_71_0.enemyPos, true)
 
-			return slot3
+			return var_71_1
 		end,
-		getEnemyFromPool = function (slot0, slot1)
-			for slot5 = 1, #slot0.enemysPool do
-				if slot0.enemysPool[slot5]:getType() == slot1 then
-					table.remove(slot0.enemysPool, slot5)
+		getEnemyFromPool = function(arg_73_0, arg_73_1)
+			for iter_73_0 = 1, #arg_73_0.enemysPool do
+				local var_73_0 = arg_73_0.enemysPool[iter_73_0]
 
-					return slot6
+				if var_73_0:getType() == arg_73_1 then
+					table.remove(arg_73_0.enemysPool, iter_73_0)
+
+					return var_73_0
 				end
 			end
 
 			return nil
 		end,
-		removeEnemy = function (slot0, slot1)
-			for slot5 = #slot0.enemys, 1, -1 do
-				if slot0.enemys[slot5] == slot1 then
-					table.remove(slot0.enemys, slot5)
+		removeEnemy = function(arg_74_0, arg_74_1)
+			for iter_74_0 = #arg_74_0.enemys, 1, -1 do
+				if arg_74_0.enemys[iter_74_0] == arg_74_1 then
+					table.remove(arg_74_0.enemys, iter_74_0)
 				end
 			end
 
-			slot1:setActive(false)
-			table.insert(slot0.enemysPool, slot1)
+			arg_74_1:setActive(false)
+			table.insert(arg_74_0.enemysPool, arg_74_1)
 		end,
-		getRandApearPosition = function (slot0)
-			slot5 = slot2:TransformPoint(math.random() * slot0.createBounds[math.random(1, #slot0.createBounds)].sizeDelta.x / 2 * (math.random() < 0.5 and 1 or -1), math.random() * slot2.sizeDelta.y / 2 * (math.random() < 0.5 and 1 or -1), 0)
+		getRandApearPosition = function(arg_75_0)
+			local var_75_0 = math.random(1, #arg_75_0.createBounds)
+			local var_75_1 = arg_75_0.createBounds[var_75_0]
+			local var_75_2 = math.random() * (var_75_1.sizeDelta.x / 2) * (math.random() < 0.5 and 1 or -1)
+			local var_75_3 = math.random() * (var_75_1.sizeDelta.y / 2) * (math.random() < 0.5 and 1 or -1)
+			local var_75_4 = var_75_1:TransformPoint(var_75_2, var_75_3, 0)
 
-			return slot0.enemyPos:InverseTransformPoint(slot5.x, slot5.y, slot5.z)
+			return (arg_75_0.enemyPos:InverseTransformPoint(var_75_4.x, var_75_4.y, var_75_4.z))
 		end,
-		enemyEventHandle = function (slot0, slot1, slot2)
-			if slot1 == uv0 then
-				slot0.cakeLife = slot0.cakeLife - 1
+		enemyEventHandle = function(arg_76_0, arg_76_1, arg_76_2)
+			if arg_76_1 == var_0_2 then
+				arg_76_0.cakeLife = arg_76_0.cakeLife - 1
 
-				if slot0.callback2 then
-					slot0.callback2()
+				if arg_76_0.callback2 then
+					arg_76_0.callback2()
 				end
 
-				if slot0.cakeLife <= 0 and slot0.callback then
-					slot0.callback()
+				if arg_76_0.cakeLife <= 0 and arg_76_0.callback then
+					arg_76_0.callback()
 				end
 
-				slot0.cakeAniamtor:SetInteger("life", slot0:getCakeLifeIndex())
-			elseif slot1 == uv1 then
-				slot0.gameScore = slot0.gameScore + slot2:getScore()
+				arg_76_0.cakeAniamtor:SetInteger("life", arg_76_0:getCakeLifeIndex())
+			elseif arg_76_1 == var_0_1 then
+				arg_76_0.gameScore = arg_76_0.gameScore + arg_76_2:getScore()
 
-				slot0:removeEnemy(slot2)
+				arg_76_0:removeEnemy(arg_76_2)
 			else
-				slot0:removeEnemy(slot2)
+				arg_76_0:removeEnemy(arg_76_2)
 			end
 		end,
-		playerActAttake = function (slot0, slot1)
-			for slot10 = 1, #slot0.enemys do
-				if slot0.enemys[slot10]:getAttakeAble() and slot0:checkRectCollider(slot11:getBounds().min, slot1.pos, slot11:getBoundLength(), slot1.boundsLength) then
-					slot11:damage(slot1.damage)
+		playerActAttake = function(arg_77_0, arg_77_1)
+			local var_77_0 = arg_77_1.pos
+			local var_77_1 = arg_77_1.boundsLength
+			local var_77_2 = arg_77_1.damage
+			local var_77_3 = 0
+			local var_77_4 = 0
 
-					slot5 = 0 + 1
+			for iter_77_0 = 1, #arg_77_0.enemys do
+				local var_77_5 = arg_77_0.enemys[iter_77_0]
 
-					if slot11:getLife() == 0 then
-						slot6 = 0 + 1
+				if var_77_5:getAttakeAble() then
+					local var_77_6 = var_77_5:getBounds().min
+					local var_77_7 = var_77_5:getBoundLength()
+
+					if arg_77_0:checkRectCollider(var_77_6, var_77_0, var_77_7, var_77_1) then
+						var_77_5:damage(var_77_2)
+
+						var_77_3 = var_77_3 + 1
+
+						if var_77_5:getLife() == 0 then
+							var_77_4 = var_77_4 + 1
+						end
 					end
 				end
 			end
 
-			return slot5, slot6
+			return var_77_3, var_77_4
 		end,
-		clear = function (slot0)
-			slot0.stepTime = 0
+		clear = function(arg_78_0)
+			arg_78_0.stepTime = 0
 
-			for slot4 = #slot0.enemys, 1, -1 do
-				slot5 = table.remove(slot0.enemys, slot4)
+			for iter_78_0 = #arg_78_0.enemys, 1, -1 do
+				local var_78_0 = table.remove(arg_78_0.enemys, iter_78_0)
 
-				slot5:setActive(false)
-				table.insert(slot0.enemysPool, slot5)
+				var_78_0:setActive(false)
+				table.insert(arg_78_0.enemysPool, var_78_0)
 			end
 
-			slot0.cakeLife = uv0
-			slot0.gameScore = 0
-			slot0.level = 1
+			arg_78_0.cakeLife = var_0_17
+			arg_78_0.gameScore = 0
+			arg_78_0.level = 1
 		end,
-		getCakeLife = function (slot0)
-			return slot0.cakeLife
+		getCakeLife = function(arg_79_0)
+			return arg_79_0.cakeLife
 		end,
-		getCakeLifeIndex = function (slot0)
-			for slot4 = #uv0, 1, -1 do
-				if uv0[slot4] <= slot0.cakeLife then
-					return slot4
+		getCakeLifeIndex = function(arg_80_0)
+			for iter_80_0 = #var_0_18, 1, -1 do
+				if arg_80_0.cakeLife >= var_0_18[iter_80_0] then
+					return iter_80_0
 				end
 			end
 
 			return 0
 		end,
-		getScore = function (slot0)
-			return slot0.gameScore
+		getScore = function(arg_81_0)
+			return arg_81_0.gameScore
 		end
 	}
 
-	slot4:ctor()
+	var_64_0:ctor()
 
-	return slot4
+	return var_64_0
 end
 
-function slot25(slot0, slot1, slot2)
-	slot3 = {
-		ctor = function (slot0)
-			slot0.playerController = uv0
-			slot0.enemyController = uv1
-			slot0.callback = uv2
+local function var_0_25(arg_82_0, arg_82_1, arg_82_2)
+	local var_82_0 = {
+		ctor = function(arg_83_0)
+			arg_83_0.playerController = arg_82_0
+			arg_83_0.enemyController = arg_82_1
+			arg_83_0.callback = arg_82_2
 
-			slot0.playerController:setPlayerHandle(function (slot0)
-				slot1, slot2 = uv0.enemyController:playerActAttake(slot0)
+			arg_83_0.playerController:setPlayerHandle(function(arg_84_0)
+				local var_84_0, var_84_1 = arg_83_0.enemyController:playerActAttake(arg_84_0)
 
-				if slot1 > 0 then
-					uv0.playerController:attakeCount(slot1)
+				if var_84_0 > 0 then
+					arg_83_0.playerController:attakeCount(var_84_0)
 				end
 
-				if slot2 > 0 then
-					uv0.playerController:addSpecialCount(slot2)
+				if var_84_1 > 0 then
+					arg_83_0.playerController:addSpecialCount(var_84_1)
 
-					if uv0.callback then
-						uv0.callback()
+					if arg_83_0.callback then
+						arg_83_0.callback()
 					end
 				end
 			end)
 		end
 	}
 
-	slot3:ctor()
+	var_82_0:ctor()
 
-	return slot3
+	return var_82_0
 end
 
-slot26 = "role type loop"
-slot27 = "role type normal"
+local var_0_26 = "role type loop"
+local var_0_27 = "role type normal"
 
-function slot28(slot0, slot1)
-	slot2 = {
-		ctor = function (slot0)
-			slot0.playerController = uv0
-			slot0.roleTfs = uv1
-			slot0.roleDatas = {}
+local function var_0_28(arg_85_0, arg_85_1)
+	local var_85_0 = {
+		ctor = function(arg_86_0)
+			arg_86_0.playerController = arg_85_1
+			arg_86_0.roleTfs = arg_85_0
+			arg_86_0.roleDatas = {}
 
-			for slot4 = 1, #slot0.roleTfs do
-				if slot4 == 2 or slot4 == 3 then
-					-- Nothing
-				else
-					slot5.type = uv3
-				end
+			for iter_86_0 = 1, #arg_86_0.roleTfs do
+				local var_86_0 = {
+					animator = GetComponent(arg_86_0.roleTfs[iter_86_0], typeof(Animator))
+				}
 
-				table.insert(slot0.roleDatas, {
-					animator = GetComponent(slot0.roleTfs[slot4], typeof(Animator)),
-					type = uv2,
-					loop_time = {
+				if iter_86_0 == 2 or iter_86_0 == 3 then
+					var_86_0.type = var_0_26
+					var_86_0.loop_time = {
 						3,
 						3
-					},
-					time = 0
-				})
+					}
+					var_86_0.time = 0
+				else
+					var_86_0.type = var_0_27
+				end
+
+				table.insert(arg_86_0.roleDatas, var_86_0)
 			end
 		end,
-		step = function (slot0)
-			slot1 = slot0.playerController:getSpecialData()
+		step = function(arg_87_0)
+			local var_87_0 = arg_87_0.playerController:getSpecialData()
 
-			for slot5 = 1, #slot0.roleDatas do
-				if slot0.roleDatas[slot5].type == uv0 then
-					if slot6.time == 0 then
-						slot6.animator:SetTrigger("loop")
+			for iter_87_0 = 1, #arg_87_0.roleDatas do
+				local var_87_1 = arg_87_0.roleDatas[iter_87_0]
 
-						slot6.time = math.random() * slot6.loop_time[1] + slot6.loop_time[2]
+				if var_87_1.type == var_0_26 then
+					if var_87_1.time == 0 then
+						var_87_1.animator:SetTrigger("loop")
+
+						var_87_1.time = math.random() * var_87_1.loop_time[1] + var_87_1.loop_time[2]
 					else
-						slot6.time = slot6.time - Time.deltaTime
+						var_87_1.time = var_87_1.time - Time.deltaTime
 
-						if slot6.time < 0 then
-							slot6.time = 0
+						if var_87_1.time < 0 then
+							var_87_1.time = 0
 						end
 					end
 				end
 
-				if slot6.special and slot1 == 0 then
-					slot6.animator:SetTrigger("reset")
+				if var_87_1.special and var_87_0 == 0 then
+					var_87_1.animator:SetTrigger("reset")
 
-					slot6.special = false
+					var_87_1.special = false
 				end
 			end
 		end,
-		special = function (slot0)
-			for slot4 = 1, #slot0.roleDatas do
-				slot5 = slot0.roleDatas[slot4]
+		special = function(arg_88_0)
+			for iter_88_0 = 1, #arg_88_0.roleDatas do
+				local var_88_0 = arg_88_0.roleDatas[iter_88_0]
 
-				slot5.animator:SetTrigger("special")
+				var_88_0.animator:SetTrigger("special")
 
-				slot5.special = true
+				var_88_0.special = true
 			end
 		end,
-		fail = function (slot0)
-			for slot4 = 1, #slot0.roleDatas do
-				slot0.roleDatas[slot4].animator:SetTrigger("fail")
+		fail = function(arg_89_0)
+			for iter_89_0 = 1, #arg_89_0.roleDatas do
+				arg_89_0.roleDatas[iter_89_0].animator:SetTrigger("fail")
 			end
 		end,
-		reset = function (slot0)
-			for slot4 = 1, #slot0.roleDatas do
-				slot0.roleDatas[slot4].animator:SetTrigger("reset")
+		reset = function(arg_90_0)
+			for iter_90_0 = 1, #arg_90_0.roleDatas do
+				arg_90_0.roleDatas[iter_90_0].animator:SetTrigger("reset")
 			end
 		end
 	}
 
-	slot2:ctor()
+	var_85_0:ctor()
 
-	return slot2
+	return var_85_0
 end
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_91_0)
 	return "PokeMoleGameUI"
 end
 
-function slot0.getBGM(slot0)
-	return uv0
+function var_0_0.getBGM(arg_92_0)
+	return var_0_6
 end
 
-function slot0.didEnter(slot0)
-	slot0:initData()
-	slot0:initUI()
+function var_0_0.didEnter(arg_93_0)
+	arg_93_0:initData()
+	arg_93_0:initUI()
 end
 
-function slot0.initData(slot0)
-	slot0.settlementFlag = false
-	slot0.gameStartFlag = false
-	slot0.timer = Timer.New(function ()
-		uv0:onTimer()
-	end, 1 / (Application.targetFrameRate or 60), -1, true)
+function var_0_0.initData(arg_94_0)
+	arg_94_0.settlementFlag = false
+	arg_94_0.gameStartFlag = false
+
+	local var_94_0 = Application.targetFrameRate or 60
+
+	arg_94_0.timer = Timer.New(function()
+		arg_94_0:onTimer()
+	end, 1 / var_94_0, -1, true)
 end
 
-function slot0.initUI(slot0)
-	slot0.clickMask = findTF(slot0._tf, "clickMask")
-	slot0.countUI = findTF(slot0._tf, "pop/CountUI")
-	slot0.countAnimator = GetComponent(findTF(slot0.countUI, "count"), typeof(Animator))
-	slot0.countDft = GetComponent(findTF(slot0.countUI, "count"), typeof(DftAniEvent))
+function var_0_0.initUI(arg_96_0)
+	arg_96_0.clickMask = findTF(arg_96_0._tf, "clickMask")
+	arg_96_0.countUI = findTF(arg_96_0._tf, "pop/CountUI")
+	arg_96_0.countAnimator = GetComponent(findTF(arg_96_0.countUI, "count"), typeof(Animator))
+	arg_96_0.countDft = GetComponent(findTF(arg_96_0.countUI, "count"), typeof(DftAniEvent))
 
-	slot0.countDft:SetTriggerEvent(function ()
+	arg_96_0.countDft:SetTriggerEvent(function()
+		return
 	end)
-	slot0.countDft:SetEndEvent(function ()
-		setActive(uv0.countUI, false)
-		uv0:gameStart()
+	arg_96_0.countDft:SetEndEvent(function()
+		setActive(arg_96_0.countUI, false)
+		arg_96_0:gameStart()
 	end)
 
-	slot0.leaveUI = findTF(slot0._tf, "pop/LeaveUI")
+	arg_96_0.leaveUI = findTF(arg_96_0._tf, "pop/LeaveUI")
 
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnOk"), function ()
-		uv0:resumeGame()
-		uv0:onGameOver()
+	onButton(arg_96_0, findTF(arg_96_0.leaveUI, "ad/btnOk"), function()
+		arg_96_0:resumeGame()
+		arg_96_0:onGameOver()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.leaveUI, "ad/btnCancel"), function ()
-		uv0:resumeGame()
-	end, SFX_CANCEL)
-
-	slot0.pauseUI = findTF(slot0._tf, "pop/pauseUI")
-
-	onButton(slot0, findTF(slot0.pauseUI, "ad/btnOk"), function ()
-		setActive(uv0.pauseUI, false)
-		uv0:resumeGame()
+	onButton(arg_96_0, findTF(arg_96_0.leaveUI, "ad/btnCancel"), function()
+		arg_96_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.settlementUI = findTF(slot0._tf, "pop/SettleMentUI")
+	arg_96_0.pauseUI = findTF(arg_96_0._tf, "pop/pauseUI")
 
-	onButton(slot0, findTF(slot0.settlementUI, "ad/btnOver"), function ()
-		setActive(uv0.settlementUI, false)
-		uv0:openMenuUI()
+	onButton(arg_96_0, findTF(arg_96_0.pauseUI, "ad/btnOk"), function()
+		setActive(arg_96_0.pauseUI, false)
+		arg_96_0:resumeGame()
 	end, SFX_CANCEL)
 
-	slot0.menuUI = findTF(slot0._tf, "pop/menuUI")
+	arg_96_0.settlementUI = findTF(arg_96_0._tf, "pop/SettleMentUI")
 
-	onButton(slot0, findTF(slot0.menuUI, "btnBack"), function ()
-		uv0:closeView()
+	onButton(arg_96_0, findTF(arg_96_0.settlementUI, "ad/btnOver"), function()
+		setActive(arg_96_0.settlementUI, false)
+		arg_96_0:openMenuUI()
 	end, SFX_CANCEL)
-	onButton(slot0, findTF(slot0.menuUI, "btnRule"), function ()
+
+	arg_96_0.menuUI = findTF(arg_96_0._tf, "pop/menuUI")
+
+	onButton(arg_96_0, findTF(arg_96_0.menuUI, "btnBack"), function()
+		arg_96_0:closeView()
+	end, SFX_CANCEL)
+	onButton(arg_96_0, findTF(arg_96_0.menuUI, "btnRule"), function()
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_HELP,
 			helps = pg.gametip.securitycake_help.tip
 		})
 	end, SFX_CANCEL)
+	onButton(arg_96_0, findTF(arg_96_0.menuUI, "btnStart"), function()
+		setActive(arg_96_0.menuUI, false)
+		arg_96_0:readyStart()
+	end, SFX_CANCEL)
 
-	slot5 = SFX_CANCEL
+	arg_96_0.gameUI = findTF(arg_96_0._tf, "ui/gameUI")
+	arg_96_0.textTime = findTF(arg_96_0.gameUI, "time")
+	arg_96_0.textScore = findTF(arg_96_0.gameUI, "score")
+	arg_96_0.hearts = {}
 
-	onButton(slot0, findTF(slot0.menuUI, "btnStart"), function ()
-		setActive(uv0.menuUI, false)
-		uv0:readyStart()
-	end, slot5)
+	local var_96_0 = 3
 
-	slot0.gameUI = findTF(slot0._tf, "ui/gameUI")
-	slot0.textTime = findTF(slot0.gameUI, "time")
-	slot0.textScore = findTF(slot0.gameUI, "score")
-	slot0.hearts = {}
+	for iter_96_0 = 1, var_96_0 do
+		local var_96_1 = findTF(arg_96_0.gameUI, "heart" .. iter_96_0 .. "/img")
 
-	for slot5 = 1, 3 do
-		table.insert(slot0.hearts, findTF(slot0.gameUI, "heart" .. slot5 .. "/img"))
+		table.insert(arg_96_0.hearts, var_96_1)
 	end
 
-	onButton(slot0, findTF(slot0.gameUI, "btnStop"), function ()
-		uv0:stopGame()
-		setActive(uv0.pauseUI, true)
+	onButton(arg_96_0, findTF(arg_96_0.gameUI, "btnStop"), function()
+		arg_96_0:stopGame()
+		setActive(arg_96_0.pauseUI, true)
 	end)
-	onButton(slot0, findTF(slot0.gameUI, "btnLeave"), function ()
-		uv0:stopGame()
-		setActive(uv0.leaveUI, true)
+	onButton(arg_96_0, findTF(arg_96_0.gameUI, "btnLeave"), function()
+		arg_96_0:stopGame()
+		setActive(arg_96_0.leaveUI, true)
 	end)
 
-	slot0.specialSlider = GetComponent(findTF(slot0.gameUI, "btnSpecial/Slider"), typeof(Slider))
-	slot0.touchSlider = findTF(slot0.specialSlider, "touch")
-	slot0.specialEffect = findTF(slot0.gameUI, "btnSpecial/baoweidangao_extiao")
-	slot0.arrowTf = findTF(slot0.gameUI, "btnSpecial/arrow")
+	arg_96_0.specialSlider = GetComponent(findTF(arg_96_0.gameUI, "btnSpecial/Slider"), typeof(Slider))
+	arg_96_0.touchSlider = findTF(arg_96_0.specialSlider, "touch")
+	arg_96_0.specialEffect = findTF(arg_96_0.gameUI, "btnSpecial/baoweidangao_extiao")
+	arg_96_0.arrowTf = findTF(arg_96_0.gameUI, "btnSpecial/arrow")
 
-	function slot5()
-		if uv0.playerController and uv0.playerController:useSpecial() then
-			uv0.bgRoleController:special()
+	onButton(arg_96_0, findTF(arg_96_0.gameUI, "btnSpecial"), function()
+		if arg_96_0.playerController and arg_96_0.playerController:useSpecial() then
+			arg_96_0.bgRoleController:special()
 		end
-	end
-
-	onButton(slot0, findTF(slot0.gameUI, "btnSpecial"), slot5)
-
-	slot0.sceneTf = findTF(slot0._tf, "scene")
-	slot0.playerTpl = findTF(slot0._tf, "playerTpl")
-	slot0.playerController = uv0(slot0.playerTpl, slot0.sceneTf)
-	slot0.enemyTpls = {}
-
-	for slot5 = 1, 4 do
-		table.insert(slot0.enemyTpls, findTF(slot0._tf, "enemy" .. slot5 .. "Tpl"))
-	end
-
-	slot0.enemyController = uv1(slot0.enemyTpls, slot0.sceneTf, function ()
-		uv0.bgRoleController:fail()
-		uv0:onGameOver()
-	end, function ()
-		uv0:gameUIUpdate()
 	end)
-	slot0.attakeController = uv2(slot0.playerController, slot0.enemyController, function ()
-		uv0:gameUIUpdate()
+
+	arg_96_0.sceneTf = findTF(arg_96_0._tf, "scene")
+	arg_96_0.playerTpl = findTF(arg_96_0._tf, "playerTpl")
+	arg_96_0.playerController = var_0_22(arg_96_0.playerTpl, arg_96_0.sceneTf)
+	arg_96_0.enemyTpls = {}
+
+	for iter_96_1 = 1, 4 do
+		table.insert(arg_96_0.enemyTpls, findTF(arg_96_0._tf, "enemy" .. iter_96_1 .. "Tpl"))
+	end
+
+	arg_96_0.enemyController = var_0_24(arg_96_0.enemyTpls, arg_96_0.sceneTf, function()
+		arg_96_0.bgRoleController:fail()
+		arg_96_0:onGameOver()
+	end, function()
+		arg_96_0:gameUIUpdate()
 	end)
-	slot2 = {}
+	arg_96_0.attakeController = var_0_25(arg_96_0.playerController, arg_96_0.enemyController, function()
+		arg_96_0:gameUIUpdate()
+	end)
 
-	for slot7 = 1, 4 do
-		table.insert(slot2, findTF(slot0._tf, "bg_background/role/role" .. slot7))
+	local var_96_2 = {}
+	local var_96_3 = 4
+
+	for iter_96_2 = 1, var_96_3 do
+		table.insert(var_96_2, findTF(arg_96_0._tf, "bg_background/role/role" .. iter_96_2))
 	end
 
-	slot0.bgRoleController = uv3(slot2, slot0.playerController)
+	arg_96_0.bgRoleController = var_0_28(var_96_2, arg_96_0.playerController)
 
-	slot0:updateMenuUI()
-	slot0:openMenuUI()
+	arg_96_0:updateMenuUI()
+	arg_96_0:openMenuUI()
 
-	if not slot0.handle then
-		slot0.handle = UpdateBeat:CreateListener(slot0.Update, slot0)
+	if not arg_96_0.handle then
+		arg_96_0.handle = UpdateBeat:CreateListener(arg_96_0.Update, arg_96_0)
 	end
 
-	UpdateBeat:AddListener(slot0.handle)
+	UpdateBeat:AddListener(arg_96_0.handle)
 end
 
-function slot0.updateMenuUI(slot0)
-	slot1 = slot0:getGameUsedTimes()
+function var_0_0.updateMenuUI(arg_112_0)
+	local var_112_0 = arg_112_0:getGameUsedTimes()
+	local var_112_1 = arg_112_0:getGameTimes()
 
-	setActive(findTF(slot0.menuUI, "btnStart/tip"), slot0:getGameTimes() > 0)
-	slot0:CheckGet()
+	setActive(findTF(arg_112_0.menuUI, "btnStart/tip"), var_112_1 > 0)
+	arg_112_0:CheckGet()
 end
 
-function slot0.openMenuUI(slot0)
-	setActive(findTF(slot0._tf, "scene_front"), false)
-	setActive(findTF(slot0._tf, "scene_background"), false)
-	setActive(findTF(slot0._tf, "scene"), false)
-	setActive(slot0.gameUI, false)
-	setActive(slot0.menuUI, true)
-	slot0:updateMenuUI()
+function var_0_0.openMenuUI(arg_113_0)
+	setActive(findTF(arg_113_0._tf, "scene_front"), false)
+	setActive(findTF(arg_113_0._tf, "scene_background"), false)
+	setActive(findTF(arg_113_0._tf, "scene"), false)
+	setActive(arg_113_0.gameUI, false)
+	setActive(arg_113_0.menuUI, true)
+	arg_113_0:updateMenuUI()
 end
 
-function slot0.showSettlement(slot0)
-	setActive(slot0.settlementUI, true)
-	GetComponent(findTF(slot0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
+function var_0_0.showSettlement(arg_114_0)
+	setActive(arg_114_0.settlementUI, true)
+	GetComponent(findTF(arg_114_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	if slot0.enemyController:getScore() >= (slot0:GetMGData():GetRuntimeData("elements") and #slot2 > 0 and slot2[1] or 0) then
-		slot0:StoreDataToServer({
-			slot3
+	local var_114_0 = arg_114_0:GetMGData():GetRuntimeData("elements")
+	local var_114_1 = arg_114_0.enemyController:getScore()
+	local var_114_2 = var_114_0 and #var_114_0 > 0 and var_114_0[1] or 0
+
+	if var_114_2 <= var_114_1 then
+		var_114_2 = var_114_1
+
+		arg_114_0:StoreDataToServer({
+			var_114_2
 		})
 	end
 
-	setText(findTF(slot0.settlementUI, "ad/highText"), slot4)
-	setText(findTF(slot0.settlementUI, "ad/currentText"), slot3)
+	local var_114_3 = findTF(arg_114_0.settlementUI, "ad/highText")
+	local var_114_4 = findTF(arg_114_0.settlementUI, "ad/currentText")
 
-	if slot0:getGameTimes() and slot0:getGameTimes() > 0 then
-		slot0:SendSuccess(0)
+	setText(var_114_3, var_114_2)
+	setText(var_114_4, var_114_1)
+
+	if arg_114_0:getGameTimes() and arg_114_0:getGameTimes() > 0 then
+		arg_114_0:SendSuccess(0)
 	end
 end
 
-function slot0.Update(slot0)
-	slot0:AddDebugInput()
+function var_0_0.Update(arg_115_0)
+	arg_115_0:AddDebugInput()
 end
 
-function slot0.AddDebugInput(slot0)
-	if slot0.gameStop or slot0.settlementFlag then
+function var_0_0.AddDebugInput(arg_116_0)
+	if arg_116_0.gameStop or arg_116_0.settlementFlag then
 		return
 	end
 
-	slot1 = IsUnityEditor and Input.GetKeyDown(KeyCode.Space) and slot0.playerController and slot0.playerController:useSpecial()
+	if IsUnityEditor and Input.GetKeyDown(KeyCode.Space) and arg_116_0.playerController then
+		local var_116_0 = arg_116_0.playerController:useSpecial()
+	end
 end
 
-function slot0.CheckGet(slot0)
-	setActive(findTF(slot0.menuUI, "got"), false)
+function var_0_0.CheckGet(arg_117_0)
+	setActive(findTF(arg_117_0.menuUI, "got"), false)
 
-	if slot0:getUltimate() and slot0:getUltimate() ~= 0 then
-		setActive(findTF(slot0.menuUI, "got"), true)
+	if arg_117_0:getUltimate() and arg_117_0:getUltimate() ~= 0 then
+		setActive(findTF(arg_117_0.menuUI, "got"), true)
 	end
 
-	if slot0:getUltimate() == 0 then
-		if slot0:getGameUsedTimes() < slot0:getGameTotalTime() then
+	if arg_117_0:getUltimate() == 0 then
+		if arg_117_0:getGameTotalTime() > arg_117_0:getGameUsedTimes() then
 			return
 		end
 
 		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
-			hubid = slot0:GetMGHubData().id,
+			hubid = arg_117_0:GetMGHubData().id,
 			cmd = MiniGameOPCommand.CMD_ULTIMATE,
 			args1 = {}
 		})
-		setActive(findTF(slot0.menuUI, "got"), true)
+		setActive(findTF(arg_117_0.menuUI, "got"), true)
 	end
 end
 
-function slot0.clearUI(slot0)
+function var_0_0.clearUI(arg_118_0)
+	return
 end
 
-function slot0.readyStart(slot0)
-	setActive(slot0.countUI, true)
-	slot0.countAnimator:Play("count")
-	pg.CriMgr.GetInstance():PlaySoundEffect_V3(uv0)
-	slot0.bgRoleController:reset()
+function var_0_0.readyStart(arg_119_0)
+	setActive(arg_119_0.countUI, true)
+	arg_119_0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_12)
+	arg_119_0.bgRoleController:reset()
 end
 
-function slot0.gameStart(slot0)
-	slot0.gameStartFlag = true
-	slot0.gameStepTime = 0
-	slot0.gameLastTime = uv0
+function var_0_0.gameStart(arg_120_0)
+	arg_120_0.gameStartFlag = true
+	arg_120_0.gameStepTime = 0
+	arg_120_0.gameLastTime = var_0_14
 
-	setActive(findTF(slot0._tf, "scene_front"), true)
-	setActive(findTF(slot0._tf, "scene_background"), true)
-	setActive(findTF(slot0._tf, "scene"), true)
-	setActive(slot0.gameUI, true)
-	slot0.playerController:createPlayer()
-	slot0:timerStart()
-	slot0:gameUIUpdate()
+	setActive(findTF(arg_120_0._tf, "scene_front"), true)
+	setActive(findTF(arg_120_0._tf, "scene_background"), true)
+	setActive(findTF(arg_120_0._tf, "scene"), true)
+	setActive(arg_120_0.gameUI, true)
+	arg_120_0.playerController:createPlayer()
+	arg_120_0:timerStart()
+	arg_120_0:gameUIUpdate()
 end
 
-function slot0.onTimer(slot0)
-	slot0:gameStep()
+function var_0_0.onTimer(arg_121_0)
+	arg_121_0:gameStep()
 end
 
-function slot0.gameStep(slot0)
-	slot0.playerController:step()
-	slot0.enemyController:step()
-	slot0.bgRoleController:step()
+function var_0_0.gameStep(arg_122_0)
+	arg_122_0.playerController:step()
+	arg_122_0.enemyController:step()
+	arg_122_0.bgRoleController:step()
 
-	slot0.gameLastTime = slot0.gameLastTime - Time.deltaTime
+	arg_122_0.gameLastTime = arg_122_0.gameLastTime - Time.deltaTime
 
-	setText(slot0.textScore, slot0.enemyController:getScore())
+	setText(arg_122_0.textScore, arg_122_0.enemyController:getScore())
 
-	if slot0.gameLastTime <= 0 then
-		slot0.gameLastTime = 0
+	if arg_122_0.gameLastTime <= 0 then
+		arg_122_0.gameLastTime = 0
 
-		slot0:onGameOver()
+		arg_122_0:onGameOver()
 	end
 
-	setText(slot0.textTime, math.ceil(slot0.gameLastTime) .. "")
+	setText(arg_122_0.textTime, math.ceil(arg_122_0.gameLastTime) .. "")
 
-	slot1, slot2 = slot0.playerController:getSpecialData()
-	slot2 = slot2 or 0
+	local var_122_0, var_122_1 = arg_122_0.playerController:getSpecialData()
 
-	if slot1 > 0 then
-		setSlider(slot0.specialSlider, 0, 1, slot1 / uv0)
+	var_122_1 = var_122_1 or 0
+
+	if var_122_0 > 0 then
+		setSlider(arg_122_0.specialSlider, 0, 1, var_122_0 / var_0_19)
 	else
-		setSlider(slot0.specialSlider, 0, 1, slot2 / uv1)
+		setSlider(arg_122_0.specialSlider, 0, 1, var_122_1 / var_0_20)
 	end
 
-	if slot2 == uv1 or slot1 > 0 then
-		SetActive(slot0.touchSlider, false)
-		SetActive(slot0.specialEffect, true)
+	if var_122_1 == var_0_20 or var_122_0 > 0 then
+		SetActive(arg_122_0.touchSlider, false)
+		SetActive(arg_122_0.specialEffect, true)
 	else
-		SetActive(slot0.touchSlider, true)
-		SetActive(slot0.specialEffect, false)
+		SetActive(arg_122_0.touchSlider, true)
+		SetActive(arg_122_0.specialEffect, false)
 	end
 
-	if slot0.settlementFlag then
-		SetActive(slot0.specialEffect, false)
+	if arg_122_0.settlementFlag then
+		SetActive(arg_122_0.specialEffect, false)
 	end
 
-	SetActive(slot0.arrowTf, slot2 == uv1 and slot1 == 0)
+	SetActive(arg_122_0.arrowTf, var_122_1 == var_0_20 and var_122_0 == 0)
 end
 
-function slot0.gameUIUpdate(slot0)
-	for slot4 = 1, #slot0.hearts do
-		if slot4 <= slot0.enemyController:getCakeLifeIndex() then
-			SetActive(slot0.hearts[slot4], true)
+function var_0_0.gameUIUpdate(arg_123_0)
+	for iter_123_0 = 1, #arg_123_0.hearts do
+		if iter_123_0 <= arg_123_0.enemyController:getCakeLifeIndex() then
+			SetActive(arg_123_0.hearts[iter_123_0], true)
 		else
-			SetActive(slot0.hearts[slot4], false)
+			SetActive(arg_123_0.hearts[iter_123_0], false)
 		end
 	end
 
-	setText(slot0.textScore, slot0.enemyController:getScore())
+	setText(arg_123_0.textScore, arg_123_0.enemyController:getScore())
 end
 
-function slot0.resumeGame(slot0)
-	slot0.gameStop = false
+function var_0_0.resumeGame(arg_124_0)
+	arg_124_0.gameStop = false
 
-	setActive(slot0.leaveUI, false)
-	slot0:timerStart()
+	setActive(arg_124_0.leaveUI, false)
+	arg_124_0:timerStart()
 end
 
-function slot0.stopGame(slot0)
-	slot0.gameStop = true
+function var_0_0.stopGame(arg_125_0)
+	arg_125_0.gameStop = true
 
-	slot0:timerStop()
+	arg_125_0:timerStop()
 end
 
-function slot0.onGameOver(slot0)
-	if slot0.settlementFlag then
+function var_0_0.onGameOver(arg_126_0)
+	if arg_126_0.settlementFlag then
 		return
 	end
 
-	slot0:timerStop()
+	arg_126_0:timerStop()
 
-	slot0.settlementFlag = true
+	arg_126_0.settlementFlag = true
 
-	SetActive(slot0.specialEffect, false)
-	setActive(slot0.clickMask, true)
-	LeanTween.delayedCall(go(slot0._tf), 1, System.Action(function ()
-		uv0:showSettlement()
-		uv0.enemyController:clear()
-		uv0.playerController:clear()
-		uv0.bgRoleController:reset()
+	SetActive(arg_126_0.specialEffect, false)
+	setActive(arg_126_0.clickMask, true)
+	LeanTween.delayedCall(go(arg_126_0._tf), 1, System.Action(function()
+		arg_126_0:showSettlement()
+		arg_126_0.enemyController:clear()
+		arg_126_0.playerController:clear()
+		arg_126_0.bgRoleController:reset()
 
-		uv0.settlementFlag = false
-		uv0.gameStartFlag = false
+		arg_126_0.settlementFlag = false
+		arg_126_0.gameStartFlag = false
 
-		setActive(uv0.clickMask, false)
+		setActive(arg_126_0.clickMask, false)
 	end))
 end
 
-function slot0.timerStop(slot0)
-	if slot0.timer.running then
-		slot0.timer:Stop()
+function var_0_0.timerStop(arg_128_0)
+	if arg_128_0.timer.running then
+		arg_128_0.timer:Stop()
 	end
 end
 
-function slot0.timerStart(slot0)
-	if not slot0.timer.running then
-		slot0.timer:Start()
+function var_0_0.timerStart(arg_129_0)
+	if not arg_129_0.timer.running then
+		arg_129_0.timer:Start()
 	end
 end
 
-function slot0.getGameTimes(slot0)
-	return slot0:GetMGHubData().count
+function var_0_0.getGameTimes(arg_130_0)
+	return arg_130_0:GetMGHubData().count
 end
 
-function slot0.getGameUsedTimes(slot0)
-	return slot0:GetMGHubData().usedtime
+function var_0_0.getGameUsedTimes(arg_131_0)
+	return arg_131_0:GetMGHubData().usedtime
 end
 
-function slot0.getUltimate(slot0)
-	return slot0:GetMGHubData().ultimate
+function var_0_0.getUltimate(arg_132_0)
+	return arg_132_0:GetMGHubData().ultimate
 end
 
-function slot0.getGameTotalTime(slot0)
-	return slot0:GetMGHubData():getConfig("reward_need")
+function var_0_0.getGameTotalTime(arg_133_0)
+	return (arg_133_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function slot0.onBackPressed(slot0)
+function var_0_0.onBackPressed(arg_134_0)
+	return
 end
 
-function slot0.willExit(slot0)
-	if slot0.handle then
-		UpdateBeat:RemoveListener(slot0.handle)
+function var_0_0.willExit(arg_135_0)
+	if arg_135_0.handle then
+		UpdateBeat:RemoveListener(arg_135_0.handle)
 	end
 
-	if slot0.timer and slot0.timer.running then
-		slot0.timer:Stop()
+	if arg_135_0.timer and arg_135_0.timer.running then
+		arg_135_0.timer:Stop()
 	end
 
-	slot0.timer = nil
+	arg_135_0.timer = nil
 end
 
-return slot0
+return var_0_0

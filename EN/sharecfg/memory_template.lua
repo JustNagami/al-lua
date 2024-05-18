@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.memory_template = setmetatable({
 	__name = "memory_template",
 	all = {
@@ -3431,6 +3431,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	[4001] = {
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "Flank 1",
+		condition = "Enter Divergent Chessboard - A2/C2",
+		story = "TACT20016",
+		id = 4001,
+		icon = "activity",
+		is_open = 0
+	},
 	{
 		type = 1,
 		subtitle = "",
@@ -3563,39 +3574,6 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
-	{
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "Checkmate 2",
-		condition = "Fight the Boss in Divergent Chessboard - B4/D4",
-		story = "TACT20013",
-		id = 49,
-		icon = "activity",
-		is_open = 0
-	},
-	{
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "Checkmate 3",
-		condition = "Clear Divergent Chessboard - B4/D4",
-		story = "TACT20014",
-		id = 50,
-		icon = "activity",
-		is_open = 0
-	},
-	[4001] = {
-		type = 1,
-		subtitle = "",
-		mask = "bg/bg_memory",
-		title = "Flank 1",
-		condition = "Enter Divergent Chessboard - A2/C2",
-		story = "TACT20016",
-		id = 4001,
-		icon = "activity",
-		is_open = 0
-	},
 	[4000] = {
 		type = 1,
 		subtitle = "",
@@ -3607,6 +3585,17 @@ pg.base.memory_template = {
 		icon = "activity",
 		is_open = 0
 	},
+	{
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "Checkmate 2",
+		condition = "Fight the Boss in Divergent Chessboard - B4/D4",
+		story = "TACT20013",
+		id = 49,
+		icon = "activity",
+		is_open = 0
+	},
 	[4002] = {
 		type = 1,
 		subtitle = "",
@@ -3615,6 +3604,17 @@ pg.base.memory_template = {
 		condition = "Clear Divergent Chessboard - B4/D4",
 		story = "TACT20017",
 		id = 4002,
+		icon = "activity",
+		is_open = 0
+	},
+	{
+		type = 1,
+		subtitle = "",
+		mask = "bg/bg_memory",
+		title = "Checkmate 3",
+		condition = "Clear Divergent Chessboard - B4/D4",
+		story = "TACT20014",
+		id = 50,
 		icon = "activity",
 		is_open = 0
 	},

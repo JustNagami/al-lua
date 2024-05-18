@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.voice_actor_CN = {
 	{
 		code = 1,

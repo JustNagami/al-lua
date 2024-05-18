@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.transform_data_template = setmetatable({
 	__name = "transform_data_template",
 	all = {
@@ -4541,13 +4541,7 @@ pg.base.transform_data_template = {
 		skin_id = 102079,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-ASW +30, AA +15.
-<color=#92fc63>Main Gun mount +1</color>.
-The skill <color=#92fc63>Martyr</color> will change into <color=#92fc63>Martyr+</color>.
-This ship's <color=#92fc63>All Out Assault</color> skill will be upgraded.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nASW +30, AA +15.\n<color=#92fc63>Main Gun mount +1</color>.\nThe skill <color=#92fc63>Martyr</color> will change into <color=#92fc63>Martyr+</color>.\nThis ship's <color=#92fc63>All Out Assault</color> skill will be upgraded.",
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -5028,11 +5022,7 @@ This ship's <color=#92fc63>All Out Assault</color> skill will be upgraded.]],
 		skin_id = 102089,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-The effects of fully retrofitting this ship:
-
-This ship will receive <color=#92fc63>Main Gun base +1</color>.
-<color=#92fc63>All Out Assault Ⅱ</color> will change to <color=#92fc63>All Out Assault - San Diego</color>. ]],
+		descrip = "The effects of fully retrofitting this ship:\n\nThis ship will receive <color=#92fc63>Main Gun base +1</color>.\n<color=#92fc63>All Out Assault Ⅱ</color> will change to <color=#92fc63>All Out Assault - San Diego</color>. ",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -6724,11 +6714,7 @@ This ship will receive <color=#92fc63>Main Gun base +1</color>.
 		skin_id = 105119,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-AA +20, RLD +25.
-This ship's Big Seven skill has been upgraded to Big Seven - West Virginia.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nAA +20, RLD +25.\nThis ship's Big Seven skill has been upgraded to Big Seven - West Virginia.",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -9226,14 +9212,7 @@ This ship's Big Seven skill has been upgraded to Big Seven - West Virginia.]],
 		skin_id = 201019,
 		use_ship = 1,
 		level_limit = 80,
-		descrip = [[
-The effects of fully retrofitting this ship:
-
-- This ship will gain <color=#A9F548>+40 ASW and +10 AA.</color>
-
-This ship will receive <color=#92fc63>Torpedo base -1</color>
-
-<color=#92fc63>Anti-Air Gun base +1</color>]],
+		descrip = "The effects of fully retrofitting this ship:\n\n- This ship will gain <color=#A9F548>+40 ASW and +10 AA.</color>\n\nThis ship will receive <color=#92fc63>Torpedo base -1</color>\n\n<color=#92fc63>Anti-Air Gun base +1</color>",
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -14138,13 +14117,7 @@ This ship will receive <color=#92fc63>Torpedo base -1</color>
 		skin_id = 203019,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-The effects of fully retrofitting this ship:
-
-- This ship will gain <color=#A9F548>+30 AA and +15 Accuracy.</color>
-- The <color=#A9F548>Torpedo slot</color> will be converted into an <color=#A9F548>Auxiliary Weapon slot.</color>
-- You can equip <color=#92fc63>either Torpedoes or DD Guns</color> in this slot.
-- However, as a result of this conversion, <color=#A9F548>this ship will lose 1 Auxiliary Weapon base;</color> whether you equip Torpedoes or a DD Gun, <color=#A9F548>this ship will only have 1 base for the chosen weapon type.</color> ]],
+		descrip = "The effects of fully retrofitting this ship:\n\n- This ship will gain <color=#A9F548>+30 AA and +15 Accuracy.</color>\n- The <color=#A9F548>Torpedo slot</color> will be converted into an <color=#A9F548>Auxiliary Weapon slot.</color>\n- You can equip <color=#92fc63>either Torpedoes or DD Guns</color> in this slot.\n- However, as a result of this conversion, <color=#A9F548>this ship will lose 1 Auxiliary Weapon base;</color> whether you equip Torpedoes or a DD Gun, <color=#A9F548>this ship will only have 1 base for the chosen weapon type.</color> ",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -14592,13 +14565,7 @@ The effects of fully retrofitting this ship:
 		skin_id = 203029,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-FP +25, TRP +20.
-This ship's <color=#92fc63>Torpedo gear slot</color> has changed into a <color=#92fc63>Secondary Weapon slot</color>.
-Secondary Guns can be equipped in this slot.
-This ship has <color=#92fc63>lost 1 Secondary Weapon mount</color>.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nFP +25, TRP +20.\nThis ship's <color=#92fc63>Torpedo gear slot</color> has changed into a <color=#92fc63>Secondary Weapon slot</color>.\nSecondary Guns can be equipped in this slot.\nThis ship has <color=#92fc63>lost 1 Secondary Weapon mount</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -16376,12 +16343,7 @@ This ship has <color=#92fc63>lost 1 Secondary Weapon mount</color>.]],
 		skin_id = 205029,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-The effects of fully retrofitting this ship:
-
-This ship becomes able to equip <color=#92fc63>ASW aircraft</color> in its <color=#92fc63>first Auxiliary gear slot</color>, 
-its <color=#92fc63>ASW stat</color> will increase, 
-and its skill <color=#92fc63>"Divine Marksman"</color> will receive an upgrade. ]],
+		descrip = "The effects of fully retrofitting this ship:\n\nThis ship becomes able to equip <color=#92fc63>ASW aircraft</color> in its <color=#92fc63>first Auxiliary gear slot</color>, \nits <color=#92fc63>ASW stat</color> will increase, \nand its skill <color=#92fc63>\"Divine Marksman\"</color> will receive an upgrade. ",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -16844,11 +16806,7 @@ and its skill <color=#92fc63>"Divine Marksman"</color> will receive an upgrade. 
 		skin_id = 205039,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-AA +20, ACC +25.
-This ship's Big Seven skill has been upgraded to Big Seven - Nelson.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nAA +20, ACC +25.\nThis ship's Big Seven skill has been upgraded to Big Seven - Nelson.",
 		icon = "mt_yellow",
 		skill_id = 0,
 		condition_id = {
@@ -17766,11 +17724,7 @@ This ship's Big Seven skill has been upgraded to Big Seven - Nelson.]],
 		skin_id = 206039,
 		use_ship = 1,
 		level_limit = 90,
-		descrip = [[
-Completing the retrofit will have the following effects:
-AA +35, AVI +10.
-This ship gains <color=#92fc63>Fighters +1</color>.
-The skill <color=#92fc63>Support Carrier</color> will change into <color=#92fc63>Yuni's Aid</color>.]],
+		descrip = "Completing the retrofit will have the following effects:\nAA +35, AVI +10.\nThis ship gains <color=#92fc63>Fighters +1</color>.\nThe skill <color=#92fc63>Support Carrier</color> will change into <color=#92fc63>Yuni's Aid</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -19137,12 +19091,7 @@ The skill <color=#92fc63>Support Carrier</color> will change into <color=#92fc63
 		skin_id = 301149,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-After modernization is complete:
-<color=#92fc63>Torpedo base -1</color>,
-<color=#92fc63>Main Gun base +1</color>,
-<color=#92fc63>Nightmare of Solomon</color> will change to <color=#92fc63>Nightmare of Solomon+</color>,
-<color=#92fc63>All Out Assault II</color> will change to <color=#92fc63>All Out Assault III</color>.]],
+		descrip = "After modernization is complete:\n<color=#92fc63>Torpedo base -1</color>,\n<color=#92fc63>Main Gun base +1</color>,\n<color=#92fc63>Nightmare of Solomon</color> will change to <color=#92fc63>Nightmare of Solomon+</color>,\n<color=#92fc63>All Out Assault II</color> will change to <color=#92fc63>All Out Assault III</color>.",
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -24181,15 +24130,7 @@ After modernization is complete:
 		skin_id = 302109,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-The Main Gun slot now equips <color=#92fc63>CA Main Guns</color>.
-The equipped Main Gun has been sent to your Depot.
-Any <color=#92fc63>Augment Modules</color> this ship can no longer equip have been sent to your Depot.
-<color=#92fc63>Main Gun Base +1</color> but <color=#92fc63>Torpedo Base -1</color>
-This ship's <color=#92fc63>All Out Assault</color> skill has changed into <color=#92fc63>All Out Assault - Retrofit</color>.
-This ship's <color=#92fc63>ASW</color> stat has been set to 0 and she is no longer able to equip <color=#92fc63>sonars or depth charges</color>.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nThe Main Gun slot now equips <color=#92fc63>CA Main Guns</color>.\nThe equipped Main Gun has been sent to your Depot.\nAny <color=#92fc63>Augment Modules</color> this ship can no longer equip have been sent to your Depot.\n<color=#92fc63>Main Gun Base +1</color> but <color=#92fc63>Torpedo Base -1</color>\nThis ship's <color=#92fc63>All Out Assault</color> skill has changed into <color=#92fc63>All Out Assault - Retrofit</color>.\nThis ship's <color=#92fc63>ASW</color> stat has been set to 0 and she is no longer able to equip <color=#92fc63>sonars or depth charges</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -25819,16 +25760,7 @@ This ship's <color=#92fc63>ASW</color> stat has been set to 0 and she is no long
 		skin_id = 305019,
 		use_ship = 0,
 		level_limit = 75,
-		descrip = [[
-After modernization is complete:
-
-Learn skill: <color=#92fc63>Aviation Preparations</color>
-When using Air Support for the first time in a battle, launch an additional barrage (effectiveness determined by skill level). May only trigger 1 time per battle.
-
-<color=#92fc63>Main Gun base -1</color>
-<color=#92fc63>Main Gun Efficiency</color> +20%
-<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.
-When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Fusou Retrofit</color> may use <color=#92fc63>Air Support</color>.]],
+		descrip = "After modernization is complete:\n\nLearn skill: <color=#92fc63>Aviation Preparations</color>\nWhen using Air Support for the first time in a battle, launch an additional barrage (effectiveness determined by skill level). May only trigger 1 time per battle.\n\n<color=#92fc63>Main Gun base -1</color>\n<color=#92fc63>Main Gun Efficiency</color> +20%\n<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.\nWhen equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Fusou Retrofit</color> may use <color=#92fc63>Air Support</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26243,16 +26175,7 @@ When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Fusou Retro
 		skin_id = 305029,
 		use_ship = 0,
 		level_limit = 75,
-		descrip = [[
-After modernization is complete:
-
-Learn skill: <color=#92fc63>Aviation Preparations</color>
-When using Air Support for the first time in a battle, launch an additional barrage (effectiveness determined by skill level). May only trigger 1 time per battle.
-
-<color=#92fc63>Main Gun base -1</color>
-<color=#92fc63>Main Gun Efficiency</color> +20%
-<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.
-When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Yamashiro Retrofit</color> may use <color=#92fc63>Air Support</color>.]],
+		descrip = "After modernization is complete:\n\nLearn skill: <color=#92fc63>Aviation Preparations</color>\nWhen using Air Support for the first time in a battle, launch an additional barrage (effectiveness determined by skill level). May only trigger 1 time per battle.\n\n<color=#92fc63>Main Gun base -1</color>\n<color=#92fc63>Main Gun Efficiency</color> +20%\n<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.\nWhen equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Yamashiro Retrofit</color> may use <color=#92fc63>Air Support</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26475,13 +26398,7 @@ When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Yamashiro R
 		skin_id = 305039,
 		use_ship = 0,
 		level_limit = 70,
-		descrip = [[
-After modernization is complete:
-
-<color=#92fc63>Main Gun base -1</color>
-<color=#92fc63>Main Gun Efficiency</color> +20%
-<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.
-When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Ise Retrofit</color> may use <color=#92fc63>Air Support</color>.]],
+		descrip = "After modernization is complete:\n\n<color=#92fc63>Main Gun base -1</color>\n<color=#92fc63>Main Gun Efficiency</color> +20%\n<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.\nWhen equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Ise Retrofit</color> may use <color=#92fc63>Air Support</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -26906,13 +26823,7 @@ When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Ise Retrofi
 		skin_id = 305049,
 		use_ship = 0,
 		level_limit = 70,
-		descrip = [[
-After modernization is complete:
-
-<color=#92fc63>Main Gun base -1</color>
-<color=#92fc63>Main Gun Efficiency</color> +20%
-<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.
-When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Hyuuga Retrofit</color> may use <color=#92fc63>Air Support</color>.]],
+		descrip = "After modernization is complete:\n\n<color=#92fc63>Main Gun base -1</color>\n<color=#92fc63>Main Gun Efficiency</color> +20%\n<color=#92fc63>Auxiliary Weapon</color> changes to <color=#92fc63>Reconnaissance</color>.\nWhen equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Hyuuga Retrofit</color> may use <color=#92fc63>Air Support</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -32257,14 +32168,7 @@ When equipping <color=#92fc63>Reconnaissance</color>, <color=#92fc63>Hyuuga Retr
 		skin_id = 501049,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-TRP +30, EVA +15, Main Gun Mount +1.
-This ship's "All Out Assault" skill and "United As One" skill have been improved.
-This ship has gained the skill "Xuanwu's Tenacity".
-This ship's Torpedo gear slot has changed into a Missile gear slot.
-This ship's weapon efficiencies have changed to 100%/150%/105%.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nTRP +30, EVA +15, Main Gun Mount +1.\nThis ship's \"All Out Assault\" skill and \"United As One\" skill have been improved.\nThis ship has gained the skill \"Xuanwu's Tenacity\".\nThis ship's Torpedo gear slot has changed into a Missile gear slot.\nThis ship's weapon efficiencies have changed to 100%/150%/105%.",
 		icon = "mt_blue",
 		skill_id = 0,
 		condition_id = {
@@ -32759,11 +32663,7 @@ This ship's weapon efficiencies have changed to 100%/150%/105%.]],
 		skin_id = 502019,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-FP+25, AA+20
-The skill <color=#92fc63>Dragon Empery Bond</color> will change into <color=#92fc63>Dragon Empery Bond+</color>.]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nFP+25, AA+20\nThe skill <color=#92fc63>Dragon Empery Bond</color> will change into <color=#92fc63>Dragon Empery Bond+</color>.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -40780,11 +40680,7 @@ The skill <color=#92fc63>Dragon Empery Bond</color> will change into <color=#92f
 		skin_id = 107229,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete.
-AA+20, AVI+25
-
-After retrofit, this ship has gained the following: <color=#92fc63>All Fighters +1, All Torpedo Bombers +1</color>. ]],
+		descrip = "Retrofit complete.\nAA+20, AVI+25\n\nAfter retrofit, this ship has gained the following: <color=#92fc63>All Fighters +1, All Torpedo Bombers +1</color>. ",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -41286,11 +41182,7 @@ After retrofit, this ship has gained the following: <color=#92fc63>All Fighters 
 		skin_id = 301819,
 		use_ship = 1,
 		level_limit = 90,
-		descrip = [[
-Retrofit complete.
-TRP+30, EVA+15
-
-This ship's skill, "Foo and Friends", has been improved.]],
+		descrip = "Retrofit complete.\nTRP+30, EVA+15\n\nThis ship's skill, \"Foo and Friends\", has been improved.",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {
@@ -42186,12 +42078,7 @@ This ship's skill, "Foo and Friends", has been improved.]],
 		skin_id = 506019,
 		use_ship = 1,
 		level_limit = 85,
-		descrip = [[
-Retrofit complete. The following changes have been applied:
-
-AA +35, AVI +25.
-<color=#92fc63>This ship's 1st weapon slot can now equip Fighters and gains +2 aircraft.</color>
-<color=#92fc63>This ship's 2nd weapon slot can equip any type of aircraft and gains +1 aircraft/mount.</color>]],
+		descrip = "Retrofit complete. The following changes have been applied:\n\nAA +35, AVI +25.\n<color=#92fc63>This ship's 1st weapon slot can now equip Fighters and gains +2 aircraft.</color>\n<color=#92fc63>This ship's 2nd weapon slot can equip any type of aircraft and gains +1 aircraft/mount.</color>",
 		icon = "mt_red",
 		skill_id = 0,
 		condition_id = {

@@ -1,19 +1,19 @@
-slot0 = class("DeleteAllMailCommand", pm.SimpleCommand)
+﻿local var_0_0 = class("DeleteAllMailCommand", pm.SimpleCommand)
 
-function slot0.execute(slot0, slot1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	pg.ConnectionMgr.GetInstance():Send(30006, {
 		id = 0
-	}, 30007, function (slot0)
-		slot1 = getProxy(MailProxy)
+	}, 30007, function(arg_2_0)
+		local var_2_0 = getProxy(MailProxy)
 
-		for slot5, slot6 in ipairs(slot0.id_list) do
-			if slot1:hasMailById(slot6) then
-				slot1:removeMailById(slot6)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.id_list) do
+			if var_2_0:hasMailById(iter_2_1) then
+				var_2_0:removeMailById(iter_2_1)
 			end
 		end
 
-		uv0:sendNotification(GAME.DELETE_ALL_MAIL_DONE)
+		arg_1_0:sendNotification(GAME.DELETE_ALL_MAIL_DONE)
 	end)
 end
 
-return slot0
+return var_0_0

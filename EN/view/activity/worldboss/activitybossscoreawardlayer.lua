@@ -1,70 +1,72 @@
-slot0 = class("ActivityBossScoreAwardLayer", import("view.base.BaseUI"))
+﻿local var_0_0 = class("ActivityBossScoreAwardLayer", import("view.base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivitybonusWindow_nonPt"
 end
 
-function slot0.init(slot0)
-	slot0.closeBtn = slot0:findTF("window/top/btnBack")
-	slot0.uiItemList = UIItemList.New(slot0:findTF("window/panel/list"), slot0:findTF("window/panel/list/item"))
+function var_0_0.init(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0:findTF("window/top/btnBack")
+	arg_2_0.uiItemList = UIItemList.New(arg_2_0:findTF("window/panel/list"), arg_2_0:findTF("window/panel/list/item"))
 
-	slot0.uiItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:UpdateItem(slot1, slot2)
+	arg_2_0.uiItemList:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventUpdate then
+			arg_2_0:UpdateItem(arg_3_1, arg_3_2)
 		end
 	end)
 
-	slot0.currentTxt = slot0:findTF("window/pt/Text"):GetComponent(typeof(Text))
+	arg_2_0.currentTxt = arg_2_0:findTF("window/pt/Text"):GetComponent(typeof(Text))
 
-	setText(slot0:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
-	setText(slot0:findTF("window/pt/title"), i18n("activityboss_sp_window_best_score"))
-	setText(slot0:findTF("window/panel/list/item/target/title"), i18n("activityboss_sp_score_target"))
+	setText(arg_2_0:findTF("window/top/bg/infomation"), i18n("world_expedition_reward_display"))
+	setText(arg_2_0:findTF("window/pt/title"), i18n("activityboss_sp_window_best_score"))
+	setText(arg_2_0:findTF("window/panel/list/item/target/title"), i18n("activityboss_sp_score_target"))
 end
 
-function slot0.didEnter(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf, function()
+		arg_4_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.closeBtn, function ()
-		uv0:Hide()
+	onButton(arg_4_0, arg_4_0.closeBtn, function()
+		arg_4_0:Hide()
 	end, SFX_PANEL)
-	slot0:Flush()
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+	arg_4_0:Flush()
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf)
 end
 
-function slot0.Flush(slot0, slot1)
-	slot0.awards = slot0.contextData.awards
-	slot0.targets = slot0.contextData.targets
-	slot0.score = slot0.contextData.score
+function var_0_0.Flush(arg_7_0, arg_7_1)
+	arg_7_0.awards = arg_7_0.contextData.awards
+	arg_7_0.targets = arg_7_0.contextData.targets
+	arg_7_0.score = arg_7_0.contextData.score
 
-	slot0.uiItemList:align(#slot0.awards)
+	arg_7_0.uiItemList:align(#arg_7_0.awards)
 
-	slot0.currentTxt.text = slot0.score
+	arg_7_0.currentTxt.text = arg_7_0.score
 end
 
-function slot0.UpdateItem(slot0, slot1, slot2)
-	slot3 = slot0.awards[slot1 + 1]
-	slot5 = slot2:Find("award")
+function var_0_0.UpdateItem(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = arg_8_0.awards[arg_8_1 + 1]
+	local var_8_1 = arg_8_0.targets[arg_8_1 + 1]
+	local var_8_2 = arg_8_2:Find("award")
+	local var_8_3 = {
+		type = var_8_0[1],
+		id = var_8_0[2],
+		count = var_8_0[3]
+	}
 
-	updateDrop(slot5, {
-		type = slot3[1],
-		id = slot3[2],
-		count = slot3[3]
-	})
-	onButton(slot0, slot5, function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	updateDrop(var_8_2, var_8_3)
+	onButton(arg_8_0, var_8_2, function()
+		arg_8_0:emit(BaseUI.ON_DROP, var_8_3)
 	end, SFX_PANEL)
-	setActive(slot2:Find("award/mask"), slot0.targets[slot1 + 1] <= slot0.score)
-	setText(slot2:Find("target/Text"), slot4)
-	setText(slot2:Find("title/Text"), "PHASE  " .. slot1 + 1)
+	setActive(arg_8_2:Find("award/mask"), var_8_1 <= arg_8_0.score)
+	setText(arg_8_2:Find("target/Text"), var_8_1)
+	setText(arg_8_2:Find("title/Text"), "PHASE  " .. arg_8_1 + 1)
 end
 
-function slot0.Hide(slot0)
-	slot0:closeView()
+function var_0_0.Hide(arg_10_0)
+	arg_10_0:closeView()
 end
 
-function slot0.willExit(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf)
+function var_0_0.willExit(arg_11_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_11_0._tf)
 end
 
-return slot0
+return var_0_0

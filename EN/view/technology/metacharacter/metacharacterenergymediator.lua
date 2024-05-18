@@ -1,27 +1,30 @@
-slot0 = class("MetaCharacterEnergyMediator", import("...base.ContextMediator"))
-slot0.ON_ACTIVATION = "MetaCharacterEnergyMediator:ON_ACTIVATION"
-slot0.ON_PREVIEW = "MetaCharacterEnergyMediator:ON_PREVIEW"
+﻿local var_0_0 = class("MetaCharacterEnergyMediator", import("...base.ContextMediator"))
 
-function slot0.register(slot0)
-	slot0:bind(uv0.ON_ACTIVATION, function (slot0, slot1)
-		uv0:sendNotification(GAME.ENERGY_META_ACTIVATION, {
-			shipId = slot1
+var_0_0.ON_ACTIVATION = "MetaCharacterEnergyMediator:ON_ACTIVATION"
+var_0_0.ON_PREVIEW = "MetaCharacterEnergyMediator:ON_PREVIEW"
+
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_ACTIVATION, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ENERGY_META_ACTIVATION, {
+			shipId = arg_2_1
 		})
 	end)
-	slot0:bind(uv0.ON_PREVIEW, function (slot0, slot1, slot2)
-		uv0:addSubLayers(Context.New({
+	arg_1_0:bind(var_0_0.ON_PREVIEW, function(arg_3_0, arg_3_1, arg_3_2)
+		local var_3_0 = {
+			equipSkinId = 0,
+			shipVO = arg_3_1,
+			weaponIds = arg_3_2
+		}
+
+		arg_1_0:addSubLayers(Context.New({
 			viewComponent = ShipPreviewLayer,
 			mediator = ShipPreviewMediator,
-			data = {
-				equipSkinId = 0,
-				shipVO = slot1,
-				weaponIds = slot2
-			}
+			data = var_3_0
 		}))
 	end)
 end
 
-function slot0.listNotificationInterests(slot0)
+function var_0_0.listNotificationInterests(arg_4_0)
 	return {
 		GAME.ENERGY_META_ACTIVATION_DONE,
 		BayProxy.SHIP_UPDATED,
@@ -29,24 +32,25 @@ function slot0.listNotificationInterests(slot0)
 	}
 end
 
-function slot0.handleNotification(slot0, slot1)
-	slot3 = slot1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	if slot1:getName() == GAME.ENERGY_META_ACTIVATION_DONE then
-		slot0:addSubLayers(Context.New({
+	if var_5_0 == GAME.ENERGY_META_ACTIVATION_DONE then
+		arg_5_0:addSubLayers(Context.New({
 			viewComponent = ShipBreakResultLayer,
 			mediator = ShipBreakResultMediator,
 			data = {
-				newShip = slot3.newShip,
-				oldShip = slot3.oldShip
+				newShip = var_5_1.newShip,
+				oldShip = var_5_1.oldShip
 			}
 		}))
-		slot0.viewComponent:updateData()
-		slot0.viewComponent:updateNamePanel()
-		slot0.viewComponent:updateAttrPanel()
-		slot0.viewComponent:updateMaterialPanel()
-		slot0.viewComponent:initPreviewPanel()
+		arg_5_0.viewComponent:updateData()
+		arg_5_0.viewComponent:updateNamePanel()
+		arg_5_0.viewComponent:updateAttrPanel()
+		arg_5_0.viewComponent:updateMaterialPanel()
+		arg_5_0.viewComponent:initPreviewPanel()
 	end
 end
 
-return slot0
+return var_0_0

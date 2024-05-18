@@ -1,17 +1,4 @@
-return {
-	{
-		desc = "主炮每进行15次攻击，触发专属弹幕-凉月I"
-	},
-	init_effect = "",
-	name = "全弹发射",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "主炮每进行24次攻击，触发专属弹幕-凉月I",
-	stack = 1,
-	id = 29601,
-	icon = 29600,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 29600
 			}
 		}
-	}
+	},
+	{
+		desc = "主炮每进行15次攻击，触发专属弹幕-凉月I"
+	},
+	init_effect = "",
+	name = "全弹发射",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "主炮每进行24次攻击，触发专属弹幕-凉月I",
+	stack = 1,
+	id = 29601,
+	icon = 29600,
+	last_effect = ""
 }

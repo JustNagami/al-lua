@@ -1,23 +1,4 @@
-return {
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 0,
-	name = "弹药特性",
-	init_effect = "jinengchufared",
-	picture = "",
-	desc = "伤害提高",
-	stack = 1,
-	id = 110193,
-	icon = 110190,
-	last_effect = "",
+﻿return {
 	blink = {
 		1,
 		0,
@@ -48,5 +29,24 @@ return {
 				buff_id = 110194
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	time = 0,
+	name = "弹药特性",
+	init_effect = "jinengchufared",
+	picture = "",
+	desc = "伤害提高",
+	stack = 1,
+	id = 110193,
+	icon = 110190,
+	last_effect = ""
 }

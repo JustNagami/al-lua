@@ -1,4 +1,16 @@
-return {
+﻿return {
+	effect_list = {
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onSubmarineRaid"
+			},
+			arg_list = {
+				skill_id = 15790,
+				target = "TargetSelf"
+			}
+		}
+	},
 	{},
 	{},
 	{},
@@ -19,17 +31,5 @@ return {
 	stack = 1,
 	id = 15790,
 	icon = 15790,
-	last_effect = "",
-	effect_list = {
-		{
-			type = "BattleBuffCastSkill",
-			trigger = {
-				"onSubmarineRaid"
-			},
-			arg_list = {
-				skill_id = 15790,
-				target = "TargetSelf"
-			}
-		}
-	}
+	last_effect = ""
 }

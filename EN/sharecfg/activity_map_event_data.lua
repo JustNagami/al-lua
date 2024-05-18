@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.activity_map_event_data = {
 	[1001] = {
 		id = 1001,

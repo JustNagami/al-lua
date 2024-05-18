@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.ship_data_by_star = {
 	[0] = {
 		energy_recover_food_ratio = 0,

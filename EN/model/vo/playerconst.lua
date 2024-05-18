@@ -1,328 +1,364 @@
-slot0 = class("PlayerConst")
-slot0.ResGold = 1
-slot0.ResOil = 2
-slot0.ResExploit = 3
-slot0.ResDiamond = 4
-slot0.ResOilField = 5
-slot0.ResDormMoney = 6
-slot0.ResGoldField = 7
-slot0.ResGuildCoin = 8
-slot0.ResBlueprintFragment = 9
-slot0.ResClassField = 10
-slot0.ResBattery = 101
-slot0.ResPT = 102
-slot1 = nil
+﻿local var_0_0 = class("PlayerConst")
 
-function slot2(slot0)
-	uv0 = uv0 or {
-		[DROP_TYPE_RESOURCE] = function (slot0)
-			if getProxy(PlayerProxy) then
-				slot1:UpdatePlayerRes(slot0.id, slot0.count)
+var_0_0.ResGold = 1
+var_0_0.ResOil = 2
+var_0_0.ResExploit = 3
+var_0_0.ResDiamond = 4
+var_0_0.ResOilField = 5
+var_0_0.ResDormMoney = 6
+var_0_0.ResGoldField = 7
+var_0_0.ResGuildCoin = 8
+var_0_0.ResBlueprintFragment = 9
+var_0_0.ResClassField = 10
+var_0_0.ResBattery = 101
+var_0_0.ResPT = 102
+
+local var_0_1
+
+local function var_0_2(arg_1_0)
+	var_0_1 = var_0_1 or {
+		[DROP_TYPE_RESOURCE] = function(arg_2_0)
+			local var_2_0 = getProxy(PlayerProxy)
+
+			if var_2_0 then
+				var_2_0:UpdatePlayerRes(arg_2_0.id, arg_2_0.count)
 			end
 		end,
-		[DROP_TYPE_ITEM] = function (slot0)
-			if getProxy(BagProxy) then
-				if slot0.count > 0 then
-					slot1:addItemById(slot0.id, slot0.count)
-				elseif slot0.count < 0 then
-					slot1:removeItemById(slot0.id, -slot0.count)
+		[DROP_TYPE_ITEM] = function(arg_3_0)
+			local var_3_0 = getProxy(BagProxy)
+
+			if var_3_0 then
+				if arg_3_0.count > 0 then
+					var_3_0:addItemById(arg_3_0.id, arg_3_0.count)
+				elseif arg_3_0.count < 0 then
+					var_3_0:removeItemById(arg_3_0.id, -arg_3_0.count)
 				end
 			end
 		end,
-		[DROP_TYPE_WORLD_ITEM] = function (slot0)
-			assert(nowWorld().type == World.TypeFull)
+		[DROP_TYPE_WORLD_ITEM] = function(arg_4_0)
+			local var_4_0 = nowWorld()
 
-			if slot1:GetInventoryProxy() then
-				if slot0.count > 0 then
-					slot2:AddItem(slot0.id, slot0.count)
-				elseif slot0.count < 0 then
-					slot2:RemoveItem(slot0.id, -slot0.count)
+			assert(var_4_0.type == World.TypeFull)
+
+			local var_4_1 = var_4_0:GetInventoryProxy()
+
+			if var_4_1 then
+				if arg_4_0.count > 0 then
+					var_4_1:AddItem(arg_4_0.id, arg_4_0.count)
+				elseif arg_4_0.count < 0 then
+					var_4_1:RemoveItem(arg_4_0.id, -arg_4_0.count)
 				end
 			end
 		end
 	}
 
-	switch(slot0.type, uv0, function ()
+	switch(arg_1_0.type, var_0_1, function()
 		assert(false)
-	end, slot0)
+	end, arg_1_0)
 end
 
-function addPlayerOwn(slot0)
-	slot0.count = math.max(slot0.count, 0)
+function addPlayerOwn(arg_6_0)
+	arg_6_0.count = math.max(arg_6_0.count, 0)
 
-	uv0(slot0)
+	var_0_2(arg_6_0)
 end
 
-function reducePlayerOwn(slot0)
-	slot0.count = -math.max(slot0.count, 0)
+function reducePlayerOwn(arg_7_0)
+	arg_7_0.count = -math.max(arg_7_0.count, 0)
 
-	uv0(slot0)
+	var_0_2(arg_7_0)
 end
 
-function slot0.addTranDrop(slot0, slot1)
-	slot0 = underscore.map(slot0, function (slot0)
+function var_0_0.addTranDrop(arg_8_0, arg_8_1)
+	arg_8_0 = underscore.map(arg_8_0, function(arg_9_0)
 		return Drop.New({
-			type = slot0.type,
-			id = slot0.id,
-			count = slot0.number
+			type = arg_9_0.type,
+			id = arg_9_0.id,
+			count = arg_9_0.number
 		})
 	end)
 
-	for slot7, slot8 in pairs(getProxy(BayProxy):getNewShip(false)) do
-		if slot8:isMetaShip() then
-			table.insert({}, slot8.configId)
+	local var_8_0 = getProxy(BayProxy):getNewShip(false)
+	local var_8_1 = {}
+
+	for iter_8_0, iter_8_1 in pairs(var_8_0) do
+		if iter_8_1:isMetaShip() then
+			table.insert(var_8_1, iter_8_1.configId)
 		end
 	end
 
-	for slot8, slot9 in ipairs(slot0) do
-		slot10, slot11 = slot9:DropTrans(slot3, slot1)
+	local var_8_2 = {}
 
-		if slot10 then
-			table.insert({}, slot10)
-			pg.m02:sendNotification(GAME.ADD_ITEM, slot10)
+	for iter_8_2, iter_8_3 in ipairs(arg_8_0) do
+		local var_8_3, var_8_4 = iter_8_3:DropTrans(var_8_1, arg_8_1)
+
+		if var_8_3 then
+			table.insert(var_8_2, var_8_3)
+			pg.m02:sendNotification(GAME.ADD_ITEM, var_8_3)
 		end
 
-		if slot11 then
-			pg.m02:sendNotification(GAME.ADD_ITEM, slot11)
+		if var_8_4 then
+			pg.m02:sendNotification(GAME.ADD_ITEM, var_8_4)
 		end
 	end
 
-	if slot1 and slot1.taskId and pg.task_data_template[slot1.taskId].auto_commit == 1 then
+	if arg_8_1 and arg_8_1.taskId and pg.task_data_template[arg_8_1.taskId].auto_commit == 1 then
 		return {}
 	else
-		return slot4
+		return var_8_2
 	end
 end
 
-function slot0.BonusItemMarker(slot0)
-	slot1 = {}
+function var_0_0.BonusItemMarker(arg_10_0)
+	local var_10_0 = {}
 
-	for slot5, slot6 in ipairs(slot0) do
-		if slot6.type == DROP_TYPE_VITEM and slot6:getConfig("virtual_type") == 20 then
-			slot6.catchupActTag = slot1[slot6.id]
-			slot1[slot6.id] = true
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0) do
+		if iter_10_1.type == DROP_TYPE_VITEM and iter_10_1:getConfig("virtual_type") == 20 then
+			iter_10_1.catchupActTag = var_10_0[iter_10_1.id]
+			var_10_0[iter_10_1.id] = true
 		end
 	end
 
-	return slot0
+	return arg_10_0
 end
 
-slot3, slot4 = nil
+local var_0_3
+local var_0_4
 
-function slot0.MergePassItemDrop(slot0)
-	if not uv0 then
-		uv1 = {
+function var_0_0.MergePassItemDrop(arg_11_0)
+	if not var_0_3 then
+		var_0_4 = {
 			[DROP_TYPE_SKIN] = 1,
 			[DROP_TYPE_SHIP] = 9
 		}
-		uv0 = {}
-		slot4 = {
-			[20001.0] = 3,
-			[21101.0] = 12,
-			[16502.0] = 6,
-			[50006.0] = 10,
-			[16004.0] = 7,
-			[16024.0] = 7,
-			[17023.0] = 16,
-			[17024.0] = 11,
-			[30035.0] = 13,
-			[15008.0] = 15,
-			[42036.0] = 4,
-			[30025.0] = 13,
-			[21131.0] = 12,
-			[21121.0] = 12,
-			[17013.0] = 16,
-			[42030.0] = 5,
-			[20013.0] = 14,
-			[17044.0] = 11,
-			[17004.0] = 11,
-			[17014.0] = 11,
-			[30015.0] = 13,
-			[16014.0] = 7,
-			[17003.0] = 16,
-			[21111.0] = 12,
-			[17043.0] = 16,
-			[17034.0] = 11,
-			[54007.0] = 5,
-			[30045.0] = 13,
-			[15001.0] = 17,
-			[17033.0] = 16
-		}
+		var_0_3 = {}
 
-		for slot4, slot5 in pairs({
+		for iter_11_0, iter_11_1 in pairs({
 			[DROP_TYPE_RESOURCE] = {
 				8,
 				8,
-				[14.0] = 2
+				[14] = 2
 			},
-			[DROP_TYPE_ITEM] = slot4
+			[DROP_TYPE_ITEM] = {
+				[20001] = 3,
+				[21101] = 12,
+				[16502] = 6,
+				[50006] = 10,
+				[16004] = 7,
+				[16024] = 7,
+				[17023] = 16,
+				[17024] = 11,
+				[30035] = 13,
+				[15008] = 15,
+				[42036] = 4,
+				[30025] = 13,
+				[21131] = 12,
+				[21121] = 12,
+				[17013] = 16,
+				[42030] = 5,
+				[20013] = 14,
+				[17044] = 11,
+				[17004] = 11,
+				[17014] = 11,
+				[30015] = 13,
+				[16014] = 7,
+				[17003] = 16,
+				[21111] = 12,
+				[17043] = 16,
+				[17034] = 11,
+				[54007] = 5,
+				[30045] = 13,
+				[15001] = 17,
+				[17033] = 16
+			}
 		}) do
-			for slot9, slot10 in pairs(slot5) do
-				uv0[string.format("%d_%d", slot4, slot9)] = slot10
+			for iter_11_2, iter_11_3 in pairs(iter_11_1) do
+				var_0_3[string.format("%d_%d", iter_11_0, iter_11_2)] = iter_11_3
 			end
 		end
 
-		uv2.PassItemOrder = setmetatable(uv0, {
-			__index = function (slot0, slot1)
-				slot2, slot3 = unpack(underscore.map(string.split(slot1, "_"), function (slot0)
-					return tonumber(slot0)
+		var_0_0.PassItemOrder = setmetatable(var_0_3, {
+			__index = function(arg_12_0, arg_12_1)
+				local var_12_0, var_12_1 = unpack(underscore.map(string.split(arg_12_1, "_"), function(arg_13_0)
+					return tonumber(arg_13_0)
 				end))
 
-				if uv0[slot2] then
-					slot0[slot1] = uv0[slot2]
-				elseif slot2 == DROP_TYPE_ITEM and Item.getConfigData(slot3).type == 13 then
-					slot0[slot1] = 9
+				if var_0_4[var_12_0] then
+					arg_12_0[arg_12_1] = var_0_4[var_12_0]
+				elseif var_12_0 == DROP_TYPE_ITEM and Item.getConfigData(var_12_1).type == 13 then
+					arg_12_0[arg_12_1] = 9
 				else
-					slot0[slot1] = 100
+					arg_12_0[arg_12_1] = 100
 				end
 
-				return slot0[slot1]
+				return arg_12_0[arg_12_1]
 			end
 		})
 	end
 
-	slot1 = uv2.MergeSameDrops(slot0)
+	local var_11_0 = var_0_0.MergeSameDrops(arg_11_0)
 
-	table.sort(slot1, CompareFuncs({
-		function (slot0)
-			return uv0.PassItemOrder[slot0.type .. "_" .. slot0.id]
+	table.sort(var_11_0, CompareFuncs({
+		function(arg_14_0)
+			return var_0_0.PassItemOrder[arg_14_0.type .. "_" .. arg_14_0.id]
 		end,
-		function (slot0)
-			return slot0.id
+		function(arg_15_0)
+			return arg_15_0.id
 		end
 	}))
 
-	return slot1
+	return var_11_0
 end
 
-function slot0.CheckResForShopping(slot0, slot1)
-	slot2 = slot0.count * slot1
-	slot3 = 0
+function var_0_0.CheckResForShopping(arg_16_0, arg_16_1)
+	local var_16_0 = arg_16_0.count * arg_16_1
+	local var_16_1 = 0
 
-	if slot0.type == DROP_TYPE_RESOURCE then
-		slot3 = getProxy(PlayerProxy):getRawData():getResource(slot0.id)
-	elseif slot0.type == DROP_TYPE_ITEM then
-		slot3 = getProxy(BagProxy):getItemCountById(slot0.id)
+	if arg_16_0.type == DROP_TYPE_RESOURCE then
+		var_16_1 = getProxy(PlayerProxy):getRawData():getResource(arg_16_0.id)
+	elseif arg_16_0.type == DROP_TYPE_ITEM then
+		var_16_1 = getProxy(BagProxy):getItemCountById(arg_16_0.id)
 	else
 		assert(false)
 	end
 
-	return slot2 <= slot3
+	return var_16_0 <= var_16_1
 end
 
-function slot0.ConsumeResForShopping(slot0, slot1)
-	if slot0.type == DROP_TYPE_RESOURCE then
-		slot3 = getProxy(PlayerProxy):getData()
+function var_0_0.ConsumeResForShopping(arg_17_0, arg_17_1)
+	local var_17_0 = arg_17_0.count * arg_17_1
 
-		slot3:consume({
-			[id2res(slot0.id)] = slot0.count * slot1
+	if arg_17_0.type == DROP_TYPE_RESOURCE then
+		local var_17_1 = getProxy(PlayerProxy):getData()
+
+		var_17_1:consume({
+			[id2res(arg_17_0.id)] = var_17_0
 		})
-		getProxy(PlayerProxy):updatePlayer(slot3)
-	elseif slot0.type == DROP_TYPE_ITEM then
-		getProxy(BagProxy):removeItemById(slot0.id, slot2)
+		getProxy(PlayerProxy):updatePlayer(var_17_1)
+	elseif arg_17_0.type == DROP_TYPE_ITEM then
+		getProxy(BagProxy):removeItemById(arg_17_0.id, var_17_0)
 	else
 		assert(false)
 	end
 end
 
-function slot0.GetTranAwards(slot0, slot1)
-	slot3 = PlayerConst.addTranDrop(slot1.award_list)
+function var_0_0.GetTranAwards(arg_18_0, arg_18_1)
+	local var_18_0 = {}
+	local var_18_1 = PlayerConst.addTranDrop(arg_18_1.award_list)
 
-	for slot7, slot8 in ipairs({}) do
-		if slot8.type == DROP_TYPE_SHIP and not getProxy(CollectionProxy):getShipGroup(pg.ship_data_template[slot8.id].group_type) and Ship.inUnlockTip(slot8.id) then
-			pg.TipsMgr.GetInstance():ShowTips(i18n("collection_award_ship", slot9.name))
-		end
-	end
+	for iter_18_0, iter_18_1 in ipairs(var_18_0) do
+		if iter_18_1.type == DROP_TYPE_SHIP then
+			local var_18_2 = pg.ship_data_template[iter_18_1.id]
 
-	if slot0.isAwardMerge then
-		slot3 = uv0.MergeSameDrops(slot3)
-	end
-
-	return slot3
-end
-
-function slot0.MergeTechnologyAward(slot0)
-	for slot5, slot6 in ipairs(slot0.commons) do
-		slot6.riraty = true
-
-		table.insert(slot0.items, slot6)
-	end
-
-	for slot5, slot6 in ipairs(slot0.catchupItems) do
-		slot6.catchupTag = true
-
-		table.insert(slot1, slot6)
-	end
-
-	for slot5, slot6 in ipairs(slot0.catchupActItems) do
-		slot6.catchupActTag = true
-
-		table.insert(slot1, slot6)
-	end
-
-	return slot1
-end
-
-function slot0.CanDropItem(slot0)
-	if getProxy(ActivityProxy):getActivityById(ActivityConst.UTAWARERU_ACTIVITY_PT_ID) and not slot2:isEnd() then
-		slot3 = slot2:getConfig("config_client").pt_id
-
-		if _.detect(slot1:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function (slot0)
-			return slot0:getConfig("config_id") == uv0
-		end):getData1() >= 1500 then
-			slot4 = slot4 - 1500
-			slot0 = _.filter(slot0, function (slot0)
-				return slot0.type ~= DROP_TYPE_RESOURCE or slot0.id ~= uv0
-			end)
-
-			if _.detect(slot0, function (slot0)
-				return slot0.type == DROP_TYPE_RESOURCE and slot0.id == uv0
-			end) and slot4 < slot5.count then
-				slot5.count = slot5.count - slot4
-
-				table.insert(slot0, slot5)
+			if not getProxy(CollectionProxy):getShipGroup(var_18_2.group_type) and Ship.inUnlockTip(iter_18_1.id) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("collection_award_ship", var_18_2.name))
 			end
 		end
 	end
 
-	return table.getCount(PlayerConst.BonusItemMarker(slot0)) > 0
+	if arg_18_0.isAwardMerge then
+		var_18_1 = var_0_0.MergeSameDrops(var_18_1)
+	end
+
+	return var_18_1
 end
 
-slot5 = nil
+function var_0_0.MergeTechnologyAward(arg_19_0)
+	local var_19_0 = arg_19_0.items
 
-function slot6(slot0)
-	uv0 = uv0 or {
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.commons) do
+		iter_19_1.riraty = true
+
+		table.insert(var_19_0, iter_19_1)
+	end
+
+	for iter_19_2, iter_19_3 in ipairs(arg_19_0.catchupItems) do
+		iter_19_3.catchupTag = true
+
+		table.insert(var_19_0, iter_19_3)
+	end
+
+	for iter_19_4, iter_19_5 in ipairs(arg_19_0.catchupActItems) do
+		iter_19_5.catchupActTag = true
+
+		table.insert(var_19_0, iter_19_5)
+	end
+
+	return var_19_0
+end
+
+function var_0_0.CanDropItem(arg_20_0)
+	local var_20_0 = getProxy(ActivityProxy)
+	local var_20_1 = var_20_0:getActivityById(ActivityConst.UTAWARERU_ACTIVITY_PT_ID)
+
+	if var_20_1 and not var_20_1:isEnd() then
+		local var_20_2 = var_20_1:getConfig("config_client").pt_id
+		local var_20_3 = _.detect(var_20_0:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg_21_0)
+			return arg_21_0:getConfig("config_id") == var_20_2
+		end):getData1()
+
+		if var_20_3 >= 1500 then
+			local var_20_4 = var_20_3 - 1500
+			local var_20_5 = _.detect(arg_20_0, function(arg_22_0)
+				return arg_22_0.type == DROP_TYPE_RESOURCE and arg_22_0.id == var_20_2
+			end)
+
+			arg_20_0 = _.filter(arg_20_0, function(arg_23_0)
+				return arg_23_0.type ~= DROP_TYPE_RESOURCE or arg_23_0.id ~= var_20_2
+			end)
+
+			if var_20_5 and var_20_4 < var_20_5.count then
+				var_20_5.count = var_20_5.count - var_20_4
+
+				table.insert(arg_20_0, var_20_5)
+			end
+		end
+	end
+
+	arg_20_0 = PlayerConst.BonusItemMarker(arg_20_0)
+
+	return table.getCount(arg_20_0) > 0
+end
+
+local var_0_5
+
+local function var_0_6(arg_24_0)
+	var_0_5 = var_0_5 or {
 		[DROP_TYPE_SHIP] = true,
 		[DROP_TYPE_OPERATION] = true,
 		[DROP_TYPE_LOVE_LETTER] = true
 	}
 
-	if uv0[slot0.type] then
+	if var_0_5[arg_24_0.type] then
 		return true
-	elseif slot0.type == DROP_TYPE_ITEM and tobool(slot0.extra) then
+	elseif arg_24_0.type == DROP_TYPE_ITEM and tobool(arg_24_0.extra) then
 		return true
 	else
 		return false
 	end
 end
 
-function slot0.MergeSameDrops(slot0)
-	slot1 = {}
-	slot2 = {}
+function var_0_0.MergeSameDrops(arg_25_0)
+	local var_25_0 = {}
+	local var_25_1 = {}
 
-	for slot6, slot7 in ipairs(slot0) do
-		if not slot2[slot7.type .. "_" .. slot7.id] then
-			if not uv0(slot7) then
-				slot2[slot8] = slot7
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0) do
+		local var_25_2 = iter_25_1.type .. "_" .. iter_25_1.id
+
+		if not var_25_1[var_25_2] then
+			if var_0_6(iter_25_1) then
+				-- block empty
+			else
+				var_25_1[var_25_2] = iter_25_1
 			end
 
-			table.insert(slot1, slot7)
+			table.insert(var_25_0, iter_25_1)
 		else
-			slot2[slot8].count = slot2[slot8].count + slot7.count
+			var_25_1[var_25_2].count = var_25_1[var_25_2].count + iter_25_1.count
 		end
 	end
 
-	return slot1
+	return var_25_0
 end
 
-return slot0
+return var_0_0

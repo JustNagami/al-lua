@@ -1,12 +1,15 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_legal_template = {}
-slot1 = slot0.word_legal_template
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_legal_template = {}
+
+local var_0_1 = var_0_0.word_legal_template
 
 function temp()
-	uv0["合"] = {
-		["法"] = {
-			["词"] = {
+	var_0_1.合 = {
+		法 = {
+			词 = {
 				this = true
 			}
 		}
@@ -16,7 +19,7 @@ end
 temp()
 
 function temp()
-	uv0.U = {
+	var_0_1.U = {
 		n = {
 			i = {
 				v = {
@@ -238,7 +241,7 @@ end
 temp()
 
 function temp()
-	uv0.P = {
+	var_0_1.P = {
 		r = {
 			o = {
 				t = {
@@ -344,7 +347,7 @@ function temp()
 											n = {
 												this = true,
 												[" "] = {
-													["μ"] = {
+													μ = {
 														this = true
 													}
 												}
@@ -639,7 +642,7 @@ function temp()
 					l = {
 						e = {
 							v = {
-								["é"] = {
+								é = {
 									this = true
 								}
 							}
@@ -723,7 +726,7 @@ end
 temp()
 
 function temp()
-	uv0.S = {
+	var_0_1.S = {
 		p = {
 			e = {
 				c = {
@@ -1198,7 +1201,7 @@ function temp()
 									d = {
 										this = true,
 										[" "] = {
-											["μ"] = {
+											μ = {
 												this = true
 											},
 											M = {
@@ -1608,7 +1611,7 @@ function temp()
 				}
 			}
 		},
-		["ã"] = {
+		ã = {
 			o = {
 				[" "] = {
 					M = {
@@ -1637,7 +1640,7 @@ end
 temp()
 
 function temp()
-	uv0.D = {
+	var_0_1.D = {
 		e = {
 			w = {
 				e = {
@@ -1734,7 +1737,7 @@ function temp()
 				o = {
 					this = true,
 					[" "] = {
-						["μ"] = {
+						μ = {
 							this = true
 						}
 					}
@@ -1827,7 +1830,7 @@ end
 temp()
 
 function temp()
-	uv0.C = {
+	var_0_1.C = {
 		a = {
 			s = {
 				s = {
@@ -2302,7 +2305,7 @@ function temp()
 									d = {
 										this = true,
 										[" "] = {
-											["μ"] = {
+											μ = {
 												this = true
 											}
 										}
@@ -2382,7 +2385,7 @@ end
 temp()
 
 function temp()
-	uv0.G = {
+	var_0_1.G = {
 		r = {
 			i = {
 				d = {
@@ -2583,7 +2586,7 @@ function temp()
 								e = {
 									this = true,
 									[" "] = {
-										["μ"] = {
+										μ = {
 											this = true
 										}
 									}
@@ -2729,7 +2732,7 @@ end
 temp()
 
 function temp()
-	uv0.M = {
+	var_0_1.M = {
 		c = {
 			C = {
 				a = {
@@ -2962,13 +2965,13 @@ function temp()
 			i = {
 				l = {
 					l = {
-						["é"] = {
+						é = {
 							[" "] = {
 								B = {
 									r = {
-										["é"] = {
+										é = {
 											z = {
-												["é"] = {
+												é = {
 													this = true
 												}
 											}
@@ -3310,7 +3313,7 @@ end
 temp()
 
 function temp()
-	uv0.F = {
+	var_0_1.F = {
 		l = {
 			e = {
 				t = {
@@ -3397,7 +3400,7 @@ function temp()
 										e = {
 											this = true,
 											[" "] = {
-												["μ"] = {
+												μ = {
 													this = true
 												}
 											}
@@ -3520,7 +3523,7 @@ function temp()
 															G = {
 																r = {
 																	o = {
-																		["ß"] = {
+																		ß = {
 																			e = {
 																				this = true
 																			}
@@ -3585,7 +3588,7 @@ end
 temp()
 
 function temp()
-	uv0.T = {
+	var_0_1.T = {
 		h = {
 			a = {
 				t = {
@@ -3620,7 +3623,7 @@ function temp()
 					}
 				}
 			},
-			["ü"] = {
+			ü = {
 				r = {
 					i = {
 						n = {
@@ -3788,7 +3791,7 @@ function temp()
 								t = {
 									this = true,
 									[" "] = {
-										["μ"] = {
+										μ = {
 											this = true
 										}
 									}
@@ -3908,7 +3911,7 @@ end
 temp()
 
 function temp()
-	uv0.A = {
+	var_0_1.A = {
 		u = {
 			l = {
 				i = {
@@ -4033,7 +4036,7 @@ function temp()
 								e = {
 									this = true,
 									[" "] = {
-										["μ"] = {
+										μ = {
 											this = true
 										}
 									}
@@ -4076,7 +4079,7 @@ function temp()
 				}
 			},
 			g = {
-				["é"] = {
+				é = {
 					r = {
 						i = {
 							e = {
@@ -4461,7 +4464,7 @@ function temp()
 							}
 						},
 						[" "] = {
-							["μ"] = {
+							μ = {
 								this = true
 							}
 						}
@@ -4526,7 +4529,7 @@ function temp()
 														r = {
 															this = true,
 															[" "] = {
-																["μ"] = {
+																μ = {
 																	this = true
 																}
 															}
@@ -4756,7 +4759,7 @@ end
 temp()
 
 function temp()
-	uv0.B = {
+	var_0_1.B = {
 		e = {
 			n = {
 				s = {
@@ -4823,7 +4826,7 @@ function temp()
 									e = {
 										this = true,
 										[" "] = {
-											["μ"] = {
+											μ = {
 												this = true
 											}
 										}
@@ -4926,7 +4929,7 @@ function temp()
 					}
 				}
 			},
-			["ü"] = {
+			ü = {
 				n = {
 					h = {
 						i = {
@@ -5000,7 +5003,7 @@ function temp()
 					e = {
 						this = true,
 						[" "] = {
-							["μ"] = {
+							μ = {
 								this = true
 							}
 						}
@@ -5077,7 +5080,7 @@ function temp()
 					}
 				}
 			},
-			["ü"] = {
+			ü = {
 				c = {
 					h = {
 						e = {
@@ -5089,7 +5092,7 @@ function temp()
 				}
 			}
 		},
-		["é"] = {
+		é = {
 			a = {
 				r = {
 					n = {
@@ -5104,7 +5107,7 @@ end
 temp()
 
 function temp()
-	uv0.L = {
+	var_0_1.L = {
 		a = {
 			f = {
 				f = {
@@ -5151,7 +5154,7 @@ function temp()
 											n = {
 												n = {
 													i = {
-														["è"] = {
+														è = {
 															r = {
 																e = {
 																	this = true,
@@ -5276,9 +5279,9 @@ function temp()
 							}
 						}
 					},
-					["é"] = {
+					é = {
 						m = {
-							["é"] = {
+							é = {
 								r = {
 									a = {
 										i = {
@@ -5286,7 +5289,7 @@ function temp()
 												e = {
 													this = true,
 													[" "] = {
-														["μ"] = {
+														μ = {
 															this = true
 														}
 													}
@@ -5326,7 +5329,7 @@ function temp()
 								n = {
 									this = true,
 									[" "] = {
-										["μ"] = {
+										μ = {
 											this = true
 										}
 									}
@@ -5622,7 +5625,7 @@ function temp()
 				}
 			}
 		},
-		["ü"] = {
+		ü = {
 			t = {
 				z = {
 					o = {
@@ -5655,7 +5658,7 @@ function temp()
 					i = {
 						n = {
 							i = {
-								["â"] = {
+								â = {
 									t = {
 										r = {
 											e = {
@@ -5706,7 +5709,7 @@ end
 temp()
 
 function temp()
-	uv0.H = {
+	var_0_1.H = {
 		a = {
 			m = {
 				m = {
@@ -6229,7 +6232,7 @@ end
 temp()
 
 function temp()
-	uv0.E = {
+	var_0_1.E = {
 		l = {
 			d = {
 				r = {
@@ -6437,7 +6440,7 @@ end
 temp()
 
 function temp()
-	uv0.R = {
+	var_0_1.R = {
 		a = {
 			d = {
 				f = {
@@ -6702,7 +6705,7 @@ function temp()
 				n = {
 					this = true,
 					[" "] = {
-						["μ"] = {
+						μ = {
 							this = true
 						}
 					}
@@ -6740,7 +6743,7 @@ end
 temp()
 
 function temp()
-	uv0.J = {
+	var_0_1.J = {
 		e = {
 			n = {
 				k = {
@@ -6941,7 +6944,7 @@ end
 temp()
 
 function temp()
-	uv0.N = {
+	var_0_1.N = {
 		i = {
 			c = {
 				h = {
@@ -7081,7 +7084,7 @@ function temp()
 							o = {
 								this = true,
 								[" "] = {
-									["μ"] = {
+									μ = {
 										this = true
 									}
 								}
@@ -7331,7 +7334,7 @@ function temp()
 				}
 			}
 		},
-		["ü"] = {
+		ü = {
 			r = {
 				n = {
 					b = {
@@ -7367,7 +7370,7 @@ end
 temp()
 
 function temp()
-	uv0.K = {
+	var_0_1.K = {
 		a = {
 			l = {
 				k = {
@@ -7702,7 +7705,7 @@ function temp()
 						u = {
 							this = true,
 							[" "] = {
-								["μ"] = {
+								μ = {
 									this = true
 								}
 							}
@@ -7711,7 +7714,7 @@ function temp()
 				}
 			}
 		},
-		["ö"] = {
+		ö = {
 			n = {
 				i = {
 					g = {
@@ -7808,7 +7811,7 @@ end
 temp()
 
 function temp()
-	uv0.I = {
+	var_0_1.I = {
 		n = {
 			g = {
 				r = {
@@ -7947,7 +7950,7 @@ function temp()
 											s = {
 												this = true,
 												[" "] = {
-													["μ"] = {
+													μ = {
 														this = true
 													}
 												}
@@ -8110,7 +8113,7 @@ end
 temp()
 
 function temp()
-	uv0.O = {
+	var_0_1.O = {
 		m = {
 			a = {
 				h = {
@@ -8231,7 +8234,7 @@ end
 temp()
 
 function temp()
-	uv0.Q = {
+	var_0_1.Q = {
 		u = {
 			i = {
 				n = {
@@ -8287,7 +8290,7 @@ end
 temp()
 
 function temp()
-	uv0.V = {
+	var_0_1.V = {
 		i = {
 			n = {
 				c = {
@@ -8494,7 +8497,7 @@ end
 temp()
 
 function temp()
-	uv0.W = {
+	var_0_1.W = {
 		i = {
 			c = {
 				h = {
@@ -8671,7 +8674,7 @@ end
 temp()
 
 function temp()
-	uv0.Y = {
+	var_0_1.Y = {
 		o = {
 			r = {
 				k = {
@@ -8872,7 +8875,7 @@ function temp()
 				}
 			}
 		},
-		["ū"] = {
+		ū = {
 			y = {
 				a = {
 					k = {
@@ -8889,8 +8892,8 @@ end
 temp()
 
 function temp()
-	uv0["安"] = {
-		["森"] = {
+	var_0_1.安 = {
+		森 = {
 			this = true
 		}
 	}
@@ -8899,7 +8902,7 @@ end
 temp()
 
 function temp()
-	uv0.Z = {
+	var_0_1.Z = {
 		u = {
 			i = {
 				k = {
@@ -8984,7 +8987,7 @@ end
 temp()
 
 function temp()
-	uv0["É"] = {
+	var_0_1.É = {
 		m = {
 			i = {
 				l = {
@@ -9014,7 +9017,7 @@ end
 temp()
 
 function temp()
-	uv0["2"] = {
+	var_0_1["2"] = {
 		["2"] = {
 			this = true
 		}
@@ -9024,7 +9027,7 @@ end
 temp()
 
 function temp()
-	uv0["3"] = {
+	var_0_1["3"] = {
 		["3"] = {
 			this = true
 		}
@@ -9034,8 +9037,8 @@ end
 temp()
 
 function temp()
-	uv0["久"] = {
-		["远"] = {
+	var_0_1.久 = {
+		远 = {
 			this = true
 		}
 	}
@@ -9044,8 +9047,8 @@ end
 temp()
 
 function temp()
-	uv0["猫"] = {
-		["音"] = {
+	var_0_1.猫 = {
+		音 = {
 			this = true
 		}
 	}
@@ -9054,10 +9057,10 @@ end
 temp()
 
 function temp()
-	uv0["露"] = {
-		["露"] = {
-			["缇"] = {
-				["耶"] = {
+	var_0_1.露 = {
+		露 = {
+			缇 = {
+				耶 = {
 					this = true
 				}
 			}
@@ -9068,9 +9071,9 @@ end
 temp()
 
 function temp()
-	uv0["乌"] = {
-		["璐"] = {
-			["露"] = {
+	var_0_1.乌 = {
+		璐 = {
+			露 = {
 				this = true
 			}
 		}
@@ -9080,9 +9083,9 @@ end
 temp()
 
 function temp()
-	uv0["萨"] = {
-		["拉"] = {
-			["娜"] = {
+	var_0_1.萨 = {
+		拉 = {
+			娜 = {
 				this = true
 			}
 		}
@@ -9092,10 +9095,10 @@ end
 temp()
 
 function temp()
-	uv0["芙"] = {
-		["米"] = {
-			["露"] = {
-				["露"] = {
+	var_0_1.芙 = {
+		米 = {
+			露 = {
+				露 = {
 					this = true
 				}
 			}
@@ -9106,7 +9109,7 @@ end
 temp()
 
 function temp()
-	uv0["Ō"] = {
+	var_0_1.Ō = {
 		k = {
 			a = {
 				m = {
@@ -9130,7 +9133,7 @@ end
 temp()
 
 function temp()
-	uv0["Ä"] = {
+	var_0_1.Ä = {
 		g = {
 			i = {
 				r = {

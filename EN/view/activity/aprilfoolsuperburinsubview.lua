@@ -1,51 +1,59 @@
-slot0 = class("AprilFoolSuperBurinSubView", import(".AprilFoolBulinSubView"))
+﻿local var_0_0 = class("AprilFoolSuperBurinSubView", import(".AprilFoolBulinSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "AprilFoolSuperBurinSubView"
 end
 
-function slot0.OnInit(slot0)
-	if not getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA) or slot1:isEnd() then
-		slot0:Destroy()
+function var_0_0.OnInit(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+
+	if not var_2_0 or var_2_0:isEnd() then
+		arg_2_0:Destroy()
 
 		return
 	end
 
-	assert(pg.activity_event_picturepuzzle[slot1.id], "Can't Find activity_event_picturepuzzle 's ID : " .. slot1.id)
+	local var_2_1 = pg.activity_event_picturepuzzle[var_2_0.id]
 
-	slot0.bulin = slot0:findTF("bulin")
+	assert(var_2_1, "Can't Find activity_event_picturepuzzle 's ID : " .. var_2_0.id)
 
-	onButton(slot0, slot0.bulin, function ()
+	arg_2_0.bulin = arg_2_0:findTF("bulin")
+
+	onButton(arg_2_0, arg_2_0.bulin, function()
+		local var_3_0 = arg_2_0.pieceId
+
 		pg.m02:sendNotification(GAME.PUZZLE_PIECE_OP, {
 			cmd = 2,
 			isPickUp = true,
-			actId = uv1.id,
-			id = uv0.pieceId,
-			callback = function ()
+			actId = var_2_0.id,
+			id = var_3_0,
+			callback = function()
 				seriesAsync({
-					function (slot0)
-						slot1 = uv0.awards[table.indexof(uv0.pickup_picturepuzzle, uv1)]
+					function(arg_5_0)
+						local var_5_0 = var_2_1.awards[table.indexof(var_2_1.pickup_picturepuzzle, var_3_0)]
 
-						assert(slot1, "Cant Find Award of PieceID " .. uv1)
-						uv2:emit(BaseUI.ON_ACHIEVE, {
+						assert(var_5_0, "Cant Find Award of PieceID " .. var_3_0)
+						arg_2_0:emit(BaseUI.ON_ACHIEVE, {
 							{
-								type = slot1[1],
-								id = slot1[2],
-								count = slot1[3]
+								type = var_5_0[1],
+								id = var_5_0[2],
+								count = var_5_0[3]
 							}
-						}, slot0)
+						}, arg_5_0)
 					end,
-					function (slot0)
-						slot1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
+					function(arg_6_0)
+						local var_6_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLA)
 
-						if #table.mergeArray(slot1.data1_list, slot1.data2_list, true) < #uv0.pickup_picturepuzzle + #uv0.drop_picturepuzzle then
-							return slot0()
+						if #table.mergeArray(var_6_0.data1_list, var_6_0.data2_list, true) < #var_2_1.pickup_picturepuzzle + #var_2_1.drop_picturepuzzle then
+							return arg_6_0()
 						end
 
-						pg.NewStoryMgr.GetInstance():Play(slot1:getConfig("config_client").comStory, slot0)
+						local var_6_1 = var_6_0:getConfig("config_client").comStory
+
+						pg.NewStoryMgr.GetInstance():Play(var_6_1, arg_6_0)
 					end,
-					function ()
-						uv0:Destroy()
+					function()
+						arg_2_0:Destroy()
 					end
 				})
 			end
@@ -53,4 +61,4 @@ function slot0.OnInit(slot0)
 	end)
 end
 
-return slot0
+return var_0_0

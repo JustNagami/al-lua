@@ -1,84 +1,86 @@
-slot0 = class("ShipExpItemUsageCard")
+﻿local var_0_0 = class("ShipExpItemUsageCard")
 
-function slot0.Ctor(slot0, slot1)
-	pg.DelegateInfo.New(slot0)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	pg.DelegateInfo.New(arg_1_0)
 
-	slot0.nameTxt = slot1:Find("name"):GetComponent(typeof(Text))
-	slot0.itemTF = slot1:Find("item")
-	slot0.valueTxt = slot1:Find("value/Text"):GetComponent(typeof(Text))
-	slot0.value = 0
+	arg_1_0.nameTxt = arg_1_1:Find("name"):GetComponent(typeof(Text))
+	arg_1_0.itemTF = arg_1_1:Find("item")
+	arg_1_0.valueTxt = arg_1_1:Find("value/Text"):GetComponent(typeof(Text))
+	arg_1_0.value = 0
 
-	pressPersistTrigger(slot1:Find("m10"), 0.5, function (slot0)
-		uv0.value = uv0.value - 10
+	pressPersistTrigger(arg_1_1:Find("m10"), 0.5, function(arg_2_0)
+		arg_1_0.value = arg_1_0.value - 10
 
-		uv0:UpdateValue(true)
+		arg_1_0:UpdateValue(true)
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(slot1:Find("a10"), 0.5, function (slot0)
-		uv0.value = uv0.value + 10
+	pressPersistTrigger(arg_1_1:Find("a10"), 0.5, function(arg_3_0)
+		arg_1_0.value = arg_1_0.value + 10
 
-		uv0:UpdateValue()
+		arg_1_0:UpdateValue()
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(slot1:Find("a1"), 0.5, function (slot0)
-		uv0.value = uv0.value + 1
+	pressPersistTrigger(arg_1_1:Find("a1"), 0.5, function(arg_4_0)
+		arg_1_0.value = arg_1_0.value + 1
 
-		uv0:UpdateValue()
+		arg_1_0:UpdateValue()
 	end, nil, true, true, 0.15, SFX_PANEL)
-	pressPersistTrigger(slot1:Find("m1"), 0.5, function (slot0)
-		uv0.value = uv0.value - 1
+	pressPersistTrigger(arg_1_1:Find("m1"), 0.5, function(arg_5_0)
+		arg_1_0.value = arg_1_0.value - 1
 
-		uv0:UpdateValue(true)
+		arg_1_0:UpdateValue(true)
 	end, nil, true, true, 0.15, SFX_PANEL)
 end
 
-function slot0.SetCallBack(slot0, slot1)
-	slot0.callback = slot1
+function var_0_0.SetCallBack(arg_6_0, arg_6_1)
+	arg_6_0.callback = arg_6_1
 end
 
-function slot0.GetItem(slot0, slot1)
-	return getProxy(BagProxy):getItemById(slot1) or Drop.New({
+function var_0_0.GetItem(arg_7_0, arg_7_1)
+	return getProxy(BagProxy):getItemById(arg_7_1) or Drop.New({
 		count = 0,
 		type = DROP_TYPE_ITEM,
-		id = slot1
+		id = arg_7_1
 	})
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.value = 0
-	slot2 = slot0:GetItem(slot1)
-	slot0.item = slot2
+function var_0_0.Update(arg_8_0, arg_8_1)
+	arg_8_0.value = 0
 
-	updateDrop(slot0.itemTF, {
+	local var_8_0 = arg_8_0:GetItem(arg_8_1)
+
+	arg_8_0.item = var_8_0
+
+	updateDrop(arg_8_0.itemTF, {
 		type = DROP_TYPE_ITEM,
-		id = slot1,
-		count = slot2.count
+		id = arg_8_1,
+		count = var_8_0.count
 	})
 
-	if slot2.count == 0 then
-		setText(slot0.itemTF:Find("icon_bg/count"), 0)
+	if var_8_0.count == 0 then
+		setText(arg_8_0.itemTF:Find("icon_bg/count"), 0)
 	end
 
-	slot0.nameTxt.text = string.format("<color=#%s>%s</color>", ItemRarity.Rarity2HexColor(slot2:getConfig("rarity")), slot2:getConfig("name"))
+	arg_8_0.nameTxt.text = string.format("<color=#%s>%s</color>", ItemRarity.Rarity2HexColor(var_8_0:getConfig("rarity")), var_8_0:getConfig("name"))
 
-	slot0:UpdateValue()
+	arg_8_0:UpdateValue()
 end
 
-function slot0.UpdateValue(slot0, slot1)
-	slot0.value = math.min(slot0.value, slot0.item.count)
-	slot0.value = math.max(slot0.value, 0)
-	slot0.valueTxt.text = slot0.value
+function var_0_0.UpdateValue(arg_9_0, arg_9_1)
+	arg_9_0.value = math.min(arg_9_0.value, arg_9_0.item.count)
+	arg_9_0.value = math.max(arg_9_0.value, 0)
+	arg_9_0.valueTxt.text = arg_9_0.value
 
-	if slot0.callback then
-		slot0:callback(slot0.item.id, slot0.value, slot1)
+	if arg_9_0.callback then
+		arg_9_0.callback(arg_9_0, arg_9_0.item.id, arg_9_0.value, arg_9_1)
 	end
 end
 
-function slot0.ForceUpdateValue(slot0, slot1)
-	slot0.value = slot1
-	slot0.valueTxt.text = slot0.value
+function var_0_0.ForceUpdateValue(arg_10_0, arg_10_1)
+	arg_10_0.value = arg_10_1
+	arg_10_0.valueTxt.text = arg_10_0.value
 end
 
-function slot0.Dispose(slot0)
-	pg.DelegateInfo.Dispose(slot0)
+function var_0_0.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 end
 
-return slot0
+return var_0_0

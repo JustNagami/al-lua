@@ -1,1 +1,1 @@
-return class("JapanV3MainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("JapanV3MainPage", import(".TemplatePage.PreviewTemplatePage")))

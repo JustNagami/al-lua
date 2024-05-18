@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.guardian_template = {
 	{
 		guardian_gain_pool = 17,

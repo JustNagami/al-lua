@@ -1,4 +1,4 @@
-return {
+﻿return {
 	lose_condition = 1,
 	win_condition = 1,
 	id = 601320,

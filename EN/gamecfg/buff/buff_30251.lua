@@ -1,17 +1,4 @@
-return {
-	{
-		desc = ""
-	},
-	init_effect = "",
-	name = "",
-	time = 0,
-	color = "red",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 30251,
-	icon = 30250,
-	last_effect = "",
+﻿return {
 	effect_list = {
 		{
 			type = "BattleBuffCount",
@@ -37,5 +24,18 @@ return {
 				countType = 30250
 			}
 		}
-	}
+	},
+	{
+		desc = ""
+	},
+	init_effect = "",
+	name = "",
+	time = 0,
+	color = "red",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 30251,
+	icon = 30250,
+	last_effect = ""
 }

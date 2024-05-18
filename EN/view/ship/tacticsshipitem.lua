@@ -1,47 +1,48 @@
-slot0 = class("TacticsShipItem", import(".DockyardShipItem"))
+﻿local var_0_0 = class("TacticsShipItem", import(".DockyardShipItem"))
 
-function slot0.Ctor(slot0, slot1, slot2, slot3, slot4)
-	slot0.isLoaded = false
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+	arg_1_0.isLoaded = false
 
-	if IsNil(slot2) then
-		function slot5(slot0)
-			slot0.name = "ShipCardTpl"
+	if IsNil(arg_1_2) then
+		local function var_1_0(arg_2_0)
+			arg_2_0.name = "ShipCardTpl"
 
-			setParent(slot0, uv0)
+			setParent(arg_2_0, arg_1_1)
 
-			slot0.transform.localScale = Vector3(1.28, 1.28, 1)
-			slot0.transform.localPosition = Vector3(0, 251, 0)
+			arg_2_0.transform.localScale = Vector3(1.28, 1.28, 1)
+			arg_2_0.transform.localPosition = Vector3(0, 251, 0)
 
-			uv1.super.Ctor(uv2, slot0, uv3, uv4)
+			var_0_0.super.Ctor(arg_1_0, arg_2_0, arg_1_3, arg_1_4)
 
-			uv2.isLoaded = true
+			arg_1_0.isLoaded = true
 
-			if uv2.cacheShipVO then
-				uv2:update(uv2.cacheShipVO)
+			if arg_1_0.cacheShipVO then
+				arg_1_0:update(arg_1_0.cacheShipVO)
 			end
 		end
 
-		ResourceMgr.Inst:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function (slot0)
-			uv0(Instantiate(slot0))
+		ResourceMgr.Inst:getAssetAsync("template/shipcardtpl", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_3_0)
+			local var_3_0 = Instantiate(arg_3_0)
+
+			var_1_0(var_3_0)
 		end), true, true)
-
-		return
-	end
-
-	uv0.super.Ctor(slot0, slot2, slot3, slot4)
-
-	slot0.isLoaded = true
-end
-
-function slot0.update(slot0, slot1)
-	if not slot0.isLoaded then
-		slot0.cacheShipVO = slot1
 	else
-		uv0.super.update(slot0, slot1)
+		var_0_0.super.Ctor(arg_1_0, arg_1_2, arg_1_3, arg_1_4)
+
+		arg_1_0.isLoaded = true
 	end
 end
 
-function slot0.UpdateExpBuff(slot0)
+function var_0_0.update(arg_4_0, arg_4_1)
+	if not arg_4_0.isLoaded then
+		arg_4_0.cacheShipVO = arg_4_1
+	else
+		var_0_0.super.update(arg_4_0, arg_4_1)
+	end
 end
 
-return slot0
+function var_0_0.UpdateExpBuff(arg_5_0)
+	return
+end
+
+return var_0_0

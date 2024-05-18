@@ -1,9 +1,5 @@
-slot0 = {
+﻿local var_0_0 = {
 	Points = {
-		{
-			x = 258.5391,
-			y = -233.4444
-		},
 		[5] = {
 			x = -394.4,
 			y = 33.4
@@ -31,6 +27,10 @@ slot0 = {
 		[7] = {
 			x = 383.4555,
 			y = 27.58889
+		},
+		{
+			x = 258.5391,
+			y = -233.4444
 		},
 		[6] = {
 			x = -567.5212,
@@ -64,13 +64,14 @@ slot0 = {
 		}
 	}
 }
-slot0.Points[4].outRandom = true
-slot0.Points[6].outRandom = true
-slot0.Points[8].outRandom = true
-slot0.Points[10].outRandom = true
 
-for slot4, slot5 in pairs(slot0.Points) do
-	slot5.scale = 0.35
+var_0_0.Points[4].outRandom = true
+var_0_0.Points[6].outRandom = true
+var_0_0.Points[8].outRandom = true
+var_0_0.Points[10].outRandom = true
+
+for iter_0_0, iter_0_1 in pairs(var_0_0.Points) do
+	iter_0_1.scale = 0.35
 end
 
-return slot0
+return var_0_0

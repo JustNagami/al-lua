@@ -1,4 +1,4 @@
-pg = pg or {}
+﻿pg = pg or {}
 pg.game_room_template = {
 	{
 		coin_max = 5,
@@ -45,22 +45,7 @@ pg.game_room_template = {
 		},
 		game_help = {
 			{
-				info = [[
-- Minigame Overview -
-Collect the fallen blocks and stack them as high as you can to rack up points.
-
-- How to Play -
-· Tap the screen to release the block at the top and try to land it on the tower below.
-· If you land the block on the tower, you earn points. If you miss the tower 3 times, the game ends.
-· The tower has a balance gauge (seen on the right side of the screen) that needs to be managed. If the manjuu at the center of the gauge reaches either of the red areas, the tower will collapse and end the game.
-· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.
-· Refer to the following score-to-ticket values for each Credit spent:
-0-5 points: 180 Game Tickets
-6-10 points: 200 Game Tickets
-11-20 points: 220 Game Tickets
-21-30 points: 240 Game Tickets
-Over 30 points: 260 Game Tickets
-]]
+				info = "- Minigame Overview -\nCollect the fallen blocks and stack them as high as you can to rack up points.\n\n- How to Play -\n· Tap the screen to release the block at the top and try to land it on the tower below.\n· If you land the block on the tower, you earn points. If you miss the tower 3 times, the game ends.\n· The tower has a balance gauge (seen on the right side of the screen) that needs to be managed. If the manjuu at the center of the gauge reaches either of the red areas, the tower will collapse and end the game.\n· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.\n· Refer to the following score-to-ticket values for each Credit spent:\n0-5 points: 180 Game Tickets\n6-10 points: 200 Game Tickets\n11-20 points: 220 Game Tickets\n21-30 points: 240 Game Tickets\nOver 30 points: 260 Game Tickets\n"
 			}
 		},
 		position = {
@@ -196,23 +181,7 @@ Over 30 points: 260 Game Tickets
 		},
 		game_help = {
 			{
-				info = [[
-- Minigame Overview -
-Rack up points by destroying as many Siren targets as possible within the time limit.
-
-- How to Play -
-· When the game starts, 12 enemies will appear on the screen.
-· You can aim using the joypad at the bottom left side of the screen, and fire your weapon with the button at the bottom right side.
-· After firing your weapon, you won't be able to fire again for a period of time. When you hit a target, the rest of the targets will be randomly rearranged around the screen.
-· The game will end when the timer runs out, and your score will be tabulated depending on the number of targets hit.
-· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.
-· Refer to the following score-to-ticket values for each Credit spent:
-0-5 points: 180 Game Tickets
-6-10 points: 200 Game Tickets
-11-20 points: 220 Game Tickets
-21-30 points: 240 Game Tickets
-Over 30 points: 260 Game Tickets
-]]
+				info = "- Minigame Overview -\nRack up points by destroying as many Siren targets as possible within the time limit.\n\n- How to Play -\n· When the game starts, 12 enemies will appear on the screen.\n· You can aim using the joypad at the bottom left side of the screen, and fire your weapon with the button at the bottom right side.\n· After firing your weapon, you won't be able to fire again for a period of time. When you hit a target, the rest of the targets will be randomly rearranged around the screen.\n· The game will end when the timer runs out, and your score will be tabulated depending on the number of targets hit.\n· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.\n· Refer to the following score-to-ticket values for each Credit spent:\n0-5 points: 180 Game Tickets\n6-10 points: 200 Game Tickets\n11-20 points: 220 Game Tickets\n21-30 points: 240 Game Tickets\nOver 30 points: 260 Game Tickets\n"
 			}
 		},
 		position = {
@@ -265,26 +234,7 @@ Over 30 points: 260 Game Tickets
 		},
 		game_help = {
 			{
-				info = [[
-- Minigame Overview -
-Your shipgirls are hungry, and it's up to you to get them what they want! Buy as many correct food items as possible within the time limit!
-Buying the correct food will increase your remaining time, and increase your score.
-
-When the time limit expires or you exit the game, the game will be considered complete.
-
-- How to Play -
-· When the game starts, the character on the left side of the screen will display their desired items.
-· After 5 seconds, the displayed items will disappear, and you will have to select the correct items from the food vendor's menu from memory.
-· Select or deselect the food items by tapping on their icons. After selecting 3 types of foods, the results screen will be displayed.
-· You will earn points for purchasing food items corresponding to the items that the character wanted. This process repeats until you run out of time, or you end the game.
-· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.
-· Refer to the following score-to-ticket values for each Credit spent:
-0-5 points: 180 Game Tickets
-6-10 points: 200 Game Tickets
-11-15 points: 220 Game Tickets
-16-20 points: 240 Game Tickets
-Over 20 points: 260 Game Tickets
-]]
+				info = "- Minigame Overview -\nYour shipgirls are hungry, and it's up to you to get them what they want! Buy as many correct food items as possible within the time limit!\nBuying the correct food will increase your remaining time, and increase your score.\n\nWhen the time limit expires or you exit the game, the game will be considered complete.\n\n- How to Play -\n· When the game starts, the character on the left side of the screen will display their desired items.\n· After 5 seconds, the displayed items will disappear, and you will have to select the correct items from the food vendor's menu from memory.\n· Select or deselect the food items by tapping on their icons. After selecting 3 types of foods, the results screen will be displayed.\n· You will earn points for purchasing food items corresponding to the items that the character wanted. This process repeats until you run out of time, or you end the game.\n· When completing the game, you will earn Game Tickets depending on the number of Credits used, as well as your score.\n· Refer to the following score-to-ticket values for each Credit spent:\n0-5 points: 180 Game Tickets\n6-10 points: 200 Game Tickets\n11-15 points: 220 Game Tickets\n16-20 points: 240 Game Tickets\nOver 20 points: 260 Game Tickets\n"
 			}
 		},
 		position = {

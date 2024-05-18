@@ -1,280 +1,337 @@
-slot0 = class("MetaCharacterSynLayer", import("...base.BaseUI"))
+﻿local var_0_0 = class("MetaCharacterSynLayer", import("...base.BaseUI"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "MetaCharacterSynUI"
 end
 
-function slot0.init(slot0)
-	slot0:initUITextTips()
-	slot0:initData()
-	slot0:findUI()
-	slot0:addListener()
+function var_0_0.init(arg_2_0)
+	arg_2_0:initUITextTips()
+	arg_2_0:initData()
+	arg_2_0:findUI()
+	arg_2_0:addListener()
 end
 
-function slot0.didEnter(slot0)
-	slot0:updateShipImg()
-	slot0:updatePtPanel()
-	slot0:updateTaskList()
-	slot0:updateGetAwardBtn()
-	slot0:updateActTimePanel()
-	slot0:enablePartialBlur()
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:updateShipImg()
+	arg_3_0:updatePtPanel()
+	arg_3_0:updateTaskList()
+	arg_3_0:updateGetAwardBtn()
+	arg_3_0:updateActTimePanel()
+	arg_3_0:enablePartialBlur()
 
-	if slot0.contextData.isMainOpen then
-		slot0.contextData.isMainOpen = nil
+	if arg_3_0.contextData.isMainOpen then
+		arg_3_0.contextData.isMainOpen = nil
 
-		slot0:moveShipImg(true)
+		arg_3_0:moveShipImg(true)
 	end
 
-	slot0:movePanel()
-	slot0:TryPlayGuide()
+	arg_3_0:movePanel()
+	arg_3_0:TryPlayGuide()
 end
 
-function slot0.willExit(slot0)
-	slot0:moveShipImg(false)
-	slot0:disablePartialBlur()
+function var_0_0.willExit(arg_4_0)
+	arg_4_0:moveShipImg(false)
+	arg_4_0:disablePartialBlur()
 end
 
-function slot0.initUITextTips(slot0)
-	setText(slot0:findTF("PTPanel/TipText"), i18n("meta_cur_pt"))
-	setText(slot0:findTF("TaskPanel/ActTimePanel/Tip"), i18n("meta_acttime_limit"))
+function var_0_0.initUITextTips(arg_5_0)
+	local var_5_0 = arg_5_0:findTF("PTPanel/TipText")
+
+	setText(var_5_0, i18n("meta_cur_pt"))
+
+	local var_5_1 = arg_5_0:findTF("TaskPanel/ActTimePanel/Tip")
+
+	setText(var_5_1, i18n("meta_acttime_limit"))
 end
 
-function slot0.initData(slot0)
-	slot0.curMetaShipID = slot0.contextData.shipID
-	slot0.curShipVO = nil
-	slot0.curMetaCharacterVO = nil
-	slot0.curMetaProgressVO = nil
+function var_0_0.initData(arg_6_0)
+	arg_6_0.curMetaShipID = arg_6_0.contextData.shipID
+	arg_6_0.curShipVO = nil
+	arg_6_0.curMetaCharacterVO = nil
+	arg_6_0.curMetaProgressVO = nil
 
-	slot0:updateData()
+	arg_6_0:updateData()
 end
 
-function slot0.updateData(slot0)
-	slot0.curShipVO = getProxy(BayProxy):getShipById(slot0.curMetaShipID)
-	slot0.curMetaCharacterVO = slot0.curShipVO:getMetaCharacter()
-	slot0.curMetaProgressVO = getProxy(MetaCharacterProxy):getMetaProgressVOByID(slot0.curMetaCharacterVO.id)
+function var_0_0.updateData(arg_7_0)
+	arg_7_0.curShipVO = getProxy(BayProxy):getShipById(arg_7_0.curMetaShipID)
+	arg_7_0.curMetaCharacterVO = arg_7_0.curShipVO:getMetaCharacter()
+	arg_7_0.curMetaProgressVO = getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg_7_0.curMetaCharacterVO.id)
 end
 
-function slot0.findUI(slot0)
-	slot0.shipImg = slot0:findTF("ShipImg")
-	slot0.ptPanel = slot0:findTF("PTPanel")
-	slot0.ptSynRateText = slot0:findTF("ProgressText", slot0.ptPanel)
-	slot0.ptNumText = slot0:findTF("Count/NumText", slot0.ptPanel)
-	slot0.ptIconLeft = slot0:findTF("Icon", slot0.ptPanel)
-	slot0.showWayBtn = slot0:findTF("ShowWayBtn", slot0.ptPanel)
-	slot0.taskPanel = slot0:findTF("TaskPanel")
-	slot0.taskTplContainer = slot0:findTF("Scroll/Viewport/Content", slot0.taskPanel)
-	slot0.taskTpl = slot0:findTF("TaskTpl", slot0.taskPanel)
-	slot0.getAllBtn = slot0:findTF("BtnGetAll", slot0.taskPanel)
-	slot0.getAllBtnDisable = slot0:findTF("BtnGetAllDisable", slot0.taskPanel)
-	slot0.getNextBtn = slot0:findTF("BtnGetMore", slot0.taskPanel)
-	slot0.taskUIItemList = UIItemList.New(slot0.taskTplContainer, slot0.taskTpl)
-	slot0.sizeH = GetComponent(slot0.taskTpl, "LayoutElement").preferredHeight
-	slot0.spaceH = GetComponent(slot0.taskTplContainer, "VerticalLayoutGroup").spacing
-	slot0.topH = GetComponent(slot0.taskTplContainer, "VerticalLayoutGroup").padding.top
-	slot0.scrollSC = GetComponent(slot0:findTF("Scroll", slot0.taskPanel), "ScrollRect")
-	slot0.actTimePanel = slot0:findTF("TaskPanel/ActTimePanel")
-	slot0.actTimeText = slot0:findTF("TaskPanel/ActTimePanel/Text")
+function var_0_0.findUI(arg_8_0)
+	arg_8_0.shipImg = arg_8_0:findTF("ShipImg")
+	arg_8_0.ptPanel = arg_8_0:findTF("PTPanel")
+	arg_8_0.ptSynRateText = arg_8_0:findTF("ProgressText", arg_8_0.ptPanel)
+	arg_8_0.ptNumText = arg_8_0:findTF("Count/NumText", arg_8_0.ptPanel)
+	arg_8_0.ptIconLeft = arg_8_0:findTF("Icon", arg_8_0.ptPanel)
+	arg_8_0.showWayBtn = arg_8_0:findTF("ShowWayBtn", arg_8_0.ptPanel)
+	arg_8_0.taskPanel = arg_8_0:findTF("TaskPanel")
+	arg_8_0.taskTplContainer = arg_8_0:findTF("Scroll/Viewport/Content", arg_8_0.taskPanel)
+	arg_8_0.taskTpl = arg_8_0:findTF("TaskTpl", arg_8_0.taskPanel)
+	arg_8_0.getAllBtn = arg_8_0:findTF("BtnGetAll", arg_8_0.taskPanel)
+	arg_8_0.getAllBtnDisable = arg_8_0:findTF("BtnGetAllDisable", arg_8_0.taskPanel)
+	arg_8_0.getNextBtn = arg_8_0:findTF("BtnGetMore", arg_8_0.taskPanel)
+	arg_8_0.taskUIItemList = UIItemList.New(arg_8_0.taskTplContainer, arg_8_0.taskTpl)
+	arg_8_0.sizeH = GetComponent(arg_8_0.taskTpl, "LayoutElement").preferredHeight
+	arg_8_0.spaceH = GetComponent(arg_8_0.taskTplContainer, "VerticalLayoutGroup").spacing
+	arg_8_0.topH = GetComponent(arg_8_0.taskTplContainer, "VerticalLayoutGroup").padding.top
+	arg_8_0.scrollSC = GetComponent(arg_8_0:findTF("Scroll", arg_8_0.taskPanel), "ScrollRect")
+	arg_8_0.actTimePanel = arg_8_0:findTF("TaskPanel/ActTimePanel")
+	arg_8_0.actTimeText = arg_8_0:findTF("TaskPanel/ActTimePanel/Text")
 end
 
-function slot0.addListener(slot0)
-	onButton(slot0, slot0.getAllBtn, function ()
-		slot0, slot1 = uv0:getOneStepPTAwardLevelAndCount()
+function var_0_0.addListener(arg_9_0)
+	onButton(arg_9_0, arg_9_0.getAllBtn, function()
+		local var_10_0, var_10_1 = arg_9_0:getOneStepPTAwardLevelAndCount()
 
 		pg.m02:sendNotification(GAME.GET_META_PT_AWARD, {
-			groupID = uv0.curMetaProgressVO.id,
-			targetCount = slot1
+			groupID = arg_9_0.curMetaProgressVO.id,
+			targetCount = var_10_1
 		})
 	end, SFX_PANEL)
-	onButton(slot0, slot0.getAllBtnDisable, function ()
+	onButton(arg_9_0, arg_9_0.getAllBtnDisable, function()
+		return
 	end)
-	onButton(slot0, slot0.getNextBtn, function ()
+	onButton(arg_9_0, arg_9_0.getNextBtn, function()
 		pg.TipsMgr.GetInstance():ShowTips(i18n("meta_pt_notenough"))
 	end)
-	onButton(slot0, slot0.showWayBtn, function ()
+	onButton(arg_9_0, arg_9_0.showWayBtn, function()
+		local var_13_0 = {
+			count = 0,
+			type = DROP_TYPE_ITEM,
+			id = arg_9_0.curMetaProgressVO.metaPtData.resId
+		}
+
 		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			type = MSGBOX_TYPE_SINGLE_ITEM,
-			drop = {
-				count = 0,
-				type = DROP_TYPE_ITEM,
-				id = uv0.curMetaProgressVO.metaPtData.resId
-			}
+			drop = var_13_0
 		})
 	end, SFX_PANEL)
 end
 
-function slot0.TryPlayGuide(slot0)
+function var_0_0.TryPlayGuide(arg_14_0)
 	pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0028")
 end
 
-function slot0.updateActTimePanel(slot0)
-	if type(slot0.curMetaProgressVO.timeConfig) == "string" then
-		setActive(slot0.actTimePanel, false)
-	elseif type(slot1.timeConfig) == "table" then
-		setText(slot0.actTimeText, i18n("meta_pt_left", pg.TimeMgr.GetInstance():DiffDay(pg.TimeMgr.GetInstance():GetServerTime(), pg.TimeMgr.GetInstance():parseTimeFromConfig(slot1.timeConfig[2]))))
+function var_0_0.updateActTimePanel(arg_15_0)
+	local var_15_0 = arg_15_0.curMetaProgressVO
+
+	if type(var_15_0.timeConfig) == "string" then
+		setActive(arg_15_0.actTimePanel, false)
+	elseif type(var_15_0.timeConfig) == "table" then
+		local var_15_1 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_15_0.timeConfig[2])
+		local var_15_2 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_15_3 = pg.TimeMgr.GetInstance():DiffDay(var_15_2, var_15_1)
+
+		setText(arg_15_0.actTimeText, i18n("meta_pt_left", var_15_3))
 	end
 end
 
-function slot0.updateShipImg(slot0)
-	slot1, slot2 = MetaCharacterConst.GetMetaCharacterPaintPath(slot0.curMetaCharacterVO.id, true)
+function var_0_0.updateShipImg(arg_16_0)
+	local var_16_0, var_16_1 = MetaCharacterConst.GetMetaCharacterPaintPath(arg_16_0.curMetaCharacterVO.id, true)
 
-	setImageSprite(slot0.shipImg, LoadSprite(slot1, slot2), true)
+	setImageSprite(arg_16_0.shipImg, LoadSprite(var_16_0, var_16_1), true)
 
-	slot4 = MetaCharacterConst.UIConfig[slot0.curMetaCharacterVO.id]
+	local var_16_2 = arg_16_0.curMetaCharacterVO.id
+	local var_16_3 = MetaCharacterConst.UIConfig[var_16_2]
 
-	setLocalPosition(slot0.shipImg, {
-		x = slot4[9],
-		y = slot4[10]
+	setLocalPosition(arg_16_0.shipImg, {
+		x = var_16_3[9],
+		y = var_16_3[10]
 	})
-	setLocalScale(slot0.shipImg, {
-		x = slot4[3],
-		y = slot4[4]
+	setLocalScale(arg_16_0.shipImg, {
+		x = var_16_3[3],
+		y = var_16_3[4]
 	})
 end
 
-function slot0.updatePtPanel(slot0)
-	setImageSprite(slot0.ptIconLeft, LoadSprite(slot0.curMetaProgressVO:getPtIconPath()))
-	setText(slot0.ptSynRateText, string.format("%d", slot0.curMetaProgressVO:getSynRate() * 100) .. "%")
-	setText(slot0.ptNumText, slot0.curMetaProgressVO.metaPtData:GetResProgress())
+function var_0_0.updatePtPanel(arg_17_0)
+	setImageSprite(arg_17_0.ptIconLeft, LoadSprite(arg_17_0.curMetaProgressVO:getPtIconPath()))
+
+	local var_17_0 = arg_17_0.curMetaProgressVO:getSynRate()
+
+	setText(arg_17_0.ptSynRateText, string.format("%d", var_17_0 * 100) .. "%")
+
+	local var_17_1 = arg_17_0.curMetaProgressVO.metaPtData:GetResProgress()
+
+	setText(arg_17_0.ptNumText, var_17_1)
 end
 
-function slot0.updateTaskList(slot0)
-	slot0.taskUIItemList:make(function (slot0, slot1, slot2)
-		if slot0 == UIItemList.EventUpdate then
-			uv0:updateTaskTpl(slot2, slot1 + 1)
+function var_0_0.updateTaskList(arg_18_0)
+	arg_18_0.taskUIItemList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			arg_19_1 = arg_19_1 + 1
+
+			arg_18_0:updateTaskTpl(arg_19_2, arg_19_1)
 		end
 	end)
 
-	slot1, slot2, slot3 = slot0.curMetaProgressVO.metaPtData:GetLevelProgress()
+	local var_18_0, var_18_1, var_18_2 = arg_18_0.curMetaProgressVO.metaPtData:GetLevelProgress()
 
-	slot0.taskUIItemList:align(slot2)
-	setLocalPosition(slot0.taskTplContainer, {
-		y = slot0.topH + (slot1 - 1) * (slot0.sizeH + slot0.spaceH)
+	arg_18_0.taskUIItemList:align(var_18_1)
+
+	local var_18_3 = arg_18_0.topH + (var_18_0 - 1) * (arg_18_0.sizeH + arg_18_0.spaceH)
+
+	setLocalPosition(arg_18_0.taskTplContainer, {
+		y = var_18_3
 	})
 end
 
-function slot0.updateTaskTpl(slot0, slot1, slot2)
-	setText(slot0:findTF("Target/IndexText", slot1), slot2)
+function var_0_0.updateTaskTpl(arg_20_0, arg_20_1, arg_20_2)
+	local var_20_0 = arg_20_0:findTF("Target/IndexText", arg_20_1)
+	local var_20_1 = arg_20_0:findTF("PT/Count/NumText", arg_20_1)
+	local var_20_2 = arg_20_0:findTF("PT/Icon", arg_20_1)
+	local var_20_3 = arg_20_0:findTF("Info/AwardInfo/NameMask/NameText", arg_20_1)
+	local var_20_4 = arg_20_0:findTF("Info/AwardInfo/SynProgressText", arg_20_1)
+	local var_20_5 = arg_20_0:findTF("Info/AwardInfo/Award/Item", arg_20_1)
+	local var_20_6 = arg_20_0:findTF("Info/AwardInfo/Award/Tag/Get", arg_20_1)
+	local var_20_7 = arg_20_0:findTF("Info/AwardInfo/Award/Tag/Got", arg_20_1)
+	local var_20_8 = arg_20_0:findTF("GotMask", arg_20_1)
 
-	slot12 = slot0.curMetaProgressVO.metaPtData.targets[slot2]
+	setText(var_20_0, arg_20_2)
 
-	setText(slot0:findTF("PT/Count/NumText", slot1), slot12)
-	setImageSprite(slot0:findTF("PT/Icon", slot1), LoadSprite(slot0.curMetaProgressVO:getPtIconPath()))
+	local var_20_9 = arg_20_0.curMetaProgressVO.metaPtData.targets[arg_20_2]
 
-	slot13 = Drop.Create(slot0.curMetaProgressVO.metaPtData.dropList[slot2])
+	setText(var_20_1, var_20_9)
+	setImageSprite(var_20_2, LoadSprite(arg_20_0.curMetaProgressVO:getPtIconPath()))
 
-	updateDrop(slot0:findTF("Info/AwardInfo/Award/Item", slot1), slot13, {
+	local var_20_10 = Drop.Create(arg_20_0.curMetaProgressVO.metaPtData.dropList[arg_20_2])
+
+	updateDrop(var_20_5, var_20_10, {
 		hideName = true
 	})
-	onButton(slot0, slot0:findTF("Info/AwardInfo/Award", slot1), function ()
-		uv0:emit(BaseUI.ON_DROP, uv1)
+	onButton(arg_20_0, arg_20_0:findTF("Info/AwardInfo/Award", arg_20_1), function()
+		arg_20_0:emit(BaseUI.ON_DROP, var_20_10)
 	end, SFX_PANEL)
-	setText(slot0:findTF("Info/AwardInfo/NameMask/NameText", slot1), shortenString(slot13:getConfig("name"), 6))
-	setText(slot0:findTF("Info/AwardInfo/SynProgressText", slot1), math.round(slot12 / slot0.curMetaProgressVO.unlockPTNum * 100) .. "%")
+	setText(var_20_3, shortenString(var_20_10:getConfig("name"), 6))
 
-	if slot2 < slot0.curMetaProgressVO.metaPtData.level + 1 then
-		setActive(slot0:findTF("Info/AwardInfo/Award/Tag/Got", slot1), true)
-		setActive(slot0:findTF("Info/AwardInfo/Award/Tag/Get", slot1), false)
-		setActive(slot0:findTF("GotMask", slot1), true)
-		setGray(slot1, true, true)
+	local var_20_11 = arg_20_0.curMetaProgressVO.unlockPTNum
+
+	setText(var_20_4, math.round(var_20_9 / var_20_11 * 100) .. "%")
+
+	if arg_20_2 < arg_20_0.curMetaProgressVO.metaPtData.level + 1 then
+		setActive(var_20_7, true)
+		setActive(var_20_6, false)
+		setActive(var_20_8, true)
+		setGray(arg_20_1, true, true)
 	else
-		if slot0.curMetaProgressVO.metaPtData.count < slot12 then
-			setActive(slot10, false)
-			setActive(slot9, false)
+		if var_20_9 > arg_20_0.curMetaProgressVO.metaPtData.count then
+			setActive(var_20_7, false)
+			setActive(var_20_6, false)
 		else
-			setActive(slot10, false)
-			setActive(slot9, true)
+			setActive(var_20_7, false)
+			setActive(var_20_6, true)
 		end
 
-		setActive(slot11, false)
-		setGray(slot1, false, true)
+		setActive(var_20_8, false)
+		setGray(arg_20_1, false, true)
 	end
 end
 
-function slot0.updateGetAwardBtn(slot0)
-	slot2 = slot0.curMetaProgressVO.metaPtData:CanGetNextAward()
+function var_0_0.updateGetAwardBtn(arg_22_0)
+	local var_22_0 = arg_22_0.curMetaProgressVO.metaPtData:CanGetAward()
+	local var_22_1 = arg_22_0.curMetaProgressVO.metaPtData:CanGetNextAward()
 
-	if slot0.curMetaProgressVO.metaPtData:CanGetAward() then
-		setActive(slot0.getAllBtn, true)
-		setActive(slot0.getAllBtnDisable, false)
-		setActive(slot0.getNextBtn, false)
-	elseif slot2 then
-		setActive(slot0.getAllBtn, false)
-		setActive(slot0.getAllBtnDisable, false)
-		setActive(slot0.getNextBtn, true)
+	if var_22_0 then
+		setActive(arg_22_0.getAllBtn, true)
+		setActive(arg_22_0.getAllBtnDisable, false)
+		setActive(arg_22_0.getNextBtn, false)
+	elseif var_22_1 then
+		setActive(arg_22_0.getAllBtn, false)
+		setActive(arg_22_0.getAllBtnDisable, false)
+		setActive(arg_22_0.getNextBtn, true)
 	else
-		setActive(slot0.getAllBtn, false)
-		setActive(slot0.getAllBtnDisable, true)
-		setActive(slot0.getNextBtn, false)
+		setActive(arg_22_0.getAllBtn, false)
+		setActive(arg_22_0.getAllBtnDisable, true)
+		setActive(arg_22_0.getNextBtn, false)
 	end
 end
 
-function slot0.moveShipImg(slot0, slot1)
-	slot3 = MetaCharacterConst.UIConfig[slot0.curMetaCharacterVO.id]
+function var_0_0.moveShipImg(arg_23_0, arg_23_1)
+	local var_23_0 = arg_23_0.curMetaCharacterVO.id
+	local var_23_1 = MetaCharacterConst.UIConfig[var_23_0]
+	local var_23_2 = arg_23_1 and -2000 or var_23_1[9]
+	local var_23_3 = arg_23_1 and var_23_1[9] or -2000
 
-	slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.shipImg), slot1 and slot3[9] or -2000, 0.3):setFrom(slot1 and -2000 or slot3[9])
+	arg_23_0:managedTween(LeanTween.moveX, nil, rtf(arg_23_0.shipImg), var_23_3, 0.3):setFrom(var_23_2)
 end
 
-function slot0.movePanel(slot0)
-	slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.taskPanel), 500, 0.3):setFrom(2000)
-	slot0:managedTween(LeanTween.moveX, nil, rtf(slot0.ptPanel), -516, 0.3):setFrom(-2000)
+function var_0_0.movePanel(arg_24_0)
+	local var_24_0 = 2000
+	local var_24_1 = 500
+
+	arg_24_0:managedTween(LeanTween.moveX, nil, rtf(arg_24_0.taskPanel), var_24_1, 0.3):setFrom(var_24_0)
+
+	local var_24_2 = -2000
+	local var_24_3 = -516
+
+	arg_24_0:managedTween(LeanTween.moveX, nil, rtf(arg_24_0.ptPanel), var_24_3, 0.3):setFrom(var_24_2)
 end
 
-function slot0.enablePartialBlur(slot0)
-	if slot0._tf then
-		slot1 = {}
+function var_0_0.enablePartialBlur(arg_25_0)
+	if arg_25_0._tf then
+		local var_25_0 = {}
 
-		table.insert(slot1, slot0.taskPanel)
-		pg.UIMgr.GetInstance():OverlayPanelPB(slot0._tf, {
-			pbList = slot1,
+		table.insert(var_25_0, arg_25_0.taskPanel)
+		pg.UIMgr.GetInstance():OverlayPanelPB(arg_25_0._tf, {
+			pbList = var_25_0,
 			groupName = LayerWeightConst.GROUP_META,
 			weight = LayerWeightConst.BASE_LAYER - 1
 		})
 	end
 end
 
-function slot0.disablePartialBlur(slot0)
-	if slot0._tf then
-		pg.UIMgr.GetInstance():UnOverlayPanel(slot0._tf)
+function var_0_0.disablePartialBlur(arg_26_0)
+	if arg_26_0._tf then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_26_0._tf)
 	end
 end
 
-function slot0.getOneStepPTAwardLevelAndCount(slot0)
-	slot1 = slot0.curMetaProgressVO
-	slot4 = slot1:getStoryIndexList()
-	slot5 = slot1.unlockPTLevel
-	slot6 = 0
+function var_0_0.getOneStepPTAwardLevelAndCount(arg_27_0)
+	local var_27_0 = arg_27_0.curMetaProgressVO
+	local var_27_1 = var_27_0.metaPtData:GetResProgress()
+	local var_27_2 = var_27_0.metaPtData.targets
+	local var_27_3 = var_27_0:getStoryIndexList()
+	local var_27_4 = var_27_0.unlockPTLevel
+	local var_27_5 = 0
 
-	for slot10 = 1, #slot1.metaPtData.targets do
-		slot11 = false
-		slot12 = false
+	for iter_27_0 = 1, #var_27_2 do
+		local var_27_6 = false
+		local var_27_7 = false
 
-		if slot3[slot10] <= slot1.metaPtData:GetResProgress() then
-			slot11 = true
+		if var_27_1 >= var_27_2[iter_27_0] then
+			var_27_6 = true
 		end
 
-		if slot4[slot10] == 0 then
-			slot12 = true
-		elseif pg.NewStoryMgr.GetInstance():IsPlayed(slot14) then
-			slot12 = true
+		local var_27_8 = var_27_3[iter_27_0]
+
+		if var_27_8 == 0 then
+			var_27_7 = true
+		elseif pg.NewStoryMgr.GetInstance():IsPlayed(var_27_8) then
+			var_27_7 = true
 		end
 
-		if slot11 and slot12 then
-			slot6 = slot10
+		if var_27_6 and var_27_7 then
+			var_27_5 = iter_27_0
 		else
 			break
 		end
 	end
 
-	print("calc max level", slot6, slot3[slot6])
+	print("calc max level", var_27_5, var_27_2[var_27_5])
 
-	return slot6, slot3[slot6]
+	return var_27_5, var_27_2[var_27_5]
 end
 
-function slot0.goWorldFunc(slot0)
-	getProxy(ContextProxy):getContextByMediator(MetaCharacterMediator).data.lastPageIndex = pg.m02:retrieveMediator("MetaCharacterMediator").viewComponent.curPageIndex
+function var_0_0.goWorldFunc(arg_28_0)
+	local var_28_0 = getProxy(ContextProxy):getContextByMediator(MetaCharacterMediator)
+	local var_28_1 = pg.m02:retrieveMediator("MetaCharacterMediator")
 
-	slot0:closeView()
-	slot0:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
+	var_28_0.data.lastPageIndex = var_28_1.viewComponent.curPageIndex
+
+	arg_28_0:closeView()
+	arg_28_0:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
 end
 
-return slot0
+return var_0_0

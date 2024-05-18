@@ -1,1 +1,1 @@
-return class("BulvxieerSPMainPage", import(".TemplatePage.PreviewTemplatePage"))
+﻿return (class("BulvxieerSPMainPage", import(".TemplatePage.PreviewTemplatePage")))

@@ -1,29 +1,36 @@
-ys = ys or {}
-slot0 = ys
-slot1 = class("BattleSubmarineButton", slot0.Battle.BattleWeaponButton)
-slot0.Battle.BattleSubmarineButton = slot1
-slot1.__name = "BattleSubmarineButton"
+﻿ys = ys or {}
 
-function slot1.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = class("BattleSubmarineButton", var_0_0.Battle.BattleWeaponButton)
+
+var_0_0.Battle.BattleSubmarineButton = var_0_1
+var_0_1.__name = "BattleSubmarineButton"
+
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 end
 
-function slot1.OnCountChange(slot0)
-	slot2 = slot0._progressInfo:GetTotal()
-	slot0._countTxt.text = string.format("%d", slot0._progressInfo:GetCount())
+function var_0_1.OnCountChange(arg_2_0)
+	local var_2_0 = arg_2_0._progressInfo:GetCount()
+	local var_2_1 = arg_2_0._progressInfo:GetTotal()
+
+	arg_2_0._countTxt.text = string.format("%d", var_2_0)
 end
 
-function slot1.ConfigSkin(slot0, slot1)
-	uv0.super.ConfigSkin(slot0, slot1)
-	slot0._progress.gameObject:SetActive(false)
-	slot0._filledEffect.gameObject:SetActive(false)
+function var_0_1.ConfigSkin(arg_3_0, arg_3_1)
+	var_0_1.super.ConfigSkin(arg_3_0, arg_3_1)
+	arg_3_0._progress.gameObject:SetActive(false)
+	arg_3_0._filledEffect.gameObject:SetActive(false)
 end
 
-function slot1.Update(slot0)
+function var_0_1.Update(arg_4_0)
+	return
 end
 
-function slot1.updateProgressBar(slot0)
+function var_0_1.updateProgressBar(arg_5_0)
+	return
 end
 
-function slot1.OnfilledEffect(slot0)
+function var_0_1.OnfilledEffect(arg_6_0)
+	return
 end

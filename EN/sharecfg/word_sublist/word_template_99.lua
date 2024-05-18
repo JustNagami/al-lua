@@ -1,32 +1,35 @@
-pg = pg or {}
-slot0 = pg
-slot0.word_template_99 = {}
-slot1 = slot0.word_template_99
+﻿pg = pg or {}
+
+local var_0_0 = pg
+
+var_0_0.word_template_99 = {}
+
+local var_0_1 = var_0_0.word_template_99
 
 function temp()
-	uv0["疯"] = {
-		["狗"] = {
+	var_0_1.疯 = {
+		狗 = {
 			this = true
 		},
-		["狂"] = {
-			["抽"] = {
-				["送"] = {
+		狂 = {
+			抽 = {
+				送 = {
 					this = true
 				}
 			},
-			["斗"] = {
-				["地"] = {
-					["主"] = {
+			斗 = {
+				地 = {
+					主 = {
 						this = true
 					}
 				}
 			},
-			["宇"] = {
-				["宙"] = {
-					["很"] = {
-						["大"] = {
-							["很"] = {
-								["大"] = {
+			宇 = {
+				宙 = {
+					很 = {
+						大 = {
+							很 = {
+								大 = {
 									this = true
 								}
 							}
@@ -41,10 +44,10 @@ end
 temp()
 
 function temp()
-	uv0["锋"] = {
-		["镝"] = {
-			["情"] = {
-				["潮"] = {
+	var_0_1.锋 = {
+		镝 = {
+			情 = {
+				潮 = {
 					this = true
 				}
 			}
@@ -55,13 +58,13 @@ end
 temp()
 
 function temp()
-	uv0["瘋"] = {
-		["狗"] = {
+	var_0_1.瘋 = {
+		狗 = {
 			this = true
 		},
-		["狂"] = {
-			["抽"] = {
-				["送"] = {
+		狂 = {
+			抽 = {
+				送 = {
 					this = true
 				}
 			}
@@ -72,18 +75,18 @@ end
 temp()
 
 function temp()
-	uv0["豐"] = {
-		["唇"] = {
-			["豔"] = {
-				["姬"] = {
+	var_0_1.豐 = {
+		唇 = {
+			豔 = {
+				姬 = {
 					this = true
 				}
 			}
 		},
-		["饒"] = {
-			["的"] = {
-				["果"] = {
-					["實"] = {
+		饒 = {
+			的 = {
+				果 = {
+					實 = {
 						this = true
 					}
 				}
@@ -95,7 +98,7 @@ end
 temp()
 
 function temp()
-	uv0["酆"] = {
+	var_0_1.酆 = {
 		this = {
 			this = true
 		}
@@ -105,24 +108,24 @@ end
 temp()
 
 function temp()
-	uv0["冯"] = {
-		["东"] = {
-			["海"] = {
+	var_0_1.冯 = {
+		东 = {
+			海 = {
 				this = true
 			}
 		},
-		["惠"] = {
-			["敏"] = {
+		惠 = {
+			敏 = {
 				this = true
 			}
 		},
-		["素"] = {
-			["英"] = {
+		素 = {
+			英 = {
 				this = true
 			}
 		},
-		["仰"] = {
-			["妍"] = {
+		仰 = {
+			妍 = {
 				this = true
 			}
 		}
@@ -132,14 +135,14 @@ end
 temp()
 
 function temp()
-	uv0["馮"] = {
-		["東"] = {
-			["海"] = {
+	var_0_1.馮 = {
+		東 = {
+			海 = {
 				this = true
 			}
 		},
-		["素"] = {
-			["英"] = {
+		素 = {
+			英 = {
 				this = true
 			}
 		}

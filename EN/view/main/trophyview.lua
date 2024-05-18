@@ -1,116 +1,123 @@
-slot0 = class("TrophyView")
-slot0.GRAY_COLOR = Color(0.764, 0.764, 0.764, 0.784)
+﻿local var_0_0 = class("TrophyView")
 
-function slot0.Ctor(slot0, slot1)
-	slot0._go = slot1
-	slot0._tf = slot1.transform
-	slot0._trophyNamePic = findTF(slot0._tf, "frame/trophyName/Text")
-	slot0._trophyNameBG = findTF(slot0._tf, "frame/trophyName")
-	slot0._trophyIcon = findTF(slot0._tf, "frame/trophyIcon")
-	slot0._trophyDescUpper = findTF(slot0._tf, "frame/trophyDesc/Text_upper"):GetComponent(typeof(Text))
-	slot0._trophyDescLower = findTF(slot0._tf, "frame/trophyDesc/Text_lower"):GetComponent(typeof(Text))
-	slot0._trophyCountBG = findTF(slot0._tf, "frame/trophyCount")
-	slot0._trophyCount = findTF(slot0._tf, "frame/trophyCount/Text"):GetComponent(typeof(Text))
-	slot0._progressBar = findTF(slot0._tf, "frame/trophy_progress/Fill"):GetComponent(typeof(Slider))
+var_0_0.GRAY_COLOR = Color(0.764, 0.764, 0.764, 0.784)
+
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	arg_1_0._go = arg_1_1
+	arg_1_0._tf = arg_1_1.transform
+	arg_1_0._trophyNamePic = findTF(arg_1_0._tf, "frame/trophyName/Text")
+	arg_1_0._trophyNameBG = findTF(arg_1_0._tf, "frame/trophyName")
+	arg_1_0._trophyIcon = findTF(arg_1_0._tf, "frame/trophyIcon")
+	arg_1_0._trophyDescUpper = findTF(arg_1_0._tf, "frame/trophyDesc/Text_upper"):GetComponent(typeof(Text))
+	arg_1_0._trophyDescLower = findTF(arg_1_0._tf, "frame/trophyDesc/Text_lower"):GetComponent(typeof(Text))
+	arg_1_0._trophyCountBG = findTF(arg_1_0._tf, "frame/trophyCount")
+	arg_1_0._trophyCount = findTF(arg_1_0._tf, "frame/trophyCount/Text"):GetComponent(typeof(Text))
+	arg_1_0._progressBar = findTF(arg_1_0._tf, "frame/trophy_progress/Fill"):GetComponent(typeof(Slider))
 end
 
-function slot0.UpdateTrophyGroup(slot0, slot1)
-	slot0:updateInfoView(slot1:getDisplayTrophy())
-	slot0:updateProgressView(slot1:getProgressTrophy())
+function var_0_0.UpdateTrophyGroup(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1:getDisplayTrophy()
+	local var_2_1 = arg_2_1:getProgressTrophy()
+
+	arg_2_0:updateInfoView(var_2_0)
+	arg_2_0:updateProgressView(var_2_1)
 end
 
-function slot0.ProgressingForm(slot0, slot1)
-	slot2 = slot1:getProgressTrophy()
+function var_0_0.ProgressingForm(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getProgressTrophy()
 
-	slot0:updateInfoView(slot2)
-	slot0:updateProgressView(slot2)
+	arg_3_0:updateInfoView(var_3_0)
+	arg_3_0:updateProgressView(var_3_0)
 end
 
-function slot0.ClaimForm(slot0, slot1)
-	if slot1:getMaxClaimedTrophy() then
-		slot0:updateInfoView(slot2)
-		slot0:updateProgressView(slot2)
+function var_0_0.ClaimForm(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getMaxClaimedTrophy()
+
+	if var_4_0 then
+		arg_4_0:updateInfoView(var_4_0)
+		arg_4_0:updateProgressView(var_4_0)
 	end
 end
 
-function slot0.updateInfoView(slot0, slot1)
-	slot0._trophy = slot1
-	slot0._trophyCount.text = slot1:getConfig("rank")
+function var_0_0.updateInfoView(arg_5_0, arg_5_1)
+	arg_5_0._trophy = arg_5_1
+	arg_5_0._trophyCount.text = arg_5_1:getConfig("rank")
 
-	if not slot1:isClaimed() and not slot1:canClaimed() then
-		setActive(slot0._trophyCount, false)
+	if not arg_5_1:isClaimed() and not arg_5_1:canClaimed() then
+		setActive(arg_5_0._trophyCount, false)
 	end
 
-	LoadImageSpriteAsync("medal/" .. slot1:getConfig("icon"), slot0._trophyIcon, true)
-	LoadImageSpriteAsync("medal/" .. slot1:getConfig("label"), slot0._trophyNamePic, true)
-	slot0:setGray(slot0._trophyIcon, not slot1:isClaimed())
-	slot0:setGray(slot0._trophyNamePic, not slot1:isClaimed())
-	slot0:setGray(slot0._trophyNameBG, not slot1:isClaimed())
-	slot0:setGray(slot0._trophyCountBG, not slot1:isClaimed())
+	LoadImageSpriteAsync("medal/" .. arg_5_1:getConfig("icon"), arg_5_0._trophyIcon, true)
+	LoadImageSpriteAsync("medal/" .. arg_5_1:getConfig("label"), arg_5_0._trophyNamePic, true)
+	arg_5_0:setGray(arg_5_0._trophyIcon, not arg_5_1:isClaimed())
+	arg_5_0:setGray(arg_5_0._trophyNamePic, not arg_5_1:isClaimed())
+	arg_5_0:setGray(arg_5_0._trophyNameBG, not arg_5_1:isClaimed())
+	arg_5_0:setGray(arg_5_0._trophyCountBG, not arg_5_1:isClaimed())
 
-	slot0._trophyDescUpper.text = slot1:getConfig("explain1")
-	slot0._trophyDescLower.text = slot1:getConfig("explain2")
+	arg_5_0._trophyDescUpper.text = arg_5_1:getConfig("explain1")
+	arg_5_0._trophyDescLower.text = arg_5_1:getConfig("explain2")
 end
 
-function slot0.setGray(slot0, slot1, slot2)
-	setGray(slot1, slot2, true)
+function var_0_0.setGray(arg_6_0, arg_6_1, arg_6_2)
+	setGray(arg_6_1, arg_6_2, true)
 
-	if slot2 then
-		slot1:GetComponent(typeof(Image)).color = uv0.GRAY_COLOR
+	if arg_6_2 then
+		arg_6_1:GetComponent(typeof(Image)).color = var_0_0.GRAY_COLOR
 	else
-		slot1:GetComponent(typeof(Image)).color = Color.white
+		arg_6_1:GetComponent(typeof(Image)).color = Color.white
 	end
 end
 
-function slot0.updateProgressView(slot0, slot1)
-	slot0._progressTrophy = slot1
-	slot0._progressBar.value = slot1:getProgressRate()
+function var_0_0.updateProgressView(arg_7_0, arg_7_1)
+	arg_7_0._progressTrophy = arg_7_1
+	arg_7_0._progressBar.value = arg_7_1:getProgressRate()
 end
 
-function slot0.GetTrophyClaimTipsID(slot0)
-	return "reminder_" .. math.floor(slot0._trophy:getConfig("icon") / 10)
+function var_0_0.GetTrophyClaimTipsID(arg_8_0)
+	return "reminder_" .. math.floor(arg_8_0._trophy:getConfig("icon") / 10)
 end
 
-function slot0.SetTrophyReminder(slot0, slot1)
-	slot0._reminder = tf(slot1)
+function var_0_0.SetTrophyReminder(arg_9_0, arg_9_1)
+	arg_9_0._reminder = tf(arg_9_1)
 
-	slot0._reminder:SetParent(findTF(slot0._tf, "frame"), false)
+	arg_9_0._reminder:SetParent(findTF(arg_9_0._tf, "frame"), false)
 
-	slot0._reminder.localPosition = slot0._trophyIcon.localPosition
+	arg_9_0._reminder.localPosition = arg_9_0._trophyIcon.localPosition
 
-	setActive(slot0._reminder, slot0._progressTrophy:canClaimed() and not slot0._progressTrophy:isClaimed())
+	setActive(arg_9_0._reminder, arg_9_0._progressTrophy:canClaimed() and not arg_9_0._progressTrophy:isClaimed())
 end
 
-function slot0.PlayClaimAnima(slot0, slot1, slot2, slot3)
-	slot0._isPlaying = true
+function var_0_0.PlayClaimAnima(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+	arg_10_0._isPlaying = true
 
-	setActive(slot0._reminder, false)
+	setActive(arg_10_0._reminder, false)
 
-	slot4 = slot0._tf:GetComponent(typeof(Animator))
-	slot4.enabled = true
+	local var_10_0 = arg_10_0._tf:GetComponent(typeof(Animator))
 
-	slot0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function (slot0)
-		uv0()
-		setActive(uv1._reminder, uv1._progressTrophy:canClaimed() and not uv1._progressTrophy:isClaimed())
+	var_10_0.enabled = true
+
+	arg_10_0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_11_0)
+		arg_10_3()
+		setActive(arg_10_0._reminder, arg_10_0._progressTrophy:canClaimed() and not arg_10_0._progressTrophy:isClaimed())
 	end)
-	slot4:Play("trophy_upper", -1, 0)
-	setActive(slot2, true)
+	var_10_0:Play("trophy_upper", -1, 0)
+	setActive(arg_10_2, true)
 
-	slot6 = tf(slot2)
+	local var_10_1 = tf(arg_10_2)
 
-	slot6:SetParent(findTF(slot0._tf, "frame"), false)
+	var_10_1:SetParent(findTF(arg_10_0._tf, "frame"), false)
 
-	slot6.localScale = Vector3(1, 1, 0)
+	var_10_1.localScale = Vector3(1, 1, 0)
 
-	LuaHelper.SetParticleEndEvent(slot2, function ()
-		uv0._isPlaying = false
+	LuaHelper.SetParticleEndEvent(arg_10_2, function()
+		arg_10_0._isPlaying = false
 
-		Object.Destroy(uv1)
+		Object.Destroy(arg_10_2)
 	end)
 end
 
-function slot0.IsPlaying(slot0)
-	return slot0._isPlaying
+function var_0_0.IsPlaying(arg_13_0)
+	return arg_13_0._isPlaying
 end
 
-return slot0
+return var_0_0

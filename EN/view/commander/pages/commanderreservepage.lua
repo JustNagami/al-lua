@@ -1,293 +1,320 @@
-slot0 = class("CommanderReservePage", import("...base.BaseSubView"))
+﻿local var_0_0 = class("CommanderReservePage", import("...base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "CommanderReserveUI"
 end
 
-function slot0.OnInit(slot0)
-	slot0.bg1 = slot0._tf:Find("frame/bg1")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.bg1 = arg_2_0._tf:Find("frame/bg1")
 
-	setActive(slot0.bg1, true)
+	setActive(arg_2_0.bg1, true)
 
-	slot0.minusBtn = slot0.bg1:Find("count/min")
-	slot0.addBtn = slot0.bg1:Find("count/add")
-	slot0.countTxt = slot0.bg1:Find("count/Text"):GetComponent(typeof(Text))
-	slot0.consumeTxt = slot0.bg1:Find("price/Text"):GetComponent(typeof(Text))
-	slot0.totalTxt = slot0.bg1:Find("price_all/Text"):GetComponent(typeof(Text))
-	slot0.firstTip = slot0.bg1:Find("firstTip")
-	slot0.confirmBtn = slot0.bg1:Find("Button")
-	slot0.maxBtn = slot0.bg1:Find("max")
-	slot0.bg2 = slot0._tf:Find("frame/bg2")
-	slot0.box1 = slot0.bg2:Find("boxes/1"):GetComponent(typeof(Image))
-	slot0.box2 = slot0.bg2:Find("boxes/2"):GetComponent(typeof(Image))
-	slot0.box3 = slot0.bg2:Find("boxes/3"):GetComponent(typeof(Image))
-	slot0.box4 = slot0.bg2:Find("boxes/4"):GetComponent(typeof(Image))
-	slot0.skipBtn = slot0.bg2:Find("Button")
-	slot0.animtion = slot0.bg2:GetComponent(typeof(Animation))
-	slot0.aniEvt = slot0.bg2:GetComponent(typeof(DftAniEvent))
-	slot0.boxes = slot0.bg2:Find("boxes")
-	slot0.closeBg = slot0._tf:Find("bg")
-	slot0.boxTF = slot0.bg2:Find("box")
-	slot0.boxMove = slot0.bg2:Find("boxMove")
-	slot0.tweenList = {}
+	arg_2_0.minusBtn = arg_2_0.bg1:Find("count/min")
+	arg_2_0.addBtn = arg_2_0.bg1:Find("count/add")
+	arg_2_0.countTxt = arg_2_0.bg1:Find("count/Text"):GetComponent(typeof(Text))
+	arg_2_0.consumeTxt = arg_2_0.bg1:Find("price/Text"):GetComponent(typeof(Text))
+	arg_2_0.totalTxt = arg_2_0.bg1:Find("price_all/Text"):GetComponent(typeof(Text))
+	arg_2_0.firstTip = arg_2_0.bg1:Find("firstTip")
+	arg_2_0.confirmBtn = arg_2_0.bg1:Find("Button")
+	arg_2_0.maxBtn = arg_2_0.bg1:Find("max")
+	arg_2_0.bg2 = arg_2_0._tf:Find("frame/bg2")
+	arg_2_0.box1 = arg_2_0.bg2:Find("boxes/1"):GetComponent(typeof(Image))
+	arg_2_0.box2 = arg_2_0.bg2:Find("boxes/2"):GetComponent(typeof(Image))
+	arg_2_0.box3 = arg_2_0.bg2:Find("boxes/3"):GetComponent(typeof(Image))
+	arg_2_0.box4 = arg_2_0.bg2:Find("boxes/4"):GetComponent(typeof(Image))
+	arg_2_0.skipBtn = arg_2_0.bg2:Find("Button")
+	arg_2_0.animtion = arg_2_0.bg2:GetComponent(typeof(Animation))
+	arg_2_0.aniEvt = arg_2_0.bg2:GetComponent(typeof(DftAniEvent))
+	arg_2_0.boxes = arg_2_0.bg2:Find("boxes")
+	arg_2_0.closeBg = arg_2_0._tf:Find("bg")
+	arg_2_0.boxTF = arg_2_0.bg2:Find("box")
+	arg_2_0.boxMove = arg_2_0.bg2:Find("boxMove")
+	arg_2_0.tweenList = {}
 
-	setActive(slot0.bg2, false)
+	setActive(arg_2_0.bg2, false)
 
-	slot0.skip = false
-	slot0.block = false
+	arg_2_0.skip = false
+	arg_2_0.block = false
 
-	onButton(slot0, slot0.closeBg, function ()
-		if uv0.block then
+	onButton(arg_2_0, arg_2_0.closeBg, function()
+		if arg_2_0.block then
 			return
 		end
 
-		uv0:Hide()
+		arg_2_0:Hide()
 	end, SFX_PANEL)
-	pressPersistTrigger(slot0.minusBtn, 0.5, function (slot0)
-		if uv0.currCnt == 1 then
+	pressPersistTrigger(arg_2_0.minusBtn, 0.5, function(arg_4_0)
+		if arg_2_0.currCnt == 1 then
 			return
 		end
 
-		uv0.currCnt = uv0.currCnt - 1
+		arg_2_0.currCnt = arg_2_0.currCnt - 1
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	pressPersistTrigger(slot0.addBtn, 0.5, function (slot0)
-		if uv0.currCnt > CommanderConst.MAX_GETBOX_CNT - uv0.count - 1 then
+	pressPersistTrigger(arg_2_0.addBtn, 0.5, function(arg_5_0)
+		if arg_2_0.currCnt > CommanderConst.MAX_GETBOX_CNT - arg_2_0.count - 1 then
 			return
 		end
 
-		uv0.currCnt = uv0.currCnt + 1
+		arg_2_0.currCnt = arg_2_0.currCnt + 1
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, nil, true, true, 0.1, SFX_PANEL)
-	onButton(slot0, slot0.skipBtn, function ()
-		uv0.skip = true
+	onButton(arg_2_0, arg_2_0.skipBtn, function()
+		arg_2_0.skip = true
 
-		uv0.animtion:Stop()
-		uv0:endAnim()
+		arg_2_0.animtion:Stop()
+		arg_2_0:endAnim()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.maxBtn, function ()
-		slot2 = 0
+	onButton(arg_2_0, arg_2_0.maxBtn, function()
+		local var_7_0 = CommanderConst.MAX_GETBOX_CNT - arg_2_0.count
+		local var_7_1 = getProxy(PlayerProxy):getRawData():getResById(1)
+		local var_7_2 = 0
+		local var_7_3 = 0
+		local var_7_4 = arg_2_0.count + var_7_0
 
-		for slot8 = uv0.count, uv0.count + CommanderConst.MAX_GETBOX_CNT - uv0.count - 1 do
-			if getProxy(PlayerProxy):getRawData():getResById(1) < 0 + CommanderConst.getBoxComsume(slot8) then
+		for iter_7_0 = arg_2_0.count, var_7_4 - 1 do
+			var_7_3 = var_7_3 + CommanderConst.getBoxComsume(iter_7_0)
+
+			if var_7_1 < var_7_3 then
 				break
 			else
-				slot2 = slot2 + 1
+				var_7_2 = var_7_2 + 1
 			end
 		end
 
-		uv0.currCnt = math.max(1, slot2)
+		arg_2_0.currCnt = math.max(1, var_7_2)
 
-		uv0:updateValue()
+		arg_2_0:updateValue()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.confirmBtn, function ()
-		if uv0.currCnt > 0 then
-			uv0.skip = false
+	onButton(arg_2_0, arg_2_0.confirmBtn, function()
+		if arg_2_0.currCnt > 0 then
+			arg_2_0.skip = false
 
-			uv0:OnConfirm(uv0.total, uv0.currCnt)
+			arg_2_0:OnConfirm(arg_2_0.total, arg_2_0.currCnt)
 		end
 	end, SFX_PANEL)
-	setText(slot0._tf:Find("frame/bg1/tip"), i18n("commander_build_rate_tip"))
-	setText(slot0._tf:Find("frame/bg1/label"), i18n("commander_get_box_tip"))
-	setText(slot0._tf:Find("frame/bg1/label1"), i18n("commander_total_gold"))
-	setText(slot0._tf:Find("frame/bg1/Text"), i18n("commander_get_box_tip_1"))
+	setText(arg_2_0._tf:Find("frame/bg1/tip"), i18n("commander_build_rate_tip"))
+	setText(arg_2_0._tf:Find("frame/bg1/label"), i18n("commander_get_box_tip"))
+	setText(arg_2_0._tf:Find("frame/bg1/label1"), i18n("commander_total_gold"))
+	setText(arg_2_0._tf:Find("frame/bg1/Text"), i18n("commander_get_box_tip_1"))
 end
 
-function slot0.OnConfirm(slot0, slot1, slot2)
-	if getProxy(PlayerProxy):getRawData().gold < slot1 then
-		slot0:GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
+function var_0_0.OnConfirm(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = getProxy(PlayerProxy):getRawData()
+
+	if arg_9_1 > var_9_0.gold then
+		arg_9_0:GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
 			{
 				59001,
-				slot1 - slot3.gold,
-				slot1
+				arg_9_1 - var_9_0.gold,
+				arg_9_1
 			}
 		})
 
 		return
 	end
 
-	slot0.contextData.msgBox:ExecuteAction("Show", {
-		content = i18n(slot1 <= 0 and "commander_get_1" or "commander_get", slot1, slot2),
-		onYes = function ()
-			uv0:emit(CommanderCatMediator.RESERVE_BOX, uv1)
+	local var_9_1 = arg_9_1 <= 0 and "commander_get_1" or "commander_get"
+
+	arg_9_0.contextData.msgBox:ExecuteAction("Show", {
+		content = i18n(var_9_1, arg_9_1, arg_9_2),
+		onYes = function()
+			arg_9_0:emit(CommanderCatMediator.RESERVE_BOX, arg_9_2)
 		end
 	})
 end
 
-function slot0.GoShoppingMsgBox(slot0, slot1, slot2, slot3)
-	if slot3 then
-		for slot8, slot9 in ipairs(slot3) do
-			if slot8 < #slot3 then
-				slot4 = "" .. i18n(slot9[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", Item.getConfigData(slot9[1]).name, slot9[2]) .. i18n("text_noRes_info_tip_link")
+function var_0_0.GoShoppingMsgBox(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
+	if arg_11_3 then
+		local var_11_0 = ""
+
+		for iter_11_0, iter_11_1 in ipairs(arg_11_3) do
+			local var_11_1 = Item.getConfigData(iter_11_1[1]).name
+
+			var_11_0 = var_11_0 .. i18n(iter_11_1[1] == 59001 and "text_noRes_info_tip" or "text_noRes_info_tip2", var_11_1, iter_11_1[2])
+
+			if iter_11_0 < #arg_11_3 then
+				var_11_0 = var_11_0 .. i18n("text_noRes_info_tip_link")
 			end
 		end
 
-		if slot4 ~= "" then
-			slot1 = slot1 .. "\n" .. i18n("text_noRes_tip", slot4)
+		if var_11_0 ~= "" then
+			arg_11_1 = arg_11_1 .. "\n" .. i18n("text_noRes_tip", var_11_0)
 		end
 	end
 
 	pg.MsgboxMgr.GetInstance():ShowMsgBox({
 		parent = rtf(pg.UIMgr.GetInstance().OverlayToast),
-		content = slot1,
+		content = arg_11_1,
 		weight = LayerWeightConst.TOP_LAYER,
-		onYes = function ()
-			gotoChargeScene(uv0, uv1)
+		onYes = function()
+			gotoChargeScene(arg_11_2, arg_11_3)
 		end
 	})
 end
 
-function slot0.OnLoaded(slot0)
-	slot0:bind(CommanderCatScene.MSG_RESERVE_BOX, function (slot0, slot1)
-		uv0:OnReserveDone(slot1)
+function var_0_0.OnLoaded(arg_13_0)
+	arg_13_0:bind(CommanderCatScene.MSG_RESERVE_BOX, function(arg_14_0, arg_14_1)
+		arg_13_0:OnReserveDone(arg_14_1)
 	end)
 end
 
-function slot0.OnReserveDone(slot0, slot1)
-	slot0.block = true
+function var_0_0.OnReserveDone(arg_15_0, arg_15_1)
+	arg_15_0.block = true
 
 	seriesAsync({
-		function (slot0)
-			uv0:PlayAnim(uv1, slot0)
+		function(arg_16_0)
+			arg_15_0:PlayAnim(arg_15_1, arg_16_0)
 		end,
-		function (slot0)
-			uv0:Update()
-			uv0:emit(BaseUI.ON_AWARD, {
-				items = uv1
+		function(arg_17_0)
+			arg_15_0:Update()
+			arg_15_0:emit(BaseUI.ON_AWARD, {
+				items = arg_15_1
 			})
-			slot0()
+			arg_17_0()
 		end
-	}, function ()
-		uv0.block = false
+	}, function()
+		arg_15_0.block = false
 	end)
 end
 
-function slot0.updateValue(slot0)
-	slot0.countTxt.text = slot0.currCnt
-	slot1 = slot0.count + slot0.currCnt - 1
-	slot0.consumeTxt.text = CommanderConst.getBoxComsume(slot1)
-	slot0.total = 0
+function var_0_0.updateValue(arg_19_0)
+	arg_19_0.countTxt.text = arg_19_0.currCnt
 
-	for slot6 = slot0.count, slot1 do
-		slot0.total = slot0.total + CommanderConst.getBoxComsume(slot6)
+	local var_19_0 = arg_19_0.count + arg_19_0.currCnt - 1
+	local var_19_1 = CommanderConst.getBoxComsume(var_19_0)
+
+	arg_19_0.consumeTxt.text = var_19_1
+	arg_19_0.total = 0
+
+	for iter_19_0 = arg_19_0.count, var_19_0 do
+		arg_19_0.total = arg_19_0.total + CommanderConst.getBoxComsume(iter_19_0)
 	end
 
-	slot0.totalTxt.text = getProxy(PlayerProxy):getRawData().gold < slot0.total and "<color=" .. COLOR_RED .. ">" .. slot0.total .. "</color>" or slot0.total
+	local var_19_2 = getProxy(PlayerProxy):getRawData()
+
+	arg_19_0.totalTxt.text = var_19_2.gold < arg_19_0.total and "<color=" .. COLOR_RED .. ">" .. arg_19_0.total .. "</color>" or arg_19_0.total
 end
 
-function slot0.Update(slot0)
-	slot0.count = getProxy(CommanderProxy):getBoxUseCnt()
-	slot0.currCnt = 1
-	slot0.total = 0
+function var_0_0.Update(arg_20_0)
+	arg_20_0.count = getProxy(CommanderProxy):getBoxUseCnt()
+	arg_20_0.currCnt = 1
+	arg_20_0.total = 0
 
-	slot0:updateValue()
-	setActive(slot0.firstTip, slot0.count <= 0)
-	slot0:Show()
+	arg_20_0:updateValue()
+	setActive(arg_20_0.firstTip, arg_20_0.count <= 0)
+	arg_20_0:Show()
 end
 
-function slot0.endAnim(slot0)
-	setActive(slot0.bg1, true)
-	setActive(slot0.bg2, false)
+function var_0_0.endAnim(arg_21_0)
+	setActive(arg_21_0.bg1, true)
+	setActive(arg_21_0.bg2, false)
 
-	for slot4 = 0, slot0.boxMove.childCount - 1 do
-		Destroy(slot0.boxMove:GetChild(slot4))
+	for iter_21_0 = 0, arg_21_0.boxMove.childCount - 1 do
+		local var_21_0 = arg_21_0.boxMove:GetChild(iter_21_0)
+
+		Destroy(var_21_0)
 	end
 
-	for slot4, slot5 in ipairs(slot0.tweenList) do
-		if slot5 then
-			LeanTween.cancel(slot5)
+	for iter_21_1, iter_21_2 in ipairs(arg_21_0.tweenList) do
+		if iter_21_2 then
+			LeanTween.cancel(iter_21_2)
 		end
 	end
 
-	slot0.tweenList = {}
-	slot0.skip = false
+	arg_21_0.tweenList = {}
+	arg_21_0.skip = false
 
-	if slot0.callback then
-		slot0.callback()
+	if arg_21_0.callback then
+		arg_21_0.callback()
 
-		slot0.callback = nil
+		arg_21_0.callback = nil
 	end
 end
 
-function slot0.PlayAnim(slot0, slot1, slot2)
-	assert(slot2)
+function var_0_0.PlayAnim(arg_22_0, arg_22_1, arg_22_2)
+	assert(arg_22_2)
 
-	slot0.callback = slot2
+	arg_22_0.callback = arg_22_2
 
-	setActive(slot0.bg1, false)
-	setActive(slot0.bg2, true)
-	setActive(slot0.boxes, true)
+	setActive(arg_22_0.bg1, false)
+	setActive(arg_22_0.bg2, true)
+	setActive(arg_22_0.boxes, true)
 
-	if slot0.skip then
-		slot0:endAnim()
+	if arg_22_0.skip then
+		arg_22_0:endAnim()
 	else
-		slot0.animtion:Play("reserve")
+		arg_22_0.animtion:Play("reserve")
 
-		slot3 = 0
-		slot4 = 0
+		local var_22_0 = 0
+		local var_22_1 = 0
 
-		slot0.aniEvt:SetTriggerEvent(function (slot0)
-			for slot4, slot5 in ipairs(uv0) do
-				uv1 = uv1 + slot4
+		arg_22_0.aniEvt:SetTriggerEvent(function(arg_23_0)
+			for iter_23_0, iter_23_1 in ipairs(arg_22_1) do
+				var_22_0 = var_22_0 + iter_23_0
 			end
 
-			for slot4, slot5 in ipairs(uv0) do
-				for slot9 = 1, slot5.count do
-					table.insert(uv3.tweenList, LeanTween.delayedCall(0.2 + 1 * uv2 + 1 * (slot9 - 1), System.Action(function ()
-						uv0:playBoxMove(uv1)
-					end)).uniqueId)
+			for iter_23_2, iter_23_3 in ipairs(arg_22_1) do
+				for iter_23_4 = 1, iter_23_3.count do
+					local var_23_0 = LeanTween.delayedCall(0.2 + 1 * var_22_1 + 1 * (iter_23_4 - 1), System.Action(function()
+						arg_22_0:playBoxMove(iter_23_3)
+					end)).uniqueId
+
+					table.insert(arg_22_0.tweenList, var_23_0)
 				end
 
-				uv2 = uv2 + slot5.count
+				var_22_1 = var_22_1 + iter_23_3.count
 			end
 
-			table.insert(uv3.tweenList, LeanTween.delayedCall(0.2 + 1 * (uv2 - 1), System.Action(function ()
-				setActive(uv0.boxes, false)
+			table.insert(arg_22_0.tweenList, LeanTween.delayedCall(0.2 + 1 * (var_22_1 - 1), System.Action(function()
+				setActive(arg_22_0.boxes, false)
 			end)).uniqueId)
-			table.insert(uv3.tweenList, LeanTween.delayedCall(0.2 + 1 * (uv2 - 1) + 2, System.Action(function ()
-				uv0:endAnim()
+			table.insert(arg_22_0.tweenList, LeanTween.delayedCall(0.2 + 1 * (var_22_1 - 1) + 2, System.Action(function()
+				arg_22_0:endAnim()
 			end)).uniqueId)
 		end)
 	end
 end
 
-function slot0.Show(slot0)
-	setActive(slot0._tf, true)
-	setActive(slot0.bg1, true)
-	setActive(slot0.bg2, false)
+function var_0_0.Show(arg_27_0)
+	setActive(arg_27_0._tf, true)
+	setActive(arg_27_0.bg1, true)
+	setActive(arg_27_0.bg2, false)
 
-	slot0.skip = false
+	arg_27_0.skip = false
 
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf, false, {
+	pg.UIMgr.GetInstance():BlurPanel(arg_27_0._tf, false, {
 		weight = LayerWeightConst.SECOND_LAYER
 	})
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_28_0)
+	var_0_0.super.Hide(arg_28_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_28_0._tf, arg_28_0._parentTf)
 end
 
-function slot0.playBoxMove(slot0, slot1)
-	if slot1.id == 20011 then
-		cloneTplTo(slot0.boxTF, slot0.boxMove):GetComponent(typeof(Image)).sprite = slot0.box1.sprite
-	elseif slot1.id == 20012 then
-		slot2:GetComponent(typeof(Image)).sprite = slot0.box2.sprite
-	elseif slot1.id == 20013 then
-		slot2:GetComponent(typeof(Image)).sprite = slot0.box3.sprite
+function var_0_0.playBoxMove(arg_29_0, arg_29_1)
+	local var_29_0 = cloneTplTo(arg_29_0.boxTF, arg_29_0.boxMove)
+
+	if arg_29_1.id == 20011 then
+		var_29_0:GetComponent(typeof(Image)).sprite = arg_29_0.box1.sprite
+	elseif arg_29_1.id == 20012 then
+		var_29_0:GetComponent(typeof(Image)).sprite = arg_29_0.box2.sprite
+	elseif arg_29_1.id == 20013 then
+		var_29_0:GetComponent(typeof(Image)).sprite = arg_29_0.box3.sprite
 	end
 
-	slot2:GetComponent(typeof(DftAniEvent)):SetEndEvent(function ()
-		Destroy(go(uv0))
+	var_29_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		Destroy(go(var_29_0))
 	end)
 end
 
-function slot0.OnDestroy(slot0)
-	if slot0:isShowing() then
-		slot0:Hide()
+function var_0_0.OnDestroy(arg_31_0)
+	if arg_31_0:isShowing() then
+		arg_31_0:Hide()
 	end
 end
 
-return slot0
+return var_0_0

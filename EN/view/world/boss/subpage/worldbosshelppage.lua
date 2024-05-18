@@ -1,174 +1,187 @@
-slot0 = class("WorldBossHelpPage", import("....base.BaseSubView"))
+﻿local var_0_0 = class("WorldBossHelpPage", import("....base.BaseSubView"))
 
-function slot0.getUIName(slot0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldBossHelpUI"
 end
 
-function slot0.OnLoaded(slot0)
-	slot0.friendBtn = slot0:findTF("window/sliders/content/friend")
-	slot0.friendRequested = slot0.friendBtn:Find("requested")
-	slot0.friendMark = slot0.friendBtn:Find("mark")
-	slot0.friendSupportTimeTxt = slot0.friendBtn:Find("requested/Text"):GetComponent(typeof(Text))
-	slot0.guildBtn = slot0:findTF("window/sliders/content/guild")
-	slot0.guildRequested = slot0.guildBtn:Find("requested")
-	slot0.guildMark = slot0.guildBtn:Find("mark")
-	slot0.guildSupportTimeTxt = slot0.guildBtn:Find("requested/Text"):GetComponent(typeof(Text))
-	slot0.worldBtn = slot0:findTF("window/sliders/content/world")
-	slot0.worldRequested = slot0.worldBtn:Find("requested")
-	slot0.worldMark = slot0.worldBtn:Find("mark")
-	slot0.worldSupportTimeTxt = slot0.worldBtn:Find("requested/Text"):GetComponent(typeof(Text))
-	slot0.timers = {}
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.friendBtn = arg_2_0:findTF("window/sliders/content/friend")
+	arg_2_0.friendRequested = arg_2_0.friendBtn:Find("requested")
+	arg_2_0.friendMark = arg_2_0.friendBtn:Find("mark")
+	arg_2_0.friendSupportTimeTxt = arg_2_0.friendBtn:Find("requested/Text"):GetComponent(typeof(Text))
+	arg_2_0.guildBtn = arg_2_0:findTF("window/sliders/content/guild")
+	arg_2_0.guildRequested = arg_2_0.guildBtn:Find("requested")
+	arg_2_0.guildMark = arg_2_0.guildBtn:Find("mark")
+	arg_2_0.guildSupportTimeTxt = arg_2_0.guildBtn:Find("requested/Text"):GetComponent(typeof(Text))
+	arg_2_0.worldBtn = arg_2_0:findTF("window/sliders/content/world")
+	arg_2_0.worldRequested = arg_2_0.worldBtn:Find("requested")
+	arg_2_0.worldMark = arg_2_0.worldBtn:Find("mark")
+	arg_2_0.worldSupportTimeTxt = arg_2_0.worldBtn:Find("requested/Text"):GetComponent(typeof(Text))
+	arg_2_0.timers = {}
 end
 
-function slot0.OnInit(slot0)
-	onButton(slot0, slot0._tf, function ()
-		uv0:Hide()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("cancel_btn"), function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0:findTF("cancel_btn"), function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("window/top/btnBack"), function ()
-		uv0:Hide()
+	onButton(arg_3_0, arg_3_0:findTF("window/top/btnBack"), function()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
-	onButton(slot0, slot0.friendBtn, function ()
-		uv0.friendFlag = not uv0.friendFlag
+	onButton(arg_3_0, arg_3_0.friendBtn, function()
+		arg_3_0.friendFlag = not arg_3_0.friendFlag
 
-		setActive(uv0.friendMark, uv0.friendFlag)
+		setActive(arg_3_0.friendMark, arg_3_0.friendFlag)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.guildBtn, function ()
-		uv0.guildFlag = not uv0.guildFlag
+	onButton(arg_3_0, arg_3_0.guildBtn, function()
+		arg_3_0.guildFlag = not arg_3_0.guildFlag
 
-		setActive(uv0.guildMark, uv0.guildFlag)
+		setActive(arg_3_0.guildMark, arg_3_0.guildFlag)
 	end, SFX_PANEL)
-	onButton(slot0, slot0.worldBtn, function ()
+	onButton(arg_3_0, arg_3_0.worldBtn, function()
 		if nowWorld():GetBossProxy():WorldSupported() then
 			pg.TipsMgr:GetInstance():ShowTips(i18n("world_boss_ask_help"))
 
 			return
 		end
 
-		uv0.worldFlag = not uv0.worldFlag
+		arg_3_0.worldFlag = not arg_3_0.worldFlag
 
-		setActive(uv0.worldMark, uv0.worldFlag)
+		setActive(arg_3_0.worldMark, arg_3_0.worldFlag)
 	end, SFX_PANEL)
-	onButton(slot0, slot0:findTF("confirm_btn"), function ()
-		uv0:emit(WorldBossMediator.ON_SURPPORT, {
-			uv0.friendFlag,
-			uv0.guildFlag,
-			uv0.worldFlag
+	onButton(arg_3_0, arg_3_0:findTF("confirm_btn"), function()
+		arg_3_0:emit(WorldBossMediator.ON_SURPPORT, {
+			arg_3_0.friendFlag,
+			arg_3_0.guildFlag,
+			arg_3_0.worldFlag
 		})
-		uv0:Hide()
+		arg_3_0:Hide()
 	end, SFX_PANEL)
 end
 
-function slot0.Reset(slot0)
-	slot0.friendFlag = false
-	slot0.guildFlag = false
-	slot0.worldFlag = false
+function var_0_0.Reset(arg_11_0)
+	arg_11_0.friendFlag = false
+	arg_11_0.guildFlag = false
+	arg_11_0.worldFlag = false
 end
 
-function slot0.Update(slot0, slot1)
-	slot0.boss = slot1
+function var_0_0.Update(arg_12_0, arg_12_1)
+	arg_12_0.boss = arg_12_1
 
-	slot0:Reset()
-	slot0:UpdateFriendRequestItem()
-	slot0:UpdateGuildRequetItem()
-	slot0:UpdateWorldRequetItem()
-	slot0:Show()
+	arg_12_0:Reset()
+	arg_12_0:UpdateFriendRequestItem()
+	arg_12_0:UpdateGuildRequetItem()
+	arg_12_0:UpdateWorldRequetItem()
+	arg_12_0:Show()
 end
 
-function slot0.UpdateFriendRequestItem(slot0)
-	slot1 = slot0.boss
-	slot3 = nowWorld():GetBossProxy():FriendSupported()
+function var_0_0.UpdateFriendRequestItem(arg_13_0)
+	local var_13_0 = arg_13_0.boss
+	local var_13_1 = nowWorld():GetBossProxy()
+	local var_13_2 = var_13_1:FriendSupported()
 
-	setButtonEnabled(slot0.friendBtn, not slot3)
-	setActive(slot0.friendRequested, slot3)
-	setActive(slot0.friendMark, false)
-	slot0:RemoveRequestTimer(slot0.friendSupportTimeTxt)
+	setButtonEnabled(arg_13_0.friendBtn, not var_13_2)
+	setActive(arg_13_0.friendRequested, var_13_2)
+	setActive(arg_13_0.friendMark, false)
+	arg_13_0:RemoveRequestTimer(arg_13_0.friendSupportTimeTxt)
 
-	if slot3 then
-		slot0:AddRequestTimer(slot2:GetNextFriendSupportTime(), slot0.friendSupportTimeTxt, function ()
-			uv0:UpdateFriendRequestItem()
+	if var_13_2 then
+		local var_13_3 = var_13_1:GetNextFriendSupportTime()
+
+		arg_13_0:AddRequestTimer(var_13_3, arg_13_0.friendSupportTimeTxt, function()
+			arg_13_0:UpdateFriendRequestItem()
 		end)
 	end
 end
 
-function slot0.UpdateGuildRequetItem(slot0)
-	slot1 = slot0.boss
-	slot3 = nowWorld():GetBossProxy():GuildSupported()
+function var_0_0.UpdateGuildRequetItem(arg_15_0)
+	local var_15_0 = arg_15_0.boss
+	local var_15_1 = nowWorld():GetBossProxy()
+	local var_15_2 = var_15_1:GuildSupported()
 
-	setButtonEnabled(slot0.guildBtn, not slot3)
-	setActive(slot0.guildRequested, slot3)
-	setActive(slot0.guildMark, false)
-	slot0:RemoveRequestTimer(slot0.guildSupportTimeTxt)
+	setButtonEnabled(arg_15_0.guildBtn, not var_15_2)
+	setActive(arg_15_0.guildRequested, var_15_2)
+	setActive(arg_15_0.guildMark, false)
+	arg_15_0:RemoveRequestTimer(arg_15_0.guildSupportTimeTxt)
 
-	if slot3 then
-		slot0:AddRequestTimer(slot2:GetNextGuildSupportTime(), slot0.guildSupportTimeTxt, function ()
-			uv0:UpdateGuildRequetItem()
+	if var_15_2 then
+		local var_15_3 = var_15_1:GetNextGuildSupportTime()
+
+		arg_15_0:AddRequestTimer(var_15_3, arg_15_0.guildSupportTimeTxt, function()
+			arg_15_0:UpdateGuildRequetItem()
 		end)
 	end
 end
 
-function slot0.UpdateWorldRequetItem(slot0)
-	slot2 = nowWorld():GetBossProxy():WorldSupported()
+function var_0_0.UpdateWorldRequetItem(arg_17_0)
+	local var_17_0 = nowWorld():GetBossProxy()
+	local var_17_1 = var_17_0:WorldSupported()
 
-	setActive(slot0.worldRequested, slot2)
-	setActive(slot0.worldMark, false)
-	slot0:RemoveRequestTimer(slot0.worldSupportTimeTxt)
+	setActive(arg_17_0.worldRequested, var_17_1)
+	setActive(arg_17_0.worldMark, false)
+	arg_17_0:RemoveRequestTimer(arg_17_0.worldSupportTimeTxt)
 
-	if slot2 then
-		slot0:AddRequestTimer(slot1:GetNextWorldSupportTime(), slot0.worldSupportTimeTxt, function ()
-			uv0:UpdateWorldRequetItem()
+	if var_17_1 then
+		local var_17_2 = var_17_0:GetNextWorldSupportTime()
+
+		arg_17_0:AddRequestTimer(var_17_2, arg_17_0.worldSupportTimeTxt, function()
+			arg_17_0:UpdateWorldRequetItem()
 		end)
 	end
 end
 
-function slot0.AddRequestTimer(slot0, slot1, slot2, slot3)
-	slot4 = nowWorld():GetBossProxy()
-	slot0.timers[slot2] = Timer.New(function ()
-		if uv0 - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
-			uv1.text = pg.TimeMgr.GetInstance():DescCDTime(slot1)
+function var_0_0.AddRequestTimer(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+	local var_19_0 = nowWorld():GetBossProxy()
+
+	arg_19_0.timers[arg_19_2] = Timer.New(function()
+		local var_20_0 = pg.TimeMgr.GetInstance():GetServerTime()
+		local var_20_1 = arg_19_1 - var_20_0
+
+		if var_20_1 > 0 then
+			arg_19_2.text = pg.TimeMgr.GetInstance():DescCDTime(var_20_1)
 		else
-			uv1.text = ""
+			arg_19_2.text = ""
 
-			uv2:RemoveRequestTimer(uv1)
-			uv3()
+			arg_19_0:RemoveRequestTimer(arg_19_2)
+			arg_19_3()
 		end
 	end, 1, -1)
 
-	slot0.timers[slot2]:Start()
-	slot0.timers[slot2].func()
+	arg_19_0.timers[arg_19_2]:Start()
+	arg_19_0.timers[arg_19_2].func()
 end
 
-function slot0.RemoveRequestTimer(slot0, slot1)
-	if slot0.timers[slot1] then
-		slot0.timers[slot1]:Stop()
+function var_0_0.RemoveRequestTimer(arg_21_0, arg_21_1)
+	if arg_21_0.timers[arg_21_1] then
+		arg_21_0.timers[arg_21_1]:Stop()
 
-		slot0.timers[slot1] = nil
+		arg_21_0.timers[arg_21_1] = nil
 	end
 end
 
-function slot0.RemoveRequestTimers(slot0)
-	for slot4, slot5 in pairs(slot0.timers) do
-		slot5:Stop()
+function var_0_0.RemoveRequestTimers(arg_22_0)
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.timers) do
+		iter_22_1:Stop()
 	end
 
-	slot0.timers = {}
+	arg_22_0.timers = {}
 end
 
-function slot0.Show(slot0)
-	uv0.super.Show(slot0)
-	pg.UIMgr.GetInstance():BlurPanel(slot0._tf)
+function var_0_0.Show(arg_23_0)
+	var_0_0.super.Show(arg_23_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_23_0._tf)
 end
 
-function slot0.Hide(slot0)
-	uv0.super.Hide(slot0)
-	pg.UIMgr.GetInstance():UnblurPanel(slot0._tf, slot0._parentTf)
+function var_0_0.Hide(arg_24_0)
+	var_0_0.super.Hide(arg_24_0)
+	pg.UIMgr.GetInstance():UnblurPanel(arg_24_0._tf, arg_24_0._parentTf)
 end
 
-function slot0.OnDestroy(slot0)
-	slot0:Hide()
-	slot0:RemoveRequestTimers()
+function var_0_0.OnDestroy(arg_25_0)
+	arg_25_0:Hide()
+	arg_25_0:RemoveRequestTimers()
 end
 
-return slot0
+return var_0_0

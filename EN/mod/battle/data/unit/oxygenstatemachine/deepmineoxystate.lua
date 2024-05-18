@@ -1,44 +1,50 @@
-ys = ys or {}
-slot0 = ys
-slot1 = slot0.Battle.BattleConst
-slot2 = slot0.Battle.BattleAttr
-slot0.Battle.DeepMineOxyState = class("DeepMineOxyState", slot0.Battle.IOxyState)
-slot0.Battle.DeepMineOxyState.__name = "DeepMineOxyState"
-slot3 = slot0.Battle.DeepMineOxyState
+﻿ys = ys or {}
 
-function slot3.Ctor(slot0)
-	uv0.super.Ctor(slot0)
+local var_0_0 = ys
+local var_0_1 = var_0_0.Battle.BattleConst
+local var_0_2 = var_0_0.Battle.BattleAttr
+
+var_0_0.Battle.DeepMineOxyState = class("DeepMineOxyState", var_0_0.Battle.IOxyState)
+var_0_0.Battle.DeepMineOxyState.__name = "DeepMineOxyState"
+
+local var_0_3 = var_0_0.Battle.DeepMineOxyState
+
+function var_0_3.Ctor(arg_1_0)
+	var_0_3.super.Ctor(arg_1_0)
 end
 
-function slot3.UpdateCldData(slot0, slot1, slot2)
-	slot1:GetCldData().Surface = slot0:GetDiveState()
+function var_0_3.UpdateCldData(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0:GetDiveState()
+
+	arg_2_1:GetCldData().Surface = var_2_0
 end
 
-function slot3.GetWeaponUseableList(slot0)
+function var_0_3.GetWeaponUseableList(arg_3_0)
 	return {
-		uv0.OXY_STATE.DIVE
+		var_0_1.OXY_STATE.DIVE
 	}
 end
 
-function slot3.UpdateCldData(slot0, slot1)
+function var_0_3.UpdateCldData(arg_4_0, arg_4_1)
+	return
 end
 
-function slot3.GetDiveState(slot0)
-	return uv0.OXY_STATE.DIVE
+function var_0_3.GetDiveState(arg_5_0)
+	return var_0_1.OXY_STATE.DIVE
 end
 
-function slot3.GetBubbleFlag(slot0)
+function var_0_3.GetBubbleFlag(arg_6_0)
 	return false
 end
 
-function slot3.IsVisible(slot0)
+function var_0_3.IsVisible(arg_7_0)
 	return false
 end
 
-function slot3.GetBarVisible(slot0)
+function var_0_3.GetBarVisible(arg_8_0)
 	return true
 end
 
-function slot3.RunMode(slot0)
+function var_0_3.RunMode(arg_9_0)
 	return false
 end
