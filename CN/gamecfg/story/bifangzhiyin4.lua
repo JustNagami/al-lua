@@ -359,7 +359,7 @@
 			bgName = "bg_zhuiluo_2",
 			paintingNoise = true,
 			dir = 1,
-			actor = 9705020,
+			actor = 9705010,
 			nameColor = "#FFC960",
 			hidePaintObj = true,
 			say = "“老熟人”们的部署有些异常，似乎正在准备转移。",

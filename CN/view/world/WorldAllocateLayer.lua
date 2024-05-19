@@ -105,18 +105,7 @@ function var_0_0.init(arg_2_0)
 end
 
 function var_0_0.didEnter(arg_11_0)
-	local var_11_0 = arg_11_0.contextData.fleetIndex or 1
-
-	setActive(arg_11_0.fleetToggleMask, true)
-
-	for iter_11_0, iter_11_1 in ipairs(arg_11_0.fleetList) do
-		if iter_11_1.id == var_11_0 then
-			triggerToggle(arg_11_0.fleetToggleList:GetChild(arg_11_0.fleetToggleList.childCount - iter_11_0), true)
-
-			break
-		end
-	end
-
+	arg_11_0:updateToggleList(arg_11_0.fleetList, arg_11_0.contextData.fleetIndex or 1)
 	pg.UIMgr.GetInstance():BlurPanel(arg_11_0._tf, false)
 end
 
@@ -127,8 +116,6 @@ end
 
 function var_0_0.setFleets(arg_13_0, arg_13_1, arg_13_2)
 	arg_13_0.fleetList = arg_13_1
-
-	arg_13_0:updateToggleList(arg_13_1)
 end
 
 function var_0_0.setConfirmCallback(arg_14_0, arg_14_1)
@@ -172,28 +159,40 @@ function var_0_0.flush(arg_17_0, arg_17_1)
 	end
 end
 
-function var_0_0.updateToggleList(arg_18_0, arg_18_1)
-	for iter_18_0 = 1, arg_18_0.fleetToggleList.childCount do
-		local var_18_0 = arg_18_0.fleetToggleList:GetChild(arg_18_0.fleetToggleList.childCount - iter_18_0)
+function var_0_0.updateToggleList(arg_18_0, arg_18_1, arg_18_2)
+	setActive(arg_18_0.fleetToggleList, true)
 
-		setActive(var_18_0, arg_18_1[iter_18_0])
+	local var_18_0
+
+	for iter_18_0 = 1, arg_18_0.fleetToggleList.childCount do
+		local var_18_1 = arg_18_0.fleetToggleList:GetChild(arg_18_0.fleetToggleList.childCount - iter_18_0)
+
+		setActive(var_18_1, arg_18_1[iter_18_0])
 
 		if arg_18_1[iter_18_0] then
-			setActive(var_18_0:Find("lock"), false)
-			setText(var_18_0:Find("on/mask/text"), i18n("world_fleetName" .. iter_18_0))
-			setText(var_18_0:Find("on/mask/en"), var_0_0.TeamNum[iter_18_0] .. " FLEET")
-			setText(var_18_0:Find("on/mask/number"), iter_18_0)
-			setText(var_18_0:Find("off/mask/text"), i18n("world_fleetName" .. iter_18_0))
-			setText(var_18_0:Find("off/mask/en"), var_0_0.TeamNum[iter_18_0] .. " FLEET")
-			setText(var_18_0:Find("off/mask/number"), iter_18_0)
-			onToggle(arg_18_0, var_18_0, function(arg_19_0)
+			setActive(var_18_1:Find("lock"), false)
+			setText(var_18_1:Find("on/mask/text"), i18n("world_fleetName" .. iter_18_0))
+			setText(var_18_1:Find("on/mask/en"), var_0_0.TeamNum[iter_18_0] .. " FLEET")
+			setText(var_18_1:Find("on/mask/number"), iter_18_0)
+			setText(var_18_1:Find("off/mask/text"), i18n("world_fleetName" .. iter_18_0))
+			setText(var_18_1:Find("off/mask/en"), var_0_0.TeamNum[iter_18_0] .. " FLEET")
+			setText(var_18_1:Find("off/mask/number"), iter_18_0)
+			onToggle(arg_18_0, var_18_1, function(arg_19_0)
 				if arg_19_0 then
 					arg_18_0:showOrHideToggleMask(false)
 					arg_18_0:setFleet(arg_18_1[iter_18_0].id)
 					arg_18_0:updateQuota()
 				end
 			end, SFX_UI_TAG)
+
+			if arg_18_1[iter_18_0].id == arg_18_2 then
+				var_18_0 = var_18_1
+			end
 		end
+	end
+
+	if var_18_0 then
+		triggerToggle(var_18_0, true)
 	end
 end
 

@@ -51,7 +51,7 @@ function var_0_0.Init(arg_3_0)
 
 	arg_3_0.consumeTxtTF.text = arg_3_0.goods:getConfig("price")
 
-	GetImageSpriteFromAtlasAsync("props/guild_gold", "", arg_3_0.consumeIconTF)
+	GetImageSpriteFromAtlasAsync("ui/share/msgbox_atlas", "res_guildicon", arg_3_0.consumeIconTF)
 	GetImageSpriteFromAtlasAsync(arg_3_0.goods:getConfig("goods_icon"), "", arg_3_0.itemIconTF)
 
 	arg_3_0.itemCountTF.text = arg_3_0.goods:getConfig("num")

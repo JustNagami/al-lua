@@ -582,6 +582,10 @@ function var_0_0.CreateLive2D(arg_47_0)
 			y = 0
 		})
 	end
+
+	if Live2dConst.UnLoadL2dPating then
+		Live2dConst.UnLoadL2dPating()
+	end
 end
 
 function var_0_0.GetModelAction(arg_49_0, arg_49_1)

@@ -303,9 +303,7 @@ local var_0_7 = {
 	"Loading",
 	"WorldUI"
 }
-local var_0_8 = {
-	"WorldAllocateUI"
-}
+local var_0_8 = {}
 
 function var_0_0.GetUI(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
 	local var_16_0 = "ui/" .. arg_16_1
